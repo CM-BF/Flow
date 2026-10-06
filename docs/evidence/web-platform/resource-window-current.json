@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T22:59:32.196947+00:00",
-  "state": "NO_WEB_HOLDER_LEAD_THREE_CACHES_COMPLETE_RESOURCE_GATE_STILL_UNMET",
-  "groupWindowOwnership": "No new Web PG/Chrome/runtime grant, reservation or gate. Three Lead exact cache actions have terminal COMPLETE/exit0/EOF/owned absent receipts. Last reported free remains below small-check and heavy thresholds; no new allocation inferred.",
+  "recordedAt": "2026-10-06T23:07:45.744217+00:00",
+  "state": "NO_WEB_HOLDER_RESOURCE_GATE_UNMET_REMOTE_CI_WEB_CONSUMER_RESEARCH_ONLY",
+  "groupWindowOwnership": "No actual Web runtime holder, gate or reservation. Lead reported subsequent free 1069273088 bytes, below unchanged local small-check and PG/Chrome floors; no additional cache batch or run grant. SVC07/C02 queue remains unchanged.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,17 +407,16 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "source": "Lead exact three-operation-summary disk receipt, independently read by root and manager",
-    "state": "THREE_EXACT_CACHES_COMPLETE_NO_NEW_RUN_GRANT",
-    "evidence": "ops-three-fixture-retirement/lead-cache-results/intake.json",
-    "summary": "ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
-    "operationsComplete": 3,
-    "ownedProcessesAbsent": true,
-    "lastHistoricalFreeBytes": 1073909760,
-    "lastHistoricalAt": "2026-10-06T22:57:44.501908+00:00",
+    "source": "Execution Lead incoming through root; structured intake only, no Web resource resampling",
+    "state": "THREE_CACHES_COMPLETE_SUBSEQUENT_RESOURCE_HOLD_NO_NEW_GRANT",
+    "evidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
+    "terminalSummary": "ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
+    "lastReportedFreeBytes": 1069273088,
+    "lastReportedSampleAt": null,
+    "sampleTimeUnknown": true,
     "newGrant": false,
     "webHolder": null,
-    "next": "No further cache candidate authorized. Preserve SVC07/C02 queue; c1/Recovery/DPERF require fresh legitimate admission and resource floor, no repeat run or new packet."
+    "next": "Preserve SVC07/C02 queue. Existing Web source/preparation remains sealed, checks NOT_RUN. OPS-CI01 consumer research does not grant or replace pending Web validation; no further same-kind cache candidates."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -858,6 +857,19 @@
         "webHolder": null,
         "next": "Resource still belowfloor per Lead historical1182425088. Continue only alreadyauthorized originalowner twofixture retirement; no new heavy launch."
       }
+    },
+    {
+      "source": "Lead exact three-operation-summary disk receipt, independently read by root and manager",
+      "state": "THREE_EXACT_CACHES_COMPLETE_NO_NEW_RUN_GRANT",
+      "evidence": "ops-three-fixture-retirement/lead-cache-results/intake.json",
+      "summary": "ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
+      "operationsComplete": 3,
+      "ownedProcessesAbsent": true,
+      "lastHistoricalFreeBytes": 1073909760,
+      "lastHistoricalAt": "2026-10-06T22:57:44.501908+00:00",
+      "newGrant": false,
+      "webHolder": null,
+      "next": "No further cache candidate authorized. Preserve SVC07/C02 queue; c1/Recovery/DPERF require fresh legitimate admission and resource floor, no repeat run or new packet."
     }
   ],
   "dperf05Pure": {
@@ -1009,7 +1021,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "ops-three-fixture-retirement/lead-cache-results/intake.json",
+  "currentWindowEvidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -1286,5 +1298,23 @@
     "managerResourceSample": false,
     "noFurtherCandidateAuthorized": true
   },
-  "currentCoordinationAudit": "ops-three-fixture-retirement/lead-cache-results/coordination-audit.json"
+  "currentCoordinationAudit": "ops-ci01-web-consumer-intake/coordination-observation.json",
+  "latestLeadResourceIntake": {
+    "evidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
+    "source": "Lead incoming through root",
+    "reportedFreeBytes": 1069273088,
+    "sampleAt": null,
+    "managerResourceSample": false,
+    "newGrant": false
+  },
+  "remoteValidationConsumerResearch": {
+    "evidence": "ops-ci01-web-consumer-intake/intake.json",
+    "scope": "Existing MATURE02/TODO11 and MSGQUICK-03/04 only",
+    "state": "CURRENT_CI_DOCS_DO_NOT_EXECUTE_WEB_ACCEPTANCE",
+    "newTask": false,
+    "newClaim": false,
+    "newRemoteRunner": false,
+    "workflowActivated": false,
+    "runtime": "NOT_RUN"
+  }
 }

@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-10-06T23:07:45.744217+00:00",
+  "source": "Execution Lead incoming relayed by /root; structured intake, not a new local sample or raw runtime receipt",
+  "originalIncomingFacts": {
+    "exactCacheOperationsComplete": 3,
+    "generatedFiles": 180,
+    "logicalBytesAcrossThree": 52590240,
+    "operationEndFreeBytes": 1073909760,
+    "subsequentReportedFreshFreeBytes": 1069273088,
+    "subsequentSampleAt": null,
+    "sampleTimeNote": "Not supplied in incoming message. recordedAt is archival time only.",
+    "logicalBytesAreNotNetPhysicalReclaim": true,
+    "holder": null,
+    "newRunGrant": false,
+    "noFurtherSimilarReclamationBatch": true
+  },
+  "historicalThresholdArithmeticOnly": {
+    "c1StartBytes": 1090519040,
+    "c1ShortfallBytes": 21245952,
+    "pgChromeStartBytes": 1207959552,
+    "pgChromeShortfallBytes": 138686464
+  },
+  "terminalEvidence": "../ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
+  "OPS_CI01": {
+    "intake": "Minimal remote zero-model validation documentation candidate; limited original-owner review, not enabled or run by this group. Follow the original status for later changes.",
+    "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation/plans/ops-ci01-remote-validation/status.md",
+    "fixedMetadataRead": "abc7444ddb3a3724763567d1955e58b157ba51df",
+    "fixedDocsImplementation": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+    "consumerResearchIsNotCIApproval": true
+  },
+  "queueUnchanged": [
+    "Mika SVC07 next requested real run subject to legitimate fresh admission",
+    "C02 after SVC07 and new handoff/gate",
+    "Existing Web checks remain pending their own admission; no automatic launch"
+  ],
+  "managerActions": {
+    "resourceSample": false,
+    "processScan": false,
+    "runtime": false,
+    "cacheOperation": false,
+    "remoteWorkflowActivation": false,
+    "newClaim": false,
+    "externalThreadMessage": false
+  }
+}

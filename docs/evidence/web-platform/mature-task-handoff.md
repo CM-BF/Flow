@@ -1,12 +1,12 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T22:59:32.196947+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-06T23:07:45.744217+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 共享窗口
 
-**OPS 新终态：[Lead 三处 exact `.vite` 已处理完成](ops-three-fixture-retirement/lead-cache-results/report.md)。** 每树60生成文件，三监督exit0/双EOF/自有进程absent；原预览退役与生命周期释放[原件仍保留](ops-three-fixture-retirement/manager-confirmation.json)。最新落盘观察仍低于小检查和PG/Chrome门槛，没有新运行分配或追加候选许可；本组不重采、不派运行。
+**OPS 新终态：[Lead 三处 exact `.vite` 已处理完成](ops-three-fixture-retirement/lead-cache-results/report.md)。** 每树60生成文件，三监督exit0/双EOF/自有进程absent；原预览退役与生命周期释放[原件仍保留](ops-three-fixture-retirement/manager-confirmation.json)。[Lead 后续入站](ops-ci01-web-consumer-intake/lead-incoming.json)报告 1,069,273,088 B，仍低于原小检查与 PG/Chrome 门槛；采样时点未提供，非本组重采，没有新分配或追加候选许可。
 
-[22:57:43 fresh D04有界核验](ops-three-fixture-retirement/lead-cache-results/coordination-audit.json)：跨Lead范围交集0，三临时claim全released；Recovery/QuickControls/DPERF04原范围冻结等待必要验证，无新增handoff或释放遗漏。
+[当前 fresh D04 有界核验](ops-ci01-web-consumer-intake/coordination-observation.json)保持原管理与独立 owner 范围，无交集或新领取；三临时 lifecycle claim 已释放的[原回执](ops-three-fixture-retirement/manager-confirmation.json)保留。Recovery/QuickControls/DPERF04 源码冻结等待必要验证，领取不等于运行占用。
 
 [Lead workspace-cache 依赖回收已完成](ops-three-fixture-retirement/lead-workspace-cache-postcheck.json)，该树 **NOT_RUNTIME_READY / 禁止借用**，恢复须另行批准。其当时后置 1,079,889,920 B 为历史事实，后续三缓存观察见页首；本组无新 PG/Chrome 运行、预约或 gate。原[依赖有界确认](ops-workspace-cache-dependency-consumers/manager-confirmation.json)保留为操作前证据。
 
@@ -54,6 +54,8 @@
 [固定 main 对照及 root 审查](message-settings-main-reception/root-review.json)未识别独立接收阻塞；[c8e 正式主线独审](message-settings-main-reception/main-integration-review.json)已核六源及15消费者输入，owner f80f 已限定交付并停写，[fresh CAS v2 RELEASED](message-settings-main-reception/release-receipt.json)；不重跑。
 
 ## 当前动作与验收入口
+
+[远程 CI 消费研究已收口](ops-ci01-web-consumer-intake/report.md)：固定 OPS-CI01 只执行 contracts/handler，四个 Web 文件也不是 fe6；不能当作新 26 direct 或六组/双 PNG 页面验收。只关联既有 TODO11 待验项，不新建任务/runner、不阻 OPS 原独审、不开放运行窗口。
 
 - 快速设置：[独立真实CSS/六组HTTP浏览器静态包](message-settings02-browser-prepared/report.md)已获限定静态准备独审；c1类型/direct实际通过与新精确Chrome边界为前置，全部新checks NOT_RUN，无gate/预约。
 

@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-06T23:07:45.744217+00:00",
+  "kind": "EXISTING_WEB_ACCEPTANCE_CONSUMER_RESEARCH_ONLY",
+  "managerClaim": {
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "scopeObservation": "coordination-observation.json"
+  },
+  "fixedInputs": {
+    "opsMetadata": "abc7444ddb3a3724763567d1955e58b157ba51df",
+    "opsDocsImplementation": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+    "quickControlsSource": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "quickControlsOwnerMetadata": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+    "c1PacketHead": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
+    "c1HeadRebindOnlyAtFutureAdmission": true,
+    "opsSourceWasReadFromFixedObjects": true,
+    "ownerObservedMovingHeadAtEnd": "9f596ebb1720c40b01b3cbfcbd74d0e63a591e3b",
+    "movingHeadIsNotResearchTarget": true
+  },
+  "decision": "Current OPS-CI01 docs do not exercise or satisfy pending QuickControls types/direct/browser acceptance. This is intentional scope, not a CI defect or blocker to original OPS review.",
+  "substantiveFindings": [
+    "All four QuickControls source blobs at fixed abc744 differ from fe6; a default-branch run cannot establish the pending source target.",
+    "c1 requires targeted strict type checking and one real TSX direct file with all 26 exact names, actual exits and complete result/cleanup evidence.",
+    "b1 requires explicit exported fixture/check function calls, six actual groups, two 390px theme PNGs, real CSS/plugin chain and complete cleanup; default test:browser selects an older broad suite and is not a substitute.",
+    "macOS donor paths, sandbox-exec and native Chrome packet cannot be copied unchanged to Ubuntu. A future portable environment and bounded evidence return need separate concrete preparation and acceptance."
+  ],
+  "existingRequirementMappings": [
+    {
+      "parent": "WPF-MATURE-02-11 / TODO11",
+      "leaf": "WPF-MESSAGESETTINGS02 / MSGQUICK-03",
+      "acceptance": "Same fe6 immutable source; strict noEmit and single direct file/26 exact test names, zero failure/skip/todo, actual child/outer exits and complete evidence."
+    },
+    {
+      "parent": "WPF-MATURE-02-11 / TODO11",
+      "leaf": "WPF-MESSAGESETTINGS02 / MSGQUICK-04",
+      "acceptance": "Same source and accepted type/direct prerequisite; six actual exported browser groups, real CSS and both Light/Dark390 PNGs, exact environment/source/result/cleanup evidence."
+    }
+  ],
+  "authorities": {
+    "functionalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+    "opsStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation/plans/ops-ci01-remote-validation/status.md",
+    "CIOriginalOwner": "native_center_owner under astra_ultra_execution_lead",
+    "managerRole": "Index bounded findings in existing plan; no second functional status or CI approval."
+  },
+  "checksRemain": {
+    "quickControlsTypes": "NOT_RUN",
+    "quickControlsDirect": "NOT_RUN",
+    "quickControlsBrowser": "NOT_RUN",
+    "newRemoteExecution": "NOT_RUN",
+    "RecoveryDPERFEvidenceUnaffected": true
+  },
+  "notAuthorizedOrCreated": [
+    "No new task, writer, claim, portable runner, workflow activation or remote budget",
+    "No gate, shared window or reservation",
+    "No change to local c1/b1 packets, product sources, original OPS scope or original review",
+    "No inheritance of Settings01 37/direct or four/browser evidence"
+  ],
+  "artifacts": [
+    {
+      "original": "/tmp/root-ops-ci01-web-consumer-research.json",
+      "archive": "root-research.json",
+      "bytes": 5588,
+      "sha256": "d896aba16ebaaf6baef13725db6c98250795c5cecb5362b139a7ef24af751509"
+    },
+    {
+      "original": "/private/tmp/msgquick-ops-ci01-consumer/report.md",
+      "archive": "w01-report.md",
+      "bytes": 7130,
+      "sha256": "b79fa454c5868034f18521644c687b1dabf36b0cf49113df0bb530ac31180983"
+    },
+    {
+      "original": "/private/tmp/msgquick-ops-ci01-consumer/audit.json",
+      "archive": "w01-audit.json",
+      "bytes": 9872,
+      "sha256": "3c6e24db965982588e984aeb50feb5610c28f99b1823b8b8db8c0a8967fa992b"
+    }
+  ],
+  "rootIndependentPinReviewIntake": {
+    "source": "/root collaboration inbound",
+    "verified": "15 fixed pins, nine two-commit source comparisons and 15 local packet pins, zero mismatch",
+    "managerAction": "Read the two reports and verify the three archived original hashes; do not repeat the OPS independent source review."
+  }
+}

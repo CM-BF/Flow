@@ -1,0 +1,92 @@
+{
+  "at": "2026-10-06T23:02:18.829581+00:00",
+  "role": "Web consumer read-only research; not OPS-CI01 independent approval",
+  "candidate": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation",
+    "branch": "codex/ops-remote-validation",
+    "source": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+    "observedMetadataHead": "abc7444ddb3a3724763567d1955e58b157ba51df",
+    "inputs": [
+      {
+        "path": "docs/ci/README.md",
+        "bytes": 7293,
+        "sha256": "334dccbf62a82e4f6bfcbcc06bc6ec055bffdce490a94d12c45248fac7e3cbf7"
+      },
+      {
+        "path": "docs/ci/check-workflow.yml",
+        "bytes": 7030,
+        "sha256": "d4cab9cfd16ab461629a1b8de12ca88589de289beae9dfdd4161d27869bde46f"
+      },
+      {
+        "path": "docs/evidence/ops-ci01/interface.md",
+        "bytes": 1500,
+        "sha256": "0f27a565e4075161f5ebf1a7f403201a178aed36d9aaf004d2fa0d523c5021f7"
+      }
+    ]
+  },
+  "decision": "CURRENT_CANDIDATE_DOES_NOT_EXECUTE_WEB_QUICKCONTROLS_ACCEPTANCE",
+  "sourceFacts": [
+    "The documentation candidate selects two existing contracts cases and one named PostgreSQL/Fastify.inject case, with nine handler cases unselected; no Web types, direct test, fixture or browser entry is invoked.",
+    "The reviewed proposal remains under docs/ci, requires a separate final activation step, has no workflow dispatch run or remote result in this evidence.",
+    "The candidate intentionally includes no browser installation, browser fixture lifecycle, screenshot return or upload-artifact step. These are outside its current bounded interface, not defects against its own scope.",
+    "Current candidate console summary contains source GITHUB_SHA, 2+1 counts, exits and database cleanup. It cannot provide six QuickControls browser groups, two PNGs or the 26 direct-test identities.",
+    "A future green contract/PG job cannot close Web QuickControls, Recovery or DPERF browser pending checks, nor prove local macOS/native behavior."
+  ],
+  "nextAction": [
+    "Keep OPS-CI01 review/activation with its unique original owner and Lead; do not edit or start its job from the Web group.",
+    "For a future authorized Web remote slice, retain the actual QuickControls source target and four product-file hashes, and run strict types before the existing exact direct test. Verify the complete expected selected cases and actual child exit, not a job-wide green icon.",
+    "Browser follow-up requires a separate reviewed environment and evidence-return interface: actual Vite/React/Tailwind CSS fixture, pinned compatible browser, existing checkMessageSettingsPicker entry, six exact result groups, both theme PNGs, bounded logs and owned cleanup. Current macOS-specific local preparations are not automatically Linux runnable.",
+    "Prefer reusing actual test and fixture consumers over a parallel surrogate implementation. Keep source, runner environment, selected cases, test exit, cleanup, and evidence retention separate in the result.",
+    "Do not rebind or run current c1/b1 preparations merely on this research conclusion; actual authorization and resource/environment admission are still absent."
+  ],
+  "officialSources": [
+    {
+      "url": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow",
+      "observed": "2026-10-06",
+      "fact": "Manual dispatch requires a workflow present on the default branch; a branch/ref can be selected for the run."
+    },
+    {
+      "url": "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts",
+      "observed": "2026-10-06",
+      "fact": "Artifacts preserve run-generated results and screenshots after a job; dependency caching serves a different purpose."
+    },
+    {
+      "url": "https://playwright.dev/docs/ci",
+      "observed": "2026-10-06",
+      "fact": "A CI browser agent needs compatible browser binaries and operating-system dependencies as well as the installed Playwright package."
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "application": "Domain/task discovery; prefer installed local testing and quality methods, no new install."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "application": "Retain actual fixture, rendered-state assertions, screenshots and explicit browser lifecycle."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "application": "Keep distinct module responsibilities and honest error/result boundaries; avoid surrogate test duplication."
+    }
+  ],
+  "cleanCode": {
+    "scope": "Consumer interface / lifecycle / evidence semantics",
+    "finding": "Current OPS interface is intentionally small; broadening its meaning to Web acceptance would hide absent execution and evidence. Preserve explicit boundaries and reuse existing Web consumers.",
+    "fix": "Read-only consumer handoff recommendation only; no implementation edits.",
+    "unresolved": "Actual Linux installation, execution, browser rendering and cleanup are unverified."
+  },
+  "actions": {
+    "projectWrites": 0,
+    "workflowDispatches": 0,
+    "runtimeImports": 0,
+    "installs": 0,
+    "localOrRemoteProductTests": 0,
+    "providerCalls": 0,
+    "newClaims": 0,
+    "approval": "none"
+  }
+}

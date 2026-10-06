@@ -1,0 +1,253 @@
+{
+  "kind": "READ_ONLY_CONSUMER_RESEARCH_NOT_RUN",
+  "observedAt": "2026-10-06T23:02:55.161662+00:00",
+  "opsTarget": "abc7444ddb3a3724763567d1955e58b157ba51df",
+  "opsBranch": "codex/ops-remote-validation",
+  "observedHead": "9f596ebb1720c40b01b3cbfcbd74d0e63a591e3b",
+  "observedDirty": "",
+  "quickTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "quickOwnerHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+  "opsFixedPins": [
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "AGENTS.md",
+      "bytes": 17226,
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "plans/AGENTS.md",
+      "bytes": 15077,
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "plans/ops-ci01-remote-validation/plan.md",
+      "bytes": 1233,
+      "sha256": "d13cf467d9f96a93698e060a65dab75cf78d224fa33da248d4d089b4a5b631b2"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "plans/ops-ci01-remote-validation/status.md",
+      "bytes": 2381,
+      "sha256": "dd350d3bed7908e0a7a3cfdda471dfeae50e9e27e6479753d7128ff5065d3e5e"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "plans/ops-ci01-remote-validation/review.md",
+      "bytes": 758,
+      "sha256": "d0593aaec4fd28574a726fade898ee587e4f59a7562dd1cab5eff549f355848f"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "docs/ci/README.md",
+      "bytes": 7293,
+      "sha256": "334dccbf62a82e4f6bfcbcc06bc6ec055bffdce490a94d12c45248fac7e3cbf7"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "docs/ci/check-workflow.yml",
+      "bytes": 7030,
+      "sha256": "d4cab9cfd16ab461629a1b8de12ca88589de289beae9dfdd4161d27869bde46f"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "apps/web/playwright.config.ts",
+      "bytes": 814,
+      "sha256": "9ae4d7ea65f8098302e422543d2271c6105e23a4df5d5d707be68c639ff3a236"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "commit": "abc7444ddb3a3724763567d1955e58b157ba51df",
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    }
+  ],
+  "sourceComparison": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "opsSha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+      "quickSha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "same": false
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "opsSha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+      "quickSha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "same": false
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "opsSha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+      "quickSha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "same": false
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "opsSha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c",
+      "quickSha256": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e",
+      "same": false
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "opsSha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "quickSha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "same": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "opsSha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "quickSha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "same": true
+    },
+    {
+      "path": "package.json",
+      "opsSha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "quickSha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "same": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "opsSha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "quickSha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "same": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "opsSha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "quickSha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "same": true
+    }
+  ],
+  "localPacketsReadOnlyPins": [
+    {
+      "path": "/private/tmp/msgquick-checks-c1/manifest.json",
+      "sha256": "4bf7cf408d4eb764c138c5b4cc253c1e6704d28b3575596cc74ea00dd57ab240",
+      "bytes": 2528
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/binding.json",
+      "sha256": "2bd46393c60cad848227b73dc7d2c00951d557dd8744fd8773159a9d94b0f9c1",
+      "bytes": 44555
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/report.md",
+      "sha256": "2183360748ad711f38d32b38b244e1e3afb8fdaae234be042e1bb2871bbd1435",
+      "bytes": 5168
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/run.py",
+      "sha256": "61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0",
+      "bytes": 19168
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/steps.mjs",
+      "sha256": "ab0d4a4ca6cffd88ad08250014698f6a33591d56e069d9cfd30adbda0833fe5b",
+      "bytes": 1669
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/tsconfig.json",
+      "sha256": "1956b85af755289b2d27bd4691081aaf65fab2b0b1e9703fbe9e793db90a2672",
+      "bytes": 5943
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/vitest.config.mjs",
+      "sha256": "a48b1dcc1e3fa0f08a456352d49b4e8bc44fd5a10c590efbec63717ce9da42af",
+      "bytes": 4021
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/expected-tests.json",
+      "sha256": "9e2a4aee3a3b351fbf0cdab56f09af171ea53508d37df13bfc49377f0b2cbf80",
+      "bytes": 2614
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/manifest.json",
+      "sha256": "acee9bc2f242388ef36f14d70e36cca3723532e8c19a43dec1973cc4cfa2f654",
+      "bytes": 4942
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/binding.json",
+      "sha256": "5498571a23abb98232be1b8253b7545fc543c922f2ea3438e504babf56383ae0",
+      "bytes": 35781
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/report.md",
+      "sha256": "8ddd44c97436ffa32f13aa6baf454445a9e5ea989a23eb0ea93f34351fb86c46",
+      "bytes": 5548
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/supervisor.py",
+      "sha256": "4cfd2d927a8d3908ede1f79d287455dd59e149248432e7f45df5b1baf4ce7c3d",
+      "bytes": 25324
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/worker.mjs",
+      "sha256": "cb7bce4aa602e0a0cda355dc406f1dcdc8d42874fe51b782fe36996dc8289d44",
+      "bytes": 7149
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/runtime-tsconfig.json",
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18",
+      "bytes": 1620
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/aliases.json",
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4",
+      "bytes": 3483
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "applied": "Catalog discovery selected existing local skills; no network/install necessary."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "applied": "Single-purpose consumer boundary, exact identity and failure/cleanup semantics; no duplicate harness design."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "applied": "Actual fixture, explicit selector/await and browser cleanup semantics; no helper execution under read-only authorization."
+    }
+  ],
+  "scopeLimit": "Git/file reads and this TMP report only. No Node/product import/test/CI/browser/PG/install/free/proc. No mutation of any project or prepared packet. No authorization to activate workflow."
+}

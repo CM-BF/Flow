@@ -22,6 +22,8 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 
 ## 后续子片审查索引（不改变上述固定发布批准）
 
+[OPS-CI01 与 Web 验收消费研究](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)仅接收固定源、入口与证据边界分析；当前远程候选不执行 QuickControls 待验入口。这不重做 OPS 独审、不批准 CI 启用或 Web 新运行，既有产品/准备批准保持原范围。
+
 [三项原 owner 预览退役独审](../../docs/evidence/web-platform/ops-three-fixture-retirement/root-retirement-review.json)仅接受真实 TERM/exit143/组与端口关闭证据，不证明完整异步 handler 或回收收益。[快速设置 b1 静态准备审](../../docs/evidence/web-platform/message-settings02-browser-prepared/root-preparation-review.json)已通过，实际 c1 与浏览器检查全未运行，新的 Chrome 边界和运行准入仍未提供。
 
 2026-10-06：[快速设置fe6当前分层记录](../../docs/evidence/web-platform/message-settings02-fe6-source-preparation/intake.json)明确领取active、分支固定、类型/direct/browser未运行、Root已批准限定源码，[c1静态准备及终态合同已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/root-final-preparation-review.json)、仍无运行准入、未请求集成。三项早期问题仅源码关闭，不继承原Settings01运行证据。
