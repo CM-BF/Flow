@@ -1,0 +1,7 @@
+Preparing actual old Web b1c2e39837c2208e6fc2c59a80e16797f26448b5
+Preparing actual new Web 8d8ab520a9d43c7b9dafb22911416ee799ebf665
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(first && first.status === 201 || first && first.status === 200)
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/apps/web/test/web-release-compatibility.browser.ts:48:14)
