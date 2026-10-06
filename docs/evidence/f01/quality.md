@@ -27,4 +27,19 @@ Goal Owner独立只读接线APPROVED：9db3ce18e17ded201673bb3e514d5005cd68d866 
 
 clean-code复核：领域事务不复制进client/CLI，JSON输入受schema约束，所有命令显式key/AbortSignal，无不明自动重试。尚不含自然语言规划或native tool挂载；CHAT01普通会话走独立模块，不等待编排。
 
-CHAT client/export frozen84117ca：真实HTTP传输5/5、typecheck，0模型；中心模块尚未可用。Web基线无O01上下文导致pick冲突，共享owner生成web-chat-transport.patch（基线bac6）仅同三文件聊天内容，manifest逐文件hash，外部受控应用而非另改client。两轮真实模型提案见chat-live-proposal.md，调用尚未批准/未执行。
+CHAT client/export frozen84117ca：真实HTTP传输5/5、typecheck，0模型；中心模块尚未可用。Web基线无O01上下文导致pick冲突，共享owner生成web-chat-transport.patch（基线bac6）仅同三文件聊天内容，manifest逐文件hash，外部受控应用而非另改client。两轮真实模型提案见chat-live-proposal.md，预算已条件批准，三端审查/main/实际配置未就绪；0调用。
+
+
+## CHAT生产入口与X02消费者 2026-10-06 03:51 UTC
+
+沿用同TypeScript/Fastify/pg/client/CLI任务的find-skills发现；再次读本地clean-code/codebase-design，将业务约束保留原领域module，薄消费者只负责传输/输入schema/稳定key。没有新依赖。CHAT完整挂载37ab367在createServer初始化007会话和009正文、鉴权hook后注册接口；初期1d4/e599只import/register未迁移的中间态未交外部当完整可用入口，最终37ab已补完整并typecheck。
+
+X02接收已独审3d0cfc8完整领域，生产008位于projects/会话之后、正文009之前；插件client七方法与CLI register/list/show/versions/history/operation/change只使用owner HTTP。无install/enable等虚假命令，输出runtimeStatus仍unavailable。输入32KiB/公开schema，命令显式稳定key，CAS409保持exit3，不暗重试。领域实现未改；新增依赖/根锁变化均为零。
+
+固定共享目标095497dc1719d10df8309fdf17d95539fc891e06：真实PG+公开CLI1条纵向行为与client4条共5/5，2.25s；typecheck通过。原始输出plugins-checks.txt/plugins-typecheck.txt。注册重报、配置更新、旧revision冲突、历史读取、project过滤、中心重启和无隐式task/包安装均断言；专库flow_plugin_cli_PID_TIME与临时输入、动态端口清理。没有重复X02全17或全库，0模型。
+
+clean-code检查：错误不回显私密配置，CLI不把登记当安装，领域schema只有一个来源，thin methods保持统一鉴权/AbortSignal。CHAT02正式10模块测试由该owner保存（含首次HTTP teardown失败及修复后10/10）；共享入口独审另绑定37ab，不以CLI测试代替聊天完整验收。
+
+完整模块接收后集成候选149f50eb8440ed56e49cbdddb83f37bd18d6caa0：只选真实adapter注入SDK两轮、typed pending→success/重报重启、unknown与长正文lazy三条直接消费者，3/3通过（明确另外19条未选，非22重跑），3.38s。原始chat-production-consumer.txt；正式createServer含007/008/009，不用测试旁路挂载。CHAT01领域相对独审d0f零diff，CHAT02 test修复fcbc另独审；0模型，Web新聊天尚未完成独审。
+
+独立接线批准：Mika只读APPROVED 095497，五文件及raw hash已核，未重跑，无finding；Goal Owner只读APPROVED 37ab（1d4父版本→37ab的两文件组合），007/009 await位于serve前、owner auth后注册、pool异常清理与export准确，10/10原始stdout和共享source hash吻合。字段/限制与领域review分开，真实模型仍0。

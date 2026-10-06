@@ -1,3 +1,4 @@
+import { pluginRegistrationSchema, pluginCommandSchema, MAX_PLUGIN_REQUEST_BYTES } from '@flow/contracts';
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
@@ -16,7 +17,7 @@ const options = {
   decision: { type: 'string' }, expect: { type: 'string' }, timeout: { type: 'string' },
   name: { type: 'string' }, capacity: { type: 'string' }, after: { type: 'string' },
   resume: { type: 'string' }, 'delay-ms': { type: 'string' },
-  node: { type: 'string' }, version: { type: 'string' }, revision: { type: 'string' }, before: { type: 'string' }, limit: { type: 'string' }, input: { type: 'string' },
+  project: { type: 'string' }, node: { type: 'string' }, version: { type: 'string' }, revision: { type: 'string' }, before: { type: 'string' }, limit: { type: 'string' }, input: { type: 'string' },
 } as const;
 type Flags = ReturnType<typeof parseCliArgs>['values'];
 function parseCliArgs(args: string[]) { return parseArgs({ args, options, allowPositionals: true }); }
@@ -92,6 +93,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(await client.events(required(id, 'task ID'), after));
       return 0;
     }
+    case 'plugin': return pluginCommand(context);
     case 'goal': return goalCommand(context);
     case 'project': return projectCommand(context);
     case 'runner': return runnerCommand(context);
@@ -100,6 +102,34 @@ async function executeCommand(context: CommandContext): Promise<number> {
   }
 }
 
+
+async function pluginCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
+  const action = positionals[1];
+  const page = { ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) };
+  let result: unknown;
+  switch (action) {
+    case 'list': result = await client.plugins({ ...page, ...(values.project ? { projectId: values.project } : {}) }, signal); break;
+    case 'show': result = await client.plugin(required(positionals[2], 'plugin ID'), values.revision ? positiveNumber(values.revision, 'revision') : undefined, signal); break;
+    case 'versions': result = await client.pluginVersions(required(positionals[2], 'plugin ID'), page, signal); break;
+    case 'history': result = await client.pluginOperations(required(positionals[2], 'plugin ID'), page, signal); break;
+    case 'operation': result = await client.pluginOperation(required(positionals[2], 'plugin ID'), required(positionals[3], 'operation ID'), signal); break;
+    case 'register':
+    case 'change': {
+      const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
+      if (Buffer.byteLength(raw) > MAX_PLUGIN_REQUEST_BYTES) throw new UsageError('Plugin input must not exceed 32 KiB.');
+      let input: unknown;
+      try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+      const key = required(values.key, '--key (stable command identifier)');
+      result = action === 'register'
+        ? await client.registerPlugin(pluginRegistrationSchema.parse(input), key, signal)
+        : await client.commandPlugin(required(positionals[2], 'plugin ID'), pluginCommandSchema.parse(input), key, signal);
+      break;
+    }
+    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change. Registration does not install or load a package.');
+  }
+  io.out(JSON.stringify(result));
+  return 0;
+}
 
 async function goalCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
   const action = positionals[1];
@@ -218,6 +248,12 @@ Commands:
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
+  plugin register --input JSON-file --key stable-key
+  plugin list [--project project-id] [--after cursor] [--limit count]
+  plugin show <plugin-id> [--revision number]
+  plugin versions|history <plugin-id> [--after cursor] [--limit count]
+  plugin operation <plugin-id> <operation-id>
+  plugin change <plugin-id> --input JSON-file --key stable-key
   goal create --input JSON-file --key stable-key
   goal show <goal-id>
   goal input <goal-id> --node node-id [--version number]
@@ -240,4 +276,5 @@ Submit: --scenario success|decision|failure|verification-failure|slow|large
         --endpoint configured-ref (required for a2a)
         --delay-ms milliseconds --expect text --resume native-session-id
 Authentication: FLOW_TOKEN. Center: FLOW_URL (default http://127.0.0.1:4310).
+Plugin commands record declarations only; packages remain unavailable until verified and loaded.
 Leaving watch only stops observation. Use cancel to request execution to stop.`;

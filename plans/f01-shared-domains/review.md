@@ -1,5 +1,11 @@
 # F01 共享接线审查
 
+**当前增量状态：APPROVED**
+Review target commit：095497dc1719d10df8309fdf17d95539fc891e06
+Scope：X02公共挂载/export/client/CLI；CHAT生产入口37ab367另列同批检查。Mika独立只读APPROVED 095497：7薄client方法/CLI稳定key与schema/PG消费者检查完整核对，5源码与raw输出hash一致，无finding，未重跑。CHAT生产37ab由Goal Owner独立只读批准，核007/009迁移、鉴权后挂载、错误清理与10/10原始证据；未重跑。
+
+## 历史已审接线
+
 **状态：APPROVED**
 Review target commit：36aeaff12000d77ebd025859f999c69612fce653
 Reviewer：Goal Owner，只读，2026-10-06 03:02:23 UTC。

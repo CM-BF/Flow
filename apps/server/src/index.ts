@@ -1,3 +1,6 @@
+import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
+import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
+import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { timingSafeEqual } from 'node:crypto';
@@ -31,7 +34,16 @@ export async function createServer(options: ServerOptions) {
   if (options.allowedOrigin) await app.register(cors, { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] });
   const pool = new Pool({ connectionString: options.databaseUrl, max: 8, connectionTimeoutMillis: 5000, statement_timeout: 10_000 });
   pool.on('error', error => app.log.error(error));
-  try { await migrate(pool); await migrateWorkspace(pool); await migrateProjects(pool); await migrateProtocolDispatch(pool); await migrateGoals(pool); } catch (error) { await pool.end(); throw error; }
+  try {
+    await migrate(pool);
+    await migrateWorkspace(pool);
+    await migrateProjects(pool);
+    await migrateProtocolDispatch(pool);
+    await migrateGoals(pool);
+    await migrateConversations(pool);
+    await migratePlugins(pool);
+    await migrateAssistantMessages(pool);
+  } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
   let pendingSweep: Promise<void> | undefined;
   const sweep = setInterval(() => {
@@ -72,6 +84,9 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
+  registerConversationRoutes(app, pool, boss);
+  registerPluginRoutes(app, pool);
+  registerAssistantRoutes(app, pool);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);

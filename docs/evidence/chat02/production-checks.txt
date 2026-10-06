@@ -1,0 +1,20 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-native-events
+
+ ✓ apps/server/src/assistant/assistant.test.ts (10 tests) 7013ms
+   ✓ accepts a typed final through the ordered authenticated event interface  534ms
+   ✓ deduplicates an acknowledged final across center restart and terminal acknowledgement replay  558ms
+   ✓ requires a matching recorded session and rolls back an out-of-order batch atomically  538ms
+   ✓ rejects foreign credentials, wrong fence and caller-invented conversation ownership  999ms
+   ✓ keeps a single immutable final per attempt and checks stable native identity  507ms
+   ✓ keeps large assistant bodies out of light pages and binds bounded cursors to their task  1021ms
+   ✓ recovers a durable final after runner and center restart with a lost response before-save  665ms
+   ✓ recovers a durable final after runner and center restart with a lost response after-save  638ms
+   ✓ refuses a new final after lease expiry even when its native session remains recorded  434ms
+   ✓ records a failed synthetic SDK run without persisting error text as an assistant reply  632ms
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  20:50:24
+   Duration  7.40s (transform 151ms, setup 0ms, import 316ms, tests 7.01s, environment 0ms)
+
