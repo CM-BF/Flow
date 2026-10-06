@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-06T02:44:51.297Z",
+  "database": "flow_wpf_m02_0dd557cc46fc47b5b63eb1d6428a1c03",
+  "centerPort": 49503,
+  "webPort": 49518,
+  "input": "M02 + reviewed causal-order correction, real PostgreSQL and HTTP center, ten protocol-runner tasks (not ten models)",
+  "checks": [
+    "ten durable tasks through real PostgreSQL center and public runner protocol",
+    "Web workspace shows ten tasks and attention without eager detail reads",
+    "real inline approval, cancellation acknowledgement and stale decision rejection",
+    "real activity buffers during history reading and opens only requested artifact"
+  ],
+  "pageErrors": [],
+  "finalTasks": [
+    {
+      "id": "ae44b507-00ab-4278-b29a-601fafb3fc58",
+      "status": "running",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "f7654109-7d19-43cd-babc-a576f3b692c0",
+      "status": "cancelled",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "2506281f-f4e2-4a8b-bb60-af8bf559ecd6",
+      "status": "running",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "164d8c73-0571-45b9-a13f-3b7f346788e5",
+      "status": "uncertain",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "623df0c2-c0b6-41c9-8a60-8c84a8b7d49d",
+      "status": "cancelled",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "36594e34-b61a-42dc-ad08-3fcab836e3e9",
+      "status": "failed",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "8bf87b88-faf2-4f90-bd53-7838120649a8",
+      "status": "succeeded",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "765ff12d-03cf-4ae4-92af-5dfa84f90733",
+      "status": "succeeded",
+      "verificationStatus": "passed"
+    },
+    {
+      "id": "83350334-135e-46b9-80f7-3e126d362c09",
+      "status": "running",
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "cd173c0c-80a6-4d8f-a7c6-3b3aae7d3dc4",
+      "status": "waiting",
+      "verificationStatus": "pending"
+    }
+  ],
+  "cleanup": "Test-owned center, browser, Vite and database closed/dropped in finally"
+}

@@ -42,7 +42,11 @@ importers:
         specifier: workspace:*
         version: link:../../packages/contracts
 
-  apps/execution-dashboard: {}
+  apps/execution-dashboard:
+    dependencies:
+      pg:
+        specifier: 8.23.1
+        version: 8.23.1
 
   apps/runner:
     dependencies:

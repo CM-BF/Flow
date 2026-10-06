@@ -19,3 +19,7 @@ P01独立复跑官方A2A bridge6+MCP peer3+A2A client2，11/11，4.55秒，0模�
 ## 技能/clean-code
 
 本段find-skills复用本地已固定codebase-design/clean-code，React集成读取vercel-react-best-practices/assistant-ui/ai-elements/webapp-testing。实际核对Flow中心唯一状态权威、官方Thread/AI Elements源码职责与许可，不安装AI Gateway或重造状态管理；流式页使用明确ready locator，不使用networkidle。保留体积事实，未凭规则机械拆组件。
+
+## 独立集成差异复核
+
+assignment_review / gpt-6-astra 于2026-10-06 02:37 UTC只读 APPROVED `873738d9eb998c10bc71721d9b325fcc76ecd7b5` 的probe与registry差异：断言未弱化，final checks五份源码hash独立复算吻合，完整browser退出、同task/attempt、产物/verification、0→1→2详情与取消0artifact保留；两个新增WPF权威status实际存在。未重跑整旅程/模型，不把此结论扩张为未实现M2产品能力。

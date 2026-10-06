@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-06T03:30:20.343Z",
+  "source": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+  "sourceHashes": {
+    "packages/contracts/src/runner.ts": "eb975a9e6dfa339801c638e23e1d21a1b217d182073ab7a58c5090f96f0a7cf0",
+    "apps/server/src/runners.ts": "ad64c09b159b2578f6fb628eb1993157c7cb1f0a4e39783fe30f9eeb7ca143f2",
+    "apps/runner/src/attempt-control.ts": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+    "apps/runner/src/runtime.ts": "795be4e845684cfe98c15406d9c4e570dd9013e8fdb30448a5ff946a2f1a7e6b",
+    "apps/runner/src/runner.test.ts": "efb0e7f4f5d6792e1938ee799581a61e216542d74546733164d3971839de2f79",
+    "apps/runner/src/lease.test.ts": "64045287d3ed52c0966d237864c2306c8dde4ce6a4e7ddba88f528f6d029e2c3"
+  },
+  "stdoutHashes": {
+    "lease-red.txt": "5426ec6da7b8c6fe81a77335e26d9db0dbebcec4b28f2cfdf939b2ec75311331",
+    "storage-red.txt": "356ec0b58299affb082a6ce2ecc05beb2f5e46204adce15b5ae632d2d888e591",
+    "checks.txt": "10210862ccbedec194ce13920b7d7dd693ca93ff286025f63f85749b2f415552",
+    "typecheck.txt": "2c5193002b64b8c937ca2ee57709604691777e39013439128c2230a6ff734b72"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "os": "25.6.0",
+    "cpu": "Apple M3 Max",
+    "postgres": "PostgreSQL 16.13 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit"
+  },
+  "checks": {
+    "passed": 54,
+    "lease": 23,
+    "existingRunner": 25,
+    "client": 4,
+    "contracts": 2,
+    "typecheck": "passed",
+    "elapsedSeconds": 4.36,
+    "databaseRemoved": true,
+    "remainingOwnRunnerProcesses": 0,
+    "modelCalls": 0,
+    "cloudCalls": 0
+  },
+  "limits": [
+    "bounded lease reliability slice only",
+    "center fencing remains authoritative",
+    "no outbox indexing or concurrency changes",
+    "no FS/process/PTY feature",
+    "P02 runtime suite not rerun"
+  ]
+}

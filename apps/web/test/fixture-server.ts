@@ -429,6 +429,7 @@ export function createFixture() {
     tasks,
     details,
     requests,
+    activeStreamCount() { return [...streams.values()].reduce((count, group) => count + group.size, 0); },
     loseSubmitResponse() {
       loseNextSubmit = true;
     },

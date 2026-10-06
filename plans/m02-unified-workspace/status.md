@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:17 UTC / 2026-10-06 02:07 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:07:50 UTC / 2026-10-06 03:04 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-workspace` |
 | Branch | `codex/m2-workspace` |
 | 工作基线 / HEAD | `e845eb069c594989117fadf380335650efef27a2` / 已审实现e888862570cba3c59789053e68df7d5720650c36，metadata HEAD由Git显示 |
-| 工作树dirty状态 | 公共工作入口/CLI首段待提交，实际HEAD另由Git记录 |
-| 工作分支状态 | in-progress；公共查询/CLI可交接口，产品Web整改由外部分队推进 |
+| 工作树dirty状态 | backend/CLI首段已提交、已集成；本次仅metadata更新 |
+| 工作分支状态 | completed（本树backend/CLI片段）；产品Web和整体验收另由WPF-M02/I02接续 |
 | 检查状态 | PASSED 公共 contracts/client 8/8；全库 typecheck 通过；中心行为由 C02 验证，未称系统恢复已完成 |
-| 已集成main状态 / HEAD | M02 尚未集成；main 观察值 `e845eb069c594989117fadf380335650efef27a2`，已有 M1 |
+| 已集成main状态 / HEAD | M02首段及201-task因果修复已集成；观察main ea8d44f7d9738cb98a1dfafd1636e2bbd7c17427，后续范围变化不抹去历史交付 |
 | 实现目标 | e888862570cba3c59789053e68df7d5720650c36 |
 | 实现范围 | apps/server/src/m2-workspace.ts, apps/server/src/m2-workspace.test.ts, apps/server/src/task-index.ts, packages/contracts/src/workspace.ts, packages/client/src/index.ts, apps/cli/src/ |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已能统一读取跨任务工作记录和待决策，正在接入产品界面 |
-| 下一可用交付 | 同一入口处理不同任务决策并查看证据 |
+| 当前产出 | 后端与CLI已交付，产品界面由WPF-M02唯一owner接续 |
+| 下一可用交付 | 无，本树片段无待交；统一Web交付见WPF-M02/I02 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，backend/CLI首段APPROVED e888862570cba3c59789053e68df7d5720650c36；完整产品M02未完成 |
@@ -26,7 +26,7 @@
 | --- | --- | --- | --- |
 | M02-T01 | completed | Execution Lead | 公共 schema/client 首批完成，8/8 接口检查与 typecheck 通过；等待中心实现联调 |
 | M02-T02 | completed | Execution Lead | [公共接口](../../docs/architecture/m2-workspace.md)，5/5专用PG检查通过 |
-| M02-T03 | in-progress | Lead / 外部W01 | CLI已实现；Web owner等稳定接口交接 |
+| M02-T03 | in-progress | Lead / 外部W01 | CLI已集成；WPF-M02 d47c602已独立APPROVED，最终主线接收归I02 |
 | M02-T04 | pending | Execution Lead | 未执行 |
 | M02-T05 | pending | Execution Lead | 未执行 |
 
@@ -36,7 +36,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-无当前外部阻塞。C02 等待公共契约；本工作段优先解除。完整多任务体验、动态计划和分层性能尚未完成。R02 原模型预算 5/5 已用尽，本阶段零模型调用。
+本树backend交付无阻塞；C02已集成，WPF-M02独立owner已完成并通过审查。完整多任务体验、动态计划和分层性能尚未完成。R02 原模型预算 5/5 已用尽，本阶段零模型调用。
 
 ## 需要用户决定
 
@@ -44,7 +44,7 @@
 
 ## 下一步与handoff
 
-固定恢复 schema/client 提交给 C02；并行确定 M2 轻量跨任务查询，再实现连续入口。公共路由/迁移在 owner 提交后协调，不在两工作树写同一功能。
+本树backend/CLI不继续重复实现Web。M02余下产品与整体验收TODO由WPF-M02和I02提供证据，FLOW-001原自然语言多agent目标另O01，未将手动10任务视为最终产品完成。
 
 ## Dashboard 同步
 

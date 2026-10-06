@@ -1,0 +1,15 @@
+Error: expect(locator).toBeFocused() failed
+
+Locator:  getByRole('tab', { name: 'Workspace proof', exact: true })
+Expected: focused
+Received: inactive
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeFocused" getByRole('tab', { name: 'Workspace proof', exact: true }) with timeout 5000ms
+  - waiting for getByRole('tab', { name: 'Workspace proof', exact: true })
+    14 × locator resolved to <button role="tab" tabindex="0" type="button" aria-selected="true" title="Workspace proof" id="_r_6_-tab-detail%3Aworkspace-proof" aria-controls="_r_6_-panel-detail%3Aworkspace-proof">…</button>
+       - unexpected value "inactive"
+
+Checks: initial workspace and attention with zero unopened detail reads, historical reading buffers new records, preserves anchor through prepend and resize, inline decision conflict refreshes without automatically answering a replacement, explicit cancellation from attention, over-100 attention window and exact complete index pagination
+Page errors: 

@@ -34,6 +34,11 @@ function compactTask(task, subtitle) {
   title.append(element('span', task.id, 'task-code'), element('h3', task.title));
   text.append(title);
   if (subtitle) text.append(element('p', subtitle));
+  const allocation = element('p', undefined, 'allocation');
+  if (task.assignments === null) allocation.textContent = '领取状态未知';
+  else if (!task.assignments?.length) allocation.textContent = '尚无领取登记；接手前须核对';
+  else allocation.textContent = task.assignments.map(claim => `${claim.role === 'review' ? '只读审查' : claim.role === 'integration' ? '受控集成' : claim.state === 'handoff_pending' ? '交接待接收' : '已领取'} · ${claim.lead} / ${claim.worker}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}${claim.matchesSource ? '' : ' · 进度来源待对齐'}`).join('；');
+  text.append(allocation);
   row.append(text, taskButton(task));
   return row;
 }
@@ -57,6 +62,14 @@ function renderSignal(selector, ids, kind, empty) {
 }
 function render() {
   const view = snapshot.overview;
+  const unregistered = snapshot.unregisteredAssignments ?? [];
+  $('#unregistered-claims').hidden = !unregistered.length;
+  $('#unregistered-claim-items').replaceChildren(...unregistered.map(claim => {
+    const row = element('article', undefined, 'task-row');
+    const copy = element('div', undefined, 'task-copy');
+    copy.append(element('h3', claim.taskId), element('p', `${claim.lead} / ${claim.worker}`), element('p', `${claim.state} · ${claim.branch} · ${claim.worktree}`, 'allocation'));
+    row.append(copy); return row;
+  }));
   $('#page-title').textContent = view.phase ? `当前推进 ${view.phase}` : '当前阶段待补';
   $('#phase-note').textContent = view.phase ? '每项进展都能打开原始记录。' : '负责人补充阶段摘要后显示；现有计划仍可查看。';
   const active = tasksFor(view.activeIds);
@@ -92,6 +105,7 @@ async function refresh() {
   } finally { $('#refresh').disabled = false; }
 }
 
+function humanSignal(value) { return value?.state === 'none' ? '无' : value?.state === 'active' ? value.text : '未知，待负责人核对'; }
 function addFact(list, label, value) { list.append(element('dt', label), element('dd', plain(value || '未知'))); }
 function openTask(id) {
   const task = snapshot?.tasks.find(task => task.id === id); if (!task) return;
@@ -101,13 +115,20 @@ function openTask(id) {
   for (const issue of task.issues) content.append(element('p', issue, 'notice warning'));
   const facts = element('dl', undefined, 'detail-facts');
   for (const [label, value] of [
-    ['Owner', task.status.owner], ['人类摘要缺口', task.status.human?.missing.join('、') || '无；摘要字段完整'], ['声明实现目标', task.status.implementation?.target], ['声明实现范围', task.status.implementation?.scopes.join('\n')], ['实现核验', JSON.stringify(task.implementationProof, null, 2)], ['Review 范围核验', JSON.stringify(task.review.proof ?? { state: '未执行', reason: '无可核验的 approval' }, null, 2)], ['工作分支', task.status.branchState], ['下一交付', task.status.next], ['阻塞 / 风险', task.status.risks], ['用户决定', task.status.decisions],
+    ['Owner', task.status.owner], ['人类摘要缺口', task.status.human?.missing.join('、') || '无；摘要字段完整'], ['声明实现目标', task.status.implementation?.target], ['声明实现范围', task.status.implementation?.scopes.join('\n')], ['实现核验', JSON.stringify(task.implementationProof, null, 2)], ['Review 范围核验', JSON.stringify(task.review.proof ?? { state: '未执行', reason: '无可核验的 approval' }, null, 2)], ['工作分支', task.status.branchState], ['下一交付', task.status.human?.next || '未知，待负责人补充'], ['当前阻塞', humanSignal(task.status.human?.blocker)], ['用户决定', humanSignal(task.status.human?.decision)], ['历史风险与技术说明', task.status.risks],
     ['检查记录', task.status.checks.record], ['审查结论', `${plain(task.review.record)}\n目标：${task.review.target ?? '未绑定提交'}`], ['main 集成记录', `${plain(task.main.record)}\n${task.main.reason}\n方法：${task.main.method}\n实现目标：${task.main.target ?? '未知'}\n现场 main：${task.main.mainHead ?? '未知'}\n观察时间：${task.main.observedAt}`],
     ['权威 status', task.source.path], ['来源模式', task.source.mode === 'live' ? '权威 worktree' : task.source.mode === 'frozen' ? `冻结旧记录 ${task.source.frozenCommit}` : '缺失'],
     ['状态更新时间', timestamp(task.status.updatedAt)], ['文件修改时间', timestamp(task.source.modifiedAt)], ['本次读取时间', timestamp(task.source.syncedAt)],
     ['登记分支', task.branch], ['现场 Git', `${task.git.branch ?? '未知'}\n${task.git.head ?? 'HEAD 未知'}\n${task.git.dirty === null ? 'dirty 未知' : task.git.dirty ? `dirty；${task.git.changedFiles} 项变化` : 'clean'}`],
     ['owner 声明 HEAD', task.status.declaredHead], ['owner 声明 dirty', task.status.declaredDirty],
   ]) addFact(facts, label, value);
+  content.append(element('h3', '领取与写入范围'));
+  if (task.assignments === null) content.append(element('p', '领取状态未知；协调数据库不可用，禁止据此新接手。', 'notice warning'));
+  for (const claim of task.assignments ?? []) {
+    const assignment = element('dl', undefined, 'detail-facts');
+    for (const [label, value] of [['领取 ID / version', `${claim.claimId} / ${claim.version}`], ['Lead / Worker', `${claim.lead} / ${claim.worker}`], ['状态 / role', `${claim.state} / ${claim.role}`], ['Branch / worktree', `${claim.branch}\n${claim.worktree}`], ['精确 scope', claim.scope.join('\n') || '无实现写权限'], ['来源', claim.origin === 'migration' ? `现有合法派工迁移；观察 ${timestamp(claim.observedAt)}` : '原子领取'], ['更新 / 核对', `${timestamp(claim.updatedAt)}${claim.needsVerification ? '；记录陈旧但仍占用，禁止抢占' : ''}`], ['接收方', claim.next ? `${claim.next.lead} / ${claim.next.worker}\n${claim.next.worktree}` : '无']]) addFact(assignment, label, value);
+    content.append(assignment);
+  }
   content.append(facts, element('h3', '计划、状态与证据'));
   const documents = element('div', undefined, 'documents');
   for (const doc of task.documents) { const button = element('button', doc.title); button.type = 'button'; button.addEventListener('click', () => openDocument(task, doc)); documents.append(button); }

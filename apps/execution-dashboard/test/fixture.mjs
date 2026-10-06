@@ -67,7 +67,7 @@ export async function fixture(context) {
   await mkdir(mainWorktree);
   git(mainWorktree, 'init', '-q', '-b', 'main');
   git(mainWorktree, '-c', 'user.name=D01 Test', '-c', 'user.email=d01@example.invalid', 'commit', '-q', '--allow-empty', '-m', 'initial');
-  const registry = validateRegistry({ tasks, mainWorktree, fallbackWorktree: tasks[0].worktree, frozenCommit: git(tasks[0].worktree, 'rev-parse', 'HEAD'), staleAfterHours: 24 });
+  const registry = validateRegistry({ tasks, mainWorktree, fallbackWorktree: tasks[0].worktree, frozenCommit: git(tasks[0].worktree, 'rev-parse', 'HEAD'), staleAfterHours: 24, phaseSourceId: 'T01' });
   const server = createDashboardServer(registry);
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   context.after(() => new Promise(resolve => { server.closeAllConnections(); server.close(resolve); }));
