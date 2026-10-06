@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-tools
+
+ ❯ apps/runner/src/goal-tools-mcp/bridge.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/goal-tools-mcp/bridge.test.ts [ apps/runner/src/goal-tools-mcp/bridge.test.ts ]
+Error: Cannot find module './index.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-tools/apps/runner/src/goal-tools-mcp/bridge.test.ts'
+ ❯ apps/runner/src/goal-tools-mcp/bridge.test.ts:6:1
+      4| import { afterEach, expect, it } from 'vitest';
+      5| import type { GoalSnapshot, GoalToolPort } from '../../../../packages/…
+      6| import { createGoalToolsMcp } from './index.js';
+       | ^
+      7| 
+      8| const goalId = randomUUID();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  21:14:01
+   Duration  190ms (transform 10ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+
