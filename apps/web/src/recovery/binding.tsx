@@ -121,8 +121,12 @@ export class RecoveryWorkspace {
     const run = async () => {
       current();
       const saved = await captured.host.journal.saveDraft(captured.namespace, owner, data, state.version);
+      // Commit can finish just before reauthentication. Remember its version only for this same
+      // namespace/view so a later explicit retry does not use the pre-commit CAS value.
+      const now = this.host(), identity = now?.namespace(), currentOwner = now?.owner(viewKey);
+      if (identity && namespaceKey(identity) === namespaceKey(captured.namespace) && currentOwner?.viewKey === owner.viewKey && currentOwner.projectId === owner.projectId) state.version = saved.version;
       current();
-      state.version = saved.version; state.savedSerial = serial; state.error = undefined;
+      state.savedSerial = serial; state.error = undefined;
     };
     this.publish({ saving: this.state.saving + 1 });
     const flight = state.chain.then(run);
@@ -176,19 +180,28 @@ export class RecoveryWorkspace {
     };
     return {
       prepare: async command => {
-        const state = this.draft(viewKey), pending = state.handoff;
-        const frozen = command.frozen && typeof command.frozen === "object" && !Array.isArray(command.frozen) ? command.frozen : {};
-        const queue = "command" in frozen && frozen.command && typeof frozen.command === "object" && !Array.isArray(frozen.command) ? frozen.command : {};
-        const handoff = pending?.domain === command.domain && (command.domain !== "queue" || ("kind" in queue && queue.kind === "enqueue")) && (command.domain !== "steering" || ("taskId" in frozen && frozen.taskId === pending.taskId)) ? pending : undefined;
-        if (handoff) await state.chain;
-        if (state.error && handoff) { await this.enqueue(viewKey, handoff.data); await state.chain; }
-        if (handoff && state.error) throw new RecoveryError("commit", state.error);
-        if (handoff && state.handoff !== handoff) throw new RecoveryError("conflict", "The preparing draft changed before durable handoff.");
-        transfer = handoff && command.domain !== "steering" ? { id: `draft:${viewKey}`, version: state.version } : undefined;
-        // Display metadata is retained with the command, but its text already lives in frozen.input/request.
-        const display = handoff?.data && typeof handoff.data === "object" && !Array.isArray(handoff.data) ? recoveryValue({ ...handoff.data, text: undefined }) : undefined;
         try {
-          await bound().prepare({ ...command, ...(display ? { display } : {}) });
+          // Bind before any draft-save await. A reauthentication must never adopt and resume this pending send.
+          const authority = this.current(), generation = authority.host.generation(), owner = authority.host.owner(viewKey);
+          if (!owner) throw new RecoveryError("unavailable", "The command view is no longer available.");
+          const check = () => {
+            const current = this.current(), nextOwner = current.host.owner(viewKey);
+            if (current.host.generation() !== generation || namespaceKey(current.namespace) !== namespaceKey(authority.namespace) || nextOwner?.viewKey !== owner.viewKey || nextOwner.projectId !== owner.projectId)
+              throw new RecoveryError("unavailable", "Authentication or project changed during preparation. Explicitly retry the retained original receipt.");
+          };
+          const commandPort = bound();
+          const state = this.draft(viewKey), pending = state.handoff;
+          const frozen = command.frozen && typeof command.frozen === "object" && !Array.isArray(command.frozen) ? command.frozen : {};
+          const queue = "command" in frozen && frozen.command && typeof frozen.command === "object" && !Array.isArray(frozen.command) ? frozen.command : {};
+          const handoff = pending?.domain === command.domain && (command.domain !== "queue" || ("kind" in queue && queue.kind === "enqueue")) && (command.domain !== "steering" || ("taskId" in frozen && frozen.taskId === pending.taskId)) ? pending : undefined;
+          if (handoff) { await state.chain; check(); }
+          if (state.error && handoff) { check(); await this.enqueue(viewKey, handoff.data); await state.chain; check(); }
+          if (handoff && state.error) throw new RecoveryError("commit", state.error);
+          if (handoff && state.handoff !== handoff) throw new RecoveryError("conflict", "The preparing draft changed before durable handoff.");
+          transfer = handoff && command.domain !== "steering" ? { id: `draft:${viewKey}`, version: state.version } : undefined;
+          // Display metadata is retained with the command, but its text already lives in frozen.input/request.
+          const display = handoff?.data && typeof handoff.data === "object" && !Array.isArray(handoff.data) ? recoveryValue({ ...handoff.data, text: undefined, steering: undefined }) : undefined;
+          check(); await commandPort.prepare({ ...command, ...(display ? { display } : {}) }); check();
           this.blockedCommands.get(viewKey)?.delete(command.id);
           if (handoff) { if (transfer) state.version = 0; state.savedSerial = state.serial; this.endHandoff(viewKey); }
         } catch (error) {

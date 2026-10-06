@@ -18,6 +18,7 @@ export interface LocalSteeringReceipt {
   readonly phase: "sending" | "unknown" | "accepted" | "rejected";
   readonly everUnknown: boolean;
   readonly locallyBlocked?: boolean;
+  readonly recoveryVersion?: number;
   readonly command?: SteeringCommandReference;
   readonly error?: string;
 }
@@ -126,14 +127,16 @@ class Control implements SteeringControl {
   configureRecovery(recovery: CommandRecovery) { this.recovery = recovery; }
   restore(record: CommandRecord) {
     const value = object(record.frozen);
-    if (record.domain !== "steering" || value.key !== record.id || value.taskId !== this.identity.taskId || this.receipts.has(record.id)) invalid();
+    if (record.domain !== "steering" || value.key !== record.id || value.taskId !== this.identity.taskId) invalid();
     const input = Object.freeze(steeringCommandSchema.parse(value.input));
     const bytes = integer(value.bytes, 1), hash = digest(value.digest);
     if (bytes !== new TextEncoder().encode(input.text).byteLength || bytes > 16_384) invalid();
+    const previous = this.receipts.get(record.id);
+    if (previous && (previous.phase === "sending" || JSON.stringify(previous.input) !== JSON.stringify(input) || previous.bytes !== bytes || previous.digest !== hash)) invalid();
     const command = record.phase === "accepted" ? reference(record.checkpoint, this.identity.taskId, input.attemptId) : undefined;
     if (command && (command.ownerVersion !== input.ownerVersion || command.revision !== input.expectedRevision + 1 || command.input.bytes !== bytes || command.input.digest !== hash)) invalid();
     if (command) mergeCommand(this.commands, command);
-    this.receipts.set(record.id, Object.freeze({ key: record.id, input, bytes, digest: hash, ...(command ? { command } : {}), phase: record.phase === "accepted" ? "accepted" : record.phase === "rejected" ? "rejected" : "unknown", everUnknown: record.phase === "unknown" || record.phase === "dispatching", error: "Original steering receipt restored. No instruction was resent." }));
+    this.receipts.set(record.id, Object.freeze({ key: record.id, input, bytes, digest: hash, recoveryVersion: record.version, ...(command ? { command } : {}), phase: record.phase === "accepted" ? "accepted" : record.phase === "rejected" ? "rejected" : "unknown", everUnknown: record.phase === "unknown" || record.phase === "dispatching", error: "Original steering receipt restored. No instruction was resent." }));
     this.publish();
   }
   constructor(private readonly identity: Readonly<SteeringIdentity>, private readonly port: SteeringPort) { this.snapshot = this.build(); }
@@ -244,23 +247,23 @@ class Control implements SteeringControl {
   retry = (key: string): boolean => {
     const receipt = this.receipts.get(key);
     if (!this.allowed() || this.preparing || this.sending || receipt?.phase !== "unknown") return false;
-    this.dispatch(receipt); return true;
+    this.dispatch(receipt, true); return true;
   };
-  private dispatch(receipt: LocalSteeringReceipt) {
+  private dispatch(receipt: LocalSteeringReceipt, explicitRetry = false) {
     const controller = new AbortController(), generation = this.generation;
     this.sending = { key: receipt.key, controller }; this.receipts.set(receipt.key, Object.freeze({ ...receipt, phase: "sending", locallyBlocked: false, error: undefined })); this.publish();
     const signal = AbortSignal.any([controller.signal, AbortSignal.timeout(STEERING_LIMITS.timeoutMs)]);
-    void this.accept(receipt, signal, generation).finally(() => {
+    void this.accept(receipt, signal, generation, explicitRetry).finally(() => {
       if (this.sending?.controller === controller) { this.sending = undefined; this.publish(); if (this.allowed()) void this.refresh(); }
     });
   }
-  private async accept(receipt: LocalSteeringReceipt, signal: AbortSignal, generation: number) {
+  private async accept(receipt: LocalSteeringReceipt, signal: AbortSignal, generation: number, explicitRetry = false) {
     const recovery = this.recovery;
     let sent = false;
     try {
       if (await textDigest(receipt.input.text) !== receipt.digest) invalid();
       if (generation !== this.generation || signal.aborted || !this.allowed()) return;
-      await recovery?.prepare({ id: receipt.key, domain: "steering", slot: `steering:${this.identity.taskId}`, frozen: recoveryValue({ key: receipt.key, taskId: this.identity.taskId, input: receipt.input, bytes: receipt.bytes, digest: receipt.digest }) });
+      await recovery?.prepare({ id: receipt.key, domain: "steering", slot: `steering:${this.identity.taskId}`, frozen: recoveryValue({ key: receipt.key, taskId: this.identity.taskId, input: receipt.input, bytes: receipt.bytes, digest: receipt.digest }), expectedVersion: receipt.recoveryVersion, explicitRetry });
       await recovery?.dispatch(receipt.key);
       if (generation !== this.generation || signal.aborted || !this.allowed()) return;
       sent = true;

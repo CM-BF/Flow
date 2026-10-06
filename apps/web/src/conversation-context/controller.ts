@@ -199,7 +199,7 @@ export function createContextSelection(options: { binding: ContextBinding; readi
       } catch { return Promise.resolve(); }
       const key = citationKey(citation), pending = bodyRequests.get(key), cached = bodies.get(key);
       if (pending) return pending.promise;
-      if (cached?.data && !refresh) { bodies.delete(key); bodies.set(key, cached); return Promise.resolve(); }
+      if (cached?.data && !refresh && !unverified.has(key)) { bodies.delete(key); bodies.set(key, cached); return Promise.resolve(); }
       if (bodyRequests.size >= CONTEXT_BUDGET.bodyRequests) {
         updateBody(key, { ...cached, loading: false, error: "Two knowledge reads are in progress. Try again when one finishes." }); return Promise.resolve();
       }

@@ -364,6 +364,7 @@ function Workspace({
   recovery,
   active = true,
   onDisconnect,
+  onRecoveryGuard,
   theme,
   onTheme,
 }: {
@@ -371,6 +372,7 @@ function Workspace({
   recovery?: RecoveryEnvironment;
   active?: boolean;
   onDisconnect: () => void;
+  onRecoveryGuard?: (guard: (() => Promise<void>) | null) => void;
   theme: Theme;
   onTheme: (theme: Theme) => void;
 }) {
@@ -565,7 +567,7 @@ function Workspace({
     session?.releaseView(view.key);
     const aliases = [...views].filter(([, candidate]) => candidate.key === view.key).map(([id]) => id);
     aliases.forEach(id => { views.delete(id); drafts.delete(id); });
-    setProfileSelections(previous => { const next = { ...previous }; delete next[view.key]; return next; });
+    const selections = { ...profileRef.current }; delete selections[view.key]; profileRef.current = selections; setProfileSelections(selections);
     setPanelTabs(previous => { const next = { ...previous }; aliases.forEach(id => { delete next[id]; }); return next; });
     const taskId = view.projection.getSnapshot().task?.id;
     setPanelFocusRequest(previous => previous?.taskId === taskId ? null : previous);
@@ -674,12 +676,21 @@ function Workspace({
         if (record.domain === "outbox" && record.phase !== "accepted") restoreOutbox(record); // Validate all frozen wire fields before touching a view.
       }
       if (!route.startsWith("draft-") && !route.startsWith("conversation:")) throw Error("Saved material has no valid conversation route.");
-      const existing = viewEntry(record.owner.viewKey);
+      let existing = viewEntry(record.owner.viewKey);
       if (existing && record.kind === "draft" && (drafts.get(existing[0])?.text || session.recoveryMaterials(record.owner.viewKey).knowledge.length || session.recoveryMaterials(record.owner.viewKey).attachments.length)) throw Error("Keep the current draft separately before restoring this one.");
+      const placeholder = !existing ? views.get(route) : undefined;
+      if (placeholder && placeholder.key !== record.owner.viewKey) {
+        if (protectedReasons(route, placeholder).length) throw Error("Keep the current local material before restoring another saved identity in this conversation.");
+        // A reload may already have opened this route with a fresh, empty view. Restore the saved stable identity, not a second alias.
+        releaseConversation(placeholder);
+      }
       const view = existing?.[1] ?? ensureView(route, record.owner.viewKey); if (!view?.conversation) throw Error("Free an empty chat before restoring.");
       const projection = view.conversation;
       projection.configureRecovery(session.recovery.commandPort(view.key));
-      if (record.kind === "command" && record.domain === "outbox" && record.phase !== "accepted" && projection.outbox.getSnapshot()?.id !== record.id) projection.restoreReceipt(record);
+      if (record.kind === "command" && record.domain === "outbox") {
+        if (record.phase === "accepted") { const id = await projection.reconcileReceipt(record); current(); if (existing) accepted(existing[0], id); existing = viewEntry(record.owner.viewKey); }
+        else projection.restoreReceipt(record);
+      }
       if (route.startsWith("conversation:")) { await projection.refresh(); current(); if (projection.getSnapshot().snapshot?.conversation.id !== route.slice(13)) throw Error("The center did not confirm this conversation."); }
       const projectId = projection.getSnapshot().snapshot?.conversation.projectId ?? projection.outbox.getSnapshot()?.creation?.projectId;
       if ((projectId ?? null) !== (record.owner.projectId ?? null) && (route.startsWith("conversation:") || record.kind === "command")) throw Error("The original conversation project does not match this saved record.");
@@ -697,7 +708,7 @@ function Workspace({
         setGroups(previous => [...previous]);
       } else if (record.kind === "command" && record.domain === "queue") {
         const commands = projection.queue.commands; if (!commands) throw Error("Queue commands are unavailable in this center.");
-        if (!commands.getSnapshot().some(item => item.key === record.id)) commands.restore(record);
+        commands.restore(record);
       } else if (record.kind === "command" && record.domain === "steering") session.steering.restoreReceipt(view.key, record);
     },
     retry: async record => {
@@ -795,6 +806,10 @@ function Workspace({
     const preventLoss = (event: BeforeUnloadEvent) => { if (session?.steering.risks() || session?.hasProtectedAttachments() || [...views.values()].some(view => session?.recovery.protection(view.key).length)) { event.preventDefault(); event.returnValue = ""; } };
     window.addEventListener("beforeunload", preventLoss); return () => window.removeEventListener("beforeunload", preventLoss);
   }, [session]);
+  useLayoutEffect(() => {
+    onRecoveryGuard?.(session ? () => session.recovery.flush() : async () => { throw Error("The previous workspace is still opening."); });
+    return () => onRecoveryGuard?.(null);
+  }, [session, onRecoveryGuard]);
   const disconnectNow = async () => {
     try { if (recovery) await session?.recovery.flush(); onDisconnect(); }
     catch (error) { setRecoveryError(error instanceof Error ? error.message : "Local recovery has not finished. Keep this page open."); }
@@ -1112,8 +1127,8 @@ function WorkspacePanelMount({
   );
   return <PluginWorkspace state={state} activeTab={activeTab} focusRequest={focusRequest} container={container} onClose={onClose} />;
 }
-function Connection({ onConnect, address = "", phase, error, onRead, onLogout }: {
-  onConnect: (url: string, token: string) => void; address?: string; phase?: string; error?: string; onRead?: () => void; onLogout?: () => void;
+function Connection({ onConnect, address = "", phase, error, onRead, onLogout, onDiscardRetained }: {
+  onConnect: (url: string, token: string) => void; address?: string; phase?: string; error?: string; onRead?: () => void; onLogout?: () => void; onDiscardRetained?: () => void;
 }) {
   const [url, setUrl] = useState(address);
   const [token, setToken] = useState("");
@@ -1130,6 +1145,7 @@ function Connection({ onConnect, address = "", phase, error, onRead, onLogout }:
       {error && <p role="alert">{error}</p>}
       {onRead && <Button variant="outline" onClick={onRead}>Check existing browser session</Button>}
       {onLogout && <Button variant="outline" onClick={onLogout}>Sign out of this center</Button>}
+      {onDiscardRetained && <Button variant="outline" onClick={onDiscardRetained}>Discard previous page-only work</Button>}
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -1176,7 +1192,10 @@ function BrowserWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: T
   const [connection, setConnection] = useState(() => new ConnectionSession(savedCenter()));
   const state = useSyncExternalStore(connection.subscribe, connection.getSnapshot);
   const [journal] = useState(() => new ConversationRecoveryJournal());
-  const [retained, setRetained] = useState<RecoveryNamespace | null>(null);
+  const [retained, setRetained] = useState<{ namespace: RecoveryNamespace; session: ConnectionSession; client: FlowClient } | null>(null);
+  const retainedGuard = useRef<(() => Promise<void>) | null>(null), connections = useRef(new Set([connection]));
+  const registerGuard = useCallback((guard: (() => Promise<void>) | null) => { retainedGuard.current = guard; }, []);
+  const [retentionBlocked, setRetentionBlocked] = useState(false);
   const [selecting, setSelecting] = useState(false), [error, setError] = useState<string>();
   const channel = useRef<BroadcastChannel | null>(null);
   const connectIntent = useRef<{ session: ConnectionSession; token: string } | null>(null);
@@ -1191,25 +1210,41 @@ function BrowserWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: T
     window.addEventListener("online", online); window.addEventListener("offline", online); window.addEventListener("pageshow", wake); window.addEventListener("focus", wake);
     document.addEventListener("visibilitychange", wake);
     if (typeof BroadcastChannel !== "undefined") { const bus = new BroadcastChannel("flow.browser-session-observation.v1"); channel.current = bus; bus.onmessage = event => { if (event.data === connection.getSnapshot().address) void connection.read(); }; }
-    return () => { window.removeEventListener("online", online); window.removeEventListener("offline", online); window.removeEventListener("pageshow", wake); window.removeEventListener("focus", wake); document.removeEventListener("visibilitychange", wake); channel.current?.close(); channel.current = null; connection.dispose(); };
+    return () => { window.removeEventListener("online", online); window.removeEventListener("offline", online); window.removeEventListener("pageshow", wake); window.removeEventListener("focus", wake); document.removeEventListener("visibilitychange", wake); channel.current?.close(); channel.current = null; connection.setOnline(false); };
   }, [connection]);
-  useEffect(() => { if (state.phase === "ready" && state.identity) { setRetained(previous => previous && namespaceKey(previous) === namespaceKey(state.identity!) ? previous : state.identity); setSelecting(false); } }, [state.phase, state.identity]);
-  useEffect(() => () => { void journal.close(); }, [journal]);
-  const ready = !!retained && state.phase === "ready" && !!state.identity && namespaceKey(state.identity) === namespaceKey(retained) && !selecting;
+  useEffect(() => {
+    if (state.phase !== "ready" || !state.identity) return;
+    let current = true;
+    const identity = state.identity;
+    void (async () => {
+      if (retained && namespaceKey(retained.namespace) !== namespaceKey(identity)) {
+        if (!retainedGuard.current) throw Error("The previous workspace is still opening.");
+        await retainedGuard.current();
+      }
+      if (!current || !connection.authorized(identity)) return;
+      setRetained(previous => previous && namespaceKey(previous.namespace) === namespaceKey(identity) ? previous : { namespace: identity, session: connection, client });
+      setRetentionBlocked(false); setSelecting(false);
+    })().catch(() => { if (current) { setRetentionBlocked(true); setError("Previous page-only work is retained but hidden. Reconnect its original center to resolve saving, or explicitly discard that unsaved work. Saved journal records are not removed."); } });
+    return () => { current = false; };
+  }, [state.phase, state.identity, connection, client, retained]);
+  useEffect(() => { for (const old of connections.current) if (old !== connection && old !== retained?.session) { old.dispose(); connections.current.delete(old); } }, [connection, retained]);
+  useEffect(() => () => { for (const value of connections.current) value.dispose(); void journal.close(); }, [journal]);
+  const ready = !!retained && state.phase === "ready" && !!state.identity && retained.session === connection && namespaceKey(state.identity) === namespaceKey(retained.namespace) && !selecting;
   const connect = async (address: string, token: string) => {
     setError(undefined);
     try {
       const canonical = recoveryAddress(address, location.href);
       localStorage.setItem(CENTER_CHOICE, canonical); // URL only, never token, principal, CSRF or body.
       let target = connection;
-      if (canonical !== state.address) { target = new ConnectionSession(canonical); connectIntent.current = { session: target, token }; setRetained(null); setConnection(target); return; }
+      if (canonical !== state.address) { target = retained?.session.getSnapshot().address === canonical ? retained.session : new ConnectionSession(canonical); connections.current.add(target); connectIntent.current = { session: target, token }; setConnection(target); return; }
       await target.connect(token); channel.current?.postMessage(canonical);
     } catch (failure) { setError(failure instanceof Error ? failure.message : "The connection could not be opened."); }
   };
   return <>
     {!ready && <Connection key={state.address} address={state.address} phase={state.phase} error={error ?? state.error} onConnect={(address, token) => { void connect(address, token); }} onRead={() => { setSelecting(false); void connection.read(); }}
-      {...(state.phase === "ready" ? { onLogout: () => { void connection.logout().finally(() => channel.current?.postMessage(state.address)).catch(failure => setError(String(failure))); } } : {})} />}
-    {retained && <div hidden={!ready}><Workspace key={namespaceKey(retained)} client={client} recovery={{ session: connection, namespace: retained, journal }} active={ready} onDisconnect={() => setSelecting(true)} theme={theme} onTheme={onTheme} /></div>}
+      {...(state.phase === "ready" ? { onLogout: () => { void connection.logout().finally(() => channel.current?.postMessage(state.address)).catch(failure => setError(String(failure))); } } : {})}
+      {...(retentionBlocked ? { onDiscardRetained: () => { if (window.confirm("Discard the previous workspace's unsaved page-only drafts and local state? Its saved journal records stay intact. This does not cancel any center task.")) { setRetained(null); setRetentionBlocked(false); setError(undefined); } } } : {})} />}
+    {retained && <div hidden={!ready}><Workspace key={namespaceKey(retained.namespace)} client={retained.client} recovery={{ session: retained.session, namespace: retained.namespace, journal }} active={ready} onRecoveryGuard={registerGuard} onDisconnect={() => setSelecting(true)} theme={theme} onTheme={onTheme} /></div>}
   </>;
 }
 function FixtureWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: Theme) => void }) {

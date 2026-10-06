@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 Interface
 
-父MATURE06-04，唯一21scope/84005基线。结构设计root已批准，尚未实现或验证。ConnectionSession只使用FlowClient.browserSession/connectBrowserSession/logoutBrowserSession；ready四字段centerId/ownerPrincipalId/expiresAt/csrfToken，namespace不含csrf/短期session。原Bearer保持兼容，真实恢复必须cookie路径；unsupported不伪造ready。认证失败停命令，离线与resource403分开；本地expiry仅触发read，不凭本机时钟断言过期。
+父MATURE06-04，唯一21scope/84005基线。结构设计root已批准，已落部分源码与实际App接线，行为验证尚未完成。ConnectionSession只使用FlowClient.browserSession/connectBrowserSession/logoutBrowserSession；ready四字段centerId/ownerPrincipalId/expiresAt/csrfToken，namespace不含csrf/短期session。公共client原Bearer保持兼容；本生产App入口当前采用cookie ConnectionSession，默认未启browserSession的中心显示unsupported且不能进入恢复Workspace。旧Bearer fixture仅为其他消费者测试，不是此生产入口的回退或兼容证明；部署/实际浏览器仍须验。unsupported不伪造ready。认证失败停命令，离线与resource403分开；本地expiry仅触发read，不凭本机时钟断言过期。
 
 Journal提供verified-namespace读取、draft版本写、prepare/dispatching/checkpoint/eligible-dismiss事务；同transaction完整预算+CAS，resolve仅transaction.complete，strict为UA hint。原Outbox/Queue/Steer管理业务state；同步receipt存在后才能await。每个阶段世代隔离，迟到不得重写新状态；0自动mutation恢复。
 
@@ -9,3 +9,9 @@ RecoveryBinding真实注册P01 sidebar.footer私有命令；App只挂surface和�
 容量和完整草稿依据保存在[envelope研究](envelope-research.txt)、[实测候选](envelope-results.json)、[请求上界](request-bounds-research.txt)、[draft接缝](draft-seams-research.txt)。这是固定旧基线只读设计，不是当前实现检查。正文对象只一份；CREATE兩key/body预留、cancel-task目标明确、metadata-first；IDB异常保材料和memorydraft，不发送纯文替代。
 
 浏览器总预算90s含15scleanup、raw≤8MiB；当前禁止安装/build/PG/Chrome，定向轻量测试条件满足才跑。最终中心callerOrigin/迟到clearCookie/重复Connect门槛另核。
+
+## f13 后修复接缝（源码阶段，未行为验）
+
+prepare入口在第一次await之前固定namespace/view/project/auth generation；等待期间重新认证不能自动重新保存/POST。明确retry创建新port并保原key/body。持久draft提交恰好跨过reauth时仅同namespace/view记住实际CAS版本，仍拒绝本次旧send。existing command需port既有版本或restored expectedVersion；仅用户明确retry允许未缓存端口读取原记录，不能把迟到prepare称CAS。
+
+已接受CREATE/turn、queue、steering可按同原键及完整冻结材料对账到终态，0 POST；CREATE checkpoint可先绑定尚未绑定的projection，再由GET确认会话/project，失败不清unknown。认证失效或改中心保留旧Workspace为inactive；只有其flush成功或明确放弃未保存页面状态才卸载，不清journal。失败open只清对应attempt，用户重试重新open，已放弃attempt迟到成功close，不后台重试。

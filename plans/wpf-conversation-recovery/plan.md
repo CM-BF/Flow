@@ -23,7 +23,7 @@
 
 ## 验证与资源
 
-当前仅轻量source/metadata；禁止安装/build/PG/browser。full install/build必须fresh空间≥2.5GiB且预计physical增量后≥1GiB。基础direct tests另记，不冒browser/IDB真实运行。浏览器失败保raw并评估剩余预算，不无限重跑。个人61227/61228/4320不采不改。
+当前仅轻量source/metadata；禁止安装/build/PG/browser。SVC06整套准备要求fresh空间≥2.5GiB；单Web/小验证按实际physical增量和约1GiB收尾余量另核，不以旧统一门槛误挡。这不新增install/build/PG/browser许可。基础direct tests另记，不冒browser/IDB真实运行。浏览器失败保raw并评估剩余预算，不无限重跑。个人61227/61228/4320不采不改。
 
 ## 范围与证据
 

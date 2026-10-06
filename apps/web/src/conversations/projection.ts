@@ -103,10 +103,23 @@ export class ConversationProjection {
   private recovery?: CommandRecovery;
   configureRecovery(recovery: CommandRecovery) { this.recovery = recovery; this.queue.commands?.configureRecovery(recovery); }
   restoreReceipt(record: CommandRecord) {
+    if (record.phase === "accepted") throw Error("An accepted receipt needs explicit terminal reconciliation.");
     this.outbox.restore(record); const entry = this.outbox.getSnapshot()!;
     if (this.id && entry.conversationId && this.id !== entry.conversationId) { this.outbox.accept(entry.id); throw Error("The receipt belongs to another conversation."); }
     if (entry.conversationId) this.id = entry.conversationId;
     this.creation = entry.creation;
+  }
+  async reconcileReceipt(record: CommandRecord) {
+    const entry = this.outbox.matchSaved(record);
+    if (record.phase !== "accepted" || !entry.conversationId || (this.id && this.id !== entry.conversationId)) throw Error("Invalid accepted conversation binding.");
+    const value = record.checkpoint;
+    if (!value || typeof value !== "object" || Array.isArray(value) || !("revision" in value) || !Number.isSafeInteger(value.revision) || Number(value.revision) < 0) throw Error("Invalid saved acknowledgement.");
+    if (entry.kind === "turn" && (!("turnId" in value) || typeof value.turnId !== "string" || !value.turnId || value.turnId.length > 128 || !("taskId" in value) || typeof value.taskId !== "string" || !value.taskId || value.taskId.length > 128 || !("turnNumber" in value) || value.turnNumber !== entry.request.expectedRevision + 1)) throw Error("Invalid saved turn acknowledgement identity.");
+    this.id = entry.conversationId; this.creation = entry.creation;
+    await this.refresh();
+    if (this.state.error || this.state.snapshot?.conversation.id !== entry.conversationId || (this.state.snapshot.conversation.projectId ?? null) !== (record.owner.projectId ?? null)) throw Error("The center did not confirm this receipt's conversation and project.");
+    this.outbox.restore(record); // Matching terminal checkpoint only; no POST or next-draft mutation.
+    return entry.conversationId;
   }
 
   constructor(private readonly client: ConversationPort, private id: string | null = null, private readonly pollMs = 2000) {
@@ -295,15 +308,15 @@ export class ConversationProjection {
   }
   async retry(): Promise<string | undefined> {
     const entry = this.state.outbox && this.online ? this.outbox.retry(this.state.outbox.id) : null;
-    return entry ? this.dispatch(entry) : undefined;
+    return entry ? this.dispatch(entry, true) : undefined;
   }
 
-  private async dispatch(entry: OutboxEntry): Promise<string | undefined> {
+  private async dispatch(entry: OutboxEntry, explicitRetry = false): Promise<string | undefined> {
     const signal = requestSignal(this.lifetime.signal);
     const recovery = this.recovery;
     let sent = false;
     try {
-      await recovery?.prepare({ id: entry.id, domain: "outbox", slot: entry.conversationId ? `turn:${entry.conversationId}` : `create:${entry.id}`, frozen: frozenOutbox(entry), stage: entry.conversationId ? "submit" : "create" });
+      await recovery?.prepare({ id: entry.id, domain: "outbox", slot: entry.conversationId ? `turn:${entry.conversationId}` : `create:${entry.id}`, frozen: frozenOutbox(entry), stage: entry.conversationId ? "submit" : "create", expectedVersion: entry.recoveryVersion, explicitRetry });
       signal.throwIfAborted();
       let id = entry.conversationId;
       if (!id) {

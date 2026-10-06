@@ -127,7 +127,7 @@ export class SteeringWorkspace {
   restoreReceipt(viewKey: string, record: CommandRecord) {
     const value = record.frozen; if (!value || typeof value !== "object" || Array.isArray(value) || !("taskId" in value) || typeof value.taskId !== "string") throw Error("Invalid steering target.");
     const entry = this.restoredEntry(viewKey, value.taskId);
-    if (!entry.raw.getSnapshot().receipts.some(receipt => receipt.key === record.id)) entry.raw.restore(record);
+    entry.raw.restore(record);
     entry.open = true; this.sync(); this.publish();
   }
   retryReceipt(viewKey: string, id: string) { const entry = [...this.entries.values()].find(value => value.identity.viewKey === viewKey && value.raw.getSnapshot().receipts.some(receipt => receipt.key === id)); if (!entry || !entry.control.retry(id)) throw Error("Open the authorized original steering receipt before retrying."); }

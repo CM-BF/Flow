@@ -16,3 +16,15 @@
 额外源码检查：只put新增/修改record，不重写其他draft；snapshot.records先复制避免push同时污染原记录比较基准。路由由draft→conversation后同stablekey触发保存，dedupe包括owner而非只正文；alias冲突不能把已存在另一个draft身份静默替换。ConversationBehavior按当前宿主是否配置durable恢复准确说明，旧fixture保持page-local边界。
 
 直接测试源码13项，当前仅typecheck0，未运行。mock IDB事件端口不替代真实浏览器事务/跨tab/重开；实际App HTTP fixture/browser仍未完成。中心三语义待最终固定核验，旧upload journal跨tabCAS/历史目录namespace不在此片修复。
+
+## f13 后续源码修复
+
+- F13-1：binding.prepare 在await前绑定authority，逐await再核；同namespace提交后跨reauth只记实际draft version，不自动续发。
+- F13-2：BrowserWorkspace持有旧namespace/session/client，身份变更经旧private flush guard，失败保inactive旧实例；明确discard仅页面状态。
+- C1：原record恢复携expectedVersion，迟到prepare不能领当前version；同key accepted checkpoint阻止重送。
+- w01 P2：Outbox/Queue/Steer同key同材料终态对账，CREATE先绑定再freshGET，原下一稿不被命令authority改写。
+- w01 P3：restored未验证knowledge即使缓存存在，显式expand也走fresh resolve。
+- F13-3：failed/blocked open清对应promise，晚success关闭orphan，新attempt不被旧callback替换。
+- C2：生产App仅cookie入口，默认unsupported中心不能当Bearer fixture已有恢复支持；interface明确部署门槛。
+
+本安全点全部仍是源码修复+noEmit，单文件行为检查尚未执行。实际App auth/identity保持仍需后续browser验证。

@@ -13,7 +13,7 @@ export interface CommandRecord {
   stage: "create" | "submit"; checkpoint: Json; initialBytes: number; reserveBytes: number;
 }
 export type RecoveryRecord = DraftRecord | CommandRecord;
-export interface FrozenCommand { id: string; domain: CommandRecord["domain"]; slot: string; frozen: Json; display?: Json; stage?: CommandRecord["stage"] }
+export interface FrozenCommand { id: string; domain: CommandRecord["domain"]; slot: string; frozen: Json; display?: Json; stage?: CommandRecord["stage"]; expectedVersion?: number; explicitRetry?: boolean }
 export interface DraftTransfer { id: string; version: number }
 export interface CommandCheckpoint { phase: CommandRecord["phase"]; stage?: CommandRecord["stage"]; data?: Json; slot?: string }
 export interface CommandRecovery {
@@ -111,16 +111,45 @@ function assertSlot(records: RecoveryRecord[], record: CommandRecord, slot = rec
 /** One database transaction serializes CAS, slot admission and global reserved-byte accounting across tabs. */
 export class ConversationRecoveryJournal {
   private database?: Promise<IDBDatabase>;
+  private openGeneration = 0;
+  private opened?: IDBDatabase;
   constructor(private readonly factory: IDBFactory | undefined = globalThis.indexedDB, private readonly name = "flow.conversation-recovery.v1") {}
   private open(): Promise<IDBDatabase> {
     if (!this.factory) return Promise.reject(new RecoveryError("unavailable", "Durable recovery storage is unavailable. You can keep editing; sending is paused."));
-    if (!this.database) this.database = new Promise((resolve, reject) => {
-      const request = this.factory!.open(this.name, 1);
-      request.onupgradeneeded = () => { request.result.createObjectStore("records"); request.result.createObjectStore("manifest"); };
-      request.onerror = () => reject(new RecoveryError("unavailable", "Recovery storage could not be opened. Existing data has not been cleared."));
-      request.onblocked = () => reject(new RecoveryError("unavailable", "Another tab is blocking recovery storage. Close that tab before retrying."));
-      request.onsuccess = () => { const db = request.result; db.onversionchange = () => { db.close(); this.database = undefined; }; resolve(db); };
-    });
+    if (!this.database) {
+      const generation = ++this.openGeneration;
+      // Defer opening until the promise is assigned, including a synchronous factory.open failure.
+      this.database = new Promise((resolve, reject) => {
+        queueMicrotask(() => {
+          let abandoned = false;
+          const failed = (message: string) => {
+            abandoned = true;
+            if (this.openGeneration === generation) this.database = undefined;
+            reject(new RecoveryError("unavailable", message));
+          };
+          if (generation !== this.openGeneration) { failed("This storage open attempt was superseded."); return; }
+          let request: IDBOpenDBRequest;
+          try { request = this.factory!.open(this.name, 1); }
+          catch { failed("Recovery storage could not be opened. Existing data has not been cleared."); return; }
+          request.onupgradeneeded = () => {
+            if (abandoned || generation !== this.openGeneration) { request.transaction?.abort(); return; }
+            request.result.createObjectStore("records"); request.result.createObjectStore("manifest");
+          };
+          request.onerror = () => failed("Recovery storage could not be opened. Existing data has not been cleared.");
+          request.onblocked = () => failed("Another tab is blocking recovery storage. Close that tab before retrying.");
+          request.onsuccess = () => {
+            const db = request.result;
+            if (abandoned || generation !== this.openGeneration) { db.close(); reject(new RecoveryError("unavailable", "This storage open attempt was superseded.")); return; }
+            this.opened = db;
+            db.onversionchange = () => {
+              db.close();
+              if (this.opened === db) { this.opened = undefined; this.database = undefined; this.openGeneration++; }
+            };
+            resolve(db);
+          };
+        });
+      });
+    }
     return this.database;
   }
   private async transaction<T>(mode: IDBTransactionMode, operation: (snapshot: Snapshot) => T): Promise<T> {
@@ -198,8 +227,10 @@ export class ConversationRecoveryJournal {
           assert(); const old = snapshot.records.find(record => record.namespace === key && record.id === command.id);
           if (old) {
             if (old.kind !== "command") return fail("conflict", "This identity belongs to a saved draft, not a command.");
-            if (old.owner.viewKey !== identity.viewKey || old.domain !== command.domain || !sameFrozen(old.frozen, command.frozen)) fail("conflict", "The retained command identity differs. Its original key was not replaced.");
+            if (old.owner.viewKey !== identity.viewKey || old.owner.projectId !== identity.projectId || old.domain !== command.domain || !sameFrozen(old.frozen, command.frozen)) fail("conflict", "The retained command identity differs. Its original key was not replaced.");
             if (old.phase === "accepted") return fail("conflict", "This command already has a durable accepted checkpoint. Restore its result instead of resending.");
+            const expected = versions.get(command.id) ?? command.expectedVersion;
+            if (expected === undefined ? !command.explicitRetry : old.version !== expected) return fail("conflict", "The saved command advanced in another tab. Refresh and restore that exact record before retrying.");
             return old.version;
           }
           let record: CommandRecord = { schema: 1, kind: "command", id: command.id, namespace: key, owner: { ...identity }, domain: command.domain, slot: command.slot,
@@ -242,5 +273,5 @@ export class ConversationRecoveryJournal {
       snapshot.records = snapshot.records.filter(item => item !== record);
     });
   }
-  async close() { const database = await this.database?.catch(() => undefined); database?.close(); this.database = undefined; }
+  async close() { this.openGeneration++; this.opened?.close(); this.opened = undefined; this.database = undefined; }
 }

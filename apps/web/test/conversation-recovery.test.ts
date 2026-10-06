@@ -1,12 +1,13 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { FlowClient } from "@flow/client";
-import type { BrowserSessionReady } from "@flow/contracts";
+import type { BrowserSessionReady, ConversationSnapshot } from "@flow/contracts";
 import { ConnectionSession, type SessionClientFactory } from "../src/connection/session";
 import { ConversationRecoveryJournal, RecoveryError, namespaceKey, recoveryAddress, recoveryValue, type CommandRecord, type Json, type RecoveryNamespace } from "../src/recovery/journal";
 import { RecoveryWorkspace, RECOVERY_OWNER, readRecoveryDraft } from "../src/recovery/binding";
 import { AppPluginSession, type AppActions } from "../src/plugin-integration/session";
 import { QueueCommands } from "../src/conversations/queue/commands";
 import { ConversationOutbox, frozenOutbox, restoreOutbox } from "../src/conversations/outbox";
+import { ConversationProjection } from "../src/conversations/projection";
 import { createContextSelection } from "../src/conversation-context/controller";
 import { themes } from "../src/themes";
 
@@ -70,7 +71,7 @@ async function workspace(value: ConversationRecoveryJournal) {
   let data = draft("original"), identity = ns, generation = 1;
   const session = new AppPluginSession(actions({ journal: value, namespace: () => identity, authorized: () => true, generation: () => generation, owner: () => owner, draft: () => data, restore: async () => {}, retry: async () => {} }), themes[0]!);
   cleanup.push(() => session.dispose()); await session.host.activate(RECOVERY_OWNER);
-  return { workspace: session.recovery, setDraft: (next: Json) => { data = next; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
+  return { workspace: session.recovery, setDraft: (next: Json) => { data = next; }, reauthenticate: () => { generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
 }
 
 describe("recovery storage barriers (controlled IDB event port)", () => {
@@ -84,12 +85,48 @@ describe("recovery storage barriers (controlled IDB event port)", () => {
   });
   it("uses actual version CAS across two ports and cannot downgrade accepted with a stale checkpoint", async () => {
     const { journal: store } = journal(), a = store.bind(ns, () => owner, () => true), b = store.bind(ns, () => owner, () => true);
-    await a.prepare(command); await b.prepare(command); await a.dispatch(command.id);
+    await a.prepare(command); await b.prepare({ ...command, expectedVersion: 1 }); await a.dispatch(command.id);
     await expect(b.dispatch(command.id)).rejects.toThrow("Another tab");
     await a.checkpoint(command.id, { phase: "accepted", data: { conversationId: "chat", queueRevision: 1 } });
     await expect(b.checkpoint(command.id, { phase: "unknown" })).rejects.toThrow("Another tab");
     expect((await store.list(ns))[0]).toMatchObject({ phase: "accepted", version: 3 });
     await expect(b.prepare(command)).rejects.toThrow("already has a durable accepted");
+  });
+  it("rejects a delayed restored prepare after another port dispatches or binds CREATE", async () => {
+    const { journal: store } = journal(), a = store.bind(ns, () => owner, () => true), b = store.bind(ns, () => owner, () => true);
+    await a.prepare(command); await a.dispatch(command.id);
+    await expect(b.prepare({ ...command, expectedVersion: 1 })).rejects.toThrow("advanced");
+    await expect(b.prepare(command)).rejects.toThrow("advanced");
+    await a.checkpoint(command.id, { phase: "prepared", stage: "submit", slot: "queue:new-chat:enqueue", data: { conversationId: "new-chat" } });
+    await expect(b.prepare({ ...command, expectedVersion: 2 })).rejects.toThrow("advanced");
+    expect((await store.list(ns))[0]).toMatchObject({ version: 3, checkpoint: { conversationId: "new-chat" } });
+  });
+  it("does not automatically rebind a waiting handoff after same-namespace reauthentication", async () => {
+    const { port, journal: store } = journal(), { workspace: binding, reauthenticate } = await workspace(store);
+    port.holdNextCommit = true; binding.beginHandoff(owner.viewKey, "queue");
+    const preparing = binding.commandPort(owner.viewKey).prepare(command);
+    const outcome = expect(preparing).rejects.toThrow(/Authentication|older connection/);
+    await vi.waitFor(() => expect(port.releases).toHaveLength(1)); reauthenticate(); port.releases.shift()!(); await outcome;
+    expect((await store.list(ns)).filter(record => record.kind === "command")).toEqual([]);
+    expect(port.writes.filter(write => write.store === "records")).toHaveLength(1);
+    // A later explicit action may persist again using the completed draft's actual version.
+    await binding.commandPort(owner.viewKey).prepare({ ...command, explicitRetry: true });
+    expect((await store.list(ns)).filter(record => record.kind === "command")).toHaveLength(1);
+  });
+  it("an explicit retry can open storage after a failed open, without an automatic retry loop", async () => {
+    const port = new TransactionPort(); let calls = 0;
+    const factory = { open: () => { if (++calls > 1) return port.factory.open("fixture"); const request = { onerror: null as (() => void) | null }; queueMicrotask(() => request.onerror?.()); return request; } } as unknown as IDBFactory;
+    const store = new ConversationRecoveryJournal(factory); cleanup.push(() => store.close());
+    await expect(store.list(ns)).rejects.toThrow("could not be opened"); expect(calls).toBe(1);
+    expect(await store.list(ns)).toEqual([]); expect(calls).toBe(2);
+  });
+  it("closes abandoned blocked-open late success without replacing the newer database", async () => {
+    const port = new TransactionPort(), close = vi.fn(); let calls = 0;
+    const old = { onblocked: null as (() => void) | null, onsuccess: null as (() => void) | null, result: { close } };
+    const factory = { open: () => { if (++calls > 1) return port.factory.open("fixture"); queueMicrotask(() => old.onblocked?.()); return old; } } as unknown as IDBFactory;
+    const store = new ConversationRecoveryJournal(factory); cleanup.push(() => store.close());
+    await expect(store.list(ns)).rejects.toThrow("blocking"); expect(await store.list(ns)).toEqual([]);
+    old.onsuccess?.(); expect(close).toHaveBeenCalledTimes(1); expect(await store.list(ns)).toEqual([]); expect(calls).toBe(2);
   });
   it("prevents a different command replacing the unresolved slot and retains full cancel-task target", async () => {
     const { journal: store } = journal(), bound = store.bind(ns, () => owner, () => true);
@@ -159,6 +196,34 @@ describe("connection and original authority consumers", () => {
     expect(restoreOutbox(record)).toMatchObject({ conversationId: "chat", creationKey: entry.creationKey, turnKey: entry.turnKey, request: entry.request });
     expect(restoreOutbox({ ...record, phase: "rejected" }).state).toBe("rejected"); expect(() => restoreOutbox({ ...record, phase: "accepted" })).toThrow("already accepted");
   });
+  it("reconciles the same original unknown outbox identity to accepted without touching a separate draft", () => {
+    const outbox = new ConversationOutbox(() => uuid(4)); const entry = outbox.begin({ conversationId: "chat", expectedRevision: 0, text: "original" });
+    outbox.fail(entry.id, "lost ACK", false);
+    const record: CommandRecord = { schema: 1, kind: "command", id: entry.id, namespace: namespaceKey(ns), owner, version: 4, updatedAt: 1, domain: "outbox", slot: "turn:chat", frozen: frozenOutbox(entry), display: null, phase: "accepted", stage: "submit", checkpoint: { conversationId: "chat", revision: 1, turnId: "turn", turnNumber: 1, taskId: "task" }, initialBytes: 1024, reserveBytes: 32768 };
+    const separate = draft("next draft"); expect(outbox.matchSaved(record).request).toEqual(entry.request); outbox.restore(record); expect(outbox.getSnapshot()).toBeNull(); expect(separate).toEqual(draft("next draft"));
+  });
+  it("binds a durable accepted CREATE before the original in-memory projection was bound, with zero POST", async () => {
+    const creation = { title: "New", harness: "claude" as const, requested: { model: "runner-default", thinking: "disabled" as const, tools: "configured-readonly" as const } };
+    const snapshot: ConversationSnapshot = { conversation: { ...creation, id: "created-chat", revision: 0, createdAt: "2026-10-06T00:00:00Z", updatedAt: "2026-10-06T00:00:00Z" }, nativeSession: null, lastTurn: null,
+      capabilities: { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false } };
+    const post = vi.fn(async () => { throw Error("No POST expected"); });
+    const client = { conversation: vi.fn(async () => snapshot), conversationTurns: vi.fn(async () => ({ conversation: snapshot.conversation, turns: [], nextCursor: null })), createConversation: post, submitConversationTurn: post, conversationDetail: post };
+    const projection = new ConversationProjection(client, null); cleanup.push(() => projection.dispose());
+    const entry = projection.outbox.beginCreation(creation); projection.outbox.fail(entry.id, "local checkpoint returned too late", false);
+    const record: CommandRecord = { schema: 1, kind: "command", id: entry.id, namespace: namespaceKey(ns), owner, version: 3, updatedAt: 1, domain: "outbox", slot: "turn:created-chat", frozen: frozenOutbox(entry), display: null, phase: "accepted", stage: "create", checkpoint: { conversationId: "created-chat", revision: 0 }, initialBytes: 1024, reserveBytes: 32768 };
+    expect(await projection.reconcileReceipt(record)).toBe("created-chat"); expect(projection.getSnapshot().snapshot?.conversation.id).toBe("created-chat"); expect(projection.outbox.getSnapshot()).toBeNull(); expect(post).not.toHaveBeenCalled();
+    client.conversation.mockRejectedValueOnce(Error("authorization changed"));
+    await expect(projection.reconcileReceipt(record)).rejects.toThrow("did not confirm"); expect(post).not.toHaveBeenCalled();
+  });
+  it("reconciles an existing unknown queue key to its durable accepted identity without resending", async () => {
+    const client = new FlowClient({ baseUrl: "https://center.invalid", token: "fixture-only" }), queue = new QueueCommands(client, async () => {});
+    cleanup.push(() => queue.dispose()); const fetch = vi.fn<typeof globalThis.fetch>(async () => { throw Error("ACK lost"); }); vi.stubGlobal("fetch", fetch);
+    await queue.execute({ kind: "pause", conversationId: "chat", input: { expectedQueueRevision: 0 } });
+    const entry = queue.getSnapshot()[0]!;
+    const record: CommandRecord = { schema: 1, kind: "command", id: entry.key, namespace: namespaceKey(ns), owner, version: 3, updatedAt: 1, domain: "queue", slot: "queue:chat:pause", frozen: recoveryValue({ key: entry.key, command: entry.command }), display: null, phase: "accepted", stage: "submit", checkpoint: { conversationId: "chat", queueRevision: 1 }, initialBytes: 1024, reserveBytes: 32768 };
+    queue.restore(record); expect(queue.getSnapshot()[0]).toMatchObject({ key: entry.key, state: "accepted" }); expect(fetch).toHaveBeenCalledTimes(1);
+    expect(() => queue.restore({ ...record, checkpoint: { conversationId: "other", queueRevision: 1 } })).toThrow("identity"); expect(fetch).toHaveBeenCalledTimes(1);
+  });
   it("restores a public 255 ASCII filename as metadata and rejects altered project identity", () => {
     const value = draft("new") as Record<string, Json>; const name = "a".repeat(251) + ".txt";
     const metadata = { reference: { kind: "upload", projectId: "project", resourceId: uuid(11), version: 1, contentDigest: "a".repeat(64) }, name, mediaType: "text/plain", byteLength: 1, createdAt: "2026-10-06T00:00:00Z", expiresAt: "2099-01-01T00:00:00Z", state: "ready", retained: false };
@@ -170,5 +235,6 @@ describe("connection and original authority consumers", () => {
     const resolve = vi.fn(async () => ({ citation, text: "old", isCurrent: false, currentVersion: 2 }));
     const controller = createContextSelection({ binding: { connectionKey: "connection", viewId: owner.viewKey, projectId: "project" }, readiness: { visible: true, online: true, authorized: true, knowledgeContext: true }, port: { search: async () => ({ hits: [], hasMore: false }), resolve } }); cleanup.push(() => controller.dispose());
     controller.restore([{ title: "Source", citation }]); expect(() => controller.freeze()).toThrow("Verify restored"); await controller.expand(citation); expect(controller.freeze()).toEqual([citation]); expect(resolve).toHaveBeenCalledTimes(1);
+    controller.remove(citation); controller.restore([{ title: "Source", citation }]); await controller.expand(citation); expect(resolve).toHaveBeenCalledTimes(2); expect(controller.freeze()).toEqual([citation]);
   });
 });

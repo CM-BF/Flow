@@ -25,3 +25,7 @@ w01独立三项（原文及hash留early-peer-report.txt/source-manifest）：A a
 复核App实际装配、旧authority、slot与草稿交接，八项修正逐项见checkpoint-review-map.md；不把类型通过当行为闭合。新增记录与只写变化项的比较基准共享数组会跳过put，已把事务snapshot数组复制，数据实体仍按身份比较；这保留小接口而没有引入cache框架。CREATE alias迁移触发完整owner+draft checkpoint，避免同正文把route变化去重掉。合法filename和context ACK结构使用公共schema，未知附加字段不重复存入账本。
 
 最新noEmit5.616s exit0，前次5.663s exit0，累计28.711/60s；每轮原始执行hash保留。13项直接测试已写但未跑（受控IDB端口，0真实IDB宣称）。源码暂停在固定安全检查点供root只读复核，后续继续fixture/必要行为边界，不扩21scope。
+
+## 2026-10-06 14:52 UTC — f13 修复安全点
+
+沿已读clean-code核错误处理和生命周期：open attempt与DB handle分离，失败只清本attempt；command authority首次await前固定，显式重试与自动继续分开；同key终态恢复复用原Outbox/Queue/Steer入口，不造第二decoder。只PUT目标记录，保全域预算/CAS同事务。记录root两P1/C1/C2+peer P2/P3+open P2均源码修正，未行为验；原82八项与f13报告原样保留。最新noEmit6.058s/exit0，累计40.603/60s，余19.397s。暂缓已批direct窗口等待X01实际结束回执，不把预计case数量当通过。

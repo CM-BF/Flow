@@ -108,9 +108,10 @@ export class ConnectionSession {
     this.flight?.abort(); clearTimeout(this.expiry);
     const controller = new AbortController(), generation = ++this.generation;
     this.flight = controller;
+    const signal = AbortSignal.any([controller.signal, AbortSignal.timeout(15_000)]);
     try {
-      await logoutClient.logoutBrowserSession(controller.signal);
-      if (!this.current(generation, controller.signal)) return;
+      await logoutClient.logoutBrowserSession(signal);
+      if (!this.current(generation, signal)) return;
       this.authorityGeneration++; this.csrf = undefined;
       this.publish({ phase: "unauthenticated", identity: null, expiresAt: undefined, error: undefined });
     } catch (error) { if (this.current(generation, controller.signal)) this.failure(error); }
