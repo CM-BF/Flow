@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { afterAll, beforeAll, beforeEach, expect, it } from 'vitest';
+import { afterAll, afterEach, beforeAll, beforeEach, expect, it } from 'vitest';
 import { ClaimCenterFixture } from '../../../docs/evidence/s01p07/pg-fixture.js';
 import { RUNNER_CLAIM_PROTOCOL, type RunnerClaimResponse } from '@flow/contracts';
 import { runRunner } from '../../runner/src/runtime.js';
@@ -10,7 +10,8 @@ import { textDigest } from '../../runner/src/verifier.js';
 const center = new ClaimCenterFixture();
 beforeAll(() => center.start(), 120000);
 afterAll(() => center.close(), 80000);
-beforeEach(async () => { await center.pool.query("UPDATE flow.tasks SET dispatch_ready=false WHERE status='queued'"); });
+beforeEach(() => center.isolateNextCase());
+afterEach(({ task }) => { center.caseResults.push({ name: task.name, state: task.result?.state ?? 'unknown' }); });
 function assigned(value: RunnerClaimResponse) { if (value.state !== 'assigned') throw new Error(`Expected assigned, received ${value.state}.`); return value; }
 async function attempts(taskId: string) { return (await center.pool.query('SELECT id,owner_version,lease_expires_at FROM flow.attempts WHERE task_id=$1', [taskId])).rows; }
 async function receipts(runnerId: string) { return (await center.pool.query('SELECT key,response FROM flow.commands WHERE operation=$1', [`${RUNNER_CLAIM_PROTOCOL}:${runnerId}`])).rows; }
@@ -60,12 +61,12 @@ it('rolls allocation, session occupation and compact receipt back together after
   await center.pool.query(`CREATE FUNCTION flow.s01p07_fail_receipt() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN
     IF NEW.operation LIKE 'flow.runner-claim.v2:%' THEN RAISE EXCEPTION 'synthetic receipt rollback' USING ERRCODE='23514'; END IF; RETURN NEW; END $$;
     CREATE TRIGGER s01p07_fail_receipt AFTER INSERT ON flow.commands FOR EACH ROW EXECUTE FUNCTION flow.s01p07_fail_receipt()`);
-  try {
+  await center.withCleanup('ROLLBACK_CASE', async () => {
     await expect(runner.client.claimOpportunity(input)).rejects.toMatchObject({ status: 500 });
     expect(await receipts(runner.runnerId)).toEqual([]); expect(await attempts(taskId)).toEqual([]);
     expect((await center.pool.query('SELECT status,owner_version,current_attempt_id FROM flow.tasks WHERE id=$1', [taskId])).rows).toEqual([{ status: 'queued', owner_version: 0, current_attempt_id: null }]);
     expect((await center.pool.query('SELECT active_task_id FROM flow.sessions WHERE id=$1', [sessionId])).rows).toEqual([{ active_task_id: null }]);
-  } finally { await center.pool.query('DROP TRIGGER s01p07_fail_receipt ON flow.commands; DROP FUNCTION flow.s01p07_fail_receipt()'); }
+  }, () => center.pool.query('DROP TRIGGER s01p07_fail_receipt ON flow.commands; DROP FUNCTION flow.s01p07_fail_receipt()'));
   expect(assigned(await runner.client.claimOpportunity(input)).identity.taskId).toBe(taskId); expect(await attempts(taskId)).toHaveLength(1);
 });
 
@@ -128,10 +129,11 @@ it('uses a fresh integer lease from a fractional PG remainder and fences before 
   const running = runRunner({ baseUrl: center.baseUrl, token: runner.token, workingDirectory: center.directory, signal: stop.signal,
     adapters: [{ name: 'fixture', version: '1', async run(context) { starts++; observed = { journal: JSON.parse(await readFile(journalPath, 'utf8')),
       heartbeat: (await center.pool.query('SELECT last_heartbeat_at FROM flow.attempts WHERE id=$1', [allocation.identity.attemptId])).rows[0].last_heartbeat_at,
-      taskId: context.task.id }; enter(); await new Promise<void>(resolve => { if (context.signal.aborted) resolve(); else context.signal.addEventListener('abort', () => resolve(), { once: true }); }); } }] });
+      taskId: context.executionIdentity?.taskId }; enter(); await new Promise<void>(resolve => { if (context.signal.aborted) resolve(); else context.signal.addEventListener('abort', () => resolve(), { once: true }); }); } }] });
   let timeout: NodeJS.Timeout | undefined;
-  try { await Promise.race([entered, running.then(() => { throw new Error('Runtime ended before adapter.'); }), new Promise((_, reject) => { timeout = setTimeout(() => reject(new Error('Runtime entry deadline')), 5000); })]); }
-  finally { clearTimeout(timeout); stop.abort(); await running; }
+  await center.withCleanup('PUBLIC_RUNTIME_CASE', async () => {
+    await Promise.race([entered, running.then(() => { throw new Error('Runtime ended before adapter.'); }), new Promise((_, reject) => { timeout = setTimeout(() => reject(new Error('Runtime entry deadline')), 5000); })]);
+  }, async () => { clearTimeout(timeout); stop.abort(); await running; });
   expect(starts).toBe(1); expect(observed).toMatchObject({ taskId, journal: { assignments: [allocation.identity] }, heartbeat: expect.any(Date) });
   expect(await attempts(taskId)).toHaveLength(1);
 });

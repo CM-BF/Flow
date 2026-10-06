@@ -1,23 +1,53 @@
 {
   "state": "PREPARATION_NOT_OPEN",
-  "preparedAt": "2026-10-06T20:34:44.698528+00:00",
+  "preparedAt": "2026-10-06 20:46:21 UTC",
   "base": "22a0806bc2465e11096949618113833f31766b19",
-  "sourceCheckpoint": "30682614cd9973cfa62071d03ff399485877a16e",
+  "sourceCheckpoint": "3ec41a1d2a2fb34695dc5fc09b444ad690c566c2; updated exact inputs below pending commit",
   "inputs": [
     {
       "path": "apps/server/src/runner-claim-receipts.test.ts",
-      "bytes": 12883,
-      "sha256": "b9853970c40c900a6ef200f9d86cb52a52101cc7a5ea482bad347f55673a0bf9"
+      "bytes": 13057,
+      "sha256": "59338c88937c37e7f996f7b29c4e44f27ee1512d13026ccf363c960e6f9ceb22"
     },
     {
       "path": "docs/evidence/s01p07/pg-fixture.ts",
-      "bytes": 7696,
-      "sha256": "9e891170d7113997ac42f6158b02830ddd4a2052c055d10db996fb432af89e2e"
+      "bytes": 13351,
+      "sha256": "a7e3fe7c8864e2bb03d08d710803a0f671fed4898a372bae4c7cd0375248b543"
     },
     {
       "path": "docs/evidence/s01p07/pg-vitest.config.ts",
-      "bytes": 218,
-      "sha256": "4a619fa08b8b93f2885356aa416050a1eb69ec75ab31aa421b35b9c8a4f9e704"
+      "bytes": 227,
+      "sha256": "a7cff97c07e50da35f3c507fd47ec1ec33a8d74a9504bb136d5dd4164083b45d"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "bytes": 15612,
+      "sha256": "740ad9df5d035fc07a0a42d65c5a75a869cb316f1f5143af0399d166f562e36e"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dynamic-inputs.json",
+      "bytes": 7155,
+      "sha256": "d5625539c0dc7d836473295e21a95b737d7854ec2882ce448e80f46aeee3f49e"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dependency-inputs.json",
+      "bytes": 7207,
+      "sha256": "fd982457966eeaa1dc86725f848984deb27d478896413a8493abe328d87df59f"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "bytes": 2271,
+      "sha256": "2b77322ff43f4d136959396a118d8e0cbc2ef96cd93ea4a9bda9b483745249d3"
+    },
+    {
+      "path": "docs/evidence/s01p07/claim-amend.json",
+      "bytes": 1211,
+      "sha256": "5cafb31ea871cabd2d103a47b78ba3476b94b19a946d5a2f8f5f902c4f660d83"
     }
   ],
   "command": [
@@ -42,8 +72,17 @@
   "resourceGateBytes": 1207959552,
   "adminConfiguration": "source existing /tmp/flow-coordination.env; map FLOW_COORDINATION_DATABASE_URL to FLOW_S01P07_ADMIN_URL without output; enforce localhost:55432 and admin postgres",
   "environmentGate": "FLOW_S01P07_PG_OPEN=1 only in separately assigned actual slot",
-  "creation": "random dedicated name, existence refusal, creationRequested before CREATE, exact existence check after ambiguous ACK",
-  "cleanup": "known startup/server/pool closed and zero target DB connections before ordinary DROP; unknown retained; no FORCE or shared service operations",
+  "creation": "wx/fsync reservation before CREATE and after own root identity; successful CREATE ACK plus random DB comment/OID required. Unknown creation ownership retained even if name exists.",
+  "cleanup": "app/pool close then same OID+marker and zero DB connections before ordinary DROP; exact root dev/ino before rm; original primary failure retained separately from cleanup; unknown retained",
   "counts": "8 planned groups, 10 estimated functional tasks; not actual results",
-  "limits": "Own logical temp/raw bounds and resource gate are preparation limits. Shared PG/WAL growth and competing workload are not statically bounded; fresh serial window required. No provider/SDK target. Public server uses production migrations; original 4 capacity PG cases remain unselected."
+  "limits": "Own logical temp/raw bounds and resource gate are preparation limits. Shared PG/WAL growth and competing workload are not statically bounded; fresh serial window required. No provider/SDK target. Public server uses production migrations; original 4 capacity PG cases remain unselected.",
+  "wrapper": "python3 docs/evidence/s01p07/execute-pg.py; requires exact FLOW_S01P07_EXECUTION_HEAD, new assigned FLOW_S01P07_PG_WINDOW and FLOW_S01P07_PG_OPEN=1",
+  "connections": {
+    "serverPoolMax": 8,
+    "schedulerBossMax": 3,
+    "fixturePoolMax": 3,
+    "adminPoolMax": 1,
+    "theoreticalMaximum": 15
+  },
+  "outer": "One monotonic origin incl preflight; work UTC <=120s; fixture cleanup min(70s,outer190s); 190s end capture, observe group three-state, TERM/KILL at most once each only on known present, unknown no escalation; EOF/leader/group distinct; receipt and external tool wall<=200s. Underlying OS operations are not cancelled by timeout; retain unknown."
 }
