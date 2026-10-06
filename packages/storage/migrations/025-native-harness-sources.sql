@@ -18,3 +18,5 @@ ALTER TABLE flow.assistant_messages ADD CONSTRAINT assistant_messages_native_sou
     AND octet_length(native_session_id) BETWEEN 1 AND 128
     AND source_message_id ~ '^[a-f0-9]{64}$')
 );
+-- Final admission must not scan unrelated artifact/detail bodies for its bounded session evidence.
+CREATE INDEX details_native_session_evidence ON flow.details(task_id, attempt_id) WHERE kind = 'session';

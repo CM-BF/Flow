@@ -15,8 +15,8 @@
 ## TODO
 
 - [x] **R05B-01** 确认职责、固定原生 schema、独立 worktree 与精确原子领取。
-- [ ] **R05B-02** 新增严格 Codex 配置/final、识别来源、task admission 与默认旧目录过滤。
-- [ ] **R05B-03** 前进 migration 025 与真实 PostgreSQL 旧行升级、身份隔离、重复事件和直接消费者验证。
+- [x] **R05B-02** 新增严格 Codex 配置/final、识别来源、task admission 与默认旧目录过滤。
+- [x] **R05B-03** 前进 migration 025 与真实 PostgreSQL 旧行升级、身份隔离、重复事件和直接消费者验证。
 - [ ] **R05B-04** 固定实现提交与证据，独立 review 后受控集成 main。
 
 ## 范围与验收

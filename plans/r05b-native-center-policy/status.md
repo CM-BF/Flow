@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:13 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:20 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-002](../flow-002-provider-harness/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy |
 | Branch | codex/native-center-policy |
-| 工作基线 / HEAD | 3d31ba89bc3696e64d15f12f9d8c703e4d7bd914 / 启动同基线 |
-| 工作树dirty状态 | 本任务首接口与中心实现待提交 |
+| 工作基线 / HEAD | 3d31ba89bc3696e64d15f12f9d8c703e4d7bd914 / 302b7fd5cb4c91b829c2f1b6cb038dd308acc3ff首接口；随后受控接入F01 migration mount |
+| 工作树dirty状态 | 首接口已提交；PG测试及已识别session策略调整待提交 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | 部分PASSED：严格合同/静态policy 11/11、tsc exit0；PG/直接消费者尚未运行 |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED：16显式文件157不同检查；settings损坏补充选择1通过；tsc exit0；[证据](../../docs/evidence/r05b/README.md) |
 | 已集成main状态 / HEAD | 未集成；启动main为3d31ba89bc3696e64d15f12f9d8c703e4d7bd914 |
 | 实现目标 | 未提交 |
 | 实现范围 | [精确22项范围](../../docs/evidence/r05b/claim-current.json) |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 中心严格配置与普通回复校验已实现，等待数据库升级验证 |
-| 下一可用交付 | 可独立核验的 Codex 普通任务回复持久化，保留 Claude 既有行为 |
+| 当前产出 | 普通回复来源隔离、旧数据升级和 Claude 兼容已验证，待独立审查 |
+| 下一可用交付 | 审查后集成普通任务回复能力；尚不提供 Codex 会话或原生进程执行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -30,8 +30,8 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | R05B-01 | completed | native_center_owner | claim.json；固定本机0.154.0 schema与旧中心源码 |
-| R05B-02 | in-progress | native_center_owner | strict union与静态policy已实现；PG和直接消费者待验证 |
-| R05B-03 | pending | native_center_owner | 未运行 |
+| R05B-02 | completed | native_center_owner | strict union与静态policy；旧会话/profile/runner直接消费者通过 |
+| R05B-03 | completed | native_center_owner | 真实PG11/11；旧rows保持；1MiB列表725B/预览4000B；旧中心46/46与preview21/21 |
 | R05B-04 | pending | native_center_owner | 未独审、未集成 |
 
 ## Dashboard 同步

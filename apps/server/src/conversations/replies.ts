@@ -59,7 +59,7 @@ async function readBoundTypedFinal(client: PoolClient, task: TaskRecord, session
     if (message && (message.taskId !== task.id || message.attemptId !== task.current_attempt_id || message.nativeSessionId !== session.identity.nativeSessionId || message.source !== 'claude.sdk.result')) return 'invalid';
     return message;
   } catch (error) {
-    if (error instanceof HttpError && error.code === 'assistant_content_mismatch') return 'invalid';
+    if (error instanceof HttpError && ['assistant_content_mismatch', 'assistant_identity', 'assistant_source_mismatch'].includes(error.code)) return 'invalid';
     throw error;
   }
 }

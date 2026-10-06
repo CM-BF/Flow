@@ -23,6 +23,7 @@ export async function saveAssistantFinal(client: PoolClient, task: TaskRecord, a
   const session = await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2 AND runner_id=$3 AND active_task_id=$4', [event.nativeSessionId, policy.harness, attempt.runner_id, task.id]);
   if (!session.rowCount) throw new HttpError(409, 'assistant_session_mismatch', 'Assistant session is not assigned to this task and runner.');
   if (!validAssistantIdentity(event)) throw new HttpError(409, 'assistant_identity', 'Assistant message ID does not match its native source.');
+  await requireRecognizedSessionSource(client, task.id, attempt.id, event.nativeSessionId, policy.adapterVersion);
   if (event.source === 'codex.app-server.agent-message') {
     await requireCodexFinalConfiguration(client, task, attempt, event, policy.adapterVersion);
   }
@@ -47,14 +48,17 @@ async function requireCodexFinalConfiguration(client: PoolClient, task: TaskReco
     || Buffer.byteLength(event.content, 'utf8') > configuration.hostLimits.maxOutputBytes) {
     throw new HttpError(409, 'assistant_configuration_mismatch', 'Codex final does not match its requested profile and host output bound.');
   }
-  const evidence = await client.query<{ content: string }>("SELECT content FROM flow.details WHERE task_id=$1 AND attempt_id=$2 AND kind='session' LIMIT 2", [task.id, attempt.id]);
+}
+async function requireRecognizedSessionSource(client: PoolClient, taskId: string, attemptId: string, nativeSessionId: string, adapterVersion: string): Promise<void> {
+  const evidence = await client.query<{ content: string }>("SELECT content FROM flow.details WHERE task_id=$1 AND attempt_id=$2 AND kind='session' LIMIT 2", [taskId, attemptId]);
   let raw: unknown;
   try { raw = evidence.rows.length === 1 ? JSON.parse(evidence.rows[0]!.content) : null; } catch { raw = null; }
   const parsed = runnerEventSchema.safeParse(raw);
-  if (!parsed.success || parsed.data.type !== 'session' || parsed.data.adapterVersion !== adapterVersion || parsed.data.nativeSessionId !== event.nativeSessionId) {
-    throw new HttpError(409, 'assistant_source_mismatch', 'Codex final requires one matching recognized session event.');
+  if (!parsed.success || parsed.data.type !== 'session' || parsed.data.adapterVersion !== adapterVersion || parsed.data.nativeSessionId !== nativeSessionId) {
+    throw new HttpError(409, 'assistant_source_mismatch', 'Assistant final requires one matching recognized session event.');
   }
 }
+
 function reference(row: MessageRow): AssistantMessageReference {
   if (!validAssistantIdentity({ source: row.source, messageId: row.id, nativeSessionId: row.native_session_id,
     sourceMessageId: row.source_message_id, nativeSourceIdentity: row.native_source_identity })) {
@@ -68,8 +72,14 @@ function reference(row: MessageRow): AssistantMessageReference {
 }
 function settingsReference(row: MessageRow) {
   const result = reference(row);
-  if (result.source === 'claude.sdk.result') return { ...result, settings: assistantSettingsSchema.parse(row.settings) };
-  return { ...result, settings: codexAssistantSettingsSchema.parse(row.settings) };
+  if (result.source === 'claude.sdk.result') {
+    const parsed = assistantSettingsSchema.safeParse(row.settings);
+    if (parsed.success) return { ...result, settings: parsed.data };
+  } else {
+    const parsed = codexAssistantSettingsSchema.safeParse(row.settings);
+    if (parsed.success) return { ...result, settings: parsed.data };
+  }
+  throw new HttpError(409, 'assistant_source_mismatch', 'The stored assistant settings do not match their source.');
 }
 async function withContent(client: PoolClient, row: MessageRow): Promise<AssistantMessage> {
   const detail = (await client.query<{ content: string }>('SELECT content FROM flow.details WHERE id=$1 AND task_id=$2 AND attempt_id=$3', [row.detail_id, row.task_id, row.attempt_id])).rows[0];
