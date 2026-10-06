@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations
+
+stdout | apps/tui/src/journey.test.ts > real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history
+TUI01A PTY send {"exitCode": 0, "rawModeRestored": true, "resized": [60, 20], "bytes": 11869, "elapsedMs": 3825, "checkpoints": ["Ctrl-C disconnect and quit", "/open cecb965a-5216-4650-bb4a-c60e585a4981", "Saved conversation opened.", "\u4e2d\u6587\ud83d\ude42", "\u4e2d\u6587", "Flow", "second\ud83d\ude42", "[pending; task running]"], "untrustedOscExecuted": false}
+
+
+stdout | apps/tui/src/journey.test.ts > real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history
+TUI01A PTY reopen {"exitCode": 0, "rawModeRestored": true, "resized": [60, 20], "bytes": 5629, "elapsedMs": 901, "checkpoints": ["Ctrl-C disconnect and quit", "/open cecb965a-5216-4650-bb4a-c60e585a4981", "Saved conversation opened.", "second\ud83d\ude42", "\\u001b]52;c;NO\\u0007"], "untrustedOscExecuted": false}
+
+
+stdout | apps/tui/src/journey.test.ts
+TUI01A cleanup {"database":"flow_tui01a_cacd3c8722ba","remaining":[],"ownedRunnerStopped":true}
+
+ ✓ apps/tui/src/journey.test.ts (2 tests) 8949ms
+   ✓ real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history  7540ms
+ ✓ apps/tui/src/terminal.test.ts (4 tests) 137ms
+ ✓ packages/interaction/src/controller.test.ts (10 tests) 8ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  02:34:26
+   Duration  10.46s (transform 385ms, setup 0ms, import 1.15s, tests 9.09s, environment 0ms)
+

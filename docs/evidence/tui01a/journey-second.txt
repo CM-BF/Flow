@@ -1,0 +1,46 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations
+
+stdout | apps/tui/src/journey.test.ts > real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history
+TUI01A PTY send {"error": "PTY expected marker missing: Saved conversation opened.", "output": "\u001b[?2026h\u001b[?25l\u001b[1mFlow \u00b7 not observing\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\r\n\u2502 \u001b[32m\u203a \u001b[39m\u001b[2mMessage or /command\u001b[22m                                                                            \u2502\r\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\r\n\u001b[2mEnter send \u00b7 Ctrl-J newline \u00b7 Tab complete \u00b7 Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow \u00b7 not observing\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mTerminal control characters are not accepted in the interactive editor.\u001b[22m\r\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\r\n\u2502 \u001b[32m\u203a \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                                                           \u2502\r\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\r\n\u001b[2mEnter send \u00b7 Ctrl-J newline \u00b7 Tab complete \u00b7 Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l"}
+Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/apps/tui/test-fixtures/terminal_driver.py", line 27, in <module>
+    wait_for('Saved conversation opened.')
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/apps/tui/test-fixtures/terminal_driver.py", line 11, in wait_for
+    if time.monotonic()>deadline or child.poll() is not None: raise RuntimeError('PTY expected marker missing: '+text)
+RuntimeError: PTY expected marker missing: Saved conversation opened.
+
+
+stdout | apps/tui/src/journey.test.ts
+TUI01A cleanup {"database":"flow_tui01a_c3d7e0be9e97","remaining":[],"ownedRunnerStopped":true}
+
+ ❯ apps/tui/src/journey.test.ts (1 test | 1 failed) 15224ms
+   × real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history 13808ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/journey.test.ts > real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ apps/tui/src/journey.test.ts:85:175
+     83|   const environment = { PATH: '/opt/homebrew/opt/node@24/bin:/usr/bin:…
+     84|     FLOW_TUI_STATE_DIR: join(directory, 'state'), TUI_TEST_NODE: proce…
+     85|   const first = await child('/usr/bin/python3', ['apps/tui/test-fixtur…
+       |                                                                                                                                                                               ^
+     86|   const afterExit = await client.conversation(conversationId!); expect…
+     87|   expect(afterExit.lastTurn?.user.text).toBe(`${nonce} 中文\nsecond🙂`);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  02:30:32
+   Duration  16.19s (transform 393ms, setup 0ms, import 881ms, tests 15.22s, environment 0ms)
+

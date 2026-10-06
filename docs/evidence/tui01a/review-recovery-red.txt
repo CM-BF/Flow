@@ -1,0 +1,67 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations
+
+ ❯ apps/tui/src/recovery.test.ts (7 tests | 7 failed) 76ms
+   × deferred save rejection with concurrent dispose settles and permits the private journal to reopen 12ms
+   × HTTP 200 empty create ACK preserves the original request and explicit recovery identity 17ms
+   × HTTP 200 mismatched creation fields preserve the original request 10ms
+   × HTTP 200 send ACK with wrong text keeps the exact original request 10ms
+   × HTTP 200 send ACK with wrong conversation keeps the exact original request 8ms
+   × HTTP 200 send ACK with wrong number keeps the exact original request 10ms
+   × HTTP 200 send ACK with wrong task keeps the exact original request 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/recovery.test.ts > deferred save rejection with concurrent dispose settles and permits the private journal to reopen
+AssertionError: promise rejected "Error: synthetic ENOSPC" instead of resolving
+ ❯ apps/tui/src/recovery.test.ts:23:75
+     21|   await controller.initialize(); const sending = controller.input('/ne…
+     22|   const disposing = controller.dispose(); rejectSave(new Error('synthe…
+     23|   expect((await sending).code).toBe('READ_FAILED'); await expect(dispo…
+       |                                                                           ^
+     24|   expect(posts).toBe(0); await journal.close();
+     25|   const reopened = await openIntentStore(directory, connectionId); awa…
+
+Caused by: Error: synthetic ENOSPC
+ ❯ apps/tui/src/recovery.test.ts:22:54
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  apps/tui/src/recovery.test.ts > HTTP 200 empty create ACK preserves the original request and explicit recovery identity
+AssertionError: expected null not to be null
+ ❯ httpFixture apps/tui/src/recovery.test.ts:60:60
+     58|   if (kind === 'send') expect((await controller.execute({ type: 'open'…
+     59|   const response = await controller.execute(kind === 'create' ? { type…
+     60|   expect(response.code).toBe('UNKNOWN'); expect(saved).not.toBeNull();…
+       |                                                            ^
+     61|   expect((await controller.execute({ type: 'recover' })).code).toBe('A…
+     62|   expect(posts).toHaveLength(2); expect(posts[1]).toEqual(posts[0]); e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  apps/tui/src/recovery.test.ts > HTTP 200 mismatched creation fields preserve the original request
+ FAIL  apps/tui/src/recovery.test.ts > HTTP 200 send ACK with wrong text keeps the exact original request
+ FAIL  apps/tui/src/recovery.test.ts > HTTP 200 send ACK with wrong conversation keeps the exact original request
+ FAIL  apps/tui/src/recovery.test.ts > HTTP 200 send ACK with wrong number keeps the exact original request
+ FAIL  apps/tui/src/recovery.test.ts > HTTP 200 send ACK with wrong task keeps the exact original request
+AssertionError: expected 'ACCEPTED' to be 'UNKNOWN' // Object.is equality
+
+Expected: "UNKNOWN"
+Received: "ACCEPTED"
+
+ ❯ httpFixture apps/tui/src/recovery.test.ts:60:25
+     58|   if (kind === 'send') expect((await controller.execute({ type: 'open'…
+     59|   const response = await controller.execute(kind === 'create' ? { type…
+     60|   expect(response.code).toBe('UNKNOWN'); expect(saved).not.toBeNull();…
+       |                         ^
+     61|   expect((await controller.execute({ type: 'recover' })).code).toBe('A…
+     62|   expect(posts).toHaveLength(2); expect(posts[1]).toEqual(posts[0]); e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  7 failed (7)
+   Start at  02:45:27
+   Duration  399ms (transform 131ms, setup 0ms, import 235ms, tests 76ms, environment 0ms)
+
