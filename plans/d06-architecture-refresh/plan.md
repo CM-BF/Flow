@@ -6,9 +6,9 @@
 
 本轮补齐CHAT05 typed工具/思考按需正文，CHAT06持久正文patch/settlement和模块尚未App接线，CHAT07/08持久指令及默认关闭factory，022–024迁移、X05包worker。浏览器→中心→Runner/SDK/PG连线沿现架构，持久受理不等于实际生效，worker不等第三方沙箱。固定基线未含O09/CHAT09/CHAT06I App实现，后继保持planned。保留cancel/uncertain/verification和PG content/blob未实现的既有界限。
 
-- [ ] D06-01：独立树、精确claim、唯一source迁移与历史保存。
-- [ ] D06-02：固定源码事实审阅与五图数据刷新。
-- [ ] D06-03：直接Node/来源审计、五图浅深390/键盘与局部实际目视。
+- [x] D06-01：独立树、精确claim、唯一source迁移与历史保存。
+- [x] D06-02：固定源码事实审阅与五图数据刷新。
+- [x] D06-03：直接Node/来源审计、五图浅深390/键盘与局部实际目视。
 - [ ] D06-04：固定target独立review、Lead主线接收与停写释放。
 
 [状态](status.md) · [审查](review.md) · [领取](../../docs/evidence/d06/stream/take-receipt.json) · [方法/质量](../../docs/evidence/d06/stream/quality.md)。registry迁唯一source由Lead处理，本owner不写registry/4320/其他任务。动态独立preview无产品DB/模型，不停旧预览。

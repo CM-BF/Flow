@@ -1,0 +1,85 @@
+{
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "架构图已补齐工具活动、逐段正文和后台任务，明确源码与实际运行的边界",
+      "next": "完成独立审查并交付可追溯的五视图架构快照",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "2c857bdc83e4769c5099de2f37f4a7f2140e834b",
+      "scopes": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06/stream/source-audit.mjs",
+        "docs/evidence/d06/stream/browser-check.mjs",
+        "docs/evidence/d06/stream/preview.mjs"
+      ],
+      "errors": []
+    },
+    "taskId": "D06",
+    "owner": "d01_owner / gpt-6-astra ultra",
+    "branch": "codex/dashboard-architecture-stream",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T08:13:01.000Z",
+    "updatedRecord": "2026-10-06 08:13:01 UTC",
+    "todos": [
+      {
+        "id": "D06-01",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "树/receipt/历史已核；Lead正式fc113回执确认D06唯一source迁移，非本队API采样"
+      },
+      {
+        "id": "D06-02",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "56节点来源/80固定行，活动/stream/steering/X05界限已更新"
+      },
+      {
+        "id": "D06-03",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "13 Node + source audit + 五图Chrome/浅深390/键盘通过；已目视两图；原首次locator失败保留"
+      },
+      {
+        "id": "D06-04",
+        "state": "in-progress",
+        "owner": "d01_owner",
+        "evidence": "fixed 2c857bdc83e4769c5099de2f37f4a7f2140e834b 已交root独审；main接收/释放未完成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "9c6fa9b100f04916f43b04280f05f497b28eeb0f / 2c857bdc83e4769c5099de2f37f4a7f2140e834b（实现；后续metadata由Git聚合）",
+    "declaredDirty": "五实现路径已冻结，当前仅本轮metadata待提交；交付HEAD/clean以Git回执为准",
+    "checks": {
+      "state": "passed",
+      "target": "2c857bdc83e4769c5099de2f37f4a7f2140e834b",
+      "record": "PASSED 2c857bdc83e4769c5099de2f37f4a7f2140e834b；13 Node、56来源/80固定行、五图Chrome浅深390/键盘；[验证](../../docs/evidence/d06/stream/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；本轮固定9c6源码数据已完成，等待独审/Lead接收；后续主线移动不改变该快照",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "2c857bdc83e4769c5099de2f37f4a7f2140e834b"
+  }
+}

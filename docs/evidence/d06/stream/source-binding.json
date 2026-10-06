@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-10-06 08:13:01 UTC",
+  "implementationTarget": "2c857bdc83e4769c5099de2f37f4a7f2140e834b",
+  "sourceBase": "9c6fa9b100f04916f43b04280f05f497b28eeb0f",
+  "browserObservedAt": "2026-10-06T08:10:01.058Z",
+  "originalSourceCommit": "d8c0e4d584761526e0bd73d800fc2be19dc49512",
+  "originalSourceDirty": [
+    "M apps/execution-dashboard/public/architecture-data.js",
+    " M apps/execution-dashboard/test/architecture.test.mjs",
+    "?? docs/evidence/d06/stream/browser-check.mjs",
+    "?? docs/evidence/d06/stream/browser-final.log",
+    "?? docs/evidence/d06/stream/browser-first.log",
+    "?? docs/evidence/d06/stream/direct-first.log",
+    "?? docs/evidence/d06/stream/install.log",
+    "?? docs/evidence/d06/stream/preview.mjs",
+    "?? docs/evidence/d06/stream/source-audit.json",
+    "?? docs/evidence/d06/stream/source-audit.mjs",
+    "?? docs/evidence/d06/stream/source-first.log"
+  ],
+  "hashes": {
+    "apps/execution-dashboard/public/architecture-data.js": {
+      "testedSha256": "abe69ba292c534bc77612d1b7d65eed0d0f857849b31d4166324b8e1c042449a",
+      "targetSha256": "abe69ba292c534bc77612d1b7d65eed0d0f857849b31d4166324b8e1c042449a",
+      "currentSha256": "abe69ba292c534bc77612d1b7d65eed0d0f857849b31d4166324b8e1c042449a"
+    },
+    "apps/execution-dashboard/test/architecture.test.mjs": {
+      "testedSha256": "e695778079424179dcaa7487951e07ce6c5e114d88cb0397bd0a32287d4006a6",
+      "targetSha256": "e695778079424179dcaa7487951e07ce6c5e114d88cb0397bd0a32287d4006a6",
+      "currentSha256": "e695778079424179dcaa7487951e07ce6c5e114d88cb0397bd0a32287d4006a6"
+    },
+    "docs/evidence/d06/stream/browser-check.mjs": {
+      "testedSha256": "3764046816231be993e3e98de12ca3bd41286975ce5b3c3c6534706b8961f7ed",
+      "targetSha256": "3764046816231be993e3e98de12ca3bd41286975ce5b3c3c6534706b8961f7ed",
+      "currentSha256": "3764046816231be993e3e98de12ca3bd41286975ce5b3c3c6534706b8961f7ed"
+    },
+    "docs/evidence/d06/stream/preview.mjs": {
+      "testedSha256": "05765f74a2c7847d69ff26866a25b340ecab5954b35688f0cbe47c75ac9afd24",
+      "targetSha256": "05765f74a2c7847d69ff26866a25b340ecab5954b35688f0cbe47c75ac9afd24",
+      "currentSha256": "05765f74a2c7847d69ff26866a25b340ecab5954b35688f0cbe47c75ac9afd24"
+    },
+    "docs/evidence/d06/stream/source-audit.mjs": {
+      "testedSha256": "a057466f755364acc33f8801dec1952d0a4c910dd3e694a45d24272e1960db09",
+      "targetSha256": "a057466f755364acc33f8801dec1952d0a4c910dd3e694a45d24272e1960db09",
+      "currentSha256": "a057466f755364acc33f8801dec1952d0a4c910dd3e694a45d24272e1960db09"
+    }
+  },
+  "note": "Original report retained without rewriting commit or dirty state. Fixed commit contains the exact five executable source bytes checked by browser report. Direct Node and fixed-source audit ran before browser, with no later changes to data/test/audit."
+}
