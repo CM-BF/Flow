@@ -1,0 +1,125 @@
+{
+  "from": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "to": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "beforeVersions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "afterVersions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "preservation": {
+    "migrations": {
+      "rows": 24,
+      "beforeSha256": "c0e31f5f35fa2ddc44753dbd3d490e58f869d7a8054bae0a735bbf1595d340e6",
+      "oldFieldProjectionSha256": "c0e31f5f35fa2ddc44753dbd3d490e58f869d7a8054bae0a735bbf1595d340e6"
+    },
+    "conversations": {
+      "rows": 1,
+      "beforeSha256": "ed794a9357f69e3e4009affb4feba3cfd59b1e17e3483819c835398d0f71ff56",
+      "oldFieldProjectionSha256": "ed794a9357f69e3e4009affb4feba3cfd59b1e17e3483819c835398d0f71ff56"
+    },
+    "conversation_turns": {
+      "rows": 1,
+      "beforeSha256": "be808a9169e0e90bba0b96bd8e7780cb1de782f61393bc60a0569c42c39674b8",
+      "oldFieldProjectionSha256": "be808a9169e0e90bba0b96bd8e7780cb1de782f61393bc60a0569c42c39674b8"
+    },
+    "tasks": {
+      "rows": 1,
+      "beforeSha256": "fc7cfb41058af68b413e4191d9b03b69006633e148bdd601b9a05ce4318a75b6",
+      "oldFieldProjectionSha256": "fc7cfb41058af68b413e4191d9b03b69006633e148bdd601b9a05ce4318a75b6"
+    },
+    "attempts": {
+      "rows": 1,
+      "beforeSha256": "7139b48952475132a2fe3d9c712e2f383ed1bcc58429ebf8caf90ef38314eaeb",
+      "oldFieldProjectionSha256": "7139b48952475132a2fe3d9c712e2f383ed1bcc58429ebf8caf90ef38314eaeb"
+    },
+    "assistant_messages": {
+      "rows": 1,
+      "beforeSha256": "d44bcbd8f3a787269f95dc18d00c78a8f5ed6e8a67fff33142affe8022df0467",
+      "oldFieldProjectionSha256": "d44bcbd8f3a787269f95dc18d00c78a8f5ed6e8a67fff33142affe8022df0467"
+    },
+    "artifacts": {
+      "rows": 1,
+      "beforeSha256": "3d3d4d5aaaba12ba3edece4de955377fa25a4050d34a952d643410f9d6a79813",
+      "oldFieldProjectionSha256": "3d3d4d5aaaba12ba3edece4de955377fa25a4050d34a952d643410f9d6a79813"
+    },
+    "details": {
+      "rows": 4,
+      "beforeSha256": "035d02b82c7ec8152a931552eea77e859775e6559df2f720b8df81a669dd7d46",
+      "oldFieldProjectionSha256": "035d02b82c7ec8152a931552eea77e859775e6559df2f720b8df81a669dd7d46"
+    },
+    "commands": {
+      "rows": 2,
+      "beforeSha256": "1e389d1e733c47b68ea6b62cff22ed5067ae1e04dfacec8edc28cc70e690786a",
+      "oldFieldProjectionSha256": "1e389d1e733c47b68ea6b62cff22ed5067ae1e04dfacec8edc28cc70e690786a"
+    }
+  },
+  "historicalReceiptRecovered": true,
+  "restoredConversationId": "4be6c390-5908-4388-a4c0-0f72c59b4746",
+  "contextHistory": {
+    "protocol": "flow.context-history.v1",
+    "taskId": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+    "attemptId": "d3d20613-4024-4401-8a69-5cefc852aa2b",
+    "latest": null,
+    "current": {
+      "kind": "unknown",
+      "value": null,
+      "reason": "history-only"
+    },
+    "remaining": {
+      "kind": "unknown",
+      "value": null,
+      "reason": "history-only"
+    }
+  },
+  "restartRead": true
+}

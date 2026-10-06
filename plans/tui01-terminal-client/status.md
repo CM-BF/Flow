@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:31 UTC / main 362af3bac77541e5a60979326bcf4d4b8c947915 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:32:20 UTC / main 4a435975fbd8d4fd921ddc9119b44dc027345cb7 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,8 +19,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 终端流式正文、按需工具详情和可靠回执已交付；共享目标会话现在可作为后继公开入口。 |
-| 下一可用交付 | 让终端通过已发布的目标会话与控制接口查看计划、处理决定、恢复命令，并补跨客户端旅程。 |
+| 当前产出 | 终端流式正文、按需工具详情和可靠回执已交付；目标控制与恢复现已独立开工。 |
+| 下一可用交付 | 在终端读取目标计划、处理决定并恢复命令；同一公开接口的双客户端旅程同步验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -34,7 +34,7 @@
 | TUI001-03 | completed | runner_owner / Execution Lead | [TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)独审及焦点修复通过、main648e接收；[父回执](../../docs/evidence/tui01/tui01c-main-receipt.json) |
 | TUI001-04 | pending | TUI owner / Mika合同 | 真实model能力仍逐项接通 |
 | TUI001-05 | pending | TUI owner / Web合同 | 附件生命周期与context |
-| TUI001-06 | pending | TUI owner | queue/steer/cancel/decision |
+| TUI001-06 | in-progress | assignment_review | [TUI01D唯一状态](../../../tui-goal-session/plans/tui01d-goal-session/status.md)：先已发布goal控制与恢复；聊天queue/steer完整接入仍open |
 | TUI001-07 | pending | TUI owner | runner/plugin管理 |
 | TUI001-09 | completed | runner_owner / Web独立消费者 | TUI01B与WPF-ACK01均已独审/main；共享v2附件回执df8也已mainfd132，完整双端旅程仍归08 |
 | TUI001-08 | pending | 独立review / Execution Lead | 完整日用/PTY/双公开客户端共同中心/provider验收仍开放 |
@@ -44,3 +44,5 @@
 本次仅收敛既有TUI001-08双客户端验收并分派TUI001-09；不新建大task或状态权威，不改TUI01A已审源码，不重复工程测试。
 
 2026-10-06 11:32:04 UTC：父状态已按实际main接收更新，未复制子片审查或重跑检查。TUI001-03/09的局部交付关闭，完整日用、真实执行选项/附件发送/队列与双客户端验收保持开放；后台公开合同与headless/终端先验、Web并行，不互设所有开发的串行门禁。
+
+2026-10-06 12:32:20 UTC：TUI01D已在独立tui-goal-session树/claim22c7799a v1开工，首canonical93a9315，消费main已发布@flow/interaction/goal。slash/Ink/headless只有呈现与语法，同中心读取/命令/原key恢复；普通文字保留草稿，不暗中执行目标。先实际PTY与双公开client，TUI→Web→TUI真实浏览器旅程及完整聊天control仍归08，未由headless替代。父计划不重复A/B/C测试或创建新大task。

@@ -1,0 +1,68 @@
+{
+  "attachment": {
+    "projectId": "f71f5d88-426e-4a2f-a5ba-10e6069ac678",
+    "capabilities": {
+      "protocol": "text-v1",
+      "recoveryScopeId": "068551f5-c1cd-47f0-875e-37e2fc5e3120",
+      "projectId": "f71f5d88-426e-4a2f-a5ba-10e6069ac678",
+      "requiresProject": true,
+      "mediaTypes": [
+        "text/plain"
+      ],
+      "extensions": [
+        ".txt"
+      ],
+      "maxFileBytes": 8192,
+      "maxCombinedReferences": 4,
+      "maxCombinedBytes": 8192,
+      "order": "knowledge-then-attachments",
+      "unboundTtlSeconds": 86400,
+      "resourcesPerProject": 128,
+      "retainedBytesPerProject": 1048576
+    },
+    "reference": {
+      "kind": "upload",
+      "projectId": "f71f5d88-426e-4a2f-a5ba-10e6069ac678",
+      "resourceId": "2ff075d3-5dcf-4a8b-ab91-9f7d3e349a16",
+      "version": 1,
+      "contentDigest": "3e2556b9e57c1261fc17b20d58c0a29978470edd80e6807afd414de4c86ccdc8"
+    },
+    "fixedReceiptAfterRestart": true
+  },
+  "goal": {
+    "goalId": "58509bcb-ad22-4c4b-9781-1e355f786fc2",
+    "plan": {
+      "view": "plan",
+      "goalId": "58509bcb-ad22-4c4b-9781-1e355f786fc2",
+      "projectId": "f71f5d88-426e-4a2f-a5ba-10e6069ac678",
+      "projectRevision": 1,
+      "planRef": "c1efe5a374ab5a062b8f6aafe8be6649956311911e14bd453665b6149f1c33ea",
+      "goalRef": {
+        "goalId": "58509bcb-ad22-4c4b-9781-1e355f786fc2"
+      },
+      "totalNodes": 0,
+      "nodes": [],
+      "nextCursor": null
+    },
+    "explanations": {
+      "view": "explanations",
+      "goalId": "58509bcb-ad22-4c4b-9781-1e355f786fc2",
+      "throughVersion": 1,
+      "items": [
+        {
+          "reference": {
+            "goalId": "58509bcb-ad22-4c4b-9781-1e355f786fc2",
+            "version": 1
+          },
+          "kind": "created",
+          "source": {
+            "projectRevision": 1
+          },
+          "createdAt": "2026-10-06T12:23:07.500Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  "contextHistoryUnknown": true
+}

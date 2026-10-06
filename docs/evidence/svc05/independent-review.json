@@ -1,0 +1,44 @@
+{
+  "task": "SVC05",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED",
+  "reviewedAt": "2026-10-06T12:30:01.294118+00:00",
+  "target": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+  "observedDelivery": "75289214491a2b8c363559c975062a9c7e70be34",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release",
+  "manifestSha256": "45ec85bab3efa5543641b08d2c6b070883f55345c6afc17b40ef022bdf28ee61",
+  "bindings": {
+    "source": 4,
+    "directInputs": 14,
+    "raw": 65,
+    "fixedAndWorkingMismatches": []
+  },
+  "readScope": [
+    "All 4 experiment sources, README, Interface, release-plan",
+    "Direct artifact integrity and compatibility imports, migrations 025/026/027",
+    "All run 1..5 failures/outcomes/checkpoints and tool exit provenance",
+    "Run 5 migration/public reads, 3 wire captures and reports, retained copied artifact bytes",
+    "Candidate light and narrow dark screenshots; narrow navigation occlusion remains expressly unapproved"
+  ],
+  "findings": [],
+  "evidence": {
+    "actualAppCombinations": 3,
+    "allTwoRetainedArtifactsCovered": true,
+    "loadedAssetAndCopiedArtifactHashBindings": "checked",
+    "sameKeyBodyAndTurnAfterLostAck": "checked independently in each captured wire pair",
+    "migration": "1..24 to 27; exact old-column projection for 9 declared tables with nonempty historical task/assistant/artifact/details/commands, restart read and receipt replay",
+    "resources": "owned random DB marker verified before drop; closed resources/checkpoint precede destructive cleanup; run 5 databaseRemaining=[] and failures=[]; prior experimental failures retained",
+    "run5ExitCode": 0,
+    "providerQueries": 0,
+    "personalServiceActions": 0
+  },
+  "reviewerExecutedTests": 0,
+  "approvalScope": "Isolated compatibility preparation at backend 362af3bac77541e5a60979326bcf4d4b8c947915 only. No product source changes. Synthetic deterministic adapter; original retained App bytes plus fixed candidate App.",
+  "notApproved": [
+    "Actual personal deployment or migration of personal data",
+    "ATTACHI02 actual App attachment Send/Queue journey",
+    "Native model/provider execution or permission/settlement claims",
+    "Full narrow layout/accessibility certification",
+    "Automatic rollback/resume; release plan requires fresh identity/drain/compatibility observations"
+  ]
+}

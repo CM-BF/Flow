@@ -1,0 +1,11 @@
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/fixture.mjs:48
+    const assignment = (await request('/api/runner/claim', {}, runner.token)).assignment; assert.equal(assignment.task.id, receipt.turn.task.id);
+                                                                                                                  ^
+
+TypeError: Cannot read properties of null (reading 'task')
+    at seedHistory (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/fixture.mjs:48:115)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async createFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/fixture.mjs:96:51)
+    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/browser.mjs:11:17
+
+Node.js v24.20.0

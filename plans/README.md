@@ -145,3 +145,5 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 | --- | --- | --- | --- |
 | O11 | FLOW-001（O01/M02追溯） | [目标交付读口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model/plans/o11-goal-delivery-read-model/plan.md) | implementation；稳定材料与实时执行分离 |
 | ENG01D | ENG-001 | [真实身份与原生turn接缝](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams/plans/eng01d-native-writer-seams/plan.md) | implementation；不扩旧权限 |
+
+- TUI01D：TUI-001下的[终端目标与控制旅程](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session/plans/tui01d-goal-session/plan.md)。独立goal呈现复用已发布共享controller，公开headless与实际PTY分层验收；Web独立，不互为全线串行前置。

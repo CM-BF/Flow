@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['TUI01D', '终端目标与控制旅程', '工作线', 'tui-goal-session', 'tui01d-goal-session'],
   ['WPF-DPERF03', '看板读取并发与快照复用', '工程协作', 'dashboard-git-snapshot', 'wpf-dperf03'],
   ['WPF-ATTACHI02', '附件随聊天可靠发送', '工作线', 'web-attachment-production', 'wpf-attach-i02-production-binding'],
   ['SVC05', '新版个人预览兼容准备', '工作线', 'personal-current-release', 'svc05-current-release'],
