@@ -11,7 +11,25 @@ const database = `flow_wpf02_catalog_${randomUUID().replaceAll('-', '')}`;
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1, statement_timeout: 5000 });
 const ownerToken = 'wpf02-catalog-synthetic-owner';
 let lock: PoolClient | undefined;
-let created = false;
+const ownedDatabase = { name: database, creationRequested: false };
+type OwnedDatabase = typeof ownedDatabase;
+async function createOwnedDatabase(owned: OwnedDatabase, sendCreate = (sql: string): Promise<unknown> => lock!.query(sql)) {
+  if (!(await lock!.query('SELECT pg_try_advisory_lock(hashtextextended($1,0)) AS locked', [owned.name])).rows[0]?.locked) throw new Error('Owned fixture lock unavailable.');
+  if ((await lock!.query('SELECT 1 FROM pg_database WHERE datname=$1', [owned.name])).rowCount) throw new Error('Owned fixture already exists.');
+  owned.creationRequested = true;
+  await sendCreate(`CREATE DATABASE ${owned.name}`);
+}
+async function cleanupOwnedDatabase(owned: OwnedDatabase) {
+  if (!owned.creationRequested) return { state: 'not-requested', database: owned.name } as const;
+  try {
+    if ((await lock!.query('SELECT 1 FROM pg_database WHERE datname=$1', [owned.name])).rowCount) await lock!.query(`DROP DATABASE ${owned.name}`);
+    const remaining = (await lock!.query('SELECT 1 FROM pg_database WHERE datname=$1', [owned.name])).rowCount;
+    return { state: remaining === 0 ? 'absent' : 'unknown', database: owned.name } as const;
+  } catch {
+    // A disconnected admin or remaining connections must be explicit; never FORCE or terminate another session.
+    return { state: 'unknown', database: owned.name } as const;
+  }
+}
 let pool: Pool | undefined;
 let server: Awaited<ReturnType<typeof createServer>> | undefined;
 let baseUrl = '';
@@ -43,9 +61,7 @@ async function seed(configuration: NativeExecutionProfileConfiguration, override
 }
 beforeAll(async () => {
   lock = await admin.connect();
-  if (!(await lock.query('SELECT pg_try_advisory_lock(hashtextextended($1,0)) AS locked', [database])).rows[0]?.locked) throw new Error('Owned fixture lock unavailable.');
-  if ((await lock.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount) throw new Error('Owned fixture already exists.');
-  await lock.query(`CREATE DATABASE ${database}`); created = true;
+  await createOwnedDatabase(ownedDatabase);
   const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${database}`;
   pool = new Pool({ connectionString: databaseUrl, max: 4, statement_timeout: 5000 });
   server = await createServer({ databaseUrl, ownerToken, automaticQueueScan: false });
@@ -62,10 +78,28 @@ afterAll(async () => {
   } finally {
     try { await pool?.end(); }
     finally {
-      try { if (created) { await lock!.query(`DROP DATABASE ${database}`); expect((await lock!.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount).toBe(0); } }
+      try {
+        if (ownedDatabase.creationRequested) expect(await cleanupOwnedDatabase(ownedDatabase)).toEqual({ state: 'absent', database });
+      }
       finally { lock?.release(); await admin.end(); }
     }
   }
+});
+it('cleans its exact owned database when CREATE commits but acknowledgement is lost', async () => {
+  const owned = { name: `flow_wpf02_catalog_${randomUUID().replaceAll('-', '')}`, creationRequested: false };
+  let cleanup: Awaited<ReturnType<typeof cleanupOwnedDatabase>>;
+  try {
+    await expect(createOwnedDatabase(owned, async sql => {
+      await lock!.query(sql);
+      throw new Error('Synthetic lost CREATE acknowledgement.');
+    })).rejects.toThrow('Synthetic lost CREATE acknowledgement.');
+    expect(owned.creationRequested).toBe(true);
+    expect((await lock!.query('SELECT 1 FROM pg_database WHERE datname=$1', [owned.name])).rowCount).toBe(1);
+  } finally {
+    // This second owned database has no application connections; the primary fixture closes its connections in afterAll.
+    cleanup = await cleanupOwnedDatabase(owned);
+  }
+  expect(cleanup).toEqual({ state: 'absent', database: owned.name });
 });
 it('returns configured native facts with explicit unsupported Codex conversation capability', async () => {
   const c = await seed(claude), x = await seed(codex);

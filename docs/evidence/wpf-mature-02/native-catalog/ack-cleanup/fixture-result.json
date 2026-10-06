@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "experiments/codex-app-server-conformance/native-catalog/vitest.config.mjs",
+    "apps/server/src/execution-profiles/native-catalog.test.ts",
+    "-t",
+    "cleans its exact owned database"
+  ],
+  "startedAt": "2026-10-06T10:37:39.852637+00:00",
+  "finishedAt": "2026-10-06T10:37:47.189160+00:00",
+  "elapsedSeconds": 7.3360364170512185,
+  "exitCode": 0
+}
