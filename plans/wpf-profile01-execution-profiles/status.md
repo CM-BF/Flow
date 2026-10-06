@@ -16,8 +16,8 @@
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/catalog.ts, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/execution-profiles/selection.ts, apps/web/test/execution-profiles.browser.ts, apps/web/test/execution-profiles.fixture.tsx, apps/web/test/execution-profiles.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 混合目录、普通聊天allowlist与冻结输入已独立APPROVED，可交App接入片 |
-| 下一可用交付 | App owner另领消费；本模块停止实现写入并保留review修复claim |
+| 当前产出 | 聊天执行选项已验证，不支持的配置会明确禁用 |
+| 下一可用交付 | 把执行选项接到聊天界面 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 4f1985769564eafad9218570411d5ce1114b4ec0；独立模块限定 |
