@@ -1,0 +1,169 @@
+{
+  "observedAt": "2026-10-06T06:10:20.279Z",
+  "implementationTarget": "57d28e9104e9041dbd04a66295294308da94a23d",
+  "base": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "dependency": "c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5",
+  "source": [
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a",
+      "bytes": 3259
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "sha256": "5219405bad9894b479186621f67e358c74d7d024f54787a77b3a32921e78daca",
+      "bytes": 4517
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sha256": "fd0187e0c6311b10eaaab6496f14489c0d3ee78d8161a32e7692f606fa0d8519",
+      "bytes": 5572
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "sha256": "aa1dab64465c5cd7a4d422985cd5a24b10bbc4df13d7bb07fc64b1f19a769f12",
+      "bytes": 16372
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "sha256": "247967f51d31bb5e6b76cca83ef143f9efe86981520c6e178b1ff9a1505f925e",
+      "bytes": 4127
+    },
+    {
+      "path": "apps/runner/src/native-activity/mapper.test.ts",
+      "sha256": "0fe25931f131455336e28a63fc28534eb080e8d04383eccf8e977d70a86479a6",
+      "bytes": 4413
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "5f042bed177e0f1c547b02e3b621de970ee4f34dcf8fdc0a6534ed8a738702b7",
+      "bytes": 6768
+    },
+    {
+      "path": "apps/server/src/native-activity/index.ts",
+      "sha256": "81b7ec57e00b503db18402121d7e41fb8c140346d46c5a5614efda64efa94250",
+      "bytes": 1459
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "sha256": "33d86d709452bc5546f1f8aa44c9832826f58607299574e2682b11afb69b43e4",
+      "bytes": 8230
+    },
+    {
+      "path": "apps/server/src/native-activity/activity.test.ts",
+      "sha256": "e5ea66e9f9d5e78f5ea48299489c008b9056b3e7a631a04df78c92af0b3ccf18",
+      "bytes": 18650
+    },
+    {
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6",
+      "bytes": 970
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/chat05/checks-before-terminal-refinement.txt",
+      "sha256": "41c24ba64c9f8962b9a747a6a5fa168e21d504bd6e8ea673280a3f7075cde39c",
+      "bytes": 1194
+    },
+    {
+      "path": "docs/evidence/chat05/checks-final.txt",
+      "sha256": "e63a45bf20d72b8f088dec2e8e2335c70c50ffcb37b3a1585af05d9a0a2f9782",
+      "bytes": 1196
+    },
+    {
+      "path": "docs/evidence/chat05/claim-native-seam.json",
+      "sha256": "60fd8ae5779281d5628120d176b8aae9e3d80e11962e757c0225b350ec9c495e",
+      "bytes": 884
+    },
+    {
+      "path": "docs/evidence/chat05/claim-reference-amend.json",
+      "sha256": "3f516290d7c7e2073becb82372d4e87924f9a06b399a44b9c4908d37e6743ea1",
+      "bytes": 817
+    },
+    {
+      "path": "docs/evidence/chat05/claim-take.json",
+      "sha256": "31045ee8b2ccc645410766e57ce5a5a13aae62efa789308dd46c5721b1a5e001",
+      "bytes": 787
+    },
+    {
+      "path": "docs/evidence/chat05/cleanup.json",
+      "sha256": "5e45608cac562043cbaa0ef97615453a43de0b7c32d5cc81dade07184038e04b",
+      "bytes": 208
+    },
+    {
+      "path": "docs/evidence/chat05/closure-first.txt",
+      "sha256": "18c1e18aa143a6c9786a42688a54440e85b7bed1cdb06e831c258ef841257386",
+      "bytes": 760
+    },
+    {
+      "path": "docs/evidence/chat05/consumers-first.txt",
+      "sha256": "84459d993623cc3a8e2802ce0ada7f8a5104490ad05daf827df51050746c390a",
+      "bytes": 4269
+    },
+    {
+      "path": "docs/evidence/chat05/contract-typecheck.txt",
+      "sha256": "293edcce3e9e389a9dd65f5ee46c17438f61ce8b339cbca7c294986bd7074fe5",
+      "bytes": 103
+    },
+    {
+      "path": "docs/evidence/chat05/http-red.txt",
+      "sha256": "a6e2362aaccbfa5d2ca088260dcd509668576b3295c9f9dcb575218e211bf0b0",
+      "bytes": 4112
+    },
+    {
+      "path": "docs/evidence/chat05/mapper-green.txt",
+      "sha256": "87fb2f196092c33d70ef10933bdbf18c4ef837e34ead570e89bc0deceaf11e70",
+      "bytes": 314
+    },
+    {
+      "path": "docs/evidence/chat05/mapper-red.txt",
+      "sha256": "4b9e959c1e8338075f4aeeb7cc8e0044b935c9b0254467ad1d3cfcfd6330b0d4",
+      "bytes": 4976
+    },
+    {
+      "path": "docs/evidence/chat05/migration-check.txt",
+      "sha256": "57ab80a8f708a663707d47590e1d5866e3b33ebd837eb5e26794890f7a7e15ae",
+      "bytes": 350
+    },
+    {
+      "path": "docs/evidence/chat05/module-typecheck.txt",
+      "sha256": "293edcce3e9e389a9dd65f5ee46c17438f61ce8b339cbca7c294986bd7074fe5",
+      "bytes": 103
+    },
+    {
+      "path": "docs/evidence/chat05/sdk-source.json",
+      "sha256": "98ac298eb4d023cc736c9706eee2daef397503f16ee05d9ec9bf114539600f7e",
+      "bytes": 760
+    },
+    {
+      "path": "docs/evidence/chat05/typecheck-final.txt",
+      "sha256": "293edcce3e9e389a9dd65f5ee46c17438f61ce8b339cbca7c294986bd7074fe5",
+      "bytes": 103
+    },
+    {
+      "path": "docs/evidence/chat05/typecheck-first.txt",
+      "sha256": "293edcce3e9e389a9dd65f5ee46c17438f61ce8b339cbca7c294986bd7074fe5",
+      "bytes": 103
+    }
+  ],
+  "checks": {
+    "selectedTests": 85,
+    "passedTests": 85,
+    "files": 8,
+    "newMapperTests": 5,
+    "newHttpPgRuntimeTests": 13,
+    "directConsumerTests": 67,
+    "typecheckExit": 0,
+    "diffCheckExit": 0,
+    "providerQueries": 0,
+    "realModelQueries": 0
+  },
+  "scopeLimits": [
+    "bounded UTF-8 excerpts, not complete raw transcript",
+    "truncated JSON is text; omitted bytes have no retrieval path",
+    "injected SDK, not a provider/tool availability test",
+    "production mount/client/Web consumption remain integration responsibilities",
+    "no unrelated product-wide suite or shared DB runs"
+  ]
+}
