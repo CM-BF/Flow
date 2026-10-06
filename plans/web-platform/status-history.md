@@ -378,3 +378,38 @@ ExecutionLead最新REGISTERED回执：main/origin bbe2b4f7ed1adf58f6f81de0f23a65
 ## 成熟度大task当前依赖
 
 [四Web大task、两Mika唯一路径、当前子task及精确registry输入](../../docs/evidence/web-platform/mature-task-handoff.md)是本轮协调入口，不另填产品子task进度。完整规则覆盖旧WPF单父映射。root08:53历史缺两进度卡；Lead09:09:25正式111源已含六大task/CONTEXTI/STEER/VISUAL。父/co-lead真实关联由D08实施，D05证据路径仍原registry owner待修；未解决前不宣称计划请求已全体验收。当前独立实现继续，无需新agent或GO普通消息。
+
+
+## 2026-10-06 10:43:35 UTC 收敛前plan当前表历史（仅历史，不授权/不手填当前）
+
+## 当前 owner 与接口冻结
+
+本节为固定a5内容/33bd已发布副本之后的持续管理增量；原批准target/hash仍不可变，新增管理行不倒填为旧发布内容或继承旧独审。当前事实与status逐项对应。
+
+实际领取由D04唯一原子账本控制，claim数不是agent数；详细原receipt见status与各自canonical。旧表为历史时点，不授权续写。
+
+| 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
+| --- | --- | --- |
+| WPF-CONTEXTI01 | w01_owner / web-context-integration / codex/web-context-integration | 55fe7c81 v1，固定d7e二十scope实际UI片；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，实施中 |
+| WPF-STEER01 | workspace_panels_owner / web-steering-control / codex/web-steering-control | 2bae5026 v1，固定PUBLIC_READY ca4八新scope，不占App/Thread；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)，实施中 |
+| D05FIT01 | d01_owner / dashboard-architecture-first-fit / codex/dashboard-architecture-first-fit | 5dc3360e v1，四scope产品冻结；已审0ac7/final4e24 pushed待main，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅管理两目录；固定33bd副本authority不迁，当前必要事件集中收口 |
+
+CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a已main32c，最后3b4a8b8 clean，e06a v2于08:21:14.735释放；9c6图保持固定，旧树只读。S01/PERF03及ActivityI更早已main/releases保留历史，不借旧权续写。
+
+## 当前执行队列
+
+| 顺序 | 当前计划 / 交付 | 状态与开工条件 |
+| --- | --- | --- |
+| 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
+| 已集成 / 原范围释放 | WPF-CHAT06S01与PERF03 | 3ac/f909已入6426，八source同批准目标；原d94/2ec已v2释放，保留模块/计数验证边界 |
+| 已集成 / 原范围释放 | WPF-CONTEXT01知识引用选择 | 736ef已审并入fc113；九scope全停写/bfe v2释放；仅选择模块，真实App知识入口仍未实施 |
+| 已集成 / 原范围释放 | WPF-CONTEXT02知识引用回执 | 5e8213/6cacc已main7106，六源码同；66695c收口后b485 v2释放；Queue实际guard，Send guard准备但projection未接 |
+| 已集成 / 原范围释放 | WPF-CHATREAD01聊天可读性 | 527/2f858七源已main d7e，cd26404收口后c832 v2释放，CONTEXTI已正式接Thread窗口 |
+| 独立实施 | WPF-CONTEXTI01 / WPF-STEER01 | d7e二十scope实际知识UI与ca4八scope独立补充指令控制并行；精确写权与canonical见当前owner表 |
+| 已审 / 等main | D05FIT01首次适配 | 0ac7已main9d6，0e52826收口且5dc v2释放；DPERF02暂排队未take |
+| 已集成 / 原范围释放 | WPF-CHAT06I01增量正文 | fixed9da/e30已main32c/十一源码同；8ca0684收口后a729 v2已释放 |
+| 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
+| 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
+| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 用户总预算Root4/Web4/Mika4=12；本树root+现三成员=4，不新增agent。唯一status→dashboard，普通事件不逐条私信；跨lead裁决或看板无法解决的真实阻塞才一次短消息 |
+

@@ -101,18 +101,16 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 
 ## 当前 owner 与接口冻结
 
-本节为固定a5内容/33bd已发布副本之后的持续管理增量；原批准target/hash仍不可变，新增管理行不倒填为旧发布内容或继承旧独审。当前事实与status逐项对应。
-
-实际领取由D04唯一原子账本控制，claim数不是agent数；详细原receipt见status与各自canonical。旧表为历史时点，不授权续写。
+管理authority不迁，原a5固定发布/33bd副本仍仅其时点。以下是当前分配，历史表已原样移至[历史入口](status-history.md)；D04唯一账本决定写权，claim数不等agent数。
 
 | 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
 | --- | --- | --- |
-| WPF-CONTEXTI01 | w01_owner / web-context-integration / codex/web-context-integration | 55fe7c81 v1，固定d7e二十scope实际UI片；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，实施中 |
-| WPF-STEER01 | workspace_panels_owner / web-steering-control / codex/web-steering-control | 2bae5026 v1，固定PUBLIC_READY ca4八新scope，不占App/Thread；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)，实施中 |
-| D05FIT01 | d01_owner / dashboard-architecture-first-fit / codex/dashboard-architecture-first-fit | 5dc3360e v1，四scope产品冻结；已审0ac7/final4e24 pushed待main，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
-| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅管理两目录；固定33bd副本authority不迁，当前必要事件集中收口 |
+| WPF-ATTACH01 → MATURE03 | workspace_panels_owner / attachment-resources / codex/attachment-resources | ef617d78 v2十八scope；phase1 6bc/339已独审小输入，runtime实际PG/HTTP实施中；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)。F01/client/rootmount不领 |
+| WPF-RELEASE01 → MATURE01 | w01_owner / web-release-compatibility / codex/web-release-compatibility | 20a6529a v1四scope，两新test+记录；新Web8d8/旧Web与backend b1c固定真实构建，最终format2报告必须匹配同releaseId/descriptor；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md) |
+| WPF-DPERF02 → D01 | d01_owner / dashboard-proof-batching / codex/dashboard-proof-batching | 1cb4 v1四scope，902c实现/167e交付已push且root独审批准；待main保留修复权；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3，仅两管理目录+四Web大task目录；追溯/集中依赖，不构成第三执行层 |
 
-CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a已main32c，最后3b4a8b8 clean，e06a v2于08:21:14.735释放；9c6图保持固定，旧树只读。S01/PERF03及ActivityI更早已main/releases保留历史，不借旧权续写。
+D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVITYREAD/STEIRI已mainf181并原scope全部released；VISUAL已main4391、35e5 v3 released。旧树只读，后继不沿旧权写入。
 
 ## 已确认决定与工程方案
 
@@ -124,19 +122,16 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 
 ## 当前执行队列
 
-| 顺序 | 当前计划 / 交付 | 状态与开工条件 |
+| 优先级 / 状态 | 当前计划 | 下一动作与真实边界 |
 | --- | --- | --- |
-| 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
-| 已集成 / 原范围释放 | WPF-CHAT06S01与PERF03 | 3ac/f909已入6426，八source同批准目标；原d94/2ec已v2释放，保留模块/计数验证边界 |
-| 已集成 / 原范围释放 | WPF-CONTEXT01知识引用选择 | 736ef已审并入fc113；九scope全停写/bfe v2释放；仅选择模块，真实App知识入口仍未实施 |
-| 已集成 / 原范围释放 | WPF-CONTEXT02知识引用回执 | 5e8213/6cacc已main7106，六源码同；66695c收口后b485 v2释放；Queue实际guard，Send guard准备但projection未接 |
-| 已集成 / 原范围释放 | WPF-CHATREAD01聊天可读性 | 527/2f858七源已main d7e，cd26404收口后c832 v2释放，CONTEXTI已正式接Thread窗口 |
-| 独立实施 | WPF-CONTEXTI01 / WPF-STEER01 | d7e二十scope实际知识UI与ca4八scope独立补充指令控制并行；精确写权与canonical见当前owner表 |
-| 已审 / 等main | D05FIT01首次适配 | 0ac7已main9d6，0e52826收口且5dc v2释放；DPERF02暂排队未take |
-| 已集成 / 原范围释放 | WPF-CHAT06I01增量正文 | fixed9da/e30已main32c/十一源码同；8ca0684收口后a729 v2已释放 |
-| 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
-| 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
-| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 用户总预算Root4/Web4/Mika4=12；本树root+现三成员=4，不新增agent。唯一status→dashboard，普通事件不逐条私信；跨lead裁决或看板无法解决的真实阻塞才一次短消息 |
+| P1实施 | ATTACH01资源 + RELEASE01兼容 | 两worker各自独立tree/claim；附件runtime固定后独审；RELEASE真实App产物供Lead受控发布，0provider且不动个人入口 |
+| 已审待main | DPERF02 | 902c/167e已正常push；临时16/64/128样本34.897s，完整语义与27独立回归；main/4320收益未知 |
+| 已main / 已释放 | CONTEXTI、STEIRI、ACTIVITYREAD、D08、VISUAL、D06/runtime | 各canonical与release见[集中队列](../../docs/evidence/web-platform/mature-task-handoff.md)；片段通过不等六大task完成 |
+| 下一有界消费 | TUI01B共享ACK Web调用点 | main0cee7556已审公共输入；RELEASE之后w01新树fresh七scope，3wrapper/2test/记录；不碰App，不复制附件v2 decoder |
+| 等合同/客户端实际输入 | ATTACHI01附件Web | official Thread既有附件控件接持久上传/引用/恢复，先固定public输入；不得预占宽23scope挡共享ACK窗口 |
+| 等正式部署验收 | 六计划+父关联/take | D08已main；root仅OS新进程观察尚非fixedreceipt，收到正式来源后一次真实页面核验，不能提前Done |
+
+当前三队4/4/4上限12，本树root+现三成员=4。普通进展只status→dashboard；GO只完整大task独立blocker与Done(1)，不重复私信/转发。历史真实两query2/2只引用，不新增模型预算。
 
 ## TODO
 
@@ -177,7 +172,7 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 - [x] **WPF-001-30** D05FIT01四scope首次适配：0ac7已审并main9d6，0e52826收口且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)。
 - [x] **WPF-001-31** WPF-STEER01沿REQ44独立控制模块：b2已审并入77c主线，01842收口后2bae v2释放，实际App另后继；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。
 - [x] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
-- [ ] **WPF-001-33** WPF-DPERF02批量Git树证明与快照内重复工作：附件P1/已审发布及D06安全点之后，以独立临时Git/少量自有WT对16/64/128source做Trace2，先量process启动/峰值再墙时，总≤60秒含清理、证据≤32MiB；不压真实repo/4320。测后选快照内复用或已批准batch-tree，保2MiB/5s、完整record/缺失/unknown和每snapshot fresh dirty/claim，无TTL缓存假绿。无收益也保结果，合成128不当runner容量；沿FLOW-001原工程结果追溯，不新大task。详见[有界方案](../../docs/evidence/web-platform/dperf02-proposal.json)，仍未take/建树。
+- [ ] **WPF-001-33** WPF-DPERF02批量Git树证明与快照内重复工作：附件P1/已审发布及D06安全点之后，以独立临时Git/少量自有WT对16/64/128source做Trace2，先量process启动/峰值再墙时，总≤60秒含清理、证据≤32MiB；不压真实repo/4320。测后选快照内复用或已批准batch-tree，保2MiB/5s、完整record/缺失/unknown和每snapshot fresh dirty/claim，无TTL缓存假绿。无收益也保结果，合成128不当runner容量；沿FLOW-001原工程结果追溯，不新大task。详见[有界方案与结果](../../docs/evidence/web-platform/dperf02-proposal.json)；1cb4 v1已take、固定902c/167e已独审批准并push，待main；该TODO不因分支通过提前完成。
 
 ## 验收、风险与持续方式
 

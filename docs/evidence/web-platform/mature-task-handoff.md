@@ -1,12 +1,12 @@
 # 成熟聊天大task来源与登记队列
 
-## F01需读的具体回复（2026-10-06 10:18:52 UTC）
+## F01需读的具体回复（当前更新 2026-10-06 10:43:35 UTC）
 
 1. **有效writer与安全点已答**：[09:51:27.662Z四path观察](receipt-shared-writer-observation.json)及[原账本](receipt-shared-writer-ledger.json)：`conversations/projection.ts`、`conversation-context/receipts.ts`、`execution-profiles/selection.ts`、`conversation-context/selection.ts`均无active/handoff writer。这只是时点观察；F01固定公共receipt target与出口后，Web可立即以精确projection调用点+专测/自身记录fresh take，不必等待已释放的STEIRI App范围。所有路径均在apps/web/src下。
 2. **首迁移界限**：已读main f181的 `docs/evidence/tui01/shared-ack-design.md`，queue matcher仍留Web。receipts.ts保freezeKnowledgeRequest和Queue matcher，profile selection保snapshot/history guard；不删整文件，不放宽已读状态。invalid ACK为unknown并保原key/body，late epoch、旧replay不回滚新状态。
 3. **附件v2交接给同一decoder owner**：Web/root唯一后端将冻结attachments[]/template2 shape交F01 packages/client receipt owner，增可选分支或受控后继extension；保旧template1及Queue matcher，不在Web另复制第二套验码器。ATTACHI01候选已用recovery.ts替换自有receipts.ts。后端资源可独立先做，附件UI上线需合同+shared decoder+消费同一固定输入；不阻TUI首片。
-4. **共享交权/编号已正式收到**：[F01原receipt](f01-attachment-handback-receipt.json)证明10:07:51.636Z v23移出contracts/conversations.ts；[Lead交接](f01-attachment-handoff-observed.json)正式预留026-attachment-resources.sql。预留/释放不是本组写许可；ATTACH当前仍仅五scope，runtime与新路径fresh amend后才写。F01继续独占contracts/index、packages/client、server/index；现f181新树不重建，c340产品同代。Lead协调出口/编号/main，资源域仍本组承担。
-5. **短输入优先**：ATTACH01获scope后先固定小public合同/Interface供root审SHA，再由Lead受控发布准确输入。ATTACHI01可先领取新模块/专测以HTTP fixture与后端PG实施并行；App/receipt等F01短projection迁移交权后精确amend，不能预占整23scope或复制未固定协议。当前ATTACH01 ef617d78 v1仅五schema/记录路径，runtime及Web未预领。
+4. **共享交权/编号已正式收到**：[F01原receipt](f01-attachment-handback-receipt.json)证明10:07:51.636Z v23移出contracts/conversations.ts；[Lead交接](f01-attachment-handoff-observed.json)正式预留026-attachment-resources.sql。预留/释放不是本组写许可；ATTACH phase1原五scope已审；runtime已于10:28:42.374Z fresh amend v2十八scope开始实施，未改F01独占出口。F01继续独占contracts/index、packages/client、server/index；现f181新树不重建，c340产品同代。Lead协调出口/编号/main，资源域仍本组承担。
+5. **短输入优先**：ATTACH01获scope后先固定小public合同/Interface供root审SHA，再由Lead受控发布准确输入。ATTACHI01可先领取新模块/专测以HTTP fixture与后端PG实施并行；App/receipt等F01短projection迁移交权后精确amend，不能预占整23scope或复制未固定协议。ATTACH01 runtime现ef617d78 v2十八scope；Web仍未预领。
 
 6. **固定旧reader兼容结论（root已定方向）**：[逐路径矩阵](attachment-v2-compatibility-research.json)。旧Web的v1硬门禁只在自身Send/enqueue ACK；history/queue不验context且不显示材料。中心必须按每请求非空attachments产生v2，省略/[]及持久v1原key回执沿v1，不能按会话升级。新Web对旧center缺cap禁附件，plain必须省略attachments字段（旧strictObject连[]也拒）。F01共享decoder加明确v1/v2分支，旧页可看新v2正文但附件不可见是已知限制。先用真实legacy consumer fixture验证；当前无Accept/header/GET阻断或剥字段改digest需求。额外严格消费者请指出固定路径，不阻已批TUI首片。
 
@@ -20,17 +20,17 @@
 
 SVC04工具虽已main，实际新Web固定候选8d8ab520a9d43c7b9dafb22911416ee799ebf665对固定b1c2e398 backend的read/send/原keyrecover/协商0provider证据仍缺。现有w01可用，ACK消费等已审固定实现；不新增agent。root已批准四literal，fresh无冲突后[20a6529a v1 COMMITTED](release01-take-receipt.json)10:26:38.042Z，w01已受领；真实App构建+随机专用PG/fixture runner，不能以miniWeb替代。个人61227/61228/凭据/用户tab不可触碰；SVC源码和实际发布仍Lead operator。
 
-DPERF02已合法take并首canonical，因本P1让位暂停实施，保留1cb4 v1四scope；尚无实验/生产修改，不将pending计划当活跃重负载。
+DPERF02在RELEASE01与ATTACH实际运行后已按root恢复授权完成限额实验/最小批量读取；root独立APPROVED，待main。其历史10:25暂停不再是当前状态；没有占用两产品worker或真实服务。
 
-## TUI01B需读的最新具体回复（2026-10-06 10:24:48 UTC）
+## TUI01B需读的最新具体回复（当前更新 2026-10-06 10:43:35 UTC）
 
-- ExecutionLead已指定TUI001-09唯一writer TUI01B，F01 handback client index+新module；首Interface `14d0e53cce4a27cd33b274834b941b2417e9cd62`，canonical `/Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack/docs/evidence/tui01b/interface.md`。实现未独审，本组未take消费片。
+- ExecutionLead已指定TUI001-09唯一writer TUI01B，F01 handback client index+新module；首Interface `14d0e53cce4a27cd33b274834b941b2417e9cd62`，canonical `/Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack/docs/evidence/tui01b/interface.md`。首interface属历史；当前Lead已给main0cee7556、impldc7f3e186ee7a628187f82734db73f48866b9f6e已审接收。Web消费尚未take，RELEASE01完成后w01接七literal；附件v2仍待同decoder明确扩展。
 - [10:20:16.796Z四Web路径均free](receipt-shared-writer-latest.json)是有效PG时点，不是预占。w01已收敛7literal候选：projection.ts、execution-profiles/selection.ts、conversation-context/receipts.ts、原projection.test、新conversation-ack-http.test、自身plan/evidence。后三wrapper只委托共享guard，保freeze/Queue/history；正式固定实现后新树fresh take，不抢App/ATTACHI。
 - root/panels已对齐：wire维持有序AttachmentReference[]；同一public helper按完整有序refs及响应已知metadata结构/总预算匹配。optional expected.descriptors只供实际持有已验证upload receipt者进一步核name/type/bytes，长度与ref须对齐；TUI不得伪造descriptor，Web不另造ACK decoder。未知v2必须显式版本分支，ATTACH固定合同交同一owner。
 - HTTP最小验收：真实FlowClient+Projection坏200→unknown/原keybody，显式原key恢复，错project/profile/context tuple，unknown后400仍unknown，旧ACK不压新GET/known final；无大browser矩阵。
 - main41315已含R05D/SVC04工具（Lead来源），个人b1c后台/固定静态未变，fixture不构成组合发布许可。
 
-## 当前集中接收队列（2026-10-06 10:18:52 UTC）
+## 当前集中接收队列（2026-10-06 10:43:35 UTC）
 
 | Task / action | 固定实现 / 最终正常push、clean | 唯一canonical / 边界 |
 | --- | --- | --- |
@@ -42,7 +42,7 @@ DPERF02已合法take并首canonical，因本P1让位暂停实施，保留1cb4 v1
 | WPF-ATTACH01 → MATURE03，phase1 APPROVED固定输入待受控发布 | fixed base f181d84b5fb3652d62e2a181acff442d42b3e066；[ef617d78 v1 take](attach01-contract-take-receipt.json)10:06:48.197Z，五literal | attachment-resources / plans/wpf-attach01-resources / docs/evidence/wpf-attach01；两个合同+一专测+自己plan/evidence，owner panels；final339086db54f8c5f9966df6121599046996dd2e48 push/clean；impl6bc2918 root已审，Lead可受控输入，phase1仍独立fixed批准；runtime已v2精准扩权，export/client/mount不在本claim |
 | D06 → D01，main收口完成 | impl2c3160f42784ee814d968a953d557251c81a243d / acceptedmain8d8ab520a9d43c7b9dafb22911416ee799ebf665；owner final631173ab正常push/clean，五source逐hash同 | dashboard-architecture-runtime / plans/d06-architecture-refresh；全四scope停写后[84fd v2 release](d06-runtime-main-release-receipt.json)10:24:18.920Z；唯一source迁移/126registry由Lead确认，4320实际部署仍待回执 |
 | WPF-RELEASE01 → MATURE01，实施/首source已就绪 | fixedWeb8d8ab520a9d43c7b9dafb22911416ee799ebf665；旧Web/backend b1c2e39837c2208e6fc2c59a80e16797f26448b5；[20a6529a v1](release01-take-receipt.json)四literal | web-release-compatibility / codex/web-release-compatibility / plans/wpf-release01-product-compatibility / docs/evidence/wpf-release01；首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764 clean/parser0；只两新test及记录，真实App构建/隔离HTTP-PG-fixture，不含provider或个人发布许可 |
-| WPF-DPERF02 → D01，已领取/实验暂缓 | base41315b033deb0b1953484359b686c0b228997367；首canonical08710473，fresh[1cb4f0e3 v1 take](dperf02-take-receipt.json)四literal | dashboard-proof-batching / codex/dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；发布兼容与附件合同优先；实验未执行，恢复后临时Git Trace2≤60s/32MiB，不改proof/不取4320 |
+| WPF-DPERF02 → D01，root APPROVED待main | impl902c9b5d35e1795d564c077034dc78cf1a36b6a0 / final167e85378d1284bf92d0a5e594a6d31e1f6abf6c，local=origin/clean | dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；1cb4 v1四scope保留；root10:41:14独立27/27，作者27/27；合计34.897s/16.08MB临时Trace2，80%较少ls-tree仅此样本，无生产整体提速宣称 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
 这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。D08部署后root一次实际检查六大task父关联/take展示才报告计划请求Done，不将局部片段当整体完成。
@@ -52,6 +52,11 @@ DPERF02已合法take并首canonical，因本P1让位暂停实施，保留1cb4 v1
 2026-10-06 09:33:54 UTC 新并行P1子片WPF-ACTIVITYREAD01由root批准，独立web-activity-readability/codex/web-activity-readability，固定3418fe682944145494463dca9e09f89c8b9c2295；fresh[6f427ac5 v1 take](activityread01-take-receipt.json)五literal无冲突COMMITTED09:33:19.306Z，panels唯一owner，直接归MATURE06。只改native活动两显示组件+原browser脚本的本片输出/断言、自己的plan/evidence，不碰STEIRI的App/Thread/host、shared或projection。首canonical待owner落盘再登记，不把take当进度卡。
 
 本批[主线/owner收口与release](main-f181-closeout.json)已核；Lead59source/50direct+types沿其原证据归因，管理只读7+4+11源与祖先、0产品重跑。122来源正在部署，尚无正式完成回执，不提前采4320或报告六计划Done。历史段落按各时间保留，当前事实以上表为准。
+
+
+## 4320 有限现场观察（root来源，非fixed部署receipt）
+
+root本轮只读OS：listener PID30289，cwd=/Users/citrine/Projects/AgentHarness/Flow，启动2026-10-06 10:30:39 UTC；当时main0b0d5fe7af9c0f40861ec6d2847f7383bcd76739。未HTTP/刷新用户tab/操作进程。说明已有新进程，仍不能证明某固定main/registry的完整部署；126-source registry与页面展示分开。此条替代“没有任何进程观察”，不替代正式部署receipt；收到后root一次hidden实际页面核六大task/父关联/take，管理不重复采样/催普通依赖。
 
 ## 用户原话（GO经root逐字转交，2026-10-06）
 
