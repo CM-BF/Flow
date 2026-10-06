@@ -1,13 +1,14 @@
-import { useEffect, useState, useSyncExternalStore, type ComponentProps, type ReactNode } from "react";
+import { useContext, useMemo, useLayoutEffect, useEffect, useState, useSyncExternalStore, type ComponentProps, type ReactNode } from "react";
 import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessage } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
 import { Thread } from "../components/assistant-ui/elements/thread.aui";
-import { ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers, ConversationActivities, MessageFooter, ConversationStreams, useConversationStream } from "../plugin-integration/react";
+import { SessionContext, ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers, ConversationActivities, MessageFooter, ConversationStreams, useConversationStream } from "../plugin-integration/react";
 import { fixtureMode, type DraftState } from "../TaskThread";
 import { ConversationProjection } from "./projection";
 import { ExecutionProfilePicker } from "../execution-profiles/ExecutionProfilePicker";
 import type { ExecutionProfileCatalog } from "../execution-profiles/catalog";
 import { freezeConversationCreation, type ProfileSelection } from "../execution-profiles/selection";
+import { KnowledgeComposer, KnowledgeSelectionSummary } from "../plugin-integration/knowledge";
 import { ConversationQueue } from "./queue/ConversationQueue";
 import "./conversations.css";
 
@@ -33,9 +34,9 @@ function MessageReceipt({ projection, onAccepted }: { projection: ConversationPr
   const receipt = useSyncExternalStore(projection.subscribe, projection.getSnapshot).outbox;
   if (!receipt) return null;
   return <section className="flow-conversation-receipt" aria-label="Message receipt">
-    <strong>{receipt.state === "sending" ? "Sending message…" : receipt.state === "unknown" ? "Receipt unknown" : "Message rejected"}</strong>
-    <pre>{receipt.request.text}</pre><p>{receipt.error ?? "Waiting for durable acceptance."}</p>
-    {receipt.state === "unknown" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>Retry same message</button></>}
+    <strong>{receipt.state === "sending" ? (receipt.kind === "creation" ? "Preparing conversation…" : "Sending message…") : receipt.state === "unknown" ? "Receipt unknown" : "Request rejected"}</strong>
+    {receipt.kind === "turn" ? <pre>{receipt.request.text}</pre> : <p>Preparing a conversation without sending a message.</p>}<p>{receipt.error ?? "Waiting for durable acceptance."}</p>
+    {receipt.state === "unknown" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>{receipt.kind === "creation" ? "Retry same preparation" : "Retry same message"}</button></>}
     {receipt.state === "rejected" && <button className="flow-link" onClick={() => projection.outbox.dismiss(receipt.id)}>Dismiss rejected receipt</button>}
   </section>;
 }
@@ -59,11 +60,14 @@ function ComposerConfiguration({ loading, profile, viewId, intent, queueAvailabl
   </div>;
 }
 
-export function ConversationThread({ viewId, visible, projection, drafts, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
-  viewId: string; visible: boolean; projection: ConversationProjection; drafts: Map<string, DraftState>;
+export function ConversationThread({ viewKey, viewId, visible, projection, drafts, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
+  viewKey: string; viewId: string; visible: boolean; projection: ConversationProjection; drafts: Map<string, DraftState>;
   profiles: ExecutionProfileCatalog; profileSelection: ProfileSelection; onProfileSelection: (selection: ProfileSelection) => void;
   onAccepted: (id: string) => void; onInspect: (taskId: string) => void; onCurrentTask: (taskId: string) => void; onOpenTask: (taskId: string) => void;
 }) {
+  const session = useContext(SessionContext)!;
+  const knowledge = useMemo(() => session.knowledgeBinding(viewKey, projection), [session, viewKey, projection]);
+  useLayoutEffect(() => { knowledge.configure(viewId, visible); return () => knowledge.configure(viewId, false); }, [knowledge, viewId, visible]);
   const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
   const profileCatalog = useSyncExternalStore(profiles.subscribe, profiles.getSnapshot);
   const queue = useSyncExternalStore(projection.queue.subscribe, projection.queue.getSnapshot);
@@ -88,21 +92,33 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
       const blocked = projection.sendDisabledReason(intent) ?? profileReason();
       if (blocked) throw new MessageNotSentError(blocked);
       const text = message.content.filter(part => part.type === "text").map(part => part.text).join("\n");
-      if (intent === "queue") {
-        const valid = conversationQueueEnqueueSchema.safeParse({ expectedQueueRevision: queue.page?.queueRevision, text });
-        if (!valid.success) { const error = "Use a non-empty message up to 16,000 UTF-8 bytes for the queue. This message was not sent."; setSendError(error); throw new MessageNotSentError(error); }
-        setSendError(null); await projection.queue.enqueue(text); return;
-      }
-      const valid = conversationTurnSchema.safeParse({ text, expectedRevision: state.snapshot?.conversation.revision ?? 0, mode: "follow-up" });
-      if (!valid.success) { const error = "Use 1–16,000 characters. This message was not sent."; setSendError(error); throw new MessageNotSentError(error); }
+      let capture: ReturnType<typeof knowledge.capture>;
       let creation: ConversationCreation | undefined;
-      if (!state.snapshot) {
-        try { creation = freezeConversationCreation(text.trim().split("\n")[0]!.slice(0, 180), profileSelection); }
-        catch (error) { const message = error instanceof Error ? error.message : "This profile cannot be used for ordinary chat."; setSendError(message); throw new MessageNotSentError(message); }
-      }
+      try {
+        capture = knowledge.capture();
+        if (intent === "queue") { if (!conversationQueueEnqueueSchema.safeParse({ expectedQueueRevision: queue.page?.queueRevision, text, knowledge: capture.knowledge }).success) throw Error("Use a non-empty message up to 16,000 UTF-8 bytes for the queue. Your references are kept."); }
+        else {
+          if (!conversationTurnSchema.safeParse({ text, expectedRevision: state.snapshot?.conversation.revision ?? 0, mode: "follow-up", knowledge: capture.knowledge }).success) throw Error("Use 1–16,000 characters. Your references are kept.");
+          if (!state.snapshot) creation = knowledge.creation(freezeConversationCreation(text.trim().split("\n")[0]!.slice(0, 180), profileSelection));
+        }
+      } catch (error) { const message = error instanceof Error ? error.message : "This message cannot be submitted."; setSendError(message); throw new MessageNotSentError(message); }
       setSendError(null);
-      const id = await projection.send(text, creation);
-      if (id) onAccepted(id);
+      const previous = intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue")?.key : projection.outbox.getSnapshot()?.id;
+      const operation = intent === "queue" ? projection.queue.enqueue(text, capture.knowledge) : projection.send(text, creation, capture.knowledge);
+      // Async methods can reject before their first await. A new local receipt, not a Promise, proves handoff.
+      const receipt = intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue") : projection.outbox.getSnapshot();
+      const receiptId = receipt && ("key" in receipt ? receipt.key : receipt.id);
+      const handedOff = !!receiptId && receiptId !== previous;
+      if (handedOff) knowledge.consume(capture);
+      try {
+        const id = await operation;
+        if (!handedOff) throw Error("The message was not handed to a receipt. Your references are kept.");
+        if (id) onAccepted(id);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "Message could not be sent."; setSendError(message);
+        if (!handedOff) throw new MessageNotSentError(message);
+        // Once a receipt owns the request, its failures must never prepend old text into the next draft.
+      }
     },
   });
   useEffect(() => {
@@ -111,8 +127,17 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
       drafts.set(viewId, { harness: "claude", scenario: "success", text: runtime.thread.composer.getState().text });
     });
   }, [runtime, viewId, drafts]);
+  const prepare = async () => {
+    try {
+      const blocked = projection.sendDisabledReason() ?? profileReason(); if (blocked) throw Error(blocked);
+      const title = runtime.thread.composer.getState().text.trim().split("\n")[0]!.slice(0, 180) || "New conversation";
+      const creation = knowledge.creation(freezeConversationCreation(title, profileSelection));
+      if (!creation.projectId) throw Error("Choose a project before preparing knowledge.");
+      setSendError(null); const id = await projection.prepare(creation); if (id) onAccepted(id);
+    } catch (error) { setSendError(error instanceof Error ? error.message : "Conversation could not be prepared."); }
+  };
   return <PluginThreadScope editableComposer viewId={viewId} taskId={last?.task.id ?? null} messageTask={id => streamState.members.get(id)?.taskId ?? null}><AssistantRuntimeProvider runtime={runtime}><ConversationDataRenderers viewId={viewId} projection={projection} visible={visible}>
-    <ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
+    <ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
       composerSubmit={intent === "queue" ? () => { if (!projection.sendDisabledReason("queue")) runtime.thread.composer.send({ startRun: false }); } : undefined}
       composerInputOnKeyDown={event => {
         if (event.defaultPrevented || event.nativeEvent.isComposing || event.keyCode === 229 || event.key !== "Enter") return;
@@ -126,8 +151,8 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
           details: navigate => <ConversationBehavior live={streamState.enabled}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
             onInspect={id => navigate(() => onInspect(id))}
             onOpenTask={id => navigate(() => { onOpenTask(id); requestAnimationFrame(() => document.getElementById(`tab-${id}`)?.focus()); })} /></ConversationBehavior> }} />}
-      footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
+      footer={<div className="flow-conversation-footer"><KnowledgeSelectionSummary binding={knowledge} />{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
 
     />
-  </ConversationActivities></ConversationStreams></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
+  </KnowledgeComposer></ConversationActivities></ConversationStreams></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
 }

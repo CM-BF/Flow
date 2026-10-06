@@ -233,7 +233,7 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
-  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
+  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
@@ -570,6 +570,16 @@ function Workspace({
     knowsTask: id => Boolean(taskView(id)) || conversationOwnsTask(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
     task: id => taskView(id)?.[1].projection.getSnapshot().task ?? null,
     hasDraft: id => Boolean(views.get(id)?.conversation) || (id.startsWith("draft-") && views.has(id)),
+    knowledge: {
+      current: identity => {
+        const view = [...views.values()].find(view => view.key === identity.viewKey);
+        const conversation = view?.conversation?.getSnapshot().snapshot?.conversation;
+        return !!view?.conversation && (conversation?.id ?? null) === identity.conversationId && (conversation?.projectId ?? null) === identity.projectId;
+      },
+      projects: (_identity, after, signal) => client.projects({ limit: 40, ...(after ? { after } : {}) }, signal),
+      search: (identity, query, signal) => client.searchKnowledge(identity.projectId!, query, signal),
+      resolve: (identity, citation, signal) => client.resolveKnowledge(identity.projectId!, citation, signal),
+    },
     activity: {
       events: (identity, after) => { assertActivity(identity); return client.events(identity.taskId, after); },
       detail: (identity, id, signal) => { assertActivity(identity); return client.conversationDetail(identity.conversationId, identity.turnId, id, signal); },
