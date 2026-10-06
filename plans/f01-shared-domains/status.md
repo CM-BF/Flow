@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:56 UTC / 2026-10-06 06:48 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:03 UTC / 2026-10-06 07:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a；本轮流式读取接口 88a869efd782afd5f64f5d7adad0a9167da121c1 |
+| 工作基线 / HEAD | main ba908a2d84a05b336d74fbaccd7a36d3d254c501；本轮生产流式读取 da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2 |
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a 已推送；K03/021及renderer接线已交付。X05生产已审待集成；流式公共读取接口待审。实际center/runner仍fb906cb。 |
-| Review | NOT_STARTED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2；流式thin client88与X05生产3691已独审 |
+| 检查状态 | PASSED；生产2红→2绿/独立types，原始日志及随机库清理事实保存；未重新跑旧领域 |
+| 已集成main状态 / HEAD | ba908a2d84a05b336d74fbaccd7a36d3d254c501 已推送，K03/021与X05可选下载入口已交付。流式领域/兼容/公共入口已分别独审，等待消费者组合；实际center/runner仍fb906cb。 |
+| Review | APPROVED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2；独立assignment_review只读，兼容消费者发布门另列 |
 | 实现目标 | da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2 |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/assistant-stream-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 让回复能够逐段读取，并保持旧聊天界面正常使用。插件包下载入口已完成审查。 |
-| 下一可用交付 | 通过公共入口验证后交付逐段回复读取，供网页接入。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 逐段回复读取入口完成审查；正在确认新旧活动列表都能跨过暂不显示的记录。 |
+| 下一可用交付 | 交付正文流式读取和兼容活动分页，供聊天页面接入。 |
+| 当前阻塞 | ACTIVE；等待原有模块测试适配和网页活动列表分页兼容交付，owner已明确并行。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |

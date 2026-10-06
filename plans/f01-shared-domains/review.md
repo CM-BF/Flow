@@ -1,6 +1,6 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（流式正文生产接线）**
+**当前增量状态：APPROVED（流式正文生产接线；兼容消费者发布门仍待闭合）**
 
 Review target commit：da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2
 
@@ -126,3 +126,7 @@ Mika只读APPROVED3691d1b3dffa5eb33546ff3b84f45fa88401a9d5；6source/3raw一致�
 
 ## CHAT06 thin client 独立批准
 Root只读APPROVED88a869efd782afd5f64f5d7adad0a9167da121c1，4source/2raw固定blob一致，1/1 HTTP34ms/noEmit0，无P1/P2/无重跑。仅transport/export/GET opt-in，不代表生产/PG/provider。
+
+
+## CHAT06 production 独立批准
+assignment_review只读APPROVED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2，核2source/5raw固定与working hashes；2red→2green真实PG/HTTP/noEmit，资源清理事实完整。未重跑/0query，无本delta P1/P2。明确C02模块首case startup适配及Web活动cursor reader兼容仍为发布前置；不以本批准称实际Web/provider流式通过。
