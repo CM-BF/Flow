@@ -320,3 +320,11 @@ D06首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26 clean已独立核：新
 Lead SOURCE_MOVED通知后管理者只读一次，generatedAt=2026-10-06T05:31:45.221Z，main44713719f7e2f76d0f36dba979d779a96e1a80ca，共65tasks。[两任务原样摘录](d06-queue-source-observation.json)证实：D06新tree/branch、e5b2v1matchesSource、HEAD11617bec clean、human完整、reviewNOT_STARTED/target375；QUEUE01正确tree/branch、b4ea85v1matchesSource、HEADc80dirty、human完整、reviewNOT_STARTED/targetUNKNOWN。没有重复D06源，不将注册当实现通过。
 
 实际metadata/proof finding：D06实现范围只列三源码而新可执行`docs/evidence/d06/current/browser-check.mjs`属于测试，proof unknown/outsideChanges记录该文件（issues仍空）。已交唯一owner同原evidence claim内补literal实现范围，后续P3修复新target包含该test并交root审；不改后缀假扮metadata。当前375另有root指出nextbackend引用固定eb不含O06/SVC02的来源P3，owner窄修中，尚未产品批准。原D06历史档案已由.md改原样.txt及新index；管理逐byte核三文件原文一致、索引7本地links正常，最终全md等固定metadata。
+
+## D06当前轮固定交付可接收
+
+最终metadata `61d70fda9988e7dc5370fb567e4346bd926fdb7d` / codex/dashboard-architecture-current clean；实现 `5ec6ce2051ed399be4906c6f99f7183e0ed1bb66` / baseeb14991，root05:33:19限定APPROVED、R2CLOSED。管理35变更paths全在原五claim范围，6md44本地链接/4TODO相符，5实现/脚本SHA256与target精确吻合，原失败日志22/61空白保留；所有保护路径零差。root初始375独立7tests与最终增量源码/CUA来源区分，未冒称所有检查在5ec重跑。
+
+[05:37:09.032Z最终一次实采](d06-current-approved-observation.json)65源：D06唯一新树61d70clean/current，checks/review target5ec、两proof unchanged/outside空、claim e5b2v1matchesSource、human完整/integration/issues空，mainfb906未含。这样实际关闭可执行脚本漏scope的proof finding；旧05:31unknown样本不改写。最后status当前下一步一句纯metadata修正后才采样；此前send_message落idle邮箱，list_agents实核后followup唤醒，未让旧文案继续当当前状态。完整ready已给root一次OPS桥，不重复外部通知/产品测试。
+
+05:41 管理安全停点：MainLead 经 root 回 ACCEPTED_INTEGRATION_QUEUE，SVC 窗口使用 main fb906，D06 排其后，保留 claim 回修权、五 scope 停写、预览55247/58207不动。QUEUE309固定待审；作者51direct/typecheck/build/dev11/prod11与root最终独审分开。按本地find-skills优先复用已安装clean-code方法，核命名、唯一事实职责、错误/unknown与历史时态，不新增依赖或重复产品测试。05:40:26.108Z fresh ledger核管理632av2/D06e5b2v1/QUEUEb4eav1，renderer八新scope无literal冲突；X01完整计划归主Lead/runner_owner，Mika后台K02已active，未来合同关键路径优先。此次只做readiness，不take或授予新产品写权。

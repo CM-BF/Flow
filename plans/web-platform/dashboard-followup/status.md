@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 05:26 UTC |
+| 最近更新 | 2026-10-06 05:37 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（协作记录）；实际dashboard由原Lead负责 / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -13,8 +13,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 3 |
-| 当前产出 | 看板已减少重复核验；正在准备架构图基线刷新 |
-| 下一可用交付 | 刷新架构图，并在顶部清楚标示固定源码快照 |
+| 当前产出 | 新版架构图已通过审查，并明确显示固定源码版本 |
+| 下一可用交付 | 将已审架构图更新到工程看板 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -30,7 +30,7 @@
 | WPF-D01-03 | completed | d01_owner（协作） | 四独立feature平级planDir已注册，nested转stub；4320入口与receipts真实验证，无放宽nested安全范围 |
 | WPF-D01-04 | completed | d01_owner（协作）；原Lead实施 | U09架构tab已部署，root读取固定3773图；管理04:07 CUA见可访问架构入口；不是最新8f图已交付 |
 | WPF-D01-05 | completed | d01_owner（协作） | D06 ef42277独审通过，04:28实际47源/claim匹配/main4e同范围/4320部署；最终6ea2，v2释放 |
-| WPF-D01-06 | in-progress | d01_owner（协作） | D06新轮固定eb/新独立tree五scope e5b2v1正式take，w01实现基线刷新与上部快照提示；唯一source迁移已准，服务切换待Lead |
+| WPF-D01-06 | in-progress | d01_owner（协作） | D06新轮5ec/rootAPPROVED、61d70clean；05:37实际两proof与claim完整，唯一source已迁移，本轮main/页面部署待Lead |
 | WPF-D01-07 | completed | d01_owner（协作） | 已移交独立WPF-DPERF01，5cd限定APPROVED；main6b4同两scope，最后08bd记录后bb7efv2 released；临时Git计数不泛化线上速度 |
 
 ## 阻塞 / 风险 / 未验证
@@ -54,3 +54,5 @@ WPF-001父源和六个独立feature canonical源已实际注册；本nested协�
 05:26正式迁移：GoalOwner/Lead固定eb14991，准新tree dashboard-architecture-current与branch codex/dashboard-architecture-current，w01为唯一owner；freshledger确认旧D06v2released、候选五项无冲突，新claim e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1已commit后开写。新首canonical由root一次桥Lead重定向原D06，不另建事实源；目前未假称4320新图已部署。
 
 05:31:45.221Z原D06 registry已实际指向dashboard-architecture-current，manager单次65源API确认live/current/e5b2matchesSource，人读完整。候选375未批准，proof因可执行browser脚本缺literal实现范围为unknown已交owner；source迁移完成不替代这轮实现review。旧三档归raw保持byte相等，索引链接正常；原f619释放记录不改。
+
+05:37 root独审5ec限定APPROVED/R2CLOSED，管理35paths/6md44links4TODO/5hash与05:37:09.032Z最终API闭环；原完整source/script范围遗漏已补，proof从05:31unknown变unchanged的两个真实样本分别保留。原8f部署与新eb待部署分开，TODO06保留in-progress直至实际接收/页面核验，不为进度勾完。

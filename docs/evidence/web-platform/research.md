@@ -437,3 +437,11 @@ root在已释放PROFILEI树只读运行内存20turn相同GET探针，预先核 `
 ## K02上下文后继预警（未冻结，不是现存finding）
 
 GoalOwner转Mika：已批准设计conversation/queue optional immutable projectId、KnowledgeCitation context≤4/8KiB，尚未take/contractfreeze。未来existing creationFields与assertCreationReceiptMatches显式投影可能遗漏新projectId，应在正式presence/identity语义和exact合同SHA到达后安排最小reader/receipt兼容；root尚未实证未来回执失败，不写成已发生bug。正文只给授权claim执行副本及按需detail，公共task/turn/queue/SSE首读不含正文。保持QUEUE01/D06当前scope，context选择UI另片，不私造K01/K02引用DTO或抢写当前字段。
+
+RS08同一后继面补静态证据：root固定eb查看ConversationThread的`convertMessage: message => message`每render新函数；实际core0.3.22 `external-store-thread-runtime-core.ts:360–370`函数身份变化重建converter，因此即使messages稳定也可能失去复用。与20turn内存探针同一候选，非实际浏览器延迟结论。root重查官方[External store](https://www.assistant-ui.com/docs/runtimes/custom/external-store)稳定converter示例与缓存说明，行为仍以安装源码为准；先量真实render，QUEUE释放后再正式规划，不按revision省略动态reply/task事实，不新增任务或当前写权。
+
+## 05:41 已安装composer受控发送只读澄清
+
+root/w01只读实际react0.15.23/core0.3.22源码：在当前无SDK queue adapter、无voice的路径，显式排队调用 `send({startRun:false})` 保留官方canSend、草稿分离、附件准备、dispatch/send事件与onNew，跳过默认user新run触发的client-tool abort。按钮submit与普通Enter必须走同一form override；普通follow-up仍原primitive，IME/ShiftEnter/defaultPrevented不绕过，steer显式unsupported。publicsend返回void，isSubmitting只表示附件准备，不能充当HTTP ACK门禁；Flow同步inflight/unknown与冻结receipt仍权威。若以后启用SDK `_store.queue`，running默认steer分派会改变该结论，须重核。此次0项目写/测试/浏览器/模型，非moving QUEUE实现批准。
+
+05:40:26.108Z管理freshledger更新早期K02未take历史：Mika K02 claim347d4777-d430-4f06-8cba-ed8b180f2ba9 v1现active，范围是后台context/queue/conversation与shared合同；此领取事实不表示合同冻结/独审/可部署。renderer仍既有八新scope候选无literal冲突，完整X01 npm/第三方隔离属主线，不因空闲就另造全栈计划；固定接口/base建议回root再协调。
