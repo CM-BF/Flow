@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:45 UTC / 两已审交付已一次送集成；正文兼容独立片已正式领取 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:48 UTC / 两已审交付main接收实核；原owner正在收口释放 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -13,7 +13,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 聊天按需详情接线和架构快照已验证，待主线接收 |
+| 当前产出 | 聊天按需详情接线和架构快照已集成；增量正文兼容正在实施 |
 | 下一可用交付 | 保持旧中心聊天兼容，再接入执行活动与增量正文 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -44,7 +44,7 @@
 | WPF-001-17 | completed | d01_owner | [RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md)固定747cbe616408dc3e44ab3587216c5753e6de3994、final7ff614f6aa210aae5a08119f1f16f2ef08b2298a clean；23paths/8scope、6md28links/4TODO与六source hash已核；作者14tests/typecheck/10browser，root05:58:49Z独立14+局部CUA通过并APPROVED，最终metadata approved/目标匹配已核，06:14单次聚合通过（7ff/两proof不变）；main115b已含、六paths零差，最后4ddcac4f7d0c3c81a758259270bab02596e8ea99 clean，879 v2于06:24:55.018Z released；App另片 |
 | WPF-001-18 | completed | d01_owner | [K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md)固定7633937c322090bbd6d526f378df464f2a7436ed、final394e2ae35ab9f526c339705b59f6a2bf8a5a6efd clean；受控输入e9a0259与自有八scope分开；25paths/6md25links/4TODO/六hash已核，作者102direct/typecheck，root05:58:18Z独立102并APPROVED、最终metadata approved/目标匹配已核，06:14单次聚合通过（样本bec72/两proof不变）；main115b已含、六path相同，最后2bce444ad910b1f7fdb549ab933b2d145c730a83 clean，5ab v2于06:24:18.370Z released；无context UI |
 | WPF-001-19 | completed | d01_owner | WPF-ACTIVITY01 / web-conversation-activity / base3d4985；51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1于06:04:36.078Z committed，八新scope，固定61b9349af390c137cc4cfeabd38bad058ec69cb5，final b024cfc2c3cd150e0f6db02df5dfe3f64159b1f8 clean；29paths/8scope、7md29links/四TODO、dev/prod各7旅程六hash独立match；root06:17:33Z独立22+局部CUA并APPROVED，最终本地parser approved/checks passed target61b、proof unchanged；main acfd已含且六path相同，最后8cc13eaa9c2aa29f77f841637d9891b67fd1264f clean，51f v2于06:28:50.477Z released；无App/shared写入 |
-| WPF-001-20 | in-progress | d01_owner | RendererI固定8014cf9be49391157fb54eeb857a41ee1d6af68c/root06:40:07Z APPROVED，final2a420ffe6a27860156057368a18e94e73957e395 clean；九scope/七实现、7md39links/parser与本地proof unchanged，已一次交Lead待main，ff621v1保留停写；06:36原样采样不倒填批准 |
+| WPF-001-20 | in-progress | d01_owner | RendererI固定8014cf9be49391157fb54eeb857a41ee1d6af68c/root06:40:07Z APPROVED，final2a420ffe6a27860156057368a18e94e73957e395 clean；九scope/七实现、7md39links/parser与本地proof unchanged，已在accepted86a36完整main实核祖先/七scope相同，ff621v1原owner只metadata后释放中；06:36原样采样不倒填批准 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -61,7 +61,7 @@
 | WPF-QUEUE01 | workspace_panels_owner / web-conversation-queue / codex/web-conversation-queue，固定14c61b4062f8040ba6c7239860929366e5bd3fc1，新树clean预检；b4ea85d0-ad87-4903-9a59-73281ad17752 v1于05:19:31.947Z committed，13scope只含conversation queue+必要官方Input seam/专测/plan/evidence；首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e，05:31:45.221Z实采卡片live/claim匹配/human完整/NOT_STARTED，该观察后作者已固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c，51direct/typecheck/build及dev11/prod11通过；root05:40:36已APPROVED，最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean；05:41:16.755Z作者唯一实采两proof unchanged/claim匹配/stageintegration，main3d4985已含；最终6ca7803c9ea0032a64e534824f35214ed0cd8a6a clean，b4eav2已05:51:14.499Z released |
 | 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v5已转App/react给X03与projection/直接test给QUEUE00，04:59再转Thread/outbox/outbox-test给PROFILEI01，05:19再转officialThread给QUEUE01，当前其余七scope保留（06:23:59.268Z v6再移出session.ts供renderer接线）。真实queue两query已由GO/Lead固定证据验收通过，本队未执行 |
 | D06历史eb轮 | 旧ef42277固定8f已审集成且f619v2released，旧tree只读；新w01_owner / dashboard-architecture-current / codex/dashboard-architecture-current / 固定eb14991a170b72d7d974428b2e440e1faada2c1e，e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1于05:26:04.403Z committed，五scope限原data/renderer/test/同D06plan-evidence；唯一source迁移获Lead确认，首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26已核clean/current三件套后一次交root，05:31:45.221Z实采唯一source迁移已生效；固定5ec6ce2051ed399be4906c6f99f7183e0ed1bb66/rootAPPROVED，最终61d70fda9988e7dc5370fb567e4346bd926fdb7d clean；05:37:09.032Z实采两proof unchanged/claim匹配/integration，本轮已由MainLead接收至3d4985，管理独立5ec祖先/5paths零差；最终4452dc8929f81469acc406623cdf80b6583de491 clean，e5b2v2已05:51:45.661Z released；renderer独立继续 |
-| D06当前115b轮 | workspace_panels_owner / dashboard-architecture-context；原ebad证据路径P2由ff5ca7c880910841e8180df7632753c81aea2492修复，root06:40:07Z APPROVED；finale7e37c3cf9441459e03b9463e36d568ffc0bb5ca clean，四scope/五执行paths、7md44links/parser/proof unchanged；唯一source06:36已核，981v1全scope停写待main |
+| D06当前115b轮 | workspace_panels_owner / dashboard-architecture-context；原ebad证据路径P2由ff5ca7c880910841e8180df7632753c81aea2492修复，root06:40:07Z APPROVED；finale7e37c3cf9441459e03b9463e36d568ffc0bb5ca clean，四scope/五执行paths、7md44links/parser/proof unchanged；唯一source06:36已核，accepted86a36完整main祖先/五scope相同，981v1原owner只metadata后释放中 |
 | 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
 | 跨Lead | Mika负责CHAT04持久队列/暂停/继续，ExecutionLead负责公共API/集成/4320；域ae9与client83f7已在698成套独审集成。完整queue UI已从14c61新树正式受领13scope，PROFILEI01已release、旧CHAT官方Thread停写后CAS至v5，禁止跨树双写 |
 
@@ -236,3 +236,5 @@ WPF-CHAT06C01已独立a26新tree web-stream-compatibility/branch codex/web-strea
 21 active claim历史样本按开发/持续管理6、冻结待审或集成5、已main需原owner收口确认10分类，详见[独立Git归类](../../docs/evidence/web-platform/active-claim-classification.json)；不是21个并发agent，全局仍4+4+2。w01已核旧W01/P01/PERF01无未完工作，06:43:14三笔fresh release分别v3/v2/v3，原样receipt存档；不会倒改06:36样本数。随后panels于06:45:37也完成旧CHAT/I01/M02 fresh release至v7/v4/v4（final eb2fc99/f4335af/4069566），六旧任务原receipt已归档，未勾完后继需求。跨lead E01/R04/SVC02仅作为原owner确认候选交root，O07由GO处理、不重复催/强制revoke。
 
 06:47 C01首canonical b76d52967d1ff730fab851a7cb87e39ade3f7c29已实核clean/owner/四TODO/人类字段/actualparser0errors；当前target UNKNOWN/checks not_run/review not_started如实。shared86fc单文件pick3363c14d0ba12f4dc6eabc275355f9132564d01f与原源字节相同。已一次SOURCE_READY经GO桥Lead申请登记，未称部署。见[首源审计](../../docs/evidence/web-platform/chat06c01-canonical-audit.json)。Lead已确认rendererI/D06进入集成；仍待准确main receipt，不重复发送或重跑。
+
+06:48:20.014Z Main receipt独立核验：Lead accepted完整86a36eaeffbf09f0a3772c3d1509c17dc0a76f92；现场main/origin已是07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a clean，仅新增registry与两份部署证据。8014/2a420与ff5/e7e均accepted祖先，七/五完整冻结实现范围在accepted及现场都相同，见[唯一管理观察](../../docs/evidence/web-platform/renderer-d06-main-observation.json)。已通知两owner仅各自main metadata→全scope停写→freshCASrelease；未把通知当释放成功。D06图仍115b，预览60956/58394及runtimefb906不动，不测试/不取API。Activity后继13scope仍待rendererI释放和root派发。
