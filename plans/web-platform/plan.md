@@ -146,7 +146,7 @@ type WorkspacePanelsProps = {
 | 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v2四文件已正式转CHAT，剩余保留回修范围 |
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
 | 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 固定4c240+共享受控a3b9已就绪；Web08259c1d v1受领并正式实施，canonical c72e02；中心2d3bb61已独审，不等于Web/模型验收 |
-| 独立并行测量 | WPF-PERF02 | 新d36v1八scope独立实施固定a87f64f与三规模报告获独立APPROVED，最终172d10d交主线集成；不碰App/后端，CHAT持续优先 |
+| 已审待集成 | WPF-PERF02 | 新d36v1八scope独立实施固定a87f64f与三规模报告获独立APPROVED，最终172d10d交主线集成；不碰App/后端，CHAT持续优先 |
 
 ## TODO
 

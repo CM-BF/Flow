@@ -29,7 +29,7 @@
 | WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01完整6ce与I01主App92a均独立APPROVED；完整X01父范围仍开放，X02中心registry首合同4054待后续独立Web消费 |
-| WPF-001-06 | in-progress | d01_owner | PERF01 benchmark3d47 APPROVED、最终metadata cc334 clean；主线明确合同未ready可并行，PERF02新d36v1取得八scope，未完成优化验收 |
+| WPF-001-06 | in-progress | d01_owner | PERF01 benchmark3d47与PERF02窗口a87均限定APPROVED；PERF02最终172d已交Lead，当前main集成与CHAT组合验证待执行，持续性能目标未宣称完成 |
 | WPF-001-07 | completed | d01_owner | M02 d47 / metadata c526 clean，owner20局部/9总览/6观察/4真实PG组及root限定独立APPROVED；03:17 ancestor核main3773已含d47，非以approval推定 |
 | WPF-001-08 | completed | d01_owner | D04部署且root实际领取详情验证；M02v2移出三文件→I01v1 committed receipt已读/存证，正确应用用户领取展示与唯一写者规则 |
 | WPF-001-09 | in-progress | d01_owner | U11/REQ41～45已落，首合同4c240固定；Web新08259c1d v1正式受领16scope，public client受控输入a3b9已就绪，canonical c72e02已提交并请求登记 |
