@@ -62,3 +62,5 @@
 2026-10-06T10:25:47.007032+00:00：GO优先推进历史保存/公开读回；mika批准8新独立文件与合入固定main 8d8ab520a9d43c7b9dafb22911416ee799ebf665。本轮先固定已审两片integration-readiness，不重跑原检查；后继唯一migration号/owner待Lead，禁止复制临时DDL。当前计划继续推进，不等待Codex，完整current/压缩/Web验收仍开放。
 
 2026-10-06T10:33:41.339595+00:00：固定main8d8已通过scope[] integration受控无冲突合入108d4276298b52911426bba166724298ee3cafdf，未借merge实现；integration claim1de954b3 v2已released。writer v4生效后8新文件实施中；33不同局部用例通过、8根文件继承root严格选项noEmit0，PG/真实owner鉴权/全局事件挂载仍待验。requestedModel保持DB配置alias，resolvedModel独立保留固定host报告，不以二者相等冒充provider验证。新增源码未提交；已审6源不变。
+
+2026-10-06T10:36:04.816805+00:00：历史片8新文件局部实现完成待唯一DDL。41不同用例=18wire+6history+11store事务consumer+6HTTP；前轮23/33/40均重叠不累计。8根文件继承root strict/noUnchecked/ES2023 noEmit0。store用确定性query响应验证小Interface，并非SQL、约束或PG回滚证据；全局owner auth仍待挂载验证。主线尚无本片，当前阶段implementation，待迁移号/owner而非等待Codex。原六源逐字等于批准target。

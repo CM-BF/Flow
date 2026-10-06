@@ -77,3 +77,7 @@
 ## 结论与限制
 
 APPROVED，仅绑定879c989a594a8f4f266b9a78a885e311c52eca0d的4文件schema/pure projection。Mika未复跑工程测试，依据固定源码、作者30/30及局部noEmit原始证据作独立review；不审成SDK采集、持久化、权限或Web完整交付，不表示main已集成或4320已部署。后继修改需要按实际scope和target复审。
+
+## 历史持久化/公开读回局部实现（2026-10-06T10:36:04.816805+00:00）
+
+NOT_STARTED。8新文件，41局部用例与严格noEmit0；唯一正式migration尚未分配、真实PG/全局owner auth及events union挂载未验。不得将原879/3ab批准扩展到本片；精确source hash与限制见[history-checks](../../docs/evidence/wpf-mature-04/history-checks.json)。requested模型alias与host resolved独立，current/remaining恒unknown。固定target随后登记，root独审；DB证据必须在正式唯一DDL上补齐。
