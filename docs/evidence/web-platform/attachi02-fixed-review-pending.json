@@ -7,5 +7,15 @@
   "rootTechnicalChecks": "191/191;21 actual apps changes/22 declaredsource;6readonlyunchanged;15cleanup and samekey/bodyTurnQueue wire passed",
   "finalReview": "PENDING_390_LONG_FILENAME_CHECK_NOT_FINAL_APPROVED",
   "extraCheckBudget": "<=45s including >=20scleanup within original600s",
-  "scope": "Existing ATTACHI02 only; any originalmodule/CSS fix mustfreshamend; do not fabricate failure ornewvisualtask"
+  "scope": "Existing ATTACHI02 only; any originalmodule/CSS fix mustfreshamend; do not fabricate failure ornewvisualtask",
+  "longNameFirstRun": {
+    "state": "sampler failure before target",
+    "elapsedSeconds": 39.143,
+    "cumulativeSeconds": 257.338,
+    "cause": "Files/cap notinitialized + filechooser rejection notimmediatelyhandled",
+    "cleanup": "Owner manualcleanup verified ownDBremaining[]; notnormalautomaticcleanup",
+    "secondAuthorization": "root <=45s 25work/20cleanup; initializeFiles/cap andimmediatePromise.all chooser/click; samplerfailagain stopandlocate",
+    "formalReview": "IN_PROGRESS",
+    "moduleScope": "Original five modules still unauthorized"
+  }
 }

@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T12:54:30.168421+00:00",
+  "target": "6570ef7e896d29040961247f46aa62dc4e466284",
+  "metadata": "f46439c7d11293c985442d440e737715fd78fed6",
+  "remote": "f46439c7d11293c985442d440e737715fd78fed6",
+  "clean": true,
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800"
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "sha256": "1cccd582ff3a53c7f1e7583fa810f2c03e366bec19963eb8bd62c4f5e0af2c98"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "sha256": "9778ced323329503a7803e29ea75af8dc88dbe5964585a8f25f54ad70909bd37"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/preview.mjs",
+      "sha256": "3e4389f4c8237fc97f003e0ab9b7da16de433569aa6a7db4140f33ed85294963"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1"
+    }
+  ],
+  "manifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-aeb/candidate.json",
+  "manifestSha256": "8c7e2f46a748530119af193967fc63158fc1de489fc0d7b69fd1fea9f50b1818",
+  "review": "APPROVED 12:52:31UTC workspace_panels_owner; rootaccepted",
+  "independent": "18/18 Node24;106files171lines5source7readonly;no browser rerun",
+  "authorBrowser": "5views9.034s/cleanupfulfilled,sourcehashesmatch;notactual4320",
+  "main": "NOT_INTEGRATED",
+  "claim": "6cad30a2 v1 retained; executable sources stopped",
+  "managementChecks": "Scope/hash/parser/remote/read-only raw comparison only, no product tests repeated"
+}
