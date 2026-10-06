@@ -8,7 +8,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 - [X01双gate已审接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/host-gates-integration-ready.md)：固定e6827d8a，Mika14:47:23 APPROVED；仅两phase当前权限回调，边界/进度由原owner维护。
 
 - [F01插件安装薄client已审](plugin-installation-client-review.md)：67fd4592，status_read14:43:12 / Mika14:43:34 APPROVED，领域/公开factory边界不扩大。
-- [单目标私有错误文本准备](node-failure-text/README.md)：GO已授权、Mika14:39:09设计批准；仅独立私有诊断副本，实际NOT_OPEN。旧8b1/3c53失败封存不重跑。
+- [单目标私有错误文本准备](node-failure-text/README.md)：组合744ccb6f已获architecture_read14:56:25 / Mika14:56:41准备APPROVED；仅独立私有诊断副本，实际NOT_OPEN。旧8b1/3c53失败封存不重跑。
 
 - Git忽略收口：先前已向共享 `/Users/citrine/Projects/AgentHarness/Flow/.git/info/exclude` 加入精确 `/docs/evidence/wpf-mature-02/node-runtime-metadata/outer-time.stderr`；现改用本scope可审 [局部.gitignore](node-runtime-metadata/.gitignore)，check-ignore来源已核，未删除共享规则、未动sparse/config；共享规则后续由Lead协调。
 

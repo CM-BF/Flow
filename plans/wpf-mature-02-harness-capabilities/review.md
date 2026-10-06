@@ -1,6 +1,6 @@
 # WPF-MATURE-02 review
 
-当前failure-text：Mika14:39:09设计APPROVED；19 distinct分轮（含保留故障真实red→定向8绿）定向纯检查与native/syntax完成，源码65c69e0124e419030182eb615f0bcdb6cf4b9485，组合已准备待独审，PREPARATION_REVIEW_NOT_STARTED / NOT_OPEN。[最小recipe](../../docs/evidence/wpf-mature-02/node-failure-text/README.md)。旧窗口审批只在原固定target内成立。
+当前failure-text：组合744ccb6fc6c8346060426db1d002ae5006ca1ed0 / source65c69e0124e419030182eb615f0bcdb6cf4b9485，architecture_read/gpt-6-astra14:52:14功能与14:56:25最终packet、Mika/gpt-6-astra14:56:41 UTC PREPARATION_APPROVED，0P1/P2；19 distinct分轮原文只读未重测。仅准备批准，actual NOT_OPEN；[正式收据](../../docs/evidence/wpf-mature-02/node-failure-text/preparation-review.json)。
 
 历史runtime-metadata结果：1目标code1、第二槽NOT_RUN，measurement FAIL但清理/完整计量确认；[结果](../../docs/evidence/wpf-mature-02/node-runtime-metadata/run-report.md)固定8b1c8798已获architecture_read/gpt-6-astra 14:38:13与Mika/gpt-6-astra 14:38:28 UTC RESULT_FIDELITY_APPROVED，0P1/P2；[收据](../../docs/evidence/wpf-mature-02/node-runtime-metadata/result-review.json)。仅faithful FAIL，窗口已消费，无后继授权。准备审批仅原范围。
 
