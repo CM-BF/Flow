@@ -1,0 +1,43 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile
+
+ ❯ apps/server/src/engineering/profile.test.ts (12 tests | 1 failed) 1376ms
+   ✓ publishes one immutable engineering profile per runner and replays only its canonical configuration 53ms
+   ✓ rejects unrecognized recipe, task-supplied local configuration, wrong harness and revoked identity 56ms
+   ✓ paginates engineering profiles independently while preserving empty legacy/native catalogs 42ms
+   ✓ rejects mismatched profile before creating a task 29ms
+   ✓ rejects mismatched target before creating a task 17ms
+   ✓ rejects mismatched project before creating a task 17ms
+   ✓ rejects mismatched base before creating a task 15ms
+   ✓ rejects mismatched checker before creating a task 16ms
+   ✓ rejects mismatched digest before creating a task 16ms
+   × rejects engineering pins for ordinary native/conversation/goal authority 17ms
+   ✓ filters unpinned historical rows and other purposes before claim without blocking legitimate work 58ms
+   ✓ fails closed on corrupt recognized storage and never uses a digest as a codec 15ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/engineering/profile.test.ts > rejects engineering pins for ordinary native/conversation/goal authority
+AssertionError: expected FlowApiError: Invalid task submission. { …(2) } to match object { status: 409 }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "status": 409,
++ FlowApiError {
++   "status": 400,
+  }
+
+ ❯ apps/server/src/engineering/profile.test.ts:89:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  03:51:44
+   Duration  2.18s (transform 377ms, setup 0ms, import 722ms, tests 1.38s, environment 0ms)
+

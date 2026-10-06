@@ -1,3 +1,4 @@
+import { publishEngineeringProfile } from './profile.js';
 import { randomUUID } from 'node:crypto';
 import { writeFile } from 'node:fs/promises';
 import { Pool } from 'pg';
@@ -36,6 +37,7 @@ async function scenario() {
   const target = await owner.registerRunner({ name: 'Dedicated engineering fixture', harnesses: ['fixture'], capacity: 1 });
   const runner = new FlowClient({ baseUrl, token: target.token });
   const intent: EngineeringIntent = { protocol: 'flow.engineering.v1', targetRunnerId: target.runnerId, projectId: 'synthetic-project', baseCommit: 'a'.repeat(40), checker: { id: 'synthetic-checker', version: '1', baselineDigest: 'b'.repeat(64) } };
+  intent.profile = (await publishEngineeringProfile(pool, target.runnerId, { protocol: 'flow.engineering-profile.v1', harness: 'fixture', adapterVersion: 'engineering-1', purpose: 'engineering-fixture', recipe: 'calculator-v1', project: { id: intent.projectId, baseCommit: intent.baseCommit }, checker: intent.checker, limits: { checkerTimeoutMs: 1000 } })).profile.reference;
   const accepted = await owner.submit({ title: 'Engineering receipt contract', prompt: 'Synthetic contract only', harness: 'fixture', engineering: intent }, randomUUID());
   await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [accepted.task.id]);
   const assignment = (await runner.claim()).assignment;
@@ -62,7 +64,8 @@ async function scenario() {
 it('pins engineering work to its designated fixture runner before claim', async () => {
   const target = await owner.registerRunner({ name: 'Engineering target', harnesses: ['fixture'] });
   const other = await owner.registerRunner({ name: 'Ordinary fixture', harnesses: ['fixture'] });
-  const intent = { protocol: 'flow.engineering.v1', targetRunnerId: target.runnerId, projectId: 'project', baseCommit: 'a'.repeat(40), checker: { id: 'checker', version: '1', baselineDigest: 'b'.repeat(64) } } as const;
+  const intent: EngineeringIntent = { protocol: 'flow.engineering.v1', targetRunnerId: target.runnerId, projectId: 'project', baseCommit: 'a'.repeat(40), checker: { id: 'checker', version: '1', baselineDigest: 'b'.repeat(64) } } as const;
+  intent.profile = (await publishEngineeringProfile(pool, target.runnerId, { protocol: 'flow.engineering-profile.v1', harness: 'fixture', adapterVersion: 'engineering-1', purpose: 'engineering-fixture', recipe: 'calculator-v1', project: { id: intent.projectId, baseCommit: intent.baseCommit }, checker: intent.checker, limits: { checkerTimeoutMs: 1000 } })).profile.reference;
   const task = await owner.submit({ title: 'Pinned', prompt: 'Test routing', harness: 'fixture', engineering: intent }, randomUUID());
   await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [task.task.id]);
   expect((await new FlowClient({ baseUrl, token: other.token }).claim()).assignment).toBeNull();

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:46:11 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:53:07 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -10,11 +10,11 @@
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile |
 | Branch | codex/engineering-execution-profile |
-| 工作基线 / HEAD | c5bab40ffd9a334403c0db743f798d10815961f0 / codec a7d936f0；持久setup候选待固定 |
-| 工作树dirty状态 | 自己的codec/setup/身份恢复与证据 |
+| 工作基线 / HEAD | c5bab40ffd9a334403c0db743f798d10815961f0 / codec a7d936f0；持久setup 6c9fbfde；受控共享输入 merge 332b3402 |
+| 工作树dirty状态 | 自己的中心用途与直接消费者证据 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 28项setup/直接workspace检查通过；root noEmit0；中心publication/用途门禁未实现 |
+| 检查状态 | 79不同检查分轮通过（28setup+15工程+12用途+24旧profile）；root noEmit0；main未接 |
 | 已集成main状态 / HEAD | ENG01B未集成；基线c5bab40已有已审ENG01A |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -23,14 +23,14 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
-| Claim | 172ae2c2-8910-4bc8-bca3-53d797da175b v1；9 literal |
+| Claim | 172ae2c2-8910-4bc8-bca3-53d797da175b v2；11 literal（追加store/publication） |
 | 架构影响 | 工程profile用途/持久setup与薄main组合；旧runtime唯一，固定架构target待Lead登记 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | ENG01B-01 | completed | native_center_owner | [claim](../../docs/evidence/eng01b/claim.json)、Interface待固定 |
 | ENG01B-02 | completed | native_center_owner | 自有持久marker，未知lease不重建 |
-| ENG01B-03 | in-progress | native_center_owner | Mika store已停写/移出，待受控合入目录输入及claim amend |
+| ENG01B-03 | in-progress | native_center_owner | 已合入固定21e0a56c；中心用途门禁已验，main薄入口待接 |
 | ENG01B-04 | pending | native_center_owner | 独立PG/Git与直接消费者 |
 | ENG01B-05 | pending | native_center_owner | 独审/main尚未开始 |
 
