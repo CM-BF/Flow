@@ -15,6 +15,7 @@ async function bounded<T>(operation: Promise<T>, ms: number): Promise<T> {
 export class TaskReadFixture {
   readonly database = `flow_b01_projection_${randomUUID().replaceAll('-', '')}`;
   readonly samples: ReadSample[] = [];
+  readonly httpCalls: { method: string; route: string; status: number; responseBytes: number }[] = [];
   readonly ownerToken = 'b01-projection-synthetic-owner';
   pool!: Pool;
   app: Awaited<ReturnType<typeof createServer>> | undefined;
@@ -26,6 +27,7 @@ export class TaskReadFixture {
   private observedBytes = 0;
   private current: ReadSample | undefined;
   private version: string | undefined;
+  private closing = false;
 
   async start(): Promise<void> {
     this.startedAt = performance.now();
@@ -34,13 +36,14 @@ export class TaskReadFixture {
     const url = new URL(configured);
     if (!['postgres:', 'postgresql:'].includes(url.protocol) || url.hostname !== '127.0.0.1' || url.port !== '55432') throw new Error('Unexpected PG endpoint.');
     url.pathname = '/postgres';
-    this.admin = new Pool({ connectionString: url.href, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 2000, query_timeout: 3000 });
+    this.admin = new Pool({ connectionString: url.href, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 1000, query_timeout: 1500 });
     this.version = (await this.admin.query('SHOW server_version_num')).rows[0].server_version_num;
     if (Math.floor(Number(this.version) / 10_000) !== 16) throw new Error('PG16 is required.');
     if ((await this.admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [this.database])).rowCount) throw new Error('Random database already exists.');
     this.requested = true;
     await this.admin.query(`CREATE DATABASE ${this.database}`);
     url.pathname = `/${this.database}`;
+    url.searchParams.set('options', '-c statement_timeout=3000 -c lock_timeout=2000 -c idle_in_transaction_session_timeout=5000');
     this.app = await createServer({ databaseUrl: url.href, ownerToken: this.ownerToken, automaticQueueScan: false });
     this.base = await this.app.listen({ host: '127.0.0.1', port: 0 });
     this.pool = new Pool({ connectionString: url.href, max: 3, connectionTimeoutMillis: 1500, statement_timeout: 3000, query_timeout: 4000, idle_in_transaction_session_timeout: 5000 });
@@ -56,8 +59,12 @@ export class TaskReadFixture {
   }
   async http(path: string, body?: unknown, token = this.ownerToken): Promise<{ status: number; data: any }> {
     this.checkWork();
+    if (this.httpCalls.length >= 32) throw new Error('Fixture HTTP request budget exhausted.');
     const response = await fetch(`${this.base}${path}`, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': randomUUID() }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(4000) });
-    const text = await response.text(); this.observedBytes += Buffer.byteLength(text); this.checkWork();
+    const text = await response.text(); const responseBytes = Buffer.byteLength(text);
+    this.observedBytes += responseBytes;
+    this.httpCalls.push({ method: body === undefined ? 'GET' : 'POST', route: path.replace(/(\/api\/tasks\/)[^/?]+/, '$1:id'), status: response.status, responseBytes });
+    this.checkWork();
     return { status: response.status, data: JSON.parse(text) };
   }
   async sample<T>(name: string, operation: () => Promise<T>): Promise<{ value: T; measurement: ReadSample }> {
@@ -73,6 +80,7 @@ export class TaskReadFixture {
     client.query = new Proxy(original, { apply: (query, receiver, args: unknown[]) => {
       const sample = this.current;
       const first = args[0]; const sql = typeof first === 'string' ? first : (first as { text?: string })?.text ?? '';
+      if (!this.closing && !/^ROLLBACK\b/i.test(sql.trim())) this.checkWork();
       if (sample) { sample.queryCalls++; if (/^SELECT\b/i.test(sql.trim())) sample.selectCalls++; }
       const record = (answer: QueryResult) => {
         if (sample && /\bFROM\s+flow\.tasks\b/i.test(sql)) {
@@ -93,6 +101,7 @@ export class TaskReadFixture {
     } });
   }
   async close(): Promise<void> {
+    this.closing = true;
     let connectionsClosed = false, databaseAbsent = !this.requested;
     try {
       this.app?.server.closeAllConnections();
@@ -110,7 +119,7 @@ export class TaskReadFixture {
     finally {
       try { await bounded(this.admin?.end() ?? Promise.resolve(), 2000); }
       finally {
-        const report = { kind: 'b01-task-projection-fixture', database: this.database, postgresVersion: this.version, tasks: this.tasks, elapsedMs: performance.now() - this.startedAt, decodedAndHttpBytes: this.observedBytes, connectionsClosed, databaseAbsent, samples: this.samples };
+        const report = { kind: 'b01-task-projection-fixture', database: this.database, postgresVersion: this.version, tasks: this.tasks, elapsedMs: performance.now() - this.startedAt, decodedAndHttpBytes: this.observedBytes, connectionsClosed, databaseAbsent, samples: this.samples, httpCalls: this.httpCalls };
         const reportBytes = jsonBytes(report);
         console.info(JSON.stringify({ ...report, reportBytes }));
         if (report.elapsedMs > limits.totalMs || this.observedBytes + reportBytes > limits.decodedAndOutputBytes) throw new Error('Fixture total budget exceeded.');

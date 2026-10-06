@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:35:43 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:46:29 UTC；main基线核验fd1322f9，非新main观察 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections |
 | Branch | codex/task-read-projections |
-| 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264，新树创建核clean |
-| 工作树dirty状态 | 初始化plan/Interface/authority metadata |
+| 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264 / 实现提交准备封存；最终metadata HEAD由Git读取 |
+| 工作树dirty状态 | 实现、原始证据与metadata准备固定 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新片NOT_RUN；旧B01完成证据不重复计数 |
-| 已集成main状态 / HEAD | 旧B01已main；本片尚无实现/未main |
-| 实现目标 | NOT_IMPLEMENTED |
+| 检查状态 | PASSED 最终8/8真实PG/HTTP；局部strict exit0。两次目标red原样保留，详见证据 |
+| 已集成main状态 / HEAD | 旧B01已main；本片两reader已实现/未main |
+| 实现目标 | SOURCE_COMMIT_PENDING |
 | 实现范围 | apps/server/src/tasks.ts, apps/server/src/queries.ts, apps/server/src/task-read-projection.ts, apps/server/src/task-read-projection.test.ts, docs/evidence/b01/task-projections, experiments/bounded-reads/task-projections |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已确定减少事件轮询和任务列表无用正文读取的小接口 |
-| 下一可用交付 | 保持公开响应与分页行为的轻量读取及真实字节证据 |
+| 当前产出 | 事件轮询和任务列表不再向应用读取无用prompt，兼容性验证通过 |
+| 下一可用交付 | 独立审查通过后交付主线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED；旧B01批准不覆盖新片 |
+| Review | REVIEW_REQUIRED；旧B01批准不覆盖新片 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -32,12 +32,12 @@
 | B01-02 | completed | 历史b01_bounded_reads / mika | 原独审记录保留 |
 | B01-03 | completed | Lead | 原main/聚合记录保留 |
 | B01-05 | completed | status_read | [claim](../../docs/evidence/b01/task-projections/claim-receipt.json)、[Interface](../../docs/evidence/b01/task-projections/interface.md) |
-| B01-06 | in-progress | status_read | 当前仅设计，源码/真实PG尚未实施 |
-| B01-07 | pending | reviewer / Lead | 尚未固定target |
+| B01-06 | completed | status_read | [8/8与字节证据](../../docs/evidence/b01/task-projections/README.md)，7tasks累计/三库清理，局部strict0 |
+| B01-07 | in-progress | mika / Lead | 固定source/raw待独审；本片未main |
 
 writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v1 COMMITTED 2026-10-06 11:34:16.232 UTC，七精确scope。等待Lead按[迁移请求](../../docs/evidence/b01/task-projections/authority-request.md)登记新权威来源，尚未确认聚合；本status唯一手填事实，不改registry。P04源码/raw冻结与claim保留完全独立。
 
-架构影响：只新增固定summary投影/映射Module供两个既有reader复用，生产事务/存储/鉴权/锁和全局调度不改；新目录结构在固定target后请求Lead登记，当前planned。
+架构影响：只新增固定summary投影/映射Module供两个既有reader复用，生产事务/存储/鉴权/锁和全局调度不改；新目录结构在固定target后请求Lead登记，实际3生产源/1新测试/1私有fixture；目录架构基线待Lead按固定target登记。
 
 ## 历史owner交付快照（以下不是新片当前状态）
 

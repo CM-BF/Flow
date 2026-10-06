@@ -26,5 +26,5 @@
 所属大task [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)，co-lead mika。唯一权威WT变更为task-read-projections，branch codex/task-read-projections，base fd1322f9c0c1d085d5e343e39f6216b20d26c264；旧owner已停写且claim已released。旧B01-01/02/03/04与raw保持历史完成，不代表本片已批准。遵循[根Module规则](../../AGENTS.md#modular-design)，精确[Interface与有界验证](../../docs/evidence/b01/task-projections/interface.md)。
 
 - [x] **B01-05** 核旧owner停止/原子领取、权威迁移请求、小Interface和直接消费者影响。
-- [ ] **B01-06** eventPage与list共享轻投影，保留snapshot/写锁/auth/cursor；真实专库等价、解码字节/查询数与局部strict取证。
+- [x] **B01-06** eventPage与list共享轻投影，保留snapshot/写锁/auth/cursor；真实专库等价、解码字节/查询数与局部strict取证。
 - [ ] **B01-07** 固定target/source/raw独立review、修复复审和Lead受控main接收；第三reader仅证据后决策，不默认领取。
