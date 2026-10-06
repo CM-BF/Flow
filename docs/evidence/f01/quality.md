@@ -183,3 +183,7 @@ Clean-code: startup/export seams only; no settlement/authorization duplication. 
 
 
 07:05 UTC C02 startup fixture integration: original owner test-only5f4fe454 adapts the explicit disabled helper and temporary missing table observation to production now mounting022. Final combined 694c3fdbd6ef4affa66140f13a039156f27023e0, actual8/8 2.88s and noEmit0 after S01 timing window. All header/ACK/cursor checks retained. Root/domain first022 upgrade evidence is separate; temporary table rename is deliberately a readiness-failure input. No other old CHAT06 tests or model calls rerun. Manifest assistant-stream-compatibility-manifest.json.
+
+
+## 2026-10-06 07:14 UTC steering thin client
+Fixed 1b16d23de5b00f897fe9bd0fa07879c84d78e936; approved domain2137115 imported unchanged. Five methods only, strict server DTOs exercised in real Node HTTP transport fixture. Missing-method red→1/1 green33ms/suite210ms, independent typecheck exit0. Original Unicode whitespace/text, current ownership/CAS, stable key, server receipt phase, task+command encoding, numeric pagination, 409 and AbortSignal preserved; no retry/status inference. No production024 mount, runner consumption, model or service action. Manifest binds three source/three raw files. Clean-code review: thin boundary only, no duplicate authorization/state machine.

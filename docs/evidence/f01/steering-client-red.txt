@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/active-steering.test.ts (1 test | 1 failed) 6ms
+   × preserves steering text, ownership, revisions and receipts without promoting their meaning or retrying 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/active-steering.test.ts > preserves steering text, ownership, revisions and receipts without promoting their meaning or retrying
+TypeError: client.acceptSteering is not a function
+ ❯ packages/client/src/active-steering.test.ts:39:25
+     37|     userMessageUuid: 'b6b17f92-4219-4e80-8ef1-1c74f4aaf0a8', receiptId…
+     38|   try {
+     39|     expect(await client.acceptSteering('task/1', input, 'same-key')).t…
+       |                         ^
+     40|     expect(await client.steering('task/1', { attemptId: 'attempt/1', a…
+     41|     expect(await client.steeringText('task/1', 'command/1')).toEqual(t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  00:12:50
+   Duration  214ms (transform 51ms, setup 0ms, import 113ms, tests 6ms, environment 0ms)
+

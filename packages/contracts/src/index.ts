@@ -23,3 +23,4 @@ export * from './plugin-package-fetches.js';
 export * from './goal-context.js';
 
 export * from "./assistant-stream.js";
+export * from './active-steering.js';

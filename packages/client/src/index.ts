@@ -1,3 +1,4 @@
+import type { SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
 import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
@@ -77,6 +78,26 @@ export class FlowClient {
   }
   commandPackageFetch(id: string, input: PackageFetchCommand, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
     return this.request(`/api/package-fetches/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
+  acceptSteering(taskId: string, input: SteeringCommandInput, key: string, signal?: AbortSignal): Promise<SteeringCommandResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  steering(taskId: string, options: { attemptId?: string; after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<SteeringState> {
+    const query = new URLSearchParams();
+    for (const name of ['attemptId', 'after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering${query.size ? `?${query}` : ''}`, { signal });
+  }
+  steeringText(taskId: string, commandId: string, signal?: AbortSignal): Promise<SteeringText> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering/${encodeURIComponent(commandId)}/text`, { signal });
+  }
+  steeringAudit(taskId: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<SteeringAuditPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering/audit${query.size ? `?${query}` : ''}`, { signal });
+  }
+  reportSteeringReceipt(input: SteeringReceiptInput, signal?: AbortSignal): Promise<SteeringCommandResult> {
+    return this.request('/api/runner/steering/receipts', { method: 'POST', body: JSON.stringify(input), signal });
   }
 
   nativeActivities(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeActivityPage> {

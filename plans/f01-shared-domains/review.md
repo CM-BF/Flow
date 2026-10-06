@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（流式正文生产接线；兼容消费者发布门仍待闭合）**
+**当前增量状态：APPROVED（steering薄client）**
 
-Review target commit：da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2
+Review target commit：1b16d23de5b00f897fe9bd0fa07879c84d78e936
 
-Scope：apps/server/src/index.ts、packages/client/src/assistant-stream-production.test.ts。manifest：docs/evidence/f01/assistant-stream-production-manifest.json。
+Scope：packages/client/src/index.ts, packages/client/src/active-steering.test.ts, packages/contracts/src/index.ts。manifest：docs/evidence/f01/steering-client-manifest.json。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
@@ -130,3 +130,10 @@ Root只读APPROVED88a869efd782afd5f64f5d7adad0a9167da121c1，4source/2raw固定b
 
 ## CHAT06 production 独立批准
 assignment_review只读APPROVED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2，核2source/5raw固定与working hashes；2red→2green真实PG/HTTP/noEmit，资源清理事实完整。未重跑/0query，无本delta P1/P2。明确C02模块首case startup适配及Web活动cursor reader兼容仍为发布前置；不以本批准称实际Web/provider流式通过。
+
+
+C02 fixture与生产组合694c3fdbd6ef4affa66140f13a039156f27023e0（test5f + productionda7）获assignment_review独立只读APPROVED：2source/2raw hash匹配，8/8/noEmit证据核，无重跑。Web活动cursor889也已独审，I02按原样文件成套接收；原domain/transport各自批准范围保留。
+
+
+## Steering薄client独立批准
+assignment_review独立只读APPROVED 1b16d23de5b00f897fe9bd0fa07879c84d78e936，现场clean1e6965e。完整3source与server strict schema/request错误链已读；5methods路径/query白名单/原文/key/CAS/receiptId与状态原样传递，无重试。3source/3raw固定current bytes/hash全符，manifest c7f6ccf389078c93fb65e9bb7589732a34206a0eb3dd0aa0dd6d090f8a5226de；作者1红→1绿33ms+tsc原证据有效，reviewer未重跑/0query/0修改，无P1/P2。仅transport/export，不覆盖生产mount/实际送达/模型遵从，不重复2137115领域审查。
