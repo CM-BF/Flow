@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:05 UTC / 两项待主线接收；执行活动独立模块已正式受领 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:07 UTC / 真实排队验收窗口已结束；等待组合集成准确基线 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -13,7 +13,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 项目身份兼容和按需详情已验证；正在制作会话内执行活动展示 |
+| 当前产出 | 真实排队旅程已通过验收；正在制作会话内执行活动展示 |
 | 下一可用交付 | 交付可按需查看执行记录的模块，再接入聊天界面 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -75,7 +75,7 @@ K02薄reader固定候选已交独审：固定736公开类型经Lead原样三cont
 - [队列研究](../../docs/evidence/web-platform/chat-queue-research.md)保留e423历史stub与当时按钮未开放的边界；当前QUEUE01固定309已独审通过，排队/暂停/继续/独立取消已在main3d4985，真实center仍受控fb906、Web Vite与center升级分开；不能用旧研究覆盖新代码能力。steering仍未支持，须独立受理/送达/实际生效证据。
 - [执行配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)仅整份已发布runner配置选择；catalog not-probed，不声称模型在线或任意effort/access。PROFILE01模块及PROFILEI01实际App接线均已入main，真实部署状态另核。
 - 完整X01插件npm生命周期/权限/隔离/CLI等价、BR-01真实PTY/fs、后继对话能力仍开放；I01本地Settings和中心registry不是完整插件管理。
-- 本队0真实模型/语音调用；GO已授权Lead最多2query真实queue验收，main3d在该窗口暂冻结，结果尚未收到。该主线接收/部署等待不阻碍本队独立模块实施；不由本队调用模型。既有开发预览明确fixture，未暗换用户页面。
+- 本队0真实模型/语音调用；GO确认真实queue窗口06:02结束、2/2 query结果已封存，并独立核原始结果/两实际图/固定manifest：running入队、明确Continue、浏览器退出仍运行、返回精确第二回复均通过。此为GO/Lead执行与验收来源，非本队实跑；main冻结已解除。renderer接线当前只等Lead组合K02/O07与018/019挂载、再接763/747后的准确base，不再等待模型窗口。既有开发预览仍明确fixture，不混作上述真实验收。
 
 ## Dashboard与服务
 
@@ -190,3 +190,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 06:05 活动模块派工实证：[take回执](../../docs/evidence/web-platform/activity01-take-receipt.json)51f962eev1/八scope；管理亲核独立树branch/HEAD3d4985/clean，06:04:31.706Z ledger0冲突。首次准备消息发出后owner已从running转completed未触发；root状态纠正后立即改followup，收到真实preflight才take，未伪报此前开工。后续正式新任务直接followup避免闲置邮箱。旧CHAT session.ts已由原owner明确持续停写，但renderer准确base未到，尚无amend/newtake。
 
 06:06 活动canonical已实际到并核，不因等待登记误写未开工：[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md)598e5e2e78d7ef57d1add8e6ee797f519da1c0c8 clean，M2/P1/implementation、4TODO、checksnot_run/reviewnot_started/targetUNKNOWN、human完整；[管理初核](../../docs/evidence/web-platform/activity01-canonical-audit.json)。来源已给root统一登记，账本领取与状态卡部署仍分开。
+
+06:07 GO经root更新：真实queue两query窗口实际06:02结束，2/2封存且GO独立功能验收通过，main冻结解除。当前等待原因已从模型窗口改为Lead组合接收后准确mainbase；历史06:02管理观察保留，不倒改当时信息。ACTIVITY首source登记已由GO转Lead，尚无部署回执，不空采；F01跨reload未知原key恢复/steer等后继仍开放。
