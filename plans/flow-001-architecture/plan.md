@@ -524,3 +524,8 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 ### P01增量协议读取成本（2026-10-06 16:01 UTC，GO只读输入）
 
 固定a89f42ab的observe在updatedAt/watermark变化时从cursor0重新映射；seen仅避免重复发送，events/detail读取仍重做，historyLength=0也因默认artifacts要求扫描。现10k事件/200引用/2MiB界限保留，不称无界泄漏。归原P01/REQ15，与观察取消后继一起：使用真实官方SDK HTTP fixture固定1产物+多次状态/非产物变化，记录events/detail请求数及字节，并核首Task、后继status/artifact updates、重连、水位、权限与unknown可见结果一致；0PG/模型/新依赖，不以无界缓存掩盖成本。官方依据[A2A 1.0规范3.1.6/3.5.2](https://a2a-protocol.org/v1.0.0/specification/)。此为后继设计输入，当前TUI/Claude/兼容发布优先，无新writer或运行。
+
+
+2026-10-06 16:59 UTC REQ-19/SVC06（关联X01）只读研究输入：固定main9314中，server/index静态出口经package-fetch worker/artifact barrel加载pacote，安装routes/commands加载plugin-runtime/tar；只读artifact入口也依赖含resolver的barrel。因此未启用两个可选host的聊天/TUI入口仍需要这些依赖，TUI01F的真实准备清单体现此闭包。当前仅源码耦合事实，没有启动时间/RSS/物理安装节省实测。
+
+后继在CORE/RELEASE收口后的空闲小窗口，沿现SVC06/X01计划核禁用/启用host的真实import边界，再决定最小组合入口按需加载及纯artifact reader/fetcher职责分离。先0PG/0provider、有界import-only，不删功能、不造通用插件框架；迁移完整性、默认禁用、授权和启用失败清理保持。大型release的既有资源门槛不因拆分候选降低，当前writer不被打断。

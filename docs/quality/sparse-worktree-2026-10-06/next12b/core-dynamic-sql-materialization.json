@@ -1,0 +1,68 @@
+{
+  "state": "READY_SOURCE_ONLY",
+  "startedAt": "2026-10-06T16:56:15.415964+00:00",
+  "finishedAt": "2026-10-06T16:56:15.537959+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+  "head": "26eeced143f266acdc6909dcc782d7d50e39ab47",
+  "statusUnchanged": true,
+  "retainedFileCount": 342,
+  "retainedFileHashesUnchanged": true,
+  "files": [
+    {
+      "path": "packages/storage/migrations/012-goal-tool-runs.sql",
+      "bytes": 2076,
+      "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b",
+      "gitCommit": "723d4bb153be418584f34f77dab42cb67fac8243",
+      "currentWorkingTree": "ABSENT_AT_RUN",
+      "literalReferencesInFixedSource": [
+        "apps/server/src/goal-tool-runs/index.ts"
+      ]
+    },
+    {
+      "path": "packages/storage/migrations/013-goal-native-mode.sql",
+      "bytes": 185,
+      "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3",
+      "gitCommit": "723d4bb153be418584f34f77dab42cb67fac8243",
+      "currentWorkingTree": "ABSENT_AT_RUN",
+      "literalReferencesInFixedSource": [
+        "apps/server/src/goal-tool-runs/index.ts"
+      ]
+    },
+    {
+      "path": "packages/storage/migrations/017-goal-graph-runs.sql",
+      "bytes": 3089,
+      "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f",
+      "gitCommit": "723d4bb153be418584f34f77dab42cb67fac8243",
+      "currentWorkingTree": "ABSENT_AT_RUN",
+      "literalReferencesInFixedSource": [
+        "apps/server/src/goal-graph-runs/index.ts"
+      ]
+    },
+    {
+      "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "bytes": 189,
+      "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218",
+      "gitCommit": "723d4bb153be418584f34f77dab42cb67fac8243",
+      "currentWorkingTree": "ABSENT_AT_RUN",
+      "literalReferencesInFixedSource": [
+        "apps/server/src/goal-graph-runs/index.ts"
+      ]
+    }
+  ],
+  "logicalBytes": 5539,
+  "allocatedFileBytes": 16384,
+  "freeBeforeBytes": 1202176000,
+  "freeAfterBytes": 1202237440,
+  "freeDeltaNotAttributedToThisOperation": true,
+  "imports": 0,
+  "tests": 0,
+  "PG": 0,
+  "provider": 0,
+  "priorFailurePreserved": true,
+  "operatorPreparationError": {
+    "command": "git sparse-checkout add --no-cone --stdin",
+    "exitCode": 129,
+    "reason": "add does not accept --no-cone; config already false",
+    "noFilesMaterializedByRejectedCommand": true
+  }
+}
