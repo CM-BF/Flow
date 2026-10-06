@@ -55,6 +55,11 @@ const assignments = [
   ['WPF-QUEUE00', '旧新队列能力兼容', '工作线', 'web-queue-compatibility', 'wpf-queue00-compatibility'],
   ['O03', '目标工具执行授权', '工作线', 'goal-tool-authorization', 'o03-goal-tool-authorization'],
   ['WPF-RENDERER01', '对话详情展示', '工作线', 'web-data-renderers', 'wpf-renderer01-data-renderers'],
+  ['CHAT05', '原生工具活动', '工作线', 'native-activity', 'chat05-native-activity'],
+  ['X04', '固定版本包产物', '工作线', 'package-artifacts', 'x04-package-artifacts'],
+  ['K03', '目标节点知识引用', '工作线', 'goal-knowledge-context', 'k03-goal-knowledge-context'],
+  ['WPF-ACTIVITY01', '聊天工具活动展示', '工作线', 'web-conversation-activity', 'wpf-activity01'],
+  ['WPF-K02C01', '聊天上下文兼容', '工作线', 'web-context-compatibility', 'wpf-k02-compatibility'],
   ['K02', '聊天知识上下文', '工作线', 'conversation-context', 'k02-conversation-context'],
   ['O07', '原生目标拆分工具', '工作线', 'native-graph-tools', 'o07-native-graph-tools'],
   ['O06', '目标拆分受限授权', '工作线', 'goal-graph-runs', 'o06-goal-graph-runs'],
@@ -85,7 +90,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
