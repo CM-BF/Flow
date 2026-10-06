@@ -1,0 +1,53 @@
+{
+  "kind": "journal",
+  "selection": null,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/admission-journal.test.ts",
+    "--config",
+    "docs/evidence/s01p01/vitest.config.mjs",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T08:21:30.604Z",
+  "completedAt": "2026-10-06T08:21:31.769Z",
+  "elapsedMs": 1163.6748329999998,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "8331166a1ebfc895a22daf5d8fbdb2052d23656cc8c2b7b79f674b1de470ef63"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "ce9bced1e395c0704d686d4d2d0f1567eaadab3f04969d577cda582ed669f3a2"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "9fb515d0c00b3af3bfc91b471797383de861b16608c31dfb348e4c7d18392022"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "6d2399c7078646cdf1d5ad10c4c0107b2cc34cb7a311feae3b61493feece1b15"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "c75d8c36a5bed972a5fa76fac39ad5c7e753040b5fcdefcd2634d5755b85b7ca"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "8db216ac2bf6ec48c3fae74de376f254154b685e59474fb06eb1a89f63428d34"
+    }
+  ],
+  "log": "docs/evidence/s01p01/journal-fifo-fixed.log",
+  "logSha256": "6c5aec4057fa9a2083b803bfc08e0ee9a19c197bd8b7197b92d1d65ca0946127",
+  "sourceHead": "b9f5eab48f7c1f6c3c79292dd6ea9a1e86459e5e"
+}

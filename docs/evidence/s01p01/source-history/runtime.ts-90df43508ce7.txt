@@ -35,8 +35,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const options = { ...input, signal: AbortSignal.any([input.signal, shutdown.signal]) };
   let fatal: unknown;
   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
-  const requests = new Set<Promise<unknown>>();
-  const client = authenticatedClient(options, stop, requests);
+  const client = authenticatedClient(options, stop);
   const adapters = options.adapters ?? [createFixtureAdapter()];
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
   await prepareDirectory(stateDirectory);
@@ -102,7 +101,6 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   } finally {
     shutdown.abort();
     await Promise.allSettled(active.values());
-    await Promise.allSettled(requests);
   }
   if (fatal) throw fatal;
 }
@@ -125,17 +123,12 @@ function isHostAuthenticationError(error: unknown): boolean {
 }
 
 /** Observe auth before heartbeat, replay or tool adapters can translate the original rejection. */
-function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => void, pending: Set<Promise<unknown>>): FlowClient {
+function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => void): FlowClient {
   const client = new FlowClient(options);
   function guard<Args extends unknown[], Result>(operation: (...args: Args) => Promise<Result>) {
-    return (...args: Args): Promise<Result> => {
-      const request = (async () => {
-        try { return await operation(...args); }
-        catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; }
-      })();
-      pending.add(request);
-      void request.then(() => pending.delete(request), () => pending.delete(request));
-      return request;
+    return async (...args: Args): Promise<Result> => {
+      try { return await operation(...args); }
+      catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; }
     };
   }
   client.claim = guard(client.claim.bind(client));

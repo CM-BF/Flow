@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool
+
+ ❯ apps/runner/src/runtime-capacity.test.ts (12 tests | 1 failed | 11 skipped) 4090ms
+   × defaults to one slot and explicitly overlaps four attempts without exceeding the local limit 4090ms
+   ↓ honors a lower center capacity and isolates one adapter failure from other slots
+   ↓ cancels only the requested slot while the other attempt continues
+   ↓ awaits every started adapter on host abort and on swallowed heartbeat authentication rejection
+   ↓ stops every slot on event storage failure even if the adapter catches the rejected emit
+   ↓ persists an unknown claim, lets a known slot finish, and refuses another claim after restart
+   ↓ does not send a claim when its durable intent cannot be saved
+   ↓ never replays an active outbox while another slot is being admitted
+   ↓ rejects an invalid local slot limit 0 before admission
+   ↓ rejects an invalid local slot limit 17 before admission
+   ↓ rejects an invalid local slot limit 1.5 before admission
+   ↓ rejects an invalid local slot limit NaN before admission
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/runtime-capacity.test.ts > defaults to one slot and explicitly overlaps four attempts without exceeding the local limit
+Error: Expected bounded runner behavior did not occur.
+ ❯ eventually apps/runner/src/runtime-capacity.test.ts:17:62
+     15| async function eventually(condition: () => boolean | Promise<boolean>)…
+     16|   const until = Date.now() + 4000;
+     17|   while (!await condition()) { if (Date.now() > until) throw new Error…
+       |                                                              ^
+     18| }
+     19| function held(context: HarnessContext): Promise<void> {
+ ❯ apps/runner/src/runtime-capacity.test.ts:79:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 skipped (12)
+   Start at  01:15:53
+   Duration  4.34s (transform 111ms, setup 0ms, import 175ms, tests 4.09s, environment 0ms)
+

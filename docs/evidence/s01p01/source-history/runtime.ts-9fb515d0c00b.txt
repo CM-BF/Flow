@@ -35,8 +35,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const options = { ...input, signal: AbortSignal.any([input.signal, shutdown.signal]) };
   let fatal: unknown;
   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
-  const requests = new Set<Promise<unknown>>();
-  const client = authenticatedClient(options, stop, requests);
+  const client = authenticatedClient(options, stop);
   const adapters = options.adapters ?? [createFixtureAdapter()];
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
   await prepareDirectory(stateDirectory);
@@ -44,7 +43,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const active = new Map<string, Promise<void>>();
   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
   function failed(error: unknown) {
-    if (error instanceof EventStorageError || isHostAuthenticationError(error)) stop(error);
+    if (error instanceof EventStorageError || error instanceof FlowApiError && [401, 403].includes(error.status)) stop(error);
     else if (!options.signal.aborted) {
       if (!disconnected) options.onNotice?.({ type: 'connection-lost' });
       disconnected = true;
@@ -102,7 +101,6 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   } finally {
     shutdown.abort();
     await Promise.allSettled(active.values());
-    await Promise.allSettled(requests);
   }
   if (fatal) throw fatal;
 }
@@ -119,23 +117,13 @@ async function recover(directory: string, client: FlowClient, options: RunnerOpt
   }
 }
 
-function isHostAuthenticationError(error: unknown): boolean {
-  // Goal/grant/attempt scope denials are local authorization failures, not revoked host credentials.
-  return error instanceof FlowApiError && (error.status === 401 || error.status === 403 && error.code === 'wrong_role');
-}
-
 /** Observe auth before heartbeat, replay or tool adapters can translate the original rejection. */
-function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => void, pending: Set<Promise<unknown>>): FlowClient {
+function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => void): FlowClient {
   const client = new FlowClient(options);
   function guard<Args extends unknown[], Result>(operation: (...args: Args) => Promise<Result>) {
-    return (...args: Args): Promise<Result> => {
-      const request = (async () => {
-        try { return await operation(...args); }
-        catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; }
-      })();
-      pending.add(request);
-      void request.then(() => pending.delete(request), () => pending.delete(request));
-      return request;
+    return async (...args: Args): Promise<Result> => {
+      try { return await operation(...args); }
+      catch (error) { if (error instanceof FlowApiError && [401, 403].includes(error.status)) stop(error); throw error; }
     };
   }
   client.claim = guard(client.claim.bind(client));
@@ -231,7 +219,7 @@ function requestSignal(options: RunnerOptions) {
 }
 
 function validateOptions(options: RunnerOptions) {
-  const limit = options.maxConcurrentAttempts === undefined ? 1 : options.maxConcurrentAttempts;
+  const limit = options.maxConcurrentAttempts ?? 1;
   if (!Number.isSafeInteger(limit) || limit < 1 || limit > 16) throw new Error('Runner concurrent attempts must be an integer from one through sixteen.');
   for (const duration of [options.pollIntervalMs ?? 500, options.heartbeatIntervalMs ?? 2000, options.requestTimeoutMs ?? 1500]) {
     if (!Number.isSafeInteger(duration) || duration < 1 || duration > 2_147_483_647) throw new Error('Runner intervals must be positive 32-bit integers.');
