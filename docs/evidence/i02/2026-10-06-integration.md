@@ -48,3 +48,13 @@ CHAT生产直接consumer只选择3条、3/3（另外19未选）3.38s，已保留
 root lock和生产依赖未变；新增007/008/009按独立迁移编号在serve之前初始化，产品Web不能直连PG。41个dashboard来源新增CHAT03/P03只指各owner既有唯一三件套，不创造重复进度。架构图3773固定基线需后继同步本批结构，保留明确待更新。
 
 新Web聊天WPF-CHAT01仍在外部独立验收，未接收移动实现；本批main具备后端与正文事实，不宣称用户现在49922 fixture已变真实聊天。真实模型0调用。两次live预算仅在新Web也独审/main完整后使用；每query原始SDK估算known与保守上界，resume产品usage增量unknown如实保留。R04生产停机与CHAT03选择能力独立推进，不为新feature阻住本批已审交付。
+
+## 第四批：协议传输与有界停机（2026-10-06 04:12 UTC）
+
+输入：P03实现61d1192140d53c195f7d736d12e26932c9a5c0d5/metadatae292（Mika只读独审APPROVED、protocol6+runner15=21唯一用例及tsc，未独立重复运行），R04实现dc1d02fcb7e3edbf99921275d81412768bf08424/metadata3770（Root只读APPROVED、4source/10stdout hash核，9唯一行为按8+1分两次及tsc；Root未重跑）。接收后上述P03六产品/测试文件、R04四源码测试与固定已审来源零diff。未重跑21/9或性能样本。组合候选dd1bcefb7dae6987275c0d1686e17b75bc458bf1 root typecheck通过，原始protocol-shutdown-typecheck.txt；早期P03单批typecheck原始protocol-payload-typecheck.txt保留。
+
+P03仅P02出站send/GetTask明确historyLength0，其余observe默认历史保持；固定1024历史wire减量不是LLM token/CPU/SLO结论。R04正常drain后关闭本HTTP残留；main20s保险非零退出并报unknown，不把ACK丢失/中心退出当runner或DB副作用被撤销。
+
+同时接收B01/X02已集成main8f观察与release metadata、X01只读管理子段依赖说明、PERF02main接收记录；未改实现。不因这些metadata再跑全库。登记X03/SVC01/O02三个唯一来源，45项；SVC01只计划，O02首status待owner，缺失明确unknown。D05图源码停写并amend交外部D06，历史3773基线仍诚实保留直至后继交付。
+
+clean-code集成复核：无手工重写领域，source同已审target；局部组合只查类型依赖。真实聊天Web7cb独立修复旧ACK与重连中间turn后正在收尾，尚未集成/未实际模型调用；CHAT03仍领域实施。下一交付为固定三端后的有界两轮。

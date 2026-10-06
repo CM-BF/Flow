@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:59 UTC / 2026-10-06 03:44 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:12 UTC / 2026-10-06 04:10 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -11,11 +11,11 @@
 | 工作树dirty状态 | 仅本次交付记录；实现已提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；第三批root+Web typecheck，CHAT生产直接消费者3/3与插件CLI/client5/5；各领域独审证据保留，0模型 |
-| 已集成main状态 / HEAD | 最近现场main/origin ac4e34de2331dce276440df8969883c1883060ef；候选012b包含本批所有已审输入，记录提交后受控fast-forward |
+| 已集成main状态 / HEAD | 最近现场main/origin 8f1481df880cf5077e1ddb9a8f302fe700a7ece8；本批候选dd1bcefb7dae6987275c0d1686e17b75bc458bf1接P03/R04已审实现，待本记录提交后fast-forward |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 持久对话中心与实际正文、插件登记、后端及Web读取改进已通过集成检查 |
+| 当前产出 | 对话后端已集成；协议传输和有界停机已审并通过组合检查 |
 | 下一可用交付 | 同一会话的真实两轮回复、重连和按需详情 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -48,3 +48,5 @@
 [本批组件与真实系统检查](../../docs/evidence/i02/approved-slices.md)保留准确target、模型/测试边界和未完成的整体M2目标。
 
 [本轮完整集成清单与验证边界](../../docs/evidence/i02/2026-10-06-integration.md)。全Flow长期目标继续，O01/X01/KB/容量等仍open。
+
+2026-10-06 04:12 UTC：P03/R04领域已审源零diff+组合typecheck通过；见第四批原始记录。main8f已含第三批，不沿用此前仅候选表述。真实聊天仍等待Web固定接收，0模型；SVC01准备与O02桥接并行。
