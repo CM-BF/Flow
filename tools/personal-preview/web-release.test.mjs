@@ -93,7 +93,7 @@ test('hot publish and rollback preserve an open SSE stream, old chunks and same-
   const { startStaticWeb } = await import('./static-web.mjs'); const { commitWebRelease } = await import('./web-release.mjs');
   const { createServer } = await import('node:http'); const { fileURLToPath } = await import('node:url');
   await fixture(async directory => {
-    const one = await artifact(directory, 'one'); const two = await artifact(directory, 'two', '2'.repeat(32));
+    const one = await artifact(directory, 'one', undefined, { 'assets/burst.js': 'x'.repeat(131_072) }); const two = await artifact(directory, 'two', '2'.repeat(32));
     let finish; let seenAuth; const center = createServer((request, response) => { seenAuth = request.headers.authorization; response.writeHead(200, { 'content-type': 'text/event-stream' }); response.write('data: before\n\n'); finish = () => response.end('data: after\n\n'); });
     const listen = server => new Promise(resolve => server.listen(0, '127.0.0.1', () => resolve(server.address().port)));
     const close = server => new Promise(resolve => { server.closeAllConnections(); server.close(resolve); });
@@ -103,6 +103,8 @@ test('hot publish and rollback preserve an open SSE stream, old chunks and same-
       let value = await planWebRelease({ directory, ...request(one, 0, 'bootstrap') }); await commitWebRelease(directory, value);
       server = await startStaticWeb({ directory, artifact: one, repository: fileURLToPath(new URL('../../', import.meta.url)), webPort, centerPort });
       const url = `http://127.0.0.1:${webPort}`;
+      const parallel = await Promise.all(Array.from({ length: 20 }, async () => { const response = await fetch(`${url}/assets/burst.js`); const body = await response.text(); return { status: response.status, bytes: body.length }; }));
+      assert.ok(parallel.every(value => value.status === 200 && value.bytes === 131_072));
       const response = await fetch(`${url}/api/events`, { headers: { authorization: 'Bearer synthetic-owner' }, signal: abort.signal }); const reader = response.body.getReader();
       assert.equal(new TextDecoder().decode((await reader.read()).value), 'data: before\n\n');
       value = await planWebRelease({ directory, ...request(two, 1) }); await commitWebRelease(directory, value);

@@ -10,6 +10,28 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
   const initialRelease = await readWebRelease(directory);
   let hasRelease = Boolean(initialRelease);
   let assetResponses = 0;
+  const assetWaiters = [];
+  function acquireAssetResponse(response) {
+    return new Promise(resolve => {
+      const grant = () => {
+        assetResponses++; let released = false;
+        const release = () => {
+          if (released) return; released = true; assetResponses--;
+          assetWaiters.shift()?.grant();
+        };
+        response.once('finish', release); response.once('close', release); resolve(true);
+      };
+      if (response.destroyed) return resolve(false);
+      if (assetResponses < 4 && assetWaiters.length === 0) { grant(); return; }
+      if (assetWaiters.length >= 32) return resolve(false);
+      let timer;
+      const remove = () => { clearTimeout(timer); response.off('close', cancel); const index = assetWaiters.indexOf(waiter); if (index >= 0) assetWaiters.splice(index, 1); };
+      const cancel = () => { remove(); resolve(false); };
+      const waiter = { grant: () => { remove(); grant(); } };
+      assetWaiters.push(waiter); response.once('close', cancel);
+      timer = setTimeout(cancel, 5000); timer.unref();
+    });
+  }
   let cached; let cachedBytes; let loading = Promise.resolve();
   async function snapshot() {
     const release = await readWebRelease(directory);
@@ -41,10 +63,7 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
             response.end(JSON.stringify(active ? { ...active.artifact, releaseVersion: active.version, releasePolicy: 'flow-web-release-v1' } : artifact)); return;
           }
           if (!active) { next(); return; }
-          if (assetResponses >= 4) { response.statusCode = 503; response.end('Web asset readers busy'); return; }
-          assetResponses++; let released = false;
-          const release = () => { if (!released) { released = true; assetResponses--; } };
-          response.once('finish', release); response.once('close', release);
+          if (!await acquireAssetResponse(response)) { if (!response.destroyed) { response.statusCode = 503; response.end('Web asset readers busy'); } return; }
           const asset = await releaseAsset(active, path, request.headers.accept?.includes('text/html'));
           if (!asset) { response.statusCode = 404; response.end(); return; }
           const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.ico': 'image/x-icon' };
