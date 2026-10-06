@@ -1,0 +1,118 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility
+
+ ❯ apps/web/test/conversation-projection.test.ts (26 tests | 4 failed) 21ms
+     × reads queue=false while keeping active-turn sending unavailable in this Web version 6ms
+     × reads queue=true while keeping active-turn sending unavailable in this Web version 2ms
+     ✓ accepts queue=false CREATE receipts and submits only explicit follow-up turns 3ms
+     × accepts queue=true CREATE receipts and submits only explicit follow-up turns 1ms
+     ✓ rejects non-boolean queue capability undefined instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability null instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability true instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability 1 instead of treating it as supported 0ms
+     ✓ does not widen other unsupported capabilities while accepting a boolean queue flag 0ms
+     ✓ refreshes a same-revision asynchronous reply and reads its exact version only on demand 1ms
+     ✓ keeps a failed initial snapshot unknown and blocks send until it is loaded 0ms
+     ✓ does not recreate an acknowledged conversation when the first turn response is lost 0ms
+     ✓ treats 409 as a definite rejection and refreshes without changing the key/revision or automatically resending 0ms
+     ✓ pauses observations without aborting an already sent command or its late receipt 0ms
+     ✓ does not let an older in-flight snapshot overwrite a newly accepted turn/revision 0ms
+     ✓ does not downgrade a final reply when an older admission ACK arrives last 0ms
+     ✓ confirms queue=false retried saved receipts without regressing a final reply already read from the center 0ms
+     × confirms queue=true retried saved receipts without regressing a final reply already read from the center 1ms
+     ✓ surfaces a request timeout instead of treating it as a visibility cancellation 0ms
+     ✓ deduplicates overlapping turn pages and preserves typed user/assistant entries 0ms
+     ✓ exposes a loadable middle gap after another tab admits several turns while this view is hidden 0ms
+     ✓ rejects mismatched lazy detail versions and lets explicit retry succeed 0ms
+     ✓ keeps a previously unknown result unknown after a retry authentication failure 0ms
+     ✓ does not accept malformed or mismatched success receipts as proof of admission 1ms
+     ✓ validates typed source digests and namespaces identical detail IDs by source identity 1ms
+     ✓ does not move a disposed connection's delayed receipt or detail into a same-ID new connection 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > reads queue=false while keeping active-turn sending unavailable in this Web version
+AssertionError: expected 'This turn is running. You can keep wr…' to contain 'not available in this Web version'
+
+Expected: "not available in this Web version"
+Received: "This turn is running. You can keep writing; queue and steering are not supported by this connection."
+
+ ❯ apps/web/test/conversation-projection.test.ts:49:45
+     47|     expect(projection.getSnapshot()).toMatchObject({ loading: false, c…
+     48|     expect(projection.getSnapshot().turns[0]?.id).toBe("turn-1");
+     49|     expect(projection.sendDisabledReason()).toContain("not available i…
+       |                                             ^
+     50|     await expect(projection.send("Keep this as a draft")).rejects.toTh…
+     51|     expect(projection.getSnapshot().outbox).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > reads queue=true while keeping active-turn sending unavailable in this Web version
+AssertionError: expected { snapshot: null, turns: [], …(7) } to match object { loading: false, …(3) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "connection": "live",
+-   "error": null,
++   "connection": "reconnecting",
++   "error": "This connection's conversation capabilities are not supported by this Web version.",
+    "loading": false,
+-   "snapshot": {
+-     "capabilities": {
+-       "queue": true,
+-     },
+-   },
++   "snapshot": null,
+  }
+
+ ❯ apps/web/test/conversation-projection.test.ts:47:38
+     45|     const { projection, client } = setup(wireSnapshot(queue, turn()));
+     46|     await projection.refresh();
+     47|     expect(projection.getSnapshot()).toMatchObject({ loading: false, c…
+       |                                      ^
+     48|     expect(projection.getSnapshot().turns[0]?.id).toBe("turn-1");
+     49|     expect(projection.sendDisabledReason()).toContain("not available i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > accepts queue=true CREATE receipts and submits only explicit follow-up turns
+AssertionError: expected undefined to be 'chat' // Object.is equality
+
+- Expected: 
+"chat"
+
++ Received: 
+undefined
+
+ ❯ apps/web/test/conversation-projection.test.ts:57:41
+     55|   it.each([false, true])("accepts queue=%s CREATE receipts and submits…
+     56|     const { projection, client, set } = setup(wireSnapshot(queue), nul…
+     57|     expect(await projection.send("hi")).toBe("chat");
+       |                                         ^
+     58|     expect(projection.getSnapshot()).toMatchObject({ outbox: null, sna…
+     59|     expect(client.createConversation).toHaveBeenCalledTimes(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > confirms queue=true retried saved receipts without regressing a final reply already read from the center
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:203:23
+    201|   async send(text: string): Promise<string | undefined> {
+    202|     const reason = this.sendDisabledReason();
+    203|     if (reason) throw Error(reason);
+       |                       ^
+    204|     const entry = this.outbox.begin({
+    205|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:140:94
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 22 passed (26)
+   Start at  21:45:00
+   Duration  250ms (transform 77ms, setup 0ms, import 138ms, tests 21ms, environment 0ms)
+
