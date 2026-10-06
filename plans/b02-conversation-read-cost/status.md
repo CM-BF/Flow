@@ -29,8 +29,10 @@
 | B02-03 | completed | b01_bounded_reads | 7防线通过，自有DB remaining[] |
 | B02-04 | completed | b01_bounded_reads / Mika | Root已独立核全部hash/重算样本，APPROVED |
 
-claim cef1a711-11cd-4ab3-ab3b-a8f8c1104b37 v1 active；[receipt](../../docs/evidence/b02/claim-receipt.json)。CHAT04已停写保留claim，本worker只写B02。实验不改架构/公共接口/FSM；如证据支持修复，先协调精确产品scope。Root已协调Lead登记唯一status来源，待最终实采确认。
+claim cef1a711-11cd-4ab3-ab3b-a8f8c1104b37 v1 active；[receipt](../../docs/evidence/b02/claim-receipt.json)。CHAT04已停写保留claim，本worker只写B02。实验不改架构/公共接口/FSM；如证据支持修复，先协调精确产品scope。Lead已登记唯一status来源；最终聚合实采已确认。
 
-实际run 04:48:13.016→04:48:20.758 UTC exit0；基线与限制见[报告](../../docs/evidence/b02/README.md)。04:48:38 dashboard尚未返回B02条目，Lead已获来源登记请求，待可用后再保存receipt，不伪造聚合。公共API/FSM/存储边界均未改，不需架构基线更新。当前仅完成实验，产品修复未授权。
+实际run 04:48:13.016→04:48:20.758 UTC exit0；基线与限制见[报告](../../docs/evidence/b02/README.md)。历史04:48:38 dashboard尚无B02条目；04:52:45实采已登记current/issues[]/approved/passed/unchanged，采样clean2709099。公共API/FSM/存储边界均未改，不需架构基线更新。当前仅完成实验，产品修复未授权。
 
 2026-10-06 04:52:45 UTC：Root独立只读APPROVED 38b2353dade0431dded067f20711ddc79b4c7430，绑定clean6d42655；3实验/6产品源/9日志hash及126样本重算全部匹配，无blocking finding。manifest/results hash见review.md，未重跑。CHAT04测试seam已clean交复审并停写后才顺序回本WT更新metadata；claim cef1a711 v1保留。
+
+最终dashboard回执：[dashboard-receipt.json](../../docs/evidence/b02/dashboard-receipt.json)，实际2026-10-06T04:52:45.349Z。owner完成metadata提交后停止本WT写入，保留claim待main接收；下一ready B03仍需新WT/原子take，不在此范围实现。
