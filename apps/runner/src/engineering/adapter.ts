@@ -18,7 +18,7 @@ export function createEngineeringFixtureAdapter(runnerId: string, fixtures: Engi
   if (registry.size !== fixtures.length) throw new Error('Duplicate engineering project registration.');
   return { name: 'fixture', version: 'engineering-1', async run(context) {
     const intent = context.task.engineering, fixture = intent ? registry.get(intent.projectId) : undefined;
-    if (!intent || !fixture || runnerId !== intent.targetRunnerId || fixture.project.baseCommit !== intent.baseCommit
+    if (!intent || intent.protocol !== 'flow.engineering.v1' || !fixture || runnerId !== intent.targetRunnerId || fixture.project.baseCommit !== intent.baseCommit
       || JSON.stringify(fixture.checker.selection) !== JSON.stringify(intent.checker)) throw new NativeExecutionError('settled');
     await context.assertOwnership();
     const workspace = await fixture.project.acquire(); let unknown = false;

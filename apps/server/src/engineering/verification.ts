@@ -1,3 +1,4 @@
+import { assertNativeEngineeringVerification } from './native-verification.js';
 import type { PoolClient } from 'pg';
 import { runnerEventSchema, type RunnerEventData } from '@flow/contracts';
 import { engineeringIntentSchema, engineeringReceiptSchema, engineeringReceiptResult, engineeringSnapshotJson, engineeringVerificationInput } from '../../../../packages/contracts/src/engineering.js';
@@ -8,6 +9,9 @@ type Verification = Extract<RunnerEventData, { type: 'verification' }>;
 
 /** Checks receipt linkage and declared host results; the center does not run a remote checker. */
 export async function assertEngineeringVerification(client: PoolClient, task: TaskRecord, attemptId: string, event: Verification, content: string): Promise<void> {
+  if (task.submission.engineering?.protocol === 'flow.engineering.v2') {
+    await assertNativeEngineeringVerification(client, task, attemptId, event, content); return;
+  }
   if (!task.submission.engineering || event.verifierId !== 'flow.engineering') {
     throw new HttpError(409, 'engineering_verifier_mismatch', 'Engineering tasks require their designated host checker.');
   }
@@ -35,13 +39,14 @@ export async function assertEngineeringCompletion(client: PoolClient, task: Task
   if (task.verification_status !== 'passed' || !artifact || sha256(artifact.content) !== task.latest_artifact_version) {
     throw new HttpError(409, 'engineering_completion_unverified', 'The latest engineering artifact has no passed check for this attempt.');
   }
+  const verifierId = task.submission.engineering.protocol === 'flow.engineering.v2' ? 'flow.engineering.native' : 'flow.engineering';
   const rows = (await client.query<{ content: string }>(`SELECT content FROM flow.details WHERE task_id=$1 AND attempt_id=$2
     AND kind='verification' AND artifact_version=$3 AND content::jsonb->>'artifactId'=$4
-    AND content::jsonb->>'verifierId'='flow.engineering' AND content::jsonb->>'result'='passed' LIMIT 1`,
-  [task.id, attempt.id, task.latest_artifact_version, task.latest_artifact_id])).rows;
+    AND content::jsonb->>'verifierId'=$5 AND content::jsonb->>'result'='passed' LIMIT 1`,
+  [task.id, attempt.id, task.latest_artifact_version, task.latest_artifact_id, verifierId])).rows;
   for (const row of rows) {
     const saved = runnerEventSchema.safeParse(JSON.parse(row.content));
-    if (!saved.success || saved.data.type !== 'verification' || saved.data.verifierId !== 'flow.engineering' || saved.data.result !== 'passed') continue;
+    if (!saved.success || saved.data.type !== 'verification' || saved.data.verifierId !== verifierId || saved.data.result !== 'passed') continue;
     await assertEngineeringVerification(client, task, attempt.id, saved.data, artifact.content);
     return;
   }
