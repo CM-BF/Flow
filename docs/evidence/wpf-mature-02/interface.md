@@ -6,7 +6,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - **S01供给可立即办理：请Lead soleGit按唯一固定请求物化。** [source-supply-request.json](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/source-supply-request.json) / [README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/README.md)，供给请求固定clean/pushed `73157915758b934cce5131045317c892288ddc7a`；WT runner-capacity-probe、claim508f v2 ACTIVE五scope。仅将JSON中固定8d84的57TS+4metadata/284628B按相对路径放入同目录source-snapshot，保留现scope/dirty，不覆盖旧产品src；owner未自行物化。Lead报告原Flow已恢复main ec5 clean，供给无需等PG；sole操作前协调owner当前HEAD/短停点。实际测量仍NOT_OPEN。
 
-- **原生目录单项许可后继准备中，未OPEN。** [固定最小接口](native-catalog-pagesize-compat/interface.md)：原native driver/二进制不变，原37023仅追加exact hw.pagesize_compat；单目标初始化+最多一页目录，旧窗口不复用，无turn/login/推理。
+- **原生目录单项许可窗口已消费，仍在握手前退出。** [本次固定失败结果](native-catalog-pagesize-compat/run-report.md)：1native exit1、ready=false/model-list 0；process/root/stdio收束，156B私有诊断KEEP，明确os error1，具体操作/原因unknown。结果待忠实性独审，无重试或模型资格；S01供给请求仍在页首。
 
 
 - **numeric pagesize单许可出现正差异，窗口已消费。** [固定结果](native-pagesize-compat/run-report.md)：A三API −1/EPERM；B只增加hw.pagesize_compat后三API全16384/errno0，1compile+2helper正常关闭、自有根清理。仅本C组合改善，不自动native重试或声称根因/修复；[忠实性已接收](native-pagesize-compat/result-review.json)。
