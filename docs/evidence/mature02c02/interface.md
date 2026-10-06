@@ -29,6 +29,12 @@ resume实际type没有ephemeral/history/path，不照历史注释发送这些字
 
 ## 后继生产路径（本次未领取）
 
-R05D main.ts、configuration.ts/.test.ts、codex/launch.ts/.test.ts、execution-profiles.ts/.test.ts与main-concurrency.test.ts需要把实际固定codeHome接到trusted native factory；启动通知/系统配置/权限按生产边界单独验收，不把实验caller挪成框架。conversations state/replies/queries及assistant reader由REQ15当前owner协调；typed合同/中心/client/Web/TUI另扩精确scope。
+2026-10-06 22:01:13 UTC architecture_read只读定位：main78fb3770 clean；R05D codex-native-launch@54d5c67c40185a1fc7d66230375ddbe22cd0d894（native_center_owner/47a23186 v2）和R06 codex-native-transport@0c31160a5726fb1f782979d4284d2dea9f4f0bd5（e6b3 v2）均RELEASED。现configuration/launch只传普通factory，host-owned adapter要求opaque storage；main仍Claude loader/publisher。
+
+最小候选先四literal：`apps/runner/src/configuration.ts`、`apps/runner/src/configuration.test.ts`、`apps/runner/src/native-harness/codex/launch.ts`、`apps/runner/src/native-harness/codex/launch.test.ts`；然后`apps/runner/src/main.ts`、`apps/runner/src/main-concurrency.test.ts`串接。该时点六路径无active重叠，但本owner未领取/未获写权，此条仅设计输入。
+
+顺序固定为公共profile/host recipe → 复用publishNativeExecutionProfile并严格验证ACK的runnerId/configDigest → createCodexSessionStorage → configure/guard → runRunner。不得猜runnerId、从任务JSON获得launch authority或增加默认factory/auth回退；R06/createCodexTransport仍是唯一process/stdio owner。实际trusted recipe和持久目录生命周期待明确输入，注入fixture不替代生产证明。0模型反例候选：混选before-factory拒绝、未知ACK零spawn、错handle/root inode/runner/digest零factory、两次factory同codeHome，以及旧Claude/fixture/concurrency/signals保持。
+
+固定0.154 global remote-status严格分类与通知终身>256/公开stream、thinking消费者属于另外的C02-04验收，未领evidence/R06，不借此修改。conversations state/replies/queries及assistant reader由REQ15当前owner协调；typed合同/中心/client/Web/TUI另扩精确scope。
 
 未来真实两轮仅提案：固定0.154 binary、已观察目录中的gpt-5.6-sol/low/默认tier；资格和实际model仍unknown。auth只能来自另行明确授权的trusted宿主来源，缺失即NOT_RUN，不读个人auth/config、不登录或refresh。拟最多2process/2turn、120s含cleanup、每轮保留文本≤1KiB/总诊断≤2MiB；这些不是已授权额度，也不能构成模型账单硬上限。先确认来源/费用门禁再独审开窗，两轮中间保留同identity私有存储，最后依明确cleanup策略处理。当前0真实请求。
