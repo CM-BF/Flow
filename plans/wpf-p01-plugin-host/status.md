@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:03 UTC / 输入main8c57已受控合入 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:05 UTC / 输入main8c57已受控合入 |
 | Plan | [plan.md](plan.md) |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | PH-R4固定候选6ce3ba0；15模块+12browser/typecheck/build/生产fixture冒烟通过 |
-| 下一可用交付 | 整体独立review后交M02唯一owner明确cherry-pick与App验收 |
-| 当前阻塞 | ACTIVE: PH-R4布局缓存回归修复中，待root/M02独立复审 |
+| 当前产出 | trusted host/真实builtin/sample已独立APPROVED target6ce3ba0；15模块+12browser通过 |
+| 下一可用交付 | I01唯一owner消费六个已审实现提交，验证主App与connection lifetime |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 |
 | 实现范围 | apps/web/src/plugins, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-host.browser.ts, apps/web/test/plugin-host.config.ts |
@@ -17,17 +17,17 @@
 | Branch | `codex/web-plugin-host` |
 | 工作基线 / HEAD | `c8900a6fdbca20e683fda6fc808c135f0569c116` / 最近实采metadata `27a12ec17eac0bd68fe7c4ff043f51de60254f36` |
 | 工作树dirty状态 | CLEAN；27a12ec实采clean，根manifest/lock无差异；后续仅文档更新 |
-| 工作分支状态 | in-progress；实现完成，整体review/M02接入待完成 |
+| 工作分支状态 | completed；trusted host实现/检查/独立review完成，I01主App接入另验 |
 | 检查状态 | PASSED；target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6：15模块tests、12 browser tests、Web typecheck、fixture生产build；不代表M02主App验收 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；输入main `8c57f2f97345167207fa0d2590e9ad6310c922d4`，WPF-P01实现完成但未集成 |
-| Review | [review.md](review.md)，整体CHANGES_REQUESTED历史结论 / 所有finding已CLOSED待最终结论，target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6；五模块3d81210 APPROVED，PH-R1/R2/R3 CLOSED |
+| Review | [review.md](review.md)，APPROVED target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6；PH-R1..R4 CLOSED；不含I01 App接入 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-P01-01 | completed | w01_owner | [冻结接口](../../docs/evidence/wpf-p01/interface.md)；M02确认ports/精确上下文/bridge契约 |
 | WPF-P01-02 | completed | w01_owner | 6ce3ba0完整模块和真实builtin/sample；[验证](../../docs/evidence/wpf-p01/validation.md) |
 | WPF-P01-03 | completed | w01_owner | 15模块+12browser/typecheck/build；scope限定fixture |
-| WPF-P01-04 | in-progress | w01_owner | 模块3d81210 APPROVED；整体review/M02接入待完成 |
+| WPF-P01-04 | in-progress | w01_owner / I01接入owner | 本模块整体6ce3ba0 APPROVED；提交交接完成；I01接入验收仍待回传 |
 
 ## 已完成与证据
 
@@ -35,11 +35,11 @@
 
 ## 阻塞 / 风险 / 未验证
 
-当前无外部阻塞；完整候选已交root独立审查，M02接入单独验收。未知第三方JS不属于本realm信任范围。App接入归M02唯一owner，本树不能修改其接缝。完整X01权限/包安装/隔离/CLI等由Lead统一，本子项不宣称完成。
+当前无外部阻塞；完整target6ce3ba0已独立APPROVED，I01主App接入单独验收。未知第三方JS不属于本realm信任范围。App接入归M02唯一owner，本树不能修改其接缝。完整X01权限/包安装/隔离/CLI等由Lead统一，本子项不宣称完成。
 
 ## 下一步与handoff
 
-预览http://127.0.0.1:5190/src/plugins/fixture/index.html；[启动/证据/四个实现提交](../../docs/evidence/wpf-p01/validation.md)。root/M02审修复整体候选6ce3ba0，PH-R1/R2/R3已CLOSED，PH-R4待独立复审；M02 owner明确cherry-pick并验收后才能称全feature完成。
+预览http://127.0.0.1:5190/src/plugins/fixture/index.html；[启动/证据/四个实现提交](../../docs/evidence/wpf-p01/validation.md)。本模块整体6ce3ba0 APPROVED、PH-R1..R4 CLOSED。I01 owner明确cherry-pick并验证主App/connection lifetime后才能称端到端feature完成。
 
 ## 需要用户决定
 
@@ -52,3 +52,5 @@
 02:50:58.898Z owner只读复核4320：来源本树、HEAD27a12ec、dirty=false、human.complete=true、status.errors/implementation.errors/issues均空，implementationProof=unchanged；checks原短SHA显示unknown，本次更正为完整targetSHA。无服务停止/重启或其他owner文件写入。
 
 领取：D04 claim0686525b-d323-49b5-affa-cefc66cb13be v1 active，migration receipt committedAt2026-10-06T02:48:43.178Z；02:59:24.179Z只读CLI复核原6项literal scope/owner/tree一致。review修复期间保留；[回执](../../docs/evidence/wpf-p01/coordination-receipt.json)。当前实现目标6ce3ba0，未扩大scope或写App/workspace。
+
+最终交接：实现与证据齐备，保留P01 claim v1作为模块唯一修复owner；没有release/handoff写权或开始PERF。03:04:15.15Z只读4320实采25f9687 clean、human.complete=true、issues/missing均空、checks绑定6ce3ba0、implementationProof unchanged；本次正式approval仅文档更新，提交后复核聚合。

@@ -1,6 +1,6 @@
 # WPF-P01 独立审查
 
-**CHANGES_REQUESTED（整体） / APPROVED（五模块）**。root独立复审3d8121006fea24b6b9f25457eb363a10110781ad五模块通过；整体target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6复审中。原W01 approval不覆盖本任务。
+**状态：APPROVED**。最终完整target `6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6`；root独立review，PH-R1..R4 CLOSED；仅trusted host与隔离fixture，I01主App/真实center不在本结论中。
 
 - Review target commit：`6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6`（完整host/UI）。
 - Base：`c8900a6fdbca20e683fda6fc808c135f0569c116`；输入main8c57与已审W01a22ae38。
@@ -8,8 +8,8 @@
 - Scope：新增plugins模块、plugin-host tests、WPF-P01计划与证据。App挂载由M02 owner独立集成。
 - Criteria：见plan的生命周期/ID/API版本/动态权限/错误隔离/清理/窄订阅/真实builtin/sample/双主题键盘/失败恢复验收。
 - 已执行：owner15模块/12browser/typecheck/fixture build；root五模块14tests与修复diff独立复审。未执行：整体UI独立review与M02 App接入。
-- Findings/severity/blocking：PH-R1/R2/R3 CLOSED；PH-R4 P2 blocking修复中，待新target独立复审。
-- 作者回应/修复commit/复审：等待独立结论，必须绑定完整SHA。
+- Findings/severity/blocking：PH-R1..R4均CLOSED；固定约定实现无剩余blocking。
+- 作者回应/修复commit/复审：修复46164d6/3d81210/e534191/6ce3ba0；各finding独立关闭，最终6ce3ba0整体APPROVED。
 
 ```text
 只读审查WPF-P01。先核branch/worktree/base/head/dirty，阅读AGENTS/plans规则和本plan/status/review；结论绑定实际target SHA。通过公开host接口复核注册不load、并发激活、原子rollback、disable/generation、异常dispose继续、动态授权/旧context拒绝、async/event与render错误隔离、immutable窄订阅。确认两个builtin是真实组件且sample不改核心可加button/tab/menu；运行模块+直接依赖checks和隔离browser fixture。确认同realm可信范围未被夸大为第三方隔离，scope未触App/Thread/workspace/shared contracts。App最终接入需M02单独证明。只读finding交owner修复，不自行修改源码或批准未知提交。
@@ -40,3 +40,11 @@ P2 blocking，targetd81075c：Notes useState记录error但未渲染，root CUA51
 P2 blocking，targete534191（d810也存在）。M02 owner独立Chrome及root CUA双复现：A打开report→B→A，report tab由1变0；PluginView task key/loading卸载真实WorkspacePanels外层缓存。作者接受，在plugins内用稳定renderer/RenderBoundary身份、显式visited+Activity、同步view授权和不匹配时空数据来保留布局且隔离数据；未修改App或既有workspace。新增StrictMode任务/面板往返、树展开/终端follow、订阅暂停恢复、无预取/无串数据、权限拒绝与disable清理。最终修复SHA及独立复审待补。
 
 PH-R4 owner修复commit：`6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6`；15模块/12浏览器/typecheck/生产fixture build+冒烟通过。源码/文档diff check排除原始dependency-lock.patch后通过；完整patch保留空白上下文，不能称全量diff无warning。root和M02独立复审待回，当前整体不提前APPROVED。
+
+## 正式整体独立结论（2026-10-06 03:05 UTC）
+
+Reviewer root / GPT-6只读协调者，追加独立reviewer workspace_panels_owner（原PH-R4发现者）。APPROVED target `6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6`，base `c8900a6fdbca20e683fda6fc808c135f0569c116`。metadata25f9687 clean、实现diff0已核。
+
+Root读取完整模块/React/builtins/sample各阶段diff；独立CUA通过失败→恢复、B局部context、引用键盘、menu、themefallback/draft、renderretry、A-B-A/Notes布局保留、deny/disable清理。原PH-R4 reviewer额外独立15/15模块tests与Chrome StrictMode完整任务/面板往返、tree/follow、订阅0↔1、Notes不额外读详情、deny/disable、pageErrors=[]通过。原探针要求A-B-A零详情重读不适用于fixture主动清details，已撤除该误判，未降低Notes不重读的有效断言。
+
+Owner最终typecheck、15模块、12browser、fixture生产build/静态smoke通过；root独立typecheck发生于d810阶段，未冒充重跑最终全部browser/build。最终批准只覆盖受信同realm host与隔离fixture；I01主App、真实center、完整X01、未知第三方沙箱不在本次批准范围。host/center epoch lifetime按interface由I01实际验证。所有metadata新HEAD不自动扩大实现审查范围。
