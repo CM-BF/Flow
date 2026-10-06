@@ -1,9 +1,9 @@
 # S01 独立审查
 
-状态：IN_PROGRESS
-Review target commit：W2准备代码尚未固定
+状态：NOT_STARTED
+Review target commit：2ab7967f2eb808fecd1205f7552a119eee8e0b36
 
-当前：W2声明capacity4/12任务与保守预算修复正在实施，未获源码批准。以下为历史已批准W1准备与结果。
+当前：W2声明capacity4/12任务与保守预算修复已固定2ab，11纯unit/noEmit0，未获独立源码批准。以下为历史已批准W1准备与结果。
 
 历史准备target：9da9de1b6778afec5219e55f39b53b365c8cf900
 
@@ -45,3 +45,9 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 [结果报告](../../docs/evidence/s01/w1-results.md)、[冻结manifest](../../docs/evidence/s01/w1-result-manifest.json)、[独审回执](../../docs/evidence/s01/w1-independent-review.json)。原manifest的pending字段保持原始冻结状态，以独审回执更新结论。
 
 可复制复审：固定9e结果commit，校验manifest SHA及两raw，核对before/after源码与执行be923/已审9da；按sender id/sequence/types/ACK逐项重算、以claim租期保守区间统计峰值、核每端点n与分组及清理/预算；只读，不重新运行负载。W1验收无需补对照；可选后继优先declared4/12task，待Goal Owner决定及窗口，ACK故障/浏览器仍开放。main接收另记。
+
+## W2 准备独审任务
+
+范围experiments/runner-capacity，固定target见页首；生产base115b，唯一权威worktree/claim沿用S01。入口与限制见[W2方法](../../docs/evidence/s01/w2-readiness.md)，源码/检查摘要见[W2 manifest](../../docs/evidence/s01/w2-readiness-manifest.json)。只审准备代码，不运行负载或认为已有窗口。
+
+可复制步骤：核head/dirty与manifest哈希；对2784473审delta，核固定12/1/capacity4/128参数、DB真实注册capacity、per-runner上下峰值不预设串行且不超过声明容量；72runner/60timeline/72workspace及12工具/终ACK/清理契约随tasks推导。核领取未emit与unknown ACK按reservation保守扣额、observed/budgetCharged分开、两个历史smoke固定SHA兼容、missing result failclosed及同scenario禁重跑。读11纯unit/noEmit证据及5red原记录，原W1 raw/manifest不改；0新PG/task/服务。检查≤30秒含10秒清理/原64与180秒及64MiB预算，window仍待GO协调。severity与修复绑定新commit，不能沿用W1批准。

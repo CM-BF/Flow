@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:11 UTC；生产基线115b；main观察fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:21 UTC；W1 main30b，W2生产基线115b |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；正式入口target 9da9de1b6778afec5219e55f39b53b365c8cf900，metadata后继单列 |
-| 工作树dirty状态 | 交付前观察9811f5967184efb9f444ad01c34313fa4c9e743f clean；本次仅结果review/status metadata，源码9da未变 |
+| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；W2源码target 2ab7967f2eb808fecd1205f7552a119eee8e0b36，metadata后继单列 |
+| 工作树dirty状态 | 固定实现2ab7967f2eb808fecd1205f7552a119eee8e0b36 clean后仅准备manifest/status/review metadata |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 9da9de1b6778afec5219e55f39b53b365c8cf900：6纯统计/预算unit测试，noEmit0；W1 gate8tasks/2attempts与formal16tasks/16attempts通过，固定结果9e独审APPROVED |
+| 检查状态 | PASSED 2ab7967f2eb808fecd1205f7552a119eee8e0b36：11纯统计/预算/参数tests，noEmit0；W2无新DB/负载；W1独审与main单列 |
 | 已集成main状态 / HEAD | W1已集成main/origin30b97cbf3665c4ef7a314a6a8b59394ae68781af；W2新准备未集成 |
-| 实现目标 | 9da9de1b6778afec5219e55f39b53b365c8cf900 |
+| 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 首个窗口已限定验收；正在准备单进程声明容量4的对照 |
-| 下一可用交付 | 交付12任务对照入口与预算修复的独立源码审查，再协调短运行窗口 |
+| 当前产出 | 单进程声明容量4的12任务对照入口与预算修复已完成，正在独立审查 |
+| 下一可用交付 | 完成源码独审后，在协调的短窗口测量声明容量与实际并发 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，9da准备代码与9e固定W1结果均限定APPROVED；不宣称模型容量或SLO |
+| Review | [review.md](review.md)，W2准备固定2ab待独审；W1准备/结果已批准且已集成 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
-| S01-05 | in-progress | 独立reviewer | 准备代码APPROVED9da；W1固定结果9e10e09独审APPROVED，main尚未接收 |
+| S01-05 | in-progress | 独立reviewer | W1固定结果9e独审APPROVED/main30b已接收；W2新源码2ab待独审 |
 | S01-06 | pending | 后继owner | 真实provider与更大并发未包含 |
 
 ## 权限、优先级与事实边界
