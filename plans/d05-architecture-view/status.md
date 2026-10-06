@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:12:16 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示125项实际进度，工程交付与附件资源两条工作线均可见。 |
+| 当前产出 | 看板已显示126项实际进度，共用发送确认与最新固定架构快照可见。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -61,3 +61,5 @@
 2026-10-06T10:13:49.228Z实际125源回执已归档[engineering-attachment-registry-live.json](../../docs/evidence/d05/engineering-attachment-registry-live.json)：mainc9 clean、协调账本available、unregistered[]，四项current/human完整/issues[]。此为当时实际观察，归档未再次重启或跑产品测试；后继实现状态沿唯一owner自动刷新。
 
 2026-10-06 注册维护：TUI01B真实canonical加入为第126源，D06保持原ID并唯一迁dashboard-architecture-runtime；旧stream树只读历史。两source与registry解析通过，原独审图target2c316按f181固定源码，不追moving main。部署回执另记，不重跑架构/产品。
+
+2026-10-06T10:22:38.966Z实际126源回执见[shared-ack-runtime-registry-live.json](../../docs/evidence/d05/shared-ack-runtime-registry-live.json)，main8d8 clean、账本available；新S01P03当时仅claim尚未登记。当前补其真实canonical为127源候选；只验证唯一性/三件套/解析，未把未来部署写成已发生，不重跑架构或产品。
