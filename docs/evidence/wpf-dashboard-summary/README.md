@@ -26,3 +26,5 @@ env -u FLOW_COORDINATION_DATABASE_URL -u FLOW_COORDINATION_REPO PATH=/opt/homebr
 ## 限制
 
 未验证真实多source部署、协调数据库、Safari/Firefox/屏幕阅读器；未跑无关工程全套。没有改proof/parser/registry/架构图或产品Web。原始日志不清洗；源码diffcheck为明确范围，不把安装日志格式当生产错误。独立审查和main接收由后续回执记录。
+
+完整metadata staged diffcheck保留原始红测日志4处尾空格（node-red.log:24/31/49/56）；不清洗原日志。固定4源码diffcheck为0，非全证据无格式差异声明。
