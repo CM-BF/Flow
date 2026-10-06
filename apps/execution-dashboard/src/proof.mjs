@@ -1,11 +1,6 @@
-import { execFile } from 'node:child_process';
-import { promisify } from 'node:util';
+import { createGitSnapshot } from './git-snapshot.mjs';
 
-const execute = promisify(execFile);
 const fullSha = /^[a-f0-9]{40}$/;
-async function git(directory, ...args) {
-  return (await execute('git', ['-C', directory, ...args], { timeout: 5000, maxBuffer: 2 * 1024 * 1024, env: { ...process.env, GIT_OPTIONAL_LOCKS: '0' } })).stdout;
-}
 const pathsFrom = value => value.split('\0').filter(Boolean);
 const covers = (scopes, file) => scopes.some(scope => file === scope || file.startsWith(`${scope}/`));
 const metadata = file => /^(plans|docs)\/.+\.(md|json|txt|log|patch|png|jpg|jpeg|webp)$/.test(file) || /^(AGENTS|README)\.md$/.test(file);
@@ -19,25 +14,25 @@ export function parseImplementation(target, record) {
   return { target: fullSha.test(target) ? target : null, scopes: [...new Set(scopes)], errors };
 }
 
-async function collectTreeRecords(directory, target, scopes, records) {
+async function collectTreeRecords(context, directory, target, scopes, records) {
   let output;
   try {
-    output = await git(directory, 'ls-tree', '-r', '-z', '--full-tree', target, '--', ...scopes.map(scope => `:(literal)${scope}`));
+    output = await context.execute(directory, ['ls-tree', '-r', '-z', '--full-tree', target, '--', ...scopes.map(scope => `:(literal)${scope}`)]);
   } catch (error) {
     // Discard partial stdout. Preserve the existing per-scope buffer limit, with serial fallback only for size limits.
     if (!['ERR_CHILD_PROCESS_STDIO_MAXBUFFER', 'E2BIG'].includes(error.code) || scopes.length < 2) throw error;
     const middle = Math.floor(scopes.length / 2);
-    await collectTreeRecords(directory, target, scopes.slice(0, middle), records);
-    await collectTreeRecords(directory, target, scopes.slice(middle), records);
+    await collectTreeRecords(context, directory, target, scopes.slice(0, middle), records);
+    await collectTreeRecords(context, directory, target, scopes.slice(middle), records);
     return;
   }
   for (const record of pathsFrom(output)) records.add(record);
 }
 
-async function tree(directory, target, scopes, requireEveryPath = true) {
-  if ((await git(directory, 'cat-file', '-t', target)).trim() !== 'commit') throw new Error('目标不是 commit');
+async function tree(context, directory, target, scopes, requireEveryPath = true) {
+  if ((await context.execute(directory, ['cat-file', '-t', target])).trim() !== 'commit') throw new Error('目标不是 commit');
   const records = new Set();
-  await collectTreeRecords(directory, target, scopes, records);
+  await collectTreeRecords(context, directory, target, scopes, records);
   if (requireEveryPath) {
     const files = [...records].map(record => record.slice(record.indexOf('\t') + 1));
     for (const scope of scopes) {
@@ -47,15 +42,15 @@ async function tree(directory, target, scopes, requireEveryPath = true) {
   return [...records].sort().join('\0');
 }
 
-export async function compareImplementation(directory, target, head, implementation) {
+export async function compareImplementation(directory, target, head, implementation, context = createGitSnapshot()) {
   const base = { target, head, scopes: implementation.scopes, observedAt: new Date().toISOString() };
   if (!fullSha.test(target ?? '') || implementation.errors.length) return { ...base, state: 'unknown', reason: implementation.errors.join('；') || '缺少完整目标 SHA' };
   try {
-    await tree(directory, target, implementation.scopes);
+    await tree(context, directory, target, implementation.scopes);
     const [committed, dirty, untracked] = await Promise.all([
-      git(directory, 'diff', '--name-only', '-z', '--no-renames', target, head, '--'),
-      git(directory, 'diff', '--name-only', '-z', '--no-renames', 'HEAD', '--'),
-      git(directory, 'ls-files', '--others', '--exclude-standard', '-z'),
+      context.execute(directory, ['diff', '--name-only', '-z', '--no-renames', target, head, '--']),
+      context.execute(directory, ['diff', '--name-only', '-z', '--no-renames', head, '--']),
+      context.execute(directory, ['ls-files', '--others', '--exclude-standard', '-z']),
     ]);
     const changed = [...new Set([...pathsFrom(committed), ...pathsFrom(dirty), ...pathsFrom(untracked)])];
     const implementationChanges = changed.filter(file => covers(implementation.scopes, file));
@@ -65,7 +60,7 @@ export async function compareImplementation(directory, target, head, implementat
   } catch (error) { return { ...base, state: 'unknown', reason: error.message.split('\n')[0] }; }
 }
 
-export async function integrationProof(task, mainDirectory, main) {
+export async function integrationProof(task, mainDirectory, main, context = createGitSnapshot()) {
   const declaration = task.status.implementation;
   const result = {
     record: task.status.mainRecord || '未记录 main 集成事实。',
@@ -77,18 +72,17 @@ export async function integrationProof(task, mainDirectory, main) {
     return { ...result, reason: '实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成' };
   }
   try {
-    const sourceTree = await tree(task.worktree, declaration.target, declaration.scopes);
+    const sourceTree = await tree(context, task.worktree, declaration.target, declaration.scopes);
     try {
-      await git(mainDirectory, 'merge-base', '--is-ancestor', declaration.target, main.head);
+      await context.execute(mainDirectory, ['merge-base', '--is-ancestor', declaration.target, main.head]);
       result.historicalIntegrated = true;
     } catch { /* Non-ancestor integrations still require exact scope evidence. */ }
     if (!result.historicalIntegrated && task.implementationProof?.state !== 'unchanged') {
       return { ...result, reason: '无法以祖先关系证明，且 owner 实现范围存在变化或未知' };
     }
-    const [mainTree, dirty, untracked] = await Promise.all([
-      tree(mainDirectory, main.head, declaration.scopes, false),
-      git(mainDirectory, 'diff', '--name-only', '-z', '--no-renames', 'HEAD', '--'),
-      git(mainDirectory, 'ls-files', '--others', '--exclude-standard', '-z'),
+    const [mainTree, { dirty, untracked }] = await Promise.all([
+      tree(context, mainDirectory, main.head, declaration.scopes, false),
+      context.mainChanges(mainDirectory, main.head),
     ]);
     const dirtyScopePaths = [...new Set([...pathsFrom(dirty), ...pathsFrom(untracked)])].filter(file => covers(declaration.scopes, file));
     const scopeEqual = sourceTree === mainTree;

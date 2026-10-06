@@ -1,0 +1,18 @@
+✔ budget: default four actual jobs, FIFO handoff, raw stdout and caller args retained (6.477416ms)
+✔ budget: synchronous spawn, timeout and size failures preserve error and release the only permit (0.426959ms)
+✔ budget: rejects invalid concurrency without starting a job (0.116916ms)
+✔ main: one immutable observation per directory/captured head; terminal HEAD check follows both reads (5.718667ms)
+✔ main: failure is shared as unknown, not an empty dirty list, but next snapshot retries (0.886375ms)
+✔ main: queued HEAD change rejects current proof while preserving historical ancestry (0.216875ms)
+✔ proof: captured owner head, exact NUL paths, outside-code unknown and metadata remain distinct (1.898958ms)
+✔ tree: MAXBUFFER/E2BIG fallback remains serial within shared budget and discards partial stdout (4.113166ms)
+✔ tree: singleton size error and ordinary failure remain unknown without retries (0.860958ms)
+✔ aggregate: observations, frozen git show, owner/review and main proofs all share one execution budget (11.894583ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 246.033833

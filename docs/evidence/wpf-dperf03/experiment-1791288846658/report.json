@@ -1,0 +1,129 @@
+{
+  "recordedAt": "2026-10-06T12:14:06.660Z",
+  "sourceCommit": "2a52b8ae5250781c712b71117ccd5321a6b4103d",
+  "cases": [
+    {
+      "name": "eight-repositories",
+      "elapsedMs": 142.66575,
+      "gitStarts": 32,
+      "tracePeakIntervals": 4,
+      "unclosedIntervals": 0
+    },
+    {
+      "name": "four-main-proofs",
+      "elapsedMs": 98.08291599999995,
+      "gitStarts": 23,
+      "tracePeakIntervals": 4,
+      "unclosedIntervals": 0,
+      "proofs": [
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "mainHead": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        },
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "mainHead": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        },
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "mainHead": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        },
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "mainHead": "25c6fd86b294866f225e66128541f43f7fc589dd",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        }
+      ]
+    },
+    {
+      "name": "freshness-and-isolation",
+      "elapsedMs": 105.27654099999995,
+      "gitStarts": 12,
+      "tracePeakIntervals": 2,
+      "unclosedIntervals": 0
+    },
+    {
+      "name": "queued-head-movement",
+      "elapsedMs": 92.8482909999999,
+      "gitStarts": 6,
+      "tracePeakIntervals": 2,
+      "unclosedIntervals": 0
+    },
+    {
+      "name": "aggregate-frozen-fallback",
+      "elapsedMs": 42.18166599999995,
+      "gitStarts": 9,
+      "tracePeakIntervals": 4,
+      "unclosedIntervals": 0
+    },
+    {
+      "name": "real-spawn-failure-releases-permit",
+      "elapsedMs": 34.06645800000001,
+      "gitStarts": 2,
+      "tracePeakIntervals": 1,
+      "unclosedIntervals": 0
+    }
+  ],
+  "failure": null,
+  "cleanup": {
+    "state": "fulfilled",
+    "removedOwnedRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/dperf03-git-tg8ewO",
+    "elapsedMs": 13.04691600000001
+  },
+  "sources": {
+    "apps/execution-dashboard/src/aggregate.mjs": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+    "apps/execution-dashboard/src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "apps/execution-dashboard/src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "apps/execution-dashboard/test/git-snapshot.test.mjs": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2"
+  },
+  "elapsedMs": 1130.6350830000001,
+  "cumulativeMs": 2151.294833,
+  "scope": "Owned tiny temporary repositories; Trace2 start/exit intervals are not OS census, CPU, production latency or atomic Git observations"
+}

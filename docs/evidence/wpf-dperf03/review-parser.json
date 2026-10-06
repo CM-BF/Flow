@@ -1,0 +1,105 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+        "id": "D01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "看板单次读取已限流，重复主线观察减少且保留未知状态",
+      "next": "集成已审看板读取改进",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+      "scopes": [
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/proof.mjs",
+        "apps/execution-dashboard/src/git-snapshot.mjs",
+        "apps/execution-dashboard/test/git-snapshot.test.mjs",
+        "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-DPERF03",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/dashboard-git-snapshot",
+    "branchState": "in-progress / approved / waiting-main",
+    "updatedAt": "2026-10-06T12:20:00.000Z",
+    "updatedRecord": "2026-10-06 12:20:00 UTC",
+    "todos": [
+      {
+        "id": "WPF-DPERF03-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-dperf03/interface.md)、[质量](../../docs/evidence/wpf-dperf03/quality.md)"
+      },
+      {
+        "id": "WPF-DPERF03-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[固定5源](../../docs/evidence/wpf-dperf03/candidate.json)"
+      },
+      {
+        "id": "WPF-DPERF03-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[验证/失败/预算](../../docs/evidence/wpf-dperf03/validation.md)"
+      },
+      {
+        "id": "WPF-DPERF03-04",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "root 12:18:07 UTC独审APPROVED；main待接收"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea / 当前Git聚合",
+    "declaredDirty": "五实现/专测已固定；当前仅交付metadata，提交后Git聚合为准",
+    "checks": {
+      "state": "passed",
+      "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+      "record": "PASSED 5609ea719ec400a803bb6036429312b7a212c90f；37直接消费者、1临时Git实验；原失败/预算见validation"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 5609ea719ec400a803bb6036429312b7a212c90f",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "5609ea719ec400a803bb6036429312b7a212c90f"
+  }
+}
