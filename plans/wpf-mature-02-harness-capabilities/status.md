@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:34:50 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:37:54 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 4331c267bc5ef7c01328369ecaa57fc9434c7473（v2修复源；组合HEAD由Git核） |
-| 工作树dirty状态 | v2固定source4331c267，input/manifest-v2收口；旧raw/profile冻结，0新target。 |
+| 工作树dirty状态 | v2源码/raw固定且已独审；本次仅正式review/status收口，0新target。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | cause source4331c267bc5ef7c01328369ecaa57fc9434c7473；原f6两P2已修复，33distinct分次证据，v2待增量独审；go-node-loader-cause-once NOT_OPEN |
+| 实现目标 | cause source4331c267bc5ef7c01328369ecaa57fc9434c7473；原f6两P2已修复，33distinct分次证据，v2 a5984db6已独审APPROVED；go-node-loader-cause-once NOT_OPEN |
 | 实现范围 | 新node-rootliteral实验；diagnostics/run-diagnostics.mjs导出/计量私有helper；isolation/compose-canary.mjs固定场景/资源清理接缝；本计划与证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 受限观察的计时与错误分类审查问题已修复，正在固定新的准备包。 |
-| 下一可用交付 | 两处修复交独立增量审查；实际观察窗口未开放。 |
+| 当前产出 | 受限观察准备包已通过独立审查；两项审查问题均关闭。 |
+| 下一可用交付 | 等待已授权单目标观察的执行门禁，实际窗口未开放。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：原结果限定APPROVED；新cause f6于13:27:13 CHANGES_REQUESTED，两P2修复待复审。 |
+| Review | [review.md](review.md)：status_read13:37:35 UTC APPROVED cause v2 a598；仅准备批准，旧结果限制不变。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 
