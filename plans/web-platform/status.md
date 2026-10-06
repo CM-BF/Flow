@@ -80,7 +80,7 @@
 | D08 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，原panels，49510580 v2 released | 已main f181；605957 push/clean后9scope停写释放；root实际六计划父关联/take页面核已完成 |
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
-| RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v1三scope | fixed560c/final0bca已pushclean，根严格types0/转译JS相同；等runner_owner独审，0浏览器/PG/个人发布 |
+| RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v1三scope | fixed560c/final0bca已pushclean，根严格types0/转译JS相同；等Execution Lead本人唯一独审（runner未启动），0浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | base8701已审DTO/typed ports/官方Threadfixture；六client/HTTP/App仍pending，首canonical d6e6eba clean/parser0已owner建立 |
 | WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711/final628156已独审partial基线待main；8完成/1失败、累计79.322s，0生产优化 |
 | ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展仍待准确输入 |

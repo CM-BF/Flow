@@ -32,3 +32,7 @@ WORKSPACEPERF01若尚未冻结且原90s/8MiB预算有余量，可区分可见ove
 ### c450成本路径与稀疏cursor约束（root进一步只读）
 
 WorkspaceFeedProjection在arrived=[]/following=true时仍merge旧entries/buffered、sort并新数组；ActivityWindow useMemo因此可能重建全entries的ids/indices/Float64Array。DOM窗口不能界定CPU/JS驻留，未实测成本或收益。server m2-workspace的nextCursor/previousCursor按rawEntries计算，之后legacyTimelineEntries过滤，cursor可自然稀疏。后继不能以保留列表末条替代deliveredCursor或将不连续当漏事件；裁剪前缀要同时定义历史窗口/anchor/hasEarlier及重取语义，不能残留旧previousCursor使被裁内容不可再取。读旧页时新buffer需明确受保护anchor、待取区间及watermark，不能无限增长或静默跳过。App syncWorkspaceSummaries还给catalog/legacy TaskProjection轻摘要；观察暂停/摘要与按需活动历史应单一owner划分，不造重复authority。来源root本地codebase-design/clean-code与[MDN Page Visibility](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)，不追加本轮实验或生产scope。
+
+### 最小回收片的额外保护接缝（root固定main2e71，只读）
+
+知识bindings Map会订阅projection/host，目前仅session.dispose全量释放，因此views.delete不能冒称所有JS引用已释放。后继小Interface需现session的窄release seam并保selected/project状态，不造第二authority。projection读cache新generation在catch/finally也须guard，避免旧flight清新loading或写错误；queue详情读生命周期必须明确本片涵盖或作为开放后继。未dismiss的rejected/queue receipt仍有材料身份，不能仅按“非unknown”静默回收；现steering显式离开确认不可绕过。root仅源码观察/设计约束，无新产品实验。

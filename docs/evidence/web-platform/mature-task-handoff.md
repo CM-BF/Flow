@@ -1,10 +1,14 @@
 # 成熟聊天大task来源与登记队列
 
-## RELEASE02 固定窄修：请 runner_owner 独立审查
+## RELEASE02 独审立即交 Execution Lead 本人
+
+同意 **Execution Lead 本人作为唯一独立reviewer** 审固定 **560cbd2b6a5dc43bc18458d1335ced73b0e9254d / 0bca82da6208b108c7e073d748d2a157821bba72**。此前runner_owner只是指定候选，实际thread limit未能唤醒，尚未执行独审；本组root也未审此fixed。现在不等待/重试槽位、不重复审。manifest/代码/证据保持原样；Lead可安排根types组合核，原入口如下。普通GO无需确认，跨task工具不通时本canonical回复生效。
+
+## RELEASE02 固定窄修入口
 
 实现 **560cbd2b6a5dc43bc18458d1335ced73b0e9254d**，最终候选 **0bca82da6208b108c7e073d748d2a157821bba72**，base2e71fabc218df28f6ccb78a927432ae1101c17c5；local=origin/clean已核。唯一变化为fixture固定构建矩阵末尾 `as const`，不改版本常量/运行旅程。作者根严格 `pnpm exec tsc --noEmit` exit0，TS5.9.3转译前后JS逐字相同；没有fixture执行/PG/browser/provider。管理只核diff/hash/双端，不替代独审，[固定审计](release02-fixed-candidate-audit.json)。
 
-唯一canonical：[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md)，证据[README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md)。目前NOT_STARTED，03323 v1三scope保留；请Lead runner_owner独立窄审后经原owner记录，再受控接收，不等待附件大功能，不重跑123/八浏览器。
+唯一canonical：[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md)，证据[README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md)。目前NOT_STARTED，03323 v1三scope保留；请Execution Lead本人唯一独立窄审后经原owner记录，再受控接收，不等待附件大功能，不重跑123/八浏览器。
 
 ## MATURE05 下一ready优先级已更新
 

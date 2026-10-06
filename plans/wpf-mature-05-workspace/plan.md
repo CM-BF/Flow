@@ -46,6 +46,6 @@
 
 ### 下一ready产品片排程（GO最新优先级，覆盖先前Arc先行）
 
-WORKSPACEPERF01固定partial基线已足够，不再补齐所有截图/分位数。下一生产片优先05的最小cache回收/观察生命周期：可回收view与正文缓存有界，protected draft/attachment/unknown不丢，区分关闭DOM、异步读取与JS引用；复用原controllers和唯一mutation authority，不造第二workspace状态源。panels先只读固定当前main，提出小Interface、精确scope及容量/选择策略；反复开关、保护满额、late detail/history与重开原身份为直接验收，原8项沿用、新差异重测。
+WORKSPACEPERF01固定partial基线已足够，不再补齐所有截图/分位数。下一生产片优先05的最小cache回收/观察生命周期：可回收view与正文缓存有界，protected draft/attachment/unknown与未dismiss rejected/queue receipt材料不丢，现steering离开确认不可绕过；views.delete不代表knowledge bindings订阅释放，须原session窄release seam并保selected/project，读cache代次在catch/finally也核，queue详情范围显式；区分关闭DOM、异步读取与JS引用；复用原controllers和唯一mutation authority，不造第二workspace状态源。panels先只读固定当前main，提出小Interface、精确scope及容量/选择策略；反复开关、保护满额、late detail/history与重开原身份为直接验收，原8项沿用、新差异重测。
 
 不同时大改feed/layout，不预占宽App范围；与ATTACHI后继App接线按精确有序窗口交权。Arc组合目标01/02/03完整保留为随后产品片：A与B同顶层tab、swap/merge/比例、独立焦点/滚动/草稿，任意有界pane数组、首验2/3+开放；复用唯一P01真实conversation/view身份。当前仅只读proposal，未take新生产范围，不能沿基线四scope修改产品。
