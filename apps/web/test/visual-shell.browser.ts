@@ -120,6 +120,27 @@ try {
       await expect(pane(2).getByText("A reply in progress · another visible increment", { exact: true })).toBeVisible();
       await expect(input(2)).toHaveValue("Draft beside a stream"); await expect(input(3)).toHaveValue("A separate draft stays here");
       await capture("split-dark-1280");
+      await page.setViewportSize({ width: 390, height: 844 });
+      const hide = page.getByRole("button", { name: "Hide chat list", exact: true }); if (await hide.isVisible()) await hide.click();
+      const bounds = await page.locator(".flow-chat-groups.split").evaluate(element => {
+        const parent = element.getBoundingClientRect();
+        return { height: element.clientHeight, scrollHeight: element.scrollHeight,
+          panes: [...element.children].map(child => {
+            const box = child.getBoundingClientRect();
+            const composer = [...child.querySelectorAll<HTMLElement>(".aui-composer-root")].find(node => node.offsetHeight > 0)!.getBoundingClientRect();
+            return { top: box.top - parent.top, bottom: box.bottom - parent.top,
+              composerTop: composer.top - parent.top, composerBottom: composer.bottom - parent.top };
+          }) };
+      });
+      expect(bounds.panes).toHaveLength(2); expect(bounds.scrollHeight).toBeLessThanOrEqual(bounds.height + 1);
+      for (const box of bounds.panes) {
+        expect(box.top).toBeGreaterThanOrEqual(0); expect(box.bottom).toBeLessThanOrEqual(bounds.height + 1);
+        expect(box.composerTop).toBeGreaterThanOrEqual(box.top); expect(box.composerBottom).toBeLessThanOrEqual(box.bottom);
+      }
+      await input(3).fill("Lower pane remains editable"); await expect(input(3)).toBeFocused();
+      await expect(input(2)).toHaveValue("Draft beside a stream");
+      measurements.push({ name: "narrow-split-bounds", ...bounds }); await capture("split-dark-390");
+      await page.setViewportSize({ width: 1280, height: 720 });
       await page.getByRole("button", { name: "Close Conversation 3", exact: true }).click();
     });
     await check("visible queue error and keyboard focus remain usable in both narrow themes", async () => {

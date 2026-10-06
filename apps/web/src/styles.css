@@ -555,7 +555,7 @@ select {
     overflow: auto;
   }
   .flow-chat-groups.split > .flow-chat-group {
-    min-height: 50%;
+    min-height: calc((100% - var(--flow-gap)) / 2);
   }
   .flow-work-area { --flow-gap: 4px; }
   .flow-workspace-bar {
