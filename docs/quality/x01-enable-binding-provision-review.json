@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "kind": "X01_SOURCE_PROVISION_READONLY_AUDIT",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "observedAt": "2026-10-06T23:05:50.790904+00:00",
+  "conclusion": "SOURCE_ONLY_LEAF_CAN_PROCEED_AFTER_SOLE_PROVISION_AND_HANDOFF; DDL_034_CANDIDATE_ONLY",
+  "canonicalHandoff": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-provision.md",
+    "bytes": 8478,
+    "sha256": "43ee6f3f01293f7e44ba086e3caa52b274e8cc937cc7c5bb9ec19c785850a291",
+    "commit": "067920b54a6106ea9b9c942025e0f2fcfc78f5f4",
+    "routeFrom": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/interface.md",
+    "routeLine": 28,
+    "machineList": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-source-request.json",
+      "bytes": 399779,
+      "sha256": "6a7bd014a689beb95bce47aa44c08dbc005edcc1f1eb0203ccc17b19f4529e39"
+    },
+    "machineListMatchesFixedGit": true,
+    "supersededPacket": {
+      "packetCommit": "68db2d60d6e0f17c20474956f60f47b8ceff15b1",
+      "requestSha256": "d6ccfdbe794aa70aae9cae35123c3fe50abb48f09b034e5ad160560400cf844d",
+      "reason": "Four official SQL files selected by finite dynamic file arrays were omitted. Previous source-complete conclusion withdrawn; source base and product scope unchanged."
+    }
+  },
+  "fixedInputs": {
+    "sourceBase": "60ca1942411634843fda14e158f138191b832d8b",
+    "ownerMetadataCommit": "c77802e6556aedab63d0f45af4d76bbf38096d70",
+    "ownerDelivery": "067920b54a6106ea9b9c942025e0f2fcfc78f5f4",
+    "ownerWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+    "ownerTreeClean": true,
+    "currentMain": "decab94f20bc5345cb74fe82eb9b93b6e135c333",
+    "rootHead": "decab94f20bc5345cb74fe82eb9b93b6e135c333",
+    "originMain": "decab94f20bc5345cb74fe82eb9b93b6e135c333",
+    "rootClean": true,
+    "suppliedPathsChangedBetweenBaseAndCurrentMain": []
+  },
+  "target": {
+    "taskId": "X01",
+    "owner": "architecture_read",
+    "lead": "mika",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+    "branch": "codex/plugin-enable-binding",
+    "pathExistsAtAudit": false,
+    "branchExistsAtAudit": false,
+    "soleProvisionOperator": "mika per Execution Lead latest explicit delegation",
+    "auditCreatedTree": false
+  },
+  "exactProductScopes": [
+    "packages/contracts/src/plugin-runtime.ts",
+    "packages/contracts/src/plugin-runtime.test.ts",
+    "packages/contracts/src/plugins.ts",
+    "apps/server/src/plugins/storage.ts",
+    "apps/server/src/plugins/commands.ts",
+    "apps/server/src/plugins/plugins.test.ts",
+    "apps/server/src/plugin-runtime/store.ts",
+    "apps/server/src/plugin-runtime/commands.ts",
+    "apps/server/src/plugin-runtime/routes.ts",
+    "apps/server/src/plugin-runtime/runtime.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/execution.test.ts",
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/browser.ts"
+  ],
+  "metadataScopesRetained": [
+    "docs/evidence/x01",
+    "plans/x01-plugin-management"
+  ],
+  "currentClaim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/plugins/host.test.ts",
+      "apps/runner/src/plugins/host.ts",
+      "docs/evidence/x01",
+      "plans/x01-plugin-management"
+    ],
+    "state": "active",
+    "branch": "codex/plugin-management-plan",
+    "origin": "new",
+    "taskId": "X01",
+    "worker": "architecture_read",
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 5,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+    "createdAt": "2026-10-06T12:31:22.156Z",
+    "updatedAt": "2026-10-06T14:41:28.776Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "handoffOrder": [
+    "Original owner stops all four current scopes",
+    "Current-version handoff to same owner/lead on new worktree and branch",
+    "New worktree accepts pending claim",
+    "Atomic amend drops two old delivered host files and adds fourteen product literals plus formally allocated SQL, retaining the two metadata scopes",
+    "Lead registry changes to unique new authority"
+  ],
+  "freshD04": {
+    "observedAt": "2026-10-06T23:04:09.570Z",
+    "state": "available",
+    "claimCount": 211,
+    "receipt": {
+      "path": "/tmp/flow-x01-provision-ledger.json",
+      "bytes": 149797,
+      "sha256": "42e964363c183c1d6e18fe0d737ed622cf6fbb1d6b3e760da68a9d60da672747"
+    },
+    "productScopeConflicts": [],
+    "ddlActiveClaims": [
+      {
+        "claimId": "b447f2ce-a4b3-49b0-bcbe-034ff60b73be",
+        "version": 1,
+        "taskId": "CHAT05P01",
+        "state": "active",
+        "scope": [
+          "apps/runner/src/claude.ts",
+          "apps/runner/src/native-activity-body",
+          "apps/runner/src/native-activity/index.ts",
+          "apps/runner/src/native-activity/mapper.test.ts",
+          "apps/runner/src/outbox.ts",
+          "apps/server/src/events.ts",
+          "apps/server/src/native-activity-body",
+          "docs/evidence/chat05p01",
+          "packages/contracts/src/native-activity-body.ts",
+          "packages/contracts/src/runner.ts",
+          "packages/storage/migrations/033-native-activity-bodies.sql",
+          "plans/chat05p01-native-activity-body"
+        ]
+      }
+    ]
+  },
+  "ddl": {
+    "mainLatest": 32,
+    "mainMigrationCount": 30,
+    "mainMigrationPaths": [
+      "packages/storage/migrations/002-reconciliation.sql",
+      "packages/storage/migrations/004-projects.sql",
+      "packages/storage/migrations/005-protocol-dispatch.sql",
+      "packages/storage/migrations/006-goals.sql",
+      "packages/storage/migrations/007-conversations.sql",
+      "packages/storage/migrations/008-plugins.sql",
+      "packages/storage/migrations/009-assistant-messages.sql",
+      "packages/storage/migrations/010-execution-profiles.sql",
+      "packages/storage/migrations/011-conversation-queue.sql",
+      "packages/storage/migrations/012-goal-tool-runs.sql",
+      "packages/storage/migrations/013-goal-native-mode.sql",
+      "packages/storage/migrations/014-goal-graph-proposals.sql",
+      "packages/storage/migrations/015-knowledge-sources.sql",
+      "packages/storage/migrations/016-runner-maintenance.sql",
+      "packages/storage/migrations/017-goal-graph-runs.sql",
+      "packages/storage/migrations/018-conversation-context.sql",
+      "packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "packages/storage/migrations/020-native-activity.sql",
+      "packages/storage/migrations/021-goal-context.sql",
+      "packages/storage/migrations/022-assistant-stream.sql",
+      "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "packages/storage/migrations/024-active-steering.sql",
+      "packages/storage/migrations/025-native-harness-sources.sql",
+      "packages/storage/migrations/026-attachment-resources.sql",
+      "packages/storage/migrations/027-context-observation-history.sql",
+      "packages/storage/migrations/028-browser-sessions.sql",
+      "packages/storage/migrations/029-plugin-material-installs.sql",
+      "packages/storage/migrations/030-goal-progression.sql",
+      "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "packages/storage/migrations/032-claude-message-settings.sql"
+    ],
+    "reserved033": {
+      "taskId": "CHAT05P01",
+      "claimId": "b447f2ce-a4b3-49b0-bcbe-034ff60b73be",
+      "version": 1,
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql"
+    },
+    "candidateNumber": 34,
+    "suggestedPath": "packages/storage/migrations/034-plugin-runtime.sql",
+    "formallyAllocated": false,
+    "candidateInMain": false,
+    "candidateActiveScopeConflicts": [],
+    "allocationOwner": "Execution Lead",
+    "rule": "Only a candidate, fresh recheck on formal allocation; do not reuse 033 or modify historical 008/029"
+  },
+  "boundedSourceClosure": {
+    "canonicalExactPathList": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-source-request.json",
+    "counts": {
+      "mainFiles": 384,
+      "ownerMetadataFiles": 160,
+      "envelopeFiles": 1,
+      "totalFiles": 545
+    },
+    "logicalBytes": {
+      "listedBytes": 2599602,
+      "requestSelfBytes": 399779,
+      "totalPayloadBytes": 2999381,
+      "withinFiveMiB": true
+    },
+    "groups": {
+      "rules-root-config": {
+        "files": 13,
+        "logicalBytes": 333797
+      },
+      "apps/runner": {
+        "files": 59,
+        "logicalBytes": 242020
+      },
+      "apps/server": {
+        "files": 138,
+        "logicalBytes": 668005
+      },
+      "apps/web": {
+        "files": 78,
+        "logicalBytes": 557751
+      },
+      "packages/client": {
+        "files": 3,
+        "logicalBytes": 67669
+      },
+      "packages/contracts": {
+        "files": 46,
+        "logicalBytes": 176009
+      },
+      "packages/interaction": {
+        "files": 6,
+        "logicalBytes": 34243
+      },
+      "packages/plugin-runtime": {
+        "files": 3,
+        "logicalBytes": 34700
+      },
+      "packages/protocols": {
+        "files": 8,
+        "logicalBytes": 32639
+      },
+      "packages/storage": {
+        "files": 30,
+        "logicalBytes": 62522
+      }
+    },
+    "seeds": [
+      "apps/server/src/plugins/commands.ts",
+      "apps/server/src/plugins/storage.ts",
+      "apps/server/src/plugins/plugins.test.ts",
+      "apps/server/src/plugin-installations/installations.test.ts",
+      "apps/runner/src/plugins/host.ts",
+      "apps/runner/src/plugins/host.test.ts",
+      "apps/runner/src/verifier.ts",
+      "apps/runner/src/fixture.ts",
+      "apps/runner/src/runtime.ts",
+      "apps/runner/src/admission-journal.ts",
+      "apps/runner/src/attempt-control.ts",
+      "apps/runner/src/outbox.ts",
+      "apps/runner/src/main.ts",
+      "apps/server/src/runners.ts",
+      "apps/server/src/events.ts",
+      "apps/server/src/reconciliation.ts",
+      "packages/contracts/src/plugin-installations.test.ts",
+      "packages/plugin-runtime/src/package-store.test.ts",
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-management/fixture/index.html",
+      "apps/web/test/plugin-management/fixture/style.css"
+    ],
+    "newFilesToImplement": [
+      "packages/contracts/src/plugin-runtime.ts",
+      "packages/contracts/src/plugin-runtime.test.ts",
+      "apps/server/src/plugin-runtime/store.ts",
+      "apps/server/src/plugin-runtime/commands.ts",
+      "apps/server/src/plugin-runtime/routes.ts",
+      "apps/server/src/plugin-runtime/runtime.test.ts",
+      "apps/runner/src/plugins/execution.ts",
+      "apps/runner/src/plugins/execution.test.ts"
+    ],
+    "verifiedBindingCount": 544,
+    "mismatches": [],
+    "staticEdges": 1260,
+    "missingEdgeTargets": [],
+    "missingSeeds": [],
+    "officialSqlCount": 30,
+    "dynamicSqlInputs": [
+      {
+        "path": "packages/storage/migrations/012-goal-tool-runs.sql",
+        "gitCommit": "60ca1942411634843fda14e158f138191b832d8b",
+        "gitBlob": "7445ae5c85b289acb5a6611e44f5d186a3d87409",
+        "bytes": 2076,
+        "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b",
+        "role": "fixed-main-source-or-direct-consumer"
+      },
+      {
+        "path": "packages/storage/migrations/013-goal-native-mode.sql",
+        "gitCommit": "60ca1942411634843fda14e158f138191b832d8b",
+        "gitBlob": "11f5765e5f292c8d5fc78d857716e20814638581",
+        "bytes": 185,
+        "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3",
+        "role": "fixed-main-source-or-direct-consumer"
+      },
+      {
+        "path": "packages/storage/migrations/017-goal-graph-runs.sql",
+        "gitCommit": "60ca1942411634843fda14e158f138191b832d8b",
+        "gitBlob": "39d8486b3206faab46e660605ea1dac4b1508e3e",
+        "bytes": 3089,
+        "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f",
+        "role": "fixed-main-source-or-direct-consumer"
+      },
+      {
+        "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+        "gitCommit": "60ca1942411634843fda14e158f138191b832d8b",
+        "gitBlob": "d0f440769ac2bfb74a4b0f1ed47485efe138b7f2",
+        "bytes": 189,
+        "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218",
+        "role": "fixed-main-source-or-direct-consumer"
+      }
+    ],
+    "dependencyCopyBytes": 0,
+    "upstreamSemverCopied": false,
+    "scopeOfProof": "Finite requested source+consumer closure, not an assertion of globally minimal runtime footprint or runnable installed dependencies",
+    "logicalNotPhysical": true,
+    "runtimePreparationExclusions": [
+      "Existing Web audit browser script writes historical x03 evidence and runs services at top level; supplied read-only and never imported/launched by provision. After a successful future scope receipt, its test output must be redirected to an exclusive owned x01 namespace with O_EXCL/no-overwrite semantics before any approved browser execution. Old x03 is never writable here.",
+      "Runtime dependency links/installations and computed dynamic package entrypoint imports are not provisioned or validated in this source-only request."
+    ]
+  },
+  "parallelism": {
+    "ciWaitRequired": false,
+    "pgWaitForSourceWorkRequired": false,
+    "leafCanProceed": true,
+    "firstSlice": "Bounded public contract, registry revision reuse, durable immutable binding/phase readback and narrow host adapter; no production mount or old-runner admission",
+    "sharedPathsRemainOtherWriters": [
+      "apps/runner/src/runtime.ts",
+      "apps/server/src/runners.ts",
+      "packages/contracts/src/runner.ts",
+      "packages/contracts/src/runner-claim.ts",
+      "apps/server/src/events.ts",
+      "apps/server/src/reconciliation.ts",
+      "packages/contracts/src/index.ts",
+      "packages/client/src/index.ts",
+      "apps/server/src/index.ts"
+    ],
+    "releaseDependencies": [
+      "Exact forward SQL allocation and legal claim handoff/amend",
+      "Installed dependency view/import preparation separately authorized",
+      "Real PG and browser direct consumer execution requires resource/serial window",
+      "Claim capability negotiation/center ACK/strict assignment codec/runtime/provenance/reconciliation guards must exist before public plugin tasks can dispatch"
+    ],
+    "knownBrowserPreparationFix": "Existing browser.ts writes X03 evidence and executes services at top level. After obtaining its literal, redirect to own exclusive X01 output before any future approved run. Do not import it during provision."
+  },
+  "method": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Unique authority/Interface ownership; finite static imports plus explicit dynamic resource arrays; exact Git identities and source availability separate from execution readiness",
+    "support": {
+      "path": "/tmp/flow-x01-source-binding-check.json",
+      "bytes": 4407,
+      "sha256": "a98d684c6c7f7802e5c17a1945726a8f7ad632ae3ab01e3da061bbc725f34ad7"
+    }
+  },
+  "actions": {
+    "projectWrites": 0,
+    "treeCreation": 0,
+    "gitMutation": 0,
+    "productImports": 0,
+    "installs": 0,
+    "tests": 0,
+    "productPg": 0,
+    "provider": 0,
+    "coordinationReadOnlyList": 1
+  },
+  "unresolvedProductFindings": []
+}
