@@ -1,6 +1,6 @@
 # WPF-CONTEXTI01 聊天知识接入
 
-状态：in-progress。父需求为既有 U11 / REQ42；[管理计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)。唯一 owner w01_owner，派发模型 gpt-6-astra / ultra。固定基线 d7e1e64e7792f4d1ad4933db042f10f266ad0cca。
+状态：in-progress。所属大 task 为 [WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)，co-lead Web /root（执行管理 d01_owner）；既有 U11 / REQ42 是需求追溯。本片接通知识引用，不代表本地上传、拖入、@file 或 runner 文件已经支持。唯一 owner w01_owner，派发模型 gpt-6-astra / ultra。固定基线 d7e1e64e7792f4d1ad4933db042f10f266ad0cca。
 
 ## 已批准旅程
 
