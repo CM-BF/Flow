@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-06T08:46:03.374472+00:00",
+  "base": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+  "target": "0ac7a127f06d534f6514a98331f533e42993378a",
+  "scope": [
+    "apps/execution-dashboard/public/architecture.js",
+    "apps/execution-dashboard/test/architecture-viewport.browser.mjs"
+  ],
+  "sha256": {
+    "apps/execution-dashboard/public/architecture.js": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+    "apps/execution-dashboard/test/architecture-viewport.browser.mjs": "923432c06413699e089434c387574ee2b363b32f94dc6afeebd1d1a87188fbdc"
+  },
+  "browser": {
+    "report": "second-green.json",
+    "sourceCommit": "3f797d7f1ddc4084d21b70f7fe3e22d1a11ed727",
+    "sourceDirty": [
+      "M apps/execution-dashboard/public/architecture.js",
+      "?? apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+      "?? docs/evidence/d05-first-fit/behavior-red.json",
+      "?? docs/evidence/d05-first-fit/behavior-red.log",
+      "?? docs/evidence/d05-first-fit/desktop-dark.png",
+      "?? docs/evidence/d05-first-fit/desktop-light.png",
+      "?? docs/evidence/d05-first-fit/first-green.json",
+      "?? docs/evidence/d05-first-fit/first-green.log",
+      "?? docs/evidence/d05-first-fit/first-red.log",
+      "?? docs/evidence/d05-first-fit/second-green.log"
+    ],
+    "hashesMatchTarget": true
+  },
+  "protectedPaths": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/public/architecture.css",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/src/registry.mjs",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "protectedDiffEmpty": true,
+  "limits": "Static real browser fixture with synthetic empty progress snapshot, no engineering API4320/product API/DB/model. Full-page screenshots include below-fold content. Narrow images follow keyboard/view traversal and may retain local scroll, not claimed first-load scroll position."
+}

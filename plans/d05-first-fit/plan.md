@@ -11,8 +11,8 @@
 | TODO ID | 状态 | 说明 |
 | --- | --- | --- |
 | D05FIT01-01 | completed | 精确基线/独立tree/四scope committed take/技能与唯一source |
-| D05FIT01-02 | in-progress | 局部缩放状态实现，保持用户选择及有界窄屏滚动 |
-| D05FIT01-03 | pending | 独立动态fixture实际1280/390、隐藏/resize/刷新/五视图/键盘主题，固定源码绑定 |
-| D05FIT01-04 | pending | root独立固定review、正常push、Lead集成后停写release |
+| D05FIT01-02 | completed | 局部缩放状态实现，保持用户选择及有界窄屏滚动 |
+| D05FIT01-03 | completed | 独立动态fixture实际1280/390、隐藏/resize/刷新/五视图/键盘主题，固定源码绑定 |
+| D05FIT01-04 | in-progress | root独立固定review、正常push、Lead集成后停写release |
 
 验证只用本任务隔离HTTP静态fixture及现有浏览器运行时，不初始化协调/产品DB。先记录旧100%行为的失败，再验全部实际状态；sourcehash固定。展示相关断言以实际DOM/几何为准，不镜像私有函数。

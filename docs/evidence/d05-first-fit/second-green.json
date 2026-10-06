@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-06T08:44:19.300Z",
+  "sourceCommit": "3f797d7f1ddc4084d21b70f7fe3e22d1a11ed727",
+  "sourceDirty": [
+    "M apps/execution-dashboard/public/architecture.js",
+    "?? apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+    "?? docs/evidence/d05-first-fit/behavior-red.json",
+    "?? docs/evidence/d05-first-fit/behavior-red.log",
+    "?? docs/evidence/d05-first-fit/desktop-dark.png",
+    "?? docs/evidence/d05-first-fit/desktop-light.png",
+    "?? docs/evidence/d05-first-fit/first-green.json",
+    "?? docs/evidence/d05-first-fit/first-green.log",
+    "?? docs/evidence/d05-first-fit/first-red.log",
+    "?? docs/evidence/d05-first-fit/second-green.log"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/architecture.js": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+    "apps/execution-dashboard/test/architecture-viewport.browser.mjs": "923432c06413699e089434c387574ee2b363b32f94dc6afeebd1d1a87188fbdc"
+  },
+  "checks": [
+    "direct #architecture first positive-width layout fits at1280x720",
+    "manual keyboard zoom survives resize, five-view return, tab and manual/automatic snapshot refresh; selected node retained across tab",
+    "Fit restores responsive mode, zoom-out returns to manual mode",
+    "initial hidden progress page defers fit until visible; full page reload is a new visit",
+    "390x844 five views preserve42% minimum with local scrolling/no page overflow; keyboard node selection and both themes/reducedmotion"
+  ],
+  "observations": [
+    {
+      "scenario": "first desktop",
+      "available": 793,
+      "width": 793,
+      "viewWidth": 1120,
+      "zoom": "71%",
+      "pageOverflow": false,
+      "scrollWidth": 813,
+      "clientWidth": 813
+    },
+    {
+      "scenario": "narrow runtime",
+      "available": 332,
+      "width": 470,
+      "viewWidth": 1120,
+      "zoom": "42%",
+      "pageOverflow": false,
+      "scrollWidth": 490,
+      "clientWidth": 352
+    },
+    {
+      "scenario": "narrow modules",
+      "available": 332,
+      "width": 470,
+      "viewWidth": 1120,
+      "zoom": "42%",
+      "pageOverflow": false,
+      "scrollWidth": 490,
+      "clientWidth": 352
+    },
+    {
+      "scenario": "narrow data",
+      "available": 332,
+      "width": 470,
+      "viewWidth": 1120,
+      "zoom": "42%",
+      "pageOverflow": false,
+      "scrollWidth": 490,
+      "clientWidth": 352
+    },
+    {
+      "scenario": "narrow states",
+      "available": 332,
+      "width": 470,
+      "viewWidth": 1120,
+      "zoom": "42%",
+      "pageOverflow": false,
+      "scrollWidth": 490,
+      "clientWidth": 352
+    },
+    {
+      "scenario": "narrow dependencies",
+      "available": 332,
+      "width": 470,
+      "viewWidth": 1120,
+      "zoom": "42%",
+      "pageOverflow": false,
+      "scrollWidth": 490,
+      "clientWidth": 352
+    }
+  ],
+  "pageErrors": [],
+  "requests": [
+    "/api/snapshot",
+    "/api/snapshot",
+    "/api/snapshot"
+  ],
+  "screenshots": [
+    "desktop-light.png",
+    "desktop-dark.png",
+    "narrow-light.png",
+    "narrow-dark.png"
+  ],
+  "passed": true,
+  "browser": "154.0.8037.98"
+}
