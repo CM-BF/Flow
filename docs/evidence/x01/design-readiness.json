@@ -1,0 +1,61 @@
+{
+  "taskId": "X01",
+  "owner": "architecture_read / gpt-6-astra",
+  "coLead": "mika",
+  "target": "3bd1add6ef7e868765b4508e88286bd62f49edd7",
+  "recordedAt": "2026-10-06 12:36:22 UTC",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+  "branch": "codex/plugin-management-plan",
+  "controlledMain": "7cbda706632c85fc5da12a371b282419c933ab9a",
+  "controlledBase": "c837853829f0344634df78ed7195ee7255f6b832",
+  "claim": {
+    "id": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 1,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/x01",
+      "plans/x01-plugin-management"
+    ]
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/x01/vertical-interface.md",
+      "bytes": 9887,
+      "sha256": "951a6a9690973d909bf8be22539b0457ae7cbfaa430cf3663dde1cfe82c26102"
+    },
+    {
+      "path": "docs/evidence/x01/scope-request.md",
+      "bytes": 3974,
+      "sha256": "a0e99a100766d0d62f147d7effd98c81fca6b7fb92278ea2abb30e04f6944b94"
+    },
+    {
+      "path": "docs/evidence/x01/vertical-source-inputs.json",
+      "bytes": 3701,
+      "sha256": "457e1715254c51aefa13e89ae5d9cd1e5488adbf9f9a00429b95941027319c3c"
+    },
+    {
+      "path": "docs/evidence/x01/vertical-quality.md",
+      "bytes": 1815,
+      "sha256": "25b622e194a251a3d073437b1c6abfeba216d5854ac8985e141969515e541f55"
+    },
+    {
+      "path": "docs/evidence/x01/vertical-document-checks.json",
+      "bytes": 348,
+      "sha256": "133db47e8e65aeba3e0a68dcad19efd3bbb8b9a1a8cf34d8ed2a8e1d8aff77c1"
+    },
+    {
+      "path": "docs/evidence/x01/controlled-main-integration.json",
+      "bytes": 1711,
+      "sha256": "7a075484ac2dc1085f63797e6033ae80bbb92ea2f2f5ed655066ac314ee07431"
+    }
+  ],
+  "review": "NOT_STARTED",
+  "productImplementation": false,
+  "productTests": 0,
+  "sharedRequests": [
+    "unique migration number/owner",
+    "target runner/store/hostApi qualification",
+    "public lifecycle command/task binding/event provenance/client/CLI wiring"
+  ],
+  "completeAcceptance": "All X01-01..10 and full prior lifecycle/context/third-party criteria retained"
+}

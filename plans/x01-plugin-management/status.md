@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 12:35:42 UTC |
+| 最近更新时间 | 2026-10-06 12:36:22 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -12,17 +12,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
 | 工作基线 / HEAD | c837853829f0344634df78ed7195ee7255f6b832；受控合入固定已审main7cbda706，无冲突/apps/packages零diff；后续仅设计metadata |
-| 工作树 dirty 状态 | 仅新claim两metadata目录，提交后clean由Git聚合 |
+| 工作树 dirty 状态 | 设计已固定；后续仅review/status/readiness metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 产品；仅设计文档/链接/10TODO/固定20源码/hash/原计划完整验收与受控merge检查，0PG负载/SDK/provider |
-| Review | NOT_STARTED 新纵向片Interface设计待固定独审，原plan-only批准不覆盖 |
+| Review | NOT_STARTED 3bd1add6ef7e868765b4508e88286bd62f49edd7；当前纵向片设计待Mika审，旧计划批准不移用 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
-| 实现目标 | UNKNOWN（本轮设计待固定，非产品实现） |
+| 实现目标 | 3bd1add6ef7e868765b4508e88286bd62f49edd7（仅Interface设计；无产品实现） |
 | 实现范围 | docs/evidence/x01, plans/x01-plugin-management |
 | 本片段交付阶段 | planning |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 同机trusted真实npm纵向片Interface/精确scope请求已成稿；20固定源码输入；原Web挂载阻塞已纠正 |
+| 当前产出 | 固定纵向Interface设计3bd1add6ef7e868765b4508e88286bd62f49edd7，六文档绑定+20源码输入；无产品实现 |
 | 下一可用交付 | Mika审固定设计；Lead分配唯一migration和共享host/task/event/commands接线范围，随后才领取产品scope |
 | 当前阻塞 | ACTIVE: 产品实现待Lead冻结target runner/store资格、共享union/命令及唯一migration；设计已ready |
 | 需用户决定 | NONE |
@@ -57,3 +57,5 @@
 2026-10-06 12:32:03 UTC：Mika交接后fresh核旧X01 released/HEAD880 clean，新take6ddedc73 v1成功；[owner接收](../../docs/evidence/x01/owner-acceptance.md)修正Web挂载已完成事实，原10项TODO不减。现仅设计metadata，计划同步固定已审main7cb；共享scope和migration由Lead分配，不借新claim写产品。
 
 2026-10-06 12:35:42 UTC：固定main7cb受控合入c8378538，无冲突，所有apps/packages逐diff相同，integration c0e1f593 v2已release；[收据](../../docs/evidence/x01/controlled-main-integration.json)。[纵向Interface](../../docs/evidence/x01/vertical-interface.md)/[精确请求](../../docs/evidence/x01/scope-request.md)只设计未实现；scope仍两个metadata。原完整TODO/用户目标保留，0新增产品tests/PG/SDK/provider/安装。
+
+2026-10-06 12:36:22 UTC：设计target 3bd1add6ef7e868765b4508e88286bd62f49edd7固定，[ready](../../docs/evidence/x01/design-readiness.json)绑定6设计/输入文档；20产品源码输入均固定main7cb，产品源码0改动/0tests。原10TODO与完整scope保留，writer6ddedc73 v1仍仅metadata；等待Mika设计审与Lead明确公共合同/DDL后再精确amend，未预领源码。

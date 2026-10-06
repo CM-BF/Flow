@@ -2,6 +2,7 @@
 
 状态：NOT_STARTED
 
+- 固定设计target：3bd1add6ef7e868765b4508e88286bd62f49edd7；[ready](../../docs/evidence/x01/design-readiness.json)绑定6个文档与20固定main源码输入。
 - 当前owner architecture_read/gpt-6-astra；仅原两个metadata目录。原plan-only approval不覆盖新Interface/产品源码。
 - 实施前明确共享scope/migration、真实加载与权限/版本绑定、公有command语义；0产品验证。
 
