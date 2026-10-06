@@ -2,7 +2,7 @@
 
 The chat keeps more room for the transcript and composer. A compact profile/access summary opens the existing Radix dialog; it contains requested configuration, identifiers, protocol limits and execution history. New conversations still choose a complete profile. The existing AI Elements queue stays compact when empty, while errors, stale/paused/blocked states and unknown receipts remain visible outside its collapsed content.
 
-Implementation: `b9db679e403fb2a814261cdc9b68f462b31b65b7`; base `32c371d389a913f8dd71c3bd8b98dd0697411256`. [Plan](../../../plans/wpf-chat-readability/plan.md) · [status](../../../plans/wpf-chat-readability/status.md) · [review](../../../plans/wpf-chat-readability/review.md) · [quality](quality.md) · [validation](validation.md) · [claim](take-receipt.json).
+Implementation: `527176c2b13880e6009be9605f08ae560315624d`; base `32c371d389a913f8dd71c3bd8b98dd0697411256`. [Plan](../../../plans/wpf-chat-readability/plan.md) · [status](../../../plans/wpf-chat-readability/status.md) · [review](../../../plans/wpf-chat-readability/review.md) · [quality](quality.md) · [validation](validation.md) · [claim](take-receipt.json).
 
 Retained preview http://127.0.0.1:55616/ (session30078, workspace_panels_owner). It is a deterministic HTTP fixture, not a real provider or center. In this worktree:
 

@@ -1,8 +1,7 @@
 PASS locked settings modal keeps draft, readable requested/effective details, keyboard loop and both return-focus paths
-PASS execution navigation closes settings and hands focus to interactive workspace/task while preserving conversation draft
 PASS collapsed queue exposes stale error, pause and blockers; disclosure Enter/Space retains keyboard focus
 PASS official running queue input preserves IME and Shift+Enter and sends exactly once from Enter and button
-1:36:35 AM [vite] http proxy error: /api/conversations/chat-2/queue
+1:29:29 AM [vite] http proxy error: /api/conversations/chat-2/queue
 Error: socket hang up
     at Socket.socketOnEnd (node:_http_client:790:25)
     at Socket.emit (node:events:526:24)

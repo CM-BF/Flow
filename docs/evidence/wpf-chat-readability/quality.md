@@ -19,3 +19,5 @@
 2026-10-06 08:30 UTC 交付清码：同文件展示helper保持render/trigger职责，未改变发送/queue/runtime业务；纯details slot无第二权限/registry。真实modal keyboardloop/回焦点和queue错误外显已通过，官方Thread/AI Elements来源保持。原多行UI技术说明已归入可达dialog，不隐去真实unknown/权限/fixture。五源与七路径已冻结b9db，dev7/prod7与类型/构建通过；raw脚本失败与预期丢ACK日志如validation区分。实际目视双theme390与desktop，未发现遮挡/横溢出。未为行数再拆文件或为metadata重跑全库。
 
 R1 fixedreview发现：b9db配置Dialog内两个导航action仍沿正文触发callback，modal未退出。根因是展示位置变化带来的生命周期职责未跟随，原测试只展开history而未点action。先记录REQUEST_CHANGES，后在Picker/Dialog与展示helper内补导航关闭交接，App/runtime不改。
+
+2026-10-06 08:38 UTC R1交付clean-code：新增同文件useProfileDialog只管open与明确导航后的关闭焦点，普通关闭不拦Radix默认行为；展示slot给navigate闭包，不给client或权限。Thread只组合确切task动作/焦点；无第二全局焦点系统，App/runtime保持只读。按[Radix Dialog](https://www.radix-ui.com/primitives/docs/components/dialog)受控open/onOpenChange与onCloseAutoFocus、[APG modal](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)工作流目标焦点例外实现。检查错误处理/命名/职责/重复后，无额外结构拆分必要。两次R1脚本locator/cleanup错误保留；dev8/prod8确认两个实际导航和普通关闭、草稿、queue/stream等未回归。527176c源冻结，独立复审尚待；不把作者检查当root重跑。
