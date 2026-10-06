@@ -179,3 +179,5 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-p
 恢复默认动态端口，以stdout真实URL为准，不承诺自动复用49922，不杀其他owner服务。I01 [55049](http://127.0.0.1:55049/)是正在验证的开发fixture（owner exec session79831），不替代已审预览。工程dashboard架构tab已由主线承接，具体唯一任务ID/交付target等待主线回报，我方仅WPF-D01协作登记。
 
 U10“plugin管理写进计划里”由原Goal Owner逐字转交。主线负责X01 canonical全产品计划，Web管理页/CLI同公共center命令、持久版本/配置/权限/作用域、npm安装启停升级回滚移除、活跃执行版本绑定和信任隔离均属父范围；收到真实路径后关联。P01/I01仅可信Web前置，不以本地Settings替代，当前claim不扩大。
+
+已审提交的完整SHA、分支clean状态、恢复方式、检查边界、双主题图和三件套入口汇总于[03:20固定交付快照](delivery-snapshot.md)；它是提交级索引，不是第二进度源。
