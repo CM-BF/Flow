@@ -16,9 +16,9 @@
 
 ## TODO
 
-- [ ] SVC02-01：固定公开小合同与016/domain，真实旧claim SQL并发及完整回滚证据。
-- [ ] SVC02-02：受信本机bootstrap/drain/refresh/resume入口与私有持有校验。
-- [ ] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
+- [x] SVC02-01：固定公开小合同与016/domain，真实旧claim SQL并发及完整回滚证据。
+- [x] SVC02-02：受信本机bootstrap/drain/refresh/resume入口与私有持有校验。
+- [x] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
 - [ ] SVC02-04：独立review、main接收与另经批准的真实部署窗口。
 
 共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。真实61227/61228本轮禁止操作；当前仅临时专库/自有进程验证，真实部署须另给已审main/实际状态/回退语义并获Root窗口确认。
