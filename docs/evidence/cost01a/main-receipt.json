@@ -1,0 +1,77 @@
+{
+  "observedAt": "2026-10-06T14:30:16.255426+00:00",
+  "main": "61744371606f3ee890a9d64e21b33f52940d6e14",
+  "originMain": "61744371606f3ee890a9d64e21b33f52940d6e14",
+  "remoteMain": "61744371606f3ee890a9d64e21b33f52940d6e14",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout",
+  "branch": "codex/cost-usage-readout",
+  "metadataHeadBeforeClose": "f2ba0a8a4cad542e1487dd40e1ccbaaffceca3a9",
+  "implementation": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+  "ancestorChecks": {
+    "27d4f5431bff06d44a42588896fc0b435d0f556d": true,
+    "fb0e992e8b308a987bcea273e29e883b9cf13caf": true,
+    "7150d6ee9e1e36b69994da1977aa980139f3458f": true
+  },
+  "domainBindings": [
+    {
+      "path": "apps/server/src/usage.ts",
+      "bytes": 5768,
+      "sha256": "1382e0e3d399a41be8c0d7e0d197809f02ea7d9b71b3f24140116ccd35648cb7",
+      "implementationEqualsMainEqualsWorking": true
+    },
+    {
+      "path": "apps/server/src/usage-readout/index.ts",
+      "bytes": 2391,
+      "sha256": "d4ae1559864c8aa75e5932190e736868092f4cfc2b647326fee52cde247a3336",
+      "implementationEqualsMainEqualsWorking": true
+    },
+    {
+      "path": "apps/server/src/usage-readout/projection.ts",
+      "bytes": 5218,
+      "sha256": "88033a13dfa1bc8c0cc188c795a089aa315d28d9b65f64ffb2d653b2220171dd",
+      "implementationEqualsMainEqualsWorking": true
+    },
+    {
+      "path": "apps/server/src/usage-readout/readout.test.ts",
+      "bytes": 16245,
+      "sha256": "550e3a8fef898a023c50b1d3e7de1c9932a5a346c81d138cc93e46a31d821acb",
+      "implementationEqualsMainEqualsWorking": true
+    },
+    {
+      "path": "packages/contracts/src/usage-readout.ts",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+      "implementationEqualsMainEqualsWorking": true
+    }
+  ],
+  "integrationEvidence": {
+    "commit": "61744371606f3ee890a9d64e21b33f52940d6e14",
+    "path": "docs/evidence/i02/cost01a-source-comparison.json",
+    "sha256": "e7e32f8e7214efee7b407d7b3be62f95c18720bd4fa6c6a1268e74d39c8a561b"
+  },
+  "claimAtObservation": {
+    "claimId": "f3a39671-81b7-4f42-81d9-673925a7cd36",
+    "version": 2,
+    "state": "active",
+    "observedAt": "2026-10-06T14:29:26.756Z"
+  },
+  "releaseAfterPush": {
+    "requestId": "a5b2e7a3-2c71-4efb-a644-38864d1d7c95",
+    "receiptDestination": "/tmp/flow-cost01a-release-receipt.json",
+    "status": "planned; actual committed result belongs to coordination ledger"
+  },
+  "checksThisClose": {
+    "productTests": 0,
+    "providerCalls": 0,
+    "installs": 0,
+    "sourceMutations": 0,
+    "verification": "git ancestry, exact five source bytes/hash and public remote ref; docs consistency"
+  },
+  "mainCapability": "owner task usage readout plus shared FlowClient and default production factory route",
+  "limits": [
+    "not full COST-001 attribution/budget/UI",
+    "SDK estimate is not subscription billing",
+    "no personal service refresh; runtime unchanged",
+    "original module manifest/raw and approved27d4 unchanged"
+  ]
+}
