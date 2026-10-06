@@ -1,6 +1,6 @@
-# RELEASE03 实际组合兼容通过，待独立结果审查
+# RELEASE03 固定组合兼容证据已独审通过
 
-固定harness target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` / B实际HEAD5819796，后台af51 + format2 artifact d629/release388371；B1750三Appchecks通过，复用原all12两项A，没有重跑A。[最新原始结果索引](app-result-175014.json)包含24文件225635B。累计50809ms/余129191ms，原43raw逐字不变，专库/两进程清理errors=[]。完整独审与main接收待完成，未操作个人发布。
+固定harness target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` / B实际HEAD5819796，后台af51 + format2 artifact d629/release388371；B1750三Appchecks通过，复用原all12两项A，没有重跑A。[最新原始结果索引](app-result-175014.json)包含24文件225635B。累计50809ms/余129191ms，原43raw逐字不变，专库/两进程清理errors=[]。[root限定独审](app1750-root-review.json)于17:52:25Z通过；main接收和个人发布未操作。
 
 兼容报告ID `599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9`，生成/verify仅在本证据目录。新故障观测为真实成功ACK的headers后正文截断；turn和Queue均同Request ERR_CONTENT_LENGTH_MISMATCH→unknown→手动原key/body恢复，新稿保留。原旧362红、定位器失败、preheader重发事实均保留，不能把旧source/raw改绑为本轮。
 

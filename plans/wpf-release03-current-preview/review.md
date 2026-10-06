@@ -1,12 +1,12 @@
 # WPF-RELEASE03 独立审查
 
-**状态：UNKNOWN — ef458源码双独审通过，实际A/B证据已齐备，完整结果独审待完成。**
+**状态：APPROVED — 仅固定af51 + d629的RELEASE03兼容证据，非个人部署/完整视觉验收。**
 
 Review target commit：ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
-当前审查范围：固定ef458源码双独审已通过，B1750实际三Appchecks通过，A沿完整all12原证据复用；本轮完整结果供独立复核，作者不将限定源码批准自动提升为整片APPROVED。原9927失败与旧362负兼容记录保留；个人发布未操作。
+当前审查范围：root于2026-10-06 17:52:25.375464Z对固定ef458 / 实际HEAD5819796 / B1750原始证据正式限定批准。复用原A-all12，24新raw逐字与59wire中58个非redact响应hash通过。原失败历史保留，个人部署/main均尚未发生。
 
 ## 后续只读任务
 
@@ -75,3 +75,7 @@ Target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7`；原9927注入preheader destr
 ## 2026-10-06 17:52:11 UTC 作者运行提交独立结果审查
 
 B1750 target ef458/actual HEAD5819796 三Appchecks PASS；原all12 A直接复用，0重复A。24raw225635B/累计50809ms/清理完成/compatibilityId见[完整索引](../../docs/evidence/wpf-release03/app-result-175014.json)。请核source/input/原样raw绑定、真实fault事件与显式同key恢复、兼容四observations/报告hash、预算与清理。作者不自行批准完整兼容，个人发布未操作。
+
+## 2026-10-06 17:53:24 UTC 最终限定独审
+
+Reviewer root，原结论 APPROVED_RELEASE03_COMPATIBILITY_EVIDENCE_SCOPED，完整原件见[report](../../docs/evidence/wpf-release03/app1750-root-review.json)。无重跑，核原始hash、identity、fault Request顺序、手动Retry、新稿、兼容report/四observations、exactbackend/artifact、清理和累计预算。实际看过浅色desktop/深色390截图，但后者侧栏覆盖内容，不承诺所有窄屏/a11y。审批仅af51+d629 tuple，不涵盖真实provider、Recovery浏览器或个人部署。当前无需产品修复；主线/发布仍原owner接收。

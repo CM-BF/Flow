@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 17:52:11 UTC |
+| 最近更新时间 | 2026-10-06 17:53:24 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -11,25 +11,25 @@
 | Branch | codex/web-current-preview-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7（响应正文丢失注入源码修复） |
 | 工作树dirty状态 | 产品两源固定且未改；本段仅新增实际raw与metadata，最终normalpush/clean回执另核 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 工作分支状态 | in-progress / approved / waiting-main |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7；实际B 3项通过，复用已审all12两A；不是新类型检查/个人发布 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；实际限定组合兼容通过，独立结果审查/main交接待完成 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；限定兼容证据已独审，main与个人部署尚未发生 |
 | 实现目标 | ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 真实页面普通发送和附件发送/队列的原键恢复已通过，草稿保留 |
-| 下一可用交付 | 独立核验完整证据并交原发布操作员受控接收 |
+| 下一可用交付 | 将已独审的固定兼容组合交主线和原发布操作员受控接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；UNKNOWN：源码双审通过，实际A/B证据齐备，完整结果独审待完成 |
+| Review | [review.md](review.md)；APPROVED ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7，仅af51+d629限定兼容证据；root17:52:25Z独审，无重跑 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
 | RELEASE03-02 | completed | w01_owner | [B1750通过](../../docs/evidence/wpf-release03/app-result-175014.json)：原A-all12复用，B三项PASS；累计50809/180000ms |
-| RELEASE03-03 | pending | w01_owner | [ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；完整实际证据独审/主线交付待完成 |
+| RELEASE03-03 | in-progress | w01_owner | [ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；[root实际结果独审](../../docs/evidence/wpf-release03/app1750-root-review.json)完成；主线交付待完成 |
 
 ## 架构影响与未验
 
@@ -138,3 +138,7 @@ B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files 
 [完整索引与24raw hashes](../../docs/evidence/wpf-release03/app-result-175014.json)、[App原始结果](../../docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/app.json)、[wire](../../docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/wire.json)、[cleanup](../../docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/cleanup.json)。本轮24文件225,635B，原43文件464,871B逐字未改；合67文件690,506B。预算累计50,809/180,000ms，余129,191ms。专库flow_release03_95008589c98745629a90 marker确认并删除，worker76508/Chrome76648均exit0，cleanup errors=[]；窗口已即时交回。minimumFree1,732,190,208B/end1,735,483,392B仅共享卷观察，不归因本次物理峰值。
 
 原SVC import/verify在本自有证据目录完成，compatibilityId `599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9`；只绑定此backend/artifact/releaseId，不泛化所有主线/旧362。页面pageErrors=[]，console保留favicon404、两个已绑定截断错与结尾授权撤销401。浅色/深色390截图已保存；作者本轮未独立重看截图。0provider、0build/install、0个人服务/指针操作。完整独立结果审查和main接收尚待，不自行批准或发布。
+
+## 2026-10-06 17:53:24 UTC root限定独审完成
+
+root于17:52:25.375464Z独立接受B1750 retained evidence，APPROVED_RELEASE03_COMPATIBILITY_EVIDENCE_SCOPED；[原件](../../docs/evidence/wpf-release03/app1750-root-review.json)。核24raw/59wire/58未redact响应hash、Send及Queue真实同key/body identity、同Request截断、原A-all12/hash保真、4observations与import5文件逐字、预算/清理。没有重跑PG/浏览器或轮询进程；实际看过两张截图，390图侧栏覆盖内容，不证明完整响应式交互/a11y。仅af51+d629组合，compat599a5b17，0provider/个人部署；main接收待Lead。
