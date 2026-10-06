@@ -68,7 +68,7 @@ export function WorkspaceTerminal({ task, connection, defaultFollow, onFollowCha
       <Terminal output={output} isStreaming={streaming} autoScroll={follow} className="flow-workspace-terminal">
         <TerminalHeader>
           <TerminalTitle>Task output</TerminalTitle>
-          <TerminalActions>
+          <TerminalActions data-extension-slot="workspace.actions">
             <TerminalStatus aria-label="Output is live">Live</TerminalStatus>
             <TerminalCopyButton disabled={!output} onError={() => setCopyMessage("Copy failed. Select the output and copy it manually.")}
               onCopy={() => setCopyMessage("Output copied.")} />
@@ -114,7 +114,7 @@ export function WorkspaceDetail({ reference, state, onLoad, verification }: {
   const detail = state.data;
   const textMedia = /^(text\/|application\/(?:json|[^;]+\+json)(?:;|$))/i.test(detail.mediaType);
   return <article className="flow-workspace-detail">
-    <header><h3>{detail.title}</h3><p>{groupLabels[detail.kind]} <span>{detail.mediaType}</span></p></header>
+    <header data-extension-slot={detail.kind === "artifact" ? "artifact.actions" : undefined}><h3>{detail.title}</h3><p>{groupLabels[detail.kind]} <span>{detail.mediaType}</span></p></header>
     {detail.kind === "artifact" && <dl className="flow-workspace-artifact-meta">
       <div><dt>Version</dt><dd>{detail.artifactVersion ?? "Not provided"}</dd></div>
       <div><dt>Task verification</dt><dd data-verification={verification}>{verification}</dd></div>

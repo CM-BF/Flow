@@ -113,8 +113,8 @@ function TaskWorkspace({
 
   return (
     <aside className={`flow-workspace ${className}`} aria-label="Task workspace">
-      <div className="flow-workspace-tabs-row">
-        <div className="flow-workspace-tabs" role="tablist" aria-label="Workspace panels" ref={tabsRef}>
+      <div className="flow-workspace-tabs-row" data-extension-slot="workspace.header">
+        <div className="flow-workspace-tabs" data-extension-slot="workspace.tabs" role="tablist" aria-label="Workspace panels" ref={tabsRef}>
           {tabs.map((tab) => {
             const Icon = tab.id === "files" ? FolderTreeIcon : tab.id === "terminal" ? TerminalIcon : FileIcon;
             const tabKey = encodeURIComponent(tab.id);
