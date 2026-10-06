@@ -1,0 +1,2144 @@
+{
+  "at": "2026-10-06T17:04:31.220201+00:00",
+  "target": "/tmp/flow-harness-eval.iq7BzZ",
+  "realpath": "/private/tmp/flow-harness-eval.iq7BzZ",
+  "auditOnly": true,
+  "decision": "KEEP",
+  "reason": "KEEP: no active process/open-file or immediate entry-symlink consumer found in this bounded snapshot, but tracked executable experiments retain direct absolute imports to this donor. Their future-use ownership has not been released; offline/platform reconstruction not proven.",
+  "elapsedSeconds": 4.52,
+  "permanentPreserve": [
+    {
+      "path": "/tmp/flow-harness-eval.iq7BzZ/pi-eval.mjs",
+      "bytes": 8431,
+      "sha256": "d896efe5020aed814b33cca4430af92d02ddeb4a6093bb70fbbbf0bb2af07119"
+    },
+    {
+      "path": "/tmp/flow-harness-eval.iq7BzZ/pi-discover.mjs",
+      "bytes": 1146,
+      "sha256": "8779496de1f9ecab294472ff25774b78a2c551910efa143e4e4cbf44e46e5896"
+    },
+    {
+      "path": "/tmp/flow-harness-eval.iq7BzZ/package.json",
+      "bytes": 361,
+      "sha256": "3989c16f6fa98494a20ab8722ee8c79846b0d209eff5890101e8cc66bc86acd3"
+    },
+    {
+      "path": "/tmp/flow-harness-eval.iq7BzZ/package-lock.json",
+      "bytes": 270366,
+      "sha256": "fcb4b9f3e02cd4c8684d36fb513e5ab1a52863aa05207917dd7c9ed7ed76caab"
+    }
+  ],
+  "origin": {
+    "packageName": "flow-harness-evaluation",
+    "private": true,
+    "lockfileVersion": 3,
+    "packageCount": 529,
+    "rootDependenciesMatch": true,
+    "resolvedHosts": [
+      "registry.npmjs.org"
+    ],
+    "missingRegistryIntegrity": [
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/chord",
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-agent-core",
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-ai",
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-telemetry",
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-tui"
+    ],
+    "installScriptPackages": [
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@google/genai",
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/esbuild",
+      "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/protobufjs",
+      "node_modules/@earendil-works/pi-agent-core/node_modules/@google/genai",
+      "node_modules/@earendil-works/pi-coding-agent/node_modules/@google/genai",
+      "node_modules/@google/genai",
+      "node_modules/@mongodb-js/zstd",
+      "node_modules/esbuild",
+      "node_modules/node-liblzma",
+      "node_modules/protobufjs"
+    ],
+    "direct": [
+      {
+        "name": "@ai-sdk/harness",
+        "requested": "1.0.139",
+        "lockVersion": "1.0.139",
+        "installedVersion": "1.0.139",
+        "manifestSha256": "10599b07b07b42eb1752d206ab8a31350710d82df169750ed34e8f887c364a86"
+      },
+      {
+        "name": "@ai-sdk/harness-claude-code",
+        "requested": "1.0.143",
+        "lockVersion": "1.0.143",
+        "installedVersion": "1.0.143",
+        "manifestSha256": "797e0e388471bbb23bd317f0c30008055bf94384590f2c7e91efd5186df85d17"
+      },
+      {
+        "name": "@ai-sdk/harness-pi",
+        "requested": "1.0.141",
+        "lockVersion": "1.0.141",
+        "installedVersion": "1.0.141",
+        "manifestSha256": "d7b642bbed091b0571cb279b16d101e197764b55b7f1f15e92221bced22f0ef6"
+      },
+      {
+        "name": "@ai-sdk/sandbox-just-bash",
+        "requested": "1.0.139",
+        "lockVersion": "1.0.139",
+        "installedVersion": "1.0.139",
+        "manifestSha256": "2b67527386079f671e418a48dcb6f52c318b6b590b21258e02d95fca324df709"
+      },
+      {
+        "name": "@anthropic-ai/claude-agent-sdk",
+        "requested": "0.3.290",
+        "lockVersion": "0.3.290",
+        "installedVersion": "0.3.290",
+        "manifestSha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+      },
+      {
+        "name": "@earendil-works/pi-coding-agent",
+        "requested": "1.0.4",
+        "lockVersion": "1.0.4",
+        "installedVersion": "1.0.4",
+        "manifestSha256": "248decde30021109984def7ddc8f7bf4caf21ef04910a1303ab19604206c1bd5"
+      }
+    ],
+    "scriptsSummary": "pi-discover reads local Pi auth through SDK and writes separate /tmp/flow-pi-eval.yxI5qW discovery; pi-eval imports nested pinned Pi 0.85.1/harness SDK and can prompt provider. Neither was run. Auth contents not read.",
+    "rebuild": "Declared package graph/version/tarball integrity preserved; future package-manager reconstruction is plausible but NOT verified/offline-cache-proven. Native/optional/install-script/platform effects may need approved reconstruction. Scripts and lock remain permanently.",
+    "unresolvedIntegrityRows": [
+      {
+        "path": "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/chord",
+        "version": "0.85.1",
+        "resolved": "https://registry.npmjs.org/@earendil-works/chord/-/chord-0.85.1.tgz",
+        "license": "MIT",
+        "dependencies": {
+          "esbuild": "0.28.1"
+        },
+        "engines": {
+          "node": ">=22.19.0"
+        }
+      },
+      {
+        "path": "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-agent-core",
+        "version": "0.85.1",
+        "resolved": "https://registry.npmjs.org/@earendil-works/pi-agent-core/-/pi-agent-core-0.85.1.tgz",
+        "license": "MIT",
+        "dependencies": {
+          "@earendil-works/chord": "^0.85.1",
+          "@earendil-works/pi-ai": "^0.85.1",
+          "@earendil-works/pi-telemetry": "^0.85.1",
+          "diff": "8.0.4",
+          "ignore": "7.0.5",
+          "typebox": "1.3.7",
+          "yaml": "2.9.0"
+        },
+        "engines": {
+          "node": ">=22.19.0"
+        }
+      },
+      {
+        "path": "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-ai",
+        "version": "0.85.1",
+        "resolved": "https://registry.npmjs.org/@earendil-works/pi-ai/-/pi-ai-0.85.1.tgz",
+        "license": "MIT",
+        "dependencies": {
+          "@anthropic-ai/sdk": "0.123.0",
+          "@aws-sdk/client-bedrock-runtime": "3.1048.0",
+          "@earendil-works/pi-telemetry": "^0.85.1",
+          "@google/genai": "1.52.0",
+          "@smithy/node-http-handler": "4.7.3",
+          "http-proxy-agent": "7.0.2",
+          "https-proxy-agent": "7.0.6",
+          "openai": "6.40.0",
+          "partial-json": "0.1.7",
+          "typebox": "1.3.7"
+        },
+        "bin": {
+          "pi-ai": "dist/cli.js"
+        },
+        "engines": {
+          "node": ">=22.19.0"
+        }
+      },
+      {
+        "path": "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-telemetry",
+        "version": "0.85.1",
+        "resolved": "https://registry.npmjs.org/@earendil-works/pi-telemetry/-/pi-telemetry-0.85.1.tgz",
+        "license": "MIT",
+        "engines": {
+          "node": ">=22.19.0"
+        }
+      },
+      {
+        "path": "node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/node_modules/@earendil-works/pi-tui",
+        "version": "0.85.1",
+        "resolved": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-0.85.1.tgz",
+        "license": "MIT",
+        "dependencies": {
+          "get-east-asian-width": "1.6.0",
+          "marked": "18.0.5"
+        },
+        "engines": {
+          "node": ">=22.19.0"
+        }
+      }
+    ],
+    "nestedPi": {
+      "lock": {
+        "version": "0.85.1",
+        "resolved": "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.85.1.tgz",
+        "integrity": "sha512-FGRN+OHbWaefBPGaTggAdLjrIHW+s2PzLyglz/5dfLzb9of7uuXMXYC0fJIeZTw+shS32o2cuQ9jF7YSDuL/oQ==",
+        "hasShrinkwrap": true,
+        "license": "MIT",
+        "dependencies": {
+          "@earendil-works/chord": "^0.85.1",
+          "@earendil-works/pi-agent-core": "^0.85.1",
+          "@earendil-works/pi-ai": "^0.85.1",
+          "@earendil-works/pi-tui": "^0.85.1",
+          "@silvia-odwyer/photon-node": "0.3.4",
+          "chalk": "5.6.2",
+          "cross-spawn": "7.0.6",
+          "diff": "8.0.4",
+          "grok-mermaid": "0.2.2",
+          "highlight.js": "10.7.3",
+          "hosted-git-info": "9.0.3",
+          "ignore": "7.0.5",
+          "jiti": "2.7.0",
+          "minimatch": "10.2.5",
+          "proper-lockfile": "4.1.2",
+          "semver": "7.8.0",
+          "typebox": "1.3.7",
+          "undici": "8.9.0",
+          "yaml": "2.9.0"
+        },
+        "bin": {
+          "pi": "dist/bundle/cli.js"
+        },
+        "engines": {
+          "node": ">=22.19.0"
+        },
+        "optionalDependencies": {
+          "@mariozechner/clipboard": "0.3.9"
+        }
+      },
+      "installedVersion": "0.85.1"
+    },
+    "preservedScriptBoundary": "Scripts themselves can read auth or call providers if executed; this audit only read bytes and did not follow auth paths or read discovery/results."
+  },
+  "processSnapshot": {
+    "exit": 0,
+    "matches": []
+  },
+  "openFiles": {
+    "exit": 0,
+    "stderr": "",
+    "matches": [],
+    "method": "One bounded global lsof -nP -Fpcfn then exact target path filter; no recursive directory scan."
+  },
+  "knownRoots": [
+    "/Users/citrine/Projects/AgentHarness/Flow",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+  ],
+  "rootCount": 30,
+  "observations": [
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/tui/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/packages/protocols/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow/packages/interaction/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "0c242483f887656f030f871be667d0f53ddc9766",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/tui/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/packages/protocols/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/packages/interaction/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "1b41f58816341f77e69a64d1cb5cfe7650c01b49",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "e7939e4210e584cf0da36decdebe203c2a91c22c",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "8",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "78ace7263b9305b97f33b955a98967d2aedd5e49",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "f8cfc7f0b5e99ae5cc1181218e07ccb10dc57a53",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "17",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "5525525af491577ea68ec5cd0a07b32de3115c53",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "5c5c07e98e691b3dcd1fbd39b9329cdc59bc6f15",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "08bd0a71494f54809f4c4a2fa5b9718285103ea3",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "8",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "6a8a37a18dca4da49e314bd487cdb6424d8f1f49",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "18",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "fbab7b9c78953cbd986f77d591be42dfca2b191f",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "4686d551032704e2ae109a53d17493aee93bf1c4",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/apps/tui/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/packages/protocols/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/packages/interaction/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/packages/plugin-runtime/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "dfef3e4baa6718d22d43a7c3fc2f1c0566fc1137",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "19",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/tui/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/protocols/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/interaction/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/plugin-runtime/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "0c242483f887656f030f871be667d0f53ddc9766",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/tui/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/protocols/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/interaction/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/packages/plugin-runtime/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "691b28a7f63459e82f1f5be8da1f385d1c7a8a84",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "19",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "8a148c5f4288d3f3075bf4bde78504b5214c87f3",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "af51c621696230fbced12227670f014ca73bd8a1",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "c81d6c7c2bb1146e7c647abcae8c0e9d054cc2b2",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/apps/tui/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/protocols/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/interaction/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/plugin-runtime/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "3c5622ad88c34ba19535790c278c3cc941ab0a79",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "7f742ecd057cc333051ca6f6e45afd8b667d72d7",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "65a9c7b4b577d49ff302581d590b31f3425cd900",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "a3a14897f9c8144ced11867fadb00f6f3c3f8ca5",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "c8bacf7471e023914e77994bcc3f5d3070f49a92",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "92202abf3229596fb8cdbfb75493408ac2b14ed7",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "20",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "5d26bf875fd73b90f2a55ce19fd6d664e8fbe175",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "66695c6579189644ae6399dcaca80cc04487a178",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/interaction/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "547439d365047ed8d54ced7cf784047b847630d7",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/apps/execution-dashboard/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/apps/web/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/apps/runner/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/apps/server/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/apps/cli/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/packages/contracts/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/packages/client/node_modules",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/packages/protocols/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "9cea63212b13c624fde53981721aee116d0caeed",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "exists": true,
+      "dependencyDirectories": [],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "78bc84afd04456f4f41e95fc9c4724068136576f",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "21",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ]
+    },
+    {
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client",
+      "exists": true,
+      "dependencyDirectories": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/node_modules"
+      ],
+      "matchingLinks": [],
+      "errors": [],
+      "head": "5739900142a0ec04f492ccea15ec54e5e6520841",
+      "referenceSearchExit": 0,
+      "referenceIds": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "22",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    }
+  ],
+  "matchingDependencyEntries": [],
+  "fixedPathReferences": [
+    {
+      "id": "0",
+      "path": "docs/evidence/ctx02/01-isolation-import.json",
+      "blob": "bef79a5c4f9e1cd86524792b5d6201a2d7b58b7c",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 5,
+          "text": "  \"pi\": \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent\","
+        },
+        {
+          "line": 7,
+          "text": "  \"policy\": \"(version 1)\\n(allow default)\\n(deny network*)\\n(deny process-fork)\\n(deny file-read-data)\\n(allow file-read-data (subpath \\\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-pi-hook-probe/experiments/context-pi-hook\\\") (subpath \\\"/private/tmp/flow-harness-eval.iq7BzZ/node_modules\\\") (subpath \\\"/private/tmp/flow-ctx02-upstream-0.1.83/package\\\") (subpath \\\"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-Na6TZa\\\") (subpath \\\"/opt/homebrew/Cellar/node@24/24"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "path": "docs/evidence/ctx02/02-isolation-import.json",
+      "blob": "37cf8cad3ecfba7237bd5f9cc9ba2bdbed38c2a0",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 5,
+          "text": "  \"pi\": \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent\","
+        },
+        {
+          "line": 7,
+          "text": "  \"policy\": \"(version 1)\\n(allow default)\\n(deny network*)\\n(deny process-fork)\\n(deny file-read-data)\\n(allow file-read-data (subpath \\\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-pi-hook-probe/experiments/context-pi-hook\\\") (subpath \\\"/private/tmp/flow-harness-eval.iq7BzZ/node_modules\\\") (subpath \\\"/private/tmp/flow-ctx02-upstream-0.1.83/package\\\") (subpath \\\"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-SDBXc8\\\") (subpath \\\"/opt/homebrew/Cellar/node@24/24"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "path": "docs/evidence/ctx02/03-runtime-isolation-import.json",
+      "blob": "7f82464abd9c0ad5becb75402685e1f48dfee611",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 5,
+          "text": "  \"pi\": \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent\","
+        },
+        {
+          "line": 10,
+          "text": "    \"--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules\","
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "path": "docs/evidence/ctx02/04-real-hooks.json",
+      "blob": "d77a4fb632fa61b82530bd4346bedd4ec81aeefe",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 5,
+          "text": "  \"pi\": \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent\","
+        },
+        {
+          "line": 10,
+          "text": "    \"--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules\","
+        },
+        {
+          "line": 46,
+          "text": "          \"stack\": \"Error: Access to this API has been restricted. Use --allow-fs-read to manage permissions.\\n    at existsSync (node:fs:294:18)\\n    at findGitRepoRoot (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:277:13)\\n    at collectAncestorAgentsSkillDirs (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/cor"
+        },
+        {
+          "line": 63,
+          "text": "      \"stack\": \"Error: Access to this API has been restricted. Use --allow-fs-read to manage permissions.\\n    at existsSync (node:fs:294:18)\\n    at findGitRepoRoot (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:277:13)\\n    at collectAncestorAgentsSkillDirs (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/pa"
+        },
+        {
+          "line": 67,
+          "text": "  \"stdout\": \"{\\\"probe\\\":\\\"CTX02\\\",\\\"cases\\\":[{\\\"name\\\":\\\"OS barriers before any dependency import\\\",\\\"result\\\":{\\\"deniedSyntheticRead\\\":\\\"ERR_ACCESS_DENIED\\\",\\\"deniedLoopbackConnect\\\":\\\"EPERM\\\",\\\"deniedChildProcess\\\":\\\"ERR_ACCESS_DENIED\\\",\\\"enforcement\\\":\\\"Node Permission Model read/child-process; macOS sandbox-exec network/fork/write; no JS interception\\\"},\\\"elapsedMs\\\":1.4738330000000026,\\\"passed\\\":true},{\\\"name\\\":\\\"import unmodified fixed SDK and plugin\\\",\\\"result\\\":{\\\"sdkCreateAgentSession\\\""
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "path": "docs/evidence/ctx02/05-stock-factory.json",
+      "blob": "b38f0c849b330750eb41da75eb837fbbd5a0761f",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 6,
+          "text": "  \"pi\": \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent\","
+        },
+        {
+          "line": 11,
+          "text": "    \"--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules\","
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "path": "docs/evidence/ctx02/06-stock-factory-lifecycle.json",
+      "blob": "dccdfac9fcfdaa261dbc95bb09eecde9ffb0a72b",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 6,
+          "text": "  \"pi\": \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent\","
+        },
+        {
+          "line": 11,
+          "text": "    \"--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules\","
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "path": "docs/evidence/ctx02/07-stock-factory-lifecycle.json",
+      "blob": "1c9e06e9ed27d287279ccca20966125b8fe6a9bb",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 6,
+          "text": "  \"pi\": \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent\","
+        },
+        {
+          "line": 11,
+          "text": "    \"--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules\","
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "path": "docs/evidence/ctx02/README.md",
+      "blob": "9ba16fc26dbca3a41d88fb1bcc78701fe8b70871",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 7,
+          "text": "FLOW002的实际执行宿主`@earendil-works/pi-coding-agent@0.85.1`，复用其`/tmp/flow-harness-eval.iq7BzZ/node_modules`，没有使用顶层1.0.4。官方npm tarball integrity逐字核对；15个关键运行文件与现成依赖字节一致，详见[provenance](provenance.json)、[Pi metadata](pi-npm-metadata.json)。候选`billion-context-pi@0.1.83`，npm gitHead `1cb6340df262933c8e640a7f45e19a7b34fe1ed8`；tarball SHA256 `2b8185233a5c882fdf07e3c3068a499371c7ac79bd630dec42b4a796f8ec30d2`，integrity见[npm metadata](npm-metadata.json)。只下载/解包到专用tmp，无生命周期执行。插件实际导入的index/chunk及package/license均已ha"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "path": "docs/evidence/e01/comparison-source-hashes.json",
+      "blob": "8c18bfa677227caa220c30b6987d0b83d01d860a",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 6,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/package.json\","
+        },
+        {
+          "line": 11,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/bridge/package.json\","
+        },
+        {
+          "line": 16,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/bridge/pnpm-lock.yaml\","
+        },
+        {
+          "line": 21,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/bridge/index.ts\","
+        },
+        {
+          "line": 26,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/dist/bridge/index.mjs\","
+        },
+        {
+          "line": 31,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/bridge/claude-code-system-prompt.ts\","
+        },
+        {
+          "line": 36,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-bridge-protocol.ts\","
+        },
+        {
+          "line": 41,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-harness.ts\","
+        },
+        {
+          "line": 46,
+          "text": "      \"path\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-subscription.ts\","
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "path": "docs/quality/resource-space-2026-10-06.json",
+      "blob": "817df5fa58652e76416e190f74391b52c1e12b60",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review"
+      ],
+      "matches": [
+        {
+          "line": 68,
+          "text": "        \"/tmp/flow-harness-eval.iq7BzZ has source provenance references\","
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "path": "experiments/context-pi-hook/run.mjs",
+      "blob": "d76c72e22237a1ee7099fa835be9fc4c525c772b",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 10,
+          "text": "const dependencyRoot = await realpath('/tmp/flow-harness-eval.iq7BzZ/node_modules');"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "path": "experiments/harness-comparison/claude-harness/README.md",
+      "blob": "1edee06369ecee315ef87abd9c2cc24b31ca124d",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 22,
+          "text": "`run-harness.mjs` 与 `Dockerfile` 保留了执行时内容，没有为归档重写。脚本仍含原临时目录 `/tmp/flow-harness-eval.iq7BzZ/` 的绝对 import，并导入 `./package/dist/index.js`。**执行没有到达模型阶段，`result.fullStream` 及其后结果字段访问、事件提取、续接和该阶段清理路径均未经过实际运行验证；不能把此脚本当可靠 runner。** 后续执行前应先核对当前固定版本 API 并修正这些调用。"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "path": "experiments/harness-comparison/claude-harness/provenance.source.json",
+      "blob": "9383f10c427e8d649a1d16eb93a1f7bd6f1fcf57",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 13,
+          "text": "      \"source\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/package.json\""
+        },
+        {
+          "line": 23,
+          "text": "      \"source\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/package.json\""
+        },
+        {
+          "line": 32,
+          "text": "      \"source\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@anthropic-ai/claude-agent-sdk/package.json\""
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "path": "experiments/harness-comparison/claude-harness/run-harness.mjs",
+      "blob": "e9c9204fb630de83d502f720c6d3c1ed84db1bf9",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 4,
+          "text": "import { HarnessAgent } from '/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/dist/agent/index.js';"
+        },
+        {
+          "line": 5,
+          "text": "import { createClaudeCode } from '/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/dist/index.js';"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "path": "experiments/harness-comparison/snapshots/claude-native-initial-path-guard-failure.mjs",
+      "blob": "c23016dac04df911458d04857f0158ffe492b60b",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 1,
+          "text": "import { query } from '/tmp/flow-harness-eval.iq7BzZ/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs';"
+        },
+        {
+          "line": 9,
+          "text": "const pkg = JSON.parse(await readFile('/tmp/flow-harness-eval.iq7BzZ/node_modules/@anthropic-ai/claude-agent-sdk/package.json', 'utf8'));"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "path": "experiments/harness-comparison/snapshots/claude-native.mjs",
+      "blob": "dd061ee9fae7678ab69e370df7dfd99d9e5bb15c",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 1,
+          "text": "import { query } from '/tmp/flow-harness-eval.iq7BzZ/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs';"
+        },
+        {
+          "line": 9,
+          "text": "const pkg = JSON.parse(await readFile('/tmp/flow-harness-eval.iq7BzZ/node_modules/@anthropic-ai/claude-agent-sdk/package.json', 'utf8'));"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "path": "experiments/harness-probes/auth/provenance.json",
+      "blob": "37d9edf56a13240c8bf7a8d6c53d3471e744295e",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 29,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-subscription.ts\","
+        },
+        {
+          "line": 36,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-auth.ts\","
+        },
+        {
+          "line": 43,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/LICENSE\","
+        },
+        {
+          "line": 50,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/oauth-access-token.ts\","
+        },
+        {
+          "line": 57,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/native-subscription/jwt.ts\","
+        },
+        {
+          "line": 64,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/native-subscription/should-resolve-native.ts\","
+        },
+        {
+          "line": 71,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/authentication-environment.ts\","
+        },
+        {
+          "line": 78,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/ai-gateway-auth.ts\","
+        },
+        {
+          "line": 85,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/os.ts\","
+        },
+        {
+          "line": 92,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/LICENSE\","
+        },
+        {
+          "line": 101,
+          "text": "      \"upstreamSource\": \"/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-harness.ts\","
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "path": "docs/quality/resource-space-2026-10-06.json",
+      "blob": "50aad0845b48fabcc2342b85ac12ec9833474b75",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core"
+      ],
+      "matches": [
+        {
+          "line": 68,
+          "text": "        \"/tmp/flow-harness-eval.iq7BzZ has source provenance references\","
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "path": "docs/quality/resource-space-2026-10-06.json",
+      "blob": "c249218fc3852a6c09e71812ba213e35fe0974db",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail"
+      ],
+      "matches": [
+        {
+          "line": 68,
+          "text": "        \"/tmp/flow-harness-eval.iq7BzZ has source provenance references\","
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "path": "docs/quality/resource-space-2026-10-06.json",
+      "blob": "ba101a98285e795ba8da96308e90c67f9fb95044",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation"
+      ],
+      "matches": [
+        {
+          "line": 68,
+          "text": "        \"/tmp/flow-harness-eval.iq7BzZ has source provenance references\","
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "path": "docs/quality/resource-space-2026-10-06.json",
+      "blob": "50dca473cb1af8ae5b79df9e1482265b32d08575",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel"
+      ],
+      "matches": [
+        {
+          "line": 68,
+          "text": "        \"/tmp/flow-harness-eval.iq7BzZ has source provenance references\","
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "path": "docs/evidence/web-platform/resource-space-ops-1418.json",
+      "blob": "e1329467e8fec8f79db08a1daf9ac87f7f8302be",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management"
+      ],
+      "matches": [
+        {
+          "line": 68,
+          "text": "        \"/tmp/flow-harness-eval.iq7BzZ has source provenance references\","
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "path": "docs/quality/resource-space-2026-10-06.json",
+      "blob": "15d5cad11ca3c28d9348e2f9ef65e33a1fbe2b3c",
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client"
+      ],
+      "matches": [
+        {
+          "line": 68,
+          "text": "        \"/tmp/flow-harness-eval.iq7BzZ has source provenance references\","
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Only known <=31 roots; root/apps/*/packages/* immediate dependency entries and one scope level, no .pnpm or HOME traversal.",
+    "git grep fixed tracked HEAD paths detects literal references, not dynamically composed paths or unknown external users.",
+    "Open-file/process snapshots are point observations; loaded/closed modules and later consumers may not retain file handles.",
+    "No deletion, Git mutation, dependencies installation, runtime imports, tests, PG, providers, or services.",
+    "Reported historical du ~910604 KiB not independently remeasured nor guaranteed physical reclaim."
+  ],
+  "executableReferenceCount": 4,
+  "fixedPathReferencesPolicy": "Literal references are bound to fixed HEAD/blob; repeated equivalent blob references deduplicated; evidence/metadata citations do not prove active runtime dependency."
+}

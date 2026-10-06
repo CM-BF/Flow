@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:59 UTC / main9314c81a |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:07 UTC / main0c242483 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | 规则与资源记录已main9314c81a；本次补局部验证方法与真实动态SQL补源事实 |
+| 工作基线 / 本记录核验时HEAD | 规则与入口核对方法已main0c242483；本次记录两条精确构建缓存清理与串行验证窗口 |
 | 工作树dirty状态 | 仅本次资源事实和运行约束记录 |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main9314c81a已接收当前规则、运行文档与167来源；后续资源事实仍由本唯一status维护。 |
+| 已集成main状态 / HEAD | main0c242483已接收当前规则、运行文档与167来源；后续资源事实仍由本唯一status维护。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 本批十二个目录的安全收起已完成；中心验证遗漏的迁移文件已补齐，入口资源已核对。 |
-| 下一可用交付 | 逐消息设置按新独占窗口验证；共享客户端已独审，生产接线由明确的执行 owner 收口。 |
+| 当前产出 | 两条已结束实验的构建缓存已清理，数据库服务保留；现场余量已恢复到本轮准备线。 |
+| 下一可用交付 | 逐消息设置先完成专库验证，归还后网页兼容验证接续；目标推进的生产验证已通过并待独审。 |
 | 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证按现场余量准入，已失败的准备记录保留。 |
 | 需用户决定 | NONE |
 
@@ -171,3 +171,11 @@ CORE 16:52首次专库在beforeAll缺012时失败：8例全部skipped、0HTTP；
 assignment_review 独立只读核175本地源、28SQL及10包入口均存在且fixed hash一致；静态报告已交CORE唯一证据owner归档，不代表实际初始化通过。16:58已给Mika一次CORE-PG-RETRY条件窗口：固定ea276/原8组、fresh≥1,207,959,552B、120s工作+80s清理、0provider，结束必须明确归还，不自动再试。Web B定位修复继续源码/独审，本队O14/O15/TUI不并行PG。原Web累计20,309ms与159,691ms余额不变。
 
 F01共享接线由Lead16:57:49停止全树写入并正式handoff给native_center_owner，接收accept后原树唯一维护；C01共享client/CLI563已独审，其受控CORE/O14输入未因此自动获批。Lead负责接口、独审和集成，workers处理现成生产验证与032挂载，不把两个模块串成等待Lead亲写。
+
+## 2026-10-06 17:07 UTC 精确缓存清理与窗口恢复
+
+CORE 16:58新窗口因现场1,192,939,520B低于原1,207,959,552B而NOT_RUN、0DB/进程/HTTP并已归还；没有重跑。随后较小的O14专库窗口两项生产检查2/2，专库正常DROP后remaining=[]、runtime与临时目录清理，固定73a由assignment_review独立只读审查；旧CLI/typecheck证据未重跑。
+
+依据GO对两个旧Flow Claude harness派生构建cache的明确授权，fresh核buildx0.33.0的精确id filter、两条记录均reclaimable/non-shared/non-mutable、历史终态且无活跃build，仅串行删除jqxa5j9g0ff9bfvfehufaq49t与hx1jupxwu3sw8xhiame8190so。两次exit0/精确记录消失，parent4uusk及运行中项目Postgres身份保留；无全局prune、image/container/volume操作。Docker逻辑27.5+29.11MB不当host物理回收承诺。17:07:11共享卷实际可用1,265,397,760B已过1GiB+160MiB准备线，next4c候选按条件0/4停止，未改稀疏配置。
+
+临时Pi依赖donor只读审计结论KEEP：四个已跟踪脚本仍显式引用，离线重建未证；无进程/入口symlink不等于已解除延迟消费者，不删除。完整[操作与审计](../../docs/quality/resource-space-2026-10-06/buildkit-exact/summary.json)。CORE-PG-RETRY-20261006-1707已条件交Mika：原fixed8组、fresh原gate、120s工作+80s清理；完成明确归还再到Web B。个人服务与模型调用不变，完整SVC06仍2.5GiB门槛。

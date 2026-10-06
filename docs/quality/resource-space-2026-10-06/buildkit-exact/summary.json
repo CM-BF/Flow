@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-06T17:07:44.322635+00:00",
+  "authorization": "GO exact two completed self-owned Flow Claude harness cache IDs only",
+  "builder": "orbstack",
+  "deletedCacheIds": [
+    "jqxa5j9g0ff9bfvfehufaq49t",
+    "hx1jupxwu3sw8xhiame8190so"
+  ],
+  "retainedParent": "4uusk43z3cgmrn0of94mx6f9k",
+  "retainedFlowPostgresContainer": "2c45767d4802",
+  "cacheLogicalReportedMB": [
+    27.5,
+    29.11
+  ],
+  "hostFreeBeforeBytes": 1194491904,
+  "hostFreeAtThresholdObservation": {
+    "at": "2026-10-06T17:07:11.643991+00:00",
+    "bytes": 1265397760
+  },
+  "hostFreeAtArchiveBytes": 1261621248,
+  "physicalAttribution": "Shared volume observations, not exact attribution to Docker logical cache sizes",
+  "next4c": {
+    "operatedTrees": 0,
+    "limit": 4,
+    "stoppedBecause": "Fresh observed host free exceeded preparation line 1241513984 B; no worktree sparse mutations in this batch"
+  },
+  "tempDonor": {
+    "path": "/tmp/flow-harness-eval.iq7BzZ",
+    "decision": "KEEP",
+    "reason": "Four tracked experiments retain explicit imports; no active process is not a release of delayed consumers, offline reconstruction not established",
+    "auditSha256": "797ebd4d963fb79cc9936e506b7ccb01670a9891a259367e1983628595108e89"
+  },
+  "window": {
+    "id": "CORE-PG-RETRY-20261006-1707",
+    "state": "conditionally handed to Mika; worker fresh >=1207959552 required",
+    "scope": "same fixed ea276 original 8 PG groups only",
+    "workSeconds": 120,
+    "cleanupSeconds": 80,
+    "providerCalls": 0,
+    "next": "Web RELEASE03 B after explicit CORE cleanup; no parallel PG"
+  },
+  "officialFilterSemantics": "https://docs.docker.com/reference/cli/docker/buildx/prune/",
+  "productTestsByOperator": 0,
+  "personalServiceChanges": 0
+}

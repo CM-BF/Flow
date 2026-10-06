@@ -1,0 +1,101 @@
+{
+  "observedAt": "2026-10-06T17:06:16.082616+00:00",
+  "freeBytes": 1194491904,
+  "allowedIds": [
+    "jqxa5j9g0ff9bfvfehufaq49t",
+    "hx1jupxwu3sw8xhiame8190so"
+  ],
+  "retainedParent": "4uusk43z3cgmrn0of94mx6f9k",
+  "builder": "orbstack",
+  "records": [
+    {
+      "command": [
+        "docker",
+        "buildx",
+        "du",
+        "--builder",
+        "orbstack",
+        "--filter",
+        "id=jqxa5j9g0ff9bfvfehufaq49t",
+        "--format",
+        "json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"CreatedAt\":\"2026-10-05 23:43:23.356273981 +0000 UTC\",\"Description\":\"mount / from exec /bin/sh -c npm install --global pnpm@10.15.1 --ignore-scripts --no-audit --no-fund\",\"ID\":\"jqxa5j9g0ff9bfvfehufaq49t\",\"LastUsedAt\":\"17 hours ago\",\"Mutable\":false,\"Parents\":[\"4uusk43z3cgmrn0of94mx6f9k\"],\"Reclaimable\":true,\"Shared\":false,\"Size\":\"27.5MB\",\"Type\":\"regular\",\"UsageCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "buildx",
+        "du",
+        "--builder",
+        "orbstack",
+        "--filter",
+        "id=hx1jupxwu3sw8xhiame8190so",
+        "--format",
+        "json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"CreatedAt\":\"2026-10-05 23:44:48.303113861 +0000 UTC\",\"Description\":\"mount / from exec /bin/sh -c npm install --global pnpm@10.32.1 --ignore-scripts --no-audit --no-fund\",\"ID\":\"hx1jupxwu3sw8xhiame8190so\",\"LastUsedAt\":\"17 hours ago\",\"Mutable\":false,\"Parents\":[\"4uusk43z3cgmrn0of94mx6f9k\"],\"Reclaimable\":true,\"Shared\":false,\"Size\":\"29.11MB\",\"Type\":\"regular\",\"UsageCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "buildx",
+        "du",
+        "--builder",
+        "orbstack",
+        "--filter",
+        "id=4uusk43z3cgmrn0of94mx6f9k",
+        "--format",
+        "json"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"CreatedAt\":\"2026-10-05 23:43:22.000627167 +0000 UTC\",\"Description\":\"from local \",\"ID\":\"4uusk43z3cgmrn0of94mx6f9k\",\"LastUsedAt\":\"17 hours ago\",\"Mutable\":false,\"Parents\":[\"krpn5m50b23ifrop44rrcfrd2\"],\"Reclaimable\":true,\"Shared\":true,\"Size\":\"0B\",\"Type\":\"regular\",\"UsageCount\":2}\n",
+      "stderr": ""
+    }
+  ],
+  "history": {
+    "command": [
+      "docker",
+      "buildx",
+      "history",
+      "ls",
+      "--builder",
+      "orbstack",
+      "--format",
+      "json"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"cached_steps\":1,\"completed_at\":\"2026-10-05T23:44:48.43820596Z\",\"completed_steps\":6,\"created_at\":\"2026-10-05T23:44:47.288198849Z\",\"name\":\"flow-claude-harness-eval.G24Awo\",\"ref\":\"orbstack/orbstack/1g4kc2vepesk1f4nl4etag7qx\",\"status\":\"Completed\",\"total_steps\":6}\n{\"cached_steps\":0,\"completed_at\":\"2026-10-05T23:43:23.481042834Z\",\"completed_steps\":6,\"created_at\":\"2026-10-05T23:43:21.794225271Z\",\"name\":\"flow-claude-harness-eval.G24Awo\",\"ref\":\"orbstack/orbstack/5hrgfba8fcrnlfdr95gg7boo9\",\"status\":\"Completed\",\"total_steps\":6}\n{\"cached_steps\":0,\"completed_at\":\"2026-03-18T01:12:43.510284567Z\",\"completed_steps\":15,\"created_at\":\"2026-03-18T01:12:08.643845342Z\",\"name\":\"Projects/Dockerfile.claude\",\"ref\":\"orbstack/orbstack/lhz76lntqz4dr8c4nf5qanfe0\",\"status\":\"Completed\",\"total_steps\":15}\n{\"cached_steps\":7,\"completed_at\":\"2026-03-18T01:09:19.433549489Z\",\"completed_steps\":16,\"created_at\":\"2026-03-18T01:09:15.070443Z\",\"name\":\"Projects/Dockerfile.claude\",\"ref\":\"orbstack/orbstack/1qyqhbq90psiueg9rsxqf523o\",\"status\":\"Error\",\"total_steps\":19}\n{\"cached_steps\":0,\"completed_at\":\"2026-03-18T01:08:55.741994285Z\",\"completed_steps\":4,\"created_at\":\"2026-03-18T01:08:54.217696344Z\",\"name\":\"\",\"ref\":\"orbstack/orbstack/m3p1hw7clp40lyvumueh1k6di\",\"status\":\"Error\",\"total_steps\":8}\n{\"cached_steps\":0,\"completed_at\":\"2026-03-08T22:48:38.21627303Z\",\"completed_steps\":13,\"created_at\":\"2026-03-08T22:48:13.246263279Z\",\"name\":\"StockManager/Dockerfile.claude\",\"ref\":\"orbstack/orbstack/q6mb6ecqac32i2nkvtmqsi74h\",\"status\":\"Completed\",\"total_steps\":13}\n{\"cached_steps\":4,\"completed_at\":\"2026-03-08T22:33:13.781978108Z\",\"completed_steps\":9,\"created_at\":\"2026-03-08T22:33:13.009890858Z\",\"name\":\"\",\"ref\":\"orbstack/orbstack/tyhz6fd18bsxkyc1hqcqqdfqi\",\"status\":\"Completed\",\"total_steps\":9}\n{\"cached_steps\":4,\"completed_at\":\"2026-03-08T21:44:06.066842689Z\",\"completed_steps\":9,\"created_at\":\"2026-03-08T21:44:05.483765479Z\",\"name\":\"\",\"ref\":\"orbstack/orbstack/57bfkx72j4xrqeo9paxktrdjz\",\"status\":\"Completed\",\"total_steps\":9}\n{\"cached_steps\":4,\"completed_at\":\"2026-03-08T21:37:08.487533807Z\",\"completed_steps\":9,\"created_at\":\"2026-03-08T21:37:07.866393312Z\",\"name\":\"\",\"ref\":\"orbstack/orbstack/onhu61a6eu0vldifowqlg0wmo\",\"status\":\"Completed\",\"total_steps\":9}\n{\"cached_steps\":0,\"completed_at\":\"2026-03-08T21:26:12.716871161Z\",\"completed_steps\":9,\"created_at\":\"2026-03-08T21:25:41.321695979Z\",\"name\":\"StockManager/Dockerfile.claude\",\"ref\":\"orbstack/orbstack/n8c2g96cwtfqku9y3sp9i4s9y\",\"status\":\"Completed\",\"total_steps\":9}\n",
+    "stderr": ""
+  },
+  "containers": {
+    "command": [
+      "docker",
+      "ps",
+      "--filter",
+      "name=flow",
+      "--format",
+      "{{json .}}"
+    ],
+    "exitCode": 0,
+    "stdout": "{\"Command\":\"\\\"docker-entrypoint.s…\\\"\",\"CreatedAt\":\"2026-10-05 17:47:24 -0700 PDT\",\"ID\":\"2c45767d4802\",\"Image\":\"postgres:16.13-alpine\",\"Labels\":\"com.docker.compose.config-hash=2d2a8e3baca8a689de7204d77e1a83874b0586a6297053613a29b8bd34eb0af0,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:d394728dee24b7791f1969c683f8b8410fe57450713a1db2aff5a500f0f98ab0,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-foundation/compose.yaml,com.docker.compose.project.working_dir=/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-foundation,com.docker.compose.project=flow-f00,com.docker.compose.service=postgres,com.docker.compose.version=5.1.2\",\"LocalVolumes\":\"1\",\"Mounts\":\"flow-f00_flow-…\",\"Names\":\"flow-f00-postgres-1\",\"Networks\":\"flow-f00_default\",\"Platform\":null,\"Ports\":\"127.0.0.1:55432-\\u003e5432/tcp\",\"RunningFor\":\"16 hours ago\",\"Size\":\"220kB (virtual 272MB)\",\"State\":\"running\",\"Status\":\"Up 16 hours (healthy)\"}\n",
+    "stderr": ""
+  },
+  "buildProcesses": [],
+  "provenance": [
+    {
+      "path": "README.md",
+      "bytes": 3856,
+      "sha256": "b947ad02f23f29943b12a6297fdbed608fed742fc0a002ff7f9ef7a0cf11dda5"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 3116,
+      "sha256": "9a1d84dc87e857da4f710f91ca461c27c324b1d7cbfac84bd5c3bde4e63b8535"
+    }
+  ]
+}
