@@ -1,0 +1,141 @@
+{
+  "sourceCommit": "38b2353dade0431dded067f20711ddc79b4c7430",
+  "productBase": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+  "resultsSha256": "ee6ae620eef3fce714d59d5e1b9a4de8f0e8e2d94454cce5b1b0463deeb8b62f",
+  "productSourceFiles": [
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "sha256": "a37640dc52ad4116230af8908688404c4b0b2ed0a1e44d2b549ed401db3dd715"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sha256": "f22dd554dbd7c687efb3abe9d93fb553e8c455482a1a8738a504548bcd7b77b7"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "sha256": "9ab014a39aefa7e2081a07f54c3b4125c8f26746bc5c9bd5bf9e24a78e6aaea5"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "b9216162b1cecb1badf38101f3b11a791a56c6d6c220325207d2b8469a2caddd"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "9fa16826ccdaf38819fa5408b2ca4216b27a4d77a3ef945906fd05ec79151f9a"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    }
+  ],
+  "method": {
+    "databaseBytes": "UTF-8 JSON serialization of decoded pg result.rows arrays, including field names and empty arrays; NOT PostgreSQL wire bytes",
+    "httpBytes": "UTF-8 response body bytes as received by fetch; headers excluded",
+    "latency": "Instrumented shared-host wall time including JSON sizing/hash hooks; first-after-seed is NOT cold PG/OS cache; warm n20 p99=max, not SLO",
+    "hash": "SHA256 update+digest input bytes and instrumented compute elapsed; known body byte size distinguishes body hashes from auth hashes; no secret/content capture"
+  },
+  "workloads": [
+    {
+      "turns": 1,
+      "contentUtf8Bytes": 256,
+      "summary": {
+        "n": 20,
+        "p50Ms": 3.791417000000024,
+        "p95Ms": 4.55595900000003,
+        "p99Ms": 5.051625000000058,
+        "firstMs": 7.511708999999996,
+        "selectCount": 7,
+        "transactionCount": 2,
+        "decodedSelectRowsJsonUtf8Bytes": 2581,
+        "httpUtf8Bytes": 2460,
+        "bodyHashCount": 1,
+        "bodyHashInputBytes": 256
+      }
+    },
+    {
+      "turns": 20,
+      "contentUtf8Bytes": 256,
+      "summary": {
+        "n": 20,
+        "p50Ms": 18.435040999999956,
+        "p95Ms": 20.356499999999983,
+        "p99Ms": 20.83375000000001,
+        "firstMs": 20.917500000000018,
+        "selectCount": 102,
+        "transactionCount": 2,
+        "decodedSelectRowsJsonUtf8Bytes": 45849,
+        "httpUtf8Bytes": 43132,
+        "bodyHashCount": 20,
+        "bodyHashInputBytes": 5120
+      }
+    },
+    {
+      "turns": 50,
+      "contentUtf8Bytes": 256,
+      "summary": {
+        "n": 20,
+        "p50Ms": 61.408500000000004,
+        "p95Ms": 138.10666700000002,
+        "p99Ms": 143.4916250000001,
+        "firstMs": 36.93374999999992,
+        "selectCount": 252,
+        "transactionCount": 2,
+        "decodedSelectRowsJsonUtf8Bytes": 114197,
+        "httpUtf8Bytes": 107362,
+        "bodyHashCount": 50,
+        "bodyHashInputBytes": 12800
+      }
+    },
+    {
+      "turns": 1,
+      "contentUtf8Bytes": 131072,
+      "summary": {
+        "n": 20,
+        "p50Ms": 4.486959000000297,
+        "p95Ms": 4.992166999999881,
+        "p99Ms": 4.993750000000091,
+        "firstMs": 4.290042000000085,
+        "selectCount": 7,
+        "transactionCount": 2,
+        "decodedSelectRowsJsonUtf8Bytes": 133398,
+        "httpUtf8Bytes": 9403,
+        "bodyHashCount": 1,
+        "bodyHashInputBytes": 131072
+      }
+    },
+    {
+      "turns": 20,
+      "contentUtf8Bytes": 131072,
+      "summary": {
+        "n": 20,
+        "p50Ms": 41.73316599999998,
+        "p95Ms": 45.36195799999996,
+        "p99Ms": 47.124667000000045,
+        "firstMs": 40.91391599999997,
+        "selectCount": 102,
+        "transactionCount": 2,
+        "decodedSelectRowsJsonUtf8Bytes": 2662177,
+        "httpUtf8Bytes": 181992,
+        "bodyHashCount": 20,
+        "bodyHashInputBytes": 2621440
+      }
+    },
+    {
+      "turns": 50,
+      "contentUtf8Bytes": 131072,
+      "summary": {
+        "n": 20,
+        "p50Ms": 120.5550830000002,
+        "p95Ms": 236.6688750000003,
+        "p99Ms": 247.9955,
+        "firstMs": 97.82037500000024,
+        "selectCount": 252,
+        "transactionCount": 2,
+        "decodedSelectRowsJsonUtf8Bytes": 6655040,
+        "httpUtf8Bytes": 454512,
+        "bodyHashCount": 50,
+        "bodyHashInputBytes": 6553600
+      }
+    }
+  ]
+}

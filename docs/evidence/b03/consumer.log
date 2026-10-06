@@ -1,0 +1,29 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-conversation-preview
+
+ ✓ experiments/bounded-preview/consumer.generated.test.ts (22 tests) 16630ms
+   ✓ projects only the exact final result and follows up on the same native session and runner  1620ms
+   ✓ pages immutable turns and returns long assistant content only through an owned lazy detail  597ms
+   ✓ rejects follow-up while queued, running, waiting, cancelling or uncertain without duplicating work  4375ms
+   ✓ keeps unknown-adapter unavailable instead of guessing from telemetry or a title  528ms
+   ✓ keeps missing-session unavailable instead of guessing from telemetry or a title  433ms
+   ✓ keeps missing-result unavailable instead of guessing from telemetry or a title  520ms
+   ✓ keeps ambiguous-result unavailable instead of guessing from telemetry or a title  538ms
+   ✓ keeps invalid-result unavailable instead of guessing from telemetry or a title  514ms
+   ✓ maps the actual Claude adapter final-result path through the runner using only an injected SDK  1140ms
+   ✓ never promotes retained artifacts belonging to a superseded attempt  308ms
+   ✓ leaves the effective model unknown when the session did not record one  534ms
+   ✓ prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking  454ms
+   ✓ never falls back to a v1 artifact when a v2 attempt lacks its typed final  562ms
+   ✓ keeps a typed final pending until task success and deduplicates it through restart and replay  628ms
+   ✓ rejects foreign task/session/fence reports and confines each typed lazy reference to its bound turn  1174ms
+   ✓ does not reuse an old typed final after the current attempt binding changes  359ms
+   ✓ does not expose a reply when the actual adapter receives a non-success SDK result  537ms
+   ✓ keeps a corrupted typed body unavailable without falling back to its intact artifact  458ms
+   ✓ preserves null effective facts and exposes long typed content through its exact detail  533ms
+
+ Test Files  1 passed (1)
+      Tests  22 passed (22)
+   Start at  22:01:08
+   Duration  17.04s (transform 175ms, setup 0ms, import 341ms, tests 16.63s, environment 0ms)
+

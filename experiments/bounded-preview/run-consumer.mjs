@@ -29,7 +29,7 @@ source = source.slice(0,setup)+`beforeAll(async () => {
   await startServer();
 });
 afterAll(async () => {
-  try { await stopServer(); await pool?.end();
+  try { try { await stopServer(); } finally { await pool?.end(); }
     if (created) {
       const deadline = performance.now()+5000;
       while (Number((await lock!.query('SELECT count(*) FROM pg_stat_activity WHERE datname=$1',[databaseName])).rows[0].count)) {
@@ -41,8 +41,8 @@ afterAll(async () => {
     await writeFile('docs/evidence/b03/consumer-cleanup.json', JSON.stringify({databaseName,at:new Date().toISOString(),remaining:(await lock!.query('SELECT datname FROM pg_database WHERE datname=$1',[databaseName])).rows},null,2));
   } finally { lock?.release(); await admin.end(); }
 });`+source.slice(tests);
-const originalBodies = original.slice(original.indexOf('\n\nit(', original.indexOf('beforeAll(async () => {'))));
-const generatedBodies = source.slice(source.indexOf('\n\nit(', source.indexOf('beforeAll(async () => {'))));
+const originalBodies = original.slice(original.indexOf('\n\nit(', original.indexOf('beforeAll(async () => {')));
+const generatedBodies = source.slice(source.indexOf('\n\nit(', source.indexOf('beforeAll(async () => {')));
 if (originalBodies !== generatedBodies) throw new Error('Original consumer test bodies changed.');
 const startedAt = new Date().toISOString();
 await writeFile(generatedPath,source);
