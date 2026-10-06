@@ -127,9 +127,11 @@ it('uses the production migration and public client to preserve opt-in send and 
   const catalog = await client.claudeMessageSettingsProfiles({ limit: 1 }, signal());
   expect(catalog.profiles).toHaveLength(1); expect(catalog.profiles[0]!.profile.reference).toEqual(reference);
   expect((await client.executionProfiles({ limit: 1 }, signal())).profiles.map(profile => profile.reference)).toEqual([oldReference]);
-  const createdConversation = await client.createConversation(conversationCreationSchema.parse({ title: 'Public settings integration', executionProfile: reference }), randomUUID(), signal());
+  const creation = conversationCreationSchema.parse({ title: 'Public settings integration', executionProfile: reference }), creationKey = randomUUID();
+  const createdConversation = await client.createConversation(creation, creationKey, signal());
   const id = createdConversation.conversation.id;
-  expect(createdConversation.capabilities.messageSettings).toEqual({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: 'execution-profile' });
+  expect(createdConversation.capabilities).not.toHaveProperty('messageSettings');
+  expect((await client.conversation(id, signal())).capabilities.messageSettings).toEqual({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: 'execution-profile' });
   const snapshot = (index: number): ClaudeTurnSettings => ({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, requested: structuredClone(choices[index]!) });
   const a: ConversationTurnAdmission = { expectedRevision: 0, mode: 'follow-up', text: 'Frozen A', messageSettings: snapshot(0) };
   const frozenA = structuredClone(a), sendKey = randomUUID();
@@ -148,6 +150,7 @@ it('uses the production migration and public client to preserve opt-in send and 
   facts.accepted = { taskId: accepted.turn.task.id, queueItemId: queued.item.id, sendKey, queueKey };
   await checkpoint('accepted-before-restart');
   await app!.close(); app = undefined; await start();
+  expect(await client.createConversation(creation, creationKey, signal())).toEqual({ ...createdConversation, replayed: true });
   expect(await client.submitConversationTurn(id, frozenA, sendKey, signal())).toEqual({ ...accepted, replayed: true });
   expect(await client.enqueueConversationTurn(id, frozenB, queueKey, signal())).toEqual({ ...queued, replayed: true });
   await expect(client.enqueueConversationTurn(id, { ...frozenB, messageSettings: snapshot(0) }, queueKey, signal())).rejects.toMatchObject({ status: 409 });
