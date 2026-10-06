@@ -22,3 +22,5 @@
 2026-10-06 08:30 UTC：固定b9db，前后布局/dev7/prod7与Web类型/构建验证完成；待独立review/main，见[验证](../../docs/evidence/wpf-chat-readability/validation.md)。
 
 2026-10-06 08:38 UTC：root固定b9发现执行下钻被modal遮挡；527176c修复关闭/焦点交接，dev8/prod8与类型/构建通过，待独立复审。
+
+2026-10-06 08:39:09 UTC：root独立复审527176c APPROVED，R1/P2关闭；本片待main集成与聚合实际观察，产品冻结。
