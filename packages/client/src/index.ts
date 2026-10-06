@@ -1,3 +1,4 @@
+import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
 import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
 import type { RunnerMaintenanceView, RunnerMaintenanceHistory, RunnerMaintenanceCommand, RunnerMaintenanceResult } from '@flow/contracts';
 import type { GoalGraphProposalInput, GoalGraphProposalApply, GoalGraphProposalCreated, GoalGraphProposalPage, GoalGraphProposal, GoalGraphProposalApplied } from '@flow/contracts';
@@ -138,6 +139,33 @@ export class FlowClient {
   }
   applyGoalGraphProposal(id: string, input: GoalGraphProposalApply, key: string, signal?: AbortSignal): Promise<GoalGraphProposalApplied> {
     return this.request(`/api/goal-graph-proposals/${encodeURIComponent(id)}/apply`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
+  admitGoalGraphRun(goalId: string, input: GoalGraphRunAdmission, key: string, signal?: AbortSignal): Promise<GoalGraphRunAccepted> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-runs`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalGraphRun(id: string, signal?: AbortSignal): Promise<GoalGraphRun> {
+    return this.request(`/api/goal-graph-runs/${encodeURIComponent(id)}`, { signal });
+  }
+  revokeGoalGraphRun(id: string, input: { reason: string }, key: string, signal?: AbortSignal): Promise<GoalGraphRunRevoked> {
+    return this.request(`/api/goal-graph-runs/${encodeURIComponent(id)}/revoke`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalGraphRunCalls(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<GoalGraphAuditPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/goal-graph-runs/${encodeURIComponent(id)}/calls${query.size ? `?${query}` : ''}`, { signal });
+  }
+  goalGraphGrant(input: Ownership, signal?: AbortSignal): Promise<GoalGraphRun> {
+    return this.request('/api/runner/goal-graph/grant', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalGraphRead(input: GoalGraphReadCall, signal?: AbortSignal): Promise<GoalGraphReadPage> {
+    return this.request('/api/runner/goal-graph/read', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalGraphDetail(input: GoalGraphDetailCall, signal?: AbortSignal): Promise<GoalGraphDetailResult> {
+    return this.request('/api/runner/goal-graph/proposal', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalGraphCommand(input: GoalGraphCommandCall, key: string, signal?: AbortSignal): Promise<GoalGraphCommandResult> {
+    return this.request('/api/runner/goal-graph/command', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   admitGoalToolRun(goalId: string, input: GoalToolRunAdmission, key: string, signal?: AbortSignal): Promise<GoalToolRunAccepted> {
