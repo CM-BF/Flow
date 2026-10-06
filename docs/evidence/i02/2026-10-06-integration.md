@@ -136,3 +136,10 @@ full-plan-matrix已按main115b对齐REQ01/08/10/11/15/19/21/22及滚动队列，
 受控接收 K03领域21d2（Mika APPROVED；final8776798）、薄client77465与生产44bd（Root APPROVED）、Web rendererI8014（Web独审，final2a420）、D06ff5ca（Web独审，finale7e37）。各固定scope对候选实现零diff，记录见k03-renderer-source-comparison.json。组合仅root/Web typecheck各exit0、实际消息详情直接消费者8/8、固定架构10/10；原始stdout分别保存k03-renderer-*.txt。未重复K03领域44、Web独审31、PG或模型调用。已批准X05薄client07随共享分支进入，此处仅类型/传输，023下载worker未挂载。
 
 本段clean-code/codebase-design复核：知识冻结与public/private读取边界仍在领域层，renderer只读port保持惰性详情，架构固定115b不追moving；无手工源冲突，无新依赖。CHAT06能力合同86fc及正文领域/022暂未进入本批，旧timeline兼容P2由独立CHAT06C02修复；个人center/runner仍fb906，main发布不等运行升级。
+
+
+## 2026-10-06 07:03 UTC X05 opt-in production
+
+接收X05领域9ebb/final447807（Execution Lead独审）、公共client07（GO独审）、可选生产入口3691（Mika独审/GO接收）。领域与六共享源码对固定审批完全一致，x05-source-comparison.json保存逐scope零diff。原作者5different PG/HTTP+配置检查/noEmit及随机库清理证据复用，组合仅root/Web typecheck各exit0；未重复领域、浏览器、模型或下载。无host时下载routes/worker仍不启用，私有本机host配置才允许受理/执行受限下载；压缩artifact不等于npm安装/加载/信任。
+
+公共liveAssistantText optionalboolean只类型兼容，现生产GET依旧false；CHAT06领域/022与协商/legacy过滤不在本次。86fc单合同已由C02独审逐字核；当前Webtypes支持。个人服务center/runner仍fb906，本次不重启或修改其配置。后续CHAT06独立组合还要Web cursor reader兼容，不能由X05审批背书。

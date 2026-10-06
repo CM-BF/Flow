@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:48 UTC / 2026-10-06 06:48 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:03 UTC / 2026-10-06 06:48 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -11,13 +11,13 @@
 | 工作树dirty状态 | 仅本次交付记录；实现已提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；本批root/Web组合typecheck与固定源码比对；复用各领域/接线局部独审，C02隔离P2已修，未重复全库 |
-| 已集成main状态 / HEAD | main/origin 115b0db已含K02/O07/X04和Web兼容/renderer模块；CHAT05领域/020共享接线+活动展示独立模块及75来源已在main acfd409发布，运行center/runner仍fb906 |
+| 已集成main状态 / HEAD | 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a 已含K03/021、消息详情接线与固定115b架构；本批X05生产已审待fast-forward。个人center/runner仍fb906。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 真实聊天排队、关闭浏览器后继续执行与重开回复已验证；工具活动读取已发布，目标节点知识引用与消息详情接入已审待发布 |
-| 下一可用交付 | 发布目标节点知识引用和消息详情接入，继续正文流式显示和插件下载 |
+| 当前产出 | 目标知识引用和消息详情已发布；插件包下载入口完成审查，正在接收。 |
+| 下一可用交付 | 发布可恢复的插件包下载入口；接着完成逐段回复与旧界面兼容组合。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

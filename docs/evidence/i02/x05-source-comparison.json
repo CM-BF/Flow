@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-06T06:58:43.343022+00:00",
+  "head": "509c7245e953c8a464566ebf762b1a662b05fc25",
+  "sources": {
+    "3691d1b3dffa5eb33546ff3b84f45fa88401a9d5": {
+      "paths": [
+        "apps/server/src/index.ts",
+        "apps/server/src/main.ts",
+        "apps/server/src/package-fetch-configuration.ts",
+        "apps/server/src/package-fetch-configuration.test.ts",
+        "apps/cli/src/index.ts",
+        "packages/client/src/package-fetch-production.test.ts"
+      ],
+      "diff": []
+    },
+    "447807c321e81d9dd6b8a963a73ba4fc8396e308": {
+      "paths": [
+        "apps/server/src/package-fetch",
+        "packages/contracts/src/package-fetch.ts",
+        "packages/storage/migrations/023-package-fetches.sql"
+      ],
+      "diff": []
+    }
+  },
+  "personalRuntime": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "modelQueries": 0
+}
