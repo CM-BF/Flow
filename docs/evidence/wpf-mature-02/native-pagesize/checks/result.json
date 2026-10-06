@@ -1,0 +1,44 @@
+{
+  "startedAt": "2026-10-06T18:05:19.769756+00:00",
+  "finishedAt": "2026-10-06T18:05:19.918780+00:00",
+  "wallSeconds": 0.14903912495356053,
+  "source": "a3954e0c89eb20f4f4b2b0d29156238311699718",
+  "commands": [
+    {
+      "pid": 18775,
+      "exitCode": 1,
+      "wallSeconds": 0.03417333296965808,
+      "stdioEOF": true,
+      "closed": true
+    }
+  ],
+  "failure": "command-failed",
+  "raw": {
+    "path": "docs/evidence/wpf-mature-02/native-pagesize/checks/once.log",
+    "bytes": 823,
+    "sha256": "192aee49ff27aa95523f52815968bd3adfc87b5b8e25520eaa5a4ad0dda09a11"
+  },
+  "roots": [
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-vitest-cache",
+      "dev": 16777234,
+      "ino": 123117532,
+      "removed": true,
+      "logicalBytes": 0,
+      "allocatedBytes": 0
+    },
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-check-tmp",
+      "dev": 16777234,
+      "ino": 123117533,
+      "removed": true,
+      "logicalBytes": 0,
+      "allocatedBytes": 0
+    }
+  ],
+  "diagnosticTargets": 0,
+  "compilerCalls": 0,
+  "listeners": 0,
+  "pg": 0,
+  "provider": 0
+}
