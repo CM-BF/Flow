@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示129项实际进度；工程执行配置和终端流式显示已补齐登记候选。 |
+| 当前产出 | 看板已显示131项实际进度，工程执行配置和终端流式显示都能直接查看。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -67,3 +67,5 @@
 2026-10-06 10:38:41 UTC：已保存10:30:43实际127源回执（main0b0，S01P03时间/人读字段已纠正），本批候选129源登记WPF-RELEASE01真实网页兼容与WPF-DPERF02核验复用，当前main parser两者errors=[]/human完整；固定f181架构资源不改，0产品测试/模型/个人操作。见[登记](../../docs/evidence/d05/web-release-registry-validation.json)与[原实际回执](../../docs/evidence/d05/graceful-stop-registry-live.json)。
 
 新增 ENG01B/TUI01C 至131个唯一来源，登记与解析验证见 engineering-tui-registry-validation.json；129实际历史快照已归档 engineering-129-registry-live.json。固定架构仍由D06维护，本批不改图、不把新登记当产品完成。
+
+10:49:58.895Z实际131来源、ENG01B/TUI01C/DPERF02 current=true且errors/issues空，见proof-131-registry-live.json。新增Web共享ACK来源待下一正常132来源换载，不为metadata重复架构或产品检查。
