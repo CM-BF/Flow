@@ -1,0 +1,32 @@
+✖ one matching task target starts one comparison; a second snapshot performs fresh reads (475.844917ms)
+ℹ {"phase":"same-target","gitStarts":29,"targetComparisons":2}
+✔ different review target is still independently compared and can invalidate approval (542.9355ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (1146.469667ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (741.808417ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2979.453583
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/proof-snapshot.test.mjs:56:1
+✖ one matching task target starts one comparison; a second snapshot performs fresh reads (475.844917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  2 !== 1
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/apps/execution-dashboard/test/proof-snapshot.test.mjs:61:10)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

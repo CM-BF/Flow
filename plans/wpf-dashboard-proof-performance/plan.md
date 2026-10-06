@@ -1,13 +1,13 @@
 # WPF-DPERF01 看板证明计算去重
 
-状态：in-progress；创建/更新2026-10-06 05:02 UTC；owner w01_owner / gpt-6-astra ultra（派发指定）。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance`，branch `codex/dashboard-proof-performance`，base `698ffcd94ae073b23bcc67f6665fb19f707a93e4`。
+状态：in-progress；创建2026-10-06 05:02 UTC；更新2026-10-06 05:07 UTC；owner w01_owner / gpt-6-astra ultra（派发指定）。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance`，branch `codex/dashboard-proof-performance`，base `698ffcd94ae073b23bcc67f6665fb19f707a93e4`。
 
 目标：同任务、同次快照、review target等于implementation target时复用已算结果，减少重复Git子进程且保留最新检查。只改aggregate.mjs，proof.mjs只读。不加TTL/跨快照缓存/并发限流，不扩tree/main读取缓存，不改registry/human/4320或产品模型服务。
 
 ## TODO
 
-- [ ] **WPF-DPERF01-01** 用独立临时Git样本记录重复调用及行为回归红灯。
-- [ ] **WPF-DPERF01-02** 最小复用并验证同/异target、unknown/missing、dirty/deletion和下一snapshot新鲜。
+- [x] **WPF-DPERF01-01** 用独立临时Git样本记录重复调用及行为回归红灯。
+- [x] **WPF-DPERF01-02** 最小复用并验证同/异target、unknown/missing、dirty/deletion和下一snapshot新鲜。
 - [ ] **WPF-DPERF01-03** 直接tests与现human-proof/dashboard相关检查，固定目标独立审查/证据交付。
 
 ## 方法与边界
