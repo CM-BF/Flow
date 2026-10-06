@@ -7,12 +7,12 @@
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；实现 53c8713cb8e6a3c9b7d869c896656dad4e7a086d；metadata后继单列 |
-| 工作树dirty状态 | 开始正式场景入口开发；既有smoke target65d7a57批准保持历史边界 |
+| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；正式入口target 9da9de1b6778afec5219e55f39b53b365c8cf900，metadata后继单列 |
+| 工作树dirty状态 | 仅readiness证据/status待提交；9da源码停写待独审 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a；执行源同53c8713：修复复核4任务/24事件一致/4工具/3进程exit0、DB与outbox清空；noEmit0。原首轮4任务FAILED永久保留 |
+| 检查状态 | PASSED 9da9de1b6778afec5219e55f39b53b365c8cf900：6纯统计/预算unit测试，noEmit0；仅运行准备验证，尚无gate/formal数据库任务 |
 | 已集成main状态 / HEAD | 未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c |
-| 实现目标 | 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a |
+| 实现目标 | 9da9de1b6778afec5219e55f39b53b365c8cf900 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
