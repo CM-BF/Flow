@@ -15,12 +15,15 @@ const assignments = [
   ['L01', '命令行', '工作线', 'm1-cli', 'l01-cli', 'cli'],
   ['W01', '产品 Web', '工作线', 'm1-web', 'w01-web', 'web'],
   ['D01', '工程进度', '工作线', 'execution-dashboard', 'd01-execution-dashboard', 'execution-dashboard'],
+  ['I02', 'M2 恢复与跨任务集成', '集成验证', 'm2-integration', 'i02-integration'],
   ['I01', 'M1 集成验收', '工作线', 'm1-integration', 'i01-integration'],
   ['LAB01', '性能样例', '技术验证', 'performance-probes', 'lab01-performance'],
   ['LAB02', '多观察端样例', '技术验证', 'observer-probes', 'lab02-observer-probes'],
   ['D02', '进度来源同步', '工作线', 'dashboard-progress-sync', 'd02-progress-sync'],
   ['C02', '异常核对与恢复', '工作线', 'm2-reconciliation', 'c02-reconciliation'],
   ['P01', '协议互操作', '工作线', 'protocol-adapters', 'p01-protocols'],
+  ['D03', '进度的人类视图', '工作线', 'dashboard-human-view', 'd03-dashboard-human'],
+  ['WPF-001', 'Web 平台持续执行', '工程协作', 'web-platform-management', 'web-platform'],
   ['M02', '统一工作入口', '工作线', 'm2-workspace', 'm02-unified-workspace'],
 ];
 
@@ -33,7 +36,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${id === 'WPF-001' ? 'web-platform' : id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };

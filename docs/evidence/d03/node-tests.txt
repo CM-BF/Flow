@@ -1,0 +1,33 @@
+✔ reads only authoritative owners and reflects independent status changes over HTTP (349.336834ms)
+✔ empty review never means approval; historical checks remain unknown without explicit field (248.170916ms)
+✔ missing status uses frozen baseline and marks unknown without affecting another task (288.565667ms)
+✔ malformed, duplicate, stale and future status cannot silently become current (392.868291ms)
+✔ branch changes conflict and registry explicitly switches to a new owner worktree (281.243375ms)
+✔ documents reject traversal, encoded traversal, absolute paths and arbitrary task files (233.760333ms)
+✔ referenced symlinks cannot escape task scope inside or outside registered worktree (217.757667ms)
+✔ untrusted text stays text with read-only HTTP and restrictive browser headers (263.970458ms)
+✔ invalid registry, duplicate owners and oversized files are rejected (208.791875ms)
+✔ structured summaries never mine historical risks or no-decision prose (358.938459ms)
+✔ active work is bounded and priority ordered; completed history is separate (278.443167ms)
+✔ metadata-only changes retain exact implementation approval, including dirty docs (772.458209ms)
+✔ tracked changes, additions, deletions and untracked implementation invalidate approval (880.817084ms)
+✔ new code outside a narrow scope is unknown, not metadata approval (421.9575ms)
+✔ missing/unsafe/nonexistent scopes and absent target never turn green (634.247458ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-iD1QSG/T01
+ * branch            2be16e5d67933c88534241709c69414748ccdbe3 -> FETCH_HEAD
+✔ main ancestry survives unrelated main metadata commits without owner status rewrites (758.793083ms)
+✔ scope-tree integration requires existing target and no omitted new implementation (690.968708ms)
+✔ 20 distinct registry sources include D03, I02 and bounded Web platform source (0.3115ms)
+✔ executable files under docs are not silently treated as metadata (405.33325ms)
+✔ top three never hide other active work, while historical missing summaries stay in history (7.782208ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-zyOgJf/T01
+ * branch            0441076dbd62862e03c2c99d1bb71c99c30e04f8 -> FETCH_HEAD
+✔ historical main ancestry cannot approve later implementation changes, deletions or dirty paths (1474.444375ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6744.355084

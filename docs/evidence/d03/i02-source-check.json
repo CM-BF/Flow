@@ -1,0 +1,69 @@
+{
+  "target": "30d7b56c3b9967a4590c3b12567e292d5367b40a",
+  "at": "2026-10-06T02:26:36.678Z",
+  "result": "passed",
+  "scope": "I02 registry delta: real dynamic HTTP snapshot and source document parity; no visual rerun",
+  "port": 62321,
+  "count": 20,
+  "task": {
+    "id": "I02",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+    "branch": "codex/m2-integration",
+    "head": "108fddbd8261963f3d49088873b5a611b70a5dbf",
+    "statusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/plans/i02-integration/status.md",
+    "statusHash": "1d9c2224588eede1615ba5327fcc2481c938cd10b774809eeefbd9cc3514d8e4",
+    "issues": []
+  },
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "108fddbd8261963f3d49088873b5a611b70a5dbf",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T02:26:36.218Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "overview": {
+    "phase": "M2",
+    "activeIds": [
+      "I02",
+      "M02",
+      "D03"
+    ],
+    "deliveryIds": [
+      "I02",
+      "M02",
+      "D03"
+    ],
+    "blockerIds": [],
+    "decisionIds": [],
+    "unknownIds": [
+      "FLOW-001",
+      "FLOW-002",
+      "FLOW-003",
+      "OPS-001",
+      "C01",
+      "R01",
+      "R02",
+      "L01",
+      "W01",
+      "D01",
+      "I01",
+      "LAB01",
+      "LAB02",
+      "D02",
+      "P01",
+      "WPF-001"
+    ],
+    "historyIds": [
+      "FLOW-003",
+      "R01",
+      "D01",
+      "I01",
+      "LAB01",
+      "LAB02",
+      "D02",
+      "C02"
+    ]
+  }
+}
