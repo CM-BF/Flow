@@ -17,3 +17,5 @@ clean-code安全点：复用既有command/R06/清理，不复制supervisor；固
 14:19 clean-code安全点：source保持固定recipe/单一资源owner，未复制R06/第二supervisor；两个helper只由薄组合分配共同起点和实际预算。private outer stderr精确info/exclude规则已核，未创建任何运行产物。当前旧helper源码变化属于新commit，历史sealed raw/profile/manifest仍冻结在其固定Git，不声称当前helper与旧manifest相等。
 
 14:20预核新增两处需修：第9个合法errno在8明细cap后丢冲突；失败canary的182内部预扣被展示为已资格上界。review-red为3失败/32未选，已按实际保存，当前检查点不可交审批准；下一提交仅修两处并测直接消费。
+
+14:21修复：有限errno集合在明细8项cap前更新（最多1..255），第9项冲突回归通过；失败canary的182现在为null+单列未资格预扣，knownBytes不纳该值。原3red保留e2f40f13，随后Reason全15+组合直接3=18通过/17未选，累计41distinct；原生惰性import及两个变更JS语法再次exit0。0实际目标/监听。

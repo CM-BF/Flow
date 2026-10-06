@@ -30,9 +30,10 @@ export function observeRuntimeLoader(bytes, roles, complete) {
   let text;
   try { text = new TextDecoder('utf-8', { fatal: true }).decode(bytes); } catch { return unknown; }
   if (text.includes('\0')) return unknown;
-  const reasons = [], keys = new Set(); let unrecognized = false;
+  const reasons = [], keys = new Set(), errnos = new Set(); let unrecognized = false;
   const add = (operation, category, token, errno = null) => {
     if (errno !== null && (!Number.isSafeInteger(errno) || errno < 1 || errno > 255)) { unrecognized = true; return; }
+    if (errno !== null) errnos.add(errno); // Finite 1..255 evidence survives the eight-detail presentation cap.
     const match = roles.find(row => row.token === token && /^[a-z0-9-]{1,48}$/.test(row.role));
     const reason = { operation, category, errno, dependencyRole: match?.role ?? null };
     const key = JSON.stringify(reason);
@@ -62,7 +63,6 @@ export function observeRuntimeLoader(bytes, roles, complete) {
     else if (reason === 'no such file') add('unknown', 'missing', null);
     else unrecognized = true;
   }
-  const errnos = new Set(reasons.flatMap(row => row.errno === null ? [] : [row.errno]));
   return { ...base, errno: errnos.size === 1 ? [...errnos][0] : null,
     errnoState: errnos.size > 1 ? 'conflict' : errnos.size === 1 ? 'observed-text' : 'unknown',
     reasonState: unrecognized ? 'partial-unknown' : reasons.length ? 'recognized-text' : 'UNKNOWN', reasons };

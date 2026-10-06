@@ -21,10 +21,11 @@ export async function runRuntimeMetadataBatch({ repository, evidenceDirectory, p
     const c = controlResult?.output, n = canaryResult?.output;
     const counts = { prepared: preparedBytes, controlObserved: amount(c?.observed ?? 0), controlDisk: amount(c?.disk ?? 0),
       canaryStderrObserved: amount(n?.captured ?? 0), canaryDisk: amount(n?.diskCopies ?? 0),
-      canaryStdoutSourceUpperBound: amount(n?.stdoutSourceUpperBound ?? 0),
+      canaryStdoutSourceUpperBound: n && canaryResult.stdoutBoundsConfirmed !== true ? null : amount(n?.stdoutSourceUpperBound ?? 0),
       receipts: ownReceipts + amount(c?.receipts ?? 0) + amount((n?.receipts ?? canaryInitialReceipts) - canaryInitialReceipts) + unattributedReceiptBytes };
-    const knownBytes = Object.values(counts).reduce((a, b) => a + b, 0);
-    return { ...counts, knownBytes, reservedBytes: knownBytes - counts.receipts + 32768 + 131072 + 8192,
+    const knownBytes = Object.values(counts).reduce((a, b) => a + (b ?? 0), 0);
+    const unqualifiedStdoutReserveBytes = n && canaryResult.stdoutBoundsConfirmed !== true ? amount(n.stdoutSourceUpperBound) : 0;
+    return { ...counts, knownBytes, unqualifiedStdoutReserveBytes, reservedBytes: knownBytes - counts.receipts + unqualifiedStdoutReserveBytes + 32768 + 131072 + 8192,
       receiptReserveBytes: 32768, archiveReserveBytes: 131072, outerReserveBytes: 8192, limit: 2097152 };
   }
   function persist(name, value) {

@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-06T14:21:36.561134+00:00",
+  "results": [
+    {
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--experimental-transform-types",
+        "--input-type=module"
+      ],
+      "input": "native-import.mjs.txt",
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "experiments/codex-app-server-conformance/node-runtime-metadata/host.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "experiments/codex-app-server-conformance/node-runtime-metadata/observe.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "actualExperimentTargets": 0,
+  "actualListeners": 0
+}
