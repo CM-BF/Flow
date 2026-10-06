@@ -19,7 +19,7 @@ Node v24.20.0，临时Git仓库及现有局部HTTP fixture；0真实DB/模型调
 - [红灯](red-tests.log)：4项中3PASS/1预期FAIL，基线比较2次。
 - [固定实现专用检查](direct-tests.log)：4/4PASS，4059.64ms；语义包含同/异target、后续snapshot、dirty edit、删除、恢复、untracked新增、unknown/missing与恢复。
 - [关联检查](related-tests.log)：26项25PASS/1FAIL，8569.81ms；包含专用4项、dashboard9项、human-proof13项。唯一失败为未修改的`human-proof.test.mjs:115`硬编码28个registry sources，固定698实际已有54。两源与698内容相同，已报Lead，未在本claim修复。
-- `git diff --check`通过；`proof.mjs`、`registry.mjs`、`human-proof.test.mjs`、根`package.json`及`pnpm-lock.yaml`对698零差异。既有依赖以`pnpm install --frozen-lockfile --ignore-scripts`安装；无新依赖。
+- `git diff --check 698ffcd94ae073b23bcc67f6665fb19f707a93e4 5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52 -- apps/execution-dashboard/src/aggregate.mjs apps/execution-dashboard/test/proof-snapshot.test.mjs`通过；完整base→metadata检查保留原始日志4处尾空格（red-tests.log第20/22行、related-tests.log第46/48行），未清洗原始输出；`proof.mjs`、`registry.mjs`、`human-proof.test.mjs`、根`package.json`及`pnpm-lock.yaml`对698零差异。既有依赖以`pnpm install --frozen-lockfile --ignore-scripts`安装；无新依赖。
 
 ```sh
 PATH=/opt/homebrew/opt/node@24/bin:$PATH env -u FLOW_COORDINATION_DATABASE_URL -u FLOW_COORDINATION_REPO node --test apps/execution-dashboard/test/proof-snapshot.test.mjs
