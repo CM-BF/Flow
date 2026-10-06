@@ -61,3 +61,5 @@ Goal Owner已只读方法审查APPROVED auth固定8e232a0：完整模块/证据�
 2026-10-06 03:17 UTC，只读核验本机 SDK0.3.290 d.ts 与 wrapper1.0.143 调用链，[固定文件hash](comparison-source-hashes.json)。stock bridge固定SDK0.3.281/CLI2.1.281，未透传budget/settingSources；query使用abortSignal而当前SDK公开Options为abortController；默认preset和usage映射亦不同。上述是源码事实，不是新模型行为结果。完整差异、官方依据、新预算/认证/模型权限边界与验收见[提案](../../../plans/e01-harness-probes/native-wrapper-proposal.md)。
 
 本工作段仍复用本地find-skills/codebase-design/clean-code方法：只从必要interface查版本/参数/副作用，将可比较profile与stock差异分开；不引入产品依赖、不给缺失auth加自动fallback。clean-code复核未修改探针实现；修正草案观察时间为实际UTC，未留未来时间。链接/diff/source hash检查，不为文档重跑模型或旧测试。
+
+2026-10-06 03:23 UTC E01提案收敛/clean-code复核：按Goal Owner审定删除多项适配叠加方案，改为原生工程能力→stock兼容性；源码已知差异与未实测项分开，0模型参数预检允许但本段仅文档。真实调用明确未批准、临时合成写不豁免门槛，原2query/USD2不是已可执行额度。旧提案留Git历史，不改两份原始probe JSON。

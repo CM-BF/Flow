@@ -27,3 +27,5 @@ Goal Owner / gpt-6-astra，结论经 Execution Lead 回传，唯一 owner 于 20
 ## 工程对照提案（独立于上述批准）
 
 [native-wrapper-proposal.md](native-wrapper-proposal.md) 为待审新预算/方法提案，当前 PROPOSED；Goal Owner 对 auth/Paseo 的 APPROVED 不授权真实模型调用，也不批准未实现的 adapted wrapper。预检、实现和真实结果须各自固定新 target 与检查证据。
+
+2026-10-06 03:23 UTC Goal Owner对真实对照提案审定（经Lead回传）：当前不批准真实调用，允许0模型兼容/参数预检；先原生能力后stock兼容性，保留版本差异，不为公平打造自制harness。2query/USD2未生效，合成写模型门槛不豁免。此为研究方向与授权边界审定，不是新代码/模型结果approval。
