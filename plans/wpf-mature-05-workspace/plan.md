@@ -35,3 +35,7 @@
 ## 固定研究输入
 
 见[固定b1c2源码与官方接口研究](../../docs/evidence/web-platform/mature-task-handoff.md)：现有split硬限两个group，尚无组合pane模型；现theme tokens可复用。可聚焦splitter键盘/ARIA需实际验证，不透明fallback不可只靠支持有限的media query。研究未构成实现或产品验收。
+
+### 组结构和预算后继验证（root 09:12固定main77c只读）
+
+现App tabs.map在groups.map内，跨group移动即使View.key同也可能remount，未来A|B合并/交换/resize需实际验证composer草稿、scroll、知识/附件选择、unknown receipt；不能只测纯reducer。持久仅版本化有界结构/相对比例/view refs，不存token；reload身份另核，未知ID占位不后台遍历conversation。现stream连接预算最多2读取lease、8cachedturn/4MiB（pane4turn/2MiB），3+pane须测公平前进/隐藏释放，不能解开UI上限就声称全部实时，A|B不需改host。原slot手动focus/Enter激活避免方向键触发批量按需读。React官方preserving-and-resetting-state支持tree位置推断，本轮无实测失败；来源https://react.dev/learn/preserving-and-resetting-state 与https://www.w3.org/WAI/ARIA/apg/patterns/tabs/ 。
