@@ -12,8 +12,10 @@ const pool = new Pool({ connectionString: databaseUrl, max: 5 });
 let app: Awaited<ReturnType<typeof createServer>>, base = '', created = false;
 beforeAll(async () => {
   await admin.query(`CREATE DATABASE ${database}`); created = true;
-  app = await createServer({ databaseUrl, ownerToken: 'chat08-owner', automaticQueueScan: false, leaseMs: 300_000 });
-  await migrateActiveSteering(pool); registerActiveSteeringRoutes(app, pool, { acceptCommands: true });
+  const configuration = { databaseUrl, ownerToken: 'chat08-owner', automaticQueueScan: false, leaseMs: 300_000, activeSteering: true };
+  app = await createServer(configuration);
+  await migrateActiveSteering(pool);
+  if (!app.hasRoute({ method: 'POST', url: '/api/runner/steering/finalize' })) registerActiveSteeringRoutes(app, pool, { acceptCommands: true });
   base = await app.listen({ host: '127.0.0.1', port: 0 });
 });
 afterAll(async () => { try { if (app) { app.server.closeAllConnections(); await app.close(); } } finally { await pool.end(); try { if (created) await admin.query(`DROP DATABASE ${database}`); } finally { await admin.end(); } } });
