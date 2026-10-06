@@ -1,11 +1,11 @@
-# F01 当前032消息设置生产准备
+# F01 当前032消息设置生产审查
 
 状态：NOT_STARTED
 Review target commit：0ee2494ed4298169c56ac3a6950fa1910ed62a7a
 
-范围仅新增`packages/client/src/claude-message-settings-production.test.ts`，作者native_center_owner。源码准备未经运行/类型或正式review，CORE固定输入与factory032 await未应用；不得把下面O14批准提升给此片。[Interface](../../docs/evidence/f01/claude-message-settings-production-interface.md)。
+作者native_center_owner；当前范围仅apps/server/src/index.ts及packages/client/src/claude-message-settings-production.test.ts。CORE ea27634源与C01最终6d1149源均作为独审固定输入，非本片作者实现或重审范围。真实生产1/1、focusedtypes最终0和原始失败/资源清理已固定，等待唯一独立review。[delivery](../../docs/evidence/f01/claude-message-settings-production-README.md)。无provider/runtime；ACK已收后重启，不是lostACK。
 
-历史O14已main bd14f984e3927df139815597c4c3171af84ec4b7，原5源与73a精确相同，不复测、不改历史审查结论。
+历史O14已main bd14，下面原审查保留，不能批准032新片。
 
 # F01 当前 O14 生产收尾审查
 

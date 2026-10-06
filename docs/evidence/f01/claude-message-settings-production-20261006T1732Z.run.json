@@ -1,0 +1,100 @@
+{
+  "window": "F01-032-PRODUCTION-20261006-1732",
+  "startedAt": "2026-10-06T17:31:29.506364+00:00",
+  "head": "9ac7e51196aef941c8bfdf2bf38f34e37ae57a47",
+  "sourceTarget": "0ee2494ed4298169c56ac3a6950fa1910ed62a7a",
+  "approvedInputs": [
+    "ea276572c3c99fb8400808a93efc69ce530d55a4",
+    "6d1145de30eea1eb4c267c88386ebc0479dfbd99"
+  ],
+  "cleanBefore": true,
+  "freeBeforeBytes": 1196900352,
+  "gateBytes": 1140850688,
+  "providerCalls": 0,
+  "runtimeStarts": 0,
+  "cacheBeforeBytes": 7046,
+  "limits": {
+    "workSeconds": 120,
+    "cleanupObservationSeconds": 30,
+    "rawBytes": 2097152,
+    "cacheGrowthBytes": 8388608,
+    "reserveBytes": 1073741824,
+    "PGWAL": "separate, observed via volume and DB facts"
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/client/src/claude-message-settings-production.test.ts",
+    "--maxWorkers=1",
+    "--no-cache"
+  ],
+  "pid": 53918,
+  "processGroup": 53918,
+  "state": "FINISHED",
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 3.0037337499670684,
+  "endedAt": "2026-10-06T17:31:32.512159+00:00",
+  "freeMinimumBytes": 1174093824,
+  "freeAfterBytes": 1177264128,
+  "cachePeakBytes": 7046,
+  "cacheAfterBytes": 7046,
+  "stdout": "claude-message-settings-production-20261006T1732Z.stdout.txt",
+  "stdoutBytes": 606,
+  "stdoutSha256": "752b5521af2bd870edaa73ec69a8416a8732fc9941dab35941c0ba94937f8050",
+  "ownedProcessGroupAlive": false,
+  "fixtureRecords": [
+    {
+      "path": "docs/evidence/f01/claude-message-settings-production-4b5370ed-c48d-441c-837d-11c710926492.json",
+      "bytes": 1163,
+      "sha256": "cd640d146ec71827afd1ee9c383768a29848312473fa2a5d051acecb31ba4586",
+      "facts": {
+        "database": "flow_f01_settings_af15d23bc6844e4bbd478009293b8eb8",
+        "marker": "4b5370ed-c48d-441c-837d-11c710926492",
+        "providerCalls": 0,
+        "runtimeStarts": 0,
+        "startedAt": "2026-10-06T17:31:30.861Z",
+        "freeBytesBefore": 1193627648,
+        "before": [],
+        "creationRequested": true,
+        "created": true,
+        "marked": true,
+        "accepted": {
+          "taskId": "03347e3a-e94d-4c5c-9e80-b016846cf0e1",
+          "queueItemId": "69b9dbf9-6046-4233-9f1b-b4b525107c09",
+          "sendKey": "74b3e2d4-f641-4b66-8078-79ebf14ecf7f",
+          "queueKey": "443956c7-6ab8-4f7e-9935-de5dece43629"
+        },
+        "journey": {
+          "migrationAtStartup": true,
+          "publicCatalogNegotiated": true,
+          "legacyCatalogIsolated": true,
+          "receivedAckThenRestart": true,
+          "snapshotsFrozen": true,
+          "counts": {
+            "tasks": 1,
+            "attempts": 0,
+            "queued": 1
+          }
+        },
+        "appClosed": true,
+        "poolClosed": true,
+        "databaseBytes": 12385303,
+        "connectionObservations": [
+          {
+            "elapsedMs": 1,
+            "connections": []
+          }
+        ],
+        "connections": [],
+        "dropped": true,
+        "remaining": [],
+        "adminClosed": true,
+        "errors": [],
+        "endedAt": "2026-10-06T17:31:32.490Z",
+        "phase": "cleaned"
+      }
+    }
+  ]
+}
