@@ -83,3 +83,5 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 [D04 多 Lead 领取](d04-coordination/plan.md) 已完成并部署；[status](d04-coordination/status.md) / [review](d04-coordination/review.md)。G01 首图命令、P02 Task-based A2A 持久出站、F01共享 client/CLI/生产入口和WPF-M02统一Web已分别审查，在I02接收集成。O01目标命令和E01零模型上游probe滚动推进；自然语言完整交付/插件生命周期/容量仍未完成。
 
 新增唯一source O01：`Flow-worktrees/goal-orchestration/plans/o01-goal-orchestration/`；WPF-PERF01：`Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/`。二者已收到committed claim；各Lead可对无冲突ready scope自助take，进度仍只维护owner status。registry共30来源，数量为本次登记事实而非每份plan均已完成。
+
+[D05架构视图](d05-architecture-view/plan.md) 实施中；五视图依据固定main3773db5，独立status/review与领取记录。产品预览49922明确为已审M02 HTTP fixture，不称main生产服务。

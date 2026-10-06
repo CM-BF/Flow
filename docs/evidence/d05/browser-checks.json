@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-10-06T03:23:41.217472+00:00",
+  "method": "CUA live browser observations recorded by author; not a fabricated Playwright stdout",
+  "url": "http://127.0.0.1:4322/#architecture",
+  "viewNodeCounts": {
+    "runtime": 9,
+    "modules": 10,
+    "data": 9,
+    "states": 10,
+    "dependencies": 7
+  },
+  "responsive": [
+    {
+      "width": 980,
+      "pageScrollWidth": 965,
+      "theme": "light",
+      "defaultZoom": 100,
+      "manuallyZoomed": 120,
+      "graphScrollWidth": 1364,
+      "graphClientWidth": 900
+    },
+    {
+      "width": 390,
+      "pageScrollWidth": 375,
+      "theme": "dark",
+      "zoom": 100,
+      "graphClientWidth": 322,
+      "graphScrollWidth": 1140
+    }
+  ],
+  "keyboardNodeSelection": "apps/server via Enter",
+  "nodeLabelOverflow": [],
+  "consoleErrorsAndWarnings": [],
+  "refreshPreservation": {
+    "manualRefresh": {
+      "before": {
+        "view": "data",
+        "zoom": "120%",
+        "node": "独立领取 PG"
+      },
+      "after": {
+        "view": "data",
+        "zoom": "120%",
+        "node": "独立领取 PG",
+        "sync": "2026/10/5 20:21:52"
+      }
+    },
+    "automaticRefresh": {
+      "afterExplicitFit": "79%",
+      "laterSync": "2026/10/5 20:22:54",
+      "view": "data",
+      "node": "独立领取 PG",
+      "zoom": "79%"
+    }
+  },
+  "screenshots": "980 light runtime and data;390 dark modules shown and actually inspected through CUA. Screenshots are conversation outputs, no local PNG claimed.",
+  "temporaryViewport": "reset after checks"
+}

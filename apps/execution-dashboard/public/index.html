@@ -2,12 +2,14 @@
 <html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark">
-  <title>Flow · 项目进度</title><link rel="stylesheet" href="/styles.css"><script src="/app.js" type="module"></script>
+  <title>Flow · 项目进度</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/architecture.css"><script src="/app.js" type="module"></script><script src="/architecture.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到项目进度</a>
   <header class="topbar"><a class="brand" href="/">Flow <span>项目进度</span></a><div class="toolbar"><label for="theme">主题</label><select id="theme"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select><button id="refresh" type="button">刷新状态</button></div></header>
+  <nav class="dashboard-nav" aria-label="工程看板视图"><a id="nav-progress" href="#progress" aria-current="page">进度</a><a id="nav-architecture" href="#architecture">架构</a><a class="product-link" href="http://127.0.0.1:49922/" target="_blank" rel="noopener">打开产品界面 · 模拟预览</a></nav>
   <main id="main" tabindex="-1">
+  <div id="progress-panel">
     <section class="overview" aria-labelledby="page-title"><div><h1 id="page-title">正在读取项目进度</h1><p id="phase-note" class="muted">读取各负责人维护的记录。</p></div><div class="sync"><span id="sync-state" role="status">读取中</span><time id="sync-time"></time></div></section>
     <div id="load-error" class="notice warning" role="alert" hidden></div>
     <div class="focus-layout">
@@ -19,6 +21,16 @@
     <details class="disclosure" id="history-section"><summary>已完成历史 <span id="history-count" class="count">0</span><span class="summary-note">含 M1，默认收起</span></summary><div id="history-items"></div></details>
     <details class="disclosure" id="all-plans"><summary>全部计划与证据 <span id="source-count" class="count">0</span></summary><div class="section-heading"><p class="muted small">完成、审查与集成分别核对。</p><label class="filter-label">显示<select id="filter" aria-label="显示计划"><option value="all">全部计划</option><option value="in_progress">进行中</option><option value="unknown">摘要待补</option></select></label></div><div id="workstreams"></div><p id="empty-filter" class="empty-state" hidden>当前筛选下没有计划。</p></details>
     <footer><span>只读进度，每 20 秒同步</span><details><summary>查看同步依据</summary><p id="main-observation"></p><p>各任务 status.md 是唯一手填事实源。未知不算通过，文档变化与实现变化分别核对。</p><a href="/api/snapshot" target="_blank" rel="noopener">生成的 JSON</a></details></footer>
+  </div>
+  <section id="architecture-panel" aria-labelledby="architecture-title" hidden>
+    <div class="architecture-heading"><div><h1 id="architecture-title">Flow 架构</h1><p>从运行边界到具体模块，查看当前代码如何协作。</p></div></div>
+    <div class="architecture-tools"><label for="architecture-view">视图</label><select id="architecture-view"></select><button id="architecture-zoom-out" type="button" aria-label="缩小架构图">−</button><output id="architecture-zoom" aria-live="polite"></output><button id="architecture-zoom-in" type="button" aria-label="放大架构图">+</button><button id="architecture-fit" type="button">适配视图</button></div>
+    <p id="architecture-summary" class="muted"></p>
+    <div class="architecture-legend" aria-label="图例"><span>实线边框：Flow 自有</span><span class="external">虚线边框：外部系统 / package</span><span class="planned">点线边框：开发 / 研究中</span><span class="dependency">虚线箭头：编译依赖；实线箭头：运行或状态关系</span></div>
+    <ul id="architecture-rules" class="architecture-rules" hidden></ul>
+    <div class="architecture-layout"><div id="architecture-viewport" class="architecture-viewport" tabindex="0" aria-label="架构图画布，可横向滚动"><svg id="architecture-canvas" role="group"></svg></div><aside class="architecture-detail" aria-live="polite"><h2 id="architecture-node-title"></h2><div id="architecture-node-content"></div></aside></div>
+    <details id="architecture-baseline"><summary>版本与维护依据</summary></details>
+  </section>
   </main>
   <dialog id="task-dialog" aria-labelledby="detail-title"><div class="dialog-top"><div><span id="detail-id" class="muted"></span><h2 id="detail-title"></h2></div><button id="close-dialog" type="button" aria-label="关闭任务详情">关闭</button></div><div id="detail-content"></div><section id="document-view" hidden><h3 id="document-title"></h3><p id="document-error" class="notice warning" hidden></p><pre id="document-text" tabindex="0"></pre><img id="document-image" alt="任务证据截图" hidden></section></dialog>
 </body></html>

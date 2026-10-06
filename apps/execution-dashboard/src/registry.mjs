@@ -30,6 +30,7 @@ const assignments = [
   ['WPF-PERF01', 'Web性能基线测量', '技术验证', 'web-performance', 'wpf-perf01-web-performance'],
   ['E01', 'Harness 零模型验证', '技术验证', 'harness-auth-probes', 'e01-harness-probes'],
   ['WPF-I01', 'Web 插件集成', '工作线', 'web-plugin-integration', 'wpf-i01-plugin-integration'],
+  ['D05', '代码架构视图', '工程协作', 'dashboard-architecture', 'd05-architecture-view'],
   ['D04', '多 Lead 领取协调', '工程协作', 'dashboard-coordination', 'd04-coordination'],
   ['F01', '共享领域接口', '工作线', 'm2-shared-foundation', 'f01-shared-domains'],
   ['G01', '版本化项目计划', '工作线', 'project-graph', 'g01-project-graph'],
