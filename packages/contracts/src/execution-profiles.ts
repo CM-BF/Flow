@@ -1,7 +1,8 @@
 import { z } from 'zod';
 
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
-const modelValue = z.string().min(1).max(180).refine(value => value === value.trim() && !/[\x00-\x1f]/.test(value));
+// The public catalog carries model identifiers, never arbitrary paths, prompts or settings text.
+const modelValue = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:-]{0,179}$/);
 export const executionProfileReferenceSchema = z.strictObject({ id: z.uuid(), runnerId: z.uuid(), configDigest: digest });
 export type ExecutionProfileReference = z.infer<typeof executionProfileReferenceSchema>;
 /** A configured request and gate policy, not a provider availability or effective-settings attestation. */
