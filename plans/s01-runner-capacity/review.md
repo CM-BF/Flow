@@ -1,7 +1,7 @@
 # S01 独立审查
 
-状态：CHANGES_REQUESTED
-Review target commit：c32d4d17e1de3351fa21a3713baa6031d4fcc612
+状态：APPROVED
+Review target commit：9da9de1b6778afec5219e55f39b53b365c8cf900
 
 批准边界：仅固定target65d7a57的合同方法和四任务功能smoke片段。正式容量/超领/故障/浏览器后继未覆盖。
 
@@ -30,3 +30,7 @@ Mika回应（2026-10-06 06:38 UTC）：补终态ACK等待、待发文件为空�
 ## 正式运行准备的新审查
 
 独立worker只读审c32d4d1 formal与6c5568a gate：两个P2为末次无执行负载读混入load、gate漏计完整存储预算；无其他P1/P2。Mika已修并加入共用预算回执门禁；PG实际版本补读。修复后6纯统计/预算测试与noEmit0，待固定后继commit复审。历史65smoke的APPROVED保持历史范围，新入口尚未批准；正式结果仍不存在。
+
+## 正式窗口准备复审结论
+
+2026-10-06T07:00:33Z 独立worker只读 **APPROVED**，target9da9de1b6778afec5219e55f39b53b365c8cf900；clean metadata8c5edbf。15源/2raw逐项核，6unit绿/noEmit0、生产apps/packages对115b零diff；两个P2已解，PG版本已补。批准仅准备代码，可申请gate8+formal16窗口；未执行/批准容量结果。后继ACK故障若领取但未emit，预算计数应改claim-grant或保守reservation；当前已审两smoke没有漏计，当前窗口门禁失败即停，此后继项不阻断本窗口。详见[固定复审](../../docs/evidence/s01/window-independent-review.json)。
