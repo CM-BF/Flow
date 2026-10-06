@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "kind": "X01_CALLER_PREPARATION_NOT_RUN",
+  "createdAt": "2026-10-06T23:56:37.116585+00:00",
+  "sourceCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+  "productSourceCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "dependencyViewReview": {
+    "target": "d12a3d3b0b81198874a17145c2210f43fef3e2ba",
+    "reviewer": "db_transaction_owner / gpt-6-astra",
+    "reviewedAt": "2026-10-06T23:45:58Z",
+    "verdict": "DEPENDENCY_VIEW_DESIGN_REVIEW_APPROVED",
+    "findings": []
+  },
+  "state": "NOT_OPEN",
+  "review": "PENDING",
+  "pythonRealpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+  "files": [
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "936f6addc0fbe51ffa59ab2b3a8aa476de4bd1b3",
+      "bytes": 20062,
+      "sha256": "55639aec4af28b4f13b8b94752365830a85c25b035b2aa8f45679cca06a20af0"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-launch.py",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "2616e53bf1551e65a75c216ca982c71ddb1efedb",
+      "bytes": 2564,
+      "sha256": "b33f2b0f59b564134bb13b996bdae6dd46fdb02f57da3dcd04ce7a0aee01b0be"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-caller-ready.md",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "a46ab953af5e29da6220496be802b2d642715fc2",
+      "bytes": 4674,
+      "sha256": "ad6cdf84ac7da03c515f2a6df7a7426784de1bca424f6786f56b9a25cd8f17e2"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-amend-v8.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "035e7e86a208a493ff2b4ad7e0cb1ee0066ff48c",
+      "bytes": 1240,
+      "sha256": "0a4721ebac4c097d961aaa311862f745063a4dea1ae45caf9d3a9fbae21b605c"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-input.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "0a6601d1bebe564f213c2f8a9210e9b6c12ee953",
+      "bytes": 25912,
+      "sha256": "4178efa9b0a111809ffbf56444c4075c32db1d5b67305ff274fc57ee83806241"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-dependency-view-request.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "f17abc4b47a6f9dc4aacfbb4b485884fc98b1928",
+      "bytes": 12108,
+      "sha256": "493598a34af50431894e9e316ada9437bda3c57a7b9412e4551da224fcf89878"
+    }
+  ],
+  "productInputs": [
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.test.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "6588e5a432cb0fda2783736018bf27dca75c1f42",
+      "bytes": 6124,
+      "sha256": "caa1f36163851a8ef4b1c5a106ce1ad9d7f67cdc34e35c89ab34cfb2d6df3fb4"
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "1407925bf658811b26c8a5809f4b6d2dac12f274",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "71e7cb2b00ba198d0337752693f6ef8114800674",
+      "bytes": 4657,
+      "sha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9"
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "8f6dde93dfd0c243009b31ac23cf7ee6cfc3a81a",
+      "bytes": 5748,
+      "sha256": "3760e0369bcc035ee56f58912286e98639db5ebc63642164c9d4830520c3f22a"
+    },
+    {
+      "path": "apps/server/src/plugins/plugins.test.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "f890dae6ea74a5e5dac037a90ca4a8418483c7ea",
+      "bytes": 17716,
+      "sha256": "cbd8573bfd28b0f3e54d7974d634a0c0f5e075a678bd2e36f7d64a86deaab8a4"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "f87898f22d4f09ea378758524808a17ec84fc3ce",
+      "bytes": 7455,
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "ac0fb95e7032ac5eedee0b15ae886b9e8e21c6fa",
+      "bytes": 10806,
+      "sha256": "6c90279e8af9d2ab8516e93ad1741da62d86075bdaa1337574af1c3be36c0f7d"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "318208c1a2519bc7bf35626f57a90357cc096402",
+      "bytes": 4390,
+      "sha256": "2e65341828f8b703194e3b8d574189f2b495636277379e15ce122f1ab3c2e96b"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "28196153a7aa45681b7985ee49d0987f29f692a5",
+      "bytes": 22946,
+      "sha256": "64f5c2165ea491ca58705e912b128713aec320215b30d9958bbb1f08f905df1f"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "60b637ad15eadc641c60a0b91687f56ec3519214",
+      "bytes": 4764,
+      "sha256": "09b410abd6028019e3c74b38ef9596b5f1dd2981c40e9d9306efae6ecab6309d"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "561185bc1f781e899ed25b8d8741b6a226e30330",
+      "bytes": 10110,
+      "sha256": "cc2bacc965a1aa341d744c993230b5fd3bcf4b027cc03602f0da6ed5cf363db9"
+    },
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "0169a325b6e2e62805f1eb84214ef9f9457354b0",
+      "bytes": 11298,
+      "sha256": "b51bb04f343b289bf6b3944da354f9b6ab3fe9ed8dd72d17aebfdb24c7add30e"
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "f5400cd61a81fd449ffa76dd030569718a3c5402",
+      "bytes": 23974,
+      "sha256": "f919352290f8086c20bfd929628ec83e9332ddd3237bb9ecfd45b144a6444414"
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "gitCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "gitBlob": "6939466d1802ada95d4889c83d42374cc1b8903c",
+      "bytes": 6572,
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d"
+    }
+  ],
+  "preparedConfiguration": [
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-tsconfig.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "707b8fd7365cae2251a718c7f9ec6e5e37ea34ba",
+      "bytes": 331,
+      "sha256": "7961c818eec5777996b8ea77939dd22ffc1a659e0375657f32a45d241ddc534e"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-consumer-tsconfig.json",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "17eb03149f38ad3f840a53737bca5cc9a3788f5c",
+      "bytes": 604,
+      "sha256": "739704f99e6692b722ee8cd062a02be5ce4760ed9f3396ec16d69f7700212076"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-vitest.config.mjs",
+      "gitCommit": "043298ef2faeea63a814c2cd524489ab4abe5c73",
+      "gitBlob": "e0f8ea8b60edcdea05ccd3f2f1c6246ad3e2b25c",
+      "bytes": 618,
+      "sha256": "7f1abd34e8d96a8c1485a36ec2f2ce441584be24e0ab8fe7546c802d8e6aa1cb"
+    }
+  ],
+  "external": [
+    {
+      "path": "/opt/homebrew/bin/python3",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/usr/bin/git",
+      "realpath": "/usr/bin/git",
+      "bytes": 118640,
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "supervisorSourceCommit": "8dcd3c9d6918268e0c406a970d82972abd246b06",
+  "runtimeInputs": "Fixed validation input retains 50 TS / 225154 logical bytes and its original prepared-artifact bindings; no input/dependency-request change. Package metadata is not whole-toolchain integrity proof.",
+  "outputs": {
+    "root": "docs/evidence/x01/enable-binding-local-run",
+    "observedAbsent": true,
+    "names": [
+      "reservation.json",
+      "admission.json",
+      "preflight.stdout",
+      "strict-launch.json",
+      "strict.stdout",
+      "tests-launch.json",
+      "tests.stdout",
+      "fixture.json",
+      "receipt.json"
+    ]
+  },
+  "limits": {
+    "wholeSeconds": 30,
+    "rawBytes": 524288,
+    "streamBytes": 458752,
+    "tailBytes": 65536,
+    "cliReservedBytes": 8192,
+    "floorBytes": 1107296256,
+    "temporarySampleBytes": 33554432,
+    "temporaryEntrySampleLimit": 4096,
+    "temporaryPeakBoundProven": false
+  },
+  "executionAuthorization": "Separate Mika receipt with fresh ledger v8 identity and exact reviewed final HEAD; no receipt is generated by this preparation.",
+  "checks": {
+    "syntax": "NOT_RUN",
+    "imports": "NOT_RUN",
+    "strict": "NOT_RUN",
+    "tests": "NOT_RUN",
+    "PG": 0,
+    "provider": 0,
+    "plannedDistinct": 17,
+    "plannedOwnedTarChildren": 11
+  },
+  "limitations": [
+    "No OPS14 deadline guarantee over caller persistence/rmtree or interpreter startup; external tool exit/wall required.",
+    "Original finite boolean/integer configuration adaptation remains without direct package-input assertion; prefix behavior alone is not that evidence.",
+    "No claimed actual cleanup, runtime peak, complete public vertical or production readiness."
+  ]
+}

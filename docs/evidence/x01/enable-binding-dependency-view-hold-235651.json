@@ -1,0 +1,52 @@
+{
+  "kind": "X01_DEPENDENCY_VIEW_HOLD",
+  "observedAt": "2026-10-06T23:56:51.367558Z",
+  "soleOperator": "architecture_read / gpt-6-astra",
+  "authority": "Execution Lead via Mika; 2026-10-06T23:55:05Z fresh transfer of the exact seven-link view; no other operator is delegated",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+  "claimVersion": 8,
+  "requestSha256": "493598a34af50431894e9e316ada9437bda3c57a7b9412e4551da224fcf89878",
+  "freeBytes": 1013399552,
+  "requiredFreeBytes": 1107296256,
+  "state": "HOLD",
+  "reason": "RESOURCE_FLOOR",
+  "priorProvisionReceiptPresent": false,
+  "destinations": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript",
+      "present": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest",
+      "present": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/zod",
+      "present": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/tar",
+      "present": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@types/node",
+      "present": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@flow/contracts",
+      "present": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@flow/plugin-runtime",
+      "present": false
+    }
+  ],
+  "directoriesCreated": 0,
+  "linksCreated": 0,
+  "contentCopiedBytes": 0,
+  "install": false,
+  "imports": 0,
+  "checks": "NOT_RUN",
+  "note": "The resource gate stopped before parent-directory/donor validation or any mutation; target metadata remains the independently reviewed d12 preparation, not a fresh supply proof."
+}

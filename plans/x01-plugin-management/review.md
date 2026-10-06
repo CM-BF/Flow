@@ -1,3 +1,15 @@
+# X01 当前局部验证调用方组合准备
+
+状态：NOT_STARTED（043298ef源码与准备包待独审；checks NOT_RUN）
+
+Review target commit: 043298ef2faeea63a814c2cd524489ab4abe5c73
+
+当前范围包含ade4的15产品源码/测试/034及3个既有验证配置、2个新Python支持源与caller Interface，详[清单](../../docs/evidence/x01/enable-binding-caller-manifest.json)。ade4产品源码静审及d12依赖设计批准分别保留，不覆盖新执行封套。仅文件/Git静态核；0import/syntax/types/tests/PG/链接。
+
+独立review仅读固定Git/manifest，核OPS14外部固定输入、同PID checkpoint、完整Git/claim receipt准入、30s和输出账、unknown与资源身份；不要执行新代码或改owner树。任意问题交owner修复。准备批准不开放实际窗口；实际仍需sole依赖供给与fresh资源/ledger及Mika一次OPEN。
+
+---
+
 # X01 当前 enable / frozen binding 实施
 
 状态：APPROVED（仅ade4源码静审，checks NOT_RUN）
