@@ -103,7 +103,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-PERF01测量 | w01_owner / web-performance / codex/web-performance | claim4553f315 v2保留fixture脚本+plan/evidence，probe已正式转PERF02；无生产/rootlock范围 |
 | WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | 已审7cb / 集成metadata083978b；claim08259c1d v3已将App/react转X03I01、projection及直接test转QUEUE00，原其余12scope保留；实现已在dd1/main4e，真实模型验收仍归Lead |
 | WPF-PERF02有界窗口 | w01_owner / web-activity-window / codex/web-activity-window | 实现a87已审且集成；claimd36cd583 v2 released，全部8scope停写，后续修复须新take |
-| WPF-X03I01实际插件管理挂载 | workspace_panels_owner / web-plugin-management-integration / codex/web-plugin-management-integration | claim a1044bb0 v1七scope，固定main4e；不改Mika模块/shared；canonical a534已建立 |
+| WPF-X03I01实际插件管理挂载 | workspace_panels_owner / web-plugin-management-integration / codex/web-plugin-management-integration | 84已审集入main80e；claim a1044bb0 v2 released，七scope停写，canonical05b92记录集成；后续新take |
 | WPF-PROFILE01配置选择模块 | w01_owner / web-execution-profiles / codex/web-execution-profiles | claim17093c4c v1，04:36:37.979Z已take；仅7新模块/测试文件+两元数据目录，旧CHAT/App不转交 |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实 |
 
@@ -149,7 +149,7 @@ type WorkspacePanelsProps = {
 | 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v3已转出CHAT四文件和X03I01 CSS，剩余保留范围 |
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
 | 已集成首批 / 后继开放 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 7cb限定APPROVED，083978b记录dd1/main已含；queue/steer/语音及完整模型控制仍开放，真实两query仅Lead执行、结果未收到 |
-| 已审待集成 | WPF-X03I01 | 实现84acdc / final4b7e0f clean，rootAPPROVED、管理scope/docs通过，停止产品写，Lead统一集成 |
+| 已集成/释放 | WPF-X03I01 | 84acdc / metadata05b92 clean，main80e已核，a104v2 released于04:46:47.517Z，59473保留 |
 | 当前独立模块 | WPF-PROFILE01 | 已发布整份profile选择与纯pin helper，无旧UI文件；fixed4e/17093c4c v1已受领，不把模块当App接通 |
 | 已集成 | WPF-PERF02 | 固定a87f64f及报告获独立APPROVED，metadata b617实证main8f包含/范围相同；claimv2已released，不继续占用已完成八scope |
 
@@ -252,3 +252,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:42 GoalOwner与MainLead明确授权 WPF-QUEUE00 最小reader先行，PROFILE App接线排其后、PROFILE模块照常。拟独立web-queue-compatibility/codex/web-queue-compatibility，从明确固定75a33dec228e17bbbd0d3be9fd01bc9ac18a0133（或Lead后给精确base）初始化；仅projection/直接tests/必要HTTPfixture与自有plan-evidence，等owner精确scope与旧CHATv2停写后CAS，新take后才写。MainLead承诺不先启用queue=true，按reader→contract/domain→mount成套验证。Mika最终域implae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 / metaaef5c6fcd3d811673e8eeb8cd67f225ba0941b8e据其root已独审54项；这里只转交来源，不当本队重跑或Web/生产接线通过。合同沿79867且queue拓宽boolean。
 
 04:43:26.665Z CHAT v2→v3原子移出projection.ts/conversation-projection.test.ts，其他12scope未变；04:43:35.187Z QUEUE00 claim13185d8f-fcc4-453b-9ff1-4e4ca38f0666 v1正式take四scope，fixed75a新树实核clean后开工，[receipt](../../docs/evidence/web-platform/queue00-take-receipt.json)。Lead确认X03 main80e已push/clean，旧owner仅metadata一次核main再release，服务59473不动；PROFILE候选b2b七源码限定范围已审无越界，产品review由root进行。
+
+04:47 X03旧owner提交05b92d30c953413ab66d8b69447c9b44c9121a6a记录main80e集成，正式a104 v2 released，七scope全停写；原receipt与后继研究保留。QUEUE00固定5acc/metadataafd已交root独审，最小读取兼容不等完整queue命令UI，注册待Lead通知。PROFILE候选a28仅补测试、4生产文件不变，等待整体结论。
