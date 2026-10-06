@@ -25,8 +25,10 @@ function Session({ connection }: { connection: number }) {
       <Button type="button" variant="outline" onClick={() => freeze("receipt-pending")} disabled={!!locked}>Freeze pending creation</Button>
       <Button type="button" variant="outline" onClick={() => freeze("created")} disabled={!!locked}>Show created lock</Button>
     </div>
-    <output data-testid="selection" style={{ display: "block", marginTop: "1rem", overflowWrap: "anywhere" }}>{locked ? JSON.stringify(locked.creation) : selection.kind === "configured" ? selection.profile.reference.id : "legacy-default"}</output>
-    <p data-testid="catalog-state">{snapshot.loading ? "loading" : snapshot.stale ? "stale" : "current"}; {snapshot.profiles.length} profiles; connection {connection}</p>
+    <details style={{ marginTop: "1rem", fontSize: ".8rem" }}><summary>Fixture diagnostics</summary>
+      <output data-testid="selection" style={{ display: "block", overflowWrap: "anywhere" }}>{locked ? JSON.stringify(locked.creation) : selection.kind === "configured" ? selection.profile.reference.id : "legacy-default"}</output>
+      <p data-testid="catalog-state">{snapshot.loading ? "loading" : snapshot.stale ? "stale" : "current"}; {snapshot.profiles.length} profiles; connection {connection}</p>
+    </details>
     <p style={{ color: "var(--muted-foreground)", fontSize: ".8rem" }}>HTTP fixture only. These controls freeze input locally; no conversation or model is invoked.</p>
   </>;
 }

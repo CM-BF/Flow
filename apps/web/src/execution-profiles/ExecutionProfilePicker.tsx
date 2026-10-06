@@ -48,10 +48,16 @@ export function ExecutionProfilePicker({ catalog, selection, onSelect, onRefresh
 }
 
 function FrozenConfiguration({ creation, pending }: { creation: ConversationCreation; pending: boolean }) {
+  const access = creation.requested.tools === "none" ? "No tools" : creation.requested.tools === "configured-readonly" ? "Read-only access" : `Access: ${creation.requested.tools}`;
+  const thinking = creation.requested.thinking === "disabled" ? "Thinking off" : `Thinking: ${creation.requested.thinking}`;
   return <section className="ep-locked" aria-label="Locked execution profile">
-    <strong>{pending ? "Creation receipt pending" : "Conversation profile locked"}</strong>
-    <p>{pending ? "Retry uses the same frozen creation configuration." : "Start a new conversation to choose another configuration."}</p>
-    <dl><dt>Requested model</dt><dd>{creation.requested.model}</dd><dt>Thinking</dt><dd>{creation.requested.thinking}</dd><dt>Access</dt><dd>{creation.requested.tools}</dd><dt>Profile</dt><dd>{creation.executionProfile?.id ?? "Unpinned legacy default"}</dd>{creation.executionProfile && <><dt>Runner</dt><dd>{creation.executionProfile.runnerId}</dd><dt>Configuration digest</dt><dd>{creation.executionProfile.configDigest}</dd></>}</dl>
-    <p className="ep-footnote">Requested configuration only. Actual model, tools and provider availability remain unknown until execution reports them.</p>
+    <div className="ep-locked-heading"><strong>Requested: {creation.requested.model}</strong><span>{pending ? "Creation receipt pending" : "Conversation profile locked"}</span></div>
+    <p className="ep-locked-summary">{access} · {thinking}{!creation.executionProfile && " · Unpinned legacy default"}</p>
+    <details className="ep-locked-details">
+      <summary>Execution details <span>Requested only · actual settings unknown</span></summary>
+      <p>{pending ? "Retry uses the same frozen creation configuration. Configuration cannot change while the receipt is pending." : "Start a new conversation to choose another configuration."}</p>
+      <dl><dt>Requested model</dt><dd>{creation.requested.model}</dd><dt>Thinking</dt><dd>{creation.requested.thinking}</dd><dt>Access</dt><dd>{creation.requested.tools}</dd><dt>Profile</dt><dd>{creation.executionProfile?.id ?? "Unpinned legacy default"}</dd>{creation.executionProfile && <><dt>Runner</dt><dd>{creation.executionProfile.runnerId}</dd><dt>Configuration digest</dt><dd>{creation.executionProfile.configDigest}</dd></>}</dl>
+      <p className="ep-footnote">Requested configuration only. Actual model, tools and provider availability remain unknown until execution reports them.</p>
+    </details>
   </section>;
 }
