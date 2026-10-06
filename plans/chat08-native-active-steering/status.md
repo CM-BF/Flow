@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 08:01:25 UTC |
+| 最近更新时间 | 2026-10-06 08:09:59 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering |
 | Branch | codex/native-active-steering |
@@ -18,10 +18,10 @@
 | 产品实现目标 | f78a15c69f3f365a37c9f317249858d8e279503d |
 | 实现范围 | apps/runner/src/active-steering/host.ts,apps/runner/src/active-steering/input.ts,apps/runner/src/active-steering/proposal.ts,apps/runner/src/active-steering/state.test.ts,apps/runner/src/active-steering/state.ts,apps/runner/src/assistant-stream/index.ts,apps/runner/src/claude.test.ts,apps/runner/src/claude.ts,apps/runner/src/outbox.test.ts,apps/runner/src/outbox.ts,apps/runner/src/runner.test.ts,apps/runner/src/runtime.ts,apps/server/src/active-steering/commands.ts,apps/server/src/active-steering/finalization.test.ts,apps/server/src/active-steering/finalization.ts,apps/server/src/active-steering/index.ts,apps/server/src/active-steering/results.ts,apps/server/src/events.ts,packages/contracts/src/active-steering.ts,packages/contracts/src/runner.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 1 |
-| 当前产出 | 执行中补充指令的本地闭环已合入中心 |
-| 下一可用交付 | 补齐执行配置准入，再验收真实会话与界面 |
+| 当前产出 | 本片段已交付，执行中补充指令的本地闭环已合入中心 |
+| 下一可用交付 | 本片段已交付；真实会话与界面属于后继验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -39,3 +39,5 @@ claim `2f7b66e3-a18c-40df-a5f9-7d5977a4618e` v2 本次metadata提交后全部停
 2026-10-06 07:52:34 UTC 转录 Execution Lead / gpt-6-astra 的独立只读 APPROVED，目标 d4e7445fca4fbc261cbf33101fca4d9407879315，观测作者clean HEAD 91eb274e5cc11bcda6471fe4fba57f649b53bfdf。核对20 source、20 raw、2 readonly、3 SDK文件和manifest；无P1/P2，未重跑检查、0provider。批准只含PG/HTTP与注入SDK纵向，不含生产挂载、真实原生子进程、模型遵从、UI或cap开启。完整结论见[review](review.md)；原始证据不变。
 
 2026-10-06 08:01:25 UTC main receipt：Lead核24源码与已审挂载逐字一致，未重跑。作者只读核d4e为main祖先；所有本片scope在此提交后停止写入，后继配置受理使用独立CHAT09。原始证据/106检查不变；未宣称provider/UI/个人服务已启用。
+
+2026-10-06 08:09:59 UTC 管理校准：旧产品claim已released v3；新metadata-only claim `ca2ad795-88e5-4c54-8a95-ac35982c68b0` v1仅领取本plan/evidence。将片段阶段标delivered，不重新打开已交付工程；CHAT08-06保持pending，配置准入由独立[CHAT09](/Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission/plans/chat09-steering-admission/plan.md)消费。原d4e独审/106检查/main receipt不变。此metadata提交后停止本两目录写入并release，回执 /tmp/flow-chat08-meta-release-receipt.json。
