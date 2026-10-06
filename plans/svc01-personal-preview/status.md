@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:34:50 UTC / 2026-10-06 04:29 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:37:35 UTC / 2026-10-06 04:37:35 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-preview` |
@@ -11,13 +11,13 @@
 | 工作树dirty状态 | 实现已提交；本次仅固定目标metadata，交付后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 715eca5f299fecda9e71a0c58c62f6fa7a5656dc：Node公开行为8/8，15.496s，0模型；没有跑产品全套 |
-| 已集成main状态 / HEAD | main dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8，尚无本启动器/本工具用户服务 |
+| 已集成main状态 / HEAD | main/origin 75a33dec228e17bbbd0d3be9fd01bc9ac18a0133；715eca5为其祖先且实现范围diff为空；Lead已04:36:01启动专属常驻服务 |
 | 实现目标 | 715eca5f299fecda9e71a0c58c62f6fa7a5656dc |
 | 实现范围 | tools/personal-preview/ |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 启动器已独立审查通过，环境隔离修复与8项检查证据已确认 |
-| 下一可用交付 | Lead合入启动器与SDK环境隔离后，启动专属服务并另交新URL |
+| 当前产出 | 专属中心、runner与产品Web已零消息启动并持续保留 |
+| 下一可用交付 | 收录Lead零POST浏览器核验；首次UI仍需本机owner token认证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED 715eca5f299fecda9e71a0c58c62f6fa7a5656dc，Execution Lead独立只读；[review.md](review.md) |
@@ -26,17 +26,19 @@
 | --- | --- | --- | --- |
 | SVC01-01 | completed | runner_owner | handoff v2→accept v3，04:13:58Z，receipt已落盘 |
 | SVC01-02 | completed | runner_owner | 8/8真实公开行为；本工具无provider探测 |
-| SVC01-03 | in-progress | Lead / independent reviewer | 实现715eca5已独立APPROVED；待Lead主线接收 |
-| SVC01-04 | pending | Lead | 未启动服务，原49922仍fixture |
+| SVC01-03 | completed | Lead / independent reviewer | 715eca5独审APPROVED且main75a33已接收；另含Root独审SDK环境修复 |
+| SVC01-04 | in-progress | Lead | 已启动并保留http://127.0.0.1:61228；04:36:06状态running/owned/0任务；待零POST浏览器证据 |
 
 ## 证据与下一步
 
-[质量与技能](../../docs/evidence/svc01/quality.md)。本启动器本轮0真实模型；F01模型验收由Lead独立记账，本status不推测其当前调用数。实现与已审三端基线已固定；下一步独立review、Lead集成和永久服务启动，Web连接展示由外部owner消费。
+[质量与技能](../../docs/evidence/svc01/quality.md)。本启动器本轮0真实模型；F01模型验收由Lead独立记账，本status不推测其当前调用数。[实际部署证据](../../docs/evidence/svc01/deployment.md)已收录；两次原始状态未被重写，首次用户认证与真实query尚未发生。Web连接展示由外部owner消费。
 
 Dashboard仅聚合本status，领取事实从D04账本读取；Lead已登记第45来源；本轮不操作4320。保持专属配置秘密不进Git，工作分支检查不等于main服务已具备。
 
-架构影响：本地个人center/runner/Web持有拓扑与专库标记；本scope README记录接口，Lead集成target后同步工程dashboard固定图。当前实际用户服务未启动。
+架构影响：本地个人center/runner/Web持有拓扑与专库标记；本scope README记录接口，Lead集成target后同步工程dashboard固定图。当前实际用户服务已由Lead启动；本owner不操作其生命周期。
 
 2026-10-06 04:33:28 UTC 独立review发现P2：继承全部进程环境。已隔离wrapper/实际role child，并用纯合成marker检查6个真实子进程环境；相关三端生命周期复跑8/8。修复target 715eca5f299fecda9e71a0c58c62f6fa7a5656dc，旧7/7日志不覆盖。产品runner→SDK环境隔离由Lead另行修复，不在本scope。
 
 2026-10-06 04:34:50 UTC Lead独立只读APPROVED固定715eca5，未重跑；本树源码冻结，claim v3保留待集成。SVC01-03的main接收和04常驻交付仍由Lead完成，native SDK环境隔离是另一个独立修复，不由本status冒称已部署。
+
+2026-10-06 04:37:35 UTC 收录Lead部署：原始live-start/status两JSON观测分别04:36:01.712Z与04:36:06.754Z。配置/认证事实不等provider可用；未复制私有config、不重测/不发消息。上文历史“待集成/未启动”仅保留当时记录，当前事实以本表及部署证据为准。
