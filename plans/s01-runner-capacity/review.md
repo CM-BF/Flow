@@ -1,12 +1,14 @@
 # S01 独立审查
 
-当前 idle-claim-cost 全组合准备：CHANGES_REQUESTED（原0de832/380666三P2；a41e前两P2静态关闭，第三receipt accounting最后门禁修复待固定复审），0fake/actual/strict。输入固定8d84；early checkpoint73157915758b934cce5131045317c892288ddc7a由architecture_read于2026-10-06 18:38:51 UTC只读SOURCE_REVIEW，无P1/P2、VALIDATION_PENDING；仅observer/budget+9fake草稿，不覆盖后加薄外壳/实际窗。历史批准均不覆盖新准备。
+当前 idle-claim-cost 全组合准备：SOURCE_APPROVED（architecture_read 2026-10-06 19:04:43 UTC，source4da7三P2全CLOSED），VALIDATION_FAILED(runtime fixture类型)/actual NOT_OPEN。9fake与pure strict通过，runtime strict2后停止。输入固定8d84；early checkpoint73157915758b934cce5131045317c892288ddc7a由architecture_read于2026-10-06 18:38:51 UTC只读SOURCE_REVIEW，无P1/P2、VALIDATION_PENDING；仅observer/budget+9fake草稿，不覆盖后加薄外壳/实际窗。历史批准均不覆盖新准备。
 
 2026-10-06 18:56:32 UTC root/architecture静态审发现并交owner修复：最终sample unknown仍读/删root、预约后未重新夹10s启动、截断尾流未补收费。owner本次修final sample事实gate、明确EMPTY/known identity、spawn紧前同deadline、超capture尾流额外收费/unknown；加root tsconfig只读input，统一light floor1107296256B。整体预算仍2MiB/15s，按root允许将预留分为128KiB自动+128KiB人工归档，以单清单计整个plan/status/review和检查/收口。新source未复审、0检查，不将working delta记为P2已获关闭。旧input/manifest/ready原字节保留。
 
 2026-10-06 19:03:37 UTC：architecture_read指出JSON.parse后internal已赋值并不表示身份/input/journal通过；本窄修复用成功保存后才成立的caseReceiptConfirmed限制accountingComplete。任何CASE_RECEIPT_UNKNOWN保持known/withinTotal=false。v3 input和单archive ledger另存，旧packet不改；候选待独立复审，0检查/actual。
 
 Review target commit: `4da7f6852a047e417a5779ae3f1d745745f9a77d`；[最小delta manifest](../../docs/evidence/s01/idle-claim-cost/receipt-accounting-fix-manifest.json)，4bindings与81input均Git=WT/hash/bytes核符，旧d215七份准备记录逐字不变。此为绑定核对，非工程检查。
+
+2026-10-06 19:07:07 UTC：一次授权检查结果及全部原raw绑定见[source review/check receipt](../../docs/evidence/s01/idle-claim-cost/source-review-v2.json)。9fake/9通过、pure strict0；runtime strict2缺fixture adapter version，syntax未跑。工具资源已全部关闭/根absent。源三P2关闭与此验证失败分开，尚无actual许可或新准备整体通过。
 
 ## 历史 A/B 准备批准
 

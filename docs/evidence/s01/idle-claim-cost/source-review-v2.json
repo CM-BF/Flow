@@ -1,0 +1,83 @@
+{
+  "source": "4da7f6852a047e417a5779ae3f1d745745f9a77d",
+  "executionHead": "ec61a925c30f5f94c6611256476e2c2f7940fbc5",
+  "sourceReview": {
+    "reviewer": "architecture_read / gpt-6-astra",
+    "at": "2026-10-06 19:04:43 UTC",
+    "verdict": "SOURCE_APPROVED",
+    "p1": 0,
+    "p2": 0,
+    "closed": "Three preparation source findings only; validation was pending."
+  },
+  "validation": {
+    "fake": {
+      "selected": 9,
+      "passed": 9,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "pureTypes": {
+      "exitCode": 0
+    },
+    "runtimeTypes": {
+      "exitCode": 2,
+      "diagnostic": "idle-claim.test.ts(109,18) TS2741: fixture adapter missing required version"
+    },
+    "syntax": "NOT_RUN; stopped at runtime strict failure",
+    "actual": "NOT_OPEN",
+    "provider": 0,
+    "pg": 0,
+    "rawBytes": 613,
+    "wholeWindowMs": 2360.0334159564227,
+    "ownTmpSampledPeakAllocatedBytes": 78208,
+    "retainedRoots": []
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/fake.stdout.txt",
+      "bytes": 414,
+      "sha256": "9de2cee1a98fd16957c011f07da301a35f8bf19c961a7ad9c52c165767ca185c"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/fake.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/fake.receipt.json",
+      "bytes": 2103,
+      "sha256": "4dd86b836e7fc3124659587d073f7cbf834d091a279d5fd6a214891e6f4c708f"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/pure-types.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/pure-types.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/pure-types.receipt.json",
+      "bytes": 1923,
+      "sha256": "d20193985c6eb1f4613eee2518a36715732191fcf8b01cc7c96df3076640bbea"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.stdout.txt",
+      "bytes": 199,
+      "sha256": "66d525809949007b7ba2908691539082361d1a80ed09c6bd4ebb512fafb805ff"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.receipt.json",
+      "bytes": 1931,
+      "sha256": "5893a9678bc5f7e2324e47a4b8cdf3e0f6cf84496966faff73735c6c0a4ded88"
+    }
+  ],
+  "receiptMeaning": "Per-step receipt includes exact argv, real child exits, group/stdio closure, initial resource fact and identity-checked own-temp removal. No actual runRunner test was selected."
+}

@@ -1,0 +1,62 @@
+{
+  "step": "runtime-types",
+  "executionHead": "ec61a925c30f5f94c6611256476e2c2f7940fbc5",
+  "source": "4da7f6852a047e417a5779ae3f1d745745f9a77d",
+  "startedAt": "2026-10-06T19:06:42.856744+00:00",
+  "stepElapsedMs": 1196.6917499667034,
+  "processes": [
+    {
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "experiments/runner-capacity/mixed/idle-claim-runtime-tsconfig.json"
+      ],
+      "pid": 63419,
+      "exitCode": 2,
+      "groupGone": true,
+      "streamsEnded": true,
+      "stoppedFor": null
+    }
+  ],
+  "rawBytes": 199,
+  "expectedSelection": null,
+  "window": "S01_IDLE_PREPARATION_CHECKS_20261006_1905",
+  "windowStartedAt": "2026-10-06T19:06:42.856744+00:00",
+  "endedAt": "2026-10-06T19:06:45.216644+00:00",
+  "windowElapsedMs": 2359.892457956448,
+  "freeBytesBefore": 1512800256,
+  "totalObservedStdoutStderrBytes": 613,
+  "limits": {
+    "windowMs": 45000,
+    "stepMs": 15000,
+    "rawBytes": 16384,
+    "ownTmpBytes": 8388608
+  },
+  "environment": {
+    "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+    "TMPDIR": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-idle-checks-78ykuk8z",
+    "FLOW_S01_IDLE_ROOT": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-idle-checks-78ykuk8z",
+    "FLOW_S01_IDLE_MODE": "fake",
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "CI": "1",
+    "NO_COLOR": "1"
+  },
+  "cleanup": {
+    "root": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-idle-checks-78ykuk8z",
+    "dev": 16777234,
+    "ino": 123139914,
+    "groupUnknown": false,
+    "inventoryUnknown": false,
+    "peakSampledAllocatedBytes": 78208,
+    "finalAllocatedBytes": 64,
+    "removed": true,
+    "retainedRoots": [],
+    "peakBetweenSamples": "UNKNOWN"
+  },
+  "failure": "runtime-types_FAILED",
+  "notRunSteps": [
+    "syntax"
+  ]
+}

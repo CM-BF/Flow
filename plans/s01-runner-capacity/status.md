@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:03:37 UTC / idle 固定main8d84只读输入；历史集成aae |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:07:07 UTC / idle 固定main8d84只读输入；历史集成aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | idle固定main8d84；当前receipt accounting source 4da7f6852a047e417a5779ae3f1d745745f9a77d（前包a41e5126/d215保留）；旧0de832/380666保留。未合入新main |
-| 工作树dirty状态 | 本次 idle 观察器/新证据/owner metadata 实施中；历史 A/B/128 source 与 raw 未修改 |
+| 工作树dirty状态 | source4da7冻结，本次仅检查证据与metadata；历史 A/B/128 raw未修改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | idle NOT_RUN，fake/actual/strict 均未运行；历史 A/B 64 distinct 分次最终覆盖与 local strict0 不覆盖新准备 |
+| 检查状态 | idle 9fake/9通过、pure strict0；runtime strict2（测试adapter缺version），syntax未跑；actual NOT_OPEN。历史A/B检查单列 |
 | 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
-| 实现目标 | idle前两P2已静态关闭；第三P2的receipt accounting最后门禁已固定待复审；0checks |
+| 实现目标 | source4da7三P2全CLOSED；当前runtime test fixture类型失败待修，9fake/pure已通过 |
 | 实现范围 | claim508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE，mixed、两个A/B evidence、idle-claim-cost evidence、原plan共5 literal；无产品写权 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 计量完整性改为要求已校验并保存的case receipt；身份/input/journal未知时known与withinTotal均false；尚未运行 |
-| 下一可用交付 | 独立复核新固定包；获得明确小检查窗口后验证9个fake及类型，实际探针另开窗口 |
-| 当前阻塞 | 最小修复已固定交审；独立复审/验证PENDING，fake/actual NOT_OPEN。A/B仍NOT_OPEN |
+| 当前产出 | 准备SOURCE_APPROVED；一次检查9fake/pure通过，runtime strict缺version失败后停止，全部自有检查资源已清理 |
+| 下一可用交付 | 最小补测试adapter version并单独定向runtime strict/未跑syntax；actual另开窗口 |
+| 当前阻塞 | runtime strict TS2741缺version待修；syntax PENDING；actual NOT_OPEN。A/B仍NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | 原0de832三P2 CHANGES_REQUESTED；a41e前两P2静态关闭，第三最后门禁修复待独审；observer early731仅SOURCE_REVIEW无P1/P2/VALIDATION_PENDING；历史A/B批准不覆盖idle |
+| Review | architecture_read 19:04:43对4da7 SOURCE_APPROVED/三P2全CLOSED；原CHANGES_REQUESTED历史保留；验证出现新fixture类型失败，不等于actual批准 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -222,3 +222,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 18:58:22 UTC：修复source a41e5126已push；79固定input逐Git=WT/hash核符、406380B；7delta bindings及3旧包原字节已核。当前[增量交审入口](../../docs/evidence/s01/idle-claim-cost/review-fixes-ready.md)，独立复核未完成、0checks。旧实验计数不变，以各历史原包为准；不将静态哈希检查写成工程测试。
 
 2026-10-06 19:03:37 UTC：fresh claim508f v2 ACTIVE/5scope。依architecture_read增量finding，仅将最终accountingComplete依赖caseReceiptConfirmed（必须身份、input、journal与持久副本确认，且EMPTY），不再以JSON可解析代表可信计量。前两P2与超额尾流收费算法静态核已通过；剩余门禁待固定复审。v3 input/ledger独立保存，原380666与d215包字节不改，15秒/2MiB/256KiB预留不变。clean-code检查命名/单一收据权威/错误保守边界，无新抽象；0fake/strict/actual，run仍未创建。
+
+2026-10-06 19:07:07 UTC：root唯一准备检查窗完成2.360s，9fake(6+3)/pure strict0；runtime strict exit2 TS2741仅缺fixture version，依失败停止未执行syntax。stdout+stderr613B，freshfree1512800256B；3个自有工具进程均exit/close/groupGone/stdio完成，自有根原dev/ino核后删除absent，sampled peak78208B、retained[]。证据见source-review-v2.json及validation；0actual runtime/PG/provider，未重跑/未改source。
