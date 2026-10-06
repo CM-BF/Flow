@@ -124,3 +124,107 @@ describe("host-bound lazy conversation activity", () => {
     expect(value.projection.getSnapshot().details["detail-1"]?.data?.content).toHaveLength(MAX_DETAIL_BYTES);
   });
 });
+
+
+// Contract fixtures mirror passed C02 HTTP/SSE assertions at 309be086 (compatibility.test.ts:113–138).
+// These use the actual reader via a mock port; they are not historical raw HTTP captures.
+describe("filtered raw-scan cursor compatibility", () => {
+  it("crosses the HTTP hidden-only page after 1 → 3 and reaches ordinary cursor 5", async () => {
+    const value = setup();
+    value.port.readEvents.mockResolvedValueOnce(page([entry(1)], { watermark: 5, hasMore: true }))
+      .mockResolvedValueOnce(page([], { nextCursor: 3, watermark: 5, hasMore: true }))
+      .mockResolvedValueOnce(page([{ id: "ordinary-5", cursor: 5, createdAt: at, kind: "text", text: "Visible after hidden stream" }]));
+    await open(value); await value.projection.loadMore();
+    expect(value.projection.getSnapshot()).toMatchObject({ cursor: 3, watermark: 5, hasMore: true, error: null });
+    expect(value.projection.getSnapshot().entries).toEqual([entry(1)]);
+    await value.projection.loadMore(); await value.projection.loadMore();
+    expect(value.port.readEvents.mock.calls.map(([after]) => after)).toEqual([0, 1, 3]);
+    expect(value.projection.getSnapshot().entries.map(item => item.cursor)).toEqual([1, 5]);
+    expect(value.projection.getSnapshot()).toMatchObject({ cursor: 5, hasMore: false, error: null });
+    expect(value.port.readDetail).not.toHaveBeenCalled();
+  });
+  it("resumes from the SSE hidden-only raw cursor 33 and reaches ordinary cursor 37", async () => {
+    const value = setup();
+    value.port.readEvents.mockResolvedValueOnce(page([entry(1)], { watermark: 36, hasMore: true }))
+      .mockResolvedValueOnce(page([], { nextCursor: 33, watermark: 36, hasMore: true }))
+      .mockResolvedValueOnce(page([{ id: "ordinary-37", cursor: 37, createdAt: at, kind: "text", text: "Visible after hidden stream" }]));
+    await open(value); await value.projection.loadMore(); value.projection.setOnline(false);
+    await value.projection.refresh(); expect(value.port.readEvents).toHaveBeenCalledTimes(2);
+    value.projection.setOnline(true); await value.projection.refresh();
+    expect(value.port.readEvents.mock.calls.map(([after]) => after)).toEqual([0, 1, 33]);
+    expect(value.projection.getSnapshot().entries.map(item => item.cursor)).toEqual([1, 37]);
+    expect(value.projection.getSnapshot()).toMatchObject({ cursor: 37, hasMore: false, error: null });
+    expect(value.port.readDetail).not.toHaveBeenCalled();
+  });
+  it("accepts a visible page with a filtered tail and a final empty scanned page", async () => {
+    const value = setup();
+    value.port.readEvents.mockResolvedValueOnce(page([entry(1)], { nextCursor: 3, watermark: 5, hasMore: true }))
+      .mockResolvedValueOnce(page([], { nextCursor: 5, watermark: 5 }));
+    await open(value); expect(value.projection.getSnapshot()).toMatchObject({ cursor: 3, error: null });
+    await value.projection.loadMore(); await value.projection.loadMore();
+    expect(value.projection.getSnapshot()).toMatchObject({ cursor: 5, hasMore: false, error: null, entries: [entry(1)] });
+    expect(value.port.readEvents.mock.calls.map(([after]) => after)).toEqual([0, 3]);
+    expect(value.port.readDetail).not.toHaveBeenCalled();
+  });
+  it("accepts an entirely filtered terminal page and refreshes at the same exhausted cursor", async () => {
+    const value = setup(); value.port.readEvents.mockResolvedValue(page([], { nextCursor: 3, watermark: 3 }));
+    await open(value); await value.projection.loadMore(); await value.projection.refresh();
+    expect(value.projection.getSnapshot()).toMatchObject({ loaded: true, entries: [], cursor: 3, hasMore: false, error: null });
+    expect(value.port.readEvents.mock.calls.map(([after]) => after)).toEqual([0, 3]);
+  });
+  it("deduplicates known overlaps while advancing beyond the last returned entry", async () => {
+    const value = setup(); await open(value);
+    value.port.readEvents.mockResolvedValueOnce(page([entry(1)], { nextCursor: 3, watermark: 3 })); await value.projection.refresh();
+    expect(value.projection.getSnapshot()).toMatchObject({ entries: [entry(1)], cursor: 3, error: null });
+  });
+  it.each([
+    { entries: [entry(1), entry(1)], nextCursor: 3, watermark: 3 },
+    { entries: [entry(2), entry(1)], nextCursor: 3, watermark: 3 },
+    { entries: [entry(4)], nextCursor: 3, watermark: 3 },
+    { entries: [], nextCursor: 4, watermark: 3 },
+    { entries: [], nextCursor: 0, watermark: 3, hasMore: true },
+    { entries: [], nextCursor: 2, watermark: 3, hasMore: false },
+    { entries: [], nextCursor: 3, watermark: 3, hasMore: true },
+    { entries: [], nextCursor: 3, watermark: 3, task: { ...task, id: "other" } },
+  ])("rejects malformed filtered page %j without retry loops", async patch => {
+    const value = setup(); value.port.readEvents.mockResolvedValue(page([], patch)); await open(value);
+    expect(value.projection.getSnapshot()).toMatchObject({ loaded: false, cursor: 0, entries: [] });
+    expect(value.projection.getSnapshot().error).toBeTruthy(); expect(value.port.readEvents).toHaveBeenCalledTimes(1);
+    expect(value.port.readDetail).not.toHaveBeenCalled();
+  });
+  it("rejects a scan cursor moving behind after without replacing previous state", async () => {
+    const value = setup(); value.port.readEvents.mockResolvedValueOnce(page([entry(2)])); await open(value);
+    value.port.readEvents.mockResolvedValueOnce(page([], { nextCursor: 1, watermark: 1 })); await value.projection.refresh();
+    expect(value.projection.getSnapshot()).toMatchObject({ cursor: 2, entries: [entry(2)], stale: true });
+    expect(value.projection.getSnapshot().error).toBeTruthy(); expect(value.port.readEvents).toHaveBeenCalledTimes(2);
+  });
+  it.each([
+    { ...entry(1), reference: { id: "different", title: "Changed payload" } },
+    { ...entry(1), id: "different-event" },
+  ])("retains previous entries when overlapping identities conflict %j", async conflict => {
+    const value = setup(); await open(value);
+    value.port.readEvents.mockResolvedValueOnce(page([conflict], { nextCursor: 3, watermark: 3 })); await value.projection.refresh();
+    expect(value.projection.getSnapshot()).toMatchObject({ entries: [entry(1)], cursor: 1 });
+    expect(value.projection.getSnapshot().error).toContain("conflicts");
+  });
+  it("refuses to backfill an unknown entry behind an already scanned filtered cursor", async () => {
+    const value = setup(); value.port.readEvents.mockResolvedValueOnce(page([], { nextCursor: 3, watermark: 3 })); await open(value);
+    value.port.readEvents.mockResolvedValueOnce(page([entry(2)], { nextCursor: 4, watermark: 4 })); await value.projection.refresh();
+    expect(value.projection.getSnapshot()).toMatchObject({ entries: [], cursor: 3 });
+    expect(value.projection.getSnapshot().error).toContain("conflicts");
+  });
+  it.each([1, 2])("rejects reset when after 1 is not beyond watermark %s", async watermark => {
+    const value = setup(); await open(value);
+    value.port.readEvents.mockResolvedValueOnce(page([], { reset: true, nextCursor: 0, watermark })); await value.projection.refresh();
+    expect(value.projection.getSnapshot()).toMatchObject({ cursor: 1, entries: [entry(1)] });
+    expect(value.projection.getSnapshot().error).toContain("reset"); expect(value.port.readEvents).toHaveBeenCalledTimes(2);
+  });
+  it.each([
+    { entries: [entry(1)] }, { nextCursor: 1 }, { hasMore: true },
+  ])("rejects malformed reset even when after exceeds watermark %j", async patch => {
+    const value = setup(); await open(value);
+    value.port.readEvents.mockResolvedValueOnce(page([], { reset: true, nextCursor: 0, watermark: 0, ...patch })); await value.projection.refresh();
+    expect(value.projection.getSnapshot()).toMatchObject({ cursor: 1, entries: [entry(1)] });
+    expect(value.projection.getSnapshot().error).toContain("reset"); expect(value.port.readEvents).toHaveBeenCalledTimes(2);
+  });
+});
