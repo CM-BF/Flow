@@ -1,0 +1,51 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools
+
+ ❯ apps/runner/src/goal-graph-tools/integration.test.ts (3 tests | 2 failed) 8559ms
+   × executes read -> propose -> apply -> actual typed final through the production adapter and real HTTP/PG without executing children 806ms
+   × recovers a lost apply ACK with its stable key and rejects cached replay after revoke 6563ms
+   ✓ cancels a live bridged query without accepting a late final or artifact 252ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/goal-graph-tools/integration.test.ts > executes read -> propose -> apply -> actual typed final through the production adapter and real HTTP/PG without executing children
+AssertionError: expected { kind: 'goal-graph-run', …(5) } to match object { kind: 'goal-graph-run', …(5) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "attemptId": undefined,
++   "attemptId": "8c2f52ef-35b3-478f-9ec4-03f34526d456",
+    "kind": "goal-graph-run",
+    "ownerVersion": 1,
+    "runId": "653b63d7-bf04-46af-92e6-d52c7a9bc6f5",
+    "runnerId": "c957bbbb-5a90-4307-8ab4-56b643ce8142",
+    "taskId": "db35f6c2-2f26-4125-b6a5-a0dc5dcda86a",
+
+ ❯ apps/runner/src/goal-graph-tools/integration.test.ts:93:25
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/goal-graph-tools/integration.test.ts > recovers a lost apply ACK with its stable key and rejects cached replay after revoke
+AssertionError: expected 'running' to be 'succeeded' // Object.is equality
+
+Expected: "succeeded"
+Received: "running"
+
+ ❯ apps/runner/src/goal-graph-tools/integration.test.ts:111:172
+
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ apps/runner/src/goal-graph-tools/integration.test.ts:111:60
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  22:52:07
+   Duration  9.22s (transform 280ms, setup 0ms, import 577ms, tests 8.56s, environment 0ms)
+

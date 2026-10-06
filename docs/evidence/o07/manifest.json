@@ -1,0 +1,365 @@
+{
+  "target": "c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5",
+  "productionImplementation": "9a64d92405fb1e0ccbc2d71f90e38a7a65ff44d1",
+  "base": "45b720eeb9aa41873b29ba3ce240578330b77e15",
+  "controlledInputs": [
+    {
+      "commit": "7368497ade6b80725e024d86541b87c971389476",
+      "boundary": "K02 full input locally consumed; only runner seams independently approved at handoff, complete-domain approval pending"
+    },
+    {
+      "commit": "3d4985fca060155435b159e0467815bf8e88b8b8",
+      "boundary": "approved main input, O06 client and 017 mount"
+    }
+  ],
+  "nodeVersion": "v24.20.0",
+  "author": "assignment_review / gpt-6-astra",
+  "nativeModelQueries": 0,
+  "checks": {
+    "distinctPassed": 67,
+    "executions": [
+      {
+        "path": "docs/evidence/o07/final-native.txt",
+        "passed": 22
+      },
+      {
+        "path": "docs/evidence/o07/direct-consumers.txt",
+        "passed": 44
+      },
+      {
+        "path": "docs/evidence/o07/node-bridge-consumer.txt",
+        "passed": 1,
+        "skipped": 3
+      }
+    ],
+    "typecheck": {
+      "path": "docs/evidence/o07/final-typecheck.txt",
+      "exit": 0
+    }
+  },
+  "sources": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 15795,
+      "sha256": "96553fab5d43698efe03b21dd107185053e1358293d44f6d95b7962717f7fbc8",
+      "gitBlob": "985df8a63f302f2772a7ac8af78d694a5a5ba1e7"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 2913,
+      "sha256": "98792e0f4f3db72e9cc3604a3abcbf36fb0e410b9324e65b9cc0a6199bc1c621",
+      "gitBlob": "4ba6dec7e9eb7bd56d1baba9398c648ba4e00c14"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4052,
+      "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d",
+      "gitBlob": "bf911cbe51d6c66959f24f517921e1c2c4ba9114"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c",
+      "gitBlob": "8d6e172e51fbdb95695531fe1f817e780f86751a"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/integration.test.ts",
+      "bytes": 16039,
+      "sha256": "5603c6ffcaaf806829eccdb03bff042865a81df0fa48f4814c07c30068323071",
+      "gitBlob": "08dd1387d8a50661636d05f5443100c778e21daa"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.test.ts",
+      "bytes": 5063,
+      "sha256": "7083b8432715667f54aca2d128dbf84accd744f2d9b2c333d3fa6747b54bc998",
+      "gitBlob": "200bc45312394475c091de0a8c1f25d4d49463a6"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "bytes": 2307,
+      "sha256": "df1b2c75c4042bee4ea01179f51af452465ec8b01707a3cdf41946a1b6338298",
+      "gitBlob": "8d04822b6f6037da9d96834b31e2e0d8aeae4cbf"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/policy.test.ts",
+      "bytes": 3216,
+      "sha256": "b7555ecda6b3f447b38013df88adb8247d0c7b7b54ad173c2927c3463213b2f2",
+      "gitBlob": "520d134a6ddbe8d41bf8f1d73727c88ef309f5db"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/sdk.test.ts",
+      "bytes": 5802,
+      "sha256": "937373bbcca8723ed4bc36bf7b0840d949978ba585b1d5b2f4962d726966a210",
+      "gitBlob": "4a3ec5390c6e5f7c9d7d377006647ae1a9d07934"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/test-peer.ts",
+      "bytes": 1006,
+      "sha256": "d89d9a6658bfc10d3efee929ea9e0cef794a31cd9eed9799278969472d6ad0fb",
+      "gitBlob": "7a6a093a364fd1dfb01d93971bdf3b2ed4fba338"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/authority.ts",
+      "bytes": 1281,
+      "sha256": "5f005fdd53eaf8974498bb20e42af558e0381897e78e7ca0162e781c8d357d5e",
+      "gitBlob": "3ddc764c129ca698ef19c829eb904e6e7233ea9a"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/index.ts",
+      "bytes": 2175,
+      "sha256": "77f540e0d82bc3519daac4f2faaf36f0ee97e3a9fc8c14d86cc37cbb402e5c6a",
+      "gitBlob": "e15e5744d85ec3afb5bef114f1d49d3f37fdfc5d"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "bytes": 3283,
+      "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c",
+      "gitBlob": "33d67cf30f12d15152ddc33d28fcd2a3376b0956"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 6848,
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85",
+      "gitBlob": "c88877be0b935d95a595f2a90e0256c6da16278e"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 5524,
+      "sha256": "20ef1992334639b79648bdf2a892478438e4fe9f2e3ec629380e0a3308a7a33e",
+      "gitBlob": "7a8f02727d1f90929ed44a97c9c3f344537849e8"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/index.ts",
+      "bytes": 3312,
+      "sha256": "6e6d5f1e0cfec52e69069de9176a49b5689a2fcef67c1f41fb0ea4dc8efe9c77",
+      "gitBlob": "25cbac5e252aafb40d326dbfad07beb40c2c9891"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/migration.test.ts",
+      "bytes": 8486,
+      "sha256": "c527620b2966f1d7a1fb78f0486bf2e8574b64aa1907ff5f741b882b0555150f",
+      "gitBlob": "af7cc0de1766decd696a52d2dbf53a6f06b0f6d6"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/native-migration.test.ts",
+      "bytes": 9453,
+      "sha256": "e27afc7faa43242e513584663207765df435f6632a96b6de46747626f6a8df89",
+      "gitBlob": "5ed2189fc71309507e3e0bddf6bc065b094ded9a"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/native.test.ts",
+      "bytes": 8374,
+      "sha256": "00df78e4b2e7c32b0569ff5aa9045b2332fcc92983e91b556f4a3111390a859b",
+      "gitBlob": "e69f0b0e5eeb37b9075e01308060f4d5c705482b"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/store.ts",
+      "bytes": 6688,
+      "sha256": "4bb176a415d3a87523ac72d34819c92de1459839131783816f494ca106ff35c0",
+      "gitBlob": "f761d6db97d4834e751277020009d8ac9db53107"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 10128,
+      "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d",
+      "gitBlob": "424dceb57a6258d59a23c001214bb409df2e1f22"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6375,
+      "sha256": "459e0636a1823f15581c1c54c6bab22bc1faaa539ab451b190d082be0117ab40",
+      "gitBlob": "e226b87b032c9d3bcc72871c82c262637a5f9dde"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 2804,
+      "sha256": "0821d221bad2fd69047f9ed9c7fe71549bc36fafac56d330fcb908925ebe1f35",
+      "gitBlob": "e6738958d9b4bef58d16da66dd192c8a9369f7ab"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 5200,
+      "sha256": "d1bff3839b05af2ca348b95cc70f96017bdb746d6729b6456e2fcbf9ca7008b4",
+      "gitBlob": "b201b442692c3825892f61937907da69566bd582"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 5458,
+      "sha256": "d653e6bc95cbeb722fe48a570341ba6c33e08701bead0d3416c51064e5c04b8c",
+      "gitBlob": "662550c152057d32f174ea0ea30be2fcc3726bd0"
+    },
+    {
+      "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "bytes": 189,
+      "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218",
+      "gitBlob": "d0f440769ac2bfb74a4b0f1ed47485efe138b7f2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/o07/bridge-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o07/claim-profile-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o07/claim-receipt.json",
+      "bytes": 1354,
+      "sha256": "5e9eba2f181c14d7aa96bc91c9718dca2dee90c50caf32b17c187a59bb0a89b0"
+    },
+    {
+      "path": "docs/evidence/o07/direct-consumers.txt",
+      "bytes": 871,
+      "sha256": "5212ac12de7df147b23bd1cd24ebaaacde8faad021823f4cd54017db9028dca5"
+    },
+    {
+      "path": "docs/evidence/o07/domain-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o07/final-native.txt",
+      "bytes": 1128,
+      "sha256": "35d3d406bd101543b4b59286614e801ef362804c7daf74458d9da8bf27de57c4"
+    },
+    {
+      "path": "docs/evidence/o07/final-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o07/graph-policy.txt",
+      "bytes": 320,
+      "sha256": "7eb502faa66d4fdb3b38d302355454d797d791daa9ab738a0469a9b41e7aeaff"
+    },
+    {
+      "path": "docs/evidence/o07/green-mcp.txt",
+      "bytes": 317,
+      "sha256": "f116509606f2bb31d3fa9e295ad99fbe43a40a6b25434b3600746c6005893e38"
+    },
+    {
+      "path": "docs/evidence/o07/green-native-admission.txt",
+      "bytes": 324,
+      "sha256": "3aaa24503b446f7631f74ec5b7300fc068a67339861d5d9334aeb4147b12e0bf"
+    },
+    {
+      "path": "docs/evidence/o07/install.txt",
+      "bytes": 657,
+      "sha256": "dfdd299cb130feb4327a8c6e881881c5db5f28f7c878dc376011484f81541486"
+    },
+    {
+      "path": "docs/evidence/o07/integration-first.txt",
+      "bytes": 2070,
+      "sha256": "488d3c10c1995a42577cdbcd0c16767b380137a0fd6ba0e3fae8e22cffe32fae"
+    },
+    {
+      "path": "docs/evidence/o07/integration-green.txt",
+      "bytes": 929,
+      "sha256": "28130207d34aa0c774183cb2629be26a4f03dd023ec9e83b6120a97a141e0af8"
+    },
+    {
+      "path": "docs/evidence/o07/integration-typecheck-first.txt",
+      "bytes": 285,
+      "sha256": "2cdcf304dd032bae16abe7d17174e4ddb7c4b6c9e2a45d63d2c34bb0a5b621cc"
+    },
+    {
+      "path": "docs/evidence/o07/intermediate-native-summary-shape.txt",
+      "bytes": 1671,
+      "sha256": "c2d253ff545c2188ab31e550d356baff87c7130ca84b515f02d853e0267152e5"
+    },
+    {
+      "path": "docs/evidence/o07/intermediate-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o07/mcp-policy-consumer.txt",
+      "bytes": 386,
+      "sha256": "f253cc1cb3a47e1a570eb2156212248722faf42830566b0019eb7e708dfa9e90"
+    },
+    {
+      "path": "docs/evidence/o07/migration-scope-amend-receipt.json",
+      "bytes": 1407,
+      "sha256": "551ce5f331d97de336c3e8414da8b81f5416e752c4f6d7d209636be98126e247"
+    },
+    {
+      "path": "docs/evidence/o07/native-migration.txt",
+      "bytes": 449,
+      "sha256": "3ee5d0a4cd324d5b55daaa11dfd61003a8d601c253acc75b1d43bc4eee6d4e4f"
+    },
+    {
+      "path": "docs/evidence/o07/node-bridge-consumer-first.txt",
+      "bytes": 1215,
+      "sha256": "11c72dae62444c6aae53fe42f40fd26c67a1d7689917150f86f0318638376b54"
+    },
+    {
+      "path": "docs/evidence/o07/node-bridge-consumer.txt",
+      "bytes": 464,
+      "sha256": "4e3732d19eb30c1e47df0ba15cbfd5fc5c5aaafdd23dcad491c8b7255489e2bf"
+    },
+    {
+      "path": "docs/evidence/o07/node-consumer-typecheck-first.txt",
+      "bytes": 139,
+      "sha256": "93350c5118c36748596d1f3455e11decb358e72ab90729661f78b6ff6288350b"
+    },
+    {
+      "path": "docs/evidence/o07/node-consumer-wire.json",
+      "bytes": 588,
+      "sha256": "c9229d8d07be19fedc58b93ebd68c2f33cd80b4658614dcac69bdf0f6fb85609"
+    },
+    {
+      "path": "docs/evidence/o07/old-migration-consumer.txt",
+      "bytes": 453,
+      "sha256": "fe6b528cfddb30d521b1a3fe12e3c643f8c9fc6ad8762f5a8d3a70daf2800e9a"
+    },
+    {
+      "path": "docs/evidence/o07/red-mcp.txt",
+      "bytes": 2329,
+      "sha256": "50aa63f27fa154231eae2b2cff02985a2617c1b742a26d298158f33388292575"
+    },
+    {
+      "path": "docs/evidence/o07/red-native-admission.txt",
+      "bytes": 1483,
+      "sha256": "29f0973a91dc84177698a0a1671bcfb542e8a928430b04e260525080c78b783f"
+    },
+    {
+      "path": "docs/evidence/o07/runner-scope-amend-receipt.json",
+      "bytes": 1471,
+      "sha256": "ee5001e2c6ca09cba44a472b0476f83915260dcbc4a15c3589ed58a5399139ca"
+    },
+    {
+      "path": "docs/evidence/o07/sdk-injected.txt",
+      "bytes": 319,
+      "sha256": "85c124b2a0ae127a49d8b37c25a4582e060c0d7b2d46b0faf3a57e8a32fd6d07"
+    },
+    {
+      "path": "docs/evidence/o07/upgrade-with-context.json",
+      "bytes": 5856,
+      "sha256": "92f312a5c3cd7b5e7c771c449b9f2c455f378915008bd4988435c6b53f8d7499"
+    },
+    {
+      "path": "docs/evidence/o07/upgrade.json",
+      "bytes": 5678,
+      "sha256": "abeeffde5d5ae2693e88281bdc9c39095393a208dab8b1cc8a23f6ff1b7773fb"
+    },
+    {
+      "path": "docs/evidence/o07/wire-final.json",
+      "bytes": 20586,
+      "sha256": "95c5b9c73569c3dd49badb71ec45b0b87a8c345c207424525b2348fe4969b382"
+    },
+    {
+      "path": "docs/evidence/o07/wire-first-failed.json",
+      "bytes": 13546,
+      "sha256": "3152bccfc6cd138652f36594eaefa47eccd583a4c5f526533a5b7fc8a1f0d462"
+    },
+    {
+      "path": "docs/evidence/o07/wire.json",
+      "bytes": 20586,
+      "sha256": "6d7bebdd0f952eb1e33ee09aa266ae1ab34654f96f8a5de3d0e611034696ebd3"
+    }
+  ]
+}
