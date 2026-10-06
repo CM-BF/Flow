@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-06 12:08:19 UTC。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-06 19:54:21 UTC。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -28,6 +28,8 @@ S01-01/02 是文档片段，不代表压测已运行。实验交付须包含固�
 2026-10-06：初始合同。最小场景与实施/正式窗口分开，后继容量目标保持开放。
 
 2026-10-06 W1已独审并集成main30b；Goal Owner确定下一最小对照为1进程声明capacity4/12任务，capacity1/16暂缓，ACK/browser各2保留。只准备新入口/预算检查，独审后申请≤30秒独立窗口，仍base115b与原总预算。
+
+以下各带时间的阶段记录是当时的历史判断；当前 idle 已交付、A/B 未运行及 S01P07 尚未实施的事实见末节与唯一 status。历史 pending 不覆盖当前结果。
 
 ## S01-06 最小 slot 调度建议（2026-10-06 07:46 UTC，只读提案）
 
@@ -109,46 +111,12 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 沿既有TODO实施固定A3e/Baae、共同observerc259、单一300s/512MiB总账本，详见[Interface](../../docs/evidence/s01/mixed-ab-preparation/interface.md)。只授权准备与pure/fake验证；实际窗口NOT_OPEN。产品唯一events差异，旧raw冻结；原未验收ACK/browser/native/SLO边界不变。
 
 
-## S01-06 空闲 runner journal 成本候选（2026-10-06 17:21 UTC，仅登记/只读）
+## S01-06 空闲成本测量与产品后继（2026-10-06 19:54:21 UTC）
 
-优先级低于 CORE、真实 Codex 与当前 prefix-hash 工作；本候选属于原 S01 / REQ >100 验收，不新建 benchmark 大任务。当前没有实现、测试或实际探针授权，状态 NOT_OPEN。不得据此修改 poll、fsync、claim intent、恢复逻辑或增加 broker/FSM。
+本次测量已交付、双审通过，主线接收待定；不是未运行的只读候选。唯一窗口`s01-idle-claim-cost-once`基于固定main8d84公开runRunner只执行一次，1runtime/capacity1/active0、12空领取、24原子rename/48sync，正常stop后journal EMPTY与自有资源关闭。结果target `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a`，完整方法、检查、计量与限制见[接收入口](../../docs/evidence/s01/idle-claim-cost/result-ready.md)；原准备失败、raw、manifest及overall-archive历史快照不改。
 
-### 固定事实与规模口径
+15秒/2MiB约束已按实际外壳时间和保守计量核验。API调用次数与异步elapsed不等于物理I/O、功耗或SSD寿命；采样间峰值UNKNOWN。100agents不等于100runner，本片没有100runner/模型/SLO结论。测量没有改poll、durability、fsync、claim intent或恢复语义。旧17:21候选及18:31准备过程保留在Git e61ba2c3，不再作为当前未运行状态。
 
-只读固定 main `4df08fb3186f4af4373554deb93406214f44fc63`，三 Git blob 已逐项核对：
+S01-06继续开放：已选S01P07“稳定领取机会”作为独立产品候选，空响应复用已durable key且不新增本地journal/中心永久empty receipt，保留500ms轮询；首次非空分配与compact receipt同事务，durable accept绑定原key和同attempt，历史receipt不当当前执行授权。v1未知请求、已持久assignment及过期/uncertain保持保守，不删journal或复活旧租约。具体接口和直接验证由后继独立owner负责；当前仅设计，待Lead provision独立runner-claim-recovery worktree/branch、fresh claim后实施，本树无产品写权。
 
-| 输入 | Git blob | 实际代码含义 |
-| --- | --- | --- |
-| apps/runner/src/runtime.ts | b6393a6a043233ce0bf674a3ec3b47fb463e722a | :81 begin → :86 claim HTTP → :89 accept(null) → :95 wait；默认 poll 500ms |
-| apps/runner/src/admission-journal.ts | 9ede38d52a764cb6135853648f1473028723d8fb | :83–93 每次 change 为 writeFile、file.sync、rename、directory.sync |
-| apps/runner/src/attempt-wakeup.ts | 6d5cb24b0ebff20a06c83e08f4cbd24c3807b41d | 单 waiter/有界订阅不移除空领取的 journal 持久化 |
-
-因此正常完整空轮静态为 **2 次原子替换、2 次 writeFile、2 次 file.sync + 2 次 directory.sync**。begin 已持久而未发送的停止分支同样可能产生一对写入，不能把所有 journal 变化都算成 HTTP 空轮。默认500ms是每轮响应/持久化后再等待，不能直接当精确2Hz；只能以实际相邻请求时刻计算。`writeFile` API 次数也不等于内核 write 次数。
-
-[Node24.20 FileHandle.sync 官方说明](https://nodejs.org/download/release/v24.20.0/docs/api/fs.html#filehandlesync)表示请求将该描述符数据刷新到存储设备，具体由 OS/设备实现决定。以上不是物理 I/O、写放大、功耗、SSD寿命或小时驻留实测。100 agents不等于100 runner：报告必须分列 processCount、runtimeInstances、configuredCapacity、activeAttempts；本候选只1 runtime/本地capacity1/active0，不声称测过100 agents，也不拿旧128执行窗替代空闲成本测量。
-
-### 最小未来探针，不在本轮执行
-
-沿公开 `runRunner`，借鉴固定 `apps/runner/src/runtime-shutdown.test.ts:29–70` 的动态127.0.0.1 listener与私有journal；固定响应 `{assignment:null,remainingLeaseMs:0}`。不得直接导入整测试文件：其中包含其它case和强停child；也不使用 runtime-capacity.test.ts，因为其静态导入真实server/PG闭包。FlowClient.claim固定index.ts:571使用原POST/空body，原auth/signal/no retry保持。
-
-拟只1 runner、最多12个空claim，保留默认500ms和原requestTimeout1500ms；在第12个请求已接收时正常abort，再返回明确null，等待原runRunner把intent持久清空，保证不出现第13请求。到工作截止仍未达12如实少计，不加快poll补数。全局从固定输入校验开始≤15s，拟前10s工作、后5s收束/证据；只有owned handles，未知清理保留精确资源身份且结果UNKNOWN，截止不当作OS已取消。最终新journal必须inFlight=null/assignments=[]，0adapter、0heartbeat、0event；异常/超时不得删journal求通过。未知旧journal完全不接触。
-
-计量分两层：实际记录HTTP已接收/明确null响应、begin/accept完成、单调时刻、最终journal与资源关闭；另用只针对本次私有journal路径的现有Vitest fs mock seam透传真实open/writeFile/sync/rename（不修改生产源），可计API发起/成功/失败、文件与目录sync分列。透传this/Promise/错误/返回值，句柄仅包装一次，所有全局替换finally恢复；先由fake覆盖透传，实际探针才能声称真实调用数。若该seam未获固定验证，sync列仍只报静态预测，绝不由HTTP数冒充测到sync。不得用耗时相减声称纯磁盘延迟；注明观测开销/同机负载。
-
-原始记录、CLI、cache和ownTMP合计≤2MiB：拟raw/receipt≤128KiB、journal/临时文件≤128KiB、余量包括工具cache/日志，越限停止新增、不通过删除扣回累计写入。不复制依赖/产品全树；任何自有导出也计2MiB。实际进程拓扑、外壳到exit总时长、计量/清理余量必须在固定实现前确定，不能仅把test函数耗时写成完整15s。0PG/provider/auth凭据读取/install，不停止个人或他队服务。
-
-### 写权与输入解除条件
-
-17:20:13.977Z fresh ledger：`508f9c85-a27c-4382-bfe9-caca43be4b0e` v1 ACTIVE，mika/status_read、当前WT/branch，4literal为 `experiments/runner-capacity/mixed`、两个 mixed-ab evidence目录、`plans/s01-runner-capacity`。旧8e4660 claim已v4 RELEASED。本次只更新原plan/status，不把idle证据塞入A/B目录。
-
-候选未来源码路径 `experiments/runner-capacity/mixed/idle-claim.test.ts` 与定向配置属现mixed scope，但当前未授权实施。专属证据拟 `docs/evidence/s01/idle-claim-cost` **不在现claim**，必须先获允许并原子amend；无需产品source scope。未来实际只有固定实现独审+Mika明确OPEN后执行一次，失败无自动重跑。
-
-当前S01 HEAD `65a9c7b4b577d49ff302581d590b31f3425cd900` clean，runtime blob为bdbad6e8而非目标b639，HEAD没有attempt-wakeup.ts；不能直接测这棵旧运行时冒充4df。实施前需要受控固定4df只读输入/准确loader绑定；不盲merge主线、改历史A/B或复制另一框架。最小执行入口为runtime.ts和新probe，实际静态import还需admission-journal、attempt-wakeup、goal-tool/graph绑定、active-steering/proposal、fixture、verifier、attempt-control、outbox、native-harness/settlement、@flow/client及其contract与zod闭包；这些模块即使无attempt也要能解析。当前只核到上述直接依赖，完整转递入口/依赖metadata/动态读取尚待固定manifest，未宣称可启动。既有shutdown测试只作参考只读输入，不运行其原全部cases。
-
-方法：沿已固定本地 find-skills、clean-code（sickn33 bdacd76）、codebase-design；本段检查接口复用、静态与实际分层、错误/unknown保留、资源闭包和不制造新状态机。0测试、0目标、0PG、0物化；既有A/B source/raw及128结果原样，64 pure checks仍只属于此前A/B。
-
-### S01-06 idle 准备当前派工（2026-10-06 18:31:35 UTC）
-
-上述17:21只读候选保留为历史。当前claim508f v2已合法追加专属evidence，owner status_read 在原mixed实验目录实施；最新固定输入为main8d84的57source/283197B加4metadata/1431B，完整literal见[供给请求](../../docs/evidence/s01/idle-claim-cost/source-supply-request.json)。镜像仅由Lead供应到该evidence/source-snapshot，不覆盖本树旧产品src。旧4df→8d84的空claim路径无行为改动；新增contract加载成本未知。fake与actual均待固定源码review后另OPEN；尚未进行任何运行。继续沿S01-06验证原目标，不新增benchmark或产品优化。
-
-2026-10-06 18:56:32 UTC 当前准备修正：原128KiB reserve内部拆分不足以覆盖整份owner plan/status/review与检查归档；按Mika明确允许，在原2MiB总额内改为统一256KiB reserve（自动raw/capture/CLI128KiB、manual128KiB），全数预扣。单份archive-ledger明确路径，新增或超限不能默认为已涵盖；旧准备input/manifest按固定Git保留。15s、12空claim与0PG/provider不变，0检查。
+A/B是此前另一准备片，仍NOT_RUN/NOT_OPEN，须独立资源和运行条件，不为本次空领取样本扩大矩阵。原6TODO、ACK/browser/真实provider等完整验收不因此勾完。架构影响仅实验观察；产品后继实施后由其owner按固定target登记。
