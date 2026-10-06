@@ -12,7 +12,7 @@ export default defineConfig({
   },
   reporter: [
     ["list"],
-    ["json", { outputFile: "../../docs/evidence/w01/browser-results.json" }],
+    ["json", { outputFile: "../../docs/evidence/w01/thread-revision/browser-results.json" }],
   ],
   webServer: [
     {

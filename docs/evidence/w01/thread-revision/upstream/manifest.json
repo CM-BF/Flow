@@ -1,0 +1,249 @@
+{
+  "registrySources": {
+    "https://r.assistant-ui.com/thread.json": {
+      "name": "thread",
+      "sha256": "aa3f0f355ad009e59cb89407d917cb792af9766a5b1b0d40b33c8edab75bb069",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/thread.aui.tsx",
+          "sha256": "64cb85b4076644dd319325b319264ec8e998e619a97c19e0f001d3fa5a03a016"
+        }
+      ]
+    },
+    "https://ui.shadcn.com/r/styles/new-york/button.json": {
+      "name": "button",
+      "sha256": "4d8f39c3bd25e630b5962667722e8707e7b18122ad6842a5c22acf8a3ff9f93a",
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84"
+        }
+      ]
+    },
+    "https://ui.shadcn.com/r/styles/new-york/skeleton.json": {
+      "name": "skeleton",
+      "sha256": "eb09c61378d058280deede279f924cc5394593693f30c2477d64468e8dc92d77",
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "sha256": "87608e7cc815ad3d88e0b9de6c402bb37b58ea1b38636cf69709da1baff6e334"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/attachment.json": {
+      "name": "attachment",
+      "sha256": "4af371ba656a935b9f2043ec2184fdbf89ffd574136de0f6f79119ce7b5ee371",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/attachment.aui.tsx",
+          "sha256": "4cc2ac8a4fe105a21d3fcc75d84a1718f7c04745e8e246a48c3eee9d65cce230"
+        }
+      ]
+    },
+    "https://ui.shadcn.com/r/styles/new-york/dialog.json": {
+      "name": "dialog",
+      "sha256": "e240f8eaa9e9e626dffa1a340469c6bace9c631e78b7b10e7d0f178a32a1c71c",
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "sha256": "fe70a91bb924ef3a40b7504e6847ef9a57aed3b503d2a7dbb7610e821ea40b6f"
+        }
+      ]
+    },
+    "https://ui.shadcn.com/r/styles/new-york/tooltip.json": {
+      "name": "tooltip",
+      "sha256": "aef6ec3c142b054ebcd6daaf9e0b46e67f0d50e51eefbd7b392c83845a3f1926",
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "sha256": "ce6afa34fb9dae51053a863b4c3f7c6e55f3da23b00149f31a8e4402bc963be0"
+        }
+      ]
+    },
+    "https://ui.shadcn.com/r/styles/new-york/avatar.json": {
+      "name": "avatar",
+      "sha256": "4fdcb3d39aa70de77b59e195130c3a074e785f4886514be6df50618c57420f30",
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "sha256": "e78b35ed76c67d8ff50603fbe0dfa4fe600097bd860d89e65beea3e16683dad8"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/tooltip-icon-button.json": {
+      "name": "tooltip-icon-button",
+      "sha256": "ef006b6ede556c09d0cd7974f7336c2d811d8c6efc5a77610d82683657bb66a2",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+          "sha256": "1ec2af97d22c34c955588c866aba5ddbfc579b1fd9218f68f75010b10e5a7868"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/use-attachment-src.json": {
+      "name": "use-attachment-src",
+      "sha256": "656bde1d876d59cc47a60b14976369115feffbb3464e1f7c58fa64470eb67d24",
+      "files": [
+        {
+          "path": "src/hooks/use-attachment-src.ts",
+          "sha256": "dfb621f1a18f4013994aa29815beddb436020105164526ab7c86b0b0a32040a1"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/file.json": {
+      "name": "file",
+      "sha256": "87175b21d70664beb305b9077192a9e2174a9858323eddded1d8ac8631f680ac",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/file.tsx",
+          "sha256": "115ed660c91dc78de16a627c2868543a2deca6771d9ac7960e36215f0281fd68"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/elements-media-player.json": {
+      "name": "elements-media-player",
+      "sha256": "5698a91b0f17f6e3be1a00b29de0009b452358bc9cb419dcb1eefcf15493200a",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/media-player.tsx",
+          "sha256": "10d9aa25e3b962c3a5420932b990a9975fbb09efe78410c884eea12461439eaa"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/elements-surfaces.json": {
+      "name": "elements-surfaces",
+      "sha256": "80e6d0b29bb9bce0aa889022e9361e52d627c1b1deb9b96a4f1ee8b4698ca2a3",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/surfaces.tsx",
+          "sha256": "a82542ec08f0afd0565b220a1d32235b1fd7c08b394c55977119665da3860d3a"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/follow-up-suggestions.json": {
+      "name": "follow-up-suggestions",
+      "sha256": "1304208071d9f696819be3c3f2da9a688ab45b8cb2eb2704dff63db80ab3277a",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/follow-up-suggestions.aui.tsx",
+          "sha256": "f0db1e9cfc5f648adeb57c8ac61fbeca4ebbb4d55267a9c107709af01b73abb4"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/image.json": {
+      "name": "image",
+      "sha256": "6bd4a3a71364256ea14cdf612de394b2913b72b1e87226b335cc8fb6b6f2fc41",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/image.tsx",
+          "sha256": "01f7655ba942cc344dd585890e2c6df372725d198523c75e99db327f5c9a057f"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/elements-href.json": {
+      "name": "elements-href",
+      "sha256": "d7b7778513ed7fddc8915109aed2c326c5e435e02bd5cfa9029d647b056d30ba",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/utils/href.ts",
+          "sha256": "3a8038d038b1918ae3f58a61dcd30933633131dda341eb5bea5b6a650b31a912"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/markdown-text.json": {
+      "name": "markdown-text",
+      "sha256": "286870e1a17b408b30e61dc84bec1a14fd5dac5982d2f42656462b57d4e639c7",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/markdown-text.tsx",
+          "sha256": "4621787f69160d9f34a170da8fb76005a811a7cfa704280e463518a67eb7fc8d"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/use-copy-to-clipboard.json": {
+      "name": "use-copy-to-clipboard",
+      "sha256": "fa6b3e0631a82bd22b52b0794d66036e18964c4db1dcb55716773dbdf8b5421f",
+      "files": [
+        {
+          "path": "src/hooks/use-copy-to-clipboard.ts",
+          "sha256": "1f3b8a1bab79cef961f62eb25d6b58a0d16c957d63ba1faf086ad09c99712c0a"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/reasoning.json": {
+      "name": "reasoning",
+      "sha256": "16a1d6cf9763f0c6ef2f074d231eec3aecbec8ffd857d68faf4e002453b60474",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/reasoning.aui.tsx",
+          "sha256": "af46e4d5c13cbb2cf584b9f7212d95b9cd97b6e08c741bc829227e40dff65b4e"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/elements-reasoning.json": {
+      "name": "elements-reasoning",
+      "sha256": "2d402dadbe5b2c0697bd33b167358ca53e24aaf26af0c012b8735d589483fe16",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/reasoning.tsx",
+          "sha256": "e59cdb4c4ccd6da31fb170603fbec624e2b7988a7ef2711e5a24ee455615ea20"
+        }
+      ]
+    },
+    "https://ui.shadcn.com/r/styles/new-york/collapsible.json": {
+      "name": "collapsible",
+      "sha256": "9e935a82f4d846cce4fde8498c3adb298f794edfbb807bf166b5d6a2bb1c376c",
+      "files": [
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "sha256": "f4cdd104de29928bfcd40b865c7d08eed9157a537fbb8b5e6d0921f02b63cc04"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/tool-fallback.json": {
+      "name": "tool-fallback",
+      "sha256": "1f56ac1e26dba3e359756ce012b47216b2c313804a85502c15bc2250ff41c55f",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/tool-fallback.aui.tsx",
+          "sha256": "74490307ac889c436759c2f5d3b18b4e693c6fb2f13929ec64dc0955aeda3adb"
+        }
+      ]
+    },
+    "https://ui.shadcn.com/r/styles/new-york/textarea.json": {
+      "name": "textarea",
+      "sha256": "95a734124c9184947f6ec7c5f03a59f5dd246e305d54d91f46fefc339da2f105",
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "sha256": "ec7c92aaed80f6923a7caa4bfe4eead395b50a7001504fd7fbb0b9381804dae9"
+        }
+      ]
+    },
+    "https://r.assistant-ui.com/tool-group.json": {
+      "name": "tool-group",
+      "sha256": "7989675245e3f0394ba0e90146d668f929b62d96eacb7ef4e858c04b797c563f",
+      "files": [
+        {
+          "path": "src/components/assistant-ui/elements/tool-group.aui.tsx",
+          "sha256": "6fa7eb02ceefeb956cac1e34ab12bf95919e52036f58083d4dbd1aa69fb310e8"
+        }
+      ]
+    }
+  },
+  "dependencies": [
+    "@assistant-ui/react-markdown@^0.14.18",
+    "@assistant-ui/react@^0.15.23",
+    "@radix-ui/react-avatar",
+    "@radix-ui/react-collapsible",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-slot",
+    "@radix-ui/react-tooltip",
+    "class-variance-authority",
+    "lucide-react",
+    "radix-ui",
+    "remark-gfm",
+    "tw-shimmer@^0.4.13",
+    "zustand"
+  ]
+}

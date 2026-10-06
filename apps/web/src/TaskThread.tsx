@@ -1,166 +1,291 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import {
   AssistantRuntimeProvider,
-  MessagePrimitive,
-  ThreadPrimitive,
-  useAuiState,
+  makeAssistantToolUI,
   useExternalStoreRuntime,
   type ThreadMessageLike,
 } from "@assistant-ui/react";
-import type { Reference, TaskSnapshot } from "@flow/contracts";
-import { ChevronDown, FileText } from "lucide-react";
-import type { ProjectionState, TaskProjection } from "./projection";
 import {
-  Artifact,
-  ArtifactContent,
-  ArtifactDescription,
-  ArtifactHeader,
-  ArtifactTitle,
-} from "./components/ai-elements/artifact";
+  taskFixtures,
+  type Reference,
+  type TaskSubmission,
+} from "@flow/contracts";
+import { FileText, ArrowUpRight } from "lucide-react";
+import { Thread } from "./components/assistant-ui/elements/thread.aui";
+import { Button } from "./components/ui/button";
+import type { ProjectionState, TaskProjection } from "./projection";
 
-const DetailsContext = createContext<{
-  projection: TaskProjection;
-  details: ProjectionState["details"];
-} | null>(null);
-
-function ReferenceDetail({ reference }: { reference: Reference }) {
-  const context = useContext(DetailsContext)!;
-  const [expanded, setExpanded] = useState(false);
-  const detail = context.details[reference.id];
-  const regionId = `detail-${reference.id}`;
-  return (
-    <div className="reference">
+const ReferenceContext = createContext<(id: string) => void>(() => undefined);
+const ReferenceUI = makeAssistantToolUI<Reference, Reference>({
+  toolName: "flow_reference",
+  render: ({ args }) => {
+    const open = useContext(ReferenceContext);
+    return (
       <button
-        className="reference-toggle"
-        aria-expanded={expanded}
-        aria-controls={regionId}
-        onClick={() => {
-          setExpanded(!expanded);
-          if (!expanded) void context.projection.loadDetail(reference.id);
-        }}
+        className="flow-reference"
+        onClick={() => args.id && open(args.id)}
+        aria-label={`Open ${args.title}`}
       >
-        <FileText size={18} />
+        <FileText size={15} />
         <span>
-          {reference.title}
-          <small>{reference.id}</small>
+          {args.title}
+          <small>{args.id}</small>
         </span>
-        <ChevronDown className={expanded ? "rotated" : ""} size={18} />
+        <ArrowUpRight size={14} />
       </button>
-      {expanded && (
-        <div id={regionId}>
-          {detail?.loading && (
-            <p className="detail-loading" role="status">
-              Loading detail…
-            </p>
-          )}
-          {detail?.error && (
-            <div className="notice error" role="alert">
-              {detail.error}{" "}
-              <button
-                onClick={() => void context.projection.loadDetail(reference.id)}
-              >
-                Retry detail
-              </button>
-            </div>
-          )}
-          {detail?.data && (
-            <Artifact>
-              <ArtifactHeader>
-                <div>
-                  <ArtifactTitle>{detail.data.title}</ArtifactTitle>
-                  <ArtifactDescription>
-                    {detail.data.kind} · {detail.data.mediaType}
-                  </ArtifactDescription>
-                </div>
-              </ArtifactHeader>
-              <ArtifactContent>
-                {detail.data.artifactVersion && (
-                  <p className="version">
-                    Artifact version <code>{detail.data.artifactVersion}</code>
-                  </p>
-                )}
-                <pre tabIndex={0} aria-label={`${reference.title} content`}>
-                  {detail.data.content}
-                </pre>
-              </ArtifactContent>
-            </Artifact>
-          )}
-        </div>
-      )}
-    </div>
-  );
+    );
+  },
+});
+const referenceComponents = {
+  ToolGroup: ({ children }: { children?: ReactNode }) => <>{children}</>,
+};
+const choices = Object.entries(taskFixtures) as [
+  keyof typeof taskFixtures,
+  TaskSubmission,
+][];
+export interface DraftState {
+  text: string;
+  harness: "fixture" | "claude";
+  scenario: keyof typeof taskFixtures;
 }
-
-function TimelineMessage() {
-  const role = useAuiState((state) => state.message.role);
-  const reference = useAuiState(
-    (state) => state.message.metadata.custom.reference,
-  ) as Reference | undefined;
-  return (
-    <MessagePrimitive.Root className={`timeline-message ${role}`}>
-      <div className="message-avatar" aria-hidden="true">
-        {role === "user" ? "Y" : "F"}
-      </div>
-      <div className="message-body">
-        <span className="message-author">
-          {role === "user" ? "You" : "Flow"}
-        </span>
-        {reference ? (
-          <ReferenceDetail reference={reference} />
-        ) : (
-          <MessagePrimitive.Parts />
-        )}
-      </div>
-    </MessagePrimitive.Root>
-  );
-}
+export const fixtureMode = import.meta.env.VITE_FLOW_FIXTURE === "true";
 
 export function TaskThread({
-  task,
+  viewId,
+  state,
   projection,
-  details,
+  drafts,
+  onAccepted,
+  onOpenReference,
 }: {
-  task: TaskSnapshot;
+  viewId: string;
+  state: ProjectionState;
   projection: TaskProjection;
-  details: ProjectionState["details"];
+  drafts: Map<string, DraftState>;
+  onAccepted: (id: string) => void;
+  onOpenReference: (id: string) => void;
 }) {
+  const task = state.task;
+  const [harness, setHarness] = useState<"fixture" | "claude">(
+    drafts.get(viewId)?.harness ?? (fixtureMode ? "fixture" : "claude"),
+  );
+  const [scenario, setScenario] = useState<keyof typeof taskFixtures>(
+    drafts.get(viewId)?.scenario ?? "success",
+  );
   const messages = useMemo<ThreadMessageLike[]>(
-    () => [
-      {
-        id: `prompt-${task.id}`,
-        role: "user",
-        content: task.prompt,
-        createdAt: new Date(task.createdAt),
-      },
-      ...task.entries.map((entry) => ({
-        id: entry.id,
-        role: "assistant" as const,
-        content: entry.kind === "text" ? entry.text : entry.reference.title,
-        createdAt: new Date(entry.createdAt),
-        metadata: {
-          custom:
-            entry.kind === "reference" ? { reference: entry.reference } : {},
-        },
-      })),
-    ],
-    [task.id, task.prompt, task.createdAt, task.entries],
+    () =>
+      task
+        ? [
+            {
+              id: `prompt-${task.id}`,
+              role: "user",
+              content: task.prompt,
+              createdAt: new Date(task.createdAt),
+            },
+            ...task.entries.map((entry) => ({
+              id: entry.id,
+              role: "assistant" as const,
+              createdAt: new Date(entry.createdAt),
+              content:
+                entry.kind === "text"
+                  ? entry.text
+                  : [
+                      {
+                        type: "tool-call" as const,
+                        toolCallId: entry.id,
+                        toolName: "flow_reference",
+                        args: entry.reference,
+                        argsText: JSON.stringify(entry.reference),
+                        result: entry.reference,
+                      },
+                    ],
+            })),
+          ]
+        : [],
+    [task?.id, task?.prompt, task?.createdAt, task?.entries],
   );
   const runtime = useExternalStoreRuntime({
     messages,
     convertMessage: (message) => message,
-    isRunning: task.status === "running",
-    isDisabled: true,
-    onNew: async () => {
-      throw new Error("Use New task to submit a separate durable task.");
+    isRunning: task?.status === "running",
+    isDisabled: Boolean(task) || (!viewId.startsWith("draft-") && !task),
+    isLoading: !viewId.startsWith("draft-") && !task,
+    onNew: async (message) => {
+      const prompt = message.content
+        .filter((part) => part.type === "text")
+        .map((part) => part.text)
+        .join("\n");
+      const input: TaskSubmission = {
+        ...(harness === "fixture"
+          ? taskFixtures[scenario]
+          : { harness: "claude" }),
+        title: prompt.trim().split("\n")[0]!.slice(0, 180),
+        prompt,
+      };
+      const id = await projection.submit(input);
+      if (!id) {
+        // ExternalStoreRuntime clears its composer when sending. Restore an
+        // ambiguous submission only when the user has not typed a newer draft.
+        if (!runtime.thread.composer.getState().text)
+          runtime.thread.composer.setText(prompt);
+        throw new Error(
+          projection.getSnapshot().error ??
+            "The center has not acknowledged this task. Retry to reuse the request key.",
+        );
+      }
+      drafts.delete(viewId);
+      onAccepted(id);
     },
   });
+  useEffect(() => {
+    runtime.thread.composer.setText(drafts.get(viewId)?.text ?? "");
+    return runtime.thread.composer.subscribe(() => {
+      const text = runtime.thread.composer.getState().text;
+      drafts.set(viewId, { harness, scenario, ...drafts.get(viewId), text });
+    });
+  }, [runtime, viewId, drafts]);
   return (
-    <DetailsContext.Provider value={{ projection, details }}>
+    <ReferenceContext.Provider value={onOpenReference}>
       <AssistantRuntimeProvider runtime={runtime}>
-        <ThreadPrimitive.Root className="thread">
-          <ThreadPrimitive.Messages components={{ Message: TimelineMessage }} />
-        </ThreadPrimitive.Root>
+        <ReferenceUI />
+        <Thread
+          components={referenceComponents}
+          autoFocus={false}
+          beforeMessages={
+            state.olderAvailable ? (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="mx-auto mb-4"
+                onClick={async (event) => {
+                  const viewport = event.currentTarget.closest(
+                    '[data-slot="aui_thread-viewport"]',
+                  ) as HTMLElement | null;
+                  const beforeHeight = viewport?.scrollHeight ?? 0;
+                  const beforeTop = viewport?.scrollTop ?? 0;
+                  await projection.loadEarlier();
+                  requestAnimationFrame(() => {
+                    if (viewport) {
+                      viewport.scrollTop =
+                        beforeTop + viewport.scrollHeight - beforeHeight;
+                      viewport.tabIndex = -1;
+                      viewport.focus({ preventScroll: true });
+                    }
+                  });
+                }}
+              >
+                Load earlier activity
+              </Button>
+            ) : null
+          }
+          composerHeader={
+            <div className="flow-composer-options">
+              <label>
+                Backend
+                <select
+                  aria-label="Execution backend"
+                  value={harness}
+                  onChange={(event) => {
+                    const next = event.target.value as "fixture" | "claude";
+                    setHarness(next);
+                    drafts.set(viewId, {
+                      text: runtime.thread.composer.getState().text,
+                      scenario,
+                      harness: next,
+                    });
+                  }}
+                >
+                  <option value="claude">Claude runner</option>
+                  <option value="fixture">HTTP fixture</option>
+                </select>
+              </label>
+              {harness === "fixture" && (
+                <label>
+                  Scenario
+                  <select
+                    aria-label="Fixture scenario"
+                    value={scenario}
+                    onChange={(event) => {
+                      const next = event.target
+                        .value as keyof typeof taskFixtures;
+                      setScenario(next);
+                      drafts.set(viewId, {
+                        text: taskFixtures[next].prompt,
+                        harness,
+                        scenario: next,
+                      });
+                      runtime.thread.composer.setText(
+                        taskFixtures[next].prompt,
+                      );
+                    }}
+                  >
+                    {choices.map(([name, fixture]) => (
+                      <option key={name} value={name}>
+                        {fixture.title}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
+            </div>
+          }
+          footer={
+            task ? (
+              <div className="flow-task-footer">
+                {task.pendingDecision && task.status === "waiting" ? (
+                  <section aria-label="Decision required">
+                    <h2>Your decision is needed</h2>
+                    <p>{task.pendingDecision.prompt}</p>
+                    <div>
+                      <Button
+                        size="sm"
+                        disabled={state.pending}
+                        onClick={() => void projection.decide("approve")}
+                      >
+                        Approve
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        disabled={state.pending}
+                        onClick={() => void projection.decide("reject")}
+                      >
+                        Reject
+                      </Button>
+                    </div>
+                  </section>
+                ) : (
+                  <p>
+                    {task.status === "cancel_requested"
+                      ? "Cancellation requested. Waiting for the runner to acknowledge that it stopped."
+                      : task.status === "uncertain"
+                        ? "Runner ownership was lost. Reconciliation is required; work may already have taken effect."
+                        : "This accepted task continues at the center. Start a new chat for another task."}
+                  </p>
+                )}
+                {task.verificationStatus === "failed" && (
+                  <p className="flow-error">
+                    Artifact verification failed. The result and evidence are
+                    retained.
+                  </p>
+                )}
+              </div>
+            ) : (
+              <p className="flow-composer-note">
+                Submitting creates a durable task. Closing a chat does not
+                cancel it.
+              </p>
+            )
+          }
+        />
       </AssistantRuntimeProvider>
-    </DetailsContext.Provider>
+    </ReferenceContext.Provider>
   );
 }

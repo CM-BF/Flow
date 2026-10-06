@@ -48,6 +48,23 @@ describe("center-driven projection over the public HTTP client", () => {
       .slice(-2);
     expect(latest[0]!.key).not.toBe(latest[1]!.key);
   });
+  it("keeps a late durable acceptance closed after its view disconnects", async () => {
+    fixture.delaySubmissions(80);
+    const acceptance = projection.submit(taskFixtures.slow);
+    await until(() =>
+      fixture.requests.some((request) => request.method === "POST"),
+    );
+    projection.disconnect();
+    const id = await acceptance;
+    expect(fixture.tasks.has(id!)).toBe(true);
+    expect(projection.getSnapshot().task).toBeNull();
+    expect(
+      fixture.requests.some(
+        (request) =>
+          request.path.includes("/stream") || request.path.endsWith("/cancel"),
+      ),
+    ).toBe(false);
+  });
   it("disconnects the observer without cancellation and reopens the accepted task", async () => {
     const id = await projection.submit({
       ...taskFixtures.slow,
