@@ -30,7 +30,25 @@
     "rawBytes": 613,
     "wholeWindowMs": 2360.0334159564227,
     "ownTmpSampledPeakAllocatedBytes": 78208,
-    "retainedRoots": []
+    "retainedRoots": [],
+    "runtimeTypesFinal": {
+      "exitCode": 0,
+      "receipt": "validation/runtime-types-retry.receipt.json",
+      "earlierExitCode": 2
+    },
+    "syntaxFinal": {
+      "exitCodes": [
+        0,
+        0
+      ],
+      "receipt": "validation/syntax.receipt.json"
+    },
+    "finalDistinctFake": 9,
+    "notRepeated": [
+      "fake 9",
+      "pure strict"
+    ],
+    "targetedWindowMs": 1546.2437089299783
   },
   "bindings": [
     {
@@ -77,7 +95,31 @@
       "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.receipt.json",
       "bytes": 1931,
       "sha256": "5893a9678bc5f7e2324e47a4b8cdf3e0f6cf84496966faff73735c6c0a4ded88"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types-retry.receipt.json",
+      "bytes": 2813,
+      "sha256": "541fa6272793f9de2d2723845d231ea7f06b179ae471108fc80ea2c779b176d6"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/syntax.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/syntax.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/syntax.receipt.json",
+      "bytes": 2123,
+      "sha256": "b4055da42ab6149be157e5e1ef12fb84fb815337016463466fd4a5bf20744e24"
     }
   ],
-  "receiptMeaning": "Per-step receipt includes exact argv, real child exits, group/stdio closure, initial resource fact and identity-checked own-temp removal. No actual runRunner test was selected."
+  "receiptMeaning": "Per-step receipt includes exact argv, real child exits, group/stdio closure, initial resource fact and identity-checked own-temp removal. No actual runRunner test was selected.",
+  "finalSource": "fd24a1f4d89839c867ed9184ef2c28680c5922cd",
+  "finalSourceDelta": "Only inert fixture version:1 added after TS2741. No behavior/assertion change; root authorized the fix and directed runtime strict/syntax only.",
+  "finalInputSha256": "529325d02033c8431539296aef4c5dd0b59a3e5f79dafeee7a45fa267e059639",
+  "inputHistory": "ec61/4a992 receipt-accounting manifest binds the earlier v3 input/ledger by fixed Git. fd24 updates only inert adapter source hash and adds one retry-receipt manual path; all original check raw bytes remain unchanged."
 }

@@ -1,0 +1,99 @@
+{
+  "window": "S01_IDLE_TARGETED_TYPES_20261006_1909",
+  "executionHead": "fd24a1f4d89839c867ed9184ef2c28680c5922cd",
+  "inputSha256": "529325d02033c8431539296aef4c5dd0b59a3e5f79dafeee7a45fa267e059639",
+  "startedAt": "2026-10-06T19:08:55.329792+00:00",
+  "endedAt": "2026-10-06T19:08:56.875533+00:00",
+  "elapsedMs": 1545.7499589538202,
+  "freeBytesBefore": 1512509440,
+  "totalStdoutStderrBytes": 0,
+  "limits": {
+    "totalMs": 15000,
+    "rawBytes": 4096,
+    "ownTmpBytes": 8388608
+  },
+  "environment": {
+    "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+    "TMPDIR": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-idle-types-qbpkww8s",
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "CI": "1",
+    "NO_COLOR": "1"
+  },
+  "cleanup": {
+    "root": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-idle-types-qbpkww8s",
+    "dev": 16777234,
+    "ino": 123140609,
+    "unknown": false,
+    "sampledPeakAllocatedBytes": 64,
+    "finalAllocatedBytes": 64,
+    "removed": true,
+    "retainedRoots": [],
+    "peakBetweenSamples": "UNKNOWN"
+  },
+  "failure": null,
+  "previousRuntimeFailure": {
+    "git": "4a992220dbefec945f233317478a6ec670a27334",
+    "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.receipt.json"
+  },
+  "notRepeated": [
+    "9 fake tests",
+    "pure strict"
+  ],
+  "actual": "NOT_OPEN",
+  "steps": [
+    {
+      "step": "runtime-types",
+      "processes": [
+        {
+          "argv": [
+            "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+            "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+            "--noEmit",
+            "-p",
+            "experiments/runner-capacity/mixed/idle-claim-runtime-tsconfig.json"
+          ],
+          "pid": 60158,
+          "exitCode": 0,
+          "groupGone": true,
+          "streamsEnded": true,
+          "stopReason": null
+        }
+      ],
+      "elapsedMs": 1348.3715419424698,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "step": "syntax",
+      "processes": [
+        {
+          "argv": [
+            "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+            "--check",
+            "experiments/runner-capacity/mixed/execute-idle.mjs"
+          ],
+          "pid": 61858,
+          "exitCode": 0,
+          "groupGone": true,
+          "streamsEnded": true,
+          "stopReason": null
+        },
+        {
+          "argv": [
+            "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+            "--check",
+            "experiments/runner-capacity/mixed/idle-claim.vitest.config.mjs"
+          ],
+          "pid": 61859,
+          "exitCode": 0,
+          "groupGone": true,
+          "streamsEnded": true,
+          "stopReason": null
+        }
+      ],
+      "elapsedMs": 68.48341703880578,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
