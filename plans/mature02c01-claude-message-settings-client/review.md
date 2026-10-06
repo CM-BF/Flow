@@ -1,12 +1,16 @@
 # MATURE02C01 独立审查
 
-状态：NOT_STARTED
+状态：APPROVED；Reviewer：assignment_review / gpt-6-astra，独立于作者 native_center_owner
 Review target commit：563b1ea151d8d26a2100238d8faf26b697f38d71
 
-作者 native_center_owner，独立 reviewer 待 ExecutionLead 指定。基线 8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6（受控 CORE/F01 输入）。源码范围为status的9个literal；[作者证据](../../docs/evidence/mature02c01/README.md)、fixed-manifest.json固定后供只读核验。
+审查时间：2026-10-06 16:55:18 UTC。观察交付 a23883fbc595564dcb66e0030b430674b896574e，clean。受控基线 8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6。范围仅status的9个product literal；CORE六合同和O14三受控输入的独立边界保持。
 
-可复制审查任务：只读核实际树/head/dirty与固定manifest；读新目录严格protocol及旧reader保留、嵌套请求冻结/ACK未知映射、requested/observed关联、opt-in queue immutable receipt与最长完整字符预览、CLI稳定key/有界文件读取/退出码/signal；核原raw与未运行界限。CORE/F01受控输入不因本片审查自动获批准，不重跑无关全集。
+唯一权威独审原件：[review](../../docs/evidence/mature02c01/independent-review.json)，SHA256 0732a01023745c4ee58efa8b24d22cab43b419e0491cfefbbdd336fb93d0cb36；[bindings](../../docs/evidence/mature02c01/independent-review-bindings.json)，SHA256 7db0127e0941cc7c2a38f3375fda4fe30d891a3c8497bed585fd62e945a9ddda。作者原样归档，不改审查结论。
 
-作者实际验证：86不同用例分轮通过，67既有直接消费者、19新用例；三轮 focused types exit0。未执行：root types/PG/provider/browser/真实Web或TUI旅程。独立审查尚未执行；当前记录不是批准。
+审查完整9源码及关键直接合同/原输出；100绑定=9source+59protected+32evidence固定与工作区bytes/hash全符，mismatches=[]。核86不同用例分轮（19新、67旧）和3轮focused types0，未运行root types。reviewer0测试/PG/HTTPserver/provider/browser/install。No P1/P2。
 
-源前检 P2（ExecutionLead）：8bf472e3265f0995db2c5503876859cc511a4dca 的queue接受任意短前缀；作者在 563b1ea151d8d26a2100238d8faf26b697f38d71 修复为与CORE itemView相同的最长完整code point前缀。两条定向回归由2红转2绿/6未选，focused types0；等待本目标完整独审/确认。原raw保留，未重复82项矩阵。
+源前检P2 CLOSED：8bf472e3265f0995db2c5503876859cc511a4dca接受过短合法preview；作者在本target修成CORE itemView语义的最长完整code point前缀，且严格truncated。原2红→2绿/6未选、最后focused types0均保留；审查已核，无重新执行。
+
+批准仅共享client/CLI consumer：一个transport，严格显式protocol目录、冻结key/body和snapshot、immutable enqueue ACK、requested/observed分离、CLI既有JSON/退出/signal。O14 goalCommand/专测/README原前缀保持，未赋予O14自动scan批准。Configured choice不代表账号资格、ACK不代表执行成功；真实CORE/native/provider/PG/production mount/Web/TUI/roottypes不在本结论。
+
+后续受控集成只能消费固定target及其明确合同输入；新finding交作者原claim局部修，重新绑定target/必要直接检查，不能借metadata更改源码。原manifest及raw保持不变；main receipt尚待ExecutionLead。
