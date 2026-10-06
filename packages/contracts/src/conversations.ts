@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { executionProfileReferenceSchema } from './execution-profiles.js';
 import type { Detail, TaskSummary } from './tasks.js';
 import type { AssistantSettings } from './assistant.js';
 
@@ -12,6 +13,7 @@ export type ConversationSettings = z.infer<typeof conversationSettingsSchema>;
 export const conversationCreationSchema = z.strictObject({
   title: z.string().trim().min(1).max(180),
   harness: z.literal('claude').default('claude'),
+  executionProfile: executionProfileReferenceSchema.optional(),
   requested: conversationSettingsSchema.default({ model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' }),
 });
 export type ConversationCreation = z.infer<typeof conversationCreationSchema>;
