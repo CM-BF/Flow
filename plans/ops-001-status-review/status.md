@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:01:19 UTC / main9d6bd45abdf5149bc44f1e9dc534454e7403f7d7（本次发布前） |
+| 最近更新 / 最近main同步核验 | 2026-10-06T13:13:50.383099+00:00 / maincde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd（本次只读核验） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -10,7 +10,7 @@
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
-| 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
+| 工作树dirty状态 | 仅本次资源事实和运行约束记录 |
 | 工作分支状态 | delivered；原历史TODO与独立review边界保留 |
 | 已集成main状态 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；严格两层任务与消息预算已main；模块化/复用/性能新规则固定1d36a7a已独审，本批发布。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
@@ -84,3 +84,9 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 | OPS-001-10 | completed | Execution Lead | 根规则1d36a7a4532bbd2f29300c220d5451f755bd756c与plan/review门槛完整覆盖；runner_owner独立只读APPROVED；[质量记录](../../docs/quality/modular-design-rules-2026-10-06.md)，仅文档检查。 |
 
 2026-10-06 09:00:57 UTC：用户模块化/DRY/扩展/性能规则完整落实到根AGENTS唯一权威及plans门槛，独立文档审查无finding；与本批受控main发布绑定，实际发布SHA由Git集成事实核验。WPF-MATURE-01～06统一引用根锚点，不复制规则正文。
+
+## 2026-10-06T13:13:50.383099+00:00 共享磁盘预算
+
+13:12:37 UTC Data卷可用1,826,984 KiB（约1.74 GiB），不能视为完整安装/复制的空间限制解除。SVC06大型产物准备暂停；每次开始前核真实可用量、估计并发物理峰值，并至少保留1 GiB供数据库、证据及其他队伍收尾，当前完整准备最低门槛2.5 GiB。clone减少物理复制不等于安装/临时峰值为零，失败不扩大预算或回落普通全量复制。
+
+三队仅各自核对已结束、自有且身份明确、可重建的临时安装/测试产物；不得删除用户数据、他人worktree/node_modules、active/unknown资源或审查原始证据。本次Execution Lead未删除文件。ConnectionSession源码、小范围现有依赖检查和已授权有界诊断继续，不全局停工、不操作个人服务。共享资源观察见[固定事实](../../docs/quality/resource-space-2026-10-06.json)，SVC06具体峰值与清理记录由其唯一owner维护。纯文档核对，不跑产品测试。
