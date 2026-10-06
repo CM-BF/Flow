@@ -1,0 +1,13 @@
+{
+  "state": "ACCEPTED_RESEARCH_ONLY_NOT_IMPLEMENTED",
+  "scope": "Existing REQ22/23 and MATURE06-04;no newtask/claim/publicslot",
+  "accepted": "Preserve defaultRecovery.sync/reauth-generation and disabledstate, fullprivateRestorelease, retainedguard across uniqueouterhost",
+  "signature": "Private RecoveryHost.restore(record,lease); UI/plugin continues RecoveryWorkspace.restore(record,retry?) which constructs the lease. Never pass lease as publicsecondargument.",
+  "futureOnly": [
+    "Defaultcheckpoint then revoke beforeactivation and same-namespace reauth without autoenablingdisabled/failed",
+    "Fullintent/profile/material editing duringrestore invalidates oldapply and checkpoints newdraft; no sameview doublerestore",
+    "Retainedguard failure keeps Asession/client/RecoveryWorkspace without grantingbusinessauthority; oldcleanup/callback cannotactasB"
+  ],
+  "sourceReview": "root-review.json",
+  "runtime": false
+}

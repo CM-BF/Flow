@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T20:49:47.654427+00:00",
+  "verdict": "ACCEPTED_RESEARCH_INPUT_NOT_IMPLEMENTATION",
+  "report": {
+    "path": "/private/tmp/recovery-connection-p01-4d330-delta/report.md",
+    "sha256": "6066802a7029bf336ce00172184f02b9c2c77433f53d094d83602f11855347b3"
+  },
+  "manifest": {
+    "path": "/private/tmp/recovery-connection-p01-4d330-delta/manifest.json",
+    "sha256": "a6486d6e32ff0e33fc8a1f322339914a9e8a5c95298c6dfac950711e0373f789"
+  },
+  "fixed": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "previous": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+  "scope": "Existing REQ22/23 and MATURE06-04 only; no new task, public slot, contract or claim.",
+  "validation": {
+    "elevenFixedCurrentSourceHashesMatch": true,
+    "eightOfOriginalTenUnchanged": true,
+    "twoPriorReportsMatch": true,
+    "readContext": [
+      "RecoveryWorkspace.sync/protection/restore/finally",
+      "App recoveryHost lease-guarded prepare/apply and retained guard",
+      "AppPluginSession constructor/updateActions recovery.sync"
+    ],
+    "runtime": "NOT_RUN",
+    "projectWrites": false,
+    "credentialsOrServiceSampling": false
+  },
+  "acceptedDelta": [
+    "Unique outer host migration must retain a single RecoveryWorkspace and its sync entry for both updated business actions and host transitions.",
+    "Reauthentication uses namespace plus current generation and preserves current retained material; disabled/failed plugins are not auto-enabled.",
+    "Restore remains routed through the RecoveryWorkspace lease owner, complete edit fingerprint, preflight prepare/apply and retained-work guard."
+  ],
+  "interfaceClarification": "The report phrase restore(record, lease) refers specifically to the private RecoveryHost.restore callback. UI/plugin actions must continue calling RecoveryWorkspace.restore(record, retry?) through its owned command entry; that method constructs and owns the lease. Never publish the lease or pass it as the public second argument, which currently means retry.",
+  "acceptanceCarry": [
+    "Three proposed timing checks remain future tests of the outer-host change, not observed failures or coverage inherited from direct50.",
+    "Existing preauth private form, exact cleanup handles, disabled persistence, theme teardown and stale navigation safeguards remain required.",
+    "This research does not change Recovery active21scope, its browser inputs or current shared window."
+  ],
+  "cleanCode": "Preserve one state owner and explicit private interfaces; clarify the two restore signatures rather than adding a second coordinator or generic event bus."
+}

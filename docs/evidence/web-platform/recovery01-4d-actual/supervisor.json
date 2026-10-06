@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "errors": [
+    "locator.click: Error: strict mode violation: getByRole('dialog', { name: 'Saved drafts and receipts', exact: true }).locator('li').filter({ hasText: 'Saved draft' }).filter({ hasText: 'conversation:c192b9dc-0c59-4ee2-8348-cccaab574945' }).getByRole('button', { name: 'Restore without sending', exact: true }) resolved to 2 elements:\n    1) <button class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2\">Restore without sending</button> aka getByRole('button', { name: 'Restore without sending' }).first()\n    2) <button class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2\">Restore without sending</button> aka getByRole('button', { name: 'Restore without sending' }).nth(1)\n\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: 'Saved drafts and receipts', exact: true }).locator('li').filter({ hasText: 'Saved draft' }).filter({ hasText: 'conversation:c192b9dc-0c59-4ee2-8348-cccaab574945' }).getByRole('button', { name: 'Restore without sending', exact: true })\u001b[22m\n"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_04d9cb1c628b41d6a215dbafab664f94",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 3.3591249999990396,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.4132079999999405,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 10546,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 12234,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 1195659264,
+  "peakScratchBytes": 26394699,
+  "logBytes": 3759,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 10597.394125,
+      "scratchBytes": 26394699,
+      "evidenceBytes": 940301,
+      "freeBytes": 1195659264,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 10671.128916000001,
+      "scratchBytes": null,
+      "evidenceBytes": 943485,
+      "freeBytes": 1217073152,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

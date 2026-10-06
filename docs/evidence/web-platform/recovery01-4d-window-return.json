@@ -1,0 +1,68 @@
+{
+  "recordedAt": "2026-10-06T20:52:38.194471+00:00",
+  "state": "RECOVERY4D_FAILED_CLEANED_WINDOW_RETURNED_F04",
+  "run": "rec4d-20261006-205056-a30d13",
+  "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13",
+  "source": "Manager actualsupervisor/budget/DBcleanup read plus owner terminalstdout/actualexit receipt; independent root review pending",
+  "implementation": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "runtimeHead": "d3d45bcb58e2b34064abfdbb90b9d56edc6cd0d9",
+  "actualExitCode": 1,
+  "cookieRead": "PASS",
+  "textIntentDraft": "FAILED_RESTORE_LOCATOR_STRICT_TWO_MATCHES",
+  "pageErrors": [],
+  "productRootCause": "NOT_DETERMINED",
+  "budgetRecordElapsedMs": 10671.133875000001,
+  "lateTerminalElapsedMs": 10674.167625,
+  "cumulativeMs": 25520.435,
+  "remainingMs": 64479.565,
+  "futureIntegerCarryMs": 25521,
+  "futureIntegerRemainingMs": 64479,
+  "accounting": "Use later terminal conservatively; integer budget only arithmetic, no newrunpermission",
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_04d9cb1c628b41d6a215dbafab664f94",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 3.3591249999990396,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.4132079999999405,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "processIds": [
+      {
+        "pid": 10546,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 12234,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true,
+    "errors": []
+  },
+  "managerAdminEnvRemoved": true,
+  "windowReturnedTo": "LeadF04, no Webholder or automaticretry",
+  "provider": false,
+  "newRun": false
+}

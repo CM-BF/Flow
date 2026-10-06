@@ -1,6 +1,10 @@
 # Web 当前交接与唯一来源
 
-**Settings b5 单次页面检查4/4通过并完成清理，Web已立即归还窗口给Lead F04。** [实际归还](message-settings-b5-window-return.json)：执行270c/0925，parent actualexit0/PASS；8267ms，累计28876/60000、余31124仅算术。worker PGID20627、Chrome PGID16283均absent，scratch删除、cleanup errors=[]；Chrome exit/close0，pageErrors=[]、fixture/context关闭。0PG/provider，原raw不改，root独立结果审待接收。Web无holder，不自动接Recovery/DPERF04，也不冒称F04已启动。
+**Recovery4d本次页面子集失败且清理完成，Web窗口已归还Lead F04。** [实际归还](recovery01-4d-window-return.json)：cookieRead通过，Restore定位匹配2行导致strict失败，pageErrors=[]，原因待独立核查，未先判产品缺陷。专DB已DROP/连接0，PGID10546和12234均退出、ownedgroups absent/scratch删除、cleanup errors=[]；manager隔离adminenv已删除。更晚终态10674.167625ms，browser累计25520.435/90000、余64479.565仅算术；原budget10671.133875保留不回填。0自动重试/不接下一Web检查，本组无holder。
+
+**本轮Recovery准入历史：原同源子集fresh准入后交panels一次执行，现已失败并清理。** [单次准入](recovery01-4d-admission.json)核d3d45/4d330十九源、原21claim/依赖/旧raw/累计预算及新隔离测试输入；旧14.846267375秒保留，本次最多75153ms含15s清理，不扩完整三中心/CREATE/Queue/Steer等验收。F04当前未占共享窗，本次结束立即归还。
+
+**Settings b5 单次页面检查4/4通过并完成清理，Web已立即归还窗口给Lead F04。** [实际归还](message-settings-b5-window-return.json)：执行270c/0925，parent actualexit0/PASS；8267ms，累计28876/60000、余31124仅算术。worker PGID20627、Chrome PGID16283均absent，scratch删除、cleanup errors=[]；Chrome exit/close0，pageErrors=[]、fixture/context关闭。0PG/provider，原raw不改，[root独立结果审已限定批准](message-settings-b5-actual/root-runtime-review.json)。Web无holder，不自动接Recovery/DPERF04，也不冒称F04已启动。
 
 **本轮准入历史：Settings b5已通过fresh准入并交唯一W01执行，现已完成清理。** [本次准入](message-settings-b5-next-admission.json)核0925/270c六源、116只读、37外部与ea3c监督/71a643 worker及真实boundary；原20609ms已用，余39391ms含15s清理。Mika SVC07已20:43:06.094669实际2/2通过并清理归还Web（其入站归因）；本组结束后交Lead F04，不自动连跑Recovery/DPERF04。此次门槛/结果以本准入原件为准，不复用旧free。
 
@@ -112,3 +116,11 @@ Recovery原browser准备经[root限定审](recovery01-browser-next-prepared/root
 [本次Settings未启动即归还](message-settings-b5-window-return-not-run.json)保留准入与调度先后，现无Webholder；不能把管理已生成gate冒称实际浏览器占用。
 
 [本轮少量终态/worker原件](message-settings-b5-actual/manifest.json)显示4项通过限定独立受控组件与synthetic HTTP catalog；并非真实App/send/queue/recovery/provider集成通过。原父count20/37失败与三次browser失败历史保持，owner封存和root独审分别记录。
+
+Settings原owner已正常封存 **3b945339**，manager核local=remote/clean、原raw索引hash同，[唯一review与status入口](message-settings-b5-actual/owner-approval-seal.json)为270c受控Picker限定批准；原8停写待Lead main接收，claim仍保留。完整App/MATURE02验收不关闭。
+
+P01外层host仅新增[4d330差异研究](recovery-connection-p01-4d330-delta/intake.json)，root已限定接受，归REQ22/23/MATURE06-04；私有RecoveryHost.restore的lease不得误传给公共RecoveryWorkspace.restore第二参数retry。当前Recovery运行/source范围不变，不新增task/claim。
+
+[Recovery4d本轮11raw与3终态捕获原件](recovery01-4d-actual/manifest.json)已逐字保留；父早budget与晚stdout分列，清理不等旅程通过。新隔离测试输入来自原ef458已准端点，已删除，不存凭据。P01研究没有改动本次任何源码/执行接口。
+
+Recovery原owner已[12955f7d正常封存](recovery01-4d-actual/owner-seal.json)，manager核双端同且clean，19源未改；11raw加父终态和准入共15原件23320B归owner，管理只存14个精确运行/终态原件20770B，口径分列。等待root限定失败证据/源码归因审，不修改断言或自动重试。

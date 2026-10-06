@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T20:45:44.404156+00:00",
-  "state": "SETTINGS_B5_PASS_CLEANED_WEB_NO_HOLDER_RETURN_F04",
-  "groupWindowOwnership": "Settings b5 one actual browser check completed PASS and both owned groups/scratch absent. Web has no holder; opportunity returned to Lead F04, no automatic Recovery/DPERF04.",
+  "recordedAt": "2026-10-06T20:52:38.194471+00:00",
+  "state": "RECOVERY4D_FAILED_CLEANED_WEB_NO_HOLDER_RETURN_F04",
+  "groupWindowOwnership": "Recovery originalsubset endedFAIL at Restore strictlocator2matches; ownedDB/groups/scratch cleaned; privateadminenvremoved. Webnoholder and returnsF04, no retry.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,11 +407,9 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "source": "Actual b5 result/budget and owner actualexit receipt",
     "webHolder": null,
-    "actualWindowReturned": true,
-    "next": "Lead F04 by existing order; not claiming its actualstart",
-    "noAutomaticRun": "Recovery/DPERF04 stay prepared"
+    "source": "ActualRecoverycleanups+owner terminalreceipt",
+    "next": "LeadF04 per priorcoordination; its actualstart not asserted"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -486,10 +484,10 @@
     "version": 1,
     "sourceRequest": "mature02-message-settings-source-request.json",
     "PG": false,
-    "browser": "B5_4_CHECKS_PASS_CLEANED_ROOT_REVIEW_PENDING",
+    "browser": "B5_4_CHECKS_PASS_SCOPED_EVIDENCE_APPROVED",
     "sourceReady": "message-settings-source-ready.json",
-    "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
-    "metadata": "9363195c4ffb7c38380716fa68060c99449df801",
+    "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+    "metadata": "3b945339151abd29e213ff37774ea7d6c5aee93f",
     "registration": "message-settings-registration-intake.json",
     "checkPreparation": "message-settings-check-preparation/report.md",
     "sourceFixedBeforeDelta": "Historical ed769 estimate20 not authoritative; actual f3 sixsources executed at85aba",
@@ -519,7 +517,7 @@
       "historicalOnly": true
     },
     "browserAdmission": "message-settings-b4-admission.json",
-    "browserEvidenceReview": "message-settings-b4-actual/root-runtime-review.json",
+    "browserEvidenceReview": "message-settings-b5-actual/root-runtime-review.json",
     "nextPreparation": {
       "state": "APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN_WAITING_NEW_WINDOW",
       "evidence": "message-settings-b4-locator-dispatch.json",
@@ -542,7 +540,8 @@
       "gate": false,
       "runtime": false,
       "windowState": "NOT_RUN_REASSIGNED_BEFORE_DISPATCH"
-    }
+    },
+    "ownerEvidenceSeal": "message-settings-b5-actual/owner-approval-seal.json"
   },
   "retainedAf51": {
     "state": "LEAD_APPROVED_AND_MAIN_ACCEPTED_LIMITED_COMPATIBILITY",
@@ -550,7 +549,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "message-settings-b5-window-return.json",
+  "currentWindowReturn": "recovery01-4d-window-return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -963,5 +962,7 @@
     "ownerSealEvidence": "recovery01-50-owner-seal.json"
   },
   "messageSettingsB5Admission": "message-settings-b5-next-admission.json",
-  "messageSettingsB5Result": "message-settings-b5-window-return.json"
+  "messageSettingsB5Result": "message-settings-b5-window-return.json",
+  "recovery4dAdmission": "recovery01-4d-admission.json",
+  "recovery4dResult": "recovery01-4d-window-return.json"
 }

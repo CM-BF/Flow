@@ -108,3 +108,5 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。
 
 2026-10-06 安全点，原06-03/01-03 CHATREAD补[accepted queue六源研究](../../docs/evidence/web-platform/accepted-queue-506-research/report.md)：只将accepted enqueue收据作为最小紧凑候选；accepted cancel-item可能already-promoted、cancel-task仅请求接受，不能推无待办。unknown/rejected/sending、刷新失败/paused/blocked/current task确认、原key/context/动作和插件权限继续显著；展开前0详情预取。研究0运行、不新增任务或当前scope，后继仍真实用户验收。
+
+06-04 / REQ22–23 外层唯一P01 host的[4d330新增差异](../../docs/evidence/web-platform/recovery-connection-p01-4d330-delta/report.md)及[root限定接收](../../docs/evidence/web-platform/recovery-connection-p01-4d330-delta/root-review.json)仅补后继验收：保默认Recovery.sync、同namespace新generation重放及disabled/failed不自启；保完整稿Restore租约与同view互斥；保retained guard失败期间A业务对象与撤权边界。签名明确：`RecoveryHost.restore(record, lease)`是私有callback；UI/plugin仍调`RecoveryWorkspace.restore(record, retry?)`，由其产生lease，不能把lease传为公共第二参数。三条时序仍未实现/未验证，不扩当前21scope或新publicslot/任务。
