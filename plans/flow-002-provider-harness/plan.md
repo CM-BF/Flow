@@ -190,3 +190,7 @@ Execution Lead汇总两端只读审查后拆最小独立片：保留既有claim�
 WPF-MATURE-02由Mika统筹Claude+Codex模型、thinking/effort、fast与access的真实能力链，Web负责选择与展示；FLOW-002-T09/R05负责可替换宿主与中心识别来源的契约。每个sub-task只关联一个大task，交叉依赖用链接，不复建总计划。模型目录、账号可用性、请求配置、实际响应模型与权限必须分别记录；不能用前端下拉、宽泛字符串或配置声明代替执行证据。Codex固定0.154.0 stable schema及真实initialize协商优先于latest文档；实验字段、分页/恢复、dynamicTools各自验证。此计划不新增认证、provider query或预算许可。
 
 其余成熟界面大task由WPF-001唯一管理源维护：视觉/双主题、拖放与文件输入、context占用/压缩透明、单tab双面板/split，以及聊天/queue/steer/voice可靠性。FLOW-001总矩阵保留这些需求与跨lead依赖，不把本地descriptor提取当界面或第二harness已完成。
+
+## 2026-10-06 生产工程目标归属
+
+FLOW-002-T07 / REQ-06的实际源码修改、监督检查与固定产物交付统一由[ENG-001](../eng01-engineering-delivery/plan.md)规划生产子任务；E01继续保存公平harness比较输入，不复制工程实现计划。先完成当前TUI/R05基础接通，随后工程纵向片优先于COST观测扩展。只读聊天、文本child或fixture通过不能关闭T07；>=Sol模型门槛与具体provider预算保持。
