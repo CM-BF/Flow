@@ -84,3 +84,7 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 原14纯unit/strict0仅准备证据。只读saved raw/source，无新工程测试、HTTP、PG、runner或provider；具体问题交owner修报告，不允许重跑取好结果或清未知。结果批准仅证明如实失败交付可接收。
 
 2026-10-06 10:15:58 UTC结果独审 **APPROVED**，target `6a5961a0d815113bba7cea149bc08ca07fdd128a`，reviewer architecture_read / gpt-6-astra，0 P1/P2证据问题。明确仅如实失败交付，runVerdict=FAIL不变；[独审回执](../../docs/evidence/s01/mixed-run/independent-review.json)。原source/raw/analysis冻结，不补跑、不清unknown；main接收另记。
+
+## after-drain-v1 独立窗口准备
+
+Review target commit: `51541b0cad73dcad32c7374dc87d631f0b9a8432`。当前NOT_STARTED，之前634准备与6a596如实FAIL结果APPROVED不自动覆盖本次。范围为2旧源输入适配+2新identity/test，21 source/21 fixed-main readonly/8 new raw/9 support见[manifest](../../docs/evidence/s01/mixed-after-drain-preparation/manifest.json)。请只读核Git/WT/hash、固定base祖先、P03两源及client输入；确认identity只选固定目录与base，负载/观察/cleanup/proof未变。10新纯checks/strict0、初始0tests与1red保留，旧14不重跑。不得由review自行启动窗口；新windowId/execution HEAD仅由Mika最后指定。

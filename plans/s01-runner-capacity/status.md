@@ -9,15 +9,15 @@
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 新base main0cee7556；受控merge86297277；原mixed实现634、执行12154、FAIL结果6a5961a保持冻结 |
-| 工作树dirty状态 | 新窗口2旧源码小改+2新源码与准备metadata；旧raw/support/manifest逐字不变，待固定commit |
+| 工作基线 / HEAD | 新base main0cee7556；受控merge86297277；新实现51541b0cad73dcad32c7374dc87d631f0b9a8432；原634/121/6a596保持历史固定 |
+| 工作树dirty状态 | 新实现51541b0c clean；其后仅manifest/status/review metadata，源码与检查已冻结 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新run identity纯10通过、strict0；旧14未重跑。此前真实窗口FAIL/A16/B未跑；本次实际窗口尚未运行 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
-| 实现目标 | 原mixed准备634926238f749fb1547a5973b521bc6dc5498574；结果6a5961a已审；新窗口输入适配尚未固定 |
+| 实现目标 | 51541b0cad73dcad32c7374dc87d631f0b9a8432 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
 | 当前产出 | 停止修复后的独立混合验证输入已实现，通过局部检查，待固定审查 |
 | 下一可用交付 | 固定输入和独立输出合同经审查后，等待唯一执行窗口 |
@@ -147,3 +147,5 @@ Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执�
 2026-10-06T10:42:12.735Z：GO授权P03已main后的独立一次零模型混合窗口，Mika只派当前准备，未点名执行。fresh claim8e4660a6 v3 active；scope=[] integration已take/release，受控合main0cee→86297277，无冲突且原S01三scope零diff。新增[合同](../../docs/evidence/s01/mixed-after-drain-preparation/README.md)，132旧文件逐字固定；原FKye9L journal未读取/操作。原33/62等工程与14纯检查不是本次运行计数，新窗口0tasks/0PG/0HTTP/0provider。架构影响仅实验输入身份及证据目录，生产pool/锁/contract不改；共享架构图无需新产品更新。原独审结果等待Lead历史接收与本次新准备分开。
 
 2026-10-06T10:44:15.659Z：Mika批准最窄run identity适配，driver/main小diff与新identity/test完成；10不同纯检查+strict0，原14不重跑，0实际窗口。130旧文件当前仍逐字一致，仅两份driver输入源码按新target适配，旧固定634/121/6a596可重现。新manifest将绑定21实验source、新raw及固定main/client/P03输入；source/raw固定后交Mika独审，不沿用旧准备批准。
+
+2026-10-06T10:45:02.650Z：新窗口实现target `51541b0cad73dcad32c7374dc87d631f0b9a8432` 已固定，[manifest](../../docs/evidence/s01/mixed-after-drain-preparation/manifest.json)绑定21source/21readonly/8raw/9support（SHA 32965654f0e3960302ec66ed9492ec20ba00abaa2a2ffa19f27fe50ced305b11）。readonly逐字=固定main0cee，P03两源=a677；旧17实验源未改、2源输入适配+2新源，原raw/manifest冻结。源码/检查不再改动，提交后交Mika正式独审；没有已授权windowId、没有新真实调用。
