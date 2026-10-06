@@ -2,7 +2,7 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：269103d44f153f13a2f35fadb08bf11d4f62e48d
+Review target commit：c18bd6630cbdbb431460688a0f6bea9248f4151f
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
@@ -49,3 +49,7 @@ root独立SOURCE review于2026-10-06T15:55:02.202190Z通过，0blocking；[完�
 ## 2026-10-06 16:10:42 UTC A3部分运行，不扩展批准
 
 源码批准仍固定269103d。A3 attachment-only通过，mixed资源中断，B未执行；完整兼容保持NOT_STARTED。见[原始结果索引](../../docs/evidence/wpf-release03/history3-result.json)。旧362业务失败、A2未准入与A3资源中断分别记录，不混合归因，不把单项通过当成功A attestation。
+
+## 2026-10-06 16:11:23 UTC 标签修复候选
+
+c18bd6630cbdbb431460688a0f6bea9248f4151f一行history模式标签修正待源码窄审，不改变已执行A3或history契约。完整兼容仍NOT_STARTED，无新增运行。

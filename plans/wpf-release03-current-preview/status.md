@@ -9,13 +9,13 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 269103d44f153f13a2f35fadb08bf11d4f62e48d（后继源码固定） |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / c18bd6630cbdbb431460688a0f6bea9248f4151f（后继标签源码固定） |
 | 工作树dirty状态 | 执行时0b3e clean；本次只更新原始证据与metadata，提交后local/remote/clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PARTIAL 269103d44f153f13a2f35fadb08bf11d4f62e48d：A3 attachment-only通过；mixed因资源停止未完成；B NOT_RUN |
+| 检查状态 | NOT_RUN c18bd6630cbdbb431460688a0f6bea9248f4151f（仅标签修复）；269103实际A3 PARTIAL，B NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；源码条件已审，新组合部分运行；完整兼容未通过 |
-| 实现目标 | 269103d44f153f13a2f35fadb08bf11d4f62e48d |
+| 实现目标 | c18bd6630cbdbb431460688a0f6bea9248f4151f |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -92,3 +92,7 @@ A2 15:57唯一freshfree1,103,237,120B<start1,107,296,256B，未生成gate、0运
 [结果及全部raw hash](../../docs/evidence/wpf-release03/history3-result.json)、[原始history](../../docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/history.json)、[cleanup](../../docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/cleanup.json)。专库flow_release03_f043891611ba49e9ad73有marker并已删除；唯一worker47927由SIGTERM结束，cleanup errors=[]。累计7,983ms、剩余172,017ms/180秒；B/Chrome/原keyApp/Queue NOT_RUN，compatibilityId=null，0provider。原outcome的phaseB=FAILED为无完整worker结果的监督器fallback标签，实际history入口没有启动Chrome或B；原JSON不改，本说明纠正解读。9份raw共47,136B。
 
 窗口与清理事实已交管理/root，无自动重跑/资源重采/类型检查；两源码继续固定269103d。A3不是两项完整成功，不能作为B准入的成功A attestation，也不能生成SVC绿回执。
+
+## 2026-10-06 16:11:23 UTC 后继标签窄修待独审
+
+固定c18bd6630cbdbb431460688a0f6bea9248f4151f只有一行：history模式phaseB恒为NOT_RUN，即使worker未返回。A3真实运行仍绑定269103/0b3e，旧19raw不改，history契约59cde不变；[静态差异/原raw hashes](../../docs/evidence/wpf-release03/history-phase-label-fix.json)。未重跑任何类型/业务/浏览器，后继标签修复独审待root；不将此源码回填为A3执行版本。

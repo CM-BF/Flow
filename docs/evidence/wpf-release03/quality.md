@@ -47,3 +47,7 @@
 ## 2026-10-06 16:10:42 UTC A3安全停点
 
 只封存一次已获准history结果与metadata，源码保持269103d。区分attachment-only业务通过、mixed资源中断、B实际未运行与raw fallback标签；保留全部原JSON，不捏造第二项结果或成功A证明。累计7,983ms不清零，cleanup有marker删除/worker退出/errors[]，不把清理成功当兼容通过。沿已读clean-code方法核证据名称/来源/失败边界；没有重跑types、业务或free查询。
+
+## 2026-10-06 16:11:23 UTC 标签修复清码
+
+仅按执行mode确定未进入B，避免缺worker结果被误读为B失败；保持原raw、契约和业务断言不变。源码一行diffcheck通过；无产品import/测试/types/资源采样。实际运行与后继修复两个target明确分开。

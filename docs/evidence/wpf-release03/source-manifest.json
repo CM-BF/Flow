@@ -1,7 +1,7 @@
 {
-  "implementationTarget": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+  "implementationTarget": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
   "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
-  "method": "Source-only detail DTO correction and raw byte preservation; no imports/types/PG/Chrome",
+  "method": "Single-line history mode phaseB label fix, source logic and byte checks only; no runtime/type/test repeat",
   "files": [
     {
       "path": "apps/web/test/web-current-preview.fixture.ts",
@@ -10,8 +10,8 @@
     },
     {
       "path": "apps/web/test/web-current-preview.browser.ts",
-      "bytes": 43464,
-      "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa"
+      "bytes": 43491,
+      "sha256": "fd5a216059bfc85600dfb832c00b7948bd89f35d7f4d985a203017ee7a8d0e10"
     }
   ],
   "checks": {
@@ -19,9 +19,10 @@
     "protectedLocalInputDiff": "empty",
     "oldTenRawHashes": "unchanged",
     "newTargetTypecheck": "NOT_RUN",
-    "newBackendPG": "NOT_RUN",
+    "newBackendPG": "A3 partial on269103: attachment-only pass, mixed resource interruption",
     "Chrome": "NOT_RUN",
-    "compatibility": "NOT_RUN for new input; old362 A failure preserved"
+    "compatibility": "NOT_VERIFIED",
+    "newTargetRuntime": "NOT_RUN"
   },
   "executionMode": "history / app (pinned successful history only) / all; each requires its own fresh explicit gate",
   "resourcePolicy": {
@@ -38,7 +39,10 @@
     "sourcePeakProof": false,
     "basis": "Lead prior same-factory database size12,360,727B; WAL/OS/other-process peak unknown; 250ms monitor is not hard quota"
   },
-  "historicalRunEvidence": "history-result-152729.json",
+  "historicalRunEvidence": [
+    "history-result-152729.json",
+    "history3-result.json"
+  ],
   "backendInput": "External fresh gate backend={path,head,tree,metadata:[{path,sha256}]}; root approved final af51 audit is candidate input, not run permission",
   "backendProvenance": {
     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
@@ -50,5 +54,5 @@
   },
   "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
   "historyContractRegionBytes": 11859,
-  "gateAccounting": "previousRuntimeMs must equal sum of all existing completed budgets; current3874/180000ms"
+  "gateAccounting": "All completed runs7983/180000ms; remaining172017ms; no automatic retry"
 }
