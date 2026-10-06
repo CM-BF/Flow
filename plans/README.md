@@ -89,3 +89,5 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 [X01完整插件管理计划](x01-plugin-management/plan.md) 已按c21731c独立文档审查通过；[status](x01-plugin-management/status.md) / [review](x01-plugin-management/review.md)。产品生命周期、npm宿主与隔离仍待实施，Web trusted host不等于完整插件管理。
 
 R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前registry新增唯一来源；尚未集成的正文以登记owner树为准。普通自然对话与目标编排分别验收，fixture回复不代表模型对话。
+
+2026-10-06 04:43 UTC：新增独立来源 [CTX01](../plans/ctx01-context-kernel/plan.md)（实验owner树 context-kernel-probe，main未收正文时看dashboard只读源）与 [WPF-PROFILE01](../plans/wpf-profile01-execution-profiles/plan.md)（web-execution-profiles）；领取已确认，登记不代表完成。
