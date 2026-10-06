@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-06T22:53:58.782Z",
+  "scope": "Metadata parse only; no engineering tests or resource admission",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "完整工具材料保存、分块重报与分页读口源码已通过独立审查；剩余验证待资源恢复",
+    "next": "固定正文传输与读口源码供独审，待资源允许补直接检查",
+    "blocker": {
+      "state": "active",
+      "text": "可用空间不足，直接验证等待资源恢复；源码已通过限定独审"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "updatedAt": "2026-10-06T22:53:58.000Z"
+}

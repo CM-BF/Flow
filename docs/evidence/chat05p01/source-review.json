@@ -1,0 +1,125 @@
+{
+  "kind": "CHAT05P01-independent-source-review",
+  "at": "2026-10-06T22:50:14.259659+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review",
+  "mode": "read-only source and existing evidence; no engineering executions",
+  "verdict": "SOURCE_APPROVED_PENDING_VALIDATION",
+  "target": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "base": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a",
+  "initialDelivery": "5a8e9d84cd0b0373053f968c5c89491a2d93eff1",
+  "observedFinalMetadataHead": "27c5f16ea48f44a385ffce60627fc36899e47726",
+  "observedDirty": false,
+  "findings": [],
+  "unresolvedP1P2": 0,
+  "binding": {
+    "manifestPath": "docs/evidence/chat05p01/source-manifest.json",
+    "manifestSha256": "0db30aac46017e49ca6efc92398a15f871fdcb60456101a14c051cd64835d5ad",
+    "reviewBindingsPath": "/tmp/flow-chat05p01-review-bindings.json",
+    "reviewBindingsSha256": "eb01b1271ef9f061d12cf8584bdf7ce708ee6f88f0ebd7d53dcd760b5e990a55",
+    "counts": {
+      "sources": 18,
+      "protectedInputs": 234,
+      "evidence": 39
+    },
+    "total": 291,
+    "refs": {
+      "sources": [
+        "40af6d9071c621707971fd983a85dd9145f065fd"
+      ],
+      "protectedInputs": [
+        "fc3246b307f5436ccecb97f38ccaba10c7a72a5a"
+      ],
+      "evidence": [
+        "669f01c785645fa178825c72967857d8cf5c4744"
+      ]
+    },
+    "mismatches": [],
+    "additionalNotRunRecords": [
+      {
+        "path": "docs/evidence/chat05p01/types-run-05/result.json",
+        "ref": "27c5f16ea48f44a385ffce60627fc36899e47726",
+        "bytes": 738,
+        "sha256": "784db474bee3078e7a4d5e96ef33bda78a18a8dcb56f7af36f92f7bc3b167b10",
+        "status": "NOT_RUN"
+      },
+      {
+        "path": "docs/evidence/chat05p01/pure-run-03/result.json",
+        "ref": "27c5f16ea48f44a385ffce60627fc36899e47726",
+        "bytes": 1170,
+        "sha256": "4dc75c7e968a6059f8c50178c8f73ec52af6baf7d6ce31390fa36e42fd0d2331",
+        "status": "NOT_RUN"
+      }
+    ]
+  },
+  "reviewedSource": [
+    "apps/runner/src/claude.ts",
+    "apps/runner/src/native-activity-body/adapter.test.ts",
+    "apps/runner/src/native-activity-body/body.test.ts",
+    "apps/runner/src/native-activity-body/plan.ts",
+    "apps/runner/src/native-activity-body/spool.ts",
+    "apps/runner/src/native-activity/index.ts",
+    "apps/runner/src/native-activity/mapper.test.ts",
+    "apps/runner/src/outbox.ts",
+    "apps/server/src/events.ts",
+    "apps/server/src/native-activity-body/body.test.ts",
+    "apps/server/src/native-activity-body/codec.test.ts",
+    "apps/server/src/native-activity-body/fixture.ts",
+    "apps/server/src/native-activity-body/index.ts",
+    "apps/server/src/native-activity-body/read.ts",
+    "apps/server/src/native-activity-body/store.ts",
+    "packages/contracts/src/native-activity-body.ts",
+    "packages/contracts/src/runner.ts",
+    "packages/storage/migrations/033-native-activity-bodies.sql"
+  ],
+  "sourceConclusions": [
+    "The optional host port is the only new adapter entry. Absent-port legacy prefix behavior stays explicit; this target does not enable runtime/factory/client exports.",
+    "Whole immutable bytes and the fixed ownership/event-id/sequence plan are written and fsynced before body transmission. Recovery uses that plan and retained ACK/unknown facts, without invoking a provider or creating an attempt.",
+    "The single outbox tail/body barrier serializes complete material and finalization. The c86 persist-poison delta includes initial ordinary persistence failures in the existing failure authority, preventing a later body from overtaking an unpersisted event.",
+    "8MiB per body, 16MiB per attempt, 256 bodies, 64KiB chunks, at most eight events per body batch and four chunks per read page are enforced; original total 2MiB event-batch schema remains applied. These are not aggregate runner memory/disk guarantees.",
+    "Ingestion reuses runner-share/task/attempt ownership locks and the original report transaction/fence, binds immutable activity/session/attempt, verifies chunk continuity and full SHA on seal. Shared applyEvent makes both ordinary and steering finalization reject incomplete body state.",
+    "Reader uses the original owner/browser role hook when mounted, task-bound activity identity, readonly repeatable-read transaction, bounded pages and content digests. Legacy means no complete protocol body is retained; complete material is not tool success.",
+    "The three prepared database scenarios exercise real HTTP plus explicit module migration/routes, not the default factory. Their fixture checkpoint/marker/connection/deadline/normal-drop safeguards were read; actual outer run supervision and fresh permit remain prerequisites."
+  ],
+  "validationFacts": {
+    "oldPure": "22 distinct checks across initial 21/22 exit1 plus selected one 1/1 and eight unselected; original timeout retained. Not a single 22/22 run.",
+    "oldLargeSample": {
+      "materialBytes": 2097275,
+      "events": 36,
+      "batches": 5,
+      "largestJsonBatchBytes": 702184
+    },
+    "newDirectChecks": {
+      "plannedSelected": 10,
+      "newDistinct": 6,
+      "state": "NOT_RUN"
+    },
+    "focusedTypes": {
+      "priorActualExits": [
+        2,
+        2
+      ],
+      "latestSourceFix": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "recheck": "NOT_RUN because fresh-space gate; no typecheck success asserted"
+    },
+    "pg": {
+      "preparedCases": 3,
+      "state": "NOT_RUN"
+    },
+    "reviewer": {
+      "tests": 0,
+      "typechecks": 0,
+      "PG": 0,
+      "providerCalls": 0,
+      "projectWrites": 0
+    }
+  },
+  "explicitLimits": [
+    "This is source approval pending validation, not final domain approval or permission to run.",
+    "The planned ten direct consumers, focused types after the actual red, and the three isolated database cases remain open.",
+    "Production runtime port, default center migration/mount, public exports/client and UI are outside this review.",
+    "No real provider, native permission enforcement, aggregate high-concurrency capacity, crash-fault matrix or unlimited-history recovery bound is proven.",
+    "Future high-concurrency activation requires host admission/retention and aggregate storage work already recorded in the Interface."
+  ],
+  "metadataNote": "Current blocker field is the bare token BLOCKED. At the author next lawful metadata update use the standard ACTIVE: followed by the actual verification-resource blocker, retaining existing failure/NOT_RUN facts. This is not a product finding."
+}
