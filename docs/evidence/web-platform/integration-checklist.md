@@ -72,3 +72,45 @@ D03请仅聚合父WPF-001及两个新的平级owner源；旧nestedM02/plugin入�
 主线FLOW-001 full-plan-matrix REQ-11/12/13仍将npm插件install/enable/disable/upgrade/remove、版本配置/能力作用域、trusted/isolated第三方执行、tool/renderer/verifier、CLI等价与未知UI fallback列为X01全栈范围；当前未完成，主线队列在D03/G01之后。WPF-P01只关闭可信Web host子验收，不能关闭用户完整plugin系统/所有组件可插拔需求。
 
 接收协调owner为原Execution Lead；下一全栈实施owner由其在D03/G01后有ready槽位、Web host接口/证据可消费且公共权限/隔离输入明确时正式登记。我方已发送ready子项与BR-01接口需求，不擅自占其owner或添加新agent。主线登记后把具体计划/owner/输入SHA补入交接；当前标未指定，不能说全系统已开工或完成。
+
+
+## D04领取迁移：2026-10-06 02:41 UTC实观登记回报
+
+用户U08已逐字存主plan，原Lead确认D04独立树复用dashboard，CLI take/list/release/handoff；PostgreSQL独立工程协调schema/DB仅存分配owner/lead/branch/worktree/scope/version/claim状态。事务检查task与父子路径冲突，receipt后开写，handoff带当前version与明确双方，不自动过期抢占。既有合法M02/P01继续并迁移登记；进度仍各status唯一。我方不实现D04，不把本交接清单当第二claim锁。
+
+以下为两owner实际回传后于02:41 UTC交原Goal Owner/Lead的迁移输入；时间是本次登记，不是倒填开工时间。负责lead为外部Web执行管理d01_owner；登记receipt/后续claim版本由D04唯一权威保存。
+
+**WPF-M02** / workspace_panels_owner / web-unified-workspace / codex/web-unified-workspace，当前active迁移请求：
+
+```text
+apps/web/src/App.tsx
+apps/web/src/projection.ts
+apps/web/src/TaskThread.tsx
+apps/web/src/workspace-feed/
+apps/web/test/fixture-server.ts
+apps/web/test/workspace-projection.test.ts
+apps/web/test/workspace-fixture.ts
+apps/web/test/workspace-preview.ts
+apps/web/test/workspace-browser.ts
+apps/web/test/workspace-observers-browser.ts
+apps/web/test/workspace-real-center.ts
+plans/wpf-m02-web-workspace/
+docs/evidence/wpf-m02/
+```
+
+明确排除plugins与plugin-host测试。窄屏活动tab若实证确认，另交Lead追加单文件apps/web/src/components/workspace/WorkspacePanels.tsx后再改，不预占整个workspace目录。
+
+**WPF-P01** / w01_owner / web-plugin-host / codex/web-plugin-host，当前active迁移请求：
+
+```text
+apps/web/src/plugins/
+apps/web/test/plugin-host.test.ts
+apps/web/test/plugin-host.browser.ts
+apps/web/test/plugin-host.config.ts
+plans/wpf-p01-plugin-host/
+docs/evidence/wpf-p01/
+```
+
+不写App/TaskThread/既有workspace/themes。稳定host提交后明确handoff/cherry-pick交M02挂载；需改host回原唯一owner，或Lead记录显式转交。这里的依赖集成不是两owner同时实施同一路径。
+
+两新树rootlock安装仅已授权本地可逆例外，最终恢复、提供patch给Lead，不能混同共享锁交付ownership。旧W01代码冻结，原owner仅维护后发现与人读status/review元数据（最新3b6c5a39568fa27ca62f1ea45e06a77fb678daee clean）；原broad apps/web写界不继续作为新实现占用。所有后续新take/转交先核dashboard、owner status、liveGit并走Lead登记；缺/旧/冲突不能当空闲。

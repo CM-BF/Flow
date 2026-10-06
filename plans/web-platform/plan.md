@@ -25,6 +25,7 @@
 | U05 需求持久化（原话） | “我和你说的话全部记进plan里，不要只靠脑子记” | 本文逐条追溯；每个新增 plan 都有唯一 status/review，未审查保持 NOT_STARTED |
 | U06 Dashboard 视觉反馈（准确摘要，由 root 转交） | 用户不满意4320样式并提供 dashboard 截图，要求紧凑中性视觉；最新主线确认4320为17来源 | 主线 D03 独占视觉与语义实现；WPF-D01仅协作需求/来源登记，不另派实现，不停/重启/覆盖原Lead4320服务 |
 | U07 速度与验证（原总体 Goal Owner 经 root 转达，准确摘要） | 用户强调推进速度与 local tests；按实际影响范围先测本模块与直接依赖，共享接口变更才测链路，metadata不重复全库测试 | 保留真实行为、视觉、a11y验收，不为提速假连接；主线D03承担dashboard全部后续，M02提供公共工作/决策能力，W01保留消费接缝 |
+| U08 多lead领取协调（原话） | “和你在一起工作的还有其他agent leads，一定要管理好执行dashboard，你们才不会overlap工作。take 工作最好也在dashboard上标清楚” | 主线D04/Execution Lead唯一登记领取和转交，dashboard展示唯一owner/负责lead/范围/领取状态；进度仍各status唯一，不凭旧源或缺失源当空闲 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -74,6 +75,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-34 | U07 按影响范围做 local tests 并加快可审查交付 | 所有owner | 模块+直接依赖优先；共享接口才链路；纯metadata仅文档核验，保留必要视觉/行为/a11y |
 | WPF-REQ-35 | 主线M02已交付完整接口；Web整改稳定后接入统一工作总览 | WPF-M02 / 独立owner待派 | 连续feed/attention原地决策、锚点/409/100+分页/懒详情/连接隔离，真实Web验收独立 |
 | WPF-REQ-36 | 主线D03要求各权威status提供明确人读字段与实现范围 | 每个唯一owner自行写；管理者协调 | 阶段/优先级1–9/当前产出/下一可用交付/明确阻塞与决定/完整实现target与literal范围；不写其他owner状态 |
+| WPF-REQ-37 | U08 多lead避免重叠、take工作在dashboard标清 | 原Lead/D04领取登记；各唯一owner声明范围；管理者协调 | taskID/owner/lead/worktree/branch/精确范围、reservation→claimed→active→review→integration/transfer、领取/更新时间与交出接收方可见；同task/source或范围冲突提示，原Lead单点登记防竞态 |
 
 ## 当前 owner 与接口冻结
 
@@ -81,7 +83,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | --- | --- | --- |
 | W01官方Thread+主shell+split/merge | w01_owner / `Flow-worktrees/m1-web` / `codex/m1-web`；本轮起点 `b04df95821a55384c55c833e94405daaf35af8ad` | `apps/web/**`（排除正在委派的workspace子组件合入前并发写）、`plans/w01-web/**`、`docs/evidence/w01/**`；唯一手填status在该树 |
 | 右侧workspace子交付 | workspace_panels_owner / `Flow-worktrees/web-workspace-panels` / `codex/web-workspace-panels`；同base `b04df958...` | 仅 `apps/web/src/components/workspace/**`、`docs/evidence/w01/workspace-panels/**`；不建第二W01 status。提交后由W01显式cherry-pick并复验 |
-| WPF-M02统一工作入口 | workspace_panels_owner / `Flow-worktrees/web-unified-workspace` / `codex/web-unified-workspace`；初始化merge c0c41f9881713f3b371ba62c8f4e68ca5d71e8db | `apps/web/**`中的feed与主App集成、`plans/wpf-m02-web-workspace/**`、`docs/evidence/wpf-m02/**`；host新增模块由另一owner独立提交后明确集成，不造第二协议 |
+| WPF-M02统一工作入口 | workspace_panels_owner / `Flow-worktrees/web-unified-workspace` / `codex/web-unified-workspace`；初始化merge c0c41f9881713f3b371ba62c8f4e68ca5d71e8db | App接缝、TaskThread/projection、workspace-feed及对应测试、plans/wpf-m02-web-workspace、docs/evidence/wpf-m02（精确literal文件清单由owner提交Lead）；排除plugins及plugin-host测试，host仅稳定提交→明确handoff后集成，不自行重复实施 |
 | WPF-P01可信Web host | w01_owner / `Flow-worktrees/web-plugin-host` / `codex/web-plugin-host`；初始化0673653ac6b2da8259bc8ca40d9ae723da2ce875 | `apps/web/src/plugins/**`、plugin-host测试、`plans/wpf-p01-plugin-host/**`、`docs/evidence/wpf-p01/**`；不写主App、现有workspace组件或共享契约 |
 | 本管理计划 | d01_owner / `Flow-worktrees/web-platform-management` / `codex/web-platform-management` | 仅本文范围，管理与需求事实；不复制别人的进度事实 |
 | 只读研究/独立review | root | 原始研究#1～5转化为实现/验证条目，证据见[研究台账](../../docs/evidence/web-platform/research.md) |
@@ -132,10 +134,11 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-01** 持久化全部已传达用户要求与原话/摘要、来源轮次、稳定ID。
 - [x] **WPF-001-02** 明确owner/独占范围/接口/依赖，建立无编号冲突的后续plan/status/review。
 - [ ] **WPF-001-03** 接收官方Thread与panels独立提交，完成W01集成、回归与独立review闭环。
-- [ ] **WPF-001-04** 向主线D03交付管理来源登记清单，保留17原来源；由Lead注册并只读验证读取。
+- [x] **WPF-001-04** 向主线D03交付管理来源登记清单并只读验证；02:38:47.600Z新版22源中3个WPF源完整无issues（仅登记验证，不表示实现完成）。
 - [ ] **WPF-001-05** 空槽后派发WPF-P01，与X01/M02对齐完整插件系统而非只做UI插槽。
 - [ ] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮，继续按用户新要求更新追溯。
 - [ ] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
+- [ ] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
 
 ## 验收、风险与持续方式
 
@@ -158,3 +161,11 @@ type WorkspacePanelsProps = {
 - 主线准确base更新为108fddbd8261963f3d49088873b5a611b70a5dbf（完整C02+M02）；新树优先从此base合已审W01，已有树不重建/reset。W01整体review通过后复用owner实施WPF-P01可信host，安装临时lock例外由root/Lead明确确认，最终还原不提交。
 
 - 主线D03新增人读status字段要求已登记REQ36并交各唯一owner，字段只作文档验证；主线因果修复已APPROVED并进入main8c57f2f，通知现有新树受控合入不reset。
+
+## 多lead领取与转交规则（U08）
+
+D04由原Execution Lead唯一承接并复用dashboard，我方不写D03/D04或共享registry。过渡期新take和transfer先读dashboard、对应权威status与live Git确认占用，再由原Lead单点登记；缺失/陈旧/冲突不当空闲。记录领取/更新时间用当前实观登记，不能倒填开始。分配账本只存lead/owner/task/scope/claim/handoff，不存第二套TODO/check/review，后者仍owner status唯一。
+
+M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不写App、TaskThread或既有workspace。稳定host提交后通过明确handoff/cherry-pick交M02挂载，需要改host则回原唯一owner或登记转交。不同worktree不意味着允许同一功能逻辑重复实施。dashboard本身是只读视图；主线D04新增PostgreSQL工程协调独立schema/DB与CLI take/list/release/handoff，实现事务task/父子路径冲突核验、version与双方handoff、receipt后开写且不自动过期抢占。既有M02/P01合法实施继续并迁移登记；展示冲突时保留依赖集成关系，不以不同worktree掩盖重复实现。
+
+- 2026-10-06 02:41 UTC：两owner精确literal范围已收齐并回报原Goal Owner/Lead，登记时间不倒填；迁移输入见integration-checklist，D04 receipt与展示尚待交付。

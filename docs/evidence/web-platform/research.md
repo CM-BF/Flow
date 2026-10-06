@@ -121,3 +121,10 @@ Host接口协调：M02已接受interface.md的ports/exports方向，P01进入实
 P01×M02连接范围：root接口审读要求App断开/换中心dispose或generation失效旧host/ports/contributions，旧async activation/command/render闭包不能用新连接复活，尤其同taskId跨中心；host提供注册/清理机制，M02绑定connection epoch并重验bridge。测试旧host完全清理、新连接host分离，不把token放context、不改公共API。已交两owner。
 
 SSE验收补充来自原Goal Owner并直接交M02：连接池跨同浏览器同origin页面，补2page、hidden恢复与2split局部检查，留命令/详情预算；退订不重置decision/cancel幂等ACK，HTTP2不是唯一修复。跨多窗口集中预算归B01后续，不在当前临时引SharedWorker/BroadcastChannel；所有新结果仍待owner证据与root独立复验。
+
+
+## RS16 新用户领取协作要求与已聚合事实
+
+用户U08原话已逐字进入主plan并追加REQ37。主线D04唯一Execution Lead负责领取展示/单点登记，assignment账本仅lead/owner/scope/claim/handoff，不复制TODO/check/review。管理者已向两owner收精确literal路径并要求阶段短值M2，P01排除App/Thread/workspace、M02排除plugins/plugin-host测试；声明handoff后集成，不用worktree隔离掩盖重复实现。领取时间取当前实观登记，不倒填；每次派工前读dashboard+权威status+liveGit，缺/旧/冲突不当空闲。
+
+root独立新版D03观察2026-10-06T02:38:47.600Z：22源，WPF001/M02/P01 human.complete=true、missing/issues空；父fa725440 clean，M02 35f0bb9 dirty12，P01 c8900a6 dirty4。W014735d476 clean、SSE blocker active；M02 blocker none为同步滞后已要求唯一owner下安全点更新。来源注册TODO已完成，但不等于实现或D04领取展示完成。
