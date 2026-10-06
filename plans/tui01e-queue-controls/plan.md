@@ -1,6 +1,6 @@
 # TUI01E 聊天队列控制与续接
 
-2026-10-06 13:45 UTC，in-progress。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，追溯 TUI001-06/08；co-lead Execution Lead。owner assignment_review / gpt-6-astra。
+2026-10-06 14:11 UTC，completed。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，追溯 TUI001-06/08；co-lead Execution Lead。owner assignment_review / gpt-6-astra。
 
 用户在原聊天终端使用 `/queue [next]` 查看最多20项轻引用，`/pause` 暂停后续提升，`/resume` 显式恢复。暂停不停止当前任务；恢复可能提升下一项并触发已配置执行。复用公开 FlowClient、现 controller 单一 durable intent 和私有 journal，不建队列/授权/调度第二权威。
 
@@ -11,6 +11,6 @@
 - [x] **TUI01E-01** 固定公开Interface、独立worktree/claim和技能方法。
 - [x] **TUI01E-02** 复用controller/journal接队列轻读与pause/resume，旧create/send兼容。
 - [x] **TUI01E-03** 双公开client真实PG/HTTP及PTY验证冲突、未知ACK、草稿、退出和资源界限。
-- [ ] **TUI01E-04** 固定证据/独立review/受控main接收；完整双端和provider后继不冒完成。
+- [x] **TUI01E-04** 固定证据/独立review/受控main接收；完整双端和provider后继不冒完成。
 
 遵循[根模块规则](../../AGENTS.md#modular-design)。新领域特例留私有 queue-control 映射/校验；共享controller持有唯一 epoch、pending、dispatch和journal释放，UI只渲染与语法。无共享协议/migration/依赖新增。
