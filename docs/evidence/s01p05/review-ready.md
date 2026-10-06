@@ -1,3 +1,5 @@
+> 已于2026-10-06 13:02:16 UTC独审APPROVED；当前正式接收页为[integration-ready](integration-ready.md)。以下交审文字保留历史。
+
 # 固定P05候选交审
 
 Owner status_read/Astra；WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence` / branch `codex/event-state-persistence`。fixed implementation `6336cd00b05843fb33093cf7c3157a4de9ea1815`，base3609，writer4eb31983 v2四scope ACTIVE。
