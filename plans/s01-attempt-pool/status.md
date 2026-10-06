@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:29 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:31 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | s01p01_owner / gpt-6-astra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool |
@@ -15,13 +15,13 @@
 | 实现目标 | d655a3315bf8d967f4c822969e1a0b72952dc493 |
 | 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/runtime-capacity.test.ts, apps/runner/src/admission-journal.ts, apps/runner/src/admission-journal.test.ts, docs/evidence/s01p01/check.mjs, docs/evidence/s01p01/vitest.config.mjs, docs/evidence/s01p01/types.tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 已验证一个runner可有界并行执行，并在未知领取时保守阻断新任务 |
-| 下一可用交付 | 独立审查后交付有界并发核心，CLI配置接线仍由对应owner负责 |
+| 下一可用交付 | 主线接收有界并发核心；命令行配置接线另行推进 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，Mika独立APPROVED d655a331 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@
 | S01P01-02 | completed | s01p01_owner | journal-final8/8，FIFO原red保留 |
 | S01P01-03 | completed | s01p01_owner | capacity-final23/23，含真实PG4项；最终API收束差异7项定向通过 |
 | S01P01-04 | completed | s01p01_owner | consumer-final9/27、lease-final6/23；types-settle0，46不同用例见manifest |
-| S01P01-05 | pending | s01p01_owner / mika / Lead | 未独审/main未接收 |
+| S01P01-05 | in-progress | s01p01_owner / mika / Lead | Mika独审APPROVED；Goal Owner范围接收由lead桥接，main待接收 |
 
 claim599454b1-52d2-4f22-8fc2-f68fb7ac6973 v1 ACTIVE，08:07:56.393Z COMMITTED，fresh账本available无六scope冲突。P01/P02均已release并停写；本树唯一writer，不写CHAT09 main/config或CHAT08 outbox/steering。
 
@@ -44,3 +44,5 @@ claim599454b1-52d2-4f22-8fc2-f68fb7ac6973 v1 ACTIVE，08:07:56.393Z COMMITTED，
 2026-10-06 08:27 UTC：dashboard单次curl达到5s上限，聚合UNKNOWN，原回执dashboard-review-ready.json；不重试/不刷新服务。fresh原子CLI仍确认claim599454b1…v1 ACTIVE，领域与harness已停写；未把领取可见当进度聚合成功。metadata提交后交Mika独审。
 
 2026-10-06 08:29 UTC：Mika正式review可移植性P2已修，变化仅FIFO测试和check环境覆盖；journal-portable8/8、types-portable0，产品runtime/journal未变。当前targetd655a3315bf8d967f4c822969e1a0b72952dc493，原manifest/raw完整保留，等待delta复审；source/harness再次停写，claim v1保留，dashboard沿既有UNKNOWN不重复采样。
+
+2026-10-06 08:31 UTC：Mika独立review于08:30:14 UTC批准固定d655a331，无剩余P1/P2；三项P2均关闭。独审JSON绑定manifest-final，原raw/manifest冻结，无新增验证。当前仅approval metadata，提交后停止本feature全部写入；claim599454b1…v1保留等待main回执/明确修复。main仍未集成，dashboard沿单次超时UNKNOWN，不重试。架构影响为native本地并发/持久admission与恢复安全点，由Lead在主线接收target后更新固定架构视图。
