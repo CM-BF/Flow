@@ -1,6 +1,6 @@
 # ATTACH01 runtime handoff
 
-唯一树 `attachment-resources` / `codex/attachment-resources`，base `f181d84b5fb3652d62e2a181acff442d42b3e066`。当前运行时固定target见[status](../../../plans/wpf-attach01-resources/status.md)与[runtime candidate](runtime-candidate.json)，独审见[review](../../../plans/wpf-attach01-resources/review.md)。phase1小合同独审批准6bc2918永久保留；后端运行域是另一审查target。
+唯一树 `attachment-resources` / `codex/attachment-resources`，base `f181d84b5fb3652d62e2a181acff442d42b3e066`。当前运行时固定target见[status](../../../plans/wpf-attach01-resources/status.md)与[runtime candidate](runtime-candidate.json)，独审见[review](../../../plans/wpf-attach01-resources/review.md)。phase1小合同独审批准6bc2918永久保留；后端运行域8701a6已于2026-10-06 10:49:15 UTC获root独立APPROVED，主线接收与公共接线另记。
 
 入口：[Interface](interface.md)、[运行验证](runtime-validation.md)、[phase1验证历史](validation.md)、[质量](quality.md)、[运行检查与16源hash](runtime-checks.json)、[18scope原始amend](runtime-amend-receipt.json)。无浏览器截图；本片是中心资源/冻结输入/迁移及PG/HTTP直接消费者，Web输入接线另片。
 

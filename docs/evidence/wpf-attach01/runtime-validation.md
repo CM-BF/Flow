@@ -27,3 +27,7 @@
 - runtime-78-first-*为78直接通过但Fastify parser Buffer|string类型未收窄导致types2；新增显式Buffer门禁后最终检查，不用类型断言掩盖。
 
 未验证/非目标：现用户中心部署、公共client/共享decoder/mount新集成、实际Web上传/恢复及多主体授权、真实provider、永久in-use回收、浏览器Send/Queue跨reload原key恢复。原所有预览/个人服务保持，不把本片当完整MATURE03完成。
+
+## 独立审查归档
+
+Root于2026-10-06 10:49:15UTC限定APPROVED8701；四显式路径独立78/78、12.80s，0skip/uncaught，[原日志](root-runtime-direct.log)及[哈希/三DB清零审计](root-runtime-audit.json)原样保留。独立资源记录在root-runtime-resources，作者runtime-final目录没有改写。16源码与target/current一致、19只读依赖=base、两个phase1实现=6bc；types仍作者证据。公开client/decoder/mount、App/provider不在此次批准范围。

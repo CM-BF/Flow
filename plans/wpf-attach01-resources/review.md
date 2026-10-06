@@ -1,6 +1,6 @@
 # WPF-ATTACH01 Review
 
-**状态：NOT_STARTED**（runtime固定候选待独审）
+**状态：APPROVED**（仅固定runtime target范围）
 
 Review target commit：8701a6cf547248e70aa5758f05da1d7d314ae9c0
 
@@ -8,11 +8,21 @@ Review target commit：8701a6cf547248e70aa5758f05da1d7d314ae9c0
 
 完整base f181d84b5fb3652d62e2a181acff442d42b3e066；phase1后运行增量base339086。16完整实现/专测path见status与[runtime-candidate](../../docs/evidence/wpf-attach01/runtime-candidate.json)，本次commit新增/改14个path；两个phase1合同实现保持6bc字节。claim ef617 v2十八scope，index/client/root mount不在本实现。
 
-作者78直接测试通过（29真实隔离PGHTTP+49合同/真实旧Web函数mockfetch及receipt）；根types0；3独占数据库清零；source scoped diffcheck0。真实执行源339086+dirty，before/after哈希一致后绑定固定target，不回填。详细范围、原失败、限制和readonly依赖见[runtime-validation](../../docs/evidence/wpf-attach01/runtime-validation.md)。独立review尚未开始，不能继承phase1批准。
+作者78直接测试通过（29真实隔离PGHTTP+49合同/真实旧Web函数mockfetch及receipt）；根types0；3独占数据库清零；source scoped diffcheck0。真实执行源339086+dirty，before/after哈希一致后绑定固定target，不回填。详细范围、原失败、限制和readonly依赖见[runtime-validation](../../docs/evidence/wpf-attach01/runtime-validation.md)。runtime独立review已完成，独立结论与phase1批准分开记录如下。
 
 可复制审查：核tree/branch/base/HEAD/dirty与16hash；读migration不可变/锁序及锁后clock、幂等重放优先、cap安装事实与原v1、metadata无正文/授权private runner及cleanup保留；按[README](../../docs/evidence/wpf-attach01/README.md)使用自己的/tmp输出目录跑四个显式test，勿写作者证据。审查只读结论交owner记录，若有P1/P2修复由本owner完成。
 
-验收还须区分隔离HTTP/PG与provider/App/生产mount：后者未验收。全部历史日志保留，fixture错误和产品缺陷不可混计。无已知blocking，但正式结论仍NOT_STARTED。
+验收还须区分隔离HTTP/PG与provider/App/生产mount：后者未验收。全部历史日志保留，fixture错误和产品缺陷不可混计。正式独审无blocking findings。
+
+## Runtime独立正式结论
+
+Independent reviewer：root / gpt-6-astra ultra。时间：2026-10-06 10:49:15 UTC。结论：APPROVED，0 blocking findings，严格绑定8701a6cf547248e70aa5758f05da1d7d314ae9c0。
+
+Root全读phase1后14path运行增量、冻结接口与关键server直接依赖；实际审查metadata HEAD 6d0a3077fb2f9dc338a413c020fa5dfe1a3e1b98 clean。独立16source hash=target/current，19只读依赖=base，两个phase1合同实现=6bc；source diffcheck0。[原审计](../../docs/evidence/wpf-attach01/root-runtime-audit.json)保留其10:49:12.019Z采样时间。
+
+独立Node24 / pnpm9.15.4 / Vitest4.0.18四显式路径78/78，29真实隔离PG/HTTP+41合同/legacy真实函数mockfetch+8context，12.80s，03:48:17 PDT启动，0skip/uncaught。[原日志](../../docs/evidence/wpf-attach01/root-runtime-direct.log)由/tmp/root-attach-runtime-direct.log逐字归档。其独立资源输出/tmp/root-attach-runtime-KpbYgR原样保存在[root-runtime-resources](../../docs/evidence/wpf-attach01/root-runtime-resources/resources-cleanup.json)，三个DB各remaining=[]、connections=0、errors=[]；未覆盖作者运行记录。根tsc0沿作者证据，root没有重复。
+
+Clean-code：职责、锁序、事务rollback、有界metadata、严格UTF8、锁后expiry观察、原keyreceipt与runner prompt均核实，无阻塞。当前批准不涵盖公共client/decoder/mount新接线、真实App上传、provider/个人服务或整个MATURE03完成；main接收另记status。作者执行339086+dirty与phase1原报告永久保留，不回填为8701执行。
 
 ## Phase1已批准历史
 
