@@ -1,6 +1,6 @@
 # Flow 计划索引
 
-当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 09:53 UTC固定main253035已审含新视觉外壳、知识聊天接线、Codex有界通信与中心来源规则；原生Codex执行仍在R05C实施。TUI首片进行，ENG-001工程交付排其后、COST-001再后。个人center/runner仍b1c2、accepting v12，Web固定静态产物，不能把main更新称用户运行已更新。下文旧日期批次仅历史观察。
+当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 12:44:20 UTC：主线aeb已接O12、ENG01G和SVC05准备；个人后台现固定362/v15 accepting，Web仍8d8/caa1/v2。终端目标控制TUI01D、工程原生用途ENG01H并行；固定后台产物SVC06已排后继。主线提交、固定运行版本和真实模型验收分别记录，下文旧日期批次仅历史观察。
 
 本目录记录 Flow 的设计方向、技术验证和后续实施安排。使用和维护规则见 [AGENTS.md](AGENTS.md)。
 
@@ -147,3 +147,6 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 | ENG01D | ENG-001 | [真实身份与原生turn接缝](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams/plans/eng01d-native-writer-seams/plan.md) | implementation；不扩旧权限 |
 
 - TUI01D：TUI-001下的[终端目标与控制旅程](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session/plans/tui01d-goal-session/plan.md)。独立goal呈现复用已发布共享controller，公开headless与实际PTY分层验收；Web独立，不互为全线串行前置。
+
+- ENG01H：[原生工程用途与检查收据](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract/plans/eng01h-native-engineering-contract/plan.md)，ENG-001下唯一中心合同片；不把配置声明当原生资格。
+- SVC06：[固定后台发布产物](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/plan.md)，FLOW-001/REQ-19后继，开发checkout与运行依赖解耦；当前仅plan/evidence，不抢终端/原生实现。

@@ -1,0 +1,168 @@
+{
+  "at": "2026-10-06T12:41:29.467Z",
+  "window": "go-svc05-current-release-once",
+  "state": "closed",
+  "passed": true,
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+  "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+  "version": 15,
+  "admission": "accepting",
+  "elapsedMs": 63132,
+  "services": {
+    "center": {
+      "identity": "running",
+      "pid": 64904,
+      "group": 64904,
+      "startedAt": "Tue Oct  6 05:40:26 2026"
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 65168,
+      "group": 65168,
+      "startedAt": "Tue Oct  6 05:40:28 2026"
+    },
+    "web": {
+      "identity": "running",
+      "pid": 65219,
+      "group": 65219,
+      "startedAt": "Tue Oct  6 05:40:28 2026"
+    }
+  },
+  "sourceAtStart": {
+    "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "dirty": false
+  },
+  "webPointerUnchanged": true,
+  "retainedArtifacts": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "verified": true
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "verified": true
+    }
+  ],
+  "retainedConversation": {
+    "id": "2c507833-67fe-4d10-acf5-6c97eedd05bb",
+    "revision": 1
+  },
+  "tasks": [
+    {
+      "status": "succeeded",
+      "count": 4
+    }
+  ],
+  "queue": [
+    {
+      "state": "promoted",
+      "count": 1
+    }
+  ],
+  "allOldTablesPreserved": true,
+  "preservation": "preservation.json",
+  "checkpoint": "checkpoint.json",
+  "audit": [
+    {
+      "ordinal": "13",
+      "id": "53b1da6c-33c4-4fb9-a35f-460e9df704b0",
+      "result": {
+        "audit": {
+          "id": "53b1da6c-33c4-4fb9-a35f-460e9df704b0",
+          "after": {
+            "state": "draining",
+            "version": 13
+          },
+          "action": "drain",
+          "before": {
+            "state": "accepting",
+            "version": 12
+          },
+          "reason": "Operator requested a local preview update.",
+          "source": "trusted-host",
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "createdAt": "2026-10-06T12:40:10.620Z",
+          "requestId": "ece032f0-318e-4a4e-bf7f-86fd961c0b5d",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "state": {
+          "state": "draining",
+          "version": 13,
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "ordinal": "14",
+      "id": "f8578b85-6659-4b43-a0d5-6b9c3f246f19",
+      "result": {
+        "audit": {
+          "id": "f8578b85-6659-4b43-a0d5-6b9c3f246f19",
+          "after": {
+            "state": "maintenance",
+            "version": 14
+          },
+          "action": "hold",
+          "before": {
+            "state": "draining",
+            "version": 13
+          },
+          "reason": "No active attempts; reserve the local update.",
+          "source": "trusted-host",
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "createdAt": "2026-10-06T12:40:26.693Z",
+          "requestId": "43d2d350-b22a-4e2b-bce8-61c203272e12",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "state": {
+          "state": "maintenance",
+          "version": 14,
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "ordinal": "15",
+      "id": "10a9655d-6e06-4fd4-91d4-d685d9642f91",
+      "result": {
+        "audit": {
+          "id": "10a9655d-6e06-4fd4-91d4-d685d9642f91",
+          "after": {
+            "state": "accepting",
+            "version": 15
+          },
+          "action": "resume",
+          "before": {
+            "state": "maintenance",
+            "version": 14
+          },
+          "reason": "Operator explicitly resumed the verified local preview.",
+          "source": "trusted-host",
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "createdAt": "2026-10-06T12:41:11.271Z",
+          "requestId": "7469abe1-96e1-44b1-a3ec-86d6cd3e77ba",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "state": {
+          "state": "accepting",
+          "version": 15,
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "operationId": null
+        },
+        "replayed": false
+      }
+    }
+  ],
+  "operatorProviderQueries": 0,
+  "userTabsReloaded": 0,
+  "automaticRollback": false
+}

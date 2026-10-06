@@ -1,0 +1,509 @@
+{
+  "task": "ENG01G",
+  "sourceTarget": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+  "mainReceipt": "557397e9f756bfd9500107d7c1d1ce0ae65f7906",
+  "sourceBindings": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-policy.test.ts",
+      "bytes": 5419,
+      "sha256": "32cecb16e5ed2b428c22d59a859f934e597237e038f6cb535b9df03e7eaaaf3e",
+      "mainBytes": 5419,
+      "mainSha256": "32cecb16e5ed2b428c22d59a859f934e597237e038f6cb535b9df03e7eaaaf3e"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "bytes": 4176,
+      "sha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d",
+      "mainBytes": 4176,
+      "mainSha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-writer.test.ts",
+      "bytes": 12453,
+      "sha256": "be1cf98bfcfc16e64ac7f8dc5d9a46a6c855a364b7b75383d9256e5b8729cc30",
+      "mainBytes": 12453,
+      "mainSha256": "be1cf98bfcfc16e64ac7f8dc5d9a46a6c855a364b7b75383d9256e5b8729cc30"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "bytes": 5521,
+      "sha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270",
+      "mainBytes": 5521,
+      "mainSha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 4754,
+      "sha256": "e4279c648a6e4519bf7f8928d3acdb5fe27ab034a8cd6a8f7a59eb625c5d0e2d",
+      "mainBytes": 4754,
+      "mainSha256": "e4279c648a6e4519bf7f8928d3acdb5fe27ab034a8cd6a8f7a59eb625c5d0e2d"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "bytes": 2083,
+      "sha256": "664494638268733c60b6764ea0306caeb590a5dca1d8dcf1302953c29f72c9e9",
+      "mainBytes": 2083,
+      "mainSha256": "664494638268733c60b6764ea0306caeb590a5dca1d8dcf1302953c29f72c9e9"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 4520,
+      "sha256": "d55636b7160917ec377e02fc0c862a9b881398a46489507dc09685d92f89488a",
+      "mainBytes": 4520,
+      "mainSha256": "d55636b7160917ec377e02fc0c862a9b881398a46489507dc09685d92f89488a"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 2276,
+      "sha256": "dfe8cbe012a1708c692d99608b1d86944ec15ce9709a981ae08dd8f7752ac6f1",
+      "mainBytes": 2276,
+      "mainSha256": "dfe8cbe012a1708c692d99608b1d86944ec15ce9709a981ae08dd8f7752ac6f1"
+    },
+    {
+      "role": "validation",
+      "path": "apps/runner/src/native-harness.test.ts",
+      "bytes": 3470,
+      "sha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb",
+      "unchangedFromBase": true,
+      "mainBytes": 3470,
+      "mainSha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb"
+    },
+    {
+      "role": "validation",
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "bytes": 9014,
+      "sha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb",
+      "unchangedFromBase": true,
+      "mainBytes": 9014,
+      "mainSha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb"
+    },
+    {
+      "role": "validation",
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "bytes": 2430,
+      "sha256": "8140bc49ddf94ee35ff26760a97f7cf5975834f250a87dc6a38d77e3ddde9dd0",
+      "unchangedFromBase": true,
+      "mainBytes": 2430,
+      "mainSha256": "8140bc49ddf94ee35ff26760a97f7cf5975834f250a87dc6a38d77e3ddde9dd0"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "unchangedFromBase": true,
+      "mainBytes": 5175,
+      "mainSha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "unchangedFromBase": true,
+      "mainBytes": 4720,
+      "mainSha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/framing.ts",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d",
+      "unchangedFromBase": true,
+      "mainBytes": 3554,
+      "mainSha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc",
+      "unchangedFromBase": true,
+      "mainBytes": 14128,
+      "mainSha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843",
+      "unchangedFromBase": true,
+      "mainBytes": 3850,
+      "mainSha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31",
+      "unchangedFromBase": true,
+      "mainBytes": 1770,
+      "mainSha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828",
+      "unchangedFromBase": true,
+      "mainBytes": 3203,
+      "mainSha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/writer.ts",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21",
+      "unchangedFromBase": true,
+      "mainBytes": 3117,
+      "mainSha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "unchangedFromBase": true,
+      "mainBytes": 4568,
+      "mainSha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4227,
+      "sha256": "d449d350dd2d91611184861df68ce70c4f3b7c9d1543a7d19c61ff26c246547c",
+      "unchangedFromBase": true,
+      "mainBytes": 4227,
+      "mainSha256": "d449d350dd2d91611184861df68ce70c4f3b7c9d1543a7d19c61ff26c246547c"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-capture.test.ts",
+      "bytes": 9048,
+      "sha256": "14b67f5952e03037d108d0ef48d012fa3a24bb9c1db483ac9284b2866131a44b",
+      "unchangedFromBase": true,
+      "mainBytes": 9048,
+      "mainSha256": "14b67f5952e03037d108d0ef48d012fa3a24bb9c1db483ac9284b2866131a44b"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "bytes": 2845,
+      "sha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b",
+      "unchangedFromBase": true,
+      "mainBytes": 2845,
+      "mainSha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "bytes": 7992,
+      "sha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8",
+      "unchangedFromBase": true,
+      "mainBytes": 7992,
+      "mainSha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "bytes": 4507,
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8",
+      "unchangedFromBase": true,
+      "mainBytes": 4507,
+      "mainSha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "bytes": 4094,
+      "sha256": "0b4c9853c2b2377d84b37cc39cd706ac2ceda2a82cbeaaaebdecce54f3f57860",
+      "unchangedFromBase": true,
+      "mainBytes": 4094,
+      "mainSha256": "0b4c9853c2b2377d84b37cc39cd706ac2ceda2a82cbeaaaebdecce54f3f57860"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "bytes": 3858,
+      "sha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54",
+      "unchangedFromBase": true,
+      "mainBytes": 3858,
+      "mainSha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db",
+      "unchangedFromBase": true,
+      "mainBytes": 2964,
+      "mainSha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "bytes": 1711,
+      "sha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967",
+      "unchangedFromBase": true,
+      "mainBytes": 1711,
+      "mainSha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/checker.ts",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "unchangedFromBase": true,
+      "mainBytes": 4705,
+      "mainSha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/identity.ts",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f",
+      "unchangedFromBase": true,
+      "mainBytes": 1898,
+      "mainSha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "bytes": 15852,
+      "sha256": "911c45b252e3598d4dfd2d4a4bb7eca2b521eb7152de0670f7a6b57904ef533d",
+      "unchangedFromBase": true,
+      "mainBytes": 15852,
+      "mainSha256": "911c45b252e3598d4dfd2d4a4bb7eca2b521eb7152de0670f7a6b57904ef533d"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch-integration.test.ts",
+      "bytes": 11961,
+      "sha256": "d9bf6572a1e64998fc9473204e686d46bf54c130ae7f4e348ea1ccac3ad70647",
+      "unchangedFromBase": true,
+      "mainBytes": 11961,
+      "mainSha256": "d9bf6572a1e64998fc9473204e686d46bf54c130ae7f4e348ea1ccac3ad70647"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.test.ts",
+      "bytes": 3563,
+      "sha256": "4f465b36b4f104b23cb50ca2fd8e180a9fb24bf2d4738681dd024a26e8506e79",
+      "unchangedFromBase": true,
+      "mainBytes": 3563,
+      "mainSha256": "4f465b36b4f104b23cb50ca2fd8e180a9fb24bf2d4738681dd024a26e8506e79"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.ts",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "unchangedFromBase": true,
+      "mainBytes": 1435,
+      "mainSha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/resources.ts",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "unchangedFromBase": true,
+      "mainBytes": 4956,
+      "mainSha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "bytes": 8715,
+      "sha256": "df2e75ab590b1843defb10ba79c5d0b5d07866b38277c315c0c39cea09e7b9d1",
+      "unchangedFromBase": true,
+      "mainBytes": 8715,
+      "mainSha256": "df2e75ab590b1843defb10ba79c5d0b5d07866b38277c315c0c39cea09e7b9d1"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "unchangedFromBase": true,
+      "mainBytes": 6695,
+      "mainSha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "bytes": 13029,
+      "sha256": "797543c0c78569faa92c969054cf68d0e2a16f83a34a9156656c8b423f652054",
+      "unchangedFromBase": true,
+      "mainBytes": 13029,
+      "mainSha256": "797543c0c78569faa92c969054cf68d0e2a16f83a34a9156656c8b423f652054"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "unchangedFromBase": true,
+      "mainBytes": 12205,
+      "mainSha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "bytes": 7947,
+      "sha256": "0cf6f5408b18c6fef0c47fbd2d683ac9a6349b694a1630207588db970611be4b",
+      "unchangedFromBase": true,
+      "mainBytes": 7947,
+      "mainSha256": "0cf6f5408b18c6fef0c47fbd2d683ac9a6349b694a1630207588db970611be4b"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.ts",
+      "bytes": 1514,
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "unchangedFromBase": true,
+      "mainBytes": 1514,
+      "mainSha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099",
+      "unchangedFromBase": true,
+      "mainBytes": 4334,
+      "mainSha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "unchangedFromBase": true,
+      "mainBytes": 2477,
+      "mainSha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 2028,
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b",
+      "unchangedFromBase": true,
+      "mainBytes": 2028,
+      "mainSha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "unchangedFromBase": true,
+      "mainBytes": 1696,
+      "mainSha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5",
+      "unchangedFromBase": true,
+      "mainBytes": 2016,
+      "mainSha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "unchangedFromBase": true,
+      "mainBytes": 5640,
+      "mainSha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "unchangedFromBase": true,
+      "mainBytes": 14832,
+      "mainSha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "role": "protected",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "unchangedFromBase": true,
+      "mainBytes": 729,
+      "mainSha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "unchangedFromBase": true,
+      "mainBytes": 2271,
+      "mainSha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "unchangedFromBase": true,
+      "mainBytes": 5378,
+      "mainSha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204",
+      "unchangedFromBase": true,
+      "mainBytes": 9174,
+      "mainSha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "unchangedFromBase": true,
+      "mainBytes": 1134,
+      "mainSha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f"
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447",
+      "unchangedFromBase": true,
+      "mainBytes": 7140,
+      "mainSha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+    },
+    {
+      "role": "protected",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "unchangedFromBase": true,
+      "mainBytes": 278830,
+      "mainSha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    }
+  ],
+  "mismatches": [],
+  "observedAt": "2026-10-06T12:30:22.180781+00:00",
+  "source": "Execution Lead main/origin clean/pushed receipt plus owner fixed git-object hashes",
+  "integrationEvidence": "docs/evidence/i02/engineering-native-writer-integration.json",
+  "integrationChecks": "Lead root typecheck exit0; owner no rerun",
+  "approvalBoundary": "Private 0query writer composition only; no production authority, actual >=Sol model, enforced native file scope or complete writer-stop proof."
+}

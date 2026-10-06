@@ -1,6 +1,6 @@
 # 完整计划验收矩阵与滚动批次
 
-当前汇总核验：2026-10-06 11:00:27 UTC，main/origin/main `c450c2da7e6185b88db9f46e0299ee504ee6f3e8`。下方带日期观察保留历史，不能当个人runtime或当前发布事实。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
+当前汇总核验：2026-10-06 12:44:51 UTC，main/origin/main `aeb764e5d2c2ec043ae8673cde2724f5330db2ab`。当前个人后台sourceAtStart362/v15 accepting，Web8d8/caa1/v2；下方带日期为历史，不冒充当前部署。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，唯一汇总状态在 [status](status.md)，原完整验收不因小片完成缩减。
 
 | ID / 原始要求 | 任务/依赖 | 验收与所需证据 | 当前事实与缺口 |
 | --- | --- | --- | --- |
@@ -22,7 +22,7 @@
 | REQ-16 §8.2 缓存/快照与事件 | B01/M02 | workspace+权限+内容版本缓存，切换不清空全部，快照/订阅race与旧cursor无漏/去重；源事务乱序提交真实PG验证 | M02已验证晚提交水位与201task跨batch受理因果，Web保留隐藏view恢复cursor且限制活跃SSE；分层版本缓存/字节预算仍open，不以source bigserial为提交水位 |
 | REQ-17 §8.3 交互性能 | B01+S01 | 缓存交互p95<=50ms、查询<=100ms、持久受理<=200ms作为待测初步目标；p95/p99样本量、字节、网络、数据规模/缓存并发分开报告 | LAB01/02有界toy/诊断，B01产品PG/HTTP n50四组前后对照和PERF02三规模10,040条UI窗口证据已审集成；均不替代p99/SLO或真实agent容量，原性能目标仍open |
 | REQ-18 §8/12 超100持久会话 | S01，依赖G01/预算/恢复 | 128持久session，分别调节model/tool/DB并发；成功率/资源/连接/写量/延迟/故障；真模型负载独立预算 | 128observer/合成DOM不是agents容量；S01四任务功能smoke首轮尾部统计SQL失败、修复后四任务通过，smoke累计8；正式入口与首个W1结果独审通过并main30b97：128空Flow conversation背景+四fixture runner/16task，实测attempt峰值4；另gate8tasks仅2attempts。累计32tasks/26attempts含原8smoke，0模型；极小样本非容量SLO/128真实agents，W2单进程声明capacity4/12task12attempt实测峰值1已审main6426；累计44task38attempt。S01P01有界并发池d655+ES2023增量48b已审main d7e1，默认1、显式1..16，未知claim跨重启停新受理；CLI选项尚未接入；完整验收未完成 |
-| REQ-19 §12/13 自托管部署和故障 | S01 | 一中心本机/远端runner部署文档、持久存储/权限/重启恢复/故障演练；浏览器/中心/runner断连承诺分开 | M1浏览器退出、queued中心重启已有证据；R04 bounded HTTP drain/主进程20s unknown退出已审集成；SVC01独立启动器已审集成并0消息启动61227/61228，用户需首次认证后主动发消息；SVC02 durable drain/maintenance/bootstrap已独审集成并完成一次真实受控升级和恢复接受，最近SVC03受控更新center/runner实际加载b1c2e398、维护v12 accepting，原DB/runner身份/端口保留；旧Web artifact461a973源b1c保留，用户tab未reload、0operator模型调用。旧Vite随main变化为已替换历史边界；SVC04工具已审main41315b：Web-only发布/rollback保留center/runner，旧tab资源按版本有界保留；合成PG任务持续与真实构建冷启动/lazy共58项JS200有证，15不同检查。RELEASE01 fixed7805已独审main c450证明固定新Web8d8/旧b1c后台组合；SVC04已真实仅Web bootstrap/publish至artifact caa1e938、release v2，旧9资产/新10文件实际可读，center71483/runner73368及维护v12不变。实际发布证据见SVC04 personal-release，不以源码main代替运行版本。active跨机恢复未完整 |
+| REQ-19 §12/13 自托管部署和故障 | SVC / S01 | 一中心本机/远端runner部署，持久存储/权限/重启恢复/故障演练；浏览器/中心/runner断连承诺分开 | SVC01–04已审：受管进程、持久drain/hold/resume、固定Web artifact、兼容Web-only发布与旧lazy资源。SVC05实际固定362更新于12:41 closed/v15 accepting，保留原端口/身份/配置/会话、4成功任务和现Web8d8/caa1/v2及旧461a；025–027前进，60旧表旧列摘要保留，0operator query/0tab reload。证据以personal-current-release/docs/evidence/svc05/live为准，main aeb不冒加载版本。SVC06固定后台源码/依赖与开发checkout解耦已独立计划，尚无产品实现；跨机/长期故障与旧unknown范围仍open |
 | REQ-20 §11 验证和证据链 | M02/G01/X01/S01 | 要求→产物版本→独立验证→合并版本可追溯；知识结论来源范围；不同任务可选verifier | M1 flow.text非空/contains已有；工程/知识/扩展验证未完整 |
 | REQ-21 工程协作dashboard用户要求 | D03/D04已集成部署 | 结构化human摘要；首屏当前阶段/2–3项工作/下一交付/真正决策，历史折叠；细节可追溯；review实现target与metadata、main祖先关系分离 | D03中性紧凑视图、D04PG原子claim/self-service已独审部署；4320最近12:03:17.633Z实际144源，B01唯一source迁task-read-projections，后继登记按canonical批处理；CHAT06/C02组合review锚点已按独立审查与main receipt修正，旧scope已释放；D07显式片段阶段与DPERF单快照核验复用已独审部署，新增claim未登记仍可见；D05架构tab与D06固定f181快照已上线，标题明确源码SHA/核验日期，独立标注常驻runtime版本，历史快照不当最新架构全量证明 |
 | REQ-22 §1/5/7/11 自然语言目标到交付 | O01，接G01/M02/E01 | 目标→后台生成/修订版本化子任务与依赖→不同agents产出→独立验证循环→统一解释/用户决策→固定产物交付；复用harness，计划变更仅受限中心commands | O01 a4持久受限命令/真实PG diamond/独立进程失效证据已审集成；O02 d819真实MCP桥接已审集成但无query。O03中心授权与公共client/生产挂载已审集成；O04固定1420dfa+012升级测试a169已独审集成（102+1不同检查）；O05 owner持久graph proposal/apply领域1f211与F01生产挂载208a已独审集成；O06受限graph grant/审计/同TX重放及017/shared接线已独审集成；O07原生graph工具c224与生产018/019依赖已独审main115b闭合，保持注入query/实际MCP边界，不把owner提案等同模型拆图；O08零query真实MCP/PG验收driver与自有进程组清理已独审；原零扩展门槛与实际managed3+3冲突已明确；新已知声明资源基线候选7403获准备独审。GO独立接收O08真实单query固定75ff：原生两图工具持久化3节点/2依赖、同attempt提案与应用、最终解释明确未执行子任务；原driver字面正则误拒导致exit1/FAIL永久保留，GO逐项只读补验实际语义APPROVED，1/1预算封存/SDK估算$.0318802含辅助Haiku；known managed 3plugins/3skills不是隔离沙箱，host read allow不单独证明read执行；无重试，不将后台图成功等于child交付。O11稳定计划/实时执行分层读口与O12共享goal session、超过50条的固定解释历史已独审main362；兄弟活动不会重读固定材料，旧解释按version可取，但历史不代表当前有效。完整自动拆图→执行→验收、客户端实际同入口与统一语义解释仍open；继续原O01-05/M02公开旅程，中心保持唯一编排权威，CLI/headless/TUI与Web并行。计划变化、失败后修复/旧证据区别及绑定版本的最终统一解释须完整验收，手动10任务不替代最终编排 |
@@ -137,3 +137,7 @@ TUI01A与R05C/C1分别独审后已进入main；Codex证据为受控transport/真
 ## 2026-10-06 10:27 当前接收与并行交付
 
 main8d8ab520已接收R05D配置D0、SVC04工具和D06固定f181架构图。4320实际10:22:38.966Z为126来源；新增来源按真实canonical登记，架构快照不追moving main。TUI01B收敛公开发送ACK和两客户端恢复，ENG01A已从ready进入实施；两者互不等待Web全部视觉。附件资源由Web co-lead端到端统筹，F01协调出口/迁移；COST来源研究低于工程/终端/附件实现，不更改冻结上下文模板。个人backend/static b1c2e398/v12保持，0新增provider。
+
+## 2026-10-06 12:44:51 UTC 当前可用交付与接续
+
+REQ-01/22：O12持续目标公共controller及固定解释历史已main，TUI01D正用公开headless/PTY接控制与跨端旅程，Web独立消费；不宣称自然语言全目标自动完成。REQ-06：ENG01G单pump/file policy与快照/独立checker已审main；ENG01H用途/配置/收据关联实施，实际>=Sol来源、host写权限撤销和独立接受仍开放。REQ-19：SVC05真实更新完成但运行仍依赖开发checkout，因此SVC06新增唯一后继子片；不因当前部署成功掩盖这项耦合。

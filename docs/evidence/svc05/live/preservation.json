@@ -1,0 +1,617 @@
+{
+  "at": "2026-10-06T12:40:37.631Z",
+  "beforeAt": "2026-10-06T12:39:47.469Z",
+  "afterAt": "2026-10-06T12:40:34.342Z",
+  "checks": {
+    "observed": true,
+    "source": true,
+    "runtime": true,
+    "owned": true,
+    "singleRunner": true,
+    "identity": true,
+    "config": true,
+    "nativeConfig": true,
+    "nativeFiles": true,
+    "webPointer": true,
+    "retainedArtifacts": true,
+    "tasks": true,
+    "queue": true,
+    "zeroUnfinished": true,
+    "conversation": true,
+    "oldMigrations": true,
+    "newMigrations": true,
+    "oldRows": true,
+    "addedColumns": true,
+    "additiveValues": true,
+    "newTables": true,
+    "hold": true,
+    "audit": true
+  },
+  "tables": {
+    "artifacts": {
+      "omitted": [],
+      "oldCount": 4,
+      "newCount": 4,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "assistant_messages": {
+      "omitted": [],
+      "oldCount": 4,
+      "newCount": 4,
+      "addedColumns": [
+        "native_source_identity"
+      ],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "assistant_stream_blocks": {
+      "omitted": [],
+      "oldCount": 2,
+      "newCount": 2,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "assistant_stream_markers": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "assistant_stream_patches": {
+      "omitted": [],
+      "oldCount": 4,
+      "newCount": 4,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "assistant_stream_settlements": {
+      "omitted": [],
+      "oldCount": 2,
+      "newCount": 2,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "attempts": {
+      "omitted": [],
+      "oldCount": 4,
+      "newCount": 4,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "commands": {
+      "omitted": [],
+      "oldCount": 9,
+      "newCount": 9,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "conversation_contexts": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [
+        "attachments"
+      ],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "conversation_execution_inputs": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "conversation_queue": {
+      "omitted": [],
+      "oldCount": 1,
+      "newCount": 1,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "conversation_turns": {
+      "omitted": [],
+      "oldCount": 4,
+      "newCount": 4,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "conversations": {
+      "omitted": [
+        "queue_checked_at"
+      ],
+      "oldCount": 3,
+      "newCount": 3,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "decisions": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "details": {
+      "omitted": [],
+      "oldCount": 24,
+      "newCount": 24,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "execution_profiles": {
+      "omitted": [],
+      "oldCount": 1,
+      "newCount": 1,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_acceptances": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_contexts": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_execution_inputs": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_executions": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_explanations": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_graph_applications": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_graph_calls": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_graph_proposals": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_graph_runs": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_inputs": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_nodes": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_tool_calls": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goal_tool_runs": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "goals": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "knowledge_chunks": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "knowledge_sources": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "knowledge_versions": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "migrations": {
+      "omitted": [],
+      "oldCount": 24,
+      "newCount": 27,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "native_activities": {
+      "omitted": [],
+      "oldCount": 2,
+      "newCount": 2,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "plugin_installations": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "plugin_operations": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "plugin_package_fetch_attempts": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "plugin_package_fetch_audit": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "plugin_package_fetches": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "plugin_revisions": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "plugin_versions": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "project_revisions": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "project_task_bindings": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "projects": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "protocol_intents": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "reconciliation_audit": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "reconciliation_retries": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "runner_events": {
+      "omitted": [],
+      "oldCount": 32,
+      "newCount": 32,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "runner_maintenance_audit": {
+      "omitted": [],
+      "oldCount": 12,
+      "newCount": 14,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "runners": {
+      "omitted": [
+        "maintenance_state",
+        "maintenance_version",
+        "maintenance_operation_id",
+        "maintenance_updated_at"
+      ],
+      "oldCount": 1,
+      "newCount": 1,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "sessions": {
+      "omitted": [],
+      "oldCount": 3,
+      "newCount": 3,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "steering_attempts": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "steering_audit": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "steering_commands": {
+      "omitted": [],
+      "oldCount": 0,
+      "newCount": 0,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "tasks": {
+      "omitted": [],
+      "oldCount": 4,
+      "newCount": 4,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "timeline": {
+      "omitted": [],
+      "oldCount": 28,
+      "newCount": 28,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "usage_samples": {
+      "omitted": [],
+      "oldCount": 6,
+      "newCount": 6,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "workspace_feed": {
+      "omitted": [],
+      "oldCount": 32,
+      "newCount": 32,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    },
+    "workspaces": {
+      "omitted": [],
+      "oldCount": 1,
+      "newCount": 1,
+      "addedColumns": [],
+      "oldRowsPreserved": true,
+      "onlyExpectedGrowth": true
+    }
+  },
+  "newTables": {
+    "attachment_namespace": 1,
+    "attachment_resources": 0,
+    "context_observations": 0,
+    "conversation_attachment_bindings": 0
+  },
+  "operation": {
+    "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+    "phase": "ready-paused",
+    "target": "362af3bac77541e5a60979326bcf4d4b8c947915"
+  },
+  "runner": {
+    "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "harnesses": [
+      "claude"
+    ],
+    "capacity": 1,
+    "revoked": false,
+    "maintenance_state": "maintenance",
+    "maintenance_version": 14,
+    "maintenance_operation_id": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+    "maintenance_updated_at": "2026-10-06T12:40:26.693Z"
+  },
+  "audit": [
+    {
+      "ordinal": "13",
+      "id": "53b1da6c-33c4-4fb9-a35f-460e9df704b0",
+      "result": {
+        "audit": {
+          "id": "53b1da6c-33c4-4fb9-a35f-460e9df704b0",
+          "after": {
+            "state": "draining",
+            "version": 13
+          },
+          "action": "drain",
+          "before": {
+            "state": "accepting",
+            "version": 12
+          },
+          "reason": "Operator requested a local preview update.",
+          "source": "trusted-host",
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "createdAt": "2026-10-06T12:40:10.620Z",
+          "requestId": "ece032f0-318e-4a4e-bf7f-86fd961c0b5d",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "state": {
+          "state": "draining",
+          "version": 13,
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "ordinal": "14",
+      "id": "f8578b85-6659-4b43-a0d5-6b9c3f246f19",
+      "result": {
+        "audit": {
+          "id": "f8578b85-6659-4b43-a0d5-6b9c3f246f19",
+          "after": {
+            "state": "maintenance",
+            "version": 14
+          },
+          "action": "hold",
+          "before": {
+            "state": "draining",
+            "version": 13
+          },
+          "reason": "No active attempts; reserve the local update.",
+          "source": "trusted-host",
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "createdAt": "2026-10-06T12:40:26.693Z",
+          "requestId": "43d2d350-b22a-4e2b-bce8-61c203272e12",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "state": {
+          "state": "maintenance",
+          "version": 14,
+          "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+          "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+        },
+        "replayed": false
+      }
+    }
+  ],
+  "passed": true,
+  "limits": [
+    "Hashes are old-column row change detectors, not semantic evaluation.",
+    "conversations.queue_checked_at omitted from the start; no whole-row equivalence claim for that volatile field.",
+    "Four runner maintenance columns intentionally changed, validated separately through exact operation/version/audit.",
+    "No provider query or user browser interaction."
+  ]
+}

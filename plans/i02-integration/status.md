@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:29:51 UTC / main 557397e9f756bfd9500107d7c1d1ce0ae65f7906 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:45:41 UTC / batch base aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -12,14 +12,14 @@
 | 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
 | 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | ENG01G 56源码/直接输入完全一致、root types0；DPERF03五源与独审相同、登记直接1项通过及148源实采；0provider。 |
-| 已集成main状态 / HEAD | 557397e9f756bfd9500107d7c1d1ce0ae65f7906 已推送，已审工程writer、上下文观察与看板读取改进均main。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 检查状态 | SVC05 22固定source+28raw hash/bytes全同，实际closed/preservation/checkpoint通过；151唯一来源/状态解析通过。本批metadata，0新增产品测试/模型。 |
+| 已集成main状态 / HEAD | 前main aeb已接工程writer/目标会话与发布准备；本批接实际部署封存及owner收口。个人backend362/v15 accepting，Web8d8/caa1/v2，运行版本不随本批main推进。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程写入接缝与看板读取改进已进入主线；发布兼容准备正在独立审查。 |
-| 下一可用交付 | 本批已交付；个人预览发布与终端后继在独立任务推进。 |
+| 当前产出 | 新后台已交到个人预览并恢复接收，原会话和网页保留；工程与终端后继继续独立推进。 |
+| 下一可用交付 | 本批已交付；终端目标控制与原生工程配置在独立任务实施，固定后台发布产物已排后继。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -147,3 +147,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 12:22:57 UTC：本批固定四源已随 main7cbda706 推送，owner主线回执已给Mika，后续收口仍由其唯一status。147源已真实换载，新发布准备仍按固定362隔离组合，不追moving main、不改变个人运行版本。
 
 2026-10-06 12:29:51 UTC：ENG01G八源/48直接输入在实际组合点逐字匹配，root types0；105不同作者检查复用，不重跑。DPERF03五源码已main且实际148源读取可用，仅登记直接消费者1项新验。原raw末尾空行保留，不改写检查输出。SVC05固定准备已交独立review，TUI01D在另一槽推进；个人服务和全部模型预算保持。
+
+2026-10-06 12:45:41 UTC：SVC05窗口真实receipt已独立只读接收，22source/28raw全同，63.132秒/0query/0tab操作，原checkpoint与初依赖缺链失败保留。恢复main aeb未改变loaded source362或node_modules；原Web指针与两保留产物不变。ENG01G最终metadata和ENG01H/SVC06首计划本批同步，151来源登记；无需重跑工程/架构检查。见[固定输入](../../docs/evidence/i02/release-close-metadata-integration.json)、[实际接收](../../docs/evidence/i02/svc05-live-acceptance.json)。
