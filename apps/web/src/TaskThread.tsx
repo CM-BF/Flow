@@ -21,6 +21,7 @@ import {
 import { FileText, ArrowUpRight } from "lucide-react";
 import { Thread } from "./components/assistant-ui/elements/thread.aui";
 import { Button } from "./components/ui/button";
+import { PluginThreadScope, MessageActions, ComposerActions } from "./plugin-integration/react";
 import type { ProjectionState, TaskProjection } from "./projection";
 
 const ReferenceContext = createContext<(id: string) => void>(() => undefined);
@@ -45,6 +46,7 @@ const ReferenceUI = makeAssistantToolUI<Reference, Reference>({
   },
 });
 const referenceComponents = {
+  MessageActions, ComposerActions,
   ToolGroup: ({ children }: { children?: ReactNode }) => <>{children}</>,
 };
 const choices = Object.entries(taskFixtures) as [
@@ -153,7 +155,7 @@ export function TaskThread({
     });
   }, [runtime, viewId, drafts]);
   return (
-    <ReferenceContext.Provider value={onOpenReference}>
+    <PluginThreadScope viewId={viewId} taskId={task?.id ?? null}><ReferenceContext.Provider value={onOpenReference}>
       <AssistantRuntimeProvider runtime={runtime}>
         <ReferenceUI />
         <Thread
@@ -289,6 +291,6 @@ export function TaskThread({
           }
         />
       </AssistantRuntimeProvider>
-    </ReferenceContext.Provider>
+    </ReferenceContext.Provider></PluginThreadScope>
   );
 }
