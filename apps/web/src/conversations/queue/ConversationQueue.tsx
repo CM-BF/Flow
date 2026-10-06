@@ -57,7 +57,7 @@ export function ConversationQueue({ projection }: { projection: ConversationQueu
                   <QueueItemAction aria-expanded={open} onClick={() => { const next = new Set(expanded); if (open) next.delete(item.id); else { next.add(item.id); void projection.loadDetail(item.id); } setExpanded(next); }}>{open ? "Hide message" : "Read full message"}</QueueItemAction>
                   <QueueItemAction disabled={Boolean(projection.actionDisabledReason(`item:${item.id}`))} onClick={event => void preserveFocus(event.currentTarget, () => projection.cancelItem(item.id))}>Cancel waiting message</QueueItemAction>
                 </QueueItemActions>
-                {open && <div>{detail?.loading && <p role="status">Loading message…</p>}{detail?.error && <p role="alert">{detail.error} <button className="flow-link" onClick={() => void projection.loadDetail(item.id)}>Retry message detail</button></p>}{detail?.data && <pre className="whitespace-pre-wrap break-words text-xs">{detail.data.item.text}</pre>}</div>}
+                {open && <div>{!detail && <p>Full message is not cached. <button className="flow-link" onClick={() => void projection.loadDetail(item.id)}>Read message again</button></p>}{detail?.loading && <p role="status">Loading message…</p>}{detail?.error && <p role="alert">{detail.error} <button className="flow-link" onClick={() => void projection.loadDetail(item.id)}>Retry message detail</button></p>}{detail?.data && <pre className="whitespace-pre-wrap break-words text-xs">{detail.data.item.text}</pre>}</div>}
               </QueueItem>;
             })}
           </ul>

@@ -1,0 +1,35 @@
+✔ delivered slice leaves next deliveries despite open future TODO and changed main scope (3.235042ms)
+✔ review and integration remain actionable after author completion, planning does not (7.370959ms)
+✔ invalid explicit stage stays unknown instead of falling back to active branch (0.751ms)
+✔ legacy author completion is labelled legacy and preserves review/main uncertainty (0.607833ms)
+✔ current blocked work has delivery priority; stale and invalid facts never become candidates (0.467917ms)
+✔ confirmed parent and child use one headline slot while other directions fill both top threes (2.188584ms)
+✔ child blockers and decisions stay independently visible without changing parent priority or facts (0.488166ms)
+✔ a planning parent never suppresses an active child (6.65625ms)
+✔ a delivered parent never suppresses an active child (0.112667ms)
+✔ a parent with incomplete human facts does not borrow its child summary (0.125ms)
+✔ an unknown relation with a registered target remains separate (0.09275ms)
+✔ stale, missing and cyclic parent sources cannot group children (0.621875ms)
+✔ legacy names and undeclared relationships preserve prior priority ordering (0.136584ms)
+✔ explicit two-level declarations resolve without changing progress or inferring slash-separated leads (1.682292ms)
+✔ explicit big task can omit its redundant self ID, but old tasks do not become big implicitly (0.109375ms)
+✔ duplicate fields and multi-value parents remain unknown and retain declarations (0.171875ms)
+✔ the actual status parser retains duplicate rows instead of trusting the last value (2.166458ms)
+✔ ID and canonical plan path must both match before creating a navigation action (0.151375ms)
+✔ self, cycle, and third level are unknown, including MATURE-shaped IDs (0.133417ms)
+✔ unknown parent is pending registration; registered legacy parent remains unknown (0.068459ms)
+✔ registered missing parent stays inspectable but never known (0.073833ms)
+✔ registered frozen parent stays inspectable but never known (0.067166ms)
+✔ registered stale parent stays inspectable but never known (0.10225ms)
+✔ invalid own source invalidates relation and co-lead, without borrowing parent ownership (0.069375ms)
+✔ contradictory big identity, layer or self plan does not resolve (0.078833ms)
+✔ external and malicious link declarations never become locations, bounded raw text remains visible (0.129666ms)
+✔ actual aggregation follows status changes, missing/frozen sources, and registered-only documents (424.092125ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 532.658958

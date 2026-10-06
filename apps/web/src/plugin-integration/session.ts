@@ -160,6 +160,23 @@ export class AppPluginSession {
     if (!binding) { binding = new ConversationKnowledge(viewKey, projection, this); this.knowledgeBindings.set(viewKey, binding); }
     return binding;
   }
+  /** Observe existing bindings only; this must not allocate a controller while closing. */
+  getViewProtection(viewKey: string): readonly string[] {
+    if (this.closed) return ["Connection state unavailable"];
+    const binding = this.knowledgeBindings.get(viewKey), state = binding?.getSnapshot();
+    return [
+      ...(state?.controller?.getSnapshot().selected.length ? ["Selected knowledge"] : []),
+      ...(state?.projectId && !binding?.locked() ? ["Project selection"] : []),
+      ...(this.steering.getSnapshot().some(entry => entry.identity.viewKey === viewKey) ? ["Steering draft or receipt"] : []),
+    ];
+  }
+  /** App is the sole final-release authority. Protected bindings are never silently discarded. */
+  releaseView(viewKey: string) {
+    if (this.getViewProtection(viewKey).length) throw Error("This view still owns local material.");
+    const binding = this.knowledgeBindings.get(viewKey);
+    this.knowledgeBindings.delete(viewKey); binding?.dispose();
+    this.steering.closeView(viewKey);
+  }
   canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
     const binding = this.knowledgeBindings.get(identity.viewKey);
     const source = binding?.projection.getSnapshot();
