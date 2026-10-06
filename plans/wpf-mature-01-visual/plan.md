@@ -53,4 +53,14 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 
 2026-10-06 GO固定fixture图反馈归原01-03/CHATREAD：[完整验收](../../docs/evidence/web-platform/short-chat-visual-go-intake.json)。普通hi以正文和输入为主，工程状态/loaded计数进明确详情入口；空queue轻入口，waiting/paused/error/unknown外显。只用已有metadata、展开前0detail，不猜空或总数；profile requested/effective沿MATURE02真实能力。发布/DPERF之后在同固定短聊单窗与split对照、键盘及异常可达性验收；无当前App写权或新第三层task。
 
-[固定83f535四源与两张历史截图研究](../../docs/evidence/web-platform/short-chat-visual-83f535/report.md)补充原01-03：单窗图是running/长回答，split图才是succeeded/短回复；不把历史图标为当前SHA。普通turn的工程信息可归单详情入口，但Queue仍conversation上下文。轻空态须当前成功页无cursor/paused/blocked/error/unknown等；所有异常和可行动取消/决定仍外显。展开前不新增activity list/body请求，不为判断空预取；保officialThread/P01/原receipt。具体slot接缝待独立peer，不新增当前写权。
+[固定83f535四源与两张历史截图研究](../../docs/evidence/web-platform/short-chat-visual-83f535/report.md)补充原01-03：单窗图是running/长回答，split图才是succeeded/短回复；不把历史图标为当前SHA。普通turn的工程信息可归单详情入口，但Queue仍conversation上下文。轻空态须当前成功页无cursor/paused/blocked/error/unknown等；所有异常和可行动取消/决定仍外显。展开前不新增activity list/body请求，不为判断空预取；保officialThread/P01/原receipt。具体slot接缝已收到独立peer及下列补充，不新增当前写权。
+
+
+2026-10-06 原01-03/CHATREAD/REQ43补充验收（[逐字原文与六固定blob核验](../../docs/evidence/web-platform/short-chat-visual-supplements-intake.json)）：
+
+- 可发现详情入口放真实user turn的MessageFooter；MessageActions/ActionBar会在running/autohide时隐藏，不能成为唯一异常入口。保原message/task membership和PluginView/ExtensionSlot/host权限，不新增controller/registry/raw client。
+- generic PluginView目前没有经检查的通用urgency摘要合同；不能把所有贡献先卸载折叠，再宣称异常始终可见。已知owner的真实错误、unknown、retry、非最终/截短正文及行动提示继续外显，未知贡献后继需最小现有owner接缝，禁止DOM解析猜状态。
+- Task output为flow.task-actions.output，经授权转flow.workspace.open(tab terminal)；Open task controls转flow.chat.open。视觉可收拢，但两种动作与目标、上下文、能力均保留，不能按英文标题去重或删除。
+- 富活动/普通控件/分页详情采用disclosure语义；原真正command menu保其focus/键盘模型。以Enter/Space、expanded、关闭回焦点与有意义status验收，不将整个body/每行改alert。WAI三主源由root实查，Flow方案仍待真实browser/辅助技术验证，不冒AT合规。
+
+以上仅原TODO验收细化；原root四源/历史截图报告与peer五源报告字节均保留。Task output独立第六blob补足peer未查声明，不改写其原报告，也不声称后端Terminal加载或页面导航已经实测。发布与DPERF后排期，当前无产品领取。

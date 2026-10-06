@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:13 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:23 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 新后台A3附件单独输入通过，混合输入因空间停止未完；清理完成/窗口归Lead。DPERF04已领取源码；Recovery27未运行 |
-| 下一可用交付 | W01在发布安全点后实现首页摘要与按需核验；发布待新的资源条件继续完整A/B；恢复检查入口已备，保持原预算 |
-| 当前阻塞 | ACTIVE: A3资源停止，尚无完整A/B兼容；Recovery单次准入不足，真实IDB/App未验；源码实施正常，个人版本未更新 |
+| 当前产出 | Recovery固定1b8受控direct27/27通过并清理；DPERF04唯一owner实施源码。A3仅附件通过、mixed资源中断，发布A/B继续暂停 |
+| 下一可用交付 | W01继续首页摘要与按需核验；Recovery真实IDB/App旅程仍待条件；短聊视觉三件归原01-03验收，不扩写权 |
+| 当前阻塞 | ACTIVE: A/B仍无完整兼容且Lead本批资源整理已结束；Recovery真实IDB/HTTP/browser未验，直接mock检查不能替代；源码实施正常 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

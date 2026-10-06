@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06T16:24:23.442870+00:00",
+  "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+  "version": 3,
+  "ledgerObservedAt": "2026-10-06T16:21:08.626Z",
+  "pathsInSixScopes": 23,
+  "introducedLocalMarkdownLinks": 16,
+  "brokenLinks": [],
+  "parsers": [
+    {
+      "tree": "web-platform-management",
+      "path": "plans/web-platform/status.md",
+      "id": "WPF-001",
+      "errors": [],
+      "humanComplete": true,
+      "todos": 36
+    },
+    {
+      "tree": "web-platform-management",
+      "path": "plans/wpf-mature-01-visual/status.md",
+      "id": "WPF-MATURE-01",
+      "errors": [],
+      "humanComplete": true,
+      "todos": 5
+    },
+    {
+      "tree": "web-platform-management",
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "id": "WPF-MATURE-06",
+      "errors": [],
+      "humanComplete": true,
+      "todos": 6
+    },
+    {
+      "tree": "dashboard-summary-detail",
+      "path": "plans/wpf-dperf04-summary-detail/status.md",
+      "id": "WPF-DPERF04",
+      "errors": [],
+      "humanComplete": true,
+      "todos": 3
+    }
+  ],
+  "originalReportsUnchanged": true,
+  "fixedVisualBlobs": 6,
+  "directRawAndRootReviewMatch": true,
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    }
+  ],
+  "application": "Reused local skills without installation. Separate evidence provenance and actual runtime from source research; one current resource record; no title-based authority, inferred urgency, duplicated product status or new task. Documents preserve old raw and scope of partial approvals.",
+  "foundAndFixed": [
+    "Current resource and Recovery summaries were stale after next12 completion and actual27 PASS; updated only owned management summaries.",
+    "Visual peer-pending wording replaced by exact six-blob supplement, preserving two original reports and historical images."
+  ],
+  "unverified": [
+    "Real IDB/browser/HTTP/full Recovery; release mixed/B; visual keyboard/AT behavior; DPERF registration/runtime remain their original boundaries."
+  ],
+  "additionalProductTests": 0,
+  "additionalSpaceSamples": 0,
+  "ownerMetadataReadback": {
+    "recovery": "547439 local/origin/ls-remote clean, apps/web unchanged",
+    "dperf": "84c3 clean; fixed4fac and NOT_RUN read from sole owner status; no runtime grant"
+  }
+}

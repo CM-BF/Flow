@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06T16:19:10.328928+00:00",
+  "target": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "source": {
+    "path": "apps/web/src/plugin-integration/task-actions.ts",
+    "bytes": 1866,
+    "sha256": "fa4f0ba2247868c86bcaff1c43b37aad9555eacbd6827697cc7b7c269224c75c"
+  },
+  "method": "Root fifth fixed project file in the visual research after exact git grep located the Task output declaration. Original four-source report and peer five-source report remain unchanged.",
+  "facts": [
+    {
+      "lines": "7-15",
+      "fact": "flow.task-actions.message-output contributes a button to chat.message.actions invoking flow.task-actions.output, capability ui.layout, message/task command contexts."
+    },
+    {
+      "lines": "20-22",
+      "fact": "Validated message/task command resource delegates to flow.workspace.open with that resource taskId and tab terminal."
+    },
+    {
+      "comparison": "plugin-integration/activity.tsx:104,108,112 (already read in original four-source report)",
+      "fact": "Open task controls delegates instead to flow.chat.open with the current message taskId. These are distinct navigations and capabilities, not duplicate functions."
+    }
+  ],
+  "acceptance": [
+    "Consolidate visual exposure if needed but retain both authorized actions, exact contribution/command identity, task association and target semantics. Do not deduplicate by title or assumed equivalence.",
+    "The peer correctly left this declaration uninspected within its five-file cap; this independent fifth root source fills that trace only. It does not certify downstream Terminal loading or task navigation at runtime.",
+    "Generic unmounted panels have no inspected universal urgency contract: do not collapse every plugin panel and promise all errors stay visible. Preserve known actual status/recovery surfaces through host-owned interfaces.",
+    "Keep rich content as disclosure; preserve true command-menu keyboard handling. WAI references are in the separate primary-source supplement."
+  ],
+  "runtime": "NOT_RUN; no project edit, permission change, API request, page open or source implementation."
+}

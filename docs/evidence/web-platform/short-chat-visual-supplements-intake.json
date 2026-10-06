@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-06T16:23:03.997181+00:00",
+  "mapping": [
+    "WPF-MATURE-01-03",
+    "CHATREAD",
+    "REQ43"
+  ],
+  "fixed": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "archives": [
+    {
+      "source": "/tmp/chatread-detail-seams-83f535b/report.md",
+      "archive": "short-chat-detail-seams-83f535/report.md",
+      "bytes": 11459,
+      "sha256": "61698d3212b413b21f366b5c9587707c77085bd75caa8415b2bff0e5efb26486"
+    },
+    {
+      "source": "/tmp/chatread-detail-seams-83f535b/sources.json",
+      "archive": "short-chat-detail-seams-83f535/sources.json",
+      "bytes": 1585,
+      "sha256": "e2cb39d4f60302c32f3a7925ec5f910cd291876e9447b4ad38f8cd69f9a22b30"
+    },
+    {
+      "source": "/tmp/root-short-chat-task-output-83f535.json",
+      "archive": "short-chat-task-output-83f535-root.json",
+      "bytes": 2134,
+      "sha256": "6a16a69824933dd410d8d0a3a3e94702e837d52d9782d0d5e38d2cc4c06cf647"
+    },
+    {
+      "source": "/tmp/root-short-chat-accessibility-sources.json",
+      "archive": "short-chat-accessibility-primary-root.json",
+      "bytes": 2023,
+      "sha256": "a9ab01c8c63456eaa2ee14cac2ef9633aca0a3fd256ed989b28ecc07135f39f6"
+    }
+  ],
+  "fixedSources": [
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "bytes": 32735,
+      "fixedBlobMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725,
+      "fixedBlobMatches": true
+    },
+    {
+      "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "sha256": "a7b10258ec07a3c61a1ff170ea74be95cb872e5b919826c3f9b13ddbf2754fbd",
+      "bytes": 6292,
+      "fixedBlobMatches": true
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/workspace.tsx",
+      "sha256": "abe905bffb768e260623eee35fa45db8de68f1c4cda264ea3eac401a98c00a3a",
+      "bytes": 4020,
+      "fixedBlobMatches": true
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "bytes": 12209,
+      "fixedBlobMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/task-actions.ts",
+      "bytes": 1866,
+      "sha256": "fa4f0ba2247868c86bcaff1c43b37aad9555eacbd6827697cc7b7c269224c75c",
+      "fixedBlobMatches": true
+    }
+  ],
+  "supersedes": "Prior manager peer-pending observation only. Original root and peer reports remain byte-for-byte; historical screenshot provenance unchanged.",
+  "acceptance": [
+    "MessageActions can hide while running/autohide; use discoverable actual user-message footer for per-turn details, preserving message/task context.",
+    "Generic PluginView has no inspected universal urgency summary: do not collapse all panels and promise exceptions remain visible; preserve current known actionable status/recovery through existing owner interfaces.",
+    "Task output is flow.task-actions.output -> flow.workspace.open(tab terminal); Open task controls -> flow.chat.open. Preserve both authorized actions and their distinct targets; never deduplicate by title.",
+    "Rich activity/control detail uses disclosure semantics; true command menu retains managed focus/keyboard. Preserve expanded/focus and meaningful status without whole-body alerts.",
+    "Keep PluginView/ExtensionSlot/host command authority, lazy detail and exact receipt identity; no raw client, parallel registry, prefetch-to-guess-empty or new public slot."
+  ],
+  "primaryDocsAttribution": "Root inspected three WAI primary sources listed in archived supplement; manager archived without rebrowsing. Flow adaptations are proposed acceptance, not AT/browser conformance.",
+  "implementation": "NOT_STARTED for this follow-up; no new task/claim/product edits or visual runtime."
+}

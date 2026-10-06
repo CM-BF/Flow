@@ -1,0 +1,45 @@
+{
+  "target": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "method": "fixed git show only; five project files; local skills reused, no installation",
+  "sources": [
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "bytes": 32735
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725
+    },
+    {
+      "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "sha256": "a7b10258ec07a3c61a1ff170ea74be95cb872e5b919826c3f9b13ddbf2754fbd",
+      "bytes": 6292
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/workspace.tsx",
+      "sha256": "abe905bffb768e260623eee35fa45db8de68f1c4cda264ea3eac401a98c00a3a",
+      "bytes": 4020
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "bytes": 12209
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    }
+  ]
+}

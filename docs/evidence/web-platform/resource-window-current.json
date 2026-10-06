@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T16:15:38.454745+00:00",
-  "state": "A3_RESOURCE_STOP_CLEANED_WINDOW_RETURNED_TO_LEAD",
-  "groupWindowOwnership": "LEAD; A3accepted/cleaned; no newgroupA/B/direct. DPERFsource continues.",
+  "recordedAt": "2026-10-06T16:23:03.997181+00:00",
+  "state": "PURE_CHECK_COMPLETE_RELEASE_AB_PAUSED",
+  "groupWindowOwnership": "LEAD coordination; next12 complete. Recovery single pure check finished, no active group runtime; A/B remain paused.",
   "release03": {
     "state": "PARTIAL_RESOURCE_STOP",
     "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
@@ -29,22 +29,25 @@
     }
   },
   "recoveryDirect": {
-    "state": "REBOUND_READY_NOT_RUN_RESOURCE",
+    "state": "CONTROLLED_DIRECT_PASS_CLEANED",
     "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
     "metadata": "0eef4cda8813afe336df8dc88256da28e206c0d4",
     "cases": 27,
     "startBytes": 1090519040,
     "stopBytes": 1082130432,
-    "at": "2026-10-06T16:06:13.993447+00:00",
-    "availableBytes": 894640128,
+    "at": "2026-10-06T16:21:52.720658+00:00",
+    "availableBytes": 1134813184,
     "samples": 1,
-    "gateCreated": false,
-    "newRuntimeMs": 0,
-    "spentMs": 2540,
-    "remainingMs": 27460,
+    "gateCreated": true,
+    "newRuntimeMs": 2034,
+    "spentMs": 4574,
+    "remainingMs": 25426,
     "materials": "recovery01-1b8-rebound-manifest.json",
-    "evidence": "recovery01-1b8-direct-new-policy-not-run.json",
-    "policySource": "Lead16:03 independent low-incremental check permission adopted byroot; prior2.540s/maxsampledtmp2.7MiB. Does not change A/B."
+    "evidence": "recovery01-direct-1b8-intake.json",
+    "policySource": "Lead16:03 independent low-incremental check permission adopted byroot; prior2.540s/maxsampledtmp2.7MiB. Does not change A/B.",
+    "gateConsumed": true,
+    "cleanupComplete": true,
+    "coverage": "27/27 controlled IDB/mock fetch; no real IDB/browser/HTTP"
   },
   "dperf04": {
     "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
@@ -68,13 +71,19 @@
       "freeBytes": 1113837568,
       "source": "Lead via root",
       "coordination": "Three trees complete clean; other PG/load held for ONE A3. Fresh manager sample used separately."
+    },
+    {
+      "time": "16:19:10",
+      "freeBytes": 1150287872,
+      "source": "Lead via root",
+      "coordination": "next12 12/12 complete/stopped; A/B paused; existing pure-check fresh policy only"
     }
   ],
   "limits": [
     "Shared volume observations are not exclusive per-run allocation or causal attribution",
     "A3 RESOURCE_STOP is not mixed product failure; old362 actual two failures remain historical",
     "No B/Chrome/SVCgreen/deployment",
-    "No automatic retry/free polling; future independent check needs its own fresh conditions"
+    "No automatic retry/free polling; A/B remain paused despite completed pure check."
   ],
-  "latestCoordination": "lead-a3-resource-next12-notice.json"
+  "latestCoordination": "lead-next12-complete-1619.json"
 }

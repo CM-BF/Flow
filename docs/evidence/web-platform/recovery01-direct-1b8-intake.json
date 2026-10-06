@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-06T16:23:03.997181+00:00",
+  "state": "CONTROLLED_DIRECT_PASS_CLEANED",
+  "actualHead": "0eef4cda8813afe336df8dc88256da28e206c0d4",
+  "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+  "claim": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+  "claimVersion": 4,
+  "scopeCount": 21,
+  "overlap": [],
+  "ledgerObservedAt": "2026-10-06T16:21:08.626Z",
+  "archives": [
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/result.json",
+      "archive": "recovery01-direct-1b8/result.json",
+      "bytes": 4412,
+      "sha256": "cbde98891d2b3b71a6a12ae51f956298777bf1a1fe5abb9e118ede26dfe9af6b"
+    },
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/direct.log",
+      "archive": "recovery01-direct-1b8/direct.log",
+      "bytes": 330,
+      "sha256": "ebc6e2fcf746a5cbc4e139b8dc9d8e10b515b21393f1c34d6df01e039672179a"
+    },
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/preflight.json",
+      "archive": "recovery01-direct-1b8/preflight.json",
+      "bytes": 4053,
+      "sha256": "3730a15aa54cf74ee279781ba04d58ae7b68edc1c9d67580541b2baa9a96b082"
+    },
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/config.mjs",
+      "archive": "recovery01-direct-1b8/config.mjs",
+      "bytes": 416,
+      "sha256": "99ace33ee34ad2facfac48bd37db54b05878529a97e0e79a9a950c9ee0d028db"
+    },
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/sandbox.sb",
+      "archive": "recovery01-direct-1b8/sandbox.sb",
+      "bytes": 166,
+      "sha256": "4661d473c9d430af6c9e78ae78134f27edc3559020d9e1b228fc15d6492d1bd4"
+    },
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/run.py",
+      "archive": "recovery01-direct-1b8/run.py",
+      "bytes": 5113,
+      "sha256": "492c58100c455882b644d25d530c10b2cf2408ef6c048a49e71f23b65b19a9b7"
+    },
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/rebind-1b8-manifest.json",
+      "archive": "recovery01-direct-1b8/rebind-1b8-manifest.json",
+      "bytes": 4703,
+      "sha256": "44bfc08072f9092bc0a5bd30f393dfa3f85de29c99e8e83affa30ebc893c6115"
+    },
+    {
+      "source": "/tmp/d01-recovery27-pure-admission-20261006-1622.json",
+      "archive": "recovery01-direct-1b8/management-admission.json",
+      "bytes": 5365,
+      "sha256": "8692d3b05e3b44045bb1a4cf6a0752c6db07114376c0422759890ad985c57a08"
+    }
+  ],
+  "cases": 27,
+  "elapsedSeconds": 2.034,
+  "cumulativeSeconds": 4.574,
+  "remainingSeconds": 25.426,
+  "cleanup": {
+    "state": "fulfilled",
+    "seconds": 0.001,
+    "errors": [],
+    "reservedSeconds": 5,
+    "onlyOwnPgid": true,
+    "onlyOwnTmpCache": true
+  },
+  "processGroupGone": true,
+  "ownRunAndCacheAbsent": true,
+  "maximumSampledTmpBytes": 2766490,
+  "tmpBytesBeforeCleanup": 23910,
+  "minimumSampledFreeBytes": 1130868736,
+  "logBytes": 330,
+  "limits": "Samples are neither hard quota nor OS peak; shared free changes are not exclusive allocation.",
+  "coverage": "Controlled IDB event port and mock fetch only. Real browser IDB/HTTP/App journey not run; no PG/Chrome/types/install/build; fullfeature review remains NOT_STARTED.",
+  "window": "Single pure check consumed and closed; A/B pause unchanged. No automatic rerun.",
+  "independentRootReview": {
+    "archive": "recovery01-direct-1b8-root-review.json",
+    "bytes": 3639,
+    "sha256": "00834002e5f12d2ada15bbb1eccd286ad86af8e40730f090d8695400a35537a1",
+    "decision": "DIRECT27_EVIDENCE_ACCEPTED_SCOPED",
+    "fullFeatureReview": "NOT_STARTED"
+  },
+  "ownerMetadataClose": {
+    "head": "547439d365047ed8d54ced7cf784047b847630d7",
+    "localOriginLsRemoteEqual": true,
+    "clean": true,
+    "appsWebDiffFromImplementation": [],
+    "actualExecutionHeadUnchanged": "0eef4cda8813afe336df8dc88256da28e206c0d4"
+  }
+}

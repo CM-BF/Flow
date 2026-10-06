@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 16:13 UTC |
+| 最近更新 | 2026-10-06 16:23 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 1b8完整材料/顺序源码已获窄审认可；27direct入口已重绑，但单次资源准入未达标，0新运行 |
-| 下一可用交付 | 在新实质资源条件下运行已备单文件27case；原direct余27.460秒，源码窄审不替代真实IDB/HTTP/browser验收 |
-| 当前阻塞 | ACTIVE: 本次纯检查free894,640,128B低于新start1,090,519,040B；未签gate，真实App及中心语义验收仍待 |
+| 当前产出 | 固定1b8/current0eef受控IDB/mock fetch单文件27/27 PASS，2.034秒并清理；原direct累计4.574/30秒 |
+| 下一可用交付 | 原owner封存direct证据；真实IDB/HTTP/App/browser须后续有界验证，原direct余25.426秒，不自动续跑 |
+| 当前阻塞 | ACTIVE: 受控direct不代真实IDB/App及中心语义验收，完整feature review仍未完成；A/B发布窗口暂停 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |

@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-06T16:23:29.859009+00:00",
+  "reviewer": "root independent retained raw/source inspection",
+  "decision": "DIRECT27_EVIDENCE_ACCEPTED_SCOPED",
+  "actualHead": "0eef4cda8813afe336df8dc88256da28e206c0d4",
+  "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+  "manifestVerified": "All19 source hashes equal fixed actualHEAD git blobs, gate and result; runner/preflight/config/sandbox exact pins; six retained project evidence files byte-identical to actual temporary originals.",
+  "gate": {
+    "observedAt": "2026-10-06T16:21:36.564124+00:00",
+    "availableBytes": 1134813184,
+    "expiresAt": "2026-10-06T16:25:36.564124+00:00"
+  },
+  "actual": {
+    "startedAt": "2026-10-06T16:21:52.720658+00:00",
+    "finishedAt": "2026-10-06T16:21:54.776950+00:00",
+    "file": "apps/web/test/conversation-recovery.test.ts",
+    "testsPassed": 27,
+    "nodeWorkerLimit": 1,
+    "vitest": "4.0.18",
+    "exitCode": 0,
+    "kind": "controlled IDB event port and public-client mock fetch; no browser/PG/HTTP",
+    "elapsedSeconds": 2.034,
+    "previousSeconds": 2.54,
+    "cumulativeSeconds": 4.574,
+    "remainingSeconds": 25.426,
+    "maxSampleTmpBytes": 2766490,
+    "tmpBytesBeforeCleanup": 23910,
+    "minimumSampleFreeBytes": 1130868736,
+    "rawLogBytes": 330,
+    "cleanup": {
+      "state": "fulfilled",
+      "seconds": 0.001,
+      "errors": [],
+      "reservedSeconds": 5,
+      "onlyOwnPgid": true,
+      "onlyOwnTmpCache": true
+    },
+    "ownRunAndCacheAbsent": true
+  },
+  "materialCaseCoverage": {
+    "lines": "Fixed test source110-148",
+    "accepted": "Both send and queue call actual private captureDraft before receipt and mocked public-client fetch. Zero/partial verified selection leaves no receipt/HTTP, keeps next draft and original IDs; explicit remove is deliberate. B-before-A keeps ordered A,B, incomplete/reversed composer rejects, pending adds settle, original held submission does not reattach to new draft.",
+    "limit": "Controlled composer port, not a mounted official Thread. Mock fetch assertions are not real HTTP/server acceptance."
+  },
+  "raw": [
+    {
+      "name": "result.json",
+      "bytes": 4412,
+      "sha256": "cbde98891d2b3b71a6a12ae51f956298777bf1a1fe5abb9e118ede26dfe9af6b"
+    },
+    {
+      "name": "direct.log",
+      "bytes": 330,
+      "sha256": "ebc6e2fcf746a5cbc4e139b8dc9d8e10b515b21393f1c34d6df01e039672179a"
+    },
+    {
+      "name": "run.py",
+      "bytes": 5113,
+      "sha256": "492c58100c455882b644d25d530c10b2cf2408ef6c048a49e71f23b65b19a9b7"
+    },
+    {
+      "name": "preflight.json",
+      "bytes": 4053,
+      "sha256": "3730a15aa54cf74ee279781ba04d58ae7b68edc1c9d67580541b2baa9a96b082"
+    },
+    {
+      "name": "config.mjs",
+      "bytes": 416,
+      "sha256": "99ace33ee34ad2facfac48bd37db54b05878529a97e0e79a9a950c9ee0d028db"
+    },
+    {
+      "name": "sandbox.sb",
+      "bytes": 166,
+      "sha256": "4661d473c9d430af6c9e78ae78134f27edc3559020d9e1b228fc15d6492d1bd4"
+    }
+  ],
+  "limitations": [
+    "Full feature review remains NOT_STARTED; no new types or browser evidence.",
+    "Controlled IDB event port does not validate actual browser IndexedDB durability, cross-tab/crash behavior, real cookies or auth races against center.",
+    "Actual browser attachment chip/effect timing and direct App Send/Queue journey remain unverified.",
+    "A/B release remains paused, no new PG, HTTP, Chrome, model, install, build or personal-service operation.",
+    "Shared free-space samples and temporary file counts are observations, not exclusive memory/disk allocation claims; max observed tmp is not a guaranteed instantaneous peak."
+  ]
+}
