@@ -6,7 +6,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者局部检查：固定1b8的27 direct PASS；真实browser/当前types NOT_RUN。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
+当前作者局部检查：固定1b8的27 direct PASS；首667真实browser子集FAILED（cookieRead PASS、textIntentDraft FAILED），原始原因待核；当前types未新增。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -53,3 +53,7 @@ Source checkpoint `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，相对1b8只有�
 ## 2026-10-06T17:45:10.279831+00:00 — Root限定源码APPROVED
 
 独立reviewer root；时间 `2026-10-06T17:44:07.363712+00:00`；target `667889058d3decc0abc9f635a37fd0f05f2c090c`，observedmetadata0926。结论 **APPROVED_SOURCE_SCOPED / 0 blocking**，关闭RECOVERY-768-P2-TASK-IDENTITY。[逐字原报告](../../docs/evidence/wpf-conversation-recovery/667-root-ack-identity-review.json)核19hash，确认worker公共schema/decoder与非空turn/task身份、18源等768。批准仅768+667 harness源码；0types/import/tests/HTTP/PG/Chrome/free，不替代真实浏览器。旧1b8受控27PASS仍原绑定；完整feature review NOT_STARTED/targetUNKNOWN，主线未接。
+
+## 2026-10-06 18:01 UTC — 作者首真实浏览器证据（未独审）
+
+[原报/manifest](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)绑定execution0fe939与667/768/1b8十九源；cookieRead通过，草稿旅程对象仓库缺失+predicate timeout，后续未运行。清理全确认，14.846s，未修改源码或重跑。Root此前APPROVED_SOURCE_SCOPED不升级为行为通过；此次失败待独立核与因果定位，不预判来源或删断言。完整feature NOT_STARTED/targetUNKNOWN保持。

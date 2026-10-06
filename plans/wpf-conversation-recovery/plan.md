@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 16:23 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 18:02 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -62,3 +62,7 @@ Root/peer唯一P2按公共decoder修复，固定 `667889058d3decc0abc9f635a37fd0
 ### 2026-10-06T17:45:10.279831+00:00 — 限定源码审批
 
 固定667 ACK identity及768 harness源审由root批准，0blocking；[review](review.md)保原文。此结论不完成RECOVERY01-05真实旅程或RECOVERY01-06完整独审/main。原27受控检查与新browser未运行保持分开，源码继续冻结。
+
+### 2026-10-06 18:01 UTC — 首真实子集失败
+
+RECOVERY01-05首一次真实浏览器cookieRead通过，随后草稿存储旅程出现对象仓库缺失/超时，后续材料与重试均未完成；[原始证据](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)绑定667/0fe939。清理确认、原raw保留；累计14.846267375/90s，余量不自动授权重跑。根因待定位，TODO不关闭，完整feature仍未审；首same-origin子集与中心三语义/完整覆盖分别记录。

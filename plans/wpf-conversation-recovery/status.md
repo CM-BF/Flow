@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06T17:45:10.279831+00:00 |
+| 最近更新 | 2026-10-06T18:02:45.702877+00:00 |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,16 +10,16 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；最新browser窄修checkpoint 667889058d3decc0abc9f635a37fd0f05f2c090c，fixture=768/17其他源=1b8；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 两harness源码已固定、仅own metadata收口；正常push后核local=origin/clean；17其他源保持1b8 |
+| 工作树dirty状态 | 19源码保持固定；本次仅原始运行证据及own metadata收口，normal push后核双端clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 667 ACK身份/768两harness获APPROVED_SOURCE_SCOPED；旧1b8 direct27已过，新harness仍0运行 |
-| 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
-| 当前阻塞 | ACTIVE: 真实浏览器与完整构建仍等待运行资源和中心会话语义核验；本段定向检查已完成 |
+| 当前产出 | 浏览器已成功读取会话；草稿恢复检查暴露存储错误，原始失败和清理证据已保留 |
+| 下一可用交付 | 定位草稿存储失败并完成真实刷新与未决发送恢复；重新连接仍不自动投递 |
+| 当前阻塞 | ACTIVE: 首次真实草稿旅程出现对象仓库缺失与检查超时，需先定位；后续恢复旅程与中心会话完整语义尚未验收 |
 | 需用户决定 | NONE |
-| 检查状态 | 历史1b8受控direct27/27 PASS（execution0eef，2.034s）；累计direct4.574/30s。新fixture delta仅静态diffcheck0，types/direct/browser NOT_RUN；types累计52.814/60s未新增 |
+| 检查状态 | FAILED: 首真实browser子集cookieRead PASS、textIntentDraft FAILED、materialDraft NOT_COMPLETED；14.846267375s/90s，cleanup通过。旧1b8受控27PASS独立保留；当前types未新增，52.814/60s |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -33,7 +33,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt后检查点屏障已接源码；行为待测 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前27 direct](../../docs/evidence/wpf-conversation-recovery/direct-second.json)通过，源绑定1b8；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | 资源与中心语义验收门槛未满足 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首次真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)：cookieRead已过，草稿存储错误待定位，后续未运行 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -42,7 +42,7 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-已在App接cookie观察器/P01入口，当前fixture修复源码冻结待窄审；1b8单次27 direct已完成，下一步真实浏览器旅程须新HEAD/19hash门槛与中心语义证据，不自行续跑；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
+已在App接cookie观察器/P01入口，两harness源码已获限定审查；1b8 direct27通过。首真实browser子集已单次失败并完成清理，先定位对象仓库缺失与超时，再按新派工修复；不自行续跑，不以孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
 
 ## Dashboard同步
 
@@ -139,3 +139,7 @@ Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据�
 ## 2026-10-06T17:45:10.279831+00:00 — 667限定源码独审收口
 
 Root于 `2026-10-06T17:44:07.363712+00:00` 对固定 `667889058d3decc0abc9f635a37fd0f05f2c090c` 结论APPROVED_SOURCE_SCOPED，0blocking，RECOVERY-768-P2-TASK-IDENTITY关闭；[原报告](../../docs/evidence/wpf-conversation-recovery/667-root-ack-identity-review.json)原样归档。仅768+667两harness源审：公共decoder、真实嵌套身份、parent built-ins-only及原body-loss/ownedcleanup边界。不是完整feature批准或新运行；旧1b8 direct27/新667 source分开，当前types/真实IDB/App/HTTP/PG/Chrome仍NOT_RUN，CREATE/Queue/Steer等旅程继续PENDING，完整target UNKNOWN/review NOT_STARTED。19源hash不变，仅metadata正常push；0运行/资源采样，预算未消费。
+
+## 2026-10-06T18:02:45.702877+00:00 — 首次真实browser子集
+
+[验证与原始manifest](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)绑定execution0fe939/667源码。cookieRead通过，textIntentDraft出现IDB对象仓库缺失及predicate timeout；原因未定，materialDraft未完成、后续未运行。实际14846.267375ms（14.846267375s），累计14.846267375/90s、余75.153732625s仅算术；预留15s清理、实际cleanup全确认。10raw17415B、DB清零/删除、worker+Chrome退出、scratch删除；无自动重跑。完整feature未审/main未接，19源保持固定。

@@ -103,3 +103,9 @@ Root/peer同一真实P2：JSON.parse的any掩盖public结构中没有taskId。�
 ## 2026-10-06T17:45:10.279831+00:00 — 667源码批准metadata安全点
 
 复用本地clean-code方法，按独立报告核公共接口/错误所有权/有限budget与限制，19源hash仍等固定667。Root明确APPROVED_SOURCE_SCOPED0blocking、P2关闭；此次只原样归档和状态更新，无源码变化/新结构发现。保旧27与新harness证据分离，完整feature未审，原raw和1s观察policy说明不变；0产品import/运行/采样。原报告SHA256 `ec6aa4c6452c6ee0698b05bb03a34b30c70d30499a95662e28707297c589ea45`。
+
+## 2026-10-06T18:02:45.702877+00:00 — 首真实browser失败 / metadata clean-code安全点
+
+复用已读本地find-skills、clean-code、webapp-testing方法，不安装。实际应用：检查结果与清理结果分开，成功cookieRead不掩盖IDB失败，尚未到达case保持NOT_RUN/PENDING；source、执行HEAD、旧mock27与新真实browser分开，19hash核固定、原raw逐文件hash。未改实现，也不以日志推测代替根因；错误所处产品/harness边界待下一有界定位。
+
+命名/接口/错误所有权复核范围仅记录：原same-origin子集与完整3中心语义开放项不混，累计14.846267375s与15s预留清理如实记，250ms峰样本不称物理硬限。10raw17415B全部保留；当前无额外type/runtime/import运行，不触其他scope/个人服务。完整feature仍NOT_STARTED，源冻结。
