@@ -9,13 +9,13 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility |
 | Branch | codex/personal-history-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
-| 工作树dirty状态 | 新恢复三源码已准备；本次own范围待固定，原已发布源码不变 |
+| 工作基线 / HEAD | 3a263677db28e92f28622917eef70edb0f260f85 / 新恢复 d8349bdec815b53f29ddae54d6b5b1ce49d78bd5；运行目标af51，metadata以本文件提交为准 |
+| 工作树dirty状态 | 新恢复三源码固定停写；仅manifest/status收口，clean以交付回执为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | NOT_RUN 实际恢复；一次只读基线exit0/577ms，原准备入口失败保留；无产品测试。 |
 | 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json) |
-| 实现目标 | UNKNOWN；af51中心恢复准备实施中，原发布6e7109/1994182结果已交付保持。 |
+| 实现目标 | d8349bdec815b53f29ddae54d6b5b1ce49d78bd5 |
 | 实现范围 | docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/operator.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/supervise.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
