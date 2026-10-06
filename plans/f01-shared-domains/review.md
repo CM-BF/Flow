@@ -37,3 +37,9 @@ O02共享依赖：Root只读APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4（
 ## CHAT真实运行限定报告
 
 Root只读APPROVED `cc73ada6bf331fdcfadf7f61a30778ac4d892ab8`：19份manifest固定/working hash一致；独立核同conversation/session、不同task/attempt、第二input无nonce但reply精确相等、两正文digest、专用Chrome退出重开与SDK保守和$0.013442。目视真实第一图、原pending第二图和两份无遮挡重放图。无重跑/新query。结论仅真实后台两轮记忆+首轮UI、零模型重放；第二轮live UI仍NOT_PROVEN。thinking unknown、实际3plugins/3skills/内部Haiku与归一化usage非wire均保留，不关闭完整U11。
+
+## O03同事务接缝与SDK环境隔离
+
+Root只读APPROVED `dbb57268889b82efb74c330bbf268b13f01b6402`：两文件提取commandInTransaction/applyGoalCommand，原事务/幂等/锁/wake复用同PoolClient；源码与固定target一致，9/9真实PG与原始失败/安装/最终tsc均核。未重跑；不背书O03新授权。
+
+Root只读APPROVED `26ddd8de9fde0d67e6e42bd81a583facc993a31a`：native SDK env允许清单与合成子进程回归，固定SDK替换语义、原red、26/26 green403ms/tsc已核，source一致，无finding/无query。仅环境隔离，不证明provider登录、HOME插件沙箱或工程写能力。SVC715ec启动器另由Execution Lead独审。
