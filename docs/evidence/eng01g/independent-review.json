@@ -1,0 +1,500 @@
+{
+  "task": "ENG01G",
+  "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+  "reviewedAt": "2026-10-06T12:27:11.244569+00:00",
+  "manifestSha256": "05705855d515198279cb9fbac332132414faf2acbac9e66666591725e26fb461",
+  "bindings": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-policy.test.ts",
+      "match": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "match": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-writer.test.ts",
+      "match": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "match": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "match": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "match": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "match": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "match": true
+    },
+    {
+      "role": "validation",
+      "path": "apps/runner/src/native-harness.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "validation",
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "validation",
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/admission-journal.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/attempt-control.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/framing.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/index.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/options.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/types.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/codex/writer.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/configuration.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-capture.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/checker.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/identity.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch-integration.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/resources.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/main.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/outbox.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/runtime.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "package.json",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/native-harness.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/runner.ts",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "protected",
+      "path": "pnpm-lock.yaml",
+      "match": true,
+      "baseEqual": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/README.md",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/claim.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/failure-diagnostic.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/failure-diagnostic.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/failure-frames.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/failure-frames.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/failure-response.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/failure-response.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/final-affected.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/final-affected.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/first-check-sources.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/install.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/install.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/interface.md",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/local-first.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/local-first.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/quality.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/reentry.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/reentry.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/types-delivery.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/types-delivery.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/types-final.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/types-final.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/types-first.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/types-first.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/writer-consumers.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/writer-consumers.stdout",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/writer-final.json",
+      "match": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01g/writer-final.stdout",
+      "match": true
+    }
+  ],
+  "mismatches": [],
+  "currentMainDifferences": [],
+  "verdict": "APPROVED",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra ultra",
+  "findings": [],
+  "reviewerTestsRun": 0,
+  "providerCalls": 0,
+  "reviewScope": [
+    "Complete eight-source delta and three unchanged direct-consumer test sources read",
+    "Single R06 exchange pump preserved for ordinary and engineering consumers; authorization, bound identity, finite file policy and unknown settlement checked",
+    "105 distinct author checks across preserved runs plus final root typecheck read; not a single 105-test run",
+    "85 fixed/current byte/hash bindings and 48 current-main protected/validation inputs matched"
+  ],
+  "limitations": [
+    "NativeWriteAuthority is an injected trusted-host interface without a production implementation or registration",
+    "No actual qualified model, file-write enforcement or complete native writer revocation demonstrated",
+    "Synthetic JSONL peer and ordinary consumers only; no provider, personal-service or new PG actions",
+    "Real authority/profile admission and independent semantic acceptance remain successors"
+  ]
+}

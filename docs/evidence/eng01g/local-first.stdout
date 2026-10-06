@@ -1,0 +1,264 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts (19 tests | 10 failed) 650ms
+   ✓ refuses missing authority, missing assignment and unknown models before any transport can exist 2ms
+   × composes the native-file consumer with the same full host snapshot and independent checker after injected revocation 153ms
+   ✓ cannot convert a completed final and child exit into stopped when revocation is unknown 36ms
+   ✓ cannot convert a completed final and child exit into stopped when revocation is wrong 35ms
+   ✓ cannot convert a completed final and child exit into stopped when revocation is throw 35ms
+   × preserves wrong-model as unknown even with an injected revoked receipt 37ms
+   × preserves wrong-thread as unknown even with an injected revoked receipt 37ms
+   × preserves command as unknown even with an injected revoked receipt 34ms
+   × preserves terminal-tool as unknown even with an injected revoked receipt 35ms
+   × preserves changed as unknown even with an injected revoked receipt 34ms
+   × preserves incomplete as unknown even with an injected revoked receipt 36ms
+   × preserves reroute as unknown even with an injected revoked receipt 34ms
+   × preserves eof as unknown even with an injected revoked receipt 34ms
+   × preserves hang as unknown even with an injected revoked receipt 35ms
+   ✓ closes an ambiguous open-fails authority without creating a transport 1ms
+   ✓ closes an ambiguous bad-grant authority without creating a transport 1ms
+   ✓ maps a native settled failure only after the separately injected whole-write revocation 36ms
+   ✓ does not promote pre-dispatch ownership loss or cancellation 1ms
+   ✓ bounds an unresponsive authority without claiming its pending work stopped 34ms
+ ✓ apps/runner/src/engineering/native-policy.test.ts (27 tests) 10ms
+ ✓ apps/runner/src/native-harness/codex/exchange.test.ts (1 test) 46ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > composes the native-file consumer with the same full host snapshot and independent checker after injected revocation
+AssertionError: expected { …(3) } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "87838547-0f8f-40af-842c-87efdd0c47a4",
+-   "outcome": "completed",
++   "outcome": "failed",
+    "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:95:72
+     93|   const api = await setup('success', 'revoked', { directory: workspace…
+     94|   api.ctx.executionIdentity.taskId = 'caller-mutation';
+     95|   const outcome = await api.writer.execute(api.input); expect(outcome)…
+       |                                                                        ^
+     96|   expect(api.grants[0]!.identity).toEqual(identity); expect(Object.isF…
+     97|   const capture = await captureCalculatorWorkspace(workspace, context(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves wrong-model as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "fb72fc39-ca11-485b-a1c2-280dfcd2e0e1",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves wrong-thread as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "8da26204-3e56-49ed-a3b7-627001506e9e",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves command as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "082add7f-1061-446c-a804-6c639306564d",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves terminal-tool as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "1265cdc4-2fa6-44a8-bd79-a1242b3fa5d7",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves changed as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "5e684e5e-9691-47e3-9237-d69ec8f2148b",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves incomplete as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "fe632313-56a1-48fd-8ec8-76f3fabb3bff",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves reroute as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "f498734b-c87b-4227-8a42-e8c0db3ba099",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves eof as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "8c61fa03-7539-4cc1-a5f8-2ea1baab7307",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/10]⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > preserves hang as unknown even with an injected revoked receipt
+AssertionError: expected { …(3) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "72183d56-ce6c-4a23-9e03-4c2ac36a49b1",
+-   "settlement": "unknown",
++   "outcome": "failed",
++   "settlement": "stopped",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:107:78
+    105| });
+    106| it.each(['wrong-model', 'wrong-thread', 'command', 'terminal-tool', 'c…
+    107|   const api = await setup(mode); expect(await api.writer.execute(api.i…
+       |                                                                              ^
+    108| });
+    109| it.each(['open-fails', 'bad-grant'])('closes an ambiguous %s authority…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/10]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  10 failed | 37 passed (47)
+   Start at  05:18:53
+   Duration  1.20s (transform 103ms, setup 0ms, import 264ms, tests 707ms, environment 0ms)
+

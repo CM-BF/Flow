@@ -17,3 +17,7 @@ ENG01F由后继宿主在真实stopped后调用；本片writer不生成旧v1 veri
 ## 验收与界限
 
 原ordinary直接消费者、真实自有JSONL peer、缺authority零transport、file审批/全部terminal item/未知/取消/撤销错绑定和types。无provider/appserver/account/query/个人服务，不重跑旧21/20/68。未证实actual>=Sol、工具全部强制控制与全writer停止前，生产路径unsupported。公开新purpose/profile及中心receipt另片，不把注入peer或host代写当native验收。
+
+实施细节：authority.open与ownership均受本次wallTimeMs约束；close使用独立同上限撤销窗口。迟到的authority结果不再提升本次结果，未完成操作仍由authority持有；宿主保留unknown/lease。authority最多两个有界窗口，另有R06自身有界关闭；不能把timeout作为停止证明。共享CodexTurnEvidence只抽取两个实际策略所需的identity/队列/投影机制；OrdinaryTurnEvidence仍固定原禁工具策略。
+
+每个writer实例只执行一次；unknown后再次调用不重新open。跨进程/重新构造的阻止重复执行仍由既有宿主journal/admission负责，本片不新增持久状态权威。

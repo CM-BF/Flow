@@ -5,8 +5,8 @@
 两个实际消费者复用一个Codex消息pump；普通行为保持，工程writer组合受限file-only policy与受信authority，缺authority零transport拒绝。不是native实证，不加fixture recipe。file-only仅本片策略，未来可独立批准有界shell能力。详见[Interface](../../docs/evidence/eng01g/interface.md)。
 
 - [x] **ENG01G-01** fresh ID/claim、技能、计划与固定Interface。
-- [ ] **ENG01G-02** 单pump提取、普通消费者保持与工程policy。
-- [ ] **ENG01G-03** native writer组合、实际JSONL peer/局部错误与unknown验证、types及固定raw。
+- [x] **ENG01G-02** 单pump提取、普通消费者保持与工程policy。
+- [x] **ENG01G-03** native writer组合、实际JSONL peer/局部错误与unknown验证、types及固定raw。
 - [ ] **ENG01G-04** 独审、main接收与release。
 
 真实模型>=Sol、实际强制范围与全部writer停止/撤销尚无资格证据；此片没有生产authority、没有原生执行窗口或model预算。公开profile v2、中心版本收据与独立actor接受仍后继，不改变旧v1 fixture或只读profile。

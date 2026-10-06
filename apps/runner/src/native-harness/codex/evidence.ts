@@ -3,11 +3,12 @@ import { createOrdinaryFinalProjection, type OrdinaryFinalObservation } from './
 import { assertOrdinaryItem } from './policy.js';
 import { nativeId, nativeRecord } from './wire.js';
 
+export type CodexItemPhase = 'initial' | 'started' | 'completed' | 'terminal';
 type Notification = { method: string; params: Json };
 const ignoredDeltas = new Set(['item/agentMessage/delta', 'item/reasoning/summaryTextDelta', 'item/reasoning/textDelta', 'item/reasoning/summaryPartAdded']);
 
-/** One continuous ordinary turn. Holds only bounded frames arriving before request IDs are bound. */
-export class OrdinaryTurnEvidence {
+/** One continuous turn with a consumer-owned finite item policy. Holds only bounded frames arriving before request IDs are bound. */
+export class CodexTurnEvidence {
   private threadId?: string;
   private turnId?: string;
   private projection?: ReturnType<typeof createOrdinaryFinalProjection>;
@@ -17,11 +18,14 @@ export class OrdinaryTurnEvidence {
   private decodedBytes = 0;
   observation: OrdinaryFinalObservation = { state: 'pending', final: null };
 
+  constructor(private readonly checkItem: (item: unknown, phase: CodexItemPhase) => void) {}
+
+  matches(threadId: unknown, turnId: unknown): boolean { return Boolean(this.threadId && this.turnId && this.threadId === threadId && this.turnId === turnId); }
   bindThread(threadId: string) { this.threadId = nativeId.parse(threadId); this.drain(); }
   bindTurn(turn: { id: string; items: unknown[] }) {
     if (!this.threadId) throw new Error('Native thread is not bound.');
     this.turnId = nativeId.parse(turn.id);
-    turn.items.forEach(assertOrdinaryItem);
+    turn.items.forEach(item => this.checkItem(item, 'initial'));
     this.projection = createOrdinaryFinalProjection({ threadId: this.threadId, turnId: this.turnId });
     this.drain();
   }
@@ -62,14 +66,14 @@ export class OrdinaryTurnEvidence {
       case 'turn/completed': {
         const turn = nativeRecord.parse(params.turn);
         if (turn.id !== this.turnId || !Array.isArray(turn.items) || turn.items.length > 1000) throw new Error('Native turn mismatch.');
-        turn.items.forEach(assertOrdinaryItem);
+        turn.items.forEach(item => this.checkItem(item, notification.method === 'turn/completed' ? 'terminal' : 'initial'));
         if (notification.method === 'turn/completed') this.observation = this.projection!.accept(notification);
         return;
       }
       case 'item/started':
       case 'item/completed':
         if (params.turnId !== this.turnId) throw new Error('Native turn mismatch.');
-        assertOrdinaryItem(params.item);
+        this.checkItem(params.item, notification.method === 'item/completed' ? 'completed' : 'started');
         if (notification.method === 'item/completed') this.observation = this.projection!.accept(notification);
         return;
       default:
@@ -79,3 +83,6 @@ export class OrdinaryTurnEvidence {
     }
   }
 }
+
+/** Keeps the ordinary consumer incapable of accepting file or tool items. */
+export class OrdinaryTurnEvidence extends CodexTurnEvidence { constructor() { super(assertOrdinaryItem); } }

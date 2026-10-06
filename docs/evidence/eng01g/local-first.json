@@ -1,0 +1,14 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/engineering/native-policy.test.ts",
+    "apps/runner/src/engineering/native-writer.test.ts",
+    "apps/runner/src/native-harness/codex/exchange.test.ts"
+  ],
+  "startedAt": "2026-10-06T12:18:51.612595+00:00",
+  "finishedAt": "2026-10-06T12:18:54.224545+00:00",
+  "exitCode": 1
+}

@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer
+
+ ✓ apps/runner/src/engineering/native-writer.test.ts (19 tests) 1762ms
+   ✓ composes the native-file consumer with the same full host snapshot and independent checker after injected revocation  586ms
+   ✓ preserves hang as unknown even with an injected revoked receipt  307ms
+
+ Test Files  1 passed (1)
+      Tests  19 passed (19)
+   Start at  05:21:12
+   Duration  2.80s (transform 473ms, setup 0ms, import 796ms, tests 1.76s, environment 0ms)
+
