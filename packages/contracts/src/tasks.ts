@@ -3,6 +3,7 @@ import { harnessSchema, type HarnessName } from './harnesses.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
 import { protocolTaskSchema } from './protocol-task.js';
 import { engineeringIntentSchema } from './engineering.js';
+import { nativeEngineeringIntentSchema } from './engineering-native.js';
 export { harnessSchema, type HarnessName } from './harnesses.js';
 
 export const PROTOCOL_VERSION = 1;
@@ -34,13 +35,13 @@ export const taskSubmissionSchema = z.strictObject({
   verification: verificationRuleSchema.optional(),
   resumeSessionId: idSchema.optional(),
   executionProfile: executionProfileReferenceSchema.optional(),
-  engineering: engineeringIntentSchema.optional(),
+  engineering: z.union([engineeringIntentSchema, nativeEngineeringIntentSchema]).optional(),
 }).superRefine((task, context) => {
-  if (task.engineering && (task.harness !== 'fixture' || task.resumeSessionId || task.fixture || task.executionProfile || task.verification || task.protocol)) {
-    context.addIssue({ code: 'custom', message: 'Engineering intent requires its dedicated fixture runner and cannot reuse text verification or native execution options.' });
+  if (task.engineering && (task.harness !== (task.engineering.protocol === 'flow.engineering.v1' ? 'fixture' : 'codex') || task.resumeSessionId || task.fixture || task.executionProfile || task.verification || task.protocol)) {
+    context.addIssue({ code: 'custom', message: 'Engineering intent requires its dedicated purpose profile and cannot reuse text verification or ordinary execution options.' });
   }
   if (task.executionProfile && !['claude', 'codex'].includes(task.harness)) context.addIssue({ code: 'custom', message: 'Execution profiles require a recognized native harness.' });
-  if (task.harness === 'codex' && (!task.executionProfile || task.resumeSessionId || task.fixture)) {
+  if (task.harness === 'codex' && !task.engineering && (!task.executionProfile || task.resumeSessionId || task.fixture)) {
     context.addIssue({ code: 'custom', message: 'Codex tasks require an explicit profile and do not support resume or fixture options.' });
   }
   if (task.harness === 'a2a') {

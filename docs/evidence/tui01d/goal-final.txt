@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session
+
+ ❯ apps/tui/src/goal/journey.test.ts (5 tests | 1 failed) 12757ms
+   ✓ two real clients keep bodies lazy and sibling activity stable, then reject stale writes without replacement  651ms
+   ✓ pages 57 immutable explanation references without bodies and reads an exact historical version only on request  591ms
+   ✓ loses a real HTTP ACK, preserves private original intent across terminal/center restart, and explicitly recovers once  438ms
+   ✓ derives decision/cancel identities from observation, preserves running work on quit and explicitly expands fixed artifacts  1002ms
+   × runs the actual CLI headless and PTY on the public goal with CJK, narrow resize and local multiline draft 8857ms
+ ✓ apps/tui/src/goal/terminal.test.ts (3 tests) 826ms
+   ✓ releases the owned private journal when goal construction fails before initialization  775ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/goal/journey.test.ts > runs the actual CLI headless and PTY on the public goal with CJK, narrow resize and local multiline draft
+Error: Child failed 1: Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session/apps/tui/test-fixtures/goal_driver.py", line 28, in <module>
+    os.write(master, b'\x03'); code = child.wait(timeout=5)
+                                      ~~~~~~~~~~^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1277, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 2055, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['/opt/homebrew/Cellar/node@24/24.20.0/bin/node', '--import', 'tsx', 'apps/tui/src/main.tsx', '--goal', '97af89b9-5f20-418c-9bbd-f1fd27fbb995']' timed out after 5 seconds
+
+ ❯ child apps/tui/src/goal/journey.test.ts:115:158
+
+ ❯ apps/tui/src/goal/journey.test.ts:125:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 7 passed (8)
+   Start at  05:43:51
+   Duration  14.98s (transform 537ms, setup 0ms, import 1.19s, tests 13.58s, environment 0ms)
+

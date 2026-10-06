@@ -1,0 +1,59 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract
+
+ ❯ apps/server/src/engineering/native.test.ts (32 tests | 1 failed | 26 skipped) 1561ms
+   ↓ publishes immutable native purpose separately without claiming host qualification
+   ✓ paginates only native engineering declarations and keeps all old catalogs unchanged 67ms
+   ↓ rejects mismatched target at admission
+   ↓ rejects mismatched project at admission
+   ↓ rejects mismatched base at admission
+   ↓ rejects mismatched checker at admission
+   ↓ rejects mismatched digest at admission
+   ↓ rejects mixed ordinary, fixture, conversation and planner purposes
+   × filters historical malformed and ordinary tasks before claim and routes a valid pin once 67ms
+   ↓ saves an exact current receipt, reads it publicly, and replays the same lost-ACK batch without a second completion
+   ↓ rolls back a succeeded batch without a verified native receipt
+   ↓ rejects wrong attempt evidence and preserves batch sequence
+   ↓ rejects wrong task evidence and preserves batch sequence
+   ↓ rejects wrong owner evidence and preserves batch sequence
+   ↓ rejects wrong runner evidence and preserves batch sequence
+   ↓ rejects wrong lease evidence and preserves batch sequence
+   ↓ rejects wrong pin evidence and preserves batch sequence
+   ↓ rejects wrong qualification evidence and preserves batch sequence
+   ↓ rejects wrong model evidence and preserves batch sequence
+   ↓ rejects wrong base evidence and preserves batch sequence
+   ↓ rejects wrong snapshot evidence and preserves batch sequence
+   ↓ rejects wrong diff evidence and preserves batch sequence
+   ↓ rejects wrong source evidence and preserves batch sequence
+   ↓ rejects wrong result evidence and preserves batch sequence
+   ↓ rejects wrong artifact evidence and preserves batch sequence
+   ↓ rejects wrong verifier evidence and preserves batch sequence
+   ↓ records a failed host check but refuses success and leaves the exact batch replayable
+   ↓ rechecks revocation before claim and rejects another harness publication
+   ✓ rejects a corrupt recognized pagination sentinel instead of hiding it 34ms
+   ✓ does not let an earlier passed artifact authorize a newer unverified artifact 57ms
+   ✓ rejects unknown writer settlement and oversized receipt bytes before verification 62ms
+   ✓ does not treat the native verifier as ordinary nonempty text verification 32ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/engineering/native.test.ts > filters historical malformed and ordinary tasks before claim and routes a valid pin once
+FlowApiError: Codex tasks require a pinned execution profile.
+ ❯ assertResponse packages/client/src/index.ts:558:9
+    556|   if (response.ok) return;
+    557|   const body = await response.json().catch(() => ({})) as { error?: { …
+    558|   throw new FlowApiError(response.status, body.error?.code ?? 'http_er…
+       |         ^
+    559| }
+    560| 
+ ❯ FlowClient.request packages/client/src/index.ts:550:5
+ ❯ apps/server/src/engineering/native.test.ts:116:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed | 26 skipped (32)
+   Start at  05:42:09
+   Duration  2.63s (transform 455ms, setup 0ms, import 988ms, tests 1.56s, environment 0ms)
+

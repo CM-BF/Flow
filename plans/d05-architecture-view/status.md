@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:44:20 UTC / main ref aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:53 UTC / 实采main3609 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 个人后台已更新并恢复接收；工程配置与固定发布产物两项新来源已登记，待正常看板换载。 |
+| 当前产出 | 工程看板已展示151个唯一来源，个人后台版本、工程配置和固定发布后继状态可查。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -101,3 +101,5 @@
 2026-10-06 12:40:25 UTC：ENG01H 原生工程用途与检查收据已独立领取；候选150源唯一、真实三件套/人读字段/解析通过，见[登记](../../docs/evidence/d05/native-contract-150-registry.json)。个人后台固定更新尚在窗口内，main和看板保持149实采；此登记不提前发布、不重跑工程测试。
 
 2026-10-06 12:44:20 UTC：[151源候选](../../docs/evidence/d05/fixed-release-151-registry.json)中ENG01H实施、SVC06计划均有唯一父任务/完整三件套。SVC05已关闭窗口，原开发树恢复main aeb，实际后台362/v15与Web8d8/v2区分。当前看板仍149源实采；固定架构不变，不为metadata重跑产品。
+
+2026-10-06 12:46:32 UTC 实采151来源：[发布后看板](../../docs/evidence/d05/release-close-151-live.json)。main3609 clean；架构固定f181未改。本次仅保存实际快照，不重复restart或工程测试。

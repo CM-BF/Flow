@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:45:41 UTC / batch base aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:54 UTC / main3609受控接收候选 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -11,15 +11,15 @@
 | Branch | `codex/m2-integration` |
 | 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
 | 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
-| 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
+| 工作分支状态 | in-progress |
 | 检查状态 | SVC05 22固定source+28raw hash/bytes全同，实际closed/preservation/checkpoint通过；151唯一来源/状态解析通过。本批metadata，0新增产品测试/模型。 |
 | 已集成main状态 / HEAD | 前main aeb已接工程writer/目标会话与发布准备；本批接实际部署封存及owner收口。个人backend362/v15 accepting，Web8d8/caa1/v2，运行版本不随本批main推进。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 新后台已交到个人预览并恢复接收，原会话和网页保留；工程与终端后继继续独立推进。 |
-| 下一可用交付 | 本批已交付；终端目标控制与原生工程配置在独立任务实施，固定后台发布产物已排后继。 |
+| 当前产出 | 终端可在同一目标入口看计划、历史和控制；原生工程用途与回执合同已完成独立审查并组合。 |
+| 下一可用交付 | 发布已审终端和工程合同小批；继续真实工程宿主与固定后台发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -149,3 +149,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 12:29:51 UTC：ENG01G八源/48直接输入在实际组合点逐字匹配，root types0；105不同作者检查复用，不重跑。DPERF03五源码已main且实际148源读取可用，仅登记直接消费者1项新验。原raw末尾空行保留，不改写检查输出。SVC05固定准备已交独立review，TUI01D在另一槽推进；个人服务和全部模型预算保持。
 
 2026-10-06 12:45:41 UTC：SVC05窗口真实receipt已独立只读接收，22source/28raw全同，63.132秒/0query/0tab操作，原checkpoint与初依赖缺链失败保留。恢复main aeb未改变loaded source362或node_modules；原Web指针与两保留产物不变。ENG01G最终metadata和ENG01H/SVC06首计划本批同步，151来源登记；无需重跑工程/架构检查。见[固定输入](../../docs/evidence/i02/release-close-metadata-integration.json)、[实际接收](../../docs/evidence/i02/svc05-live-acceptance.json)。
+
+2026-10-06 12:54 UTC：ENG01H916e / F01薄传输79b / TUI01D0aaa分别独审批准，28源对固定目标逐字一致，实际组合root noEmit0；[接收记录](../../docs/evidence/i02/engineering-terminal-integration.json)。复用原局部证据，0产品重跑/0provider。个人runtime362/v15、Web8d8保持；SVC05收口metadata纳入，P01产物读取仅研究后继。

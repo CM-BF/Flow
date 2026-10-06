@@ -4,7 +4,7 @@
 | --- | --- |
 | 计划编号 / 状态 | SVC05 / completed |
 | 创建 / 更新 | 2026-10-06 12:39 UTC |
-| 所属大task | [FLOW-001](../flow-001-architecture/plan.md)，REQ19 |
+| 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release / codex/personal-current-release |
@@ -23,4 +23,4 @@
 
 当前生产Web与旧保留artifact必须以实际descriptor核验；不能以fixture壳或module单测冒充App。ATTACHI02实际Send/Queue附件接线由Web组推进，固定后另行纳入目标，不把待交付当现有能力。保留原失败与未知；兼容报告只是固定组合的局部证据。请求正文只来自合成数据，真实owner/runner凭据不读取输出或复制进测试。
 
-完成首片须在不可恢复清理前保存证据checkpoint。只关闭自有浏览器/端口/随机DB；失败保留可定位事实，不动个人安装。查看截图并记录实际视觉结论，不用网络空闲等待SSE。
+准备首片要求在不可恢复清理前保存证据checkpoint，只关闭自有浏览器/端口/随机DB，不动个人安装；该阶段已完成。随后实际窗口按单独授权操作并保存checkpoint，已恢复接收且closed。查看截图并记录实际视觉结论，不用网络空闲等待SSE。

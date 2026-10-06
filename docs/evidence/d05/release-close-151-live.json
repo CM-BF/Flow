@@ -1,0 +1,759 @@
+{
+  "generatedAt": "2026-10-06T12:46:32.493Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "3609d8dabd3713e37d877af4f96d2daa2bd96e57",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T12:46:32.543Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "taskCount": 151,
+  "assignmentsState": "available",
+  "unregistered": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/s01p05",
+        "plans/s01p05-event-state"
+      ],
+      "state": "active",
+      "branch": "codex/event-state-persistence",
+      "origin": "new",
+      "taskId": "S01P05",
+      "worker": "status_read",
+      "claimId": "4eb31983-3bd8-415e-9898-143e28c727ef",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence",
+      "createdAt": "2026-10-06T12:39:17.584Z",
+      "updatedAt": "2026-10-06T12:39:17.584Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "rawSha256": "4471bd40c7b900caf21012d589822aa3ac12a503824305b14e985b5906d6d3f7",
+  "tasks": [
+    {
+      "id": "SVC06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:43:33.653Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/status.md",
+        "syncedAt": "2026-10-06T12:46:32.493Z",
+        "stale": false,
+        "ageHours": 0.04985916666666667
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/backend-release",
+        "head": "3467f3e8ef70ba47d1cf4f148e42b90e084ccbf7",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T12:46:32.626Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+            "id": "FLOW-001",
+            "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead",
+            "value": "Execution Lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "planning",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "已明确让后台运行版本脱离开发目录的发布目标",
+          "next": "当前终端片段收口后，接入固定源码与依赖的后台发布产物",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "plans/svc06-backend-release",
+            "docs/evidence/svc06"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "SVC06",
+        "owner": "Execution Lead / gpt-6-astra",
+        "branch": "codex/backend-release",
+        "branchState": "proposed",
+        "updatedAt": "2026-10-06T12:43:33.000Z",
+        "updatedRecord": "2026-10-06 12:43:33 UTC",
+        "todos": [
+          {
+            "id": "SVC06-01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "plan / source-observation / claim"
+          },
+          {
+            "id": "SVC06-02",
+            "state": "pending",
+            "owner": "待可用worker正式handoff",
+            "evidence": "当前TUI01D/ENG01H并行不改序"
+          },
+          {
+            "id": "SVC06-03",
+            "state": "pending",
+            "owner": "待实施owner",
+            "evidence": "未写产品"
+          },
+          {
+            "id": "SVC06-04",
+            "state": "pending",
+            "owner": "实施owner / 独立reviewer",
+            "evidence": "未验"
+          },
+          {
+            "id": "SVC06-05",
+            "state": "pending",
+            "owner": "独立operator",
+            "evidence": "无个人操作许可"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab；计划首提交由Git记录",
+        "declaredDirty": "仅plan/evidence；提交后clean",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN（纯计划，未执行产品/模型）"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "本计划待本批发布；SVC05实际runtime为362/v15，Web8d8/v2保持",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED",
+        "target": null
+      },
+      "proof": null
+    },
+    {
+      "id": "ENG01H",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:45:50.156Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract/plans/eng01h-native-engineering-contract/status.md",
+        "syncedAt": "2026-10-06T12:46:32.493Z",
+        "stale": false,
+        "ageHours": 0.011803611111111112
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/engineering-native-contract",
+        "head": "84e92e731660ee0134aeca824c6844bd4b5952e8",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T12:46:32.640Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+            "id": "ENG-001",
+            "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead",
+            "value": "Execution Lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "review",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "工程用途、任务领取和检查收据已通过局部验证",
+          "next": "独立审查工程用途与收据校验",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "916e59f69cea6f5eef4fe8cd80dc1f735c5b705b",
+          "scopes": [
+            "apps/runner/src/engineering/adapter.ts",
+            "apps/server/src/engineering/index.ts",
+            "apps/server/src/engineering/native-profile.ts",
+            "apps/server/src/engineering/native-verification.ts",
+            "apps/server/src/engineering/native.test.ts",
+            "apps/server/src/engineering/profile.ts",
+            "apps/server/src/engineering/verification.ts",
+            "apps/server/src/evidence.ts",
+            "apps/server/src/execution-profiles/publication.ts",
+            "apps/server/src/runners.ts",
+            "packages/contracts/src/engineering-native.ts",
+            "packages/contracts/src/runner.ts",
+            "packages/contracts/src/tasks.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "ENG01H",
+        "owner": "native_center_owner / gpt-6-astra",
+        "branch": "codex/engineering-native-contract",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T12:45:50.000Z",
+        "updatedRecord": "2026-10-06 12:45:50 UTC",
+        "todos": [
+          {
+            "id": "ENG01H-01",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "claim与Interface"
+          },
+          {
+            "id": "ENG01H-02",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "DTO/中心实施"
+          },
+          {
+            "id": "ENG01H-03",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "61 different分轮/types0；原失败/清理保留"
+          },
+          {
+            "id": "ENG01H-04",
+            "state": "in-progress",
+            "owner": "native_center_owner",
+            "evidence": "固定source待独立review，main未集成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab / 916e59f69cea6f5eef4fe8cd80dc1f735c5b705b",
+        "declaredDirty": "本metadata提交后clean；产品源码冻结",
+        "checks": {
+          "state": "passed",
+          "target": "916e59f69cea6f5eef4fe8cd80dc1f735c5b705b",
+          "record": "PASSED 916e59f69cea6f5eef4fe8cd80dc1f735c5b705b；61 different分轮/types0；[manifest](../../docs/evidence/eng01h/fixed-manifest.json)"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "本片未集成；固定base aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED",
+        "target": "916e59f69cea6f5eef4fe8cd80dc1f735c5b705b"
+      },
+      "proof": null
+    },
+    {
+      "id": "TUI01D",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:35:30.433Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session/plans/tui01d-goal-session/status.md",
+        "syncedAt": "2026-10-06T12:46:32.493Z",
+        "stale": false,
+        "ageHours": 0.1756925
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/tui-goal-session",
+        "head": "0c28b4b4703c5138588659c591bfb48db0e3918c",
+        "dirty": true,
+        "changedFiles": 12,
+        "observedAt": "2026-10-06T12:46:32.651Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)",
+            "id": "TUI-001",
+            "location": "../../../tui-client/plans/tui01-terminal-client/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead",
+            "value": "Execution Lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "目标入口和共享私有记录已实现，旧终端基本检查通过；真实目标旅程待继续验证。",
+          "next": "在终端查看同一目标的计划和执行，处理决定并恢复未知回执。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/tui/src/goal",
+            "apps/tui/src/main.tsx",
+            "apps/tui/src/headless.ts",
+            "apps/tui/src/intent-store.ts",
+            "apps/tui/src/private-journal.ts",
+            "apps/tui/README.md",
+            "apps/tui/test-fixtures/goal_driver.py"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "TUI01D",
+        "owner": "assignment_review / gpt-6-astra",
+        "branch": "codex/tui-goal-session",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T12:36:00.000Z",
+        "updatedRecord": "2026-10-06 12:36 UTC / 尚未集成",
+        "todos": [
+          {
+            "id": "TUI01D-01",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "[接口](../../docs/evidence/tui01d/interface.md)"
+          },
+          {
+            "id": "TUI01D-02",
+            "state": "in-progress",
+            "owner": "assignment_review",
+            "evidence": "初实现，15局部检查通过；尚未交付"
+          },
+          {
+            "id": "TUI01D-03",
+            "state": "in-progress",
+            "owner": "assignment_review",
+            "evidence": "journey-first.txt：import错误零选择；已修路径，未重跑"
+          },
+          {
+            "id": "TUI01D-04",
+            "state": "pending",
+            "owner": "assignment_review",
+            "evidence": "未审查/未main"
+          },
+          {
+            "id": "TUI01D-05",
+            "state": "pending",
+            "owner": "TUI-001",
+            "evidence": "父完整双端后继"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f / 首文档提交",
+        "declaredDirty": "本段 canonical 编辑，提交后核验",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "部分通过：2新syntax/journal+13旧直接消费者；新PG旅程import失败零选择，路径修正未重跑；未typecheck"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "未集成本片",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED。Review target commit：UNKNOWN。Base：a8aef18291de147c0a6ce9a3bba9383b54f5cf1f。",
+        "target": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f"
+      },
+      "proof": null
+    },
+    {
+      "id": "SVC05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:42:34.098Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/plans/svc05-current-release/status.md",
+        "syncedAt": "2026-10-06T12:46:32.493Z",
+        "stale": false,
+        "ageHours": 0.0756925
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/personal-current-release",
+        "head": "a0a7c5c0e37c1571be5fd418e61992122babe938",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T12:46:32.754Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+            "id": "FLOW-001",
+            "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead",
+            "value": "Execution Lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "delivered",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "个人后台已更新并恢复接收，原网页、会话、配置与数据已保留",
+          "next": "本片段已交付",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+          "scopes": [
+            "experiments/personal-current-release"
+          ],
+          "errors": []
+        },
+        "taskId": "SVC05",
+        "owner": "assignment_review / gpt-6-astra",
+        "branch": "codex/personal-current-release",
+        "branchState": "completed",
+        "updatedAt": "2026-10-06T12:42:00.000Z",
+        "updatedRecord": "2026-10-06 12:42 UTC；固定输入362af3，个人服务未操作",
+        "todos": [
+          {
+            "id": "SVC05-01",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "[Interface](../../docs/evidence/svc05/interface.md)"
+          },
+          {
+            "id": "SVC05-02",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "run-5 三组合/迁移/重启通过"
+          },
+          {
+            "id": "SVC05-03",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "[独立批准](../../docs/evidence/svc05/independent-review.json)"
+          },
+          {
+            "id": "SVC05-04",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "[实际回执](../../docs/evidence/svc05/live/receipt.json)；runtime362/v15，0自发query"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915；实现target dc8e25f141a1f52964056df823b988a5fe24cbea；metadata另记",
+        "declaredDirty": "实验实现/原始证据已固定；此交付metadata提交后clean",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "PASSED；3实际App组合 + 旧24→27迁移/历史/重启/公开读取，0provider；[summary](../../docs/evidence/svc05/summary.json)"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED；固定dc8e25f141a1f52964056df823b988a5fe24cbea",
+        "mainRecord": "准备片段已由Lead接收main/origin aeb764e5d2c2ec043ae8673cde2724f5330db2ab；实际更新新窗口执行中",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "unknown",
+        "record": "APPROVED。Review target commit：dc8e25f141a1f52964056df823b988a5fe24cbea。",
+        "target": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+        "proof": {
+          "target": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+          "head": "a0a7c5c0e37c1571be5fd418e61992122babe938",
+          "scopes": [
+            "experiments/personal-current-release"
+          ],
+          "observedAt": "2026-10-06T12:46:32.755Z",
+          "state": "unknown",
+          "implementationChanges": [],
+          "outsideChanges": [
+            "docs/evidence/svc05/live/drain.stderr",
+            "docs/evidence/svc05/live/facts.mjs",
+            "docs/evidence/svc05/live/preservation.mjs",
+            "docs/evidence/svc05/live/refresh.stderr",
+            "docs/evidence/svc05/live/resume.stderr"
+          ],
+          "metadataChanges": [
+            "docs/evidence/svc05/independent-review.json",
+            "docs/evidence/svc05/live/README.md",
+            "docs/evidence/svc05/live/after-drain.json",
+            "docs/evidence/svc05/live/after-refresh.json",
+            "docs/evidence/svc05/live/after-resume.json",
+            "docs/evidence/svc05/live/authorization.json",
+            "docs/evidence/svc05/live/before-drain.json",
+            "docs/evidence/svc05/live/before-resume.json",
+            "docs/evidence/svc05/live/checkpoint.json",
+            "docs/evidence/svc05/live/dependency-install.json",
+            "docs/evidence/svc05/live/dependency-install.txt",
+            "docs/evidence/svc05/live/drain.json",
+            "docs/evidence/svc05/live/import-retained-0.json",
+            "docs/evidence/svc05/live/import-retained-1.json",
+            "docs/evidence/svc05/live/ledger-before.json",
+            "docs/evidence/svc05/live/manifest.json",
+            "docs/evidence/svc05/live/pre-drain-gates.json",
+            "docs/evidence/svc05/live/preflight.json",
+            "docs/evidence/svc05/live/preservation.json",
+            "docs/evidence/svc05/live/receipt.json",
+            "docs/evidence/svc05/live/refresh-gates.json",
+            "docs/evidence/svc05/live/refresh.json",
+            "docs/evidence/svc05/live/resume-gates.json",
+            "docs/evidence/svc05/live/resume.json",
+            "docs/evidence/svc05/live/source-restored.json",
+            "docs/evidence/svc05/live/source-window.json",
+            "docs/evidence/svc05/manifest.json",
+            "docs/evidence/svc05/quality.md",
+            "plans/svc05-current-release/plan.md",
+            "plans/svc05-current-release/review.md",
+            "plans/svc05-current-release/status.md"
+          ],
+          "reason": "范围外存在非 metadata 变化，需 owner 核对实现范围"
+        },
+        "declarationProof": "unknown"
+      },
+      "proof": null
+    },
+    {
+      "id": "ENG01G",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:33:22.669Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer/plans/eng01g-native-writer/status.md",
+        "syncedAt": "2026-10-06T12:46:32.493Z",
+        "stale": false,
+        "ageHours": 0.2195813888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/engineering-native-writer",
+        "head": "bb794bdcba12b6ded459c7b5ee35a9090df81036",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T12:46:32.807Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+            "id": "ENG-001",
+            "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead",
+            "value": "Execution Lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "delivered",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "受限工程写入组合已集成，未知结果继续保守处理",
+          "next": "本片段已交付",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+          "scopes": [
+            "apps/runner/src/engineering/native-policy.test.ts",
+            "apps/runner/src/engineering/native-policy.ts",
+            "apps/runner/src/engineering/native-writer.test.ts",
+            "apps/runner/src/engineering/native-writer.ts",
+            "apps/runner/src/native-harness/codex/evidence.ts",
+            "apps/runner/src/native-harness/codex/exchange.test.ts",
+            "apps/runner/src/native-harness/codex/exchange.ts",
+            "apps/runner/src/native-harness/codex/turn.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "ENG01G",
+        "owner": "native_center_owner / gpt-6-astra",
+        "branch": "codex/engineering-native-writer",
+        "branchState": "completed",
+        "updatedAt": "2026-10-06T12:33:22.000Z",
+        "updatedRecord": "2026-10-06 12:33:22 UTC",
+        "todos": [
+          {
+            "id": "ENG01G-01",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "claim与Interface"
+          },
+          {
+            "id": "ENG01G-02",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "单消息pump与工程策略"
+          },
+          {
+            "id": "ENG01G-03",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "105 distinct分轮、原red与types/资源清理证据"
+          },
+          {
+            "id": "ENG01G-04",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "独审APPROVED；main逐文件一致，集成types0"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+        "declaredDirty": "本metadata提交后clean",
+        "checks": {
+          "state": "passed",
+          "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+          "record": "PASSED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d；105 distinct分轮，types0；[manifest](../../docs/evidence/eng01g/fixed-manifest.json)"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+        "mainRecord": "已集成 / 557397e9f756bfd9500107d7c1d1ce0ae65f7906；[逐文件回执](../../docs/evidence/eng01g/main-receipt.json)",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED；Reviewer Execution Lead / gpt-6-astra。作者不自审。记录于 2026-10-06 12:27:33 UTC",
+        "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+        "proof": {
+          "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+          "head": "bb794bdcba12b6ded459c7b5ee35a9090df81036",
+          "scopes": [
+            "apps/runner/src/engineering/native-policy.test.ts",
+            "apps/runner/src/engineering/native-policy.ts",
+            "apps/runner/src/engineering/native-writer.test.ts",
+            "apps/runner/src/engineering/native-writer.ts",
+            "apps/runner/src/native-harness/codex/evidence.ts",
+            "apps/runner/src/native-harness/codex/exchange.test.ts",
+            "apps/runner/src/native-harness/codex/exchange.ts",
+            "apps/runner/src/native-harness/codex/turn.ts"
+          ],
+          "observedAt": "2026-10-06T12:46:32.808Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/eng01g/fixed-manifest.json",
+            "docs/evidence/eng01g/independent-review.json",
+            "docs/evidence/eng01g/main-receipt.json",
+            "docs/evidence/eng01g/status-parse.json",
+            "plans/eng01g-native-writer/plan.md",
+            "plans/eng01g-native-writer/review.md",
+            "plans/eng01g-native-writer/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "proof": null
+    }
+  ],
+  "limits": "Actual151 source dashboard snapshot only; fixed architecture stays f181. Runtime362/v15 and Web8d8 are separately verified SVC facts, not inferred from main."
+}

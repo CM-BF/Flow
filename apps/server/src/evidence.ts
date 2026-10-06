@@ -23,7 +23,7 @@ export async function saveArtifact(client: PoolClient, task: TaskRecord, attempt
 export async function verifyArtifact(client: PoolClient, task: TaskRecord, attemptId: string, event: Extract<RunnerEvent, { type: 'verification' }>) {
   const artifact = (await client.query<{ content: string }>('SELECT d.content FROM flow.artifacts a JOIN flow.details d ON d.id=a.detail_id WHERE a.task_id=$1 AND a.artifact_id=$2 AND a.version=$3 AND a.attempt_id=$4', [task.id, event.artifactId, event.artifactVersion, attemptId])).rows[0];
   if (!artifact || sha256(artifact.content) !== event.artifactVersion) throw new HttpError(409, 'artifact_not_found', 'The exact artifact version was not submitted by this attempt.');
-  if (task.submission.engineering || event.verifierId === 'flow.engineering') {
+  if (task.submission.engineering || event.verifierId === 'flow.engineering' || event.verifierId === 'flow.engineering.native') {
     await assertEngineeringVerification(client, task, attemptId, event, artifact.content);
     if (task.latest_artifact_id === event.artifactId && task.latest_artifact_version === event.artifactVersion) task.verification_status = event.result;
     return saveDetail(client, task.id, attemptId, { title: `Engineering verification ${event.result}`, kind: 'verification', content: JSON.stringify(event), mediaType: 'application/json', artifactVersion: event.artifactVersion });

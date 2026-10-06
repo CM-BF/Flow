@@ -1,0 +1,27 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/engineering-profiles.test.ts (2 tests | 1 failed) 35ms
+   ✓ publishes and reads a bounded fixture engineering profile without reclassifying it as native capability 31ms
+   × transports native engineering declarations with purpose-safe decoded receipts and bounded catalog queries 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/engineering-profiles.test.ts > transports native engineering declarations with purpose-safe decoded receipts and bounded catalog queries
+TypeError: runner.publishNativeEngineeringProfile is not a function
+ ❯ packages/client/src/engineering-profiles.test.ts:79:25
+     77|   const runner = new FlowClient({ baseUrl, token: 'synthetic-runner' }…
+     78|   try {
+     79|     expect(await runner.publishNativeEngineeringProfile({ configuratio…
+       |                         ^
+     80|     expect(await owner.listNativeEngineeringProfiles({ limit: 1 })).to…
+     81|     expect(await owner.listNativeEngineeringProfiles({ after: referenc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  05:51:22
+   Duration  385ms (transform 143ms, setup 0ms, import 253ms, tests 35ms, environment 0ms)
+

@@ -1,0 +1,237 @@
+{
+  "format": 1,
+  "task": "ENG01H",
+  "recordedAt": "2026-10-06T12:45:04.420466+00:00",
+  "toolReceipts": "Faithful recorded tool exit observations, not manufactured process stdout",
+  "distinctGreen": 61,
+  "breakdown": "33 new = 27 initial + 5 increment +1 host gate; claim final is repeated strengthening, not another case. Existing center23 +host3 +fence2. Early failures preserved.",
+  "finalSource": [
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4272,
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43"
+    },
+    {
+      "path": "apps/server/src/engineering/index.ts",
+      "bytes": 2469,
+      "sha256": "32540a49df91dd2aef4e12c7c4c525aba215b2bf17a3331a02617b8088850574"
+    },
+    {
+      "path": "apps/server/src/engineering/native-profile.ts",
+      "bytes": 3712,
+      "sha256": "ec6360e5df4870fd2f9eb4eb8f6a23f9b9916ef4b3e4c6e0e8be5b4bca874569"
+    },
+    {
+      "path": "apps/server/src/engineering/native-verification.ts",
+      "bytes": 4211,
+      "sha256": "8ee043fffa72fe441dab970cfc4fa9ea97733cf8fcacfe33d57c921f65d24bc2"
+    },
+    {
+      "path": "apps/server/src/engineering/native.test.ts",
+      "bytes": 21597,
+      "sha256": "3cbfc51d4fcaa1f1bf2cb5dd16d5b2c1e7fbcee3fe83e812e674dbaadad1bc1f"
+    },
+    {
+      "path": "apps/server/src/engineering/profile.ts",
+      "bytes": 3810,
+      "sha256": "e5a8ec78d2f5dc89236ab9baa64084dce8eaa3036d0c7e74d6cf36812ca85dfc"
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "bytes": 4249,
+      "sha256": "70546ca36bf70a83a8584c638a8f273180cc9b30490726ad5cb4bb853254c7cc"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "bytes": 4786,
+      "sha256": "2ef28420bed9500f6c06a72922fcf52fe72c6f9c8e53048a0fc8dbb20f03d184"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 12580,
+      "sha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884"
+    }
+  ],
+  "bindingLimits": "Production files unchanged from first typecheck/PG run through delivery; native.test.ts grew from28 to32 to33 and two fixture assertions were corrected. Scope/frame histories described above; final source hashes captured now, not falsely called process-start observations.",
+  "checks": [
+    {
+      "name": "pg-red",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 1,
+      "passed": 0,
+      "failed": 1,
+      "unselected": 27,
+      "source": "tools.exec_command completion chunk a21622",
+      "stdout": "pg-red.stdout",
+      "bytes": 3326,
+      "sha256": "e464c1f622ec391e46e0db594040362950a120195f455dca6982b94b5bff7757",
+      "note": "native publication absent; expected red, server owner role fallback returned403"
+    },
+    {
+      "name": "pg-first",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 1,
+      "passed": 27,
+      "failed": 1,
+      "unselected": 0,
+      "source": "tools.exec_command completion chunk 41cf0b",
+      "stdout": "pg-first.stdout",
+      "bytes": 2862,
+      "sha256": "81e6b90fd1398de1e8b5d69dd2d41c28af02f4d9fe631c364df0e8a79f659087",
+      "note": "wrong test assumption about separate native catalog URL; production route uses negotiated header"
+    },
+    {
+      "name": "pg-increment",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 1,
+      "passed": 5,
+      "failed": 1,
+      "unselected": 26,
+      "source": "tools.exec_command completion chunk 4a335c",
+      "stdout": "pg-increment.stdout",
+      "bytes": 3435,
+      "sha256": "610928749dff368f2fa3053d32bd1dc5a5196159d34dc2ddc202c7cb3b549198",
+      "note": "corrected catalog +4 new guards green; newly strengthened claim test incorrectly expected ordinary Codex without pin to claim-null"
+    },
+    {
+      "name": "pg-claim",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 0,
+      "passed": 1,
+      "failed": 0,
+      "unselected": 31,
+      "source": "tools.exec_command completion chunk 6ff312",
+      "stdout": "pg-claim.stdout",
+      "bytes": 357,
+      "sha256": "a4ddc494719a64ef08d0395df95bd0ad60b4aaa11105984520ed15da5292a8d4",
+      "note": "claim case now proves purpose runner ignores malformed rows and ordinary Codex still returns409; no product change"
+    },
+    {
+      "name": "host-gate",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 0,
+      "passed": 1,
+      "failed": 0,
+      "unselected": 32,
+      "source": "tools.exec_command completion chunk 176af1",
+      "stdout": "host-gate.stdout",
+      "bytes": 357,
+      "sha256": "587f112bd5750a650bcd930d97c4478c3e2da09017e6f1978f09a10043847d39",
+      "note": "existing production setup rejects v2 before host directory or transport"
+    },
+    {
+      "name": "legacy-center",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 0,
+      "passed": 23,
+      "failed": 0,
+      "unselected": 0,
+      "source": "tools.exec_command completion chunk 9a41da",
+      "stdout": "legacy-center.stdout",
+      "bytes": 405,
+      "sha256": "87f2fb027993ff7ed1933bc864f68941492c0042c102e757caedd9e88d85c18d",
+      "note": "13 existing profile +10 verification direct consumers"
+    },
+    {
+      "name": "legacy-host",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 0,
+      "passed": 3,
+      "failed": 0,
+      "unselected": 3,
+      "source": "tools.exec_command completion chunk 4fa492",
+      "stdout": "legacy-host.stdout",
+      "bytes": 722,
+      "sha256": "ce4cf76f86564a111a28245d1217a05678aa6a7a15a327f012d5fa7c67cb2a30",
+      "note": "existing fixture success/unknown restart/lost artifact ACK; typo FLOW_ENG01A_RUNNER_EVIDENCE means no optional sidecar; hook actually checked drop and resource cleanup, process exit0. No rerun for metadata"
+    },
+    {
+      "name": "fence",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 1,
+      "passed": 0,
+      "failed": 0,
+      "unselected": 9,
+      "source": "tools.exec_command completion chunk 8446c0",
+      "stdout": "fence.stdout",
+      "bytes": 2040,
+      "sha256": "c1cfbaac6736b50892225fe122ecfbc12978a1abb773834f9b6e13c46658847d",
+      "note": "suite setup error: required local admin variable missing; no database created"
+    },
+    {
+      "name": "fence-final",
+      "command": "Node24 pnpm exec vitest run explicit paths and -t where applicable; exact tool command in transcript",
+      "exitCode": 0,
+      "passed": 2,
+      "failed": 0,
+      "unselected": 7,
+      "source": "tools.exec_command completion chunk 8280dd",
+      "stdout": "fence-final.stdout",
+      "bytes": 572,
+      "sha256": "bc32879a8bcda6f59d6e65b8f6b97587f7207dc820bf569c53a67135406d928e",
+      "note": "supplied approved local PG16 endpoint; drain/capacity cases green, cleanup instdout"
+    },
+    {
+      "name": "types-first",
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "unselected": null,
+      "source": "tools.exec_command completion chunk 23aebd",
+      "stdout": "types-first.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "tsc --noEmit"
+    },
+    {
+      "name": "types-final",
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "unselected": null,
+      "source": "tools.exec_command completion chunk eea21c",
+      "stdout": "types-final.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "tsc --noEmit after test changes"
+    },
+    {
+      "name": "types-delivery",
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "unselected": null,
+      "source": "tools.exec_command completion chunk 8aee9b",
+      "stdout": "types-delivery.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "tsc --noEmit after final host-gate case"
+    }
+  ],
+  "providerCalls": 0,
+  "ddl": "none; same immutable table",
+  "resources": "Nine random databases across actual test runs; custom native runs record ownership marker before createServer. All cleanup hooks passed; 8 named DB sidecars/stdout, legacy-host randomized name was not recorded due wrong optional env. No new cleanup scan or rerun."
+}
