@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:55 UTC / 2026-10-06 08:40 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:56 UTC / 2026-10-06 08:40 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task / co-lead | FLOW-001 / mika；[架构主计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md) |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance |
 | Branch | codex/stream-ui-acceptance |
-| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / f80fb6606fbcba942fc8741f56b2f2c6f285f2df（实现target；metadata HEAD由Git核验） |
+| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 4a442af83faa91b419357ef0036627566e5f85a8（实现target；metadata HEAD由Git核验） |
 | 工作树dirty状态 | 提交前核验clean；本次仅metadata同步，最终HEAD由Git核验 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED f80fb6606fbcba942fc8741f56b2f2c6f285f2df；本次3条受影响网络检查通过；此前9条行为检查按原版本保留，1条实际页面直接消费者通过；[checks](../../docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/checks.json) |
+| 检查状态 | PASSED 4a442af83faa91b419357ef0036627566e5f85a8；本次3条受影响网络检查通过；此前9条行为检查按原版本保留，1条实际页面直接消费者通过；[checks](../../docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/checks.json) |
 | 已集成main状态 / HEAD | 未集成；main核验7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 |
-| 实现目标 | f80fb6606fbcba942fc8741f56b2f2c6f285f2df |
+| 实现目标 | 4a442af83faa91b419357ef0036627566e5f85a8 |
 | 实现范围 | experiments/stream-ui-acceptance, plans/chatui01-stream-acceptance, docs/evidence/chatui01 |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -28,7 +28,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | CHATUI01-01 | completed | chatui01_owner | [take receipt](../../docs/evidence/chatui01/take-receipt.json)，独立树/分支与3scope |
-| CHATUI01-02 | completed | chatui01_owner | 通用journey、固定profile一次mutation guard、wx reservation/fsync checkpoint，9/9行为检查 |
+| CHATUI01-02 | completed | chatui01_owner | 通用journey、固定profile一次mutation guard、wx reservation/fsync checkpoint，此前9/9；本次3/3网络delta |
 | CHATUI01-03 | completed | chatui01_owner | [最终零模型actualApp旅程](../../docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/checks.json)，3个同ID样本，Chrome exit0 |
 | CHATUI01-04 | in-progress | chatui01_owner | 固定target待独审；未集成 |
 | CHATUI01-05 | pending | chatui01_owner | 独立真实窗口未授权 |

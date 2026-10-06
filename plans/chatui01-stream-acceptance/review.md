@@ -23,3 +23,7 @@ Reviewer：Mika / gpt-6-astra，只读。原target 3c9952583fa6b3413f76bdcb8a8c3
 | CHATUI01-R1 | P2 | yes | route.continue resolve后创建响应未知/非2xx仍允许任意会话的首turn | 已接受；真实网络5/5红，再校验并持久创建receipt、绑定唯一会话，未知锁死 | f80fb6606fbcba942fc8741f56b2f2c6f285f2df | PENDING |
 
 修复检查：[guard-fix-manifest](../../docs/evidence/chatui01/guard-fix-manifest.json)，9/9 behavior/network +1/1 actualApp。复审仅guard delta与相关raw；真实调用和完整终态/usage未实施。等待reviewer结论，owner不自批。
+
+## 同一P2补全：turn implicit retry
+
+第二次只读反馈：f80的turn仍route.continue；真实丢响应时浏览器可重发最关键POST，原P2尚未关闭。Owner接受，2个新真实网络场景先红；create与turn统一无重试route.fetch，turn receipt验证并checkpoint后fulfill，失败锁死。完整修复target 4a442af83faa91b419357ef0036627566e5f85a8；[turn-fix-manifest](../../docs/evidence/chatui01/turn-fix-manifest.json)。本次3/3相关网络＋1/1 actualApp；前轮9检查保留版本边界。结论 DELTA_PENDING，无owner自批。
