@@ -1,0 +1,48 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-adapters
+
+ ❯ packages/protocols/test/a2a-bridge.test.ts (6 tests | 1 failed | 5 skipped) 380ms
+   ↓ independent official SDK: durable acceptance survives center + bridge restart; messageId alone is not dedup
+   ↓ official SDK input/stream/artifact mapping keeps verification separate and cancel pending honest
+   ↓ verified content, versions and bounded history survive mapping and reconnect
+   ↓ ListTasks uses authorized updated-order cursor, exact total and inclusive timestamp filter
+   ↓ bridge shutdown ends observation without cancelling durable work; failed verification remains separate
+   × invalid history length is rejected before durable acceptance 380ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/protocols/test/a2a-bridge.test.ts > invalid history length is rejected before durable acceptance
+AssertionError: expected [ { …(7) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "createdAt": "2026-10-06T02:24:18.361Z",
++     "harness": "fixture",
++     "id": "f9465bf6-d607-45f2-9566-1e7769f9beea",
++     "status": "queued",
++     "title": "Produce a checked artifact.",
++     "updatedAt": "2026-10-06T02:24:18.361Z",
++     "verificationStatus": "pending",
++   },
++ ]
+
+ ❯ packages/protocols/test/a2a-bridge.test.ts:148:37
+    146|   request.configuration!.historyLength = -1;
+    147|   await expect(sdk.sendMessage(request)).rejects.toBeTruthy();
+    148|   expect((await flow.list()).tasks).toEqual([]);
+       |                                     ^
+    149|   request.configuration!.historyLength = 0;
+    150|   const stream = sdk.sendMessageStream(request);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  19:24:17
+   Duration  714ms (transform 102ms, setup 0ms, import 257ms, tests 380ms, environment 0ms)
+

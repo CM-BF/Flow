@@ -1,0 +1,9 @@
+{
+  "source": "https://modelcontextprotocol.io/specification/2026-07-28",
+  "tasksSource": "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks",
+  "discovery": { "resultType": "complete", "supportedVersions": ["2026-07-28"], "capabilities": { "tools": {}, "extensions": { "io.modelcontextprotocol/tasks": {} } } },
+  "toolList": { "resultType": "complete", "tools": [{ "name": "fixture", "inputSchema": { "type": "object" } }] },
+  "taskResult": { "resultType": "task", "task": { "taskId": "remote-task-1", "status": "working", "createdAt": "2026-10-06T02:00:00Z", "lastUpdatedAt": "2026-10-06T02:00:00Z", "ttlMs": 60000 } },
+  "invalidResult": { "content": [{ "type": "text", "text": "missing mandatory resultType" }] },
+  "protocolError": { "code": -32602, "message": "Unknown fixture tool" }
+}
