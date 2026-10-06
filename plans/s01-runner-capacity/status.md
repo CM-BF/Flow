@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:35:33 UTC；固定1c496835输入；唯一128结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:38:35 UTC；唯一128结果已独审，main接收另计 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | base main1c496835；source 6de928d8092ba8c22ac2222ac7c16af3660be48a；execution 70c92414d3f0fc90b256e857acf64ba3dba35b30；result 64911a3c88488dfdebaa3a678bad659211e29209 |
-| 工作树dirty状态 | 原source/raw冻结；本次仅result manifest/owner metadata，提交后clean |
+| 工作树dirty状态 | source/raw冻结；本次仅审批/ready与owner metadata，提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED：准备41distinct/strict0；实际128tasks/attempts/sessions，2304events/ACK，8空journal，CLI0/外层14.64s；结果待独审 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | 64911a3c88488dfdebaa3a678bad659211e29209 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 固定结果64911a3c：128真实fixture task/attempt/session窗口PASS，完整原始证据封存；share row elapsed UNKNOWN |
-| 下一可用交付 | Mika对固定64911a3c结果独审；本窗口已消费，不能追加实际调用 |
+| 当前产出 | 固定64911a3c结果经Mika 2026-10-06 12:37:14 UTC APPROVED，128fixture执行/持久session/ACK/cleanup通过；share耗时UNKNOWN |
+| 下一可用交付 | Lead受控接收已审S01小片；events三次UPDATE合并候选先只读，等待独立WT/路径移交 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED：结果 64911a3c88488dfdebaa3a678bad659211e29209 待独审；准备6de928d已APPROVED，不代替结果审查 |
+| Review | APPROVED：result 64911a3c88488dfdebaa3a678bad659211e29209，Mika/gpt-6-astra，2026-10-06 12:37:14 UTC，0P1/P2；限定128fixture结果 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -175,3 +175,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 12:34:48 UTC：唯一128窗口已于12:31:13.682022Z→12:31:28.419308Z结束，CLI0/real14.64s/完整88,323,950B；全库128task/attempt/session、2304逐项ACK事件、128成功、8空journal、两个自有child自然0/DB absent/新root删除，无本次retained。实际6秒覆盖、30保守DB样本、1536窗内messageACK和独立外层时长已离线核；见[报告](../../docs/evidence/s01/mixed-128-run/report.md)。FOR SHARE实际SQL与classifier精确列不匹配，row elapsed为UNKNOWN，0分类不作无锁；不改原driver、不补测。旧raw/journal不动，结果正在固定，只做封存/独审，无第二window。
 
 2026-10-06 12:35:33 UTC：结果target `64911a3c88488dfdebaa3a678bad659211e29209` 固定，[manifest](../../docs/evidence/s01/mixed-128-run/manifest.json) SHA `3c66deb37fbcc3163093cb70857b651c6275346be5b82788d825fb90ae92328e`，26source/27readonly/9raw/6support/2preparation绑定，source=6de=70c=target=WT，27readonly=固定main1c，另6runtime/172历史Git核符。独立结果review待Mika；原运行5raw/外壳CLI/time与receipt不可改写，report明确共享锁分类缺失而不影响独立容量证明边界。完整保守归档上界118,431,893B<256MiB。
+
+2026-10-06 12:38:35 UTC：结果独审APPROVED `64911a3c88488dfdebaa3a678bad659211e29209`，Mika/Astra精确12:37:14 UTC，70绑定与128身份/1536窗内ACK/2304事件/30样本/8journal/完整cleanup及外层时间独立核符。见[审批](../../docs/evidence/s01/mixed-128-run/independent-review.json)与[接收入口](../../docs/evidence/s01/mixed-128-run/integration-ready.md)。原archive-budget是早期快照并预留尾部，独审另核118,449,471B保守总上界，不重写原snapshot。原S01其他验收保持开放；新性能候选仅只读，F01仍占events.ts，当前未claim/开工/实际运行。

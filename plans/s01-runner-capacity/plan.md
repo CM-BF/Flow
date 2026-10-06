@@ -98,4 +98,4 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 - [x] 固定main1c496835输入、profile与128身份/持续行为/预算/资源验收；41纯checks/strict0，source6de928d。
 - [x] 独立review固定准备实现：Mika 2026-10-06 12:29:56 UTC APPROVED 6de928d；实际窗口仍待明确OPEN。
 - [x] Mika点名70c92414后唯一128实际window完成，CLI0/14.64s/清理完成；0额外capacity调用，结果待独审。
-- [ ] 全量session/attempt/event ACK/fence/unknown与资源证据封存独审；REQ-18真实模型/完整故障/部署边界继续开放。
+- [x] 本次全量session/attempt/event ACK/fence/unknown与资源证据封存独审：Mika 2026-10-06 12:37:14 UTC APPROVED 64911a3c；REQ-18真实模型/完整故障/部署边界继续开放。

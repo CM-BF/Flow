@@ -1,13 +1,13 @@
 # S01 独立审查
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：64911a3c88488dfdebaa3a678bad659211e29209
 
-当前对象：唯一128fixture窗口如实结果，runVerdict=PASS待独审。执行 `70c92414d3f0fc90b256e857acf64ba3dba35b30` / 已审source `6de928d8092ba8c22ac2222ac7c16af3660be48a` / main1c496835固定输入。[结果manifest](../../docs/evidence/s01/mixed-128-run/manifest.json) SHA `3c66deb37fbcc3163093cb70857b651c6275346be5b82788d825fb90ae92328e`，26source/27readonly/9raw/6support/2preparation（70项），另6runtime/172历史。当前writer status_read/gpt-6-astra claim8e4660a6 v3保留，原scope未变。
+当前对象：唯一128fixture窗口如实结果，Mika/gpt-6-astra于2026-10-06 12:37:14 UTC独立只读APPROVED，0P1/P2；runVerdict=PASS。执行 `70c92414d3f0fc90b256e857acf64ba3dba35b30` / 已审source `6de928d8092ba8c22ac2222ac7c16af3660be48a` / main1c496835固定输入。[结果manifest](../../docs/evidence/s01/mixed-128-run/manifest.json) SHA `3c66deb37fbcc3163093cb70857b651c6275346be5b82788d825fb90ae92328e`，26source/27readonly/9raw/6support/2preparation（70项），另6runtime/172历史。当前writer status_read/gpt-6-astra claim8e4660a6 v3保留，原scope未变。
 
 只读核全量128持久fixture session/task/attempt、8runtime同1runner进程、真实adapter/ACK/DB采样区间、2304事件seq/id/digest/fence、HTTP send/settle/status/stop分类、8journal/ownchild/DB/工作目录、outer14.64秒与88,323,950B完整计量/118,431,893B归档保守上界。FOR SHARE真实查询归other是已知observer分类遗漏，share row elapsed为UNKNOWN；不准从n0推无锁或补跑。timermarker略早与实际adapter>=6s分开；network eventACK和emit返回两个口径分开。
 
-审查不运行测试/PG/HTTP/runner，不改raw/source；41纯检查仅准备证据，不当本次实际通过数。此结果不是128native/provider/token/SLO/整个FLOW-001完成；原ACK/browser/未知恢复仍开放。
+审查未运行测试/PG/HTTP/runner，未改raw/source；[独审回执](../../docs/evidence/s01/mixed-128-run/independent-review.json)。41纯检查仅准备证据，不当本次实际通过数。此结果不是128native/provider/token/SLO/整个FLOW-001完成；原ACK/browser/未知恢复仍开放。
 
 ## 以下是历史准备与结果批准，不替代当前固定结果审查
 
