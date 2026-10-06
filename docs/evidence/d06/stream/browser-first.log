@@ -1,0 +1,42 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /受理不等生效/. Input:
+
+'Flow 自有\n' +
+  '\n' +
+  'command/receipt/seal/result持久保存，受task/attempt/ownerVersion与revision约束。中心factory activeSteering默认关闭，当前Web按钮仍disabled。\n' +
+  '\n' +
+  'Interface\n' +
+  '\n' +
+  'accepted → received / observed-consumed / rejected / unknown。\n' +
+  '\n' +
+  '局部修改与验证\n' +
+  '\n' +
+  'receipt仅认证Runner观察，不证明模型遵循；取消与结算分别处理。\n' +
+  '\n' +
+  '源码依据（固定版本）'
+
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-stream/docs/evidence/d06/stream/browser-check.mjs:44:12 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'Flow 自有\n' +
+    '\n' +
+    'command/receipt/seal/result持久保存，受task/attempt/ownerVersion与revision约束。中心factory activeSteering默认关闭，当前Web按钮仍disabled。\n' +
+    '\n' +
+    'Interface\n' +
+    '\n' +
+    'accepted → received / observed-consumed / rejected / unknown。\n' +
+    '\n' +
+    '局部修改与验证\n' +
+    '\n' +
+    'receipt仅认证Runner观察，不证明模型遵循；取消与结算分别处理。\n' +
+    '\n' +
+    '源码依据（固定版本）',
+  expected: /受理不等生效/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.20.0
