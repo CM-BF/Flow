@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-10-06T17:03:17.650833+00:00",
+  "source": "Latest direct Lead report via root; no independent runtime/resource sample",
+  "o14": {
+    "state": "COMPLETED_CLEANED_RETURNED",
+    "checks": "2/2",
+    "elapsedSeconds": 9.89,
+    "database": "owned database DROP confirmed by Lead",
+    "connections": 0,
+    "remaining": [],
+    "ownedRuntimeCleanup": true,
+    "providerCalls": 0
+  },
+  "currentWindow": {
+    "PGOwner": null,
+    "state": "RESOURCE_BATCH_IN_PROGRESS",
+    "authorizedBatchMaximumTrees": 4,
+    "targetFreeBytes": 1241513984,
+    "coordination": "Finish batch at target1GiB+160MiB or four-tree limit, then Lead coordinates CORE8 and B together; crossing threshold alone does not dispatch repeated partial runs."
+  },
+  "ourRelease03": "Await explicit new window and fresh original B predicates; no current gate",
+  "otherWork": "DPERF Node remains sealed PASS/no rerun; M02 source request waits materialization",
+  "operationsThisUpdate": {
+    "freeSamples": 0,
+    "productChecks": 0,
+    "PG": 0,
+    "Chrome": 0
+  }
+}

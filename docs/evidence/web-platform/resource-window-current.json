@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T17:02:31.245685+00:00",
-  "state": "O14_EXCLUSIVE_PG_WINDOW_RELEASE_B_WAITING",
-  "groupWindowOwnership": "native_center_owner O14 fixedtwo-case PG window; CORE retryNOT_RUN returned. This group has no PG/Chrome window.",
+  "recordedAt": "2026-10-06T17:03:17.650833+00:00",
+  "state": "NO_PG_OWNER_RESOURCE_BATCH_IN_PROGRESS",
+  "groupWindowOwnership": "No PG window currently held. O14 completed2/2 and cleaned/returned; authorized four-tree resource batch underway. B awaits explicit Lead window after batch completes.",
   "release03": {
     "state": "A_PASS_B_LOCATOR_FAILURE_CLEANED_WINDOW_RETURNED",
     "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
@@ -152,6 +152,10 @@
     {
       "source": "LatestLead via root afterCORE16:58retry admission",
       "coordination": "CORE freshabout15MBshort,NOT_RUN/0newDB/process andreturned; O14native_center_ownerexclusivePG,original+32MiB/120s+30s; B waitsactualcleanup/fresh originalBthreshold."
+    },
+    {
+      "source": "LatestLead via root afterO14",
+      "coordination": "O14 2/2/9.89s, ownedDBDROP/connections0/remaining[]/runtimeclean/0provider, returned. New four-tree batch toward1GiB+160MiB; finish at target orlimit before unifiedCORE8/B coordination. No automatic dispatch merely crossing threshold."
     }
   ],
   "limits": [
@@ -160,5 +164,5 @@
     "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
     "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
   ],
-  "latestCoordination": "lead-o14-window-after-core-not-run.json"
+  "latestCoordination": "lead-o14-complete-resource-batch.json"
 }

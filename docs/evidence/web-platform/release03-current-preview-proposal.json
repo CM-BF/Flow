@@ -120,11 +120,11 @@
   "currentResourcePolicy": "resource-policy-1349.json",
   "existingSourceReuseStudy": "release03-existing-source-resource-study/report.md",
   "runScopeProposal": "release03-run-scope-proposal.json",
-  "currentRunState": "all12326ms: attachment-only+mixed passed on af51; Bplain202 then Files strict locator failure. Cleanup complete, total20309ms/remaining159691ms. Lead accepts returned window; O14 native_center_owner now holds PG after CORE retry NOT_RUN returned.",
+  "currentRunState": "all12326ms: attachment-only+mixed passed on af51; Bplain202 then Files strict locator failure. Cleanup complete, total20309ms/remaining159691ms. Lead accepts returned window; O14 completed and returned; no current PG owner, four-tree resource batch in progress. B awaits explicit next window after batch.",
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
-  "updatedAt": "2026-10-06T17:02:31.245685+00:00",
+  "updatedAt": "2026-10-06T17:03:17.650833+00:00",
   "prepareState": "PREPARED_RELEASED",
-  "validationState": "A_ACCEPTED_9927_SOURCE_REPAIR_APPROVED_WAIT_O14_RETURN",
+  "validationState": "A_ACCEPTED_9927_APPROVED_WAIT_RESOURCE_BATCH_AND_EXPLICIT_WINDOW",
   "historicalRawArtifact": {
     "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
@@ -216,5 +216,5 @@
   },
   "latestActualEvidence": "release03-all-164711-root-review.json",
   "sourceRepairAdvice": "release03-c18-files-and-history-peer.md",
-  "currentWindow": "lead-o14-window-after-core-not-run.json"
+  "currentWindow": "lead-o14-complete-resource-batch.json"
 }
