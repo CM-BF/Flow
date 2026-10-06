@@ -1,0 +1,24 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-tool-authorization
+> tsc --noEmit
+
+apps/server/src/goal-tool-runs/authorization.test.ts(47,57): error TS2345: Argument of type '"create-run"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(50,51): error TS2345: Argument of type '"create-run"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(92,49): error TS2345: Argument of type '"stable"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(94,50): error TS2345: Argument of type '"stable"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(95,69): error TS2345: Argument of type '"stable"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(96,43): error TS2345: Argument of type '"stale"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(97,57): error TS2345: Argument of type '"no-op"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(98,68): error TS2345: Argument of type '"too-many"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(99,43): error TS2345: Argument of type '"stable"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(109,43): error TS2345: Argument of type '"cached"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(112,89): error TS2345: Argument of type '"revoke"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(113,81): error TS2345: Argument of type '"revoke"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(114,69): error TS2345: Argument of type '"revoke"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(117,43): error TS2345: Argument of type '"cached"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(137,43): error TS2345: Argument of type '"cached-race"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(142,41): error TS2345: Argument of type '"cached-race"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(153,57): error TS2345: Argument of type '"retryable"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/authorization.test.ts(155,54): error TS2345: Argument of type '"retryable"' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-tool-runs/runner.ts(3,24): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+ ELIFECYCLE  Command failed with exit code 2.
