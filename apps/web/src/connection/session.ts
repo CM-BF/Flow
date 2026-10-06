@@ -22,11 +22,12 @@ export class ConnectionSession {
   private readonly listeners = new Set<() => void>();
   private csrf?: string;
   private generation = 0;
+  private authorityGeneration = 0;
   private flight?: AbortController;
   private expiry?: ReturnType<typeof setTimeout>;
   private disposed = false;
   private online = true;
-  constructor(address: string, factory: SessionClientFactory = createClient) {
+  constructor(address: string, private readonly factory: SessionClientFactory = createClient) {
     const canonical = recoveryAddress(address);
     this.snapshot = Object.freeze({ address: canonical, phase: "idle", identity: null, generation: 0 });
     this.client = factory(canonical, () => this.csrf);
@@ -39,20 +40,23 @@ export class ConnectionSession {
     && this.snapshot.identity.centerId === namespace.centerId && this.snapshot.identity.ownerPrincipalId === namespace.ownerPrincipalId;
   private publish(patch: Partial<ConnectionSnapshot>) {
     if (this.disposed) return;
-    this.snapshot = Object.freeze({ ...this.snapshot, ...patch, generation: this.generation });
+    this.snapshot = Object.freeze({ ...this.snapshot, ...patch, generation: this.authorityGeneration });
     this.listeners.forEach(listener => listener());
   }
-  private begin() {
+  private begin(preserveReady = false) {
     if (this.disposed) throw Error("This connection is closed.");
     this.flight?.abort(); clearTimeout(this.expiry);
     const controller = new AbortController(), generation = ++this.generation;
     this.flight = controller;
-    this.csrf = undefined;
-    this.publish({ phase: this.online ? "checking" : "offline", identity: null, expiresAt: undefined, error: undefined });
+    if (!preserveReady || this.snapshot.phase !== "ready") {
+      this.authorityGeneration++; this.csrf = undefined;
+      this.publish({ phase: this.online ? "checking" : "offline", identity: null, expiresAt: undefined, error: undefined });
+    }
     return { controller, generation, signal: AbortSignal.any([controller.signal, AbortSignal.timeout(15_000)]) };
   }
   private current(generation: number, signal: AbortSignal) { return !this.disposed && generation === this.generation && !signal.aborted; }
   private ready(value: BrowserSessionReady) {
+    if (this.csrf !== value.csrfToken || this.snapshot.identity?.centerId !== value.centerId || this.snapshot.identity.ownerPrincipalId !== value.ownerPrincipalId) this.authorityGeneration++;
     this.csrf = value.csrfToken;
     this.publish({ phase: "ready", identity: Object.freeze({ baseUrl: this.snapshot.address, centerId: value.centerId, ownerPrincipalId: value.ownerPrincipalId }), expiresAt: value.expiresAt, error: undefined });
     // Local time only schedules another authoritative read; it never declares a session expired.
@@ -60,19 +64,20 @@ export class ConnectionSession {
     this.expiry = setTimeout(() => { void this.read(); }, delay);
   }
   private failure(error: unknown) {
+    this.authorityGeneration++;
     this.csrf = undefined;
     const phase = !this.online || !(error instanceof FlowApiError) ? "offline" : error.status === 401 ? "unauthenticated" : error.status === 403 ? "forbidden" : "error";
     this.publish({ phase, identity: null, expiresAt: undefined, error: errorMessage(error) });
   }
   read = async (): Promise<void> => {
     if (this.disposed) return;
-    const { controller, generation, signal } = this.begin();
+    const { controller, generation, signal } = this.begin(true);
     if (!this.online) return;
     try {
       const result = await this.client.browserSession(signal);
       if (!this.current(generation, signal)) return;
       if (result.state === "ready") this.ready(result);
-      else this.publish({ phase: result.state, identity: null, expiresAt: undefined });
+      else { this.authorityGeneration++; this.csrf = undefined; this.publish({ phase: result.state, identity: null, expiresAt: undefined }); }
     } catch (error) { if (!this.disposed && generation === this.generation && !controller.signal.aborted) this.failure(error); }
     finally { if (this.flight === controller) this.flight = undefined; }
   };
@@ -96,14 +101,17 @@ export class ConnectionSession {
   };
   logout = async (): Promise<void> => {
     if (this.snapshot.phase !== "ready" || !this.csrf) throw Error("Read the current session before signing out.");
-    // Keep the current CSRF available only for this explicit logout call.
+    // Revoke all public business authorization synchronously. Only this bound public-client call retains the old CSRF.
+    const csrf = this.csrf, logoutClient = this.factory(this.snapshot.address, () => csrf);
+    this.csrf = undefined; this.authorityGeneration++;
+    this.publish({ phase: "checking", identity: null, expiresAt: undefined, error: undefined });
     this.flight?.abort(); clearTimeout(this.expiry);
     const controller = new AbortController(), generation = ++this.generation;
     this.flight = controller;
     try {
-      await this.client.logoutBrowserSession(controller.signal);
+      await logoutClient.logoutBrowserSession(controller.signal);
       if (!this.current(generation, controller.signal)) return;
-      this.csrf = undefined;
+      this.authorityGeneration++; this.csrf = undefined;
       this.publish({ phase: "unauthenticated", identity: null, expiresAt: undefined, error: undefined });
     } catch (error) { if (this.current(generation, controller.signal)) this.failure(error); }
     finally { if (this.flight === controller) this.flight = undefined; }
@@ -112,7 +120,7 @@ export class ConnectionSession {
     if (this.disposed || this.online === online) return;
     this.online = online;
     if (online) void this.read();
-    else { this.flight?.abort(); clearTimeout(this.expiry); this.generation++; this.csrf = undefined; this.publish({ phase: "offline", identity: null, error: "Offline. Saved drafts and receipts are retained; no command was cancelled." }); }
+    else { this.flight?.abort(); clearTimeout(this.expiry); this.generation++; this.authorityGeneration++; this.csrf = undefined; this.publish({ phase: "offline", identity: null, error: "Offline. Saved drafts and receipts are retained; no command was cancelled." }); }
   }
   dispose() { this.disposed = true; this.generation++; this.flight?.abort(); clearTimeout(this.expiry); this.csrf = undefined; this.listeners.clear(); }
 }

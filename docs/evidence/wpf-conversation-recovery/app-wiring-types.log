@@ -1,0 +1,4 @@
+apps/web/src/recovery/binding.tsx(51,79): error TS2345: Argument of type '{} | null' is not assignable to parameter of type '{ reference: { kind: "upload"; projectId: string; resourceId: string; version: 1; contentDigest: string; }; name: string; mediaType: "text/plain"; byteLength: number; createdAt: string; expiresAt: string; state: "ready" | "expired"; retained: boolean; }'.
+  Type 'null' is not assignable to type '{ reference: { kind: "upload"; projectId: string; resourceId: string; version: 1; contentDigest: string; }; name: string; mediaType: "text/plain"; byteLength: number; createdAt: string; expiresAt: string; state: "ready" | "expired"; retained: boolean; }'.
+apps/web/src/recovery/journal.ts(200,21): error TS2339: Property 'phase' does not exist on type 'DraftRecord | CommandRecord'.
+  Property 'phase' does not exist on type 'DraftRecord'.

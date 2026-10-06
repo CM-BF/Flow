@@ -1,3 +1,6 @@
+import { ConnectionSession } from "./connection/session";
+import { ConversationRecoveryJournal, recoveryAddress, namespaceKey, recoveryValue, type RecoveryNamespace, type RecoveryRecord, type CommandRecord } from "./recovery/journal";
+import { RecoverySurface, readRecoveryDraft, type RecoveryHost } from "./recovery/binding";
 import { canOpenConversation, retentionReasons, MAX_RESIDENT_CONVERSATIONS } from "./workspace-retention";
 import { SteeringSurfaces, type SteeringIdentity } from "./plugin-integration/steering";
 import {
@@ -16,6 +19,7 @@ import {
 import { FlowClient } from "@flow/client";
 import type { PluginRegistryReader } from "./plugin-management/PluginManagement";
 import {
+  idSchema,
   TERMINAL_STATUSES,
   type TaskStatus,
   type TaskSummary,
@@ -39,6 +43,7 @@ import {
 } from "./components/workspace/WorkspacePanels";
 import { TaskProjection } from "./projection";
 import { ConversationProjection, ConversationCatalog } from "./conversations/projection";
+import { restoreOutbox } from "./conversations/outbox";
 import { ConversationThread } from "./conversations/ConversationThread";
 import { ConversationList } from "./conversations/ConversationList";
 import { createExecutionProfileCatalog, type ExecutionProfileCatalog } from "./execution-profiles/catalog";
@@ -200,6 +205,8 @@ interface View {
   projection: TaskProjection;
   title: string;
   conversation?: ConversationProjection;
+  intent?: "follow-up" | "queue";
+  restoredVersion?: number;
 }
 interface PanelFocusRequest { serial: number; taskId: string; tab: WorkspaceTabId }
 function ChatPane({
@@ -210,6 +217,8 @@ function ChatPane({
   profiles,
   profileSelection,
   onProfileSelection,
+  onDraftChange,
+  onIntent,
   onAccepted,
   onOpenReference,
   onActivate,
@@ -223,6 +232,8 @@ function ChatPane({
   profiles: ExecutionProfileCatalog;
   profileSelection: ProfileSelection;
   onProfileSelection: (selection: ProfileSelection) => void;
+  onDraftChange: () => void;
+  onIntent: (intent: "follow-up" | "queue") => void;
   onAccepted: (id: string) => void;
   onOpenReference: (id: string) => void;
   onActivate: () => void;
@@ -235,7 +246,7 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
-  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
+  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} intent={view.intent ?? "follow-up"} onIntent={onIntent} onDraftChange={onDraftChange} restoredVersion={view.restoredVersion ?? 0} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
@@ -347,17 +358,27 @@ function ChatPane({
     </section>
   );
 }
+interface RecoveryEnvironment { session: ConnectionSession; namespace: RecoveryNamespace; journal: ConversationRecoveryJournal }
 function Workspace({
   client,
+  recovery,
+  active = true,
   onDisconnect,
   theme,
   onTheme,
 }: {
   client: FlowClient;
+  recovery?: RecoveryEnvironment;
+  active?: boolean;
   onDisconnect: () => void;
   theme: Theme;
   onTheme: (theme: Theme) => void;
 }) {
+  const connectionState = useSyncExternalStore(recovery?.session.subscribe ?? noSubscription, recovery?.session.getSnapshot ?? noSnapshot);
+  const authorized = !recovery || (active && recovery.session.authorized(recovery.namespace));
+  const authorizedRef = useRef(authorized); authorizedRef.current = authorized;
+  const profileRef = useRef<Record<string, ProfileSelection>>({});
+  const [recoveryError, setRecoveryError] = useState<string>();
   const registry = useMemo<PluginRegistryReader>(() => ({
     plugins: (options, signal) => client.plugins(options, signal),
     plugin: (id, revision, signal) => client.plugin(id, revision, signal),
@@ -368,6 +389,7 @@ function Workspace({
   const [conversations] = useState(() => new ConversationCatalog(client));
   const [profiles] = useState(() => createExecutionProfileCatalog({ executionProfiles: (options, signal) => client.executionProfiles(options, signal) }));
   const [profileSelections, setProfileSelections] = useState<Record<string, ProfileSelection>>({});
+  profileRef.current = profileSelections;
   const [defaultProfileSelection] = useState(legacyDefaultSelection);
   const list = useSyncExternalStore(catalog.subscribe, catalog.getSnapshot);
   const [views] = useState(() => new Map<string, View>());
@@ -406,15 +428,18 @@ function Workspace({
     setLoadingList(false);
   };
   const residentCount = () => new Set([...views.values()].filter(view => view.conversation)).size;
-  const ensureView = (id: string): View | null => {
+  const ensureView = (id: string, restoredKey?: string): View | null => {
     let view = views.get(id);
+    if (restoredKey && view && view.key !== restoredKey) throw Error("This conversation is already open with another local draft. Close its empty view before restoring the saved identity.");
     if (!view && id.startsWith("conversation:")) {
       const cached = [...views.entries()].find(([, item]) => item.conversation?.getSnapshot().snapshot?.conversation.id === id.slice(13));
       if (cached) {
+        if (restoredKey && cached[1].key !== restoredKey) throw Error("This conversation already has another local draft identity. Keep that draft before restoring this record.");
         const [oldId, existing] = cached; view = existing; views.delete(oldId); views.set(id, existing);
         const draft = drafts.get(oldId); if (draft) { drafts.set(id, draft); drafts.delete(oldId); }
         setPanelTabs(previous => { const next = { ...previous }; if (next[oldId]) { next[id] = next[oldId]!; delete next[oldId]; } return next; });
         setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? id : tab), activeId: group.activeId === oldId ? id : group.activeId })));
+        session?.recovery.changed(existing.key);
       }
     }
     if (!view && (id.startsWith("draft-") || id.startsWith("conversation:")) && !canOpenConversation(residentCount(), false)) {
@@ -422,7 +447,7 @@ function Workspace({
     }
     if (!view) {
       view = {
-        key: crypto.randomUUID(),
+        key: restoredKey ?? crypto.randomUUID(),
         projection: new TaskProjection(client),
         ...((id.startsWith("draft-") || id.startsWith("conversation:")) ? { conversation: new ConversationProjection(client, id.startsWith("conversation:") ? id.slice(13) : null) } : {}),
         title: id.startsWith("draft-")
@@ -431,8 +456,9 @@ function Workspace({
       };
       views.set(id, view);
       view.projection.setVisible(false);
-      view.projection.setOnline(navigator.onLine);
-      view.conversation?.setOnline(navigator.onLine);
+      view.projection.setOnline(navigator.onLine && authorizedRef.current);
+      view.conversation?.setOnline(navigator.onLine && authorizedRef.current);
+      if (recovery && session && view.conversation) view.conversation.configureRecovery(session.recovery.commandPort(view.key));
       if (!id.startsWith("draft-") && !view.conversation) void view.projection.select(id);
     }
     return view;
@@ -477,7 +503,7 @@ function Workspace({
     };
     followRoute();
     const online = () =>
-      views.forEach((view) => { view.projection.setOnline(true); view.conversation?.setOnline(true); });
+      views.forEach((view) => { view.projection.setOnline(authorizedRef.current); view.conversation?.setOnline(authorizedRef.current); });
     const offline = () =>
       views.forEach((view) => { view.projection.setOnline(false); view.conversation?.setOnline(false); });
     window.addEventListener("hashchange", followRoute);
@@ -499,9 +525,9 @@ function Workspace({
   const selectedTask = useSyncExternalStore(selected?.projection.subscribe ?? noSubscription, selected ? () => selected.projection.getSnapshot().task : noSnapshot);
   const selectedTaskId = selectedTask?.id ?? null;
   useEffect(() => {
-    const visible = new Set(overview || !pageVisible ? [] : groups.map(group => group.activeId));
+    const visible = new Set(overview || !pageVisible || !authorized ? [] : groups.map(group => group.activeId));
     views.forEach((view, id) => { view.projection.setVisible(visible.has(id)); view.conversation?.setVisible(visible.has(id)); });
-  }, [groups, overview, pageVisible, views]);
+  }, [groups, overview, pageVisible, views, authorized]);
   const syncWorkspaceSummaries = useCallback((tasks: TaskSummary[]) => {
     tasks.forEach(task => { catalog.syncSummary(task); views.get(task.id)?.projection.syncSummary(task); });
   }, [catalog, views]);
@@ -587,6 +613,7 @@ function Workspace({
       const draft = drafts.get(oldId); if (draft) { drafts.set(nextId, draft); drafts.delete(oldId); }
       setPanelTabs(previous => { const next = { ...previous }; if (next[oldId]) { next[nextId] = next[oldId]!; delete next[oldId]; } return next; });
       setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? nextId : tab), activeId: group.activeId === oldId ? nextId : group.activeId })));
+      session?.recovery.changed(view.key);
       if (!stillOpen && !protectedReasons(nextId, view).length) releaseConversation(view);
       void conversations.refresh(); return;
     }
@@ -610,6 +637,7 @@ function Workspace({
     setPanel(tab, viewId);
   };
   const assertActivity = (identity: import("./plugin-integration/activity").ActivityIdentity) => {
+    if (!authorizedRef.current) throw Error("Reconnect this center before reading activity.");
     const view = views.get(identity.viewId), state = view?.conversation?.getSnapshot();
     const turn = state?.turns.find(turn => turn.id === identity.turnId);
     if (state?.snapshot?.conversation.id !== identity.conversationId || turn?.task.id !== identity.taskId || userMessageId(turn) !== identity.messageId)
@@ -617,9 +645,71 @@ function Workspace({
   };
   const ownsSteering = (identity: SteeringIdentity) => {
     const view = [...views.values()].find(item => item.key === identity.viewKey), state = view?.conversation?.getSnapshot();
-    return state?.snapshot?.conversation.id === identity.conversationId && state.turns.some(turn => turn.id === identity.turnId && turn.task.id === identity.taskId && userMessageId(turn) === identity.messageId);
+    return authorizedRef.current && state?.snapshot?.conversation.id === identity.conversationId && state.turns.some(turn => turn.id === identity.turnId && turn.task.id === identity.taskId && userMessageId(turn) === identity.messageId);
   };
+  const viewEntry = (key: string) => [...views.entries()].find(([, view]) => view.key === key);
+  const recoveryHost: RecoveryHost | undefined = recovery ? {
+    journal: recovery.journal,
+    namespace: () => recovery.session.authorized(recovery.namespace) ? recovery.namespace : null,
+    authorized: () => authorizedRef.current,
+    generation: () => recovery.session.getSnapshot().generation,
+    owner: key => { const entry = viewEntry(key); if (!entry?.[1].conversation) return null; const projectId = entry[1].conversation.getSnapshot().snapshot?.conversation.projectId ?? session?.recoveryMaterials(key).projectId; return { viewKey: key, routeId: entry[0], ...(projectId ? { projectId } : {}) }; },
+    draft: key => {
+      const entry = viewEntry(key); if (!entry?.[1].conversation || !session) throw Error("This draft has no current conversation owner.");
+      const material = session.recoveryMaterials(key);
+      return recoveryValue({ text: drafts.get(entry[0])?.text ?? "", intent: entry[1].intent ?? "follow-up", profile: profileRef.current[key] ?? defaultProfileSelection,
+        ...material, attachments: material.attachments.map(item => ({ id: item.id, name: item.name, state: item.state, metadata: item.metadata, uploadKey: item.uploadKey })), steering: session.steering.drafts(key) });
+    },
+    restore: async record => {
+      if (!authorizedRef.current || !session || record.namespace !== namespaceKey(recovery.namespace)) throw Error("Authorize this exact center and owner before restoring.");
+      const generation = recovery.session.getSnapshot().generation;
+      const current = () => { if (!authorizedRef.current || !recovery.session.authorized(recovery.namespace) || generation !== recovery.session.getSnapshot().generation || session.signal.aborted) throw Error("Recovery belongs to an older authenticated connection."); };
+      const saved = record.kind === "draft" ? readRecoveryDraft(record.data) : null;
+      const object = (value: unknown): Record<string, unknown> => { if (!value || typeof value !== "object" || Array.isArray(value)) throw Error("Invalid saved command identity."); return value as Record<string, unknown>; };
+      let route = record.owner.routeId;
+      if (record.kind === "command") {
+        const frozen = object(record.frozen), checkpoint = record.checkpoint === null ? {} : object(record.checkpoint);
+        const conversationId = record.domain === "outbox" ? checkpoint.conversationId ?? frozen.conversationId : record.domain === "queue" ? object(frozen.command).conversationId : undefined;
+        if (conversationId !== undefined && conversationId !== null) route = `conversation:${idSchema.parse(conversationId)}`;
+        if (record.domain === "outbox" && record.phase !== "accepted") restoreOutbox(record); // Validate all frozen wire fields before touching a view.
+      }
+      if (!route.startsWith("draft-") && !route.startsWith("conversation:")) throw Error("Saved material has no valid conversation route.");
+      const existing = viewEntry(record.owner.viewKey);
+      if (existing && record.kind === "draft" && (drafts.get(existing[0])?.text || session.recoveryMaterials(record.owner.viewKey).knowledge.length || session.recoveryMaterials(record.owner.viewKey).attachments.length)) throw Error("Keep the current draft separately before restoring this one.");
+      const view = existing?.[1] ?? ensureView(route, record.owner.viewKey); if (!view?.conversation) throw Error("Free an empty chat before restoring.");
+      const projection = view.conversation;
+      projection.configureRecovery(session.recovery.commandPort(view.key));
+      if (record.kind === "command" && record.domain === "outbox" && record.phase !== "accepted" && projection.outbox.getSnapshot()?.id !== record.id) projection.restoreReceipt(record);
+      if (route.startsWith("conversation:")) { await projection.refresh(); current(); if (projection.getSnapshot().snapshot?.conversation.id !== route.slice(13)) throw Error("The center did not confirm this conversation."); }
+      const projectId = projection.getSnapshot().snapshot?.conversation.projectId ?? projection.outbox.getSnapshot()?.creation?.projectId;
+      if ((projectId ?? null) !== (record.owner.projectId ?? null) && (route.startsWith("conversation:") || record.kind === "command")) throw Error("The original conversation project does not match this saved record.");
+      current(); select(existing?.[0] ?? route);
+      session.steering.configure(view.key, existing?.[0] ?? route, projection, true);
+      const knowledge = session.knowledgeBinding(view.key, projection); knowledge.configure(existing?.[0] ?? route, true);
+      if (saved) {
+        if ((saved.projectId ?? undefined) !== record.owner.projectId) throw Error("Saved project metadata does not match its envelope.");
+        knowledge.restore(saved.projectId, saved.projectTitle, saved.knowledge);
+        if (saved.attachments.length) { const binding = session.attachmentBinding(view.key, projection); if (!binding?.input) throw Error("Original attachment metadata cannot be restored in this project view."); binding.restoreDraft(saved.attachments); }
+        drafts.set(existing?.[0] ?? route, { harness: "claude", scenario: "success", text: saved.text });
+        profileRef.current = { ...profileRef.current, [view.key]: saved.profile }; setProfileSelections(profileRef.current);
+        view.intent = saved.intent; view.restoredVersion = (view.restoredVersion ?? 0) + 1;
+        session.steering.restoreDrafts(view.key, saved.steering);
+        setGroups(previous => [...previous]);
+      } else if (record.kind === "command" && record.domain === "queue") {
+        const commands = projection.queue.commands; if (!commands) throw Error("Queue commands are unavailable in this center.");
+        if (!commands.getSnapshot().some(item => item.key === record.id)) commands.restore(record);
+      } else if (record.kind === "command" && record.domain === "steering") session.steering.restoreReceipt(view.key, record);
+    },
+    retry: async record => {
+      if (!authorizedRef.current || !session) throw Error("Reconnect before retrying the original request.");
+      const entry = viewEntry(record.owner.viewKey); if (!entry?.[1].conversation) throw Error("Restore this original view first.");
+      if (record.domain === "outbox") { const id = await entry[1].conversation.retry(); if (id) accepted(entry[0], id); }
+      else if (record.domain === "queue") await entry[1].conversation.queue.commands?.retry(record.id);
+      else session.steering.retryReceipt(entry[1].key, record.id);
+    },
+  } : undefined;
   const actions: AppActions = {
+    ...(recoveryHost ? { recovery: recoveryHost } : {}),
     knowsTask: id => Boolean(taskView(id)) || conversationOwnsTask(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
     task: id => taskView(id)?.[1].projection.getSnapshot().task ?? null,
     hasDraft: id => Boolean(views.get(id)?.conversation) || (id.startsWith("draft-") && views.has(id)),
@@ -637,7 +727,7 @@ function Workspace({
       allowed: (viewKey, projection, projectId, mode) => {
         const view = [...views.values()].find(item => item.key === viewKey);
         // Explicit private owner policy for both capabilities; the center still authorizes every HTTP request.
-        return (mode === "read" || mode === "upload") && view?.conversation === projection
+        return authorizedRef.current && (mode === "read" || mode === "upload") && view?.conversation === projection
           && projection.getSnapshot().snapshot?.conversation.projectId === projectId;
       },
     },
@@ -645,7 +735,7 @@ function Workspace({
       current: identity => {
         const view = [...views.values()].find(view => view.key === identity.viewKey);
         const conversation = view?.conversation?.getSnapshot().snapshot?.conversation;
-        return !!view?.conversation && (conversation?.id ?? null) === identity.conversationId && (conversation?.projectId ?? null) === identity.projectId;
+        return authorizedRef.current && !!view?.conversation && (conversation?.id ?? null) === identity.conversationId && (conversation?.projectId ?? null) === identity.projectId;
       },
       projects: (_identity, after, signal) => client.projects({ limit: 40, ...(after ? { after } : {}) }, signal),
       search: (identity, query, signal) => client.searchKnowledge(identity.projectId!, query, signal),
@@ -693,15 +783,26 @@ function Workspace({
       selectedTaskId ? { kind: "task", taskId: selectedTaskId } : selectedId ? { kind: "composer", viewId: selectedId, isDraft: true } : { kind: "global" });
     session?.publishTheme(theme);
   });
+  useLayoutEffect(() => {
+    views.forEach(view => {
+      view.projection.setOnline(navigator.onLine && authorized);
+      view.conversation?.setOnline(navigator.onLine && authorized);
+      if (recovery && session && view.conversation) view.conversation.configureRecovery(session.recovery.commandPort(view.key));
+    });
+    session?.steering.configureRecovery();
+  }, [session, authorized, connectionState?.generation]);
   useEffect(() => {
-    const preventLoss = (event: BeforeUnloadEvent) => { if (session?.steering.risks() || session?.hasProtectedAttachments()) { event.preventDefault(); event.returnValue = ""; } };
+    const preventLoss = (event: BeforeUnloadEvent) => { if (session?.steering.risks() || session?.hasProtectedAttachments() || [...views.values()].some(view => session?.recovery.protection(view.key).length)) { event.preventDefault(); event.returnValue = ""; } };
     window.addEventListener("beforeunload", preventLoss); return () => window.removeEventListener("beforeunload", preventLoss);
   }, [session]);
-  const disconnectNow = () => { void session?.dispose(); onDisconnect(); };
+  const disconnectNow = async () => {
+    try { if (recovery) await session?.recovery.flush(); onDisconnect(); }
+    catch (error) { setRecoveryError(error instanceof Error ? error.message : "Local recovery has not finished. Keep this page open."); }
+  };
   if (!session) return <p role="status">Opening workspace…</p>;
   return (
-    <PluginProvider session={session}><SteeringSurfaces workspace={session.steering} />
-    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>{session.hasProtectedAttachments() && !session.steering.risks() ? "Leave attachment drafts?" : "Leave unconfirmed steering receipts?"}</DialogTitle><DialogDescription>Leaving loses this page’s original command keys and local recovery record. A command may already be accepted or running. Closing this view does not cancel work at the center. Selected files, held submissions, and message receipts are local to this page. Upload recovery identities may remain in browser storage, but do not restore a draft automatically.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id, true); else if (destination) disconnectNow(); }}>Leave and discard local recovery</Button></DialogFooter></DialogContent></Dialog>
+    <PluginProvider session={session}><SteeringSurfaces workspace={session.steering} />{recovery && <RecoverySurface workspace={session.recovery} />}{recoveryError && <p role="alert">{recoveryError}</p>}
+    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>{session.hasProtectedAttachments() && !session.steering.risks() ? "Leave attachment drafts?" : "Leave unconfirmed steering receipts?"}</DialogTitle><DialogDescription>Closing or changing the displayed center does not cancel work or delete saved recovery records. A command may already be accepted. Keep this page open while a draft checkpoint is blocked; original file bytes are not saved. Restoring a saved receipt never sends it automatically.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id, true); else if (destination) void disconnectNow(); }}>Leave view and retain saved records</Button></DialogFooter></DialogContent></Dialog>
     <Dialog open={retainedOpen} onOpenChange={setRetainedOpen}><DialogContent onCloseAutoFocus={event => { event.preventDefault(); const destination = retainedDestination.current; requestAnimationFrame(() => { const target = destination ? document.getElementById(`tab-${destination}`) : retainedInvoker.current; if (target?.isConnected) target.focus(); }); }}><DialogHeader><DialogTitle>Retained chats</DialogTitle><DialogDescription>{residentCount()} / {MAX_RESIDENT_CONVERSATIONS} conversation views in this connection. Close an empty chat to free a place. Drafts and receipts are kept until you resolve them.</DialogDescription></DialogHeader>
       {capacityBlocked && <p role="alert">No place for another chat. Your current tabs, route and drafts were kept.</p>}
       <ul className="max-h-64 space-y-2 overflow-y-auto">{[...views].filter(([, view]) => view.conversation).map(([id, view]) => {
@@ -861,11 +962,11 @@ function Workspace({
           </div>
         </header>
         <button className="flow-link self-start px-3 text-xs" type="button" onClick={() => showRetained(false)}>Retained chats</button>
-        <WorkspaceOverview client={client} active={overview} onTaskSummaries={syncWorkspaceSummaries} onOpenTask={select} onOpenReference={(taskId, referenceId) => {
+        {authorized && <WorkspaceOverview client={client} active={overview} onTaskSummaries={syncWorkspaceSummaries} onOpenTask={select} onOpenReference={(taskId, referenceId) => {
           select(taskId);
           setPanel(`detail:${referenceId}`, taskId);
           void ensureView(taskId)?.projection.loadDetail(referenceId);
-        }} />
+        }} />}
         <div className="flow-work-area" hidden={overview}>
           <div
             className={`flow-chat-groups ${groups.length > 1 ? "split" : ""}`}
@@ -948,12 +1049,14 @@ function Workspace({
                     >
                       <ChatPane
                         viewId={id}
-                        visible={!overview && pageVisible && group.activeId === id}
+                        visible={authorized && !overview && pageVisible && group.activeId === id}
                         view={views.get(id)!}
                         drafts={drafts}
                         profiles={profiles}
                         profileSelection={profileSelections[views.get(id)!.key] ?? defaultProfileSelection}
-                        onProfileSelection={selection => setProfileSelections(previous => ({ ...previous, [views.get(id)!.key]: selection }))}
+                        onProfileSelection={selection => { const key = views.get(id)!.key; profileRef.current = { ...profileRef.current, [key]: selection }; setProfileSelections(profileRef.current); session.recovery.changed(key); }}
+                        onDraftChange={() => session.recovery.changed(views.get(id)!.key)}
+                        onIntent={intent => { const view = views.get(id)!; view.intent = intent; setGroups(previous => [...previous]); session.recovery.changed(view.key); }}
                         onAccepted={(taskId) => accepted(id, taskId)}
                         onActivate={() => setActiveGroup(group.id)}
                         onInspect={taskId => { setActiveGroup(group.id); void inspect(id, taskId); }}
@@ -1009,12 +1112,10 @@ function WorkspacePanelMount({
   );
   return <PluginWorkspace state={state} activeTab={activeTab} focusRequest={focusRequest} container={container} onClose={onClose} />;
 }
-function Connection({
-  onConnect,
-}: {
-  onConnect: (url: string, token: string) => void;
+function Connection({ onConnect, address = "", phase, error, onRead, onLogout }: {
+  onConnect: (url: string, token: string) => void; address?: string; phase?: string; error?: string; onRead?: () => void; onLogout?: () => void;
 }) {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(address);
   const [token, setToken] = useState("");
   return (
     <main
@@ -1024,11 +1125,15 @@ function Connection({
       data-extension-slot="settings.sections"
     >
       <h1>Connect to Flow</h1>
-      <p>The owner token stays in this page’s memory. Reloading requires reconnection.</p>
+      <p>Your owner token is used only for this explicit connection. A supported center can retain an HttpOnly browser session; saved drafts appear only after that center confirms your identity.</p>
+      {phase && <p role="status">{phase === "unauthenticated" ? "Reconnect to this center." : phase === "unsupported" ? "This center has not enabled browser sessions. Ask its operator to configure them." : phase === "offline" ? "Offline. Drafts and pending commands have not been cancelled." : phase === "forbidden" ? "This center denied this browser connection." : phase === "checking" ? "Checking the center session…" : phase === "ready" ? "This browser session is ready." : "Read or connect this center session."}</p>}
+      {error && <p role="alert">{error}</p>}
+      {onRead && <Button variant="outline" onClick={onRead}>Check existing browser session</Button>}
+      {onLogout && <Button variant="outline" onClick={onLogout}>Sign out of this center</Button>}
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          onConnect(url, token);
+          const supplied = token; setToken(""); onConnect(url, supplied);
         }}
       >
         <label>
@@ -1062,43 +1167,59 @@ function Connection({
     </main>
   );
 }
+const CENTER_CHOICE = "flow.browser-center.v1";
+function savedCenter(): string {
+  try { return recoveryAddress(localStorage.getItem(CENTER_CHOICE) ?? "", location.href); }
+  catch { return recoveryAddress("", location.href); }
+}
+function BrowserWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: Theme) => void }) {
+  const [connection, setConnection] = useState(() => new ConnectionSession(savedCenter()));
+  const state = useSyncExternalStore(connection.subscribe, connection.getSnapshot);
+  const [journal] = useState(() => new ConversationRecoveryJournal());
+  const [retained, setRetained] = useState<RecoveryNamespace | null>(null);
+  const [selecting, setSelecting] = useState(false), [error, setError] = useState<string>();
+  const channel = useRef<BroadcastChannel | null>(null);
+  const connectIntent = useRef<{ session: ConnectionSession; token: string } | null>(null);
+  const client = useMemo(() => new FlowClient({ baseUrl: connection.getSnapshot().address, browserSession: { csrfToken: connection.csrfToken }, assistantStreamProtocol: "patch-v1" }), [connection]);
+  useEffect(() => {
+    const online = () => connection.setOnline(navigator.onLine);
+    const wake = () => { if (document.visibilityState === "visible") void connection.read(); };
+    online();
+    const explicit = connectIntent.current;
+    if (explicit?.session === connection) { connectIntent.current = null; void connection.connect(explicit.token).finally(() => channel.current?.postMessage(connection.getSnapshot().address)).catch(failure => setError(String(failure))); }
+    else void connection.read();
+    window.addEventListener("online", online); window.addEventListener("offline", online); window.addEventListener("pageshow", wake); window.addEventListener("focus", wake);
+    document.addEventListener("visibilitychange", wake);
+    if (typeof BroadcastChannel !== "undefined") { const bus = new BroadcastChannel("flow.browser-session-observation.v1"); channel.current = bus; bus.onmessage = event => { if (event.data === connection.getSnapshot().address) void connection.read(); }; }
+    return () => { window.removeEventListener("online", online); window.removeEventListener("offline", online); window.removeEventListener("pageshow", wake); window.removeEventListener("focus", wake); document.removeEventListener("visibilitychange", wake); channel.current?.close(); channel.current = null; connection.dispose(); };
+  }, [connection]);
+  useEffect(() => { if (state.phase === "ready" && state.identity) { setRetained(previous => previous && namespaceKey(previous) === namespaceKey(state.identity!) ? previous : state.identity); setSelecting(false); } }, [state.phase, state.identity]);
+  useEffect(() => () => { void journal.close(); }, [journal]);
+  const ready = !!retained && state.phase === "ready" && !!state.identity && namespaceKey(state.identity) === namespaceKey(retained) && !selecting;
+  const connect = async (address: string, token: string) => {
+    setError(undefined);
+    try {
+      const canonical = recoveryAddress(address, location.href);
+      localStorage.setItem(CENTER_CHOICE, canonical); // URL only, never token, principal, CSRF or body.
+      let target = connection;
+      if (canonical !== state.address) { target = new ConnectionSession(canonical); connectIntent.current = { session: target, token }; setRetained(null); setConnection(target); return; }
+      await target.connect(token); channel.current?.postMessage(canonical);
+    } catch (failure) { setError(failure instanceof Error ? failure.message : "The connection could not be opened."); }
+  };
+  return <>
+    {!ready && <Connection key={state.address} address={state.address} phase={state.phase} error={error ?? state.error} onConnect={(address, token) => { void connect(address, token); }} onRead={() => { setSelecting(false); void connection.read(); }}
+      {...(state.phase === "ready" ? { onLogout: () => { void connection.logout().finally(() => channel.current?.postMessage(state.address)).catch(failure => setError(String(failure))); } } : {})} />}
+    {retained && <div hidden={!ready}><Workspace key={namespaceKey(retained)} client={client} recovery={{ session: connection, namespace: retained, journal }} active={ready} onDisconnect={() => setSelecting(true)} theme={theme} onTheme={onTheme} /></div>}
+  </>;
+}
+function FixtureWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: Theme) => void }) {
+  const [client, setClient] = useState<FlowClient | null>(() => new FlowClient({ baseUrl: "", token: "flow-fixture-only", assistantStreamProtocol: "patch-v1" }));
+  return client ? <Workspace client={client} onDisconnect={() => setClient(null)} theme={theme} onTheme={onTheme} /> : <Connection onConnect={(baseUrl, token) => setClient(new FlowClient({ baseUrl, token, assistantStreamProtocol: "patch-v1" }))} />;
+}
 export default function App() {
   const [theme, setTheme] = useState(() => themes.find(item => item.id === initialTheme())!);
-  const [connectionScope, setConnectionScope] = useState(() => crypto.randomUUID());
-  const [client, setClient] = useState<FlowClient | null>(() =>
-    fixtureMode
-      ? new FlowClient({ baseUrl: "", token: "flow-fixture-only", assistantStreamProtocol: "patch-v1" })
-      : null,
-  );
   useEffect(() => applyTheme(theme), [theme]);
-  return (
-    <TooltipProvider>
-      <a
-        className="flow-skip"
-        href="#main"
-        onClick={(event) => {
-          event.preventDefault();
-          document.getElementById("main")?.focus();
-        }}
-      >
-        Skip to main content
-      </a>
-      {client ? (
-        <Workspace
-          key={connectionScope}
-          client={client}
-          onDisconnect={() => setClient(null)}
-          theme={theme}
-          onTheme={setTheme}
-        />
-      ) : (
-        <Connection
-          onConnect={(baseUrl, token) => {
-            setConnectionScope(crypto.randomUUID());
-            setClient(new FlowClient({ baseUrl, token, assistantStreamProtocol: "patch-v1" }));
-          }}
-        />
-      )}
-    </TooltipProvider>
-  );
+  return <TooltipProvider><a className="flow-skip" href="#main" onClick={event => { event.preventDefault(); document.getElementById("main")?.focus(); }}>Skip to main content</a>
+    {fixtureMode && !new URLSearchParams(location.search).has("recovery") ? <FixtureWorkspace theme={theme} onTheme={setTheme} /> : <BrowserWorkspace theme={theme} onTheme={setTheme} />}
+  </TooltipProvider>;
 }

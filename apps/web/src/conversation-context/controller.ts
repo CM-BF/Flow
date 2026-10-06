@@ -210,7 +210,9 @@ export function createContextSelection(options: { binding: ContextBinding; readi
           if (controller.signal.aborted) return;
           const result = await readWithDeadline(controller, () => port.resolve(citation, controller.signal));
           if (disposed || currentEpoch !== epoch || controller.signal.aborted) return;
-          updateBody(key, { data: readBody(result, citation), observedAt: new Date().toISOString(), loading: false, error: null });
+          const validated = readBody(result, citation); unverified.delete(key);
+          if (!unverified.size) publish({ error: null });
+          updateBody(key, { data: validated, observedAt: new Date().toISOString(), loading: false, error: null });
         } catch (error) {
           if (!disposed && currentEpoch === epoch && bodyRequests.get(key)?.controller === controller) updateBody(key, { ...cached, loading: false, error: timedOut(error)
             ? "Knowledge content timed out. Your cached content is kept. Retry the read."

@@ -1,5 +1,5 @@
 import {
-  ATTACHMENT_LIMITS, attachmentAcceptedSchema, attachmentCapabilitiesSchema, attachmentContentSchema,
+  ATTACHMENT_LIMITS, attachmentNameSchema, attachmentAcceptedSchema, attachmentCapabilitiesSchema, attachmentContentSchema,
   attachmentListQuerySchema, attachmentListSchema, attachmentReferenceKey, attachmentSelectionSchema,
   attachmentUploadSchema, assertAttachmentTextDigest, decodeAttachmentText,
   type AttachmentAccepted, type AttachmentCapabilities, type AttachmentContent, type AttachmentList,
@@ -196,7 +196,7 @@ export function createAttachmentInput(options: {
     restore(values) {
       if (closed || items.size || values.length > 4) throw Error('Keep the current attachment draft before restoring another.');
       const restored = values.map(item => {
-        if (!item || typeof item.id !== 'string' || !item.id || item.id.length > 128 || typeof item.name !== 'string' || !item.name || item.name.length > 240) throw Error('Invalid saved attachment identity.');
+        if (!item || !idSchema.safeParse(item.id).success || !attachmentNameSchema.safeParse(item.name).success) throw Error('Invalid saved attachment identity.');
         if (item.uploadKey !== undefined && (typeof item.uploadKey !== 'string' || !item.uploadKey || item.uploadKey.length > 128)) throw Error('Invalid saved upload key.');
         const metadata = item.metadata ? sameProject(item.metadata) : undefined;
         return immutableItem({ id: item.id, name: item.name, state: item.state === 'unknown' || item.state === 'uploading' ? 'unknown' as const : 'error' as const, ...(metadata ? { metadata } : {}), ...(item.uploadKey ? { uploadKey: item.uploadKey } : {}), error: metadata ? 'Restored file is unverified. Refresh the authorized directory to confirm this exact version before a new message.' : 'The original local file is not stored. Explicitly recover the upload or reselect the original file; nothing was uploaded automatically.' });

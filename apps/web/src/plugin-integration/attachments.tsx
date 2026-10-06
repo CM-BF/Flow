@@ -2,7 +2,7 @@ import { createContext, useContext, useSyncExternalStore } from "react";
 import { FlowApiError, type FlowClient } from "@flow/client";
 import { attachmentAcceptedSchema, attachmentUploadSchema, attachmentUploadKeySchema, attachmentReferenceKey, type AttachmentAccepted, type AttachmentUpload } from "@flow/contracts";
 import type { ComposerRuntime } from "@assistant-ui/react";
-import { createAttachmentInput, type AttachmentInput, type AttachmentCapture, type AttachmentReadiness } from "../attachments/controller";
+import { createAttachmentInput, type AttachmentInput, type AttachmentCapture, type AttachmentReadiness, type AttachmentItem } from "../attachments/controller";
 import { bindAttachmentComposer, createAttachmentAdapter } from "../attachments/adapter";
 import { createRecoveryJournal, type RecoveryStorage } from "../attachments/recovery";
 import { AttachmentPicker } from "../attachments/AttachmentPicker";
@@ -190,6 +190,10 @@ export class ConversationAttachments {
       if (held?.state === "preparing") { const error = Error("Composer changed before material handoff. Recover the original draft explicitly."); this.failed(held.value, error); onPreparationFailed?.(held.value, error); }
     };
     this.unbind.add(release); return release;
+  }
+  restoreDraft(items: readonly AttachmentItem[]) {
+    if (!this.input || this.state.submission) throw Error("This view cannot replace its current material handoff.");
+    this.input.restore(items); this.sync();
   }
   capture(input: Omit<Parameters<AttachmentInput["capture"]>[0], "conversationProjectId" | "attachmentContext">, previous: LocalReceipt | null): AttachmentSubmission {
     if (!this.input) throw Error(this.state.error ?? "Attachment input is unavailable.");

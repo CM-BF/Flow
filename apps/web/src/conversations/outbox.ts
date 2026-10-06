@@ -25,6 +25,7 @@ interface ReceiptBase {
   readonly state: "sending" | "unknown" | "rejected";
   readonly error: string | null;
   readonly everUnknown: boolean;
+  readonly locallyBlocked?: boolean;
 }
 
 export type TurnReceipt = ReceiptBase & { readonly kind: "turn"; readonly request: Readonly<ConversationTurnAdmission> };
@@ -47,6 +48,7 @@ function storedObject(value: unknown): Record<string, unknown> {
 }
 export function restoreOutbox(record: CommandRecord): OutboxEntry {
   if (record.domain !== "outbox") throw Error("This is not a conversation receipt.");
+  if (record.phase === "accepted") throw Error("This receipt is already accepted. Open its bound conversation without resending.");
   const value = storedObject(record.frozen), checkpoint = record.checkpoint === null ? {} : storedObject(record.checkpoint);
   if (value.id !== record.id || typeof value.id !== "string" || typeof value.creationKey !== "string" || !value.creationKey || value.creationKey.length > 128
     || typeof value.turnKey !== "string" || !value.turnKey || value.turnKey.length > 128 || !["turn", "creation"].includes(String(value.kind))) throw Error("Invalid original receipt keys.");
@@ -54,7 +56,7 @@ export function restoreOutbox(record: CommandRecord): OutboxEntry {
   const conversationId = checkpoint.conversationId ?? value.conversationId;
   if (conversationId !== null && (typeof conversationId !== "string" || !conversationId || conversationId.length > 128)) throw Error("Invalid restored conversation identity.");
   const base = { id: value.id, conversationId: conversationId as string | null, creationKey: value.creationKey, turnKey: value.turnKey, creation,
-    state: "unknown" as const, error: record.phase === "prepared" ? "This original request was saved before sending. Retry explicitly to send it." : "Original receipt restored. Check or retry using the same keys.", everUnknown: record.phase === "dispatching" || record.phase === "unknown" };
+    state: record.phase === "rejected" ? "rejected" as const : "unknown" as const, error: record.phase === "prepared" ? "This original request was saved before sending. Retry explicitly to send it." : "Original receipt restored. Check or retry using the same keys.", everUnknown: record.phase === "dispatching" || record.phase === "unknown" };
   if (value.kind === "creation") { if (!creation || value.request !== null) throw Error("Invalid saved creation."); return Object.freeze({ ...base, kind: "creation", creation, request: null }); }
   return Object.freeze({ ...base, kind: "turn", request: freezeMaterialRequest(conversationTurnSchema.parse(value.request), creation?.projectId) });
 }
@@ -116,7 +118,7 @@ export class ConversationOutbox {
 
   retry(id: string): OutboxEntry | null {
     if (!this.matches(id) || this.entry!.state !== "unknown") return null;
-    this.publish({ ...this.entry!, state: "sending", error: null });
+    this.publish({ ...this.entry!, state: "sending", error: null, locallyBlocked: false });
     return this.entry;
   }
 
@@ -128,10 +130,10 @@ export class ConversationOutbox {
       this.publish({ ...this.entry!, conversationId });
   }
 
-  fail(id: string, error: string, definitelyRejected: boolean) {
+  fail(id: string, error: string, definitelyRejected: boolean, locallyBlocked = false) {
     if (!this.matches(id)) return;
     const unknown = this.entry!.everUnknown || !definitelyRejected;
-    this.publish({ ...this.entry!, state: unknown ? "unknown" : "rejected", error, everUnknown: unknown });
+    this.publish({ ...this.entry!, state: unknown ? "unknown" : "rejected", error, locallyBlocked, everUnknown: this.entry!.everUnknown || (!locallyBlocked && unknown) });
   }
 
   accept(id: string) { if (this.matches(id)) this.publish(null); }

@@ -2,6 +2,7 @@ import { decodeConversationCreated, decodeConversationTurnAccepted, FlowApiError
 import {
   TERMINAL_STATUSES,
   conversationCreationSchema,
+  conversationContextResponseSchema,
   type ConversationCreation,
   type ConversationSnapshot,
   type ConversationSummary,
@@ -122,6 +123,7 @@ export class ConversationProjection {
     this.queue.configureAttachments(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.attachmentContext === true);
     this.queue.configureKnowledge(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.knowledgeContext === true);
     this.queue.configure(this.id, this.state.snapshot?.capabilities.queue === true);
+    if (this.recovery) this.queue.commands?.configureRecovery(this.recovery);
     this.listeners.forEach(listener => listener());
   }
   private validateCreation(summary: ConversationSummary) {
@@ -298,20 +300,21 @@ export class ConversationProjection {
 
   private async dispatch(entry: OutboxEntry): Promise<string | undefined> {
     const signal = requestSignal(this.lifetime.signal);
+    const recovery = this.recovery;
     let sent = false;
     try {
-      await this.recovery?.prepare({ id: entry.id, domain: "outbox", slot: entry.conversationId ? `turn:${entry.conversationId}` : `create:${entry.id}`, frozen: frozenOutbox(entry), stage: entry.conversationId ? "submit" : "create" });
+      await recovery?.prepare({ id: entry.id, domain: "outbox", slot: entry.conversationId ? `turn:${entry.conversationId}` : `create:${entry.id}`, frozen: frozenOutbox(entry), stage: entry.conversationId ? "submit" : "create" });
       signal.throwIfAborted();
       let id = entry.conversationId;
       if (!id) {
-        await this.recovery?.dispatch(entry.id, "create"); signal.throwIfAborted(); sent = true;
+        await recovery?.dispatch(entry.id, "create"); signal.throwIfAborted(); sent = true;
         const raw = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
         const created = decodeConversationCreated(raw, entry.creation!);
         const capabilities = readCapabilities(created);
         this.creation = entry.creation!;
         id = created.conversation.id;
-        await this.recovery?.checkpoint(entry.id, { phase: entry.kind === "creation" ? "accepted" : "prepared", stage: "submit", slot: `turn:${id}`, data: { conversationId: id, revision: created.conversation.revision } });
+        await recovery?.checkpoint(entry.id, { phase: entry.kind === "creation" ? "accepted" : "prepared", stage: "submit", slot: `turn:${id}`, data: { conversationId: id, revision: created.conversation.revision } });
         signal.throwIfAborted();
         this.id = id; this.outbox.bindConversation(entry.id, id);
         this.update({ snapshot: { conversation: created.conversation, capabilities, nativeSession: null, lastTurn: null } });
@@ -321,17 +324,17 @@ export class ConversationProjection {
         this.update({ loading: false, error: null }); this.schedule();
         return id;
       }
-      await this.recovery?.dispatch(entry.id, "submit"); signal.throwIfAborted(); sent = true;
+      await recovery?.dispatch(entry.id, "submit"); signal.throwIfAborted(); sent = true;
       const raw = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
       const accepted = decodeConversationTurnAccepted(raw, id, entry.request);
       this.validateCreation(accepted.conversation);
-      await this.recovery?.checkpoint(entry.id, { phase: "accepted", data: recoveryValue({ conversationId: id, revision: accepted.conversation.revision, turnId: accepted.turn.id, turnNumber: accepted.turn.number, taskId: accepted.turn.task.id, context: accepted.turn.context }) });
-      signal.throwIfAborted();
       const current = this.state.snapshot!;
       const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
       if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))
         throw Error("The saved receipt conflicts with this conversation's known turn identity.");
+      await recovery?.checkpoint(entry.id, { phase: "accepted", data: recoveryValue({ conversationId: id, revision: accepted.conversation.revision, turnId: accepted.turn.id, turnNumber: accepted.turn.number, taskId: accepted.turn.task.id, context: accepted.turn.context === undefined ? undefined : conversationContextResponseSchema.parse(accepted.turn.context) }) });
+      signal.throwIfAborted();
       // A receipt may be an old admission replay. It confirms delivery, never current execution state.
       const turns = known ? this.state.turns : this.mergeTurns([accepted.turn], 0);
       const snapshot = { ...current,
@@ -343,10 +346,10 @@ export class ConversationProjection {
       return id;
     } catch (error) {
       if (this.lifetime.signal.aborted) return;
-      const rejected = (!sent && error instanceof RecoveryError) || error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
-      this.outbox.fail(entry.id, errorMessage(error), rejected);
+      const rejected = error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
+      this.outbox.fail(entry.id, !sent && error instanceof RecoveryError ? `Not sent: local recovery is blocked. Retry this original receipt after resolving storage. ${errorMessage(error)}` : errorMessage(error), rejected, !sent && error instanceof RecoveryError);
       if (!(error instanceof RecoveryError)) {
-        try { await this.recovery?.checkpoint(entry.id, { phase: this.outbox.getSnapshot()?.everUnknown ? "unknown" : "rejected" }); }
+        try { await recovery?.checkpoint(entry.id, { phase: this.outbox.getSnapshot()?.everUnknown ? "unknown" : "rejected" }); }
         catch { /* Keep the original dispatching record: it must recover as unknown. */ }
       }
       if (error instanceof FlowApiError && error.status === 409) await this.refresh();

@@ -1,6 +1,13 @@
 import { useSyncExternalStore } from "react";
 import type { PluginDefinition } from "../plugins/types";
 import type { AppPluginSession } from "../plugin-integration/session";
+import { configuredSelection, legacyDefaultSelection, readDirectoryProfile, type ProfileSelection } from "../execution-profiles/selection";
+import { freezeCitation } from "../conversation-context/selection";
+import type { SelectedContext } from "../conversation-context/controller";
+import type { AttachmentItem } from "../attachments/controller";
+import { freezeMetadata } from "../attachments/recovery";
+import { attachmentMetadataSchema, attachmentNameSchema } from "../../../../packages/contracts/src/attachments";
+import { idSchema, knowledgeCreateSchema } from "@flow/contracts";
 import { Button } from "../components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../components/ui/dialog";
 import { ConversationRecoveryJournal, RecoveryError, recoveryValue, namespaceKey, type Json, type RecoveryNamespace, type RecoveryOwner, type RecoveryRecord, type CommandRecord, type CommandRecovery, type DraftRecord } from "./journal";
@@ -12,14 +19,52 @@ export interface RecoveryHost {
   journal: ConversationRecoveryJournal;
   namespace(): RecoveryNamespace | null;
   authorized(): boolean;
+  generation(): number;
   owner(viewKey: string): RecoveryOwner | null;
   draft(viewKey: string): Json;
   restore(record: RecoveryRecord): Promise<void>;
   retry(record: CommandRecord): Promise<void>;
 }
+export interface CompleteDraft {
+  text: string; intent: "follow-up" | "queue"; profile: ProfileSelection;
+  steering: readonly { taskId: string; turnId: string; messageId: string; text: string }[];
+  projectId: string | null; projectTitle: string | null; knowledge: readonly SelectedContext[]; attachments: readonly AttachmentItem[];
+}
+export function readRecoveryDraft(value: Json): CompleteDraft {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw Error("Invalid saved draft.");
+  const data = value as Record<string, unknown>;
+  if (typeof data.text !== "string" || !["follow-up", "queue"].includes(String(data.intent)) || !Array.isArray(data.knowledge) || !Array.isArray(data.attachments) || data.knowledge.length + data.attachments.length > 4) throw Error("Invalid saved draft fields.");
+  const projectId = data.projectId === null ? null : idSchema.parse(data.projectId);
+  const projectTitle = data.projectTitle === null ? null : knowledgeCreateSchema.shape.title.parse(data.projectTitle);
+  const rawProfile = data.profile as { kind?: unknown; profile?: unknown } | null;
+  const profile = rawProfile?.kind === "legacy-default" ? legacyDefaultSelection() : rawProfile?.kind === "configured" ? configuredSelection(readDirectoryProfile(rawProfile.profile)) : null;
+  if (!profile) throw Error("Invalid saved execution selection.");
+  const knowledge = data.knowledge.map((value: unknown) => {
+    if (!value || typeof value !== "object" || !projectId) throw Error("Saved knowledge needs its original project.");
+    const item = value as Record<string, unknown>;
+    return { title: knowledgeCreateSchema.shape.title.parse(item.title), citation: freezeCitation(item.citation, projectId) };
+  });
+  const attachments = data.attachments.map((value: unknown): AttachmentItem => {
+    if (!value || typeof value !== "object" || !projectId) throw Error("Saved files need their original project.");
+    const item = value as Record<string, unknown>, id = idSchema.parse(item.id);
+    if (!attachmentNameSchema.safeParse(item.name).success || !["uploading", "unknown", "ready", "error"].includes(String(item.state))) throw Error("Invalid saved attachment metadata.");
+    const metadata = item.metadata === undefined ? undefined : freezeMetadata(attachmentMetadataSchema.parse(item.metadata));
+    if (metadata && metadata.reference.projectId !== projectId) throw Error("Saved file belongs to another project.");
+    const uploadKey = item.uploadKey === undefined ? undefined : idSchema.parse(item.uploadKey);
+    return { id, name: attachmentNameSchema.parse(item.name), state: item.state as AttachmentItem["state"], ...(metadata ? { metadata } : {}), ...(uploadKey ? { uploadKey } : {}) };
+  });
+  if (!Array.isArray(data.steering ?? []) || ((data.steering ?? []) as unknown[]).length > 8) throw Error("Invalid saved steering drafts.");
+  const steering = ((data.steering ?? []) as unknown[]).map(value => {
+    if (!value || typeof value !== "object") throw Error("Invalid steering draft identity.");
+    const item = value as Record<string, unknown>;
+    if (typeof item.text !== "string") throw Error("Invalid steering draft text.");
+    return { taskId: idSchema.parse(item.taskId), turnId: idSchema.parse(item.turnId), messageId: idSchema.parse(item.messageId), text: item.text };
+  });
+  return { steering, text: data.text, intent: data.intent as CompleteDraft["intent"], profile, projectId, projectTitle, knowledge, attachments };
+}
 interface DraftState {
-  version: number; serial: number; savedSerial: number; chain: Promise<void>; error?: string;
-  handoff?: { data: Json; serial: number }; deferred?: Json;
+  lastData?: string; version: number; serial: number; savedSerial: number; chain: Promise<void>; error?: string;
+  handoff?: { data: Json; serial: number; domain: CommandRecord["domain"]; taskId?: string }; deferred?: Json;
 }
 interface RecoverySnapshot { open: boolean; records: readonly RecoveryRecord[]; loading: boolean; error?: string; saving: number }
 const message = (error: unknown) => error instanceof Error ? error.message : "Recovery could not complete.";
@@ -30,13 +75,29 @@ export class RecoveryWorkspace {
   private readonly drafts = new Map<string, DraftState>();
   private readonly listeners = new Set<() => void>();
   private closed = false;
-  constructor(private readonly session: AppPluginSession, private readonly host: () => RecoveryHost | undefined) {}
+  private readonly restoring = new Set<string>();
+  private readonly blockedCommands = new Map<string, Set<string>>();
+  private readonly unsubscribeHost: () => void;
+  constructor(private readonly session: AppPluginSession, private readonly host: () => RecoveryHost | undefined) {
+    let enabled = this.uiAllowed();
+    this.unsubscribeHost = session.host.subscribe(() => {
+      const next = this.uiAllowed(); if (next === enabled) return; enabled = next;
+      if (!next) this.publish({ open: false, records: [] });
+      else for (const key of this.drafts.keys()) { this.draft(key).lastData = undefined; this.changed(key); }
+    });
+  }
   getSnapshot = () => this.state;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
   private publish(patch: Partial<RecoverySnapshot>) { if (!this.closed) { this.state = Object.freeze({ ...this.state, ...patch }); this.listeners.forEach(listener => listener()); } }
+  configured() { return !!this.host(); }
+  protection(viewKey: string): readonly string[] { const state = this.drafts.get(viewKey); return this.blockedCommands.get(viewKey)?.size || (state && (state.handoff || state.error || state.serial !== state.savedSerial)) ? ["Draft or command checkpoint pending"] : []; }
+  sendReason(): string | null {
+    if (!this.configured()) return null;
+    try { this.current(); return null; } catch (error) { return message(error); }
+  }
   private current(): { host: RecoveryHost; namespace: RecoveryNamespace } {
     const host = this.host(), namespace = host?.namespace();
-    if (this.closed || !host?.authorized() || !namespace) throw new RecoveryError("unavailable", "Read and authorize the current center session before saving or restoring material.");
+    if (this.closed || !this.uiAllowed() || !host?.authorized() || !namespace) throw new RecoveryError("unavailable", "Read and authorize the current center session before saving or restoring material.");
     return { host, namespace };
   }
   private uiAllowed() {
@@ -48,11 +109,19 @@ export class RecoveryWorkspace {
     return state;
   }
   private enqueue(viewKey: string, data: Json): Promise<void> {
+    const captured = this.current(), owner = captured.host.owner(viewKey), generation = captured.host.generation();
+    if (!owner) throw new RecoveryError("unavailable", "The draft no longer belongs to this workspace.");
     const state = this.draft(viewKey), serial = ++state.serial;
+    const current = () => {
+      const now = this.current(), currentOwner = now.host.owner(viewKey);
+      if (now.host.generation() !== generation || namespaceKey(now.namespace) !== namespaceKey(captured.namespace) || currentOwner?.viewKey !== owner.viewKey || currentOwner.projectId !== owner.projectId)
+        throw new RecoveryError("unavailable", "This queued draft belongs to an older connection or project.");
+      return now;
+    };
     const run = async () => {
-      const { host, namespace } = this.current(), owner = host.owner(viewKey);
-      if (!owner) throw new RecoveryError("unavailable", "The draft no longer belongs to this workspace.");
-      const saved = await host.journal.saveDraft(namespace, owner, data, state.version);
+      current();
+      const saved = await captured.host.journal.saveDraft(captured.namespace, owner, data, state.version);
+      current();
       state.version = saved.version; state.savedSerial = serial; state.error = undefined;
     };
     this.publish({ saving: this.state.saving + 1 });
@@ -61,20 +130,26 @@ export class RecoveryWorkspace {
     return flight;
   }
   changed(viewKey: string) {
-    if (this.closed || !this.host()?.authorized()) return;
+    if (this.closed || this.restoring.has(viewKey) || !this.host()?.authorized()) return;
     try {
       const data = this.host()!.draft(viewKey), state = this.draft(viewKey);
+      const encoded = JSON.stringify([this.host()!.owner(viewKey), data]); if (state.lastData === encoded) return; state.lastData = encoded;
       if (state.handoff) { state.deferred = data; return; }
       void this.enqueue(viewKey, data).catch(() => {});
     } catch (error) { this.publish({ error: message(error) }); }
   }
   /** Called before official composer.send can publish its transient empty draft. */
-  beginHandoff(viewKey: string) {
+  beginHandoff(viewKey: string, domain: CommandRecord["domain"] = "outbox", taskId?: string) {
     const { host } = this.current(), state = this.draft(viewKey);
     if (state.handoff) throw Error("This draft already has a preparing handoff.");
     const data = host.draft(viewKey);
-    state.handoff = { data, serial: state.serial + 1 };
+    state.handoff = { data, serial: state.serial + 1, domain, taskId };
     void this.enqueue(viewKey, data).catch(() => {});
+  }
+  cancelHandoff(viewKey: string) {
+    const state = this.draft(viewKey); state.handoff = undefined; state.deferred = undefined;
+    // The official composer/material owner has restored its draft; checkpoint that actual value.
+    state.lastData = undefined; this.changed(viewKey);
   }
   endHandoff(viewKey: string) {
     const state = this.draft(viewKey);
@@ -84,27 +159,44 @@ export class RecoveryWorkspace {
   }
   commandPort(viewKey: string): CommandRecovery {
     let transfer: { id: string; version: number } | undefined;
+    let port: CommandRecovery | undefined, portNamespace: string | undefined, portGeneration: number | undefined;
     const bound = () => {
-      const { host, namespace } = this.current();
-      return host.journal.bind(namespace, () => {
+      const { host, namespace } = this.current(), generation = host.generation();
+      if (port) {
+        if (portNamespace !== namespaceKey(namespace) || portGeneration !== generation) throw new RecoveryError("unavailable", "This original command belongs to an older connection generation.");
+        return port;
+      }
+      portNamespace = namespaceKey(namespace); portGeneration = generation;
+      port = host.journal.bind(namespace, () => {
         const owner = host.owner(viewKey); if (!owner) throw new RecoveryError("unavailable", "This command view was released."); return owner;
       }, () => {
-        const current = this.host(); return !this.closed && current?.authorized() === true && !!current.owner(viewKey) && !!current.namespace() && namespaceKey(current.namespace()!) === namespaceKey(namespace);
+        const current = this.host(); return !this.closed && current?.authorized() === true && current.generation() === generation && !!current.owner(viewKey) && !!current.namespace() && namespaceKey(current.namespace()!) === namespaceKey(namespace);
       }, () => transfer);
+      return port;
     };
     return {
       prepare: async command => {
-        const state = this.draft(viewKey), handoff = state.handoff;
-        await state.chain;
-        if (state.error) throw new RecoveryError("commit", state.error);
+        const state = this.draft(viewKey), pending = state.handoff;
+        const frozen = command.frozen && typeof command.frozen === "object" && !Array.isArray(command.frozen) ? command.frozen : {};
+        const queue = "command" in frozen && frozen.command && typeof frozen.command === "object" && !Array.isArray(frozen.command) ? frozen.command : {};
+        const handoff = pending?.domain === command.domain && (command.domain !== "queue" || ("kind" in queue && queue.kind === "enqueue")) && (command.domain !== "steering" || ("taskId" in frozen && frozen.taskId === pending.taskId)) ? pending : undefined;
+        if (handoff) await state.chain;
+        if (state.error && handoff) { await this.enqueue(viewKey, handoff.data); await state.chain; }
+        if (handoff && state.error) throw new RecoveryError("commit", state.error);
         if (handoff && state.handoff !== handoff) throw new RecoveryError("conflict", "The preparing draft changed before durable handoff.");
-        transfer = handoff ? { id: `draft:${viewKey}`, version: state.version } : undefined;
+        transfer = handoff && command.domain !== "steering" ? { id: `draft:${viewKey}`, version: state.version } : undefined;
         // Display metadata is retained with the command, but its text already lives in frozen.input/request.
         const display = handoff?.data && typeof handoff.data === "object" && !Array.isArray(handoff.data) ? recoveryValue({ ...handoff.data, text: undefined }) : undefined;
         try {
           await bound().prepare({ ...command, ...(display ? { display } : {}) });
-          if (handoff) { state.version = 0; state.savedSerial = state.serial; }
-        } finally { transfer = undefined; if (handoff) this.endHandoff(viewKey); }
+          this.blockedCommands.get(viewKey)?.delete(command.id);
+          if (handoff) { if (transfer) state.version = 0; state.savedSerial = state.serial; this.endHandoff(viewKey); }
+        } catch (error) {
+          const blocked = this.blockedCommands.get(viewKey) ?? new Set<string>(); blocked.add(command.id); this.blockedCommands.set(viewKey, blocked);
+          // A transient composer-empty notification must not overwrite a successfully saved source draft when prepare fails.
+          this.publish({ error: `${message(error)} The original draft and pending receipt remain retained; a newer draft may still be only in this page.` });
+          throw error;
+        } finally { transfer = undefined; }
       },
       dispatch: (id, stage) => bound().dispatch(id, stage),
       checkpoint: (id, value) => bound().checkpoint(id, value),
@@ -115,19 +207,27 @@ export class RecoveryWorkspace {
   close() { this.publish({ open: false }); }
   async refresh() {
     if (!this.uiAllowed()) return;
+    let valid = () => this.uiAllowed();
     this.publish({ loading: true, error: undefined });
-    try { const { host, namespace } = this.current(); const records = await host.journal.list(namespace); const now = this.current(); if (namespaceKey(now.namespace) !== namespaceKey(namespace) || !this.uiAllowed()) return; this.publish({ records }); }
-    catch (error) { this.publish({ records: [], error: message(error) }); }
-    finally { this.publish({ loading: false }); }
+    try {
+      const { host, namespace } = this.current(), generation = host.generation();
+      valid = () => this.uiAllowed() && host.authorized() && this.host()?.generation() === generation && !!this.host()?.namespace() && namespaceKey(this.host()!.namespace()!) === namespaceKey(namespace);
+      const records = await host.journal.list(namespace);
+      if (valid()) this.publish({ records });
+    } catch (error) { if (valid()) this.publish({ records: [], error: message(error) }); }
+    finally { if (valid()) this.publish({ loading: false }); }
   }
   async restore(record: RecoveryRecord, retry = false) {
     if (!this.uiAllowed()) return;
     try {
-      const { host, namespace } = this.current();
+      const { host, namespace } = this.current(), generation = host.generation();
       const live = (await host.journal.list(namespace)).find(item => item.id === record.id && item.version === record.version);
-      if (!live || !this.uiAllowed()) throw Error("This recovery record changed. Refresh before acting.");
+      const now = this.current();
+      if (!live || !this.uiAllowed() || now.host.generation() !== generation || namespaceKey(now.namespace) !== namespaceKey(namespace)) throw Error("This recovery record changed. Refresh before acting.");
       if (live.kind === "draft") this.draft(live.owner.viewKey).version = live.version;
-      await host.restore(live);
+      this.restoring.add(live.owner.viewKey);
+      try { await host.restore(live); } finally { this.restoring.delete(live.owner.viewKey); }
+      const after = this.current(); if (after.host.generation() !== generation || namespaceKey(after.namespace) !== namespaceKey(namespace)) throw Error("This restore belongs to an older connection.");
       if (retry) { if (live.kind !== "command") throw Error("Only an original command can be retried."); await host.retry(live); }
       await this.refresh();
     } catch (error) { this.publish({ error: message(error) }); }
@@ -142,9 +242,9 @@ export class RecoveryWorkspace {
     } catch (error) { this.publish({ error: message(error) }); }
   }
   adoptDraft(record: DraftRecord) { this.draft(record.owner.viewKey).version = record.version; }
-  release(viewKey: string) { this.drafts.delete(viewKey); }
-  async flush() { await Promise.all([...this.drafts.values()].map(state => state.chain)); if ([...this.drafts.values()].some(state => state.error)) throw Error("Some drafts are still only in this page. Keep it open or explicitly preserve that text before leaving."); }
-  dispose() { this.closed = true; this.listeners.clear(); this.drafts.clear(); }
+  release(viewKey: string) { if (this.protection(viewKey).length) throw Error("This view still has an incomplete recovery checkpoint."); this.drafts.delete(viewKey); this.blockedCommands.delete(viewKey); }
+  async flush() { await Promise.all([...this.drafts.values()].map(state => state.chain)); if ([...this.drafts.keys()].some(key => this.protection(key).length) || [...this.blockedCommands.values()].some(ids => ids.size)) throw Error("Some drafts are still only in this page. Keep it open or explicitly preserve that text before leaving."); }
+  dispose() { this.closed = true; this.unsubscribeHost(); this.listeners.clear(); this.drafts.clear(); this.blockedCommands.clear(); }
 }
 export function createRecoveryPlugin(workspace: RecoveryWorkspace): PluginDefinition {
   return { manifest: { id: RECOVERY_OWNER, version: "1.0.0", hostApi: 1, capabilities: ["ui.navigate"], activationEvents: ["view:sidebar.footer", `command:${RECOVERY_OPEN}`],

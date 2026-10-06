@@ -38,7 +38,7 @@ export function jsonBytes(value: unknown): number {
 }
 /** Persist an API base path, never credentials, query parameters or fragments. */
 export function recoveryAddress(input: string, base?: string): string {
-  const url = new URL(input || "/api", base);
+  const url = new URL(input || "/", base);
   if (!["http:", "https:"].includes(url.protocol) || url.username || url.password || url.search || url.hash)
     return fail("invalid", "Use a center URL without credentials, query parameters or a fragment.");
   const result = url.href.replace(/\/$/, "");
@@ -138,7 +138,7 @@ export class ConversationRecoveryJournal {
           const raw: unknown = manifestRequest.result;
           if (raw !== undefined && (!object(raw) || raw.schema !== 1 || !counter(raw.generation) || !counter(raw.chargedBytes))) fail("invalid", "Recovery manifest is invalid. Existing records were not cleared.");
           const generation = raw === undefined ? 0 : (raw as Manifest).generation;
-          const snapshot = { records, manifest: validateBudget(records, generation) };
+          const snapshot = { records: [...records], manifest: validateBudget(records, generation) };
           if (raw !== undefined && (raw as Manifest).chargedBytes !== snapshot.manifest.chargedBytes) fail("invalid", "Recovery accounting does not match its records. Sending is paused.");
           result = operation(snapshot);
           if (mode === "readwrite") {
@@ -146,7 +146,8 @@ export class ConversationRecoveryJournal {
             // All writes stay within this active transaction; there is no network, digest or external await here.
             const retained = new Set(snapshot.records.map(record => storageKey(record.namespace, record.id)));
             for (const record of records) if (!retained.has(storageKey(record.namespace, record.id))) store.delete(storageKey(record.namespace, record.id));
-            for (const record of snapshot.records) store.put(record, storageKey(record.namespace, record.id));
+            const original = new Map(records.map(record => [storageKey(record.namespace, record.id), record]));
+            for (const record of snapshot.records) { const key = storageKey(record.namespace, record.id); if (original.get(key) !== record) store.put(record, key); }
             manifestStore.put(manifest, "current");
           }
         } catch (error) { failed = error; transaction.abort(); }
@@ -173,42 +174,52 @@ export class ConversationRecoveryJournal {
   }
   bind(namespace: RecoveryNamespace, owner: () => RecoveryOwner, authorized: () => boolean, transfer?: () => DraftTransfer | undefined): CommandRecovery {
     const key = namespaceKey(namespace);
+    const versions = new Map<string, number>();
     const assert = () => { if (!authorized()) fail("unavailable", "Reconnect and authorize this exact view before writing a recovery checkpoint."); };
     const change = async (id: string, apply: (record: CommandRecord, records: RecoveryRecord[]) => CommandRecord) => {
-      assert();
-      return this.transaction("readwrite", snapshot => {
+      assert(); const expectedVersion = versions.get(id);
+      if (expectedVersion === undefined) return fail("conflict", "Prepare this original receipt before advancing its checkpoint.");
+      const version = await this.transaction("readwrite", snapshot => {
         assert(); const old = snapshot.records.find(record => record.namespace === key && record.id === id);
         if (old?.kind !== "command") return fail("invalid", "The original durable command is missing. No replacement request was created.");
-        const record = apply(old, snapshot.records);
-        snapshot.records = snapshot.records.map(item => item === old ? { ...record, version: next(old.version), updatedAt: Date.now() } : item);
+        const identity = owner();
+        if (old.version !== expectedVersion || old.owner.viewKey !== identity.viewKey || old.owner.projectId !== identity.projectId) return fail("conflict", "Another tab advanced this receipt or its bound view changed. Refresh the saved record before retrying.");
+        const record = apply(old, snapshot.records), version = next(old.version);
+        snapshot.records = snapshot.records.map(item => item === old ? { ...record, version, updatedAt: Date.now() } : item);
+        return version;
       });
+      versions.set(id, version);
     };
     return {
       prepare: async command => {
         assert(); const identity = owner(), handoff = transfer?.();
         if (!validOwner(identity) || !bounded(command.id, 128) || !bounded(command.slot, 512) || !jsonValue(command.frozen)) fail("invalid", "The complete original command cannot be persisted.");
-        await this.transaction("readwrite", snapshot => {
+        const version = await this.transaction("readwrite", snapshot => {
           assert(); const old = snapshot.records.find(record => record.namespace === key && record.id === command.id);
           if (old) {
-            if (old.kind !== "command" || old.owner.viewKey !== identity.viewKey || old.domain !== command.domain || !sameFrozen(old.frozen, command.frozen)) fail("conflict", "The retained command identity differs. Its original key was not replaced.");
-            return;
+            if (old.kind !== "command") return fail("conflict", "This identity belongs to a saved draft, not a command.");
+            if (old.owner.viewKey !== identity.viewKey || old.domain !== command.domain || !sameFrozen(old.frozen, command.frozen)) fail("conflict", "The retained command identity differs. Its original key was not replaced.");
+            if (old.phase === "accepted") return fail("conflict", "This command already has a durable accepted checkpoint. Restore its result instead of resending.");
+            return old.version;
           }
           let record: CommandRecord = { schema: 1, kind: "command", id: command.id, namespace: key, owner: { ...identity }, domain: command.domain, slot: command.slot,
             frozen: command.frozen, display: command.display ?? null, phase: "prepared", stage: command.stage ?? "submit", checkpoint: null, version: 1, updatedAt: Date.now(), initialBytes: 0, reserveBytes: RECOVERY_LIMITS.growthBytes };
           assertSlot(snapshot.records, record);
           // Account the final decimal length of the initial reservation itself.
-          record.initialBytes = recordBytes(record); record.initialBytes = recordBytes(record);
+          for (let pass = 0; pass < 4; pass++) record.initialBytes = recordBytes(record);
           if (record.initialBytes > RECOVERY_LIMITS.initialBytes) fail("capacity", "The complete command exceeds local recovery capacity. Its original receipt and materials remain in this page; no HTTP was sent.");
           if (handoff) {
             const draft = snapshot.records.find(item => item.namespace === key && item.id === handoff.id);
             if (draft?.kind !== "draft" || draft.version !== handoff.version || draft.owner.viewKey !== identity.viewKey) fail("conflict", "The source draft changed before handoff. No request was sent.");
             snapshot.records = snapshot.records.filter(item => item !== draft);
           }
-          snapshot.records.push(record);
+          snapshot.records.push(record); return record.version;
         });
+        versions.set(command.id, version);
       },
       dispatch: (id, stage = "submit") => change(id, (record, records) => { assertSlot(records, record); return { ...record, phase: "dispatching", stage }; }),
       checkpoint: (id, checkpoint) => change(id, (record, records) => {
+        if (record.phase === "accepted" && checkpoint.phase !== "accepted") return fail("conflict", "An accepted receipt cannot be downgraded by an older observation.");
         if (checkpoint.slot) assertSlot(records, record, checkpoint.slot);
         const data = checkpoint.data ?? record.checkpoint;
         if (!jsonValue(data)) fail("invalid", "The receipt identity cannot be persisted.");

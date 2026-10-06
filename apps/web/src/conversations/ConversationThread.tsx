@@ -37,18 +37,18 @@ function MessageReceipt({ projection, onAccepted }: { projection: ConversationPr
   const receipt = useSyncExternalStore(projection.subscribe, projection.getSnapshot).outbox;
   if (!receipt) return null;
   return <section className="flow-conversation-receipt" aria-label="Message receipt">
-    <strong>{receipt.state === "sending" ? (receipt.kind === "creation" ? "Preparing conversation…" : "Sending message…") : receipt.state === "unknown" ? "Receipt unknown" : "Request rejected"}</strong>
+    <strong>{receipt.locallyBlocked ? "Not sent · local recovery blocked" : receipt.state === "sending" ? (receipt.kind === "creation" ? "Preparing conversation…" : "Sending message…") : receipt.state === "unknown" ? "Receipt unknown" : "Request rejected"}</strong>
     {receipt.kind === "turn" ? <pre>{receipt.request.text}</pre> : <p>Preparing a conversation without sending a message.</p>}<p>{receipt.error ?? "Waiting for durable acceptance."}</p>
-    {receipt.state === "unknown" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>{receipt.kind === "creation" ? "Retry same preparation" : "Retry same message"}</button></>}
+    {receipt.state === "unknown" && <><p>{receipt.locallyBlocked && !receipt.everUnknown ? "This request has not been sent. Resolve local storage and explicitly retry the original receipt." : "The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate."}</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>{receipt.kind === "creation" ? "Retry same preparation" : "Retry same message"}</button></>}
     {receipt.state === "rejected" && <button className="flow-link" onClick={() => projection.outbox.dismiss(receipt.id)}>Dismiss rejected receipt</button>}
   </section>;
 }
 
-function ConversationBehavior({ live, children }: { live: boolean; children: ReactNode }) {
+function ConversationBehavior({ live, recovery, children }: { live: boolean; recovery: boolean; children: ReactNode }) {
   return <section className="flow-conversation-behavior" aria-label="Conversation behavior">
     <h3>Conversation behavior</h3>
     <p>{live ? "Reply drafts update as the center records them. Drafts are not final replies." : "Live reply updates are unavailable or disabled."}</p>
-    <p>Use Guide running task at the current turn to check steering availability. Per-turn model, thinking and tool controls remain unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.</p>
+    <p>Use Guide running task at the current turn to check steering availability. Per-turn model, thinking and tool controls remain unavailable. Queue next waits for durable center acceptance. {recovery ? "Original request identities are saved before sending. After reconnecting, use Saved drafts and receipts to inspect or explicitly retry; reconnecting never resends automatically. Keep this page open while a local checkpoint is blocked." : "Unresolved receipts are local to this page. Keep the page open until they are confirmed."}</p>
     {children}
   </section>;
 }
@@ -63,8 +63,9 @@ function ComposerConfiguration({ loading, profile, viewId, intent, queueAvailabl
   </div>;
 }
 
-export function ConversationThread({ viewKey, viewId, visible, projection, drafts, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
+export function ConversationThread({ viewKey, viewId, visible, projection, drafts, intent, onIntent, onDraftChange, restoredVersion, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
   viewKey: string; viewId: string; visible: boolean; projection: ConversationProjection; drafts: Map<string, DraftState>;
+  intent: "follow-up" | "queue"; onIntent: (intent: "follow-up" | "queue") => void; onDraftChange: () => void; restoredVersion: number;
   profiles: ExecutionProfileCatalog; profileSelection: ProfileSelection; onProfileSelection: (selection: ProfileSelection) => void;
   onAccepted: (id: string) => void; onInspect: (taskId: string) => void; onCurrentTask: (taskId: string) => void; onOpenTask: (taskId: string) => void;
 }) {
@@ -79,7 +80,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
   const pending = useRef<{ intent: "follow-up" | "queue"; text: string; selection: ReturnType<typeof knowledge.capture>; creation?: ConversationCreation; material?: AttachmentSubmission; binding: typeof attachments } | null>(null);
   const profileCatalog = useSyncExternalStore(profiles.subscribe, profiles.getSnapshot);
   const queue = useSyncExternalStore(projection.queue.subscribe, projection.queue.getSnapshot);
-  const [intent, setIntent] = useState<"follow-up" | "queue">("follow-up");
+  const recoveryState = useSyncExternalStore(session.recovery.subscribe, session.recovery.getSnapshot);
   const [sendError, setSendError] = useState<string | null>(null);
   const stream = useConversationStream(viewId, projection, visible);
   const streamState = useSyncExternalStore(stream.subscribe, stream.getSnapshot);
@@ -91,7 +92,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
     return !catalog.loaded || catalog.stale || !catalog.profiles.some(profile => profile.reference.id === ref.id && profile.reference.runnerId === ref.runnerId && profile.reference.configDigest === ref.configDigest)
       ? "Refresh or load more profiles to confirm this selection before creating a conversation. Your draft stays here." : null;
   };
-  const reason = projection.sendDisabledReason(intent) ?? profileReason();
+  const reason = session.recovery.sendReason() ?? projection.sendDisabledReason(intent) ?? profileReason();
   const last = state.snapshot?.lastTurn;
   useEffect(() => { if (last) onCurrentTask(last.task.id); }, [last?.task.id]);
   const runtime = useExternalStoreRuntime<ThreadMessage>({ messageRepository: streamState.repository,
@@ -102,7 +103,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
       if (!captured) throw new MessageNotSentError("Capture this draft before preparing its materials.");
       let handedOff = false;
       try {
-        const blocked = projection.sendDisabledReason(captured.intent); if (blocked) throw Error(blocked);
+        const blocked = session.recovery.sendReason() ?? projection.sendDisabledReason(captured.intent); if (blocked) throw Error(blocked);
         const ids = (message.attachments ?? []).map(item => item.id);
         if (captured.material) captured.binding!.assertSubmission(captured.material, ids);
         else if (ids.length) throw Error("These files are not bound to an authorized material submission.");
@@ -141,7 +142,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
             }
           }
         }
-      } finally { if (pending.current === captured) pending.current = null; }
+      } finally { if (!handedOff && session.recovery.configured()) session.recovery.cancelHandoff(viewKey); if (pending.current === captured) pending.current = null; }
     },
   });
   useEffect(() => {
@@ -152,13 +153,13 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
     for (const item of attachments.input?.getSnapshot().items ?? []) if (item.state === "ready" && !held.includes(item.id) && !runtime.thread.composer.getState().attachments.some(file => file.id === item.id))
       void runtime.thread.composer.addAttachment(createExistingAttachment(attachments.input!, item.id)).catch(error => setSendError(String(error)));
     return attachments.bindComposer(runtime.thread.composer, (value, error) => {
-      if (pending.current?.material === value) { pending.current = null; setSendError(error.message); }
+      if (pending.current?.material === value) { pending.current = null; if (session.recovery.configured()) session.recovery.cancelHandoff(viewKey); setSendError(error.message); }
     });
   }, [attachments, runtime]);
   const submit = () => {
     if (pending.current || runtime.thread.composer.getState().submission) return;
     try {
-      const blocked = projection.sendDisabledReason(intent) ?? profileReason(); if (blocked) throw Error(blocked);
+      const blocked = session.recovery.sendReason() ?? projection.sendDisabledReason(intent) ?? profileReason(); if (blocked) throw Error(blocked);
       const draft = runtime.thread.composer.getState(), selection = knowledge.capture();
       const creation = state.snapshot ? undefined : knowledge.creation(freezeConversationCreation(draft.text.trim().split("\n")[0]!.slice(0, 180), profileSelection));
       const wire = { text: draft.text, knowledge: selection.knowledge };
@@ -170,18 +171,20 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
         intent: intent === "queue" ? "queue" : "send", knowledge: selection.knowledge }, previous ?? null) : undefined;
       if (draft.attachments.length && !material) throw Error("Prepare an authorized project before sending files.");
       pending.current = { intent, text: draft.text, selection, creation, material, binding: attachments }; setSendError(null);
+      if (session.recovery.configured()) session.recovery.beginHandoff(viewKey, intent === "queue" ? "queue" : "outbox");
       runtime.thread.composer.send({ startRun: intent !== "queue" });
-    } catch (error) { setSendError(error instanceof Error ? error.message : "This draft cannot be submitted."); }
+    } catch (error) { const captured = pending.current; pending.current = null; if (captured?.material) captured.binding?.failed(captured.material, error); if (captured && session.recovery.configured()) session.recovery.cancelHandoff(viewKey); setSendError(error instanceof Error ? error.message : "This draft cannot be submitted."); }
   };
   useEffect(() => {
     runtime.thread.composer.setText(drafts.get(viewId)?.text ?? "");
     return runtime.thread.composer.subscribe(() => {
       drafts.set(viewId, { harness: "claude", scenario: "success", text: runtime.thread.composer.getState().text });
+      onDraftChange();
     });
-  }, [runtime, viewId, drafts]);
+  }, [runtime, viewId, drafts, restoredVersion]);
   const prepare = async () => {
     try {
-      const blocked = projection.sendDisabledReason() ?? profileReason(); if (blocked) throw Error(blocked);
+      const blocked = session.recovery.sendReason() ?? projection.sendDisabledReason() ?? profileReason(); if (blocked) throw Error(blocked);
       const title = runtime.thread.composer.getState().text.trim().split("\n")[0]!.slice(0, 180) || "New conversation";
       const creation = knowledge.creation(freezeConversationCreation(title, profileSelection));
       if (!creation.projectId) throw Error("Choose a project before preparing knowledge.");
@@ -204,12 +207,12 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
       }}
       beforeMessages={<>{streamState.evicted && <p className="flow-conversation-notice">Older draft text was removed from this page’s limited cache. Final replies remain available.</p>}{state.error && <p className="flow-conversation-alert" role="alert">{state.error} <button className="flow-link" onClick={() => void projection.refresh()}>Retry conversation</button></p>}{state.nextCursor !== null && <p className="flow-conversation-notice">Some turns are not loaded. <button className="flow-link" disabled={state.loadingMore} onClick={() => void projection.loadMore()}>{state.loadingMore ? "Loading…" : "Load more turns"}</button></p>}</>}
       afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}<MessageReceipt projection={projection} onAccepted={onAccepted} /></>}
-      composerHeader={<ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={setIntent}
+      composerHeader={<ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={onIntent}
         profile={{ catalog: profileCatalog, selection: profileSelection, onSelect: onProfileSelection, onRefresh: () => { void profiles.refresh(); }, onLoadMore: () => { void profiles.loadMore(); }, locked: lockedProfile,
-          details: navigate => <ConversationBehavior live={streamState.enabled}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
+          details: navigate => <ConversationBehavior live={streamState.enabled} recovery={session.recovery.configured()}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
             onInspect={id => navigate(() => onInspect(id))}
             onOpenTask={id => navigate(() => { onOpenTask(id); requestAnimationFrame(() => document.getElementById(`tab-${id}`)?.focus()); })} /></ConversationBehavior> }} />}
-      footer={<div className="flow-conversation-footer"><KnowledgeSelectionSummary binding={knowledge} />{!state.snapshot?.conversation.projectId && <p>Use Knowledge to choose and prepare a project before attaching text files.</p>}{materialState?.submission?.state === "preparing" && <p role="status">Preparing captured materials…</p>}{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
+      footer={<div className="flow-conversation-footer"><KnowledgeSelectionSummary binding={knowledge} />{!state.snapshot?.conversation.projectId && <p>Use Knowledge to choose and prepare a project before attaching text files.</p>}{materialState?.submission?.state === "preparing" && <p role="status">Preparing captured materials…</p>}{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{recoveryState.error && <p role="alert">{recoveryState.error}</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
 
     />
   </KnowledgeComposer></AttachmentComposer></ConversationActivities></ConversationStreams></ConversationSteering></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
