@@ -1,6 +1,6 @@
 # SVC05R01 独立审查
 
-状态 APPROVED_SOURCE_PREPARATION_ONLY；依赖补链/装配差量待Lead独审。Review target commit: 25b70880619037ddd2ad84ba2790ad23267dc5f9。base ec5da343880879154e2392f52eaa915d5b08aa77。作者assignment_review；准备独立reviewer为Execution Lead，作者不自批。
+当前状态 APPROVED_RETAINED_WEB_AF51_COMPATIBILITY_RESULTS（见末尾固定结果回执）；下文准备/失败均为历史。Review target commit: 25b70880619037ddd2ad84ba2790ad23267dc5f9。base ec5da343880879154e2392f52eaa915d5b08aa77。作者assignment_review；准备独立reviewer为Execution Lead，作者不自批。
 
 范围：四个已领取实验脚本。核两产物/af51输入与静态运行闭包；真实工厂/一个随机markedDB/fixture runner；after-header故障的同一浏览器Request证据；显式相同key/body/同turn-task恢复；兼容报告准确tuple；checkpoint先于破坏性清理、有限连接观察/目录身份、资源未知保留。所有原始失败永久保留。
 
@@ -39,3 +39,9 @@ Lead对a3ad296d独立APPROVED_DEPENDENCY_VIEW_DELTA，94绑定、67固定backend
 ## 1952真实两App结果待独立审查
 
 2026-10-06 19:54 UTC：固定b41四源、af51外部后台/原依赖，617当前绑定无差，复用原四入口import证据不重跑。一次2App实际浏览器结果passed，supervisor15794ms/累计保守33606ms，原失败保留；清理checkpoint/marker/devino/connection/group/ports全有原始证据。仅作者结果，待Lead独立核验third-run-manifest.json；0provider/个人操作。
+
+## 2026-10-06 20:01 UTC 实际兼容结果独立批准
+
+Review target commit: f74eca53aef179ebd65ea79b89863919e303db94。固定四源 b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16；reviewer Execution Lead，非作者，0重跑。53 manifest bindings与固定/当前字节全符；两实际App的首次202后截断、同key/rawbody/turn/task恢复、PG与全部group/port/tmp清理均独立核验，无finding。
+
+[原始独审回执](../../docs/evidence/svc05-retained-web-compatibility/third-run-independent-review.json)。仅两retained→af51组合，fixture runner/0provider；Chrome数值exit未观察，组消失不等exit0；原两次FAIL永久保留。不代表个人报告已导入或版本已发布，不继承新d629/App全矩阵或native语义。当前实际结果待Lead接main。
