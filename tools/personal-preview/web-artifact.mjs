@@ -50,15 +50,19 @@ async function filesAt(dist) {
 function validateDescriptor(artifact) {
   if (!artifact || !/^[a-f0-9]{64}$/.test(artifact.artifactId ?? '') || artifact.manifestDigest !== artifact.artifactId || !/^[a-f0-9]{40}$/.test(artifact.sourceHead ?? '')) fail('WEB_ARTIFACT_DESCRIPTOR_INVALID');
 }
+async function manifestBytes(path) {
+  await privateDirectory(path);
+  const file = join(path, 'manifest.json'); const info = await lstat(file);
+  if (!info.isFile() || info.isSymbolicLink() || info.size > 1024 * 1024) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
+  return readFile(file);
+}
 /** Verifies every served byte and the complete file set, not just the entry HTML. */
 export async function verifyWebArtifact({ directory, artifact }) {
   validateDescriptor(artifact);
   const root = await artifactRoot(directory); const path = join(root, artifact.artifactId);
   await privateDirectory(path);
   if (JSON.stringify((await readdir(path)).sort()) !== JSON.stringify(['dist', 'manifest.json'])) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
-  const manifestPath = join(path, 'manifest.json'); const info = await lstat(manifestPath);
-  if (!info.isFile() || info.isSymbolicLink() || info.size > 1024 * 1024) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
-  const bytes = await readFile(manifestPath);
+  const bytes = await manifestBytes(path);
   if (sha(bytes) !== artifact.manifestDigest) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
   const manifest = JSON.parse(bytes);
   if (manifest.format !== 1 || manifest.policy !== 'flow-static-web-v1' || manifest.sourceHead !== artifact.sourceHead) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
@@ -75,8 +79,7 @@ export async function prepareWebArtifact({ repository, target, directory }) {
   for (const artifactId of await readdir(root)) {
     if (!/^[a-f0-9]{64}$/.test(artifactId)) continue;
     const candidate = { artifactId, manifestDigest: artifactId, sourceHead: target };
-    let manifest;
-    try { manifest = JSON.parse(await readFile(join(root, artifactId, 'manifest.json'))); } catch { continue; }
+    const manifest = JSON.parse(await manifestBytes(join(root, artifactId)));
     if (manifest.sourceHead !== target || manifest.sourceTree !== source.sourceTree || manifest.lockDigest !== source.lockDigest
       || manifest.toolchain?.node !== process.versions.node || manifest.toolchain?.vite !== vite) continue;
     await verifyWebArtifact({ directory, artifact: candidate }); return candidate;

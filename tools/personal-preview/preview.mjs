@@ -280,7 +280,8 @@ export async function startPreviewServices(config, state, preparedArtifact) {
     }
     const revision = await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 });
     const changes = await execute('git', ['-C', config.repository, 'status', '--porcelain'], { timeout: 1000 });
-    state.source = { head: revision.stdout.trim(), dirty: changes.stdout.length > 0 };
+    if (revision.stdout.trim() !== artifact.sourceHead || changes.stdout.length > 0) fail('SOURCE_CHANGED_DURING_START');
+    state.source = { head: artifact.sourceHead, dirty: false };
     state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
     return statusPreview({ directory: config.directory });
   } catch {

@@ -75,3 +75,14 @@ test('concurrent identical builds converge without overwriting and reject extra 
     await assert.rejects(verifyWebArtifact({ directory: options.directory, artifact: one }), { code: 'ARTIFACT_SYMLINK_REJECTED' });
   });
 });
+
+test('a source change during the build is rejected and leaves no published artifact', async () => {
+  await fixture(async options => {
+    await writeFile(join(options.repository, 'apps/web/vite.config.mjs'), `import {writeFileSync} from 'node:fs';\nexport default {plugins:[{name:'change-source',closeBundle(){writeFileSync(new URL('./main.js',import.meta.url),'changed during build')}}]};`);
+    await execute('git', ['-C', options.repository, 'add', '.']);
+    await execute('git', ['-C', options.repository, '-c', 'user.name=Flow Test', '-c', 'user.email=flow-test@example.invalid', 'commit', '-qm', 'source mutation fixture']);
+    const target = (await execute('git', ['-C', options.repository, 'rev-parse', 'HEAD'])).stdout.trim();
+    await assert.rejects(prepareWebArtifact({ ...options, target }), { code: 'SOURCE_TARGET_NOT_CLEAN' });
+    assert.deepEqual(await readdir(join(options.directory, 'web-artifacts')), []);
+  });
+});
