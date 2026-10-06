@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:41:00 UTC / 2026-10-06 10:26:02 UTC（main41315b受控merge944780d已完成） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:46:29 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / c9c6e891003af2fc52ca77b0c4527d6d85e20e22（目录实现；metadata HEAD由Git核） |
-| 工作树dirty状态 | c9c6e891003af2fc52ca77b0c4527d6d85e20e22 clean时核；随后test-only清理delta与metadata更新，提交后由Git核clean |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 722032083d2cdfc6790103d18749c333c1b8f9e1（C静态候选；metadata HEAD由Git核） |
+| 工作树dirty状态 | 722032083d2cdfc6790103d18749c333c1b8f9e1 clean时核；本次仅固定target metadata，提交后由Git核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源/薄consumer仍待Lead集成；不代表个人服务部署 |
-| 实现目标 | c9c6e891003af2fc52ca77b0c4527d6d85e20e22 |
-| 实现范围 | 当前目录精确5文件/局部验证配置/本task计划证据；R06历史5文件已审保持不变 |
+| 实现目标 | 722032083d2cdfc6790103d18749c333c1b8f9e1 |
+| 实现范围 | experiments/codex-app-server-conformance/fd-canary, docs/evidence/wpf-mature-02/fd-canary |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 原生配置目录已集成main，旧目录保持兼容；最小文件描述符诊断源码已准备，尚未编译或运行。 |
 | 下一可用交付 | 审查最小C诊断源码与运行合同，再实现有界执行器；client接线待共享owner。 |
 | 当前阻塞 | ACTIVE: 原profile canary仍SIGABRT且无有效七项报告，实际Codex目录验证停止；父管道空stderr不能定位原因。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
+| Review | [review.md](review.md)：C静态候选72203208 NOT_STARTED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 

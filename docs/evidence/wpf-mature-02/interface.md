@@ -9,7 +9,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 目录已通过main固定 `21e0a56c4b2b65a04a1e8d510a9d132e77c3894b` 接收：本owner只读逐blob核4源=c9、测试=a761，见[main接收核验](native-catalog/main-accepted.json)；复用33+1证据，未重测，不代表个人服务已部署，也未包含R06 stderr/诊断。
 
-**当前03最小C诊断候选：** [一页合同](fd-canary/contract.md) / [source manifest](fd-canary/manifest.json)。仅C/schema/profile与有限执行设计，0编译/0目标启动，host未实现，窗口未开放；固定组合独审后Mika串行安排。旧失败原因仍unknown，三目标只观察自身fd metadata，不做Node/JSONRPC/provider或网络探针。
+**当前03最小C诊断候选：** [一页合同](fd-canary/contract.md) / [source manifest](fd-canary/manifest.json)。固定source `722032083d2cdfc6790103d18749c333c1b8f9e1`，仅C/schema/profile与有限执行设计，0编译/0目标启动，host未实现，窗口未开放；固定组合独审后Mika串行安排。旧失败原因仍unknown，三目标只观察自身fd metadata，不做Node/JSONRPC/provider或网络探针。
 
 ## 首片可独立实现
 
