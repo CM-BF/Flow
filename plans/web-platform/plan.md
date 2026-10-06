@@ -73,6 +73,8 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-33 | U04 与既有全栈插件/协议计划对齐 | 管理者、原Lead X01 | WPF-P01仅X01 Web host子项；原P01=协议接入不重用，M02公共命令不另造 |
 | WPF-REQ-34 | U07 按影响范围做 local tests 并加快可审查交付 | 所有owner | 模块+直接依赖优先；共享接口才链路；纯metadata仅文档核验，保留必要视觉/行为/a11y |
 
+| WPF-REQ-35 | 主线M02已交付完整接口；Web整改稳定后接入统一工作总览 | WPF-M02 / 独立owner待派 | 连续feed/attention原地决策、锚点/409/100+分页/懒详情/连接隔离，真实Web验收独立 |
+
 ## 当前 owner 与接口冻结
 
 | 工作 | 唯一实现owner / worktree / branch | 边界与状态入口 |
@@ -119,7 +121,8 @@ type WorkspacePanelsProps = {
 | 当前并行 | W01 Thread/shell/splitmerge；workspace panels | 两owner已在独立树实施；先组件提交再W01集成复验 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
-| 下一工程轮 | WPF-P01插件host | W01布局稳定+空出owner后派发；原Lead X01/M02能力对齐；不动共享契约 |
+| 下一ready实现 | [WPF-M02统一工作总览](unified-workspace/plan.md) | 当前W01可审稳定SHA后新worktree；完整M02 e888862输入，拟复用panels owner，后端由Lead维护 |
+| 随后工程轮 | WPF-P01插件host | W01布局稳定+空出owner后派发；原Lead X01/M02能力对齐；不动共享契约 |
 | 性能轮 | WPF-PERF01 | 当前W01 owner先记录新build基线；测量/优化owner空出后排队，每次一个有证据瓶颈 |
 
 ## TODO
@@ -130,6 +133,7 @@ type WorkspacePanelsProps = {
 - [ ] **WPF-001-04** 向主线D03交付管理来源登记清单，保留17原来源；由Lead注册并只读验证读取。
 - [ ] **WPF-001-05** 空槽后派发WPF-P01，与X01/M02对齐完整插件系统而非只做UI插槽。
 - [ ] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮，继续按用户新要求更新追溯。
+- [ ] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 
 ## 验收、风险与持续方式
 
@@ -144,3 +148,5 @@ type WorkspacePanelsProps = {
 - 2026-10-06：首版需求账本及后续三计划落盘；明确WPF-P01是X01子项，纠正早期14源/重复dashboard实现方案为主线17源/D03单owner；追加U07影响范围测试约束。
 
 - 2026-10-06后续：root文档review绑定c075bb5 APPROVED；按主线请求细化WPF-REQ-32为BR-01定位/只读文件/日志/交互shell四项，交Lead接收，不改变当前W01冻结契约。
+
+- 2026-10-06主线接口交接：M02完整e888862可消费，新增WPF-M02作为当前W01稳定后的下一ready功能；插件/性能保持队列，rootUI提案明确非用户原话。

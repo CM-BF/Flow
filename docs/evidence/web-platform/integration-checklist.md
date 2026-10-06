@@ -54,3 +54,8 @@ D03由主线单owner实现紧凑中性视觉及高层语义，包含当前阶段
 | BR-01-D 交互shell（独立能力） | 用户明确打开交互终端，输入命令、调整尺寸、显式终止；连接/关tab仅detach观察，不能默认取消Flow任务或杀session | capability受权openTerminal(taskId, workspaceId, columns, rows) 返回terminalSessionId及生命周期；attachTerminal(afterSequence)输出；writeTerminalInput(sessionId, sequence/idempotencyKey, data)；resizeTerminal；显式terminateTerminal。需说明PTY进程owner、断连保留时限、退出状态、lease迁移规则；不复用Task.cancel作为关闭tab | 主线X01/Runner确认权限、可用shell/工作区/资源限制与能力作用域；真实PTY验证交互输入、尺寸、断连重附、顺序与重复防护、退出/超时、A/B隔离、明确终止；CLI同能力入口或明确阶段缺口 |
 
 BR-01当前解除状态：未接收实现SHA/具体owner登记，四项均未验证。当前UI仅支持真实任务文本/引用/Detail，源码不会因本文新增假API。主线接收后给唯一计划/owner、contracts/client精确SHA与调用例子；Web消费独立新迭代，先局部接口/直接依赖测试，共享链路变化再做真实runner端到端。
+
+
+## M02 Web消费队列增量
+
+新计划WPF-M02，暂由管理树`plans/web-platform/unified-workspace/status.md`唯一记录前置排队；实际实现派发时明确新owner worktree与平级受支持plan路径，旧管理记录显式转交，不能两份同时手填。主线输入origin/codex/m2-workspace完整e888862570cba3c59789053e68df7d5720650c36，后端clean；不得只拿405529d漏types。新Web功能在当前W01稳定候选后独立worktree实现，保留现chat、官方Thread和panels；后端PG5/CLI14/client3证据不作为Web通过。集成时由Lead选包含完整M02的基线/统一rootlock，不由Web改共享契约。

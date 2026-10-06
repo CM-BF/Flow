@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:15 UTC / 固定基线2026-10-06 02:07 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:20 UTC / 固定基线2026-10-06 02:07 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -22,6 +22,7 @@
 | WPF-001-04 | in-progress | d01_owner | [来源集成清单](../../docs/evidence/web-platform/integration-checklist.md)已发主线Goal Owner；等待D03登记与只读核验 |
 | WPF-001-05 | pending | d01_owner | WPF-P01为X01 Web子项，W01稳定与空槽后派发 |
 | WPF-001-06 | pending | d01_owner | WPF-PERF01排队，先收集W01新生产build基线 |
+| WPF-001-07 | in-progress | d01_owner | [WPF-M02](unified-workspace/plan.md)已建立，M02 e888862只读核验clean，拟复用panels owner，待W01稳定base派发 |
 
 ## 当前管理工作与检查
 
@@ -31,7 +32,7 @@
 
 ## 跨owner集成队列（只读观察，非第二事实源）
 
-2026-10-06 02:15 UTC本次管理只读核验：W01 branch codex/m1-web，HEAD `43be13b0f3347f1567a8c14c04c4ea107957137f`，授权W01范围与临时安装例外root lock dirty；其权威status记录Thread/shell整改与panels集成中。panels branch codex/web-workspace-panels，HEAD `a2be896405304111379d72e9b22e46f8e47a11a4` clean；独立候选已交W01后续cherry-pick，workspace目录修复仍由panels单owner，W01不并发编辑。下一可审查实现为W01集成后完整候选，panels组件fixture报告不能替代整体或真实中心验收。root独立review对a2be896发现WP-R1 P2键盘焦点blocking，已交panels唯一owner修正，保持槽位待复审；W01不重复修改该目录。
+2026-10-06 02:15 UTC本次管理只读核验：W01 branch codex/m1-web，HEAD `43be13b0f3347f1567a8c14c04c4ea107957137f`，授权W01范围与临时安装例外root lock dirty；其权威status记录Thread/shell整改与panels集成中。panels branch codex/web-workspace-panels，HEAD `a2be896405304111379d72e9b22e46f8e47a11a4` clean；独立候选已交W01后续cherry-pick，workspace目录修复仍由panels单owner，W01不并发编辑。下一可审查实现为W01集成后完整候选，panels组件fixture报告不能替代整体或真实中心验收。root独立review的WP-R1已由48069af修复并复审关闭；最终组件target46a1dbd60aa57a464d67e5ac3d39cb2673706c36获组件范围APPROVED（不覆盖W01整体/真实中心），owner已交证据metadata `16d51843c878112bd48cc58d316e36c25c15e167`，待W01接齐。W01不重复修改该目录。
 
 ## 阻塞 / 风险 / 未验证
 
@@ -47,4 +48,4 @@
 
 ## Dashboard同步
 
-本文件为WPF-001唯一手填事实源。待主线D03登记`plans/web-platform`后只读验证JSON/source/live Git，不手填生成JSON或第二进度源。子计划尚未独立聚合，不能说已显示。
+本文件为WPF-001唯一手填事实源。2026-10-06T02:17:22.204Z只读4320快照仍17任务、没有WPF来源，来源清单已回报，未宣称已聚合。待主线D03登记`plans/web-platform`后只读验证JSON/source/live Git，不手填生成JSON或第二进度源。子计划尚未独立聚合，不能说已显示。

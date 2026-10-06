@@ -42,3 +42,26 @@
 panels owner只读调查定位W01的activityBar.primary与WorkspacePanelMount为实际host接缝；可信renderer可按mediaType/kind选择，未知数据仍安全fallback，tab身份包含extensionId/resourceId，不给插件直接FlowClient/token。其观察M02新workspace.ts是跨任务投影，不是文件工作区/PTY；尚未发现独立X01契约，交Lead固定父能力。此为观察/建议，不是接口已采纳。
 
 当前独立审查WP-R1：root在panels target a2be896405304111379d72e9b22e46f8e47a11a4发现P2 blocking，Files树Enter开详情卸载树后焦点落body；已交唯一panels owner修复首次/缓存打开的焦点转移，未标APPROVED，不释放该owner开展新实现。
+
+
+## RS09 整体shell回归与来源观察
+
+root进行中源码发现（非正式SHA review）：全workspace单一active panel可能覆盖panels按task布局缓存，A详情→B terminal→A不能无意强制terminal；关panel卸载缓存要保留每chat布局或明确未实现。catalog list失败/loading必须可见并能retry，不能误认空任务；Chat Delete关闭后应聚焦邻tab。已交W01整体fixture覆盖，workspace目录仍panels单owner。root确认新Tailwind预览已生效，但截图不替代交互验收。
+
+2026-10-06T02:17:22.204Z只读4320/api/snapshot：17个任务，无WPF来源；W01 live HEAD4c9bbe7d0f2ccf7ea3ffeedbb2f03c589a32b9eb、dirty=true、issues=[]。这是当时生成快照，非第二手填进度，未宣称来源登记完成。
+
+
+## RS10 M02已交付接口与Web消费（root研究#7）
+
+主线M02 e888862570cba3c59789053e68df7d5720650c36已只读核验clean；管理者已读其architecture/m2-workspace.md和contracts/workspace.ts。WorkspacePage升序entries与next/previous/watermark不同；pending只提示catch-up；tasks/attention各100截断，queryTasks有精确total但只有TaskSummary。root建议UI为独立工作总览连续feed+顶部直接attention操作，保留chat/panel下钻，非用户逐字方案。
+
+转换成WPF-M02验收：去重/迟到提交/前后分页/reset409、阅读锚点与新进展缓冲、taskId+decisionId冲突不自动重答、catch-up退避/断网停止、100+截断/完整索引、0详情首屏、Abort+generation连接隔离。拟复用panels owner先做只读调查，正式新树等待稳定W01；不只pick405529d漏types，不改主线backend或rootlock。
+
+
+## RS11 M02阅读语义与前置接口调查
+
+root研究#8：[WAI feed pattern](https://www.w3.org/WAI/ARIA/apg/patterns/feed/)包含完整辅助技术焦点/滚动协议，不能仅添加role=feed；首版推荐普通list/article/heading+显式加载较早，只将新增条数做简短status。[overflow-anchor](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-anchor)与手工scrollHeight补偿避免双位移，按entryId+offset实测prepend/resize/窄屏正文增高。
+
+panels owner固定e888862只读调查：history.before响应nextCursor不得覆盖forward deliveredCursor；watermark非已消费；传signal覆盖client默认15s timeout，必须组合取消与超时；100项当前快照缺席不等于任务完成，queryTasks totalSize仅每页事务精确，过滤变更需generation与cursor重置。建议深模块WorkspaceFeedProjection隐藏轮询/分页/attention/索引，UI只收snapshot/callbacks。已写入WPF-M02验收，无实现修改。
+
+组件交付闭环：root正式APPROVED target46a1dbd60aa57a464d67e5ac3d39cb2673706c36，WP-R1关闭；owner将证据落独占review.md并metadata提交16d51843c878112bd48cc58d316e36c25c15e167 clean交W01。此为交接快照，唯一W01实现状态仍在W01 owner的status。
