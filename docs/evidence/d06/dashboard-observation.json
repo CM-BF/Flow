@@ -1,0 +1,249 @@
+{
+  "observedAt": "2026-10-06T04:28:31.114797+00:00",
+  "generatedAt": "2026-10-06T04:28:28.679Z",
+  "sourceCount": 47,
+  "d06": [
+    {
+      "id": "D06",
+      "title": "架构固定快照更新",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh",
+      "branch": "codex/dashboard-architecture-refresh",
+      "planDir": "plans/d06-architecture-refresh",
+      "evidenceDir": "docs/evidence/d06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T04:20:48.626Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/status.md",
+        "syncedAt": "2026-10-06T04:28:28.679Z",
+        "stale": false,
+        "ageHours": 0.14129972222222223
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/dashboard-architecture-refresh",
+        "head": "b4c2ab1ffab02956cb0b36a18d963e7e74bdb9a8",
+        "dirty": true,
+        "changedFiles": 2,
+        "observedAt": "2026-10-06T04:28:29.003Z"
+      },
+      "status": {
+        "human": {
+          "phase": "M2",
+          "priority": 3,
+          "output": "五视图固定8f刷新通过独立review，来源P3已关闭",
+          "next": "Lead登记D06来源并受控集成到4320",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "ef42277ff55d1cbb76ea707836481a9788619033",
+          "scopes": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs"
+          ],
+          "errors": []
+        },
+        "taskId": "D06",
+        "owner": "d01_owner / gpt-6-astra ultra",
+        "branch": "codex/dashboard-architecture-refresh",
+        "branchState": "completed（branch）；main待集成",
+        "updatedAt": "2026-10-06T04:20:00.000Z",
+        "updatedRecord": "2026-10-06 04:20 UTC / 固定main8f已核",
+        "todos": [
+          {
+            "id": "D06-01",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "固定8f、clean新树及正式receipt，技能已读"
+          },
+          {
+            "id": "D06-02",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "已集成/后继、PG与assistant/FSM刷新，固定d5a87b"
+          },
+          {
+            "id": "D06-03",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "5 Node与五视图Chrome、双主题390截图/质量记录"
+          },
+          {
+            "id": "D06-04",
+            "state": "in-progress",
+            "owner": "d01_owner",
+            "evidence": "root已APPROVED ef42277；等待实际聚合，main集成由Lead执行"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "8f1481df880cf5077e1ddb9a8f302fe700a7ece8 / ef42277ff55d1cbb76ea707836481a9788619033（实现，后续仅metadata）",
+        "declaredDirty": "仅本任务plan/evidence最终审查记录pending，源码固定",
+        "checks": {
+          "state": "passed",
+          "target": "ef42277ff55d1cbb76ea707836481a9788619033",
+          "record": "PASSED ef42277ff55d1cbb76ea707836481a9788619033；5 Node局部及5视图Chrome/双主题390检查"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED",
+        "mainRecord": "NOT_INTEGRATED；本轮图刷新未集成，固定输入8f",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED — 仅固定源码架构数据与下列限定检查。",
+        "target": "ef42277ff55d1cbb76ea707836481a9788619033",
+        "proof": {
+          "target": "ef42277ff55d1cbb76ea707836481a9788619033",
+          "head": "b4c2ab1ffab02956cb0b36a18d963e7e74bdb9a8",
+          "scopes": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs"
+          ],
+          "observedAt": "2026-10-06T04:28:29.329Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/d06/node-tests.txt",
+            "docs/evidence/d06/quality.md",
+            "docs/evidence/d06/source-review-check.json",
+            "docs/evidence/d06/validation.md",
+            "plans/d06-architecture-refresh/review.md",
+            "plans/d06-architecture-refresh/status.md",
+            "plans/d06-architecture-refresh/plan.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "implementationProof": {
+        "target": "ef42277ff55d1cbb76ea707836481a9788619033",
+        "head": "b4c2ab1ffab02956cb0b36a18d963e7e74bdb9a8",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/test/architecture.test.mjs"
+        ],
+        "observedAt": "2026-10-06T04:28:29.039Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/d06/node-tests.txt",
+          "docs/evidence/d06/quality.md",
+          "docs/evidence/d06/source-review-check.json",
+          "docs/evidence/d06/validation.md",
+          "plans/d06-architecture-refresh/review.md",
+          "plans/d06-architecture-refresh/status.md",
+          "plans/d06-architecture-refresh/plan.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/d06-architecture-refresh/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d06-architecture-refresh/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d06-architecture-refresh/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/d06/take-receipt.json",
+          "title": "正式领取",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/quality.md",
+          "title": "质量与来源",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/validation.md",
+          "title": "验证/来源",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/browser-checks.json",
+          "title": "Chrome报告",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/node-tests.txt",
+          "title": "5 Node输出",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 4
+      },
+      "main": {
+        "record": "NOT_INTEGRATED；本轮图刷新未集成，固定输入8f",
+        "recordedHead": null,
+        "target": "ef42277ff55d1cbb76ea707836481a9788619033",
+        "mainHead": "4e0289f29ffa48c6c49003837d4520f57c22b6b0",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/test/architecture.test.mjs"
+        ],
+        "observedAt": "2026-10-06T04:28:29.003Z",
+        "current": true,
+        "historicalIntegrated": true,
+        "method": "ancestor",
+        "scopeEqual": true,
+        "dirtyScopePaths": [],
+        "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06",
+            "plans/d06-architecture-refresh"
+          ],
+          "state": "active",
+          "branch": "codex/dashboard-architecture-refresh",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "d01_owner",
+          "claimId": "f6196ecc-b1e4-4ae2-9bd5-a2c36a6570bc",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh",
+          "createdAt": "2026-10-06T04:13:12.526Z",
+          "updatedAt": "2026-10-06T04:13:12.526Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    }
+  ],
+  "architectureBaseline8f": true,
+  "architectureSourceFixedRegistry": true,
+  "originMain": "4e0289f29ffa48c6c49003837d4520f57c22b6b0",
+  "implementationAncestorVerified": true,
+  "implementationScopeDiff0": true
+}
