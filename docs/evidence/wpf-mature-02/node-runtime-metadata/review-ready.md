@@ -1,6 +1,6 @@
 # 固定组合交审（NOT_OPEN）
 
-source `26148841fefba19b62acbb566bd9dc51562f0160`；设计2ac经Mika14:03通过。96ba功能审唯一P2已定向1red→1green修复；architecture_read/gpt-6-astra于2026-10-06 14:26:01 UTC批准26148841功能delta，0剩余P1/P2。最终packet绑定/预算未批准。
+source `26148841fefba19b62acbb566bd9dc51562f0160`；设计2ac经Mika14:03通过。96ba功能审唯一P2已定向1red→1green修复；architecture_read/gpt-6-astra于2026-10-06 14:26:01 UTC批准26148841功能delta，0剩余P1/P2。最终packet获architecture_read14:27:58 / Mika14:28:15准备APPROVED，0P1/P2；见preparation-review.json。实际仍NOT_OPEN。
 
 [driver-input](driver-input.json) SHAce2f8a911ddec313027e8d4b39d9b6f5b1b8389112772c22ac92766b4f4ffec1；[manifest](manifest.json) SHA2c2a61d8ce704631bc059dcd25e4e2d6038ebe4e08864e87152be8c7a02bde15。27 runtime、72 prepared=343145B、28 external（27+Node）、18 unchanged、145旧cause/Node evidence逐历史Git保持；14 outputs不存在。42distinct分轮/两批red、原生0factory/0listener、语法原证据在checks。没有新实际target/listener/PG/SDK/provider。
 
