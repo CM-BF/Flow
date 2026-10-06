@@ -2,16 +2,16 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:05 UTC / 2026-10-06 01:05 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:13 UTC / 2026-10-06 01:05 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner` |
 | Branch | `codex/m1-runner` |
 | 工作基线 / 本记录核验时HEAD | F00 `542f70ba430b3236055d736198bfd5444c684348` / 实现 `b393a5196b687bf81fd65ee7785ee198006e344b` |
 | 工作树dirty状态 | 实现提交后干净；本状态记录作为后续文档提交，review时重新核对最终HEAD |
-| 工作分支状态 | R01实现已提交，分支验证通过，等待独立review |
+| 工作分支状态 | review P1 修复已完成，新增并发落盘与旧前缀恢复回归通过，待提交后复审 |
 | 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
-| Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
+| Review | [review.md](review.md)，CHANGES_REQUESTED，待修复快照一致性与 ACK durable prefix 后复审 |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -37,3 +37,9 @@
 ## 下一步与handoff
 
 实现与自查完成，已把 `b393a5196b687bf81fd65ee7785ee198006e344b` 交给 Execution Lead；本次文档提交后附最终HEAD供独立review。尚未获得review approval，尚未合并 main；R02真实harness另行派工。
+
+## Review 修复启动 — 2026-10-06 01:11 UTC
+
+当前 HEAD `e7ab805fa76017392e2d9bcc7a7f33b16402a903`，启动前干净。R01-02 / R01-04 重新进入 in-progress；reviewer 已通过公开 runRunner + HarnessAdapter + HTTP / 磁盘边界复现并发事件在发送前未持久化。owner 获 Execution Lead 授权回到本 worktree 修复；R02 尚无真实调用。待新增并发落盘与旧前缀重启测试，再更新实现 SHA；未获 approval，main 未集成。
+
+修复检查：2026-10-06 01:13 UTC，固定落盘/发送快照，连续 ACK 接受已持久后续前缀；新增 2 条复现回归及 3 条非法 ACK 保留回归。R01-02 / R01-04 的代码与分支验证完成，修复提交后独立复审仍 pending。Dashboard：本 worktree 当前未接入聚合器，等待聚合器展示；不得将本分支修复标记为 main 已集成。

@@ -1,5 +1,5 @@
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
-import { mkdtemp, readdir, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -307,4 +307,76 @@ it('reuses a repeated decision request without emitting a second pending decisio
   api.setAnswer('approve');
   await eventually(() => api.events.some(event => event.type === 'completed'));
   expect(api.events.filter(event => event.type === 'decision')).toHaveLength(1);
+});
+
+
+it('persists every concurrent event before sending that exact event to the center', async () => {
+  const api = await center();
+  let directory = '';
+  const durabilityChecks: Promise<void>[] = [];
+  api.options.adapters = [{ name: 'fixture', version: '1', async run(context) {
+    directory = context.workingDirectory;
+    const first = context.emit({ type: 'detail', title: 'First', content: 'x'.repeat(1_048_576), mediaType: 'text/plain' });
+    await Promise.resolve();
+    const second = context.emit({ type: 'message', text: 'Concurrent second event' });
+    await Promise.all([first, second]);
+  } }];
+  api.onReport((batch, response) => {
+    durabilityChecks.push((async () => {
+      const saved = JSON.parse(await readFile(join(directory, 'pending-events.json'), 'utf8')) as EventBatch;
+      response.end(JSON.stringify({ accepted: batch.events.length, lastSequence: api.events.length }));
+      expect(saved).toEqual(batch);
+    })());
+    void durabilityChecks.at(-1)!.catch(() => undefined);
+    return true;
+  });
+  api.start();
+  await eventually(() => api.events.some(event => event.type === 'completed'));
+  await Promise.all(durabilityChecks);
+});
+
+it('recovers an old durable prefix when the center already acknowledged later events', async () => {
+  const api = await center();
+  let directory = '';
+  api.options.adapters = [{ name: 'fixture', version: '1', async run(context) {
+    directory = context.workingDirectory;
+    await context.emit({ type: 'message', text: 'Saved prefix' });
+    await context.emit({ type: 'message', text: 'Later durable event' });
+  } }];
+  const running = api.start();
+  await eventually(() => api.events.some(event => event.type === 'completed'));
+  api.shutdown.abort();
+  await running;
+  const oldPrefix = { ...api.batches[0]!, events: [api.events[0]!] };
+  await writeFile(join(directory, 'pending-events.json'), JSON.stringify(oldPrefix));
+  const before = api.batches.length;
+  const restart = new AbortController();
+  const resumed = runRunner({ ...api.options, signal: restart.signal });
+  cleanup.push(async () => { restart.abort(); await resumed; });
+  await eventually(async () => !(await readdir(directory)).includes('pending-events.json'));
+  expect(api.batches.length).toBe(before + 1);
+  expect(api.batches.at(-1)).toEqual(oldPrefix);
+  expect(api.events.map(event => event.sequence)).toEqual([1, 2, 3]);
+});
+
+
+it.each([
+  { accepted: 1, lastSequence: 0 },
+  { accepted: 1, lastSequence: 1.5 },
+  { accepted: 2, lastSequence: 1 },
+])('retains unacknowledged events when the center sends invalid confirmation %j', async acknowledgement => {
+  const api = await center();
+  let directory = '';
+  api.options.adapters = [{ name: 'fixture', version: '1', async run(context) {
+    directory = context.workingDirectory;
+    await context.emit({ type: 'message', text: 'Must remain durable' });
+  } }];
+  api.onReport((_batch, response) => {
+    response.end(JSON.stringify(acknowledgement));
+    return true;
+  });
+  api.options.onNotice = notice => { if (notice.type === 'connection-lost') api.shutdown.abort(); };
+  await api.start();
+  const saved = JSON.parse(await readFile(join(directory, 'pending-events.json'), 'utf8'));
+  expect(saved).toEqual(api.batches[0]);
 });
