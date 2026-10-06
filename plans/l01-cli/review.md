@@ -1,14 +1,14 @@
 # L01 独立审查记录
 
-**状态：NOT_STARTED — 模板待review，不构成approval。**
+**状态：APPROVE，独立复审完成，绑定 `1baf123e43a9be762342eb51bfe254fa7a6e60f9`。**
 
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：实现 `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`；审查者须核验最新metadata HEAD，结论绑定具体实现。
+- Review target commit：`1baf123e43a9be762342eb51bfe254fa7a6e60f9`；其他提交不自动继承此结论。
 - Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
 - 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
-- Reviewer / model / harness / 时间：待填写。
+- Reviewer：assignment_review / gpt-6-astra / Codex，时间 2026-10-06 01:15 UTC；Execution Lead 根据只读报告记录。
 
 ## 可直接复制的审查任务说明
 
@@ -28,17 +28,17 @@
 
 | 检查 | 执行状态 | 环境/commit | 结果与证据链接 |
 | --- | --- | --- | --- |
-| 待填写 | 未执行 | 未核验 | 无；模板不表示检查通过 |
+| public Interface tests / typecheck / diff | 已执行 | Node24 / `1baf123e43a9be762342eb51bfe254fa7a6e60f9` | 16/16；作者证据与只读报告一致 |
 
 ## Findings
 
 | ID | Severity | Blocking | 文件/行与复现 | 影响/建议 | Owner回应 | 修复commit | 复审结果 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待审查 | 未评估 | 未评估 | 无结论 | 无结论 | 待回应 | 无 | 未复审 |
+| L01-FIX | P1/P2 | 已解除 | 原普通命令吞 SIGINT/SIGTERM 的 P2 已修复，独立复审确认无新增finding。 | 原owner修复并加公开行为回归 | 接受并修复 | `1baf123e43a9be762342eb51bfe254fa7a6e60f9` | 通过 |
 
 ## 结论与限制
 
-结论：未审查。Blocking findings：未评估。Nonblocking findings：未评估。未执行范围：全部。不得据此声称通过。
+结论：APPROVE。原普通命令吞 SIGINT/SIGTERM 的 P2 已修复，独立复审确认无新增finding。独立运行 16/16 测试、typecheck、diff检查通过，worktree起止干净；未改实现。未验证真实模型、跨机或掉电；main未集成。
 
 ## 作者回应与复审
 

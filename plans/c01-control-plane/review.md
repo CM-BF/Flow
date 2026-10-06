@@ -1,45 +1,29 @@
-# C01 独立审查记录
+# C01 独立审查
 
-**状态：NOT_STARTED — 模板待review，不构成approval。**
+状态：SCOPED_REVIEW_COMPLETE，固定实现未发现 blocking finding；系统集成结果另见 I01。此结论不表示 main 已集成。
 
-## Target 与 scope
+## Target / scope
 
-- Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
-- Reviewer / model / harness / 时间：待填写。
+- Reviewer：Execution Lead / gpt-6-astra；时间 2026-10-06 01:12 UTC。
+- Target `848116863f1c6532f5d774518bb253b0e0abdbc6`；实现 `fdd0cc296819efc38ba8113bb87624b747bfb646`；base `3995ec16ce2cbcb4d5f5e99333b86575233fd89c`。
+- Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-control-plane`，branch `codex/m1-control-plane`；读取时干净。实现未修改，本记录在 integration 分支维护。
+- [plan](plan.md)、[status](status.md)、[作者证据](../../apps/server/EVIDENCE.md)。
 
-## 可直接复制的审查任务说明
+## 检查方法 / 已执行
 
-```text
-请对 C01 做独立只读review。先读仓库AGENTS.md、plans/AGENTS.md、plans/c01-control-plane/plan.md和status.md；执行技能发现并读取相关本地技能。先确认实际仓库、worktree、branch、dirty状态、base/head完整SHA，审查结论必须绑定具体head commit；若输入与实际不符先记录差异，不沿用历史通过结论。逐项核对plan TODO、验收criteria、关键实现和证据，运行已授权且隔离的相关检查，明确哪些未执行以及原因。对问题给出severity、文件/行、复现场景、影响、blocking/nonblocking与建议；默认不改实现，把修复交回owner。在本review.md被明确指定为你唯一写入范围且你的模型>=Sol时才可写审查记录，否则把报告回传owner。Claude Code或其他外部agent可只读审查；任何直接修复Flow文件仍须满足Sol以上模型与独立worktree规则。最后列结论、限制和需复审内容，不把空模板当approval。
-```
+按 find-skills 本地优先方法复用并实际应用 codebase-design、tdd 与 clean-code。核对 public HTTP Interface、same-transaction command/pg-boss、锁顺序、lease recheck/expiry/revocation、event原子/连续去重、immutable artifact/version、独立 verifier、session ownership、累计usage来源/基线/未知值、bounded query/SSE observer生命周期与auth角色。
 
-## 独立review步骤
-
-1. 核验target/base/head、工作树与指令，确认评审范围。
-2. 读plan/status、diff与关键调用路径；核对TODO和分支/main事实。
-3. 从公开Interface检查正常、错误、恢复与权限行为；独立复核证据，不信自述完成。
-4. 记录检查命令/环境/结果以及未执行检查和原因。
-5. 提交findings；owner修复后核对新commit再复审。
-
-## 检查与证据
-
-| 检查 | 执行状态 | 环境/commit | 结果与证据链接 |
-| --- | --- | --- | --- |
-| 待填写 | 未执行 | 未核验 | 无；模板不表示检查通过 |
+读过全部中心实现关键模块、公共冻结契约及HTTP测试。对已合入的同一代码另运行真实 PostgreSQL + 独立 runner/CLI 进程的 I01 集成检查；其结果绑定 I01 后续提交，不用未完成的集成检查替代此次源代码审查。作者14条测试证据已核对范围，独立整套检查结果将附 I01。
 
 ## Findings
 
-| ID | Severity | Blocking | 文件/行与复现 | 影响/建议 | Owner回应 | 修复commit | 复审结果 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 待审查 | 未评估 | 未评估 | 无结论 | 无结论 | 待回应 | 无 | 未复审 |
+| ID | Severity | Blocking | 位置/结论 | Owner回应/修复 | 复审 |
+| --- | --- | --- | --- | --- | --- |
+| C01-N01 | limitation | no | uncertain保留capacity/session，M1无核对Interface | 既定保守契约，需后续reconciliation | 本次不扩大范围 |
+| C01-N02 | limitation | no | 未验证硬DB故障、真实Claude、跨机、100+ | I01/R02仅补其各自范围 | 不声明通过 |
 
-## 结论与限制
+没有发现可复现的 blocking 实现缺陷。只读审查不等于所有故障行为证明，新实现提交需重新绑定target。
 
-结论：未审查。Blocking findings：未评估。Nonblocking findings：未评估。未执行范围：全部。不得据此声称通过。
+## 可复制复审任务
 
-## 作者回应与复审
-
-Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
+对 C01 做只读复审。先读 AGENTS.md、plans/AGENTS.md、plans/c01-control-plane/plan.md 与 status.md，核验实际 worktree/base/head/dirty 状态及上述 target；若不同，记录差异并审查新增diff。按已授权隔离检查复核公开HTTP行为，不改实现；输出severity/复现/影响与blocking结论，修复交owner。外部Claude Code可以只读审查，写入仍须Sol以上和独立worktree。

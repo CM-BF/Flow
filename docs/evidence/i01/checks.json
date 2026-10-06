@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-06 01:15 UTC",
+  "integrationHeadBeforeNewTestCommit": "32153285e3c61a8377861648517a83563abf7ac9",
+  "inputs": {
+    "C01": "848116863f1c6532f5d774518bb253b0e0abdbc6",
+    "R01": "338263736e2cf64efd32037cfc92bcb49069d9ab",
+    "L01": "1baf123e43a9be762342eb51bfe254fa7a6e60f9"
+  },
+  "environment": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "postgres": "16",
+    "databases": [
+      "flow_c01",
+      "flow_i01"
+    ],
+    "host": "127.0.0.1:55432"
+  },
+  "command": "pnpm check",
+  "result": {
+    "typecheck": "passed",
+    "tests": 54,
+    "passed": 54,
+    "failed": 0,
+    "integrationScenarios": 4
+  },
+  "verified": [
+    "Accepted queued task survives center restart and idempotent retry",
+    "Two independent runner processes execute one effective attempt",
+    "Independent CLI process approves durable decision",
+    "CLI observation timeout does not cancel background task",
+    "Explicit cancellation reaches cancelled terminal state",
+    "262144-byte detail stays folded in snapshot and expands on demand",
+    "Execution success is distinct from verification failure",
+    "Stopped runner becomes uncertain without reassignment"
+  ],
+  "notVerified": [
+    "Product Web/browser closure/reconnect or themes",
+    "Native model system journey",
+    "Hard database outage or host power loss",
+    "Cross-machine transport/recovery",
+    "100+ agent capacity"
+  ],
+  "mainIntegrated": false
+}
