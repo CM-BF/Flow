@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T10:25:47.007032+00:00 / main 8d8ab520a9d43c7b9dafb22911416ee799ebf665，6源码未集成；受控合入此固定main已获mika授权 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T10:36:36.543081+00:00 / main 0cee7556befa1988e60bae94b510240122c34b88，clean=True；仅核验不追merge |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | b1c2e39837c2208e6fc2c59a80e16797f26448b5 / Adapter P2修复3ab95d288a91214d03dec719dc6b44024206118a；后继仅本计划/证据metadata |
-| 工作树dirty状态 | 核验cd817aff clean与v3 ACTIVE后仅更新自有metadata；6已审源码与各target逐字一致 |
+| 工作基线 / HEAD | 原始b1c2e398；已受控合入8d8ab520 / 当前实现 a7357c21511a81ca8e603b728c3a24725d7cc140；metadata随后提交 |
+| 工作树dirty状态 | 实现a7357c21511a81ca8e603b728c3a24725d7cc140 clean后仅更新自有manifest/status；已审6源仍逐字固定 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED 3ab95d288a91214d03dec719dc6b44024206118a；2显式文件49/49（26 Adapter+23直接projection）、局部root严格noEmit0；[证据](../../docs/evidence/wpf-mature-04/claude-summary.md)，无采集/产品挂载/模型/全库验收 |
+| 检查状态 | 历史局部41/41（18wire+6DTO+11store consumer+6HTTP），8根文件继承root严格noEmit0；真实PG/全局owner鉴权未验；[证据](../../docs/evidence/wpf-mature-04/history-checks.json) |
 | 已集成main状态 / HEAD | 未集成：固定main 8d8ab520a9d43c7b9dafb22911416ee799ebf665 无6源码，879/3ab双target非祖先；[唯一集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
-| 实现目标 | 3ab95d288a91214d03dec719dc6b44024206118a |
-| 实现范围 | apps/runner/src/context-observations/claude-summary.ts, apps/runner/src/context-observations/claude-summary.test.ts |
+| 实现目标 | a7357c21511a81ca8e603b728c3a24725d7cc140 |
+| 实现范围 | 8新增event/history合同、store/routes及对应测试；6已审源不变 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已审规范估算与摘要转换可独立集成；正在实现可追溯的历史样本保存和读取 |
-| 下一可用交付 | 历史观测接口与局部读回，明确当前占用及剩余容量未知 |
-| 当前阻塞 | NONE |
+| 当前产出 | 历史样本保存和读回模块已完成局部验证；规范估算与摘要转换两片已审待集成 |
+| 下一可用交付 | 采用唯一正式迁移完成数据库验证，再挂载历史读回；当前占用及剩余容量仍未知 |
+| 当前阻塞 | 历史数据库验证等待Execution Lead分配唯一迁移编号/owner；独立合同与HTTP片已推进，不等待Codex |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，当前3ab95d288a91214d03dec719dc6b44024206118a APPROVED，status_read/gpt-6-astra，root于09:28 UTC接收，无剩余P1/P2；旧e81f200 CHANGES_REQUESTED，status_read/gpt-6-astra，1P2/0P1；第一片879c989a594a8f4f266b9a78a885e311c52eca0d仍APPROVED，Mika/gpt-6-astra，09:14:39 UTC |
+| Review | [review.md](review.md)：新历史target a7357c21 NOT_STARTED，PG仍待验；旧879与3ab已独审APPROVED，批准不扩展到新8文件 |
 | Claim | [COMMITTED amend v4](../../docs/evidence/wpf-mature-04/history-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v4 ACTIVE；仅追加8新history文件，已审6源码冻结 |
-| 架构影响 | 原六源码无挂载；新增中心历史record/readLatestHistory与局部GET待固定，沿原事务/fence，无新runner端点；唯一DDL编号与全局挂载由Lead协调，架构视图待集成target更新 |
+| 架构影响 | 中心历史record/readLatestHistory与局部GET已实现未挂载，沿原事务/fence，无新runner端点；唯一DDL及全局挂载由Lead协调，架构视图待集成target更新 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
