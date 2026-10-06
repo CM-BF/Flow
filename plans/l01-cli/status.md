@@ -7,11 +7,11 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-cli` |
 | Branch | `codex/m1-cli` |
-| 工作基线 / 本记录核验时HEAD | `eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`（仅表示同步时观察值） |
+| 工作基线 / 本记录核验时HEAD | `eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `1baf123e43a9be762342eb51bfe254fa7a6e60f9`（仅表示同步时观察值） |
 | 工作树dirty状态 | 实现已提交；本记录为后续metadata提交 |
 | 工作分支状态 | 依下方TODO；未提交工作不等于已交付 |
 | 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
-| Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
+| Review | [review.md](review.md)，APPROVE，绑定1baf123e43a9be762342eb51bfe254fa7a6e60f9 |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -20,7 +20,7 @@
 | L01-01 | completed | Execution Lead | [CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review |
 | L01-02 | completed | Execution Lead | [CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review |
 | L01-03 | completed | Execution Lead | [CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review |
-| L01-04 | in-progress | Execution Lead | 未完成，无通过结论 |
+| L01-04 | completed | Execution Lead | clean-code与独立review完成；1baf123修复后16/16+typecheck通过 |
 
 ## 已完成证据与检查
 
@@ -42,3 +42,5 @@ Owner在合并此文档基线后立即核验实际branch/head并接管本status�
 命令、JSON、幂等键、watch超时与重连已实现；11条CLI HTTP测试与4条公共测试、typecheck通过，实现提交 `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`，独立review未完成。此 status 是唯一手填进度源，等待 D01 聚合展示。
 
 2026-10-06 01:14 UTC review修复：原target647d57b无blocking，普通命令中断P2已修复；新增真实process回归，16/16 + typecheck通过。main未集成；下一步复审新commit。
+
+2026-10-06 01:21 UTC：assignment_review 独立复审通过，target `1baf123e43a9be762342eb51bfe254fa7a6e60f9`；所有L01 TODO完成。实现已合入integration并通过真实中心/runner/CLI检查，main仍0763d46未集成。Dashboard唯一事实源已同步本记录，待D01实际聚合。
