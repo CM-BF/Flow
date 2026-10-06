@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['CHAT05P01', '工具完整原文保存与读取', '工作线', 'native-activity-body', 'chat05p01-native-activity-body'],
   ['WPF-MESSAGESETTINGS02', '聊天快速设置控件', '工作线', 'web-message-settings-quick-controls', 'wpf-message-settings-quick-controls'],
   ['OPS14', '有界进程监督与可靠收尾', '工程协作', 'owned-process-supervision', 'ops14-owned-process-supervision'],
   ['MATURE02C02', 'Codex会话连续性', '工作线', 'codex-conversation-continuity', 'wpf-mature-02-codex-continuity'],

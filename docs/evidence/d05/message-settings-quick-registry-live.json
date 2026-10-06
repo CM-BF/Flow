@@ -1,0 +1,228 @@
+{
+  "generatedAt": "2026-10-06T22:12:19.059Z",
+  "sourceCount": 179,
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T22:12:19.130Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "task": {
+    "id": "WPF-MESSAGESETTINGS02",
+    "title": "聊天快速设置控件",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "branch": "codex/web-message-settings-quick-controls",
+    "planDir": "plans/wpf-message-settings-quick-controls",
+    "evidenceDir": "docs/evidence/wpf-message-settings-quick-controls",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T22:11:32.526Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+      "syncedAt": "2026-10-06T22:12:19.059Z",
+      "stale": false,
+      "ageHours": 0.14390527777777778
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/web-message-settings-quick-controls",
+      "head": "b8034817412d3131e3fb65fa82763df9deab2f6f",
+      "dirty": true,
+      "changedFiles": 5,
+      "observedAt": "2026-10-06T22:12:19.151Z"
+    },
+    "status": {
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+          "id": "WPF-MATURE-02",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已确定快速设置与草稿身份保护接口，开始实现受控选择",
+        "next": "可明确应用合法组合的模型、思考力度与速度控件",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": null,
+        "scopes": [
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/test/message-settings.test.ts",
+          "apps/web/test/message-settings.fixture.tsx",
+          "apps/web/test/message-settings.browser.ts"
+        ],
+        "errors": [
+          "实现目标需完整 SHA"
+        ]
+      },
+      "taskId": "WPF-MESSAGESETTINGS02",
+      "owner": "w01_owner / gpt-6-astra",
+      "branch": "codex/web-message-settings-quick-controls",
+      "branchState": "in-progress",
+      "updatedAt": "2026-10-06T22:03:41.000Z",
+      "updatedRecord": "2026-10-06 22:03:41 UTC",
+      "todos": [],
+      "errors": [
+        "缺少 TODO 状态表"
+      ],
+      "declaredHead": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05（首 metadata 前观察）",
+      "declaredDirty": "",
+      "checks": {
+        "state": "unknown",
+        "target": null,
+        "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+      },
+      "reviewRecord": "NOT_STARTED",
+      "mainRecord": "",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "not_started",
+      "record": "NOT_STARTED。更新时间：2026-10-06 22:03:41 UTC。",
+      "target": null
+    },
+    "implementationProof": {
+      "target": null,
+      "head": "b8034817412d3131e3fb65fa82763df9deab2f6f",
+      "scopes": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/test/message-settings.test.ts",
+        "apps/web/test/message-settings.fixture.tsx",
+        "apps/web/test/message-settings.browser.ts"
+      ],
+      "observedAt": "2026-10-06T22:12:19.152Z",
+      "state": "unknown",
+      "reason": "实现目标需完整 SHA"
+    },
+    "documents": [
+      {
+        "path": "plans/wpf-message-settings-quick-controls/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-message-settings-quick-controls/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-message-settings-quick-controls/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/wpf-message-settings-quick-controls/take-receipt.json",
+        "title": "receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+        "title": "技能",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [
+      "缺少 TODO 状态表"
+    ],
+    "current": false,
+    "progress": {
+      "completed": null,
+      "total": null
+    },
+    "main": {
+      "record": "未记录 main 集成事实。",
+      "recordedHead": null,
+      "target": null,
+      "mainHead": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a",
+      "scopes": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/test/message-settings.test.ts",
+        "apps/web/test/message-settings.fixture.tsx",
+        "apps/web/test/message-settings.browser.ts"
+      ],
+      "observedAt": "2026-10-06T22:12:19.130Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "unknown",
+      "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+    },
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/test/message-settings.browser.ts",
+          "apps/web/test/message-settings.fixture.tsx",
+          "apps/web/test/message-settings.test.ts",
+          "docs/evidence/wpf-message-settings-quick-controls",
+          "plans/wpf-message-settings-quick-controls"
+        ],
+        "state": "active",
+        "branch": "codex/web-message-settings-quick-controls",
+        "origin": "new",
+        "taskId": "WPF-MESSAGESETTINGS02",
+        "worker": "w01_owner",
+        "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+        "createdAt": "2026-10-06T22:00:19.358Z",
+        "updatedAt": "2026-10-06T22:00:19.358Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ],
+    "links": {
+      "kind": "unknown",
+      "coLead": {
+        "state": "unknown",
+        "record": "Web /root（执行管理 d01_owner）",
+        "reason": "status 来源或字段待核实"
+      },
+      "parent": {
+        "state": "unknown",
+        "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "reason": "status 来源或字段待核实",
+        "targetId": "WPF-MATURE-02",
+        "title": "Claude与Codex执行选项"
+      }
+    }
+  },
+  "scope": "Actual loopback179-source snapshot; source registration only; no personal page reload or provider"
+}

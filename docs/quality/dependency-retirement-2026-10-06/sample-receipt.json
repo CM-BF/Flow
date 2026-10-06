@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-06T22:19:25.057652+00:00",
+  "verdict": "PASS_LOCAL_THREE_FILE_RESTORE_SAMPLE_ONLY",
+  "sourceSha256": "23d46f6575388823f6e6f96a3c1430f27ce4c31a296aa4a509b5e7745086ffb0",
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "/tmp/flow-workspace-cache-sample-restore.py",
+    "--run-once"
+  ],
+  "mapSha256": "064104abd211285b77e8febfbde451e7cfcdb1c5fd3780cb2bdfce381ace8ab3",
+  "selected": 3,
+  "passed": 3,
+  "samplePayloadBytes": 1473,
+  "freshFreeBytes": 1112506368,
+  "minimumFreeBytes": 1077936128,
+  "copyMethod": "/bin/cp -p (BSD); default extended attribute preservation tested, no package executed",
+  "verifiedEach": [
+    "SHA512",
+    "size",
+    "original mode",
+    "Darwin xattr names/length/hash equal original target"
+  ],
+  "xattr": "Each selected source and restored target has only com.apple.provenance with equal bytes/hash; raw values never output",
+  "scratch": "/private/tmp/flow-workspace-cache-restore-s95r4k_s",
+  "scratchIdentity": {
+    "dev": 16777234,
+    "ino": 123243558,
+    "parent": "/private/tmp",
+    "parentDev": 16777234,
+    "parentIno": 113131031
+  },
+  "checkpointBeforeCleanup": {
+    "path": "/tmp/flow-workspace-cache-sample-checkpoint.json",
+    "bytes": 5749,
+    "sha256": "74b9e43b8df3dd377f80d5158938d88f5d64144b23162ed6e8b8996ca88c5d27"
+  },
+  "cleanup": {
+    "state": "REMOVED",
+    "files": 3,
+    "scratchExists": false
+  },
+  "supervision": {
+    "pid": 22290,
+    "exitCode": 0,
+    "elapsedMs": 166,
+    "firstFailure": null,
+    "secondaryFailures": [],
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": [],
+    "stdout": "{\"state\": \"PASS_LOCAL_SAMPLE_ONLY\", \"primaryFailure\": null, \"cleanup\": {\"state\": \"REMOVED\", \"files\": 3, \"scratchExists\": false}}\n",
+    "stderr": ""
+  },
+  "limits": [
+    "All original29,606 dependency payloads remain KEEP; no retirement authorized or performed.",
+    "Only3 selected payloads1473B were restored. This does not establish full-tree rehydration, package execution, cross-platform suitability, or all-file attribute equality.",
+    "Shared supervisor covers child work/cleanup. Outer postreturn evidence persistence is not an OS realtime deadline guarantee.",
+    "No original target/CAS/package manifests/dependencies/links modified.",
+    "Existing prior11.7MiB map retained as input; no full-map Git copy."
+  ],
+  "operations": {
+    "targetDelete": 0,
+    "CASWrites": 0,
+    "install": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personalServices": 0,
+    "newScratch": 1,
+    "restoredSampleFiles": 3,
+    "removedOwnedSampleFiles": 3,
+    "packageExecution": 0
+  },
+  "bindings": [
+    {
+      "path": "/tmp/flow-workspace-cache-sample-restore.py",
+      "bytes": 10935,
+      "sha256": "23d46f6575388823f6e6f96a3c1430f27ce4c31a296aa4a509b5e7745086ffb0"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-sample-run.json",
+      "bytes": 469,
+      "sha256": "29500f986aa18faaaaee70cde62439eba1c91d0026c39521d745c2162bef55d7"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-sample-reservation.json",
+      "bytes": 517,
+      "sha256": "3c18f53e1b8b2837599bb7f160348eaa1b34e283c49b62431f5e3d13bc6a7c7f"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-sample-checkpoint.json",
+      "bytes": 5749,
+      "sha256": "74b9e43b8df3dd377f80d5158938d88f5d64144b23162ed6e8b8996ca88c5d27"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-sample-result.json",
+      "bytes": 5789,
+      "sha256": "4312c578a6e81955f3cafbb8c4b80ff44003b13e250f11549e970736cbcf3bbd"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-sample-final.json",
+      "bytes": 921,
+      "sha256": "1324eef053bbf91f3a374080f6fa0dc7e7c251448f4375580b55157114461a85"
+    }
+  ]
+}

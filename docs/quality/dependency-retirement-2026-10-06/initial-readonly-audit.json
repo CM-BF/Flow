@@ -1,0 +1,524 @@
+{
+  "at": "2026-10-06T22:07:11.046685+00:00",
+  "candidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+  "head": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+  "clean": true,
+  "claim": {
+    "at": "2026-10-06T22:06:24.698386+00:00",
+    "state": "available",
+    "claims": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/read-cache.ts",
+          "apps/web/src/data-renderers/flow-reply-detail.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/workspace-retention.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/plugin-integration.test.ts",
+          "apps/web/test/workspace-retention.browser.ts",
+          "apps/web/test/workspace-retention.fixture.ts",
+          "apps/web/test/workspace-retention.test.ts",
+          "docs/evidence/wpf-workspace-cache",
+          "plans/wpf-workspace-cache"
+        ],
+        "state": "released",
+        "branch": "codex/web-workspace-cache",
+        "origin": "new",
+        "taskId": "WPF-WORKSPACECACHE01",
+        "worker": "workspace_panels_owner",
+        "claimId": "883321bc-933f-4da0-8f86-f200c02620cf",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+        "createdAt": "2026-10-06T11:33:51.839Z",
+        "updatedAt": "2026-10-06T11:58:33.589Z",
+        "observedAt": null,
+        "needsVerification": false
+      }
+    ]
+  },
+  "verdict": "KEEP_DEPENDENCY_ROOT_PENDING_LAYOUT_AND_CONSUMER_CLOSURE",
+  "cleanupAuthorized": false,
+  "packagePayloadVerdict": "VERIFIED_AGAINST_CURRENT_LOCAL_CAS",
+  "inventory": {
+    "platform": {
+      "system": "Darwin",
+      "machine": "arm64"
+    },
+    "dependencyRoots": [
+      "node_modules",
+      "apps/execution-dashboard/node_modules",
+      "apps/tui/node_modules",
+      "apps/web/node_modules",
+      "apps/runner/node_modules",
+      "apps/server/node_modules",
+      "apps/cli/node_modules",
+      "packages/contracts/node_modules",
+      "packages/client/node_modules",
+      "packages/protocols/node_modules",
+      "packages/interaction/node_modules"
+    ],
+    "inventory": {
+      "regularFiles": 29679,
+      "logicalBytes": 508636624,
+      "allocatedBlockBytesNotUnique": 593920000,
+      "nlinkHistogram": {
+        "1": 29679
+      },
+      "symlinks": 2228,
+      "special": [],
+      "externalOutboundLinks": []
+    },
+    "packageCount": 581
+  },
+  "layout": {
+    "nodeLinker": "isolated",
+    "packageManager": "pnpm@9.15.4",
+    "layoutVersion": 5,
+    "virtualStoreDir": ".pnpm",
+    "storeDir": "/Users/citrine/Library/pnpm/store/v3",
+    "pendingBuilds": [
+      "esbuild@0.28.2"
+    ],
+    "installedPackageManager": {
+      "name": "pnpm",
+      "version": "9.15.4",
+      "path": "/opt/homebrew/lib/node_modules/pnpm/package.json",
+      "bytes": 6033,
+      "sha256": "3b20ec7bebaa078d5ae4ab09651b80434a9f1d6446065ad53779ecafdc7f9936"
+    },
+    "lockFiles": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/pnpm-lock.yaml",
+        "bytes": 278771,
+        "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/node_modules/.pnpm/lock.yaml",
+        "bytes": 278771,
+        "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/node_modules/.modules.yaml",
+        "bytes": 52154,
+        "sha256": "b70b9ec690e45783dd9b4d1aab82bd4f5632bd56f9ab3231ad91cb4f39adeff3"
+      }
+    ],
+    "projectConfigBindings": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/package.json",
+        "bytes": 729,
+        "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/pnpm-workspace.yaml",
+        "bytes": 40,
+        "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+      }
+    ],
+    "rootLockEqualsInstalledVirtualLock": true,
+    "generatedRegularFiles": 72,
+    "generatedLogicalBytes": 437871,
+    "binWrappersMatchingKnownDonorAfterOnlyRootSubstitution": 44,
+    "unmatchedBinWrappers": [
+      {
+        "path": "node_modules/.pnpm/@vitest+mocker@4.0.18_vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15_/node_modules/@vitest/mocker/node_modules/.bin/vite",
+        "bytes": 1934,
+        "sha256": "2e99e72a045be3906c434bf350fb26f4370d43262d9efc046b077a4afad01ee5",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/jiti",
+        "bytes": 1434,
+        "sha256": "8714e003ef858abc6f367bf369e20da4957f075a7aff9c5bb329118b20de976b",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/tsx",
+        "bytes": 1430,
+        "sha256": "e0f60629a95a80d6ecd8c229b1e5883c37648724ee0d697f434b128017ecedc9",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/rollup",
+        "bytes": 1764,
+        "sha256": "967ce1a162ee0e22a99025e471e4b30e5443ea4e9efa7b373960a533739aed61",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/esbuild",
+        "bytes": 1474,
+        "sha256": "98ce7ef31ffec1b98ba302d6f3fc36a51959832607f724105e9fbef9d7700193",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/node_modules/.bin/anthropic-ai-sdk",
+        "bytes": 2034,
+        "sha256": "fd19a5d9420f78ef3fefcb5ee6bd2dca48dffa3c033388d2047c2aac01429431",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/@npmcli+fs@5.0.0/node_modules/@npmcli/fs/node_modules/.bin/semver",
+        "bytes": 1462,
+        "sha256": "999b2fb87eb63d93020f7568e861e84e59f14166317c133a1f23b526786cf42b",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/node_modules/.bin/semver",
+        "bytes": 1456,
+        "sha256": "1fb3f4966b32a25c95d60cc31380a89653350074c6089dfe8e14d59808af2282",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/npm-pick-manifest@11.0.3/node_modules/npm-pick-manifest/node_modules/.bin/semver",
+        "bytes": 1456,
+        "sha256": "1fb3f4966b32a25c95d60cc31380a89653350074c6089dfe8e14d59808af2282",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/@npmcli+package-json@7.0.5/node_modules/@npmcli/package-json/node_modules/.bin/semver",
+        "bytes": 1462,
+        "sha256": "999b2fb87eb63d93020f7568e861e84e59f14166317c133a1f23b526786cf42b",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/jiti",
+        "bytes": 1434,
+        "sha256": "8714e003ef858abc6f367bf369e20da4957f075a7aff9c5bb329118b20de976b",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/rolldown",
+        "bytes": 1488,
+        "sha256": "25c28663ed919e3e579f35428c3249082fe83ba0d2cd9e675a2ce350df7c88e9",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/tsx",
+        "bytes": 1430,
+        "sha256": "e0f60629a95a80d6ecd8c229b1e5883c37648724ee0d697f434b128017ecedc9",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/node_modules/.bin/esbuild",
+        "bytes": 1474,
+        "sha256": "98ce7ef31ffec1b98ba302d6f3fc36a51959832607f724105e9fbef9d7700193",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/node_modules/.bin/esbuild",
+        "bytes": 1394,
+        "sha256": "817c4180f7fa76ce58eed0cc05fc9bf3decfbb4e692f0739fe1f1e137afd7f60",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/npm-install-checks@8.0.0/node_modules/npm-install-checks/node_modules/.bin/semver",
+        "bytes": 1456,
+        "sha256": "1fb3f4966b32a25c95d60cc31380a89653350074c6089dfe8e14d59808af2282",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/node_modules/.bin/nanoid",
+        "bytes": 1462,
+        "sha256": "41a44e2cec1360418d7b9faa961164b4cb10b5f4f1ddfeed6160ea13977f650b",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/@npmcli+git@7.0.2/node_modules/@npmcli/git/node_modules/.bin/node-which",
+        "bytes": 1446,
+        "sha256": "8c9aea6c511d8f815972880abf586f093fd107e24eb6c29d50d517998e07d3ed",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/@npmcli+git@7.0.2/node_modules/@npmcli/git/node_modules/.bin/semver",
+        "bytes": 1462,
+        "sha256": "999b2fb87eb63d93020f7568e861e84e59f14166317c133a1f23b526786cf42b",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/node_modules/.bin/esbuild",
+        "bytes": 1474,
+        "sha256": "98ce7ef31ffec1b98ba302d6f3fc36a51959832607f724105e9fbef9d7700193",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/node_modules/.bin/vite",
+        "bytes": 1928,
+        "sha256": "190ce552c0a5e21abc6b849b077b094e5902875ea36eff67181012d202cb2660",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/node_modules/.bin/why-is-node-running",
+        "bytes": 1290,
+        "sha256": "22d00d592db67355844a5cbdece5f7aaf49fb7dde7a9703b647a817a7f5ff0e4",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/ink@8.0.0_@types+react@19.3.0_react@19.3.0/node_modules/ink/node_modules/.bin/is-in-ci",
+        "bytes": 1180,
+        "sha256": "c72639939b3ac5e80a029c4bed61fb1f8beef544457e9433ce684417b8c9b5c6",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/node-gyp@12.4.0/node_modules/node-gyp/node_modules/.bin/node-which",
+        "bytes": 1440,
+        "sha256": "19f8e0ca3a35edf5a22f5ca6607d5ffbc40488448cfe041b1cc14ed11e865b58",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/node-gyp@12.4.0/node_modules/node-gyp/node_modules/.bin/semver",
+        "bytes": 1456,
+        "sha256": "1fb3f4966b32a25c95d60cc31380a89653350074c6089dfe8e14d59808af2282",
+        "normalizedDonorMatches": []
+      },
+      {
+        "path": "node_modules/.pnpm/node-gyp@12.4.0/node_modules/node-gyp/node_modules/.bin/nopt",
+        "bytes": 1424,
+        "sha256": "a9fc0f8d5bf05b888063d468d84a77c3fb56aec8a157cfa582db6dedd83b0c37",
+        "normalizedDonorMatches": []
+      }
+    ],
+    "symlinkCount": 2228,
+    "brokenLinks": 0,
+    "externalOutboundLinks": [],
+    "otherNonPackageFile": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/node_modules/.vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+      "bytes": 399,
+      "sha256": "16dfa88d52d91abe9f82bdac128e237d189379e75973678b52ea0305d8331efe",
+      "disposition": "KEEP; root Vitest cache is distinct from the previously cleared apps/web/node_modules/.vite"
+    }
+  },
+  "contentProof": {
+    "packageIndexes": 581,
+    "packageJsonMatches": 581,
+    "installedPackageFilesChecked": 29645,
+    "baseStorePayloadFilesMatched": 29606,
+    "uniqueCASContentHashesVerified": 26549,
+    "issues": [],
+    "unindexedFilesAllBinWrappers": true,
+    "sideEffectPayloadNeeded": [],
+    "readBytes": 1005418501,
+    "elapsedMs": 17730,
+    "nativePackages": [
+      {
+        "name": "@anthropic-ai/claude-agent-sdk-darwin-arm64",
+        "version": "0.3.290",
+        "os": [
+          "darwin"
+        ],
+        "cpu": [
+          "arm64"
+        ],
+        "libc": null
+      },
+      {
+        "name": "@esbuild/darwin-arm64",
+        "version": "0.28.2",
+        "os": [
+          "darwin"
+        ],
+        "cpu": [
+          "arm64"
+        ],
+        "libc": null
+      },
+      {
+        "name": "@rolldown/binding-darwin-arm64",
+        "version": "1.2.12",
+        "os": [
+          "darwin"
+        ],
+        "cpu": [
+          "arm64"
+        ],
+        "libc": null
+      },
+      {
+        "name": "@rollup/rollup-darwin-arm64",
+        "version": "4.64.0",
+        "os": [
+          "darwin"
+        ],
+        "cpu": [
+          "arm64"
+        ],
+        "libc": null
+      },
+      {
+        "name": "@tailwindcss/oxide-darwin-arm64",
+        "version": "4.3.3",
+        "os": [
+          "darwin"
+        ],
+        "cpu": [
+          "arm64"
+        ],
+        "libc": null
+      },
+      {
+        "name": "fsevents",
+        "version": "2.3.3",
+        "os": [
+          "darwin"
+        ],
+        "cpu": null,
+        "libc": null
+      },
+      {
+        "name": "lightningcss-darwin-arm64",
+        "version": "1.32.0",
+        "os": [
+          "darwin"
+        ],
+        "cpu": [
+          "arm64"
+        ],
+        "libc": null
+      },
+      {
+        "name": "lightningcss-darwin-arm64",
+        "version": "1.33.0",
+        "os": [
+          "darwin"
+        ],
+        "cpu": [
+          "arm64"
+        ],
+        "libc": null
+      }
+    ],
+    "installScriptPackages": [
+      {
+        "name": "esbuild",
+        "version": "0.28.2",
+        "scripts": {
+          "postinstall": "node install.js"
+        }
+      }
+    ],
+    "installedPackagePayloadLogicalBytes": 508198354
+  },
+  "boundedConsumerFacts": {
+    "kernel": {
+      "at": "2026-10-06T22:04:02.326888+00:00",
+      "lsof": {
+        "exit": 0,
+        "hits": [],
+        "stderrBytes": 0
+      },
+      "ps": {
+        "exit": 0,
+        "hits": [],
+        "notes": "command text omitted; inspector may appear"
+      }
+    },
+    "knownFourRootsSymlinkScan": {
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management"
+      ],
+      "counts": [
+        2229,
+        2280,
+        2233,
+        0
+      ],
+      "linksIntoCandidate": [],
+      "method": "os.walk no follow symlinks; only four explicitly allowed roots, .git excluded"
+    },
+    "executionManifestSearch": [
+      {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow",
+        "query": "exact candidate absolute path in evidence manifest/dependency/runtime/source JSON filenames",
+        "exitCode": 1,
+        "matchingPaths": []
+      },
+      {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "query": "exact candidate absolute path in evidence manifest/dependency/runtime/source JSON filenames",
+        "exitCode": 1,
+        "matchingPaths": []
+      },
+      {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "query": "exact candidate absolute path in evidence manifest/dependency/runtime/source JSON filenames",
+        "exitCode": 1,
+        "matchingPaths": []
+      },
+      {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "query": "exact candidate absolute path in evidence manifest/dependency/runtime/source JSON filenames",
+        "exitCode": 1,
+        "matchingPaths": []
+      }
+    ],
+    "priorCacheOnlyConfirmation": "web-platform-management/docs/evidence/web-platform/ops-nine-vite-cache/two-cache-manager-confirmation.json: parent dependency roots KEEP; this confirms only .vite, not current dependency authorization",
+    "ownSourceConsumers": [
+      "apps/web/test/workspace-retention.browser.ts",
+      "apps/web/test/workspace-retention.fixture.ts",
+      "project Node/pnpm scripts resolve own installed packages when explicitly rerun"
+    ]
+  },
+  "requiredKeep": [
+    "All source/test/rules/plans/own evidence/Git and package manifests/lockfiles",
+    "Exact generated bin wrappers and installed-layout metadata pending preservation/reconstruction plan; 26 do not match bounded donor paths after root substitution",
+    "Local pnpm CAS and indexes used by the proof; they were read, not changed",
+    "Any dependency directory with an unconfirmed external/frozen consumer",
+    "Root node_modules/.vite/vitest result file399B: separate unreviewed cache, not covered by prior apps/web cache permission."
+  ],
+  "gaps": [
+    "No full dependency restoration or package manager execution performed; package content availability is verified, install replay is NOT_RUN.",
+    "Generated pnpm shims contain root/peer-layout-specific paths; fixed lock alone does not recover these exact bytes. 44 normalized matches, 26 unmatched need exact retention or further narrow proof.",
+    "No global no-consumer claim: only allowed root/I02/F01/Web-management filesystem and named evidence inputs checked; no other 196 trees, HOME scan, or dynamic code imports.",
+    "Prior cache release/owner confirmation does not itself retire node_modules; authoritative dependency-specific owner/frozen-input confirmation remains needed before any separate cleanup decision.",
+    "Current native platform is Darwin arm64; pending esbuild build preserved as installed, no rebuild or cross-platform readiness inferred.",
+    "Logical 508636624 bytes / allocated blocks 593920000 are not measured reclaimable volume bytes (APFS cloning/dedupe possible)."
+  ],
+  "operations": {
+    "projectWrites": 0,
+    "dependencyWrites": 0,
+    "install": 0,
+    "restore": 0,
+    "tests": 0,
+    "provider": 0,
+    "Chrome": 0,
+    "PGExperiments": 0,
+    "coordinationReadonly": 1
+  },
+  "support": [
+    {
+      "path": "/tmp/flow-workspace-cache-dependency-inventory.json",
+      "bytes": 417687,
+      "sha256": "3e3934fceb097874cfb0ecdfc4b9d263f112ed7c355e5d3bf04deb2f833e67f3"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-store-comparison.json",
+      "bytes": 80021,
+      "sha256": "2d62197267c2da0fcd939a60d19f1dab0e3c642719413c3e12fc2f6ccdcea544"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-layout-comparison.json",
+      "bytes": 560433,
+      "sha256": "045c6a51a9777b61b3370cc95d2d8d17843a00f025c374eac913118fef6e930f"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-kernel.json",
+      "bytes": 220,
+      "sha256": "d514731444956a252362691881888af9c7e6842e44e42107ac16dda629061731"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-current-claim.json",
+      "bytes": 1541,
+      "sha256": "d21bcbfcfc775fc892eb778d51c85e02598bdbec091cf721b1bb6388ac81518c"
+    }
+  ]
+}
