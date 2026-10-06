@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-06 20:44:15 UTC",
+  "reviewedExecutionTarget": "93dacd96dcbab935a4e9bde75de0ffdc5a550d09",
+  "productTarget": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+  "inputManifestSha256": "89a8ae8de72f1af0239e364cec6243b422accb0585a4203932c9232eee6f383b",
+  "state": "PASSED",
+  "selected": 2,
+  "passed": 2,
+  "exit": 0,
+  "wallSeconds": 0.77369391603861,
+  "files": [
+    {
+      "path": "docs/evidence/svc07/pg-run-reservation.json",
+      "bytes": 207,
+      "sha256": "a79abf92911953df030cb4f1fea2a00a7049f28abf0749dcdc7a407f5ee60596",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-result.json",
+      "bytes": 1645,
+      "sha256": "c4a4de025415c89c540c5ea18cf403f429c691813ef592e199921426fa2844d8",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-output.log",
+      "bytes": 537,
+      "sha256": "67ff4bbb3a6dbce4d244dafc3d8862ddf19edf1a6d9c5d6c616cfd6a7ff93652",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-exit.json",
+      "bytes": 2075,
+      "sha256": "92b76886f4ed0d97c1c03784d8a35b96be463a6a4e0ac29a8df48fd29e7d429d",
+      "mode": "0o600"
+    }
+  ],
+  "limitations": [
+    "Public transaction with real local PostgreSQL disconnect only; HTTP consumers not run",
+    "No COMMIT acknowledgement-loss injection",
+    "Original supervisor fixture EPERM unknowns remain historical unknown; actual PG process group confirmed absent"
+  ],
+  "windowReturned": true
+}

@@ -33,3 +33,10 @@
 - 源码：[pg-transaction.test.ts](../../docs/evidence/svc07/pg-transaction.test.ts)、[固定执行封套](../../docs/evidence/svc07/execute-pg-once.py)、[精确边界/命令](../../docs/evidence/svc07/pg-window.md)。
 - 局部types v2 exit0；监督v3 6选6过仅自有process接缝；产品15fake证据保留且不重跑/累计。监督首红与两个明确UNKNOWN案例保留，不能由6过推断全部组消失。
 - Mika已中间只读核v3与三态/即时spawn/主错误保留；正式approval仍PENDING，需绑定固定target。实际PG/HTTP/main仍NOT_RUN，不提前开窗。
+
+
+## PG准备packet正式独审与实际结果分界
+
+Mika / gpt-6-astra，2026-10-06 20:37UTC，绑定 `93dacd96dcbab935a4e9bde75de0ffdc5a550d09`，manifest `89a8ae8de72f1af0239e364cec6243b422accb0585a4203932c9232eee6f383b`：**APPROVED /0 P1/P2**。19文件334857B均Git=WT且len/hash相符；五未来输出在审查时不存在。范围仅准备包/静态源码/raw复核，监督6过不推断全部children gone，PGID391 UNKNOWN/EPERM保留。此条取代上文packet待审状态，产品e28原approval不变。
+
+Lead窗口后owner执行一次，真实PG2/2及cleanup CONFIRMED，见[实际结果](../../docs/evidence/svc07/pg-checks.md)。实际结果为owner新证据，未借准备approval声称已完成结果独审；HTTP消费者/main仍未集成/未验证。
