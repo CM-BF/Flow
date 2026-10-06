@@ -22,12 +22,12 @@
     },
     "human": {
       "delivery": {
-        "state": "review",
+        "state": "integration",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 2,
-      "output": "独审发现的文件替换挂起风险已修复并定向验证，等待增量复审",
+      "output": "显式原生配置片段及文件替换风险修复已通过独审，等待主线集成",
       "next": "集成已验证的配置片段；生产启动另作后继",
       "blocker": {
         "state": "none",
@@ -53,9 +53,9 @@
     "taskId": "R05D",
     "owner": "native_center_owner / gpt-6-astra",
     "branch": "codex/codex-native-launch",
-    "branchState": "in-review",
-    "updatedAt": "2026-10-06T10:12:48.000Z",
-    "updatedRecord": "2026-10-06 10:12:48 UTC",
+    "branchState": "ready-for-integration",
+    "updatedAt": "2026-10-06T10:13:50.000Z",
+    "updatedRecord": "2026-10-06 10:13:50 UTC",
     "todos": [
       {
         "id": "R05D-01",
@@ -79,7 +79,7 @@
         "id": "R05D-04",
         "state": "in-progress",
         "owner": "native_center_owner",
-        "evidence": "D0固定证据待独审；03后继不混入本片"
+        "evidence": "D0独立APPROVED待main receipt；03后继不混入本片"
       }
     ],
     "errors": [],
@@ -90,15 +90,15 @@
       "target": "178ef49e568147849e63e08b3f7211ee5df823d3",
       "record": "PASSED 178ef49e568147849e63e08b3f7211ee5df823d3：继承72检查；P2修复定向1通过/19未选；root noEmit0，未重跑72"
     },
-    "reviewRecord": "[review.md](review.md)，CHANGES_REQUESTED；P2已修待增量复审",
+    "reviewRecord": "[review.md](review.md)，APPROVED；P2 CLOSED",
     "mainRecord": "R05D未集成；基线f181d84包含独审R05C/S01",
     "next": "",
     "risks": "",
     "decisions": ""
   },
   "review": {
-    "state": "changes_requested",
-    "record": "CHANGES_REQUESTED — owner已修复P2，等待增量复审",
+    "state": "approved",
+    "record": "APPROVED — D0配置/构造；实际app-server/生产factory仍NOT_RUN",
     "target": "178ef49e568147849e63e08b3f7211ee5df823d3"
   }
 }

@@ -1,6 +1,6 @@
 # R05D 独立审查
 
-状态：CHANGES_REQUESTED — owner已修复P2，等待增量复审
+状态：APPROVED — D0配置/构造；实际app-server/生产factory仍NOT_RUN
 
 Base：f181d84b5fb3652d62e2a181acff442d42b3e066。D0 target固定，空review不表示通过。Review默认只读，源码修复交owner。
 
@@ -12,4 +12,6 @@ D0 scope：configuration.ts、configuration.test.ts、native-harness/codex/launc
 
 ## D0 独审finding与修复
 
-Execution Lead完整读初始4file delta、24 manifest条目fixed/current一致与50+22/root types0原证据；发现1个P2：stat后open(r)遇路径替换FIFO可能无限等待。其余无blocking。Owner修复commit 178ef49e568147849e63e08b3f7211ee5df823d3，改为O_RDONLY|O_NONBLOCK再fstat；定向test在真实stat后unlink/mkfifo，断言非阻塞flags、拒绝并close handle恰一次。1选择通过/19未选，root tsc0，未重跑72。固定增量[d0-fifo-manifest.json](../../docs/evidence/r05d/d0-fifo-manifest.json)。等待Lead增量只读复审，尚非APPROVED。
+Execution Lead完整读初始4file delta、24 manifest条目fixed/current一致与50+22/root types0原证据；发现1个P2：stat后open(r)遇路径替换FIFO可能无限等待。其余无blocking。Owner修复commit 178ef49e568147849e63e08b3f7211ee5df823d3，改为O_RDONLY|O_NONBLOCK再fstat；定向test在真实stat后unlink/mkfifo，断言非阻塞flags、拒绝并close handle恰一次。1选择通过/19未选，root tsc0，未重跑72。固定增量[d0-fifo-manifest.json](../../docs/evidence/r05d/d0-fifo-manifest.json)。Execution Lead增量只读APPROVED 178ef49e568147849e63e08b3f7211ee5df823d3，P2 CLOSED。已完整读初始4源/此次2文件delta，核24原manifest+9增量条目、原50+22与新FIFO1/19未选、tsc0原raw，未重跑。O_NONBLOCK/fstat/finally及真实FIFO替换符合有界入口；未知JSON拒绝、仅受信factory，旧Claude类型/profile/lock/main保持，无其它P1/P2。批准仅D0配置/构造，真实启动/production factory仍NOT_RUN。
+
+独审记录时间：2026-10-06 10:13:50 UTC，源码停写供集成。

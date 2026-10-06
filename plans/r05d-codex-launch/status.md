@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:12:48 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:13:50 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-002](../../../plan-status-review/plans/flow-002-provider-harness/plan.md) |
@@ -12,19 +12,19 @@
 | Branch | codex/codex-native-launch |
 | 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / D0 178ef49e568147849e63e08b3f7211ee5df823d3；后续仅metadata |
 | 工作树dirty状态 | D0四源码固定冻结；仅本scope evidence/status更新 |
-| 工作分支状态 | in-review |
-| 本片段交付阶段 | review |
+| 工作分支状态 | ready-for-integration |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 178ef49e568147849e63e08b3f7211ee5df823d3：继承72检查；P2修复定向1通过/19未选；root noEmit0，未重跑72 |
 | 已集成main状态 / HEAD | R05D未集成；基线f181d84包含独审R05C/S01 |
 | 实现目标 | 178ef49e568147849e63e08b3f7211ee5df823d3 |
 | 实现范围 | apps/runner/src/configuration.ts, apps/runner/src/configuration.test.ts, apps/runner/src/native-harness/codex/launch.ts, apps/runner/src/native-harness/codex/launch.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 独审发现的文件替换挂起风险已修复并定向验证，等待增量复审 |
+| 当前产出 | 显式原生配置片段及文件替换风险修复已通过独审，等待主线集成 |
 | 下一可用交付 | 集成已验证的配置片段；生产启动另作后继 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，CHANGES_REQUESTED；P2已修待增量复审 |
+| Review | [review.md](review.md)，APPROVED；P2 CLOSED |
 | Claim | 47a23186-9f73-4032-bb76-d31ab5bf442c v1；5源码+plans/docs，main.ts尚未领取 |
 | 架构影响 | 本地配置→受信factory→现descriptor/transport/host；固定架构数据待Lead于已审target登记 |
 
@@ -33,7 +33,7 @@
 | R05D-01 | completed | native_center_owner | [claim](../../docs/evidence/r05d/claim.json)、[Interface](../../docs/evidence/r05d/interface.md)，R05C release v2 |
 | R05D-02 | completed | native_center_owner | 固定178ef49e568147849e63e08b3f7211ee5df823d3；[manifest](../../docs/evidence/r05d/d0-fixed-manifest.json)，72检查/root types0 |
 | R05D-03 | pending | native_center_owner | S01 main.ts移交/Mika R06 recipe与自然通知证据待固定 |
-| R05D-04 | in-progress | native_center_owner | D0固定证据待独审；03后继不混入本片 |
+| R05D-04 | in-progress | native_center_owner | D0独立APPROVED待main receipt；03后继不混入本片 |
 
 本status唯一手填事实源；等待Lead登记权威source并聚合。0真实app-server/auth/provider。R05C已main，仅后继保留release回执，不再修改旧scope。
 
