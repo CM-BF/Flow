@@ -1,5 +1,10 @@
 # WPF-MATURE-02 已审片段集成收据
 
+当前R06接收：2026-10-06 12:15:20 UTC核五源077=ownerWT=main362af3 Git/WT，见[逐blob证据](r06-main-accepted.json)。先停止五路径写入，再[原子amend v5交回](r06-source-handback-receipt.json)，其他七scope保留。19零child/strict沿原证据，Lead集成root/Web types0；未重测、未运行provider。薄入口main接收尚未确认。以下保留此前时点的集成准备记录，旧“未main/v2/v4持有”等均为历史；sandbox67档案及6fe计量快照不变。
+
+本段沿本地find-skills方法与clean-code（sickn33固定bdacd76）复核单一事实源、准确范围、错误/unknown边界与无重复进度；纯metadata，无行为变化。
+
+
 记录2026-10-06 10:20:00 UTC；owner chatui01_owner/gpt-6-astra，co-lead Mika。当前权威状态见[status](../../../plans/wpf-mature-02-harness-capabilities/status.md)，本文件只交付固定审查输入，不复制main进度。fresh ledger确认claim0dd97484-f0ce-4738-8075-505bd5e2541a v2 ACTIVE，HEAD0ddb2a4ffb8e434af7ec2dc1902ee6b413a48ec3 clean后更新metadata。
 
 | 可独立接收片段 | 已审target与证据 | 范围限制 |

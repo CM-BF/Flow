@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-10-06T12:15:20.302491+00:00",
+  "ownerHeadBeforeMetadata": "6fe67ce6e2ea8fe4af58fb7e138bfdec20bbd3ea",
+  "approvedSource": "0778847702e595405f6cba0de51c1058b1436504",
+  "main": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "mainReceipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/native-sink-workspace-comparison.json",
+  "sources": [
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc",
+      "approvedGitEqualsOwnerEqualsMainGitEqualsMainWT": true
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843",
+      "approvedGitEqualsOwnerEqualsMainGitEqualsMainWT": true
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.test.ts",
+      "bytes": 10273,
+      "sha256": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575",
+      "approvedGitEqualsOwnerEqualsMainGitEqualsMainWT": true
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31",
+      "approvedGitEqualsOwnerEqualsMainGitEqualsMainWT": true
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828",
+      "approvedGitEqualsOwnerEqualsMainGitEqualsMainWT": true
+    }
+  ],
+  "validation": "Historical 19 zero-child checks and strict reused; Lead integration root/Web types exit0. No tests or child run by this acceptance.",
+  "boundary": "Five production sources only; experimental thin consumer integration remains unconfirmed. No real provider/isolation/all-writer settlement proof.",
+  "historicalAccounting": "Sandbox67 run/raw/archive remain frozen at b2a77cf3 and review/accounting snapshot6fe; this is a separate R06 acceptance metadata stage."
+}

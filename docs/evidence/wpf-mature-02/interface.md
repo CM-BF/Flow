@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [R06五源已main接收/逐blob核验](r06-main-accepted.json)；已停写并完成[claim v5部分交回](r06-source-handback-receipt.json)。main362af3只接收已审生产seam；薄consumer仍待单独确认，诊断窗口不重开。
+
 - [Sandbox syscall 67唯一窗口结果](sandbox67/run-report.md)：1编译/2目标，控制成功，新profile regular仍SIGABRT/no report；measurement未完成，cleanup/accounting完成。Mika于12:10:08 UTC接收b2a77cf3 faithful FAIL；窗口已消费，不重试或推断因果。
 - [P04已main接收的权威比对回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/runner-read-fence-source-comparison.json)。覆盖先前移交历史；P04最终owner064183b984f0dd7bc6818ef84e68dbc9e4fc5de7，release实际以[外部COMMITTED回执](/tmp/flow-p04-final-release-receipt-20261006.json)为准，详情只查权威输入。
 
