@@ -38,7 +38,7 @@ async function run() {
   const event = (name: string, facts: object = {}) => (evidence.events as unknown[]).push({ name, at: new Date().toISOString(), ...facts });
   const child = (args: string[], env: Record<string, string>) => {
     const result = spawn(process.execPath, args, { stdio: ['ignore', 'pipe', 'pipe', 'ipc'], env: { ...process.env, ...env } });
-    result.stdout.resume(); result.stderr.resume();
+    result.stdout!.resume(); result.stderr!.resume();
     children.push(result);
     return result;
   };
@@ -172,6 +172,12 @@ async function run() {
     await expect(second.page.getByLabel('Fixture result content')).toHaveText(artifact.content.trim());
     await expect(second.page.locator('.version code')).toHaveText(artifact.artifactVersion!);
     assert.equal(detailRequests.length, 1);
+    await second.page.getByRole('button', { name: /Verification passed/ }).click();
+    const displayedVerification = second.page.getByLabel('Verification passed content');
+    await expect(displayedVerification).toContainText(artifact.artifactVersion!);
+    await expect(displayedVerification).toContainText(JSON.parse(verification.content).inputDigest);
+    await expect(displayedVerification).toContainText('"result": "passed"');
+    assert.equal(detailRequests.length, 2);
     await screenshots(second.page, 'artifact');
     await second.page.setViewportSize({ width: 390, height: 844 });
     assert.equal(await second.page.locator('body').evaluate(element => element.scrollWidth), 390);
