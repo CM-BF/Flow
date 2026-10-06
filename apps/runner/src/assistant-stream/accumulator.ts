@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import { createHash, type Hash } from 'node:crypto';
 import type { SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import { ASSISTANT_ATTEMPT_BYTES, ASSISTANT_PATCH_BYTES, type AssistantStreamData, type AssistantStreamMarker } from '../../../../packages/contracts/src/assistant-stream.js';
 const hash = (text:string) => createHash('sha256').update(text).digest('hex');
@@ -6,7 +6,7 @@ type Phase = AssistantStreamData['phase'];
 type Reason = AssistantStreamData['reason'];
 interface Block {
   session:string; message:string; index:number; source:string; id:string;
-  content:string; sent:number; revision:number; phase:Phase; reason:Reason; dirty:boolean; truncated:boolean; verified:boolean;
+  content:string; sent:number; sentBytes:number; prefixHash:Hash; revision:number; phase:Phase; reason:Reason; dirty:boolean; truncated:boolean; verified:boolean;
 }
 /** Maps only root text. Missing/ambiguous native identity never creates a guessed block. */
 export class AssistantTextAccumulator {
@@ -64,7 +64,7 @@ export class AssistantTextAccumulator {
       const key=JSON.stringify([this.session,this.current,event.index]);
       if (this.blocks.has(key)) return this.invalidate('source-gap');
       if (this.blocks.size>=256) { this.stopped=true; return this.invalidate('truncated'); }
-      const block:Block={session:this.session,message:this.current,index:event.index,source:frame.uuid,id:hash(key),content:'',sent:0,revision:0,phase:'streaming',reason:null,dirty:false,truncated:false,verified:false};
+      const block:Block={session:this.session,message:this.current,index:event.index,source:frame.uuid,id:hash(key),content:'',sent:0,sentBytes:0,prefixHash:createHash('sha256'),revision:0,phase:'streaming',reason:null,dirty:false,truncated:false,verified:false};
       this.blocks.set(key,block);
       return this.append(block,event.content_block.text,frame.uuid);
     }
@@ -138,11 +138,12 @@ export class AssistantTextAccumulator {
     const patches:AssistantStreamData[]=[];
     do {
       const text=utf8Prefix(block.content.slice(block.sent),ASSISTANT_PATCH_BYTES);
-      const fromBytes=Buffer.byteLength(block.content.slice(0,block.sent));
-      block.sent+=text.length;
+      const fromBytes=block.sentBytes;
+      block.sent+=text.length; block.sentBytes+=Buffer.byteLength(text);
+      block.prefixHash.update(text);
       const last=block.sent===block.content.length;
       patches.push({type:'assistant-stream',streamId:block.id,nativeSessionId:block.session,nativeMessageId:block.message,parentToolUseId:null,source:'claude.sdk.stream',sourceMessageId:block.source,
-        blockIndex:block.index,revision:++block.revision,fromBytes,text,prefixDigest:hash(block.content.slice(0,block.sent)),phase:last?block.phase:'streaming',reason:last?block.reason:null,truncated:last&&block.truncated});
+        blockIndex:block.index,revision:++block.revision,fromBytes,text,prefixDigest:block.prefixHash.copy().digest('hex'),phase:last?block.phase:'streaming',reason:last?block.reason:null,truncated:last&&block.truncated});
     } while(block.sent<block.content.length);
     block.dirty=false;
     return patches;

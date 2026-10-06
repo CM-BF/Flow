@@ -1,0 +1,96 @@
+{
+  "startedAt": "2026-10-06T17:30:46.343318+00:00",
+  "limitSeconds": 30,
+  "rawLimitBytes": 2097152,
+  "streamLimitBytes": 2031616,
+  "tailReservedBytes": 65536,
+  "steps": [
+    {
+      "label": "red",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/chat06p03/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "apps/runner/src/assistant-stream/accumulator-incremental.test.ts",
+        "-t",
+        "public coalescer preserves"
+      ],
+      "exitCode": 1,
+      "elapsedMs": 607.2368749883026,
+      "ownedProcessExited": true,
+      "pipesReachedEOF": true,
+      "streamsClosed": true,
+      "ownedGroupAbsent": true
+    },
+    {
+      "label": "green",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/chat06p03/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "apps/runner/src/assistant-stream/accumulator-incremental.test.ts"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 417.0037501025945,
+      "ownedProcessExited": true,
+      "pipesReachedEOF": true,
+      "streamsClosed": true,
+      "ownedGroupAbsent": true
+    },
+    {
+      "label": "strict",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--project",
+        "docs/evidence/chat06p03/tsconfig.json"
+      ],
+      "exitCode": 0,
+      "elapsedMs": 1011.2283750204369,
+      "ownedProcessExited": true,
+      "pipesReachedEOF": true,
+      "streamsClosed": true,
+      "ownedGroupAbsent": true
+    }
+  ],
+  "providerCalls": 0,
+  "PG": 0,
+  "failure": null,
+  "freeBeforeBytes": 1199435776,
+  "ownedTemporaryRoot": {
+    "createdPath": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-chat06p03-y4cgem35",
+    "identity": {
+      "dev": 16777234,
+      "ino": 123101172
+    },
+    "removed": true,
+    "entries": 3,
+    "logicalBytes": 1357700,
+    "allocatedBytes": 1359872
+  },
+  "implementationSha256": "d81c8c0c2b975f257b0efb934fc3279633f73ef3a41c68f5634580b311c6a4fc",
+  "syntheticTotal": {
+    "bytes": 616486,
+    "frames": 148
+  },
+  "rawBytes": 4973,
+  "finishedAt": "2026-10-06T17:30:48.383059+00:00",
+  "elapsedBeforeReceiptMs": 2039.753625052981,
+  "rawAccounting": {
+    "streamObservedBytes": 4973,
+    "streamLimitBytes": 2031616,
+    "tailReservedBytes": 65536,
+    "tailIncludes": "measurement JSON, reservation, this receipt and CLI"
+  }
+}

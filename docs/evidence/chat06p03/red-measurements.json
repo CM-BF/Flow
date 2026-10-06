@@ -1,0 +1,185 @@
+{
+  "prior": {
+    "bytes": 0,
+    "frames": 0
+  },
+  "total": {
+    "bytes": 269892,
+    "frames": 42
+  },
+  "thisRun": {
+    "bytes": 269892,
+    "frames": 42
+  },
+  "measurements": [
+    {
+      "kind": "actual-input-bytes",
+      "baseline": {
+        "hashInputBytes": 495379,
+        "byteLengthInputBytes": 589824
+      },
+      "candidate": {
+        "hashInputBytes": 495379,
+        "byteLengthInputBytes": 589824
+      },
+      "priorPrefixBytes": 294912,
+      "newTextBytes": 65536,
+      "outputDigest": "4a225e653e8c94507b9aed89843db83c9846433bf6efa133c2ddf285c1eb28e7",
+      "patches": [
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-4",
+          "blockIndex": 0,
+          "revision": 1,
+          "fromBytes": 0,
+          "prefixDigest": "18f8d2eb4a387bbc1e37ec099a7326805739bc9c99ecf0f14b808a5bcb65bf49",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-6",
+          "blockIndex": 0,
+          "revision": 2,
+          "fromBytes": 8192,
+          "prefixDigest": "1536c422c31cc98834759d7085cda394a3510a03d78188248986a6b1a7207d03",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-8",
+          "blockIndex": 0,
+          "revision": 3,
+          "fromBytes": 16384,
+          "prefixDigest": "9ab50e8c4b1deb044f03c271562e113d4b260729051134258096ae972467f931",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-10",
+          "blockIndex": 0,
+          "revision": 4,
+          "fromBytes": 24576,
+          "prefixDigest": "427965f49a857174e308658227325dbd23ff4eccbe399d5ad4817dda3ec79f87",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-12",
+          "blockIndex": 0,
+          "revision": 5,
+          "fromBytes": 32768,
+          "prefixDigest": "672f5349216f25c12860319716042fc0d86695debb77e7b144d26f7ca4bc7286",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-14",
+          "blockIndex": 0,
+          "revision": 6,
+          "fromBytes": 40960,
+          "prefixDigest": "d4585f00edc111a1c3f25ab78e7a606b848f93118ba5231993d18bd365ee0d07",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-16",
+          "blockIndex": 0,
+          "revision": 7,
+          "fromBytes": 49152,
+          "prefixDigest": "df832c2f1763519fb078f325037c8837a90dbcefdbcde25937b4833df93d9497",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-18",
+          "blockIndex": 0,
+          "revision": 8,
+          "fromBytes": 57344,
+          "prefixDigest": "1f8745f0d2d1387ec1af2211a3cf417b2e9e885e853472649c1d979d0e9370e3",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-20",
+          "blockIndex": 0,
+          "revision": 9,
+          "fromBytes": 65536,
+          "prefixDigest": "1f8745f0d2d1387ec1af2211a3cf417b2e9e885e853472649c1d979d0e9370e3",
+          "phase": "block-complete",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 0
+        }
+      ]
+    }
+  ]
+}
