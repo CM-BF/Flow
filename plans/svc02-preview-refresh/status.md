@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 08:25 UTC |
+| 最近更新时间 | 2026-10-06 08:30 UTC |
 | 单一status owner / model | assignment_review / gpt-6-astra；原实现作者runner_owner |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh |
 | Branch | codex/preview-refresh |
 | 工作基线 / HEAD | 本次准备基线32c371d389a913f8dd71c3bd8b98dd0697411256；旧debcec受控ff；原实现9aa已完成 |
 | 工作树dirty状态 | 工具源码冻结；本次操作与证据收口提交后clean |
-| 工作分支状态 | in-progress；原实现/b54部署已完成，新32c更新仅准备 |
-| 本片段交付阶段 | review |
+| 工作分支状态 | completed；原实现与本次32c更新/显式恢复完成 |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 9aa790552cb8847d6feb8c8f90c870407a54e572：9 PG/HTTP + 12 host/直接消费者；host源d122到target仅缩进，tsc通过 |
 | Review | APPROVED 9aa790552cb8847d6feb8c8f90c870407a54e572：Root独立只读，未重跑 |
-| 已集成main状态 / HEAD | 原维护实现9aa已集成；实际安装于07:45:26核sourceAtStart b54de1dbb08e3ccc7d33a27295a318f2799e76ae；显式恢复accepting v6，此为时点观察不追逐后继metadata |
+| 已集成main状态 / HEAD | 原实现9aa已集成；实际部署32c371d389a913f8dd71c3bd8b98dd0697411256，08:29:40观察accepting v9；本次操作回执待Lead接收 |
 | 实现目标 | 9aa790552cb8847d6feb8c8f90c870407a54e572 |
 | 实现范围 | packages/contracts/src/runner-maintenance.ts, apps/server/src/runner-maintenance/, apps/server/src/runners.ts, packages/storage/migrations/016-runner-maintenance.sql, tools/personal-preview/ |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 现有服务继续接收，下一版更新方案与只读状态已准备 |
-| 下一可用交付 | 新窗口获准后更新服务，核对保留事实并等待明确恢复接收 |
-| 当前阻塞 | ACTIVE: 本次维护和恢复窗口尚未授权，现有服务保持运行 |
+| 当前产出 | 新版已恢复接收，用户提交的任务正常继续；数据和原配置保留 |
+| 下一可用交付 | 本片段已交付；后继更新另行安排 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 新持久runner维护状态与尝试领取门禁；待Lead同步固定架构视图 |
 
@@ -34,8 +34,8 @@
 | SVC02-07 | completed | assignment_review | GO RESUME_GO SVC02-b54-resume-0745；一次fresh/一次resume，07:45:23 accepting v6；[恢复证据](../../docs/evidence/svc02/refresh-b54-resume-result.md)，窗口CLOSED |
 
 | SVC02-08 | completed | assignment_review | [32c方案](../../docs/evidence/svc02/refresh-32-proposal.md)、[只读事实](../../docs/evidence/svc02/refresh-32-readonly-facts.json)；fresh claim/固定源/依赖核对，0服务写入 |
-| SVC02-09 | pending | assignment_review | 等待新GO窗口，drain→hold→refresh32c及数据保留验证；未执行 |
-| SVC02-10 | pending | assignment_review | 新版maintenance回执后另等GO明确resume；未执行 |
+| SVC02-09 | completed | assignment_review | GO SVC02-32窗口实际refresh32c；[保留结果](../../docs/evidence/svc02/refresh-32-result.md)，预期维护时间变化已获解释接受 |
+| SVC02-10 | completed | assignment_review | GO SVC02-32-user-queued-0829明确恢复用户合法请求，一次resume v9；窗口CLOSED |
 
 06:53 UTC fresh核claim e8a8767c-4387-4c03-93a6-02153bb491c4 v2仍归本owner；无当前修复，源码/服务操作已停止，本次metadata提交后release，外部实际回执为 `/tmp/flow-svc02-release-receipt.json`。未来配置/部署需新take和明确维护窗口；[初始receipt](../../docs/evidence/svc02/claim.json)、[移交领取入口receipt](../../docs/evidence/svc02/claim-amend-runners-receipt.json)。05:36:59Z显式停写并原子移出 apps/server/src/runners.ts，后继K02由Lead协调领取；其余6scope此前为部署证据与回修保留，现本片交付后释放。历史实现范围仍按已审target追溯，不表示未来写权。截至05:37仅只读；05:38经Root窗口批准，由本owner唯一执行bootstrap/refresh，现保持maintenance；0新query。
 
@@ -78,3 +78,9 @@
 2026-10-06 07:49 UTC：Lead MAIN_RECEIPT main/origin84fdecebbb4939e43710fb17e48884cc49d1d030已含c28收口记录；本地核c28祖先、tools零diff。runtime保持已有b54/v6时点回执，不为metadata刷新；无新服务/DB/模型检查。全部本claim范围停止写入，此metadata提交后fresh原子release d582v1，实际receipt位于/tmp/flow-svc02-b54-release-receipt.json。
 
 2026-10-06 08:25 UTC：原d582已released，新claim a5c0fc33-356c-434b-8508-67796d21d414 v1已fresh take，debcec受控ff至固定32c。一次只读全库/正式身份/进程与依赖核对完成；现runtime仍b54/v6，2 succeeded/0未完、queue仅promoted。无drain/stop/query/tab，新窗口未授权。原实现completed与既有approval不变；本次方案独立待审。
+
+2026-10-06 08:28 UTC：GO明确SVC02-32至08:40条件窗口；一次fresh/一次bootstrap至v7/一次fresh全库0后refresh成功v8，source32c，仍maintenance。更新后54个既有业务表摘要/旧迁移记录/config/profile/native目录保留。初checker因未预先排除maintenance_updated_at报runnerhash变化，已核固定store只更改四维护列并保留原false；[暂停回执](../../docs/evidence/svc02/refresh-32-paused-receipt.json)明确精度限制。尚未resume，0query/tab。
+
+2026-10-06 08:29 UTC：Root实核并接受第四维护列差异，给RESUME_GO SVC02-32-0828。一次fresh门禁08:28:47.967发现新增queued1，tasks2→3/conversations1→2/turns2→3，attempt仍2/未完0；source/ownedgroups/身份/v8同op通过。按新工作即停条件未调用resume，原任务保留，已同步Root/Lead。原false门禁保存，不改判定。
+
+2026-10-06 08:30 UTC：Root明确恢复用户新queued请求（不是operator实验调用），复用已保存fresh后一次resume成功08:29:29.365/v9。08:29:40后置三owned/source32c/身份通过、4succeeded/未完0。窗口CLOSED；原false保留，operator主动0query/0任务/0tab，停止服务操作，当前claim仅回执metadata。[结果](../../docs/evidence/svc02/refresh-32-result.md)与[manifest](../../docs/evidence/svc02/refresh-32-deployment-manifest.json)。

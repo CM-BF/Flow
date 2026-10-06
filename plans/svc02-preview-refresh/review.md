@@ -28,3 +28,7 @@ Review target commit：9aa790552cb8847d6feb8c8f90c870407a54e572。现场clean129
 ## 2026-10-06 08:25 UTC 新32c维护方案
 
 原实现9aa及历史部署批准保持。本次仅[新方案](../../docs/evidence/svc02/refresh-32-proposal.md)/固定只读事实，等待GO新窗口；NOT_STARTED是本次操作方案评估，不撤销原工具批准。不由作者自审工具或声称获新resume许可。
+
+## 2026-10-06 08:30 UTC 32c窗口正式回执
+
+Root已独立读本次准备/事实/固定maintenance UPDATE，接受预期第四维护时间列差异，原false不改。GO EXECUTE_AND_RESUME_GO SVC02-32，以及后继RESUME_GO SVC02-32-0828与SVC02-32-user-queued-0829，分别覆盖条件窗口、保留解释与合法用户新增queued放行。最后一次resume实际v9/同32c，窗口CLOSED。此为操作授权/观察接收，不是作者对新产品自审。源固定与[实际结果](../../docs/evidence/svc02/refresh-32-result.md)边界明确；未调用operator模型/重跑产品测试，用户正常任务不混入实验预算。

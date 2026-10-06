@@ -1,0 +1,1859 @@
+{
+  "observedAt": "2026-10-06T08:26:51.795Z",
+  "operation": "read-only preparation; no maintenance writes, POST, migration, stop, start, reload or provider query",
+  "target": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "private": {
+    "directoryMode": "700",
+    "files": {
+      "config.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 672
+      },
+      "claude.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 145
+      },
+      "state.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 1217
+      },
+      "maintenance.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 312
+      }
+    },
+    "nativeConfigurationMatches": true,
+    "nativeDirectory": {
+      "mode": "700",
+      "device": 16777234,
+      "inode": 117819908
+    },
+    "operationLockPresent": false
+  },
+  "status": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "observedAt": "2026-10-06T08:26:51.964Z",
+    "startedAt": "2026-10-06T07:39:21.636Z",
+    "sourceAtStart": {
+      "head": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+      "dirty": false
+    },
+    "configured": "claude-sonnet-5-5",
+    "provider": "not-probed",
+    "processes": {
+      "center": "running",
+      "runner": "running",
+      "web": "running"
+    },
+    "center": {
+      "url": "http://127.0.0.1:61227",
+      "reachable": true
+    },
+    "webUrl": "http://127.0.0.1:61228",
+    "database": "owned",
+    "work": {
+      "total": 2,
+      "pending": 0,
+      "lastTaskSucceededAt": "2026-10-06T06:02:27.180Z",
+      "lastHeartbeatAt": "2026-10-06T06:02:27.158Z"
+    },
+    "lastError": null,
+    "profile": {
+      "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+      "source": "runner-configured",
+      "model": "claude-sonnet-5-5"
+    },
+    "lastProcessExits": {},
+    "limits": {
+      "maxTurns": 2,
+      "maxBudgetUsd": 0.2,
+      "timeoutMs": 60000,
+      "scope": "per-query-not-project-total"
+    }
+  },
+  "sourceNow": {
+    "head": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+    "dirty": false,
+    "repositoryMatchesMain": true
+  },
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 95468,
+      "pgid": 95468,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Tue Oct  6 00:39:19 2026",
+      "members": [
+        {
+          "pid": 95468,
+          "ppid": 1,
+          "pgid": 95468,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 95820,
+          "ppid": 95468,
+          "pgid": 95468,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "center-main"
+        },
+        {
+          "pid": 96109,
+          "ppid": 95820,
+          "pgid": 95468,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "other-member"
+        }
+      ]
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 1776,
+      "pgid": 1776,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Tue Oct  6 00:39:20 2026",
+      "members": [
+        {
+          "pid": 1776,
+          "ppid": 1,
+          "pgid": 1776,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 1943,
+          "ppid": 1776,
+          "pgid": 1776,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "runner-main"
+        },
+        {
+          "pid": 2151,
+          "ppid": 1943,
+          "pgid": 1776,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "other-member"
+        }
+      ]
+    },
+    "web": {
+      "identity": "running",
+      "pid": 1974,
+      "pgid": 1974,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Tue Oct  6 00:39:20 2026",
+      "members": [
+        {
+          "pid": 1974,
+          "ppid": 1,
+          "pgid": 1974,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 2261,
+          "ppid": 1974,
+          "pgid": 1974,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow/apps/web",
+          "role": "vite"
+        }
+      ]
+    }
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "localRunnerEntrypoints": [
+    {
+      "pid": 1943,
+      "ppid": 1776,
+      "pgid": 1776,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownedGroup": true
+    }
+  ],
+  "database": {
+    "snapshotAt": "2026-10-06T08:26:52.683Z",
+    "markerMatches": true,
+    "runnerIdentityMatches": true,
+    "managedRunnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "taskCounts": [
+      {
+        "status": "succeeded",
+        "count": 2
+      }
+    ],
+    "unfinishedAttempts": [],
+    "unfinishedAttemptCount": 0,
+    "registeredRunners": [
+      {
+        "runner_id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 6,
+        "maintenance_operation_id": null,
+        "unfinished_attempts": 0,
+        "last_heartbeat_at": "2026-10-06T06:02:27.158Z"
+      }
+    ],
+    "profiles": [
+      {
+        "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+        "runner_id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "config_digest": "2c9da6dc3a493615487dd3a39377180c1f7f92558caeb7365a59ef2203c03475",
+        "access": "none",
+        "model": "claude-sonnet-5-5",
+        "active_steering": null
+      }
+    ],
+    "migrationRecords": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T04:35:59.617Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T04:35:59.639Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T04:35:59.650Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T04:35:59.677Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T04:35:59.693Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T04:35:59.739Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T04:35:59.754Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T04:35:59.793Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T04:35:59.812Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T04:35:59.830Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T05:38:48.967Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T05:38:48.985Z"
+      },
+      {
+        "version": 13,
+        "applied_at": "2026-10-06T05:38:48.986Z"
+      },
+      {
+        "version": 14,
+        "applied_at": "2026-10-06T05:38:49.004Z"
+      },
+      {
+        "version": 15,
+        "applied_at": "2026-10-06T05:38:49.027Z"
+      },
+      {
+        "version": 16,
+        "applied_at": "2026-10-06T05:38:40.338Z"
+      },
+      {
+        "version": 17,
+        "applied_at": "2026-10-06T07:39:20.387Z"
+      },
+      {
+        "version": 18,
+        "applied_at": "2026-10-06T07:39:20.346Z"
+      },
+      {
+        "version": 19,
+        "applied_at": "2026-10-06T07:39:20.392Z"
+      },
+      {
+        "version": 20,
+        "applied_at": "2026-10-06T07:39:20.428Z"
+      },
+      {
+        "version": 21,
+        "applied_at": "2026-10-06T07:39:20.459Z"
+      },
+      {
+        "version": 22,
+        "applied_at": "2026-10-06T07:39:20.519Z"
+      },
+      {
+        "version": 23,
+        "applied_at": "2026-10-06T07:39:20.613Z"
+      }
+    ],
+    "migrations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "tableInventory": [
+      "artifacts",
+      "assistant_messages",
+      "assistant_stream_blocks",
+      "assistant_stream_markers",
+      "assistant_stream_patches",
+      "assistant_stream_settlements",
+      "attempts",
+      "commands",
+      "conversation_contexts",
+      "conversation_execution_inputs",
+      "conversation_queue",
+      "conversation_turns",
+      "conversations",
+      "decisions",
+      "details",
+      "execution_profiles",
+      "goal_acceptances",
+      "goal_contexts",
+      "goal_execution_inputs",
+      "goal_executions",
+      "goal_explanations",
+      "goal_graph_applications",
+      "goal_graph_calls",
+      "goal_graph_proposals",
+      "goal_graph_runs",
+      "goal_inputs",
+      "goal_nodes",
+      "goal_tool_calls",
+      "goal_tool_runs",
+      "goals",
+      "knowledge_chunks",
+      "knowledge_sources",
+      "knowledge_versions",
+      "migrations",
+      "native_activities",
+      "plugin_installations",
+      "plugin_operations",
+      "plugin_package_fetch_attempts",
+      "plugin_package_fetch_audit",
+      "plugin_package_fetches",
+      "plugin_revisions",
+      "plugin_versions",
+      "project_revisions",
+      "project_task_bindings",
+      "projects",
+      "protocol_intents",
+      "reconciliation_audit",
+      "reconciliation_retries",
+      "runner_events",
+      "runner_maintenance_audit",
+      "runners",
+      "sessions",
+      "tasks",
+      "timeline",
+      "usage_samples",
+      "workspace_feed",
+      "workspaces"
+    ],
+    "retainedCounts": {
+      "tasks": 2,
+      "attempts": 2,
+      "sessions": 1,
+      "artifacts": 2,
+      "details": 12,
+      "conversations": 1,
+      "conversation_turns": 2,
+      "conversation_queue": 1
+    },
+    "retainedRecords": {
+      "tasks": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "15afe00f4eacf9a8222fde8c18bde7f1"
+          },
+          {
+            "identity": {
+              "id": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "558a148e7d25eacfdefd7df7e527008e"
+          }
+        ]
+      },
+      "attempts": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "72291dd4-d874-442e-8314-2d8bfe920064",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "3032cf5e0c1df8ff879c9e498f82a4c6"
+          },
+          {
+            "identity": {
+              "id": "20578167-d110-4bcc-b5a3-86abebb61147",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "55330caea3973a1de2f3dd0cbc14a9e3"
+          }
+        ]
+      },
+      "sessions": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "e7de6e51-6874-4186-a4a0-5af384c81a07"
+            },
+            "row_digest": "6beebf76fd24a0afd87fab72c34ee1b0"
+          }
+        ]
+      },
+      "artifacts": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+              "version": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631",
+              "artifactId": "784cd197-f10e-4b0b-833b-ab11da5a8432"
+            },
+            "row_digest": "a2bc8ca0bc42737f270548aa1be2e2ce"
+          },
+          {
+            "identity": {
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+              "version": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde",
+              "artifactId": "a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714"
+            },
+            "row_digest": "ebb9a3c219752c5311807a5eb2f167bf"
+          }
+        ]
+      },
+      "details": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "471389b8-a6c0-430c-990c-f991a94ebc4e",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "08d0dbb494034f947060a315db12948e"
+          },
+          {
+            "identity": {
+              "id": "ae4afd13-1abd-4703-9426-6a5ff613f033",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "100adbd2173664cff7af8daf84e65cf2"
+          },
+          {
+            "identity": {
+              "id": "afa4b666-43ee-43b2-9db4-c295bef05f6f",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "4c687ce3a9dd649ac2b04f16a559f2c7"
+          },
+          {
+            "identity": {
+              "id": "501b8c94-d1df-4796-9354-9303a58432ce",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "5b1425be192af07aead239a764292203"
+          },
+          {
+            "identity": {
+              "id": "9286d74f-404b-409a-8512-ddcf8268baa2",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "77215fc8db890222295e59fdfb4f7ebc"
+          },
+          {
+            "identity": {
+              "id": "cdfd5338-efa0-4cd0-a056-bb81e3d2f473",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "8654deb6de35478d88c816045e9f5fdf"
+          },
+          {
+            "identity": {
+              "id": "762e935c-c3a8-4f05-a5bd-ee9318bb6def",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "a73cac8e358f36b9aff8d4d87421a9e5"
+          },
+          {
+            "identity": {
+              "id": "f26665c5-ad47-4b27-a1ad-abce53826515",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "bd8fb52c8ed7b667d13002423ad82ae0"
+          },
+          {
+            "identity": {
+              "id": "b61634d6-fe52-4bc1-b21a-de0f7156b59d",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "c383fe6b473ce0d87012d5b433f043d3"
+          },
+          {
+            "identity": {
+              "id": "941450e7-3222-43d1-aa5c-bd6afd821c09",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "c5615605b3778ae6f0e6d87a380e26f7"
+          },
+          {
+            "identity": {
+              "id": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "dc82341e6d694a968edca71db6fa9cfa"
+          },
+          {
+            "identity": {
+              "id": "1767a778-d1a7-49c6-88f8-88a282bec86b",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "e3947628820b41e3373fe9cb4c02ce01"
+          }
+        ]
+      },
+      "conversations": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [
+          "queue_checked_at"
+        ],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "32b6724ee995664d918c3062c6932c3a"
+          }
+        ]
+      },
+      "conversation_turns": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "0347d173-36c4-4f11-8bf8-3d52b2c2ca45",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+              "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "013143c9d355d7e6dd66063f60863723"
+          },
+          {
+            "identity": {
+              "id": "132570f8-c02f-4917-8866-031f5b6b903c",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+              "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "eec6c6cce6018b11372ff52c7e5157ac"
+          }
+        ]
+      },
+      "conversation_queue": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "02cfb153-b300-421b-bb1a-0135189d8ae2",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+              "sequence": 2,
+              "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "e350606a8d638ae7ea2b40145521e452"
+          }
+        ]
+      },
+      "execution_profiles": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0"
+            },
+            "row_digest": "69f6ce7ecb7d5b7bb804461d8fb755c5"
+          }
+        ]
+      }
+    },
+    "conversationQueue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ],
+    "allOldTables": {
+      "artifacts": {
+        "columns": [
+          "task_id",
+          "artifact_id",
+          "version",
+          "attempt_id",
+          "detail_id"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "a2bc8ca0bc42737f270548aa1be2e2ce"
+          },
+          {
+            "row_digest": "ebb9a3c219752c5311807a5eb2f167bf"
+          }
+        ]
+      },
+      "assistant_messages": {
+        "columns": [
+          "ordinal",
+          "id",
+          "task_id",
+          "attempt_id",
+          "event_id",
+          "sequence",
+          "native_session_id",
+          "source",
+          "source_message_id",
+          "content_digest",
+          "detail_id",
+          "settings",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "43154b29c8cead75861fc2385761b25e"
+          },
+          {
+            "row_digest": "c14587c5e0b08e2717633c2214d68caa"
+          }
+        ]
+      },
+      "assistant_stream_blocks": {
+        "columns": [
+          "id",
+          "task_id",
+          "attempt_id",
+          "first_sequence",
+          "last_sequence",
+          "revision",
+          "bytes",
+          "header",
+          "created_at",
+          "updated_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "assistant_stream_markers": {
+        "columns": [
+          "id",
+          "task_id",
+          "attempt_id",
+          "sequence",
+          "data",
+          "payload_digest"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "assistant_stream_patches": {
+        "columns": [
+          "stream_id",
+          "revision",
+          "task_id",
+          "attempt_id",
+          "event_id",
+          "sequence",
+          "data",
+          "payload_digest",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "assistant_stream_settlements": {
+        "columns": [
+          "attempt_id",
+          "task_id",
+          "final_id",
+          "data",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "attempts": {
+        "columns": [
+          "id",
+          "task_id",
+          "runner_id",
+          "owner_version",
+          "lease_expires_at",
+          "last_sequence",
+          "native_session_id",
+          "completed_at",
+          "last_heartbeat_at",
+          "last_event_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "3032cf5e0c1df8ff879c9e498f82a4c6"
+          },
+          {
+            "row_digest": "55330caea3973a1de2f3dd0cbc14a9e3"
+          }
+        ]
+      },
+      "commands": {
+        "columns": [
+          "operation",
+          "key",
+          "digest",
+          "response"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "1e45744ec82c2934301ed5a69f96b3cf"
+          },
+          {
+            "row_digest": "2670445eaefb3236ff7e3cf23184d579"
+          },
+          {
+            "row_digest": "749eaffc821cb04727e17d3d5ad3c659"
+          },
+          {
+            "row_digest": "cc485423566f56edffe66ac0917d273d"
+          },
+          {
+            "row_digest": "d2afdc0c865eeff7cad3e104d4d42459"
+          }
+        ]
+      },
+      "conversation_contexts": {
+        "columns": [
+          "id",
+          "conversation_id",
+          "project_id",
+          "context_digest",
+          "sources",
+          "raw_bytes",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "conversation_execution_inputs": {
+        "columns": [
+          "id",
+          "context_id",
+          "user_text",
+          "template_version",
+          "execution_prompt",
+          "execution_input_digest",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "conversation_queue": {
+        "columns": [
+          "id",
+          "conversation_id",
+          "sequence",
+          "state",
+          "user_text",
+          "turn_id",
+          "task_id",
+          "turn_number",
+          "created_at",
+          "updated_at",
+          "conversation_input_id"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "e350606a8d638ae7ea2b40145521e452"
+          }
+        ]
+      },
+      "conversation_turns": {
+        "columns": [
+          "id",
+          "conversation_id",
+          "number",
+          "task_id",
+          "user_text",
+          "created_at",
+          "conversation_input_id"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "013143c9d355d7e6dd66063f60863723"
+          },
+          {
+            "row_digest": "eec6c6cce6018b11372ff52c7e5157ac"
+          }
+        ]
+      },
+      "conversations": {
+        "columns": [
+          "id",
+          "title",
+          "harness",
+          "requested",
+          "revision",
+          "created_at",
+          "updated_at",
+          "execution_profile",
+          "queue_paused",
+          "queue_revision",
+          "queue_checked_at",
+          "project_id"
+        ],
+        "excluded": [
+          "queue_checked_at"
+        ],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "32b6724ee995664d918c3062c6932c3a"
+          }
+        ]
+      },
+      "decisions": {
+        "columns": [
+          "task_id",
+          "id",
+          "prompt",
+          "answer",
+          "created_at",
+          "answered_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "details": {
+        "columns": [
+          "id",
+          "task_id",
+          "attempt_id",
+          "title",
+          "kind",
+          "content",
+          "media_type",
+          "artifact_version"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "08d0dbb494034f947060a315db12948e"
+          },
+          {
+            "row_digest": "100adbd2173664cff7af8daf84e65cf2"
+          },
+          {
+            "row_digest": "4c687ce3a9dd649ac2b04f16a559f2c7"
+          },
+          {
+            "row_digest": "5b1425be192af07aead239a764292203"
+          },
+          {
+            "row_digest": "77215fc8db890222295e59fdfb4f7ebc"
+          },
+          {
+            "row_digest": "8654deb6de35478d88c816045e9f5fdf"
+          },
+          {
+            "row_digest": "a73cac8e358f36b9aff8d4d87421a9e5"
+          },
+          {
+            "row_digest": "bd8fb52c8ed7b667d13002423ad82ae0"
+          },
+          {
+            "row_digest": "c383fe6b473ce0d87012d5b433f043d3"
+          },
+          {
+            "row_digest": "c5615605b3778ae6f0e6d87a380e26f7"
+          },
+          {
+            "row_digest": "dc82341e6d694a968edca71db6fa9cfa"
+          },
+          {
+            "row_digest": "e3947628820b41e3373fe9cb4c02ce01"
+          }
+        ]
+      },
+      "execution_profiles": {
+        "columns": [
+          "id",
+          "runner_id",
+          "config_digest",
+          "configuration",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "69f6ce7ecb7d5b7bb804461d8fb755c5"
+          }
+        ]
+      },
+      "goal_acceptances": {
+        "columns": [
+          "goal_id",
+          "explanation_version",
+          "binding"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_contexts": {
+        "columns": [
+          "id",
+          "goal_id",
+          "node_id",
+          "input_version",
+          "project_id",
+          "context_digest",
+          "sources",
+          "raw_bytes",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_execution_inputs": {
+        "columns": [
+          "id",
+          "context_id",
+          "public_prompt",
+          "template_version",
+          "execution_prompt",
+          "execution_input_digest",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_executions": {
+        "columns": [
+          "id",
+          "goal_id",
+          "node_id",
+          "task_id",
+          "input_version",
+          "dependencies",
+          "project_revision",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_explanations": {
+        "columns": [
+          "goal_id",
+          "version",
+          "kind",
+          "text",
+          "source",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_graph_applications": {
+        "columns": [
+          "proposal_id",
+          "project_id",
+          "from_revision",
+          "to_revision",
+          "node_ids",
+          "actor",
+          "applied_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_graph_calls": {
+        "columns": [
+          "run_id",
+          "sequence",
+          "runner_id",
+          "attempt_id",
+          "owner_version",
+          "command_key",
+          "digest",
+          "kind",
+          "proposal_id",
+          "proposal_digest",
+          "applied_revision",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_graph_proposals": {
+        "columns": [
+          "id",
+          "goal_id",
+          "project_id",
+          "base_revision",
+          "goal_digest",
+          "proposal_digest",
+          "input",
+          "source",
+          "node_count",
+          "edge_count",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_graph_runs": {
+        "columns": [
+          "id",
+          "goal_id",
+          "task_id",
+          "version",
+          "scope",
+          "mode",
+          "used_commands",
+          "created_at",
+          "revoked_at",
+          "revocation_reason"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_inputs": {
+        "columns": [
+          "goal_id",
+          "node_id",
+          "version",
+          "input",
+          "project_revision",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_nodes": {
+        "columns": [
+          "goal_id",
+          "node_id",
+          "input_version",
+          "latest_execution_id",
+          "accepted_binding"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_tool_calls": {
+        "columns": [
+          "run_id",
+          "sequence",
+          "attempt_id",
+          "owner_version",
+          "command_key",
+          "digest",
+          "kind",
+          "node_id",
+          "result",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goal_tool_runs": {
+        "columns": [
+          "id",
+          "goal_id",
+          "task_id",
+          "version",
+          "scope",
+          "mode",
+          "used_commands",
+          "created_at",
+          "revoked_at",
+          "revocation_reason"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "goals": {
+        "columns": [
+          "id",
+          "project_id",
+          "original",
+          "explanation_version",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "knowledge_chunks": {
+        "columns": [
+          "source_id",
+          "version",
+          "ordinal",
+          "start_byte",
+          "end_byte",
+          "content",
+          "search_vector"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "knowledge_sources": {
+        "columns": [
+          "id",
+          "project_id",
+          "title",
+          "current_version",
+          "created_at",
+          "updated_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "knowledge_versions": {
+        "columns": [
+          "source_id",
+          "version",
+          "content",
+          "content_digest",
+          "byte_length",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "migrations": {
+        "columns": [
+          "version",
+          "applied_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "0c876627ff8f4c43729d779912ba41c7"
+          },
+          {
+            "row_digest": "109b6602fbead4631900b8dd93ec7337"
+          },
+          {
+            "row_digest": "1403f78934be86c1dfc29c822b8b2694"
+          },
+          {
+            "row_digest": "140ba299ad3364ead7f70695fbfe877f"
+          },
+          {
+            "row_digest": "17162a97d295dd079031411d4fd35fb8"
+          },
+          {
+            "row_digest": "1c218a6a2eb3e45930c5e4add5a7aca3"
+          },
+          {
+            "row_digest": "20df5a932b8b372623a85b61e3b132f7"
+          },
+          {
+            "row_digest": "3013ed1ad1fdf22f3673cdb53887cb88"
+          },
+          {
+            "row_digest": "4e6a4e36299f769c8763702a7d8722b9"
+          },
+          {
+            "row_digest": "540997db381a093ee0467c0c38db1da2"
+          },
+          {
+            "row_digest": "54b4d32c8e77b5d16fcc2eaf8fe44006"
+          },
+          {
+            "row_digest": "6f3e4b32cd25e3c7ffc9d5b8e06ec81f"
+          },
+          {
+            "row_digest": "90931567844094000316eaf2ec0d47ef"
+          },
+          {
+            "row_digest": "982777d198d797f60d807748af1d5c05"
+          },
+          {
+            "row_digest": "997f07124999d9435e3619b736cc0378"
+          },
+          {
+            "row_digest": "a208fcf1b43fc996748e608ee36c6694"
+          },
+          {
+            "row_digest": "a60659fac1f9c7bcaa5f7181385c889c"
+          },
+          {
+            "row_digest": "b209e4c0ab3c02292e62decbc0be2820"
+          },
+          {
+            "row_digest": "c0538d61e4b9dfa3809a0cfcd464921f"
+          },
+          {
+            "row_digest": "ca679bcf550decf22fa8f4bb6bfb0754"
+          },
+          {
+            "row_digest": "e557b27adb0278330e0db75a987cf2e6"
+          },
+          {
+            "row_digest": "e7eec7e7bcd893e9705570baafc283ab"
+          },
+          {
+            "row_digest": "ffa25e2613fa7fc339a65fd442f3adb8"
+          }
+        ]
+      },
+      "native_activities": {
+        "columns": [
+          "ordinal",
+          "id",
+          "task_id",
+          "attempt_id",
+          "event_id",
+          "sequence",
+          "native_session_id",
+          "tool_use_id",
+          "parent_tool_use_id",
+          "phase",
+          "header",
+          "payload_digest",
+          "detail_id",
+          "detail_digest",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "plugin_installations": {
+        "columns": [
+          "id",
+          "workspace_id",
+          "project_id",
+          "package_name",
+          "revision",
+          "created_at",
+          "updated_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "plugin_operations": {
+        "columns": [
+          "id",
+          "installation_id",
+          "kind",
+          "actor",
+          "input_digest",
+          "before_revision",
+          "after_revision",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "plugin_package_fetch_attempts": {
+        "columns": [
+          "id",
+          "operation_id",
+          "ordinal",
+          "artifact_id",
+          "status",
+          "worker_id",
+          "error",
+          "artifact",
+          "created_at",
+          "updated_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "plugin_package_fetch_audit": {
+        "columns": [
+          "cursor",
+          "operation_id",
+          "attempt_id",
+          "kind",
+          "actor",
+          "reason",
+          "error",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "plugin_package_fetches": {
+        "columns": [
+          "id",
+          "installation_id",
+          "version_id",
+          "admitted_revision",
+          "package_name",
+          "package_version",
+          "expected_sha256",
+          "integrity",
+          "store_id",
+          "registry_ref",
+          "registry_url",
+          "current_attempt_id",
+          "created_at",
+          "updated_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "plugin_revisions": {
+        "columns": [
+          "installation_id",
+          "revision",
+          "version_id",
+          "configuration",
+          "grants",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "plugin_versions": {
+        "columns": [
+          "id",
+          "installation_id",
+          "package_version",
+          "declaration",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "project_revisions": {
+        "columns": [
+          "project_id",
+          "revision",
+          "reason",
+          "actor",
+          "nodes",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "project_task_bindings": {
+        "columns": [
+          "task_id",
+          "project_id",
+          "node_id"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "projects": {
+        "columns": [
+          "id",
+          "workspace_id",
+          "title",
+          "revision",
+          "created_at",
+          "updated_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "protocol_intents": {
+        "columns": [
+          "attempt_id",
+          "task_id",
+          "owner_version",
+          "endpoint_ref",
+          "endpoint_digest",
+          "command_id",
+          "phase",
+          "remote_task_id",
+          "cancel_started",
+          "reason",
+          "created_at",
+          "updated_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "reconciliation_audit": {
+        "columns": [
+          "ordinal",
+          "id",
+          "task_id",
+          "attempt_id",
+          "actor",
+          "action",
+          "request",
+          "before_state",
+          "after_state",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "reconciliation_retries": {
+        "columns": [
+          "task_id",
+          "source_task_id",
+          "source_attempt_id",
+          "resolution_id",
+          "retry_audit_id"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": []
+      },
+      "runner_events": {
+        "columns": [
+          "attempt_id",
+          "sequence",
+          "event_id",
+          "digest"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "09e2879e6e683a3c73dcd35d11b47857"
+          },
+          {
+            "row_digest": "1ca9c3a98bbac2d674be1707e9cec460"
+          },
+          {
+            "row_digest": "29d6e55f7152f8bc7b34db8094795cec"
+          },
+          {
+            "row_digest": "54a59f1329da03798cb78b6ccfbc3b3d"
+          },
+          {
+            "row_digest": "5f045981e9af25aa16b7803f9844167f"
+          },
+          {
+            "row_digest": "7c5614a30d7c9fa68ed364b5efb5c432"
+          },
+          {
+            "row_digest": "7ffd838ffd5b25fad52fdde91ae50b7b"
+          },
+          {
+            "row_digest": "907d20af2cb24a2fa5bb646097f9ff8f"
+          },
+          {
+            "row_digest": "9da24a6345966fc82a29edc81b4c142f"
+          },
+          {
+            "row_digest": "a21f5d6e6c22dfe7bec53e1dc7b7f5c3"
+          },
+          {
+            "row_digest": "b7ce900973c678e4dc9fed947381d2bd"
+          },
+          {
+            "row_digest": "d0dcdbd6508cc840fc30e02dd5c6e073"
+          },
+          {
+            "row_digest": "e247b47d4c13e8eb614cd36825321f33"
+          },
+          {
+            "row_digest": "ee96fb49af81c98c4b51a9515ef2124d"
+          }
+        ]
+      },
+      "runner_maintenance_audit": {
+        "columns": [
+          "ordinal",
+          "id",
+          "runner_id",
+          "request_id",
+          "digest",
+          "result"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "367fb3815af89e3613e682ebbf379a23"
+          },
+          {
+            "row_digest": "48fc9098baa1ad6bd85accf9b15b4a35"
+          },
+          {
+            "row_digest": "52d4e7746b8dcbf225d346e167b2ccea"
+          },
+          {
+            "row_digest": "674b87d56951cb5c4595647b1591a2a5"
+          },
+          {
+            "row_digest": "a577806974d96202fc48709259a02dc3"
+          },
+          {
+            "row_digest": "ddc228362eac5a1960582917895456e8"
+          }
+        ]
+      },
+      "runners": {
+        "columns": [
+          "id",
+          "name",
+          "token_hash",
+          "harnesses",
+          "capacity",
+          "revoked",
+          "maintenance_state",
+          "maintenance_version",
+          "maintenance_operation_id",
+          "maintenance_updated_at"
+        ],
+        "excluded": [
+          "maintenance_state",
+          "maintenance_version",
+          "maintenance_operation_id"
+        ],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "2bb47abdcfb1099d5a38e4a55f48799f"
+          }
+        ]
+      },
+      "sessions": {
+        "columns": [
+          "id",
+          "harness",
+          "runner_id",
+          "active_task_id"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "6beebf76fd24a0afd87fab72c34ee1b0"
+          }
+        ]
+      },
+      "tasks": {
+        "columns": [
+          "id",
+          "submission",
+          "status",
+          "verification_status",
+          "created_at",
+          "updated_at",
+          "cursor",
+          "owner_version",
+          "dispatch_ready",
+          "current_attempt_id",
+          "pending_decision",
+          "latest_artifact_id",
+          "latest_artifact_version",
+          "usage",
+          "conversation_input_id",
+          "goal_input_id"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "15afe00f4eacf9a8222fde8c18bde7f1"
+          },
+          {
+            "row_digest": "558a148e7d25eacfdefd7df7e527008e"
+          }
+        ]
+      },
+      "timeline": {
+        "columns": [
+          "task_id",
+          "cursor",
+          "entry"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "19e76e9c103bef9a6448ad9fbb3888c1"
+          },
+          {
+            "row_digest": "28be9f4bb920661a9a3809a95c76207a"
+          },
+          {
+            "row_digest": "2fa79b57b39f04bacfc161875b59b315"
+          },
+          {
+            "row_digest": "31e5f47a4a9663691fe1d40305dab4fd"
+          },
+          {
+            "row_digest": "4d1f371ab3be653ff2215f6b3ed3b8b3"
+          },
+          {
+            "row_digest": "537417cf3a2d149163861c47607afb4c"
+          },
+          {
+            "row_digest": "6b36056ddd634f791d61c4ecf7b77bfd"
+          },
+          {
+            "row_digest": "76785466c65f1bccbbfc7d8c45deffdd"
+          },
+          {
+            "row_digest": "edc05b15673d2b1aec1a7d6f3ff04137"
+          },
+          {
+            "row_digest": "efccc6a9c636fe9643319b1110efaaf9"
+          },
+          {
+            "row_digest": "fd9095b86d22e128fcd96a387e80cff5"
+          },
+          {
+            "row_digest": "ff9a92c09d65b285ead06454d7983ec6"
+          }
+        ]
+      },
+      "usage_samples": {
+        "columns": [
+          "ordinal",
+          "task_id",
+          "stream",
+          "sample_id",
+          "digest",
+          "sample",
+          "authoritative",
+          "input_tokens",
+          "output_tokens",
+          "cost_usd",
+          "cost_kind"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "16da631ad4bcffeb77e5b961de3a91d0"
+          },
+          {
+            "row_digest": "504e6d5163da376223a6a7b983d0c7fc"
+          },
+          {
+            "row_digest": "614c369cc328029289db73b855fa1ddf"
+          },
+          {
+            "row_digest": "97895fffcf273efe32062ee960dcc3fc"
+          }
+        ]
+      },
+      "workspace_feed": {
+        "columns": [
+          "ordinal",
+          "task_id",
+          "task_cursor",
+          "task_title",
+          "entry"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "052e986fef4952bef1e2bfa229ba89d0"
+          },
+          {
+            "row_digest": "0e84ecdb0bd6e33d783c6aa8c9f28b0d"
+          },
+          {
+            "row_digest": "269af3cb6fa378e996410039092b1c97"
+          },
+          {
+            "row_digest": "2965d5435fc3998ad0e350f61addd7dc"
+          },
+          {
+            "row_digest": "4cc7bfdfb5f01bef587f65b12a7478d8"
+          },
+          {
+            "row_digest": "5c6e8d4f898886caba2233378553dec6"
+          },
+          {
+            "row_digest": "60551fd231843a6b0b98f7482a0b5ac0"
+          },
+          {
+            "row_digest": "639585f5b9f8cd26746bc2278d1e5ac9"
+          },
+          {
+            "row_digest": "95c787a89f8098e8f89afec237b8d015"
+          },
+          {
+            "row_digest": "a0584fe7ae4ed4cd680b9f54488d2f43"
+          },
+          {
+            "row_digest": "e005ce1bb098c1afd969fa5eb4634bdb"
+          },
+          {
+            "row_digest": "e4a65a9c5a1d5b679f6534e26305e279"
+          },
+          {
+            "row_digest": "e9a2a55f25e332bb7bc7580c9e9f62de"
+          },
+          {
+            "row_digest": "ea0b4c7d1f0a072e3f0da6e51276b00f"
+          }
+        ]
+      },
+      "workspaces": {
+        "columns": [
+          "id",
+          "title",
+          "created_at"
+        ],
+        "excluded": [],
+        "complete": true,
+        "records": [
+          {
+            "row_digest": "9cf31762df27840d83b5c105e06a19ff"
+          }
+        ]
+      }
+    },
+    "connections": [
+      {
+        "application_name": "",
+        "state": "idle",
+        "count": 2
+      },
+      {
+        "application_name": "pgboss:96dae00d",
+        "state": "idle",
+        "count": 1
+      }
+    ]
+  },
+  "localMaintenance": {
+    "phase": "resumed",
+    "target": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+    "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+  },
+  "limitations": [
+    "One instant snapshot is not a lock, drain, hold, or permission to stop.",
+    "Process inventory identifies recognized entrypoints; it cannot exclude another host or custom same-credential deployment.",
+    "All other active/unknown deployments require operator coordination before any center stop.",
+    "SDK/provider availability and real model calls were not probed.",
+    "SourceAtStart records startup; Vite files may follow checkout changes without a controlled bundle refresh."
+  ],
+  "outcome": "observed"
+}
