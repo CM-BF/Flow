@@ -40,3 +40,10 @@
 Mika / gpt-6-astra，2026-10-06 20:37UTC，绑定 `93dacd96dcbab935a4e9bde75de0ffdc5a550d09`，manifest `89a8ae8de72f1af0239e364cec6243b422accb0585a4203932c9232eee6f383b`：**APPROVED /0 P1/P2**。19文件334857B均Git=WT且len/hash相符；五未来输出在审查时不存在。范围仅准备包/静态源码/raw复核，监督6过不推断全部children gone，PGID391 UNKNOWN/EPERM保留。此条取代上文packet待审状态，产品e28原approval不变。
 
 Lead窗口后owner执行一次，真实PG2/2及cleanup CONFIRMED，见[实际结果](../../docs/evidence/svc07/pg-checks.md)。实际结果为owner新证据，未借准备approval声称已完成结果独审；HTTP消费者/main仍未集成/未验证。
+
+
+## 真实PG结果忠实性独审
+
+Mika / gpt-6-astra，2026-10-06 20:44:52UTC，target `05a3e901f4abf6f11cb7067cfca6167589a1cf9b`，**APPROVED /0 P1/P2**。范围为公开transaction两类真实断连、同pool恢复、输出忠实性与已观察cleanup。4原始输出4464B逐Git=WT、len/SHA/0600/regular全部一致；reviewer独立lstat确认pg-tmp不存在；产品相对e28无变。raw537B/hash67ff4bbb3a6dbce4d244dafc3d8862ddf19edf1a6d9c5d6c616cfd6a7ff93652。
+
+2选2过/exit0/0.773694s；2次guarded terminate、回调各1次、旧写不存在、新事务commit确认。专库absence与backend清理由fixture回执支持，reviewer未新连接数据库；PGID absent/EOF由外层记录支持，未新扫描。旧监督PGID391 EPERM仍UNKNOWN；真实COMMIT丢ACK未注入；HTTP消费者和main仍未验证，已交Execution Lead在集成点以隔离专库完成原有并发claim/command replay+restart断言。此review不扩大为完整SVC07/HTTP/main通过。

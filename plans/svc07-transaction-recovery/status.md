@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:44:15 UTC；固定分支基线22a，main未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:46 UTC；固定分支基线22a，main未集成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -50,3 +50,7 @@
 ## 实际窗口完成与交回
 
 2026-10-06 20:44:15 UTC，唯一已审入口执行完成，[PG检查](../../docs/evidence/svc07/pg-checks.md)2/2、exit0、总wall0.773694s；专库不存在/连接0、PGID31256 absent、tmp移除，完整raw537B。已立即交回共享窗口，0待launch/0后继重跑。前文准备NOT_OPEN是历史安全点，本节明确实际窗口已完成；固定packet输入及15fake原始证据不改。仅归档提交后再次停写，claim保留review/集成期。
+
+## 最新独审与集成责任
+
+Mika于2026-10-06 20:44:52UTC对实际结果target `05a3e901f4abf6f11cb7067cfca6167589a1cf9b`完成APPROVED/0P1P2，[忠实性review](review.md)范围限两断连公开事务/同pool恢复/原始输出及已观察cleanup。HTTP并发claim/command replay+restart必要消费者已交Execution Lead集成队列，owner不扩本树server闭包或重跑两断连例。HEAD05a3e901在本metadata前clean；本次仅独审归档，提交push后停写，claim保留。
