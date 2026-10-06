@@ -12,11 +12,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；本轮薄client实际HTTP1/1与类型检查；领域16项复用原独立审查 |
 | 已集成main状态 / HEAD | fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 已推送；流式协议与两类旧页面兼容已成套接收。个人center/runner仍fb906cb；实际流式聊天页面待Web后继。 |
-| Review | NOT_STARTED；仅本轮steering薄client，历史批准保留 |
+| Review | APPROVED；assignment_review只读核本轮steering薄client，历史批准保留 |
 | 实现目标 | 1b16d23de5b00f897fe9bd0fa07879c84d78e936 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/active-steering.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 逐段回复读取和旧页面兼容已经交付；补充指令的公共接收与查询接口已完成。 |
 | 下一可用交付 | 核验补充指令的公共接口，为实际模型消费准备接线。 |
@@ -98,3 +98,5 @@
 | F01-21 | in-progress | Lead | steering薄client 1b16d23de5b00f897fe9bd0fa07879c84d78e936；真实HTTP1/1+tsc，待独立review；未mount024或开放生产受理 |
 
 2026-10-06 07:14 UTC：F01-18/19/20已按各固定独审输入进入main，旧条目中的等待描述为当时记录。本轮仅5个steering薄传输方法及统一export，原文/key/fence/receiptRevision透传，409/abort无自动重投。
+
+2026-10-06 07:18 UTC：steering薄client1b16d23获assignment_review独立只读APPROVED，3source/3raw固定hashbytes一致，无P1/P2/未重跑；仅薄传输，仍无024生产mount或实际模型消费。
