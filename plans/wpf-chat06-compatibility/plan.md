@@ -1,6 +1,6 @@
 # WPF-CHAT06C01 流式能力读取兼容
 
-状态：completed（已审分支交付；聚合登记/主线集成另记）。唯一owner workspace_panels_owner / gpt-6-astra ultra。本片使聊天读取端容忍中心可选的流式能力标记，不启用流式正文或协议协商。既有最终回复、排队、身份和未确认回执行为保持。
+状态：in-progress（实现已审；聚合登记/交接待事实，主线集成另记）。唯一owner workspace_panels_owner / gpt-6-astra ultra。本片使聊天读取端容忍中心可选的流式能力标记，不启用流式正文或协议协商。既有最终回复、排队、身份和未确认回执行为保持。
 
 准确base `a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8`；独立树 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility`，branch `codex/web-stream-compatibility`。先核不存在建树，正式[receipt](../../docs/evidence/wpf-chat06-compatibility/take-receipt.json)后才修改。claim ca26e49b-b750-43a7-8bf7-ce1b987f50c9 v1，06:45:09.159Z committed。
 
