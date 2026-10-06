@@ -1,0 +1,74 @@
+{
+  "intermediateRuns": [
+    {
+      "toolChunk": "f104f5",
+      "selected": 20,
+      "passed": 20,
+      "files": 2,
+      "scope": "initial helper19+adapter1; overlap with final"
+    },
+    {
+      "toolChunk": "96ab38",
+      "selected": 18,
+      "passed": 18,
+      "files": 1,
+      "scope": "adapter development; overlap with final"
+    },
+    {
+      "toolChunk": "79cd8d",
+      "selected": 24,
+      "passed": 21,
+      "failed": 3,
+      "failures": [
+        "goal fixture omitted required allowRead:false",
+        "two loopback fixtures incorrectly expected taskId in existing attemptId+ownerVersion ownership body"
+      ],
+      "changes": "Only new fixture configuration and assertion corrected to real contract. No old assertion or production interface weakened.",
+      "rawAvailability": "Tool output in thread; structured record here, not represented as an archived raw stdout."
+    },
+    {
+      "toolChunk": "1cc09b",
+      "selected": 24,
+      "passed": 24,
+      "files": 1,
+      "scope": "corrected adapter fixtures; overlap with final"
+    },
+    {
+      "toolChunk": "ada187",
+      "exitCode": 0,
+      "scope": "initial local strict before final new test additions; final separate evidence authoritative"
+    }
+  ],
+  "finalDistinct": 121,
+  "breakdown": {
+    "newSummaryRead": 19,
+    "newPublicAdapter": 27,
+    "existingClaude": 31,
+    "existingStream": 11,
+    "existingRuntime": 33
+  },
+  "firstConsumerRun": {
+    "selected": 121,
+    "passed": 120,
+    "failed": 1,
+    "retainedRaw": "producer-first-consumers.stdout.txt",
+    "failure": "legacy runner first fixed fixture 3000ms eventually timeout; precise cause unknown"
+  },
+  "targetedDiagnostic": {
+    "selected": 1,
+    "passed": 1,
+    "unselected": 32,
+    "retainedRaw": "producer-fixture-recheck.stdout.txt",
+    "sourceAndAssertionsChanged": false
+  },
+  "finalConsumerRun": {
+    "selected": 121,
+    "passed": 121,
+    "skipped": 0,
+    "retainedRaw": "producer-final-tests.stdout.txt",
+    "sourceAndAssertionsChangedSinceFirstConsumerRun": false
+  },
+  "additionalProviderCalls": 0,
+  "pgChecks": 0,
+  "existingAssertionsRemoved": 0
+}

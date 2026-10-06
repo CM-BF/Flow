@@ -1,0 +1,160 @@
+{
+  "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+  "base": "9f9bb00e263b8517a036822f74ae65ce94b86200",
+  "fixedAt": "2026-10-06 11:21:22 UTC",
+  "branch": "codex/context-transparency",
+  "sources": [
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.test.ts",
+      "bytes": 6270,
+      "sha256": "b7492fc438723f2ca6543250c0da3fedaa12856af7d2af835030e869235ce216"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "bytes": 2905,
+      "sha256": "4637f84caeb8bef5e002fe2c2e98b306813e0462d24a670d441e44fc6da21ae5"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "bytes": 13246,
+      "sha256": "fa71594307d87e7c8e53d204dcd7448391993cbac2e33a80161466552a58d040"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-tests-initial.stdout",
+      "bytes": 501,
+      "sha256": "5971b7025aff0566150dc99a0c6138dac2b5cbf5762949e57ce6dfd6eac9d430"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-tests-initial.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-tests-initial-result.json",
+      "bytes": 516,
+      "sha256": "6fb2448709c46de0eaf6ce065c2e7a058f45702b9c9b1d3e3bbb5a75c38c51d9"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-tests.stdout",
+      "bytes": 503,
+      "sha256": "bc5e303549980efc25f20230387e8daa28e6ead186cce0f1aee44cf4d2a0377a"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-tests.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-tests-result.json",
+      "bytes": 582,
+      "sha256": "05794c67f716d447cfeca259b0759a123fdaffd4d37f3802ffccd103b199b4b6"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-typecheck-initial.stdout",
+      "bytes": 482,
+      "sha256": "33e0ee2450ccce5bc42b55eb5f79f105f13fd7d8e9676c88692229f475710880"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-typecheck-initial.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-typecheck-initial-result.json",
+      "bytes": 275,
+      "sha256": "30631aca7310d3a13aa6d188325ae7c98137c6aa8084733d2f8322a1ee17f53e"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-typecheck.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-typecheck-result.json",
+      "bytes": 333,
+      "sha256": "1cc80eb3670744a030149deac7e4f1a6229d8e12ed7f07a089487af58df48126"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-amend-receipt.json",
+      "bytes": 1624,
+      "sha256": "a43f56f418c06eb647239cd6cea2ea2a2e1ac40f30a2217fea5196eb26fd5a79"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-quality.md",
+      "bytes": 2943,
+      "sha256": "163c7cbc4947dc1f5bcb890a578c58cbdcb1d64373ed41536fc9ee6ecc7c173b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-preservation.json",
+      "bytes": 705,
+      "sha256": "f6c009f23c8b768aa4517a198ce6cc59d24141ceb5aa8653117415e7fe37188d"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/normalize-validation-config.json",
+      "bytes": 2382,
+      "sha256": "27f0197e1474216852be52d8a2c9101159ee7a92fc8adc403f3f82205a40dabe"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 4918,
+      "sha256": "ee93a1d4bd7ca48542b18f005c8e0bd6e019fdca996567795dceda6cd358e05d"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "bytes": 5685,
+      "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.test.ts",
+      "bytes": 10582,
+      "sha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9"
+    }
+  ],
+  "checks": {
+    "selected": 58,
+    "passed": 58,
+    "distinct": 58,
+    "files": 3,
+    "breakdown": {
+      "values": 8,
+      "mapper": 27,
+      "projection": 23
+    },
+    "strictNoEmitExit": 0,
+    "initialStrictExit": 2,
+    "initialEvidenceHistoricalOnly": true
+  },
+  "historicalDomainIntegrationInput": {
+    "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+    "receipt": "docs/evidence/wpf-mature-04/history-integration-ready.json",
+    "unchanged": true
+  },
+  "review": "NOT_STARTED",
+  "limitations": [
+    "pure normalization and preserved mapper behavior only",
+    "no SDK/provider calls, IO, sampling or event mounting",
+    "old 3ab mapper approval applies only to historical Git, not this new source",
+    "current/remaining/cut and Web remain open"
+  ]
+}

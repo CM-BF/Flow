@@ -1,0 +1,21 @@
+{
+  "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+  "verdict": "APPROVED",
+  "reviewer": "status_read / gpt-6-astra",
+  "reviewedAt": "2026-10-06T11:11:12Z",
+  "recordedAt": "2026-10-06 11:12:42 UTC",
+  "acceptedBy": "Mika / gpt-6-astra",
+  "p1": 0,
+  "p2": 0,
+  "scope": "10 manifest source files: historical Module, local DTO/GET, official 027 and local migration entry",
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-04/history-pg-manifest.json",
+    "sha256": "621ef3badf473aa029c2cfb8125070e88ed26280040355ee90a2a935826f9e44"
+  },
+  "verified": "28 bindings target Git=worktree=hash/bytes; old6 equal approved879/3ab; final50 distinct=41+9 realPG and strict0; two own databases0connections before DROP",
+  "reviewerRanChecks": false,
+  "limits": [
+    "No global event/server/client or production auth mounting",
+    "No SDK/provider/producer/current/remaining claim"
+  ]
+}

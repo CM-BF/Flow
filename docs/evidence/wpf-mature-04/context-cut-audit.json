@@ -1,0 +1,148 @@
+{
+  "observedAt": "2026-10-06 09:40:24 UTC",
+  "mainHead": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "mainBranch": "main",
+  "mainDirty": false,
+  "ownerHeadBeforeMetadata": "5ef354c4d4273ce7f47dafff148f65d7c4629355",
+  "ownerDirtyBeforeMetadata": false,
+  "claimId": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+  "claimVersion": 3,
+  "claimState": "active",
+  "sourceFiles": [
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "mainPresent": false,
+      "approvedTarget": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "ownerSourceUnchanged": true,
+      "approvedSha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.test.ts",
+      "mainPresent": false,
+      "approvedTarget": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "ownerSourceUnchanged": true,
+      "approvedSha256": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "mainPresent": false,
+      "approvedTarget": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "ownerSourceUnchanged": true,
+      "approvedSha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.test.ts",
+      "mainPresent": false,
+      "approvedTarget": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "ownerSourceUnchanged": true,
+      "approvedSha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "mainPresent": false,
+      "approvedTarget": "3ab95d288a91214d03dec719dc6b44024206118a",
+      "ownerSourceUnchanged": true,
+      "approvedSha256": "d90528270ae6bd2b24313d34dba274007e5a6963a824314dd8ff33817b6fc691"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "mainPresent": false,
+      "approvedTarget": "3ab95d288a91214d03dec719dc6b44024206118a",
+      "ownerSourceUnchanged": true,
+      "approvedSha256": "de4b895b52fa77f55dc66df4ee401ab9063b706b8a1e5856c190cda31ce0a48b"
+    }
+  ],
+  "sourceTargetsAncestorOfMain": false,
+  "method": "Read-only git and bounded source inspection. No engineering tests/provider calls.",
+  "finding": "After accepted completed, any earlier observation sequence is strictly less than last_sequence; new observations after completed are rejected. Equality cannot certify post-turn current.",
+  "sourceEvidence": [
+    {
+      "path": "apps/server/src/events.ts",
+      "lines": [
+        63,
+        69,
+        71,
+        92,
+        94,
+        96,
+        107
+      ]
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "lines": [
+        216,
+        219,
+        220,
+        226,
+        229,
+        230
+      ]
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "lines": [
+        109,
+        112,
+        130,
+        134,
+        136,
+        141,
+        219,
+        228
+      ]
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "lines": [
+        35,
+        38,
+        63,
+        64,
+        66
+      ]
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "lines": [
+        48,
+        49,
+        51,
+        53,
+        54,
+        55,
+        56,
+        58,
+        65,
+        67,
+        69
+      ]
+    },
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "lines": [
+        46,
+        51,
+        59,
+        61,
+        62
+      ]
+    },
+    {
+      "path": "apps/server/src/active-steering/commands.ts",
+      "lines": [
+        28,
+        31,
+        33
+      ]
+    }
+  ],
+  "sourceInspectionHead": "80ba95ad70cdf724251be4d88130b6bac56d3606",
+  "sourceEvidenceUnchangedSinceInspection": false,
+  "changedSourceRechecked": {
+    "path": "apps/runner/src/runtime.ts",
+    "head": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+    "observedAt": "2026-10-06 09:40:56 UTC",
+    "finding": "Native settlement unknown skips completed; settled normal completion still emits completed after adapter.run. Accepted-completed proof remains unchanged."
+  }
+}

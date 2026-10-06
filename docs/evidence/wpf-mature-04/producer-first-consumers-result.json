@@ -1,0 +1,23 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "--config",
+    "/tmp/flow-wpf04-producer-vitest.mjs",
+    "apps/runner/src/context-observations/claude-summary-read.test.ts",
+    "apps/runner/src/claude-context-observation.test.ts",
+    "apps/runner/src/claude.test.ts",
+    "apps/runner/src/assistant-stream/stream.test.ts",
+    "apps/runner/src/runner.test.ts"
+  ],
+  "exitCode": 1,
+  "elapsedSeconds": 11.060747146606445,
+  "node": "24",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "ownerRoot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+  "nodeOptions": "--import /tmp/flow-wpf04-producer-resolver.mjs",
+  "scope": "fake Query/public adapter/runtime loopback and owned temporary files only; no PG/provider"
+}

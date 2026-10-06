@@ -1,0 +1,44 @@
+{
+  "observedAt": "2026-10-06T09:09:26.754Z",
+  "base": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "sourceFiles": [
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.test.ts",
+      "sha256": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.test.ts",
+      "sha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9"
+    }
+  ],
+  "tests": {
+    "selectedFiles": 2,
+    "selected": 30,
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0,
+    "log": "final-tests.txt"
+  },
+  "typecheck": {
+    "result": "passed",
+    "exitCode": 0,
+    "rootOptions": "extends worktree root tsconfig, only four changed roots; transitive imports checked",
+    "log": "final-typecheck.txt"
+  },
+  "boundaries": {
+    "providerCalls": 0,
+    "authCalls": 0,
+    "installs": 0,
+    "personalServiceActions": 0,
+    "productionMounted": false
+  },
+  "dependencies": "reuse main fixed installed dependencies by temporary config aliases/typeRoots; no worktree symlinks or installation"
+}

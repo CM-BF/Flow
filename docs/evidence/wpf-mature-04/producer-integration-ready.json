@@ -1,0 +1,110 @@
+{
+  "taskId": "WPF-MATURE-04",
+  "owner": "architecture_read",
+  "coLead": "mika",
+  "branch": "codex/context-transparency",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+  "implementationTarget": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+  "controlledBase": "844fa14bfbf32f5392e48e104b5440a9cb5b9b13",
+  "controlledMainInput": "2f4a5789ee13937914fa2c25161c8d5ed1071550",
+  "sources": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 22057,
+      "sha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.ts",
+      "bytes": 2478,
+      "sha256": "e41dc5fba3e0017d86a6d2e1c6f8e362164059356de3c5fbacf572a3b17d95d1"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.test.ts",
+      "bytes": 6632,
+      "sha256": "db87803f9350a978eb5845b95c7424b0ed4c63e666eeb1c077b83956c0577ff4"
+    },
+    {
+      "path": "apps/runner/src/claude-context-observation.test.ts",
+      "bytes": 20724,
+      "sha256": "e35da1190aebd05969179982fbf95ae99485d66d4c350c745b50a63fb7368e51"
+    }
+  ],
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-04/producer-manifest.json",
+    "sha256": "4b2a2efe4611e45d2122f1125c0a8572251213862da67fa94621f147d0110a7c"
+  },
+  "approval": {
+    "path": "docs/evidence/wpf-mature-04/producer-independent-review.json",
+    "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+    "reviewer": "chatui01_owner / gpt-6-astra",
+    "reviewedAt": "2026-10-06 12:16:43 UTC",
+    "verdict": "APPROVED",
+    "p1": 0,
+    "p2": 0
+  },
+  "checks": {
+    "finalSelected": 121,
+    "finalPassed": 121,
+    "finalSkipped": 0,
+    "distinct": 121,
+    "newHelper": 19,
+    "newAdapter": 27,
+    "existingClaude": 31,
+    "existingStream": 11,
+    "existingRuntime": 33,
+    "strictLocalNoEmitExit": 0,
+    "firstFullRun": {
+      "passed": 120,
+      "failed": 1,
+      "cause": "old first fixture 3s timeout; precise cause unknown"
+    },
+    "narrowRecheck": {
+      "passed": 1,
+      "unselected": 32
+    },
+    "oldAssertionsRemoved": 0,
+    "providerCalls": 0,
+    "pgChecks": 0
+  },
+  "existingDependencies": "Use frozen public runner context-observation union, runtime frozen executionIdentity/unknown settlement, coalescer, c173 normalize and existing server history path already supplied by controlledmain2f4;compare manifest readonly inputs at integration. No shared-source replacement or contract copy.",
+  "mainObservation": {
+    "observedAt": "2026-10-06 12:17:36 UTC",
+    "head": "06118e6014a6efdd682d3442cbb193a4748bc82b",
+    "dirty": false,
+    "sources": [
+      {
+        "path": "apps/runner/src/claude.ts",
+        "present": true,
+        "equalsApprovedSource": false
+      },
+      {
+        "path": "apps/runner/src/context-observations/claude-summary-read.ts",
+        "present": false,
+        "equalsApprovedSource": false
+      },
+      {
+        "path": "apps/runner/src/context-observations/claude-summary-read.test.ts",
+        "present": false,
+        "equalsApprovedSource": false
+      },
+      {
+        "path": "apps/runner/src/claude-context-observation.test.ts",
+        "present": false,
+        "equalsApprovedSource": false
+      }
+    ],
+    "accepted": false
+  },
+  "sourceWriting": "stopped;v8 retained;no handback before confirmed main",
+  "consumerHandoff": "docs/evidence/wpf-mature-04/handoff-current.md",
+  "limits": [
+    "history only; current/remaining/compression/consumed cut unknown",
+    "fake Query does not establish real SDK post-result control availability",
+    "1000ms awaited control budget and local close are not native child exit confirmation",
+    "strict covers changed modules and direct imports, not entire repository",
+    "first legacy fixture timeout retained; subsequent passing runs do not establish its exact cause"
+  ],
+  "providerCalls": 0,
+  "pgValidation": 0,
+  "deployment": "unknown"
+}

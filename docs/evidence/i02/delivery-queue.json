@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T12:16:20.132155+00:00",
+  "recordedAt": "2026-10-06T12:21:23.372238+00:00",
   "main": "362af3bac77541e5a60979326bcf4d4b8c947915",
   "sourceSampleAt": "2026-10-06T12:15:08.415Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
@@ -14,8 +14,9 @@
     {
       "taskId": "WPF-MATURE-04",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md",
-      "classification": "independent-review-in-progress",
-      "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40"
+      "classification": "approved-fixed-source-applied-publishing",
+      "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+      "evidence": "context-producer-integration.json"
     }
   ],
   "mainButNotUserSurface": [
@@ -49,5 +50,6 @@
       "actualWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
       "note": "All retained artifact compatibility must be explicit. No personal-service action/query permitted in preparation."
     }
-  ]
+  ],
+  "mainBeforeBatch": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa"
 }

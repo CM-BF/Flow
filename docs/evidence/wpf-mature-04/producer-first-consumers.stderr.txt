@@ -1,0 +1,16 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/runner.test.ts > runs a claimed fixture to a fixed artifact, verification and one completion
+Error: Expected runner behavior did not occur.
+ ❯ eventually apps/runner/src/runner.test.ts:94:38
+     92|   const deadline = Date.now() + 3000;
+     93|   while (!await condition()) {
+     94|     if (Date.now() > deadline) throw new Error('Expected runner behavi…
+       |                                      ^
+     95|     await new Promise(resolve => setTimeout(resolve, 10));
+     96|   }
+ ❯ apps/runner/src/runner.test.ts:102:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

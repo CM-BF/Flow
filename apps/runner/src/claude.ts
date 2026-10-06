@@ -9,8 +9,12 @@ import { assistantFinalDataSchema, type AssistantSettings } from '../../../packa
 import { textDigest, verifyText } from './verifier.js';
 import { coalesceAssistantStream } from './assistant-stream/index.js';
 import { mapNativeActivity } from './native-activity/index.js';
+import { readClaudeSummary, type ClaudeSummaryReader } from './context-observations/claude-summary-read.js';
+import type { ContextObservationPayload } from '../../../packages/contracts/src/context-observation-event.js';
+import { NativeExecutionError } from './native-harness/settlement.js';
+import { isRootFrame } from './active-steering/state.js';
 
-export type ClaudeQuery = (input: Parameters<typeof nativeQuery>[0]) => AsyncIterable<SDKMessage> & { close(): void };
+export type ClaudeQuery = (input: Parameters<typeof nativeQuery>[0]) => AsyncIterable<SDKMessage> & ClaudeSummaryReader & { close(): void };
 export interface ClaudeAdapterOptions {
   materialFiles: readonly string[];
   goalTools?: boolean;
@@ -44,6 +48,7 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
       let stream: ReturnType<ClaudeQuery> | undefined;
       let steering: NativeSteeringHost | undefined;
       let goalMount: ReturnType<typeof createGoalToolMount> | undefined;
+      let contextReadUnsettled = false;
       try {
         controller.signal.throwIfAborted();
         goalMount = options.goalTools ? createGoalToolMount(context, controller) : options.goalGraphTools ? createGraphToolMount(context, context.goalGraphTools!, controller) : undefined;
@@ -68,6 +73,12 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
           },
         });
         let final: SDKResultMessage | undefined;
+        let contextReadAttempted = false;
+        let contextObservation: ContextObservationPayload | undefined;
+        const canReadContext = context.task.harness === 'claude' && context.task.executionProfile
+          && context.executionIdentity && Object.isFrozen(context.executionIdentity)
+          && context.task.executionProfile.runnerId === context.executionIdentity.runnerId
+          && !context.steering && !context.goalTools && !context.goalGraphTools;
         const usageBaselines = new Map<string, string>();
         let sessionId: string | undefined;
         let effective: AssistantSettings['effective'] = { model: null, permissionMode: null, tools: null, thinking: 'unknown' };
@@ -88,6 +99,7 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
           if (event.type === 'system' && event.subtype === 'init') {
             if (sessionId && event.session_id !== sessionId) throw new Error('Claude initialization changed native session.');
             if (context.task.resumeSessionId && event.session_id !== context.task.resumeSessionId) throw new Error('Claude did not resume the requested native session.');
+            if (contextObservation && contextObservation.resolvedModel !== (event.model ?? null)) contextObservation = undefined;
             sessionId = event.session_id;
             effective = { model: event.model ?? null, permissionMode: event.permissionMode ?? null, tools: event.tools ?? null, thinking: 'unknown' };
             await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION, resources: resources(event) });
@@ -116,6 +128,23 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
           if (event.type === 'result') {
             if (final && finalIdentity(final) !== finalIdentity(event)) throw new Error('Claude returned multiple different results for one task.');
             final = event;
+            if (canReadContext && !contextReadAttempted && isRootFrame(event) && event.subtype === 'success' && !event.is_error) {
+              contextReadAttempted = true;
+              if (sessionId && event.session_id !== sessionId) throw new Error('Claude result session did not match initialization.');
+              if (context.task.resumeSessionId && event.session_id !== context.task.resumeSessionId) throw new Error('Claude did not resume the requested native session.');
+              await context.assertOwnership();
+              if (!sessionId) {
+                sessionId = event.session_id;
+                await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION });
+              }
+              const read = await readClaudeSummary(stream, { signal: controller.signal, resolvedModel: effective.model,
+                nativeSessionId: sessionId, observationId: randomUUID() });
+              if (read.kind === 'unsettled') {
+                contextReadUnsettled = true;
+                throw new NativeExecutionError('unknown');
+              }
+              if (read.kind === 'available') contextObservation = read.observation;
+            }
           }
         }
         controller.signal.throwIfAborted();
@@ -131,6 +160,10 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
         if (final.permission_denials.length) await context.emit({ type: 'detail', title: 'Claude SDK permission denials', content: `SDK recorded ${final.permission_denials.length} permission refusals. Native tool observations, when present, are available as bounded activity details.`, mediaType: 'text/plain' });
         if (final.subtype !== 'success' || final.is_error) throw new Error('Claude did not complete successfully.');
         const assistant = assistantEvent(final, options, effective);
+        if (contextObservation && contextObservation.nativeSessionId === final.session_id && contextObservation.resolvedModel === effective.model) {
+          await context.assertOwnership();
+          await context.emit({ type: 'context-observation', observation: contextObservation });
+        }
         await publishArtifact(context, final.result);
         await context.assertOwnership();
         await context.emit(assistant);
@@ -138,8 +171,14 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
         clearTimeout(timer);
         context.signal.removeEventListener('abort', abort);
         controller.abort();
-        try { stream?.close(); }
-        finally { await steering?.close(); await goalMount?.server.instance.close(); }
+        try {
+          try { stream?.close(); }
+          finally { await steering?.close(); await goalMount?.server.instance.close(); }
+        } finally {
+          // Query.close() has no exit receipt. Cleanup errors cannot turn an
+          // unresolved control request into a settled execution failure.
+          if (contextReadUnsettled) throw new NativeExecutionError('unknown');
+        }
       }
     },
   };

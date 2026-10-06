@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-06 09:22:28 UTC",
+  "package": "@anthropic-ai/claude-agent-sdk",
+  "version": "0.3.290",
+  "readOnly": true,
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+      "bytes": 530284,
+      "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2",
+      "getContextUsageOffset": 1178025
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/core.mjs",
+      "bytes": 123795,
+      "sha256": "968dd41974e272e0e7804335805e2fc212fc4c0e6da1be95c9a413c43c09e55f",
+      "getContextUsageOffset": 64985
+    }
+  ],
+  "declarations": {
+    "Query.getContextUsage": 3036,
+    "SDKContextUsage": 3779,
+    "SDKControlGetContextUsageResponse": 3949
+  },
+  "implementationFinding": "sdk.mjs and core.mjs return control request response directly; no snake_case conversion. No SDK method invoked."
+}
