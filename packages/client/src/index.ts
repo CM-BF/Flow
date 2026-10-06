@@ -1,3 +1,4 @@
+import type { TaskUsageReadout } from '@flow/contracts';
 import { BROWSER_SESSION_CSRF_HEADER, browserSessionReadySchema, browserSessionReadSchema, type BrowserSessionReady, type BrowserSessionRead } from '@flow/contracts';
 import { nativeEngineeringProfilePageSchema, nativeEngineeringProfilePublishedSchema, type NativeEngineeringProfileConfiguration, type NativeEngineeringProfilePage, type NativeEngineeringProfilePublished } from '@flow/contracts';
 import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
@@ -152,6 +153,10 @@ export class FlowClient {
   }
   steeringProposalStatus(input: SteeringProposalLookup, signal?: AbortSignal): Promise<SteeringProposalStatus> {
     return this.request('/api/runner/steering/proposals/status', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+
+  taskUsage(taskId: string, signal?: AbortSignal): Promise<TaskUsageReadout> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/usage-readout`, { signal });
   }
 
   nativeActivities(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeActivityPage> {
