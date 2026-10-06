@@ -2,7 +2,7 @@
 
 当前优先Claude逐消息设置：CORE契约/注入adapter已做局部验证；publicclient/CLI由MATURE02C01合法owner接线，完整产品vertical仍未验收。
 
-当前owned-openssl source ca6a7a15f76d333f20caf0690ed85b76e29d2c54：architecture_read15:24:36 SOURCE_REVIEW/PENDING_VALIDATION无P1/P2；后续四fake于16:36一次4/4通过，Mika已核固定证据。现[纯文件准备包](../../docs/evidence/wpf-mature-02/node-owned-openssl/review-ready.md)仅待组合独审，本段不执行入口/新检查/目标。NOT_OPEN；历史source收据不自动升级准备批准。
+当前owned-openssl source ca6a7a15f76d333f20caf0690ed85b76e29d2c54：architecture_read15:24:36 SOURCE_REVIEW/PENDING_VALIDATION无P1/P2；后续四fake于16:36一次4/4通过，Mika已核固定证据。组合c46f2e0566ff06190ff51242cc1f8225285b12bd现获architecture_read/gpt-6-astra 16:45:31 UTC PREPARATION_APPROVED，Mika独核接收，0P1/P2；[正式收据](../../docs/evidence/wpf-mature-02/node-owned-openssl/preparation-review.json)。仅packet/NOT_OPEN，本段0入口/新检查/目标。未来OPEN须独立核13输出，不能把wx或absentOutputs字段当完整preflight。
 
 当前failure-text结果a442819a已获architecture_read/gpt-6-astra15:03:58与Mika/gpt-6-astra15:04:39 UTC RESULT_FIDELITY_APPROVED，0P1/P2：1目标exit1、完整246B经独审后已按授权精确清理，CLI0仅观察/保留成功；本次文本明确OpenSSL配置fopen/Operation not permitted，errno和具体规则未知。窗口CONSUMED，[安全结果](../../docs/evidence/wpf-mature-02/node-failure-text/run-report.md)。
 
