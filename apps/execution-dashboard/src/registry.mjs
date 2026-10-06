@@ -43,6 +43,8 @@ const assignments = [
   ['P03', '外部协议传输优化', '工作线', 'protocol-payload', 'p03-protocol-payload'],
   ['X03', '插件管理视图', '工作线', 'plugin-management', 'x03-plugin-management-view'],
   ['SVC01', '个人真实聊天预览', '工作线', 'personal-preview', 'svc01-personal-preview'],
+  ['CTX01', '上下文内核合成验证', '技术验证', 'context-kernel-probe', 'ctx01-context-kernel'],
+  ['WPF-PROFILE01', '对话执行选项', '工作线', 'web-execution-profiles', 'wpf-profile01-execution-profiles'],
   ['O02', '原生目标工具桥接', '工作线', 'native-goal-tools', 'o02-native-goal-tools'],
   ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-refresh', 'd06-architecture-refresh'],
   ['CHAT04', '持久消息队列', '工作线', 'conversation-queue', 'chat04-conversation-queue'],
