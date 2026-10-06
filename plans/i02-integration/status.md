@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T10:18:50.449758+00:00 / mainc9c0842406e77082f2ba4bd6e98c5279da7cd2dd |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:30:21 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | c9c0842406e77082f2ba4bd6e98c5279da7cd2dd / 已审Codex配置与网页独立发布组合 |
-| 工作树dirty状态 | 固定实现零差；本批证据随后提交 |
+| 工作基线 / HEAD | 8d8ab520a9d43c7b9dafb22911416ee799ebf665 / 本批管理与登记，产品基线不变 |
+| 工作树dirty状态 | 已审实现保持原样，本批仅管理记录与来源登记 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；18项固定源码/保护输入完全一致，root类型检查exit0；复用原局部行为与浏览器证据，0provider |
-| 已集成main状态 / HEAD | 前批41315b0已推送；126源与固定架构图候选待紧接fast-forward。个人backend/static仍b1c2、accepting v12。 |
+| 检查状态 | 仅registry唯一性/三件套/解析与文档差异检查；本批无产品测试或provider |
+| 已集成main状态 / HEAD | 8d8ab520已推送且实际126源；本批127源候选与工程/终端当前事实待紧接fast-forward。个人backend/static仍b1c2e398、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
