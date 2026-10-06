@@ -79,6 +79,15 @@
       "attribution": "single-operation before/after on shared volume; no exclusive physical attribution",
       "decision": "still below SVC06 2.5GiB; bounded source/metadata permitted; next ended tree evaluated independently",
       "evidence": "sparse-worktree-2026-10-06/browser-session-result.json"
+    },
+    {
+      "observedAt": "2026-10-06T14:22:29.690079+00:00",
+      "availableBytes": 1226006528,
+      "sparseOperation": "tui-queue-controls",
+      "observedFreeDeltaBytes": 43560960,
+      "attribution": "single-operation shared-volume observation only",
+      "decision": "new O14 sparse tree admitted at 12,568KiB then one COST readout DB accepted with >=1GiB+96MiB guard; SVC06 full blocked",
+      "evidence": "sparse-worktree-2026-10-06/tui-queue-result.json"
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:18:00 UTC / mainc837b5dc |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:23:15 UTC / mainec50957f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -102,3 +102,5 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 仅首个已释放、无进程/打开文件使用的 browser-connection-session 收起其他任务的已提交历史副本，源码/测试/规则/全部计划/实际fixture及自有完整证据保留。Git clean与固定HEAD不变，4743保留文件逐hash相同；1844历史副本仍在固定Git及当前main同blob，其他7个受保护工作树HEAD/status/index相同。共享worktreeConfig启用，只有候选树有sparse设置；disable会恢复文件但保留共享扩展。详见[实际回执](../../docs/quality/sparse-worktree-2026-10-06/browser-session-result.json)和[小仓库往返验证](../../docs/quality/sparse-worktree-2026-10-06/existing-worktree-toy.json)。
 
 本次卷可用量前后增加20,066,304B，总1,198,407,680B；共享卷观察不保证独占归因，不按du或逻辑字节夸回收。此前到本操作前的余量变化归因未知。仍未达SVC06 2.5GiB门槛；下一树逐个fresh核归属/消费者/fixture后决定，不动活跃依赖、个人服务或权威原证据。技能：已读本地find-skills；采用已验证Git2.50.1原生机制，无安装/新框架/PG实验/provider。
+
+2026-10-06 14:22 UTC：第二棵 tui-queue-controls released树也已逐项保留4572文件并收起2514个同main blob历史副本；原node_modules（COST的第三方依赖来源）未变、无运行中的openfile消费者、其他7树HEAD/status/index不变。卷前后+43,560,960B、总1,226,006,528B，[回执](../../docs/quality/sparse-worktree-2026-10-06/tui-queue-result.json)。O14新稀疏树保留全部代码/tests/rules/plans，仅自evidence，du12,568KiB、卷前后减少14,811,136B，[创建回执](../../docs/quality/sparse-worktree-2026-10-06/o14-new-worktree.json)；未安装依赖。COST一次直接PG验证在1GiB+96MiB门槛后通过并正常DROP，完成可用1,189,822,464B；无模型/个人服务变更。全构建、安装与A/B仍关闭，SVC06仍不足2.5GiB；未把首片稀疏收益解释为全部空间解阻。
