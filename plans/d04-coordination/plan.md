@@ -1,6 +1,6 @@
 # D04 — 多 Lead 领取登记
 
-状态：in-progress。Owner：Execution Lead / Astra Ultra。用户已授权，Goal Owner 已确认 PostgreSQL 方案。
+状态：completed。Owner：Execution Lead / Astra Ultra。用户已授权，Goal Owner 已确认 PostgreSQL 方案。
 
 ## 目标与方案
 
@@ -16,10 +16,10 @@ active claim 在 review/修复期仍占用。release 或 handoff 必须当前 ve
 
 ## TODO
 
-- [ ] D04-01：PostgreSQL 原子账本、CLI、receipt 与版本约束。
-- [ ] D04-02：真实双 process 冲突/独立范围、丢响应重试、过时版本、handoff/amend 与失败关闭验证。
-- [ ] D04-03：只读看板领取展示、短阶段来源与连接超时降级。
-- [ ] D04-04：现有 owner 迁移、规则、局部检查、独立 review 和可见服务切换。
+- [x] D04-01：PostgreSQL 原子账本、CLI、receipt 与版本约束。
+- [x] D04-02：真实双 process 冲突/独立范围、丢响应重试、过时版本、handoff/amend 与失败关闭验证。
+- [x] D04-03：只读看板领取展示、短阶段来源与连接超时降级。
+- [x] D04-04：现有 owner 迁移、规则、局部检查、独立 review 和可见服务切换。
 
 ## 独占范围与验证
 

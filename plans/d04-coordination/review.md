@@ -24,3 +24,11 @@ Base：51b1a4d09076c9e399c2611820d12bcebfa341b3。reviewer：runner_owner / Astr
 ## 可复制新审查任务
 
 只读本plan/status并先核验实际base/head/dirty；对明确新target与0dec差异审查，不能笼统沿用此APPROVED。外部Claude Code可只读审查；直接修改仍须Sol以上、独立worktree与D04有效领取。修复交owner，复审绑定修复commit。
+
+## 展示增量独立复核（2026-10-06 03:06 UTC）
+
+**APPROVED target ea8d44f7d9738cb98a1dfafd1636e2bbd7c17427**，base b5b4ce21bd8ae5e0fd729c526226e8f8a49a7a47。Goal Owner 只读源码/6项保存行为输出/Chrome154真实及合成状态；assignment_review 另核代码/截图，独立只跑2项human选择测试。未重跑产品或PG全套。无blocking发现。
+
+范围：未登记active claim仅显示账本字段、不读取任意路径；released排除、PG不可用仍unknown；详情统一human信号；历史completed不被后续main同scope改动重开；E01/I01唯一source登记。早期I01缺status的浏览器观察保留；最终部署时已存在不回写旧记录。
+
+O01/PERF后续仅新增两条固定registry数据，实际owner worktree/branch/status已核验，局部registry/aggregate记录另存；不改变上述已审机制。部署事实见status，不由review替代运行验证。

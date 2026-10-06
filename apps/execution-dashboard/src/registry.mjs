@@ -26,6 +26,8 @@ const assignments = [
   ['WPF-001', 'Web 平台持续执行', '工程协作', 'web-platform-management', 'web-platform'],
   ['WPF-M02', 'Web统一工作入口', '工作线', 'web-unified-workspace', 'wpf-m02-web-workspace'],
   ['WPF-P01', 'Web插件宿主', '工作线', 'web-plugin-host', 'wpf-p01-plugin-host'],
+  ['O01', '目标与版本化执行', '工作线', 'goal-orchestration', 'o01-goal-orchestration'],
+  ['WPF-PERF01', 'Web性能基线测量', '技术验证', 'web-performance', 'wpf-perf01-web-performance'],
   ['E01', 'Harness 零模型验证', '技术验证', 'harness-auth-probes', 'e01-harness-probes'],
   ['WPF-I01', 'Web 插件集成', '工作线', 'web-plugin-integration', 'wpf-i01-plugin-integration'],
   ['D04', '多 Lead 领取协调', '工程协作', 'dashboard-coordination', 'd04-coordination'],
