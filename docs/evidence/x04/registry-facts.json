@@ -1,0 +1,102 @@
+{
+  "node": "v24.20.0",
+  "platform": "darwin",
+  "arch": "arm64",
+  "recordedAt": "2026-10-06T06:12:25.778Z",
+  "nativeModelQueries": 0,
+  "completedCleanups": 18,
+  "facts": [
+    {
+      "case": "download-without-execution",
+      "requests": [
+        {
+          "url": "/@flow%2fpackage-test"
+        },
+        {
+          "url": "/package.tgz"
+        }
+      ],
+      "receipt": {
+        "name": "@flow/package-test",
+        "version": "1.2.3",
+        "integrity": "sha512-K4hKnGZux9yS6zfZ5L02GPoeUTl8yOxy2gKVexKM4qDEqnMLqE/Ek53RwgOVIemAXY8NBGJ6s5kJX1C9A5Apyg==",
+        "artifactId": "4a3d8ecd-2ba4-4622-a18d-2782d6375951",
+        "format": "npm-tarball",
+        "bytes": 268,
+        "sha256": "89d4d731fa9196eac02b2d8de6242a7b4e187eb466da346f50c88f7b93d668e1",
+        "verifiedAt": "2026-10-06T06:12:25.600Z",
+        "source": {
+          "registry": "http://127.0.0.1:53354/",
+          "tarball": "http://127.0.0.1:53354/package.tgz"
+        }
+      },
+      "identicalBytes": true,
+      "scriptMarkerAbsent": true,
+      "stagingEmpty": true
+    },
+    {
+      "case": "corruption-retry",
+      "attempts": 2,
+      "bytes": 134,
+      "stagingEmpty": true
+    },
+    {
+      "case": "cross-origin",
+      "mode": "metadata",
+      "targetRequests": 0
+    },
+    {
+      "case": "cross-origin",
+      "mode": "redirect",
+      "targetRequests": 0
+    },
+    {
+      "case": "changed-path",
+      "mode": "tarball",
+      "targetRequests": 0
+    },
+    {
+      "case": "changed-path",
+      "mode": "metadata",
+      "targetRequests": 0
+    },
+    {
+      "case": "limits",
+      "mode": "metadata",
+      "requests": 0,
+      "metadataBytes": 100,
+      "maxBytes": 1024,
+      "timeoutMs": 2000
+    },
+    {
+      "case": "limits",
+      "mode": "tarball",
+      "requests": 1,
+      "metadataBytes": 1024,
+      "maxBytes": 10,
+      "timeoutMs": 2000
+    },
+    {
+      "case": "limits",
+      "mode": "timeout",
+      "requests": 1,
+      "metadataBytes": 1024,
+      "maxBytes": 1024,
+      "timeoutMs": 100
+    },
+    {
+      "case": "limits",
+      "mode": "same-url-loop",
+      "requests": 21,
+      "metadataBytes": 1024,
+      "maxBytes": 1024,
+      "timeoutMs": 2000
+    },
+    {
+      "case": "permanent-integrity-failure",
+      "attempts": 2,
+      "publishedArtifacts": 0,
+      "stagingEmpty": true
+    }
+  ]
+}

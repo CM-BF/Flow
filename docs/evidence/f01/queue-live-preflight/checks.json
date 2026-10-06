@@ -1,0 +1,137 @@
+{
+  "kind": "synthetic browser rehearsal",
+  "sourceMain": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "modelCalls": 0,
+  "realCenter": false,
+  "startedAt": "2026-10-06T05:52:51.385Z",
+  "steps": [
+    {
+      "name": "first-task-running",
+      "at": "2026-10-06T05:52:52.511Z",
+      "taskId": "0d477ee6-148c-4667-86fc-6657947618c6-task-1"
+    },
+    {
+      "name": "pause-ack",
+      "at": "2026-10-06T05:52:52.639Z",
+      "receipt": {
+        "conversationId": "0d477ee6-148c-4667-86fc-6657947618c6",
+        "queueRevision": 2,
+        "paused": true,
+        "currentTurn": {
+          "taskId": "0d477ee6-148c-4667-86fc-6657947618c6-task-1",
+          "taskStatus": "running",
+          "turnId": "0d477ee6-148c-4667-86fc-6657947618c6-turn-1",
+          "turnNumber": 1,
+          "queueItemId": null
+        },
+        "replayed": false
+      }
+    },
+    {
+      "name": "enqueue-ack",
+      "at": "2026-10-06T05:52:52.745Z",
+      "receipt": {
+        "conversationId": "0d477ee6-148c-4667-86fc-6657947618c6",
+        "queueRevision": 3,
+        "item": {
+          "id": "0d477ee6-148c-4667-86fc-6657947618c6-queued-3",
+          "conversationId": "0d477ee6-148c-4667-86fc-6657947618c6",
+          "sequence": 3,
+          "state": "waiting",
+          "preview": "只回复刚才记住的标记，不要任何其他文字。",
+          "truncated": false,
+          "promoted": null,
+          "createdAt": "2026-10-06T05:52:52.722Z",
+          "updatedAt": "2026-10-06T05:52:52.722Z"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "name": "queued-durably-while-first-running",
+      "at": "2026-10-06T05:52:52.750Z",
+      "queueItemId": "0d477ee6-148c-4667-86fc-6657947618c6-queued-3"
+    },
+    {
+      "name": "fixture-only: first reply published; no SDK usage assertion",
+      "at": "2026-10-06T05:52:52.750Z"
+    },
+    {
+      "name": "continue-ack",
+      "at": "2026-10-06T05:52:52.882Z",
+      "receipt": {
+        "conversationId": "0d477ee6-148c-4667-86fc-6657947618c6",
+        "queueRevision": 4,
+        "paused": false,
+        "currentTurn": {
+          "taskId": "0d477ee6-148c-4667-86fc-6657947618c6-task-2",
+          "taskStatus": "succeeded",
+          "turnId": "0d477ee6-148c-4667-86fc-6657947618c6-turn-2",
+          "turnNumber": 2,
+          "queueItemId": "0d477ee6-148c-4667-86fc-6657947618c6-queued-3"
+        },
+        "promoted": {
+          "id": "0d477ee6-148c-4667-86fc-6657947618c6-queued-3",
+          "conversationId": "0d477ee6-148c-4667-86fc-6657947618c6",
+          "sequence": 3,
+          "state": "promoted",
+          "preview": "只回复刚才记住的标记，不要任何其他文字。",
+          "truncated": false,
+          "promoted": {
+            "taskId": "0d477ee6-148c-4667-86fc-6657947618c6-task-2",
+            "turnId": "0d477ee6-148c-4667-86fc-6657947618c6-turn-2",
+            "turnNumber": 2
+          },
+          "text": "只回复刚才记住的标记，不要任何其他文字。",
+          "createdAt": "2026-10-06T05:52:52.722Z",
+          "updatedAt": "2026-10-06T05:52:52.874Z"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "name": "second-task-running-before-browser-exit",
+      "at": "2026-10-06T05:52:52.884Z",
+      "taskId": "0d477ee6-148c-4667-86fc-6657947618c6-task-2"
+    },
+    {
+      "name": "dedicated-browser-process-exited",
+      "at": "2026-10-06T05:52:52.954Z"
+    },
+    {
+      "name": "focused-second-assistant-exact-nonce",
+      "at": "2026-10-06T05:52:53.655Z"
+    },
+    {
+      "name": "narrow-dark-second-assistant-exact-nonce",
+      "at": "2026-10-06T05:52:53.886Z"
+    }
+  ],
+  "browsers": [
+    {
+      "pid": 76065,
+      "openedAt": "2026-10-06T05:52:51.591Z",
+      "closedAt": "2026-10-06T05:52:52.954Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 76140,
+      "openedAt": "2026-10-06T05:52:53.153Z",
+      "closedAt": "2026-10-06T05:52:53.956Z",
+      "exitCode": 0,
+      "signal": null
+    }
+  ],
+  "pageErrors": [],
+  "conversationId": "0d477ee6-148c-4667-86fc-6657947618c6",
+  "firstTaskId": "0d477ee6-148c-4667-86fc-6657947618c6-task-1",
+  "queueItemId": "0d477ee6-148c-4667-86fc-6657947618c6-queued-3",
+  "secondTaskId": "0d477ee6-148c-4667-86fc-6657947618c6-task-2",
+  "visibleAssistantTexts": [
+    "已记住",
+    "flow-zero-model-队列-7e91"
+  ],
+  "status": "PASSED_SYNTHETIC_ONLY",
+  "endedAt": "2026-10-06T05:52:53.957Z"
+}

@@ -2,30 +2,37 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 05:55 UTC |
+| 最近更新 | 2026-10-06 06:15 UTC |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools |
 | Branch | codex/native-graph-tools |
-| 工作基线 / HEAD | 45b720eeb9aa41873b29ba3ce240578330b77e15（已审main+O06组合，非main） |
-| 工作树dirty状态 | 已受控merge K02 736/main3d4985；最终source待固定，own scope dirty |
-| 工作分支状态 | IMPLEMENTING |
-| 检查状态 | IN_PROGRESS；实际MCP4/4+既有node adapter10/10、native受理2/2、017→019迁移1/1、旧迁移消费者1/1、graph gate9/9、tsc通过；全链真实MCP→HTTP/PG三场景、claim三场景、升级与直接消费者44/44通过，收尾固定source检查 |
-| Review | NOT_STARTED |
-| 已集成main状态 / HEAD | 本片未集成；已审O06/main3d4985为输入，K02仍本地依赖 |
+| 工作基线 | 45b720eeb9aa41873b29ba3ce240578330b77e15 |
+| 实现目标 | c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5 |
+| 实现范围 | apps/runner/src/goal-graph-tools/; apps/runner/src/goal-tool-bridge/index.ts; apps/runner/src/goal-tool-bridge/authority.ts; apps/runner/src/goal-tool-bridge/policy.ts; apps/runner/src/claude.ts; apps/runner/src/configuration.ts; apps/runner/src/execution-profiles.ts; apps/runner/src/runtime.ts; apps/server/src/goal-graph-runs/store.ts; apps/server/src/goal-graph-runs/index.ts; apps/server/src/goal-graph-runs/native.test.ts; apps/server/src/goal-graph-runs/native-migration.test.ts; apps/server/src/goal-graph-runs/migration.test.ts; apps/server/src/execution-profiles/store.ts; apps/server/src/tasks.ts; apps/server/src/runners.ts; packages/contracts/src/goal-graph-runs.ts; packages/contracts/src/execution-profiles.ts; packages/contracts/src/runner.ts; packages/storage/migrations/019-goal-graph-native-mode.sql |
+| 工作树dirty状态 | 源码已冻结；本次证据metadata提交后clean |
+| 工作分支状态 | APPROVED |
+| 检查状态 | PASSED：c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5；作者67个不同检查分22+44+1通过，tsc exit0；0模型 |
+| Review | APPROVED：Goal Owner / Root；无 P1/P2；只读核验，无重跑 |
+| Review target commit | c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5 |
+| 已集成main状态 / HEAD | 本片未集成；已审main3d4985作为输入；本地K02输入736，最终a6c9b09已获Mika完整批准，Lead须用最终版本并核018/019生产挂载 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 已贯通受限图计划记录与真实final持久化，正在收尾独立审查材料 |
-| 下一可用交付 | 助手可在指定额度内记录任务图，并明确哪些步骤尚未执行 |
+| 当前产出 | 助手受限工具能记录三步计划并保存最终回复；未执行子任务 |
+| 下一可用交付 | 统一接收配置与迁移，随后另行决定最小自然语言验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| O07-01 | complete | assignment_review | 23范围原子claim（增加旧migration直接消费者） |
-| O07-02 | complete | assignment_review | 已读现SDK/MCP/profile代码，独立域开工 |
-| O07-03 | complete | assignment_review | 两共享字段已正式handoff/v3领取；完整736依赖即将受控接收 |
-| O07-04 | in-progress | assignment_review | 尚未验证 |
-| O07-05 | pending | assignment_review | 尚未独审 |
+| O07-01 | completed | assignment_review | v5保留20literal；已移交claude.ts和contracts/runner.ts给CHAT05 |
+| O07-02 | completed | assignment_review | SDK真实MCP恰好2工具；profile/internalpurpose/受理/019 |
+| O07-03 | completed | assignment_review | 既有runtime/loop/outbox/cancel/final复用；私有executionInput保持 |
+| O07-04 | completed | assignment_review | 67不同检查、原始wire与升级JSON，见证据报告 |
+| O07-05 | in-progress | assignment_review | clean-code与Root独立review通过，等待main接收 |
 
-claim255d6fc3-58cb-494f-ac28-7e3f5d5d8192 v3，[回执](../../docs/evidence/o07/claim-receipt.json)。唯一事实源canonical已报Lead登记。架构影响为新graph工具profile/SDK mount，沿现loop/outbox/authority；固定target后由Lead同步架构视图。0模型。
+claim `255d6fc3-58cb-494f-ac28-7e3f5d5d8192` v5，[CHAT05移交回执](../../docs/evidence/o07/chat05-scope-amend-receipt.json)。2026-10-06 06:02:41 UTC 已停止并移出 apps/runner/src/claude.ts 与 packages/contracts/src/runner.ts，其余claim保留至集成/必要回修。 [报告/复跑/边界](../../docs/evidence/o07/README.md)、[manifest](../../docs/evidence/o07/manifest.json)。普通node grant未扩权；测试中query transport为注入，实际MCP/HTTP/PG为真；无native模型/NL/真实child/Web/现服务操作。父O01/U11产品后继仍open。
+
+架构影响：专属goal-graph-tools profile经host持有的两工具SDK桥接调用O06授权公共接口，node/graph共享authority与权限策略，019前进扩mode；未新增agent loop。固定target c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5，工程dashboard架构基线更新登记给Execution Lead，待实际集成后更新。
+
+2026-10-06 06:14:34 UTC：apps/server/src/runners.ts 对 c224 零diff，明确停止写入并从claim v5移出供K03；[回执](../../docs/evidence/o07/k03-scope-amend-receipt.json)。其余范围保持；未重测。

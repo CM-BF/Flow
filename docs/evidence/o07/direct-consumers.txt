@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools
+
+ ✓ apps/runner/src/claude.test.ts (26 tests) 228ms
+ ✓ apps/server/src/goal-graph-runs/native-migration.test.ts (1 test) 2114ms
+   ✓ preserves populated 017 graph authority with 018 claim input schema and audit across 019, repeated migration and native admission  730ms
+ ✓ apps/server/src/goal-graph-runs/migration.test.ts (1 test) 1247ms
+   ✓ upgrades populated 014 grants, audit and owner graph history forward to 017 without rewriting any previous facts  368ms
+ ✓ apps/runner/src/goal-tool-bridge/sdk.test.ts (10 tests) 54ms
+ ✓ apps/runner/src/goal-tool-bridge/configuration.test.ts (6 tests) 62ms
+
+ Test Files  5 passed (5)
+      Tests  44 passed (44)
+   Start at  22:53:59
+   Duration  5.61s (transform 641ms, setup 0ms, import 1.47s, tests 3.71s, environment 0ms)
+

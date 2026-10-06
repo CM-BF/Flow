@@ -45,6 +45,7 @@ function assertSummary(value: ConversationSummary, expectedId?: string) {
 }
 function creationFields(value: ConversationCreation): ConversationCreation {
   return { title: value.title, harness: value.harness, requested: value.requested,
+    ...(value.projectId === undefined ? {} : { projectId: value.projectId }),
     ...(value.executionProfile === undefined ? {} : { executionProfile: value.executionProfile }) };
 }
 function assertTurn(value: ConversationTurn, conversationId: string) {
@@ -66,6 +67,7 @@ function assertTurn(value: ConversationTurn, conversationId: string) {
 function assertCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
   const value = snapshot.capabilities;
   if (!value || value.followUp !== true || typeof value.queue !== "boolean"
+    || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== "boolean")
     || [value.steer, value.liveAssistantText, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
     throw Error("This connection's conversation capabilities are not supported by this Web version.");
 }

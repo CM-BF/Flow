@@ -1,10 +1,10 @@
 # K02 对话冻结知识上下文
 
-创建/更新：2026-10-06 05:41:41 UTC；状态in-progress。Goal Owner已批准设计；单一owner b01_bounded_reads / gpt-6-astra ultra，lead Mika。K01已经交付并release，禁止回旧WT写入。
+创建/更新：2026-10-06 05:55:50 UTC；状态in-progress。Goal Owner已批准设计；单一owner b01_bounded_reads / gpt-6-astra ultra，lead Mika。K01已经交付并release，禁止回旧WT写入。
 
-- [ ] K02-01 固定DTO/018/migrate-register接口与私有claim薄接缝，交Lead接线。
-- [ ] K02-02 同TX冻结来源、编译有界输入、发送/入队/两种提升重用与公开metadata。
-- [ ] K02-03 claim私有投影及受控reconciliation两种retry保留context并重编译输入。
+- [x] K02-01 固定DTO/018/migrate-register接口与私有claim薄接缝，交Lead接线。
+- [x] K02-02 同TX冻结来源、编译有界输入、发送/入队/两种提升重用与公开metadata。
+- [x] K02-03 claim私有投影及受控reconciliation两种retry保留context并重编译输入。
 - [ ] K02-04 真实PG/HTTP/注入query验证、受控旧消费者组合、Mika独立技术review。
 - [ ] K02-05 main接收；生产挂载/client/CLI/Web接线由各scope owner验证。
 - [ ] K02-06 后继REQ-10 hybrid/vector与授权下游/失效验收保持开放。

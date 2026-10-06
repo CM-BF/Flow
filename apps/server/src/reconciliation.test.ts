@@ -2,18 +2,19 @@ import { createHash, randomUUID } from 'node:crypto';
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { Pool, type PoolClient } from 'pg';
+import { Pool } from 'pg';
 import { afterAll, afterEach, beforeAll, beforeEach, expect, it } from 'vitest';
 import type { ClaimedTask } from '@flow/contracts';
 import { createServer } from './index.js';
 
-const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_c02';
+const databaseName = `flow_c02_${randomUUID().replaceAll('-', '')}`;
+const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${databaseName}`;
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
 const ownerToken = 'c02-local-owner';
 let server: Awaited<ReturnType<typeof createServer>> | undefined;
 let baseUrl: string;
 let createdDatabase = false;
-let databaseLock: PoolClient;
+const resourceFacts: Record<string, unknown> = { databaseName, startedAt: new Date().toISOString() };
 const taskInput = { title: 'C02 original task', prompt: 'Deterministic protocol fixture; no model', harness: 'fixture' };
 
 async function request(path: string, payload?: unknown, token = ownerToken, key: string = randomUUID()) {
@@ -62,13 +63,14 @@ async function uncertainTask(resume = false, prompt = taskInput.prompt) {
 }
 
 beforeAll(async () => {
-  databaseLock = await admin.connect();
-  const locked = await databaseLock.query("SELECT pg_try_advisory_lock(hashtextextended('flow_c02_test_exclusive',0)) AS locked");
-  if (!locked.rows[0]?.locked) throw new Error('Another C02 test run owns flow_c02');
-  const exists = await databaseLock.query("SELECT 1 FROM pg_database WHERE datname='flow_c02'");
-  if (!exists.rowCount) { await databaseLock.query('CREATE DATABASE flow_c02'); createdDatabase = true; }
+  const exists = await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [databaseName]);
+  resourceFacts.before = exists.rows;
+  if (exists.rowCount) throw new Error('Refusing an existing reconciliation test database.');
+  await admin.query(`CREATE DATABASE ${databaseName}`); createdDatabase = true;
+  resourceFacts.created = true;
 });
 beforeEach(async () => {
+  if (!createdDatabase) throw new Error('This run does not own its test database.');
   const pool = new Pool({ connectionString: databaseUrl });
   try { await pool.query('DROP SCHEMA IF EXISTS flow CASCADE; DROP SCHEMA IF EXISTS pgboss CASCADE'); }
   finally { await pool.end(); }
@@ -76,8 +78,16 @@ beforeEach(async () => {
 });
 afterEach(async () => { await server?.close(); server = undefined; });
 afterAll(async () => {
-  try { if (createdDatabase) await databaseLock.query('DROP DATABASE flow_c02 WITH (FORCE)'); }
-  finally { databaseLock?.release(); await admin.end(); }
+  try {
+    await server?.close();
+    if (createdDatabase) {
+      resourceFacts.connectionsBeforeDrop = (await admin.query('SELECT pid FROM pg_stat_activity WHERE datname=$1', [databaseName])).rows;
+      await admin.query(`DROP DATABASE ${databaseName}`);
+      resourceFacts.remaining = (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [databaseName])).rows;
+    }
+    resourceFacts.endedAt = new Date().toISOString();
+    if (process.env.FLOW_C02_RESOURCE_EVIDENCE) await writeFile(process.env.FLOW_C02_RESOURCE_EVIDENCE, JSON.stringify(resourceFacts, null, 2));
+  } finally { await admin.end(); }
 });
 
 it('shows durable uncertain ownership and retained evidence without interpreting lease expiry as a stop', async () => {

@@ -1,10 +1,10 @@
 # 完整计划验收矩阵与滚动批次
 
-核验时间：2026-10-06 05:20 UTC。基线 main/origin/main `14c61b4062f8040ba6c7239860929366e5bd3fc1`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
+核验时间：2026-10-06 06:13 UTC。基线 main/origin/main `3d4985fca060155435b159e0467815bf8e88b8b8`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
 
 | ID / 原始要求 | 任务/依赖 | 验收与所需证据 | 当前事实与缺口 |
 | --- | --- | --- | --- |
-| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | M02 backend/CLI和WPF-M02 d47已集成；10任务真PG/HTTP4组、8chat双split及窄屏证据已审；确定性交互成立，跨任务语义解释质量/人工时间对照仍open；CHAT01/02/03+Web7cb已审并集成：持久conversation/typed正文/配置pin。2query真实session记忆与首轮Web正文通过；第二轮live UI未证实，保存响应零模型重放通过，报告cc73已获限定独立批准；U11执行选项主界面2e4与紧凑配置摘要55b已审集成；只允许真实配置能力，目录登记不等于provider在线；持久queue/pause/resume后台与旧新兼容reader已审集成，队列UI仍open；steer/context/files/voice等仍open |
+| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | M02 backend/CLI和WPF-M02 d47已集成；10任务真PG/HTTP4组、8chat双split及窄屏证据已审；确定性交互成立，跨任务语义解释质量/人工时间对照仍open；CHAT01/02/03+Web7cb已审并集成：持久conversation/typed正文/配置pin。2query真实session记忆与首轮Web正文通过；第二轮live UI未证实，保存响应零模型重放通过，报告cc73已获限定独立批准；U11执行选项主界面2e4与紧凑配置摘要55b已审集成；只允许真实配置能力，目录登记不等于provider在线；持久queue/pause/resume后台与旧新兼容reader已审集成，队列UI309ec0已独审并集成；独立新queue两query已真实验收：运行中暂停/入队、显式继续、同session精确回忆正文、专属浏览器退出后真实GET仍running并最终恢复正文；2/2已封存，证据b8e0fed，SDK保守费用和$0.012396；这次不宣称自动promotion真实调用验收；steer/context/files/voice等仍open |
 | REQ-02 §7/8 Project/Workspace、动态计划 | G01，接M02/C02 | 项目授权边界，版本化新增/拆分/依赖更改，禁止循环，取消传播与失效决策/旧结果拒绝；故障后保留因果记录 | G016394项目revision/节点version/依赖无环/CAS与历史持久化、CLI已集成；O01 a4首段及F01公共goal命令已集成，真实PG diamond证明输入/依赖版本失效；自然语言规划/自动调度/取消传播完整范围仍open |
 | REQ-03 §7/12 未知副作用和恢复 | C02已集成 | 失联保留占用；实际结果核对、人工停止确认/副作用证据、不可变审计、显式新task retry；旧attempt不能复活；PG重启后审计仍在 | C02已独立审查并集成：停止/副作用审计、安全重跑依据、新task provenance、旧fence拒绝；operator断言不等于外部客观停止 |
 | REQ-04 §5.3/12 A2A双向互操作 | P01 SDK已集成；P02首出站已集成 | 固定实际SDK/规范/对端，发现/auth/直接响应/长任务/补充输入/产物/取消；至少一侧官方SDK；重复、ACK丢失、重连/降级/大inline | 官方SDK1.3互操作和P02 f942 task-based持久意图/binding/重启Get/取消/产物验证已集成；失ID不重发。P03显式send/Get historyLength0已审集成，同task1024历史wire2,185,338→16,580B且状态/产物相同；真实外部agent语义/所有输入与预算路径仍未完整 |
@@ -13,7 +13,7 @@
 | REQ-07 FLOW002-T08 上游模块实际复用 | E01 | 固定Hermes/T3/Paseo模块/许可证/归属，提取真正采用代码及测试、记录差异；选择不适用项给证据 | E01固定Paseo7a30305原文模块实际在合成子进程probe运行，db2f2d0方法已审；UTF8/字节限额/脱敏缺口已证实限定场景，生产安全修复与采用仍open |
 | REQ-08 §9 Context原文/版本引用 | X01/context，接G01 | 目标/约束/验收/预算+固定版本引用和增量；原文可追回，来源更新使摘要/下游证据失效；按需tool schema，大结果工具侧筛选 | O02 d819实际MCP桥接/固定原文版本引用/有界回复已审集成；仍先读完整中心snapshot，只减模型侧回复字节，不声称token/DB收益。CTX01固定acp-kernel0.0.101纯核合成会话压缩/原文hash/恢复实验已审集成；CTX02固定Pi0.85.1+插件0.1.83/实际kernel0.0.98宿主hook实验8abe已审集成；默认loader精确读取隔离拒绝，显式factory/toy窗口配置可回取原文，future sidecar只警告降写是采用阻断。通用context存储/失效/压缩owner仍未完成 |
 | REQ-09 §9 成本与预算账本 | E01/context，接usage registry | raw source/scope/session baseline、缓存读写unknown保留；规划/交接/解释/检索/压缩/重试/验证分类；按验收通过交付的总成本/成功率对照 | 已有累计usage去重与unknown；本轮2query归一化SDK累计样本保守和$0.013442，resume增量unknown、内部Haiku计入，不当账单或项目硬预算。全分类/预算/公平成本对照未完成 |
-| REQ-10 §9 KB hybrid检索 | K01，接项目权限/context | 来源导入/版本/权限/位置，FTS+vector，中文/代码标识符/精确事实/权限过滤各自质量集与引用准确性 | K01已独立领取并实现owner/project原文版本与有界词法检索，015/合同b145固定供共享消费者，完整领域尚未审；0embedding/model，不将simple FTS/literal称hybrid完成 |
+| REQ-10 §9 KB hybrid检索 | K01，接项目权限/context | 来源导入/版本/权限/位置，FTS+vector，中文/代码标识符/精确事实/权限过滤各自质量集与引用准确性 | K01 ea0c领域与F01公共client/CLI/015生产挂载已独审并集成；12个固定词法样本FTS4/12、literal+FTS12/12仅限定质量集。K02版本化引用进入conversation/queue分支实现a6c9已获Mika独审，生产018与Web兼容组合待Lead接收，公有prompt保持用户原文，执行输入下层隔离，尚未main；0embedding/model，不将simple FTS/literal称hybrid完成 |
 | REQ-11 §10 npm插件生命周期 | X01 | 版本/配置/能力/作用域，install/enable/disable/upgrade/remove；可信服务端与隔离第三方边界；真实工具/renderer/verifier示例 | X01完整计划c217已文档批准并集成（plans/x01-plugin-management）；X02 registry/008+公共client/CLI已审集成；X03只读登记与浏览器host分离视图已审集成，Web App只读管理挂载84ac已独审集成；npm安装/加载/生命周期/隔离示例未完成 |
 | REQ-12 §10 插件可替换/通用UI | X01+M02 | 客户端只触发公共命令，CLI等价；未知类型id/title+通用详情；唯一compression owner；明确状态迁移/恢复能力 | trusted Web host6ce3独立已审，WPF-I01 92a主App挂载已审并集成；不替代完整npm生命周期/隔离/CLI；不建设无需求插件市场 |
 | REQ-13 §10 上下文插件兼容 | X01+E01 | 确认实际billion-context候选/固定版本，压缩→暂停/恢复/分叉、原文引用、附属存储与跨worker边界 | 已定位billion-context-pi0.1.83及代理候选，未假称用户亲自确认；CTX01固定kernel纯核0模型结果已审，CTX02真实宿主factory零模型实验已审集成；默认入口读取拒绝及未知sidecar降写明确阻断直接采用，不能以同进程重开替代native历史编辑/跨机恢复。完整插件/语义压缩未验；名称不代表原生十亿窗口 |
@@ -22,10 +22,10 @@
 | REQ-16 §8.2 缓存/快照与事件 | B01/M02 | workspace+权限+内容版本缓存，切换不清空全部，快照/订阅race与旧cursor无漏/去重；源事务乱序提交真实PG验证 | M02已验证晚提交水位与201task跨batch受理因果，Web保留隐藏view恢复cursor且限制活跃SSE；分层版本缓存/字节预算仍open，不以source bigserial为提交水位 |
 | REQ-17 §8.3 交互性能 | B01+S01 | 缓存交互p95<=50ms、查询<=100ms、持久受理<=200ms作为待测初步目标；p95/p99样本量、字节、网络、数据规模/缓存并发分开报告 | LAB01/02有界toy/诊断，B01产品PG/HTTP n50四组前后对照和PERF02三规模10,040条UI窗口证据已审集成；均不替代p99/SLO或真实agent容量，原性能目标仍open |
 | REQ-18 §8/12 超100持久会话 | S01，依赖G01/预算/恢复 | 128持久session，分别调节model/tool/DB并发；成功率/资源/连接/写量/延迟/故障；真模型负载独立预算 | 128observer/合成DOM不是agents容量；未完成 |
-| REQ-19 §12/13 自托管部署和故障 | S01 | 一中心本机/远端runner部署文档、持久存储/权限/重启恢复/故障演练；浏览器/中心/runner断连承诺分开 | M1浏览器退出、queued中心重启已有证据；R04 bounded HTTP drain/主进程20s unknown退出已审集成；SVC01独立启动器已审集成并0消息启动61227/61228，用户需首次认证后主动发消息；center/runner仍加载75a33，Vite Web可随main变化，启动SHA不代表当前整套运行源码。SVC02已独立领取016，durable drain/maintenance与可信本机bootstrap实施中；不触现服务，active跨机恢复未完整 |
+| REQ-19 §12/13 自托管部署和故障 | S01 | 一中心本机/远端runner部署文档、持久存储/权限/重启恢复/故障演练；浏览器/中心/runner断连承诺分开 | M1浏览器退出、queued中心重启已有证据；R04 bounded HTTP drain/主进程20s unknown退出已审集成；SVC01独立启动器已审集成并0消息启动61227/61228，用户需首次认证后主动发消息；SVC02 durable drain/maintenance/bootstrap已独审集成并完成一次真实受控升级和恢复接受，center/runner实际加载fb906cb，原DB/runner身份/端口保留、0模型调用；Vite Web可随main变化，启动SHA不代表整套当前源码，active跨机恢复未完整 |
 | REQ-20 §11 验证和证据链 | M02/G01/X01/S01 | 要求→产物版本→独立验证→合并版本可追溯；知识结论来源范围；不同任务可选verifier | M1 flow.text非空/contains已有；工程/知识/扩展验证未完整 |
-| REQ-21 工程协作dashboard用户要求 | D03/D04已集成部署 | 结构化human摘要；首屏当前阶段/2–3项工作/下一交付/真正决策，历史折叠；细节可追溯；review实现target与metadata、main祖先关系分离 | D03中性紧凑视图、D04PG原子claim/self-service已独审部署；4320 05:17:34.183Z实际63源，K01/SVC02/PROFILEUX live/issues空；D07显式片段阶段与DPERF单快照核验复用已独审部署，新增claim未登记仍可见；D05架构tab与D06固定8f快照已上线，历史快照不当最新架构全量证明 |
-| REQ-22 §1/5/7/11 自然语言目标到交付 | O01，接G01/M02/E01 | 目标→后台生成/修订版本化子任务与依赖→不同agents产出→独立验证循环→统一解释/用户决策→固定产物交付；复用harness，计划变更仅受限中心commands | O01 a4持久受限命令/真实PG diamond/独立进程失效证据已审集成；O02 d819真实MCP桥接已审集成但无query。O03中心授权与公共client/生产挂载已审集成；O04固定1420dfa+012升级测试a169已独审集成（102+1不同检查）；O05 owner持久graph proposal/apply领域1f211已独审、F01生产挂载208a正独审，不把owner提案等同模型拆图；实际native query/自动拆图/自然语言语义仍open，手动10任务不替代最终编排 |
+| REQ-21 工程协作dashboard用户要求 | D03/D04已集成部署 | 结构化human摘要；首屏当前阶段/2–3项工作/下一交付/真正决策，历史折叠；细节可追溯；review实现target与metadata、main祖先关系分离 | D03中性紧凑视图、D04PG原子claim/self-service已独审部署；4320 05:49:16.984Z实际68源，K02/O07/renderer live/issues空；D07显式片段阶段与DPERF单快照核验复用已独审部署，新增claim未登记仍可见；D05架构tab与D06固定eb14991快照已上线，标题明确源码SHA/核验日期，独立标注常驻runtime版本，历史快照不当最新架构全量证明 |
+| REQ-22 §1/5/7/11 自然语言目标到交付 | O01，接G01/M02/E01 | 目标→后台生成/修订版本化子任务与依赖→不同agents产出→独立验证循环→统一解释/用户决策→固定产物交付；复用harness，计划变更仅受限中心commands | O01 a4持久受限命令/真实PG diamond/独立进程失效证据已审集成；O02 d819真实MCP桥接已审集成但无query。O03中心授权与公共client/生产挂载已审集成；O04固定1420dfa+012升级测试a169已独审集成（102+1不同检查）；O05 owner持久graph proposal/apply领域1f211与F01生产挂载208a已独审集成；O06受限graph grant/审计/同TX重放及017/shared接线已独审集成；O07原生graph工具分支c224已获GO独审，保持注入query/实际MCP边界，生产018依赖仍须与K02集成闭合，不把owner提案等同模型拆图；实际native query/自动拆图/自然语言语义仍open，手动10任务不替代最终编排 |
 
 ## 早期研究/实验输入（保留当时范围；当前结果以上表为准）
 
@@ -35,11 +35,11 @@
 
 ## 当前滚动调度
 
-本任务cap4（Root + Lead + SVC02 runner_owner + O05/后继graph授权 assignment_review），外部Web最多4，Mika最多2，合计10。任务claim实际原子领取、唯一status、worktree隔离；三队回程限制见OPS-001-06，不把subagent说成可直投用户task。
+本任务cap4（Root + Lead + CHAT05 runner_owner + O07 assignment_review），外部Web最多4，Mika最多2，合计10。任务claim实际原子领取、唯一status、worktree隔离；三队回程限制见OPS-001-06，不把subagent说成可直投用户task。
 
-main14c61b4已含CHAT持久会话、实际typed正文、执行配置、队列后台及兼容reader、O01/O02/O03、X02登记与X03只读App挂载、R04/P03/B01与CTX01。SVC01真实入口已保留，当前未授权新增模型测试；原2query真实短聊天预算封存，第二轮live UI限制仍保留。
+main3d4985f已含CHAT持久会话/typed正文/配置pin/队列后台及UI、O01～O06相应限定片段、K01版本原文与词法检索、X02登记与X03只读App挂载、R04/P03/B01/B03、CTX01/02、SVC02维护。实际center/runner固定fb906cb/v3接受；Web与后台各自版本须记录，不以同SHA作为前后端分离部署门槛。原R02 5/5与CHAT 2/2预算封存，第二轮旧live UI限制保留；新QUEUE两query已真实验收并封存2/2，实际同session正文、运行中排队与浏览器关闭后后台继续成立；保持显式Continue和归一化SDK成本边界，不追改旧日志。
 
-当前ready主线：已审O05 owner图提案生产挂载在独立接线审查；下一中心graph专属grant和runner桥接分片准备，不扩旧node grant。SVC02实现可信本机bootstrap与持久维护gate，先专库/自有进程验证后才更新常驻服务。Mika K01实施版本化原文/词法引用；外部Web执行选项已集成，接持久queue/pause/resume界面。CTX02/B03/B02、D07/DPERF均已受控接收，不追加重复实验。X01完整npm生命周期/隔离、KB语义质量、工程harness、FS/PTY和S01容量仍open。普通聊天不依赖完整goal编排。
+当前ready主线：Lead集成已审K02/O07与Web上下文兼容、独立详情renderer；CHAT05完整活动链固定57d28e9/85局部检查供Mika独审，生产020挂载后继；Web活动展示独立实施。K03目标知识输入已领取并复用同事务上下文工具；X04固定版本压缩包artifact模块实施，下载/完整性不等于安装或信任。队列真实两query已完成，不再重复模型实验。完整npm生命周期/隔离、KB向量质量、工程harness、FS/PTY与S01容量仍open。
 
 **持续执行**：完成→核查实际证据/验收→集成→下一ready项。阻塞→记录原因/owner/解除条件/绕行与其他独立工作。暂时无ready实现→有界研究或低成本实验，用证据改计划，不增加无意义复杂度，不降低原验收。所有feature仍各自独立worktree/status/review；此矩阵不替代owner状态。
 
@@ -84,3 +84,15 @@ main14c61b4已含CHAT持久会话、实际typed正文、执行配置、队列后
 - 固定本机Codex0.154.0的help/schema只读归档已完成，未启动auth或query。官方[app-server](https://learn.chatgpt.com/docs/app-server)的dynamicTools/调用回复仍experimental且需capability；resume会恢复工具声明，grant必须每次调用核验。Flow runner保有原生连接，Web卸载不等于thread/unsubscribe。thread/shellCommand与process/*可能在Codex sandbox外，command/exec另有约束；steer(expectedTurnId)不接受turn配置覆盖，不能混作queue。最新文档不是固定本机能力证明。
 - [Prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) 与 [context editing](https://platform.claude.com/docs/en/build-with-claude/context-editing)：tools→system→messages前缀，动态改工具schema/早期消息可能失缓存或native签名。通用纯核压缩成功不能证明Claude/Codex opaque resume可透明改历史；Pi hook单独验证。总成本包含cache写读、摘要、检索、重试与质量，目前CTX01只证明合成bytes/CPU/RSS/hash，不声称省token/账单或100真实agents。
 - 用户摘要写获得的能力/实际阻塞，技术SHA/测试命令留详细证据。完成片段与尚未领取后继区分；历史已交付项不因开放TODO重新伪装当前交付。D07与DPERF分别按独立claim实施，不为这次metadata运行产品测试。
+
+## 2026-10-06 06:00 UTC 已排后继研究（非新增交付）
+
+- X04拟复用固定pacote21.5.1：精确registry name/version+SRI、ignoreScripts、独立staging与原子包产物；stream handler重入必须新文件/哈希，下载不等于执行许可，生产不得借全局npm路径。官方依据由GO只读核对：[pacote](https://github.com/npm/pacote)、[npm pack生命周期](https://docs.npmjs.com/cli/v11/commands/npm-pack/)。尚未领取/实现完整npm生命周期。
+- CHAT05先完整SDK block和tool_result生命周期，参数完整≠工具成功；正文/输入输出/公开thinking只按需detail，redacted/opaque signature不存可展示正文。partial正文和真正active steering另片，不用快轮询冒充流式或queue别名。
+- 观察者性能后继区分一task×128observer与一页面管理128tasks。现LAB02按连接读放大量真实，但不是普通聊天瓶颈；若后续使用[PG LISTEN](https://www.postgresql.org/docs/16/sql-listen.html)/[NOTIFY](https://www.postgresql.org/docs/16/sql-notify.html)，只能唤醒+持久cursor回查/周期兜底，不能当可靠log，不先加broker或广泛triggers。
+- K02之后goal引用应有独立node/inputVersion关联，不能伪复用conversation FK；仅两个真实消费者需要时抽同PoolClient resolver/compiler。source head变化要显式freshness和实际下游失效，历史冻结输入不改；现grant不能借此扩大知识读范围。当前A2A仍传完整prompt，未证明跨协议引用。
+
+
+### 2026-10-06 06:13 UTC E02文档研究增量（未实测）
+
+Goal Owner只读官方[app-server](https://learn.chatgpt.com/docs/app-server)：thread/turns/list的itemsView和thread/items/list仍experimental且受实际store限制；historyMode=paginated创建当前返回-32601，已存paginated的full read/turn page/resume也须按实装failclosed能力核验。固定本机0.154.0的后继0query探针必须验证实际store，schema存在不证明可用；Flow PG轻投影仍权威，不为查看历史开启native resume。thread/list.useStateDbOnly仅候选，支持性与性能未测。没有因此升级/启动auth或模型。

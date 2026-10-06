@@ -6,7 +6,7 @@ import { HttpError, transaction } from '../database.js';
 import { loadConversation, type ConversationRow } from '../conversations/state.js';
 import { acceptConversationTurn } from '../conversations/admission.js';
 import { prepareQueueAdmission } from './gate.js';
-import { advanceQueueRevision, itemView, requireQueueRevision, firstWaiting, type QueueRow } from './store.js';
+import { advanceQueueRevision, contextualItemView, requireQueueRevision, firstWaiting, type QueueRow } from './store.js';
 export type QueuePromotion = { outcome: 'promoted'; receipt: Omit<ConversationQueueAccepted, 'replayed'> } | { outcome: 'blocked'; conversationId: string; reason: ConversationQueueBlockReason } | { outcome: 'empty'; conversationId: string };
 export interface QueueScanResult { inspected: number; promoted: number; blocked: number; errors: { conversationId: string; code: 'promotion_failed' }[] }
 /** One FIFO item at most; conversation then task lock; all acceptance writes share one transaction. */
@@ -20,7 +20,7 @@ export async function promoteReady(pool: Pool, boss: PgBoss, conversationId: str
     if (!admission.input) return { outcome: 'blocked', conversationId, reason: admission.blocked! };
     requireQueueRevision(conversation.queue_revision, conversation.queue_revision);
     const row = await promoteItem(client, boss, conversation, first, admission.input);
-    return { outcome: 'promoted', receipt: { conversationId, queueRevision: await advanceQueueRevision(client, conversationId), item: itemView(row) } };
+    return { outcome: 'promoted', receipt: { conversationId, queueRevision: await advanceQueueRevision(client, conversationId), item: await contextualItemView(client, row) } };
   });
 }
 /** Fair PG-backed rotation; caller serializes its interval and awaits it on shutdown. */
@@ -44,6 +44,6 @@ export async function scanConversationQueue(pool: Pool, boss: PgBoss, limit = 20
 
 /** Internal acceptance seam shared by automatic promotion and explicit resume. Caller owns the conversation lock. */
 export async function promoteItem(client: PoolClient, boss: PgBoss, conversation: ConversationRow, item: QueueRow, input: TaskSubmission): Promise<QueueRow> {
-  const accepted = await acceptConversationTurn(client, boss, conversation, input);
+  const accepted = await acceptConversationTurn(client, boss, conversation, input, item.conversation_input_id);
   return (await client.query<QueueRow>("UPDATE flow.conversation_queue SET state='promoted',task_id=$2,turn_id=$3,turn_number=$4,updated_at=clock_timestamp() WHERE id=$1 RETURNING *", [item.id, accepted.turn.task.id, accepted.turn.id, accepted.turn.number])).rows[0]!;
 }
