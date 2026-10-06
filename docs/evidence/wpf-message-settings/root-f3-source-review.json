@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-06T18:25:38.301159+00:00",
+  "reviewer": "root / gpt-6-astra ultra, source-only; no project writes",
+  "verdict": "APPROVED_SOURCE_SCOPED_NOT_RUN",
+  "target": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "initialTarget": "ed769f929a7efe01a279ddd85c2e1e88b46839e6",
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "observedHead": "ed921998dc074309d1ad6280300e3cab45dbb876",
+  "branch": "codex/web-message-settings",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "fixedEqualsCurrent": true,
+      "matchesManifest": true,
+      "unchangedSinceInitial": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "fixedEqualsCurrent": true,
+      "matchesManifest": true,
+      "unchangedSinceInitial": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+      "fixedEqualsCurrent": true,
+      "matchesManifest": true,
+      "unchangedSinceInitial": false
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+      "fixedEqualsCurrent": true,
+      "matchesManifest": true,
+      "unchangedSinceInitial": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+      "fixedEqualsCurrent": true,
+      "matchesManifest": true,
+      "unchangedSinceInitial": true
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11558,
+      "sha256": "11083f2ba938e4ca6919792224c6280682b3972ccc38480ec7311687074f546f",
+      "fixedEqualsCurrent": true,
+      "matchesManifest": true,
+      "unchangedSinceInitial": false
+    }
+  ],
+  "readonlyReferences": [
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 2885,
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3853,
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "bytes": 14848,
+      "sha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d",
+      "unchangedFromBase": true
+    }
+  ],
+  "independentPeerOriginals": [
+    {
+      "path": "/tmp/settings-ed769-catalog-selection-review/report.md",
+      "bytes": 5530,
+      "sha256": "8ad15130726b254f9adfbfb2d1fc25a31eafe7d16cbfa3fd185500b6643f500d"
+    },
+    {
+      "path": "/tmp/settings-ed769-catalog-selection-review/audit.json",
+      "bytes": 2788,
+      "sha256": "bbecb3b22e930a199054f4a4d41dd8d15e03b3b42920c64c2b0097261d278407"
+    }
+  ],
+  "peerScope": "catalog.ts, selection.ts, message-settings.test.ts reviewed at ed769. All three byte-identical at f3a6; review carries only these source bytes, no runtime proof.",
+  "findings": [
+    {
+      "id": "MESSAGESETTINGS-UI-01",
+      "priority": "P2",
+      "initialLocation": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx:123",
+      "initialObservation": "Selected requested.model is rendered as unbroken strong text in a grid Dialog; ep-requested had neither minWidth nor wrapping. Existing fixture deliberately uses 180-character model and 390px viewport. Expected overflow by source analysis, not browser-observed failure.",
+      "status": "ADDRESSED_IN_SOURCE",
+      "repair": "Current draft section now explicitly minWidth:0 and overflowWrap:anywhere; inherited wrapping applies to model and remains inside existing allowed Picker file. No shared CSS edits. Original long model and geometry assertions remain.",
+      "runtimeConfirmation": "NOT_RUN"
+    }
+  ],
+  "uiSourceReview": [
+    "Controlled next-message value and onChange remain sole leaf interface; no new draft store, Send, Queue, outbox or Recovery ownership. No render-triggered request. Omission remains undefined rather than invented default.",
+    "Settings options come from declared complete public choices; availability requires matching conversation profile identity and supplied capability, other-profile rows disabled. UI cannot claim permission, provider availability or observed execution.",
+    "First layer displays model, thinking, localized effort, requested speed and unavailability. Profile/runner/digest stay in details. Disabled thinking now means explicitly off.",
+    "Existing Dialog primitive, Escape return focus and details(navigate) close-before-host-focus interface retained. Native radio groups use per-instance useId, preserve keyboard semantics and independent panes.",
+    "Source fixture retains real public-client synthetic loopback HTTP, stale/401/capability revoke, empty page retained selection, next connection instance reset and old locked creation behavior. A/B snapshots are local samples, not actual Send/Queue integration.",
+    "Browser source preserves 180-character model, 390px viewport, dialog/document no-horizontal-overflow assertions, Light/Dark screenshots, reduced-motion and focus checks. These are proposed assertions, not passed checks."
+  ],
+  "cleanCode": {
+    "method": "Local find-skills reused installed clean-code; inspect single state authority, explicit errors/cancellation, small controlled interface and narrow repair. No install/update.",
+    "findingAndFix": "UI P2 bounded to existing selected draft section; two source files changed from initial, four unchanged. No tests/assertions removed to hide failure.",
+    "remaining": "Runtime and future host integration still required; explicit user-loaded catalog accumulation has no proven total heap bound."
+  },
+  "validation": {
+    "static": "Six fixed/current/manifest byte matches; 4 unchanged initial, 2 narrow source changes; readonly refs unchanged from base; peer report and audit retained with hashes.",
+    "runtime": "NOT_RUN: no typecheck, test, product import, HTTP, PG, Chrome, disk-space sample or personal preview inspection.",
+    "limitations": [
+      "Source-only approval does not establish working browser geometry, focus or screenshots.",
+      "No real App/Send/Queue/Recovery wiring or center/provider run.",
+      "Not main integration or deployment approval."
+    ]
+  }
+}

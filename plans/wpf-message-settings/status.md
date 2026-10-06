@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 18:24:17 UTC |
+| 最近更新时间 | 2026-10-06 18:26:27 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -23,7 +23,7 @@
 | 下一可用交付 | 验证目录兼容与草稿隔离，再检查键盘和窄屏体验。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，CHANGES_REQUESTED；长模型源码 P2 已修，待独立复审 |
+| Review | [review.md](review.md)，UNKNOWN；源码 APPROVED_SOURCE_SCOPED_NOT_RUN，完整片段运行待验 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -42,3 +42,5 @@
 ## 源码窄修
 
 初版长模型断行 P2 属源码审查发现；已在现范围内补保护，原浏览器长模型断言保留。全部产品运行仍 NOT_RUN，不能把修复提交称浏览器通过。
+
+源码限定复审已完成：root f3a6 六源/只读保护、peer 三源同初版字节。P2 源码已处理，不继承任何尚未执行的 noEmit/direct/浏览器检查；检查准入尚未签发。
