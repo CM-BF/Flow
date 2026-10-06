@@ -11,7 +11,7 @@
 ## TODO
 
 - [x] TUI01G-01：精确范围交接、唯一计划及 Interface 固定。
-- [ ] TUI01G-02：有限目录选择、冻结发送和 requested/observed/unknown 展示。
+- [x] TUI01G-02：有限目录选择、冻结发送和 requested/observed/unknown 展示。
 - [ ] TUI01G-03：定向合同/controller 与终端直接消费者检查；运行门槛不足如实 NOT_RUN。
 - [ ] TUI01G-04：独立审查及受控 main 接收。
 

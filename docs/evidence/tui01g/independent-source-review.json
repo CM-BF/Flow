@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06T23:32:11.826788+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra (independent of native_center_owner)",
+  "target": "215063fb4667fc394a07417d608b075fa1188d92",
+  "delivery": "81e4b60e23ca2d27dcb35ccc6a19e3587cde2ed8",
+  "decision": "SOURCE_APPROVED_PENDING_VALIDATION",
+  "productApproval": false,
+  "findings": [],
+  "scope": "Full 12-file fixed source delta; public settings contracts/catalog/helper and existing shared acknowledgement/controller consumer paths; no execution",
+  "bindingAudit": {
+    "path": "/tmp/flow-tui01g-independent-bindings.json",
+    "bytes": 186038,
+    "sha256": "621584d0e09fc1df1c6e57bfcc3efc8a07495aa1d7d38735047aa77718c9a08a",
+    "result": "224 manifest entries and fixed/current/protected bindings checked by assignment_review; no scope/binding blocker"
+  },
+  "confirmed": [
+    "Only exact catalog tuples for the conversation-bound immutable profile are selectable; no arbitrary model/thinking/effort/speed combination or access widening.",
+    "Optional public FlowClient port is wired at the terminal composition root; server/runtime/provider contracts unchanged.",
+    "Send freezes messageSettings into the existing durable intent; unknown acknowledgement preserves original key/body and recovery does not reselect settings.",
+    "Existing shared acknowledgement decoders preserve request identity; known stale CAS refreshes observation without resubmitting, and draft/settings remain.",
+    "Recorded requested and observed settings remain separate; observed output requires matching assistant-final task/attempt/message/detail and snapshot identities, otherwise unknown. Thinking remains unknown.",
+    "Catalog pages, choices and terminal rendering stay bounded; settings-only commands do not call provider.",
+    "Old unsupported conversations retain their ordinary send path. Claude-capable conversations require an explicit tuple per new message. Codex per-message support is not claimed."
+  ],
+  "validation": {
+    "newCasesDefined": 12,
+    "split": {
+      "pure": 3,
+      "controller": 8,
+      "Ink": 1
+    },
+    "newTests": "NOT_RUN",
+    "oldDirectConsumers": "NOT_RUN",
+    "focusedTypes": "NOT_RUN",
+    "HTTP": "NOT_RUN",
+    "PG": "NOT_RUN",
+    "PTY": "NOT_RUN",
+    "provider": "NOT_RUN",
+    "reason": "Fresh disk gate below 1 GiB + 32 MiB. Read-only review is not an execution substitute."
+  },
+  "remaining": [
+    "Once current local resource gate passes, run the fixed 12 new cases and bounded direct controller/terminal consumers; preserve actual selection and output.",
+    "Run focused noEmit, fix and resubmit only material changes; no root/all-product rerun required.",
+    "Actual HTTP/PTY and complete TUI/Web journey remain separately scoped. No main product intake under this source-only conclusion."
+  ],
+  "architecture": "Thin settings projection/selection module + optional public catalog port; shared controller remains sole local intent owner, center remains authority. No second backend state machine."
+}
