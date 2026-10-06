@@ -1,0 +1,34 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/engineering/calculator-checker.test.ts"
+  ],
+  "startedAt": "2026-10-06T11:46:56.765505+00:00",
+  "finishedAt": "2026-10-06T11:46:57.503739+00:00",
+  "exitCode": 0,
+  "sources": [
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "bytes": 7992,
+      "sha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "bytes": 4507,
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "bytes": 1711,
+      "sha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967"
+    }
+  ]
+}

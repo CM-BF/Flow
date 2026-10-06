@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:42:48 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:48:19 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -16,11 +16,11 @@
 | 本片段交付阶段 | implementation |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/runner/src/engineering/calculator-source.ts, apps/runner/src/engineering/calculator-source.test.ts, apps/runner/src/engineering/calculator-checker.ts, apps/runner/src/engineering/calculator-checker.test.ts, plans/eng01e-trusted-calculator-checker, docs/evidence/eng01e |
-| 检查状态 | NOT_RUN |
+| 检查状态 | 最终68 distinct通过/root types0；target待本次源码提交固定 |
 | 已集成main状态 / HEAD | ENG01E未集成；base已含已审ENG01D |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 正在把受限源码检查与可信断言结果从模型输出中分离 |
+| 当前产出 | 受限语法与完整内容绑定的可信检查已完成局部验证 |
 | 下一可用交付 | 拒绝伪造结果并绑定完整内容集的calculator检查模块 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -31,8 +31,8 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | ENG01E-01 | completed | native_center_owner | claim、Interface |
-| ENG01E-02 | in-progress | native_center_owner | source parser与拒绝用例待完成 |
-| ENG01E-03 | in-progress | native_center_owner | snapshot/checker与局部验证待完成 |
+| ENG01E-02 | completed | native_center_owner | source34用例/完整ASCII边界与非法行为字符串拒绝 |
+| ENG01E-03 | completed | native_center_owner | 最终checker34/完整版本集合/host断言/类型0 |
 | ENG01E-04 | pending | native_center_owner | 独审/main未完成 |
 
 本片纯Module，无native/app-server/provider，无旧v1变更；不证明真实文件集合来源或writer停止，未来调用方须由host完整获取并绑定。唯一status待Lead登记聚合。
