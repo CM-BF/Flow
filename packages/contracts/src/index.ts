@@ -28,3 +28,6 @@ export * from './goal-native-executions.js';
 export * from './engineering-profile.js';
 
 export * from './attachments.js';
+export * from './context-transparency.js';
+export * from './context-observation-event.js';
+export * from './context-observation-history.js';
