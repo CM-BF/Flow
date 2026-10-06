@@ -1,8 +1,8 @@
 {
   "recordedAt": "2026-10-06T08:18:34.252105+00:00",
-  "source": "workspace_panels_owner bounded read-only proposal relayed to root",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md",
   "taskCandidate": "WPF-CHATREAD01",
-  "stage": "COMMITTED take, implementation authorized; canonical pending owner first commit",
+  "stage": "implementation authorized, first canonical once SOURCE_READY via GO to Lead; deployment not observed",
   "base": "32c371d389a913f8dd71c3bd8b98dd0697411256",
   "scopeCandidates": [
     "apps/web/src/conversations/ConversationThread.tsx",
@@ -33,5 +33,13 @@
   "priority": "After stream integration, while CONTEXT02 pure receipt runs independently",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability",
   "branch": "codex/web-conversation-readability",
-  "claimReceipt": "chatread01-take-receipt.json"
+  "claimReceipt": "chatread01-take-receipt.json",
+  "firstCanonical": "fce5e07daab8adccb0ac824e55ee3a25659d88cb",
+  "managerParser": {
+    "errors": [],
+    "humanComplete": true,
+    "todos": 4,
+    "checks": "not_run"
+  },
+  "firstHeadObservation": "fce5e07 plus untracked own install.log; not claimed fully clean after installation began"
 }

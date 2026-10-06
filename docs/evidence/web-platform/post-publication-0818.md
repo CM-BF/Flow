@@ -37,3 +37,7 @@ ExecutionLead后继实质回执：CONTEXT02已入I02候选（六source精确/Web
 既有U11 steer后继：GO批准CHAT10独立后台task-bound只读admission与可信host开关；DTO未冻结，只记录sender独立模块候选，旧attemptAvailable不改义，GET不授权。个人steer仍off，无新query许可；不抢App/Thread/CTX，不把计划视为已有UI。
 
 REQ42未来实际App只读20scope方案及八组旅程已归[候选](context-app-integration-proposal.json)：显式project分页、真正create-only receipt、P01唯一知识面板、Send/Queue冻结与有序ACK、双split/隐藏/连接隔离。等readability和CONTEXT02同时main及原owner释放后一个UI片接通，不再拆纯模块；当前未新take/建树/测试。
+
+CHAT10接口准备（仅root读取，非本队实现/批准）：fixed3b157a3e21166eb06473c1deb6b9f0eded1169e3，steering-admission-readiness/docs/evidence/chat10/interface.md及contracts active-steering。admission GET ready给task/attempt/ownerVersion/revision，unavailable有界reason+nullable，no-store快照不预留/POST重验；旧attemptAvailable/capability不改、默认off。F01薄client待就绪，sender未派写。固定32c目录需要steering-v1显式协商才有声明，当前Web目录未opt-in/controls.steer false，不能据声明或旧attemptAvailable直接开启。优先readability+CONTEXT实际UI。
+
+REQ43 clean-code细化（GO/root已交panels）：可在当前已领ConversationThread同文件把长JSX执行摘要/receipt/composer配置收为最小具名显示组件，业务仍归projection；App不动，不造框架/新slot。若合理新增文件，先原claim当前version CAS amend成功再写；同文件不新增门禁，不为行数改已冻目标。

@@ -55,7 +55,7 @@
 | WPF-001-26 | completed | d01_owner | CONTEXT01独立选择模块736ef/d6已审并入fc113，59b9650收口后bfe v2释放；实际App另属后继，不偷偷扩大本TODO |
 | WPF-001-27 | completed | d01_owner | CHAT06I01 9da/e30已审并入32c、十一源同；owner8ca0684c纯main metadata后a729 v2已释放，实际服务/provider验收单列 |
 | WPF-001-28 | in-progress | d01_owner | CONTEXT02八scope5e8213/rootAPPROVED，final6caccb90已once交Lead；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)，main未接/Send UI后继 |
-| WPF-001-29 | in-progress | d01_owner | 已批WPF-CHATREAD01，原CHAT06I已释放；从32c独立树已c832v1九scope正式take；[候选](../../docs/evidence/web-platform/readability-proposal.json)，尚无可写canonical |
+| WPF-001-29 | in-progress | d01_owner | 已批WPF-CHATREAD01，原CHAT06I已释放；从32c独立树已c832v1九scope正式take；[候选](../../docs/evidence/web-platform/readability-proposal.json)，[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)已建立并送登记，尚无部署观察 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -66,7 +66,7 @@
 | WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理两目录；33bd固定副本已fc113发布，authority不迁 |
 
 | WPF-CONTEXT02 | w01_owner / web-context-receipts，b4858792 v1，固定fc113八scope；5e8213已审/final6caccb90已交Lead，纯冻结/回执逻辑，不占App/Thread/projection |
-| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability，c832542c v1，准确32c九scope；已正式派工，首canonical待登记，不把take当已部署卡 |
+| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability，c832542c v1，准确32c九scope；已正式派工，首fce5e07已once送登记，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)；未获部署观察 |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
 

@@ -100,7 +100,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
 | --- | --- | --- |
 | WPF-CONTEXT02 | w01_owner / web-context-receipts / codex/web-context-receipts | b4858792 v1，固定fc113八literal；5e8213已独审、final6caccb90已交Lead，实际知识App另片 |
-| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability / codex/web-conversation-readability | c832542c v1，固定32c九literal；正文与composer优先，保留折叠外error/unknown，首canonical待登记 |
+| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability / codex/web-conversation-readability | c832542c v1，固定32c九literal；正文与composer优先，保留折叠外error/unknown，首fce5e07已once送登记，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md) |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅管理两目录；固定33bd发布已fc113逐字接收，authority不迁 |
 
 CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a已main32c，最后3b4a8b8 clean，e06a v2于08:21:14.735释放；9c6图保持固定，旧树只读。S01/PERF03及ActivityI更早已main/releases保留历史，不借旧权续写。
@@ -162,7 +162,7 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 - [x] **WPF-001-27** WPF-CHAT06I01：完整已审6426基线领取十三scope接入增量正文；P01唯一启停/授权、当前turn有限读预算/连接可见性/单Thread语义/phase提示，实际App fixture验证。
 
 - [ ] **WPF-001-28** WPF-CONTEXT02（沿REQ42）：纯引用冻结/回执片，固定fc113八scope，5e8213已审/final6caccb90已交Lead；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)。main收口另计，Send projection与实际UI继续开放。
-- [ ] **WPF-001-29** WPF-CHATREAD01（沿REQ43）：已批准下一可读性片，九literal精确候选见[范围](../../docs/evidence/web-platform/readability-proposal.json)；拟独立web-conversation-readability，canonical计划为plans/wpf-chat-readability（领取前尚不存在，不伪造链接）。main/release→fresh take→首canonical登记后关联，稳定配置收详情但error/unknown必须可达。
+- [ ] **WPF-001-29** WPF-CHATREAD01（沿REQ43）：已批准下一可读性片，九literal精确候选见[范围](../../docs/evidence/web-platform/readability-proposal.json)；拟独立web-conversation-readability，[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)已建立；main/release→fresh take→首canonical顺序已完成，已一次登记请求，稳定配置收详情但error/unknown必须可达。
 
 ## 验收、风险与持续方式
 
