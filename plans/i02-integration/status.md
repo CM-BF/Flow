@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:03 UTC / input maincc135026 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T16:17:28 UTC / input main83f535b5 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | maincc135026；本批仅资源记录、032归属与TUI01F登记，产品源码不变 |
+| 工作基线 / HEAD | main83f535b5；本批只归档资源与TUI限定main回执，无产品源码差异 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
 | 检查状态 | 终端9产品源对获审a1f82f逐字相同；作者35+1与focused类型检查有效，集成无重跑/PG/provider |
-| 已集成main状态 / HEAD | maincc135已含上述已审产品；本批登记165来源待实际重载。个人runtime362/v15和Web8d8/v2未变 |
+| 已集成main状态 / HEAD | main83f535已含终端取消限定片；165来源已在4320实核。本批仅metadata，个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端明确取消与原请求恢复已审接收；网页兼容验证仍等待资源。 |
-| 下一可用交付 | 完成新版网页兼容验证、中心自动推进接线与终端取消。 |
+| 当前产出 | 终端取消限定片已进入主线；网页附件兼容场景通过，混合场景因空间触线暂停。 |
+| 下一可用交付 | 留足余量后完成网页兼容；并行补终端真实中心与PTY旅程代码。 |
 | 当前阻塞 | ACTIVE: 磁盘余量不足局部数据库验证，大型构建继续关闭。 |
 | 需用户决定 | NONE |
 
@@ -189,3 +189,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 16:03 UTC：资源四树回执与CORE物化更正、032唯一writer归属、TUI01F第165来源受控接收。本批产品源码零改；F01只追加新编号事实，保留main既有status文本，未把未审生产候选并入。新Web A2未通过fresh空间准入、0启动；TUI仅小额纯检查，个人服务保持。
 
 2026-10-06 16:09 UTC：TUI01F controller+Ink接线限定APPROVED已接收，9源逐字同a1f82f；35+1不同局部用例和focused noEmit已有原证据，集成无新源码/测试变化。真实HTTP/PG/PTY/App与完整TUI仍开放，详见[接收回执](../../docs/evidence/i02/tui01f-integration-receipt.json)。
+
+2026-10-06T16:17:28.029524+00:00：本批仅接收OPS七树保留回执、165来源实采与TUI01F独审/main/后继边界；无产品差异、无重跑或provider。见[metadata接收](../../docs/evidence/i02/resource-terminal-metadata-receipt.json)。RELEASE03累计7,983ms，B未运行；不把资源中断写为产品失败，不刷新用户页面。
