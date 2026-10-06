@@ -9,3 +9,5 @@
 2026-10-06 20:25:05 UTC 安全点：journal 保持一处 durable change，初始化/accept 非空有写，empty 只读已有 key；runner 身份与旧 v1 unknown 分开。新三方法均 guard/pending；旧 peer 适配保留行为断言，新增直接恢复用例覆盖 lost ACK、missing 同key、restart、不可执行receipt、身份变化与fatal状态。无新增通用框架；0检查事实保持到原始receipt。18依赖link固定现成package版本，无安装或跨WT @flow。
 
 首批真实局部检查：28新入口+42旧runner/stop+9capacity通过；旧CLI因未物化new URL入口失败，保留原断言/原raw，请求22source+protocol package metadata，不自行物化。types第一轮相对root路径多一级导致TS5083/TS18003，0源码类型检查；仅修own config三级相对路径，根strict未放宽。自有检查worker/group与temp全已结束清理，真实4PG未选。
+
+2026-10-06 20:35:06 UTC：额外auth/goal正向5例3通过2失败；静态定位旧peer字符串runnerId不符合既有executionProfile UUID契约，现peer统一一次randomUUID，原安全断言保留，待只复验两例。Mika本段只读clean-code/codebase-design（约20:33）确认v1/v2共用allocation、compact nonnull、域分离/transport与guard、journal原子handoff以及当前整数lease；这是进行中审读，不是APPROVED。PG8组已准备，源与配置未运行，生命周期独立记录。

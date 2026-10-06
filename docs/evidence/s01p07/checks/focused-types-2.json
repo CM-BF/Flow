@@ -1,0 +1,34 @@
+{
+  "source": "30682614cd9973cfa62071d03ff399485877a16e",
+  "startedAt": "2026-10-06T20:28:18.369371+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "docs/evidence/s01p07/tsconfig.json"
+  ],
+  "resourceBefore": 1292316672,
+  "temporaryRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-check-abgf5g6i",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123174600
+  },
+  "testEnvironment": {
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "TSX_DISABLE_CACHE": "1"
+  },
+  "timeoutSeconds": 60,
+  "rawLimit": 1048576,
+  "temporaryLimit": 33554432,
+  "exitCode": 2,
+  "fault": null,
+  "processGroupGone": true,
+  "temporaryFinalBytes": 0,
+  "temporarySampledPeakBytes": 0,
+  "temporaryAbsent": true,
+  "rawBytes": 1605,
+  "elapsedSeconds": 2.535812124959193,
+  "finishedAt": "2026-10-06T20:28:20.889125+00:00",
+  "resourceAfter": 1291370496
+}

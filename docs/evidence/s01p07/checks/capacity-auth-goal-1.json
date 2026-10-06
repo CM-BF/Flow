@@ -1,0 +1,39 @@
+{
+  "source": "30682614cd9973cfa62071d03ff399485877a16e",
+  "startedAt": "2026-10-06T20:29:47.468600+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/s01p07/vitest.config.ts",
+    "--configLoader",
+    "native",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "--testNamePattern",
+    "^(preserves authentication failure before quiescent|settles all slots when|keeps a goal permission denial local)"
+  ],
+  "resourceBefore": 1382977536,
+  "temporaryRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-check-gr0r35r0",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123175073
+  },
+  "testEnvironment": {
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "TSX_DISABLE_CACHE": "1"
+  },
+  "timeoutSeconds": 60,
+  "rawLimit": 1048576,
+  "temporaryLimit": 33554432,
+  "exitCode": 1,
+  "fault": null,
+  "processGroupGone": true,
+  "temporaryFinalBytes": 118,
+  "temporarySampledPeakBytes": 3049964,
+  "temporaryAbsent": true,
+  "rawBytes": 3640,
+  "elapsedSeconds": 13.591298082959838,
+  "finishedAt": "2026-10-06T20:30:01.044473+00:00",
+  "resourceAfter": 1382449152
+}

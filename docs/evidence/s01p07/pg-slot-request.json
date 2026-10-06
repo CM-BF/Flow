@@ -1,0 +1,49 @@
+{
+  "state": "PREPARATION_NOT_OPEN",
+  "preparedAt": "2026-10-06T20:34:44.698528+00:00",
+  "base": "22a0806bc2465e11096949618113833f31766b19",
+  "sourceCheckpoint": "30682614cd9973cfa62071d03ff399485877a16e",
+  "inputs": [
+    {
+      "path": "apps/server/src/runner-claim-receipts.test.ts",
+      "bytes": 12883,
+      "sha256": "b9853970c40c900a6ef200f9d86cb52a52101cc7a5ea482bad347f55673a0bf9"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-fixture.ts",
+      "bytes": 7696,
+      "sha256": "9e891170d7113997ac42f6158b02830ddd4a2052c055d10db996fb432af89e2e"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-vitest.config.ts",
+      "bytes": 218,
+      "sha256": "4a619fa08b8b93f2885356aa416050a1eb69ec75ab31aa421b35b9c8a4f9e704"
+    }
+  ],
+  "command": [
+    "Node24.20",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/s01p07/pg-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "apps/server/src/runner-claim-receipts.test.ts"
+  ],
+  "selectedGroups": 8,
+  "workMs": 120000,
+  "cleanupMs": 70000,
+  "afterAllMs": 80000,
+  "outerRequiredMaxMs": 200000,
+  "taskMax": 16,
+  "httpMax": 160,
+  "rawMaxBytes": 1048576,
+  "ownTempMaxBytes": 33554432,
+  "resourceGateBytes": 1207959552,
+  "adminConfiguration": "source existing /tmp/flow-coordination.env; map FLOW_COORDINATION_DATABASE_URL to FLOW_S01P07_ADMIN_URL without output; enforce localhost:55432 and admin postgres",
+  "environmentGate": "FLOW_S01P07_PG_OPEN=1 only in separately assigned actual slot",
+  "creation": "random dedicated name, existence refusal, creationRequested before CREATE, exact existence check after ambiguous ACK",
+  "cleanup": "known startup/server/pool closed and zero target DB connections before ordinary DROP; unknown retained; no FORCE or shared service operations",
+  "counts": "8 planned groups, 10 estimated functional tasks; not actual results",
+  "limits": "Own logical temp/raw bounds and resource gate are preparation limits. Shared PG/WAL growth and competing workload are not statically bounded; fresh serial window required. No provider/SDK target. Public server uses production migrations; original 4 capacity PG cases remain unselected."
+}

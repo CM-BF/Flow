@@ -29,6 +29,7 @@ function deferred() {
   return { promise, resolve };
 }
 async function peer(total = 8, capacity = 16) {
+  const runnerId = randomUUID();
   const workingDirectory = await mkdtemp(join(tmpdir(), 'flow-runtime-pool-'));
   const batches: EventBatch[] = [], notices: RunnerNotice[] = [];
   const running = new Set<string>(), outcomes = new Map<string, string>();
@@ -44,7 +45,7 @@ async function peer(total = 8, capacity = 16) {
   const server = createHttpServer(async (request, response) => {
     const parts: Buffer[] = []; for await (const part of request) parts.push(part as Buffer);
     const body = JSON.parse(Buffer.concat(parts).toString() || '{}'); response.setHeader('content-type', 'application/json');
-    if (request.url === '/api/runner/identity') { response.end(JSON.stringify({ protocol: RUNNER_CLAIM_PROTOCOL, runnerId: 'runner-test' })); return; }
+    if (request.url === '/api/runner/identity') { response.end(JSON.stringify({ protocol: RUNNER_CLAIM_PROTOCOL, runnerId })); return; }
     if (request.url === '/api/runner/claim-opportunity/status') {
       opportunityIds.push(body.requestId);
       if (unavailableLookup) response.destroy(); else response.end(JSON.stringify({ ...body, state: 'missing' })); return;
@@ -55,7 +56,7 @@ async function peer(total = 8, capacity = 16) {
       let assignment: ClaimedTask | null = null;
       if (assigned < total && running.size < capacity) {
         assigned++; const id = `attempt-${assigned}`; running.add(id); peak = Math.max(peak, running.size);
-        assignment = { attempt: { id, runnerId: 'runner-test', ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 10000).toISOString() },
+        assignment = { attempt: { id, runnerId, ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 10000).toISOString() },
           task: { id: `task-${assigned}`, title: 'Deterministic no-model attempt', prompt: String(assigned), harness: 'fixture' } };
       }
       if (assignment && assignmentHook) assignment = assignmentHook(assignment);

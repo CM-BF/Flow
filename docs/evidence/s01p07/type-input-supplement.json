@@ -1,0 +1,28 @@
+{
+  "base": "22a0806bc2465e11096949618113833f31766b19",
+  "reason": "Actual focused strict2: missing existing declaration and already installed types; no new declaration or relaxed compiler",
+  "source": [
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.d.mts",
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c"
+    }
+  ],
+  "links": [
+    {
+      "path": "node_modules/@types/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+      "version": "6.1.4"
+    },
+    {
+      "path": "node_modules/@types/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+      "version": "11.1.8"
+    },
+    {
+      "path": "node_modules/@types/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+      "version": "7.1.5"
+    }
+  ]
+}
