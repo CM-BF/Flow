@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:38 UTC；启动基线已核验 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:44 UTC；启动基线已核验，分支未集成 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-registry |
 | Branch | codex/plugin-registry |
-| 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / 同基线；启动文件待提交 |
-| 工作树dirty状态 | 首合同/注册纵向片段待提交；仅本claim范围 |
-| 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN（最终target）；首注册行为red→green 1/1、合同typecheck已通过，原始输出见证据 |
+| 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / d3b000416565ecb0f6bd11eb5b9be455008f7423（本metadata提交前） |
+| 工作树dirty状态 | 实现已提交；仅本次交付metadata |
+| 工作分支状态 | in-progress；registry片段实现完成，等待独立review/共享接线 |
+| 检查状态 | PASSED d3b000416565ecb0f6bd11eb5b9be455008f7423；真实PG/HTTP17/17、typecheck、diff；0模型 |
 | 已集成main状态 / HEAD | 未集成；启动main edee6b1c5d74c2ee46ec98bab2844579db6a00c4 |
-| 实现目标 | 未提交 |
+| 实现目标 | d3b000416565ecb0f6bd11eb5b9be455008f7423 |
 | 实现范围 | packages/contracts/src/plugins.ts, apps/server/src/plugins, packages/storage/migrations/008-plugins.sql |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 固定版本注册与读取已在真实PG/HTTP通过，公共合同已冻结 |
-| 下一可用交付 | 固定版本、公开配置和显式授予的持久注册接口 |
+| 当前产出 | 插件版本、公开配置和显式授予已持久化并通过17项真实接口检查 |
+| 下一可用交付 | 独立审查后的注册接口与共享client/CLI接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -26,9 +26,9 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | X02-01 | completed | Mika | [接口合同](../../docs/evidence/x02/interface.md)，types与typecheck |
-| X02-02 | in-progress | Mika | 008/注册与snapshot已实现；commands/list仍继续 |
-| X02-03 | pending | Mika | 未执行 |
-| X02-04 | pending | Mika/独立reviewer | 未审查 |
+| X02-02 | completed | Mika | d3b0004 008/7路由/不可变历史/commands |
+| X02-03 | completed | Mika | [17/17](../../docs/evidence/x02/boundaries-green.txt)，typecheck，独占PG已清理 |
+| X02-04 | in-progress | Mika/独立reviewer | 固定d3b0004与manifest，待独立审查 |
 | X02-05 | pending | 主Execution Lead | shared index/client/CLI非本owner范围 |
 
 ## 证据与同步
@@ -36,6 +36,8 @@
 [质量方法](../../docs/evidence/x02/quality.md)。领取回执见[claim](../../docs/evidence/x02/claim.json)。已通知Goal Owner让主Lead登记registry/索引；等待实际聚合核验，不手改生成JSON。
 
 首片段证据：[red](../../docs/evidence/x02/registration-red.txt)、[green 1/1](../../docs/evidence/x02/registration-green.txt)、[typecheck](../../docs/evidence/x02/contract-typecheck.txt)。这不是完整registry或独立review通过。
+
+最终片段证据：[说明/限制](../../docs/evidence/x02/README.md)、[manifest](../../docs/evidence/x02/manifest.json)。17/17绑定d3b0004，仅注册事实，完整npm生命周期/执行宿主/真实WebCLI仍未交付。review期间保留claim，只有本人修改本任务范围。
 
 ## 架构影响
 
