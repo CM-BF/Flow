@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:07 UTC / 2026-10-06 08:01 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:13 UTC / mainfc113945ff73d1a43092d0a70b51e901aa4be1e2 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -10,16 +10,16 @@
 | 工作基线 / HEAD | main9c6fa9b100f04916f43b04280f05f497b28eeb0f；O09共享生产目标 c587436c12324b5c121957643d51173cfc66009e |
 | 工作树dirty状态 | 产品已固定；证据与状态本次提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED c587436c12324b5c121957643d51173cfc66009e；真实生产2/2与final typecheck0；0provider |
-| 已集成main状态 / HEAD | 9c6fa9b100f04916f43b04280f05f497b28eeb0f 已含 CHAT08 默认关闭接线；个人center/runner仍b54、维护v6 accepting。O09领域/client/生产接线等待本批接收。 |
-| Review | APPROVED；O09领域7ddd获ExecutionLead独审、thin client1bd获Mika独审、production c587获Root独审。 |
-| 实现目标 | c587436c12324b5c121957643d51173cfc66009e |
-| 实现范围 | apps/server/src/index.ts, apps/server/src/goal-native-production.test.ts |
+| 检查状态 | PASSED 0d48fddd37f55854437946ea04da6c845f5b6119；CLI真实HTTP/help1/1、final tsc0；无PG或provider |
+| 已集成main状态 / HEAD | fc113945ff73d1a43092d0a70b51e901aa4be1e2 已含O09领域/client/生产接线；个人center/runner仍b54/v6。新增最薄CLI当前待审。 |
+| Review | NOT_STARTED；仅CLI目标0d48待审，O09领域/client/生产各已有独立批准。 |
+| 实现目标 | 0d48fddd37f55854437946ea04da6c845f5b6119 |
+| 实现范围 | apps/cli/src/index.ts, apps/cli/src/goal-native.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已接通由用户指定只读执行配置的单个文本子任务，并保留单独的业务验收步骤。 |
-| 下一可用交付 | 发布已审的只读原生子任务入口；真实模型执行另按固定场景核验。 |
+| 当前产出 | 单个只读原生子任务已可由中心受理；命令行入口也已完成局部核验。 |
+| 下一可用交付 | 审查并发布对应命令行入口，让替换前端不影响核心操作。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -103,8 +103,10 @@
 
 2026-10-06 07:57 UTC：024迁移在任何worker/scheduler启动前完成，所有控制路由沿现owner/runner鉴权。默认不受理owner指令，生产CLI无启用参数，对话cap仍false。真实factory新2项与既有纵向定向1项分别绿，旧12项未选；manifest见steering-production-manifest.json。领域20source相对d4e逐hash相同。实际SDK/config/profile/UI开通仍后继，未操作常驻服务。
 
-| F01-22 | in-progress | Lead | O09薄client1bd获Mika独审；生产c587436c12324b5c121957643d51173cfc66009e两局部通过/final noEmit0，待独审与main |
+| F01-22 | completed | Lead | O09薄client1bd获Mika独审；生产c587436c12324b5c121957643d51173cfc66009e两局部通过/final noEmit0，待独审与main |
 
 2026-10-06 08:00 UTC：Root独立批准fe5/61ed共享生产片段，当前只接该固定输入到main；后继O09薄client1bd已单独交Mika，不混本批。
 
 2026-10-06 08:07 UTC：O09 production两项已通过。首次缺路由2红；之后测试材料为空正确被readonly门禁拒绝、测试误把pin放summary/public snapshot两次失败均原样保存。最终pin在receipt与持久submission核对，实际guard/现SDK adapter注入→outbox→PG→final+机械验证成立；accepted仍null。没有改产品权限来让测试通过。初次token字面类型失败已修，最终noEmit0；随机DB每轮正常DROP/remaining=[]。
+
+| F01-23 | in-progress | Lead | goal execute-native最薄CLI 0d48fddd37f55854437946ea04da6c845f5b6119；严格schema/128KiB/key/owner/signal/409/help/README1绿，待独审 |

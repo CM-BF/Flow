@@ -163,3 +163,7 @@ O09 production c587436c12324b5c121957643d51173cfc66009e：NOT_STARTED。只serve
 ## 2026-10-06 08:08 UTC O09 production 独立 APPROVED
 
 Reviewer: Goal Owner / gpt-6-astra ultra。Review target commit: c587436c12324b5c121957643d51173cfc66009e。完整2file与必要domain读取；2fixed source/8raw hashes、5domain输入对7ddd相同，2/2真实factory及final noEmit0/random DB cleanup已核，无P1/P2、未重跑。仅挂载与注入SDK组合，非真实provider/语义/个人部署批准。
+
+## O09 CLI 待独审
+
+Review target commit: 0d48fddd37f55854437946ea04da6c845f5b6119。NOT_STARTED；仅3files，复用readJsonInput与严格公共schema/FlowClient，旧fixture命令不变，生产领域审批不替代本CLI。
