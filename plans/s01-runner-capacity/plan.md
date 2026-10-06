@@ -79,3 +79,12 @@ owner status_read / gpt-6-astra，co-lead mika，所属 FLOW-001、M2。完整�
 - [ ] 独审结果及清理、main接收；任何失败/unknown原样记录，不扩大额度或补跑。
 
 新阶段32固定tasks、总上限40，60秒含清理，传输加证据64MiB；0provider。受控main4391基线，无产品pool/锁/schema改动；旧累计44tasks/38attempts/20.925025秒不变。当前仅driver实施获批，真实负载尚未运行。
+
+## S01-04 / S01-05 停止修复后独立窗口（2026-10-06）
+
+原mixed FAIL/partial-A结果已独审封存；P03修复已集成main0cee。GO新授权一次独立同负载窗口，当前先准备，不复用原reservation、task IDs、raw目录或retained journal。该阶段沿S01既有TODO，不建立第三层任务。
+
+- [ ] 固定[新输入/资源合同](../../docs/evidence/s01/mixed-after-drain-preparation/README.md)和最小run identity适配，绑定P03已审源码与独立输出。
+- [ ] 新输入纯检查/strict与独立固定target review；旧14检查不得冒充新增实测。
+- [ ] Mika点名唯一windowId/cleanHEAD后，执行一次32tasks A1×16→B4×4；失败停且B可NOT_RUN，60秒含清理/64MiB不放宽。
+- [ ] 如实封存本次结果/资源/unknown、独审和主线接收；不对旧journal作自动恢复。

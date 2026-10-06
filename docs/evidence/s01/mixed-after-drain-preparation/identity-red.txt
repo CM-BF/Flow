@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/mixed/run-identity.test.ts [ experiments/runner-capacity/mixed/run-identity.test.ts ]
+Error: Cannot find module './run-identity.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/experiments/runner-capacity/mixed/run-identity.test.ts'
+ ❯ experiments/runner-capacity/mixed/run-identity.test.ts:3:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { readFile } from 'node:fs/promises';
+      3| import { selectRunIdentity, verifyRunSources } from './run-identity.js…
+       | ^
+      4| 
+      5| describe('separately authorized mixed-run identity', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_MODULE_NOT_FOUND' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  03:42:55
+   Duration  145ms (transform 19ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "runIdentity": "after-drain-v1",
+  "state": "PREPARATION_ONLY",
+  "windowId": null,
+  "executionTarget": null,
+  "productionBase": "0cee7556befa1988e60bae94b510240122c34b88",
+  "integrationHead": "86297277e59f9ba8ffe62dd863e4259108caf5e2",
+  "requiredImplementation": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+  "output": "docs/evidence/s01/mixed-after-drain-run",
+  "preparation": "docs/evidence/s01/mixed-after-drain-preparation",
+  "budget": {
+    "tasks": 32,
+    "maximumTasks": 40,
+    "runCount": 1,
+    "workMs": 45000,
+    "totalMsIncludingCleanup": 60000,
+    "softBytes": 50331648,
+    "totalBytes": 67108864,
+    "cleanupReserveBytes": 16777216,
+    "caseMs": 6000,
+    "settlementMs": 1500
+  },
+  "load": {
+    "order": [
+      "one-by-sixteen",
+      "four-by-four"
+    ],
+    "sameCenterAndRunnerChild": true,
+    "firstThreeSecondsLiveAttempts": 16,
+    "cancelAtMs": 3000,
+    "cancelCount": 4,
+    "normalCompletions": 12,
+    "eventsPerSecond": 5,
+    "messageBytes": 256,
+    "heartbeatMs": 1000,
+    "pollMs": 500,
+    "requestMs": 1500,
+    "leaseMs": 10000,
+    "readHz": 10,
+    "maxConcurrentReads": 2,
+    "observerMs": 100
+  },
+  "gates": [
+    "Fixed implementation and input independently reviewed",
+    "Mika names a single window ID and exact clean execution HEAD",
+    "0cee base ancestry plus runtime and shutdown test bytes equal approved a677",
+    "Atomic fresh output directory; any prior/unknown reservation refuses replay",
+    "Actual attempt identity/fence/live lease, adapter overlap, events and heartbeat evidence; no count substitution",
+    "Failure stops; B may remain NOT_RUN; no replacement tasks/shorter cases/timeout widening",
+    "All measured Node streams complete; unknown accounting cannot pass",
+    "Preserve unknown admission/outbox; ordinary stop drain does not prove any forced/unknown claim recovered"
+  ],
+  "resourcePolicy": {
+    "providerCalls": 0,
+    "nativeSdkCalls": 0,
+    "sharedServicesModified": false,
+    "personalServicesOrTabs": false,
+    "database": "One new unique owned database on the existing approved local endpoint",
+    "ports": "Dynamic loopback only",
+    "processes": "Owned center and runner children only; no old resource operation",
+    "evidence": "New directory only; old raw/source Git targets remain frozen and reproducible"
+  },
+  "interpretation": [
+    "Background load and observer overhead recorded; no team-quiescence requirement",
+    "A then B has order/warmup noise; no strict speedup/causal lock attribution/capacity SLO/>100-agent claim",
+    "Acquire includes connection setup; transaction/query elapsed is not pure lock wait",
+    "Lock/blocker sampling positives demonstrate presence; misses do not prove zero waiting"
+  ]
+}

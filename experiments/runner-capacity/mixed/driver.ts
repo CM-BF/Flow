@@ -9,29 +9,33 @@ import { Pool } from 'pg';
 import { beforeDeadline } from './deadline.js';
 import { StreamBytes } from './stream-bytes.js';
 import { Budget, CONTRACT } from './contract.js';
+import { selectRunIdentity, verifyRunSources } from './run-identity.js';
 import { launch, transmit, type Observation } from './process.js';
 import { stopProcess, type OwnedProcess } from '../processes.js';
 import { boundedText } from '../http.js';
 import { directoryBytes } from '../evidence.js';
 
 import { validGate, completionAcks, validateWindow, validateFinal, type Row, type CaseResult } from './proof.js';
-export async function runMixed(windowId: string, target: string) {
+export async function runMixed(windowId: string, target: string, identity?: string) {
   const startedMs = performance.now();
+  const run = selectRunIdentity(identity);
+  const contract = { ...CONTRACT, base: run.base };
   assert(/^[a-zA-Z0-9-]{8,100}$/.test(windowId), 'A separately authorized window ID is required.');
   assert(/^[a-f0-9]{40}$/.test(target), 'Fixed reviewed source target is required.');
   const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8' }).trim();
   assert.equal(git('rev-parse', 'HEAD'), target, 'Source HEAD differs from reviewed target.');
   assert.equal(git('status', '--porcelain', '--untracked-files=no'), '', 'Tracked source is dirty.');
-  git('merge-base', '--is-ancestor', CONTRACT.base, target);
+  git('merge-base', '--is-ancestor', run.base, target);
+  await verifyRunSources(run, path => readFile(path));
   const bindings = JSON.parse(await readFile(new URL('./runtime-dependencies.json', import.meta.url), 'utf8')) as { node: string; files: { path: string; bytes: number; sha256: string }[] };
   assert.equal(process.version, bindings.node, 'Runtime version differs from the frozen dependency binding.');
   for (const binding of bindings.files) { const bytes = await readFile(binding.path); assert.equal(bytes.length, binding.bytes); assert.equal(createHash('sha256').update(bytes).digest('hex'), binding.sha256); }
   assert.equal(await realpath(join(dirname(await realpath('node_modules/pg-boss')), 'pg')), await realpath('node_modules/pg'), 'Scheduler pg must share the observed Pool prototype.');
   const budget = new Budget(startedMs);
-  const output = resolve('docs/evidence/s01/mixed-run');
+  const output = resolve(run.output);
   await mkdir(output); // One fixed directory reserves this stage. Existing/unknown runs cannot be retried.
   const databaseName = 'flow_s01_mixed_' + process.pid + '_' + randomUUID().replaceAll('-', '');
-  budget.charge('preparation-evidence', await directoryBytes(resolve('docs/evidence/s01/mixed-preparation')));
+  budget.charge('preparation-evidence', await directoryBytes(resolve(run.preparation)));
   budget.charge('final-cli-receipt-reserve', 4096);
   const observations: Observation[] = []; const owned: OwnedProcess[] = []; const cases: CaseResult[] = [];
   const cleanup: Row[] = []; const errors: string[] = [];
@@ -103,7 +107,7 @@ export async function runMixed(windowId: string, target: string) {
       const path = 'experiments/runner-capacity/mixed/' + name; const bytes = await readFile(path);
       return { path, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
     }));
-    await evidence('reservation.json', { windowId, target, startedAt: new Date().toISOString(), databaseName, contract: CONTRACT, sources, tasksCharged: CONTRACT.tasks, previousStageBudget: 'frozen-separate' });
+    await evidence('reservation.json', { windowId, target, runIdentity: run.id, startedAt: new Date().toISOString(), databaseName, contract, sources, tasksCharged: CONTRACT.tasks, previousStageBudget: 'frozen-separate' });
     const configured = process.env.FLOW_S01_ADMIN_URL;
     assert(configured, 'FLOW_S01_ADMIN_URL is required and is never printed.');
     const url = new URL(configured);
@@ -274,7 +278,7 @@ export async function runMixed(windowId: string, target: string) {
     if (performance.now() - startedMs > CONTRACT.totalMs) fail('total_time_exceeded');
     const observationsWritten = await beforeDeadline(startedMs + 59_500, () => evidence('observations.json', observations));
     if (observationsWritten.state !== 'settled') fail('observation_evidence_unknown');
-    const resultWritten = await beforeDeadline(startedMs + 59_900, () => evidence('result.json', { windowId, target, contract: CONTRACT, cases, errors, cleanup, background,
+    const resultWritten = await beforeDeadline(startedMs + 59_900, () => evidence('result.json', { windowId, target, runIdentity: run.id, contract, cases, errors, cleanup, background,
       elapsedMs: performance.now() - startedMs, elapsedBasis: 'through result serialization; final CLI receipt includes final file write',
       byteAccountingComplete: finalStreams.complete && adminClosed.state === 'settled' && observerClosed.state === 'settled' && drained.state === 'settled' && observations.some(value => value.kind === 'center-settled') && !errors.some(code => code.includes('stream') || code.includes('child_cleanup')),
       measuredBytesBeforeResult: budget.usedBytes, byteCategoriesBeforeResult: budget.categories,
