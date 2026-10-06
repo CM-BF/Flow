@@ -63,3 +63,5 @@
 2026-10-06 注册维护：TUI01B真实canonical加入为第126源，D06保持原ID并唯一迁dashboard-architecture-runtime；旧stream树只读历史。两source与registry解析通过，原独审图target2c316按f181固定源码，不追moving main。部署回执另记，不重跑架构/产品。
 
 2026-10-06T10:22:38.966Z实际126源回执见[shared-ack-runtime-registry-live.json](../../docs/evidence/d05/shared-ack-runtime-registry-live.json)，main8d8 clean、账本available；新S01P03当时仅claim尚未登记。当前补其真实canonical为127源候选；只验证唯一性/三件套/解析，未把未来部署写成已发生，不重跑架构或产品。
+
+2026-10-06 10:38:41 UTC：已保存10:30:43实际127源回执（main0b0，S01P03时间/人读字段已纠正），本批候选129源登记WPF-RELEASE01真实网页兼容与WPF-DPERF02核验复用，当前main parser两者errors=[]/human完整；固定f181架构资源不改，0产品测试/模型/个人操作。见[登记](../../docs/evidence/d05/web-release-registry-validation.json)与[原实际回执](../../docs/evidence/d05/graceful-stop-registry-live.json)。
