@@ -32,3 +32,5 @@ Root审查P2：原stopWorker以leader退出判断进程组停止有误；原clai
 07:17 UTC：一次native query已结束，无补次，预算SEALED。SDK4turns/估算USD0.0318802，真实图3node2edge/1planner/0child及typed final保存，自有组/center/DB/tmp清理true。原程序failed-or-unknown因中文literal失配保留；O08-05仍待GO独立读取语义/audit，不自行标绿。
 
 07:19 UTC：Root独立APPROVED结果target75ff3a5c566839c732c3ad11577d801972c3b345，核原始正文、图、audit、归属/费用/清理；原driver FAILED仅为字面oracle误拒绝。O08-05按受限范围完成，交付stage integration。host允许graph_read不等于该read成功的独立证据（native wire为空）；开放式规划、100agent、UI、子任务执行均未证明。见[独立回执](../../docs/evidence/o08/native-review.md)。
+
+2026-10-06 07:22 UTC：Execution Lead MAIN_ACCEPTED 253b8ad38fd869297e7d9948a26c1d310fef5c6c；作者核7403/75ff/acaa祖先及实验源码零差异，封存数据与main逐字节一致。本片段delivered，O08-06后继保留；停止写入后释放原claim，无工程/模型重跑。

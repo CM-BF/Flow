@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 07:19 UTC |
+| 最近更新 | 2026-10-06 07:22 UTC |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance |
 | Branch | codex/native-graph-acceptance |
@@ -14,12 +14,12 @@
 | 检查状态 | FAILED 7403b56b98070848c189c2d36663cb89846977be；原生driver exit1字面oracle失配，准备局部通过保留 |
 | Review | APPROVED 75ff3a5c566839c732c3ad11577d801972c3b345；Root只读验收真实受限图调用与忠实正文，原自动验收FAILED保留 |
 | Review target commit | 75ff3a5c566839c732c3ad11577d801972c3b345 |
-| 已集成main状态 / HEAD | 未集成；输入main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8 |
+| 已集成main状态 / HEAD | 已集成 253b8ad38fd869297e7d9948a26c1d310fef5c6c；实现/结果/批准metadata均为祖先，实验源码与已审7403零差异；本次观察不追后续HEAD |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 原生助手已保存受限三步计划并忠实说明未执行子任务，独立验收通过 |
-| 下一可用交付 | 接收已验收证据；原脚本误报保留，本次预算已封存 |
+| 下一可用交付 | 本片段已交付；验收器后继另行安排，本次预算已封存 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -34,4 +34,6 @@
 
 claim1303ae5c-a76a-46cd-bd77-a5abbc5f34e4 v1，3literal；06:37:55.033Z。准备授权与真实query授权严格区分；不读取真实token内容/认证网络。架构影响：验收driver复用既有loop，产品结构不变，source/执行路径在证据登记。
 
-Root未重跑工程测试/模型；11source+6raw+6产品依赖23项bytes/SHA及final摘要实算核对。native wire=[]，host graph_read allowed不独立证明read成功。1 SDK query不是单次底层模型HTTP调用；费用含Sonnet及原生附带Haiku。原raw/manifest/analysis历史pending与exit1均未改。claim保持active至main接收后释放。
+Root未重跑工程测试/模型；11source+6raw+6产品依赖23项bytes/SHA及final摘要实算核对。native wire=[]，host graph_read allowed不独立证明read成功。1 SDK query不是单次底层模型HTTP调用；费用含Sonnet及原生附带Haiku。原raw/manifest/analysis历史pending与exit1均未改。main接收已核；本次metadata提交后停止全部O08写入，fresh release v1并把回执交Lead，不再回写已释放范围。
+
+2026-10-06 07:22 UTC：[main接收证明](../../docs/evidence/o08/main-receipt.json)，原raw/manifest/analysis/permit与接收main逐字节相同，实验源码零差异。无重跑/服务/query操作。
