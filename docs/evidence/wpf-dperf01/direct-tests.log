@@ -1,0 +1,13 @@
+✔ one matching task target starts one comparison; a second snapshot performs fresh reads (1160.327625ms)
+ℹ {"phase":"same-target","gitStarts":24,"targetComparisons":1}
+✔ different review target is still independently compared and can invalidate approval (840.638291ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (1320.764917ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (655.217708ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4059.635292
