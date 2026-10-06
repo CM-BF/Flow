@@ -1,8 +1,16 @@
 # F01 current review
 
-状态：NOT_STARTED
+状态：APPROVED
 
 Review target commit：7f59daa552aa0618776468ec54b6ed4c5a6990cb
+
+Reviewer：Execution Lead / astra_ultra_execution_lead，独立于作者native_center_owner。四源/285绑定、1/1真实生产PG及清理已核，无P1/P2。[原通信结论转录](../../docs/evidence/f01/goal-plan-confirmation-production-independent-review.json)。批准仅本O15生产接线；ACK已收后重开、注入query、语义接受独立，后继CLI不在本批准。
+
+# F01 current review
+
+历史状态：NOT_STARTED
+
+历史 Review target commit：7f59daa552aa0618776468ec54b6ed4c5a6990cb
 
 本当前段仅O15公共client/export/生产031挂载与一条factory专测，等待独立源前检和实际PG。原032 0ee独审APPROVED及O14 main结论保留下文，不能继承为本新target批准。
 

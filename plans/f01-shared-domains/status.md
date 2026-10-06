@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:57:49 UTC / settings main 8d84d529a0756116bd0fc8bad969d61a6c26248e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:02:40 UTC / settings main8d84 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
-| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v48 active；7literal：[O15追加回执](../../docs/evidence/f01/goal-plan-confirmation-scope-amend.json)，client/contracts index已由C01 v2合法交回 |
+| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v49 active，10literal；原范围保持，追加CLI index/专测/README |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | O15受控input 1c0018d2；本共享source 7f59daa552aa0618776468ec54b6ed4c5a6990cb；原settings组合与O14保持 |
 | 工作树dirty状态 | 四新源停止写入；本次只固定1case实际PG证据，提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新生产PG1选中/1过/exit0，正常DROP与目录清理；focusedtypes0；214源/30SQL/19包预检无缺件；原O15 thirteen/settings不重跑 |
 | 已集成main状态 / HEAD | O14已main bd14；settings45源已main 8d84d529a0756116bd0fc8bad969d61a6c26248e exact。当前O15共享接线尚未main，个人服务不变 |
-| Review | O15新共享target7f59待Lead唯一最终窄审；原032/O15领域独审分别保持 |
+| Review | APPROVED 7f59daa552aa0618776468ec54b6ed4c5a6990cb；Execution Lead唯一四源/285binding/实际1case核；CLI后继不继承 |
 | 实现目标 | 7f59daa552aa0618776468ec54b6ed4c5a6990cb |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/goal-plan-confirmation-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 生产入口已验证一次确认后自动推进两步依赖任务，重启保留原确认与执行记录。 |
-| 下一可用交付 | 独立审查与主线接收这段生产接线；真实模型规划仍为后继。 |
+| 当前产出 | 一次确认后自动推进依赖任务的生产入口已获独立批准，待主线接收。 |
+| 下一可用交付 | 接收已审生产接线；补同接口的最小命令行确认入口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
