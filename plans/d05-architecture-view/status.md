@@ -45,3 +45,5 @@
 本批111个唯一来源，新增六个WPF-MATURE大task和R06、知识接线、补充指令、视觉外壳四个子task。真实三件套存在、状态解析与人读字段通过，证据 [mature-registry-validation.json](../../docs/evidence/d05/mature-registry-validation.json)。这是来源维护，不继承早期架构实现批准，不代表新增产品完成。上方cad1251审查保留历史；当前固定架构数据由唯一D06维护。
 
 规则已要求每子task所属大task/co-lead；实际status已有字段，但当前聚合器尚未把两者解析成页面关联。此真实展示缺口已交Web协调有界独立子片，不能把本次登记写成关系展示完成。注册发布不操作个人61227/61228或用户标签。
+
+实际部署：2026-10-06 09:09:25.827 UTC，原4320自有进程身份核对后正常换载，main1737cd6，111源；本批十项current=true/issues=[]，见 [mature-registry-live.json](../../docs/evidence/d05/mature-registry-live.json)。新R05B刚领取在下一正常登记批，未把领取状态当已登记。个人静态预览保持原b1c/v12。
