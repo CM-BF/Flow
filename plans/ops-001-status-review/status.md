@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:02 UTC / mainca683820 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:17 UTC / main421b2e89（个人窗口期间固定root af51） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin ca683820已接F04准备独审与SVC07固定HTTP输入回执；175来源已登记。个人后台362/v15与Web8d8/caa1/v2保持；2040更新只读step01停止，0材料/维护/重启/发布。 |
+| 已集成main状态 / HEAD | main/origin421b2e89已接F04原失败、独立收尾及c612终端观察修复。个人源窗口固定af51，原运行362/v15与Webcaa1/v2在新事实前保留，不预报发布成功。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 保留网页与候选后台的兼容证据已完整；终端和网页接续首验在终端请求捕获前失败，未创建任务，专用资源已独立收尾。 |
-| 下一可用交付 | 先修复终端启动诊断与收尾输出留存，再验证双端接续；个人更新的旧未决记录恢复正做限定独审，其他已就绪检查继续串行运行。 |
-| 当前阻塞 | ACTIVE: 新版发布需处理已定位的旧本地未决领取记录；一次保历史退役方案已授权，正做实现/独审，未操作个人记录。完整后台产物仍待原空间门槛；小检查按各自fresh预算继续。 |
+| 当前产出 | 终端启动及收尾诊断修复已进入主线；个人新版更新的旧未决记录恢复已审，原操作人员正在按一次性记录执行。 |
+| 下一可用交付 | 完成本次受控更新并核对数据与网页保留；资源窗口归还后接续已就绪的事务、终端和网页检查。 |
+| 当前阻塞 | ACTIVE: 本次个人更新执行中；完整后台产物仍待原空间门槛，F04/SVC07完整检查需重新fresh准入。没有降低磁盘门槛或重新调用模型。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -277,3 +277,5 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 2026-10-06 20:56 UTC：Web Recovery实际清理归还后，F04取得一次原150s/0provider串行窗口；实际开始仍须fresh源码/领取/空间。Mika/Web已直接协调暂停重运行，源码和审查继续。[准入](../../docs/quality/f04-window-2056.json)。
 
 2026-10-06 21:02 UTC：F04首验26,512ms失败、0task，原证据保留；独立cleanup-only于20:59:20正常完成，3自有组absent、marker/devino匹配、空连接、DB/tmp删除确认，窗口已归还Web/Mika。停止期PTY输出未持久的诊断缺口明确记录，不把清理成功当行为通过；后继先0PG/Chrome修捕获。MATURE02C02新树source-only操作按GO限定委派Mika，本Lead尚未创建；main/其它树/共享配置仍原边界。
+
+2026-10-06 21:17 UTC：SVC07在21:08因空间HOLD/0child/0PG明确归还；原SVC05H operator曾被runtime拒绝唤醒，在GO释放只读槽后一次恢复成功，未更换操作者/claim。固定0a8/7fb已独审130绑定，通过新exclusive run-retirement-release-20261006T211659Z与I02 388bb3f5 source-window启动一次已授权窗口；root准确af51，main421b冻结。09 drain起≤900秒，每步明确成功才继续，unknown保留维护与原件，0provider/用户tab。两peer已通知无新PG/Chrome；源码工作继续。
