@@ -28,3 +28,5 @@
 本地find-skills先发现，实际读用codebase-design/clean-code/brainstorming/tdd：小domain接口集中并发不变量，真实PG/HTTP与host CLI seam先红后绿；不安装无关技能。Root已批准设计，无需重复普通设计审批。每段与交付前clean-code检查记录own evidence。
 
 测试仅本模块+直接消费者，flow_svc02专库/动态端口；不运行全产品/共享DB套。覆盖身份/旧version/同key异input/重启审计、drain与旧claim交错、已占用session回滚、heartbeat/outbox继续、uncertain阻止hold、显式resume、错误PID/TERM超时/启动失败关门。0模型/0云。
+
+2026-10-06 05:36 UTC：已审实现9aa790552cb8847d6feb8c8f90c870407a54e572进入main fb906cb42391971a8b315dbd813f7633927d7265；SVC02-04仅剩单独窗口和真实部署记录。05:36:59Z原子amend至v2交回 apps/server/src/runners.ts，后续该文件由Lead协调新owner；本owner保留其余scope，不触碰现有服务。
