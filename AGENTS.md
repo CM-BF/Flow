@@ -80,10 +80,12 @@ status 的“当前产出/下一可用交付/当前阻塞/需用户决定”描�
 status可选枚举 `本片段交付阶段`：planning（未来计划）、implementation（实施）、review（待审/修复）、integration（已审待集成）、delivered（本片段已交付）。它与完整plan的开放TODO独立，禁止为了首页筛选勾选后继。显式非法值为未知；旧记录只按标准branchState token兼容，completed仅作者完成的legacy历史，不推断review/main事实。当前下一交付只展示implementation/review/integration，真实当前阻塞优先。新增任务及活跃owner在安全更新点采用字段，不要求全历史机械补写。
 
 
-## Lead职责与沟通边界（用户2026-10-06更新）
+## 两层任务、职责与消息预算（用户2026-10-06最终更新）
 
-- Goal Owner负责总任务规划、查缺补漏、研究、发现问题、督促交付与全局优化；co-lead自主细化计划、技术优化、接口、验收与集成，并管理subagents；workers执行有界实现和验证。Goal Owner不把co-lead当执行worker微操，不重复已有独立审查或检查。
-- 进度默认通过唯一owner status → dashboard传递，Goal Owner主动查看。普通进展、完成/审查/merge回执、metadata SHA及领取/释放细节不逐条私信、不多路转发、不确认套确认。重要交接结果回写看板。
-- 直接对话仅用于需要跨Lead裁决的重要接口/范围/资源决定、紧急用户影响，或无法通过dashboard解除的真实阻塞；一次简短消息说明决策点并链接canonical记录，收到无需ACK。
-- co-lead在已授权范围内自主派工、独立验收、提交推送和受控集成；普通技术步骤不再等待Goal Owner批准。可审小交付及时commit/push，独审后完成必要直接消费者检查即merge/main push；不等待无关片段，不改写已审target，不绕实际运行窗口冻结。
-- 当前用户授权每Lead任务1+3，三队4/4/4上限12；实际工具threadlimit与ready独立任务数仍限制运行，拒绝后不反复唤醒/创建新用户任务绕cap，不把授权上限称为正在运行人数。当前分配与实际观察以OPS-001及唯一状态源为准。
+- task严格两层。Goal Owner只规划大task：用户结果、优先级、边界、依赖与完整验收；并负责查缺补漏、研究、发现问题、督促交付和全局优化。co-lead自主细化、技术优化并管理sub-tasks及workers，负责局部独审、commit/push/merge；workers执行有界工作。
+- 每个sub-task必须在唯一status写明`所属大task`（唯一稳定ID及链接）和`co-lead`；dashboard沿该source关联显示，不另造消息或手填聚合进度。旧记录缺失保持未知，由合法owner安全点补齐，不能猜测关联或批改他人status。不得把每个小片改名大task绕过两层约束。
+- 进度默认由唯一status→dashboard传递，Goal Owner主动查看。co-lead→Goal Owner每个大task的消息预算严格为 **独立blocker数 + Done(1)**：blocker须整个大task受阻且确需GO介入，同一blocker仅报一次，无变化不重复；只有大task达到完整验收才报一次Done。
+- 小片完成、ready、review、merge、登记、claim、metadata SHA、普通接口确认和可由co-lead解决的内部问题，均只更新status/dashboard；不私信、不多路转发、不确认套确认。不再保留“重要接口/关键里程碑即可消息”的泛化例外。需要GO裁决的接口/范围/资源问题也必须满足上述大task blocker条件。
+- 必要worker↔本组lead的执行、审查与集成通信不受这项跨层消息预算限制；co-lead间具体依赖协调可直接处理，不抄送GO作普通进度。重要交接结果回写看板。
+- co-lead在已授权范围内自主派工、验收和集成，无需GO批准普通技术步骤。可审小交付及时commit/push，独审后完成必要直接消费者检查即受控merge/main push；不等待无关片段，不改写已审target，遵守实际运行窗口冻结。GO不微操co-lead或重复已有独审/检查。
+- 当前用户授权每Lead任务1+3，三队4/4/4上限12；实际工具threadlimit与ready任务数仍限制运行，拒绝后不反复唤醒/新建用户任务绕cap，不把授权上限称为实际运行人数。当前规则以OPS-001为准。
