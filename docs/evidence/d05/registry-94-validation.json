@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-06T08:14:58.275Z",
+  "count": 94,
+  "unique": 94,
+  "selected": [
+    {
+      "id": "O10",
+      "title": "原生文本子任务验收准备",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-child-acceptance",
+      "branch": "codex/native-child-acceptance",
+      "planDir": "plans/o10-native-child-acceptance",
+      "evidenceDir": "docs/evidence/o10",
+      "parseErrors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "S01P01",
+      "title": "同一执行器并发任务",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool",
+      "branch": "codex/runner-attempt-pool",
+      "planDir": "plans/s01-attempt-pool",
+      "evidenceDir": "docs/evidence/s01p01",
+      "parseErrors": [],
+      "humanComplete": true
+    }
+  ]
+}

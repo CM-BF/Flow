@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['WPF-CONTEXT02', '知识引用随消息可靠发送', '工作线', 'web-context-receipts', 'wpf-context-receipts'],
+  ['O10', '原生文本子任务验收准备', '技术验证', 'native-child-acceptance', 'o10-native-child-acceptance'],
+  ['S01P01', '同一执行器并发任务', '工作线', 'runner-attempt-pool', 's01-attempt-pool'],
   ['CHAT09', '补充指令执行配置核验', '工作线', 'steering-profile-admission', 'chat09-steering-admission'],
   ['CHAT06P02', '正文存储传输优化', '工作线', 'assistant-stream-prefix-hash', 'chat06-prefix-hash'],
   ['O09', '原生执行单个目标节点', '工作线', 'native-goal-node-execution', 'o09-native-node-execution'],
@@ -109,7 +112,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
