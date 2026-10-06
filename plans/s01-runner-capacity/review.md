@@ -1,9 +1,9 @@
 # S01 独立审查
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：c259e8e53cd53830fe1bc78ce3c8dae7b34d5540
 
-当前对象：实验私有observer精确FOR SHARE分类后继。仅observe-pg.ts一处常量与一个从固定P04源码取查询的fake direct反例；[manifest](../../docs/evidence/s01/observer-share-fix/manifest.json) SHA `e2fe714fac89c12913ebf97689aa3bdfca87a1d53c5b9fc6d3722409eda01711`，2source/4readonly/8raw/2support。真实red为4选3绿1红，最终4/4（3原透传+1新），local strict0；0真实PG/HTTP/runner/SDK/provider/capacity。
+当前对象：实验私有observer精确FOR SHARE分类后继，architecture_read/gpt-6-astra于2026-10-06 12:45:30 UTC只读APPROVED，0P1/P2，Mika接收。[回执](../../docs/evidence/s01/observer-share-fix/independent-review.json)。仅observe-pg.ts一处常量与一个从固定P04源码取查询的fake direct反例；[manifest](../../docs/evidence/s01/observer-share-fix/manifest.json) SHA `e2fe714fac89c12913ebf97689aa3bdfca87a1d53c5b9fc6d3722409eda01711`，2source/4readonly/8raw/2support。真实red为4选3绿1红，最终4/4（3原透传+1新），local strict0；0真实PG/HTTP/runner/SDK/provider/capacity。
 
 只读核fixed diff、SQL exact匹配不扩大、Promise/callback/receiver/error原断言保持、实际runners两列query输入绑定和所有raw；不默认重测。原64911结果70项仍按fixedGit绑定，当前WT仅两observer源码漂移；历史share-row elapsed仍UNKNOWN，不能用本fix回填历史结果或声称新容量。具体finding交owner按原S01claim修复。
 

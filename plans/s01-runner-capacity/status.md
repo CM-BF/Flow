@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:42:31 UTC；base1c保持，128历史结果冻结 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:46:21 UTC；observer后继独审通过，main接收另核 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 固定main1c输入；observer implementation c259e8e53cd53830fe1bc78ce3c8dae7b34d5540；历史128 source6de/execution70c/result64911各自冻结 |
-| 工作树dirty状态 | observer新source/raw固定；仅manifest/owner metadata收口，提交后clean |
+| 工作树dirty状态 | 新旧source/raw冻结；仅正式review/ready metadata，提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED：observer后继4/4 fake direct+局部strict0；128历史结果APPROVED保持，不新增实际调用 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | c259e8e53cd53830fe1bc78ce3c8dae7b34d5540 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 观测器已按真实P04查询修复共享锁分类，原128结果中的UNKNOWN保持原样 |
-| 下一可用交付 | 固定observer两源与red/green证据，Mika只读独审；P05独立metadata等待共享events移交 |
+| 当前产出 | 实验观测器共享锁查询分类修复已独审通过，128历史证据保持原样 |
+| 下一可用交付 | Lead受控接收observer小片；P05独立计划继续细化验收，生产路径待移交 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED：observer c259e8e53cd53830fe1bc78ce3c8dae7b34d5540 待独审；历史128 result64911已APPROVED |
+| Review | APPROVED：observer c259e8e53cd53830fe1bc78ce3c8dae7b34d5540，architecture_read/Astra，2026-10-06 12:45:30 UTC，0P1/P2；Mika接收 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -183,3 +183,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 12:42:31 UTC：observer后继真实反例4选3绿1红→4/4，strict0；仅精确两列FOR SHARE分类，原透传断言未删。[证据](../../docs/evidence/s01/observer-share-fix/README.md)。原64911的70fixedGit绑定仍核符，当前WT仅observe-pg.ts/.test两个新源漂移，raw/support/preparation零漂移；不再声称旧manifest源与当前WT全部相等。无新实际窗口，P05source仍未领取。
 
 2026-10-06 12:42:56 UTC：observer固定target `c259e8e53cd53830fe1bc78ce3c8dae7b34d5540`，[manifest](../../docs/evidence/s01/observer-share-fix/manifest.json) SHA `e2fe714fac89c12913ebf97689aa3bdfca87a1d53c5b9fc6d3722409eda01711`；2source/4readonly/8raw/2support共16绑定Git=WT。当前review等待Mika，只读验证无需再跑4项/strict。
+
+2026-10-06 12:46:21 UTC：observer固定c259e8e53cd53830fe1bc78ce3c8dae7b34d5540获architecture_read/Astra精确12:45:30 UTC APPROVED，0P1/P2；Mika接收。[接收入口](../../docs/evidence/s01/observer-share-fix/integration-ready.md)与独审/质量回执已封存，原4/4/strict0不重跑。批准仅实验分类修复，不等于新capacity/生产变更通过；历史64911 raw与UNKNOWN保持。

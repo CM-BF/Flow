@@ -1,0 +1,33 @@
+{
+  "state": "APPROVED",
+  "reviewer": "architecture_read / gpt-6-astra",
+  "reviewedAt": "2026-10-06 12:45:30 UTC",
+  "acceptedBy": "Mika",
+  "implementationTarget": "c259e8e53cd53830fe1bc78ce3c8dae7b34d5540",
+  "reviewPacket": "e082c756e4dbfdc0a22d5eb9c66f96fe07a84656",
+  "manifestSha256": "e2fe714fac89c12913ebf97689aa3bdfca87a1d53c5b9fc6d3722409eda01711",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "verified": {
+    "bindings": 16,
+    "originalTestAssertionsPreserved": 3,
+    "red": {
+      "selected": 4,
+      "passed": 3,
+      "failed": 1
+    },
+    "greenPassed": 4,
+    "strictExit": 0,
+    "historicalFixedGitBindings": 70,
+    "currentHistoricalSourceDrift": 2,
+    "historicalEvidenceChanged": false,
+    "reviewerReexecutions": 0
+  },
+  "limits": [
+    "Private experimental classification only, not a production or capacity result",
+    "Historical 128 FOR SHARE elapsed remains UNKNOWN",
+    "No new PG/HTTP/runner/provider/capacity execution"
+  ]
+}
