@@ -10,7 +10,7 @@
 | 唯一管理 owner / model | d01_owner（本轮执行管理者）/ gpt-6-astra ultra |
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` / `codex/web-platform-management` |
 | 固定基线 | `d444608ab6c796c731e44e51a892868bf39bec2a`；2026-10-06 02:07 UTC 核验 main clean 后创建，不追逐 main 后续 HEAD |
-| 独占写入 | `plans/web-platform/**`、`docs/evidence/web-platform/**`；不写 W01、其他 owner、共享契约或 main |
+| 独占写入 | 632a7149 v3：`plans/web-platform`、`docs/evidence/web-platform`、`plans/wpf-mature-01-visual`、`plans/wpf-mature-03-attachments`、`plans/wpf-mature-05-workspace`、`plans/wpf-mature-06-chat`；只有管理/计划，不授产品、其他owner或main写权 |
 | 项目目标追溯（非第三层task） | [FLOW-001](../flow-001-architecture/plan.md)、[完整验收矩阵](../flow-001-architecture/full-plan-matrix.md)；W01为历史起点；当前实现按下方每片唯一owner/status与D04 scope推进 |
 
 ## 当前两层任务关系与通信

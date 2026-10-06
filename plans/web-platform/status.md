@@ -11,7 +11,7 @@
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `444f2148da71b6e6c3b5a42e8348b258b739b5c0`（本次metadata前实核clean；交付HEAD以Git回执为准） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `2a118a28e7aff75c014b06a9c0f185adee56edf1`（09:00实核clean；本次仅当前写权描述补齐，最终HEAD以Git聚合为准） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
