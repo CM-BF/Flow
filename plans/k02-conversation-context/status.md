@@ -8,7 +8,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-context |
 | Branch | codex/conversation-context |
 | 工作基线 / HEAD | base fb906cb42391971a8b315dbd813f7633927d7265；首接口1eefebd5dca8f74bbefaf260a106e0e540e7fcf1；首执行片段7368497ade6b80725e024d86541b87c971389476；完整领域目标a6c9b09a8a4d4020a497341d3fb6deed16b08d02 |
-| 工作树dirty状态 | 审批metadata待提交；产品源码持续停写 |
+| 工作树dirty状态 | 当前仅收口metadata，提交后clean；产品源码持续停写 |
 | 工作分支状态 | review-approved |
 | 检查状态 | PASSED a6c9b09a8a4d4020a497341d3fb6deed16b08d02；仅23不同模块用例/noEmit，生产挂载后的旧消费者组合待F01 |
 | 已集成main状态 / HEAD | 未集成；base fb906cb42391971a8b315dbd813f7633927d7265 |
@@ -44,4 +44,4 @@ Dashboard实采见[receipt](../../docs/evidence/k02/dashboard-receipt.json)：ca
 
 2026-10-06 06:00:21 UTC：Mika独立技术review APPROVED `a6c9b09a8a4d4020a497341d3fb6deed16b08d02`，现场fe223a3 clean；21source/7只读输入/62raw hash及23用例/noEmit/12库清理核验，无P1/P2，未重跑。领域源码停写，metadata完成后继续保留claim；Goal Owner产品验收与生产组合未完成，K02-04仍in-progress、K02-05未集成。架构待更新target为本实现，owner Execution Lead（context/input表、privateclaim seam与migrate/register生命周期）。
 
-审批后dashboard实采见[receipt](../../docs/evidence/k02/approved-dashboard-receipt.json)：approved/passed/unchanged/current，issues[]；真实生产组合等待仍展示，未伪标main接收。
+审批后首个dashboard请求复用了06:00:18在途聚合，仍为not_started，原始receipt保留。刷新后[实采receipt](../../docs/evidence/k02/approved-dashboard-fresh-receipt.json)已approved/passed/unchanged/current，issues[]；真实生产组合等待仍展示，未伪标main接收。
