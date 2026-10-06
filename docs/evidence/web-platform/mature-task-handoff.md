@@ -12,7 +12,7 @@
 
 ## SVC04真实Web兼容验证优先（root/Lead 2026-10-06 10:26 UTC）
 
-SVC04工具虽已main，实际新Web固定候选8d8ab520a9d43c7b9dafb22911416ee799ebf665对固定b1c2e398 backend的read/send/原keyrecover/协商0provider证据仍缺。现有w01可用，ACK消费等已审固定实现；不新增agent。root已派只读核importWebCompatibility与最小test/evidence范围，正式fresh claim才写；真实App构建+随机专用PG/fixture runner，不能以miniWeb替代。个人61227/61228/凭据/用户tab不可触碰；SVC源码和实际发布仍Lead operator。
+SVC04工具虽已main，实际新Web固定候选8d8ab520a9d43c7b9dafb22911416ee799ebf665对固定b1c2e398 backend的read/send/原keyrecover/协商0provider证据仍缺。现有w01可用，ACK消费等已审固定实现；不新增agent。root已批准四literal，fresh无冲突后[20a6529a v1 COMMITTED](release01-take-receipt.json)10:26:38.042Z，w01已受领；真实App构建+随机专用PG/fixture runner，不能以miniWeb替代。个人61227/61228/凭据/用户tab不可触碰；SVC源码和实际发布仍Lead operator。
 
 DPERF02已合法take并首canonical，因本P1让位暂停实施，保留1cb4 v1四scope；尚无实验/生产修改，不将pending计划当活跃重负载。
 
@@ -35,6 +35,7 @@ DPERF02已合法take并首canonical，因本P1让位暂停实施，保留1cb4 v1
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
 | WPF-ATTACH01 → MATURE03，合同phase1实施/首source已就绪 | fixed base f181d84b5fb3652d62e2a181acff442d42b3e066；[ef617d78 v1 take](attach01-contract-take-receipt.json)10:06:48.197Z，五literal | attachment-resources / plans/wpf-attach01-resources / docs/evidence/wpf-attach01；两个合同+一专测+自己plan/evidence，owner panels；首canonical b87f8a515c7c8bbe5b76a8202db4f7666924b10d clean；小合同root审后Lead受控输入，runtime/export/migration不在此授权 |
 | D06 → D01，main收口完成 | impl2c3160f42784ee814d968a953d557251c81a243d / acceptedmain8d8ab520a9d43c7b9dafb22911416ee799ebf665；owner final631173ab正常push/clean，五source逐hash同 | dashboard-architecture-runtime / plans/d06-architecture-refresh；全四scope停写后[84fd v2 release](d06-runtime-main-release-receipt.json)10:24:18.920Z；唯一source迁移/126registry由Lead确认，4320实际部署仍待回执 |
+| WPF-RELEASE01 → MATURE01，实施/首source待owner | fixedWeb8d8ab520a9d43c7b9dafb22911416ee799ebf665；旧Web/backend b1c2e39837c2208e6fc2c59a80e16797f26448b5；[20a6529a v1](release01-take-receipt.json)四literal | web-release-compatibility / codex/web-release-compatibility / plans/wpf-release01-product-compatibility / docs/evidence/wpf-release01；只两新test及记录，真实App构建/隔离HTTP-PG-fixture，不含provider或个人发布许可 |
 | WPF-DPERF02 → D01，已领取/实验暂缓 | base41315b033deb0b1953484359b686c0b228997367；首canonical08710473，fresh[1cb4f0e3 v1 take](dperf02-take-receipt.json)四literal | dashboard-proof-batching / codex/dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；发布兼容与附件合同优先；实验未执行，恢复后临时Git Trace2≤60s/32MiB，不改proof/不取4320 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
