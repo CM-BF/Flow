@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:36 UTC；精确runner目录修复已独审，等待新串行窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:40 UTC；新准入发现受理记录非空闲，发布前停止 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 现场检查在任何发布变更前安全停止；观察脚本已对齐runner真实受理目录，三个定向检查和独立复审通过，执行源码固定。 |
-| 下一可用交付 | 等待新的唯一窗口后做现场准入，再逐步更新后台和网页；旧失败保留，不沿用旧intent。 |
+| 当前产出 | 新观察已准确找到runner受理记录，但不能证明空闲；已在材料导入和服务变更前停止，保留两次原始失败。 |
+| 下一可用交付 | 先由Lead核定未决受理的恢复边界；不清空记录、不重试或继续发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；5fe98f97cb7506f65555ab72205ebaea8464af84 独立APPROVED_EXECUTABLE_PREPARATION，79绑定/3新检查；原a644批准与8旧检查保持，1次只读准入失败、0发布变更 |
+| Review | [review.md](review.md)；5fe98f97cb7506f65555ab72205ebaea8464af84 独立APPROVED_EXECUTABLE_PREPARATION，79绑定/3新检查；原a644批准与8旧检查保持，2次独立窗口只读准入失败、0发布变更 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
 | 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web/中心恢复已执行，d629搬运及af51新发布未启用。 |
 
@@ -95,3 +95,7 @@
 ### 精确namespace独立批准
 
 Execution Lead于2026-10-06T20:35:57.334026+00:00独立APPROVED_EXECUTABLE_PREPARATION，target5fe98f97cb7506f65555ab72205ebaea8464af84；79固定/current绑定无差，完整3文件delta/实际producer路径/3新case原raw已核，reviewer0重跑。原件[namespace-independent-review](../../docs/evidence/svc05-history-compatibility/release-operation/namespace-independent-review.json)。当前只归档与停写，Mika窗口尚未归还；无新个人observe或launch，下一窗口另建reservation。
+
+### 20:40窗口实际准入停止
+
+使用全新reservation与5fe固定源码，唯一01-before退出1/172ms，RUNNER_ADMISSION_NOT_IDLE。正确namespace文件存在且idle=false；其bytes/hash与2030保存记录相同，仅是两次观察，不证明连续状态或原因。02–20均未执行，0材料/维护/服务/发布变更，0主动模型/用户tab。无重采/清journal/改参重试；[原始结果与分析](../../docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/analysis.json)。
