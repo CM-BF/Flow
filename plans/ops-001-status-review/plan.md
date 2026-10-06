@@ -53,3 +53,6 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 - [ ] **OPS-001-11** 共享资源可逆回收：复用已验证的每worktree sparse方法，限定本队已交付/released/无消费者目录，保护所有源码与权威证据；按实际卷变化判断局部验证是否恢复。每批数量与停止线按当前明确授权；next12b 已12/12到限停止，历史8棵/2.75GiB不是可反复使用的授权。实际回执见status，不替代SVC06准备门槛。
 
 - [x] **OPS-001-12** 将真实运行入口的动态资源/浏览器定位预检收进既有[局部验证方法](../../docs/quality/local-validation.md)，避免准备遗漏消耗独占窗口；不新增工具框架或重复通过检查，原失败、独审和累计预算保留。
+
+- [ ] **OPS-001-13** 提取最小test-only有限连接观察：先核TUI既有observeConnections，再以两个真实消费者验证zero/busy/unknown，不拥有DB删除或资源归属；沿[局部验证后继](../../docs/quality/local-validation.md)。
+- [ ] **OPS-001-14** 消除重复的operator/测试进程期限实现：先比较O16与SVC05H的两个真实消费者，固定受监督PID/组与永远不停止的detached服务、独立期限及unknown语义；独立scope与直接消费者验证，不合并DB删除、资源归属、源码绑定或连接观察职责。当前恢复候选不重开。
