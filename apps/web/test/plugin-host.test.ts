@@ -616,3 +616,16 @@ it("accepts the typed message footer and rejects non-message invocations", () =>
   expect(() => validateSlot("chat.message.footer", { kind: "message", taskId: "A", messageId: "m", role: "user" })).not.toThrow();
   expect(() => validateSlot("chat.message.footer", { kind: "task", taskId: "A" })).toThrow();
 });
+
+
+describe("independent assistant stream capability", () => {
+  it("accepts the explicit stream read capability but active state does not bypass resource permission", async () => {
+    const s=setup();
+    s.host.register({manifest:manifest({id:"test.stream",capabilities:["task.assistant-stream.read"],commands:[],activationEvents:["view:chat.message.footer"],
+      contributions:[{kind:"panel",id:"test.stream.panel",slot:"chat.message.footer",title:"Stream",capability:"task.assistant-stream.read"}]}),load:async()=>({activate(context){context.contribute("test.stream.panel",()=>null);}})});
+    await s.host.activate("test.stream");
+    const context:ResourceContext={kind:"message",taskId:"A",messageId:"actual-user",role:"user"};
+    expect(s.host.checkView("test.stream.panel",context).ok).toBe(true);s.deny();expect(s.host.checkView("test.stream.panel",context).ok).toBe(false);
+    expect(s.host.checkView("test.stream.panel",{kind:"global"}).ok).toBe(false);await s.host.dispose();
+  });
+});

@@ -28,6 +28,7 @@ const capabilities: readonly Capability[] = [
   "ui.layout",
   "reference.read",
   "task.activity.read",
+  "task.assistant-stream.read",
   "theme.write",
   "theme.register",
   "workspace.read",

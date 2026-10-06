@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-06T08:12:13.440644+00:00",
+  "implementationTarget": "9dafff7702f700e8b89f8ccee1992bce9ccb63d1",
+  "sourceBinding": "source-binding.json",
+  "executionSource": "972cd8437074e9f04c43d872515442fe1a9a0059 + dirty; unchanged actual browser captures retain original facts",
+  "checks": [
+    {
+      "name": "direct",
+      "log": "r1-direct-green.log",
+      "count": 28,
+      "exitCode": 0,
+      "at": "2026-10-06T08:09:36Z",
+      "scope": "11 HTTP host and installed-core regressions + 17 P01 tests; NOT a new performance measurement"
+    },
+    {
+      "name": "typecheck",
+      "log": "r1-typecheck-green.log",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "log": "r1-build-final.log",
+      "exitCode": 0
+    },
+    {
+      "name": "development-browser",
+      "report": "development-browser.json",
+      "count": 8,
+      "exitCode": 0
+    },
+    {
+      "name": "production-browser",
+      "report": "production-browser.json",
+      "count": 8,
+      "exitCode": 0
+    }
+  ],
+  "note": "This summary is recorded after execution. Source capture times are in the browser reports; it does not relabel those runs as post-commit execution."
+}

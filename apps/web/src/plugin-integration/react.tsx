@@ -1,3 +1,5 @@
+import { ConversationStreamHost, STREAM_OWNER, STREAM_PANEL } from "../conversation-stream/host";
+import type { PluginDefinition, PluginViewProps } from "../plugins/types";
 import { Activity, createContext, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type ComponentType, type ReactNode, type RefObject } from "react";
 import { useAuiState } from "@assistant-ui/react";
 import { Puzzle, SlidersHorizontal } from "lucide-react";
@@ -16,6 +18,7 @@ import { createConversationReplyBindings } from "./data-renderers";
 import { createConversationActivityBindings, ActivityBindingsContext } from "./activity";
 import type { ConversationProjection } from "../conversations/projection";
 
+const StreamBindingsContext = createContext<ConversationStreamHost | null>(null);
 const SessionContext = createContext<AppPluginSession | null>(null);
 const ThreadScope = createContext<{ viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null }>({ viewId: "", taskId: null });
 const globalContext: ResourceContext = { kind: "global" };
@@ -55,13 +58,43 @@ export function ConversationActivities({ viewId, projection, visible, children }
   useEffect(() => { const close = () => bindings.dispose(); session.signal.addEventListener("abort", close, { once: true }); return () => { session.signal.removeEventListener("abort", close); bindings.setVisible(false); }; }, [session, bindings]);
   return <ActivityBindingsContext.Provider value={bindings}>{children}</ActivityBindingsContext.Provider>;
 }
+export function useConversationStream(viewId: string, projection: ConversationProjection, visible: boolean) {
+  const session = useContext(SessionContext)!;
+  const bindings = useMemo(() => new ConversationStreamHost(viewId, projection, session.streamAuthority(), session.streamBudget), [session, viewId, projection]);
+  const source = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
+  useLayoutEffect(() => bindings.attach(), [bindings]);
+  useLayoutEffect(() => { bindings.setVisible(visible); return () => bindings.setVisible(false); }, [bindings, visible]);
+  useEffect(() => {
+    if (visible && source.snapshot?.capabilities.liveAssistantText === true && session.host.list().find(plugin => plugin.id === STREAM_OWNER)?.state === "registered") void session.host.activate(STREAM_OWNER);
+  }, [session, visible, source.snapshot?.capabilities.liveAssistantText]);
+  return bindings;
+}
+export function ConversationStreams({ bindings, children }: { bindings: ConversationStreamHost; children: ReactNode }) { return <StreamBindingsContext.Provider value={bindings}>{children}</StreamBindingsContext.Provider>; }
+function StreamStatusPanel({ context }: PluginViewProps) {
+  const bindings = useContext(StreamBindingsContext);
+  const state = useSyncExternalStore(bindings?.subscribe ?? (() => () => {}), () => bindings?.getSnapshot());
+  const member = context.kind === "message" ? state?.members.get(context.messageId) : null;
+  const current = member && state?.states.get(member.turnId);
+  return current?.error ? <p role="alert">Reply updates paused: {current.error} <button className="flow-link" onClick={() => bindings?.retry(member!.turnId)}>Retry reply updates</button></p> : null;
+}
+export function createAssistantStreamPlugin(): PluginDefinition {
+  return { manifest: { id: STREAM_OWNER, version: "1.0.0", hostApi: 1, capabilities: ["task.assistant-stream.read"], activationEvents: ["view:chat.message.footer"], commands: [],
+    contributions: [{ kind: "panel", id: STREAM_PANEL, slot: "chat.message.footer", title: "Live assistant text", capability: "task.assistant-stream.read" }] },
+    load: async () => ({ activate(context) { context.contribute(STREAM_PANEL, StreamStatusPanel); } }) };
+}
 export function MessageFooter() {
   const session = useContext(SessionContext)!;
   const scope = useContext(ThreadScope);
+  const stream = useContext(StreamBindingsContext);
   const messageId = useAuiState(state => state.message.id);
   const role = useAuiState(state => state.message.role);
   const taskId = scope.messageTask?.(messageId);
   const panels = useSyncExternalStore(listener => session.host.subscribeSlot("chat.message.footer", listener), () => session.host.getSlotSnapshot("chat.message.footer"));
+  const custom = useAuiState(state => state.message.metadata.custom);
+  if (taskId && role === "assistant" && stream?.getSnapshot().members.get(messageId)?.draft) {
+    const fact = custom.flowStream as { interrupted?: boolean; observationPaused?: boolean; truncated?: boolean; phase?: string } | undefined;
+    return <p className="mt-1 text-xs text-muted-foreground" data-stream-status={messageId}>{fact?.interrupted ? "Interrupted draft" : fact?.observationPaused ? "Draft · updates paused" : fact?.phase === "block-complete" ? "Draft · block complete" : "Draft · generating"}{fact?.truncated ? " · truncated" : ""} · not the final reply</p>;
+  }
   if (!taskId || role !== "user") return null;
   const context: ResourceContext = { kind: "message", taskId, messageId, role };
   return <div className="my-2 w-full min-w-0 space-y-2" data-extension-slot="chat.message.footer">

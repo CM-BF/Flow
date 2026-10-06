@@ -1,0 +1,39 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration
+
+ ❯ apps/web/test/conversation-stream-integration.test.ts (11 tests | 1 failed) 2787ms
+     ✓ requires independent plugin permission, retains canonical complete state, and has zero inactive reads 107ms
+     ✓ updates once per changed input, drains a finite dirty set then stays silent 208ms
+     ✓ never starts streams for the loaded completed historical turns 74ms
+     ✓ keeps two visible panes independent and enforces the two-lease connection budget 164ms
+     ✓ hides and disconnects without new reads, then resumes the cursor without losing composer ownership 202ms
+     ✓ disable invalidates late patch results, and reenabling starts from a new authorized cache 243ms
+     ✓ replaces only settled drafts and keeps a canonical final explicitly complete while task remains running 114ms
+     ✓ capability false and expired connection never start or accept stream reads 152ms
+     ✓ bounds view and connection turn caches while keeping canonical conversation history  1045ms
+     ✓ bounds failures across changing host inputs and resumes only on explicit Retry 252ms
+     × reconciles the actual official runtime repository without phantom branches or retained evicted bodies 223ms
+ ✓ apps/web/test/plugin-host.test.ts (17 tests) 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-stream-integration.test.ts > actual conversation stream host > reconciles the actual official runtime repository without phantom branches or retained evicted bodies
+AssertionError: expected [ { message: { …(6) }, …(1) }, …(2) ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ apps/web/test/conversation-stream-integration.test.ts:93:326
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 27 passed (28)
+   Start at  01:09:12
+   Duration  4.02s (transform 337ms, setup 0ms, import 1.06s, tests 2.80s, environment 0ms)
+

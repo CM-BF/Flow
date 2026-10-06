@@ -576,7 +576,11 @@ function Workspace({
       nativePage: (identity, after, signal) => { assertActivity(identity); return client.nativeActivities(identity.taskId, { ...(after ? { after } : {}), limit: 20 }, signal); },
       nativeBody: (identity, id, signal) => { assertActivity(identity); return client.nativeActivity(id, signal); },
     },
-    ownsMessage: (taskId, id, role) => [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId && (role === "user" ? userMessageId(turn) === id : turn.assistant.state === "available" && turn.assistant.messageId === id))),
+    stream: {
+      metadata: (identity, options, signal) => { assertActivity(identity); return client.assistantStream(identity.taskId, options, signal); },
+      patches: (identity, options, signal) => { assertActivity(identity); return client.assistantStreamPatches(identity.taskId, options, signal); },
+    },
+    ownsMessage: (taskId, id, role) => session?.ownsStreamMessage(taskId, id, role) || [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId && (role === "user" ? userMessageId(turn) === id : turn.assistant.state === "available" && turn.assistant.messageId === id))),
     openTask: select,
     openWorkspace: (id, tab) => {
       const owner = taskView(id) ?? [...views.entries()].find(([, view]) => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === id));
@@ -925,7 +929,7 @@ function Connection({
       data-extension-slot="settings.sections"
     >
       <h1>Connect to Flow</h1>
-      <p>The owner token stays in this page’s memory.</p>
+      <p>The owner token stays in this page’s memory. Reloading requires reconnection.</p>
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -938,9 +942,11 @@ function Connection({
             type="url"
             value={url}
             placeholder="Same-origin proxy"
+            aria-describedby="center-url-help"
             onChange={(event) => setUrl(event.target.value)}
           />
         </label>
+        <small id="center-url-help">Leave blank for this Web app’s configured /api proxy, or enter the center URL supplied by your administrator.</small>
         <label>
           Owner token
           <input
@@ -951,6 +957,11 @@ function Connection({
             onChange={(event) => setToken(event.target.value)}
           />
         </label>
+        <details className="text-sm">
+          <summary>Where do I get the owner token?</summary>
+          <p>For your local personal preview, run <code>node tools/personal-preview/cli.mjs status --directory "&lt;your-private-preview-directory&gt;"</code>. It reports a credentialsFile path without printing the token. Read that private file’s ownerToken yourself and enter it here. This is a Flow token, not a Claude or Pi login token.</p>
+          <p><a href="https://github.com/CM-BF/Flow/blob/6426b44cd32d10216141af13ecfa83b8879025fb/tools/personal-preview/README.md" target="_blank" rel="noreferrer">Personal preview setup</a> · <a href="https://github.com/CM-BF/Flow/blob/6426b44cd32d10216141af13ecfa83b8879025fb/apps/web/README.md" target="_blank" rel="noreferrer">Web connection setup</a></p>
+        </details>
         <Button>Connect workspace</Button>
       </form>
     </main>
@@ -961,7 +972,7 @@ export default function App() {
   const [connectionScope, setConnectionScope] = useState(() => crypto.randomUUID());
   const [client, setClient] = useState<FlowClient | null>(() =>
     fixtureMode
-      ? new FlowClient({ baseUrl: "", token: "flow-fixture-only" })
+      ? new FlowClient({ baseUrl: "", token: "flow-fixture-only", assistantStreamProtocol: "patch-v1" })
       : null,
   );
   useEffect(() => applyTheme(theme), [theme]);
@@ -989,7 +1000,7 @@ export default function App() {
         <Connection
           onConnect={(baseUrl, token) => {
             setConnectionScope(crypto.randomUUID());
-            setClient(new FlowClient({ baseUrl, token }));
+            setClient(new FlowClient({ baseUrl, token, assistantStreamProtocol: "patch-v1" }));
           }}
         />
       )}

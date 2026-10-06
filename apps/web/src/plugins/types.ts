@@ -33,6 +33,7 @@ export type Capability =
   | "ui.navigate"
   | "ui.layout"
   | "task.activity.read"
+  | "task.assistant-stream.read"
   | "reference.read"
   | "theme.write"
   | "theme.register"
