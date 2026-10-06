@@ -1,0 +1,126 @@
+{
+  "observedAt": "2026-10-06T16:02:28.501687+00:00",
+  "main": "e807730328a8f220721efcc3e346c03945991965",
+  "endpoint": "http://127.0.0.1:4320/api/snapshot",
+  "generatedAt": "2026-10-06T16:02:18.067Z",
+  "sources": 165,
+  "elapsedMs": 10454,
+  "wireBytes": 2071728,
+  "task": {
+    "id": "TUI01F",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T15:55:57.836Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/plans/tui01f-task-cancel/status.md",
+      "syncedAt": "2026-10-06T16:02:18.067Z",
+      "stale": false,
+      "ageHours": 0.12168527777777778
+    },
+    "issues": [],
+    "current": true,
+    "status": {
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)",
+          "id": "TUI-001",
+          "location": "../../../tui-client/plans/tui01-terminal-client/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "聊天终端取消入口源码已固定，可明确选中任务并保存原请求；尚待运行验证。",
+        "next": "独立源码审查与局部运行验证；实际跨界面接续仍待后续。",
+        "blocker": {
+          "state": "active",
+          "text": "本轮仅授权源码准备，固定依赖视图与隔离运行窗口尚缺；资源门槛待 fresh 核对。"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "044ab84db42606fb1757903258078e3dfbab9545",
+        "scopes": [
+          "packages/interaction/src/task-control",
+          "packages/interaction/src/types.ts",
+          "packages/interaction/src/commands.ts",
+          "packages/interaction/src/controller.ts",
+          "apps/tui/src/main.tsx",
+          "apps/tui/src/screen.tsx",
+          "apps/tui/src/task-controls",
+          "apps/tui/test-fixtures/cancel_driver.py",
+          "apps/tui/README.md",
+          "experiments/tui-web-control-handoff"
+        ],
+        "errors": []
+      },
+      "taskId": "TUI01F",
+      "owner": "assignment_review / gpt-6-astra",
+      "branch": "codex/tui-task-cancel",
+      "branchState": "in-progress",
+      "updatedAt": "2026-10-06T15:55:00.000Z",
+      "updatedRecord": "2026-10-06 15:55 UTC；尚未集成",
+      "todos": [
+        {
+          "id": "TUI01F-01",
+          "state": "completed",
+          "owner": "assignment_review",
+          "evidence": "[Interface](../../docs/evidence/tui01f/interface.md)"
+        },
+        {
+          "id": "TUI01F-02",
+          "state": "in-progress",
+          "owner": "assignment_review",
+          "evidence": "[8 个用例已备](../../docs/evidence/tui01f/README.md)，运行 NOT_RUN"
+        },
+        {
+          "id": "TUI01F-03",
+          "state": "blocked",
+          "owner": "assignment_review",
+          "evidence": "依赖与资源运行门槛未满足"
+        },
+        {
+          "id": "TUI01F-04",
+          "state": "pending",
+          "owner": "Execution Lead 协调 Web / owner",
+          "evidence": "实际双界面旅程未执行"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5 / 实现 044ab84db42606fb1757903258078e3dfbab9545；后续仅本次 metadata",
+      "declaredDirty": "源码固定；本次证据 metadata 提交后 clean",
+      "checks": {
+        "state": "not_run",
+        "target": null,
+        "record": "NOT_RUN；8 个定向用例源码已备，未执行测试/类型/HTTP/PG/PTY/浏览器"
+      },
+      "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+      "mainRecord": "未集成；旧 TUI01E 已 main 是输入，不代表本片",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    }
+  },
+  "limits": "Single GET after owned dashboard restart; no user tabs or personal services touched, no engineering tests/provider."
+}
