@@ -3,7 +3,7 @@ import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { chromium, expect, type Page, type Browser } from "@playwright/test";
-import { BACKEND, NEW_WEB, evidence, hash, repository, startReleaseFixture, until } from "./web-release-compatibility.fixture";
+import { BACKEND, NEW_WEB, RELEASE_ID, evidence, hash, repository, startReleaseFixture, until } from "./web-release-compatibility.fixture";
 
 const fixture = await startReleaseFixture();
 let browser: Browser | undefined;
@@ -70,7 +70,9 @@ try {
       preview.proxy.setLegacy(true); await page.setViewportSize({ width: 1280, height: 800 });
       await connect(page, preview.url);
       const nav = page.getByRole("navigation", { name: "Conversations", exact: true });
-      if (!await nav.isVisible()) await page.getByRole("button", { name: "Chats", exact: true }).click();
+      const chats = page.getByRole("button", { name: "Chats", exact: true });
+      if (!/\bactive\b/.test(await chats.getAttribute("class") ?? "")) await chats.click();
+      await expect(nav).toBeVisible();
       await nav.getByRole("button", { name: text, exact: true }).click();
       await expect(page.getByText(`Release fixture reply: ${text}`, { exact: true })).toBeVisible();
       const legacy = preview.proxy.records.findLast(record => record.path === `/api/conversations/${conversationId}` && !record.forwardedStream && record.response?.conversation?.id === conversationId);
@@ -94,7 +96,11 @@ try {
           || path === "/favicon.ico" && /404/.test(error.text);
       });
       assert.ok(expectedConsole, `Unexpected console errors: ${JSON.stringify(consoleErrors)}`);
-      for (const asset of loadedAssets) assert.equal(asset.sha256, manifest.files.find(file => file.path === asset.path)?.sha256);
+      for (const asset of loadedAssets) {
+        const path = preview.label === "new" ? asset.path.replace(`__flow_releases/${RELEASE_ID}/`, "") : asset.path;
+        if (preview.label === "new") assert.ok(asset.path.startsWith(`__flow_releases/${RELEASE_ID}/`));
+        assert.equal(asset.sha256, manifest.files.find(file => file.path === path)?.sha256);
+      }
       assert.ok(loadedAssets.some(asset => asset.path.endsWith(".js"))); assert.ok(loadedAssets.some(asset => asset.path.endsWith(".css")));
       const observations = {
         read: { ownerAuthenticated: negotiation.denied === 401, conversationBound: legacy.response.conversation.id === conversationId, taskBound: legacy.response.lastTurn.task.id === taskId },

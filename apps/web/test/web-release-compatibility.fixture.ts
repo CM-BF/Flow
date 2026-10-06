@@ -4,6 +4,7 @@ import { execFile } from "node:child_process";
 import { mkdtemp, mkdir, readFile, writeFile, realpath, rm } from "node:fs/promises";
 import { createServer, request as httpRequest, type Server } from "node:http";
 import { tmpdir } from "node:os";
+import { createRequire } from "node:module";
 import { join } from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 import { promisify } from "node:util";
@@ -11,6 +12,7 @@ import { Pool } from "pg";
 
 export const BACKEND = "b1c2e39837c2208e6fc2c59a80e16797f26448b5";
 export const NEW_WEB = "8d8ab520a9d43c7b9dafb22911416ee799ebf665";
+export const RELEASE_ID = "8d8ab520a9d43c7b9dafb22911416ee79";
 export const repository = fileURLToPath(new URL("../../../", import.meta.url));
 export const evidence = join(repository, "docs/evidence/wpf-release01");
 export const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
@@ -30,6 +32,18 @@ async function closeServer(server: Server) {
   await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
 }
 async function unusedPort() { const server = createServer(); const port = await listen(server); await closeServer(server); return port; }
+/** Correct production base for the candidate before a compatibility record exists. No release pointer is invented. */
+async function startCandidatePreview(source: string, dist: string, artifact: Artifact, webPort: number, proxyPort: number) {
+  const require = createRequire(join(source, "apps/web/package.json"));
+  const { preview } = await import(pathToFileURL(require.resolve("vite")).href);
+  const server = await preview({ root: dist, configFile: false, envDir: false, publicDir: false, logLevel: "silent", base: `/__flow_releases/${RELEASE_ID}/`, build: { outDir: dist },
+    plugins: [{ name: "fixture-artifact-identity", configurePreviewServer(server: any) { server.middlewares.use((request: any, response: any, next: () => void) => {
+      if (request.url !== "/__flow_preview_identity") return next();
+      response.setHeader("content-type", "application/json"); response.end(JSON.stringify(artifact));
+    }); } }],
+    preview: { host: "127.0.0.1", port: webPort, strictPort: true, open: false, cors: false, proxy: { "^/api(?:/|$)": { target: `http://127.0.0.1:${proxyPort}`, changeOrigin: false, ws: false } } } });
+  return { close: () => closeServer(server.httpServer) };
+}
 export async function until<T>(read: () => Promise<T>, predicate: (value: T) => boolean, timeout = 15_000): Promise<T> {
   const end = Date.now() + timeout;
   do { const value = await read(); if (predicate(value)) return value; await new Promise(resolve => setTimeout(resolve, 50)); } while (Date.now() < end);
@@ -102,17 +116,17 @@ export async function startReleaseFixture() {
   try {
     const { prepareWebArtifact, verifyWebArtifact } = await load(repository, "tools/personal-preview/web-artifact.mjs");
     const { startStaticWeb } = await load(repository, "tools/personal-preview/static-web.mjs");
-    const artifacts: Array<{ label: string; source: string; directory: string; artifact: Artifact; manifest: unknown }> = [];
+    const artifacts: Array<{ label: string; source: string; directory: string; dist: string; artifact: Artifact; manifest: unknown }> = [];
     for (const [label, target] of [["old", BACKEND], ["new", NEW_WEB]]) {
       const source = join(parent, `${label}-source`), directory = join(parent, `${label}-state`);
       await git("worktree", "add", "--detach", source, target); checkoutPaths.push(source); await mkdir(directory, { mode: 0o700 });
       console.log(`Preparing actual ${label} Web ${target}`);
       const installed = await execute("pnpm", ["install", "--frozen-lockfile", "--offline", "--ignore-scripts"], { cwd: source, timeout: 90_000, maxBuffer: 1024 * 1024 });
       await writeFile(join(evidence, `${label}-install.log`), installed.stdout + installed.stderr);
-      const artifact: Artifact = await prepareWebArtifact({ directory, repository: source, target });
-      const { manifest } = await verifyWebArtifact({ directory, artifact });
+      const artifact: Artifact = await prepareWebArtifact({ directory, repository: source, target, ...(label === "new" ? { releaseId: RELEASE_ID } : {}) });
+      const { dist, manifest } = await verifyWebArtifact({ directory, artifact });
       await writeFile(join(evidence, `${label}-manifest.json`), JSON.stringify(manifest, null, 2) + "\n");
-      artifacts.push({ label, source, directory, artifact, manifest });
+      artifacts.push({ label, source, directory, dist, artifact, manifest });
     }
     const oldSource = artifacts[0]!.source;
     const admin = new Pool({ connectionString: adminUrl, max: 1 });
@@ -152,10 +166,13 @@ export async function startReleaseFixture() {
     for (const artifact of artifacts) {
       const proxy = await startObservationProxy(centerPort); closures.push(proxy.close);
       const port = await unusedPort();
-      const web = await startStaticWeb({ directory: artifact.directory, artifact: artifact.artifact, repository: artifact.source, webPort: port, centerPort: proxy.port }); closures.push(web.close);
+      const web = artifact.label === "new"
+        ? await startCandidatePreview(artifact.source, artifact.dist, artifact.artifact, port, proxy.port)
+        : await startStaticWeb({ directory: artifact.directory, artifact: artifact.artifact, repository: artifact.source, webPort: port, centerPort: proxy.port });
+      closures.push(web.close);
       previews.push({ ...artifact, proxy, url: `http://127.0.0.1:${port}` });
     }
-    await writeFile(join(evidence, "environment.json"), JSON.stringify({ startedAt: cleanup.startedAt, node: process.version, backend: BACKEND, sourceTree: await git("rev-parse", `${BACKEND}^{tree}`), oldWeb: BACKEND, newWeb: NEW_WEB, artifacts: previews.map(({ label, artifact, directory, url }) => ({ label, artifact, directory, url })), providerQueries: 0, isolation: "random marked database, generated fixture auth, in-process fixed backend and fixture runner" }, null, 2) + "\n");
+    await writeFile(join(evidence, "environment.json"), JSON.stringify({ startedAt: cleanup.startedAt, node: process.version, backend: BACKEND, sourceTree: await git("rev-parse", `${BACKEND}^{tree}`), oldWeb: BACKEND, newWeb: NEW_WEB, releaseId: RELEASE_ID, artifacts: previews.map(({ label, artifact, directory, url }) => ({ label, artifact, directory, url })), providerQueries: 0, isolation: "random marked database, generated fixture auth, in-process fixed backend and fixture runner" }, null, 2) + "\n");
     return { previews, profile, token, centerUrl, request, close };
   } catch (error) { await close(); throw error; }
 }
