@@ -36,3 +36,5 @@
 ## 下一步与handoff
 
 Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。
+
+2026-10-06 01:14 UTC：新增 [架构改进研究](research-2026-10-05.md)，由 Goal Owner 提供官方资料结论，标记研究建议/未实测。未改冻结 M1/Web/dashboard 契约，也未新增完成标记。
