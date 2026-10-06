@@ -28,7 +28,7 @@ export class FlowClient {
     return this.request(`/api/tasks?${query}`);
   }
 
-  show(id: string): Promise<TaskSnapshot> { return this.request(`/api/tasks/${encodeURIComponent(id)}`); }
+  show(id: string, signal?: AbortSignal): Promise<TaskSnapshot> { return this.request(`/api/tasks/${encodeURIComponent(id)}`, { signal }); }
   detail(id: string): Promise<Detail> { return this.request(`/api/details/${encodeURIComponent(id)}`); }
   events(id: string, after = 0): Promise<EventPage> { return this.request(`/api/tasks/${encodeURIComponent(id)}/events?after=${after}`); }
 
