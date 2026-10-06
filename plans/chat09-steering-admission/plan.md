@@ -1,6 +1,6 @@
 # CHAT09 执行中指令的配置与受理
 
-状态：in-progress。Owner runner_owner / gpt-6-astra。创建/更新 2026-10-06 08:01:46 UTC。基线9c6fa9b100f04916f43b04280f05f497b28eeb0f。GO已批准有界设计与PG/HTTP/注入SDK seam。
+状态：completed。Owner runner_owner / gpt-6-astra。创建/更新 2026-10-06 08:01:46 UTC。基线9c6fa9b100f04916f43b04280f05f497b28eeb0f。GO已批准有界设计与PG/HTTP/注入SDK seam。
 
 目标：只有明确配置、固定版本且当前实际任务绑定的runner可收到执行中指令。复用CHAT08输入/结果/条件final，不创建第二loop；公共controls.steer与conversation能力保持false。未知/旧能力拒绝受理，不静默queue或降级。0provider，不动个人服务/真实凭据。
 
@@ -21,3 +21,5 @@ manifest activeSteering默认false；开启才把固定protocol写入不可变pr
 2026-10-06 08:08:50 UTC：本地有界片段已完成并固定 cd8594be137ee165f2745265842fc3678c5dfb46；检查通过后进入独审，公共能力仍关闭。后续真实SDK/界面按独立预算与owner验收，不扩大本片结论。
 
 2026-10-06 08:14:53 UTC：独立只读审查APPROVED，转integration等待main receipt；本片未覆盖真实SDK/UI，不以capfalse当整体U11完成。
+
+2026-10-06 08:19:35 UTC：main接收32c371d，本片验收已完成。真实provider、UI开启不在本片范围，后继仍单独验收。
