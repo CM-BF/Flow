@@ -1,5 +1,12 @@
 # MATURE02C01 独立审查
 
+状态：REVIEW_PENDING；Reviewer：assignment_review / gpt-6-astra
+Review target commit：6d1145de30eea1eb4c267c88386ebc0479dfbd99
+
+两项后续P2已局部修复，2红→2绿/52未选和focused types0已固定，待唯一reviewer增量审查。源停写；[增量证据](../../docs/evidence/mature02c01/supplement-README.md)。以下为原563完整独审历史，不能自动批准新增修复。
+
+## 原完整独审历史
+
 状态：APPROVED；Reviewer：assignment_review / gpt-6-astra，独立于作者 native_center_owner
 Review target commit：563b1ea151d8d26a2100238d8faf26b697f38d71
 
