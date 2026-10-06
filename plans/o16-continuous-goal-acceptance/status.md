@@ -1,0 +1,39 @@
+# O16 状态
+
+| 字段 | 记录 |
+| --- | --- |
+| 最近更新 | 2026-10-06 18:17:35 UTC |
+| Plan | [plan.md](plan.md) |
+| 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
+| 任务层级 | 子task |
+| co-lead | Execution Lead / astra_ultra_execution_lead |
+| 单一status owner / model | native_center_owner / gpt-6-astra |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
+| Branch | codex/continuous-native-goal-acceptance |
+| 基线 | 8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974 |
+| HEAD | 首Interface提交后固定；当前无产品实现 |
+| Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
+| 工作分支状态 | in-progress |
+| 检查状态 | NOT_RUN；仅只读proposal输入核对，0import/test/PG/provider |
+| Review | NOT_STARTED |
+| 实现目标 | UNKNOWN |
+| 实现范围 | experiments/continuous-goal-acceptance |
+| 已集成main状态 | 未集成；基线已含O15/CLI，不证明本实验 |
+| 阶段 | M2 |
+| 本片段交付阶段 | implementation |
+| 优先级 | 2 |
+| 当前产出 | 已明确规划和执行分段确认的验收路径，正在准备可恢复的零模型旅程。 |
+| 下一可用交付 | 可核对调用预算、确认边界和中心自动推进的独立验收入口。 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| O16-01 | completed | native_center_owner | [claim](../../docs/evidence/o16/claim.json)、[Interface](../../docs/evidence/o16/interface.md) |
+| O16-02 | in-progress | native_center_owner | 有限permit/持久reservation待实现 |
+| O16-03 | pending | native_center_owner | public journey/checkpoint待实现 |
+| O16-04 | pending | native_center_owner | 纯检查可推进；PG需Lead串行窗口 |
+| O16-05 | pending | native_center_owner | manifest/独审待固定 |
+| O16-06 | pending | native_center_owner | 新模型预算未授，旧O08/O10封存；不影响零query准备 |
+
+架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
