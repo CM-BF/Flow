@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:17 UTC / 2026-10-06 07:09 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:27 UTC / 2026-10-06 07:27 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 / 本批仅实验证据与管理登记 |
+| 工作基线 / HEAD | 253b8ad38fd869297e7d9948a26c1d310fef5c6c / 本批仅管理登记与交付回执 |
 | 工作树dirty状态 | 候选已提交；当前交付记录整理 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；已审固定实验源码/结果hash和84源登记校验，本次0产品重测 |
-| 已集成main状态 / HEAD | fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 已含流式协议/022及新旧页面兼容；本批S01限定窗口证据和84源登记待fast-forward。个人center/runner仍fb906。 |
+| 检查状态 | PASSED；87源唯一性/三件套/parser校验，本批相对253b无产品实现变化；不重跑工程 |
+| 已集成main状态 / HEAD | 253b8ad38fd869297e7d9948a26c1d310fef5c6c 已含聊天工具活动主界面及原生图验收证据；本批87源和owner回执待fast-forward。个人center/runner仍fb906。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 逐段回复读取和旧页面兼容已发布；四进程固定样例的测量证据已接收。 |
-| 下一可用交付 | 接入聊天正文和工具活动，再准备真实入口安全更新。 |
+| 当前产出 | 聊天中查看工具和推理详情的界面已发布；真实入口正在准备安全更新。 |
+| 下一可用交付 | 把已完成的聊天改进更新到真实入口，逐段正文显示继续实施。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

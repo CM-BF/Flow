@@ -164,3 +164,7 @@ CHAT07 fixed2137115 independently approved by Execution Lead; thin client1b16d23
 ## 2026-10-06 07:22 UTC actual chat activity mount / native graph evidence
 Web ActivityI ba341 fixed17 paths match approved target bytes/hash. Web Lead independent review and GO fixture CUA accepted collapsed→Tools/Reasoning→lazy bodies/offline/hidden boundaries; integration runs only7adapter+44generic cursor=51 direct consumers and Web typecheck0 with current CHAT06-compatible main. No browser/provider rerun. Actual typed stream body consumer remains a separate Web feature; UI works against real activity routes only after runtime supports CHAT05, personal fb906 is unchanged.
 O08 prepared7403 and native fixed75ff/metadataacaa accepted from GO independent review. Exactly one authorized SDKquery/four turns/SDKestimate0.0318802, three fixed nodes/two dependencies/no child, managed3+3 declared resources. Original driver FAILED/exit1 literal mismatch retained; GO separately accepted actual graph/final semantics. No extra test/query/budget reused, private resources cleaned per fixed raw. This is not open-ended planning, UI proof or child execution.
+
+## 2026-10-06 07:27 UTC metadata与来源登记
+
+受控接收D05 registry 00202ba（含497f三件套86与新增WPF-PERF03后87校验）、O08 ec2ec508 main receipt/release、CHAT07 3a4b4e45 latent-domain receipt/release、ActivityI 9aa3509 owner main receipt/release，以及总体矩阵575e498。相对固定253b，产品apps/server、apps/runner、apps/web、packages、tools均零diff；dashboard仅registry新增三唯一source，不改架构固定115b数据。无产品测试/模型调用，SVC02新owner仅准备目标253b，未停服务。
