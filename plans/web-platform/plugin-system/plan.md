@@ -17,6 +17,8 @@
 3. 行为验证：重复ID拒绝、版本不兼容诊断、激活失败原子回滚、disable清理listener/command/tab/renderers、执行时重新核权限/上下文、单插件错误隔离/重试、卸载后无残留。
 4. manifest先注册，重组件按activation event导入；流式token不广播刷新全部plugin；加载失败/离线提供恢复。性能以实际测量，完整系统验收等待X01后端/CLI环节。
 
+订阅/异步生命周期补充：useSyncExternalStore保持同一未变snapshot和稳定subscribe；按slot/command窄订阅，流式token不重绘全host。lazy activation与loading/error boundary局限插件panel；并发activate和disable期间迟到resolve不能重新注册，disable只释放本地观察，不能默认取消已受理中心任务。验证真实listener/observer清理。
+
 工作假设：先支持受信任内置Web扩展，第三方隔离边界交X01设计；未验证第三方模块安全执行，不宣称完成。实现owner尚待空槽派发，当前管理者只维护计划，不重复写W01。
 
 ## TODO

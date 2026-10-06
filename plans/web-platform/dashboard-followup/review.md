@@ -1,6 +1,6 @@
 # WPF-D01 审查
 
-**NOT_STARTED**；建立计划不构成实现、测试或approval。
+**NOT_STARTED**（未来实施review）；父管理文档target `c075bb5c00ac2f27d54dd264982be30261a9dc51` 已获root独立文档审阅APPROVED，范围仅需求/边界/计划一致性，不覆盖未来实现。
 
 - Target：首版管理文档候选待提交；实际完整SHA由提交后handoff提供，review者先核验。
 - Base：`d444608ab6c796c731e44e51a892868bf39bec2a`；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management`，branch `codex/web-platform-management`。

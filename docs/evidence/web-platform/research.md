@@ -29,3 +29,16 @@
 ## 首版文档检查与clean-code停点
 
 2026-10-06 02:15 UTC：检查14份Markdown的本地链接均可解析；四份plan的稳定TODO与status逐项一一对应，无重复；git diff --check通过（暂存后再次检查新增文件）。仅文档修改，不运行全库工程测试。clean-code复核命名/职责/接口/事实边界，实际修正P01编号冲突、D03重复owner、14→17来源、原话空格及表格断行；未来实现/性能/注册均保留未验证。
+
+2026-10-06 02:15 UTC管理停点：root对c075bb5独立文档review APPROVED；新增BR-01具体后端请求与实现、查看、断开和终止语义分开，接口建议交主线定稿，避免把文本输出叫PTY。纯metadata无全库工程测试；下一步只读使用现有parser核对管理status能解析，不控制4320。
+
+
+## RS08 插件生命周期与窄订阅（root只读研究#6）
+
+官方[useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)要求未变时返回同一immutable snapshot与稳定subscribe；external store更新不能简单当非阻塞Transition，store选择lazy组件有整块Suspense替换风险。工程建议：registry按slot/command窄订阅，token流不刷新全host；lazy activation由明确事件驱动，loading/ErrorBoundary限制在单插件panel。
+
+[AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)用于本地请求/响应流abort，不等于撤销服务端已受理任务。WPF-P01必须测并发activate、disable期间迟到resolve不能重注册、listener/observer真正清理；disable只清本地观察/未提交操作，不能默认Task.cancel。
+
+panels owner只读调查定位W01的activityBar.primary与WorkspacePanelMount为实际host接缝；可信renderer可按mediaType/kind选择，未知数据仍安全fallback，tab身份包含extensionId/resourceId，不给插件直接FlowClient/token。其观察M02新workspace.ts是跨任务投影，不是文件工作区/PTY；尚未发现独立X01契约，交Lead固定父能力。此为观察/建议，不是接口已采纳。
+
+当前独立审查WP-R1：root在panels target a2be896405304111379d72e9b22e46f8e47a11a4发现P2 blocking，Files树Enter开详情卸载树后焦点落body；已交唯一panels owner修复首次/缓存打开的焦点转移，未标APPROVED，不释放该owner开展新实现。

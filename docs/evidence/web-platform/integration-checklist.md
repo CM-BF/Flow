@@ -40,3 +40,17 @@ D03由主线单owner实现紧凑中性视觉及高层语义，包含当前阶段
 ## 验证与交付门槛
 
 当前新代码先测本模块及直接依赖；共享接口变化才测链路，metadata只核对内容/链接/ID/diff。W01仍须真实新任务/拒绝失败草稿/迟到受理关闭、双task观察、split/merge、详情隔离/懒读、显式cancel和keyboard/主题/窄屏；fixture与真实中心严格分开。最终回传完整SHA、dirty、启动URL、检查scope、双主题截图、官方来源/技能/clean-code、未验证及reviewtarget，不把候选commit当approval。
+
+
+## WPF-REQ-32 后端能力请求（BR-01，提交接收，不假设已有）
+
+接收协调owner：原Execution Lead；接收实现工作线：Runner owner（执行位置/文件与PTY能力）、M02/contracts/client owner（统一公共定位/权限/事件）、X01 owner（capability provider及插件授权）。这是请求的责任分配，主线收到后登记具体唯一owner/worktree/计划ID；我方不擅自分派其agent或修改共享契约。优先只读能力，交互shell独立验收，当前W01不等待它们继续真实引用/文本交付。
+
+| 请求 | 用户动作与精确语义 | 最小公共接口建议（由Lead定稿） | 解除条件 / 验收 |
+| --- | --- | --- | --- |
+| BR-01-A 定位与能力发现 | 用户选中任务，在右侧查看它实际关联的工作区与可用能力；不能从浏览器本机路径猜runner位置 | taskId查询workspace descriptor：稳定workspaceId、runnerId、attempt/ownerVersion、可用capabilities、只读显示名；没有工作区返回明确unavailable。后续请求带taskId/workspaceId及当前attempt版本防旧租约串任务 | 主线指定权威runner/task/workspace映射及版本；fixture和真实runner各证明任务A/B位置隔离，迁移/过期版本返回结构化不可用而非读错工作区 |
+| BR-01-B 只读文件浏览 | 用户展开FileTree、选文件tab看内容；不允许输入任意宿主绝对路径，不隐含写文件、执行或pty | listWorkspaceEntries(taskId, workspaceId, parentResourceId?, cursor?) 返回opaque resourceId、displayName、kind、版本/大小与nextCursor；readWorkspaceFile(resourceId, expectedVersion, bounded range?) 返回内容/mediaType/版本/截断状态。服务端限定runner分配根和允许范围，realpath/symlink与大小限制均在服务端执行 | Lead给contracts/client SHA、错误模型和例子；真实测试分页、二进制/超限、版本变化、消失文件、穿越/绝对路径/symlink拒绝；Web明确只读且懒读/缓存按workspace+resource+version，不跨task |
+| BR-01-C 只读进程日志 | 用户打开“任务日志”查看实际进程输出、断线后接续；模型回复仍是任务消息，不声称stdout | listLogStreams(taskId, attemptId) 返回流id/source/channel；read/watchLog(streamId, afterSequence, bounded limit) 返回seq、timestamp、channel stdout/stderr/system、text与结束/截断/保留边界。若只提供合并输出须明示channel unknown，不能Web推测 | Runner产生真实进程日志并与attempt绑定；重连不丢/不重复、保留超期reset明确、退出后只读可看；无stdin接口的日志不能显示交互shell输入 |
+| BR-01-D 交互shell（独立能力） | 用户明确打开交互终端，输入命令、调整尺寸、显式终止；连接/关tab仅detach观察，不能默认取消Flow任务或杀session | capability受权openTerminal(taskId, workspaceId, columns, rows) 返回terminalSessionId及生命周期；attachTerminal(afterSequence)输出；writeTerminalInput(sessionId, sequence/idempotencyKey, data)；resizeTerminal；显式terminateTerminal。需说明PTY进程owner、断连保留时限、退出状态、lease迁移规则；不复用Task.cancel作为关闭tab | 主线X01/Runner确认权限、可用shell/工作区/资源限制与能力作用域；真实PTY验证交互输入、尺寸、断连重附、顺序与重复防护、退出/超时、A/B隔离、明确终止；CLI同能力入口或明确阶段缺口 |
+
+BR-01当前解除状态：未接收实现SHA/具体owner登记，四项均未验证。当前UI仅支持真实任务文本/引用/Detail，源码不会因本文新增假API。主线接收后给唯一计划/owner、contracts/client精确SHA与调用例子；Web消费独立新迭代，先局部接口/直接依赖测试，共享链路变化再做真实runner端到端。

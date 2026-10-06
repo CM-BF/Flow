@@ -10,7 +10,7 @@
 | 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `d444608ab6c796c731e44e51a892868bf39bec2a`（首版文档提交前快照） |
 | 工作树dirty状态 | 仅plans/web-platform与docs/evidence/web-platform新增文档待提交 |
 | 工作分支状态 | pending；方向accepted，未实施 |
-| 检查状态 | 文档链接/ID/TODO检查PASSED（2026-10-06 02:15 UTC未提交候选）；功能检查NOT_RUN |
+| 检查状态 | NOT_RUN（未来实现）；管理文档target c075bb5c00ac2f27d54dd264982be30261a9dc51的链接/ID/TODO检查通过，不能继承为功能通过 |
 | 已集成main状态 / HEAD | 未集成本计划；最近核验main `d444608ab6c796c731e44e51a892868bf39bec2a`，后续由Lead推进不追写其状态 |
 | Review | [review.md](review.md)，NOT_STARTED |
 
