@@ -13,3 +13,11 @@ PG16官方函数依据已读：https://www.postgresql.org/docs/16/functions-bina
 - `/Users/citrine/.agents/skills/tdd/SKILL.md` SHA256 `93ea419b76e9caaf26153b828e984f7c3fb136f4caa67b14af95f32ea965a1cc`
 
 首安全点：新WT/base clean，fresh ledger无四scope冲突，COMMITTED take后才写。当前尚未执行产品测试，不标绿；P01结果已封存，不重跑原矩阵。
+
+07:58 UTC安全点：真实PG16.13红1/绿1，变更仅5行局部写校验SQL；公开readPrefix逐字不变，SHA还完整覆盖旧prefix+新text，strict lower-case比较/code保持。使用参数$2::text、COALESCE、ORDER BY revision；解码字段8192→64B/rowsJSON9744→79B不冒充网络wire/CPU收益。两库正常清理，红原日志不修改。
+
+2026-10-06 08:03 UTC交付安全点：最终10/10专用PG行为、直接消费者8/8（27中19未选）与noEmit exit0。产品仅store.ts 5行新增/2行删除，公开readPrefix/queries/final/契约/锁/events逐字不变；无需抽取单用函数或新公共seam。测试通过真实HTTP/public读取，PG查询spy只观察真实结果且finally恢复，无stub SQL返回。
+
+保留首次边界9/10（错误码断言误写invalid_request，server现有真实invalid_events）及afterAll即时查零连接失败；只查自有残库发现已零连接后普通DROP，修复回执boundaries-cleanup-repair.json。fixture改2秒有界等待自身连接，不强杀；修后完整10/10及清理通过。首types因JS runtime paths缺类型，改本evidence类型配置为既有package声明，types-fixed0。原失败不删除、不冒充通过。
+
+计量边界：新增SELECT向PG传当前patch text参数，本例3UTF8B；旧空prefix返回0B，新摘要固定64B。只证明长已存prefix的返回不再增长，不声称端到端wire、CPU、总时延或每patch净节约。PG仍完整聚合/hash，INSERT原patch/JSON开销仍在。P01原矩阵未重跑。
