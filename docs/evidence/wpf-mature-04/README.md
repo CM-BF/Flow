@@ -34,3 +34,5 @@ pnpm exec tsc --noEmit -p /tmp/wpf-mature-04-tsconfig.json
 2026-10-06 09:30:13 UTC：当前3ab95d2与首片879均APPROVED、待mika受控integration；metadata记录不复跑测试，也不将approval扩展至SDK采集/鉴权/持久化/生产freshness。
 
 后继共享输入已收敛为[中心store一页请求](center-store-request.md)：事务Interface、来源/refs/current cut、迁移及精确接线owner；只是实施候选，不新增claim，不影响首两片integration。
+
+2026-10-06 09:38 UTC：[只读cut核验](context-cut-audit.json)确认全事件序号相等不能支持completed后的current，已修订[一页请求](center-store-request.md)。建议首store限历史样本，当前窗口需可信消费cut另片验收；main4391bbf9f1785212d098ef6aa1c01a0320a003d3尚无6已审源码。未运行测试或修改实现。

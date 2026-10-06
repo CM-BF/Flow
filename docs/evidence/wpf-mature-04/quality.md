@@ -24,3 +24,5 @@
 2026-10-06 09:26 UTC P2修复复核：独立review暴露来源适用范围缺口，接受修正；attempt+非空nativeSession为最小source前置条件，draft/queued留独立估算器，不新增状态或抽象。测试默认attempt，拒绝pending/无session，保留detachment、身份失效与隐私等原断言；修后26+23=49/49、strict noEmit0。旧46是历史，不替代本次证据；source Adapter仍依赖authenticated host绑定已消费cut。只修2源码，879已审4文件保持不变。
 
 2026-10-06 09:32 UTC：approval metadata与22行中心store请求为文档变更；沿相同find-skills/codebase-design/clean-code方法复用既有事务/锁/序号，不造第二endpoint或状态权威。核read-only main/ledger、链接与diff，完整6源码保持已审target；不重复工程测试。具体source/消费cut、migration编号和共享writer须Lead固定后方可amend开写。
+
+2026-10-06 09:38 UTC：按codebase-design/clean-code只读检查真实事件生产/持久顺序，发现把运输序号当消费cut会让正常完成后始终unknown。撤回此候选，首store建议限历史样本；current依现有result/receipt/seal与明确采样时点定义有限边界，避免另造通用FSM。main/owner HEAD、dirty、v3与6源码hash已核；本轮只做文档链接/diff检查，无工程测试。
