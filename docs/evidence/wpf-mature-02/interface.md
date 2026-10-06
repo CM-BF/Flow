@@ -4,9 +4,10 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
+- **S01供给可立即办理：请Lead soleGit按唯一固定请求物化。** [source-supply-request.json](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/source-supply-request.json) / [README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/README.md)，供给请求固定clean/pushed `73157915758b934cce5131045317c892288ddc7a`；WT runner-capacity-probe、claim508f v2 ACTIVE五scope。仅将JSON中固定8d84的57TS+4metadata/284628B按相对路径放入同目录source-snapshot，保留现scope/dirty，不覆盖旧产品src；owner未自行物化。Lead报告原Flow已恢复main ec5 clean，供给无需等PG；sole操作前协调owner当前HEAD/短停点。实际测量仍NOT_OPEN。
+
 - **原生目录单项许可后继准备中，未OPEN。** [固定最小接口](native-catalog-pagesize-compat/interface.md)：原native driver/二进制不变，原37023仅追加exact hw.pagesize_compat；单目标初始化+最多一页目录，旧窗口不复用，无turn/login/推理。
 
-- **S01空领取测量：请Lead soleGit提供固定只读镜像。** [唯一61项source supply请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/source-supply-request.json)固定8d84，57TS+4metadata共284628B，保持相对路径置于该证据的source-snapshot，不覆盖旧产品src；原owner claim508f v2已追加合法evidence，实际测量仍NOT_OPEN。
 
 - **numeric pagesize单许可出现正差异，窗口已消费。** [固定结果](native-pagesize-compat/run-report.md)：A三API −1/EPERM；B只增加hw.pagesize_compat后三API全16384/errno0，1compile+2helper正常关闭、自有根清理。仅本C组合改善，不自动native重试或声称根因/修复；[忠实性已接收](native-pagesize-compat/result-review.json)。
 - **CHAT06P03已main接收并交回写权（Mika核验）。** [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash/plans/chat06-runner-prefix-hash/status.md)：owner567d62042f273f6a8b23ff6da334e698bed94ff7 clean/pushed；main0b8cd6f4六源与refs一致，真实noEmit0已关闭类型P2，v2于18:22:14.915 RELEASED；[实际外部release](/tmp/flow-chat06p03-main-release-receipt.json)。无需重复集成或重测。
