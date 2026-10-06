@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:11 UTC；一次旧intent退役准备固定，未个人执行 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:16 UTC；精确退役准备获独审，等待新源窗口START |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,18 +12,18 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 固定源码停写；本次仅own metadata提交，clean以实际Git回执为准 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 0a8dd95bae123b3c749d859a42c2357e65321bcf（18不同纯/小文件用例分轮，入口语法）；真实host/PG/个人操作NOT_RUN |
 | 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
 | 实现目标 | 0a8dd95bae123b3c749d859a42c2357e65321bcf |
 | 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已准备一次保留原件和审计的旧受理意图退役，只有确认维护暂停、旧runner停止且无待处理工作才可继续；个人环境尚未变更。 |
-| 下一可用交付 | 独立核验固定操作输入后，在单次窗口完成退役并继续已授权后台与页面发布。 |
+| 当前产出 | 一次受控退役方案已通过独立审查，原件与历史保护检查齐备；本次新记录已保留，尚未读取或操作个人环境。 |
+| 下一可用交付 | 收到固定版本窗口后，完成现场准入、旧意图退役和原定后台/页面发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；新退役准备待Lead唯一独审；原5fe98/a644批准及2030/2040失败保持，不作者自批 |
+| Review | [review.md](review.md)；Lead APPROVED_EXECUTABLE_PREPARATION 0a8dd95bae123b3c749d859a42c2357e65321bcf，130fixed/129current无差；真实执行未开始 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
 | 架构影响 | 仅证据范围的单次operator：确认Adapter复用host锁/同runner行锁，私有原件与audit先于精确字节替换；普通idle与产品API不变。准备未集成/未个人运行，待Execution Lead登记固定target。 |
 

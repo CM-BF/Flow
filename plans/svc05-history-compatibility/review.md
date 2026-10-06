@@ -105,3 +105,7 @@ Execution Lead 独立APPROVED_EXECUTABLE_PREPARATION，固定5fe98f97cb7506f6555
 ## 2026-10-06 21:11 UTC 精确旧intent退役准备 REVIEW_PENDING
 
 固定 `0a8dd95bae123b3c749d859a42c2357e65321bcf`，作者不自批。Lead/GO明确批准一次新退役语义后实施；同安装marker/唯一runner/hold行锁/旧runner停止/全部pending确认，原件备份和先行意图持久后仅精确journal替换。普通idle不改、无旧ACK伪造。18不同纯/小文件例分轮通过，真实host/PG/个人退役尚未执行；新增seam/template/deadline与实际逐步输入完整绑定见 [manifest](../../docs/evidence/svc05-history-compatibility/intent-retirement/fixed-manifest.json)。checks-1的合成stdout checkpoint精度限制与后两轮真实durable区别保留。原2030/2040失败保持，独立审查由Lead完成。
+
+## 2026-10-06 21:16 UTC 独立准备批准
+
+Execution Lead APPROVED_EXECUTABLE_PREPARATION target0a8dd95bae123b3c749d859a42c2357e65321bcf / delivery7fb235cc，130fixed/129current全吻合，18不同原检查分轮只读核验，0重跑/个人读取。原件[独立回执](../../docs/evidence/svc05-history-compatibility/intent-retirement/independent-review.json)。已建立全新exclusive准备reservation与私有记录子目录，不复用2030/2040许可或结果；真实hold request只能在definite新hold receipt后生成。等待Lead准确af51源窗口与START，本轮0个人动作。
