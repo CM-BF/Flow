@@ -2,33 +2,33 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 06:24:32 UTC |
+| 最近更新 | 2026-10-06 06:31:37 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context |
 | Branch | codex/goal-knowledge-context |
-| 工作基线 / HEAD | 已审K02分支a6c9b09a8a4d4020a497341d3fb6deed16b08d02；不是main基线 |
-| 工作树dirty状态 | private claim接线与检查证据待本次提交 |
-| 工作分支状态 | in-progress |
-| 检查状态 | PARTIAL；16领域+3实际claim用例通过；完整旧consumer组合待执行 |
+| 工作基线 / HEAD | branch base a6c9b09a8a4d4020a497341d3fb6deed16b08d02；共享固定base acfd409a493315a00f1cc19ac96c5f1b36c19e57；implementation HEAD 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7 |
+| 工作树dirty状态 | 仅交审metadata待提交；产品源码停止写入 |
+| 工作分支状态 | review-ready |
+| 检查状态 | PASSED 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7；20新领域+24直接消费者=44不同用例，noEmit exit0；限定见README |
 | 已集成main状态 / HEAD | 未集成；已观察main3d4985fca060155435b159e0467815bf8e88b8b8，O06后续受控组合 |
-| 实现目标 | 未固定 |
+| 实现目标 | 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7 |
 | 实现范围 | apps/server/src/goal-context, apps/server/src/goal-tool-runs/runner.ts, apps/server/src/goals/state.ts, packages/contracts/src/goal-context.ts, packages/contracts/src/goals.ts, apps/server/src/goals/commands.ts, apps/server/src/reconciliation.ts, apps/server/src/runners.ts, packages/storage/migrations/021-goal-context.sql, docs/evidence/k03/check.mjs |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 节点已能冻结知识版本，并沿实际依赖识别过期、限制执行和安全恢复 |
-| 下一可用交付 | 完成直接消费者组合验证，交独立审查 |
+| 当前产出 | 节点固定知识输入与过期保护已在分支验证，实际执行保留完整原文 |
+| 下一可用交付 | 独立审查后接入生产入口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| K03-01 | in-progress | b01_bounded_reads | 021、migrate/register、private claim/recovery helper已实现；seam-matrix-corrected 5/5与noEmit |
-| K03-02 | in-progress | b01_bounded_reads | define-input原文冻结与私有绑定已验证；execute/stale门禁待实现 |
-| K03-03 | blocked | b01_bounded_reads / Lead | reconciliation已实现；privateclaim写权v4已接收，等待O06/O07受控基线 |
-| K03-04 | pending | b01_bounded_reads / Mika | 未执行 |
+| K03-01 | completed | b01_bounded_reads | DTO/021/migrate/register/private接口已固定 |
+| K03-02 | completed | b01_bounded_reads | 冻结/详情/过期真实依赖传播已验证 |
+| K03-03 | completed | b01_bounded_reads | 实际claim/原runtime adapter/C02两种恢复已验证 |
+| K03-04 | in-progress | b01_bounded_reads / Mika | 44不同用例与noEmit通过；等待Mika固定target独审 |
 | K03-05 | pending | Lead / Goal Owner | 未集成、未验收 |
 | K03-06 | pending | 后继owner | 后继保持开放 |
 
@@ -47,3 +47,7 @@ claim fcde300a-4851-415a-ae42-74009f721920 v4 ACTIVE，COMMITTED06:04:25.366Z，
 06:17:23.731Z v4接收runners.ts，[receipt](../../docs/evidence/k03/runner-handoff-receipt.json)。未用旧a6文件覆盖O07；收到c22412b5但O06表/权限purpose/DTO缺依赖，已向Mika/Lead请求完整固定基线，先保存已验证domain。
 
 2026-10-06 06:24:32 UTC：已按授权完整merge固定main115b0db，合并06c9ea5无冲突；runners完整输入与O07 c224零diff后只加4行private goal读取/提示副本覆盖，保留graph授权/K02。actual-claim-red正确得到raw旧prompt；修后3/3，含实际runRunner+原fixture adapter以及损坏rollback。新goalContext字段未增加。首生产自动021挂载仍归Lead。此安全停点暂停K03写入，顺序完成K02已接收main的metadata收口后回来。
+
+2026-10-06 06:31:37 UTC：target 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7 已固定，20source/14只读输入/148raw见[manifest](../../docs/evidence/k03/manifest.json)，报告见[README](../../docs/evidence/k03/README.md)。115b与acfd受控完整merge均无冲突；保留O07全部graph私有授权/K02，只增goal prompt副本投影。生产021自动mount/sharedclient/CLI/GO接收/main仍待各owner，不把本夹具实际HTTP称生产挂载。旧阶段migration两项F01后继未运行、不计44。产品停止写入待review；claim v4保留。架构target为本实现，Execution Lead待更新goal专用context/input表、freshness读取与privateclaim/recovery/migrate生命周期。
+
+Dashboard 2026-10-06T06:31:50.021Z 实采canonical current=True，review=not_started，checks=passed，issues=[]；[receipt](../../docs/evidence/k03/dashboard-receipt.json)。尚未独审，不将NOT_STARTED解释成批准。

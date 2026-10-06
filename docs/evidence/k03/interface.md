@@ -21,8 +21,10 @@ source版本变化（即便digest同）使知识stale，旧cite也stale；source
 
 runnerCommand在commandInTransaction首次分支内核owner refs exact顺序不变；增删换序拒绝，knowledge-bearing execute首片拒绝runner。原无refs命令与老key ACK重放不变，读input只metadata，不新增knowledge grant。
 
-当前小片段：021+migrate/register、define-input冻结、detail、私有claim投影与recovery copy helper已有实现和5项真实/纯helper检查。execute/stale/runner-command门禁与reconciliation调用已实现，领域矩阵15项+旧版本定向1项通过；runners接缝已获v4范围，但需先受控接入O06/O07完整固定基线，prod index/client归共享owner。共享hook未接不称端到端交付。K02旧reconciliation已明确停写，交接由Mika原子协调。
+当前小片段：021+migrate/register、define-input冻结、detail、私有claim投影与recovery copy helper已有实现和5项真实/纯helper检查。execute/stale/runner-command门禁与reconciliation调用已实现，领域矩阵15项+旧版本定向1项通过；runners接缝已在完整O06/O07固定基线上实现并通过实际claim与原runtime验证，prod index/client归共享owner。共享hook未接不称端到端交付。K02旧reconciliation已明确停写，交接由Mika原子协调。
 
 private claim接线：从goal-context/index.ts导入goalExecutionInputForTask，在原runner授权与task锁事务中与K02同类helper一起读取；返回非null时只替换assignment.task.prompt副本，可将context放单独goalContext可选字段。必须先migrate021，不能缺表回退。helper会拒双绑定；生产接线与真实runner用例尚未执行。
 
 当前基线组合依赖：c22412b5 runners.ts无条件引用goal_graph_runs、goal-graph-tools execution profile purpose与goalGraphRun契约；a6基线缺这些O06依赖。共享文件尚未消费/改写，等待Lead受控完整基线，禁止缺表fallback。
+
+最终接口21d2e05eb571e44883589eb38bff6b5a4b2eaeb7：shared115b/acfd已完整无冲突合入；claim不新增goalContext字段，只替换私有prompt，owner执行history.context提供metadata。此前缺组合依赖已解除。生产migrateGoalContext必须在scheduler/请求/claim/recovery可用前完成，registerGoalContextRoutes需在ready/listen前执行。
