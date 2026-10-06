@@ -34,7 +34,8 @@ export const conversationListQuerySchema = z.strictObject({
 
 export interface ConversationCapabilities {
   followUp: true;
-  queue: true;
+  /** Capability varies by center version; older centers may not expose durable queues. */
+  queue: boolean;
   steer: false;
   liveAssistantText: false;
   perTurnModel: false;
