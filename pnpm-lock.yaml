@@ -62,6 +62,9 @@ importers:
       '@flow/contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
+      '@flow/plugin-runtime':
+        specifier: workspace:*
+        version: link:../../packages/plugin-runtime
       '@flow/protocols':
         specifier: workspace:*
         version: link:../../packages/protocols
@@ -81,6 +84,9 @@ importers:
       '@flow/contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
+      '@flow/plugin-runtime':
+        specifier: workspace:*
+        version: link:../../packages/plugin-runtime
       fastify:
         specifier: 5.12.5
         version: 5.12.5
@@ -252,6 +258,12 @@ importers:
       zod:
         specifier: 4.6.5
         version: 4.6.5
+
+  packages/plugin-runtime:
+    dependencies:
+      tar:
+        specifier: 7.5.22
+        version: 7.5.22
 
   packages/protocols:
     dependencies:
