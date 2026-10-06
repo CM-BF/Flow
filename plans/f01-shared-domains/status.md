@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:23:15 UTC / mainec50957f |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:30 UTC / main61744371 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 已审COST领域27d4/薄clientfb0；生产接线7150d6ee9e1e36b69994da1977aa980139f3458f |
+| 工作基线 / HEAD | 已审COST生产7150已main617；后继CLI 0550b3e7318133fb0d023fd8cc4372d8b7663e78 |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | completed |
-| 检查状态 | PASSED 7150d6ee9e1e36b69994da1977aa980139f3458f；实际公共HTTP/PG1/1、types0，0provider，原领域不重跑 |
-| 已集成main状态 / HEAD | 98e规划列表与O13领域已main5dbabadc7dda02da558f48505677eddbc9c83fb5并推送；个人runtime362/v15不变 |
-| Review | APPROVED 7150d6ee9e1e36b69994da1977aa980139f3458f；assignment_review限定production，domain/client各自已审 |
-| 实现目标 | 7150d6ee9e1e36b69994da1977aa980139f3458f |
-| 实现范围 | apps/server/src/index.ts, packages/client/src/usage-readout-production.test.ts |
+| 检查状态 | PASSED 0550b3e7318133fb0d023fd8cc4372d8b7663e78；真实HTTP1/1（20ms）和types0，无新PG/provider |
+| 已集成main状态 / HEAD | COST域27d4/薄clientfb0/生产7150已main61744371606f3ee890a9d64e21b33f52940d6e14；个人runtime362/v15不变 |
+| Review | APPROVED 0550b3e7318133fb0d023fd8cc4372d8b7663e78；assignment_review独立只读三源/两raw，0重测 |
+| 实现目标 | 0550b3e7318133fb0d023fd8cc4372d8b7663e78 |
+| 实现范围 | apps/cli/src/index.ts, apps/cli/src/usage-readout.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 用量说明已接通公开中心，并验证缓存分项、授权与重启后仍可读取。 |
-| 下一可用交付 | 将已审公共用量说明发布到主线。 |
+| 当前产出 | 各端共用的用量读口已进入主线，终端查询命令已通过独立审查。 |
+| 下一可用交付 | 在命令行直接查看缓存分项、估价及缺测说明。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -187,6 +187,10 @@
 
 2026-10-06 14:07:02 UTC：O13/client主线接收见[receipt](../../docs/evidence/f01/goal-run-list-main-receipt.json)。usage.ts已停止写入并在F01 v36原子移交COST01A v2，共享入口仍由本owner管理；未重测原HTTP/领域。
 
-| F01-39 | in-progress | Lead | [用量thin manifest](../../docs/evidence/f01/usage-readout-client-manifest.json)，独审与领域/挂载待接收 |
+| F01-39 | completed | Lead | 域27d4/薄clientfb0/生产7150各自独审，main617已接收，十源零差。 |
 
 2026-10-06 14:23 UTC：真实生产factory唯一新1/1通过（非原领域14项重跑），默认owner hook保护读口；原样重放/重启和旧summary保持、无正文、401/403/404/no-store实际核验。随机库before[]/created=true/connections[]/remaining[]，0模型。空间门槛1GiB+96MiB前检通过；新库完成后仍保收尾余量，SVC06门槛未解除。见[生产manifest](../../docs/evidence/f01/usage-readout-production-manifest.json)。
+
+2026-10-06 14:30 UTC：生产用量读口已main617。新增只读 `usage <task-id>` 命令沿同FlowClient，不提交任务/模型，JSON保持null/coverage；真实HTTP1/1+types0，0新增PG。help/403/409/abort/缺ID与不泄synthetic token已覆盖；独审绑定[CLI manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)。
+
+| F01-40 | in-progress | Lead | [CLI用量manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)，只读HTTP1/1+types0，独审中。 |

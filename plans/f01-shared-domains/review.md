@@ -316,3 +316,15 @@ NOT_STARTED — 两file生产挂载与直接消费者，已审领域27d4五源�
 Review target commit: 7150d6ee9e1e36b69994da1977aa980139f3458f
 
 APPROVED — assignment_review / gpt-6-astra 2026-10-06 14:26 UTC，2source/3raw/5已审domain输入十项固定/working同源，完整factory/auth及真实HTTP/PG消费者核实，无P1/P2。原1/1、1913B、replay/restart/legacy/auth/no-store与专库正常清理成立；0 reviewer tests/PG/provider，不扩UI/计费/预算。见[独审回执](../../docs/evidence/f01/usage-readout-production-independent-review.json)。
+
+
+## COST CLI consumer
+
+Review target commit: 0550b3e7318133fb0d023fd8cc4372d8b7663e78
+
+NOT_STARTED — 3file/2raw，只读command + help +真实HTTP边界；原domain/production已main617。
+
+
+Review target commit: 0550b3e7318133fb0d023fd8cc4372d8b7663e78
+
+APPROVED — assignment_review / gpt-6-astra，2026-10-06T14:31:26Z独立只读三源/两raw及既有client输入同源，无P1/P2。原1/1真实HTTP20ms/types0有效，reviewer无测试/PG/provider；仅CLI透明读取、help和错误/取消传播，不代表UI、归因或预算完成。见[独审回执](../../docs/evidence/f01/usage-readout-cli-independent-review.json)。
