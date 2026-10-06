@@ -1,0 +1,107 @@
+{
+  "at": "2026-10-06T14:59:44.854067+00:00",
+  "main": "af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458",
+  "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+  "sources": [
+    {
+      "path": "apps/server/src/goal-delivery/delivery.test.ts",
+      "bytes": 20697,
+      "sha256": "72f4ed935f3ce96db4ad538f888fa8ff479ec1b6f7ccf806fafb2dd8c3af2f88",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "bytes": 5144,
+      "sha256": "3db661d56190460957f527e77ea903dd42ec7ecf91bfdab8ef7fcc45baac192b",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/state.ts",
+      "bytes": 3394,
+      "sha256": "964df126f6188a02fb55d0043529abb029c32cec95c4db17dfd88bc3937b0b5a",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/advance.ts",
+      "bytes": 3820,
+      "sha256": "24793fc7b9eeb91bc3bf5ec0bd687431c91f7818171b857b0ce9916ede72f8ee",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/fixture.ts",
+      "bytes": 8999,
+      "sha256": "a91a26d807cc8b9cdbe69917eb7f3dc755acb8d1fb4fb2a46763229499f99dc1",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/index.ts",
+      "bytes": 2385,
+      "sha256": "deb89a24c6c3ba1f7ce0968689f5501124b5cd4d987370899dddef50b9172165",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/progression.test.ts",
+      "bytes": 15600,
+      "sha256": "73dda47d81740d7832805a60a43955e123309b6f0cc94d03d31bf0ce37db44fc",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/provenance.ts",
+      "bytes": 2315,
+      "sha256": "dc8558895803968862431c3ad7dea64be81981170ee5bdab7be1408868a7143f",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/store.ts",
+      "bytes": 10762,
+      "sha256": "78841cf61dcb35d121704645a9b0131057f3ea72f412b2ec2ed858802e814912",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 14007,
+      "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goals/goals.test.ts",
+      "bytes": 28828,
+      "sha256": "ac0091d00c7f2a901781d95a10537425cddd584d7305795768702bdb9b5932c2",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/server/src/goals/state.ts",
+      "bytes": 15446,
+      "sha256": "23365f92b07fa98eb658e6900a22edaeff336ec69ca1e11c794fdf5c806e1405",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "packages/contracts/src/goal-progression.ts",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "bytes": 4315,
+      "sha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737",
+      "mainMatchesTarget": true,
+      "workingMatchesTarget": true
+    }
+  ],
+  "mismatches": [],
+  "scope": "Module only; factory/client/automatic scan await F01. No tests rerun, no provider."
+}

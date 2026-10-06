@@ -10,4 +10,4 @@ Review target commit：b8081a8fba7468337f668670a67206005bc0a73f
 
 批准仅模块、显式有限sweep、真实HTTP/PG与注入SDK的adapter/runtime。生产factory迁移/路由/自动scan/关闭流程由F01另行接线验证；不包含真实模型规划、真实provider预算、OS强杀或UI验收。机械资格不等于语义接受，SDK预算是配置请求而非已计费证明。原失败、故意丢ACK后的HTTP drain deadline警告、早期DB未记录实际尺寸和旧runner未记录逐进程exit code限制全部保留。
 
-原始检查见 [README](../../docs/evidence/o14/README.md)，固定manifest SHA256：9fbad031ce1c94b7f5630a749a703b1735321eaee32ff56fac55d621f47a66a1。源码继续停写、claim保留，等待main接收；本次仅metadata，无产品重测。
+原始检查见 [README](../../docs/evidence/o14/README.md)，固定manifest SHA256：9fbad031ce1c94b7f5630a749a703b1735321eaee32ff56fac55d621f47a66a1。源码继续停写。main af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 已接收14源且逐hash相同，组合root noEmit0；见[回执](../../docs/evidence/o14/main-integration-receipt.json)。14产品scope已交回，最终metadata在push后按固定request释放；本次仅metadata，无产品重测。
