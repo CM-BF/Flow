@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06T18:02:45.702877+00:00 |
+| 最近更新 | 2026-10-06 18:17:58 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；最新browser窄修checkpoint 667889058d3decc0abc9f635a37fd0f05f2c090c，fixture=768/17其他源=1b8；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源码保持固定；本次仅原始运行证据及own metadata收口，normal push后核双端clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；限定5源checkpoint 7cc7629b6603a6ccc7e2ab6143125dea8daae685；14其他源等667；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | 五源已固定；本段仅own metadata收口，normal push后核双端clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 浏览器已成功读取会话；草稿恢复检查暴露存储错误，原始失败和清理证据已保留 |
-| 下一可用交付 | 定位草稿存储失败并完成真实刷新与未决发送恢复；重新连接仍不自动投递 |
-| 当前阻塞 | ACTIVE: 首次真实草稿旅程出现对象仓库缺失与检查超时，需先定位；后续恢复旅程与中心会话完整语义尚未验收 |
+| 当前产出 | 已补默认草稿保存的插件启动与无副作用观察器；新增用例尚未运行，首轮失败保留 |
+| 下一可用交付 | 独立审查本次修复，按新准入验证默认保存与真实恢复；重新连接仍不自动投递 |
+| 当前阻塞 | ACTIVE: 两项静态缺口已修待独审与受控验证；首真实旅程失败未关闭，完整恢复及中心语义仍开放 |
 | 需用户决定 | NONE |
 | 检查状态 | FAILED: 首真实browser子集cookieRead PASS、textIntentDraft FAILED、materialDraft NOT_COMPLETED；14.846267375s/90s，cleanup通过。旧1b8受控27PASS独立保留；当前types未新增，52.814/60s |
 | 实现目标 | UNKNOWN |
@@ -33,7 +33,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt后检查点屏障已接源码；行为待测 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前27 direct](../../docs/evidence/wpf-conversation-recovery/direct-second.json)通过，源绑定1b8；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首次真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)：cookieRead已过，草稿存储错误待定位，后续未运行 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首次真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)：cookieRead已过，草稿存储两个静态缺口已修待验，后续未运行 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -42,7 +42,7 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-已在App接cookie观察器/P01入口，两harness源码已获限定审查；1b8 direct27通过。首真实browser子集已单次失败并完成清理，先定位对象仓库缺失与超时，再按新派工修复；不自行续跑，不以孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
+已在App接cookie观察器/P01入口，两harness源码已获限定审查；1b8 direct27通过。首真实browser子集已单次失败并完成清理，已修默认插件启动与观察器静态缺口，待固定独审及另行准入验证；不自行续跑，不以孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
 
 ## Dashboard同步
 
@@ -143,3 +143,11 @@ Root于 `2026-10-06T17:44:07.363712+00:00` 对固定 `667889058d3decc0abc9f635a3
 ## 2026-10-06T18:02:45.702877+00:00 — 首次真实browser子集
 
 [验证与原始manifest](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)绑定execution0fe939/667源码。cookieRead通过，textIntentDraft出现IDB对象仓库缺失及predicate timeout；原因未定，materialDraft未完成、后续未运行。实际14846.267375ms（14.846267375s），累计14.846267375/90s、余75.153732625s仅算术；预留15s清理、实际cleanup全确认。10raw17415B、DB清零/删除、worker+Chrome退出、scratch删除；无自动重跑。完整feature未审/main未接，19源保持固定。
+
+## 18:08 UTC 首次失败后的限定修复
+
+管理fresh原21领取已核。REC667-P1默认checkpoint激活与REC667-P2只读observer副作用按root限定源审修复，五源仍原范围；当前source-only，新增case未运行。保留首次14.846267375s失败与旧1b8受控27通过，完整feature NOT_STARTED/target UNKNOWN。
+
+## 2026-10-06 18:17:58 UTC 五源修复固定 / NOT_RUN
+
+限定checkpoint `7cc7629b6603a6ccc7e2ab6143125dea8daae685`：[19源manifest](../../docs/evidence/wpf-conversation-recovery/idb-lifecycle-checkpoint.json)。P1/P2作者源码修正待独审；新增12个受控case未运行、types/browser未运行。原10raw逐字等2f32，旧1b8的27通过不覆盖新生命周期。当前唯一status时间改为parser支持的UTC格式，真实parse结果单列，不是产品测试。

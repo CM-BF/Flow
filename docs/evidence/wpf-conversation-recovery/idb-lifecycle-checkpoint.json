@@ -1,0 +1,240 @@
+{
+  "at": "2026-10-06 18:17:58 UTC",
+  "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "fixedSourceCheckpoint": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "previousMetadata": "2f32b0f085d2498fcfc525e244ee13cfe74a5900",
+  "previousSourceCheckpoint": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+  "scopeReceipt": "idb-repair-claim.json",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "bytes": 69114,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "bytes": 24536,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "bytes": 8274,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "bytes": 16866,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "bytes": 5953,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "bytes": 24040,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "bytes": 24416,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "bytes": 8729,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "bytes": 28678,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "bytes": 16768,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+      "bytes": 22780,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "bytes": 13875,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "bytes": 24603,
+      "equals667": false
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "bytes": 22175,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "2c7c1e5b5f90832562be04da3feac2b46133a2ec7276fce45f90a9c497747877",
+      "bytes": 25017,
+      "equals667": false
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "bytes": 21485,
+      "equals667": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "e855cea0267552129caa1bc9caa5111a2f388e36aae702017b926ff22b569d3e",
+      "bytes": 41577,
+      "equals667": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "bytes": 27003,
+      "equals667": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "042134d0cf9d53ec43f02a628d10cfc805c94c7ce79aaab2bf5e18ab1a71d198",
+      "bytes": 49951,
+      "equals667": false
+    }
+  ],
+  "changedSources": [
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.test.ts"
+  ],
+  "readonlyDependencies": [
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+      "bytes": 21387,
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "bytes": 6794,
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "bytes": 12209,
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725,
+      "equalsPrevious": true
+    }
+  ],
+  "firstRunRaw": [
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "sha256": "27fd79333a16fbe561b1ca03adfaf0a760c4945c43a2d44888b429337539e4dd",
+      "bytes": 4787,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "sha256": "65a738b948ab6d1d6598a2a818ca79a3b6fa66e4d402394b19f9581288daddfb",
+      "bytes": 191,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-cleanup.json",
+      "sha256": "ca4340e3302e0101e6974924034c025b39b234c544433aa1bbc336714d39ab58",
+      "bytes": 516,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-owner.json",
+      "sha256": "8cbf52a4559e016b6834e4a70c8695ca75e4d1d3a0aa05f486616cbe4b884267",
+      "bytes": 164,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json",
+      "sha256": "aec8957c849f814626d76e11b54aeb75651e38e2dc78d227cd865320552a65c7",
+      "bytes": 102,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process-owner.json",
+      "sha256": "770f13396492446bd6fe288b25e484b45ae6ca6087cefee59b2892928c289b6f",
+      "bytes": 29,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process.log",
+      "sha256": "90fedf5a8a30f4646aa765ce69031f1efc6443afd27bebc068313daaf7a662f8",
+      "bytes": 8025,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/scratch-owner.json",
+      "sha256": "28ef9b819d445d26730a88fb2543e5c1a306eb1e7868225ce96d5296d28f0104",
+      "bytes": 114,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/sources.json",
+      "sha256": "4aca82ddb644b694f1310556d9d57307ef1fe1f2ac4813b03f51efae48af512e",
+      "bytes": 2336,
+      "equalsSealedFirstRun": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "sha256": "b591ecacaa2af2df1e4cd0f9a2cbb6fc87729aed686430d719d2aad79100dc29",
+      "bytes": 1151,
+      "equalsSealedFirstRun": true
+    }
+  ],
+  "checks": {
+    "sourceDiffCheck": 0,
+    "newDirectCases": "NOT_RUN: 5 lifecycle + 7 observer cases added, historical27 unchanged",
+    "types": "NOT_RUN",
+    "browserHTTPPG": "NOT_RUN",
+    "statusParser": "separate metadata parse only"
+  },
+  "budgetsUnchanged": {
+    "directUsedMs": 4574,
+    "directRemainingMs": 25426,
+    "typesRemainingMs": 7186,
+    "browserUsedMs": 14846.267375,
+    "browserRemainingMs": 75153.732625,
+    "browserCleanupReserveMs": 15000
+  },
+  "limits": [
+    "No product imports, typecheck, tests, HTTP, PG, Chrome, install or resource sample",
+    "Two confirmed static issues, not unique dynamic causality established",
+    "Full feature target UNKNOWN/review NOT_STARTED; center semantics and unfinished journeys stay open",
+    "Serialized observer source adjusted for installed tsx keepNames, serialization has not been executed"
+  ]
+}

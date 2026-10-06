@@ -109,3 +109,11 @@ Root/peer同一真实P2：JSON.parse的any掩盖public结构中没有taskId。�
 复用已读本地find-skills、clean-code、webapp-testing方法，不安装。实际应用：检查结果与清理结果分开，成功cookieRead不掩盖IDB失败，尚未到达case保持NOT_RUN/PENDING；source、执行HEAD、旧mock27与新真实browser分开，19hash核固定、原raw逐文件hash。未改实现，也不以日志推测代替根因；错误所处产品/harness边界待下一有界定位。
 
 命名/接口/错误所有权复核范围仅记录：原same-origin子集与完整3中心语义开放项不混，累计14.846267375s与15s预留清理如实记，250ms峰样本不称物理硬限。10raw17415B全部保留；当前无额外type/runtime/import运行，不触其他scope/个人服务。完整feature仍NOT_STARTED，源冻结。
+
+## 2026-10-06 18:17:58 UTC — 默认checkpoint/只读observer clean-code安全点
+
+复用既有local find-skills/codebase-design/clean-code/brainstorming，固定skill来源沿skills.json；本段重读find-skills/clean-code，无安装。实际发现：构造器只注册导致默认保存永不到active；观察函数隐藏创建schema且回调同步错误不settle。选择一个私有sync入口复用现Host状态，session只装配；不在changed自动enable、不引新权限authority。草稿首次观察即绑定namespace，失败保保护项；active后auth代际改变会重读当前原owner材料，不沿旧continuation写旧namespace、不触HTTP。
+
+观察器只在既有fixture提取为page.evaluate可序列化纯函数，受控测试直接复用它；函数不捕获模块变量/导入。实际只读安装tsx4.23.15源码keepNames:true，内部helper采用对象方法避免外层__name捕获，尚未执行serialization。统一有界settle/close/abort，无删库补store、无默认点击Saved drafts、无放宽完整草稿断言。5生命周期+7observer case新增未运行，保旧27与首失败。
+
+命名/单一职责/错误/代际/重复源码审查完成，git diff --check=0；5源固定7cc7629b6603a6ccc7e2ab6143125dea8daae685。状态UTC格式按真实parser要求修正，parse单列。0产品import/types/test/HTTP/PG/Chrome/free采样，不把静态修复当行为CLOSED。

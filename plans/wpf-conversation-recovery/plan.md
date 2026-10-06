@@ -66,3 +66,7 @@ Root/peer唯一P2按公共decoder修复，固定 `667889058d3decc0abc9f635a37fd0
 ### 2026-10-06 18:01 UTC — 首真实子集失败
 
 RECOVERY01-05首一次真实浏览器cookieRead通过，随后草稿存储旅程出现对象仓库缺失/超时，后续材料与重试均未完成；[原始证据](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)绑定667/0fe939。清理确认、原raw保留；累计14.846267375/90s，余量不自动授权重跑。根因待定位，TODO不关闭，完整feature仍未审；首same-origin子集与中心三语义/完整覆盖分别记录。
+
+### 18:08 UTC 首次失败修复边界
+
+原RECOVERY01-03/04/05落实已授权配置的默认插件生命周期，撤权/namespace/generation/disabled仍守门；缺库observer只能pending并abort升级，已有malformed明确失败，不修库。复用同一纯observer于browser与受控case，五源限定。0运行，新检查NOT_RUN；首轮失败不是两静态问题唯一动态因果证明。

@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-06T18:08:52.193069+00:00",
+  "verdict": "CHANGES_REQUESTED_SOURCE_SCOPED",
+  "target": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+  "metadata": "2f32b0f085d2498fcfc525e244ee13cfe74a5900",
+  "reviewer": "root independent source/evidence review",
+  "peerReport": {
+    "path": "/tmp/recovery667-first-idb-cause-readonly/report.md",
+    "bytes": 11722,
+    "sha256": "45bc2921f35fe77cbe175d1c85f78a22788ef2c3b84d68db7cd161c199e44b0b"
+  },
+  "sourceChecks": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "matched": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "matched": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "matched": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "matched": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "matched": true
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "matched": true
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "matched": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "matched": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "matched": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "matched": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process.log",
+      "matched": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "matched": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "matched": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "REC667-P1-ACTIVATION",
+      "priority": 1,
+      "file": "apps/web/src/plugin-integration/session.ts",
+      "line": 128,
+      "title": "Default checkpointing waits for a UI command to activate its plugin",
+      "body": "Session registers Recovery as registered; RecoveryWorkspace.current requires active; sidebar.footer button rendering does not invoke host activation and initial browser path never clicks its command. Normal authenticated edits may therefore be rejected before journal.saveDraft, and the default persistence path is absent. Existing controlled helper explicitly activates Recovery and does not cover default session lifecycle.",
+      "fix": "Connect configured, authorized default startup to existing host activation while preserving disabled, aborted session, current namespace and generation boundaries. Replay pending original drafts only after same-lifetime activation; do not bypass gate or pre-open Saved drafts in browser test."
+    },
+    {
+      "id": "REC667-P2-OBSERVER",
+      "priority": 2,
+      "file": "apps/web/test/conversation-recovery.browser.ts",
+      "line": 201,
+      "title": "The journal reader can create an empty database and leave its Promise pending",
+      "body": "Probe calls indexedDB.open(name,1) without aborting upgrade. Missing database may commit empty v1; transaction(records) then synchronously throws in onsuccess, outside Promise executor, so no rejection/close reaches caller. The observed missing-store pageerror and predicate timeout are consistent with this path but runtime ordering is not recorded.",
+      "fix": "Use a bounded observer that never creates/migrates/deletes schema, aborts unexpected upgrade, distinguishes absent/pending from malformed existing stores, and settles/closes exactly once including sync transaction errors, blocked/abort and late success. Preserve strict owner-generated complete-draft assertion."
+    }
+  ],
+  "causalLimit": "Static path plus original error evidence, not an observed complete IDB/plugin event trace or claim that all failure causes are excluded.",
+  "evidenceReview": "/tmp/root-recovery-rec667-evidence-review.json",
+  "primaryReference": {
+    "url": "https://www.w3.org/TR/IndexedDB/#opening",
+    "application": "Nonexistent database starts with version zero and no stores before upgrade; databases() is a snapshot and cannot remove the upgrade race."
+  },
+  "runtime": "No test/import/browser/database/HTTP run; exact old failure/raw and arithmetic-only remaining budget preserved.",
+  "cleanCode": "Found hidden mutation in observer and missing error/connection ownership; default checkpoint lifecycle must have a single explicit owner through existing PluginHost."
+}

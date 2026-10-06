@@ -21,3 +21,9 @@ prepare入口在第一次await之前固定namespace/view/project/auth generation
 原ConversationAttachments增加captureDraft：消费公开composer快照，派生原Input当前稿选择，校验全部ready且与composer IDs完整同序，才调用原capture。Thread每次Send/Queue均经过它，即使composer无chip；异常在官方send/receipt/HTTP前保稿显示原因。旧held/inTransit且未在当前composer的材料归早期交接，不自动拼下一稿，已consume按原Input消失。syncComposerDraft只推进已ready有序前缀；前A未验证时后B ready不追加B。现有bindComposer监听生命周期不变，不另造材料事实源。
 
 新增3个展开后controlled-port case，合计27 NOT_RUN；未来真实App同一隔离项目添加两固定资源，通过q先验证B再A，未验证/部分时分别Send/Queue要求0POST/0新命令与原稿，最终两实际chip及首次POST保A,B原ref序。明确移除才允许缩小选择。预算不变，未执行；首4ba20/20不覆盖。新入口见[manifest](material-integrity-checkpoint.json)，下一运行gate必须绑定这19源，旧2498/02d gate不可复用。
+
+### 2026-10-06 18:17:58 UTC 默认生命周期与只读观察接缝（源码待验）
+
+AppPluginSession构造完成及updateActions调用RecoveryWorkspace.sync；原host订阅亦入同一sync。仅已配置/当前授权/有namespace且registered自动activate；disabled/failed仍用户控制。当前active的namespace+generation一次同步已有草稿，不自动发命令；首次编辑绑定namespace且未提交状态受保护，跨namespace不搬运。所有enqueue原generation/owner/CAS守门保留。
+
+测试fixture导出observeRecoveryRecords(options,factory?)：browser序列化同函数、controlled test传factory。missing返回pending并abort创建，已有结构/版本错误拒绝；blocked/超时/同步transaction或store错误拒绝并close，晚success亦close。deadline1..2000ms、browser1000ms；不创建/迁移/删除schema。原首browser失败与未测新源码分开。
