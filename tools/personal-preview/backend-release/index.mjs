@@ -20,9 +20,10 @@ export async function verifyBackendArtifact({ directory, artifact }) {
   const root = join(path, 'root'); const rootInfo = await lstat(root);
   if (!rootInfo.isDirectory() || rootInfo.isSymbolicLink()) fail('BACKEND_ROOT_INVALID');
   const actual = await inventory(root);
+  if (actual.bytes + bytes.length > LIMITS.bytes) fail('BACKEND_BYTE_BUDGET');
   if (JSON.stringify(actual) !== JSON.stringify(manifest.inventory)) fail('BACKEND_CONTENT_MISMATCH');
   const node = await nodeIdentity(); if (JSON.stringify(node) !== JSON.stringify(manifest.node)) fail('BACKEND_NODE_IDENTITY_CHANGED');
-  return { root, node: node.executable, artifact, manifest };
+  return { root, node: node.executable, artifact, manifest, totalBytes: actual.bytes + bytes.length };
 }
 export async function prepareBackendArtifact({ repository, target, directory, offlineStore, pnpmCli }) {
   if (!/^[a-f0-9]{40}$/.test(target ?? '')) fail('BACKEND_TARGET_REQUIRED');
@@ -40,7 +41,7 @@ export async function prepareBackendArtifact({ repository, target, directory, of
       if (!info.isFile() || info.isSymbolicLink() || info.size > 32 * 1024 ** 2) fail('BACKEND_MANIFEST_INVALID');
       const manifest = JSON.parse(await readFile(path, 'utf8'));
       const artifact = { policy: BACKEND_POLICY, artifactId: id, manifestDigest: id, sourceHead: manifest.sourceHead };
-      const verified = await verifyBackendArtifact({ directory, artifact }); bytes += verified.manifest.inventory.bytes;
+      const verified = await verifyBackendArtifact({ directory, artifact }); bytes += verified.totalBytes;
       if (manifest.sourceHead === target) reusable = artifact;
     }
     if (bytes > LIMITS.retainedBytes) fail('BACKEND_RETENTION_FULL');
@@ -54,8 +55,10 @@ export async function prepareBackendArtifact({ repository, target, directory, of
       const built = await buildBackend({ repository, target, stage, offlineStore, pnpmCli });
       buildOutput = built.buildOutput;
       const node = await nodeIdentity(), content = await inventory(built.root);
-      const manifest = { policy: BACKEND_POLICY, sourceHead: target, sourceRepository: built.sourceRepository, lockDigest: built.lockDigest, pnpm: built.pnpm, installation: built.installation, node, inventory: content };
-      const encoded = `${JSON.stringify(manifest)}\n`, id = digest(encoded), published = join(store, id);
+      const manifest = { policy: BACKEND_POLICY, sourceHead: target, sourceRepository: built.sourceRepository, sourceTree: built.sourceTree, lockDigest: built.lockDigest, pnpm: built.pnpm, installation: built.installation, node, inventory: content };
+      const encoded = `${JSON.stringify(manifest)}\n`;
+      if (content.bytes + Buffer.byteLength(encoded) > LIMITS.bytes) fail('BACKEND_BYTE_BUDGET');
+      const id = digest(encoded), published = join(store, id);
       const output = join(stage, 'artifact'); await mkdir(output, { mode: 0o700 });
       await rename(built.root, join(output, 'root')); await saveJson(join(output, 'manifest.json'), manifest);
       const artifact = { policy: BACKEND_POLICY, artifactId: id, manifestDigest: id, sourceHead: target };
