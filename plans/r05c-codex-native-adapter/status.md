@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:33:12 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:34:14 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-002](../flow-002-provider-harness/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter |
 | Branch | codex/codex-native-adapter |
-| 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / 初始Interface待提交 |
-| 工作树dirty状态 | C0实现/直接消费者与证据待固定 |
+| 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / C0 27022407f175597d1d9c897f23f59261f24ab49b；随后仅metadata |
+| 工作树dirty状态 | C0已提交；本次仅固定manifest/status |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED：C0显式6文件92不同检查；最终并发单选1通过/32未选；tsc exit0 |
 | 已集成main状态 / HEAD | R05C未集成；基线3418fe682944145494463dca9e09f89c8b9c2295含R05B/R06 |
-| 实现目标 | 尚未固定 |
+| 实现目标 | 27022407f175597d1d9c897f23f59261f24ab49b |
 | 实现范围 | apps/runner/src/native-harness/settlement.ts, apps/runner/src/runtime.ts, apps/runner/src/runner.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -30,7 +30,7 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | R05C-01 | completed | native_center_owner | [claim](../../docs/evidence/r05c/claim.json)、[Interface](../../docs/evidence/r05c/interface.md) |
-| R05C-02 | in-progress | native_center_owner | C0接口/92不同检查已完成；独审待固定target |
+| R05C-02 | in-progress | native_center_owner | C0固定27022407f175597d1d9c897f23f59261f24ab49b；92不同检查与[manifest](../../docs/evidence/r05c/c0-fixed-manifest.json)，待独审 |
 | R05C-03 | pending | native_center_owner | C1注入纵向；Mika projection移交待协调 |
 | R05C-04 | pending | native_center_owner | 独审/集成未完成 |
 

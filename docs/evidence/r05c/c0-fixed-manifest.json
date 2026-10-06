@@ -1,0 +1,142 @@
+{
+  "taskId": "R05C",
+  "slice": "C0",
+  "parent": "FLOW-002",
+  "coLead": "Execution Lead",
+  "base": "3418fe682944145494463dca9e09f89c8b9c2295",
+  "implementationTarget": "27022407f175597d1d9c897f23f59261f24ab49b",
+  "capturedAt": "2026-10-06 09:34:14 UTC",
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14314,
+      "sha256": "5437645e446b53f558cb960582f09a90f1df49fb0c6a90be24c36d239f057bd2",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    }
+  ],
+  "validationFiles": [
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "bytes": 26547,
+      "sha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/lease.test.ts",
+      "bytes": 14063,
+      "sha256": "64045287d3ed52c0966d237864c2306c8dde4ce6a4e7ddba88f528f6d029e2c3",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "bytes": 5733,
+      "sha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/outbox.test.ts",
+      "bytes": 5323,
+      "sha256": "8edcf030c59342a43a2091b4bb1c3fe5b22bb6204741961c1d27f73480f8a38a",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/outbox-resume.test.ts",
+      "bytes": 1220,
+      "sha256": "5155362f17f25a0496f519bb1606c4c52ffbbc6f8cbe8a25701497113bfc5e28",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "docs/evidence/r05c/bootstrap.stdout",
+      "bytes": 657,
+      "sha256": "908915a218a00a1b0df415f4ea8f4fe19f8f136cef80e3e2ea388ac35dd79c84",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "docs/evidence/r05c/c0-concurrency-selected.stdout",
+      "bytes": 337,
+      "sha256": "cc7e1d028a446d3a7dabea0cf16a97fde1fa20e342de2e3791e269deec895db9",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "docs/evidence/r05c/c0-tests.stdout",
+      "bytes": 2204,
+      "sha256": "b9121bdde7bdc1a636bbc15ae890b4286707c28216609838a461ec0248d23850",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "docs/evidence/r05c/c0-typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "docs/evidence/r05c/c0-concurrency-selected.json",
+      "bytes": 523,
+      "sha256": "3bdec6883084e9313b9ce83bcec39784ec94b174825d76dbe04ddbe1c36124bd",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "docs/evidence/r05c/c0-tests.json",
+      "bytes": 536,
+      "sha256": "c3f15475496c1b4308e181d512c2bf3e2663b0e674d3411c8da9f06d06468d85",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "docs/evidence/r05c/c0-typecheck.json",
+      "bytes": 243,
+      "sha256": "1c06249861b7f9148f1e042e16fec9e2e2fd78b0d3d5db3e5318fd276b34c7c0",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "docs/evidence/r05c/bootstrap.json",
+      "bytes": 278,
+      "sha256": "f708f301649c936342065cd97466d6842e666c9e98844b6551d46ce2d2e360fe",
+      "sourceCommit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    }
+  ],
+  "validation": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18",
+    "selectedFiles": 6,
+    "distinctTests": 92,
+    "passedTests": 92,
+    "supplement": {
+      "selected": 1,
+      "passed": 1,
+      "unselected": 32,
+      "includedInDistinctCount": true,
+      "reason": "Final test uses public task.prompt instead of private task.id; only affected test rerun"
+    },
+    "typecheckExit": 0,
+    "providerCalls": 0,
+    "appServerStarts": 0,
+    "authRequests": 0
+  },
+  "limits": [
+    "C0 only: no Codex adapter or tool-isolation guarantee",
+    "Plain adapter errors preserve legacy terminal failure semantics",
+    "Explicit unknown retains admission even after a prior cancellation",
+    "No main integration or independent review yet"
+  ]
+}
