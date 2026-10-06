@@ -4,10 +4,12 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- Git忽略收口：先前已向共享 `/Users/citrine/Projects/AgentHarness/Flow/.git/info/exclude` 加入精确 `/docs/evidence/wpf-mature-02/node-runtime-metadata/outer-time.stderr`；现改用本scope可审 [局部.gitignore](node-runtime-metadata/.gitignore)，check-ignore来源已核，未删除共享规则、未动sparse/config；共享规则后续由Lead协调。
+
 - [S01P06唯一已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds/docs/evidence/s01p06/integration-ready.md)：metadata31c06b4a / impl cdd3，沿原owner接收。
 - [X01 enable binding后继设计待决策](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-preparation.md)：8e520b7274a6d4112e91318c6eb5ba1758bf7c1c方向已审；029保留，后续SQL由Lead定号，030属O14；host/store资格与公共字段需冻结，runtime待P06交回再fresh领取。
 
-- [运行库元数据两槽候选](node-runtime-metadata/interface.md)：2ac设计已审，41 distinct纯检查完成，组合固定包待独审，go-node-runtime-metadata-once NOT_OPEN；旧cause9605封存。
+- [运行库元数据两槽候选](node-runtime-metadata/interface.md)：2ac设计已审，42 distinct纯检查完成，组合固定包待独审，go-node-runtime-metadata-once NOT_OPEN；旧cause9605封存。
 - [X01中心静态安装已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-integration-ready.md)：a578固定领域/029；host及共享接线边界沿唯一owner，不可将executionSettled恒置true。
 
 - [F01 goal run list薄client已审98e5](goal-run-list-client-review.md)：Mika13:46:39 UTC APPROVED，仅transport。

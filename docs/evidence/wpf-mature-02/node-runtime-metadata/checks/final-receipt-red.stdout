@@ -1,0 +1,31 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ experiments/codex-app-server-conformance/node-runtime-metadata/recipe.test.ts (21 tests | 1 failed | 20 skipped) 54ms
+   ↓ new control uses fixed metadata profile, separate exact success predicate and no loader-error prerequisite
+   ↓ both full 8192-byte streams fit the new profile local disk cap; legacy 24KiB still rejects
+   ↓ combination runs exactly one control plus one sandbox canary with prepared charged once
+   ↓ control-abort consumes one slot and never creates the canary
+   ↓ control-stdout consumes one slot and never creates the canary
+   ↓ control-unknown consumes one slot and never creates the canary
+   ↓ bad-reason disqualifies the canary stdout source bound despite an empty queue receipt
+   ↓ canary-report disqualifies the canary stdout source bound despite an empty queue receipt
+   ↓ single-canary recipe rejects unsandboxed executable before creating its transport
+   ↓ the second Module uses the global clock and cannot restart its budget origin
+   ↓ a control completion beyond its own 30s never qualifies the second slot
+   ↓ a Module rejection before a receipt leaves owner settlement unknown
+   ↓ canary failure extracts bounded reason before private cleanup without qualifying stdout
+   ↓ fixed input gate rejects changed link targets and absent paths becoming present
+   ↓ delivery refuses a late automatic receipt or the combined CLI/receipt overflow
+   ↓ an unconfirmed extra observation descriptor retains the private root and invalidates accounting
+   ↓ unknown recipe names never create an owned target or accept an arbitrary profile path
+   ↓ new control preserves known retained identities if its final receipt cannot persist
+   ↓ new canary preserves its resource receipt when final persistence fails
+   ↓ legacy cause still rejects failed final persistence
+   × combined final persistence failure retains the known control roots and prevents the canary 54ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 20 skipped (21)
+   Start at  07:24:10
+   Duration  200ms (transform 60ms, setup 0ms, import 80ms, tests 54ms, environment 0ms)
+

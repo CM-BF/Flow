@@ -102,7 +102,11 @@ export async function runRuntimeMetadataBatch({ repository, evidenceDirectory, p
     } catch { result.outputAccountingComplete = false; result.inventoryPersisted = false; }
     result.endedAt = new Date().toISOString(); result.elapsedMs = now(); result.elapsedBasis = 'before-result-persistence'; result.output = output();
     result.withinBudget = result.outputAccountingComplete && result.output.receipts <= 32768 && result.output.reservedBytes <= 2097152 && now() <= 60000;
-    persist('batch-result.json', result); result.resultPersisted = true;
+    try { persist('batch-result.json', result); result.resultPersisted = true; }
+    catch {
+      result.resultPersisted = false; result.outputAccountingComplete = false; result.withinBudget = false;
+      result.stopReason = 'final-persistence-failed';
+    }
     result.output = output(); result.finalElapsedMs = now(); result.withinBudget &&= now() <= 60000;
   }
   return result;

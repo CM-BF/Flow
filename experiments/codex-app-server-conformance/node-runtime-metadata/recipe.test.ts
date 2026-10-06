@@ -188,3 +188,17 @@ it('legacy cause still rejects failed final persistence', async () => {
   }) as any);
   await expect(runCause({ ...i, preparedBytes: 0 }, { command, now: () => 1 })).rejects.toThrow('SYNTHETIC_PERSIST_FAILURE');
 });
+
+it('combined final persistence failure retains the known control roots and prevents the canary', async () => {
+  fault = 'control-unknown'; const i = input(), open = fs.openSync.bind(fs);
+  vi.spyOn(fs, 'openSync').mockImplementation(((file: any, ...args: any[]) => {
+    if (String(file).endsWith('/control/batch-result.json') || String(file) === path.join(i.evidenceDirectory, 'batch-result.json')) throw Error('SYNTHETIC_FINAL_FAILURE');
+    return (open as any)(file, ...args);
+  }) as any);
+  const r = await runRuntimeMetadataBatch(i, deps());
+  expect(commands).toHaveLength(1); expect(transports).toHaveLength(0); expect(r.targets[1]).toBe('NOT_RUN');
+  expect(r.knownTargetCalls).toBe(1); expect(r.targetCalls).toBe(1); expect(r.retainedRoots).toHaveLength(2);
+  expect(r.retainedRootsComplete).toBe(true); expect(r.retainedRoots.every((p: string) => fs.existsSync(p))).toBe(true);
+  expect(r.resultPersisted).toBe(false); expect(r.outputAccountingComplete).toBe(false); expect(r.withinBudget).toBe(false);
+  expect(prepareDelivery(r, 50).passes).toBe(false); expect(prepareDelivery(r, 50).line).toContain('retainedRoots');
+});

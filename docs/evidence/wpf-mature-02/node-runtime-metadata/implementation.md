@@ -19,3 +19,5 @@ clean-code安全点：复用既有command/R06/清理，不复制supervisor；固
 14:20预核新增两处需修：第9个合法errno在8明细cap后丢冲突；失败canary的182内部预扣被展示为已资格上界。review-red为3失败/32未选，已按实际保存，当前检查点不可交审批准；下一提交仅修两处并测直接消费。
 
 14:21修复：有限errno集合在明细8项cap前更新（最多1..255），第9项冲突回归通过；失败canary的182现在为null+单列未资格预扣，knownBytes不纳该值。原3red保留e2f40f13，随后Reason全15+组合直接3=18通过/17未选，累计41distinct；原生惰性import及两个变更JS语法再次exit0。0实际目标/监听。
+
+14:24 architecture_read固定96ba功能审CHANGES_REQUESTED（1P2/0P1）：组合finally末次persist仍可丢safe结果。仅新组合捕获末次失败后保留结果、降persisted/accounting/budget；control unknown且子层+组合最终写均失败的1red→1green/20未选保留。累计42distinct，原41不重跑；0实际目标，旧helper默认未变。最终独立复审与完整packet核验待进行。

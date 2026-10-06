@@ -1,0 +1,19 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-runtime-metadata/recipe.test.ts > combined final persistence failure retains the known control roots and prevents the canary
+Error: SYNTHETIC_FINAL_FAILURE
+ ❯ Object.<anonymous> experiments/codex-app-server-conformance/node-runtime-metadata/recipe.test.ts:195:140
+    193|   fault = 'control-unknown'; const i = input(), open = fs.openSync.bin…
+    194|   vi.spyOn(fs, 'openSync').mockImplementation(((file: any, ...args: an…
+    195|     if (String(file).endsWith('/control/batch-result.json') || String(…
+       |                                                                                                                                            ^
+    196|     return (open as any)(file, ...args);
+    197|   }) as any);
+ ❯ durableCreate experiments/codex-app-server-conformance/diagnostics/run-diagnostics.mjs:15:17
+ ❯ persist experiments/codex-app-server-conformance/node-runtime-metadata/host.mjs:34:18
+ ❯ Module.runRuntimeMetadataBatch experiments/codex-app-server-conformance/node-runtime-metadata/host.mjs:105:5
+ ❯ experiments/codex-app-server-conformance/node-runtime-metadata/recipe.test.ts:198:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
