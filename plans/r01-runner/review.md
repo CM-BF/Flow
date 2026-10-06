@@ -1,6 +1,6 @@
 # R01 独立审查记录
 
-**状态：NOT_STARTED — 模板待review，不构成approval。**
+**状态：PASSED — 独立复审仅绑定 `338263736e2cf64efd32037cfc92bcb49069d9ab`，实际记录见文末。**
 
 ## Target 与 scope
 
@@ -43,3 +43,12 @@
 ## 作者回应与复审
 
 Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
+
+## 实际独立审查回传（owner 记录）
+
+2026-10-06 01:14 UTC，assignment_review / gpt-6-astra，工具只读审查与隔离验证。最终 target/head `338263736e2cf64efd32037cfc92bcb49069d9ab`，base 原实现 `e7ab805fa76017392e2d9bcc7a7f33b16402a903`，实现修复 `d5b02a880db0a74385f9e07f77901f9f4fc448b3`；worktree m1-runner / codex/m1-runner，复审时干净。Reviewer 独立复跑 `pnpm check`（28/28 与 typecheck）及 `git diff --check` 全部通过。
+
+- P1 blocking：并发 emit 在 persist 等待期间追加事件，可能发送未落盘内容。公开 runRunner/HarnessAdapter + HTTP/磁盘边界复现，修复为固定同一 snapshot 先持久化再发送。复审已解决。
+- P2：ACK 严格等于 batch 尾不能接受更后 durable prefix。修复为安全整数且大于等于已发送尾，保留 accepted 范围验证。旧前缀重启与非法 ACK 测试通过，复审已解决。
+
+最终结论 PASSED，仅绑定上述具体 target；无新增 finding，无未解决 blocking。真实 Claude/真实中心端到端/main 集成不在本次 R01 复审结论内。此前模板段是保留的流程入口，不构成另一 approval；本节记录实际独立回传。
