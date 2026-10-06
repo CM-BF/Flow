@@ -55,3 +55,5 @@ Node24/pnpm9.15.4固定；优先Node行为测试，源码/fixture绑定schema哈
 R05C纯投影已独审并集成已审main4391bbf9；本实验改为相对薄导出，27项原测试直接消费生产单一算法，已独审通过待集成，不代表中心/runner/Web完整贯通。03另设有界诊断阶段：最多3次自有合成子进程、总60秒含清理，逐次具体假设或诊断能力变化；先评估并交Mika审R06默认关闭、字节有界、宿主私有落盘方案与精确scope。不复制supervisor、不读取私人crash历史、无真实Codex/auth/provider/外网，不新增全盘或网络grant；原一次失败封存，不原样重试到绿。
 
 Lead后继边界：C1只pinned Codex普通任务/typed final，不承诺conversation端口。后继versioned native catalog和unsupported conversation capabilities需与Lead协调server/execution-profiles，F01 client/index仍原owner单写；不放宽旧Claude-only reader或丢字段维持旧digest。具体诊断方案见[seam候选](../../docs/evidence/wpf-mature-02/diagnostic-seam-proposal.md)，当前仅文档，不改R06源码。
+
+WPF-MATURE-02-03实施进展：合法writer v2追加精确R06五文件；五源seam已独审，诊断driver修复targetd33aec626a809425f3768f0866f3de1528b08063待审，19+9零child检查与同树C1 strict通过。真实窗口最多3/60秒尚未消费，由Mika与S01窗口串行安排；当前driver第三次固定NOT_RUN，私有分类和清理均计入窗口。

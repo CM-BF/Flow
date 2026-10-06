@@ -1,3 +1,7 @@
+# Current diagnostic preparation
+
+[Private stderr seam and revised diagnostic driver](diagnostics/README.md), target `d33aec626a809425f3768f0866f3de1528b08063`. R06 five-source seam at0778847 independently APPROVED; revised driver awaiting review. 19+9 distinct zero-child cases and strict R06/C1 compile passed. No real diagnostic window, app-server/auth/provider run. [Manifest v3](diagnostics/manifest-v3.json) is current; prior manifests remain fixed history.
+
 # WPF-MATURE-02 evidence
 
 Current thin-consumer implementation `38516be71bf267ab546347a39da2adbe71f79e20`: [production import report](production-import/README.md), [manifest](production-import/manifest.json). One 27/27 direct-consumer run passed; independent review APPROVED by Mika / gpt-6-astra at 2026-10-06 09:47:22 UTC (read-only, no P1/P2, no rerun). Production source from reviewed main `4391bbf9f1785212d098ef6aa1c01a0320a003d3` is unchanged; the experiment now re-exports it within this same worktree.

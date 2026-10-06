@@ -25,7 +25,7 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 共享owner需固定实际模型能力目录、请求选项、init/effective回执与unsupported的合同；Web d01仅消费已落地字段，不修改本owner实验来伪造生产支持。
 
-共享审查输入：[TUI01A CHANGES_REQUESTED回执](tui01a-review.md)（2 P2，原owner修复）；[R05C纯投影APPROVED回执](production-projection-review.md)（仅projection.mjs/.d.mts；已审main提供共享entry）。两者均非第二进度源，当前不跨WT导入或合入未审C1。
+共享审查输入：[TUI01A delta APPROVED回执](tui01a-review.md)（原2 P2已修，保留历史与非阻断P3）；[R05C纯投影APPROVED回执](production-projection-review.md)（仅projection.mjs/.d.mts；已审main提供共享entry）。两者均非第二进度源，当前不跨WT导入或合入未审C1。
 
 **R05C复用交接：** [final投影提升回执](final-projection-handoff.md)。固定0d0524c算法只读提升至其已领取生产目录；生产模块已由已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 进入本树；实验薄入口target 38516be71bf267ab546347a39da2adbe71f79e20已删除算法副本，27/27直接消费者通过，Mika于2026-10-06 09:47:22 UTC独审APPROVED。见[当前消费证据](production-import/README.md)，禁止长期双实现。
 
@@ -143,3 +143,11 @@ WPF-MATURE-02-03允许后继最多3次自有合成子进程、总60秒含清理�
 具体诊断候选：[最窄R06 private stderr seam/scope/测试矩阵与3次60秒预算](diagnostic-seam-proposal.md)。仅方案，未amend或执行；生产默认行为不变，保留真实Codex NOT_RUN。
 
 后继能力目录边界（Lead输入）：main253035e包含native publish client095；R05C C1仅pinned普通task→typed final及真实PG注入peer，ports为空，不含production env/真实启动/conversation resume/stream/steer/goal。现SQL先过滤Claude与conversation创建Claude-only为有意旧兼容。后继需versioned native catalog与显式unsupported conversation capabilities，目录出现Codex不等于可在普通聊天选择。待C1固定后由Lead协调server/execution-profiles literal；F01 client/index继续其唯一writer，不丢字段以维持旧digest，不直接放宽旧reader。
+
+## R06 private stderr 当前实施边界（2026-10-06 10:06:13 UTC）
+
+唯一交付：[诊断seam/driver证据](diagnostics/README.md)，固定target `d33aec626a809425f3768f0866f3de1528b08063`。原writer claim0dd97484-f0ce-4738-8075-505bd5e2541a已原子amend为v2，新增精确 `apps/runner/src/codex/{types.ts,options.ts,index.ts,stderr-capture.ts,stderr-capture.test.ts}`；其他生产路径无写权。R06唯一process owner不变。privateStderr默认关闭，默认report/timing不变；仅trusted host可启用有界字节sink，async/thenable明确观察失败且安全消耗拒绝，原文不进product error/detail/UI。
+
+Mika已独审APPROVED 0778847的五源seam；当前driver清理修复另待审。C1固定7127已随Lead批准mainf181进入同树，wire/adapter等strict编译通过，未执行其child/PG测试。F01/client/index、adapter/default env未改。预算尚未消费：最多3 child/60秒含私有分类与清理，固定driver只实现前2次，第3NOT_RUN；待Mika安排与S01串行窗口，不自行启动。
+
+S01P02协调入口：[部分交回receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/docs/evidence/s01p02/main-partial-handback-receipt.json)与[main接收receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/docs/evidence/s01p02/main-accepted.json)。Lead输入：main.ts已在v2停写交回，mainf181已接收4源；这里仅原始回执指针，不复制其进度。

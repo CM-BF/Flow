@@ -1,4 +1,12 @@
-# WPF-MATURE-02 生产投影薄入口审查
+# WPF-MATURE-02 当前诊断driver修复审查
+
+状态：NOT_STARTED。Review target commit: d33aec626a809425f3768f0866f3de1528b08063。R06五源seam固定0778847702e595405f6cba0de51c1058b1436504已由Mika/gpt-6-astra独审APPROVED；当前source逐字未变，19/19零child与strict0保留，不重跑。driver原077版本CHANGES_REQUESTED：私有文件清理未含入60秒窗口。修复为同一finally登记/关闭/固定allowlist分类/按inode移除，unknown诚实retained且cleanupComplete=false；首根创建及半建sink失败受覆盖。
+
+[当前manifest-v3](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v3.json)绑定修复、9项零child文件故障/分类检查，以及同树已审C1直接消费者strict0。旧manifest/raw保持历史，不冒称全部重测。只读审预算预留先于spawn、关闭与清理、固定安全标签及保留事实；不要启动driver/真实child/模型。真实窗口未消费，后续须Mika串行安排。
+
+架构范围仅host opt-in diagnostic seam，不允许F01/adapter/env变化，不宣称Seatbelt安全或tools隔离。
+
+# 历史生产投影薄入口审查
 
 状态：APPROVED。Review target commit: 38516be71bf267ab546347a39da2adbe71f79e20。范围仅本task实验final.mjs/README、新生产消费证据与metadata；已审生产源未修改。固定main输入4391bbf9f1785212d098ef6aa1c01a0320a003d3经scope=[] integration receipt合入，无冲突。
 

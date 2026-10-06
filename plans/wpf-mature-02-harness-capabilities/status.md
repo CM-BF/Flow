@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:49:29 UTC / 2026-10-06 09:46:53 UTC（固定main输入） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:06:13 UTC / 2026-10-06 10:00:37 UTC（受控固定main） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,29 +10,29 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 38516be71bf267ab546347a39da2adbe71f79e20（薄入口实现；metadata HEAD由Git核） |
-| 工作树dirty状态 | 薄入口实现已提交/push且clean；本次approval/诊断方案metadata提交后由Git核 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；已受控合入f181d84b5fb3652d62e2a181acff442d42b3e066 / d33aec626a809425f3768f0866f3de1528b08063（metadata HEAD由Git核） |
+| 工作树dirty状态 | 当前源码/证据已提交；metadata提交后由Git核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED 38516be71bf267ab546347a39da2adbe71f79e20：直接消费者27/27，failed/skipped 0；仅运行一次 |
-| 已集成main状态 / HEAD | 生产projection已在已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3；本实验薄入口尚未集成main |
-| 实现目标 | 38516be71bf267ab546347a39da2adbe71f79e20 |
-| 实现范围 | experiments/codex-app-server-conformance/final.mjs 与 README；docs/evidence/wpf-mature-02/production-import；本任务metadata |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED：R06 19/19与driver 9/9 distinct，0真实child；strict R06与同树C1消费者均exit0，31子进程suite未执行 |
+| 已集成main状态 / HEAD | 当前R06可选sink/driver未集成；生产C1/投影输入已在受控mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
+| 实现目标 | d33aec626a809425f3768f0866f3de1528b08063 |
+| 实现范围 | R06已领取精确5文件；experiments/codex-app-server-conformance/diagnostics；本task计划/证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 实验与生产已共用一份终文判定算法，原有行为检查全部通过且独立审查通过，等待集成。 |
-| 下一可用交付 | 集成共享投影薄入口；限定启动诊断方案已提交内部审查。 |
-| 当前阻塞 | ACTIVE: 隔离子进程启动原因仍未知，真实目录验证停止；不阻塞薄入口交付。 |
+| 当前产出 | 可选私有诊断接口已通过独立审查；启动诊断准备完成，清理修复与零子进程检查已交复审。 |
+| 下一可用交付 | 审定诊断driver并安排独占运行窗口，获取启动失败的有界安全分类。 |
+| 当前阻塞 | ACTIVE: 实际隔离启动原因仍未知；当前只验证诊断代码，未启动真实诊断窗口。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：当前薄入口APPROVED；历史语义/静态审批各自保留 |
+| Review | [review.md](review.md)：R06五源0778847 APPROVED；当前driver修复待审；历史thin/语义approval保留 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
-| 架构影响 | 实验依赖已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 的生产projection单一Module；生产源/FSM/DB未改，生产架构登记归R05C/ExecutionLead。 |
+| 架构影响 | R06新增默认关闭的trusted-host私有sink，原process owner不变；R05C同树直接消费者strict通过。共享架构更新待集成target/owner Mika/ExecutionLead。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
-| WPF-MATURE-02-03 | blocked | chatui01_owner | 一次合成canary已执行，SIGABRT且无七项报告；关闭确认/自有资源已清理，禁止自动重试 |
+| WPF-MATURE-02-03 | in-progress | chatui01_owner | 原canary失败封存；R06诊断seam已审，driver修复/19+9零child检查已交复审；真实新窗口尚未启动 |
 | WPF-MATURE-02-04 | in-progress | chatui01_owner | 已接入独审通过的生产投影，薄入口27/27且独审APPROVED，待集成；共享能力全链路尚未完成 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
@@ -42,11 +42,11 @@
 
 ## 跨lead接口与handoff
 
-唯一接口请求：[interface](../../docs/evidence/wpf-mature-02/interface.md)。R05共享host/main/config/contracts及生产transport/adapter apps/runner/src/codex由ExecutionLead/assignment_review及其runner worker维护；R06 runner_owner独占transport与进程生命周期；本owner仅固定schema/模型事实与已解码实验conformance，Web d01挂本bigplan。当前本owner仅3个独占实验/计划/证据scope，不以方案扩写公共源码。
+唯一接口请求：[interface](../../docs/evidence/wpf-mature-02/interface.md)。R05共享host/main/config/contracts及生产transport/adapter apps/runner/src/codex由ExecutionLead/assignment_review及其runner worker维护；R06 runner_owner独占transport与进程生命周期；本owner仅固定schema/模型事实与已解码实验conformance，Web d01挂本bigplan。初始3个scope之外，现已合法amend精确5个R06文件；receipt及边界见当前diagnostics报告。
 
 ## Dashboard同步与限制
 
-本status是唯一手填事实源。已只读核main1737cd6a5c8bbb1d5793325ee924802bfbe2a2e9 registry将本task映射到此权威树/status；这不证明4320服务已刷新。claim 0dd97484-f0ce-4738-8075-505bd5e2541a v1 ACTIVE（08:59:56.664 UTC）；无真实app-server/auth/模型/外部网络执行；唯一自有loopback合成运行见下段。目录schema不是账号或模型可用证明；首片不替代整体目标。
+本status是唯一手填事实源。已只读核main1737cd6a5c8bbb1d5793325ee924802bfbe2a2e9 registry将本task映射到此权威树/status；这不证明4320服务已刷新。claim 0dd97484-f0ce-4738-8075-505bd5e2541a v2 ACTIVE（amend 09:52:00.081 UTC）；无真实app-server/auth/模型/外部网络执行；唯一自有loopback合成运行见下段。目录schema不是账号或模型可用证明；首片不替代整体目标。
 
 ## 本片验证与后继
 
@@ -71,3 +71,7 @@
 [生产消费报告](../../docs/evidence/wpf-mature-02/production-import/README.md)与[新manifest](../../docs/evidence/wpf-mature-02/production-import/manifest.json)绑定当前27项及已审生产输入；旧语义manifest只绑定原0d0524c，不冒充当前wrapper。integration claim76920d8a-459d-4800-9c7b-bcf7e626a16a已v2 released，writer0dd97484-f0ce-4738-8075-505bd5e2541a仍v1 active。
 
 WPF-MATURE-02-03新增独立诊断阶段：最多3次自有合成子进程，总60秒含清理，每次须具体假设或诊断能力变化；旧失败与已消费许可封存。[R06最小seam候选](../../docs/evidence/wpf-mature-02/diagnostic-seam-proposal.md)已提交，待Mika审精确scope与driver后实施，尚无scope amend或新子进程。真实Codex/auth/provider/外网保持0，不扫描私人crash历史，不扩profile。该后继不是薄入口检查的一部分。
+
+## 当前诊断准备事实
+
+[诊断报告](../../docs/evidence/wpf-mature-02/diagnostics/README.md)与[manifest-v3](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v3.json)绑定当前source/raw/直接消费者。R06五源已独审通过；driver先前清理不在窗口内的finding已修，根目录和半建sink失败也进入finally，9个真实私有文件/假transport检查通过，待独审。没有真实batch-reservation，没有启动任何新child。受控f181 merge无冲突，integration claim4d035471…已v2 released，writer v2保留。早期v1/v2 manifest及旧许可/失败均为历史，不能重置预算。
