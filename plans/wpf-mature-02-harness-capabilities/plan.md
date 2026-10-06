@@ -76,3 +76,7 @@ WPF-MATURE-02-03唯一新诊断batch已在Mika窗口中执行并封存：控制�
 WPF-MATURE-02-03当前后继为[固定regular-file对照候选](../../docs/evidence/wpf-mature-02/fd-canary-v3/README.md)：一编译/两目标，自动runtime证据与人工review时钟分开；当前仅零目标验证，源码固定后独审，未来仍需新GO预算与唯一窗口。不新增任务层级或改动旧失败结论。
 
 WPF-MATURE-02-03后继rootliteral：沿GO明确单项许可，在已封存sandbox67基础仅追加精确根节点read/test；固定第三枚举复用已审host。最多1编译/2自有C目标、60秒自动运行全证据/清理/CLI、2MiB含人工archive字节；独审及Mika门禁前零实际运行。原窗口不复用，失败因果不推定。
+
+## WPF-MATURE-02-03 Node rootliteral对照准备
+
+沿GO新方向，先交[三槽小接口设计](../../docs/evidence/wpf-mature-02/node-rootliteral/design.md)：相同固定输出控制→rootliteral同输出→原七项owned canary/R06 synthetic peer；最多3自有Node目标、0compile、60秒自动证据/关闭/清理/CLI、2MiB含所有字节。无新grant、Codex/SDK/provider/auth或系统log；唯一网络测量限第三槽自有随机loopback。设计先审再实现与零目标验证，固定组合独审/Mika唯一门禁前不执行。C4757有限PASS与旧失败因果不混同，历史封存不追改。工程宿主的实际模型资格/强制file-only/全部writer撤销缺口另见[共享输入](../../docs/evidence/wpf-mature-02/native-engineering-authority-inputs.md)，不阻零模型fixture/checker。

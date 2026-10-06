@@ -1,3 +1,7 @@
+# Node rootliteral小接口设计 review
+
+NOT_STARTED；待Mika绑定本设计提交只读审。范围仅[design](../../docs/evidence/wpf-mature-02/node-rootliteral/design.md)、固定输入与primary/字节推导；0新目标/compile/测试，尚无Node实现target或OPEN窗口。C4757/e47已封存，以下历史结论不延伸为Node批准。
+
 # Root literal结果 review
 
 APPROVED faithful C measurement PASS，Mika/Astra，2026-10-06 12:28:41 UTC；target4757cf6f1fae05b9c6c5f3ec20ea378ff28a779e，0P1/P2。12绑定/30准备及130027B archive逐核；1compile/2C完整socket/regular报告、cleanup/accountingtrue、CLI0。非Node/Codex/完整隔离或旧因果；无新运行授权。

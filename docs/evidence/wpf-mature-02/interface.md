@@ -4,6 +4,10 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [Node rootliteral三槽设计](node-rootliteral/design.md)：待Mika接口审；0新目标/0编译，实际窗口NOT_OPEN。旧C结果/尾部以e47历史快照封存，本阶段另记。
+- [ENG01G host资格/全writer撤销最小输入](native-engineering-authority-inputs.md)：固定557397e9接口；C、未来Node与真实Codex证据分层，生产authority仍不可签发。
+- [04附件上下文修复：已独审待main](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-integration-ready.md)；进度只在[04权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md)，固定实现4f87934f。
+
 - [04 producer main接收权威比对](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/context-producer-source-comparison.json)；owner维护后续接收状态。
 
 - [Root literal唯一窗口结果](rootliteral/run-report.md)：两份完整C报告，measurement/cleanup/accounting完成、CLI0，Mika12:28:41 UTC限定APPROVED；不证明Node/Codex或完整隔离，不推断旧根因。窗口已消费。
