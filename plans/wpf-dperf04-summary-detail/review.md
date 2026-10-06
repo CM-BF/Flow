@@ -1,10 +1,24 @@
 # WPF-DPERF04 独立审查
 
-**状态：CHANGES_REQUESTED**
+**状态：UNKNOWN（部分审查已完成；全片浏览器验收待完成）**
 
-Review target commit：4facd052c25e63ea300f72ea46c03c51fb983980
+Review target commit：abd2aff768f97350762b2eaddbe7ae6843902f48
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
+
+当前已完成源码复审且无剩余blocking；作者第二次Node7叶项+父项8/8实际通过，root已独立核原raw/cleanup。浏览器尚未运行，完整片段与main/生产验收未完成；UNKNOWN由现有parser准确表达部分结论，不改parser或冒整体APPROVED。
+
+## 已执行独审链与限定
+
+- root最初4fac三server模块无新增blocking，client三个P2原报告保留；6c18后继源修由root/peer限定复核，未登记claim同类P2继续由b0修。
+- [panels b0e client复审](../../docs/evidence/wpf-dperf04/review-current/b0e937-client/report.md)与[fixed来源](../../docs/evidence/wpf-dperf04/review-current/b0e937-client/sources.json)：C1-U已在固定源处理，C2因果投递块未回归，0blocking；不是浏览器实跑。
+- [root1441日期专测复审](../../docs/evidence/wpf-dperf04/review-current/dperf04-1441-date-root-review.json)：仅日期依赖修正，确认前述source chain无剩余blocking。
+- [root abd2 Host复审](../../docs/evidence/wpf-dperf04/review-current/dperf04-abd2-host-root-review.json)与[panels复审](../../docs/evidence/wpf-dperf04/review-current/dperf04-abd2-host-peer-review.md)：0blocking，仅真实Host transport与入站断言delta；原server防护未改。
+- [root第二Node实际证据核验](../../docs/evidence/wpf-dperf04/review-current/dperf04-node-second-root-review.json)：原四raw逐字相同/8PASS/2318ms/累计3950ms/cleanup确认；root没有重跑Node。浏览器动态焦点/选区/迟到响应、390双主题与生产延迟均未验。
+
+本次归档来源均为原独立reviewer报告，无作者替代批准。当前浏览器监督准备仅/tmp，入口没有新改动；未来需source review和fresh运行gate。
+
+## 历史审查与当时状态（以下不代表当前待复审）
 
 固定4fac独立源码审查为CHANGES_REQUESTED，尚无运行结果。[root原样报告](../../docs/evidence/wpf-dperf04/review-4fac/root.json)、[workspace_panels_owner报告](../../docs/evidence/wpf-dperf04/review-4fac/client.md)与[固定来源](../../docs/evidence/wpf-dperf04/review-4fac/client-sources.json)。
 

@@ -31,3 +31,7 @@
 ## 2026-10-06 16:59:01 UTC 直接验证安全收口
 
 仅依新fresh gate执行一次，校验fixed7hash后归档原始result/log/binding。真实入站Host事实与403断言通过，不以首失败推断产品漏洞或抹去失败。原6其他源/15保护范围不改，cleanup归因自身PGID/scratch；累计3950ms不重置。沿clean-code核测试Interface/超时/监听清理、结果和未验分开。无后续runtime/free/浏览器检查。
+
+## 2026-10-06 17:10:34 UTC 独审来源归档清码
+
+遵循fresh原scope仅metadata：归档五组原review及source manifest，当前target对齐abd2。限定source批准与行为/整片批准分开，UNKNOWN不造parser枚举；历史措辞标历史，避免已审源码误显示仍待复审。Node仍原3950ms，不重跑；准备稿/tmp15,683B分retained8MiB与scratch64MiB估计，不改变原source或运行权限。

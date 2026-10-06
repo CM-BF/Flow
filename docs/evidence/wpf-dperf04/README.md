@@ -1,10 +1,8 @@
-最新直接验证：固定abd2 / 执行HEAD823071，第二次Node7叶项+1父项8/8通过，2318ms/cleanup完整；累计3950ms。原首失败保留，浏览器仍NOT_RUN。
+# DPERF04 当前交付边界
 
-当前固定 `abd2aff768f97350762b2eaddbe7ae6843902f48`：首轮Host用例失败后仅修请求构造并新增服务端入站Host断言；源码待审/未复验。原1441六子项通过、Host失败与完整cleanup如实保留，运行总额已用1632ms，余28368ms。
+固定 `abd2aff768f97350762b2eaddbe7ae6843902f48`，base c837b5dccaea429b0112d1c7e0c752c41334204a；[七源manifest](source-manifest.json)。当前限定源码复审已完成、0blocking；第二次Node7叶项+父项8/8 PASS，root已独立核原raw，累计3950ms/余26050ms。浏览器NOT_RUN、全片review UNKNOWN、main/真实4320未接；[唯一status](../../../plans/wpf-dperf04-summary-detail/status.md)与[独审链](../../../plans/wpf-dperf04-summary-detail/review.md)。
 
-# DPERF04 源码候选
-
-当前修复target `1441d86baa40e98f4cb81b82dcc551202973209b`，base `c837b5dccaea429b0112d1c7e0c752c41334204a`；七实现/测试源见[manifest](source-manifest.json)。当前仅源码完成，Node首轮 **FAILED**（6子项通过、Host断言200≠403；含父项TAP6/2），browser **NOT_RUN**，原4fac独审 **CHANGES_REQUESTED**，当前修复待复审，main/真实4320未接。唯一事实源[status](../../../plans/wpf-dperf04-summary-detail/status.md)。
+原4fac源码CHANGES_REQUESTED、1441首Node6通过/Host失败及1632ms完整cleanup均保留为历史；不得将后继修复或第二次通过回填旧结果。浏览器监督稿当前仅/tmp，无运行授权或新入口改动。
 
 三个新只读入口 `/api/summary`、`/api/task?task=<registered ID>`、`/api/assignments`；旧snapshot与文档接口保持。声明/现场proof/领取观察分别标识与时间，详情只核指定任务+main，无完成proof跨轮缓存；未登记claim可键盘展开exactscope。
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:59:01 UTC |
+| 最近更新时间 | 2026-10-06 17:10:34 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -23,12 +23,12 @@
 | 下一可用交付 | 完成页面阅读与异步响应的浏览器验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，CHANGES_REQUESTED（4fac历史，后继修复待复审） |
+| Review | [review.md](review.md)，UNKNOWN：当前abd2源码复审0blocking，Node8PASS；browser/全片待验，4fac保历史 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| DPERF04-01 | in-progress | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md) |
-| DPERF04-02 | in-progress | w01_owner | [首轮Node原始结果](../../docs/evidence/wpf-dperf04/node-first/result.json)；browser未运行 |
+| DPERF04-01 | completed | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md)、[当前限定源码复审](review.md) |
+| DPERF04-02 | in-progress | w01_owner | [第二Node8PASS](../../docs/evidence/wpf-dperf04/node-second/result.json)，首失败保留；browser未运行 |
 | DPERF04-03 | pending | w01_owner | review/main/实际部署未完成 |
 
 ## 来源与架构影响
@@ -80,3 +80,7 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 [原样结果](../../docs/evidence/wpf-dperf04/node-second/result.json)、[TAP](../../docs/evidence/wpf-dperf04/node-second/node.log)、[执行binding](../../docs/evidence/wpf-dperf04/node-second/binding.json)。16:58:59.491470Z→16:59:01.809441Z，监督elapsed2318ms，TAP2187.708416ms；累计1632+2318=3950ms，余26050ms。自有PGID76663/group与scratch均已不存在，cleanup fulfilled/errors[]；2临时Git库/2任务/实际loopback HTTP/注入ledger，0PG/Chrome/真实registry/外网。共享free样本不归因本任务。
 
 本次只证明直接行为，不证明浏览器焦点/选区、实际PG领取或生产4320延迟。当前源码不变，仅封存metadata；不得把Node通过当最终独审/主线已集成，无自动重复检查。
+
+## 2026-10-06 17:10:34 UTC 独审记录安全纠正
+
+当前review入口对齐abd2，顶层UNKNOWN仅因全片浏览器待验；b0e/1441/abd2限定source review已完成且0blocking，root第二Node原raw核验已归档。4fac CHANGES_REQUESTED和6c18阶段保为明确历史，不再把旧target当当前审查入口。纯metadata不变七源，不重跑Node/Chrome/PG/space；浏览器准备仅自有/tmp并待结构许可。
