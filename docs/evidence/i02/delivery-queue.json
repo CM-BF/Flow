@@ -1,45 +1,24 @@
 {
-  "recordedAt": "2026-10-06T13:07:57.981857+00:00",
-  "main": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
-  "sourceSampleAt": "2026-10-06T12:24:33.364Z",
+  "recordedAt": "2026-10-06T15:28:12.059132+00:00",
+  "main": "fb9fe5e745ee1617f889a7fea420d445a0b7c05c",
+  "sourceSampleAt": "2026-10-06T15:19:18.967Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
-  "reviewedQueue": [
-    {
-      "taskId": "WPF-ATTACHI02",
-      "classification": "approved-controlled-integration-in-this-batch",
-      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b"
-    },
-    {
-      "taskId": "WPF-MATURE-04",
-      "classification": "approved-controlled-integration-in-this-batch",
-      "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f"
-    },
-    {
-      "taskId": "D06",
-      "classification": "approved-controlled-integration-in-this-batch",
-      "target": "6570ef7e896d29040961247f46aa62dc4e466284"
-    }
-  ],
+  "reviewedQueue": [],
   "mainButNotUserSurface": [
     {
-      "taskId": "O12",
-      "next": "TUI01D approved explicit goal terminal accepted in this batch; Web cross-client remains open",
-      "note": "Package/controller and historical reads main; no NL or UI acceptance claimed"
+      "taskId": "X01/F01",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "note": "Installation routes/client/CLI main; installed not enabled; personal host not configured."
     },
     {
-      "taskId": "ENG01G",
-      "next": "ENG01H declaration/receipt center contract accepted; concrete host authority and model qualification remain separate",
-      "note": "One real shared exchange pump and injected authority; actual model/enforcement/revocation not demonstrated"
-    },
-    {
-      "taskId": "WPF-MATURE-04",
-      "next": "Historical observation producer main; Web consumer and real SDK control evidence remain independent",
-      "note": "Historical producer main and backend deployed362; actual UI/SDK control evidence still independent"
+      "taskId": "O14",
+      "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "note": "Domain and thin transport main; production scheduler/migration not yet accepted."
     },
     {
       "taskId": "WPF-ATTACHI02",
-      "next": "fixed Web artifact release separately; durable unknown/draft recovery independent",
-      "note": "Current production combination in this batch, not personal runtime deployment"
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+      "note": "Production source main; fixed new Web waits RELEASE03 evidence before personal publication."
     }
   ],
   "releaseQueue": [
@@ -50,15 +29,42 @@
       "actualWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
       "version": 15,
       "admission": "accepting",
-      "evidence": "svc05-live-acceptance.json",
-      "next": "Canonical close/release9daf received; no further operation"
+      "next": "No personal operation in this batch."
+    },
+    {
+      "taskId": "WPF-RELEASE03",
+      "phase": "waiting-first-history-only-window",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+      "next": "Web manager fresh >=1GiB+32MiB; A-only one bounded attempt first, no browser/fullbuild assumption."
     },
     {
       "taskId": "SVC06",
-      "phase": "implementation",
+      "phase": "pure-closure-slice-delivered",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/status.md",
-      "next": "assignment_review unique fixed-backend artifact/host implementation; own scope; no personal cutover"
+      "next": "Explicit production parser and builder wiring/install/entry proof; full artifact >=2.5GiB gate remains."
     }
   ],
-  "mainBeforeBatch": "280289008a5a3779e4e5e6453181b96062ed9514"
+  "mainBeforeBatch": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "reviewAndVerificationQueue": [
+    {
+      "taskId": "F01/O14",
+      "target": "73aabff4fac96c0439817bdc72358c1385371e8d",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md",
+      "next": "Production PG after Web history-only cleanup; isolated lifecycle source P2 closed; thin transport main separately."
+    },
+    {
+      "taskId": "O15",
+      "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/plans/o15-goal-input-confirmation/status.md",
+      "next": "Independent source pre-review and PG after exclusive resource gate; not approved."
+    }
+  ],
+  "sourceProvisionQueue": [
+    {
+      "taskId": "WPF-MATURE-02-10",
+      "worktree": "claude-message-settings-core",
+      "base": "70cc4e852365e974cefde30bfad75c7d233985c6",
+      "state": "source-provision-complete; leaf owner fresh take and canonical required before registry"
+    }
+  ]
 }
