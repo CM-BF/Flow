@@ -24,7 +24,7 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 - [x] **WPF-D01-02** 只读确认17原来源保留，新增WPF来源正确且当前未知项诚实显示。
 - [x] **WPF-D01-03** 完成子计划唯一来源方案：独立平级canonical注册、旧nested转stub，不放宽路径校验；记录实际入口与验收边界。
 - [x] **WPF-D01-04** U09已关联主线D05；root已读取部署架构图固定3773，管理CUA确认架构入口可访问；来源陈旧由下一刷新工作处理。
-- [ ] **WPF-D01-05** 将新架构图刷新到固定main8f要求交主Lead，取得旧claim释放/正式转交、新独立tree与literal receipt后才派实施；保持App/chat与未交付功能边界。
+- [x] **WPF-D01-05** 将新架构图刷新到固定main8f要求交主Lead，取得旧claim释放/正式转交、新独立tree与literal receipt后才派实施；保持App/chat与未交付功能边界。
 
 ## 未验证与来源
 
