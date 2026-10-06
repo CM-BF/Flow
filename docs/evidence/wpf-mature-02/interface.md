@@ -25,6 +25,8 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 共享owner需固定实际模型能力目录、请求选项、init/effective回执与unsupported的合同；Web d01仅消费已落地字段，不修改本owner实验来伪造生产支持。
 
+共享挂载输入：[Mika R05-B server mount只读review回执](r05b-mount-review.md)，仅固定import/await两行，不是领域/provider批准或main进度。
+
 ## R05-B固定consumer答复（0.154.0，2026-10-06 09:11:04 UTC）
 
 对照共享候选 `8a148c5f4288d3f3075bf4bde78504b5214c87f3:docs/evidence/r05/b-codex-interface.md`。以下区分原生字段与Flow拟定映射；生产adapter由ExecutionLead/runner worker维护，本owner只负责schema事实与实验conformance，绝不领取apps/runner/src/codex。
