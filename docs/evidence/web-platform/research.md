@@ -246,3 +246,5 @@ PERF01正式benchmark review：root APPROVED target3d47cdd4eae959119f154a0d06964
 原Goal Owner经root反馈用户在49922输入hi只见固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话。由于没有完整逐字原话，父U11明确“准确摘要”，REQ41～45与WPF-CHAT01三件套逐项保存模型/effort/access/context/files/语音/发送/气泡/queue/steering/tool与可展示thinking、正文优先/详情轻引用边界。初始响应与SSE不送大payload，展开鉴权按需，provider没提供不伪造；queue持久顺序取消，steer真实确认生效，不用newtask假冒。语音录音/转写分开，失败回文字，无暗接付费服务。
 
 立即执行优先变更：PERF02保留准备93889c3，尚未创建树、amend/take或生产写入；w01_owner已确认暂停。PERF01最终metadata36d80219e4565783e371fd3cd6c29adc4d1398cc clean，原claim4553v1仍4scope；此前probe停写声明保留历史，不授予另一owner。原M02停写意向也未改v2范围。I01当前收尾照常，新增workspace.tabs合法button/menu挂载反馈由其owner局部修复，尚无固定candidate。49922保持原tab/服务，不暗换。新对话先只读接口调查与主线共享owner协同，独立scope/receipt后再实现。
+
+U11落盘固定计划提交c6592aaa9f4bc617fb6ade9e56de661447ee1cdd，28Markdown/113本地links/TODO一致0错误、diffcheck0。03:26:35.296Z实际4320已读WPF001 HEADc6592 clean、priority1、真实持续对话当前产出/下一接口交付、human.complete=true/missing/issues空；documents包含conversation-core/plan.md真实下钻入口，事实摘要见[新优先级dashboard证据](chat-priority-dashboard.json)。这只证明计划展示，不是聊天能力已实现。
