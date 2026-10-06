@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T16:12:56.808881+00:00",
+  "state": "RESOURCE_STOP_PARTIAL_HISTORY_CLEANED_WINDOW_RETURNED",
+  "rootReview": "release03-a3-root-review.json",
+  "admission": "release03-a3-admission.json",
+  "sourceHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+  "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/history3-20261006-160901-741882",
+  "rawCount": 9,
+  "rawBytes": 47136,
+  "oldRawBytes": 80470,
+  "totalRetainedRunBytes": 127606,
+  "accounting": {
+    "previousMs": 3874,
+    "elapsedMs": 4109,
+    "cumulativeMs": 7983,
+    "remainingMs": 172017,
+    "maximumMs": 180000,
+    "maximumEvidenceBytes": 8388608
+  },
+  "result": {
+    "attachmentOnly": "ACTUAL_HTTP_PASSED",
+    "mixed": "INTERRUPTED_NO_PRODUCT_CONCLUSION",
+    "phaseB": "NOT_RUN",
+    "rawPhaseBLabel": "FAILED preserved; history worker absent made label misleading, source-only fix assigned",
+    "compatibilityId": null,
+    "cleanup": "databaseRemoved/errors[]/ownedworkerSIGTERM confirmed",
+    "window": "RETURNED_TO_LEAD_NO_AUTOMATIC_RETRY"
+  },
+  "limits": "No complete successful A10 evidence: do not sign B reuse/publish; no manager runtime or new free observation."
+}

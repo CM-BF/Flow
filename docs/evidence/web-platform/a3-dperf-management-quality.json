@@ -1,0 +1,128 @@
+{
+  "at": "2026-10-06T16:12:56.808881+00:00",
+  "scope": "Own management six literals only",
+  "skills": {
+    "method": "Local find-skills discovery; reused installed clean-code/codebase-design, no install/network",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    ]
+  },
+  "checks": [
+    "Separated fixedsource/actualrun/partial/resource stop/publish facts",
+    "Corrected misleading rolling current summary; prior raw unchanged",
+    "D04 exactnine atomic receipt and solewriter; runtime budget not conflated with control plane",
+    "A3root nine raw+oldten raw hashes verified",
+    "Unknown sparse consumer closure remainsKEEP"
+  ],
+  "finding": "A3 history-only outcome phaseBFAILED despite never enteringApp; originalraw retained, owner narrow source correction assigned, no rerun forlabel",
+  "archives": [
+    {
+      "source": "/tmp/d01-recovery1b8-direct-admission.json",
+      "archive": "recovery01-1b8-direct-new-policy-not-run.json",
+      "bytes": 3919,
+      "sha256": "7035a6754b8965891bcd7f25b0ac79d7b868196d3c7a9ff6d30c3363e0d2ec94"
+    },
+    {
+      "source": "/private/tmp/recovery01-direct-followup-y0pikpzw/rebind-1b8-manifest.json",
+      "archive": "recovery01-1b8-rebound-manifest.json",
+      "bytes": 4703,
+      "sha256": "44bfc08072f9092bc0a5bd30f393dfa3f85de29c99e8e83affa30ebc893c6115"
+    },
+    {
+      "source": "/tmp/d01-release03-a3-admission.json",
+      "archive": "release03-a3-admission.json",
+      "bytes": 5266,
+      "sha256": "1e55e7f25826096a0de8a73c2f69e33eec47de19c80549b8c66fb3e975fa2b99"
+    },
+    {
+      "source": "/tmp/d01-release03-history3-20261006-160901-741882-gate.json",
+      "archive": "release03-a3-consumed-gate.json",
+      "bytes": 2853,
+      "sha256": "c8600e7119c5b1cbcff54eed15151173a9654519923c0ca78e6e8ddc660b81f3"
+    },
+    {
+      "source": "/tmp/root-release03-a3-actual-af51-review.json",
+      "archive": "release03-a3-root-review.json",
+      "bytes": 4825,
+      "sha256": "4b552b6cb89dc693c3e9970ff7c74d245ae78e9e9ff5062e4d0ced6a1a60643a"
+    },
+    {
+      "source": "/tmp/d01-dperf04-take-preflight.json",
+      "archive": "dperf04-take-preflight.json",
+      "bytes": 1331,
+      "sha256": "cef02e6fe3119cb6dd04ff1d3094dc9725ff405e08bcaa8b207d629712d1484d"
+    },
+    {
+      "source": "/tmp/d01-dperf04-take-command.json",
+      "archive": "dperf04-take-command.json",
+      "bytes": 834,
+      "sha256": "109cdb246ffe6ba1a5491739b7d455888eea5eb35a14b69c214a41e18834c2d0"
+    },
+    {
+      "source": "/tmp/d01-dperf04-take-receipt.json",
+      "archive": "dperf04-take-receipt.json",
+      "bytes": 981,
+      "sha256": "66bdde86ffe82427dc5732c0fa686c533594b738c4ac3b493e4388b7eff2aaa8"
+    },
+    {
+      "source": "/tmp/w01-sparse-candidates-next/report.md",
+      "archive": "sparse-next-candidates/report.md",
+      "bytes": 3268,
+      "sha256": "c4a70acfa5e67918af8262b876e30d8a8e50002357798c5368ba81136aa0f2ea"
+    },
+    {
+      "source": "/tmp/w01-sparse-candidates-next/observations.json",
+      "archive": "sparse-next-candidates/observations.json",
+      "bytes": 6070,
+      "sha256": "b7aa70147bfdc15e6c24dda600abc40fa94450d6993704ccdcbdff84c0fb95af"
+    }
+  ],
+  "productTestsByManager": 0,
+  "personalServiceRequests": 0,
+  "newFreeSamples": "Only alreadyrecorded Recovery1 and A3 admission1, no polling inthisintake",
+  "verification": {
+    "at": "2026-10-06T16:13:51.583425+00:00",
+    "changedPaths": 24,
+    "outsideScope": [],
+    "newMarkdownLinks": 16,
+    "newBrokenLinks": [],
+    "actualParser": [
+      {
+        "tree": "web-platform-management",
+        "path": "plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "tree": "dashboard-summary-detail",
+        "path": "plans/wpf-dperf04-summary-detail/status.md",
+        "id": "WPF-DPERF04",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "rawArchivesOriginalBytes": 10,
+    "coverage": "Only introduced links, not absent historical cross-tree mirrors; no product tests."
+  }
+}

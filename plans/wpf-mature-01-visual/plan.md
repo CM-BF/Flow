@@ -50,3 +50,5 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 现9eec10文件hash齐不等SVC format2可发布；既有API实际需正式build，而资源低于2.5GiB且依赖physical增量未知，先保现版本并写解除条件。另actual backend362仍缺已审history v2三行修复，未来须exact362 attachment-only/mixed reportEvents差分；失败则交原backendowner最小已审修复，不把“等SVC06”当笼统阻塞。完整descriptor、兼容四类raw、retained/oldchunk/CAS均沿原工具，无第二发布框架或新的产品写权。
 
 2026-10-06 15:32 发布安全点：固定362实际A两项history失败，完整raw/清理与余176.126秒见[唯一接收入口](../../docs/evidence/web-platform/release03-a-actual-intake.json)。Lead已接收，后继只等待原backend owner的immutable362+已审三行修复新HEAD/tree；先新A再B/全兼容后原受管发布，不重跑未变362或改旧期望，不覆盖原WT。DPERF04保持未take，当前个人版本不变。
+
+2026-10-06 GO固定fixture图反馈归原01-03/CHATREAD：[完整验收](../../docs/evidence/web-platform/short-chat-visual-go-intake.json)。普通hi以正文和输入为主，工程状态/loaded计数进明确详情入口；空queue轻入口，waiting/paused/error/unknown外显。只用已有metadata、展开前0detail，不猜空或总数；profile requested/effective沿MATURE02真实能力。发布/DPERF之后在同固定短聊单窗与split对照、键盘及异常可达性验收；无当前App写权或新第三层task。

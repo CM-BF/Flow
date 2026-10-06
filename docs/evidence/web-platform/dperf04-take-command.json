@@ -1,0 +1,23 @@
+{
+  "requestId": "d01-dperf04-source-415bbb1a-60f5-41c3-b37d-c6f18c29d4d4",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-DPERF04",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "scope": [
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "plans/wpf-dperf04-summary-detail",
+    "docs/evidence/wpf-dperf04"
+  ],
+  "origin": "new"
+}

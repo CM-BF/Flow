@@ -1,63 +1,72 @@
 {
-  "recordedAt": "2026-10-06T16:00:13.889928+00:00",
-  "state": "LEAD_WINDOW_RETURNED_A2_NOT_RUN_RESOURCE",
-  "source": "Root relayed fresh Lead window and2691 approval; manager one actual15:58:36 resource admission; W01 freeze0b3e",
+  "recordedAt": "2026-10-06T16:12:56.808881+00:00",
+  "state": "A3_RESOURCE_STOP_CLEANED_WINDOW_RETURNED_TO_LEAD",
+  "groupWindowOwnership": "RETURNED_TO_LEAD; no group PG/Chrome/direct window; source-onlyDPERF dispatch",
   "release03": {
-    "state": "NOT_RUN_RESOURCE",
+    "state": "PARTIAL_RESOURCE_STOP",
     "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
     "actualHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
     "backend": "af51c621696230fbced12227670f014ca73bd8a1",
     "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
-    "freeBytes": 1103237120,
+    "admissionFreeBytes": 1109671936,
     "startBytes": 1107296256,
     "stopBytes": 1090519040,
-    "freeAt": "2026-10-06T15:58:36.348208+00:00",
-    "samples": 1,
-    "newRuntimeMs": 0,
-    "spentMs": 3874,
-    "remainingMs": 176126,
-    "gateCreated": false,
-    "evidence": "release03-a2-not-run-intake.json"
+    "newRuntimeMs": 4109,
+    "spentMs": 7983,
+    "remainingMs": 172017,
+    "minimumSampledFreeBytes": 1090244608,
+    "finalSampledFreeBytes": 1089323008,
+    "gateConsumed": true,
+    "cleanupComplete": true,
+    "evidence": "release03-a3-intake.json",
+    "B": "NOT_RUN"
   },
   "recoveryDirect": {
-    "state": "READY_NOT_RUN_EXISTING_ENTRY_REBIND_REQUIRED",
+    "state": "REBOUND_READY_NOT_RUN_RESOURCE",
     "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
     "metadata": "0eef4cda8813afe336df8dc88256da28e206c0d4",
     "cases": 27,
+    "startBytes": 1090519040,
+    "stopBytes": 1082130432,
+    "at": "2026-10-06T16:06:13.993447+00:00",
+    "availableBytes": 894640128,
+    "samples": 1,
+    "gateCreated": false,
+    "newRuntimeMs": 0,
+    "spentMs": 2540,
     "remainingMs": 27460,
-    "startBytes": 1107296256,
-    "stopBytes": 1090519040,
-    "materials": "recovery01-1b8-direct-readiness/readiness.json",
-    "workMs": 22460,
-    "cleanupReserveMs": 5000,
-    "sameStartThresholdAsA": true,
-    "newSpaceSamples": 0
+    "materials": "recovery01-1b8-rebound-manifest.json",
+    "evidence": "recovery01-1b8-direct-new-policy-not-run.json",
+    "policySource": "Lead16:03 independent low-incremental check permission adopted byroot; prior2.540s/maxsampledtmp2.7MiB. Does not change A/B."
   },
-  "groupWindowOwnership": "RETURNED_TO_LEAD; no PG/Chrome/direct window held by this group; Recovery prep only",
-  "registry": "Lead latest inbound reports mainfb9fe5e7/dashboard162; prior fixed d679 registry verified by manager. No new4320GET/reload.",
-  "historicalResourceEvidence": [
-    "release03-a-admission-not-run.json",
-    "resource-engineering-four-lead-summary.json",
-    "release03-a-second-admission.json"
+  "dperf04": {
+    "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 1,
+    "scopeCount": 9,
+    "mode": "SOURCE_ONLY",
+    "runtime": "NOT_ADMITTED",
+    "firstCanonical": "704894e97f573f7683e1c3fa37020fc0d9a5205c",
+    "sourceReady": "dperf04-source-ready.json"
+  },
+  "leadEvents": [
+    {
+      "time": "16:05:58",
+      "beforeBytes": 884588544,
+      "afterBytes": 896360448,
+      "source": "Lead via root",
+      "attribution": "temporary shared volume change unknown"
+    },
+    {
+      "time": "16:06:38",
+      "freeBytes": 1113837568,
+      "source": "Lead via root",
+      "coordination": "Three trees complete clean; other PG/load held for ONE A3. Fresh manager sample used separately."
+    }
   ],
   "limits": [
-    "Actual fixed362 HTTP history failures, not admission/import or cleanup failures",
-    "B/Chrome NOT_RUN, no SVC green receipt, no deployment",
-    "Shared-space sampled minimum and final are independent saved observations, not new sample or exclusive allocation attribution",
-    "No automatic retry, polling, new dependency writes or product test window"
-  ],
-  "latestLeadObservation": {
-    "at": "2026-10-06T15:31:45Z",
-    "freeBytes": 1098022912,
-    "thresholdBytes": 1107296256,
-    "state": "F01 O14 NOT_RUN,0PG/0test,window returned;newbackendtuple pending",
-    "basis": "Lead actual observation via root, not manager resampling or new A admission"
-  },
-  "registryLatestInbound": {
-    "source": "Lead in-progress notification via root",
-    "main": "9bdb (abbreviated inbound)",
-    "plannedDashboardSources": 164,
-    "state": "REGISTRATION_AND_4320_UPDATE_IN_PROGRESS_NOT_OBSERVED_COMPLETE",
-    "managerAPIOrPageSamples": 0
-  }
+    "Shared volume observations are not exclusive per-run allocation or causal attribution",
+    "A3 RESOURCE_STOP is not mixed product failure; old362 actual two failures remain historical",
+    "No B/Chrome/SVCgreen/deployment",
+    "No automatic retry/free polling; future independent check needs its own fresh conditions"
+  ]
 }

@@ -1,0 +1,126 @@
+{
+  "at": "2026-10-06T16:06:33.744108+00:00",
+  "mode": "READ_ONLY_CANDIDATE_OBSERVATIONS_NOT_OPERATION_APPROVAL",
+  "candidates": [
+    {
+      "name": "web-message-reuse",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "branch": "codex/web-message-reuse",
+      "head": "9cea63212b13c624fde53981721aee116d0caeed",
+      "gitStatusPorcelain": "",
+      "coreSparseCheckoutObserved": "unset (git config --get produced no value)",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/plans/wpf-perf03-message-reuse/status.md",
+      "canonicalSha256": "9c58cbc5ba95dafd4d63666c6304794fc6aff6e58c5e68c71aad021a2255c3ba",
+      "canonicalDelivered": true,
+      "releaseReceipt": {
+        "path": "/tmp/flow-wpf-perf03-release-receipt.json",
+        "sha256": "486eed1a3111f180254f91c856f66f744d32eb2ce2a760c1ff9830e1df0ee119",
+        "claimId": "2ec58c2c-811d-4f24-a14b-cf1a3e89cdb3",
+        "version": 2,
+        "state": "released",
+        "committedAt": "2026-10-06T07:49:41.137Z"
+      },
+      "ownEvidence": "docs/evidence/wpf-perf03",
+      "disposition": "KEEP_UNTIL_LEAD_EXACT_CONSUMER_CLOSURE; nominal released-clean candidate only"
+    },
+    {
+      "name": "web-execution-profile-summary",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary",
+      "branch": "codex/web-execution-profile-summary",
+      "head": "ef8698344f90412891e35fed05c21743d97cb708",
+      "gitStatusPorcelain": "",
+      "coreSparseCheckoutObserved": "unset (git config --get produced no value)",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary/plans/wpf-profileux-execution-summary/status.md",
+      "canonicalSha256": "bbd31405710dd1361e39a2fed4c6282e938f3ead4b2533e1cd65154aa6aeeab0",
+      "canonicalDelivered": true,
+      "releaseReceipt": {
+        "path": "/tmp/flow-wpf-profileux01-release-receipt.json",
+        "sha256": "d92a925a54260bd2001f0258a46f55f24e4f3cd12e5768c2801d7a142d180077",
+        "claimId": "d113be51-5ccd-48a6-95a9-2f9f8f5b3756",
+        "version": 2,
+        "state": "released",
+        "committedAt": "2026-10-06T05:18:15.732Z"
+      },
+      "ownEvidence": "docs/evidence/wpf-profileux",
+      "disposition": "KEEP_ACTIVE_PREVIEW"
+    },
+    {
+      "name": "dashboard-proof-performance",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+      "branch": "codex/dashboard-proof-performance",
+      "head": "08bd0a71494f54809f4c4a2fa5b9718285103ea3",
+      "gitStatusPorcelain": "",
+      "coreSparseCheckoutObserved": "unset (git config --get produced no value)",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/plans/wpf-dashboard-proof-performance/status.md",
+      "canonicalSha256": "52b0065fb519100aa0a0571bfddca3e1e2cc6b3bb3b4d51258a8814331803598",
+      "canonicalDelivered": true,
+      "releaseReceipt": {
+        "path": "/tmp/flow-wpf-dperf01-release-receipt.json",
+        "sha256": "6dcd2e2ebcdf3506052dc08018d3dd8a57f62eaba82def3a2371049fe8768832",
+        "claimId": "bb7ef22f-e7d9-4cd3-8b72-cc69c591c2c7",
+        "version": 2,
+        "state": "released",
+        "committedAt": "2026-10-06T05:14:24.445Z"
+      },
+      "ownEvidence": "docs/evidence/wpf-dperf01",
+      "disposition": "KEEP_UNTIL_LEAD_EXACT_CONSUMER_CLOSURE; nominal released-clean candidate only"
+    },
+    {
+      "name": "web-context-receipts",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+      "branch": "codex/web-context-receipts",
+      "head": "66695c6579189644ae6399dcaca80cc04487a178",
+      "gitStatusPorcelain": "",
+      "coreSparseCheckoutObserved": "unset (git config --get produced no value)",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md",
+      "canonicalSha256": "3606b338b7e1787c82e36d352c2f4e9972c966430773b154d49f7d8b09e55008",
+      "canonicalDelivered": true,
+      "releaseReceipt": {
+        "path": "/tmp/flow-wpf-context02-release-receipt.json",
+        "sha256": "1c47f29fb6f213bcd9c34e9ac9f96adca3685f06a402d5488742dca201e686df",
+        "claimId": "b4858792-3946-486b-b3a4-621fca9a4981",
+        "version": 2,
+        "state": "released",
+        "committedAt": "2026-10-06T08:33:02.956Z"
+      },
+      "ownEvidence": "docs/evidence/wpf-context-receipts",
+      "disposition": "KEEP_UNTIL_LEAD_EXACT_CONSUMER_CLOSURE; nominal released-clean candidate only"
+    }
+  ],
+  "actions": {
+    "projectWrites": 0,
+    "sparse": 0,
+    "configWrites": 0,
+    "deletions": 0,
+    "freeQueries": 0,
+    "productRuns": 0
+  },
+  "scope": "Four known own trees only; one process open-path inventory; bounded named OPS record directory. No all-worktree walk.",
+  "processObservation": {
+    "method": "lsof -nP -Fpcfn once; no env or full argv; exit0/stderr empty",
+    "matchedTree": "web-execution-profile-summary",
+    "cwdPids": [
+      28040,
+      28049,
+      28055
+    ],
+    "observedOpenConsumers": [
+      "apps/web",
+      "packages/client/src",
+      "packages/contracts/src",
+      "node_modules/.pnpm native fsevents/tailwind/rolldown/lightningcss binaries"
+    ],
+    "otherThreeMatchedPaths": 0,
+    "limit": "No open path is not proof of no cached/closed-file or external symlink consumer. No reverse-link all-tree scan was authorized/performed."
+  },
+  "sparseHistory": {
+    "recordRoot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/sparse-worktree-2026-10-06",
+    "read": [
+      "next-eight-summary.json",
+      "web-four-summary.json",
+      "web-four-consumer-check.json"
+    ],
+    "candidateNameMatchesInThatRecordDirectory": 0,
+    "limit": "No positive indication of handling in the named current round and current core.sparseCheckout unset. This does not certify never sparse in all historical operations; sole Git operator must confirm."
+  }
+}

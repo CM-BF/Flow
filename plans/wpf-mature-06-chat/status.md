@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:52 UTC |
+| 最近更新 | 2026-10-06 16:13 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 4ba20/20保旧范围；原owner1b8/f297材料完整性/顺序窄审SOURCE_ADDRESSED，27direct/browser NOT_RUN；原06-05新增installed core stop/cancel来源研究 |
-| 下一可用交付 | 1b8两材料源码finding已闭合；[27direct只读材料](../../docs/evidence/web-platform/recovery01-1b8-direct-readiness/report.md)已备，旧2498入口待按实际0eef/19hash重绑；原27.460秒与fresh资源窗口仍必需，当前NOT_RUN |
-| 当前阻塞 | ACTIVE: 2498定向行为与真实IDB/HTTP/browser待资源及中心三语义门槛；轻源码可继续，当前无测试窗口 |
+| 当前产出 | 1b8完整材料/顺序源码已获窄审认可；27direct入口已重绑，但单次资源准入未达标，0新运行 |
+| 下一可用交付 | 在新实质资源条件下运行已备单文件27case；原direct余27.460秒，源码窄审不替代真实IDB/HTTP/browser验收 |
+| 当前阻塞 | ACTIVE: 本次纯检查free894,640,128B低于新start1,090,519,040B；未签gate，真实App及中心语义验收仍待 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |

@@ -107,7 +107,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | --- | --- | --- |
 | RECOVERY01 → MATURE06 | workspace_panels_owner / web-conversation-recovery / codex/web-conversation-recovery | 6ff988b2 v4原21；724 worker P2官方composer接管修源，root supervisor仅源码闭合；22direct/browser未运行 |
 | RELEASE03 → MATURE01 | w01_owner / web-current-preview-compatibility / codex/web-current-preview-compatibility | bfb209ae v3原4；432b actual362两history红已封存676f/clean，原预算余176.126秒；等Lead固定三行修复tuple，源码与运行/发布分开 |
-| DPERF04 → D01 | 拟w01_owner / dashboard-summary-detail / codex/dashboard-summary-detail | c837已由Lead准备；九literal已批但未take/实施，优先级低于可用预览路径 |
+| DPERF04 → D01 | w01_owner / dashboard-summary-detail / codex/dashboard-summary-detail | c837独立树，b554ddb6 v1九scope已COMMITTED并派源码；实际发布运行窗口优先，检查后置 |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3六管理目录；唯一status/集中交接，不构成第三执行层 |
 
 已交付ATTACH/ATTACHI/ACK/CACHE/D06/DASHSUM/DPERF03等固定main及released回执见[集中历史入口](../../docs/evidence/web-platform/mature-task-handoff.md)，不沿旧claim写；旧当前分配以Git历史保存，不当新take。
@@ -126,7 +126,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | --- | --- | --- |
 | P1源码实施 | RECOVERY01 / MATURE06-04 | 原21唯一writer修复完整材料恢复；正式review NOT_STARTED，新direct/browser未跑，窗口需fresh条件 |
 | P1负兼容已封存 | RELEASE03 / MATURE01 | 原362实际两红/清理完成；Lead准备immutable362+三行修复，先新A后B/全兼容后受管发布，个人当前不变 |
-| 候选/未take | DPERF04 / D01 | 独立c837 source已准备，九scope方案已批；W01先发布安全点，不能把sourceReady当COMMITTED |
+| 源码已派工 | DPERF04 / D01 | [实际九scope receipt](../../docs/evidence/web-platform/dperf04-take-receipt.json)，唯一owner W01，原有D01后继；测试/登记单列 |
 | 只读后继 | REQ22/23插件与MATURE05 Arc | 唯一host/P01接缝与稳定view布局研究，不抢Recovery范围、不增任务层级 |
 
 当前三队4/4/4上限12，本树root+现三成员=4。普通进展只status→dashboard；GO只完整大task独立blocker与Done(1)，不重复私信/转发。历史真实两query2/2只引用，不新增模型预算。
@@ -385,3 +385,5 @@ DPERF04原九范围Interface消歧（固定c837，未领取）：[固定报告](
 
 
 2026-10-06 15:52 UTC 原REQ45/MATURE06-05：[installed core0.3.22 stop/cancel原研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)与[管理核验](../../docs/evidence/web-platform/gate-voice-intake.json)。core send会cancel并取当前text，不等待final；官方MediaRecorder示例若stop提前resolve可能先解除转写callbacks。未来同一composer adapter必须定义停止等待final后可编辑/明确SendQueue与取消丢弃，私有pane/auth/draft lease覆盖异步mic获取及每个await，旧回调不能清新session或改新稿。记录/转写状态、5秒有界结束与cleanup只作为来源/候选约束；不是已实现能力或已复现产品bug，无mic/provider/browser/新claim，不改变当前Recovery优先级。
+
+2026-10-06 16:10 新GO优先级已落原DPERF04：[原9scope正式领取](../../docs/evidence/web-platform/dperf04-take-receipt.json)，W01在RELEASE A3安全收口后切独立树源码，不等整个发布/Recovery；无新task层、agent或运行许可。旧“未take”段落均为对应时点历史。新增[GO两个API样本](../../docs/evidence/web-platform/dperf04-go-source-priority.json)不当性能基准；原声明/现场proof/实时claim与disclosure验收不变。

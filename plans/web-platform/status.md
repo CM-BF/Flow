@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:59 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:13 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 旧362两history红封存；2691已修1a7 P1且源码获审，A2单次free未达标/无gate/0运行/窗口归Lead；Recovery1b8材料源码已闭合，27direct/browser未跑 |
-| 下一可用交付 | RELEASE新af51组合待后续实质窗口/资源条件，原余176.126秒先A再B；Recovery仅准备当前27direct准入材料，禁止复用旧2498预检 |
-| 当前阻塞 | ACTIVE: A2 free1,103,237,120B低于1,107,296,256B；新backend尚无成功A/B，Recovery真实IDB/App未验；无本组运行窗口/个人更新 |
+| 当前产出 | 新后台A3附件单独输入通过，混合输入因空间停止未完；清理完成/窗口归Lead。DPERF04已领取源码；Recovery27未运行 |
+| 下一可用交付 | W01在发布安全点后实现首页摘要与按需核验；发布待新的资源条件继续完整A/B；恢复检查入口已备，保持原预算 |
+| 当前阻塞 | ACTIVE: A3资源停止，尚无完整A/B兼容；Recovery单次准入不足，真实IDB/App未验；源码实施正常，个人版本未更新 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -123,3 +123,5 @@ DPERF既有后继：[单次首页观察/固定摘要设计](../../docs/evidence/
 
 
 连接页插件方案仅归WPF-001-05/REQ22–23：[原报告](../../docs/evidence/web-platform/connection-plugin-2498/report.md)与[来源核验](../../docs/evidence/web-platform/connection-plugin-2498-intake.json)为只读候选，六产品+两专测不是已领取范围。Recovery724的RB1–3源码窄审已闭合、worker断言另审、browser/22direct未跑，PG/Chrome窗口仍Lead；本管理未采样空间或个人服务。
+
+DPERF04直接D01子task已[原九scope COMMITTED](../../docs/evidence/web-platform/dperf04-take-receipt.json)，W01独立树源码派工；[首canonical704894已正常推送且parser0](../../docs/evidence/web-platform/dperf04-source-ready.json)，registry与页面展示不由此推断。原DPERF03/WPF-001-36完成记录保持原范围。

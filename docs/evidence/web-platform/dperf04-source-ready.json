@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-06T16:13:35.001239+00:00",
+  "taskId": "WPF-DPERF04",
+  "parent": "D01",
+  "coLead": "Web /root",
+  "owner": "w01_owner",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md",
+  "firstCanonical": "704894e97f573f7683e1c3fa37020fc0d9a5205c",
+  "branch": "codex/dashboard-summary-detail",
+  "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "localOriginLsRemoteEqual": true,
+  "dirtyAtCheck": "",
+  "claimReceipt": "dperf04-take-receipt.json",
+  "parser": {
+    "tree": "dashboard-summary-detail",
+    "path": "plans/wpf-dperf04-summary-detail/status.md",
+    "id": "WPF-DPERF04",
+    "errors": [],
+    "humanComplete": true,
+    "todos": 3
+  },
+  "sourceState": "SOURCE_READY",
+  "registryState": "AWAITING_LEAD_REGISTRATION; fixedorigin83f535 noentry beforetake",
+  "uiState": "NOT_OBSERVED; no4320GET/reload",
+  "review": "NOT_STARTED",
+  "checks": "NOT_RUN",
+  "ownerContinues": "Source implementation authorized; source may become dirty normally, no fixedcandidateapproval",
+  "handoff": "Lead: register this exact unique source under existingD01; retainowner, do not replicate status"
+}

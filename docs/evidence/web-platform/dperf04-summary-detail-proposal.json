@@ -1,6 +1,6 @@
 {
   "at": "2026-10-06T14:19:38.081908+00:00",
-  "state": "SOURCE_PROVISIONED_AWAITING_OWNER_WINDOW_AND_FRESH_CLAIM",
+  "state": "COMMITTED_SOURCE_READY_IMPLEMENTING",
   "candidateTaskId": "WPF-DPERF04",
   "directParent": "D01",
   "continuity": "Existing WPF-001-36 / D01 DPERF successor; prior DPERF01–03 completion remains unchanged. No third task layer or new broad plan.",
@@ -9,7 +9,7 @@
   "candidateBranch": "codex/dashboard-summary-detail",
   "candidateBase": "c837b5dccaea429b0112d1c7e0c752c41334204a",
   "sourcePreflight": "dperf04-source-scope-preflight.json",
-  "priority": "Below Recovery and usable preview; above decorative work. Release presently resource-gated and W01 available, so a small independent Node source slice may proceed only after explicit structure approval/legal provisioning/COMMITTED.",
+  "priority": "GO latest explicit priority: implement existing nine scopes now, no wait for entire release. Actual admitted RELEASE runtime retains priority; one W01 source writer sequentially switches at safe points.",
   "scopes": [
     "apps/execution-dashboard/src/read-model.mjs",
     "apps/execution-dashboard/src/aggregate.mjs",
@@ -72,11 +72,9 @@
     "resourceGate": "No new build/PG/Chrome/install permission. SOURCE_PROVISIONED is not runtime admission; latest shared window and dated resource facts are in resource-window-current.json."
   },
   "notDone": [
-    "No take or implementation; worktree has been provisioned by Lead",
-    "No source edit or test/experiment",
-    "No performance improvement measured",
-    "No deployment/service request",
-    "No shared Git config write"
+    "No fixed implementation candidate/review, tests or measured performance result",
+    "Registry/actualUI not implied bySOURCE_READY",
+    "No sharedGitconfig writes"
   ],
   "candidateCanonical": "plans/wpf-dperf04-summary-detail/status.md",
   "secondOpinion": "dperf04-second-opinion/report.md",
@@ -110,9 +108,9 @@
     "root dependency manifests/lock"
   ],
   "allNineScopeObservation": {
-    "observedAt": "2026-10-06T14:20:31.828Z",
+    "observedAt": "2026-10-06T16:09:59.472Z",
     "conflicts": [],
-    "notAuthority": "Read-only proposal inventory, not reservation or COMMITTED; repeat fresh only after root approval and safe provisioning."
+    "receipt": "dperf04-take-receipt.json"
   },
   "rootApproval": {
     "scopeCount": 9,
@@ -121,16 +119,16 @@
     "parent": "D01",
     "constraints": "sourceCurrent/links.basis only; old snapshot/CLI semantics unchanged; independent read-only PG observations; no coordination writes; Node30s/tmp8MiB; later browser60s including15cleanup/evidence8MiB; source checkout20MiB via Lead sole Git owner."
   },
-  "ownerScheduling": "When RELEASE03 resource conditions recover, W01 pauses this task at a safe point and returns to the higher-priority usable preview. Never write two feature implementations concurrently in one owner window.",
+  "ownerScheduling": "W01 closes A3 raw and original-four phaseB label metadata/source correction then switches to independent DPERF04 source. No concurrent feature edits by same owner. No Node/browser/PG test admission from this receipt.",
   "sourceRequest": {
-    "state": "SOURCE_PROVISIONED_AWAITING_OWNER_WINDOW_AND_FRESH_CLAIM",
+    "state": "SOURCE_PROVISIONED_AND_COMMITTED",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
     "branch": "codex/dashboard-summary-detail",
     "fixedBase": "c837b5dccaea429b0112d1c7e0c752c41334204a",
     "sourceSet": "dperf04-source-scope-preflight.json trackedSourceCheckoutEstimate.selection",
     "actualProvisionReceipt": "dperf04-source-provision.json",
-    "claimReceipt": null,
-    "canonicalNotCreated": "plans/wpf-dperf04-summary-detail/status.md"
+    "claimReceipt": "dperf04-take-receipt.json",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md"
   },
   "actualSourceProvision": {
     "receipt": "dperf04-source-provision.json",
@@ -138,9 +136,9 @@
     "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
     "branch": "codex/dashboard-summary-detail",
     "cleanAtCheck": true,
-    "scopeClaimed": false,
-    "implementationStarted": false,
-    "ownerPriority": "W01 RELEASE03 first; no pre-reserved writer forDPERF04"
+    "scopeClaimed": true,
+    "implementationStarted": true,
+    "ownerPriority": "Source dispatched after RELEASE safety point; actual code start follows owner canonical"
   },
   "declarationVersusProofAcceptance": {
     "source": "Root fixedc837 aggregate/app readonly review",
@@ -185,5 +183,35 @@
       "Dashboard remains read-only. Only original atomic take/amend/accept/release COMMITTED receipt grants write authority; stale or invisible claims are never automatic release."
     ],
     "execution": "Source-only P2 visibility gap; no overlap evidence or runtime validation; same nine scopes and budgets, no take"
-  }
+  },
+  "updatedAt": "2026-10-06T16:12:56.808881+00:00",
+  "currentClaim": {
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 1,
+    "taskId": "WPF-DPERF04",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "branch": "codex/dashboard-summary-detail",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "docs/evidence/wpf-dperf04",
+      "plans/wpf-dperf04-summary-detail"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T16:10:21.626Z",
+    "createdAt": "2026-10-06T16:10:21.626Z"
+  },
+  "newPriorityEvidence": "dperf04-go-source-priority.json",
+  "sourceReady": "dperf04-source-ready.json"
 }

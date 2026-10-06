@@ -1,15 +1,12 @@
 # 成熟聊天大task来源与登记队列
 
+**当前发布：A3 RESOURCE_STOP，清理完成，PG/Chrome窗口已交回Lead。** [管理逐hash intake](release03-a3-intake.json) / [root独立审查](release03-a3-root-review.json) / [唯一资源入口](resource-window-current.json)。固定269103源码、实际HEAD0b3e、backendaf51、formal506/d629。16:09:20.610Z启动，4,109ms；attachment-only实际report/history/detail通过，mixed被资源清理中断，没有产品不兼容结论。minfree1,090,244,608B低于stop1,090,519,040B；DB删除/errors=[]/唯一worker SIGTERM，9raw47,136B原样保留。**累计7,983ms，余172,017ms；B/Chrome NOT_RUN、compatibilityId=null、无绿报告/发布。** raw phaseB=FAILED是worker缺失时的报告标签问题，root已派原四scope窄修，绝不回填raw或为标签重跑。A3不是完整成功A10，不能供B复用。旧362两红/3,874ms与A2 NOT_RUN各保历史。
 
-**最新A2：NOT_RUN，PG/Chrome窗口已立即交回Lead。** 2026-10-06 **15:58:36.348208Z** 唯一fresh可用 **1,103,237,120B < start1,107,296,256B**，差4,059,136B；不复采/不降门槛/不重试。原四scope bfb v3/无overlap、获审2691两源与freeze HEAD0b3e、17runner依赖、af51两源+外部13metadata+10只读依赖、d629 artifact/source freeze及旧raw/清理账全通过，但**未创建gate、0新A/PG/Chrome、累计仍3,874ms/余176,126ms**。[本次完整准入与来源](release03-a2-not-run-intake.json) / [原只读核验](release03-a2-not-run-admission.json)。首管理helper把同树contracts依赖误按第三方字段读取，在0space/0run阶段停止，按固定362实际字段核正后仅一次空间观察，原helper错误保留，不当产品red。
+**DPERF04已原子领取并正式派W01源码。** [fresh preflight](dperf04-take-preflight.json) / [COMMITTED](dperf04-take-receipt.json)：b554ddb6-094e-46db-90f3-b9e5deb78edb v1，16:10:21.626Z，原九literal，独立dashboard-summary-detail/codex同名、base c837 clean、无scope冲突。直接父D01/co-leadWeb/root；W01完成RELEASE安全收口后已切源码，首canonical **704894e97f573f7683e1c3fa37020fc0d9a5205c** normalpush/local=ls-remote、首提交clean，实际parser0/3TODO/人类完整，[唯一SOURCE_READY](dperf04-source-ready.json)。请Lead只登记该owner的 `plans/wpf-dperf04-summary-detail/status.md`，当前实现继续、不等登记。fixedorigin/main83f535 registry尚无此source，不能把take当已登记展示。[GO新优先级及单次观测](dperf04-go-source-priority.json)为静态20ms、snapshot8s超时后10428ms/2,071,666B/165task，非统计基准或宕机。本组无新4320请求。Node30s/后置browser60s预算仍保留，当前只源码，不自动运行。
 
-[root2691窄审](release03-2691-source-review-root.json)已闭合1a7 detail/reference P1，contract59cde31c…/11,859B；旧CHANGES_REQUESTED历史不改。新af51尚无成功A可供B reuse，不签绿报告/不发布；Recovery当前27direct仅只读准备，不继承该空间读数或测试窗口，W01/panels已知停止运行。
+**Recovery27入口已重绑，但本轮NOT_RUN。** [新政策准入原证据](recovery01-1b8-direct-new-policy-not-run.json) / [实际runner19源绑定](recovery01-1b8-rebound-manifest.json)。1b8实现/current0eef clean，原6ffv4二十一scope；Lead16:03纯检查许可后root采用start1GiB+16MiB、stop1GiB+8MiB，仅限network-deny单文件1worker/mockIDB。manager16:06:13唯一freshfree894,640,128B未达start1,090,519,040B，无gate/0test；旧32/16政策与raw保留，A/B门槛不变。runner真实存在并已pin，原direct2.540秒/余27.460不变；真实IDB/browser仍未验，正式review NOT_STARTED。后来的A3新外部窗口不重用作Recovery许可。
 
-**当前：RELEASE03 A-only实际两项失败并完成清理，总PG/Chrome窗口已交回Lead。** [实际证据与管理逐hash核验](release03-a-actual-intake.json) / [root独立retained-evidence审查](release03-a-actual-362-review-root.json) / [唯一资源入口](resource-window-current.json)。固定432b脚本、backend362、formal artifact506/d629；15:27:55.348Z开始，15:27:59.219Z清理完。attachment-only `POST /api/runner/events` 500；mixed200/accepted1，但history仅knowledge为known，未满足v2材料unknown/metadata-unavailable。两原raw保留，**B/Chrome NOT_RUN、compatibilityId=null、无SVC绿报告**。累计 **3.874/180秒，余176.126秒**；10raw共80,470B。唯一DB已删除、cleanup errors=[]、worker381 exit0，监督器结束；不是准入/清理失败，不推断个人服务表现。
-
-**Lead已直接读raw并接收，新的更高优先后继是固定修复组合。** 原backend owner/Lead准备 **362 + main cde6646 store.ts三行已审history修复**，必须交immutable新HEAD/tree/source清单，并把源码tuple与实际部署tuple分开。W01不改共享源、不改旧失败期望、不重跑未变362、不覆盖当前原WT；同descriptor与原剩余预算、8MiB、fresh窗口/资源/合法scope复验，**新A通过后才B，全兼容后才原受管个人发布流程**。当前个人backend362/v15、Web8d8/caa1/v2未变；最终源码输入b298/af51已到，尚无实际兼容/部署通过。普通步骤沿既有授权，无需GO重复批准；DPERF04尚未take，源码启动低于此发布路径。
-
-本次[唯一fresh准入](release03-a-second-admission.json)核15:26:53.773Z bfb v3原4、432b两hash、17只读依赖与clean；新事件后仅一次free1,123,295,232B采样。[gate](release03-a-second-gate.json)已使用一次，不可复用。旧15:07未准入/四树低空间记录仅历史。同一fresh账本[Recovery6ff v4原21唯一writer](recovery01-claim-1526-source-only.json)无overlap，panels只修源；第二22direct/browser未运行，不因A结束自动获得窗口。Lead可安排O14/O15后续独立fresh窗口，本组不占空窗、不补空间/4320/个人服务采样。
+**可逆sparse候选仅供Lead核定**：[W01短收口](sparse-next-candidates/report.md)。PROFILEUX存在活跃watcher，明确KEEP；PERF03/DPERF01/CONTEXT02仅名义候选，外部reverse依赖和精确历史证据闭包未完成，未知仍KEEP。0本组sparse/删除/新空间采样，不因delivered/released推断无人消费。ATTACHI依赖donor、CONTEXTI活fixture继续KEEP。
 
 ## SVC05 窗口已正式关闭；D06 原源继续（本段取代窗口暂冻状态）
 
@@ -21,7 +18,7 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 固定6570五source已main **cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd**，图源仍aeb。原owner仅metadata收口 **94ca7f90558966f9ffab53d6528cb5d5ae0ff3b2** normalpush/local=ls-remote、clean，parser0；五source当前/target/main/manifest全同，6570非main祖先，准确为受控source intake。[D06原观察](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-aeb/main-observation.json)。全四scope停写后 **6cad v2 released13:09:51.032Z**，[fresh前核](d06-aeb-main-release-before.json) / [原receipt](d06-aeb-main-release-receipt.json)。未重跑18/图浏览器。随后发现plan旧无粗体checkbox漏改，另fresh单路径eccd968a v1仅纠正plan.md，final **6d05ec467581e85d21d5532fd29a2bebd1411b41** normalpush/ls-remote/clean后 **eccd v2 released2026-10-06T13:13:27.302Z**，[新take](d06-plan-consistency-take-receipt.json) / [新release](d06-plan-consistency-release-receipt.json)。旧6cad释放历史不改，当前所有范围停写；不为checkbox重测。
 
-## 当前优先队列（当前安全点；以下较早时点只作历史）
+## 较早安全点与实施沿革（历史；当前事实以页首及唯一owner status为准）
 
 **Recovery27 direct 只读材料 READY_NOT_RUN**：[报告](recovery01-1b8-direct-readiness/report.md) / [19源、原21claim与既有入口绑定](recovery01-1b8-direct-readiness/readiness.json)，合14,882B。实现1b8/current metadata0eef clean，原6ffv4唯一writer；旧2498 runner/config/sandbox实际存在且未运行，但preflight必须按实际metadataHEAD和19hash重绑。Node24.20/Vitest4.0.18/52个既有只读links已核身份，无install/import。原direct30s已用2.540、余27.460，work≤22.460+cleanup≥5；start1,107,296,256B/stop1,090,519,040B与A相同，tmp8MiB/log2MiB/500ms。A2已不足，故不再为direct采一次或降门槛；0gate/0run/0新space，等真实外部资源/窗口变化，RELEASE优先并串行。
 

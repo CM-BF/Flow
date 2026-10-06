@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:59 UTC |
+| 最近更新 | 2026-10-06 16:13 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 正式format2已备；fixed362实际A两history失败，原raw封存/DB与进程清理完成，B/Chrome NOT_RUN，无兼容绿回执 |
-| 下一可用交付 | 2691源修已APPROVED；af51/artifact依赖核通过但A2单次空间不足，无gate/0运行/窗口归Lead；等新实质条件再原预算先A后B |
-| 当前阻塞 | ACTIVE: 新组合尚无实际成功A/B；A2 free1,103,237,120B<1,107,296,256B，未执行并交回窗口；旧362两红保留，不等整个Recovery/SVC06 |
+| 当前产出 | 正式产物已备；新后台A3附件单独输入实际通过，混合输入因空间停止；清理完成，无完整兼容绿回执 |
+| 下一可用交付 | 保留A3部分证据及旧362两红，待新资源条件按剩余172.017秒完成A/B；原受管发布入口不变 |
+| 当前阻塞 | ACTIVE: A3达到资源停止线；混合输入与实际App未验，B/Chrome未运行；个人预览保持原版本 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -29,7 +29,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-01-01 | in-progress | Web co-lead | builtin材质片已审；单一typed catalogue/有限值域/映射/default仍开放，见[固定研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。 |
 | WPF-MATURE-01-02 | in-progress | Web co-lead | 外部theme材质/reload仍开放；附件Files入口已走P01但Picker条目动作覆盖缺口沿REQ22–23后继，见plan与固定9eec审计。 |
-| WPF-MATURE-01-03 | in-progress | Web co-lead | 实际空态、长正文、代码/表格、streaming、tool/thinking展开、错误截图；不遮行动错误或unknown。 |
+| WPF-MATURE-01-03 | in-progress | Web co-lead | 实际空态、长正文、代码/表格、streaming、tool/thinking展开、错误截图；新增GO短聊正文优先验收见plan，异常/unknown仍可达。 |
 | WPF-MATURE-01-04 | in-progress | Web co-lead | 390px与桌面、键盘焦点/IME、reduced-motion、不支持/禁用backdrop-filter时不透明可读fallback。 |
 | WPF-MATURE-01-05 | pending | Web co-lead | 实际App前后图/交互与固定产物；RS13按唯一asset去重、初始依赖图/延后chat及parse/可输入/首次chat取舍；与SVC owner定义哈希asset cache/encoding和HTML/身份/API边界，有界冷暖/版本切换，未实施。 |
 
