@@ -11,3 +11,5 @@ read-cache工具只管理现投影的LRU/UTF8字节，不另造网络或事实�
 32conversation投影正文缓存预算66MiB是UTF8 body计量，不是heap/全进程边界；metadata/turn/history、runtime/stream自有状态、generic task/workspace、feed未声称有界。禁止从DOM消失或少一次HTTP推JS回收；直接验证owned binding unsubscribe/closed controller无late写，再用真实App测DOM/HTTP/draft/receipt现象。
 
 直接验收：32满额保稿/route不变及已有view重开；所有保护原因；session订阅释放；history/detail/crypto迟到success/reject/finally；两类LRU容量与错误记录/显式重读；真实App反复关闭clean、保护draft/knowledge/receipt及原key、双pane隔离。沿现HTTPfixture独立动态端口、累计90秒含至少10秒清理/8MiB，超预算如实partial，不重复旧8项大套。
+
+晚到成功受理会在App accepted回调重新核当前group（ref）及同key已迁移draft/保护事实：已关闭且没有材料才最终释放；新draft存在则保留。普通关闭前的保护快照不被旧render闭包覆盖。
