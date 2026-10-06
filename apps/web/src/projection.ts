@@ -302,13 +302,15 @@ export class TaskProjection {
   }
 
   async submit(input: TaskSubmission): Promise<string | undefined> {
+    const generation = this.generation;
     const result = await this.command(
       `submit:${JSON.stringify(input)}`,
       (key) => this.client.submit(input, key),
     );
     if (!result) return;
     this.updateSummary(result.task);
-    await this.select(result.task.id);
+    // A late acknowledgement must not reopen a view the user already closed.
+    if (generation === this.generation) await this.select(result.task.id);
     return result.task.id;
   }
 

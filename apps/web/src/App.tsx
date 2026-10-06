@@ -2,33 +2,53 @@ import {
   useEffect,
   useState,
   useSyncExternalStore,
-  type FormEvent,
+  type ReactNode,
+  type KeyboardEvent,
 } from "react";
 import { FlowClient } from "@flow/client";
 import {
-  taskFixtures,
   TERMINAL_STATUSES,
-  type TaskSnapshot,
   type TaskStatus,
-  type TaskSubmission,
+  type TaskSummary,
 } from "@flow/contracts";
 import {
-  ArrowUpRight,
-  Check,
-  ChevronLeft,
-  CircleHelp,
-  CircleStop,
-  Layers3,
-  Link2,
+  Columns2,
+  Files,
+  MessageSquare,
   Moon,
+  PanelLeftClose,
+  PanelRight,
   Plus,
   RefreshCw,
+  Settings2,
   Sun,
-  Waves,
+  Terminal,
+  X,
 } from "lucide-react";
+import {
+  WorkspacePanels,
+  type WorkspaceTabId,
+} from "./components/workspace/WorkspacePanels";
 import { TaskProjection } from "./projection";
-import { TaskThread } from "./TaskThread";
-import { applyTheme, initialTheme, themes } from "./themes";
+import { TaskThread, fixtureMode, type DraftState } from "./TaskThread";
+import { Button } from "./components/ui/button";
+import { TooltipProvider } from "./components/ui/tooltip";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "./components/ui/dialog";
+import { applyTheme, initialTheme } from "./themes";
+import {
+  closeChat,
+  mergeChats,
+  openChat,
+  splitChat,
+  type ChatGroup,
+} from "./workspace-state";
 
 const statusLabels: Record<TaskStatus, string> = {
   queued: "Queued",
@@ -40,510 +60,720 @@ const statusLabels: Record<TaskStatus, string> = {
   cancelled: "Cancelled",
   uncertain: "Needs reconciliation",
 };
-const fixtureChoices = Object.entries(taskFixtures) as [
-  keyof typeof taskFixtures,
-  TaskSubmission,
-][];
-const isFixture = import.meta.env.VITE_FLOW_FIXTURE === "true";
-const formatDate = (date: string) =>
-  new Intl.DateTimeFormat("en", {
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-  }).format(new Date(date));
-
-export function StatusBadge({ status }: { status: TaskStatus }) {
+function Status({ status }: { status: TaskStatus }) {
   return (
-    <span className={`badge status-${status}`}>
-      <span className="status-dot" />
+    <span className={`flow-status status-${status}`}>
+      <i aria-hidden="true" />
       {statusLabels[status]}
     </span>
   );
 }
-
-function NewTask({
-  projection,
-  onCreated,
-  onClose,
-  pending,
+function IconButton({
+  label,
+  children,
+  onClick,
+  active = false,
 }: {
-  projection: TaskProjection;
-  onCreated: (id: string) => void;
-  onClose: () => void;
-  pending: boolean;
+  label: string;
+  children: ReactNode;
+  onClick: () => void;
+  active?: boolean;
 }) {
-  const [title, setTitle] = useState("");
-  const [prompt, setPrompt] = useState("");
-  const [harness, setHarness] = useState<"fixture" | "claude">(
-    isFixture ? "fixture" : "claude",
-  );
-  const [scenario, setScenario] =
-    useState<keyof typeof taskFixtures>("success");
-  const [expected, setExpected] = useState("");
-  const submit = async (event: FormEvent) => {
-    event.preventDefault();
-    const base =
-      harness === "fixture"
-        ? taskFixtures[scenario]
-        : { harness: "claude" as const };
-    const id = await projection.submit({
-      ...base,
-      title: title.trim(),
-      prompt,
-      ...(expected
-        ? { verification: { kind: "contains" as const, expected } }
-        : {}),
-    });
-    if (id) onCreated(id);
-  };
   return (
-    <section className="new-task">
-      <button className="text-button back" onClick={onClose}>
-        <ChevronLeft size={16} />
-        Back to workspace
-      </button>
-      <h1>What would you like to do?</h1>
-      <p className="lead">Give Flow a task. Come back when it needs you.</p>
-      <form onSubmit={submit}>
-        <label>
-          Task title
-          <input
-            autoFocus
-            required
-            maxLength={180}
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            placeholder="A clear name for this task"
-          />
-        </label>
-        <label>
-          Instructions
-          <textarea
-            required
-            maxLength={16000}
-            rows={6}
-            value={prompt}
-            onChange={(event) => setPrompt(event.target.value)}
-            placeholder="Describe the outcome, constraints, and what a good result looks like."
-          />
-        </label>
-        <div className="form-row">
-          <label>
-            Execution backend
-            <select
-              value={harness}
-              onChange={(event) =>
-                setHarness(event.target.value as "fixture" | "claude")
-              }
-            >
-              <option value="claude">Claude runner</option>
-              <option value="fixture">Contract fixture</option>
-            </select>
-          </label>
-          <label>
-            Acceptance text (optional)
-            <input
-              maxLength={500}
-              value={expected}
-              onChange={(event) => setExpected(event.target.value)}
-              placeholder="Text the artifact must contain"
-            />
-          </label>
-        </div>
-        {harness === "fixture" && (
-          <label>
-            Fixture scenario
-            <select
-              value={scenario}
-              onChange={(event) => {
-                const name = event.target.value as keyof typeof taskFixtures;
-                setScenario(name);
-                setTitle(taskFixtures[name].title);
-                setPrompt(taskFixtures[name].prompt);
-              }}
-            >
-              {fixtureChoices.map(([name, fixture]) => (
-                <option key={name} value={name}>
-                  {fixture.title}
-                </option>
-              ))}
-            </select>
-          </label>
-        )}
-        <div className="form-footer">
-          <p>
-            Accepted tasks live at the center. Closing this page does not cancel
-            them.
-          </p>
-          <button className="primary" disabled={pending}>
-            {pending ? "Waiting for acceptance…" : "Create task"}
-            <ArrowUpRight size={16} />
-          </button>
-        </div>
-      </form>
-    </section>
+    <button
+      className={`flow-icon ${active ? "active" : ""}`}
+      aria-label={label}
+      title={label}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
-
-function TaskFacts({ task }: { task: TaskSnapshot }) {
-  const costLabel = {
-    sdk_estimate: "SDK estimate",
-    provider_actual: "Provider actual",
-    mixed: "Mixed sources",
-    unknown: "Unknown source",
-  }[task.usage.costKind];
+function navigateChatTabs(
+  event: KeyboardEvent<HTMLButtonElement>,
+  group: ChatGroup,
+  id: string,
+  activate: (id: string) => void,
+  close: (id: string) => void,
+) {
+  const index = group.tabs.indexOf(id);
+  let next = index;
+  if (event.key === "ArrowRight") next = (index + 1) % group.tabs.length;
+  else if (event.key === "ArrowLeft")
+    next = (index - 1 + group.tabs.length) % group.tabs.length;
+  else if (event.key === "Home") next = 0;
+  else if (event.key === "End") next = group.tabs.length - 1;
+  else if (event.key === "Delete") {
+    event.preventDefault();
+    close(id);
+    return;
+  } else return;
+  event.preventDefault();
+  const target = group.tabs[next]!;
+  activate(target);
+  document.getElementById(`tab-${target}`)?.focus();
+}
+function CloseChatButton({
+  view,
+  onClose,
+}: {
+  view: View;
+  onClose: () => void;
+}) {
+  const state = useSyncExternalStore(
+    view.projection.subscribe,
+    view.projection.getSnapshot,
+  );
   return (
-    <aside className="task-facts" aria-label="Task details">
-      <h2>Task details</h2>
-      <dl>
-        <dt>Execution</dt>
-        <dd>
-          <StatusBadge status={task.status} />
-        </dd>
-        <dt>Artifact acceptance</dt>
-        <dd>
-          <span className={`badge verification-${task.verificationStatus}`}>
+    <button
+      aria-label={`Close ${state.task?.title ?? view.title}`}
+      tabIndex={-1}
+      onClick={onClose}
+    >
+      <X size={12} />
+    </button>
+  );
+}
+function ChatTitle({ view }: { view: View }) {
+  const state = useSyncExternalStore(
+    view.projection.subscribe,
+    view.projection.getSnapshot,
+  );
+  return state.task?.title ?? view.title;
+}
+const noSubscription = () => () => undefined;
+const noSnapshot = () => null;
+function ChatListItem({
+  task,
+  view,
+  selected,
+  onSelect,
+}: {
+  task: TaskSummary;
+  view?: View;
+  selected: boolean;
+  onSelect: () => void;
+}) {
+  const snapshot = useSyncExternalStore(
+    view?.projection.subscribe ?? noSubscription,
+    view ? () => view.projection.getSnapshot().task : noSnapshot,
+  );
+  const latest = snapshot ?? task;
+  return (
+    <button
+      title={latest.title}
+      className={selected ? "selected" : ""}
+      onClick={onSelect}
+    >
+      <i
+        className={`status-dot status-${latest.status}`}
+        aria-label={statusLabels[latest.status]}
+      />
+      <span>{latest.title}</span>
+    </button>
+  );
+}
+interface View {
+  projection: TaskProjection;
+  title: string;
+}
+function ChatPane({
+  viewId,
+  view,
+  drafts,
+  onAccepted,
+  onOpenReference,
+  onActivate,
+}: {
+  viewId: string;
+  view: View;
+  drafts: Map<string, DraftState>;
+  onAccepted: (id: string) => void;
+  onOpenReference: (id: string) => void;
+  onActivate: () => void;
+}) {
+  const state = useSyncExternalStore(
+    view.projection.subscribe,
+    view.projection.getSnapshot,
+  );
+  const [confirm, setConfirm] = useState(false);
+  const task = state.task;
+  return (
+    <section
+      className="flow-chat-pane"
+      onFocusCapture={onActivate}
+      onPointerDown={onActivate}
+      aria-label={task?.title ?? "New chat"}
+    >
+      {task && (
+        <div
+          className="flow-task-bar"
+          data-extension-slot="chat.message.actions"
+        >
+          <Status status={task.status} />
+          <span className={`verification-${task.verificationStatus}`}>
             {task.verificationStatus === "passed"
               ? "Verified"
               : task.verificationStatus === "failed"
                 ? "Verification failed"
                 : "Verification pending"}
           </span>
-        </dd>
-        <dt>Backend</dt>
-        <dd>
-          {task.harness === "fixture" ? "Contract fixture" : "Claude runner"}
-        </dd>
-        <dt>Last updated</dt>
-        <dd>{formatDate(task.updatedAt)}</dd>
-        <dt>Task ID</dt>
-        <dd className="identifier">{task.id}</dd>
-      </dl>
-      <div className="usage">
-        <h2>Usage</h2>
-        <dl>
-          <dt>Input tokens</dt>
-          <dd>{task.usage.inputTokens?.toLocaleString() ?? "Unknown"}</dd>
-          <dt>Output tokens</dt>
-          <dd>{task.usage.outputTokens?.toLocaleString() ?? "Unknown"}</dd>
-          <dt>Cost</dt>
-          <dd>
-            {task.usage.costUsd === null
-              ? "Unknown"
-              : `$${task.usage.costUsd.toFixed(4)}`}
-            <small>{costLabel}</small>
-          </dd>
-        </dl>
-        {task.usage.incomplete && (
-          <p className="muted">Some usage is still unknown.</p>
-        )}
+          <details className="flow-usage">
+            <summary>Usage</summary>
+            <dl>
+              <dt>Input tokens</dt>
+              <dd>{task.usage.inputTokens ?? "Unknown"}</dd>
+              <dt>Output tokens</dt>
+              <dd>{task.usage.outputTokens ?? "Unknown"}</dd>
+              <dt>Cost</dt>
+              <dd>
+                {task.usage.costUsd === null
+                  ? "Unknown"
+                  : `$${task.usage.costUsd.toFixed(4)}`}{" "}
+                · {task.usage.costKind}
+              </dd>
+              <dt>Coverage</dt>
+              <dd>{task.usage.incomplete ? "Incomplete" : "Complete"}</dd>
+              <dt>Task ID</dt>
+              <dd>{task.id}</dd>
+            </dl>
+          </details>
+          <span className={`connection ${state.connection}`} role="status">
+            {state.connection === "live"
+              ? "Live"
+              : state.connection === "disconnected"
+                ? "Offline · task continues"
+                : state.connection === "reconnecting"
+                  ? "Reconnecting…"
+                  : "Connecting…"}
+          </span>
+          {!TERMINAL_STATUSES.includes(task.status) &&
+            task.status !== "cancel_requested" && (
+              <button className="flow-link" onClick={() => setConfirm(true)}>
+                Cancel task
+              </button>
+            )}
+        </div>
+      )}
+      {state.error && (
+        <div className="flow-notice" role="alert">
+          {state.error}
+          <button
+            className="flow-link"
+            onClick={() => view.projection.clearError()}
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
+      <div className="flow-thread">
+        <TaskThread
+          viewId={viewId}
+          state={state}
+          projection={view.projection}
+          drafts={drafts}
+          onAccepted={onAccepted}
+          onOpenReference={onOpenReference}
+        />
       </div>
-      <p className="quiet-note">
-        <Layers3 size={17} />
-        Full details stay folded until you open them.
-      </p>
-    </aside>
+      <Dialog open={confirm} onOpenChange={setConfirm}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Cancel this task?</DialogTitle>
+            <DialogDescription>
+              The runner will be asked to stop. Work already completed will be
+              kept.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setConfirm(false)}>
+              Keep running
+            </Button>
+            <Button
+              disabled={state.pending}
+              onClick={() => {
+                setConfirm(false);
+                void view.projection.cancel();
+              }}
+            >
+              Confirm cancellation
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </section>
   );
 }
-
 function Workspace({
-  projection,
+  client,
   onDisconnect,
+  theme,
+  onTheme,
 }: {
-  projection: TaskProjection;
+  client: FlowClient;
   onDisconnect: () => void;
+  theme: string;
+  onTheme: () => void;
 }) {
-  const state = useSyncExternalStore(
-    projection.subscribe,
-    projection.getSnapshot,
-  );
-  const [newTask, setNewTask] = useState(false);
+  const [catalog] = useState(() => new TaskProjection(client));
+  const list = useSyncExternalStore(catalog.subscribe, catalog.getSnapshot);
+  const [views] = useState(() => new Map<string, View>());
+  const [drafts] = useState(() => new Map<string, DraftState>());
+  const [groups, setGroups] = useState<ChatGroup[]>([]);
+  const [activeGroup, setActiveGroup] = useState("main");
+  const [sidebar, setSidebar] = useState(() => window.innerWidth > 800);
   const [query, setQuery] = useState("");
-  const [cancelConfirm, setCancelConfirm] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelTabs, setPanelTabs] = useState<Record<string, WorkspaceTabId>>(
+    {},
+  );
+  const [loadingList, setLoadingList] = useState(false);
+  const refreshChats = async (more = false) => {
+    setLoadingList(true);
+    catalog.clearError();
+    await catalog.list(more);
+    setLoadingList(false);
+  };
+  const ensureView = (id: string): View => {
+    let view = views.get(id);
+    if (!view) {
+      view = {
+        projection: new TaskProjection(client),
+        title: id.startsWith("draft-")
+          ? "New chat"
+          : (list.tasks.find((task) => task.id === id)?.title ?? "Task"),
+      };
+      views.set(id, view);
+      view.projection.setOnline(navigator.onLine);
+      if (!id.startsWith("draft-")) void view.projection.select(id);
+    }
+    return view;
+  };
+  const newChat = () => {
+    const id = `draft-${crypto.randomUUID()}`;
+    ensureView(id);
+    if (window.innerWidth <= 800) setSidebar(false);
+    setGroups((previous) =>
+      previous.length
+        ? openChat(previous, activeGroup, id)
+        : [{ id: "main", tabs: [id], activeId: id }],
+    );
+  };
   const select = (id: string) => {
-    setNewTask(false);
-    setCancelConfirm(false);
+    ensureView(id);
+    if (window.innerWidth <= 800) setSidebar(false);
+    setGroups((previous) => {
+      const group = previous.find((item) => item.tabs.includes(id));
+      if (group) setActiveGroup(group.id);
+      return previous.length
+        ? openChat(previous, activeGroup, id)
+        : [{ id: "main", tabs: [id], activeId: id }];
+    });
     history.replaceState(null, "", `#task=${encodeURIComponent(id)}`);
-    void projection.select(id);
   };
   useEffect(() => {
-    void projection.list();
+    void refreshChats();
     const followRoute = () => {
       const id = new URLSearchParams(location.hash.slice(1)).get("task");
-      setNewTask(false);
-      setCancelConfirm(false);
-      if (id) void projection.select(id);
-      else projection.clearSelection();
+      if (id) select(id);
+      else if (!views.size) newChat();
     };
-    if (!navigator.onLine) projection.setOnline(false);
     followRoute();
-    const offline = () => projection.setOnline(false);
-    const online = () => projection.setOnline(true);
+    const online = () =>
+      views.forEach((view) => view.projection.setOnline(true));
+    const offline = () =>
+      views.forEach((view) => view.projection.setOnline(false));
     window.addEventListener("hashchange", followRoute);
-    window.addEventListener("offline", offline);
     window.addEventListener("online", online);
+    window.addEventListener("offline", offline);
     return () => {
       window.removeEventListener("hashchange", followRoute);
-      window.removeEventListener("offline", offline);
       window.removeEventListener("online", online);
-      projection.disconnect();
+      window.removeEventListener("offline", offline);
+      views.forEach((view) => view.projection.disconnect());
+      catalog.disconnect();
     };
-  }, [projection]);
-  const task = state.task;
+  }, [client]);
+  const focused = groups.find((group) => group.id === activeGroup) ?? groups[0];
+  const selectedId = focused?.activeId;
+  const selected = selectedId ? views.get(selectedId) : null;
+  useEffect(() => {
+    if (selectedId)
+      history.replaceState(
+        null,
+        "",
+        selectedId.startsWith("draft-")
+          ? location.pathname + location.search
+          : `#task=${encodeURIComponent(selectedId)}`,
+      );
+  }, [selectedId]);
+  const panel = panelTabs[selectedId ?? ""] ?? "files";
+  const setPanel = (tab: WorkspaceTabId, id = selectedId) => {
+    if (id) setPanelTabs((previous) => ({ ...previous, [id]: tab }));
+    setPanelOpen(true);
+  };
+  const close = (id: string) => {
+    const next = closeChat(groups, id);
+    setGroups(next);
+    const targetGroup =
+      next.find((group) => group.id === activeGroup) ?? next[0];
+    if (targetGroup) setActiveGroup(targetGroup.id);
+    else history.replaceState(null,"",location.pathname+location.search);
+    requestAnimationFrame(() => {
+      const target = targetGroup
+        ? document.getElementById(`tab-${targetGroup.activeId}`)
+        : document.querySelector<HTMLButtonElement>(
+            '.flow-workspace-bar button[aria-label="New chat"]',
+          );
+      target?.focus();
+    });
+    views.get(id)?.projection.disconnect();
+    views.delete(id);
+    drafts.delete(id);
+    void refreshChats();
+  };
+  const accepted = (oldId: string, id: string) => {
+    void refreshChats();
+    const view = views.get(oldId);
+    if (!view) return;
+    views.delete(oldId);
+    view.title = view.projection.getSnapshot().task?.title ?? "Task";
+    views.set(id, view);
+    setGroups((previous) =>
+      previous.map((group) => ({
+        ...group,
+        tabs: group.tabs.map((tab) => (tab === oldId ? id : tab)),
+        activeId: group.activeId === oldId ? id : group.activeId,
+      })),
+    );
+    history.replaceState(null, "", `#task=${encodeURIComponent(id)}`);
+  };
   return (
-    <div className="workspace">
-      <aside className="sidebar" aria-label="Tasks">
-        <div className="workspace-name">
-          <span className="workspace-icon">P</span>
-          <div>
-            Personal workspace<small>Your tasks, in one place</small>
-          </div>
-        </div>
-        <button
-          className="primary new-button"
-          onClick={() => {
-            setNewTask(true);
-            projection.clearError();
-          }}
+    <div className="flow-shell">
+      <nav
+        data-extension-slot="activityBar.primary"
+        className="flow-rail"
+        aria-label="Workspace tools"
+      >
+        <span className="flow-mark">F</span>
+        <IconButton
+          label="Chats"
+          active={sidebar}
+          onClick={() => setSidebar(!sidebar)}
         >
-          <Plus size={17} />
-          New task
-        </button>
-        <label className="search-label">
-          <span className="sr-only">Find tasks</span>
+          <MessageSquare size={18} />
+        </IconButton>
+        <IconButton
+          label="Files"
+          active={panelOpen && panel === "files"}
+          onClick={() =>
+            panelOpen && panel === "files"
+              ? setPanelOpen(false)
+              : setPanel("files")
+          }
+        >
+          <Files size={18} />
+        </IconButton>
+        <IconButton
+          label="Terminal"
+          active={panelOpen && panel === "terminal"}
+          onClick={() =>
+            panelOpen && panel === "terminal"
+              ? setPanelOpen(false)
+              : setPanel("terminal")
+          }
+        >
+          <Terminal size={18} />
+        </IconButton>
+        <div
+          data-extension-slot="activityBar.bottom"
+          className="flow-rail-bottom"
+        >
+          <IconButton
+            label={theme === "dark" ? "Use light theme" : "Use dark theme"}
+            onClick={onTheme}
+          >
+            {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
+          </IconButton>
+          <IconButton label="Change connection" onClick={onDisconnect}>
+            <Settings2 size={18} />
+          </IconButton>
+        </div>
+      </nav>
+      {sidebar && (
+        <aside className="flow-sidebar" aria-label="Chats">
+          <div
+            data-extension-slot="sidebar.header"
+            className="flow-sidebar-heading"
+          >
+            <span>Personal</span>
+            <IconButton
+              label="Hide chat list"
+              onClick={() => setSidebar(false)}
+            >
+              <PanelLeftClose size={15} />
+            </IconButton>
+          </div>
+          <button className="flow-new-chat" onClick={newChat}>
+            <Plus size={15} />
+            New chat
+          </button>
           <input
-            placeholder="Find a task…"
+            aria-label="Find chats"
+            placeholder="Find a chat"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-        </label>
-        <div className="list-heading">
-          <h2>Tasks</h2>
-          <button
-            className="icon-button"
-            aria-label="Refresh task list"
-            onClick={() => void projection.list()}
-          >
-            <RefreshCw size={15} />
-          </button>
-        </div>
-        <nav className="task-list">
-          {state.tasks
-            .filter((item) =>
-              item.title.toLowerCase().includes(query.toLowerCase()),
-            )
-            .map((item) => (
-              <button
-                key={item.id}
-                className={`task-item ${!newTask && task?.id === item.id ? "selected" : ""}`}
-                onClick={() => select(item.id)}
-                aria-current={
-                  !newTask && task?.id === item.id ? "page" : undefined
-                }
-              >
-                <span>{item.title}</span>
-                <StatusBadge status={item.status} />
-              </button>
-            ))}
-          {state.tasks.length === 0 && (
-            <p className="empty-list">
-              No tasks yet. Create your first task to get started.
+          <div className="flow-section-label">
+            <span>Chats</span>
+            <IconButton
+              label="Refresh task list"
+              onClick={() => void catalog.list()}
+            >
+              <RefreshCw size={13} />
+            </IconButton>
+          </div>
+          {loadingList && (
+            <p className="flow-list-notice" role="status">
+              Loading chats…
             </p>
           )}
-        </nav>
-        {state.nextListCursor && (
-          <button
-            className="text-button"
-            onClick={() => void projection.list(true)}
+          {list.error && (
+            <div className="flow-list-notice" role="alert">
+              {list.error}
+              <button className="flow-link" onClick={() => void refreshChats()}>
+                Retry chat list
+              </button>
+            </div>
+          )}
+          <nav
+            className="flow-chat-list"
+            data-extension-slot="sidebar.item.actions"
           >
-            Load more tasks
-          </button>
-        )}
-        <button className="center-link" onClick={onDisconnect}>
-          <Link2 size={15} />
-          Change connection
-        </button>
-      </aside>
-      <main tabIndex={-1} id="main" className="main-panel">
-        {isFixture && (
-          <div className="fixture-banner">
-            HTTP fixture preview{" "}
-            <span>Simulated tasks · no live model or production center</span>
-          </div>
-        )}
-        {state.error && (
-          <div className="notice error" role="alert">
-            <span>{state.error}</span>
-            <button
-              className="text-button"
-              onClick={() => projection.clearError()}
-            >
-              Dismiss
-            </button>
-          </div>
-        )}
-        {newTask ? (
-          <NewTask
-            projection={projection}
-            pending={state.pending}
-            onClose={() => setNewTask(false)}
-            onCreated={(id) => {
-              history.replaceState(null, "", `#task=${encodeURIComponent(id)}`);
-              setNewTask(false);
-            }}
-          />
-        ) : task ? (
-          <>
-            <header className="task-header">
-              <div>
-                <div className="breadcrumb">Workspace / Task</div>
-                <h1>{task.title}</h1>
-                <div className="task-subtitle">
-                  <StatusBadge status={task.status} />
-                  <span
-                    className={`connection ${state.connection}`}
-                    role="status"
-                  >
-                    <span className="status-dot" />
-                    {state.connection === "live"
-                      ? "Live updates"
-                      : state.connection === "reconnecting"
-                        ? "Reconnecting · task continues"
-                        : state.connection === "disconnected"
-                          ? "Disconnected · task continues"
-                          : "Connecting"}
-                  </span>
-                </div>
-              </div>
-              {!TERMINAL_STATUSES.includes(task.status) &&
-                task.status !== "cancel_requested" && (
-                  <button
-                    className="secondary cancel-trigger"
-                    onClick={() => setCancelConfirm(true)}
-                  >
-                    <CircleStop size={16} />
-                    Cancel task
-                  </button>
-                )}
-            </header>
-            {cancelConfirm && (
-              <div className="notice" role="alert">
-                <span>
-                  Request the runner to stop this task? Work already completed
-                  will be kept.
-                </span>
-                <button
-                  className="danger-button"
-                  disabled={state.pending}
-                  onClick={() => {
-                    setCancelConfirm(false);
-                    void projection.cancel();
-                  }}
-                >
-                  Confirm cancellation
-                </button>
-                <button onClick={() => setCancelConfirm(false)}>
-                  Keep running
-                </button>
-              </div>
-            )}
-            <div className="task-layout">
-              <section className="activity" aria-label="Task activity">
-                <div className="activity-heading">
-                  <h2>Activity</h2>
-                  <span>Saved by the center</span>
-                </div>
-                {state.olderAvailable && (
-                  <button
-                    className="earlier"
-                    onClick={() => void projection.loadEarlier()}
-                  >
-                    Load earlier activity
-                  </button>
-                )}
-                <TaskThread
+            {list.tasks
+              .filter((task) =>
+                task.title.toLowerCase().includes(query.toLowerCase()),
+              )
+              .map((task) => (
+                <ChatListItem
                   key={task.id}
                   task={task}
-                  projection={projection}
-                  details={state.details}
+                  view={views.get(task.id)}
+                  selected={selectedId === task.id}
+                  onSelect={() => select(task.id)}
                 />
-                {task.pendingDecision && (
-                  <section className="decision" aria-label="Decision required">
-                    <div className="decision-icon">
-                      <CircleHelp size={22} />
-                    </div>
-                    <div>
-                      <h2>Your decision is needed</h2>
-                      <p>{task.pendingDecision.prompt}</p>
-                      <div className="decision-actions">
-                        <button
-                          className="primary"
-                          disabled={state.pending}
-                          onClick={() => void projection.decide("approve")}
-                        >
-                          <Check size={16} />
-                          Approve
-                        </button>
-                        <button
-                          className="secondary"
-                          disabled={state.pending}
-                          onClick={() => void projection.decide("reject")}
-                        >
-                          Reject
-                        </button>
-                      </div>
-                    </div>
-                  </section>
-                )}
-                {task.status === "uncertain" && (
-                  <div className="notice">
-                    Runner ownership was lost. The center requires
-                    reconciliation; work may already have taken effect.
-                  </div>
-                )}
-                {task.status === "cancel_requested" && (
-                  <div className="notice">
-                    Cancellation requested. Waiting for the runner to
-                    acknowledge that it stopped.
-                  </div>
-                )}
-                {task.verificationStatus === "failed" && (
-                  <div className="notice error">
-                    Artifact verification failed. The execution result and its
-                    evidence are retained above.
-                  </div>
-                )}
-                <p className="activity-footnote">
-                  You can leave this page. Accepted work continues at the
-                  center.
-                </p>
-              </section>
-              <TaskFacts task={task} />
-            </div>
-          </>
-        ) : (
-          <section className="welcome">
-            <div className="welcome-mark">
-              <Waves size={40} />
-            </div>
-            <h1>Make room for focused work.</h1>
-            <p>
-              Give Flow an outcome. Follow the work, weigh in when needed, and
-              inspect the result.
-            </p>
-            <button className="primary" onClick={() => setNewTask(true)}>
-              <Plus size={18} />
-              Create a task
+              ))}
+          </nav>
+          {list.nextListCursor && (
+            <button
+              className="flow-link"
+              onClick={() => void refreshChats(true)}
+            >
+              Load more chats
             </button>
-            <span className="muted">Or choose a task from your workspace.</span>
-          </section>
-        )}
+          )}
+          {fixtureMode && (
+            <p
+              className="flow-fixture-label"
+              data-extension-slot="sidebar.footer"
+            >
+              HTTP fixture · simulated
+            </p>
+          )}
+        </aside>
+      )}
+      <main id="main" tabIndex={-1} className="flow-main">
+        <header
+          className="flow-workspace-bar"
+          data-extension-slot="chat.header"
+        >
+          <span>Flow</span>
+          {fixtureMode && (
+            <span className="flow-fixture-inline">Fixture preview</span>
+          )}
+          <div>
+            <IconButton label="New chat" onClick={newChat}>
+              <Plus size={16} />
+            </IconButton>
+            <button
+              className="flow-view-action"
+              disabled={
+                !focused || focused.tabs.length < 2 || groups.length > 1
+              }
+              onClick={() => {
+                const id = `group-${crypto.randomUUID()}`;
+                setGroups((previous) => splitChat(previous, activeGroup, id));
+                setActiveGroup(id);
+              }}
+            >
+              <Columns2 size={15} />
+              Split chat
+            </button>
+            {groups.length > 1 && (
+              <button
+                className="flow-view-action"
+                onClick={() => {
+                  setGroups((previous) => mergeChats(previous, selectedId!));
+                  setActiveGroup(groups[0]!.id);
+                }}
+              >
+                Merge tabs
+              </button>
+            )}
+            <IconButton
+              label="Toggle workspace panel"
+              active={panelOpen}
+              onClick={() => setPanelOpen(!panelOpen)}
+            >
+              <PanelRight size={16} />
+            </IconButton>
+          </div>
+        </header>
+        <div className="flow-work-area">
+          <div
+            className={`flow-chat-groups ${groups.length > 1 ? "split" : ""}`}
+          >
+            {groups.length === 0 ? (
+              <div className="flow-no-chat">
+                <Button variant="outline" onClick={newChat}>
+                  New chat
+                </Button>
+              </div>
+            ) : (
+              groups.map((group) => (
+                <div
+                  className={`flow-chat-group ${focused?.id === group.id ? "focused" : ""}`}
+                  key={group.id}
+                  onFocusCapture={() => setActiveGroup(group.id)}
+                >
+                  <div
+                    className="flow-tabs"
+                    role="tablist"
+                    aria-label={`Chat group ${group.id}`}
+                  >
+                    {group.tabs.map((id) => (
+                      <div
+                        key={id}
+                        className={`flow-tab ${group.activeId === id ? "selected" : ""}`}
+                      >
+                        <button
+                          role="tab"
+                          id={`tab-${id}`}
+                          aria-controls={`panel-${id}`}
+                          tabIndex={group.activeId === id ? 0 : -1}
+                          onKeyDown={(event) =>
+                            navigateChatTabs(
+                              event,
+                              group,
+                              id,
+                              (next) => {
+                                setActiveGroup(group.id);
+                                setGroups((previous) =>
+                                  previous.map((item) =>
+                                    item.id === group.id
+                                      ? { ...item, activeId: next }
+                                      : item,
+                                  ),
+                                );
+                              },
+                              close,
+                            )
+                          }
+                          aria-selected={group.activeId === id}
+                          onClick={() => {
+                            setActiveGroup(group.id);
+                            setGroups((previous) =>
+                              previous.map((item) =>
+                                item.id === group.id
+                                  ? { ...item, activeId: id }
+                                  : item,
+                              ),
+                            );
+                          }}
+                        >
+                          <ChatTitle view={views.get(id)!} />
+                        </button>
+                        <CloseChatButton
+                          view={views.get(id)!}
+                          onClose={() => close(id)}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  {group.tabs.map((id) => (
+                    <div
+                      role="tabpanel"
+                      id={`panel-${id}`}
+                      aria-labelledby={`tab-${id}`}
+                      className="flow-tab-body"
+                      hidden={group.activeId !== id}
+                      key={id}
+                    >
+                      <ChatPane
+                        viewId={id}
+                        view={views.get(id)!}
+                        drafts={drafts}
+                        onAccepted={(taskId) => accepted(id, taskId)}
+                        onActivate={() => setActiveGroup(group.id)}
+                        onOpenReference={(referenceId) => {
+                          setActiveGroup(group.id);
+                          setPanel(`detail:${referenceId}`, id);
+                          void views
+                            .get(id)!
+                            .projection.loadDetail(referenceId);
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))
+            )}
+          </div>
+          <div className="flow-panel-mount" hidden={!panelOpen}>
+            {selected ? (
+              <WorkspacePanelMount
+                view={selected}
+                activeTab={panel}
+                onActiveTabChange={(tab) => setPanel(tab)}
+                onClose={() => setPanelOpen(false)}
+              />
+            ) : (
+              <p>Select a task to inspect its files and output.</p>
+            )}
+          </div>
+        </div>
       </main>
     </div>
   );
 }
-
+function WorkspacePanelMount({
+  view,
+  activeTab,
+  onActiveTabChange,
+  onClose,
+}: {
+  view: View;
+  activeTab: WorkspaceTabId;
+  onActiveTabChange: (id: WorkspaceTabId) => void;
+  onClose: () => void;
+}) {
+  const state = useSyncExternalStore(
+    view.projection.subscribe,
+    view.projection.getSnapshot,
+  );
+  return (
+    <WorkspacePanels
+      task={state.task}
+      details={state.details}
+      connection={state.connection}
+      onLoadDetail={(id) => view.projection.loadDetail(id)}
+      activeTab={activeTab}
+      onActiveTabChange={onActiveTabChange}
+      onClose={onClose}
+    />
+  );
+}
 function Connection({
   onConnect,
 }: {
@@ -552,13 +782,14 @@ function Connection({
   const [url, setUrl] = useState("");
   const [token, setToken] = useState("");
   return (
-    <main tabIndex={-1} id="main" className="connection-screen">
-      <Waves size={36} />
-      <h1>Connect your workspace</h1>
-      <p>
-        Use your Flow center and owner token. The token stays in this page’s
-        memory.
-      </p>
+    <main
+      id="main"
+      tabIndex={-1}
+      className="flow-connect"
+      data-extension-slot="settings.sections"
+    >
+      <h1>Connect to Flow</h1>
+      <p>The owner token stays in this page’s memory.</p>
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -570,7 +801,7 @@ function Connection({
           <input
             type="url"
             value={url}
-            placeholder="Same origin (development proxy)"
+            placeholder="Same-origin proxy"
             onChange={(event) => setUrl(event.target.value)}
           />
         </label>
@@ -584,26 +815,23 @@ function Connection({
             onChange={(event) => setToken(event.target.value)}
           />
         </label>
-        <button className="primary">Connect workspace</button>
+        <Button>Connect workspace</Button>
       </form>
     </main>
   );
 }
-
 export default function App() {
   const [theme, setTheme] = useState(initialTheme);
-  const [projection, setProjection] = useState<TaskProjection | null>(() =>
-    isFixture
-      ? new TaskProjection(
-          new FlowClient({ baseUrl: "", token: "flow-fixture-only" }),
-        )
+  const [client, setClient] = useState<FlowClient | null>(() =>
+    fixtureMode
+      ? new FlowClient({ baseUrl: "", token: "flow-fixture-only" })
       : null,
   );
   useEffect(() => applyTheme(theme), [theme]);
   return (
-    <>
+    <TooltipProvider>
       <a
-        className="skip-link"
+        className="flow-skip"
         href="#main"
         onClick={(event) => {
           event.preventDefault();
@@ -612,52 +840,20 @@ export default function App() {
       >
         Skip to main content
       </a>
-      <header className="app-header">
-        <a
-          className="brand"
-          href="#"
-          onClick={(event) => event.preventDefault()}
-        >
-          <Waves size={27} />
-          Flow
-        </a>
-        <span className="header-tagline">Work that keeps moving</span>
-        <div className="header-actions">
-          <span className="private-label">Personal workspace</span>
-          <label className="theme-picker">
-            {theme === "dark" ? <Moon size={17} /> : <Sun size={17} />}
-            <span className="sr-only">Color theme</span>
-            <select
-              aria-label="Color theme"
-              value={theme}
-              onChange={(event) => setTheme(event.target.value)}
-            >
-              {themes.map((item) => (
-                <option key={item.id} value={item.id}>
-                  {item.label}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-      </header>
-      {projection ? (
+      {client ? (
         <Workspace
-          projection={projection}
-          onDisconnect={() => {
-            projection.disconnect();
-            setProjection(null);
-          }}
+          client={client}
+          onDisconnect={() => setClient(null)}
+          theme={theme}
+          onTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
         />
       ) : (
         <Connection
           onConnect={(baseUrl, token) =>
-            setProjection(
-              new TaskProjection(new FlowClient({ baseUrl, token })),
-            )
+            setClient(new FlowClient({ baseUrl, token }))
           }
         />
       )}
-    </>
+    </TooltipProvider>
   );
 }
