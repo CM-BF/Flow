@@ -1,6 +1,6 @@
 # COST01A — 有界任务用量解释
 
-Module 已完成待独审。它读取原账本，未改 UsageTotals 数值定义或现有存量行，也未调用 provider。共享 factory/client/各端呈现尚未接入。
+Module 已获独立只读 APPROVED，待main/公共接线。它读取原账本，未改 UsageTotals 数值定义或现有存量行，也未调用 provider。共享 factory/client/各端呈现尚未接入。
 
 ## 已实现
 
