@@ -46,7 +46,7 @@
 | WPF-001-19 | completed | d01_owner | WPF-ACTIVITY01 / web-conversation-activity / base3d4985；51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1于06:04:36.078Z committed，八新scope，固定61b9349af390c137cc4cfeabd38bad058ec69cb5，final b024cfc2c3cd150e0f6db02df5dfe3f64159b1f8 clean；29paths/8scope、7md29links/四TODO、dev/prod各7旅程六hash独立match；root06:17:33Z独立22+局部CUA并APPROVED，最终本地parser approved/checks passed target61b、proof unchanged；main acfd已含且六path相同，最后8cc13eaa9c2aa29f77f841637d9891b67fd1264f clean，51f v2于06:28:50.477Z released；无App/shared写入 |
 | WPF-001-20 | completed | d01_owner | RendererI固定8014cf9be49391157fb54eeb857a41ee1d6af68c/root06:40:07Z APPROVED，final2a420ffe6a27860156057368a18e94e73957e395 clean；九scope/七实现、7md39links/parser与本地proof unchanged，已在accepted86a36完整main实核祖先/七scope相同，原owner最终9da5add318df9cf08d50fb5262f9ceb6bfae29e9 clean，ff621v2已06:49:15.261Z released；06:36原样采样不倒填批准 |
 | WPF-001-21 | in-progress | d01_owner | C01 ca26v1四scope/basea26，固定8c562/root独立104后APPROVED；finalee294c1473693b83babd0a935597b431d6223346 clean，6md29links/parser/checks/review/proof unchanged最终核，已一次交Lead待main；0opt-in/stream |
-| WPF-001-22 | in-progress | d01_owner | ActivityI新86a独立树/17scope fresh无重叠，122210f6-eaac-4cc7-840d-3bd7db1626d9 v1于06:53:53.518Z committed；owner w01已followup正式实施，首canonical待登记；不把领取当部署 |
+| WPF-001-22 | in-progress | d01_owner | ActivityI新86a独立树/17scope fresh无重叠，122210f6-eaac-4cc7-840d-3bd7db1626d9 v1于06:53:53.518Z committed；owner w01首canonical4c18839c212bee19fa0d83d28b4e0f5fbab67be9 clean/parser0/4TODO，已一次SOURCE_READY交Lead；不把领取当部署 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -252,3 +252,5 @@ ActivityI经root批准17scope，新tree /Users/citrine/Projects/AgentHarness/Flo
 06:55 C01最终管理审计见[approved metadata](../../docs/evidence/web-platform/chat06c01-approved-metadata-audit.json)：当前ee294 clean与先报7ce相比仅plan1行改in-progress以匹配未完聚合交接TODO；target8c/两source/shared/104来源不变。已一次REVIEW_READY直GO桥Lead，不重复测试。GO随后转其06:54实际dashboard见approved8c、当时metadata7ceabe；该外部观察与本管理06:36原API样本及06:55本地ee294三者分列，不把GO摘要编造成新的正式部署commit或本队API实采。Activity17scope claim已被GO确认，首status后再登记task卡；核心typed活动优先，插件装饰或额外共享依赖若延误则交root收窄顺序，不扩shared。
 
 GO后续补足80源部署观察：其06:54:36Z实际GET4320/api/snapshot见C01 head7ceabe、human integration、checks/review approved8c、parser0、四scopeclaim可见。该有时间来源关闭“已有聚合入口”前提；不说后继ee294也被采到，不新造部署commit，本管理不重复fetch。已转owner可在下一main记录并入，非要求纯metadata连续重写。
+
+06:57 ActivityI首canonical4c18839c212bee19fa0d83d28b4e0f5fbab67be9 clean由管理实际核17scope内、4TODO/parser0/human完整、implementation/NOT_RUN/NOT_STARTED，见[首源审计](../../docs/evidence/web-platform/activityi01-canonical-audit.json)。已一次SOURCE_READY直GO桥Lead，后续等部署回执才必要唯一采样；owner继续typed活动与P01 footer实现，不等登记。
