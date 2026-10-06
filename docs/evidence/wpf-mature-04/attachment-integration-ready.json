@@ -1,0 +1,60 @@
+{
+  "taskId": "WPF-MATURE-04",
+  "owner": "architecture_read",
+  "coLead": "mika",
+  "recordedAt": "2026-10-06 12:31:09 UTC",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+  "branch": "codex/context-transparency",
+  "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f",
+  "base": "daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a",
+  "fixedMainInput": "7cbda706632c85fc5da12a371b282419c933ab9a",
+  "sources": [
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11267,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+    },
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+    }
+  ],
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-04/attachment-manifest.json",
+    "sha256": "6651c75a82724e22b95a776a5ba49dc5290a550864a293f1325fdfc0b055a38f"
+  },
+  "review": {
+    "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f",
+    "packet": "7c93b05ee579a205fe18c5f3693bf625b5041395",
+    "reviewer": "Mika / gpt-6-astra",
+    "reviewedAt": "2026-10-06 12:30:29 UTC",
+    "verdict": "APPROVED",
+    "p1": 0,
+    "p2": 0,
+    "manifestSha256": "6651c75a82724e22b95a776a5ba49dc5290a550864a293f1325fdfc0b055a38f",
+    "bindings": 41,
+    "method": "Independent read-only source/tests and Git/WT/hash/bytes audit; no repeated tests or PG",
+    "checks": "21 distinct (4 real public PG/HTTP +17 direct); strict0; original red retained; two dedicated DBs conn0/drop/remaining[]",
+    "scope": "Three-line v2 history materials guard and four combination tests only; no public DTO/current/SDK proof"
+  },
+  "checks": {
+    "passedDistinct": 21,
+    "newPgHttp": 4,
+    "directSchemaStore": 17,
+    "existingPgNotRun": 9,
+    "redFailed": 1,
+    "redUnselected": 3,
+    "strictExit": 0
+  },
+  "behavior": "V2 frozen attachment materials stay unknown/metadata-unavailable with materialRevisionDigest=null; real executionInputDigest and SDK sample preserved. V1/old stored history/public DTO unchanged.",
+  "mainStatus": "NOT_INTEGRATED; producer eccb already accepted separately",
+  "writing": "two source literals stopped; writer d3a9 v10 retained until true main receipt",
+  "consumerHandoff": "docs/evidence/wpf-mature-04/handoff-current.md",
+  "limits": [
+    "history-only",
+    "attachment material representation remains unknown",
+    "no real SDK/provider",
+    "no migration or shared source modification"
+  ]
+}
