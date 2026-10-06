@@ -1,6 +1,6 @@
 # WPF-DASHSUM01 验证
 
-固定实现 `c1de71fd316f9bba1ea5f030f5a54d2332d09044`；基线 `2c6df4754f4fea75fbb2e1e750cad89524b1f5fa`。4源码及浏览器捕获逐字绑定：[manifest](source-manifest.json)。本任务首计划 `48e7d736d55e3cf7d3a2fa86b8ae73408be3b4e6`；六scope见[原receipt](claim-receipt.json)。root独立review已APPROVED，main未集成。
+固定实现 `c1de71fd316f9bba1ea5f030f5a54d2332d09044`；基线 `2c6df4754f4fea75fbb2e1e750cad89524b1f5fa`。4源码及浏览器捕获逐字绑定：[manifest](source-manifest.json)。本任务首计划 `48e7d736d55e3cf7d3a2fa86b8ae73408be3b4e6`；六scope见[原receipt](claim-receipt.json)。root独立review已APPROVED，main `017adc276a888a218bed3ef9963bc4dabbc6cec2` 已集成。
 
 ## 行为与检查
 
@@ -25,10 +25,14 @@ env -u FLOW_COORDINATION_DATABASE_URL -u FLOW_COORDINATION_REPO PATH=/opt/homebr
 
 ## 限制
 
-未验证真实多source部署、协调数据库、Safari/Firefox/屏幕阅读器；未跑无关工程全套。没有改proof/parser/registry/架构图或产品Web。原始日志不清洗；源码diffcheck为明确范围，不把安装日志格式当生产错误。独立审查已按固定target记录；main接收仍待后续回执。
+未验证真实多source部署、协调数据库、Safari/Firefox/屏幕阅读器；未跑无关工程全套。没有改proof/parser/registry/架构图或产品Web。原始日志不清洗；源码diffcheck为明确范围，不把安装日志格式当生产错误。独立审查已按固定target记录；main接收已按后续固定回执记录。
 
 完整metadata staged diffcheck保留原始红测日志4处尾空格（node-red.log:24/31/49/56）；不清洗原日志。固定4源码diffcheck为0，非全证据无格式差异声明。
 
 ## 独立审查回执
 
-root批准固定 `c1de71fd316f9bba1ea5f030f5a54d2332d09044`，0 blocking。实际独立22项（human-summary+task-links）全通过，1835.955417ms；读4源码和脚本、核4方hash/六scope/源码diffcheck、目视desktop light与390dark详情。未独立重跑作者browser。见[独立log](independent-tests.log)、[原始审计](independent-audit.json)、[来源hash](independent-provenance.json)及[正式review](../../../plans/wpf-dashboard-summary/review.md)。审批metadata未改源码/重测产品，尚未main接收。
+root批准固定 `c1de71fd316f9bba1ea5f030f5a54d2332d09044`，0 blocking。实际独立22项（human-summary+task-links）全通过，1835.955417ms；读4源码和脚本、核4方hash/六scope/源码diffcheck、目视desktop light与390dark详情。未独立重跑作者browser。见[独立log](independent-tests.log)、[原始审计](independent-audit.json)、[来源hash](independent-provenance.json)及[正式review](../../../plans/wpf-dashboard-summary/review.md)。审批metadata未改源码/重测产品；main后续接收见下。
+
+## 主线收口
+
+2026-10-06 11:57:59 UTC 本人核固定main `017adc276a888a218bed3ef9963bc4dabbc6cec2` 的4源码与target/current/manifest全部相同；[原main回执](main-integration-receipt.json)与[本人核验](main-observation.json)分列。target不是main祖先（只读命令exit1），没有把字节相等宣称为merge ancestry。Web types exit0由Execution Lead执行，本人仅metadata收口，不重复Node/browser/产品测试。真实4320登记部署尚未采样，个人服务未动。六scope正常推送并核clean后停写，释放由manager fresh CAS办理；不预报已释放。

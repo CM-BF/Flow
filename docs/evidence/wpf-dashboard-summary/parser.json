@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "integration",
+      "state": "delivered",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "首页摘要与父子详情已通过独立审查",
-    "next": "主线接收后更新执行看板",
+    "output": "首页摘要与父子详情已通过审查并合入主线",
+    "next": "由看板维护者部署并核对实际页面",
     "blocker": {
       "state": "none",
       "text": ""
@@ -45,9 +45,9 @@
     },
     {
       "id": "WPF-DASHSUM01-03",
-      "state": "in-progress",
+      "state": "completed",
       "owner": "w01_owner",
-      "evidence": "固定target已获独立批准并正常推送；main接收仍待"
+      "evidence": "root APPROVED；main 017adc276a888a218bed3ef9963bc4dabbc6cec2 已接收；[固定核验](../../docs/evidence/wpf-dashboard-summary/main-observation.json)"
     }
   ],
   "implementation": {

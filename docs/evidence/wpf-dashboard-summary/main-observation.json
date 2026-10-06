@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-10-06 11:57:59 UTC",
+  "mainReceipt": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+  "implementationTarget": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+  "integrationMethod": "explicit main receipt + exact declared source equality; not commit ancestry",
+  "ancestorExit": 1,
+  "implementationAncestor": false,
+  "sourceCount": 4,
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "mainTargetCurrentEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+      "mainTargetCurrentEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/human-summary.test.mjs",
+      "sha256": "94f70824bc157338de7daf20063384c299ea021f968bdddd337e8e6ab125d098",
+      "mainTargetCurrentEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103",
+      "mainTargetCurrentEqual": true
+    }
+  ],
+  "receiptPath": "docs/evidence/i02/web-cache-dashboard-summary-source-comparison.json",
+  "receiptSha256": "d0c43dfac2e08bc194808a0db811256f79d512b75f0c0e2859072dc130c00089",
+  "authorProductTestsRerun": false,
+  "webTypecheck": "Execution Lead receipt exit0; not rerun by this owner",
+  "serviceDeployment": "not observed; registry/deployment separate"
+}
