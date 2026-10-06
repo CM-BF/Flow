@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:03 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:04 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | chat06p02_owner / gpt-6-astra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-prefix-hash |
 | Branch | codex/assistant-stream-prefix-hash |
 | 工作基线 / HEAD | base84fdecebbb4939e43710fb17e48884cc49d1d030；实现HEADb0090edd594d19e1a441ce54683af65f7e5dc26e |
-| 工作树dirty状态 | 实现b0090ed已提交；当前仅证据metadata提交中，产品停止写入 |
+| 工作树dirty状态 | 已核a1ee8b8 clean；最后仅dashboard/status交付metadata，产品/harness停止写入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED b0090edd594d19e1a441ce54683af65f7e5dc26e；18不同用例（10专用+8直接consumer），noEmit exit0 |
 | 已集成main状态 / HEAD | 新片未集成；base main84fdecebbb4939e43710fb17e48884cc49d1d030 |
@@ -38,3 +38,5 @@ Dashboard：此status为唯一手填事实源，首canonical提交交Mika/Lead�
 2026-10-06 07:58 UTC：真实HTTP行为红后只改store局部SELECT，原查询不再把完整prefix返回Node；PG仍全文聚合/hash。单场景green1/1，2个独有库正常close/drop/remaining[]，日志保留。正在补原语义边界，未独审。
 
 2026-10-06 08:03 UTC：专用10/10及直接consumer8/8通过，19未选不当跳过失败；noEmit0，未运行全库/SDK/provider或P01矩阵。首错误码预期与即时连接零断言导致9/10+清理失败，已修本测试fixture并正常清自有残库；首类型paths失败已修，原日志保留。产品源仍首green的局部SQL，无新增业务变动。
+
+2026-10-06T08:04:46.268200+00:00：dashboard一次返回快照（generated08:04:46.288Z），可见当前claim v1；按taskId/id未发现独立任务status聚合对象，聚合检查仍UNKNOWN，见[回执](../../docs/evidence/chat06p02/dashboard-review-ready.json)。已交canonical供Lead登记，不将账本可见当进度已聚合。5 source/10只读基线/18 raw均逐hash核当前与Git blob一致；原日志CRLF已用本目录.gitattributes保留。固定实现b0090ed，停止源码/harness写入，待Mika独审。
