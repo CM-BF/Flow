@@ -2,22 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:44:00 UTC / main7106a354 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:58:18 UTC / mainb1c2e398（接收前） |
 | Plan | [plan.md](plan.md) |
+| 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
+| co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 已审受理条件、并行运行内核和紧凑聊天展示 |
+| 工作基线 / HEAD | b1c2e39837c2208e6fc2c59a80e16797f26448b5 / 本批R05-A与架构首次适配 |
 | 工作树dirty状态 | 候选已提交；当前交付记录整理 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；固定输入逐文件一致，root/Web类型检查exit0；S01初始ES2023红与修复分别保留；0新增provider |
-| 已集成main状态 / HEAD | 上一main7106a354已发布；本候选接收CHAT10、S01P01、CHATREAD01、O10限定验收证据与SVC更新回执。个人服务已受控更新到32c371d / accepting v9，原端口/数据/身份保留；用户主动请求正常完成，operator主动0query。 |
+| 已集成main状态 / HEAD | mainb1c已发布且个人backend/static artifact固定此源、acceptingv12；本候选接收R05-A及D05FIT两已审片段。实际个人服务不随本批main变更，原端口/数据/身份保留，0operatorquery。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 聊天布局更紧凑；运行中补充指令的受理条件和有界并行运行内核已审通过。 |
-| 下一可用交付 | 发布已审片段，再接聊天资料选择与可替换运行器接口。 |
+| 当前产出 | 固定聊天页面已上线；执行器配置边界与架构图首次显示适配已审接收。 |
+| 下一可用交付 | 继续接通Codex与Claude的能力选择，并接收已审界面改进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -99,3 +101,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:44 UTC：CHAT10领域/薄client/可信启动、CHATREAD01展示、S01P01及ES2023增量各自已独审；固定source与原主线三个runner保护文件hash一致，root/Web组合types通过，S01默认2项生产消费者复用原绿。O10原生单child限定语义由GO独立通过，预算1/1封存，本文未追加模型。初始root类型红保留，未重跑既有领域/浏览器矩阵。证据见pool-readability-final-comparison.json及steering-native-child-comparison.json。个人center/runner仍32c/v9，Vite Web来自移动主线；SVC03固定产物另行实现，不能把main发布称后台重启。
 
 2026-10-06 08:55 UTC：SVC03固定artifact与static Web独立审查通过，11源码在实际集成点对d938逐字一致；原7+10行为/有界构建证据复用，无重复测试。两层任务与消息预算最终规则在根AGENTS/plans/OPS同步，101来源含R05/CHATUI01/D05FIT01/SVC03均本地parse无错/人读字段完整。即将发布本批；实际个人服务切换尚未执行，原32c/v9保留。
+
+2026-10-06 08:58:18 UTC：本批[R05-A与首次fit固定对照](../../docs/evidence/i02/native-harness-fit-integration.json)18项全一致，根类型检查exit0；复用作者42局部检查及Web已有五组浏览器/独立可视审查，不重复工程矩阵。SVC03实际窗口已关闭，后端与静态产物固定b1c/v12，后继main不改变其运行版本。
