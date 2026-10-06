@@ -15,14 +15,14 @@ const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${databas
 const pool = new Pool({ connectionString: databaseUrl, max: 2 });
 const owner = 'chat06c02-test-owner';
 const servers: Awaited<ReturnType<typeof createServer>>[] = [];
-let base: string, enabled: string, unmounted: string;
+let base: string, enabled: string, unmounted: string, disabled: string;
 let created = false;
-async function readApp(routes: boolean) {
+async function readApp(routes: boolean, assistantStreamReadable = true) {
   const app = Fastify();
   app.addHook('preHandler', async request => { if (request.headers.authorization !== `Bearer ${owner}`) throw new HttpError(401, 'unauthorized', 'Owner required.'); });
   app.setErrorHandler((error, _request, reply) => reply.code(error instanceof HttpError ? error.status : 500).send({ error: error instanceof Error ? error.message : 'Test server failed.' }));
   // Creation/snapshot do not invoke the admission-only scheduler dependency.
-  registerConversationRoutes(app, pool, undefined as unknown as PgBoss, { assistantStreamReadable: true });
+  registerConversationRoutes(app, pool, undefined as unknown as PgBoss, { assistantStreamReadable });
   if (routes) registerAssistantStreamRoutes(app, pool);
   servers.push(app);
   return app.listen({ host: '127.0.0.1', port: 0 });
@@ -31,7 +31,7 @@ beforeAll(async () => {
   await admin.query(`CREATE DATABASE ${database}`); created = true;
   const app = await createServer({ databaseUrl, ownerToken: owner, automaticQueueScan: false, leaseMs: 300_000 });
   servers.push(app); base = await app.listen({ host: '127.0.0.1', port: 0 });
-  enabled = await readApp(true); unmounted = await readApp(false);
+  enabled = await readApp(true); unmounted = await readApp(false); disabled = await readApp(true, false);
 });
 afterAll(async () => {
   try { for (const app of servers.reverse()) { app.server.closeAllConnections(); await app.close(); } }
@@ -50,10 +50,17 @@ let conversationId: string;
 it('requires both the explicit mounting option and readable 022 routes before advertising patch-v1', async () => {
   conversationId = (await request(enabled, '/api/conversations', conversationInput)).conversation.id;
   const path = `/api/conversations/${conversationId}`;
-  expect((await request(enabled, path, undefined, header)).capabilities.liveAssistantText).toBe(false);
+  // Work with both the old factory and the production factory that already mounts 022.
   await migrateAssistantStreams(pool);
+  // Readiness fault injection in this test's private DB, not a first-upgrade claim.
+  await pool.query('ALTER TABLE flow.assistant_stream_patches RENAME TO chat06c02_hidden_patches');
+  try {
+    expect((await request(enabled, path, undefined, header)).capabilities.liveAssistantText).toBe(false);
+  } finally {
+    await pool.query('ALTER TABLE flow.chat06c02_hidden_patches RENAME TO assistant_stream_patches');
+  }
   expect((await request(unmounted, path, undefined, header)).capabilities.liveAssistantText).toBe(false);
-  expect((await request(base, path, undefined, header)).capabilities.liveAssistantText).toBe(false);
+  expect((await request(disabled, path, undefined, header)).capabilities.liveAssistantText).toBe(false);
   expect((await request(enabled, path, undefined, header)).capabilities.liveAssistantText).toBe(true);
 });
 it('keeps missing, unknown and combined headers false while explicit opt-in is independent of a last turn', async () => {
