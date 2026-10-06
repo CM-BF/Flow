@@ -1,0 +1,71 @@
+{
+  "time": "2026-10-06T11:51:35.308692+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "target": "c05fca7beadd7bc59b1156e582d4d84078c512c8",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "target": "c05fca7beadd7bc59b1156e582d4d84078c512c8",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "target": "c05fca7beadd7bc59b1156e582d4d84078c512c8",
+      "bytes": 44014,
+      "sha256": "9ceed51415a4544f2eb96920265394d5db56d06c4dea4759b90ac96745393236"
+    },
+    {
+      "path": "packages/client/src/goal-delivery.test.ts",
+      "target": "c05fca7beadd7bc59b1156e582d4d84078c512c8",
+      "bytes": 6918,
+      "sha256": "f58515fb8dddb8caa3fd39dcdb95078099e577673d8ca4a3fa53eeee37ae34af"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "target": "30dd8242cccaca3123a23ee3667a601120e8ee17",
+      "bytes": 7992,
+      "sha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "target": "30dd8242cccaca3123a23ee3667a601120e8ee17",
+      "bytes": 4507,
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "target": "30dd8242cccaca3123a23ee3667a601120e8ee17",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "target": "30dd8242cccaca3123a23ee3667a601120e8ee17",
+      "bytes": 1711,
+      "sha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967"
+    }
+  ],
+  "matched": 8,
+  "mismatches": [],
+  "reviews": {
+    "goalPublic": "assignment_review c05fca7 APPROVED",
+    "calculatorChecker": "Execution Lead 30dd824 APPROVED"
+  },
+  "rootTypecheckExit": 0,
+  "reused": "2 goal direct cases / typed test defaults correction and actual production selected1; 68 restricted checker distinct. No repeated PG/provider.",
+  "limits": [
+    "No native engineering execution/stop attestation or complete goal journey",
+    "No personal service change"
+  ],
+  "metadataSources": {
+    "O10": "3da862cadf1d3b22f6a62cc7f94cb18fffd60eb2",
+    "O11": "7f9ee65e58754f425885e44d7d944752107283e6",
+    "D05": "98d030af",
+    "ENG": "1b4c26af"
+  }
+}
