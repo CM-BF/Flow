@@ -9,4 +9,4 @@ Interface：parseStatus→humanOverview；不改proof/aggregate、网络刷新�
 - [x] D07-01：独立worktree/claim与设计
 - [x] D07-02：阶段解析/下一交付行为及局部测试
 - [x] D07-03：真实浏览器/独立review
-- [ ] D07-04：主线接收与部署事实
+- [x] D07-04：主线接收与部署事实
