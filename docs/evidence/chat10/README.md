@@ -1,6 +1,6 @@
 # CHAT10：可信启动配置与任务准入查询
 
-固定领域/测试：`a3296e0f6ffc37c746cf1d59a7105aeb2131579b`；合同祖先 `3b157a3e21166eb06473c1deb6b9f0eded1169e3`；基线 `32c371d389a913f8dd71c3bd8b98dd0697411256`。独立 review 未开始，未集成 main。
+固定领域/测试：`a3296e0f6ffc37c746cf1d59a7105aeb2131579b`；合同祖先 `3b157a3e21166eb06473c1deb6b9f0eded1169e3`；基线 `32c371d389a913f8dd71c3bd8b98dd0697411256`。Execution Lead 已独立只读 APPROVED（现场 clean 4eb5dec34d7b2eae69540361a49c792794e0f33a），未重跑/0 provider；未集成 main。正式结论见 [review](../../../plans/chat10-steering-readiness/review.md)。
 
 [Interface](interface.md) 定义 owner 的 task-bound GET 与纯启动配置 parser。GET 使用 repeatable-read/read-only 事务，不加行锁、不创建 control/command/audit/receipt。默认关闭时不访问 024 表；启用而安装缺失返回明确原因。完整 current task/attempt fence、lease、runner、decision、session、profile 与 final/seal/pending/unknown/quota 状态决定结果。POST 在原锁序和现时 profile 检查之后重用同一小型新命令 policy；幂等重放仍绕过仅新命令的 pending/CAS 条件。旧 `attemptAvailable` 含义和公共 steering capability 不变。
 
