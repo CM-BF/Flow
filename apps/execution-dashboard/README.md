@@ -38,6 +38,7 @@ node apps/execution-dashboard/src/server.mjs --json
 | W01 | `m1-web` |
 | D01 | `execution-dashboard` |
 | I01 | `m1-integration` |
+| I02 | `m2-integration` |
 | LAB01 | `performance-probes` |
 | LAB02 | `observer-probes` |
 | D02 | `dashboard-progress-sync` |
@@ -94,7 +95,7 @@ node --test apps/execution-dashboard/test/*.test.mjs
 node apps/execution-dashboard/test/browser-check.mjs
 ```
 
-可选 `PLAYWRIGHT_CHROMIUM_EXECUTABLE` 指定已有 Chromium / Chrome；`D03_EVIDENCE_DIR` 指定输出目录（默认 `docs/evidence/d03`）。脚本自行启动独占动态端口，读取实际 19 个登记来源，另创建隔离 Git/HTTP 样本验证语义，不访问 4320，不调用模型。只等待 ready locator / 明确状态，不等待 networkidle。截图、源观察和结果写入证据 JSON；执行后关闭浏览器与 server。
+可选 `PLAYWRIGHT_CHROMIUM_EXECUTABLE` 指定已有 Chromium / Chrome；`D03_EVIDENCE_DIR` 指定输出目录（默认 `docs/evidence/d03`）。脚本自行启动独占动态端口，读取实际 20 个登记来源，另创建隔离 Git/HTTP 样本验证语义，不访问 4320，不调用模型。只等待 ready locator / 明确状态，不等待 networkidle。截图、源观察和结果写入证据 JSON；执行后关闭浏览器与 server。
 
 外部交付由 Execution Lead 集成，不合并 main。生产中心、真实 harness、跨机器 / 多用户部署不属于本任务验证。
 

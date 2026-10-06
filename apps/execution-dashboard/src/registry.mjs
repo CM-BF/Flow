@@ -15,6 +15,7 @@ const assignments = [
   ['L01', '命令行', '工作线', 'm1-cli', 'l01-cli', 'cli'],
   ['W01', '产品 Web', '工作线', 'm1-web', 'w01-web', 'web'],
   ['D01', '工程进度', '工作线', 'execution-dashboard', 'd01-execution-dashboard', 'execution-dashboard'],
+  ['I02', 'M2 恢复与跨任务集成', '集成验证', 'm2-integration', 'i02-integration'],
   ['I01', 'M1 集成验收', '工作线', 'm1-integration', 'i01-integration'],
   ['LAB01', '性能样例', '技术验证', 'performance-probes', 'lab01-performance'],
   ['LAB02', '多观察端样例', '技术验证', 'observer-probes', 'lab02-observer-probes'],

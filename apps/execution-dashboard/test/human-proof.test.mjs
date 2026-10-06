@@ -112,8 +112,9 @@ test('scope-tree integration requires existing target and no omitted new impleme
   result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, false);
 });
 
-test('19 distinct registry sources include D03 and bounded Web platform source', () => {
-  const registry = defaultRegistry(); assert.equal(registry.tasks.length, 19);
+test('20 distinct registry sources include D03, I02 and bounded Web platform source', () => {
+  const registry = defaultRegistry(); assert.equal(registry.tasks.length, 20);
+  assert.equal(registry.tasks.find(task => task.id === 'I02').planDir, 'plans/i02-integration');
   const source = registry.tasks.find(task => task.id === 'WPF-001');
   assert.equal(source.planDir, 'plans/web-platform'); assert.equal(source.evidenceDir, 'docs/evidence/web-platform');
   assert.equal(registry.tasks.find(task => task.id === 'D03').worktree, '/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-view');
