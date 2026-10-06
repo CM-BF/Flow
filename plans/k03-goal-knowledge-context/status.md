@@ -2,37 +2,37 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 06:31:37 UTC |
+| 最近更新 | 2026-10-06 06:37:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context |
 | Branch | codex/goal-knowledge-context |
 | 工作基线 / HEAD | branch base a6c9b09a8a4d4020a497341d3fb6deed16b08d02；共享固定base acfd409a493315a00f1cc19ac96c5f1b36c19e57；implementation HEAD 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7 |
-| 工作树dirty状态 | 仅交审metadata待提交；产品源码停止写入 |
-| 工作分支状态 | review-ready |
+| 工作树dirty状态 | 已核 eae9f1c33cec83dc68538d069c2afa5011a9aa55 clean；本次仅独审metadata，产品源码持续停写 |
+| 工作分支状态 | reviewed |
 | 检查状态 | PASSED 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7；20新领域+24直接消费者=44不同用例，noEmit exit0；限定见README |
-| 已集成main状态 / HEAD | 未集成；已观察main3d4985fca060155435b159e0467815bf8e88b8b8，O06后续受控组合 |
+| 已集成main状态 / HEAD | 本片段未集成；06:36:52 UTC dashboard观察main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8 尚未包含目标；等待Execution Lead受控集成回执 |
 | 实现目标 | 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7 |
 | 实现范围 | apps/server/src/goal-context, apps/server/src/goal-tool-runs/runner.ts, apps/server/src/goals/state.ts, packages/contracts/src/goal-context.ts, packages/contracts/src/goals.ts, apps/server/src/goals/commands.ts, apps/server/src/reconciliation.ts, apps/server/src/runners.ts, packages/storage/migrations/021-goal-context.sql, docs/evidence/k03/check.mjs |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 节点固定知识输入与过期保护已在分支验证，实际执行保留完整原文 |
-| 下一可用交付 | 独立审查后接入生产入口 |
+| 当前产出 | 节点固定知识输入与过期保护已通过独立审查，实际执行保留完整原文 |
+| 下一可用交付 | 接入生产入口并完成产品接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，APPROVED；Mika独立技术review，Goal Owner产品验收另行接收 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | K03-01 | completed | b01_bounded_reads | DTO/021/migrate/register/private接口已固定 |
 | K03-02 | completed | b01_bounded_reads | 冻结/详情/过期真实依赖传播已验证 |
 | K03-03 | completed | b01_bounded_reads | 实际claim/原runtime adapter/C02两种恢复已验证 |
-| K03-04 | in-progress | b01_bounded_reads / Mika | 44不同用例与noEmit通过；等待Mika固定target独审 |
+| K03-04 | completed | b01_bounded_reads / Mika | 44不同用例与noEmit通过；Mika已绑定固定target独立批准，无未解决P1/P2 |
 | K03-05 | pending | Lead / Goal Owner | 未集成、未验收 |
 | K03-06 | pending | 后继owner | 后继保持开放 |
 
-claim fcde300a-4851-415a-ae42-74009f721920 v4 ACTIVE，COMMITTED06:04:25.366Z，[回执](../../docs/evidence/k03/claim-receipt.json)。live06:04:58 ledger与8scope一致；开工WT/branch/HEAD/clean已核。K02源码及metadata停止写入、claim保留。v2已新增commands/migration021，当前不写runners；由Mika协调，纯helper可独立推进。
+历史启动记录：claim fcde300a-4851-415a-ae42-74009f721920，COMMITTED06:04:25.366Z，[回执](../../docs/evidence/k03/claim-receipt.json)。live06:04:58 ledger与8scope一致；开工WT/branch/HEAD/clean已核。K02源码及metadata停止写入、claim保留。v2已新增commands/migration021，当前不写runners；由Mika协调，纯helper可独立推进。
 
 架构影响：goal专用context/input、source freshness投影、private claim/recovery接口。固定target后交Execution Lead更新架构及生产migrate/register；共享client/CLI/exports不在scope。canonical首提交后交Lead登记dashboard，不手填生成数据。
 
@@ -51,3 +51,7 @@ claim fcde300a-4851-415a-ae42-74009f721920 v4 ACTIVE，COMMITTED06:04:25.366Z，
 2026-10-06 06:31:37 UTC：target 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7 已固定，20source/14只读输入/148raw见[manifest](../../docs/evidence/k03/manifest.json)，报告见[README](../../docs/evidence/k03/README.md)。115b与acfd受控完整merge均无冲突；保留O07全部graph私有授权/K02，只增goal prompt副本投影。生产021自动mount/sharedclient/CLI/GO接收/main仍待各owner，不把本夹具实际HTTP称生产挂载。旧阶段migration两项F01后继未运行、不计44。产品停止写入待review；claim v4保留。架构target为本实现，Execution Lead待更新goal专用context/input表、freshness读取与privateclaim/recovery/migrate生命周期。
 
 Dashboard 2026-10-06T06:31:50.021Z 实采canonical current=True，review=not_started，checks=passed，issues=[]；[receipt](../../docs/evidence/k03/dashboard-receipt.json)。尚未独审，不将NOT_STARTED解释成批准。
+
+2026-10-06 06:37:01 UTC：收到并记录Mika独立只读APPROVED，绑定21d2e05eb571e44883589eb38bff6b5a4b2eaeb7，现场metadata eae9f1c33cec83dc68538d069c2afa5011a9aa55 clean。20 source/14 readonly/148 raw哈希与commit一致，原consumer body独立重算相等；44不同用例/noEmit0及10+4自有库remaining=[]均已核，无未解决P1/P2。Mika未重跑测试。已由GO桥接Execution Lead受控集成；生产021自动mount、O03/O06旧阶段migration消费者、sharedclient/CLI与GO产品接收仍另列，不把模块批准当main能力。claim v4 fresh ACTIVE，领域源码继续停止写入；本次仅metadata。审查回执见[独审记录](../../docs/evidence/k03/independent-review.json)。K02已released v4且不再写入。
+
+Dashboard 2026-10-06T06:37:54.382Z 实采 canonical current=true、review=approved、checks=passed、implementation=unchanged、delivery=integration、issues=[]；[独审聚合receipt](../../docs/evidence/k03/approval-dashboard-receipt.json)。此receipt采于本次metadata提交前，dirty只含metadata；提交后核clean再外报，不将其称源码变更。

@@ -23,4 +23,6 @@ owner可以在节点输入中选择至多4个精确引用，单个4KiB/合计8Ki
 
 失败保留：normalize红为未归一；persistence首次是夹具遗漏expectedVersion（不能算功能红），修正后的404才证明未冻结；seam首次把TaskSummary误作有prompt以及相同noEmit错误已修测试；execution红是没有绑定private input；behavior首轮用了错误verification字段，改用原verifyText且加强独立B来源后绿；version-range红为PGint越界500，窄修后400；实际claim红返回原业务prompt，最小接缝后绿。所有旧raw原样保存，不以最终通过覆盖历史失败。
 
-限制与后继：Mika独立review尚待，GO接收与生产021自动mount/client/CLI/main尚待。O03/O06旧阶段migration fixture仍由F01处理：旧schema阶段直接调用最新claim会缺018/017/021，这里不删断言、不补伪表、不吞缺表，未运行/未计入44。新无知识state/define实证不查询新context表；生产必须先迁移021再开放claim/recovery。无A2A配送、hybrid/vector或新knowledge grant。耗时只是功能检查执行记录，不是SLO/容量证明。
+独审：Mika已APPROVED固定实现，20 source/14 readonly/148 raw全部哈希与commit绑定一致，consumer body独立重算一致，无未解决P1/P2；未重跑测试，见[独审记录](independent-review.json)。
+
+限制与后继：GO产品接收与生产021自动mount/client/CLI/main尚待。O03/O06旧阶段migration fixture仍由F01处理：旧schema阶段直接调用最新claim会缺018/017/021，这里不删断言、不补伪表、不吞缺表，未运行/未计入44。新无知识state/define实证不查询新context表；生产必须先迁移021再开放claim/recovery。无A2A配送、hybrid/vector或新knowledge grant。耗时只是功能检查执行记录，不是SLO/容量证明。
