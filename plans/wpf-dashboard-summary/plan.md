@@ -8,8 +8,8 @@
 
 范围：claim六literal见[原始回执](../../docs/evidence/wpf-dashboard-summary/claim-receipt.json)。基线`2c6df4754f4fea75fbb2e1e750cad89524b1f5fa`。不改aggregate/proof/registry/parser/CSS/协调DB，不访问4320或个人服务。
 
-- [ ] WPF-DASHSUM01-01：实现确认关系的摘要筛选、精简卡片和父子下钻。
-- [ ] WPF-DASHSUM01-02：局部行为和真实浏览器验证，保留未知/信号、键盘、浅深390与原证据。
+- [x] WPF-DASHSUM01-01：实现确认关系的摘要筛选、精简卡片和父子下钻。
+- [x] WPF-DASHSUM01-02：局部行为和真实浏览器验证，保留未知/信号、键盘、浅深390与原证据。
 - [ ] WPF-DASHSUM01-03：固定target独立review、正常push与主线接收；未接收不得勾完。
 
 验证：定向Node测试human/task-links/delivery；修改已有task-links浏览器检查以新规则执行原下钻/转义/主题验收，输出只到本证据目录。浏览器累计≤90秒，其中10秒专留清理；1Chrome/临时样本动态端口、0PG/模型、证据≤8MiB。超预算如实停报，不能隐性扩大或删断言。结构质量按[根规则](../../AGENTS.md#modular-design)与[quality](../../docs/evidence/wpf-dashboard-summary/quality.md)。
