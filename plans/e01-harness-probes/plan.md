@@ -25,3 +25,10 @@
 - [x] E01-04 Paseo固定7a30305503c600bc46ea2a94a6750eac5cede278、Apache-2.0 的公开JSONL decoder/RPC seam：真实合成Node子进程中文/emoji跨字节chunk、2MiB无newline、退出pending和合成stderr marker，保存结果/限制。0模型/云；不实现产品修复，不改auth源码与原始JSON。已有本地固定source可直接复用，单次进程组看门狗3秒，避免研究拖延首片段。
 
 第二实现 target db2f2d0f6c2b0db3cab454d6cfe617b4671196b1，约0.214秒合成运行，记录Unicode跨字节损坏、2MiB行保留、退出pending拒绝、stderr8192字符尾部仍含合成marker。此探针已另获 Goal Owner 独立只读方法 review APPROVED db2f2d0，未重跑；采用前须修 streaming UTF8 / byte bound / redaction。
+
+## 下一片段：先提案，不先调用
+
+- [x] E01-05 核对固定 SDK0.3.290 与 wrapper1.0.143 的真实差异，交付 [受控工程对照提案](native-wrapper-proposal.md)：最多2次 query、USD2估算阈值、每路90秒、明确认证/模型/写范围与可观察产物。
+- [ ] E01-06 待 Goal Owner 明确批准新预算及范围后，先完成并审查零模型预检，再决定是否执行；未获批不得调用，失败/超时不得自动补次。当前此项未授权真实执行。
+
+提案中的 adapted wrapper 不等于 stock wrapper；不把版本/设置/工具/认证差异误归为包装层本身。旧 R02/I01 5/5 封存，当前真实 query 仍0。

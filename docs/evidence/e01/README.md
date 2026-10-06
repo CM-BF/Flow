@@ -55,3 +55,9 @@
 Goal Owner已只读方法审查APPROVED auth固定8e232a0：完整模块/证据和10个复制文件/license hash、raw/9场景吻合，无blocking，未重跑；批准不扩展真实provider policy、频率、跨进程或完整SDK启动。Paseo target db2f2d0 已另获 Goal Owner 独立方法 review APPROVED，原文/许可/raw吻合，完整probe/fixture/RPC/decoder已读，未重跑；采用前须修 streaming UTF8、byte bound、redaction。两个结论不得合并成“整个上游已通过”。
 
 03:14 UTC clean-code / metadata 复核：两个原始 JSON 和探针源码不变；分开记录独立审查范围、实际观察与采用前修复条件。下一工程对照仅做提案，现仍 0 模型/云。
+
+## 原生/包装层工程对照准备
+
+2026-10-06 03:17 UTC，只读核验本机 SDK0.3.290 d.ts 与 wrapper1.0.143 调用链，[固定文件hash](comparison-source-hashes.json)。stock bridge固定SDK0.3.281/CLI2.1.281，未透传budget/settingSources；query使用abortSignal而当前SDK公开Options为abortController；默认preset和usage映射亦不同。上述是源码事实，不是新模型行为结果。完整差异、官方依据、新预算/认证/模型权限边界与验收见[提案](../../../plans/e01-harness-probes/native-wrapper-proposal.md)。
+
+本工作段仍复用本地find-skills/codebase-design/clean-code方法：只从必要interface查版本/参数/副作用，将可比较profile与stock差异分开；不引入产品依赖、不给缺失auth加自动fallback。clean-code复核未修改探针实现；修正草案观察时间为实际UTC，未留未来时间。链接/diff/source hash检查，不为文档重跑模型或旧测试。

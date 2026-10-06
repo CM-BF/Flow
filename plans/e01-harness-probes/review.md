@@ -23,3 +23,7 @@ db2f2d0f6c2b0db3cab454d6cfe617b4671196b1：约0.214秒真实合成进程/decoder
 ## Paseo 独立结论
 
 Goal Owner / gpt-6-astra，结论经 Execution Lead 回传，唯一 owner 于 2026-10-06 03:14 UTC 记录：APPROVED target db2f2d0f6c2b0db3cab454d6cfe617b4671196b1。完整读取 probe/fixture/RPC/decoder，3份原文/license 对应上游 7a30305503c600bc46ea2a94a6750eac5cede278，raw a123e8e560f595bf12b1bc26d771c2699c1debc27f85c9e2c4bb032368d52c7a 一致，无 blocking，未重跑。确认真实分片 UTF8 损坏、2MiB 暂存（非任意无界证明）、exit7 双 pending 拒绝、8192 字符 stderr 合成 marker 未脱敏；VM/shim/无真实 CLI/V2 等限制清楚。批准的是探针方法与观察，不是上游可直接生产采用；采用前须修 streaming UTF8、按字节限制与日志脱敏。
+
+## 工程对照提案（独立于上述批准）
+
+[native-wrapper-proposal.md](native-wrapper-proposal.md) 为待审新预算/方法提案，当前 PROPOSED；Goal Owner 对 auth/Paseo 的 APPROVED 不授权真实模型调用，也不批准未实现的 adapted wrapper。预检、实现和真实结果须各自固定新 target 与检查证据。
