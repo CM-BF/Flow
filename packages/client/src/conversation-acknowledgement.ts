@@ -116,12 +116,13 @@ function effective(value: unknown, taskId: unknown, snapshot?: ClaudeTurnSetting
     requireValue(source.kind === 'assistant-final' ? id(source.messageId) : source.kind === 'recorded-adapter-session' && text(source.adapterVersion, 180));
   }
   if (result.runnerRequested !== undefined) {
+    requireValue(snapshot === undefined);
     const requested = record(result.runnerRequested);
     requireValue(text(requested.model, 180) && requested.permissionMode === 'dontAsk' && requested.thinking === 'disabled');
   }
   if (result.messageSettings !== undefined) {
     const parsed = claudeMessageSettingsFinalSchema.safeParse(result.messageSettings);
-    requireValue(parsed.success && snapshot !== undefined && result.runnerRequested === undefined);
+    requireValue(parsed.success && snapshot !== undefined && result.thinking === 'unknown');
     messageSettings(parsed.data.snapshot, snapshot);
     requireValue(result.model === (parsed.data.observed?.model ?? null));
   }

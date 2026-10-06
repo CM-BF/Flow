@@ -1,0 +1,26 @@
+{
+  "startedAt": "2026-10-06T17:21:45.721045+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/mature02c01/tsconfig.focused.json",
+    "--pretty",
+    "false"
+  ],
+  "freeBytesBefore": 1214898176,
+  "sourceHashes": {
+    "packages/client/src/conversation-acknowledgement.ts": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+    "packages/client/src/conversation-acknowledgement.test.ts": "62449d0899aa3450919fee44c7edcc6d1c928c6605b096a0475d6ca08bdf050b"
+  },
+  "headBefore": "5739900142a0ec04f492ccea15ec54e5e6520841",
+  "testsRerun": "focused types only; no tests",
+  "productPG": 0,
+  "provider": 0,
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 1.237031291006133,
+  "stdout": "supplement-types.stdout.txt",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

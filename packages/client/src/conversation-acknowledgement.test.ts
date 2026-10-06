@@ -117,6 +117,37 @@ test('requested and observed settings preserve absent, null and alias facts and 
   expect(() => decodeConversationTurnAccepted(value, value.conversation.id, input)).toThrow(UnknownConversationAcknowledgementError);
 });
 
+test('new settings reject legacy runnerRequested even before a final wrapper exists', async () => {
+  const value = accepted();
+  const legacyRequested = { model: 'legacy-model', permissionMode: 'dontAsk' as const, thinking: 'disabled' as const };
+  value.turn.effective.runnerRequested = legacyRequested;
+  expect(decodeConversationTurnAccepted(value, value.conversation.id, turnInput(value))).toEqual(value);
+  delete value.turn.effective.runnerRequested;
+  value.turn.messageSettings = messageSettings();
+  const input = { ...turnInput(value), messageSettings: structuredClone(value.turn.messageSettings) };
+  // A queued turn has a valid requested snapshot without an execution/final wrapper.
+  expect(decodeConversationTurnAccepted(value, value.conversation.id, input)).toEqual(value);
+  value.turn.effective.runnerRequested = legacyRequested;
+  const { client, requests } = await http(() => JSON.stringify(value));
+  await expect(client.submitConversationTurn(value.conversation.id, input, 'pending-settings-key')).rejects.toMatchObject({
+    code: 'conversation_ack_unknown', message: 'The conversation acknowledgement is unconfirmed. Keep the original request identity.',
+  });
+  expect(requests).toEqual([{ key: 'pending-settings-key', body: JSON.stringify(input) }]);
+});
+
+test('new settings reject disabled thinking in a final wrapper without changing the request identity', async () => {
+  const value = accepted(); const snapshot = messageSettings(); value.turn.messageSettings = snapshot;
+  const input = { ...turnInput(value), messageSettings: structuredClone(snapshot) };
+  value.turn.effective.messageSettings = { snapshot, observed: null };
+  expect(decodeConversationTurnAccepted(value, value.conversation.id, input)).toEqual(value);
+  value.turn.effective.thinking = 'disabled';
+  const { client, requests } = await http(() => JSON.stringify(value));
+  await expect(client.submitConversationTurn(value.conversation.id, input, 'final-settings-key')).rejects.toMatchObject({
+    code: 'conversation_ack_unknown', message: 'The conversation acknowledgement is unconfirmed. Keep the original request identity.',
+  });
+  expect(requests).toEqual([{ key: 'final-settings-key', body: JSON.stringify(input) }]);
+});
+
 test('optional settings capability is finite and leaves all legacy capability flags false', () => {
   const value = created(); const settings = messageSettings();
   value.capabilities.messageSettings = { protocol: settings.protocol, profile: settings.profile, choices: 'execution-profile' };

@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-06T17:21:33.814981+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/client/src/conversation-acknowledgement.test.ts",
+    "-t",
+    "new settings reject",
+    "--maxWorkers=1",
+    "--no-cache"
+  ],
+  "freeBytesBefore": 1217019904,
+  "sourceHashes": {
+    "packages/client/src/conversation-acknowledgement.ts": "fac3bbd4bc09a7527011059f27d6f8580981d59d57f0a52bcecb4fb4ea895c31",
+    "packages/client/src/conversation-acknowledgement.test.ts": "62449d0899aa3450919fee44c7edcc6d1c928c6605b096a0475d6ca08bdf050b"
+  },
+  "headBefore": "5739900142a0ec04f492ccea15ec54e5e6520841",
+  "testsRerun": "only 2 new cases; 52 old cases not selected",
+  "productPG": 0,
+  "provider": 0,
+  "exitCode": 1,
+  "stopReason": null,
+  "durationSeconds": 0.6968733330722898,
+  "stdout": "supplement-red.stdout.txt",
+  "stdoutBytes": 10827,
+  "stdoutSha256": "3a8c7efaa1dcc7ebbcb223cc801b2f4320a76197f1edda2792eec0221a9b20be"
+}
