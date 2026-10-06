@@ -1,0 +1,49 @@
+{
+  "basis": "preparation snapshot; add this file actual bytes separately; future review/result belong to same 128KiB; never rewrite old sealed windows",
+  "sourceTarget": "ca6a7a15f76d333f20caf0690ed85b76e29d2c54",
+  "existingEvidenceTarget": "261918f251bd330e76fe66a184df762a07d4c860",
+  "limit": 131072,
+  "minimumTail": 24576,
+  "preparedBytes": 145978,
+  "items": [
+    {
+      "path": "docs/evidence/wpf-mature-02/interface.md",
+      "bytes": 19945,
+      "sha256": "ebf8da826cb27e4577a0dce17ee572532315de3285cf3030b3ed866cc2bf16ba"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/driver-input.json",
+      "bytes": 14514,
+      "sha256": "72d164fce3c1340d0ac814e08925daa0615067ad0d0633039bf82bc15554a6cb"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/manifest.json",
+      "bytes": 13966,
+      "sha256": "83074b4288af25790b58b632c1ac499ce5f72916ad08d1a4063abecc30d48076"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/review-ready.md",
+      "bytes": 2879,
+      "sha256": "9c7defe8e3fc2bb8ed1cf70633b8ea323ce0297db64040d1857a70cd11e37f75"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/plan.md",
+      "bytes": 14398,
+      "sha256": "0ff69360ada69880a3d5d15f005ddeb60e5095c5d127fd6f033b7d84a9471769"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/review.md",
+      "bytes": 9700,
+      "sha256": "cafdf861ac4b07e094feed3c2a2c7c140f8fe4609ec49d3768aac50ed6f8691c"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/status.md",
+      "bytes": 13425,
+      "sha256": "74d55480a33c84284bb06f0883511e00dd336cd60d009b38d3fc1da2117473e2"
+    }
+  ],
+  "itemsBytes": 88827,
+  "orderedSha256": "b1da5295a555a8ff2edb951aa4edad4a41a3417e51c78f1808be3b96d279e57d",
+  "orderedEncoding": "SHA256 of UTF-8 JSON.stringify-compatible compact items array, key order path,bytes,sha256; no newline",
+  "preparedOverlap": []
+}

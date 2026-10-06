@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:38:23 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:42:11 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 2bcc65cb52d75957239f25c5648a1b4977c3d9b8（本轮父metadata基线；ca6a实验源码checkpoint不变） |
-| 工作树dirty状态 | 本轮仅四fake原始证据/验证清单与父路由、资源候选、状态；0源码/策略改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 261918f251bd330e76fe66a184df762a07d4c860（本轮纯文件准备包基线；ca6a实验源码checkpoint不变） |
+| 工作树dirty状态 | 本轮仅owned-openssl文件/hash准备包与父路由/状态；0源码/策略/旧raw改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -26,7 +26,7 @@
 | 当前阻塞 | ACTIVE: 中心专库验证等待串行资源槽位；客户端已开工，生产挂载与Web/TUI接线尚未完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6原SOURCE_REVIEW保留，现仅四fake通过；新组合未审/NOT_OPEN。 |
+| Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6原SOURCE_REVIEW保留，现四fake通过；[固定准备包](../../docs/evidence/wpf-mature-02/node-owned-openssl/review-ready.md)待独立review/NOT_OPEN，本段0入口/目标/监听/检查执行。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 后继沿现Claude v2 optional turnSettings、中心既有事务及task/queue冻结snapshot接入；不新增中心可变settingsRevision。child与Lead负责固定实现后同步架构基线；当前本树仅管理变化。 |
 
