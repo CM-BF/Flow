@@ -1,0 +1,51 @@
+{
+  "kind": "read-only-source-precheck-not-product-approval",
+  "reviewer": "native_center_owner",
+  "observedAt": "2026-10-06T15:17:43.297015+00:00",
+  "target": "aea5536f673022482ff37bba316171e33d7ef96f",
+  "observedHead": "a67294c0dfb37c2e34a739129186c0545c62ff9a",
+  "status": "",
+  "bindings": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 14219,
+      "sha256": "1f64303d80b30a342912c350281ca96d38ba68509201649393ca94c90b3f84fc",
+      "matchesTarget": true
+    },
+    {
+      "path": "packages/client/src/goal-progression-production.test.ts",
+      "bytes": 12112,
+      "sha256": "57a56f1bc2cddc224159f18e93b9df67d77a63c443d12fa2fd9683b2aabfcb91",
+      "matchesTarget": true
+    }
+  ],
+  "scope": [
+    "single existing work-scan lifecycle and migration/route order",
+    "two production factory tests and cleanup",
+    "read-only direct O14 scan/migration contract context"
+  ],
+  "productSource": "No static blocking defect found in scoped factory delta. One shared promise serializes queue/progression; each failure is contained; closing stops timer/new phases and drains before pool disposal. Migration030 precedes workers/scheduler; route follows authentication.",
+  "findings": [
+    {
+      "severity": "P2",
+      "scope": "test independence",
+      "file": "packages/client/src/goal-progression-production.test.ts",
+      "lines": [
+        67,
+        80,
+        110,
+        111
+      ],
+      "detail": "The lifecycle case consumes module-global pin initialized only in the first case. beforeAll starts automaticQueueScan=false; only the first case restarts with automatic scanning enabled. Selecting the lifecycle case alone therefore lacks both the execution profile and automatic scanner, so it cannot supply independent focused shutdown evidence.",
+      "requestedFix": "Give the lifecycle case its own bounded profile publication and explicit automatic-server startup, or move genuinely shared prerequisites into beforeAll without depending on the first test result."
+    }
+  ],
+  "coverageLimits": [
+    "Production PG tests are NOT_RUN; no approval inferred.",
+    "The key replay case has a successful initial response, then restart/replay. It does not itself simulate a lost authorization ACK.",
+    "The lock is acquired after authorization while scans are enabled, so the shutdown case can verify a blocked reassessment after prior admission; do not label it deterministic admission-during-shutdown without arranging that lock before eligibility.",
+    "No CLI review in this precheck; no new tests, PG, provider, build, install or shared-source writes."
+  ],
+  "testsRun": 0,
+  "providerCalls": 0
+}

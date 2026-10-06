@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T15:16:52.996330+00:00 / main7810cbf1461f60710a3aad29f86c7b2378aaa32e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:20:56 UTC / main70cc4e85 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,13 +10,13 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | O14已审模块af976；生产候选aea5536f673022482ff37bba316171e33d7ef96f |
+| 工作基线 / HEAD | O14已审模块af976；生产候选73aabff4fac96c0439817bdc72358c1385371e8d |
 | 工作树dirty状态 | 产品候选已固定；本次原始证据和metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CLI HTTP1红→1绿33ms，根types最终0；production PG NOT_RUN，资源门槛未达。 |
 | 已集成main状态 / HEAD | X01静态安装client67fd/生产5e121已审进入7810cbf1；O14领域已main，当前生产候选未集成。个人runtime362/v15未更新。 |
 | Review | NOT_STARTED 当前O14生产候选；薄deef独审排队。X015e121/67fd原独审已接收main。 |
-| 实现目标 | aea5536f673022482ff37bba316171e33d7ef96f |
+| 实现目标 | 73aabff4fac96c0439817bdc72358c1385371e8d |
 | 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/goal-progression.test.ts, apps/server/src/index.ts, packages/client/src/goal-progression-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
@@ -206,3 +206,5 @@
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
 
 2026-10-06T15:16:52.996330+00:00：O14生产候选已固定，见[候选绑定](../../docs/evidence/f01/goal-progression-production-candidate.json)与[Interface](../../docs/evidence/f01/goal-progression-interface.md)。两次作者测试DTO类型失败原文保留；没有运行PG或模型来补齐结果。X01已main收口，不再等待重复审查。
+
+独立源前检修复：生命周期用例自备profile/自动扫描模式，可单独选择；root types0。锁时点不证明关闭期间首次admission，重启key重放不冒lost ACK。原前检见[记录](../../docs/evidence/f01/goal-progression-production-source-precheck.json)，PG仍NOT_RUN。
