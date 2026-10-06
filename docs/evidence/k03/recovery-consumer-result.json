@@ -1,0 +1,93 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "apps/server/src/goal-context/run-consumers.mjs",
+    "recovery"
+  ],
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/goal-context/behavior.test.ts",
+      "sha256": "d366cd443b8c6aaf471c01c1f6658dfb96605002feddd7bc75af56d989ff339f"
+    },
+    {
+      "path": "apps/server/src/goal-context/claim.test.ts",
+      "sha256": "874f75d1d9646a2b6e4361b316a8bd4f1832530ff179278f90b29e920fc0b363"
+    },
+    {
+      "path": "apps/server/src/goal-context/context.test.ts",
+      "sha256": "3c068dd6c20d82c42738e1852f413dcfc973e9dbdae05f08667060aef89945e8"
+    },
+    {
+      "path": "apps/server/src/goal-context/fixture.ts",
+      "sha256": "f1aac0106997849d4f7560df7adf862798c6e13b03b2281a662d970fd8f1e190"
+    },
+    {
+      "path": "apps/server/src/goal-context/freshness.ts",
+      "sha256": "8073090aa7b8ce372f8711a5b5f061cbff793ea0cef423555a5cc0694d3a18cc"
+    },
+    {
+      "path": "apps/server/src/goal-context/index.ts",
+      "sha256": "7921c324119d60f25f3ffebac1c802a4a8050f9693873e8c138c93e865b6cd5b"
+    },
+    {
+      "path": "apps/server/src/goal-context/input.test.ts",
+      "sha256": "5f4b9bc76ebfceb8b82f8bb66c8f3d180f195ccbe913a5f1a34ddd565b80b27e"
+    },
+    {
+      "path": "apps/server/src/goal-context/input.ts",
+      "sha256": "2244bd1565abb1dcec2e1f1702f0582b09774a514c1e1e722667f9b8954c8d35"
+    },
+    {
+      "path": "apps/server/src/goal-context/recovery.test.ts",
+      "sha256": "9b2df84e063108fbce736271f3c3fd7adfcf1a9014bfc3889d7aef99c2b24ce1"
+    },
+    {
+      "path": "apps/server/src/goal-context/run-consumers.mjs",
+      "sha256": "c550978dfc02a058f167007fb365466bc1f9e8b79cc958d4c5448b567a09ebd6"
+    },
+    {
+      "path": "apps/server/src/goal-context/store.ts",
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/runner.ts",
+      "sha256": "5839f88816f7f2677fb1cfafbb2b72d86223517b442c70b9e11382792ac80227"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "sha256": "2f076f7442d9804b9cd5c248d6d736fbe16e796582c324d4c76b733d858ee24f"
+    },
+    {
+      "path": "apps/server/src/goals/state.ts",
+      "sha256": "93a07f3982ef8f6e3520d199895e14671de719202e99e5f11682ba6f2d045177"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "9e293af3092aba2e138cd8b36fd763ff29923a60bb8f8166bd5b8e490c8dcb8c"
+    },
+    {
+      "path": "docs/evidence/k03/check.mjs",
+      "sha256": "76022db2e6d4e27ad2d6da1044a485317c64202c93171a9bb7f0f0d66cac1fd2"
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f"
+    }
+  ],
+  "startedAt": "2026-10-06T06:27:26.264Z",
+  "endedAt": "2026-10-06T06:27:36.209Z",
+  "exitCode": 0,
+  "signal": null
+}

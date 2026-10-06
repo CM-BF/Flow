@@ -1,3 +1,4 @@
+import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
 import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
 import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
@@ -14,7 +15,7 @@ import type { ReconciliationObservation, ReconciliationResolution, Reconciliatio
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
-import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage } from '@flow/contracts';
+import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage, GoalContextDetail } from '@flow/contracts';
 
 import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
 
@@ -34,6 +35,26 @@ export class FlowClient {
   constructor(options: ClientOptions) {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+  }
+
+  fetchPluginPackage(pluginId: string, versionId: string, input: PackageFetchRequest, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/versions/${encodeURIComponent(versionId)}/fetch`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  packageFetch(id: string, signal?: AbortSignal): Promise<PackageFetchOperation> {
+    return this.request(`/api/package-fetches/${encodeURIComponent(id)}`, { signal });
+  }
+  pluginPackageFetches(pluginId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PackageFetchList> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/package-fetches${query.size ? `?${query}` : ''}`, { signal });
+  }
+  packageFetchHistory(id: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PackageFetchHistory> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/package-fetches/${encodeURIComponent(id)}/history${query.size ? `?${query}` : ''}`, { signal });
+  }
+  commandPackageFetch(id: string, input: PackageFetchCommand, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
+    return this.request(`/api/package-fetches/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   nativeActivities(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeActivityPage> {
@@ -130,6 +151,9 @@ export class FlowClient {
   }
   readGoalInput(id: string, nodeId: string, version?: number, signal?: AbortSignal): Promise<GoalDefinition> {
     return this.request(`/api/goals/${encodeURIComponent(id)}/inputs/${encodeURIComponent(nodeId)}${version === undefined ? '' : `?version=${version}`}`, { signal });
+  }
+  goalContext(id: string, nodeId: string, version: number, signal?: AbortSignal): Promise<GoalContextDetail> {
+    return this.request(`/api/goals/${encodeURIComponent(id)}/nodes/${encodeURIComponent(nodeId)}/inputs/${version}/context`, { signal });
   }
   goalExecutions(id: string, options: { nodeId: string; after?: string; limit?: number }, signal?: AbortSignal): Promise<GoalExecutionPage> {
     const query = new URLSearchParams({ nodeId: options.nodeId });

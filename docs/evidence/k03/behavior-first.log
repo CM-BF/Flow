@@ -1,0 +1,32 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ❯ apps/server/src/goal-context/behavior.test.ts (4 tests | 1 failed) 3979ms
+   × propagates knowledge staleness through actual dependencies while preserving independent deliveries and old history 1253ms
+   ✓ restricts runner reference changes and execution inside the first command branch while replaying prior accepted receipts  1278ms
+   ✓ keeps old no-reference request receipts stable and treats empty references as a semantic no-op  722ms
+   ✓ rejects cross-project, duplicate, bad-boundary and oversized selections without orphan inputs or receipts  726ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-context/behavior.test.ts > propagates knowledge staleness through actual dependencies while preserving independent deliveries and old history
+AssertionError: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ completed apps/server/src/goal-context/behavior.test.ts:41:56
+
+ ❯ apps/server/src/goal-context/behavior.test.ts:51:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  23:16:42
+   Duration  5.39s (transform 775ms, setup 0ms, import 1.17s, tests 3.98s, environment 0ms)
+

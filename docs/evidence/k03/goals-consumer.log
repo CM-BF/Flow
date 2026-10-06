@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ✓ apps/server/src/goal-context/generated-goals.test.ts (9 tests) 14022ms
+   ✓ runs the diamond through independent fixture processes and invalidates only changed actual dependencies  5976ms
+   ✓ preserves failed evidence, rejects failed verification, and requires explicit predecessor for retry  2121ms
+   ✓ serializes concurrent authorization, keeps one task and refuses unsettled execution after center restart  3896ms
+   ✓ returns faithful existing provenance for no-op input and delivery commands after another node changes  988ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  23:26:35
+   Duration  14.69s (transform 395ms, setup 0ms, import 582ms, tests 14.02s, environment 0ms)
+

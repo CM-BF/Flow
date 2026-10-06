@@ -1,0 +1,28 @@
+{
+  "originalPath": "apps/server/src/conversation-context/context.test.ts",
+  "originalSha256": "75cd16917334c53ffb0addd182b8750681b09eb924f62cb1ebe87bb269947cee",
+  "originalBodiesSha256": "05ace511ff626eef7fc8db8891d5a1a0c78316cf978b08af331edb98cdc493e9",
+  "generatedBodiesSha256": "05ace511ff626eef7fc8db8891d5a1a0c78316cf978b08af331edb98cdc493e9",
+  "generatedSha256": "dd21614cdd80877d65431afe0b693a547699fe7238884fd03b77452c1e1814ad",
+  "generatedPath": "apps/server/src/goal-context/generated-context.test.ts",
+  "startedAt": "2026-10-06T06:28:21.889Z",
+  "explicitChanges": [
+    "Own isolated database/resource cleanup header",
+    "Manual migration 021 before HTTP listen; production mount not claimed",
+    "Relative imports rebased; original test bodies unchanged"
+  ],
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/goal-context/generated-context.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner",
+    "-t",
+    "freezes selected text privately while public prompt|claim rejects mismatched raw input|zero-context legacy"
+  ],
+  "endedAt": "2026-10-06T06:28:23.870Z",
+  "exitCode": 0,
+  "signal": null
+}

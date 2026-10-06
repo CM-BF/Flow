@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ✓ apps/server/src/goal-context/generated-recovery.test.ts (12 tests | 9 skipped) 9266ms
+   ✓ requires explicit retry after a resolution, creates one new task with provenance and preserves original history  3797ms
+   ✓ does not blindly repeat a successful external write whose completion acknowledgement was lost  2650ms
+   ✓ allows original work only after none-confirmed safety evidence and rejects oversized context without partial retries  2711ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed | 9 skipped (12)
+   Start at  23:27:26
+   Duration  9.70s (transform 226ms, setup 0ms, import 363ms, tests 9.27s, environment 0ms)
+

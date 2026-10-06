@@ -17,7 +17,7 @@ import { migratePlugins } from '../plugins/index.js';
 import { migrateAssistantMessages } from '../assistant/index.js';
 import { migrateExecutionProfiles } from '../execution-profiles/index.js';
 import { migrateConversationQueue } from '../conversation-queue/index.js';
-import { claim, registerRunner } from '../runners.js';
+import { registerRunner } from '../runners.js';
 import { startScheduler } from '../scheduler.js';
 import { migrateGoalToolRuns } from './index.js';
 import { admit } from './store.js';
@@ -77,10 +77,14 @@ async function fixtureAuthority() {
   const scope: GoalToolScope = { readScope: 'whole-goal', allowedNodeIds: [nodeId], allowedCommands: ['define-input'], maxCommands: 1 };
   const accepted = await admit(pool, boss!, goal.goal.id, { scope, prompt: 'One fixture command', execution: { harness: 'fixture' } }, 'grant');
   const runner = await registerRunner(pool, { name: '012 fixture runner', harnesses: ['fixture'], capacity: 1 });
-  let claimed: Awaited<ReturnType<typeof claim>> | undefined;
-  await expect.poll(async () => { claimed = await claim(pool, runner.runnerId, 60_000); return claimed.assignment; }, { timeout: 5000, interval: 20 }).not.toBeNull();
-  expect(claimed!.assignment!.task.id).toBe(accepted.task.id);
-  const input: GoalToolCommandCall = { attemptId: claimed!.assignment!.attempt.id, ownerVersion: claimed!.assignment!.attempt.ownerVersion,
+  // Seed a persisted 012 attempt, rather than calling the current claim code
+  // which requires later migrations. The original authorized command runs below.
+  const attemptId = randomUUID();
+  await transaction(pool, async client => {
+    await client.query("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,1,clock_timestamp()+interval '60 seconds')", [attemptId, accepted.task.id, runner.runnerId]);
+    await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=1 WHERE id=$1", [accepted.task.id, attemptId]);
+  });
+  const input: GoalToolCommandCall = { attemptId, ownerVersion: 1,
     grant: { id: accepted.run.id, version: 1 }, command: { kind: 'define-input', nodeId, expectedInputVersion: 0,
       input: { goal: 'Retained input', constraints: 'No external writes', acceptance: 'Exact version', verification: { kind: 'nonempty' } }, reason: 'Before upgrade' } };
   const result = await runnerCommand(pool, boss!, runner.runnerId, input, 'saved-command');

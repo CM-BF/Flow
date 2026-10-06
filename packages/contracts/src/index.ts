@@ -19,3 +19,5 @@ export * from './runner-maintenance.js';
 export * from './knowledge.js';
 export * from './goal-graph-runs.js';
 export * from './native-activity.js';
+export * from './plugin-package-fetches.js';
+export * from './goal-context.js';

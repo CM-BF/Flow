@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:26:00 UTC / 2026-10-06 06:26:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:41:32 UTC / 2026-10-06 06:33:39 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main3d4985fca060155435b159e0467815bf8e88b8b8；当前固定接线549f6b3e54f902d7b75ebe6d17f293a2085e7a6c；C02隔离修复d6406f906829b875d062e875dbd5aca613500e16 |
+| 工作基线 / HEAD | main acfd409a493315a00f1cc19ac96c5f1b36c19e57；当前K03薄client 77465eb59121bad5ac2785036961f1707911d21b |
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | 115b0dbdfa02db5483f9e9699852682ce699633c 已推送，018/019+Web兼容/renderer模块及X04已接收；020公共接线本分支待独审。实际center/runner仍fb906cb |
-| Review | Root独立APPROVED9ea33ef61da2304123d08ea87558023d63b38468；历史549+d640已批准并main，见review.md |
-| 实现目标 | 9ea33ef61da2304123d08ea87558023d63b38468 |
-| 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/native-activity.test.ts, packages/client/src/native-activity-production.test.ts |
+| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支已独审待集成；K03薄client待审。实际center/runner仍fb906cb |
+| Review | NOT_STARTED 44bd8bc8e8e30ec49f86b6828f4947bf2c47d148 021生产delta；K03薄client77465及X05薄client07b1已Root批准 |
+| 实现目标 | 44bd8bc8e8e30ec49f86b6828f4947bf2c47d148 |
+| 实现范围 | apps/server/src/index.ts, apps/server/src/goal-tool-runs/migration.test.ts, apps/server/src/goal-graph-runs/native-migration.test.ts, packages/client/src/goal-context-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
-| 下一可用交付 | 可读取真实工具活动，展开时取得输入和结果详情 |
+| 下一可用交付 | 为目标子任务读取固定版本的知识引用；接入可核对恢复的包下载 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -75,6 +75,16 @@
 
 2026-10-06 06:20 UTC：Root限定复审APPROVED，C02资源隔离P2关闭。旧34日志保留，其中旧C02运行前资源归属NOT_PROVEN；新随机库完整create/drop事实与12/12、tsc可核。X04依赖9cde获runner_owner独立只读批准。仅本次审查/metadata变化，无产品重测。
 
-| F01-17 | in-progress | Lead | 9ea33ef61da2304123d08ea87558023d63b38468 020生产挂载+两owner方法，2/2（1真实PG/HTTP+1薄传输）及tsc通过，待独审；无模型 |
+| F01-17 | completed | Lead | 9ea33ef61da2304123d08ea87558023d63b38468 020生产挂载+两owner方法，2/2（1真实PG/HTTP+1薄传输）及tsc通过，待独审；无模型 |
 
 2026-10-06 06:28 UTC：020薄client+生产挂载获Root独立只读APPROVED；领域216由Mika独立批准。保留0provider/64KiB截断不可追回余文边界，下一动作main接收。
+
+| F01-18 | in-progress | Lead | X05固定合同1405551的5个薄client方法，1/1HTTP+tsc，target07b1b11060c069db76f9f958f92c1c53af9fca46已获Root独审；PG/worker未就绪不挂生产 |
+
+2026-10-06 06:30 UTC：X05只消费固定领域合同，未知状态/409/abort原样传递，不暗重试。契约1405551来源保留，无本片领域或模型能力推断。
+
+2026-10-06 06:31 UTC：X05五方法薄client获Root限定独立批准，无领域能力承诺；下一生产/CLI片等待X05领域固定独审，0新增模型。
+
+| F01-19 | in-progress | Lead | K03固定版本context薄client 77465eb59121bad5ac2785036961f1707911d21b；1/1HTTP+tsc，待独审/021生产挂载 |
+
+2026-10-06 06:41:32 UTC：K03完整领域21d2获Mika独审，薄client77465获Root独审；当前021生产delta44bd8bc8e8e30ec49f86b6828f4947bf2c47d148待独审。4different局部各有最终绿，stagefixture修复只改测试输入，不降低原迁移断言；个人服务仍fb906。
