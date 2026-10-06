@@ -263,3 +263,7 @@ APPROVED — native_center_owner独立只读2源/6raw，hash全同，无P1/P2。
 Review target commit: 79b569a14d14c218874781e2d05ae6e42e234ce2
 
 NOT_STARTED；仅3source、2HTTP与types，领域916e另已独审；不复跑PG/native。
+
+Review target commit: 79b569a14d14c218874781e2d05ae6e42e234ce2
+
+APPROVED — assignment_review独立只读3source/3raw/1input同源，无P1/P2；不重跑。限定薄传输，见[回执](../../docs/evidence/f01/native-engineering-client-review.json)。

@@ -15,11 +15,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | 真实HTTP旧/新2/2与root types0；首红保留，未跑PG/provider |
 | 已集成main状态 / HEAD | 此前O12已main；本次native工程薄传输待独审/集成，个人runtime不变 |
-| Review | NOT_STARTED：本次薄传输；此前固定批准保留历史 |
+| Review | APPROVED：assignment_review固定79b569；此前结论保留历史 |
 | 实现目标 | 79b569a14d14c218874781e2d05ae6e42e234ce2 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/engineering-profiles.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 工程执行配置已有明确用途和身份检查，正在接入公共客户端。 |
 | 下一可用交付 | 通过同一客户端登记与读取原生工程配置；插件安装模块的正式依赖接线并行准备。 |
