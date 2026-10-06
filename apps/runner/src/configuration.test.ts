@@ -27,3 +27,20 @@ it.each([
 ])('rejects an invalid or policy-widening manifest %j', async value => {
   await expect(loadRunnerAdapters(await manifest(value))).rejects.toThrow();
 });
+
+it('binds explicit active steering to one immutable profile while preserving legacy canonical bytes', async () => {
+  const { loadRunnerConfiguration } = await import('./configuration.js');
+  const omitted = await loadRunnerConfiguration(await manifest({ materialFiles: [] }));
+  const disabled = await loadRunnerConfiguration(await manifest({ materialFiles: [], activeSteering: false }));
+  const enabled = await loadRunnerConfiguration(await manifest({ materialFiles: [], activeSteering: true }));
+  expect(disabled).toMatchObject({ activeSteering: false, profile: omitted.profile });
+  expect(enabled).toMatchObject({ activeSteering: true, profile: { activeSteering: { protocol: 'flow.active-steering.v1' } } });
+  expect(Object.hasOwn(omitted.profile!, 'activeSteering')).toBe(false);
+});
+
+it.each(['true', null, { protocol: 'flow.active-steering.v1' }])('rejects a non-boolean steering manifest without starting a query: %j', async activeSteering => {
+  await expect(loadRunnerAdapters(await manifest({ materialFiles: [], activeSteering }))).rejects.toThrow();
+});
+it('refuses steering configuration for a planner tool profile', async () => {
+  await expect(loadRunnerAdapters(await manifest({ materialFiles: [], goalTools: true, activeSteering: true }))).rejects.toThrow();
+});

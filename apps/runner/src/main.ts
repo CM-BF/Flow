@@ -24,7 +24,7 @@ try {
     const reference = profile ? await publishExecutionProfile({ ...common, configuration: profile }) : null;
     const adapters = loaded.adapters.map(adapter => profile && reference && adapter.name === profile.harness
       ? guardExecutionProfile(adapter, reference, profile) : adapter);
-    await runRunner({ ...common, adapters });
+    await runRunner({ ...common, adapters, activeSteering: loaded.activeSteering });
   }
 } catch {
   process.stderr.write('Runner stopped: check its configuration, center authentication and local event storage.\n');

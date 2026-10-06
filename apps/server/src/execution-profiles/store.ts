@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { ExecutionProfile, ExecutionProfileConfiguration, ExecutionProfilePage, ExecutionProfilePublished, ExecutionProfileReference } from '../../../../packages/contracts/src/execution-profiles.js';
-import { executionProfileConfigurationJson } from '../../../../packages/contracts/src/execution-profiles.js';
+import { executionProfileConfigurationJson, executionProfileConfigurationSchema } from '../../../../packages/contracts/src/execution-profiles.js';
 import type { TaskSubmission } from '@flow/contracts';
 import { HttpError, sha256, transaction } from '../database.js';
 
@@ -27,9 +27,9 @@ export async function publishProfile(pool: Pool, runnerId: string, configuration
     return { profile: profileView(row), replayed: false };
   });
 }
-export async function listProfiles(pool: Pool, after: string | undefined, limit: number): Promise<ExecutionProfilePage> {
+export async function listProfiles(pool: Pool, after: string | undefined, limit: number, includeSteering = false): Promise<ExecutionProfilePage> {
   return transaction(pool, async client => {
-    const rows = (await client.query<ProfileRow>('SELECT p.* FROM flow.execution_profiles p JOIN flow.runners r ON r.id=p.runner_id WHERE NOT r.revoked AND ($1::text IS NULL OR p.id>$1) ORDER BY p.id LIMIT $2', [after ?? null, limit + 1])).rows;
+    const rows = (await client.query<ProfileRow>(`SELECT p.* FROM flow.execution_profiles p JOIN flow.runners r ON r.id=p.runner_id WHERE NOT r.revoked AND ($3::boolean OR NOT (p.configuration ? 'activeSteering')) AND ($1::text IS NULL OR p.id>$1) ORDER BY p.id LIMIT $2`, [after ?? null, limit + 1, includeSteering])).rows;
     const profiles = rows.slice(0, limit).map(profileView);
     return { profiles, nextCursor: rows.length > limit ? profiles.at(-1)!.reference.id : null };
   }, true);
@@ -56,5 +56,16 @@ export async function assertTaskExecutionProfile(client: PoolClient, task: TaskS
   if (task.resumeSessionId) {
     const session = (await client.query<{ runner_id: string }>('SELECT runner_id FROM flow.sessions WHERE id=$1 AND harness=$2', [task.resumeSessionId, task.harness])).rows[0];
     if (!session || session.runner_id !== profile.reference.runnerId) throw new HttpError(409, 'profile_session_mismatch', 'A resumed session must use its original configured runner.');
+  }
+}
+
+/** Called under the existing runner/task/attempt locks, before command idempotency. */
+export async function assertSteeringExecutionProfile(client: PoolClient, task: TaskSubmission, runnerId: string): Promise<void> {
+  if (!task.executionProfile) throw new HttpError(409, 'steering_profile_unsupported', 'Active steering requires an explicitly pinned execution profile.');
+  const profile = await requireExecutionProfile(client, task.executionProfile);
+  const parsed = executionProfileConfigurationSchema.safeParse(profile.configuration);
+  if (!parsed.success || !parsed.data.activeSteering || task.harness !== 'claude' || profile.reference.runnerId !== runnerId
+    || sha256(executionProfileConfigurationJson(parsed.data)) !== profile.reference.configDigest) {
+    throw new HttpError(409, 'steering_profile_unsupported', 'This active attempt has no recognized steering configuration.');
   }
 }

@@ -8,9 +8,10 @@ import type { ClaudeAdapterOptions } from './claude.js';
 import { textDigest } from './verifier.js';
 
 /** Describe the fixed adapter settings without exposing its private authorized material paths. */
-export function describeExecutionProfile(options: ClaudeAdapterOptions, adapter: HarnessAdapter): ExecutionProfileConfiguration {
+export function describeExecutionProfile(options: ClaudeAdapterOptions, adapter: HarnessAdapter, activeSteering = false): ExecutionProfileConfiguration {
   const files = options.allowRead === false ? [] : [...options.materialFiles];
   return executionProfileConfigurationSchema.parse({
+    ...(activeSteering ? { activeSteering: { protocol: 'flow.active-steering.v1' } } : {}),
     harness: adapter.name, adapterVersion: adapter.version, model: options.model ?? 'sonnet',
     thinking: 'disabled', permissionMode: 'dontAsk', access: options.goalTools ? 'goal-tools' : options.goalGraphTools ? 'goal-graph-tools' : files.length ? 'configured-readonly' : 'none',
     requireReadApproval: options.requireReadApproval ?? false, materialScopeDigest: textDigest(JSON.stringify(files)),
@@ -50,9 +51,13 @@ export function guardExecutionProfile(adapter: HarnessAdapter, reference: Execut
         || selected.runnerId !== expected.runnerId || selected.configDigest !== expected.configDigest)) {
         throw new Error('The task execution profile does not match this runner configuration.');
       }
+      if (selected && Boolean(local.activeSteering) !== Boolean(context.steering)) {
+        throw new Error('The active steering port does not match the pinned execution configuration.');
+      }
       context.signal.throwIfAborted();
       await context.assertOwnership();
-      await adapter.run(context);
+      // Legacy unpinned work never inherits a newly configured interactive control port.
+      await adapter.run(selected ? context : { ...context, steering: undefined });
     },
   };
 }
