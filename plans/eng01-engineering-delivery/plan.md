@@ -40,7 +40,7 @@ Flow项目写入只允许确认>=Sol的模型，优先本机可确认gpt-6-astra
 
 - [x] **ENG001-01** 建立唯一生产目标、当前源码缺口、职责和优先级；此项不是产品交付。
 - [ ] **ENG001-02** 固定工程受理/profile、工作区租用与监督检查的小合同，确认可复用接缝、模型门槛及精确scope。
-- [ ] **ENG001-03** 0模型真实PG+Git/worktree+检查命令+产物的纵向片，公开headless/TUI可复跑验收。
+- [x] **ENG001-03** 0模型真实PG+Git/worktree+检查命令+产物的纵向片，公开headless/TUI可复跑验收。
 - [ ] **ENG001-04** 固定版本的工程执行profile/adapter和恢复、取消、unknown、日志/资源边界；只读旧链回归。
 - [ ] **ENG001-05** 首真实合格native工程旅程：具体一次预算、预检、实际源码改动、监督检查和独立语义验收。
 - [ ] **ENG001-06** Web/TUI交付展示与明确接受、错误诊断、浏览器退出持续、持久重连。
@@ -56,3 +56,5 @@ Flow项目写入只允许确认>=Sol的模型，优先本机可确认gpt-6-astra
 当前runner verifier/server evidence/runner合同仍限flow.text的nonempty/contains。工程通路需独立的受信检查来源、版本、退出结果与产物收据；不能把日志非空当工程验证通过，中心只验证收据/产物关联，不声称重跑远端命令，旧text验证保持兼容。
 
 受管worktree共享Git refs及默认config；worktree lock只防移动/清理，不是并发写锁。交付内容集须覆盖新增未跟踪、已暂存/未暂存、删除、文件类型/模式；首片可明确拒绝binary/submodule，不可漏掉仍称完整。受信检查前后必须绑定同一内容集，禁外部diff与textconv，只读Git用GIT_OPTIONAL_LOCKS=0；不为这些约束造通用Git框架。来源：[Git worktree](https://git-scm.com/docs/git-worktree)、[Git diff](https://git-scm.com/docs/git-diff)，GO于2026-10-06提供的已核研究输入，实施owner仍核实际固定工具行为。
+
+当前片段映射：ENG01A已完成上述0模型真实工程通路并进入mainc5；ENG01B在独立worktree接专用profile/用途授权与持久启动。真实合格模型写改、业务接受和完整日用仍未完成，固定fixture成功不扩为该结论。
