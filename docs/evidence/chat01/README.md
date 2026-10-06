@@ -18,3 +18,12 @@
 限制：首片段独立migrate/register seam，生产挂载/client/Web由Lead；exact v1 artifact兼容不是typed assistant-final协议，也不证明自然语言完成。CHAT02 helper正在独立交付。无实时delta、无queue/steer、无用户选模型/thinking/tools、无跨host恢复。conversation revision只受理CAS，异步结果需另读task/source版本。未运行产品全套、浏览器或真实模型。
 
 固定源码target `2d3bb61b35318f999c9f0f336bb3f443418bb5dc`；[源码与日志hash](source-manifest.json)。2026-10-06 03:41 UTC 实测flow_chat01剩余DB数为0。该target之后metadata不改变源码或原始测试输出，独立review尚未开始。
+
+
+2026-10-06 03:47 UTC typed消费delta：完整merge CHAT02固定2e1098504500a472f50a4f77e57c8220a48b28aa（含R03及version9依赖），未复制helper或改其实现。先领域合同a780e35，再局部red→green（[最初两条红例](typed-red.txt)）。最终[PG/HTTP原始输出](typed-pg-http-tests.txt) **22/22，16.51秒**；[全库typecheck](typed-typecheck.txt)通过，diffcheck通过。保留旧pg-http-tests/source-manifest，旧14条不冒充新22条。
+
+新增8条负例/绑定验收覆盖typed正文优先、v2无final拒绝fallback、pending直到task完成、固定批次重报/中心重启、异task/session/fence拒绝与跨turn detail、旧attempt typed隔离、真实adapter非success SDK结果不发正文、typed内容hash损坏不回退、nullable effective与长Unicode正文（原14中真实adapter两轮用例随依赖升级到v2，增加的独立it数量为8）。实际runRunner→当前Claude adapter→注入SDK两轮仍通过，另非成功注入路径通过；真实模型/云调用0。临时文件与flow_chat01已由teardown清理。
+
+本工作段继续应用既有本地find-skills/codebase-design/clean-code/tdd方法，不安装技能。2026-10-06 03:47 UTC clean-code：正文来源读写分离，只消费公共readAssistantFinal；精简共享Unicode预览规则，避免非空断言；仅识别具体content mismatch而不吞数据库故障；实际effective完整传递，不按旧policy推测。保留N+1性能后继，不增加本段平台机制。生产挂载和公共export仍交Lead，Web/真实自然语言未测。
+
+Typed最终实现 `d0f4f5d8abc8995b22a43879880e090bfb898024`，[单独源码/log hash](typed-source-manifest.json)；2026-10-06 03:48 UTC 实查flow_chat01不存在（剩余0）。首target 2d3bb61已获Root独立只读APPROVED，未重跑；当前typed target尚NOT_STARTED。其依赖CHAT02由Lead另审，不把作者或旧target批准扩张。
