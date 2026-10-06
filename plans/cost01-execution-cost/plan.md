@@ -1,6 +1,6 @@
 # COST-001 可解释的执行成本与预算
 
-状态：accepted / queued。2026-10-06。独立大task，承接[FLOW-001 REQ-09](../flow-001-architecture/plan.md)，co-lead Execution Lead；唯一权威在execution-cost工作树。优先级在真实Claude/Codex接通、成熟Web交互与TUI首片之后，不抢当前writer。统一遵循[模块化规则](../../AGENTS.md#modular-design)。
+状态：in-progress（COST01A首纵向片）。2026-10-06。独立大task，承接[FLOW-001 REQ-09](../flow-001-architecture/plan.md)，co-lead Execution Lead；唯一权威在execution-cost工作树。原依赖首片已具备；2026-10-06在TUI01E接收后提高为下一实施位，与O13及网页恢复并行，不打断现有writer。统一遵循[模块化规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果与边界
 
@@ -39,3 +39,7 @@
 
 
 COST001-02补充候选：稳定资料前缀结构toy及明确限制统一见[研究记录](../../docs/evidence/cost01/research.md)。只读来源与字节边界不代表token节省；具体实施待空槽fresh scope，不修改当前context或附件版本，不提高到ENG/TUI/附件前。
+
+## 当前下一可用交付：COST01A
+
+唯一子片[COST01A](../../../cost-usage-readout/plans/cost01a-usage-readout/plan.md)承担来源分解与共用轻读口，映射COST001-02/03。首片只复用usage_samples和已有baseline事实，提供普通输入/cache-read/cache-write/output/SDK估算、source语义版本与覆盖原因；不重写旧合计含义，不按模型名猜归因，不将不同provider计数直接相加。没有可核来源版本时保留unknown。共享出口/FlowClient及生产挂载由Execution Lead单写，客户端渲染仍可并行。具体只读projection与必要共享seam由该子片固定Interface后实施；不能新增第二账本。
