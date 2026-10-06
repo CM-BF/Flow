@@ -26,6 +26,14 @@ const assignments = [
   ['WPF-001', 'Web 平台持续执行', '工程协作', 'web-platform-management', 'web-platform'],
   ['WPF-M02', 'Web统一工作入口', '工作线', 'web-unified-workspace', 'wpf-m02-web-workspace'],
   ['WPF-P01', 'Web插件宿主', '工作线', 'web-plugin-host', 'wpf-p01-plugin-host'],
+  ['O01', '目标与版本化执行', '工作线', 'goal-orchestration', 'o01-goal-orchestration'],
+  ['WPF-PERF01', 'Web性能基线测量', '技术验证', 'web-performance', 'wpf-perf01-web-performance'],
+  ['E01', 'Harness 零模型验证', '技术验证', 'harness-auth-probes', 'e01-harness-probes'],
+  ['WPF-I01', 'Web 插件集成', '工作线', 'web-plugin-integration', 'wpf-i01-plugin-integration'],
+  ['D04', '多 Lead 领取协调', '工程协作', 'dashboard-coordination', 'd04-coordination'],
+  ['F01', '共享领域接口', '工作线', 'm2-shared-foundation', 'f01-shared-domains'],
+  ['G01', '版本化项目计划', '工作线', 'project-graph', 'g01-project-graph'],
+  ['P02', '持久外部调度', '工作线', 'protocol-dispatch', 'p02-durable-protocol'],
   ['M02', '统一工作入口', '工作线', 'm2-workspace', 'm02-unified-workspace'],
 ];
 
@@ -35,6 +43,7 @@ export function defaultRegistry() {
     fallbackWorktree: projectRoot,
     frozenCommit: 'eacee76fa7f1b6cc46b06b57ae68458637be4a26',
     staleAfterHours: 24,
+    phaseSourceId: 'FLOW-001',
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
@@ -58,6 +67,7 @@ export function validateRegistry(registry) {
     if (!/^docs\/evidence\/[a-z0-9-]+$/.test(task.evidenceDir)) throw new Error(`任务 ${task.id} evidenceDir 超出范围`);
     if (task.appEvidence && !/^apps\/[a-z0-9-]+\/EVIDENCE\.md$/.test(task.appEvidence)) throw new Error('appEvidence 超出范围');
   }
+  if (registry.phaseSourceId && !ids.has(registry.phaseSourceId)) throw new Error('phaseSourceId 必须指向已登记任务');
   return registry;
 }
 

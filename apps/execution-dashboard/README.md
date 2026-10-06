@@ -1,6 +1,6 @@
 # Flow 工程进度 dashboard
 
-独立于产品 Web 的本地只读网页。按派工登记，从各 task 唯一 owner worktree 的 `status.md` 生成 JSON 和 UI。没有第二套手填状态，也不调用产品中心或模型。Node 24.20+，无生产依赖。
+独立于产品 Web 的本地只读网页。按派工登记，从各 task 唯一 owner worktree 的 `status.md` 生成 JSON 和 UI。没有第二套手填状态，也不调用产品中心或模型。Node 24.20+，生产依赖 pg 8.23.1；先在仓库根运行 `pnpm install --frozen-lockfile`。领取账本独立于产品中心，专用协调 PostgreSQL 不可用时进度仍可读，领取显示未知。
 
 ## 启动
 
@@ -81,7 +81,7 @@ main 的 HEAD / branch / dirty 单独只读观察。实现目标是现场 main H
 
 ## 验证
 
-无需安装依赖的样本行为测试：
+安装固定 workspace 依赖后的样本行为测试（协调 PG 用例须配置专用测试连接，否则会明确 skip）：
 
 ```sh
 node --test apps/execution-dashboard/test/*.test.mjs
@@ -89,7 +89,7 @@ node --test apps/execution-dashboard/test/*.test.mjs
 
 只创建临时 Git 样本，覆盖 owner 选择、更新隔离、空 review、冻结 / 缺失 / 解析错误 / 过期、重复字段、分支与登记切换、main 与 review 分离、路径限制 / symlink / Host / XSS 文本、文件体积限制。真实 worktree 只读 smoke。D02新增来源可使用 `node apps/execution-dashboard/test/progress-smoke.mjs`，它在独立动态端口读取实际status并核对HTTP返回，写入 `docs/evidence/d02`；普通测试不运行此live检查。
 
-浏览器检查使用 workspace 已有 Playwright 开发依赖（或设置 `PLAYWRIGHT_MODULE` 指向现有 Playwright module），不新增生产依赖：
+浏览器检查使用 workspace 已有 Playwright 开发依赖（或设置 `PLAYWRIGHT_MODULE` 指向现有 Playwright module），浏览器工具本身不新增生产依赖：
 
 ```sh
 node apps/execution-dashboard/test/browser-check.mjs
@@ -118,3 +118,7 @@ status 顶部同一 metadata 表中添加以下字段，不另建状态文件：
 缺失、UNKNOWN、无效字段显示摘要待补；不会提取“阻塞 / 风险 / 未验证”段落拼成当前阻塞。`无`、`无新增事项`兼容为 NONE；ACTIVE/REQUIRED 后也不能仅写无。某项摘要不完整时，仍能单独展示有效明确的 ACTIVE/REQUIRED，但未知本身不会变成阻塞/决定。来源不新鲜时不采信其当前事项。
 
 实现范围不允许绝对路径、..、.git、反斜杠、glob 或 pathspec magic。每条范围必须存在于实现目标。新增未跟踪代码在范围外也会阻止 metadata-only 推断。范围树证明仅覆盖声明范围；historicalIntegrated 仅表示提交已入历史；current 还要求当前声明范围树相同（含新增/删除）且该范围无未提交变化。后继变化不表示新实现失效，只表示该目标无法证明当前范围。详情保留 proof 方法、完整目标、现场 SHA、范围、变化文件及观察时间。WPF-001 按父计划固定范围登记，不扩展为任意资料读取；既有计划子目录内直接引用资料可下钻。
+
+## 多 Lead 领取
+
+[D04 运行指引](../../docs/evidence/d04/README.md)说明专用PG数据库、环境变量、CLI回执、迁移、scope和交接。网页为只读入口，CLI必须与网页配置同一协调数据库；DB失效不允许根据空列表接手。

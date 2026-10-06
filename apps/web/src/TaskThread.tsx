@@ -14,6 +14,7 @@ import {
 } from "@assistant-ui/react";
 import {
   taskFixtures,
+  TERMINAL_STATUSES,
   type Reference,
   type TaskSubmission,
 } from "@flow/contracts";
@@ -267,7 +268,9 @@ export function TaskThread({
                       ? "Cancellation requested. Waiting for the runner to acknowledge that it stopped."
                       : task.status === "uncertain"
                         ? "Runner ownership was lost. Reconciliation is required; work may already have taken effect."
-                        : "This accepted task continues at the center. Start a new chat for another task."}
+                        : TERMINAL_STATUSES.includes(task.status)
+                          ? `This task has ${task.status === "succeeded" ? "completed" : task.status === "failed" ? "failed" : "been cancelled"}. Start a new chat for another task.`
+                          : "This accepted task continues at the center. Start a new chat for another task."}
                   </p>
                 )}
                 {task.verificationStatus === "failed" && (

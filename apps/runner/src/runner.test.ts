@@ -16,6 +16,7 @@ async function center(task: Partial<TaskSubmission> = {}) {
   const batches: EventBatch[] = [];
   const shutdown = new AbortController();
   let claimed = false;
+  let claimLeaseMs = 10_000;
   let action: 'continue' | 'cancel' | 'stop' = 'continue';
   let answer: 'approve' | 'reject' | null = null;
   let reportHook: ((batch: EventBatch, response: ServerResponse) => boolean) | undefined;
@@ -34,12 +35,12 @@ async function center(task: Partial<TaskSubmission> = {}) {
       response.writeHead(401).end(JSON.stringify({ error: { code: 'unauthorized', message: 'Unknown runner.' } })); return;
     }
     if (request.url === '/api/runner/claim') {
-      response.end(JSON.stringify({ assignment: claimed ? null : assignment })); claimed = true; return;
+      response.end(JSON.stringify({ assignment: claimed ? null : assignment, remainingLeaseMs: claimed ? 0 : claimLeaseMs })); claimed = true; return;
     }
     if (request.url === '/api/runner/heartbeat') {
       if (heartbeatHook?.(response)) return;
       const decision = events.findLast(event => event.type === 'decision');
-      response.end(JSON.stringify({ action, leaseExpiresAt: new Date(Date.now() + 10_000).toISOString(), decision: answer && decision?.type === 'decision' ? { decisionId: decision.decisionId, answer } : null })); return;
+      response.end(JSON.stringify({ action, remainingLeaseMs: action === 'stop' ? 0 : 10_000, leaseExpiresAt: new Date(Date.now() + 10_000).toISOString(), decision: answer && decision?.type === 'decision' ? { decisionId: decision.decisionId, answer } : null })); return;
     }
     if (request.url === '/api/runner/events') {
       const batch = eventBatchSchema.parse(body);
@@ -66,6 +67,7 @@ async function center(task: Partial<TaskSubmission> = {}) {
   return {
     events, batches, assignment, options, shutdown,
     start() { const running = runRunner(options); void running.catch(() => undefined); cleanup.push(async () => { shutdown.abort(); await running; }); return running; },
+    setClaimLease(milliseconds: number) { claimLeaseMs = milliseconds; },
     setAction(next: typeof action) { action = next; },
     setAnswer(next: typeof answer) { answer = next; },
     onReport(hook: typeof reportHook) { reportHook = hook; },
@@ -175,7 +177,7 @@ it('expires the local lease while a heartbeat request is still hanging', async (
   const notices: RunnerNotice[] = [];
   api.options.onNotice = notice => notices.push(notice);
   api.options.requestTimeoutMs = 15_000;
-  api.assignment.attempt.leaseExpiresAt = new Date(Date.now() + 100).toISOString();
+  api.setClaimLease(100);
   api.onHeartbeat(() => true);
   const running = api.start();
   await eventually(() => notices.some(notice => notice.type === 'ownership-lost'));

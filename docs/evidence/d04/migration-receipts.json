@@ -1,0 +1,566 @@
+[
+  {
+    "observedHead": "c2de313ce5a6f036f07bbfb28d52a7e1a2cc1b9f",
+    "observedDirty": true,
+    "receipt": {
+      "requestId": "d04-migration-20261006-D04",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:42.566Z",
+      "claim": {
+        "claimId": "ff162f16-1dc3-4f3a-bad5-68cb60e4fc65",
+        "version": 1,
+        "taskId": "D04",
+        "lead": "astra_ultra_execution_lead",
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination",
+        "branch": "codex/dashboard-coordination",
+        "scope": [
+          "AGENTS.md",
+          "apps/execution-dashboard",
+          "docs/evidence/d04",
+          "plans/AGENTS.md",
+          "plans/README.md",
+          "plans/d04-coordination",
+          "plans/templates",
+          "pnpm-lock.yaml"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:42.566Z",
+        "createdAt": "2026-10-06T02:48:42.566Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-D04",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.580Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "AGENTS.md",
+          "apps/execution-dashboard",
+          "docs/evidence/d04",
+          "plans/AGENTS.md",
+          "plans/README.md",
+          "plans/d04-coordination",
+          "plans/templates",
+          "pnpm-lock.yaml"
+        ],
+        "state": "active",
+        "branch": "codex/dashboard-coordination",
+        "origin": "migration",
+        "taskId": "D04",
+        "worker": "astra_ultra_execution_lead",
+        "claimId": "ff162f16-1dc3-4f3a-bad5-68cb60e4fc65",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination",
+        "createdAt": "2026-10-06T02:48:42.566Z",
+        "updatedAt": "2026-10-06T02:49:44.580Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  {
+    "observedHead": "846432c4110194e2e48dfc7fbba3e2cd4a093a7c",
+    "observedDirty": false,
+    "receipt": {
+      "requestId": "d04-migration-20261006-F01",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:42.695Z",
+      "claim": {
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 1,
+        "taskId": "F01",
+        "lead": "astra_ultra_execution_lead",
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "branch": "codex/m2-shared-foundation",
+        "scope": [
+          "apps/cli",
+          "apps/runner/package.json",
+          "apps/runner/src/main.ts",
+          "apps/runner/src/outbox.test.ts",
+          "apps/runner/src/outbox.ts",
+          "apps/server/src/index.ts",
+          "apps/server/src/runners.ts",
+          "apps/server/src/usage.ts",
+          "docs/evidence/f01",
+          "packages/client",
+          "packages/contracts/src/harnesses.test.ts",
+          "packages/contracts/src/harnesses.ts",
+          "packages/contracts/src/index.ts",
+          "packages/contracts/src/runner.ts",
+          "packages/contracts/src/tasks.ts",
+          "plans/f01-shared-domains"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:42.695Z",
+        "createdAt": "2026-10-06T02:48:42.695Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-F01",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.600Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/cli",
+          "apps/runner/package.json",
+          "apps/runner/src/main.ts",
+          "apps/runner/src/outbox.test.ts",
+          "apps/runner/src/outbox.ts",
+          "apps/server/src/index.ts",
+          "apps/server/src/runners.ts",
+          "apps/server/src/usage.ts",
+          "docs/evidence/f01",
+          "packages/client",
+          "packages/contracts/src/harnesses.test.ts",
+          "packages/contracts/src/harnesses.ts",
+          "packages/contracts/src/index.ts",
+          "packages/contracts/src/runner.ts",
+          "packages/contracts/src/tasks.ts",
+          "plans/f01-shared-domains"
+        ],
+        "state": "active",
+        "branch": "codex/m2-shared-foundation",
+        "origin": "migration",
+        "taskId": "F01",
+        "worker": "astra_ultra_execution_lead",
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "createdAt": "2026-10-06T02:48:42.695Z",
+        "updatedAt": "2026-10-06T02:49:44.600Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  {
+    "observedHead": "6394afad2480da369adb7e6156403bfc45097dfa",
+    "observedDirty": true,
+    "receipt": {
+      "requestId": "d04-migration-20261006-G01",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:42.818Z",
+      "claim": {
+        "claimId": "0b11a88b-3959-469c-a5dd-74535565159f",
+        "version": 1,
+        "taskId": "G01",
+        "lead": "astra_ultra_execution_lead",
+        "worker": "runner_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/project-graph",
+        "branch": "codex/project-graph",
+        "scope": [
+          "apps/server/src/projects",
+          "docs/architecture/g01-projects.md",
+          "docs/evidence/g01",
+          "packages/contracts/src/projects.ts",
+          "packages/storage/migrations/004-projects.sql",
+          "plans/g01-project-graph"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:42.818Z",
+        "createdAt": "2026-10-06T02:48:42.818Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-G01",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.613Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/server/src/projects",
+          "docs/architecture/g01-projects.md",
+          "docs/evidence/g01",
+          "packages/contracts/src/projects.ts",
+          "packages/storage/migrations/004-projects.sql",
+          "plans/g01-project-graph"
+        ],
+        "state": "active",
+        "branch": "codex/project-graph",
+        "origin": "migration",
+        "taskId": "G01",
+        "worker": "runner_owner",
+        "claimId": "0b11a88b-3959-469c-a5dd-74535565159f",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/project-graph",
+        "createdAt": "2026-10-06T02:48:42.818Z",
+        "updatedAt": "2026-10-06T02:49:44.613Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  {
+    "observedHead": "65032531045080cb41050d25355003f8ccaf546c",
+    "observedDirty": true,
+    "receipt": {
+      "requestId": "d04-migration-20261006-P02",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:42.937Z",
+      "claim": {
+        "claimId": "d11dc662-807f-4811-ae91-fb04a4a5fb11",
+        "version": 1,
+        "taskId": "P02",
+        "lead": "astra_ultra_execution_lead",
+        "worker": "assignment_review",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch",
+        "branch": "codex/protocol-dispatch",
+        "scope": [
+          "apps/runner/src/protocol-dispatch",
+          "apps/server/src/protocol-dispatch",
+          "docs/architecture/p02-dispatch.md",
+          "docs/evidence/p02",
+          "packages/contracts/src/protocol-dispatch.ts",
+          "packages/contracts/src/protocol-task.ts",
+          "packages/storage/migrations/005-protocol-dispatch.sql",
+          "plans/p02-durable-protocol"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:42.937Z",
+        "createdAt": "2026-10-06T02:48:42.937Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-P02",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.625Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/runner/src/protocol-dispatch",
+          "apps/server/src/protocol-dispatch",
+          "docs/architecture/p02-dispatch.md",
+          "docs/evidence/p02",
+          "packages/contracts/src/protocol-dispatch.ts",
+          "packages/contracts/src/protocol-task.ts",
+          "packages/storage/migrations/005-protocol-dispatch.sql",
+          "plans/p02-durable-protocol"
+        ],
+        "state": "active",
+        "branch": "codex/protocol-dispatch",
+        "origin": "migration",
+        "taskId": "P02",
+        "worker": "assignment_review",
+        "claimId": "d11dc662-807f-4811-ae91-fb04a4a5fb11",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch",
+        "createdAt": "2026-10-06T02:48:42.937Z",
+        "updatedAt": "2026-10-06T02:49:44.625Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  {
+    "observedHead": "0a9e85f78ff2c7934d9517f64eb072507c2ff403",
+    "observedDirty": false,
+    "receipt": {
+      "requestId": "d04-migration-20261006-WPF-M02",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:43.061Z",
+      "claim": {
+        "claimId": "dea92c6b-3450-404c-a32c-3fd007485ac6",
+        "version": 1,
+        "taskId": "WPF-M02",
+        "lead": "external_web_d01_owner",
+        "worker": "workspace_panels_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace",
+        "branch": "codex/web-unified-workspace",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/TaskThread.tsx",
+          "apps/web/src/components/workspace/WorkspacePanels.tsx",
+          "apps/web/src/projection.ts",
+          "apps/web/src/workspace-feed",
+          "apps/web/test/fixture-server.ts",
+          "apps/web/test/workspace-browser.ts",
+          "apps/web/test/workspace-fixture.ts",
+          "apps/web/test/workspace-observers-browser.ts",
+          "apps/web/test/workspace-preview.ts",
+          "apps/web/test/workspace-projection.test.ts",
+          "apps/web/test/workspace-real-center.ts",
+          "docs/evidence/wpf-m02",
+          "plans/wpf-m02-web-workspace"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:41:00.000Z",
+        "updatedAt": "2026-10-06T02:48:43.061Z",
+        "createdAt": "2026-10-06T02:48:43.061Z"
+      }
+    }
+  },
+  {
+    "observedHead": "3d8121006fea24b6b9f25457eb363a10110781ad",
+    "observedDirty": true,
+    "receipt": {
+      "requestId": "d04-migration-20261006-WPF-P01",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:43.178Z",
+      "claim": {
+        "claimId": "0686525b-d323-49b5-affa-cefc66cb13be",
+        "version": 1,
+        "taskId": "WPF-P01",
+        "lead": "external_web_d01_owner",
+        "worker": "w01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host",
+        "branch": "codex/web-plugin-host",
+        "scope": [
+          "apps/web/src/plugins",
+          "apps/web/test/plugin-host.browser.ts",
+          "apps/web/test/plugin-host.config.ts",
+          "apps/web/test/plugin-host.test.ts",
+          "docs/evidence/wpf-p01",
+          "plans/wpf-p01-plugin-host"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:41:00.000Z",
+        "updatedAt": "2026-10-06T02:48:43.178Z",
+        "createdAt": "2026-10-06T02:48:43.178Z"
+      }
+    }
+  },
+  {
+    "observedHead": "d8e7b9c7f3ecf888989e1d35b9b2cbe40bfcb794",
+    "observedDirty": false,
+    "receipt": {
+      "requestId": "d04-migration-20261006-WPF-001",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:43.295Z",
+      "claim": {
+        "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+        "version": 1,
+        "taskId": "WPF-001",
+        "lead": "external_web_d01_owner",
+        "worker": "external_web_d01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "branch": "codex/web-platform-management",
+        "scope": [
+          "docs/evidence/web-platform",
+          "plans/web-platform"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:43.295Z",
+        "createdAt": "2026-10-06T02:48:43.295Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-WPF-001",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.635Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/evidence/web-platform",
+          "plans/web-platform"
+        ],
+        "state": "active",
+        "branch": "codex/web-platform-management",
+        "origin": "migration",
+        "taskId": "WPF-001",
+        "worker": "external_web_d01_owner",
+        "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "createdAt": "2026-10-06T02:48:43.295Z",
+        "updatedAt": "2026-10-06T02:49:44.635Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  {
+    "observedHead": "3b6c5a39568fa27ca62f1ea45e06a77fb678daee",
+    "observedDirty": false,
+    "receipt": {
+      "requestId": "d04-migration-20261006-W01",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:43.417Z",
+      "claim": {
+        "claimId": "3a3b963b-aa40-4c50-8324-4445ed8889df",
+        "version": 1,
+        "taskId": "W01",
+        "lead": "external_web_d01_owner",
+        "worker": "w01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web",
+        "branch": "codex/m1-web",
+        "scope": [
+          "plans/w01-web"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:43.417Z",
+        "createdAt": "2026-10-06T02:48:43.417Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-W01",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.630Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "plans/w01-web"
+        ],
+        "state": "active",
+        "branch": "codex/m1-web",
+        "origin": "migration",
+        "taskId": "W01",
+        "worker": "w01_owner",
+        "claimId": "3a3b963b-aa40-4c50-8324-4445ed8889df",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web",
+        "createdAt": "2026-10-06T02:48:43.417Z",
+        "updatedAt": "2026-10-06T02:49:44.630Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  {
+    "observedHead": "10854f109459109ea7273979da4153daecdf1571",
+    "observedDirty": false,
+    "receipt": {
+      "requestId": "d04-migration-20261006-FLOW-001",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:43.544Z",
+      "claim": {
+        "claimId": "3cb8bc46-0bfb-4635-aaf3-069d822e1e58",
+        "version": 1,
+        "taskId": "FLOW-001",
+        "lead": "astra_ultra_execution_lead",
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "branch": "codex/plan-status-review",
+        "scope": [
+          "docs/quality",
+          "plans/flow-001-architecture",
+          "plans/flow-002-provider-harness",
+          "plans/flow-003-m1-execution",
+          "plans/ops-001-status-review"
+        ],
+        "role": "writer",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:43.544Z",
+        "createdAt": "2026-10-06T02:48:43.544Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-FLOW-001",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.607Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/quality",
+          "plans/flow-001-architecture",
+          "plans/flow-002-provider-harness",
+          "plans/flow-003-m1-execution",
+          "plans/ops-001-status-review"
+        ],
+        "state": "active",
+        "branch": "codex/plan-status-review",
+        "origin": "migration",
+        "taskId": "FLOW-001",
+        "worker": "astra_ultra_execution_lead",
+        "claimId": "3cb8bc46-0bfb-4635-aaf3-069d822e1e58",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "createdAt": "2026-10-06T02:48:43.544Z",
+        "updatedAt": "2026-10-06T02:49:44.607Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  {
+    "observedHead": "51b1a4d09076c9e399c2611820d12bcebfa341b3",
+    "observedDirty": false,
+    "receipt": {
+      "requestId": "d04-migration-20261006-I02",
+      "action": "take",
+      "committedAt": "2026-10-06T02:48:43.669Z",
+      "claim": {
+        "claimId": "3fca55ad-6724-4c0a-af73-b0497eaf6dd5",
+        "version": 1,
+        "taskId": "I02",
+        "lead": "astra_ultra_execution_lead",
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "branch": "codex/m2-integration",
+        "scope": [],
+        "role": "integration",
+        "state": "active",
+        "next": null,
+        "origin": "migration",
+        "observedAt": "2026-10-06T02:55:00.000Z",
+        "updatedAt": "2026-10-06T02:48:43.669Z",
+        "createdAt": "2026-10-06T02:48:43.669Z"
+      }
+    },
+    "currentReceipt": {
+      "requestId": "d04-observation-correction-I02",
+      "action": "amend",
+      "committedAt": "2026-10-06T02:49:44.619Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "integration",
+        "scope": [],
+        "state": "active",
+        "branch": "codex/m2-integration",
+        "origin": "migration",
+        "taskId": "I02",
+        "worker": "astra_ultra_execution_lead",
+        "claimId": "3fca55ad-6724-4c0a-af73-b0497eaf6dd5",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "createdAt": "2026-10-06T02:48:43.669Z",
+        "updatedAt": "2026-10-06T02:49:44.619Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  }
+]

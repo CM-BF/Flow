@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { assistantFinalDataSchema } from './assistant.js';
 import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
 
 export const registerRunnerSchema = z.strictObject({
@@ -11,10 +12,16 @@ export interface RunnerRegistration { runnerId: string; token: string }
 export const ownershipSchema = z.strictObject({ attemptId: idSchema, ownerVersion: z.number().int().positive() });
 export type Ownership = z.infer<typeof ownershipSchema>;
 export interface ClaimedTask { attempt: AttemptView; task: TaskSubmission & { id: string } }
-export interface ClaimResponse { assignment: ClaimedTask | null }
+export interface ClaimResponse {
+  assignment: ClaimedTask | null;
+  /** Milliseconds granted at center lease creation, before response transport; 0 without an assignment.
+   * Consumers must subtract elapsed time since BEFORE sending claim. Missing/invalid grants fail closed. */
+  remainingLeaseMs: number;
+}
 export interface HeartbeatResponse {
   action: 'continue' | 'cancel' | 'stop';
   leaseExpiresAt: string;
+  /** Milliseconds granted by this heartbeat before response transport; 0 for stop. */
   remainingLeaseMs: number;
   decision: DecisionAnswer | null;
 }
@@ -25,6 +32,7 @@ const title = z.string().min(1).max(180);
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
 const tokenCount = z.number().int().nonnegative().nullable();
 export const runnerEventSchema = z.discriminatedUnion('type', [
+  assistantFinalDataSchema.extend(envelope),
   z.strictObject({ ...envelope, type: z.literal('message'), text: z.string().min(1).max(4000) }),
   z.strictObject({ ...envelope, type: z.literal('detail'), title, content, mediaType: z.string().max(120) }),
   z.strictObject({ ...envelope, type: z.literal('decision'), decisionId: idSchema, prompt: z.string().min(1).max(2000) }),

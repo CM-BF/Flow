@@ -71,9 +71,15 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 | --- | --- | --- |
 | C02 核对恢复 | completed；独立审查后已集成 | `Flow-worktrees/m2-reconciliation/plans/c02-reconciliation/status.md`；runner_owner |
 | P01 协议接入 | SDK首段已审；durable出站后继open | `Flow-worktrees/protocol-adapters/plans/p01-protocols/status.md`；assignment_review |
-| M02 统一工作入口/公共契约 | in-progress | `Flow-worktrees/m2-workspace/plans/m02-unified-workspace/status.md`；Execution Lead |
-| D03 高层进度与metadata语义 | 实际实现/独立review修复中 | `Flow-worktrees/dashboard-human-view/plans/d03-dashboard-human/status.md`；runner_owner |
+| M02 统一工作入口/公共契约 | backend/CLI片段已完成并集成；Web由WPF-M02交付 | `Flow-worktrees/m2-workspace/plans/m02-unified-workspace/status.md`；Execution Lead |
+| D03 高层进度与metadata语义 | 已审并集成，4320已更新 | `Flow-worktrees/dashboard-human-view/plans/d03-dashboard-human/status.md`；runner_owner |
 
 上表新feature正文在其权威worktree，集成后补本仓库相对链接；不复制未合入副本制造第二状态源。
 
 [Web平台管理 WPF-001](web-platform/plan.md) 已接收至3493088文档快照，权威外部owner后续变化按实际commit接收；其子项不与主线P01/D03重复派发。M02后端与CLI已进入main8c57f2f；真实统一Web入口由外部WPF-M02独占实现。I02集成状态见[plan](i02-integration/plan.md)/[status](i02-integration/status.md)/[review](i02-integration/review.md)。
+
+## 当前协调片段
+
+[D04 多 Lead 领取](d04-coordination/plan.md) 已完成并部署；[status](d04-coordination/status.md) / [review](d04-coordination/review.md)。G01 首图命令、P02 Task-based A2A 持久出站、F01共享 client/CLI/生产入口和WPF-M02统一Web已分别审查，在I02接收集成。O01目标命令和E01零模型上游probe滚动推进；自然语言完整交付/插件生命周期/容量仍未完成。
+
+新增唯一source O01：`Flow-worktrees/goal-orchestration/plans/o01-goal-orchestration/`；WPF-PERF01：`Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/`。二者已收到committed claim；各Lead可对无冲突ready scope自助take，进度仍只维护owner status。registry共30来源，数量为本次登记事实而非每份plan均已完成。

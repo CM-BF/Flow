@@ -7,9 +7,14 @@ import { saveArtifact, saveDetail, verifyArtifact } from './evidence.js';
 import { recordUsage } from './usage.js';
 import { recordSession } from './sessions.js';
 import { appendTimeline } from './timeline.js';
+import { saveAssistantFinal } from './assistant/store.js';
 
 async function applyEvent(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: RunnerEvent): Promise<void> {
   if (event.type === 'message') await appendTimeline(client, task, { kind: 'text', text: event.text });
+  else if (event.type === 'assistant-final') {
+    const reference = await saveAssistantFinal(client, task, attempt, event);
+    await appendTimeline(client, task, { kind: 'reference', reference });
+  }
   else if (event.type === 'session') {
     await recordSession(client, task, attempt, event);
     const reference = await saveDetail(client, task.id, attempt.id, { title: 'Native session', kind: 'session', content: JSON.stringify(event), mediaType: 'application/json' });

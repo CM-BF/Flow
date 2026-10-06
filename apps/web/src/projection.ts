@@ -48,6 +48,7 @@ export class TaskProjection {
   private observer?: AbortController;
   private generation = 0;
   private online = true;
+  private visible = true;
   private selectedId: string | null = null;
   private historyCursor = 0;
   private historyEnd = 0;
@@ -112,7 +113,7 @@ export class TaskProjection {
       const snapshot = await this.client.show(id);
       if (generation !== this.generation) return;
       this.applySnapshot(snapshot);
-      if (this.online) {
+      if (this.online && this.visible) {
         this.observer = new AbortController();
         void this.observe(id, generation, this.observer.signal);
       }
@@ -130,15 +131,33 @@ export class TaskProjection {
       this.update({ connection: "disconnected" });
       return;
     }
+    if (!this.visible) return;
+    this.resumeObservation();
+  }
+
+  setVisible(visible: boolean) {
+    if (this.visible === visible) return;
+    this.visible = visible;
+    if (!visible) { this.observer?.abort(); return; }
+    if (this.online) this.resumeObservation();
+  }
+
+  private resumeObservation() {
     const id = this.state.task?.id;
     if (!id) {
-      if (this.selectedId) void this.select(this.selectedId);
+      if (this.selectedId && this.state.connection !== "connecting") void this.select(this.selectedId);
       return;
     }
     this.observer?.abort();
     this.observer = new AbortController();
     this.update({ connection: "reconnecting" });
     void this.observe(id, this.generation, this.observer.signal);
+  }
+
+  syncSummary(task: TaskSummary) {
+    const previous = this.state.tasks.find(item => item.id === task.id);
+    if (!previous || previous.updatedAt < task.updatedAt ||
+      (previous.updatedAt === task.updatedAt && (previous.status !== task.status || previous.verificationStatus !== task.verificationStatus || previous.title !== task.title))) this.updateSummary(task);
   }
 
   clearSelection() {

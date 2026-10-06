@@ -3,6 +3,7 @@ import { mkdir, mkdtemp, readFile, realpath, stat, writeFile } from 'node:fs/pro
 import { join, resolve } from 'node:path';
 import { query as nativeQuery, type SDKMessage, type SDKResultMessage, type SDKSystemMessage, type HookCallback } from '@anthropic-ai/claude-agent-sdk';
 import { MAX_DETAIL_BYTES, type HarnessAdapter, type HarnessContext } from '@flow/contracts';
+import { assistantFinalDataSchema, type AssistantSettings } from '../../../packages/contracts/src/assistant.js';
 import { textDigest, verifyText } from './verifier.js';
 
 export type ClaudeQuery = (input: Parameters<typeof nativeQuery>[0]) => AsyncIterable<SDKMessage> & { close(): void };
@@ -17,7 +18,7 @@ export interface ClaudeAdapterOptions {
   query?: ClaudeQuery;
 }
 
-const ADAPTER_VERSION = 'claude-sdk-0.3.290-v1';
+const ADAPTER_VERSION = 'claude-sdk-0.3.290-v2';
 
 export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapter {
   const limits = validateLimits(options);
@@ -55,14 +56,20 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
         });
         let final: SDKResultMessage | undefined;
         let sessionId: string | undefined;
+        let effective: AssistantSettings['effective'] = { model: null, permissionMode: null, tools: null, thinking: 'unknown' };
         for await (const event of stream) {
           controller.signal.throwIfAborted();
           if (event.type === 'system' && event.subtype === 'init') {
+            if (sessionId && event.session_id !== sessionId) throw new Error('Claude initialization changed native session.');
             if (context.task.resumeSessionId && event.session_id !== context.task.resumeSessionId) throw new Error('Claude did not resume the requested native session.');
             sessionId = event.session_id;
+            effective = { model: event.model ?? null, permissionMode: event.permissionMode ?? null, tools: event.tools ?? null, thinking: 'unknown' };
             await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION, resources: resources(event) });
           }
-          if (event.type === 'result') final = event;
+          if (event.type === 'result') {
+            if (final && finalIdentity(final) !== finalIdentity(event)) throw new Error('Claude returned multiple different results for one task.');
+            final = event;
+          }
         }
         controller.signal.throwIfAborted();
         if (!final) throw new Error('Claude ended without a result.');
@@ -72,7 +79,14 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
         await emitUsage(context, final);
         if (final.permission_denials.length) await context.emit({ type: 'detail', title: 'Claude SDK permission denials', content: `SDK recorded ${final.permission_denials.length} permission refusals. Tool inputs were not retained.`, mediaType: 'text/plain' });
         if (final.subtype !== 'success' || final.is_error) throw new Error('Claude did not complete successfully.');
+        const assistant = assistantFinalDataSchema.parse({
+          type: 'assistant-final', messageId: textDigest(JSON.stringify([final.session_id, final.uuid])),
+          nativeSessionId: final.session_id, source: 'claude.sdk.result', sourceMessageId: final.uuid, content: final.result,
+          settings: { requested: { model: options.model ?? 'sonnet', permissionMode: 'dontAsk', thinking: 'disabled' }, effective },
+        });
         await publishArtifact(context, final.result);
+        await context.assertOwnership();
+        await context.emit(assistant);
       } finally {
         clearTimeout(timer);
         context.signal.removeEventListener('abort', abort);
@@ -191,4 +205,8 @@ function validateLimits(options: ClaudeAdapterOptions) {
   if (!Number.isFinite(maxBudgetUsd) || maxBudgetUsd <= 0 || maxBudgetUsd > 1) throw new Error('Claude maxBudgetUsd must be greater than zero and at most 1.');
   if (!Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 90_000) throw new Error('Claude timeoutMs must be between 1 and 90000.');
   return { maxTurns, maxBudgetUsd, timeoutMs };
+}
+
+function finalIdentity(result: SDKResultMessage) {
+  return JSON.stringify([result.uuid, result.session_id, result.subtype, result.is_error, result.subtype === 'success' ? result.result : null]);
 }

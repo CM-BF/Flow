@@ -1,0 +1,49 @@
+.wf-overview { display: flex; flex: 1; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; background: var(--background); }
+.wf-overview[hidden] { display: none; }
+.flow-work-area[hidden], .flow-workspace-bar[hidden] { display: none; }
+.wf-header { display: flex; justify-content: space-between; gap: 16px; padding: 22px 24px 12px; }
+.wf-header h1 { font-size: 22px; font-weight: 600; letter-spacing: -.035em; }
+.wf-header p, .wf-muted { color: var(--muted-foreground); font-size: 12px; }
+.wf-header p { margin-top: 4px; }
+.wf-navigation { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 20px 12px; border-bottom: 1px solid var(--border); }
+.wf-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 12px 24px 8px; }
+.wf-section-heading h2 { font-size: 13px; font-weight: 600; }
+.wf-section-heading > span { color: var(--muted-foreground); font-size: 11px; }
+.wf-attention { border-bottom: 1px solid var(--border); flex: none; max-height: 33%; overflow: auto; }
+.wf-attention > p, .wf-attention > button { margin: 0 24px 12px; }
+.wf-attention-list, .wf-records, .wf-index-list { list-style: none; margin: 0; padding: 0; }
+.wf-attention-list > li { padding: 10px 24px; border-top: 1px solid var(--border); }
+.wf-task-heading { display: flex; align-items: baseline; gap: 12px; justify-content: space-between; }
+.wf-task-heading h3, .wf-task-heading > button { text-align: left; font-size: 13px; font-weight: 550; }
+.wf-task-heading > span { font-size: 11px; color: var(--muted-foreground); }
+.wf-task-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.wf-task-actions p { width: 100%; margin: 2px 0 4px; font-size: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.wf-task-actions > span { font-size: 12px; }
+.wf-cancel { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px; border: 1px solid var(--border); border-radius: 6px; }
+.wf-feed { flex: 1; min-height: 80px; overflow: auto; overflow-anchor: none; padding: 12px 24px; }
+.wf-records > li { padding: 13px 0; border-bottom: 1px solid var(--border); }
+.wf-record-heading { display: flex; align-items: baseline; gap: 12px; justify-content: space-between; }
+.wf-record-heading > button { text-align: left; font-weight: 550; font-size: 12px; }
+.wf-record-heading > time { color: var(--muted-foreground); font-size: 11px; white-space: nowrap; }
+.wf-records article > p { margin: 6px 0; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; font-size: 13px; }
+.wf-record-source { display: block; margin-top: 5px; color: var(--muted-foreground); font-size: 10px; overflow-wrap: anywhere; }
+.wf-records button { max-width: 100%; white-space: normal; height: auto; min-height: 28px; }
+.wf-feed-footer { display: flex; justify-content: space-between; gap: 8px; align-items: center; min-height: 42px; padding: 6px 24px; border-top: 1px solid var(--border); color: var(--muted-foreground); font-size: 11px; }
+.wf-notice, .wf-window-note { margin: 8px 24px; font-size: 12px; }
+.wf-error { color: var(--destructive); }
+.wf-index { overflow: auto; padding: 16px 24px; flex: 1; min-height: 0; }
+.wf-index-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
+.wf-index-controls select { background: var(--background); border: 1px solid var(--border); border-radius: 5px; padding: 5px; margin-left: 8px; }
+.wf-index-list > li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.wf-index-list p { margin-top: 5px; }
+@media (max-width: 600px) {
+  .wf-header { padding: 16px 14px 10px; flex-wrap: wrap; }
+  .wf-header h1 { font-size: 19px; }
+  .wf-navigation { padding: 0 10px 10px; }
+  .wf-section-heading { padding: 10px 14px 6px; flex-wrap: wrap; gap: 4px; }
+  .wf-attention-list > li, .wf-feed, .wf-index { padding-left: 14px; padding-right: 14px; }
+  .wf-attention > p, .wf-attention > button, .wf-notice, .wf-window-note { margin-left: 14px; margin-right: 14px; }
+  .wf-task-heading { flex-wrap: wrap; gap: 4px; }
+  .wf-feed-footer { padding: 6px 14px; flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { .wf-overview *, .wf-overview *::before, .wf-overview *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

@@ -101,3 +101,14 @@
 完整原计划是持续工程的基线；其完成不自动停止。按收益与证据领取下一工作，保留未验证范围。局部验证和共享变更影响分析遵循根规则，不因 metadata 反复跑全库。
 
 每个活跃 owner 在 status 标准表填写：`阶段`、`优先级`（1–9）、`当前产出`、`下一可用交付`、`当前阻塞`（NONE / ACTIVE: 描述）、`需用户决定`（NONE / REQUIRED: 描述）。摘要给用户阅读，SHA/原始日志留技术字段和下钻；缺失为未知。历史已完成源保留明示历史事实，不制造需用户决定事项。实现验收另填 `实现目标` 完整SHA 与 `实现范围` 仓库相对 literal 文件/目录逗号列表（不支持glob）；review只覆盖该target和范围，metadata变化不自动失效或获批。历史main祖先关系与当前范围是否改变分开验证；owner上次观察main不是必须追赶的全局同步锁。
+
+## 多 Lead 领取与交接
+
+- 新 take 前使用执行 dashboard 的协调账本核对任务、lead/worker、worktree/branch 与精确可写 scope；通过 PostgreSQL 原子 CLI 取得 commit 后 receipt（claimId/version/身份/路径/时间）才能写。稳定 requestId 重试必须同 payload；未知结果先核对，不能把读取失败当空闲。
+- 进度仍只写唯一 owner status，领取账本不复制 TODO/check/review。review role 只读、不占 writer 范围；writer 的同 task、同 worktree、父子 literal scope 不得同时领取。目录路径按段比较，禁止 glob、../、.git 或 symlink 范围。
+- scope 追加用当前 version 的原子 amend，冲突保留旧占用；不能先 release 再 take 产生空窗。交付后在 review/修复期保留占用，明确停止写入后才 release/handoff；handoff_pending 保留范围，接收方 accept 新 version 后开工，原 owner 不再修改。陈旧记录只提示核对，绝不超时自动抢占。
+- 既有授权开工者保留 migration 标记与原观察时间。账本是同机合作约束，不声称 OS 强隔离。受控 integration 仅应用已审提交；手工冲突修复/新实现须与原 owner 协调路径，不能借 integration 绕过 scope。
+- status 的“阶段”为最长24字的共同里程碑（当前 M2），任务步骤放“当前产出/下一可用交付”。页面总标题只取明确全局 FLOW-001 来源，缺失/过期显示未知，不拼接各任务自由段落。
+- 使用与恢复边界见 [D04说明](../docs/evidence/d04/README.md)。
+
+跨 task 部分范围移交允许：旧 owner 明确停写该范围 → 当前 version 的 amend 移除 → 新 owner take 成功后开工；期间新领取若冲突则重新协调，旧 owner 不恢复已交回写权。扩大原 claim 仍用原子 amend，整 claim handoff 保持 pending 占用。
