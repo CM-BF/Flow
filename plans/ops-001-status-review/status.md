@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:47 UTC / main2af8639d（个人窗口已关闭） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:45 UTC / main2af8639d（个人窗口已关闭） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -296,7 +296,7 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 
 第二树Git操作exit0之后共享/其他worktree配置hash断言失败，原APPLIED_PENDING_VERIFY不改；另次只读复核保留内容map、clean/head及精确候选缺省状态。shared config前值当时仅内存，无法归因该hash变化，明确NOT_PROVEN；未改共享配置、重试sparse或回滚掩盖。后续批次先持久化配置前hash/受保护字段，仍仅单一Git operator；原两树数量到限停。当前等待已授权项目副本的下一组候选事实，worker源码/只读审查可继续；不反复试探运行门槛。
 
-## 2026-10-06 21:47 UTC 资源回收与小验证
+## 2026-10-06 21:45 UTC 资源回收与小验证
 
 两棵本队已结束树按原可逆稀疏方法完成，见 [own-two-next](../../docs/quality/sparse-worktree-2026-10-06/own-two-next/summary.json)：1,226项非自有历史副本、14,050,181逻辑字节；各树原源码/测试/计划/自有原始证据与依赖保留，目标树以外Git配置和保护树均不变。两次局部卷差分别7,983,104B、9,097,216B，不作排他的物理回收归因；最后观察1,152,081,920B。此前readability第二树的共享配置旧before缺失UNKNOWN保持，不追认为本次修复。
 
