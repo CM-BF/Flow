@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T16:10:36.850746+00:00 / main83f535b54f2390a729f02bc818e07ba684d94ccb |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:05 UTC / main1126ada4891dc07aff9c83e0747b66069aaf2111 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client |
 | Branch | codex/tui-client |
-| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 266105c6329822773f116fc9fa36c2b58a722b7b；本次仅管理metadata |
+| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / c8bacf7471e023914e77994bcc3f5d3070f49a92；本次仅管理metadata |
 | 工作树dirty状态 | 管理metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | A–E与F限定controller/Ink接线片已审/main；F原35+1/focused类型0，本父metadata不重测 |
-| 已集成main状态 / HEAD | TUI01F限定片已main83f535；实际HTTP/PG取消、PTY和TUI→Web→TUI仍未完成 |
+| 检查状态 | A–E与F控制片已审/main；F-03真实HTTP/PG取消与Ink PTY两行为通过，原suite exit1保留；独立收尾1/1及类型兼容已审，本父不重测 |
+| 已集成main状态 / HEAD | TUI01F-03七源已main8d84逐字接收，当前main1126保持；TUI01F-04真实网页交替仍未实施/运行 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 终端已增加明确任务的取消与原请求恢复；队列、草稿和观察接续能力保留。 |
-| 下一可用交付 | 实际验证取消的中心状态与终端交互，再验证网页和终端交替操作。 |
-| 当前阻塞 | ACTIVE: 源码可继续；数据库与实际终端、网页组合验证等待足够的磁盘余量。 |
+| 当前产出 | 终端显式取消、原请求恢复和退出不取消后台任务已通过真实中心与终端验证并进入主线。 |
+| 下一可用交付 | 由同组worker接续同一会话的真实终端→网页→终端旅程；网页呈现与后台合同继续独立交付。 |
+| 当前阻塞 | NONE；F-04已有具体方案并安排原范围交接，运行待固定driver独审与fresh共享窗口，不再将已验取消/PTY列为等待。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)；F-03限定独审APPROVED，完整大task验收仍开放 |
 | Claim | f6055d8a-356e-4dfa-8420-1eaf81874410 v1；仅plan/evidence |
 | 架构影响 | TUI01C把已审Web纯stream/settlement规则提取为浏览器安全共享子入口；Web私有展示状态不迁移 |
 
@@ -34,10 +34,10 @@
 | TUI001-03 | completed | runner_owner / Execution Lead | [TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)独审及焦点修复通过、main648e接收；[父回执](../../docs/evidence/tui01/tui01c-main-receipt.json) |
 | TUI001-04 | pending | TUI owner / Mika合同 | 真实model能力仍逐项接通 |
 | TUI001-05 | pending | TUI owner / Web合同 | 附件生命周期与context |
-| TUI001-06 | in-progress | assignment_review / Execution Lead | [TUI01D](../../../tui-goal-session/plans/tui01d-goal-session/status.md)已审main280289；goal控制和TUI01E队列已main；TUI01F限定cancel接线已审main，实际03/04验证及steer/decision仍后继 |
+| TUI001-06 | in-progress | native_center_owner / Execution Lead | TUI01D/E及F-03已审/main；真实取消/Ink PTY限定验证完成，F-04真实双端与steer/decision仍后继 |
 | TUI001-07 | pending | TUI owner | runner/plugin管理 |
 | TUI001-09 | completed | runner_owner / Web独立消费者 | TUI01B与WPF-ACK01均已独审/main；共享v2附件回执df8也已mainfd132，完整双端旅程仍归08 |
-| TUI001-08 | pending | 独立review / Execution Lead | 完整日用/PTY/双公开客户端共同中心/provider验收仍开放 |
+| TUI001-08 | pending | 独立review / Execution Lead | 已有独立PTY与两公开client证据；完整日用、真实TUI→Web→TUI及provider边界仍开放，不能互相替代 |
 
 本claim仅管理文档；TUI01A由runner_owner在独立tui-conversations树与0ba7e5d7 claim实施，复用R06交付后的同一槽。依赖固定1cec921，既有Web importer/package/snapshot保持，实际core仍0.3.22；lock移交已归还F01。首片9e5588原CHANGES_REQUESTED保持历史；29b已修复两个P2并获MikaAPPROVED，19增量含11重复及8新例，mainf181已接收。P3最大revision边界留共享ACK后继；无provider结论。唯一status进入dashboard；与GO只报真实大task blocker或完整Done。
 
@@ -56,3 +56,7 @@
 2026-10-06 15:47 UTC：沿用户再次确认的slash/typed command方向，当前兼容候选已冻结，assignment_review安全转入TUI01F。复用既有FlowClient.cancel和单持久intent，明确取消受理不等于停止；目标ID/原key/body在unknown恢复中不替换，退出只停止观察。已有取消API是task范围，不捏造attempt CAS；跨客户端过期冲突沿原send/queue规则验证，不自动改版本重发。具体[最小设计](../../docs/evidence/tui01/task-cancel-next-design.json)与[独立源码树](../../docs/evidence/tui01/task-cancel-source-provision.json)已固定；owner须fresh原子take后写。后台共同接口/headless可先独立验收，实际PTY与同中心生产App旅程分别留真实证据，不以两个headless替代浏览器。暂无新工程测试/provider；父06/08与完整日用验收保持开放。
 
 2026-10-06T16:10:36.850746+00:00：已核[本片主线接收](../../docs/evidence/tui01/tui01f-main-receipt.json)，取消受理与停止事实分开，旧请求恢复不换key/body。controller+Ink静态接线的局部批准不关闭F-03/04和父06/08；actual HTTP/PG/PTY/App等待资源，Web/TUI互不作为全体后端的串行门禁。
+
+2026-10-06 20:05 UTC：[实际取消/PTY主线回执](../../docs/evidence/tui01/tui01f-actual-cancel-pty-main-receipt.json)核七源固定/作者/main一致。原行为2项通过但cleanup导致suite exit1保留；后继仅收尾1/1修复正常清理，未重跑已过行为。退出观察不取消C，合成任务继续完成；不外推native强杀或模型能力。
+
+下一片继续原TUI001-06/08、TUI01F-04：assignment_review原范围停写/正式handoff给native_center_owner，使用既定真实PTY+生产App方案。候选backend明确改为已审af51、Web固定d629/source506，TUI保持已审ec30七源；实现只扩test-only fixture端口和独立driver，不改中心权威或私有Web状态。完整运行另固定driver、依赖/资源与共享窗口，不继承旧预算。公共typed contract/headless可先交付，Web与TUI均不成为所有后台的串行门禁。
