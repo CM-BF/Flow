@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-06T18:36:48.953667+00:00",
+  "approvalId": "svc05h-same-web-recovery-20261006-1835",
+  "outcome": "ready-preserved",
+  "bootstrapCalls": 1,
+  "cliExit": 0,
+  "checks": {
+    "config.jsonHashUnchanged": true,
+    "claude.jsonHashUnchanged": true,
+    "maintenance.jsonHashUnchanged": true,
+    "web-release.jsonHashUnchanged": true,
+    "configUnchanged": true,
+    "runtimeSourceUnchanged": true,
+    "operationUnchanged": true,
+    "releaseUnchanged": true,
+    "currentUnchanged": true,
+    "retainedUnchanged": true,
+    "databaseUnchanged": true,
+    "centerOwnedIdentityUnchanged": true,
+    "centerMembersUnchanged": true,
+    "runnerOwnedIdentityUnchanged": true,
+    "runnerMembersUnchanged": true,
+    "oldWebGroupAbsent": true,
+    "newWebOwned": true,
+    "ownedListeners": true,
+    "operationLockAbsent": true,
+    "cliReady": true
+  },
+  "source": {
+    "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "dirty": false
+  },
+  "oldWebGroup": 65219,
+  "newWeb": {
+    "pid": 23534,
+    "group": 23534,
+    "startedAt": "Tue Oct  6 11:35:45 2026",
+    "identity": "running",
+    "members": [
+      {
+        "pid": 23534,
+        "parent": 1,
+        "group": 23534,
+        "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+        "socketObservationCode": 1,
+        "tcpStates": {}
+      },
+      {
+        "pid": 23631,
+        "parent": 23534,
+        "group": 23534,
+        "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "cwd": "/Users/citrine/.flow-personal",
+        "socketObservationCode": 0,
+        "tcpStates": {
+          "LISTEN": 1,
+          "ESTABLISHED": 1
+        }
+      }
+    ]
+  },
+  "webReleaseOperation": {
+    "action": "bootstrap",
+    "version": 2,
+    "at": "2026-10-06T18:35:46.002Z",
+    "outcome": "ready"
+  },
+  "oldWebExit": {
+    "at": "2026-10-06T18:35:45.487Z",
+    "code": 1,
+    "signal": null,
+    "bytes": 104,
+    "sha256": "30609968b51225215c7188911f77b395fa4e6c80e703479beb7b0dfd6a8a5d89"
+  },
+  "releaseVersion": 2,
+  "currentArtifact": {
+    "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+  },
+  "personalProviderQueries": 0,
+  "userTabActions": 0,
+  "safeForLeadCheckoutRestore": true,
+  "limits": [
+    "state.json whole bytes changed as expected; protected record proof uses saved PID/group/start time plus formal command/nonce ownership before and after, not an independently saved full private state JSON.",
+    "Connection counts are immediate observations, not a durable health guarantee.",
+    "The personal accumulation cause remains NOT_PROVEN."
+  ]
+}

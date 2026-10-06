@@ -49,3 +49,5 @@ Review target commit：d8b4c961b9d36915f07ff4109299fac642566519。按3980已授�
 Execution Lead独立APPROVED target `d8b4c961b9d36915f07ff4109299fac642566519`，完整2source及40绑定核对；原133次隔离连接、228close、容量drop-beforeHTTP及checkpoint先于清理成立，reviewer未重跑。原件见[独立回执](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-independent-review.json)。本批准只覆盖隔离诊断，不证明个人64 CLOSED的原因，不授权扩大cap或任意服务修复。
 
 新同版本Web恢复准备是只读操作证据；[manifest](../../docs/evidence/svc05-history-compatibility/web-recovery/manifest.json)绑定现身份、两类准确backend报告和固定362工具。未执行bootstrap；独立审查与单次窗口待Lead。旧af51产品冻结不变。
+
+2026-10-06 18:37 UTC：同版本恢复准备获Lead独立17固定绑定+52实际输入核验，限定原工具一次bootstrap。已执行原窗口、exit0/ready与前后保护事实由Lead只读确认并恢复main；正式事实见web-recovery/operation-manifest.json和source-window-closed回执。未复跑工程测试，个人64 CLOSED根因仍NOT_PROVEN，新af51发布尚未执行。

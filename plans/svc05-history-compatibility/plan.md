@@ -29,3 +29,5 @@
 2026-10-06 18:14 UTC：Lead授权≤128KiB/≤15s tiny纯文件检查，2边界red→8green已完成，04仅待独立review；05仍无个人操作窗口。上限是本机小检查，不扩到PG/host搬运/浏览器。
 
 2026-10-06 18:16 UTC：04获Execution Lead独立APPROVED；05保留open。获准只读分析固定static-web/Vite/Node连接生命周期并提出隔离复现预算，本轮不启动loopback实验或个人HTTP。
+
+2026-10-06 18:37 UTC：GO新增同版本Web恢复由Lead在固定362窗口授权并完成：既有bootstrap一次，仅新Web23534/23631，页面仍caa1/v2、后台362/v15。此操作解决现网页恢复，不勾选05新后台/新页面发布；原版本事实与新af51兼容缺口分开。

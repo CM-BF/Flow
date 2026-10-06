@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:33 UTC；候选源码af51冻结，搬运与隔离诊断独立APPROVED |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:37 UTC；原版本Web恢复已完成，af51候选仍冻结 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,9 +19,9 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已确认可复用现有工具恢复同版本网页，并保留后台、会话及页面版本；恢复前身份和旧版本兼容报告已核实。 |
-| 下一可用交付 | 待固定源码窗口下发后，仅恢复网页进程；随后继续两个保留页面与新后台的兼容验证。 |
-| 当前阻塞 | ACTIVE: 等待本次仅网页恢复操作窗口；新后台发布仍缺两个保留页面的对应报告。 |
+| 当前产出 | 原版本网页已恢复，后台、会话、任务与页面版本保持；新后台和新版页面发布仍待后继兼容验证。 |
+| 下一可用交付 | 继续两个保留页面与新后台的兼容验证，报告齐备后准备受管发布。 |
+| 当前阻塞 | ACTIVE: 新后台发布仍缺两个保留页面的对应报告；原网页恢复窗口已关闭。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，源码预审保留；Root APPROVED RELEASE03 af51+d629限定组合，不代表个人部署 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
@@ -58,3 +58,5 @@
 2026-10-06 18:28 UTC：授权单次隔离诊断已完成133attempts/exit0，churn残留NOT_REPRODUCED；64保持流达到cap时drop先于HTTP且释放后恢复。全部自有group/port/tmp清理，原个人身份问题仍unknown，不作为健康/根因证明。[诊断与manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-diagnostic-README.md)。无个人HTTP/服务变化，source d8b4c961b9d36915f07ff4109299fac642566519，独审待完成。
 
 2026-10-06 18:33 UTC：隔离诊断获Lead限定APPROVED，原133attempt/清理证据不变，个人残留根因仍未证明。按新优先级暂停SVC05R01（尚未take/写）；一次只读恢复快照确认后台362、runner accepting/v15、原三个group身份/监听，Web子进程64 CLOSED。两个362兼容报告及两个pointer历史b1c报告均独立核验，pointer仍caa1/v2；config/profile/marker一致，0新增HTTP/provider/服务动作。现只准备原`web bootstrap`同版本入口，原Flow checkout须由Lead固定到362；见[固定facts与操作方案](../../docs/evidence/svc05-history-compatibility/web-recovery/proposal.json)。
+
+2026-10-06 18:37 UTC：同版本恢复窗口关闭，一次bootstrap exit0/922ms，旧Web group已退出、新23534/23631 owned/ready；原false preflight保留且仅修正观察器空白解析，未重复bootstrap。checkpoint已先保存，config/profile/pointer/后台runner与已观察DB元数据保持；Lead已恢复main ec5。见[操作事实与边界](../../docs/evidence/svc05-history-compatibility/web-recovery/README.md)；本轮0operator provider/用户tab操作，无后续个人探针。05新后台/页面发布仍open。

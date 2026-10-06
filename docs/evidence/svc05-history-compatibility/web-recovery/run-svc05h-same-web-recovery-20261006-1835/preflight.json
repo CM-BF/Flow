@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T18:34:48.643000+00:00",
+  "checks": {
+    "head": true,
+    "clean": true,
+    "lockAbsent": true,
+    "private:config.json": true,
+    "private:claude.json": true,
+    "private:state.json": true,
+    "private:maintenance.json": true,
+    "private:web-release.json": true,
+    "source:tools/personal-preview/cli.mjs": true,
+    "source:tools/personal-preview/preview.mjs": true,
+    "source:tools/personal-preview/process.mjs": true,
+    "source:tools/personal-preview/environment.mjs": true,
+    "source:tools/personal-preview/static-web.mjs": true,
+    "source:tools/personal-preview/web-artifact.mjs": true,
+    "source:tools/personal-preview/web-release.mjs": true,
+    "source:package.json": true,
+    "source:apps/web/package.json": true,
+    "source:pnpm-lock.yaml": true,
+    "node": true,
+    "dep-entry:pg": true,
+    "dep-manifest:pg": true,
+    "dep-entry:vite": true,
+    "dep-manifest:vite": true,
+    "owned:center": false,
+    "owned:runner": false,
+    "owned:web": false,
+    "request": true
+  },
+  "outcome": "stop-before-action"
+}
