@@ -79,3 +79,11 @@
 - review模板须包含可复制任务说明，先验证实际worktree/base/head，结论绑定具体commit。Claude Code或其他外部agent可只读审查；直接修改Flow文件仍受Sol以上门槛与独立worktree规则约束。
 - 用户期望开发并发上限10（含Goal Owner+Execution Lead）；实际并行度=min(10,运行时cap,ready独立任务数)。区分期望和实际，不虚称可用槽；运行时拒绝后记录准确错误，不反复无意义探测或通过新task绕过。
 - 目录迁移必须更新本地相对链接、README索引与状态，并验证原始实验JSON/hash未被修改。
+
+## Dashboard 同步
+
+- 每个 agent 在启动、实质进展、受阻、交付和 review 修复后更新自己负责的 `plans/<task>/status.md`；交付必须记录实现 commit、检查证据、时间、review 状态和 main 集成事实。外部 tasks 同样遵守。
+- `status.md` 是每任务进度的唯一手填事实源；执行 dashboard 只读聚合，生成的 JSON/网页不是第二套可手填状态。若后续采用结构化源，必须同时生成 status 展示并受控迁移，禁止两套独立维护。
+- 每任务只指定一个 owner 和一个权威 worktree。聚合器按派工登记选择该 worktree 的对应 status，不能把其他 worktree 的陈旧副本覆盖它；记录来源、branch/head、dirty 和同步时间。缺失、冲突或过期显示未知/待同步，不猜测完成。
+- 完成工作必须同步 dashboard 事实源；dashboard 尚未实现时更新 status 并注明“等待聚合器展示”。实现后确认该任务记录可被聚合并记录检查结果。跨任务汇总、owner 切换及 main 集成状态由 Execution Lead 协调；owner 只改自己的任务状态。
+- dashboard 是当前 Flow 工程进度视图，不是产品任务 Web。分支完成、已验证、待 review、已集成 main 分开；空 review 模板绝不显示通过，不计算无依据百分比或 ETA。

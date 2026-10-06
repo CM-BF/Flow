@@ -24,3 +24,7 @@
 ## 下一步与handoff
 
 输入路径、公共契约版本、分支/提交、可写范围、待review问题和下一动作。启动、实质进展、受阻、交付、review修复后由唯一owner更新；跨任务汇总由Execution Lead维护。
+
+## Dashboard 同步
+
+本 status 是本任务唯一手填进度事实源。记录最近聚合核验时间、来源 worktree/head、结果；聚合器尚未实现时明确等待展示。交付同步 commit、检查证据、时间和 review/main 独立状态，不直接编辑全局聚合输出。

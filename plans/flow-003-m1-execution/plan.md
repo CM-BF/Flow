@@ -7,7 +7,7 @@
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-001：产品与技术架构](../flow-001-architecture/plan.md) |
 | 关联验证 | [FLOW-002：Provider 与 Harness](../flow-002-provider-harness/plan.md) |
-| 当前阶段 | F00已提交542f70b/3995ec1；C01/R01已在独立worktrees实施，L01并行推进，W01待运行时执行位 |
+| 当前阶段 | F00已提交542f70b/3995ec1；C01/R01已在独立worktrees实施，L01并行推进，W01保留给用户外部task（awaiting-dispatch） |
 | 规划基线 | `main` / `5df746a`，只有计划和实验归档，没有应用骨架 |
 
 ## 1. 已确认方向与首个交付目标
@@ -108,7 +108,7 @@ F00 完成条件：新 checkout 能按说明启动开发依赖，公共 schema/f
 | --- | --- | --- |
 | F00 基线 | 固定公共契约、骨架、调度与 runner 失联语义 | 按需安排中心/runner/Web owner 分批只读审查；不提前实现各 feature |
 | 第一批 | 基于 F00 开始 L01，处理契约反馈 | C01 中心 + R01 runner，先建立确定性执行闭环 |
-| 第二批 | 继续 L01，审查已交付提交并准备集成 | 首个释放的执行位启动 W01；另一位继续尚未完成的 C01/R01，或在依赖与预算具备后启动 R02 |
+| 第二批 | 继续 L01，审查已交付提交并准备集成 | W01由用户外部task启动（当前reserved-external）；内部空闲位安排其他ready工作；另一位继续尚未完成的 C01/R01，或在依赖与预算具备后启动 R02 |
 | I01 集成 | 合并、运行跨模块检查、整理工程证据 | 按需安排对应 owner 修复或只读复核；总数仍不超过两个 |
 
 若运行时容量允许，C01、R01、W01应同时启动；当前第5个agent实测被拒绝，因此临时滚动。实际启动顺序可根据依赖调整，Execution Lead 在任务单记录；feature 的目录与 owner 边界不随排队顺序改变。
@@ -155,7 +155,7 @@ Feature owners 向 Execution Lead 回报工程进展、阻塞和证据；Executi
 
 合并顺序：F00 → C01/R01 的确定性闭环 → L01/W01 → R02 真实接入 → 集成验收。C01 与 R01 在完成前就利用 fixtures 对接，不等到各自“大功告成”才检查接口。
 
-每个 feature 提交前完成自身相关检查，由另一位符合门槛的工程 agent 只读审查；Execution Lead 可以审查子 agent 的提交，其自身实现由可用执行位上的 reviewer 审查。审查不超过两个子 agent 的并发限额，修改仍由该 feature owner 在自己的 worktree 执行。Execution Lead 在 integration worktree 合并并检查迁移、依赖与端到端行为，再将工程验收通过的提交集成到 main。禁止强推覆盖其他开发成果；出现冲突由相应 owner 与 Execution Lead 处理。
+每个 feature 提交前完成自身相关检查，由另一位符合门槛的工程 agent 只读审查；Execution Lead 可以审查子 agent 的提交，其自身实现由可用执行位上的 reviewer 审查。审查遵守用户期望 10 槽和运行时实际容量，修改仍由该 feature owner 在自己的 worktree 执行。Execution Lead 在 integration worktree 合并并检查迁移、依赖与端到端行为，再将工程验收通过的提交集成到 main。禁止强推覆盖其他开发成果；出现冲突由相应 owner 与 Execution Lead 处理。
 
 工程验收与目标验收分开：Execution Lead 负责测试命令、技术复核、集成和证据汇总，提供产物版本、检查范围、通过/失败及未验证项；Goal Owner 据此核对 M1 是否满足用户目标并对外汇报，不代替工程执行、不运行测试或 merge。未具备证据的条件不标记完成。
 
@@ -204,9 +204,22 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 - [ ] **R01** 确定性 runner；独立计划见 [R01](../r01-runner/plan.md)。
 - [ ] **L01** 正式 CLI；独立计划见 [L01](../l01-cli/plan.md)。
 - [ ] **W01** Web 与双主题；独立计划见 [W01](../w01-web/plan.md)。
+- [ ] **D01** 工程执行 dashboard；独立计划见 [D01](../d01-execution-dashboard/plan.md)。
 - [ ] **R02** 真实 harness 接入与有界验证。
 - [ ] **I01** 合并版本的端到端、故障与UI验收。
 
 - 2026-10-05：用户要求所有ready独立任务尽量并行，期望上限10；当前第5worker仍被运行时拒绝。每plan迁移独立status/review，当前feature owners维护各自状态，branch完成与main集成分别记录。
 
 协作记录：[status.md](status.md) · [review.md](review.md)。状态按实际提交和证据更新，review模板不是通过结论。
+
+## 外部task派工方法
+
+1. Execution Lead先确认ready任务的输入、冻结完整base SHA、独立分支/worktree和独占写入范围，登记owner占用。
+2. Goal Owner把可复制任务说明交给用户，由用户自行新开task；本轮不调用create_thread。未收到执行回报前状态保持reserved-external/awaiting-dispatch，内部不重复派发。
+3. 外部owner先核验仓库、branch/base/head和dirty状态，读AGENTS及plan/status/review，完成技能发现并实际读用相关skill；只在自己worktree写入并维护自己的status。
+4. 公共contracts/client/根lock/migrations等变更向Execution Lead提出具体需求；不自行修改他人owner范围。基线变化由Execution Lead发送具体SHA与影响说明，外部owner合并后跑受影响检查，不悄悄追逐main。
+5. 交付回传branch/head SHA、工作树、检查/证据路径、未验证/阻塞、status和review目标。外部task不自行merge main；Execution Lead统一只读review、集成验证与合并。
+
+当前保留：W01（Web与完整浅深主题），依赖F00已ready，owner待用户派发；其余内部继续C01/R01/L01。其他可独立安排的是针对固定commit的只读review；E01 wrapper认证调查仅限隔离只读分析、不修改共享登录或生产实现；协议映射设计需先明确版本与输入契约，不把未ready的协议实现冒充可并行任务。
+
+W01 与 D01 均 reserved-external/awaiting-dispatch；用户将自行新开一个执行分队 task（协调者 + 两 feature owners，最多 3 个活跃 agents）。两个 feature 独立 worktree，不共享可写 UI 包、lock 或 contracts。具体输入、任务登记与交付格式见 [外部交接](../../docs/handoffs/external-web-dashboard.md)。当前内部 4 槽运行限制仍据实记录；不将预留写成已运行。

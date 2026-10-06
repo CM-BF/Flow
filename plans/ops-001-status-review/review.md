@@ -1,14 +1,14 @@
 # OPS-001 独立审查记录
 
-**状态：NOT_STARTED — 模板待review，不构成approval。**
+**状态：SCOPED_REVIEW_COMPLETE — 仅模板与plans规则范围完成只读审查，不代表应用approval。**
 
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
+- Review target commit：`edca9fc5fe950a05ffe1ff89e5d31686182fb38c`。
 - Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
-- Reviewer / model / harness / 时间：待填写。
+- 本次scope：plans/templates/{plan,status,review}.md与plans/AGENTS.md；核对用户要求的字段、可复制review说明与约束。排除：应用实现与功能验证。
+- Reviewer / model / harness / 时间：assignment_review / gpt-6-astra / Codex / 2026-10-06 01:00 UTC。
 
 ## 可直接复制的审查任务说明
 
@@ -38,7 +38,7 @@
 
 ## 结论与限制
 
-结论：未审查。Blocking findings：未评估。Nonblocking findings：未评估。未执行范围：全部。不得据此声称通过。
+结论：指定模板/规则范围无阻塞遗漏；reviewer已核验commit与所读内容一致。应用代码及运行能力未在此次review验证；后续提交不自动继承本结论。
 
 ## 作者回应与复审
 
