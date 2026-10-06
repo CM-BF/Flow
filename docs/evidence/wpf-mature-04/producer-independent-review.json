@@ -1,0 +1,44 @@
+{
+  "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+  "verdict": "APPROVED",
+  "reviewer": {
+    "actor": "chatui01_owner",
+    "model": "gpt-6-astra",
+    "reviewedAt": "2026-10-06 12:16:43 UTC"
+  },
+  "receivedBy": "mika / root",
+  "recordedAt": "2026-10-06 12:17:36 UTC",
+  "p1": 0,
+  "p2": 0,
+  "observedMetadataHead": "7424c06d246f0b9220afc2b7042258c78fd94302",
+  "observedClean": true,
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-04/producer-manifest.json",
+    "sha256": "4b2a2efe4611e45d2122f1125c0a8572251213862da67fa94621f147d0110a7c",
+    "bindingCount": 58
+  },
+  "claim": {
+    "claimId": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 8,
+    "state": "active",
+    "observedAt": "2026-10-06T12:17:36.805Z"
+  },
+  "verified": [
+    "all58 targetGit=WT=SHA256/bytes;31readonly=844fa;18legacy=original approvals;fixed SDKtype hash",
+    "same Query/session/init resolved identity;at most one explicit summary;normal EOF before publication",
+    "invalid/reject unavailable;pending deadline/abort unknown survives close/iterator exceptions;preabort zero control",
+    "public schema cross-kind sum;unknown host numerical validation;no fake refs or private response fields",
+    "ownership/session/emit propagation;real journal ordered ACKs and unknown restart block",
+    "121 distinct selected/pass;strict local noEmit0;first120/121 timeout and narrow1/1 with32unselected retained"
+  ],
+  "reviewerExecutedTests": false,
+  "reviewerProjectWrites": false,
+  "limits": [
+    "history only; current/remaining/compression/consumed cut unknown",
+    "fake Query does not establish real SDK post-result control availability",
+    "1000ms awaited control budget and local close are not native child exit confirmation",
+    "strict covers changed modules and direct imports, not entire repository",
+    "first legacy fixture timeout retained; subsequent passing runs do not establish its exact cause"
+  ],
+  "sourceWriting": "stopped;writer v8 retained for repairs until confirmed main reception"
+}

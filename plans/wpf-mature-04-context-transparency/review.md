@@ -1,13 +1,13 @@
 # WPF-MATURE-04 当前普通 Claude producer 审查
 
-状态：NOT_STARTED（producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；历史批准不转移）
+状态：APPROVED（仅producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；普通历史观察，真实SDK/current/cut不在批准范围）
 
 - Review target commit：eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；[唯一manifest](../../docs/evidence/wpf-mature-04/producer-manifest.json)，4source/14raw/9support/31readonly均绑定该target；base 844fa14bfbf32f5392e48e104b5440a9cb5b9b13（受控 main2f4a 合入）。
 - 范围：claude.ts，claude-summary-read.ts/.test.ts，claude-context-observation.test.ts；仅4源，writer d3a9be2b v8保留。
 - 检查：121/121不同=19read+27public adapter+31原Claude+11原stream+33原runtime；root局部strict0。原首次120/121旧fixture超时raw、单项1/1与首次0tests配置失误均保留；各轮不累计。
 - 独审重点：同Query/session/root成功结果只读summary一次；候选正常EOF后发布，后续冲突/model改变丢弃；pre-abort零请求，pending超时/abort经finally仍unknown；明确reject/invalid仅unavailable，跨kind溢出/unknown host完整校验；session/ownership/emit不能被吞；真实journal连续ACK/unknown无completed与重启阻挡。
 - 读回沿已main中心history，硬容量/current/remaining/consumed cut未知。没有真实SDK/provider/PG；不将fake Query可用性扩张为真实SDK支持结论。
-- 独立reviewer由Mika安排chatui01_owner/gpt-6-astra；只读固定target/manifest/raw，不运行新窗口或修改owner树。返回绑定target的severity/证据/结论，修复仍归owner。
+- 独立reviewer：chatui01_owner / gpt-6-astra，2026-10-06 12:16:43 UTC，APPROVED，Mika接收，0 P1/P2。只读核全部58bindings、31readonly/18legacy、SDKtype与完整实现/行为证据，无运行测试/PG/child/SDK/provider、无写owner树。作者接收并继续冻结源码，v8修复期保留，待main确认。正式[收据](../../docs/evidence/wpf-mature-04/producer-independent-review.json)及[集成输入](../../docs/evidence/wpf-mature-04/producer-integration-ready.md)。
 - [实现与方法](../../docs/evidence/wpf-mature-04/producer-implementation.md)、[受控同步](../../docs/evidence/wpf-mature-04/producer-integration-receipt.json)、[检查口径](../../docs/evidence/wpf-mature-04/producer-development-checks.json)。
 
 ---

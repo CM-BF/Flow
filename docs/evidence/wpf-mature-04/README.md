@@ -1,8 +1,8 @@
 # WPF-MATURE-04 上下文透明度证据
 
-权威[plan](../../../plans/wpf-mature-04-context-transparency/plan.md) / [status](../../../plans/wpf-mature-04-context-transparency/status.md) / [review](../../../plans/wpf-mature-04-context-transparency/review.md)。历史领域/027及纯归一化已在main，接收见 main-acceptance.json。当前普通Claude producer四源已局部121/121+strict0，待固定独审；真实SDK、current/cut/Web不在验证范围。下文早期片段状态为带目标的历史记录。
+权威[plan](../../../plans/wpf-mature-04-context-transparency/plan.md) / [status](../../../plans/wpf-mature-04-context-transparency/status.md) / [review](../../../plans/wpf-mature-04-context-transparency/review.md)。历史领域/027及纯归一化已在main，接收见 main-acceptance.json。当前普通Claude producer四源已局部121/121+strict0并获独立APPROVED，待主线接收；真实SDK、current/cut/Web不在验证范围。下文早期片段状态为带目标的历史记录。
 
-最新producer见[实现与方法](producer-implementation.md)、[最终检查](producer-final-tests-result.json)、[受控同步](producer-integration-receipt.json)；唯一进度仍为status。
+最新producer的[正式集成输入](producer-integration-ready.md)绑定eccb独审批准；见[实现与方法](producer-implementation.md)、[最终检查](producer-final-tests-result.json)、[受控同步](producer-integration-receipt.json)；唯一进度仍为status。
 
 第二片历史P2修复target `3ab95d288a91214d03dec719dc6b44024206118a`：2个runner文件，26+23 = 49/49、局部root严格noEmit0，独立复审APPROVED（status_read/gpt-6-astra，root于2026-10-06 09:28 UTC接收），原P2已解决，无剩余P1/P2。旧target `e81f2009153436cacf791aa7c8de492875906586`为CHANGES_REQUESTED（pending输入覆盖P2），旧46项保留；[详细证据](claude-summary.md)、[修后source manifest](sdk-p2-check.json)、[claim v3](sdk-amend-receipt.json)。以下30/30与APPROVED记录仅对应第一片879。
 
