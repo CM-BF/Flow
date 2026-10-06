@@ -21,4 +21,4 @@
 
 **Lead最小输入：** allowlist与采样时点；sample覆盖的root resultId、消费UUID/revision、queue-empty/静止证据；首个支持路径及30秒freshness/结束后展示语义。current拟复用既有receipt/result/seal（host.ts:46/51/59；finalization.ts:48–65），不造FSM/counter。同一已覆盖result的artifact/verification/assistant-final/completed是收尾持久化，不因运输序号改变而失效；新SDK输出/工具消费、steering accepted或未知事件保守失效，缺证据unknown。另定K02 metadata seam、迁移号、共享writer/amend。后继验证须覆盖专用DB事务/重放/时间、权限/refs、cut失效、重启/迁移；当前只读与文档检查，未执行这些测试。
 
-**源码判定：** 普通Claude先usage→artifact/verification→assistant-final（claude.ts:130–136、219–228），runtime.ts:214/223在adapter返回后发completed；受控final同样提交3条连续收尾事件（finalization.ts:58–69）。events.ts:94–96每条推进last_sequence、63–72完成task，92拒绝completed后的新sample。因此对已完成attempt，旧等式必不成立；这只是读码结论，未运行验证。
+**源码判定：** 普通Claude先usage→artifact/verification→assistant-final（claude.ts:130–136、219–228），runtime.ts:216/229–230在adapter返回且native settlement确定时发completed（unknown不发，不等于上下文静止）；受控final同样提交3条连续收尾事件（finalization.ts:58–69）。events.ts:94–96每条推进last_sequence、63–72完成task，92拒绝completed后的新sample。因此对已完成attempt，旧等式必不成立；这只是读码结论，未运行验证。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:40:24 UTC / main 4391bbf9f1785212d098ef6aa1c01a0320a003d3，本owner只读核HEAD/clean、target祖先与6路径 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:40:56 UTC / main 4391bbf9f1785212d098ef6aa1c01a0320a003d3，本owner只读核HEAD/clean、target祖先与6路径 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -56,3 +56,5 @@
 2026-10-06 09:31 UTC：只读main3418fe682944145494463dca9e09f89c8b9c2295与ledger，核reportEvents/ownedAttempt/steering revision及共享占用；center-store-request已形成一页请求。未扩claim、未写store/采集框架、未重复工程测试。当前stage仍integration，对应已审两片；后继待scope是内部依赖，不将整个大task标停止。
 
 2026-10-06 09:40:24 UTC：只读确认completed推进last_sequence且随后拒绝新event，原sample.sequence===last_sequence候选不能支持结束后的current。已在一页请求撤回此条件；建议先交历史sample存储，current另依已有result/receipt/seal定义有限可信消费边界，不降完整CT-02/CT-06验收、不造通用FSM。待mika确定最小输入，不扩claim、不测试、不改6源码。
+
+09:40:56 UTC补核main4391的runtime.ts新settlement门禁：unknown不发送completed；确定结束仍在adapter后发送。只读行依据已更新为216/229–230，对accepted completed导致旧等式失效的结论不变；不以没有completed推断上下文未变化。

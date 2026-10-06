@@ -71,9 +71,12 @@
     {
       "path": "apps/runner/src/runtime.ts",
       "lines": [
-        214,
-        221,
-        223
+        216,
+        219,
+        220,
+        226,
+        229,
+        230
       ]
     },
     {
@@ -135,5 +138,11 @@
     }
   ],
   "sourceInspectionHead": "80ba95ad70cdf724251be4d88130b6bac56d3606",
-  "sourceEvidenceUnchangedSinceInspection": true
+  "sourceEvidenceUnchangedSinceInspection": false,
+  "changedSourceRechecked": {
+    "path": "apps/runner/src/runtime.ts",
+    "head": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+    "observedAt": "2026-10-06 09:40:56 UTC",
+    "finding": "Native settlement unknown skips completed; settled normal completion still emits completed after adapter.run. Accepted-completed proof remains unchanged."
+  }
 }
