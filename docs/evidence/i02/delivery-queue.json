@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-06T15:40:05.295189+00:00",
-  "main": "22d5ca67159b35bb794b2711cf6df0cb905b92e8",
+  "recordedAt": "2026-10-06T15:48:17.242324+00:00",
+  "main": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
   "sourceSampleAt": "2026-10-06T15:38:16.075Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [],
@@ -70,14 +70,15 @@
   ],
   "sourceProvisionQueue": [
     {
-      "taskId": "WPF-MATURE-02-CORE",
-      "state": "reviewed source4e7 and metadata b342 accepted main22d; registry pending164 deployment",
-      "worktree": "claude-message-settings-core"
+      "taskId": "TUI01F",
+      "state": "source-only provision complete, owner assigned fresh claim/implementation; no PG/browser or dependencies",
+      "worktree": "tui-task-cancel",
+      "input": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5"
     },
     {
-      "taskId": "SVC05H01",
-      "state": "source-only sparse provision and own fresh4scope claim complete",
-      "worktree": "personal-history-compatibility"
+      "taskId": "WPF-MATURE-02-CORE",
+      "state": "leaf reviewed/main22d, registry164 live; next scope handed off directly to Mika, actual owner status authoritative",
+      "worktree": "claude-message-settings-core"
     }
   ]
 }

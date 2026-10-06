@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:23:26 UTC / input main70cc4e85 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:48 UTC / input maina89f42ab |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main70cc；SVC06纯依赖计划与O14薄client固定九源零差，生产推进接线尚未接收 |
+| 工作基线 / HEAD | maina89f；本批仅管理文档，原已审产品源码不变，生产推进接线尚未接收 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
 | 检查状态 | 九源逐字同各自已审target；保留原7个纯检查与HTTP1/typecheck；无新增PG/provider或全库测试 |
-| 已集成main状态 / HEAD | 插件生产入口已main7810；本批SVC06纯计划/O14薄client接收，实际162来源；个人runtime362/v15和Web8d8/v2未变 |
+| 已集成main状态 / HEAD | maina89已含SVC06纯计划/O14薄client、Claude消息设置leaf及最小后台候选文档；实际164来源；个人runtime362/v15和Web8d8/v2未变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 插件安装公共入口已交付；已接收后台依赖选择模块和目标推进的共享命令接口。 |
-| 下一可用交付 | 空间达标后完成网页兼容和中心自动推进的真实验证。 |
+| 当前产出 | 共享命令与消息设置合同已入主线；新版网页的最小后台兼容候选已固定，终端显式取消开始实施。 |
+| 下一可用交付 | 完成新版网页兼容验证、中心自动推进接线与终端取消。 |
 | 当前阻塞 | ACTIVE: 磁盘余量不足局部数据库验证，大型构建继续关闭。 |
 | 需用户决定 | NONE |
 
@@ -183,3 +183,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T15:16:19.175003+00:00：接收O15唯一来源与四树可逆资源记录；162来源候选，个人服务保持362/v15与Web8d8/v2。无产品/模型重跑；[批次回执](../../docs/evidence/i02/o15-resource-registry-integration.json)。
 
 本批[九源接收绑定](../../docs/evidence/i02/closure-progression-client-integration.json)明确各自批准范围；新Claude设置leaf仅source provision，owner须fresh take，未冒实施完成。
+
+2026-10-06 15:48 UTC：正常接收OPS资源事实、REQ-15会话页批量读研究与TUI父06/08下一片管理记录，只有文档/绑定新增。兼容候选SVC05H01严格362+b298固定af51/tree308c，源码范围已停写交回Mika，Web按已冻结新tuple独立执行资源准入；不依赖此批moving main。TUI01F source-only已建立/worker正式分派，控制/PTY/Web证据保持独立。未把未运行的O14/O15 PG、WebA2/B或TUI旅程写成通过；无新工程测试/模型/个人服务动作。
