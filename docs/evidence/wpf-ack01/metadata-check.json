@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-10-06T10:51:11.390Z",
+  "checkedAt": "2026-10-06T10:52:32.001Z",
   "errors": [],
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "integration",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 1,
     "output": "聊天回执已统一检查，异常回复仍可用原请求安全重试",
-    "next": "独立审查后交付统一的聊天受理判断",
+    "next": "主线接收统一的聊天受理判断",
     "blocker": {
       "state": "none",
       "text": ""
@@ -27,8 +27,8 @@
     "record": "PASSED 2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d；4直接消费者137+真实HTTP13 PASS；Web typecheck0"
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
+    "state": "approved",
+    "record": "APPROVED**",
     "target": "2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d"
   },
   "todos": [
@@ -48,7 +48,7 @@
       "id": "ACK01-03",
       "state": "in-progress",
       "owner": "w01_owner",
-      "evidence": "固定target待独审/未集成"
+      "evidence": "root固定target独审通过；待主线接收"
     }
   ],
   "taskLinks": {

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 10:50:12 UTC |
+| 最近更新时间 | 2026-10-06 10:52:00 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,9 +10,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer |
 | Branch | codex/web-shared-ack-consumer |
 | 工作基线 / HEAD | base 0cee7556befa1988e60bae94b510240122c34b88；实现 2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d |
-| 工作树dirty状态 | 实现已固定；本次记录与原始log提交前待提交，提交后clean以Git回执为准 |
-| 工作分支状态 | implemented / awaiting-review |
-| 本片段交付阶段 | review |
+| 工作树dirty状态 | 独审输入3054a272b231124fdf0471af4a284321965adeb7已核clean；此批准metadata提交前待提交，提交后clean以Git回执为准 |
+| 工作分支状态 | implemented / approved |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d；4直接消费者137+真实HTTP13 PASS；Web typecheck0 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；输入main 0cee7556befa1988e60bae94b510240122c34b88，非本片交付 |
 | 实现目标 | 2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d |
@@ -20,16 +20,16 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 聊天回执已统一检查，异常回复仍可用原请求安全重试 |
-| 下一可用交付 | 独立审查后交付统一的聊天受理判断 |
+| 下一可用交付 | 主线接收统一的聊天受理判断 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，APPROVED target 2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | ACK01-01 | completed | w01_owner | [固定五source](../../docs/evidence/wpf-ack01/source-manifest.json)，三入口复用shareddecoder |
 | ACK01-02 | completed | w01_owner | [局部报告](../../docs/evidence/wpf-ack01/README.md)，137+13及types0 |
-| ACK01-03 | in-progress | w01_owner | 固定target待独审/未集成 |
+| ACK01-03 | in-progress | w01_owner | root固定target独审通过；待主线接收 |
 
 ## 证据与边界
 
@@ -37,7 +37,7 @@
 
 ## 下一步与handoff
 
-五source与行为证据已固定交root独审；首canonical ff04f355518484419c10d7abe8adf337619a9bf9已交管理登记，未自行取dashboard服务快照。
+root已完成固定五source独审，等待Lead接收；首canonical ff04f355518484419c10d7abe8adf337619a9bf9已交管理登记，未自行取dashboard服务快照。
 
 ## 架构影响
 

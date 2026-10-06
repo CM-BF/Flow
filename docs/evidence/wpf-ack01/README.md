@@ -1,6 +1,6 @@
 # WPF-ACK01：Web 复用公共会话回执
 
-固定实现 **2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d**，base **0cee7556befa1988e60bae94b510240122c34b88**（已含公共实现 dc7f3e186ee7a628187f82734db73f48866b9f6e）。仅三个生产文件与两个局部测试；无UI变化、无新协议、无依赖变更。独立review尚未执行。
+固定实现 **2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d**，base **0cee7556befa1988e60bae94b510240122c34b88**（已含公共实现 dc7f3e186ee7a628187f82734db73f48866b9f6e）。仅三个生产文件与两个局部测试；无UI变化、无新协议、无依赖变更。root 于2026-10-06 10:52:00 UTC独立APPROVED，另行一次150/150检查与五source审计通过（[review](../../../plans/wpf-ack01-shared-consumer/review.md)）。
 
 ## 最终职责与取舍
 
@@ -32,6 +32,6 @@ HTTP检查使用动态loopback端口、内存命令回执、公开fixture身份�
 
 ## 界限与交接
 
-这片不提供新的本地页面URL/截图，不改变任何渲染。未新增真实provider/PG/浏览器矩阵；复用已有受审UI。共享输入固定，不升级runtime。完整client decoder规则由原owner维护；Web保持v1历史/queue，附件v2继续单点共享扩展。main尚未接本片，独审后由Lead集成；当前实现五source冻结。
+这片不提供新的本地页面URL/截图，不改变任何渲染。未新增真实provider/PG/浏览器矩阵；复用已有受审UI。共享输入固定，不升级runtime。完整client decoder规则由原owner维护；Web保持v1历史/queue，附件v2继续单点共享扩展。main尚未接本片，独审已通过、由Lead集成；当前实现五source冻结。
 
 [plan](../../../plans/wpf-ack01-shared-consumer/plan.md) · [status](../../../plans/wpf-ack01-shared-consumer/status.md) · [review](../../../plans/wpf-ack01-shared-consumer/review.md) · [质量记录](quality.md)
