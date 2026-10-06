@@ -1,0 +1,42 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/server/src/conversations/conversations.test.ts (22 tests) 17189ms
+   ✓ projects only the exact final result and follows up on the same native session and runner  1566ms
+   ✓ pages immutable turns and returns long assistant content only through an owned lazy detail  613ms
+   ✓ rejects follow-up while queued, running, waiting, cancelling or uncertain without duplicating work  4317ms
+   ✓ keeps unknown-adapter unavailable instead of guessing from telemetry or a title  546ms
+   ✓ keeps missing-session unavailable instead of guessing from telemetry or a title  455ms
+   ✓ keeps missing-result unavailable instead of guessing from telemetry or a title  508ms
+   ✓ keeps ambiguous-result unavailable instead of guessing from telemetry or a title  544ms
+   ✓ keeps invalid-result unavailable instead of guessing from telemetry or a title  450ms
+   ✓ maps the actual Claude adapter final-result path through the runner using only an injected SDK  1132ms
+   ✓ never promotes retained artifacts belonging to a superseded attempt  378ms
+   ✓ leaves the effective model unknown when the session did not record one  495ms
+   ✓ prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking  526ms
+   ✓ never falls back to a v1 artifact when a v2 attempt lacks its typed final  467ms
+   ✓ keeps a typed final pending until task success and deduplicates it through restart and replay  609ms
+   ✓ rejects foreign task/session/fence reports and confines each typed lazy reference to its bound turn  1163ms
+   ✓ does not reuse an old typed final after the current attempt binding changes  403ms
+   ✓ does not expose a reply when the actual adapter receives a non-success SDK result  480ms
+   ✓ keeps a corrupted typed body unavailable without falling back to its intact artifact  534ms
+   ✓ preserves null effective facts and exposes long typed content through its exact detail  502ms
+ ✓ apps/server/src/reconciliation.test.ts (12 tests) 30201ms
+   ✓ shows durable uncertain ownership and retained evidence without interpreting lease expiry as a stop  2387ms
+   ✓ restricts reconciliation to the owner and reports unknown clocks before any heartbeat or event  1756ms
+   ✓ preserves v1 evidence during migration and leaves historical heartbeat/event clocks unknown  2701ms
+   ✓ records an immutable observation exactly once while preserving uncertain capacity and session occupancy  2446ms
+   ✓ resolves confirmed stopped work atomically, retains history and rejects every late original owner report  2642ms
+   ✓ rejects unconfirmed stop, unknown effects, stale ownership and runner-authored operator evidence  2359ms
+   ✓ refuses reconciliation of running work even when an operator supplies a stop assertion  1256ms
+   ✓ requires explicit retry after a resolution, creates one new task with provenance and preserves original history  3279ms
+   ✓ does not blindly repeat a successful external write whose completion acknowledgement was lost  2712ms
+   ✓ allows original work only after none-confirmed safety evidence and rejects oversized context without partial retries  3235ms
+   ✓ paginates immutable audit history and rejects storage mutation without losing earlier observations  2990ms
+   ✓ serializes conflicting resolutions and can release a revoked runner without trusting its credentials  2310ms
+
+ Test Files  2 passed (2)
+      Tests  34 passed (34)
+   Start at  23:11:18
+   Duration  48.81s (transform 747ms, setup 0ms, import 1.23s, tests 47.39s, environment 0ms)
+
