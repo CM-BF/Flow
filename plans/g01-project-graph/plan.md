@@ -1,6 +1,6 @@
 # G01 持久项目与版本化计划图
 
-创建 / 更新：2026-10-06。首片段状态：completed（实现与作者检查）；独立 review / main 集成待执行。Owner：runner_owner / gpt-6-astra。
+创建 / 更新：2026-10-06。首片段状态：completed（实现、作者检查与独立 review 通过）；main 集成待执行。Owner：runner_owner / gpt-6-astra。
 
 ## 首片段目标与授权
 

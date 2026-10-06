@@ -41,3 +41,5 @@
 0 模型 / 0 云调用，R02/I01 总预算仍5/5已用完。没有触碰用户4320或其他测试数据库。此模块不提供新 workspace 创建/多租户隔离，不自动提交任务/调度，依赖 gate、运行中计划失效决策和取消传播仍 open。历史 graph 返回关联 task 的**当前**状态；幂等 replay 保留命令原接受结果，最新状态另做 GET。
 
 生产集成须在中心既有 owner 鉴权钩子下注册 routes（作者测试沿用真正中心钩子）；共享 export/client/CLI/主入口由 Lead 接线。独立 review 当前 NOT_STARTED；Goal Owner 将按 Lead 指定范围只读检查源码/合同/已保存证据，作者输出不代替独立 review。
+
+2026-10-06 02:50 UTC 补记：上述为交付时状态；Goal Owner 已独立只读 APPROVED 同一固定实现 target，核对 f9ea132 metadata clean / 源码零差异，无 blocking findings，未重跑 tests。批准范围与排除项见 [review](../../../plans/g01-project-graph/review.md)。本次仅 metadata，不改写已保存测试输出或实现。
