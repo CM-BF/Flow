@@ -1,6 +1,6 @@
 # WPF-MATURE-02 review
 
-Node实现组合：NOT_STARTED，等待固定source/input/manifest后Mika独立只读审查；当前55/55原纯检查+清理delta6/6（2新，51未选）与native惰性import不表示实际隔离通过，实际窗口NOT_OPEN。设计ff927712ae8560a26febf01279b44c2fc12a1666已由Mika/gpt-6-astra于2026-10-06 12:37:56 UTC APPROVED，0P1/P2，10本地=e47及3ENG=557绑定已核；实现中的固定loader/strict close/stdout与outer timing另作为组合输入。
+Node实现组合：NOT_STARTED，source d17ad56ad47ec065cea107ba4ab15fc7afd56b0e已固定，input/manifest后由Mika独立只读审查；当前55/55原纯检查+清理delta6/6（2新，51未选）与native惰性import不表示实际隔离通过，实际窗口NOT_OPEN。设计ff927712ae8560a26febf01279b44c2fc12a1666已由Mika/gpt-6-astra于2026-10-06 12:37:56 UTC APPROVED，0P1/P2，10本地=e47及3ENG=557绑定已核；实现中的固定loader/strict close/stdout与outer timing另作为组合输入。
 
 本文件收敛重复过程叙述为固定target索引，不撤销或扩大历史审批。完整原文保留Git ff927712ae8560a26febf01279b44c2fc12a1666 的同一路径；各raw/manifest均按其原target解释，未改旧证据。所有下列历史窗口已消费，不产生当前运行授权；各reviewer均为gpt-6-astra，未重跑作者检查。
 

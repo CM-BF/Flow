@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- F01依赖f63502e26d44f33a86a01e98761b22aefbd5fa60已获Mika12:56:50–12:57 UTC限定APPROVED（manifest/lock接线，非插件启用）；请F01在自身证据记review。后继与[X01 leaf Interface](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-interface.md)成套接收。
+
 - [X01固定leaf Interface及依赖输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-interface.md)：5346bd838f96b01015f26a265c31859c82cd6023；Mika12:52:50 UTC批准准备manifest/Interface（非叶实现完成）。请F01接server/runner workspace:*与lock importer/受控offline依赖，不改个人Flow node_modules；原owner继续leaf实现。
 
 - [S01 observer已审接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/observer-share-fix/integration-ready.md)：旧128观测限制仍以权威文件为准。
@@ -13,7 +15,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 - X01 [精确scope请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/scope-request.md)与[安装依赖补充](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/installation-dependency-addendum.md)：显式workspace/tar依赖方向已审；需Lead协调4 manifests/lock唯一writer与最小leaf scope，公共vertical仍需host/task/event/DDL输入。
 - [S01P05 events.ts移交与登记请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/docs/evidence/s01p05/interface.md)：由当前合法owner按账本停写/原子amend协调，不复制任务状态。
 
-- [Node rootliteral三槽设计](node-rootliteral/design.md)：设计ff927712已审、实现中；0新目标/0编译，实际窗口NOT_OPEN。旧C结果/尾部以e47历史快照封存，本阶段另记。
+- [Node rootliteral三槽设计](node-rootliteral/design.md)：设计ff927712已审；source d17ad56ad47ec065cea107ba4ab15fc7afd56b0e已固定，组合待审；0新目标/0编译，实际窗口NOT_OPEN。旧C结果/尾部以e47历史快照封存，本阶段另记。
 - [ENG01G host资格/全writer撤销最小输入](native-engineering-authority-inputs.md)：固定557397e9接口；C、未来Node与真实Codex证据分层，生产authority仍不可签发。
 - [04附件上下文修复：已独审待main](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-integration-ready.md)；进度只在[04权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md)，固定实现4f87934f。
 
@@ -104,12 +106,9 @@ ThreadStart/ResumeResponse回报配置，不是该turn实际用了哪个resolved
 
 Codex没有这里可直接套用的Claude SDK maxBudgetUsd/maxTurns效果声明；host wall time/输出上限独立命名，不伪装provider预算。B1首resume/queue/steer/stream/activity/goal ports均false/unsupported；B2 exact reader negotiation及SQL-before-limit filter由共享owner实施。
 
-### 真实握手运行方案状态
+### 运行边界
 
-status_read独立只读核实wrapper会继承process.env，固定schema/临时CODEX_HOME不能证明免个人Keychain/系统配置/网络/遥测。当前**未启动真实app-server**。批准候选须提供可验证进程级文件/Keychain/外连拒绝、白名单环境、空cwd/state、bounded输出与时限/清理；只允许initialize→initialized→model/list。缺这些控制则保持NOT_RUN，实验fixture继续独立推进，不把无凭据参数或关analytics当零副作用证明。
-
-生产transport唯一owner：R06 runner_owner，独立codex-native-transport树；接口待其 docs/evidence/r06/interface.md 固定后组合。当前in-memory conformance不复制transport状态机，不持有进程/计时器/网络。此前标题09:05为作者错误估计；本次更新记录真实系统UTC，旧commit保留。
-
+当前Node准备包见页首，真实Codex仍NOT_RUN；旧握手方案及原R06输入时点保留Git ff927。组合必须复用唯一R06进程owner，不能二次initialize、重发unknown或把目录当entitlement。
 
 ## 下一条配置与历史冻结（完整验收增补）
 
@@ -125,17 +124,10 @@ R05共享owner需区分可变 `nextTurnSettingsRevision` 与不可变 `profileSn
 
 R06默认encoded JSON frame上限1MiB（含envelope/转义、不含newline）；Flow正文1MiB UTF8上限是另一层限制。正文在上限内不保证wire frame可传，JSON转义还会放大字节。组合时必须核实际encoded frame字节并将超界显式unknown/unsupported，禁止截断；本地decoded page上限也不替代transport wire限制。固定R06接口未在本片运行组合，测试使用in-memory已解码数据，不能声称R06已通过本片测试。
 
-本次实际更新时间：2026-10-06 09:07:59 UTC。
-
 
 ### 与04的settings identity对齐（architecture_read只读输入）
 
 候选共享identity包含harness、requested/resolvedModel、immutable profile configDigest、executionInputDigest、materialRevisionDigest、historyEpoch。draft subject用draftId + next-turn settingsRevision；queued subject用queueItemId + 自身冻结settingsRevision；attempt subject用taskId/attemptId/ownerVersion/nativeSessionId及自身冻结profile。每次有效的新选择都变更settingsRevision（即使model同名、但effort/fast改变），令draft context观测失效，不重写queue/attempt identity。R05 owner负责正式字段和CAS/持久snapshot语义；02/04实验只消费，不能擅改共享profile hash。
-
-### 本片工程证据
-
-27个本地确定性语义检查通过，范围与限制见[README](../../../experiments/codex-app-server-conformance/README.md)、[raw](conformance.tap)和[manifest](conformance-manifest.json)。只消费已解码帧，尚未运行R06组合。真实进程候选路径见[隔离方案](isolated-run-plan.md)，目前仅核sandbox-exec存在，canary隔离证据未完成，真实运行NOT_RUN。
-
 
 ## 阻断性接线边界：access none尚无执行证据
 
