@@ -6,7 +6,7 @@ import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGra
 import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
 import type { RunnerMaintenanceView, RunnerMaintenanceHistory, RunnerMaintenanceCommand, RunnerMaintenanceResult } from '@flow/contracts';
 import type { GoalGraphProposalInput, GoalGraphProposalApply, GoalGraphProposalCreated, GoalGraphProposalPage, GoalGraphProposal, GoalGraphProposalApplied } from '@flow/contracts';
-import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage } from '@flow/contracts';
+import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage, NativeExecutionProfileConfiguration, NativeExecutionProfilePublished } from '@flow/contracts';
 import type { GoalToolRunAdmission, GoalToolRunAccepted, GoalToolRun, GoalToolRunRevoked, GoalToolAuditPage, GoalToolRunReference, GoalToolInputCall, GoalToolCommandCall, GoalToolSnapshotResult, GoalToolInputResult, GoalToolCommandResult } from '@flow/contracts';
 import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQueuePause, ConversationQueueResume, ConversationQueueAccepted, ConversationQueueCancelled, ConversationQueuePaused, ConversationQueueResumed, ConversationQueuePage, ConversationQueueItemDetail } from '@flow/contracts';
 import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
@@ -298,6 +298,9 @@ export class FlowClient {
     });
   }
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
+    return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  publishNativeExecutionProfile(input: { configuration: NativeExecutionProfileConfiguration }, signal?: AbortSignal): Promise<NativeExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
   }
 
