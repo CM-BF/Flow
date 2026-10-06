@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:46:29 UTC；main基线核验fd1322f9，非新main观察 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:50:19 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections |
 | Branch | codex/task-read-projections |
 | 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264 / c96a6bb867bfa83b8ce26f79236ff13b14b63e65；最终metadata HEAD由Git读取 |
-| 工作树dirty状态 | 源码/raw已固定；仅manifest及review/status metadata待提交 |
+| 工作树dirty状态 | 源码/raw已固定；本次仅独审/集成交接metadata |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 最终8/8真实PG/HTTP；局部strict exit0。两次目标red原样保留，详见证据 |
 | 已集成main状态 / HEAD | 旧B01已main；本片两reader已实现/未main |
 | 实现目标 | c96a6bb867bfa83b8ce26f79236ff13b14b63e65 |
-| 实现范围 | apps/server/src/tasks.ts, apps/server/src/queries.ts, apps/server/src/task-read-projection.ts, apps/server/src/task-read-projection.test.ts, docs/evidence/b01/task-projections, experiments/bounded-reads/task-projections |
+| 实现范围 | apps/server/src/tasks.ts, apps/server/src/queries.ts, apps/server/src/task-read-projection.ts, apps/server/src/task-read-projection.test.ts, experiments/bounded-reads/task-projections/fixture.ts, docs/evidence/b01/task-projections/tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 事件轮询和任务列表不再向应用读取无用prompt，兼容性验证通过 |
-| 下一可用交付 | 独立审查通过后交付主线 |
+| 下一可用交付 | 首片已审可独立接收主线；第三reader另片准备 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | REVIEW_REQUIRED；旧B01批准不覆盖新片 |
+| Review | APPROVED Mika 2026-10-06 11:48:15 UTC，target c96a6bb8，0P1/P2 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@
 | B01-03 | completed | Lead | 原main/聚合记录保留 |
 | B01-05 | completed | status_read | [claim](../../docs/evidence/b01/task-projections/claim-receipt.json)、[Interface](../../docs/evidence/b01/task-projections/interface.md) |
 | B01-06 | completed | status_read | [8/8与字节证据](../../docs/evidence/b01/task-projections/README.md)，7tasks累计/三库清理，局部strict0 |
-| B01-07 | in-progress | mika / Lead | 固定source/raw待独审；本片未main |
+| B01-07 | in-progress | mika / Lead | 独审APPROVED；[固定集成输入](../../docs/evidence/b01/task-projections/integration-ready.md)，待Lead main接收 |
 
 writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v1 COMMITTED 2026-10-06 11:34:16.232 UTC，七精确scope。等待Lead按[迁移请求](../../docs/evidence/b01/task-projections/authority-request.md)登记新权威来源，尚未确认聚合；本status唯一手填事实，不改registry。P04源码/raw冻结与claim保留完全独立。
 

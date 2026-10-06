@@ -1,14 +1,16 @@
 # B01 task轻投影独立review
 
-状态：REVIEW_REQUIRED
+状态：APPROVED
 
 Review target commit：c96a6bb867bfa83b8ce26f79236ff13b14b63e65
 
-Reviewer：mika / gpt-6-astra（待实际只读结论，不能以预审或旧B01批准代替）。权威WT task-read-projections / codex/task-read-projections，base fd1322f9c0c1d085d5e343e39f6216b20d26c264，claim190bd45e v1 ACTIVE。
+Reviewer：Mika / gpt-6-astra；2026-10-06 11:48:15 UTC正式APPROVED，0P1/P2，未重跑。权威WT task-read-projections / codex/task-read-projections，base fd1322f9c0c1d085d5e343e39f6216b20d26c264，claim190bd45e v1 ACTIVE。
 
-当前新片最终8/8真实PG/HTTP与局部strict0，原2次red及其历史source绑定完整保留；累计7tasks，三库都已确认不存在。检查与边界见[证据说明](../../docs/evidence/b01/task-projections/README.md)，[manifest](../../docs/evidence/b01/task-projections/manifest.json)包含6source/config、17readonly、18raw、9support及9历史red source、19旧B01冻结文件。独审需核固定target三生产源、测试/fixture、字节/SQL/HTTP口径和清理，不默认重跑PG。c855e33f的独立预读暂无P1/P2，明确不覆盖最终list/test，也不是正式APPROVED。
+当前新片最终8/8真实PG/HTTP与局部strict0，原2次red及其历史source绑定完整保留；累计7tasks，三库都已确认不存在。检查与边界见[证据说明](../../docs/evidence/b01/task-projections/README.md)，[manifest](../../docs/evidence/b01/task-projections/manifest.json)包含6source/config、17readonly、18raw、9support及9历史red source、19旧B01冻结文件。独审需核固定target三生产源、测试/fixture、字节/SQL/HTTP口径和清理，不默认重跑PG。c855e33f的独立预读暂无P1/P2，明确不覆盖最终list/test，当时不是正式批准；本次Mika已完成最终组合审查。
 
 验收遵循[Interface](../../docs/evidence/b01/task-projections/interface.md)与根模块规则。新TaskSummaryRow/formatter由两个reader真实复用；snapshot/写锁/auth/rawcursor/pagination/RR保留；第三reader、TOAST/吞吐/模型能力没有完成声明。本片尚未main；Lead负责权威registry迁移与集成。
+
+正式结论与范围见[独审回执](../../docs/evidence/b01/task-projections/independent-review.json)及[固定集成输入](../../docs/evidence/b01/task-projections/integration-ready.md)。50current/17readonly=base/9red/19legacy全部匹配。后继第三reader不在本批准内。
 
 ## 旧B01固定review历史（不批准新片）
 
