@@ -21,6 +21,7 @@ export function createInteractionController(options: { client: InteractionClient
   const reads = new ObservationReads();
   let loadedTurns: ConversationTurn[] = []; let focused: number | null = null; let streamCapability = false;
   let queueCapability = false; let queueAfter: number | null = null;
+  let queuePageVersion = 0;
   const observation = options.observe ? new TurnObservation(options.observe, options.connectionId, reads, value => patch({ observation: value })) : null;
   let initialized = false; let epoch = 0; let connection = new AbortController(); let timer: NodeJS.Timeout | undefined;
   let activeMutation: Promise<CommandResult> | null = null;
@@ -40,7 +41,7 @@ export function createInteractionController(options: { client: InteractionClient
     }, options.pollMs ?? 1000);
   }
   async function refresh(id: string, version: number) {
-    const signal = connection.signal;
+    const signal = connection.signal; const pageVersion = queuePageVersion;
     const snapshot = await reads.run(signal, () => client.conversation(id, signal));
     if (!current(version)) return;
     if (snapshot.conversation.id !== id) throw new LocalError('INVALID_RESPONSE', 'Conversation identity mismatch.');
@@ -49,15 +50,19 @@ export function createInteractionController(options: { client: InteractionClient
     if (page.conversation.id !== id || page.turns.length > 20 || page.turns.some(turn => turn.conversationId !== id)) throw new LocalError('INVALID_RESPONSE', 'History identity or bound mismatch.');
     loadedTurns = page.turns; streamCapability = snapshot.capabilities.liveAssistantText === true; queueCapability = snapshot.capabilities.queue === true;
     patch({ selected: selection(page.conversation), turns: page.turns.map(turnView), connected: true }); syncObservation();
-    if (queueAfter !== null) {
+    if (queueAfter !== null && pageVersion === queuePageVersion) {
       if (!queueCapability || !options.queue) { queueAfter = null; patch({ queue: null }); }
-      else await refreshQueue(id, queueAfter, version);
+      else await refreshQueue(id, queueAfter, version, pageVersion);
     }
   }
-  async function refreshQueue(id: string, after: number, version: number) {
+  async function refreshQueue(id: string, after: number, version: number, pageVersion: number) {
     const signal = connection.signal;
-    const value = await reads.run(signal, () => options.queue!.conversationQueue(id, { after, limit: 20 }, signal));
-    if (current(version)) patch({ queue: readQueuePage(value, id, after) });
+    const relevant = () => current(version) && pageVersion === queuePageVersion;
+    if (!relevant()) return;
+    try {
+      const value = await reads.run(signal, () => options.queue!.conversationQueue(id, { after, limit: 20 }, signal));
+      if (relevant()) patch({ queue: readQueuePage(value, id, after) });
+    } catch (error) { if (relevant()) throw error; }
   }
   function requireQueue() {
     if (!state.connected || !state.selected) throw new LocalError('NO_CONVERSATION', 'Open a connected conversation first.');
@@ -181,7 +186,9 @@ export function createInteractionController(options: { client: InteractionClient
       requireQueue();
       if (command.next && state.queue?.nextCursor == null) throw new LocalError('NO_NEXT_PAGE', 'No next queue page is loaded.');
       const after = command.next ? state.queue!.nextCursor! : 0; const version = epoch;
-      await refreshQueue(state.selected!.id, after, version);
+      // A page selection supersedes polls that began before it, even before their queue GET.
+      const pageVersion = ++queuePageVersion;
+      await refreshQueue(state.selected!.id, after, version, pageVersion);
       if (!current(version)) return result(false, 'STALE', 'Old queue observation ignored.');
       queueAfter = after; patch({ view: 'queue' }); return result(true, 'QUEUE', 'Queue references loaded; pause affects later promotion only.');
     },

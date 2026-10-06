@@ -1,4 +1,4 @@
-import { afterEach, expect, test } from 'vitest';
+import { afterEach, expect, test, vi } from 'vitest';
 import { randomUUID } from 'node:crypto';
 import { FlowApiError } from '@flow/client';
 import type { ConversationSnapshot, ConversationQueuePage } from '@flow/contracts';
@@ -7,7 +7,7 @@ import type { Intent, InteractionClient, InteractionController } from '../types.
 import type { QueueControlPort } from './index.js';
 
 const controllers: InteractionController[] = [];
-afterEach(async () => { for (const controller of controllers.splice(0)) await controller.dispose(); });
+afterEach(async () => { for (const controller of controllers.splice(0)) await controller.dispose(); vi.useRealTimers(); });
 const time = '2026-10-06T00:00:00Z';
 function fixture(capability = true) {
   const id = randomUUID();
@@ -27,7 +27,7 @@ function fixture(capability = true) {
   };
   const intents = { load: async () => saved, save: async (value: Intent) => { saved = structuredClone(value); }, clear: async () => { saved = null; } };
   const create = () => { const controller = createInteractionController({ client, queue, connectionId: 'queue-test', pollMs: 60_000, intents }); controllers.push(controller); return controller; };
-  return { id, controller: create(), requests, queue, snapshot, create, intents, setPage: (value: ConversationQueuePage) => { page = value; }, saved: () => saved };
+  return { id, client, controller: create(), requests, queue, snapshot, create, intents, setPage: (value: ConversationQueuePage) => { page = value; }, saved: () => saved };
 }
 test('queue pause uses the observed revision and the one durable intent before dispatch', async () => {
   const f = fixture(); await f.controller.initialize();
@@ -116,4 +116,46 @@ test('disconnect drops a late queue read without installing it in the new epoch'
   const reading = f.controller.input('/queue'); await started; f.controller.disconnect();
   release({ conversationId: f.id, queueRevision: 30, items: [], nextCursor: null, blocked: null, paused: false, currentTurn: null });
   expect((await reading).code).toBe('STALE'); expect(f.controller.snapshot()).toMatchObject({ connected: false, queue: null });
+});
+
+function queuePage(conversationId: string, sequence: number): ConversationQueuePage {
+  return { conversationId, queueRevision: 60, paused: false, blocked: null, currentTurn: null, nextCursor: sequence,
+    items: [{ id: randomUUID(), conversationId, sequence, state: 'waiting', preview: `page ending ${sequence}`, truncated: false, promoted: null, createdAt: time, updatedAt: time }] };
+}
+
+test.each(['response', 'error'])('a late old-page poll %s cannot replace or disconnect the selected next page', async kind => {
+  vi.useFakeTimers(); const f = fixture(); const first = queuePage(f.id, 20), second = queuePage(f.id, 40);
+  const requested: number[] = []; let settle!: () => void; let entered!: () => void;
+  const oldStarted = new Promise<void>(done => { entered = done; });
+  f.queue.conversationQueue = async (_id, input) => {
+    const after = input?.after ?? 0; requested.push(after);
+    if (requested.length === 1) return first;
+    if (after === 0) { entered(); return new Promise((done, reject) => { settle = () => kind === 'response' ? done(first) : reject(Error('old page failed')); }); }
+    return after === 20 ? second : queuePage(f.id, 60);
+  };
+  await f.controller.initialize(); await f.controller.input(`/open ${f.id}`); await f.controller.input('/queue');
+  f.controller.setDraft('保留草稿'); const poll = vi.advanceTimersByTimeAsync(60_000); await oldStarted;
+  expect((await f.controller.input('/queue next')).code).toBe('QUEUE'); expect(f.controller.snapshot().queue).toEqual(second);
+  settle(); await poll;
+  expect(f.controller.snapshot()).toMatchObject({ connected: true, draft: '保留草稿', queue: second });
+  expect((await f.controller.input('/queue next')).code).toBe('QUEUE');
+  expect(requested).toEqual([0, 0, 20, 40]); expect(f.requests).toHaveLength(0);
+});
+
+test('a poll awaiting conversation metadata cannot start an old-page read during an explicit next-page selection', async () => {
+  vi.useFakeTimers(); const f = fixture(); const first = queuePage(f.id, 20), second = queuePage(f.id, 40);
+  f.setPage(first); await f.controller.initialize(); await f.controller.input(`/open ${f.id}`); await f.controller.input('/queue');
+  let enterPoll!: () => void; let releasePoll!: () => void; let enterNext!: () => void; let releaseNext!: () => void;
+  const pollStarted = new Promise<void>(done => { enterPoll = done; }); const nextStarted = new Promise<void>(done => { enterNext = done; });
+  f.client.conversation = () => { enterPoll(); return new Promise(done => { releasePoll = () => done(f.snapshot); }); };
+  const requested: number[] = [];
+  f.queue.conversationQueue = (_id, input) => {
+    requested.push(input?.after ?? 0);
+    if (input?.after === 20) { enterNext(); return new Promise(done => { releaseNext = () => done(second); }); }
+    return Promise.resolve(first);
+  };
+  const poll = vi.advanceTimersByTimeAsync(60_000); await pollStarted;
+  const next = f.controller.input('/queue next'); await nextStarted;
+  releasePoll(); await poll; releaseNext(); expect((await next).code).toBe('QUEUE');
+  expect(requested).toEqual([20]); expect(f.controller.snapshot().queue).toEqual(second); expect(f.requests).toHaveLength(0);
 });
