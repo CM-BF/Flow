@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation
+
+stdout | apps/server/src/goal-plan-confirmation/confirmation.test.ts > O15 real isolated HTTP/PG confirmation
+{"o15Evidence":"docs/evidence/o15/flow_o15_735607bfe87c4d7c9c2a54fd19aab402-facts.json","database":"flow_o15_735607bfe87c4d7c9c2a54fd19aab402"}
+
+ ✓ apps/server/src/goal-plan-confirmation/confirmation.test.ts (7 tests | 1 skipped) 6492ms
+     ✓ uses the real SDK tool proposal, one owner confirmation and fixed materials through two children, then preserves obsolete output  2040ms
+     ✓ requires complete saved input, exact current graph, profile, budget and current material before all-or-nothing confirmation  338ms
+     ✓ rejects new payloads on old graph grants before replay and preserves current authority on explicitly granted proposals  734ms
+     ✓ does not duplicate confirmed work after its first execution becomes unknown and the center restarts  1593ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed | 1 skipped (7)
+   Start at  10:43:29
+   Duration  7.85s (transform 536ms, setup 0ms, import 1.26s, tests 6.49s, environment 0ms)
+
