@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:44:50 UTC |
+| 最近更新时间 | 2026-10-06 14:46:08 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,19 +11,19 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | host基线8e520b7274a6d4112e91318c6eb5ba1758bf7c1c；中心固定a578已main56d90；旧leaf已main2f16 |
-| 工作树 dirty 状态 | host两源与新证据待固定；center八源继续冻结 |
+| 工作基线 / HEAD | base8e520b7274a6d4112e91318c6eb5ba1758bf7c1c；host固定e6827d8a30fd103e34966a5d7298570545865057；center已main56d90 |
+| 工作树 dirty 状态 | host两源/raw固定e6827d8a30fd103e34966a5d7298570545865057；metadata独立，聚合读取实际clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | host 21/21（14旧+7新）/strict局部0；真实TLA撤权1red保留，23own roots已清理；0PG/provider |
-| Review | NOT_STARTED 当前host双gate；历史center a578与leaf bf3378 APPROVED已main |
+| Review | NOT_STARTED e6827d8a30fd103e34966a5d7298570545865057（host双gate）；历史center/leaf APPROVED已main |
 | 已集成 main 状态 / HEAD | center a578八源已main56d90e8c36d48e6c23a796283f3b89d0d08e7294，默认factory/client/CLI未声称挂载；leaf bf3378+依赖f635已main2f16 |
-| 实现目标 | UNKNOWN（host双gate待固定） |
+| 实现目标 | e6827d8a30fd103e34966a5d7298570545865057 |
 | 实现范围 | apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 包加载后新增执行前的当前权限核验，异步加载期间撤权会阻止工具调用；局部验证通过，准备独审 |
-| 下一可用交付 | 包异步加载期间撤权后，阻止后续工具调用 |
+| 当前产出 | 异步加载期间撤权后阻止工具调用的改动已固定，局部验证通过，等待独立审查 |
+| 下一可用交付 | 独审通过后将双阶段当前权限核验接入主线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -48,7 +48,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；当前6ddedc73 v4持中心8源与两metadata，旧8leaf已交回。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；当前6ddedc73 v5持host两源与两metadata，旧center八源和其余leaf已交回。真实事实/检查/文档target随本scope metadata单独更新。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -101,3 +101,5 @@
 2026-10-06 14:42:20 UTC：正式MAIN_RECEIPT已核[center接收](../../docs/evidence/x01/center-main-acceptance.json)，8source逐fixed/main/owner/hash一致，0重测14/65。停写8center后v4→v5原子移出并追加host两源；[本地Interface](../../docs/evidence/x01/host-gates-interface.md)已获Mika设计核定，现仅局部双gate实现。Data1,157,612KiB≥1GiB+32MiB；不占runtime/公共DTO/DB/SQL。新host授权时序架构影响待固定后交Lead，原10TODO不减。
 
 2026-10-06 14:44:50 UTC：真实TLA撤权red已固定46f40f736098f7072d548fc41165834fc4ad143d；本地host最小双gate实现后一次21/21/strict0，见[检查](../../docs/evidence/x01/host-gates-checks.json)/[质量](../../docs/evidence/x01/host-gates-quality.md)。两个授权phase共用冻结binding，拒绝/ACK未知保持原异常；0PG/provider/安装/新实际runner。独审尚未开始，新main未接。
+
+2026-10-06 14:46:08 UTC：host实现e6827d8a30fd103e34966a5d7298570545865057已冻结，[37项交审packet](../../docs/evidence/x01/host-gates-review-ready.md)准备独立review。当前21/strict通过不等于main能力；无新增检查，保留v5修复期。

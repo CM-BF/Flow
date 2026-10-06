@@ -2,9 +2,9 @@
 
 状态：NOT_STARTED
 
-Review target commit：UNKNOWN（待固定）
+Review target commit：e6827d8a30fd103e34966a5d7298570545865057
 
-范围：apps/runner/src/plugins/host.ts、host.test.ts；base8e520b7；[Interface](../../docs/evidence/x01/host-gates-interface.md)。设计已核定，产品实施与独审尚未完成。只读review固定target、真实TLA/授权未知/ownership/abort行为和原14直接消费者；不运行测试或改owner树。不把历史center/leaf批准移到新host。中心a578已正式main56d90接收，详[回执](../../docs/evidence/x01/center-main-acceptance.json)。
+范围：apps/runner/src/plugins/host.ts、host.test.ts；base8e520b7；[Interface](../../docs/evidence/x01/host-gates-interface.md)。设计已核定，产品实现21/21与strict0已固定，独审尚未开始。[固定交审packet](../../docs/evidence/x01/host-gates-review-ready.md)。只读review固定target、真实TLA/授权未知/ownership/abort行为和原14直接消费者；不运行测试或改owner树。不把历史center/leaf批准移到新host。中心a578已正式main56d90接收，详[回执](../../docs/evidence/x01/center-main-acceptance.json)。
 
 ---
 
