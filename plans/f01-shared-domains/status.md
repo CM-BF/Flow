@@ -204,3 +204,5 @@
 | F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）待独审；生产挂载/自动scan尚未修改，待插件共享index审结 |
 
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
+
+2026-10-06 16:01 UTC：消息设置032已分配并由Mika唯一writer原子领取v3；[固定账本观察](../../docs/evidence/f01/claude-message-settings-migration-assignment.json)。031仍为O15，030既有；本次只关闭DDL归属依赖，不表示生产挂载/PG已验，也不修改个人数据库。
