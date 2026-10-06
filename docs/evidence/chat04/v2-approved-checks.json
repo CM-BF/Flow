@@ -1,8 +1,8 @@
 {
-  "version": 3,
+  "version": 2,
   "base": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
-  "implementation": "fac202e32cc4c223e2e6abc64c67d11d39e439b0",
-  "recordedAt": "2026-10-06 04:51:48 UTC",
+  "implementation": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+  "recordedAt": "2026-10-06 04:41:01 UTC",
   "sourceFiles": [
     {
       "path": "apps/server/src/conversation-queue/commands.ts",
@@ -30,7 +30,7 @@
     },
     {
       "path": "apps/server/src/conversation-queue/queue.test.ts",
-      "sha256": "fe0a6906844efeab7c31ec0f26da3af29ecb59775a26b428366100c567175ab6"
+      "sha256": "366a7b947d5b3b09306641f8235d5b83bde8c9263dc35cf835a5d2a1ae80c091"
     },
     {
       "path": "apps/server/src/conversation-queue/store.ts",
@@ -141,19 +141,11 @@
     "v2-before-compat-typecheck.log": {
       "exitCode": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "scan-seam-queue.log": {
-      "exitCode": 0,
-      "sha256": "347bdd8e39c5a96705e31188bf09bff7893a4e8ffacdb0443eefdc096a4e00df"
-    },
-    "scan-seam-typecheck.log": {
-      "exitCode": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   },
   "queueFinal": {
     "command": [
-      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "/opt/homebrew/opt/node@24/bin/node",
       "node_modules/vitest/vitest.mjs",
       "run",
       "apps/server/src/conversation-queue/queue.test.ts",
@@ -161,14 +153,14 @@
       "--configLoader",
       "runner"
     ],
-    "startedAt": "2026-10-06T04:51:15.358Z",
-    "endedAt": "2026-10-06T04:51:20.633Z",
+    "log": "v2-matrix.log",
     "exitCode": 0,
-    "signal": null,
-    "log": "scan-seam-queue.log",
     "selected": 32,
     "passed": 32,
-    "target": "fac202e32cc4c223e2e6abc64c67d11d39e439b0"
+    "fixtureStartedAt": "2026-10-06T04:37:51.457Z",
+    "fixtureEndedAt": "2026-10-06T04:37:55.087Z",
+    "cliStartAt": "2026-10-06 04:37:51 UTC",
+    "cliDurationSeconds": 3.98
   },
   "consumer": {
     "sourcePath": "apps/server/src/conversations/conversations.test.ts",
@@ -185,21 +177,20 @@
   ],
   "typecheck": {
     "command": [
-      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "/opt/homebrew/opt/node@24/bin/node",
       "node_modules/typescript/bin/tsc",
       "--noEmit",
       "--project",
       "docs/evidence/chat04/tsconfig.json"
     ],
-    "startedAt": "2026-10-06T04:51:20.634Z",
-    "endedAt": "2026-10-06T04:51:21.800Z",
-    "exitCode": 0,
-    "signal": null
+    "startedAt": "2026-10-06T04:40:32.386921+00:00",
+    "endedAt": "2026-10-06T04:40:33.446801+00:00",
+    "exitCode": 0
   },
   "queueCleanup": {
-    "startedAt": "2026-10-06T04:51:16.175Z",
-    "endedAt": "2026-10-06T04:51:20.611Z",
-    "databaseName": "flow_chat04_24353_8b1d17f9",
+    "startedAt": "2026-10-06T04:37:51.457Z",
+    "endedAt": "2026-10-06T04:37:55.087Z",
+    "databaseName": "flow_chat04_27018_e58cd9fd",
     "remaining": []
   },
   "consumerCleanup": {
@@ -219,45 +210,5 @@
     "commit": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
     "runtimeBehaviorChanged": false,
     "verification": "noEmit rerun exit0; original 32+22 behavior logs retained without redundant rerun"
-  },
-  "queueBeforeScanSeam": {
-    "command": [
-      "/opt/homebrew/opt/node@24/bin/node",
-      "node_modules/vitest/vitest.mjs",
-      "run",
-      "apps/server/src/conversation-queue/queue.test.ts",
-      "--no-cache",
-      "--configLoader",
-      "runner"
-    ],
-    "log": "v2-matrix.log",
-    "exitCode": 0,
-    "selected": 32,
-    "passed": 32,
-    "fixtureStartedAt": "2026-10-06T04:37:51.457Z",
-    "fixtureEndedAt": "2026-10-06T04:37:55.087Z",
-    "cliStartAt": "2026-10-06 04:37:51 UTC",
-    "cliDurationSeconds": 3.98
-  },
-  "typecheckBeforeScanSeam": {
-    "command": [
-      "/opt/homebrew/opt/node@24/bin/node",
-      "node_modules/typescript/bin/tsc",
-      "--noEmit",
-      "--project",
-      "docs/evidence/chat04/tsconfig.json"
-    ],
-    "startedAt": "2026-10-06T04:40:32.386921+00:00",
-    "endedAt": "2026-10-06T04:40:33.446801+00:00",
-    "exitCode": 0
-  },
-  "scanSeamFix": {
-    "previousTarget": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
-    "newTarget": "fac202e32cc4c223e2e6abc64c67d11d39e439b0",
-    "path": "apps/server/src/conversation-queue/queue.test.ts",
-    "change": "Both factory calls receive local options with automaticQueueScan:false; all original assertions retained",
-    "sourceDiff": "Only queue.test.ts differs among 15 scoped implementation/harness files",
-    "validation": "32 queue + noEmit rerun exit0; original 22 consumer logs retained because runtime product source is unchanged",
-    "integrationBoundary": "This fixed branch factory predates automaticQueueScan; it ignores extra option. Lead must separately verify integrated false seam and default true lifecycle; no HTTP/env switch."
   }
 }

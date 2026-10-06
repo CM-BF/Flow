@@ -20,7 +20,8 @@ let server: Awaited<ReturnType<typeof createServer>> | undefined;
 let baseUrl: string;
 const startedAt = new Date().toISOString();
 async function start() {
-  server = await createServer({ databaseUrl: databaseUrl.href, ownerToken });
+  const options = { databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false };
+  server = await createServer(options);
   await migrateConversationQueue(pool);
   if (!server.hasRoute({ method: 'POST', url: '/api/conversations/:id/queue' })) registerConversationQueueRoutes(server, pool, boss);
   server.addHook('onSend', async (request, reply, payload) => {
@@ -190,7 +191,8 @@ it('restarts pending work and permits only one promotion across two center insta
   const c = await conversation(); const item = await enqueueItem(c.id, 0, 'Recovered waiting');
   await server!.close(); await start();
   const otherPool = new Pool({ connectionString: databaseUrl.href, max: 2 });
-  const other = await createServer({ databaseUrl: databaseUrl.href, ownerToken });
+  const options = { databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false };
+  const other = await createServer(options);
   if (!other.hasRoute({ method: 'POST', url: '/api/conversations/:id/queue' })) registerConversationQueueRoutes(other, otherPool, boss);
   const otherUrl = await other.listen({ host: '127.0.0.1', port: 0 });
   try {

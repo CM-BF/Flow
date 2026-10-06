@@ -20,7 +20,7 @@ Execution Lead：公共 exports/client、生产 migration/register/scan 生命�
 - [x] CHAT04-01 在既有 v1 Interface 上固定 pause/resume v2 DTO/routes，交接可用 commit。
 - [x] CHAT04-02 保留 PG FIFO/原子 promotion，新增持久 pause 与显式 resume 同事务提升，独立 revision 与不插队。
 - [x] CHAT04-03 保留 v1 37项证据；补隔离 PG/HTTP pause/complete/promote、显式continue、stale task/revision、重启/ACK竞争验证。
-- [ ] CHAT04-04 独立审查固定 target、质量和 dashboard 同步；生产集成与 main 事实另核。
+- [x] CHAT04-04 独立审查固定 target、质量和 dashboard 同步；生产集成与 main 事实另核。
 
 ## 验证方法
 
@@ -38,4 +38,4 @@ resume严格 expectedQueueRevision + expectedTaskId（无前轮null）。只在�
 
 currentTurn字段固定 taskId/taskStatus/turnId/turnNumber/queueItemId（显式null），list/detail返回paused/currentTurn。命令receipt仍immutable。新增runner未撤销检查使用非锁SELECT，禁止在task锁后锁runner；保留claim层fence。
 
-历史等待已解除：Lead确认011未部署，v2已实现。最终54项通过，原37项仅历史v1；新target待独审。
+历史等待已解除：Lead确认011未部署，v2已实现。最终54项通过，原37项仅历史v1；最终target已获Root独审APPROVED，生产集成另核。
