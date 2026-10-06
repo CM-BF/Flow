@@ -59,12 +59,14 @@
   "protectedDiff": "",
   "checks": {
     "sourceDiffCheck": 0,
-    "Node": "New Host request construction NOT_RUN; first1441 run preserved FAILED (6 subtests pass, Host200!=403; parent failed),1632ms/cleanup fulfilled",
+    "Node": "Second bounded run: 7 leaf subtests + parent PASS8/8, 2318ms, cleanup fulfilled; first1441 failure preserved",
     "browser": "NOT_RUN; requires separate cumulative60s gate",
     "production4320": "NOT_OBSERVED",
     "PG": 0,
     "install": 0,
-    "build": 0
+    "build": 0,
+    "NodeSourceHead": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+    "NodeRuntimeTotalMs": 3950
   },
   "sourcePeakLimits": {
     "statusFileBytes": 2097152,

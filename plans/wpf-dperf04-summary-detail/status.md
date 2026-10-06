@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:57:00 UTC |
+| 最近更新时间 | 2026-10-06 16:59:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 七源码固定已提交；本记录为metadata安全点，提交后双端clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | FAILED 1441d86baa40e98f4cb81b82dcc551202973209b；6子项通过，Host断言未通过 |
+| 检查状态 | PASSED abd2aff768f97350762b2eaddbe7ae6843902f48；仅Node8/8，browser NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | abd2aff768f97350762b2eaddbe7ae6843902f48 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 首轮失败已保留，测试现在会核实服务端实际收到的Host |
-| 下一可用交付 | 独审修复后完成剩余直接检查和页面验证 |
+| 当前产出 | 摘要和详情直接检查通过，服务端访问保护已验证 |
+| 下一可用交付 | 完成页面阅读与异步响应的浏览器验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，CHANGES_REQUESTED（4fac历史，后继修复待复审） |
@@ -37,7 +37,7 @@
 
 ## 检查边界
 
-当前首轮Node已运行1632ms；修复后未复验，不采4320/PG，不安装依赖。GO单次慢响应与静态20ms由管理来源记录，非本worker采样或性能基准。Node/browser预算分别后置；RELEASE真资源窗口到达时安全停点优先切回。
+当前两次Node累计3950ms，第二次7叶项+父项全部通过；不采4320/PG，不安装依赖。GO单次慢响应与静态20ms由管理来源记录，非本worker采样或性能基准。Node/browser预算分别后置；RELEASE真资源窗口到达时安全停点优先切回。
 
 ## 2026-10-06 16:24:08 UTC 固定源码安全点
 
@@ -72,3 +72,11 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 固定 `abd2aff768f97350762b2eaddbe7ae6843902f48` 仅原direct test：用node:http.request直接连自有loopback服务器并设置Host example.invalid，服务端request监听器同时记录实际入站headers.host；先断言精确入站值，再保403预期。响应流消费完再结算、2秒socket超时destroy、error/aborted拒绝，finally移除监听器，agent:false不保连接池。无改server/保护规则或原断言目标。
 
 首轮未捕获入站Host，不能从200结果断言生产防护失效或断言fetch改写已证实。原六子项通过/Host失败/未到达的后续document与snapshot断言保持，[原始日志](../../docs/evidence/wpf-dperf04/node-first/node.log)不改；[源码/hash审计](../../docs/evidence/wpf-dperf04/host-request-fix-source.json)。新修复仅文本/范围检查、NOT_RUN，Node已用1632/余28368ms；新fresh gate/父runner需重绑target后才可检查，0自动重试/Chrome/PG/free。
+
+## 2026-10-06 16:59:01 UTC 第二次唯一Node窗口
+
+管理fresh准入后本人live核b554v1原9/实际HEAD823071 clean，通过指定父runner单次执行。固定abd2的7叶项+1父项全部通过，无skip，退出0；Host服务器入站值example.invalid与响应403明确核验，document越界/symlink拒绝和旧snapshot结构后续断言均已到达。原1441首失败原样保留；未对旧fetch实际入站值补造结论。
+
+[原样结果](../../docs/evidence/wpf-dperf04/node-second/result.json)、[TAP](../../docs/evidence/wpf-dperf04/node-second/node.log)、[执行binding](../../docs/evidence/wpf-dperf04/node-second/binding.json)。16:58:59.491470Z→16:59:01.809441Z，监督elapsed2318ms，TAP2187.708416ms；累计1632+2318=3950ms，余26050ms。自有PGID76663/group与scratch均已不存在，cleanup fulfilled/errors[]；2临时Git库/2任务/实际loopback HTTP/注入ledger，0PG/Chrome/真实registry/外网。共享free样本不归因本任务。
+
+本次只证明直接行为，不证明浏览器焦点/选区、实际PG领取或生产4320延迟。当前源码不变，仅封存metadata；不得把Node通过当最终独审/主线已集成，无自动重复检查。

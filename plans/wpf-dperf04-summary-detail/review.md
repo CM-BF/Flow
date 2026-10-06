@@ -19,3 +19,7 @@ root授权日期专测维护固定 `1441d86baa40e98f4cb81b82dcc551202973209b`：
 ## 2026-10-06 16:57:00 UTC 首Node失败后的测试修复待审
 
 后继 `abd2aff768f97350762b2eaddbe7ae6843902f48` 只改direct Host用例，source manifest已重绑；原独审CHANGES_REQUESTED历史和新UI源码复审来源不变。请求审查node:http实际Host构造、服务端入站证据、403不变、timeout/监听清理。未执行新Node/浏览器或空间采样，原1441单次1632ms失败保留。
+
+## 2026-10-06 16:59:01 UTC 作者直接验证结果（非独审结论）
+
+固定abd2 / 实际823071的第二次受控Node 7叶项+父项8/8、exit0，监督2318ms，cleanup完整；[原raw](../../docs/evidence/wpf-dperf04/node-second/result.json)。首1441失败保留；browser尚未运行，独审不得由作者测试代替。

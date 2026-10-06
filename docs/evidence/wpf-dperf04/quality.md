@@ -27,3 +27,7 @@
 ## 2026-10-06 16:57:00 UTC Host probe clean-code安全点
 
 沿本地find-skills/clean-code/codebase-design：测试的真实HTTP输入与响应为同一Interface，不用可能受transport策略影响的便捷层推断入站Host；独立request事件观察不改server。错误与timeout有界、finally释放观察、断言403保留、无通用网络框架。静态diff仅1test/原6其他源及15保护路径0差，首raw全字节保留。未经运行不称修复已绿；后续只剩必要定向复验。
+
+## 2026-10-06 16:59:01 UTC 直接验证安全收口
+
+仅依新fresh gate执行一次，校验fixed7hash后归档原始result/log/binding。真实入站Host事实与403断言通过，不以首失败推断产品漏洞或抹去失败。原6其他源/15保护范围不改，cleanup归因自身PGID/scratch；累计3950ms不重置。沿clean-code核测试Interface/超时/监听清理、结果和未验分开。无后续runtime/free/浏览器检查。
