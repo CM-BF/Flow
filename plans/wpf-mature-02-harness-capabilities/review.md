@@ -1,3 +1,5 @@
+2026-10-06 18:23:28 UTC：Mika/root RESULT_FIDELITY_ACCEPTED `bb818d9a`，0P1/P2；[收据](../../docs/evidence/wpf-mature-02/native-pagesize/result-review.json)。单hw.pagesize无改善，非native修复。
+
 2026-10-06 17:50:22.663 UTC：Mika/root gpt-6-astra RESULT_FIDELITY_ACCEPTED `fcd9e59e539c1ed75152154eeae64f8114b8a939`，0P1/P2；[正式收据](../../docs/evidence/wpf-mature-02/native-catalog-probe/result-review.json)。功能仍pre-ready FAIL，私有344B KEEP，原窗口无剩余授权。
 
 2026-10-06 17:44:57 UTC：唯一native窗口已消费，SIGABRT/握手前失败，结果忠实性PENDING；[安全结果](../../docs/evidence/wpf-mature-02/native-catalog-probe/run-report.md)。源码/准备批准不代表实际PASS。

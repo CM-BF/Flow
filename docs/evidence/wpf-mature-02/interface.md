@@ -6,7 +6,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - **REQ-15会话页批量读取后继READY（GO路由事实）。** CORE共享读路径已交付/释放；排在hash接收和空领取测量安全点后，由Lead按[原FLOW-001计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)登记独立WT/精确scope。保持权限/REPEATABLE READ、冻结context与requested/effective语义，以减少DB往返为目标；当前0实现/PG，不把历史B03样本当当前性能。
 
-- **页大小对照已消费，单许可未改善。** [本次结果](native-pagesize/run-report.md)：1次clang+2个C均正常收束；A/B的三项页大小读取均−1/errno1，pthread元数据可读。measurement完成与权限成功分开，原native失败未复跑；本次清理/有限计量完成，固定结果待忠实性审查，无后继运行授权。
+- **页大小对照已消费，单许可未改善。** [本次结果](native-pagesize/run-report.md)：1次clang+2个C均正常收束；A/B的三项页大小读取均−1/errno1，pthread元数据可读。measurement完成与权限成功分开，原native失败未复跑；本次清理/有限计量完成，[结果忠实性已接收](native-pagesize/result-review.json)，原窗口无剩余授权。
 - **next4c有限回复**：[原KEEP清单与本组无新增依赖说明](resource-candidates.md#next4c补充)。B01/P03指定HEAD本轮由Mika核clean；没有本组新增历史evidence消费者/KEEP路径，外部未登记consumer仍unknown，sole Lead决定操作。
 - **Claude逐消息设置CORE/C01/F01已main接收。** Lead MAIN_RECEIPT `8d84d529`，唯一[组合接收回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/message-settings-integration.json)。CORE原owner在`3e7681512b4d4448c695e1bc6a4c7ff3aa12b43d`收口，34源与ea276/main逐hash一致；[owner main acceptance](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-main-acceptance.json)，claim v4已释放，实际回执`/tmp/flow-core-main-closeout-release-receipt.json`。仅本片集成，Web/TUI完整用户验收与真实provider仍待完成；不让已释放owner回写。
 - **真实native目录窗口已消费，握手前失败。** [固定安全结果](native-catalog-probe/run-report.md)：1个native SIGABRT、ready=false/model-list 0，目标和标准流关闭、两个自有根已清理，344B私有诊断材料独立保留待审；仅确认Rust panic类文字，原因未知。45s/留存预算事实与目录FAIL分开，0重试/新权限/模型调用；[结果忠实性收据](native-catalog-probe/result-review.json)已Mika17:50:22.663接收；功能仍失败，344B私有原件KEEP。
