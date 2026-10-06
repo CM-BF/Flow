@@ -46,7 +46,10 @@ async function supervisor() {
   assert.ok(gate.mode === "history" || gate.mode === "all", "Explicit A-only or full matrix admission required");
   assert.match(gate.run, /^[a-z0-9-]{1,48}$/); assert.ok(Date.parse(gate.expiresAt) > Date.now());
   assert.ok(gate.totalMs > CLEANUP_MS && gate.totalMs <= MAX_TOTAL_MS);
-  assert.ok(gate.minimumFreeBytes >= 1024 ** 3 + 128 * 1024 ** 2, "Admission must retain at least the agreed resource margin");
+  if (gate.mode === "history") assert.ok(gate.totalMs <= 60_000, "A-only admission is at most 60 seconds including cleanup");
+  const startMargin = 1024 ** 3 + (gate.mode === "history" ? 32 : 128) * 1024 ** 2;
+  const stopMargin = 1024 ** 3 + (gate.mode === "history" ? 16 : 64) * 1024 ** 2;
+  assert.ok(gate.minimumFreeBytes >= startMargin, "Admission must retain the mode's agreed resource margin");
   await mkdir(evidence, { recursive: true });
   const runs = join(evidence, "runs"); await mkdir(runs, { recursive: true, mode: 0o700 });
   let spent = 0;
@@ -63,7 +66,7 @@ async function supervisor() {
   await json(join(directory, "budget.json"), budget);
   const cleanupErrors: string[] = [], errors: string[] = [];
   const children: ChildProcess[] = []; const exited = new Map<ChildProcess, Promise<void>>();
-  let logBytes = 0, minimumFree = Number.POSITIVE_INFINITY, monitorBusy = false, monitor: NodeJS.Timeout | undefined;
+  let logBytes = 0, minimumFree = Number.POSITIVE_INFINITY, monitorTask: Promise<void> | undefined, monitor: NodeJS.Timeout | undefined;
   let result: WorkerResult | undefined; let databaseCreated = false, databaseCreateAttempted = false, markerWritten = false;
   let chromeStarting = false; let workStopped = false;
   const databaseName = `flow_release03_${randomUUID().replaceAll("-", "").slice(0, 20)}`;
@@ -86,6 +89,19 @@ async function supervisor() {
   };
   const onSignal = () => stopWork("Supervisor interrupted");
   process.once("SIGTERM", onSignal); process.once("SIGINT", onSignal);
+  const assertWorking = () => {
+    if (Date.now() >= workDeadline) stopWork("Work deadline reached; cleanup reserve started");
+    assert.ok(!workStopped, "Work stopped before the next resource operation");
+  };
+  const observeResources = async () => {
+    const free = await freeBytes(); minimumFree = Math.min(minimumFree, free);
+    if (free <= stopMargin) stopWork("Free space reached stop margin");
+    if (await bytesUnder(evidence) > EVIDENCE_BYTES) stopWork("Evidence exceeded 8 MiB");
+    assertWorking();
+  };
+  const checkpoint = async () => {
+    try { await observeResources(); } catch (error) { stopWork(`Resource checkpoint failed: ${errorText(error)}`); throw error; }
+  };
   const own = (child: ChildProcess) => {
     children.push(child);
     exited.set(child, new Promise(resolve => { child.once("close", () => resolve()); child.once("error", error => { errors.push(errorText(error)); resolve(); }); }));
@@ -103,17 +119,32 @@ async function supervisor() {
   };
   try {
     minimumFree = await freeBytes(); assert.ok(minimumFree >= gate.minimumFreeBytes, "Free space below admitted start threshold");
+    // Begin monitoring before business imports and CREATE, not after the worker has already started.
+    monitor = setInterval(() => {
+      if (monitorTask) return;
+      monitorTask = observeResources().catch(error => stopWork(`Resource monitor failed: ${errorText(error)}`))
+        .finally(() => { monitorTask = undefined; });
+    }, 250);
+    await checkpoint();
     const fixture = await import("./web-current-preview.fixture.js");
+    await checkpoint();
     await json(join(directory, "sources.json"), await fixture.sourceIdentity());
+    await checkpoint();
     ({ Pool } = await import("pg"));
+    await checkpoint();
     await json(join(directory, "database-owner.json"), { databaseName, marker, backend: BACKEND });
+    await checkpoint();
     databaseCreateAttempted = true;
     await query(adminUrl, async pool => { await pool.query(`CREATE DATABASE "${databaseName}"`); databaseCreated = true; });
+    await checkpoint();
     await query(database.href, async pool => {
       await pool.query("CREATE TABLE public.release_fixture_owner(id uuid PRIMARY KEY)");
+      assertWorking();
       await pool.query("INSERT INTO public.release_fixture_owner VALUES($1)", [marker]); markerWritten = true;
     });
+    await checkpoint();
     const scratch = join(directory, "scratch"); await mkdir(scratch, { mode: 0o700 });
+    await checkpoint();
     const worker = own(spawn(process.execPath, [...process.execArgv, fileURLToPath(import.meta.url), "--worker"], {
       cwd: root, detached: true, stdio: ["ignore", "pipe", "pipe", "ipc"],
       env: { ...process.env, TSX_DISABLE_CACHE: "1", TMPDIR: scratch, TMP: scratch, TEMP: scratch },
@@ -127,6 +158,7 @@ async function supervisor() {
         void (async () => {
           assert.ok(!workStopped && Date.now() < workDeadline);
           const profile = join(scratch, "chrome"); await mkdir(profile, { mode: 0o700 });
+          await checkpoint();
           const chrome = own(spawn("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", ["--headless=new", "--remote-debugging-port=0",
             "--remote-debugging-address=127.0.0.1", `--user-data-dir=${profile}`, "--no-first-run", "--no-default-browser-check",
             "--disable-background-networking", "--disable-component-update", "--disable-sync", "about:blank"],
@@ -143,21 +175,14 @@ async function supervisor() {
         })().catch(error => stopWork(`Chrome startup: ${errorText(error)}`));
       }
     });
+    assertWorking();
     worker.send({ kind: "start", mode: gate.mode, directory, databaseUrl: database.href, token: `release03-${randomUUID()}`, workDeadline } satisfies Init);
-    monitor = setInterval(() => {
-      if (monitorBusy) return; monitorBusy = true;
-      void (async () => {
-        const free = await freeBytes(); minimumFree = Math.min(minimumFree, free);
-        if (free <= 1024 ** 3 + 64 * 1024 ** 2) stopWork("Free space reached stop margin");
-        if (await bytesUnder(evidence) > EVIDENCE_BYTES) stopWork("Evidence exceeded 8 MiB");
-        if (Date.now() >= workDeadline) stopWork("Work deadline reached; cleanup reserve started");
-      })().catch(error => stopWork(`Resource monitor failed: ${errorText(error)}`)).finally(() => { monitorBusy = false; });
-    }, 250);
     while (worker.exitCode === null && worker.signalCode === null && !workStopped && Date.now() < workDeadline) await sleep(50);
     if (!result) errors.push("Worker did not return a complete result");
   } catch (error) { errors.push(errorText(error)); }
   finally {
     if (monitor) clearInterval(monitor);
+    await monitorTask;
     // Signals apply to the exact detached children we created, including Chrome's process group.
     for (const child of children) if (child.pid) { try { process.kill(-child.pid, "SIGTERM"); } catch (error) { if ((error as NodeJS.ErrnoException).code !== "ESRCH") cleanupErrors.push(errorText(error)); } }
     const grace = Math.min(Date.now() + 3000, hardDeadline - 12_000);
@@ -193,7 +218,8 @@ async function supervisor() {
     await json(join(directory, "cleanup.json"), cleanup);
     if (await bytesUnder(evidence) > EVIDENCE_BYTES - 32 * 1024) errors.push("Insufficient evidence headroom for final report");
     await json(join(directory, "supervisor.json"), { checksAndCleanupPassed: !!result?.passed && !errors.length && !cleanupErrors.length,
-      result, errors, cleanup, minimumFreeBytes: minimumFree, freeAtEnd: await freeBytes(), attribution: "Shared filesystem observations; not exclusively attributable to this run", providerQueries: 0 });
+      result, errors, cleanup, resourcePolicy: { startMargin, stopMargin, admittedStart: gate.minimumFreeBytes },
+      minimumFreeBytes: minimumFree, freeAtEnd: await freeBytes(), attribution: "Shared filesystem observations; not exclusively attributable to this run", providerQueries: 0 });
     process.off("SIGTERM", onSignal); process.off("SIGINT", onSignal);
   }
   // A valid SVC attestation is gated by BOTH native history cases, actual App checks, and completed cleanup.

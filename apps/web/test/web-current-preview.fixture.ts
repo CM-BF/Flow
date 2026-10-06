@@ -24,7 +24,7 @@ export const sha = (value: string | Buffer) => createHash("sha256").update(value
 export const failure = (error: unknown) => error instanceof Error ? error.message : String(error);
 export const loadTool = (file: string) => import(pathToFileURL(join(repository, "tools/personal-preview", file)).href);
 const execute = promisify(execFile);
-export const git = async (...args: string[]) => (await execute("git", ["-C", repository, ...args], { maxBuffer: 1024 * 1024 })).stdout.trim();
+export const git = async (...args: string[]) => (await execute("git", ["-C", repository, ...args], { maxBuffer: 1024 * 1024, timeout: 2000 })).stdout.trim();
 export const delay = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
 
 export async function until<T>(read: () => Promise<T>, ready: (value: T) => boolean, signal: AbortSignal, timeout = 8_000): Promise<T> {
@@ -60,9 +60,12 @@ async function closeHttp(server: Server) {
 
 /** Static bytes only: no Vite, release pointer, install, source copy, or fabricated compatibility record. */
 async function previewHost(centerPort: number, signal: AbortSignal) {
+  signal.throwIfAborted();
   const { verifyWebArtifact } = await loadTool("web-artifact.mjs");
   const { releaseAsset } = await loadTool("web-release.mjs");
+  signal.throwIfAborted();
   const { dist, manifest } = await verifyWebArtifact({ directory: ARTIFACT_ROOT, artifact });
+  signal.throwIfAborted();
   assert.equal(manifest.format, 2); assert.equal(manifest.releaseId, RELEASE_ID);
   type File = { path: string; bytes: number; sha256: string };
   const files = manifest.files as File[];
@@ -126,20 +129,26 @@ async function previewHost(centerPort: number, signal: AbortSignal) {
   });
   signal.addEventListener("abort", () => { for (const upstream of upstreams) upstream.destroy(); server.closeAllConnections(); }, { once: true });
   try {
+    signal.throwIfAborted();
     const port = await listen(server);
+    signal.throwIfAborted();
     return { url: `http://127.0.0.1:${port}`, manifest, wire, problems, loseNext: (kind: "turn" | "queue") => { assert.equal(drop, null); drop = kind; },
       setLegacy: (value: boolean) => { legacy = value; }, close: async () => { for (const upstream of upstreams) upstream.destroy(); await closeHttp(server); } };
   } catch (error) { await closeHttp(server); throw error; }
 }
 
 export async function startCurrentPreview(databaseUrl: string, token: string, signal: AbortSignal) {
+  signal.throwIfAborted();
   const { createServer } = await import("../../server/src/index.js");
+  signal.throwIfAborted();
   const app = await createServer({ databaseUrl, ownerToken: token, leaseMs: 300_000 });
   let preview: Awaited<ReturnType<typeof previewHost>> | undefined;
   try {
     signal.throwIfAborted(); await app.listen({ host: "127.0.0.1", port: 0 });
+    signal.throwIfAborted();
     const address = app.server.address(); assert.ok(address && typeof address !== "string");
     preview = await previewHost(address.port, signal);
+    signal.throwIfAborted();
     const owner = new FlowClient({ baseUrl: preview.url, token });
     return { ...preview, owner, token, async close() {
       const errors: string[] = [];

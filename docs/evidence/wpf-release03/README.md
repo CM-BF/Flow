@@ -16,7 +16,7 @@
 
 ## 准入与资源
 
-当前不可运行。未来 manager/root 明确准入后才能提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、mode（history或all）、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，起始余量至少1GiB+128MiB，运行<=1GiB+64MiB或monitor失败停工作。250ms轮询不是硬配额，无法排除其他进程/OS并发；峰值PG/Chrome物理写量仍待资源裁决。
+当前不可运行。未来 manager/root 明确准入后才能提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、mode（history或all）、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，mode=history单次至多60000ms（含20000ms清理），start>=1GiB+32MiB、stop<=1GiB+16MiB；mode=all保留start128MiB/stop64MiB附加余量。monitor失败也停工作。监视先于business import/CREATE启动，关键await后fresh checkpoint防止已stop后继续spawn；worker import/factory/listen/manifest await亦核abort。250ms轮询不是硬配额，无法排除其他进程/OS并发。Lead此前同factory专库12,360,727B是实测数据库大小，不是PG/WAL物理增量上限；32MiB给A-only一个受监督的增量窗口，不能源级证明瞬间peak。A不生成Chrome profile、不build/clone/install，retained证据仍总8MiB，剩余约1GiB用于未知并发/清理；fresh资源准入仍必要。
 
 未来命令形式（未运行）：`TSX_DISABLE_CACHE=1 FLOW_RELEASE03_GATE=<manager-owned-admission> /opt/homebrew/opt/node@24/bin/node --import tsx apps/web/test/web-current-preview.browser.ts`。没有install、build、复制源码/依赖步骤。
 

@@ -15,3 +15,7 @@
 ## 2026-10-06 14:59:40 UTC 单次noEmit后安全点
 
 固定997d源码未改。明确两入口/strict/noUncheckedIndexedAccess命令通过，静态类型检查不等业务import或兼容通过；原始空stdout完整保留，资源和PGID退出见typecheck-result。没有重复检查、没有以pass解除A运行门槛。
+
+## 2026-10-06 15:03:06 UTC A-only资源delta clean-code
+
+用mode定义两对明确门槛，统一checkpoint复用原stop状态，防止导入/建库/marker/worker/Chrome关键await后继续工作。无新framework或后台任务。source可证明A不build/不Chrome、证据上限与门槛；不能证明PG/WAL/OS并发物理瞬时峰值，12,360,727B仅Lead同factory数据库观察。250ms监视与fresh checks为尽早失败条件，不冒硬配额。原资源/清理语义不放宽，只有确认marker能DROP，未知保留。0重复noEmit/PG/Chrome。
