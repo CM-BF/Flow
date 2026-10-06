@@ -18,7 +18,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - [S01 128固定结果接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-128-run/integration-ready.md)：已独审，具体观测限制沿权威文件。
 - X01 [精确scope请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/scope-request.md)与[安装依赖补充](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/installation-dependency-addendum.md)：显式workspace/tar依赖方向已审；需Lead协调4 manifests/lock唯一writer与最小leaf scope，公共vertical仍需host/task/event/DDL输入。
-- [S01P05 events.ts移交与登记请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/docs/evidence/s01p05/interface.md)：由当前合法owner按账本停写/原子amend协调，不复制任务状态。
+- [S01P05已独审6336正式集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/docs/evidence/s01p05/integration-ready.md)：仅等价/写次数结论，A/B未开放；进度沿权威owner维护。
 
 - [Node rootliteral三槽设计](node-rootliteral/design.md)：设计ff927712已审；source d17ad56ad47ec065cea107ba4ab15fc7afd56b0e已固定，组合1f32735e已独审APPROVED；实际2目标/0编译，唯一窗口已消费。旧C结果/尾部以e47历史快照封存，本阶段另记。
 - [ENG01G host资格/全writer撤销最小输入](native-engineering-authority-inputs.md)：固定557397e9接口；C、未来Node与真实Codex证据分层，生产authority仍不可签发。
