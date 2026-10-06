@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [单目标加载观察已执行结果](node-loader-cause/run-report.md)：完整双流命中固定库角色，errno未知；目标SIGABRT/清理确认，待结果独审，无后继授权。
+- [单目标加载观察已执行结果](node-loader-cause/run-report.md)：12f502b1已获Mika13:42:44限定APPROVED：完整双流命中固定库角色/errno未知；SIGABRT，启动隔离仍阻塞，无后继授权。
 
 - [X01中心静态安装DTO固定输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-installation-seam-request.md)：cb20a75dddc0bddc724b88d66437444b397391f9 的 packages/contracts/src/plugin-installations.ts 可供F01薄client准备；领域后继沿原owner。
 

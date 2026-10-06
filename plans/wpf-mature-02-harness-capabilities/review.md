@@ -1,6 +1,6 @@
 # WPF-MATURE-02 review
 
-Cause唯一运行结果待独审：[run-report](../../docs/evidence/wpf-mature-02/node-loader-cause/run-report.md)。1目标SIGABRT，CLI0仅完整观察；无后继授权。以下准备审批不冒称运行通过。
+Cause结果忠实性 APPROVED：Mika/gpt-6-astra，2026-10-06 13:42:44 UTC，target12f502b1fdd1f468f96557a619e2a88ae99e1dc0，0P1/P2。15bindings与11+69固定输入核同；[run-report](../../docs/evidence/wpf-mature-02/node-loader-cause/run-report.md)仅完整单目标观察：SIGABRT/library-not-loaded/errno未知，非启动或隔离通过。205333B及外部4s可信；deny根仅driver收据，未重跑，无后继授权。
 
 Cause v2准备 APPROVED：status_read/gpt-6-astra，2026-10-06 13:37:35 UTC，target a5984db6434a1762226147169588fc53909336f6 / source4331c267bc5ef7c01328369ecaa57fc9434c7473；原2P2关闭，0剩余P1/P2。11runtime/69prepared79890B/28external、旧raw绑定核同；33distinct分次证据，未重跑。静态outer顺序检查不是实测；实际shell退出≤30s仍需external完成回执。Mika13:37:56接收并独核通过；仅准备批准，NOT_OPEN。原f6 CHANGES_REQUESTED保留Git及[增量证据](../../docs/evidence/wpf-mature-02/node-loader-cause/review-delta/result.json)。
 
