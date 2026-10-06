@@ -21,3 +21,6 @@
 
 
 2026-10-06 08:11 UTC R1修复clean-code：root固定972审查发现isRunning=true时plain messages adapter的repository保留被撤draft/伪branch，正式APPROVED未给。采用0.3.22实际公开messageRepository路径，不重建Thread/runtime，不隐分支数字；转换单条WeakMap缓存保消息身份，既有public SDK按incoming IDs真实删除旧节点。新增实际core export/多次停启/final/跨host淘汰与草稿回归；28direct通过，最终dev8/prod8含branch控件断言、无HMR/错误。首新增测试过早要求settlement与finalGET同步，修测试等待合法settlement；generic补ThreadMessage后tsc通过。相关新源均原scope，S01/officialThread/shared0改。未继承PERF03 converter计数为新适配性能结论。当前等待root固定9da复审。
+
+
+2026-10-06 08:17 UTC 独立review闭环：root限定批准target9da，R1/P2 CLOSED。root独立28/28和CUA32复验、十一hash/源码审读结果见review；作者8+8与tsc/build未冒称root重跑。仅metadata转录，无产品更改/额外测试。最终轻核命名、边界和错误路径，无新发现；旧PERF计数不用于新adapter宣传。13scope停写待主线正式接收，claim保留，不修改共享或其他owner记录。
