@@ -65,7 +65,7 @@ function BoundReply({ port, disclosure, identity }: { port: ReplyPort; disclosur
     try { await port.read(); } catch (cause) { if (mounted.current && port.isCurrent()) setError(cause instanceof Error ? cause.message : "Reply could not be read"); }
   };
   return <div className="flow-reply-detail"><p>This reply is shortened.</p><button className="flow-link" aria-expanded={expanded} onClick={() => { setExpanded(!expanded); disclosure.set(identity, !expanded); if (!expanded) void read(); }}>{expanded ? "Hide full reply" : "Read full reply"}</button>
-    {expanded && <div>{state.loading && <p role="status">Loading full reply…</p>}{(state.error || error) && <p role="alert">{state.error || error} <button className="flow-link" onClick={() => void read()}>Retry reply</button></p>}{state.content !== undefined && <pre style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{state.content}</pre>}</div>}
+    {expanded && <div>{!state.loading && !state.error && !error && state.content === undefined && <p>Full reply is not cached. <button className="flow-link" onClick={() => void read()}>Read reply again</button></p>}{state.loading && <p role="status">Loading full reply…</p>}{(state.error || error) && <p role="alert">{state.error || error} <button className="flow-link" onClick={() => void read()}>Retry reply</button></p>}{state.content !== undefined && <pre style={{ whiteSpace: "pre-wrap", overflowWrap: "anywhere" }}>{state.content}</pre>}</div>}
   </div>;
 }
 export function FlowReplyDetail({ data }: { data: unknown }) {
