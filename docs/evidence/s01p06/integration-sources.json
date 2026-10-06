@@ -1,0 +1,43 @@
+{
+  "target": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+  "base": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "sources": [
+    {
+      "kind": "source",
+      "path": "apps/runner/src/runtime.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/attempt-wakeup.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1325,
+      "sha256": "49714e1d8d6f0e2a02f333842d0b88a818d91a632ce49443487aa0e349106792"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/attempt-wakeup.test.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 4844,
+      "sha256": "48156c4c1a4f450cd71d7310545aeb8ccf9451cb2c4f1d0baf98eb1cbea7218d"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 27962,
+      "sha256": "49bea6a00c209cd20d2aa85b21ff8371d23590e4dcf052454a92447bb82b096e"
+    },
+    {
+      "kind": "source",
+      "path": "docs/evidence/s01p06/tsconfig.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 370,
+      "sha256": "711082bcb9f924fdb2909eac69408ff0980cf4f0b3f3382d5316376bebc1a635"
+    }
+  ],
+  "review": "independent-review.json",
+  "rules": "Do not replay metadata into other authoritative sources. Keep existing main changes, verify exact source and direct imports at integration; conflicts go to owner. No capacity rerun."
+}
