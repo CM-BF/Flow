@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 06:34 UTC |
+| 最近更新 | 2026-10-06 06:37 UTC |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-package-fetches |
 | Branch | codex/plugin-package-fetches |
@@ -12,14 +12,14 @@
 | 工作树dirty状态 | 固定源码9ebb3bdd781b3667f0c164405e9a17387ce89d76；本次仅交付metadata |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 9ebb3bdd781b3667f0c164405e9a17387ce89d76；24不同（X05 11 + 旧X04 13）；23组合 + 5局部含4重复，tsc exit0 |
-| Review | NOT_STARTED |
+| Review | APPROVED 9ebb3bdd781b3667f0c164405e9a17387ce89d76 / Execution Lead |
 | Review target commit | 9ebb3bdd781b3667f0c164405e9a17387ce89d76 |
-| 已集成main状态 / HEAD | 未集成；X04已在main115b，X05已固定待独立审查，尚未生产挂载 |
+| 已集成main状态 / HEAD | 未集成；X04已在main115b，X05独立审查通过，尚未生产挂载 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 3 |
 | 当前产出 | 包下载已可持久查询；重启可核对已发布文件，下载中断不会自行重试 |
-| 下一可用交付 | 审查后接入正式下载入口与命令行 |
+| 下一可用交付 | 接入正式下载入口与命令行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -29,7 +29,7 @@
 | X05-02 | completed | assignment_review | [3项受理检查](../../docs/evidence/x05/admission-boundaries.txt) |
 | X05-03 | completed | assignment_review | [5项独立进程检查](../../docs/evidence/x05/process-first.txt) |
 | X05-04 | completed | assignment_review | [最终证据](../../docs/evidence/x05/README.md)、24不同检查/tsc/clean-code |
-| X05-05 | in-progress | assignment_review | 源码固定；独立review/共享挂载/CLI/main待Lead |
+| X05-05 | in-progress | assignment_review | 独立review通过；共享挂载/CLI/main待Lead |
 
 Claim 72453aac-7d6c-4c33-81f4-aa7b936f3381 v1，8literal；旧X04三个接缝已正式停写移交。0模型/安装/生产服务操作。架构影响：新增中心本机下载操作/023及已知artifactID发布接缝，shared入口/client/CLI由Lead。官方精确版本metadata endpoint留后继研究，未实测。
 
