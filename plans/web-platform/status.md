@@ -71,7 +71,7 @@
 
 K02、renderer、generic活动及typed ActivityI都已在主线；S01增量正文模块3ac与PERF03消息复用f909也已正式接收于6426，管理独核祖先及八源码相同，旧d94/2ec均v2释放。CHAT06I01以该完整基线领取新十三scope，由同一panels接真实App；CONTEXT01已接收fc113并全九scope释放；CONTEXT02用新独立fc113八scope接纯回执逻辑，知识实际App UI仍后继。主线模块就绪不等新的接线已验证。
 
-当前个人center/runner版本以ExecutionLead的32c accepting v9回执为准，Web源码、main和后台运行版本分开。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
+当前个人center/runner版本以ExecutionLead的32c accepting v9回执为准，Web源码、main和后台运行版本分开。 个人Web61228使用main目录Vite，sourceAtStart32c仅启动观察，不能当作当前Web固定源码；用户已登录，本队不刷新其页面或重启服务，固定构建静态服务后继由Lead安排。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
 
 ## 验收边界与开放目标
 

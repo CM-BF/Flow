@@ -57,3 +57,11 @@ CONTEXT02正式main7106a35447bf43026ad7b5ad7c25dc530fd0c4f5接收，管理独核
 Lead报告97sources已登记CHATREAD/CHAT10、4320重载中；管理不重复API。个人center/runner32c acceptingv9，SVC02关闭，用户实际请求完成/operator0query是Lead来源，不是本队复验或新增query许可。
 
 CHATREAD01 b9db/616671管理窄核见[审计](chatread01-candidate-audit.json)：58paths/9scope、七target/dev/prod/currenthash同、5baselinehash=32c、6md43links0断。root固定CUA发现R1/P2：设置modal里Inspect turn打开后台任务workspace但modal未关闭、page仍inert、焦点留Inspect。已交唯一owner同九scope修复两个下钻动作，原验收保持历史，新target再独审，暂不REVIEW_READY。管理没有重复browser/产品检查。
+
+## 2026-10-06 08:35:57 UTC 个人Web来源与后继顺序
+
+GO经root明确：个人Web61228是main目录Vite，sourceAtStart32c只表示启动时源码，不能称当前Web固定32c。用户已登录并使用该页面，Lead安排固定构建静态服务后继，本队不重启服务、不刷新用户页。center/runner32c acceptingv9仍按正式receipt限定，Web源码/服务启动/后台构建版本分开。
+
+root报告CHAT10 domain a329、client25a22、startup2d699各自独审通过，但尚待Lead正式main与完整可消费输入；这些仅消息中的短标识，不作为新派工完整基线。个人steer未启。真实stream本队0query；O10隔离query由GO另行授权他队，不复用该授权，也不重复执行。
+
+后继顺序仍沿REQ42/44：CONTEXT01/02均已main，不再拆选择模块；w01按已有20scope实际CONTEXTI方案，等CHATREAD正式main/release、精确组合base和fresh take后一个实际UI片。panels释放后可只读准备独立steering控制模块；需正式完整SHA、精确新scope与新take才写，避开CONTEXTI App/Thread/queue，不造另一权限引擎。当前只是排队记录，未新派实现/建树/领取。
