@@ -34,6 +34,7 @@ export interface SteeringCommandReference {
 }
 export interface SteeringCommandResult { command: SteeringCommandReference; replayed: boolean }
 export interface SteeringState {
+  /** Admission CAS only: receipt changes do not increment revision. Read current state or audit for updates. */
   taskId: string; attemptId: string | null; revision: number; sealed: boolean;
   /** False means unresolved delivery must be treated as unknown; it does not prove native work stopped. */
   attemptAvailable: boolean;
@@ -48,3 +49,6 @@ export interface SteeringAudit {
   actor: 'owner' | 'runner'; createdAt: string; data: Record<string, unknown>;
 }
 export interface SteeringAuditPage { entries: SteeringAudit[]; nextCursor: number | null }
+
+export const steeringPageSchema = z.strictObject({ after: z.coerce.number().int().min(0).max(Number.MAX_SAFE_INTEGER).default(0), limit: z.coerce.number().int().min(1).max(100).default(100) });
+export const steeringStateQuerySchema = steeringPageSchema.extend({ attemptId: idSchema.optional() });
