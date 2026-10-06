@@ -237,3 +237,5 @@ O16单次0query PG 19:15:18→19:15:28.747，1selected/0pass；规划→确认�
 故障现定位为OrbStack状态Stopped、Docker socket不存在、55432无监听；不能推断PG数据损坏。已知原容器2c45767d4802/flow-f00-postgres-1与数据卷必须保留。仅恢复已有daemon并核原身份，禁止重建/删卷/全局清理。原Chrome失败与O16 KEEP库、两次R01失败证据不改；详情见[运行环境核对](../../docs/quality/resource-space-2026-10-06/daemon-recovery/preflight.json)。新PG/Chrome仍暂停，局部无PG检查只按已有门槛fresh准入，不要求GO逐条再批准。
 
 2026-10-06 19:27 UTC：OrbStack一次start返回VM启动timeout，但后续实际Running，未盲重试。原容器2c45767d4802仍是原image/volume/ports，状态exited255/restart=no；核对后仅start该完整ID一次，19:26:58 healthy、55432恢复、协调list成功。未重建/删容器/卷。其它原有autostart容器由daemon恢复；本operator未逐项操作。实际free1,089,486,848B，不把此前1.25GB当当前准入。R01九纯例已通过并清理；个人Web23631仍监听61228，旧center64904消失/61227无监听，runner wrapper65168仍存活；实际子进程及原恢复入口只读核对中。
+
+2026-10-06 19:34 UTC：原两候选在fresh领取恢复后均released，44个已知broken依赖入口补核非严格目标，0条触拟收起历史副本；19:31实际free1,436,569,600B重新过准备线，因此本次0/2操作即停止。未删除crash/core/donor，也未将未知共享卷回升归因清理。[候选停止回执](../../docs/quality/resource-space-2026-10-06/daemon-recovery/candidate-stop.json)。个人中心恢复优先于新PG/Chrome：原center已退出而runner/web保持，只准备固定362的现有受管组件单中心组合；不调用会全角色启动的入口、不改发布指针。
