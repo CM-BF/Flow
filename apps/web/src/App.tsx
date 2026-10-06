@@ -1,9 +1,13 @@
 import {
   useEffect,
+  useCallback,
+  useLayoutEffect,
+  useRef,
   useState,
   useSyncExternalStore,
   type ReactNode,
   type KeyboardEvent,
+  type RefObject,
 } from "react";
 import { FlowClient } from "@flow/client";
 import {
@@ -13,6 +17,7 @@ import {
 } from "@flow/contracts";
 import {
   Columns2,
+  LayoutDashboard,
   Files,
   MessageSquare,
   Moon,
@@ -30,6 +35,7 @@ import {
   type WorkspaceTabId,
 } from "./components/workspace/WorkspacePanels";
 import { TaskProjection } from "./projection";
+import { WorkspaceOverview } from "./workspace-feed/WorkspaceOverview";
 import { TaskThread, fixtureMode, type DraftState } from "./TaskThread";
 import { Button } from "./components/ui/button";
 import { TooltipProvider } from "./components/ui/tooltip";
@@ -178,6 +184,7 @@ interface View {
   projection: TaskProjection;
   title: string;
 }
+interface PanelFocusRequest { serial: number; taskId: string; tab: WorkspaceTabId }
 function ChatPane({
   viewId,
   view,
@@ -199,6 +206,10 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
+  if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
+    {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
+    {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
+  </section>;
   return (
     <section
       className="flow-chat-pane"
@@ -325,10 +336,19 @@ function Workspace({
   const [sidebar, setSidebar] = useState(() => window.innerWidth > 800);
   const [query, setQuery] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
+  const panelContainer = useRef<HTMLDivElement>(null);
+  const [panelFocusRequest, setPanelFocusRequest] = useState<PanelFocusRequest | null>(null);
   const [panelTabs, setPanelTabs] = useState<Record<string, WorkspaceTabId>>(
     {},
   );
   const [loadingList, setLoadingList] = useState(false);
+  const [overview, setOverview] = useState(() => !new URLSearchParams(location.hash.slice(1)).has("task"));
+  const [pageVisible, setPageVisible] = useState(() => document.visibilityState === "visible");
+  useEffect(() => {
+    const changed = () => setPageVisible(document.visibilityState === "visible");
+    document.addEventListener("visibilitychange", changed);
+    return () => document.removeEventListener("visibilitychange", changed);
+  }, []);
   const refreshChats = async (more = false) => {
     setLoadingList(true);
     catalog.clearError();
@@ -345,12 +365,14 @@ function Workspace({
           : (list.tasks.find((task) => task.id === id)?.title ?? "Task"),
       };
       views.set(id, view);
+      view.projection.setVisible(false);
       view.projection.setOnline(navigator.onLine);
       if (!id.startsWith("draft-")) void view.projection.select(id);
     }
     return view;
   };
   const newChat = () => {
+    setOverview(false);
     const id = `draft-${crypto.randomUUID()}`;
     ensureView(id);
     if (window.innerWidth <= 800) setSidebar(false);
@@ -361,6 +383,7 @@ function Workspace({
     );
   };
   const select = (id: string) => {
+    setOverview(false);
     ensureView(id);
     if (window.innerWidth <= 800) setSidebar(false);
     setGroups((previous) => {
@@ -377,7 +400,7 @@ function Workspace({
     const followRoute = () => {
       const id = new URLSearchParams(location.hash.slice(1)).get("task");
       if (id) select(id);
-      else if (!views.size) newChat();
+      else setOverview(true);
     };
     followRoute();
     const online = () =>
@@ -399,7 +422,14 @@ function Workspace({
   const selectedId = focused?.activeId;
   const selected = selectedId ? views.get(selectedId) : null;
   useEffect(() => {
-    if (selectedId)
+    const visible = new Set(overview || !pageVisible ? [] : groups.map(group => group.activeId));
+    views.forEach((view, id) => view.projection.setVisible(visible.has(id)));
+  }, [groups, overview, pageVisible, views]);
+  const syncWorkspaceSummaries = useCallback((tasks: TaskSummary[]) => {
+    tasks.forEach(task => { catalog.syncSummary(task); views.get(task.id)?.projection.syncSummary(task); });
+  }, [catalog, views]);
+  useEffect(() => {
+    if (selectedId && !overview)
       history.replaceState(
         null,
         "",
@@ -407,10 +437,11 @@ function Workspace({
           ? location.pathname + location.search
           : `#task=${encodeURIComponent(selectedId)}`,
       );
-  }, [selectedId]);
+  }, [selectedId, overview]);
   const panel = panelTabs[selectedId ?? ""] ?? "files";
   const setPanel = (tab: WorkspaceTabId, id = selectedId) => {
     if (id) setPanelTabs((previous) => ({ ...previous, [id]: tab }));
+    if (id && tab.startsWith("detail:")) setPanelFocusRequest(previous => ({ serial: (previous?.serial ?? 0) + 1, taskId: id, tab }));
     setPanelOpen(true);
   };
   const close = (id: string) => {
@@ -447,7 +478,6 @@ function Workspace({
         activeId: group.activeId === oldId ? id : group.activeId,
       })),
     );
-    history.replaceState(null, "", `#task=${encodeURIComponent(id)}`);
   };
   return (
     <div className="flow-shell">
@@ -457,32 +487,39 @@ function Workspace({
         aria-label="Workspace tools"
       >
         <span className="flow-mark">F</span>
+        <IconButton label="Work overview" active={overview} onClick={() => {
+          setOverview(true);
+          if (window.innerWidth <= 800) setSidebar(false);
+          history.replaceState(null, "", "#workspace");
+        }}><LayoutDashboard size={18} /></IconButton>
         <IconButton
           label="Chats"
           active={sidebar}
-          onClick={() => setSidebar(!sidebar)}
+          onClick={() => { setOverview(false); setSidebar(!sidebar); }}
         >
           <MessageSquare size={18} />
         </IconButton>
         <IconButton
           label="Files"
           active={panelOpen && panel === "files"}
-          onClick={() =>
+          onClick={() => {
+            setOverview(false);
             panelOpen && panel === "files"
               ? setPanelOpen(false)
-              : setPanel("files")
-          }
+              : setPanel("files");
+          }}
         >
           <Files size={18} />
         </IconButton>
         <IconButton
           label="Terminal"
           active={panelOpen && panel === "terminal"}
-          onClick={() =>
+          onClick={() => {
+            setOverview(false);
             panelOpen && panel === "terminal"
               ? setPanelOpen(false)
-              : setPanel("terminal")
-          }
+              : setPanel("terminal");
+          }}
         >
           <Terminal size={18} />
         </IconButton>
@@ -587,6 +624,7 @@ function Workspace({
         <header
           className="flow-workspace-bar"
           data-extension-slot="chat.header"
+          hidden={overview}
         >
           <span>Flow</span>
           {fixtureMode && (
@@ -630,7 +668,12 @@ function Workspace({
             </IconButton>
           </div>
         </header>
-        <div className="flow-work-area">
+        <WorkspaceOverview client={client} active={overview} onTaskSummaries={syncWorkspaceSummaries} onOpenTask={select} onOpenReference={(taskId, referenceId) => {
+          select(taskId);
+          setPanel(`detail:${referenceId}`, taskId);
+          void ensureView(taskId).projection.loadDetail(referenceId);
+        }} />
+        <div className="flow-work-area" hidden={overview}>
           <div
             className={`flow-chat-groups ${groups.length > 1 ? "split" : ""}`}
           >
@@ -730,13 +773,15 @@ function Workspace({
               ))
             )}
           </div>
-          <div className="flow-panel-mount" hidden={!panelOpen}>
+          <div className="flow-panel-mount" hidden={!panelOpen} ref={panelContainer}>
             {selected ? (
               <WorkspacePanelMount
                 view={selected}
                 activeTab={panel}
                 onActiveTabChange={(tab) => setPanel(tab)}
                 onClose={() => setPanelOpen(false)}
+                focusRequest={panelFocusRequest}
+                container={panelContainer}
               />
             ) : (
               <p>Select a task to inspect its files and output.</p>
@@ -752,16 +797,28 @@ function WorkspacePanelMount({
   activeTab,
   onActiveTabChange,
   onClose,
+  focusRequest,
+  container,
 }: {
   view: View;
   activeTab: WorkspaceTabId;
   onActiveTabChange: (id: WorkspaceTabId) => void;
   onClose: () => void;
+  focusRequest: PanelFocusRequest | null;
+  container: RefObject<HTMLDivElement | null>;
 }) {
   const state = useSyncExternalStore(
     view.projection.subscribe,
     view.projection.getSnapshot,
   );
+  const focusedRequest = useRef<number | null>(null);
+  useLayoutEffect(() => {
+    if (!focusRequest || focusRequest.serial === focusedRequest.current || focusRequest.taskId !== state.task?.id || activeTab !== focusRequest.tab) return;
+    const tab = container.current?.querySelector<HTMLButtonElement>('[role="tab"][aria-selected="true"]');
+    if (!tab?.getAttribute("aria-controls")?.endsWith(encodeURIComponent(activeTab))) return;
+    tab.focus();
+    focusedRequest.current = focusRequest.serial;
+  }, [focusRequest, state.task, activeTab, container]);
   return (
     <WorkspacePanels
       task={state.task}

@@ -63,6 +63,23 @@ function TaskWorkspace({
   useEffect(() => { if (controlledTab) setFocusedTab(controlledTab); }, [controlledTab]);
   useEffect(() => { layout.tab = activeTab; layout.openDetails = openDetails; }, [layout, activeTab, openDetails]);
   useLayoutEffect(() => {
+    const container = tabsRef.current;
+    if (!container) return;
+    const reveal = () => {
+      if (!container.clientWidth) return;
+      const button = container.querySelector<HTMLButtonElement>('[role="tab"][aria-selected="true"]');
+      if (!button) return;
+      const tab = button.getBoundingClientRect();
+      const viewport = container.getBoundingClientRect();
+      if (tab.right > viewport.right) container.scrollLeft += tab.right - viewport.right;
+      else if (tab.left < viewport.left) container.scrollLeft += tab.left - viewport.left;
+    };
+    reveal();
+    const resize = new ResizeObserver(reveal);
+    resize.observe(container);
+    return () => resize.disconnect();
+  }, [visibleTab, tabs.length]);
+  useLayoutEffect(() => {
     if (!focusAfterOpen.current || visibleTab !== focusAfterOpen.current) return;
     const index = tabs.findIndex((tab) => tab.id === focusAfterOpen.current);
     const button = tabsRef.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[index];

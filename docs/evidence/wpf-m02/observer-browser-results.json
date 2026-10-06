@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-06T02:44:53.265Z",
+  "scope": "HTTP/1 real browser + simulated HTTP fixture; visibility handler explicitly dispatched where headless documents remain visible",
+  "checks": [
+    "eight retained chats keep at most one visible observer and leave HTTP/1 command budget",
+    "hidden task catches up from saved cursor without duplicate entries; two split panes remain live",
+    "two browser pages pause hidden observers and preserve commands/details budget",
+    "delayed acceptance remains attached to its hidden draft; closing never cancels",
+    "failed snapshot has an explicit retry and never becomes a new-chat composer",
+    "controlled workspace detail tab remains visible at 390px"
+  ],
+  "pageErrors": []
+}
