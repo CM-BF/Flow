@@ -49,6 +49,7 @@ class Report:
     secondary_failures: list[dict] = field(default_factory=list)
     signals: list[dict] = field(default_factory=list)
     owned_state: str = 'unknown'
+    observations: list[dict] = field(default_factory=list)
 
     def fail(self, phase, code, error=None):
         # Do not copy exceptions' strings, command arguments, or environment.
@@ -83,7 +84,12 @@ def supervise(launch: Launch, policy: Policy) -> Report:
     except Exception as error:
         report.fail('work', 'SUPERVISION_FAILED', error)
     finally:
-        owner.finish(policy)
+        stop_deadline = time.monotonic() + policy.term_grace_seconds + policy.kill_grace_seconds
+        owner.finish(policy, stop_deadline)
+        try:
+            capture.drain_until(stop_deadline)
+        except Exception as error:
+            report.fail('cleanup', 'FINAL_CAPTURE_FAILED', error)
         capture.close()
         report.elapsed_ms = round((time.monotonic() - started) * 1000)
     return report
@@ -160,6 +166,14 @@ class _Capture:
             return False
         return True
 
+    def drain_until(self, deadline):
+        if self.selector is None or self.report.observed_bytes > self.limit:
+            return
+        while not all(self.report.eof.values()) and time.monotonic() < deadline:
+            for key, _ in self.selector.select(min(0.01, max(0, deadline - time.monotonic()))):
+                if not self.read(key):
+                    return
+
     def close(self):
         self.report.stdout = bytes(self.buffers['stdout'])
         self.report.stderr = bytes(self.buffers['stderr'])
@@ -178,6 +192,7 @@ class _OwnedChild:
         self.ownership = ownership
         self.report = report
         self.unknown = False
+        self.signal_blocked = False
         self.exit_observed = False
 
     def exited(self):
@@ -202,16 +217,21 @@ class _OwnedChild:
             return 'absent' if self.exited() else 'unknown' if self.unknown else 'present'
         try:
             os.killpg(self.child.pid, 0)
-            return 'present'
+            state, error_number = 'present', None
         except ProcessLookupError:
-            return 'absent'
+            state, error_number = 'absent', None
         except OSError as error:
-            self.unknown = True
-            self.report.fail('observe', 'GROUP_OBSERVATION_UNKNOWN', error)
-            return 'unknown'
+            # A later read-only observation after reaping may confirm absence.
+            # An uncertain observation permanently bars further signals.
+            self.signal_blocked = True
+            state, error_number = 'unknown', error.errno
+        observation = {'state': state, 'errno': error_number}
+        if len(self.report.observations) < 8:
+            self.report.observations.append(observation)
+        return state
 
     def send(self, action):
-        if self.state() != 'present':
+        if self.signal_blocked or self.state() != 'present':
             return
         try:
             if self.ownership is Ownership.CHILD_PID_ONLY:
@@ -223,11 +243,11 @@ class _OwnedChild:
             state, error_number = 'absent', None
         except OSError as error:
             state, error_number = 'unknown', error.errno
-            self.unknown = True
+            self.signal_blocked = True
             self.report.fail('stop', 'SIGNAL_UNKNOWN', error)
         self.report.signals.append({'signal': action.name, 'state': state, 'errno': error_number})
 
-    def finish(self, policy):
+    def finish(self, policy, deadline):
         # WNOWAIT pins the leader PID until the last group signal. Never signal a
         # recycled PGID after reaping its original leader.
         try:
@@ -235,9 +255,9 @@ class _OwnedChild:
                 if policy.term_grace_seconds > 0:
                     self.send(signal.SIGTERM)
                     self.wait_until(time.monotonic() + policy.term_grace_seconds)
-                if self.state() == 'present':
+                if not self.signal_blocked and self.state() == 'present':
                     self.send(signal.SIGKILL)
-            self.reap_until(time.monotonic() + policy.kill_grace_seconds)
+            self.reap_until(deadline)
         except Exception as error:
             self.unknown = True
             self.report.fail('cleanup', 'STOP_UNKNOWN', error)
@@ -246,7 +266,7 @@ class _OwnedChild:
             self.report.fail('cleanup', 'OWNED_PROCESS_NOT_ABSENT')
 
     def wait_until(self, deadline):
-        while time.monotonic() < deadline and not self.unknown:
+        while time.monotonic() < deadline and not self.unknown and not self.signal_blocked:
             self.exited()
             # A group leader's exit cannot establish that the group is gone.
             if self.ownership is Ownership.CHILD_PID_ONLY and self.exit_observed:
@@ -261,6 +281,6 @@ class _OwnedChild:
             if self.child.returncode is not None:
                 if self.ownership is Ownership.CHILD_PID_ONLY or self.state() != 'present':
                     return
-            if self.unknown:
+            if self.unknown or self.signal_blocked:
                 return
             time.sleep(min(0.01, max(0, deadline - time.monotonic())))

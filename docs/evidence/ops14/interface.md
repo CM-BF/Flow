@@ -9,3 +9,7 @@
 `Report`：自己 spawn 的 pid、ownership、exit、elapsedMs；有界 stdout/stderr bytes 与 observed/retained counts / EOF；firstFailure 的固定 phase/code/type/safe message 与 secondaryFailures；signals、ownedState。未捕获原异常 message、argv 或 env，以免泄密。默认 unknown 保留外部资源且不重试。只证明选定所有权范围的当前观察，不证明任意后台活动或 DB 清理。
 
 调用顺序：caller 先完成耐久 reservation → supervise 固定 child → 报告耐久化 → caller 按自身 marker / resource 规则决定后续；模块不接受阻塞 on_spawn callback。首两个兼容 consumer 是 SVC05H 118+2 秒只 operator PID、SVC07 有限 group +64 KiB 输出形状。原包装器仍冻结，当前只用受控子进程；正式接入需精确移交 scope / 原行为对照。O16 动态多组 IPC guard 不强行统一。
+
+实现细节约束：使用 POSIX waitid(WNOWAIT) 保留自己 leader 的 PID，所有 group 信号在 reap 前完成，reap 后绝不再 signal。Darwin 对只有 zombie 的 group 可能返回 EPERM；保留该 unknown 观察且永久停止信号升级，只有 reap 自己已确认退出的 child 后再次只读观察到 ESRCH 才记录当前 absent。未知不会被当 absent；过去的观察保存在报告。成功只代表本接口范围，caller 仍核业务结果。停止后在同一剩余 cleanup 期限内读管道，EOF 未到明确为不完整，不因正常 child exit 取消期限。
+
+报告中的 ownedState 是最后一次所有权范围观察；signal EPERM 保持 signal=unknown 且禁止升级，如果随后只读观察明确仍存在，ownedState=present（不会改写成 absent 或掩盖 signal failure）。

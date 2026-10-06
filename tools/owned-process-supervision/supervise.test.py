@@ -58,7 +58,7 @@ class SupervisionTests(unittest.TestCase):
         self.assertEqual((result.stdout, result.stderr), (b'ok\n', b'err\n'))
         self.assertEqual(result.retained_bytes, 7)
         self.assertTrue(all(result.eof.values()))
-        self.assertEqual(result.owned_state, 'absent')
+        self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
         self.assertEqual(result.signals, [])
 
     def test_svc05h_shape_blocked_report_kills_only_operator(self):
@@ -76,7 +76,7 @@ os.write(w,b'x'*1048576)
         service_pid = int(result.stdout)
         try:
             self.assertEqual(result.first_failure['code'], 'DEADLINE_EXCEEDED')
-            self.assertEqual(result.owned_state, 'absent')
+            self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
             self.assertTrue(absent(result.pid))
             self.assertFalse(absent(service_pid))
             self.assertEqual([s['signal'] for s in result.signals], ['SIGKILL'])
@@ -92,7 +92,7 @@ os.write(w,b'x'*1048576)
         self.assertGreater(result.observed_bytes, 65536)
         self.assertLessEqual(result.observed_bytes, 65536 + 8192)
         self.assertEqual(len(result.stdout) + len(result.stderr), 65536)
-        self.assertEqual(result.owned_state, 'absent')
+        self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
         self.assertTrue(absent(result.pid))
         self.assertLess(result.elapsed_ms, 900)
 
@@ -106,7 +106,7 @@ print(child.pid,flush=True)
         try:
             self.assertEqual(result.exit_code, 0)
             self.assertEqual(result.first_failure['code'], 'DEADLINE_EXCEEDED')
-            self.assertEqual(result.owned_state, 'absent')
+            self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
             self.assertTrue(absent(descendant))
             self.assertTrue(absent(result.pid))
         finally:
@@ -117,7 +117,7 @@ print(child.pid,flush=True)
         result = supervise(launch("import os,time; os.close(1); os.close(2); time.sleep(20)"), policy(work=.1))
         self.assertTrue(all(result.eof.values()))
         self.assertEqual(result.first_failure['code'], 'DEADLINE_EXCEEDED')
-        self.assertEqual(result.owned_state, 'absent')
+        self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
 
     def test_unknown_group_observation_never_escalates_or_reports_absent(self):
         real_killpg = os.killpg
@@ -132,10 +132,11 @@ print(child.pid,flush=True)
         try:
             self.assertEqual(result.first_failure['code'], 'DEADLINE_EXCEEDED')
             self.assertEqual(result.owned_state, 'unknown')
-            self.assertEqual(calls, [0])
+            self.assertTrue(calls and all(action == 0 for action in calls))
+            self.assertLessEqual(len(calls), 3)
             self.assertEqual(result.signals, [])
             self.assertNotIn('secret', str(result.first_failure) + str(result.secondary_failures))
-            self.assertTrue(any(x['code'] == 'GROUP_OBSERVATION_UNKNOWN' for x in result.secondary_failures))
+            self.assertTrue(any(x['state'] == 'unknown' and x['errno'] == errno.EPERM for x in result.observations))
         finally:
             stop_test_child(result.pid, group=True)
 
@@ -148,7 +149,8 @@ print(child.pid,flush=True)
         with patch.object(MODULE.os, 'killpg', deny_term):
             result = supervise(launch('import time; time.sleep(20)', Ownership.NEW_CHILD_SESSION), policy(work=.1, term=.03))
         try:
-            self.assertEqual(result.owned_state, 'unknown')
+            self.assertEqual(result.owned_state, 'present')
+            self.assertTrue(any(x['code'] == 'SIGNAL_UNKNOWN' for x in result.secondary_failures))
             self.assertEqual([s['signal'] for s in result.signals], ['SIGTERM'])
             self.assertEqual(result.signals[0]['state'], 'unknown')
             self.assertEqual(result.first_failure['code'], 'DEADLINE_EXCEEDED')
@@ -170,13 +172,29 @@ print(child.pid,flush=True)
         self.assertEqual(result.first_failure['code'], 'CHILD_EXIT_NONZERO')
         self.assertEqual(result.exit_code, 7)
         self.assertEqual(result.secondary_failures[-1]['code'], 'CAPTURE_CLOSE_FAILED')
-        self.assertEqual(result.owned_state, 'absent')
+        self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
         self.assertNotIn('sensitive', str(result.secondary_failures))
+
+    def test_final_output_is_drained_after_stop_before_pipe_close(self):
+        code = "import signal,time; signal.signal(signal.SIGTERM,lambda *_: (print('shutdown',flush=True),exit(0))); time.sleep(20)"
+        result = supervise(launch(code), policy(work=.15, term=.1))
+        self.assertEqual(result.first_failure['code'], 'DEADLINE_EXCEEDED')
+        self.assertEqual(result.stdout, b'shutdown\n')
+        self.assertTrue(all(result.eof.values()))
+        self.assertEqual(result.owned_state, 'absent')
+
+    def test_normal_session_exits_without_converting_zombie_eperm_to_absence(self):
+        result = supervise(launch("print('done')", Ownership.NEW_CHILD_SESSION), policy(term=.02))
+        self.assertIsNone(result.first_failure)
+        self.assertEqual(result.exit_code, 0)
+        self.assertEqual(result.owned_state, 'absent')
+        self.assertTrue(result.observations)
+        self.assertEqual(result.observations[-1]['state'], 'absent')
 
     def test_spawn_failure_does_not_leak_command_or_exception(self):
         result = supervise(Launch(('/no-such-ops14-secret',), os.getcwd(), {}, Ownership.CHILD_PID_ONLY), policy())
         self.assertIsNone(result.pid)
-        self.assertEqual(result.owned_state, 'absent')
+        self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
         self.assertEqual(result.first_failure['code'], 'SPAWN_FAILED')
         self.assertNotIn('secret', str(result.first_failure))
 
