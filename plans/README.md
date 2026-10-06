@@ -111,3 +111,16 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 
 - WPF-CHAT06I01：聊天逐段正文接入；唯一 source `web-conversation-stream-integration/plans/wpf-chat06-stream-integration`，已领取独立产品接线范围，未交付。
 - O09：原生执行单个目标节点；唯一 source `native-goal-node-execution/plans/o09-native-node-execution`，先验证只读执行与固定输入，真实模型验收尚未授权。
+
+## 2026-10-06 成熟产品与执行工具新来源
+
+- WPF-MATURE-01：成熟双主题视觉；唯一权威来源 [wpf-mature-01-visual](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)。登记不代表实现完成。
+- WPF-MATURE-02：Claude与Codex执行选项；唯一权威来源 [wpf-mature-02-harness-capabilities](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。登记不代表实现完成。
+- WPF-MATURE-03：附件与文件输入；唯一权威来源 [wpf-mature-03-attachments](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)。登记不代表实现完成。
+- WPF-MATURE-04：上下文用量与压缩透明；唯一权威来源 [wpf-mature-04-context-transparency](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/plan.md)。登记不代表实现完成。
+- WPF-MATURE-05：单标签双面板工作区；唯一权威来源 [wpf-mature-05-workspace](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)。登记不代表实现完成。
+- WPF-MATURE-06：完整聊天可靠性；唯一权威来源 [wpf-mature-06-chat](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)。登记不代表实现完成。
+- R06：Codex本机通信与退出；唯一权威来源 [r06-codex-native-transport](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-transport/plans/r06-codex-native-transport/plan.md)。登记不代表实现完成。
+- WPF-CONTEXTI01：知识引用接入聊天；唯一权威来源 [wpf-context-i01-integration](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/plan.md)。登记不代表实现完成。
+- WPF-STEER01：运行中补充指令控件；唯一权威来源 [wpf-steering-control](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/plan.md)。登记不代表实现完成。
+- WPF-VISUAL01：圆角与双主题界面；唯一权威来源 [wpf-visual01-shell](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/plan.md)。登记不代表实现完成。
