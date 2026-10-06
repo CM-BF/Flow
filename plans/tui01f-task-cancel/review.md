@@ -1,6 +1,12 @@
+# 当前 TUI01F-03 源码预检
+
+Review target commit: da673b81c4390c2e811d1582d68a9899180d55d2
+
+NOT_STARTED。3文件fixture/journey/PTY driver，仅源码准备；独立预检不替代HTTP/PG/PTY运行。请核中心受理后丢ACK、原key恢复/第二client身份、组停止/未知保留、checkpoint先于不可恢复清理与后继callback取消。固定manifest见[绑定](../../docs/evidence/tui01f/journey-source-manifest.json)，运行状态全部NOT_RUN。原9源已审已main，以下历史批准不扩大到本次新文件。
+
 # TUI01F review 当前绑定
 
-Review target commit: a1f82f36a5e63f859ecdcdbd1da3575724e82101
+Historical approved target: a1f82f36a5e63f859ecdcdbd1da3575724e82101
 
 APPROVED（限定 controller+Ink静态接线片），target `a1f82f36a5e63f859ecdcdbd1da3575724e82101`。reviewer native_center_owner，完整TUI验收不在范围。
 
