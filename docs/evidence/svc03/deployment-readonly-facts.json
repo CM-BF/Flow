@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-06T08:49:26.702Z",
+  "readOnly": true,
+  "providerCalls": 0,
+  "serviceActions": 0,
+  "loadedBackendSource": {
+    "head": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+    "dirty": false
+  },
+  "webMode": "legacy-vite-dev-no-artifact",
+  "webArtifact": null,
+  "ports": {
+    "center": 61227,
+    "web": 61228
+  },
+  "configUnchanged": true,
+  "maintenance": {
+    "phase": "resumed",
+    "target": "32c371d389a913f8dd71c3bd8b98dd0697411256"
+  },
+  "processes": {
+    "center": {
+      "pid": 33877,
+      "group": 33877,
+      "state": "running",
+      "listenerMatches": true
+    },
+    "runner": {
+      "pid": 34058,
+      "group": 34058,
+      "state": "running",
+      "listenerMatches": null
+    },
+    "web": {
+      "pid": 34097,
+      "group": 34097,
+      "state": "running",
+      "listenerMatches": true
+    }
+  },
+  "markerMatches": true,
+  "runnerCredentialMatches": true,
+  "tasks": [
+    {
+      "status": "succeeded",
+      "count": 4
+    }
+  ],
+  "unfinishedAttempts": [],
+  "queue": [
+    {
+      "state": "promoted",
+      "count": 1
+    }
+  ],
+  "runners": [
+    {
+      "configured": true,
+      "revoked": false,
+      "capacity": 1,
+      "harnesses": [
+        "claude"
+      ],
+      "maintenance_state": "accepting",
+      "maintenance_version": 9,
+      "unfinished_attempts": 0,
+      "last_heartbeat_at": "2026-10-06T08:29:35.459Z"
+    }
+  ],
+  "runnerListComplete": true,
+  "otherDeployments": "No additional registered runner appears if list complete; this snapshot cannot prove absence of unregistered external deployments."
+}

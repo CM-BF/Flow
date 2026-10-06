@@ -4,7 +4,7 @@ import { randomUUID, createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { Pool } from 'pg';
-import { loadPreviewConfiguration, readPreviewJson, savePreviewJson, withPreviewLock, assertPreviewMarker, startPreviewServices } from './preview.mjs';
+import { loadPreviewConfiguration, readPreviewJson, savePreviewJson, withPreviewLock, assertPreviewMarker, startPreviewServices, preparePreviewWeb } from './preview.mjs';
 import { inspectOwnedProcess, stopOwnedProcess } from './process.mjs';
 import { migrateRunnerMaintenance, commandRunnerMaintenance, readRunnerMaintenance } from '../../apps/server/src/runner-maintenance/index.ts';
 
@@ -61,6 +61,8 @@ async function refresh(config, pool, state, target) {
   const facts = await processFacts(state);
   if (Object.values(facts).includes('unknown')) fail('EXISTING_PROCESSES_UNCONFIRMED');
   if (operation.phase === 'ready-paused' && operation.target === target && Object.values(facts).every(value => value === 'running')) return { ...view, update: 'ready-paused', source: target };
+  const artifact = await preparePreviewWeb(config, target);
+  await currentSource(config, target);
   // The durable gate and HTTP denial of maintenance resume protect this interval.
   // No PG transaction spans shutdown or startup, which need database migrations themselves.
   for (const role of [...roles].reverse()) {
@@ -70,7 +72,7 @@ async function refresh(config, pool, state, target) {
   await currentSource(config, target);
   operation.phase = 'starting'; operation.target = target;
   await savePreviewJson(join(config.directory, 'maintenance.json'), operation);
-  await startPreviewServices(config, state);
+  await startPreviewServices(config, state, artifact);
   await currentSource(config, target);
   operation.phase = 'ready-paused';
   await savePreviewJson(join(config.directory, 'maintenance.json'), operation);

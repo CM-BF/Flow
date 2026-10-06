@@ -19,3 +19,8 @@ export function serviceEnvironment(role, config, inherited = process.env) {
   else Object.assign(env, { FLOW_CENTER_URL: `http://127.0.0.1:${config.centerPort}`, VITE_FLOW_FIXTURE: 'false' });
   return env;
 }
+
+/** Builds never inherit application/provider/VITE_* values or load private service configuration. */
+export function buildEnvironment(inherited = process.env) {
+  return { ...baseServiceEnvironment('web', inherited), NODE_ENV: 'production', VITE_FLOW_FIXTURE: 'false' };
+}

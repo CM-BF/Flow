@@ -1,0 +1,128 @@
+{
+  "target": "d9385185a1474c6b058c41b9187c6e075248cb5b",
+  "base": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+  "source": [
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 10032,
+      "sha256": "cf0f5431ab4473c4270f96a9f7145e8a27c99b2d888a8e0ddf2aa2aee35e0d32"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "bytes": 2822,
+      "sha256": "98447b34330a3c014f72732ed8aa8fe9e44e3550857299511cc87546e0b61d3f"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8241,
+      "sha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 10302,
+      "sha256": "9e9faa83a4ed6660479b63501acf6f35de8351ac75713a8a548d1de482a541c0"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 19957,
+      "sha256": "5e395cf9bf48467d36a5f86aa24d1c3b55ce3b7b10e9159811e6e90db1ed57dc"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 9846,
+      "sha256": "645cf7ef0d33782d134b367b965da50eaf8d031e907c840c34b96affdc9e71e9"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 2551,
+      "sha256": "836a0ab2331b6270a715c6c12aa2321f74480d9f58e5804d0022c9e3e191cd86"
+    },
+    {
+      "path": "tools/personal-preview/static-web.test.mjs",
+      "bytes": 4740,
+      "sha256": "63b1bf4cf9791be59f179ad025034b1b5abc9046b17c2b3f8efa29bf923fca27"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 7521,
+      "sha256": "2ca4faed5bfe993c996d1957412983b4b6218fae7cf8ac3b75d3a8f34d74916e"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.test.mjs",
+      "bytes": 6746,
+      "sha256": "975cb77fa772f2ac20ca45bf6383533f0b18193ab2be6d2bdca86e92b3d9003e"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/svc03/artifact-green.txt",
+      "bytes": 1684,
+      "sha256": "0303ef1448f3b323c468a98bb42fa301170b2701b00a68683aa16e3dd420f008"
+    },
+    {
+      "path": "docs/evidence/svc03/artifact-green2.txt",
+      "bytes": 1285,
+      "sha256": "7497f8ac5ea7bf32b088aaaec246f3297a839565dea25dc066c41cb09d2c603d"
+    },
+    {
+      "path": "docs/evidence/svc03/artifact-green3.txt",
+      "bytes": 3049,
+      "sha256": "7eab2b9848a3fe725bed588f59613e17624bc9bf005fd5d71e40abe228e965f9"
+    },
+    {
+      "path": "docs/evidence/svc03/artifact-green4.txt",
+      "bytes": 225,
+      "sha256": "41216a9a6039a886160cf99bc93c0ac602ab6df08ffa8091efb6c921dff29c4d"
+    },
+    {
+      "path": "docs/evidence/svc03/artifact-red.txt",
+      "bytes": 1188,
+      "sha256": "79d330132f2ae7df5e7341bc10a80d8f60f1be90179aa64fd560dd22216d4d7a"
+    },
+    {
+      "path": "docs/evidence/svc03/diffcheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc03/module-environment.txt",
+      "bytes": 803,
+      "sha256": "c337d4a8061ede814824645c50300d28046b37f709cdd59105c509ea70f4b9b5"
+    },
+    {
+      "path": "docs/evidence/svc03/modules-final.txt",
+      "bytes": 900,
+      "sha256": "d85c18cdfb4e8c9ce1bd5ba5ef3f83c38007fc0e63d6d683b560d4795b4dd947"
+    },
+    {
+      "path": "docs/evidence/svc03/modules.txt",
+      "bytes": 594,
+      "sha256": "80c138af89b5dc36d82e3b1a6919b3791720ad6bf9f819ccd275bcbdfae069f8"
+    },
+    {
+      "path": "docs/evidence/svc03/owned-final.txt",
+      "bytes": 1252,
+      "sha256": "125f8b4b92a7a46a02d5904d9fe64abed5716a492ba4dcb3b9d4a0b232e0c404"
+    },
+    {
+      "path": "docs/evidence/svc03/owned-first.txt",
+      "bytes": 368,
+      "sha256": "e5b620a1a499a0300bcb55662ebf9b4a93cb76d88dd50ed89d4dcd3184d95b22"
+    },
+    {
+      "path": "docs/evidence/svc03/product-artifact.json",
+      "bytes": 2539,
+      "sha256": "92f0d9a4266e8ec1d49e23057b53b22ea544a7b761b744173153661c3586a946"
+    },
+    {
+      "path": "docs/evidence/svc03/syntax.txt",
+      "bytes": 521,
+      "sha256": "cd0ccc6fa7f73bfe7cc37dc5cf3a17bba73e021e7c5af2bd09f200262cff8636"
+    }
+  ]
+}

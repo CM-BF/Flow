@@ -1,0 +1,18 @@
+✔ bootstrap enables only the DB guard, refresh preserves identity and queue, then explicit resume is replayable (10216.2475ms)
+✔ identity failure after durable drain keeps admission closed and never signals an unowned PID (7166.556625ms)
+✔ a failed new Web start retains the maintenance gate and does not kill an unrelated listener (5910.887375ms)
+✔ TERM timeout retains maintenance and reports unknown without progressing to the next service (10517.514458ms)
+✔ artifact verification failure during refresh retains the old processes and maintenance hold (4606.181917ms)
+✔ starts an owned empty preview without a model request, persists identity, and stops only its services (6144.158583ms)
+✔ refuses expanded native settings, insecure config permissions, or a changed database address (6971.308625ms)
+✔ retains queued work and requires explicit confirmation before a restart may poll it (6002.631833ms)
+✔ refuses a changed database ownership marker and never adopts an existing unowned directory (4160.059958ms)
+✔ does not authenticate to or stop an unrelated listener occupying the recorded port (6536.011333ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38485.655417
