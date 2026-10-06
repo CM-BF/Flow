@@ -10,13 +10,13 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / f6bea8076d4663243c4ca9b02850b231d8f99db7（修复源待固定；旧结果仍封存） |
-| 工作树dirty状态 | 原f6两P2修复与v2准备metadata待提交；旧raw/profile冻结，0新target。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 4331c267bc5ef7c01328369ecaa57fc9434c7473（v2修复源；组合HEAD由Git核） |
+| 工作树dirty状态 | v2固定source4331c267，input/manifest-v2收口；旧raw/profile冻结，0新target。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | cause f6原审2P2已修复；33distinct分次证据，新固定包待增量独审；go-node-loader-cause-once NOT_OPEN |
+| 实现目标 | cause source4331c267bc5ef7c01328369ecaa57fc9434c7473；原f6两P2已修复，33distinct分次证据，v2待增量独审；go-node-loader-cause-once NOT_OPEN |
 | 实现范围 | 新node-rootliteral实验；diagnostics/run-diagnostics.mjs导出/计量私有helper；isolation/compose-canary.mjs固定场景/资源清理接缝；本计划与证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |

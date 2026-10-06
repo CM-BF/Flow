@@ -1,6 +1,6 @@
 # WPF-MATURE-02 review
 
-新cause f6bea807/source42d CHANGES_REQUESTED：architecture_read/Astra，2026-10-06 13:27:13 UTC，2P2/0P1；outer尾部时间与dyld前缀已修复待增量审查；新8项red6/2→green8/8，旧消费者6与预算3项定向通过，累计33distinct。见[Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)；25distinct纯检查，source42d8707d32c8f7a26c97224a0807f3d386ba0a82已固定；无实际运行。下述Node结果审批按5b1d3003历史收口解释。
+新cause f6bea807/source42d CHANGES_REQUESTED：architecture_read/Astra，2026-10-06 13:27:13 UTC，2P2/0P1；outer尾部时间与dyld前缀已修复待增量审查；新8项red6/2→green8/8，旧消费者6与预算3项定向通过，累计33distinct。修复source4331c267bc5ef7c01328369ecaa57fc9434c7473，当前manifest-v2绑定增量，NOT_OPEN。见[Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)；25distinct纯检查，source42d8707d32c8f7a26c97224a0807f3d386ba0a82已固定；无实际运行。下述Node结果审批按5b1d3003历史收口解释。
 
 Node结果限定 APPROVED：Mika/gpt-6-astra，2026-10-06 13:08:21 UTC，0未解决P1/P2；raw e7e2311b68c0a98e357499fc6990266c4ef9658d + 限定e0ccfe061119be131d06c1d8c5cabf9f8b0cdbdd。measurement FAIL、有效全runtime accounting UNKNOWN；[结果限定](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)优先。独审核18结果/18runtime/66prepared与已知字节、原流hash，未重跑；五项Path.exists=false表示根不存在，旧receipt字段名不改变该事实。准备1f327/source d17由Mika13:01:37批准，58distinct；无新运行授权，旧raw/manifest不改。
 
