@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:47:01 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:48:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | TUI-001（[大task定义](../tui01-terminal-client/plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations |
 | Branch | codex/tui-conversations |
-| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 9e5588d4d6b24234bb829c23269e6e72caca44af |
-| 工作树dirty状态 | 自有两P2最小修复与定向证据已通过，待本次固定 |
+| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 29b546537862c562569ce9df74919f2239d94df8 |
+| 工作树dirty状态 | 修复源码已固定并push；本metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 原17通过；本轮review-recovery 19/19=11重叠+8新增、types0，修复target待固定 |
+| 检查状态 | PASSED 29b546537862c562569ce9df74919f2239d94df8；本轮19/19=11重叠+8新增、types0；原17保留 |
 | 已集成main状态 / HEAD | 尚未集成；基线77c420cf9ee5de0291ea93014b6ea11aead6fab5 |
-| 实现目标 | 9e5588d4d6b24234bb829c23269e6e72caca44af |
+| 实现目标 | 29b546537862c562569ce9df74919f2239d94df8 |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
