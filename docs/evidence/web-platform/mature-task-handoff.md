@@ -55,3 +55,11 @@ ExecutionLead已确认会读取本队集中登记清单并正常批接registry/�
 ## 2026-10-06 09:00 UTC 管理元数据核验
 
 四Web大task三件套与管理源actual parseStatus全部errors=[]/human.complete=true，plan/status稳定TODO逐项同序（管理34，四大task分别5/6/5/6）；13个新增/集中Markdown的31本地链接全部可达，所有修改均在632a v3六literal内，diffcheck0。仅metadata检查，未跑产品测试/API/服务操作。实际只读两worker当前status已分别写03/06的准确绝对父链接与co-lead，字段写入不等dashboard已解析。按本地clean-code检查单一来源/命名/错误及权限边界，没有新增进度账或把未知产品验收勾完。
+
+## 09:09 UTC 集中安全点：实际写权、接收与依赖
+
+VISUAL01已独立web-visual-shell/codex/web-visual-shell，固定9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；35e5 v1原7scope于09:08:43.096Z无冲突amend v2共9scope（样式、themes、builtin manifest/host、两专测、plan/evidence）。首canonical f92fd143f73f7a517004a154d3f6f2f2c7794180，唯一源plans/wpf-visual01-shell/status.md，证据docs/evidence/wpf-visual01，直接归MATURE01。当前实施，未固定/独审；领取可见不当实际登记。
+
+STEER01独立APPROVED模块由owner正常push至5d02e8d31c62904155587b32fbc47d2baa341d06，impl b2cbbca5f823e122ec4e234e16fb7ef45a063af9，claim2bae v1保留修复权，产品停写待main。权威证据仍其docs/evidence/wpf-steering-control；本管理不重复检查/浏览器。仅模块，App/P01/跨reload恢复仍pending，MATURE06不勾整体完成。CONTEXTI仍由w01唯一owner独审接收过程中，普通进度以其status为准。
+
+ExecutionLead请求Web小片显式解析展示所属大task/co-lead；候选D08先由panels只读核既有ID/父dashboard权威ID/精确status.mjs与public/app.js及直接tests，fresh take后才写，registry仍Lead队唯一owner。本队不提前声称六大task已关联展示，也不为此造新大task。

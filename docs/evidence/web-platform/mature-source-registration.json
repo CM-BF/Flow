@@ -40,6 +40,19 @@
       "evidenceDir": "docs/evidence/web-platform",
       "coLead": "Web /root",
       "kind": "big-task"
+    },
+    {
+      "id": "WPF-VISUAL01",
+      "title": "Arc式轻质外壳与材质",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell",
+      "branch": "codex/web-visual-shell",
+      "planDir": "plans/wpf-visual01-shell",
+      "evidenceDir": "docs/evidence/wpf-visual01",
+      "coLead": "Web /root",
+      "parent": "WPF-MATURE-01",
+      "claimId": "35e5e5b9-2227-4cfb-bb7a-51249678c9ad",
+      "claimVersion": 2,
+      "kind": "sub-task"
     }
   ],
   "mikaParentsAwaitingCanonical": [

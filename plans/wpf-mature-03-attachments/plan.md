@@ -36,3 +36,7 @@ CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提�
 ## 已安装附件接缝研究
 
 root只读实际react0.15.23/core0.3.22：external-store-adapter.ts已有adapters.attachments，composer有addAttachment(File或CreateAttachment)/removeAttachment及submission.attachments冻结。无需预设升级SDK；[官方附件文档](https://www.assistant-ui.com/docs/guides/attachments)最新安装示例^0.15.25不是本项目升级授权。现版adapter接中心固定轻引用，UI选择/图片预览不证明上传或模型输入；不直接采用base64/PDFplaceholder例子，无个人文件上传或模型调用。
+
+### 完整附件生命周期依赖（09:09 UTC GO审计）
+
+需和Mika/ExecutionLead明确唯一后端owner：浏览器引用必须落为runner固定可读输入，ready才可Send/Queue；删草稿、执行前重启后仍读取冻结版。上传中、失效、provider不支持须明确阻止，不能静默丢附件只发文字；取消/失败有界清理、使用中的材料不回收。MATURE02 adapter只消费该协议，04复用metadata；本Web不重领后端范围。沿原附件TODO验收，不扩大当前CONTEXTI20scope。

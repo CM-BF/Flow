@@ -18,7 +18,7 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 
 尚缺：STEER sender与App接线、端到端生效证据、跨reload原key恢复、voice失败退文本、Markdown/代码复制/重连/滚动/IME完整组合验收。
 
-当前子任务唯一来源：[STEER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。功能通过不等用户个人runtime已启用；既有源码main与center/runner32c/v9分开。
+当前子任务唯一来源：[STEER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。功能通过不等用户个人runtime已启用；源码main与个人运行产物分开；当前运行版本引用[服务owner最新正式回执](../../docs/evidence/web-platform/mature-task-handoff.md)，旧32c/v9仅历史观察。
 
 ## 稳定TODO与完整验收
 
@@ -32,3 +32,7 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 ## 验证与交付规则
 
 每个实际子task直接链接本大task稳定ID及co-lead；进度只维护其唯一status。仅完整TODO验收通过、证据环境/固定源码明确并完成受控主线集成后才可将本大taskDone；当前所有大task验收仍开放。普通片段ready/review/merge/claim不向GO发送，内部worker通信保留，需GO解决的整任务独立blocker仅一次。新scope依D04查重/原子领取，本计划不授权重启个人服务、刷新用户tab或新增provider调用。验证按影响范围，不为文档重复产品测试。
+
+### 语音成功路径与归属（09:09 UTC GO审计）
+
+沿原VOICE TODO：开始→停止→转写到当前pane可编辑草稿→用户明确Send/Queue；切pane、关闭、取消均释放mic，迟到不能污染另pane或新稿。失败退回文本，未经授权不新增付费调用。当前STEER独立模块已审不代表语音成功路径已完成。
