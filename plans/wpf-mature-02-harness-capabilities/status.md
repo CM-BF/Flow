@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:22:09 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:25:27 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -20,9 +20,9 @@
 | 实现范围 | experiments/codex-app-server-conformance/fd-canary/host.mjs, experiments/codex-app-server-conformance/fd-canary/report.mjs, experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs, experiments/codex-app-server-conformance/fd-canary/host.test.ts, docs/evidence/wpf-mature-02/fd-canary-v2 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原生配置目录已集成main，旧目录保持兼容；旧诊断失败证据已获独立接收；新的有界编译日志与解析候选已通过独立审查，现等待一次新诊断预算，尚未实际运行。 |
-| 下一可用交付 | 由lead接收具体新窗口请求；预算获准后安排唯一有界诊断。既有已审R06与薄入口仍可独立集成。 |
-| 当前阻塞 | ACTIVE: C诊断窗口已消费，编译后核验未知且三个目标未运行；实际Codex目录验证仍停止，后继实际诊断需要新预算/方案。 |
+| 当前产出 | 原生配置目录已集成main，旧目录保持兼容；旧诊断失败证据已获独立接收；新的有界编译日志与解析候选已通过独立审查，并获一次新诊断窗口；当前正在启动前固定授权，尚未实际运行。 |
+| 下一可用交付 | 执行已批准的一次有界诊断并交付明确测量、清理和预算结果。既有已审R06与薄入口仍可独立集成。 |
+| 当前阻塞 | ACTIVE: 真实Codex目录仍缺隔离验证；新的合成诊断窗口已获批，尚未取得本次测量结果。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
@@ -121,3 +121,7 @@ P3 delta固定a761941fce5b2b6dd12d8c974c6d2c7e51894628已由status_read/gpt-6-as
 ## v2已审，具体新预算请求待输入
 
 [新窗口请求与独审收据](../../docs/evidence/wpf-mature-02/fd-canary-v2/approval-window-request.md)是当前唯一候选运行请求。Mika于11:20:49 UTC批准851fd8c7源码/证据，未授权实际运行。申请一次1编译/最多3C目标/60秒/2MiB，原授权已消费；本候选新增实际compiler/target仍0。GO预算批准后Mika绑定最终clean metadata HEAD并命名一次窗口，不执行移动HEAD、不自行重试。当前优先转入P04只读独审，没有额外诊断研究或测试。
+
+## v2唯一窗口授权（尚未执行）
+
+GO批准、Mika串行派工 `go-c-fd-v2-851fd8c7-once`，见[运行授权](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-authorization.json)。fresh v4 ACTIVE、元数据前f1139ff clean；仅本授权/status提交后再核clean与一次预约缺失，唯一入口一次调用。1编译/最多3自有目标/60秒含持久化CLI/2MiB，原始编译流只本地0600，失败即停止；当前尚无新增编译/目标。旧窗口及候选README的未授权描述保留其历史固定快照。

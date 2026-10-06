@@ -1,0 +1,30 @@
+{
+  "window": "go-c-fd-v2-851fd8c7-once",
+  "authorization": "GO approved; Mika serial execution dispatch received after P04 read-only review",
+  "recordedAt": "2026-10-06T11:25:48.260981+00:00",
+  "preparationHead": "f1139ff215550f7993f2d4d643593bd494caa83e",
+  "dirtyBeforeMetadata": false,
+  "claim": {
+    "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+    "version": 4,
+    "state": "active",
+    "lead": "mika",
+    "worker": "chatui01_owner",
+    "freshCheckedAt": "2026-10-06T11:25:27Z"
+  },
+  "approvedTarget": "851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845",
+  "sourceTarget": "391f67b42d4ec272ec679a33c0812517afd69090",
+  "manifestSha256": "224b101fe787ac331507550ea530b4cf6ef1057d836ced71f02700f0b24b4cda",
+  "inputSha256": "0b4ca46c82273e88c527ab79e3a35c3e8053180b8221e59c961d243ebd5bea96",
+  "budget": {
+    "compileCalls": 1,
+    "syntheticTargets": 3,
+    "totalMs": 60000,
+    "maxBytes": 2097152,
+    "preparedBytes": 104454,
+    "receiptReserveBytes": 32768,
+    "archiveReserveBytes": 131072
+  },
+  "entry": "/opt/homebrew/opt/node@24/bin/node experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs --reviewed-fd-window-v2",
+  "gate": "Fresh clean commit and active v4; bound files unchanged; no reservation/result/compiler raw. One call only, unknown stops. No Codex/SDK/provider/auth/network/personal service. Raw local 0600 only, never console or automatic Git."
+}
