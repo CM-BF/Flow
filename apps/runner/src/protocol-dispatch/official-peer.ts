@@ -7,6 +7,8 @@ export async function officialPeer() {
   const store = new InMemoryTaskStore();
   const context = new ServerCallContext({ requestedVersion: '1.0' });
   const counts = { sends: 0, gets: 0, cancels: 0 };
+  const exchanges: { method: string; historyLengthPresent: boolean; historyLength: unknown; responseBytes: number; historyCount: number }[] = [];
+  let history: Task['history'] = [];
   let current: Task | undefined;
   let transport: JsonRpcTransportHandler;
   let card: AgentCard;
@@ -23,7 +25,14 @@ export async function officialPeer() {
       const result = await transport.handle(raw, context);
       if (body.method === 'SendMessage' && holdAck) await new Promise<void>(resolve => { releaseAck = resolve; });
       if (response.destroyed) return;
-      response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify(result));
+      const serialized = JSON.stringify(result);
+      if (body.method === 'SendMessage' || body.method === 'GetTask') {
+        const selection = body.method === 'SendMessage' ? body.params.configuration ?? {} : body.params;
+        const reply = JSON.parse(serialized).result;
+        exchanges.push({ method: body.method, historyLengthPresent: Object.hasOwn(selection, 'historyLength'), historyLength: selection.historyLength,
+          responseBytes: Buffer.byteLength(serialized, 'utf8'), historyCount: (reply?.task ?? reply)?.history?.length ?? 0 });
+      }
+      response.setHeader('Content-Type', 'application/json'); response.end(serialized);
     } catch { response.destroy(); }
   });
   await new Promise<void>(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -34,16 +43,20 @@ export async function officialPeer() {
     override async cancelTask(_request: CancelTaskRequest, _context?: ServerCallContext): Promise<Task> { return structuredClone(current!); }
   }
   transport = new JsonRpcTransportHandler(new DelayedCancellationPeer(card, store, {
-    async execute(request, bus) { current = Task.fromJSON({ id: request.taskId, contextId: request.contextId, status: { state: 'TASK_STATE_WORKING' } }); bus.publish(AgentEvent.task(current)); bus.finished(); },
+    async execute(request, bus) { current = { ...Task.fromJSON({ id: request.taskId, contextId: request.contextId, status: { state: 'TASK_STATE_WORKING' } }), history }; bus.publish(AgentEvent.task(current)); bus.finished(); },
     async cancelTask(_id, bus) { bus.publish(AgentEvent.task(current!)); bus.finished(); },
   }));
   return {
-    url, counts, get taskId() { return current?.id; },
+    url, counts, exchanges, get taskId() { return current?.id; },
+    setHistory(messages: Task['history']) {
+      if (current) throw new Error('Set fixture history before execution.');
+      history = structuredClone(messages);
+    },
     holdSendAck() { holdAck = true; },
     async finish(content: string | null, cancelled = false) {
       if (!current) throw new Error('No remote task yet.');
-      current = Task.fromJSON({ id: current.id, contextId: current.contextId, status: { state: cancelled ? 'TASK_STATE_CANCELED' : 'TASK_STATE_COMPLETED' },
-        artifacts: content === null ? [] : [{ artifactId: 'result', name: 'Remote result', parts: [{ text: content }] }] });
+      current = { ...Task.fromJSON({ id: current.id, contextId: current.contextId, status: { state: cancelled ? 'TASK_STATE_CANCELED' : 'TASK_STATE_COMPLETED' },
+        artifacts: content === null ? [] : [{ artifactId: 'result', name: 'Remote result', parts: [{ text: content }] }] }), history: current.history };
       await store.save(current, context);
     },
     release() { holdAck = false; releaseAck?.(); },

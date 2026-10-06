@@ -5,13 +5,15 @@ import { DefaultRequestHandler, InMemoryTaskStore, JsonRpcTransportHandler, Serv
 import { connectA2A } from '../src/index.js';
 
 for (const initiallyTerminal of [true,false]) test(`official peer observe reconciles ${initiallyTerminal?'already terminal snapshot':'GET/subscribe terminal race'}`,async()=>{
-  const methods:string[]=[];const store=new InMemoryTaskStore();const context=new ServerCallContext({requestedVersion:'1.0'});
-  const task=(state:string)=>Task.fromJSON({id:'t1',contextId:'c1',status:{state}});
+  const methods:string[]=[];const snapshots:Record<string,unknown>[]=[];const store=new InMemoryTaskStore();const context=new ServerCallContext({requestedVersion:'1.0'});
+  const history=[{messageId:'prior',role:'ROLE_AGENT',parts:[{text:'Keep default observation history.'}]}];
+  const task=(state:string)=>Task.fromJSON({id:'t1',contextId:'c1',status:{state},history});
   await store.save(task(initiallyTerminal?'TASK_STATE_COMPLETED':'TASK_STATE_WORKING'),context);
   let transport:JsonRpcTransportHandler;let card:AgentCard;
   const server=createServer(async(req,res)=>{
     if(req.method==='GET'){res.setHeader('Content-Type','application/json');res.end(JSON.stringify(AgentCard.toJSON(card)));return;}
     let raw='';for await(const chunk of req)raw+=chunk.toString();const body=JSON.parse(raw);methods.push(body.method);
+    if(body.method==='GetTask')snapshots.push(body.params);
     if(body.method==='SubscribeToTask')await store.save(task('TASK_STATE_COMPLETED'),context);
     const result=await transport.handle(raw,context);
     if(Symbol.asyncIterator in result){res.setHeader('Content-Type','text/event-stream');try{for await(const item of result)res.write(`data: ${JSON.stringify(item)}\n\n`);}catch(error){res.write(`data: ${JSON.stringify({jsonrpc:'2.0',id:body.id,error:JsonRpcTransportHandler.mapToJSONRPCError(error)})}\n\n`);}res.end();}
@@ -24,5 +26,7 @@ for (const initiallyTerminal of [true,false]) test(`official peer observe reconc
     const client=await connectA2A({url,allowLoopbackHttp:true});const events=[];for await(const event of client.observe('t1'))events.push(event);
     expect(events.at(-1)?.payload).toMatchObject({$case:'task',value:{status:{state:3}}});
     expect(methods).toEqual(initiallyTerminal?['GetTask']:['GetTask','SubscribeToTask','GetTask']);
+    expect(snapshots).toEqual(initiallyTerminal?[{id:'t1'}]:[{id:'t1'},{id:'t1'}]);
+    for(const event of events)if(event.payload?.$case==='task')expect(event.payload.value.history).toEqual(task('TASK_STATE_COMPLETED').history);
   }finally{server.closeAllConnections();await new Promise<void>(resolve=>server.close(()=>resolve()));}
 });
