@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:23 UTC / 2026-10-06 06:23 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:48 UTC / 2026-10-06 06:48 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -16,8 +16,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 真实聊天排队、关闭浏览器后继续执行与重开回复已验证；知识引用与目标工具已发布，工具活动读取已审待接收 |
-| 下一可用交付 | 发布工具活动读取与按需展示模块，继续正文流式显示和插件下载 |
+| 当前产出 | 真实聊天排队、关闭浏览器后继续执行与重开回复已验证；工具活动读取已发布，目标节点知识引用与消息详情接入已审待发布 |
+| 下一可用交付 | 发布目标节点知识引用和消息详情接入，继续正文流式显示和插件下载 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -79,3 +79,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 | I02-T10 | completed | Lead | CHAT05领域216/Mika与公共9ea/GO批准、WPF-ACTIVITY01 61b/Web批准，固定scope零diff；root/Web组合types绿，75来源候选；待main发布 |
 
 2026-10-06 06:30 UTC：实际main/origin acfd409；020和活动模块已接收，75源06:27:06.326Z实采可核。新增S01/RENDERERI01与D06唯一来源迁移登记77源候选，原图仍固定eb149且未改renderer/data，无产品测试。实际center/runner仍fb906。
+
+2026-10-06 06:48 UTC：K03领域/021接线、rendererI与D06固定图已受控合并，源码对各审批target零diff，组合root/Web types及8详情消费者+10架构检查通过；下一动作main fast-forward。CHAT06独立发布门槛不拖本批，实际个人backend仍fb906。

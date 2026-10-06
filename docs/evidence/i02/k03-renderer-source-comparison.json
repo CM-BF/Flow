@@ -1,0 +1,53 @@
+{
+  "candidate": "f36fed4574c4b5b7d624210814ed62623af67328",
+  "checks": [
+    {
+      "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+      "scope": [
+        "apps/server/src/goal-context",
+        "apps/server/src/goal-tool-runs/runner.ts",
+        "apps/server/src/goals/commands.ts",
+        "apps/server/src/goals/state.ts",
+        "apps/server/src/reconciliation.ts",
+        "apps/server/src/runners.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/storage/migrations/021-goal-context.sql"
+      ],
+      "implementationDiff": []
+    },
+    {
+      "target": "44bd8bc8e8e30ec49f86b6828f4947bf2c47d148",
+      "scope": [
+        "apps/server/src/index.ts",
+        "apps/server/src/goal-tool-runs/migration.test.ts",
+        "apps/server/src/goal-graph-runs/native-migration.test.ts",
+        "packages/client/src/goal-context-production.test.ts"
+      ],
+      "implementationDiff": []
+    },
+    {
+      "target": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/data-renderer-integration.browser.ts",
+        "apps/web/test/data-renderer-integration.test.ts"
+      ],
+      "implementationDiff": []
+    },
+    {
+      "target": "ff5ca7c880910841e8180df7632753c81aea2492",
+      "scope": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs"
+      ],
+      "implementationDiff": []
+    }
+  ],
+  "modelQueries": 0,
+  "runtimeSource": "fb906cb42391971a8b315dbd813f7633927d7265"
+}
