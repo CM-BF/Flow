@@ -85,3 +85,14 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-w
 基准另用 `pnpm exec tsx apps/web/test/performance-probe.ts --smoke` 或默认完整矩阵，必须协调同机测量窗口、写新证据，不覆盖旧raw。owner已停止主动生产写入、保留claim待回修/受控交接，未自动集成main。
 
 04:02 PERF02 main后续已确认：主Lead完成8f1481df880cf5077e1ddb9a8f302fe700a7ece8 main/origin push，root实际ancestor核与管理[04:01:56 dashboard](perf02-main-dashboard.json)一致，targeta87已包含且scopeEqual/current真。上方03:50交付时not-contained是历史事实，当前集成已闭合；没有新增本队产品实现或重复测量。
+
+
+## 04:12 CHAT首持续会话交付
+
+实现 `7cbabb737f26b108275e80f1b6cd0425699f3c18` / 完整base `b5844442699733558a152c12392ea78f26c393a4`，最终metadata `3319122ea2d225e96f587a86a0f5ff97a3191b0b`，branch `codex/web-conversations`，tree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations`，clean。原842被REQUEST_CHANGES的CHAT-R1旧ACK降级新事实、CHAT-R2多轮漏页均在7cb修复并独立关闭；root限定整体APPROVED。04:10真实dashboard checks/review同7cb/proof unchanged/issues空/main not-contained，见[快照](chat-approved-dashboard.json)。
+
+作者33直接测试、开发11浏览器、生产11浏览器通过；最后composer/配置标签小适配后只局部production1+typecheck/build，随后修复25相关测试/typecheck。w01独立16projection测试和3公开接口探针；root读完整App/官方Thread/bridge及截图，实页会话/草稿/焦点/打开任务面板，未声称独立证明两个turn相同fixture输出的task身份。管理者逐commit scope/shared哈希核查、最终7Markdown39links/7TODO/diff0通过。保留原始transport.patch空白例外，不写完整diffcheck无条件通过。
+
+[plan](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/plan.md) · [status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md) · [review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/review.md) · [验证](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/docs/evidence/wpf-chat01/validation.md) · [技能/clean-code](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/docs/evidence/wpf-chat01/quality.md) · [浅色](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/docs/evidence/wpf-chat01/conversation-light.png) · [深色](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/docs/evidence/wpf-chat01/conversation-dark.png)。
+
+[保留预览](http://127.0.0.1:63743/)是HTTP fixture/session14932，没有模型。恢复在本tree执行 `PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation.fixture.ts --preview`，动态端口以stdout为准。49922/55049保持。真实中心/两次模型由主Lead固定集成后验收；本队0模型。queue/steer/voice/files/每turn模型控制等cap=false明确unsupported，首批交付不关闭后继要求。outbox/草稿为连接内内存，reload会丢本地unknown记录/草稿；中心已受理会话持久。
