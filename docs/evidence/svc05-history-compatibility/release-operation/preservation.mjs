@@ -23,7 +23,9 @@ export function compare(before, after, phase, proposal) {
     runtime: a.runtimeSource?.head === (started ? target : oldTarget) && a.runtimeSource?.dirty === false,
     identity: equal(b.identity, a.identity) && equal(b.rootIdentity, a.rootIdentity) && equal(a.identity, proposal.savedIdentity) && equal(a.rootIdentity, proposal.savedRootIdentity) && db.markerMatched && db.identityMatched && db.runnerId === b.identity.runnerId,
     config: equal(b.files['config.json'], a.files['config.json']) && equal(b.files['claude.json'], a.files['claude.json']) && equal(a.files['config.json'], proposal.savedPrivateFiles['config.json']) && equal(a.files['claude.json'], proposal.savedPrivateFiles['claude.json']),
-    nativeFiles: equal(b.native, a.native), invariantState: b.invariantStateSha256 === a.invariantStateSha256 && a.lastError === null,
+    nativeIdle: b.native?.admission?.idle === true && a.native?.admission?.idle === true,
+    nativeFiles: b.native?.dev === a.native?.dev && b.native?.ino === a.native?.ino && b.native?.uid === a.native?.uid
+      && equal(b.native?.files, a.native?.files) && b.native?.totalBytes === a.native?.totalBytes, invariantState: b.invariantStateSha256 === a.invariantStateSha256 && a.lastError === null,
     lockAbsent: a.lock === 'absent', owned: Object.values(a.processes).every(p => p.identity === 'running') && Object.values(a.listeners).every(Boolean),
     singleKnownRunner: db.runners.length === 1 && a.runnerEntrypoints.length === 1 && a.runnerEntrypoints[0].owned,
     zeroWork: db.unfinished.length === 0 && db.uncertain.length === 0 && db.pendingTasks.length === 0,
@@ -73,7 +75,8 @@ export function compare(before, after, phase, proposal) {
     passed: Object.values(checks).every(Boolean), limits: ['Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.',
       'Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.',
       'No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.',
-      'Filesystem/process and RR DB snapshots are observations, not admission locks.'] };
+      'Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.',
+      'Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results.'] };
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const [beforePath, afterPath, phase, output] = process.argv.slice(2);

@@ -1,11 +1,12 @@
 /** Fixed af51 release observer, adapted from reviewed SVC05/live/facts; never mutates services or DB. */
-import { lstat, readdir } from 'node:fs/promises';
+import { lstat } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { bounded, durable, sha } from '../center-recovery/facts.mjs';
+import { runnerFiles } from './runner-files.mjs';
 
 export const repository = '/Users/citrine/Projects/AgentHarness/Flow';
 export const directory = '/Users/citrine/.flow-personal';
@@ -16,25 +17,6 @@ const safeName = value => { if (!/^[a-z_]+$/.test(value)) throw Error('IDENTIFIE
 const rootRequire = createRequire(join(repository, 'package.json'));
 const tool = name => import(pathToFileURL(join(repository, 'tools/personal-preview', name)).href);
 
-async function runnerFiles(root) {
-  const identity = await lstat(root); let total = 0, entries = 0; const files = [];
-  async function walk(path, prefix = '', depth = 0) {
-    if (depth > 8) throw Error('RUNNER_DIRECTORY_DEPTH');
-    for (const name of (await readdir(path)).sort()) {
-      if (++entries > 512) throw Error('RUNNER_ENTRY_BOUND');
-      const next = join(path, name), st = await lstat(next);
-      if (st.isSymbolicLink() || st.uid !== process.getuid()) throw Error('RUNNER_FILE_IDENTITY');
-      if (st.isDirectory()) await walk(next, prefix + name + '/', depth + 1);
-      else {
-        if (files.length >= 256 || !st.isFile() || (total += st.size) > 32 * 1024 * 1024) throw Error('RUNNER_FILE_BOUND');
-        const { bytes } = await bounded(next, 8 * 1024 * 1024);
-        files.push({ path: prefix + name, bytes: bytes.length, sha256: sha(bytes) });
-      }
-    }
-  }
-  if (!identity.isDirectory() || identity.isSymbolicLink()) throw Error('RUNNER_DIRECTORY_IDENTITY');
-  await walk(root); return { dev: identity.dev, ino: identity.ino, files, totalBytes: total };
-}
 
 async function databaseFacts(config) {
   const { Pool } = rootRequire('pg');
@@ -159,7 +141,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   if (process.argv.length !== 3 || !process.argv[2].endsWith('.json')) throw Error('ONE_EXCLUSIVE_OUTPUT_REQUIRED');
   let value;
   try { value = { outcome: 'observed', facts: await observe() }; }
-  catch (e) { value = { outcome: 'unknown', code: /^[A-Z0-9_]+$/.test(e.code ?? e.message) ? e.code ?? e.message : 'OBSERVATION_UNKNOWN' }; process.exitCode = 1; }
+  catch (e) { value = { outcome: 'unknown', code: /^[A-Z0-9_]+$/.test(e.code ?? e.message) ? e.code ?? e.message : 'OBSERVATION_UNKNOWN', ...(e.runnerObservation ? { runnerObservation: e.runnerObservation } : {}) }; process.exitCode = 1; }
   if (Buffer.byteLength(JSON.stringify(value)) > 4 * 1024 * 1024) throw Error('REPORT_BOUND');
   await durable(process.argv[2], value); console.log(JSON.stringify({ outcome: value.outcome, code: value.code, output: process.argv[2] }));
 }
