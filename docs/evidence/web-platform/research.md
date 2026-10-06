@@ -319,3 +319,9 @@ w01先完成其PERF02纯metadata b61707d20ee9803e7397f21961549deb65ceef1d clean�
 reviewer读固定outbox/projection/messages与9outbox/14projection测试，2个inline只读公开接口探针确认，无文件/browser/模型/服务写入，未重复33tests/typecheck/build/11browser；探针前实现diff0，之后owner新增测试不属于该结论。正面读码事实包括sticky everUnknown、冻结双key/未知不可dismiss、ACK身份、同revision正常刷新、typed详情完整身份+正文SHA/cache与dispose隔离、正文不混telemetry。另所有4xx除特例归definite的unknown http_error是非blocking建议，缺真实代理提交后改4xx证据，不混写确认bug。
 
 管理者固定metadata95a30be0b615030cd3abcdfbf3fd761637b42429读审：对84242 apps/shared/根依赖diff0，7Markdown37本地links/7TODO一致；验证报告正确区分33fixed后、11dev/11prod在最后接缝前、后续仅prod1/typecheck/build、真PG/模型未跑。当前父blocker实写两P2，不让scope/docs通过被误看成产品approval。
+
+04:08管理收口：U12 root逐字转交“take工作在dashboard标清、跨lead防overlap”，已存父plan并映射既有REQ37，不造第二需求账本。独立隐藏CUA实读CHAT领取ID/version、Lead/Worker、active/writer、branch/worktree、全部16scope、来源/更新时间/接收方及唯一status；临时页已关，用户页未动。API04:07:57.845Z为42源/21activewriterclaims literal0overlap、PERF b617 clean且main8f ancestor/current/scopeEqual，唯X03新claim未登记，[证据](assignment-visibility-verification.json)。不把一次采样当永久无重叠。
+
+正式CHAT-R1/R2已由7cbabb737f26b108275e80f1b6cd0425699f3c18窄修复；w01独立16projection tests+3公开探针（旧ACK不盖final、[1]→55且分页中到62完整补齐、新ACK后GET升级）通过，root限定整体APPROVED/baseb584。未重跑无关视觉/benchmark，原842 REQUEST_CHANGES与对应两P2保留。最后metadata待owner固定后再核，不把当前修复元数据自动改已审范围。
+
+D05架构刷新由GoalOwner新增授权：仅fixedmain8f架构数据与必要局部可读性/来源检查、自身plan/status/review/evidence；root可只读研究，manager等CHAT交付收口及旧claim释放/正式转交，独立新tree receipt后才写。保持frontend/center/runner、Flow/外包、PG/blob/FSM边界，未交付CHAT03/X03/R04不当交付。本段clean-code检查事实所有权/当前与历史/错误边界：修正父当前阻塞到已复审关闭，留下历史两P2；D05协作旧“未有tab”改已部署待刷新；不代写其他ownerstatus。

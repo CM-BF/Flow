@@ -12,9 +12,9 @@
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CHAT固定84242模块审查提出两项P2，唯一owner修复中；scope/docs已核；PERF02已集成 |
-| 下一可用交付 | CHAT两项P2固定修复SHA及独立复验；主线随后固定集成与真实模型验收 |
-| 当前阻塞 | ACTIVE: CHAT固定84242模块有两项P2待唯一owner修复与独立复审：旧ACK replay降级回复、跨多turn刷新漏中间消息 |
+| 当前产出 | CHAT修复7cbabb获限定整体APPROVED，R1/R2关闭，等待最终metadata核验；PERF02已集成，领取视图已实证 |
+| 下一可用交付 | CHAT最终metadata与dashboard闭环交主线；随后待D05正式转交receipt再独立领取刷新 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
@@ -24,7 +24,7 @@
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-001-01 | completed | d01_owner | U00～U11及WPF-REQ-01～45已落[plan](plan.md) |
+| WPF-001-01 | completed | d01_owner | U00～U12及WPF-REQ-01～45已落[plan](plan.md) |
 | WPF-001-02 | completed | d01_owner | 7个子计划齐三件套；P01/M02/I01/PERF01/PERF02/CHAT已转独立唯一owner；dashboard协作仅留管理树 |
 | WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
@@ -81,3 +81,7 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 固定CHAT范围审计：[逐commit/共享hash/claim证据](../../docs/evidence/web-platform/chat-candidate-scope-audit.json)。自有实现均在16scope，三个Lead共享输入单列且hash匹配；保护路径零diff。全diffcheck仅原始transport.patch上下文空格exit2，保留raw；排除原始patch后的source/docs check0，不写无条件全绿。PERF02 canonical集成metadata已由唯一owner提交b61707d20ee9803e7397f21961549deb65ceef1d clean，只改3文档、无产品重测。
 
 固定84242模块review由w01独立REQUEST_CHANGES：两项公开projection轻探针实证blocking；不是对其后moving修复结论。metadata95a30be实现diff0、7Markdown37links/7TODO一致及检查复用边界已核。root负责整体汇总，管理者不因scope通过关闭行为finding。
+
+04:08 U12逐字重申已映射既有REQ37。管理者自建隐藏CUA页实读WPF-CHAT01“领取与写入范围”：ID/version、Lead/Worker、active/writer、branch/worktree、16scope、原子领取来源/时间/接收方及唯一status均可见；只关自己的临时页。API04:07:57.845Z为42源、PERF02 b617 clean/main8f current/scopeEqual；21activewriterclaims literal0重叠，仅X03新claim未登记，见[证据](../../docs/evidence/web-platform/assignment-visibility-verification.json)。该时点事实不宣称永久无冲突。
+
+D05新授权刷新排队：固定main8f1481df880cf5077e1ddb9a8f302fe700a7ece8，窄architecture-data.js与必要局部图验证/自有三件套证据；旧claim释放/正式转交由主Lead协调。本agent可在CHAT收口后复用，独立newtree与明确literal claim receipt后才写；不新增第5agent、不写旧树/App/chat、不把CHAT03/X03/R04列交付。
