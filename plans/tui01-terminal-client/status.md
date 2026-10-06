@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:03:06 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:20:11 UTC / main41315b033deb0b1953484359b686c0b228997367 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -36,7 +36,9 @@
 | TUI001-05 | pending | TUI owner / Web合同 | 附件生命周期与context |
 | TUI001-06 | pending | TUI owner | queue/steer/cancel/decision |
 | TUI001-07 | pending | TUI owner | runner/plugin管理 |
-| TUI001-09 | pending | Execution Lead / Web / TUI owner | [共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)；首片已交付/旧claim释放，等待Web消费者精确scope交接 |
-| TUI001-08 | pending | 独立review / Execution Lead | 完整日用/PTY/provider验收仍开放 |
+| TUI001-09 | in-progress | runner_owner / Web独立消费者 | [共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)；TUI01B已派独立共享ACK与冲突恢复；F01两个client路径已归还，Web消费者由同级协调 |
+| TUI001-08 | pending | 独立review / Execution Lead | 完整日用/PTY/双公开客户端共同中心/provider验收仍开放 |
 
 本claim仅管理文档；TUI01A由runner_owner在独立tui-conversations树与0ba7e5d7 claim实施，复用R06交付后的同一槽。依赖固定1cec921，既有Web importer/package/snapshot保持，实际core仍0.3.22；lock移交已归还F01。首片9e5588原CHANGES_REQUESTED保持历史；29b已修复两个P2并获MikaAPPROVED，19增量含11重复及8新例，mainf181已接收。P3最大revision边界留共享ACK后继；无provider结论。唯一status进入dashboard；与GO只报真实大task blocker或完整Done。
+
+本次仅收敛既有TUI001-08双客户端验收并分派TUI001-09；不新建大task或状态权威，不改TUI01A已审源码，不重复工程测试。
