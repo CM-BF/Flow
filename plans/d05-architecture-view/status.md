@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T14:35:06.228081+00:00 / main59ef2134 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:50:27 UTC / maincbd3dd95 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 159个唯一来源已显示；用量读口已进入主线，持续推进目标的实现已登记。 |
+| 当前产出 | 已补齐聊天恢复与新版网页兼容验证的唯一来源，等待本次看板换载；状态由实际负责人持续更新。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -117,3 +117,5 @@
 2026-10-06 14:29 UTC：新增O14唯一source goal-persistent-progression/plans/o14-goal-progression，固定首e0569488/claimf2f8e15av1；159源候选registry校验ID唯一、Plan/status/review存在、parser0/human完整。仅注册/链接检查，未重跑产品/架构；实际4320仍158，随本批已审COST发布一次加载159。[登记](../../docs/evidence/d05/o14-registry-validation.json)。
 
 2026-10-06T14:35:06.228081+00:00：实际4320于14:29:38.922Z返回159来源，O14/COST01A/F01/OPS current且issues=[]。见[o14-159-live](../../docs/evidence/d05/o14-159-live.json)。后续owner进度由原source自动聚合，固定aeb架构未改，个人页面未刷新。
+
+2026-10-06 14:50:27 UTC：本批仅新增RECOVERY01/RELEASE03两真实writer来源，父任务分别MATURE06/MATURE01；DPERF04未take不登记实施。局部registry唯一性、实际plan/status/review存在与状态解析核验，无产品测试/模型/架构改动。实际换载回执随后更新。
