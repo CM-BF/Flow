@@ -1,8 +1,18 @@
 # O15 review
 
-状态：NOT_STARTED
+状态：APPROVED
 
-Review target commit：e0c0db91d7e6c52b9bb5df890787930db8b7e91d（固定产品；六个真实PG场景已通过，等待独立证据复核）。
+Review target commit：e0c0db91d7e6c52b9bb5df890787930db8b7e91d
+
+Reviewer：assignment_review / gpt-6-astra，独立于作者 native_center_owner。时间：2026-10-06 17:48:02 UTC。无 P1/P2，reviewer 0 tests/typechecks/PG/provider。
+
+[唯一独审原件](../../docs/evidence/o15/final-independent-review.json)与[绑定](../../docs/evidence/o15/final-review-bindings.json)确认288固定/current绑定、232保护输入/base、原15声明源9fd1全同；沿原domain source-precheck，复核fixture delta、新6PG选中通过/1schema未选、13不同分轮历史证据与正常资源清理。旧3消费者测试未改未重跑。
+
+批准仅完整输入提案、owner一次确认、已有O14显式sweep与注入SDK的公开HTTP/PG旅程。生产031挂载/client/自动scan、实际自然语言模型规划、语义接受和OS隔离仍独立后继。原NOT_RUN与red记录保留，不倒写历史。
+
+历史状态：NOT_STARTED
+
+历史 Review target commit：e0c0db91d7e6c52b9bb5df890787930db8b7e91d（固定产品；六个真实PG场景已通过，等待独立证据复核）。
 
 范围为已claim16产品literal，三件套及证据；共享client/export/mount另属F01。首DTO只是接口输入，不代表当前runner已安全启用此payload。
 
