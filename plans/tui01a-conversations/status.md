@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:48:01 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:55:14 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | TUI-001（[大task定义](../tui01-terminal-client/plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -17,13 +17,13 @@
 | 实现目标 | 29b546537862c562569ce9df74919f2239d94df8 |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 已能在终端选择会话、发送消息并重新打开历史；退出后任务继续。 |
-| 下一可用交付 | 修复退出清理与异常确认恢复两项审查问题后交付基础终端。 |
+| 下一可用交付 | 基础终端已通过独立审查，等待集成。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，CHANGES_REQUESTED；Mika固定9e5588d，两P2已修待增量复审 |
+| Review | [review.md](review.md)，APPROVED 29b546537862c562569ce9df74919f2239d94df8；Mika/status_read增量复审，两P2关闭 |
 | 领取 | 0ba7e5d7-a201-4cb5-ab50-0f8bf0d536b6 v3；[current receipt](../../docs/evidence/tui01a/lock-return-receipt.json) |
 | 架构影响 | TUI/headless→共享interaction→FlowClient→center；当前分支已实现并检查；Lead集成时更新架构图。 |
 
@@ -33,6 +33,8 @@
 | TUI01A-02 | completed | runner_owner | controller 11/11，私有intent/epoch/显式恢复 |
 | TUI01A-03 | completed | runner_owner | renderer/journal/headless 4/4，实际PTY输入/resize/退出恢复 |
 | TUI01A-04 | completed | runner_owner | 真实HTTP/随机PG 2/2，丢ACK同key、profile、退出时running→重开final；remaining[] |
-| TUI01A-05 | in-progress | runner_owner / Lead | Mika两P2；8新增回归+11直接consumer通过，待增量复审 |
+| TUI01A-05 | completed | runner_owner / Lead | Mika独审APPROVED29b；8新增回归+11直接consumer；等待main接收 |
 
 Dashboard：canonical由Lead登记；最近事实见本表。0provider、私人服务未操作。父plan在tui-client分支，集成前相对链接暂待共享输入；不在本树复制第二权威。
+
+后继：共享client ACK纯校验复用及revision上界P3见父计划shared-ack-design；未扩大本片源码。产品源码已停止写，claim保留待main收据。
