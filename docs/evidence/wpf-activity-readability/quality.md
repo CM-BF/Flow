@@ -14,3 +14,5 @@
 2026-10-06 09:40 UTC 工作段清码：显示职责保持NativeActivity/Tool，无新增状态/网络/权限分支。发现已读基线直接test将整个footer slot等同单个activity插件，新增stream panel使旧断言失败；先记录15/16原失败，经root同意与管理v2精确amend后仅按pluginId过滤，仍精确检查本模块button/menu/panel，未删lazy/cache/lifecycle断言。browser首轮source路径错.ts（实际.tsx），后跨中心fixture缺公开X-Flow-Assistant-Stream预检header导致GET失败；保留两轮原log/JSON，修正来源路径与独立HTTPfixtureCORS，不改公共client/App。增加offline前已加载Activity等待，避免从未完成加载态误测离线恢复。
 
 2026-10-06 09:42 UTC 交付清码：逐读两生产文件及两个专测差异。保NativeBody单一正文显示职责、NativeActivity只订阅/触发、Tool只展示公开状态；不抽象第二status映射。原生details使用键盘语义且每pane自有DOM状态，无新Focus/Effect。移除单页无效pager不改变实际分页方法；错误/未知/恢复不藏在About或Content details。两theme截图已实际目视：浅色desktop及浅深390无溢出/重复采样，焦点可见。typecheck/build/direct16及dev13/prod12完成；source四hash一致，未改shared/依赖/旧evidence/App。此前测试与fixture发现已修，未解决项只后继整体外层readability与真实环境验收，不声称本片完成MATURE06。
+
+2026-10-06 09:47:39 UTC 独审后交付清码：root固定target独立APPROVED，无blocking；已核职责/小Interface/错误恢复与原状态不变。实际独立16direct、局部CUA与两主题图范围准确写review；dev13/prod12仍作者证据。只更新canonical/README/验证归因，不改产品或原raw报告，不把元数据提交当新测试。TODO04保留main接收未完成；无需新代码抽象或额外无关检查。

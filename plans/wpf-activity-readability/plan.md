@@ -12,3 +12,5 @@
 - [ ] WPF-ACTIVITYREAD01-04：clean-code、固定target独审、交付与集成记录。
 
 验证只本模块/直接消费者；真实模型/产品DB/个人服务0操作，独立动态HTTPfixture。报告全部写本片evidence，旧activity-i01只读。页码只表示当前已读页，不推总数；输入就绪不等于运行，活动成功不等于最终回复/验证；received≠applied回执不在本DTO中，不伪造映射。未知和权限错误不被Details隐藏。
+
+2026-10-06 09:47 UTC：固定实现独审APPROVED，无阻塞finding；前三TODO完成，TODO04的审查/交付已完成，主线集成记录仍待正式回执，不提前勾选。当前产品停止修改，六scope保留审后接收期间权属。
