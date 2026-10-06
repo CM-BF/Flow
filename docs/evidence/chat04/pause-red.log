@@ -1,0 +1,48 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue
+
+ ❯ apps/server/src/conversation-queue/queue.test.ts (16 tests | 1 failed) 2340ms
+   ✓ persists an immutable enqueue receipt through ACK loss and exposes current cancellation with independent revision 84ms
+   ✓ promotes an empty conversation once, forbids follow-up bypass, and preserves the original ACK after restart 100ms
+   ✓ serializes two client CAS writes, preserves FIFO after cancellation, and resumes the previous known session 59ms
+   ✓ freezes waiting intent after failed with known evidence 39ms
+   ✓ freezes waiting intent after cancelled with known evidence 37ms
+   ✓ freezes waiting intent after uncertain with known evidence 36ms
+   ✓ freezes waiting intent after running with known evidence 35ms
+   ✓ freezes waiting intent after succeeded with missing evidence 39ms
+   ✓ freezes waiting intent after succeeded with unknown evidence 36ms
+   ✓ freezes unavailable profile pins and busy sessions without losing waiting intent 44ms
+   ✓ cancellation and promotion agree on a single outcome under the conversation lock 182ms
+   ✓ restarts pending work and permits only one promotion across two center instances 122ms
+   ✓ rolls back task, wake and turn when item update fails and scan still reaches other ready conversations 131ms
+   ✓ bounds UTF-8 previews and pending count, pages only waiting items, and confines item reads to their conversation  626ms
+   ✓ recovers an actually dropped HTTP ACK using the same key after promotion 24ms
+   × persists pause before cancelling and never auto-promotes after a late successful completion or restart 37ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/conversation-queue/queue.test.ts > persists pause before cancelling and never auto-promotes after a late successful completion or restart
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ ❯ apps/server/src/conversation-queue/queue.test.ts:268:25
+    266|   const path = `/api/conversations/${c.id}/queue`;
+    267|   const paused = await request(`${path}/pause`, { expectedQueueRevisio…
+    268|   expect(paused.status).toBe(200);
+       |                         ^
+    269|   expect(paused.body).toMatchObject({ paused: true, queueRevision: 2, …
+    270|   expect((await request(`/api/tasks/${first.turn.task.id}/cancel`, {})…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 15 passed (16)
+   Start at  21:35:35
+   Duration  2.79s (transform 176ms, setup 0ms, import 364ms, tests 2.34s, environment 0ms)
+

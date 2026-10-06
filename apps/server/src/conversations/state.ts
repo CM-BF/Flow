@@ -5,8 +5,8 @@ import { HttpError } from '../database.js';
 import { assistantProjection } from './replies.js';
 import { loadTask, summary } from '../tasks.js';
 
-export const capabilities: ConversationCapabilities = { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false };
-export interface ConversationRow { id: string; title: string; harness: 'claude'; requested: ConversationSettings; execution_profile?: ExecutionProfileReference | null; revision: number; created_at: Date; updated_at: Date }
+export const capabilities: ConversationCapabilities = { followUp: true, queue: true, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false };
+export interface ConversationRow { id: string; title: string; harness: 'claude'; requested: ConversationSettings; execution_profile?: ExecutionProfileReference | null; revision: number; queue_revision: number; queue_paused: boolean; created_at: Date; updated_at: Date }
 export interface TurnRow { id: string; conversation_id: string; number: number; task_id: string; user_text: string; created_at: Date }
 export function conversationView(row: ConversationRow): ConversationSummary {
   return { id: row.id, title: row.title, harness: row.harness, requested: row.requested, ...(row.execution_profile ? { executionProfile: row.execution_profile } : {}), revision: row.revision, createdAt: row.created_at.toISOString(), updatedAt: row.updated_at.toISOString() };

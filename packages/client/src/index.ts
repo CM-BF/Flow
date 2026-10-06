@@ -1,4 +1,6 @@
 import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage } from '@flow/contracts';
+import type { GoalToolRunAdmission, GoalToolRunAccepted, GoalToolRun, GoalToolRunRevoked, GoalToolAuditPage, GoalToolRunReference, GoalToolInputCall, GoalToolCommandCall, GoalToolSnapshotResult, GoalToolInputResult, GoalToolCommandResult } from '@flow/contracts';
+import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQueuePause, ConversationQueueResume, ConversationQueueAccepted, ConversationQueueCancelled, ConversationQueuePaused, ConversationQueueResumed, ConversationQueuePage, ConversationQueueItemDetail } from '@flow/contracts';
 import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
 import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
@@ -78,6 +80,33 @@ export class FlowClient {
     return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
   }
 
+  admitGoalToolRun(goalId: string, input: GoalToolRunAdmission, key: string, signal?: AbortSignal): Promise<GoalToolRunAccepted> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/tool-runs`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalToolRun(id: string, signal?: AbortSignal): Promise<GoalToolRun> {
+    return this.request(`/api/goal-tool-runs/${encodeURIComponent(id)}`, { signal });
+  }
+  revokeGoalToolRun(id: string, input: { reason: string }, key: string, signal?: AbortSignal): Promise<GoalToolRunRevoked> {
+    return this.request(`/api/goal-tool-runs/${encodeURIComponent(id)}/revoke`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalToolRunCalls(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<GoalToolAuditPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/goal-tool-runs/${encodeURIComponent(id)}/calls${query.size ? `?${query}` : ''}`, { signal });
+  }
+  goalToolGrant(input: Ownership, signal?: AbortSignal): Promise<GoalToolRun> {
+    return this.request('/api/runner/goal-tools/grant', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalToolSnapshot(input: Ownership & { grant: GoalToolRunReference }, signal?: AbortSignal): Promise<GoalToolSnapshotResult> {
+    return this.request('/api/runner/goal-tools/snapshot', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalToolInput(input: GoalToolInputCall, signal?: AbortSignal): Promise<GoalToolInputResult> {
+    return this.request('/api/runner/goal-tools/input', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalToolCommand(input: GoalToolCommandCall, key: string, signal?: AbortSignal): Promise<GoalToolCommandResult> {
+    return this.request('/api/runner/goal-tools/command', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
   executionProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ExecutionProfilePage> {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
@@ -136,6 +165,27 @@ export class FlowClient {
   }
   conversationDetail(id: string, turnId: string, detailId: string, signal?: AbortSignal): Promise<Detail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns/${encodeURIComponent(turnId)}/details/${encodeURIComponent(detailId)}`, { signal });
+  }
+
+  enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  conversationQueue(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationQueuePage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue${query.size ? `?${query}` : ''}`, { signal });
+  }
+  conversationQueueItem(id: string, itemId: string, signal?: AbortSignal): Promise<ConversationQueueItemDetail> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/${encodeURIComponent(itemId)}`, { signal });
+  }
+  cancelConversationQueueItem(id: string, itemId: string, input: ConversationQueueCancel, key: string, signal?: AbortSignal): Promise<ConversationQueueCancelled> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/${encodeURIComponent(itemId)}/cancel`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  pauseConversationQueue(id: string, input: ConversationQueuePause, key: string, signal?: AbortSignal): Promise<ConversationQueuePaused> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/pause`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  resumeConversationQueue(id: string, input: ConversationQueueResume, key: string, signal?: AbortSignal): Promise<ConversationQueueResumed> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/resume`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {

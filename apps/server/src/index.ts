@@ -1,4 +1,6 @@
 import { migrateExecutionProfiles, registerExecutionProfileRoutes } from './execution-profiles/index.js';
+import { migrateConversationQueue, registerConversationQueueRoutes, scanConversationQueue } from './conversation-queue/index.js';
+import { migrateGoalToolRuns, registerGoalToolRunRoutes } from './goal-tool-runs/index.js';
 import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
 import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
@@ -26,7 +28,7 @@ import { migrateGoals, registerGoalRoutes } from './goals/index.js';
 
 declare module 'fastify' { interface FastifyRequest { runnerId: string | null } }
 
-export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number }
+export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number; automaticQueueScan?: boolean }
 export async function createServer(options: ServerOptions) {
   if (!options.ownerToken) throw new Error('ownerToken is required.');
   const app = Fastify({ bodyLimit: MAX_BATCH_BYTES, logger: false });
@@ -47,6 +49,8 @@ export async function createServer(options: ServerOptions) {
     await migratePlugins(pool);
     await migrateAssistantMessages(pool);
     await migrateExecutionProfiles(pool);
+    await migrateConversationQueue(pool);
+    await migrateGoalToolRuns(pool);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
   let pendingSweep: Promise<void> | undefined;
@@ -57,6 +61,19 @@ export async function createServer(options: ServerOptions) {
     }).catch(error => app.log.error(error)).finally(() => { pendingSweep = undefined; });
   }, Math.min(1000, leaseMs));
   sweep.unref();
+  let pendingQueueScan: Promise<void> | undefined;
+  let closing = false;
+  const scanQueue = () => {
+    if (closing) return Promise.resolve();
+    return pendingQueueScan ??= scanConversationQueue(pool, boss).then(result => {
+      for (const error of result.errors) app.log.error(error);
+    }).catch(error => app.log.error(error)).finally(() => { pendingQueueScan = undefined; });
+  };
+  // Module tests may drive promotion explicitly; the production entry always uses automatic scanning.
+  const queueSweep = options.automaticQueueScan === false ? undefined : setInterval(() => { void scanQueue(); }, 1000);
+  queueSweep?.unref();
+  if (options.automaticQueueScan !== false) app.addHook('onReady', scanQueue);
+  app.addHook('preClose', async () => { closing = true; clearInterval(queueSweep); await pendingQueueScan; });
   app.addHook('onClose', async () => {
     clearInterval(sweep);
     await pendingSweep;
@@ -92,6 +109,8 @@ export async function createServer(options: ServerOptions) {
   registerPluginRoutes(app, pool);
   registerAssistantRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
+  registerConversationQueueRoutes(app, pool, boss);
+  registerGoalToolRunRoutes(app, pool, boss);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);

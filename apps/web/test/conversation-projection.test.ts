@@ -19,6 +19,10 @@ function reply(input: ConversationTurn, text = "Hello", version = "v1"): Convers
 function snapshot(lastTurn: ConversationTurn | null = null): ConversationSnapshot {
   return { conversation: { id: "chat", title: "Chat", harness: "claude", requested: { model: "runner-default", thinking: "disabled", tools: "configured-readonly" }, revision: lastTurn?.number ?? 0, createdAt: at, updatedAt: at }, capabilities, nativeSession: null, lastTurn };
 }
+function wireSnapshot(queue: unknown, lastTurn: ConversationTurn | null = null): ConversationSnapshot {
+  // Simulate the additive wire capability before the shared type permits true.
+  return { ...snapshot(lastTurn), capabilities: { ...capabilities, queue } } as ConversationSnapshot;
+}
 function deferred<T>() { let resolve!: (value: T) => void; let reject!: (error: unknown) => void; const promise = new Promise<T>((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; }
 const projections: ConversationProjection[] = [];
 afterEach(() => { projections.splice(0).forEach(projection => projection.dispose()); });
@@ -27,7 +31,7 @@ function setup(initial = snapshot(), id: string | null = "chat") {
   const client = {
     conversation: vi.fn<FlowClient["conversation"]>(async () => current),
     conversationTurns: vi.fn<FlowClient["conversationTurns"]>(async () => ({ conversation: current.conversation, turns: current.lastTurn ? [current.lastTurn] : [], nextCursor: null as number | null })),
-    createConversation: vi.fn<FlowClient["createConversation"]>(async input => { current = { ...current, conversation: { ...current.conversation, ...input } }; return { conversation: current.conversation, capabilities, replayed: false }; }),
+    createConversation: vi.fn<FlowClient["createConversation"]>(async input => { current = { ...current, conversation: { ...current.conversation, ...input } }; return { conversation: current.conversation, capabilities: current.capabilities, replayed: false }; }),
     submitConversationTurn: vi.fn<FlowClient["submitConversationTurn"]>(async (_id, input) => ({ conversation: { ...current.conversation, revision: input.expectedRevision + 1 }, turn: turn(input.expectedRevision + 1, input.text), replayed: false })),
     conversationDetail: vi.fn<FlowClient["conversationDetail"]>(async () => ({ id: "detail", title: "Full reply", kind: "artifact" as const, content: "Complete reply", mediaType: "text/plain", artifactVersion: "v1" })),
   };
@@ -37,6 +41,43 @@ function setup(initial = snapshot(), id: string | null = "chat") {
 }
 
 describe("public conversation projection", () => {
+  it.each([false, true])("reads queue=%s while keeping active-turn sending unavailable in this Web version", async queue => {
+    const { projection, client } = setup(wireSnapshot(queue, turn()));
+    await projection.refresh();
+    expect(projection.getSnapshot()).toMatchObject({ loading: false, connection: "live", error: null, snapshot: { capabilities: { queue } } });
+    expect(projection.getSnapshot().turns[0]?.id).toBe("turn-1");
+    expect(projection.sendDisabledReason()).toContain("not available in this Web version");
+    await expect(projection.send("Keep this as a draft")).rejects.toThrow("not available in this Web version");
+    expect(projection.getSnapshot().outbox).toBeNull();
+    expect(client.submitConversationTurn).not.toHaveBeenCalled();
+    expect(client.conversationDetail).not.toHaveBeenCalled();
+  });
+  it.each([false, true])("accepts queue=%s CREATE receipts and submits only explicit follow-up turns", async queue => {
+    const { projection, client, set } = setup(wireSnapshot(queue), null);
+    expect(await projection.send("hi")).toBe("chat");
+    expect(projection.getSnapshot()).toMatchObject({ outbox: null, snapshot: { capabilities: { queue }, conversation: { revision: 1 } } });
+    expect(client.createConversation).toHaveBeenCalledTimes(1);
+    expect(client.submitConversationTurn.mock.calls[0]?.[1]).toEqual({ expectedRevision: 0, text: "hi", mode: "follow-up" });
+    set(wireSnapshot(queue, reply(turn()))); await projection.refresh();
+    expect(projection.sendDisabledReason()).toBeNull();
+    await projection.send("next");
+    expect(client.submitConversationTurn.mock.calls[1]?.[1]).toEqual({ expectedRevision: 1, text: "next", mode: "follow-up" });
+    expect(client.createConversation).toHaveBeenCalledTimes(1);
+    expect(projection.getSnapshot().outbox).toBeNull();
+  });
+  it.each([undefined, null, "true", 1])("rejects non-boolean queue capability %s instead of treating it as supported", async queue => {
+    const { projection, client } = setup(wireSnapshot(queue)); await projection.refresh();
+    expect(projection.getSnapshot()).toMatchObject({ snapshot: null, connection: "reconnecting" });
+    expect(projection.getSnapshot().error).toContain("capabilities are not supported");
+    expect(client.submitConversationTurn).not.toHaveBeenCalled();
+  });
+  it("does not widen other unsupported capabilities while accepting a boolean queue flag", async () => {
+    const input = wireSnapshot(true);
+    const { projection } = setup({ ...input, capabilities: { ...input.capabilities, steer: true } } as unknown as ConversationSnapshot);
+    await projection.refresh();
+    expect(projection.getSnapshot().snapshot).toBeNull();
+    expect(projection.getSnapshot().error).toContain("capabilities are not supported");
+  });
   it("refreshes a same-revision asynchronous reply and reads its exact version only on demand", async () => {
     const { projection, client, set } = setup(snapshot(turn())); await projection.refresh();
     expect(client.conversationDetail).not.toHaveBeenCalled();
@@ -94,11 +135,11 @@ describe("public conversation projection", () => {
     expect(projection.getSnapshot().turns[0]?.assistant.state).toBe("available");
     expect(projection.sendDisabledReason()).toBeNull();
   });
-  it("confirms a retried saved receipt without regressing a final reply already read from the center", async () => {
-    const { projection, client, set } = setup(); await projection.refresh();
+  it.each([false, true])("confirms queue=%s retried saved receipts without regressing a final reply already read from the center", async queue => {
+    const { projection, client, set } = setup(wireSnapshot(queue)); await projection.refresh();
     client.submitConversationTurn.mockRejectedValueOnce(Error("ACK lost")); await projection.send("hi");
     const frozenKey = projection.getSnapshot().outbox!.turnKey;
-    set(snapshot(reply(turn(), "Final authoritative reply"))); await projection.refresh();
+    set(wireSnapshot(queue, reply(turn(), "Final authoritative reply"))); await projection.refresh();
     const before = projection.getSnapshot().turns[0];
     client.submitConversationTurn.mockResolvedValueOnce({ conversation: snapshot(turn()).conversation, turn: turn(), replayed: true });
     await projection.retry();

@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": { "noEmit": true },
+  "include": ["../../../apps/server/src/conversation-queue/**/*.ts", "../../../apps/server/src/conversations/commands.ts", "../../../apps/server/src/conversations/admission.ts", "../../../apps/server/src/conversations/state.ts", "../../../packages/contracts/src/conversation-queue.ts", "../../../packages/contracts/src/conversations.ts"]
+}

@@ -73,3 +73,15 @@ Root新增独立APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4：仅runner pa
 固定26ddd8de9fde0d67e6e42bd81a583facc993a31a，仅claude.ts/test；原CHAT02 owner停写/amend后F01v9接收。固定SDK0.3.290 sdk.d.ts1645–1662明确env替换而非合并，未设置时继承宿主。新增明确系统/本机provider认证允许清单，排除Flow token、数据库凭据和无关环境；保留HOME/PATH与本机SDK合法认证入口，不读取或打印真实凭据。没有改模型、工具政策、native session或profile声明能力。
 
 先公开adapter新用例红（options.env缺失），原sdk-environment-red.txt保留；修复后完整此模块26/26，403ms，typecheck通过。注入query仅观察options，并启动真实Node子进程传精确env验证合成marker隔离/合法provider变量保留、宿主环境未变、事件不泄漏。没有真实SDK/query/provider实验，因此不宣称实际登录可用性；启动器角色隔离另由SVC715ec独审。
+
+## CHAT04薄client / 2026-10-06 04:45 UTC
+沿find-skills本地codebase-design/clean-code既定范围；复用单一HTTP request，不自动retry/改key/pause或取消其他task。消费Mika固定ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 schema，六方法保留queueRevision、expectedTaskId、AbortSignal、receipt replay；readonly GET与command分明。测试先[red](queue-client-red.txt)（方法未实现）后[green](queue-client-green.txt)2/2（队列及原对话HTTP），[typecheck](queue-client-typecheck.txt)exit0。仅client接线，不替代54领域用例/生产扫描/Web队列UI/真实模型证明。每个方法短且只转送事实，无新state副本。
+
+## O03公共client与CHAT04/O03生产挂载 / 2026-10-06 04:51 UTC
+O03薄client固定dc9a9f1，8方法分owner与runner认证实例，fenced输入/固定version/key/signal原样传送；[1/1 HTTP](o03-client-checks-final.txt)、[tsc](o03-client-typecheck-final.txt)通过。初始测试input类型错误[保留](o03-client-typecheck.txt)。runner_owner独立只读APPROVED该3文件，未重跑；不含mount。
+
+生产挂载011/012先于boss；queue startup一次+1秒串行scan，关闭前停止未来scan并等inflight，后续才boss/pool关闭。factory仅显式automaticQueueScan:false支持领域手动驱动测试，生产main未提供该关闭选项。默认模式[真PG11/11](queue-o03-production-checks-final.txt)包括9条O03公开授权与2条新队列startup/阻塞scan不重叠/close等待；新test原始typing失败[保留](queue-o03-production-typecheck.txt)，最终[tsc](queue-o03-production-typecheck-final.txt)通过。首轮[9/11](queue-o03-production-checks.txt)的2项失败源于作者观测只筛测试pool application_name，原owner独立test-only e63修为专库+Lock+精确SQL，最终保留真实race断言。
+
+Mika发现定时扫描与手动领域测试竞争；已交原owner以显式factory选项隔离，54领域与默认生产生命周期分开检查，不删断言。WPF-QUEUE00兼容reader5acc独审已收到，须成套后main；当下未进入main/未改61228常驻服务。clean-code复核将生命周期局限createServer，复用现scan模块，无第二调度状态，无owner credential进runner MCP。
+
+2026-10-06 04:57 UTC：实际组合接收CHAT04 fac202测试驱动开关+Web reader5acc+profile模块4f；[默认/手动factory分离定向1/1](queue-scan-control-checks.txt)验证显式false确被生产factory读取，关闭后下次默认启动恢复同等待项。此前11/11仍为对应旧测试版本，分别报告不混成一次套件。root与Web组合类型检查见queue-profile-combination-typecheck.txt / queue-profile-web-typecheck.txt；零额外模型。正式独审结论已写review，main合入与常驻服务升级分开。

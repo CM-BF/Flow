@@ -1,0 +1,263 @@
+{
+  "version": 3,
+  "base": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
+  "implementation": "fac202e32cc4c223e2e6abc64c67d11d39e439b0",
+  "recordedAt": "2026-10-06 04:51:48 UTC",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "sha256": "4d2dc5477d5f714e1e08fb03b493898bc00bc11923a5a133c6f8b6a86ca0afc1"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "sha256": "68f3e4536b4d719a165149d4e412229acdcaf70c17bf5b0ce67b422a709d4bf4"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/gate.ts",
+      "sha256": "d6b88877c6190bd2bb026b5c6884a5916a0ea5d49fe9d9cb9f0038776405bf7d"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/index.ts",
+      "sha256": "c263858be96773183b67ed175ad05c2642e6067ac2e2b124cf7946b5b06ce76e"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "sha256": "5e25fb62932ac65deb1403198771f941987ea5ca89afcdcbb2b872e54a94b59b"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "sha256": "a4bff35ea86ee28d948f402e73062c148fdcbc099598f99861ae039f4031384b"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queue.test.ts",
+      "sha256": "fe0a6906844efeab7c31ec0f26da3af29ecb59775a26b428366100c567175ab6"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "sha256": "2f5be75bf771e51662c2935603510e0fa6815f7b24fa53aa047f51c576143375"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "sha256": "2499a6b78da9ac12873b054049455c22c236b6e8715d93e485edd22ada12b54c"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "3596d028540c399b3fccf5672fa27c88082f451f869651bcd528a9b846d7fe0d"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sha256": "cb029d0d1573d5d134043317039d2de06330248ab9ee37607499611a9d0098fe"
+    },
+    {
+      "path": "docs/evidence/chat04/run-consumer.mjs",
+      "sha256": "43c4477d7edf74e4658e0c60b19d13d1b241522343b59a756e3545afde68eec3"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "sha256": "79897d7bfeb91eeb079de751d411a2c628cca55af5576c8f2ffe45b19642e5e7"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sha256": "e67860c24b542a5cac3864f7596daf87a223c1736438336c884e5909213ff7f5"
+    },
+    {
+      "path": "packages/storage/migrations/011-conversation-queue.sql",
+      "sha256": "bea2d6057b4471524ccb89e95e643a7bd2606805d75a775d7d6129857afbc427"
+    }
+  ],
+  "logs": {
+    "consumer-dependency-failure.log": {
+      "sha256": "886776e429bafefc8bfb7f8f2c5e44b84f35ff2d3752ef312182e9f7110a4d37",
+      "exitCode": 1
+    },
+    "consumer.log": {
+      "sha256": "01d6b57529738560d2c8964541cfa642f91afb9a6e59691cf67d01bd4c239cfc",
+      "exitCode": 0
+    },
+    "first-green.log": {
+      "sha256": "c745b10897f051186daac3853111fe9564dcb090390e5845389be28bfab7ef17",
+      "exitCode": 0
+    },
+    "first-red-corrected-fixture.log": {
+      "sha256": "5cfa0abef379f0a8914e5eaa5cfff86cd17ad3c6dbd741501c887819eded97e3",
+      "exitCode": 1
+    },
+    "first-red.log": {
+      "sha256": "452d9c4c1baabbc39378b81c686c84c449fdc06836edadf408337b79f7d22307",
+      "exitCode": 1
+    },
+    "pause-green.log": {
+      "sha256": "cec95f433aa0bd870296588133eb46dd83e541c251e6de9385ce3d10b039ea5d",
+      "exitCode": 0
+    },
+    "pause-red.log": {
+      "sha256": "6bed79f66a203c26cee785c3b5767c8503b59d71f20a2a7a085b54365f09e9c1",
+      "exitCode": 1
+    },
+    "promotion-green.log": {
+      "sha256": "43d47e91a265753e6b06f59520e0b8a464909087128d257230c6e828a96d0771",
+      "exitCode": 0
+    },
+    "promotion-red.log": {
+      "sha256": "97bf0c37e71dde2bbdcef08695152d17c2c7868c4eb615b88c44514284c87590",
+      "exitCode": 1
+    },
+    "queue-final.log": {
+      "sha256": "3e7eaed9305e1c458c08743d9f2656ed6d12546dcd1d20dea7a1f2452ab3174d",
+      "exitCode": 0
+    },
+    "queue-matrix.log": {
+      "sha256": "d6a2a695a32444e072c962ef381bac64b5d5a1843a8f3d63226c5d9674ae80b9",
+      "exitCode": 0
+    },
+    "resume-green.log": {
+      "sha256": "9ef9ced416833df9b2f280b3477a0da394e1840f2f5ca1eca52ac162a4568c0d",
+      "exitCode": 0
+    },
+    "resume-red.log": {
+      "sha256": "f5b45f1057f1d042aaaecf351612455f22bbc33483d2896bbb03130a63e46317",
+      "exitCode": 1
+    },
+    "typecheck-initial.log": {
+      "sha256": "7a5f126b6b2ae1787986da211e0ecea5b9454abc93616cc0d0e01ca6048c6312",
+      "exitCode": 2
+    },
+    "typecheck.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exitCode": 0
+    },
+    "v1-consumer.log": {
+      "sha256": "be95093c1b3bfcfd73c5e4bb8a26c4a8312f19058f906b3745621766e3c9b3f4",
+      "exitCode": 0
+    },
+    "v1-typecheck.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exitCode": 0
+    },
+    "v2-matrix.log": {
+      "sha256": "0f4713a46ee5cea570cd4b24cf9c2a9b10f749ab2c81632ed132b0e470181c98",
+      "exitCode": 0
+    },
+    "v2-before-compat-typecheck.log": {
+      "exitCode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scan-seam-queue.log": {
+      "exitCode": 0,
+      "sha256": "347bdd8e39c5a96705e31188bf09bff7893a4e8ffacdb0443eefdc096a4e00df"
+    },
+    "scan-seam-typecheck.log": {
+      "exitCode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "queueFinal": {
+    "command": [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "apps/server/src/conversation-queue/queue.test.ts",
+      "--no-cache",
+      "--configLoader",
+      "runner"
+    ],
+    "startedAt": "2026-10-06T04:51:15.358Z",
+    "endedAt": "2026-10-06T04:51:20.633Z",
+    "exitCode": 0,
+    "signal": null,
+    "log": "scan-seam-queue.log",
+    "selected": 32,
+    "passed": 32,
+    "target": "fac202e32cc4c223e2e6abc64c67d11d39e439b0"
+  },
+  "consumer": {
+    "sourcePath": "apps/server/src/conversations/conversations.test.ts",
+    "sourceSha256": "43546004f5eafb7b275206fd1bd1cb83744b4c9aa1006913b49e71f776dbaaa4",
+    "generatedSha256": "70a3a4a7a4a5867cce7d258a4fcf404e71c299f2713aa1c5b07381ab358ebb9b",
+    "startedAt": "2026-10-06T04:38:35.775Z",
+    "endedAt": "2026-10-06T04:38:53.036Z",
+    "exitCode": 0,
+    "changes": "Only test resource setup/cleanup and explicit migration11 registration. All original test cases/assertions retained. No production index edits."
+  },
+  "consumerCommand": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "docs/evidence/chat04/run-consumer.mjs"
+  ],
+  "typecheck": {
+    "command": [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--project",
+      "docs/evidence/chat04/tsconfig.json"
+    ],
+    "startedAt": "2026-10-06T04:51:20.634Z",
+    "endedAt": "2026-10-06T04:51:21.800Z",
+    "exitCode": 0,
+    "signal": null
+  },
+  "queueCleanup": {
+    "startedAt": "2026-10-06T04:51:16.175Z",
+    "endedAt": "2026-10-06T04:51:20.611Z",
+    "databaseName": "flow_chat04_24353_8b1d17f9",
+    "remaining": []
+  },
+  "consumerCleanup": {
+    "databaseName": "flow_chat04_consumer_53658_91eed5b6",
+    "at": "2026-10-06T04:38:53.019Z",
+    "remaining": []
+  },
+  "distinctTests": 54,
+  "countExplanation": "32 final queue cases + 22 original conversation consumer cases. Earlier 1/2/14/15/16/18 subsets and v1 consumer are not added. resume-red selected 2 and intentionally skipped 16.",
+  "models": 0,
+  "newCloud": 0,
+  "productionMount": "Owned by Execution Lead; not asserted from module fixtures.",
+  "runtimeTestTarget": "2f40ac20326dd4084f342297f94c7f1b668ffc7e",
+  "typeOnlyReviewFix": {
+    "path": "packages/contracts/src/conversations.ts",
+    "change": "ConversationCapabilities.queue literal true \u2192 boolean with compatibility comment",
+    "commit": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+    "runtimeBehaviorChanged": false,
+    "verification": "noEmit rerun exit0; original 32+22 behavior logs retained without redundant rerun"
+  },
+  "queueBeforeScanSeam": {
+    "command": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "node_modules/vitest/vitest.mjs",
+      "run",
+      "apps/server/src/conversation-queue/queue.test.ts",
+      "--no-cache",
+      "--configLoader",
+      "runner"
+    ],
+    "log": "v2-matrix.log",
+    "exitCode": 0,
+    "selected": 32,
+    "passed": 32,
+    "fixtureStartedAt": "2026-10-06T04:37:51.457Z",
+    "fixtureEndedAt": "2026-10-06T04:37:55.087Z",
+    "cliStartAt": "2026-10-06 04:37:51 UTC",
+    "cliDurationSeconds": 3.98
+  },
+  "typecheckBeforeScanSeam": {
+    "command": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--project",
+      "docs/evidence/chat04/tsconfig.json"
+    ],
+    "startedAt": "2026-10-06T04:40:32.386921+00:00",
+    "endedAt": "2026-10-06T04:40:33.446801+00:00",
+    "exitCode": 0
+  },
+  "scanSeamFix": {
+    "previousTarget": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+    "newTarget": "fac202e32cc4c223e2e6abc64c67d11d39e439b0",
+    "path": "apps/server/src/conversation-queue/queue.test.ts",
+    "change": "Both factory calls receive local options with automaticQueueScan:false; all original assertions retained",
+    "sourceDiff": "Only queue.test.ts differs among 15 scoped implementation/harness files",
+    "validation": "32 queue + noEmit rerun exit0; original 22 consumer logs retained because runtime product source is unchanged",
+    "integrationBoundary": "This fixed branch factory predates automaticQueueScan; it ignores extra option. Lead must separately verify integrated false seam and default true lifecycle; no HTTP/env switch."
+  }
+}
