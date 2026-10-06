@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-10-06T08:23:52.028174+00:00",
+  "source": "w01_owner bounded read-only proposal; root direction accepted",
+  "requirement": "U11/REQ42; future single actual UI integration, not another module",
+  "stage": "proposal only; no new tree/take/implementation",
+  "researchBaseline": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "futureBase": "Lead exact full main containing reviewed readability and CONTEXT02 5e8213 after current owners stop/release",
+  "scopes": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/queue/projection.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/conversation-context/projects.ts",
+    "apps/web/src/plugin-integration/knowledge.tsx",
+    "apps/web/test/conversation-outbox.test.ts",
+    "apps/web/test/conversation-projection.test.ts",
+    "apps/web/test/conversation-queue.test.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/conversation-context-integration.test.ts",
+    "apps/web/test/conversation-context-integration.fixture.ts",
+    "apps/web/test/conversation-context-integration.browser.ts",
+    "plans/wpf-context-i01-integration",
+    "docs/evidence/wpf-context-i01"
+  ],
+  "protectedReadOnly": [
+    "CONTEXT01 controller/selection/ContextPicker/CSS",
+    "CONTEXT02 receipts and queue/commands",
+    "ProfilePicker/ConversationQueue",
+    "official Thread and UI primitives",
+    "stream modules/shared/client/deps",
+    "other owners fixtures"
+  ],
+  "requirements": [
+    "explicit paginated authorized project selection, no implicit first project",
+    "create-only preparation uses one outbox receipt/key without model/turn; unknown freezes original profile/project",
+    "capability only trusted CREATE ACK/GET, legacy unprojected conversation remains plain text",
+    "deepfreeze optional knowledge, Send/Queue ordered fulltuple ACK guard before accept/bind",
+    "P01 unique trusted builtin/lifecycle plus host identity/grant bound before and after reads",
+    "asynchronous budget refusal preserves independent receipt/text/refs, never overwrites new draft",
+    "new own HTTPfixture may reuse existing starters; do not edit others fixtures"
+  ],
+  "noTestsApiModels": true,
+  "interfaceDetails": {
+    "stateIdentity": "App View.key survives draft-to-conversation rename; actual visibility and independent split membership",
+    "projects": "client.projects explicit paginated selection, default no project; workspace.read metadata allowed before knowledge capability, no implicit first selection",
+    "createOnly": "Outbox discriminated create/turn receipts, beginCreation and projection.prepare share original creationKey plus frozen profile/project; valid ACK binds snapshot/capabilities, no turn/model; unknown freezes config until same-key resolution",
+    "plugin": "P01 Knowledge action uses current Dialog; typed chat.composer.context panel; ui.layout can show preparation UI, workspace.read projects separately, private search/resolve require knowledge.read plus locked project and actual captrue before/after",
+    "sendAndQueue": "capture same text/ref generation for click or Enter; pass refs to5e821 frozen path; Send invokes shared guard after existing identity/text check; capfalse/missing or project mismatch rejects nonempty refs before send",
+    "errors": "budget400 retains receipt/text/refs; no silent truncation/drop refs, no oldACK/newdraft clearing or blind asynchronous MessageNotSentError"
+  },
+  "acceptance": [
+    "project0/40+pages, same-name identities and loadMore failure retain selection",
+    "prepare onlyPOSTconversation, capfalse remains plaintext, retry lost/wrong profile/project originalkey and no turn",
+    "4orderedrefs reach actualHTTP forSend/Queue, click/Enter and runningstartRun:false maintained",
+    "missing/wrongorder/wrongtupleACKunknown and samepayload/keyretry, budget failure retains newer draft/selection",
+    "project switching resets pickerbinding but nottext; established/legacy project immutable",
+    "split/hidden/offline/disable/close/newcenter sameIDs late search/resolve/create/turn isolation",
+    "collapsed0detail, explicitexpand1/cache, actualApp390themes keyboardDialog focus/reducedmotion",
+    "no realmodel/PG; limited combination on readability+stream/queue after accurate main input"
+  ],
+  "fixedSourceReferences": [
+    "32c App398-420/533-543/845-862",
+    "32c ConversationThread31-91",
+    "32c outbox8-54/59-83",
+    "32c projection218-279",
+    "32c queue/projection99/112",
+    "32c session69/104-111/190-216",
+    "32c plugins/types16-20/32-57/139-144;validation9-24/248-254",
+    "32c client154/159/180/327/335/355"
+  ]
+}

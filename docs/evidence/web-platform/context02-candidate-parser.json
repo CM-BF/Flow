@@ -1,0 +1,86 @@
+{
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "知识引用已冻结，排队回执会核对收到的引用",
+      "next": "独立审查后交付聊天接线所需的引用接口",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66",
+      "scopes": [
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/test/conversation-context-receipts.test.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-queue.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-CONTEXT02",
+    "owner": "w01_owner / gpt-6-astra ultra（派发指定）",
+    "branch": "codex/web-context-receipts",
+    "branchState": "implemented / awaiting-review",
+    "updatedAt": "2026-10-06T08:18:30.000Z",
+    "updatedRecord": "2026-10-06 08:18:30 UTC",
+    "todos": [
+      {
+        "id": "WPF-CONTEXT02-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[接口](../../docs/evidence/wpf-context-receipts/interface.md)与本人 live 领取核验"
+      },
+      {
+        "id": "WPF-CONTEXT02-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[原始检查](../../docs/evidence/wpf-context-receipts/README.md)，142 PASS/typecheck0"
+      },
+      {
+        "id": "WPF-CONTEXT02-03",
+        "state": "in-progress",
+        "owner": "w01_owner",
+        "evidence": "待固定实现独审与主线接收"
+      },
+      {
+        "id": "WPF-CONTEXT02-04",
+        "state": "pending",
+        "owner": "后继 owner 待派",
+        "evidence": "NOT_IMPLEMENTED：实际 Send/Queue UI、项目选择、create-only"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "fc113945ff73d1a43092d0a70b51e901aa4be1e2；实现 5e8213a564bd76e58feddb0c6470faa74bae1d66；metadata 单独提交",
+    "declaredDirty": "08:18:30Z 实现已提交，当前为本次证据/状态待提交；最终 HEAD/clean 以提交回执为准",
+    "checks": {
+      "state": "passed",
+      "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66",
+      "record": "PASSED 5e8213a564bd76e58feddb0c6470faa74bae1d66；142 局部/直接依赖，Web typecheck0；无 browser/真实中心"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；固定候选待独审/接收",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66"
+  }
+}

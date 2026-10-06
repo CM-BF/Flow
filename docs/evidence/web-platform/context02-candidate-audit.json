@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-06T08:19:53.777016+00:00",
+  "head": "6aedd8d809054943e9bc9d3a8919d664da1c2757",
+  "dirty": "",
+  "implementation": "5e8213a564bd76e58feddb0c6470faa74bae1d66",
+  "base": "fc113945ff73d1a43092d0a70b51e901aa4be1e2",
+  "paths": 21,
+  "scopeCount": 8,
+  "outside": [],
+  "hashes": [
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "sha256": "6f9b181aeeb01572901e2f735dfed9c1b7d859ecc1448cc7baf502d6a2c4a233"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "f4a5ffce6d10bec2f963eef32c07dd873f2e4e5db9d028fd99e6d8468da0167b"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "c66025cf60441ac84e29c9061c510ce6bf177d73b91e4a75a2c99ddb5daa0491"
+    },
+    {
+      "path": "apps/web/test/conversation-context-receipts.test.ts",
+      "sha256": "8e6d281bbfa365e89c0f67e631fc5c046b9685c1690babdcddea8fd0ced23637"
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "sha256": "2108d88687b3282f73a78219eed54abfbcacdaa776cf52b10c9a2e20997f266d"
+    },
+    {
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "sha256": "2991807a0b5e839c41359174979b1f3af74ad9f465fa94febf3ae7ec728725b6"
+    }
+  ],
+  "protectedDiffEmpty": true,
+  "markdown": 6,
+  "links": 26,
+  "broken": [],
+  "checksSource": {
+    "final": "direct-tests.log",
+    "count": 142,
+    "files": 5,
+    "durationMs": 569,
+    "startedAt": "2026-10-06T08:17:21Z",
+    "sourceBinding": "Executed immediately before the implementation commit; all six current bytes equal that commit.",
+    "earlierRed": "red-tests.log",
+    "earlierGreen": "module-tests.log",
+    "typecheck": "typecheck-final.log"
+  },
+  "review": "APPROVED root2026-10-06T08:19:33Z; independent124+18=142, author single142/tsc separate",
+  "limits": "Metadata/hash/scope/link verification only. No product checks/API/HTTP server/model/database repeated.",
+  "approvedMetadata": "6caccb90abb5437ed6726563acf46e745b5f161f",
+  "finalClean": true,
+  "finalParser": "errors[] implementation.errors[] humanComplete true integration review/checks same5e8213",
+  "handoff": "REVIEW_READY once via GoalOwner to ExecutionLead"
+}

@@ -1,9 +1,9 @@
 {
   "recordedAt": "2026-10-06T08:18:34.252105+00:00",
   "source": "workspace_panels_owner bounded read-only proposal relayed to root",
-  "taskCandidate": "CHAT-READABILITY (existing U11/REQ43)",
-  "stage": "proposal; no worktree/take/writes/tests",
-  "base": "Wait CHAT06I main receipt and release; do not infer moving main",
+  "taskCandidate": "WPF-CHATREAD01",
+  "stage": "COMMITTED take, implementation authorized; canonical pending owner first commit",
+  "base": "32c371d389a913f8dd71c3bd8b98dd0697411256",
   "scopeCandidates": [
     "apps/web/src/conversations/ConversationThread.tsx",
     "apps/web/src/conversations/conversations.css",
@@ -13,7 +13,10 @@
     "apps/web/test/conversation-readability.fixture.ts",
     "apps/web/test/conversation-readability.browser.ts"
   ],
-  "metadataScopes": "Own plan/evidence names to finalize at task take; total9literal",
+  "metadataScopes": [
+    "plans/wpf-chat-readability",
+    "docs/evidence/wpf-chat-readability"
+  ],
   "readOnlyProtected": [
     "apps/web/src/App.tsx",
     "official Thread",
@@ -27,5 +30,8 @@
     "measure baseline/final rect at1280x720 and390x844; only actual deltas, no invented target percentage",
     "reuse actual stream/queue/profile HTTP fixture; keyboard/focus and two themes"
   ],
-  "priority": "After stream integration, while CONTEXT02 pure receipt runs independently"
+  "priority": "After stream integration, while CONTEXT02 pure receipt runs independently",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability",
+  "branch": "codex/web-conversation-readability",
+  "claimReceipt": "chatread01-take-receipt.json"
 }

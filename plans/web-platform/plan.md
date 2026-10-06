@@ -93,15 +93,17 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 
 ## 当前 owner 与接口冻结
 
-本表只列当前可写权威来源，实际范围以[07:49账本与release回执](../../docs/evidence/web-platform/current-owner-observation-0749.json)为准，不重授权旧范围。跨Lead只有D04一套原子账本，claim数不是agent数。
+本节为固定a5内容/33bd已发布副本之后的持续管理增量；原批准target/hash仍不可变，新增管理行不倒填为旧发布内容或继承旧独审。当前事实与status逐项对应。
+
+实际领取由D04唯一原子账本控制，claim数不是agent数；详细原receipt见status与各自canonical。旧表为历史时点，不授权续写。
 
 | 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
 | --- | --- | --- |
-| WPF-CONTEXT01 | w01_owner / web-knowledge-selection / codex/web-knowledge-selection | bfecec43 v1，九新literal，已审baseb54；首3412347f已送登记，独立选择模块，不写App/Thread/现发送链 |
-| WPF-CHAT06I01 | workspace_panels_owner / web-conversation-stream-integration / codex/web-conversation-stream-integration | a7293487 v1，准确base6426；十三literal见[固定领取](../../docs/evidence/web-platform/chat06i01-take-receipt.json)，首0a497624已送登记，真实App接线 |
-| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写他人事实或main |
+| WPF-CONTEXT02 | w01_owner / web-context-receipts / codex/web-context-receipts | b4858792 v1，固定fc113八literal；5e8213已独审、final6caccb90已交Lead，实际知识App另片 |
+| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability / codex/web-conversation-readability | c832542c v1，固定32c九literal；正文与composer优先，保留折叠外error/unknown，首canonical待登记 |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅管理两目录；固定33bd发布已fc113逐字接收，authority不迁 |
 
-S01/PERF03已在6426接收并于07:49:40/41释放v2，ActivityI已在253b接收并释放122v2；更早任务的收口/release在父status及各原样receipt保留。原当前表逐字存[历史归档](../../docs/evidence/web-platform/owner-queue-history-before-0718.txt)，不作为现在写权。
+CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a已main32c，最后3b4a8b8 clean，e06a v2于08:21:14.735释放；9c6图保持固定，旧树只读。S01/PERF03及ActivityI更早已main/releases保留历史，不借旧权续写。
 
 ## 已确认决定与工程方案
 
@@ -117,8 +119,10 @@ S01/PERF03已在6426接收并于07:49:40/41释放v2，ActivityI已在253b接收�
 | --- | --- | --- |
 | 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
 | 已集成 / 原范围释放 | WPF-CHAT06S01与PERF03 | 3ac/f909已入6426，八source同批准目标；原d94/2ec已v2释放，保留模块/计数验证边界 |
-| 独立实施 | WPF-CONTEXT01知识引用选择 | 固定b54/九新scope；明确project、不可变citation、旧中心unsupported、展开才正文。Send/Queue知识透传另片 |
-| 实际App接线 | WPF-CHAT06I01增量正文 | 固定6426/十三scope已take，由panels独占App/Thread必要接缝；P01生命周期、读预算、身份、显式phase和原草稿/队列保留，模块源码只读 |
+| 已集成 / 原范围释放 | WPF-CONTEXT01知识引用选择 | 736ef已审并入fc113；九scope全停写/bfe v2释放；仅选择模块，真实App知识入口仍未实施 |
+| 已审待main | WPF-CONTEXT02知识引用回执 | 八scope纯逻辑5e8213已审/final6caccb90已交Lead；Queue实际guard，Send guard准备但projection未接 |
+| 独立实施 | WPF-CHATREAD01聊天可读性 | 原CHAT06I已main/released；新32c独立树已c832v1九scope正式take；沿REQ43，不抢CONTEXT02 |
+| 已集成 / 待owner释放 | WPF-CHAT06I01增量正文 | fixed9da/e30已main32c/十一源码同；rootR1 CLOSED，owner只作main metadata与停止全部scope，再fresh release |
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
 | 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前三active本队claim按真实范围防交叉；两个独立实现owner与管理者不扩大agent并发。GO说明Mika仍2槽；仅按明确带截止时间的quiet lease协调重负载，不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
@@ -153,9 +157,12 @@ S01/PERF03已在6426接收并于07:49:40/41释放v2，ActivityI已在253b接收�
 - [x] **WPF-001-24** WPF-CHAT06S01：七新scope独立模块消费完整已审fa9的公开stream协议，严格patch校验、增量projection与纯message适配；隐藏/连接/attempt隔离，final仅按明确settlement，实际Thread接线在ActivityI交权后另领。
 - [x] **WPF-001-25** WPF-PERF03：五scope独立30b树按不可变turn身份复用消息对象；同revision动态正文/来源/截断、历史排序与跨中心不误复用，真实installed core计数，不许宣称UI时延改善。
 
-- [ ] **WPF-001-26** WPF-CONTEXT01：固定b54九新scope独立知识引用选择模块；有限搜索/显式正文/完整citation身份/4项与byte预算/保序深冻/连接和readiness隔离，App与Send/Queue知识透传后继另领。
+- [x] **WPF-001-26** WPF-CONTEXT01：固定b54九新scope独立知识引用选择模块；有限搜索/显式正文/完整citation身份/4项与byte预算/保序深冻/连接和readiness隔离，App与Send/Queue知识透传后继另领。
 
-- [ ] **WPF-001-27** WPF-CHAT06I01：完整已审6426基线领取十三scope接入增量正文；P01唯一启停/授权、当前turn有限读预算/连接可见性/单Thread语义/phase提示，实际App fixture验证。
+- [x] **WPF-001-27** WPF-CHAT06I01：完整已审6426基线领取十三scope接入增量正文；P01唯一启停/授权、当前turn有限读预算/连接可见性/单Thread语义/phase提示，实际App fixture验证。
+
+- [ ] **WPF-001-28** WPF-CONTEXT02（沿REQ42）：纯引用冻结/回执片，固定fc113八scope，5e8213已审/final6caccb90已交Lead；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)。main收口另计，Send projection与实际UI继续开放。
+- [ ] **WPF-001-29** WPF-CHATREAD01（沿REQ43）：已批准下一可读性片，九literal精确候选见[范围](../../docs/evidence/web-platform/readability-proposal.json)；拟独立web-conversation-readability，canonical计划为plans/wpf-chat-readability（领取前尚不存在，不伪造链接）。main/release→fresh take→首canonical登记后关联，稳定配置收详情但error/unknown必须可达。
 
 ## 验收、风险与持续方式
 

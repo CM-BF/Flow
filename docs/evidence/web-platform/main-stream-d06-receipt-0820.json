@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06T08:20:08.684126+00:00",
+  "observedRefs": {
+    "HEAD": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+    "main": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+    "origin/main": "32c371d389a913f8dd71c3bd8b98dd0697411256"
+  },
+  "clean": true,
+  "source": "ExecutionLead receipt plus manager fixed Git verification",
+  "tasks": [
+    {
+      "task": "WPF-CHAT06I01",
+      "target": "9dafff7702f700e8b89f8ccee1992bce9ccb63d1",
+      "final": "e30a9a3b7e36920251d8b472399736f9790e6e0c",
+      "paths": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/conversation-stream-integration.browser.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "ancestry": true,
+      "scopeEqual": true
+    },
+    {
+      "task": "D06",
+      "target": "2c857bdc83e4769c5099de2f37f4a7f2140e834b",
+      "final": "3a0f8a1770c05169b33727d86a1b83a8aafea31c",
+      "paths": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06/stream/browser-check.mjs",
+        "docs/evidence/d06/stream/preview.mjs",
+        "docs/evidence/d06/stream/source-audit.mjs"
+      ],
+      "ancestry": true,
+      "scopeEqual": true
+    }
+  ],
+  "noTestsApiModels": true
+}

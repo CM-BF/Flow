@@ -29,3 +29,11 @@ clean-code安全停点：分别保留固定已审内容、后续事实metadata�
 同一交付的完整REVIEW_READY由本管理者一次发GO转ExecutionLead；root没有新decision/blocker时不重复SHA、claim和验证矩阵。后续消息只写taskID、实际变化、canonical路径和需动作，旧证据用链接。原take/capability/验证要求不变；没有新部署回执不重复API，没有实现变化不重复产品测试。新source登记、blocking接口、固定review-ready和main接收仍是可行动里程碑。
 
 CHAT-READABILITY下一片只读范围已由panels提出并交root：七产品/专测路径加自有plan/evidence共九literal，见[精确候选](readability-proposal.json)。等CHAT06I正式main/全停写release后才定新base、独立树与fresh take；现在未建树/领取/实现。CONTEXT02候选5e821已交root独立代码审，管理等待owner最终metadata后只做scope/parser/docs，不以测试通过替代审查。
+
+D05既有后继观察（GO实际CUA，非本队复验）：4320已上线9c6固定图/五视图；1280×720初入默认100%时右侧runner被局部画布横裁，现“适配”71%能同屏可读。未来renderer安全窗口考虑首次适配可用宽度，之后尊重用户zoom，不因刷新重置。非blocking，不扩已收口D06、不新task，readability优先。
+
+ExecutionLead后继实质回执：CONTEXT02已入I02候选（六source精确/Web组合types，未重142），因SVC零query升级准备main仍32c，未正式main前保留b485，不提前release。Lead报告95sources已实采，管理只引用该来源/无精确采样时刻，不fetch。
+
+既有U11 steer后继：GO批准CHAT10独立后台task-bound只读admission与可信host开关；DTO未冻结，只记录sender独立模块候选，旧attemptAvailable不改义，GET不授权。个人steer仍off，无新query许可；不抢App/Thread/CTX，不把计划视为已有UI。
+
+REQ42未来实际App只读20scope方案及八组旅程已归[候选](context-app-integration-proposal.json)：显式project分页、真正create-only receipt、P01唯一知识面板、Send/Queue冻结与有序ACK、双split/隐藏/连接隔离。等readability和CONTEXT02同时main及原owner释放后一个UI片接通，不再拆纯模块；当前未新take/建树/测试。
