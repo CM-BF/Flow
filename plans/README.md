@@ -108,3 +108,6 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - WPF-PERF03：聊天消息复用；唯一source `web-message-reuse/plans/wpf-perf03-message-reuse`，不变消息转换优化实施，不声称浏览器延迟收益。
 
 - WPF-CONTEXT01：聊天知识引用选择；唯一 source `web-knowledge-selection/plans/wpf-context01-knowledge-selection`。独立选择模块已领取，实际 Send/Queue 接线仍后继；登记不代表功能完成。
+
+- WPF-CHAT06I01：聊天逐段正文接入；唯一 source `web-conversation-stream-integration/plans/wpf-chat06-stream-integration`，已领取独立产品接线范围，未交付。
+- O09：原生执行单个目标节点；唯一 source `native-goal-node-execution/plans/o09-native-node-execution`，先验证只读执行与固定输入，真实模型验收尚未授权。
