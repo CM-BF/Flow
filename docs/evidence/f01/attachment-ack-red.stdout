@@ -1,0 +1,131 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts (47 tests | 1 failed | 46 skipped) 22ms
+   ↓ HTTP 200 unconfirmed creation ACK {} is unknown without hidden retry or raw data
+   ↓ HTTP 200 unconfirmed creation ACK {not-json is unknown without hidden retry or raw data
+   ↓ HTTP 200 unconfirmed creation ACK null is unknown without hidden retry or raw data
+   ↓ HTTP request identity is captured from the sent bytes before the caller can mutate its input
+   ↓ HTTP mismatched accepted turn is unknown and never becomes delivery success
+   ↓ known receipt identity accepts additive fields without discarding them
+   ↓ creation title changes cannot confirm the frozen request
+   ↓ creation harness changes cannot confirm the frozen request
+   ↓ creation projectId changes cannot confirm the frozen request
+   ↓ creation profile changes cannot confirm the frozen request
+   ↓ creation model changes cannot confirm the frozen request
+   ↓ creation thinking changes cannot confirm the frozen request
+   ↓ creation tools changes cannot confirm the frozen request
+   ↓ creation revision changes cannot confirm the frozen request
+   ↓ creation timestamp changes cannot confirm the frozen request
+   ↓ creation capabilities changes cannot confirm the frozen request
+   ↓ creation replayed changes cannot confirm the frozen request
+   ↓ creation field helper preserves optional profile/project presence and canonical defaults for a later GET
+   ↓ turn conversation mismatch stays unknown
+   ↓ turn number mismatch stays unknown
+   ↓ turn revision mismatch stays unknown
+   ↓ turn text mismatch stays unknown
+   ↓ turn task mismatch stays unknown
+   ↓ turn telemetry mismatch stays unknown
+   ↓ turn effective mismatch stays unknown
+   ↓ turn assistant mismatch stays unknown
+   ↓ the maximum response revision is legal while oversized revisions and request exhaustion are rejected
+   ↓ ordered frozen context is matched through turn admission and never fetched as body
+   ↓ context order cannot pass as additive metadata
+   ↓ context project cannot pass as additive metadata
+   ↓ context source cannot pass as additive metadata
+   ↓ context version cannot pass as additive metadata
+   ↓ context digest cannot pass as additive metadata
+   ↓ context kind cannot pass as additive metadata
+   ↓ context start cannot pass as additive metadata
+   ↓ context end cannot pass as additive metadata
+   ↓ context byteLength cannot pass as additive metadata
+   ↓ context freezeVersion cannot pass as additive metadata
+   ↓ context freezeFlag cannot pass as additive metadata
+   ↓ context contextDigest cannot pass as additive metadata
+   ↓ context executionDigest cannot pass as additive metadata
+   ↓ context templateVersion cannot pass as additive metadata
+   ↓ context missing cannot pass as additive metadata
+   ↓ context absent/empty and reference/byte bounds preserve the existing v1 contract
+   ↓ available reply identities are tied to the accepted task and attempt without claiming execution completion
+   ↓ nested turn knowledge is frozen from the actual HTTP body, not the caller object after dispatch
+   × attachment v2 ACK uses the same frozen public matcher and lost confirmation keeps the original HTTP identity 22ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > attachment v2 ACK uses the same frozen public matcher and lost confirmation keeps the original HTTP identity
+AssertionError: promise resolved "{ conversation: { …(8) }, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "conversation": {
++     "createdAt": "2026-10-06T00:00:00Z",
++     "harness": "claude",
++     "id": "05e5e193-1169-4cfc-8c89-60a6752cbabd",
++     "projectId": "project-a",
++     "requested": {
++       "model": "runner-default",
++       "thinking": "disabled",
++       "tools": "configured-readonly",
++     },
++     "revision": 1,
++     "title": "Original",
++     "updatedAt": "2026-10-06T00:00:00Z",
++   },
++   "replayed": false,
++   "turn": {
++     "assistant": {
++       "reason": "execution-pending",
++       "state": "pending",
++     },
++     "conversationId": "05e5e193-1169-4cfc-8c89-60a6752cbabd",
++     "createdAt": "2026-10-06T00:00:00Z",
++     "effective": {
++       "model": null,
++       "source": null,
++       "thinking": "unknown",
++       "tools": null,
++     },
++     "id": "84090adc-196b-4811-8ece-5141f371c968",
++     "number": 1,
++     "task": {
++       "createdAt": "2026-10-06T00:00:00Z",
++       "harness": "claude",
++       "id": "8746174e-ff9a-4dac-bbbc-b44240d4b3be",
++       "status": "queued",
++       "title": "Original",
++       "updatedAt": "2026-10-06T00:00:00Z",
++       "verificationStatus": "pending",
++     },
++     "telemetry": {
++       "kind": "execution",
++       "taskId": "8746174e-ff9a-4dac-bbbc-b44240d4b3be",
++       "title": "Execution",
++     },
++     "user": {
++       "role": "user",
++       "text": "  Original 中文🙂
++ ",
++     },
++   },
+  }
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:168:100
+    166|   let valid = false;
+    167|   const { client, requests } = await http(() => JSON.stringify(valid ?…
+    168|   await expect(client.submitConversationTurn(value.conversation.id, in…
+       |                                                                                                    ^
+    169|   valid = true;
+    170|   expect((await client.submitConversationTurn(value.conversation.id, i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 46 skipped (47)
+   Start at  04:04:05
+   Duration  333ms (transform 126ms, setup 0ms, import 225ms, tests 22ms, environment 0ms)
+

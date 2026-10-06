@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:57:01 UTC / mainc450c2da |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:12 UTC / main2e71fabc |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,7 +11,7 @@
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | 固定3a12工程薄client已独审；1c081挂载候选待组合检查 |
-| 工作树dirty状态 | 产品已固定；本提交仅补证据与审查待办 |
+| 工作树dirty状态 | 附件ACK匹配器已固定；薄client/生产挂载准备中 |
 | 工作分支状态 | in-progress |
 | 检查状态 | native目录3HTTP/types与工程4HTTP/types分别通过并独审；mount尚未验证，0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
@@ -21,8 +21,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 原生目录与专用工程配置已有共用读取接口，正在接入中心生产入口。 |
-| 下一可用交付 | 专用工程配置的完整受理与启动恢复，并保持普通聊天隔离。 |
+| 当前产出 | 已审工程配置已进入主线；附件回执一致性已验证，正在接入公共上传与读取。 |
+| 下一可用交付 | 附件上传、固定引用与公开读取接线，供终端和Web共同消费。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -149,3 +149,5 @@
 | F01-31 | in-progress | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
 
 | F01-32 | in-progress | Lead / Mika context owner | [027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)；已交同级fresh amend，后续固定DDL/真实PG及共享接线待验，不改个人DB |
+
+11:12 管理安全点：工程domain/client/mount各有独审且main2e71已接，组合root typecheck仍因既有RELEASE fixture tuple类型失败，已交Web原owner窄修；不冒称组合通过。附件ACK v2 target df8d077accea7a28536f1f56407a729c41e4639c 47/47/root types0待独审，不扩domain批准。027已正式给Mika原owner，现50/50含9PG、v5 DDL已实装并独审中，不再等待编号。
