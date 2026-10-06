@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T17:53:11.884531+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "status": "APPROVED",
+  "source": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+  "scope": [
+    "apps/web/src/execution-profiles/selection.ts"
+  ],
+  "bytes": 5068,
+  "sha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0",
+  "findings": [],
+  "review": "Full selection module and exact one-line readonly type delta read. Existing clone, strict parse and ordinary-chat access allowlist unchanged; no any/cast/new UI/runtime logic introduced.",
+  "validation": {
+    "kind": "actual integrated root noEmit",
+    "exitCode": 0,
+    "raw": "message-settings-root-types-final.txt",
+    "process": "message-settings-root-types-final.json"
+  },
+  "limits": "Type compatibility only; no new message-settings UI or provider capability approval",
+  "testsRun": 0,
+  "providerCalls": 0
+}

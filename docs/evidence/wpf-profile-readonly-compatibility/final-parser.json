@@ -1,0 +1,95 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "id": "WPF-MATURE-02",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "只读配置选择兼容修复已集成，组合类型检查通过，原运行校验不变",
+      "next": "本片段已交付",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+      "scopes": [
+        "apps/web/src/execution-profiles/selection.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-PROFILEC02",
+    "owner": "w01_owner / gpt-6-astra / ultra",
+    "branch": "codex/web-profile-readonly-compatibility",
+    "branchState": "completed / approved",
+    "updatedAt": "2026-10-06T17:55:42.000Z",
+    "updatedRecord": "2026-10-06 17:55:42 UTC",
+    "todos": [
+      {
+        "id": "PROFILEC02-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[源绑定](../../docs/evidence/wpf-profile-readonly-compatibility/source-manifest.json)，仅一行标注"
+      },
+      {
+        "id": "PROFILEC02-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[Lead组合检查](../../docs/evidence/wpf-profile-readonly-compatibility/message-settings-root-types-final.json)；本地检查取消/NOT_RUN"
+      },
+      {
+        "id": "PROFILEC02-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[独审](../../docs/evidence/wpf-profile-readonly-compatibility/profilec02-independent-review.json)、[固定main对照](../../docs/evidence/wpf-profile-readonly-compatibility/main-close.json)"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "base 4015c667f1e2b833755b2fda6ed205fb951ec576；实现 target 2d1e2ade19941e9a8b38f18148e6a2d434f8c730；本次后继仅 metadata",
+    "declaredDirty": "主线收口前 source/HEAD clean；此后只写本片metadata，提交后clean回执交管理释放",
+    "checks": {
+      "state": "passed",
+      "target": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+      "record": "PASSED 2d1e2ade19941e9a8b38f18148e6a2d434f8c730（Lead实际组合root noEmit）；本地checks NOT_RUN，重复检查已取消"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 2d1e2ade19941e9a8b38f18148e6a2d434f8c730；Execution Lead独审",
+    "mainRecord": "INTEGRATED 8d84d529a0756116bd0fc8bad969d61a6c26248e；固定main/target/current selection逐字同",
+    "next": "本片类型兼容修复已经主线接收；normalpush/双端clean后全四scope停止写，由管理fresh CAS release。没有新增UI功能，不代表完整MATURE02完成。单一权威 [main收口证据](../../docs/evidence/wpf-profile-readonly-compatibility/main-close.json)。",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED — Execution Lead独立审查，限定类型兼容",
+    "target": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730"
+  }
+}
