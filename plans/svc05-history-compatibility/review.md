@@ -69,3 +69,5 @@ main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；
 ### 期限P2复审及唯一实际恢复
 
 独立native_center_owner APPROVED_PREPARATION source d66bdc41f6f39fbeca93e1bf752bf2729526936e，53绑定与2纯检查核实，P2 CLOSED，0重跑。原报告已归档deadline-independent-review.json。其后Lead明确一次窗口，实际run1945 exit0/2135ms/newcenter74763/8checks全true；操作原始证据等待独立忠实性审查，不作者自批。原center退出原因未知、无新版本发布。
+
+2026-10-06 19:47 UTC：Execution Lead对实际run1945 before/after/result独立只读比对，64表+8组检查成立，19:46:35关闭source窗口并恢复clean main22a，无新probe/重跑。此为同版本恢复事实核对；新发布和个人故障根因不在结论中。原20项operation-manifest/源码/raw保持，source-window-closed另存。

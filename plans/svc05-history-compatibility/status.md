@@ -12,7 +12,7 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 两源码已冻结；仅本次自身 metadata 收口后提交 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
 | 已集成main状态 / HEAD | 操作796d的21绑定内容已main 888cfd3b1c414b32298661f1fdf5f33bddbe956c；非祖先同内容；实际仍362+caa1/v2，新发布未执行 |
 | 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
@@ -34,7 +34,7 @@
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
 | SVC05H01-05 | pending | Execution Lead窗口 / owner | 新版本发布仍待retained报告；同版本恢复不替代 |
-| SVC05H01-06 | in-progress | assignment_review | 已单次ready/保留检查全true，操作证据待独审；原期限P2已关闭 |
+| SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 
 ## Dashboard
 
@@ -69,3 +69,5 @@
 2026-10-06 19:43 UTC：中心operator独审仅P2期限，原回执保留；外层标准进程监督已固定，2/2无服务定向检查通过，阻塞写不会推迟operator停止且不向服务发信号。个人恢复仍NOT_RUN；等待唯一复审/固定窗口。
 
 2026-10-06 19:46 UTC：中心恢复审批svc05h-center-20261006-1945一次执行exit0/2135ms、新74763，八组保留检查true、lock释放；0operator模型/任务/其他role signal。64flow全列摘要/27迁移/runner15均同，保留原exit1与未知根因。见[operation-analysis](../../docs/evidence/svc05-history-compatibility/center-recovery/operation-analysis.json)；不把本次同版本恢复称新版本发布。
+
+2026-10-06 19:47 UTC：Lead已独立比对恢复原始before/after/result，64表与8组检查成立；19:46:35窗口关闭，原checkout回clean main22a。原操作raw/manifest不改，无新增探针。实际center仍362、runner15、Web原caa1/v2；本次记录待main接收，新版发布TODO05保持open。
