@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "integration",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "首页摘要避免父子重复占位，详情可直接打开子任务，窄屏键盘检查通过",
-    "next": "独立审查后接入执行看板",
+    "output": "首页摘要与父子详情已通过独立审查",
+    "next": "主线接收后更新执行看板",
     "blocker": {
       "state": "none",
       "text": ""
@@ -23,11 +23,11 @@
   "checks": {
     "state": "passed",
     "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
-    "record": "PASSED c1de71fd316f9bba1ea5f030f5a54d2332d09044：27项Node定向检查；6组浏览器检查、5图、0页面错误；累计8.374秒，fixture已清理"
+    "record": "PASSED c1de71fd316f9bba1ea5f030f5a54d2332d09044：作者27项Node；root独立22项通过；作者6组浏览器检查、5图、0页面错误；累计8.374秒，fixture已清理"
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
+    "state": "approved",
+    "record": "APPROVED**",
     "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044"
   },
   "todos": [
@@ -47,7 +47,7 @@
       "id": "WPF-DASHSUM01-03",
       "state": "in-progress",
       "owner": "w01_owner",
-      "evidence": "固定候选已备；独立review及main尚待"
+      "evidence": "固定target已获独立批准并正常推送；main接收仍待"
     }
   ],
   "implementation": {
