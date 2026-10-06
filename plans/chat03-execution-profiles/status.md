@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 04:12 UTC |
+| 最近更新时间 | 2026-10-06 04:16 UTC |
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-profiles |
 | Branch | codex/execution-profiles |
 | 工作基线 / HEAD | base149f50eb8440ed56e49cbdddb83f37bd18d6caa0；实现a28ca199905b2d0aac95a0d440c8bc525380cdc3；后续仅本plan/evidence metadata |
 | 工作树 dirty 状态 | 实现交付时clean；本次仅target metadata，提交后clean |
-| 工作分支状态 | 实现完成，待独立review |
+| 工作分支状态 | 实现已独立APPROVED，待Lead主线接收 |
 | 检查状态 | PASSED a28ca199905b2d0aac95a0d440c8bc525380cdc3：局部44/44 + profile补充6/6（其中4条重叠）、typecheck/diffcheck；中止旧组合不算全过 |
-| Review | NOT_STARTED |
+| Review | APPROVED a28ca199905b2d0aac95a0d440c8bc525380cdc3（Mika/gpt-6-astra只读，无重跑） |
 | 已集成 main 状态 / HEAD | 未集成；base为候选不是main能力 |
 | 实现目标 | a28ca199905b2d0aac95a0d440c8bc525380cdc3 |
 | 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/conversations.ts, apps/server/src/execution-profiles/, apps/server/src/conversations/, apps/server/src/tasks.ts, apps/server/src/runners.ts, packages/storage/migrations/010-execution-profiles.sql, apps/runner/src/execution-profiles.ts, apps/runner/src/execution-profiles.test.ts, apps/runner/src/configuration.ts, apps/runner/src/configuration.test.ts, apps/runner/src/main.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 已配置目录与持久选路通过0模型纵向验证，普通启动入口已接入 |
-| 下一可用交付 | 独立审查与生产共享入口接线；U11由外部owner消费 |
+| 下一可用交付 | Lead接收已审profile/shared mount；U11由外部owner消费 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 新profile持久目录与task pin/runner校验；分支架构文档本owner维护，dashboard固定图待Lead在集成target更新 |
