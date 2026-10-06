@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:00 UTC / 2026-10-06 05:49 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:13 UTC / 2026-10-06 05:49 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -13,8 +13,8 @@
 | 已集成main状态 / HEAD | `3d4985fca060155435b159e0467815bf8e88b8b8`；已含队列UI、K01、O06、SVC02与D06固定图；常驻center/runner实际fb906cb/v3接受，后继main不自动重载 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 聊天排队、知识原文检索和真实预览安全更新已交付；正在接入可追溯工具活动与引用上下文 |
-| 下一可用交付 | 验证真实运行中排队和同会话回复；让聊天按需显示工具进度与知识依据 |
+| 当前产出 | 真实聊天运行中排队、同会话回复和后台继续已验证；正在接入可追溯工具活动与引用上下文 |
+| 下一可用交付 | 让聊天按需显示真实工具进度与固定版本知识依据 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -72,3 +72,5 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 2026-10-06 05:01 UTC：[完整矩阵](full-plan-matrix.md)逐项核698ffcd并保留22原验收。真实产品61228需首次认证；center/runner仍75a33进程，Web是Vite可更新。O04固定片段待Root独审，CTX02/B03独立推进，B02方法批准待集成；无新模型调用。D07首屏下一交付选择与外部DPERF去重分别排队，摘要不堆技术交接。
 
 2026-10-06 05:20 UTC：矩阵已核63源实际快照及main；已审片段与未完成自然语言/插件生命周期/语义检索/工程harness范围分别保留。服务未重启，无新增模型调用。
+
+2026-10-06 06:13 UTC：独立新QUEUE真实预算2/2封存，GO接受b8e0fed证据，保守SDK费用和$0.012396，非账单/增量成本；原CHAT第二轮旧弱断言不被覆盖。K02/O07已独审待主线接收，CHAT05待Mika独审，K03/X04/Web活动范围各自已领取，主线仍3d。
