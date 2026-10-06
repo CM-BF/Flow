@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:18:39 UTC |
+| 最近更新 | 2026-10-06 17:25:36 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 小task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,18 +11,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash |
 | Branch | codex/assistant-stream-runner-hash |
 | 工作基线 / HEAD | bd14f984e3927df139815597c4c3171af84ec4b7 / metadata HEAD由Git读取 |
-| 工作树dirty状态 | 正在准备baseline/专测/metadata；产品仍基线 |
+| 工作树dirty状态 | 准备文件已固定；产品仍基线，实际dirty由Git读取 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 等待已准备命令与Mika小检查窗口 |
+| 检查状态 | NOT_RUN 专测/有界命令已就绪，等待Mika小检查窗口 |
 | 已集成main状态 / HEAD | 本片未集成；base已由Lead provision |
 | 实现目标 | 尚未固定 |
 | 实现范围 | apps/runner/src/assistant-stream/accumulator.ts, apps/runner/src/assistant-stream/accumulator-incremental.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 已固定旧行为作为公开输出对照，正在减少流式正文重复哈希 |
+| 当前产出 | 固定公开输出对照与5专测；自有cache/TMP隔离及全部raw预算已准备 |
 | 下一可用交付 | 保持流式内容与摘要完全相同的局部优化及字节证据 |
-| 当前阻塞 | ACTIVE: 检查命令准备完成后等待Mika串行小窗口；实现准备可继续 |
+| 当前阻塞 | ACTIVE: 等待Mika串行小检查窗口，命令/预算已固定，尚未运行 |
 | 需用户决定 | NONE |
 | Review | NOT_STARTED |
 

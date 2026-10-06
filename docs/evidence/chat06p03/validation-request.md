@@ -12,3 +12,5 @@
 config产品闭包为本树10个源；冻结baseline的两文件仍同原相对深度，公有合同不替换为main。测试仅低limit case同时mock该公共合同的两个常量；其余case全生产常量。外部直接依赖既有main public安装Vitest4.0.18/TypeScript5.9.3/Zod4.6.5/SDK0.3.290纯types/@typesNode24.19.1；pnpm9.15.4为repo固定packageManager，无安装或全库构建。无新dependency/loader/framework。
 
 所有global spy在finally/afterEach恢复，Hash.update/byteLength计数器用saved原函数以免自污染；比较实际总输入含相同frame指纹和id开销。精确原输出用toEqual完整比较；不从计数字节推导CPU/SLO。生产改动仅Block/seal，publiccoalescer仍原blob。
+
+准备审查修正：driver在预约后立即登记一个own mkdtemp目录的path/dev/ino，向全部checks设置TMPDIR/TMP/TEMP，Vite用显式CHAT06P03_CACHE_DIR且缺失即拒绝。所有child group/stdio确认结束后，按原inode统计并仅删除该目录；未知保留path/identity并FAIL。stream最多1,984KiB，剩64KiB用于measurementJSON/reservation/receipt/CLI；最终CLI逐文件实算全部本次raw，总限仍2MiB。0依赖目录写入/清理。
