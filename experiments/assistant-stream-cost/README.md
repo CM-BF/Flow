@@ -30,3 +30,13 @@
 一次矩阵，3 tasks/3 attempts/3 sessions，84个正文patch，正文总输入98304B；无额外warmup任务或自动重试。最长30秒含setup/校验/清理，前20秒停止新增工作，至少10秒清理；每HTTP/SQL操作共享deadline。最多1个中心进程、无执行runner进程、1个观察pool，OS动态loopback端口与UUID唯一临时DB；创建前拒绝既存。全部自有DB/临时文件/原始证据合计上限64MiB，单HTTP响应体1MiB上限，最多256个HTTP请求（含有界claim轮询）。先app.close，再observer pool.end，确认自有DB连接0后普通DROP；不强制踢连接、不碰既有服务。0模型调用/真实用户文件/新云。
 
 只有Mika独审入口且GO/Lead给明确窗口后才可开始该PG矩阵；本合同和纯单测本身不产生任何测量结果。修改预算/失败后重跑须重新协调，不能换label自行再测。
+
+## 运行入口准备（尚未运行）
+
+`run.mjs`为唯一监督入口；先读本feature内明确的window authorization JSON（taskId、windowId、notBefore/notAfter、tasks=3、patches=84、maxDurationMs=30000），必须尚有完整30秒窗口。检查clean HEAD及apps/packages/lock相对fa9零diff，`run-start.json`用wx独占整个矩阵，换label不能重跑。parent仅持自有DB管理连接；一个child运行本WT真实center与观察pool，0执行runner/SDK/provider。20秒截止发送stop，保留10秒回收；正常app.close/pool.end退出后自有库连接必须为0，才普通DROP。若只能回收自有child则整个实验FAILED，保存退出/残留事实，不将强制回收称成功。CREATE ACK未知时也只查询自己预先确认不存在的唯一库再清理。
+
+每patch观测使用request header关联Fastify onRequest ALS。查询归属在Client.query发起时固定，完成时不能借用下一窗口。记录Promise/callback/同步失败及COMMIT尝试，保留原返回值/错误；不把失败当零查询。SQL数量是Client.query调用数，不把同调用的多语句拆为多个查询；多result rows合并后的decoded JSON计量也不冒称wire。自定义Query对象不受此局部观察器支持，遇到显式标instrumentationErrors并让矩阵失败。Node named createHash通过syncBuiltinESMExports同步；仅已知完整prefix逐字节一致才归入prefix hash，长度相同不足以分类。比较/JSON sizing有额外开销，HTTP时延包含这些观察成本；hash computeMs仅update/digest调用墙钟，非CPU归因。
+
+sample/task/claim经自有IPC保存进度，sample发送在HTTP计时之外、整窗时间之内；超时若没有最终worker结果，不能把未收到的执行事实猜成成功或零消费。完整失败样本与清理状态保存。最终结果保留公开patch页、逐请求SQL/哈希统计和储存查询；无真实凭据或用户正文。
+
+第三方运行依赖复用主仓已有安装，缺少的npm-package-arg/pacote/ssri及类型复用m2-shared-foundation现有相同版本（见dependency-runtime.json）；runtime paths指明确第三方入口，@flow/contracts固定本WT packages/contracts/src/index.ts，不读moving main内部包。types配置单独指同版本声明文件，noEmit。imports.ts只导入factory和核pg.Client identity，不调用factory/Pool、不listen或连接PG。纯单测的Fastify inject只在内存验证ALS，无监听端口或数据库。

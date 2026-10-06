@@ -7,5 +7,5 @@ const repository = dirname(resolve(execFileSync('git', ['rev-parse', '--git-comm
 const requireDependency = createRequire(resolve(repository, 'package.json'));
 export default {
   resolve: { alias: [{ find: /^vitest$/, replacement: resolve(dirname(requireDependency.resolve('vitest/package.json')), 'dist/index.js') }] },
-  test: { include: ['experiments/assistant-stream-cost/workload.test.ts'], fileParallelism: false, testTimeout: 5000 },
+  test: { include: ['experiments/assistant-stream-cost/*.test.ts'], fileParallelism: false, testTimeout: 5000 },
 };
