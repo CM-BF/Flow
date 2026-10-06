@@ -1,7 +1,7 @@
 import {
   CONVERSATION_CONTEXT_LIMITS, KNOWLEDGE_LIMITS, conversationCreationSchema, conversationTurnSchema,
-  conversationContextSelectionSchema, executionProfileReferenceSchema, idSchema, knowledgeCitationSchema,
-  type ConversationCreated, type ConversationCreation, type ConversationTurnAccepted, type ConversationTurnAdmission, type KnowledgeCitation,
+  conversationContextSelectionSchema, parseAttachmentContextReceipt, executionProfileReferenceSchema, idSchema, knowledgeCitationSchema,
+  type ConversationCreated, type ConversationCreation, type ConversationTurnAccepted, type ConversationTurnAdmission, type KnowledgeCitation, type AttachmentReference, type AttachmentDescriptor,
 } from '@flow/contracts';
 
 /** A successful HTTP response did not prove acceptance of the caller's frozen request. */
@@ -58,8 +58,15 @@ function citation(value: unknown): KnowledgeCitation {
 }
 const citationKey = (ref: KnowledgeCitation) => JSON.stringify([ref.projectId, ref.sourceId, ref.version, ref.contentDigest, ref.locator.kind, ref.locator.start, ref.locator.end]);
 
-/** Metadata-only v1 matcher. Unknown template versions require an explicit future decoder. */
-export function assertConversationContextMatches(knowledge: readonly KnowledgeCitation[] | undefined, value: unknown): void {
+/** Metadata-only matcher; nonempty attachments explicitly select the reviewed v2 contract.
+ * Legacy callers remain v1. A malformed response always retains unknown admission. */
+export function assertConversationContextMatches(knowledge: readonly KnowledgeCitation[] | undefined, value: unknown,
+  attachmentInput?: { projectId: string; attachments: readonly AttachmentReference[]; descriptors?: readonly AttachmentDescriptor[] }): void {
+  if (attachmentInput?.attachments.length) {
+    try { parseAttachmentContextReceipt({ ...attachmentInput, knowledge }, value); }
+    catch { throw new UnknownConversationAcknowledgementError(); }
+    return;
+  }
   const parsed = conversationContextSelectionSchema.safeParse(knowledge ?? []); requireValue(parsed.success);
   const expected = parsed.data;
   requireValue(expected.every(ref => ref.projectId === expected[0]?.projectId));
@@ -78,7 +85,7 @@ function capabilities(value: unknown) {
   const result = record(value);
   requireValue(result.followUp === true && typeof result.queue === 'boolean'
     && ['steer', 'perTurnModel', 'perTurnThinking', 'perTurnTools'].every(key => result[key] === false)
-    && ['liveAssistantText', 'knowledgeContext'].every(key => result[key] === undefined || typeof result[key] === 'boolean'));
+    && ['liveAssistantText', 'knowledgeContext', 'attachmentContext'].every(key => result[key] === undefined || typeof result[key] === 'boolean'));
 }
 function effective(value: unknown, taskId: unknown) {
   const result = record(value);
@@ -113,7 +120,7 @@ function assistant(value: unknown, taskId: unknown) {
       && id(source.artifactId) && digest(source.artifactVersion));
   }
 }
-function turn(value: unknown, conversationId: string, input: ConversationTurnAdmission) {
+function turn(value: unknown, conversationId: string, input: ConversationTurnAdmission, projectId: unknown) {
   const result = record(value); const user = record(result.user); const task = record(result.task); const telemetry = record(result.telemetry);
   requireValue(id(result.id) && result.conversationId === conversationId && integer(result.number, 1) && result.number === input.expectedRevision + 1
     && timestamp(result.createdAt) && user.role === 'user' && user.text === input.text);
@@ -121,7 +128,8 @@ function turn(value: unknown, conversationId: string, input: ConversationTurnAdm
     && oneOf(task.status, ['queued', 'running', 'waiting', 'cancel_requested', 'succeeded', 'failed', 'cancelled', 'uncertain'])
     && oneOf(task.verificationStatus, ['pending', 'passed', 'failed']) && telemetry.kind === 'execution' && telemetry.taskId === task.id && text(telemetry.title, 180));
   effective(result.effective, task.id); assistant(result.assistant, task.id);
-  assertConversationContextMatches(input.knowledge, result.context);
+  requireValue(!input.attachments?.length || typeof projectId === 'string');
+  assertConversationContextMatches(input.knowledge, result.context, input.attachments?.length ? { projectId: projectId as string, attachments: input.attachments } : undefined);
 }
 export function decodeConversationCreated(raw: unknown, input: ConversationCreation): ConversationCreated {
   const result = record(raw); const conversation = summary(result.conversation);
@@ -134,6 +142,6 @@ export function decodeConversationTurnAccepted(raw: unknown, conversationId: str
   const result = record(raw); const conversation = summary(result.conversation);
   requireValue(typeof result.replayed === 'boolean' && conversation.id === conversationId && conversation.revision === parsed.data.expectedRevision + 1);
   requireValue((parsed.data.knowledge ?? []).every(ref => ref.projectId === conversation.projectId));
-  turn(result.turn, conversationId, parsed.data);
+  turn(result.turn, conversationId, parsed.data, conversation.projectId);
   return raw as ConversationTurnAccepted;
 }

@@ -1,0 +1,64 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources
+
+ ❯ packages/contracts/src/attachments.test.ts (37 tests | 1 failed) 32ms
+     ✓ preserves BOM, CRLF, spaces and non-normalized Unicode through fatal decoding and upload parsing 3ms
+     ✓ uses UTF-8 bytes, accepts the exact 8 KiB boundary and rejects oversized CJK/emoji without truncation 1ms
+     ✓ rejects empty or malformed UTF-8 instead of replacement decoding 0ms
+     ✓ rejects empty or malformed UTF-8 instead of replacement decoding 0ms
+     ✓ rejects empty or malformed UTF-8 instead of replacement decoding 0ms
+     ✓ rejects empty or malformed UTF-8 instead of replacement decoding 0ms
+     ✓ rejects empty or malformed UTF-8 instead of replacement decoding 0ms
+     ✓ rejects nonrepresentable or empty JSON text "" 0ms
+     ✓ rejects nonrepresentable or empty JSON text "\u0000" 0ms
+     ✓ rejects nonrepresentable or empty JSON text "\ud800" 0ms
+     ✓ rejects nonrepresentable or empty JSON text "\udfff" 0ms
+     ✓ rejects nonrepresentable or empty JSON text "x\ud800y" 0ms
+     ✓ rejects path/control/unsupported display names "../notes.txt" 0ms
+     ✓ rejects path/control/unsupported display names "C:\\notes.txt" 0ms
+     ✓ rejects path/control/unsupported display names "folder/notes.txt" 0ms
+     ✓ rejects path/control/unsupported display names "notes\n.txt" 0ms
+     ✓ rejects path/control/unsupported display names "notes.txt" 0ms
+     ✓ rejects path/control/unsupported display names "notes.pdf" 0ms
+     ✓ rejects path/control/unsupported display names "" 0ms
+     ✓ keeps harmless markup as literal display text and accepts the declared extension case-insensitively 0ms
+     ✓ fails closed on extra body fields, wrong media, byte counts and malformed digests 0ms
+     ✓ separately verifies the exact cryptographic digest, including BOM and newlines 1ms
+     ✓ allows only upload references, exact immutable version and distinct ordered identities 1ms
+     ✓ keeps metadata body-free and validates explicit content byte counts 1ms
+     ✓ keeps historical ready receipts separate from current expired/unavailable observations 1ms
+     ✓ exposes bounded capability and pagination without inferring old-center support 1ms
+     ✓ accepts header-safe original keys without browser trimming or Unicode conversion 8ms
+     ✓ keeps absent/empty attachments on the exact old v1 wire shape and legacy details unchanged 1ms
+     ✓ uses v2 only for nonempty uploads, retaining two explicit ordered segments 1ms
+     ✓ enforces combined reference counts and byte budget without applying the 4 KiB knowledge-locator bound to files 0ms
+     ✓ rejects cross-project, duplicate, malformed and body-leaking context metadata 0ms
+     ✓ checks frozen upload receipt descriptors, not merely count/digest presence, while leaving the caller input untouched 1ms
+     ✓ checks knowledge order independently and rejects a fabricated current-version observation 0ms
+     ✓ requires new clients to omit attachments entirely when sending plain requests to an old strict center 0ms
+     ✓ reads v2 history and waiting metadata without treating it as body or requesting attachment content 3ms
+     × keeps an erroneous v2 Send ACK unknown, then retries the exact original key/body and accepts saved v1 3ms
+     ✓ keeps an erroneous v2 enqueue ACK unknown without re-keying, then accepts an exact saved v1 replay 2ms
+ ✓ apps/web/test/conversation-context-receipts.test.ts (8 tests) 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/contracts/src/attachments.test.ts > legacy consumer compatibility using real projection/client/queue code > keeps an erroneous v2 Send ACK unknown, then retries the exact original key/body and accepts saved v1
+Error: Wait for the current queue before sending a new turn.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:252:23
+    250|   async send(text: string, creation?: ConversationCreation, knowledge?…
+    251|     const reason = this.sendDisabledReason();
+    252|     if (reason) throw Error(reason);
+       |                       ^
+    253|     this.validateKnowledge(knowledge);
+    254|     const entry = this.outbox.begin({
+ ❯ packages/contracts/src/attachments.test.ts:241:50
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 44 passed (45)
+   Start at  03:18:34
+   Duration  544ms (transform 199ms, setup 0ms, import 326ms, tests 39ms, environment 0ms)
+

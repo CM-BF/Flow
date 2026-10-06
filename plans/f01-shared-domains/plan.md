@@ -62,3 +62,5 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 - [x] **F01-30** 提供显式native-v1目录读取与严格回应解码，每页保留协商、旧目录无变，不把配置记录视作可调用能力。
 
 - [ ] **F01-31** 复用ENG01B有限用途合同的公共client/export与生产挂载，固定真实factory消费者后成套集成，不把fixture配置当原生能力。
+
+- [ ] **F01-32** 接受WPF-MATURE-04正式027历史观测迁移/领域后提供共享导出、薄client和生产挂载；027唯一DDL由原Mika领域owner fresh amend领取，先解局部PG依赖，不等工程profile或个人部署。

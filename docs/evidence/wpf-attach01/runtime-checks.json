@@ -1,0 +1,75 @@
+{
+  "startedAt": "2026-10-06T10:45:45.671049+00:00",
+  "sourceCommit": "339086db54f8c5f9966df6121599046996dd2e48",
+  "sourceDirty": " M apps/server/src/conversation-context/store.ts\n M apps/server/src/conversation-queue/commands.ts\n M apps/server/src/conversations/commands.ts\n M apps/server/src/conversations/queries.ts\n M apps/server/src/conversations/state.ts\n M docs/evidence/wpf-attach01/interface.md\n M docs/evidence/wpf-attach01/quality.md\n M packages/contracts/src/attachments.test.ts\n M packages/contracts/src/conversation-queue.ts\n M packages/contracts/src/conversations.ts\n M plans/wpf-attach01-resources/plan.md\n M plans/wpf-attach01-resources/review.md\n M plans/wpf-attach01-resources/status.md\n?? apps/server/src/attachments/\n?? docs/evidence/wpf-attach01/context-runtime-cleanup.json\n?? docs/evidence/wpf-attach01/context-runtime-resource.json\n?? docs/evidence/wpf-attach01/resources-cleanup.json\n?? docs/evidence/wpf-attach01/resources-resource.json\n?? docs/evidence/wpf-attach01/runtime-77-checks.json\n?? docs/evidence/wpf-attach01/runtime-77-direct.log\n?? docs/evidence/wpf-attach01/runtime-77-resources/\n?? docs/evidence/wpf-attach01/runtime-77-types.log\n?? docs/evidence/wpf-attach01/runtime-78-first-checks.json\n?? docs/evidence/wpf-attach01/runtime-78-first-direct.log\n?? docs/evidence/wpf-attach01/runtime-78-first-resources/\n?? docs/evidence/wpf-attach01/runtime-78-first-types.log\n?? docs/evidence/wpf-attach01/runtime-amend-receipt.json\n?? docs/evidence/wpf-attach01/runtime-bounded-reads.json\n?? docs/evidence/wpf-attach01/runtime-combined-first.log\n?? docs/evidence/wpf-attach01/runtime-combined-second.log\n?? docs/evidence/wpf-attach01/runtime-context-first.log\n?? docs/evidence/wpf-attach01/runtime-context-second.log\n?? docs/evidence/wpf-attach01/runtime-first-types.log\n?? docs/evidence/wpf-attach01/runtime-owner-live.json\n?? docs/evidence/wpf-attach01/runtime-precommit-types.log\n?? docs/evidence/wpf-attach01/runtime-probe/\n?? docs/evidence/wpf-attach01/runtime-resource-first.log\n?? docs/evidence/wpf-attach01/runtime-resource-second.log\n?? docs/evidence/wpf-attach01/runtime-second-types.log\n?? docs/evidence/wpf-attach01/runtime-third-types.log\n?? docs/evidence/wpf-attach01/runtime-transport-types.log\n?? packages/storage/migrations/026-attachment-resources.sql\n",
+  "sourceHashes": {
+    "apps/server/src/attachments/attachments.test.ts": "25f102dccd567251faad7376e240c1d6436ad3a45fe52a62c13be6d5fe7d50f2",
+    "apps/server/src/attachments/context.test.ts": "b5780183837885ef5962ef433020e2c4054c3bef98eb1b5b05d63f3c44cafe17",
+    "apps/server/src/attachments/fixture.ts": "3bef98703f12088a9654848be1cb4a6b452f2c19d5a9bc9eedc24b0ba52c0698",
+    "apps/server/src/attachments/index.ts": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+    "apps/server/src/attachments/storage.ts": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560",
+    "apps/server/src/conversation-context/store.ts": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+    "apps/server/src/conversation-queue/commands.ts": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603",
+    "apps/server/src/conversations/commands.ts": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8",
+    "apps/server/src/conversations/queries.ts": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57",
+    "apps/server/src/conversations/state.ts": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+    "packages/contracts/src/attachments.test.ts": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127",
+    "packages/contracts/src/attachments.ts": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+    "packages/contracts/src/conversation-context.ts": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+    "packages/contracts/src/conversation-queue.ts": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+    "packages/contracts/src/conversations.ts": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+    "packages/storage/migrations/026-attachment-resources.sql": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+  },
+  "base": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "phase1Target": "6bc2918cf35a652e241e6378c3b6297cac179adb",
+  "checks": [
+    {
+      "name": "direct",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "apps/server/src/attachments/attachments.test.ts",
+        "apps/server/src/attachments/context.test.ts",
+        "packages/contracts/src/attachments.test.ts",
+        "apps/web/test/conversation-context-receipts.test.ts"
+      ],
+      "startedAt": "2026-10-06T10:45:45.801251+00:00",
+      "endedAt": "2026-10-06T10:45:56.576182+00:00",
+      "exitCode": 0
+    },
+    {
+      "name": "types",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T10:45:56.576215+00:00",
+      "endedAt": "2026-10-06T10:46:05.789555+00:00",
+      "exitCode": 0
+    }
+  ],
+  "endedAt": "2026-10-06T10:46:05.789587+00:00",
+  "afterHashes": {
+    "apps/server/src/attachments/attachments.test.ts": "25f102dccd567251faad7376e240c1d6436ad3a45fe52a62c13be6d5fe7d50f2",
+    "apps/server/src/attachments/context.test.ts": "b5780183837885ef5962ef433020e2c4054c3bef98eb1b5b05d63f3c44cafe17",
+    "apps/server/src/attachments/fixture.ts": "3bef98703f12088a9654848be1cb4a6b452f2c19d5a9bc9eedc24b0ba52c0698",
+    "apps/server/src/attachments/index.ts": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+    "apps/server/src/attachments/storage.ts": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560",
+    "apps/server/src/conversation-context/store.ts": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+    "apps/server/src/conversation-queue/commands.ts": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603",
+    "apps/server/src/conversations/commands.ts": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8",
+    "apps/server/src/conversations/queries.ts": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57",
+    "apps/server/src/conversations/state.ts": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+    "packages/contracts/src/attachments.test.ts": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127",
+    "packages/contracts/src/attachments.ts": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+    "packages/contracts/src/conversation-context.ts": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+    "packages/contracts/src/conversation-queue.ts": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+    "packages/contracts/src/conversations.ts": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+    "packages/storage/migrations/026-attachment-resources.sql": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+  },
+  "sourceUnchangedDuringChecks": true
+}

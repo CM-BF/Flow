@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { attachmentSelectionSchema } from './attachments.js';
 import { idSchema } from './tasks.js';
 import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
@@ -25,6 +26,7 @@ export const conversationTurnSchema = z.strictObject({
   text: z.string().min(1).max(16_000).refine(value => value.trim().length > 0),
   mode: z.enum(['follow-up', 'queue', 'steer']).default('follow-up'),
   knowledge: conversationContextSelectionSchema.optional(),
+  attachments: attachmentSelectionSchema.optional(),
 });
 export type ConversationTurnAdmission = z.infer<typeof conversationTurnSchema>;
 export const conversationTurnQuerySchema = z.strictObject({
@@ -38,6 +40,8 @@ export const conversationListQuerySchema = z.strictObject({
 
 export interface ConversationCapabilities {
   knowledgeContext?: boolean;
+  /** Missing/false forbids attachment admission. Read the project limits before uploading. */
+  attachmentContext?: boolean;
   followUp: true;
   /** Capability varies by center version; older centers may not expose durable queues. */
   queue: boolean;

@@ -1,0 +1,36 @@
+{
+  "startedAt": "2026-10-06T10:14:53.879631+00:00",
+  "sourceCommit": "b87f8a515c7c8bbe5b76a8202db4f7666924b10d",
+  "sourceDirty": true,
+  "sourceHashes": {
+    "packages/contracts/src/attachments.ts": "dcf6cc6397cca21225386745ffb95e435b177307407cd69c790ed561f84f25d9",
+    "packages/contracts/src/conversation-context.ts": "b871e952a00e24e36a83a7619cb3c9f4bdaf15e0a13aeb9368ef368111ffa5c8",
+    "packages/contracts/src/attachments.test.ts": "85325963fc00c09757df279f5b0b1a1a6bdd330f5416c53127e5326653e3567c"
+  },
+  "readOnlyDependencyHashes": {
+    "packages/contracts/src/knowledge.ts": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+    "packages/contracts/src/tasks.ts": "ee93a1d4bd7ca48542b18f005c8e0bd6e019fdca996567795dceda6cd358e05d",
+    "apps/web/src/conversation-context/receipts.ts": "6f9b181aeeb01572901e2f735dfed9c1b7d859ecc1448cc7baf502d6a2c4a233",
+    "apps/web/test/conversation-context-receipts.test.ts": "8e6d281bbfa365e89c0f67e631fc5c046b9685c1690babdcddea8fd0ced23637"
+  },
+  "checks": [
+    {
+      "name": "direct",
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run packages/contracts/src/attachments.test.ts apps/web/test/conversation-context-receipts.test.ts",
+      "startedAt": "2026-10-06T10:14:53.894857+00:00",
+      "finishedAt": "2026-10-06T10:14:54.958078+00:00",
+      "exitCode": 0,
+      "log": "direct.log"
+    },
+    {
+      "name": "typecheck",
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit",
+      "startedAt": "2026-10-06T10:14:54.958134+00:00",
+      "finishedAt": "2026-10-06T10:15:03.386624+00:00",
+      "exitCode": 0,
+      "log": "typecheck.log"
+    }
+  ],
+  "finishedAt": "2026-10-06T10:15:03.386678+00:00",
+  "sourceUnchangedDuringChecks": true
+}

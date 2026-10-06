@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:57:01 UTC / mainc450c2da |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:30 UTC / main53ce2ec2 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 固定3a12工程薄client已独审；1c081挂载候选待组合检查 |
-| 工作树dirty状态 | 产品已固定；本提交仅补证据与审查待办 |
+| 工作基线 / HEAD | 工程配置已main；当前附件生产接线与清理增量固定 |
+| 工作树dirty状态 | 源码固定；独立复审结论已记录，metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | native目录3HTTP/types与工程4HTTP/types分别通过并独审；mount尚未验证，0provider |
+| 检查状态 | 附件ACK47、薄client1HTTP分别独审；生产1PG及2清理回归=3/3、types0，P2独立复审关闭，0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | native5ffe由Mika、工程client3a12由native_center_owner独立APPROVED；生产挂载待审 |
-| 实现目标 | 3a12ed7ebd8e69325309bd004043f06dabbf7ff4 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/engineering-profiles.test.ts, packages/contracts/src/index.ts |
+| Review | 附件ACK/native_center_owner与六薄client/Mika APPROVED；69eb+f04生产接线/清理获Mika独审APPROVED；实际factory六case组合待验 |
+| 实现目标 | f04cb29633ca678b35aa423e02a16953add0cfba |
+| 实现范围 | packages/client/src/attachment-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 原生目录与专用工程配置已有共用读取接口，正在接入中心生产入口。 |
-| 下一可用交付 | 专用工程配置的完整受理与启动恢复，并保持普通聊天隔离。 |
+| 当前产出 | 附件公共上传与读取接线已通过独立审查，正在核对旧数据升级与重启兼容。 |
+| 下一可用交付 | 附件上传、固定引用与公开读取接线，供终端和Web共同消费。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -146,4 +146,16 @@
 
 | F01-30 | completed | Lead | 原生目录严格薄client；[固定证据](../../docs/evidence/f01/native-catalog-client-manifest.json)，没有原生能力或认证结论。 |
 
-| F01-31 | in-progress | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
+| F01-31 | completed | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
+
+| F01-32 | in-progress | Lead / Mika context owner | [027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)；已交同级fresh amend，后续固定DDL/真实PG及共享接线待验，不改个人DB |
+
+11:12 管理安全点：工程domain/client/mount各有独审且main2e71已接，组合root typecheck仍因既有RELEASE fixture tuple类型失败，已交Web原owner窄修；不冒称组合通过。附件ACK v2 target df8d077accea7a28536f1f56407a729c41e4639c 47/47/root types0待独审，不扩domain批准。027已正式给Mika原owner，现50/50含9PG、v5 DDL已实装并独审中，不再等待编号。
+
+11:16 附件ACK v2 df8d由native_center_owner独立APPROVED；原47/47/types0不重跑。六薄方法固定 ab1bcb14531995ccb3916492eaf328cdae2213b3，真实HTTP1/1/types0待独审，未挂生产/不称附件全链完成。
+
+11:19 附件生产factory026/owner接线固定 69eb2476ba59308a906c891c4391e243e3b2512a，真实独立PG1/1（同一个旅程重跑不累计）及最终root types0；前置red/类型窄修原输出保留。组合gate是原ATTACH pre026/重复注册fixture最小维护，已交原owner，不删除历史升级断言；domain/shared client/ACK齐套独审后才main，个人DB/服务无改。
+
+11:27：Mika附件六薄client独审APPROVED已归档；生产69eb的唯一P2是失败清理，修复固定f04cb29633ca678b35aa423e02a16953add0cfba，2失败分支原red保留、3/3及types0。新facts单独保存，不覆盖旧成功证据；生产3行/领域无改。Web pre026 fixture增量1f0已独审，待正式factory下有限组合验证。
+
+2026-10-06 11:30 UTC：Mika增量只读APPROVED f04，原69eb挂载保持；1source/8raw核同、清理P2关闭、未重测。下一I02仅实际factory与已审fixture1f0组合六case，不重跑78领域。原审查字节归档 [独审](../../docs/evidence/f01/attachment-production-independent-review.md)，个人服务不变。

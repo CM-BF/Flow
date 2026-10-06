@@ -1,0 +1,53 @@
+{
+  "implementation": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "base": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "phase1Target": "6bc2918cf35a652e241e6378c3b6297cac179adb",
+  "runtimeDiffBase": "339086db54f8c5f9966df6121599046996dd2e48",
+  "sourceHashes": {
+    "apps/server/src/attachments/attachments.test.ts": "25f102dccd567251faad7376e240c1d6436ad3a45fe52a62c13be6d5fe7d50f2",
+    "apps/server/src/attachments/context.test.ts": "b5780183837885ef5962ef433020e2c4054c3bef98eb1b5b05d63f3c44cafe17",
+    "apps/server/src/attachments/fixture.ts": "3bef98703f12088a9654848be1cb4a6b452f2c19d5a9bc9eedc24b0ba52c0698",
+    "apps/server/src/attachments/index.ts": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+    "apps/server/src/attachments/storage.ts": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560",
+    "apps/server/src/conversation-context/store.ts": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+    "apps/server/src/conversation-queue/commands.ts": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603",
+    "apps/server/src/conversations/commands.ts": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8",
+    "apps/server/src/conversations/queries.ts": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57",
+    "apps/server/src/conversations/state.ts": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+    "packages/contracts/src/attachments.test.ts": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127",
+    "packages/contracts/src/attachments.ts": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+    "packages/contracts/src/conversation-context.ts": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+    "packages/contracts/src/conversation-queue.ts": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+    "packages/contracts/src/conversations.ts": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+    "packages/storage/migrations/026-attachment-resources.sql": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+  },
+  "sourceEqualsChecksAndWorktree": true,
+  "readOnlyDependencyHashes": {
+    "packages/contracts/src/knowledge.ts": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+    "packages/contracts/src/tasks.ts": "ee93a1d4bd7ca48542b18f005c8e0bd6e019fdca996567795dceda6cd358e05d",
+    "packages/client/src/index.ts": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b",
+    "apps/web/src/conversation-context/receipts.ts": "6f9b181aeeb01572901e2f735dfed9c1b7d859ecc1448cc7baf502d6a2c4a233",
+    "apps/web/src/conversation-context/selection.ts": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+    "apps/web/src/conversations/projection.ts": "808395c53eb621ca0298ab3edb4d3ebf51330cdb189fe2252f6b6a020e942925",
+    "apps/web/src/conversations/outbox.ts": "2c2e726dc0ade601b62cc0fbf2a0a617929f8e514878230804f84d12bdef1461",
+    "apps/web/src/conversations/queue/commands.ts": "c66025cf60441ac84e29c9061c510ce6bf177d73b91e4a75a2c99ddb5daa0491",
+    "apps/web/src/conversations/queue/projection.ts": "5adbf3bc3765f72ce3fa7f4097332fb52702f6df6eccf4604938fd7bb8fb5e47",
+    "apps/web/src/conversations/messages.ts": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e",
+    "apps/web/src/execution-profiles/selection.ts": "577676a1357e6da20c613f6ed49301ebb954b0982e8b5db972067a2b7c21e004",
+    "apps/web/test/conversation-context-receipts.test.ts": "8e6d281bbfa365e89c0f67e631fc5c046b9685c1690babdcddea8fd0ced23637",
+    "apps/server/src/index.ts": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0",
+    "apps/server/src/database.ts": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+    "apps/server/src/tasks.ts": "c83f04c42ec26e69147baf929a18b53f49faf560602df4322cefccd67c40c7fc",
+    "apps/runner/src/runtime.ts": "5437645e446b53f558cb960582f09a90f1df49fb0c6a90be24c36d239f057bd2",
+    "packages/contracts/src/index.ts": "ba5564f67f0fec48a841ffdf840cc80e0327e73c1c8268a3e16919c094be6b11",
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+    "pnpm-lock.yaml": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d"
+  },
+  "readOnlyDependenciesEqualBase": true,
+  "phase1ContractImplementationsUnchanged": [
+    "packages/contracts/src/attachments.ts",
+    "packages/contracts/src/conversation-context.ts"
+  ],
+  "testTransition": "attachments.test.ts now tests current optional field, not old strict request schemas; original 6bc/49 evidence preserved",
+  "recordedAt": "2026-10-06T10:47:41.394458+00:00"
+}

@@ -16,6 +16,7 @@ import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQue
 import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
 import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
 import type { ConversationContextDetail } from '@flow/contracts';
+import type { AttachmentCapabilities, AttachmentUpload, AttachmentAccepted, AttachmentList, AttachmentMetadata, AttachmentContent, AttachmentReceiptLookup } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
@@ -381,6 +382,30 @@ export class FlowClient {
   }
   conversationContext(id: string, contextId: string, signal?: AbortSignal): Promise<ConversationContextDetail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/contexts/${encodeURIComponent(contextId)}`, { signal });
+  }
+
+  attachmentCapabilities(projectId: string, signal?: AbortSignal): Promise<AttachmentCapabilities> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/capabilities`, { signal });
+  }
+  uploadAttachment(projectId: string, input: AttachmentUpload, key: string, signal?: AbortSignal): Promise<AttachmentAccepted> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  attachments(projectId: string, options: { after?: string; limit?: number; q?: string } = {}, signal?: AbortSignal): Promise<AttachmentList> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit', 'q'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments${query.size ? `?${query}` : ''}`, { signal });
+  }
+  attachment(projectId: string, resourceId: string, signal?: AbortSignal): Promise<AttachmentMetadata> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/${encodeURIComponent(resourceId)}`, { signal });
+  }
+  attachmentContent(projectId: string, resourceId: string, version: number, digest: string, signal?: AbortSignal): Promise<AttachmentContent> {
+    const query = new URLSearchParams({ digest });
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/${encodeURIComponent(resourceId)}/versions/${encodeURIComponent(version)}/content?${query}`, { signal });
+  }
+  /** A missing receipt leaves a previous upload unresolved; no automatic retry or new key. */
+  attachmentUploadReceipt(projectId: string, input: { scope: string; key: string }, signal?: AbortSignal): Promise<AttachmentReceiptLookup> {
+    const query = new URLSearchParams(input);
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/upload-receipt?${query}`, { signal });
   }
 
   enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {

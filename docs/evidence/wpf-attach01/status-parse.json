@@ -1,0 +1,105 @@
+{
+  "observedAt": "2026-10-06T10:27:21.368Z",
+  "taskId": "WPF-ATTACH01",
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+        "id": "WPF-MATURE-03",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "文本附件合同通过独立审查，固定引用和旧客户端兼容规则可交接",
+      "next": "发布小合同并接入中心资源保存，再验证聊天与远端执行读取同一份材料",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "6bc2918cf35a652e241e6378c3b6297cac179adb",
+      "scopes": [
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/attachments.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-ATTACH01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/attachment-resources",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T10:27:21.000Z",
+    "updatedRecord": "2026-10-06 10:27:21 UTC",
+    "todos": [
+      {
+        "id": "WPF-ATTACH01-01",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-attach01/interface.md)、[take](../../docs/evidence/wpf-attach01/take-receipt.json)"
+      },
+      {
+        "id": "WPF-ATTACH01-02",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "后继运行域须exact amend，当前无路由/DB实现"
+      },
+      {
+        "id": "WPF-ATTACH01-03",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "后继PG/HTTP验收，当前无真实中心/provider证据"
+      },
+      {
+        "id": "WPF-ATTACH01-04",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "phase1独审通过；完整运行域/main接收仍pending"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "f181d84b5fb3652d62e2a181acff442d42b3e066 / 当前Git聚合",
+    "declaredDirty": "phase1产品冻结；本次仅独审metadata，提交后Git clean",
+    "checks": {
+      "state": "passed",
+      "target": "6bc2918cf35a652e241e6378c3b6297cac179adb",
+      "record": "PASSED 6bc2918cf35a652e241e6378c3b6297cac179adb；作者41合同/legacy兼容+8旧receipt=49/49，根typecheck exit0；[验证](../../docs/evidence/wpf-attach01/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED（phase1合同）",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**（仅phase1合同，2026-10-06 10:26 UTC）",
+    "target": "6bc2918cf35a652e241e6378c3b6297cac179adb"
+  }
+}

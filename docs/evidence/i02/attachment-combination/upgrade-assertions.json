@@ -1,0 +1,759 @@
+{
+  "beforeTransport": "direct PG/domain; no HTTP server",
+  "afterTransport": "full createServer HTTP with separately recorded legacy mount fallback",
+  "beforeVersions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "afterVersions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "beforeCapability": false,
+  "unavailableStatus": 409,
+  "before": {
+    "receipts": [
+      {
+        "operation": "conversation.queue.enqueue",
+        "key": "e3528185-ab6d-4ccc-94fb-2bacf8955919",
+        "digest": "77a0764ebb573ca51992005a2ceadba81f249106ec7d7cee94413e61d2acc1dc",
+        "response": {
+          "item": {
+            "id": "656f6d3a-eaf4-473b-ae17-6fa9a126d5ee",
+            "state": "waiting",
+            "context": {
+              "id": "b16ea6b9-4f59-483c-825f-4f413827df7a",
+              "sources": [
+                {
+                  "citation": {
+                    "locator": {
+                      "end": 15,
+                      "kind": "utf8-bytes",
+                      "start": 0
+                    },
+                    "version": 1,
+                    "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                    "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                    "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+                  },
+                  "byteLength": 15,
+                  "isCurrentAtFreeze": true,
+                  "currentVersionAtFreeze": 1
+                }
+              ],
+              "contextDigest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+              "templateVersion": 1,
+              "executionInputId": "6e400dcf-7fca-4596-8dfb-fdf94df0b4d5",
+              "executionInputDigest": "1f706556c1e8675ccd363d2c93b16594d0819081e782b2606671ee7d33867556"
+            },
+            "preview": "legacy source",
+            "promoted": null,
+            "sequence": 1,
+            "createdAt": "2026-10-06T11:29:44.566Z",
+            "truncated": false,
+            "updatedAt": "2026-10-06T11:29:44.566Z",
+            "conversationId": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8"
+          },
+          "queueRevision": 1,
+          "conversationId": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8"
+        }
+      },
+      {
+        "operation": "conversation.turn",
+        "key": "c494e9a1-0cef-464a-9d01-f6865dda3712",
+        "digest": "344c5832bd1cc580531545fe9fa33c7c81600e23b46af882da8172d6cb97c55d",
+        "response": {
+          "turn": {
+            "id": "55f32b56-cf37-4d29-a5fd-c58bf4cb30e2",
+            "task": {
+              "id": "7219093d-9eda-4812-a55f-f4c48dc38017",
+              "title": "Pre-026 conversation",
+              "status": "queued",
+              "harness": "claude",
+              "createdAt": "2026-10-06T11:29:44.580Z",
+              "updatedAt": "2026-10-06T11:29:44.580Z",
+              "verificationStatus": "pending"
+            },
+            "user": {
+              "role": "user",
+              "text": "legacy send"
+            },
+            "number": 1,
+            "context": {
+              "id": "7d060f99-97be-4a28-b356-9e82d2649606",
+              "sources": [
+                {
+                  "citation": {
+                    "locator": {
+                      "end": 15,
+                      "kind": "utf8-bytes",
+                      "start": 0
+                    },
+                    "version": 1,
+                    "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                    "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                    "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+                  },
+                  "byteLength": 15,
+                  "isCurrentAtFreeze": true,
+                  "currentVersionAtFreeze": 1
+                }
+              ],
+              "contextDigest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+              "templateVersion": 1,
+              "executionInputId": "75ef7d39-3330-4d54-8cc3-096c5ad857e2",
+              "executionInputDigest": "f9039d3d269c727498e3e7ea5a11c78ceb1dad622e94d2912c0257a5469f6111"
+            },
+            "assistant": {
+              "state": "pending",
+              "reason": "execution-pending"
+            },
+            "createdAt": "2026-10-06T11:29:44.584Z",
+            "effective": {
+              "model": null,
+              "tools": "unknown",
+              "source": null,
+              "thinking": "unknown"
+            },
+            "telemetry": {
+              "kind": "execution",
+              "title": "Execution details",
+              "taskId": "7219093d-9eda-4812-a55f-f4c48dc38017"
+            },
+            "conversationId": "648a5122-7c27-4ab5-a082-c89635fa620e"
+          },
+          "conversation": {
+            "id": "648a5122-7c27-4ab5-a082-c89635fa620e",
+            "title": "Pre-026 conversation",
+            "harness": "claude",
+            "revision": 1,
+            "createdAt": "2026-10-06T11:29:44.573Z",
+            "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+            "requested": {
+              "model": "runner-default",
+              "tools": "configured-readonly",
+              "thinking": "disabled"
+            },
+            "updatedAt": "2026-10-06T11:29:44.585Z"
+          }
+        }
+      },
+      {
+        "operation": "conversation.turn",
+        "key": "cc504a59-b2fd-47bb-9e6e-9518f84c88f4",
+        "digest": "62f5bb218083fcf8c27ca744987d890894e69b7cd627e15026dec177bc38623d",
+        "response": {
+          "turn": {
+            "id": "d2fa080a-92a1-4542-b639-d9cb7a444c4a",
+            "task": {
+              "id": "ec968839-2062-4099-b732-b0d529698197",
+              "title": "Pre-026 conversation",
+              "status": "queued",
+              "harness": "claude",
+              "createdAt": "2026-10-06T11:29:44.592Z",
+              "updatedAt": "2026-10-06T11:29:44.592Z",
+              "verificationStatus": "pending"
+            },
+            "user": {
+              "role": "user",
+              "text": "legacy plain"
+            },
+            "number": 1,
+            "assistant": {
+              "state": "pending",
+              "reason": "execution-pending"
+            },
+            "createdAt": "2026-10-06T11:29:44.593Z",
+            "effective": {
+              "model": null,
+              "tools": "unknown",
+              "source": null,
+              "thinking": "unknown"
+            },
+            "telemetry": {
+              "kind": "execution",
+              "title": "Execution details",
+              "taskId": "ec968839-2062-4099-b732-b0d529698197"
+            },
+            "conversationId": "6ca8c59e-8f97-448f-b454-dd8df5c343a1"
+          },
+          "conversation": {
+            "id": "6ca8c59e-8f97-448f-b454-dd8df5c343a1",
+            "title": "Pre-026 conversation",
+            "harness": "claude",
+            "revision": 1,
+            "createdAt": "2026-10-06T11:29:44.590Z",
+            "requested": {
+              "model": "runner-default",
+              "tools": "configured-readonly",
+              "thinking": "disabled"
+            },
+            "updatedAt": "2026-10-06T11:29:44.594Z"
+          }
+        }
+      }
+    ],
+    "contexts": [
+      {
+        "original": {
+          "id": "7d060f99-97be-4a28-b356-9e82d2649606",
+          "sources": [
+            {
+              "text": "knowledge-first",
+              "citation": {
+                "locator": {
+                  "end": 15,
+                  "kind": "utf8-bytes",
+                  "start": 0
+                },
+                "version": 1,
+                "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+              },
+              "byteLength": 15,
+              "isCurrentAtFreeze": true,
+              "currentVersionAtFreeze": 1
+            }
+          ],
+          "raw_bytes": 15,
+          "created_at": "2026-10-06T11:29:44.579+00:00",
+          "project_id": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+          "context_digest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+          "conversation_id": "648a5122-7c27-4ab5-a082-c89635fa620e"
+        }
+      },
+      {
+        "original": {
+          "id": "b16ea6b9-4f59-483c-825f-4f413827df7a",
+          "sources": [
+            {
+              "text": "knowledge-first",
+              "citation": {
+                "locator": {
+                  "end": 15,
+                  "kind": "utf8-bytes",
+                  "start": 0
+                },
+                "version": 1,
+                "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+              },
+              "byteLength": 15,
+              "isCurrentAtFreeze": true,
+              "currentVersionAtFreeze": 1
+            }
+          ],
+          "raw_bytes": 15,
+          "created_at": "2026-10-06T11:29:44.564+00:00",
+          "project_id": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+          "context_digest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+          "conversation_id": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8"
+        }
+      }
+    ],
+    "inputs": [
+      {
+        "id": "6e400dcf-7fca-4596-8dfb-fdf94df0b4d5",
+        "context_id": "b16ea6b9-4f59-483c-825f-4f413827df7a",
+        "user_text": "legacy source",
+        "template_version": 1,
+        "execution_prompt": "User message:\nlegacy source\n\nSelected source excerpts (reference material):\n[{\"byteLength\":15,\"citation\":{\"contentDigest\":\"7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3\",\"locator\":{\"end\":15,\"kind\":\"utf8-bytes\",\"start\":0},\"projectId\":\"09b13061-8d5c-451e-9fc3-63b0dd405330\",\"sourceId\":\"b42f6936-a2f5-495a-80d4-d42a6dab7e80\",\"version\":1},\"currentVersionAtFreeze\":1,\"isCurrentAtFreeze\":true,\"text\":\"knowledge-first\"}]",
+        "execution_input_digest": "1f706556c1e8675ccd363d2c93b16594d0819081e782b2606671ee7d33867556",
+        "created_at": "2026-10-06T11:29:44.565Z"
+      },
+      {
+        "id": "75ef7d39-3330-4d54-8cc3-096c5ad857e2",
+        "context_id": "7d060f99-97be-4a28-b356-9e82d2649606",
+        "user_text": "legacy send",
+        "template_version": 1,
+        "execution_prompt": "User message:\nlegacy send\n\nSelected source excerpts (reference material):\n[{\"byteLength\":15,\"citation\":{\"contentDigest\":\"7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3\",\"locator\":{\"end\":15,\"kind\":\"utf8-bytes\",\"start\":0},\"projectId\":\"09b13061-8d5c-451e-9fc3-63b0dd405330\",\"sourceId\":\"b42f6936-a2f5-495a-80d4-d42a6dab7e80\",\"version\":1},\"currentVersionAtFreeze\":1,\"isCurrentAtFreeze\":true,\"text\":\"knowledge-first\"}]",
+        "execution_input_digest": "f9039d3d269c727498e3e7ea5a11c78ceb1dad622e94d2912c0257a5469f6111",
+        "created_at": "2026-10-06T11:29:44.579Z"
+      }
+    ]
+  },
+  "after": {
+    "receipts": [
+      {
+        "operation": "conversation.queue.enqueue",
+        "key": "e3528185-ab6d-4ccc-94fb-2bacf8955919",
+        "digest": "77a0764ebb573ca51992005a2ceadba81f249106ec7d7cee94413e61d2acc1dc",
+        "response": {
+          "item": {
+            "id": "656f6d3a-eaf4-473b-ae17-6fa9a126d5ee",
+            "state": "waiting",
+            "context": {
+              "id": "b16ea6b9-4f59-483c-825f-4f413827df7a",
+              "sources": [
+                {
+                  "citation": {
+                    "locator": {
+                      "end": 15,
+                      "kind": "utf8-bytes",
+                      "start": 0
+                    },
+                    "version": 1,
+                    "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                    "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                    "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+                  },
+                  "byteLength": 15,
+                  "isCurrentAtFreeze": true,
+                  "currentVersionAtFreeze": 1
+                }
+              ],
+              "contextDigest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+              "templateVersion": 1,
+              "executionInputId": "6e400dcf-7fca-4596-8dfb-fdf94df0b4d5",
+              "executionInputDigest": "1f706556c1e8675ccd363d2c93b16594d0819081e782b2606671ee7d33867556"
+            },
+            "preview": "legacy source",
+            "promoted": null,
+            "sequence": 1,
+            "createdAt": "2026-10-06T11:29:44.566Z",
+            "truncated": false,
+            "updatedAt": "2026-10-06T11:29:44.566Z",
+            "conversationId": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8"
+          },
+          "queueRevision": 1,
+          "conversationId": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8"
+        }
+      },
+      {
+        "operation": "conversation.turn",
+        "key": "c494e9a1-0cef-464a-9d01-f6865dda3712",
+        "digest": "344c5832bd1cc580531545fe9fa33c7c81600e23b46af882da8172d6cb97c55d",
+        "response": {
+          "turn": {
+            "id": "55f32b56-cf37-4d29-a5fd-c58bf4cb30e2",
+            "task": {
+              "id": "7219093d-9eda-4812-a55f-f4c48dc38017",
+              "title": "Pre-026 conversation",
+              "status": "queued",
+              "harness": "claude",
+              "createdAt": "2026-10-06T11:29:44.580Z",
+              "updatedAt": "2026-10-06T11:29:44.580Z",
+              "verificationStatus": "pending"
+            },
+            "user": {
+              "role": "user",
+              "text": "legacy send"
+            },
+            "number": 1,
+            "context": {
+              "id": "7d060f99-97be-4a28-b356-9e82d2649606",
+              "sources": [
+                {
+                  "citation": {
+                    "locator": {
+                      "end": 15,
+                      "kind": "utf8-bytes",
+                      "start": 0
+                    },
+                    "version": 1,
+                    "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                    "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                    "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+                  },
+                  "byteLength": 15,
+                  "isCurrentAtFreeze": true,
+                  "currentVersionAtFreeze": 1
+                }
+              ],
+              "contextDigest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+              "templateVersion": 1,
+              "executionInputId": "75ef7d39-3330-4d54-8cc3-096c5ad857e2",
+              "executionInputDigest": "f9039d3d269c727498e3e7ea5a11c78ceb1dad622e94d2912c0257a5469f6111"
+            },
+            "assistant": {
+              "state": "pending",
+              "reason": "execution-pending"
+            },
+            "createdAt": "2026-10-06T11:29:44.584Z",
+            "effective": {
+              "model": null,
+              "tools": "unknown",
+              "source": null,
+              "thinking": "unknown"
+            },
+            "telemetry": {
+              "kind": "execution",
+              "title": "Execution details",
+              "taskId": "7219093d-9eda-4812-a55f-f4c48dc38017"
+            },
+            "conversationId": "648a5122-7c27-4ab5-a082-c89635fa620e"
+          },
+          "conversation": {
+            "id": "648a5122-7c27-4ab5-a082-c89635fa620e",
+            "title": "Pre-026 conversation",
+            "harness": "claude",
+            "revision": 1,
+            "createdAt": "2026-10-06T11:29:44.573Z",
+            "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+            "requested": {
+              "model": "runner-default",
+              "tools": "configured-readonly",
+              "thinking": "disabled"
+            },
+            "updatedAt": "2026-10-06T11:29:44.585Z"
+          }
+        }
+      },
+      {
+        "operation": "conversation.turn",
+        "key": "cc504a59-b2fd-47bb-9e6e-9518f84c88f4",
+        "digest": "62f5bb218083fcf8c27ca744987d890894e69b7cd627e15026dec177bc38623d",
+        "response": {
+          "turn": {
+            "id": "d2fa080a-92a1-4542-b639-d9cb7a444c4a",
+            "task": {
+              "id": "ec968839-2062-4099-b732-b0d529698197",
+              "title": "Pre-026 conversation",
+              "status": "queued",
+              "harness": "claude",
+              "createdAt": "2026-10-06T11:29:44.592Z",
+              "updatedAt": "2026-10-06T11:29:44.592Z",
+              "verificationStatus": "pending"
+            },
+            "user": {
+              "role": "user",
+              "text": "legacy plain"
+            },
+            "number": 1,
+            "assistant": {
+              "state": "pending",
+              "reason": "execution-pending"
+            },
+            "createdAt": "2026-10-06T11:29:44.593Z",
+            "effective": {
+              "model": null,
+              "tools": "unknown",
+              "source": null,
+              "thinking": "unknown"
+            },
+            "telemetry": {
+              "kind": "execution",
+              "title": "Execution details",
+              "taskId": "ec968839-2062-4099-b732-b0d529698197"
+            },
+            "conversationId": "6ca8c59e-8f97-448f-b454-dd8df5c343a1"
+          },
+          "conversation": {
+            "id": "6ca8c59e-8f97-448f-b454-dd8df5c343a1",
+            "title": "Pre-026 conversation",
+            "harness": "claude",
+            "revision": 1,
+            "createdAt": "2026-10-06T11:29:44.590Z",
+            "requested": {
+              "model": "runner-default",
+              "tools": "configured-readonly",
+              "thinking": "disabled"
+            },
+            "updatedAt": "2026-10-06T11:29:44.594Z"
+          }
+        }
+      }
+    ],
+    "contexts": [
+      {
+        "original": {
+          "id": "7d060f99-97be-4a28-b356-9e82d2649606",
+          "sources": [
+            {
+              "text": "knowledge-first",
+              "citation": {
+                "locator": {
+                  "end": 15,
+                  "kind": "utf8-bytes",
+                  "start": 0
+                },
+                "version": 1,
+                "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+              },
+              "byteLength": 15,
+              "isCurrentAtFreeze": true,
+              "currentVersionAtFreeze": 1
+            }
+          ],
+          "raw_bytes": 15,
+          "created_at": "2026-10-06T11:29:44.579+00:00",
+          "project_id": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+          "context_digest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+          "conversation_id": "648a5122-7c27-4ab5-a082-c89635fa620e"
+        }
+      },
+      {
+        "original": {
+          "id": "b16ea6b9-4f59-483c-825f-4f413827df7a",
+          "sources": [
+            {
+              "text": "knowledge-first",
+              "citation": {
+                "locator": {
+                  "end": 15,
+                  "kind": "utf8-bytes",
+                  "start": 0
+                },
+                "version": 1,
+                "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+                "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+                "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+              },
+              "byteLength": 15,
+              "isCurrentAtFreeze": true,
+              "currentVersionAtFreeze": 1
+            }
+          ],
+          "raw_bytes": 15,
+          "created_at": "2026-10-06T11:29:44.564+00:00",
+          "project_id": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+          "context_digest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+          "conversation_id": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8"
+        }
+      }
+    ],
+    "inputs": [
+      {
+        "id": "6e400dcf-7fca-4596-8dfb-fdf94df0b4d5",
+        "context_id": "b16ea6b9-4f59-483c-825f-4f413827df7a",
+        "user_text": "legacy source",
+        "template_version": 1,
+        "execution_prompt": "User message:\nlegacy source\n\nSelected source excerpts (reference material):\n[{\"byteLength\":15,\"citation\":{\"contentDigest\":\"7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3\",\"locator\":{\"end\":15,\"kind\":\"utf8-bytes\",\"start\":0},\"projectId\":\"09b13061-8d5c-451e-9fc3-63b0dd405330\",\"sourceId\":\"b42f6936-a2f5-495a-80d4-d42a6dab7e80\",\"version\":1},\"currentVersionAtFreeze\":1,\"isCurrentAtFreeze\":true,\"text\":\"knowledge-first\"}]",
+        "execution_input_digest": "1f706556c1e8675ccd363d2c93b16594d0819081e782b2606671ee7d33867556",
+        "created_at": "2026-10-06T11:29:44.565Z"
+      },
+      {
+        "id": "75ef7d39-3330-4d54-8cc3-096c5ad857e2",
+        "context_id": "7d060f99-97be-4a28-b356-9e82d2649606",
+        "user_text": "legacy send",
+        "template_version": 1,
+        "execution_prompt": "User message:\nlegacy send\n\nSelected source excerpts (reference material):\n[{\"byteLength\":15,\"citation\":{\"contentDigest\":\"7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3\",\"locator\":{\"end\":15,\"kind\":\"utf8-bytes\",\"start\":0},\"projectId\":\"09b13061-8d5c-451e-9fc3-63b0dd405330\",\"sourceId\":\"b42f6936-a2f5-495a-80d4-d42a6dab7e80\",\"version\":1},\"currentVersionAtFreeze\":1,\"isCurrentAtFreeze\":true,\"text\":\"knowledge-first\"}]",
+        "execution_input_digest": "f9039d3d269c727498e3e7ea5a11c78ceb1dad622e94d2912c0257a5469f6111",
+        "created_at": "2026-10-06T11:29:44.579Z"
+      }
+    ]
+  },
+  "namespace": [
+    {
+      "recovery_scope_id": "b6e7ed7b-589c-42ad-a8f9-13dccc58e746"
+    }
+  ],
+  "sendReplay": {
+    "turn": {
+      "id": "55f32b56-cf37-4d29-a5fd-c58bf4cb30e2",
+      "task": {
+        "id": "7219093d-9eda-4812-a55f-f4c48dc38017",
+        "title": "Pre-026 conversation",
+        "status": "queued",
+        "harness": "claude",
+        "createdAt": "2026-10-06T11:29:44.580Z",
+        "updatedAt": "2026-10-06T11:29:44.580Z",
+        "verificationStatus": "pending"
+      },
+      "user": {
+        "role": "user",
+        "text": "legacy send"
+      },
+      "number": 1,
+      "context": {
+        "id": "7d060f99-97be-4a28-b356-9e82d2649606",
+        "sources": [
+          {
+            "citation": {
+              "locator": {
+                "end": 15,
+                "kind": "utf8-bytes",
+                "start": 0
+              },
+              "version": 1,
+              "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+              "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+              "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+            },
+            "byteLength": 15,
+            "isCurrentAtFreeze": true,
+            "currentVersionAtFreeze": 1
+          }
+        ],
+        "contextDigest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+        "templateVersion": 1,
+        "executionInputId": "75ef7d39-3330-4d54-8cc3-096c5ad857e2",
+        "executionInputDigest": "f9039d3d269c727498e3e7ea5a11c78ceb1dad622e94d2912c0257a5469f6111"
+      },
+      "assistant": {
+        "state": "pending",
+        "reason": "execution-pending"
+      },
+      "createdAt": "2026-10-06T11:29:44.584Z",
+      "effective": {
+        "model": null,
+        "tools": "unknown",
+        "source": null,
+        "thinking": "unknown"
+      },
+      "telemetry": {
+        "kind": "execution",
+        "title": "Execution details",
+        "taskId": "7219093d-9eda-4812-a55f-f4c48dc38017"
+      },
+      "conversationId": "648a5122-7c27-4ab5-a082-c89635fa620e"
+    },
+    "conversation": {
+      "id": "648a5122-7c27-4ab5-a082-c89635fa620e",
+      "title": "Pre-026 conversation",
+      "harness": "claude",
+      "revision": 1,
+      "createdAt": "2026-10-06T11:29:44.573Z",
+      "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+      "requested": {
+        "model": "runner-default",
+        "tools": "configured-readonly",
+        "thinking": "disabled"
+      },
+      "updatedAt": "2026-10-06T11:29:44.585Z"
+    },
+    "replayed": true
+  },
+  "plainReplay": {
+    "turn": {
+      "id": "d2fa080a-92a1-4542-b639-d9cb7a444c4a",
+      "task": {
+        "id": "ec968839-2062-4099-b732-b0d529698197",
+        "title": "Pre-026 conversation",
+        "status": "queued",
+        "harness": "claude",
+        "createdAt": "2026-10-06T11:29:44.592Z",
+        "updatedAt": "2026-10-06T11:29:44.592Z",
+        "verificationStatus": "pending"
+      },
+      "user": {
+        "role": "user",
+        "text": "legacy plain"
+      },
+      "number": 1,
+      "assistant": {
+        "state": "pending",
+        "reason": "execution-pending"
+      },
+      "createdAt": "2026-10-06T11:29:44.593Z",
+      "effective": {
+        "model": null,
+        "tools": "unknown",
+        "source": null,
+        "thinking": "unknown"
+      },
+      "telemetry": {
+        "kind": "execution",
+        "title": "Execution details",
+        "taskId": "ec968839-2062-4099-b732-b0d529698197"
+      },
+      "conversationId": "6ca8c59e-8f97-448f-b454-dd8df5c343a1"
+    },
+    "conversation": {
+      "id": "6ca8c59e-8f97-448f-b454-dd8df5c343a1",
+      "title": "Pre-026 conversation",
+      "harness": "claude",
+      "revision": 1,
+      "createdAt": "2026-10-06T11:29:44.590Z",
+      "requested": {
+        "model": "runner-default",
+        "tools": "configured-readonly",
+        "thinking": "disabled"
+      },
+      "updatedAt": "2026-10-06T11:29:44.594Z"
+    },
+    "replayed": true
+  },
+  "queueReplay": {
+    "item": {
+      "id": "656f6d3a-eaf4-473b-ae17-6fa9a126d5ee",
+      "state": "waiting",
+      "context": {
+        "id": "b16ea6b9-4f59-483c-825f-4f413827df7a",
+        "sources": [
+          {
+            "citation": {
+              "locator": {
+                "end": 15,
+                "kind": "utf8-bytes",
+                "start": 0
+              },
+              "version": 1,
+              "sourceId": "b42f6936-a2f5-495a-80d4-d42a6dab7e80",
+              "projectId": "09b13061-8d5c-451e-9fc3-63b0dd405330",
+              "contentDigest": "7c49cfda0192c546b51a1b821adc04940b6a53856e1bbcc04af55b4432a19ff3"
+            },
+            "byteLength": 15,
+            "isCurrentAtFreeze": true,
+            "currentVersionAtFreeze": 1
+          }
+        ],
+        "contextDigest": "05458cb3b6cee9ed8d7076da601be43e5b568c694847fc18e5666328ed12d417",
+        "templateVersion": 1,
+        "executionInputId": "6e400dcf-7fca-4596-8dfb-fdf94df0b4d5",
+        "executionInputDigest": "1f706556c1e8675ccd363d2c93b16594d0819081e782b2606671ee7d33867556"
+      },
+      "preview": "legacy source",
+      "promoted": null,
+      "sequence": 1,
+      "createdAt": "2026-10-06T11:29:44.566Z",
+      "truncated": false,
+      "updatedAt": "2026-10-06T11:29:44.566Z",
+      "conversationId": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8"
+    },
+    "queueRevision": 1,
+    "conversationId": "8d6b4fdc-9b5f-4d9b-9778-ee4a34abf6f8",
+    "replayed": true
+  }
+}

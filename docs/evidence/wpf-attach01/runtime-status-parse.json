@@ -1,0 +1,102 @@
+{
+  "sampledAt": "2026-10-06T10:47:41.464Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "中心已能保存和恢复固定文本附件，聊天与远端执行读取同一份材料；待独立审查",
+    "next": "完成附件运行时独立审查，再由共享接线接入正式中心和聊天上传",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+    "scopes": [
+      "apps/server/src/attachments/attachments.test.ts",
+      "apps/server/src/attachments/context.test.ts",
+      "apps/server/src/attachments/fixture.ts",
+      "apps/server/src/attachments/index.ts",
+      "apps/server/src/attachments/storage.ts",
+      "apps/server/src/conversation-context/store.ts",
+      "apps/server/src/conversation-queue/commands.ts",
+      "apps/server/src/conversations/commands.ts",
+      "apps/server/src/conversations/queries.ts",
+      "apps/server/src/conversations/state.ts",
+      "packages/contracts/src/attachments.test.ts",
+      "packages/contracts/src/attachments.ts",
+      "packages/contracts/src/conversation-context.ts",
+      "packages/contracts/src/conversation-queue.ts",
+      "packages/contracts/src/conversations.ts",
+      "packages/storage/migrations/026-attachment-resources.sql"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+    "record": "PASSED 8701a6cf547248e70aa5758f05da1d7d314ae9c0；78直接检查（29PGHTTP+49合同/legacy），根types0，3DB清零；原执行339086+dirty见runtime-checks"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**（runtime固定候选待独审）",
+    "target": "8701a6cf547248e70aa5758f05da1d7d314ae9c0"
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+      "id": "WPF-MATURE-03",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root",
+      "value": "Web /root"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "todos": [
+    {
+      "id": "WPF-ATTACH01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[Interface](../../docs/evidence/wpf-attach01/interface.md)、[take](../../docs/evidence/wpf-attach01/take-receipt.json)"
+    },
+    {
+      "id": "WPF-ATTACH01-02",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "运行域实现与作者验证已固定；[原回执](../../docs/evidence/wpf-attach01/runtime-amend-receipt.json)"
+    },
+    {
+      "id": "WPF-ATTACH01-03",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "29项隔离PGHTTP含实际runner/fake adapter；[运行验证](../../docs/evidence/wpf-attach01/runtime-validation.md)，无provider"
+    },
+    {
+      "id": "WPF-ATTACH01-04",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "phase1独审通过；完整运行域/main接收仍pending"
+    }
+  ]
+}

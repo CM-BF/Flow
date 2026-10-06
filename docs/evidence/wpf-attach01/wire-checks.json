@@ -1,0 +1,49 @@
+{
+  "sourceCommit": "c000300805329498b7b952b0a1084226cd851041",
+  "sourceDirty": true,
+  "sourceHashes": {
+    "packages/contracts/src/attachments.ts": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+    "packages/contracts/src/conversation-context.ts": "429ce07ebf575b6a9fb07d84aec3780ce478ab43cfd778180b7d7d2d64899f44",
+    "packages/contracts/src/attachments.test.ts": "902ea0b7338c41f1cea545ee3633addca312a9916d7ca7868840d9df84c0a6ac"
+  },
+  "readOnlyDependencyHashes": {
+    "packages/contracts/src/knowledge.ts": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+    "packages/contracts/src/tasks.ts": "ee93a1d4bd7ca48542b18f005c8e0bd6e019fdca996567795dceda6cd358e05d",
+    "packages/contracts/src/conversations.ts": "72e9ceb34213cc5ba95162bc1f1b3eac926d9349c83d4f54b29a8d0bd7bcd3b2",
+    "packages/contracts/src/conversation-queue.ts": "d7f61fd2c7a68a0efc376112d62ad9d97f911ce94ee9aec75137cc1eb8f9707e",
+    "packages/client/src/index.ts": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b",
+    "apps/web/src/conversation-context/receipts.ts": "6f9b181aeeb01572901e2f735dfed9c1b7d859ecc1448cc7baf502d6a2c4a233",
+    "apps/web/src/conversation-context/selection.ts": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+    "apps/web/src/conversations/projection.ts": "808395c53eb621ca0298ab3edb4d3ebf51330cdb189fe2252f6b6a020e942925",
+    "apps/web/src/conversations/outbox.ts": "2c2e726dc0ade601b62cc0fbf2a0a617929f8e514878230804f84d12bdef1461",
+    "apps/web/src/conversations/queue/commands.ts": "c66025cf60441ac84e29c9061c510ce6bf177d73b91e4a75a2c99ddb5daa0491",
+    "apps/web/src/conversations/queue/projection.ts": "5adbf3bc3765f72ce3fa7f4097332fb52702f6df6eccf4604938fd7bb8fb5e47",
+    "apps/web/src/conversations/messages.ts": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e",
+    "apps/web/src/execution-profiles/selection.ts": "577676a1357e6da20c613f6ed49301ebb954b0982e8b5db972067a2b7c21e004",
+    "apps/web/test/conversation-context-receipts.test.ts": "8e6d281bbfa365e89c0f67e631fc5c046b9685c1690babdcddea8fd0ced23637"
+  },
+  "readOnlyDependenciesEqualBase": true,
+  "checks": [
+    {
+      "command": "pnpm exec vitest run packages/contracts/src/attachments.test.ts apps/web/test/conversation-context-receipts.test.ts",
+      "log": "wire-direct.log",
+      "startedAt": "2026-10-06T10:22:58.221759+00:00",
+      "finishedAt": "2026-10-06T10:22:59.932683+00:00",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm exec tsc --noEmit",
+      "log": "wire-types.log",
+      "startedAt": "2026-10-06T10:22:59.932724+00:00",
+      "finishedAt": "2026-10-06T10:23:08.861845+00:00",
+      "exitCode": 0
+    }
+  ],
+  "limits": [
+    "real unchanged legacy consumers + FlowClient/mock fetch, not real HTTP server",
+    "no browser, DB, provider, runtime route or App integration"
+  ],
+  "startedAt": "2026-10-06T10:22:58.206596+00:00",
+  "finishedAt": "2026-10-06T10:23:08.861891+00:00",
+  "sourceUnchangedDuringChecks": true
+}

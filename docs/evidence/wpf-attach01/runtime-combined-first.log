@@ -1,0 +1,39 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources
+
+ ✓ apps/server/src/attachments/context.test.ts (19 tests) 6686ms
+   ✓ before 026 plain/knowledge remain v1; migration preserves saved receipts and enables project GET only  447ms
+   ✓ lost Send ACK replays before TTL and busy/CAS after restart; retained expiry blocks a fresh key  342ms
+   ✓ queue restart, pause/cancel and promotion retain the original material even after expiry  443ms
+   ✓ one batched metadata query for 50 items contains descriptors only; large body is read explicitly  886ms
+   ✓ actual runner receives exact frozen input through authorized claim and a generic fake adapter, without provider  666ms
+ ✓ apps/server/src/attachments/attachments.test.ts (8 tests) 2299ms
+ ✓ packages/contracts/src/attachments.test.ts (41 tests) 53ms
+ ✓ apps/web/test/conversation-context-receipts.test.ts (8 tests) 7ms
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: Connection terminated unexpectedly
+ ❯ Connection.<anonymous> node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js:204:73
+ ❯ Connection.wrapper node:events:639:12
+ ❯ Connection.emit node:events:514:28
+ ❯ Socket.<anonymous> node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/connection.js:64:12
+ ❯ Socket.emit node:events:514:28
+ ❯ TCP.<anonymous> node:net:362:12
+
+This error originated in "apps/server/src/attachments/attachments.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "interrupted pre-commit upload leaves no partial resource and original-key recovery can commit once". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  4 passed (4)
+      Tests  76 passed (76)
+     Errors  1 error
+   Start at  03:40:17
+   Duration  11.74s (transform 542ms, setup 0ms, import 2.23s, tests 9.05s, environment 0ms)
+
