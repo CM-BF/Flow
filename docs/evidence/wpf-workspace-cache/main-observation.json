@@ -1,0 +1,87 @@
+{
+  "observedAt": "2026-10-06 11:57:35 UTC",
+  "main": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+  "originMain": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+  "mainDirty": "",
+  "ownerHead": "55b48b7daa6928839268c542080e2884a651a1f0",
+  "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+  "targetIsAncestor": false,
+  "sourceCount": 14,
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "482e5a9b09d54954dd957f6c711e0603b8e3cf23d5cf1d89cb0cf242420454a9",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ee90796b38c2bf0c265dffe59d7102dd6d91d5ea8d9e4100f0c6906dcf7185c3",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "sha256": "bcae3f00aa985c52d57763e9e00483a5c01f6b2d4310109e32f752e566d2d7e5",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/src/conversations/read-cache.ts",
+      "sha256": "18aa9bea835ef742605c639f4e07db1b3ae58e223e1fe982034e921ab2e80a7d",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "sha256": "a7b10258ec07a3c61a1ff170ea74be95cb872e5b919826c3f9b13ddbf2754fbd",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "10b8466da9dfadab8b202922ce59de9a0ce71e7a98777876e9547923ecbe176f",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/src/workspace-retention.ts",
+      "sha256": "c6df07b4d238fe449459d25d1596ad43eabadb596c92087ca45034c80ffe41c7",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "173f161082c29cf8cb1c8a995e8f2ccedd4475b8c0fae96a0ee3268b7c5ff957",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "sha256": "667a35e9a765968f8abc0a4e86610f93b86696c2e86b7eed0e5d23a616f9d5bb",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "sha256": "a79d701195b93254026a42432c866eeffe4072cf3ec6d9dcdb3ab37dd8ace5f9",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/test/workspace-retention.browser.ts",
+      "sha256": "394396d2df48c9fa05df6859c7bae871b69690f3dce9a2be567000383672d8a1",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/test/workspace-retention.fixture.ts",
+      "sha256": "d46715af2f97e2441c66ceeee1726bde88438e26211d6de1ad533e273d5a8f1c",
+      "targetEqualsMain": true
+    },
+    {
+      "path": "apps/web/test/workspace-retention.test.ts",
+      "sha256": "400f819269938c7bbd6ad43749f57d4364cec983cc92557d2e4d9b68022f5e84",
+      "targetEqualsMain": true
+    }
+  ],
+  "leadEvidence": "lead-main-source-comparison.json",
+  "leadChecks": "Web types0; 133/direct and differential browser reused, not rerun",
+  "limits": "No new API/deployment sample, model, DB or service operations; registration/4320 deployment remain separately tracked",
+  "ownerDirtyAtObservation": "?? docs/evidence/wpf-workspace-cache/lead-main-source-comparison.json\n?? docs/evidence/wpf-workspace-cache/main-close-live.json\n",
+  "integrationMethod": "Controlled source intake; original implementation commit is not an ancestor, all14 source blobs match exactly"
+}

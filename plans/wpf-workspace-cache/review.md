@@ -14,3 +14,5 @@ Reviewer：root / gpt-6-astra ultra
 批准范围：32 resident conversation、reply2/2MiB和queue4/64KiB正文cache、保护/释放生命周期。不是heap、完整历史、全workspace性能或真实attachment App绑定完成。无provider、真实center/DB、个人服务测试。main接收与后续六交集CAS移交仍单独办理。
 
 历史：初始NOT_STARTED绑定同一4ec；本次首次正式独审APPROVED，未产生独立blocking finding。作者开发中的late accepted产品红测在送审前修复，不能记成root发现/复跑。全部原始证据保留，不清洗日志空白。
+
+主线后续事实（2026-10-06 11:57:35 UTC）：`017adc276a888a218bed3ef9963bc4dabbc6cec2` 已接收全部14源，见[owner观察](../../docs/evidence/wpf-workspace-cache/main-observation.json)。上述独审绑定4ec不变；无新产品检查或扩大批准范围。

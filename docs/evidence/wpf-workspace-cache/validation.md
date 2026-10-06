@@ -38,3 +38,8 @@ Browser automation has stopped. For an independent reviewer, direct checks can b
 Root已正式 APPROVED /0 blocking（owner转录2026-10-06 11:53:23 UTC），精确绑定4ec291c2381faa0fc212cf598b8126b9feecae71。独立四文件133/133、3.85秒；原样[log](root-independent-tests.log)和[audit](root-independent-audit.json)。Root逐读14源与命令/知识生命周期、14hash/206readonlydeps/16scope、逐审7份browser/raw/source复用边界并目视390dark；未重新跑browser/types。作者与reviewer证据来源分开，main仍未接收。
 
 全历史diffcheck存在原测试日志尾空白/尾空行（consumer-first、direct-final、direct、first-direct、generation-red、red-direct、types-*及独立log），原样保留；source implementation diffcheck0，不声称所有raw文本零空白。
+
+
+## Main acceptance
+
+2026-10-06 11:57:35 UTC owner实核main/origin `017adc276a888a218bed3ef9963bc4dabbc6cec2` 与获审14源逐字相同，详[main-observation](main-observation.json)及[Lead原始来源比较](lead-main-source-comparison.json)。Lead Web types0归其组合验证，133与原分次browser未重新运行。登记/4320部署证据未到，不另fetch或把main接收冒充部署。

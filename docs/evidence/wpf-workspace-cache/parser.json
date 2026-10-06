@@ -22,13 +22,13 @@
     },
     "human": {
       "delivery": {
-        "state": "integration",
+        "state": "delivered",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 1,
       "output": "关闭空聊天会释放页面，草稿和未确认收据可保留重开",
-      "next": "集成关闭回收，再交接附件输入的接入窗口",
+      "next": "本片段已交付；附件接线由后继正式领取",
       "blocker": {
         "state": "none",
         "text": ""
@@ -63,9 +63,9 @@
     "taskId": "WPF-WORKSPACECACHE01",
     "owner": "workspace_panels_owner / gpt-6-astra ultra",
     "branch": "codex/web-workspace-cache",
-    "branchState": "in-progress / approved / waiting-main",
-    "updatedAt": "2026-10-06T11:53:23.000Z",
-    "updatedRecord": "2026-10-06 11:53:23 UTC",
+    "branchState": "completed / main-accepted",
+    "updatedAt": "2026-10-06T11:57:35.000Z",
+    "updatedRecord": "2026-10-06 11:57:35 UTC",
     "todos": [
       {
         "id": "WPF-WORKSPACECACHE01-01",
@@ -87,9 +87,9 @@
       },
       {
         "id": "WPF-WORKSPACECACHE01-04",
-        "state": "in-progress",
+        "state": "completed",
         "owner": "workspace_panels_owner",
-        "evidence": "root独审APPROVED；metadata正常push，main接收/六交集交权待正式receipt"
+        "evidence": "[main独立观察](../../docs/evidence/wpf-workspace-cache/main-observation.json)；owner全部16scope停写，manager CAS release单独存证"
       }
     ],
     "errors": [],
@@ -101,7 +101,7 @@
       "record": "PASSED 4ec291c2381faa0fc212cf598b8126b9feecae71；133直接+Web类型0；7差分场景分次覆盖，原失败与68.689秒累计见validation"
     },
     "reviewRecord": "[review.md](review.md)，APPROVED",
-    "mainRecord": "NOT_INTEGRATED",
+    "mainRecord": "MAIN_ACCEPTED 017adc276a888a218bed3ef9963bc4dabbc6cec2；14源码逐字一致，Lead组合Web类型0",
     "next": "",
     "risks": "",
     "decisions": ""
