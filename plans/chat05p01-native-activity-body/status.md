@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-06 22:31:21 UTC |
+| 更新时间 | 2026-10-06 22:41:14 UTC |
 | Owner / model | assignment_review / gpt-6-astra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -16,13 +16,13 @@
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | 7d0751b2d22afddd1da6b25bfa9db0c32ab772f4 |
-| dirty | 当前自身spool/chunk实现中 |
+| HEAD | 2dd72c8d476eb3faa8177fcb1597caf6b9b89289 |
+| dirty | 当前仅自身受影响直接消费者与证据待固定 |
 | 工作分支状态 | in-progress |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
 | claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
-| 检查状态 | 局部22项分轮通过；focused types原红修复中；PG/provider/生产挂载NOT_RUN |
+| 检查状态 | 局部22项分轮通过；focused types原红已修、资源门禁下待复验；PG/provider/生产挂载NOT_RUN |
 | 独立review | NOT_STARTED |
 | main集成 | 未集成 |
 | Dashboard | registry180已实际live；TODO表头已纠正待下次聚合 |

@@ -113,3 +113,12 @@ it('makes a steering final proposal wait for the body seal without allocating in
   ]},{async submit(proposal){calls++;expect(proposal.afterSequence).toBe(lastSequence);expect(proposal.events[0]!.sequence).toBe(lastSequence+1);return{state:'committed',proposalId:proposal.proposalId,lastSequence:lastSequence+3,replayed:false};},async status(){throw new Error('Unexpected status');}});
   expect(calls).toBe(0);release.resolve();await transfer;expect((await final).state).toBe('committed');expect(calls).toBe(1);
 });
+
+it('never overtakes an ordinary event whose durable save failed, even if storage later becomes writable',async()=>{
+  const {path}=await setup(),missing=join(path,'not-yet-created');let reports=0;
+  const outbox=new EventOutbox(missing,ownership,async()=>{reports++;});
+  await expect(outbox.emit({type:'message',text:'Must precede material'})).rejects.toBeInstanceOf(EventStorageError);
+  await mkdir(missing);await expect(outbox.publishActivityBody(input())).rejects.toBeInstanceOf(EventStorageError);
+  await expect(outbox.emit({type:'completed',outcome:'succeeded'})).rejects.toBeInstanceOf(EventStorageError);
+  expect(reports).toBe(0);expect(await readdir(missing)).toEqual([]);
+});

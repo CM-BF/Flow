@@ -45,9 +45,9 @@ export class EventOutbox {
     const next = this.tail.then(async () => {
       if (this.events.length === 0) return;
       const sending = { ...this.ownership, events: [...this.events] };
-      await persist(this.file, sending);
-      if (this.failure) throw this.failure;
       try {
+        if (this.failure) throw this.failure;
+        await persist(this.file, sending);
         await this.report(sending);
         this.events = this.events.filter(event => event.sequence > sending.events.at(-1)!.sequence);
         if (this.events.length) await persist(this.file, { ...this.ownership, events: this.events });
