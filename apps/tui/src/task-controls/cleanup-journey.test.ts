@@ -21,7 +21,10 @@ test('production center close can be observed before checkpoint-gated private re
   let directory: string | undefined, originalIdentity: DirectoryIdentity | undefined;
   let databaseOid: number | undefined, ready = false;
   let app: Awaited<ReturnType<typeof createServer>> | undefined;
-  const admin = new Pool({ connectionString: adminUrl, max: 1, connectionTimeoutMillis: 2000, query_timeout: 3000 });
+  // pg forwards these client options; keep the supported timeout in an explicit variable.
+  const adminOptions: { connectionString: string; max: number; connectionTimeoutMillis: number; query_timeout: number }
+    = { connectionString: adminUrl, max: 1, connectionTimeoutMillis: 2000, query_timeout: 3000 };
+  const admin = new Pool(adminOptions);
   const marker = { operationId: randomUUID(), database };
   const save = async (name: string, value: unknown) => {
     const text = JSON.stringify(value, null, 2) + '\n';
