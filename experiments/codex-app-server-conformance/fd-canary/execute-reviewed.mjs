@@ -5,9 +5,17 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { performance } from 'node:perf_hooks';
 import { runFdCanaryBatch } from './host.mjs';
-const sourceDirectory = path.dirname(fileURLToPath(import.meta.url));
-const repository = path.resolve(sourceDirectory, '../../..');
-const evidenceDirectory = path.join(repository, 'docs/evidence/wpf-mature-02/fd-canary-v3');
+const originalSourceDirectory = path.dirname(fileURLToPath(import.meta.url));
+const repository = path.resolve(originalSourceDirectory, '../../..');
+/** Two reviewed recipes only: no caller-selected profile, path, toolchain or matrix. */
+export function reviewedCandidate(id = 'v3') {
+  if (id === 'v3') return Object.freeze({ version: 3, flag: '--reviewed-fd-window-v3',
+    sourceDirectory: originalSourceDirectory, evidenceDirectory: path.join(repository, 'docs/evidence/wpf-mature-02/fd-canary-v3') });
+  if (id === 'sandbox67') return Object.freeze({ version: 4, flag: '--reviewed-sandbox67-window',
+    sourceDirectory: path.join(repository, 'experiments/codex-app-server-conformance/sandbox67'),
+    evidenceDirectory: path.join(repository, 'docs/evidence/wpf-mature-02/sandbox67') });
+  throw new Error('Unknown reviewed candidate');
+}
 function fingerprint(file, expected) {
   const stat = fs.lstatSync(file);
   if (!stat.isFile() || stat.isSymbolicLink() || stat.size !== expected.bytes) throw new Error();
@@ -22,9 +30,10 @@ function fingerprint(file, expected) {
     if (hash.digest('hex') !== expected.sha256 || fs.fstatSync(fd).size !== stat.size) throw new Error();
   } finally { fs.closeSync(fd); }
 }
-export async function executeReviewed(start = performance.now(), startedAt = new Date().toISOString()) {
+export async function executeReviewed(start = performance.now(), startedAt = new Date().toISOString(), candidateId = 'v3') {
+  const { sourceDirectory, evidenceDirectory, version } = reviewedCandidate(candidateId);
   const input = JSON.parse(fs.readFileSync(path.join(evidenceDirectory, 'driver-input.json'), 'utf8'));
-  if (input.candidateVersion !== 3 || input.totalMs !== 60000 || input.maxTargets !== 2 || input.maxCompileCalls !== 1 || input.maxBytes !== 2097152) throw new Error();
+  if (input.candidateVersion !== version || input.totalMs !== 60000 || input.maxTargets !== 2 || input.maxCompileCalls !== 1 || input.maxBytes !== 2097152) throw new Error();
   if (fs.realpathSync(process.execPath) !== input.node.path) throw new Error();
   for (const item of input.files) {
     if (item.path.startsWith('/') || item.path.split('/').includes('..')) throw new Error();
@@ -54,16 +63,19 @@ export function prepareDelivery(result, elapsedMs) {
     && result.output.receipts + bytes <= result.output.receiptReserveBytes;
   return { line, bytes, passes };
 }
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+export async function runReviewedCli(candidateId = 'v3') {
+  const candidate = reviewedCandidate(candidateId);
   process.stdout.once('error', () => { process.exitCode = 1; });
-  if (process.argv.length !== 3 || process.argv[2] !== '--reviewed-fd-window-v3') {
+  if (process.argv.length !== 3 || process.argv[2] !== candidate.flag) {
     process.stdout.write('{"state":"NOT_RUN","reason":"explicit-reviewed-window-argument-required"}\n'); process.exitCode = 2;
   } else try {
     const start = performance.now(); const startedAt = new Date().toISOString();
-    const result = await executeReviewed(start, startedAt);
+    const result = await executeReviewed(start, startedAt, candidateId);
     const delivery = prepareDelivery(result, performance.now() - start);
     process.stdout.write(delivery.line, error => { process.exitCode = !error && delivery.passes && performance.now() - start <= 60000 ? 0 : 1; });
   } catch {
     process.stdout.write('{"state":"NOT_RUN_OR_UNCONFIRMED","reason":"fixed-input-or-host-failure"}\n'); process.exitCode = 1;
   }
 }
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await runReviewedCli();

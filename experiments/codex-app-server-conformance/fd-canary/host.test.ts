@@ -6,7 +6,7 @@ import { afterEach, expect, it, vi } from 'vitest';
 import { runFdCanaryBatch } from './host.mjs';
 import { runOwnedCommand } from './command.mjs';
 import { decodeReport, compilerInventory } from './report.mjs';
-import { prepareDelivery } from './execute-reviewed.mjs';
+import { prepareDelivery, reviewedCandidate } from './execute-reviewed.mjs';
 const sourceDirectory = path.dirname(new URL(import.meta.url).pathname);
 const toolchain = { clang: '/fixed/clang', linker: '/fixed/ld', sdk: '/fixed/sdk', sandbox: '/fixed/sandbox-exec' };
 const owned: Array<{ directory: string; dev: number; ino: number }> = [];
@@ -368,4 +368,36 @@ it('v3 retains roots when automatic inventory close is unknown without retrying 
   const result = await runFdCanaryBatch(f.input, { ...f, io });
   expect(result).toMatchObject({ compilerInventoryPersisted: false, descriptorsClosed: false, cleanupComplete: false, targetReservations: 0, failureStage: 'compiler-inventory-persistence' });
   expect(result.retainedRoots).toHaveLength(2); expect(f.calls).toHaveLength(1); expect(closes).toBe(1);
+});
+
+it('sandbox67 selects exactly two fixed recipes and rejects arbitrary profile paths', () => {
+  expect(reviewedCandidate()).toMatchObject({ version: 3, sourceDirectory, flag: '--reviewed-fd-window-v3' });
+  const selected = reviewedCandidate('sandbox67');
+  expect(selected).toMatchObject({ version: 4, sourceDirectory: path.join(sourceDirectory, '../sandbox67'), flag: '--reviewed-sandbox67-window' });
+  expect(selected.evidenceDirectory).toMatch(/\/wpf-mature-02\/sandbox67$/);
+  expect(Object.isFrozen(selected)).toBe(true);
+  for (const invalid of ['', '../candidate.sb', '/tmp/profile.sb', 'v4']) expect(() => reviewedCandidate(invalid)).toThrow();
+});
+it('sandbox67 preserves the C input and adds only the exact authorized Sandbox syscall-67 rule', () => {
+  const selected = reviewedCandidate('sandbox67');
+  expect(fs.readFileSync(path.join(selected.sourceDirectory, 'fd-canary.c'))).toEqual(fs.readFileSync(path.join(sourceDirectory, 'fd-canary.c')));
+  const base = fs.readFileSync(path.join(sourceDirectory, 'candidate.sb'), 'utf8');
+  expect(fs.readFileSync(path.join(selected.sourceDirectory, 'candidate.sb'), 'utf8')).toBe(base + '\n(allow system-mac-syscall (require-all (mac-policy-name "Sandbox") (mac-syscall-number 67)))\n');
+});
+it('sandbox67 consumes the selected frozen profile through the unchanged host and regular-fd case', async () => {
+  const selected = reviewedCandidate('sandbox67'); let copiedProfile: Buffer | undefined;
+  const f = fixture((options, number) => {
+    if (number === 1) copiedProfile = fs.readFileSync(path.join(options.cwd, 'candidate.sb'));
+    if (number === 3) {
+      expect(options.executable).toBe(toolchain.sandbox);
+      expect(options.stdio).toHaveLength(3);
+      for (const fd of options.stdio) expect(fs.fstatSync(fd).isFile()).toBe(true);
+    }
+  });
+  const result = await runFdCanaryBatch({ ...f.input, sourceDirectory: selected.sourceDirectory }, f);
+  expect(copiedProfile).toEqual(fs.readFileSync(path.join(selected.sourceDirectory, 'candidate.sb')));
+  expect(result).toMatchObject({ compileCalls: 1, targetReservations: 2, targetCases: ['control-socket', 'profile-regular'], measurementComplete: true,
+    compilerInventoryPersisted: true, cleanupComplete: true, resultPersisted: true });
+  expect(f.calls).toHaveLength(3); expect(f.calls[1].stdio).toBe('pipe');
+  expect(f.calls[2].args.filter((x: string) => x === '-f')).toHaveLength(1);
 });
