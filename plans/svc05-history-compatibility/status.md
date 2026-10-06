@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:16 UTC；精确退役准备获独审，等待新源窗口START |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:20 UTC；新窗口因保留产物比较误拒在材料前停止 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,16 +12,16 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 固定源码停写；本次仅own metadata提交，clean以实际Git回执为准 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED 0a8dd95bae123b3c749d859a42c2357e65321bcf（18不同纯/小文件用例分轮，入口语法）；真实host/PG/个人操作NOT_RUN |
 | 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
 | 实现目标 | 0a8dd95bae123b3c749d859a42c2357e65321bcf |
 | 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 一次受控退役方案已通过独立审查，原件与历史保护检查齐备；本次新记录已保留，尚未读取或操作个人环境。 |
-| 下一可用交付 | 收到固定版本窗口后，完成现场准入、旧意图退役和原定后台/页面发布。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 新现场身份和工作状态通过；保留产物字段值相同但比较器受键顺序影响，已在任何服务变更前停止并保存原始证据。 |
+| 下一可用交付 | 完成描述符比较的最小修正与独审后，另开受控窗口继续原发布。 |
+| 当前阻塞 | ACTIVE: 保留产物比较器误拒同值描述符；个人更新尚未开始，待局部修正。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；Lead APPROVED_EXECUTABLE_PREPARATION 0a8dd95bae123b3c749d859a42c2357e65321bcf，130fixed/129current无差；真实执行未开始 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
@@ -107,3 +107,7 @@ Execution Lead于2026-10-06T20:35:57.334026+00:00独立APPROVED_EXECUTABLE_PREPA
 ### 2026-10-06 21:11 UTC 一次旧 intent 退役准备
 
 GO经Lead已批准a7d提案1–5；当前实现/局部证明而非个人执行。固定源0a8dd95bae123b3c749d859a42c2357e65321bcf，[18不同分轮检查与界限](../../docs/evidence/svc05-history-compatibility/intent-retirement/README.md)；普通idle仍严格，缺hold的冻结模板仅可读不能写；全部后继步骤扣同一drain900秒，unknown不重试。原历史与两个失败窗口不改。新manifest待唯一独审，claim仍仅own plan/evidence。
+
+### 21:18新窗口停止
+
+01 fresh observed/613ms，02preflight exit1/57ms，唯一false retained。已保存descriptor三字段值全同而对象键顺序不同，JSON.stringify导致误拒；兼容报告null在preflight允许，不是此失败原因。03后及退役四步骤均未执行，没有drain时标/个人request；0个人变更/provider/用户tab。Lead已关闭源窗口，原raw不改，[分析与manifest](../../docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/analysis.json)。仅只读定位，尚未改比较器。

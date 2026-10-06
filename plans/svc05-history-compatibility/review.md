@@ -109,3 +109,7 @@ Execution Lead 独立APPROVED_EXECUTABLE_PREPARATION，固定5fe98f97cb7506f6555
 ## 2026-10-06 21:16 UTC 独立准备批准
 
 Execution Lead APPROVED_EXECUTABLE_PREPARATION target0a8dd95bae123b3c749d859a42c2357e65321bcf / delivery7fb235cc，130fixed/129current全吻合，18不同原检查分轮只读核验，0重跑/个人读取。原件[独立回执](../../docs/evidence/svc05-history-compatibility/intent-retirement/independent-review.json)。已建立全新exclusive准备reservation与私有记录子目录，不复用2030/2040许可或结果；真实hold request只能在definite新hold receipt后生成。等待Lead准确af51源窗口与START，本轮0个人动作。
+
+## 21:18个人窗口前置失败（原准备批准不回填为执行通过）
+
+新exclusive窗口01通过、02 retained-only失败，后继零动作；确定旧比较器JSON.stringify误把descriptor键顺序当值差异。原false/exit1和全部源仍保留。仅基于存储事实定位，不另探测个人环境、不重跑，源码后继待窄修授权。
