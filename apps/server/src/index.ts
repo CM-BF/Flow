@@ -1,6 +1,7 @@
 import { migrateContextObservationHistory } from './context-transparency/migration.js';
 import { registerContextHistoryRoutes } from './context-transparency/routes.js';
 import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
+import { registerGoalDeliveryRoutes } from './goal-delivery/index.js';
 import { migrateNativeHarnessSources } from './native-harness-migration.js';
 import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-steering/index.js';
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
@@ -147,6 +148,7 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
+  registerGoalDeliveryRoutes(app, pool);
   registerGoalNativeExecutionRoutes(app, pool, boss);
   registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
   registerAssistantStreamRoutes(app, pool);
