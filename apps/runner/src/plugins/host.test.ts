@@ -162,3 +162,24 @@ test.each(['import', 'invoke'] as const)('abort after pending %s is unknown; it 
     delete globals[key]; await rm(f.root, { recursive: true, force: true });
   }
 });
+
+test('revocation while the real module import is pending prevents its invoke action', async () => {
+  const key = 'flow-grant-gate-' + randomUUID();
+  const globals = globalThis as unknown as Record<string, unknown>;
+  let started!: () => void; let release!: () => void;
+  const entered = new Promise<void>(resolve => { started = resolve; });
+  globals[key] = () => new Promise<void>(resolve => { release = resolve; started(); });
+  const f = await fixture({ code: root => `import {writeFileSync} from 'node:fs'; await globalThis[${JSON.stringify(key)}](); export const hostApiMajor=1; export function invoke(){writeFileSync(${JSON.stringify(join(root, 'invoked'))}, 'ran'); return 'forbidden'}` });
+  let granted = true; const denied = new Error('grant revoked during import');
+  const outcome = invokeInstalledTool({ ...invocation(f), authorize: async () => { if (!granted) throw denied; } });
+  const settled = outcome.then(value => ({ value, error: undefined }), error => ({ value: undefined, error }));
+  try {
+    await Promise.race([entered, settled.then(() => { throw Error('Module import did not reach its pending gate'); })]);
+    granted = false; release();
+    expect((await settled).error).toBe(denied);
+    await expect(readFile(join(f.root, 'invoked'))).rejects.toMatchObject({ code: 'ENOENT' });
+  } finally {
+    release?.(); await settled;
+    delete globals[key]; await rm(f.root, { recursive: true, force: true });
+  }
+});

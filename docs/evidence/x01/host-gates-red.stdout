@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ❯ apps/runner/src/plugins/host.test.ts (15 tests | 1 failed | 14 skipped) 58ms
+   ↓ loads the installed real npm module after authorization and returns bounded text with frozen provenance
+   ↓ authority and ownership failures block module top-level execution and propagate the original failure
+   ↓ pre-abort, untrusted digest, and mismatched frozen material never authorize a load
+   ↓ a frozen invocation detaches configuration before asynchronous authorization
+   ↓ bounds input and package behavior: input
+   ↓ bounds input and package behavior: configuration
+   ↓ bounds input and package behavior: output
+   ↓ bounds input and package behavior: nontext
+   ↓ bounds input and package behavior: invoke rejection
+   ↓ bounds input and package behavior: import rejection
+   ↓ bounds input and package behavior: host api
+   ↓ one installation has a stable ESM identity across invocations while a different version remains distinct
+   ↓ abort after pending import is unknown; it does not claim package termination
+   ↓ abort after pending invoke is unknown; it does not claim package termination
+   × revocation while the real module import is pending prevents its invoke action 56ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 skipped (15)
+   Start at  07:42:56
+   Duration  205ms (transform 45ms, setup 0ms, import 57ms, tests 58ms, environment 0ms)
+
