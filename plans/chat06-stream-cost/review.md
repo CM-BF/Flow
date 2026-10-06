@@ -1,9 +1,9 @@
 # CHAT06P01 独立审查
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：4951ce63945ec6364be050de877715059402095f
 
-Base：fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe；branch codex/assistant-stream-cost-probe。Mika独立只读审查，Goal Owner接收产品范围。当前目标为新observer/隔离入口，未运行任何PG测量，新目标尚未批准。历史pure片段见下文。
+Base：fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe；branch codex/assistant-stream-cost-probe。Mika独立只读审查，Goal Owner接收产品范围。当前目标为新observer/隔离入口，未运行任何PG测量，Mika于2026-10-06T07:44:39Z限定APPROVED准备入口，无P1/P2。历史pure片段见下文。
 
 ## 可复制任务
 
@@ -17,4 +17,6 @@ Base：fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；worktree /Users/citrine/Projec
 
 ## 新入口独审
 
-固定target 4951ce63945ec6364be050de877715059402095f，实际10个不同pure用例（3旧workload+7新observer）及noEmit/只导入/语法预检0。见[readiness-manifest](../../docs/evidence/chat06p01/readiness-manifest.json)。请审查询callback/Promise/失败归属与恢复、精确prefix分类、Fastify ALS、固定84patch及真实端点/schema、同WT内部包、parent/child全时限/自有DB/未知CREATE ACK清理与失败保留。原pure批准不延伸到新源；本轮只请求准备批准，不是PG结果/窗口/容量。
+固定target 4951ce63945ec6364be050de877715059402095f，实际10个不同pure用例（3旧workload+7新observer）及noEmit/只导入/语法预检0。见[readiness-manifest](../../docs/evidence/chat06p01/readiness-manifest.json)。请审查询callback/Promise/失败归属与恢复、精确prefix分类、Fastify ALS、固定84patch及真实端点/schema、同WT内部包、parent/child全时限/自有DB/未知CREATE ACK清理与失败保留。原pure批准不延伸到新源；本輪已获准备批准，不是PG结果/容量。具体条件运行授权另见window-authorization；尚未运行。
+
+[入口独审回执](../../docs/evidence/chat06p01/readiness-independent-review.json)：13 source/11只读产品源/40 raw/6依赖hash一致；10 distinct pure/noEmit/import-only/syntax通过；审查者未执行测试/服务/PG。PG生命周期与测量结果仍待唯一条件窗口，不能沿用准备批准。

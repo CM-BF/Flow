@@ -2,32 +2,32 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:38 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:45 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | chat06p01_owner / gpt-6-astra（符合Sol以上门槛）；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe |
 | Branch | codex/assistant-stream-cost-probe |
-| 工作基线 / HEAD | base fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；实现与当前HEAD 4951ce63945ec6364be050de877715059402095f |
-| 工作树dirty状态 | 实现已固定；本次仅原始证据/manifest/status待提交 |
+| 工作基线 / HEAD | base fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；实现target 4951ce63945ec6364be050de877715059402095f；当前metadataHEAD 93d4b36e0bb896ec271550a3d7bba6bedf5041b8 |
+| 工作树dirty状态 | 已核93d4 clean；本次仅独审/授权metadata待提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 4951ce63945ec6364be050de877715059402095f；10个不同pure用例(3 workload+7 observer)、noEmit0、只导入/语法预检0；资源生命周期与PG矩阵未运行 |
 | 已集成main状态 / HEAD | 本片未集成；产品基线main fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 |
 | 实现目标 | 4951ce63945ec6364be050de877715059402095f |
 | 实现范围 | experiments/assistant-stream-cost |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 固定正文、请求观察器与隔离测量入口已准备并通过纯检查，等待入口独审 |
-| 下一可用交付 | 入口独审后取得明确窗口，提交三组真实PG成本结果 |
-| 当前阻塞 | NONE |
+| 当前产出 | 测量入口已独审通过，等待常驻服务操作结束后执行一次有界矩阵 |
+| 下一可用交付 | 提交三组真实PG成本结果及请求/查询/哈希/持久化完整证据 |
+| 当前阻塞 | 等待GO或Execution Lead明确SVC本次操作窗口已结束；解除后最迟08:15 UTC开始唯一矩阵 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，新入口target4951 NOT_STARTED；历史pure377已APPROVED |
+| Review | [review.md](review.md)，APPROVED仅入口target4951准备；实际PG结果待审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | CHAT06P01-01 | completed | chat06p01_owner | [方法](../../experiments/assistant-stream-cost/README.md)、[source](../../docs/evidence/chat06p01/source-map.json) |
 | CHAT06P01-02 | completed | chat06p01_owner | [readiness-manifest](../../docs/evidence/chat06p01/readiness-manifest.json)：10 distinct pure/noEmit0/import-only/syntax；没有PG测量 |
-| CHAT06P01-03 | pending | chat06p01_owner / mika | 未运行PG测量；无窗口 |
+| CHAT06P01-03 | pending | chat06p01_owner / mika | 条件GO已到；SVC结束回执尚未到，未运行PG测量 |
 | CHAT06P01-04 | pending | chat06p01_owner | 未产生实测 |
 | CHAT06P01-05 | pending | chat06p01_owner / mika / Lead | pure片段已独审；完整准备/实测待独审，main未接收 |
 
@@ -54,3 +54,5 @@ claim ff4d1ec7-ecd2-4154-94a8-99804b3c1b49 v1 ACTIVE，COMMITTED 2026-10-06T07:1
 2026-10-06T07:38:46.685631+00:00：入口实现固定4951；observer记录失败查询/多result rows及原错误、named SHA同步、Fastify ALS、query开始归属与恢复，7项纯验证。此前失败包括pg runtime/type paths及三包缺依赖、pg CJS named export；均保留，最终复用现有m2-shared-foundation对应版本并显式内部包本WT，无安装。计时包含观察开销，不做资源路径已实测断言。当前停止源码写入交Mika独审；唯一claim仍v1，0PG/model/provider。
 
 2026-10-06T07:39:07.599519+00:00 聚合核验：GET /api/snapshot等待5秒超时，未收到快照；不推断当前聚合状态/claim变化。唯一status已更新，待下一可用只读核验；[回执](../../docs/evidence/chat06p01/dashboard-readiness.json)。不重启服务、不改全局索引。
+
+2026-10-06T07:45:37.810501+00:00：Mika已限定APPROVED入口，GO已授权单次3task/84patch/30秒，无需全队静默；启动前必须收到SVC本次操作结束明确回执，最迟08:15 UTC开始，否则不启动。配置明确lease300000ms、automaticQueueScan=false且scheduler仍开；保留背景load/观察开销，0runner/provider/model/云。源码/config保持4951。dashboard因主队SVC更新仍留先前UNKNOWN，不重复请求或重启服务。
