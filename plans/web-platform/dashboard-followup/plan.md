@@ -32,7 +32,7 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 
 04:07:57实际42来源、当前21activewriterclaims literal0overlap，PERF02 b617 main集成记录正确；仅X03新claim待canonical注册。管理者独立CUA实际看见owner/lead/worktree/branch/16scope/state/version与来源，见[领取可见实证](../../../docs/evidence/web-platform/assignment-visibility-verification.json)。U12不新增第二账本；进度仍唯一owner status。
 
-- [ ] **WPF-D01-06** 后继取得标题/renderer正式scope后，把架构短SHA与固定快照提示放标题旁。GoalOwner目视D06无阻塞但当前“当前代码”标题易与底部折叠说明不一致；不扩本轮四scope、不阻D06集成。
+- [ ] **WPF-D01-06** D06新轮已从固定eb14991/独立新树正式take五scope，w01刷新源码结构并把短SHA/实际源码核验时间/固定快照提示放标题旁，继续同一baseline对象。旧8f已审记录保持历史，等待新target独审与唯一registry迁移后部署验收。
 
 - [x] **WPF-D01-07** 已移交WPF-DPERF01独立领取与验证：5cd获审，临时样本Git启动29→24且跨snapshot/异target语义保留；不是线上提速承诺，main6b4已含并bb7efv2释放。
 

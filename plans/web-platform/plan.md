@@ -86,7 +86,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-41 | U11 真实持续对话优先与明确演示边界 | [WPF-CHAT01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/plan.md) / workspace_panels_owner；主线center/runner | hi自然回应、同conversation追问、断线重连；49922不暗换/重启，固定fixture不冒充模型输出。Web已按[CHAT receipt](../../docs/evidence/web-platform/chat01-take-receipt.json)独立受领；[PERF02 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/plan.md)依[独立receipt](../../docs/evidence/web-platform/perf02-take-receipt.json)并行，不占CHAT范围或替代对话优先 |
 | WPF-REQ-42 | U11 模型/effort/access/context/files与发送 | 主线capability catalog契约；Web真实消费 | 控件只展示中心支持的模型/能力和授权范围；unsupported明确，权限不由前端自授；context/files使用授权资源与版本，不能凭显示路径假接文件 |
 | WPF-REQ-43 | U11 消息气泡与正文优先、tool/thinking懒详情 | Web renderer与中心投影owner | 用户/assistant正文为主；tool及provider可展示thinking初始仅id/title/状态，初始响应/SSE没有大payload；鉴权展开前0detail，首次1/重复缓存，provider无thinking则不伪造 |
-| WPF-REQ-44 | U11 queue和steering | 主线持久commands/runner；Web有权触发与渲染 | queue持久、明确顺序/取消与重连；新决定要求PG持久pause/明确continue，先pause ACK再按ACK currentTurn取消任务，两份结果分别显示，不能称stop-all；新v2尚待冻结。steering另项，须受理/送达/实际生效证据，不以HTTP超时当取消 |
+| WPF-REQ-44 | U11 queue和steering | 主线持久commands/runner；Web有权触发与渲染 | 中心队列持久、有序、可取消与重连；按固定main14c61公共合同，pause受理或原key重放后必须fresh GET最新paused/currentTurn，再由用户明确单独取消当前active task，两份receipt/结果分别显示，不称stop-all。same queueRevision也更新动态taskStatus/blocked/paused，旧ACK不覆盖新GET。Web实施见[QUEUE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/plans/wpf-queue01-ui/plan.md)；当前页面unknown key重试与中心状态重载恢复分开，原key跨reload/换连接恢复仍后继。steer仍不支持，须独立受理/送达/生效证据，不以HTTP超时当取消 |
 | WPF-REQ-45 | U11 语音录音/转写与失败恢复 | 主线能力接口；Web受控交互 | 录音与转写分开、明确开始/停止/失败，失败保留文本输入；本轮不偷接付费语音服务，未支持明确，凭据不放浏览器/插件 |
 
 ## 当前 owner 与接口冻结
@@ -230,7 +230,9 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 
 - 2026-10-06 04:20 UTC：CHAT7cb最终331已限定APPROVED并dashboard验证，root一次交主线；PERF02集成后04:12正式release v2，无finding不长期占scope。REQ39后继D06按D05v2移出→新f619v1受领固定8f四scope，唯一canonical见[计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/plan.md)。主线4320继续其owner部署，不新造分配事实源。
 
-U11后继queue与steer分别开放。CHAT04首合同e423无pause/continue；此为历史版本事实。最新GoalOwner已授权中心PG持久pause/明确continue：Web先pause ACK再对ACK currentTurn的active任务取消，两份结果分开；terminal不再取消，pause前已promoted诚实展示，uncertain/revoke/unknownsession不能被continue绕过。v2尚待固定/技术核定，不先改按钮。完整[队列研究与变更](../../docs/evidence/web-platform/chat-queue-research.md)保存e423来源、UTF8限制、immutable receipt/分页/journal与assistant-ui适配边界；steering仍单独受理/送达/生效验收，SDK能力不等已接实现。
+U11当前queue工程验收以固定main `14c61b4062f8040ba6c7239860929366e5bd3fc1` 公共合同与[QUEUE01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/plans/wpf-queue01-ui/plan.md)为准：pause受理或历史ACK重放后fresh GET最新paused/currentTurn，只有用户明确的单独动作才取消所观察的active task；暂停和取消保留不同receipt/结果，不能按旧ACK自动取消。same queueRevision仍接受新的taskStatus/blocked/paused；immutable ACK不回退较新GET。中心持久等待队列和本地未知命令receipt是不同生命周期，本片同页面重连原key保留；原key跨reload/换连接恢复后继pending。steering仍另项开放，SDK能力不等已接实现。
+
+历史决策（e423首合同至v2冻结前）：e423确实无pause/continue；当时提议先pause ACK再按其currentTurn取消、v2待固定。这一早期提议已被当前fresh GET+用户单独取消规则取代，不再作为实现验收。完整[队列研究与变更](../../docs/evidence/web-platform/chat-queue-research.md)保存历史来源、UTF8限制、分页/journal及assistant-ui适配边界。
 
 CHAT04 Web接缝研究补充：assistant-ui实装queue adapter会接管普通tail发送，运行中默认steer，且Interface同时暴露move/edit/remove；不能以dummy回调伪造未支持能力。未来queue-only显式入口或严格adapter需合同冻结后独立验收，durable ACK/unknown与库草稿/队列items分离。此为工程研究约束，不是新实现或主计划完成。
 
@@ -278,3 +280,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 05:19 已审PROFILEI01与PROFILEUX在main14c61受控合入，摘要/草稿组合typecheck由Lead完成，未推断真实SVC已升级。后继QUEUE01正式从固定14c61独立树受领，旧PROFILEI01停写release与旧CHAT官方Thread逐路径CAS先于take；先前13scope研究和原REQ44验收保留，不另造队列权威协议。
 
 05:20 QUEUE01移交已执行：PROFILEI01全十scope release v2，旧CHAT officialThread明确停写后v4→v5 CAS，仅移出一文件，freshledger无其他相交；新b4ea85d0v1/13scope成功take后才派实现。独立canonical plans/wpf-queue01-ui由唯一owner建立，父目录不复制其TODO/check/review。
+
+05:25 计划质量修复：root只读发现REQ44及无历史标题的U11段仍描述早期“按pause ACK currentTurn取消/v2待冻结”，与已固定合同和当前防旧ACK竞态规则矛盾。已更新当前验收为fresh GET后用户单独取消、两receipt分开/sameRevision动态事实，并把旧e423/v2提议明确标历史被取代；用户原话未改，0产品变更/测试。

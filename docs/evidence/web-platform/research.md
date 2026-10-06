@@ -425,3 +425,5 @@ PROFILEUX组合边界：root已审PROFILEI01测试使用region `Locked execution
 架构只读proposal固定14c61（研究启动时main/origin clean）：候选只写原architecture-data.js/architecture.js/architecture.test.mjs与原D06plan/evidence，renderer用现有heading p显示同一个baseline的短SHA链接、真实源码verifiedAt及非实时拓扑提示，不写index/CSS/registry。worker05:21账本历史D06v2released、D05v3active但不占五项，正式新take仍必需。14c已含R04停机、P03传输、CHAT/profile/queue领域与只读plugin管理；queue Web操作未完成，FSM/PG/blob和外部SDK边界继续精确保留。研究结束时main已前进eb14991a170b72d7d974428b2e440e1faada2c1e，不把O05倒灌固定14c；正式刷新若选择eb，须明示base并重新核新增域。O04是native goal runs，goal-graph-proposals属于O05，编号与功能不得混写。此段0写产品/0测试/0服务。
 
 来源纠正归因：root曾用动态cwd读取index.ts，将新goal-graph-proposals误归固定14c/O04；w01以git show固定14c证实目录不存在且迁移仅至013，root独立核当前HEAD已eb14991 clean后撤回原claim。此错误不作为图源、不改已审旧D06，后继严格git show固定SHA。原D06唯一source迁移/newbase请求已由root一次桥Lead（拟dashboard-architecture-current/codex/dashboard-architecture-current），未确认前不take；这是证据质量/clean-code安全停点的真实发现与纠正。
+
+05:25 root发现父plan当前REQ44和U11段仍残留早期pause ACK直接选task/v2待冻结，属于实际文档质量finding。管理已修当前工程验收并明确历史时点，保留用户原话/当前14c公共合同与QUEUE01单源，不用末尾追加掩盖正文矛盾。当前fresh GET/单独取消/两receipt/sameRevision规则与owner方案一致；纯文档局部核验，不重复产品测试。

@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:23 UTC / 主线14c61已接聊天选项与紧凑摘要；root服务实际05:21:58.690Z已63源确认三片delivered |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:26 UTC / 主线14c61已接聊天选项与紧凑摘要；root服务实际05:21:58.690Z已63源确认三片delivered |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `882ae2f3da9bf1d6f9bf86f3320a35b0db041897`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `a0b07efe369d99316013155f550327a4b533b35a`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
@@ -44,7 +44,7 @@
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录，05:19:16.111Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审；workspace_panels_owner已在新tree正式受领queue UI，w01_owner完成PROFILEUX release后只读研究renderer。两者写scope不重叠；本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
+管理者只写本树两目录，05:19:16.111Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审；workspace_panels_owner已在新tree正式受领queue UI，w01_owner完成PROFILEUX release及renderer只读研究后，已正式受领D06固定基线刷新。两者写scope不重叠；本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
@@ -56,7 +56,7 @@
 | WPF-PROFILEUX01 | w01_owner / web-execution-profile-summary / codex/web-execution-profile-summary，base698；55b244b22a147f3360b12281bac152666749364b获root05:14:39限定APPROVED，交付60d8，main记录ef8698344f90412891e35fed05c21743d97cb708 clean；main14c61祖先/四path相同，d113be51 v2于05:18:15.732Z released，全六scope停写；54239保留 |
 | WPF-QUEUE01 | workspace_panels_owner / web-conversation-queue / codex/web-conversation-queue，固定14c61b4062f8040ba6c7239860929366e5bd3fc1，新树clean预检；b4ea85d0-ad87-4903-9a59-73281ad17752 v1于05:19:31.947Z committed，13scope只含conversation queue+必要官方Input seam/专测/plan/evidence；首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e，planDir plans/wpf-queue01-ui、evidenceDir docs/evidence/wpf-queue01已给root桥登记，不宣称已注册 |
 | 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v5已转App/react给X03与projection/直接test给QUEUE00，04:59再转Thread/outbox/outbox-test给PROFILEI01，05:19再转officialThread给QUEUE01，当前其余8scope保留。真实两query不冒称通过 |
-| 已交付D06 | ef42277ff55d1cbb76ea707836481a9788619033 / final6ea2e68a3362df3cb50ef4a063fc4cbfc3026966 clean；固定8f图已集成4e，04:28:28.679Z实际47源/图已部署。claimf619 v2 released于04:29:52.844Z，旧树全部停写；后继标题快照提示需新take |
+| D06（新轮受领） | 旧ef42277固定8f已审集成且f619v2released，旧tree只读；新w01_owner / dashboard-architecture-current / codex/dashboard-architecture-current / 固定eb14991a170b72d7d974428b2e440e1faada2c1e，e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1于05:26:04.403Z committed，五scope限原data/renderer/test/同D06plan-evidence；唯一source迁移获Lead确认，首canonical与服务重定向待回 |
 | 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
 | 跨Lead | Mika负责CHAT04持久队列/暂停/继续，ExecutionLead负责公共API/集成/4320；域ae9与client83f7已在698成套独审集成。完整queue UI已从14c61新树正式受领13scope，PROFILEI01已release、旧CHAT官方Thread停写后CAS至v5，禁止跨树双写 |
 
@@ -153,3 +153,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:20 QUEUE01正式派发：[PROFILEI01 release](../../docs/evidence/web-platform/profilei01-release-receipt.json)后新14c61树clean预检，freshledger05:19:16.111Z唯一相交为旧CHAT officialThread；owner已明确停写，CAS [CHATv5](../../docs/evidence/web-platform/chat-queue01-amend-receipt.json)于05:19:27.452Z移出该一文件，保留八范围；[新take](../../docs/evidence/web-platform/queue01-take-receipt.json)于05:19:31.947Z成功后followup唯一worker实施。没有APP/旧outbox/shared写权，没有新agent；首canonical就绪后一次登记，take可见不当source已聚合。
 
 05:21:58.690Z root一次真实4320采样63tasks、main14c61 clean：PROFILEUX ef869、PROFILEI01 07cff、DPERF08bd均live/current/clean/issues空/reviewapproved/proofunchanged/maincurrent及scopeEqual真/deliverydelivered。[归属明确摘录](../../docs/evidence/web-platform/profile-delivery-root-observation.json)不是管理者伪造raw；未再抓API。QUEUE01仍一次桥Lead登记待结果。
+
+05:26 D06沿唯一源迁移已获GoalOwner/ExecutionLead明确确认，固定base选eb14991而不是研究14c。新tree/branch/HEAD/clean管理独立核，freshledger05:25:56.913Z旧f619v2released、五scope无active重叠；[新take](../../docs/evidence/web-platform/d06-current-take-receipt.json) e5b2v1成功后才followup w01实施。旧图/plan/evidence在旧树保留历史只读，registry重定向由Lead执行，不新注册第二D06。全部源码证据git show固定eb，O05可记已含，K01/O06/SVC02未含只planned；常驻75a运行另列。

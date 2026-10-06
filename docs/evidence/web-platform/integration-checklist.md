@@ -1,6 +1,6 @@
 # Web 平台跨 owner 集成清单
 
-2026-10-06 04:34 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
+2026-10-06 05:26 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
 
 ## Dashboard来源登记与核验
 
@@ -15,7 +15,7 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-PERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance | codex/web-performance | plans/wpf-perf01-web-performance | docs/evidence/wpf-perf01 |
 | WPF-PERF02 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window | codex/web-activity-window | plans/wpf-perf02-activity-window | docs/evidence/wpf-perf02 |
 | WPF-CHAT01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
-| D06 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh | codex/dashboard-architecture-refresh | plans/d06-architecture-refresh | docs/evidence/d06 |
+| D06（迁移待服务切换） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current | codex/dashboard-architecture-current | plans/d06-architecture-refresh | docs/evidence/d06 |
 | WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
 | WPF-PROFILE01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
 | WPF-QUEUE00 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
@@ -310,3 +310,5 @@ QUEUE01受领：PROFILEI01最后07cffeba1a818f5697c23efc37a7e5c2b813c035 clean�
 05:22 QUEUE01首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e已核4Markdown/5本地链接/4TODO一致，status人类能力摘要、implementation、UNKNOWN、NOT_STARTED及receipt身份齐。核时仅自有install.log和AI Elements上游来源证据dirty，未冒称clean当前实现；完整source字段已一次给root桥MainLead，未获部署通知前不重复读4320。
 
 root05:21:58.690Z实际63源确认PROFILEI01/PROFILEUX/DPERF三个最终canonical与main同实现、review和delivery完整，见[来源注明摘录](profile-delivery-root-observation.json)；管理未重复抓API。QUEUE01一次登记请求与尚未确认服务卡片分开。
+
+D06迁移新receipt：[e5b2v1](d06-current-take-receipt.json)，committed05:26:04.403Z。管理独立核newtree/branch/eb14991/clean与freshledger旧f619v2released、五项无active冲突；Lead已明确原source迁移，待首canonical新owner记录后一次切原registry指向，不新增第二D06。旧dashboard-architecture-refresh保持历史只读，旧8f approval不覆盖新eb/data/renderer实现。无index/CSS/registry/服务写权，全部源码git show固定eb，不混后继movingmain。
