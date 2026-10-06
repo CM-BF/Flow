@@ -1,0 +1,141 @@
+{
+  "state": "PROPOSAL_ONLY_NOT_TAKEN",
+  "source": "two existing owners read-only proposals, root structural review pending",
+  "baseObserved": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+  "cache": {
+    "proposedTaskId": "WPF-WORKSPACECACHE01",
+    "parent": "WPF-MATURE-05",
+    "owner": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+    "branch": "codex/web-workspace-cache",
+    "scopes": [
+      "apps/web/src/workspace-retention.ts",
+      "apps/web/src/conversations/read-cache.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/App.tsx",
+      "apps/web/test/workspace-retention.test.ts",
+      "apps/web/test/conversation-projection.test.ts",
+      "apps/web/test/conversation-queue.test.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/workspace-retention.fixture.ts",
+      "apps/web/test/workspace-retention.browser.ts",
+      "plans/wpf-workspace-cache",
+      "docs/evidence/wpf-workspace-cache"
+    ],
+    "interface": [
+      "App owns existing views/drafts/profileSelections/panelTabs; pure protection/retention decision, no second registry/map/timer",
+      "session.getViewProtection checks existing binding only; releaseView releases existing per-view subscriptions only after App verifies unprotected",
+      "independent read generation gates history/detail/crypto success/catch/finally; preserve outbox/queue command identities",
+      "one bounded cache shared by reply and queue consumers; explicit reload UI after eviction, no automatic refetch"
+    ],
+    "budget": {
+      "residentConversationViews": 32,
+      "closedCleanRetention": 0,
+      "replyPerView": {
+        "entries": 2,
+        "utf8Bytes": 2097152,
+        "flights": 1
+      },
+      "queueDetailPerView": {
+        "entries": 4,
+        "utf8Bytes": 65536,
+        "flights": 1
+      },
+      "totalBodyUtf8Max": 69206016,
+      "browserSecondsIncludingCleanup": 90,
+      "cleanupReserveSeconds": 10,
+      "evidenceBytes": 8388608
+    },
+    "protect": [
+      "any text without trim",
+      "unsubmitted project/profile choice",
+      "knowledge selected",
+      "any outbox",
+      "all non-dismissed queue receipts including rejected/accepted",
+      "steering page entry/risks",
+      "unknown protection state fail closed",
+      "future attachment Input.items/capture/unknown from its sole binding; current production not attached"
+    ],
+    "acceptance": [
+      "32 cap before new key/route, existing reopen allowed, retained-drafts reopen entry",
+      "clean close releases aliases/maps/subscriptions; protected close stops reads and drops only body cache",
+      "late history/detail/crypto rejection/finally cannot update new generation",
+      "LRU eviction visible, explicit reread, two panes independent",
+      "actual App repeated clean close/reopen and protected text/knowledge/rejected/unknown original key, capacity guard,390keyboard"
+    ],
+    "excluded": [
+      "legacy task/feed/fullhistory bound",
+      "heap or reliable latency guarantee",
+      "Arc layout rewrite",
+      "production attachment behavior before actual binding"
+    ]
+  },
+  "attachmentProduction": {
+    "taskId": null,
+    "proposedPlan": "wpf-attach-i02-production-binding",
+    "parent": "WPF-MATURE-03",
+    "owner": "w01_owner",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/messages.ts",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/conversation-context/receipts.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/test/conversation-projection.test.ts",
+      "apps/web/test/conversation-outbox.test.ts",
+      "apps/web/test/conversation-messages.test.ts",
+      "apps/web/test/conversation-queue.test.ts",
+      "apps/web/test/conversation-context-receipts.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/test/attachment-integration.test.ts",
+      "apps/web/test/attachment-integration.fixture.ts",
+      "apps/web/test/attachment-integration.browser.ts",
+      "plans/wpf-attach-i02-production-binding",
+      "docs/evidence/wpf-attach-i02"
+    ],
+    "requiredBase": "approved six client/shared-v2/factory input + module4c all integrated, then fixed combined base",
+    "interface": [
+      "one P01 trusted builtin composer actions/context with injectable official AttachmentAdapter factory",
+      "attachment.read/upload explicit private authority before/after connection/view/project/conversation checks, no knowledge-right substitution",
+      "synchronous composerSubmit captures intent/text/profile/creation/knowledge/attachment tokens before await; onNew uses only that capture, actual new receipt handoff consumes both tokens",
+      "reuse shared v2 decoder and deep-freeze through existing context wrapper; preserve plain omitted attachments/v1",
+      "require explicitly bound project conversation; GET cap confirms send; message mapper keeps lightweight attachment metadata",
+      "storage errors local to attachment UI preserve raw/unknown and plaintext; cap null/namespace lifecycle explicit"
+    ],
+    "tests": [
+      "real HTTP v1/v2 and old center",
+      "async prepare changing intent/profile/refs",
+      "bad200/unknown original-key retry/newdraft isolation",
+      "storage failure keeps plaintext",
+      "disabled/hidden/split/close/connection protection",
+      "expiry/in-use removal, historical metadata,390themeskeyboard"
+    ],
+    "noChanges": [
+      "five4c attachment module sources",
+      "official Thread",
+      "shared/client/dependencies"
+    ]
+  },
+  "exactIntersection": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/projection.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/test/conversation-projection.test.ts",
+    "apps/web/test/conversation-queue.test.ts"
+  ],
+  "sequence": "CACHE small actual-consumer interface first after root structural approval and fresh D04 take; attachment production six common literals wait explicit handback/amend. No preclaim by this proposal.",
+  "currentLedgerEvidence": "workspace-attachment-sequence-observation.json"
+}

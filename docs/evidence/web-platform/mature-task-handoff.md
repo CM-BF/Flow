@@ -2,6 +2,8 @@
 
 ## 公共桥接最新固定事实与共享写入窗口（11:28只读）
 
+固定ab1b第六方法实际为 **attachmentUploadReceipt(projectId,{scope,key},signal)**，非早期简称attachmentReceipt；content实际也为五位置参数。六方法只薄transport，`response.json() as T`不做runtime decode。生产host须保留公共schema/journal校验，区分明确不支持、receipt404→null与401/403/其他409/坏200异常，不能吞错；[已纠正的唯一桥接记录](attachment-runtime-public-bridge.md)。这是消费者事实核实，不要求公共owner重新独审。
+
 [权威F01/实际Git/manifest审计](attachment-public-bridge-observation-1129.json)：`m2-shared-foundation` **b2c5e3a2c9d0650ec523b76e6af08facb165d895** local=origin/clean。六client **ab1bcb14531995ccb3916492eaf328cdae2213b3** 已Mika 11:15:12 UTC APPROVED；shared v2 ACK **df8d077accea7a28536f1f56407a729c41e4639c** 已native_center_owner APPROVED。这纠正下方11:18历史“六方法待审”，不扩大批准到领域或生产。
 
 正式factory固定 **69eb2476ba59308a906c891c4391e243e3b2512a** 已有026+owner routes及生产专测；Mika发现唯一P2为测试资源清理。修复 **f04cb29633ca678b35aa423e02a16953add0cfba** 只改生产专测，F01 11:27权威status仍为增量待复审，原3行生产/index/client/ACK未变。输入分别是同树 `docs/evidence/f01/attachment-production-manifest.json`、`attachment-cleanup-manifest.json`；作者3/3和types0按原来源，不由本管理重测或先标批准。原ATTACH1f0已审fixture可供Lead正式factory下有限组合验证，仍未收到该组合通过/main receipt。
@@ -300,3 +302,7 @@ RELEASE01最终验收补充：新Web须SVC04正式format2固定releaseId，旧�
 GO10:47呈现要求已直接进入MATURE06-03稳定TODO；RS13唯一asset/初始依赖图/延后chat以及静态host cache/encoding/版本回滚，已直接进入MATURE01-05与WPF-001-35稳定TODO，研究只提供证据，不替代验收。未重新跑RELEASE或宣称优化收益。
 
 panels完成ATTACH最终metadata后，只读准备MATURE05-05真实App开关/闭合生命周期基线，暂定WPF-WORKSPACEPERF01、两新专测+自己plan/evidence四scope；仅proposal，未建树/take。拟8/16/32合成conversation、≤2可见pane、总≤90s含cleanup/≤8MiB，测DOM/观察读取/草稿与unknown保护，0provider/产品DB/个人服务；最终范围/预算需作者确认可行，再fresh claim，不碰w01未来App/ACK或TUI stream范围，不为占槽造生产框架。
+
+## CACHE与附件生产绑定：两份精确只读方案已到
+
+[完整候选/Interface/容量/验收/精确literal](workspace-cache-attachment-binding-proposals.json)：CACHE proposed WPF-WORKSPACECACHE01直接父MATURE05，panels，16范围；attachment production直接父MATURE03，w01，24范围（新ID待结构审/管理确认）。两者**确切相交六个literal**：四生产App/session/两projection，加conversation-projection.test.ts、conversation-queue.test.ts两专测。已排先ready CACHE小Interface结构审查，再fresh精确take；附件实际App绑定后续单writer窗口，不预领宽scope。32conversation view/closed-clean0、reply2/2MiB与queue4/64KiB是CACHE提议预算非已实现；保护全部未dismiss材料、unknown、稿件，session release不销命令authority；实际消费者与90s/8MiB定向验证同片交付。附件绑定需准确整套公共输入和4c主线，不能把本记录当授写。

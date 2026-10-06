@@ -82,3 +82,5 @@ root本轮只读发现createAttachmentInput初始journal list可因storage拒绝
 ### 公共桥接固定输入状态（管理只读核11:28）
 
 六client ab1b及shared ACK-v2 df8d分别已获Mika/native_center_owner独审；factory69eb的P2仅生产专测清理，f04修复仍按F01 11:27权威status待增量复审。实际main53ce未含附件mount/六方法/v2分支，不能把作者3/3或分支可用当main能力。完整manifest与review归因见[只读观察](../../docs/evidence/web-platform/attachment-public-bridge-observation-1129.json)。CACHE小Interface先结构审查/精确take，ATTACHI实际App/session绑定随后明确交权；free账本观察不是预占，原独立模块claim不变。
+
+公共client消费者精确事实（已核固定ab1b）：回执方法为attachmentUploadReceipt，不是早期简称attachmentReceipt；六方法仅response.json类型断言，runtime schema/receipt identity仍由公共合同及输入模块验证。生产host只对明确unsupported/receipt404作有限映射，不吞401/403/其他409/坏200，unknown身份保留。03-04/05沿[统一桥接记录](../../docs/evidence/web-platform/attachment-runtime-public-bridge.md)验收；[24literal生产绑定只读方案](../../docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json)未获take，与CACHE含两专测共六处交集须串行。
