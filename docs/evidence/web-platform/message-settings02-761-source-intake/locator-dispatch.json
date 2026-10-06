@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06T22:31:47.092899+00:00",
+  "source": "Root fixed review correction and peer finding; internal followup to original W01",
+  "state": "REQUEST_CHANGES_SCOPED_TEST_LOCATOR",
+  "target": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+  "metadata": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings-quick-controls",
+      "plans/wpf-message-settings-quick-controls"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings-quick-controls",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "worker": "w01_owner",
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "createdAt": "2026-10-06T22:00:19.358Z",
+    "updatedAt": "2026-10-06T22:00:19.358Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "freshObservationAt": "2026-10-06T22:30:23.997Z",
+  "freshSource": "/private/tmp/d01-r3-modal-locator-fresh.json",
+  "freshSha256": "4159b7df9c1a0f07b9e2dd34c728a157a7fad79a7cec5d87a86f76d3320620a5",
+  "scopeOverlaps": [],
+  "problem": "New modal-open draft observation searches background getByRole(region); Radix hideOthers excludes it, so this test cannot reach after20 assertion. Coverage logic otherwise complete.",
+  "requestedFix": "Only browser background draft locator to exact label or equally unique hidden-safe locator; retain modal lifecycle, all C/A/B, page/read counts and one explicit apply. No production ARIA changes.",
+  "next": "Freeze new target and bind executable type/direct packet to final source, not7615; no run/gate.",
+  "initialRootReview": "Initial approval cannot be used standalone; root correction supersedes it pending this fix. Original record will be kept as history when formal supplement arrives.",
+  "operations": {
+    "productRun": false,
+    "freeSample": false,
+    "newScopeOrClaim": false,
+    "integrationRequest": false,
+    "claimReleased": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-06T22:31:47.092899+00:00",
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+  "claim": {
+    "id": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "state": "COMMITTED_ACTIVE",
+    "scopeCount": 6
+  },
+  "branch": "codex/web-message-settings-quick-controls",
+  "branchReceipt": {
+    "head": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+    "localEqualsRemote": true,
+    "cleanObserved": true,
+    "implementation": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+    "completion": "Fixed source checkpoint, not finished leaf/integration"
+  },
+  "checks": {
+    "types": "NOT_RUN",
+    "direct": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "proposalOnly": true,
+    "old37and4Inherited": false
+  },
+  "review": {
+    "state": "REQUEST_CHANGES_SCOPED_TEST_LOCATOR",
+    "R3Coverage": "Addressed in source, modal background selector correction still required",
+    "previousEarly3": "CLOSED_SOURCE_ONLY at35bbe",
+    "dispatch": "locator-dispatch.json"
+  },
+  "integration": {
+    "state": "NOT_REQUESTED_NOT_INTEGRATED",
+    "claimMustRemain": true
+  },
+  "registration": {
+    "source": "Lead incoming via root",
+    "actual179ObservedAt": "2026-10-06T22:12:19Z",
+    "latest180": "REGISTERED_PENDING_RELOAD; no new actual page observation",
+    "WebPageSample": false
+  },
+  "validationPreparation": {
+    "directory": "/private/tmp/msgquick-checks-c1",
+    "source": "W01 incoming; exact packet forming, final manifest not sealed",
+    "notAReviewOrGate": true,
+    "bindAfterNewFixedSource": true
+  },
+  "queues": "Recovery/DPERF/SVC unchanged; no Web heavy holder, reservation or gate.",
+  "supersededByFixedSuccessor": "../message-settings02-fe6-source-preparation/intake.json"
+}

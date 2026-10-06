@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-06T22:30:24.014389+00:00",
+  "source": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+  "metadataObserved": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+  "branch": "codex/web-message-settings-quick-controls",
+  "localRemoteEqualCleanObserved": true,
+  "previousSource": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "bytes": 25804,
+      "unchangedFrom35": true
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "bytes": 20068,
+      "unchangedFrom35": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "bytes": 9510,
+      "unchangedFrom35": false
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "10217715ae208372861f16ba1255582011f749e52f4d70ba9ab78b469a1e9460",
+      "bytes": 23499,
+      "unchangedFrom35": false
+    }
+  ],
+  "protectedInputsMatchBase": 13,
+  "deltaPaths": [
+    "apps/web/test/message-settings.browser.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "docs/evidence/wpf-message-settings-quick-controls/README.md",
+    "docs/evidence/wpf-message-settings-quick-controls/actual-status-parser.json",
+    "docs/evidence/wpf-message-settings-quick-controls/early-root-source-review.json",
+    "docs/evidence/wpf-message-settings-quick-controls/interface.md",
+    "docs/evidence/wpf-message-settings-quick-controls/metadata-link-check.json",
+    "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+    "docs/evidence/wpf-message-settings-quick-controls/source-manifest.json",
+    "docs/evidence/wpf-message-settings-quick-controls/validation-input-proposal.json",
+    "docs/evidence/wpf-message-settings-quick-controls/validation-proposal.md",
+    "plans/wpf-message-settings-quick-controls/plan.md",
+    "plans/wpf-message-settings-quick-controls/review.md",
+    "plans/wpf-message-settings-quick-controls/status.md"
+  ],
+  "productDeltaPaths": [
+    "apps/web/test/message-settings.browser.ts",
+    "apps/web/test/message-settings.fixture.tsx"
+  ],
+  "scopeOutside": [],
+  "parserRawErrors": [],
+  "parserRawTodoCount": 5,
+  "productChecks": "NOT_RUN",
+  "runtimeBindings": "Owner preparing exact executable types/direct packet, not a gate or runtime proof",
+  "originalArchives": [
+    {
+      "archive": "owner-source-manifest.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/source-manifest.json",
+      "commit": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+      "bytes": 3850,
+      "sha256": "b439fce07750a2e311141a4b0ce7f5cc382e9870d308ce1faaf1717942d99fc5"
+    },
+    {
+      "archive": "owner-actual-status-parser.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/actual-status-parser.json",
+      "commit": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+      "bytes": 3276,
+      "sha256": "2adbf71105c2482631a62dc34b36d8aac846b182f47ce33c036c27c34e56121e"
+    },
+    {
+      "archive": "owner-quality.md",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/quality.md",
+      "commit": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+      "bytes": 3371,
+      "sha256": "5c76245595f3e5a29bae9677f4e10aa48c2a76537661dc1384f315f56fd8c413"
+    },
+    {
+      "archive": "owner-validation-proposal.md",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/validation-proposal.md",
+      "commit": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+      "bytes": 2588,
+      "sha256": "e1823b88e345c19cdfb65596b07a10b8c6258f919b16699cfbbf0280ba7316af"
+    }
+  ]
+}

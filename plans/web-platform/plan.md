@@ -316,6 +316,8 @@ CHAT05 typed活动初interface已固定ae4cc5c630b88616fe75c72eff9fc276a9f84f6c�
 
 CHAT05后继正文边界：超64KiB仅prefix+full原文digest，完整超限正文不提供恢复；截断JSON明确文本fallback，parse失败不当provider失败，不扩blob。当前generic活动detail上限1MiB独立；以未来冻结接口分别验收，不能互相覆盖。
 
+2026-10-06 后继合同输入：[CHAT05P01 fixed7d075/Web60ca只读消费研究](../../docs/evidence/web-platform/chat05p01-web-consumer-intake/report.md)沿原 CHAT05P01-06 与 WPF-REQ-04/10/11/12。仅未来兼容新材料提供 task/attempt/activity/body-bound descriptor/chunks；旧prefix缺失尾部仍不可恢复。后继须经正式公共client/codec、按需有界共享reader与真实Terminal/body-tab接线，验证分片/完整摘要及跨chunk UTF8，保授权代际、字面正文、partial/legacy与tool状态区分。三项是原验收细化，不新增task/claim，不对domain/PG/mount作批准，也不阻塞backend准备。
+
 ## 跨Lead沟通节奏（本轮GO约定）
 
 对外消息合并，只在四类实质变化发送：接口需要动作、实际阻断、固定candidate已可独立review、主线接收/准确集成输入。纯metadata dirty→clean和同事实确认保留唯一canonical，合并到下一实质回执；长SHA/scope清单放证据文件，不逐条刷外部消息。既已发送的来源登记/approval不反复催集成。真实queue验收只消费固定证据，不重跑求新时间；新部署/输入变化后按必要范围一次验证。此节仅降低沟通重复，不降低状态唯一源、固定review与正式领取要求，也不把未回执的main/部署猜成完成。

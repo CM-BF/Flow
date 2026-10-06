@@ -1,0 +1,47 @@
+{
+  "target": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+  "base": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+  "sources": [
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "ref": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "bytes": 9510
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "ref": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+      "sha256": "10217715ae208372861f16ba1255582011f749e52f4d70ba9ab78b469a1e9460",
+      "bytes": 23499
+    }
+  ],
+  "reusedPinnedRadix": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+    "sha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7"
+  },
+  "findings": [
+    {
+      "id": "R3-MODAL-HIDDEN-PANE-LOCATOR",
+      "priority": 2,
+      "file": "apps/web/test/message-settings.browser.ts",
+      "line": 214,
+      "classification": "browser test source/locator defect, not product behavior failure"
+    }
+  ],
+  "runtime": "NOT_RUN",
+  "directResolvedDependencyProof": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/aria-hidden@1.2.6/node_modules/aria-hidden/dist/es2015/index.js",
+      "sha256": "6a644a5eb6f1a5a59948f72f0a5c8dd08ae882420d520a63609b1ce9e13a4c22",
+      "bytes": 6871,
+      "basis": "Direct declared dependency realpath, newly read hash; not claimed as independent b5 top-level pin."
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+      "bytes": 3477183,
+      "basis": "Direct declared dependency realpath, newly read hash; not claimed as independent b5 top-level pin."
+    }
+  ]
+}

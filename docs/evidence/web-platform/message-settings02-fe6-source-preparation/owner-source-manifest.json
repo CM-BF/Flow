@@ -1,0 +1,109 @@
+{
+  "task": "WPF-MESSAGESETTINGS02",
+  "state": "FIXED_SOURCE_NOT_RUN",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "target": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "observedAt": "2026-10-06 22:31:41 UTC",
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "bytes": 25804
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "bytes": 20068
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "bytes": 9510
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e",
+      "bytes": 23499
+    }
+  ],
+  "protected": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "unchangedFromBase": true
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "unchangedFromBase": true
+    }
+  ],
+  "nonexistentProtectedPathGuessesExcluded": [
+    "apps/web/src/components/ConversationThread.tsx",
+    "apps/web/src/app-plugins/session.ts"
+  ],
+  "legacyPickerBodySha256": "52a7eebb97cccb063f28aba301d4f432565667f9b872609cde000a6511683774",
+  "legacyPickerBodyUnchanged": true,
+  "sourceDiffCheck": 0,
+  "runtime": "NOT_RUN",
+  "outOfScopeChangedPaths": [],
+  "previousTarget": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+  "deltaSourcePaths": [
+    "apps/web/test/message-settings.browser.ts"
+  ]
+}

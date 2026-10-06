@@ -1,0 +1,30 @@
+{
+  "originals": [
+    {
+      "original": "/tmp/root-message-settings02-7615-r3-review.json",
+      "archive": "root-initial-review.json",
+      "bytes": 3444,
+      "sha256": "d3bf93c451b0c6bdc471f240adee3e6b1a6ee615e874665b0f9540633c8e9c53"
+    },
+    {
+      "original": "/tmp/root-message-settings02-7615-r3-review-correction.json",
+      "archive": "root-review-correction.json",
+      "bytes": 2125,
+      "sha256": "d4e942513dbea65faa553318eab4ae880bd0fe892739e789acb52664ac3d16fe"
+    },
+    {
+      "original": "/private/tmp/message-settings02-r3-test-peer/report.md",
+      "archive": "peer-report.md",
+      "bytes": 4952,
+      "sha256": "be385442ce117e0399d6e8e4de047517da55bb3f7a673116fe40c52bc99d056e"
+    },
+    {
+      "original": "/private/tmp/message-settings02-r3-test-peer/audit.json",
+      "archive": "peer-audit.json",
+      "bytes": 2404,
+      "sha256": "2b8037eb4063cc050f3399cfadeb0870ae0853add05930fe5b135827c586b4d5"
+    }
+  ],
+  "effectiveConclusion": "root-review-correction.json REQUEST_CHANGES; initial approval is superseded conclusion only, bytes retained unchanged",
+  "latestSuccessor": "../message-settings02-fe6-source-preparation/intake.json"
+}

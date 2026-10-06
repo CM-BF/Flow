@@ -18,3 +18,10 @@
 root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0a5e10a196a4317、binding metadata 9c492f1cfd468f2d940af66e164ee65e2ea6ffed，APPROVED，无blocking。完整读U00–U12/REQ01–45、当前三件套/发布语义及变更；独立Git对象overlay核32md的287相对+97历史绝对链接，相对断链0；六archive与固定source逐字节相同；27 plan/status TODO对应、26本轮paths无越界、diffcheck0。限定管理两目录，不批准产品或新服务。
 
 审查后仅转录本结论与来源明确的as-of后观察，content target不滚动；详见[发布回执](../../docs/evidence/web-platform/publication/receipt.json)。CONTEXT模块批准不等于实际Send/Queue已接，90源观察不等于本管理重新采样。
+
+
+## 后续子片审查索引（不改变上述固定发布批准）
+
+2026-10-06：[快速设置fe6当前分层记录](../../docs/evidence/web-platform/message-settings02-fe6-source-preparation/intake.json)明确领取active、分支固定、类型/direct/browser未运行、Root已批准限定源码、精确检查包终态合同仍需窄修、未请求集成。三项早期问题仅源码关闭，不继承原Settings01运行证据。
+
+[CHAT05P01消费研究](../../docs/evidence/web-platform/chat05p01-web-consumer-intake/report.md)仅为既有需求输入，无新写权、产品批准或运行证据；180来源已登记与179来源此前实际加载分开。此索引不把当前管理变更扩入旧a5发布批准。
