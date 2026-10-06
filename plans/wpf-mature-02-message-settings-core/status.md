@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:21:52 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:26:54 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 已核source HEAD ea276572c3c99fb8400808a93efc69ce530d55a4；历史leaf source4e7、validation8c56冻结；下一纵向caller接线与新fixture源码尚未验证 |
-| 工作树dirty状态 | source ea276不变；本次仅3-contract运行raw/receipt及prepared strict config/status封存 |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 验证execution HEAD c33d31246d1e83f824116f81cf8b90469e023163；source ea276572c3c99fb8400808a93efc69ce530d55a4不变；metadata提交以实际Git HEAD为准 |
+| 工作树dirty状态 | source ea276不变；本次封存局部验证raw/receipt、修prepared PG配置引用并同步状态 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PARTIAL：本纵向contracts三文件16/16 PASSED/exit0；runner/PG/strict仍NOT_RUN；首leaf历史5/5不重复累计 |
+| 检查状态 | PARTIAL：21 distinct PASSED（contracts16 + 注入runner5分次）；contract-only strict0、五入口focused strict0；PG/真实SDK/provider仍NOT_RUN；首leaf历史5项不重复累计 |
 | 已集成main状态 / HEAD | 首leaf已main 22d5ca67159b35bb794b2711cf6df0cb905b92e8；下一纵向已在本branch实施，未main |
-| 实现目标 | 纵向source ea276572c3c99fb8400808a93efc69ce530d55a4，生产checkpoint92f；未验证/未main；首leaf4e7历史已main |
+| 实现目标 | 纵向source ea276572c3c99fb8400808a93efc69ce530d55a4，生产checkpoint92f；已局部验证/未main；首leaf4e7历史已main |
 | 实现范围 | v3 39 literal：contracts、center/queue、Claude adapter、final/context/retry、032与定向tests；F01/client/Web/TUI共享入口另owner |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 纯设置契约已进入主线；已取得接线范围，正在把冻结设置接到Claude执行入口 |
-| 下一可用交付 | 纵向fixed source + 注入SDK/真实专库HTTP测试准备及精确依赖闭包；当前0检查 |
-| 当前阻塞 | 实现NONE；验证待155只读source closure/runner与PG资源窗口，full strict未开；F01/Web/TUI共享接线待协作 |
+| 当前产出 | 消息设置已沿中心和Claude执行入口接线，合同及注入执行检查通过 |
+| 下一可用交付 | 验证专库持久化、排队与续聊行为，再交完整纵向独审 |
+| 当前阻塞 | ACTIVE: 专库PG窗口尚未开放；F01/Web/TUI共享接线待协作。源码闭包已补全，局部类型检查已通过 |
 | 需用户决定 | NONE |
 | Review | NOT_STARTED（下一纵向正式交付审未开始）；SOURCE_REVIEW静态范围无剩余P1/P2，原.extend与cleanup P2已关闭；运行/外部消费待验证，详见review.md |
 | Claim | c652bc61-f8a9-4848-a709-978adbb425ed v3 ACTIVE/39 literal；[amend receipt](../../docs/evidence/wpf-mature-02-message-settings-core/next-slice-v3-amend-receipt.json) |
@@ -33,7 +33,7 @@
 | M02CORE-03 | completed | status_read | 5 selected / 5 passed；局部strict0；[checks](../../docs/evidence/wpf-mature-02-message-settings-core/checks.json) |
 | M02CORE-04 | completed | status_read | Mika15:31:09 / architecture_read15:31:25 UTC APPROVED，原packet不改 |
 | M02CORE-05 | completed | status_read | Lead main22d5已接两源/packet；owner逐字核两源；同core后继保留writer |
-| M02CORE-06 | in-progress | status_read | [精确seam/scope请求](../../docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)；39 literal已amend；Lead 15:54 READY_SOURCE_ONLY + 15:57 correction已解除源码可见性；完整caller实施，0tests/tsc/PG |
+| M02CORE-06 | in-progress | status_read | 39 literal完整caller已实施；[局部验证](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)为21 distinct及两项strict0，PG/共享消费/完整独审仍待验 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -49,7 +49,7 @@ source/raw/config 固定；[manifest与交审入口](../../docs/evidence/wpf-mat
 
 Lead [main receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)绑定main22d5与source4e7/metadata b342；owner独核两源Git逐字一致，未merge/retest。claim已v3共39 literal；下一纵向contracts/center/queue/adapter/final/context/retry及032已开始实施，未运行后继检查。Lead报告已登记并见实际聚合，来源时刻见上节。
 
-## 下一纵向contract checkpoint（未验证）
+## 历史纵向contract checkpoint（当时未验证）
 
 现5个既有contract已接optional配置/请求、严格catalog、final settings层union和TaskSubmission三元/目的门禁，新增6组直接行为test源码；0tests/typecheck/PG/native，不冒充red/green或独审通过。旧leaf两源/原manifest/raw不动。额外reconciliation路径已v3领取，待Lead物化；现19个既有server/runner源尚不可见，只有Lead可provision。新queue blocked消费者由parent协调外部owner。
 
@@ -70,3 +70,10 @@ Lead [main receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/
 Mika/root已独核650bb包40 bindings全符、三配置静态未放宽，生产SOURCE_REVIEW延伸ea276，0运行。当前后继条件仅Lead精确source closure、资源运行窗口与F01/Web/TUI共享接线；本片未集成main。
 
 2026-10-06 16:21:52 UTC ROOT一次CONTRACTS-only窗口结束：固定ea276 source/execution HEADba2bfd，fresh gate通过（见preflight），精确3测试文件/16 selected/16 passed/exit0，752.427ms、raw5945B。owncache0→332B后清理，freeAfter1,134,006,272B。0runner/PG/SDK/provider/fullstrict/旧leaf测试；[validation manifest](../../docs/evidence/wpf-mature-02-message-settings-core/contracts-validation-manifest.json)固定原raw。仅3contracts strict配置已准备但NOT_RUN，需root静态核与第二窗口。
+
+
+2026-10-06 16:26:54 UTC：Lead补全155只读source/673771B，正式receipt已归档为vertical-source-materialization.json；c33d于16:22:43提交与sole sparse窗口发生并发，Lead记录仅9metadata/无产品diff，未重复sparse，随后短锁明确解除。未将旧closure的采样HEAD改成新事实。
+
+按ROOT分别开放的局部窗口：contracts-only strict exit0/931.641ms；注入query runner单文件5 selected/5 passed/exit0/713.736ms（raw2326B）；五入口focused strict exit0/2227.619ms。每步fresh free均满足1,107,296,256B，最终1,128,894,464B。runner owncache132B清理，自有TMPDIR结束为空并移除，combined observed peak998994B低于32MiB。当前21 distinct为先前16合同+新5注入，不累计历史leaf5；所有34源仍ea276。PG/真实SDK/provider/共享挂载仍NOT_RUN，完整交付review与main未完成。固定[新局部manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)绑定source/readonly/config/16raw。
+
+Root静态发现prepared PG config的`.js`引用在native loader下不存在；仅改为磁盘已有`.ts`，不放宽compiler、不重跑21项。旧source manifest保留历史config hash，新局部manifest显式绑定这一prepared delta；未实际加载PG配置或连接数据库。

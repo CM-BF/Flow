@@ -47,3 +47,10 @@ Mika与architecture_read正式固定审均0 P1/P2；无待修finding。完整来
 Mika/root随后对metadata650bb固定包独核34 source + 3 prepared config + 3 historical support（manifest SHA b4625c80ac73161cb52cc5ddf990846402538f9300f0df6a14758cabccbdd606），Git/WT/hash/bytes 0 errors；三配置未加载，@flow本树/第三方固定/根strict继承/缓存归属静态成立。生产SOURCE_REVIEW结论延伸至ea276，仍NOT_OPEN/VALIDATION_PENDING/未main。具体审时未单独提供，不补猜时刻。
 
 2026-10-06 16:21:52 UTC首个纵向检查证据：ROOT授权一次contracts-only，精确3文件16/16/exit0、752.427ms；原source ea276不变，raw/cache门限与清理记录见contracts-validation-manifest.json。新runner/真实PG/strict、外部consumer仍pending；不把源码SOURCE_REVIEW升级为整体APPROVED。
+
+
+2026-10-06 16:26:54 UTC：Lead补全155只读source/673771B，正式receipt已归档为vertical-source-materialization.json；c33d于16:22:43提交与sole sparse窗口发生并发，Lead记录仅9metadata/无产品diff，未重复sparse，随后短锁明确解除。未将旧closure的采样HEAD改成新事实。
+
+按ROOT分别开放的局部窗口：contracts-only strict exit0/931.641ms；注入query runner单文件5 selected/5 passed/exit0/713.736ms（raw2326B）；五入口focused strict exit0/2227.619ms。每步fresh free均满足1,107,296,256B，最终1,128,894,464B。runner owncache132B清理，自有TMPDIR结束为空并移除，combined observed peak998994B低于32MiB。当前21 distinct为先前16合同+新5注入，不累计历史leaf5；所有34源仍ea276。PG/真实SDK/provider/共享挂载仍NOT_RUN，完整交付review与main未完成。固定[新局部manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)绑定source/readonly/config/16raw。
+
+Root静态发现prepared PG config的`.js`引用在native loader下不存在；仅改为磁盘已有`.ts`，不放宽compiler、不重跑21项。旧source manifest保留历史config hash，新局部manifest显式绑定这一prepared delta；未实际加载PG配置或连接数据库。
