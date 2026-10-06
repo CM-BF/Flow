@@ -310,3 +310,12 @@ GoalOwner批准Mika X03最小只读插件管理模块，独立apps/web/src/plugi
 CHAT固定84242ca1d214f9a9ff369b07c13657918862f226/baseb584正式只读审查：管理者04:03:36.519Z live claim08259c1d v1 active，六commit分三个Lead原样输入bac6/a3b9/746与三个自有实现/metadata；后者全部16scope内。bac6对原4c逐文件一致，两个manifest五after哈希匹配；根lock/manifest/App依赖/旧TaskThread/TaskProjection/feed/plugins/workspace保护路径零diff。全diffcheck exit2仅原始transport.patch:36上下文空格，已要求保留raw并准确记例外；排除raw后source/docs0。[审计](chat-candidate-scope-audit.json)。w01被followup正式唤醒固定outbox/projection/messages只读审，root审组合/UI与模块，管理者scope/docs；无额外agent或重型browser派发。metadata尚待固定，尚无overall approval。
 
 w01先完成其PERF02纯metadata b61707d20ee9803e7397f21961549deb65ceef1d clean，写前04:03:17.671Z核d36v1active，独立origin/main8f及a87ancestor exit0；3文档转录main集成，未跑产品测试，不扩大a87 approval。
+
+固定CHAT84242模块独立review由w01给REQUEST_CHANGES/baseb584，两个P2 blocking，已直交唯一owner：
+
+- projection.ts:232与165–171：send ACK lost→refresh取得succeeded/assistant available→后发retry服务端replay旧running/pending，较高请求seq覆盖新状态，回复消失/send禁用直到GET恢复。receipt确认与动态turn事实不能用同一“新请求即新事实”合并。既有test87–95只覆盖原lateACK低序号，不覆盖saved replay；须补公开行为回归。
+- projection.ts:123–124/129/136：已读turn1→隐藏/离线时中心到revision3→refresh两次仍[1,3]、nextCursor=null、pageReads1，turn2永久缺失/无Load more；需补齐新turn或明确可加载缺口，不要求一口气预取全部历史。
+
+reviewer读固定outbox/projection/messages与9outbox/14projection测试，2个inline只读公开接口探针确认，无文件/browser/模型/服务写入，未重复33tests/typecheck/build/11browser；探针前实现diff0，之后owner新增测试不属于该结论。正面读码事实包括sticky everUnknown、冻结双key/未知不可dismiss、ACK身份、同revision正常刷新、typed详情完整身份+正文SHA/cache与dispose隔离、正文不混telemetry。另所有4xx除特例归definite的unknown http_error是非blocking建议，缺真实代理提交后改4xx证据，不混写确认bug。
+
+管理者固定metadata95a30be0b615030cd3abcdfbf3fd761637b42429读审：对84242 apps/shared/根依赖diff0，7Markdown37本地links/7TODO一致；验证报告正确区分33fixed后、11dev/11prod在最后接缝前、后续仅prod1/typecheck/build、真PG/模型未跑。当前父blocker实写两P2，不让scope/docs通过被误看成产品approval。

@@ -12,9 +12,9 @@
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CHAT已固定84242ca，模块/组合/UI/scope三线独立审查中；PERF02获审且主线已实际集成 |
-| 下一可用交付 | CHAT固定候选的模块/组合/UI及scope文档独立审查；主线随后真实模型验收 |
-| 当前阻塞 | NONE |
+| 当前产出 | CHAT固定84242模块审查提出两项P2，唯一owner修复中；scope/docs已核；PERF02已集成 |
+| 下一可用交付 | CHAT两项P2固定修复SHA及独立复验；主线随后固定集成与真实模型验收 |
+| 当前阻塞 | ACTIVE: CHAT固定84242模块有两项P2待唯一owner修复与独立复审：旧ACK replay降级回复、跨多turn刷新漏中间消息 |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
@@ -79,3 +79,5 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 04:02 PERF02 main收口：[04:01:56.630Z实采](../../docs/evidence/web-platform/perf02-main-dashboard.json)显示main8f1481df880cf5077e1ddb9a8f302fe700a7ece8、targeta87、methodancestor/current/historicalIntegrated/scopeEqual真、dirtyScopePaths=[]、issues=[]。owner旧mainRecord未同步不否认Git实证；下次唤醒w01作canonical纯metadata。主Lead另报4320在04:01:07已42源、CHAT03/R04/P03 live/unregistered空，此为Lead来源，不再次轮询。
 
 固定CHAT范围审计：[逐commit/共享hash/claim证据](../../docs/evidence/web-platform/chat-candidate-scope-audit.json)。自有实现均在16scope，三个Lead共享输入单列且hash匹配；保护路径零diff。全diffcheck仅原始transport.patch上下文空格exit2，保留raw；排除原始patch后的source/docs check0，不写无条件全绿。PERF02 canonical集成metadata已由唯一owner提交b61707d20ee9803e7397f21961549deb65ceef1d clean，只改3文档、无产品重测。
+
+固定84242模块review由w01独立REQUEST_CHANGES：两项公开projection轻探针实证blocking；不是对其后moving修复结论。metadata95a30be实现diff0、7Markdown37links/7TODO一致及检查复用边界已核。root负责整体汇总，管理者不因scope通过关闭行为finding。
