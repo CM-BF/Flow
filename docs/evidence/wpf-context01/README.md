@@ -1,6 +1,6 @@
 # 知识上下文选择独立模块
 
-实现 `34cd2b840b06b22f1c7087e5e1e84ef14eb335f8`，基线 `b54de1dbb08e3ccc7d33a27295a318f2799e76ae`，branch `codex/web-knowledge-selection`。公开[Interface](interface.md)、[质量](quality.md)、[七文件hash](source-manifest.json)、[计划状态](../../../plans/wpf-context01-knowledge-selection/status.md)。
+当前实现 `736ef0b9f5647faa4c8d8e6c4755eaf95697b02d`；原完整UI检查目标 `34cd2b840b06b22f1c7087e5e1e84ef14eb335f8`，基线 `b54de1dbb08e3ccc7d33a27295a318f2799e76ae`，branch `codex/web-knowledge-selection`。公开[Interface](interface.md)、[质量](quality.md)、[七文件hash](source-manifest.json)、[计划状态](../../../plans/wpf-context01-knowledge-selection/status.md)。
 
 搜索只读短预览；明确勾选whole citation，展开才读取完整chunk。最多4引用/8192 locator bytes，最近20搜索结果，正文LRU8项/32768B，同一生命周期拥有1search+2resolve且无隐式排队。网络abort尽力取消传输；忽略signal的旧port结果仍经代际丢弃，不能保证远端立刻停止工作。host显式setReadiness更新可见/在线/授权/能力；关闭picker不阻止已授权引用的本地freeze。缓存只说明上次读取观察，显式refresh不改变引用版本。
 
@@ -22,3 +22,5 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --filter @flow/web exec tsx test/c
 - 七源码固定diffcheck通过。完整base→metadata diffcheck另有5个原始日志末尾空行提示（module-first.log:10、module-tests.log:10、typecheck-first.log:4、typecheck-fixture.log:4、typecheck.log:4），原日志保留不清洗。未全库测试/未实际App生产build；本模块尚不在App入口，fixture由Vite真实编译且Web整体类型检查通过。未测屏读、Safari/Firefox、实际产品中心/模型。
 
 本片没有发送/排队/ACK集成，薄context reader/会话组件保持只读。中心最终执行输入预算仍可能拒绝；未来消费者必须保留原稿/refs，深冻结原request并核ACK context.sources完整tuple和顺序。不能从这里的本地freeze测试声称真实Send/Queue已经携带知识。P01宿主/授权、Dialog与App接线另领取，不造第二registry。main尚未接入本片，独立review在同目录plan中单独记录。
+
+R1独立审查发现显式signal覆盖client默认timeout，已在736ef修正本地15秒deadline（adapter忽略abort仍结算），原目标REQUEST_CHANGES。18模块fake-time受影响验证与typecheck通过，未真等15秒；新[来源hash](r1-source-manifest.json)/[日志](r1-tests-first.log)/[类型](r1-typecheck.log)。原9browser/screenshots/原manifest保留34cd，不重绑新hash。736源码diffcheck0；新增原始r1日志同样保留末尾空行。
