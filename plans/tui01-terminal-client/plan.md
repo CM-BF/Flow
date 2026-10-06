@@ -45,6 +45,8 @@
 - [x] **TUI001-09** 共享发送回执：TUI01A局部修复先交付，后继将创建/提交两种ACK的结构与冻结请求身份核验收敛到client小Interface，Web/TUI复用；unknown保留原key/body，旧回执不覆盖当前执行状态。唯一设计见[共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)。
 - [ ] **TUI001-08** 日常终端与双公开客户端完整验收：同会话交替操作、过期CAS不自动重发、断线/退出后台继续；窄终端/CJK/emoji/粘贴/多行/resize/focus、丢ACK/重启、过载与资源回收，文档/独审/部署入口；真实provider只在具体新预算许可后运行。
 
+TUI001-08 的后继读取边界：固定 main ecc1f396 的 headless.ts 每条 JSONL 命令序列化完整 controller.snapshot()，其中 observation 含已加载正文和展开详情；Ink 的 observationPage 分页没有限制机器输出字节。此为源码事实，尚无本项运行测量，仍有现行流与缓存上限。当前 F04 双界面旅程先收口；后继复用 controller fixture 比较相同 `/help`、`/profiles` 在正文增大前后的输出字节，选择小的有界公开投影与显式正文/详情读取接口。保留原文可达、分页、旧消费者兼容和 unknown ACK，不新造命令框架，也不把字节变化称作 token 收益。
+
 ## 验收矩阵
 
 | 层 | 必须证明 | 不可替代的边界 |

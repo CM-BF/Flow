@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:16 UTC / maince41c1d8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:28 UTC / mainbd25e763 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,7 +13,7 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main/origin ce41c1d8一致且clean，174源20:12实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main/origin bd25e763一致且clean，175源20:21实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
@@ -241,3 +241,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 20:09 UTC：R01固定证据与OPS源码准备已main1126；原owner按内容接收收口并release。TUI父摘要按已有真实HTTP/PTY和17:57main证据纠正，完整双端仍open；已正式交接native_center_owner继续04。af51/d629[发布方案独审](../../docs/evidence/i02/af51-d629-release-plan-review.json)限定通过4记录/41固定输入；实际执行入口的小差异和fresh窗口仍需核对，不冒已上线，无新测试/provider。
 
 2026-10-06 20:16 UTC：174来源已在稳定I02工作树实际服务，见[聚合回执](../../docs/evidence/i02/dashboard-174-source-receipt.json)。TUI父状态已承接F-03真实取消/PTY证据并明确F-04在实施；仅修正严格NONE字段，无产品测试/个人服务动作。SVC07源码已独审，真实消费者验证由Mika排入共享窗口。
+
+2026-10-06 20:28 UTC：固定个人af51+d629的执行准备P2已闭，增量67绑定核对无差；TUI F04准备限定独审782绑定一致，实际联合旅程仍未运行。两份独审、175源回执和唯一TUI/OPS管理快照随本批接收；纯记录不重跑产品。即将固定root源码到af51以执行已有授权受管窗口，期间main暂停推进；新旧运行版本仍按operator实际结果分别记录。

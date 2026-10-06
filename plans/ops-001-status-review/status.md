@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:01 UTC / main6223c749 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:26 UTC / mainbd25e763 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -259,3 +259,5 @@ SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator�
 2026-10-06 20:08 UTC：已读Mika native-catalog-observation/run-report，19:56:50单次native按原规则停止、own根/进程收束并归还，目录未取得、未重试；下一共享PG/Chrome机会直接交Web最短已审ready检查，准备中任务不预占。SVC07五个精确既有依赖入口与TUI01F-04一个Playwright入口已校验manifest/版本并仅创建ignored链接，0安装/复制/import/测试；依赖归属仍原来源，不能清理donor。TUI01F原claim正式handoff→native_center_owner accept v4，当前只实现真实双端driver，完整运行另排。
 
 2026-10-06 20:20 UTC：S01P07直接消费者请求的33份fixed22a源码已补齐，186,913逻辑B，259份原已物化文件及两份owner dirty修改hash保持；当前head不变。TUI01F-04仅追加自有新实验目录的sparse规则，三份未跟踪新源保留，由owner提交。两项无安装/import/PG/工程测试；原请求与回执在source-provision目录。Web Settings已实际归还短窗口，SVC05H执行准备待修观察器对原子rename/未决claim的保守检查；准备不预占共享窗口。
+
+2026-10-06 20:26 UTC：OPS-001-14由queued提升为当前发布/F04短片之后的下一ready工程改进，尚无新writer。SVC07在20:23纯子进程检查出现group_exists的EPERM经finally覆盖原失败，和既有O16/SVC05H期限/组清理重复，作为两个实际消费者提取的输入；co-lead与Mika直接协调。只抽受监督PID/自有组、期限、输出界及原失败/cleanup unknown，不把DB删除、连接观察、资源所有权和源码绑定揉进同一模块。现已固定发布及F04证据保持，不为迁移重开当前检查。
