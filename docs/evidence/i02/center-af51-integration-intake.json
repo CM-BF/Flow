@@ -247,5 +247,15 @@
   "providerQueries": 0,
   "serviceChangesFromIntegration": 0,
   "runtime": "af51 / accepting v18 / Web d629 v3; independent operator result approved",
-  "limits": "No TUI01G or CHAT05P01 product integration; their validation is still pending resource. Original exit cause unknown. Persistent supervision is planned, not installed."
+  "limits": "No TUI01G or CHAT05P01 product integration; their validation is still pending resource. Original exit cause unknown. Persistent supervision is planned, not installed.",
+  "lifecycleDocumentationReview": {
+    "target": "e29f34ad7c91d2d19ab46d3f3f7cb8c82c2d0e57",
+    "reviewer": "native_center_owner / gpt-6-astra",
+    "receivedAt": "2026-10-06T23:50:33.582608+00:00",
+    "outcome": "APPROVED_DOCS_ONLY",
+    "blockingFindings": [],
+    "scope": "four-file delta, recovery facts distinguished from lifecycle plan; no root-cause or installed-policy claim",
+    "tests": 0,
+    "serviceProbes": 0
+  }
 }
