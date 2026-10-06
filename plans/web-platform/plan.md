@@ -333,3 +333,5 @@ GO管理审计规则：active claim按实际开发/持续管理、冻结待审/�
 06:49 GO更新既有U11活动接线优先级：同一WPF-ACTIVITYI01须同时消费已main CHAT05 typed工具/真实thinking，不能仅generic61b；不扩大为CHAT06流正文。准确base候选86a36eaeffbf09f0a3772c3d1509c17dc0a76f92，rendererI已released；原13scope未take，等窄typed接口/scope明确再fresh领取。实际provider证据、轻metadata/展开64KiB prefix、unknown/截断语义与真实水位合并是验收约束，不造thinking/耗时或每消息poll。
 
 06:54 再次遵循用户U12“take工作在dashboard标清、跨lead防overlap”：每个新片先向现D04原子账本登记唯一owner/Lead、分支/工作树与精确literal范围，再交唯一canonical给Lead注册；已领取但来源未部署如实展示，不能把receipt当完整进度卡，不另写平行账本。ActivityI17scope fresh06:53:53.277Z无交叉（特别不含C01的conversations/projection.ts），122210f6 v1已committed。后继source部署收到后由manager唯一采样；其它Lead协调沿既有GO桥接及四类实质变化，不重复派工。
+
+06:59 GO关键路径调整仍归U11/REQ43：panels优先兼容旧61b活动reader的C02 filtered-page raw-scan cursor，先于新stream消费者模块。Lead已固定公开语义允许无returned entries仍扫描推进、hasMore基于watermark；保留task身份/entry递增且<=nextCursor/nextCursor<=watermark/reset/after护栏。唯一管理已桥请求C02 owner固定实现与真实HTTP样本/准确base，来源未齐不猜协议/不先写；旧51f released、当前ActivityI17scope不含旧reader。新片只production projection+直接test+自有plan/evidence，精确命名待提案。

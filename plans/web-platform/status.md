@@ -254,3 +254,5 @@ ActivityI经root批准17scope，新tree /Users/citrine/Projects/AgentHarness/Flo
 GO后续补足80源部署观察：其06:54:36Z实际GET4320/api/snapshot见C01 head7ceabe、human integration、checks/review approved8c、parser0、四scopeclaim可见。该有时间来源关闭“已有聚合入口”前提；不说后继ee294也被采到，不新造部署commit，本管理不重复fetch。已转owner可在下一main记录并入，非要求纯metadata连续重写。
 
 06:57 ActivityI首canonical4c18839c212bee19fa0d83d28b4e0f5fbab67be9 clean由管理实际核17scope内、4TODO/parser0/human完整、implementation/NOT_RUN/NOT_STARTED，见[首源审计](../../docs/evidence/web-platform/activityi01-canonical-audit.json)。已一次SOURCE_READY直GO桥Lead，后续等部署回执才必要唯一采样；owner继续typed活动与P01 footer实现，不等登记。
+
+06:59 后继优先：旧generic活动reader的filtered-page兼容先于完整stream模块。Lead已固定raw scan cursor可跨过滤尾/空页，完整四scope与C02保存真实HTTP样本/准确base仍等原owner手交；manager已唯一桥请求，fresh51f released/旧projection-test无重叠。未新take/写，无全局实现阻塞；ActivityI12221继续现17scope，C01冻结待main。完整stream七scope只研究waiting-input，88a薄client候选只读，不抢Thread/App或公共合同。
