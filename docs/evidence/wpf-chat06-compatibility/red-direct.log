@@ -1,0 +1,278 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility
+
+ ❯ apps/web/test/conversation-projection.test.ts (77 tests | 14 failed) 46ms
+     ✓ retains project undefined and rejects changed GET identity without replacing known facts 3ms
+     ✓ retains project project-a and rejects changed GET identity without replacing known facts 1ms
+     ✓ rejects snapshot/page project mismatch project-a / project-b 0ms
+     ✓ rejects snapshot/page project mismatch project-a / undefined 0ms
+     ✓ rejects snapshot/page project mismatch undefined / project-a 0ms
+     ✓ accepts matching project undefined CREATE and first turn receipts 3ms
+     ✓ accepts matching project project-a CREATE and first turn receipts 0ms
+     ✓ keeps known project identity when a later history page or turn receipt omits it 1ms
+     ✓ keeps mismatched project CREATE project-a / undefined unknown and retries the original identity 1ms
+     ✓ keeps mismatched project CREATE project-a / project-b unknown and retries the original identity 0ms
+     ✓ keeps mismatched project CREATE undefined / project-a unknown and retries the original identity 0ms
+     ✓ accepts optional knowledgeContext=undefined without fetching context or reply details 0ms
+     ✓ accepts optional knowledgeContext=false without fetching context or reply details 0ms
+     ✓ accepts optional knowledgeContext=true without fetching context or reply details 0ms
+     ✓ rejects malformed knowledgeContext=null instead of inferring support 0ms
+     ✓ rejects malformed knowledgeContext=true instead of inferring support 0ms
+     ✓ rejects malformed knowledgeContext=1 instead of inferring support 0ms
+     ✓ retains context metadata in snapshots and history while only actual user/assistant text becomes messages 0ms
+     ✓ uses explicit queue intent while preserving active execution and the visible observer lifecycle 1ms
+     ✓ does not activate queue methods for a false capability even when the public client supports them 0ms
+     ✓ reads queue=false while keeping active-turn sending unavailable in this Web version 1ms
+     ✓ reads queue=true while keeping active-turn sending unavailable in this Web version 0ms
+     ✓ accepts queue=false CREATE receipts and submits only explicit follow-up turns 0ms
+     ✓ accepts queue=true CREATE receipts and submits only explicit follow-up turns 2ms
+     ✓ rejects non-boolean queue capability undefined instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability null instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability true instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability 1 instead of treating it as supported 0ms
+     ✓ does not widen other unsupported capabilities while accepting a boolean queue flag 0ms
+     ✓ keeps a missing pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a id pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a runnerId pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a configDigest pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ rejects an unexpected CREATE pin for an explicit legacy conversation 0ms
+     ✓ keeps the acknowledged creation locked after a rejected first turn and never creates with the later selection 0ms
+     ✓ checks pinned creation on later GET pages and turn receipts without overwriting accepted configuration 0ms
+     ✓ retains legacy unpinned configuration on an existing conversation 0ms
+     ✓ refreshes a same-revision asynchronous reply and reads its exact version only on demand 0ms
+     ✓ keeps a failed initial snapshot unknown and blocks send until it is loaded 0ms
+     ✓ does not recreate an acknowledged conversation when the first turn response is lost 0ms
+     ✓ treats 409 as a definite rejection and refreshes without changing the key/revision or automatically resending 0ms
+     ✓ pauses observations without aborting an already sent command or its late receipt 0ms
+     ✓ does not let an older in-flight snapshot overwrite a newly accepted turn/revision 0ms
+     ✓ does not downgrade a final reply when an older admission ACK arrives last 0ms
+     ✓ confirms queue=false retried saved receipts without regressing a final reply already read from the center 0ms
+     ✓ confirms queue=true retried saved receipts without regressing a final reply already read from the center 0ms
+     ✓ surfaces a request timeout instead of treating it as a visibility cancellation 0ms
+     ✓ deduplicates overlapping turn pages and preserves typed user/assistant entries 0ms
+     ✓ exposes a loadable middle gap after another tab admits several turns while this view is hidden 0ms
+     ✓ rejects mismatched lazy detail versions and lets explicit retry succeed 0ms
+     ✓ keeps a previously unknown result unknown after a retry authentication failure 0ms
+     ✓ does not accept malformed or mismatched success receipts as proof of admission 0ms
+     ✓ validates typed source digests and namespaces identical detail IDs by source identity 1ms
+     ✓ does not move a disposed connection's delayed receipt or detail into a same-ID new connection 0ms
+     × reads live=undefined with queue=false without enabling a stream consumer 14ms
+     ✓ reads live=false with queue=false without enabling a stream consumer 1ms
+     × reads live=true with queue=false without enabling a stream consumer 1ms
+     × accepts CREATE live=undefined with queue=false, then submits one ordinary turn 1ms
+     ✓ accepts CREATE live=false with queue=false, then submits one ordinary turn 0ms
+     × accepts CREATE live=true with queue=false, then submits one ordinary turn 0ms
+     × reads live=undefined with queue=true without enabling a stream consumer 1ms
+     ✓ reads live=false with queue=true without enabling a stream consumer 0ms
+     × reads live=true with queue=true without enabling a stream consumer 0ms
+     × accepts CREATE live=undefined with queue=true, then submits one ordinary turn 0ms
+     ✓ accepts CREATE live=false with queue=true, then submits one ordinary turn 0ms
+     × accepts CREATE live=true with queue=true, then submits one ordinary turn 0ms
+     ✓ rejects malformed GET live=null without replacing known facts 0ms
+     ✓ rejects malformed GET live="true" without replacing known facts 0ms
+     ✓ rejects malformed GET live=1 without replacing known facts 0ms
+     ✓ rejects malformed GET live={} without replacing known facts 0ms
+     × keeps malformed CREATE live=null unknown and retries the frozen receipt 1ms
+     × keeps malformed CREATE live="true" unknown and retries the frozen receipt 0ms
+     × keeps malformed CREATE live=1 unknown and retries the frozen receipt 0ms
+     × keeps malformed CREATE live={} unknown and retries the frozen receipt 0ms
+     ✓ does not let true bypass GET conversation, turn or task identities 0ms
+     × does not let true bypass a mismatched project CREATE identity 0ms
+     × does not let true bypass a mismatched profile CREATE identity 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 14 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > reads live=undefined with queue=false without enabling a stream consumer
+AssertionError: expected { snapshot: null, turns: [], …(7) } to match object { error: null, …(2) }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "connection": "live",
+-   "error": null,
+-   "snapshot": {
+-     "capabilities": {
+-       "liveAssistantText": false,
+-       "queue": false,
+-     },
+-   },
++   "connection": "reconnecting",
++   "error": "This connection's conversation capabilities are not supported by this Web version.",
++   "snapshot": null,
+  }
+
+ ❯ apps/web/test/conversation-projection.test.ts:420:40
+    418|       const { projection, requests } = wire(live, queue); await projec…
+    419|       if (queue) await projection.queue.refresh();
+    420|       expect(projection.getSnapshot()).toMatchObject({ error: null, co…
+       |                                        ^
+    421|       expect(projection.queue.getSnapshot().available).toBe(queue);
+    422|       expect(requests.filter(request => request.path.endsWith("/queue"…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/14]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > reads live=true with queue=false without enabling a stream consumer
+AssertionError: expected { snapshot: null, turns: [], …(7) } to match object { error: null, …(2) }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "connection": "live",
+-   "error": null,
+-   "snapshot": {
+-     "capabilities": {
+-       "liveAssistantText": true,
+-       "queue": false,
+-     },
+-   },
++   "connection": "reconnecting",
++   "error": "This connection's conversation capabilities are not supported by this Web version.",
++   "snapshot": null,
+  }
+
+ ❯ apps/web/test/conversation-projection.test.ts:420:40
+    418|       const { projection, requests } = wire(live, queue); await projec…
+    419|       if (queue) await projection.queue.refresh();
+    420|       expect(projection.getSnapshot()).toMatchObject({ error: null, co…
+       |                                        ^
+    421|       expect(projection.queue.getSnapshot().available).toBe(queue);
+    422|       expect(requests.filter(request => request.path.endsWith("/queue"…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/14]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > accepts CREATE live=undefined with queue=false, then submits one ordinary turn
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > accepts CREATE live=true with queue=false, then submits one ordinary turn
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > accepts CREATE live=undefined with queue=true, then submits one ordinary turn
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > accepts CREATE live=true with queue=true, then submits one ordinary turn
+AssertionError: expected undefined to be 'chat' // Object.is equality
+
+- Expected: 
+"chat"
+
++ Received: 
+undefined
+
+ ❯ apps/web/test/conversation-projection.test.ts:428:46
+    426|     it.each([undefined, false, true])(`accepts CREATE live=%s with que…
+    427|       const { projection, requests } = wire(live, queue, null);
+    428|       expect(await projection.send("hello")).toBe("chat");
+       |                                              ^
+    429|       expect(projection.getSnapshot()).toMatchObject({ outbox: null, s…
+    430|       expect(requests.filter(request => request.method === "POST").map…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/14]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > reads live=undefined with queue=true without enabling a stream consumer
+AssertionError: expected { snapshot: null, turns: [], …(7) } to match object { error: null, …(2) }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "connection": "live",
+-   "error": null,
+-   "snapshot": {
+-     "capabilities": {
+-       "liveAssistantText": false,
+-       "queue": true,
+-     },
+-   },
++   "connection": "reconnecting",
++   "error": "This connection's conversation capabilities are not supported by this Web version.",
++   "snapshot": null,
+  }
+
+ ❯ apps/web/test/conversation-projection.test.ts:420:40
+    418|       const { projection, requests } = wire(live, queue); await projec…
+    419|       if (queue) await projection.queue.refresh();
+    420|       expect(projection.getSnapshot()).toMatchObject({ error: null, co…
+       |                                        ^
+    421|       expect(projection.queue.getSnapshot().available).toBe(queue);
+    422|       expect(requests.filter(request => request.path.endsWith("/queue"…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/14]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > reads live=true with queue=true without enabling a stream consumer
+AssertionError: expected { snapshot: null, turns: [], …(7) } to match object { error: null, …(2) }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "connection": "live",
+-   "error": null,
+-   "snapshot": {
+-     "capabilities": {
+-       "liveAssistantText": true,
+-       "queue": true,
+-     },
+-   },
++   "connection": "reconnecting",
++   "error": "This connection's conversation capabilities are not supported by this Web version.",
++   "snapshot": null,
+  }
+
+ ❯ apps/web/test/conversation-projection.test.ts:420:40
+    418|       const { projection, requests } = wire(live, queue); await projec…
+    419|       if (queue) await projection.queue.refresh();
+    420|       expect(projection.getSnapshot()).toMatchObject({ error: null, co…
+       |                                        ^
+    421|       expect(projection.queue.getSnapshot().available).toBe(queue);
+    422|       expect(requests.filter(request => request.path.endsWith("/queue"…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/14]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > keeps malformed CREATE live=null unknown and retries the frozen receipt
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > keeps malformed CREATE live="true" unknown and retries the frozen receipt
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > keeps malformed CREATE live=1 unknown and retries the frozen receipt
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > keeps malformed CREATE live={} unknown and retries the frozen receipt
+AssertionError: expected undefined to be 'chat' // Object.is equality
+
+- Expected: 
+"chat"
+
++ Received: 
+undefined
+
+ ❯ apps/web/test/conversation-projection.test.ts:449:53
+    447|     expect(pending?.state).toBe("unknown"); expect(projection.getSnaps…
+    448|     expect(requests.filter(request => request.method === "POST")).toHa…
+    449|     setLive(true); expect(await projection.retry()).toBe("chat");
+       |                                                     ^
+    450|     const creates = requests.filter(request => request.path === "/api/…
+    451|     expect(creates).toHaveLength(2); expect(creates[1]?.body).toBe(cre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/14]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > does not let true bypass a mismatched project CREATE identity
+ FAIL  apps/web/test/conversation-projection.test.ts > live text capability wire compatibility > does not let true bypass a mismatched profile CREATE identity
+AssertionError: expected undefined to be 'chat' // Object.is equality
+
+- Expected: 
+"chat"
+
++ Received: 
+undefined
+
+ ❯ apps/web/test/conversation-projection.test.ts:475:68
+    473|     expect(projection.getSnapshot().outbox).toMatchObject({ state: "un…
+    474|     expect(requests.filter(request => request.method === "POST")).toHa…
+    475|     setCreateResponse(undefined); expect(await projection.retry()).toB…
+       |                                                                    ^
+    476|     const creates = requests.filter(request => request.path === "/api/…
+    477|     expect(creates[1]?.key).toBe(creates[0]?.key); expect(creates[1]?.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/14]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  14 failed | 63 passed (77)
+   Start at  23:48:25
+   Duration  315ms (transform 112ms, setup 0ms, import 184ms, tests 46ms, environment 0ms)
+

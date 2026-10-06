@@ -64,12 +64,14 @@ function assertTurn(value: ConversationTurn, conversationId: string) {
     || (reply.source.kind === "assistant-final" ? !reply.source.contentDigest || reply.source.messageId !== reply.messageId : reply.source.kind !== "adapter-final-artifact" || !reply.source.artifactVersion)))
     throw Error("The assistant reply source does not match this turn.");
 }
-function assertCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
+function readCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
   const value = snapshot.capabilities;
   if (!value || value.followUp !== true || typeof value.queue !== "boolean"
     || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== "boolean")
-    || [value.steer, value.liveAssistantText, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
+    || (value.liveAssistantText !== undefined && typeof value.liveAssistantText !== "boolean")
+    || [value.steer, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
     throw Error("This connection's conversation capabilities are not supported by this Web version.");
+  return { ...value, liveAssistantText: value.liveAssistantText ?? false };
 }
 
 /** Conversation facts remain at the center; polling and receipt lifetimes are independent. */
@@ -150,13 +152,13 @@ export class ConversationProjection {
           pageAfter !== null ? this.client.conversationTurns(id, { after: pageAfter, limit: 20 }, signal) : Promise.resolve(null),
         ]);
         if (signal.aborted || this.id !== id) return;
-        assertSummary(snapshot.conversation, id); assertCapabilities(snapshot);
+        assertSummary(snapshot.conversation, id); const capabilities = readCapabilities(snapshot);
         this.validateCreation(snapshot.conversation);
         if (snapshot.lastTurn) assertTurn(snapshot.lastTurn, id);
         if (page) { assertSummary(page.conversation, id); this.validateCreation(page.conversation); assertCreationReceiptMatches(creationFields(snapshot.conversation), page.conversation); page.turns.forEach(turn => assertTurn(turn, id)); }
         this.creation ??= conversationCreationSchema.parse(creationFields(snapshot.conversation));
         const turns = this.mergeTurns([...(page?.turns ?? []), ...(snapshot.lastTurn ? [snapshot.lastTurn] : [])], sequence);
-        this.update({ snapshot: this.reconcileSnapshot(snapshot, turns, sequence), turns, nextCursor: this.historyCursor(turns, page && initial ? page.nextCursor : this.state.nextCursor), loading: false, error: null, connection: "live" });
+        this.update({ snapshot: this.reconcileSnapshot({ ...snapshot, capabilities }, turns, sequence), turns, nextCursor: this.historyCursor(turns, page && initial ? page.nextCursor : this.state.nextCursor), loading: false, error: null, connection: "live" });
       } catch (error) {
         if (this.lifetime.signal.aborted || observation.aborted) return;
         this.update({ loading: false, error: errorMessage(error), connection: "reconnecting" });
@@ -249,13 +251,13 @@ export class ConversationProjection {
       if (!id) {
         const created = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
-        assertSummary(created.conversation); assertCapabilities(created);
+        assertSummary(created.conversation); const capabilities = readCapabilities(created);
         if (typeof created.replayed !== "boolean") throw Error("The creation receipt is not confirmed.");
         assertCreationReceiptMatches(entry.creation!, created.conversation);
         this.creation = entry.creation!;
         id = created.conversation.id;
         this.id = id; this.outbox.bindConversation(entry.id, id);
-        this.update({ snapshot: { conversation: created.conversation, capabilities: created.capabilities, nativeSession: null, lastTurn: null } });
+        this.update({ snapshot: { conversation: created.conversation, capabilities, nativeSession: null, lastTurn: null } });
       }
       const accepted = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
