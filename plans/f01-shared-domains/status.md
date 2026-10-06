@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:26:00 UTC / 2026-10-06 06:26:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:35:43 UTC / 2026-10-06 06:33:39 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main3d4985fca060155435b159e0467815bf8e88b8b8；当前固定接线549f6b3e54f902d7b75ebe6d17f293a2085e7a6c；C02隔离修复d6406f906829b875d062e875dbd5aca613500e16 |
+| 工作基线 / HEAD | main acfd409a493315a00f1cc19ac96c5f1b36c19e57；当前K03薄client 77465eb59121bad5ac2785036961f1707911d21b |
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支待独审。实际center/runner仍fb906cb |
-| Review | Root独立APPROVED07b1b11060c069db76f9f958f92c1c53af9fca46 薄client；020 9ea已Root批准并main |
-| 实现目标 | 07b1b11060c069db76f9f958f92c1c53af9fca46 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/package-fetches.test.ts, packages/contracts/src/index.ts |
+| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支已独审待集成；K03薄client待审。实际center/runner仍fb906cb |
+| Review | NOT_STARTED 77465eb59121bad5ac2785036961f1707911d21b K03薄client；X05 07b1已Root批准 |
+| 实现目标 | 77465eb59121bad5ac2785036961f1707911d21b |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/goal-context.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
-| 下一可用交付 | 让包下载操作可以持久受理、查询和核对恢复 |
+| 下一可用交付 | 为目标子任务读取固定版本的知识引用；接入可核对恢复的包下载 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -79,8 +79,10 @@
 
 2026-10-06 06:28 UTC：020薄client+生产挂载获Root独立只读APPROVED；领域216由Mika独立批准。保留0provider/64KiB截断不可追回余文边界，下一动作main接收。
 
-| F01-18 | in-progress | Lead | X05固定合同1405551的5个薄client方法，1/1HTTP+tsc，target07b1b11060c069db76f9f958f92c1c53af9fca46待独审；PG/worker未就绪不挂生产 |
+| F01-18 | in-progress | Lead | X05固定合同1405551的5个薄client方法，1/1HTTP+tsc，target07b1b11060c069db76f9f958f92c1c53af9fca46已获Root独审；PG/worker未就绪不挂生产 |
 
 2026-10-06 06:30 UTC：X05只消费固定领域合同，未知状态/409/abort原样传递，不暗重试。契约1405551来源保留，无本片领域或模型能力推断。
 
 2026-10-06 06:31 UTC：X05五方法薄client获Root限定独立批准，无领域能力承诺；下一生产/CLI片等待X05领域固定独审，0新增模型。
+
+| F01-19 | in-progress | Lead | K03固定版本context薄client 77465eb59121bad5ac2785036961f1707911d21b；1/1HTTP+tsc，待独审/021生产挂载 |
