@@ -39,3 +39,7 @@ Review target commit：91ce18d33a1edf3cd087020ab0ea761579affc63。Lead已完整�
 Review target commit：91ce18d33a1edf3cd087020ab0ea761579affc63。Reviewer：Execution Lead / astra_ultra_execution_lead，独立于作者；2026-10-06T18:15:59.838358+00:00，APPROVED。完整脚本与8用例已读，21 source/raw/input/derived hash/bytes核对，无新执行；FIFO与成长读取P2关闭。原2red→8green、red完整test hash未保存等边界保持。
 
 [独立原回执](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json)。批准仅固定artifact操作准备与file-only tiny检查，不授权个人搬运/marker/维护/服务；两个retained af51报告、真实Web身份与明确窗口仍是发布前置。source/raw/旧manifest不改，产品af51 tuple不变。
+
+## 单次隔离诊断待独审
+
+Review target commit：d8b4c961b9d36915f07ff4109299fac642566519。按3980已授权提案执行一次，133attempts/exit0，churn NOT_REPRODUCED、容量drop隔离成立，cleanup完整。[固定manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-run-manifest.json)。当前REVIEW_PENDING，不继承搬运91ce准备批准、不推个人根因或发布授权。

@@ -54,3 +54,5 @@
 2026-10-06 18:16 UTC：Lead独立APPROVED固定91ce搬运准备，21项绑定核实、0重跑，P2关闭；只准备不授权个人效果。后继仅只读设计独立loopback诊断，个人HTTP/连接/服务不动；原raw与manifest保留。
 
 2026-10-06 18:20 UTC：已完成[只读loopback复现方案](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-reproduction-proposal.json)。固定af51 static-web、现装Vite8.3.2与Node24.20源码区分capacity drop/HTTP错误/代理abort；候选136连接尝试、35s工作+10s清理、1MiB输出/4MiB自有tmp。未启动，需Lead独立窗口；不追加个人HTTP、不升cap/重启。
+
+2026-10-06 18:28 UTC：授权单次隔离诊断已完成133attempts/exit0，churn残留NOT_REPRODUCED；64保持流达到cap时drop先于HTTP且释放后恢复。全部自有group/port/tmp清理，原个人身份问题仍unknown，不作为健康/根因证明。[诊断与manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-diagnostic-README.md)。无个人HTTP/服务变化，source d8b4c961b9d36915f07ff4109299fac642566519，独审待完成。
