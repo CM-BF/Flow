@@ -1,0 +1,77 @@
+{
+  "observedAt": "2026-10-06T12:57:32.356696+00:00",
+  "main": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "originMainAtObservation": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "implementation": "0aaa7eb9591d83e5194d0894a1417f75615f0517",
+  "implementationIsAncestor": false,
+  "sourceFiles": [
+    {
+      "path": "apps/tui/README.md",
+      "sha256": "c2afde8dde353af02865f698ec3c76477e96040fa946072d802d66cd1fb53f3a",
+      "bytes": 8557
+    },
+    {
+      "path": "apps/tui/src/goal/commands.ts",
+      "sha256": "eea58c676a7b0bf50a52925db82952e8d9241c2ca1794ceb4387907b8c587fea",
+      "bytes": 5210
+    },
+    {
+      "path": "apps/tui/src/goal/journey.test.ts",
+      "sha256": "85faa08dbc12b23a1d1a52ca83a5e1f7b7778fef31a436b162dac285dab7a95e",
+      "bytes": 14255
+    },
+    {
+      "path": "apps/tui/src/goal/screen.tsx",
+      "sha256": "a63e1fc5c60bc2902dbdc57fb311a9f078847ad1e5a4b5577878c2ff49c577d2",
+      "bytes": 2650
+    },
+    {
+      "path": "apps/tui/src/goal/store.ts",
+      "sha256": "8b9c27f896c65fbba63eae64f2fa2813ea880fa9be1717b0b6674576c2fb6d8d",
+      "bytes": 1289
+    },
+    {
+      "path": "apps/tui/src/goal/terminal.test.ts",
+      "sha256": "7c52a4212191d3c9dbba1b543fbe2d887832576f22fea324a6f1e9e4a26d7cd7",
+      "bytes": 3286
+    },
+    {
+      "path": "apps/tui/src/goal/terminal.ts",
+      "sha256": "5c8eaafd8a033d89a011b683a84cf1d7daf2cec3c85f2a94ea4bc7ba6adabdbe",
+      "bytes": 7722
+    },
+    {
+      "path": "apps/tui/src/headless.ts",
+      "sha256": "723492661e0056e24e47ac909aedc18ffbb0ac661026b086d525f3fa4cfdace7",
+      "bytes": 1766
+    },
+    {
+      "path": "apps/tui/src/intent-store.ts",
+      "sha256": "33555b4ff95d4a7b79990fce57fba1c865d7ffbaa5eab37b36c22c886ebba3b7",
+      "bytes": 659
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "sha256": "ac909b6740f4fae628d8bea61f76e5ca5fad16f64b6f3399707e61ba3066b2cb",
+      "bytes": 4125
+    },
+    {
+      "path": "apps/tui/src/private-journal.ts",
+      "sha256": "beb8e8374811998d4b55997fe90a50857115fc89220b8b841b56075f005e2bf2",
+      "bytes": 3195
+    },
+    {
+      "path": "apps/tui/test-fixtures/goal_driver.py",
+      "sha256": "8fef835920471c5c4fe49ce59258c8ab5df9c8d26d85d0b8f06142161c188d3a",
+      "bytes": 2880
+    }
+  ],
+  "mismatches": [],
+  "integrationEvidence": [
+    "docs/evidence/i02/engineering-terminal-integration.json",
+    "docs/evidence/i02/engineering-terminal-source-comparison.json"
+  ],
+  "leadReportedChecks": "Combination root noEmit exit0; original 21/PTY/PG not rerun.",
+  "ownerMetadataChecks": "Read fixed Git blobs only; no engineering test/provider/service operation.",
+  "remaining": "Complete TUI↔Web journey remains open in parent TUI-001."
+}

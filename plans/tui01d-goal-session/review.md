@@ -9,3 +9,7 @@
 批准限终端goal表示层及隔离公共旅程；尚未main，不含完整TUI→Web→TUI、浏览器、provider或native执行。192KiB只约束journal与JSONL**输入**，不是snapshot输出总限；显式正文仍沿public controller限制（artifact最多1MiB、goal response最多2MiB），screen窗口最多1600码点。quit只断观察；取消ACK不等停止；未证明同UID竞态、全OS crash/掉电持久性或自动stale-lock恢复。
 
 原证据README/manifest中的NOT_STARTED是固定交审时的历史状态；本review和唯一status记录后续批准。产品源码停写，claim保留待main接收。架构影响沿新goal表示层和共享private journal IO，由Execution Lead在实际集成后同步基线。
+
+## 主线接收
+
+2026-10-06 12:57 UTC：main/origin 280289008a5a3779e4e5e6453181b96062ed9514 已接收，12源固定blob逐字一致，[receipt](../../docs/evidence/tui01d/main-receipt.json)。组合root types0由Lead提供并绑定I02证据，作者没有重跑旧21或操作个人服务。审查target仍 0aaa7eb9591d83e5194d0894a1417f75615f0517，父TUI↔Web验收仍开放。

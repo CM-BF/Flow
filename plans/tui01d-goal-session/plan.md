@@ -7,7 +7,7 @@
 - [x] TUI01D-01：独立领取、职责/接口与共享私有日志设计。
 - [x] TUI01D-02：goal slash/headless/Ink 接入及旧会话兼容。
 - [x] TUI01D-03：真实 HTTP/PG 双客户端、ACK、轻读/57历史与 PTY 局部检查。
-- [ ] TUI01D-04：独立审查与 main 接收。
+- [x] TUI01D-04：独立审查与 main 接收。
 - [ ] TUI01D-05：父计划后继真实 TUI→Web→TUI 完整验收（本片不冒认）。
 
 接口见 [interface](../../docs/evidence/tui01d/interface.md)。0 provider；隔离随机数据库/动态端口/自有进程，个人服务不操作。不增加依赖；共享 export/client/server 不在此范围。检查覆盖公开行为及既有 journal/headless 直接消费者。退出断观察，不取消中心工作。
