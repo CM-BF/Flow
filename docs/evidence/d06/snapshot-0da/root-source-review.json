@@ -1,0 +1,106 @@
+{
+  "reviewer": "/root independent read-only coordinator",
+  "reviewedAt": "2026-10-06T23:49:17.707060+00:00",
+  "target": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "base": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "curatedFixedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "scope": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/test/architecture.test.mjs"
+  ],
+  "conclusion": "APPROVED_SOURCE_ONLY_VALIDATION_PENDING",
+  "blockingFindings": [],
+  "featureApproval": false,
+  "integrationOrDeploymentApproval": false,
+  "reviewed": [
+    "All changed node facts across five views. Existing baseline/views/node/edge/group interface retained. Five view IDs,83 node identities/coordinates/kinds and all non-node skeleton lines (except baseline) match branch base. No renderer/CSS/server/registry implementation change.",
+    "028 explicit cookie/CSRF client/server capability versus actual App page-memory Bearer connection. Attachments are mounted to official Thread runtime and actual captured Send/Queue; full reload draft/unknown-receipt recovery stays open.",
+    "029 static install versus runner library load/invoke current authorization. X01 enable binding remains excluded, as do S01P07 claim-recovery and CHAT05P01 full bodies; underlying earlier capabilities remain represented as integrated.",
+    "030 bounded progression and031 explicit owner confirmation remain center-owned, distinct from readers, grant and task/verification states. TUI --goal, queue, cancel and same-key recovery are current; progression/confirmation and215 TUI message-settings successor not falsely mounted.",
+    "032 declared frozen Claude tuple admission/runner options/finite observations separated from creation-profile selection, controlled MessageSettingsPicker and still-unwired real Web host. Shared public client/interactions stay transport/observation and intent authorities, not a second scheduler.",
+    "History template2 attachment-only/mixed metadata is explicitly unknown; obsolete min1 compatibility defect removed. Main native engineering v2 receipt acceptance is distinguished from default fixture engineering launch and absent production Codex write authority.",
+    "Personal af51 backend commit and d629 Web artifact digest are explicitly attributed to Lead21:27:19 receipt; no claim that current main is deployed or newly sampled. External SDK versions remain pinned and Flow plugin-runtime is a workspace package.",
+    "22 declared direct cases inspected statically. False-positive TUI-mounted substring was replaced with exact statement plus real entrypoint/command-union anchors; wrong unintegrated TUI directory suggestion was corrected to actual interaction subtree plus controller/command interfaces. HTTP/host/CSP/source-access regression assertions preserved."
+  ],
+  "evidence": [
+    {
+      "path": "/private/tmp/root-d06-512-static-audit.json",
+      "bytes": 9161,
+      "sha256": "eaef7e2752b1e03a244b916ca64ee33d9c0f5004f491655739b2017f9d4442a3"
+    },
+    {
+      "path": "/private/tmp/root-d06-0da-interface-facts.json",
+      "bytes": 11518,
+      "sha256": "6194f45111221779e85f7897f7a53e875a3cc640d9652e73049853099dea23d9"
+    },
+    {
+      "path": "/private/tmp/d06-0da-backend-facts/report.md",
+      "bytes": 8020,
+      "sha256": "29458bb896705d2805861d7fd0e66eafe2066b8b8a7adeea74d13fc58cf8b632"
+    },
+    {
+      "path": "/private/tmp/d06-0da-backend-facts/source-audit.json",
+      "bytes": 16959,
+      "sha256": "389b2450a8bb5faa450062b89c906f111d1d055d7c21473ab02617b56ba00d8b"
+    },
+    {
+      "path": "/private/tmp/d06-fixed-interface-jv7no9lv/report.md",
+      "bytes": 8351,
+      "sha256": "d944d1fedf16cfbc96dedc7b5ea510dd1b794a70297536a3daf82aed1bf17c5f"
+    },
+    {
+      "path": "/private/tmp/d06-fixed-interface-jv7no9lv/engineering-followup.md",
+      "bytes": 8131,
+      "sha256": "1a8b55606b5e0827c8f87169c8b4aeb3b2b96717732d3a1cc3d961e7429c6a3b"
+    }
+  ],
+  "verifiedStatic": {
+    "candidatePins": [
+      {
+        "path": "apps/execution-dashboard/public/architecture-data.js",
+        "bytes": 44076,
+        "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78",
+        "matchesFixedTarget": true
+      },
+      {
+        "path": "apps/execution-dashboard/test/architecture.test.mjs",
+        "bytes": 32645,
+        "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149",
+        "matchesFixedTarget": true
+      }
+    ],
+    "sourceProof": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/source-proof.json",
+      "bytes": 112888,
+      "sha256": "9ba89a8062643ae9ef7041656d571383110019edf9d77e2ca2eff8e45edc9cb1"
+    },
+    "fixedGitSourcePins": 116,
+    "historicalEvidenceGitBlobsUnchanged": 182,
+    "changedNodes": 34,
+    "gitDiffCheckExit": 0,
+    "projectWritesByReviewer": false
+  },
+  "notRun": [
+    "Node import/syntax/test execution",
+    "loopback HTTP direct check",
+    "browser layout and keyboard/theme checks",
+    "PG/provider",
+    "4320 served-content observation",
+    "personal service sampling"
+  ],
+  "limits": [
+    "Python literal-only node inspection and source byte/regex comparisons are not JavaScript execution or passing direct tests. All22 actual cases remain NOT_RUN.",
+    "Preserved SVG positions and renderer do not prove new label glyph widths or collision-free display. New subtitle/label content still requires a proportionate actual display check at the admitted integration point.",
+    "No new browser or runtime wrapper was produced. Old snapshot-aeb helpers/results are historical, not approved for new target and must not overwrite historical outputs.",
+    "Candidate has only the two data/test implementation files; owner may archive this review and metadata separately while retaining fixed product bytes. No main merge or4320 presentation confirmed by reviewer."
+  ],
+  "cleanCode": {
+    "appliedSkills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "findingsAndFixes": "Obsolete capability wording and ambiguous positive-substring evidence were corrected in current source. Existing compact graph interface and direct test consumer retained, no additional framework/authority/duplicated manual progress introduced.",
+    "remaining": "Real tests and layout/service presentation remain explicit validation work, not source defects."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "observedAt": "2026-10-06T23:51:55Z",
+  "target": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "sourceMetadata": "2022ed4352e2d8ac903b6065493626b5853473c5",
+  "conclusion": "APPROVED_SOURCE_ONLY_VALIDATION_PENDING",
+  "reviews": [
+    {
+      "path": "root-source-review.json",
+      "bytes": 6599,
+      "sha256": "d4598b3a7b029347443a1734230e0d718c94d2c18f0e661af148a40c4c62c8e5"
+    },
+    {
+      "path": "root-static-audit.json",
+      "bytes": 9161,
+      "sha256": "eaef7e2752b1e03a244b916ca64ee33d9c0f5004f491655739b2017f9d4442a3"
+    },
+    {
+      "path": "backend-peer-review.md",
+      "bytes": 5104,
+      "sha256": "447f96cdcaf27e5a82b0eca6a31ab77b219c01b38b79f702365b6072abaef567"
+    },
+    {
+      "path": "backend-peer-audit.json",
+      "bytes": 6518,
+      "sha256": "44a60ebe30042efe50d20a543dc2b6ef009b7f9ea1a48e7740f067cc130255de"
+    }
+  ],
+  "actualChecks": "22 direct and all new browser checks NOT_RUN",
+  "featureApproved": false,
+  "mainApproved": false,
+  "sourceFrozen": true,
+  "initialCandidate": "candidate.json remains the exact initial fixed-source submission, including its historical pending state and pinned evidence bytes. This receipt and the unique owner status carry the review decision.",
+  "claim": "adf9539d-0d42-49b8-961b-f5195a4c10e9 v1 active confirmed 2026-10-06T23:51:19.563Z; no overlap",
+  "coordinationEntry": {
+    "executable": "/opt/homebrew/opt/node@24/bin/node",
+    "arguments": [
+      "--env-file=/tmp/flow-coordination.env",
+      "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/coordination/cli.mjs",
+      "list"
+    ],
+    "configuration": "Node loads existing approved env file; contents not read or printed. Read-only list, no init/repair."
+  }
+}
