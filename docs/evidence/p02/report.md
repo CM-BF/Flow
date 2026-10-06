@@ -1,6 +1,10 @@
 # P02 持久A2A出站检查
 
-最终源码target **e2955d4bc33c458b6dbdd10f380f834557ba98fa**（含Lead共享生产入口9db3ce，pick为05a1308）。02:56 UTC **13/13 + typecheck通过**，17.85s。[最终原始JSON](production-checks.json)、[输出](production-checks.log)、[源码/证据hash](production-manifest.json)。
+当前最终源码target **f942e5a5cbf138993dd7521792dd071a172c17e1**。03:00 UTC受影响runtime **15/15 + typecheck通过**（20.64s），含生产server/runner/CLI旅程及5项初始化故障。[当前原始JSON](initialization-checks.json)、[源码/证据hash](initialization-manifest.json)。中心代码未改，3项HTTP/PG沿用下方e2955d4的13项基线；本轮不称为重新跑过18项。
+
+审查P2已先红复现后修复：不可写attempt父目录（真实chmod0500）时未退出；constructor/toString继承ref与坏URL陷入恢复循环。现在先完成own-ref/URL/本地目录校验再启动lease；存储失败明确EventStorageError、配置失败明确ProtocolConfigurationError。5项真实main故障均exit1、0heartbeat、0remote send、无protocol intent。missing-ref原本会退出但先有一次heartbeat，此次强化为零heartbeat。首轮目录夹具捕获空claim的测试准备错误已记录，正确目录复现单独见[mkdir red](mkdir-red.log)，其余原始[首轮记录](initialization-first-red.log)保留。待Lead独立复审，不自称批准。
+
+生产入口基线源码target **e2955d4bc33c458b6dbdd10f380f834557ba98fa**（含Lead共享生产入口9db3ce，pick为05a1308）。02:56 UTC **13/13 + typecheck通过**，17.85s。[最终原始JSON](production-checks.json)、[输出](production-checks.log)、[源码/证据hash](production-manifest.json)。
 
 全部中心测试已删除手工迁移/路由注册，要求createServer内置挂载。新增一条真实server/main、runner/main、CLI/main独立进程旅程：空flow_p02自动迁移、动态端口、CLI注册a2a与submit --endpoint、CLI查询protocol/show、remote仅发送一次、lowerstore exact content、verification passed、cost unknown，以及两端SIGTERM exit0。其余9项runner进程场景仍以专用入口注入短heartbeat/request间隔。独立review尚未开始，不把作者检查当review批准。
 

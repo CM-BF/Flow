@@ -1,0 +1,50 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts (15 tests | 1 failed | 14 skipped) 3758ms
+   ↓ bound remote Task survives runner and center restart, then imports one version and independently verifies it
+   ↓ a crash after the durable send permit but before its ACK does not dispatch or replay
+   ↓ a crash after remote acceptance but before its ACK preserves an uncertain outcome and never resends
+   ↓ a crash after binding commits but before its ACK recovers by GetTask without another SendMessage
+   ↓ cancel acceptance remains pending across restart until the remote Task actually stops
+   ↓ replays a persisted artifact ACK gap without duplicating its version and completes independent verification
+   ↓ remote execution success does not conceal an independently failed text verifier
+   ↓ heartbeat loss stops remote observation and an expired attempt cannot be revived or dispatched again
+   ↓ a lost center dispatch ACK times out even while heartbeats remain healthy, without remote replay
+   ↓ production server, runner and CLI entry points dispatch and inspect one verified remote task
+   × an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send 3758ms
+   ↓ invalid local endpoint missing-ref exits without dispatch or continuing heartbeats
+   ↓ invalid local endpoint constructor exits without dispatch or continuing heartbeats
+   ↓ invalid local endpoint toString exits without dispatch or continuing heartbeats
+   ↓ invalid local endpoint bad-url exits without dispatch or continuing heartbeats
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send
+AssertionError: expected null to be 1 // Object.is equality
+
+- Expected: 
+1
+
++ Received: 
+null
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:272:64
+    270|   try {
+    271|     release?.();
+    272|     await expect.poll(() => child.exitCode, { timeout: 2500 }).toBe(1);
+       |                                                                ^
+    273|     expect(heartbeatRequests).toBe(0);
+    274|     expect(peer.counts.sends).toBe(0);
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:272:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 skipped (15)
+   Start at  19:57:47
+   Duration  4.10s (transform 112ms, setup 0ms, import 254ms, tests 3.76s, environment 0ms)
+

@@ -1,6 +1,6 @@
 # P02 独立review
 
-状态：**NOT_STARTED**。Review target commit：**e2955d4bc33c458b6dbdd10f380f834557ba98fa**。Base：72278b22ae81f551dc13d68da2fb45f2ef182038。
+状态：**CHANGES_REQUESTED（两项P2已修复，待复审）**。当前review target commit：**f942e5a5cbf138993dd7521792dd071a172c17e1**。生产入口旧target：e2955d4bc33c458b6dbdd10f380f834557ba98fa。Base：72278b22ae81f551dc13d68da2fb45f2ef182038。
 
 Worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch；branch codex/protocol-dispatch。Lead共享9db3ce入口已pick为05a1308；本target包含实际入口检查，不再依靠手工注册备用逻辑。
 
@@ -14,4 +14,11 @@ Worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch�
 
 核验上述固定target和证据hash，使用find-skills及本地相关codebase-design/clean-code/TDD。默认只读，不改owner status。可按report复跑P02相关13项，专用flow_p02且无他人使用时才清其schema；动态端口，0模型0云，不覆盖原始证据。重点区分取消ACK/实际停止与发送ACK丢失/盲重试，检查lease期限不被持续心跳隐藏的ACK悬挂吞掉。报告severity/blocking、已执行/未执行/限制和必要修复，结论绑定target。
 
-Findings：尚未独立评估。结论：NOT_STARTED，无approval。作者检查不替代独立审查；修复commit/复审等待实际结果。
+## Findings及作者修复
+
+- P2 / blocking（Goal Owner源码检查、Lead确认派修）：mkdir位于lease构造后且try/finally外，目录失败可能留下timer并持续续租。真实chmod0500权限故障复现进程不退出；f942e5a把本地目录创建移至lease构造之前，失败明确EventStorageError。
+- P2 / blocking（同上）：普通object继承ref与坏URL初始化错误可能在state/command尚无值时被吞，循环恢复续租。constructor/toString/坏URL实际复现；f942e5a使用null-prototype映射、Object.hasOwn及现有remoteUrl验证，配置错误fatal且在lease之前。
+
+修复后5项实际main故障均exit1、0heartbeat、0remote send；受影响runtime15/15（20.64s）+typecheck，包含原生产入口smoke。不重复未改中心3项；13项基线原始证据保留。[当前JSON](../../docs/evidence/p02/initialization-checks.json)、[当前源码hash](../../docs/evidence/p02/initialization-manifest.json)。
+
+结论：作者修复完成，独立复审尚未执行，无APPROVED。请复审f942e5a，不能沿用旧target作为批准。

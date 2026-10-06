@@ -1,0 +1,90 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts (15 tests | 5 failed | 10 skipped) 10540ms
+   ↓ bound remote Task survives runner and center restart, then imports one version and independently verifies it
+   ↓ a crash after the durable send permit but before its ACK does not dispatch or replay
+   ↓ a crash after remote acceptance but before its ACK preserves an uncertain outcome and never resends
+   ↓ a crash after binding commits but before its ACK recovers by GetTask without another SendMessage
+   ↓ cancel acceptance remains pending across restart until the remote Task actually stops
+   ↓ replays a persisted artifact ACK gap without duplicating its version and completes independent verification
+   ↓ remote execution success does not conceal an independently failed text verifier
+   ↓ heartbeat loss stops remote observation and an expired attempt cannot be revived or dispatched again
+   ↓ a lost center dispatch ACK times out even while heartbeats remain healthy, without remote replay
+   ↓ production server, runner and CLI entry points dispatch and inspect one verified remote task
+   × an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send 730ms
+   × invalid local endpoint missing-ref exits without dispatch or continuing heartbeats 1181ms
+   × invalid local endpoint constructor exits without dispatch or continuing heartbeats 2832ms
+   × invalid local endpoint toString exits without dispatch or continuing heartbeats 2853ms
+   × invalid local endpoint bad-url exits without dispatch or continuing heartbeats 2943ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send
+AssertionError: expected null to be truthy
+
+- Expected: 
+true
+
++ Received: 
+null
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:265:43
+    263|   const child = await launch(token, 'apps/runner/src/main.ts');
+    264|   await blocked;
+    265|   expect((await client.show(id)).attempt).toBeTruthy();
+       |                                           ^
+    266|   const stateRoot = join(directory, 'runner', createHash('sha256').upd…
+    267|   await chmod(stateRoot, 0o500);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > invalid local endpoint missing-ref exits without dispatch or continuing heartbeats
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:283:29
+    281|   const child = await launch(token, 'apps/runner/src/main.ts');
+    282|   await expect.poll(() => child.exitCode, { timeout: 2500 }).toBe(1);
+    283|   expect(heartbeatRequests).toBe(0);
+       |                             ^
+    284|   expect(peer.counts.sends).toBe(0);
+    285|   expect(await client.protocolState(id)).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > invalid local endpoint constructor exits without dispatch or continuing heartbeats
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > invalid local endpoint toString exits without dispatch or continuing heartbeats
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > invalid local endpoint bad-url exits without dispatch or continuing heartbeats
+AssertionError: expected null to be 1 // Object.is equality
+
+- Expected: 
+1
+
++ Received: 
+null
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:282:62
+    280|   const { token, id } = await submit(reference);
+    281|   const child = await launch(token, 'apps/runner/src/main.ts');
+    282|   await expect.poll(() => child.exitCode, { timeout: 2500 }).toBe(1);
+       |                                                              ^
+    283|   expect(heartbeatRequests).toBe(0);
+    284|   expect(peer.counts.sends).toBe(0);
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:282:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 10 skipped (15)
+   Start at  19:57:20
+   Duration  10.87s (transform 112ms, setup 0ms, import 253ms, tests 10.54s, environment 0ms)
+
