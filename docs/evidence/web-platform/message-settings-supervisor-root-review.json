@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-06T18:30:54.759594+00:00",
+  "verdict": "APPROVED_SUPERVISOR_STRUCTURE_SCOPED_NOT_RUN",
+  "candidate": "/private/tmp/message-settings-once-ljkinqq3",
+  "sourceHead": "85abae9dd5ec95a52422fcca357007c124b60a49",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "files": [
+    {
+      "file": "run.py",
+      "bytes": 17522,
+      "sha256": "adb3580e17e66894f1b4c06608b7a92f66c02b5630660afc1a407ba80d56db70"
+    },
+    {
+      "file": "steps.mjs",
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    {
+      "file": "binding.json",
+      "bytes": 35479,
+      "sha256": "50b62bae74f9c51ec03437234159d696fd1bc2c366224aa884db92b116308f59"
+    },
+    {
+      "file": "sandbox.sb",
+      "bytes": 315,
+      "sha256": "a77a7ee558cd86737b88a857878d551a745352788b5ae3df7c1823c480629eab"
+    },
+    {
+      "file": "tsconfig.json",
+      "bytes": 5871,
+      "sha256": "dd7509cc4ea94a5415f8675edcc4b4020e9b840cfaba32687227036442d9bd84"
+    },
+    {
+      "file": "vitest.config.mjs",
+      "bytes": 1140,
+      "sha256": "aad68c2b6fcae9f093b51ecddbb40337e9fe15981009d5bfac1c7027ffbf0a5c"
+    },
+    {
+      "file": "guard-fix.diff",
+      "bytes": 5469,
+      "sha256": "7f6ff9375125fc0624ff7c3afe199b0069a245b5ca59ed345f8fa638253e614f"
+    }
+  ],
+  "review": [
+    "Read complete parent and steps, native configs and exact parent/guard deltas. Root independently matched six current sources,110 readonly project pins and44 external entry pins with binding, clean expected branch/head. Metadata pins are not a proof of whole evaluated dependency closure.",
+    "Root found malformed structured report shape could throw before process cleanup; fixed capture validation now requires steps array of objects and direct object inside guarded capture. Invalid or missing output cannot pass.",
+    "Root found structured capture could copy twice its allocated aggregate budget; fixed total-byte check precedes retained copies, initial/final raw accounting now counts all retained files.",
+    "Final bytes/free check now occurs after own process-group reap and before scratch removal; probe or resource-limit failures recorded in cleanup errors.",
+    "Single-use gate/hash/expiry/source/claim fields are required. Parent owns one process group; Node steps spawn non-detached sequential noEmit then direct, stop after failed first step. Tests select two files,one fork,20 expected with no skip/todo and structured exit criteria.",
+    "Sandbox allows write only own scratch and /dev/null; localhost-only network, dependencies/project readonly. No install/symlink/build/PG/Chrome. Monitoring observations are not hard filesystem quotas or performance proof."
+  ],
+  "admissionDecision": "Manager may promote binding state only to REVIEWED_SOURCE_BOUND_NOT_RUN and update review annotation, record final hash, obtain fresh exact claim/no-overlap and actual clean source/dependency/space preflight. Then issue one expiring single-use gate and dispatch W01 once. Any substantive runner/source/config/pin/limits change returns for review; no implicit retry.",
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "previousRuntimeMs": 0,
+  "failureHandling": "Preserve actual failure,selected/passed counts,time,original reports and cleanup. Failed noEmit means direct NOT_RUN. Remaining budget arithmetic does not grant a repeat.",
+  "notProven": [
+    "No compiler/test/HTTP run in this review.",
+    "No rendered picker/screenshot/focus/actualApp integration,center/provider or main/deployment approval."
+  ],
+  "skillApplication": "Reused installed find-skills/clean-code: single cleanup ownership,explicit error paths,minimum repair,preserved assertion semantics. No install or project write."
+}

@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-06T18:38:02.053726+00:00",
+  "state": "CONTROLLED_DIRECT38_EVIDENCE_ACCEPTED_SCOPED",
+  "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "runtimeHead": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "direct": {
+    "success": true,
+    "numTotalTests": 38,
+    "numPassedTests": 38,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "steps": [
+    {
+      "name": "direct",
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 2136
+    }
+  ],
+  "elapsedMs": 2294,
+  "cumulativeMs": 6868,
+  "remainingMs": 23132,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+  },
+  "maxObservedTmpBytes": 2920536,
+  "minObservedFreeBytes": 1598066688,
+  "sourceCount": 19,
+  "record": "recovery01-38-first-check/result.json",
+  "coverage": "38 controlled IDB/mockhost/observer; network deny, no HTTP/PG/Chrome/types; not realbrowser/fullfeature acceptance",
+  "noRetry": true,
+  "review": "recovery01-38-root-evidence-review.json",
+  "acceptedNewCases": "5 lifecycle+6 observer actualexecuted;38 total"
+}

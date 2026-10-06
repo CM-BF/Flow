@@ -1,6 +1,6 @@
 {
   "at": "2026-10-06T18:11:56.162919+00:00",
-  "state": "SOURCE_READY_IMPLEMENTATION",
+  "state": "REGISTERED_SOURCE_REVIEWED_FOCUSED_CHECK_EVIDENCE_ACCEPTED",
   "taskCandidate": "WPF-MESSAGESETTINGS01",
   "parent": "WPF-MATURE-02",
   "todo": "WPF-MATURE-02-11",
@@ -54,8 +54,8 @@
   "logicalBytes": 2976459,
   "historicalProposal": "mature02-message-settings-source-request-before-8d84.json",
   "baseChange": "Lead explicitly authorized fixed8d84 integrated CORE/C01/F01/PROFILEC02; old563/panels proposal is historical. Manager sole one-path Git provision delegated, no shared configuration change or other worktree operation.",
-  "sourceOnly": true,
-  "runtime": false,
+  "sourceOnly": false,
+  "runtime": true,
   "installation": false,
   "copyDependencies": false,
   "sourceReady": "message-settings-source-ready.json",
@@ -73,12 +73,25 @@
     "No install/build/runtime/dependency writes from this source dispatch; owner proposes exact necessary lightweight check input after fixed source."
   ],
   "dispatch": "followup_task W01 after COMMITTED; previous RELEASE bfb released first; original 8 literal only",
-  "registry": "SOURCE_READY sent through this canonical queue; registration and actual dashboard display pending; no snapshot requested",
+  "registry": "Lead actual18:15:17/170source live,humancomplete,issues[]; fixed registry8bd02cc3 checked; not product integration",
   "firstCanonical": "02c64878c37100f2fc9ad46461b58a2c44f95a12",
   "productAcceptance": {
     "source": "GO via root current bounded segment; owner W01 received directly",
     "firstLevel": "下一条消息的模型、思考力度、速度及必要不可用原因；tuple工程身份进入details",
     "selection": "允许对已授权组合分组/筛选/摘要；不能生成未声明Cartesian组合，requested不得冒observed",
     "futureVerification": "保A/B/C、双pane、键盘与390px矩阵；leaf范围内先组件验收，实际App接线后继"
-  }
+  },
+  "registrationEvidence": "message-settings-registration-intake.json",
+  "currentImplementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "currentMetadata": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+  "checksPreparation": "message-settings-check-preparation/report.md",
+  "sourceReviewProgress": "f3 root scoped source APPROVED_NOT_RUN; peer ed769 threefile unchanged; current owner reviewUNKNOWN means wholefeature unverified",
+  "uiRepairObservation": "message-settings-ui-repair-observation.json",
+  "currentSourceIntake": "message-settings-f3-source-intake.json",
+  "sourceReviewEvidence": "message-settings-f3-root-source-review.json",
+  "supervisorPreparation": "message-settings-supervisor-preparation.json",
+  "checkEvidence": "message-settings-first-check-intake.json",
+  "checkState": "Types/direct37 scoped PASS independently accepted; parentcountFAIL retained; browserNOT_RUN",
+  "supervisorReview": "message-settings-supervisor-root-review.json",
+  "checkReview": "message-settings-first-root-evidence-review.json"
 }

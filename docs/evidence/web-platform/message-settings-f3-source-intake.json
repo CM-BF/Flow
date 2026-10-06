@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-06T18:25:03.924567+00:00",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "metadata": "ed921998dc074309d1ad6280300e3cab45dbb876",
+  "branch": "codex/web-message-settings",
+  "clean": true,
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11558,
+      "sha256": "11083f2ba938e4ca6919792224c6280682b3972ccc38480ec7311687074f546f"
+    }
+  ],
+  "configHashesUnchanged": {
+    "tsconfig.json": "dd7509cc4ea94a5415f8675edcc4b4020e9b840cfaba32687227036442d9bd84",
+    "vitest.config.mjs": "614c950567742c8b6e7157fca299782cdf61a2791b53f7413d9d6fe0232fea01"
+  },
+  "checks": "NOT_RUN; scoped source rereview pending; no gate/free",
+  "review": "APPROVED_SOURCE_SCOPED_NOT_RUN; root f3 + peer ed769 unchanged threefile scope",
+  "reviewEvidence": "message-settings-f3-root-source-review.json",
+  "currentMetadata": "85abae9dd5ec95a52422fcca357007c124b60a49",
+  "metadataFreeze": "owner normalpush/remote equal reported; candidate localHEAD/clean verified at18:28"
+}

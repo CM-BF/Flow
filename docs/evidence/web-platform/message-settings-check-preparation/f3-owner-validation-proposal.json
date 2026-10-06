@@ -1,0 +1,31 @@
+{
+  "target": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "state": "NOT_RUN_SOURCE_ONLY",
+  "directFiles": [
+    "apps/web/test/message-settings.test.ts",
+    "apps/web/test/execution-profiles.test.ts"
+  ],
+  "types": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "incremental": false,
+    "sourceAliases": {
+      "@flow/client": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/packages/client/src/index.ts",
+      "@flow/contracts": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/packages/contracts/src/index.ts"
+    },
+    "entries": [
+      "apps/web/src/execution-profiles/catalog.ts",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/execution-profiles.test.ts"
+    ]
+  },
+  "dependencies": "readonly-dependency-proposal.json; metadata/realpath read only; no product import or writes",
+  "proposedDirectBudget": "One externally supervised strict noEmit then 2-file single-worker Vitest; 30s including5s cleanup, own tmp8MiB/raw2MiB, loopback only. Requires fresh admission; not executed.",
+  "browser": "Separate fixture-only admission; no current launcher, Chrome or server. At most one Chrome and one own loopback Vite; retained images/results8MiB; profile/cache scratch distinct budget to be reviewed before run. No build/PG/provider/personal service.",
+  "previousUnrunTarget": "ed769f929a7efe01a279ddd85c2e1e88b46839e6"
+}

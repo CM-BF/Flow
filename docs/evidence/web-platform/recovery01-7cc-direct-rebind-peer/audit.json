@@ -1,0 +1,248 @@
+{
+  "at": "2026-10-06T18:27:45.933038+00:00",
+  "source": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "metadata": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "currentHead": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "dirty": "",
+  "oldArchivedInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/recovery01-direct-1b8/run.py",
+      "bytes": 5113,
+      "sha256": "492c58100c455882b644d25d530c10b2cf2408ef6c048a49e71f23b65b19a9b7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/recovery01-direct-1b8/config.mjs",
+      "bytes": 416,
+      "sha256": "99ace33ee34ad2facfac48bd37db54b05878529a97e0e79a9a950c9ee0d028db"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/recovery01-direct-1b8/sandbox.sb",
+      "bytes": 166,
+      "sha256": "4661d473c9d430af6c9e78ae78134f27edc3559020d9e1b228fc15d6492d1bd4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/recovery01-direct-1b8/preflight.json",
+      "bytes": 4053,
+      "sha256": "3730a15aa54cf74ee279781ba04d58ae7b68edc1c9d67580541b2baa9a96b082"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/recovery01-direct-1b8/result.json",
+      "bytes": 4412,
+      "sha256": "cbde98891d2b3b71a6a12ae51f956298777bf1a1fe5abb9e118ede26dfe9af6b"
+    }
+  ],
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 69114,
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24536,
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "bytes": 16866,
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24040,
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8729,
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22780,
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 13875,
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 22175,
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 25017,
+      "sha256": "2c7c1e5b5f90832562be04da3feac2b46133a2ec7276fce45f90a9c497747877",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 41577,
+      "sha256": "e855cea0267552129caa1bc9caa5111a2f388e36aae702017b926ff22b569d3e",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27003,
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 49951,
+      "sha256": "042134d0cf9d53ec43f02a628d10cfc805c94c7ce79aaab2bf5e18ab1a71d198",
+      "fixedCurrentManifestEqual": true,
+      "changedSince1b8Run": true
+    }
+  ],
+  "dependencyEntryPins": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+      "label": "Node24",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6",
+      "label": "Vitest launcher",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328",
+      "label": "Vitest package",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "packageVersion": "4.0.18"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/react/package.json",
+      "bytes": 1242,
+      "sha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e",
+      "label": "React package",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react@19.3.0/node_modules/react/package.json",
+      "packageVersion": "19.3.0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite/package.json",
+      "bytes": 5081,
+      "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a",
+      "label": "Vite package",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "packageVersion": "8.3.2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "label": "Zod package",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "packageVersion": "4.6.5"
+    },
+    {
+      "label": "@flow/client",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/client",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client",
+      "package": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/client/package.json",
+        "bytes": 183,
+        "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+      }
+    },
+    {
+      "label": "@flow/contracts",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts",
+      "package": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/contracts/package.json",
+        "bytes": 168,
+        "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+      }
+    },
+    {
+      "label": "@flow/interaction",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/interaction",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/interaction",
+      "package": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/interaction/package.json",
+        "bytes": 381,
+        "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+      }
+    }
+  ],
+  "runtime": "NOT_RUN; no candidate/gate created, no product imports or Node execution, no free-space sampling"
+}

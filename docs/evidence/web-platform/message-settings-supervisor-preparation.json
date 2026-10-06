@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-06T18:28:03.855242+00:00",
+  "state": "CANDIDATE_NOT_RUN",
+  "root": "/private/tmp/message-settings-once-ljkinqq3",
+  "sources": 6,
+  "readOnlyProjectPins": 110,
+  "externalPins": 44,
+  "files": {
+    "run.py": {
+      "bytes": 17522,
+      "sha256": "adb3580e17e66894f1b4c06608b7a92f66c02b5630660afc1a407ba80d56db70"
+    },
+    "steps.mjs": {
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    "binding.json": {
+      "bytes": 35479,
+      "sha256": "50b62bae74f9c51ec03437234159d696fd1bc2c366224aa884db92b116308f59"
+    },
+    "sandbox.sb": {
+      "bytes": 315,
+      "sha256": "a77a7ee558cd86737b88a857878d551a745352788b5ae3df7c1823c480629eab"
+    },
+    "tsconfig.json": {
+      "bytes": 5871,
+      "sha256": "dd7509cc4ea94a5415f8675edcc4b4020e9b840cfaba32687227036442d9bd84"
+    },
+    "vitest.config.mjs": {
+      "bytes": 1140,
+      "sha256": "aad68c2b6fcae9f093b51ecddbb40337e9fe15981009d5bfac1c7027ffbf0a5c"
+    },
+    "parent-delta.diff": {
+      "bytes": 10632,
+      "sha256": "a246f5f9c1d52437693ae5a8b59f88557295e1e3f3f400f4c52efac19b729018"
+    },
+    "guard-fix.diff": {
+      "bytes": 5469,
+      "sha256": "7f6ff9375125fc0624ff7c3afe199b0069a245b5ca59ed345f8fa638253e614f"
+    }
+  },
+  "previousParent": "/private/tmp/dperf04-node-second-l86ua318/run.py",
+  "gates": false,
+  "spaceSamples": false,
+  "syntax": "Python AST only; no Node import/profile spawn/test/HTTP",
+  "launchAfterReviewOnly": [
+    "python3",
+    "/private/tmp/message-settings-once-ljkinqq3/run.py",
+    "--gate",
+    "<future separate exact gate>"
+  ],
+  "guardFix": {
+    "at": "2026-10-06T18:30:18.580258+00:00",
+    "rootFindings": [
+      "Malformed structured result could throw before cleanup",
+      "Combined structured output was copied before combined bound",
+      "Post-exit writes not observed before scratch removal"
+    ],
+    "changes": [
+      "Schema shape checks occur inside capture try; objects/lists only, all failures recorded before unconditional reaper",
+      "Read and bound combined report bytes before any copy; final raw count includes every retained file",
+      "After owned group reap, final size/free checked before scratch removal, errors retained"
+    ],
+    "runtime": false,
+    "syntax": "Python AST only"
+  }
+}

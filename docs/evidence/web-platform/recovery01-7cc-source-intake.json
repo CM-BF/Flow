@@ -1,0 +1,123 @@
+{
+  "at": "2026-10-06T18:23:18.805082+00:00",
+  "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "metadata": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "status": "",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "2c7c1e5b5f90832562be04da3feac2b46133a2ec7276fce45f90a9c497747877",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "e855cea0267552129caa1bc9caa5111a2f388e36aae702017b926ff22b569d3e",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "042134d0cf9d53ec43f02a628d10cfc805c94c7ce79aaab2bf5e18ab1a71d198",
+      "currentEqualsFixed": true
+    }
+  ],
+  "changed": 5,
+  "unchanged": 14,
+  "rootVerdict": "APPROVED_SOURCE_SCOPED_NOT_RUN",
+  "review": "recovery01-7cc-root-source-review.json",
+  "directCases": 38,
+  "checks": "Current38 controlleddirect PASS independently accepted; no currenttypes or realbrowser; historical1b8/27 and667browserfailure retained",
+  "budgets": {
+    "directUsedMs": 6868,
+    "directRemainingMs": 23132,
+    "typesRemainingMs": 7186,
+    "browserUsedMs": 14846.267375,
+    "browserRemainingMs": 75153.732625,
+    "browserCleanupReserveMs": 15000
+  },
+  "claim": "6ff988b2 v4 original21 unchanged; source-only dispatch complete",
+  "sourceStatusParser": "author reports errors=[]/humancomplete/6TODO UTC corrected; final metadata parser will verify fixed status",
+  "next": "Real browser subset requires new independent window/gate; no rerun of green direct",
+  "supervisor": "recovery01-38-supervisor-prepared/preparation.json",
+  "supervisorPeer": "recovery01-38-supervisor-peer/report.md",
+  "currentCheck": "recovery01-38-check-intake.json"
+}

@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T18:35:50.695075+00:00",
+  "source": "Actual owner single execution independently reviewed by root; manager count error separately retained",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "runtimeHead": "85abae9dd5ec95a52422fcca357007c124b60a49",
+  "rawParentState": "FAIL",
+  "strictNoEmit": {
+    "name": "strict-noEmit",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 1728
+  },
+  "direct": {
+    "success": true,
+    "numTotalTests": 37,
+    "numPassedTests": 37,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "files": {
+    "message-settings.test.ts": 16,
+    "execution-profiles.test.ts": 21
+  },
+  "countClassification": "Expected20 preparation error; actual37 passed. Original parentFAIL remains. No rerun or changedraw.",
+  "elapsedMs": 2762,
+  "cumulativeMs": 2762,
+  "remainingMs": 27238,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Both sequential commands and their fork/own HTTP fixture remain in the inherited worker group; no external service used"
+  },
+  "admissionFreeBytes": 1605390336,
+  "observedMinFreeBytes": 1602727936,
+  "observedMaxTmpBytes": 932682,
+  "record": "message-settings-first-check/result.json",
+  "countAudit": "message-settings-first-count-audit.json",
+  "browser": "NOT_RUN",
+  "runtimeScope": "Focused six-source leaf noEmit and two direct files, includes own loopback HTTP; no PG/Chrome/App mounting/provider validation",
+  "actualAuthority": "Owner status remains unique; manager intake is evidence/handoff only",
+  "classification": "SCOPED_TYPES_AND_37_DIRECT_EVIDENCE_ACCEPTED_PARENT_FAIL_RETAINED",
+  "independentReview": "message-settings-first-root-evidence-review.json",
+  "ownerFinal": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+  "countExplanation": "20 plain declarations counted;17 parameterized each cases omitted: new9plain+7each=16, legacy11plain+10each=21. No product issue inferred."
+}

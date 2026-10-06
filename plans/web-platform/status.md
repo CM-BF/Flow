@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:11 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:37 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置控件开始独立实现。 |
+| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置控件已成型，类型与定向行为检查已通过限定复核，等待界面验收。 |
 | 下一可用交付 | 先补齐旧页面与新后台的兼容记录，再由原发布负责人更新预览；同时修复刷新后草稿恢复，并完成设置选择控件。 |
-| 当前阻塞 | ACTIVE: 预览尚未更新；草稿恢复在真实浏览器中失败，正在修复保存启动和测试观察器；看板浏览器交互仍待验证。 |
+| 当前阻塞 | ACTIVE: 预览尚未更新；草稿恢复首轮浏览器检查失败，保存启动和观察器已修且受控检查通过，真实页面仍待复验；看板浏览器交互仍待验证。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -113,7 +113,7 @@ SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服�
 
 [本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定36TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。
 
-[RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、四scope验证已bfb209ae v1 COMMITTED并派轻源码；两cacheprepare已完成并释放，见[take与释放](../../docs/evidence/web-platform/release03-prepare-release-receipt.json)；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
+[RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01；历史bfb209ae v1四scope启动已完成，本片现已main/released；两cacheprepare已完成并释放，见[take与释放](../../docs/evidence/web-platform/release03-prepare-release-receipt.json)；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
 
 恢复正式领取与唯一来源见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)和[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json)；当前实施事实由新owner status维护，不由管理表复制TODO。13源比对不是13tests，Lead组合为1pass/2未选+types0；本组无产品复测。
 
@@ -126,8 +126,8 @@ SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服�
 
 DPERF04直接D01子task已[原九scope COMMITTED](../../docs/evidence/web-platform/dperf04-take-receipt.json)，W01独立树源码派工；[首canonical704894已正常推送且parser0](../../docs/evidence/web-platform/dperf04-source-ready.json)，registry与页面展示不由此推断。原DPERF03/WPF-001-36完成记录保持原范围。
 
-历史A3原始结果已由Lead接收；随后next12b完成、一次all两A通过/B locator失败与窗口归还见页首。[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
+历史A3原始结果已由Lead接收；随后next12b完成、一次all两A通过/B locator失败与窗口归还见页首。[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。该段仅A3历史；后继完整af51+d629限定兼容已获批准并main，见页首和RELEASE唯一owner status，不以标签审查替代实际结果。
 
-MATURE02仍链接Mika唯一plan/TODO-11：[固定公共输入与八literal候选](../../docs/evidence/web-platform/mature02-message-settings-consumer-intake.json)。未新建task/claim，C01固定出口尚缺，App/outbox/Recovery串行；不把新目录配置当账号资格或SDK observed。
+MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../docs/evidence/web-platform/mature02-message-settings-consumer-intake.json)保留早期C01缺口；当前固定8d84输入已供W01原8范围实现，源码ed769后UI窄修与检查准备见[当前派工](../../docs/evidence/web-platform/mature02-message-settings-source-request.json)。App/outbox/Recovery接线仍后继串行，不把目录配置当账号资格或SDK observed。
 
-本安全点可聚合入口：[设置控件固定base/唯一owner/原8take](../../docs/evidence/web-platform/mature02-message-settings-source-request.json)、[RELEASE main/release](../../docs/evidence/web-platform/release03-main-intake.json)、[Recovery首轮失败与清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)。任务进度仍取各owner唯一status；管理队列不冒登记或实际页面加载。
+本安全点可聚合入口：[设置控件固定base/唯一owner/原8take](../../docs/evidence/web-platform/mature02-message-settings-source-request.json)、[RELEASE main/release](../../docs/evidence/web-platform/release03-main-intake.json)、[Recovery首轮失败与清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)。任务进度仍取各owner唯一status；[Lead18:15:17登记/实际来源回执](../../docs/evidence/web-platform/message-settings-registration-intake.json)只证明来源展示，未证明设置功能已交付。

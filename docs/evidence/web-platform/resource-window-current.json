@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T18:11:56.162919+00:00",
+  "recordedAt": "2026-10-06T18:23:18.805082+00:00",
   "state": "RECOVERY_FIRST_BROWSER_FAILED_CLEANED_WINDOW_RETURNED",
   "groupWindowOwnership": "Recovery prepared subset one run ended FAILED/cleanupcomplete; returned immediately to Lead. No automatic retry/DPERF window. Private ownadmin env removed after all ownedprocesses ended.",
   "release03": {
@@ -159,42 +159,90 @@
     "claimReleased": "bfb209ae v4"
   },
   "recoveryDirect": {
-    "state": "CONTROLLED_DIRECT_PASS_CLEANED",
-    "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
-    "metadata": "0eef4cda8813afe336df8dc88256da28e206c0d4",
-    "cases": 27,
+    "at": "2026-10-06T18:38:02.053726+00:00",
+    "state": "CONTROLLED_DIRECT38_EVIDENCE_ACCEPTED_SCOPED",
+    "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+    "runtimeHead": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+    "direct": {
+      "success": true,
+      "numTotalTests": 38,
+      "numPassedTests": 38,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTodoTests": 0
+    },
+    "steps": [
+      {
+        "name": "direct",
+        "exitCode": 0,
+        "signal": null,
+        "elapsedMs": 2136
+      }
+    ],
+    "elapsedMs": 2294,
+    "cumulativeMs": 6868,
+    "remainingMs": 23132,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+    },
+    "maxObservedTmpBytes": 2920536,
+    "minObservedFreeBytes": 1598066688,
+    "sourceCount": 19,
+    "record": "recovery01-38-first-check/result.json",
+    "coverage": "38 controlled IDB/mockhost/observer; network deny, no HTTP/PG/Chrome/types; not realbrowser/fullfeature acceptance",
+    "noRetry": true,
+    "review": "recovery01-38-root-evidence-review.json",
+    "spentMs": 6868,
     "startBytes": 1090519040,
     "stopBytes": 1082130432,
-    "at": "2026-10-06T16:21:52.720658+00:00",
-    "availableBytes": 1134813184,
-    "samples": 1,
-    "gateCreated": true,
-    "newRuntimeMs": 2034,
-    "spentMs": 4574,
-    "remainingMs": 25426,
-    "materials": "recovery01-1b8-rebound-manifest.json",
-    "evidence": "recovery01-direct-1b8-intake.json",
-    "policySource": "Lead16:03 independent low-incremental check permission adopted byroot; prior2.540s/maxsampledtmp2.7MiB. Does not change A/B.",
     "gateConsumed": true,
     "cleanupComplete": true,
-    "coverage": "27/27 controlled IDB/mock fetch; no real IDB/browser/HTTP",
-    "laterFixture": "ec91 sourceonly approved; old1b8 direct pass not relabeled",
-    "sourceSuccessor": {
-      "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
-      "metadata": "0926eefa334eeedc75bf923f4d1911ebf6c75548",
-      "review": "APPROVED_SOURCE_SCOPED root0blocking, originalP2 SOURCE_ADDRESSED",
-      "evidence": "recovery01-667-root-source-review.json",
-      "runtime": "NOT_RUN; historical1b8 direct27 unchanged",
-      "next": "panels ownmetadata then read-only DPERF per-entry binding candidate in own/tmp, no runnable state/gate",
+    "supervisor": "recovery01-38-supervisor-prepared/preparation.json",
+    "previousRuntime": {
+      "state": "CONTROLLED_DIRECT_PASS_CLEANED",
+      "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+      "metadata": "0eef4cda8813afe336df8dc88256da28e206c0d4",
+      "cases": 27,
+      "startBytes": 1090519040,
+      "stopBytes": 1082130432,
+      "at": "2026-10-06T16:21:52.720658+00:00",
+      "availableBytes": 1134813184,
+      "samples": 1,
+      "gateCreated": true,
+      "newRuntimeMs": 2034,
+      "spentMs": 4574,
+      "remainingMs": 25426,
+      "materials": "recovery01-1b8-rebound-manifest.json",
+      "evidence": "recovery01-direct-1b8-intake.json",
+      "policySource": "Lead16:03 independent low-incremental check permission adopted byroot; prior2.540s/maxsampledtmp2.7MiB. Does not change A/B.",
+      "gateConsumed": true,
+      "cleanupComplete": true,
+      "coverage": "27/27 controlled IDB/mock fetch; no real IDB/browser/HTTP",
+      "laterFixture": "ec91 sourceonly approved; old1b8 direct pass not relabeled",
+      "sourceSuccessor": {
+        "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+        "metadata": "0926eefa334eeedc75bf923f4d1911ebf6c75548",
+        "review": "APPROVED_SOURCE_SCOPED root0blocking, originalP2 SOURCE_ADDRESSED",
+        "evidence": "recovery01-667-root-source-review.json",
+        "runtime": "NOT_RUN; historical1b8 direct27 unchanged",
+        "next": "panels ownmetadata then read-only DPERF per-entry binding candidate in own/tmp, no runnable state/gate",
+        "historicalOnly": true
+      },
+      "latestSource": {
+        "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+        "metadata": "0fe939fa222e69993ebaca825c6ca6bf0ea683fd",
+        "review": "APPROVED_SOURCE_SCOPED0blocking",
+        "runtime": "NOT_RUN; historical direct27 remains1b8/0eef",
+        "evidence": "recovery01-667-root-source-review.json"
+      },
       "historicalOnly": true
     },
-    "latestSource": {
-      "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
-      "metadata": "0fe939fa222e69993ebaca825c6ca6bf0ea683fd",
-      "review": "APPROVED_SOURCE_SCOPED0blocking",
-      "runtime": "NOT_RUN; historical direct27 remains1b8/0eef",
-      "evidence": "recovery01-667-root-source-review.json"
-    }
+    "next": "No repeat direct/type checks. Real browser remains prior667 failure; future fresh independent window/gate required."
   },
   "dperf04": {
     "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
@@ -328,6 +376,12 @@
       "source": "Lead via root after1756cleanup",
       "event": "RECOVERY_NEXT_PREPARED_SUBSET",
       "coordination": "Lead F01-O15-PRODUCTION1756 actual1/1/5.65s and ownedDB absent/connections[]/PGID52469absent returned; explicitly assigns Recovery nextserialPG/Chrome window. Original90s incl15cleanup subset only; current no run until onefresh gate. DPERFnotassigned."
+    },
+    {
+      "source": "Lead via root latest intake, no manager personal observation",
+      "event": "SVC05H_SAME_VERSION_RESTORE_CLOSED",
+      "facts": "bootstrap0/922ms; old65219exit/new23534+23631ownedready; center64904/runner65168/source362/accepting15/pointercaa1-v2/config+observedDBfacts unchanged;0provider/no tabreload; checkoutmain ec5clean",
+      "boundary": "Does not publish af51+d629; retained461a/caa1→af51 source preparation continues underLead."
     }
   ],
   "limits": [
@@ -336,7 +390,7 @@
     "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "recovery01-browser-first-intake.json",
+  "latestCoordination": "Lead SVC05H same-version Web-only restore finished, checkoutmain ec5clean; no newaf51 deployment. Our MessageSettings/directRecovery checks completed with ownedgroups/scratch absent; no active groupPG/Chrome. Settingsbrowser candidate not admitted; nextsharedwindow must be explicitly coordinated.",
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -379,16 +433,35 @@
     "sourceReview": "CHANGES_REQUESTED_SOURCE_SCOPED P1 activation/P2 observer; source repair only; not sole dynamic root-cause proof",
     "source": "recovery01-browser-first-intake.json",
     "repair": "recovery01-idb-repair-dispatch.json",
-    "retryAuthorized": false
+    "retryAuthorized": false,
+    "repairFixedSource": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+    "repairRootReview": "APPROVED_SOURCE_SCOPED_NOT_RUN",
+    "repairIntake": "recovery01-7cc-source-intake.json"
   },
   "settingsLeaf": {
-    "state": "SOURCE_ONLY_IMPLEMENTATION",
+    "state": "FOCUSED_CHECK_EVIDENCE_ACCEPTED_CLEANED",
     "owner": "w01_owner",
     "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
     "version": 1,
     "sourceRequest": "mature02-message-settings-source-request.json",
     "PG": false,
     "browser": false,
-    "sourceReady": "message-settings-source-ready.json"
-  }
+    "sourceReady": "message-settings-source-ready.json",
+    "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+    "metadata": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+    "registration": "message-settings-registration-intake.json",
+    "checkPreparation": "message-settings-check-preparation/report.md",
+    "sourceFixedBeforeDelta": "Historical ed769 estimate20 not authoritative; actual f3 sixsources executed at85aba",
+    "currentSourceIntake": "message-settings-f3-source-intake.json",
+    "review": "message-settings-f3-root-source-review.json",
+    "parent": "message-settings-supervisor-preparation.json",
+    "runtime": "types/direct37 PASS independently accepted; parentcountFAIL retained. No retry.",
+    "elapsedMs": 2762,
+    "remainingMs": 27238,
+    "cleanupComplete": true,
+    "evidence": "message-settings-first-check-intake.json",
+    "parentReview": "message-settings-supervisor-root-review.json",
+    "evidenceReview": "message-settings-first-root-evidence-review.json"
+  },
+  "retainedAf51": "Lead originalassignment_review accepted six-scope/newtree preparation; no Web ownership or runtime; see retained-af51-owner-scope-proposal.json"
 }

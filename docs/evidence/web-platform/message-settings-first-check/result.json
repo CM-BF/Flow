@@ -1,0 +1,147 @@
+{
+  "startedAt": "2026-10-06T18:33:58.767894+00:00",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "sourceHead": "85abae9dd5ec95a52422fcca357007c124b60a49",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "11083f2ba938e4ca6919792224c6280682b3972ccc38480ec7311687074f546f"
+  },
+  "bindingSha256": "cb474beea225ca25335d666c93e36e453cc52127323f755d5f619e66f159a59d",
+  "runnerSha256": "adb3580e17e66894f1b4c06608b7a92f66c02b5630660afc1a407ba80d56db70",
+  "sandboxSha256": "a77a7ee558cd86737b88a857878d551a745352788b5ae3df7c1823c480629eab",
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "kind": "one strict noEmit then two direct files/one fork; own loopback HTTP fixtures; no PG/browser/external network",
+  "samples": [
+    {
+      "seconds": 0.116,
+      "freeBytes": 1604784128,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 0.368,
+      "freeBytes": 1604751360,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 0.62,
+      "freeBytes": 1604747264,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 0.871,
+      "freeBytes": 1604669440,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 1.124,
+      "freeBytes": 1604550656,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 1.375,
+      "freeBytes": 1604464640,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 1.626,
+      "freeBytes": 1604444160,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 1.878,
+      "freeBytes": 1603743744,
+      "tmpBytes": 83934
+    },
+    {
+      "seconds": 2.131,
+      "freeBytes": 1603702784,
+      "tmpBytes": 84036
+    },
+    {
+      "seconds": 2.381,
+      "freeBytes": 1603379200,
+      "tmpBytes": 367948
+    },
+    {
+      "seconds": 2.634,
+      "freeBytes": 1602727936,
+      "tmpBytes": 932682
+    },
+    {
+      "seconds": 2.761,
+      "freeBytes": 1603612672,
+      "tmpBytes": 95630,
+      "terminal": true
+    },
+    {
+      "seconds": 2.762,
+      "freeBytes": 1603592192,
+      "tmpBytes": 107231,
+      "afterReapBeforeRemove": true
+    }
+  ],
+  "previousRuntimeMs": 0,
+  "initialFreeBytes": 1604788224,
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/message-settings-once-ljkinqq3/sandbox.sb",
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/private/tmp/message-settings-once-ljkinqq3/steps.mjs"
+  ],
+  "pgid": 66175,
+  "captureErrors": [],
+  "steps": [
+    {
+      "name": "strict-noEmit",
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 1728
+    },
+    {
+      "name": "direct",
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 869
+    }
+  ],
+  "direct": {
+    "success": true,
+    "numTotalTests": 37,
+    "numPassedTests": 37,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Both sequential commands and their fork/own HTTP fixture remain in the inherited worker group; no external service used"
+  },
+  "exitCode": 0,
+  "logBytes": 95,
+  "droppedObservedLogBytes": 0,
+  "elapsedMs": 2762,
+  "cumulativeMs": 2762,
+  "remainingMs": 27238,
+  "finishedAt": "2026-10-06T18:34:01.530040+00:00",
+  "state": "FAIL",
+  "sourceMeaning": "Focused noEmit/direct cover these frozen leaf/legacy modules only, not rendered picker, App/Recovery mounting or provider behavior."
+}
