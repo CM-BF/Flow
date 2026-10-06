@@ -58,3 +58,7 @@ Node结果限定 APPROVED：Mika/gpt-6-astra，2026-10-06 13:08:21 UTC，0未解
 | Semantic consumer0d0524c3439363d1fe60aad63f62817ba51fa2a5 | status_read，Mika09:15:59 UTC接收，APPROVED，0P1/P2；6source/1TAP/29schema，27本地语义检查；无transport/隔离/provider/Web批准 | [conformance-manifest.json](../../docs/evidence/wpf-mature-02/conformance-manifest.json) |
 
 时间均为2026-10-06 UTC。当前main/owner/claim事实只在[status](status.md)维护；跨task review收据在唯一[interface](../../docs/evidence/wpf-mature-02/interface.md)路由，不复制别task进度。检查命名、单一owner、错误传播/unknown、资源生命周期及单一模块消费；复审只读绑定固定commit，修复交owner。
+
+## 原生目录观察结果（固定5ae27670）
+
+status_read/Astra 2026-10-06 20:02:29 UTC、Mika/root/Astra 20:03:30 UTC均RESULT_FIDELITY_ACCEPTED，0P1/P2。仅faithful FAIL：known-unexpected通知触发固定stop、无catalog，清理/计量与未知边界成立。见[正式收据](../../docs/evidence/wpf-mature-02/native-catalog-observation/result-review.json)；原manifest/raw冻结，窗口已消费/holder已归还，后继需新namespace。

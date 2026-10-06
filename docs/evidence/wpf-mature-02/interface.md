@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **原生目录观察已执行并归还运行时段，目录仍未取得。** [本次固定结果](native-catalog-observation/run-report.md)：ready=true/1次model-list；收到已知但不允许继续的 `remoteControl/status/changed`，按原规则停止。1目标已受控关闭、完整stdio和本次两root清理确认，私有原件KEEP；[忠实性待审入口](native-catalog-observation/result-ready.md)。既有授权消费后不重试/扩表；此前[准入错误及更正](native-catalog-observation/preflight-correction.json)不回写。
+- **原生目录观察已执行并归还运行时段，目录仍未取得。** [本次固定结果](native-catalog-observation/run-report.md)：ready=true/1次model-list；收到已知但不允许继续的 `remoteControl/status/changed`，按原规则停止。1目标已受控关闭、完整stdio和本次两root清理确认，私有原件KEEP；[双审忠实失败收据](native-catalog-observation/result-review.json)。既有授权消费后不重试/扩表；此前[准入错误及更正](native-catalog-observation/preflight-correction.json)不回写。
 
 - **SVC07事务短断连恢复：请求Lead sole provision（FLOW-001/REQ-19）。** owner db_transaction_owner/Astra，lead mika；WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect`，branch `codex/server-transaction-disconnect`，base `22a0806bc2465e11096949618113833f31766b19`。status_read 19:40:37.483 UTC报告main/origin clean，四literal无active/handoff父子冲突，新task/WT/branch/registry均不存在；SVC06是固定后台产物，非本责任。精确四scope：`apps/server/src/database.ts`、`apps/server/src/database-transaction.test.ts`、`plans/svc07-transaction-recovery`、`docs/evidence/svc07`。仅修公开transaction借用client错误与释放生命周期：connect callback内装listener，等待run收束，原异常不被ROLLBACK/release覆盖；COMMIT未知不重执或假称回滚，坏连接销毁式release一次。先小fake公开接口验收，0真实PG/个人环境；真实PG另排Lead窗口。服从当前center同版本恢复，provision及fresh原子take后才写，不另建重复大task。
 
