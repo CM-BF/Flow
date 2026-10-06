@@ -1,12 +1,14 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T22:56:47.707181+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-06T22:59:32.196947+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 共享窗口
 
-**OPS 已完成：[三项原 owner 预览退役与 exact cache 交接](ops-three-fixture-retirement/manager-confirmation.json)。** 59473 / 51832 / 63251 已逐个精确 PID TERM，原 session 均 exit143，原组与各自监听已空。[原始 receipt](ops-three-fixture-retirement/owner-raw/receipt.json)已即时可读；仅 Lead 后续 fresh 核三处 `.vite`，本组不删缓存/依赖。指定 KEEP 服务与活动51452–51454不动；旧产品 claim 均 RELEASED，三份唯一生命周期 status 已封存，新增 metadata claims 全部 CAS RELEASED v2；精确回执在同一交接内，Lead 操作前仍须 fresh 核当下权属与消费者。
+**OPS 新终态：[Lead 三处 exact `.vite` 已处理完成](ops-three-fixture-retirement/lead-cache-results/report.md)。** 每树60生成文件，三监督exit0/双EOF/自有进程absent；原预览退役与生命周期释放[原件仍保留](ops-three-fixture-retirement/manager-confirmation.json)。最新落盘观察仍低于小检查和PG/Chrome门槛，没有新运行分配或追加候选许可；本组不重采、不派运行。
 
-[Lead workspace-cache 依赖回收已完成](ops-three-fixture-retirement/lead-workspace-cache-postcheck.json)，该树 **NOT_RUNTIME_READY / 禁止借用**，恢复须另行批准。后置 1,079,889,920 B 仍不足共享门槛，仅入站历史事实；本组无新 PG/Chrome 运行、预约或 gate。原[依赖有界确认](ops-workspace-cache-dependency-consumers/manager-confirmation.json)保留为操作前证据。
+[22:57:43 fresh D04有界核验](ops-three-fixture-retirement/lead-cache-results/coordination-audit.json)：跨Lead范围交集0，三临时claim全released；Recovery/QuickControls/DPERF04原范围冻结等待必要验证，无新增handoff或释放遗漏。
+
+[Lead workspace-cache 依赖回收已完成](ops-three-fixture-retirement/lead-workspace-cache-postcheck.json)，该树 **NOT_RUNTIME_READY / 禁止借用**，恢复须另行批准。其当时后置 1,079,889,920 B 为历史事实，后续三缓存观察见页首；本组无新 PG/Chrome 运行、预约或 gate。原[依赖有界确认](ops-workspace-cache-dependency-consumers/manager-confirmation.json)保留为操作前证据。
 
 **此前已交接回执：[Git/config 操作权已归还 + 两预览退役/释放](ops-two-fixture-retirement/lead-handoff-current.json)。** Root 一次精确建树授权已结束；W01 的源码 claim 不保留 Git/config 委派权。
 [原退役 receipt](ops-two-fixture-retirement/owner-raw/retirement-receipt.json) · [ACTIVITY CAS RELEASED](ops-two-fixture-retirement/activity-retirement-release-receipt.json) · [CHAT CAS RELEASED](ops-two-fixture-retirement/chat-retirement-release-receipt.json) · [本组冻结消费者确认](ops-two-fixture-retirement/root-known-consumers.json)。**最新 Lead fresh 审计：ACTIVITY `.vite` 仍被 PID15811 / 51452–51454 消费，STRICT KEEP；只 CHAT 保留精确缓存候选。** 仅旧53851已退役，不得停止51454或扩大服务操作。CHAT仍须 Lead 最终 fresh 核查；不重停、不扩依赖目录。

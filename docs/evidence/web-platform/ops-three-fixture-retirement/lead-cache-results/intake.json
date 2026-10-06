@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-06T22:59:32.196947+00:00",
+  "state": "LEAD_THREE_EXACT_CACHES_COMPLETE_NO_NEW_WEB_GRANT",
+  "source": "Exact Lead disk artifacts; manager did not sample free/process/cache contents or perform operation",
+  "operations": [
+    {
+      "tree": "web-plugin-management-integration",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+      "head": "fc838e66621d1e68531c0fd8da989921f26e4991",
+      "finishedAt": "2026-10-06T22:57:41.240967+00:00",
+      "files": 60,
+      "state": "COMPLETE",
+      "supervisorExit": 0,
+      "ownedState": "absent",
+      "elapsedMs": 2183,
+      "freeAfterBytes": 1038979072,
+      "observedVolumeDeltaBytes": 17563648,
+      "action": "web-plugin-management-integration-cleanup.json",
+      "supervision": "web-plugin-management-integration-supervision.json"
+    },
+    {
+      "tree": "web-profile-integration",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+      "head": "e90492d759421d153641a024ed0b6e1c42bf334e",
+      "finishedAt": "2026-10-06T22:57:42.891186+00:00",
+      "files": 60,
+      "state": "COMPLETE",
+      "supervisorExit": 0,
+      "ownedState": "absent",
+      "elapsedMs": 1666,
+      "freeAfterBytes": 1056579584,
+      "observedVolumeDeltaBytes": 17686528,
+      "action": "web-profile-integration-cleanup.json",
+      "supervision": "web-profile-integration-supervision.json"
+    },
+    {
+      "tree": "web-steering-control",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+      "head": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa",
+      "finishedAt": "2026-10-06T22:57:44.501908+00:00",
+      "files": 60,
+      "state": "COMPLETE",
+      "supervisorExit": 0,
+      "ownedState": "absent",
+      "elapsedMs": 1589,
+      "freeAfterBytes": 1073909760,
+      "observedVolumeDeltaBytes": 17731584,
+      "action": "web-steering-control-cleanup.json",
+      "supervision": "web-steering-control-supervision.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration-cleanup.json",
+      "archive": "web-plugin-management-integration-cleanup.json",
+      "bytes": 2853,
+      "sha256": "54fd06a12ba91e3fbc451c0ee20cf02c3185bf8fe0665f21055f98035eb443fe"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration-supervision.json",
+      "archive": "web-plugin-management-integration-supervision.json",
+      "bytes": 531,
+      "sha256": "8cd975853e88f97226f84cab1d67abc59d49f3880e464fe10bfec87047e7af80"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration-cleanup.json",
+      "archive": "web-profile-integration-cleanup.json",
+      "bytes": 2833,
+      "sha256": "b912d2087483108e3c09ba71bd36a31f488b8c379268d21a124c5cad9ddd1c2a"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration-supervision.json",
+      "archive": "web-profile-integration-supervision.json",
+      "bytes": 531,
+      "sha256": "ba9909cc7f681ed0c0211311a0d4607e469500815363b6f0be521a8c2dcebec1"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control-cleanup.json",
+      "archive": "web-steering-control-cleanup.json",
+      "bytes": 2827,
+      "sha256": "d7129475df4aa071f9b4a55acf60cd278a827ad868a9cd820efd71c69779e915"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control-supervision.json",
+      "archive": "web-steering-control-supervision.json",
+      "bytes": 531,
+      "sha256": "f6ffbdcdb7494131fe42b389736da65f5dc490e5221f1f446c4ec016763271ed"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/three-operation-summary.json",
+      "archive": "three-operation-summary.json",
+      "bytes": 9263,
+      "sha256": "bbff91808f30ca7b1c59abfdeccdec33d1778ac89e7efec8b162bf860c6bb992"
+    }
+  ],
+  "lastHistoricalResourceObservation": {
+    "at": "2026-10-06T22:57:44.501908+00:00",
+    "freeBytes": 1073909760,
+    "smallCheckStartBytes": 1090519040,
+    "smallCheckShortfallBytes": 16609280,
+    "pgChromeStartBytes": 1207959552,
+    "pgChromeShortfallBytes": 134049792,
+    "currentResourceFact": false,
+    "exclusiveReclaimProof": false
+  },
+  "newWindowOrGrantFound": false,
+  "webGate": null,
+  "webReservation": false,
+  "nextRequestedExternalQueue": [
+    "Mika SVC07",
+    "C02 after fresh shared handoff"
+  ],
+  "nextSmallReady": "QuickControls c1 strict types→26 direct. Needs actual currentHEAD rebind, fresh claim/pins and one resource admission under a legitimate new grant; browser additionally needs accepted same-source c1 result and new precise native boundary.",
+  "noFurtherCacheCandidateAuthorized": true,
+  "coordination": "coordination-audit.json",
+  "ownerDispatch": "NONE; no executable new allocation"
+}
