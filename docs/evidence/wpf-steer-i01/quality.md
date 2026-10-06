@@ -15,3 +15,7 @@
 60直接/关联检查、typecheck与production build通过。固定5cf后dev/prod实际App各10组通过，11源hash全相同；实际观察浅深390截图，无水平溢出，原生键盘焦点可进入/返回入口，独立draft不丢。增加实际Close确认测试只丢所确认view的恢复，另一pane仍保稿；原Send/Queue Enter与unsupported服务不变。测试说明原始失败是测试数据/导航假设修正，不把失败日志擦除。
 
 检查命名/职责：原控件继续拥有receipt/内部draft，组合层只绑定authority与view lifetime；host端口无SDK/provider/token耦合、无第二registry、无per-message timer、无新依赖。保留1个显示surface、8个visited controller；hidden与dispose责任分别明确。没有未解决的已知blocking行为，独立review仍NOT_STARTED。scope只11apps+本片plan/evidence，所有protected源码与根依赖零diff。只读review后metadata与实现目标保持分离。
+
+## 2026-10-06 09:51 UTC 独审后交付复核
+
+d01_owner 独立 APPROVED 固定 5cfebc639d7acd458d27f4543d00a32a9fd96fc7，60/60 和 CUA 窄旅程来源分别记入 review 与原日志副本。本段仅元数据，未重跑产品；实现保持固定。复核命名/职责、read/write 分权、私有 raw port 无递归、稳定 draft 与有界 binding 的原设计，无新增修复或未关闭 finding。更新检查阶段为 integration，main 接收 TODO 仍在进行；不把独审当 main 或真实 provider 验收。核 status parser / 文档链接 / 源码零差后独立元数据提交，提交后 clean 以 Git 回执为准。

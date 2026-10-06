@@ -1,6 +1,6 @@
-# 运行中指令接入交付候选
+# 运行中指令接入交付
 
-实现目标 **5cfebc639d7acd458d27f4543d00a32a9fd96fc7**，基线 **df29fb511df029a0922ace0f4973f3fe3736e502**，分支 `codex/web-steering-integration`。独立 review 尚未执行；本片不是实际 provider 验收。
+实现目标 **5cfebc639d7acd458d27f4543d00a32a9fd96fc7**，基线 **df29fb511df029a0922ace0f4973f3fe3736e502**，分支 `codex/web-steering-integration`。d01_owner 于 2026-10-06 09:50:22 UTC 独立 APPROVED；本片不是实际 provider 验收。
 
 实际 App 在当前运行 turn 提供 Guide running task，使用原已审控制器/控件，独立于 Send/Queue 草稿；P01 唯一生命周期、private read/write授权、双 pane真实身份、八绑定背压、unknown原key、退出保护见[接口](interface.md)。[plan](../../../plans/wpf-steer-i01-integration/plan.md) / [status](../../../plans/wpf-steer-i01-integration/status.md) / [review](../../../plans/wpf-steer-i01-integration/review.md) 是唯一手填事实。
 
@@ -27,6 +27,10 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --filter @flow/web exec tsx test/c
 ![浅色390](production-light-390.png)
 
 ![深色390](production-dark-390.png)
+
+## 独立审查与首轮结果
+
+d01_owner 独立 [60/60](independent-review-tests.log)（09:47:23 UTC，4.56s）及实际 CUA 窄旅程通过，11源与固定target一致，无blocking。实际检查和未重跑范围以 [review](../../../plans/wpf-steer-i01-integration/review.md) 为准，不把 root 转述当成 root 重跑。
 
 ## 首轮结果与未验证
 
