@@ -1,0 +1,99 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+      "id": "ENG-001",
+      "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已完成文件内容和检查结果关联的局部验证，已通过独立审查",
+    "next": "集成可核对文件变更、竞态和租约失效的检查收据",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "1b3c9023020985f15486368301ccfece993a3ff3",
+    "scopes": [
+      "apps/runner/src/engineering/calculator-capture.ts",
+      "apps/runner/src/engineering/calculator-capture.test.ts",
+      "apps/runner/src/engineering/calculator-receipt.ts",
+      "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "plans/eng01f-calculator-receipt",
+      "docs/evidence/eng01f"
+    ],
+    "errors": []
+  },
+  "taskId": "ENG01F",
+  "owner": "native_center_owner / gpt-6-astra",
+  "branch": "codex/engineering-calculator-receipt",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T12:04:04.000Z",
+  "updatedRecord": "2026-10-06 12:04:04 UTC",
+  "todos": [
+    {
+      "id": "ENG01F-01",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "claim、Interface"
+    },
+    {
+      "id": "ENG01F-02",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "receipt9检查；严格版本/内容/报告/unknown停止边界"
+    },
+    {
+      "id": "ENG01F-03",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "真实Git11检查、actual host identity/unknown journal、types0"
+    },
+    {
+      "id": "ENG01F-04",
+      "state": "pending",
+      "owner": "native_center_owner",
+      "evidence": "独审APPROVED；main未完成"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f / 1b3c9023020985f15486368301ccfece993a3ff3",
+  "declaredDirty": "本metadata提交后clean",
+  "checks": {
+    "state": "passed",
+    "target": "1b3c9023020985f15486368301ccfece993a3ff3",
+    "record": "PASSED 1b3c9023020985f15486368301ccfece993a3ff3；20 distinct，root types0；[固定证据](../../docs/evidence/eng01f/fixed-manifest.json)"
+  },
+  "reviewRecord": "[review.md](review.md)，APPROVED 1b3c9023020985f15486368301ccfece993a3ff3",
+  "mainRecord": "ENG01F未集成；base已含已审ENG01E",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T11:57:48.011301+00:00 / main017adc276a888a218bed3ef9963bc4dabbc6cec2 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:05:17 UTC / main1c4968354dabce1e6748f3301a2e6eecd33e77d4 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 已审附件输入模块与B01任务/活动轻投影；S01P04/O12传输已main2f4 |
+| 工作基线 / HEAD | 已审工程完整快照与可信检查收据；附件/B01已main1c496 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 45固定源码/原始证据绑定；root/Web types0；原17附件与8+5读取检查复用，0provider |
-| 已集成main状态 / HEAD | 2f4a5789已接S01P04/O12薄传输与144登记；本批附件模块/轻投影待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 检查状态 | ENG01F51绑定/4源独审；root types0；原20局部Git/HTTP/codec检查复用，0provider |
+| 已集成main状态 / HEAD | 1c496835已接附件/B01与唯一source迁移；本批ENG01F待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 并发读取修复已进主线；附件输入模块与轻量任务读取正在完成接收。 |
-| 下一可用交付 | 接收已审附件与读取优化，继续目标会话和真实工程路径。 |
+| 当前产出 | 附件输入模块和轻量读取已进主线；工程收据完成独审，正在接收。 |
+| 下一可用交付 | 接收完整工程快照收据，继续目标会话及原生写入接线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -137,3 +137,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T11:57:48.011301+00:00：S01P04生产e184+必需94b消费者修复按原独审接收；private FOR SHARE仅替换既有attempt的凭据读取，保留ENG claim/公开lockRunner强锁。31source/raw固定hash，root types0，无重跑容量或PG。O12 thin transport ec6两源exact，四新canonical登记144来源。[回执](../../docs/evidence/i02/runner-read-fence-source-comparison.json)。
 
 2026-10-06T12:02:14.623280+00:00：附件模块4c4与B01 c96/7d69三片固定源码/原始输出45项核验，18source无差、修改路径原main与作者base一致；root/Web类型各0。复用独审行为证据，不重跑PG/浏览器/容量或provider。来源见[接收比较](../../docs/evidence/i02/attachment-task-read-source-comparison.json)。
+
+2026-10-06 12:05:17 UTC：ENG01F仅4个新增私有源，固定1b3c独审，37直接旧依赖在owner基线无变；实际集成root types0。前后完整快照与not-attested收据不证明native写入已停，不发旧v1成功。见[接收证据](../../docs/evidence/i02/engineering-calculator-receipt-comparison.json)。
