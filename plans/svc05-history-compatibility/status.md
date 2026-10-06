@@ -75,3 +75,5 @@
 2026-10-06 20:04 UTC：两retained→af51报告已由R01真实App和独审补齐，旧缺口仅为历史；新后台/网页尚未上线。[下一次固定操作方案](../../docs/evidence/svc05-history-compatibility/release-operation/README.md)区分停服前材料准备、后台drain/hold/refresh/resume、独立Web pointer切换。41输入binding，0新个人探针/PG/browser/provider；原恢复41文件main内容相同，原raw不改。
 
 2026-10-06 20:16 UTC：按Lead已准方向完成[可执行小增量](../../docs/evidence/svc05-history-compatibility/release-operation/executable-preparation.md)。仅2脚本语法解析0；未import/个人文件读取/PG/操作。旧中心恢复与033dd方案批准不自动扩大到本增量；fixed source/manifest随后绑定。raw/protected摘要同RR，新增审计与maintenance字段单列，不增加新的维护状态机。
+
+2026-10-06 20:16 UTC：操作准备 source `56306d1e464a3a172800b5f81a339ea22903adab`；[增量manifest](../../docs/evidence/svc05-history-compatibility/release-operation/executable-manifest.json)共52绑定。两源码语法0，全部业务观察/比较/操作NOT_RUN，源码停写待唯一独审。
