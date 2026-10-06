@@ -1,0 +1,28 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "远程验证模板候选已获独立审查，等待进入主线供用户最终选择启用。",
+    "next": "受控接收已审文档候选，之后由用户决定是否启用。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED；限定 APPROVED_DOCS_CANDIDATE_ONLY，reviewer Execution Lead",
+    "target": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9"
+  }
+}

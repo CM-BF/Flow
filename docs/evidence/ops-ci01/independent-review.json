@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T23:01:23.827466+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+  "observedHead": "abc7444ddb3a3724763567d1955e58b157ba51df",
+  "state": "APPROVED_DOCS_CANDIDATE_ONLY",
+  "findings": [],
+  "manifestSha256": "8dda70a5e4f2893a7750b51ef6ba40835129301c56042e813eeafe816cfc8d7a",
+  "bindings": {
+    "source": 2,
+    "protectedInputs": 375,
+    "evidence": 16
+  },
+  "mismatches": [],
+  "read": [
+    "complete two-document diff, complete workflow",
+    "README-only activation delta cdd96bc; workflow unchanged from b895",
+    "actual contracts.test.ts and selected server.test.ts beforeEach/afterEach/case, factory/migrations",
+    "all static-result and original initial-static failure facts",
+    "fixed actions official action.yml interfaces"
+  ],
+  "conclusions": [
+    "manual-only public repository and contents:read, no credential retention/cache/upload/user secrets/provider entry",
+    "fixed Node24.20.0/pnpm9.15.4/Vitest4.0.18 and versioned PG16.13-alpine (tag not immutable digest)",
+    "exact existing contracts 2 plus real PostgreSQL/Fastify.inject handler 1 (9 unselected), not socket/runner E2E",
+    "bounded installation/tests/cleanup/report; missing/zero/changed count or normal cleanup unknown fail closed",
+    "cleanup confined to this job service ID and database, finite zero-connection observation then normal DROP; no FORCE",
+    "normal outcome distinct from platform teardown; abrupt runner loss does not imply cleanup",
+    "exact user activation path and rejection-stop documented; no activation/OAuth attempted"
+  ],
+  "evidenceLimits": [
+    "375 protected bindings validated, not 375 file semantic reviews",
+    "original static SQL-count error retained then corrected to30; schema versions1/3 inline",
+    "installation/Linux optional dependency behavior and all remote tests/cleanup NOT_RUN",
+    "reviewer ran only fixed blob/hash/contents reads; no tests/install/PG/provider/workflow run"
+  ],
+  "externalSources": [
+    "https://github.com/pnpm/action-setup/blob/b906affcce14559ad1aafd4ab0e942779e9f58b1/action.yml",
+    "https://github.com/actions/checkout/blob/11d5960a326750d5838078e36cf38b85af677262/action.yml",
+    "https://github.com/actions/setup-node/blob/49933ea5288caeca8642d1e84afbd3f7d6820020/action.yml"
+  ]
+}
