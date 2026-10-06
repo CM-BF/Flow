@@ -1,5 +1,6 @@
 import { Pool, type PoolClient } from 'pg';
 import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 
 export class HttpError extends Error {
   constructor(readonly status: number, readonly code: string, message: string) { super(message); }
@@ -26,7 +27,7 @@ export async function migrate(pool: Pool): Promise<void> {
   await transaction(pool, async client => {
     await client.query("SELECT pg_advisory_xact_lock(hashtextextended('flow-migrations',0))");
     await client.query('CREATE SCHEMA IF NOT EXISTS flow; CREATE TABLE IF NOT EXISTS flow.migrations (version integer PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT clock_timestamp())');
-    if ((await client.query('SELECT version FROM flow.migrations WHERE version=1')).rowCount) return;
+    if (!(await client.query('SELECT version FROM flow.migrations WHERE version=1')).rowCount) {
     await client.query(`
       CREATE SCHEMA IF NOT EXISTS flow;
       CREATE TABLE IF NOT EXISTS flow.tasks (
@@ -92,5 +93,9 @@ export async function migrate(pool: Pool): Promise<void> {
       );
       INSERT INTO flow.migrations(version) VALUES(1);
     `);
+    }
+    if (!(await client.query('SELECT version FROM flow.migrations WHERE version=2')).rowCount) {
+      await client.query(await readFile(new URL('../../../packages/storage/migrations/002-reconciliation.sql', import.meta.url), 'utf8'));
+    }
   });
 }

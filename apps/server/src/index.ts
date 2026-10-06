@@ -11,6 +11,7 @@ import { reportEvents } from './events.js';
 import { cancel, decide } from './commands.js';
 import { detail, eventPage, integerQuery } from './queries.js';
 import { registerStreams } from './streams.js';
+import { registerReconciliation } from './reconciliation-http.js';
 
 declare module 'fastify' { interface FastifyRequest { runnerId: string | null } }
 
@@ -60,6 +61,7 @@ export async function createServer(options: ServerOptions) {
   });
   app.get('/api/health', async () => ({ ok: true }));
   registerStreams(app, pool);
+  registerReconciliation(app, pool, boss);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_runner', 'Invalid runner registration.');

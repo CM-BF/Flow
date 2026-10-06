@@ -1,0 +1,35 @@
+{
+  "sourceCommit": "97ab1e5bd169cda7ed7bf0bbdeddcda1414833f8",
+  "checkedAt": "2026-10-06T02:11:56Z",
+  "environment": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "postgres": "16.13",
+    "database": "flow_c02",
+    "httpPorts": "dynamic loopback"
+  },
+  "modelQueries": 0,
+  "checks": [
+    {
+      "command": "pnpm exec vitest run apps/server/src/reconciliation.test.ts",
+      "exitCode": 0,
+      "passed": 12,
+      "failed": 0,
+      "testDurationMs": 24834,
+      "totalDurationSeconds": 25.1
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    {
+      "check": "post-test dedicated database cleanup",
+      "flowC02Exists": false
+    }
+  ],
+  "note": "Checks ran immediately before the unchanged implementation was committed. No model, cloud, unrelated database, fixed HTTP port or production credential was used."
+}

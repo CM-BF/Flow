@@ -4,6 +4,38 @@ import { once } from 'node:events';
 import type { AddressInfo } from 'node:net';
 import { FlowClient, FlowApiError } from './index.js';
 
+it('queries audit pages and sends explicit fenced recovery commands with authentication and replay keys', async () => {
+  const requests: { url: string; key?: string; body: unknown }[] = [];
+  const server = createServer(async (request, response) => {
+    expect(request.headers.authorization).toBe('Bearer owner-secret');
+    let body = '';
+    for await (const chunk of request) body += chunk;
+    requests.push({ url: request.url!, key: request.headers['idempotency-key'] as string | undefined, body: body ? JSON.parse(body) : null });
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end('{}');
+  }).listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server.address() as AddressInfo).port}`, token: 'owner-secret' });
+  const ownership = { attemptId: 'old-attempt', ownerVersion: 2 };
+  const evidence = { explanation: 'Checked runner process and output directory.', references: [] };
+  try {
+    await client.reconciliation('task/1', 12);
+    await client.recordReconciliation('task/1', { ...ownership, evidence }, 'observe-1');
+    await client.resolveReconciliation('task/1', { ...ownership, stoppedConfirmed: true, stopEvidence: evidence, sideEffects: 'none-confirmed', effectsEvidence: evidence, outcome: 'cancelled' }, 'resolve-1');
+    await client.retryReconciledTask('task/1', { ...ownership, resolutionId: 'audit-1', safety: { strategy: 'no-side-effects', evidence } }, 'retry-1');
+    expect(requests.map(({ url, key }) => ({ url, key }))).toEqual([
+      { url: '/api/tasks/task%2F1/reconciliation?after=12', key: undefined },
+      { url: '/api/tasks/task%2F1/reconciliation/observations', key: 'observe-1' },
+      { url: '/api/tasks/task%2F1/reconciliation/resolve', key: 'resolve-1' },
+      { url: '/api/tasks/task%2F1/reconciliation/retry', key: 'retry-1' },
+    ]);
+    expect(requests[1]!.body).toEqual({ ...ownership, evidence });
+    expect(requests[3]!.body).toEqual({ ...ownership, resolutionId: 'audit-1', safety: { strategy: 'no-side-effects', evidence } });
+  } finally {
+    await new Promise<void>(resolve => server.close(() => resolve()));
+  }
+});
+
 it('submits with authentication and idempotency, preserving an actionable conflict', async () => {
   const server = createServer((request, response) => {
     expect(request.headers.authorization).toBe('Bearer local-secret');

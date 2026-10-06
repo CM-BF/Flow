@@ -1,4 +1,5 @@
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
+import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
 
 export class FlowApiError extends Error {
   constructor(public readonly status: number, public readonly code: string, message: string) {
@@ -38,6 +39,22 @@ export class FlowClient {
 
   cancel(id: string, key: string): Promise<TaskSummary> {
     return this.request(`/api/tasks/${encodeURIComponent(id)}/cancel`, { method: 'POST', body: '{}', headers: { 'Idempotency-Key': key } });
+  }
+
+  reconciliation(id: string, after = 0): Promise<ReconciliationView> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation?after=${after}`);
+  }
+
+  recordReconciliation(id: string, input: ReconciliationObservation, key: string): Promise<ReconciliationResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation/observations`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key } });
+  }
+
+  resolveReconciliation(id: string, input: ReconciliationResolution, key: string): Promise<ReconciliationResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation/resolve`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key } });
+  }
+
+  retryReconciledTask(id: string, input: ReconciliationRetry, key: string): Promise<ReconciliationRetryResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation/retry`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key } });
   }
 
   registerRunner(input: RegisterRunner): Promise<RunnerRegistration> {
