@@ -6,7 +6,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者局部检查：固定1b8的27 direct PASS；首667真实browser子集FAILED（cookieRead PASS、textIntentDraft FAILED），原始原因待核；当前types未新增。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
+当前作者局部检查：固定7cc的38 direct PASS，root只读接受受控证据；首667真实browser子集FAILED（cookieRead PASS、textIntentDraft FAILED）保留，默认激活/observer源码已修但真实旅程未复验；当前types未新增。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -75,3 +75,5 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 ## 2026-10-06 19:27:59 UTC — browser parent tail限定源码修复待审
 
 [Root固定7cc尾部审查](../../docs/evidence/wpf-conversation-recovery/browser-tail-root-review.json)两项P2按源码收敛：显式自有组消失才删scratch；reap后删除前及report/budget后终态配额/free/elapsed检查，异常判失败但继续安全清理。[修复接口与限制](../../docs/evidence/wpf-conversation-recovery/browser-tail-source.md)明确白名单MAC_CHROMIUM_TMPDIR/argv和原计时边界。本段尚未独立审查，0types/运行；旧38PASS不推本新parent已验，首真实browser失败未改绿。完整feature仍NOT_STARTED/targetUNKNOWN。
+
+限定待审source `76a766a24614b9b3cfdc996bdb275a8826532a84`，前序7cc。见[累计manifest](../../docs/evidence/wpf-conversation-recovery/browser-tail-checkpoint.json)：一browser parent差异、18其余源/worker/原helper不变，diffcheck0，只有静态核对。本次root报告是修复输入，尚未收到新source批准；0运行，旧38与首browser证据不扩张。

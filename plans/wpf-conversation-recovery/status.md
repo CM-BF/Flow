@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:27:59 UTC |
+| 最近更新 | 2026-10-06 19:29:04 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；固定source7cc7629b6603a6ccc7e2ab6143125dea8daae685；本轮执行metadata bf14ae68c2c9b1ba9666f9f5b6314ca15353625d；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 3896 clean 输入已核；本段仅browser parent尾部与own metadata源码修复，其余18源冻结 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前限定source76a766a24614b9b3cfdc996bdb275a8826532a84；38受控执行仍bf14/7cc；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | browser parent限定source已提交并冻结；本段只metadata收口，最终clean/local=origin由handoff实核 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 默认草稿保存生命周期及无副作用观察器的受控检查已通过；首轮真实浏览器失败保留 |
+| 当前产出 | 默认草稿保存受控检查通过；浏览器验证的清理与终态记录修正待源码审查，首轮真实失败保留 |
 | 下一可用交付 | 在新准入后验证真实默认保存、材料恢复与原身份重试；重新连接仍不自动投递 |
 | 当前阻塞 | ACTIVE: 当前受控检查已通过，但修复后的真实浏览器旅程未运行；完整恢复及中心语义仍开放 |
 | 需用户决定 | NONE |
@@ -33,7 +33,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)源绑定7cc通过，38/38、0skip/todo；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；两项源码修正及受控case通过，真实旅程尚未重跑 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；38受控case通过；[父监督尾部源码修复](../../docs/evidence/wpf-conversation-recovery/browser-tail-checkpoint.json)待审/NOT_RUN，真实旅程未重跑 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -165,3 +165,9 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 [管理fresh领取](../../docs/evidence/wpf-conversation-recovery/browser-tail-claim.json)已本人核6ff v4/原21/唯一owner/无overlap。[Root尾部审查](../../docs/evidence/wpf-conversation-recovery/browser-tail-root-review.json)与[peer准备](../../docs/evidence/wpf-conversation-recovery/browser-tail-peer-report.md)确认：原删scratch依赖错误文字而非显式组消失；reap后删除前缺终态配额/free核；MAC_CHROMIUM_TMPDIR未显式覆盖（不推首轮启动失败）。仅browser父监督收敛，不改38测试/生产/fixture或原ENOENT helper。
 
 本段0runtime/import/types/HTTP/PG/Chrome/free；原14846.267375ms（14.846267375秒）与10raw保留，余75153.732625ms含15000ms清理只是算术，无新gate。direct6.868/30s、types52.814/60s原样。完整feature targetUNKNOWN/reviewNOT_STARTED。
+
+## 2026-10-06 19:29:04 UTC — browser parent tail固定源码安全点
+
+固定 `76a766a24614b9b3cfdc996bdb275a8826532a84`；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/browser-tail-checkpoint.json)核current=fixed、仅browser parent改变、另18源/worker/ENOENT helper不变，旧10raw17415B逐hash相同。显式组消失、reap后/删除前及报告后终态计量、错误安全清理与owned MAC_CHROMIUM_TMPDIR白名单记录已落源，待root独立审查；0runtime/import/types/HTTP/PG/Chrome/free。
+
+权属沿2026-10-06T19:18:39.046Z原21/v4观察与管理继续收口授权；19:24管理报告D04不可用，因此当前账本UNKNOWN，未标fresh active、未另探测。原browser14846.267375ms与余75153.732625ms（含15000ms清理）、direct6.868/30s、types52.814/60s均未新增消费。源冻结，仅metadata正常push；完整featureNOT_STARTED/targetUNKNOWN。

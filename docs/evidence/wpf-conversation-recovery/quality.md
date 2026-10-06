@@ -131,3 +131,5 @@ Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59b
 复用本地find-skills/codebase-design/clean-code/webapp-testing已固定版本，不安装。实际发现是错误文本暗含删除权限与最后子写入未做终态配额检查；改为显式所有权事实、独立观察与安全清理，错误传播到同一父errors。沿现父模块增加两个局部操作observeTail/persistReports，未新建监管框架或外部authority。DB close异常不跳过后续安全清理，硬截止可使最终budget失效；白名单启动记录不泄露继承环境。
 
 源码自审覆盖命名、职责、错误/清理路径、有限报告写入与预算边界；只browser parent改动，另外18源和worker/ENOENT helper不动。新行为NOT_RUN，38受控结果及首browser失败保留，未冒独立批准。当前账本未知，仅沿19:18:39合法观察与管理继续收口指令，无新资源/运行采样。
+
+本段source固定 `76a766a24614b9b3cfdc996bdb275a8826532a84`；19current=fixed，18等7cc，worker与treeBytes原样，原10raw17415B hash一致；源码diffcheck0。仅静态核对，未运行parser/类型/测试。
