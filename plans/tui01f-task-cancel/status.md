@@ -21,7 +21,7 @@
 | 优先级 | 2 |
 | 当前产出 | 真实终端取消和原回执恢复两项行为已通过；数据库收尾检查未确认，整组验收尚未通过。 |
 | 下一可用交付 | 核清本次保留资源的状态，完成取消旅程收尾；浏览器交替仍待后继。 |
-| 当前阻塞 | ACTIVE: 本次数据库连接检查未确认；数据库与临时目录按规则保留，未重试或自动清理。 |
+| 当前阻塞 | ACTIVE: 原清理检查失败原因未证；专库经授权核零连接后已清理，临时目录因缺初始inode记录保留，待有界收尾。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 40508f18432ffc20eadd638b208841a364c72bea（限定源/类型准备，原回执SCOPED_APPROVED）；实际03 NOT_RUN |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v1 |
@@ -49,3 +49,5 @@
 2026-10-06 17:02 UTC：原样归档Lead运行依赖视图回执，218本地源/27实际SQL、14第三方公开入口/4 own aliases、PTY脚本/配置逐文件核对无确定缺件；未import或运行。已固定[唯一2场景入口及上限](../../docs/evidence/tui01f/journey-runtime-entry.md)。03/04仍open；现存source40508f及旧批准/raw均不改。
 
 2026-10-06 17:17 UTC：一次窗口原2case均通过，整suite因cleanup connections unknown而exit1，原库/tmp保留。自有runner/HTTP已关闭，测试与PTY两组不存在，0provider；[完整原始事实](../../docs/evidence/tui01f/journey-1714/README.md)。不勾03/04、不重试，当前等待有界收尾安排。
+
+2026-10-06 17:19 UTC：另授权一次原库只读核对得到connections=[]，随后正常DROP/remaining=[]；非重跑、无FORCE。原suite exit1不改，private tmp缺初始inode证据仍KEEP。[独立operator回执与最小修正建议](../../docs/evidence/tui01f/journey-1714/operator-followup.md)。
