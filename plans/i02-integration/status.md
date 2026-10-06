@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:43 UTC / 2026-10-06 04:43 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:03 UTC / 2026-10-06 05:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / 012b676c13e5419935a92080406264191ddf2c77（本记录前完整候选） |
+| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / fa9d8b9a9a88b1da0e2c1c07c8749a09bb17c0eb（本记录前完整候选） |
 | 工作树dirty状态 | 仅本次交付记录；实现已提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；第三批root+Web typecheck，CHAT生产直接消费者3/3与插件CLI/client5/5；各领域独审证据保留，0模型 |
-| 已集成main状态 / HEAD | 最近现场main/origin 8f1481df880cf5077e1ddb9a8f302fe700a7ece8；本批候选dd1bcefb7dae6987275c0d1686e17b75bc458bf1接P03/R04已审实现，待本记录提交后fast-forward |
+| 已集成main状态 / HEAD | 最近main/origin698ffcd94ae073b23bcc67f6665fb19f707a93e4已含队列后台/兼容reader/执行配置模块；本批仅接B02已审实验、登记与metadata，待fast-forward |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 真实预览已常驻、两次聊天预算已封存；接收插件管理App与O03授权模块 |
+| 当前产出 | 真实聊天与插件查看可用；消息排队后台已交付，聊天界面接线继续 |
 | 下一可用交付 | 聊天界面接入执行选项和待发送消息；原生目标工具继续受限接入 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -60,3 +60,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 04:43 UTC：现场main75a33dec clean；本批受控接收WPF-X03I01 84ac/4b7e、O03 94e/67ac以及SVC/X01/CHAT03/O02/R03/CHAT02最终metadata。原主线对X03三产品文件相对base零diff，合并后保持owner已审blob；Web与root两个组合typecheck均exit0（见本批原始输出）。O03模块未生产挂载，native仍409。CHAT04尚未进入本批；需兼容Web reader与后端queue能力成套上线。服务61228继续sourceAtStart75a33/0消息，合并不等于常驻服务已重启。
 
 2026-10-06T04:57:37.668400+00:00：队列后台+兼容reader成套候选已独审并通过局部组合检查，profile目录模块已接收但实际App待后继；证据见本批integration清单。主线合入不自动升级常驻中心，不扩大两次聊天模型预算。
+
+2026-10-06 05:03 UTC：接收B02已审baseline dace800（无产品变化/无负载重跑），登记CTX02/B03为56个来源候选；人类摘要规范与全计划22要求已校准。原698ffcd共享与产品实现未改变；O04仍待独立审查，不提前并入。

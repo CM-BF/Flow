@@ -77,3 +77,8 @@ Root已独立复核固定f58fdf36b073e2a98a683c8f40442dbb64ee7eec/最终c003444�
 
 ## 队列与目标工具组合 2026-10-06T04:57:37.667893+00:00
 接收Mika已审CHAT04 ae9d/fac202+F01客户端83f及生产b87、runner_owner已审O03 clientdc9、Web Lead已审boolean reader5acc与profile目录4f。shared生产三个blob对b87精确零diff，Web reader对5acc零diff；合入默认scan/011+012同一主线提交链，不单独开启后端captrue。默认生命周期2+O03 9=11/11与额外flag控制1/1（2未选）分别保存，root/Web组合tsc通过，未重复已审54领域/35Web行为。profile模块未挂App；queue UI仍后续，不能宣称用户已能可视排队。61227/61228常驻进程未重启，sourceAtStart75a33；Web Vite可能HMR，不等于后端已加载新功能。
+
+
+### 05:03 UTC 有界实验和管理事实接收
+
+基线 main698ffcd；候选fa9d8b9。B02 impl38b2353/finaldace800已获Mika独立方法批准，只追加experiments/conversation-read-cost及自身plan/evidence；保留126样本、7guards、失败类型输出和字节口径，无重复负载。Profile3919/QUEUE00d604/CHAT04bf41均为原实现不变的owner metadata与release回执。D05fdd083登记CTX02/B03，validateRegistry56源合法且各真实三件套存在；FLOW00128bd004逐项保留22未完成要求。clean-code复核无新增产品接口/依赖/权限；只检查文档与diff，不跑全库或新模型。常驻61227/61228未重启，Vite源码可能随主线更新，center/runner仍原加载版本。
