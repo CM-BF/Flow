@@ -1,6 +1,6 @@
 # O13 fixed delivery
 
-Source: `ddf9f9404561515b61a85d89aa203d609dbfff8e`. Base: `2f16e30a7e4dbeb7d4bc28e03284835764ef19a0`. Author: native_center_owner / gpt-6-astra. Independent review APPROVED by Execution Lead; see [canonical review](../../../plans/o13-continuous-goal-journey/review.md). Main integration pending. The 11 owned product/test paths are frozen; controlled shared client input is documented in [shared-input.json](shared-input.json). No factory mount, migration, dependency, runtime/profile or legacy authority change.
+Source: `ddf9f9404561515b61a85d89aa203d609dbfff8e`. Base: `2f16e30a7e4dbeb7d4bc28e03284835764ef19a0`. Author: native_center_owner / gpt-6-astra. Independent review APPROVED by Execution Lead; see [canonical review](../../../plans/o13-continuous-goal-journey/review.md). Main integrated 5dbabadc7dda02da558f48505677eddbc9c83fb5; see [main-receipt.json](main-receipt.json). The 11 owned product/test paths are frozen; controlled shared client input is documented in [shared-input.json](shared-input.json). No factory mount, migration, dependency, runtime/profile or legacy authority change.
 
 The recoverable entry saves exact natural-language input and key before createGoal, binds its returned goalId, then composes the existing GoalSession with explicit graph-plan/native-execute. A goal-owned paged planning list is lazy and body-free. The same Intent v1 persistence/recovery rules apply to all actions; no read, graph title or reconnect dispatches a child automatically. See [Interface](interface.md) and [quality review](quality.md).
 
