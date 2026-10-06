@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['MATURE02C01', '逐消息设置共享接口与命令行', '工作线', 'claude-message-settings-client', 'mature02c01-claude-message-settings-client'],
   ['WPF-DPERF04', '看板首页摘要与按需详情', '工程协作', 'dashboard-summary-detail', 'wpf-dperf04-summary-detail'],
   ['TUI01F', '终端显式取消与双端接续', '工作线', 'tui-task-cancel', 'tui01f-task-cancel'],
   ['WPF-MATURE-02-CORE', 'Claude逐消息设置契约', '工作线', 'claude-message-settings-core', 'wpf-mature-02-message-settings-core'],
