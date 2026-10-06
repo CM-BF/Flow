@@ -14,7 +14,7 @@
 | HEAD | 首Interface59249f90；permit源码62511c4b47132ca7b3065b62818eb47ff7dfdfb9；后续只metadata/新driver待实现 |
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
-| 检查状态 | Node内建纯permit检查5不同通过；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
+| 检查状态 | Node内建纯检查7不同通过（permit5+assignment2）；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
 | Review | NOT_STARTED |
 | 实现目标 | 62511c4b47132ca7b3065b62818eb47ff7dfdfb9 |
 | 实现范围 | experiments/continuous-goal-acceptance |
@@ -30,7 +30,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | O16-01 | completed | native_center_owner | [claim](../../docs/evidence/o16/claim.json)、[Interface](../../docs/evidence/o16/interface.md) |
-| O16-02 | in-progress | native_center_owner | phase/actual confirmation/持久slot/reopen已实现且5不同检查通过；原生query观察接线待继续 |
+| O16-02 | in-progress | native_center_owner | phase/actual confirmation/持久slot/reopen已实现；assignment绑定公开当前身份，两模块7不同检查通过；原生query观察接线待继续 |
 | O16-03 | pending | native_center_owner | public journey/checkpoint待实现 |
 | O16-04 | pending | native_center_owner | 纯检查可推进；PG需Lead串行窗口 |
 | O16-05 | pending | native_center_owner | manifest/独审待固定 |
@@ -38,4 +38,4 @@
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
-2026-10-06 18:24 UTC：Lead批准39个既有依赖链接，11个workspace均指本树，28第三方版本逐项相符；无安装/导入，package/lock/sharedconfig与gitstatus保持。原sparse未含新目录导致首次普通add拒绝，两源后以已授权exact --sparse独立提交62511；Lead已补本树精确规则，原失败如实保留。
+2026-10-06 18:23:45 UTC：Lead批准39个既有依赖链接，11个workspace均指本树，28第三方版本逐项相符；无安装/导入，package/lock/sharedconfig与gitstatus保持。原sparse未含新目录导致首次普通add拒绝，两源后以已授权exact --sparse独立提交62511；Lead已补本树精确规则，原失败如实保留。
