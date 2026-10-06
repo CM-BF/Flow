@@ -120,7 +120,7 @@ export function MessageSettingsPicker({ catalog, context, value, onChange, onRef
         {catalog.error && <p role="alert" className="ep-error">{catalog.error}</p>}
         {!available.allowed && <p className="ep-notice">{available.reason}</p>}
         {missing && <p className="ep-notice">原选择不在已加载目录中，仍保留原值；请加载更多或刷新后核对。</p>}
-        {value && <section aria-label="当前草稿设置" className="ep-requested">
+        {value && <section aria-label="当前草稿设置" className="ep-requested" style={{ minWidth: 0, overflowWrap: "anywhere" }}>
           <strong>{value.requested.model}</strong><p>{describeMessageChoice(value.requested)}</p>
           <details className="ep-identities"><summary>选择身份</summary><p className="ep-footnote" style={{ overflowWrap: "anywhere" }}>配置 {value.profile.id} · Runner {value.profile.runnerId} · {value.profile.configDigest}</p></details>
         </section>}
@@ -145,6 +145,7 @@ export function MessageSettingsPicker({ catalog, context, value, onChange, onRef
 }
 
 function describeMessageChoice(choice: Immutable<ClaudeTurnSettings["requested"]>): string {
-  const effort = choice.effort.kind === "level" ? `力度 ${choice.effort.value}` : "不请求力度";
-  return `${choice.thinking === "adaptive" ? "自适应思考" : "不请求思考"} · ${effort} · ${choice.speed === "fast" ? "快速请求" : "标准速度"}`;
+  const levels = { low: "低", medium: "中", high: "高", xhigh: "更高", max: "最高" };
+  const effort = choice.effort.kind === "level" ? `力度${levels[choice.effort.value]}` : "不请求力度";
+  return `${choice.thinking === "adaptive" ? "自适应思考" : "关闭思考"} · ${effort} · ${choice.speed === "fast" ? "快速请求" : "标准速度"}`;
 }

@@ -80,7 +80,7 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     await expect(dialog.getByRole("group")).not.toContainText("Adapter");
     await expect(dialog.getByText(`Runner ${id(101)}`, { exact: true }).first()).not.toBeVisible();
     await close(); await expect(left.getByRole("button", { name: /^消息设置：/ })).toBeFocused();
-    await expect(left.getByRole("button", { name: /^消息设置：/ })).toContainText("力度 high");
+    await expect(left.getByRole("button", { name: /^消息设置：/ })).toContainText("力度高");
     await expect(right.getByRole("button", { name: /^消息设置：/ })).toContainText("不附加");
     await left.getByRole("button", { name: "冻结 A 样本", exact: true }).click();
     const sent = await page.getByTestId("left-sent").textContent(); assert(sent?.includes(model));
