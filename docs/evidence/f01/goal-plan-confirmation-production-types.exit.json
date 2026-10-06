@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-06T17:52:47.780861+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/f01/goal-plan-confirmation-production-tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "freeBytesBefore": 1750085632,
+  "sourceHashes": {
+    "apps/server/src/index.ts": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+    "packages/client/src/goal-plan-confirmation-production.test.ts": "478d168037eef6da3c1717f0438c4e82987ad19df582e80f8c6f06bcbf51e91a",
+    "packages/client/src/index.ts": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+    "packages/contracts/src/index.ts": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9"
+  },
+  "headBefore": "4058c7e5ce98e16ed685b05302c40d3072dc5dd4",
+  "testsRerun": "focused types only; no tests",
+  "productPG": 0,
+  "provider": 0,
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 2.387436749995686,
+  "stdout": "goal-plan-confirmation-production-types.stdout.txt",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
