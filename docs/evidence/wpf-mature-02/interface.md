@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **Codex目录兼容新片实施中，实际未开放。** [新最小接口](native-remote-status/interface.md)仅校验固定版本remote-control通知四字段并复用原probe/entry；旧默认行为保持，policy与45s/单目标预算不变。六组直接fake尚未运行；源与组合独审后再按当前holder/资源准入，0新增native。前次失败封存见下一条，不回写旧payload或恢复旧窗口。
+- **Codex目录兼容新片实施中，实际未开放。** [新最小接口](native-remote-status/interface.md)仅校验固定版本remote-control通知四字段并复用原probe/entry；旧默认行为保持，policy与45s/单目标预算不变。六组直接fake已6/6、sh0，源码e7ff已独审；组合固定后再按当前holder/资源准入，0新增native。前次失败封存见下一条，不回写旧payload或恢复旧窗口。
 
 - **原生目录观察已执行并归还运行时段，目录仍未取得。** [本次固定结果](native-catalog-observation/run-report.md)：ready=true/1次model-list；收到已知但不允许继续的 `remoteControl/status/changed`，按原规则停止。1目标已受控关闭、完整stdio和本次两root清理确认，私有原件KEEP；[双审忠实失败收据](native-catalog-observation/result-review.json)。既有授权消费后不重试/扩表；此前[准入错误及更正](native-catalog-observation/preflight-correction.json)不回写。
 
