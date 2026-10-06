@@ -1,6 +1,6 @@
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
-import type { ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
+import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
 export class FlowApiError extends Error {
@@ -84,7 +84,7 @@ export class FlowClient {
   heartbeat(ownership: Ownership, signal?: AbortSignal): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership), signal }); }
   report(batch: EventBatch, signal?: AbortSignal): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch), signal }); }
 
-  protocolPrepare(input: Ownership, signal?: AbortSignal): Promise<ProtocolState> {
+  protocolPrepare(input: ProtocolPrepare, signal?: AbortSignal): Promise<ProtocolState> {
     return this.request('/api/runner/protocol/prepare', { method: 'POST', body: JSON.stringify(input), signal });
   }
   protocolBegin(input: ProtocolCommand, signal?: AbortSignal): Promise<ProtocolDispatchPermit> {

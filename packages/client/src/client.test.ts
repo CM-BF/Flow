@@ -84,7 +84,7 @@ it('carries protocol ownership and command correlation without retrying an uncer
   const ownership = { attemptId: 'attempt-1', ownerVersion: 2 };
   const command = { ...ownership, commandId: 'command-1' };
   try {
-    await client.protocolPrepare(ownership);
+    await client.protocolPrepare({ ...ownership, endpointDigest: 'a'.repeat(64) });
     await expect(client.protocolBegin(command)).rejects.toMatchObject({ code: 'dispatch_uncertain', status: 409 });
     await client.protocolBind({ ...command, remoteTaskId: 'remote-1' });
     await client.protocolUncertain({ ...command, reason: 'send-result-unknown' });
@@ -92,7 +92,7 @@ it('carries protocol ownership and command correlation without retrying an uncer
     await client.protocolRecover();
     await client.protocolState('task/1');
     expect(requests).toEqual([
-      { path: '/api/runner/protocol/prepare', body: ownership },
+      { path: '/api/runner/protocol/prepare', body: { ...ownership, endpointDigest: 'a'.repeat(64) } },
       { path: '/api/runner/protocol/begin', body: command },
       { path: '/api/runner/protocol/bind', body: { ...command, remoteTaskId: 'remote-1' } },
       { path: '/api/runner/protocol/uncertain', body: { ...command, reason: 'send-result-unknown' } },
