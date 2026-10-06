@@ -33,3 +33,11 @@ Read分层：host allow只表示准许；还必须匹配同tool-use ID的顶层�
 成功结果必须同profile runner/task/attempt/native session/sourceMessage、唯一execution、当前input v1、无依赖、一个typed final及同摘要artifact，机械flow.text通过，accepted仍null。结果名称仅 `mechanical-evidence-collected`（真实候选）或 `rehearsal-passed`（注入）；永远不自动accept-delivery。GO须另读实际正文对照四项业务事实作语义判断，不以措辞正则替代语义，也不为了验收器误判补模型调用。失败保留原报告与partial facts，cleanup独立判定。
 
 实际证据见[O10报告](../../docs/evidence/o10/README.md)。本片不证明真实provider、开放式自治、工程文件写改、批量子任务、UI或个人服务部署；不修改个人安装。
+
+## 清理前证据checkpoint
+
+收尾先停止本次自有runner进程组、读取worker/center/failure事实并关闭中心，再独占创建 `checkpoint.json`，同步文件及所在目录。只有checkpoint写入与同步成功且自有进程/中心均停止，才删除专用DB和临时目录；最后再写最终result。
+
+checkpoint失败仍停止/关闭自有执行资源，但将outcome标为failed-or-unknown并保留DB/tmp，不重试native许可。结果中的privateResources只标记本次自有路径/DB名，不能当作自动删除任意路径的授权。操作者先核身份和保存事实后才能人工清理。checkpoint只证明清理前事实；若最终result写失败或进程在清理中退出，应按checkpoint核对剩余资源，不能推断清理已完成。没有模拟掉电/磁盘控制器耐久性，也不声称可以回放模型。
+
+`checkpoint.test.mjs`仅0query：实际checkpoint路径冲突迫使写入失败，核DB/worker报告保留后由测试操作者清理；另一次成功演练核完整checkpoint存在且清理字段尚未伪称完成。不得用这两个注入SDK旅程代替真实native验收。

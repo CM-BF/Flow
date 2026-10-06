@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { readFile, writeFile, mkdtemp, mkdir, rm, realpath } from 'node:fs/promises';
+import { readFile, writeFile, mkdtemp, mkdir, rm, realpath, open } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { resolve, join } from 'node:path';
@@ -50,6 +50,15 @@ async function collect(owner, http, ids, report) {
   }
   report.details = details;
 }
+async function saveCheckpoint(output, report) {
+  const file = await open(join(output, 'checkpoint.json'), 'wx', 0o600);
+  try {
+    await file.writeFile(JSON.stringify({ ...report, checkpointPhase: 'before-resource-removal' }, null, 2) + '\n');
+    await file.sync();
+  } finally { await file.close(); }
+  const directory = await open(output, 'r');
+  try { await directory.sync(); } finally { await directory.close(); }
+}
 export async function run(mode, outputDirectory, authorization, scenario = 'success') {
   assert(['rehearsal', 'native'].includes(mode));
   assert(['success', 'init-difference', 'denied-tool', 'allow-without-read', 'error-result'].includes(scenario));
@@ -69,6 +78,7 @@ export async function run(mode, outputDirectory, authorization, scenario = 'succ
   let app, child, root, madeDatabase = false, owner, http, workerReportPath, deadline;
   try {
     root = await realpath(await mkdtemp(join(tmpdir(), 'flow-o10-')));
+    report.privateResources = { database, directory: root };
     await admin.query(`CREATE DATABASE ${database}`); madeDatabase = true;
     // The owner token remains only in this host closure; never in the runner config or SDK environment.
     const ownerToken = randomUUID();
@@ -120,15 +130,23 @@ export async function run(mode, outputDirectory, authorization, scenario = 'succ
     if (owner && report.ids && http && report.outcome === 'failed-or-unknown') try { await collect(owner, http, report.ids, report); } catch { report.partialFactsUnavailable = true; }
     try { await app?.close(); report.cleanup.centerClosed = true; } catch { report.cleanup.centerClosed = false; }
     try {
-      if (!report.cleanup.runnerStopped) throw new Error('Preserve private database while worker remains unknown');
+      await saveCheckpoint(output, report);
+      report.evidenceCheckpoint = { saved: true, file: 'checkpoint.json' };
+    } catch {
+      report.evidenceCheckpoint = { saved: false, file: 'checkpoint.json' };
+      report.outcome = 'failed-or-unknown'; report.failurePhase = 'evidence-checkpoint';
+    }
+    const mayRemoveResources = report.evidenceCheckpoint.saved && report.cleanup.runnerStopped && report.cleanup.centerClosed;
+    try {
+      if (!mayRemoveResources) throw new Error('Preserve private database until complete facts are saved and owned processes are stopped');
       if (madeDatabase) await admin.query(`DROP DATABASE ${database}`);
       report.remainingDatabases = (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [database])).rows;
       report.cleanup.databaseRemoved = report.remainingDatabases.length === 0;
     } catch { report.cleanup.databaseRemoved = false; }
     await admin.end();
-    try { if (!report.cleanup.runnerStopped) throw new Error('Preserve private resources'); if (root) await rm(root, { recursive: true, force: true }); report.cleanup.privateTemporaryDirectoryRemoved = true; }
+    try { if (!mayRemoveResources) throw new Error('Preserve private resources'); if (root) await rm(root, { recursive: true, force: true }); report.cleanup.privateTemporaryDirectoryRemoved = true; }
     catch { report.cleanup.privateTemporaryDirectoryRemoved = false; }
-    if (Object.values(report.cleanup).some(v => v !== true)) { report.outcome = 'failed-or-unknown'; report.failurePhase = 'cleanup'; }
+    if (Object.values(report.cleanup).some(v => v !== true)) { report.outcome = 'failed-or-unknown'; report.failurePhase = report.evidenceCheckpoint.saved ? 'cleanup' : 'evidence-checkpoint'; }
     report.finishedAt = new Date().toISOString(); await writeFile(resultPath, JSON.stringify(report, null, 2) + '\n', { mode: 0o600 });
   }
   return report;
