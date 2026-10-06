@@ -2,23 +2,23 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 07:12:23 UTC |
+| 最近更新时间 | 2026-10-06 07:20:54 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering |
 | Branch | codex/active-steering |
 | 工作基线 / HEAD | base07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a；源码HEAD 21371153c6d83c67c3a3d7d0051c915c55f7b60b |
 | 工作树dirty状态 | 实现停写，仅此交付metadata待提交 |
-| 工作分支状态 | completed；独立已审待集成 |
+| 工作分支状态 | completed；已审领域已集成main |
 | 检查状态 | PASSED 21371153c6d83c67c3a3d7d0051c915c55f7b60b；16/16 + tsc exit0 |
 | Review | APPROVED 21371153c6d83c67c3a3d7d0051c915c55f7b60b |
-| 已集成main状态 / HEAD | 未集成 |
+| 已集成main状态 / HEAD | 已集成42c1cc85cfbf9fa3ca3fdcbee57dc02394bff6d7；024/routes尚未生产mount |
 | 实现目标 | 21371153c6d83c67c3a3d7d0051c915c55f7b60b |
 | 实现范围 | packages/contracts/src/active-steering.ts,apps/server/src/active-steering,packages/storage/migrations/024-active-steering.sql |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 1 |
 | 当前产出 | 执行中修改指令的持久记录与确认边界已通过独立审查 |
-| 下一可用交付 | 接入实际执行器，核对原生是否收到并消费修改指令 |
+| 下一可用交付 | 本片段已交付；后继接入实际执行器 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -35,3 +35,5 @@ claim0bd47363-30a9-4e83-8927-b7a2b21323ba v1，[回执](../../docs/evidence/chat
 本分支独立模块实现已交付，main尚未接收，不声称用户已能active steering。16/16均为真实PG/HTTP+注入最终回复事务组合，0provider；[证据manifest](../../docs/evidence/chat07/manifest.json)含7个源码与原始输出hash。旧服务未操作；独立审查见review.md，已获APPROVED。
 
 2026-10-06 07:12:23 UTC：独立批准已转录，main待接收；源码/原始hash不变，不重跑16项。原claim v1继续保留待集成，后继仅只读设计，未新建功能或启用生产能力。
+
+2026-10-06 07:20:54 UTC：fresh核main/origin42c1cc85cfbf9fa3ca3fdcbee57dc02394bff6d7，2137115祖先与声明实现scope零diff。领域与薄client已潜在集成，024/routes仍未mount；原审批/16条原始证据保持，未重跑/0provider。全部旧scope停写，本metadata后release claim v1；CHAT08另树领取后继续，未把后继能力勾完。
