@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:37:14 UTC / main ref aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:40:25 UTC / main ref aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -97,3 +97,5 @@
 2026-10-06 12:28:29 UTC：[148源真实快照](../../docs/evidence/d05/snapshot-sharing-148-live.json)记录12:24:33.364Z实际main/clean、领取来源全部已登记，DPERF03获审实现已main。仅替换自有4320，个人服务/标签不动；架构固定快照不重审。
 
 2026-10-06 12:37:14 UTC：[149真实快照](../../docs/evidence/d05/tui-goal-149-live.json)于12:35:18.813Z登记齐全。自有4320现由固定I02 aeb树运行；个人更新窗口中原Flow暂时detached362，main/origin ref仍aeb，反映真实工作目录而非分支回退。窗口未结束前不推进main；其他独立worktree正常。
+
+2026-10-06 12:40:25 UTC：ENG01H 原生工程用途与检查收据已独立领取；候选150源唯一、真实三件套/人读字段/解析通过，见[登记](../../docs/evidence/d05/native-contract-150-registry.json)。个人后台固定更新尚在窗口内，main和看板保持149实采；此登记不提前发布、不重跑工程测试。
