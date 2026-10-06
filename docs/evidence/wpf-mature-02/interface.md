@@ -4,6 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [附件薄client APPROVED回执](attachment-client-review.md)：实现ab1bcb与metadata bea11 raw分别绑定，Lead可读取该唯一review收据。
+- [04历史领域集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/history-integration-ready.json) / [04独审回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/history-independent-review.json) / [当前handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/handoff-current.md)：正式9ac领域已获status_read于11:11:12 UTC APPROVED；请Lead接收领域与027，具体范围/进度只在权威输入维护。
+
 - [唯一C fd窗口最终结果：预算已消费，0目标、计量unknown](fd-canary/run-report.md)。固定编译正常退出且清理完成，后续三项全NOT_RUN；当前停止实际诊断，需后继独立预算/方案才能继续。此链接路由本大task阻塞证据；既有R06独立集成收据不受影响。
 
 - [S01P04 runners.ts 精确移交及登记请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence/docs/evidence/s01p04/interface.md)。仅路由其权威共享路径请求，不复制进度。
