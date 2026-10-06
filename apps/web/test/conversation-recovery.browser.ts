@@ -4,7 +4,7 @@ import { writeFileSync } from "node:fs";
 import { readFile, writeFile, readdir, lstat, statfs, mkdir, mkdtemp, rm, appendFile, realpath } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { Browser, Page } from "@playwright/test";
+import type { Browser, Page, Request, Response } from "@playwright/test";
 import type { RecoveryDatabaseLease, RecoveryWire, startRecoveryFixture } from "./conversation-recovery.fixture";
 
 // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
@@ -36,7 +36,9 @@ const sourcePaths = ["apps/web/src/App.tsx", "apps/web/src/connection/session.ts
 type Gate = { allowRun: true; run: string; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number };
 type Init = { kind: "start"; directory: string; scratch: string; databaseUrl: string; workDeadline: number };
-type WorkerResult = { checks: string[]; pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string> };
+type BodyLossObservation = { path: string | null; key: string | null; bodySha256: string | null; status: number | null;
+  headers: Record<string, string>; events: string[]; failure: string | null; finished: boolean };
+type WorkerResult = { checks: string[]; pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[] };
 
 async function supervisor() {
   requireThat(process.env.FLOW_RECOVERY_BROWSER === "1", "Separate real browser/PG approval is required");
@@ -171,7 +173,7 @@ async function supervisor() {
       if (child.pid) try { process.kill(-child.pid, 0); cleanupErrors.push(`Owned process group ${child.pid} remains`); }
       catch (error) { if ((error as NodeJS.ErrnoException).code !== "ESRCH") cleanupErrors.push(text(error)); }
     }
-    if (lease) { databaseCleanup = await lease.close(); cleanupErrors.push(...databaseCleanup.errors); }
+    if (lease) { databaseCleanup = await lease.close(hardAt); cleanupErrors.push(...databaseCleanup.errors); }
     if (scratch) {
       if (cleanupErrors.some(error => /process group|exit unconfirmed/.test(error))) cleanupErrors.push("Scratch retained because process ownership is unresolved");
       else {
@@ -208,6 +210,7 @@ async function worker(init: Init) {
   const { chromium, expect } = await import("@playwright/test");
   const { startRecoveryFixture } = await import("./conversation-recovery.fixture");
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
+  const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
   let errorBytes = 0;
   const pageError = (error: Error) => {
     errorBytes += Buffer.byteLength(error.message);
@@ -229,6 +232,52 @@ async function worker(init: Init) {
   const postRows = () => fixture!.wire.filter(row => row.method === "POST" && !row.path.includes("browser-session"));
   const run = async (name: string, key: string, operation: () => Promise<void>) => {
     await checkpoint(); coverage[key] = "RUNNING"; try { await operation(); await checkpoint(); checks.push(name); coverage[key] = "PASSED"; } catch (error) { coverage[key] = "FAILED"; throw error; }
+  };
+  const observeTurnBodyLoss = (page: Page, requestedText: string) => {
+    const observation: BodyLossObservation = { path: null, key: null, bodySha256: null, status: null, headers: {}, events: [], failure: null, finished: false };
+    bodyLoss.push(observation);
+    let selected: Request | undefined;
+    const onRequest = (request: Request) => {
+      if (selected || request.method() !== "POST" || new URL(request.url()).pathname !== `/api/conversations/${fixture!.conversationId}/turns`) return;
+      const body = request.postData(); if (!body) return;
+      try { if (JSON.parse(body).text !== requestedText) return; } catch { return; }
+      selected = request; observation.path = new URL(request.url()).pathname;
+      observation.key = request.headers()["idempotency-key"] ?? null; observation.bodySha256 = digest(body); observation.events.push("request");
+    };
+    const onResponse = (response: Response) => {
+      if (response.request() !== selected) return;
+      observation.status = response.status(); const headers = response.headers();
+      for (const name of ["content-length", "content-type", "connection", "cache-control"]) observation.headers[name] = headers[name] ?? "";
+      observation.events.push("response-headers");
+    };
+    const onFailed = (request: Request) => {
+      if (request !== selected) return;
+      observation.failure = request.failure()?.errorText ?? null; observation.events.push("requestfailed");
+    };
+    const onFinished = (request: Request) => { if (request === selected) { observation.finished = true; observation.events.push("requestfinished"); } };
+    page.on("request", onRequest); page.on("response", onResponse); page.on("requestfailed", onFailed); page.on("requestfinished", onFinished);
+    const stop = () => { page.off("request", onRequest); page.off("response", onResponse); page.off("requestfailed", onFailed); page.off("requestfinished", onFinished); };
+    stopObservers.push(stop);
+    return async (row: RecoveryWire) => {
+      const deadline = Math.min(Date.now() + 2000, init.workDeadline);
+      try {
+        // Playwright requestfailed is the body-failure event; response.finished() is not awaited.
+        while (!observation.failure || !row.fault?.socketClosed) {
+          await checkpoint(); requireThat(Date.now() < deadline, "Same-request ACK body failure observation deadline"); await sleep(20);
+        }
+        expect(observation.events).toEqual(["request", "response-headers", "requestfailed"]); expect(observation.finished).toBe(false);
+        expect(observation.failure).toMatch(/CONTENT_LENGTH_MISMATCH|FAILED/);
+        expect({ path: observation.path, key: observation.key, bodySha256: observation.bodySha256, status: observation.status })
+          .toEqual({ path: row.path, key: row.key, bodySha256: digest(row.body), status: row.status });
+        requireThat(row.responseBody && row.fault, "Complete real ACK and fault evidence required");
+        const bytes = Buffer.from(row.responseBody), fault = row.fault;
+        expect(row.responseSha256).toBe(digest(bytes)); expect(fault.contentLength).toBe(bytes.length);
+        expect(observation.headers).toEqual({ "content-length": String(bytes.length), "content-type": fault.contentType, "connection": "close", "cache-control": "no-store" });
+        expect(fault.kind).toBe("truncated-ack-body"); expect(fault.prefixBytes).toBe(1); expect(bytes.length).toBeGreaterThan(fault.prefixBytes);
+        expect(fault.prefixSha256).toBe(digest(bytes.subarray(0, fault.prefixBytes)));
+        expect([fault.headersFlushed, fault.prefixFlushed, fault.endFlushed, fault.socketClosed]).toEqual([true, true, true, true]); expect(fault.error).toBeUndefined();
+      } finally { stop(); }
+    };
   };
   try {
     fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, directory: init.directory, cacheDirectory: join(init.scratch, "vite-cache"), checkpoint }, lifetime.signal);
@@ -326,15 +375,23 @@ async function worker(init: Init) {
       expect((await records(page)).find(record => record.id === draftId)?.data?.text).toBe("Tab A protected draft"); await other.close(); await page.bringToFront();
     });
     await run("lost turn ACK preserves exact key/body; reload and re-auth read never submit; explicit retry replays", "sameKeyTurn", async () => {
-      await page.getByRole("radio", { name: "Send now", exact: true }).check(); fixture!.dropNext("turn"); await input().press("Enter");
+      await page.getByRole("radio", { name: "Send now", exact: true }).check();
+      const turnRows = () => postRows().filter(row => row.path === `/api/conversations/${fixture!.conversationId}/turns`);
+      expect(turnRows()).toHaveLength(0);
+      const verifyBodyLoss = observeTurnBodyLoss(page, await input().inputValue()); fixture!.dropNext("turn"); await input().press("Enter");
       await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
-      const first = postRows().find(row => /\/turns$/.test(row.path))!; expect(first.fault).toBeTruthy(); expect(JSON.parse(first.body).attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
+      expect(turnRows()).toHaveLength(1); const first = turnRows()[0]!; await verifyBodyLoss(first);
+      expect(JSON.parse(first.body).attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
       await input().fill("Next draft stays independent"); await expect.poll(async () => (await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
-      const posts = postRows().length; await page.reload(); await expect(input()).toBeVisible(); expect(postRows()).toHaveLength(posts);
+      const posts = postRows().length; await page.reload(); await expect(input()).toBeVisible(); expect(postRows()).toHaveLength(posts); expect(turnRows()).toHaveLength(1);
       const dialog = await openRecovery(); const command = dialog.locator("li").filter({ hasText: "outbox receipt" }); await expect(command).toHaveCount(1);
-      await command.getByRole("button", { name: "Retry original request", exact: true }).click(); await expect.poll(() => postRows().filter(row => /\/turns$/.test(row.path)).length).toBe(2);
-      const retry = postRows().filter(row => /\/turns$/.test(row.path))[1]!; expect({ key: retry.key, body: retry.body }).toEqual({ key: first.key, body: first.body });
+      expect(turnRows()).toHaveLength(1); await command.getByRole("button", { name: "Retry original request", exact: true }).click(); await expect.poll(() => turnRows().length).toBe(2);
+      const retry = turnRows()[1]!; expect({ key: retry.key, body: retry.body }).toEqual({ key: first.key, body: first.body });
       await expect.poll(async () => (await records(page)).find(record => record.kind === "command")?.phase).toBe("accepted");
+      expect(turnRows()).toHaveLength(2); requireThat(first.responseBody && retry.responseBody, "Both real ACK identities required");
+      const originalAck = JSON.parse(first.responseBody), retryAck = JSON.parse(retry.responseBody);
+      expect(retryAck.replayed).toBe(true); expect({ id: retryAck.turn.id, taskId: retryAck.turn.taskId }).toEqual({ id: originalAck.turn.id, taskId: originalAck.turn.taskId });
+      expect(retry.responseSha256).toBe(digest(retry.responseBody)); expect(retry.fault).toBeUndefined();
       await page.keyboard.press("Escape"); expect((await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
       expect(fixture!.wire.some(row => /\/stream/.test(row.path) && row.cookie && !row.bearer && row.status === 200)).toBe(true); coverage.cookieSseHandshake = "PASSED";
     });
@@ -386,11 +443,12 @@ async function worker(init: Init) {
   } catch (error) { failure = text(error); }
   finally {
     clearTimeout(deadline); lifetime.abort();
+    for (const stop of stopObservers) stop();
     // The supervisor bounds pending startup/close with the owned worker + Chrome groups.
     try { await browser?.close(); } catch (error) { cleanupErrors.push("browser: " + text(error)); }
     try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
     if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
-    const result: WorkerResult = { checks, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage };
+    const result: WorkerResult = { checks, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss };
     const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
     await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
     process.send?.({ kind: "result", result }, () => { process.disconnect(); });

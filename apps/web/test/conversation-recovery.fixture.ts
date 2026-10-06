@@ -1,4 +1,5 @@
 import { randomUUID, createHash } from "node:crypto";
+import assert from "node:assert/strict";
 import { createServer as httpServer, request as httpRequest, type IncomingMessage, type ServerResponse } from "node:http";
 import { fileURLToPath } from "node:url";
 import { writeFileSync } from "node:fs";
@@ -8,7 +9,71 @@ import type { Pool } from "pg";
 
 export const root = fileURLToPath(new URL("../../../", import.meta.url));
 export const evidence = root + "docs/evidence/wpf-conversation-recovery/";
-export interface RecoveryWire { method: string; path: string; key: string | null; body: string; status: number; cookie: boolean; bearer: boolean; csrf: boolean; fault?: string }
+export interface RecoveryWire {
+  method: string; path: string; key: string | null; body: string; status: number; cookie: boolean; bearer: boolean; csrf: boolean;
+  responseBody?: string; responseSha256?: string;
+  fault?: { kind: "truncated-ack-body"; contentLength: number; contentType: string; prefixBytes: number; prefixSha256: string;
+    headersFlushed: boolean; prefixFlushed: boolean; endFlushed: boolean; socketClosed: boolean; error?: string };
+}
+const sha = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex");
+type CommandKind = "turn" | "queue" | "create";
+
+/** Buffer only a bounded command ACK, never session credentials or streaming content. */
+async function readAcknowledgement(source: IncomingMessage, kind: CommandKind) {
+  const chunks: Buffer[] = []; let size = 0;
+  for await (const chunk of source) {
+    size += chunk.length; assert.ok(size <= 128 * 1024, "Command ACK exceeds fixture bound"); chunks.push(chunk);
+  }
+  const bytes = Buffer.concat(chunks), contentType = source.headers["content-type"] ?? "";
+  assert.ok(source.complete && bytes.length > 1, "Complete upstream ACK required");
+  assert.ok(!source.headers["content-encoding"] || source.headers["content-encoding"] === "identity", "Compressed ACK is not injectable");
+  assert.match(contentType, /^application\/json(?:\s*;|$)/i);
+  const length = source.headers["content-length"], transfer = source.headers["transfer-encoding"];
+  assert.ok(!(length && transfer) && (!transfer || transfer.toLowerCase() === "chunked"), "Ambiguous upstream framing");
+  if (length !== undefined) { assert.match(length, /^\d+$/); assert.equal(Number(length), bytes.length); }
+  assert.ok(bytes.equals(Buffer.from(bytes.toString("utf8"))), "ACK must be valid UTF8");
+  const ack: unknown = JSON.parse(bytes.toString("utf8"));
+  assert.ok(ack && typeof ack === "object" && !Array.isArray(ack));
+  const identity = (ack as Record<string, unknown>)[kind === "turn" ? "turn" : kind === "queue" ? "item" : "conversation"];
+  assert.ok(identity && typeof identity === "object" && "id" in identity && typeof identity.id === "string", "Real accepted identity required");
+  return { bytes, contentType };
+}
+
+/** Lose a genuine ACK suffix after its headers; a pre-header reset may be transparently retried. */
+async function truncateAcknowledgement(response: ServerResponse, bytes: Buffer, contentType: string, row: RecoveryWire, signal: AbortSignal) {
+  signal.throwIfAborted();
+  const socket = response.socket; assert.ok(socket && !socket.destroyed);
+  const prefix = bytes.subarray(0, 1);
+  const fault: NonNullable<RecoveryWire["fault"]> = { kind: "truncated-ack-body", contentLength: bytes.length, contentType,
+    prefixBytes: prefix.length, prefixSha256: sha(prefix), headersFlushed: false, prefixFlushed: false, endFlushed: false, socketClosed: false };
+  row.fault = fault;
+  await new Promise<void>((resolve, reject) => {
+    const fail = (message: string) => { fault.error ??= message; socket.destroy(); };
+    const onResponseError = () => fail("Downstream ACK response error");
+    const onSocketError = () => fail("Downstream ACK socket error");
+    const onAbort = () => fail("ACK fault aborted");
+    const timeout = setTimeout(() => fail("ACK fault close deadline"), 1000);
+    socket.once("close", hadError => {
+      clearTimeout(timeout); signal.removeEventListener("abort", onAbort);
+      response.off("error", onResponseError); socket.off("error", onSocketError); fault.socketClosed = true;
+      if (hadError || fault.error || !fault.prefixFlushed || !fault.endFlushed) reject(Error(fault.error ?? "ACK fault closed before local flush"));
+      else resolve();
+    });
+    response.once("error", onResponseError); socket.once("error", onSocketError); signal.addEventListener("abort", onAbort, { once: true });
+    try {
+      signal.throwIfAborted();
+      response.writeHead(row.status, { "content-type": contentType, "content-length": bytes.length, "connection": "close", "cache-control": "no-store" });
+      response.flushHeaders(); fault.headersFlushed = true;
+      response.write(prefix, error => {
+        if (error) { fail("ACK prefix write failed"); return; }
+        fault.prefixFlushed = true; socket.end(() => { fault.endFlushed = true; });
+      });
+    } catch { fail("ACK fault setup failed"); }
+  });
+}
+
+type ConnectionObservation = { phase: "before-marker" | "after-marker"; attempt: number; elapsedMs: number;
+  total: number | null; sessions: { pid: number; state: string | null }[]; code?: string };
 
 export interface RecoveryFixtureOptions {
   databaseUrl: string;
@@ -25,6 +90,7 @@ export class RecoveryDatabaseLease {
   readonly state = { attempted: false, confirmed: false, markerWritten: false };
   private admin: Pool | undefined;
   private databasePool: Pool | undefined;
+  private readonly observations: ConnectionObservation[] = [];
   constructor(private readonly adminUrl: string, private readonly directory: string) { this.record(); }
   get url() { const value = new URL(this.adminUrl); value.pathname = "/" + this.database; return value.href; }
   private record() { writeFileSync(join(this.directory, "database-owner.json"), JSON.stringify({ database: this.database, marker: this.marker, ...this.state }), { mode: 0o600 }); }
@@ -48,7 +114,34 @@ export class RecoveryDatabaseLease {
     await this.databasePool.end(); this.databasePool = undefined;
     await checkpoint();
   }
-  async close() {
+  private async observeZero(phase: ConnectionObservation["phase"], cleanupDeadline: number) {
+    assert.ok(this.admin);
+    const began = performance.now(), deadline = Math.min(began + 1000, cleanupDeadline);
+    for (let attempt = 1; attempt <= 8; attempt++) {
+      const remainingMs = Math.floor(deadline - performance.now());
+      if (remainingMs <= 0) break;
+      const query = { text: "SELECT pid,state,count(*) OVER()::int AS total FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 16",
+        values: [this.database], query_timeout: Math.max(1, Math.min(250, remainingMs)) };
+      try {
+        // pg 8.23.1 honors per-query query_timeout; no concurrent/raced orphan query.
+        const { rows } = await this.admin.query<{ pid: number; state: string | null; total: number }>(query);
+        const total = rows[0]?.total ?? 0;
+        assert.ok(Number.isSafeInteger(total) && total >= rows.length);
+        assert.ok(rows.every(row => Number.isSafeInteger(row.pid) && (row.state === null || typeof row.state === "string" && row.state.length <= 64)));
+        this.observations.push({ phase, attempt, elapsedMs: performance.now() - began, total, sessions: rows.map(({ pid, state }) => ({ pid, state })) });
+        if (performance.now() >= deadline) break;
+        if (total === 0) return 0;
+      } catch (error) {
+        const code = error && typeof error === "object" && "code" in error && typeof error.code === "string" && /^[A-Z0-9]{5}$/.test(error.code) ? error.code : "OBSERVATION_FAILED";
+        this.observations.push({ phase, attempt, elapsedMs: performance.now() - began, total: null, sessions: [], code });
+        throw Error(`Owned DB connection observation failed (${code}); no DROP.`);
+      }
+      const delay = Math.min(50, deadline - performance.now());
+      if (delay > 0) await new Promise<void>(resolve => setTimeout(resolve, delay));
+    }
+    throw Error("Owned DB zero-connection observation deadline/attempt limit; no FORCE or termination.");
+  }
+  async close(cleanupDeadline: number) {
     const errors: string[] = [];
     let remaining: unknown[] | null = null, connections: number | null = null, removed = false;
     try { await this.databasePool?.end(); this.databasePool = undefined; } catch (error) { errors.push("marker pool: " + String(error)); }
@@ -56,7 +149,7 @@ export class RecoveryDatabaseLease {
     try {
       if (this.admin) {
         remaining = (await this.admin.query("SELECT datname FROM pg_database WHERE datname=$1", [this.database])).rows;
-        connections = Number((await this.admin.query("SELECT count(*) FROM pg_stat_activity WHERE datname=$1", [this.database])).rows[0].count);
+        connections = await this.observeZero("before-marker", cleanupDeadline);
         if (remaining.length && this.state.confirmed && this.state.markerWritten && connections === 0) {
           const { Pool } = await import("pg");
           const check = new Pool({ connectionString: this.url, max: 1, connectionTimeoutMillis: 1500, query_timeout: 2500, statement_timeout: 2000 });
@@ -64,7 +157,8 @@ export class RecoveryDatabaseLease {
             const rows = (await check.query("SELECT id FROM public.recovery_fixture_owner")).rows;
             if (rows.length !== 1 || rows[0].id !== this.marker) throw Error("Database ownership marker does not match; no DROP.");
           } finally { await check.end(); }
-          connections = Number((await this.admin.query("SELECT count(*) FROM pg_stat_activity WHERE datname=$1", [this.database])).rows[0].count);
+          connections = null; // The marker connection must be observed closed independently.
+          connections = await this.observeZero("after-marker", cleanupDeadline);
           if (connections !== 0) throw Error("Database still has connections; no FORCE or unrelated termination.");
           await this.admin.query(`DROP DATABASE "${this.database}"`);
           remaining = (await this.admin.query("SELECT datname FROM pg_database WHERE datname=$1", [this.database])).rows;
@@ -74,7 +168,7 @@ export class RecoveryDatabaseLease {
       } else if (this.state.attempted) errors.push("No admin observer available for attempted CREATE cleanup.");
     } catch (error) { errors.push("owned database: " + String(error)); }
     try { await this.admin?.end(); } catch (error) { errors.push("admin pool: " + String(error)); }
-    const result = { database: this.database, ...this.state, remaining, connections, removed, errors };
+    const result = { database: this.database, ...this.state, remaining, connections, removed, errors, observations: this.observations };
     writeFileSync(join(this.directory, "database-cleanup.json"), JSON.stringify(result, null, 2), { mode: 0o600 });
     return result;
   }
@@ -91,9 +185,11 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   ]);
   await checkpoint();
   const token = randomUUID(), wire: RecoveryWire[] = [], responses = new Set<ServerResponse>();
+  const ackWrites = new Set<Promise<void>>(), ackErrors: string[] = [];
   const pool = new Pool({ connectionString: options.databaseUrl, max: 1, connectionTimeoutMillis: 2000, query_timeout: 4000, statement_timeout: 4000 });
   let app: Awaited<ReturnType<typeof createServer>> | undefined, vite: Awaited<ReturnType<typeof viteServer>> | undefined;
-  let center = "", lost: "turn" | "queue" | "create" | undefined, wireBytes = 0;
+  let center = "", lost: CommandKind | undefined, wireBytes = 0;
+  const measureWire = () => { wireBytes = Buffer.byteLength(JSON.stringify(wire)); assert.ok(wireBytes <= 1024 * 1024, "Fixture wire budget exceeded"); };
   const lifecycle = new AbortController(), bound = AbortSignal.any([signal, lifecycle.signal]);
   const publicServer = httpServer(async (request, response) => {
     responses.add(response); response.on("close", () => responses.delete(response));
@@ -131,11 +227,27 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
             const status = source.statusCode;
             if (status === undefined) throw Error("Fixture upstream has no HTTP status.");
             const row: RecoveryWire = { method, path, key: typeof request.headers["idempotency-key"] === "string" ? request.headers["idempotency-key"] : null, body, status, cookie: request.headers.cookie !== undefined, bearer: request.headers.authorization !== undefined, csrf: request.headers["x-flow-csrf"] !== undefined };
-            wireBytes += Buffer.byteLength(JSON.stringify(row)); if (wireBytes > 1024 * 1024) throw Error("Fixture wire budget exceeded."); wire.push(row);
+            wire.push(row); measureWire();
             const kind = /\/turns$/.test(path) ? "turn" : /\/queue$/.test(path) ? "queue" : path === "/api/conversations" ? "create" : undefined;
-            if (method === "POST" && status >= 200 && status < 300 && lost && lost === kind) {
-              lost = undefined; row.fault = "center committed, response deliberately dropped";
-              source.once("end", () => { response.destroy(); finish(); }); source.resume(); return;
+            if (method === "POST" && status >= 200 && status < 300 && kind) {
+              const inject = lost === kind; if (inject) lost = undefined;
+              const operation = (async () => {
+                const { bytes: ack, contentType } = await readAcknowledgement(source, kind);
+                row.responseBody = ack.toString("utf8"); row.responseSha256 = sha(ack); measureWire();
+                if (inject) await truncateAcknowledgement(response, ack, contentType, row, bound);
+                else {
+                  for (const name of ["content-type", "cache-control", "set-cookie"]) {
+                    const value = source.headers[name]; if (value !== undefined) response.setHeader(name, value);
+                  }
+                  response.writeHead(status, { "content-length": ack.length }); response.end(ack);
+                }
+                measureWire();
+              })().catch(error => {
+                // Retain a fixture failure even if response.close already settled the proxy promise.
+                if (ackErrors.length < 16) ackErrors.push(inject ? "ACK body-loss injection failed" : "Command ACK capture/forward failed");
+                response.destroy(); failed(error instanceof Error ? error : Error(String(error)));
+              });
+              ackWrites.add(operation); void operation.then(() => ackWrites.delete(operation)); return;
             }
             // In particular, Set-Cookie is a string[]: never join separate cookie updates.
             for (const name of ["content-type", "cache-control", "set-cookie"]) {
@@ -166,6 +278,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     lifecycle.abort(); for (const response of responses) response.destroy(); publicServer.closeAllConnections();
     await attempt("vite", async () => { await vite?.close(); });
     await attempt("public HTTP", async () => { if (publicServer.listening) await new Promise<void>((resolve, reject) => publicServer.close(error => error ? reject(error) : resolve())); });
+    await attempt("command ACK writes", async () => { await Promise.all(ackWrites); measureWire(); if (ackErrors.length) throw Error(ackErrors.join("; ")); });
     await attempt("center", async () => { await app?.close(); });
     await attempt("fixture pool", () => pool.end());
     await save(true);

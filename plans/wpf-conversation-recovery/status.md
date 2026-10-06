@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:14 UTC |
+| 最近更新 | 2026-10-06 17:28 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 原材料direct27已通过；真实浏览器fixture已改原生HTTP保公共Host，窄修尚未运行 |
+| 当前产出 | 原材料direct27已通过；正在原两harness修真实ACK body-loss和owned DB零连接观察，source-only |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
 | 当前阻塞 | ACTIVE: 真实浏览器与完整构建仍等待运行资源和中心会话语义核验；本段定向检查已完成 |
 | 需用户决定 | NONE |
@@ -119,3 +119,7 @@ Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据�
 ## 2026-10-06T17:14:15.495150+00:00 — native HTTP fixture固定源码安全点
 
 固定 `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，只有原fixture传输修改，[19源manifest](../../docs/evidence/wpf-conversation-recovery/native-proxy-checkpoint.json)逐项核current=fixed、其余18源=1b8。原生HTTP连接owned center端口但保浏览器Host/raw caller headers，不合并Set-Cookie、不合成Origin；请求体原字节/Content-Length，响应直接pipe保SSE backpressure，浏览器close/父abort/错误销毁owned upstream，故意丢ACK先drain后断响应。全部为源码实现，NOT_RUN。旧27direct/raw不变、完整feature target UNKNOWN/review NOT_STARTED；本次0类型/运行/空间采样，剩预算未消费。
+
+## 2026-10-06 17:28 UTC — body-loss / PG关闭source-only修复启动
+
+本人核[管理fresh观察](../../docs/evidence/wpf-conversation-recovery/bodyloss-claim.json)：6ff v4原21/本owner/WT/branch/无overlap，02398a clean，apps/web等ec91。preheaders destroy有透明重试风险；本树pg8.23.1/pg-pool3.14.0的Pool.end先移除客户端再等异步关闭，见[root独核](../../docs/evidence/wpf-conversation-recovery/bodyloss-pg-root-risk.json)，不冒TUI故障归因或实际复现。仅两harness及own记录改写：严格真实ACK prefix与同Request headers→failure证据、两个ownedDB检查点有界零连接观察。CREATE/Queue仅helper支持，实际journey仍PENDING；原90s/15s清理不扩，direct剩25.426s/types剩7.186s未使用。0import/types/test/HTTP/PG/Chrome/free/install。

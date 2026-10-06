@@ -50,3 +50,7 @@ Send/Queue均先从现绑定检查本稿完整Input选择与composer同序、同
 ### 2026-10-06 17:09 UTC 验证入口修正
 
 RECOVERY01-05真实浏览器入口先修原fixture代理传输：public Host/Origin/Sec-Fetch-Site按浏览器请求送达私有center；多个Set-Cookie分别转发，SSE保持流式取消/清理。只改既有fixture及own记录，当前source-only；历史1b8 direct27不覆盖该修正，browser与三项中心语义仍未验。
+
+### 2026-10-06 17:28 UTC 验证前提窄修
+
+RECOVERY01-05保留真实body-loss：完整中心ACK先验证并记录，再送真实headers/full字节Content-Length与严格正文prefix，优雅关闭连接；既有lost-turn须观测同一Request的headers→requestfailed和exact1 preRetry/exact2 postRetry、原key/body/refs。CREATE/Queue仅支持故障helper，不冒实际用例通过。ownedDB清理在marker前后均短时观察零连接，受同一parent硬截止；持续连接/查询错为失败，不FORCE、不终止其他连接。此段source-only，无新运行门槛。
