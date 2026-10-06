@@ -511,3 +511,9 @@ panels给原REQ43独立活动模块候选八literal：`apps/web/src/conversation
 06:04 renderer接线寿命补充（w01固定3d只读）：App关闭conversation仍setVisible(false)并保留projection/views缓存，hasDraft不能作pane活跃许可。拟宿主adapter拥有display lease代际，Activity cleanup失效/abort旧port、resume新代际，稳定ReplyBindings与纯disclosure保留，projection cache仍权威；旧port捕获代际不能hide→show复活。session.dispose在host异步清理前同步closed/abort。按真实message/turn/task/detail身份允许非focused split A/B各自读，嫁接身份0GET；禁用后restore不偷偷activate。只管理UI绑定寿命，不新建授权/enable权威，仍原八scope候选、未实施。
 
 Root本段实际官方资料核对来源：[assistant-ui导航](https://www.assistant-ui.com/llms.txt)、[data/tool显示注册](https://www.assistant-ui.com/docs/api-reference/tools/rendering)、[Message primitives](https://www.assistant-ui.com/docs/api-reference/primitives/message)、[Claude SDK streaming output](https://code.claude.com/docs/en/agent-sdk/streaming-output)。采用边界仅显示注册不赋执行权限、block结束不等工具执行成功；实装行为仍以当前固定版本源码/已审契约为准。本管理者归档root已访问来源，未独立浏览或据文档宣称CHAT05流式实装，无新增需求/范围。
+
+## 06:09 真实两轮窄屏人工观察补证
+
+[真实queue-live截图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live/second-reply-dark-narrow.png)由root人工目视，区别此前queue-live-preflight synthetic。管理只读manifest/checks，实际确认observedAt06:04:30.199828Z、web3d4985fca060155435b159e0467815bf8e88b8b8、centerRunnerfb906cb42391971a8b315dbd813f7633927d7265、caller0695bae99a20acd639b02826bf092c64040a21a1与CLOSED2/2，checks PASSED_TWO_QUERY_QUEUE_AND_VISIBLE_MEMORY、结束06:02:28.394Z；不重新测试。
+
+Root目视真实两轮中文回复，底部同时0 waiting loaded、两处Execution details、Requested runner-default/locked/Read-only/Thinking off/Unpinned legacy、禁用Thinking/Tools/Steer和长footer，配置说明约占底部三分之一。这是定性截图观察，非输入延迟/完整产品复验，不撤销功能通过。既有U11后继按真实聊天与折叠详情链优先，再单一外层execution disclosure；保留model/access/queue主要项、可达技术语义、unsupported/unknown明确，用同390×844与键盘验证。完整归属/hash见[观察证据](queue-live-ux-observation.json)。

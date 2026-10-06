@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:07 UTC / 真实排队验收窗口已结束；等待组合集成准确基线 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:09 UTC / 执行活动模块实施中；两项已审片段等待组合基线与部署 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -192,3 +192,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 06:06 活动canonical已实际到并核，不因等待登记误写未开工：[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md)598e5e2e78d7ef57d1add8e6ee797f519da1c0c8 clean，M2/P1/implementation、4TODO、checksnot_run/reviewnot_started/targetUNKNOWN、human完整；[管理初核](../../docs/evidence/web-platform/activity01-canonical-audit.json)。来源已给root统一登记，账本领取与状态卡部署仍分开。
 
 06:07 GO经root更新：真实queue两query窗口实际06:02结束，2/2封存且GO独立功能验收通过，main冻结解除。当前等待原因已从模型窗口改为Lead组合接收后准确mainbase；历史06:02管理观察保留，不倒改当时信息。ACTIVITY首source登记已由GO转Lead，尚无部署回执，不空采；F01跨reload未知原key恢复/steer等后继仍开放。
+
+06:09 ACTIVITY作者报告首projection16直接检查通过，仍无固定candidate；正补reset/同ID迟到隔离及UI/fixture，不提前批准。root已真正目视queue-live两轮窄屏图（非旧synthetic），固定manifest/检查封存2of2已由管理只读核字段；[后继布局观察](../../docs/evidence/web-platform/queue-live-ux-observation.json)归原U11/REQ43，功能仍通过、0本队重测/模型。K02/renderer集成base与source部署仍待Lead精确回执，不重复API。
