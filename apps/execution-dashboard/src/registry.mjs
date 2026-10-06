@@ -36,6 +36,7 @@ const assignments = [
   ['X02', '插件中心登记与命令', '工作线', 'plugin-registry', 'x02-plugin-registry'],
   ['WPF-PERF02', '活动窗口与阅读稳定', '工作线', 'web-activity-window', 'wpf-perf02-activity-window'],
   ['CHAT02', '真实助手正文事件', '工作线', 'conversation-native-events', 'chat02-native-messages'],
+  ['WPF-CHAT01', '产品持续对话', '工作线', 'web-conversations', 'wpf-chat01-conversations'],
   ['CHAT01', '持久对话与回复', '工作线', 'conversation-center', 'chat01-conversations'],
   ['D05', '代码架构视图', '工程协作', 'dashboard-architecture', 'd05-architecture-view'],
   ['D04', '多 Lead 领取协调', '工程协作', 'dashboard-coordination', 'd04-coordination'],
