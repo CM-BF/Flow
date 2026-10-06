@@ -1,0 +1,37 @@
+{
+  "observedAt": "2026-10-06T13:24:20.760Z",
+  "sourceHead": "ae04ef2b0a9992d1426d114a415cee2a6febfdac",
+  "lockSha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+  "source": {
+    "files": 792,
+    "bytes": 5782968,
+    "rounded4kBytes": 7467008
+  },
+  "seed": {
+    "entries": 27130,
+    "indexes": 581,
+    "contentFiles": 26549,
+    "logicalBytes": 502905916,
+    "allocatedReportedBytes": 579477504,
+    "round4kBytes": 579477504
+  },
+  "hostMissing": [],
+  "foreignMissing": 102,
+  "availableBytes": 2023800832,
+  "readOnly": true,
+  "noNewBuild": true,
+  "conservatism": {
+    "oldMinimumFreeBytes": 2684354560,
+    "unchanged": true,
+    "sharedReserveBytes": 1073741824,
+    "artifactEnforcedBytes": 1073741824,
+    "possibleExtraBytes": 536870912,
+    "notes": [
+      "Narrowed seed has 6.5x fewer filesystem entries and 8.2x fewer logical bytes than whole store, reducing clone metadata work.",
+      "This observation did not hash content or execute an install. Package integrity/eligibility remains enforced by later pinned pnpm offline frozen install.",
+      "APFS per-entry metadata, temporary installer peak and concurrent disk writes are not measured; reported allocated blocks cannot prove peak allocation or reservation.",
+      "Copying selected content normally could require another 579477504 bytes in addition to artifact, so only authorized independent clone strategy is proposed.",
+      "Current available < unchanged 2.5 GiB. No full build admitted."
+    ]
+  }
+}

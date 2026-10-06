@@ -1,0 +1,47 @@
+{
+  "task": "SVC06",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review / gpt-6-astra",
+  "reviewedAt": "2026-10-06 13:29:15 UTC",
+  "state": "APPROVED",
+  "approvalScope": "Bounded protection and legacy-compatible integration slice only. Full artifact construction, artifact-launched host, refresh/resume/dependency-loss positive journey, and personal deployment remain unapproved/NOT_RUN.",
+  "target": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d",
+  "observedDelivery": "61356150c2a04390c8581fd7529005c52d1cb683",
+  "base": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "binding": {
+    "manifestSha256": "a63ec67bdedab975994ab5917c5494c7bd63f771993ec175d137cf4d98799146",
+    "groups": {
+      "source": 14,
+      "inputs": 12,
+      "raw": 40
+    },
+    "mismatches": [],
+    "inputDeltaFromBase": []
+  },
+  "reviewerTestRuns": 0,
+  "reviewerBuilds": 0,
+  "providerCalls": 0,
+  "findings": [],
+  "readCoverage": [
+    "All 14 changed source entries: 8 backend-release JS/Python implementation and tests/probe, plus complete CLI/preview/maintenance/README delta.",
+    "Direct process/environment/Web artifact/release/static host seams and maintenance fixture cleanup.",
+    "Original green/failure/exit files, independent clone identity, offline failure evidence and resource/seed planning limits."
+  ],
+  "acceptedFacts": [
+    "Finite descriptor/target denial, hash/content/link/hardlink/Node identity checks and before-hashing oversize denial.",
+    "macOS independent clonefile path without copy/hardlink fallback; small clone test proves independent seed edits.",
+    "Original legacy start/stop and invalid explicit backend before drain preserve existing PIDs and accepting gate.",
+    "66 bindings fixed/current match; 12 inputs identical to base. 8 distinct historical author observations across rounds, not a final8/8."
+  ],
+  "openGates": [
+    "Two full builds failed; exact second pnpm error unrecorded. Store/v3 correction remains inference for that failure, not proven full-success causality.",
+    "Historical empty-cache test predates final2.5GiB floor; no replay under current floor.",
+    "2.5GiB is preflight estimate, not reservation/physical peak proof. Seed narrowed closure is read-only type/size planning, not integrity/install proof.",
+    "No new full build, pinned host positive, late imports after dev-directory loss, actual release/resume journey, or personal service operation was run/approved.",
+    "No FS/OS hard-deadline, crash durability or malicious same-UID isolation claim."
+  ],
+  "nonblockingMetadataNote": {
+    "path": "docs/evidence/svc06/README.md",
+    "detail": "Clone row cites clone-final.txt for two clone checks, but that raw contains unknown-source denial plus independent-clone check. Existing-destination/symlink refusal is in artifact-denials.txt. Correct only the row reference; aggregate8 distinct count remains supported; no rerun needed."
+  }
+}
