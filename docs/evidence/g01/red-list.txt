@@ -1,0 +1,37 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/project-graph
+
+ ❯ apps/server/src/projects/projects.test.ts (6 tests | 1 failed) 1052ms
+   ✓ persists personal workspace and a queryable empty project without submitting execution tasks 46ms
+   ✓ adds an unbound versioned node, retains old graph and replays one durable command result 29ms
+   ✓ serializes opposite dependency proposals per project while another project keeps progressing 112ms
+   ✓ fences project, node and parent versions and refuses tree cycles or silently truncated references 89ms
+   ✓ binds an existing task once, reads authoritative live state and preserves graph history across restart 113ms
+   × lists durable projects with a bounded cursor and inherits owner-only HTTP authorization 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/projects/projects.test.ts > lists durable projects with a bounded cursor and inherits owner-only HTTP authorization
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ apps/server/src/projects/projects.test.ts:169:25
+    167|   do {
+    168|     const page = await request(`/api/projects?limit=2${after ? `&after…
+    169|     expect(page.status).toBe(200); expect(page.body.projects.length).t…
+       |                         ^
+    170|     ids.push(...page.body.projects.map((item: { id: string }) => item.…
+    171|     after = page.body.nextCursor ?? '';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  19:42:57
+   Duration  1.43s (transform 159ms, setup 0ms, import 298ms, tests 1.05s, environment 0ms)

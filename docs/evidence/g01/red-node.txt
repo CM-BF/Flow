@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/project-graph
+
+ ❯ apps/server/src/projects/projects.test.ts (2 tests | 1 failed) 425ms
+   ✓ persists personal workspace and a queryable empty project without submitting execution tasks 43ms
+   × adds an unbound versioned node, retains old graph and replays one durable command result 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/projects/projects.test.ts > adds an unbound versioned node, retains old graph and replays one durable command result
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ apps/server/src/projects/projects.test.ts:75:27
+     73|   const input = { kind: 'add-node', title: 'Plan before execution' };
+     74|   const accepted = await change(original, input, key);
+     75|   expect(accepted.status).toBe(200);
+       |                           ^
+     76|   const snapshot: ProjectSnapshot = accepted.body.snapshot;
+     77|   expect(snapshot.project.revision).toBe(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  19:39:01
+   Duration  717ms (transform 96ms, setup 0ms, import 209ms, tests 425ms, environment 0ms)
