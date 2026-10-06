@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-10-06T12:22:18.854Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "7cbda706632c85fc5da12a371b282419c933ab9a",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T12:22:21.067Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "sourceCount": 147,
+  "sourceSnapshot": "/tmp/flow-proof-147-live.json",
+  "personalServicesUnchanged": true,
+  "records": [
+    {
+      "id": "WPF-ATTACHI02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:17:42.708Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md",
+        "syncedAt": "2026-10-06T12:22:18.854Z",
+        "stale": false,
+        "ageHours": 0.07190388888888889
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "发送和排队已保留固定附件材料，正在接入聊天界面",
+        "next": "在聊天中添加附件并保留安全的重试和草稿",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parent": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+          "reason": "",
+          "targetId": "WPF-MATURE-03",
+          "title": "附件与文件输入"
+        }
+      },
+      "errors": [],
+      "issues": [],
+      "current": true
+    },
+    {
+      "id": "SVC05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:20:01.185Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/plans/svc05-current-release/status.md",
+        "syncedAt": "2026-10-06T12:22:18.854Z",
+        "stale": false,
+        "ageHours": 0.10523722222222222
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已建立独立发布准备范围，个人服务保持原状",
+        "next": "新后端与保留网页的真实兼容证据和可审更新步骤",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parent": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+          "reason": "",
+          "targetId": "FLOW-001",
+          "title": "产品与技术架构"
+        }
+      },
+      "errors": [],
+      "issues": [],
+      "current": true
+    },
+    {
+      "id": "ENG01G",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:13:41.286Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer/plans/eng01g-native-writer/status.md",
+        "syncedAt": "2026-10-06T12:22:18.854Z",
+        "stale": false,
+        "ageHours": 0.14384833333333333
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已确定工程写入与现有原生消息处理共用的接口",
+        "next": "可审查的受限文件写入组合与未知结果保护",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parent": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+          "reason": "",
+          "targetId": "ENG-001",
+          "title": "真实工程任务交付"
+        }
+      },
+      "errors": [],
+      "issues": [],
+      "current": true
+    }
+  ],
+  "unregisteredTaskIds": [
+    "WPF-DPERF03"
+  ]
+}
