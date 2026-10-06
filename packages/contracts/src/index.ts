@@ -6,3 +6,6 @@ export * from './workspace.js';
 export * from './protocol-dispatch.js';
 export { isAuthoritativeUsageAllowed } from './harnesses.js';
 export * from './projects.js';
+export * from './goals.js';
+export * from './conversations.js';
+export * from './assistant.js';

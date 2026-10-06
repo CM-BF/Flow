@@ -1,0 +1,46 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-orchestration
+
+ ❯ apps/server/src/goals/goals.test.ts (2 tests | 2 failed) 544ms
+   × admits one durable goal, enforces owner role and preserves original request across restart 46ms
+   × rejects stale/foreign inputs and accepts execution atomically with immutable actual prompt 37ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goals/goals.test.ts > admits one durable goal, enforces owner role and preserves original request across restart
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ apps/server/src/goals/goals.test.ts:68:84
+     66| it('admits one durable goal, enforces owner role and preserves origina…
+     67|   const plan = await project(); const key = randomUUID(); const body =…
+     68|   const result = await request('/api/goals', body, { key }); expect(re…
+       |                                                                                    ^
+     69|   expect(result.body.goal).toMatchObject(body);
+     70|   expect((await request('/api/goals', body, { key })).body).toEqual({ …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/goals/goals.test.ts > rejects stale/foreign inputs and accepts execution atomically with immutable actual prompt
+TypeError: Cannot read properties of undefined (reading 'id')
+ ❯ apps/server/src/goals/goals.test.ts:85:112
+     83|   const plan = await add(await project(), 'A');
+     84|   const foreign = await add(await project('Foreign'), 'X');
+     85|   const goalId = (await request('/api/goals', { projectId: plan.snapsh…
+       |                                                                                                                ^
+     86|   const define = { kind: 'define-input', nodeId: plan.nodeId, expected…
+     87|   expect((await command(goalId, { ...define, nodeId: foreign.nodeId })…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  20:09:03
+   Duration  931ms (transform 116ms, setup 0ms, import 294ms, tests 544ms, environment 0ms)
+

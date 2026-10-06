@@ -39,17 +39,18 @@ export async function wake(boss: PgBoss, client: PoolClient, taskId: string): Pr
   const id = await boss.send('flow-wake', { taskId }, { db: { executeSql: (text, values) => client.query(text, values) } });
   if (!id) throw new Error('Task wake-up was not persisted.');
 }
+export async function acceptTask(client: PoolClient, boss: PgBoss, input: TaskSubmission): Promise<TaskSummary> {
+  if (input.resumeSessionId) {
+    const session = await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2', [input.resumeSessionId, input.harness]);
+    if (!session.rowCount) throw new HttpError(409, 'unknown_session', 'This session is not recorded for this harness.');
+  }
+  const id = randomUUID();
+  await client.query('INSERT INTO flow.tasks(id,submission) VALUES($1,$2)', [id, JSON.stringify(input)]);
+  await wake(boss, client, id);
+  return summary(await loadTask(client, id));
+}
 export async function submit(pool: Pool, boss: PgBoss, input: TaskSubmission, key: string): Promise<AcceptedTask> {
-  const result = await command(pool, 'submit', key, input, async client => {
-    if (input.resumeSessionId) {
-      const session = await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2', [input.resumeSessionId, input.harness]);
-      if (!session.rowCount) throw new HttpError(409, 'unknown_session', 'This session is not recorded for this harness.');
-    }
-    const id = randomUUID();
-    await client.query('INSERT INTO flow.tasks(id,submission) VALUES($1,$2)', [id, JSON.stringify(input)]);
-    await wake(boss, client, id);
-    return summary(await loadTask(client, id));
-  });
+  const result = await command(pool, 'submit', key, input, client => acceptTask(client, boss, input));
   return { task: result.value, replayed: result.replayed };
 }
 export async function snapshot(pool: Pool, id: string): Promise<TaskSnapshot> {

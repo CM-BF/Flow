@@ -18,3 +18,13 @@
 CLI链路：个人workspace→创建project→版本命令增节点→同key重放→旧revision拒绝(exit3)→旧历史可读→中心重启后revision2仍在；计划节点不隐式创建执行task。P02实际server/main、runner/main、CLI全链由P02 owner单独执行并保存其report，不能用本记录代替。
 
 Goal Owner独立只读接线APPROVED：9db3ce18e17ded201673bb3e514d5005cd68d866 / 71bff1f8a974fee7321c4d2cc5ee2dddde22abd3 / 36aeaff12000d77ebd025859f999c69612fce653；已读源码与测试，未重跑。只覆盖入口接线，G01 core6394、P02 coref942各自另有独立review。clean-code复核：领域schema复用、薄client不暗重试、显式稳定key、原P02初始化两P2由原owner修复，不能让共享approval掩盖模块问题。
+
+## O01 public consumer接线 2026-10-06 03:32 UTC
+
+接收O01固定6bb380b与a4e1348修复；早期cherry-pick历史导致11处add/add，全部使用原owner完整6bb版本，O01领域实现范围零diff，未手工重写。原始证据stdout的尾行/空白保持不改，diffcheck仅对非原始txt实施。共享client新增createGoal/readGoal/readGoalInput/commandGoal/goalExecutions；CLI薄层复用schema与显式稳定key，不生成隐式执行。
+
+首次局部6/6（目标CLI1+项目CLI1+client4）2.09s；typecheck发现测试构造缺schema默认化后的workspaceId/taskId/parent，原错误保留。仅补明确测试字段，最终typecheck通过、受影响目标CLI1/1 1.10s。真实独立flow_goal_cli_PID_TIME DB/动态端口，重启保留原文、历史input读取、旧revision拒绝、幂等重放、无implicit任务。原始输出分列goals-*.txt，0模型，没有重跑O01完整模块/全库。
+
+clean-code复核：领域事务不复制进client/CLI，JSON输入受schema约束，所有命令显式key/AbortSignal，无不明自动重试。尚不含自然语言规划或native tool挂载；CHAT01普通会话走独立模块，不等待编排。
+
+CHAT client/export frozen84117ca：真实HTTP传输5/5、typecheck，0模型；中心模块尚未可用。Web基线无O01上下文导致pick冲突，共享owner生成web-chat-transport.patch（基线bac6）仅同三文件聊天内容，manifest逐文件hash，外部受控应用而非另改client。两轮真实模型提案见chat-live-proposal.md，调用尚未批准/未执行。

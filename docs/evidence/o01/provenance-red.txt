@@ -1,0 +1,72 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-orchestration
+
+ ❯ apps/server/src/goals/goals.test.ts (9 tests | 1 failed | 8 skipped) 1579ms
+   ↓ admits one durable goal, enforces owner role and preserves original request across restart
+   ↓ rejects stale/foreign inputs and accepts execution atomically with immutable actual prompt
+   ↓ runs the diamond through independent fixture processes and invalidates only changed actual dependencies
+   ↓ preserves failed evidence, rejects failed verification, and requires explicit predecessor for retry
+   ↓ serializes concurrent authorization, keeps one task and refuses unsettled execution after center restart
+   ↓ keeps maximum inputs out of light reads and preserves immutable history with bounded execution queries
+   ↓ rolls back task, wake and execution binding together and retries the same command after a storage failure
+   ↓ preserves ordinary submit idempotency and resume validation through the shared admission extraction
+   × returns faithful existing provenance for no-op input and delivery commands after another node changes 1058ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goals/goals.test.ts > returns faithful existing provenance for no-op input and delivery commands after another node changes
+AssertionError: expected [ { version: 5, …(4) }, …(1) ] to deeply equal [ { version: 2, …(4) }, …(1) ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "createdAt": "2026-10-06T03:17:51.724Z",
++     "createdAt": "2026-10-06T03:17:52.670Z",
+      "kind": "define-input",
+      "source": {
+        "inputVersion": 1,
+-       "nodeId": "01d8932e-5b7c-4f6c-ae80-2e2995808082",
++       "nodeId": "fbce8659-b689-4242-9eee-1a3d0bc5333a",
+        "projectRevision": 3,
+      },
+      "text": "Actual input version 1 was saved. Explicit actual input edit",
+-     "version": 2,
++     "version": 5,
+    },
+    {
+-     "createdAt": "2026-10-06T03:17:52.661Z",
+-     "kind": "accept-delivery",
++     "createdAt": "2026-10-06T03:17:52.670Z",
++     "kind": "define-input",
+      "source": {
+-       "executionId": "92c1ce9d-b5aa-4ff1-9287-5ce47f7ac5b7",
+        "inputVersion": 1,
+-       "nodeId": "01d8932e-5b7c-4f6c-ae80-2e2995808082",
++       "nodeId": "fbce8659-b689-4242-9eee-1a3d0bc5333a",
+        "projectRevision": 3,
+      },
+-     "text": "A verified delivery was accepted for actual input version 1. Accept designated verifier evidence",
+-     "version": 4,
++     "text": "Actual input version 1 was saved. Explicit actual input edit",
++     "version": 5,
+    },
+  ]
+
+ ❯ apps/server/src/goals/goals.test.ts:332:71
+    330|   const noopDelivery = await accept(goalId, a.nodeId, executionA.execu…
+    331|   expect([noopInput.status, noopDelivery.status]).toEqual([200, 200]);
+    332|   expect([noopInput.body.explanation, noopDelivery.body.explanation]).…
+       |                                                                       ^
+    333|   expect([noopInput.body.changed, noopDelivery.body.changed]).toEqual(…
+    334|   expect((await request(`/api/goals/${goalId}`)).body).toEqual(before);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 skipped (9)
+   Start at  20:17:50
+   Duration  1.92s (transform 135ms, setup 0ms, import 266ms, tests 1.58s, environment 0ms)
+

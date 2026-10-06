@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-orchestration
+
+ ✓ apps/server/src/goals/goals.test.ts (9 tests) 14469ms
+   ✓ runs the diamond through independent fixture processes and invalidates only changed actual dependencies  5337ms
+   ✓ preserves failed evidence, rejects failed verification, and requires explicit predecessor for retry  1634ms
+   ✓ serializes concurrent authorization, keeps one task and refuses unsettled execution after center restart  4171ms
+   ✓ keeps maximum inputs out of light reads and preserves immutable history with bounded execution queries  325ms
+   ✓ returns faithful existing provenance for no-op input and delivery commands after another node changes  1947ms
+ ✓ apps/runner/src/goal-tools/goal-tools.test.ts (2 tests) 6ms
+
+ Test Files  2 passed (2)
+      Tests  11 passed (11)
+   Start at  20:18:29
+   Duration  14.94s (transform 137ms, setup 0ms, import 305ms, tests 14.47s, environment 0ms)
+

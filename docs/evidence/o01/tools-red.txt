@@ -1,0 +1,43 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-orchestration
+
+ ❯ apps/runner/src/goal-tools/goal-tools.test.ts (2 tests | 2 failed) 3ms
+   × binds read/commands to host goal, preserves explicit key and snapshots capability lists 2ms
+   × rejects foreign goal/node, ungranted actions, unknown fields and malformed versions before any transport 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/goal-tools/goal-tools.test.ts > binds read/commands to host goal, preserves explicit key and snapshots capability lists
+Error: Not implemented
+ ❯ createGoalTools apps/runner/src/goal-tools/index.ts:17:9
+     15|   command(input: unknown): Promise<unknown>;
+     16| } {
+     17|   throw new Error('Not implemented');
+       |         ^
+     18| }
+     19| 
+ ❯ setup apps/runner/src/goal-tools/goal-tools.test.ts:13:17
+ ❯ apps/runner/src/goal-tools/goal-tools.test.ts:19:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/goal-tools/goal-tools.test.ts > rejects foreign goal/node, ungranted actions, unknown fields and malformed versions before any transport
+Error: Not implemented
+ ❯ createGoalTools apps/runner/src/goal-tools/index.ts:17:9
+     15|   command(input: unknown): Promise<unknown>;
+     16| } {
+     17|   throw new Error('Not implemented');
+       |         ^
+     18| }
+     19| 
+ ❯ setup apps/runner/src/goal-tools/goal-tools.test.ts:13:17
+ ❯ apps/runner/src/goal-tools/goal-tools.test.ts:28:28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  20:12:35
+   Duration  110ms (transform 20ms, setup 0ms, import 26ms, tests 3ms, environment 0ms)
+
