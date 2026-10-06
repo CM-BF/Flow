@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **本次已取得Codex目录，单次窗口已消费并归还。** [固定结果待独审](native-remote-status/result-ready.md)：1native完成初始化，1次model/list得到6models且未分页；固定remote-control通知校验后继续。已受控关闭/完整stdio/两own根清理，私有原件KEEP；[实际结束与holder归还](native-remote-status/execution-tool.json)。无待launch、无重试；账号、实际模型/推理/tier、网络/账单与全部writer仍unknown。后续纯归档不占Lead个人发布时段。
+- **本次已取得Codex目录，单次窗口已消费并归还。** [结果忠实性已批准](native-remote-status/result-review.json)：1native完成初始化，1次model/list得到6models且未分页；固定remote-control通知校验后继续。已受控关闭/完整stdio/两own根清理，私有原件KEEP；[实际结束与holder归还](native-remote-status/execution-tool.json)。无待launch、无重试；账号、实际模型/推理/tier、网络/账单与全部writer仍unknown。后续纯归档不占Lead个人发布时段。
 
 - **原生目录观察已执行并归还运行时段，目录仍未取得。** [本次固定结果](native-catalog-observation/run-report.md)：ready=true/1次model-list；收到已知但不允许继续的 `remoteControl/status/changed`，按原规则停止。1目标已受控关闭、完整stdio和本次两root清理确认，私有原件KEEP；[双审忠实失败收据](native-catalog-observation/result-review.json)。既有授权消费后不重试/扩表；此前[准入错误及更正](native-catalog-observation/preflight-correction.json)不回写。
 
