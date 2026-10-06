@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"],
+    "paths": {
+      "vitest": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.d.ts"],
+      "zod": ["/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod/index.d.cts"],
+      "@anthropic-ai/claude-agent-sdk": ["/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts"]
+    }
+  },
+  "include": ["../../../apps/runner/src/assistant-stream/accumulator.ts", "../../../apps/runner/src/assistant-stream/accumulator-incremental.test.ts", "../../../apps/runner/src/assistant-stream/index.ts", "baseline/index.ts", "baseline/accumulator.ts"],
+  "exclude": ["../../../node_modules", "../../../**/dist/**"]
+}
