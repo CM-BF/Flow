@@ -10,11 +10,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop |
 | Branch | codex/runner-graceful-stop |
 | 工作基线 / HEAD | base与初始HEAD f181d84b5fb3652d62e2a181acff442d42b3e066 |
-| 工作树dirty状态 | runtime/new shutdown test与本任务metadata待固定；既有消费者/共享文件/lock零diff |
+| 工作树dirty状态 | 实现a677f2b8已固定clean；其后仅manifest/status/review metadata，既有消费者/共享文件/lock零diff |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新10通过；原runner33+capacity loopback19通过，4PG未运行；局部strict noEmit0。root-wide依赖缺失失败保留 |
 | 已集成main状态 / HEAD | 本片未实现、未集成；不以base已有能力代替本片交付 |
-| 实现目标 | 待固定提交，由docs/evidence/s01p03/manifest.json绑定 |
+| 实现目标 | a677f2b8a22aa5ecdcc1be3709cd73a090f34702 |
 | 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/runtime-shutdown.test.ts, plans/s01-graceful-stop, docs/evidence/s01p03 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
@@ -46,3 +46,5 @@
 Lead于10:22核共享registry暂无S01P03登记；本status待Lead登记权威source/待聚合，本owner不修改registry或生成进度JSON。
 
 2026-10-06T10:27:55.254681+00:00：实现安全停点，最小runtime signal变更与10项有界loopback回归完成；原直接消费者52通过、4PG未选中。根级tsc缺TUI/interaction依赖失败与Mika批准的局部strict0分开保存，无安装/PG/provider/mixed运行。clean-code/资源边界记录在quality.md与resource-check.json。独审待固定target，注册源仍待Lead登记。
+
+2026-10-06T10:28:32.993634+00:00：固定实现 `a677f2b8a22aa5ecdcc1be3709cd73a090f34702`，manifest绑定2source/14raw/10support/11readonly；raw与checks证据对应，不再运行。交architecture_read独审，source/test冻结。
