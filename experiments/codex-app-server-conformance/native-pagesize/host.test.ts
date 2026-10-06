@@ -84,14 +84,15 @@ describe('fixed pagesize observations', () => {
   });
   it('stops after A close unknown, preserves exact roots and never enters B', async () => {
     const fix = fixture(), calls = [];
-    let unknown = false;
+    let unknown = false, attemptedInventory = 0, attemptedDelete = 0;
     const fake = fakeCommand(calls, 'unknown');
-    const io = { ...fs, opendirSync(...values) { if (unknown) throw Error('Must not inventory after unknown'); return fs.opendirSync(...values); },
-      rmSync(...values) { if (unknown) throw Error('Must not delete after unknown'); return fs.rmSync(...values); } };
+    const io = { ...fs, opendirSync(...values) { if (unknown) { attemptedInventory++; throw Error('Must not inventory after unknown'); } return fs.opendirSync(...values); },
+      rmSync(...values) { if (unknown) { attemptedDelete++; throw Error('Must not delete after unknown'); } return fs.rmSync(...values); } };
     const result = await runPagesize(args(fix), { io, now: () => 1000, rootBase: fix.root, command: async (...values) => {
       const response = await fake(...values); if (!response.safe.closeObserved) unknown = true; return response;
     } });
     expect(calls).toHaveLength(2); expect(result.targets[1].state).toBe('NOT_RUN');
+    expect(attemptedInventory).toBe(0); expect(attemptedDelete).toBe(0);
     expect(result.retainedRoots).toHaveLength(2); expect(result.processCleanupComplete).toBe(false);
     expect(result.retainedRoots.every(item => item.identity && fs.existsSync(item.path))).toBe(true);
     expect(result.outputAccountingComplete).toBe(false);
