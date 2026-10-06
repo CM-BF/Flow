@@ -25,3 +25,7 @@ CREATE回执始终稳定attachmentContext:false；项目固定的GET snapshot在
 固定增量 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，两个fixture/专测；[新验证与精确复跑](fixture-compat-validation.md)/[manifest](fixture-compat-candidate.json)。原8701/78批准保留，新段独审另绑target。当前factory未自动装026/owner routes，只验证了明确fallback；生产组合由共享owner带固定输入验证。
 
 此fixture增量现已root独立APPROVED；正式累计接收用[runtime-with-fixture-candidate](runtime-with-fixture-candidate.json)的16源码清单（2测试源为1f0，其余14保持8701），原runtime-candidate不覆盖。[独审原日志](root-fixture-compat.log)/[审计](root-fixture-compat-audit.json)。正常旧factory fallback经过验证，自动mount仍待共享owner正式组合；claim保留至main。
+
+## Main正式接收
+
+固定main `fd1322f9c0c1d085d5e343e39f6216b20d26c264` 已接收；[本人只读核验](main-observation.json)/[Lead原组合记录](lead-main-attachment-integration.json)。Lead6case、14.62s、8次自动026+六route、无fallback、4DB清零和根types0均为其执行证据，本owner未重跑。上文fallback是旧树当时执行事实；正式入口已在main组合验证。真实Web附件选择/Send/Queue接线、provider与个人服务仍后继，不自动升级本树或用户部署。

@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:24:07 UTC |
+| 最近更新 | 2026-10-06 11:32:34 UTC |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 所属大task | [WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md) |
 | co-lead | Web /root |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 附件运行模块及正式接线所需的测试适配均已独立审查通过 |
-| 下一可用交付 | 将已审模块与公共客户端、正式中心入口组合验证 |
+| 当前产出 | 中心已接收文本附件资源，正式入口可上传并冻结同一材料 |
+| 下一可用交付 | 本片段已交付；聊天输入与预览由后继接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources |
 | Branch | codex/attachment-resources |
 | 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / 当前Git聚合 |
-| 工作树dirty状态 | 两测试源已固定1f0c196；仅自身metadata收口，最终Git为准 |
-| 工作分支状态 | in-progress / approved / waiting-main |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9；仅6受影响PG/HTTP case、严格types、4DB清零；正式自动factory分支未验，旧8701/78另保留 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED |
+| 工作树dirty状态 | 更新前d32a2a2507dc96508479f8d5dd40714c3167e9e0 clean；仅本次main记录，提交后Git核实 |
+| 工作分支状态 | completed / approved / main-integrated |
+| 本片段交付阶段 | delivered |
+| 检查状态 | PASSED 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9；仅6受影响PG/HTTP case、严格types、4DB清零；本树运行仍legacy fallback；Lead正式factory6项另有归因，旧8701/78保留 |
+| 已集成main状态 / HEAD | INTEGRATED fd1322f9c0c1d085d5e343e39f6216b20d26c264；16本方source与23组合source逐字核实 |
 | 实现目标 | 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 |
 | 实现范围 | apps/server/src/attachments/fixture.ts, apps/server/src/attachments/context.test.ts |
 | Review | [review.md](review.md)，1f0两文件fixture增量APPROVED；8701 runtime及phase1历史APPROVED另保留 |
@@ -30,7 +30,7 @@
 | WPF-ATTACH01-01 | completed | workspace_panels_owner | [Interface](../../docs/evidence/wpf-attach01/interface.md)、[take](../../docs/evidence/wpf-attach01/take-receipt.json) |
 | WPF-ATTACH01-02 | completed | workspace_panels_owner | 运行域实现与作者验证已固定；[原回执](../../docs/evidence/wpf-attach01/runtime-amend-receipt.json) |
 | WPF-ATTACH01-03 | completed | workspace_panels_owner | 29项隔离PGHTTP含实际runner/fake adapter；[运行验证](../../docs/evidence/wpf-attach01/runtime-validation.md)，无provider |
-| WPF-ATTACH01-04 | pending | workspace_panels_owner | phase1及运行域独审均通过；main接收仍pending |
+| WPF-ATTACH01-04 | completed | workspace_panels_owner | 分层独审与[main接收实核](../../docs/evidence/wpf-attach01/main-observation.json)；Web接线/真实provider保持后继 |
 
 架构影响：新增attachment resources/namespace/bindings与026、项目锁后pin/GC、context v2及private execution输入编排；旧v1不变、CREATE稳定false而GET能力动态。共享mount/client未改；固定架构快照待主线接收后登记target8701a6，owner由管理协调，不越scope写图。唯一source交管理集中登记，未声称dashboard已部署。既有所有预览与个人服务保持不动。
 
@@ -59,3 +59,11 @@ Root兼容裁决：仅请求非空attachments→v2；无附件/[]或原v1 replay
 固定fixture兼容增量 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 / base 1d236cbe2299117e3b63887fda3d1c0e140f56b0，只2专测；[验证](../../docs/evidence/wpf-attach01/fixture-compat-validation.md) / [manifest](../../docs/evidence/wpf-attach01/fixture-compat-candidate.json)。6case与4DB清零实际通过；自动factory仍待Lead固定组合，当前观察全部为明确fallback。原runtime8701全16源除这两个测试外不变。
 
 2026-10-06T11:24:06.499649+00:00：root独立APPROVED1f0两文件增量，2选中case/27未选、4DB清零；作者6case/严格types另记。新[累计16源清单](../../docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json)供主线组合，旧runtime-candidate/raw日志不变。当前全部源码冻结，仅metadata归档/正常push；ef617 v2保持active直到正式main receipt。
+
+## 正式main接收
+
+2026-10-06T11:32:34.340491+00:00：只读核固定main `fd1322f9c0c1d085d5e343e39f6216b20d26c264`，本方累计16source与Lead组合23source均与已审manifest相同。详[实核](../../docs/evidence/wpf-attach01/main-observation.json)及原样[Lead组合记录](../../docs/evidence/wpf-attach01/lead-main-attachment-integration.json)。Lead实际6个受影响case通过、23未选、14.62s；8次启动均自动026与六route、无fallback，4DB清零、根types0。上述工程运行归Lead，本owner未重跑78/6/2、无API/服务/模型操作。此前8701/1f0本树fallback记录保持原样；本次正式factory组合不是追改旧证据。真实App附件输入、provider及个人部署仍未验证，不代表MATURE03整体完成。
+
+本次metadata正常commit/push并核clean后，全部18scope停止写入交管理fresh release；此记录时ef617 v2仍active，不提前声称released。架构更新队列可用固定main `fd1322f9c0c1d085d5e343e39f6216b20d26c264`，只记录依赖不越权修改图。
+
+Git核验同时记录：原6bc/8701/1f0/d32a提交均不是该main祖先；这是受控固定源码组合接收，16源字节相等，不声称原分支整段merge。

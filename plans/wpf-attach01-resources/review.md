@@ -47,3 +47,7 @@ Root完整阅读两个合同源、一个专测、Interface并做clean-code复核
 限定：真实旧函数+mock fetch，不是真实HTTPserver、PG、浏览器、provider或App实接。phase1不是运行上线；后续runtime需exact amend与独立固定审查，不能沿用本批准。公共发布/main接收另记status。
 
 作者证据：[validation](../../docs/evidence/wpf-attach01/validation.md) / [resource-checks](../../docs/evidence/wpf-attach01/resource-checks.json)。原始执行source52317c4+dirty保持，不回填为审查target运行。
+
+## Main接收观察（不改独审范围）
+
+2026-10-06T11:32:34.340491+00:00：固定main `fd1322f9c0c1d085d5e343e39f6216b20d26c264` 已接收分层批准结果，16本方/23组合source核实一致。Lead的正式factory6case、8次自动挂载、4DB清零/types0见[原组合记录](../../docs/evidence/wpf-attach01/lead-main-attachment-integration.json)；本owner只读核证，未重跑工程。8701 runtime、1f0 fixture、6bc phase1的原独审与执行限制不回填。App/provider后继不在批准内。
