@@ -45,3 +45,7 @@
 ## OPS-001 文档协作feature
 
 2026-10-06 00:55 UTC：新任务类型按find-skills流程检查本地codebase-design、clean-code；已查询documentation/project status/templates，无需安装无关库。实际应用Locality：每plan的正文、状态、review集中一个目录，单一owner，原路径stub不复制正文。独立worktree `plan-status-review` / `codex/plan-status-review`，与CLI/C01/R01隔离。结构检查覆盖本地链接、plan编号/状态、TODO与status逐项对应、review未审查标记与原实验文件字节一致性。
+
+## 2026-10-06 01:07 UTC 外部双任务交接
+
+范围为文档派工和单一事实源约定，复用 find-skills 的本地优先结果，重读 codebase-design 与 clean-code。应用 locality：每 task 单 owner/status；聚合输出不手填；W01/D01 独立写入范围。检查消除了双写事实、旧两 worker 固定上限和空 review 当通过的歧义。未实现 dashboard 或新增应用依赖。

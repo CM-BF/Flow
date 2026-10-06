@@ -29,3 +29,11 @@
 - 每份计划使用独立目录中的 `plan.md`、`status.md`、`review.md`；统一模板及细则见 [plans/AGENTS.md](plans/AGENTS.md)。正文有稳定ID的TODO，status与其逐项对应。
 - 各feature owner必须在自己的worktree更新自己的status：启动、实质进展、阻塞、交付和review修复后均更新。明确branch/base/head、证据与main集成状态，不以分支检查代替main能力。
 - review默认只读实现，绑定具体commit，修复交owner；Claude Code等外部review者同样受模型写入门槛约束。空review模板不表示通过。
+
+## 执行 dashboard 与状态事实源
+
+- 每个 agent 在启动、实质进展、受阻、交付和 review 修复后更新自己负责的 `plans/<task>/status.md`；交付必须记录实现 commit、检查证据、时间、review 状态和 main 集成事实。外部 tasks 同样遵守。
+- `status.md` 是每任务进度的唯一手填事实源；执行 dashboard 只读聚合，生成的 JSON/网页不是第二套可手填状态。若后续采用结构化源，必须同时生成 status 展示并受控迁移，禁止两套独立维护。
+- 每任务只指定一个 owner 和一个权威 worktree。聚合器按派工登记选择该 worktree 的对应 status，不能把其他 worktree 的陈旧副本覆盖它；记录来源、branch/head、dirty 和同步时间。缺失、冲突或过期显示未知/待同步，不猜测完成。
+- 完成工作必须同步 dashboard 事实源；dashboard 尚未实现时更新 status 并注明“等待聚合器展示”。实现后确认该任务记录可被聚合并记录检查结果。跨任务汇总、owner 切换及 main 集成状态由 Execution Lead 协调；owner 只改自己的任务状态。
+- dashboard 是当前 Flow 工程进度视图，不是产品任务 Web。分支完成、已验证、待 review、已集成 main 分开；空 review 模板绝不显示通过，不计算无依据百分比或 ETA。

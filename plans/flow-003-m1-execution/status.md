@@ -32,6 +32,7 @@
 | R01 | in-progress | Execution Lead | 未完成，无通过结论 |
 | L01 | in-progress | Execution Lead | 未完成，无通过结论 |
 | W01 | pending | Execution Lead | 未完成，无通过结论 |
+| D01 | pending | reserved-external | 外部任务待用户派发，尚未实现；见 [plan](../d01-execution-dashboard/plan.md) |
 | R02 | pending | Execution Lead | 未完成，无通过结论 |
 | I01 | pending | Execution Lead | 未完成，无通过结论 |
 
