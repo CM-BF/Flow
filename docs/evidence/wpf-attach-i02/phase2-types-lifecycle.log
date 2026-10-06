@@ -1,0 +1,5 @@
+test/attachment-integration.fixture.ts(73,43): error TS2345: Argument of type 'ReadableStream<Uint8Array<ArrayBuffer>>' is not assignable to parameter of type 'ReadableStream<any>'.
+  Type 'ReadableStream<Uint8Array<ArrayBuffer>>' is missing the following properties from type 'ReadableStream<any>': values, [Symbol.asyncIterator]
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 2: tsc --noEmit

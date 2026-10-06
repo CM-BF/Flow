@@ -2,10 +2,12 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：UNKNOWN
+Review target commit：f82a3a7436f123ab741fd5ce845eb39cb752da3b
 
 Base：1c4968354dabce1e6748f3301a2e6eecd33e77d4
 
-当前只有启动计划与权限证据。后续独立 reviewer 先核 worktree/base/HEAD/dirty，再审固定实现、source manifest 和实际消费者证据，不修改项目。重点：公共 ACK 唯一来源、immutable 材料/原 key、身份权限与跨 pane、真实 local receipt 接管、pending capture 保护、实际 App/HTTP 及资源清理。
+完整候选已固定，22声明apps路径（13生产+9测试，其中既有queue test未变）。独立review须核[source manifest](../../docs/evidence/wpf-attach-i02/source-manifest.json)与实际源码、公共matcher/授权/稳定view、原key/recovery、pending hold、official prepare failure/cancel及精确自动/显式remove、fixture期限/清理。作者检查与原始边界见[README](../../docs/evidence/wpf-attach-i02/README.md)。
 
-已执行：启动 Git 与 live claim 核对。未执行：产品测试/浏览器/HTTP/独立审查。Findings 尚未评估；空模板不是批准。完整交付必须包含阶段二，不能以首十二路径局部检查替代。
+root提前只读预审/纯内存诊断已促成本轮修复：全局journal不再pin无关空view；mixed准备失败/取消后直接移除complete项与Input一致。原始JSON和红绿日志保留；这些不是整体固定候选批准。主线/真实provider/后继context-history producer组合未验，原五module/共享/官方Thread不改。
+
+待独立review结论。main尚未接收，不把作者局部通过或空模板当APPROVED。

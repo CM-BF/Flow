@@ -1,0 +1,171 @@
+{
+  "startedAt": "2026-10-06T12:27:13.999Z",
+  "endedAt": "2026-10-06T12:27:27.495Z",
+  "wallMs": 13496,
+  "priorBudgetMs": 22437,
+  "cumulativeBudgetMs": 35933,
+  "checks": [
+    "explicit project preparation preserves the text and performs zero turns",
+    "P01 Files entry loads only explicit metadata; Enter preview is lazy and cached"
+  ],
+  "errors": [],
+  "failure": "Error: expect(locator).toHaveValue(expected) failed\n\nLocator:  getByRole('textbox', { name: 'Message input', exact: true }).visible()\nExpected: \"\"\nReceived: \"Send fixed attachment\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveValue\" getByRole('textbox', { name: 'Message input', exact: true }).visible() with timeout 5000ms\n  - waiting for getByRole('textbox', { name: 'Message input', exact: true }).visible()\n    14 × locator resolved to <textarea rows=\"1\" name=\"input\" enterkeyhint=\"send\" aria-label=\"Message input\" placeholder=\"Message Flow…\" class=\"aui-composer-input caret-primary placeholder:text-muted-foreground/60 max-h-48 min-h-10 w-full resize-none bg-transparent px-2.5 py-1 text-base leading-6 outline-none\">Send fixed attachment</textarea>\n       - unexpected value \"Send fixed attachment\"\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toHaveValue (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:49:29)\n    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:27:75)\n    at async work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:47:5)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:112:7)",
+  "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+  "workingSourceHashes": {
+    "apps/web/src/App.tsx": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+    "apps/web/src/conversation-context/receipts.ts": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+    "apps/web/src/conversations/ConversationThread.tsx": "f6b7598b9d2942f0937d9933a1e8e852c36810cecb5826eadd942b1ac799dfad",
+    "apps/web/src/conversations/messages.ts": "49d07c4eb6b8dd9293749cc7d71fa869579e7db977ead51c00256adf6e046350",
+    "apps/web/src/conversations/outbox.ts": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+    "apps/web/src/conversations/projection.ts": "ebd5719c928dd9cb59e31bf476138b3151e7b63d73d1fb7fe36f82c93b98f902",
+    "apps/web/src/conversations/queue/commands.ts": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+    "apps/web/src/conversations/queue/projection.ts": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+    "apps/web/src/plugin-integration/attachments.tsx": "d8d3e9122d02d821c9c243fcb7de3e7991941c839c893157c9c66bbb174f8f97",
+    "apps/web/src/plugin-integration/react.tsx": "eccf147ee17e20e80926a1d21e0f4e9edf8c6ad3715aa8d7bea99d2fc069d6a9",
+    "apps/web/src/plugin-integration/session.ts": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+    "apps/web/src/plugins/types.ts": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+    "apps/web/src/plugins/validation.ts": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+    "apps/web/test/attachment-integration.browser.ts": "9e3edcf7abb764d91dde4ec7174916a82591cb08981a6ecd67f3af6a45054c41",
+    "apps/web/test/attachment-integration.fixture.ts": "ee8e085cf9a15a144e7cd35a322dca12449893f6ce8b4e622fc2cc4e32d6675f",
+    "apps/web/test/attachment-integration.test.ts": "163efb012093b71154c49f4fa9ed906dc213ed3c9a1a743482000e8f4aa8b1ba",
+    "apps/web/test/conversation-context-receipts.test.ts": "7c67d0dc0f17ff4cb8bfa3068839a79b026657ce8aede802840d333bc38fdcc0",
+    "apps/web/test/conversation-messages.test.ts": "301ed1d649592ce420414af12d5c5f28b4be4ba2a360a608fee01ce2a6bacc13",
+    "apps/web/test/conversation-outbox.test.ts": "cc416bd25c913aa8eb9ade159b3c78a28712d9902b35c5bef4b4089a345b8b15",
+    "apps/web/test/conversation-projection.test.ts": "5954973704d6eca8ebfd5d21c9dfdb46e18111e52390259e49fd2fec0a4278bf",
+    "apps/web/test/conversation-queue.test.ts": "667a35e9a765968f8abc0a4e86610f93b86696c2e86b7eed0e5d23a616f9d5bb",
+    "apps/web/test/plugin-host.test.ts": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd"
+  },
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "1c2112d4-e2fd-4409-96e6-b171ca7ee905:create",
+      "body": "{\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"projectId\":\"f494627a-b468-4105-88e2-cb40552908ca\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}",
+      "status": 201,
+      "response": "{\"conversation\":{\"projectId\":\"f494627a-b468-4105-88e2-cb40552908ca\",\"id\":\"fe27c1a5-9bbc-4319-add1-b27c05e12468\",\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"revision\":0,\"createdAt\":\"2026-10-06T12:27:22.011Z\",\"updatedAt\":\"2026-10-06T12:27:22.011Z\"},\"capabilities\":{\"attachmentContext\":false,\"knowledgeContext\":true,\"followUp\":true,\"queue\":true,\"steer\":false,\"liveAssistantText\":false,\"perTurnModel\":false,\"perTurnThinking\":false,\"perTurnTools\":false},\"replayed\":false}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fe27c1a5-9bbc-4319-add1-b27c05e12468/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/f494627a-b468-4105-88e2-cb40552908ca/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"protocol\":\"text-v1\",\"recoveryScopeId\":\"997bf7a3-0944-4472-9b77-ce5024a924da\",\"projectId\":\"f494627a-b468-4105-88e2-cb40552908ca\",\"requiresProject\":true,\"mediaTypes\":[\"text/plain\"],\"extensions\":[\".txt\"],\"maxFileBytes\":8192,\"maxCombinedReferences\":4,\"maxCombinedBytes\":8192,\"order\":\"knowledge-then-attachments\",\"unboundTtlSeconds\":86400,\"resourcesPerProject\":128,\"retainedBytesPerProject\":1048576}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/f494627a-b468-4105-88e2-cb40552908ca/attachments?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"resources\":[{\"reference\":{\"kind\":\"upload\",\"projectId\":\"f494627a-b468-4105-88e2-cb40552908ca\",\"resourceId\":\"a087af6f-6548-4488-bf5f-aecd47d099ff\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"byteLength\":53,\"createdAt\":\"2026-10-06T12:27:15.437Z\",\"expiresAt\":\"2026-10-07T12:27:15.437Z\",\"state\":\"ready\",\"retained\":false}],\"nextCursor\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/f494627a-b468-4105-88e2-cb40552908ca/attachments/a087af6f-6548-4488-bf5f-aecd47d099ff/versions/1/content?digest=7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"reference\":{\"kind\":\"upload\",\"projectId\":\"f494627a-b468-4105-88e2-cb40552908ca\",\"resourceId\":\"a087af6f-6548-4488-bf5f-aecd47d099ff\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"byteLength\":53,\"text\":\"<script>not executed</script>\\nFixed text 中文🙂\\r\\n\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fe27c1a5-9bbc-4319-add1-b27c05e12468",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fe27c1a5-9bbc-4319-add1-b27c05e12468/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fe27c1a5-9bbc-4319-add1-b27c05e12468",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fe27c1a5-9bbc-4319-add1-b27c05e12468/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    }
+  ],
+  "providerQueries": 0
+}

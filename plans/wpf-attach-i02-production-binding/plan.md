@@ -6,7 +6,7 @@
 
 ## 输入与范围
 
-固定组合输入 1c4968354dabce1e6748f3301a2e6eecd33e77d4，含独审附件模块 4c4de124b24a85b9e2a13e097b29c80b1e84d11a、六公共 client、共享 v2 ACK、真实 factory 与 CACHE。精确阶段一权限见 [committed receipt](../../docs/evidence/wpf-attach-i02/claim-receipt.json)。当前 App/session/Thread/projection 等后十二路径尚未领取，实施前须管理者 fresh amend。五个附件输入模块、官方 Thread、shared/client/contracts、依赖均只读。
+固定组合输入 1c4968354dabce1e6748f3301a2e6eecd33e77d4，含独审附件模块 4c4de124b24a85b9e2a13e097b29c80b1e84d11a、六公共 client、共享 v2 ACK、真实 factory 与 CACHE。精确阶段一权限见 [committed receipt](../../docs/evidence/wpf-attach-i02/claim-receipt.json)。后十二路径已于12:18:09Z通过v2原子amend领取，完整24scope见阶段二receipt；没有超范围写入。五个附件输入模块、官方 Thread、shared/client/contracts、依赖均只读。
 
 ## Module 与 Interface
 
@@ -26,5 +26,5 @@ Input 的 immutable viewId 使用 view.key。临时 draft→conversation 路由�
 
 - [x] ATTACHI02-01：材料深冻结接入真实 Outbox/Queue 命令并验证兼容与 ACK。
 - [x] ATTACHI02-02：P01 私有授权附件 binding 与直接消费者测试。
-- [ ] ATTACHI02-03：依法取得剩余范围，实际 App/Thread/CACHE 与 HTTP 旅程贯通。
+- [x] ATTACHI02-03：依法取得剩余范围，实际 App/Thread/CACHE 与 HTTP 旅程贯通。
 - [ ] ATTACHI02-04：固定候选、独立 review、主线接收与 scope 收口。

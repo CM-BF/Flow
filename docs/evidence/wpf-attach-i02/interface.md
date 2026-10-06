@@ -1,13 +1,33 @@
-# 第一阶段实际接口
+# 实际附件生产接线 Interface
 
-`freezeMaterialRequest` 是 `freezeKnowledgeRequest` 兼容alias的唯一实现：knowledge/attachments分别clone+deepfreeze、各自保序、共同project/四项，材料正文bytes另由已审Input descriptors与中心权威检查。Outbox.begin 与 QueueCommands.execute 已实际调用；Queue ACK沿公共assertConversationContextMatches第三参，未写新v2decoder。
+固定输入为 `1c4968354dabce1e6748f3301a2e6eecd33e77d4`。既有五个 Input/adapter/UI 模块与公共 DTO/client/matcher 均未修改。P01 是唯一插件生命周期，App/CACHE 是唯一 view 保留与回收 owner；本片没有第二 registry。
 
-`ConversationAttachments(identity, options)` 接私有六method Pick<FlowClient>、P01host、signal、current()和storage；identity为connectionId/viewKey/projectId，current()由App确认原projection成员后提供当下route、conversation、project、visibility、online与分别read/upload许可。IDs/manifest不是授权。暂未修改App/session；主入口尚未消费此binding。
+## 材料与收据
 
-input nullable：存储拒绝/损坏raw时本地错误，不能让整个Session构造失败。一个稳定view对应一个project绑定，真正project/connection变动由宿主控制新生命周期；route/CREATE alias不重建。当前getSnapshot/protection供唯一CACHE owner，不分配第二registry。隐藏/离线暂停读，关闭Dialog不改变pane资格。离线清cap缓存，恢复后显式操作重新读取；refreshCapabilities显式清cap但不读/改选择。unknownscope记录从不自动查询其他namespace。
+`freezeMaterialRequest`（旧 `freezeKnowledgeRequest` 为兼容别名）detach/deep-freeze knowledge/attachments，各自保序、共同 project 与四项约束。字节预算由已审 Input 的 metadata 和中心权威共同检查；不把正文注入 timeline。Outbox.begin 与 QueueCommands.execute 实际调用。Queue ACK 沿公共 `assertConversationContextMatches` 第三参 `{projectId, attachments}`；Turn ACK 沿 FlowClient 公共 decoder，未复制 v2 校验。
 
-P01内建`flow.conversation-attachments`注册Files按钮与composer.context面板、独立attachment.read/upload能力。按当前route找到既有binding；upload command对经过schema parse的request/key和AbortSignal执行private rawclient，无递归。错误401/403/损坏200不映射unsupported；只有upload receipt的精确404code映射null。空材料plain应绕过附件capture，不能因未支持cap阻断纯文本。
+非空 attachments 使用已确认 conversation.projectId/capability 与 v2；空数组在正式 projection 入口省略，plain/v1 行为保留。新建 ACK 在本固定中心代码中保守广告 false，prepare 成功后真实 GET 刷新权威 snapshot，不自行设 true。该 GET 失败时保持原配置/草稿并要求用户恢复，不暗发。
 
-capture在composer.send之前，冻结submissionId/intent/text/refs/IDs/旧receipt身份；assertSubmission在准备后检查。实际新Outbox/QueueReceipt同栈拥有相同conversation/intent/text/有序refs后handoff consume，不能await网络。failed hold保原材料与text，只有同IDs显式重试或明确discard才替换；用户从新draft删除item不等于销毁pending capture。bindComposer只对自动remove使用hold facade，adapter.remove仍是真实draft删除。dispose是终结，须由App确认受保护视图可回收；signal撤销终结授权不等于发送未知回执已持久恢复。
+一次 click/Enter 在官方异步 preparation 之前同步 capture delivery intent、profile、knowledge token、text、附件引用/IDs 与旧本地 receipt 身份。onNew 重新核 capture 和 scope，调用真实 projection/Queue，确认新本地 receipt 同栈拥有同一 intent/text/conversation/有序 refs 后 consume；网络 ACK 不清新稿。未知 ACK 永远原 key/body/ref 顺序。失败无 receipt 时保留 held 原稿；新稿非空不拼回旧 text。
 
-阶段二仍待：Session/actualApp/current()权威映射、同步click/Enter intent/profile/knowledge capture、真实HTTP/factory/browser、protected关闭/恢复UI。首段不宣称完整附件可用。
+## 私有绑定与插件
+
+`ConversationAttachments(identity, options)` 接 App 私有 six-method Pick<FlowClient>、P01host、signal、current()、storage。固定 identity 为 connectionId/viewKey/projectId；Input.viewId 使用 stable view.key。current() 每次验证同一 projection 仍属于当前连接/view，再给当下 route、conversation、project、pane/page visibility、online 与独立 read/upload authority。route alias/CREATE 不重建 Input；IDs/manifest 本身不授予权限。
+
+`flow.conversation-attachments` 提供真正的 Files button 和 composer.context panel。@file+Tab 走同一 P01 open command，选中后只在文本仍等于触发时删除 marker。paperclip/drag 复用官方 AttachmentAdapter；停用插件撤 adapter/读口且保留材料，非空材料不能静默转纯文本。上传 command 只调用 private raw write，不回调自己。
+
+六个公共方法是薄 HTTP transport，并不保证 runtime shape。本片旧 Input 继续公共 schema parse。实际名称为 attachmentCapabilities / attachments / attachment / attachmentContent / uploadAttachment / attachmentUploadReceipt。只有明确 upload-receipt 404 code 映射 null；401/403/其他错误及坏200不吞成“不支持”。404不证明原POST没有提交。能力缺省/false拒非空材料，纯文本仍可用。
+
+## 生命周期与保护
+
+visible 是实际聊天 pane/page，不是 Dialog open；两个 split pane 分别有效。隐藏/离线/撤权使旧读和 capture 失效；离线清能力缓存，恢复后按显式操作重取。Dialog close 不改变发送资格。关闭 tab 沿 CACHE 保留有材料 view，不无条件 dispose；真正离开连接有用户提示/beforeunload尽力保护，旧授权同步失效。
+
+private input facade 只拦官方 complete/准备过程的自动 reconciliation remove。官方准备失败/取消可能完全不调用 onNew：绑定订阅公共 submission/inTransit 终结，释放 pending 为 failed recovery。失败恢复到草稿后，真实 Remove file 仍删除 controller item；held 原材料只由显式 discard 或新本地 receipt 接手解除，不因隐藏或网络回执消失。
+
+持久 journal 是跨 view 的有限恢复目录，不代表当前 draft。只有本 binding 实际 journal.begin 的 upload key 计入未知保护（即使 chip 后来移除）；同/不同 project 的新空 view 不因继承 unknown 被 pin。目录记录仍完整可见、可显式恢复、不自动过滤/删除。storage 拒绝/损坏在 binding 本地显示，保 raw/unknown，不让 Session/纯文本 Thread 构造失败。
+
+## 恢复边界
+
+本片实际浏览器 reload 验证的是已发 upload 的非敏感 key/scope/digest/filename 元信息恢复：相同授权 project/scope 下显式查询第六公共方法，成功只回元信息，不自动 POST/附新稿/发送。旧 namespace/404/损坏200语义另由定向消费者覆盖。已选 ready 草稿、Send/Queue unknown receipt 和正文不跨 reload 持久保存；跨 tab journal 原子性不在本片。新中心 URL 相同也不自动重用旧权力。
+
+实际 factory 固定在本任务 base。后继 main 的 context-history producer × attachment-only 共享缺陷由其 owner 修复并在集成阶段验证，本片没有省略附件、禁用 history 或私拷 server 来绕过。无真实 provider/个人服务验证，runner-file、任意格式和大文件不属于 text-v1 首片。
