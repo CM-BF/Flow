@@ -1,6 +1,6 @@
 # CHAT02 最终正文持久片段
 
-当前实现 `2e1098504500a472f50a4f77e57c8220a48b28aa`，基线 `7808126daeb66e2e295d32e182639dc709f28aa1`。作者66/66局部检查和typecheck通过；独立review尚未开始，生产共享挂载检查待Lead小提交，未宣称main或产品接线完成。
+当前实现 `2e1098504500a472f50a4f77e57c8220a48b28aa`，基线 `7808126daeb66e2e295d32e182639dc709f28aa1`。模块作者66/66局部检查和typecheck通过，Execution Lead独立APPROVED。生产共享挂载37ab367完整merge后，测试delta fcbc248再获只读APPROVED，正式入口10/10整suite（7.40s）与typecheck通过；未宣称main或产品接线完成。
 
 Claude SDK0.3.290成功result且is_error=false的result字段成为唯一正文。读取iterator直到结束，忽略partial/assistant多块、thinking、tool和子任务输出；同一个最终result重复只产生一条，冲突结果拒绝，不拼凑草稿。中文与emoji原样保留。来源保存native session/result UUID、稳定messageId、中心派生task/attempt/event/sequence，以及requested与init报告的effective设置；无报告值明确null/unknown。
 
@@ -34,3 +34,11 @@ SDK真实导出类型与[官方输出流文档](https://code.claude.com/docs/en/
 ## 边界
 
 0真实模型/0云调用。未运行CHAT01/UI浏览器、流式delta、真实自然语言语义、多进程同runner、公网故障或OS断电实验；未宣称model/queue/steer前端控制生效。有效设置来自SDK init自报，不是中心独立认证。后继CHAT02-05保持open，完整目标不因本片段通过而完成。
+
+## 正式中心入口与清理限制
+
+[生产10/10原始stdout](production-checks.txt)、[typecheck](production-typecheck.txt)、[生产hash与目标](production-manifest.json)。测试必须由createServer自行挂载两路GET及009迁移，原fallback已删除；只重跑10条模块检查，没有重复66。
+
+首次10条行为均绿但afterAll关闭超30s，[整suite失败](production-cleanup-failure.txt)如实保留；[阶段诊断](production-cleanup-diagnostic.txt)发现已取消的runner claim仍留在HTTP关闭阶段，DB连接idle、尚未进入scheduler/pool关闭hook。完整停止所有runner promise与SDK query后，测试明确断言两者为0，再关闭该测试app自有HTTP连接并等待app.close，之后DROP自建专库。没有强关运行中的SDK、删除业务断言或扩大timeout。
+
+诊断重跑先遇到遗留专库时按保护规则[拒绝覆盖](production-preserve-existing-db.txt)，不算有效测试；核验该库为自己失败用例所建、独占锁可取且没有连接后才受控清理。生产优雅停机是单独后继风险；本片段没有修改生产server.close行为，不能把fixture清理通过当生产shutdown已修。

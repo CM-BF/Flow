@@ -1,7 +1,15 @@
 # CHAT02 独立审查
 
-状态：NOT_STARTED。空模板不是批准。Review target commit：2e1098504500a472f50a4f77e57c8220a48b28aa（模块目标；生产共享挂载后再固定最终目标）。Base 7808126daeb66e2e295d32e182639dc709f28aa1。
+状态：APPROVED。批准零模型typed-final模块及受控生产挂载后的测试delta；完整CHAT02后继仍open。
 
-审查者先核规则、owner状态、claim与实际head/dirty，固定SHA后只读审查typed final正文来源、归属、幂等/顺序/fence、设置真实性、thinking排除、有界读取及重启。公开adapter合成SDK和真实PG/HTTP作为验收seams，0模型；不改实现。报告blocking/severity、路径行、复现、已执行/未执行与限制；修复交唯一owner。
+Review target commit：2e1098504500a472f50a4f77e57c8220a48b28aa。原Base：7808126daeb66e2e295d32e182639dc709f28aa1。共享生产挂载：37ab367ea613fb046f9bca4a8e295b20bd1d4b29；merge：5bc502568716ba308486a3b3ac7a7931ca939418。独立测试delta：fcbc248cb10aa3ad750c106840beb88193b500bd。
 
-作者检查66/66+typecheck，详见[原始证据](../../docs/evidence/chat02/report.md)。独立检查/findings/回应/复审尚未执行；首段不含stream delta或真实自然语言语义验收。
+Reviewer：Execution Lead / gpt-6-astra ultra。2026-10-06 03:51 UTC owner记录正式回传。模块逐行审schema/store/routes/migration/adapter/events及25+10用例；独立核9源码+5作者stdout hash与manifest一致，作者66/66/typecheck证据准确，reviewer未重跑。模块无blocking findings。
+
+后续只读复审fcbc248测试delta：正式hasRoute必须成立，不再fallback；track所有runRunner promise和合成SDK query，stopServer先断言均已结束才关闭本app连接并await close。未删业务断言、未延长timeout，生产核心对2e10985零diff。结论APPROVED；作者正式入口10/10整suite（7.40s）与typecheck通过，[原始记录](../../docs/evidence/chat02/production-checks.txt)。
+
+首次生产入口10行为通过但afterAll超时，明确不算整suite通过；[原始失败](../../docs/evidence/chat02/production-cleanup-failure.txt)与[诊断](../../docs/evidence/chat02/production-cleanup-diagnostic.txt)保留。诊断为Fastify关闭前残留已取消claim请求，尚未进入DB/scheduler onClose。测试fixture清理解决本用例退出；生产优雅停机仍待后继，不宣称已修。
+
+核心批准依据：final-only稳定身份/去重、success+is_error拒绝、session匹配、读完整iterator、fenced有序事务、正文lower detail/hash、有界轻读、outbox丢ACK恢复。收到正文不等于completed/verified；恢复是全新runRunner实例而非OS hardkill，0模型，不包含Web、真实模型、stream partial、queue/steer或前端选model。
+
+非阻断后继：CHAT01每turn完整final读/digest可做短投影优化；不混入本片段。独立复审修复仍由唯一owner按claim处理，main接收另记。完整证据见[报告](../../docs/evidence/chat02/report.md)和[生产manifest](../../docs/evidence/chat02/production-manifest.json)。

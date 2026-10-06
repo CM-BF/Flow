@@ -1,0 +1,44 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-native-events
+
+stdout | apps/server/src/assistant/assistant.test.ts
+CHAT02 cleanup closing HTTP center
+
+stdout | apps/server/src/assistant/assistant.test.ts
+CHAT02 cleanup center closed
+
+stdout | apps/server/src/assistant/assistant.test.ts
+CHAT02 cleanup admin closed
+
+ ❯ apps/server/src/assistant/assistant.test.ts (10 tests | 10 skipped) 15ms
+   ↓ accepts a typed final through the ordered authenticated event interface
+   ↓ deduplicates an acknowledged final across center restart and terminal acknowledgement replay
+   ↓ requires a matching recorded session and rolls back an out-of-order batch atomically
+   ↓ rejects foreign credentials, wrong fence and caller-invented conversation ownership
+   ↓ keeps a single immutable final per attempt and checks stable native identity
+   ↓ keeps large assistant bodies out of light pages and binds bounded cursors to their task
+   ↓ recovers a durable final after runner and center restart with a lost response before-save
+   ↓ recovers a durable final after runner and center restart with a lost response after-save
+   ↓ refuses a new final after lease expiry even when its native session remains recorded
+   ↓ records a failed synthetic SDK run without persisting error text as an assistant reply
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant/assistant.test.ts [ apps/server/src/assistant/assistant.test.ts ]
+Error: Existing flow_chat02 must be preserved.
+ ❯ apps/server/src/assistant/assistant.test.ts:27:99
+     25|   lock = await admin.connect();
+     26|   expect((await lock.query("SELECT pg_try_advisory_lock(hashtextextend…
+     27|   if ((await lock.query("SELECT 1 FROM pg_database WHERE datname='flow…
+       |                                                                                                   ^
+     28|   await lock.query('CREATE DATABASE flow_chat02'); created = true; awa…
+     29| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 skipped (10)
+   Start at  20:47:55
+   Duration  413ms (transform 151ms, setup 0ms, import 321ms, tests 15ms, environment 0ms)
+

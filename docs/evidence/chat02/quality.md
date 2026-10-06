@@ -7,3 +7,5 @@
 2026-10-06 03:40 UTC：公开adapter先红再绿，25/25；PG/HTTP typed event先红unsupported_event再绿，首闭环1/1。扩增6项发现预期把foreign credential误写409，实际既有语义403，修正预期保留拒绝断言。typecheck的pg.connect重载返回值推断修为显式PoolClient后通过。固定SDK0.3.290实际sdk.d.ts核对AssistantMessage多block、SDKResultMessage success+is_error以及尾随system；官方 https://code.claude.com/docs/en/agent-sdk/streaming-output 与 https://code.claude.com/docs/en/agent-sdk/agent-loop 已浏览，本段只收final不三重拼接。模块沿现有事件事务，正文低层detail独立核digest；未新增依赖、未改shared index。
 
 2026-10-06 03:43 UTC，工作段/交付前clean-code：66/66 + typecheck，未新增依赖。轻列表移除settings，只按需正文携带SDK init工具列表；源内容只存一次assistant detail，原artifact保持既有用途。读端digest核对、cursor绑定task；保存复用事件事务/归属，不引入第二调度。发现异步expiry sweep断言需bounded poll，已修测试时序，严格旧owner拒绝断言不变；server测试用ClaudeQuery类型推导避免越包依赖。未解决项仅生产共享挂载、独立review与后继stream/真实模型，尚未宣称完成。
+
+2026-10-06 03:51 UTC，生产接线/交付clean-code：只改本测试生命周期，未改core。完整merge37ab，无冲突；hasRoute硬断言替代fallback。首次suite afterAll失败保留；preClose追踪定位HTTP claim未闭合、未进入onClose；去掉临时诊断代码，显式track/断言runner与SDK均结束后关闭自有HTTP连接。10/10整suite7.40s及typecheck通过，Lead模块2e与测试fcbc分别只读APPROVED。没有延长timeout/跳断言/全库重测。旧9source/5stdout manifest原样保留，新增production manifest，不覆写历史证据。生产优雅停机留后继；0模型。
