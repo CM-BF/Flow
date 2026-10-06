@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:12 UTC / 固定基线核验2026-10-06 02:07 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:20 UTC / 固定基线核验2026-10-06 02:07 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（计划管理，实施owner未派）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `d444608ab6c796c731e44e51a892868bf39bec2a`（首版文档提交前快照） |
-| 工作树dirty状态 | 仅plans/web-platform与docs/evidence/web-platform新增文档待提交 |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `829e8228f413eb2e4c3a935dfc319c2170850a09`（本计划首版文档target） |
+| 工作树dirty状态 | 829e822提交时clean；本次文档追溯metadata待提交 |
 | 工作分支状态 | pending；方向accepted，拟复用panels owner；仅前置只读调查 |
 | 检查状态 | NOT_RUN（未来实现）；新计划仅内容/链接检查，尚不属于c075bb5文档review范围 |
 | 已集成main状态 / HEAD | 未集成本计划；最近核验main `d444608ab6c796c731e44e51a892868bf39bec2a`，后续由Lead推进不追写其状态 |

@@ -65,3 +65,11 @@ root研究#8：[WAI feed pattern](https://www.w3.org/WAI/ARIA/apg/patterns/feed/
 panels owner固定e888862只读调查：history.before响应nextCursor不得覆盖forward deliveredCursor；watermark非已消费；传signal覆盖client默认15s timeout，必须组合取消与超时；100项当前快照缺席不等于任务完成，queryTasks totalSize仅每页事务精确，过滤变更需generation与cursor重置。建议深模块WorkspaceFeedProjection隐藏轮询/分页/attention/索引，UI只收snapshot/callbacks。已写入WPF-M02验收，无实现修改。
 
 组件交付闭环：root正式APPROVED target46a1dbd60aa57a464d67e5ac3d39cb2673706c36，WP-R1关闭；owner将证据落独占review.md并metadata提交16d51843c878112bd48cc58d316e36c25c15e167 clean交W01。此为交接快照，唯一W01实现状态仍在W01 owner的status。
+
+
+2026-10-06整体独立UI补发现：root在5174 fixture对demo-decision Approve后pane为Completed/Verified而sidebar仍Needs your decision。已交W01同步catalog与各task projection摘要，不能每token重新list；属于本次多task拆分回归，W01整体review仍待最终SHA。最新10组owner浏览器报告通过也不自动覆盖该后发现，需要对应修复/回归。
+
+插件接缝前置调查发现当前data标记有语义偏差：chat.message.actions在任务状态bar、sidebar.item.actions在整nav、sidebar.footer仅fixture可见、workspace.actions仅Terminal页。进入host阶段应以React声明式typed ExtensionSlot在实际位置消费，不能DOM扫描自动注入；当前标记不等于已实现pluginregistry。详细映射待只读owner回报。
+
+
+WPF-P01接缝调查已持久化到[plugin-seams.md](plugin-seams.md)：位置→command→context/capability→disable清理，明确当前标记语义差异、同realm第三方无隔离保证和WPF-NAV-01后续统一导航。研究没有在旧panels树开展新实现，管理文档唯一owner落盘。

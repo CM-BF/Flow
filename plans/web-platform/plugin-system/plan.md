@@ -8,6 +8,8 @@
 
 已确认方向：全部内置组件按可插拔边界设计，适当位置能加按钮/菜单/页签。工程建议：窄 PluginHost 暴露 register/activate/deactivate/list/execute 与 disposables；贡献引用稳定 commandId，同一命令供按钮、菜单、快捷键使用。不把每个DOM节点包装Slot，不先扩散全局context。
 
+当前真实UI接缝/命令/context/disable建议见[plugin-seams](../../../docs/evidence/web-platform/plugin-seams.md)，仅研究提案。可信内建与外部包信任边界分开：同realm第三方JS不能因未传token而声称隔离，交X01设计。WPF-NAV-01由统一导航命令处理URL/history与布局恢复，当前W01只最小修或记录限制，不扩大当前blocking。
+
 稳定扩展位置建议：`activityBar.primary/bottom`、`sidebar.header/item.actions/footer`、`chat.header/message.actions/composer.actions`、`workspace.tabs/header/actions`、`artifact.actions`、`settings.sections`、`theme.tokens`。实现时核对W01稳定布局，更新接口说明后固定版本。
 
 ## 阶段、验收与风险
