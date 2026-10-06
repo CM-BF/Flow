@@ -191,3 +191,5 @@ Fixed 1b16d23de5b00f897fe9bd0fa07879c84d78e936; approved domain2137115 imported 
 ## 2026-10-06 07:29 UTC CHAT08 薄 transport
 
 Target `3d81141324041c2c67680edbb686996cefaf8b4b` consumes fixed DTO998e2fd; only client index and one direct HTTP test. 3 POST methods preserve exact Unicode payload/proposal/revision/afterSequence/events and current ownership. Success, explicit not-committed, absent and replayed committed remain distinct; 409/transport disconnect/AbortSignal propagate without automatic retry. Strict actual schema fixture validates all requests; no invented taskId or extra key. Existing wildcard export already exposes these types. Test first missing-method red then 1/1 green39ms (suite224ms), typecheck exit0 (empty stdout); individual process exit recorded by execution tool. No provider/PG. clean-code/codebase-design review: same existing request seam, no lifecycle policy in client, no extra abstraction. Request independent review before integrating; domain/production approval remains separate.
+
+Root独立只读APPROVED3d811，2source/3raw/2contract固定hash核对，无重跑。main暂冻结b54用于SVC02已授维护窗口；此候选不越过领域审查/生产启用门槛。

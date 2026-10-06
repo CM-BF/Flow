@@ -12,11 +12,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；CHAT08薄client实际HTTP1/1与类型检查；没有领域或provider新结论 |
 | 已集成main状态 / HEAD | b54de1dbb08e3ccc7d33a27295a318f2799e76ae 已含CHAT07领域/薄client和ActivityI主界面；个人center/runner仍fb906cb，SVC02正准备固定253b更新。CHAT08薄client未集成。 |
-| Review | NOT_STARTED；CHAT08薄client待独审；1b16历史批准保留 |
+| Review | APPROVED；Root独立只读批准3d811薄client；领域/生产后继另审 |
 | 实现目标 | 3d81141324041c2c67680edbb686996cefaf8b4b |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/steering-finalization.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 聊天活动和逐段回复的公共读取已交付；执行中补充指令正在接通原生对话。 |
 | 下一可用交付 | 完成补充指令与最终答复竞争时的确认接口，避免消息被遗漏或重复发送。 |
