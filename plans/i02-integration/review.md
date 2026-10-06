@@ -23,3 +23,9 @@ Lead必要整合10项、生产入口选择1项、Web20项、root/Web typecheck�
 ## 2026-10-06T13:19:31.453782+00:00 P05与S01受控接收
 
 P05源6336由chatui01_owner独审/Mika接受，S01完整源6de、固定结果64911与observer c259按各自固定review边界接收。本次30源/config与target逐hash相符；当前main工程类型新增保留，4public PG消费者/root及实验types0。集成事实见event-capacity-integration，不声称reviewer重跑或新容量结论。
+
+2026-10-06T13:33:02.909103+00:00：受控X01 leaf接收复用Mika唯一bf3378和f635独审；本集成仅11源码/依赖哈希、真实public import、当前类型及离线锁检查，不替代独审也不新增provider验收。[事实](../../docs/evidence/i02/plugin-leaf-integration.json)。
+
+## 2026-10-06 13:42:00 UTC 浏览器会话受控接收
+
+复用领域582f、薄client d6 P2复审及生产9406三份独立批准；13源码均为批准blob，没有手工产品冲突。当前组合仅受影响的生产单例/类型验证，非重新审批整包。[事实与限制](../../docs/evidence/i02/browser-session-integration.json)。clean-code安全点：单一认证模块承担HTTP/SSE鉴权，client共用transport、不开重试或第二状态机，配置与用户输入分离；无新发现。

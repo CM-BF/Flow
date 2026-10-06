@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:44:51 UTC / main aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:37:42 UTC / main2f16e30a7e4dbeb7d4bc28e03284835764ef19a0 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | aeb已接O12持续目标/解释历史、ENG01G原生通信写入接缝与SVC05兼容准备。实际个人后台已362/v15 accepting，Web8d8/caa1/v2保持；149源已实采，151登记候选随本批发布。 |
+| 已集成main状态 / HEAD | 2f16e30a已含TUI01D、ENG01H、ATTACHI02、上下文附件历史、S01P04/P05与插件材料/loader；个人后台362/v15 accepting、Web8d8/caa1/v2保持。当前154来源，TUI01E第155来源本批登记。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 新后台已交到个人预览并恢复接收，历史会话和网页保持；持续目标与工程检查基础已进入主线。 |
-| 下一可用交付 | 终端接入持续目标与控制旅程，工程接入明确原生用途和检查收据；固定后台发布产物随后解耦开发目录。 |
+| 当前产出 | 终端目标控制、附件聊天接线和插件安装基础已进入主线；登录恢复生产入口完成独审，客户端修正正在复审。 |
+| 下一可用交付 | 终端查看、暂停和继续队列；登录后刷新保留连接；下一片并行组合自然语言目标、计划、只读子任务与统一解释。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -114,3 +114,5 @@ SVC04真实Web-only发布已完成，固定报告与脱敏操作事实见[发布
 SVC05固定362沿既有授权完成63.132秒drain→hold→refresh→显式resume，维护v15 accepting；4成功任务/0未完、既有promoted队列、会话2c507833与原端口/身份/配置/两Web产物保持。60旧表旧列摘要一致，预排除queue_checked_at与4维护列另核审计，025–027前进；不是全文语义再验。保留checkpoint在resume前落盘，0operator模型/0tab动作。原Flow暂时detached后恢复main aeb，运行sourceAtStart仍362。唯一[发布事实](../../../personal-current-release/plans/svc05-current-release/status.md)。
 
 [TUI01D](../../../tui-goal-session/plans/tui01d-goal-session/status.md)公开goal/control模式与[ENG01H](../../../engineering-native-contract/plans/eng01h-native-engineering-contract/status.md)有限原生工程合同分别在独立树实施，不以完整Web或真实model阻止0模型公共通路。新增[SVC06](../../../backend-release/plans/svc06-backend-release/status.md)沿REQ-19排到现有worker安全点后：固定源码与依赖产物、缺件停服前拒绝、旧数据/Web独立发布保持。当前只计划，不把pnpm deploy或hash lock当运行闭包证明，不自动再动个人服务。
+
+2026-10-06 13:37:42 UTC：O01-05/O12-05/M02连续自然语言目标旅程为下一ready用户结果，native_center_owner先收敛现O07/O09/O11/O12公共接口组合；0模型旅程与后续独立预算实际模型组合分开。O08/O10封存次数不复用、不等Codex工程资格或SVC06磁盘；不造新调度器。TUI01E由assignment_review独立tui-queue-controls实施，沿原TUI-001-06/08，不等所有Web。Connection生产9406限定loopback，远端TLS代理后继open，当前个人入口未启sessioncookie。

@@ -1,3 +1,36 @@
+# X01 零长度metadata修复增量复审
+
+状态：APPROVED
+
+Review target commit：bf33781450d2a5036e026ace03c1682e4d7f0f17
+
+[当前唯一增量manifest](../../docs/evidence/x01/leaf-meta-manifest.json)，delta base `2d20e35ca0019854e102cf051252675eb3f16da6`。生产仅Parser最大metadata参数及注释；测试仅扩类型与追加六种meta×前后位置12case，原53断言保持。真实12red→12green；最终65不同（51材料+14真实loader）与strict0、66own根删除。原43bindings中除两改动源码的41项逐字保持；原53不是修后65的额外累计。独立复审只读固定Git/source/raw，0新增执行；Mika/gpt-6-astra于2026-10-06 13:17:47 UTC独立APPROVED，唯一P2已关闭、0剩余P1/P2；[正式收据](../../docs/evidence/x01/leaf-independent-review.json)。
+
+---
+
+# X01 当前静态材料 / 真实 loader leaf 审查
+
+状态：CHANGES_REQUESTED
+
+Review target commit：2d20e35ca0019854e102cf051252675eb3f16da6
+
+Mika / gpt-6-astra 对固定target发现 1 P2 / 0 P1：零长度 TAR metadata 绕过全部metadata拒绝策略；[原审收据](../../docs/evidence/x01/leaf-independent-review-initial.json)。修复由owner在原v2范围进行，原53检查/manifest保持历史不改。
+
+[固定manifest](../../docs/evidence/x01/leaf-manifest.json)。8个leaf，材料39+loader14=53distinct，严格局部noEmit0，54自有临时根确认删除。仅模块行为，不含center public vertical / PG / provider / runtime refs / 多版本回收。旧方向审批保留如下，不移用。
+
+---
+
+# X01 当前纵向片设计审查
+
+状态：APPROVED（纵向方向设计；无产品实现批准）
+
+- Review target commit：3bd1add6ef7e868765b4508e88286bd62f49edd7；[ready](../../docs/evidence/x01/design-readiness.json)绑定6个文档与20固定main源码输入。
+- 当前owner architecture_read/gpt-6-astra；仅原两个metadata目录。原plan-only approval不覆盖新Interface/产品源码。
+- Mika / gpt-6-astra 于 2026-10-06 12:40:12 UTC 只读独审 APPROVED，0 P1/P2；独立核6设计绑定+20固定source。收据见 [vertical-design-review.json](../../docs/evidence/x01/vertical-design-review.json)。
+- migration、target runner/store资格、共享合同仍待Lead；依赖补充91ac13d0已获Mika独立方向批准（12:46 UTC），见[收据](../../docs/evidence/x01/dependency-design-review.json)；不是产品实施批准。实施前领取精确源码scope，0产品验证。
+
+---
+
 # X01 独立审查
 
 **状态：APPROVED（plan-only）target c21731c01f97afb450e443245b3fae0d2b0edb9b；不构成产品实现批准。**

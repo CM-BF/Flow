@@ -1,0 +1,155 @@
+{
+  "source": "Faithful transcription of this worker conversation tools.exec_command/write_stdin outputs; process stdout is the separate untouched redirected file. Tool receipt summaries are not compiler output. Unknown session ids omitted, not reconstructed.",
+  "runtime": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "providerCalls": 0,
+  "runs": [
+    {
+      "name": "install",
+      "commandSummary": "offline frozen install --package-import-method=hardlink",
+      "exitCode": 0,
+      "startChunk": "40bcac",
+      "exitChunk": "d900b9",
+      "stdout": "install.stdout",
+      "sessionId": 37633
+    },
+    {
+      "name": "types-first",
+      "commandSummary": "tsc --noEmit",
+      "exitCode": 0,
+      "startChunk": "85d51b",
+      "exitChunk": "f9d109",
+      "stdout": "types-first.stdout",
+      "sessionId": 35211
+    },
+    {
+      "name": "pg-first",
+      "commandSummary": "vitest session.test.ts (initial collection)",
+      "exitCode": 1,
+      "startChunk": "6573e1",
+      "exitChunk": "f96daf",
+      "stdout": "pg-first.stdout",
+      "selected": 0,
+      "unselected": 0
+    },
+    {
+      "name": "types-tests",
+      "commandSummary": "tsc --noEmit",
+      "exitCode": 2,
+      "startChunk": "e5768b",
+      "exitChunk": "1d04f8",
+      "stdout": "types-tests.stdout",
+      "sessionId": 39816
+    },
+    {
+      "name": "pg-second",
+      "commandSummary": "vitest session.test.ts",
+      "exitCode": 0,
+      "startChunk": "71b06e",
+      "exitChunk": "be7ea9",
+      "stdout": "pg-second.stdout",
+      "selected": 18,
+      "unselected": 0,
+      "cleanup": "pg-second-cleanup.json"
+    },
+    {
+      "name": "types-final",
+      "commandSummary": "tsc --noEmit",
+      "exitCode": 0,
+      "startChunk": "08bb8d",
+      "exitChunk": "e19b8f",
+      "stdout": "types-final.stdout",
+      "sessionId": 86724
+    },
+    {
+      "name": "pg-increment",
+      "commandSummary": "vitest session.test.ts -t no-cookie read|HTTPS cookie|preClose",
+      "exitCode": 1,
+      "startChunk": "e05a03",
+      "exitChunk": "d873fd",
+      "stdout": "pg-increment.stdout",
+      "sessionId": 31612,
+      "selected": 3,
+      "unselected": 18,
+      "cleanup": "pg-increment-cleanup.json"
+    },
+    {
+      "name": "pg-increment-fixed",
+      "commandSummary": "vitest session.test.ts -t no-cookie read|preClose|already-open SSE",
+      "exitCode": 1,
+      "startChunk": "5e0da0",
+      "exitChunk": "7a1092",
+      "stdout": "pg-increment-fixed.stdout",
+      "sessionId": 31417,
+      "selected": 5,
+      "unselected": 16,
+      "cleanup": "pg-increment-fixed-cleanup.json"
+    },
+    {
+      "name": "pg-increment-final",
+      "commandSummary": "vitest session.test.ts -t no-cookie read|preClose|already-open SSE|expires absolutely",
+      "exitCode": 0,
+      "startChunk": "53204d",
+      "exitChunk": "ce36af",
+      "stdout": "pg-increment-final.stdout",
+      "sessionId": 1728,
+      "selected": 6,
+      "unselected": 15,
+      "cleanup": "pg-increment-final-cleanup.json"
+    },
+    {
+      "name": "types-delivery",
+      "commandSummary": "tsc --noEmit",
+      "exitCode": 0,
+      "startChunk": "f3524d",
+      "exitChunk": "513aed",
+      "stdout": "types-delivery.stdout",
+      "sessionId": 21094
+    },
+    {
+      "name": "pg-restart",
+      "commandSummary": "vitest session.test.ts -t real owned center process",
+      "exitCode": 0,
+      "startChunk": "ee6e2e",
+      "exitChunk": "836193",
+      "stdout": "pg-restart.stdout",
+      "sessionId": 28791,
+      "selected": 1,
+      "unselected": 21,
+      "cleanup": "pg-restart-cleanup.json"
+    },
+    {
+      "name": "types-restart",
+      "commandSummary": "tsc --noEmit",
+      "exitCode": 2,
+      "startChunk": "fe5d10",
+      "exitChunk": "5fa086",
+      "stdout": "types-restart.stdout",
+      "sessionId": 76221
+    },
+    {
+      "name": "types-fixed",
+      "commandSummary": "tsc --noEmit",
+      "exitCode": 0,
+      "startChunk": "05d07a",
+      "exitChunk": "d5b549",
+      "stdout": "types-fixed.stdout",
+      "sessionId": 16675
+    },
+    {
+      "name": "pg-consumers",
+      "commandSummary": "vitest session.test.ts -t unmodified public|before publishing",
+      "exitCode": 0,
+      "startChunk": "0138c6",
+      "exitChunk": "b49562",
+      "stdout": "pg-consumers.stdout",
+      "sessionId": 81910,
+      "selected": 2,
+      "unselected": 20,
+      "cleanup": "pg-consumers-cleanup.json"
+    }
+  ]
+}

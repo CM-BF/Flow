@@ -1,0 +1,170 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts (39 tests | 2 failed | 37 skipped) 450ms
+   ↓ a real npm fixture is installed once and independently read with exact identity after restart
+   ↓ rejects the whole package for traversal without installing a partial tree
+   ↓ rejects the whole package for absolute without installing a partial tree
+   ↓ rejects the whole package for wrong prefix without installing a partial tree
+   ↓ rejects the whole package for backslash without installing a partial tree
+   ↓ rejects the whole package for symbolic link without installing a partial tree
+   ↓ rejects the whole package for hard link without installing a partial tree
+   ↓ rejects the whole package for device without installing a partial tree
+   ↓ rejects the whole package for unsupported ignored entry without installing a partial tree
+   ↓ rejects the whole package for duplicate file without installing a partial tree
+   ↓ rejects the whole package for path under regular file without installing a partial tree
+   ↓ rejects the whole package for metadata without installing a partial tree
+   ↓ rejects the whole package for oversized ignored metadata without installing a partial tree
+   ↓ bounds complete archive consumption for padding bomb
+   ↓ bounds complete archive consumption for file bytes
+   ↓ bounds complete archive consumption for file count
+   ↓ bounds complete archive consumption for nested gzip
+   ↓ bounds complete archive consumption for crc
+   ↓ bounds complete archive consumption for truncated file
+   ↓ rejects incompatible static declarations: name
+   ↓ rejects incompatible static declarations: version
+   ↓ rejects incompatible static declarations: scripts
+   ↓ rejects incompatible static declarations: dependencies
+   ↓ rejects incompatible static declarations: manifest bytes
+   ↓ rejects incompatible static declarations: host api
+   ↓ rejects incompatible static declarations: missing entry
+   ↓ rejects corrupt artifact identity, untrusted content, pre-abort and a symlink store before publication
+   ↓ concurrent identical installations preserve the one receipt and leave no stages
+   ↓ restart read rejects tamper without overwriting the existing installation
+   ↓ restart read rejects extra without overwriting the existing installation
+   ↓ restart read rejects symlink without overwriting the existing installation
+   ↓ restart read rejects missing without overwriting the existing installation
+   ↓ a write failure closes prior writers and removes only its own unpublished stage
+   ↓ unknown writer close retains its owned stage instead of deleting it or claiming success
+   ↓ a lost rename acknowledgement is unknown and the exact committed installation remains independently readable
+   ↓ mid-write cancellation settles the owned file and leaves no unpublished installation
+   ↓ a replaced staging identity is retained and never recursively deleted as the original stage
+   × rejects incomplete or concatenated TAR: nonzero trailing bytes 142ms
+   × rejects incomplete or concatenated TAR: missing terminal blocks 301ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects incomplete or concatenated TAR: nonzero trailing bytes
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-BgfMO6/store/aac5fbb2e075a836b4ba25f5467474584d68738882adb4c77d7b3916dabb8d01/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "4582672a-f1e3-4779-b7f8-302c821db5e3",
++       "bytes": 398,
++       "integrity": "sha512-oGeUO0a5UtkvHK+MBx0Flu/jOAMDKjmcg9xoK7NLEh/hgR81CWco5gtk4Ub0iFsf+XRLSE3kKpHGcNaERfLu+g==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "e5e5ae28ba0b2b0edc6fce488c55bbb414a077b53059c54bc4054447a63d7217",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "aac5fbb2e075a836b4ba25f5467474584d68738882adb4c77d7b3916dabb8d01",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:232:50
+    230|     const bytes = mode === 'nonzero trailing bytes' ? Buffer.concat([v…
+    231|     await replaceArchive(f, gzipSync(bytes));
+    232|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    233|     expect(await readdir(f.input.store.root)).toEqual([]);
+    234|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects incomplete or concatenated TAR: missing terminal blocks
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-KpppPm/store/7a9bd6e6e499849ccb6ee9c5471f26a76ab17858da7ca27080dfe1f4cdfcf356/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "f972cb66-8a44-437a-9f59-1474a3813023",
++       "bytes": 386,
++       "integrity": "sha512-ZIuA7MzdwWBfFY16TDa8pPnc+X3/6Y8epQEBMZZf44JgMvyTkfAEAwilMUGtmgty0lG/+pAdZIowY5WK0Bisyg==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "917ee8e1ded69764298f9db7cab5c5e6cdf2b4d9d6917a34ba8d40599599ca98",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "7a9bd6e6e499849ccb6ee9c5471f26a76ab17858da7ca27080dfe1f4cdfcf356",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:232:50
+    230|     const bytes = mode === 'nonzero trailing bytes' ? Buffer.concat([v…
+    231|     await replaceArchive(f, gzipSync(bytes));
+    232|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    233|     expect(await readdir(f.input.store.root)).toEqual([]);
+    234|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 37 skipped (39)
+   Start at  06:07:01
+   Duration  668ms (transform 64ms, setup 0ms, import 87ms, tests 450ms, environment 0ms)
+

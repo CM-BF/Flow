@@ -1,0 +1,13 @@
+{
+  "target": "91ac13d029a51eae0f674db041d252c2d7ce96ed",
+  "reviewer": "Mika / gpt-6-astra",
+  "recordedAt": "2026-10-06T12:46:02Z",
+  "verdict": "APPROVED",
+  "scope": "Explicit @flow/plugin-runtime workspace with exact tar 7.5.22 dependency and stable prepare/read entry points; design direction only",
+  "constraints": [
+    "Lead must assign package/manifests/lock sole writers before mutation or install",
+    "No private .pnpm imports or custom TAR parser",
+    "Tar stream/meta/padding, expanded-byte/file/path/link/duplicate limits and unknown cleanup require real behavior checks",
+    "Public vertical still depends on center authority, shared contracts and unique DDL"
+  ]
+}

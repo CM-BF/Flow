@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "target": "3bd1add6ef7e868765b4508e88286bd62f49edd7",
+  "reviewer": "Mika / gpt-6-astra",
+  "reviewedAt": "2026-10-06T12:40:12Z",
+  "verdict": "APPROVED",
+  "scope": "bounded v1 vertical design direction only",
+  "bindings": {
+    "designDocuments": 6,
+    "fixedSourceInputs": 20
+  },
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "limits": [
+    "No product implementation, tests, PG or provider calls",
+    "Migration, target runner/store qualification and shared public contracts await Lead coordination",
+    "Dependency addendum is a subsequent proposal, not silently covered by this approval",
+    "Disable rejects new binding; accepted bindings keep their immutable pin; no forced interruption implied"
+  ]
+}

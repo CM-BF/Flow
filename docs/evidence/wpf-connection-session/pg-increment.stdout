@@ -1,0 +1,79 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session
+
+ ❯ apps/server/src/browser-session/session.test.ts (21 tests | 2 failed | 18 skipped) 61125ms
+   ↓ keeps unconfigured sessions unsupported while the old bearer-only HTTP and stream consumers remain usable
+   ↓ persists random center/principal and the same absolute session across GET reload and process-factory restart
+   ↓ revokes old cookies on trusted startup token rotation while keeping random principal identity
+   ↓ revokes old cookies on trusted startup epoch rotation while keeping random principal identity
+   ↓ expires absolutely without read mutation and logout revokes only its session without cancelling task work
+   ↓ never falls back to a valid cookie from invalid explicit authorization wrong
+   ↓ never falls back to a valid cookie from invalid explicit authorization 
+   ↓ never falls back to a valid cookie from invalid explicit authorization Basic secret
+   ↓ preserves runner bearer authority and denies owner cookies access to runner endpoints
+   ↓ requires exact trusted Origin and CSRF on cookie writes, allowing only same-origin safe browser reads without Origin
+   ↓ rejects Cookie confusion across ports and centers even when local browser cookie delivery shares a hostname
+   ↓ serializes a 32-session capacity limit and rejects overflow without evicting a live session
+   ↓ closes an already-open SSE on logout without cancelling its running task
+   ↓ closes an already-open SSE on expiry without cancelling its running task
+   ↓ closes an already-open SSE on rotation without cancelling its running task
+   ↓ rechecks authorization after a read and before publishing a newly fetched SSE page
+   ↓ rejects malformed settings/commands and duplicate session cookies without turning reads into control
+   ↓ preserves the unmodified public createServer bearer client and two-argument stream consumer
+   × keeps a no-cookie read side-effect free and rejects a mismatched destination despite forwarded headers 42ms
+   ✓ sets the HTTPS cookie policy without claiming a browser or TLS journey 12ms
+   × does not create an observer after preClose overtakes its initial asynchronous authorization 60006ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/browser-session/session.test.ts > keeps a no-cookie read side-effect free and rejects a mismatched destination despite forwarded headers
+AssertionError: expected 200 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 200
+
+ ❯ apps/server/src/browser-session/session.test.ts:215:189
+    213|   expect((await pool.query('SELECT count(*)::int AS n FROM flow.browse…
+    214|   const login = await connect(f);
+    215|   expect((await request(f, '/api/protected', { cookie: login.cookie, h…
+       |                                                                                                                                                                                             ^
+    216| });
+    217| it('sets the HTTPS cookie policy without claiming a browser or TLS jou…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  apps/server/src/browser-session/session.test.ts > does not create an observer after preClose overtakes its initial asynchronous authorization
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ apps/server/src/browser-session/session.test.ts:229:1
+    227|   await f.close();
+    228| });
+    229| it('does not create an observer after preClose overtakes its initial a…
+       | ^
+    230|   let entered!: () => void, release!: () => void;
+    231|   const enteredPromise = new Promise<void>(r => { entered = r; }), gat…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  apps/server/src/browser-session/session.test.ts > does not create an observer after preClose overtakes its initial asynchronous authorization
+Error: Hook timed out in 30000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ apps/server/src/browser-session/session.test.ts:36:1
+     34| beforeAll(async () => { pool = (await database()).pool; });
+     35| beforeEach(async () => { await pool.query('DELETE FROM flow.browser_se…
+     36| afterEach(async () => { for (const f of fixtures.splice(0).reverse()) …
+       | ^
+     37| afterAll(async () => {
+     38|   try {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed | 18 skipped (21)
+   Start at  06:12:16
+   Duration  62.19s (transform 418ms, setup 0ms, import 983ms, tests 61.12s, environment 0ms)
+

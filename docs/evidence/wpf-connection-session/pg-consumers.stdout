@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session
+
+Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
+ ✓ apps/server/src/browser-session/session.test.ts (22 tests | 20 skipped) 2807ms
+   ✓ rechecks authorization after a read and before publishing a newly fetched SSE page  310ms
+   ✓ preserves the unmodified public createServer bearer client and two-argument stream consumer  1122ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 20 skipped (22)
+   Start at  06:17:40
+   Duration  4.41s (transform 660ms, setup 0ms, import 1.48s, tests 2.81s, environment 0ms)
+

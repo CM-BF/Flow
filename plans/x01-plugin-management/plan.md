@@ -5,18 +5,18 @@
 | 计划编号 / 状态 | X01 / in-progress；计划已交付，registry/只读视图片段已入main，完整生命周期未完成 |
 | 创建 / 最近更新 | 2026-10-06 / 2026-10-06 |
 | 父计划 / 追溯 | [FLOW-001 §10](../flow-001-architecture/plan.md)、[完整矩阵 REQ-11/12/13](../flow-001-architecture/full-plan-matrix.md)；同时消费 REQ-08/09/20 |
-| 唯一计划/status owner | runner_owner / gpt-6-astra |
+| 唯一计划/status owner | architecture_read / gpt-6-astra；co-lead mika（原runner_owner已释放） |
 | 后续实施协调 | Execution Lead；各实现 writer 须另行领取独立 worktree/精确 scope，不由本计划虚构已派发 |
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan / codex/plugin-management-plan |
-| Base | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 |
+| Base | 原计划3773db5；本轮设计受控main7cbda706合入c837853829f0344634df78ed7195ee7255f6b832 |
 
 ## 目标与当前事实
 
 用户能在产品 Web 的插件管理页和 CLI 中，对同一中心持久化的插件执行安装、配置、授予权限、启用、停用、升级、回滚、移除，并了解当前版本、实际能力、作用范围、运行中引用、错误与审计。客户端只调用公共中心 commands，不各自保存另一份权威安装/授权状态。Web 的管理页不能成为业务的唯一入口。
 
-这是一份完整 X01 的实施计划，**不是已实现的插件管理系统**。现有内建 adapter seam 和 trusted Web host 不等于 npm 生命周期、中心安装记录或第三方隔离已完成。本轮只写本计划三件套及自身证据，0 模型/云，不安装依赖，不改产品或全局索引。
+这是一份完整 X01 的实施计划，**不是已实现的插件管理系统**。现有内建 adapter seam 和 trusted Web host 不等于 npm 生命周期、中心安装记录或第三方隔离已完成。当前进入同机trusted自有npm包纵向片的Interface设计；本轮仍只写原计划/证据，0模型/云/产品PG，不安装依赖、不改产品或全局索引。
 
-已只读核对 [WPF-P01 权威计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host/plans/wpf-p01-plugin-host/plan.md)：trusted Web host target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 已有独立批准，范围是可信贡献与 fixture；[WPF-I01 权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md) 的主 App 挂载仍为该 owner 独立任务。这两项只是本计划 Web 前置，不能替代全 X01 验收，也不要求它们等待中心完整生命周期完成。观察时间/HEAD/dirty 见 [事实记录](../../docs/evidence/x01/README.md)，后续以各 owner 状态为准。
+已只读核对 [WPF-P01 权威计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host/plans/wpf-p01-plugin-host/plan.md)：trusted Web host target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 已有独立批准，范围是可信贡献与 fixture；[WPF-I01 权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md) 与后继WPF-X03I01已交付主App挂载；当前事实见[owner接收](../../docs/evidence/x01/owner-acceptance.md)。这两项只是本计划 Web 前置，不能替代全 X01 验收，也不要求它们等待中心完整生命周期完成。观察时间/HEAD/dirty 见 [事实记录](../../docs/evidence/x01/README.md)，后续以各 owner 状态为准。
 
 ## 模块与权威数据
 
@@ -95,7 +95,7 @@
 
 Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management/plans/x03-plugin-management-view/plan.md) 中先做“中心登记的包 / 当前浏览器扩展”窄视图。依赖 X02 中心 registry、F01 consumer095 公共 client、WPF-P01 trusted host 与 WPF-I01 挂载；它是 X01-06 的可读子段，不等待或代表完整安装/启停/升级/回滚/移除生命周期。
 
-输入仅为只读 client registry 与当前 host.list/subscribe。不能新增 npm 加载、自动授予或绑定；尚未证明某中心 package 对应 trusted definition 时，两份事实分开展示，不推断中心登记即浏览器已加载。主 App 接线仍由外部 WPF-CHAT owner 负责，本计划不改变写入范围。
+输入仅为只读 client registry 与当前 host.list/subscribe。不能新增 npm 加载、自动授予或绑定；尚未证明某中心 package 对应 trusted definition 时，两份事实分开展示，不推断中心登记即浏览器已加载。主 App 接线已由WPF-X03I01外部owner交付并入main；本计划不改变其写入范围，完整写命令UI仍未交付。
 
 子段验收保留：两个来源的身份/状态标签、无映射时的分开展示、host 更新订阅、空/未知/失败通用状态、凭据不进入列表、只读请求与真实浏览器证据。完整 X01-06 仍待 Web/CLI 公共写命令及生命周期验收，不能因该子段通过而勾选完成。
 
@@ -121,3 +121,9 @@ Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHa
 本轮使用本地 find-skills/codebase-design/clean-code，应用记录见 [证据](../../docs/evidence/x01/README.md)。文档链接/事实/一致性检查即可，不为计划运行产品测试。独立 review 从 [review.md](review.md) 的 NOT_STARTED 开始；进度只写 [status.md](status.md)。全局索引、registry 与 REQ-11～13 更新由 Lead 单写，本 owner 不越权。
 
 2026-10-06 04:39:30 UTC 事实同步：本计划已入main75a33；X02 registry与公共CLI已入main，X03独立只读模块已入main，主App挂载归WPF-X03I01。既有拟定完整模型/生命周期仍是后继设计，不因registry存在声称npm安装/启停/升级/回滚/删除可用。
+
+2026-10-06 12:32:03 UTC 接续：WPF-X03I01主App只读挂载已main，原等待描述仅历史；见[owner接收](../../docs/evidence/x01/owner-acceptance.md)。首纵向片仍需install/config/grant/enable/真实runner load-execute/有来源产物verify/disable新binding。所有X01-01～10和原完整验收保留。
+
+## 首个真实npm包纵向片（原TODO子段）
+
+已授权同机、workspace级、显式trusted自有包方向，具体[Interface](../../docs/evidence/x01/vertical-interface.md)和[scope/依赖请求](../../docs/evidence/x01/scope-request.md)供Mika/Execution Lead冻结。共享安装材料模块只承担有界解包/静态manifest/receipt，runner host真实import/invoke，中心权威复用原revision/command/fence。产品scope/唯一DDL未分配前不写实现。原X01-02/03/04/06/07获得这个可交付子段，全部10TODO及完整版本/撤销/移除/renderer/verifier/context/隔离验收保留。

@@ -1,0 +1,51 @@
+{
+  "before": "673c3b8e68089cf87844c9ec79b873078ecbc83c",
+  "fixedInput": "f63502e26d44f33a86a01e98761b22aefbd5fa60",
+  "result": "1c93c10296cea2426a600d214acf48005c4fabeb",
+  "method": "restore only 3 reviewed blobs; no manual merge edits",
+  "bindings": [
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    }
+  ],
+  "offlineInstall": {
+    "exitCode": 0,
+    "command": "CI=true PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm install --offline --frozen-lockfile --ignore-scripts",
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+    "personalFlowNodeModulesTouched": false
+  },
+  "integrationTake": {
+    "requestId": "4d47185b-8e2a-4875-b7ac-2cb570fa56c4",
+    "action": "take",
+    "committedAt": "2026-10-06T12:57:25.376Z",
+    "claim": {
+      "claimId": "637d2950-3255-450b-a031-3b4aab173a78",
+      "version": 1,
+      "taskId": "X01-DEPENDENCY-INTEGRATION",
+      "lead": "mika",
+      "worker": "architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+      "branch": "codex/plugin-management-plan",
+      "scope": [],
+      "role": "integration",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-06T12:57:25.376Z",
+      "createdAt": "2026-10-06T12:57:25.376Z"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T13:13:50.383099+00:00 / maincde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd（本次只读核验） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:37:42 UTC / main2f16e30a7e4dbeb7d4bc28e03284835764ef19a0（当前资源与集成观察） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -90,3 +90,5 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 13:12:37 UTC Data卷可用1,826,984 KiB（约1.74 GiB），不能视为完整安装/复制的空间限制解除。SVC06大型产物准备暂停；每次开始前核真实可用量、估计并发物理峰值，并至少保留1 GiB供数据库、证据及其他队伍收尾，当前完整准备最低门槛2.5 GiB。clone减少物理复制不等于安装/临时峰值为零，失败不扩大预算或回落普通全量复制。
 
 三队仅各自核对已结束、自有且身份明确、可重建的临时安装/测试产物；不得删除用户数据、他人worktree/node_modules、active/unknown资源或审查原始证据。本次Execution Lead未删除文件。ConnectionSession源码、小范围现有依赖检查和已授权有界诊断继续，不全局停工、不操作个人服务。共享资源观察见[固定事实](../../docs/quality/resource-space-2026-10-06.json)，SVC06具体峰值与清理记录由其唯一owner维护。纯文档核对，不跑产品测试。
+
+2026-10-06 13:37:42 UTC：旧R05可重建依赖限定清理实际只回收9,834,496B，非du553748KiB；Web旧CONTEXTI有活跃消费者不删。现资源事实见[同一记录](../../docs/quality/resource-space-2026-10-06.json)，SVC06完整准备仍保留2.5GiB gate，普通小验证继续。后续新worktree sparse-checkout仅候选，先自有≤5MiB toy核Git2.50.1每树配置/共享worktreeConfig，不转换活跃树/删除历史，未测不称节省。

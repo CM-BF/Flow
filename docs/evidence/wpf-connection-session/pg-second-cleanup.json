@@ -1,0 +1,50 @@
+{
+  "providerCalls": 0,
+  "productionMount": false,
+  "samples": [
+    {
+      "case": "reload-restart",
+      "centerId": "11ebf058-0608-4d7a-985a-f5244f88c0ef",
+      "principal": "fa4dd81c-8994-456d-8cf7-2115ff08bcea",
+      "expiresAt": "2026-10-06T21:10:46.249Z",
+      "noReadRenewal": true,
+      "noPlaintextStored": true
+    },
+    {
+      "case": "capacity",
+      "accepted": 32,
+      "rejectedOverflow": 1,
+      "firstStillValid": true
+    },
+    {
+      "case": "open-SSE-logout",
+      "closed": true,
+      "taskStatus": "running",
+      "authChecks": 0
+    },
+    {
+      "case": "open-SSE-expiry",
+      "closed": true,
+      "taskStatus": "running",
+      "authChecks": 0
+    },
+    {
+      "case": "open-SSE-rotation",
+      "closed": true,
+      "taskStatus": "running",
+      "authChecks": 0
+    }
+  ],
+  "databases": [
+    {
+      "database": "flow_connection01_4f2c00b07daa4a39b70aa79ee3ef3b6f",
+      "identityVerified": true,
+      "removed": true
+    },
+    {
+      "database": "flow_connection01_972586eefd4b4480b76520c2d637ff90",
+      "identityVerified": true,
+      "removed": true
+    }
+  ]
+}
