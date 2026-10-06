@@ -1,0 +1,32 @@
+{
+  "source": "root read-only in-memory probe reported in this management segment; manager did not rerun",
+  "ownerTree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+  "head": "9da5add318df9cf08d50fb5262f9ceb6bfae29e9",
+  "treeState": "clean and released, no project file writes",
+  "installedCore": "0.3.22",
+  "method": "Real ConversationProjection + conversationMessages + installed core convertExternalMessages/cache; 100 turns loaded explicitly in 20-per-page memory port then unchanged refresh",
+  "observed": {
+    "turnArrayPreserved": false,
+    "turnObjectsPreserved": 100,
+    "turnCount": 100,
+    "mappedMessageObjectsPreserved": 0,
+    "mappedMessageCount": 200,
+    "initialConversions": 200,
+    "unchangedRefreshConversions": 200
+  },
+  "sourceHashes": {
+    "projection.ts": "7242783c516311dec0793a6a659a181b5b76c8e1259c732649d5a77379ceb2c2",
+    "messages.ts": "82f39d90a0cfc80ea4aca1c65333fa255cca428dad94e8d96283c793bbc4caf8",
+    "ConversationThread.tsx": "c2fc59a0ea7874c29f1ae25216bad0b146e2b5f19f0cab756672db7da8dd8d47"
+  },
+  "failedFirstAttempt": "Importing the cache function through @assistant-ui/react package root failed with TypeError; retried through the inspected core/react export successfully.",
+  "limitations": [
+    "Input identity churn and conversion counts only; not React render counts, browser/HTTP tests, elapsed-time benchmark or demonstrated UX improvement.",
+    "Live documentation getMetadataKey example is newer than the installed hook; do not use missing API or upgrade dependencies implicitly.",
+    "Future optimization requires isolated take and actual-consumer measurement while preserving same-revision reply/task changes, history gaps and current command gates."
+  ],
+  "researchSources": [
+    "https://www.assistant-ui.com/docs/runtimes/custom/external-store",
+    "https://react.dev/reference/react/Activity"
+  ]
+}

@@ -143,7 +143,7 @@ type WorkspacePanelsProps = {
 | --- | --- | --- |
 | 已审交付 | W01 Thread/shell/splitmerge及panels | root整体APPROVED cb4a392，owner正式review metadata收尾；组件46a1dbd通过 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
-| 跨团队协作 | WPF-D01需求+管理来源登记 | D03/D04实际领取字段已核；D06固定8f已集成main4e，04:28实际47源/图已部署，全部scope已released；后继仅标题快照提示排队 |
+| 跨团队协作 | WPF-D01需求+管理来源登记 | D04原子claim与唯一source实际可见；D06已刷新固定115b并集成86a，981v2释放，原8f/eb观察保留历史；当前ActivityI17scope正式受领、C01四scope待main，按既有账本与Lead registry协作 |
 | 已集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；main3773已含实现，owner转I01 |
 | 已审输入 | WPF-P01插件host | 整体6ce APPROVED、PH-R1～4关闭，最终2910ebc交I01；不覆盖主App |
 | 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v3已转出CHAT四文件和X03I01 CSS，剩余保留范围 |
