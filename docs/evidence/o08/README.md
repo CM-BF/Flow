@@ -20,3 +20,17 @@
 原生门槛尚未实际验证：1 SDK query/4turns/SDK估算$0.20、90s合作取消与父观察停止；未知/越界费用不通过。native startup/auth、SDK最终model/extension实际值、真实语义、native超时/SDK子进程强杀均未运行。本次只有代码与0query负面guard证据，不能声称native预算硬保证或OS硬实时期限。文件系统/清理可晚于90s，停机ACK≠停止；有残余/未知cleanup不当通过。
 
 后继候选：若未来同一次GO新授权且固定产品基线已含CHAT05/CHAT06，可同时保留真实tool activity及partial/settlement事实；当前仅方案候选，不等待组合、不改本片段源码、不额外query。未做UI实观，不称live UI。
+
+## Root P2最小修复（2026-10-06 07:00 UTC）
+
+固定delta `decfcee90264f84ecf3c02874c1e6c85d65bfe13`，原实现与原始输出保留，原manifest另存[manifest-original.json](manifest-original.json)。原审查为CHANGES_REQUESTED，不冒认已经批准；Root独立复审待收。
+
+[process-red.txt](process-red.txt)实际复现：leader exit0，而忽略TERM的孙进程仍在原PGID，旧stopWorker在0.05ms返回。新实现从不根据leader退出宣称组停止；负PGID signal0仅ESRCH证明组不存在，TERM等3s后KILL再确认最多1s，未知/权限失败拒绝。并发deadline/finally复用同一promise，防重复杀与不同结果。没有扩大生产代码或调用provider。
+
+[process-consumers-final.txt](process-consumers-final.txt) **5/5**：3新增生命周期场景（真实3级进程树、自然已退出组、合成EPERM未知）+原2driver直接消费者；3.638s。真实孙进程清理约3.08s，KILL后PGID确认不存在；test finally也确认自有组消失。EPERM是观测失败注入，不是假造一次OS权限拒绝。先前[process-green.txt](process-green.txt)3绿是重复检查，不重复计数。
+
+[rehearsal-p2.json](rehearsal-p2.json)/[stdout](rehearsal-p2.txt)在固定delta复跑同一0query演练：整组确认stopped、无强杀，自有center/DB/tmp均清理。此1演练与旧场景相同，不增加不同用例。结合未改guard的既有5项，累计**11个不同检查**（10Node+1演练），本次执行5Node+1演练；未重跑产品全库/类型检查。新[preflight-p2.json](preflight-p2.json)与[9个mjs语法检查](syntax-p2.json)通过，无native调用。
+
+依据[Node24.20.0 detached官方说明](https://github.com/nodejs/node/blob/v24.20.0/doc/api/child_process.md#optionsdetached)和[process.kill官方说明](https://github.com/nodejs/node/blob/v24.20.0/doc/api/process.md#processkillpid-signal)，Unix detached进程是新组leader，子孙存活独立于leader。证明只限本次已知PGID；主动脱组/setsid未隔离或证明，1s确认失败即unknown，不声称全系统树停止或OS硬实时。未知会保留私有tmp且最终failed-or-unknown；中心cancel仍不等于停止。
+
+[known-extensions.json](known-extensions.json)绑定BASE实际[历史会话证据](../f01/queue-live/turn-1.json)9991B/hash a18d7acaac7546b6e0c8f875025743ef05f5ef935710e0bb6a16aa6c8d468b9d：3managed plugins+3skills与零扩展gate不符，native未就绪。这里只核已保存字节，无新SDK startup/query/auth探测，不绕组织配置。真实运行仍沿GO既有预算流程，当前准备授权不变成执行许可。
