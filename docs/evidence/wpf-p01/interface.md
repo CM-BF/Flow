@@ -55,6 +55,7 @@ interface PluginHost {
   dispose():Promise<void>; // invalidates every generation; App creates a new host for a new connection
   list():readonly PluginSummary[];
   execute(commandId:string,args?:unknown,invocation?:ResourceContext):Promise<OperationResult>; // trusted App/UI entry only
+  checkView(contributionId:string,context:ResourceContext):OperationResult<void>; // synchronous read authorization, never activates
   getThemes():readonly ThemeDefinition[];
   getSlotSnapshot(slot:SlotId):readonly ContributionView[];
   subscribeSlot(slot:SlotId,listener:()=>void):()=>void;
@@ -96,3 +97,7 @@ App/ExtensionSlot passes the actual local discriminated context into the trusted
 Slot→kind: activityBar/sidebar.header/sidebar.footer/settings use global; sidebar.item.actions and chat.task.actions use task; chat.header accepts task/composer/global; chat.message.actions requires message; chat.composer.actions requires composer; workspace.header/tabs/actions require workspace; artifact.actions requires reference. Reference-load command additionally checks argument taskId/referenceId against its bound task/workspace/reference context; App verifies membership in the current authoritative projection. chat.open is intentionally navigation and may target a feed/index authoritative ID, not only the active ID.
 
 Workspace builtin's display.task.id and all references must match the provided workspace context.taskId before rendering or dispatch. Its activeTab uses exact WorkspaceTabId. flow.reference.load returns void; details update through the private read-only display port. flow.composer.insertText returns explicit unsupported from the App bridge until a safe composer seam exists; the fixture may supply that supported bridge for draft-preservation testing, without claiming main integration.
+
+PH-R4 lifecycle clarification: PluginView keeps a renderer instance across resource changes; only explicit retry or plugin instance removal resets its boundary. The binding checks current view capability synchronously before rendering, hides pending authorized transitions with Activity, and removes denied renderers. PluginTabs mounts only explicitly visited panels; Activity is not itself an unvisited activation guard. Hidden effects/subscriptions pause; disable/host.dispose removes instances. Workspace adapter keeps the original WorkspacePanels outer cache alive across matching task changes and supplies null/empty data during a mismatch. App native tabs should apply the same stable identity/visited principle when mounting PluginView directly.
+
+Connection lifetime requirement: App must key/unmount the entire PluginView/PluginTabs subtree by its connectionScope/host lifetime and call oldHost.dispose before replacing the connection. Merely passing a different already-activated host prop into an existing subtree is not a supported state-retention boundary: a third-party trusted module could reuse the same renderer function and otherwise preserve local component state. Task/resource changes within one connection preserve layouts; connection changes must reset them. This is an explicit I01 integration test, not yet main-App proof.

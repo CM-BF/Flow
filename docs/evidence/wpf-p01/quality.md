@@ -25,3 +25,11 @@
 ## 2026-10-06 02:54 UTC — review修复clean-code
 
 PH-R3暴露实际漏项：sample Notes state保存error却没渲染；此前意图补充的文本替换没有命中JSX，而只测ExtensionSlot按钮无法覆盖面板调用。修复后直接读JSX，增加面板本地alert、真实失败/成功重试路径；root CUA独立关闭该finding。另自查renderer props.context原先仍是App原对象，改validateContext不可变副本并实际browser断言frozen=true（bind闭包此前已捕获不可变副本）。修复e534191通过typecheck、9浏览器、生产build/静态冒烟；14模块实现无变化，复用已独立通过结果。验证失败路径绑定实际UI动作，避免仅测试内部成功路径。根lock未重新改写，追加metadata不重跑全库。
+
+## 2026-10-06 03:01 UTC — 约30分钟安全停点 / PH-R4
+
+Scope仍仅plugins与专用tests。此前按task重建RenderBoundary/loading分支卸载真实WorkspacePanels导致外层per-task布局Map丢失，M02独立review与root CUA确认PH-R4。当前改稳定实例+React19 Activity，并显式visited门禁；初次未访问不激活，隐藏暂停Effects，disable移除实例。data/context不匹配时保留外层实例但传null/空details；同步checkView重新验证资源/grant，拒绝时卸载不渲染数据。workspace原组件、App未改。
+
+新增真实StrictMode A-B-A/Notes3轮验证打开标签、树展开、terminal follow状态、无A内容串到B、未访问零详情、workspace订阅0↔1与disable清零；App受控tab为独立输入，因此cache清理测试在disable前先显式切回Files，避免把App主动detail选择误判为旧cache复活。整段验证完成后绑定新SHA，PH-R4待独立复审。
+
+共同领取规则已读主仓AGENTS‘多Lead领取与交接’及D04 README。02:59:24.179Z只读CLI核P01 migration claim0686525b-d323-49b5-affa-cefc66cb13be v1 active，lead external_web_d01_owner/worker w01_owner，原6项literal scope一致；W01 claim3a3b963b-aa40-4c50-8324-4445ed8889df v2仅plans/w01-web。配置仅source未打印；不重新take，review修复期保留，占用变更须当前version已提交receipt。
