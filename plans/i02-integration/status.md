@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:49 UTC / mainaca6e892 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:03 UTC / main6223c749 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -16,10 +16,10 @@
 | 已集成main状态 / HEAD | main/origin aca6e892一致且clean，173源19:49实际聚合；个人中心已同版本恢复，source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 个人中心已恢复；看板时间解析修复、兼容工具局部修复及恢复证据已进入主线。 |
-| 下一可用交付 | 本片段已交付；页面兼容与完整目标旅程在各自权威任务继续验收。 |
+| 当前产出 | 两份保留网页与候选后台的兼容证据已独审通过，三项后端实施源码准备完成。 |
+| 下一可用交付 | 发布本批固定证据；按已验证版本准备个人更新，保留旧网页与用户会话。 |
 | 当前阻塞 | NONE；个人中心恢复窗口已关闭，未完成的实际页面兼容/完整目标旅程在各权威任务继续。 |
 | 需用户决定 | NONE |
 
@@ -235,3 +235,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 19:47 UTC：[中心恢复独立证据审查](../../docs/evidence/i02/center-recovery-operation-review.json)核20固定绑定及原前后事实，64业务表和8组检查相等；仅原版本一个center启动，source窗口已关闭并恢复main22a。与已审caf1候选组成[本批发布](../../docs/evidence/i02/center-recovery-publication.json)。0新provider/个人探针，运行仍362/v15；R01/O16尚未通过实际完整旅程。
 
 2026-10-06 19:49 UTC：[正式main与实际173源回执](../../docs/evidence/i02/recovery-preparation-main-receipt.json)。main/origin aca6e892一致；仅重启自身4320载入已审parser，原产品服务/用户tabs不动。中心同版本恢复已收口，后继真实旅程没有被准备工具或看板通过冒替。
+
+2026-10-06T20:01:59.305499+00:00：两份保留实际App与af51的固定tuple已独立只读批准，53绑定和原始丢ACK恢复wire相符；[受控接收](../../docs/evidence/i02/retained-web-result-integration.json)仅证据/状态，不重新运行工程或模型。三新worktree源码供给事实同批接收，实施须各owner fresh take。个人runtime仍362/v15与Web8d8/v2，未导入报告或部署新版。

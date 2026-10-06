@@ -1,0 +1,363 @@
+{
+  "result": {
+    "results": [
+      {
+        "label": "retained-0",
+        "artifact": {
+          "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+          "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+        },
+        "observations": {
+          "read": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          },
+          "send": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          },
+          "recover": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          },
+          "negotiation": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        },
+        "faultObservation": {
+          "path": "/api/conversations/c74d4af8-f138-44d9-88fe-99af6d6b4d66/turns",
+          "key": "c5dce57d-5738-4fa1-9b47-24a30e93b8cb:turn",
+          "bodySha256": "317de8ce253c94de1dc477d3efa12a73373fe4ed30400fadbeccf7f9934e7193",
+          "events": [
+            "request",
+            "response-headers",
+            "requestfailed"
+          ],
+          "status": 202,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "1222",
+            "connection": "close",
+            "transfer-encoding": ""
+          },
+          "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+          "finished": false
+        },
+        "conversationId": "c74d4af8-f138-44d9-88fe-99af6d6b4d66",
+        "taskId": "903cb558-8849-4c2d-8760-f24f74e30075",
+        "assets": [
+          {
+            "path": "/assets/assistant-ui-CcdakA0V.css",
+            "bytes": 966,
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/assets/index-5W26Yecv.css",
+            "bytes": 102548,
+            "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+          },
+          {
+            "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+            "bytes": 773,
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/assets/index-DuzR10it.js",
+            "bytes": 663320,
+            "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+          },
+          {
+            "path": "/assets/assistant-ui-BW1JBgq4.js",
+            "bytes": 658870,
+            "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+          },
+          {
+            "path": "/assets/assistant-ui-CcdakA0V.css",
+            "bytes": 966,
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/assets/index-5W26Yecv.css",
+            "bytes": 102548,
+            "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+          },
+          {
+            "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+            "bytes": 773,
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/assets/index-DuzR10it.js",
+            "bytes": 663320,
+            "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+          },
+          {
+            "path": "/assets/assistant-ui-BW1JBgq4.js",
+            "bytes": 658870,
+            "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+          }
+        ],
+        "pageErrors": [],
+        "posts": 2,
+        "sameTask": true,
+        "draftPreservedBeforeReload": true
+      },
+      {
+        "label": "retained-1",
+        "artifact": {
+          "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+          "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+          "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+        },
+        "observations": {
+          "read": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          },
+          "send": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          },
+          "recover": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          },
+          "negotiation": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        },
+        "faultObservation": {
+          "path": "/api/conversations/e9e43516-9481-44a7-9fbb-8604c3f16d5d/turns",
+          "key": "b7abc6a1-ed76-4248-a21b-d307804f702a:turn",
+          "bodySha256": "14a4a365bb0cded08e68ffbc8b0866accf22347465443eba454d035465dea9d3",
+          "events": [
+            "request",
+            "response-headers",
+            "requestfailed"
+          ],
+          "status": 202,
+          "headers": {
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "1222",
+            "connection": "close",
+            "transfer-encoding": ""
+          },
+          "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+          "finished": false
+        },
+        "conversationId": "e9e43516-9481-44a7-9fbb-8604c3f16d5d",
+        "taskId": "a92554cb-3dbe-490f-b6a9-8b86eba4663f",
+        "assets": [
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+            "bytes": 109664,
+            "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+            "bytes": 966,
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+            "bytes": 773,
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+            "bytes": 720515,
+            "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+            "bytes": 659481,
+            "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+            "bytes": 966,
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+            "bytes": 109664,
+            "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+            "bytes": 773,
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+            "bytes": 720515,
+            "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+            "bytes": 659481,
+            "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+          }
+        ],
+        "pageErrors": [],
+        "posts": 2,
+        "sameTask": true,
+        "draftPreservedBeforeReload": true
+      }
+    ],
+    "passed": true,
+    "errors": [],
+    "providerQueries": 0,
+    "personalActions": 0,
+    "centerUrl": "http://127.0.0.1:51814",
+    "centerPort": 51814,
+    "runnerId": "a245c824-5309-48e0-a37d-234bf7cf047d",
+    "browserVersion": "154.0.8037.98",
+    "previewPorts": [
+      51841,
+      51871
+    ],
+    "runnerStopped": true,
+    "centerClosed": true,
+    "closeErrors": []
+  },
+  "errors": [],
+  "groups": [
+    {
+      "pid": 83813,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    },
+    {
+      "pid": 81573,
+      "state": "absent",
+      "actions": []
+    }
+  ],
+  "portObservations": [
+    {
+      "port": 51829,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51814,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51841,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51871,
+      "state": "absent",
+      "errorCode": "1"
+    }
+  ],
+  "owned": {
+    "parent": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05r01-4EWZZv",
+    "identity": {
+      "dev": 16777234,
+      "ino": 123159126
+    },
+    "databaseName": "flow_svc05r01_ec23d0bcb5244e26863a",
+    "marker": "5cef69dd-586c-4e0e-bdb0-ce2fd58c365d",
+    "created": true,
+    "markerWritten": true,
+    "createAttempted": true
+  },
+  "metrics": {
+    "minimumFree": 1382043648,
+    "peakRaw": 219283,
+    "peakTemp": 8890073
+  },
+  "finalSample": {
+    "at": "2026-10-06T19:53:08.477Z",
+    "free": 1382043648,
+    "raw": {
+      "bytes": 219283,
+      "files": 15,
+      "retries": 0,
+      "observedEntries": 15,
+      "vanishedEntries": [],
+      "nonAtomic": true
+    },
+    "temp": {
+      "bytes": 8890073,
+      "files": 278,
+      "retries": 0,
+      "observedEntries": 278,
+      "vanishedEntries": [],
+      "nonAtomic": true
+    },
+    "withinThresholds": true
+  },
+  "elapsedMs": 15794,
+  "providerQueries": 0,
+  "personalActions": 0,
+  "stopWork": false,
+  "checkpoint": true,
+  "cleanup": {
+    "databaseName": "flow_svc05r01_ec23d0bcb5244e26863a",
+    "marker": "5cef69dd-586c-4e0e-bdb0-ce2fd58c365d",
+    "groupsAbsent": true,
+    "removedDatabase": true,
+    "removedTemp": true,
+    "errors": [],
+    "connections": {
+      "outcome": "zero",
+      "observations": [
+        {
+          "at": "2026-10-06T19:53:08.501Z",
+          "elapsedMs": 7.200791000001118,
+          "rows": []
+        }
+      ]
+    },
+    "directoryMatched": true,
+    "remaining": []
+  },
+  "passed": true,
+  "verifiedReports": [
+    {
+      "label": "retained-0",
+      "compatibilityId": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      }
+    },
+    {
+      "label": "retained-1",
+      "compatibilityId": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      }
+    }
+  ],
+  "finalRawBeforeReports": {
+    "bytes": 229965,
+    "files": 17,
+    "retries": 0,
+    "observedEntries": 17,
+    "vanishedEntries": [],
+    "nonAtomic": true
+  },
+  "limits": "Sampling thresholds are observations, not OS quotas. PG/WAL bytes are outside private temp accounting."
+}
