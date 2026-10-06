@@ -1,0 +1,56 @@
+{
+  "target": "f04cb29633ca678b35aa423e02a16953add0cfba",
+  "productionTarget": "69eb2476ba59308a906c891c4391e243e3b2512a",
+  "sources": [
+    {
+      "path": "packages/client/src/attachment-production.test.ts",
+      "bytes": 11992,
+      "sha256": "f6a3d2d86bb2195c05195f5dc6d1114bdc5253231741d88254ee1b0883f7acb1"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-facts.json",
+      "bytes": 1014,
+      "sha256": "ab27c31a240144df9f16ff2a599d66e7a2dfe52c4365e4ce9e13a7c7547de658"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-green.json",
+      "bytes": 245,
+      "sha256": "7adf7ff008d78f191ccd29f73509f74cb489310297d421d37031d6613fa1f97f"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-green.stdout",
+      "bytes": 450,
+      "sha256": "05570b4880437aedb3b67928100c91484fabf72b5c40eec1b3ac476167949060"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-red-facts.json",
+      "bytes": 286,
+      "sha256": "ecf372b28d4f171b1fe09c708519305af5aa6d276c9177794fe4bf08720b320a"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-red.json",
+      "bytes": 309,
+      "sha256": "81700570265b5f5c3e765446d8eaf2ffbde3e5b43cbe291014a55132b5b53b5f"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-red.stdout",
+      "bytes": 2768,
+      "sha256": "2138e19114ca5bd160bbdc357005ebd7ecb0b12673c7e5779de5c6a09abf7015"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-types.json",
+      "bytes": 168,
+      "sha256": "14b386203720ca16149ee73f89a7d3ea92ce13f5461f1c42988dab45d6118330"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-cleanup-types.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    }
+  ],
+  "scope": "test fixture cleanup only; production index/client/ACK/domain unchanged",
+  "checks": "2 failing cleanup branches -> 3/3 (2 direct lifecycle + original1 actual PG journey); root types0; original 69eb evidence preserved",
+  "review": "PENDING_MIKA_INCREMENTAL"
+}

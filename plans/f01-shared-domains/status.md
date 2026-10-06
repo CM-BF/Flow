@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:12 UTC / main2e71fabc |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:27 UTC / main53ce2ec2 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,16 +10,16 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 固定3a12工程薄client已独审；1c081挂载候选待组合检查 |
-| 工作树dirty状态 | 附件ACK匹配器已固定；薄client/生产挂载准备中 |
+| 工作基线 / HEAD | 工程配置已main；当前附件生产接线与清理增量固定 |
+| 工作树dirty状态 | 附件生产清理增量与证据待提交；源码固定后仅metadata |
 | 工作分支状态 | in-progress |
-| 检查状态 | native目录3HTTP/types与工程4HTTP/types分别通过并独审；mount尚未验证，0provider |
+| 检查状态 | 附件ACK47、薄client1HTTP分别独审；生产1PG及2清理回归=3/3、types0，P2增量待复审，0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | native5ffe由Mika、工程client3a12由native_center_owner独立APPROVED；生产挂载待审 |
-| 实现目标 | 3a12ed7ebd8e69325309bd004043f06dabbf7ff4 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/engineering-profiles.test.ts, packages/contracts/src/index.ts |
+| Review | 附件ACK/native_center_owner与六薄client/Mika APPROVED；69eb生产测试清理P2待增量复审 |
+| 实现目标 | f04cb29633ca678b35aa423e02a16953add0cfba |
+| 实现范围 | packages/client/src/attachment-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
 | 当前产出 | 已审工程配置已进入主线；附件回执一致性已验证，正在接入公共上传与读取。 |
 | 下一可用交付 | 附件上传、固定引用与公开读取接线，供终端和Web共同消费。 |
@@ -146,7 +146,7 @@
 
 | F01-30 | completed | Lead | 原生目录严格薄client；[固定证据](../../docs/evidence/f01/native-catalog-client-manifest.json)，没有原生能力或认证结论。 |
 
-| F01-31 | in-progress | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
+| F01-31 | completed | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
 
 | F01-32 | in-progress | Lead / Mika context owner | [027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)；已交同级fresh amend，后续固定DDL/真实PG及共享接线待验，不改个人DB |
 
@@ -155,3 +155,5 @@
 11:16 附件ACK v2 df8d由native_center_owner独立APPROVED；原47/47/types0不重跑。六薄方法固定 ab1bcb14531995ccb3916492eaf328cdae2213b3，真实HTTP1/1/types0待独审，未挂生产/不称附件全链完成。
 
 11:19 附件生产factory026/owner接线固定 69eb2476ba59308a906c891c4391e243e3b2512a，真实独立PG1/1（同一个旅程重跑不累计）及最终root types0；前置red/类型窄修原输出保留。组合gate是原ATTACH pre026/重复注册fixture最小维护，已交原owner，不删除历史升级断言；domain/shared client/ACK齐套独审后才main，个人DB/服务无改。
+
+11:27：Mika附件六薄client独审APPROVED已归档；生产69eb的唯一P2是失败清理，修复固定f04cb29633ca678b35aa423e02a16953add0cfba，2失败分支原red保留、3/3及types0。新facts单独保存，不覆盖旧成功证据；生产3行/领域无改。Web pre026 fixture增量1f0已独审，待正式factory下有限组合验证。

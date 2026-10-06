@@ -1,0 +1,62 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/attachment-production.test.ts (3 tests | 2 failed | 1 skipped) 1368ms
+   × cleans an exclusively requested database after committed CREATE loses its acknowledgement 6ms
+   × persists unknown cleanup facts and closes independent resources after app close rejects 0ms
+   ↓ mounts 026 before readiness and binds owner uploads, Send/Queue receipts and private claim across restart
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/attachment-production.test.ts > cleans an exclusively requested database after committed CREATE loses its acknowledgement
+AssertionError: expected { Object (exists, poolClosed, ...) } to match object { exists: false, …(3) }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "adminClosed": true,
+-   "exists": false,
++   "exists": true,
+    "poolClosed": true,
+    "saved": {
+-     "remaining": [],
++     "remaining": [
++       {
++         "datname": "flow_f01_attachment_3666c8cf61ed40b0965517da4fd1e62f",
++       },
++     ],
+    },
+  }
+
+ ❯ packages/client/src/attachment-production.test.ts:72:23
+     70| it('cleans an exclusively requested database after committed CREATE lo…
+     71|   const api = cleanupScenario('create-ack'); await cleanupFixture(api.…
+     72|   expect(api.state()).toMatchObject({ exists: false, poolClosed: true,…
+       |                       ^
+     73| });
+     74| it('persists unknown cleanup facts and closes independent resources af…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/client/src/attachment-production.test.ts > persists unknown cleanup facts and closes independent resources after app close rejects
+Error: Injected close rejection
+ ❯ Object.closeApp packages/client/src/attachment-production.test.ts:59:67
+     57|   let exists = true, poolClosed = false, adminClosed = false, saved: R…
+     58|   const resources: CleanupFixture = { creationRequested: true, created…
+     59|     async closeApp() { if (failure === 'close-and-inspect') throw Erro…
+       |                                                                   ^
+     60|     async closePool() { poolClosed = true; }, async closeAdmin() { adm…
+     61|     async query(sql) {
+ ❯ cleanupFixture packages/client/src/attachment-production.test.ts:40:21
+ ❯ packages/client/src/attachment-production.test.ts:75:59
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 skipped (3)
+   Start at  04:25:05
+   Duration  2.33s (transform 395ms, setup 0ms, import 873ms, tests 1.37s, environment 0ms)
+
