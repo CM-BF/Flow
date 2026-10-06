@@ -80,3 +80,7 @@ WPF-MATURE-02-03后继rootliteral：沿GO明确单项许可，在已封存sandbo
 ## WPF-MATURE-02-03 Node rootliteral对照准备
 
 沿GO新方向，先交[三槽小接口设计](../../docs/evidence/wpf-mature-02/node-rootliteral/design.md)：相同固定输出控制→rootliteral同输出→原七项owned canary/R06 synthetic peer；最多3自有Node目标、0compile、60秒自动证据/关闭/清理/CLI、2MiB含所有字节。无新grant、Codex/SDK/provider/auth或系统log；唯一网络测量限第三槽自有随机loopback。设计先审再实现与零目标验证，固定组合独审/Mika唯一门禁前不执行。C4757有限PASS与旧失败因果不混同，历史封存不追改。工程宿主的实际模型资格/强制file-only/全部writer撤销缺口另见[共享输入](../../docs/evidence/wpf-mature-02/native-engineering-authority-inputs.md)，不阻零模型fixture/checker。
+
+### TODO-03后继：加载失败观察（2026-10-06 13:12:21 UTC）
+
+旧Node结果已限定独审接收。新[单目标cause方案](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)只补有界加载错误观察，复用生命周期，不改profile/目标输入，不把新宿主差异当旧协议完整复现。先固定设计/输入，再最小实现与零目标检查、独审，Mika明确OPEN后最多一次；当前NOT_OPEN。仍沿WPF-MATURE-02-03，不新增任务层级。

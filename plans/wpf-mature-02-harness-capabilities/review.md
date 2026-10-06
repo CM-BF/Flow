@@ -1,5 +1,7 @@
 # WPF-MATURE-02 review
 
+新cause设计 REVIEW NOT_STARTED，见[Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)；无新源码或运行。下述Node结果审批按5b1d3003历史收口解释。
+
 Node结果限定 APPROVED：Mika/gpt-6-astra，2026-10-06 13:08:21 UTC，0未解决P1/P2；raw e7e2311b68c0a98e357499fc6990266c4ef9658d + 限定e0ccfe061119be131d06c1d8c5cabf9f8b0cdbdd。measurement FAIL、有效全runtime accounting UNKNOWN；[结果限定](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)优先。独审核18结果/18runtime/66prepared与已知字节、原流hash，未重跑；五项Path.exists=false表示根不存在，旧receipt字段名不改变该事实。准备1f327/source d17由Mika13:01:37批准，58distinct；无新运行授权，旧raw/manifest不改。
 
 本文件收敛重复过程叙述为固定target索引，不撤销或扩大历史审批。完整原文保留Git ff927712ae8560a26febf01279b44c2fc12a1666 的同一路径；各raw/manifest均按其原target解释，未改旧证据。所有下列历史窗口已消费，不产生当前运行授权；各reviewer均为gpt-6-astra，未重跑作者检查。

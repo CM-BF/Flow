@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-06 13:10:49 UTC",
+  "sourceTarget": "5b1d3003c540667da0389c1febb1554ee4204e5f",
+  "method": "Read existing archived otool facts/profile/owned source only; no otool/help/target/crash/system-log invocation",
+  "bindings": [
+    {
+      "path": "docs/evidence/wpf-mature-02/isolation/bootstrap-inspection.json",
+      "bytes": 19917,
+      "sha256": "98cd28ee66084d5562c3cfed8e143e246118e68884d2eaf1713ddd11a66d18a1"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-rootliteral/candidate.sb",
+      "bytes": 6401,
+      "sha256": "f563a084a8223bb088626f0f1e580ffcabd09ccde6772c7a78f6e9cd22a17c5b"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/diagnostics/immediate-exit.mjs",
+      "bytes": 379,
+      "sha256": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 3428,
+      "sha256": "1111682ef3c1c364bd2d4d1fc2e4347a93fbb7c7809aafb52dd25bd41309bc4e"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/isolation/compose-canary.mjs",
+      "bytes": 12792,
+      "sha256": "2e4e592d3536192f07392b4988124907cdbb4506dee9bac5380d4f98624ad21e"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md",
+      "bytes": 912,
+      "sha256": "4b9924e91ccb24ef66faa19fd16f29a708850e94b22a18c841f336ce221cc7d2"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-rootliteral/driver-input.json",
+      "bytes": 18497,
+      "sha256": "59aefa3b662c9b05100fb0b255af77c71c992eba807661db51bc9847398916ad"
+    }
+  ],
+  "recordedAllowlistCount": 62,
+  "recordedAllowlistAbsentFromProfile": [],
+  "nodeRpath": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin",
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/../lib"
+  ],
+  "rpathCandidateFacts": [
+    "bin/libnode.137.dylib candidate not a profile literal",
+    "bin/../lib/libnode.137.dylib candidate is an explicit literal"
+  ],
+  "cause": "UNKNOWN",
+  "limits": "Transitive cached system images were not recursively enumerated; runtime startup is not proven. No broad /usr/lib or /System/Library grant. No sysctl or Mach allowances added.",
+  "oldRuntimeOutputAccounting": "UNKNOWN",
+  "newWindow": "go-node-loader-cause-once",
+  "runtime": "NOT_OPEN",
+  "newTargets": 0
+}
