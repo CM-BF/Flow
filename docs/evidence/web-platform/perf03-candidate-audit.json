@@ -1,0 +1,112 @@
+{
+  "observedAt": "2026-10-06T07:34:15.013Z",
+  "head": "b35b6f814a59f059cadfbf9f6175a16e183a929e",
+  "target": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e",
+  "base": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+  "dirty": "",
+  "scope": [
+    "apps/web/src/conversations/messages.ts",
+    "apps/web/test/conversation-messages.test.ts",
+    "apps/web/test/conversation-message-reuse.probe.ts",
+    "plans/wpf-perf03-message-reuse",
+    "docs/evidence/wpf-perf03"
+  ],
+  "outside": [],
+  "hashes": [
+    {
+      "path": "apps/web/src/conversations/messages.ts",
+      "recorded": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e",
+      "target": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e",
+      "current": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e"
+    },
+    {
+      "path": "apps/web/test/conversation-messages.test.ts",
+      "recorded": "2d05762327a42ab8da5d66cd60437ca786235b34cd0a353195beee027bf82f4d",
+      "target": "2d05762327a42ab8da5d66cd60437ca786235b34cd0a353195beee027bf82f4d",
+      "current": "2d05762327a42ab8da5d66cd60437ca786235b34cd0a353195beee027bf82f4d"
+    },
+    {
+      "path": "apps/web/test/conversation-message-reuse.probe.ts",
+      "recorded": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec",
+      "target": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec",
+      "current": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec"
+    }
+  ],
+  "statusErrors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 3,
+    "output": "未变化聊天消息可复用，动态回复与草稿检查已通过",
+    "next": "完成独立审查后将消息复用改进交给主线",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "PERF03-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "原消息模块内部WeakMap已实现，接口不变"
+    },
+    {
+      "id": "PERF03-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "最终8+此前77/typecheck与实际core计数，原红测保留"
+    },
+    {
+      "id": "PERF03-03",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "固定f909交root独审，主线接收尚未完成"
+    }
+  ],
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e"
+  },
+  "proof": {
+    "target": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e",
+    "head": "b35b6f814a59f059cadfbf9f6175a16e183a929e",
+    "scopes": [
+      "apps/web/src/conversations/messages.ts",
+      "apps/web/test/conversation-messages.test.ts",
+      "apps/web/test/conversation-message-reuse.probe.ts"
+    ],
+    "observedAt": "2026-10-06T07:34:15.075Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-perf03/README.md",
+      "docs/evidence/wpf-perf03/final-message-tests.log",
+      "docs/evidence/wpf-perf03/install.log",
+      "docs/evidence/wpf-perf03/module-tests.log",
+      "docs/evidence/wpf-perf03/quality.md",
+      "docs/evidence/wpf-perf03/red-tests.log",
+      "docs/evidence/wpf-perf03/reuse-probe.json",
+      "docs/evidence/wpf-perf03/reuse-probe.stderr.log",
+      "docs/evidence/wpf-perf03/source-manifest.json",
+      "docs/evidence/wpf-perf03/typecheck-initial.log",
+      "docs/evidence/wpf-perf03/typecheck.log",
+      "plans/wpf-perf03-message-reuse/plan.md",
+      "plans/wpf-perf03-message-reuse/review.md",
+      "plans/wpf-perf03-message-reuse/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "method": "Management read-only metadata/source/hash audit; no product tests or probe rerun. Independent approval remains root responsibility."
+}

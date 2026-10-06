@@ -310,3 +310,5 @@ W2协调更新：原07:28窗结束但GO说明Mika未运行；随后GO顺延07:29
 PERF03固定候选f909d32f5fcff5b0ac6408dc96e8630bfeffae4e/metadata b35b6f814a59f059cadfbf9f6175a16e183a929e clean：作者报8消息tests/tsc通过，既有77projection保留来源；实际installed core小计数100turn/200message未变复用200、增加转换0，变末轮复用198/转换2，尾状态各1。这里只转述作者候选，root正在独审，不冒称React render、时延或内存收益。本管理未运行产品检查。
 
 07:33:04 UTC管理clock确认07:32:30 quiet lease自动失效，未收到延长；本段只写管理文档/Git，无重负载或新worker实现派工。clean-code安全停点复核当前/历史、人读摘要、唯一来源、受控输入与固定批准范围；修正proposal里“模块仍待独审”的旧当前句，并使当前owner表与S01已审/消息复用候选一致。
+
+PERF03[候选管理核验](../../docs/evidence/web-platform/perf03-candidate-audit.json)读取b35b6f81 clean，三执行文件target/current/manifest哈希一致、五scope外0、parser0/human完整/proof unchanged；审查字段仍NOT_STARTED，管理不替root审批、不重跑计数/8消息或77关联检查。
