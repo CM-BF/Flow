@@ -46,6 +46,8 @@ const assignments = [
   ['O02', '原生目标工具桥接', '工作线', 'native-goal-tools', 'o02-native-goal-tools'],
   ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-refresh', 'd06-architecture-refresh'],
   ['CHAT04', '持久消息队列', '工作线', 'conversation-queue', 'chat04-conversation-queue'],
+  ['O03', '目标工具执行授权', '工作线', 'goal-tool-authorization', 'o03-goal-tool-authorization'],
+  ['WPF-X03I01', '插件管理产品接线', '工作线', 'web-plugin-management-integration', 'wpf-x03-plugin-integration'],
   ['D05', '代码架构视图', '工程协作', 'dashboard-architecture', 'd05-architecture-view'],
   ['D04', '多 Lead 领取协调', '工程协作', 'dashboard-coordination', 'd04-coordination'],
   ['F01', '共享领域接口', '工作线', 'm2-shared-foundation', 'f01-shared-domains'],
