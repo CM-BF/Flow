@@ -1,6 +1,6 @@
 # ENG01A 受管工作区与工程检查通路
 
-- 状态：in-progress；Owner：native_center_owner / gpt-6-astra；co-lead：Execution Lead
+- 状态：completed；Owner：native_center_owner / gpt-6-astra；co-lead：Execution Lead
 - 所属大task：[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)
 - Worktree：/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline
 - Branch：codex/engineering-workspace-pipeline；fixed base f181d84b5fb3652d62e2a181acff442d42b3e066
@@ -13,6 +13,8 @@
 - [x] **ENG01A-02** 严格工程intent/receipt/checker合同及最窄中心关联/targetRunner过滤，旧flow.text不变。
 - [x] **ENG01A-03** 工作区/内容快照/checker/fixture adapter模块，受信基线不可由fixture配置改写，资源有界。
 - [x] **ENG01A-04** 随机真实PG+自有合成Git/命令纵向，公开artifact读回；失败/篡改/lease lost/丢ACK与重启未知覆盖。
-- [ ] **ENG01A-05** 固定manifest、局部验证、独审、受控main集成与资源收口。
+- [x] **ENG01A-05** 固定manifest、局部验证、独审、受控main集成与资源收口。
 
 仅允许专用fixture工程intent，目标runner固定、本机project/checker registry受信；通过target隔离其它fixture/native；误将普通fixture设为target仍会领取但无法通过工程验收（已验证限制，后继ENG001-04关闭能力登记缺口），不放宽native只读profile。生产Git仓库、个人服务、真实模型与工程UI不在本片。中心只验receipt与intent/artifact/attempt关联，不宣称自己重跑远端测试。共享contracts/index/export与必要薄client由F01唯一owner处理。
+
+主线已集成c5bab40ffd9a334403c0db743f798d10815961f0，14源与独审target逐文件相同；本片只完成0模型合成工程通路，完整ENG-001继续由父计划追踪。
