@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:01 UTC / 两项已独审通过，最终资料已核，待部署登记与主线接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:05 UTC / 两项待主线接收；执行活动独立模块已正式受领 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `89a98188484672e4bc87c33659c5e609318a2ca6`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `400f5d09f5ee807f4743390fbe5f7f2864291ff7`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的候选范围审计与当前/历史事实文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 排队操作和新版架构图已合入；项目身份兼容与按需内容展示已通过独立审查 |
-| 下一可用交付 | 把已验证的项目身份兼容和按需内容展示交付主线 |
+| 当前产出 | 项目身份兼容和按需详情已验证；正在制作会话内执行活动展示 |
+| 下一可用交付 | 交付可按需查看执行记录的模块，再接入聊天界面 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -43,10 +43,11 @@
 | WPF-001-16 | completed | d01_owner | QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432croot05:40:36 APPROVED、最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean，41paths/13scope、6md36links、原样聚合和11源码hash核验通过；main3d4985已含309且11paths零差，跨reload原key后继F01仍未完成 |
 | WPF-001-17 | in-progress | d01_owner | [RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md)固定747cbe616408dc3e44ab3587216c5753e6de3994、final7ff614f6aa210aae5a08119f1f16f2ef08b2298a clean；23paths/8scope、6md28links/4TODO与六source hash已核；作者14tests/typecheck/10browser，root05:58:49Z独立14+局部CUA通过并APPROVED，最终metadata approved/目标匹配已核，聚合部署待单次确认，App未接 |
 | WPF-001-18 | in-progress | d01_owner | [K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md)固定7633937c322090bbd6d526f378df464f2a7436ed、finalbec72daec26e6bfc3d944ec3af01fb0bb4ee7796 clean；受控输入e9a0259与自有八scope分开；25paths/6md25links/4TODO/六hash已核，作者102direct/typecheck，root05:58:18Z独立102并APPROVED、最终metadata approved/目标匹配已核，待登记部署单次聚合，无context UI |
+| WPF-001-19 | in-progress | d01_owner | WPF-ACTIVITY01 / web-conversation-activity / base3d4985；51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1于06:04:36.078Z committed，八新scope，首canonical598e5e2e78d7ef57d1add8e6ee797f519da1c0c8已实核clean/parse0errors/4TODO，5md5links通过、完整source已给root一次登记；无App/shared写入 |
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录；本次fresh CLI确认claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，时间见本轮候选审计。root持续只读独审；workspace_panels_owner已在新八scope提交K02薄兼容固定候选，w01_owner已在另一八scope提交renderer模块候选。QUEUE/D06已在main3d4985且原owner全部停写、正式release v2；不恢复旧树写入。两新feature范围不重叠，本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
+管理者只写本树两目录；本次fresh CLI确认claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，时间见本轮候选审计。root持续只读独审；workspace_panels_owner的K02薄兼容已批准待集成，同时在全新八scope实施执行活动模块；w01_owner的renderer模块已批准待集成，当前只读准备App接线准确输入与范围。QUEUE/D06已在main3d4985且原owner全部停写、正式release v2；不恢复旧树写入。两新feature范围不重叠，本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
@@ -74,7 +75,7 @@ K02薄reader固定候选已交独审：固定736公开类型经Lead原样三cont
 - [队列研究](../../docs/evidence/web-platform/chat-queue-research.md)保留e423历史stub与当时按钮未开放的边界；当前QUEUE01固定309已独审通过，排队/暂停/继续/独立取消已在main3d4985，真实center仍受控fb906、Web Vite与center升级分开；不能用旧研究覆盖新代码能力。steering仍未支持，须独立受理/送达/实际生效证据。
 - [执行配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)仅整份已发布runner配置选择；catalog not-probed，不声称模型在线或任意effort/access。PROFILE01模块及PROFILEI01实际App接线均已入main，真实部署状态另核。
 - 完整X01插件npm生命周期/权限/隔离/CLI等价、BR-01真实PTY/fs、后继对话能力仍开放；I01本地Settings和中心registry不是完整插件管理。
-- 本队0真实模型/语音调用；Lead的真实两query验收结果尚未收到。现有预览均明确fixture，未暗换用户页面。
+- 本队0真实模型/语音调用；GO已授权Lead最多2query真实queue验收，main3d在该窗口暂冻结，结果尚未收到。该主线接收/部署等待不阻碍本队独立模块实施；不由本队调用模型。既有开发预览明确fixture，未暗换用户页面。
 
 ## Dashboard与服务
 
@@ -183,3 +184,9 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:59审批事实后继：root05:58:18Z限定批准K02C01 763、独立102/102；05:58:49Z限定批准renderer747、独立14/14与CUA26局部行为，作者套件与root实际边界不混。上述05:59管理审计中的NOT_STARTED是读取当时的owner元数据，后继owner将绑定同target转录APPROVED；保留读取先后，最终metadata/聚合收口后再交Lead。
 
 06:01 最终metadata管理核：K02 bec72daec26e6bfc3d944ec3af01fb0bb4ee7796、renderer7ff614f6aa210aae5a08119f1f16f2ef08b2298a均实际clean，六源码及apps/packages/root依赖对各批准target零差。actual parse errors空、checks/review分别approved绑定763/747、human完整/stageintegration；[K02最终审核](../../docs/evidence/web-platform/k02c01-approved-metadata-audit.json)、[renderer最终审核](../../docs/evidence/web-platform/renderer01-approved-metadata-audit.json)。K02尚无registry部署回执，不空采；root会一次交Lead，获部署确认后单次核两卡。两owner下一仅只读准备renderer App接线/独立Execution activity模块，准确base/范围未正式take前不写，避免同Thread双writer。
+
+06:02 GO经root确认763/747已转Lead集成，main3d当前仅为其授权最多2query真实queue验收暂冻结；结束后Lead给准确mainbase与预计70source部署回执。此是集成顺序等待，不是本队实现阻塞；0本队模型/runtime操作，不提前空采。独立活动模块获正式P1授权，沿既有公开API且不依赖CHAT05/K02/renderer新输入，原panels新独立树正在preflight，committed take之前不写。renderer App接线仍等准确输入与旧session路径正式交回。
+
+06:05 活动模块派工实证：[take回执](../../docs/evidence/web-platform/activity01-take-receipt.json)51f962eev1/八scope；管理亲核独立树branch/HEAD3d4985/clean，06:04:31.706Z ledger0冲突。首次准备消息发出后owner已从running转completed未触发；root状态纠正后立即改followup，收到真实preflight才take，未伪报此前开工。后续正式新任务直接followup避免闲置邮箱。旧CHAT session.ts已由原owner明确持续停写，但renderer准确base未到，尚无amend/newtake。
+
+06:06 活动canonical已实际到并核，不因等待登记误写未开工：[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md)598e5e2e78d7ef57d1add8e6ee797f519da1c0c8 clean，M2/P1/implementation、4TODO、checksnot_run/reviewnot_started/targetUNKNOWN、human完整；[管理初核](../../docs/evidence/web-platform/activity01-canonical-audit.json)。来源已给root统一登记，账本领取与状态卡部署仍分开。

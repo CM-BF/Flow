@@ -498,7 +498,7 @@ GO观察、root转述的[synthetic窄屏图](/Users/citrine/Projects/AgentHarnes
 
 Root补充固定main3d官方Thread接缝：MessageActions位于hideWhenRunning/autohide的ActionBar内，运行中活动入口不能借此槽。后继独立始终可见的message footer/activity入口须由唯一Thread writer另领；pending turn只有真实user message，不生成伪assistant tool/thinking消息。独立模块先TaskSummary+host-bound lazy port；未来typed活动须Reference.activity明确身份，不按标题猜。官方[工具显示注册](https://www.assistant-ui.com/docs/api-reference/tools/rendering)与[Message primitives](https://www.assistant-ui.com/docs/primitives/message)由root本段核，实装仍以0.15.x固定源码为准；显示注册不赋予工具执行能力。本管理记录root只读证据，未浏览/运行/修改该Thread。
 
-## 06:03 后继只读设计停点（没有新领取）
+## 06:02 后继只读设计停点（没有新领取）
 
 w01根据固定main3d4985与已审renderer747/final7ff给WPF-RENDERERI01候选：新web-data-renderer-integration/codex/web-data-renderer-integration，准确实现base等Lead包含已审输入。八literal为`apps/web/src/conversations/ConversationThread.tsx`、`apps/web/src/plugin-integration/session.ts`、`apps/web/src/plugin-integration/react.tsx`、新`apps/web/src/plugin-integration/data-renderers.ts`、新`apps/web/test/data-renderer-integration.test.ts`/`apps/web/test/data-renderer-integration.browser.ts`、`plans/wpf-renderer-i01-integration`、`docs/evidence/wpf-renderer-i01`。不写App/officialThread/projection/selection/outbox/messages/queue/P01。05:59:55.298Z作者只读ledger唯一相交为CHAT082v5的session.ts，未来必须旧owner明确停写→freshversion CAS→新take；K02C01仍持projection/selection等六实现文件，不能借接线修改。
 
@@ -507,3 +507,7 @@ session持唯一registry/connection AbortSignal，现有私有SessionContext供�
 panels给原REQ43独立活动模块候选八literal：`apps/web/src/conversation-activity/projection.ts`/`ConversationActivity.tsx`/`activity.css`、`apps/web/test/conversation-activity.test.ts`/`conversation-activity.fixture.ts`/`conversation-activity.browser.ts`、`plans/wpf-activity01`、`docs/evidence/wpf-activity01`。新树候选web-conversation-activity/codex/web-conversation-activity，全新路径但未take。scope输入connection/view/conversation/turn/task与真实TaskSummary；只读bound port readEvents/readDetail，UI不再造第二Execution折叠。初始0events/0detail，用户展开读取现有轻timeline、显式分页/refresh，reference二次展开0→1→cache；不按title猜tool/thinking，不把终态当verification通过，无新增SSE/interval。
 
 作者实际读到FlowClient.events目前无AbortSignal，因此只能generation/lifetime丢弃迟到，不能声称collapse取消底层HTTP；detail可用signal。缓存含上述身份与已读reference，未读页id拒读；reset清缓存、错误保留旧页/stale。测试候选涵盖分页/reset、401/离线、collapse/换中心、键盘/390与0模型。真实App接线后继由唯一Thread writer在renderer后领取always-visible footer，不用hideWhenRunning ActionBar；pending只真实user message。CHAT05 ae4仍初interface，模块候选不消费未冻结client/typed活动，也不声称已解决窄屏整合。两proposal已交root作优先级/接口协调，未建树、未take、未运行验证。
+
+06:04 renderer接线寿命补充（w01固定3d只读）：App关闭conversation仍setVisible(false)并保留projection/views缓存，hasDraft不能作pane活跃许可。拟宿主adapter拥有display lease代际，Activity cleanup失效/abort旧port、resume新代际，稳定ReplyBindings与纯disclosure保留，projection cache仍权威；旧port捕获代际不能hide→show复活。session.dispose在host异步清理前同步closed/abort。按真实message/turn/task/detail身份允许非focused split A/B各自读，嫁接身份0GET；禁用后restore不偷偷activate。只管理UI绑定寿命，不新建授权/enable权威，仍原八scope候选、未实施。
+
+Root本段实际官方资料核对来源：[assistant-ui导航](https://www.assistant-ui.com/llms.txt)、[data/tool显示注册](https://www.assistant-ui.com/docs/api-reference/tools/rendering)、[Message primitives](https://www.assistant-ui.com/docs/api-reference/primitives/message)、[Claude SDK streaming output](https://code.claude.com/docs/en/agent-sdk/streaming-output)。采用边界仅显示注册不赋执行权限、block结束不等工具执行成功；实装行为仍以当前固定版本源码/已审契约为准。本管理者归档root已访问来源，未独立浏览或据文档宣称CHAT05流式实装，无新增需求/范围。

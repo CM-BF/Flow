@@ -173,6 +173,7 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-16** WPF-QUEUE01：已按固定14c61独立树与13scope正式受领，交付中心权威排队/暂停/继续/独立取消与真实键盘发送一致性；保持REQ44的回执、持久性、分页和跨连接验收，独审/集成另计。
 - [ ] **WPF-001-17** [WPF-RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/plan.md)：按固定fb906独立模块与八scope正式受领，交付确定性可信data-renderer注册和每provider隔离、按需详情的单一内建例子；App接线、完整X01生命周期另片，独审/主线另计。
 - [ ] **WPF-001-18** [WPF-K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/plan.md)：原QUEUE已停写释放后，从已审3d4985新树取得八scope；仅消费Lead三contracts受控输入，完成project身份与旧cap/metadata薄兼容，不开放引用选择/发送，固定验证后独审。
+- [ ] **WPF-001-19** [WPF-ACTIVITY01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/plan.md)：按固定3d4985新独立树与八scope受领，复用真实TaskSummary与bound lazy events/detail交付执行活动独立模块；初始零请求、显式分页/刷新、身份与隐藏/连接寿命隔离，App接线另片，不把现reference伪作typed tool/thinking。
 
 ## 验收、风险与持续方式
 
@@ -298,3 +299,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 05:59 U11/REQ43后继界面整合观察（GO现场截图，经root转述；非当前验收失败）：[synthetic窄屏截图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live-preflight/second-reply-dark-narrow.png)中两处Execution details、执行配置/legacy文字、Continue this conversation及技术说明挤压聊天高度。后继设计合为单一折叠执行入口，默认保留需用户选择的model/access/queue状态；unsupported/未知回执仍明确，fixture标识简短保留。该观察归原需求，不新建重复任务、不改当前两候选scope。
 
 CHAT05 typed活动初interface已固定ae4cc5c630b88616fe75c72eff9fc276a9f84f6c；这是REQ43后继依赖，task轻metadata与lazy detail、phase/工具status分开，partial未含。PG/adapter/client/index未全部冻结前不作ready公共输入；当前K02/renderer交付不扩大到typed活动渲染。
+
+06:04 原REQ43下独立活动模块获root/GO正式P1授权，准确base3d4985不依赖CHAT05/renderer/K02新shared；新treepreflight后freshledger八scope空闲，committed take51f962ee v1再followup实施。唯一canonical由workspace_panels_owner在web-conversation-activity维护，父文只追溯原需求和handoff，不复制新module进度。
