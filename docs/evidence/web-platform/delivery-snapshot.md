@@ -153,3 +153,10 @@ D06新轮：固定base`eb14991a170b72d7d974428b2e440e1faada2c1e`、impl`5ec6ce20
 06:22 ACTIVITY模块正式可交付：实现61b9349af390c137cc4cfeabd38bad058ec69cb5 / finalb024cfc2c3cd150e0f6db02df5dfe3f64159b1f8 clean / base3d4985。root06:17:33Z独立22+CUA限定APPROVED；作者dev7/prod7/typecheck/build仅复核，0App/真实center/DB/model。管理增量七metadata、7md29links、八scope无越界、实际parser/checks/review绑定61b与本地proof unchanged，见[审计](activity01-approved-metadata-audit.json)。73源06:14样本仍保留当时UNKNOWN过渡事实，不复采。预览53851/session46011保留，claim51f v1产品停写待main。
 
 Renderer App后继提案按真实native hidden修正为九scope，新增App.tsx窄visible传递；[06:20ledger](renderer-i01-visibility-scope-preflight.json)仅CHAT session.ts相交，未amend/take/建树。正式派工只等Lead已含747的精确main输入及原子领取，不重复等待模型窗口。
+
+
+06:26 MAIN_READY闭环：[管理06:23:20.958Z独立观察](main115b-fixed-scope-observation.json) main/origin115b clean，K02 763与renderer747祖先/各六path相同。两owner各自仅metadata核main后全scope停写，K02 final2bce/5abv2 released，renderer final4ddcac/879v2 released；原始回执分别[k02](k02c01-release-receipt.json)、[renderer](renderer01-release-receipt.json)。ACTIVITY61b尚未main，51f仍保留。
+
+后继rendererI九scope从115b新树已原子take ff62150f v1，正式followup w01实施；CHAT session移出v6，原始amend/take都可追。首canonical后统一登记，不把take当已具进度卡。Main/个人centerRunnerfb906分开，0新model/服务重启/API复采。
+
+06:29 三模块main/release齐：K02与renderer在115b、ACTIVITY在acfd，管理与各owner独立祖先/六scope同源，最终2bce/4ddcac/8cc分别clean；release原始receipt均保留。ACTIVITY README原交付段未main是历史，新增观察与canonical为最新，不恢复released写权。新rendererI首ad6c（ff621九scope）与D06同ID新b3ec（981d四scope）已一次送Lead新增/迁移唯一source；待部署回执，不复采旧73source。
