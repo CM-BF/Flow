@@ -146,16 +146,18 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
     },
   });
   useEffect(() => {
-    if (!attachments) return;
-    const held = attachments.getSnapshot().submission?.value.ids ?? [];
-    // Stable App binding owns ready draft refs through split/merge remounts.
-    // Failed old submissions stay separate and are never attached to a newer draft.
-    for (const item of attachments.input?.getSnapshot().items ?? []) if (item.state === "ready" && !held.includes(item.id) && !runtime.thread.composer.getState().attachments.some(file => file.id === item.id))
-      void runtime.thread.composer.addAttachment(createExistingAttachment(attachments.input!, item.id)).catch(error => setSendError(String(error)));
-    return attachments.bindComposer(runtime.thread.composer, (value, error) => {
+    if (!attachments || !attachmentActive || pending.current) return;
+    let current = true;
+    // Restore begins unverified. An explicit directory check can make the same
+    // item ready without changing this binding or the official runtime.
+    void attachments.syncComposerDraft(runtime.thread.composer).catch(error => { if (current) setSendError(String(error)); });
+    return () => { current = false; };
+  }, [attachments, runtime, materialState, attachmentActive]);
+  // A ready-state update must not release the preparation watcher: its cleanup
+  // would mark an in-flight capture as failed. Bind only to the actual lifetime.
+  useEffect(() => attachments?.bindComposer(runtime.thread.composer, (value, error) => {
       if (pending.current?.material === value) { pending.current = null; if (session.recovery.configured()) session.recovery.cancelHandoff(viewKey); setSendError(error.message); }
-    });
-  }, [attachments, runtime]);
+    }), [attachments, runtime, session, viewKey]);
   const submit = () => {
     if (pending.current || runtime.thread.composer.getState().submission) return;
     try {

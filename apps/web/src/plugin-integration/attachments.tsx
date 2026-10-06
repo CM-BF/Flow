@@ -3,7 +3,7 @@ import { FlowApiError, type FlowClient } from "@flow/client";
 import { attachmentAcceptedSchema, attachmentUploadSchema, attachmentUploadKeySchema, attachmentReferenceKey, type AttachmentAccepted, type AttachmentUpload } from "@flow/contracts";
 import type { ComposerRuntime } from "@assistant-ui/react";
 import { createAttachmentInput, type AttachmentInput, type AttachmentCapture, type AttachmentReadiness, type AttachmentItem } from "../attachments/controller";
-import { bindAttachmentComposer, createAttachmentAdapter } from "../attachments/adapter";
+import { bindAttachmentComposer, createAttachmentAdapter, createExistingAttachment } from "../attachments/adapter";
 import { createRecoveryJournal, type RecoveryStorage } from "../attachments/recovery";
 import { AttachmentPicker } from "../attachments/AttachmentPicker";
 import type { TurnReceipt } from "../conversations/outbox";
@@ -162,6 +162,24 @@ export class ConversationAttachments {
   }
   open() { this.assertAllowed(); this.update({ open: true }); }
   close() { this.update({ open: false }); } // Closing a Dialog is not hiding the composer.
+  async syncComposerDraft(composer: Pick<ComposerRuntime, "getState" | "addAttachment">): Promise<void> {
+    const input = this.input, lease = this.lease;
+    if (!input) return;
+    for (const item of input.getSnapshot().items) {
+      if (lease !== this.lease || lease.signal.aborted) return;
+      const ready = this.readiness(), state = composer.getState();
+      if (!ready.visible || !ready.online || !ready.canRead || input.getSnapshot().capable !== true || state.submission) return;
+      // Recheck the immutable item after any prior add settles. Held/consumed or
+      // explicitly removed material must never be appended to the next draft.
+      if (item.state !== "ready" || !input.getSnapshot().items.includes(item)
+        || this.state.submission?.value.ids.includes(item.id)
+        || state.attachments.some(file => file.id === item.id)
+        || state.inTransit?.some(message => message.attachments.some(file => file.id === item.id))) continue;
+      // Installed core's CompleteAttachment branch publishes synchronously; its
+      // Promise settles later. A repeated sync sees the original ID immediately.
+      await composer.addAttachment(createExistingAttachment(input, item.id));
+    }
+  }
   bindComposer(composer: Pick<ComposerRuntime, "getState" | "subscribe">, onPreparationFailed?: (value: AttachmentSubmission, error: Error) => void): () => void {
     if (!this.reconciliationInput) return () => {};
     const stop = bindAttachmentComposer(this.reconciliationInput, composer);

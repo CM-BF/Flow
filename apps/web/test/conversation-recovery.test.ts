@@ -10,6 +10,11 @@ import { ConversationOutbox, frozenOutbox, restoreOutbox } from "../src/conversa
 import { ConversationProjection } from "../src/conversations/projection";
 import { createContextSelection } from "../src/conversation-context/controller";
 import { themes } from "../src/themes";
+import type { CompleteAttachment, ComposerRuntime } from "@assistant-ui/react";
+import type { AttachmentCapabilities, AttachmentMetadata } from "@flow/contracts";
+import { ConversationAttachments, createAttachmentPlugin, ATTACHMENT_OWNER, type AttachmentClient, type AttachmentView } from "../src/plugin-integration/attachments";
+import { PluginHost } from "../src/plugins/host";
+import type { HostPort } from "../src/plugins/types";
 
 const uuid = (n: number) => `10000000-0000-4000-8000-${String(n).padStart(12, "0")}`;
 const ns: RecoveryNamespace = { baseUrl: "https://center.example/proxy", centerId: uuid(1), ownerPrincipalId: uuid(2) };
@@ -74,6 +79,56 @@ async function workspace(value: ConversationRecoveryJournal) {
   cleanup.push(() => session.dispose()); await session.host.activate(RECOVERY_OWNER);
   return { workspace: session.recovery, restore, setDraft: (next: Json) => { data = next; }, revoke: () => { authorized = false; generation++; }, reauthenticate: () => { authorized = true; generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
 }
+
+/** Real input/private binding with authorized metadata ports; the composer is a
+ * controlled public-state port, not evidence that React or browser IDB ran. */
+async function restoredMaterials() {
+  const resource = (n: number): AttachmentMetadata => ({ reference: { kind: "upload", projectId: "project", resourceId: uuid(n), version: 1, contentDigest: "a".repeat(64) }, name: `saved-${n}.txt`, mediaType: "text/plain", byteLength: 1, createdAt: "2026-10-06T00:00:00Z", expiresAt: "2099-01-01T00:00:00Z", state: "ready", retained: false });
+  const cap: AttachmentCapabilities = { protocol: "text-v1", recoveryScopeId: uuid(30), projectId: "project", requiresProject: true, mediaTypes: ["text/plain"], extensions: [".txt"], maxFileBytes: 8192, maxCombinedReferences: 4, maxCombinedBytes: 8192, order: "knowledge-then-attachments", unboundTtlSeconds: 86400, resourcesPerProject: 128, retainedBytesPerProject: 1048576 };
+  let view: AttachmentView = { viewId: owner.routeId, conversationId: "chat", projectId: "project", visible: true, online: true, canRead: true, canUpload: true, attachmentContext: true };
+  const constant = <T,>(value: T) => ({ getSnapshot: () => value, subscribe: () => () => {} });
+  const port: HostPort = { navigation: constant({ activeTaskId: null, workspaceTab: "files", workspaceOpen: false }), theme: constant({ themeId: "light", scheme: "light", availableThemes: [] }), getContext: () => ({ kind: "global" }), authorize: (_plugin, _capability, context) => view.canRead && context.kind === "composer" && context.viewId === view.viewId, execute: async () => {} };
+  const host = new PluginHost(port), signal = new AbortController(); let binding: ConversationAttachments;
+  host.register(createAttachmentPlugin(() => binding));
+  const forbidden = async () => { throw Error("No upload, body or receipt read in this recovery check."); };
+  const client: AttachmentClient = { attachmentCapabilities: async () => cap, attachments: async () => ({ resources: [resource(11), resource(12)], nextCursor: null }), attachment: forbidden, attachmentContent: forbidden, attachmentUploadReceipt: forbidden, uploadAttachment: forbidden };
+  binding = new ConversationAttachments({ connectionId: "connection", viewKey: owner.viewKey, projectId: "project" }, { host, client, signal: signal.signal, current: () => view, storage: { read: () => null, write() {} } });
+  cleanup.push(() => host.dispose(), () => binding.dispose()); await host.activate(ATTACHMENT_OWNER);
+  const items = [11, 12].map(n => ({ id: uuid(n + 10), name: resource(n).name, metadata: resource(n), state: "ready" as const })); binding.restoreDraft(items);
+  let files: CompleteAttachment[] = [], settle: Promise<void> = Promise.resolve(); const listeners = new Set<() => void>();
+  const emit = () => { for (const listener of listeners) listener(); };
+  const composer: Pick<ComposerRuntime, "getState" | "subscribe" | "addAttachment"> = {
+    getState: () => ({ type: "thread", canCancel: false, canSend: false, isEditing: false, isEmpty: !files.length, text: "next draft", role: "user", attachments: files, runConfig: {}, attachmentAccept: ".txt", dictation: undefined, quote: undefined, queue: [], submission: undefined, inTransit: [] }),
+    subscribe: listener => { listeners.add(listener); return () => { listeners.delete(listener); }; },
+    addAttachment: vi.fn<ComposerRuntime["addAttachment"]>(async value => { if (!("content" in value) || !value.id) throw Error("Only existing complete metadata is allowed."); files = [...files, { ...value, id: value.id, type: value.type ?? "file", status: { type: "complete" } }]; emit(); await settle; }),
+  };
+  return { binding, composer, items, host, pause: (promise: Promise<void>) => { settle = promise; }, clearComposer: () => { files = []; emit(); }, configure: (patch: Partial<AttachmentView>) => { view = { ...view, ...patch }; binding.sync(); } };
+}
+
+describe("restored attachment draft synchronization (controlled composer port)", () => {
+  it("adds the same verified IDs once and removes explicit deletions without re-binding preparation", async () => {
+    const f = await restoredMaterials(); const failure = vi.fn(), unbind = f.binding.bindComposer(f.composer, failure); cleanup.push(unbind);
+    await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(0);
+    await f.binding.input!.browse(); await f.binding.syncComposerDraft(f.composer); await f.binding.syncComposerDraft(f.composer);
+    expect(f.composer.getState().attachments.map(item => item.id)).toEqual(f.items.map(item => item.id)); expect(f.composer.addAttachment).toHaveBeenCalledTimes(2);
+    f.clearComposer(); await Promise.resolve(); await f.binding.syncComposerDraft(f.composer);
+    expect(f.binding.input!.getSnapshot().items).toHaveLength(0); expect(f.composer.getState().attachments).toHaveLength(0); expect(failure).not.toHaveBeenCalled();
+  });
+  it("does not finish an old sync after visibility/permission revoke and does not append held material to a new draft", async () => {
+    const f = await restoredMaterials(); await f.binding.input!.browse(); const pendingAdd = deferred<void>(); f.pause(pendingAdd.promise);
+    const adding = f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(1);
+    f.configure({ visible: false }); f.configure({ visible: true }); pendingAdd.resolve(); await adding;
+    expect(f.composer.getState().attachments).toHaveLength(1); // The old lease cannot resume the second add.
+    await f.host.deactivate(ATTACHMENT_OWNER); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(1);
+    await f.host.activate(ATTACHMENT_OWNER); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(1);
+    await f.binding.input!.browse(); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(2);
+    const held = f.binding.capture({ ids: f.items.map(item => item.id), submissionId: uuid(40), intent: "send", text: "old captured draft" }, null);
+    f.clearComposer(); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(0);
+    f.binding.failed(held, Error("Original preparation stopped")); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(0);
+    expect(f.binding.getSnapshot().submission?.value).toBe(held);
+    expect(f.composer.getState().text).toBe("next draft");
+  });
+});
 
 describe("recovery storage barriers (controlled IDB event port)", () => {
   it("waits for strict transaction completion, including put-success followed by commit abort", async () => {

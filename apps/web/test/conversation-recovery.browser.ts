@@ -215,7 +215,7 @@ async function worker(init: Init) {
     else pageErrors.push(error.message);
   };
   const coverage: Record<string, string> = {
-    cookieRead: "NOT_RUN", cookieSse: "NOT_RUN", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
+    cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
     pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN",
     createTwoStage: "PENDING: direct/source only", queueSteerRecovery: "PENDING: direct/source only",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
@@ -246,10 +246,12 @@ async function worker(init: Init) {
     const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: "reduce" });
     const page = await context.newPage(); page.setDefaultTimeout(4500); page.on("pageerror", pageError);
     const input = (target = page) => target.getByRole("textbox", { name: "Message input", exact: true }).filter({ visible: true });
-    const openRecovery = async (target = page) => {
+    const openRecovery = async (target = page, keyboard = false) => {
       const trigger = target.getByRole("button", { name: "Saved drafts and receipts", exact: true });
       if (!await trigger.isVisible()) await target.getByRole("button", { name: "Chats", exact: true }).click();
-      await trigger.click(); const dialog = target.getByRole("dialog", { name: "Saved drafts and receipts", exact: true }); await expect(dialog).toBeVisible(); return dialog;
+      if (keyboard) { await trigger.focus(); await expect(trigger).toBeFocused(); await trigger.press("Enter"); }
+      else await trigger.click();
+      const dialog = target.getByRole("dialog", { name: "Saved drafts and receipts", exact: true }); await expect(dialog).toBeVisible(); return dialog;
     };
     await run("actual browser stores HttpOnly cookie; public cookie-only session read opens original center", "cookieRead", async () => {
       await page.goto(fixture!.url + `#conversation=${fixture!.conversationId}`);
@@ -277,6 +279,8 @@ async function worker(init: Init) {
       const dialog = await openRecovery(), row = dialog.locator("li").filter({ hasText: "Saved draft" }).filter({ hasText: `conversation:${fixture!.conversationId}` });
       await row.getByRole("button", { name: "Restore without sending", exact: true }).click(); await page.keyboard.press("Escape");
       await expect(input()).toHaveValue("Original recovery draft 中文🙂"); await expect(page.getByRole("radio", { name: "Queue next", exact: true })).toBeChecked(); expect(postRows()).toHaveLength(posts);
+      const composerFiles = input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root");
+      await expect(composerFiles).toHaveCount(0); // Restored metadata alone is not a ready composer attachment.
       await files.click();
       await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("saved.txt");
       await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("unverified");
@@ -284,6 +288,13 @@ async function worker(init: Init) {
       await picker.getByRole("button", { name: "Browse files", exact: true }).click();
       await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("ready");
       await page.keyboard.press("Escape");
+      // Browse must reconcile into the existing composer, without another Use,
+      // selection or remount. A Files/Input row alone does not prove handoff.
+      await expect(composerFiles).toHaveCount(1);
+      await composerFiles.getByRole("button", { name: "File attachment", exact: true }).focus();
+      await expect(page.getByRole("tooltip")).toHaveText("saved.txt");
+      await input().focus();
+      expect(contentReads()).toBe(bodiesBefore); expect(postRows()).toHaveLength(posts);
       expect((await records(page)).find(record => record.id === draftId)?.data?.attachments?.[0]).toMatchObject({ metadata: { reference: fixture!.resource.reference } });
       coverage.materialDraft = "PASSED";
     });
@@ -306,7 +317,7 @@ async function worker(init: Init) {
       const retry = postRows().filter(row => /\/turns$/.test(row.path))[1]!; expect({ key: retry.key, body: retry.body }).toEqual({ key: first.key, body: first.body });
       await expect.poll(async () => (await records(page)).find(record => record.kind === "command")?.phase).toBe("accepted");
       await page.keyboard.press("Escape"); expect((await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
-      expect(fixture!.wire.some(row => /\/stream/.test(row.path) && row.cookie && !row.bearer && row.status === 200)).toBe(true); coverage.cookieSse = "PASSED";
+      expect(fixture!.wire.some(row => /\/stream/.test(row.path) && row.cookie && !row.bearer && row.status === 200)).toBe(true); coverage.cookieSseHandshake = "PASSED";
     });
     await run("auth loss without reload retains an unsaved page-only draft; reconnect sends no command", "pageOnlyAuthLoss", async () => {
       const posts = postRows().length, pageOrigin = await page.evaluate(() => performance.timeOrigin);
@@ -343,11 +354,11 @@ async function worker(init: Init) {
       await context.setOffline(true); await expect(page.getByText("Offline. Drafts and pending commands have not been cancelled.", { exact: true })).toBeVisible();
       await context.setOffline(false); await expect(input()).toHaveValue("Unsaved page-only draft after abort 中文🙂"); expect(postRows()).toHaveLength(posts);
     });
-    await run("recovery disclosure is keyboard reachable and readable at 390 in both themes", "themes390", async () => {
+    await run("recovery dialog opens with Enter and returns focus after Escape at 390 in both themes", "themes390", async () => {
       await page.setViewportSize({ width: 390, height: 844 }); await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
       for (const theme of ["light", "dark"] as const) {
         if (theme === "dark") await page.getByRole("button", { name: "Use dark theme", exact: true }).click();
-        const dialog = await openRecovery(); await expect(dialog).toBeVisible();
+        const dialog = await openRecovery(page, true); await expect(dialog).toBeVisible();
         const rect = await dialog.evaluate(element => ({ client: element.clientWidth, scroll: element.scrollWidth, width: element.getBoundingClientRect().width })); expect(rect.scroll).toBeLessThanOrEqual(rect.client + 1);
         const png = await page.screenshot(); requireThat(png.length <= 512 * 1024, "Screenshot exceeds its retained budget"); await writeFile(join(init.directory, theme + "-390.png"), png); await page.keyboard.press("Escape"); await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).toBeFocused();
       }
