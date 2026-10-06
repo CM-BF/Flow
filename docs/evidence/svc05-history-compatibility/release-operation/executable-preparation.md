@@ -1,6 +1,6 @@
 # 可执行观察与逐步记录（未执行个人动作）
 
-本次仅两份必要的新脚本：`observe.mjs` 是 SVC05/live/facts 的有界 af51 适配；`preservation.mjs` 是同一 SVC05 比较法的纯阶段检查。没有新增 start/stop/deploy 入口，所有副作用仍调用已审 host。既有 center-recovery/facts 的 bounded/durable/sha、supervise.py 的外部 PID 期限直接复用，原文件逐字不动。033dd方案方向已由 Execution Lead 独立核41输入与4文档；本增量需其源码复审与唯一 af51 checkout 窗口。
+初始准备的两份必要脚本：`observe.mjs` 是 SVC05/live/facts 的有界 af51 适配；`preservation.mjs` 是同一 SVC05 比较法的纯阶段检查。没有新增 start/stop/deploy 入口，所有副作用仍调用已审 host。既有 center-recovery/facts 的 bounded/durable/sha、supervise.py 的外部 PID 期限直接复用，原文件逐字不动。P2后新增私有runner-files.mjs观察Module与本地直接检查，详见admission-fix-README.md。033dd方案方向已由 Execution Lead 独立核41输入与4文档；本增量需其源码复审与唯一 af51 checkout 窗口。
 
 ## 准备实际差异
 
@@ -41,6 +41,10 @@ raw摘要永远保留：不因可解释的四列/扫描时间差异删除原fals
 
 执行前的原始记录位置、主线refs与私有身份由新reservation绑定；本目录里的旧恢复authorization不能授权这些步骤。外部TSX checkout仍不是immutable runtime closure，SVC06后继保留。
 
-## 静态检查范围
+## 原始静态检查范围（历史）
 
 仅新两脚本的Node语法解析；未import脚本、未调用观察/比较、未访问个人配置或PG、未生成run目录。实际保留/操作结果均NOT_RUN。参考来源是Git固定SVC05 `live/facts.mjs` / `live/preservation.mjs` 和本H已审center-recovery方法，不复制旧25–27新增列特例为本次允许变化。
+
+## P2 修复后的当前准备
+
+固定 a6441a426ea98ee90e8baac44b75fd1d0d61cbeb：已完成8个不同本地文件/纯比较检查，累计596ms；见 admission-fix-README.md 与 admission-fix-manifest.json。原syntax-only声明保留为历史。最新观察只允许已枚举regular admission临时文件消失时最多2次/总250ms重采，所有失败原观察保留；持久admission两端idle且全稳定文件hash一致才可比。个人observe/逐步操作仍NOT_RUN，独立复审和源码窗口待Lead。

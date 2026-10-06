@@ -81,3 +81,7 @@ R01 f74结果由Lead独立批准，两retained的新af51报告已齐，不扩大
 ## 2026-10-06 20:16 UTC 可执行观察增量待审
 
 Lead对033dd方案/4文档及41input独立通读核验，方向批准。为实际执行，仅新增observe.mjs/preservation.mjs与固定steps/request输入；原SVC05摘要、H bounded/durable及外层supervise方法直接沿用。source review待完成；仅Node --check，两脚本0import/PG/服务行为。原center-recovery恢复源码、raw和期限P2历史不改；af51更新时raw全保留与四维护字段/queue扫描时间投影、旧audit保留、新操作审计精确检查均需本delta审查。
+
+## 2026-10-06 20:26 UTC 发布采样P2增量待独审
+
+Lead完整读56306d后发现临时admission原子rename与瞬时inFlight误比较P2。作者窄修source a6441a426ea98ee90e8baac44b75fd1d0d61cbeb，私有观察Module/原两脚本调用与纯直接检查；8不同检查最终8/8，历史初8/8及语法记录不改。当前 REVIEW_PENDING，不把作者green当独审；0个人服务/PG/provider。详见 release-operation/admission-fix-README.md 和增量manifest。
