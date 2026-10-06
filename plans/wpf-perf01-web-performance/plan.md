@@ -6,7 +6,7 @@
 
 继承主管理 performance-cycle 的稳定任务 ID。先形成有界、可复现的生产 App 性能基线，再用证据提出一个生产优化范围；本轮没有生产代码写权，不把测量或建议标为优化完成。保留官方 Thread / AI Elements、独立任务语义、历史锚点、缓冲、按需详情和观察预算。
 
-唯一可写范围：`apps/web/test/performance-fixture.ts`、`apps/web/test/performance-probe.ts`、本目录、`docs/evidence/wpf-perf01/`。D04 committed receipt 已取得；临时根 lock 仅依已授权安装例外，交付导出 patch 并恢复，不提交根 manifest/lock。
+唯一可写范围：`apps/web/test/performance-fixture.ts`、`apps/web/test/performance-probe.ts`、本目录、`docs/evidence/wpf-perf01/`。D04 committed receipt 已取得；根 manifest/lock 不在本 claim，后续只用已安装依赖，确需共享写入先 amend。首次安装差异已保存 evidence patch 并恢复，详见质量记录。
 
 ## 测量方法
 
@@ -18,7 +18,7 @@
 
 ## TODO
 
-- [ ] **WPF-PERF01-01** 记录生产体积、固定环境与真实 App / 隔离 projection 的分离基线。
+- [x] **WPF-PERF01-01** 记录生产体积、固定环境与真实 App / 隔离 projection 的分离基线。
 - [ ] **WPF-PERF01-02** 依证据选择一项瓶颈，另领生产范围后实施有界优化（本测量段仅建议）。
 - [ ] **WPF-PERF01-03** 当前测量脚本独立 review；后续优化同条件比较与功能回归，登记下一轮。
 
@@ -29,3 +29,9 @@
 ## 来源
 
 本地 find-skills、vercel-react-best-practices、webapp-testing、clean-code；具体方法与版本见[质量记录](../../docs/evidence/wpf-perf01/quality.md)。公共测量定义使用 W3C Long Tasks / Event Timing 和 Chrome DevTools Protocol 官方文档。
+
+03:10–03:13 UTC 范围纠正：Goal Owner 指出本次4路径claim不含根lock，历史例外不能继承。已将本次安装差异保存至本范围 dependency-lock.patch 后恢复根lock，后续只用已安装依赖，不再改lock/manifest；生产范围如需变更须先amend。先前派发中的例外已由此新指令收紧。
+
+具体负载：三个场景各10000条新增记录（不是每task10000），正文256字符，round-robin分配；初始快照40条另记，因此全部呈现为10040行。producer每50ms追加100条，App依原40条HTTP分页/最多三页即时catch-up处理，不改轮询周期。阶段100/1000/5000/10000，读取追赶180s、reveal60s为预定有界上限，超限保存失败，禁止为过关扩上限。初版smoke仅100/240新增，单任务。
+
+03:20 UTC：测量段完成，1/16脚本c40与修复128脚本3d47生产assets/HTML hash一致；所有raw与原128harness失败保留。下一轮建议活动列表有界DOM实验，未实施优化。独立review等最终报告结论，PERF01-02仍pending、03仍包含未来同条件对比。
