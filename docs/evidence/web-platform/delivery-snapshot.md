@@ -66,3 +66,20 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --dir apps/web exec vite --host 12
 实现 `92a786abb9f7ef16e15482ac00b98ff860ecc47f` / base `1002f2688c2b4d2e3a5723d94bdbe965a2a88626`，最终metadata `b5844442699733558a152c12392ea78f26c393a4`，branch codex/web-plugin-integration、交付时clean。root整体APPROVED；独立24模块与55049实际Thread→Terminal/reference/Notes/Settings焦点；作者9浏览器+3真实PG/publicrunner+生产检查边界见[validation](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/docs/evidence/wpf-i01/validation.md)。没有实际模型或完整持久插件管理。
 
 [plan](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/plan.md) · [status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md) · [review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/review.md) · [技能/clean-code](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/docs/evidence/wpf-i01/quality.md) · [浅色](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/docs/evidence/wpf-i01/integration-light.png) · [深色](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/docs/evidence/wpf-i01/integration-dark.png)。root报告主线已无冲突集入integration0d1a33c且source同，type/build进行中；该时点不能说main已集成。原owner停止实现，03:35四接缝已正式转CHAT claim，其余I01 scope保留回修责任。
+
+
+## 03:50 增补：PERF02有界Activity窗口已审
+
+实现 `a87f64f48a3b7e8d03429ab0673c210076a2df0d` / base `cc33403cd9b357fcd85484b7bc6952dc1220d689`，固定报告 `d891195688d849e7623cd2805b3f64cfd07b959d`，最终metadata `172d10d63179a4861cc0fbf986dec10bd0a45f10`；branch `codex/web-activity-window`，tree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window`，实际交付clean、target至HEAD apps/web差异0。root独立APPROVED，03:49实际dashboard checks/review同a87、proof unchanged、issues空、main not-contained；已交原Lead集成。
+
+作者13局部/直接依赖tests、typecheck、8普通production浏览器、smoke及1/16/128各一次正式生产矩阵通过。root独立13tests、全源码/probe/测试diff、390浅深目视、重新独立生成每场10040条id/cursor/body SHA与raw统计；未独立重跑typecheck/build/browser/矩阵。管理者scope/shared零diff、metadata7md39links与TODO一致通过。每场全部记录可遍历、最大挂载16行，末DOM200/802/1077。只约束DOM；projection/height/prefix仍线性，单样本共享机/threshold观测/无GC/CDP内存与wallclock限制明确，不称模型容量/完整性能已解决。Safari/Firefox/屏读/真实中心/I01/CHAT组合未验。
+
+[plan](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/plan.md) · [status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/status.md) · [review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/review.md) · [结果/限制](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/docs/evidence/wpf-perf02/results.md) · [技能/clean-code](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/docs/evidence/wpf-perf02/quality.md) · [浅色390](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/docs/evidence/wpf-perf02/window-light-narrow.png) · [深色390](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/docs/evidence/wpf-perf02/window-dark-narrow.png)。
+
+没有常驻本地URL；本批浏览器脚本用动态端口并finally清理，不替换用户49922。复现使用该tree既有依赖、Node24/pnpm9.15.4：
+
+```sh
+PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-window.browser.ts
+```
+
+基准另用 `pnpm exec tsx apps/web/test/performance-probe.ts --smoke` 或默认完整矩阵，必须协调同机测量窗口、写新证据，不覆盖旧raw。owner已停止主动生产写入、保留claim待回修/受控交接，未自动集成main。

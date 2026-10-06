@@ -4,7 +4,7 @@
 
 ## Dashboard来源登记与核验
 
-root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段完整，PERF claim匹配；管理者03:17:14.324Z专项确认30源包含旧8c57登记的17原ID。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理nested现六个转交stub不注册第二源；新增两项已于03:46:41.801Z管理者单次实采完成来源登记：39源、唯一live/claim匹配、unregistered空；PERF02缺工作分支状态这一owner元数据问题尚待补齐，不能声称全字段零issues。
+root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段完整，PERF claim匹配；管理者03:17:14.324Z专项确认30源包含旧8c57登记的17原ID。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理nested现六个转交stub不注册第二源；新增两项03:46:41.801Z实采完成来源登记；当时PERF02缺分支字段。最终metadata172d后03:49:13.564Z再核PERF human完整、errors/issues空、checks/review均绑a87、proof unchanged，保留两次真实时点证据。
 
 | Task | Worktree | Branch | planDir | evidenceDir |
 | --- | --- | --- | --- | --- |
@@ -203,3 +203,10 @@ CHAT唯一canonical实际建立：/Users/citrine/Projects/AgentHarness/Flow-work
 REQ40归属不变：Mika写中心模块，ExecutionLead写共享client/export/CLI；待其固定消费入口后Web另领取，不打断CHAT。I01本地可信Settings不等于中心持久插件管理。
 
 03:46:41.801Z注册闭环已完成：两新source各仅一条且live，claim08259c1d/d36cd583均v1、matchesSource=true、唯一worker与实树一致；unregisteredAssignments为空，19 active writer claims逐字路径/父子前缀0重叠。PERF02工作分支状态字段缺失由其owner修，管理者不代写。历史待注册段落保留当时时序，不作为当前结论。
+
+
+## PERF02交主线集成（03:50）
+
+固定实现a87f64f48a3b7e8d03429ab0673c210076a2df0d/basecc33403cd9b357fcd85484b7bc6952dc1220d689；报告d891195688d849e7623cd2805b3f64cfd07b959d；最终metadata172d10d63179a4861cc0fbf986dec10bd0a45f10，codex/web-activity-window clean、apps实现diff0。root限定APPROVED；管理scope/docs检查无blocking，7md39links/TODO/diffcheck0。03:49实际4320字段齐、checks/review均targeta87、proof unchanged、claimd36v1 matchesSource、main not-contained，[证据](perf02-approved-dashboard.json)。
+
+已通过指定GoalOwner桥接“收件人：Execution Lead”交完整SHA/范围/检查/限制，请其局部集成并验证I01/CHAT组合。三Activity生产文件+算法/browser/probe三测试，未改共享/根lock/App/Thread；owner停止主动写八scope，claim保留回修，不自行释放/merge或开下一性能轮。无常驻性能预览，动态测试端口均已清理。

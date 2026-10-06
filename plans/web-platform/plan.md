@@ -146,7 +146,7 @@ type WorkspacePanelsProps = {
 | 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v2四文件已正式转CHAT，剩余保留回修范围 |
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
 | 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 固定4c240+共享受控a3b9已就绪；Web08259c1d v1受领并正式实施，canonical c72e02；中心2d3bb61已独审，不等于Web/模型验收 |
-| 独立并行测量 | WPF-PERF02 | 新d36v1八scope独立实施候选a87f64f；03:40正式三规模矩阵，尚待结果/review；不碰App/后端，CHAT持续优先 |
+| 独立并行测量 | WPF-PERF02 | 新d36v1八scope独立实施固定a87f64f与三规模报告获独立APPROVED，最终172d10d交主线集成；不碰App/后端，CHAT持续优先 |
 
 ## TODO
 
@@ -198,7 +198,7 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 
 - 2026-10-06 03:23 UTC：只读核主线X01 canonical888308d clean和D05 canonical dirty实施中，REQ39/40补真实路径；不代其给approval或重复产品实现。
 
-当前独立轮：[WPF-PERF02有界Activity](performance-optimization/plan.md)，依据PERF三规模实际数据，已完成停写、逐文件amend/take与canonical转交；候选a87f64f三规模已测完、报告待审。原准备暂停和后续授权恢复时序保留，不改CHAT App。
+当前独立轮：[WPF-PERF02有界Activity](performance-optimization/plan.md)，依据PERF三规模实际数据，已完成停写、逐文件amend/take与canonical转交；固定a87f64f/报告d891已APPROVED、最终172d交主线集成。原准备暂停和后续授权恢复时序保留，不改CHAT App。
 
 - 2026-10-06 03:25 UTC：U11准确摘要及REQ41～45已完整持久化；真实持续对话优先。PERF02只有准备93889c3，无新tree/amend/take/生产写入；原probe停写意向保留但claim仍v1。I01继续现有交付收尾，49922原fixture不暗换。
 
@@ -209,3 +209,5 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 - 2026-10-06 03:44 UTC：刷新当前claim/队列/已交付事实；X02固定4054中心registry只读兼容研究进入REQ40依赖。root转中心2d3bb61独审通过及主线main ac4e34d，真实模型最终验收归主Lead，Web不重复调用或提前宣布通过。
 
 - 2026-10-06 03:47 UTC：主线registry39源已实际核CHAT/PERF02唯一live来源/claim/worker一致、unregistered空；19activewriterclaims literal零重叠。PERF02唯一缺分支字段由owner修，来源注册不代表review通过。
+
+- 2026-10-06 03:50 UTC：PERF02 a87独立APPROVED、最终172d clean且实现diff0；03:49实际dashboard检查/review/proof/字段全闭环，主线集成待执行。原worker转固定版本ACK语义只读调查，CHAT仍唯一实现owner，不扩scope。
