@@ -70,3 +70,5 @@
 2026-10-06 07:45 UTC：固定部署证据收口，23 source/21 evidence 的 bytes/SHA256 已绑定b54；实际main clean、工具未改。固定018/021新增列解释与全保留ID集合均已列明，原失败/原完整行hash差异保留。GO认为现有摘要证据精度足够；本owner未再采样或补造原值。等待GO显式resume，当前仅drain→hold，不恢复派发。
 
 2026-10-06 07:46 UTC：显式恢复已完成，短回执已交Root/Lead，窗口CLOSED。一次前置/一次resume/一次后置，0主动任务/模型/tab。首次checker误要求accepting仍持operation造成false，按原store清NULL语义使用同份sample解释，未重试服务动作；初始false保留。当前claim暂留交付metadata，工具继续停写。
+
+2026-10-06 07:49 UTC：Lead MAIN_RECEIPT main/origin84fdecebbb4939e43710fb17e48884cc49d1d030已含c28收口记录；本地核c28祖先、tools零diff。runtime保持已有b54/v6时点回执，不为metadata刷新；无新服务/DB/模型检查。全部本claim范围停止写入，此metadata提交后fresh原子release d582v1，实际receipt位于/tmp/flow-svc02-b54-release-receipt.json。
