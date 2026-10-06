@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Flow 本地性能试验台</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+  <header><div><h1>性能试验台</h1><p>同一份合成数据，两种处理方式。本机样例，不代表产品性能。</p></div><button id="theme" type="button">切换深色</button></header>
+  <main>
+    <section aria-labelledby="payload-title">
+      <h2 id="payload-title">工具结果，何时读取？</h2><p>32 条时间线，每条工具结果 8 KiB。展开首条时核验内容摘要。</p>
+      <div class="controls"><button id="full" type="button">完整结果</button><button id="folded" type="button">按需详情</button></div>
+      <p id="payload-status" role="status">选择一种方式读取时间线。</p>
+      <dl id="payload-metrics"></dl>
+      <ol id="timeline" aria-label="时间线预览"></ol>
+      <button id="expand" type="button" disabled>展开第一条详情</button>
+      <pre id="detail" aria-label="工具详情" hidden></pre>
+    </section>
+    <section aria-labelledby="events-title">
+      <h2 id="events-title">128 个模拟 agent 的更新</h2><p>8,192 个逻辑事件。批量模式保留全部事件，只合并显示更新。</p>
+      <div class="controls"><button id="immediate" type="button">逐条更新</button><button id="batched" type="button">有界批量更新</button></div>
+      <p id="event-status" role="status">尚未运行。两种方式的最终状态必须一致。</p>
+      <dl id="event-metrics"></dl>
+      <button id="interaction" type="button">响应检查 <span id="click-count">0</span></button>
+      <div id="agents" aria-label="模拟 agent 最终状态"></div>
+    </section>
+  </main>
+  <footer>这里测量数据字节和浏览器行为。字节不是模型 token；排队控制动作不是 INP；零长任务也是有效结果。</footer>
+  <script type="module" src="/app.js"></script>
+</body></html>
