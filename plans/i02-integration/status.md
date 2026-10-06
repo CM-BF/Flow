@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T09:58:56.844754+00:00 / 接收前 main187d97648dd2d4edf45641720f8ba771ea9f25fa |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:04:18 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
+| 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -13,13 +13,13 @@
 | 工作树dirty状态 | 固定实现零差；本批证据随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；59 个实现源与获审 target 一致，root/Web 类型检查 exit0，4 个直接消费者文件 50/50；0provider |
-| 已集成main状态 / HEAD | main187d976已发布118源计划批；本批59源及122源登记已在集成分支验证，即将发布。个人backend/static仍b1c2、accepting v12。 |
+| 已集成main状态 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066已推送；本批59源码及122来源已发布，实际4320领取状态available。个人backend/static仍b1c2、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端可选择、发送与恢复会话；聊天活动与补充指令界面、Codex普通任务接入已完成独审和组合检查。 |
-| 下一可用交付 | 发布本批已审成果，再接通Codex可信启动配置与Web独立发布。 |
+| 当前产出 | 终端会话首片、聊天操作和Codex执行接口已进入主线，进度看板同步完成。 |
+| 下一可用交付 | 本片段已交付；工程任务通路、Codex启动配置和网页独立发布由各自后继推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
