@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:11 UTC / input main0c242483 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:23 UTC / main4df08fb3 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,12 +13,12 @@
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
 | 检查状态 | 目标推进五源与独审73a逐字相同，运行只读闭包无差；本轮2/2生产PG及旧CLI1/types0分轮有效，集成无重跑 |
-| 已集成main状态 / HEAD | 本批目标推进生产入口待发布即验固定源；167来源不变。个人runtime362/v15与Web8d8/v2不变 |
+| 已集成main状态 / HEAD | 目标推进生产/CLI五源已main bd14f984并推送，4df08fb3含资源与交接记录；167来源不变。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 中心已能持续推进明确授权的固定节点输入；生产接线通过验证与独立审查，正在发布。 |
+| 当前产出 | 中心持续推进明确授权的固定节点输入已进入主线；生产接线与独立审查证据已接收。 |
 | 下一可用交付 | 接收逐消息设置核心与共享入口，完成新网页兼容验证；终端真实中心旅程继续。 |
 | 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
 | 需用户决定 | NONE |
