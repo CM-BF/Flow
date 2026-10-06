@@ -32,3 +32,5 @@
 文档source target：888308dce1d8061ab66ce93c10c023ec66d6eb58。其后仅补target/检查metadata；完整产品implementation仍UNKNOWN。最终本地链接复查包含新增document-checks.json引用，共17条均存在；10TODO逐项对应。0产品测试/模型/云。
 
 2026-10-06 03:24 UTC clean-code/依赖一致性复核：响应root只读finding，修复X01-10错误等待候选09的依赖，并移除当前用户决定提示；候选身份未确认与09 blocked事实保留。修改仅本scope文档；重查链接/TODO/diff，无产品测试、模型或新增依赖。
+
+2026-10-06 04:04 UTC clean-code/计划边界复核：已核 X01 active v1 与 clean c9592b8，实际读取 X03 唯一 plan/status。新增只读 registry + host.list/subscribe 输入，package→definition 未证实则分开展示；无 npm 加载/自动 grant/主App越权接线。仅链接与 diff 检查，0 产品测试/模型/云；完整 X01-06 仍 pending。

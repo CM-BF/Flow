@@ -91,6 +91,14 @@
 - [ ] **X01-09** 确认具体 billion-context 候选后，固定源码/许可并做上述兼容实验。Owner：Goal Owner 确认需求身份，Lead 派发 E01/context writer；依赖 X01-08 + 精确候选身份 + 实验预算（需要时）。
 - [ ] **X01-10** 独立 review、中心/CLI/Web/runner 整体验收并受控 main 集成。Owner：Lead 协调独立 reviewer/集成 writer；通用管理验收与集成仅依赖 X01-03～08 的明确交付与限制；X01-09 候选插件另做后续兼容验收，不阻塞本项。
 
+## X01-06 的只读先行子段：X03
+
+Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management/plans/x03-plugin-management-view/plan.md) 中先做“中心登记的包 / 当前浏览器扩展”窄视图。依赖 X02 中心 registry、F01 consumer095 公共 client、WPF-P01 trusted host 与 WPF-I01 挂载；它是 X01-06 的可读子段，不等待或代表完整安装/启停/升级/回滚/移除生命周期。
+
+输入仅为只读 client registry 与当前 host.list/subscribe。不能新增 npm 加载、自动授予或绑定；尚未证明某中心 package 对应 trusted definition 时，两份事实分开展示，不推断中心登记即浏览器已加载。主 App 接线仍由外部 WPF-CHAT owner 负责，本计划不改变写入范围。
+
+子段验收保留：两个来源的身份/状态标签、无映射时的分开展示、host 更新订阅、空/未知/失败通用状态、凭据不进入列表、只读请求与真实浏览器证据。完整 X01-06 仍待 Web/CLI 公共写命令及生命周期验收，不能因该子段通过而勾选完成。
+
 ## 可检查的验收矩阵
 
 | 验收 | 必须保留的证据 |

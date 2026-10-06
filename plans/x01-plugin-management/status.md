@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 03:28 UTC |
+| 最近更新时间 | 2026-10-06 04:04 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
@@ -18,7 +18,7 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 完整插件管理计划已覆盖中心、Web、CLI、版本与权限边界 |
-| 下一可用交付 | 小公共合同：安装版本、配置授予与持久操作命令 |
+| 下一可用交付 | X03 先展示中心登记包与当前浏览器扩展；完整生命周期仍独立待交 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -29,7 +29,7 @@
 | X01-03 | pending | Lead派发中心writer | 依赖02；PG/commands尚未实现 |
 | X01-04 | pending | Lead派发宿主writer | 依赖03/runner能力；版本pin/npm生命周期未实现 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
-| X01-06 | pending | Lead + Web管理owner派工 | 依赖02/03/P01/I01；host不是管理页 |
+| X01-06 | pending | Lead + Web管理owner派工 | 完整项依赖02/03/P01/I01；X03只读先行依赖X02/F01 consumer095/P01/I01，不勾生命周期 |
 | X01-07 | pending | Lead派发集成writer | 依赖04/05/06；实际扩展示例待做 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | blocked | Goal Owner确认身份，Lead派工 | 依赖08及精确候选身份；仅候选兼容实验被阻塞 |
@@ -44,3 +44,5 @@
 ## Handoff 与看板
 
 计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。D04 claim 04c5de3f-2e76-49d1-9a92-6f0069d69a88 v1 在03:18:09 UTC读回 active；review修复期保留。真实事实/检查/文档target随本scope metadata单独更新。
+
+2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
