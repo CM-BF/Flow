@@ -17,3 +17,7 @@ runner host只提供 `invokeInstalledTool` 小入口：受信store+中心未来�
 只测这两个真实公开seam：真实自有tarball/文件系统、真实import/invoke，先meaningful red再实现，保留断言。覆盖完整成功/replay/restart read、hash/CRC/全展开padding/meta/类型/路径/重复拒绝、篡改/多文件、取消/清理不确定；loader no-grant/unknown digest、正确输出、输出限额、ownership/包错误、取消。测试不mock loader；资源故障可窄spy Node own IO，finally恢复。不启动PG/provider/实际runner负载/外部registry。公共public install→task→artifact链仍待Lead shared合同/DDL，不能把本片检查称完整vertical。
 
 技能：沿已读本地find-skills、brainstorming已审设计、codebase-design和clean-code固定bdacd76；新增读取本地tdd SKILL，已授权seam与验证要求不重复用户确认。tar7.5.22固定源码/README只读输入沿installation-dependency-addendum；默认整个展开缓冲1MiB限制内，避免多层stream接线复杂度。架构新增共享文件材料Module与runner loader；main尚无本片，图基线后继由Lead更新。
+
+2026-10-06 13:08:15 UTC 实施收束：上述leaf已实现待独审，最终边界见[检查](leaf-checks.json)。额外明确TAR必须有Parser确认的EOF，尾部仅零padding；新包只支持所述有限self-owned格式，不泛称所有npm tarball兼容。无新的公开Flow wire contract或global mount。
+
+**ESM生命周期**：固定安装版本→规范稳定file URL；invocationId不得放URL的query/fragment，禁止cache-busting和删除require.cache冒充回收。disable拒新binding或删除安装材料均不等同于进程内模块卸载；旧已加载namespace可以存活。真实同版本复用/不同版本身份仅局部模块证据，常驻多版本loaded数量上限及安全回收继续X01-04/10，尚未实现，不另建缓存状态权威。[固定官方Node24.20.0依据](https://raw.githubusercontent.com/nodejs/node/v24.20.0/doc/api/esm.md)。

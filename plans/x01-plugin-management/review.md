@@ -1,3 +1,11 @@
+# X01 当前静态材料 / 真实 loader leaf 审查
+
+状态：NOT_STARTED
+
+待固定实现target与manifest。8个leaf，材料39+loader14=53distinct，严格局部noEmit0，54自有临时根确认删除。仅模块行为，不含center public vertical / PG / provider / runtime refs / 多版本回收。旧方向审批保留如下，不移用。
+
+---
+
 # X01 当前纵向片设计审查
 
 状态：APPROVED（纵向方向设计；无产品实现批准）

@@ -1,0 +1,65 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts (35 tests | 1 failed) 468ms
+   ✓ a real npm fixture is installed once and independently read with exact identity after restart 63ms
+   ✓ rejects the whole package for traversal without installing a partial tree 5ms
+   ✓ rejects the whole package for absolute without installing a partial tree 5ms
+   ✓ rejects the whole package for wrong prefix without installing a partial tree 5ms
+   ✓ rejects the whole package for backslash without installing a partial tree 4ms
+   ✓ rejects the whole package for symbolic link without installing a partial tree 5ms
+   ✓ rejects the whole package for hard link without installing a partial tree 4ms
+   ✓ rejects the whole package for device without installing a partial tree 4ms
+   × rejects the whole package for unsupported ignored entry without installing a partial tree 4ms
+   ✓ rejects the whole package for duplicate file without installing a partial tree 3ms
+   ✓ rejects the whole package for path under regular file without installing a partial tree 4ms
+   ✓ rejects the whole package for metadata without installing a partial tree 5ms
+   ✓ rejects the whole package for oversized ignored metadata without installing a partial tree 4ms
+   ✓ bounds complete archive consumption for padding bomb 7ms
+   ✓ bounds complete archive consumption for file bytes 5ms
+   ✓ bounds complete archive consumption for file count 5ms
+   ✓ bounds complete archive consumption for nested gzip 3ms
+   ✓ bounds complete archive consumption for crc 3ms
+   ✓ bounds complete archive consumption for truncated file 3ms
+   ✓ rejects incompatible static declarations: name 4ms
+   ✓ rejects incompatible static declarations: version 5ms
+   ✓ rejects incompatible static declarations: scripts 3ms
+   ✓ rejects incompatible static declarations: dependencies 3ms
+   ✓ rejects incompatible static declarations: manifest bytes 3ms
+   ✓ rejects incompatible static declarations: host api 5ms
+   ✓ rejects incompatible static declarations: missing entry 3ms
+   ✓ rejects corrupt artifact identity, untrusted content, pre-abort and a symlink store before publication 3ms
+   ✓ concurrent identical installations preserve the one receipt and leave no stages 86ms
+   ✓ restart read rejects tamper without overwriting the existing installation 36ms
+   ✓ restart read rejects extra without overwriting the existing installation 39ms
+   ✓ restart read rejects symlink without overwriting the existing installation 39ms
+   ✓ restart read rejects missing without overwriting the existing installation 39ms
+   ✓ a write failure closes prior writers and removes only its own unpublished stage 12ms
+   ✓ unknown writer close retains its owned stage instead of deleting it or claiming success 16ms
+   ✓ a lost rename acknowledgement is unknown and the exact committed installation remains independently readable 29ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects the whole package for unsupported ignored entry without installing a partial tree
+TypeError: invalid entry type: Unsupported
+ ❯ F.set type [as type] node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:1:28022
+ ❯ F.#i node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:1:26371
+ ❯ new F node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:1:25133
+ ❯ packages/plugin-runtime/src/package-store.test.ts:45:5
+     43|   return Buffer.concat([...entries.flatMap(entry => {
+     44|     const body = entry.body ?? Buffer.alloc(0); const block = Buffer.a…
+     45|     new Header({ path: entry.path, type: entry.type ?? 'File', linkpat…
+       |     ^
+     46|     return [block, body, Buffer.alloc((512 - body.length % 512) % 512)…
+     47|   }), tail]);
+ ❯ tarBytes packages/plugin-runtime/src/package-store.test.ts:43:36
+ ❯ packages/plugin-runtime/src/package-store.test.ts:76:38
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 34 passed (35)
+   Start at  06:01:57
+   Duration  606ms (transform 39ms, setup 0ms, import 53ms, tests 468ms, environment 0ms)
+

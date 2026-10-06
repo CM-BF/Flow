@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 12:57:16 UTC |
+| 最近更新时间 | 2026-10-06 13:08:15 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -14,17 +14,17 @@
 | 工作基线 / HEAD | c837853829f0344634df78ed7195ee7255f6b832；受控合入固定已审main7cbda706，无冲突/apps/packages零diff；后续仅设计metadata |
 | 工作树 dirty 状态 | 设计已固定；后续仅review/status/readiness metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 产品；仅设计文档/链接/10TODO/固定20源码/hash/原计划完整验收与受控merge检查，0PG负载/SDK/provider |
-| Review | APPROVED 3bd1add6ef7e868765b4508e88286bd62f49edd7（Mika，12:40:12 UTC，仅纵向方向设计）；依赖91ac13d0方向亦APPROVED，0产品approval |
+| 检查状态 | NOT_RUN 固定target交审绑定待写；实际本模块53/53与严格局部noEmit0已完成，证据leaf-checks.json；0PG/SDK/provider |
+| Review | NOT_STARTED 当前leaf；设计与依赖方向的历史APPROVED不移用 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
 | 实现目标 | 3bd1add6ef7e868765b4508e88286bd62f49edd7（仅Interface设计；无产品实现） |
-| 实现范围 | docs/evidence/x01, plans/x01-plugin-management |
-| 本片段交付阶段 | implementation |
+| 实现范围 | packages/plugin-runtime/package.json, packages/plugin-runtime/src/package-store.ts, packages/plugin-runtime/src/package-store.test.ts, apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts, fixtures/plugins/text-tool/package.json, fixtures/plugins/text-tool/index.mjs, fixtures/plugins/text-tool/flow-plugin.json |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 纵向设计3bd1add6已独审；正式workspace/tar依赖方向已审；八literal leaf请求ready；无产品实现 |
-| 下一可用交付 | 有界真实包安装、重读和执行模块；中心完整管理链随后接入 |
-| 当前阻塞 | ACTIVE: F01依赖接线已审，正在受控接收/本树离线准备；公共vertical待host资格、共享合同及唯一migration |
+| 下一可用交付 | 审查通过后交付材料库与loader；随后接入中心安装命令与任务绑定 |
+| 当前阻塞 | ACTIVE: 本片待独立审查；完整管理链仍待中心host资格、共享合同及唯一migration |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -32,10 +32,10 @@
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
 | X01-03 | in-progress | Lead派发中心writer | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | pending | Lead派发宿主writer | 依赖03/runner能力；版本pin/npm生命周期未实现 |
+| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf待独审；中心资格/绑定、版本pin与回收仍待接入 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | pending | Lead派发集成writer | 依赖04/05/06；实际扩展示例待做 |
+| X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
@@ -67,3 +67,5 @@
 2026-10-06 12:51:36 UTC：fresh HEAD45ebc277 clean及账本无冲突，Lead授权八leaf经v1→v2原子amend成功。先固定新包manifest与[本片Interface](../../docs/evidence/x01/leaf-interface.md)供F01依赖接线；未安装/测试，不触共享manifests/lock。源码实现准备中，当前产品review NOT_STARTED；原两次批准均仅方向。架构新增共享安装材料Module与runner loader，后续集成时由Lead更新基线图。
 
 2026-10-06 12:57:16 UTC：固定首tracer checkpoint以接收已审F01 f635依赖三blob。prepare/read和host为明确NOT_IMPLEMENTED stub，首真实fixture测试尚未运行；不把0tests或导入失败当red。该checkpoint不是实现交付/approval。
+
+2026-10-06 13:08:15 UTC：本树正式依赖已准备，最终53distinct/strict0与54own根清理证据固定中；见[leaf-checks](../../docs/evidence/x01/leaf-checks.json)。测试首red/中间失败均保留，fixture/header/Vitest边界修正不伪称产品回归通过。当前只有模块层真实包执行，不是完整publicvertical或native runner负载。ESM稳定URL/旧namespace不可卸载边界已写入Interface/quality，原完整升级/remove/unknown/renderer/verifier/context TODO保持。
