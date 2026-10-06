@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T20:40:07.486486+00:00",
+  "approvalId": "svc05h-af51-d629-20261006-2040",
+  "outcome": "STOP_BEFORE_MATERIALS",
+  "step": "01-before",
+  "exitCode": 1,
+  "elapsedMs": 172,
+  "operatorStopped": true,
+  "deadlineExceeded": false,
+  "rawCode": "RUNNER_ADMISSION_NOT_IDLE",
+  "admissionObservation": {
+    "idle": false
+  },
+  "journal": {
+    "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+    "bytes": 80,
+    "sha256": "67cdfdcdbbf1d646cbfa12552b58299ec68b7ddaa70e8453ae7786ab830f590c"
+  },
+  "sameAsSaved2030BytesAndHash": true,
+  "limits": [
+    "Two saved identical bounded hash observations are not continuous monitoring or a cause diagnosis.",
+    "False strict idle means no readiness proof; original observation does not record which field was non-idle.",
+    "No new personal probe or journal modification after failure; do not classify this as harmless transient admission."
+  ],
+  "remainingSteps": "02-20 NOT_EXECUTED",
+  "personalMutations": {
+    "reportImports": 0,
+    "artifactCopy": 0,
+    "drain": 0,
+    "holdRefresh": 0,
+    "resume": 0,
+    "webPublish": 0
+  },
+  "operatorQueries": 0,
+  "userTabActions": 0,
+  "sourceWindow": "Operator finished, no launch pending; Lead notified original checkout may be restored."
+}

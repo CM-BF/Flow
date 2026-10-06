@@ -93,3 +93,7 @@ Execution Lead 独立APPROVED a6441a426ea98ee90e8baac44b75fd1d0d61cbeb；67绑�
 ## 2026-10-06 20:34 UTC 实际layout窄修待独审
 
 2030窗口step01实际停止，原完整raw保留；原sampler错误要求root/admission，而固定runtime的path是baseUrl摘要一级目录。后继target5fe98f97cb7506f65555ab72205ebaea8464af84仅observer/helper/原专测：同规范精确namespace，不放宽missing/idle/历史hash。3新定向检查3过/100ms，旧8未重跑，0新个人观察/PG/服务；REVIEW_PENDING，不以作者检查替代窗口。
+
+## 2026-10-06 20:36 UTC Namespace修正独立批准
+
+Execution Lead 独立APPROVED_EXECUTABLE_PREPARATION，固定5fe98f97cb7506f65555ab72205ebaea8464af84；79 fixed/current bindings全符，完整3文件/producer真实路径/3新case与原raw已读；旧8未重跑，reviewer0测试/provider。原件[namespace-independent-review](../../docs/evidence/svc05-history-compatibility/release-operation/namespace-independent-review.json)，SHA256 147c31f26b4e43154023ac94c4d4b999191e28fba92362abae2fc929aeef2ddb。原2030窗口181ms只读失败、0后继动作保持。仅准备批准，当前不授权重新observe或任何个人变更；等待Lead新固定source窗口和串行交接。

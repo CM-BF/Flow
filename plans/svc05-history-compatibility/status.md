@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:34 UTC；精确runner子目录修复已固定，个人服务未变更 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:40 UTC；新准入发现受理记录非空闲，发布前停止 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,20 +12,20 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 两源码已冻结；仅本次自身 metadata 收口后提交 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
 | 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
 | 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 现场检查在任何发布变更前安全停止；观察脚本已对齐runner真实受理目录，三个定向检查通过，等待增量独审。 |
-| 下一可用交付 | 独审通过后按新的唯一窗口做现场准入，再逐步更新后台和网页；旧失败保留。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 新观察已准确找到runner受理记录，但不能证明空闲；已在材料导入和服务变更前停止，保留两次原始失败。 |
+| 下一可用交付 | 先由Lead核定未决受理的恢复边界；不清空记录、不重试或继续发布。 |
+| 当前阻塞 | ACTIVE: runner受理记录尚不能证明空闲，安全准入未通过；先核定恢复边界，不能继续发布。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；033dd固定方案获Lead方向批准；56306d两脚本已完整审读；a6441a426ea98ee90e8baac44b75fd1d0d61cbeb的admission采样P2独立APPROVED，8个不同本地检查，0个人运行 |
+| Review | [review.md](review.md)；5fe98f97cb7506f65555ab72205ebaea8464af84 独立APPROVED_EXECUTABLE_PREPARATION，79绑定/3新检查；原a644批准与8旧检查保持，2次独立窗口只读准入失败、0发布变更 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
-| 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web恢复已执行，d629搬运及af51新发布未启用。 |
+| 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web/中心恢复已执行，d629搬运及af51新发布未启用。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
-| SVC05H01-05 | pending | Execution Lead窗口 / owner | 三份准确af51报告已齐；固定操作方案待审及新窗口，同版本恢复不替代 |
+| SVC05H01-05 | pending | Execution Lead窗口 / owner | 三份准确af51报告及执行准备均已审；等待新串行窗口，原2030只读失败不改绿，同版本恢复不替代 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 
 ## Dashboard
@@ -91,3 +91,11 @@
 ### 精确namespace后继
 
 固定source5fe98f97cb7506f65555ab72205ebaea8464af84；[namespace manifest](../../docs/evidence/svc05-history-compatibility/release-operation/namespace-fix-manifest.json)。3新定向检查/3过，100ms；旧8未重跑。独立review待完成，0新的个人probe/PG/服务。20:30原失败与停止事实已固定9bbffd683776f1f9b82e8c4edf0eccd9d7c14083，不改成绿、不自动重用许可。
+
+### 精确namespace独立批准
+
+Execution Lead于2026-10-06T20:35:57.334026+00:00独立APPROVED_EXECUTABLE_PREPARATION，target5fe98f97cb7506f65555ab72205ebaea8464af84；79固定/current绑定无差，完整3文件delta/实际producer路径/3新case原raw已核，reviewer0重跑。原件[namespace-independent-review](../../docs/evidence/svc05-history-compatibility/release-operation/namespace-independent-review.json)。当前只归档与停写，Mika窗口尚未归还；无新个人observe或launch，下一窗口另建reservation。
+
+### 20:40窗口实际准入停止
+
+使用全新reservation与5fe固定源码，唯一01-before退出1/172ms，RUNNER_ADMISSION_NOT_IDLE。正确namespace文件存在且idle=false；其bytes/hash与2030保存记录相同，仅是两次观察，不证明连续状态或原因。02–20均未执行，0材料/维护/服务/发布变更，0主动模型/用户tab。无重采/清journal/改参重试；[原始结果与分析](../../docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/analysis.json)。

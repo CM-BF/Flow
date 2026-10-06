@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-06T20:44:05.333114+00:00",
+  "target": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+  "reviewer": "astra_ultra_execution_lead",
+  "finding": "STOP_BEFORE_MATERIALS preserved; strict idle failed; not evidence of active task nor reason to clear intent",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/01-before-command.json",
+      "ref": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+      "bytes": 637,
+      "sha256": "ff1e97b8e1ede6586ba9fb4c26e148075a6acb43e2db53947badca7da97d468f",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/01-before-intent.json",
+      "ref": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+      "bytes": 775,
+      "sha256": "dcc6537d8e3315140aa5978a55b1d2846326af5aa0f200d0b58dc417a83d93f0",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/01-before.json",
+      "ref": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+      "bytes": 1793,
+      "sha256": "6b54994412ca7b6cd1d736e04d14167904a0df2438dc54e5a8de9a1ec08d3cc5",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/analysis.json",
+      "ref": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+      "bytes": 1304,
+      "sha256": "f5f88c794dfeac967500eee53c1ed9218e4834e4ffb27711a3225215243e433a",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/reservation.json",
+      "ref": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+      "bytes": 24085,
+      "sha256": "a3001228e3ab757b35a9d4e2bef0947c0bee9d8d28b905315b19a358a80b7f4a",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/source-window.json",
+      "ref": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+      "bytes": 670,
+      "sha256": "d9f85dfc00da28b3397da8b8c266d43d9ddb73d5020a86295b35f40f1a6ed7a9",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/web-publish-request.json",
+      "ref": "24887968d195ba43e2915cb875c0a252f9fbb9e9",
+      "bytes": 443,
+      "sha256": "a473421ed9dd95e83b86df45c013da0206576373d9ebac13ccb2fe5cd5bc335a",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+      "ref": "5fe98f97cb7506f65555ab72205ebaea8464af84",
+      "bytes": 12057,
+      "sha256": "975c44a1d51c6c623bd10df5b02579165d8e9768c2b09a630fb272f252524739",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "ref": "5fe98f97cb7506f65555ab72205ebaea8464af84",
+      "bytes": 6609,
+      "sha256": "b827684f91d78908febd323865d3cf22de342997ec32b2454831e13163b08076",
+      "fixedAndCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+      "ref": "5fe98f97cb7506f65555ab72205ebaea8464af84",
+      "bytes": 15488,
+      "sha256": "627e09bc1b3ec702c76e155339e95c4b322384f19365166210ded074757d5022",
+      "fixedAndCurrentMatch": true
+    }
+  ],
+  "count": 10,
+  "newTests": 0,
+  "providerCalls": 0
+}

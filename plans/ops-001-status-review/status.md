@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:36 UTC / main352246b8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:45 UTC / main13f92d05 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,7 +12,7 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main6223c749；恢复证据/已审准备工具与看板修复已发布。个人source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main13f92d05；恢复证据/已审准备工具与看板修复已发布。个人source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
@@ -267,3 +267,7 @@ SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator�
 2026-10-06 20:32 UTC：个人窗口2030已STOP-BEFORE-MATERIALS并归还：step01只读181ms因sampler误把真实namespace/admission.json当根文件而失败，0报告导入/搬运/drain/服务/发布；root已恢复main1f4731b1，无pending launch。仅依据已有raw与固定runtime源码定位，作者原scope补真实namespace精确规则/局部小例，未重采个人状态。Web/Mika可按ready-first串行使用窗口。S01P07 main入口补供22源93,543B已完成，319原物化文件/HEAD均保持，详见[source receipt](../../docs/quality/source-provision-2026-10-06/s01p07-main-entry-source-receipt.json)；后续小源码按实际模块闭包供给的取舍已记local-validation。
 
 2026-10-06 20:36 UTC：namespace精确修正已固定5fe98并独审79绑定/3新局部例；旧8不重跑，个人未重采。当前Web已交在先45s native窗口给Mika，我组只读准备，待其实际清理归还后再开新个人窗口，F04更后单独串行。S01P07另外716B现有声明及三精确已装types链接已核并补齐，0安装/import/运行，HEAD和产品均保持；source供给不再等待PG门槛。
+
+2026-10-06 20:45 UTC：Mika在20:37:33实际清理归还后，个人2040窗口只执行step01读取172ms；正确namespace的受理记录未满足idle，按规则STOP-BEFORE-MATERIALS，0import/drain/refresh/resume/publish，无pending launch。原失败封存24887968，root已恢复clean main13f92d05，原因定位不预占窗口、不清记录。下一重窗口已明确交Mika已审SVC07 93dacd96两专库/30s/2连接，fresh原gate；实际归还后Web ready短项，再F04固定150s上限旅程，各自原预算不扩。
+
+S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补齐366B；固定22a与本树HEAD同blob、既有源码/dirty不变，0安装/import/运行。[元数据供给](../../docs/quality/source-provision-2026-10-06/s01p07-entry-metadata-receipt.json)。小额源码按已记录模块闭包方式供给，不套用PG余量线；新的运行仍fresh原gate。
