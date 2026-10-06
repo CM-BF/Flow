@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:10:54 UTC / main22a0806b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:26 UTC / main22a0806b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,8 +19,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
 | 当前产出 | 逐消息设置、终端控制与完整目标输入接线已进入主线；新版网页的发送和恢复兼容验证已通过。 |
-| 下一可用交付 | Web消息设置与O16继续独立实施；同版本网页恢复已完成，下一补齐保留页面兼容。 |
-| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；个人新版发布等保留页面兼容；同版本Web恢复已完成。小验证由两lead串行安排。 |
+| 下一可用交付 | 恢复既有容器运行环境；局部修复按现有门槛验证，再继续页面兼容与完整目标验收。 |
+| 当前阻塞 | ACTIVE: 原数据库与领取账本已恢复；磁盘仍不足PG/浏览器窗口。个人中心端口未监听，正在只读核对同版本恢复入口；未重启个人服务。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -229,3 +229,11 @@ Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 
 2026-10-06 19:18:11 UTC：R01第二次14,885ms仍0完整App，临时admission.json.tmp原子rename与lstat竞态触发stopWork；实际首页面正文超时另存，不能推断全部Preview错误仅由清理造成。Chrome/CDP已真实启动，自有组/端口/DB/tmp均已清理，累计17,812/90,000ms（保守扣整次elapsed），剩余不是重试许可。原四源只做有界重采及原异常/cleanup分离的0PG局部修复。
 
 O16单次0query PG 19:15:18→19:15:28.747，1selected/0pass；规划→确认→两个依赖children执行后，独立accept返回rejected。固定调用把CAS当前已接受ID误填本次待接受ID；已存accepted=null，具体HTTP code未保存仅可源码推断。5PID/3PGID已gone、中心关闭且connections[]，13,294,615B标记专库及同devino30,872B目录明确KEEP，不算cleanup全删除。原raw封存，先纯局部修驱动，不复投原run。窗口已归还并条件交已ready Settings-next-1916一次剩余原预算；R01/O16准备不占holder。
+
+## 2026-10-06 19:26 UTC 运行环境与资源
+
+19:19共享卷降至828,592,128B，R01九纯例、O16单纯例及DPERF聚合消费者均在启动前NOT_RUN，未创建测试进程或目录。19:24只读观察回到1,250,004,992B，原因未知，不归因清理。GO重新开放的两候选均clean且已有固定输入，但fresh领取查询ECONNREFUSED；达到原准备线且领取未知，因此保持原样，未执行稀疏。
+
+故障现定位为OrbStack状态Stopped、Docker socket不存在、55432无监听；不能推断PG数据损坏。已知原容器2c45767d4802/flow-f00-postgres-1与数据卷必须保留。仅恢复已有daemon并核原身份，禁止重建/删卷/全局清理。原Chrome失败与O16 KEEP库、两次R01失败证据不改；详情见[运行环境核对](../../docs/quality/resource-space-2026-10-06/daemon-recovery/preflight.json)。新PG/Chrome仍暂停，局部无PG检查只按已有门槛fresh准入，不要求GO逐条再批准。
+
+2026-10-06 19:27 UTC：OrbStack一次start返回VM启动timeout，但后续实际Running，未盲重试。原容器2c45767d4802仍是原image/volume/ports，状态exited255/restart=no；核对后仅start该完整ID一次，19:26:58 healthy、55432恢复、协调list成功。未重建/删容器/卷。其它原有autostart容器由daemon恢复；本operator未逐项操作。实际free1,089,486,848B，不把此前1.25GB当当前准入。R01九纯例已通过并清理；个人Web23631仍监听61228，旧center64904消失/61227无监听，runner wrapper65168仍存活；实际子进程及原恢复入口只读核对中。
