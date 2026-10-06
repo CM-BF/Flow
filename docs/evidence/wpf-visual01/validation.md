@@ -1,6 +1,6 @@
 # Validation
 
-Fixed implementation: `a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231`; independent review is pending. All source/test bytes in [binding](source-binding.json) match both final reports and the current tree. Author checks are not independent reviewer checks.
+Fixed implementation: `a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231`; root independent review is APPROVED (scope and attribution in canonical review). All source/test bytes in [binding](source-binding.json) match both final reports and the current tree. Author checks are not independent reviewer checks.
 
 | Check | Actual result / source |
 | --- | --- |

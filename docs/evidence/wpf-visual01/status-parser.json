@@ -1,15 +1,15 @@
 {
-  "at": "2026-10-06T09:28:23.971Z",
+  "at": "2026-10-06T09:28:52.185Z",
   "status": {
     "human": {
       "delivery": {
-        "state": "review",
+        "state": "integration",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 1,
-      "output": "实际App已具轻质圆角外壳与四主题；窄屏、插件回退、工具/流和降级已验，等待独审",
-      "next": "完成固定视觉片独审，再受控接收主线",
+      "output": "实际App已具轻质圆角外壳与四主题；窄屏、插件回退、工具/流和降级已验，root独审已APPROVED，待主线接收",
+      "next": "ExecutionLead受控接收已审视觉片；个人产物发布另行受控",
       "blocker": {
         "state": "none",
         "text": ""
@@ -38,8 +38,8 @@
     "owner": "d01_owner / gpt-6-astra ultra",
     "branch": "codex/web-visual-shell",
     "branchState": "in-progress",
-    "updatedAt": "2026-10-06T09:28:23.000Z",
-    "updatedRecord": "2026-10-06 09:28:23 UTC",
+    "updatedAt": "2026-10-06T09:28:52.000Z",
+    "updatedRecord": "2026-10-06 09:28:52 UTC",
     "todos": [
       {
         "id": "WPF-VISUAL01-01",
@@ -63,7 +63,7 @@
         "id": "WPF-VISUAL01-04",
         "state": "in-progress",
         "owner": "root / d01_owner / ExecutionLead",
-        "evidence": "已固定a8b2b22，root独审/主线接收待完成"
+        "evidence": "已固定a8b2b22，root独审APPROVED；主线接收待完成"
       }
     ],
     "errors": [],
@@ -74,15 +74,15 @@
       "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
       "record": "PASSED a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231；17 direct、Webtsc/build、dev8/prod8；[checks](../../docs/evidence/wpf-visual01/checks.json)"
     },
-    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "reviewRecord": "[review.md](review.md)，APPROVED a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
     "mainRecord": "NOT_INTEGRATED",
     "next": "",
     "risks": "",
     "decisions": ""
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
+    "state": "approved",
+    "record": "APPROVED**",
     "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231"
   }
 }
