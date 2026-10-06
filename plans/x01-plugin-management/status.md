@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:33:00 UTC |
+| 最近更新时间 | 2026-10-06 16:31:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -112,4 +112,4 @@
 
 2026-10-06 16:30:00 UTC：fresh owner HEAD7f6d82228632ddc46723a3a8a3e3305733940ab7 clean、16:28:29 ledger 6ddedc73 v5 ACTIVE 原四scope；仅收敛[后继一页合同](../../docs/evidence/x01/enable-binding-preparation.md)。固定只读 main65659028ec3aed7c4b5a68eb20a39a32026e5dc5 的 runtime/claim/TaskSubmission/host/插件命令/事件与验证真实接口，推荐 host tuple、单revision enable、中心生成binding、load/invoke当前grant与有来源artifact字段。未知复用原settlement/admission保留，不增加执行FSM；独立领域HTTP/持久冻结片与共享caller逐literal分开。F01现v41、CORE现v3，空闲共享路径也未授写权；新SQL号/共享writer/受控输入由Lead冻结。已交付e682片仍delivered，后继仅design，原10TODO不变；host两源停写，旧raw/manifest不改。方法沿本地find-skills/codebase-design/固定clean-code/brainstorming，检查有限接口、错误保留及锁序；0工程测试、PG、SDK/provider、安装和sparse操作。后继有Module/runtime接线架构影响，实施后由Lead维护固定main视图，本次未改架构图。 只读parseStatus errors=[]、delivered/10TODO，两个文档本地链接无缺失、diff空白检查通过；不声称在线看板已刷新。
 
-2026-10-06 16:33:00 UTC：补固定main656的直接reconciliation consumer：通用retry只复制submission/K02/goal，后继必须显式拒绝plugin binding走普通fixture重试，避免丢来源后伪成功；精确共享guard路径已列入准备页，当前CORE持有，未写入。其余字段/已交付事实不变，0工程运行。
+2026-10-06 16:31:30 UTC：补固定main656的直接reconciliation consumer：通用retry只复制submission/K02/goal，后继必须显式拒绝plugin binding走普通fixture重试，避免丢来源后伪成功；精确共享guard路径已列入准备页，当前CORE持有，未写入。其余字段/已交付事实不变，0工程运行。
