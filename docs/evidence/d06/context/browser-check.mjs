@@ -1,0 +1,75 @@
+import { chromium } from '@playwright/test';
+import { writeFile, readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import assert from 'node:assert/strict';
+const base = process.argv[2];
+if (!/^http:\/\/127\.0\.0\.1:\d+\/$/.test(base ?? '')) throw new Error('Pass own loopback preview origin.');
+const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const sources = ['apps/execution-dashboard/public/architecture-data.js', 'apps/execution-dashboard/test/architecture.test.mjs', 'docs/evidence/d06/context/browser-check.mjs', 'docs/evidence/d06/context/preview.mjs', 'docs/evidence/d06/context/source-audit.mjs'];
+const sourceHashes = Object.fromEntries(await Promise.all(sources.map(async path => [path, createHash('sha256').update(await readFile(path)).digest('hex')])));
+const sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const sourceDirty = execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
+const errors = [];
+const requests = [];
+const observations = [];
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } });
+  page.on('request', request => { if (request.url().includes('/api/')) requests.push(new URL(request.url()).pathname); });
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(`${base}#architecture`);
+  await page.locator('#architecture-canvas [data-node]').first().waitFor();
+  assert.match(await page.locator('#architecture-baseline').textContent(), /115b0dbdfa02db5483f9e9699852682ce699633c/);
+  const heading = page.locator('.architecture-heading p');
+  assert.match(await heading.innerText(), /固定源码快照 115b0dbd.*源码核验于.*UTC.*非实时运行拓扑/);
+  assert.equal(await heading.locator('a').getAttribute('href'), 'https://github.com/CM-BF/Flow/tree/115b0dbdfa02db5483f9e9699852682ce699633c');
+  for (const id of ['runtime', 'modules', 'data', 'states', 'dependencies']) {
+    await page.locator('#architecture-view').selectOption(id);
+    const nodes = page.locator('#architecture-canvas [data-node]');
+    const count = await nodes.count();
+    assert.ok(count > 5);
+    const overflow = await nodes.evaluateAll(items => items.flatMap(item => [...item.querySelectorAll('text')].filter(text => text.getBBox().x + text.getBBox().width > 222).map(text => text.textContent)));
+    assert.deepEqual(overflow, [], `${id} node labels must fit their boxes`);
+    await nodes.last().focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await nodes.last().getAttribute('aria-pressed'), 'true');
+    await page.locator('#architecture-node-content summary').click();
+    const source = await page.locator('#architecture-node-content a').getAttribute('href');
+    assert.ok(source.includes('/blob/115b0dbdfa02db5483f9e9699852682ce699633c/'));
+    observations.push({ view: id, nodes: count, keyboardSelect: true, source });
+  }
+  await page.locator('#architecture-view').selectOption('modules');
+  for (const [id, expected] of [['knowledge', /UTF-8/], ['context', /尚无引用选择UI/], ['graphruns', /配额/], ['graphnative', /ownership/], ['packages', /不解压\/install/], ['renderers', /App仍使用原ReplyDetail/], ['nextweb', /CHAT05\/06/]]) {
+    const node = page.locator(`[data-node=${id}]`); await node.focus(); await page.keyboard.press('Enter');
+    assert.match(await page.locator('#architecture-node-content').innerText(), expected);
+  }
+  await page.locator('[data-node=proposals]').focus();
+  await page.keyboard.press('Space');
+  assert.match(await page.locator('#architecture-node-content').innerText(), /G01事务/);
+  await page.locator('#architecture-fit').click();
+  await page.screenshot({ path: 'docs/evidence/d06/context/modules-light.png', fullPage: true });
+  await page.locator('#architecture-view').selectOption('states');
+  await page.locator('#architecture-fit').click();
+  await page.screenshot({ path: 'docs/evidence/d06/context/states-light.png', fullPage: true });
+  await page.locator('#theme').selectOption('dark');
+  await page.screenshot({ path: 'docs/evidence/d06/context/states-dark.png', fullPage: true });
+  await page.locator('#architecture-view').selectOption('data');
+  await page.locator('#architecture-fit').click();
+  await page.locator('[data-node="assistant"]').click();
+  assert.match(await page.locator('#architecture-node-content').innerText(), /PG details/);
+  await page.screenshot({ path: 'docs/evidence/d06/context/data-dark.png', fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.locator('#architecture-fit').click();
+  await page.screenshot({ path: 'docs/evidence/d06/context/data-dark-narrow.png', fullPage: true });
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  await page.locator('#theme').selectOption('light');
+  await page.screenshot({ path: 'docs/evidence/d06/context/data-light-narrow.png', fullPage: true });
+  await page.locator('#architecture-zoom-in').click();
+  await page.locator('#architecture-zoom-out').click();
+  assert.ok(await heading.isVisible());
+  assert.equal(await heading.locator('a').getAttribute('title'), '115b0dbdfa02db5483f9e9699852682ce699633c');
+  assert.deepEqual(errors, []);
+  assert.ok(requests.every(path => path === '/api/snapshot'), 'No product API is called by the architecture preview');
+  await writeFile('docs/evidence/d06/context/browser-checks.json', JSON.stringify({ at: new Date().toISOString(), base, sourceCommit, sourceDirty, sourceHashes, requests, browser: await browser.version(), passed: true, observations, pageErrors: errors, narrowWidth: 390, reducedMotion: 'reduce', scope: 'dynamic local architecture preview; no model or database mutation' }, null, 2) + '\n');
+} finally { await browser.close(); }
