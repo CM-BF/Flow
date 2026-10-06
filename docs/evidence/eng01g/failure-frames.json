@@ -1,0 +1,13 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/engineering/native-writer.test.ts",
+    "-t",
+    "maps a native settled failure"
+  ],
+  "exitCode": 1,
+  "kind": "self-owned synthetic peer frames only; no provider/input credentials"
+}

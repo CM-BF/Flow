@@ -16,11 +16,11 @@
 | 本片段交付阶段 | implementation |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/runner/src/engineering/native-policy.test.ts, apps/runner/src/engineering/native-policy.ts, apps/runner/src/engineering/native-writer.test.ts, apps/runner/src/engineering/native-writer.ts, apps/runner/src/native-harness.test.ts, apps/runner/src/native-harness/codex/evidence.ts, apps/runner/src/native-harness/codex/exchange.test.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, docs/evidence/eng01g, plans/eng01g-native-writer |
-| 检查状态 | NOT_RUN |
+| 检查状态 | 105 distinct分轮通过；最终types0，source提交后绑定 |
 | 已集成main状态 / HEAD | ENG01G未集成；base含已审ENG01F |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已确定工程写入与现有原生消息处理共用的接口 |
+| 当前产出 | 工程写入组合与现有原生消息处理已完成局部验证 |
 | 下一可用交付 | 可审查的受限文件写入组合与未知结果保护 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -31,8 +31,8 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | ENG01G-01 | completed | native_center_owner | claim与Interface |
-| ENG01G-02 | in-progress | native_center_owner | 单消息pump与工程策略 |
-| ENG01G-03 | pending | native_center_owner | 自有peer与局部检查 |
+| ENG01G-02 | completed | native_center_owner | 单消息pump与工程策略 |
+| ENG01G-03 | completed | native_center_owner | 105 distinct分轮、原red与types/资源清理证据 |
 | ENG01G-04 | pending | native_center_owner | 独审/main未完成 |
 
 本片无provider/原生诊断或生产authority；默认unsupported是未证明模型身份、真实控制与全部writer停止，不妨碍本片0query实现。后续有界shell策略可以独立审定。唯一status待Lead登记聚合。

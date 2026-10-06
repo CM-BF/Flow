@@ -1,0 +1,58 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts (19 tests | 1 failed) 3112ms
+   ✓ refuses missing authority, missing assignment and unknown models before any transport can exist 4ms
+   ✓ composes the native-file consumer with the same full host snapshot and independent checker after injected revocation  1385ms
+   ✓ cannot convert a completed final and child exit into stopped when revocation is unknown 87ms
+   ✓ cannot convert a completed final and child exit into stopped when revocation is wrong 131ms
+   ✓ cannot convert a completed final and child exit into stopped when revocation is throw 168ms
+   ✓ preserves wrong-model as unknown even with an injected revoked receipt 148ms
+   ✓ preserves wrong-thread as unknown even with an injected revoked receipt 100ms
+   ✓ preserves command as unknown even with an injected revoked receipt 121ms
+   ✓ preserves terminal-tool as unknown even with an injected revoked receipt 138ms
+   ✓ preserves changed as unknown even with an injected revoked receipt 164ms
+   ✓ preserves incomplete as unknown even with an injected revoked receipt 236ms
+   ✓ preserves reroute as unknown even with an injected revoked receipt 94ms
+   ✓ preserves eof as unknown even with an injected revoked receipt 132ms
+   ✓ preserves hang as unknown even with an injected revoked receipt 83ms
+   ✓ closes an ambiguous open-fails authority without creating a transport 11ms
+   ✓ closes an ambiguous bad-grant authority without creating a transport 7ms
+   × maps a native settled failure only after the separately injected whole-write revocation 62ms
+   ✓ does not promote pre-dispatch ownership loss or cancellation 5ms
+   ✓ bounds an unresponsive authority without claiming its pending work stopped 33ms
+ ✓ apps/runner/src/native-harness/codex/adapter.test.ts (44 tests) 2411ms
+ ✓ apps/runner/src/native-harness.test.ts (8 tests) 11ms
+ ✓ apps/runner/src/native-harness/codex/evidence.test.ts (4 tests) 13ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > maps a native settled failure only after the separately injected whole-write revocation
+AssertionError: expected { …(2) } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "77a84c12-06a0-43cc-8d64-24e1de5e7bca",
+-   "outcome": "failed",
+-   "settlement": "stopped",
++   "settlement": "unknown",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:113:82
+    111| });
+    112| it('maps a native settled failure only after the separately injected w…
+    113|   const api = await setup('failed'); expect(await api.writer.execute(a…
+       |                                                                                  ^
+    114| });
+    115| it('does not promote pre-dispatch ownership loss or cancellation', asy…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 74 passed (75)
+   Start at  05:19:21
+   Duration  7.32s (transform 880ms, setup 0ms, import 1.41s, tests 5.55s, environment 0ms)
+
