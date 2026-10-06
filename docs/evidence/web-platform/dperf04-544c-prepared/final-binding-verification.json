@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T21:13:07.299552+00:00",
+  "state": "FINAL_BINDING_VERIFIED_PREPARED_NOT_RUN",
+  "ownerHead": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+  "remoteHead": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+  "clean": true,
+  "implementation": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "sourcePins": 7,
+  "readonlyPins": 32,
+  "candidatePins": 8,
+  "allPinsMatched": true,
+  "runnerSha256": "544c11c8f0ff95c78f683299ab6f2758cc7f5d1de2d2fabab9af83be62f4bd4c",
+  "workerSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+  "bindingSha256": "9fab801921548b4322e21ea35824c5a2f19f26690773e8615f5c3cd28bcdf3df",
+  "manifestSha256": "b083df5a0db1354547e9c101a3636eddd90306585a669b03fef879e15b40818f",
+  "nativeChromeBoundaryApproval": {
+    "path": "/tmp/root-dperf04-544c-native-boundary-rebind.json",
+    "sha256": "ccb92f1892be27306cc6293ca63150546b9eff715911a75db33b4e9a3e642d08"
+  },
+  "runtimeArtifactsAbsent": [
+    "/private/tmp/dperf-b2/consumed-gate.json",
+    "/private/tmp/dperf-b2/result.json",
+    "/private/tmp/dperf-b2/scratch",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-budget.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs"
+  ],
+  "budget": {
+    "previousRuntimeMs": 0,
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "historicalNodeMs": 3950
+  },
+  "runtime": false,
+  "freeSampling": false,
+  "gate": null,
+  "windowReservation": false,
+  "next": "New explicit sharedwindow + fresh original9/HEAD/pins/free then promote onlyreviewed binding and uniquegate; neither earlierfree nor cancelled/consumedgate reused."
+}

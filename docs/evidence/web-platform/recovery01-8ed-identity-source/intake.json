@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-10-06T21:12:36.983729+00:00",
+  "state": "FIXED_SOURCE_RECEIVED_PENDING_INDEPENDENT_REVIEW",
+  "owner": "workspace_panels_owner",
+  "implementation": "8ed2741327779e57d717653d10c2180e1897c26a",
+  "metadataHead": "b9957e8d6cbe542c18a7dd4e856dcb77dd4865e7",
+  "localEqualsRemote": true,
+  "clean": true,
+  "sourceManifestSha256": "e57e2b685f306d4f08f4d3206cb4bb2869e315558de9a4b441e2a241370028f7",
+  "fixedCurrentHashesMatched": 19,
+  "otherSourcesUnchanged": 17,
+  "changedPaths": [
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "ownerEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/saved-record-identity-source.md",
+  "rootDispatch": "../recovery01-rec4d-identity-design/dispatch.json",
+  "oldRaw": "Owner manifest pins25 old browserraw unchanged; root independently reviews them, manager does not relabel actual oldfailed evidence.",
+  "runtime": "No product run/import/tests/free; source only",
+  "budget": {
+    "browserActualSpentMs": 25520.435,
+    "remainingMs": 64479.565,
+    "futureIntegerCarryMs": 25521,
+    "futureIntegerRemainingMs": 64479,
+    "cleanupReserveMs": 15000
+  },
+  "fullFeature": "NOT_STARTED/UNKNOWN; sourcefinding not runtimepass",
+  "next": "Root review fixed two-file delta; no run gate/window reserved"
+}

@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-06T21:11:44.788584+00:00",
+  "state": "APPROVED_SOURCE_PREPARATION_FINAL_BINDING_VERIFIED_NOT_RUN",
+  "task": "WPF-DPERF04",
+  "owner": "w01_owner",
+  "implementation": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "candidate": "/private/tmp/dperf-b2",
+  "runnerSha256": "544c11c8f0ff95c78f683299ab6f2758cc7f5d1de2d2fabab9af83be62f4bd4c",
+  "workerSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+  "sourceReview": "root-source-review.json",
+  "boundaryAcceptance": "native-boundary-rebind.json",
+  "sourceFinding": "DPERF04-LATE-STOP-FINAL-WRITE SOURCE_ADDRESSED; root限定复审0blocking",
+  "authority": "Existing GO exact native-boundary delegation; no repeated approval requested or invented",
+  "ownerDispatch": "Fresh original9 then followup W01 once normal ownmetadata commit/push; TMP finalHEAD/boundary/manifest afterwards remains PREPARED/no gate. Other seven product sources unchanged.",
+  "claimEvidence": "metadata-claim-observation.json",
+  "budget": {
+    "browserSpentMs": 0,
+    "browserMaximumMs": 60000,
+    "cleanupMs": 15000,
+    "historicalNodeSpentMs": 3950,
+    "historicalNode": "8 checks passed atabd2; not repeated or reassigned to45f8"
+  },
+  "window": "No Web holder/reservation/admission; latest Mika HOLDreturned and floorbelow is historical authority input, no newfree sample",
+  "next": "New explicit sharedwindow + fresh original9/HEAD/pins/free then promote onlyreviewed binding and uniquegate; neither earlierfree nor cancelled/consumedgate reused.",
+  "runtime": false,
+  "freeSampling": false,
+  "ownerFinalHead": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+  "clean": true,
+  "finalBindingEvidence": "final-binding-verification.json"
+}

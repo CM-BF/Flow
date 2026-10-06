@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-06T21:07:32.864793+00:00",
+  "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+  "head": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+  "implementation": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "sources": {
+    "apps/execution-dashboard/src/read-model.mjs": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+    "apps/execution-dashboard/src/aggregate.mjs": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+    "apps/execution-dashboard/src/server.mjs": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+    "apps/execution-dashboard/public/app.js": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+  },
+  "readOnlyCount": 32,
+  "nativeChromeBoundaryApproval": {
+    "path": "/tmp/root-dperf04-544c-native-boundary-rebind.json",
+    "sha256": "ccb92f1892be27306cc6293ca63150546b9eff715911a75db33b4e9a3e642d08"
+  },
+  "noGate": true,
+  "previousRuntimeMs": 0,
+  "totalMs": 60000,
+  "cleanupMs": 15000,
+  "nodeEvidence": "Historical abd2 8PASS/3950ms only; not rerun",
+  "files": [
+    {
+      "path": "/private/tmp/dperf-b2/binding.json",
+      "bytes": 15255,
+      "sha256": "9fab801921548b4322e21ea35824c5a2f19f26690773e8615f5c3cd28bcdf3df"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/report.md",
+      "bytes": 2231,
+      "sha256": "ab9a5530ecd9516a69e61377c68170e2d0ed588f66bd92af2cb40185e50e9d23"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/source-audit.json",
+      "bytes": 5490,
+      "sha256": "ab82e33cb2184361ceab12001eb1ca30bc69f6d5b0dbab9b18e429e2eca7eb92"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/supervisor.py",
+      "bytes": 22864,
+      "sha256": "544c11c8f0ff95c78f683299ab6f2758cc7f5d1de2d2fabab9af83be62f4bd4c"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/supervisor.py.diff",
+      "bytes": 29797,
+      "sha256": "c5f906dfad7bcba6d159abc25de11d675b21ba074f81638f1149b592686e1073"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/wrapper.diff",
+      "bytes": 11336,
+      "sha256": "7db306af1a0d2999dc7a6e702d1f462d0f4cde44ab70e263e4c66f22764696e8"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/late-stop.diff",
+      "bytes": 2810,
+      "sha256": "64f4f435c89c5cf83b48abbc403bbe0934db511ffcf389b3b704657915acfead"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/before-late-stop/preserved-files.json",
+      "bytes": 1284,
+      "sha256": "e3175cf7058536c854262d1d371dbab5c9ae2f5f9e0b36003649afc505835567"
+    }
+  ],
+  "nativeChromeBoundaryApprovalRebindRequired": false
+}
