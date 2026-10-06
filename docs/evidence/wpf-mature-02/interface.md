@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **协调已恢复；真实探针仍NOT_OPEN，等待root重新准入。** [单次恢复观察](native-catalog-observation/coordination-recovery.json)：19:29:36 UTC claim v6 ACTIVE、HEAD=origin/clean，磁盘1115254784B，较light门槛仅多7958528B。本次仅metadata收口，不重试wrapper或目标；Lead受管center恢复窗口关闭前也不启动PG/Chrome/native。[原准入更正](native-catalog-observation/preflight-correction.json)及错误原件保留。当前归档字节见[本次路由会计](native-catalog-observation/provision-accounting.json)；[恢复时快照](native-catalog-observation/recovery-accounting.json)保留不追改。
+- **原生目录观察已执行并归还运行时段，目录仍未取得。** [本次固定结果](native-catalog-observation/run-report.md)：ready=true/1次model-list；收到已知但不允许继续的 `remoteControl/status/changed`，按原规则停止。1目标已受控关闭、完整stdio和本次两root清理确认，私有原件KEEP；[忠实性待审入口](native-catalog-observation/result-ready.md)。既有授权消费后不重试/扩表；此前[准入错误及更正](native-catalog-observation/preflight-correction.json)不回写。
 
 - **SVC07事务短断连恢复：请求Lead sole provision（FLOW-001/REQ-19）。** owner db_transaction_owner/Astra，lead mika；WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect`，branch `codex/server-transaction-disconnect`，base `22a0806bc2465e11096949618113833f31766b19`。status_read 19:40:37.483 UTC报告main/origin clean，四literal无active/handoff父子冲突，新task/WT/branch/registry均不存在；SVC06是固定后台产物，非本责任。精确四scope：`apps/server/src/database.ts`、`apps/server/src/database-transaction.test.ts`、`plans/svc07-transaction-recovery`、`docs/evidence/svc07`。仅修公开transaction借用client错误与释放生命周期：connect callback内装listener，等待run收束，原异常不被ROLLBACK/release覆盖；COMMIT未知不重执或假称回滚，坏连接销毁式release一次。先小fake公开接口验收，0真实PG/个人环境；真实PG另排Lead窗口。服从当前center同版本恢复，provision及fresh原子take后才写，不另建重复大task。
 
@@ -12,7 +12,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - **REQ-15会话页批量读取：请求Lead sole provision准备树。** 原global REQ15后继，拟owner architecture_read/Astra，`/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch` / `codex/conversation-turn-page-batch`；固定main `22a0806bc2465e11096949618113833f31766b19`，19:09:42只读核5入口相对ec5无diff、B02/B03 v2已释放、拟范围无active writer。精确10literal：`apps/server/src/conversations/queries.ts`、`apps/server/src/conversations/state.ts`、`apps/server/src/conversations/replies.ts`、`apps/server/src/conversations/turn-read.ts`、`apps/server/src/conversations/turn-page-batch.test.ts`、`apps/server/src/assistant/store.ts`、`apps/server/src/assistant/index.ts`、`apps/server/src/assistant/final-preview-batch.test.ts`、`docs/evidence/req15-turn-page-batch`、`plans/req15-conversation-turn-page-batch`。S01 actual安全点后准备；take前0写。首片同PoolClient批量final+turnViews≤50接turnPage，保RR/冻结settings-context/invalid-legacy/PG全UTF8hash；不领tasks/contracts/client/migration/contextwrite。仅路由provision，不改旧B02/B03或建立第二status。
 
-- **下一目录观察只准备计量与安全通知收据修正。** [最小后继接口](native-catalog-observation/interface.md)：链接仅lstat自身、不follow；固定control写父身份；公开method识别不扩大原两项允许表。旧5e6cf失败双审73a194封存，根与私有原件KEEP；源码独审通过、7组反例与sh0；[固定组合](native-catalog-observation/review-ready.md)已审、当前实际HOLD/NOT_OPEN。S01已到安全点，本后继0PG/Chrome不占R01串行槽；REQ15真实PG验收另排。
+- [本片接口与边界](native-catalog-observation/interface.md)保持链接只计自身、不follow、control父身份和原两项通知允许表；7组源码检查不重跑。旧system-config失败根与私有原件继续KEEP，不回填旧FAIL。当前actual已结束，REQ15/SVC07真实PG验收仍须另排。
 
 - **系统配置窗口已消费：初始化成功，但目录与完整计量未完成。** [固定失败结果](native-system-config/run-report.md)：1native ready=true/1次model-list，未知通知触发受控关闭；完整stdio、两个own根因清单不完整KEEP，私有诊断KEEP。无目录/模型资格，完整预算UNKNOWN，不重试；[结果已双审限定接收](native-system-config/result-review.json)，保留整体失败/未知。
 

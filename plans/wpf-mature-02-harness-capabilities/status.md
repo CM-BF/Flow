@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T19:44:52.442490+00:00 / main8d84由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T19:59:43.494657+00:00 / main8d84由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,22 +11,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
-| 工作树dirty状态 | 本轮仅SVC07精确provision路由、重复叙述压缩及current归档会计；source/检查/fixedinput和原错误收据不变。 |
+| 工作树dirty状态 | 仅本次授权实际结果/安全收据与父事实封存；source/checks/input及原准入错误/纠正不变。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | 新7/7+sh0及25a1组合批准不重跑；旧准入双失败/0目标及原true字段纠正保留。本轮单次fresh确认协调恢复，0wrapper/检查/目标。 |
+| 当前检查 | 既有7/7+sh0不重跑；fresh全条件通过后唯一实际1native/readytrue/1list，公开known-unexpected通知停止，CLI1，结果待独审。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude CORE/C01/F01中心、adapter与公共client已main；跨端完整用户验收仍开放。本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude中心与公共客户端已接入主线；Codex后继准备完成，协调已恢复，本次仍未启动。 |
-| 下一可用交付 | 压缩重复历史后交付固定候选，等待受管center恢复窗口关闭及root重新核准执行；当前不重试。 |
-| 当前阻塞 | ACTIVE: EXECUTION_GATE_PENDING：协调恢复，单次磁盘采样刚过门槛；OPEN尚未重授，目录及完整跨端验收未完成。 |
+| 当前产出 | Claude中心与公共客户端已接入主线；Codex能完成初始化，但本次目录请求因固定通知规则停止，未取得目录。 |
+| 下一可用交付 | 固定本次失败结果供独立忠实性审查；没有剩余运行或新增许可。 |
+| 当前阻塞 | ACTIVE: CATALOG_NOT_OBSERVED：已知但不在允许继续名单的通知触发停止；目录资格与完整跨端验收未完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | 25a1组合Root19:18:22 APPROVED；旧准入失败和硬编码claim=true更正保持。恢复观察不授运行许可，NOT_OPEN。 |
+| Review | source61e28/25a1准备及a076 metadata已审；本次执行结果待忠实性独审，不能沿用准备批准宣称目录通过。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
 
