@@ -71,3 +71,5 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:19 UTC 实质进展：W1获MAIN_ACCEPTED30b，owner核2784473祖先且三scope对main零diff，见w1-main-receipt.json。W2固定场景解析/真实注册容量与per-runner峰值、未知attempt保守预算已实现；新6预算用例先复现5失败，再与统计/参数共11tests通过，noEmit0（最终源码11pass/noEmit0）。未创建任何新PG或负载。新源码待固定与独审；W1 main事实不覆盖W2。
 
 2026-10-06 07:26 UTC W2独审完成：独立worker限定APPROVED2ab，无P1/P2，源码/25hash与旧raw边界核验。Mika向GO申请≤30秒阶段，CHAT06P01尚准备时不拖S01；常驻服务刷新与测量由GO错开。当前0新负载/模型，原64/64/180秒/64MiB及实际32/26未变。
+
+2026-10-06 07:27 UTC dashboard实读：S01 a22329e clean、approved/unchanged/current、live且stale=false、issues=[]；人类摘要为准备已独审、协调实际测量窗口。见[W2聚合回执](../../docs/evidence/s01/w2-approved-dashboard.json)。
