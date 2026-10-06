@@ -87,7 +87,8 @@ async function guardContext(context) {
   await context.route('**/api/**', async route => {
     const request = route.request(); if (request.method() === 'GET') return route.continue();
     const path = new URL(request.url()).pathname, kind = mutationKind(path);
-    if (request.method() !== 'POST' || !allowed.has(kind) || firstQueryAt && Date.now() - firstQueryAt > 120000) {
+    const elapsed = firstQueryAt ? Date.now() - firstQueryAt : 0;
+    if (request.method() !== 'POST' || !allowed.has(kind) || elapsed > 120000 || kind === 'resume' && elapsed > 60000) {
       evidence.mutations.push({ path, blocked: true, at: new Date().toISOString() }); return route.abort('blockedbyclient');
     }
     allowed.delete(kind); if (kind === 'turn') firstQueryAt = Date.now();
