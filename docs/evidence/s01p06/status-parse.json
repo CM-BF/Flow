@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-10-06T13:28:17.254Z",
+  "checks": {
+    "state": "passed",
+    "target": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+    "record": "PASSED cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc：72distinct（完整batch后类型fixture更正定向1再过），local strict0；初始strict2保留，4PG NOT_SELECTED"
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "有界等待与及时补槽检查完成，停止和未知领取行为保持",
+    "next": "固定实现独立审查后交主线接收",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "mika",
+      "value": "mika"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "errors": [],
+  "scope": "read-only parser, not live dashboard"
+}

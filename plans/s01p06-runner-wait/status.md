@@ -13,7 +13,7 @@
 | 工作树dirty状态 | 实现/source/raw已固定；metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED：72distinct（完整batch后类型fixture更正定向1再过），local strict0；初始strict2保留，4PG NOT_SELECTED |
+| 检查状态 | PASSED cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc：72distinct（完整batch后类型fixture更正定向1再过），local strict0；初始strict2保留，4PG NOT_SELECTED |
 | 已集成main状态 / HEAD | 本片未集成；base cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd |
 | 实现目标 | cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc |
 | 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/attempt-wakeup.ts, apps/runner/src/attempt-wakeup.test.ts, apps/runner/src/runtime-capacity.test.ts |
@@ -35,3 +35,5 @@
 架构影响：内部等待Module；无公共合同或DB变化，main接收时由Lead决定内部架构图是否需同步。本status唯一手填源；当前待Lead登记，未声称已聚合。writer f1fa2bdb-a669-4c6f-8ff7-d5efa694c21f v1 ACTIVE。setup checkout allocated-file110706688B，available1644093440B；不等于全卷净增加。
 
 固定实现 `cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc`；manifest SHA `ac2fd596460fbb0199d466f1de4cbc6d753152b9bb4cdc7ade5dd2b0d78e1b23`，54当前绑定及1旧red-source绑定。review未启动；保持writer修复期，main尚无本片。source/raw冻结，0重测。
+
+Owner只读parseStatus核验：human.complete=true、parent FLOW-001/co-lead mika已解析、无重复TODO/字段错误；checks补完整target便于精确解析。主树registry当前尚无S01P06登记，本次只证明源可解析，不声称已服务聚合。
