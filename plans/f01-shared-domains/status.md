@@ -139,3 +139,5 @@
 | F01-29 | pending | Lead / Web resource owner | [附件交接与026预留](../../docs/evidence/f01/attachment-handoff.json)；领域及公共接线尚未完成 |
 
 2026-10-06 10:10 UTC：F01 v23 正式移出 `packages/contracts/src/conversations.ts`，原 owner 已停写，Web 须 fresh amend/take 才写；026 已预留给 WPF-ATTACH01。公共出口、client 与生产挂载仍由 F01 唯一维护。此为范围与计划记录，未运行工程测试、未改变个人服务。
+
+2026-10-06 10:19:29.714 UTC：F01 v24原子amend将packages/client目录展开为其他literal文件，明确归还index.ts与conversations.test.ts给TUI01B；本owner已停写两个路径，新owner须fresh take。共享ACK后继唯一设计在TUI-001，Web独立消费者由同级协调；附件薄client接入须等待该文件正式handback，不阻附件模块独立实现。见[交接](../../docs/evidence/f01/tui-ack-handoff.json)。0产品修改/工程重测。
