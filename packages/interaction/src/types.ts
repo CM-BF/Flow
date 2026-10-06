@@ -2,6 +2,7 @@ import { z } from 'zod';
 import type { FlowClient } from '@flow/client';
 import { conversationCreationSchema, conversationTurnSchema, type ConversationQueuePage } from '@flow/contracts';
 import { queuePauseIntentSchema, queueResumeIntentSchema } from './queue-control/index.js';
+import { taskCancelIntentSchema } from './task-control/index.js';
 import type { TurnObservationView } from './observation/index.js';
 import type { Command } from './commands.js';
 const identity = { version: z.literal(1), connectionId: z.string().min(1).max(160), key: z.uuid() };
@@ -10,6 +11,7 @@ export const intentSchema = z.discriminatedUnion('kind', [
   z.strictObject({ ...identity, kind: z.literal('send'), conversationId: z.uuid(), input: conversationTurnSchema.extend({ mode: z.literal('follow-up') }) }),
   queuePauseIntentSchema,
   queueResumeIntentSchema,
+  taskCancelIntentSchema,
 ]);
 export type Intent = z.infer<typeof intentSchema>;
 export interface IntentStore { load(): Promise<Intent | null>; save(intent: Intent): Promise<void>; clear(): Promise<void> }

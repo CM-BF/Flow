@@ -1,0 +1,250 @@
+{
+  "kind": "READ_ONLY_NEXT_CONTROL_DESIGN",
+  "at": "2026-10-06T15:43:41.330549+00:00",
+  "author": "assignment_review / gpt-6-astra",
+  "parent": "TUI-001 TODO06/08",
+  "coLead": "Execution Lead",
+  "scopeState": "PROPOSED_ONLY_NO_CLAIM_NO_PROJECT_WRITES",
+  "fixedMainObserved": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "originMainObserved": "9bdb6cb0f76642efee16897842d654d9a5e84cc3",
+  "parentAuthority": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+    "head": "266105c6329822773f116fc9fa36c2b58a722b7b",
+    "plan": "plans/tui01-terminal-client/plan.md",
+    "status": "plans/tui01-terminal-client/status.md",
+    "clean": true,
+    "fact": "A-E delivered; conversation cancel/decision/steer and actual TUI-Web-TUI still open. Do not use parent historical HEAD field as current Git HEAD."
+  },
+  "choice": {
+    "candidate": "TUI01F (ID/ledger must be checked before future dispatch)",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "branch": "codex/tui-task-cancel",
+    "userResult": "Explicitly cancel the displayed conversation task from the terminal, then see the same task outcome in the actual Web App and return to the terminal.",
+    "whyShortest": "One already-published FlowClient.cancel call and durable intent kind; no task body read, center schema, migration, profile, provider or Web renderer change. Manual decisions need a new pending-decision read/detail path; steer has profile/host admission/default-off dependencies and is longer."
+  },
+  "currentFacts": [
+    {
+      "feature": "conversation queue",
+      "state": "PUBLISHED",
+      "evidence": "/queue /pause /resume in typed commands; optional QueueControlPort plus center queue capability; version/task bound, one existing intent FSM; explicit recover and page request identity guards."
+    },
+    {
+      "feature": "conversation task cancel",
+      "state": "CENTER_AND_WEB_PUBLISHED_TUI_MISSING",
+      "evidence": "FlowClient.cancel(taskId,key,signal) POSTs {} to owner /api/tasks/:id/cancel; Web ConversationQueue has separate current-task confirmation. Chat TUI commandSchema has no cancel."
+    },
+    {
+      "feature": "goal cancel/decision",
+      "state": "PUBLISHED_SEPARATE_MODE",
+      "evidence": "--goal already has /cancel NODE and /decide NODE; do not reuse goal IDs or imply chat controls exist."
+    },
+    {
+      "feature": "cancel semantics",
+      "state": "TASK_SCOPED_NO_ATTEMPT_CAS",
+      "evidence": "No attempt/version parameter in API. Running becomes cancel_requested; unclaimed becomes cancelled; terminal/uncertain/cancel_requested return existing summary. ACK is not proof of actual stop, rollback or native cancellation support."
+    },
+    {
+      "feature": "decision",
+      "state": "CENTER_PUBLISHED_TUI_CHAT_UNWIRED",
+      "evidence": "Task API decide requires pending decisionId and active attempt. Current show returns prompt/entries, so avoid adding that heavy read for the cancel slice."
+    },
+    {
+      "feature": "steer",
+      "state": "DEFAULT_UNAVAILABLE_UNTIL_EXPLICIT_ADMISSION",
+      "evidence": "Conversation capability steer=false; steeringAdmission defaults enabled=false, requires storage/current runner lease/session/profile/host capability and command state. Ordinary profile or catalog does not prove ready. Not part of this slice."
+    }
+  ],
+  "interface": {
+    "command": "{type:\"cancel\",taskId:UUID}; slash /cancel <displayed-task-id>",
+    "optionalPort": "taskControl?: Pick<FlowClient,\"cancel\"> (one method, absent => UNSUPPORTED_TASK_CONTROL, zero POST)",
+    "target": "Require opened conversation and taskId equal to its currently displayed current task reference from loaded conversation/queue observation. Freeze conversationId/turnId/taskId/key and input:{} before first POST. Never infer another latest task during recovery. No additional show/prompt read.",
+    "intent": "Add version-1 task-cancel discriminant alongside unchanged create/send/queue forms; reuse the existing single IntentStore, mutation lifecycle, connection epoch and /recover. A narrow private task-control module owns schema + task-ID/status receipt check, not a new FSM.",
+    "ack": "Accept only matching task ID and recognized returned task status; clear intent only after matching receipt, then read authoritative conversation/queue. Unknown/transport/malformed ACK retains exact {} / key / task ID. Explicit /recover retries original once, never rebases or substitutes another task.",
+    "rejection": "Current existing deterministic 4xx behavior preserves draft and refreshes observation without replacement. For cancellation itself there is no queue/task attempt CAS: do not fabricate one. Cross-client stale-CAS proof uses the existing send/queue command.",
+    "presentation": "Show task ID, scope and distinction between cancel_requested / cancelled / uncertain; do not show success as stopped. Existing shared help/completion and JSONL dispatch expose the command; Ink remains syntax/view only. Ctrl-C and /quit remain observation-only."
+  },
+  "candidateLiteralScopes": [
+    "packages/interaction/src/task-control",
+    "packages/interaction/src/types.ts",
+    "packages/interaction/src/commands.ts",
+    "packages/interaction/src/controller.ts",
+    "apps/tui/src/main.tsx",
+    "apps/tui/src/screen.tsx",
+    "apps/tui/src/task-controls",
+    "apps/tui/test-fixtures/cancel_driver.py",
+    "apps/tui/README.md",
+    "experiments/tui-web-control-handoff",
+    "plans/tui01f-task-cancel",
+    "docs/evidence/tui01f"
+  ],
+  "noWriteNeeded": [
+    "center/contracts/client APIs",
+    "packages/interaction/package.json public exports",
+    "existing journal IO or headless implementation",
+    "Web private projections/renderers",
+    "runner runtime/adapter/profile/config",
+    "root lock/dependencies"
+  ],
+  "validationIncrement": {
+    "unitBound": "At most 6 targeted task-control/controller cases: missing port, wrong/unobserved task, mismatched ACK, unknown exact-key recovery including original kind journals, late observation/close, terminal/uncertain status truthfulness. No rerun of complete old A-E matrix.",
+    "onePublicFixture": "One owned real factory/PG + deterministic fixture runner journey with an HTTP ACK drop proxy: cancel accepted but dropped, close/reopen journal without auto POST, newer second-client changes, explicit /recover original bytes/key and immutable task ID, then current observation. A-to-E existing cases may be reused as provenance, not counted rerun.",
+    "actualPtyAndWeb": "One additional shared-center actual Ink PTY + actual production App Chrome journey (can share owned fixture DB/lifecycle): TUI sends initial turn; Web opens same conversation and observes task; Web sends next turn while a controlled read-response barrier leaves TUI revision stale; TUI stale send produces one 409, exact draft remains, observation refreshes and no automatic replacement. After recording preserved draft, explicit user editing invokes /cancel <displayed-task-id>; Web sees request pending then actual fixture cancellation, TUI reconnect sees same IDs/state. No page.reload of user tabs, no DOM injection or HTTP-only substitute for UI clicks.",
+    "exit": "Record zero cancel POST for Ctrl-C/disconnect apart from explicit command; cancellation acceptance vs eventual stop is observed separately. A fixture does not prove every native/A2A provider stops.",
+    "distinctEvidence": "JSONL/controller verifies public command/intent semantics only. Actual PTY verifies visible typed command, CJK draft, terminal raw-mode/focus/resize/exit. Real Chrome DOM plus request trace proves browser handoff. Only their combined same task/conversation identity earns the narrow TUI-Web-TUI claim.",
+    "performanceAndResource": "Record actual request counts/bytes, 0 detail/show/prompt fetch for cancel, bounded existing queue page, journal size unchanged, one current task reference. One random marked DB/dynamic ports/owned process groups; checkpoint evidence before irreversible cleanup. Read-only preparation now, later run requires fresh space >= agreed reserve+fixture/browser allowance; no physical peak assertion."
+  },
+  "sourceOnlyClosure": {
+    "source": "Fixed target product apps/tui + packages/interaction/client/contracts; center production apps/server and packages/storage migrations/SQL; fixture runner host/verifier imported by selected journey. Preserve root manifests/lock/tsconfig/AGENTS/plans and d04 if provisioned by Lead. Only affected new test/handoff files and directly read fixture inputs; no copied full evidence history or node_modules/store.",
+    "web": "Use one already-built reviewed actual App artifact proven to contain the selected conversation send/queue surface; bind artifactId/manifest/files and backend tuple. If no such retained artifact is available, leave browser phase pending instead of building under current resource constraints or using a fixture shell. TUI core work can proceed independently.",
+    "dependencies": "Existing locked Node24/tsx/Ink/React/react-ink and runtime test tools only, read-only exact donor identity must be freshly verified by dependency owner. No new package is required. This review did not inspect/allocate a dependency installation and does not authorize imports/builds."
+  },
+  "nonGoals": [
+    "manual decision UI",
+    "steer readiness or sending",
+    "queue enqueue/full menu",
+    "new scheduler/authorization state",
+    "provider calls",
+    "all TUI-001 completion",
+    "native stop guarantees",
+    "personal service deployment"
+  ],
+  "checksExecuted": {
+    "sourceReads": 21,
+    "tests": 0,
+    "provider": 0,
+    "build": 0,
+    "install": 0,
+    "projectWrites": 0,
+    "productPg": 0
+  },
+  "skills": "Reused locally read find-skills/codebase-design/clean-code; one module responsibility, small optional port, existing intent lifecycle, no Web private state copy, explicit unknown and observed bounds.",
+  "bindings": [
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 5840,
+      "sha256": "8045446f377ad60c9c5097f881a22c30abba781d635176f22a9e19f829128756",
+      "workingMatches": true
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2553,
+      "sha256": "b76e104f3e877172b0c52b6691366a9d6a13a58d77580cdbbd746ba1e1e7e636",
+      "workingMatches": true
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 20601,
+      "sha256": "17ad4cc8f2da74a054ff5eabe751607ce4c41ad6c5d48c415dbcb7e2b820b16f",
+      "workingMatches": true
+    },
+    {
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "bytes": 598,
+      "sha256": "0949d2771987240f02922fb87d16d6257730d3a07b5f161fea2e8adc1bcec883",
+      "workingMatches": true
+    },
+    {
+      "path": "packages/interaction/src/queue-control/index.ts",
+      "bytes": 4673,
+      "sha256": "1622c75652197569842e534d09ac3363fc0105ca276f5ba2a3056018553c4755",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4140,
+      "sha256": "6ab6415d302838da144eb8cc63eb28904bc7132330db7d2d664da3d541ff8946",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 7022,
+      "sha256": "d23da46ddef077bcf19598471d15120ade5bbc6008519d55e1107150b3122831",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/src/headless.ts",
+      "bytes": 1766,
+      "sha256": "723492661e0056e24e47ac909aedc18ffbb0ac661026b086d525f3fa4cfdace7",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/src/intent-store.ts",
+      "bytes": 659,
+      "sha256": "33555b4ff95d4a7b79990fce57fba1c865d7ffbaa5eab37b36c22c886ebba3b7",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/src/private-journal.ts",
+      "bytes": 3195,
+      "sha256": "beb8e8374811998d4b55997fe90a50857115fc89220b8b841b56075f005e2bf2",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/src/queue-controls/journey.test.ts",
+      "bytes": 14151,
+      "sha256": "44d84c5e197e77cdb536ebef3929ff13a58d563beb3467d622937e9df7a9687e",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/test-fixtures/queue_driver.py",
+      "bytes": 3670,
+      "sha256": "bd6439f3da9eeb94a9a4b8369b6226bd43fc7c297b3703fcfe41393c48ad7534",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 9697,
+      "sha256": "a33600856143358d4909a18a1454b411e90e7eaf4f837482a1be285951c047fd",
+      "workingMatches": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 51680,
+      "sha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f",
+      "workingMatches": true
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13801,
+      "sha256": "6df36211fe717f5e8934120e44a8732d5f59a32a04c69eaed89338c3d6268b1c",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3222,
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/active-steering/admission.ts",
+      "bytes": 4315,
+      "sha256": "839e2148bdf208fa579c766abbb2cc573bee2bafd70aa698a5a8e4682eb59783",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "bytes": 8924,
+      "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 11653,
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+      "workingMatches": true
+    }
+  ],
+  "separateAuthorizedCoordination": "During this read-only design, SVC05H01 source scopes were atomically amended in the coordination ledger at Lead request; /tmp/flow-svc05h01-source-handoff-receipt.json. No candidate tree content changed."
+}

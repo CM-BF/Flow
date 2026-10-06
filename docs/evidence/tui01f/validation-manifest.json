@@ -1,0 +1,292 @@
+{
+  "kind": "bounded-runtime-candidate",
+  "sourceCommit": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+  "originalSourceCommit": "044ab84db42606fb1757903258078e3dfbab9545",
+  "baseCommit": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "createdAt": "2026-10-06T16:03:54.097970+00:00",
+  "sources": [
+    {
+      "path": "packages/interaction/src/task-control/index.ts",
+      "bytes": 1122,
+      "sha256": "9186c28eaf3d4efcb74aa3925b193dd8d6feaccbadb3fef9a6b6f9dc00f5eeeb"
+    },
+    {
+      "path": "packages/interaction/src/task-control/controller.test.ts",
+      "bytes": 13386,
+      "sha256": "a7f5cf3af02be395dcc50c302b8bcf7280bef9d3dfbb7648ac24ba9a739178e5"
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2645,
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 6131,
+      "sha256": "dff891136914fca2774faf199f3181fe3667c4055d7dab6a2c5e5ac30983e0e8"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 7341,
+      "sha256": "59794da3bc2e93346f9f8d87663e2dcf284a77f867db9dbd3cf7530c2d14618a"
+    },
+    {
+      "path": "apps/tui/src/task-controls/consumer.test.ts",
+      "bytes": 2249,
+      "sha256": "4d697e10b2b88c311cbaf949c6809e919f16376a21df4a0632d4c773204157cf"
+    },
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 10768,
+      "sha256": "d8cde961719bed44c34e622c6db2b640f033b33109c40942ca3d2540dbc144f3"
+    }
+  ],
+  "directInputs": [
+    {
+      "path": "packages/client/src/index.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 51680,
+      "sha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f",
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884",
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+      "materialized": true
+    },
+    {
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 598,
+      "sha256": "0949d2771987240f02922fb87d16d6257730d3a07b5f161fea2e8adc1bcec883",
+      "materialized": true
+    },
+    {
+      "path": "packages/interaction/src/projection.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1647,
+      "sha256": "dbba73e9717f17537a0224b4d7a56305bb0ecbd307d2f43225958d5476a83087",
+      "materialized": true
+    },
+    {
+      "path": "packages/interaction/src/index.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 475,
+      "sha256": "3e2a37a73589c675145f32753ff455bb7e5c46e6084ca497585c0a2445063286",
+      "materialized": true
+    },
+    {
+      "path": "packages/interaction/src/observation/index.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 7818,
+      "sha256": "635f7cc03497d1eafad9c10801c9b11160bc2c7ece526c1513c89c2edba12352",
+      "materialized": true
+    },
+    {
+      "path": "packages/interaction/src/observation/reads.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 970,
+      "sha256": "6e7db57ba350dba840dc0a33ff909662db5a2162ca230750c2ed77e1066e1063",
+      "materialized": true
+    },
+    {
+      "path": "packages/interaction/src/queue-control/index.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 4673,
+      "sha256": "1622c75652197569842e534d09ac3363fc0105ca276f5ba2a3056018553c4755",
+      "materialized": true
+    },
+    {
+      "path": "apps/tui/src/headless.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 1766,
+      "sha256": "723492661e0056e24e47ac909aedc18ffbb0ac661026b086d525f3fa4cfdace7",
+      "materialized": true
+    },
+    {
+      "path": "apps/tui/src/intent-store.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 659,
+      "sha256": "33555b4ff95d4a7b79990fce57fba1c865d7ffbaa5eab37b36c22c886ebba3b7",
+      "materialized": true
+    },
+    {
+      "path": "apps/tui/src/private-journal.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 3195,
+      "sha256": "beb8e8374811998d4b55997fe90a50857115fc89220b8b841b56075f005e2bf2",
+      "materialized": true
+    },
+    {
+      "path": "apps/tui/src/lifecycle.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 394,
+      "sha256": "423b170a5bea8dc4fcb5c405a6d1b7559f16e45c3d2ce7a439728ff50c186107",
+      "materialized": true
+    },
+    {
+      "path": "apps/tui/package.json",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8",
+      "materialized": true
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "materialized": true
+    },
+    {
+      "path": "package.json",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "materialized": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "materialized": true
+    },
+    {
+      "path": "tsconfig.json",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "materialized": true
+    },
+    {
+      "path": "vitest.config.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+      "materialized": false
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "base": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7",
+      "materialized": false,
+      "readVia": "git show fixed base; no checkout"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/tui01f/independent-source-precheck.json",
+      "bytes": 5831,
+      "sha256": "d3cd5988b05a031fc7cb5abc569498d3167d0d372ea31c7bb057bf834bad8f15"
+    },
+    {
+      "path": "docs/evidence/tui01f/independent-source-bindings.json",
+      "bytes": 15157,
+      "sha256": "b4f4f17c380d2f52423346e880efc5ec2fdc0b712a3a44ff71981628a91c2f3f"
+    },
+    {
+      "path": "docs/evidence/tui01f/dependency-view.json",
+      "bytes": 4398,
+      "sha256": "5543887d9ddffeedc7bbb5700632c9441bc91e1736a9c7558d457eefb6576abc"
+    },
+    {
+      "path": "docs/evidence/tui01f/checks-initial.json",
+      "bytes": 1155,
+      "sha256": "965817560428b81aab36d8df776191af736718569b0093c6a8ed2d8812f4e8ba"
+    },
+    {
+      "path": "docs/evidence/tui01f/checks-initial.txt",
+      "bytes": 537,
+      "sha256": "44dc2835916d169fa24bfb28104414ed7a018a8d0bf9e1d26afb885a4b8df0db"
+    },
+    {
+      "path": "docs/evidence/tui01f/focused-observer.json",
+      "bytes": 1416,
+      "sha256": "6b9642d810526a5f799e636af2b9a67ae76a47ecb1fb9dbb63dbf3589bb32354"
+    },
+    {
+      "path": "docs/evidence/tui01f/focused-observer.txt",
+      "bytes": 350,
+      "sha256": "5d05548b16338a5e15c023fd4e53c3dba4c18a1c5315776f21532545bbb3b80d"
+    },
+    {
+      "path": "docs/evidence/tui01f/focused-types.json",
+      "bytes": 1930,
+      "sha256": "029da5da870283c0b5ac865dede5e5e308aaded50d75acc2ab83e72491ef95ba"
+    },
+    {
+      "path": "docs/evidence/tui01f/focused-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01f/bounded-run.py",
+      "bytes": 2452,
+      "sha256": "810d7be7bf7223afa738b3b31ab44e7f5510045d6c395367f50e3c2168b0dcfa"
+    },
+    {
+      "path": "docs/evidence/tui01f/bounded-resource-summary.json",
+      "bytes": 1523,
+      "sha256": "d461e9a92c026ecf6840b6c757c7cb5a9c5f87b25b284c10cb65cf006de03a14"
+    }
+  ],
+  "derived": [
+    {
+      "path": "docs/evidence/tui01f/validation.md",
+      "bytes": 2385,
+      "sha256": "5f05b22841a0ff4690f2367600ad1a1a53d421c68451d6829eec338449128a40"
+    },
+    {
+      "path": "docs/evidence/tui01f/quality.md",
+      "bytes": 2078,
+      "sha256": "e26c821596520e06949989ab4d2d4a0e7dd369544a56629989c7e1c703add001"
+    },
+    {
+      "path": "docs/evidence/tui01f/README.md",
+      "bytes": 3896,
+      "sha256": "5d750cd5db45cf1fc3537f705fe82e01d29cbfb5942766245c14178c6593c8cc"
+    }
+  ],
+  "checks": {
+    "initialPassed": 35,
+    "focusedPassed": 1,
+    "focusedNotSelected": 7,
+    "differentTests": 36,
+    "focusedNoEmit": 0,
+    "rootNoEmit": "NOT_RUN",
+    "HTTPserver": 0,
+    "PG": 0,
+    "PTY": 0,
+    "App": 0,
+    "provider": 0
+  },
+  "independentReview": "SOURCE_PRECHECK only; runtime delta pending"
+}

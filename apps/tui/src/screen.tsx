@@ -17,14 +17,16 @@ export function TerminalScreen({ controller }: { controller: InteractionControll
     if (key.tab) { const completions = completeInput(state.draft); if (completions.length === 1) controller.setDraft(`${completions[0]} `); }
   });
   const observed = state.observation; const textWindow = observed ? observationPage(observed) : null;
+  const currentTurn = observed ? state.turns.find(turn => turn.id === observed.turnId) : state.turns.at(-1);
   const turns = (observed ? state.turns.filter(turn => turn.id === observed.turnId) : state.turns).slice(-Math.max(1, Math.min(3, Math.floor((rows - 10) / 5))));
   return <Box flexDirection="column">
     <Text bold>Flow · {state.connected ? 'connected' : 'not observing'}{state.busy ? ' · working' : ''}</Text>
     <Text dimColor>{state.selected ? `${visible(state.selected.title, 80)}  ${state.selected.id}` : 'Select /conversations or /new. /help lists commands.'}</Text>
     {state.pending && <Text color="yellow">{state.pending.status === 'unknown' ? 'Acknowledgement unknown — saved original request. Use /recover.' : 'Submitting immutable request…'}</Text>}
+    {state.view === 'conversation' && currentTurn && <Text>Task: {visible(currentTurn.taskId, 128)} · {currentTurn.status} · /cancel task-id</Text>}
     {state.view === 'queue' && <Box flexDirection="column">
       <Text bold>Queue · {state.queue?.paused ? 'paused' : 'not paused'} · revision {state.queue?.queueRevision ?? 'unknown'}</Text>
-      <Text dimColor>Pause stops later promotion, not current work. Resume may start the next item.</Text>
+      <Text dimColor>Pause stops later promotion, not current work. Resume may start the next item. /cancel task-id requests cancellation of the current task.</Text>
       {state.queue?.currentTurn && <Text>Current task: {visible(state.queue.currentTurn.taskId, 128)} · {state.queue.currentTurn.taskStatus}</Text>}
       {state.queue?.blocked && <Text color="yellow">Queue gate: {state.queue.blocked}</Text>}
       {!state.queue && <Text color="yellow">No current queue observation. Use /queue.</Text>}
