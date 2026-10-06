@@ -2,11 +2,11 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：9927bb071494ec16a9d8091a6ba5edb4ea72c18a
+Review target commit：ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
-完整兼容审查范围：两新验证脚本及相应固定输入/原始运行证据。最近all的两项A已通过并获独立raw核验，B plain通过后定位歧义；新定位/复用源码尚未独审，完整兼容未通过。历史失败与源码条件批准单独如下。
+当前审查范围：after-headers真实ACK正文截断的fixture/browser两脚本窄delta；本target NOT_STARTED/未运行。原all两项A独立证据通过，后继9927 B已越过Files但unknownUI未出现，原失败和源码条件批准分开保留；完整兼容未通过。
 
 ## 后续只读任务
 
@@ -61,3 +61,7 @@ Target `9927bb071494ec16a9d8091a6ba5edb4ea72c18a`，only browser delta。请核e
 ## 2026-10-06 17:11:55 UTC 新B-only作者运行（非完整批准）
 
 固定9927/实际b6c，A证明真实复用，B plain/文件选择到达后未知回执断言失败；点击Retry前已同键第二POST。19626ms/累计39935ms，两个自有进程和专库清理完整。原raw供独立核验，不能冒B兼容通过，未重复A或运行后修改source。
+
+## 2026-10-06 17:24:37 UTC 新正文丢失候选待独审
+
+Target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7`；原9927注入preheader destroy与same-key自动第二请求事实见[author cause](../../docs/evidence/wpf-release03/body-loss-source/author-cause.md)，没有归因已证Chromium或产品bug。本轮实现遵从[root设计](../../docs/evidence/wpf-release03/body-loss-source/root-design.json)；请核真实完整ACK与downstream fault分离、1秒close/error清理、Request精确事件绑定、不调用response.finished、单preRetry/两次最终POST和Queue原引用/新稿、console只允许已绑定fault实际错误码、history marker/全部raw不变。局部文档/字节检查不代替types或实跑；新runtime NOT_RUN，下一执行另需freshgate。

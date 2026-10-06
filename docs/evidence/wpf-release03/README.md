@@ -1,6 +1,10 @@
-最新modeapp/9927实际b6c：A完整证明复用成功且没有重跑；B文件选择已通过，丢回执后的未知回执断言失败。完整raw和cleanup保留，累计39935ms/余140065ms，未发布/未生成兼容绿报告。见[本次精确结果](app-result-171109.json)。
+# RELEASE03 当前源码候选（未运行）
 
-当前源码修复固定 `9927bb071494ec16a9d8091a6ba5edb4ea72c18a`：真实聊天区 Files 定位与完整all12raw中的成功A复用；待独立源审/新app-only gate，未执行新检查。原all事实与全部失败原始材料如下。
+当前target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` 将真实成功ACK改为headers后严格正文前缀截断，并记录本地关闭与浏览器同Request失败证据；[源码审计](body-loss-source/source-audit.json)、[已批准设计](body-loss-source/root-design.json)。源码待独立复审，0新types/import/PG/Chrome/build/space采样，不能称兼容已通过。
+
+最近实际B仍是9927/HEADb6c：plain与文件选择通过，unknownUI未出现；点击Retry前第二POST同key/body/turn且replayedtrue。因果尚不归产品/Chromium，完整原始结果[app-result](app-result-171109.json)不改。当前累计39935ms/余140065ms，43raw合464871B，A契约59cde保持。未来B另需新fixed source review/freshgate；不重复A，不改个人发布。
+
+## 历史all结果
 
 # RELEASE03 固定组合验证（A通过，B定位器失败）
 

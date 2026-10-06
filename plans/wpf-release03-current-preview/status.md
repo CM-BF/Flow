@@ -2,33 +2,33 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 17:11:55 UTC |
+| 最近更新时间 | 2026-10-06 17:24:37 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 9927bb071494ec16a9d8091a6ba5edb4ea72c18a（页面定位与A证据复用修复） |
-| 工作树dirty状态 | 修复源码已提交；本段metadata提交前观察待提交，最终commit/push后双端clean另核，不当运行时HEAD |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7（响应正文丢失注入源码修复） |
+| 工作树dirty状态 | 两源码已固定；本段metadata提交前待提交，normalpush后双端clean另核，未新运行 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PARTIAL 9927bb071494ec16a9d8091a6ba5edb4ea72c18a；成功A复用；B未知回执断言失败 |
+| 检查状态 | PARTIAL ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7；原A通过/原B失败保留；本target运行NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；源码条件已审，新组合部分运行；完整兼容未通过 |
-| 实现目标 | 9927bb071494ec16a9d8091a6ba5edb4ea72c18a |
+| 实现目标 | ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 后台证据复用和文件选择通过，页面回执时序仍待定位 |
-| 下一可用交付 | 查明丢回执后的重发时序，再完成页面兼容验证 |
-| 当前阻塞 | ACTIVE: 丢回执后已出现同键第二请求，未知回执断言未满足；完整兼容待验 |
+| 当前产出 | 丢回执故障已改为响应正文截断，待独立源码审查 |
+| 下一可用交付 | 审核故障观测后，在新受控窗口完成页面兼容验证 |
+| 当前阻塞 | ACTIVE: 新故障注入尚未执行；完整页面兼容仍待验 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，269103d源码条件APPROVED，1a7 P1源修已闭合；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
+| Review | [review.md](review.md)；当前正文丢失注入源码NOT_STARTED，原源码/实际A独审历史保留；完整兼容未通过 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
-| RELEASE03-02 | in-progress | w01_owner | [all实际结果](../../docs/evidence/wpf-release03/all-result-164711.json)：A两项PASS，B plain通过后locator失败；累计20,309/180,000ms |
+| RELEASE03-02 | in-progress | w01_owner | [最新B结果](../../docs/evidence/wpf-release03/app-result-171109.json)：原A通过，B未知回执断言未达；累计39935/180000ms |
 | RELEASE03-03 | pending | w01_owner | 432b源码条件独审已通过；root已独立核实际A失败原始证据；B/主线交付未完成 |
 
 ## 架构影响与未验
@@ -118,3 +118,7 @@ B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files 
 回执断言先见Sending，后元素不见，等待Receipt unknown失败；这不证明产品业务失败，也未证明自动重发来自哪一层。保留原页面error[]、favicon404、全部wire/失败截图；Queue及手动原key recovery后续没有到达。compatibilityId=null，未生成/import通过报告。12raw145329B，旧31raw319542B逐字不变，合43raw464871B。
 
 自有DB flow_release03_3aa7c8c85b6548af9de2 marker确认删除，worker1710/Chrome3420 exit0，cleanup errors=[]；累计39935/180000ms，剩余140065ms。窗口已交回manager/root；无自动重试、源修改、资源重采。后继定位只能source-only，实际再验需要新固定独审与freshgate。
+
+## 2026-10-06 17:24:37 UTC 响应正文丢失源码修复
+
+本人live核原四scope v3后，固定两脚本 `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7`：完整真实upstream ACK先留证，真实状态/JSON头/全字节Content-Length与严格原正文前缀下发，1秒有界优雅关闭。浏览器点击前绑定精确Request，只接受response头→requestfailed事件、真实unknownUI和显式Retry前恰1POST；Send/Queue均保原key/body/ref与新稿，Queue补exact2/replayedtrue。历史契约59cde与43raw/464871B逐字不变，累计39935ms/余140065ms不变。仅Git/Python文本/哈希/范围核，0types/import/PG/Chrome/build/space采样；[源码审计](../../docs/evidence/wpf-release03/body-loss-source/source-audit.json)。本修复未运行，不能将局部flush当浏览器已收包。

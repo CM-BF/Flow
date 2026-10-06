@@ -1,0 +1,23 @@
+{
+  "decision": "RELEASE03_SOURCE_ONLY_AFTER_HEADERS_TRUNCATED_REAL_ACK",
+  "runtimeAdmission": false,
+  "reason": "Preserve original lost-body/unknown-receipt scenario while removing pre-header retry ambiguity. A well-framed invalid JSON alternative is valid separate decode-failure coverage, but will not silently replace this original loss case.",
+  "inputs": [
+    "/private/tmp/release03-app-171109-cause/report.md",
+    "/tmp/release03-app-171109-causal-review.md",
+    "/tmp/root-release03-app-171109-evidence-review.json"
+  ],
+  "scope": "Manager fresh existing RELEASE four paths, unique W01 writer, same tree/branch; only fixture/browser seam and own records. No product/client/backend/artifact change.",
+  "constraints": [
+    "Capture complete real successful upstream JSON and exact hash first. Verify bounded nonempty valid ACK, no compression/ambiguous framing; unsupported/incomplete upstream fails fixture.",
+    "Deliver real success status/content type with full actual ACK byte Content-Length and Connection close. Deliver a nonempty strict prefix from actual ACK bytes, never the whole body; graceful bounded close after local write/end completion, no pre-header reset.",
+    "Record actual upstream receipt separately from injected downstream framing, prefix length/hash and local close evidence; do not claim local flush proves browser reception.",
+    "Use selected request identity to observe browser response headers and body-load failure, actual unknown UI, and exactly one pre-explicit-Retry POST. If selected headers/failure not observed the fixture precondition is inconclusive; preserve raw and fail.",
+    "Explicit Retry still one user action followed by same key/body/material refs and real replayed turn/item; independent next draft retained. Apply equivalent existing Queue case without weakening assertions.",
+    "One-shot fault only; no persistent drop-until-success, no retry loop, no fake receipt/authority and no new framework. Original failed raw remain byte-identical.",
+    "Keep A history contract59cde unchanged and reuse exact original all12 attestation only through reviewed existing adapter. A is not rerun.",
+    "Source freeze and independent peer/root review precede separately fresh Lead window/manager gate. Remaining runtime140065ms is accounting only, not permission.",
+    "DPERF wrapper deferred until this source checkpoint. Recovery similar pre-existing fault risk remains separately recorded; do not change its owner source without fresh dispatch and source binding."
+  ],
+  "cleanCode": "One bounded seam and explicit receipt/fault facts; avoid extra abstraction or broad transport refactor."
+}
