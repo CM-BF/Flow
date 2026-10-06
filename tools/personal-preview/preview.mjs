@@ -8,6 +8,7 @@ import { promisify } from 'node:util';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
+import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
 
 const repository = fileURLToPath(new URL('../../', import.meta.url));
 const entry = fileURLToPath(new URL('./cli.mjs', import.meta.url));
@@ -170,7 +171,7 @@ export async function startPreview({ directory, adminUrl, confirmPending = false
             if (!(await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked', [config.runner.runnerId, tokenHash])).rowCount) fail('RUNNER_IDENTITY_UNAVAILABLE');
           });
         }
-        const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, role], cwd: config.repository, env: process.env,
+        const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, role], cwd: config.repository, env: baseServiceEnvironment(role),
           onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
         state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
         await waitReady(config, role, record);
@@ -236,16 +237,13 @@ export async function runService(directory, role) {
   if (!owned) fail('SERVICE_NOT_OWNED');
   await assertMarker(config);
   if (role === 'runner' && JSON.stringify(await privateJson(join(config.directory, 'claude.json'))) !== JSON.stringify(NATIVE_CONFIGURATION)) fail('NATIVE_CONFIGURATION_CHANGED');
-  const env = { ...process.env, FLOW_A2A_ENDPOINTS_FILE: '', VITE_FLOW_FIXTURE: 'false' };
+  const env = serviceEnvironment(role, config);
   let args; let cwd = config.repository;
   if (role === 'center') {
-    Object.assign(env, { DATABASE_URL: config.databaseUrl, FLOW_TOKEN: config.ownerToken, FLOW_PORT: String(config.centerPort), FLOW_HOST: '127.0.0.1', FLOW_ORIGIN: `http://127.0.0.1:${config.webPort}` });
     args = ['--import', 'tsx', 'apps/server/src/main.ts'];
   } else if (role === 'runner') {
-    Object.assign(env, { FLOW_URL: `http://127.0.0.1:${config.centerPort}`, FLOW_RUNNER_TOKEN: config.runner.token, FLOW_RUNNER_WORKDIR: join(config.directory, 'runner'), FLOW_CLAUDE_MATERIALS_FILE: join(config.directory, 'claude.json') });
     args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
   } else {
-    env.FLOW_CENTER_URL = `http://127.0.0.1:${config.centerPort}`;
     cwd = join(config.repository, 'apps/web'); args = ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', String(config.webPort), '--strictPort'];
   }
   const child = spawn(process.execPath, args, { cwd, env, stdio: 'ignore' });

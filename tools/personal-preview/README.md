@@ -36,12 +36,14 @@ CLI结束后服务仍在独占进程组运行。每次停止前核PID、开始�
 
 启动健康检查还核监听者PGID，防已占用端口被误认为自己的center/Web。发送owner凭据前重新核对center监听归属。私有child入口要求当前state中的PID/nonce匹配，不能作为绕过start检查的另一启动命令。
 
+每个角色从系统允许清单建立环境，不继承任意Flow/DB变量：仅center获得专库连接与owner token，仅runner获得自己的token/明确provider认证环境，Web只获得center地址。外层服务wrapper同样先过滤；凭据保存在0600文件中，不使用命令参数。runner内部传给SDK的环境是另一个产品边界，须消费相应adapter隔离修复后再启动用户服务。
+
 原始子进程stdout/stderr全部丢弃；只保留有界的三个exit事实文件和state，不把未知内容或凭据写进日志。启动过程失败会尝试停止已确认身份的自有组，未知状态保留。操作锁没有超时抢占；若CLI崩溃留下operation.lock或首建数据库/标记未完成，须人工核对持有记录，不自动清锁、接管库或删除数据。本工具是同机合作管理，不是OS强隔离，也不管理脱离记录进程组的外部副作用。
 
 ## 本片段验证
 
 ```sh
-node --test tools/personal-preview/process.test.mjs tools/personal-preview/preview.test.mjs
+node --test tools/personal-preview/environment.test.mjs tools/personal-preview/process.test.mjs tools/personal-preview/preview.test.mjs
 ```
 
-测试仅随机专库、动态端口和独占临时目录，先核持有标记再清理。真实复用server/main、runner/main和Vite；7个公开行为检查包含CLI退出后服务保留、配置发布、0任务启动、私密输出、pending确认、数据库身份、端口冲突、错误PID身份与TERM超时。唯一排队fixture故意不被Claude-only runner领取，0模型/0云。此验证不替代真实聊天、浏览器验收或用户常驻部署。
+测试仅随机专库、动态端口和独占临时目录，先核持有标记再清理。真实复用server/main、runner/main和Vite；8个公开行为检查包含CLI退出后服务保留、配置发布、0任务启动、角色环境隔离、私密输出、pending确认、数据库身份、端口冲突、错误PID身份与TERM超时。唯一排队fixture故意不被Claude-only runner领取，0模型/0云。此验证不替代真实聊天、浏览器验收或用户常驻部署。

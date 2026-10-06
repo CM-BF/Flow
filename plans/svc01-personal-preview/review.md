@@ -1,6 +1,6 @@
 # SVC01 独立 review
 
-状态：NOT_STARTED
+状态：IN_PROGRESS
 
 Review target commit：0b5b3fec1bed2c86b0493c48e4d39e77741828ad
 
@@ -12,7 +12,7 @@ Scope：tools/personal-preview/；计划与证据下钻。实现基线：dd1b9da
 
 | Severity | Finding | Blocking | 作者回应 / fix commit | 复审 |
 | --- | --- | --- | --- | --- |
-| 未审查 | 无结论 | unknown | 待定 | 未执行 |
+| P2 | runService将父环境全部传给所有服务，管理凭据可传播 | yes | 改为明确环境允许清单；wrapper和实际服务按角色隔离；8/8通过 | 待固定修复commit复审 |
 
 结论/限制：target已固定，尚未独立审查；真实模型、总项目预算、远程多租户不在启动器零模型验证范围。
 
