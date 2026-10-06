@@ -7,18 +7,18 @@
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；合同待提交 |
-| 工作树dirty状态 | 本次只新增合同与证据目录 |
+| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；合同 a553f3f71db29243b698f4bb953408f28a1529b9；metadata后继单列 |
+| 工作树dirty状态 | 合同已固定；本次仅收口metadata |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN；当前仅只读研究与合同，不声称容量通过 |
+| 检查状态 | PASSED a553f3f71db29243b698f4bb953408f28a1529b9：15本地链接/6项TODO映射/64任务预算与JSON核验、diffcheck；未跑产品/容量测试 |
 | 已集成main状态 / HEAD | 未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c |
-| 实现目标 | 未提交 |
+| 实现目标 | a553f3f71db29243b698f4bb953408f28a1529b9 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01/research.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 已区分现有会话与观察端证据，明确真实并发执行的验证缺口 |
-| 下一可用交付 | 用少量本地任务验证实际执行容量与事件可靠性 |
+| 当前产出 | 已固定小规模执行实验的计数、时限与事件可靠性验证方法 |
+| 下一可用交付 | 审查后实现本地实验入口，验证实际并发与关闭浏览器后的执行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |

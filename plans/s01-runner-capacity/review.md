@@ -2,7 +2,7 @@
 
 状态 **NOT_STARTED**；本文件不表示通过。
 
-范围：首先只审实验合同与来源研究；实现入口与正式结果尚未产生。基线 `115b0dbdfa02db5483f9e9699852682ce699633c`；target在status固定后核验，不沿用其他任务approval。唯一owner Mika，review者只读，将修复要求交回owner。
+范围：首先只审实验合同与来源研究；实现入口与正式结果尚未产生。基线 `115b0dbdfa02db5483f9e9699852682ce699633c`；target `a553f3f71db29243b698f4bb953408f28a1529b9`，范围 `experiments/runner-capacity,docs/evidence/s01/research.md`。不沿用其他任务approval。唯一owner Mika，review者只读，将修复要求交回owner。
 
 ## 可复制审查说明
 
