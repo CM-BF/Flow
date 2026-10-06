@@ -1,0 +1,11 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-compatibility
+
+ ✓ apps/server/src/assistant-stream-compatibility/compatibility.test.ts (8 tests) 2293ms
+   ✓ reconnects SSE after a hidden-only page and does not lose a subsequently committed ordinary entry  421ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  23:50:44
+   Duration  3.23s (transform 599ms, setup 0ms, import 844ms, tests 2.29s, environment 0ms)
+
