@@ -134,6 +134,16 @@ describe('fixed pagesize observations', () => {
     expect(result.helperCalls).toBe(1); expect(result.retainedRoots).toHaveLength(2); expect(result.resultPersisted).toBe(false);
     expect(prepareDelivery({ result, reservation: { complete: true } }, 1200).passes).toBe(false);
   });
+  it('consumes a slot but starts no command when its fsync crosses the common cutoff', async () => {
+    const fix = fixture(), calls = []; let current = 1000, slotFd = null;
+    const io = { ...fs, openSync(file, ...rest) {
+      const fd = fs.openSync(file, ...rest); if (String(file).endsWith('slot-compile.json')) slotFd = fd; return fd;
+    }, fsyncSync(fd) { fs.fsyncSync(fd); if (fd === slotFd) current = 6000; } };
+    const result = await runPagesize(args(fix), { io, now: () => current, command: fakeCommand(calls), rootBase: fix.root });
+    expect(calls).toEqual([]); expect(result.compileCalls).toBe(0); expect(result.helperCalls).toBe(0);
+    expect(fs.existsSync(path.join(fix.evidenceDirectory, 'slot-compile.json'))).toBe(true);
+    expect(result.rootCleanupComplete).toBe(true);
+  });
   it('never invokes a command after the shared preparation deadline', async () => {
     const fix = fixture(), calls = [];
     const result = await runPagesize(args(fix), { now: () => 7000, command: fakeCommand(calls), rootBase: fix.root });

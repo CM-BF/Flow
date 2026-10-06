@@ -149,10 +149,14 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
   async function execute(kind, options) {
     if (now() >= (kind === 'compile' ? bounds.latestCompileMs : bounds.latestHelperMs)) fail();
     write(path.join(evidenceDirectory, `slot-${kind}.json`), { consumed: true, kind, elapsedMs: now() }, 'receipt');
+    const afterReservation = now();
+    if (afterReservation >= (kind === 'compile' ? bounds.latestCompileMs : bounds.latestHelperMs)) fail();
+    const timeoutMs = Math.min(options.timeoutMs, 26000 - afterReservation - 750);
+    if (timeoutMs < 1) fail(); // Keep termination observation and four seconds of final cleanup/persistence.
     if (kind === 'compile') { if (result.compileCalls !== 0) fail(); result.compileCalls++; }
     else { if (result.helperCalls >= 2) fail(); result.helperCalls++; }
     writersClosed = false; inventoryComplete = false;
-    const returned = await command(options, { consume() {}, observe(length) { output.observedBytes += length; if (!fits(0)) fail(); } });
+    const returned = await command({ ...options, timeoutMs }, { consume() {}, observe(length) { output.observedBytes += length; if (!fits(0)) fail(); } });
     writersClosed = closed(returned.safe); result.processCleanupComplete = writersClosed;
     result.stages.push({ kind, ...returned.safe, stdoutCapturedBytes: returned.stdout.length, stderrCapturedBytes: returned.stderr.length,
       stdoutSha256: sha(returned.stdout), stderrSha256: sha(returned.stderr) });
