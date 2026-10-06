@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['O08', '原生目标规划验收', '技术验证', 'native-graph-acceptance', 'o08-native-graph-acceptance'],
+  ['CHAT06C02', '流式正文与旧页面兼容', '工作线', 'assistant-stream-compatibility', 'chat06c02-stream-compatibility'],
+  ['WPF-CHAT06C01', '聊天流式能力兼容', '工作线', 'web-stream-compatibility', 'wpf-chat06-compatibility'],
   ['S01', '实际执行容量验证', '技术验证', 'runner-capacity-probe', 's01-runner-capacity'],
   ['WPF-RENDERERI01', '聊天可插拔详情接入', '工作线', 'web-data-renderer-integration', 'wpf-renderer-i01-integration'],
   ['CHAT06', '助手正文逐步显示', '工作线', 'native-assistant-stream', 'chat06-assistant-stream'],
@@ -94,7 +97,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
