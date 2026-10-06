@@ -1,3 +1,5 @@
+import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+export { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
@@ -332,8 +334,9 @@ export class FlowClient {
     return this.request(`/api/plugins/${encodeURIComponent(id)}/operations/${encodeURIComponent(operationId)}`, { signal });
   }
 
-  createConversation(input: ConversationCreation, key: string, signal?: AbortSignal): Promise<ConversationCreated> {
-    return this.request('/api/conversations', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  async createConversation(input: ConversationCreation, key: string, signal?: AbortSignal): Promise<ConversationCreated> {
+    const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationCreation;
+    return decodeConversationCreated(await this.conversationAcknowledgement('/api/conversations', body, key, signal), frozen);
   }
   conversations(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationList> {
     const query = new URLSearchParams();
@@ -350,8 +353,9 @@ export class FlowClient {
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns${query.size ? `?${query}` : ''}`, { signal });
   }
-  submitConversationTurn(id: string, input: ConversationTurnAdmission, key: string, signal?: AbortSignal): Promise<ConversationTurnAccepted> {
-    return this.request(`/api/conversations/${encodeURIComponent(id)}/turns`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  async submitConversationTurn(id: string, input: ConversationTurnAdmission, key: string, signal?: AbortSignal): Promise<ConversationTurnAccepted> {
+    const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationTurnAdmission;
+    return decodeConversationTurnAccepted(await this.conversationAcknowledgement(`/api/conversations/${encodeURIComponent(id)}/turns`, body, key, signal), id, frozen);
   }
   conversationDetail(id: string, turnId: string, detailId: string, signal?: AbortSignal): Promise<Detail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns/${encodeURIComponent(turnId)}/details/${encodeURIComponent(detailId)}`, { signal });
@@ -470,6 +474,11 @@ export class FlowClient {
       await reader.cancel().catch(() => undefined);
       reader.releaseLock();
     }
+  }
+
+  private async conversationAcknowledgement(path: string, body: string, key: string, signal?: AbortSignal): Promise<unknown> {
+    try { return await this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal }); }
+    catch (error) { if (error instanceof SyntaxError) throw new UnknownConversationAcknowledgementError(); throw error; }
   }
 
   private async request<T>(path: string, init: RequestInit = {}): Promise<T> {

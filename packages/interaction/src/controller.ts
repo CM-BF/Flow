@@ -45,7 +45,7 @@ export function createInteractionController(options: { client: InteractionClient
   async function mutate(pending: Intent, recovering: boolean) {
     rotate();
     const operation = performMutation(pending, recovering); activeMutation = operation;
-    try { return await operation; } finally { if (activeMutation === operation) activeMutation = null; }
+    try { return await operation; } finally { if (activeMutation === operation) activeMutation = null; schedule(); }
   }
   async function performMutation(pending: Intent, recovering: boolean) {
     const version = epoch; const signal = connection.signal;
@@ -59,14 +59,19 @@ export function createInteractionController(options: { client: InteractionClient
       const conversation = acknowledgedConversation(pending, response);
       await intents.clear(); intent = null;
       if (!current(version)) { patch({ pending: null }); return result(true, 'ACCEPTED', 'Center accepted the request; observation remains stopped.'); }
-      patch({ pending: null, view: 'conversation', selected: selection(conversation), connected: true,
+      const selected = state.selected?.id === conversation.id && state.selected.revision > conversation.revision ? state.selected : selection(conversation);
+      patch({ pending: null, view: 'conversation', selected, connected: true,
         ...(pending.kind === 'send' && state.draft === pending.input.text ? { draft: '' } : {}) });
       try { await refresh(conversation.id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Accepted by center. Observation needs /recover.' }); }
       schedule(); return result(true, 'ACCEPTED', 'Center accepted the request; this is not execution completion.');
     } catch (error) {
-      if (!recovering && error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408) {
+      if (!recovering && error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes('idempotency')) {
         try {
           await intents.clear(); intent = null; patch({ pending: null });
+          if (current(version) && state.selected) {
+            try { await refresh(state.selected.id, version); }
+            catch { if (current(version)) patch({ connected: false }); }
+          }
           return result(false, `HTTP_${error.status}`, 'Center rejected the request. No replacement request was sent.');
         } catch { /* Keep the immutable intent if durable cleanup could not be confirmed. */ }
       }
@@ -141,7 +146,7 @@ export function createInteractionController(options: { client: InteractionClient
     } catch (error) {
       const answer = error instanceof LocalError ? result(false, error.code, error.message)
         : result(false, error instanceof FlowApiError ? `HTTP_${error.status}` : 'READ_FAILED', 'Request failed. No automatic mutation retry was performed.');
-      if (!state.closed) patch({ notice: answer.message }); return answer;
+      if (!state.closed) patch({ notice: answer.message, ...(['recover', 'open'].includes(command.type) ? { connected: false } : {}) }); return answer;
     } finally { if (!state.closed) patch({ busy: false }); }
   }
   return {

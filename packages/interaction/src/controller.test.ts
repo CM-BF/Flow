@@ -1,4 +1,5 @@
-import { afterEach, expect, test } from 'vitest';
+import { afterEach, expect, test, vi } from 'vitest';
+import { FlowApiError } from '@flow/client';
 import { randomUUID } from 'node:crypto';
 import type { ConversationCreated, ConversationCreation, ConversationSnapshot, ConversationSummary } from '@flow/contracts';
 import { createInteractionController, parseInput, completeInput, terminalText, type Intent, type InteractionClient, type InteractionController, type IntentStore } from './index.js';
@@ -7,7 +8,7 @@ const conversation: ConversationSummary = { id, title: 'Saved conversation', har
 const snapshot: ConversationSnapshot = { conversation, capabilities: { followUp: true, queue: false, steer: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false }, nativeSession: null, lastTurn: null };
 const created: ConversationCreated = { conversation, capabilities: snapshot.capabilities, replayed: false };
 const controllers: InteractionController[] = [];
-afterEach(async () => { await Promise.all(controllers.splice(0).map(controller => controller.dispose())); });
+afterEach(async () => { await Promise.all(controllers.splice(0).map(controller => controller.dispose())); vi.useRealTimers(); });
 function setup(overrides: Partial<InteractionClient> = {}, initial: Intent | null = null) {
   let saved = initial; const writes: unknown[] = []; const calls: { input: unknown; key: string }[] = [];
   const store: IntentStore = { load: async () => saved, save: async intent => { saved = structuredClone(intent); writes.push(saved); }, clear: async () => { saved = null; writes.push(null); } };
@@ -100,4 +101,28 @@ test('discovery pages remain selectable while a conversation is open and expose 
   await controller.input('/conversations'); expect(limit).toBe(6); expect(controller.snapshot().view).toBe('conversations');
   expect(controller.snapshot().selected?.id).toBe(id); expect(controller.snapshot().conversationCursor).toBe('next-page');
   await controller.input('/profiles'); expect(controller.snapshot().view).toBe('profiles');
+});
+
+
+test('a stale send rejection preserves the draft, reloads only observations and resumes polling', async () => {
+  vi.useFakeTimers(); let reads = 0; let sends = 0; let revision = 0;
+  const { controller, saved } = setup({
+    conversation: async () => { reads++; return { ...snapshot, conversation: { ...conversation, revision } }; },
+    conversationTurns: async () => ({ conversation: { ...conversation, revision }, turns: [], nextCursor: null }),
+    submitConversationTurn: async () => { sends++; throw new FlowApiError(409, 'conversation_revision_conflict', 'Other client already submitted'); },
+  });
+  await controller.initialize(); await controller.execute({ type: 'open', id });
+  controller.setDraft('Unsent original draft'); revision = 1;
+  expect((await controller.execute({ type: 'send', text: 'Unsent original draft' })).code).toBe('HTTP_409');
+  expect(controller.snapshot().draft).toBe('Unsent original draft'); expect(saved()).toBeNull();
+  expect(controller.snapshot().selected?.revision).toBe(1); expect(controller.snapshot().connected).toBe(true);
+  const before = reads; await vi.advanceTimersByTimeAsync(60_001);
+  expect(reads).toBeGreaterThan(before); expect(sends).toBe(1);
+});
+test('a failed explicit observation recovery becomes disconnected instead of a silent connected non-poller', async () => {
+  let fail = false;
+  const { controller } = setup({ conversation: async () => { if (fail) throw Error('synthetic read failure'); return snapshot; } });
+  await controller.initialize(); await controller.execute({ type: 'open', id }); fail = true;
+  expect((await controller.execute({ type: 'recover' })).ok).toBe(false);
+  expect(controller.snapshot().connected).toBe(false);
 });
