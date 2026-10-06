@@ -30,10 +30,12 @@ async function bytesUnder(path: string): Promise<number> {
   return total;
 }
 async function freeBytes() { const value = await statfs(root); return value.bavail * value.bsize; }
-type Gate = { allowRun: true; backend: string; artifactId: string; run: string; expiresAt: string; totalMs: number; minimumFreeBytes: number };
-type Init = { kind: "start"; directory: string; databaseUrl: string; token: string; workDeadline: number };
+type Mode = "history" | "all";
+type Gate = { allowRun: true; mode: Mode; backend: string; artifactId: string; run: string; expiresAt: string; totalMs: number; minimumFreeBytes: number };
+type Init = { kind: "start"; mode: Mode; directory: string; databaseUrl: string; token: string; workDeadline: number };
 type Observations = Record<string, Record<string, boolean>>;
-type WorkerResult = { passed: boolean; history: unknown[]; app: { passed: boolean; observations?: Observations; error?: string }; errors: string[]; cleanupErrors: string[] };
+type WorkerResult = { passed: boolean; historyPassed: boolean; history: unknown[];
+  app: { passed: boolean; state?: "NOT_RUN"; observations?: Observations; error?: string }; errors: string[]; cleanupErrors: string[] };
 
 /** Own process groups include Chrome, started by the supervisor rather than an untracked launch promise. */
 async function supervisor() {
@@ -41,6 +43,7 @@ async function supervisor() {
   assert.ok(gatePath, "An explicit future run admission is required; source preparation is not permission to execute");
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
   assert.equal(gate.allowRun, true); assert.equal(gate.backend, BACKEND); assert.equal(gate.artifactId, ARTIFACT);
+  assert.ok(gate.mode === "history" || gate.mode === "all", "Explicit A-only or full matrix admission required");
   assert.match(gate.run, /^[a-z0-9-]{1,48}$/); assert.ok(Date.parse(gate.expiresAt) > Date.now());
   assert.ok(gate.totalMs > CLEANUP_MS && gate.totalMs <= MAX_TOTAL_MS);
   assert.ok(gate.minimumFreeBytes >= 1024 ** 3 + 128 * 1024 ** 2, "Admission must retain at least the agreed resource margin");
@@ -119,6 +122,7 @@ async function supervisor() {
       const data = message as { kind?: string; result?: WorkerResult };
       if (data.kind === "result") result = data.result;
       if (data.kind === "chrome" && !chromeStarting) {
+        if (gate.mode !== "all") { stopWork("History-only admission cannot launch Chrome"); return; }
         chromeStarting = true;
         void (async () => {
           assert.ok(!workStopped && Date.now() < workDeadline);
@@ -139,7 +143,7 @@ async function supervisor() {
         })().catch(error => stopWork(`Chrome startup: ${errorText(error)}`));
       }
     });
-    worker.send({ kind: "start", directory, databaseUrl: database.href, token: `release03-${randomUUID()}`, workDeadline } satisfies Init);
+    worker.send({ kind: "start", mode: gate.mode, directory, databaseUrl: database.href, token: `release03-${randomUUID()}`, workDeadline } satisfies Init);
     monitor = setInterval(() => {
       if (monitorBusy) return; monitorBusy = true;
       void (async () => {
@@ -209,10 +213,12 @@ async function supervisor() {
     compatibilityId = await importWebCompatibility({ directory: await realpath(store), reportDirectory });
     await verifyWebCompatibility({ directory: store, artifact: fixture.artifact, backendHead: BACKEND, compatibilityId });
     await json(join(directory, "compatibility-id.json"), { compatibilityId, backend: BACKEND, artifact: fixture.artifact });
-  } else process.exitCode = 1;
+  } else if (!result?.historyPassed || result.errors.length || result.cleanupErrors.length || errors.length || cleanupErrors.length || gate.mode === "all") process.exitCode = 1;
   } catch (error) { errors.push(`Compatibility import: ${errorText(error)}`); process.exitCode = 1; }
   // Report import/verification is part of the same measured attempt, not an uncounted epilogue.
   await json(join(directory, "outcome.json"), { passed: !!compatibilityId && !errors.length && !cleanupErrors.length,
+    historyPassed: !!result?.historyPassed && !errors.length && !cleanupErrors.length,
+    mode: gate.mode, phaseB: result?.app.state === "NOT_RUN" ? "NOT_RUN" : result?.app.passed ? "PASSED" : "FAILED",
     compatibilityId, errors, cleanupErrors, backend: BACKEND, artifactId: ARTIFACT });
   Object.assign(budget, { complete: true, elapsedMs: Date.now() - started });
   await json(join(directory, "budget.json"), budget); clearTimeout(hardStop);
@@ -356,7 +362,7 @@ async function worker() {
   const controller = new AbortController(); const timer = setTimeout(() => controller.abort(Error("Work deadline")), Math.max(0, init.workDeadline - Date.now()));
   process.once("SIGTERM", () => controller.abort(Error("Supervisor requested cleanup")));
   let fixture: CurrentPreview | undefined, browser: Browser | undefined;
-  const result: WorkerResult = { passed: false, history: [], app: { passed: false, error: "Not run" }, errors: [], cleanupErrors: [] };
+  const result: WorkerResult = { passed: false, historyPassed: false, history: [], app: { passed: false, state: "NOT_RUN" }, errors: [], cleanupErrors: [] };
   try {
     const api = await import("./web-current-preview.fixture.js");
     fixture = await api.startCurrentPreview(init.databaseUrl, init.token, controller.signal);
@@ -364,6 +370,10 @@ async function worker() {
       controller.signal.throwIfAborted(); result.history.push(await api.checkHistory(fixture, mixed, controller.signal));
       await json(join(init.directory, "history.json"), result.history); await json(join(init.directory, "wire.json"), fixture.wire);
     }
+    result.historyPassed = result.history.length === 2 && result.history.every(item => (item as { passed: boolean }).passed);
+    // Latest release decision: never spend a Chrome/App window after a confirmed A failure.
+    // A-only success is sealed evidence, not permission to continue into B or publish.
+    if (!result.historyPassed || init.mode === "history") return;
     controller.signal.throwIfAborted();
     // The supervisor owns Chrome before its startup begins; a late launch cannot escape final cleanup.
     const endpoint = new Promise<string>((resolve, reject) => {
@@ -374,7 +384,7 @@ async function worker() {
     const { chromium } = await import("@playwright/test"); browser = await chromium.connectOverCDP(await endpoint, { timeout: 8000 });
     result.app = await actualApp(fixture, browser, init.directory, controller.signal);
     assert.deepEqual(fixture.problems, []);
-    result.passed = result.app.passed && result.history.length === 2 && result.history.every(item => (item as { passed: boolean }).passed);
+    result.passed = result.app.passed && result.historyPassed;
   } catch (error) { result.errors.push(errorText(error)); }
   finally {
     clearTimeout(timer);

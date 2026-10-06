@@ -1,6 +1,6 @@
 # RELEASE03 固定组合验证（源码准备）
 
-当前仅完成可审查脚本草案与 17 个精确依赖链接。没有执行产品 import、类型检查、PG、Chrome、build 或兼容旅程；不能作为发布通过证据。独审 NOT_STARTED。
+当前完成固定源码草案与 17 个精确依赖链接，并按后继裁决增加先运行 A 两项历史的独立入口。没有执行产品 import、类型检查、PG、Chrome、build 或兼容旅程；不能作为发布通过证据。独审 NOT_STARTED。
 
 ## 固定输入
 
@@ -16,7 +16,7 @@
 
 ## 准入与资源
 
-当前不可运行。未来 manager/root 明确准入后才能提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，起始余量至少1GiB+128MiB，运行<=1GiB+64MiB或monitor失败停工作。250ms轮询不是硬配额，无法排除其他进程/OS并发；峰值PG/Chrome物理写量仍待资源裁决。
+当前不可运行。未来 manager/root 明确准入后才能提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、mode（history或all）、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，起始余量至少1GiB+128MiB，运行<=1GiB+64MiB或monitor失败停工作。250ms轮询不是硬配额，无法排除其他进程/OS并发；峰值PG/Chrome物理写量仍待资源裁决。
 
 未来命令形式（未运行）：`TSX_DISABLE_CACHE=1 FLOW_RELEASE03_GATE=<manager-owned-admission> /opt/homebrew/opt/node@24/bin/node --import tsx apps/web/test/web-current-preview.browser.ts`。没有install、build、复制源码/依赖步骤。
 
@@ -24,6 +24,6 @@
 
 ## 失败与通过
 
-任何 history、App、来源、asset、非预期console/network、预算或cleanup失败均阻止完整 SVC report/import。原始history结果和App独立事实仍分别保留。四observations从wire/DOM结果计算；报告工具本身不证明业务兼容。只有全部检查和cleanup成功后，在自有目录生成并验证原SVC格式，绝不写个人发布指针或升级个人服务。history未修即使App通过仍不得发布。
+最新调度首先采用mode=history：A两项逐项保留raw后清理，B明确NOT_RUN；任何A失败即使mode=all也禁止请求Chrome。A全绿但mode=history仍封存停止，不能自动续跑B。任何 history、App、来源、asset、非预期console/network、预算或cleanup失败均阻止完整 SVC report/import。原始history结果和App独立事实仍分别保留。四observations从wire/DOM结果计算；报告工具本身不证明业务兼容。只有全部检查和cleanup成功后，在自有目录生成并验证原SVC格式，绝不写个人发布指针或升级个人服务。history未修即使App通过仍不得发布。
 
 注册runner的临时token在wire持久化前删除（原响应hash保留），Authorization不记录；临时owner/runner token只在进程内与自有待删除Chrome profile中使用。报告不引用用户凭据、个人目录或用户tab。

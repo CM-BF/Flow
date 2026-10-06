@@ -9,7 +9,7 @@
 ## 两模块和资源边界
 
 - fixture：实际 createServer、单随机专库、公开 FlowClient 原生事件模拟、精确静态字节 HTTP host、透传代理和幂等清理；不复制 server/decoder/发布框架。
-- browser：先 attachment-only/mixed context_observation，后真实 App v1/v2 Send、原键丢 ACK 恢复、Queue、新草稿和协商；根据实际结果生成原 SVC 四 observation，不硬填通过。
+- browser：先以独立history入口跑 attachment-only/mixed context_observation（任一失败两项raw后停止/清理，B=NOT_RUN）；A全绿且另获全矩阵准入才可进入真实 App v1/v2 Send、原键丢 ACK 恢复、Queue、新草稿和协商；根据实际结果生成原 SVC 四 observation，不硬填通过。
 - 当前仅源码授权：依赖链接、PG、Chrome、任何兼容运行须独立资源及合法 scope 门槛。未来累计≤180秒（至少20秒清理）、单PG+单Chrome、证据≤8MiB、0provider。失败启动也计时并保留；任意 history/清理失败禁止生成可发布全绿 report。
 - 已知362 history producer的附件来源缺口保持原样，先实际验证并报告，不导入 cde 修复、不禁用观察。source scopes 仅两新 test + 此 plan/evidence。
 

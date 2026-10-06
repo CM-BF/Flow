@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:53:08 UTC |
+| 最近更新时间 | 2026-10-06 14:55:16 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / f333eddfb5bec76453e78a08fe76d182998a15d9 |
-| 工作树dirty状态 | 产品脚本已固定f333；本次仅manifest/review/status待提交，实际提交后clean另核 |
+| 工作树dirty状态 | 本次安全点：原f333基础新增A-only门禁与文档，提交后实际clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN；仅实际领取/固定输入核验 |
@@ -19,7 +19,7 @@
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新前端的兼容验证脚本已固定，等待受控检查与运行 |
+| 当前产出 | 兼容脚本已准备先验证附件历史，失败会停止后续页面验证 |
 | 下一可用交付 | 给出新前端与现有后台的真实兼容结果 |
 | 当前阻塞 | ACTIVE: 脚本仍待定向检查与运行资源准入，尚无兼容结果 |
 | 需用户决定 | NONE |
@@ -42,3 +42,7 @@
 ## 当前来源与轻量准入
 
 首canonical422d0fba已normal push并核local=remote。两脚本当前只做作者源码审查，未执行。17links本人live核v2后按原proposal建立并逐一realpath/hash核验，14:46:27.857Z用时20.132ms，errors=[]；管理14:47:08.816Z收窄v3回原四scope。0产品import/types/install/build/PG/Chrome/provider。X01先行小运行窗口，后续需其结束回执与fresh资源准入；不自行轮询或开跑。详见[README](../../docs/evidence/wpf-release03/README.md)。
+
+## A-only 后继裁决
+
+本次先固定 history-only 入口供独审，仍无运行授权。两项exact362 HTTP attachment-only/mixed都保原始结果，任一失败禁止启动Chrome；A全绿但B未准入则封存，不能发布或后台续跑。180秒累计/8MiB/单专库/0provider不变。先前f333是原全矩阵准备checkpoint，无执行结果；新target以本段提交记录为准。
