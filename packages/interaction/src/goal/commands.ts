@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { goalCommandSchema } from '../../../contracts/src/goals.js';
 import { projectCommandSchema } from '../../../contracts/src/projects.js';
+import { harnessSchema } from '../../../contracts/src/harnesses.js';
 import { decisionSchema, idSchema } from '../../../contracts/src/tasks.js';
 import type { GoalIntent, GoalSessionCommand, GoalSessionPort, GoalCommandReceipt } from './types.js';
 
@@ -26,7 +27,7 @@ export function dispatch(client: GoalSessionPort, intent: GoalIntent, signal: Ab
   }
 }
 const id = z.string().min(1).max(128);
-const taskReceipt = z.object({ id, title: z.string(), harness: z.string(), status: z.enum(['queued', 'running', 'waiting', 'cancel_requested', 'succeeded', 'failed', 'cancelled', 'uncertain']), verificationStatus: z.enum(['pending', 'passed', 'failed']), createdAt: z.string(), updatedAt: z.string() });
+const taskReceipt = z.object({ id, title: z.string(), harness: harnessSchema, status: z.enum(['queued', 'running', 'waiting', 'cancel_requested', 'succeeded', 'failed', 'cancelled', 'uncertain']), verificationStatus: z.enum(['pending', 'passed', 'failed']), createdAt: z.string(), updatedAt: z.string() });
 const goalReceipt = z.object({ goalId: id, nodeId: id, changed: z.boolean(), replayed: z.boolean(), inputVersion: z.number().int().positive().optional(), executionId: id.optional(), task: taskReceipt.optional(), delivery: z.object({ nodeId: id, executionId: id }).passthrough().optional(), explanation: z.object({ version: z.number().int().positive(), kind: z.string(), text: z.string(), createdAt: z.string(), source: z.object({ nodeId: id.optional(), inputVersion: z.number().int().positive().optional(), executionId: id.optional() }) }) });
 /** Receipt validation is deliberately separate from server validity/authorization: it checks transport identity only. */
 export function checkReceipt(intent: GoalIntent, value: unknown): void {
@@ -38,8 +39,12 @@ export function checkReceipt(intent: GoalIntent, value: unknown): void {
     if (input.kind === 'execute' && (!r.executionId || !r.task || r.task.harness !== 'fixture' || r.explanation.source.executionId !== r.executionId || r.explanation.source.inputVersion !== input.expectedInputVersion)) throw Error('Execution receipt identity mismatch.');
     if (input.kind === 'accept-delivery' && (r.delivery?.executionId !== input.executionId || r.delivery?.nodeId !== input.nodeId || r.explanation.source.executionId !== input.executionId)) throw Error('Delivery receipt identity mismatch.');
   } else if (c.kind === 'project') {
-    const r = z.object({ snapshot: z.object({ project: z.object({ id, revision: z.number().int().positive() }), graph: z.object({ revision: z.number().int().positive(), nodes: z.array(z.unknown()).max(200) }) }), changedNodeId: id.nullable(), replayed: z.boolean() }).parse(value);
-    if (r.snapshot.project.id !== intent.projectId || r.snapshot.graph.revision !== r.snapshot.project.revision || (r.snapshot.project.revision !== c.input.expectedRevision && r.snapshot.project.revision !== c.input.expectedRevision + 1)) throw Error('Project receipt identity mismatch.');
+    const r = z.object({ snapshot: z.object({ project: z.object({ id, revision: z.number().int().positive() }), graph: z.object({ revision: z.number().int().positive(), nodes: z.array(z.object({ id })).max(200) }) }), changedNodeId: id.nullable(), replayed: z.boolean() }).parse(value);
+    if (r.snapshot.project.id !== intent.projectId || r.snapshot.graph.revision !== r.snapshot.project.revision || r.snapshot.project.revision !== c.input.expectedRevision + 1) throw Error('Project receipt identity mismatch.');
+    const change = c.input.change;
+    if (!r.changedNodeId || (change.kind !== 'add-node' && r.changedNodeId !== change.nodeId)) throw Error('Project mutation identity mismatch.');
+    const present = r.snapshot.graph.nodes.some(node => node.id === r.changedNodeId);
+    if (present !== (change.kind !== 'remove-node')) throw Error('Project mutation result mismatch.');
   } else if (taskReceipt.parse(value).id !== c.taskId) throw Error('Task receipt identity mismatch.');
 }
 export function parseCommand(command: GoalSessionCommand) { return sessionCommandSchema.parse(command); }

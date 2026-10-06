@@ -80,3 +80,9 @@ it('does not let an earlier observation repopulate state after a related plan ch
   await observation;
   expect(c.snapshot().state).toBeNull(); expect(c.snapshot().plan!.nodes[0]!.title).toBe('A'); await c.dispose();
 });
+it('keeps an unchanged project snapshot with no mutation identity as an unknown ACK', async () => {
+  const c = control(port({ async changeProject() { return { snapshot: { project: { id: plan.projectId, revision: 1 }, graph: { revision: 1, nodes: [] } }, changedNodeId: null, replayed: false } as any; } }));
+  await c.initialize();
+  const result = await c.command({ kind: 'project', input: { expectedRevision: 1, reason: 'Explicit graph change', change: { kind: 'add-node', title: 'B', parent: null, taskId: null } } });
+  expect(result.state).toBe('unknown'); expect(c.snapshot().intent).not.toBeNull(); await c.dispose();
+});
