@@ -10,8 +10,8 @@
 
 ## TODO
 
-- [ ] RENDERERI01-01：绑定session/本pane真实message-turn-task身份与P01内建renderer，visible/close/epoch失效。
-- [ ] RENDERERI01-02：真实App按需读取、双分屏/隐藏恢复/草稿/disabled fallback及发送回归。
+- [x] RENDERERI01-01：绑定session/本pane真实message-turn-task身份与P01内建renderer，visible/close/epoch失效。
+- [x] RENDERERI01-02：真实App按需读取、双分屏/隐藏恢复/草稿/disabled fallback及发送回归。
 - [ ] RENDERERI01-03：固定实现与证据，独立review、修复、交主Lead集成。
 
 验收：0初始detail→展开1→cache0；同ID跨中心迟到、错误message/turn、隐藏后的旧callback拒绝；隐藏不影响另pane/共享插件，resume不自动GET。真实App nativehidden与独立模块Activity证据分开。送出/Enter/queue intent/onNew/isSendDisabled、同revision正文/history/running变化不被converter稳定化冻结。局部模块与直接消费检查，HTTPfixture双主题390键盘；0真实模型/产品数据库。
