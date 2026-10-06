@@ -1,0 +1,362 @@
+{
+  "observedAt": "2026-10-06T06:45:27Z",
+  "fixedMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+  "implementation": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+  "headBeforeMetadata": "083978b318ede4bb1cabb5050f8d211b17bb9055",
+  "dirtyBeforeMetadata": false,
+  "targetIsAncestor": true,
+  "retainedImplementationPaths": [
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/conversations/conversations.css",
+    "apps/web/src/conversations/messages.ts",
+    "apps/web/test/conversation.browser.ts",
+    "apps/web/test/conversation.fixture.ts"
+  ],
+  "retainedPathsMatch": true,
+  "historicalFullScopeMayDiffer": "Successor tasks own transferred files; this does not reapprove their changes.",
+  "claimBeforeRelease": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversations/ConversationList.tsx",
+      "apps/web/src/conversations/conversations.css",
+      "apps/web/src/conversations/messages.ts",
+      "apps/web/test/conversation.browser.ts",
+      "apps/web/test/conversation.fixture.ts",
+      "docs/evidence/wpf-chat01",
+      "plans/wpf-chat01-conversations"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversations",
+    "origin": "new",
+    "taskId": "WPF-CHAT01",
+    "worker": "workspace_panels_owner",
+    "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+    "version": 6,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+    "createdAt": "2026-10-06T03:35:00.744Z",
+    "updatedAt": "2026-10-06T06:23:59.268Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "dashboard": {
+    "sourcePath": "/tmp/flow-wpf-deployed77-snapshot.json",
+    "sourceSha256": "68b34bf76dcd26c729fcd939fd8f22ecfd74627df58d5f00eda5988e2f93f033",
+    "generatedAt": "2026-10-06T06:36:34.965Z",
+    "task": {
+      "id": "WPF-CHAT01",
+      "title": "产品持续对话",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+      "branch": "codex/web-conversations",
+      "planDir": "plans/wpf-chat01-conversations",
+      "evidenceDir": "docs/evidence/wpf-chat01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T04:20:57.307Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 2.2763791666666666
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-conversations",
+        "head": "083978b318ede4bb1cabb5050f8d211b17bb9055",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "unknown",
+            "source": "legacy"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "首批最小持续对话已独审通过并集成main；CHAT-R1/R2已关闭，14实现/测试路径与已审交付一致",
+          "next": "MainLead完成两次真实模型query并回传证据；capfalse后继由Lead继续排期，63743继续保留",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+          "scopes": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+            "apps/web/src/conversations/ConversationList.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/conversations.css",
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation.browser.ts",
+            "apps/web/test/conversation.fixture.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-CHAT01",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/web-conversations",
+        "branchState": "APPROVED（首批最小持续对话）；后继capability需求仍pending",
+        "updatedAt": "2026-10-06T04:20:00.000Z",
+        "updatedRecord": "2026-10-06 04:20 UTC / origin/main dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；3319122为祖先，14实现/测试路径零diff",
+        "todos": [
+          {
+            "id": "WPF-CHAT01-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[输入](../../docs/evidence/wpf-chat01/inputs.md)、正式receipt；公共输入Lead原样patch/hash已核通过"
+          },
+          {
+            "id": "WPF-CHAT01-02",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "首批实现与作者检查/独立review完成；[验证](../../docs/evidence/wpf-chat01/validation.md)，真实模型由Lead验证"
+          },
+          {
+            "id": "WPF-CHAT01-03",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "首合同controls能力false，后继实际控件待合同"
+          },
+          {
+            "id": "WPF-CHAT01-04",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "首批typed reply lazy已接且0→1→cache通过；真实tool/thinking后继仍pending"
+          },
+          {
+            "id": "WPF-CHAT01-05",
+            "state": "pending",
+            "owner": "后继由Lead派发",
+            "evidence": "queue/steer能力false，完整需求保留"
+          },
+          {
+            "id": "WPF-CHAT01-06",
+            "state": "pending",
+            "owner": "后继由Lead派发",
+            "evidence": "无语音/转写服务，不暗接"
+          },
+          {
+            "id": "WPF-CHAT01-07",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "固定7cb独立APPROVED且main dd1b9集成已核；[启动交接](../../docs/evidence/wpf-chat01/README.md)已交，真实两query待Lead证据"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "I01最终b5844442699733558a152c12392ea78f26c393a4 / 合同cherry-pick bac6a6efe6fa4866bac4d777ee61b703a0e2c7e3；Lead精确compat输入a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0；typed输入746364ea2581b8c563a09b07560de5e0b63bcab8；首实现84242ca1d214f9a9ff369b07c13657918862f226 / 最终7cbabb737f26b108275e80f1b6cd0425699f3c18，含0d4e outbox；metadata HEAD由Git聚合",
+        "declaredDirty": "共享冲突按Lead指令解除，输入已独立提交；实现已固定提交并冻结；实现范围clean；本次仅自有metadata/证据更新，实际dirty由Git聚合核验；未覆盖/重置/手改共享",
+        "checks": {
+          "state": "passed",
+          "target": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+          "record": "PASSED 7cbabb737f26b108275e80f1b6cd0425699f3c18; 本修复projection16+outbox9/typecheck PASS；先前842的33direct/dev11/production11+局部1证据分别保留，未冒充全重跑；真实模型未跑"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED，target 7cbabb737f26b108275e80f1b6cd0425699f3c18；842原R1/R2已CLOSED",
+        "mainRecord": "INTEGRATED dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；04:20 UTC核origin/main包含metadata3319122，14实现/测试路径零diff；集成由MainLead完成，本owner未merge",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+        "proof": {
+          "target": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+          "head": "083978b318ede4bb1cabb5050f8d211b17bb9055",
+          "scopes": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+            "apps/web/src/conversations/ConversationList.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/conversations.css",
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation.browser.ts",
+            "apps/web/test/conversation.fixture.ts"
+          ],
+          "observedAt": "2026-10-06T06:36:35.954Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/wpf-chat01/README.md",
+            "docs/evidence/wpf-chat01/main-integration-observation.json",
+            "docs/evidence/wpf-chat01/quality.md",
+            "docs/evidence/wpf-chat01/validation.md",
+            "plans/wpf-chat01-conversations/review.md",
+            "plans/wpf-chat01-conversations/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "implementationProof": {
+        "target": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+        "head": "083978b318ede4bb1cabb5050f8d211b17bb9055",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationList.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/conversations.css",
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation.browser.ts",
+          "apps/web/test/conversation.fixture.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.954Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-chat01/README.md",
+          "docs/evidence/wpf-chat01/main-integration-observation.json",
+          "docs/evidence/wpf-chat01/quality.md",
+          "docs/evidence/wpf-chat01/validation.md",
+          "plans/wpf-chat01-conversations/review.md",
+          "plans/wpf-chat01-conversations/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-chat01-conversations/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-chat01-conversations/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-chat01-conversations/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-chat01/take-receipt.json",
+          "title": "take receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat01/inputs.md",
+          "title": "输入记录",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat01/validation.md",
+          "title": "验证",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat01/README.md",
+          "title": "启动交接",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat01/dashboard-observation.json",
+          "title": "摘录",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat01/main-integration-observation.json",
+          "title": "机器摘录",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 7
+      },
+      "main": {
+        "record": "INTEGRATED dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；04:20 UTC核origin/main包含metadata3319122，14实现/测试路径零diff；集成由MainLead完成，本owner未merge",
+        "recordedHead": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
+        "target": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationList.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/conversations.css",
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation.browser.ts",
+          "apps/web/test/conversation.fixture.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": false,
+        "historicalIntegrated": true,
+        "method": "ancestor-changed",
+        "scopeEqual": false,
+        "dirtyScopePaths": [],
+        "reason": "历史已合入；当前声明范围已有变化或未提交内容，需核验后继实现，不判断新实现失效"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversations/ConversationList.tsx",
+            "apps/web/src/conversations/conversations.css",
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/test/conversation.browser.ts",
+            "apps/web/test/conversation.fixture.ts",
+            "docs/evidence/wpf-chat01",
+            "plans/wpf-chat01-conversations"
+          ],
+          "state": "active",
+          "branch": "codex/web-conversations",
+          "origin": "new",
+          "taskId": "WPF-CHAT01",
+          "worker": "workspace_panels_owner",
+          "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+          "version": 6,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+          "createdAt": "2026-10-06T03:35:00.744Z",
+          "updatedAt": "2026-10-06T06:23:59.268Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    }
+  },
+  "limits": "Metadata closeout only; no product tests, new API fetch, model calls, or service operations. Remaining successor TODOs are not marked complete."
+}
