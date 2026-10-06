@@ -1,0 +1,5175 @@
+{
+  "format": 1,
+  "startedAt": "2026-10-06T04:43:41.568Z",
+  "finishedAt": "2026-10-06T04:43:49.447Z",
+  "elapsedMs": 7878.289167,
+  "node": "v24.20.0",
+  "platform": "darwin",
+  "osRelease": "25.6.0",
+  "cpu": "Apple M3 Max",
+  "sourceHashes": {
+    "host.mjs": "679384c39b54f5594a1cd62c6d8468256e39d4cfc5d57e71cb5546847f75932f",
+    "host.test.mjs": "b9bcd002655d25607197ac01f11815f75c967708723bf23d2822d63ec13610a0",
+    "run.mjs": "34b26d7ecd00997e367166aed75f10d9b6b0d41c73e4b03d8a32de9ae21ebbc3",
+    "worker.mjs": "18894f87bc9f778a5c52df8a9e89de75d3596abf662d09531bdffea802fd74f0"
+  },
+  "repetitionsRequested": 20,
+  "counts": [
+    1,
+    10,
+    100
+  ],
+  "originalByteLimit": 20971520,
+  "originalBytesTotal": 8265090,
+  "modelCalls": 0,
+  "summarySource": "fixed-handwritten",
+  "samples": [
+    {
+      "sessions": 1,
+      "repetition": 0,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90862,
+        "metrics": {
+          "create": {
+            "wallMs": 0.39741700000000435,
+            "cpuUserMs": 0.336,
+            "cpuSystemMs": 0.055,
+            "rssBeforeBytes": 54738944,
+            "rssAfterBytes": 55033856
+          },
+          "compressAndStore": {
+            "wallMs": 4.018124999999998,
+            "cpuUserMs": 4.301,
+            "cpuSystemMs": 0.337,
+            "rssBeforeBytes": 55033856,
+            "rssAfterBytes": 55754752
+          },
+          "retrieve": {
+            "wallMs": 0.11729100000000159,
+            "cpuUserMs": 0.134,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55754752,
+            "rssAfterBytes": 55754752
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.7733750000000015,
+            "cpuUserMs": 0.918,
+            "cpuSystemMs": 0.593,
+            "rssBeforeBytes": 55754752,
+            "rssAfterBytes": 56721408
+          }
+        },
+        "peakRssBytes": 56721408,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "1b5f88fcb95c1b31cbb2ed66472e94806fc159b8229b29a8b653dc95a4d42771",
+        "snapshotDigest": "63d8d4c655437b2f921ee8d88d140ca0d0cbf1528aa18eab6f8a095da60d1a77",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 60.462292000000005
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90863,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2517089999999982,
+            "cpuUserMs": 1.073,
+            "cpuSystemMs": 0.207,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 55492608
+          },
+          "resumeProjection": {
+            "wallMs": 2.0898749999999993,
+            "cpuUserMs": 2.118,
+            "cpuSystemMs": 0.067,
+            "rssBeforeBytes": 55492608,
+            "rssAfterBytes": 55771136
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.2644590000000022,
+            "cpuUserMs": 0.29,
+            "cpuSystemMs": 0.033,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 55934976
+          }
+        },
+        "peakRssBytes": 55934976,
+        "verifiedRefs": 4,
+        "originalDigest": "1b5f88fcb95c1b31cbb2ed66472e94806fc159b8229b29a8b653dc95a4d42771",
+        "forks": 1,
+        "processWallMs": 54.901458000000005
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 1,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90864,
+        "metrics": {
+          "create": {
+            "wallMs": 0.3706250000000004,
+            "cpuUserMs": 0.327,
+            "cpuSystemMs": 0.038,
+            "rssBeforeBytes": 54689792,
+            "rssAfterBytes": 54968320
+          },
+          "compressAndStore": {
+            "wallMs": 3.6674159999999993,
+            "cpuUserMs": 3.823,
+            "cpuSystemMs": 0.148,
+            "rssBeforeBytes": 54968320,
+            "rssAfterBytes": 55623680
+          },
+          "retrieve": {
+            "wallMs": 0.11154200000000003,
+            "cpuUserMs": 0.123,
+            "cpuSystemMs": 0.005,
+            "rssBeforeBytes": 55640064,
+            "rssAfterBytes": 55640064
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.037124999999996,
+            "cpuUserMs": 0.933,
+            "cpuSystemMs": 0.523,
+            "rssBeforeBytes": 55640064,
+            "rssAfterBytes": 56573952
+          }
+        },
+        "peakRssBytes": 56606720,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "0c2119e0769636681062fbfe21829cde6cda1d346b2672b412638a3bdd15f909",
+        "snapshotDigest": "6a3f53248ad19d4cdc32e0917bb486f9fa6872cca5b3148722950077743a8566",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.72995899999998
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90865,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2617089999999962,
+            "cpuUserMs": 1.042,
+            "cpuSystemMs": 0.264,
+            "rssBeforeBytes": 54984704,
+            "rssAfterBytes": 55640064
+          },
+          "resumeProjection": {
+            "wallMs": 1.8829999999999956,
+            "cpuUserMs": 1.927,
+            "cpuSystemMs": 0.046,
+            "rssBeforeBytes": 55640064,
+            "rssAfterBytes": 55885824
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.23991699999999838,
+            "cpuUserMs": 0.268,
+            "cpuSystemMs": 0.027,
+            "rssBeforeBytes": 55885824,
+            "rssAfterBytes": 56082432
+          }
+        },
+        "peakRssBytes": 56082432,
+        "verifiedRefs": 4,
+        "originalDigest": "0c2119e0769636681062fbfe21829cde6cda1d346b2672b412638a3bdd15f909",
+        "forks": 1,
+        "processWallMs": 54.15641700000003
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 2,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90866,
+        "metrics": {
+          "create": {
+            "wallMs": 0.43729199999999935,
+            "cpuUserMs": 0.368,
+            "cpuSystemMs": 0.063,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 55115776
+          },
+          "compressAndStore": {
+            "wallMs": 3.9349580000000017,
+            "cpuUserMs": 4.132,
+            "cpuSystemMs": 0.17,
+            "rssBeforeBytes": 55115776,
+            "rssAfterBytes": 55721984
+          },
+          "retrieve": {
+            "wallMs": 0.11675000000000324,
+            "cpuUserMs": 0.126,
+            "cpuSystemMs": 0.003,
+            "rssBeforeBytes": 55721984,
+            "rssAfterBytes": 55721984
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9655830000000023,
+            "cpuUserMs": 0.892,
+            "cpuSystemMs": 0.484,
+            "rssBeforeBytes": 55738368,
+            "rssAfterBytes": 56721408
+          }
+        },
+        "peakRssBytes": 56721408,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "0c26d2d5fbc4bb178a127bca81af436b582ebc0fff33185237f49651770deab1",
+        "snapshotDigest": "2725d975246462b72c9fca3abb2b7a756bf9bd4575d0f2ff424bb2eb3bdab042",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 56.15629100000001
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90867,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2282079999999986,
+            "cpuUserMs": 1.057,
+            "cpuSystemMs": 0.205,
+            "rssBeforeBytes": 54935552,
+            "rssAfterBytes": 55492608
+          },
+          "resumeProjection": {
+            "wallMs": 1.9490829999999981,
+            "cpuUserMs": 1.957,
+            "cpuSystemMs": 0.078,
+            "rssBeforeBytes": 55492608,
+            "rssAfterBytes": 55787520
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.2598339999999979,
+            "cpuUserMs": 0.282,
+            "cpuSystemMs": 0.032,
+            "rssBeforeBytes": 55787520,
+            "rssAfterBytes": 55951360
+          }
+        },
+        "peakRssBytes": 55951360,
+        "verifiedRefs": 4,
+        "originalDigest": "0c26d2d5fbc4bb178a127bca81af436b582ebc0fff33185237f49651770deab1",
+        "forks": 1,
+        "processWallMs": 54.23891600000002
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 3,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90868,
+        "metrics": {
+          "create": {
+            "wallMs": 0.42545800000000256,
+            "cpuUserMs": 0.372,
+            "cpuSystemMs": 0.045,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 55099392
+          },
+          "compressAndStore": {
+            "wallMs": 3.693125000000002,
+            "cpuUserMs": 3.878,
+            "cpuSystemMs": 0.141,
+            "rssBeforeBytes": 55099392,
+            "rssAfterBytes": 55754752
+          },
+          "retrieve": {
+            "wallMs": 0.1112499999999983,
+            "cpuUserMs": 0.124,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 55771136
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9340840000000057,
+            "cpuUserMs": 0.881,
+            "cpuSystemMs": 0.459,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 56754176
+          }
+        },
+        "peakRssBytes": 56770560,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "fe52b4fd99f712a760357b2f57329afa6ea1171de3b49db1db8eb581dfe1ffd0",
+        "snapshotDigest": "976307d5b52c6b3d945250996f1ab0aa08bd6bbf69b4985cb4f8a7b56fd7140a",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 56.185833
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90869,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.4410000000000025,
+            "cpuUserMs": 1.214,
+            "cpuSystemMs": 0.288,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 55476224
+          },
+          "resumeProjection": {
+            "wallMs": 2.0820420000000013,
+            "cpuUserMs": 2.072,
+            "cpuSystemMs": 0.105,
+            "rssBeforeBytes": 55476224,
+            "rssAfterBytes": 55754752
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.27250000000000085,
+            "cpuUserMs": 0.283,
+            "cpuSystemMs": 0.046,
+            "rssBeforeBytes": 55754752,
+            "rssAfterBytes": 55951360
+          }
+        },
+        "peakRssBytes": 55967744,
+        "verifiedRefs": 4,
+        "originalDigest": "fe52b4fd99f712a760357b2f57329afa6ea1171de3b49db1db8eb581dfe1ffd0",
+        "forks": 1,
+        "processWallMs": 55.308040999999946
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 4,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90870,
+        "metrics": {
+          "create": {
+            "wallMs": 0.359416999999997,
+            "cpuUserMs": 0.319,
+            "cpuSystemMs": 0.035,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 55066624
+          },
+          "compressAndStore": {
+            "wallMs": 3.8580419999999975,
+            "cpuUserMs": 4.042,
+            "cpuSystemMs": 0.152,
+            "rssBeforeBytes": 55066624,
+            "rssAfterBytes": 55754752
+          },
+          "retrieve": {
+            "wallMs": 0.13504199999999855,
+            "cpuUserMs": 0.145,
+            "cpuSystemMs": 0.005,
+            "rssBeforeBytes": 55754752,
+            "rssAfterBytes": 55771136
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9716660000000061,
+            "cpuUserMs": 0.902,
+            "cpuSystemMs": 0.495,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 56754176
+          }
+        },
+        "peakRssBytes": 56770560,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "47ca9e920a01b5d1a0c2e85b76411d2a7fab24c48fa87ee38403fc67a912c8fd",
+        "snapshotDigest": "bf2d3d71d769d46d4d7b46d258f2b067fe8870be882384efb16fa3f5cd1e4765",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 56.622667000000035
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90871,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.1914590000000018,
+            "cpuUserMs": 1.016,
+            "cpuSystemMs": 0.216,
+            "rssBeforeBytes": 54951936,
+            "rssAfterBytes": 55541760
+          },
+          "resumeProjection": {
+            "wallMs": 1.895666999999996,
+            "cpuUserMs": 1.931,
+            "cpuSystemMs": 0.031,
+            "rssBeforeBytes": 55541760,
+            "rssAfterBytes": 55787520
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.24533299999999514,
+            "cpuUserMs": 0.28,
+            "cpuSystemMs": 0.034,
+            "rssBeforeBytes": 55787520,
+            "rssAfterBytes": 55967744
+          }
+        },
+        "peakRssBytes": 55967744,
+        "verifiedRefs": 4,
+        "originalDigest": "47ca9e920a01b5d1a0c2e85b76411d2a7fab24c48fa87ee38403fc67a912c8fd",
+        "forks": 1,
+        "processWallMs": 55.67312500000003
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 5,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90872,
+        "metrics": {
+          "create": {
+            "wallMs": 0.5485840000000017,
+            "cpuUserMs": 0.401,
+            "cpuSystemMs": 0.085,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 55148544
+          },
+          "compressAndStore": {
+            "wallMs": 3.788332999999998,
+            "cpuUserMs": 3.993,
+            "cpuSystemMs": 0.12,
+            "rssBeforeBytes": 55164928,
+            "rssAfterBytes": 55787520
+          },
+          "retrieve": {
+            "wallMs": 0.1130409999999955,
+            "cpuUserMs": 0.123,
+            "cpuSystemMs": 0.003,
+            "rssBeforeBytes": 55787520,
+            "rssAfterBytes": 55803904
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9574580000000026,
+            "cpuUserMs": 0.862,
+            "cpuSystemMs": 0.506,
+            "rssBeforeBytes": 55803904,
+            "rssAfterBytes": 56819712
+          }
+        },
+        "peakRssBytes": 56836096,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "988444044eab8d3ffe674e7e25062a92b002aabea098637f9e20ddf5efb946be",
+        "snapshotDigest": "724c734825ca44203433df50ff91f955cfc478515e373b0a9c9463ff232dbb3d",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 56.09054100000003
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90873,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2546250000000008,
+            "cpuUserMs": 1.046,
+            "cpuSystemMs": 0.252,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 55443456
+          },
+          "resumeProjection": {
+            "wallMs": 2.0672090000000054,
+            "cpuUserMs": 2.114,
+            "cpuSystemMs": 0.119,
+            "rssBeforeBytes": 55443456,
+            "rssAfterBytes": 55721984
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.2725409999999968,
+            "cpuUserMs": 0.288,
+            "cpuSystemMs": 0.043,
+            "rssBeforeBytes": 55721984,
+            "rssAfterBytes": 55934976
+          }
+        },
+        "peakRssBytes": 55951360,
+        "verifiedRefs": 4,
+        "originalDigest": "988444044eab8d3ffe674e7e25062a92b002aabea098637f9e20ddf5efb946be",
+        "forks": 1,
+        "processWallMs": 54.92929199999992
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 6,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90874,
+        "metrics": {
+          "create": {
+            "wallMs": 0.3609580000000001,
+            "cpuUserMs": 0.318,
+            "cpuSystemMs": 0.037,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 55148544
+          },
+          "compressAndStore": {
+            "wallMs": 3.630541000000001,
+            "cpuUserMs": 3.82,
+            "cpuSystemMs": 0.119,
+            "rssBeforeBytes": 55164928,
+            "rssAfterBytes": 55771136
+          },
+          "retrieve": {
+            "wallMs": 0.109375,
+            "cpuUserMs": 0.121,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55787520,
+            "rssAfterBytes": 55787520
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9414999999999978,
+            "cpuUserMs": 0.88,
+            "cpuSystemMs": 0.446,
+            "rssBeforeBytes": 55787520,
+            "rssAfterBytes": 56803328
+          }
+        },
+        "peakRssBytes": 56803328,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "2ce9907c84ce76e11e4d2fc363d1d7b305f02dc8f150bd492a1c01d4d12d9362",
+        "snapshotDigest": "346a12c8b0ef28a94752080e68e0c1a9a9f1469c8af1f1d838753915ed4fa405",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 56.55779199999995
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90875,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.1927079999999997,
+            "cpuUserMs": 1.017,
+            "cpuSystemMs": 0.209,
+            "rssBeforeBytes": 54902784,
+            "rssAfterBytes": 55525376
+          },
+          "resumeProjection": {
+            "wallMs": 1.887042000000001,
+            "cpuUserMs": 1.934,
+            "cpuSystemMs": 0.044,
+            "rssBeforeBytes": 55525376,
+            "rssAfterBytes": 55803904
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.24208299999999383,
+            "cpuUserMs": 0.269,
+            "cpuSystemMs": 0.028,
+            "rssBeforeBytes": 55803904,
+            "rssAfterBytes": 56016896
+          }
+        },
+        "peakRssBytes": 56016896,
+        "verifiedRefs": 4,
+        "originalDigest": "2ce9907c84ce76e11e4d2fc363d1d7b305f02dc8f150bd492a1c01d4d12d9362",
+        "forks": 1,
+        "processWallMs": 55.16137500000002
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 7,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90876,
+        "metrics": {
+          "create": {
+            "wallMs": 0.3574160000000006,
+            "cpuUserMs": 0.313,
+            "cpuSystemMs": 0.038,
+            "rssBeforeBytes": 54951936,
+            "rssAfterBytes": 55246848
+          },
+          "compressAndStore": {
+            "wallMs": 3.850916999999999,
+            "cpuUserMs": 4.011,
+            "cpuSystemMs": 0.185,
+            "rssBeforeBytes": 55246848,
+            "rssAfterBytes": 55885824
+          },
+          "retrieve": {
+            "wallMs": 0.11320899999999767,
+            "cpuUserMs": 0.124,
+            "cpuSystemMs": 0.003,
+            "rssBeforeBytes": 55885824,
+            "rssAfterBytes": 55885824
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9360420000000005,
+            "cpuUserMs": 0.86,
+            "cpuSystemMs": 0.469,
+            "rssBeforeBytes": 55885824,
+            "rssAfterBytes": 56885248
+          }
+        },
+        "peakRssBytes": 56885248,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "86b81a2f10d90dd816e98af479de6157414d38db84dfbc7acdba83e97a7b589c",
+        "snapshotDigest": "f882a2d742c0e8c16dd911ba2528573f66ad615ef5ebbd31a60a4eeb1ac5c67f",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.135625000000005
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90877,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.181207999999998,
+            "cpuUserMs": 1.006,
+            "cpuSystemMs": 0.219,
+            "rssBeforeBytes": 54738944,
+            "rssAfterBytes": 55312384
+          },
+          "resumeProjection": {
+            "wallMs": 1.907625000000003,
+            "cpuUserMs": 1.951,
+            "cpuSystemMs": 0.052,
+            "rssBeforeBytes": 55312384,
+            "rssAfterBytes": 55574528
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.26849999999999596,
+            "cpuUserMs": 0.273,
+            "cpuSystemMs": 0.049,
+            "rssBeforeBytes": 55574528,
+            "rssAfterBytes": 55754752
+          }
+        },
+        "peakRssBytes": 55754752,
+        "verifiedRefs": 4,
+        "originalDigest": "86b81a2f10d90dd816e98af479de6157414d38db84dfbc7acdba83e97a7b589c",
+        "forks": 1,
+        "processWallMs": 53.81887500000005
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 8,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90878,
+        "metrics": {
+          "create": {
+            "wallMs": 0.4245000000000019,
+            "cpuUserMs": 0.376,
+            "cpuSystemMs": 0.042,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 55181312
+          },
+          "compressAndStore": {
+            "wallMs": 3.781333,
+            "cpuUserMs": 3.968,
+            "cpuSystemMs": 0.159,
+            "rssBeforeBytes": 55181312,
+            "rssAfterBytes": 55803904
+          },
+          "retrieve": {
+            "wallMs": 0.1110000000000042,
+            "cpuUserMs": 0.123,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55803904,
+            "rssAfterBytes": 55803904
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9411249999999995,
+            "cpuUserMs": 0.883,
+            "cpuSystemMs": 0.453,
+            "rssBeforeBytes": 55803904,
+            "rssAfterBytes": 56819712
+          }
+        },
+        "peakRssBytes": 56819712,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "f68e10983b87b03ef77d1a08648ac7c154750a850cd002f1b891e2b109a47edf",
+        "snapshotDigest": "9cdac79b4911f3a0d6371311b98f40b3b09a1a5c48cf9197fd32fa602388f7fe",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 56.376542000000086
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90879,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.1922500000000014,
+            "cpuUserMs": 1.023,
+            "cpuSystemMs": 0.223,
+            "rssBeforeBytes": 54788096,
+            "rssAfterBytes": 55394304
+          },
+          "resumeProjection": {
+            "wallMs": 2.124500000000001,
+            "cpuUserMs": 2.141,
+            "cpuSystemMs": 0.115,
+            "rssBeforeBytes": 55394304,
+            "rssAfterBytes": 55672832
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.2646249999999952,
+            "cpuUserMs": 0.292,
+            "cpuSystemMs": 0.027,
+            "rssBeforeBytes": 55672832,
+            "rssAfterBytes": 55820288
+          }
+        },
+        "peakRssBytes": 55820288,
+        "verifiedRefs": 4,
+        "originalDigest": "f68e10983b87b03ef77d1a08648ac7c154750a850cd002f1b891e2b109a47edf",
+        "forks": 1,
+        "processWallMs": 54.702584
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 9,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90880,
+        "metrics": {
+          "create": {
+            "wallMs": 0.3847909999999999,
+            "cpuUserMs": 0.34,
+            "cpuSystemMs": 0.039,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 55164928
+          },
+          "compressAndStore": {
+            "wallMs": 3.6160840000000007,
+            "cpuUserMs": 3.821,
+            "cpuSystemMs": 0.074,
+            "rssBeforeBytes": 55164928,
+            "rssAfterBytes": 55754752
+          },
+          "retrieve": {
+            "wallMs": 0.12266600000000238,
+            "cpuUserMs": 0.163,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 55771136
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9259169999999983,
+            "cpuUserMs": 0.869,
+            "cpuSystemMs": 0.453,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 56770560
+          }
+        },
+        "peakRssBytes": 56770560,
+        "rawBytes": 3707,
+        "visibleBytes": 1051,
+        "serializedBytes": 11278,
+        "retrievedBytes": 2920,
+        "originalDigest": "e2b56e0980f98e78b5f67226ff725e3066802c7757ee43f94d18a80fe35a9b2d",
+        "snapshotDigest": "4842f70ff4f8a0de988e50f840297e626c51fe47a5f415cabf31817d794b943f",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.989249999999856
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90881,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.5263339999999985,
+            "cpuUserMs": 1.332,
+            "cpuSystemMs": 0.249,
+            "rssBeforeBytes": 55738368,
+            "rssAfterBytes": 56328192
+          },
+          "resumeProjection": {
+            "wallMs": 2.205207999999999,
+            "cpuUserMs": 2.252,
+            "cpuSystemMs": 0.067,
+            "rssBeforeBytes": 56328192,
+            "rssAfterBytes": 56606720
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.31345799999999713,
+            "cpuUserMs": 0.338,
+            "cpuSystemMs": 0.051,
+            "rssBeforeBytes": 56606720,
+            "rssAfterBytes": 56819712
+          }
+        },
+        "peakRssBytes": 56819712,
+        "verifiedRefs": 4,
+        "originalDigest": "e2b56e0980f98e78b5f67226ff725e3066802c7757ee43f94d18a80fe35a9b2d",
+        "forks": 1,
+        "processWallMs": 58.873124999999845
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 10,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90884,
+        "metrics": {
+          "create": {
+            "wallMs": 0.42029200000000344,
+            "cpuUserMs": 0.358,
+            "cpuSystemMs": 0.056,
+            "rssBeforeBytes": 55115776,
+            "rssAfterBytes": 55410688
+          },
+          "compressAndStore": {
+            "wallMs": 3.836458999999998,
+            "cpuUserMs": 4.06,
+            "cpuSystemMs": 0.139,
+            "rssBeforeBytes": 55427072,
+            "rssAfterBytes": 56066048
+          },
+          "retrieve": {
+            "wallMs": 0.11699999999999733,
+            "cpuUserMs": 0.132,
+            "cpuSystemMs": 0.003,
+            "rssBeforeBytes": 56066048,
+            "rssAfterBytes": 56066048
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9652920000000051,
+            "cpuUserMs": 0.892,
+            "cpuSystemMs": 0.464,
+            "rssBeforeBytes": 56066048,
+            "rssAfterBytes": 57049088
+          }
+        },
+        "peakRssBytes": 57065472,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "46ddb2bc8709c0c37036650a772b139c7bf0e9b866d32b67dd09c4c3005e85ef",
+        "snapshotDigest": "e5efa23b85a7ebe3f20e9a9a8035c8c0e5dafae1706713e1a9d4bda9551f11c1",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 60.11179100000004
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90885,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.1312909999999974,
+            "cpuUserMs": 0.969,
+            "cpuSystemMs": 0.198,
+            "rssBeforeBytes": 54738944,
+            "rssAfterBytes": 55394304
+          },
+          "resumeProjection": {
+            "wallMs": 1.8751250000000041,
+            "cpuUserMs": 1.921,
+            "cpuSystemMs": 0.042,
+            "rssBeforeBytes": 55410688,
+            "rssAfterBytes": 55689216
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.24341700000000088,
+            "cpuUserMs": 0.275,
+            "cpuSystemMs": 0.028,
+            "rssBeforeBytes": 55689216,
+            "rssAfterBytes": 55853056
+          }
+        },
+        "peakRssBytes": 55853056,
+        "verifiedRefs": 4,
+        "originalDigest": "46ddb2bc8709c0c37036650a772b139c7bf0e9b866d32b67dd09c4c3005e85ef",
+        "forks": 1,
+        "processWallMs": 54.184499999999844
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 11,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90886,
+        "metrics": {
+          "create": {
+            "wallMs": 0.37770800000000193,
+            "cpuUserMs": 0.315,
+            "cpuSystemMs": 0.051,
+            "rssBeforeBytes": 54771712,
+            "rssAfterBytes": 55083008
+          },
+          "compressAndStore": {
+            "wallMs": 3.782375000000002,
+            "cpuUserMs": 3.938,
+            "cpuSystemMs": 0.163,
+            "rssBeforeBytes": 55083008,
+            "rssAfterBytes": 55705600
+          },
+          "retrieve": {
+            "wallMs": 0.1144999999999996,
+            "cpuUserMs": 0.126,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55705600,
+            "rssAfterBytes": 55705600
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.5519159999999985,
+            "cpuUserMs": 0.915,
+            "cpuSystemMs": 0.493,
+            "rssBeforeBytes": 55705600,
+            "rssAfterBytes": 56737792
+          }
+        },
+        "peakRssBytes": 56737792,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "18f89802c456bb4c97f5802b526a8d0a012244570da88ab4445e8f017bf37bdd",
+        "snapshotDigest": "6807fc58c3874a2f8796f313c294573b6fb2cc4c305c9755cca46a065e1ada13",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.344249999999874
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90887,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2300830000000005,
+            "cpuUserMs": 1.054,
+            "cpuSystemMs": 0.214,
+            "rssBeforeBytes": 54951936,
+            "rssAfterBytes": 55640064
+          },
+          "resumeProjection": {
+            "wallMs": 1.955375,
+            "cpuUserMs": 1.967,
+            "cpuSystemMs": 0.083,
+            "rssBeforeBytes": 55640064,
+            "rssAfterBytes": 55918592
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.28025000000000233,
+            "cpuUserMs": 0.282,
+            "cpuSystemMs": 0.053,
+            "rssBeforeBytes": 55918592,
+            "rssAfterBytes": 56098816
+          }
+        },
+        "peakRssBytes": 56098816,
+        "verifiedRefs": 4,
+        "originalDigest": "18f89802c456bb4c97f5802b526a8d0a012244570da88ab4445e8f017bf37bdd",
+        "forks": 1,
+        "processWallMs": 52.89070800000013
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 12,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90888,
+        "metrics": {
+          "create": {
+            "wallMs": 0.40883300000000133,
+            "cpuUserMs": 0.344,
+            "cpuSystemMs": 0.059,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 55132160
+          },
+          "compressAndStore": {
+            "wallMs": 3.6349579999999975,
+            "cpuUserMs": 3.837,
+            "cpuSystemMs": 0.115,
+            "rssBeforeBytes": 55132160,
+            "rssAfterBytes": 55771136
+          },
+          "retrieve": {
+            "wallMs": 0.11179200000000122,
+            "cpuUserMs": 0.123,
+            "cpuSystemMs": 0.005,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 55771136
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9285839999999936,
+            "cpuUserMs": 0.853,
+            "cpuSystemMs": 0.511,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 56754176
+          }
+        },
+        "peakRssBytes": 56770560,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "75c78bf853e7f0dcb78dcda7dd5c0409f6fc01fe032312635886dc667eae789e",
+        "snapshotDigest": "5b5896168b252cc01711281170a7458907c7f2cd43ab9b1b90ec40bce872c0d9",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 58.39320799999996
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90889,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.3644169999999995,
+            "cpuUserMs": 1.16,
+            "cpuSystemMs": 0.253,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 55508992
+          },
+          "resumeProjection": {
+            "wallMs": 2.017583000000002,
+            "cpuUserMs": 2.025,
+            "cpuSystemMs": 0.093,
+            "rssBeforeBytes": 55508992,
+            "rssAfterBytes": 55771136
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.25216700000000003,
+            "cpuUserMs": 0.282,
+            "cpuSystemMs": 0.026,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 55967744
+          }
+        },
+        "peakRssBytes": 55984128,
+        "verifiedRefs": 4,
+        "originalDigest": "75c78bf853e7f0dcb78dcda7dd5c0409f6fc01fe032312635886dc667eae789e",
+        "forks": 1,
+        "processWallMs": 54.48345900000004
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 13,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90890,
+        "metrics": {
+          "create": {
+            "wallMs": 0.34999999999999787,
+            "cpuUserMs": 0.31,
+            "cpuSystemMs": 0.033,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 55083008
+          },
+          "compressAndStore": {
+            "wallMs": 3.5964160000000014,
+            "cpuUserMs": 3.783,
+            "cpuSystemMs": 0.105,
+            "rssBeforeBytes": 55083008,
+            "rssAfterBytes": 55705600
+          },
+          "retrieve": {
+            "wallMs": 0.13091599999999914,
+            "cpuUserMs": 0.142,
+            "cpuSystemMs": 0.003,
+            "rssBeforeBytes": 55721984,
+            "rssAfterBytes": 55738368
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.0395419999999973,
+            "cpuUserMs": 0.972,
+            "cpuSystemMs": 0.486,
+            "rssBeforeBytes": 55738368,
+            "rssAfterBytes": 56770560
+          }
+        },
+        "peakRssBytes": 56786944,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "35d096b7b19b567c23bb85232df45f89857a7e40c7def46fa04f5fd48fc10dee",
+        "snapshotDigest": "9d919f782bd15722af807bc153a2cf0392b27f788451a034e97e86ccb32f4c20",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.48354200000017
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90891,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2298329999999993,
+            "cpuUserMs": 1.04,
+            "cpuSystemMs": 0.221,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 55459840
+          },
+          "resumeProjection": {
+            "wallMs": 1.8804999999999978,
+            "cpuUserMs": 1.919,
+            "cpuSystemMs": 0.053,
+            "rssBeforeBytes": 55459840,
+            "rssAfterBytes": 55771136
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.24541700000000333,
+            "cpuUserMs": 0.297,
+            "cpuSystemMs": 0.026,
+            "rssBeforeBytes": 55771136,
+            "rssAfterBytes": 55984128
+          }
+        },
+        "peakRssBytes": 55984128,
+        "verifiedRefs": 4,
+        "originalDigest": "35d096b7b19b567c23bb85232df45f89857a7e40c7def46fa04f5fd48fc10dee",
+        "forks": 1,
+        "processWallMs": 54.22083299999986
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 14,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90892,
+        "metrics": {
+          "create": {
+            "wallMs": 0.4129170000000002,
+            "cpuUserMs": 0.341,
+            "cpuSystemMs": 0.066,
+            "rssBeforeBytes": 54657024,
+            "rssAfterBytes": 54968320
+          },
+          "compressAndStore": {
+            "wallMs": 4.0105,
+            "cpuUserMs": 4.187,
+            "cpuSystemMs": 0.171,
+            "rssBeforeBytes": 54968320,
+            "rssAfterBytes": 55672832
+          },
+          "retrieve": {
+            "wallMs": 0.1320829999999944,
+            "cpuUserMs": 0.118,
+            "cpuSystemMs": 0.011,
+            "rssBeforeBytes": 55672832,
+            "rssAfterBytes": 55672832
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.919000000000004,
+            "cpuUserMs": 0.851,
+            "cpuSystemMs": 0.482,
+            "rssBeforeBytes": 55689216,
+            "rssAfterBytes": 56672256
+          }
+        },
+        "peakRssBytes": 56688640,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "c14d5053ba8357e439f29682b50df417cc4ed7c52ce2e0cca9914a1ff6e7dfe3",
+        "snapshotDigest": "a6fa5624c57a92ff939930a82e1caa858895f5393509eb59a9a4ffbdba5b9c79",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.60787500000015
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90893,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2403750000000038,
+            "cpuUserMs": 1.038,
+            "cpuSystemMs": 0.239,
+            "rssBeforeBytes": 55607296,
+            "rssAfterBytes": 56246272
+          },
+          "resumeProjection": {
+            "wallMs": 1.926290999999999,
+            "cpuUserMs": 1.923,
+            "cpuSystemMs": 0.095,
+            "rssBeforeBytes": 56262656,
+            "rssAfterBytes": 56508416
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.24604200000000276,
+            "cpuUserMs": 0.276,
+            "cpuSystemMs": 0.029,
+            "rssBeforeBytes": 56508416,
+            "rssAfterBytes": 56688640
+          }
+        },
+        "peakRssBytes": 56688640,
+        "verifiedRefs": 4,
+        "originalDigest": "c14d5053ba8357e439f29682b50df417cc4ed7c52ce2e0cca9914a1ff6e7dfe3",
+        "forks": 1,
+        "processWallMs": 55.42670799999996
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 15,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90894,
+        "metrics": {
+          "create": {
+            "wallMs": 0.41325000000000145,
+            "cpuUserMs": 0.364,
+            "cpuSystemMs": 0.043,
+            "rssBeforeBytes": 54755328,
+            "rssAfterBytes": 55050240
+          },
+          "compressAndStore": {
+            "wallMs": 3.7455,
+            "cpuUserMs": 3.954,
+            "cpuSystemMs": 0.132,
+            "rssBeforeBytes": 55050240,
+            "rssAfterBytes": 55721984
+          },
+          "retrieve": {
+            "wallMs": 0.11274999999999835,
+            "cpuUserMs": 0.124,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55721984,
+            "rssAfterBytes": 55721984
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.7157920000000004,
+            "cpuUserMs": 0.865,
+            "cpuSystemMs": 0.508,
+            "rssBeforeBytes": 55721984,
+            "rssAfterBytes": 56721408
+          }
+        },
+        "peakRssBytes": 56737792,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "bb72e541983e596017b47049dde347f7774e190ba1e4d2a727239d17e166f5f5",
+        "snapshotDigest": "149ef472264fe605443163f39342edc3f30611307f995a9b26897651e3de913b",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.40508299999988
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90895,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.2369170000000018,
+            "cpuUserMs": 1.051,
+            "cpuSystemMs": 0.217,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 55410688
+          },
+          "resumeProjection": {
+            "wallMs": 2.138957999999999,
+            "cpuUserMs": 2.141,
+            "cpuSystemMs": 0.076,
+            "rssBeforeBytes": 55410688,
+            "rssAfterBytes": 55705600
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.2609169999999992,
+            "cpuUserMs": 0.293,
+            "cpuSystemMs": 0.032,
+            "rssBeforeBytes": 55705600,
+            "rssAfterBytes": 55902208
+          }
+        },
+        "peakRssBytes": 55902208,
+        "verifiedRefs": 4,
+        "originalDigest": "bb72e541983e596017b47049dde347f7774e190ba1e4d2a727239d17e166f5f5",
+        "forks": 1,
+        "processWallMs": 54.58154200000013
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 16,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90896,
+        "metrics": {
+          "create": {
+            "wallMs": 0.3851670000000027,
+            "cpuUserMs": 0.327,
+            "cpuSystemMs": 0.052,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 55148544
+          },
+          "compressAndStore": {
+            "wallMs": 3.6027920000000044,
+            "cpuUserMs": 3.793,
+            "cpuSystemMs": 0.113,
+            "rssBeforeBytes": 55148544,
+            "rssAfterBytes": 55803904
+          },
+          "retrieve": {
+            "wallMs": 0.11266700000000185,
+            "cpuUserMs": 0.123,
+            "cpuSystemMs": 0.003,
+            "rssBeforeBytes": 55820288,
+            "rssAfterBytes": 55836672
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9548330000000007,
+            "cpuUserMs": 0.886,
+            "cpuSystemMs": 0.49,
+            "rssBeforeBytes": 55836672,
+            "rssAfterBytes": 56786944
+          }
+        },
+        "peakRssBytes": 56836096,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "f7d4b119e1098463cf6f288b4c07322b5f98943ec82ee11942a15de535f14355",
+        "snapshotDigest": "f60139bd6166e27f2e437aa9f235a32b8ededd708d043e92ae588ee94d6b638c",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 54.48199999999997
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90897,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.3218749999999986,
+            "cpuUserMs": 1.12,
+            "cpuSystemMs": 0.242,
+            "rssBeforeBytes": 54919168,
+            "rssAfterBytes": 55590912
+          },
+          "resumeProjection": {
+            "wallMs": 2.0377909999999986,
+            "cpuUserMs": 2.057,
+            "cpuSystemMs": 0.074,
+            "rssBeforeBytes": 55590912,
+            "rssAfterBytes": 55869440
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.2589589999999973,
+            "cpuUserMs": 0.285,
+            "cpuSystemMs": 0.028,
+            "rssBeforeBytes": 55869440,
+            "rssAfterBytes": 56000512
+          }
+        },
+        "peakRssBytes": 56000512,
+        "verifiedRefs": 4,
+        "originalDigest": "f7d4b119e1098463cf6f288b4c07322b5f98943ec82ee11942a15de535f14355",
+        "forks": 1,
+        "processWallMs": 54.17650000000003
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 17,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90898,
+        "metrics": {
+          "create": {
+            "wallMs": 0.3722920000000016,
+            "cpuUserMs": 0.329,
+            "cpuSystemMs": 0.037,
+            "rssBeforeBytes": 54689792,
+            "rssAfterBytes": 54984704
+          },
+          "compressAndStore": {
+            "wallMs": 3.6757089999999977,
+            "cpuUserMs": 3.867,
+            "cpuSystemMs": 0.118,
+            "rssBeforeBytes": 54984704,
+            "rssAfterBytes": 55623680
+          },
+          "retrieve": {
+            "wallMs": 0.13112499999999727,
+            "cpuUserMs": 0.142,
+            "cpuSystemMs": 0.002,
+            "rssBeforeBytes": 55623680,
+            "rssAfterBytes": 55623680
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1467080000000038,
+            "cpuUserMs": 0.959,
+            "cpuSystemMs": 0.616,
+            "rssBeforeBytes": 55623680,
+            "rssAfterBytes": 56590336
+          }
+        },
+        "peakRssBytes": 56606720,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "9c42bec49d65ca09e4d1a81747d140a2cff68773665d2420b3e8d12c1574e463",
+        "snapshotDigest": "2b9d4bb63deb0eee19057c4657dbf2da87a2bc16738d6982ed00d4470eddabd6",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 56.57445800000005
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90899,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.289916999999999,
+            "cpuUserMs": 1.093,
+            "cpuSystemMs": 0.238,
+            "rssBeforeBytes": 54968320,
+            "rssAfterBytes": 55623680
+          },
+          "resumeProjection": {
+            "wallMs": 1.9194579999999988,
+            "cpuUserMs": 1.959,
+            "cpuSystemMs": 0.045,
+            "rssBeforeBytes": 55623680,
+            "rssAfterBytes": 55902208
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.25799999999999557,
+            "cpuUserMs": 0.287,
+            "cpuSystemMs": 0.03,
+            "rssBeforeBytes": 55902208,
+            "rssAfterBytes": 56098816
+          }
+        },
+        "peakRssBytes": 56098816,
+        "verifiedRefs": 4,
+        "originalDigest": "9c42bec49d65ca09e4d1a81747d140a2cff68773665d2420b3e8d12c1574e463",
+        "forks": 1,
+        "processWallMs": 53.80379199999993
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 18,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90900,
+        "metrics": {
+          "create": {
+            "wallMs": 0.3904999999999994,
+            "cpuUserMs": 0.345,
+            "cpuSystemMs": 0.04,
+            "rssBeforeBytes": 54771712,
+            "rssAfterBytes": 55066624
+          },
+          "compressAndStore": {
+            "wallMs": 3.9991660000000024,
+            "cpuUserMs": 4.171,
+            "cpuSystemMs": 0.142,
+            "rssBeforeBytes": 55066624,
+            "rssAfterBytes": 55689216
+          },
+          "retrieve": {
+            "wallMs": 0.11608300000000327,
+            "cpuUserMs": 0.111,
+            "cpuSystemMs": 0.001,
+            "rssBeforeBytes": 55689216,
+            "rssAfterBytes": 55689216
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9734589999999983,
+            "cpuUserMs": 0.901,
+            "cpuSystemMs": 0.534,
+            "rssBeforeBytes": 55705600,
+            "rssAfterBytes": 56655872
+          }
+        },
+        "peakRssBytes": 56672256,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "a6e2c550ad3170377da97b8dc6fe7391d71a8784b610b29d341cd8e5e104497e",
+        "snapshotDigest": "b39d4d011e5140566ae088ded7522544020d68ea91b41b0b5eedb258dd4fb2d1",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.66195800000014
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90901,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.278458000000004,
+            "cpuUserMs": 1.109,
+            "cpuSystemMs": 0.201,
+            "rssBeforeBytes": 54788096,
+            "rssAfterBytes": 55427072
+          },
+          "resumeProjection": {
+            "wallMs": 2.044542,
+            "cpuUserMs": 2.086,
+            "cpuSystemMs": 0.056,
+            "rssBeforeBytes": 55427072,
+            "rssAfterBytes": 55689216
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.26616700000000293,
+            "cpuUserMs": 0.29,
+            "cpuSystemMs": 0.033,
+            "rssBeforeBytes": 55689216,
+            "rssAfterBytes": 55918592
+          }
+        },
+        "peakRssBytes": 55918592,
+        "verifiedRefs": 4,
+        "originalDigest": "a6e2c550ad3170377da97b8dc6fe7391d71a8784b610b29d341cd8e5e104497e",
+        "forks": 1,
+        "processWallMs": 55.453125
+      }
+    },
+    {
+      "sessions": 1,
+      "repetition": 19,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90902,
+        "metrics": {
+          "create": {
+            "wallMs": 0.42595799999999784,
+            "cpuUserMs": 0.371,
+            "cpuSystemMs": 0.045,
+            "rssBeforeBytes": 54902784,
+            "rssAfterBytes": 55197696
+          },
+          "compressAndStore": {
+            "wallMs": 3.6076659999999983,
+            "cpuUserMs": 3.803,
+            "cpuSystemMs": 0.092,
+            "rssBeforeBytes": 55197696,
+            "rssAfterBytes": 55820288
+          },
+          "retrieve": {
+            "wallMs": 0.11095900000000114,
+            "cpuUserMs": 0.123,
+            "cpuSystemMs": 0.003,
+            "rssBeforeBytes": 55820288,
+            "rssAfterBytes": 55820288
+          },
+          "serializeAndWrite": {
+            "wallMs": 0.9494579999999999,
+            "cpuUserMs": 0.86,
+            "cpuSystemMs": 0.494,
+            "rssBeforeBytes": 55836672,
+            "rssAfterBytes": 56836096
+          }
+        },
+        "peakRssBytes": 56852480,
+        "rawBytes": 3712,
+        "visibleBytes": 1052,
+        "serializedBytes": 11280,
+        "retrievedBytes": 2924,
+        "originalDigest": "66d467e2d5042bdfd18709fc83feb4526e0c179eb32b855f526dff0339aa34d1",
+        "snapshotDigest": "a6156dd34e5c0f8d29b16b649cd901cda2fa651105b50014bd84415e49ecef5f",
+        "verifiedRefs": 4,
+        "warnings": [],
+        "processWallMs": 55.5629170000002
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90903,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 1.264875,
+            "cpuUserMs": 1.034,
+            "cpuSystemMs": 0.259,
+            "rssBeforeBytes": 54738944,
+            "rssAfterBytes": 55443456
+          },
+          "resumeProjection": {
+            "wallMs": 2.091790999999997,
+            "cpuUserMs": 2.139,
+            "cpuSystemMs": 0.068,
+            "rssBeforeBytes": 55443456,
+            "rssAfterBytes": 55705600
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.2729580000000027,
+            "cpuUserMs": 0.31,
+            "cpuSystemMs": 0.033,
+            "rssBeforeBytes": 55705600,
+            "rssAfterBytes": 55885824
+          }
+        },
+        "peakRssBytes": 55885824,
+        "verifiedRefs": 4,
+        "originalDigest": "66d467e2d5042bdfd18709fc83feb4526e0c179eb32b855f526dff0339aa34d1",
+        "forks": 1,
+        "processWallMs": 54.40162499999997
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 0,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90904,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6129999999999995,
+            "cpuUserMs": 0.558,
+            "cpuSystemMs": 0.051,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 55296000
+          },
+          "compressAndStore": {
+            "wallMs": 6.473499999999998,
+            "cpuUserMs": 8.909,
+            "cpuSystemMs": 0.613,
+            "rssBeforeBytes": 55296000,
+            "rssAfterBytes": 57638912
+          },
+          "retrieve": {
+            "wallMs": 0.31704100000000324,
+            "cpuUserMs": 0.377,
+            "cpuSystemMs": 0.022,
+            "rssBeforeBytes": 57638912,
+            "rssAfterBytes": 57655296
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1423750000000013,
+            "cpuUserMs": 0.798,
+            "cpuSystemMs": 0.404,
+            "rssBeforeBytes": 57655296,
+            "rssAfterBytes": 58195968
+          }
+        },
+        "peakRssBytes": 58195968,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "54c67399359a073dbe61bf0715d935a2d54a8c64076bb18f987a4fa0a378f359",
+        "snapshotDigest": "ab4435f4b528ccf9e1d276f784f229235a2674a4cc6397b6721c06f1b22e7bf5",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 59.50191700000005
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90905,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.2487920000000017,
+            "cpuUserMs": 2.259,
+            "cpuSystemMs": 0.424,
+            "rssBeforeBytes": 54755328,
+            "rssAfterBytes": 56639488
+          },
+          "resumeProjection": {
+            "wallMs": 3.0507499999999936,
+            "cpuUserMs": 3.93,
+            "cpuSystemMs": 0.186,
+            "rssBeforeBytes": 56639488,
+            "rssAfterBytes": 57180160
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.9156669999999991,
+            "cpuUserMs": 1.307,
+            "cpuSystemMs": 0.204,
+            "rssBeforeBytes": 57180160,
+            "rssAfterBytes": 57786368
+          }
+        },
+        "peakRssBytes": 57835520,
+        "verifiedRefs": 40,
+        "originalDigest": "54c67399359a073dbe61bf0715d935a2d54a8c64076bb18f987a4fa0a378f359",
+        "forks": 10,
+        "processWallMs": 56.50870799999984
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 1,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90906,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6091669999999993,
+            "cpuUserMs": 0.57,
+            "cpuSystemMs": 0.052,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 55328768
+          },
+          "compressAndStore": {
+            "wallMs": 6.434125000000005,
+            "cpuUserMs": 8.778,
+            "cpuSystemMs": 0.649,
+            "rssBeforeBytes": 55328768,
+            "rssAfterBytes": 57638912
+          },
+          "retrieve": {
+            "wallMs": 0.29299999999999926,
+            "cpuUserMs": 0.348,
+            "cpuSystemMs": 0.032,
+            "rssBeforeBytes": 57655296,
+            "rssAfterBytes": 57688064
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1246660000000048,
+            "cpuUserMs": 0.816,
+            "cpuSystemMs": 0.366,
+            "rssBeforeBytes": 57688064,
+            "rssAfterBytes": 58245120
+          }
+        },
+        "peakRssBytes": 58245120,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "a61e891ee2af4105f61a51d968693bc9e447a74e66cd0e0f152e121ede7ad856",
+        "snapshotDigest": "69a633ba684230171377e16a6e71c6c328743971db797ac08e3bc7eed31ecd41",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 59.94962499999974
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90907,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.205290999999999,
+            "cpuUserMs": 2.263,
+            "cpuSystemMs": 0.396,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 56573952
+          },
+          "resumeProjection": {
+            "wallMs": 3.017417000000002,
+            "cpuUserMs": 3.809,
+            "cpuSystemMs": 0.091,
+            "rssBeforeBytes": 56573952,
+            "rssAfterBytes": 57081856
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8845000000000027,
+            "cpuUserMs": 1.113,
+            "cpuSystemMs": 0.073,
+            "rssBeforeBytes": 57098240,
+            "rssAfterBytes": 57720832
+          }
+        },
+        "peakRssBytes": 57753600,
+        "verifiedRefs": 40,
+        "originalDigest": "a61e891ee2af4105f61a51d968693bc9e447a74e66cd0e0f152e121ede7ad856",
+        "forks": 10,
+        "processWallMs": 56.63875000000007
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 2,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90908,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6133749999999978,
+            "cpuUserMs": 0.554,
+            "cpuSystemMs": 0.055,
+            "rssBeforeBytes": 54902784,
+            "rssAfterBytes": 55312384
+          },
+          "compressAndStore": {
+            "wallMs": 6.5207089999999965,
+            "cpuUserMs": 8.83,
+            "cpuSystemMs": 0.544,
+            "rssBeforeBytes": 55312384,
+            "rssAfterBytes": 57786368
+          },
+          "retrieve": {
+            "wallMs": 0.2849170000000001,
+            "cpuUserMs": 0.322,
+            "cpuSystemMs": 0.014,
+            "rssBeforeBytes": 57786368,
+            "rssAfterBytes": 57819136
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.3133750000000006,
+            "cpuUserMs": 0.973,
+            "cpuSystemMs": 0.536,
+            "rssBeforeBytes": 57819136,
+            "rssAfterBytes": 58720256
+          }
+        },
+        "peakRssBytes": 58736640,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "bcbc0c9186e7b7d8e92bd5c38664fae306a1ea5f97a5bf7060791f07c0729040",
+        "snapshotDigest": "e81360b724f6313d0cc496cf81a683a4fa83f50d659c871412f5249ea1f9b859",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 58.614374999999654
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90909,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.1200000000000045,
+            "cpuUserMs": 2.205,
+            "cpuSystemMs": 0.348,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 56672256
+          },
+          "resumeProjection": {
+            "wallMs": 2.872040999999996,
+            "cpuUserMs": 3.699,
+            "cpuSystemMs": 0.085,
+            "rssBeforeBytes": 56672256,
+            "rssAfterBytes": 57147392
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.892165999999996,
+            "cpuUserMs": 1.254,
+            "cpuSystemMs": 0.133,
+            "rssBeforeBytes": 57163776,
+            "rssAfterBytes": 57786368
+          }
+        },
+        "peakRssBytes": 57835520,
+        "verifiedRefs": 40,
+        "originalDigest": "bcbc0c9186e7b7d8e92bd5c38664fae306a1ea5f97a5bf7060791f07c0729040",
+        "forks": 10,
+        "processWallMs": 56.558250000000044
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 3,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90910,
+        "metrics": {
+          "create": {
+            "wallMs": 0.644833000000002,
+            "cpuUserMs": 0.578,
+            "cpuSystemMs": 0.062,
+            "rssBeforeBytes": 54968320,
+            "rssAfterBytes": 55394304
+          },
+          "compressAndStore": {
+            "wallMs": 6.237457999999997,
+            "cpuUserMs": 8.591,
+            "cpuSystemMs": 0.376,
+            "rssBeforeBytes": 55394304,
+            "rssAfterBytes": 57688064
+          },
+          "retrieve": {
+            "wallMs": 0.26549999999999585,
+            "cpuUserMs": 0.294,
+            "cpuSystemMs": 0.013,
+            "rssBeforeBytes": 57688064,
+            "rssAfterBytes": 57737216
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.2488340000000022,
+            "cpuUserMs": 0.963,
+            "cpuSystemMs": 0.41,
+            "rssBeforeBytes": 57737216,
+            "rssAfterBytes": 58261504
+          }
+        },
+        "peakRssBytes": 58277888,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "3081bbfbc487700a83443a2c5263383f58466e15d753919ff99922af8b4cb945",
+        "snapshotDigest": "4bb57c7b0b527e95d173b472351f7a51c131df78472bfdbae33f7b566dac625f",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 60.22737499999994
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90911,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.3571250000000035,
+            "cpuUserMs": 2.415,
+            "cpuSystemMs": 0.417,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 56557568
+          },
+          "resumeProjection": {
+            "wallMs": 3.1977079999999987,
+            "cpuUserMs": 4.084,
+            "cpuSystemMs": 0.097,
+            "rssBeforeBytes": 56573952,
+            "rssAfterBytes": 57180160
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8896670000000029,
+            "cpuUserMs": 1.122,
+            "cpuSystemMs": 0.065,
+            "rssBeforeBytes": 57180160,
+            "rssAfterBytes": 57851904
+          }
+        },
+        "peakRssBytes": 57884672,
+        "verifiedRefs": 40,
+        "originalDigest": "3081bbfbc487700a83443a2c5263383f58466e15d753919ff99922af8b4cb945",
+        "forks": 10,
+        "processWallMs": 60.08091700000023
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 4,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90912,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6472499999999997,
+            "cpuUserMs": 0.577,
+            "cpuSystemMs": 0.066,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 55263232
+          },
+          "compressAndStore": {
+            "wallMs": 6.575957999999996,
+            "cpuUserMs": 8.792,
+            "cpuSystemMs": 0.376,
+            "rssBeforeBytes": 55263232,
+            "rssAfterBytes": 57507840
+          },
+          "retrieve": {
+            "wallMs": 0.24762499999999932,
+            "cpuUserMs": 0.276,
+            "cpuSystemMs": 0.01,
+            "rssBeforeBytes": 57507840,
+            "rssAfterBytes": 57556992
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.0842090000000013,
+            "cpuUserMs": 0.791,
+            "cpuSystemMs": 0.342,
+            "rssBeforeBytes": 57556992,
+            "rssAfterBytes": 58064896
+          }
+        },
+        "peakRssBytes": 58081280,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "12dd01d8ba40dda7a4d748b594da7bf75b6e6e95ad75bba293a23aa5027bb6a0",
+        "snapshotDigest": "4d1f54e7b5c9d5d8c3681c586338e65e4e6784835de4f7982f7f72c60b255c39",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 60.91662499999984
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90913,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.507833999999999,
+            "cpuUserMs": 2.404,
+            "cpuSystemMs": 0.533,
+            "rssBeforeBytes": 55263232,
+            "rssAfterBytes": 57032704
+          },
+          "resumeProjection": {
+            "wallMs": 2.9126660000000015,
+            "cpuUserMs": 3.734,
+            "cpuSystemMs": 0.082,
+            "rssBeforeBytes": 57032704,
+            "rssAfterBytes": 57589760
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8511249999999961,
+            "cpuUserMs": 1.086,
+            "cpuSystemMs": 0.062,
+            "rssBeforeBytes": 57606144,
+            "rssAfterBytes": 58228736
+          }
+        },
+        "peakRssBytes": 58261504,
+        "verifiedRefs": 40,
+        "originalDigest": "12dd01d8ba40dda7a4d748b594da7bf75b6e6e95ad75bba293a23aa5027bb6a0",
+        "forks": 10,
+        "processWallMs": 56.679167000000234
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 5,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90914,
+        "metrics": {
+          "create": {
+            "wallMs": 0.5988750000000032,
+            "cpuUserMs": 0.547,
+            "cpuSystemMs": 0.048,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 55246848
+          },
+          "compressAndStore": {
+            "wallMs": 6.610208,
+            "cpuUserMs": 8.909,
+            "cpuSystemMs": 0.461,
+            "rssBeforeBytes": 55246848,
+            "rssAfterBytes": 57573376
+          },
+          "retrieve": {
+            "wallMs": 0.26145800000000463,
+            "cpuUserMs": 0.291,
+            "cpuSystemMs": 0.008,
+            "rssBeforeBytes": 57573376,
+            "rssAfterBytes": 57589760
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.0850000000000009,
+            "cpuUserMs": 0.785,
+            "cpuSystemMs": 0.349,
+            "rssBeforeBytes": 57589760,
+            "rssAfterBytes": 58130432
+          }
+        },
+        "peakRssBytes": 58130432,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "005cc6bc599c1f9c86b49866892eb62caccf7248a77c049b06564ca42cfae759",
+        "snapshotDigest": "6bf6dc8364f59ebfe7dfd0e12d777b2195b3b42accfbf8af9dd5b360e41f4cd9",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 58.46570900000006
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90915,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.245834000000002,
+            "cpuUserMs": 2.366,
+            "cpuSystemMs": 0.37,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 56623104
+          },
+          "resumeProjection": {
+            "wallMs": 3.0110829999999993,
+            "cpuUserMs": 3.911,
+            "cpuSystemMs": 0.122,
+            "rssBeforeBytes": 56623104,
+            "rssAfterBytes": 57114624
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8724169999999987,
+            "cpuUserMs": 1.075,
+            "cpuSystemMs": 0.086,
+            "rssBeforeBytes": 57114624,
+            "rssAfterBytes": 57786368
+          }
+        },
+        "peakRssBytes": 57851904,
+        "verifiedRefs": 40,
+        "originalDigest": "005cc6bc599c1f9c86b49866892eb62caccf7248a77c049b06564ca42cfae759",
+        "forks": 10,
+        "processWallMs": 55.72574999999961
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 6,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90916,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6064579999999999,
+            "cpuUserMs": 0.554,
+            "cpuSystemMs": 0.049,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 55279616
+          },
+          "compressAndStore": {
+            "wallMs": 6.502040999999998,
+            "cpuUserMs": 8.747,
+            "cpuSystemMs": 0.403,
+            "rssBeforeBytes": 55279616,
+            "rssAfterBytes": 57556992
+          },
+          "retrieve": {
+            "wallMs": 0.2678330000000031,
+            "cpuUserMs": 0.3,
+            "cpuSystemMs": 0.007,
+            "rssBeforeBytes": 57556992,
+            "rssAfterBytes": 57573376
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1451670000000007,
+            "cpuUserMs": 0.825,
+            "cpuSystemMs": 0.369,
+            "rssBeforeBytes": 57573376,
+            "rssAfterBytes": 58114048
+          }
+        },
+        "peakRssBytes": 58114048,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "dcc1f9ceb0131b6bee771e267fe7dd75d1004cb4dea292f5a4f8fec93ab46d63",
+        "snapshotDigest": "8ec9fe4918ca347cadeaad06a1567a12180c8811e3e161192c1155f9db43f76f",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 59.75804199999993
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90917,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.4538750000000036,
+            "cpuUserMs": 2.473,
+            "cpuSystemMs": 0.474,
+            "rssBeforeBytes": 54935552,
+            "rssAfterBytes": 56770560
+          },
+          "resumeProjection": {
+            "wallMs": 3.459832999999996,
+            "cpuUserMs": 4.166,
+            "cpuSystemMs": 0.201,
+            "rssBeforeBytes": 56770560,
+            "rssAfterBytes": 57245696
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8849170000000015,
+            "cpuUserMs": 1.116,
+            "cpuSystemMs": 0.072,
+            "rssBeforeBytes": 57245696,
+            "rssAfterBytes": 57802752
+          }
+        },
+        "peakRssBytes": 57835520,
+        "verifiedRefs": 40,
+        "originalDigest": "dcc1f9ceb0131b6bee771e267fe7dd75d1004cb4dea292f5a4f8fec93ab46d63",
+        "forks": 10,
+        "processWallMs": 60.06437499999993
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 7,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90918,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6961660000000016,
+            "cpuUserMs": 0.635,
+            "cpuSystemMs": 0.054,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 55328768
+          },
+          "compressAndStore": {
+            "wallMs": 6.402999999999999,
+            "cpuUserMs": 8.62,
+            "cpuSystemMs": 0.417,
+            "rssBeforeBytes": 55345152,
+            "rssAfterBytes": 57589760
+          },
+          "retrieve": {
+            "wallMs": 0.24408300000000338,
+            "cpuUserMs": 0.272,
+            "cpuSystemMs": 0.009,
+            "rssBeforeBytes": 57589760,
+            "rssAfterBytes": 57606144
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1257500000000036,
+            "cpuUserMs": 0.792,
+            "cpuSystemMs": 0.377,
+            "rssBeforeBytes": 57606144,
+            "rssAfterBytes": 58146816
+          }
+        },
+        "peakRssBytes": 58163200,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "18be1489ab5e336a1843fc88817d726e1ea23c93c1603735c384a23ec2032006",
+        "snapshotDigest": "e3ba974a06fc3abb8469824769c0c15ebdf6dd83165ee16704e1f0295f378311",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 58.56574999999975
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90919,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.2990829999999995,
+            "cpuUserMs": 2.312,
+            "cpuSystemMs": 0.421,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 56639488
+          },
+          "resumeProjection": {
+            "wallMs": 2.8461250000000007,
+            "cpuUserMs": 3.641,
+            "cpuSystemMs": 0.102,
+            "rssBeforeBytes": 56639488,
+            "rssAfterBytes": 57196544
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8427500000000023,
+            "cpuUserMs": 1.115,
+            "cpuSystemMs": 0.084,
+            "rssBeforeBytes": 57196544,
+            "rssAfterBytes": 57769984
+          }
+        },
+        "peakRssBytes": 57835520,
+        "verifiedRefs": 40,
+        "originalDigest": "18be1489ab5e336a1843fc88817d726e1ea23c93c1603735c384a23ec2032006",
+        "forks": 10,
+        "processWallMs": 56.77212499999996
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 8,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90920,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6617089999999983,
+            "cpuUserMs": 0.596,
+            "cpuSystemMs": 0.06,
+            "rssBeforeBytes": 54951936,
+            "rssAfterBytes": 55361536
+          },
+          "compressAndStore": {
+            "wallMs": 6.4374579999999995,
+            "cpuUserMs": 8.699,
+            "cpuSystemMs": 0.43,
+            "rssBeforeBytes": 55361536,
+            "rssAfterBytes": 57638912
+          },
+          "retrieve": {
+            "wallMs": 0.25133299999999537,
+            "cpuUserMs": 0.298,
+            "cpuSystemMs": 0.016,
+            "rssBeforeBytes": 57638912,
+            "rssAfterBytes": 57688064
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1225419999999957,
+            "cpuUserMs": 0.783,
+            "cpuSystemMs": 0.398,
+            "rssBeforeBytes": 57688064,
+            "rssAfterBytes": 58212352
+          }
+        },
+        "peakRssBytes": 58212352,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "760d3fd64421e01ffd3651933e23cdfff4d1429cd7efcc74ea522baaecbe0a39",
+        "snapshotDigest": "fad650a8b782f6959555be8bbaa9da952e6437e83cc8118fdbcf33ce9f1f2fc0",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 59.365458999999646
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90921,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.2270000000000003,
+            "cpuUserMs": 2.232,
+            "cpuSystemMs": 0.419,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 56655872
+          },
+          "resumeProjection": {
+            "wallMs": 2.850291999999996,
+            "cpuUserMs": 3.658,
+            "cpuSystemMs": 0.104,
+            "rssBeforeBytes": 56655872,
+            "rssAfterBytes": 57147392
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8185830000000038,
+            "cpuUserMs": 1.079,
+            "cpuSystemMs": 0.059,
+            "rssBeforeBytes": 57147392,
+            "rssAfterBytes": 57720832
+          }
+        },
+        "peakRssBytes": 57769984,
+        "verifiedRefs": 40,
+        "originalDigest": "760d3fd64421e01ffd3651933e23cdfff4d1429cd7efcc74ea522baaecbe0a39",
+        "forks": 10,
+        "processWallMs": 56.8611249999999
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 9,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90922,
+        "metrics": {
+          "create": {
+            "wallMs": 0.723749999999999,
+            "cpuUserMs": 0.652,
+            "cpuSystemMs": 0.059,
+            "rssBeforeBytes": 54902784,
+            "rssAfterBytes": 55377920
+          },
+          "compressAndStore": {
+            "wallMs": 6.327000000000002,
+            "cpuUserMs": 8.543,
+            "cpuSystemMs": 0.368,
+            "rssBeforeBytes": 55377920,
+            "rssAfterBytes": 57606144
+          },
+          "retrieve": {
+            "wallMs": 0.24016699999999958,
+            "cpuUserMs": 0.268,
+            "cpuSystemMs": 0.01,
+            "rssBeforeBytes": 57606144,
+            "rssAfterBytes": 57638912
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.2370419999999953,
+            "cpuUserMs": 0.827,
+            "cpuSystemMs": 0.424,
+            "rssBeforeBytes": 57638912,
+            "rssAfterBytes": 58179584
+          }
+        },
+        "peakRssBytes": 58195968,
+        "rawBytes": 37120,
+        "visibleBytes": 10520,
+        "serializedBytes": 112791,
+        "retrievedBytes": 29240,
+        "originalDigest": "5e26a4809bfb828b272c66b777e4adf0819c213a791701d2580f82265ea89114",
+        "snapshotDigest": "b8c6349c5f595460e1c20e003b5d7491cff7241978652e5039b9a5a14d32aef1",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 59.721624999999676
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90923,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.2927919999999986,
+            "cpuUserMs": 2.283,
+            "cpuSystemMs": 0.437,
+            "rssBeforeBytes": 54919168,
+            "rssAfterBytes": 56688640
+          },
+          "resumeProjection": {
+            "wallMs": 2.8507079999999974,
+            "cpuUserMs": 3.672,
+            "cpuSystemMs": 0.093,
+            "rssBeforeBytes": 56688640,
+            "rssAfterBytes": 57262080
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8348329999999962,
+            "cpuUserMs": 1.082,
+            "cpuSystemMs": 0.077,
+            "rssBeforeBytes": 57262080,
+            "rssAfterBytes": 57802752
+          }
+        },
+        "peakRssBytes": 57835520,
+        "verifiedRefs": 40,
+        "originalDigest": "5e26a4809bfb828b272c66b777e4adf0819c213a791701d2580f82265ea89114",
+        "forks": 10,
+        "processWallMs": 56.46079099999997
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 10,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90924,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6088750000000012,
+            "cpuUserMs": 0.594,
+            "cpuSystemMs": 0.05,
+            "rssBeforeBytes": 54902784,
+            "rssAfterBytes": 55328768
+          },
+          "compressAndStore": {
+            "wallMs": 6.922082999999997,
+            "cpuUserMs": 9.504,
+            "cpuSystemMs": 0.634,
+            "rssBeforeBytes": 55328768,
+            "rssAfterBytes": 57737216
+          },
+          "retrieve": {
+            "wallMs": 0.2927919999999986,
+            "cpuUserMs": 0.316,
+            "cpuSystemMs": 0.014,
+            "rssBeforeBytes": 57737216,
+            "rssAfterBytes": 57786368
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.3540840000000003,
+            "cpuUserMs": 0.984,
+            "cpuSystemMs": 0.443,
+            "rssBeforeBytes": 57786368,
+            "rssAfterBytes": 58327040
+          }
+        },
+        "peakRssBytes": 58327040,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "83c382c5c5d141ad177aea0e90e531956ba68626f54d43f892bd99876de6c922",
+        "snapshotDigest": "b45d09110de9acb6ff3181ce10dd6febff0522be16654cdab1541ef77d8f46da",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 59.948583000000326
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90925,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.1374999999999993,
+            "cpuUserMs": 2.197,
+            "cpuSystemMs": 0.37,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 56590336
+          },
+          "resumeProjection": {
+            "wallMs": 2.836291000000003,
+            "cpuUserMs": 3.639,
+            "cpuSystemMs": 0.088,
+            "rssBeforeBytes": 56590336,
+            "rssAfterBytes": 57049088
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.9892500000000055,
+            "cpuUserMs": 1.259,
+            "cpuSystemMs": 0.065,
+            "rssBeforeBytes": 57049088,
+            "rssAfterBytes": 57688064
+          }
+        },
+        "peakRssBytes": 57720832,
+        "verifiedRefs": 40,
+        "originalDigest": "83c382c5c5d141ad177aea0e90e531956ba68626f54d43f892bd99876de6c922",
+        "forks": 10,
+        "processWallMs": 57.11037499999975
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 11,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90926,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6120420000000024,
+            "cpuUserMs": 0.556,
+            "cpuSystemMs": 0.051,
+            "rssBeforeBytes": 54755328,
+            "rssAfterBytes": 55164928
+          },
+          "compressAndStore": {
+            "wallMs": 6.548749999999998,
+            "cpuUserMs": 9.006,
+            "cpuSystemMs": 0.609,
+            "rssBeforeBytes": 55181312,
+            "rssAfterBytes": 57425920
+          },
+          "retrieve": {
+            "wallMs": 0.2660419999999988,
+            "cpuUserMs": 0.295,
+            "cpuSystemMs": 0.031,
+            "rssBeforeBytes": 57425920,
+            "rssAfterBytes": 57458688
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1819580000000016,
+            "cpuUserMs": 0.931,
+            "cpuSystemMs": 0.449,
+            "rssBeforeBytes": 57458688,
+            "rssAfterBytes": 58048512
+          }
+        },
+        "peakRssBytes": 58064896,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "4ea32117bb1a5ff87f1d88b33236a0b7cb3206cba420e2830e83c81d9c903670",
+        "snapshotDigest": "67c730036d2e1fabda9824966c9b7b690f55a0364bbc1405cda09ed3bc2f0eb1",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 61.74175000000014
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90927,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.235624999999999,
+            "cpuUserMs": 2.354,
+            "cpuSystemMs": 0.342,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 56655872
+          },
+          "resumeProjection": {
+            "wallMs": 3.2532080000000008,
+            "cpuUserMs": 4.025,
+            "cpuSystemMs": 0.139,
+            "rssBeforeBytes": 56655872,
+            "rssAfterBytes": 57131008
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8984999999999985,
+            "cpuUserMs": 1.133,
+            "cpuSystemMs": 0.067,
+            "rssBeforeBytes": 57131008,
+            "rssAfterBytes": 57688064
+          }
+        },
+        "peakRssBytes": 57737216,
+        "verifiedRefs": 40,
+        "originalDigest": "4ea32117bb1a5ff87f1d88b33236a0b7cb3206cba420e2830e83c81d9c903670",
+        "forks": 10,
+        "processWallMs": 60.49929199999997
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 12,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90938,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6485839999999996,
+            "cpuUserMs": 0.586,
+            "cpuSystemMs": 0.059,
+            "rssBeforeBytes": 55246848,
+            "rssAfterBytes": 55672832
+          },
+          "compressAndStore": {
+            "wallMs": 6.848582999999998,
+            "cpuUserMs": 9.255,
+            "cpuSystemMs": 0.45,
+            "rssBeforeBytes": 55672832,
+            "rssAfterBytes": 57966592
+          },
+          "retrieve": {
+            "wallMs": 0.29658299999999826,
+            "cpuUserMs": 0.326,
+            "cpuSystemMs": 0.014,
+            "rssBeforeBytes": 57966592,
+            "rssAfterBytes": 57999360
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.2435839999999985,
+            "cpuUserMs": 1.031,
+            "cpuSystemMs": 0.34,
+            "rssBeforeBytes": 57999360,
+            "rssAfterBytes": 58638336
+          }
+        },
+        "peakRssBytes": 58654720,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "3a913b7b0c0a30c9d14eea0acf918f2dc9984868ced0d1c75a60d87e3cb30c81",
+        "snapshotDigest": "07f7653234abea1af9a913f68a7583112f757ccf35a0a3c3af4c26c7086bd554",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 64.42533300000014
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90941,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.573292000000002,
+            "cpuUserMs": 2.704,
+            "cpuSystemMs": 0.439,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 56655872
+          },
+          "resumeProjection": {
+            "wallMs": 3.385041000000001,
+            "cpuUserMs": 4.167,
+            "cpuSystemMs": 0.132,
+            "rssBeforeBytes": 56655872,
+            "rssAfterBytes": 57311232
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.9143749999999997,
+            "cpuUserMs": 1.28,
+            "cpuSystemMs": 0.071,
+            "rssBeforeBytes": 57311232,
+            "rssAfterBytes": 57851904
+          }
+        },
+        "peakRssBytes": 57884672,
+        "verifiedRefs": 40,
+        "originalDigest": "3a913b7b0c0a30c9d14eea0acf918f2dc9984868ced0d1c75a60d87e3cb30c81",
+        "forks": 10,
+        "processWallMs": 57.660457999999835
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 13,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90944,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6791250000000062,
+            "cpuUserMs": 0.618,
+            "cpuSystemMs": 0.057,
+            "rssBeforeBytes": 55263232,
+            "rssAfterBytes": 55689216
+          },
+          "compressAndStore": {
+            "wallMs": 6.657457999999998,
+            "cpuUserMs": 8.869,
+            "cpuSystemMs": 0.536,
+            "rssBeforeBytes": 55689216,
+            "rssAfterBytes": 57966592
+          },
+          "retrieve": {
+            "wallMs": 0.24945899999999455,
+            "cpuUserMs": 0.271,
+            "cpuSystemMs": 0.015,
+            "rssBeforeBytes": 57966592,
+            "rssAfterBytes": 57999360
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.2372080000000025,
+            "cpuUserMs": 0.825,
+            "cpuSystemMs": 0.474,
+            "rssBeforeBytes": 58015744,
+            "rssAfterBytes": 58540032
+          }
+        },
+        "peakRssBytes": 58572800,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "543f7067354fe0c5e80c94f36fe6303f73598357765e819d91c000bef373c03f",
+        "snapshotDigest": "69ef8a1a9fef94271e23032c729e541a2c2e536ea1e189679984e62dd620a0e1",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 63.69454200000018
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90945,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.298834000000003,
+            "cpuUserMs": 2.308,
+            "cpuSystemMs": 0.437,
+            "rssBeforeBytes": 55230464,
+            "rssAfterBytes": 57016320
+          },
+          "resumeProjection": {
+            "wallMs": 2.9160419999999974,
+            "cpuUserMs": 3.773,
+            "cpuSystemMs": 0.12,
+            "rssBeforeBytes": 57016320,
+            "rssAfterBytes": 57622528
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.9115830000000003,
+            "cpuUserMs": 1.172,
+            "cpuSystemMs": 0.081,
+            "rssBeforeBytes": 57622528,
+            "rssAfterBytes": 58195968
+          }
+        },
+        "peakRssBytes": 58277888,
+        "verifiedRefs": 40,
+        "originalDigest": "543f7067354fe0c5e80c94f36fe6303f73598357765e819d91c000bef373c03f",
+        "forks": 10,
+        "processWallMs": 58.800292000000354
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 14,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90946,
+        "metrics": {
+          "create": {
+            "wallMs": 0.628584,
+            "cpuUserMs": 0.569,
+            "cpuSystemMs": 0.056,
+            "rssBeforeBytes": 54919168,
+            "rssAfterBytes": 55345152
+          },
+          "compressAndStore": {
+            "wallMs": 6.365957999999999,
+            "cpuUserMs": 8.767,
+            "cpuSystemMs": 0.421,
+            "rssBeforeBytes": 55345152,
+            "rssAfterBytes": 57638912
+          },
+          "retrieve": {
+            "wallMs": 0.26158299999999457,
+            "cpuUserMs": 0.293,
+            "cpuSystemMs": 0.011,
+            "rssBeforeBytes": 57638912,
+            "rssAfterBytes": 57688064
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1672920000000033,
+            "cpuUserMs": 0.845,
+            "cpuSystemMs": 0.38,
+            "rssBeforeBytes": 57688064,
+            "rssAfterBytes": 58228736
+          }
+        },
+        "peakRssBytes": 58228736,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "2f77ffad1ad22a26d7ed086d7969e74f1bdbcca38fb183e29bf384290ec6b41e",
+        "snapshotDigest": "cd9708e08d65dec4047aaf618488b819ab9afc77aa723938709c4c5a1ad5d3d6",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 59.99254199999996
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90947,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 3.024416000000002,
+            "cpuUserMs": 3.091,
+            "cpuSystemMs": 0.596,
+            "rssBeforeBytes": 54902784,
+            "rssAfterBytes": 57098240
+          },
+          "resumeProjection": {
+            "wallMs": 3.0984169999999978,
+            "cpuUserMs": 3.949,
+            "cpuSystemMs": 0.098,
+            "rssBeforeBytes": 57098240,
+            "rssAfterBytes": 57622528
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8634579999999943,
+            "cpuUserMs": 1.137,
+            "cpuSystemMs": 0.076,
+            "rssBeforeBytes": 57622528,
+            "rssAfterBytes": 58261504
+          }
+        },
+        "peakRssBytes": 58294272,
+        "verifiedRefs": 40,
+        "originalDigest": "2f77ffad1ad22a26d7ed086d7969e74f1bdbcca38fb183e29bf384290ec6b41e",
+        "forks": 10,
+        "processWallMs": 60.441915999999765
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 15,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90948,
+        "metrics": {
+          "create": {
+            "wallMs": 0.7642920000000046,
+            "cpuUserMs": 0.665,
+            "cpuSystemMs": 0.085,
+            "rssBeforeBytes": 55066624,
+            "rssAfterBytes": 55508992
+          },
+          "compressAndStore": {
+            "wallMs": 7.136625000000002,
+            "cpuUserMs": 9.453,
+            "cpuSystemMs": 0.58,
+            "rssBeforeBytes": 55508992,
+            "rssAfterBytes": 57786368
+          },
+          "retrieve": {
+            "wallMs": 0.26608299999999474,
+            "cpuUserMs": 0.316,
+            "cpuSystemMs": 0.017,
+            "rssBeforeBytes": 57786368,
+            "rssAfterBytes": 57835520
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.3904579999999953,
+            "cpuUserMs": 0.842,
+            "cpuSystemMs": 0.448,
+            "rssBeforeBytes": 57835520,
+            "rssAfterBytes": 58376192
+          }
+        },
+        "peakRssBytes": 58376192,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "00251a5a892b0c5dad18d56ed6a3b0f161898daa6e3d8910bc1a0b8977667e89",
+        "snapshotDigest": "befd3694dcde8c0c05093c09ccddf09b0dbde1918bae8c5f1ee9a9ea9764ffdb",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 65.31858299999976
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90949,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.3757909999999995,
+            "cpuUserMs": 2.296,
+            "cpuSystemMs": 0.55,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 56688640
+          },
+          "resumeProjection": {
+            "wallMs": 3.095583000000005,
+            "cpuUserMs": 3.896,
+            "cpuSystemMs": 0.114,
+            "rssBeforeBytes": 56705024,
+            "rssAfterBytes": 57294848
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8505830000000003,
+            "cpuUserMs": 1.083,
+            "cpuSystemMs": 0.071,
+            "rssBeforeBytes": 57294848,
+            "rssAfterBytes": 57851904
+          }
+        },
+        "peakRssBytes": 57901056,
+        "verifiedRefs": 40,
+        "originalDigest": "00251a5a892b0c5dad18d56ed6a3b0f161898daa6e3d8910bc1a0b8977667e89",
+        "forks": 10,
+        "processWallMs": 57.013334000000214
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 16,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90950,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6373339999999992,
+            "cpuUserMs": 0.565,
+            "cpuSystemMs": 0.069,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 55279616
+          },
+          "compressAndStore": {
+            "wallMs": 6.547875000000005,
+            "cpuUserMs": 8.788,
+            "cpuSystemMs": 0.478,
+            "rssBeforeBytes": 55279616,
+            "rssAfterBytes": 57458688
+          },
+          "retrieve": {
+            "wallMs": 0.24791700000000105,
+            "cpuUserMs": 0.273,
+            "cpuSystemMs": 0.017,
+            "rssBeforeBytes": 57458688,
+            "rssAfterBytes": 57573376
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1607920000000007,
+            "cpuUserMs": 0.792,
+            "cpuSystemMs": 0.407,
+            "rssBeforeBytes": 57573376,
+            "rssAfterBytes": 58097664
+          }
+        },
+        "peakRssBytes": 58097664,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "12e7d3a1114c0fbffd645f9053378efa2e132f7ddae5397e01c9d04b878d9717",
+        "snapshotDigest": "ab2c6f445cc304c43c7710c718537329458828eb24c9de75b41458ff09711c32",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 60.59045900000001
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90951,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.445667000000004,
+            "cpuUserMs": 2.525,
+            "cpuSystemMs": 0.446,
+            "rssBeforeBytes": 54919168,
+            "rssAfterBytes": 56737792
+          },
+          "resumeProjection": {
+            "wallMs": 2.9109589999999983,
+            "cpuUserMs": 3.643,
+            "cpuSystemMs": 0.094,
+            "rssBeforeBytes": 56737792,
+            "rssAfterBytes": 57196544
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.8322500000000019,
+            "cpuUserMs": 1.061,
+            "cpuSystemMs": 0.059,
+            "rssBeforeBytes": 57212928,
+            "rssAfterBytes": 57802752
+          }
+        },
+        "peakRssBytes": 57835520,
+        "verifiedRefs": 40,
+        "originalDigest": "12e7d3a1114c0fbffd645f9053378efa2e132f7ddae5397e01c9d04b878d9717",
+        "forks": 10,
+        "processWallMs": 57.79166699999951
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 17,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90952,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6233750000000029,
+            "cpuUserMs": 0.557,
+            "cpuSystemMs": 0.063,
+            "rssBeforeBytes": 54722560,
+            "rssAfterBytes": 55148544
+          },
+          "compressAndStore": {
+            "wallMs": 6.543709000000003,
+            "cpuUserMs": 8.807,
+            "cpuSystemMs": 0.48,
+            "rssBeforeBytes": 55148544,
+            "rssAfterBytes": 57425920
+          },
+          "retrieve": {
+            "wallMs": 0.26004199999999855,
+            "cpuUserMs": 0.287,
+            "cpuSystemMs": 0.011,
+            "rssBeforeBytes": 57425920,
+            "rssAfterBytes": 57442304
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1207080000000005,
+            "cpuUserMs": 0.777,
+            "cpuSystemMs": 0.411,
+            "rssBeforeBytes": 57442304,
+            "rssAfterBytes": 57966592
+          }
+        },
+        "peakRssBytes": 57982976,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "d7186990c600457b97020c8f4b870e51540e1b69a964b05dfe85974e6cd5846d",
+        "snapshotDigest": "4be218aa1613b2c23ae5a5d7d12842c00712bd3df5748e11fcb600a06f43b5b0",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 60.0619999999999
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90953,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.3521249999999974,
+            "cpuUserMs": 2.38,
+            "cpuSystemMs": 0.442,
+            "rssBeforeBytes": 54640640,
+            "rssAfterBytes": 56442880
+          },
+          "resumeProjection": {
+            "wallMs": 2.9089170000000024,
+            "cpuUserMs": 3.727,
+            "cpuSystemMs": 0.13,
+            "rssBeforeBytes": 56442880,
+            "rssAfterBytes": 57081856
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.832209000000006,
+            "cpuUserMs": 1.116,
+            "cpuSystemMs": 0.067,
+            "rssBeforeBytes": 57081856,
+            "rssAfterBytes": 57671680
+          }
+        },
+        "peakRssBytes": 57704448,
+        "verifiedRefs": 40,
+        "originalDigest": "d7186990c600457b97020c8f4b870e51540e1b69a964b05dfe85974e6cd5846d",
+        "forks": 10,
+        "processWallMs": 57.795250000000124
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 18,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90954,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6821669999999997,
+            "cpuUserMs": 0.609,
+            "cpuSystemMs": 0.064,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 55312384
+          },
+          "compressAndStore": {
+            "wallMs": 6.305332999999997,
+            "cpuUserMs": 8.535,
+            "cpuSystemMs": 0.427,
+            "rssBeforeBytes": 55312384,
+            "rssAfterBytes": 57655296
+          },
+          "retrieve": {
+            "wallMs": 0.2397500000000008,
+            "cpuUserMs": 0.271,
+            "cpuSystemMs": 0.01,
+            "rssBeforeBytes": 57655296,
+            "rssAfterBytes": 57671680
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.2141250000000028,
+            "cpuUserMs": 0.813,
+            "cpuSystemMs": 0.449,
+            "rssBeforeBytes": 57671680,
+            "rssAfterBytes": 58212352
+          }
+        },
+        "peakRssBytes": 58228736,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "20010672b0097ec84d0f9b4c6775ab202dc1e75856245357181a025122bc9e83",
+        "snapshotDigest": "378887fced68789e41d649dc85eb157f3b30c645934f1ebfaaefc3d0d1a2c091",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 60.16570800000045
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90955,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.7375000000000043,
+            "cpuUserMs": 2.688,
+            "cpuSystemMs": 0.605,
+            "rssBeforeBytes": 55672832,
+            "rssAfterBytes": 57507840
+          },
+          "resumeProjection": {
+            "wallMs": 3.1759580000000014,
+            "cpuUserMs": 3.945,
+            "cpuSystemMs": 0.176,
+            "rssBeforeBytes": 57507840,
+            "rssAfterBytes": 57966592
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.9355410000000006,
+            "cpuUserMs": 1.244,
+            "cpuSystemMs": 0.12,
+            "rssBeforeBytes": 57966592,
+            "rssAfterBytes": 58605568
+          }
+        },
+        "peakRssBytes": 58654720,
+        "verifiedRefs": 40,
+        "originalDigest": "20010672b0097ec84d0f9b4c6775ab202dc1e75856245357181a025122bc9e83",
+        "forks": 10,
+        "processWallMs": 59.64383299999918
+      }
+    },
+    {
+      "sessions": 10,
+      "repetition": 19,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90956,
+        "metrics": {
+          "create": {
+            "wallMs": 0.6375409999999988,
+            "cpuUserMs": 0.565,
+            "cpuSystemMs": 0.067,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 55246848
+          },
+          "compressAndStore": {
+            "wallMs": 6.517541000000001,
+            "cpuUserMs": 8.766,
+            "cpuSystemMs": 0.485,
+            "rssBeforeBytes": 55246848,
+            "rssAfterBytes": 57524224
+          },
+          "retrieve": {
+            "wallMs": 0.24095799999999912,
+            "cpuUserMs": 0.276,
+            "cpuSystemMs": 0.008,
+            "rssBeforeBytes": 57524224,
+            "rssAfterBytes": 57540608
+          },
+          "serializeAndWrite": {
+            "wallMs": 1.1417500000000018,
+            "cpuUserMs": 0.858,
+            "cpuSystemMs": 0.387,
+            "rssBeforeBytes": 57540608,
+            "rssAfterBytes": 58064896
+          }
+        },
+        "peakRssBytes": 58097664,
+        "rawBytes": 37170,
+        "visibleBytes": 10530,
+        "serializedBytes": 112811,
+        "retrievedBytes": 29280,
+        "originalDigest": "aafa88e864c8eba95e38bfb8bd150971518bde27de1eba4fd92c350702dbea92",
+        "snapshotDigest": "b152427b969cf8a0e486e9aa098f7a6bdcf2fac3b356bfa5311bd52053f742bb",
+        "verifiedRefs": 40,
+        "warnings": [],
+        "processWallMs": 60.63416700000016
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90957,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 2.6954169999999955,
+            "cpuUserMs": 2.763,
+            "cpuSystemMs": 0.535,
+            "rssBeforeBytes": 54984704,
+            "rssAfterBytes": 56754176
+          },
+          "resumeProjection": {
+            "wallMs": 3.3009580000000014,
+            "cpuUserMs": 4.248,
+            "cpuSystemMs": 0.122,
+            "rssBeforeBytes": 56754176,
+            "rssAfterBytes": 57245696
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 0.9510839999999945,
+            "cpuUserMs": 1.036,
+            "cpuSystemMs": 0.131,
+            "rssBeforeBytes": 57278464,
+            "rssAfterBytes": 57917440
+          }
+        },
+        "peakRssBytes": 57950208,
+        "verifiedRefs": 40,
+        "originalDigest": "aafa88e864c8eba95e38bfb8bd150971518bde27de1eba4fd92c350702dbea92",
+        "forks": 10,
+        "processWallMs": 59.586583000000246
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 0,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90958,
+        "metrics": {
+          "create": {
+            "wallMs": 2.5913329999999952,
+            "cpuUserMs": 2.94,
+            "cpuSystemMs": 0.302,
+            "rssBeforeBytes": 54951936,
+            "rssAfterBytes": 56737792
+          },
+          "compressAndStore": {
+            "wallMs": 17.145291999999998,
+            "cpuUserMs": 25.496,
+            "cpuSystemMs": 1.456,
+            "rssBeforeBytes": 56737792,
+            "rssAfterBytes": 65224704
+          },
+          "retrieve": {
+            "wallMs": 1.1261660000000049,
+            "cpuUserMs": 1.175,
+            "cpuSystemMs": 0.053,
+            "rssBeforeBytes": 65224704,
+            "rssAfterBytes": 65699840
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.519083000000002,
+            "cpuUserMs": 4.678,
+            "cpuSystemMs": 1.009,
+            "rssBeforeBytes": 65699840,
+            "rssAfterBytes": 70729728
+          }
+        },
+        "peakRssBytes": 71892992,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "e3991f48a56106713a06f05c9b470b7f003ab8817608b7b027ae1bc5dc712ba8",
+        "snapshotDigest": "f879be0548dcc4044f30a4c74a6442dfca9dd5b1ab1157bf7419b8704b0b1b58",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 80.72775000000001
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90959,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.609040999999998,
+            "cpuUserMs": 9.571,
+            "cpuSystemMs": 1.307,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 64176128
+          },
+          "resumeProjection": {
+            "wallMs": 6.682667000000002,
+            "cpuUserMs": 9.667,
+            "cpuSystemMs": 0.673,
+            "rssBeforeBytes": 64176128,
+            "rssAfterBytes": 68894720
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 5.984791000000001,
+            "cpuUserMs": 6.35,
+            "cpuSystemMs": 0.131,
+            "rssBeforeBytes": 68894720,
+            "rssAfterBytes": 69107712
+          }
+        },
+        "peakRssBytes": 69140480,
+        "verifiedRefs": 400,
+        "originalDigest": "e3991f48a56106713a06f05c9b470b7f003ab8817608b7b027ae1bc5dc712ba8",
+        "forks": 100,
+        "processWallMs": 74.32366600000023
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 1,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90960,
+        "metrics": {
+          "create": {
+            "wallMs": 2.5100419999999986,
+            "cpuUserMs": 2.863,
+            "cpuSystemMs": 0.268,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 56590336
+          },
+          "compressAndStore": {
+            "wallMs": 17.557459,
+            "cpuUserMs": 25.72,
+            "cpuSystemMs": 1.599,
+            "rssBeforeBytes": 56590336,
+            "rssAfterBytes": 65355776
+          },
+          "retrieve": {
+            "wallMs": 1.1976670000000027,
+            "cpuUserMs": 1.258,
+            "cpuSystemMs": 0.093,
+            "rssBeforeBytes": 65355776,
+            "rssAfterBytes": 65880064
+          },
+          "serializeAndWrite": {
+            "wallMs": 88.26983399999999,
+            "cpuUserMs": 4.805,
+            "cpuSystemMs": 8.964,
+            "rssBeforeBytes": 65880064,
+            "rssAfterBytes": 70844416
+          }
+        },
+        "peakRssBytes": 72007680,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "05c6e2a26642bd53372e56bb50ff2979e9883e5fd15618ddcc3342cc766149ac",
+        "snapshotDigest": "107dd94336a5c6b89ba0ca5569724df7a2f935cc9a2f95d1483c38345294e05c",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 163.99316699999963
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90961,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.987249999999996,
+            "cpuUserMs": 9.79,
+            "cpuSystemMs": 1.478,
+            "rssBeforeBytes": 55083008,
+            "rssAfterBytes": 64864256
+          },
+          "resumeProjection": {
+            "wallMs": 6.910291999999998,
+            "cpuUserMs": 10.061,
+            "cpuSystemMs": 0.804,
+            "rssBeforeBytes": 64864256,
+            "rssAfterBytes": 69648384
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.2663340000000005,
+            "cpuUserMs": 6.432,
+            "cpuSystemMs": 0.142,
+            "rssBeforeBytes": 69648384,
+            "rssAfterBytes": 69828608
+          }
+        },
+        "peakRssBytes": 69877760,
+        "verifiedRefs": 400,
+        "originalDigest": "05c6e2a26642bd53372e56bb50ff2979e9883e5fd15618ddcc3342cc766149ac",
+        "forks": 100,
+        "processWallMs": 79.8852080000006
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 2,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90962,
+        "metrics": {
+          "create": {
+            "wallMs": 2.5337500000000013,
+            "cpuUserMs": 2.869,
+            "cpuSystemMs": 0.313,
+            "rssBeforeBytes": 55328768,
+            "rssAfterBytes": 57065472
+          },
+          "compressAndStore": {
+            "wallMs": 17.817208,
+            "cpuUserMs": 26.234,
+            "cpuSystemMs": 1.667,
+            "rssBeforeBytes": 57065472,
+            "rssAfterBytes": 65601536
+          },
+          "retrieve": {
+            "wallMs": 1.1028750000000045,
+            "cpuUserMs": 1.143,
+            "cpuSystemMs": 0.061,
+            "rssBeforeBytes": 65601536,
+            "rssAfterBytes": 66093056
+          },
+          "serializeAndWrite": {
+            "wallMs": 6.789208000000002,
+            "cpuUserMs": 4.742,
+            "cpuSystemMs": 1.209,
+            "rssBeforeBytes": 66093056,
+            "rssAfterBytes": 70762496
+          }
+        },
+        "peakRssBytes": 71909376,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "19a2280a0d8b5bcea62f60babc25ab0da8b611b9f376026eac706d76d74c9921",
+        "snapshotDigest": "ab96de96560baaf921b136a9753e96e426392dc1e078ca31e0ae5d4d2d26f7c9",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 84.42808299999979
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90963,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 10.166833000000004,
+            "cpuUserMs": 9.961,
+            "cpuSystemMs": 1.57,
+            "rssBeforeBytes": 55328768,
+            "rssAfterBytes": 64716800
+          },
+          "resumeProjection": {
+            "wallMs": 6.745624999999997,
+            "cpuUserMs": 9.747,
+            "cpuSystemMs": 0.874,
+            "rssBeforeBytes": 64716800,
+            "rssAfterBytes": 69435392
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.091750000000005,
+            "cpuUserMs": 6.294,
+            "cpuSystemMs": 0.122,
+            "rssBeforeBytes": 69435392,
+            "rssAfterBytes": 69615616
+          }
+        },
+        "peakRssBytes": 69632000,
+        "verifiedRefs": 400,
+        "originalDigest": "19a2280a0d8b5bcea62f60babc25ab0da8b611b9f376026eac706d76d74c9921",
+        "forks": 100,
+        "processWallMs": 81.22333400000025
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 3,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90964,
+        "metrics": {
+          "create": {
+            "wallMs": 2.4717079999999996,
+            "cpuUserMs": 2.826,
+            "cpuSystemMs": 0.258,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 56541184
+          },
+          "compressAndStore": {
+            "wallMs": 17.947875000000003,
+            "cpuUserMs": 26.506,
+            "cpuSystemMs": 1.478,
+            "rssBeforeBytes": 56541184,
+            "rssAfterBytes": 65191936
+          },
+          "retrieve": {
+            "wallMs": 1.087291999999998,
+            "cpuUserMs": 1.154,
+            "cpuSystemMs": 0.044,
+            "rssBeforeBytes": 65191936,
+            "rssAfterBytes": 65667072
+          },
+          "serializeAndWrite": {
+            "wallMs": 6.5732499999999945,
+            "cpuUserMs": 4.839,
+            "cpuSystemMs": 1.137,
+            "rssBeforeBytes": 65683456,
+            "rssAfterBytes": 71794688
+          }
+        },
+        "peakRssBytes": 72957952,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "605fb0df70746fe76fc3460c7702a6578da0cb829aafdbcc560b76ab8204d553",
+        "snapshotDigest": "00d6e28b3389b843523343bfa72293246753ad19d1be0ec25cedd1a68bc9dece",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 82.26829199999975
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90965,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.674791999999997,
+            "cpuUserMs": 9.617,
+            "cpuSystemMs": 1.319,
+            "rssBeforeBytes": 54771712,
+            "rssAfterBytes": 64143360
+          },
+          "resumeProjection": {
+            "wallMs": 6.740915999999999,
+            "cpuUserMs": 9.793,
+            "cpuSystemMs": 0.72,
+            "rssBeforeBytes": 64143360,
+            "rssAfterBytes": 68878336
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 5.993207999999996,
+            "cpuUserMs": 6.205,
+            "cpuSystemMs": 0.111,
+            "rssBeforeBytes": 68894720,
+            "rssAfterBytes": 69042176
+          }
+        },
+        "peakRssBytes": 69107712,
+        "verifiedRefs": 400,
+        "originalDigest": "605fb0df70746fe76fc3460c7702a6578da0cb829aafdbcc560b76ab8204d553",
+        "forks": 100,
+        "processWallMs": 75.02837500000078
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 4,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90966,
+        "metrics": {
+          "create": {
+            "wallMs": 2.626041999999998,
+            "cpuUserMs": 2.952,
+            "cpuSystemMs": 0.356,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 56590336
+          },
+          "compressAndStore": {
+            "wallMs": 17.843083,
+            "cpuUserMs": 26.362,
+            "cpuSystemMs": 1.467,
+            "rssBeforeBytes": 56590336,
+            "rssAfterBytes": 65142784
+          },
+          "retrieve": {
+            "wallMs": 1.107208,
+            "cpuUserMs": 1.153,
+            "cpuSystemMs": 0.063,
+            "rssBeforeBytes": 65142784,
+            "rssAfterBytes": 65601536
+          },
+          "serializeAndWrite": {
+            "wallMs": 6.938665999999998,
+            "cpuUserMs": 4.861,
+            "cpuSystemMs": 1.131,
+            "rssBeforeBytes": 65601536,
+            "rssAfterBytes": 70696960
+          }
+        },
+        "peakRssBytes": 71860224,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "a8a16828dc05cbe7db6ea85dd909daa806c9146d964839ffa672c6fba3a375e4",
+        "snapshotDigest": "8fff8e937550197d69aa1cefcc9fe2ad0788d6d840a3c505b878d4ba2a8f1f9f",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 83.05191699999978
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90967,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.779542000000003,
+            "cpuUserMs": 9.673,
+            "cpuSystemMs": 1.468,
+            "rssBeforeBytes": 54919168,
+            "rssAfterBytes": 64323584
+          },
+          "resumeProjection": {
+            "wallMs": 7.0136249999999976,
+            "cpuUserMs": 9.858,
+            "cpuSystemMs": 0.66,
+            "rssBeforeBytes": 64323584,
+            "rssAfterBytes": 67928064
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.940958000000002,
+            "cpuUserMs": 7.533,
+            "cpuSystemMs": 0.349,
+            "rssBeforeBytes": 67928064,
+            "rssAfterBytes": 69337088
+          }
+        },
+        "peakRssBytes": 69353472,
+        "verifiedRefs": 400,
+        "originalDigest": "a8a16828dc05cbe7db6ea85dd909daa806c9146d964839ffa672c6fba3a375e4",
+        "forks": 100,
+        "processWallMs": 77.17708299999958
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 5,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90968,
+        "metrics": {
+          "create": {
+            "wallMs": 2.868791999999999,
+            "cpuUserMs": 3.301,
+            "cpuSystemMs": 0.359,
+            "rssBeforeBytes": 55132160,
+            "rssAfterBytes": 56885248
+          },
+          "compressAndStore": {
+            "wallMs": 18.014125,
+            "cpuUserMs": 26.607,
+            "cpuSystemMs": 1.462,
+            "rssBeforeBytes": 56885248,
+            "rssAfterBytes": 65617920
+          },
+          "retrieve": {
+            "wallMs": 1.0984169999999978,
+            "cpuUserMs": 1.175,
+            "cpuSystemMs": 0.054,
+            "rssBeforeBytes": 65617920,
+            "rssAfterBytes": 66076672
+          },
+          "serializeAndWrite": {
+            "wallMs": 6.206083,
+            "cpuUserMs": 5.353,
+            "cpuSystemMs": 1.033,
+            "rssBeforeBytes": 66076672,
+            "rssAfterBytes": 72089600
+          }
+        },
+        "peakRssBytes": 73269248,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "1c1ba600df5b6b2a05f3cb07a466957611997f48478ef7d49cc8445534389de9",
+        "snapshotDigest": "a411de3fb44e06464892d563cbe6e842cbc039352e28f8986617e66ac208a709",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 85.28537500000039
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90969,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.847999999999999,
+            "cpuUserMs": 9.707,
+            "cpuSystemMs": 1.52,
+            "rssBeforeBytes": 55197696,
+            "rssAfterBytes": 64569344
+          },
+          "resumeProjection": {
+            "wallMs": 6.715624999999996,
+            "cpuUserMs": 9.797,
+            "cpuSystemMs": 0.749,
+            "rssBeforeBytes": 64569344,
+            "rssAfterBytes": 69304320
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.084000000000003,
+            "cpuUserMs": 6.326,
+            "cpuSystemMs": 0.097,
+            "rssBeforeBytes": 69304320,
+            "rssAfterBytes": 69451776
+          }
+        },
+        "peakRssBytes": 69484544,
+        "verifiedRefs": 400,
+        "originalDigest": "1c1ba600df5b6b2a05f3cb07a466957611997f48478ef7d49cc8445534389de9",
+        "forks": 100,
+        "processWallMs": 78.08504100000027
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 6,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90970,
+        "metrics": {
+          "create": {
+            "wallMs": 2.476874999999996,
+            "cpuUserMs": 2.801,
+            "cpuSystemMs": 0.306,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 56524800
+          },
+          "compressAndStore": {
+            "wallMs": 17.237459,
+            "cpuUserMs": 25.691,
+            "cpuSystemMs": 1.478,
+            "rssBeforeBytes": 56524800,
+            "rssAfterBytes": 65208320
+          },
+          "retrieve": {
+            "wallMs": 1.1012079999999997,
+            "cpuUserMs": 1.154,
+            "cpuSystemMs": 0.047,
+            "rssBeforeBytes": 65208320,
+            "rssAfterBytes": 65667072
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.509292000000002,
+            "cpuUserMs": 4.761,
+            "cpuSystemMs": 0.934,
+            "rssBeforeBytes": 65667072,
+            "rssAfterBytes": 70696960
+          }
+        },
+        "peakRssBytes": 71860224,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "ee9981ea312cf3a7d2f364014133a3abba76d05faea68713af231ff30aca65d7",
+        "snapshotDigest": "ecf21ecef66e40a49456f159dbcd8e9b80f00780989260cefb6cd31b7eb3b128",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 80.22649999999976
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90971,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 10.448959000000002,
+            "cpuUserMs": 10.203,
+            "cpuSystemMs": 1.596,
+            "rssBeforeBytes": 55459840,
+            "rssAfterBytes": 64913408
+          },
+          "resumeProjection": {
+            "wallMs": 7.155792000000005,
+            "cpuUserMs": 10.124,
+            "cpuSystemMs": 0.856,
+            "rssBeforeBytes": 64913408,
+            "rssAfterBytes": 69648384
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.134584000000004,
+            "cpuUserMs": 6.36,
+            "cpuSystemMs": 0.131,
+            "rssBeforeBytes": 69648384,
+            "rssAfterBytes": 69828608
+          }
+        },
+        "peakRssBytes": 69828608,
+        "verifiedRefs": 400,
+        "originalDigest": "ee9981ea312cf3a7d2f364014133a3abba76d05faea68713af231ff30aca65d7",
+        "forks": 100,
+        "processWallMs": 75.96187499999996
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 7,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90972,
+        "metrics": {
+          "create": {
+            "wallMs": 2.588917000000002,
+            "cpuUserMs": 2.962,
+            "cpuSystemMs": 0.33,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 56606720
+          },
+          "compressAndStore": {
+            "wallMs": 17.043541999999995,
+            "cpuUserMs": 25.627,
+            "cpuSystemMs": 1.454,
+            "rssBeforeBytes": 56606720,
+            "rssAfterBytes": 65208320
+          },
+          "retrieve": {
+            "wallMs": 1.1010410000000022,
+            "cpuUserMs": 1.173,
+            "cpuSystemMs": 0.04,
+            "rssBeforeBytes": 65208320,
+            "rssAfterBytes": 65601536
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.452750000000002,
+            "cpuUserMs": 4.668,
+            "cpuSystemMs": 0.942,
+            "rssBeforeBytes": 65601536,
+            "rssAfterBytes": 70680576
+          }
+        },
+        "peakRssBytes": 71843840,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "bcc2f2a0669f802a3db50456c45fd899fcf3249d0984db1ce1bda7699ee5a412",
+        "snapshotDigest": "b7690c48f4c3f61e0af1f4bc3a8ee8ca1ec53999757e2bab444d00c664a31218",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 79.48883399999977
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90973,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.709292000000001,
+            "cpuUserMs": 9.655,
+            "cpuSystemMs": 1.264,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 64126976
+          },
+          "resumeProjection": {
+            "wallMs": 7.105374999999995,
+            "cpuUserMs": 10.704,
+            "cpuSystemMs": 0.898,
+            "rssBeforeBytes": 64126976,
+            "rssAfterBytes": 69107712
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.674999999999997,
+            "cpuUserMs": 6.917,
+            "cpuSystemMs": 0.116,
+            "rssBeforeBytes": 69107712,
+            "rssAfterBytes": 69255168
+          }
+        },
+        "peakRssBytes": 69304320,
+        "verifiedRefs": 400,
+        "originalDigest": "bcc2f2a0669f802a3db50456c45fd899fcf3249d0984db1ce1bda7699ee5a412",
+        "forks": 100,
+        "processWallMs": 75.37095900000077
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 8,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90974,
+        "metrics": {
+          "create": {
+            "wallMs": 3.0518340000000066,
+            "cpuUserMs": 3.377,
+            "cpuSystemMs": 0.437,
+            "rssBeforeBytes": 55623680,
+            "rssAfterBytes": 57393152
+          },
+          "compressAndStore": {
+            "wallMs": 18.933833,
+            "cpuUserMs": 27.523,
+            "cpuSystemMs": 1.836,
+            "rssBeforeBytes": 57393152,
+            "rssAfterBytes": 65978368
+          },
+          "retrieve": {
+            "wallMs": 1.1141250000000014,
+            "cpuUserMs": 1.186,
+            "cpuSystemMs": 0.043,
+            "rssBeforeBytes": 65978368,
+            "rssAfterBytes": 66437120
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.659292000000001,
+            "cpuUserMs": 4.799,
+            "cpuSystemMs": 1.023,
+            "rssBeforeBytes": 66437120,
+            "rssAfterBytes": 71811072
+          }
+        },
+        "peakRssBytes": 72974336,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "6347fec92c26878d60eef678c92d68caaf2bf201e9fb0b7270f13fc60ead0340",
+        "snapshotDigest": "2e8c516545944a6bf4b6d8c516b5b2bb50dc930ee71d18f920a5556d46f326c8",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 85.16212499999983
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90975,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.561,
+            "cpuUserMs": 9.648,
+            "cpuSystemMs": 1.276,
+            "rssBeforeBytes": 55197696,
+            "rssAfterBytes": 64602112
+          },
+          "resumeProjection": {
+            "wallMs": 6.829459,
+            "cpuUserMs": 9.694,
+            "cpuSystemMs": 0.561,
+            "rssBeforeBytes": 64602112,
+            "rssAfterBytes": 68173824
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 7.322415999999997,
+            "cpuUserMs": 8.053,
+            "cpuSystemMs": 0.344,
+            "rssBeforeBytes": 68173824,
+            "rssAfterBytes": 69582848
+          }
+        },
+        "peakRssBytes": 69599232,
+        "verifiedRefs": 400,
+        "originalDigest": "6347fec92c26878d60eef678c92d68caaf2bf201e9fb0b7270f13fc60ead0340",
+        "forks": 100,
+        "processWallMs": 78.33141700000033
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 9,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90978,
+        "metrics": {
+          "create": {
+            "wallMs": 2.4609590000000026,
+            "cpuUserMs": 2.794,
+            "cpuSystemMs": 0.274,
+            "rssBeforeBytes": 54804480,
+            "rssAfterBytes": 56557568
+          },
+          "compressAndStore": {
+            "wallMs": 17.148833000000003,
+            "cpuUserMs": 25.464,
+            "cpuSystemMs": 1.466,
+            "rssBeforeBytes": 56557568,
+            "rssAfterBytes": 65175552
+          },
+          "retrieve": {
+            "wallMs": 1.086666000000001,
+            "cpuUserMs": 1.145,
+            "cpuSystemMs": 0.051,
+            "rssBeforeBytes": 65175552,
+            "rssAfterBytes": 65650688
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.595542000000002,
+            "cpuUserMs": 4.743,
+            "cpuSystemMs": 0.981,
+            "rssBeforeBytes": 65650688,
+            "rssAfterBytes": 70680576
+          }
+        },
+        "peakRssBytes": 71827456,
+        "rawBytes": 372150,
+        "visibleBytes": 105390,
+        "serializedBytes": 1128281,
+        "retrievedBytes": 293160,
+        "originalDigest": "9db0fec991251eadeaa51d3898390c17341fcf9860a11d2ec874f6e4a62826bc",
+        "snapshotDigest": "ff2bc74bd94d13408d9c91a2af81e4767d1c4923bbbdb2b9d8f6229a4cb5e074",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 80.01241699999991
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90979,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.415667,
+            "cpuUserMs": 9.355,
+            "cpuSystemMs": 1.256,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 64176128
+          },
+          "resumeProjection": {
+            "wallMs": 6.618333,
+            "cpuUserMs": 9.895,
+            "cpuSystemMs": 0.689,
+            "rssBeforeBytes": 64176128,
+            "rssAfterBytes": 68960256
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.097042000000002,
+            "cpuUserMs": 6.319,
+            "cpuSystemMs": 0.134,
+            "rssBeforeBytes": 68976640,
+            "rssAfterBytes": 69173248
+          }
+        },
+        "peakRssBytes": 69206016,
+        "verifiedRefs": 400,
+        "originalDigest": "9db0fec991251eadeaa51d3898390c17341fcf9860a11d2ec874f6e4a62826bc",
+        "forks": 100,
+        "processWallMs": 72.65095900000051
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 10,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90980,
+        "metrics": {
+          "create": {
+            "wallMs": 2.646666999999997,
+            "cpuUserMs": 2.987,
+            "cpuSystemMs": 0.341,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 56672256
+          },
+          "compressAndStore": {
+            "wallMs": 16.9555,
+            "cpuUserMs": 25.495,
+            "cpuSystemMs": 1.397,
+            "rssBeforeBytes": 56672256,
+            "rssAfterBytes": 65290240
+          },
+          "retrieve": {
+            "wallMs": 1.1943750000000009,
+            "cpuUserMs": 1.243,
+            "cpuSystemMs": 0.071,
+            "rssBeforeBytes": 65290240,
+            "rssAfterBytes": 65765376
+          },
+          "serializeAndWrite": {
+            "wallMs": 6.542332999999999,
+            "cpuUserMs": 5.431,
+            "cpuSystemMs": 1.32,
+            "rssBeforeBytes": 65765376,
+            "rssAfterBytes": 70746112
+          }
+        },
+        "peakRssBytes": 71892992,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "afee81130f03709414915f8decdb5abcd0b25c130612b8e2a00f36ad6c6466fc",
+        "snapshotDigest": "631d238491ecac8c739771359be7a9e09843aa53112ac5590af9cc6aafa0878b",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 81.78445900000042
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90981,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.553875000000001,
+            "cpuUserMs": 9.514,
+            "cpuSystemMs": 1.287,
+            "rssBeforeBytes": 54820864,
+            "rssAfterBytes": 64126976
+          },
+          "resumeProjection": {
+            "wallMs": 6.799916000000003,
+            "cpuUserMs": 9.861,
+            "cpuSystemMs": 0.852,
+            "rssBeforeBytes": 64126976,
+            "rssAfterBytes": 68976640
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.105916999999998,
+            "cpuUserMs": 6.46,
+            "cpuSystemMs": 0.117,
+            "rssBeforeBytes": 68976640,
+            "rssAfterBytes": 69156864
+          }
+        },
+        "peakRssBytes": 69206016,
+        "verifiedRefs": 400,
+        "originalDigest": "afee81130f03709414915f8decdb5abcd0b25c130612b8e2a00f36ad6c6466fc",
+        "forks": 100,
+        "processWallMs": 74.75583299999926
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 11,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90982,
+        "metrics": {
+          "create": {
+            "wallMs": 2.4853750000000012,
+            "cpuUserMs": 2.828,
+            "cpuSystemMs": 0.272,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 56606720
+          },
+          "compressAndStore": {
+            "wallMs": 18.073500000000003,
+            "cpuUserMs": 26.824,
+            "cpuSystemMs": 1.562,
+            "rssBeforeBytes": 56623104,
+            "rssAfterBytes": 65372160
+          },
+          "retrieve": {
+            "wallMs": 1.1749999999999972,
+            "cpuUserMs": 1.26,
+            "cpuSystemMs": 0.073,
+            "rssBeforeBytes": 65372160,
+            "rssAfterBytes": 65847296
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.7100830000000045,
+            "cpuUserMs": 4.859,
+            "cpuSystemMs": 1.052,
+            "rssBeforeBytes": 65847296,
+            "rssAfterBytes": 70877184
+          }
+        },
+        "peakRssBytes": 72040448,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "66b794b1679addf217626435fb4246d39d8b5dc07725f3d3fb77156e2029f0ec",
+        "snapshotDigest": "2bc7b43c519a980315d6168b2cc801774dc3578521eafe9d495bd7e287c18ff4",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 81.21104099999957
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90983,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.355415999999998,
+            "cpuUserMs": 9.391,
+            "cpuSystemMs": 1.189,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 64274432
+          },
+          "resumeProjection": {
+            "wallMs": 6.552166,
+            "cpuUserMs": 9.717,
+            "cpuSystemMs": 0.646,
+            "rssBeforeBytes": 64274432,
+            "rssAfterBytes": 69091328
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.1349170000000015,
+            "cpuUserMs": 6.467,
+            "cpuSystemMs": 0.162,
+            "rssBeforeBytes": 69091328,
+            "rssAfterBytes": 69255168
+          }
+        },
+        "peakRssBytes": 69287936,
+        "verifiedRefs": 400,
+        "originalDigest": "66b794b1679addf217626435fb4246d39d8b5dc07725f3d3fb77156e2029f0ec",
+        "forks": 100,
+        "processWallMs": 74.972084
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 12,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90984,
+        "metrics": {
+          "create": {
+            "wallMs": 2.49475,
+            "cpuUserMs": 2.906,
+            "cpuSystemMs": 0.26,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 56639488
+          },
+          "compressAndStore": {
+            "wallMs": 16.901583000000002,
+            "cpuUserMs": 25.368,
+            "cpuSystemMs": 1.525,
+            "rssBeforeBytes": 56639488,
+            "rssAfterBytes": 65355776
+          },
+          "retrieve": {
+            "wallMs": 1.2147089999999992,
+            "cpuUserMs": 1.295,
+            "cpuSystemMs": 0.086,
+            "rssBeforeBytes": 65355776,
+            "rssAfterBytes": 65847296
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.780416000000002,
+            "cpuUserMs": 4.692,
+            "cpuSystemMs": 1.087,
+            "rssBeforeBytes": 65863680,
+            "rssAfterBytes": 70844416
+          }
+        },
+        "peakRssBytes": 71991296,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "0eb88da61794236d052801dc3973d158e29ce21d55fc7bd8e539517d81f5143c",
+        "snapshotDigest": "47b659dcd8d66f6047179c86bf0eec151fd24c42a45170abeea07990b5eca676",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 80.86987500000032
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90985,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.439458999999996,
+            "cpuUserMs": 9.32,
+            "cpuSystemMs": 1.309,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 64126976
+          },
+          "resumeProjection": {
+            "wallMs": 6.91375,
+            "cpuUserMs": 10.27,
+            "cpuSystemMs": 0.77,
+            "rssBeforeBytes": 64126976,
+            "rssAfterBytes": 68976640
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.377459000000002,
+            "cpuUserMs": 6.679,
+            "cpuSystemMs": 0.133,
+            "rssBeforeBytes": 68976640,
+            "rssAfterBytes": 69156864
+          }
+        },
+        "peakRssBytes": 69189632,
+        "verifiedRefs": 400,
+        "originalDigest": "0eb88da61794236d052801dc3973d158e29ce21d55fc7bd8e539517d81f5143c",
+        "forks": 100,
+        "processWallMs": 75.96616600000016
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 13,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90986,
+        "metrics": {
+          "create": {
+            "wallMs": 2.399583,
+            "cpuUserMs": 2.755,
+            "cpuSystemMs": 0.243,
+            "rssBeforeBytes": 54919168,
+            "rssAfterBytes": 56655872
+          },
+          "compressAndStore": {
+            "wallMs": 17.226542000000002,
+            "cpuUserMs": 25.704,
+            "cpuSystemMs": 1.372,
+            "rssBeforeBytes": 56655872,
+            "rssAfterBytes": 64913408
+          },
+          "retrieve": {
+            "wallMs": 1.2468749999999957,
+            "cpuUserMs": 1.312,
+            "cpuSystemMs": 0.051,
+            "rssBeforeBytes": 64913408,
+            "rssAfterBytes": 65404928
+          },
+          "serializeAndWrite": {
+            "wallMs": 6.454332999999998,
+            "cpuUserMs": 4.777,
+            "cpuSystemMs": 1.103,
+            "rssBeforeBytes": 65404928,
+            "rssAfterBytes": 70385664
+          }
+        },
+        "peakRssBytes": 71548928,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "67929f5616d07073442d385c593f884cb6d49b5f156a3160e79ce55ad69c541f",
+        "snapshotDigest": "9bc127519a7124c9c97abe1d77b28017a04376faf7f5576e5cc94c9859ec0708",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 80.12679200000002
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90987,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.430875,
+            "cpuUserMs": 9.506,
+            "cpuSystemMs": 1.194,
+            "rssBeforeBytes": 54886400,
+            "rssAfterBytes": 64258048
+          },
+          "resumeProjection": {
+            "wallMs": 6.7620840000000015,
+            "cpuUserMs": 9.987,
+            "cpuSystemMs": 0.781,
+            "rssBeforeBytes": 64258048,
+            "rssAfterBytes": 69058560
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 5.813625000000002,
+            "cpuUserMs": 5.962,
+            "cpuSystemMs": 0.122,
+            "rssBeforeBytes": 69058560,
+            "rssAfterBytes": 69189632
+          }
+        },
+        "peakRssBytes": 69222400,
+        "verifiedRefs": 400,
+        "originalDigest": "67929f5616d07073442d385c593f884cb6d49b5f156a3160e79ce55ad69c541f",
+        "forks": 100,
+        "processWallMs": 74.0545830000001
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 14,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90988,
+        "metrics": {
+          "create": {
+            "wallMs": 2.5018749999999983,
+            "cpuUserMs": 2.854,
+            "cpuSystemMs": 0.292,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 56655872
+          },
+          "compressAndStore": {
+            "wallMs": 17.605541000000002,
+            "cpuUserMs": 26.14,
+            "cpuSystemMs": 1.356,
+            "rssBeforeBytes": 56655872,
+            "rssAfterBytes": 65224704
+          },
+          "retrieve": {
+            "wallMs": 1.0960839999999976,
+            "cpuUserMs": 1.164,
+            "cpuSystemMs": 0.042,
+            "rssBeforeBytes": 65224704,
+            "rssAfterBytes": 65667072
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.6697089999999974,
+            "cpuUserMs": 4.823,
+            "cpuSystemMs": 1.001,
+            "rssBeforeBytes": 65667072,
+            "rssAfterBytes": 70696960
+          }
+        },
+        "peakRssBytes": 71843840,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "c6c82430d63436280565c5d82ae13d3904517b3e54c1ebc8da617f8a3e519aa2",
+        "snapshotDigest": "03df0cb3e7e9700103cd769f57a3bd44193db74cfedc9efece7bcd066817dffb",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 82.6875829999999
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90989,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 10.504791999999998,
+            "cpuUserMs": 10.428,
+            "cpuSystemMs": 1.462,
+            "rssBeforeBytes": 55345152,
+            "rssAfterBytes": 64815104
+          },
+          "resumeProjection": {
+            "wallMs": 7.313583000000001,
+            "cpuUserMs": 10.608,
+            "cpuSystemMs": 0.952,
+            "rssBeforeBytes": 64815104,
+            "rssAfterBytes": 69566464
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.276124999999993,
+            "cpuUserMs": 6.593,
+            "cpuSystemMs": 0.161,
+            "rssBeforeBytes": 69566464,
+            "rssAfterBytes": 69746688
+          }
+        },
+        "peakRssBytes": 69795840,
+        "verifiedRefs": 400,
+        "originalDigest": "c6c82430d63436280565c5d82ae13d3904517b3e54c1ebc8da617f8a3e519aa2",
+        "forks": 100,
+        "processWallMs": 77.38991600000008
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 15,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90990,
+        "metrics": {
+          "create": {
+            "wallMs": 2.5554590000000026,
+            "cpuUserMs": 2.861,
+            "cpuSystemMs": 0.325,
+            "rssBeforeBytes": 54853632,
+            "rssAfterBytes": 56623104
+          },
+          "compressAndStore": {
+            "wallMs": 17.714542,
+            "cpuUserMs": 26.224,
+            "cpuSystemMs": 1.539,
+            "rssBeforeBytes": 56623104,
+            "rssAfterBytes": 65077248
+          },
+          "retrieve": {
+            "wallMs": 1.1981249999999974,
+            "cpuUserMs": 1.251,
+            "cpuSystemMs": 0.08,
+            "rssBeforeBytes": 65077248,
+            "rssAfterBytes": 65519616
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.582665999999996,
+            "cpuUserMs": 4.701,
+            "cpuSystemMs": 1.078,
+            "rssBeforeBytes": 65519616,
+            "rssAfterBytes": 70615040
+          }
+        },
+        "peakRssBytes": 71761920,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "0893093044e6915fcd8cf40f80650dc1c972f653709b9358a0358bb4b6102e4c",
+        "snapshotDigest": "469c084a7f2c13c43a8d500743eb0bcc978a517c7f1c34d0eba04667c16d9e8c",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 82.02866699999959
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90991,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 10.369707999999996,
+            "cpuUserMs": 10.069,
+            "cpuSystemMs": 1.696,
+            "rssBeforeBytes": 55492608,
+            "rssAfterBytes": 64798720
+          },
+          "resumeProjection": {
+            "wallMs": 6.559249999999999,
+            "cpuUserMs": 9.34,
+            "cpuSystemMs": 0.552,
+            "rssBeforeBytes": 64798720,
+            "rssAfterBytes": 68354048
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.240000000000002,
+            "cpuUserMs": 6.9,
+            "cpuSystemMs": 0.322,
+            "rssBeforeBytes": 68354048,
+            "rssAfterBytes": 69763072
+          }
+        },
+        "peakRssBytes": 69812224,
+        "verifiedRefs": 400,
+        "originalDigest": "0893093044e6915fcd8cf40f80650dc1c972f653709b9358a0358bb4b6102e4c",
+        "forks": 100,
+        "processWallMs": 76.51391700000022
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 16,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90992,
+        "metrics": {
+          "create": {
+            "wallMs": 2.4943339999999985,
+            "cpuUserMs": 2.785,
+            "cpuSystemMs": 0.284,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 56573952
+          },
+          "compressAndStore": {
+            "wallMs": 17.032124999999994,
+            "cpuUserMs": 25.441,
+            "cpuSystemMs": 1.406,
+            "rssBeforeBytes": 56573952,
+            "rssAfterBytes": 65224704
+          },
+          "retrieve": {
+            "wallMs": 1.2081250000000026,
+            "cpuUserMs": 1.27,
+            "cpuSystemMs": 0.075,
+            "rssBeforeBytes": 65224704,
+            "rssAfterBytes": 65667072
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.5022499999999965,
+            "cpuUserMs": 4.684,
+            "cpuSystemMs": 1.003,
+            "rssBeforeBytes": 65667072,
+            "rssAfterBytes": 70746112
+          }
+        },
+        "peakRssBytes": 71892992,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "8074b07fdb1a402e47e1d06789f58fdf28ead22695936f7fb5c9f69d8cc867dd",
+        "snapshotDigest": "587c835be71da537a92933942de08e6dfa9344d2a6c52f35c136854fedcaa590",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 79.93462499999987
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90993,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.647459000000005,
+            "cpuUserMs": 9.539,
+            "cpuSystemMs": 1.369,
+            "rssBeforeBytes": 55279616,
+            "rssAfterBytes": 64520192
+          },
+          "resumeProjection": {
+            "wallMs": 6.532083,
+            "cpuUserMs": 9.296,
+            "cpuSystemMs": 0.515,
+            "rssBeforeBytes": 64520192,
+            "rssAfterBytes": 68157440
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.922833000000004,
+            "cpuUserMs": 7.576,
+            "cpuSystemMs": 0.424,
+            "rssBeforeBytes": 68157440,
+            "rssAfterBytes": 69566464
+          }
+        },
+        "peakRssBytes": 69599232,
+        "verifiedRefs": 400,
+        "originalDigest": "8074b07fdb1a402e47e1d06789f58fdf28ead22695936f7fb5c9f69d8cc867dd",
+        "forks": 100,
+        "processWallMs": 79.8227080000006
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 17,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90994,
+        "metrics": {
+          "create": {
+            "wallMs": 2.478625000000001,
+            "cpuUserMs": 2.844,
+            "cpuSystemMs": 0.265,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 56623104
+          },
+          "compressAndStore": {
+            "wallMs": 16.980083999999998,
+            "cpuUserMs": 25.753,
+            "cpuSystemMs": 1.361,
+            "rssBeforeBytes": 56623104,
+            "rssAfterBytes": 65257472
+          },
+          "retrieve": {
+            "wallMs": 1.1362919999999974,
+            "cpuUserMs": 1.188,
+            "cpuSystemMs": 0.054,
+            "rssBeforeBytes": 65257472,
+            "rssAfterBytes": 65683456
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.557124999999999,
+            "cpuUserMs": 4.751,
+            "cpuSystemMs": 0.992,
+            "rssBeforeBytes": 65683456,
+            "rssAfterBytes": 70647808
+          }
+        },
+        "peakRssBytes": 71811072,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "e4725f91fa775c40f9b6bbee6cf17549183091bddc2777fe8a044cf0e7b10692",
+        "snapshotDigest": "c498e9495218571c356a83fc1b55492be91c4b1f2ded634b9099442f90afd220",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 82.61387500000001
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90995,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.293333,
+            "cpuUserMs": 9.312,
+            "cpuSystemMs": 1.188,
+            "rssBeforeBytes": 54870016,
+            "rssAfterBytes": 64143360
+          },
+          "resumeProjection": {
+            "wallMs": 6.691625000000002,
+            "cpuUserMs": 9.784,
+            "cpuSystemMs": 0.736,
+            "rssBeforeBytes": 64143360,
+            "rssAfterBytes": 68976640
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.077792000000002,
+            "cpuUserMs": 6.249,
+            "cpuSystemMs": 0.146,
+            "rssBeforeBytes": 69009408,
+            "rssAfterBytes": 69173248
+          }
+        },
+        "peakRssBytes": 69222400,
+        "verifiedRefs": 400,
+        "originalDigest": "e4725f91fa775c40f9b6bbee6cf17549183091bddc2777fe8a044cf0e7b10692",
+        "forks": 100,
+        "processWallMs": 72.00270799999998
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 18,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90996,
+        "metrics": {
+          "create": {
+            "wallMs": 3.055917000000001,
+            "cpuUserMs": 3.302,
+            "cpuSystemMs": 0.449,
+            "rssBeforeBytes": 55017472,
+            "rssAfterBytes": 56786944
+          },
+          "compressAndStore": {
+            "wallMs": 19.075457999999998,
+            "cpuUserMs": 27.614,
+            "cpuSystemMs": 1.751,
+            "rssBeforeBytes": 56786944,
+            "rssAfterBytes": 65404928
+          },
+          "retrieve": {
+            "wallMs": 1.1750420000000048,
+            "cpuUserMs": 1.234,
+            "cpuSystemMs": 0.045,
+            "rssBeforeBytes": 65404928,
+            "rssAfterBytes": 65863680
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.936917000000001,
+            "cpuUserMs": 4.949,
+            "cpuSystemMs": 1.137,
+            "rssBeforeBytes": 65863680,
+            "rssAfterBytes": 70828032
+          }
+        },
+        "peakRssBytes": 72007680,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "62e4fa01b3bbca36f9561710e2a2632d667956e5d20f694c6541b062f41fd40c",
+        "snapshotDigest": "7d96f5e675a63b02dfeed367f123bd9476827c4c4323ddbf7ce32f42d4ff690c",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 85.38066699999945
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90997,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.497,
+            "cpuUserMs": 9.444,
+            "cpuSystemMs": 1.268,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 64126976
+          },
+          "resumeProjection": {
+            "wallMs": 6.754207999999998,
+            "cpuUserMs": 9.807,
+            "cpuSystemMs": 0.734,
+            "rssBeforeBytes": 64126976,
+            "rssAfterBytes": 69025792
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 5.858583000000003,
+            "cpuUserMs": 6.253,
+            "cpuSystemMs": 0.074,
+            "rssBeforeBytes": 69025792,
+            "rssAfterBytes": 69222400
+          }
+        },
+        "peakRssBytes": 69238784,
+        "verifiedRefs": 400,
+        "originalDigest": "62e4fa01b3bbca36f9561710e2a2632d667956e5d20f694c6541b062f41fd40c",
+        "forks": 100,
+        "processWallMs": 76.90899999999965
+      }
+    },
+    {
+      "sessions": 100,
+      "repetition": 19,
+      "prepare": {
+        "mode": "prepare",
+        "pid": 90998,
+        "metrics": {
+          "create": {
+            "wallMs": 2.4512920000000022,
+            "cpuUserMs": 2.843,
+            "cpuSystemMs": 0.273,
+            "rssBeforeBytes": 55066624,
+            "rssAfterBytes": 56852480
+          },
+          "compressAndStore": {
+            "wallMs": 18.257084,
+            "cpuUserMs": 26.795,
+            "cpuSystemMs": 1.47,
+            "rssBeforeBytes": 56852480,
+            "rssAfterBytes": 65437696
+          },
+          "retrieve": {
+            "wallMs": 1.135667000000005,
+            "cpuUserMs": 1.201,
+            "cpuSystemMs": 0.043,
+            "rssBeforeBytes": 65437696,
+            "rssAfterBytes": 65863680
+          },
+          "serializeAndWrite": {
+            "wallMs": 5.539375,
+            "cpuUserMs": 4.765,
+            "cpuSystemMs": 0.957,
+            "rssBeforeBytes": 65863680,
+            "rssAfterBytes": 70762496
+          }
+        },
+        "peakRssBytes": 71909376,
+        "rawBytes": 372650,
+        "visibleBytes": 105490,
+        "serializedBytes": 1128481,
+        "retrievedBytes": 293560,
+        "originalDigest": "923ef5712fb26d6cc0a057e762226d30576582a907dae222579c5f78d7a104cb",
+        "snapshotDigest": "6fc04d81790ae8cb8c4408ae3276f8e05a6a10129ea2a5dea93640cc87f3ff92",
+        "verifiedRefs": 400,
+        "warnings": [],
+        "processWallMs": 79.83737500000007
+      },
+      "restart": {
+        "mode": "restart",
+        "pid": 90999,
+        "metrics": {
+          "readDeserializeAndValidate": {
+            "wallMs": 9.229166,
+            "cpuUserMs": 9.296,
+            "cpuSystemMs": 1.121,
+            "rssBeforeBytes": 54837248,
+            "rssAfterBytes": 64143360
+          },
+          "resumeProjection": {
+            "wallMs": 6.4432079999999985,
+            "cpuUserMs": 9.361,
+            "cpuSystemMs": 0.577,
+            "rssBeforeBytes": 64143360,
+            "rssAfterBytes": 67715072
+          },
+          "forkAndVerifyIsolation": {
+            "wallMs": 6.167999999999999,
+            "cpuUserMs": 6.654,
+            "cpuSystemMs": 0.253,
+            "rssBeforeBytes": 67715072,
+            "rssAfterBytes": 69140480
+          }
+        },
+        "peakRssBytes": 69206016,
+        "verifiedRefs": 400,
+        "originalDigest": "923ef5712fb26d6cc0a057e762226d30576582a907dae222579c5f78d7a104cb",
+        "forks": 100,
+        "processWallMs": 73.43933299999935
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "sessions": 1,
+      "repetitions": 20,
+      "steps": {
+        "create": {
+          "N": 20,
+          "wallMs": {
+            "p50": 0.3904999999999994,
+            "p95": 0.43729199999999935
+          },
+          "cpuMs": {
+            "p50": 0.38499999999999995,
+            "p95": 0.431
+          },
+          "sampledRssBytes": {
+            "min": 54657024,
+            "max": 55410688
+          }
+        },
+        "compressAndStore": {
+          "N": 20,
+          "wallMs": {
+            "p50": 3.7455,
+            "p95": 4.0105
+          },
+          "cpuMs": {
+            "p50": 4.086,
+            "p95": 4.3580000000000005
+          },
+          "sampledRssBytes": {
+            "min": 54968320,
+            "max": 56066048
+          }
+        },
+        "retrieve": {
+          "N": 20,
+          "wallMs": {
+            "p50": 0.11320899999999767,
+            "p95": 0.1320829999999944
+          },
+          "cpuMs": {
+            "p50": 0.128,
+            "p95": 0.15
+          },
+          "sampledRssBytes": {
+            "min": 55623680,
+            "max": 56066048
+          }
+        },
+        "serializeAndWrite": {
+          "N": 20,
+          "wallMs": {
+            "p50": 0.9574580000000026,
+            "p95": 1.7157920000000004
+          },
+          "cpuMs": {
+            "p50": 1.3679999999999999,
+            "p95": 1.5110000000000001
+          },
+          "sampledRssBytes": {
+            "min": 55623680,
+            "max": 57049088
+          }
+        },
+        "readDeserializeAndValidate": {
+          "N": 20,
+          "wallMs": {
+            "p50": 1.2403750000000038,
+            "p95": 1.4410000000000025
+          },
+          "cpuMs": {
+            "p50": 1.2770000000000001,
+            "p95": 1.502
+          },
+          "sampledRssBytes": {
+            "min": 54738944,
+            "max": 56328192
+          }
+        },
+        "resumeProjection": {
+          "N": 20,
+          "wallMs": {
+            "p50": 1.955375,
+            "p95": 2.138957999999999
+          },
+          "cpuMs": {
+            "p50": 2.0500000000000003,
+            "p95": 2.2560000000000002
+          },
+          "sampledRssBytes": {
+            "min": 55312384,
+            "max": 56606720
+          }
+        },
+        "forkAndVerifyIsolation": {
+          "N": 20,
+          "wallMs": {
+            "p50": 0.2598339999999979,
+            "p95": 0.28025000000000233
+          },
+          "cpuMs": {
+            "p50": 0.319,
+            "p95": 0.34299999999999997
+          },
+          "sampledRssBytes": {
+            "min": 55574528,
+            "max": 56819712
+          }
+        }
+      },
+      "processPeakRssBytes": 57065472
+    },
+    {
+      "sessions": 10,
+      "repetitions": 20,
+      "steps": {
+        "create": {
+          "N": 20,
+          "wallMs": {
+            "p50": 0.6373339999999992,
+            "p95": 0.723749999999999
+          },
+          "cpuMs": {
+            "p50": 0.6339999999999999,
+            "p95": 0.7110000000000001
+          },
+          "sampledRssBytes": {
+            "min": 54722560,
+            "max": 55689216
+          }
+        },
+        "compressAndStore": {
+          "N": 20,
+          "wallMs": {
+            "p50": 6.517541000000001,
+            "p95": 6.922082999999997
+          },
+          "cpuMs": {
+            "p50": 9.266,
+            "p95": 10.033
+          },
+          "sampledRssBytes": {
+            "min": 55148544,
+            "max": 57966592
+          }
+        },
+        "retrieve": {
+          "N": 20,
+          "wallMs": {
+            "p50": 0.26145800000000463,
+            "p95": 0.29658299999999826
+          },
+          "cpuMs": {
+            "p50": 0.304,
+            "p95": 0.38
+          },
+          "sampledRssBytes": {
+            "min": 57425920,
+            "max": 57999360
+          }
+        },
+        "serializeAndWrite": {
+          "N": 20,
+          "wallMs": {
+            "p50": 1.1607920000000007,
+            "p95": 1.3540840000000003
+          },
+          "cpuMs": {
+            "p50": 1.225,
+            "p95": 1.427
+          },
+          "sampledRssBytes": {
+            "min": 57442304,
+            "max": 58720256
+          }
+        },
+        "readDeserializeAndValidate": {
+          "N": 20,
+          "wallMs": {
+            "p50": 2.2990829999999995,
+            "p95": 2.7375000000000043
+          },
+          "cpuMs": {
+            "p50": 2.7449999999999997,
+            "p95": 3.298
+          },
+          "sampledRssBytes": {
+            "min": 54640640,
+            "max": 57507840
+          }
+        },
+        "resumeProjection": {
+          "N": 20,
+          "wallMs": {
+            "p50": 3.0110829999999993,
+            "p95": 3.385041000000001
+          },
+          "cpuMs": {
+            "p50": 3.9000000000000004,
+            "p95": 4.367
+          },
+          "sampledRssBytes": {
+            "min": 56442880,
+            "max": 57966592
+          }
+        },
+        "forkAndVerifyIsolation": {
+          "N": 20,
+          "wallMs": {
+            "p50": 0.8845000000000027,
+            "p95": 0.9510839999999945
+          },
+          "cpuMs": {
+            "p50": 1.187,
+            "p95": 1.387
+          },
+          "sampledRssBytes": {
+            "min": 57049088,
+            "max": 58605568
+          }
+        }
+      },
+      "processPeakRssBytes": 58736640
+    },
+    {
+      "sessions": 100,
+      "repetitions": 20,
+      "steps": {
+        "create": {
+          "N": 20,
+          "wallMs": {
+            "p50": 2.5018749999999983,
+            "p95": 3.0518340000000066
+          },
+          "cpuMs": {
+            "p50": 3.146,
+            "p95": 3.751
+          },
+          "sampledRssBytes": {
+            "min": 54804480,
+            "max": 57393152
+          }
+        },
+        "compressAndStore": {
+          "N": 20,
+          "wallMs": {
+            "p50": 17.557459,
+            "p95": 18.933833
+          },
+          "cpuMs": {
+            "p50": 27.319,
+            "p95": 29.358999999999998
+          },
+          "sampledRssBytes": {
+            "min": 56524800,
+            "max": 65978368
+          }
+        },
+        "retrieve": {
+          "N": 20,
+          "wallMs": {
+            "p50": 1.1261660000000049,
+            "p95": 1.2147089999999992
+          },
+          "cpuMs": {
+            "p50": 1.229,
+            "p95": 1.363
+          },
+          "sampledRssBytes": {
+            "min": 64913408,
+            "max": 66437120
+          }
+        },
+        "serializeAndWrite": {
+          "N": 20,
+          "wallMs": {
+            "p50": 5.6697089999999974,
+            "p95": 6.938665999999998
+          },
+          "cpuMs": {
+            "p50": 5.822,
+            "p95": 6.751
+          },
+          "sampledRssBytes": {
+            "min": 65404928,
+            "max": 72089600
+          }
+        },
+        "readDeserializeAndValidate": {
+          "N": 20,
+          "wallMs": {
+            "p50": 9.609040999999998,
+            "p95": 10.448959000000002
+          },
+          "cpuMs": {
+            "p50": 10.908,
+            "p95": 11.799
+          },
+          "sampledRssBytes": {
+            "min": 54771712,
+            "max": 64913408
+          }
+        },
+        "resumeProjection": {
+          "N": 20,
+          "wallMs": {
+            "p50": 6.745624999999997,
+            "p95": 7.155792000000005
+          },
+          "cpuMs": {
+            "p50": 10.541,
+            "p95": 11.56
+          },
+          "sampledRssBytes": {
+            "min": 64126976,
+            "max": 69648384
+          }
+        },
+        "forkAndVerifyIsolation": {
+          "N": 20,
+          "wallMs": {
+            "p50": 6.134584000000004,
+            "p95": 6.940958000000002
+          },
+          "cpuMs": {
+            "p50": 6.574000000000001,
+            "p95": 8
+          },
+          "sampledRssBytes": {
+            "min": 67715072,
+            "max": 69828608
+          }
+        }
+      },
+      "processPeakRssBytes": 73269248
+    }
+  ],
+  "failures": [],
+  "notes": [
+    "Each step observation is one whole N-session batch, not per-session latency.",
+    "p50/p95 use nearest rank with N=20; short local shared-host sample, not SLO or agent capacity.",
+    "CPU is process.cpuUsage per step; RSS sampled before/after, process maxRSS high-water also recorded.",
+    "Token estimator is synthetic UTF8 byte count /4; no provider tokens or billed cost.",
+    "Checkpoint retains raw history plus separate content store, so storage can grow despite smaller visible context.",
+    "Restart uses a distinct OS process; version/CAS checks and fork lineage belong to this toy host only."
+  ]
+}
