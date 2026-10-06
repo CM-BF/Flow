@@ -1,0 +1,153 @@
+{
+  "recordedAt": "2026-10-06T07:49:19.125103+00:00",
+  "kind": "read-only recomputation of the one preserved run; not another workload",
+  "groups": [
+    {
+      "patchCount": 4,
+      "inputUtf8Bytes": 32768,
+      "contentDigest": "616f40d77b8c6f536a68fb3f4842915f9c5cfd8a5a68e4a512d6c4281ce93653",
+      "priorPrefixDecodedContentUtf8Bytes": 49152,
+      "fullPrefixHashInputUtf8Bytes": 81920,
+      "fullPrefixHashCalls": 4,
+      "fullPrefixHashComputeWallMs": 0.16091699999969933,
+      "otherHashCalls": 24,
+      "otherHashInputUtf8Bytes": 83008,
+      "queryCalls": 96,
+      "queryKinds": {
+        "select": 52,
+        "begin": 4,
+        "prefix-read": 4,
+        "other": 32,
+        "commit": 4
+      },
+      "decodedRowsJsonUtf8Bytes": 68286,
+      "backgroundQueryCalls": 0,
+      "httpInputJsonUtf8Bytes": 41536,
+      "httpAckUtf8Bytes": 124,
+      "httpAckMs": {
+        "n": 4,
+        "p50": 13.577624999999898,
+        "p95": 22.69270800000004,
+        "p99": 22.69270800000004,
+        "method": "nearest-rank"
+      },
+      "httpAckMsSum": 62.33012400000007,
+      "commitMs": {
+        "n": 4,
+        "p50": 2.4252919999998994,
+        "p95": 3.0377079999998386,
+        "p99": 3.0377079999998386,
+        "method": "nearest-rank"
+      },
+      "commitMsSum": 9.932166999999936,
+      "prefixSqlMsSum": 1.724749000000429,
+      "queryMsSum": 43.71066799999926,
+      "persisted": {
+        "patches": 4,
+        "text_bytes": 32768,
+        "patch_json_bytes": 41100
+      },
+      "publicPatchPages": 1
+    },
+    {
+      "patchCount": 16,
+      "inputUtf8Bytes": 32768,
+      "contentDigest": "616f40d77b8c6f536a68fb3f4842915f9c5cfd8a5a68e4a512d6c4281ce93653",
+      "priorPrefixDecodedContentUtf8Bytes": 245760,
+      "fullPrefixHashInputUtf8Bytes": 278528,
+      "fullPrefixHashCalls": 16,
+      "fullPrefixHashComputeWallMs": 0.5980859999999666,
+      "otherHashCalls": 96,
+      "otherHashInputUtf8Bytes": 98576,
+      "queryCalls": 384,
+      "queryKinds": {
+        "select": 208,
+        "begin": 16,
+        "prefix-read": 16,
+        "other": 128,
+        "commit": 16
+      },
+      "decodedRowsJsonUtf8Bytes": 333946,
+      "backgroundQueryCalls": 0,
+      "httpInputJsonUtf8Bytes": 49420,
+      "httpAckUtf8Bytes": 504,
+      "httpAckMs": {
+        "n": 16,
+        "p50": 10.047833999999966,
+        "p95": 15.522625000000062,
+        "p99": 15.522625000000062,
+        "method": "nearest-rank"
+      },
+      "httpAckMsSum": 170.04170799999974,
+      "commitMs": {
+        "n": 16,
+        "p50": 1.8822089999998752,
+        "p95": 5.865042000000358,
+        "p99": 5.865042000000358,
+        "method": "nearest-rank"
+      },
+      "commitMsSum": 36.16883600000028,
+      "prefixSqlMsSum": 5.762083000000075,
+      "queryMsSum": 126.30262500000072,
+      "persisted": {
+        "patches": 16,
+        "text_bytes": 32768,
+        "patch_json_bytes": 47668
+      },
+      "publicPatchPages": 2
+    },
+    {
+      "patchCount": 64,
+      "inputUtf8Bytes": 32768,
+      "contentDigest": "616f40d77b8c6f536a68fb3f4842915f9c5cfd8a5a68e4a512d6c4281ce93653",
+      "priorPrefixDecodedContentUtf8Bytes": 1032192,
+      "fullPrefixHashInputUtf8Bytes": 1064960,
+      "fullPrefixHashCalls": 64,
+      "fullPrefixHashComputeWallMs": 1.9985439999991286,
+      "otherHashCalls": 384,
+      "otherHashInputUtf8Bytes": 160896,
+      "queryCalls": 1536,
+      "queryKinds": {
+        "select": 832,
+        "begin": 64,
+        "prefix-read": 64,
+        "other": 512,
+        "commit": 64
+      },
+      "decodedRowsJsonUtf8Bytes": 1396730,
+      "backgroundQueryCalls": 5,
+      "httpInputJsonUtf8Bytes": 80988,
+      "httpAckUtf8Bytes": 2040,
+      "httpAckMs": {
+        "n": 64,
+        "p50": 8.158292000000074,
+        "p95": 11.194875000000138,
+        "p99": 13.689416000000165,
+        "method": "nearest-rank"
+      },
+      "httpAckMsSum": 534.9806689999982,
+      "commitMs": {
+        "n": 64,
+        "p50": 1.6302919999998267,
+        "p95": 2.654541999999765,
+        "p99": 3.1947500000001128,
+        "method": "nearest-rank"
+      },
+      "commitMsSum": 107.44941900000094,
+      "prefixSqlMsSum": 18.507791999996698,
+      "queryMsSum": 393.41161200000215,
+      "persisted": {
+        "patches": 64,
+        "text_bytes": 32768,
+        "patch_json_bytes": 73956
+      },
+      "publicPatchPages": 8
+    }
+  ],
+  "foregroundQueryCalls": 2016,
+  "backgroundQueryCalls": 5,
+  "totalRawInputUtf8Bytes": 98304,
+  "rawSha256": "4826cc60e912bfd16571ffeb0142e9c2d18cfe12b70514bc2d307bf1e2b44363",
+  "totalAccountedStorageBytes": 14061792,
+  "checks": "84 public patches offsets+digests+final bytes rebuilt; all source before/after equal; 90 task/claim/sample checkpoints retained; no request/query/instrumentation failure; cleanup verified"
+}

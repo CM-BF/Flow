@@ -22,3 +22,5 @@ clean-code用户指定源sickn33/agentic-awesome-skills，固定 bdacd76ed9e3887
 2026-10-06T07:38:46.685631+00:00 新入口安全点：按clean-code分成固定workload、可恢复observer、真实HTTP worker、只拥有child/DB的supervisor；避免改产品/通用框架。观察器失败显式计数，多结果解码字节分类；unsupported自定义Query显式失败。10 distinct pure；noEmit/import-only/syntax通过。PG类型与ESM解析失败原日志保留，三依赖既有版本路径写dependency-runtime。新entry资源行为尚无实跑验证，所有声明限于源码/纯检查。无未解决已知代码finding，等待Mika独立review；未把源审当实际PG完成。
 
 2026-10-06T07:45:37.810501+00:00：Mika独立准备审查在07:44:39Z确认APPROVED target4951，无P1/P2；13源码/40raw及复用依赖已核。仅metadata记录，不重测、不改source/config。运行参数非默认边界已入授权记录。待SVC结束才可执行一次；失败先完整清理并保留原记录，不重跑。
+
+2026-10-06T07:50:04.991868+00:00 单次实测后clean-code复核：实现与runtime/config固定4951，无测后修码；SQL/哈希观察恢复与自有进程/DB清理实际通过，所有失败/初始预检继续保留。只用保存raw做独立UTF8重建与计数重算，未再次连接PG/测量。报告区分decoded/HTTP/logical/physical、完整stage/提交RTT/COMMIT/hash墙钟与共享背景，候选不承诺收益或取消完整校验。等待Mika结果独审，GO范围接收/main事实另记。
