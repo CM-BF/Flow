@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-06T22:40:16.614733+00:00",
+  "state": "APPROVED_STATIC_PREPARATION_PENDING_FRESH_ADMISSION",
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "branch": "codex/web-message-settings-quick-controls",
+  "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+  "claimVersion": 1,
+  "scopeCount": 6,
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "metadataHead": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
+  "uniqueStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+  "sourceApproval": "../message-settings02-fe6-source-preparation/root-source-and-pins-review.json",
+  "preparationApproval": "root-final-preparation-review.json",
+  "packet": "/private/tmp/msgquick-checks-c1",
+  "manifestSha256": "4bf7cf408d4eb764c138c5b4cc253c1e6704d28b3575596cc74ea00dd57ab240",
+  "runnerSha256": "61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0",
+  "bindingSha256": "2bd46393c60cad848227b73dc7d2c00951d557dd8744fd8773159a9d94b0f9c1",
+  "stateUnchanged": "PREPARED_NOT_RUN_NO_GATE; no promotion or mutation performed by manager",
+  "futureEntry": "python3 /private/tmp/msgquick-checks-c1/run.py --gate <new external absolute gate>",
+  "checks": {
+    "strictNoEmit": "NOT_RUN",
+    "direct26ExactNames": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "old37And4Inherited": false
+  },
+  "limitsProposal": {
+    "previousRuntimeMs": 0,
+    "totalMs": 30000,
+    "workMs": 25000,
+    "cleanupReserveMs": 5000,
+    "scratchBytes": 8388608,
+    "retainedBytes": 2097152,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "notAGrant": true
+  },
+  "mandatoryAcceptance": [
+    "External actual parent exit0, separately captured by trusted operator",
+    "Exactly one complete matching PASS terminal-seal stdout, no inferred actual exit from declaredExitCode",
+    "Binding/result/budget/step-results hash equality, sealed result/budget PASS with equal cumulative",
+    "Both sequential child steps exit0/no signal/error;26 exact names pass,0skip/todo/fail",
+    "Complete owned group/scratch/output EOF cleanup and no dropped bytes; actual timing/resources within original limits"
+  ],
+  "freshBeforeAnyRun": [
+    "Original claim/sole owner/no overlap, exact current clean HEAD and unchanged pins",
+    "Original Lead runtime admission and one new resource observation at unchanged thresholds",
+    "If PREPARED promoted, consistently recompute binding/manifest and single-use external gate",
+    "Capture raw stdout/stderr and actual exit receipt; failure or incomplete receipt never accepted from disk PASS"
+  ],
+  "window": {
+    "grant": false,
+    "reservation": false,
+    "gate": null,
+    "freeSample": false,
+    "runtimeStarted": false,
+    "LeadQueue": "SVC07/C02 unchanged; this preparation does not reserve or reorder them"
+  },
+  "ownerMetadataPolicy": "No additional owner metadata loop for same static approval. Next real admission safe point may update own status normally and rebind actual HEAD/manifest/gate consistently.",
+  "integration": "Not requested; claim retained; real App/Queue/Recovery outside this component."
+}

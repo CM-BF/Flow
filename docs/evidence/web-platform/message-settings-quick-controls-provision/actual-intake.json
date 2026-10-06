@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-06T22:36:04.393460+00:00",
-  "state": "FE6_SOURCE_APPROVED_PACKET_TERMINAL_CONTRACT_REPAIR",
+  "at": "2026-10-06T22:40:16.614733+00:00",
+  "state": "FE6_SOURCE_AND_C1_STATIC_PREPARATION_APPROVED_NOT_RUN",
   "taskId": "WPF-MESSAGESETTINGS02",
   "parent": "Existing WPF-MATURE-02 TODO11; standalone controlled component successor",
   "sourceProvision": "root-actual-provision.json",
@@ -55,7 +55,8 @@
   "interface": "Required opaque draft ownership + synchronous host CAS; independent per-opening liveness. Real production host handoff remains separate; no new global store.",
   "latestFixedSource": {
     "target": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
-    "metadata": "bdfaef9da4b7a786d9e7e2bb50b8c507c339a964",
+    "metadata": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
     "intake": "../message-settings02-fe6-source-preparation/intake.json"
-  }
+  },
+  "latestPreparation": "../message-settings02-c1-prepared/request.json"
 }

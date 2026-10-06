@@ -1,0 +1,61 @@
+--- c1-reviewed-before/run.py
++++ c1-terminal-repaired/run.py
+@@ -20,6 +20,7 @@
+ BINDING = BASE / 'binding.json'
+ PROFILE = BASE / 'sandbox.sb'
+ TOTAL_MS = 30000
++TERMINAL_CONTRACT = 'msgquick-terminal-v1-external-exit-required'
+ MiB = 1024 * 1024
+ 
+ 
+@@ -110,6 +111,8 @@
+     assert binding['limits']['startFreeBytes'] == 1090519040 and binding['limits']['stopFreeBytes'] == 1082130432
+     assert binding['limits']['tmpBytes'] == 8*MiB and binding['limits']['rawBytes'] == 2*MiB
+     assert binding['expectedTestCount'] == 26
++    assert binding['terminalAcceptance']['contract'] == TERMINAL_CONTRACT
++    assert binding['terminalAcceptance']['externalActualExitCode'] == 0
+     for name in ('scratch', 'consumed-gate.json', 'result.json', 'budget.json', 'node.log'):
+         assert not (BASE/name).exists(), 'Already used or conflicting run: ' + name
+     return binding, gate
+@@ -145,6 +148,8 @@
+     report = {'state': 'FAILED', 'task': binding['task'], 'startedAt': now(), 'sourceHead': binding['head'],
+               'implementation': binding['implementation'], 'sourceHashes': binding['sources'],
+               'bindingSha256': sha(BINDING), 'runnerSha256': sha(__file__), 'sandboxSha256': sha(PROFILE),
++              'terminalContract': TERMINAL_CONTRACT,
++              'completionBoundary': 'Final owned-cleanup/resource/result seal before restoring cooperative handlers; disk state remains a candidate until external exit receipt',
+               'limits': limits, 'samples': samples, 'errors': errors, 'previousRuntimeMs': binding['previousRuntimeMs'],
+               'meaning': 'Targeted strict noEmit then one direct test file; real helper/HTTP fixture, no rendered UI/App/provider coverage'}
+     def request_stop(sig, frame):
+@@ -203,7 +208,8 @@
+             finishedAt=now())
+         save(BASE/'result.json', report)
+         save(BASE/'budget.json', {'complete': not cleanup, 'state': report['state'], 'spentMs': cumulative,
+-            'limitMs': TOTAL_MS, 'cleanupReserveMs': 5000, 'stopSignal': report.get('stopSignal'), 'result': str(BASE/'result.json')})
++            'limitMs': TOTAL_MS, 'cleanupReserveMs': 5000, 'stopSignal': report.get('stopSignal'),
++            'terminalContract': TERMINAL_CONTRACT, 'result': str(BASE/'result.json')})
+     try:
+         try:
+             with (BASE/'consumed-gate.json').open('x') as sink:
+@@ -338,11 +344,17 @@
+             signal.signal(sig, previous)
+     if stopping:
+         persist()
+-    actual_exit = 0 if not stopping and not errors and not cleanup and report['state'] == 'PASS' else 1
+-    print(json.dumps({'state': 'PASS' if actual_exit == 0 else 'FAILED', 'actualExitCode': actual_exit,
+-        'result': str(BASE/'result.json'), 'cleanup': report.get('cleanup'), 'stopping': stopping,
+-        'stopSignal': report.get('stopSignal'), 'afterFinalWritesElapsedMs': round((time.monotonic()-started)*1000)}), flush=True)
+-    return actual_exit
++    # Cooperative handling ends at restoration above. This seal is only a candidate, not an exit receipt.
++    # Any later interruption, missing stdout, changed seal or nonzero actual outer exit invalidates disk PASS.
++    declared_exit = 0 if not stopping and not errors and not cleanup and report['state'] == 'PASS' else 1
++    print(json.dumps({'type': 'terminal-seal', 'terminalContract': TERMINAL_CONTRACT,
++        'state': 'PASS' if declared_exit == 0 else 'FAILED', 'declaredExitCode': declared_exit,
++        'bindingSha256': sha(BINDING), 'result': str(BASE/'result.json'),
++        'resultSha256': sha(BASE/'result.json'), 'budgetSha256': sha(BASE/'budget.json'),
++        'stepResultsSha256': sha(BASE/'step-results.json') if (BASE/'step-results.json').is_file() else None,
++        'cleanup': report.get('cleanup'), 'stopping': stopping, 'stopSignal': report.get('stopSignal'),
++        'afterFinalWritesElapsedMs': round((time.monotonic()-started)*1000)}), flush=True)
++    return declared_exit
+ 
+ 
+ if __name__ == '__main__':

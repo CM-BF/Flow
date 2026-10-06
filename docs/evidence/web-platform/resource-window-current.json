@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T22:31:47.092899+00:00",
+  "recordedAt": "2026-10-06T22:40:16.614733+00:00",
   "state": "NO_WEB_HEAVY_HOLDER_GIT_AUTHORITY_RETURNED_MIKA_SVC07_NEXT_READY",
   "groupWindowOwnership": "No Web active heavy runtime, reservation or gate. Root exact Git provision completed and authority returned to original Lead. Mika incoming reports no holder/reservation; SVC07 requested first, C02 after fresh shared handoff, neither actual launch inferred.",
   "release03": {
@@ -1135,5 +1135,17 @@
     "sourceCount": 180,
     "actualReloadObserved": false,
     "runtimeOrDomainApproval": false
+  },
+  "quickControlsPreparation": {
+    "request": "message-settings02-c1-prepared/request.json",
+    "state": "APPROVED_STATIC_PREPARATION_NOT_RUN",
+    "ownerHead": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
+    "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "grant": false,
+    "reservation": false,
+    "gate": null,
+    "freeSample": false,
+    "runtimeStarted": false,
+    "queueUnchanged": "Lead SVC07/C02"
   }
 }
