@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06 13:58:44 UTC",
+  "recordedAt": "2026-10-06 14:01:01 UTC",
   "actualCalls": {
     "comparison": 0,
     "postgres": 0,
@@ -10,13 +10,14 @@
   "distinctCurrentPassing": 61,
   "newDistinct": 19,
   "legacyDistinct": 42,
-  "composition": "59 selected:58 passed +1 stale SQL fixture failed; narrow final13 selected=9budget(includes2new)+4profile(all passed). Union61, not one61/61 batch.",
+  "composition": "59 selected:58 passed +1 stale SQL fixture failed; narrow final13 selected=9budget(includes2new)+4profile(all passed). Union61, not one61/61 batch. Final dependency binding/refusal correction rechecked5 input cases, overlapping same61; no count inflation.",
   "initialRed": "6 selected5 passed1 failed: actual Budget observer hooks absent yielded outertasks0 after128 submits",
   "initialFakeFailure": "28 selected27 passed1 failed: macOS /var vs /private/var canonical path; corrected test expected realpath",
   "legacyFixtureFix": "profile.test exact P04 query only; samePromise/classification assertions retained, observer remains fixedc259",
   "strict": {
     "exitCode": 0,
-    "scope": "mixed tsconfig root strict ES2023/noUnchecked; no A/B production imports executed"
+    "scope": "mixed tsconfig root strict ES2023/noUnchecked; no A/B production imports executed",
+    "finalEvidence": "dependency-strict-exit.json"
   },
   "limitations": [
     "No actual export of fixed production roots, targets or workload",

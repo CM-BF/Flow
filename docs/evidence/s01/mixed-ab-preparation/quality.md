@@ -9,3 +9,5 @@
 Root预读两项已修：preparation15s覆盖原clock的Git/校验/导出；side begin在异步磁盘检查前固定started，inner所有清理deadline取与outer的min，outer等待不超过该side deadline。晚操作不被当作取消，unknown保留source root并禁B。磁盘每秒单flight只读门禁，低余量停新work；PG/WAL与其他任务增长不冒称由wire预算约束。
 
 新增代码约400行含19checks，无新产品SQL/pool/调度器/缓存；无架构/公共合同变更。当前资源是执行条件，不阻塞准备交付。A/B源raw固定后只读独审，旧128 raw/UNKNOWN、FKye9L未读取/改动。
+
+2026-10-06 14:01:01 UTC final dependency refinement: only15 already-declared external dependencies are linked in owned export roots; fixed ab-dependencies.json binds installed realpath-relative target, exactversion and manifest SHA/bytes. zod4.6.5 is reused from the existing contracts installation because the old server/interaction directories lack their declared links. No WT node_modules/source modification, install, undeclared alias or SDK code import. Five fake input cases (including hash-mismatch refusal) rechecked, same61distinct, latest strict0. First source checkpoint98ae is superseded by final input-binding source; oldsource/raw remain separately fixed.

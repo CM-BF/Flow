@@ -1,4 +1,5 @@
 import { expect, test } from 'vitest';
+import { createHash } from 'node:crypto';
 import { mkdtemp, mkdir, readFile, realpath, rm, symlink, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
@@ -20,12 +21,15 @@ test('the actual child import selector uses the frozen root and leaves legacy re
 test('declared workspace dependencies resolve within their own export while external pg retains its prototype',async()=>{
  const root=await mkdtemp(join(tmpdir(),'flow-ab-input-test-')); const repo=join(root,'repo'), target=join(root,'A'); let bytes=0;
  try {
-  for(const name of ['pg','pg-boss']){const dir=join(repo,'node_modules',name);await mkdir(dir,{recursive:true});await writeFile(join(dir,'package.json'),JSON.stringify({name,version:'1.0.0'}));}
+  for(const name of ['pg','pg-boss']){const dir=join(repo,'node_modules/.pnpm/fixture/node_modules',name);await mkdir(dir,{recursive:true});await writeFile(join(dir,'package.json'),JSON.stringify({name,version:'1.0.0'}));}
   await mkdir(join(repo,'apps/server/node_modules'),{recursive:true});
-  for(const name of ['pg','pg-boss'])await symlink(join(repo,'node_modules',name),join(repo,'apps/server/node_modules',name));
+  for(const name of ['pg','pg-boss']){await symlink(join(repo,'node_modules/.pnpm/fixture/node_modules',name),join(repo,'apps/server/node_modules',name));await symlink(join(repo,'node_modules/.pnpm/fixture/node_modules',name),join(repo,'node_modules',name));}
   const input=[{path:'apps/server/package.json',oid:'test',bytes:Buffer.from(JSON.stringify({name:'@flow/server',dependencies:{'@flow/contracts':'workspace:*',pg:'1.0.0','pg-boss':'1.0.0'}}))},
    {path:'packages/contracts/package.json',oid:'test',bytes:Buffer.from(JSON.stringify({name:'@flow/contracts'}))}];
-  await materializeInput(repo,target,input,{remainingMs:10000,work(){},chargeCommon(_kind,n){bytes+=n;}});
+  const bindings=['pg','pg-boss'].map(name=>{const raw=Buffer.from(JSON.stringify({name,version:'1.0.0'}));return {directory:'apps/server',name,version:'1.0.0',target:'node_modules/.pnpm/fixture/node_modules/'+name,bytes:raw.length,sha256:createHash('sha256').update(raw).digest('hex')};});
+  await materializeInput(repo,target,input,{remainingMs:10000,work(){},chargeCommon(_kind,n){bytes+=n;}},bindings);
+  bindings[0]!.sha256='0'.repeat(64);
+  await expect(materializeInput(repo,join(root,'B'),input,{remainingMs:10000,work(){},chargeCommon(){}},bindings)).rejects.toThrow('dependency_manifest_hash');
   expect(await realpath(join(target,'apps/server/node_modules/@flow/contracts'))).toBe(await realpath(join(target,'packages/contracts')));
   expect(JSON.parse(await readFile(join(target,'apps/server/node_modules/pg/package.json'),'utf8')).name).toBe('pg'); expect(bytes).toBeGreaterThan(0);
  }finally{await rm(root,{recursive:true,force:true});}
@@ -35,6 +39,6 @@ test('an undeclared workspace name fails without falling back to another checkou
  const root=await mkdtemp(join(tmpdir(),'flow-ab-missing-test-'));
  try {
   const input=[{path:'apps/server/package.json',oid:'test',bytes:Buffer.from(JSON.stringify({name:'@flow/server',dependencies:{'@flow/missing':'workspace:*'}}))}];
-  await expect(materializeInput(root,join(root,'A'),input,{remainingMs:1000,work(){},chargeCommon(){}})).rejects.toThrow('workspace_dependency_missing');
+  await expect(materializeInput(root,join(root,'A'),input,{remainingMs:1000,work(){},chargeCommon(){}},[])).rejects.toThrow('workspace_dependency_missing');
  }finally{await rm(root,{recursive:true,force:true});}
 });

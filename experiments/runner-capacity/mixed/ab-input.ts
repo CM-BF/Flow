@@ -8,6 +8,7 @@ import { COMPARISON, type Side } from './ab-budget.js';
 
 const INPUT_PATHS = ['apps/server', 'apps/runner', 'packages', 'package.json', 'tsconfig.json', 'pnpm-lock.yaml'];
 export type InputFile = { path: string; oid: string; bytes: Buffer };
+export type ExternalBinding = { directory: string; name: string; version: string; target: string; bytes: number; sha256: string };
 export type InputAccounting = { work(): void; remainingMs: number; chargeCommon(category: string, bytes: number): void };
 export function inputPath(path: string) {
   assert(path && !path.startsWith('/') && !path.split('/').some(part => !part || part === '.' || part === '..' || part === 'node_modules' || part === '.git'), 'invalid_input_path');
@@ -55,7 +56,7 @@ function frozenFiles(repo: string, side: Side, accounting: InputAccounting): Inp
   });
   assert.equal(offset, batch.length); return files;
 }
-export async function materializeInput(repo: string, destination: string, files: readonly InputFile[], accounting: InputAccounting) {
+export async function materializeInput(repo: string, destination: string, files: readonly InputFile[], accounting: InputAccounting, bindings: readonly ExternalBinding[]) {
   await mkdir(destination); // The caller owns this new root; never overwrite an earlier input.
   const manifests: { directory: string; value: { name?: string; dependencies?: Record<string, string> } }[] = [];
   for (const file of files) {
@@ -72,8 +73,12 @@ export async function materializeInput(repo: string, destination: string, files:
     if (version === 'workspace:*') {
       const path = workspace.get(name); assert(path, 'workspace_dependency_missing'); target = join(destination, path);
     } else {
-      target = await realpath(join(repo, pkg.directory, 'node_modules', name));
+      const binding = bindings.find(item => item.directory === pkg.directory && item.name === name && item.version === version);
+      assert(binding && binding.target.startsWith('node_modules/.pnpm/') && !binding.target.split('/').includes('..'), 'dependency_binding_missing');
+      target = await realpath(join(repo, binding.target));
       const external = await readFile(join(target, 'package.json')); accounting.chargeCommon('external-manifests', external.length);
+      assert.equal(external.length, binding.bytes, 'dependency_manifest_size');
+      assert.equal(createHash('sha256').update(external).digest('hex'), binding.sha256, 'dependency_manifest_hash');
       const installed = JSON.parse(external.toString('utf8'));
       assert.equal(installed.name, name); assert.equal(installed.version, version, 'installed_dependency_version');
       manifestSha256 = createHash('sha256').update(external).digest('hex');
@@ -88,11 +93,13 @@ export async function materializeInput(repo: string, destination: string, files:
   return dependencies;
 }
 export async function exportInputs(repo: string, root: string, accounting: InputAccounting) {
+  const encodedBindings = await readFile(new URL('./ab-dependencies.json', import.meta.url)); accounting.chargeCommon('dependency-bindings', encodedBindings.length);
+  const bindings = JSON.parse(encodedBindings.toString('utf8')) as ExternalBinding[];
   const a = frozenFiles(repo, 'A', accounting), b = frozenFiles(repo, 'B', accounting); verifyPair(a, b);
   const manifest = [];
   for (const [side, files] of [['A', a], ['B', b]] as const) {
     await checkDisk(repo);
-    const directory = resolve(root, side); const dependencies = await materializeInput(repo, directory, files, accounting);
+    const directory = resolve(root, side); const dependencies = await materializeInput(repo, directory, files, accounting, bindings);
     manifest.push({ side, revision: COMPARISON.revisions[side], directory, dependencies,
       files: files.map(file => ({ path: file.path, oid: file.oid, bytes: file.bytes.length, sha256: createHash('sha256').update(file.bytes).digest('hex') })) });
   }

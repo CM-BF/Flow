@@ -1,0 +1,156 @@
+{
+  "mode": "readonly existing direct dependency manifests; no package code imported",
+  "productionRevision": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+  "dependencies": [
+    {
+      "declaration": "apps/runner/package.json",
+      "name": "@anthropic-ai/claude-agent-sdk",
+      "version": "0.3.290",
+      "actualVersion": "0.3.290",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "manifestBytes": 2546,
+      "manifestSha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/runner/package.json",
+      "name": "@a2a-js/sdk",
+      "version": "1.3.0",
+      "actualVersion": "1.3.0",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "manifestBytes": 8032,
+      "manifestSha256": "829fcc9e4768d6ca190ca369203061503911e70f4433e4e5e4aed649f440457a",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/runner/package.json",
+      "name": "zod",
+      "version": "4.6.5",
+      "actualVersion": "4.6.5",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "manifestBytes": 4142,
+      "manifestSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "@fastify/cors",
+      "version": "11.3.0",
+      "actualVersion": "11.3.0",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "manifestBytes": 1759,
+      "manifestSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "fastify",
+      "version": "5.12.5",
+      "actualVersion": "5.12.5",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "manifestBytes": 6973,
+      "manifestSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "npm-package-arg",
+      "version": "13.0.2",
+      "actualVersion": "13.0.2",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "manifestBytes": 1503,
+      "manifestSha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "pacote",
+      "version": "21.5.1",
+      "actualVersion": "21.5.1",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "manifestBytes": 1956,
+      "manifestSha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "pg",
+      "version": "8.23.1",
+      "actualVersion": "8.23.1",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "manifestBytes": 1668,
+      "manifestSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "pg-boss",
+      "version": "12.37.0",
+      "actualVersion": "12.37.0",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "manifestBytes": 4103,
+      "manifestSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "ssri",
+      "version": "13.0.1",
+      "actualVersion": "13.0.1",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "manifestBytes": 1832,
+      "manifestSha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "apps/server/package.json",
+      "name": "zod",
+      "version": "4.6.5",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "actualVersion": "4.6.5",
+      "manifestBytes": 4142,
+      "manifestSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "reusedFromDeclaration": "packages/contracts/package.json"
+    },
+    {
+      "declaration": "packages/contracts/package.json",
+      "name": "zod",
+      "version": "4.6.5",
+      "actualVersion": "4.6.5",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "manifestBytes": 4142,
+      "manifestSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "packages/interaction/package.json",
+      "name": "zod",
+      "version": "4.6.5",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "actualVersion": "4.6.5",
+      "manifestBytes": 4142,
+      "manifestSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "reusedFromDeclaration": "packages/contracts/package.json"
+    },
+    {
+      "declaration": "packages/protocols/package.json",
+      "name": "@a2a-js/sdk",
+      "version": "1.3.0",
+      "actualVersion": "1.3.0",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "manifestBytes": 8032,
+      "manifestSha256": "829fcc9e4768d6ca190ca369203061503911e70f4433e4e5e4aed649f440457a",
+      "directPackagePath": true
+    },
+    {
+      "declaration": "packages/protocols/package.json",
+      "name": "@modelcontextprotocol/client",
+      "version": "2.3.1",
+      "actualVersion": "2.3.1",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client",
+      "manifestBytes": 4591,
+      "manifestSha256": "4a886cbee0d611f822618e4ee94ae4589655c282fa0dbafc17e80da9697f2d91",
+      "directPackagePath": true
+    }
+  ]
+}

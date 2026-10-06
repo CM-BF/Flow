@@ -11,3 +11,5 @@
 源副本根据固定Git导出（A488/B489文件，逻辑3295449/3318995B），源mode仅regular blob； workspace links依据真实package声明指向自己的export、外部依赖要求当前固定version，pg原型与已审六runtimehash另核。byte口径为可见Git输入/导出/Node流/IPC/证据，非全部OS I/O或PG磁盘。4KiB估算文件分配仅估算，不作共享空间保证。readonly main后来plugin/P06变化不在本A/B输入内。
 
 原source6de/c259与128result64911/prep/原manifest维持fixedGit历史；新source另target。新manifest需绑定所有当前mixed源、parent只读、runtime与A/B fixedGit输入；不把旧27readonly说成新main未漂移。
+
+2026-10-06 14:01:01 UTC final dependency refinement: only15 already-declared external dependencies are linked in owned export roots; fixed ab-dependencies.json binds installed realpath-relative target, exactversion and manifest SHA/bytes. zod4.6.5 is reused from the existing contracts installation because the old server/interaction directories lack their declared links. No WT node_modules/source modification, install, undeclared alias or SDK code import. Five fake input cases (including hash-mismatch refusal) rechecked, same61distinct, latest strict0. First source checkpoint98ae is superseded by final input-binding source; oldsource/raw remain separately fixed.
