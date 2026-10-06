@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:13 UTC / mainfc113945ff73d1a43092d0a70b51e901aa4be1e2 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:14 UTC / mainfc113945 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -10,16 +10,16 @@
 | 工作基线 / HEAD | main9c6fa9b100f04916f43b04280f05f497b28eeb0f；O09共享生产目标 c587436c12324b5c121957643d51173cfc66009e |
 | 工作树dirty状态 | 产品已固定；证据与状态本次提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 0d48fddd37f55854437946ea04da6c845f5b6119；CLI真实HTTP/help1/1、final tsc0；无PG或provider |
+| 检查状态 | PASSED 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；HTTP2/2与tsc0，0provider |
 | 已集成main状态 / HEAD | fc113945ff73d1a43092d0a70b51e901aa4be1e2 已含O09领域/client/生产接线；个人center/runner仍b54/v6。新增最薄CLI当前待审。 |
-| Review | NOT_STARTED；仅CLI目标0d48待审，O09领域/client/生产各已有独立批准。 |
-| 实现目标 | 0d48fddd37f55854437946ea04da6c845f5b6119 |
-| 实现范围 | apps/cli/src/index.ts, apps/cli/src/goal-native.test.ts, apps/cli/README.md |
+| Review | NOT_STARTED：仅CHAT09 profile client待审；领域cd859独立APPROVED、O09CLI0d48另获Root批准。 |
+| 实现目标 | 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/execution-profiles.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 单个只读原生子任务已可由中心受理；命令行入口也已完成局部核验。 |
-| 下一可用交付 | 审查并发布对应命令行入口，让替换前端不影响核心操作。 |
+| 当前产出 | 命令行原生子任务入口已审查通过；新执行配置可由兼容的客户端明确选择读取。 |
+| 下一可用交付 | 发布命令行入口，并完成新旧配置目录兼容接线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -109,4 +109,6 @@
 
 2026-10-06 08:07 UTC：O09 production两项已通过。首次缺路由2红；之后测试材料为空正确被readonly门禁拒绝、测试误把pin放summary/public snapshot两次失败均原样保存。最终pin在receipt与持久submission核对，实际guard/现SDK adapter注入→outbox→PG→final+机械验证成立；accepted仍null。没有改产品权限来让测试通过。初次token字面类型失败已修，最终noEmit0；随机DB每轮正常DROP/remaining=[]。
 
-| F01-23 | in-progress | Lead | goal execute-native最薄CLI 0d48fddd37f55854437946ea04da6c845f5b6119；严格schema/128KiB/key/owner/signal/409/help/README1绿，待独审 |
+| F01-23 | completed | Lead | goal execute-native最薄CLI 0d48fddd37f55854437946ea04da6c845f5b6119；严格schema/128KiB/key/owner/signal/409/help/README1绿，待独审 |
+
+| F01-24 | in-progress | Lead | CHAT09只读目录协商 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；HTTP2/2/tsc，独立review待定 |

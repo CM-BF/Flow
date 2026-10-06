@@ -167,3 +167,7 @@ Reviewer: Goal Owner / gpt-6-astra ultra。Review target commit: c587436c12324b5
 ## O09 CLI 待独审
 
 Review target commit: 0d48fddd37f55854437946ea04da6c845f5b6119。NOT_STARTED；仅3files，复用readJsonInput与严格公共schema/FlowClient，旧fixture命令不变，生产领域审批不替代本CLI。
+
+## 2026-10-06 08:14 UTC O09 CLI批准 / CHAT09 client待审
+
+Root独立APPROVED 0d48fddd37f55854437946ea04da6c845f5b6119；3源5raw固定hash核，无P1/P2、未重跑，仅薄CLI入口。新Review target commit: 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；NOT_STARTED，仅profile目录header传输与直接HTTP测试。CHAT09领域cd859已由assignment_review唯一独审APPROVED；不继承为此client审查。

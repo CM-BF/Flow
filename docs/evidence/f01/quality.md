@@ -217,3 +217,7 @@ Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec1
 ## 2026-10-06 08:13 UTC — O09 CLI
 
 固定0d48fddd37f55854437946ea04da6c845f5b6119：最薄owner `goal execute-native`，128KiB regular UTF8 JSON→strict DTO→同公共client，key必填，signal/error原传。不新增SDK/PG逻辑。真实Node HTTP一个用例核stable key/原请求/409无重试/abort/缺key/非法字段/超界无send/help和README；47ms green，finaltsc0。unknown command red及测试假profile非UUID导致正确拒绝的历史输出保留，只修synthetic IDs不放宽schema。既有O09领域已审，无重复27/生产2，不执行模型。clean-code检查复用深模块无额外抽象，授权在中心。
+
+## 2026-10-06 08:14 UTC — CHAT09 client
+
+固定89931e0d9cfd00b5f51f5b266b7aaa38bba2718b，2文件薄改。executionProfiles options.profileProtocol只接受steering-v1并每次GET发精确header；不变URL游标/limit、缺省不发、publication不带。红1/2(缺header)→绿2/2 122ms、tsc0；strict新publication schema、ownerBearer、409不fallback/不重试、abort不多发均实NodeHTTP。不写domain、manifest或Web、不启cap/个人服务。原CHAT09 fixed cd859独审输入受控合并，F01历史metadata冲突采用本树canonical，不碰产品。
