@@ -4,20 +4,9 @@ import {
   executionProfileConfigurationJson, executionProfileConfigurationSchema, executionProfileReferenceSchema,
   type ExecutionProfileConfiguration, type ExecutionProfileReference,
 } from '../../../packages/contracts/src/execution-profiles.js';
-import type { ClaudeAdapterOptions } from './claude.js';
 import { textDigest } from './verifier.js';
 
-/** Describe the fixed adapter settings without exposing its private authorized material paths. */
-export function describeExecutionProfile(options: ClaudeAdapterOptions, adapter: HarnessAdapter, activeSteering = false): ExecutionProfileConfiguration {
-  const files = options.allowRead === false ? [] : [...options.materialFiles];
-  return executionProfileConfigurationSchema.parse({
-    ...(activeSteering ? { activeSteering: { protocol: 'flow.active-steering.v1' } } : {}),
-    harness: adapter.name, adapterVersion: adapter.version, model: options.model ?? 'sonnet',
-    thinking: 'disabled', permissionMode: 'dontAsk', access: options.goalTools ? 'goal-tools' : options.goalGraphTools ? 'goal-graph-tools' : files.length ? 'configured-readonly' : 'none',
-    requireReadApproval: options.requireReadApproval ?? false, materialScopeDigest: textDigest(JSON.stringify(files)),
-    limits: { maxTurns: options.maxTurns ?? 4, maxBudgetUsd: options.maxBudgetUsd ?? 1, timeoutMs: options.timeoutMs ?? 90_000 },
-  });
-}
+export { describeClaudeExecutionProfile as describeExecutionProfile } from './native-harness/claude.js';
 
 export async function publishExecutionProfile(options: {
   baseUrl: string; token: string; signal?: AbortSignal; configuration: ExecutionProfileConfiguration;
