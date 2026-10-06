@@ -1,0 +1,196 @@
+{
+  "at": "2026-10-06 20:09:02 UTC",
+  "run": "settings-b4-20261006-200629-5a13ef",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "actualHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "state": "FAILED",
+  "elapsedMs": 6861,
+  "previousRuntimeMs": 13748,
+  "cumulativeMs": 20609,
+  "remainingMs": 39391,
+  "checks": [],
+  "screenshots": 0,
+  "pg": 0,
+  "workerPgid": 11051,
+  "chromePgid": 6481,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-06T20:07:06.100Z",
+  "chromeExit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-06T20:07:07.006047+00:00",
+    "beforeCdpPort": false
+  },
+  "chromeClose": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-06T20:07:07.026132+00:00",
+    "beforeCdpPort": false,
+    "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+  },
+  "failure": "Error: expect(locator).not.toContainText(expected) failed\n\nLocator: getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group')\nExpected substring: not \"Adapter\"\nError: strict mode violation: getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group') resolved to 4 elements:\n    1) <details class=\"ep-identities\">…</details> aka getByText('选择身份配置 10000000-0000-4000-')\n    2) <fieldset class=\"ep-options\">…</fieldset> aka getByRole('group', { name: '完整消息设置组合' })\n    3) <details>…</details> aka locator('label').filter({ hasText: 'model-' }).getByRole('group')\n    4) <details>…</details> aka locator('span').filter({ hasText: 'fast-model' }).getByRole('group')\n\nCall log:\n  - Expect \"not toContainText\" getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group') with timeout 5000ms\n  - waiting for getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group')\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toContainText (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at Module.checkMessageSettingsPicker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.browser.ts:81:49)\n    at async <anonymous> (/private/tmp/msgset-b4/worker.mjs:76:18)",
+  "parentErrorsUnchanged": [
+    "Browser report: "
+  ],
+  "classification": "Actual fixture UI reached; first browser.ts:81 group locator was non-unique (4 elements). No completed behavior checks, no product semantic failure inferred; parent failed preserved without retry.",
+  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "approval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/settings-b4-native-chrome-boundary-acceptance.json",
+    "sha256": "3259796e617f696f686b35c760c0cc03b1add6f06b4f016c22caf9bfd570bbd4"
+  },
+  "resources": {
+    "sampleMinFreeBytes": 1354358784,
+    "sampleMaxScratchLogical": 18517568,
+    "sampleMaxScratchAllocated": 12849152,
+    "parentRetainedBytesIncludingPrior": 741839,
+    "priorRetainedCharged": 360142,
+    "finalSamplePhases": [
+      {
+        "phase": "after-both-groups-reaped-before-scratch-removal",
+        "seconds": 6.816,
+        "freeBytes": 1354358784,
+        "scratchLogical": 18517568,
+        "scratchAllocated": 12849152,
+        "retainedBytes": 678678
+      },
+      {
+        "phase": "after-result-and-budget-write",
+        "seconds": 6.861,
+        "freeBytes": 1367400448,
+        "scratchLogical": 0,
+        "scratchAllocated": 0,
+        "retainedBytes": 741839
+      }
+    ],
+    "limit": "Original supervisor observations, not hard physical peak or exclusive disk attribution; no extra postrun free sampling."
+  },
+  "files": [
+    {
+      "source": "/private/tmp/msgset-b4/aliases.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/binding.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/binding.json",
+      "bytes": 34163,
+      "sha256": "6328a4846d4966c3e0a022788bfd8f5b726cff1744acf458130b382dd8ec425f"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/manifest.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/manifest.json",
+      "bytes": 3251,
+      "sha256": "4fb95bb3522f12080f00cbaaf203615213cd4f41f3999256874871e2bf34dda5"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/browser-budget.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/browser-budget.json",
+      "bytes": 199,
+      "sha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/child-gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/child-gate.json",
+      "bytes": 2339,
+      "sha256": "04af1e249e328190815786f22abf697b2d8ae5f42dd1b37570f2afb2479856e6"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/consumed-gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/consumed-gate.json",
+      "bytes": 1804,
+      "sha256": "fb5f475c3a31f9de4bee787611ee1931dec220f48c640b57eef0fcab8af6d3bb"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/gate.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/gate.json",
+      "bytes": 1905,
+      "sha256": "1e7ed0433c945f58559a392b13534f658f992092173fb4bc27af43ec55317d84"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/report.md",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/report.md",
+      "bytes": 2174,
+      "sha256": "b7c27db3a4b4d934d4140701e229db869fa13faf7a5f9cb17b4446e528a3d552"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/source-audit.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/source-audit.json",
+      "bytes": 2648,
+      "sha256": "6ac388caef3e03665ba16bada0f1ef0b2e4f90cff756816785f583a84e379501"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/supervisor.py",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/supervisor.py",
+      "bytes": 21000,
+      "sha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/worker.mjs",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/runtime-tsconfig.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/sandbox.sb",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/sandbox.sb",
+      "bytes": 368,
+      "sha256": "c5f820ab045fb2b3ca43824fa4959cea979a0f3bdc30f2e68943c0b8e8db5540"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/worker.log",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/worker.log",
+      "bytes": 52,
+      "sha256": "b5aff1399470c4d26e32116587ddda544ff821a16a636d49da65d1b8fe8fb5eb"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/result.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/result.json",
+      "bytes": 63306,
+      "sha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/raw/settings-b4-20261006-200629-5a13ef/browser-results.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/raw/settings-b4-20261006-200629-5a13ef/browser-results.json",
+      "bytes": 3316,
+      "sha256": "9084635eb5ba4757f16b9347c219ee024ae877bc50e13245e2bdd9c068341e09"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/raw/settings-b4-20261006-200629-5a13ef/owned-chrome.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/raw/settings-b4-20261006-200629-5a13ef/owned-chrome.json",
+      "bytes": 2255,
+      "sha256": "2feedda831ef9ce95085a55b0f407efa178399df2bde7dde1b579e2ba9a6a014"
+    },
+    {
+      "source": "/private/tmp/msgset-b4/raw/settings-b4-20261006-200629-5a13ef/chrome.log",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/raw/settings-b4-20261006-200629-5a13ef/chrome.log",
+      "bytes": 4620,
+      "sha256": "f815fd0e35f5665a8ec67ff287515f0bd0e9895147401ecad0e205b16b90df1c"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/settings-b4-native-chrome-boundary-acceptance.json",
+      "archive": "docs/evidence/wpf-message-settings/browser-third/native-chrome-boundary-acceptance.json",
+      "bytes": 2656,
+      "sha256": "3259796e617f696f686b35c760c0cc03b1add6f06b4f016c22caf9bfd570bbd4"
+    }
+  ],
+  "archivedFiles": 19,
+  "archivedBytes": 158075,
+  "fullFeature": "UNKNOWN",
+  "sourceChanged": false,
+  "retry": false
+}

@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-06T20:06:16.366892+00:00",
+  "reviewer": "/root/w01_owner",
+  "verdict": "APPROVED_SCOPED_SOURCE_REVIEW_NOT_RUN",
+  "fixedTarget": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "metadata": "a99037a47452cc2a314d4767127b04791fb7d664",
+  "manifestSha256": "3c6048d2f5f293d35edd58f644485163203eab4dd569c087774ad01f31534c35",
+  "scope": "Restoration edit lease, complete draft identity, actual App callback and new deferred tests. No re-review of old38 or root record/CAS/namespace/cleanup scope.",
+  "blockingFindings": [],
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+      "bytes": 70874
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "bytes": 24682
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "bytes": 17029
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "bytes": 22929
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "bytes": 14114
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "bytes": 23069
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "e0e9772f77fe8ccacb0b2c71be8874a66c6f500faea5de01a6869b29ccbaa5a1",
+      "bytes": 29965
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157",
+      "bytes": 60306
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "bytes": 24603
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "bytes": 24416
+    }
+  ],
+  "runtime": "NOT_RUN",
+  "direct50": "NOT_RUN",
+  "featureReview": "NOT_STARTED",
+  "projectWrites": false,
+  "spaceSampling": false,
+  "testsOrImports": false,
+  "currentHead": "a99037a47452cc2a314d4767127b04791fb7d664",
+  "currentDirty": "",
+  "report": "report.md"
+}

@@ -1,6 +1,6 @@
 {
   "at": "2026-10-06T19:52:30.975248+00:00",
-  "state": "MAIN_ACCEPTED_OWNER_CLOSE_QUEUED_AFTER_RECOVERY_SOURCE_SAFE_POINT",
+  "state": "MAIN_DELIVERED_OWNER_STOPPED_CAS_RELEASED",
   "main": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
   "receiptCommit": "6223c7493a3b6f392813a5d9d82c24d87312ad26",
   "source": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
@@ -88,6 +88,9 @@
     "originalThree": "TUI-001/COST-001/MATURE02 not listed in this receipt; no separate deployed recovery claim for those three",
     "limits": "Not all173 human.complete=true: receipt I02 has human.complete=false/missing blocker; preserve that source fact"
   },
-  "claim": "9a876001 v1 original4 remains active until owner main-close/pushclean/allstop then fresh CAS release",
-  "runtime": "No rerun62, aggregate, browser, PG, or personal checks by manager"
+  "claim": "9a876001 v2 RELEASED at20:07:26.870Z; original four stopped, no further owner writes",
+  "runtime": "No rerun62, aggregate, browser, PG, or personal checks by manager",
+  "ownerCloseObservation": "dperf05-main-close-observation.json",
+  "ownerFinal": "8f0b7a5d04c1bae82dc99cb068d4f8e66f0034c6",
+  "release": "dperf05-main-release-receipt.json"
 }

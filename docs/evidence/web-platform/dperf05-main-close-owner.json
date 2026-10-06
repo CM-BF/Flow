@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-06 20:05:22 UTC",
+  "inputHead": "825f3245ab857d6f73cf5b49ed51feccce4233c8",
+  "main": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
+  "receiptCommit": "6223c7493a3b6f392813a5d9d82c24d87312ad26",
+  "source": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "sourceComparison": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "bytes": 6660,
+      "currentFixedMainEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "bytes": 6353,
+      "currentFixedMainEqual": true
+    }
+  ],
+  "rawReceipts": [
+    {
+      "commit": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
+      "path": "docs/evidence/i02/dperf05-integration-review.json",
+      "archived": "main-integration-review.json",
+      "sha256": "7dce697945702b141fa5c562d32ec88168facc3f39c8ca763fa4c2586525e373",
+      "bytes": 1400
+    },
+    {
+      "commit": "6223c7493a3b6f392813a5d9d82c24d87312ad26",
+      "path": "docs/evidence/i02/recovery-preparation-main-receipt.json",
+      "archived": "main-lead-receipt.json",
+      "sha256": "d0d16bc1ff3aa2ef2a2c988961fc76faa422c8f2aea5b17db312580e1d7a5aa2",
+      "bytes": 9824
+    }
+  ],
+  "attribution": "Execution Lead/I02 actual aggregate and deployment observation; owner only fixed Git/source metadata verification",
+  "validation": {
+    "priorPureParser": {
+      "passed": 62,
+      "rerun": false
+    },
+    "leadActualAggregate": {
+      "exitCode": 0,
+      "elapsedMs": 506,
+      "limited": true
+    },
+    "leadDashboard": {
+      "observedAt": "2026-10-06T19:49:23.169Z",
+      "sourceCount": 173,
+      "selectedTask": "WPF-DPERF05",
+      "mode": "live",
+      "stale": false,
+      "errors": [],
+      "issues": [],
+      "scope": "Selected DPERF05 only; original TUI/COST/MATURE02 not separately listed; no claim that all173 have complete human fields. I02 human.complete=false retained in raw."
+    },
+    "ownerProductTests": 0,
+    "ownerHTTPPGChrome": 0,
+    "spaceSample": false
+  },
+  "scopeState": "all four scopes stopped after this metadata commit/push; manager owns fresh release"
+}

@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-06T20:05:14.327692+00:00",
+  "state": "ROOT_AND_PEER_APPROVED_SCOPED_SOURCE_NOT_RUN",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "metadata": "a99037a47452cc2a314d4767127b04791fb7d664",
+  "branch": "codex/web-conversation-recovery",
+  "clean": true,
+  "localEqualsLsRemote": true,
+  "fixedCurrentHashes": 19,
+  "changed": 8,
+  "unchanged": 11,
+  "cases": "50 static; new12 NOT_RUN, old38 evidence unchanged",
+  "review": "root record/CAS/namespace; W01 realApp lease/material/profile/intent/concurrency independent peer dispatched after fixed safe point",
+  "budget": "No new consumption or gate; old14.846267375/browser and6868/direct remain",
+  "rootReview": "recovery01-2b01-root-source-review.json",
+  "peerReview": "recovery01-2b01-peer/report.md",
+  "testBoundary": "App-used helper/lease plus realprojection, controllededitor setter; not mountedWorkspace/Thread or fullApp knowledge/attachment prepare callbacks",
+  "next": "Single direct50 candidate source preparation; root found SCAN-ERROR/SOFT-STOP P2, panels dispatched only own/tmp repairs. No gate/runtime.",
+  "reviewMetadataSeal": {
+    "head": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+    "source": "owner normal-push/ls-remote/clean receipt; fixed19 unchanged",
+    "runtime": "NOT_RUN"
+  },
+  "supervisorReview": "recovery01-50-initial-supervisor-root-review.json"
+}

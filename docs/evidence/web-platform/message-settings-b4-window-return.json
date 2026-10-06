@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-10-06T20:07:55.826235+00:00",
+  "state": "FAILED_SINGLE_BROWSER_CLEANED_WINDOW_RETURNED",
+  "source": "W01 actual result plus manager read original parent/budget; no automatic retry",
+  "run": "settings-b4-20261006-200629-5a13ef",
+  "elapsedMs": 6861,
+  "previousMs": 13748,
+  "cumulativeMs": 20609,
+  "remainingMs": 39391,
+  "checks": [],
+  "failure": "First UI assertion strict locator: dialog.getByRole(group) matches4 at browser.ts:81; actualCDP/fixture ready, not Chrome startup failure",
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "workerPgid": 11051,
+  "chromePgid": 6481,
+  "raw": "/private/tmp/msgset-b4",
+  "resultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+  "budgetSha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
+  "runtimeReleased": true,
+  "PG": 0,
+  "provider": 0,
+  "personalOperations": 0,
+  "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
+}

@@ -1,0 +1,188 @@
+{
+  "at": "2026-10-06T20:12:07.535656+00:00",
+  "state": "READ_ONLY_NEXT_EXISTING_D06_SNAPSHOT_INPUT_NOT_IMPLEMENTATION",
+  "sourceMain": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+  "currentChartBaseline": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+  "currentChartVerifiedAt": "2026-10-06T12:43:00Z",
+  "requestedBy": "GO 01a10e15-b908-7a72-b8c0-222a26bf93ff inbound; prioritize after Settings/Recovery/DPERF04 and usable preview",
+  "notAMissingIntegration": "Authoritative D06 owner status at13:09:35 is completed/approved/main-integrated at cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd. Main status copy is older; do not rewrite owner history or repeat the delivered aeb validation.",
+  "ownerStatusObserved": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md",
+    "bytes": 3608,
+    "sha256": "761fd620a548e886714bd301b84675c8fb36d7272b564802b98979c158d86d4a"
+  },
+  "nextContentCandidates": [
+    {
+      "chart": [
+        "runtime.center line14",
+        "modules.client line45"
+      ],
+      "oldSnapshotFact": "Bearer-only/login recovery still pending",
+      "newFixedSourceFact": "Center imports/migrates028 and registers browser-session authentication/routes; client has exclusive token or cookie/CSRF mode and credentials include. Browser trust configuration remains explicit.",
+      "sources": [
+        "apps/server/src/index.ts:101,106,155,156",
+        "apps/server/src/browser-session/index.ts:43,65,92,118",
+        "packages/client/src/index.ts:53,71,75,80,650"
+      ],
+      "keepOpen": "Full Web recovery is a separate in-progress owner feature. Library/center capability does not mean it is deployed or every caller-origin/logout/reconnect behavior has been accepted."
+    },
+    {
+      "chart": [
+        "modules.plugins line50",
+        "modules.nextbackend line73",
+        "persistence.fetchstate line93"
+      ],
+      "oldSnapshotFact": "Registry and download exist; third-party install/runtime successors not represented",
+      "newFixedSourceFact": "029 static material installation and explicitly configured pluginInstallHost routes exist. Runner library invokeInstalledTool checks the exact installed artifact/tree and ownership, with separate current authorization before module load and invoke.",
+      "sources": [
+        "apps/server/src/index.ts:102,174",
+        "apps/server/src/plugin-installations/routes.ts:33,37,47,57",
+        "apps/runner/src/plugins/host.ts:3,64,70,72,78"
+      ],
+      "keepOpen": "Separate registry/download/static install/library execution. The host comment still marks future center binding/claim DTO separately owned; this does not establish npm dependency/lifecycle handling, general isolation, enabled production chain or UI install/enable completion."
+    },
+    {
+      "chart": [
+        "modules.goals line48",
+        "modules.proposals line54",
+        "modules.interaction line67"
+      ],
+      "oldSnapshotFact": "Unified reader and explicit proposal apply, autonomous progression/plan confirmation not represented",
+      "newFixedSourceFact": "030 goal progression routes and bounded progression scanning are mounted;031 explicit owner plan confirmation endpoint is mounted after authentication.",
+      "sources": [
+        "apps/server/src/index.ts:103,104,125,129,167,168",
+        "apps/server/src/goal-progression/index.ts:23",
+        "apps/server/src/goal-plan-confirmation/index.ts:18,20"
+      ],
+      "keepOpen": "Keep confirmation, grant/progression authority, bounded scan and reader responsibilities distinct. Natural-language planning and complete autonomous user journey require original owners evidence; route presence is not that acceptance."
+    },
+    {
+      "chart": [
+        "modules.conversations line49",
+        "modules.profiles line52",
+        "runtime.claude line19"
+      ],
+      "oldSnapshotFact": "Creation profile frozen; all per-message switching described as absent",
+      "newFixedSourceFact": "032 message-settings migration is wired; center admits exact declared Claude tuple/profile with explicit rejection of unsupported harness/modes and resumed omission of effort. Runner maps requested tuple to SDK options and separately records finite init observations.",
+      "sources": [
+        "apps/server/src/index.ts:105",
+        "apps/server/src/conversations/message-settings.ts:10,18,22,26,32",
+        "apps/runner/src/claude-message-settings.ts:6,18,28"
+      ],
+      "keepOpen": "Do not relabel as arbitrary profile hot-swap or all providers supported. Settings component and real App/Send/Queue/Recovery wiring are separate; currently b4 UI harness failed and new narrow selector fix is pending."
+    },
+    {
+      "chart": [
+        "runtime.tui line12",
+        "modules.tui line66",
+        "modules.interaction line67"
+      ],
+      "oldSnapshotFact": "TUI limited conversation path, goal consumer not mounted",
+      "newFixedSourceFact": "Actual TUI main imports goal terminal/store/screen, dispatches --goal and renders GoalScreen; conversation controller receives queue and taskControl from the same client.",
+      "sources": [
+        "apps/tui/src/main.tsx:13,19,32,39,40,47"
+      ],
+      "keepOpen": "Original TUI owner must identify exact delivered command/validation scope; main wiring does not prove full Web parity or provider behavior."
+    }
+  ],
+  "ownerVerificationRequired": [
+    "Browser-session028/client owner",
+    "Plugin installation029 and Runner host owners",
+    "Goal progression030/confirmation031 owners",
+    "Claude settings032/client/runner owners",
+    "TUI owner"
+  ],
+  "renderBoundary": "Data curation only if renderer/CSS Interface remains unchanged. Validate source anchors and content invariants; do not automatically repeat the old five-view browser suite or occupy a window now. Layout changes, if later required, need their own scoped checks.",
+  "deploymentBoundary": "This is fixed-main source research, not a personal deployment observation. Prior af51 and SVC operator receipts must remain separate; SVC06 complete artifact, real Codex and npm enable end-to-end remain uncompleted where evidence says so.",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 41828,
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 53156,
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277"
+    },
+    {
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "path": "apps/server/src/goal-progression/index.ts",
+      "bytes": 2385,
+      "sha256": "deb89a24c6c3ba1f7ce0968689f5501124b5cd4d987370899dddef50b9172165"
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/index.ts",
+      "bytes": 1737,
+      "sha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e"
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c"
+    },
+    {
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "bytes": 2363,
+      "sha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892"
+    },
+    {
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1"
+    },
+    {
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    },
+    {
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "bytes": 4315,
+      "sha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737"
+    },
+    {
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "bytes": 2279,
+      "sha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606"
+    },
+    {
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "bytes": 3892,
+      "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed"
+    }
+  ],
+  "activity": {
+    "projectWrites": false,
+    "importsOrTests": false,
+    "browserOrHttpOrPg": false,
+    "personalServiceRead": false,
+    "resourceSampling": false,
+    "newTaskOrClaim": false
+  },
+  "skills": "Reused local find-skills, codebase-design and clean-code: follow actual entrypoint to domain owners; distinguish capability implementation, mounting, acceptance and deployment; do not invent duplicate state or tasks."
+}

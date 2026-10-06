@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-10-06T20:03:20.559971+00:00",
+  "source": "GO explicit inbound from thread01a10e15-b908-7a72-b8c0-222a26bf93ff relayed by root in current task; no external outgoing message",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "scope": [
+    "Settings fixed b4 parent277166 / worker71a643 after SCAN-ERROR correction and fixed independent review",
+    "DPERF04 same architecture only with its own fixed candidate, budget and window"
+  ],
+  "kept": [
+    "Chrome native sandbox",
+    "Owned short profile/cache/tmp and explicit environment / PGIDs",
+    "Node original custom write and loopback limitations"
+  ],
+  "difference": "Native Chrome no longer has the custom outer OS write/egress restrictions; this is not equivalent isolation.",
+  "excluded": [
+    "Personal Chrome profile and tabs",
+    "Credentials or provider use",
+    "Budget reset, lowered disk/byte/cleanup limits",
+    "Current shared-window permission or automatic retry"
+  ],
+  "settings": {
+    "runnerSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+    "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+    "previousMs": 13748,
+    "remainingMs": 46252,
+    "workMs": 31252,
+    "cleanupMs": 15000,
+    "priority": "Next Web ready candidate; shared window currently Mika"
+  },
+  "dperf04": {
+    "runnerSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+    "workerSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+    "previousBrowserMs": 0,
+    "totalBrowserMs": 60000,
+    "cleanupMs": 15000
+  },
+  "execution": "NOT_RUN; candidate boundary pointers now bound to real records; state remains PREPARED, no gate/free/window",
+  "formalRecords": [
+    {
+      "path": "settings-b4-native-chrome-boundary-acceptance.json",
+      "sha256": "3259796e617f696f686b35c760c0cc03b1add6f06b4f016c22caf9bfd570bbd4"
+    },
+    {
+      "path": "dperf04-b2-native-chrome-boundary-acceptance.json",
+      "sha256": "20a96bff43e064130860707bf4bac56a5078b6a0bbcae9fb56859010844c5c9e"
+    }
+  ],
+  "bindingRecord": "native-chrome-boundary-binding.json"
+}

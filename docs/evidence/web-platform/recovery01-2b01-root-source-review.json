@@ -1,0 +1,297 @@
+{
+  "at": "2026-10-06T20:06:10.368661+00:00",
+  "verdict": "APPROVED_SCOPED_RESTORE_EDIT_SOURCE_NOT_RUN",
+  "reviewer": "root / independent of author",
+  "fixedSource": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "previousSource": "7ca31ca3a65af587b1cf80713b03a6dbe22e1f75",
+  "observedMetadata": "a99037a47452cc2a314d4767127b04791fb7d664",
+  "branch": "codex/web-conversation-recovery",
+  "dirty": false,
+  "scope": "Source-only review of eight-file RECOVERY-RESTORE-EDIT repair and twelve new controlled regression cases. No complete feature approval or new runtime evidence.",
+  "findings": [],
+  "blocking": 0,
+  "addressed": [
+    {
+      "id": "RECOVERY-RESTORE-EDIT",
+      "priority": "P1",
+      "state": "SOURCE_ADDRESSED",
+      "evidence": [
+        "RecoveryWorkspace.restore owns the same view before its first await, waits the existing checkpoint chain, remembers the listed committed draft version, and checks active plugin/current namespace/generation after reads.",
+        "Lease captures the complete editable draft fingerprint, including text, intent, profile, ordered references, attachments and steering. New-chat project/title remain editable; existing center-owned project display fields are excluded from the fingerprint and App independently checks the saved project envelope against the loaded conversation.",
+        "changed() records interleaved modifications instead of discarding them. Invalidated remains set through edit-then-revert. lease.check after projection.refresh rejects late application; same-view second Restore and beginHandoff are rejected during the first restore.",
+        "App initial material guard now includes intent/profile-only, steering and unprepared project selections. Real App and tests consume restoreConversationDraft for awaited refresh followed by lease recheck and synchronous preparation/application.",
+        "Knowledge, attachment and steering owners prepare synchronous validation before any selected material/editor commit. Steering identity, authorization, duplicate keys, existing drafts and capacity are checked before field application. No new HTTP command or controller authority is introduced.",
+        "After conflict/success the restore lease is removed and the current complete draft is checkpointed through the original stable owner/slot/version CAS. Offline edits retain captured namespace plus a visible checkpoint error until same-namespace reauthentication; storage failures retain memory. The accepted CAS clarification allows ordinary successful new-draft checkpoint to replace the one slot."
+      ]
+    }
+  ],
+  "codeReview": [
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "lines": [
+        18,
+        67,
+        182,
+        211,
+        309,
+        373
+      ],
+      "note": "Lease and restore coalescing reviewed with existing sync/enqueue/error lifecycle. bindView adopts an absent view once before asynchronous refresh; existing observed views cannot be rebound. Applying uses same-stack private preparers; disposal invalidates pending leases."
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "lines": [
+        433,
+        650,
+        664,
+        680,
+        696,
+        708
+      ],
+      "note": "Reviewed actual view allocation, stable identity, protected placeholder release, initial full-material guard, after-read center confirmation and all editor/material writes. Existing projection/Thread ownership retained."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "lines": [
+        33,
+        58
+      ],
+      "note": "Prepare validates project and current controller selection before commit. Existing locked conversation controller survives synchronous sync; new-chat selection restore remains explicit/unverified."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "lines": [
+        230
+      ],
+      "note": "Prepared selection uses original AttachmentInput; restoration retains metadata as unverified and performs no implicit upload."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "lines": [
+        113,
+        129
+      ],
+      "note": "Prepared identity/permission/capacity validation precedes creating restored entries/drafts; original receipt restore path retained."
+    }
+  ],
+  "newTestSource": {
+    "expandedCases": 50,
+    "addedCases": 12,
+    "actualRuntime": "NOT_RUN",
+    "coverage": [
+      "six controlled edits during deferred real ConversationProjection.refresh",
+      "new-chat project edit during journal listing",
+      "edit then revert",
+      "unchanged draft plus benign notification",
+      "same-view second restore and new handoff rejected",
+      "namespace=null edit retained then same-namespace reauthentication checkpoint",
+      "actual steering owner preflight failure before editor setters"
+    ],
+    "qualification": "Tests execute the App-used restoreConversationDraft seam, actual RecoveryWorkspace/session/projection and steering preflight. They supply controlled HTTP, IDB event port, host callback and editor data/setters. They do not mount Workspace/Thread or execute its complete material prepare callback, and are not browser/real-IDB evidence."
+  },
+  "preservation": {
+    "sourcePins": 19,
+    "unchangedFromPrevious": 11,
+    "changedSourcePaths": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/conversation-recovery.test.ts"
+    ],
+    "oldBrowserRawFiles": 10,
+    "oldBrowserRawBytes": 17415,
+    "allRawPinsUnchanged": true,
+    "prior38": "Still limited to original7cc controlled run; not a PASS for current50"
+  },
+  "pins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 70874,
+      "sha256": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+      "equalFixed": true,
+      "equalPrevious": false
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "equalFixed": true,
+      "equalPrevious": false
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "bytes": 17029,
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "equalFixed": true,
+      "equalPrevious": false
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24040,
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8729,
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "equalFixed": true,
+      "equalPrevious": false
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "equalFixed": true,
+      "equalPrevious": false
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "equalFixed": true,
+      "equalPrevious": false
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 29965,
+      "sha256": "e0e9772f77fe8ccacb0b2c71be8874a66c6f500faea5de01a6869b29ccbaa5a1",
+      "equalFixed": true,
+      "equalPrevious": false
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 45892,
+      "sha256": "c2db801ce43eda904dad064a18515e29343e2486da55536a50aee9bfb24dba44",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27003,
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "equalFixed": true,
+      "equalPrevious": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 60306,
+      "sha256": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157",
+      "equalFixed": true,
+      "equalPrevious": false
+    }
+  ],
+  "runtimeBudgetsUnchanged": {
+    "direct": {
+      "usedMs": 6868,
+      "remainingMs": 23132
+    },
+    "types": {
+      "usedMs": 52814,
+      "remainingMs": 7186
+    },
+    "browser": {
+      "usedMs": 14846.267375,
+      "remainingMs": 75153.732625,
+      "cleanupReserveMs": 15000
+    },
+    "newRunAuthorized": false
+  },
+  "validation": {
+    "projectWrites": false,
+    "productImports": false,
+    "testsOrTypes": false,
+    "browserOrHttpOrPg": false,
+    "freeSpaceOrPersonalServiceSampling": false,
+    "remoteEquality": "Not independently sampled in this review; owner/manager reported ordinary push local=remote."
+  },
+  "limitations": [
+    "Source correctness approval only; new50/types/browser remain NOT_RUN.",
+    "Private preparer callbacks rely on synchronous same-stack consumption and are not durable public operations; no generic transaction framework was added.",
+    "Original browser failed subset and all full-feature coverage gaps remain open; full feature review NOT_STARTED/target UNKNOWN.",
+    "A future runtime must use fresh actual claim, exact current source/head binding, remaining budgets and the manager-assigned shared window; this report is not a runtime grant."
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "application": "Previously read local method reused; no installation/network. Scope and concrete application below."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "application": "Previously read local method reused; no installation/network. Scope and concrete application below."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "application": "Previously read local method reused; no installation/network. Scope and concrete application below."
+    }
+  ],
+  "cleanCode": {
+    "scope": "Eight-source asynchronous ownership and material preflight change; compared original owners, errors, CAS and regression boundaries.",
+    "findings": "The concrete P1 is addressed at source. Naming and responsibility remain within existing App/Recovery/material owners; no duplicate store or public contract. No additional blocking defect found.",
+    "unresolved": "Controlled and browser execution outstanding; complete App material wiring not mounted by the new direct helper."
+  }
+}

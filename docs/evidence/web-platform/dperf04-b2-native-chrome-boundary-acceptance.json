@@ -1,0 +1,44 @@
+{
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "recordedAt": "2026-10-06T20:01:14.705781+00:00",
+  "recordedBy": "Web co-lead /root, pursuant to explicit GO decision",
+  "authority": {
+    "sourceThreadId": "01a10e15-b908-7a72-b8c0-222a26bf93ff",
+    "receivedVia": "codex_delegation inbound to this Web coordination task",
+    "decision": "GO explicitly accepted this native Chrome sibling boundary after readingB3 and R01 native-launch evidence; delegated co-lead exact runner/worker binding after SCAN-ERROR/source review; DPERF04 same launch boundary accepted with its own reviewed candidate, budget and window.",
+    "furtherGOOrUserConfirmationRequired": false
+  },
+  "conditions": [
+    "Chrome keeps its own native sandbox and this attempt owned short profile/cache/tmp/crash paths, explicit environment and owned processgroup.",
+    "Node fixture keeps the reviewed custom write/localhost-network sandbox.",
+    "Chrome no longer has the prior custom outer OS write/egress restriction; this is explicitly not equivalent confinement.",
+    "No personal profile, existingtabs, credentials or provider operations are authorized.",
+    "Fresh exact originalclaim/source/head/dependency/resource checks and separately available sharedwindow remain required. This record itself is not a gate or window.",
+    "Old failures, cumulative time and existing retained/scratch/free/cleanup limits are preserved; no blind retry loop."
+  ],
+  "runtime": "NOT_RUN by this acceptance",
+  "currentWindow": "Mika native diagnosis per latestLead message; Web must not start PG/Chrome concurrently.",
+  "task": "WPF-DPERF04",
+  "candidate": "/private/tmp/dperf-b2",
+  "runnerSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+  "workerSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+  "sourceReview": {
+    "path": "/tmp/root-dperf04-45f8-lifecycle-source-review.json",
+    "sha256": "d41be7d5452f0a797a49e337e6627c60df7e8c2abaf04b095a3a77650cb3129a",
+    "scope": "Fixed source/preparation review, no behavior/runtime pass"
+  },
+  "budget": {
+    "spentMs": 0,
+    "remainingMs": 60000,
+    "cleanupReserveMs": 15000,
+    "historicalNodeSpentMs": 3950
+  },
+  "limits": {
+    "scratchObservedMaxBytes": 67108864,
+    "retainedMaxBytes": 8388608,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688
+  },
+  "scope": "Only this exact reviewed runner and worker boundary; any materially different boundary or launch must remain explicit. Metadata-only sourcehead rebinding does not change these executable hashes."
+}

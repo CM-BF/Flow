@@ -1,0 +1,31 @@
+{
+  "sourceHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
+  },
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "startedAt": "2026-10-06T20:07:00.216Z",
+  "workerPid": 11051,
+  "parentPid": 6276,
+  "chromePid": 6481,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-06T20:07:06.100Z",
+  "failure": "Error: expect(locator).not.toContainText(expected) failed\n\nLocator: getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group')\nExpected substring: not \"Adapter\"\nError: strict mode violation: getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group') resolved to 4 elements:\n    1) <details class=\"ep-identities\">…</details> aka getByText('选择身份配置 10000000-0000-4000-')\n    2) <fieldset class=\"ep-options\">…</fieldset> aka getByRole('group', { name: '完整消息设置组合' })\n    3) <details>…</details> aka locator('label').filter({ hasText: 'model-' }).getByRole('group')\n    4) <details>…</details> aka locator('span').filter({ hasText: 'fast-model' }).getByRole('group')\n\nCall log:\n  - Expect \"not toContainText\" getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group') with timeout 5000ms\n  - waiting for getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group')\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toContainText (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at Module.checkMessageSettingsPicker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.browser.ts:81:49)\n    at async <anonymous> (/private/tmp/msgset-b4/worker.mjs:76:18)",
+  "finishedAt": "2026-10-06T20:07:06.946Z",
+  "observedElapsedMs": 6730,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

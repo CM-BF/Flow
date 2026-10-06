@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-06T20:05:14.327692+00:00",
+  "state": "ACCEPTED_BOUND_PREPARED_WAITING_SEPARATE_SHARED_WINDOW",
+  "candidates": [
+    {
+      "candidate": "/private/tmp/msgset-b4",
+      "actualHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+      "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+      "approval": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/settings-b4-native-chrome-boundary-acceptance.json",
+        "sha256": "3259796e617f696f686b35c760c0cc03b1add6f06b4f016c22caf9bfd570bbd4"
+      },
+      "runnerSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+      "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+      "bindingSha256": "8cf13afe7709d47cbfce70d6c4e1b0c5dba473f70c52f177695d0941e0e2b7b8",
+      "manifestSha256": "3db9d85c7d9f7fee7e785f3a28169fa900695bd68b5cd541ec2d8ff9fbb2b049",
+      "priorBindingSha256": "8c7306d6c7162a539b476b9320480d6430e5dc28435777ee3d3a7e6537fa2442",
+      "priorManifestSha256": "b927dd1be67f27cab514a00fdf9ceb7136120a6d04303d393ff93ba26b5cbf81",
+      "gateCreated": false,
+      "runtime": false
+    },
+    {
+      "candidate": "/private/tmp/dperf-b2",
+      "actualHead": "12ac7db8bfa9037b16432d848d967c85c6389e05",
+      "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+      "approval": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dperf04-b2-native-chrome-boundary-acceptance.json",
+        "sha256": "20a96bff43e064130860707bf4bac56a5078b6a0bbcae9fb56859010844c5c9e"
+      },
+      "runnerSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+      "workerSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+      "bindingSha256": "da8356330f14be29809e64b8bcb73b655067fa5b33e797692d8857b02ae502d5",
+      "manifestSha256": "b23539d520a340feea558b3f05ff96eb8c2e785e023c9242062f990e0e607bb9",
+      "priorBindingSha256": "ce84127219097e032aed35edf5836e5e8a43a2874205d4d1198ae177bb46a58e",
+      "priorManifestSha256": "4c9cfcc21cf3736343d8c6265b0e1fb7cafc7ee273d9332ebf2bd199a772391f",
+      "gateCreated": false,
+      "runtime": false
+    }
+  ],
+  "limits": "Only acceptance pointer and DPERF metadata head changed; no executable/source mutation. State remains non-runnable PREPARED; no resource sample or gate."
+}

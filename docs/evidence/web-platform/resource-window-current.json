@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T19:57:45.509000+00:00",
-  "state": "MIKA_NATIVE_DIAGNOSTIC_SHARED_WINDOW",
-  "groupWindowOwnership": "Lead reports R01 actual cleanup/window return; next sole shared PG/Chrome holder Mika native diagnostic. Web has no shared window.",
+  "recordedAt": "2026-10-06T20:07:55.826235+00:00",
+  "state": "WEB_MESSAGESETTINGS_B4_FAILED_CLEANED_WINDOW_RETURNED",
+  "groupWindowOwnership": "Web single Settings b4 finished and both groups/scratch cleaned; shared window immediately returned toLead. No next Web run authorized.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -292,7 +292,12 @@
         "metadataAtReview": "3a51a78ebd7f90e36fa2c0c1f5e9d83c2ec4e51c",
         "evidence": "dperf04-45f8-prepared/intake.json",
         "rootReview": "dperf04-45f8-prepared/root-review.json",
-        "nativeChromeBoundaryAcceptance": null,
+        "nativeChromeBoundaryAcceptance": {
+          "state": "ACCEPTED_EXPLICIT_GO",
+          "evidence": "dperf04-b2-native-chrome-boundary-acceptance.json",
+          "binding": "native-chrome-boundary-binding.json",
+          "runtime": "NOT_RUN, no window/gate"
+        },
         "browser": "NOT_RUN",
         "ownerFinal": "12ac7db8bfa9037b16432d848d967c85c6389e05",
         "ownerStoppedWriting": true
@@ -402,18 +407,33 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "recordedAt": "2026-10-06T19:57:45.509000+00:00",
-    "source": "Latest Lead inbound via root; manager has not sampled services/space or independently reviewed R01 runtime",
-    "state": "MIKA_NATIVE_DIAGNOSTIC_SHARED_WINDOW",
-    "previousHolder": "R01",
-    "r01ReportedResult": {
-      "elapsedSeconds": 15.794,
-      "retainedAppsPassed": 2,
-      "cleanup": "Owned DB DROP, groups, ports and temporary directories cleaned; window returned perLead"
+    "recordedAt": "2026-10-06T20:07:55.826235+00:00",
+    "state": "FAILED_SINGLE_BROWSER_CLEANED_WINDOW_RETURNED",
+    "source": "W01 actual result plus manager read original parent/budget; no automatic retry",
+    "run": "settings-b4-20261006-200629-5a13ef",
+    "elapsedMs": 6861,
+    "previousMs": 13748,
+    "cumulativeMs": 20609,
+    "remainingMs": 39391,
+    "checks": [],
+    "failure": "First UI assertion strict locator: dialog.getByRole(group) matches4 at browser.ts:81; actualCDP/fixture ready, not Chrome startup failure",
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
     },
-    "holder": "Mika original reviewed native diagnostic",
-    "web": "No active PG/Chrome/HTTP and no new runtime gate; Settings/DPERF native boundary acceptance remains null; Recovery source repair only",
-    "provisionNotice": "Lead will provision three small trees at a safe point; no Web provision scope or newtake inferred"
+    "workerPgid": 11051,
+    "chromePgid": 6481,
+    "raw": "/private/tmp/msgset-b4",
+    "resultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+    "budgetSha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
+    "runtimeReleased": true,
+    "PG": 0,
+    "provider": 0,
+    "personalOperations": 0,
+    "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -460,7 +480,17 @@
     "retryAuthorized": false,
     "repairFixedSource": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
     "repairRootReview": "APPROVED_SOURCE_SCOPED_NOT_RUN",
-    "repairIntake": "recovery01-7cc-source-intake.json"
+    "repairIntake": "recovery01-7cc-source-intake.json",
+    "restoreEditSource": {
+      "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+      "metadata": "a99037a47452cc2a314d4767127b04791fb7d664",
+      "review": "ROOT_AND_PEER_SCOPED_SOURCE_0_BLOCKING_NOT_RUN",
+      "evidence": "recovery01-2b01-source-intake.json",
+      "direct50": "NOT_RUN",
+      "browser": "Prior failure remains not revalidated",
+      "ownerMetadataSeal": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+      "direct50Preparation": "Root supervisor P2 SCAN-ERROR/SOFT-STOP pending own/tmp repair, no gate/run; product source approval unchanged"
+    }
   },
   "settingsLeaf": {
     "state": "FOCUSED_CHECK_EVIDENCE_ACCEPTED_CLEANED",
@@ -469,10 +499,10 @@
     "version": 1,
     "sourceRequest": "mature02-message-settings-source-request.json",
     "PG": false,
-    "browser": "B2_FAILED_BEFORE_UI_CLEANED",
+    "browser": "B4_FAILED_FIRST_LOCATOR_CLEANED",
     "sourceReady": "message-settings-source-ready.json",
     "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
-    "metadata": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+    "metadata": "9363195c4ffb7c38380716fa68060c99449df801",
     "registration": "message-settings-registration-intake.json",
     "checkPreparation": "message-settings-check-preparation/report.md",
     "sourceFixedBeforeDelta": "Historical ed769 estimate20 not authoritative; actual f3 sixsources executed at85aba",
@@ -487,34 +517,42 @@
     "parentReview": "message-settings-supervisor-root-review.json",
     "evidenceReview": "message-settings-first-root-evidence-review.json",
     "browserCandidate": "message-settings-browser-candidate/intake.json",
-    "browserCandidateState": "READY_SOURCE_PREPARATION_APPROVED_AWAITING_R01_RETURN_AND_NEW_WINDOW",
+    "browserCandidateState": "B4_CONSUMED_FAILED_CLEANED_SELECTOR_REPAIR_SOURCE_ONLY",
     "metadataSeal": "message-settings-browser-metadata-seal.json",
-    "browserResult": "message-settings-browser-b2-window-return.json",
-    "browserSpentMs": 13748,
-    "browserRemainingMs": 46252,
+    "browserResult": "message-settings-b4-window-return.json",
+    "browserSpentMs": 20609,
+    "browserRemainingMs": 39391,
     "browserRepair": {
       "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
       "metadata": "b41c93e7a7e054faec68faed101be5adf4d21225",
       "evidence": "message-settings-browser-b2-prepared/intake.json",
       "runtime": "NOT_RUN",
       "previousRuntimeMs": 5197,
-      "remainingMs": 54803
+      "remainingMs": 54803,
+      "historicalOnly": true
     },
-    "browserAdmission": "message-settings-browser-b2-admission.json",
-    "browserEvidenceReview": "message-settings-browser-b2-actual/root-runtime-review.json",
+    "browserAdmission": "message-settings-b4-admission.json",
+    "browserEvidenceReview": "message-settings-b4-actual/root-runtime-review.json",
     "nextPreparation": {
-      "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
-      "evidence": "message-settings-browser-b4-prepared/report.md",
-      "nativeChromeBoundaryApproval": null,
+      "state": "APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN_WAITING_NEW_WINDOW",
+      "evidence": "message-settings-b4-locator-dispatch.json",
+      "nativeChromeBoundaryApproval": "settings-b4-native-chrome-boundary-acceptance.json",
       "runtimeGate": false,
-      "previousRuntimeMs": 13748,
-      "remainingMs": 46252,
+      "previousRuntimeMs": 20609,
+      "remainingMs": 39391,
       "cleanupReserveMs": 15000,
-      "rootReview": "b4 APPROVED_SCOPED_PREPARATION_NOT_RUN, SCAN-ERROR source addressed; exact Lead boundary acceptance remains null",
-      "supervisorSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3"
+      "rootReview": "message-settings-270c-root-source-review.json",
+      "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+      "metadata": "ba43716f142667897ec6ca8e17442dde92b6f4d2",
+      "intake": "message-settings-270c-locator-intake.json"
     }
   },
-  "retainedAf51": "Lead originalassignment_review accepted six-scope/newtree preparation; no Web ownership or runtime; see retained-af51-owner-scope-proposal.json",
+  "retainedAf51": {
+    "state": "LEAD_APPROVED_AND_MAIN_ACCEPTED_LIMITED_COMPATIBILITY",
+    "main": "1126ada4891dc07aff9c83e0747b66069aaf2111",
+    "evidence": "retained-af51-main-intake.json",
+    "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
+  },
   "currentWindowReturn": "web-validation-window-return-1946.json",
   "coordinationHistory": [
     {
@@ -730,6 +768,56 @@
       "holder": "Mika original reviewed native diagnostic",
       "web": "No active PG/Chrome/HTTP and no new runtime gate; Settings/DPERF native boundary acceptance remains null; Recovery source repair only",
       "provisionNotice": "Lead will provision three small trees at a safe point; no Web provision scope or newtake inferred"
+    },
+    {
+      "recordedAt": "2026-10-06T20:06:29.994634+00:00",
+      "source": "Latest Lead explicit inbound via root; Mika canonical run-report/interface shows native close19:56:50 and two owned roots cleaned",
+      "state": "WEB_MESSAGESETTINGS_ONE_NATIVE_BROWSER_WINDOW",
+      "holder": "Web WPF-MESSAGESETTINGS01 single b4 attempt",
+      "previousHolder": "Mika actual closed/cleaned perLead",
+      "sourceHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "run": "settings-b4-20261006-200629-5a13ef",
+      "previousMs": 13748,
+      "remainingMs": 46252,
+      "workMs": 31252,
+      "cleanupMs": 15000,
+      "boundaryAcceptance": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/settings-b4-native-chrome-boundary-acceptance.json",
+        "sha256": "3259796e617f696f686b35c760c0cc03b1add6f06b4f016c22caf9bfd570bbd4"
+      },
+      "otherWebBrowsers": "Recovery and DPERF not authorized concurrently",
+      "provider": 0,
+      "PG": 0
+    },
+    {
+      "recordedAt": "2026-10-06T20:07:55.826235+00:00",
+      "state": "FAILED_SINGLE_BROWSER_CLEANED_WINDOW_RETURNED",
+      "source": "W01 actual result plus manager read original parent/budget; no automatic retry",
+      "run": "settings-b4-20261006-200629-5a13ef",
+      "elapsedMs": 6861,
+      "previousMs": 13748,
+      "cumulativeMs": 20609,
+      "remainingMs": 39391,
+      "checks": [],
+      "failure": "First UI assertion strict locator: dialog.getByRole(group) matches4 at browser.ts:81; actualCDP/fixture ready, not Chrome startup failure",
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      },
+      "workerPgid": 11051,
+      "chromePgid": 6481,
+      "raw": "/private/tmp/msgset-b4",
+      "resultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+      "budgetSha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
+      "runtimeReleased": true,
+      "PG": 0,
+      "provider": 0,
+      "personalOperations": 0,
+      "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
     }
   ],
   "dperf05Pure": {
@@ -758,10 +846,54 @@
     },
     "evidence": "dperf05-node-first/intake.json",
     "window": "Independentpurefinished;O16sharedPG/Chromeownershipunchanged",
-    "ownerFinal": "825f3245ab857d6f73cf5b49ed51feccce4233c8",
+    "ownerFinal": "8f0b7a5d04c1bae82dc99cb068d4f8e66f0034c6",
     "mainIntake": "dperf05-main-intake.json",
     "main": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
-    "closure": "Owner main-close queued after current Recovery source safe point; original claim still active until explicit stop and CAS release"
+    "closure": "MAIN_DELIVERED_CAS_RELEASED v2; no rerun",
+    "release": "dperf05-main-release-receipt.json"
   },
-  "currentLedgerAvailability": "AVAILABLE_MANAGER_OBSERVATION_2026-10-06T19:56:39.683Z"
+  "currentLedgerAvailability": "AVAILABLE_MANAGER_OBSERVATION_2026-10-06T19:56:39.683Z",
+  "nativeChromeBoundaryDecision": {
+    "state": "ACCEPTED_EXPLICIT_GO",
+    "evidence": "native-chrome-boundary-go-intake.json",
+    "execution": "Still no Web shared window or gate; Mika native diagnostic owns current window",
+    "bindingRecord": "native-chrome-boundary-binding.json"
+  },
+  "nextWebReady": {
+    "state": "NO_NEW_RUNTIME_READY_GATE",
+    "priority": "Settings270c scopedsource approved, newcandidate binding prepared next; no newwindow/gate. Recoverydirect50 preparation only",
+    "boundary": "GO explicitaccepted originalfixednative executables, no repeatedconfirmation",
+    "remainingSettingsMs": 39391,
+    "gate": null
+  },
+  "messageSettingsB4Admission": "message-settings-b4-admission.json",
+  "messageSettingsB4Result": {
+    "recordedAt": "2026-10-06T20:07:55.826235+00:00",
+    "state": "FAILED_SINGLE_BROWSER_CLEANED_WINDOW_RETURNED",
+    "source": "W01 actual result plus manager read original parent/budget; no automatic retry",
+    "run": "settings-b4-20261006-200629-5a13ef",
+    "elapsedMs": 6861,
+    "previousMs": 13748,
+    "cumulativeMs": 20609,
+    "remainingMs": 39391,
+    "checks": [],
+    "failure": "First UI assertion strict locator: dialog.getByRole(group) matches4 at browser.ts:81; actualCDP/fixture ready, not Chrome startup failure",
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "workerPgid": 11051,
+    "chromePgid": 6481,
+    "raw": "/private/tmp/msgset-b4",
+    "resultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+    "budgetSha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
+    "runtimeReleased": true,
+    "PG": 0,
+    "provider": 0,
+    "personalOperations": 0,
+    "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
+  }
 }
