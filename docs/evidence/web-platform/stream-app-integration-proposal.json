@@ -28,7 +28,8 @@
     "Only existing explicitly loaded finalContent may resolve truncated-final settlement; no automatic full reply/detail read. Existing canonical final/flow-reply-detail remains usable.",
     "Fixed253b existing MessageFooter renders only user anchors. Draft phase notices may be pure host presentation via Thread wrapper; do not give draft actions authority from conversation-stream prefix. Any action mapping must originate in verified pane snapshot membership and exact App ownsMessage. Incomplete reason other alone does not cause MessagePrimitive.Error UI.",
     "P01 host authorize is private, not a public generic read API. Prefer a real flow.assistant-stream footer contribution and existing checkView for manifest capability plus current resource; active state alone is insufficient and no second authorization system is allowed.",
-    "Module updateHost publishes each time; host must compare effective inputs and expose a stable snapshot to avoid sync/publish loops while preserving dynamic identity/connection changes. Reuse the existing module scheduler/singleflight."
+    "Module updateHost publishes each time; host must compare effective inputs and expose a stable snapshot to avoid sync/publish loops while preserving dynamic identity/connection changes. Reuse the existing module scheduler/singleflight.",
+    "Root accepted panels fixed ba341+3ac host proposal: bounded cache numeric budgets, stable messages/membership snapshot, existing loaded replyDetailKey content only, initial read authorization through real user anchor. No additional scope or module edits."
   ],
   "requiredChecks": [
     "GET opt-in exact header versus CREATE stable false; cap false/missing/disabled produce zero stream reads.",
@@ -37,7 +38,8 @@
     "Observable paused/interrupted/truncated/non-final states; queue Enter/button/IME, profile locking, unknown receipt retry and fresh composer draft unchanged.",
     "Bounded requests for long replies/reconnect, no automatic lazy-detail body reads; actual Thread path counts not alternate converter benchmark.",
     "Desktop and390px both themes, keyboard, truthful fixture labeling; no model or product DB.",
-    "Unchanged host sync does not form an updateHost/publication loop; direct permission denial/disabled/capability false blocks reads independently of active plugin state."
+    "Unchanged host sync does not form an updateHost/publication loop; direct permission denial/disabled/capability false blocks reads independently of active plugin state.",
+    "Disabled/history fallback preserves S01 typed canonical assistant-final explicit complete/unknown even if task/thread isRunning remains true; do not fall back to legacy conversationMessages in a way that loses the status. Keep PERF03 file read-only and one runtime."
   ],
   "protected": [
     "apps/web/src/conversations/projection.ts",
@@ -75,15 +77,20 @@
     "Public factory createConversationStreamProjection(scope,port), updateHost({turn,capability,protocol,visible,online,finalContent?}); preserve exact approved interface.",
     "Existing module batches at most3 metadata pages(limit100,total256blocks),4 patch pages(limit8) per flight, yields250ms,15s timeout,3consecutive-error budget. Host does not duplicate poll/drain loops or reset failure budget. These are implementation bounds, not UI latency claims.",
     "Module typed canonical final uses explicit complete/unknown even while global task isRunning=true; footer phase/interruption/pause/truncation remains UI work.",
-    "Metadata taskStatus/phase/observationPaused are factual; Task and verification gates unchanged. No full-block/detail prefetch."
+    "Metadata taskStatus/phase/observationPaused are factual; Task and verification gates unchanged. No full-block/detail prefetch.",
+    "Inherited S01 disabled-mapper semantics are part of integration acceptance: canonical final status stays complete/unknown under disabled plugin and bounded historical cache fallback, while global task running gate remains truthful."
   ],
   "hostReadBudget": {
     "backgroundEligibility": "Only current active turn or still-unsettled final work; never create reading flights from Thread.map over all historical turns.",
     "visibility": "Existing at-most-two-visible-pane semantics; hidden/reopen must not refresh all cached historical projections.",
     "settledHistory": "Retained pre-tool drafts may remain in bounded display cache; settled cached turns have no background read permission.",
     "cacheLimit": "Owner must choose and record conservative numeric turn/text-byte limits before implementation validation, consistent with per-attempt1MiB and module page bounds. No unlimited history claim.",
-    "eviction": "Explicitly record which display history may be evicted and any user-driven lazy recovery; preserve canonical final and existing full-reply entry. Do not silently call eviction complete lossless stream history.",
-    "scheduler": "Reuse module singleflight/bounded drain/error budget; no second interval/poll loop."
+    "eviction": "LRU only for inactive historical entries; dispose subscriptions/projection and retain canonical reply. Evicted draft history is explicitly not lossless.",
+    "scheduler": "Reuse module singleflight/bounded drain/error budget; no second interval/poll loop.",
+    "perView": "At most4 observed turn projections and2MiB accumulated UTF8 draft text; not JS heap bytes.",
+    "perConnection": "At most8 observed turns and4MiB accumulated UTF8 draft text.",
+    "concurrency": "One eligible read lease per visible pane, at most2 for split panes; no new interval.",
+    "finiteInvalidation": "Pending-settlement turns consume a finite dirty set caused by actual host invalidation. Once processed, remain idle; loading=false cannot trigger current/history rotation. Explicit Retry, changed task.updatedAt or actual assistant-source update may enqueue again. Module hasMore drain remains bounded and sole scheduler."
   },
   "updatedAt": "2026-10-06T07:37:05Z",
   "proposedWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration",

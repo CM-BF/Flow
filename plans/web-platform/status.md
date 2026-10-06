@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:39 UTC / 增量正文与消息复用均已审待集成；知识上下文模块只读准备 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:43 UTC / 增量正文与消息复用已审待主线，知识上下文模块正式领取 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `be5be7212fe8d0019626d42f8b8e305f4f2d7f65`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `bd8876257ad67649300ca320f9fa01976f256bf7`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
@@ -50,16 +50,18 @@
 | WPF-001-23 | completed | d01_owner | ACTIVITYC01固定889f433/root独立44通过、最终ce0608 clean，管理两hash/范围/parser/28links通过；07:10:06核fa9已含且两路径相同，owner最终b029f3a2 clean，5896 v2于07:11:50.505Z released |
 | WPF-001-24 | in-progress | d01_owner | WPF-CHAT06S01独立web-conversation-stream，完整已审base fa9；d94ae4bb v1于07:10:10.763Z正式领取七新scope，固定3ac11cba/root54独审APPROVED，最终63b7a302 clean；五hash/proof/7md42links管理核验后已一次交Lead，待main；实际App接线后继 |
 | WPF-001-25 | in-progress | d01_owner | PERF03 / web-message-reuse / fixed30b，2ec58c2c v1五scope正式take；仅messages对象复用与小计数probe，不写App/Thread/stream |
+| WPF-001-26 | in-progress | d01_owner | WPF-CONTEXT01 / w01_owner，固定b54新独立树，九scope原子take bfecec43 v1；复用REQ42、仅选择模块，实际Send/Queue后继 |
 
 ## 当前唯一owner、claim与下一步
 
-[07:23 D04读取及释放回执](../../docs/evidence/web-platform/current-owner-observation-0723.json)确认本队只有以下三个active来源；表格链接权威status，不复制其TODO。其他已释放owner的版本与原声明见[原表归档](../../docs/evidence/web-platform/status-owner-history-before-0718.txt)和历史receipt，不作为继续写入授权。
+[07:43 D04读取及新领取回执](../../docs/evidence/web-platform/current-owner-observation-0743.json)确认本队当前有以下四个active来源（两个已冻结待集成，不代表四个开发进程）；表格链接权威status，不复制其TODO。其他已释放owner的版本与原声明见[原表归档](../../docs/evidence/web-platform/status-owner-history-before-0718.txt)和历史receipt，不作为继续写入授权。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
 | WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理plan/evidence |
 | WPF-PERF03 | w01_owner / web-message-reuse，2ec58c2c v1，五scope；固定已审30b且messages对253b相同，仅对象复用/计数，首canonical8f2959d7/parser0已一次SOURCE_READY；固定f909d32f/root07:37:06批准、最终7998e591 clean，已一次交Lead；五scope停写保留回修权 |
 | WPF-CHAT06S01 | workspace_panels_owner / web-conversation-stream，d94ae4bb v1，七scope；固定3ac/final63b已独审并管理核验，全部产品停写，已进I02候选902e但尚非main，首ed187已登记。Lead07:16:38.910Z观察84源live/issues[]；App接线未受领 |
+| WPF-CONTEXT01 | w01_owner / web-knowledge-selection，bfecec43 v1，九新scope，07:43:25 committed；首3412347f clean/parser0已一次SOURCE_READY，进度卡部署仍待Lead事实 |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
 
@@ -324,3 +326,9 @@ GO/Mika新的quiet lease原截止07:42，随后root转达Mika正式提前QUIET_R
 原U11/REQ42下一独立知识context模块由同一w01只读准备，不新增agent或重复产品需求，尚未take/建树。root固定b54核公共K01/K02 lookup/citation/project身份齐备，后继可从已审b54独立受领，不依赖S01 main。候选仅新模块/测试/自己资料，App/Thread后继另领；当前17/13等已交权与新写权仍经D04 fresh检查，研究不授写权。
 
 本段管理清码复核：S01 candidate/main边界、PERF独立审查与管理核验职责、quiet lease时点、现有REQ42后继范围分开；25TODO/parser0、人读完整、四维护md157本地链接全可解、diffcheck0。未执行产品检查/API/模型或服务操作。
+
+07:43 CONTEXT01正式受领：[fresh预检](../../docs/evidence/web-platform/context01-preflight.json)核新b54树/branch/clean，07:42:59.708Z ledger九literal无相交后[原子take](../../docs/evidence/web-platform/context01-take-receipt.json)于07:43:25.096Z成功。已followup原w01按receipt/live→canonical→独立模块实施；新能力沿U11/REQ42，父TODO26只跟踪交付，不另造产品需求。待首canonical实际parser后一次SOURCE_READY，不把领取区当任务卡已登记。
+
+CONTEXT01[首canonical审计](../../docs/evidence/web-platform/context01-canonical-audit.json)实核3412347f8383cc3121f82449a370e3711e756f6a clean、6metadata/九scope外0、parser0/human完整/4TODO/NOT_RUN，UNKNOWN实现为预期，未伪造固定候选。唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection/plans/wpf-context01-knowledge-selection/status.md)已一次SOURCE_READY经GO交Lead；owner继续实际模块，不等待登记才开写，当前无新API采样。
+
+CONTEXT01初段接口澄清由root交owner在原九scope收敛：picker关闭不等pane关闭，读readiness与freeze的identity/auth/cap条件须分开；正常关闭选择面板后可冻结既有选择且0读，不靠伪造visible。该项为实施前接口澄清，未称已测缺陷或阻塞。新take/首source管理检查26TODO、4md161本地链接和diffcheck均通过，0产品重测。

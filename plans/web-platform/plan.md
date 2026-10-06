@@ -91,12 +91,13 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 
 ## 当前 owner 与接口冻结
 
-本表只列本队当前可写权威来源，实际范围以[本次D04读取与释放回执](../../docs/evidence/web-platform/current-owner-observation-0723.json)和committed receipt为准；不重新授权已释放范围。跨Lead仍只有D04一套账本，claim数量不当作agent并发。
+本表只列本队当前可写权威来源，实际范围以[本次D04读取与释放回执](../../docs/evidence/web-platform/current-owner-observation-0743.json)和committed receipt为准；不重新授权已释放范围。跨Lead仍只有D04一套账本，claim数量不当作agent并发。
 
 | 当前工作 | 唯一 owner / worktree / branch | 写入边界与下一停点 |
 | --- | --- | --- |
 | WPF-PERF03 | w01_owner / web-message-reuse / codex/web-message-reuse | claim2ec58c2c v1，五literal；固定已审30b，messages.ts对新main253b相同。仅不可变turn身份的消息对象复用/实际core转换计数；不占App/Thread/stream，首canonical8f2959d7已管理核parser0并一次SOURCE_READY |
 | WPF-CHAT06S01 | workspace_panels_owner / web-conversation-stream / codex/web-conversation-stream | claimd94ae4bb v1，七新literal scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream/plans/wpf-chat06-stream/status.md)。完整已审base fa9，三纯模块/两专测/自己plan-evidence；不占App/Thread，不再叠加shared输入 |
+| WPF-CONTEXT01 | w01_owner / web-knowledge-selection / codex/web-knowledge-selection | claimbfecec43 v1，固定b54的九新literal已正式take；独立选择模块，App/Thread/Send/Queue接线后继，首canonical3412347f clean已管理核验并一次SOURCE_READY，部署待Lead回执 |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实或产品实现 |
 
 历史W01/P01/PERF01/CHAT/I01/M02均由原owner在06:43–06:45完成mainmetadata和release；PROFILE17093 v2早于04:59已释放，后继App也已另片集成。rendererI/D06在accepted86a后已释放；C01/ACTIVITYC01在fa9后07:11:50释放；ActivityI已入253b，原122 v2于07:23:42释放。历史原表与WorkspacePanels接口原文保留在[时点归档](../../docs/evidence/web-platform/owner-queue-history-before-0718.txt)，其版本和临时依赖例外不作当前写权；完整原receipt及实现证据沿各canonical与父status历史入口查阅。
@@ -116,11 +117,11 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
 | 已审待集成 | WPF-CHAT06S01增量正文独立模块 | 3ac/63b已root独立54批准且管理hash/docs核验，d94七scope停写等main；仅mock模块，不将模块完成当App接通 |
 | 并行窄优化 | WPF-PERF03消息对象复用 | 五scope已take，固定f909/7998已root独审并一次交Lead，仅同turn对象复用与转换调用计数，不声称浏览器延迟收益；stream接线只读消费现conversationMessages接口 |
-| 后继只读准备 | 知识上下文选择独立模块 | w01_owner复用原U11/REQ42；固定b54公共K01/K02可用，等具体literal/新tree/新take，不写App/Thread；不可变citation、明确project、旧中心unsupported、展开才正文 |
+| 独立实施 | 知识上下文选择独立模块 | WPF-CONTEXT01复用原U11/REQ42；固定b54、独立web-knowledge-selection与九scope正式领取；不可变citation、明确project、旧中心unsupported、展开才正文。后继发送链另take |
 | 后继准备 | stream实际App接线 | WPF-CHAT06I01由workspace_panels_owner；独立web-conversation-stream-integration/codex/web-conversation-stream-integration，精确13scope见[提案](../../docs/evidence/web-platform/stream-app-integration-proposal.json)。ActivityI已main/release，S01在I02候选902e，等正式完整main→原模块收口→fresh take，不取候选抢App/Thread |
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
-| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前三active本队claim按真实范围防交叉。GO说明Mika仍2槽；仅按明确带截止时间的quiet lease协调重负载，不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
+| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前四active本队claim按真实范围防交叉，其中S01/PERF03已冻结待集成，不等四个开发进程。GO说明Mika仍2槽；仅按明确带截止时间的quiet lease协调重负载，不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
 
 ## TODO
 
@@ -151,6 +152,8 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 - [x] **WPF-001-23** WPF-ACTIVITYC01：独立86a树四scope兼容C02过滤页raw-scan游标，固定已过HTTP断言映射的contract fixture经真实61b reader验证，严格身份/排序/上界/reset/hasMore不放宽；独审后交Lead解锁发布，不混完整stream消费者。
 - [ ] **WPF-001-24** WPF-CHAT06S01：七新scope独立模块消费完整已审fa9的公开stream协议，严格patch校验、增量projection与纯message适配；隐藏/连接/attempt隔离，final仅按明确settlement，实际Thread接线在ActivityI交权后另领。
 - [ ] **WPF-001-25** WPF-PERF03：五scope独立30b树按不可变turn身份复用消息对象；同revision动态正文/来源/截断、历史排序与跨中心不误复用，真实installed core计数，不许宣称UI时延改善。
+
+- [ ] **WPF-001-26** WPF-CONTEXT01：固定b54九新scope独立知识引用选择模块；有限搜索/显式正文/完整citation身份/4项与byte预算/保序深冻/连接和readiness隔离，App与Send/Queue知识透传后继另领。
 
 ## 验收、风险与持续方式
 

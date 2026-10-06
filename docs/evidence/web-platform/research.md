@@ -655,3 +655,5 @@ PERF03独立五scope已正式受领，保留conversationMessages现接口，仅�
 同段root对CHAT06I01宿主接缝补充：P01 authorize是private，使用真实贡献+现checkView同时核manifest capability和当前resource，active不等授权。模块updateHost每次publish，宿主按有效输入比较并给稳定snapshot，避免无变化sync循环；沿模块scheduler/singleflight，不新建轮询。该约束并入既有13scope proposal，不新增任务或公共授权系统。
 
 K02中心预算边界（同root固定源研究）：4refs/8192 locator bytes预校验不保证中心受理，编译userText与冻结metadata后仍受16000 UTF16 / 49152 UTF8总输入预算；拒绝时保留草稿与引用，明确错误，不静默截断或丢ref重发。contentDigest属于整个source版本，resolve只给chunk，不得拿chunk摘要与整版本摘要比较；核citation完整tuple与text byte length，整版本摘要以中心权威为准。contexts详情不是search preview，正文仍仅显式GET。
+
+07:43补充root官方研究来源：[React useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)明确无变化getSnapshot返回值须Object.is相同且snapshot不可变，subscribe函数身份变化会重订阅。仅采用既有语义，不随官网版本升级项目；stream host/context controller的no-op更新、订阅清理与旧异步隔离应验证。ContextPicker保持紧凑可插拔组件，原生label/键盘，aria-live仅简短数量/错误；外层Dialog若需要复用现有焦点管理，不为本模块造CMS。root已读[Web界面指南](https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md)与[W3C Dialog规范](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)，本管理未重新联网或新增依赖。

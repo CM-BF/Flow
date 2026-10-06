@@ -1,0 +1,120 @@
+{
+  "observedAt": "2026-10-06T07:45:31.553Z",
+  "firstCanonical": "3412347f8383cc3121f82449a370e3711e756f6a",
+  "currentHead": "3412347f8383cc3121f82449a370e3711e756f6a",
+  "currentDirty": "",
+  "authorReportedFirstCommitClean": true,
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection",
+  "branch": "codex/web-knowledge-selection",
+  "base": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "claim": {
+    "claimId": "bfecec43-3b3f-438d-9d4f-b657f1fc0ec5",
+    "version": 1,
+    "taskId": "WPF-CONTEXT01",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection",
+    "branch": "codex/web-knowledge-selection",
+    "scope": [
+      "apps/web/src/conversation-context/ContextPicker.tsx",
+      "apps/web/src/conversation-context/context-picker.css",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-context/selection.ts",
+      "apps/web/test/conversation-context.browser.ts",
+      "apps/web/test/conversation-context.fixture.tsx",
+      "apps/web/test/conversation-context.test.ts",
+      "docs/evidence/wpf-context01",
+      "plans/wpf-context01-knowledge-selection"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T07:43:25.096Z",
+    "createdAt": "2026-10-06T07:43:25.096Z"
+  },
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection/plans/wpf-context01-knowledge-selection/status.md",
+  "changed": [
+    "docs/evidence/wpf-context01/interface.md",
+    "docs/evidence/wpf-context01/quality.md",
+    "docs/evidence/wpf-context01/take-receipt.json",
+    "plans/wpf-context01-knowledge-selection/plan.md",
+    "plans/wpf-context01-knowledge-selection/review.md",
+    "plans/wpf-context01-knowledge-selection/status.md"
+  ],
+  "outside": [],
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "已确定知识选择的范围与读取限制，开始制作选择组件",
+    "next": "可搜索、选择并按需查看知识正文的独立组件",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "WPF-CONTEXT01-01",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "[接口](../../docs/evidence/wpf-context01/interface.md)"
+    },
+    {
+      "id": "WPF-CONTEXT01-02",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "待模块与HTTP fixture验证"
+    },
+    {
+      "id": "WPF-CONTEXT01-03",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "待固定target独立review/main"
+    },
+    {
+      "id": "WPF-CONTEXT01-04",
+      "state": "pending",
+      "owner": "后继owner待派",
+      "evidence": "实际Send/Queue接线另领"
+    }
+  ],
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN"
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/conversation-context/selection.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-context/ContextPicker.tsx",
+      "apps/web/src/conversation-context/context-picker.css",
+      "apps/web/test/conversation-context.test.ts",
+      "apps/web/test/conversation-context.fixture.tsx",
+      "apps/web/test/conversation-context.browser.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  },
+  "limits": "First canonical only, no fixed product candidate. UNKNOWN target is intentional; no API fetch/product tests/model/service operations by management."
+}
