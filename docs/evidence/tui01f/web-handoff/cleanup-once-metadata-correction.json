@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-06T21:02:10.335134+00:00",
+  "sourceRecord": "cleanup-once-run.json",
+  "field": "PG",
+  "recordedValue": 0,
+  "correctMeaning": "Incorrect inherited constant from the pure-check wrapper; this cleanup did make PostgreSQL connections, ownership/connection queries and one normal DROP. Original raw is retained unchanged.",
+  "authority": "cleanup-once-result.json and cleanup-once.mjs",
+  "actualJourneyRerun": false,
+  "providerCalls": 0,
+  "browserStarts": 0,
+  "PTYStarts": 0,
+  "ownWrapperSource": "small-check-cleanup.py"
+}
