@@ -4,6 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
+- **独立pagesize对照准备，NOT_OPEN。** [最小方案与固定C/两policy](native-pagesize/interface.md)按GO新授权仅评估hw.pagesize，最多一次现有clang+两helper/总30s/2MiB；原native失败与344B留物冻结，不重跑Codex。当前0compile/helper，不能把上游假设写为本机原因。
 - **next4c有限回复**：[原KEEP清单与本组无新增依赖说明](resource-candidates.md#next4c补充)。B01/P03指定HEAD本轮由Mika核clean；没有本组新增历史evidence消费者/KEEP路径，外部未登记consumer仍unknown，sole Lead决定操作。
 - **CORE纵向源码已正式APPROVED，F01可据此继续合法挂载。** Mika/root 2026-10-06 17:13:34 UTC批准source `ea276572c3c99fb8400808a93efc69ce530d55a4` / packet `23016bbb5a56ccc6b12729c4d6ec365819207eba`；34源/273 bindings独核无差异，29 distinct=16+5+8、两strict0，0review重跑。批准范围为CORE纵向与032 helper，未包含F01 factory、consumer、自动scheduler、provider或UI完整02；唯一[正式review receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json)已由owner在2751b617cb647963dbd07eaa1cdde17c41aa631f clean/pushed固定，stage integration/NOT_INTEGRATED；[CORE status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md)仍唯一进度。此前PG两次失败/NOT_RUN是历史，1707重开8/8与cleanup已Lead接收；C01补充P2已由唯一reviewer增量关闭，见下方正式收据。
 - **真实native目录窗口已消费，握手前失败。** [固定安全结果](native-catalog-probe/run-report.md)：1个native SIGABRT、ready=false/model-list 0，目标和标准流关闭、两个自有根已清理，344B私有诊断材料独立保留待审；仅确认Rust panic类文字，原因未知。45s/留存预算事实与目录FAIL分开，0重试/新权限/模型调用；[结果忠实性收据](native-catalog-probe/result-review.json)已Mika17:50:22.663接收；功能仍失败，344B私有原件KEEP。

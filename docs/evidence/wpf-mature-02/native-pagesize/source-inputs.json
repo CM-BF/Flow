@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-06T17:55:45.771569+00:00",
+  "baseNativeSeal": "7a72f53e5bee4e4426a94248745dca883e733624",
+  "claimVersion": 6,
+  "toolchain": {
+    "clang": "/Library/Developer/CommandLineTools/usr/bin/clang",
+    "linker": "/Library/Developer/CommandLineTools/usr/bin/ld",
+    "sdk": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk",
+    "sandbox": "/usr/bin/sandbox-exec"
+  },
+  "external": [
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "bytes": 269112240,
+      "sha256": "bcac6febe0148c3696bd3f7c42fb5bb475720fee4a1412de56e3b16ea1c04e5f"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/ld",
+      "bytes": 4616992,
+      "sha256": "f72642cacf25674cb1558893908e99ef5ef396e7510ac447ba3bb52fc2a3fae1"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/SDKSettings.json",
+      "bytes": 7529,
+      "sha256": "7a2223423d955944a74542b8a72fda83cf970fa30749ba305fa904451f3a16c1"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+    }
+  ],
+  "sdkDeclarations": [
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/unistd.h",
+      "bytes": 31226,
+      "sha256": "bc3df41b77bd9cf7c1e46bb562280d3ae11068f2e22180e1eae2125c158182ff"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/sys/sysctl.h",
+      "bytes": 37271,
+      "sha256": "01b62d3e26716385b805231eed2baa9ab2ca32d3c7b9b0b3b0f20a6551bd5fea"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/pthread/pthread.h",
+      "bytes": 28093,
+      "sha256": "9d621c730d1d96b600893b0e3e4c45822a24d565e7b6b166973c41a6a2eb02e7"
+    }
+  ],
+  "sources": [
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/pagesize.c",
+      "bytes": 2823,
+      "sha256": "c542ac2ca2ffc7e6af8c746088e2dee62da3ac9e32e71ac952d3c582dd6d878a"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/baseline.sb",
+      "bytes": 16939,
+      "sha256": "ea86f69fce19598ead57aa33e38d0782f7d766cd9909109dbfbb67cfdd946ae4"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/pagesize.sb",
+      "bytes": 17058,
+      "sha256": "710b18475f41697b96892be1873ce64da9e81a721bdff9078ba2e2b9a6fb423c"
+    }
+  ],
+  "reusedRuntime": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 4014,
+      "sha256": "4ca694a780192fc4ffeb968fca1720eed8aca630014bec3f9b32dca84a1835e7"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "bytes": 6336,
+      "sha256": "e8f7f00df2a40fd30ed7338f755d66846618c97da577208e7eebfdb1f8d6db63"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-failure-text/private-text.mjs",
+      "bytes": 3424,
+      "sha256": "475551428f8f3829de71fff552c38b00d0b3a68a51dbc3c59c4ad838aeeddfce"
+    }
+  ],
+  "sourceOnlyCheckpoint": true,
+  "compileCalls": 0,
+  "helperCalls": 0,
+  "runAuthorization": "NOT_OPEN",
+  "method": "local find-skills/brainstorming/clean-code existing sickn33 bdacd76 baseline; no installation"
+}

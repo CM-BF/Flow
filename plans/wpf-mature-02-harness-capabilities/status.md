@@ -97,3 +97,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 16:14:52只读观察core92f768e3517a64235629858f50cdc3926d099b2d，三个validation config未跟踪；canonical已置顶227/155精确闭包准入和保留全部scope/dirty要求。Mika核binding事实与source review分开，当前0工程检查/PG/native、NOT_OPEN；完整TODO不变。
 
 17:16安全点：沿TODO-03固定[native最小设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)，0目标/检查，当前与已封存Node候选分开。R06/loader/policy只读；fresh v6三scope，已应用本地find-skills/openai-docs/brainstorming/clean-code。CORE正式批准及CHAT06P03已领取只作canonical路由，子状态由原owner维护。
+
+17:57新pagesize段：GO/Mika已批准仅准备一个C观测器与A/B policy，新增hw.pagesize是两臂唯一权限差；两臂共同exact helper规则显式列出。固定上游/SDK声明与当前clang/ld指纹只读核，0编译/helper。新片预算独立，旧native7a72 sealed-accounting按历史Git保留，功能仍失败。
