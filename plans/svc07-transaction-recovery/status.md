@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:04:07 UTC；固定分支基线22a，main未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:29:34 UTC；固定分支基线22a，main未集成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect |
 | Branch | codex/server-transaction-disconnect |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；本次准备前HEAD12b29c92b7ef5eb95534f93147006ef3c4321a5c |
-| 工作树dirty状态 | 本次仅http-*证据、执行封套、局部配置与本status；产品2源及已消费PG原件无变；固定packet后交审 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；本次只读记录前HEAD997a9f5fe6062bd317f91b33c63573f4b58f5013 |
+| 工作树dirty状态 | 997a9f5 clean已核；本次仅追加Lead只读门槛观察与本status，233执行输入/manifest/既有raw不变 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | integration |
 | 实现目标 | e28c4ed0a30ec2800eeca2ca5c444c0081c38165 |
@@ -61,8 +61,10 @@ Lead后续指派原owner在本evidence内准备独立HTTP旅程；209源/869209B
 
 [http-types-v2](../../docs/evidence/svc07/http-types-v2.json) exit0/1.935556s，仅类型解析；首types原始错误保留，0PG/HTTP。新的执行封套复用既有自有process监督接缝，拟60s总窗/40s工作/15s清理，最多12连接、24HTTP请求/单响应64KiB、raw64KiB；尚未独审批准执行。20:59UTC Mika静态批准一次显式Vitest list收集（10s/64KiB），已收集1条、exit0、wall1.549670s；仅COLLECTED_NOT_EXECUTED，不能称测试通过。HEAD12b29；dirty仅本scope HTTP准备/状态。
 
-2026-10-06 21:04:07 UTC：[HTTP一次执行准备](../../docs/evidence/svc07/http-window.md)与完整manifest固定后交Mika独审；实际执行尚NOT_OPEN。当前没有待launch进程，收集PGID88367 absent且tmp absent。产品/旧PG输入结果不变，本包提交后安全停写，回REQ15等待依赖后实施。
+2026-10-06 21:29:34 UTC：[HTTP一次执行准备](../../docs/evidence/svc07/http-window.md)与完整manifest固定后交Mika独审；实际执行尚NOT_OPEN。当前没有待launch进程，收集PGID88367 absent且tmp absent。产品/旧PG输入结果不变，本包提交后安全停写，回REQ15等待依赖后实施。
 
 ## HTTP准备独审及本次准入结果
 
 Mika 2026-10-06 21:05:11UTC，target35f78c8b1edc67f1646b395dd62bc1cf389ebef9 / manifest13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06，准备审APPROVED/0 P1/P2，非实际HTTP通过。21:08获窗口后仅执行一次入口，exit2 HOLD，0 child/PG/HTTP、8实际输出全absent；随后只读free1176248320B，比原floor1207959552B少31711232B。claim v1及233 inputs/18deps一致；[HOLD原事实](../../docs/evidence/svc07/http-hold-20261006-2108.json)。窗口已交回，0待launch，不降门槛/清理他人资源/自动重跑。责任人Lead安排空间与下一明确窗口；owner仅本结果/status/review归档，固定执行输入不变。
+
+2026-10-06 21:29:34 UTC：Mika/Lead新窗口准入仅作只读观察（2026-10-06 21:28:25UTC），free1143750656B <1207959552B，未调用entry、0child/PG/HTTP；21:27:19个人窗口已归还，本次资源已明确交回Web，无预约。此为Lead回传事实，不伪称owner新磁盘测量；SVC停止执行与输入修改，owner专注REQ15。后继仅待新的明确窗口和原门槛满足。
