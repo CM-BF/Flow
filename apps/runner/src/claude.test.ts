@@ -3,11 +3,13 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { Options, SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import type { HarnessContext, RunnerEventData } from '@flow/contracts';
-import { afterEach, expect, it } from 'vitest';
+import { afterEach, expect, it, vi } from 'vitest';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { createClaudeAdapter, type ClaudeQuery } from './claude.js';
 
 const directories: string[] = [];
-afterEach(async () => { for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
+afterEach(async () => { vi.unstubAllEnvs(); for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
 async function setup() {
   const directory = await mkdtemp(join(tmpdir(), 'flow-claude-test-'));
   directories.push(directory);
@@ -290,4 +292,25 @@ it.each(['session', 'stream-error', 'unicode-size'] as const)('publishes no assi
   });
   await expect(createClaudeAdapter({ materialFiles: [], query }).run(test.context)).rejects.toThrow();
   expect(test.events.some(event => event.type === 'assistant-final' || event.type === 'artifact')).toBe(false);
+});
+
+it('passes only explicit native SDK environment and excludes Flow service credentials', async () => {
+  const test = await setup();
+  for (const key of ['FLOW_TOKEN', 'FLOW_RUNNER_TOKEN', 'FLOW_PREVIEW_ADMIN_URL', 'DATABASE_URL', 'PGPASSWORD', 'UNRELATED_SECRET']) vi.stubEnv(key, 'synthetic-service-secret');
+  vi.stubEnv('ANTHROPIC_API_KEY', 'synthetic-provider-key');
+  vi.stubEnv('CLAUDE_CONFIG_DIR', '/synthetic-claude-config');
+  vi.stubEnv('CLAUDE_CODE_OAUTH_TOKEN', 'synthetic-provider-session');
+  const query = sdk(async function* (options) {
+    expect(options.env).toBeDefined();
+    // A real child process receives the exact options environment; it prints only synthetic checks.
+    const { stdout } = await promisify(execFile)(process.execPath, ['-e', `
+      const forbidden = Object.keys(process.env).filter(key => /^(FLOW_|DATABASE_URL$|PGPASSWORD$|UNRELATED_SECRET$)/.test(key));
+      console.log(JSON.stringify({ forbidden, provider: process.env.ANTHROPIC_API_KEY === 'synthetic-provider-key', config: process.env.CLAUDE_CONFIG_DIR === '/synthetic-claude-config', session: process.env.CLAUDE_CODE_OAUTH_TOKEN === 'synthetic-provider-session', path: Boolean(process.env.PATH), home: Boolean(process.env.HOME) }));
+    `], { env: options.env });
+    expect(JSON.parse(stdout)).toEqual({ forbidden: [], provider: true, config: true, session: true, path: true, home: true });
+    expect(process.env.FLOW_RUNNER_TOKEN).toBe('synthetic-service-secret');
+    yield result();
+  });
+  await createClaudeAdapter({ materialFiles: [], query }).run(test.context);
+  expect(JSON.stringify(test.events)).not.toContain('synthetic-');
 });
