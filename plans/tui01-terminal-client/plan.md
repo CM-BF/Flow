@@ -76,3 +76,9 @@ MATURE02/04提供能力与上下文来源，MATURE03提供文件生命周期，M
 2026-10-06执行顺序：TUI001-06先由[TUI01E](../../../tui-queue-controls/plans/tui01e-queue-controls/plan.md)交付现公共queue轻读/暂停/继续，其他聊天控制另按能力推进；完整TUI→Web→TUI归TUI001-08，不以两Node客户端或headless替代实际界面。
 
 2026-10-06 13:57:22 UTC：TUI01E的queue轻读/暂停/继续已独审进入maind4a2e0a7，当前固定证据不替代完整06/08。后继按已发布能力接聊天取消/决定/steer及真实双端操作；实现槽当前用于COST首纵向片，完整TUI验收保持开放。
+
+### 当前下一片：显式取消与同中心接续（2026-10-06 15:47 UTC）
+
+TUI001-06/08 由 TUI01F 接续，owner assignment_review，独立 tui-task-cancel / codex/tui-task-cancel，fixed base a89f42ab。只增加 `/cancel <displayed-task-id>`，共用 typed command、公开 FlowClient 与原 intent 生命周期。终端不读取任务prompt来发现取消身份，不产生第二状态机；受理、取消请求中、实际停止和unknown分别显示。设计/精确范围见[候选](../../docs/evidence/tui01/task-cancel-next-design.json)。
+
+先局部控制/回执/原key恢复；资源允许后用同一自有中心完成真实 Ink PTY→已构建生产Web→TUI 旅程，发送的过期CAS保草稿且恢复观察，取消不伪造API没有的attempt CAS。后台已发布能力可先公开contract及可重复headless/HTTP验收，Web/TUI独立并行接入；这不是所有后台功能必须等待终端或网页的串行门禁。实际浏览器/PTY尚未运行，独立provider仍须具体预算，旧A–E证据不重跑、不扩大。
