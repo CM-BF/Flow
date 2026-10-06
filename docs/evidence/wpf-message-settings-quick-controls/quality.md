@@ -37,3 +37,11 @@ manager22:35:11 fresh本人窄核原六scope。Root原件确认fe6四源APPROVED
 本人核manager22:41:30 fresh原六claim/唯一owner。复用既有本地find-skills/clean-code/webapp-testing方法：保产品四源fe6，single-use独立TMP包，scope不新增。按root14直接源闭包绑定真实CSS/React/Tailwind/Vite/PW/@flow源码；六组expected check strings逐字取固定源，不缩为旧4；仅两实际light/dark390PNG，不冒生产App或性能。旧b5仅方法参考，不借claim/oldcarry/通过结果/Chrome边界。
 
 检查监督职责、错误保真和生命周期：Node sandbox与nativeChrome sibling边界明确分离，两个ownedPGID、实际exit/EOF、资源末次观察、nonENOENT失败、外层真实exit+唯一sealed stdout接收；预算仍仅原候选60s/15cleanup/64MiB/8MiB。typesDirectEvidence与nativeChromeBoundaryApproval保持null，先c1实际通过再独立准入。未运行prepared文件/语法/产品import/types/direct/browser/HTTP/PG/Chrome/free。新packet最终metadataHEAD只在本正常提交后TMP重绑；c1原包不动，未来fresh准入由manager协调HEAD重绑。
+
+## Portable checks 安全点 2026-10-06 23:18:53 UTC
+
+本人fresh ledger仅核原839e v1/6scope/owner/clean38bf。沿本地技能复用：find-skills发现既有相关版本、不安装；clean-code/codebase-design把运行工具与独立接收责任分开、无第二sandbox；webapp-testing仅核真实fixture与direct/browser证据不混。技能hash：`{"find-skills": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f", "clean-code": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317", "codebase-design": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2", "webapp-testing": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"}`。
+
+源码仅own evidence相对配置/标准顺序检查/离线接收，产品四源fe6、本地c1/b1原件未动。clean-code复核发现并处理：完整有界Vitest原JSON先保留再解析；子spawn超时/输出限额/未知退出均失败；不以child exit冒无后代，outer receipt单独核；run自身stdout非真实外层exit。root提醒exact alias两层转义，实际文件为标准写法，三文本node --check +14真实包名/前后缀/子路径/错标点和synthetic meta表达式语义检查全通过，未导入config或产品。raw见portable-check/static-checks.json。
+
+仍未验证安装/可选Linux二进制、相对JS/TS实际解析与26运行；0产品import/types/direct/browser/PG/Chrome/free/proc。本地资源与准入阻塞保留，远程启用未授权。候选9文件固定dc67，后继metadata不继承独审。

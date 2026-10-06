@@ -29,3 +29,7 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 覆盖 same-tuple 新稿、props lag/旧 callback、换 view、权限撤销、同 token 关闭/详情/unmount/成功后重入；Apply/omit 都不得覆盖新草稿。分页漏旧选、刷新失败、能力过期保 C；A 已发送/B 已排样本不可变；空筛选可退出；大目录只展开当前授权 profile ≤32 组合；390 双主题/180 model/键盘/焦点保持。
 
 本段仅 source+metadata；types/direct/browser/HTTP/PG/Chrome/构建均 NOT_RUN，旧37/4不继承。验证预算与依赖待 fixed 后独立准入；不安装或扩大 sparse。模块/性能遵循[根规则](../../AGENTS.md#modular-design)。
+
+## MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
+
+在原证据范围准备专用relative配置与标准Node→TypeScript/Vitest入口，独立接收外层真实退出和cleanup回执；不新增workflow、安装器或通用supervisor。本机资源不足期间仅源码准备，不把文档启用当远程授权。候选与fe6产品分开固定；实际26direct/6browser仍未运行。

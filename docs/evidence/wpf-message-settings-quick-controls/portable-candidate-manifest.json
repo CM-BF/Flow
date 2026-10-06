@@ -1,0 +1,50 @@
+{
+  "candidateTarget": "dc67b3410c12f321d62a1565145e184b52b0ca84",
+  "candidateScope": "docs/evidence/wpf-message-settings-quick-controls/portable-check",
+  "review": "NOT_STARTED",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "files": {
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md": {
+      "sha256": "b6829b272e05abeb7ee2f0ea045ad492f784b5166168e9d7a90f89e930bd620c",
+      "bytes": 6657
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/accept.mjs": {
+      "sha256": "2a984882181ac85f65353f09cfb5894631819121f24523dcf9d1f3cb26b3bfd7",
+      "bytes": 3418
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/expected-tests.json": {
+      "sha256": "9e2a4aee3a3b351fbf0cdab56f09af171ea53508d37df13bfc49377f0b2cbf80",
+      "bytes": 2614
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/prepared-manifest.json": {
+      "sha256": "9f5c27718bf4e1d29f4d03c7ffdb6600273adee8e1c7606eec6573826bb29f7d",
+      "bytes": 738
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/run.mjs": {
+      "sha256": "403fcb09b9c3869d27407e543240710307c610dae43618fb8a0662cb65bffbe0",
+      "bytes": 7085
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/source-pins.json": {
+      "sha256": "e4b63719727f67c98ea8f76254648ab2cf18175b485af9aac95133c7dc5fc8b0",
+      "bytes": 15581
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/static-checks.json": {
+      "sha256": "efbc2ed82c7977df531db4351f694c200764c8566f1a813e32a6634b56924688",
+      "bytes": 5906
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/tsconfig.json": {
+      "sha256": "ef2446cb2a2352485cd8a1891eb829bdcf7963c8e6080d3e14fe9b20e0ffbc67",
+      "bytes": 871
+    },
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/vitest.config.mjs": {
+      "sha256": "7b7e11c4a4c22a5b569f34aa06245f044166c09b84611bf5bff7bc722838f5da",
+      "bytes": 1601
+    }
+  },
+  "syntaxAndAliasHelper": "PASS (finite syntax/isolated helper only; static-checks.json)",
+  "typesDirectBrowser": "NOT_RUN",
+  "localPacketManifests": {
+    "/private/tmp/msgquick-checks-c1/manifest.json": "4bf7cf408d4eb764c138c5b4cc253c1e6704d28b3575596cc74ea00dd57ab240",
+    "/private/tmp/msgquick-b1/manifest.json": "acee9bc2f242388ef36f14d70e36cca3723532e8c19a43dec1973cc4cfa2f654"
+  }
+}

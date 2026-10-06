@@ -8,4 +8,6 @@
 
 检查包终态P2仅影响准备合同；已按明确早完成边界+外层真实exit/匹配seal方案修复，并获root限定静态批准。全部运行仍NOT_RUN；own/tmp最终HEAD绑定在本metadata提交后进行，不再反复改项目metadata。
 
-新增独立browser准备包待审，见browser-preparation；真实CSS/六组场景/双组清理全部为源码准备，当前browser仍NOT_RUN。c1实际检查先行，无任何新gate或运行授权。
+独立browser准备包已获root限定静态批准，见browser-preparation；真实CSS/六组场景/双组清理全部为源码准备，当前browser仍NOT_RUN。c1实际检查先行，无任何新gate或运行授权。
+
+本次新增 [portable-check](portable-check/README.md)，固定候选 `dc67b3410c12f321d62a1565145e184b52b0ca84` / [manifest](portable-candidate-manifest.json)，独审 NOT_STARTED。只做有限语法及alias-helper静态校验；实际版本解析/类型/direct/browser依然NOT_RUN。远程资源/清理/启用由未来owner独立承担，本机c1/b1不改。
