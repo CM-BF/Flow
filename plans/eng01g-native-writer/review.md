@@ -1,6 +1,6 @@
 # ENG01G 独立review
 
-APPROVED；Reviewer Execution Lead / gpt-6-astra。作者不自审。记录于 2026-10-06 12:27:33 UTC
+状态：APPROVED；Reviewer Execution Lead / gpt-6-astra。作者不自审。记录于 2026-10-06 12:27:33 UTC
 
 Review target commit: 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d
 
