@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-06T18:57:54.646522+00:00",
-  "head": "e0af99287cbdf65a8d1bc53bcccc72ca9d7a5e12",
+  "at": "2026-10-06T19:07:03.946965+00:00",
+  "head": "783e6bf9182de2daf847e68408707c444611eaba",
   "source": "8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974",
   "entry": [
     "experiments/continuous-goal-acceptance/operator.mjs",
@@ -877,9 +877,14 @@
       "sha256": "39e1ce5e1eaa1e06a1d746abe0030e90a7d8131081a042b88d4c09efa12fb216"
     },
     {
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "bytes": 6215,
+      "sha256": "a435b00561da788baf954a4e82f279f8869c65bfc38fae9ab00e571b977ee410"
+    },
+    {
       "path": "experiments/continuous-goal-acceptance/operator.mjs",
-      "bytes": 9097,
-      "sha256": "89277e4200daf2e7ff27099fce20187e69b2ee7df3bebdbb53240298d9988508"
+      "bytes": 9802,
+      "sha256": "a780db267d687ffb7a790e1150c808b0eefbda0e6635417d217cab133886d318"
     },
     {
       "path": "experiments/continuous-goal-acceptance/permit.mjs",
@@ -2280,18 +2285,23 @@
     },
     {
       "path": "experiments/continuous-goal-acceptance/operator.mjs",
-      "line": 69,
+      "line": 75,
       "text": "assert.equal(process.env.FLOW_O16_PG_WINDOW, 'approved-one-shot');"
     },
     {
       "path": "experiments/continuous-goal-acceptance/operator.mjs",
-      "line": 76,
+      "line": 84,
       "text": "const child = spawn(process.execPath, ['--import', 'tsx', '--test', '--test-concurrency=1', 'experiments/continuous-goal-acceptance/journey.test.mjs'],"
     },
     {
       "path": "experiments/continuous-goal-acceptance/operator.mjs",
-      "line": 77,
+      "line": 85,
       "text": "{ cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, FLOW_O16_RUN: run, TSX_DISABLE_CACHE: '1' } });"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "line": 25,
+      "text": "const child = spawn(process.execPath, [fileURLToPath(import.meta.url), '--guard', JSON.stringify(configuration)],"
     }
   ],
   "missing": [

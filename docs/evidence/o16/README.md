@@ -9,3 +9,7 @@ The fixed directory passed to reservePhase is a trusted host namespace, not a us
 2026-10-06 18:27:12 UTC: assignment Module added two new pure tests (both passed); malformed task/attempt/ownerVersion/progression/profile/input identity is rejected. Genuine missing-module red is retained. Distinct total now7 across permit5 + assignment2; no repeats of permit5. Prepared product closure223sources/30SQL/21package entries/10configs reviewed without importing; one regex false positive from the Node --import argv flag explicitly classified. Actual new driver closure remains pending.
 
 2026-10-06 18:31:15 UTC: query-policy adds3 pure synthetic-frame tests, then one affected test gained a rejection-latch assertion. That assertion produced a genuine red (finish incorrectly returned prior success after a conflicting final); the narrow fix latches rejection and the selected1 passed,2 unselected. Distinct total10 (permit5+assignment2+policy3), not11. Raw/source hashes preserved. These are not actual SDK declarations; prior O10 declaration source/digest is recorded separately and remains historical.
+
+## 独立监督增量（PG仍未运行）
+
+原19不同检查之外，operator3例已分轮通过；独立watchdog又新增3例，累计25不同。`watchdog-first.{stdout,stderr,run.json}`固定pending persist、complete ACK后同步阻塞、正常parent退出三个真实owned-process检查；全部自有进程/组消失且资源marker仍在后才test-only清理，无PG/provider。`watchdog-assembly.*`仅受影响operator装配exit0，不是types。原`pre-pg-manifest.json`保持其2daf候选历史；最新supervisor固定输入另列，不把旧manifest称当前。实际PG入口现为operator，等待Lead单次资源窗口；原node:test直跑申请已被替代。

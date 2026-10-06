@@ -27,3 +27,7 @@ Assignment binding: the planner matches the immutable admitted task/run and conf
 ## 2026-10-06 18:58:35 UTC operator 边界补充
 
 实际PG候选改为 `operator.mjs --rehearse`，不再把node:test timeout当总墙钟。独立监督固定120s工作/30s清理、已登记driver及两phase进程组；stdout/stderr和本轮stage evidence合计2MiB。runtime与raw/余量采用同一测量函数，DROP/rm之前再复核，STOP或unknown禁止删除。3个自有Node stand-in例涵盖非零退出、忽略TERM后的有限KILL/组消失、raw超界保留；两轮重复只计3不同，没有PG/provider。当前operator只支持零query候选；真实分阶段operator和实际新许可仍后继待审，当前native函数不等于获准可跑。
+
+## 2026-10-06 19:07:03 UTC 独立 parent 总时限
+
+operator 在 test 启动前建立独立 Node watchdog；其150s计时不依赖父事件循环、persist或fsync。末1s前停止父PID及已登记的最多三个组，再尝试unknown/STOP checkpoint；写入未完成也按固定deadline退出。原始durable unknown reservation是未确认最终写入时的保留依据。complete ACK不能提前解除时限，须实际parent断连退出且登记组已消失。没有DB/tmp删除接口；signal仅记录sent/absent/unknown，不伪称完整停止。三个新纯owned-process用例覆盖pending persist、完成ACK后同步阻塞、正常退出；此前22不同未重跑，累计25不同。PG/真实模型仍NOT_RUN。

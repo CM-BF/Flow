@@ -13,3 +13,5 @@
 2026-10-06 18:48:40 UTC：重新检查资源与职责。parent只持owner观察权限，worker只持runner token；两阶段复用原loop。decision cleanup曾有先删除再保存业务结果的窗口，经Lead只读指出已改为durable decision先于destroy，2纯故障例覆盖。live临时目录限定8MiB/2048条/12层，native未知保留，不把PID退出当group已停。当前为候选代码，PG未验证。
 
 2026-10-06 18:58:35 UTC：按Lead第二个准入前缺口补独立operator，复用单一operator-bounds于持续采样和最后清理，避免两份配额判定漂移。记录所有已登记PGID，node:test timeout仅测试保护非工作墙钟。3owned stand-in全退出/ESRCH；未重复19原检查。native/PG仍未执行。
+
+2026-10-06 19:07:03 UTC：codebase-design/clean-code安全点复核：将总deadline从被监督operator事件循环移至小型独立进程；Interface仅register/complete，固定最多driver+两phase组，无DB/目录删除能力。pending persist与同步阻塞由真实owned Node stand-in验证，完成ACK直到实际退出前不解除，3新例通过。文件系统最终写入仍可能unknown，以开始前durable reservation保留事实；未扩大为OS/native停止证明。沿已批准bounded设计，不增加GO步骤、安装或PG。

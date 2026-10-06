@@ -9,6 +9,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { readRecord, writeRecord } from './records.mjs';
 import { sourceIdentity, ROOT } from './identity.mjs';
 import { BOUNDS, runPaths, measureRun } from './operator-bounds.mjs';
+import { startTotalDeadline } from './operator-watchdog.mjs';
 
 function signalGroup(pgid, signal) {
   assert(Number.isSafeInteger(pgid) && pgid > 1);
@@ -76,6 +77,8 @@ export async function operate() {
   const run = `rehearsal-${randomUUID()}`, paths = runPaths(run); await mkdir(paths.operator, { recursive: true, mode: 0o700 });
   await writeRecord(join(paths.operator, 'reservation.json'), { kind: 'flow.o16.operator.v1', run, sourceDigest: identity.digest,
     base: identity.base, startedAt: new Date().toISOString(), bounds: BOUNDS, outcome: 'unknown', provider: 0 }, { exclusive: true });
+  const watchdog = await startTotalDeadline({ directory: paths.operator, run, sourceDigest: identity.digest });
+  await writeRecord(join(paths.operator, 'watchdog.json'), { pid: watchdog.pid, deadline: watchdog.deadline, state: 'armed' }, { exclusive: true });
   const handles = ['stdout.txt', 'stderr.txt'].map(name => openSync(join(paths.operator, name), 'wx', 0o600));
   let raw = 0, written = 0, outputFailed = false;
   const child = spawn(process.execPath, ['--import', 'tsx', '--test', '--test-concurrency=1', 'experiments/continuous-goal-acceptance/journey.test.mjs'],
@@ -90,7 +93,9 @@ export async function operate() {
     try { await writeRecord(paths.stop, { reason, at: new Date().toISOString(), retainResources: true }, { exclusive: true }); }
     catch (error) { if (error.code !== 'EEXIST') throw error; }
   };
-  let result; const registration = writeRecord(join(paths.operator, 'driver.json'), { pid: child.pid, pgid: child.pid, state: 'unknown' }, { exclusive: true });
+  let result;
+  const registration = watchdog.register([child.pid]).then(() => writeRecord(join(paths.operator, 'driver.json'),
+    { pid: child.pid, pgid: child.pid, state: 'unknown' }, { exclusive: true }));
   void registration.catch(() => { outputFailed = true; });
   const pipesClosed = new Promise(resolve => child.once('close', resolve));
   try {
@@ -101,6 +106,7 @@ export async function operate() {
         try { resources = await readRecord(join(paths.evidence, 'resources.json')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
         if (resources) assert.equal(resources.sourceDigest, identity.digest);
         const groups = (resources?.workerProcesses ?? []).map(row => row.pgid);
+        await watchdog.register(groups);
         let directory = resources?.directoryRemoved ? undefined : resources?.directory;
         if (directory && resources?.databaseDropped && resources.phase === 'before-owned-directory-remove') {
           const exists = await lstat(directory.path).then(() => true, error => { if (error.code === 'ENOENT') return false; throw error; });
@@ -122,6 +128,7 @@ export async function operate() {
   await writeRecord(join(paths.operator, 'result.json'), summary);
   const finalMeasurement = await measureRun(run).catch(() => null);
   if (!finalMeasurement) { summary.outcome = 'unknown-retain'; await writeRecord(join(paths.operator, 'result.json'), summary); }
+  await watchdog.complete(); // No timer disarm: a later parent I/O stall remains covered until actual process exit.
   process.stdout.write(JSON.stringify({ run, outcome: summary.outcome, operator: paths.operator }) + '\n');
   if (summary.outcome !== 'rehearsal-passed') process.exitCode = 1;
   return summary;

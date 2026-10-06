@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-06 19:07:30 UTC",
+  "preflightSha256": "96cdc8c139e269474264593ecf76876a3ed68c204717f6e3b9e7b3d28ccc6e8f",
+  "actualMissing": [],
+  "falsePositives": [
+    {
+      "from": "experiments/native-graph-acceptance/driver.mjs",
+      "package": ", ",
+      "explanation": "Regex matches import token inside fixed Node -e/argv text; not an actual package specifier."
+    },
+    {
+      "from": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "package": ", ",
+      "explanation": "Regex matches import token inside fixed Node -e/argv text; not an actual package specifier."
+    },
+    {
+      "from": "experiments/continuous-goal-acceptance/operator.mjs",
+      "package": ", ",
+      "explanation": "Regex matches import token inside fixed Node -e/argv text; not an actual package specifier."
+    }
+  ],
+  "dynamicReview": "Self-launched watchdog path resolves from import.meta.url and is a fixed imported source; test/phase worker paths fixed in this tree. Source/configuration inputs and all 30 dynamic migrations exist; @flow package targets point to this worktree. Reservations/runtime/runs are generated owned outputs, not missing fixtures.",
+  "execution": 0,
+  "provider": 0,
+  "pg": 0
+}

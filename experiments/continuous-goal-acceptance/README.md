@@ -26,6 +26,16 @@ node --import tsx experiments/continuous-goal-acceptance/driver.mjs decide RUN I
 It exercises the same public center and original runner, and is never model planning evidence.
 Its phases stop their owned process groups and close the center between stages.
 
+Before starting the test, the operator launches a separate watchdog process. From that launch,
+it has a fixed 150s deadline, with the last 1s reserved for an unknown checkpoint. The watchdog
+can stop the operator itself and the explicitly registered driver/phase groups even if the
+operator is stuck in report persistence, synchronous fsync, or its final resource measurement.
+It signals before attempting final I/O and exits at the deadline even if that I/O stays pending.
+The initial durable unknown reservation remains the fallback when a final checkpoint cannot be
+confirmed. A completion ACK does not disarm it: normal parent exit releases it. It never removes
+DBs or runtime directories. Unregistered or escaped processes remain outside the observation
+claim; a signal is not proof of full stopping, and the watchdog reports unknown-retain.
+
 `plan` first durably reserves the fresh phase permit; then a real query may propose at most
 two actual inputs with one dependency. It has no graph-apply or child-execution permission.
 The resulting proposal and a clearly unapproved confirmation draft are saved. Worker and
