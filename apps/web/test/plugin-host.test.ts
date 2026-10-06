@@ -638,3 +638,14 @@ describe("independent assistant stream capability", () => {
     expect(s.host.checkView("test.stream.panel",{kind:"global"}).ok).toBe(false);await s.host.dispose();
   });
 });
+
+it("steering read declaration cannot grant write execution, and host policy still gates declared write", async () => {
+  const s=setup(); let writes=0;
+  const definition:PluginDefinition={manifest:{id:"test.steering",version:"1.0.0",hostApi:1,contributions:[],capabilities:["task.steering.read","task.steering.write"],activationEvents:["command:test.steering.accept"],commands:[{id:"test.steering.accept",title:"Accept",capability:"task.steering.write",contexts:["message"]}]},load:async()=>({activate(context){context.command("test.steering.accept",{parse:value=>value,run:()=>{writes++;}});}})};
+  s.port.authorize=(_plugin,capability)=>capability==="task.steering.read";
+  s.host.register(definition);
+  expect((await s.host.execute("test.steering.accept",{}, {kind:"message",taskId:"A",messageId:"m",role:"user"})).ok).toBe(false);expect(writes).toBe(0);
+  s.port.authorize=()=>true;
+  expect((await s.host.execute("test.steering.accept",{}, {kind:"message",taskId:"A",messageId:"m",role:"user"})).ok).toBe(true);expect(writes).toBe(1);
+  await s.host.dispose();
+});

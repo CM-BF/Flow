@@ -1,3 +1,4 @@
+import { ConversationSteering } from "../plugin-integration/react";
 import { useContext, useMemo, useLayoutEffect, useEffect, useState, useSyncExternalStore, type ComponentProps, type ReactNode } from "react";
 import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessage } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
@@ -45,7 +46,7 @@ function ConversationBehavior({ live, children }: { live: boolean; children: Rea
   return <section className="flow-conversation-behavior" aria-label="Conversation behavior">
     <h3>Conversation behavior</h3>
     <p>{live ? "Reply drafts update as the center records them. Drafts are not final replies." : "Live reply updates are unavailable or disabled."}</p>
-    <p>Steering and per-turn model, thinking and tool controls are unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.</p>
+    <p>Use Guide running task at the current turn to check steering availability. Per-turn model, thinking and tool controls remain unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.</p>
     {children}
   </section>;
 }
@@ -137,11 +138,11 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
     } catch (error) { setSendError(error instanceof Error ? error.message : "Conversation could not be prepared."); }
   };
   return <PluginThreadScope editableComposer viewId={viewId} taskId={last?.task.id ?? null} messageTask={id => streamState.members.get(id)?.taskId ?? null}><AssistantRuntimeProvider runtime={runtime}><ConversationDataRenderers viewId={viewId} projection={projection} visible={visible}>
-    <ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
+    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
       composerSubmit={intent === "queue" ? () => { if (!projection.sendDisabledReason("queue")) runtime.thread.composer.send({ startRun: false }); } : undefined}
       composerInputOnKeyDown={event => {
         if (event.defaultPrevented || event.nativeEvent.isComposing || event.keyCode === 229 || event.key !== "Enter") return;
-        if ((event.ctrlKey || event.metaKey) && event.shiftKey) { event.preventDefault(); setSendError("Steering is not supported. Choose Queue next to save a message without interrupting execution."); return; }
+        if ((event.ctrlKey || event.metaKey) && event.shiftKey) { event.preventDefault(); setSendError("Use Guide running task at the current turn for a separate instruction. This shortcut does not send your draft."); return; }
         if (intent === "queue" && last && !TERMINAL_STATUSES.includes(last.task.status) && !event.shiftKey && !event.ctrlKey && !event.metaKey && !event.altKey) { event.preventDefault(); if (!projection.sendDisabledReason(intent)) event.currentTarget.form?.requestSubmit(); }
       }}
       beforeMessages={<>{streamState.evicted && <p className="flow-conversation-notice">Older draft text was removed from this page’s limited cache. Final replies remain available.</p>}{state.error && <p className="flow-conversation-alert" role="alert">{state.error} <button className="flow-link" onClick={() => void projection.refresh()}>Retry conversation</button></p>}{state.nextCursor !== null && <p className="flow-conversation-notice">Some turns are not loaded. <button className="flow-link" disabled={state.loadingMore} onClick={() => void projection.loadMore()}>{state.loadingMore ? "Loading…" : "Load more turns"}</button></p>}</>}
@@ -154,5 +155,5 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
       footer={<div className="flow-conversation-footer"><KnowledgeSelectionSummary binding={knowledge} />{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
 
     />
-  </KnowledgeComposer></ConversationActivities></ConversationStreams></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
+  </KnowledgeComposer></ConversationActivities></ConversationStreams></ConversationSteering></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
 }
