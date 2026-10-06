@@ -139,7 +139,7 @@ C02 fixture与生产组合694c3fdbd6ef4affa66140f13a039156f27023e0（test5f + pr
 assignment_review独立只读APPROVED 1b16d23de5b00f897fe9bd0fa07879c84d78e936，现场clean1e6965e。完整3source与server strict schema/request错误链已读；5methods路径/query白名单/原文/key/CAS/receiptId与状态原样传递，无重试。3source/3raw固定current bytes/hash全符，manifest c7f6ccf389078c93fb65e9bb7589732a34206a0eb3dd0aa0dd6d090f8a5226de；作者1红→1绿33ms+tsc原证据有效，reviewer未重跑/0query/0修改，无P1/P2。仅transport/export，不覆盖生产mount/实际送达/模型遵从，不重复2137115领域审查。
 
 ## CHAT08 finalization薄client独立批准
-Review target commit: 3d81141324041c2c67680edbb686996cefaf8b4b
+Review target commit: c587436c12324b5c121957643d51173cfc66009e
 Review status: APPROVED
 只覆盖packages/client/src/index.ts与steering-finalization.test.ts；固定领域合同998e2fd是早期输入，不表示领域批准。manifest见docs/evidence/f01/steering-finalization-client-manifest.json。
 
@@ -147,9 +147,15 @@ Root于2026-10-06 07:34 UTC独立只读APPROVED3d81141324041c2c67680edbb686996ce
 
 
 ## O09 thin client pending independent review
-Review target commit: 1bd4855f1582107e3b1b17ba9ba77cb43801e74d
+Review target commit: c587436c12324b5c121957643d51173cfc66009e
 状态：NOT_STARTED。只3file薄接线，native-node-client-manifest.json固定原始红绿/tsc与合同输入。领域/生产不在本批准范围。
 
 
 ## 2026-10-06 08:00 UTC CHAT08 production独立批准
 Root只读APPROVED fe5bc2d9b8dab231996b1b156bc086d858846117 / delivery61ed4b5f969ed1d5d4e2310411873ca1b94f0404。完整2file/factory/auth/迁移顺序已读，2源4raw hash/bytes与manifest e85d515c一致，20domain对d4e不变；2/2生产、既有纵向1selected/12未选及tsc0/随机库连接和余库[]支持限定交付，无重跑/0provider/P1P2。024先worker/scheduler，可信option严格true才受理；CLI/profile/conversation仍关闭，普通stringfinal保留。本批准不含后继O09薄client或CHAT09能力开通。
+
+## O09 thin client 独立审查与生产待审
+
+Mika 2026-10-06 08:00:22 UTC：APPROVED 1bd4855f1582107e3b1b17ba9ba77cb43801e74d；3source/3raw/合同d5逐hash一致，1红→1绿24ms/noEmit，未重跑。限定transport/export。
+
+O09 production c587436c12324b5c121957643d51173cfc66009e：NOT_STARTED。只server/index两行与独立factory test；领域独审7ddd、client独审1bd不代替本挂载审查。
