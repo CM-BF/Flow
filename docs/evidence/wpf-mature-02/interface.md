@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [04 producer已独审APPROVED、待main接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/producer-integration-ready.md)：权威四源/receipt由04维护。
+
 - [Root literal单项候选准备](rootliteral/README.md)：仅根节点读取/存在性（可能含根枚举，非递归），19项零目标检查通过。固定组合待独审，未来go-c-rootliteral-once由Mika单次门禁，当前不运行。
 
 - [R06五源已main接收/逐blob核验](r06-main-accepted.json)；已停写并完成[claim v5部分交回](r06-source-handback-receipt.json)。main362af3只接收已审生产seam；薄consumer仍待单独确认，诊断窗口不重开。
