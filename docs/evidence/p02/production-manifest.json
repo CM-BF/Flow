@@ -1,0 +1,49 @@
+{
+  "recordedAt": "2026-10-06T02:56:20.725869+00:00",
+  "sourceTarget": "e2955d4bc33c458b6dbdd10f380f834557ba98fa",
+  "base": "72278b22ae81f551dc13d68da2fb45f2ef182038",
+  "node": "v24.20.0",
+  "platform": "Darwin arm64",
+  "officialPeerSdk": "@a2a-js/sdk@1.3.0",
+  "protocol": "A2A 1.0 JSONRPC",
+  "database": "flow_p02, PostgreSQL on 127.0.0.1:55432",
+  "testCounts": {
+    "centerHttp": 3,
+    "runnerProcess": 10,
+    "productionEntrypointWithinRunnerTests": 1,
+    "passed": 13
+  },
+  "modelCalls": 0,
+  "cloudCalls": 0,
+  "entryPoint": "All tests use createServer built-in migration/routes. Nine dedicated runner-process fault tests and one real server/main + runner/main + CLI/main journey.",
+  "sourceSha256": {
+    "apps/cli/src/index.ts": "227efe3a952801691d9fa9771fa15b14e2ca416c167fbae63a1ceb92d26e8dbf",
+    "apps/cli/src/main.ts": "98853916a46c1a91e21c34a1a2c51491ce83ea1729ff0934c07ed6a556ffc537",
+    "apps/runner/src/main.ts": "b3094f87ab0fdf0b07297a9a2ccc2cdce32bac4b352f60935407f7cba64ee835",
+    "apps/runner/src/outbox.ts": "8116119e7249575111951ba8abc21b1933f3c45d86455d32e8febf27f1404db3",
+    "apps/runner/src/protocol-dispatch/configuration.ts": "4dc71454e1940eba85f20559435fe2dadd0090a1acea7a7d1cdeb2d0262f592d",
+    "apps/runner/src/protocol-dispatch/index.ts": "dd74a5c684c1a38b7280b47ecea01753a278649ceaf3ee01f62545bbc983ddce",
+    "apps/runner/src/protocol-dispatch/lease.ts": "c97314b4d8dd7f8fd7056982a2bca6186245062d94d60fb27c29eeb514ac90fb",
+    "apps/runner/src/protocol-dispatch/materials.ts": "bd1da1e99f3956585a16a9bd6b59757bff1ecca9a09354f9f0004f9994c9a963",
+    "apps/runner/src/protocol-dispatch/official-peer.ts": "b6520e7d5030798f6b8ba8fd8321922163c66cb654fc3bd00c7cec9826efa783",
+    "apps/runner/src/protocol-dispatch/runtime.test.ts": "de46027145c24bfbb1e1019a3318028cfad7ac053c899250daf7b0cfa8fda5ca",
+    "apps/runner/src/protocol-dispatch/test-process.ts": "67e2eedb41456efd6e8a6e5fcf71ea78d1260bb86866ded36b16b87e8d86ef18",
+    "apps/server/src/index.ts": "b08d015bcf13f8cb24da112085679552d49fed5995fab67bdb9202c9dde9321e",
+    "apps/server/src/main.ts": "c845b5dc18d885386d968f73b1d9f8b7cbe9bf09693957d56d187acf0521c003",
+    "apps/server/src/protocol-dispatch/dispatch.test.ts": "6a714a215a728471650a5db44d25b3a068bcf9dc0bb25a463892e8d87b0b6e4a",
+    "apps/server/src/protocol-dispatch/index.ts": "d69e32c3783c040a917315a6e98380ba71a6b684a5aaf29bf2e1add6020635c7",
+    "apps/server/src/protocol-dispatch/store.ts": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560",
+    "apps/server/src/runners.ts": "45f004668785a5b316781fcc4abdab7599d6f93639a8636e610c843d1e731b1b",
+    "packages/client/src/index.ts": "bda68c8b82eb63a15d47abd332747d404157aa9e5ea9963a80e3d81a47c0ed72",
+    "packages/contracts/src/protocol-dispatch.ts": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea",
+    "packages/contracts/src/protocol-task.ts": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20",
+    "packages/storage/migrations/005-protocol-dispatch.sql": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f",
+    "pnpm-lock.yaml": "1b6003d239697a251788db016662083bc60babf50f1286ca0c640c3d42b15878"
+  },
+  "evidenceSha256": {
+    "production-checks.json": "7c1d30057af7024a56fa0ad89517ece2453af224165af0a51f4b349247803fc2",
+    "production-checks.log": "927ffe3ccbe466a273049fee4a21213f0df12ab215b94490a77644c44bee20f7",
+    "production-typecheck.log": "c1f68dca945a2ce7a31bb1bc24b7ac68d4a831d03628c63cc64388999ae715a4",
+    "main-smoke.log": "ce751e022dbae97643bd4841199019081244e21cdc319aa8596e0fa8d1ea2112"
+  }
+}

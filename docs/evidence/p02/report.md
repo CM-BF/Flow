@@ -1,6 +1,12 @@
 # P02 持久A2A出站检查
 
-最新源码target **4c2e037488dcd0847cfba5068b5a1621648237e9**；02:53 UTC联合12/12（15.60s）+typecheck通过。[最新原始JSON](timeout-checks.json)、[输出](timeout-checks.log)、[源码与证据hash](timeout-manifest.json)。新增中心ACK悬挂而heartbeat健康的超时回归先红后绿；有界请求等待后明确uncertain，远端send0、无重发。产品main入口仍待共享挂载验证。
+最终源码target **e2955d4bc33c458b6dbdd10f380f834557ba98fa**（含Lead共享生产入口9db3ce，pick为05a1308）。02:56 UTC **13/13 + typecheck通过**，17.85s。[最终原始JSON](production-checks.json)、[输出](production-checks.log)、[源码/证据hash](production-manifest.json)。
+
+全部中心测试已删除手工迁移/路由注册，要求createServer内置挂载。新增一条真实server/main、runner/main、CLI/main独立进程旅程：空flow_p02自动迁移、动态端口、CLI注册a2a与submit --endpoint、CLI查询protocol/show、remote仅发送一次、lowerstore exact content、verification passed、cost unknown，以及两端SIGTERM exit0。其余9项runner进程场景仍以专用入口注入短heartbeat/request间隔。独立review尚未开始，不把作者检查当review批准。
+
+以下为历史模块切片记录，入口尚未挂载的描述仅适用于其对应target；原JSON/hash未覆盖。
+
+前一模块阶段源码target **4c2e037488dcd0847cfba5068b5a1621648237e9**；02:53 UTC联合12/12（15.60s）+typecheck通过。[最新原始JSON](timeout-checks.json)、[输出](timeout-checks.log)、[源码与证据hash](timeout-manifest.json)。新增中心ACK悬挂而heartbeat健康的超时回归先红后绿；有界请求等待后明确uncertain，远端send0、无重发。产品main入口仍待共享挂载验证。
 
 以下保留11项首阶段的准确检查记录，原JSON/hash未覆盖。
 
