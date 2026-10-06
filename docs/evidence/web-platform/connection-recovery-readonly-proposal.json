@@ -44,7 +44,17 @@
       "packages/client/src/index.ts",
       "packages/client/src/browser-session.test.ts"
     ],
-    "migration": "No number selected; Lead must reserve exact path before claim"
+    "migration": "Lead reserved packages/storage/migrations/028-browser-sessions.sql for center owner; exact claim receipt pending",
+    "assignedCenterDesign": {
+      "absoluteLifetimeHours": 8,
+      "getRenews": false,
+      "maxValidSessions": 32,
+      "fullPolicy": "reject new, do not evict existing",
+      "identity": "random centerId and ownerPrincipalId persisted in same DB; token rotation advances auth epoch and revokes old cookie",
+      "origin": "explicit configured trusted Origin, bound Origin, mutation CSRF; invalid Bearer never falls back to cookie",
+      "cookie": "HttpOnly + SameSite + per-center name; no port isolation claim",
+      "remainingInterface": "consumer addendum must be resolved in fixed DTO/client before Web integration; source status remains sole progress authority"
+    }
   },
   "moduleB": {
     "name": "ConversationRecovery",
@@ -135,10 +145,10 @@
   "newClaims": 0,
   "newWorktrees": 0,
   "experiments": 0,
-  "approvalBoundary": "No shared center write authorization or fresh claim. Center owner chosen byExecutionLead; Webconsumer/Recovery proposedpanels pending ATTACHI02main/release and exactscope.",
+  "approvalBoundary": "Center owner/design assigned by Lead; no COMMITTED receipt received here and no manager center write authorization. Web consumer/Recovery proposed panels pending ATTACHI02 main/release and exact scopes. Module decomposition does not create a third task layer.",
   "dispatchCandidate": {
     "parent": "WPF-MATURE-06",
-    "centerOwner": "PENDING_EXECUTION_LEAD_ASSIGNMENT",
+    "centerOwner": "native_center_owner — assigned by Execution Lead; COMMITTED receipt not received",
     "centerProductScopes": [
       "packages/contracts/src/browser-session.ts",
       "apps/server/src/browser-session/index.ts",
@@ -155,10 +165,19 @@
       "apps/server/src/index.ts",
       "packages/contracts/src/index.ts",
       "packages/client/src/index.ts",
-      "packages/client/src/browser-session.test.ts",
-      "One exactmigration filename/number notyetreserved"
+      "packages/client/src/browser-session.test.ts"
     ],
     "webConsumerAndRecoveryOwner": "workspace_panels_owner — proposed, pending legal scope; not claimed",
-    "hierarchy": "Each implementation subtask directlyparentMATURE06, ownunique status; Module decomposition is not thirdexecutionlayer"
-  }
+    "hierarchy": "Each implementation subtask directlyparentMATURE06, ownunique status; Module decomposition is not thirdexecutionlayer",
+    "centerTaskCandidate": "WPF-CONNECTION01",
+    "centerWorktreeCandidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session",
+    "centerBranchCandidate": "codex/browser-connection-session",
+    "centerBaseReported": "280289 (Lead short reference; exact base/HEAD pending canonical receipt)",
+    "assignmentSource": "Lead inbound via root, 2026-10-06 13:0x UTC; no manager service sampling",
+    "claimState": "NOT_CONFIRMED; 13:01:50.638Z list has no CONNECTION01 record; later assignment is not a COMMITTED receipt",
+    "centerMigration": "packages/storage/migrations/028-browser-sessions.sql",
+    "consumerInterfaceAddendum": "connection-session-consumer-interface.md",
+    "sharedOwner": "F01, existing mount/contracts exports/public client handoff"
+  },
+  "assignmentUpdatedAt": "2026-10-06T13:04:32.047398+00:00"
 }

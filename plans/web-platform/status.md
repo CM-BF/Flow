@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:48 UTC / SVC05已正式resume；D06原源fresh四scope，ATTACHI固定候选待到 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:05 UTC / D06与ATTACHI02已审READY待正式main；个人服务只沿SVC05回执 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 附件实际App候选f82功能检查通过，长名390溢出P2待窄修；原任务已精确amend到26范围 |
-| 下一可用交付 | ATTACHI02两文件长名修复与delta复审；D06固定6570独审通过待main，服务运行与源码分开 |
+| 当前产出 | ATTACHI02 fixed9eec已独审APPROVED，24源和双端clean核；中心会话owner已指派但COMMITTED未到；插件条目coverage保持后继 |
+| 下一可用交付 | Lead受控接收ATTACHI02与D06，保history attachment-only组合条件；中心DTO六项consumer差异冻结后再合法派Web恢复 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |

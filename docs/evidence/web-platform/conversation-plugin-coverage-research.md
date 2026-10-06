@@ -50,3 +50,7 @@ Root后续源码只读定位（同现有MATURE05研究，未browser验证）：A
 Arc后继读取预算（root源码核对，未新实验）：`conversation-stream/host.ts` 的 StreamConnectionBudget.acquire仍为每连接最多2个lease；CACHE四bodyflight保证建立于最多2可见pane。3+不可只解除groups>=2限制；同一layout方案须明确整体预算、公平前进/隐藏释放与实际消费者验证。panels仅在DPERF/基线metadata安全收口后续原Arc只读Interface/scope研究，ATTACHI写权优先，无新task/claim或workspace authority。
 
 Panels现有Arc只读Interface已收敛，[候选18literal/唯一layout/稳定平铺host/P01实际消费者与90s预算](workspace-arc-readonly-proposal.json)。正式base必须等待ATTACHI02固定接收再核；与其已领24范围交集五处（App/session/types/validation/plugin-host专测），未建树/take/实验，ID只是未预留候选。首验同一顶层tab的A+B，2可见沿现预算，3+与持久恢复开放，不另造views/aliases/材料状态权威。
+
+### 附件条目动作仍缺 P01 覆盖（root固定9eec源码审计，后继）
+
+[原始固定审计](attachment-plugin-coverage-9eec.json)对应REQ22–23/WPF-001-05、MATURE03-03与MATURE01-02。Files入口和整个composer面板已走P01，但Picker的草稿/项目目录/恢复条目动作仍硬编码；ResourceContext没有pre-task attachment item。现artifact.actions是task reference，不能把upload ref套成task artifact或借taskId冒授权。后继优先复用单一registry，让真实上传条目可由sample贡献动作，宿主核当前center/view/project/fixed-ref；不公开private FlowClient。declare/grant、disable/unload/revoke及旧view回调须实测；unknown upload尚无ready ref，不能授权为已接受artifact。本次仅源码coverage缺口，不是ATTACHI02新blocking finding、不扩范围/抢06-04优先级。

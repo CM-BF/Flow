@@ -24,7 +24,7 @@ CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提�
 
 - [x] **WPF-MATURE-03-01** 完成已有知识实际UI子任务：CONTEXTI01从已授权project创建、cap确认后选引用；Send/Queue ordered tuple到真实HTTP并校ACK；不宣称本地上传完成。
 - [ ] **WPF-MATURE-03-02** 冻结附件与文件公共接口：区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用。
-- [ ] **WPF-MATURE-03-03** 实现按钮拖放与@file：三个入口可发现；键盘替代drag；搜索有界且可取消，预览正文按需，删除只影响当前草稿。
+- [ ] **WPF-MATURE-03-03** 实现按钮拖放与@file：三个入口可发现；键盘替代drag；搜索有界且可取消，预览正文按需，删除只影响当前草稿。REQ22–23的Files入口之外，条目动作须后继接现P01单一registry并核view/project/fixed-ref，不用task artifact上下文冒充上传引用；[coverage证据](../../docs/evidence/web-platform/attachment-plugin-coverage-9eec.json)。
 - [ ] **WPF-MATURE-03-04** 保证发送与重试身份：同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步attachment prepare期间点击意图/材料与submission/view/project/generation绑定，切delivery或新refs不改变旧提交，仅真实receipt接管后consume；材料真实进入model context。
 - [ ] **WPF-MATURE-03-05** 验证多窗口与失败恢复：双split草稿独立、换连接/close/隐藏/撤权迟到隔离；不支持中心明确plaintext路径；类型/大小/授权失败可行动；journal拒绝/损坏保raw及unknown身份且纯文本仍可用，cap/namespace旧缓存按绑定生命周期失效，不凭URL复用授权。
 - [ ] **WPF-MATURE-03-06** 完成实际旅程验收：真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。

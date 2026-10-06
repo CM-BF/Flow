@@ -1,0 +1,116 @@
+{
+  "recordedAt": "2026-10-06T13:03:17.614186+00:00",
+  "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "method": "read-only fixed source; no runtime experiment",
+  "parentRequirements": [
+    "REQ22",
+    "REQ23",
+    "WPF-001-05",
+    "MATURE03",
+    "MATURE01"
+  ],
+  "sources": [
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "anchors": [
+        {
+          "line": 7,
+          "text": "export type ResourceContext ="
+        },
+        {
+          "line": 27,
+          "text": "      readonly kind: \"reference\";"
+        },
+        {
+          "line": 58,
+          "text": "  | \"chat.composer.actions\""
+        },
+        {
+          "line": 63,
+          "text": "  | \"artifact.actions\""
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+      "anchors": [
+        {
+          "line": 19,
+          "text": "  \"chat.composer.actions\": [\"composer\"],"
+        },
+        {
+          "line": 24,
+          "text": "  \"artifact.actions\": [\"reference\"],"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "sha256": "31f580820d0c161e016ce13856d47a91638800548f9f4445b1ad17de194e3858",
+      "anchors": [
+        {
+          "line": 7,
+          "text": "export interface AttachmentPickerProps {"
+        },
+        {
+          "line": 34,
+          "text": "    {!!state.items.length && <section aria-label=\"Files in this draft\"><h3>In this draft</h3>{state.items.map(item => <article className=\"attachment-row\" key={item.id}>"
+        },
+        {
+          "line": 39,
+          "text": "    <section aria-label=\"Uploaded project files\"><h3>Uploaded to this project</h3>{state.page.map(resource => <article className=\"attachment-row\" key={attachmentReferenceKey(resource.reference)}>"
+        },
+        {
+          "line": 46,
+          "text": "      {state.recovery.map(record => <article className=\"attachment-row\" key={record.key}>"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "ecec5a76bb0c0e89c4ac3b5cd4f4d56345299d737e15ca86088f244228fcd56b",
+      "anchors": [
+        {
+          "line": 267,
+          "text": "    contributions: [{ kind: \"button\", id: \"flow.conversation-attachments.button\", slot: \"chat.composer.actions\", title: \"Files\", commandId: ATTACHMENT_OPEN },"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "anchors": [
+        {
+          "line": 27,
+          "text": "const globalContext: ResourceContext = { kind: \"global\" };"
+        },
+        {
+          "line": 102,
+          "text": "  const context: ResourceContext = { kind: \"message\", taskId, messageId, role };"
+        },
+        {
+          "line": 122,
+          "text": "  return <span data-composer-view={viewId}><AppSlot slot=\"chat.composer.actions\" context={{ kind: \"composer\", viewId, isDraft: editableComposer ?? (!taskId && viewId.startsWith(\"draft-\")) }} /></span>;"
+        },
+        {
+          "line": 237,
+          "text": "  const context: ResourceContext = { kind: \"workspace\", taskId: state.task?.id ?? null, tabId: activeTab };"
+        },
+        {
+          "line": 256,
+          "text": "    artifact: state.task && reference && referenceId ? <AppSlot slot=\"artifact.actions\" context={{ kind: \"reference\", taskId: state.task.id, referenceId }} /> : null,"
+        }
+      ]
+    }
+  ],
+  "finding": "Files plugin entry and whole composer panel are contributed through P01, but AttachmentPicker draft/project/recovery row actions are built in and have no attachment-item extension slot/context. Existing artifact.actions is task reference context, not pre-task uploaded material. Full all-component plugin coverage remains open.",
+  "futureAcceptance": [
+    "A new sample action can appear on a real uploaded file row via the existing single plugin registry without editing Picker action markup.",
+    "Host validates current center/view/project and fixed reference; no arbitrary taskId conversion or private FlowClient exposure.",
+    "Declared capability, disable/unload/revoke and stale-view behavior must be exercised; a renderer callback alone is not authorization.",
+    "Unresolved upload receipts have no ready attachment reference; do not authorize them as accepted task artifacts."
+  ],
+  "currentScope": "No implementation, claim, test or blocking finding added to ATTACHI02; retain original plugin coverage backlog after recovery priority."
+}
