@@ -1,0 +1,130 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 sends only three parent-confirmed owned regular descriptors to its second target
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:308:38
+    306|   } });
+    307|   const result = await runFdCanaryBatch(f.input, f);
+    308|   expect(result.measurementComplete).toBe(true); expect(f.calls).toHav…
+       |                                      ^
+    309|   expect(f.calls[1].stdio).toBe('pipe'); expect(result.parentRegularSt…
+    310|   for (const fd of observed) expect(() => fs.fstatSync(fd)).toThrow();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 preserves valid negative child fstat without inventing a regular observation
+AssertionError: expected { …(23) } to match object { measurementComplete: true, …(2) }
+(32 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "cleanupComplete": true,
+    "measurementComplete": true,
+-   "targetReservations": 2,
++   "targetReservations": 3,
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:319:18
+    317|   } });
+    318|   const result = await runFdCanaryBatch(f.input, f);
+    319|   expect(result).toMatchObject({ measurementComplete: true, cleanupCom…
+       |                  ^
+    320|   expect(result.parentRegularStdio).toHaveLength(3);
+    321|   expect(result.targets[1].report.slice(1, 4).every((x: any) => x.fsta…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 stops after unhealthy control without opening the regular comparison
+AssertionError: expected [ { state: 'closed', …(2) }, …(2) ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:327:26
+    325|   const result = await runFdCanaryBatch(f.input, f);
+    326|   expect(result).toMatchObject({ targetReservations: 1, measurementCom…
+    327|   expect(result.targets).toHaveLength(2); expect(result.targets[1]).to…
+       |                          ^
+    328|   expect(f.calls).toHaveLength(2);
+    329| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 distinguishes a closed profile failure from unknown group cleanup: true
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 distinguishes a closed profile failure from unknown group cleanup: false
+AssertionError: expected [ { state: 'reported', …(1) }, …(2) ] to have a length of 2 but got 3
+
+- Expected
++ Received
+
+- 2
++ 3
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:333:59
+    331|   const f = fixture((_options, number) => number === 3 && ({ safe: { .…
+    332|   const result = await runFdCanaryBatch(f.input, f);
+    333|   expect(f.calls).toHaveLength(3); expect(result.targets).toHaveLength…
+       |                                                           ^
+    334|   expect(result).toMatchObject({ measurementComplete: false, cleanupCo…
+    335|   expect(result.retainedRoots).toHaveLength(groupGone ? 0 : 2); expect…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 rejects substituted descriptor metadata before starting its profile target
+AssertionError: expected { …(26) } to match object { measurementComplete: false, …(3) }
+(34 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "cleanupComplete": true,
+    "descriptorsClosed": true,
+    "measurementComplete": false,
+-   "targetReservations": 1,
++   "targetReservations": 3,
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:346:18
+    344|   } });
+    345|   const result = await runFdCanaryBatch(f.input, { ...f, io });
+    346|   expect(result).toMatchObject({ measurementComplete: false, targetRes…
+       |                  ^
+    347|   expect(f.calls).toHaveLength(2); expect(regularFds).toHaveLength(1);…
+    348| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 persists required compiler inventory inside the same clock: failure
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > v3 persists required compiler inventory inside the same clock: deadline
+AssertionError: expected [ { …(6) }, { …(6) }, { …(6) }, …(1) ] to have a length of 1 but got 4
+
+- Expected
++ Received
+
+- 1
++ 4
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:357:19
+    355|   } });
+    356|   const result = await runFdCanaryBatch(f.input, { ...f, io, now: () =…
+    357|   expect(f.calls).toHaveLength(1); expect(result).toMatchObject({ meas…
+       |                   ^
+    358|   if (mode === 'deadline') expect(result.withinBudget).toBe(false);
+    359| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+

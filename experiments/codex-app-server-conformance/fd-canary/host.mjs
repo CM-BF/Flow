@@ -24,11 +24,12 @@ function boundedRead(file, maximum, io) {
     return bytes.subarray(0, length);
   } finally { io.closeSync(fd); }
 }
-function durable(file, data, budget, io) {
+function durable(file, data, budget, io, onCloseUnknown = () => {}) {
   const bytes = Buffer.from(`${JSON.stringify(data, null, 2)}\n`);
   budget.receipt(bytes.length);
   const fd = io.openSync(file, 'wx', 0o600);
-  try { io.writeFileSync(fd, bytes); io.fsyncSync(fd); } finally { io.closeSync(fd); }
+  try { io.writeFileSync(fd, bytes); io.fsyncSync(fd); }
+  finally { try { io.closeSync(fd); } catch { onCloseUnknown(); fail(); } }
 }
 function makeBudget(preparedEvidenceBytes, archiveReserveBytes) {
   if (!Number.isSafeInteger(preparedEvidenceBytes) || preparedEvidenceBytes < 0 || archiveReserveBytes !== ARCHIVE_RESERVE
@@ -73,7 +74,7 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
   const command = dependencies.command ?? runOwnedCommand;
   const start = dependencies.start ?? now(); const startedAt = dependencies.startedAt ?? new Date().toISOString(); const budget = makeBudget(preparedEvidenceBytes, archiveReserveBytes);
   const roots = []; const descriptors = []; const result = { startedAt, compileReservations: 0, compileCalls: 0, targetReservations: 0, targetStartsObserved: 0, stages: [],
-    targets: ['NOT_RUN', 'NOT_RUN', 'NOT_RUN'], compilerOutputAccounting: 'unknown', cleanupComplete: false, retainedRoots: [] };
+    targets: ['NOT_RUN', 'NOT_RUN'], targetCases: ['control-socket', 'profile-regular'], compilerInventoryPersisted: false, compilerOutputAccounting: 'unknown', cleanupComplete: false, retainedRoots: [] };
   let reserved = false; let allClosed = true; let descriptorsClosed = true; let creatingRoot = false; let stage = 'reservation';
   const elapsed = () => now() - start;
   function makeRoot(prefix) {
@@ -86,7 +87,10 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
   }
   function openOwned(file) {
     const fd = io.openSync(file, fs.constants.O_RDWR | fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_NOFOLLOW, 0o600);
-    const item = { fd, closed: false }; descriptors.push(item); return fd;
+    const item = { fd, closed: false }; descriptors.push(item);
+    const opened = io.fstatSync(fd), named = io.lstatSync(file);
+    if (fd < 3 || !opened.isFile() || (opened.mode & 0o777) !== 0o600 || !same(named, identity(opened))) fail();
+    item.identity = identity(opened); return fd;
   }
   function persistCompilerStream(name, bytes) {
     if (!Buffer.isBuffer(bytes) || bytes.length > 65536) fail();
@@ -95,18 +99,29 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
     result.compilerOutputFiles ??= []; result.compilerOutputFiles.push(record);
     // Count the disk copy separately from captured bytes before creating or writing it.
     if (!budget.artifact(file, bytes.length)) fail();
-    const fd = io.openSync(file, fs.constants.O_WRONLY | fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_NOFOLLOW, 0o600);
+    const fd = io.openSync(file, fs.constants.O_RDWR | fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_NOFOLLOW, 0o600);
     record.created = true;
-    try { io.writeFileSync(fd, bytes); io.fsyncSync(fd); record.persisted = true; }
+    try {
+      const stat = io.fstatSync(fd);
+      if (!stat.isFile() || (stat.mode & 0o777) !== 0o600) fail();
+      const openedIdentity = identity(stat);
+      io.writeFileSync(fd, bytes); io.fsyncSync(fd); record.persisted = true;
+      const named = io.lstatSync(file);
+      if (!same(named, openedIdentity) || (named.mode & 0o777) !== 0o600) fail();
+      const saved = Buffer.alloc(bytes.length + 1); const length = io.readSync(fd, saved, 0, saved.length, 0);
+      const verifiedSha256 = hash(saved.subarray(0, length));
+      if (length !== bytes.length || verifiedSha256 !== record.capturedSha256) fail();
+      Object.assign(record, { verifiedBytes: length, verifiedSha256, mode: '0600', dev: named.dev, ino: named.ino });
+    }
     finally {
       try { io.closeSync(fd); record.closed = true; }
       catch { descriptorsClosed = false; fail(); }
     }
   }
   async function execute(kind, options) {
-    if (elapsed() >= 45000 || result.compileReservations > 1 || result.targetReservations > 3) fail();
+    if (elapsed() >= 45000 || result.compileReservations > 1 || result.targetReservations > 2) fail();
     if (kind === 'compile') { if (result.compileReservations !== 0) fail(); result.compileReservations++; }
-    else { if (result.compileCalls !== 1 || result.targetReservations >= 3) fail(); result.targetReservations++; }
+    else { if (result.compileCalls !== 1 || result.targetReservations >= 2) fail(); result.targetReservations++; }
     if (kind !== 'compile') result.targets[result.targetReservations - 1] = { state: 'reservation-unconfirmed', report: null };
     durable(path.join(evidenceDirectory, `slot-${kind}.json`), { kind, elapsedMs: elapsed(), consumed: true }, budget, io);
     if (kind !== 'compile') result.targets[result.targetReservations - 1] = { state: 'attempted', execution: 'unknown', report: null };
@@ -121,13 +136,16 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
     if (kind === 'compile') {
       stage = 'compiler-output-persistence';
       persistCompilerStream('stderr', returned.stderr); persistCompilerStream('stdout', returned.stdout);
+      stage = 'compiler-inventory-persistence';
+      durable(path.join(evidenceDirectory, 'compiler-inventory.json'), { startedAt, scope: 'owned compiler streams; no raw text', files: result.compilerOutputFiles }, budget, io, () => { descriptorsClosed = false; });
+      result.compilerInventoryPersisted = true;
     }
     stage = kind === 'compile' ? 'compiler-health' : `${kind}-health`;
     if (!healthy(completedStage)) fail();
     return returned;
   }
   try {
-    durable(path.join(evidenceDirectory, 'batch-reservation.json'), { startedAt, compileCalls: 1, maxTargets: 3, totalMs: 60000,
+    durable(path.join(evidenceDirectory, 'batch-reservation.json'), { startedAt, compileCalls: 1, maxTargets: 2, totalMs: 60000,
       maxBytes: LIMIT, preparedEvidenceBytes, archiveReserveBytes, receiptReserveBytes: RECEIPT_RESERVE, meaning: 'Consumed once; failure or unknown forbids retry or a new clock' }, budget, io); reserved = true;
     stage = 'root-preparation';
     const allowed = makeRoot('/private/tmp/flow-wpf02-fd-'); const denied = makeRoot('/private/tmp/flow-wpf02-fd-deny-');
@@ -147,11 +165,15 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
     stage = 'compiler-command-inventory'; result.compilerCommands = compilerInventory(compile.stderr, control, artifacts, toolchain.clang, toolchain.linker);
     result.compilerOutputAccounting = 'visible-owned-files-and-verbose-outputs';
     result.binary = { bytes: executable.bytes, sha256: executable.sha256 };
-    for (let number = 1; number <= 3; number++) {
+    for (let number = 1; number <= 2; number++) {
       stage = `target-${number}-preparation`;
       const nonce = randomBytes(16).toString('hex'); const reportPath = path.join(state, `report-${number}.jsonl`);
       let stdio = 'pipe';
-      if (number === 3) stdio = [0, 1, 2].map(fd => openOwned(path.join(state, `stdio-${fd}.file`)));
+      if (number === 2) {
+        stdio = [0, 1, 2].map(fd => openOwned(path.join(state, `stdio-${fd}.file`)));
+        if (new Set(stdio).size !== 3) fail();
+        result.parentRegularStdio = descriptors.map((item, fd) => ({ fd, kind: 'regular', dev: item.identity.dev, ino: item.identity.ino, mode: '0600', evidence: 'parent-fstat-and-owned-path-identity' }));
+      }
       const args = number === 1 ? [reportPath, nonce] : ['-D', `ALLOW_ROOT=${allowed}`, '-D', `DENY_ROOT=${denied}`,
         '-D', `CANARY_EXECUTABLE=${binary}`, '-f', path.join(control, 'candidate.sb'), binary, reportPath, nonce];
       stage = `target-${number}-execution`;

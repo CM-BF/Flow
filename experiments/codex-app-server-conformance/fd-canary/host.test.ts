@@ -43,18 +43,24 @@ function fixture(override?: (options: any, number: number) => any) {
       budget.consume(stderr.length);
     } else {
       const [file, nonce] = options.args.slice(-2);
-      fs.writeFileSync(file, encode(records(nonce, 42, number === 4 ? 'regular' : 'socket', number === 3)), { flag: 'wx', mode: 0o600 });
+      fs.writeFileSync(file, encode(records(nonce, 42, number === 3 ? 'regular' : 'socket')), { flag: 'wx', mode: 0o600 });
     }
     return { safe: normal(), stdout: Buffer.alloc(0), stderr };
   }
   return { evidenceDirectory, calls, io, command, input: { sourceDirectory, evidenceDirectory, toolchain } };
 }
-it('runs the finite fake compile and three contrasting reports, then removes only its roots', async () => {
+it('runs the finite fake compile and two fixed contrasting reports, then removes only its roots', async () => {
   const f = fixture(); const result = await runFdCanaryBatch(f.input, f);
-  expect(result).toMatchObject({ measurementComplete: true, compileCalls: 1, targetReservations: 3, targetStartsObserved: 3,
+  expect(result).toMatchObject({ measurementComplete: true, compileCalls: 1, targetReservations: 2, targetStartsObserved: 2,
     cleanupComplete: true, retainedRoots: [], withinBudget: true, resultPersisted: true });
   expect(f.calls[0].args).toContain('-save-temps=obj'); expect(f.calls[0].environment).not.toHaveProperty('CODEX_HOME');
-  expect(result.targets[1].report[1].fstat.errno).toBe('EPERM'); expect(result.targets[2].report[1].fstat.kind).toBe('regular');
+  expect(f.calls).toHaveLength(3); expect(result.targets).toHaveLength(2);
+  expect(result.targets[0].report[1].fstat.kind).toBe('socket'); expect(result.targets[1].report[1].fstat.kind).toBe('regular');
+  expect(result.compilerInventoryPersisted).toBe(true);
+  const receipt = JSON.parse(fs.readFileSync(path.join(f.evidenceDirectory, 'compiler-inventory.json'), 'utf8'));
+  expect(receipt.files).toHaveLength(2); expect(receipt.files.every((x: any) => x.verifiedBytes === x.capturedBytes && x.verifiedSha256 === x.capturedSha256 && x.mode === '0600')).toBe(true);
+  expect(result.parentRegularStdio.map((x: any) => x.fd)).toEqual([0, 1, 2]);
+  for (const fd of f.calls[2].stdio) expect(() => fs.fstatSync(fd)).toThrow();
   expect(result.compilerCommands).toHaveLength(3); expect(result.output.artifacts).toBeGreaterThan(0);
   for (const item of owned.filter(item => item.directory !== f.evidenceDirectory)) expect(fs.existsSync(item.directory)).toBe(false);
 });
@@ -66,7 +72,7 @@ it('refuses a consumed reservation without a compiler or target call', async () 
 it('stops after a failed compiler and still closes and removes owned roots', async () => {
   const f = fixture(() => ({ safe: { ...normal(), code: 1 }, stdout: Buffer.alloc(0), stderr: Buffer.alloc(0) }));
   const result = await runFdCanaryBatch(f.input, f);
-  expect(f.calls).toHaveLength(1); expect(result).toMatchObject({ measurementComplete: false, cleanupComplete: true, targets: ['NOT_RUN', 'NOT_RUN', 'NOT_RUN'], withinBudget: false });
+  expect(f.calls).toHaveLength(1); expect(result).toMatchObject({ measurementComplete: false, cleanupComplete: true, targets: ['NOT_RUN', 'NOT_RUN'], withinBudget: false });
 });
 it('retains roots when the owned process group is not confirmed gone', async () => {
   const f = fixture(() => ({ safe: { ...normal(), groupGone: false }, stdout: Buffer.alloc(0), stderr: Buffer.alloc(0) }));
@@ -150,7 +156,7 @@ it('makes accounting unknown when final root enumeration cannot finish after all
   const f = fixture(); let lastStageEnumerations = 0;
   const io = new Proxy(f.io, { get(target, name) {
     if (name === 'readdirSync') return (directory: string) => {
-      if (f.calls.length === 4 && directory === path.dirname(f.calls[0].cwd) && ++lastStageEnumerations === 2) throw new Error('synthetic final inventory failure');
+      if (f.calls.length === 3 && directory === path.dirname(f.calls[0].cwd) && ++lastStageEnumerations === 2) throw new Error('synthetic final inventory failure');
       return fs.readdirSync(directory);
     };
     return Reflect.get(target, name);
@@ -172,12 +178,12 @@ it('refuses an unquoted or unknown compiler command instead of omitting it from 
 });
 
 it('requires all final CLI gates and counts its exact encoded bytes without claiming post-write elapsed', () => {
-  const good = { measurementComplete: true, cleanupComplete: true, outputAccountingComplete: true, resultPersisted: true,
+  const good = { measurementComplete: true, cleanupComplete: true, outputAccountingComplete: true, resultPersisted: true, compilerInventoryPersisted: true,
     withinBudget: true, output: { measuredBytes: 1000, receipts: 1000, archiveReserveBytes: 131072, receiptReserveBytes: 32768 } };
   const delivery = prepareDelivery(good, 100); expect(delivery.passes).toBe(true); expect(delivery.bytes).toBe(Buffer.byteLength(delivery.line));
   const parsed = JSON.parse(delivery.line); expect(parsed.cliPayloadBytes).toBe(Buffer.byteLength(JSON.stringify(parsed.result)));
   expect(parsed.result.finalElapsedBasis).toBe('after-result-persistence-before-cli-write'); expect(parsed.result).not.toHaveProperty('withinBudget');
-  for (const key of ['measurementComplete', 'cleanupComplete', 'outputAccountingComplete', 'resultPersisted', 'withinBudget']) expect(prepareDelivery({ ...good, [key]: false }, 100).passes).toBe(false);
+  for (const key of ['measurementComplete', 'cleanupComplete', 'outputAccountingComplete', 'resultPersisted', 'compilerInventoryPersisted', 'withinBudget']) expect(prepareDelivery({ ...good, [key]: false }, 100).passes).toBe(false);
   expect(prepareDelivery(good, 60001).passes).toBe(false);
   expect(prepareDelivery({ ...good, output: { ...good.output, measuredBytes: 2097152 } }, 100).passes).toBe(false);
   expect(prepareDelivery({ ...good, output: { ...good.output, receipts: 32768 } }, 100).passes).toBe(false);
@@ -284,4 +290,82 @@ it.each([
   ' "/fixed/clang" -cc1 "' + 'a'.repeat(4097) + '" -o /owned/a.o',
 ])('rejects unsupported or ambiguous compiler tokens without executing them: %s', line => {
   expect(() => compilerInventory(Buffer.from(line + '\n'), '/owned', [{ path: '/owned/a.o' }], toolchain.clang, toolchain.linker)).toThrow();
+});
+
+
+it('v3 sends only three parent-confirmed owned regular descriptors to its second target', async () => {
+  let observed: number[] = [];
+  const f = fixture((options, number) => { if (number === 3) {
+    expect(options.executable).toBe(toolchain.sandbox); expect(options.stdio).toHaveLength(3);
+    observed = [...options.stdio]; expect(new Set(observed).size).toBe(3);
+    for (const [index, fd] of observed.entries()) {
+      const opened = fs.fstatSync(fd), named = fs.lstatSync(path.join(options.cwd, `stdio-${index}.file`));
+      expect(opened.isFile()).toBe(true); expect([opened.dev, opened.ino]).toEqual([named.dev, named.ino]);
+      expect(opened.mode & 0o777).toBe(0o600);
+    }
+  } });
+  const result = await runFdCanaryBatch(f.input, f);
+  expect(result.measurementComplete).toBe(true); expect(f.calls).toHaveLength(3);
+  expect(f.calls[1].stdio).toBe('pipe'); expect(result.parentRegularStdio).toHaveLength(3);
+  for (const fd of observed) expect(() => fs.fstatSync(fd)).toThrow();
+});
+it('v3 preserves valid negative child fstat without inventing a regular observation', async () => {
+  const f = fixture((options, number) => { if (number === 3) {
+    const [file, nonce] = options.args.slice(-2);
+    fs.writeFileSync(file, encode(records(nonce, 42, 'unknown', true)), { flag: 'wx', mode: 0o600 });
+    return { safe: normal(), stdout: Buffer.alloc(0), stderr: Buffer.alloc(0) };
+  } });
+  const result = await runFdCanaryBatch(f.input, f);
+  expect(result).toMatchObject({ measurementComplete: true, cleanupComplete: true, targetReservations: 2 });
+  expect(result.parentRegularStdio).toHaveLength(3);
+  expect(result.targets[1].report.slice(1, 4).every((x: any) => x.fstat.kind === 'unknown' && x.fstat.errnoNumber === 1 && !x.fstat.ok)).toBe(true);
+});
+it('v3 stops after unhealthy control without opening the regular comparison', async () => {
+  const f = fixture((_options, number) => number === 2 && ({ safe: { ...normal(), code: 1 }, stdout: Buffer.alloc(0), stderr: Buffer.alloc(0) }));
+  const result = await runFdCanaryBatch(f.input, f);
+  expect(result).toMatchObject({ targetReservations: 1, measurementComplete: false, cleanupComplete: true });
+  expect(result.targets).toHaveLength(2); expect(result.targets[1]).toBe('NOT_RUN'); expect(result.parentRegularStdio).toBeUndefined();
+  expect(f.calls).toHaveLength(2);
+});
+it.each([true, false])('v3 distinguishes a closed profile failure from unknown group cleanup: %s', async groupGone => {
+  const f = fixture((_options, number) => number === 3 && ({ safe: { ...normal(), code: null, signal: 'SIGABRT', groupGone }, stdout: Buffer.alloc(0), stderr: Buffer.alloc(0) }));
+  const result = await runFdCanaryBatch(f.input, f);
+  expect(f.calls).toHaveLength(3); expect(result.targets).toHaveLength(2);
+  expect(result).toMatchObject({ measurementComplete: false, cleanupComplete: groupGone, descriptorsClosed: true, failureStage: 'target-2-health' });
+  expect(result.retainedRoots).toHaveLength(groupGone ? 0 : 2); expect(result.targets[1].report).toBeNull();
+  for (const fd of f.calls[2].stdio) expect(() => fs.fstatSync(fd)).toThrow();
+});
+it('v3 rejects substituted descriptor metadata before starting its profile target', async () => {
+  const f = fixture(); const descriptors = new Map<number, string>(); const regularFds: number[] = [];
+  const io = new Proxy(f.io, { get(target, name) {
+    if (name === 'openSync') return (...args: any[]) => { const fd = (fs.openSync as any)(...args); descriptors.set(fd, String(args[0])); if (String(args[0]).endsWith('/stdio-0.file')) regularFds.push(fd); return fd; };
+    if (name === 'fstatSync') return (fd: number) => { const stat = fs.fstatSync(fd); return descriptors.get(fd)?.endsWith('/stdio-0.file') ? new Proxy(stat, { get(object, key) { return key === 'ino' ? stat.ino + 1 : Reflect.get(object, key); } }) : stat; };
+    return Reflect.get(target, name);
+  } });
+  const result = await runFdCanaryBatch(f.input, { ...f, io });
+  expect(result).toMatchObject({ measurementComplete: false, targetReservations: 1, descriptorsClosed: true, cleanupComplete: true });
+  expect(f.calls).toHaveLength(2); expect(regularFds).toHaveLength(1); for (const fd of regularFds) expect(() => fs.fstatSync(fd)).toThrow();
+});
+it.each(['failure', 'deadline'])('v3 persists required compiler inventory inside the same clock: %s', async mode => {
+  const f = fixture(); let clock = 0; const descriptors = new Map<number, string>();
+  const io = new Proxy(f.io, { get(target, name) {
+    if (name === 'openSync') return (...args: any[]) => { const fd = (fs.openSync as any)(...args); descriptors.set(fd, String(args[0])); return fd; };
+    if (name === 'fsyncSync') return (fd: number) => { if (descriptors.get(fd)?.endsWith('/compiler-inventory.json')) { if (mode === 'failure') throw new Error('synthetic fsync failure'); clock = 60001; } fs.fsyncSync(fd); };
+    return Reflect.get(target, name);
+  } });
+  const result = await runFdCanaryBatch(f.input, { ...f, io, now: () => clock });
+  expect(f.calls).toHaveLength(1); expect(result).toMatchObject({ measurementComplete: false, cleanupComplete: true, targetReservations: 0, compilerInventoryPersisted: mode === 'deadline' });
+  if (mode === 'deadline') expect(result.withinBudget).toBe(false);
+});
+
+it('v3 retains roots when automatic inventory close is unknown without retrying its fd', async () => {
+  const f = fixture(); const descriptors = new Map<number, string>(); let closes = 0;
+  const io = new Proxy(f.io, { get(target, name) {
+    if (name === 'openSync') return (...args: any[]) => { const fd = (fs.openSync as any)(...args); descriptors.set(fd, String(args[0])); return fd; };
+    if (name === 'closeSync') return (fd: number) => { fs.closeSync(fd); if (descriptors.get(fd)?.endsWith('/compiler-inventory.json')) { closes++; descriptors.delete(fd); throw new Error('synthetic close ACK loss'); } };
+    return Reflect.get(target, name);
+  } });
+  const result = await runFdCanaryBatch(f.input, { ...f, io });
+  expect(result).toMatchObject({ compilerInventoryPersisted: false, descriptorsClosed: false, cleanupComplete: false, targetReservations: 0, failureStage: 'compiler-inventory-persistence' });
+  expect(result.retainedRoots).toHaveLength(2); expect(f.calls).toHaveLength(1); expect(closes).toBe(1);
 });

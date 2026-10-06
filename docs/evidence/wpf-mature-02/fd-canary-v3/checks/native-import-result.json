@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-e",
+    "await import('./experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs'); process.stdout.write('v3 inert import: OK\\n')"
+  ],
+  "startedAt": "2026-10-06T11:34:59.398948+00:00",
+  "finishedAt": "2026-10-06T11:34:59.514032+00:00",
+  "elapsedSeconds": 0.11471795896068215,
+  "exitCode": 0,
+  "actualCompileCalls": 0,
+  "actualSyntheticTargetStarts": 0
+}
