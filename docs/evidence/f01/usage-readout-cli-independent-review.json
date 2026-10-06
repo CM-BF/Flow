@@ -1,0 +1,147 @@
+{
+  "result": "APPROVED",
+  "target": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+  "observedHead": "f036bd0cc73a243089d0e7302daff9819689a6b5",
+  "observedAt": "2026-10-06T14:31:26.266374+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+  "branch": "codex/m2-shared-foundation",
+  "clean": true,
+  "reviewer": "assignment_review / gpt-6-astra, independent of F01 CLI author",
+  "scope": [
+    "apps/cli/src/index.ts usage branch/help only",
+    "apps/cli/src/usage-readout.test.ts",
+    "apps/cli/README.md added usage paragraph"
+  ],
+  "manifest": {
+    "path": "docs/evidence/f01/usage-readout-cli-manifest.json",
+    "sha256": "efcb824ff4f8f60e168b64d3281f81f7e35601e6be710c02550d2cc2d0cbe014",
+    "bytes": 1666
+  },
+  "bindings": [
+    {
+      "kind": "sources",
+      "path": "apps/cli/src/index.ts",
+      "bytes": 21135,
+      "sha256": "15dfc443cf60dafd1a4bcef7ef8d86eb87333a112a68b45385f77f957841ea21",
+      "fixedCommit": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+      "fixedSha256": "15dfc443cf60dafd1a4bcef7ef8d86eb87333a112a68b45385f77f957841ea21",
+      "workingSha256": "15dfc443cf60dafd1a4bcef7ef8d86eb87333a112a68b45385f77f957841ea21",
+      "matches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/cli/src/usage-readout.test.ts",
+      "bytes": 2443,
+      "sha256": "40fc06117a7ac8cf36d3caa6e887dcecea4eae015f9dd9d189d9f1b535584aa9",
+      "fixedCommit": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+      "fixedSha256": "40fc06117a7ac8cf36d3caa6e887dcecea4eae015f9dd9d189d9f1b535584aa9",
+      "workingSha256": "40fc06117a7ac8cf36d3caa6e887dcecea4eae015f9dd9d189d9f1b535584aa9",
+      "matches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/cli/README.md",
+      "bytes": 4684,
+      "sha256": "08c27dda14e3a3dffb939bcb9732c1ea3111831b5935a0b5852cb10f4c9859e3",
+      "fixedCommit": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+      "fixedSha256": "08c27dda14e3a3dffb939bcb9732c1ea3111831b5935a0b5852cb10f4c9859e3",
+      "workingSha256": "08c27dda14e3a3dffb939bcb9732c1ea3111831b5935a0b5852cb10f4c9859e3",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/usage-readout-cli-green.txt",
+      "bytes": 310,
+      "sha256": "b166ed7a004f47fe4885f5675ef786abe9a56993a268691185bb018c829ae35f",
+      "fixedCommit": "f036bd0cc73a243089d0e7302daff9819689a6b5",
+      "fixedSha256": "b166ed7a004f47fe4885f5675ef786abe9a56993a268691185bb018c829ae35f",
+      "workingSha256": "b166ed7a004f47fe4885f5675ef786abe9a56993a268691185bb018c829ae35f",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/usage-readout-cli-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedCommit": "f036bd0cc73a243089d0e7302daff9819689a6b5",
+      "fixedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "workingSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": true
+    }
+  ],
+  "unchangedApprovedInputs": [
+    {
+      "path": "packages/client/src/index.ts",
+      "fixedInput": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+      "matches": true,
+      "sha256": "7f8fbbb5fbc4e9a1eedcf26644b0d45a20650c00c61eb6cd00c33cba4b701163"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "fixedInput": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+      "matches": true,
+      "sha256": "814f69e47f57ccfa8dafb1460d32137a9e00b309367824ec2ee053fc946e0323"
+    }
+  ],
+  "findings": [],
+  "inspection": [
+    "Entire three-file delta and existing runCli/executeCommand/print/required/error mapping/main entry plus shared taskUsage/request consumers read. No new ledger, calculation, scheduler or mutations.",
+    "Usage performs one owner-authenticated FlowClient.taskUsage call with encoded task identity and forwarded AbortSignal, then existing JSON printer. Null, knownSubtotal, legacy and coverage survive unchanged; no command key is sent or used for this GET.",
+    "Missing task ID rejects via existing UsageError before network. Help bypasses token/client creation; native process signal handling is unchanged. The new test covers programmatic pre-abort, not a fresh OS signal test.",
+    "Existing FlowApiError409 maps exit3;403 maps exit4; remaining HTTP/transport failures map exit4 without retry. HTTP fixture sees exactly GET calls and Bearer synthetic token, no mutation path or automatic second request.",
+    "One true loopback HTTP case verifies encoded CJK/slash ID, unchanged partial JSON output,403/409 counts,pre-abort/missing-ID/help zero extra requests and no synthetic credential in output; server closes in finally.",
+    "Help and README state read-only/no task or model, historical version/phase/coverage may remain unknown, SDK estimate distinct from billing."
+  ],
+  "authorEvidence": {
+    "http": {
+      "passed": 1,
+      "durationMs": 20,
+      "exit": 0,
+      "toolChunk": "b6383c"
+    },
+    "typecheck": {
+      "declaredExit": 0,
+      "toolChunk": "48889c",
+      "stdoutBytes": 0,
+      "basis": "author manifest records original exit0; zero-byte stdout hash verified, not independently replayed"
+    },
+    "rawHttp": {
+      "passed": 1,
+      "durationMs": 20,
+      "totalMs": 365
+    },
+    "newPG": 0,
+    "providerCalls": 0
+  },
+  "reviewerExecution": {
+    "tests": 0,
+    "pg": 0,
+    "provider": 0,
+    "installs": 0,
+    "projectWrites": 0
+  },
+  "limits": [
+    "Approval is only this CLI three-file delta. Earlier production mount and domain approvals are reused, not broadened or repeated.",
+    "Partial fixture intentionally verifies transparent CLI transport/output, not complete TaskUsageReadout schema or accounting correctness. Full domain/PG was separately reviewed.",
+    "No Web/TUI rendering, real billing/cost observation, stage attribution or budget enforcement.",
+    "No new OS-level CLI signal test; existing main signal behavior unchanged and optional signal propagation checked in public runCli test."
+  ],
+  "skills": {
+    "method": "Existing local find-skills / codebase-design / clean-code reused and actually read in this bounded Node/TypeScript review work segment; no install or new web research.",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Keep CLI as presentation caller of approved Interface; review request identity, unknown/null preservation, errors, cancellation and cleanup instead of duplicating domain policy."
+  },
+  "metadataAdvance": {
+    "initialHead": "68c9db5478b2d4a04a0029117356d723cbf8ef82",
+    "finalHead": "f036bd0cc73a243089d0e7302daff9819689a6b5",
+    "changedPaths": [
+      "plans/f01-shared-domains/plan.md",
+      "plans/f01-shared-domains/status.md"
+    ],
+    "scopeSourcesUnchanged": true
+  }
+}

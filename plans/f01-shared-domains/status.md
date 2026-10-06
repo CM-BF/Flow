@@ -15,13 +15,13 @@
 | 工作分支状态 | completed |
 | 检查状态 | PASSED 0550b3e7318133fb0d023fd8cc4372d8b7663e78；真实HTTP1/1（20ms）和types0，无新PG/provider |
 | 已集成main状态 / HEAD | COST域27d4/薄clientfb0/生产7150已main61744371606f3ee890a9d64e21b33f52940d6e14；个人runtime362/v15不变 |
-| Review | NOT_STARTED 0550b3e7318133fb0d023fd8cc4372d8b7663e78；CLI三file增量；原production独审不扩大 |
+| Review | APPROVED 0550b3e7318133fb0d023fd8cc4372d8b7663e78；assignment_review独立只读三源/两raw，0重测 |
 | 实现目标 | 0550b3e7318133fb0d023fd8cc4372d8b7663e78 |
 | 实现范围 | apps/cli/src/index.ts, apps/cli/src/usage-readout.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 各端共用的用量读口已进入主线，终端查询命令已通过局部验证。 |
+| 当前产出 | 各端共用的用量读口已进入主线，终端查询命令已通过独立审查。 |
 | 下一可用交付 | 在命令行直接查看缓存分项、估价及缺测说明。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
