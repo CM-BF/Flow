@@ -1,0 +1,62 @@
+{
+  "implementationTarget": "747cbe616408dc3e44ab3587216c5753e6de3994",
+  "base": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "sources": [
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "sha256": "cdd1f19e355a9023e677cff7a9c1a1e28ee0ced49c7818002ebb60fffcc31e53",
+      "equalsCommit": true
+    },
+    {
+      "path": "apps/web/src/data-renderers/react.tsx",
+      "sha256": "b460e901cd5f2904b1402a17792edf95138004c9e8748c077620dd1797c0c807",
+      "equalsCommit": true
+    },
+    {
+      "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "sha256": "9f2db83abb675beb05a95e5c230557538a9d59cc0f36227092719987e3a63323",
+      "equalsCommit": true
+    },
+    {
+      "path": "apps/web/test/data-renderers.test.ts",
+      "sha256": "a78a780a55aa6c37a7fdb2e4d481b2a641be990348834c768189aa9942bbb296",
+      "equalsCommit": true
+    },
+    {
+      "path": "apps/web/test/data-renderers.browser.ts",
+      "sha256": "152ddb9c777ac74c20440e258a7c1206c35aaed2fc135d40287ad023aafc0696",
+      "equalsCommit": true
+    },
+    {
+      "path": "apps/web/test/data-renderers.fixture.tsx",
+      "sha256": "5fcfd32fc63878755627eb94fecaba50649f618b55ba58926680a1a54a6920c2",
+      "equalsCommit": true
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/wpf-renderer01/module-tests.log",
+      "sha256": "fbebdea6dddefbafdb48bf926ca305bbc246262b0c041a736b9bfa87509214d3"
+    },
+    {
+      "path": "docs/evidence/wpf-renderer01/typecheck.log",
+      "sha256": "e98030b5e2795c9e69a30d29cd2e8fcaa7551a37bccc8f3c27709145bbabb4fe"
+    },
+    {
+      "path": "docs/evidence/wpf-renderer01/browser-results.json",
+      "sha256": "f1f088e398cd86077b592f887089da8487286a37a15fc5b15edc1818dfc36db5"
+    },
+    {
+      "path": "docs/evidence/wpf-renderer01/browser-final.log",
+      "sha256": "1044099d9ae6969a42464293344bdc8d174b2eda01f47861b8bfafc61110b735"
+    },
+    {
+      "path": "docs/evidence/wpf-renderer01/renderers-light.png",
+      "sha256": "46d1f534320d5bb65e6122a46f76478394ee3c965c1fb2955139a0c2cdd14687"
+    },
+    {
+      "path": "docs/evidence/wpf-renderer01/renderers-dark-390.png",
+      "sha256": "eb90b02c9ee96c74d1852cf158a67199f5d586f4ff330c6db64bd1685c1fe18a"
+    }
+  ]
+}

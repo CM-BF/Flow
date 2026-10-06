@@ -12,8 +12,8 @@
 
 ## TODO
 
-- [ ] **RENDERER01-01** 实现确定性声明验证及 P01 生命周期注册表。
-- [ ] **RENDERER01-02** 实现 provider 本地桥与绑定的回复详情 adapter。
+- [x] **RENDERER01-01** 实现确定性声明验证及 P01 生命周期注册表。
+- [x] **RENDERER01-02** 实现 provider 本地桥与绑定的回复详情 adapter。
 - [ ] **RENDERER01-03** 局部行为测试、官方 Thread 双 provider fixture、浅深主题/390/键盘、固定独立 review。
 - [ ] **RENDERER01-04** 下游 App 接线由独立 owner 领取并验证；本模块不能代记完成。
 
