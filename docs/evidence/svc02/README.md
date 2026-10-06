@@ -63,3 +63,9 @@ Root批准的窗口于2026-10-06 05:38–05:39 UTC执行，操作源码为已审
 - [独立部署证据manifest](deploy-manifest.json)：不改写先前17source/12raw实现验收manifest。
 
 未resume、未发消息或调用模型，provider not-probed。没有操作4320/49922或任何用户tab；未跑浏览器验收。窗口明确仅这一受管runner部署，观察快照不冒充持续锁/多runner排空协议。配置仅内存读取并比较，摘要不含token/hash值/DB URL；临时0600比较基线已删除。
+
+## 明确批准后的单次恢复
+
+前段保持暂停的部署回执原样保留。Root于同一窗口追加明确resume授权；[05:40:25Z fresh核对](resume-before-facts.json)确认全库0task/未完attempt、同operation/source/owned PID。随后[单次resume](deploy-resume.json) exit0/265ms，v3 accepting；[05:40:49Z最终事实](resume-after-facts.json)确认原3owned PID=PGID就绪、监听与61227/61228不变、主线fb906cb仍clean、全库0task/未完attempt及唯一原runner。审计完整drain v1→hold v2→resume v3，全部同operation。
+
+[恢复证据manifest](resume-manifest.json)单列新增原始证据，旧deploy-manifest保留原时点resumed=false事实。本窗口没有消息、健康模型请求、模型query或用户browser操作；provider仍not-probed。只验证受管服务升级与恢复接收，不证明provider可用或真实chat完成。
