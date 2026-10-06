@@ -23,3 +23,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-06 21:36:45 UTC: root固定3cc源码审识别PG准备两P2：删除durable resultPersisted自指字段，写ACK交外部独立确认；admin/fixture pool错误纳入有限失败列表，保留原primary异常。仅测试/证据helper窄修，原8已绿不重跑；工作/清理/outer deadline覆盖case finally。最终外部运行收据仍待准备审。
 
 2026-10-06 21:43:12 UTC: 清理设计复核：未知CREATE ACK即便某次查询暂未见DB也不宣称已回收；持久最终收据标明before-final-receipt，最终写ACK/末时钟仅stdout独立delivery，避免自指矛盾。单入口沿既有S01 subprocess/process-group方法，不通用化、不重试；源码尚待独审。资源恢复后的唯一focused noEmit实际0，0PG/native。
+
+2026-10-06 21:49:04 UTC：固定封套独审发现依赖请求schema差异：17donor含package指纹、3本树条目不含；原provision请求保持原字节。显式kind分支改从302 source manifest取本树package.json固定指纹，未知kind拒绝。仅输入解析4/4（20合法bindings与3反例）、0subprocess/PG；不重跑types/8用例，不把此当外封套实际验证。

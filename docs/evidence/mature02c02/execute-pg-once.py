@@ -82,6 +82,25 @@ def temp_sample(root, identity, deadline):
     return {'entries': count, 'logicalBytes': size, 'activePeak': 'unknown'}
 
 
+def verify_dependencies(links, inputs):
+    source = {row['path']: row for row in inputs}
+    counts = {'installed-third-party': 0, 'same-worktree-source': 0}
+    for row in links:
+        link = WT / row['destination']
+        if str(link.resolve()) != row['target']: raise SystemExit('DEPENDENCY_PATH_CHANGED')
+        if row['kind'] == 'installed-third-party':
+            expected_bytes, expected_sha = row['packageJsonBytes'], row['packageJsonSha256']
+        elif row['kind'] == 'same-worktree-source':
+            relative = (Path(row['target']) / 'package.json').relative_to(WT).as_posix()
+            bound = source[relative]
+            expected_bytes, expected_sha = bound['bytes'], bound['sha256']
+        else: raise SystemExit('DEPENDENCY_KIND_UNKNOWN')
+        value = (link / 'package.json').read_bytes()
+        if len(value) != expected_bytes or hashlib.sha256(value).hexdigest() != expected_sha: raise SystemExit('DEPENDENCY_CHANGED')
+        counts[row['kind']] += 1
+    return counts
+
+
 def main():
     start = time.monotonic(); at = datetime.datetime.now(datetime.timezone.utc)
     window = os.environ.get('FLOW_C02_WINDOW', '')
@@ -108,10 +127,7 @@ def main():
             if (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) != (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns): raise SystemExit('EXTERNAL_CHANGED_DURING_READ')
         finally: os.close(fd)
         if count != row['bytes'] or digest.hexdigest() != row['sha256']: raise SystemExit('EXTERNAL_CHANGED')
-    for row in json.loads((EVIDENCE / 'dependency-link-request.json').read_text())['links']:
-        link = WT / row['destination']
-        value = (link / 'package.json').read_bytes()
-        if str(link.resolve()) != row['target'] or len(value) != row['packageJsonBytes'] or hashlib.sha256(value).hexdigest() != row['packageJsonSha256']: raise SystemExit('DEPENDENCY_CHANGED')
+    verify_dependencies(json.loads((EVIDENCE / 'dependency-link-request.json').read_text())['links'], manifest['items'])
     previous = json.loads((EVIDENCE / 'claim-amend-receipt.json').read_text())['claim']
     ledger = json.loads(subprocess.check_output([NODE, '/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/coordination/cli.mjs', 'list'], cwd=WT, timeout=3, stderr=subprocess.DEVNULL))
     current = next((row for row in ledger['claims'] if row['claimId'] == previous['claimId']), None)
