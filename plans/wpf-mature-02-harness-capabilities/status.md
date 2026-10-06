@@ -9,13 +9,13 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / b88016914c1e880669db7cb39b73f19980489a2e（固定schema/接口；当前HEAD由Git核） |
-| 工作树dirty状态 | 仅3scope内本地语义consumer及证据；提交前dirty，提交后由Git核 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 0d0524c3439363d1fe60aad63f62817ba51fa2a5（固定实现；后继仅metadata，实际HEAD由Git核） |
+| 工作树dirty状态 | 实现提交后clean；本次仅target绑定metadata，提交后由Git核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | 27/27本地语义检查通过；提交后绑定实现target，真实进程NOT_RUN |
+| 检查状态 | PASSED 0d0524c3439363d1fe60aad63f62817ba51fa2a5：27/27本地语义检查，0 skipped；真实进程NOT_RUN |
 | 已集成main状态 / HEAD | 未集成；最近观察main77c420cf9ee5de0291ea93014b6ea11aead6fab5；注册已入main，consumer未集成 |
-| 实现目标 | 未提交 |
+| 实现目标 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5 |
 | 实现范围 | plans/wpf-mature-02-harness-capabilities, docs/evidence/wpf-mature-02, experiments/codex-app-server-conformance |
 | 阶段 | M2 |
 | 优先级 | 2 |

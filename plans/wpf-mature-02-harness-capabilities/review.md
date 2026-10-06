@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED；不构成approval。
 
-Base：9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；target未提交。worktree/branch/status见[status](status.md)。范围为本任务3scope；共享host/中心合同/Web修改不在首片。
+Base：9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；Review target commit: 0d0524c3439363d1fe60aad63f62817ba51fa2a5。worktree/branch/status见[status](status.md)。范围为本任务3scope；共享host/中心合同/Web修改不在首片。
 
 ## 可复制审查说明
 
@@ -10,4 +10,4 @@ Base：9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；target未提交。worktree/bra
 
 ## Findings / 结论
 
-独立review未审查；reviewer未运行检查；所有独立findings未评估。作者27项本地语义检查已通过；[manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)绑定source/raw，提交后补固定target。真实运行方案由Mika另审，不由本模板产生许可。
+独立review未审查；reviewer未运行检查；所有独立findings未评估。作者27项本地语义检查已通过；[manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)绑定source/raw，固定target `0d0524c3439363d1fe60aad63f62817ba51fa2a5`，6 source / 1 raw / 29 schema hash与Git逐一相等。真实运行方案由Mika另审，不由本模板产生许可。
