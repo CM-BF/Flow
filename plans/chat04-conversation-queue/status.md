@@ -2,32 +2,32 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:41:01 UTC / main启动核验2026-10-06 04:20:42 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:42:08 UTC / main启动核验2026-10-06 04:20:42 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue |
 | Branch | codex/conversation-queue |
 | 工作基线 / HEAD | base dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；实现HEAD ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2；metadata由Git聚合 |
 | 工作树dirty状态 | 实现已提交；仅交付metadata待提交 |
-| 工作分支状态 | in-progress（v2实现已验证，待独审/生产接线） |
+| 工作分支状态 | completed（v2模块已审；生产接线待另验） |
 | 检查状态 | PASSED ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2；32 queue +22原consumer=54不同用例，noEmit exit0 |
 | 已集成main状态 / HEAD | 未集成此target；启动main/origin dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8 clean；不将模块fixture当生产接线 |
 | 实现目标 | ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 |
 | 实现范围 | apps/server/src/conversation-queue, apps/server/src/conversations/commands.ts, apps/server/src/conversations/admission.ts, apps/server/src/conversations/state.ts, packages/contracts/src/conversations.ts, packages/contracts/src/conversation-queue.ts, packages/storage/migrations/011-conversation-queue.sql, docs/evidence/chat04/run-consumer.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 持久pause与原子resume完成，54项通过待独审 |
-| 下一可用交付 | Mika固定target独审；Lead/Web接生产入口 |
+| 当前产出 | 持久queue/pause/resume已APPROVED，54项通过 |
+| 下一可用交付 | Lead/Web成套接生产入口并另验；后续ready B02待take |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED target ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 |
+| Review | [review.md](review.md)，APPROVED target ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | CHAT04-01 | completed | b01_bounded_reads | v2 Interface已交Lead/Web，唯一register(app,pool,boss) |
 | CHAT04-02 | completed | b01_bounded_reads | 持久FIFO/pause、双CAS与原子resume，无marker |
 | CHAT04-03 | completed | b01_bounded_reads | [checks.json](../../docs/evidence/chat04/checks.json)：32+22/noEmit；两库清理 |
-| CHAT04-04 | in-progress | b01_bounded_reads / Mika | 待独审；实际生产与main验收由Lead协调 |
+| CHAT04-04 | completed | b01_bounded_reads / Mika | Root 04:41:23 UTC APPROVED；生产与main事实单独核 |
 
 ## 当前事实与已解除依赖
 
@@ -37,7 +37,7 @@ Goal Owner已明确停止后续意图：UI先pause ACK再既有cancel；同conve
 
 ## 检查、失败与独审
 
-[证据说明](../../docs/evidence/chat04/README.md)区分v1与v2、真实HTTP丢ACK/完成竞态、SQL执行状态fixture和注入SDK。最终54不叠加历史片段；定向resume-red的16skip非最终漏测。历史fixture清理失败/0tests依赖失败/typecheck失败及恢复均保留。Root今日只读使用codebase-design/clean-code检查共同admission、锁/事务、错误/重放语义，提出Stop竞争并落实v2；截至此状态未给最终approval。
+[证据说明](../../docs/evidence/chat04/README.md)区分v1与v2、真实HTTP丢ACK/完成竞态、SQL执行状态fixture和注入SDK。最终54不叠加历史片段；定向resume-red的16skip非最终漏测。历史fixture清理失败/0tests依赖失败/typecheck失败及恢复均保留。Root今日只读使用codebase-design/clean-code检查共同admission、锁/事务、错误/重放语义，提出Stop竞争并落实v2；现已在04:41:23 UTC完成固定target最终approval。
 
 ## 架构 / Dashboard / handoff
 
@@ -47,4 +47,10 @@ Dashboard已登记本WT；前次04:31:37 UTC current/issues[]/implementation unc
 
 ## 独审修复 / 跨owner依赖
 
-R01：Root指出公共capabilities.queue literal true拒绝旧center的false；已在ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2改为boolean并注明跨中心版本兼容，server运行时仍true。只改类型，noEmit重跑exit0；32+22运行时日志绑定前一产品target 2f40ac2，所有运行时源码不变，manifest明确分开。Web projection此前只接受false，Web owner在其scope修双值并测试；Lead必须成套集成。owner不改Web/client/exports。最终approval待Root复审。
+R01：Root指出公共capabilities.queue literal true拒绝旧center的false；已在ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2改为boolean并注明跨中心版本兼容，server运行时仍true。只改类型，noEmit重跑exit0；32+22运行时日志绑定前一产品target 2f40ac2，所有运行时源码不变，manifest明确分开。Web projection此前只接受false，Web owner在其scope修双值并测试；Lead必须成套集成。owner不改Web/client/exports。最终Root已复审APPROVED，R01 resolved。
+
+## 独立审查交付
+
+2026-10-06 04:41:23 UTC Root APPROVED ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2：15文件/19日志hash、54用例/noEmit/自有DB清理均复核，未重复跑测试；R01已解决。本scope无未解决finding。公开client/生产迁移路由scan/Web双能力解析及main集成必须另验。claim v1继续保留，不release。
+
+最终dashboard实际 2026-10-06T04:42:07.724Z：current=True、issues=[]、review=unknown、checks=passed、implementation=unchanged；回执docs/evidence/chat04/dashboard-receipt.json。采样时仅metadata未提交，随后固定clean HEAD；实现不变。

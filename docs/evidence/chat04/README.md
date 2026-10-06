@@ -25,6 +25,6 @@ resume严格queue+task双CAS、前task门禁，显式同事务提升首waiting�
 
 ## 实际边界
 
-SQL fixture仅构造受控执行状态以测queue门禁，不冒充模型执行；stop竞态则走真实既有HTTP cancel/reportEvents。54项是模块及直接consumer证据，生产migration/routes/client/scan生命周期与Web真实入口仍由Lead/Web接线并另验。review尚待Mika绑定本target；main尚未接收该target。
+SQL fixture仅构造受控执行状态以测queue门禁，不冒充模型执行；stop竞态则走真实既有HTTP cancel/reportEvents。54项是模块及直接consumer证据，生产migration/routes/client/scan生命周期与Web真实入口仍由Lead/Web接线并另验。Root已于2026-10-06 04:41:23 UTC APPROVED本target；main尚未接收，生产接线仍待另验。
 
 类型兼容独审修复：最终target ae9d7203将queue能力改boolean（旧中心false仍合法），server仍true；运行时源码与32+22测试时2f40ac2完全相同，仅noEmit重跑。Web projection接受true/false需Web owner同步，Lead成套集成。该跨owner依赖不被模块测试替代。
