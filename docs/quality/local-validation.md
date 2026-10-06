@@ -28,3 +28,9 @@
 2026-10-06 两个实例：CORE 的 beforeAll 因两组动态迁移数组中的 4 份 SQL 未物化而使 8 例全部 skipped；补齐 5,539 B 后独立只读核真实 28 SQL/175 本地源/10 包入口，原失败保留，实际 PG 在新串行窗口验证。RELEASE03 已通过两个后台历史场景和普通发送，随后同名 Files 定位严格性错误；保留原清理/累计预算，修定位不改过去结果为 PASS。
 
 同范围局部检查由 co-lead 在既有资源和累计预算内自主准入，不逐条向 GO 申请。共享 PG/Chrome 仍由两 lead 明确交接，fresh 准入与实际清理不可省；源码、小检查和完整构建的资源界限分别适用。记录复用唯一 owner status 与原证据，不增加每文件审批或第二账本。已通过且未受改动影响的检查不重复。
+
+## 待实施：复用有限连接观察（2026-10-06 17:50 UTC）
+
+TUI01F与Recovery已遇到pool.end后单次查询的收尾问题；attachment-integration fixture的同类模式目前只是静态风险，不冒称已有失败。固定pg8.23.1→pg-pool3.14.0会先从本地clients移除再异步client.end，await pool.end不能当远端pg_stat_activity零连接的同步屏障；这不证明某一次unknown的根因。
+
+当前固定旅程先收口。后继由独立owner在合法scope检查已有TUI45709c的observeConnections小接口（query/clock可注入），按两个实际消费者决定是否提取test-only共用模块。它只观察有界zero/busy/unknown，不拥有数据库删除权限、资源归属或完整supervisor。新检查复用；不迁移全部fixtures、不造新平台、保留原失败证据。只对直接消费者做必要验证，排在F01/hash/RELEASE解阻之后。

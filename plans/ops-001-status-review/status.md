@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:36 UTC / mainb4ab57c6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:50 UTC / mainb4ab57c6 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -18,8 +18,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 逐消息设置的实际生产入口检查已通过并正常清理；网页兼容正在使用下一串行窗口。 |
-| 下一可用交付 | 接收逐消息设置的固定组合，完成网页兼容与终端清理单例验证。 |
+| 当前产出 | 逐消息设置、终端收尾与目标规划的局部验证均已通过独审；资源已恢复到网页单次验证的准备余量。 |
+| 下一可用交付 | 接收逐消息设置的两处旧类型兼容修复，并完成新版网页的实际兼容验证。 |
 | 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证按现场余量准入，已失败的准备记录保留。 |
 | 需用户决定 | NONE |
 
@@ -197,3 +197,11 @@ CORE固定ea276/packet23016已由Mika17:13独立APPROVED，29项分轮证据无�
 F01-032-PRODUCTION-20261006-1732：固定0ee2494e两源及ea276/6d114批准输入，实际生产factory单例1/1、3.00s、0provider/runtime；fresh1,196,900,352B、最低1,174,093,824B，606B原始输出、cache增量0。随机专库正常关闭后观察连接为空、checkpoint保存、正常DROP/remaining[]，自有进程组已退出。固定manifest独立窄审后才进入主线，不据绿日志跳过来源审核。
 
 下一唯一PG/Chrome窗口交Web RELEASE03-B-20261006-1736：ef458两脚本已独立审查，复用原A事实，只运行B，累计39,935/180,000ms、余140,065ms；fresh仍须原1GiB+128MiB，旧余量不构成准入。TUIcleanup-only与O15明确等待归还，不并跑。TUI457纯清理delta的71固定/current绑定已核、10项与focused types0获限定批准；原两行为通过/整suite exit1和未知inode目录KEEP不变，新单例尚未运行。
+
+## 2026-10-06 17:50 UTC 资源与收口
+
+1736网页窗口fresh不足，NOT_RUN/预算未消耗。随后TUIcleanup1740单例1/1、O15六PG6/6分别串行完成并正常清理；独审固定证据，不重跑此前已过行为。逐消息设置4015组合root类型检查发现Web深readonly与TUI旧profile两处直接消费者问题，分别由合法owner窄修；TUI ec30已独审，Web PROFILEC02在独立树实施，不能把组合red称全绿。
+
+[四候选恢复批](../../docs/quality/resource-space-2026-10-06/next4c-resumed/README.md)最终2/4；另外两棵在17:49达到准备线后未操作。所有保留hash/保护树不变，未触donor/依赖/个人服务。PG/Chrome唯一窗口已给Web B1750，仍fresh原gate及140,065ms累计剩余；TUI/O15无在跑资源。本轮main与个人runtime均未因这些验证自动更新。
+
+Donor审计口径更正：此前4条可执行文本引用中，harness-comparison snapshots及claude-harness归档3条是逐字历史来源（各README明确非运行入口），context-pi-hook/run.mjs才是条件重跑入口。原历史文件不改，donor仍KEEP；不能凭字符串引用数量称4个活跃运行消费者，也不能据此删除依赖。
