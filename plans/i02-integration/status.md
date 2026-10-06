@@ -52,3 +52,7 @@
 2026-10-06 04:12 UTC：P03/R04领域已审源零diff+组合typecheck通过；见第四批原始记录。main8f已含第三批，不沿用此前仅候选表述。真实聊天仍等待Web固定接收，0模型；SVC01准备与O02桥接并行。
 
 2026-10-06 04:20 UTC：main6c9已推P03/R04；第五批WPF-CHAT01(7cb)/CHAT03(a28)/shared(94f,300f)各自独审且组合root/Web typecheck通过，固定main后执行最多2query/$.40，当前0。
+
+### 2026-10-06 04:26 UTC 接收检查点
+
+X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精确一致；root/Web typecheck通过，见 `docs/evidence/i02/approved-slices.md`。registry47含D06/CHAT04。此刻main仍dd1b9daf，下一动作是fast-forward发布与4320刷新；不把分支接收写成main已发布。CHAT live预算2/2已封存，后台真实回复与第二轮UI重放的边界另在F01保留。
