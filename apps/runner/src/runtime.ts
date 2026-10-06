@@ -1,3 +1,4 @@
+import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
 import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
 import { mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -87,6 +88,8 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   try {
     if (!adapter) throw new Error('The assigned harness is unavailable.');
     await control.assertOwnership();
+    if (assignment.goalToolRun && assignment.goalGraphRun) throw new Error('Conflicting planner authorities.');
+    if (assignment.goalGraphRun) context.goalGraphTools = await bindGraphToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
     if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
     await adapter.run(context);
   } catch (error) {

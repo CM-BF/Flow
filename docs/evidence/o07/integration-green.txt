@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools
+
+Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
+ ✓ apps/runner/src/goal-graph-tools/integration.test.ts (3 tests) 3572ms
+   ✓ executes read -> propose -> apply -> actual typed final through the production adapter and real HTTP/PG without executing children  818ms
+   ✓ recovers a lost apply ACK with its stable key and rejects cached replay after revoke  361ms
+   ✓ cancels a live bridged query without accepting a late final or artifact  458ms
+ ✓ apps/server/src/goal-graph-runs/native.test.ts (3 tests) 1936ms
+   ✓ claims only the same runner profile and skips unbound or revoked graph tasks  865ms
+
+ Test Files  2 passed (2)
+      Tests  6 passed (6)
+   Start at  22:53:02
+   Duration  6.39s (transform 283ms, setup 0ms, import 728ms, tests 5.51s, environment 0ms)
+
