@@ -1,0 +1,606 @@
+{
+  "observedAt": "2026-10-06T06:48:22.240947+00:00",
+  "main": "07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a",
+  "sources": 80,
+  "assignments": "available",
+  "tasks": [
+    {
+      "id": "O08",
+      "title": "原生目标规划验收",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance",
+      "branch": "codex/native-graph-acceptance",
+      "planDir": "plans/o08-native-graph-acceptance",
+      "evidenceDir": "docs/evidence/o08",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:40:10.311Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance/plans/o08-native-graph-acceptance/status.md",
+        "syncedAt": "2026-10-06T06:48:18.103Z",
+        "stale": false,
+        "ageHours": 0.1550286111111111
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/native-graph-acceptance",
+        "head": "4a8ebec10c5c5c7d590963e3828a58531bf83761",
+        "dirty": true,
+        "changedFiles": 22,
+        "observedAt": "2026-10-06T06:48:18.790Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "正在准备隔离的三步计划验收，不调用模型",
+          "next": "可预检、可零调用演练的验收工具与单次运行边界",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "experiments/native-graph-acceptance"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "O08",
+        "owner": "assignment_review / gpt-6-astra",
+        "branch": "codex/native-graph-acceptance",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T06:39:00.000Z",
+        "updatedRecord": "2026-10-06 06:39 UTC",
+        "todos": [
+          {
+            "id": "O08-01",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "[claim](../../docs/evidence/o08/claim-receipt.json)"
+          },
+          {
+            "id": "O08-02",
+            "state": "in-progress",
+            "owner": "assignment_review",
+            "evidence": "开始实施"
+          },
+          {
+            "id": "O08-03",
+            "state": "pending",
+            "owner": "assignment_review",
+            "evidence": "未测"
+          },
+          {
+            "id": "O08-04",
+            "state": "pending",
+            "owner": "assignment_review",
+            "evidence": "未审"
+          },
+          {
+            "id": "O08-05",
+            "state": "pending",
+            "owner": "assignment_review",
+            "evidence": "真实调用未获新预算；本轮不执行"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "declaredDirty": "三件套启动metadata",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN"
+        },
+        "reviewRecord": "NOT_STARTED",
+        "mainRecord": "未集成；输入main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED。",
+        "target": null
+      },
+      "implementationProof": {
+        "target": null,
+        "head": "4a8ebec10c5c5c7d590963e3828a58531bf83761",
+        "scopes": [
+          "experiments/native-graph-acceptance"
+        ],
+        "observedAt": "2026-10-06T06:48:18.820Z",
+        "state": "unknown",
+        "reason": "实现目标需完整 SHA"
+      },
+      "documents": [
+        {
+          "path": "plans/o08-native-graph-acceptance/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/o08-native-graph-acceptance/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/o08-native-graph-acceptance/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/o08/claim-receipt.json",
+          "title": "claim",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 5
+      },
+      "main": {
+        "record": "未集成；输入main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "recordedHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "target": null,
+        "mainHead": "07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a",
+        "scopes": [
+          "experiments/native-graph-acceptance"
+        ],
+        "observedAt": "2026-10-06T06:48:18.790Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      },
+      "assignments": [
+        {
+          "lead": "astra_ultra_execution_lead",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "docs/evidence/o08",
+            "experiments/native-graph-acceptance",
+            "plans/o08-native-graph-acceptance"
+          ],
+          "state": "active",
+          "branch": "codex/native-graph-acceptance",
+          "origin": "new",
+          "taskId": "O08",
+          "worker": "assignment_review",
+          "claimId": "1303ae5c-a76a-46cd-bd77-a5abbc5f34e4",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance",
+          "createdAt": "2026-10-06T06:37:55.033Z",
+          "updatedAt": "2026-10-06T06:37:55.033Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "CHAT06C02",
+      "title": "流式正文与旧页面兼容",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-compatibility",
+      "branch": "codex/assistant-stream-compatibility",
+      "planDir": "plans/chat06c02-stream-compatibility",
+      "evidenceDir": "docs/evidence/chat06c02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:47:33.098Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-compatibility/plans/chat06c02-stream-compatibility/status.md",
+        "syncedAt": "2026-10-06T06:48:18.103Z",
+        "stale": false,
+        "ageHours": 0.02169527777777778
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/assistant-stream-compatibility",
+        "head": "9af5cd807835a4db7b003c83e64aeb3f73c20035",
+        "dirty": true,
+        "changedFiles": 2,
+        "observedAt": "2026-10-06T06:48:18.790Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "正在保护旧页面读取，并为新页面提供明确的正文流协商",
+          "next": "旧页面保持正常，新页面可明确开启生成中正文",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/server/src/queries.ts",
+            "apps/server/src/tasks.ts",
+            "apps/server/src/m2-workspace.ts",
+            "apps/server/src/conversations/index.ts",
+            "apps/server/src/assistant-stream-compatibility"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "CHAT06C02",
+        "owner": "runner_owner / gpt-6-astra",
+        "branch": "codex/assistant-stream-compatibility",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T06:47:00.000Z",
+        "updatedRecord": "2026-10-06 06:47:00 UTC",
+        "todos": [
+          {
+            "id": "CHAT06C02-01",
+            "state": "completed",
+            "owner": "runner_owner",
+            "evidence": "claim5eb71a1e-4c8e-4aef-8be5-41eb5c8b0a73 v1/三件套"
+          },
+          {
+            "id": "CHAT06C02-02",
+            "state": "in-progress",
+            "owner": "runner_owner",
+            "evidence": "开始HTTP红例"
+          },
+          {
+            "id": "CHAT06C02-03",
+            "state": "pending",
+            "owner": "runner_owner",
+            "evidence": "可选挂载options已发Lead"
+          },
+          {
+            "id": "CHAT06C02-04",
+            "state": "pending",
+            "owner": "runner_owner / Lead",
+            "evidence": "尚未检查/审查"
+          },
+          {
+            "id": "CHAT06C02-05",
+            "state": "pending",
+            "owner": "Lead / Web",
+            "evidence": "后继公共入口/消费者"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8；依赖合入后9af5cd8",
+        "declaredDirty": "新片段实施中",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "UNKNOWN，尚未运行"
+        },
+        "reviewRecord": "NOT_STARTED",
+        "mainRecord": "未集成",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED",
+        "target": null
+      },
+      "implementationProof": {
+        "target": null,
+        "head": "9af5cd807835a4db7b003c83e64aeb3f73c20035",
+        "scopes": [
+          "apps/server/src/queries.ts",
+          "apps/server/src/tasks.ts",
+          "apps/server/src/m2-workspace.ts",
+          "apps/server/src/conversations/index.ts",
+          "apps/server/src/assistant-stream-compatibility"
+        ],
+        "observedAt": "2026-10-06T06:48:18.820Z",
+        "state": "unknown",
+        "reason": "实现目标需完整 SHA"
+      },
+      "documents": [
+        {
+          "path": "plans/chat06c02-stream-compatibility/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/chat06c02-stream-compatibility/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/chat06c02-stream-compatibility/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/chat06c02/claim-take.json",
+          "title": "回执",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 5
+      },
+      "main": {
+        "record": "未集成",
+        "recordedHead": null,
+        "target": null,
+        "mainHead": "07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a",
+        "scopes": [
+          "apps/server/src/queries.ts",
+          "apps/server/src/tasks.ts",
+          "apps/server/src/m2-workspace.ts",
+          "apps/server/src/conversations/index.ts",
+          "apps/server/src/assistant-stream-compatibility"
+        ],
+        "observedAt": "2026-10-06T06:48:18.790Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      },
+      "assignments": [
+        {
+          "lead": "astra_ultra_execution_lead",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/server/src/assistant-stream-compatibility",
+            "apps/server/src/conversations/index.ts",
+            "apps/server/src/m2-workspace.ts",
+            "apps/server/src/queries.ts",
+            "apps/server/src/tasks.ts",
+            "docs/evidence/chat06c02",
+            "plans/chat06c02-stream-compatibility"
+          ],
+          "state": "active",
+          "branch": "codex/assistant-stream-compatibility",
+          "origin": "new",
+          "taskId": "CHAT06C02",
+          "worker": "runner_owner",
+          "claimId": "5eb71a1e-4c8e-4aef-8be5-41eb5c8b0a73",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-compatibility",
+          "createdAt": "2026-10-06T06:46:26.129Z",
+          "updatedAt": "2026-10-06T06:46:26.129Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "WPF-CHAT06C01",
+      "title": "聊天流式能力兼容",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility",
+      "branch": "codex/web-stream-compatibility",
+      "planDir": "plans/wpf-chat06-compatibility",
+      "evidenceDir": "docs/evidence/wpf-chat06-compatibility",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:46:52.130Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility/plans/wpf-chat06-compatibility/status.md",
+        "syncedAt": "2026-10-06T06:48:18.103Z",
+        "stale": false,
+        "ageHours": 0.0239175
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-stream-compatibility",
+        "head": "b76d52967d1ff730fab851a7cb87e39ade3f7c29",
+        "dirty": true,
+        "changedFiles": 2,
+        "observedAt": "2026-10-06T06:48:18.790Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "正在使聊天兼容中心新增的流式能力标记",
+          "next": "交付兼容读取更新，保留原有回复与排队行为",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/test/conversation-projection.test.ts"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "WPF-CHAT06C01",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/web-stream-compatibility",
+        "branchState": "IN_PROGRESS",
+        "updatedAt": "2026-10-06T06:46:52.000Z",
+        "updatedRecord": "2026-10-06T06:46:52Z",
+        "todos": [
+          {
+            "id": "WPF-CHAT06C01-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[输入](../../docs/evidence/wpf-chat06-compatibility/input-provenance.json)、[技能](../../docs/evidence/wpf-chat06-compatibility/quality.md)"
+          },
+          {
+            "id": "WPF-CHAT06C01-02",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "正在实现仅能力读取兼容，不启用stream"
+          },
+          {
+            "id": "WPF-CHAT06C01-03",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "局部wire矩阵/直接依赖/typecheck待跑"
+          },
+          {
+            "id": "WPF-CHAT06C01-04",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "独立review/聚合/Lead交付待执行"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8 / 受控input3363c14d0ba12f4dc6eabc275355f9132564d01f；后续metadata由Git聚合",
+        "declaredDirty": "输入独立提交clean；当前仅新建canonical/证据，尚未实现reader",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；仅输入before/after hash与claim核验"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "NOT_INTEGRATED",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": null
+      },
+      "implementationProof": {
+        "target": null,
+        "head": "b76d52967d1ff730fab851a7cb87e39ade3f7c29",
+        "scopes": [
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/test/conversation-projection.test.ts"
+        ],
+        "observedAt": "2026-10-06T06:48:18.820Z",
+        "state": "unknown",
+        "reason": "实现目标需完整 SHA"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-chat06-compatibility/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-chat06-compatibility/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-chat06-compatibility/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-chat06-compatibility/take-receipt.json",
+          "title": "receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat06-compatibility/input-provenance.json",
+          "title": "provenance",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat06-compatibility/README.md",
+          "title": "证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-chat06-compatibility/quality.md",
+          "title": "技能",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 4
+      },
+      "main": {
+        "record": "NOT_INTEGRATED",
+        "recordedHead": null,
+        "target": null,
+        "mainHead": "07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a",
+        "scopes": [
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/test/conversation-projection.test.ts"
+        ],
+        "observedAt": "2026-10-06T06:48:18.790Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "docs/evidence/wpf-chat06-compatibility",
+            "plans/wpf-chat06-compatibility"
+          ],
+          "state": "active",
+          "branch": "codex/web-stream-compatibility",
+          "origin": "new",
+          "taskId": "WPF-CHAT06C01",
+          "worker": "workspace_panels_owner",
+          "claimId": "ca26e49b-b750-43a7-8bf7-ce1b987f50c9",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility",
+          "createdAt": "2026-10-06T06:45:09.159Z",
+          "updatedAt": "2026-10-06T06:45:09.159Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    }
+  ],
+  "architectureSha256": "d8348cdb4f8e32d537a87acf865a0a15a4707d588986d47f7a965787402b2126",
+  "architectureMatchesMain": true
+}
