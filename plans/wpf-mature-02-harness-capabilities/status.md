@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:46:26 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:49:58 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / c46f2e0566ff06190ff51242cc1f8225285b12bd（本轮准备批准metadata基线；ca6a源码与prepared不变） |
-| 工作树dirty状态 | 本轮仅准备批准收据/当前archive计账与父路由/状态；0源码/策略/旧raw/input/prepared改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / ec5d4d77e1d50a849d35634eab5b7518df307caa（本轮跨task研究路由基线；ca6a源码与prepared不变） |
+| 工作树dirty状态 | 本轮仅CHAT06P03研究/provision路由、父状态与共享metadata当前archive计账；0产品/诊断源码、旧raw/input/prepared改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -47,6 +47,8 @@
 ## 接口与dashboard
 
 [canonical](../../docs/evidence/wpf-mature-02/interface.md)唯一路由共享owner。本claim v6仅docs/实验/plan三scope，四profile路径已停写并[原子交回](../../docs/evidence/wpf-mature-02/claude-core-profile-handback-receipt.json)，R06/store此前已交回。Lead报告2026-10-06 15:38:16 UTC实际4320快照164来源、CORE live/issues=[]，后续9bdb仅registry；本owner未重采。子进度由其唯一status维护，完整02仍in-progress。
+
+原CHAT06-07 runner prefix SHA小优化已归档到[研究输入](../../docs/evidence/wpf-mature-02/research-inputs.md)，请求Lead受控小树供architecture_read领取CHAT06P03四literal；16项输入329854逻辑B，0本owner源码/测试/运行。CORE/consumer优先；Lead排下一PG槽给CORE，仍等Web RELEASE03 cleanup/release及fresh资源，Node NOT_OPEN。本段不建立该任务第二status。
 
 ## 固定证据与边界
 

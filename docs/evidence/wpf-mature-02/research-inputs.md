@@ -42,3 +42,34 @@ GO经Mika追加，本owner只读核固定`65a9c7b4b577d49ff302581d590b31f3425cd9
 后继沿S01/REQ15原owner/计划，用已有fixture与observe-pg等待/idle/acquisition seam分开计idle observer数量、同task重复observer数、cookie鉴权成本、eventPage实际次数及runner heartbeat；先削减可证重复工作，再按证据讨论pool。必须保留send前撤销复核、cursor/RR一致性、慢读backpressure关闭、订阅/查询结束清理。此次不选新缓存/调度框架，不开压测/PG/模型预算，实际计量等CORE及串行窗口。
 
 [官方node-postgres pool-sizing](https://node-postgres.com/guides/pool-sizing)本轮只读正文：多实例需合计连接并留管理/扩容余量；连接紧张先检查查询速度与数据库负载。此建议不证明Flow应调大或调小pool，也不替代上述固定场景测量。
+
+## CHAT06-07：runner完整prefix SHA的增量计算候选（16:48交接）
+
+GO经Mika授权原CHAT06-07的小优化，挂原CHAT06的CHAT06P03直接subtask，Claude CORE/consumer优先。本页只保存输入与provision请求，不是新大task或该子任务的status。architecture_read在2026-10-06 16:46:56 UTC核main `74bc72f0d32daebc8f89a75528f3d72002b3a29e` clean；accumulator/index/stream.test及新专测没有active writer，claude.ts仍CORE v3持有，禁止碰。原CHAT06 native-assistant-stream树HEAD594e1a9 clean、629/48两claim已released、CHAT06-07 pending；CHAT06P02 c24c是已main/released的store优化，未包含本runner变化。这些是当时只读观察，开工仍需fresh账本。
+
+请Lead sole Git operator提供受控source-only树 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash`，分支`codex/assistant-stream-runner-hash`（本次观察不存在）；worker architecture_read/gpt-6-astra，co-lead mika。候选仅四literal：`apps/runner/src/assistant-stream/accumulator.ts`、新增`apps/runner/src/assistant-stream/accumulator-incremental.test.ts`、`docs/evidence/chat06p03`、`plans/chat06-runner-prefix-hash`。先provision、再新owner fresh原子领取，当前不是领取成功；本M02 owner不写该源码、不创建full checkout、不操作sparse/config。
+
+固定main的accumulator在seal每次重新对已发全文前缀计算UTF8长度和SHA；本owner只读同Git源码确认。候选保留全文`content`和UTF16 `sent`，新增`sentBytes`及每block Hash状态；每次仅将本patch文本update一次，用`copy().digest()`产生完整prefix SHA，绝不是对前次摘要链式hash。空patch、Unicode/codepoint边界、revision/phase/reason/truncated、tools/final顺序保持。index/coalescer、claude.ts、公共contracts只作直接消费者输入，不修改。
+
+最小验收由新owner在限定窗口执行：公共coalescer同一合成输入与旧实现逐事件对照，空文本/多block/Unicode/最终空patch等直接行为；单独量测真实hash.update与byteLength收到的输入字节，不用理论O(n)或wall time冒充已测收益。GO上界≤30s、raw≤2MiB；所有注入frame UTF8累计≤1MiB、总≤256片，包含full assistant及baseline/candidate两次注入；0PG/真实SDK/provider/安装。原断言保留，检查失败交owner；不降低背压、取消或final语义。当前本parent归档0检查/运行，不能借此打断Web RELEASE03或开启Node诊断。
+
+architecture_read给出同固定main的public coalescer最小源闭包10项共48,479B：
+
+| 精确readonly/source输入 | bytes |
+| --- | ---: |
+| apps/runner/src/assistant-stream/accumulator.ts | 9939 |
+| apps/runner/src/assistant-stream/index.ts | 3795 |
+| packages/contracts/src/assistant-stream.ts | 4993 |
+| packages/contracts/src/tasks.ts | 5574 |
+| packages/contracts/src/harnesses.ts | 837 |
+| packages/contracts/src/execution-profiles.ts | 9174 |
+| packages/contracts/src/protocol-task.ts | 211 |
+| packages/contracts/src/engineering.ts | 5378 |
+| packages/contracts/src/engineering-native.ts | 6307 |
+| packages/contracts/src/engineering-profile.ts | 2271 |
+
+另6个readonly配置：根package.json729B、pnpm-lock.yaml279163B、tsconfig.json614B、apps/runner/package.json466B、packages/contracts/package.json168B、vitest.config.ts235B。这16项共329,854逻辑B；Lead provision仍须保留治理文件/新owner四scope，不是只按10条source裁掉metadata。外部仅zod runtime、SDKMessage type-only与既有Vitest4.0.18；无SDK调用/新安装，`@flow`解析本树。
+
+旧stream.test.ts9946B的11项因runnerEventSchema扩成25源，不能称10源闭包可跑完整旧suite。其中🙂×300000为单delta1,200,000B，超过此次总frame窗口，保留断言且本窗NOT_SELECTED。新专测可在同一较小contract limit下对双实现核truncation phase/prefix语义，但不称生产1MiB限额实测。主样本建议128KiB正文及同长full assistant，baseline/candidate分别计注入量，约512KiB加envelope；其余边界共享余量。执行前与逐frame均计量，一次窗口上界不按两实现各重置。真实量测透传原Hash.update/Buffer.byteLength方法，计数器自身计量不混入；只称seal重复前缀扫描减少，不声称append/utf8Prefix整体线性或未经测量的CPU收益。
+
+该闭包是供Lead核定的最小source-only请求，当前未provision/领取/运行；不能因provision复制全库。原Node owned-openssl input/prepared26及旧archive快照不改；本研究文书不作为诊断prepared，只有当前共享metadata快照按诊断archive单计。方法沿已读find-skills/clean-code：保持一个accumulator职责、同public Interface和有界直接验证，不新建哈希框架。

@@ -1,0 +1,64 @@
+{
+  "basis": "current coordination-stage shared metadata snapshot; ec5 review accounting and c46 preparation accounting remain historical fixed snapshots; add self bytes separately",
+  "previousSnapshotTarget": "ec5d4d77e1d50a849d35634eab5b7518df307caa",
+  "limit": 131072,
+  "preparedBytes": 145978,
+  "items": [
+    {
+      "path": "docs/evidence/wpf-mature-02/interface.md",
+      "bytes": 20700,
+      "sha256": "feddffa03141cec69208f6006d3029de267046da809fed18fd69f2dd10678b29"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/archive-preparation.json",
+      "bytes": 1962,
+      "sha256": "517b71691064b911a75faddb2bea3cfe82ab0df2b9ecdfb3fe968bd7c057ae52"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/driver-input.json",
+      "bytes": 14514,
+      "sha256": "72d164fce3c1340d0ac814e08925daa0615067ad0d0633039bf82bc15554a6cb"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/manifest.json",
+      "bytes": 13966,
+      "sha256": "83074b4288af25790b58b632c1ac499ce5f72916ad08d1a4063abecc30d48076"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/preparation-review.json",
+      "bytes": 720,
+      "sha256": "783976bde1ac475991dc4dd6273b344e174a40b42fb6766c84f4d3e3f8116a41"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/review-accounting.json",
+      "bytes": 2534,
+      "sha256": "34f446e034eb62e64b7d7a8dfa1514c4ef0ef571e882c41d803fd32d5b24ee35"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/review-ready.md",
+      "bytes": 2879,
+      "sha256": "9c7defe8e3fc2bb8ed1cf70633b8ea323ce0297db64040d1857a70cd11e37f75"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/plan.md",
+      "bytes": 14398,
+      "sha256": "0ff69360ada69880a3d5d15f005ddeb60e5095c5d127fd6f033b7d84a9471769"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/review.md",
+      "bytes": 9868,
+      "sha256": "dd134d7b5db81a66653ca33ff7bcbbfb837bc024959e96d902ed1567c73f8999"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/status.md",
+      "bytes": 13953,
+      "sha256": "0039ebbc2a13eaef852c258a1c58c6138b2c7e203aef4ccde21d0df1a4b11178"
+    }
+  ],
+  "itemsBytes": 95494,
+  "orderedSha256": "db2527aa1ebfc7514a8a041d0037ab03bdce83bde3364a41f46c53450de63579",
+  "orderedEncoding": "compact UTF-8 JSON items, key order path,bytes,sha256; no newline",
+  "preparedOverlap": [],
+  "excludedSeparateTaskResearch": "research-inputs.md is cross-task coordination, not diagnostic input/output; only its short shared Interface/status route is charged here",
+  "runtimeAuthorization": "NOT_OPEN"
+}
