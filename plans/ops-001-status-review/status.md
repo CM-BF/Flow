@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:42:00 UTC / maina89f42ab |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:48:00 UTC / maina89f42ab |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -124,3 +124,5 @@ GO已授权最多再8棵本队已交付且released树，达到2.75GiB可用或8�
 2026-10-06 15:26:50 UTC：[本批实际结果](../../docs/quality/sparse-worktree-2026-10-06/next-eight-summary.json)保留每树fresh ledger、固定head、全部保留hash、同main blob与八保护树不变；最终操作可用1,132,175,360B，本文落盘前fresh 1127505920B。Web先一次history-only，O14/O15不并跑PG；不把逻辑61,286,021B当physical回收。
 
 15:31:45 UTC：网页A-only已实际失败并正常清理后，F01 fresh1,098,022,912B低于1GiB+32MiB，0测试/0PG；不借旧15:26观察开跑。新后台窄兼容候选只物化约9.3MB源码并借用精确现成依赖链接，个人服务无变；A/B仍需新tuple和实际准入。七树批次已停止，不自动扩大清理名单。
+
+2026-10-06 15:48 UTC：当前共享候选源码仍固定；TUI01F仅物化192个公共客户端/规则文件，source-only 3,051,381B，卷free从1,095,565,312到1,091,002,368B（共享卷观察，不独占归因）。保留1GiB余量，未安装依赖/启动PG/browser；完整服务器fixture闭包等运行准入再增量物化。七树可逆收起批已停止，不因新源码树重复扩大清理；F01/O15及Web仍各自fresh验资源，不复用过去通过值。

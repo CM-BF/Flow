@@ -514,3 +514,9 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 归REQ-08/15/22与原连续目标路径。GO只读固定fb9fe5e7：goals/commands.ts在每个child受理前读取依赖全文/hash并拼入prompt，任一依赖或最终JSON超过16,000 code units即拒绝；这是O01/K03已声明v1界限，不作新回归。多child共享大产物会重复输入，换provider窗口不自动解决。
 
 后继采用明确版本的固定artifactId/version/digest引用及受限原文读取能力，普通child只获本attempt授权依赖，不获planner广泛工具权。原文不截断、不只留摘要、不暗读latest；复用goal input/context与R05扩展点，不让Web/TUI各造状态。0模型验收同一128KiB产物给多个独立child：初始受理/输入不搬全文、显式读取有界、越权/失效拒绝、旧版本仍可追溯，并完成真实下游路径。记录请求/字节/读取次数，不称token节省。旧v1/兼容reader保持，当前O14生产与O15确认优先，不扩大其writer。
+
+### 会话页批量读取后继（2026-10-06 15:48 UTC）
+
+归REQ-15/B02→B03，当前真实兼容发布与Claude消息设置优先。固定a89f的turnPage仍逐条await turnView，各turn分别取task/context/session/preview；已有有界contextReferences可复用，queue已采用批量读。B02/B03旧无context的50turn实测252 SELECT只作为历史基线，不能称为今日所有混合页的查询量；B03只减少全文向应用搬运，没有消除N+1。
+
+下个共享读路径安全点由co-lead与Mika定精确范围，在同一有限页/只读快照内批量投影，保留逐行归属、current attempt、source、digest、版本及unknown门禁，不用同PG连接Promise.all伪并行或删除完整性核验。0模型小例复用历史口径并加入context/附件/新消息设置、无关及旧attempt拒绝；分别记录SQL数、DB解码/HTTP字节、延迟，不因批量化宣称速度或token收益。源码绑定见[研究输入](../../docs/quality/conversation-page-batch-successor-2026-10-06.json)。这只是可执行后继，无新writer/测试/负载，不扩大当前消息设置范围。
