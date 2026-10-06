@@ -11,3 +11,5 @@ X04 五点设计已接受后置：只 registry name@exact semver + expected SHA5
 2026-10-06 06:01:35 UTC 工作段 clean-code：mapper 只负责完整帧映射；store 只接受已被公共报告事务锁定的 task/attempt，不自造鉴权。原始 mapper 5 个行为红例→5/5；HTTP 6 红例均在尚未交接的 runner union 被 400 拒绝，非数据库加载失败，后续沿同公开 API 转绿。发现并修复 title 长度与 UTF-8 截断、工具历史读取无界问题（改读取最新/初始各一行）；没有改授权 tools 或服务。模块 tsc 通过，闭环未通过前不标活动已交付。
 
 2026-10-06 06:09:28 UTC 交付前 clean-code：固定SDK mapper/已有 outbox/报告事务/懒读职责分离；SDK匿名帧不造ID、同源块改变kind也不能重复登记；工具terminal吸收迟到progress，取消未完成仍unknown；父链和session严格归属。直接消费者最初66/67失败已保留，修mapper匿名输入兼容，不改原验收断言。最终8文件85/85、tsc、diff检查通过。数据迁移无删除、参数化SQL、详情独立摘要读；没有新增依赖、工具权限、loop、服务操作或模型调用。Root预读截断边界已写正文/合同注释/后继CHAT05-06；剩余为明确范围限制，独立review尚未开始。
+
+2026-10-06 06:14:29 UTC Review P2修复：接受原migration case只验证no-op的发现；新增独立旧schema专库/真实持久task+attempt+detail，明确首次020前无v20与表，升级后全文行保持、活动空、再次幂等。只跑新增1/1+noEmit，原85与原始输出保留，不改产品实现或共享文件。clean-code核生命周期finally、自有随机DB、迁移入口与可观测断言；没有新模型、依赖或服务操作。

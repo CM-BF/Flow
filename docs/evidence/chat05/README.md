@@ -19,7 +19,7 @@ Each detail retains at most 65,536 UTF-8 bytes, `truncated`, original byte count
 
 - Mapper red→green: [mapper-red.txt](mapper-red.txt), [mapper-green.txt](mapper-green.txt), 5 behavior tests.
 - Initial real HTTP red: [http-red.txt](http-red.txt), 6 expected failures at old runner event union (`invalid_events`). The DB and HTTP server started; this is not a loading failure.
-- Existing-center migration preservation: [migration-check.txt](migration-check.txt), 1 selected pass / 12 not selected. Does not claim all13 ran then.
+- Already-migrated-center idempotency only: [migration-check.txt](migration-check.txt), 1 selected pass / 12 not selected. Review P2 identified that beforeAll had already applied020 before the task was created; this output does **not** prove first upgrade.
 - First closed chain: [closure-first.txt](closure-first.txt), 18/18 (13 HTTP/PG/runtime +5 mapper).
 - Direct consumer initial output: [consumers-first.txt](consumers-first.txt), 66/67; older final-reply fixture contained anonymous assistant frames. Fixed mapper to omit unattributable frames without fabricating UUIDs or changing final-reply semantics. Original fixture/assertions were not changed.
 - [checks-before-terminal-refinement.txt](checks-before-terminal-refinement.txt) preserves an earlier 85/85; final check adds absorbing terminal state for late progress and valid nested result assertions.
@@ -37,3 +37,9 @@ HTTP tests create and drop a random `flow_chat05_<uuid>` on local test PG55432, 
 ## Remaining boundaries
 
 No real model/tool/provider run or Web interaction was authorized or performed. The injected Read frames prove transport/state handling, not permission to execute Read (test adapter tools remain empty). Existing PreToolUse policy, goal graph/knowledge capabilities and native credentials remain unchanged. Cross-session subagent execution is not added; parent links must belong to the same recorded attempt/session. Broad capacity, large raw payload retrieval and partial token streaming remain unverified. Read pages are bounded to100 and omit bodies; no performance claim was made.
+
+## Review P2 correction: first upgrade
+
+The earlier test proved no-op reapplication only; its first-upgrade wording was too broad. Added a standalone `migration.test.ts` with a new random owned database and no createServer/beforeAll: actual legacy migrations1/2 → persisted task/runner/completed attempt/detail → assert versions exactly[1,2] and native table absent → first020 → byte-identical JSON projections of the existing rows, empty native activity page, versions[1,2,20] → second020 leaves rows intact and exactly one version20. The independent fixture pool is closed and its database dropped in finally.
+
+[upgrade-review-fix.txt](upgrade-review-fix.txt): only this new test ran, **1/1**,415ms; [upgrade-typecheck.txt](upgrade-typecheck.txt): noEmit exit0. The prior85 were not rerun or relabeled. Product implementation remains unchanged from57d28e9. New test and documentation delta are bound separately in `upgrade-manifest.json`; independent re-review pending.
