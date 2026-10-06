@@ -70,7 +70,7 @@ export async function reportEvents(pool: Pool, runnerId: string, batch: EventBat
       accepted += 1;
     }
     if (accepted) {
-      await client.query('UPDATE flow.attempts SET last_sequence=$2 WHERE id=$1', [attempt.id, attempt.last_sequence]);
+      await client.query('UPDATE flow.attempts SET last_sequence=$2,last_event_at=clock_timestamp() WHERE id=$1', [attempt.id, attempt.last_sequence]);
       await client.query('UPDATE flow.tasks SET status=$2,cursor=$3,pending_decision=$4,updated_at=clock_timestamp() WHERE id=$1', [task.id, task.status, task.cursor, task.pending_decision]);
       await client.query('UPDATE flow.tasks SET verification_status=$2,latest_artifact_id=$3,latest_artifact_version=$4 WHERE id=$1', [task.id, task.verification_status, task.latest_artifact_id, task.latest_artifact_version]);
       await client.query('UPDATE flow.tasks SET usage=$2 WHERE id=$1', [task.id, task.usage]);

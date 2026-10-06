@@ -7,6 +7,7 @@ import { loadTask } from './tasks.js';
 export interface RunnerRecord { id: string; harnesses: string[]; capacity: number; revoked: boolean }
 export interface AttemptRecord {
   id: string; task_id: string; runner_id: string; owner_version: number; lease_expires_at: Date;
+  last_heartbeat_at: Date | null; last_event_at: Date | null;
   last_sequence: number; native_session_id: string | null; completed_at: Date | null;
 }
 export function attemptView(attempt: AttemptRecord): AttemptView {
@@ -65,7 +66,7 @@ export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownersh
       if (!attempt.completed_at) await client.query("UPDATE flow.tasks SET status='uncertain',updated_at=clock_timestamp() WHERE id=$1 AND status<>'uncertain'", [task.id]);
       return { action: 'stop', leaseExpiresAt: attempt.lease_expires_at.toISOString(), decision: null };
     }
-    const updated = await client.query<AttemptRecord>("UPDATE flow.attempts SET lease_expires_at=clock_timestamp()+$2 * interval '1 millisecond' WHERE id=$1 RETURNING *", [attempt.id, leaseMs]);
+    const updated = await client.query<AttemptRecord>("UPDATE flow.attempts SET last_heartbeat_at=clock_timestamp(),lease_expires_at=clock_timestamp()+$2 * interval '1 millisecond' WHERE id=$1 RETURNING *", [attempt.id, leaseMs]);
     const answer = task.pending_decision ? undefined : (await client.query<{ id: string; answer: DecisionAnswer['answer'] }>('SELECT id,answer FROM flow.decisions WHERE task_id=$1 AND answer IS NOT NULL ORDER BY answered_at DESC LIMIT 1', [task.id])).rows[0];
     return { action: task.status === 'cancel_requested' ? 'cancel' : 'continue', leaseExpiresAt: updated.rows[0]!.lease_expires_at.toISOString(), decision: answer ? { decisionId: answer.id, answer: answer.answer } : null };
   });
