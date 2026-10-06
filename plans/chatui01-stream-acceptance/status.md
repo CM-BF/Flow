@@ -8,13 +8,13 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance |
 | Branch | codex/stream-ui-acceptance |
-| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1（实现target；metadata HEAD由Git核验） |
+| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / f80fb6606fbcba942fc8741f56b2f2c6f285f2df（实现target；metadata HEAD由Git核验） |
 | 工作树dirty状态 | 提交前核验clean；本次仅metadata同步，最终HEAD由Git核验 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1；9个guard/checkpoint行为检查（含5条真实网络），1条实际App最终旅程；[checks](../../docs/evidence/chatui01/run-2026-10-06T08-51-11.833Z-0552c8b9/checks.json) |
+| 检查状态 | PASSED f80fb6606fbcba942fc8741f56b2f2c6f285f2df；9个guard/checkpoint行为检查（含5条真实网络），1条实际App最终旅程；[checks](../../docs/evidence/chatui01/run-2026-10-06T08-51-11.833Z-0552c8b9/checks.json) |
 | 已集成main状态 / HEAD | 未集成；main核验7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 |
-| 实现目标 | 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1 |
+| 实现目标 | f80fb6606fbcba942fc8741f56b2f2c6f285f2df |
 | 实现范围 | experiments/stream-ui-acceptance, plans/chatui01-stream-acceptance, docs/evidence/chatui01 |
 | 阶段 | M2 |
 | 优先级 | 2 |
