@@ -26,4 +26,4 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/execution-p
 - [浅色390](profile-light-390.png) / [深色390](profile-dark-390.png)
 - [锁定配置390](profile-locked-dark-390.png)
 
-已知展示限制：已审模块的锁定块常显UUID/digest，390px占据较多聊天高度；root已实际观察并交后继模块紧凑化队列。本片无CSS/模块写权，不声称这项体验优化完成。构建仍有两个>500kB警告，不声称整体性能预算达标。main集成与真实provider验证待Lead，0新增付费调用。
+已知展示限制：已审模块的锁定块常显UUID/digest，390px占据较多聊天高度；root已实际观察并交后继模块紧凑化队列。本片无CSS/模块写权，不声称这项体验优化完成。构建仍有两个>500kB警告，不声称整体性能预算达标。main14c61已实核含本实现且8paths相同，见[集成观察](main-integration.json)。真实provider验证仍不属本fixture证据，0新增付费调用。

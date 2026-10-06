@@ -1,6 +1,6 @@
 # WPF-PROFILEI01 — 聊天执行选项接线
 
-创建：2026-10-06 05:00 UTC；更新：05:12 UTC。状态：completed（分支交付；main集成另记）。唯一owner：workspace_panels_owner / gpt-6-astra ultra。
+创建：2026-10-06 05:00 UTC；更新：05:18 UTC。状态：completed（已实核main14c61集成）。唯一owner：workspace_panels_owner / gpt-6-astra ultra。
 
 目标：在已审官方Thread的新会话composer实际使用PROFILE01选择器，让用户选择整份已发布执行配置；CREATE提交即锁，原key/pin/requested在未知回执恢复中不变，下一草稿独立。保持Arc紧凑侧栏/左右面板/现主题与插件入口，不做自由模型/effort/thinking/access组合，不实现队列UI。
 
