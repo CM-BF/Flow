@@ -9,3 +9,5 @@ architecture_read / gpt-6-astra 于 2026-10-06 21:26:29 UTC 独审 storage/index
 仍需：最终focused strict、旧目录动态SQL/公开task API真实PG证据及独立验收；生产loader/真实native恢复/新目录/conversations/Web/TUI为后继，0真实模型。历史失败raw与exitCode纠正保留，不视空模板通过。
 
 3ccae21a2697c9a95189bac2ed01e1e17bd2d939：Mika delta SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，post-terminal真实预取/sharedfixture提取/6项公开API行为与403修复无P1/P2。PG fixture准备另两P2（durable自指resultPersisted、unexpected pool错误未纳失败）已窄修待固定复核；无新测试/PG执行。
+
+3c33ca4a18824a55b2a08f541fcd61ca66aa4d37：Mika只读复核两PG helper P2 CLOSED，FIXTURE_SOURCE_REVIEW_APPROVED / VALIDATION_PENDING。后续新增CREATE ACK未知保留与窗口身份字段，以及单次外部记录入口尚待固定审。final focused strict 2026-10-06 21:41:56–58 UTC实际exit0/2.417s/raw0B，自有TMP同identity/absent；不执行任何PG。

@@ -28,7 +28,8 @@ export class ContinuityCenterFixture {
   private roots: { path: string; dev?: number; ino?: number }[] = [];
   readonly runners: { stop: AbortController; done: Promise<void> }[] = [];
   readonly releases: (() => void)[] = [];
-  readonly facts: Record<string, unknown> = { database: this.database, nativeProcesses: 0, providerCalls: 0,
+  readonly facts: Record<string, unknown> = { database: this.database, window: process.env.FLOW_C02_WINDOW,
+    sourceHead: process.env.FLOW_C02_EXECUTION_HEAD, nativeProcesses: 0, providerCalls: 0,
     configuredConnectionLimit: 14, primaryPhases: [], cleanupErrors: [], httpLimit: 256 };
   pool!: Pool;
   owner!: FlowClient;
@@ -115,7 +116,8 @@ export class ContinuityCenterFixture {
     })()));
     const poolClosed = startupSettled && (!this.pool || await settle('pool', () => this.pool.end()));
     let databaseAbsent = !this.creationRequested, databaseIdentityConfirmed = false, connections: number | null = null;
-    if (startupSettled && this.admin && this.creationRequested) await settle('database-identity', async () => {
+    if (this.creationRequested && !this.creationAcknowledged) errors.push('create-ack-unknown');
+    if (startupSettled && this.admin && this.creationAcknowledged) await settle('database-identity', async () => {
       const current = await this.readIdentity();
       if (!current) { databaseAbsent = true; return; }
       databaseIdentityConfirmed = this.creationAcknowledged && this.identity !== undefined && current.oid === this.identity.oid && current.marker === this.identity.marker;

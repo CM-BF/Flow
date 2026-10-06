@@ -1,0 +1,221 @@
+"""One explicitly opened C02 public-API validation, using the existing owned subprocess pattern.
+No import-time execution. Unknown lifecycle retains the exact owned temp root and DB receipt.
+"""
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import selectors
+import shutil
+import signal
+import stat
+import subprocess
+import tempfile
+import time
+
+WT = Path(__file__).resolve().parents[3]
+EVIDENCE = WT / 'docs/evidence/mature02c02'
+NODE = '/opt/homebrew/opt/node@24/bin/node'
+RAW_LIMIT = 32768
+
+
+def save(path, value):
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+    with os.fdopen(fd, 'w') as stream:
+        json.dump(value, stream, indent=2)
+        stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
+
+
+def read_json(path, maximum):
+    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+    try:
+        info = os.fstat(fd)
+        if not stat.S_ISREG(info.st_mode) or info.st_size > maximum:
+            raise ValueError('RECEIPT_BOUND')
+        value = os.read(fd, maximum + 1)
+        if len(value) != info.st_size:
+            raise ValueError('RECEIPT_CHANGED')
+        return json.loads(value), {'bytes': len(value), 'sha256': hashlib.sha256(value).hexdigest(), 'dev': info.st_dev, 'ino': info.st_ino}
+    finally:
+        os.close(fd)
+
+
+def group_state(pid):
+    try: os.killpg(pid, 0); return 'present'
+    except ProcessLookupError: return 'absent'
+    except OSError: return 'unknown'
+
+
+def stop_group(child):
+    actions = []
+    for action in [signal.SIGTERM, signal.SIGKILL]:
+        state = group_state(child.pid)
+        if state != 'present': break
+        try: os.killpg(child.pid, action); actions.append(int(action))
+        except ProcessLookupError: break
+        except OSError: return {'state': 'unknown', 'signals': actions}
+        try: child.wait(timeout=.5)
+        except subprocess.TimeoutExpired: pass
+    return {'state': group_state(child.pid), 'signals': actions}
+
+
+def temp_sample(root, identity):
+    current = root.lstat()
+    if not stat.S_ISDIR(current.st_mode) or (current.st_dev, current.st_ino) != identity:
+        raise ValueError('TEMP_IDENTITY')
+    pending, count, size = [(root, 0)], 0, 0
+    while pending:
+        directory, depth = pending.pop()
+        if depth > 8: raise ValueError('TEMP_DEPTH')
+        with os.scandir(directory) as entries:
+            for entry in entries:
+                count += 1
+                if count > 4096: raise ValueError('TEMP_ENTRIES')
+                info = entry.stat(follow_symlinks=False)
+                if stat.S_ISDIR(info.st_mode): pending.append((Path(entry.path), depth + 1))
+                elif stat.S_ISREG(info.st_mode): size += info.st_size
+                else: raise ValueError('TEMP_SPECIAL')
+    return {'entries': count, 'logicalBytes': size, 'activePeak': 'unknown'}
+
+
+def main():
+    start = time.monotonic(); at = datetime.datetime.now(datetime.timezone.utc)
+    window = os.environ.get('FLOW_C02_WINDOW', '')
+    if os.environ.get('FLOW_C02_PG_WINDOW') != 'reviewed' or not re.fullmatch(r'[A-Za-z0-9-]{1,64}', window): raise SystemExit('NOT_OPEN')
+    if not os.environ.get('FLOW_C02_PG_ADMIN_URL'): raise SystemExit('ADMIN_CONFIGURATION_MISSING')
+    expected = os.environ.get('FLOW_C02_EXECUTION_HEAD', '')
+    head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=WT, text=True, timeout=3).strip()
+    if head != expected or subprocess.check_output(['git', 'status', '--porcelain'], cwd=WT, timeout=3): raise SystemExit('SOURCE_NOT_FIXED')
+    for row in json.loads((EVIDENCE / 'pg-source-manifest.json').read_text())['items']:
+        value = (WT / row['path']).read_bytes()
+        if len(value) != row['bytes'] or hashlib.sha256(value).hexdigest() != row['sha256']: raise SystemExit('INPUT_CHANGED')
+    for row in json.loads((EVIDENCE / 'dependency-link-request.json').read_text())['links']:
+        link = WT / row['destination']
+        value = (link / 'package.json').read_bytes()
+        if str(link.resolve()) != row['target'] or len(value) != row['packageJsonBytes'] or hashlib.sha256(value).hexdigest() != row['packageJsonSha256']: raise SystemExit('DEPENDENCY_CHANGED')
+    previous = json.loads((EVIDENCE / 'claim-amend-receipt.json').read_text())['claim']
+    ledger = json.loads(subprocess.check_output([NODE, '/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/coordination/cli.mjs', 'list'], cwd=WT, timeout=3, stderr=subprocess.DEVNULL))
+    current = next((row for row in ledger['claims'] if row['claimId'] == previous['claimId']), None)
+    if ledger['state'] != 'available' or current is None or any(current[key] != previous[key] for key in ['claimId', 'version', 'state', 'role', 'taskId', 'lead', 'worker', 'worktree', 'branch', 'scope']): raise SystemExit('CLAIM_UNKNOWN')
+    prefix = str(EVIDENCE / ('pg-' + window))
+    suffixes = ['.result.json', '.stdout', '.stderr', '.fixture.json', '.vitest.json', '.reservation.json', '.child.json']
+    suffixes += ['.fixture.json' + suffix for suffix in ['.reservation.json', '.create-request.json', '.database.json']]
+    for suffix in suffixes:
+        try: Path(prefix + suffix).lstat()
+        except FileNotFoundError: continue
+        raise SystemExit('OUTPUT_EXISTS_NO_RETRY')
+    fs = os.statvfs(WT); free = fs.f_bavail * fs.f_frsize
+    if free < 1207959552: raise SystemExit('RESOURCE_NOT_RUN')
+    record = {'window': window, 'sourceHead': head, 'startedAt': at.isoformat(), 'freeBefore': free, 'errors': [], 'actualCodex': 0, 'provider': 0}
+    errors = record['errors']; root = None; child = None; streams = {}; eof = set(); selector = selectors.DefaultSelector(); observed = 0
+    try:
+        root = Path(tempfile.mkdtemp(prefix='flow-c02-pg-window-'))
+        record['tempRoot'] = str(root); info = root.lstat(); identity = (info.st_dev, info.st_ino); record['tempIdentity'] = list(identity)
+        save(prefix + '.reservation.json', record)
+        env = os.environ.copy()
+        for name in ['NODE_OPTIONS', 'NODE_COMPILE_CACHE']: env.pop(name, None)
+        epoch = int(at.timestamp() * 1000)
+        env.update({'TMPDIR': str(root), 'FLOW_C02_TEST_CACHE': str(root / 'vite'), 'NODE_DISABLE_COMPILE_CACHE': '1',
+                    'FLOW_C02_PG_RECEIPT': prefix + '.fixture.json', 'FLOW_C02_PG_WORK_UNTIL': str(epoch + 60000),
+                    'FLOW_C02_PG_CLEANUP_UNTIL': str(epoch + 110000)})
+        command = [NODE, '/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs', 'run',
+                   '--config', 'docs/evidence/mature02c02/vitest.pg.config.mjs', '--configLoader', 'native',
+                   '--reporter=json', '--outputFile=' + prefix + '.vitest.json']
+        for channel in ['stdout', 'stderr']:
+            streams[channel] = os.fdopen(os.open(prefix + '.' + channel, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600), 'wb')
+        if time.monotonic() - start >= 10: raise ValueError('PREFLIGHT_DEADLINE')
+        child = subprocess.Popen(command, cwd=WT, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+        record['pid'] = child.pid
+        save(prefix + '.child.json', {'pid': child.pid, 'pgid': child.pid, 'at': datetime.datetime.now(datetime.timezone.utc).isoformat()})
+        for channel in ['stdout', 'stderr']:
+            pipe = getattr(child, channel); os.set_blocking(pipe.fileno(), False); selector.register(pipe, selectors.EVENT_READ, channel)
+        while child.poll() is None or selector.get_map():
+            if time.monotonic() - start >= 110: errors.append('WINDOW_DEADLINE'); break
+            for key, _ in selector.select(.05):
+                chunk = os.read(key.fileobj.fileno(), 16384)
+                if not chunk: eof.add(key.data); selector.unregister(key.fileobj); key.fileobj.close(); continue
+                before = observed; observed += len(chunk); streams[key.data].write(chunk[:max(0, RAW_LIMIT - before)])
+                if observed > RAW_LIMIT: errors.append('RAW_LIMIT'); break
+            if errors: break
+    except BaseException as error:
+        errors.append(type(error).__name__)
+    finally:
+        try: process = stop_group(child) if child else {'state': 'not-started', 'signals': []}
+        except Exception:
+            process = {'state': 'unknown', 'signals': []}; errors.append('PROCESS_CLEANUP_UNKNOWN')
+        if child:
+            try: record['exitCode'] = child.wait(timeout=.5)
+            except subprocess.TimeoutExpired: record['exitCode'] = None
+        # Only already-available pipe bytes are retained during the bounded close; no second execution.
+        drain_until = min(start + 113, time.monotonic() + .5)
+        try:
+            while selector.get_map() and time.monotonic() < drain_until:
+                for key, _ in selector.select(.01):
+                    chunk = os.read(key.fileobj.fileno(), 16384)
+                    if not chunk: eof.add(key.data); selector.unregister(key.fileobj); key.fileobj.close(); continue
+                    before = observed; observed += len(chunk); streams[key.data].write(chunk[:max(0, RAW_LIMIT - before)])
+        except Exception: errors.append('STDIO_DRAIN_UNKNOWN')
+        for key in list(selector.get_map().values()):
+            try: key.fileobj.close()
+            except OSError: errors.append('PIPE_CLOSE_UNKNOWN')
+        try: selector.close()
+        except OSError: errors.append('SELECTOR_CLOSE_UNKNOWN')
+        for stream in streams.values():
+            try: stream.flush(); os.fsync(stream.fileno()); stream.close()
+            except OSError: errors.append('CAPTURE_CLOSE_UNKNOWN')
+        record.update({'processGroup': process, 'stdioEof': sorted(eof), 'observedRawBytes': observed, 'rawComplete': observed <= RAW_LIMIT and eof == {'stdout', 'stderr'}})
+        if child and (process['state'] != 'absent' or eof != {'stdout', 'stderr'}): errors.append('PROCESS_OR_STDIO_UNKNOWN')
+        fixture = None
+        try:
+            fixture, record['fixtureBinding'] = read_json(prefix + '.fixture.json', 8192)
+            tests, record['vitestBinding'] = read_json(prefix + '.vitest.json', 32768)
+            reservation, record['databaseReservationBinding'] = read_json(prefix + '.fixture.json.reservation.json', 8192)
+            owned, record['databaseIdentityBinding'] = read_json(prefix + '.fixture.json.database.json', 8192)
+            if not isinstance(fixture, dict) or fixture.get('window') != window or fixture.get('sourceHead') != head: raise ValueError('FIXTURE_BINDING')
+            if fixture.get('database') != reservation.get('database') or owned.get('database') != reservation.get('database') or owned.get('creationAcknowledged') is not True or owned.get('identity', {}).get('marker') != reservation.get('marker') or fixture.get('databaseIdentity') != owned.get('identity'): raise ValueError('DATABASE_BINDING')
+            if not isinstance(tests, dict) or not isinstance(tests.get('testResults'), list): raise ValueError('TEST_RESULT_SHAPE')
+            assertions = [case for suite in tests['testResults'] for case in suite['assertionResults']]
+            record['selection'] = {'selected': len(assertions), 'passed': sum(case['status'] == 'passed' for case in assertions)}
+            if tests.get('success') is not True or len(assertions) != 6 or any(case['status'] != 'passed' for case in assertions): errors.append('TESTS_FAILED_OR_SELECTION')
+            if fixture.get('cleanupComplete') is not True or fixture.get('cleanupErrors') or fixture.get('adminError') or fixture.get('poolError'): errors.append('FIXTURE_FAILURE')
+            if not isinstance(fixture.get('databaseLogicalBytes'), int) or fixture['databaseLogicalBytes'] > 64 * 1024 * 1024: errors.append('DATABASE_SAMPLE_BOUND')
+        except (OSError, ValueError, KeyError, TypeError, AttributeError): errors.append('RESULT_UNKNOWN')
+        record['captures'] = {}
+        for channel in streams:
+            try:
+                fd = os.open(prefix + '.' + channel, os.O_RDONLY | os.O_NOFOLLOW)
+                try:
+                    info = os.fstat(fd)
+                    if not stat.S_ISREG(info.st_mode) or info.st_size > RAW_LIMIT: raise ValueError('RAW_IDENTITY')
+                    value = os.read(fd, RAW_LIMIT + 1)
+                    if len(value) != info.st_size: raise ValueError('RAW_CHANGED')
+                    record['captures'][channel] = {'bytes': len(value), 'sha256': hashlib.sha256(value).hexdigest(), 'dev': info.st_dev, 'ino': info.st_ino}
+                finally: os.close(fd)
+            except (OSError, ValueError): errors.append('RAW_IDENTITY_UNKNOWN')
+        record['retainedTempRoot'] = str(root) if root else None
+        if root and child and process['state'] == 'absent' and eof == {'stdout', 'stderr'} and fixture and fixture.get('cleanupComplete') is True:
+            try:
+                record['tempFinalSample'] = temp_sample(root, identity)
+                if record['tempFinalSample']['logicalBytes'] > 32 * 1024 * 1024: errors.append('TEMP_SAMPLE_BOUND')
+                current = root.lstat()
+                if not stat.S_ISDIR(current.st_mode) or (current.st_dev, current.st_ino) != identity: raise ValueError('TEMP_IDENTITY_CHANGED')
+                shutil.rmtree(root)
+                if os.path.lexists(root): raise ValueError('ROOT_STILL_PRESENT')
+                record['retainedTempRoot'] = None
+            except (OSError, ValueError): errors.append('TEMP_CLEANUP_UNKNOWN')
+        record['finishedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat(); record['elapsedSeconds'] = time.monotonic() - start
+        record['phase'] = 'before-final-receipt'
+        record['checksPassed'] = child is not None and record.get('exitCode') == 0 and not errors and record['rawComplete'] and record['retainedTempRoot'] is None and record['elapsedSeconds'] < 120
+        receipt_written = False
+        try: save(prefix + '.result.json', record); receipt_written = True
+        except OSError: errors.append('FINAL_RECEIPT_UNKNOWN')
+        delivery = {'finalReceiptWritten': receipt_written, 'elapsedSeconds': time.monotonic() - start}
+        delivery['success'] = record['checksPassed'] and receipt_written and not errors and delivery['elapsedSeconds'] < 120
+        print(json.dumps({'result': record, 'delivery': delivery}), flush=True)
+    raise SystemExit(0 if delivery['success'] else 1)
+
+
+if __name__ == '__main__':
+    main()
