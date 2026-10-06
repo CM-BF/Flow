@@ -16,3 +16,5 @@
 专用flow_chat01 DB只在确认不存在后创建，使用独占advisory锁、动态HTTP端口，关闭server/boss/pools并drop本次创建DB；runner临时目录已删除。4320与其他任务DB不受影响。
 
 限制：首片段独立migrate/register seam，生产挂载/client/Web由Lead；exact v1 artifact兼容不是typed assistant-final协议，也不证明自然语言完成。CHAT02 helper正在独立交付。无实时delta、无queue/steer、无用户选模型/thinking/tools、无跨host恢复。conversation revision只受理CAS，异步结果需另读task/source版本。未运行产品全套、浏览器或真实模型。
+
+固定源码target `2d3bb61b35318f999c9f0f336bb3f443418bb5dc`；[源码与日志hash](source-manifest.json)。2026-10-06 03:41 UTC 实测flow_chat01剩余DB数为0。该target之后metadata不改变源码或原始测试输出，独立review尚未开始。

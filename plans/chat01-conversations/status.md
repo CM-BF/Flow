@@ -6,13 +6,13 @@
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center |
 | Branch | codex/conversation-center |
-| 工作基线 / HEAD | 6bb380b900f17bfbf808a95e7d9c0313c4991922；合同4c2408e4db3595879f6471cb5fffccadec975b3d；本片段代码待当前commit固定 |
-| 工作树 dirty 状态 | 当前仅本claim允许的实现/测试/证据；提交后复核 |
+| 工作基线 / HEAD | 6bb380b900f17bfbf808a95e7d9c0313c4991922；合同4c2408e4db3595879f6471cb5fffccadec975b3d；实现2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
+| 工作树 dirty 状态 | 实现target提交后clean；本次仅metadata收尾 |
 | 工作分支状态 | delivered（首中心片段，待独立review） |
-| 检查状态 | PASSED；14/14真实PG/HTTP（12.23s）+全库typecheck；target当前提交后记录 |
+| 检查状态 | PASSED；14/14真实PG/HTTP（12.23s）+全库typecheck；target 2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
 | Review | NOT_STARTED |
 | 已集成 main 状态 / HEAD | 本任务未集成；输入base尚非main能力 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | 2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
 | 实现范围 | packages/contracts/src/conversations.ts, apps/server/src/conversations/, packages/storage/migrations/007-conversations.sql |
 | 阶段 | M2 |
 | 优先级 | 1 |
