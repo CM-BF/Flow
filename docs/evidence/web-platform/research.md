@@ -284,3 +284,6 @@ root转主线中心2d3bb61b35318f999c9f0f336bb3f443418bb5dc已独审APPROVED（1
 本段clean-code：管理current正文曾留I01/PERF旧claim和“接口待交/空槽后派发”等历史语句；本次直接更新正文而非仅追加，明确六stub/七来源中两项待注册、独立scope与review边界。03:43:21.506Z CLI实核管理v2 active；无产品改动、无全库测试，首c075review不自动覆盖后续增补。
 
 root 03:44 UTC再次核官方测量语义（时间采用工具03:44:48，纠正消息最初取整03:46）：[PerformanceEventTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming) duration按8ms量化、最低阈值16ms，wheel不在事件范围；本探针wheel→scroll→rAF单独自采，不称EventTiming或INP。[LongTask](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming)仅>=50ms，0样本不等于零延迟。[performance.memory](https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory)非标准且已弃用；本报告实际采用CDP JSHeapUsedSize但没有强制GC，也不能推断retained heap或无泄漏。已将解释交PERF唯一owner，原始1/16仅root只读复核，正式结论待128和固定报告。没有新增功能或测试。
+
+
+03:47来源验证完成：收到主线39源登记结果后，管理者仅一次GET4320，generatedAt2026-10-06T03:46:41.801Z。CHAT/PERF02各1 live source，绝对worktree、branch/liveGit、planDir、唯一claim v1和worker匹配，unregistered=[]；当前19activewriterclaims逐字相等/父子前缀两两0重叠（不是agent数/逻辑重复保证）。[完整关键字段与审计输入](chat-perf-source-verification.json)。CHAT human完整/issues空/target未知；PERF02 human完整但唯一parse issue缺工作分支状态，root已交owner补。证据保留真实issue不美化为全绿，纯来源注册不替代实现review。

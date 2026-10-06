@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:44 UTC / 最近管理者main实核为03:17的3773db5；后续主线输入另记来源 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:47 UTC / 最近管理者main实核为03:17的3773db5；后续主线输入另记来源 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `5c3eb7626ecb26705d62817cc0b86f1940f2ba97`（本次文档停点前实核；旧review仍绑定c075bb5） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `ef59ef8ff66000f307af2baedfaaafd3133b6b18`（本次文档停点前实核；旧review仍绑定c075bb5） |
 | 工作树dirty状态 | 仅本管理范围的计划/来源验证/预览交接文档pending，不自指未来提交 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CHAT受控公共输入已就绪并实施；PERF02固定窗口候选正在测量；两新来源登记待主线批次 |
-| 下一可用交付 | CHAT官方Thread持续对话首预览；PERF02三规模结果及独立审查；两新状态卡实际核验 |
+| 当前产出 | CHAT受控公共输入已就绪并实施；PERF02三规模测量结束待报告审查；两新来源已实采注册 |
+| 下一可用交付 | CHAT官方Thread持续对话首预览；PERF02固定报告与独立审查；其标准分支字段补齐 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -41,8 +41,8 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 | 当前工作 | 已核事实与下一步 |
 | --- | --- |
 | [WPF-CHAT01](conversation-core/plan.md) | 新tree web-conversations / claim08259c1d v1精确16scope；共享受控输入a3b9及canonical c72e02就绪，blockerNONE，唯一owner实施持续conversation projection/outbox/官方Thread。当前未交固定实现或UI approval |
-| [WPF-PERF02](performance-optimization/plan.md) | web-activity-window / claimd36cd583 v1精确8scope；候选a87f64f48a3b7e8d03429ab0673c210076a2df0d，metadata e07c34c5f98657b390e8fdc44bb2d85f9360a56d。作者13局部tests/typecheck/8productionbrowser通过；03:40:14.216Z经root协调正式矩阵开始，测量证据写入中，未获review/优化结论 |
-| Dashboard来源 | 两项canonical已交主线registry；03:40:34 owner实际检查PERF02尚无状态卡。领取可见不等于status已聚合。等登记回执后单次实采，不高频轮询 |
+| [WPF-PERF02](performance-optimization/plan.md) | web-activity-window / claimd36cd583 v1精确8scope；候选a87f64f48a3b7e8d03429ab0673c210076a2df0d，metadata e07c34c5f98657b390e8fdc44bb2d85f9360a56d。作者13局部tests/typecheck/8productionbrowser通过；03:40:14.216Z～03:45:25.937Z正式矩阵已完成，owner退出0；测量证据整理中，未获最终review/优化结论 |
+| Dashboard来源 | 03:46:41.801Z管理者实采39源，两新任务各唯一live source与claim v1/worker/branch匹配，unregistered=[]；CHAT issues=[]，PERF02只缺标准工作分支状态，已交其owner补。完整证据见下 |
 | 多Lead边界 | Mika独占B01后台投影/feed字节/历史性能及下一X02中心registry；本队不写后端。PERF02只改受领窗口接缝，CHAT只改会话与App受领文件，无字面scope重叠 |
 
 ## 已交付输入与仍开放范围
@@ -64,7 +64,7 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 
 03:43:21.506Z管理者续工前CLI实核协调available、管理claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，两授权目录未变。最新跨owner实际转交为M02v3、PERF01v2、PERF02v1、I01v2、CHATv1；原样receipts与路径见[集成清单](../../docs/evidence/web-platform/integration-checklist.md)。不使用旧回执覆盖当前version。
 
-历史source闭环：root03:12五源完整；管理者03:17确认30源保留全部原17；root03:37:38实采34源/20writerclaims/字面同路径与父子前缀0重叠，CHAT/PERF02仍unregistered。两canonical c72e02/c779f86已发ExecutionLead桥接登记，等待其注册批次，不能把take可见当最终聚合完成。六个管理准备目录均已转stub，不重复注册。
+历史source闭环：root03:12五源完整；管理者03:17确认30源保留全部原17；root03:37:38采样时两新源仍unregistered；主线登记后管理者03:46:41.801Z单次实采39源、CHAT/PERF02各唯一live source，worktree/branch/planDir/claim/worker全一致，unregistered=[]，19 active writer claims literal同/父子路径0重叠。见[本次来源与范围证据](../../docs/evidence/web-platform/chat-perf-source-verification.json)。PERF02仅缺工作分支状态待owner补，不能声称该采样全部issues空；CHAT target UNKNOWN符合未完成整体实现事实。六个准备目录均stub，不重复注册。
 
 [用户保留产品预览](http://127.0.0.1:49922/)仍为已审M02 HTTP fixture，workspace_panels_owner保留session17885；[I01预览](http://127.0.0.1:55049/)为App集成fixture，session79831。不会暗换用户49922或将固定结果宣称真实模型回应；动态端口恢复法在集成清单。工程4320/D05架构tab归主线唯一owner，我方不控制服务。
 

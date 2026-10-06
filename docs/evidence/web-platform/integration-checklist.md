@@ -1,10 +1,10 @@
 # Web 平台跨 owner 集成清单
 
-2026-10-06 03:44 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
+2026-10-06 03:47 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
 
 ## Dashboard来源登记与核验
 
-root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段完整，PERF claim匹配；管理者03:17:14.324Z专项确认30源包含旧8c57登记的17原ID。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理nested现六个转交stub不注册第二源；下表前五项已实采，新增两项已交Lead待其注册批次，不能合称全部已聚合。
+root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段完整，PERF claim匹配；管理者03:17:14.324Z专项确认30源包含旧8c57登记的17原ID。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理nested现六个转交stub不注册第二源；新增两项已于03:46:41.801Z管理者单次实采完成来源登记：39源、唯一live/claim匹配、unregistered空；PERF02缺工作分支状态这一owner元数据问题尚待补齐，不能声称全字段零issues。
 
 | Task | Worktree | Branch | planDir | evidenceDir |
 | --- | --- | --- | --- | --- |
@@ -13,10 +13,10 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-P01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host | codex/web-plugin-host | plans/wpf-p01-plugin-host | docs/evidence/wpf-p01 |
 | WPF-I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration | codex/web-plugin-integration | plans/wpf-i01-plugin-integration | docs/evidence/wpf-i01 |
 | WPF-PERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance | codex/web-performance | plans/wpf-perf01-web-performance | docs/evidence/wpf-perf01 |
-| WPF-PERF02（待注册核验） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window | codex/web-activity-window | plans/wpf-perf02-activity-window | docs/evidence/wpf-perf02 |
-| WPF-CHAT01（待注册核验） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
+| WPF-PERF02 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window | codex/web-activity-window | plans/wpf-perf02-activity-window | docs/evidence/wpf-perf02 |
+| WPF-CHAT01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
 
-WPF-D01仅协作，无第二dashboard实现；五源已经实际聚合，未知/未验证项仍来自各owner。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
+WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
 D03由主线单owner负责紧凑中性视觉及当前阶段/当前工作/下一交付/真正决策、历史下钻、实现review与metadata区分、main与旧SHA区分。WPF-D01只协作需求与来源，不另派实现、不切换4320。每个唯一owner已收到8字段规范，由各自更新，管理者不代写。
 
@@ -68,7 +68,7 @@ WPF-M02早期草案曾在管理树`plans/web-platform/unified-workspace/status.m
 
 已只读核验独立tree与三件套，管理nested草案已转移交stub。登记条目：id `WPF-P01`、title `可信Web插件host`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host`、branch `codex/web-plugin-host`、planDir `plans/wpf-p01-plugin-host`、evidenceDir `docs/evidence/wpf-p01`。初始化108f完整main+已审W01 a22ae38，merge0673653ac6b2da8259bc8ca40d9ae723da2ce875；typed接口v1已与消费owner冻结；整体最终实现6ce3ba0 / metadata2910ebc获root APPROVED，PH-R1～4关闭。WPF-I01已经D04v1受领独立新树实际挂载，hostowner保留plugins回修职责，不改App或旧Thread/workspace目录。
 
-D03此前已实证聚合五个平级owner源；新增CHAT/PERF02待主线registry批次后单次核验，现六个nested移交入口不登记。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。
+D03此前五源与本次新增CHAT/PERF02均实证聚合，六个nested移交入口不登记；注册不是产品验收通过。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。
 
 
 ## X01父范围保持开放
@@ -201,3 +201,5 @@ CHAT唯一canonical实际建立：/Users/citrine/Projects/AgentHarness/Flow-work
 固定4054c67cb8a58eaed167df2a82a2d51249afccdc，plugin-registry树的packages/contracts/src/plugins.ts及docs/evidence/x02/interface.md。首片段支持注册、config/grants、精确version选择与operations；runtimeStatus始终unavailable，digest/license为operator声明。configure全替换、select-version清config/grants，Web未来不能显示已安装/已启用/完整rollback成功。请求32KiB、响应64KiB、page40；historical revision与current pointer分开，默认grants空。此为compat调查，不是X02 approval。
 
 REQ40归属不变：Mika写中心模块，ExecutionLead写共享client/export/CLI；待其固定消费入口后Web另领取，不打断CHAT。I01本地可信Settings不等于中心持久插件管理。
+
+03:46:41.801Z注册闭环已完成：两新source各仅一条且live，claim08259c1d/d36cd583均v1、matchesSource=true、唯一worker与实树一致；unregisteredAssignments为空，19 active writer claims逐字路径/父子前缀0重叠。PERF02工作分支状态字段缺失由其owner修，管理者不代写。历史待注册段落保留当时时序，不作为当前结论。
