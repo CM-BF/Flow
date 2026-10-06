@@ -40,3 +40,5 @@ Owner在合并此文档基线后立即核验实际branch/head并接管本status�
 ## 当前工作段 / dashboard 同步
 
 命令、JSON、幂等键、watch超时与重连已实现；11条CLI HTTP测试与4条公共测试、typecheck通过，实现提交 `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`，独立review未完成。此 status 是唯一手填进度源，等待 D01 聚合展示。
+
+2026-10-06 01:14 UTC review修复：原target647d57b无blocking，普通命令中断P2已修复；新增真实process回归，16/16 + typecheck通过。main未集成；下一步复审新commit。
