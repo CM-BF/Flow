@@ -1,0 +1,135 @@
+{
+  "fixedCommit": "0da869f7bad98771177472539b5a192365c15117",
+  "observedAt": "2026-10-06T23:40:02.478674+00:00",
+  "state": "READ_ONLY_SOURCE_FACTS_NOT_RUN",
+  "pins": [
+    {
+      "path": "apps/server/src/evidence.ts",
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550",
+      "bytes": 4145
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3",
+      "bytes": 12580
+    },
+    {
+      "path": "apps/server/src/engineering/index.ts",
+      "sha256": "32540a49df91dd2aef4e12c7c4c525aba215b2bf17a3331a02617b8088850574",
+      "bytes": 2469
+    },
+    {
+      "path": "apps/server/src/engineering/profile.ts",
+      "sha256": "e5a8ec78d2f5dc89236ab9baa64084dce8eaa3036d0c7e74d6cf36812ca85dfc",
+      "bytes": 3810
+    },
+    {
+      "path": "apps/server/src/engineering/native-profile.ts",
+      "sha256": "ec6360e5df4870fd2f9eb4eb8f6a23f9b9916ef4b3e4c6e0e8be5b4bca874569",
+      "bytes": 3712
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "sha256": "70546ca36bf70a83a8584c638a8f273180cc9b30490726ad5cb4bb853254c7cc",
+      "bytes": 4249
+    },
+    {
+      "path": "apps/server/src/engineering/native-verification.ts",
+      "sha256": "8ee043fffa72fe441dab970cfc4fa9ea97733cf8fcacfe33d57c921f65d24bc2",
+      "bytes": 4211
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02",
+      "bytes": 8529
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+      "bytes": 14578
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e",
+      "bytes": 6621
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "sha256": "90acdc1b0c34b242f31db8ba4ba99a3d0998b3cf00f01a127dfb56794bb06d9d",
+      "bytes": 13611
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "bytes": 2477
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "bytes": 4568
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.ts",
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "bytes": 1435
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "bytes": 6695
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43",
+      "bytes": 4272
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "bytes": 12205
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "sha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270",
+      "bytes": 5521
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "sha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54",
+      "bytes": 3858
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8",
+      "bytes": 4507
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "bytes": 1064
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef",
+      "bytes": 757
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "sha256": "d55636b7160917ec377e02fc0c862a9b881398a46489507dc09685d92f89488a",
+      "bytes": 4520
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5",
+      "bytes": 6307
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "bytes": 41828
+    }
+  ],
+  "reportSha256": "1a8b55606b5e0827c8f87169c8b4aeb3b2b96717732d3a1cc3d961e7429c6a3b",
+  "runtimeExecuted": false,
+  "projectModified": false
+}
