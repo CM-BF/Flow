@@ -44,8 +44,8 @@ export async function wake(boss: PgBoss, client: PoolClient, taskId: string): Pr
   const id = await boss.send('flow-wake', { taskId }, { db: { executeSql: (text, values) => client.query(text, values) } });
   if (!id) throw new Error('Task wake-up was not persisted.');
 }
-export async function acceptTask(client: PoolClient, boss: PgBoss, input: TaskSubmission): Promise<TaskSummary> {
-  await assertTaskExecutionProfile(client, input);
+export async function acceptTask(client: PoolClient, boss: PgBoss, input: TaskSubmission, purpose: 'ordinary' | 'goal-tools' = 'ordinary'): Promise<TaskSummary> {
+  await assertTaskExecutionProfile(client, input, purpose);
   if (input.resumeSessionId) {
     const session = await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2', [input.resumeSessionId, input.harness]);
     if (!session.rowCount) throw new HttpError(409, 'unknown_session', 'This session is not recorded for this harness.');

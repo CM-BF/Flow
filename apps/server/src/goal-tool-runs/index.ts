@@ -12,9 +12,11 @@ import { admit, audit, getRun, revoke } from './store.js';
 export async function migrateGoalToolRuns(pool: Pool) {
   await transaction(pool, async client => {
     await client.query("SELECT pg_advisory_xact_lock(hashtextextended('flow-migrations',0))");
-    if ((await client.query('SELECT 1 FROM flow.migrations WHERE version=12')).rowCount) return;
-    await client.query(await readFile(new URL('../../../../packages/storage/migrations/012-goal-tool-runs.sql', import.meta.url), 'utf8'));
-    await client.query('INSERT INTO flow.migrations(version) VALUES(12)');
+    for (const [version, file] of [[12, '012-goal-tool-runs.sql'], [13, '013-goal-native-mode.sql']] as const) {
+      if ((await client.query('SELECT 1 FROM flow.migrations WHERE version=$1', [version])).rowCount) continue;
+      await client.query(await readFile(new URL(`../../../../packages/storage/migrations/${file}`, import.meta.url), 'utf8'));
+      await client.query('INSERT INTO flow.migrations(version) VALUES($1)', [version]);
+    }
   });
 }
 export function parse<T>(schema: { safeParse(input: unknown): { success: true; data: T } | { success: false } }, value: unknown): T {
