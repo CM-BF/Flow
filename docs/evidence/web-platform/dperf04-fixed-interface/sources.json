@@ -1,0 +1,132 @@
+{
+  "at": "2026-10-06T15:09:55.337533+00:00",
+  "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "head": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 4034,
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 5238,
+      "sha256": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/documents.mjs",
+      "bytes": 2917,
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 21146,
+      "sha256": "76695b62e820b645ccf2dc764e61bf4c2638060d8416537174f3e4cca059e6e5",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 18589,
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "bytes": 4181,
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 13880,
+      "sha256": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.test.mjs",
+      "bytes": 8816,
+      "sha256": "9d1bed77edf9d6847f6a4733b6ea70d2f8a8ffed6272e7a96eebbd7a437bcb87",
+      "currentEqualsFixed": true
+    }
+  ],
+  "managementInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dashboard-summary-readonly-design/report.md",
+      "bytes": 4975,
+      "sha256": "2f471ffb14ba8021c4068403a39a21b39bc730dbf7c2a60f60bc228b895d68f2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dashboard-summary-readonly-design/sources.json",
+      "bytes": 1476,
+      "sha256": "b6f8f5f6df839aa81d0a16c9af4466662dbece2e715fda069db162578461af51"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dperf04-summary-detail-proposal.json",
+      "bytes": 12319,
+      "sha256": "e6778a2a358c5232d6b2e4ad0a6b919ccd499e1d30f7a7b8699378a151a0343f"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "scope": "read-only source audit; no project imports/tests/API/PG/browser/claim/source writes",
+  "execution": {
+    "productImport": false,
+    "tests": false,
+    "PG": false,
+    "browser": false,
+    "serviceRequests": false
+  }
+}

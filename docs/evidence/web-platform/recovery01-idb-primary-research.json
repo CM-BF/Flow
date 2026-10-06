@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-06",
+  "kind": "Primary-document research; no product execution or implementation",
+  "sources": [
+    {
+      "url": "https://w3c.github.io/IndexedDB/#transaction-durability-hint",
+      "title": "W3C Indexed Database API 3.0",
+      "finding": "Strict asks the browser to verify storage writes before successful commit. A request success event is distinct from transaction completion. Durability is a hint with a performance and power cost."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist",
+      "title": "MDN StorageManager.persist",
+      "finding": "Persistent bucket permission is a separate request that the browser can decline; it is not evidence of transaction completion."
+    }
+  ],
+  "applications": [
+    "Preserve strict transaction completion before command dispatch; no silent relaxed-mode fallback or automatic resending.",
+    "Actual browser tests should observe durability and complete/abort behavior. Controlled event-port results do not prove browser or physical durability.",
+    "Measure pending draft writes and flush latency under slow storage before considering safe coalescing; preserve handoff, CAS and generation barriers.",
+    "A future persistence/capability UI can be planned under an existing plugin contribution; do not add automatic prompts, a new slot or scope in the current implementation."
+  ],
+  "notClaimed": [
+    "No new runtime measurements",
+    "No absolute permanence guarantee",
+    "No new claim, installation or service"
+  ]
+}

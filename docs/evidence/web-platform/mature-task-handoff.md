@@ -1,5 +1,7 @@
 # 成熟聊天大task来源与登记队列
 
+**当前资源交接：A-only 精确准入门槛，尚未重新占窗口。** Lead正按已审可逆方法逐树处理最多四棵已释放工程树；尚无清理完成/窗口交回本组的实际回执，本组不轮询空间。history启动须 **1,107,296,256B（1GiB+32MiB）**，运行停止阈值 **1,090,519,040B（1GiB+16MiB）**；依据Lead前次单库12,360,727B加有界保留证据8MiB，**0Chrome/build、TSX cache关闭**。PG/WAL/OS实际峰未知，不称硬quota。单次60秒含20秒清理、累计180秒仍使用0；432b两源只读审查通过，1.839676秒noEmit仅绑定前版997d。**只有Lead新实际清理/窗口回执后才一次fresh gate；目前仍0A/PG/Chrome，无history red或部署请求依据。** [唯一当前资源记录](resource-window-current.json)。
+
 ## SVC05 窗口已正式关闭；D06 原源继续（本段取代窗口暂冻状态）
 
 Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f5330db2ab** clean，集成冻结解除。服务owner receipt 12:41:29.467Z 为后台 **362/v15 accepting**，Web仍 **8d8/caa1/v2**，原端口与会话保留，operator query/tab reload均0。[只读receipt引用与哈希](svc05-runtime-window-closed.json)。本组没有补服务/API/个人页面采样；[旧窗口通知](svc05-runtime-window-notice.json)仅历史。
@@ -16,12 +18,18 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 前一Lead F01窗口[原清理事实](f01-plugin-window-cleanup-1457.json)与本组Recovery2.540秒direct清理都保历史。新RELEASE A-onlysource32/16MiB gate已[root限定批准](release03-source-review-432b-root.json)，[panels同432b独立delta复核](release03-source-review-432b-peer/report.md)亦为限定源码APPROVED/0blocking；多份源审不替代一次实跑或资源准入。原60秒含20秒清理/累计180秒/8MiB不重置；准入失败不构成运行或发布许可。
 
+**Recovery未来浏览器预检仅源码修正，不开启运行窗口**：[固定2498原报告](recovery01-browser-preflight-2498-root.json) / [原TODO映射与fresh21权属](recovery01-browser-preflight-intake.json)。RB1硬90s/启动前process ownership、RB2 unknown CREATE清理误报、RB3 cache漏计与资源监控、RB4完整材料与page-only auth-loss真实App覆盖，交唯一panels原21范围修fixture/browser/记录；0imports/runtime/install/额外types，22cases仍未跑。没有实际泄漏/超时/丢稿复现，不扩大为第三层task。PG/Chrome总窗口保持已交回Lead；资源失败不当362 history红，尚无实际失败可据此请求backend部署。
+
 **登记已闭合，页面事实按Lead归因**：[fixed d679 registry双来源核](registry-d679-recovery-release03-observation.json)确认RECOVERY01与RELEASE03指向原owner各自canonical。Lead实际4320于14:51:18为161来源，两项live/parser0/人读完整；管理只读Git registry，没有GET/刷新/页面复采，不再写等待首次登记。
 
 **当前两候选**：Recovery **4ba79ddbb9368dab8c75fca72fbd2425526f242f** normalpush/HEAD=origin/clean已核；19预备source hash与fixed/current同，[实际20/20受控direct基线](recovery01-direct-prepared-4ba/direct-first.json)已PASS，2.540秒/原30秒，余27.460秒，cleanup fulfilled/errors[]；log330B，tmp采样最大2,689,356B（清理前9227B不是峰值），采样最低free1,109,147,648B。runner final01650330…核cleanup失败不PASS及config/sandboxhash，fresh原21scope/19hash/free准入均有[原记录](recovery01-direct-prepared-4ba/management-admission.json)。4ba当时types6.058s/0、累计40.603/60、余19.397保历史；[root4ba源码复核](recovery01-direct-prepared-4ba/root-source-review.json)确认f13相关源码修正，新增R4-1保存commit遇namespace=null时CAS版本未前进P2仍open，基线不覆盖它。owner后继固定 **249894321f22763ec4801af8bd9c2ef0e0e3c36b** 已pushclean，R4-1与同原id terminal binding两case共22源码；[root两源delta审查](recovery01-source-review-2498-root.json)仅源码APPROVED/0blocking，尚未行为执行。最新noEmit累计 **52.814/60秒、余7.186秒**；direct原余27.460秒不变。此刻A准入失败/总窗口已交回，第二direct同样不启动。正式feature review仍NOT_STARTED，mockIDB不冒真实浏览器。
 
-RELEASE03 **997d731a98c837ccfce61712d2c7318ae13fb3d2 / metadata900fc59ae46cc0c05c563da2d82710393963fe87** 双端clean，A-only入口已固定，[panels独立只读核](release03-source-review-997d/report.md)限定脚本结构APPROVED/0blocking，资源/DBownership/进程清理/真实source-artifact绑定/失败禁止绿回执均按源码核；0执行且不授writer。root记录997d noEmit1.839676秒PASS，仍不是实际兼容。后继432b资源guard/import前监控delta已固定/root小审通过，但本次fresh准入失败，当前以顶部NOT_RUN为准。GO明确先exact362两条attachment-only/mixed实际HTTP history，任一red保两raw+清理，B/Chrome NOT_RUN并交原backend合法operator最小修复；A全绿且B未准入也封存，不自动续跑或发布。原累计180秒/8MiB/1专DB/0provider不重置；运行需脚本固定审/必要types及真实PG增量、约1GiB收尾fresh准入，无虚构开始时刻。
+RELEASE03前一源码阶段 **997d731a98c837ccfce61712d2c7318ae13fb3d2 / metadata900fc59ae46cc0c05c563da2d82710393963fe87** 当时双端clean，A-only入口已固定，[panels独立只读核](release03-source-review-997d/report.md)限定脚本结构APPROVED/0blocking，资源/DBownership/进程清理/真实source-artifact绑定/失败禁止绿回执均按源码核；0执行且不授writer。root记录997d noEmit1.839676秒PASS，仍不是实际兼容。后继432b资源guard/import前监控delta已固定/root小审通过，但本次fresh准入失败，当前以顶部NOT_RUN为准。GO明确先exact362两条attachment-only/mixed实际HTTP history，任一red保两raw+清理，B/Chrome NOT_RUN并交原backend合法operator最小修复；A全绿且B未准入也封存，不自动续跑或发布。原累计180秒/8MiB/1专DB/0provider不重置；运行需脚本固定审/必要types及真实PG增量、约1GiB收尾fresh准入，无虚构开始时刻。
 
+
+**DPERF04固定Interface消歧已接收，仍无实施claim**：[W01原报告](dperf04-fixed-interface/report.md)及[14固定源清单](dperf04-fixed-interface/sources.json)已原字节归档，管理核fixed/current同、c837 clean。summary/detail/assignments三类读取分离；作者声明与现场proof不同，旧snapshot/document兼容、全文/unknown claims可达；每个await的成功/失败及同task换文档都核generation。旧task-links browser转真实新route，共用原60秒后置预算；该same-task迟到文档缺口纳现app.js九范围，不新task。root认可为已批方案实施消歧，非take/执行/性能通过；w01只读完成，RELEASE恢复窗口优先。[原九literal方案](dperf04-summary-detail-proposal.json)。
+
+RELEASE03当前metadata **e212c2de2289a3d3bc3bc173b75050fb4d214270** 已正常push/local=remote/clean核，两源码仍432b，只有源码批准与NOT_RUN证据收口；无gate或运行。[管理来源核验](management-review-resource-intake.json)。
 
 **DPERF04源码已由Lead准备，尚未领取/实施（低于Recovery/可用预览）**：[原结构批准九literal](dperf04-summary-detail-proposal.json)与[Lead唯一Gitowner原provision回执](dperf04-source-provision.json)。`dashboard-summary-detail / codex/dashboard-summary-detail` fixedc837，561files/du5484KiB；[管理14:37独立核](release03-dperf04-provision-management-audit.json)branch/HEAD/clean一致。worktree-local sparse、sharedconfig未由本组改；w01先RELEASE03，不提前占DPERFwriter。后续仍fresh九literal COMMITTED后才实施，Node30s/browser未来60s及摘要/现场proof/实时PGclaim分离约束不变；无新4320采样。
 

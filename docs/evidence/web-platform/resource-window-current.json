@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T15:08:27.448892+00:00",
+  "recordedAt": "2026-10-06T15:14:21.657004+00:00",
   "source": "Root relay of new Lead inbound; no direct outbound, no personal/4320 sample",
   "state": "WINDOW_RETURNED_TO_LEAD_A_NOT_RUN_RESOURCE",
   "release03": {
@@ -9,14 +9,14 @@
     "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
     "futureBudget": "<=180s total including20s cleanup,1PG+1Chrome,8MiB evidence",
     "startConditions": [
-      "Fixedsourceguardreview and necessarytypes",
-      "Dependencyreadonlyidentity",
-      "FreshactualPGincrement and approximately1GiBcleanupspace",
-      "Recoverydirectwindowclosed"
+      "Lead actual cleanup completed and shared PG/Chrome window returned to this group",
+      "Fresh original four-scope claim, fixed source target and seventeen read-only dependency identities",
+      "Fresh available bytes >=1107296256; monitor stop <=1090519040",
+      "One history-only60s including20s cleanup; no parallel group test"
     ],
     "startTime": null,
     "candidate": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
-    "metadata": "46395a526ae597958cf3ba801af39e1dbb65d70e",
+    "metadata": "e212c2de2289a3d3bc3bc173b75050fb4d214270",
     "order": "No activegroupPGwindow;returnedtoLead",
     "aOnly": "First exact362 attachment-only andmixed HTTP reportEvents/contextHistory, preserve bothraw andcleanup;anyred =>B/ChromeNOT_RUN,noallgreenSVCimport; A green withBunadmitted remainssealed, noautocontinue",
     "review": "Root432bsourceguardAPPROVED0blocking;notruntimeapproval",
@@ -29,16 +29,33 @@
       "fixedSourceMatches": 2,
       "readOnlyDependencyMatches": 17,
       "previousRuntimeMs": 0
+    },
+    "historyAdmission": {
+      "minimumFreeBytes": 1107296256,
+      "stopAtOrBelowFreeBytes": 1090519040,
+      "meaning": "1GiB+32MiB start / 1GiB+16MiB stop",
+      "singleRunMs": 60000,
+      "cleanupReserveMs": 20000,
+      "cumulativeBudgetMs": 180000,
+      "usedRuntimeMs": 0,
+      "retainedEvidenceMaxBytes": 8388608,
+      "basis": {
+        "previousLeadFactoryDatabaseBytes": 12360727,
+        "Chrome": 0,
+        "build": 0,
+        "TSXCache": "disabled"
+      },
+      "limits": "Prior single DB size plus bounded retained evidence is admission rationale, not PG/WAL/OS peak proof or hard quota. Source-only 432b reviews pass; noEmit 1.839676s belongs to prior 997d. No actual A history outcome exists."
     }
   },
   "recoveryDirect": {
     "state": "First4ba20/20completed;second249894prepared/source-deltaapproved,NOT_RUN;spacebelowitsstarttoo",
     "existingBudget": "One fixed test/onefork,30s total incl>=5s cleanup each,own/tmp8MiB/log2MiB,start>=1GiB+32MiB/stop<=1GiB+16MiB",
     "startConditions": [
-      "CompleteboundedRELEASE997d readonlyreview",
-      "Finalrunner/config/sandboxhash",
-      "Freshoriginal21claim and ownsourcefixedhash",
-      "Freshstart>=1GiB+32MiB,stop<=1GiB+16MiB,sharedwindow"
+      "New material shared-window/resource notice",
+      "Final runner/config/sandbox hash and matching fixed source",
+      "Fresh original21 claim and >=1GiB+32MiB available",
+      "No parallel RELEASE A or external PG/Chrome window; remaining total27.460s"
     ],
     "checkpoint": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
     "result": {
@@ -71,7 +88,7 @@
     "startedAt": "2026-10-06T14:57:16.264Z",
     "endedAt": "2026-10-06T14:57:18.336Z",
     "actual": "factory1/1 perLead, singleownedDB12360727B,connections=[]/remaining=[],rootRemoved=true,0provider",
-    "reservation": "Lead says no furtherPG/Chrome until thisgroup returns window",
+    "reservation": "Historical temporary reservation ended when this group returned the total window after failed A admission. No current group reservation.",
     "limits": "Old1,122,291,712B is not freshadmission or reservedcapacity"
   },
   "registry": "main d679444c4bed52bbd53d38f4944f914b30fbbd92 fixedregistry matches bothcanonical;Lead actual4320 14:51:18 has161sources/live/parser0/humancomplete;manager noUI/API",
@@ -87,5 +104,13 @@
     "at": "2026-10-06T15:08:27.448892+00:00",
     "reason": "FreshA-onlyfreebelowthreshold;no gate,noPG/Chrome/no runtime;notidleholding",
     "next": "A orRecoverytargeted require new materialwindow/resourcefactsandfreshadmission,notbusy polling"
+  },
+  "leadPreparationNotice": {
+    "source": "New Lead inbound via root; not independently sampled",
+    "action": "Lead evaluating up to four released engineering worktrees with approved reversible sparse method and per-tree space observations",
+    "completionReceived": false,
+    "windowReturnedToThisGroup": false,
+    "personalUnchanged": true,
+    "next": "Wait for actual cleanup/window return notice, then exactly one fresh claim/source/dependencies/space gate; do not poll now"
   }
 }

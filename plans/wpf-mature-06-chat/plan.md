@@ -83,3 +83,9 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 
 
 原06性能后继补充（固定4ba源码假设，未实验）：[draft写入路径研究](../../docs/evidence/web-platform/recovery01-draft-write-cost-readonly.json)记录逐次changed串行enqueue、事务getAll与全局预算复核。未来先用受控慢存储/连续输入测待保存队列与flush延迟，再决定是否合并尚未启动的draft写；保handoff/CAS/generation/原key屏障。没有CPU/p95或退化结论，不扩当前Recovery21、不增加writer或本轮测试。
+
+
+06-04未来真实浏览器验收预检（固定2498，原子task不变）：[root四项源码发现与原TODO映射](../../docs/evidence/web-platform/recovery01-browser-preflight-intake.json)要求在正式运行前闭合90秒含清理的父进程硬截止/启动前所有权、unknown CREATE及非空remaining准确报未清理、cache独立scratch与递归8MiB证据/实时空间门槛；完整材料草稿及不reload认证丢失旅程须实际覆盖或保pending。RB1–3沿RECOVERY01-05，RB4沿03/05；原04 direct20/20与后继22未跑分别保留，不由direct冒真实App。原owner只在21范围source-only修，无新增task/scope/验证预算、0额外types/import/runtime/install。
+
+
+原06-04持久化与性能边界的[primary-doc研究](../../docs/evidence/web-platform/recovery01-idb-primary-research.json)区分strict durability hint、单request成功、transaction complete及StorageManager.persist权限：继续以严格事务complete作为发送屏障，不为性能默改relaxed，也不自动弹持久权限。未来先测慢存储pending writes/flush延迟，再判断安全合并；真实browser的durability/abort仍须实测，受控event-port不证明物理持久性。无新增slot/claim/安装/本轮产品执行。

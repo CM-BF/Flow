@@ -13,5 +13,10 @@
     "Do not merge startedwrites or mutatefrozencommand",
     "No CPU/p95/regressionmeasurement or benefitclaim",
     "No additionalrun or currentimplementation scope"
-  ]
+  ],
+  "primaryDocumentBoundary": {
+    "source": "recovery01-idb-primary-research.json",
+    "kind": "Root primary-document research, no runtime",
+    "application": "Preserve strict transaction complete before dispatch; request success and persistent bucket permission are separate. Measure slow-storage queue/flush before coalescing; actual browser durability/abort remains unverified. No automatic persistence prompt, new slot or scope."
+  }
 }

@@ -67,12 +67,12 @@
   "resourceAndGit": {
     "sourceCheckoutBudgetBytes": 20971520,
     "estimate": "44 existing files667441 logical bytes;4096-round761856. New small plan/evidence only, no historical evidence tree. Not index/physical/working-set or available-space proof.",
-    "provision": "SOURCE_REQUEST to Lead sole Git owner: confirm unused path/branch, provision fixedc837 isolated sparse checkout with only listed source/rules set <=20MiB budget, check actual branch/HEAD/clean; manager then fresh exact9 take before any source/plan/evidence edit. Do not create a WT or shared config in this management turn.",
+    "provision": "Lead sole Git owner has provided fixed c837 sparse WT; actual receipt and management audit below. No shared config change by this group. Fresh nine-scope claim still required before implementation.",
     "dependencies": "No node_modules in source budget. Default ledger import deferred; injected observer direct tests avoid pg loading. Actual server ledger query still requires existing real pg, failure explicitly unknown, no install licensed.",
-    "resourceGate": "No build/PG/Chrome/install now. Small source provisioning still requires Lead resource decision, <=20MiB actual checkout allowance and no interference with Recovery; current below1GiB observations are not waived."
+    "resourceGate": "No new build/PG/Chrome/install permission. SOURCE_PROVISIONED is not runtime admission; latest shared window and dated resource facts are in resource-window-current.json."
   },
   "notDone": [
-    "No take or worktree provision",
+    "No take or implementation; worktree has been provisioned by Lead",
     "No source edit or test/experiment",
     "No performance improvement measured",
     "No deployment/service request",
@@ -123,12 +123,12 @@
   },
   "ownerScheduling": "When RELEASE03 resource conditions recover, W01 pauses this task at a safe point and returns to the higher-priority usable preview. Never write two feature implementations concurrently in one owner window.",
   "sourceRequest": {
-    "state": "PENDING_LEAD_GIT_OWNER",
+    "state": "SOURCE_PROVISIONED_AWAITING_OWNER_WINDOW_AND_FRESH_CLAIM",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
     "branch": "codex/dashboard-summary-detail",
     "fixedBase": "c837b5dccaea429b0112d1c7e0c752c41334204a",
     "sourceSet": "dperf04-source-scope-preflight.json trackedSourceCheckoutEstimate.selection",
-    "actualProvisionReceipt": null,
+    "actualProvisionReceipt": "dperf04-source-provision.json",
     "claimReceipt": null,
     "canonicalNotCreated": "plans/wpf-dperf04-summary-detail/status.md"
   },
@@ -148,5 +148,22 @@
     "proof": "Beforeselecteddetailactualproofloads, explicitlyshow现场核验未加载;neverpaintdeclarationsverifiedgreen",
     "full": "Selecteddetailusesoriginalfixedproofresult;sourceCurrent/status-sourcebasis remainsdistinctfromfullcurrent",
     "scope": "Existing9literal/sametask,no newclaim,behindRecovery/RELEASE"
+  },
+  "fixedInterfaceClarification": {
+    "source": "dperf04-fixed-interface/report.md",
+    "manifest": "dperf04-fixed-interface/sources.json",
+    "fixed": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+    "managementAudit": "management-review-resource-intake.json",
+    "state": "READ_ONLY_CLARIFICATION_ACCEPTED_WITHIN_APPROVED_NINE_SCOPES",
+    "routes": [
+      "GET /api/summary",
+      "GET /api/task?task=<registered ID>",
+      "GET /api/assignments"
+    ],
+    "semantics": "Summary sourceCurrent and links basis=status-source are declarations. Actual selected-task/main proof remains distinct; preserve old snapshot/document shape/security. All tasks, unknown and claims remain reachable. Assignment async failure stays unknown; no take authority from UI.",
+    "generations": "Separate summary, detail, assignment and document generations; check every await including failures, same-task document changes, close/reopen and A-to-B-to-A. No completed proof cache.",
+    "budget": "Existing Node30s and shared future browser60s only; task-links browser moves to actual new routes within the same 60s, no extra old-suite allowance.",
+    "newFinding": "Old same-task plan/review document response/error can overwrite newer selection; fix within existing app.js scope, no separate task.",
+    "notDone": "No claim, implementation, runtime or performance result"
   }
 }

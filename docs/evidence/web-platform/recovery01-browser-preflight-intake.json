@@ -1,0 +1,135 @@
+{
+  "at": "2026-10-06T15:11:00.942600+00:00",
+  "source": "recovery01-browser-preflight-2498-root.json",
+  "scope": "Existing WPF-RECOVERY01 directly under WPF-MATURE-06;no thirdtask,claim unchanged",
+  "fixed": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+  "mapping": [
+    {
+      "finding": "RB-1/P1",
+      "existingAcceptance": "RECOVERY01-05 / MATURE06-04 realbrowser lifecycle",
+      "requirement": "Own detachedworker/Chrome process groups before startup; hard cumulative90s incl cleanup, durableattempt/DBownership,failedcleanupblocksrepeat"
+    },
+    {
+      "finding": "RB-2/P1",
+      "existingAcceptance": "RECOVERY01-05 / MATURE06-04 cleanup",
+      "requirement": "CREATE attempted/confirmed/marker separate; unknownack/nonemptyremaining =>incomplete, noDROPfromnamealone"
+    },
+    {
+      "finding": "RB-3/P1",
+      "existingAcceptance": "RECOVERY01-05 resource/evidence",
+      "requirement": "Uniqueown scratch forcache, recursive retained8MiB accounting andlivefree/process/wiremonitor, scratchpeak separatelydeclared/cleanupverified"
+    },
+    {
+      "finding": "RB-4/P2",
+      "existingAcceptance": "RECOVERY01-03 completeApp integration +05 actualbrowsercoverage",
+      "requirement": "Explicitmatrix forcompleteknowledge/attachment/profile/steerdraft andoriginalkey/body;page-onlyauthlosswithoutreload/failedsave. Addhighestriskwithinoriginal90s orkeepitemspending"
+    }
+  ],
+  "review": "Formalfeature review remainsNOT_STARTED; preparedfutureharness sourcefindings, not runtime leak/overshoot/data-loss reproduction",
+  "directBoundary": "Prior4ba20/20 unchanged;2498second22cases NOT_RUN,27.46sremaining",
+  "managementFreshClaim": {
+    "observedAt": "2026-10-06T15:10:00.223Z",
+    "claims": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/evidence/web-platform",
+          "plans/web-platform",
+          "plans/wpf-mature-01-visual",
+          "plans/wpf-mature-03-attachments",
+          "plans/wpf-mature-05-workspace",
+          "plans/wpf-mature-06-chat"
+        ],
+        "state": "active",
+        "branch": "codex/web-platform-management",
+        "origin": "migration",
+        "taskId": "WPF-001",
+        "worker": "external_web_d01_owner",
+        "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+        "version": 3,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "createdAt": "2026-10-06T02:48:43.295Z",
+        "updatedAt": "2026-10-06T08:56:20.186Z",
+        "observedAt": "2026-10-06T02:48:42.000Z",
+        "needsVerification": false
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/attachments/controller.ts",
+          "apps/web/src/connection/session.ts",
+          "apps/web/src/conversation-context/controller.ts",
+          "apps/web/src/conversation-steering/SteeringControl.tsx",
+          "apps/web/src/conversation-steering/control.ts",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/plugin-integration/attachments.tsx",
+          "apps/web/src/plugin-integration/knowledge.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/plugin-integration/steering.tsx",
+          "apps/web/src/recovery/binding.tsx",
+          "apps/web/src/recovery/journal.ts",
+          "apps/web/test/conversation-recovery.browser.ts",
+          "apps/web/test/conversation-recovery.fixture.ts",
+          "apps/web/test/conversation-recovery.test.ts",
+          "docs/evidence/wpf-conversation-recovery",
+          "plans/wpf-conversation-recovery"
+        ],
+        "state": "active",
+        "branch": "codex/web-conversation-recovery",
+        "origin": "new",
+        "taskId": "WPF-RECOVERY01",
+        "worker": "workspace_panels_owner",
+        "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+        "version": 4,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "createdAt": "2026-10-06T13:46:08.213Z",
+        "updatedAt": "2026-10-06T14:05:53.395Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/test/web-current-preview.browser.ts",
+          "apps/web/test/web-current-preview.fixture.ts",
+          "docs/evidence/wpf-release03",
+          "plans/wpf-release03-current-preview"
+        ],
+        "state": "active",
+        "branch": "codex/web-current-preview-compatibility",
+        "origin": "new",
+        "taskId": "WPF-RELEASE03",
+        "worker": "w01_owner",
+        "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+        "version": 3,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+        "createdAt": "2026-10-06T14:37:56.939Z",
+        "updatedAt": "2026-10-06T14:47:08.816Z",
+        "observedAt": null,
+        "needsVerification": false
+      }
+    ],
+    "overlap": []
+  },
+  "fixedHashChecks": [
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "fixedHashMatches": true
+    }
+  ],
+  "instruction": "Solepanelsoriginal21 source-onlyfixture/browser/records,0imports/runtime/install/extratypes;existingtotalwindowreturnedtoLead"
+}
