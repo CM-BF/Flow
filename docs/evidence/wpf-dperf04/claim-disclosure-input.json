@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-06T15:24:21.767323+00:00",
+  "reviewer": "root",
+  "fixed": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "scope": "Existing DPERF04 assignment reachability acceptance refinement; no new task, claim, schema or implementation",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 18589,
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5"
+    }
+  ],
+  "finding": {
+    "id": "DPERF04-UNREGISTERED-DISCLOSURE",
+    "priority": "P2 source UX gap; not runtime overlap evidence",
+    "location": "public/app.js:91-100 compared with registered detail:171-177",
+    "fact": "Registered task detail shows claimId/version, lead/worker, state/role, branch/worktree, exact scope, origin/observation/update, stale-still-occupied and next owner. Unregistered claim cards show only taskId, lead/worker, state/branch/worktree; there is no registered taskButton or claim disclosure, so exact occupied scope and claim version cannot be inspected through that UI path. aggregate returns full claim data already.",
+    "impact": "An active claim whose status source is not registered remains an occupied scope in the authoritative ledger. The dashboard displays its existence but does not expose enough detail for co-leads to identify the exact reservation. This is not proof that a conflict occurred."
+  },
+  "existingPlanAcceptance": [
+    "Under existing DPERF04 app.js scope, provide a bounded keyboard-operable claim disclosure for every unregistered active/handoff claim, without creating a fake registered task or a second handwritten status source.",
+    "Reuse the same claim fact renderer for registered/unregistered locations: exact claimId/version, role/state, lead/worker, branch/worktree, scopes, source match/not-applicable, original observedAt/updatedAt, next receiver and stale-still-occupied warning.",
+    "Preserve literal user-facing values with textContent. Include long scopes, escaped text, review/integration roles, handoff_pending and stale cases in the already-planned synthetic assignment browser checks; do not add a new test budget.",
+    "Latest assignment failure must show unknown and original timestamp if retaining previous claims, never imply empty/unclaimed. Assignment response/current registry fingerprint governs source matching, independently of status summary/detail proof.",
+    "Dashboard remains read-only. Only original atomic take/amend/accept/release COMMITTED receipt grants write authority; stale or invisible claims are never automatic release."
+  ],
+  "authorityEvidence": "coordination/ledger.mjs:20-28 checks writer task/worktree/scope overlaps, including next worktree; 55-84 serializes atomic transitions; 88-96 marks aged claims without releasing them and returns unknown on unavailable PG.",
+  "limits": [
+    "Source-only; no PG/API/4320/browser, no product import/test, no project edits, no free-space polling.",
+    "No new implementation authority; DPERF04 remains unclaimed and deferred behind current recovery/release priorities.",
+    "Does not replace the broader fixed-c837 interface report already archived by management."
+  ],
+  "cleanCode": "Refine existing claim renderer acceptance instead of duplicate card logic or a new authority; preserve error states and provenance."
+}
