@@ -27,6 +27,15 @@ After the original `server.close()` path and Vitest process exit, the `always()`
 
 Cleanup/report are attempted with `always()`, but no claim is made that they complete after an abrupt runner loss or forced job cancellation. The normal-drop fact and test outcomes remain separate; summary success cannot mask a preceding failed step.
 
+## User activation steps after approval
+
+1. Create `.github/workflows/bounded-check.yml` on the repository's default branch with the **exact bytes** of the independently approved `docs/ci/check-workflow.yml`; do not edit the template while copying it.
+2. Commit that file through the GitHub web editor or an identity already permitted to write workflow files. If GitHub rejects the permission, stop; do not broaden OAuth scopes or retry with another credential automatically.
+3. Open **Actions → bounded zero-model contracts and PostgreSQL → Run workflow**, select the default branch containing that exact file, and run it once manually.
+4. Check the actual source SHA, contract **2 selected / 2 passed**, handler **1 selected / 1 passed / 9 unselected**, both process exits **0**, and cleanup **normal-drop; connections=0; database-absent**. Missing/unknown cleanup, a failed step or count mismatch is not a successful run.
+
+These are future user steps, not actions performed by this task. Save the resulting run URL only after the actual run; candidate review alone supplies no remote pass.
+
 ## Activation and static acceptance
 
 The candidate is manual-only (`workflow_dispatch`), public-repository-only, `contents: read`, and checkout does not retain credentials. It has no user secret expressions, authenticated registries, provider credentials, upload action, cache configuration or automatic push/PR trigger. GitHub's built-in short-lived read token is used only by the standard setup/checkout Actions. Changing credential scope is a separate user action.
