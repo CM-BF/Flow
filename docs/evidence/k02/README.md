@@ -10,4 +10,4 @@
 
 保留失败：context-red旧schema400；context-green因JSONB键排序使字符串重编译不一致，已改canonical；queue-red未冻结metadata；retry-red旧retry未计入冻结材料而错误接受超限输入。早期context/claim result仅4已知路径，未采样当时未跟踪test/helper，不能据此单独绑定完整实现；后续记录真实tracked+untracked范围。完整最终source集合21项包含test/fixture/check.mjs与已移交两runner seam。
 
-claim347d4777 v2 ACTIVE；两runner路径从7368497起停写交O07，其余17范围继续保留review期。架构新增context/input authority和privateclaim投影、生产migrate/register待Lead同步。Mika独立技术review未完成，Goal Owner产品验收未接收；不提前把模块fixture当产品生产入口。
+claim347d4777 v2 ACTIVE；两runner路径从7368497起停写交O07，其余17范围继续保留review期。架构新增context/input authority和privateclaim投影、生产migrate/register待Lead同步。Mika独立技术review已APPROVED此领域target，Goal Owner产品验收未接收；不提前把模块fixture当产品生产入口。
