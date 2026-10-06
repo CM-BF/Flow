@@ -1,0 +1,44 @@
+{
+  "observedAt": "2026-10-06T08:32:17.560710+00:00",
+  "scenarios": [
+    {
+      "scenario": "checkpoint-success",
+      "sourceDigest": "c7fa26cdf75f63eb62723a13f3a6ea29b9f82b1453a1ed51b56b8c2743b8d0c6",
+      "nativeQueryCalls": 0,
+      "runnerProcessGroup": {
+        "pgid": 74251,
+        "state": "stopped"
+      },
+      "database": "flow_o10_af4bfdacbb96422bbab589f982f57f6e",
+      "temporaryDirectoryAbsentAtPostCheck": true,
+      "runnerStopped": true,
+      "centerClosed": true,
+      "driverRemovedDatabase": true,
+      "driverRemovedDirectory": true,
+      "evidenceCheckpoint": {
+        "saved": true,
+        "file": "checkpoint.json"
+      }
+    },
+    {
+      "scenario": "checkpoint-write-failure",
+      "sourceDigest": "c7fa26cdf75f63eb62723a13f3a6ea29b9f82b1453a1ed51b56b8c2743b8d0c6",
+      "nativeQueryCalls": 0,
+      "runnerProcessGroup": {
+        "pgid": 74215,
+        "state": "stopped"
+      },
+      "database": "flow_o10_39caf254c78c4227994a4989e3e025d1",
+      "temporaryDirectoryAbsentAtPostCheck": true,
+      "runnerStopped": true,
+      "centerClosed": true,
+      "driverRemovedDatabase": false,
+      "driverRemovedDirectory": false,
+      "evidenceCheckpoint": {
+        "saved": false,
+        "file": "checkpoint.json"
+      }
+    }
+  ],
+  "failureCleanup": "Driver preserved resources as required; test operator checked the preserved database and worker report then dropped only its validated random flow_o10 DB and own temporary directory. Its separate receipt records remainingDatabases=[]."
+}
