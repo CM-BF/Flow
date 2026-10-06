@@ -1,0 +1,34 @@
+[
+  {
+    "file": "01-isolation-import.json",
+    "sha256": "c6c35abf5072c7b73c4dc132e32c561b125d45a50b50679737e29ad12822dfa2",
+    "status": null,
+    "signal": "SIGABRT",
+    "outcome": null,
+    "childMs": null
+  },
+  {
+    "file": "02-isolation-import.json",
+    "sha256": "b092cf6a4360cd2bd6f69da84f8593efc2654e65aff012f33cdc9948fc190597",
+    "status": null,
+    "signal": "SIGABRT",
+    "outcome": null,
+    "childMs": null
+  },
+  {
+    "file": "03-runtime-isolation-import.json",
+    "sha256": "c7164324df43c5e8ee35e2739b6d0f00cd4c96db77256920f18f017cd8c5af7d",
+    "status": 0,
+    "signal": null,
+    "outcome": "imported",
+    "childMs": 734.107875
+  },
+  {
+    "file": "04-real-hooks.json",
+    "sha256": "c9e0b1b9e686a0af106ab3f74e456364ba6b55382ec59b64de6cabaedc4821fa",
+    "status": 0,
+    "signal": null,
+    "outcome": "blocked",
+    "childMs": 397.91925000000003
+  }
+]
