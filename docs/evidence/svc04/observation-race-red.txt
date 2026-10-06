@@ -1,0 +1,25 @@
+✖ serialized release observations preserve valid in-flight reads and reject actual metadata rollback (73.012792ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.999167
+
+✖ failing tests:
+
+test at tools/personal-preview/web-release.test.mjs:128:1
+✖ serialized release observations preserve valid in-flight reads and reject actual metadata rollback (73.012792ms)
+  Error: WEB_RELEASE_VERSION_CONFLICT
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/tools/personal-preview/static-web.mjs:6:37)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/tools/personal-preview/static-web.mjs:16:120
+      at async Promise.all (index 0)
+      at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/tools/personal-preview/web-release.test.mjs:148:22
+      at async fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/tools/personal-preview/web-release.test.mjs:37:9)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/tools/personal-preview/web-release.test.mjs:131:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'WEB_RELEASE_VERSION_CONFLICT'
+  }

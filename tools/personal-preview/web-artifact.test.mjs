@@ -1,7 +1,7 @@
 import { runInNewContext } from 'node:vm';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, readFile, rm, symlink, readdir, realpath } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, rm, symlink, readdir, realpath, open } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { execFile } from 'node:child_process';
@@ -84,5 +84,31 @@ test('a source change during the build is rejected and leaves no published artif
     const target = (await execute('git', ['-C', options.repository, 'rev-parse', 'HEAD'])).stdout.trim();
     await assert.rejects(prepareWebArtifact({ ...options, target }), { code: 'SOURCE_TARGET_NOT_CLEAN' });
     assert.deepEqual(await readdir(join(options.directory, 'web-artifacts')), []);
+  });
+});
+
+test('release namespace is fixed before build while manifest identity follows built bytes', async () => {
+  await fixture(async options => {
+    const releaseId = 'a1'.repeat(16);
+    const artifact = await prepareWebArtifact({ ...options, releaseId });
+    const verified = await verifyWebArtifact({ directory: options.directory, artifact });
+    assert.equal(verified.manifest.format, 2); assert.equal(verified.manifest.releaseId, releaseId);
+    assert.ok((await readFile(join(verified.dist, 'index.html'), 'utf8')).includes(`/__flow_releases/${releaseId}/assets/`));
+    assert.deepEqual(await prepareWebArtifact({ ...options, releaseId }), artifact);
+    const other = await prepareWebArtifact({ ...options, releaseId: 'b2'.repeat(16) });
+    assert.notEqual(other.artifactId, artifact.artifactId);
+    assert.equal(other.sourceHead, artifact.sourceHead);
+    await prepareWebArtifact({ ...options, releaseId: 'c3'.repeat(16) });
+    await assert.rejects(prepareWebArtifact({ ...options, releaseId: 'd4'.repeat(16) }), { code: 'WEB_ARTIFACT_STORAGE_BUDGET_EXCEEDED' });
+  });
+});
+
+
+test('rejects oversized asset metadata before reading its bytes', async () => {
+  await fixture(async options => {
+    const artifact = await prepareWebArtifact(options); const verified = await verifyWebArtifact({ directory: options.directory, artifact });
+    const huge = await open(join(verified.dist, 'large.bin'), 'wx');
+    try { await huge.truncate(32 * 1024 * 1024 + 1); } finally { await huge.close(); }
+    await assert.rejects(verifyWebArtifact({ directory: options.directory, artifact }), { code: 'WEB_ARTIFACT_TOO_LARGE' });
   });
 });
