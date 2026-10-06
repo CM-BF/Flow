@@ -11,7 +11,7 @@
 | 工作分支状态 | completed；独立 review APPROVED，待集成部署 |
 | 检查状态 | PASSED target 260d53cb3d414b5bb87113ebb4e4c5df92127d4d；最终实现 21/21 Node + 真实 Chrome 四图/行为；独立复跑同范围通过；早期 typecheck 1005137 通过 |
 | Review | APPROVED；target 260d53cb3d414b5bb87113ebb4e4c5df92127d4d；[独立审查入口](review.md) |
-| 已集成 main 状态 / HEAD | D03 未集成；现场 main 108fddbd8261963f3d49088873b5a611b70a5dbf，2026-10-06 02:30 UTC 观察 |
+| 已集成 main 状态 / HEAD | D03 未集成；现场 main 8c57f2f97345167207fa0d2590e9ad6310c922d4，2026-10-06 02:30 UTC 观察 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 紧凑进度首页已完成，已通过独立审查，浅深主题与证据追溯均已验证 |
