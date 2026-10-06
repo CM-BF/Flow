@@ -11,6 +11,8 @@ import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener 
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
+import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, verifyWebCompatibility, importWebCompatibility } from './web-release.mjs';
+
 const repository = fileURLToPath(new URL('../../', import.meta.url));
 const entry = fileURLToPath(new URL('./cli.mjs', import.meta.url));
 const roles = ['center', 'runner', 'web'];
@@ -134,13 +136,13 @@ async function configuredProfile(config) {
 async function reachable(url) {
   try { const response = await fetch(url, { signal: AbortSignal.timeout(700) }); await response.body?.cancel(); return response.ok; } catch { return false; }
 }
-async function webIdentity(config, artifact) {
+async function webIdentity(config, artifact, releaseVersion) {
   if (!artifact) return false;
   try {
     const response = await fetch(`http://127.0.0.1:${config.webPort}/__flow_preview_identity`, { signal: AbortSignal.timeout(700) });
     if (!response.ok) return false;
     const actual = await response.json();
-    return actual.artifactId === artifact.artifactId && actual.sourceHead === artifact.sourceHead && actual.manifestDigest === artifact.manifestDigest;
+    return actual.artifactId === artifact.artifactId && actual.sourceHead === artifact.sourceHead && actual.manifestDigest === artifact.manifestDigest && (releaseVersion === undefined || actual.releaseVersion === releaseVersion && actual.releasePolicy === 'flow-web-release-v1');
   } catch { return false; }
 }
 async function waitReady(config, role, record, artifact) {
@@ -149,7 +151,7 @@ async function waitReady(config, role, record, artifact) {
     if (await inspectOwnedProcess(record) !== 'running') fail('SERVICE_EXITED_DURING_START');
     if (role === 'runner') { if (await configuredProfile(config)) return; }
     else if (await ownsListener(record, role === 'center' ? config.centerPort : config.webPort)
-      && (role === 'center' ? await reachable(`http://127.0.0.1:${config.centerPort}/api/health`) : await webIdentity(config, artifact))) return;
+      && (role === 'center' ? await reachable(`http://127.0.0.1:${config.centerPort}/api/health`) : await webIdentity(config, artifact, (await readWebRelease(config.directory))?.version))) return;
     await sleep(50);
   } while (Date.now() < deadline);
   fail('SERVICE_START_UNCONFIRMED');
@@ -192,13 +194,15 @@ export async function statusPreview({ directory }) {
   let profile = null;
   try { profile = await configuredProfile(config); } catch { /* Configuration publication is not an online/provider guarantee. */ }
   let webArtifact = { state: 'unknown', reason: 'legacy-or-unconfirmed' };
-  if (state.webArtifact) {
-    try {
-      await verifyWebArtifact({ directory: config.directory, artifact: state.webArtifact });
-      const identityMatches = processes.web === 'running' && await ownsListener(state.processes.web, config.webPort) && await webIdentity(config, state.webArtifact);
-      webArtifact = { ...state.webArtifact, state: 'verified', serving: identityMatches ? 'confirmed' : 'unknown' };
-    } catch { webArtifact = { state: 'unknown', reason: 'artifact-verification-failed' }; }
-  }
+  try {
+    const release = await readWebRelease(config.directory);
+    const artifact = release ? currentWebArtifact(release) : state.webArtifact;
+    if (artifact) {
+      await verifyWebArtifact({ directory: config.directory, artifact });
+      const identityMatches = processes.web === 'running' && await ownsListener(state.processes.web, config.webPort) && await webIdentity(config, artifact, release?.version);
+      webArtifact = { ...artifact, ...(release ? { releaseVersion: release.version, retained: release.artifacts.length, validatedAgainstBackendHead: release.backendHead } : {}), state: 'verified', serving: identityMatches ? 'confirmed' : 'unknown' };
+    }
+  } catch { webArtifact = { state: 'unknown', reason: 'artifact-verification-failed' }; }
   return { installationId: config.installationId, webArtifact, observedAt: new Date().toISOString(), startedAt: state.startedAt ?? null, sourceAtStart: state.source ?? null, configured: NATIVE_CONFIGURATION.model, provider: 'not-probed', processes,
     center: { url: centerUrl, reachable: processes.center === 'running' && await ownsListener(state.processes.center, config.centerPort) && await reachable(`${centerUrl}/api/health`) }, webUrl: `http://127.0.0.1:${config.webPort}`, database: databaseState, work, lastError: state.lastError,
     profile, lastProcessExits, credentialsFile: join(config.directory, 'config.json'), limits: { maxTurns: 2, maxBudgetUsd: 0.20, timeoutMs: 60_000, scope: 'per-query-not-project-total' } };
@@ -238,7 +242,8 @@ export async function runService(directory, role) {
     args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
   } else {
     const state = await privateJson(join(config.directory, 'state.json'));
-    const artifact = state.webArtifact;
+    const release = await readWebRelease(config.directory);
+    const artifact = release ? currentWebArtifact(release) : state.webArtifact;
     await verifyWebArtifact({ directory: config.directory, artifact });
     cwd = config.directory;
     args = [fileURLToPath(new URL('./static-web.mjs', import.meta.url)), config.directory, config.repository,
@@ -257,10 +262,18 @@ export async function runService(directory, role) {
 export { load as loadPreviewConfiguration, privateJson as readPreviewJson, save as savePreviewJson, locked as withPreviewLock, assertMarker as assertPreviewMarker };
 export async function preparePreviewWeb(config, target) {
   const head = target ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
+  const release = await readWebRelease(config.directory);
+  if (release) {
+    await assertReleaseCompatibility(config.repository, head, release.artifacts, config.directory);
+    return currentWebArtifact(release);
+  }
   return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
 }
 export async function startPreviewServices(config, state, preparedArtifact) {
+  const backendHead = (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
   const artifact = preparedArtifact ?? await preparePreviewWeb(config);
+  const release = await readWebRelease(config.directory);
+  if (release) await assertReleaseCompatibility(config.repository, backendHead, release.artifacts, config.directory);
   await verifyWebArtifact({ directory: config.directory, artifact });
   state.webArtifact = artifact;
   state.processes = {}; state.lastError = null;
@@ -280,8 +293,8 @@ export async function startPreviewServices(config, state, preparedArtifact) {
     }
     const revision = await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 });
     const changes = await execute('git', ['-C', config.repository, 'status', '--porcelain'], { timeout: 1000 });
-    if (revision.stdout.trim() !== artifact.sourceHead || changes.stdout.length > 0) fail('SOURCE_CHANGED_DURING_START');
-    state.source = { head: artifact.sourceHead, dirty: false };
+    if (revision.stdout.trim() !== backendHead || changes.stdout.length > 0) fail('SOURCE_CHANGED_DURING_START');
+    state.source = { head: backendHead, dirty: false };
     state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
     return statusPreview({ directory: config.directory });
   } catch {
@@ -290,4 +303,82 @@ export async function startPreviewServices(config, state, preparedArtifact) {
     await save(join(config.directory, 'state.json'), state);
     fail('START_UNCONFIRMED_CHECK_STATUS');
   }
+}
+
+
+async function assertReleaseCompatibility(repository, backendHead, artifacts, directory) {
+  for (const artifact of artifacts) {
+    await verifyWebArtifact({ directory, artifact });
+    await findWebCompatibility({ directory, artifact, backendHead });
+  }
+}
+async function assertWebBackend(config, state, expectedBackendHead) {
+  if (!/^[a-f0-9]{40}$/.test(expectedBackendHead ?? '') || state.source?.dirty !== false || state.source.head !== expectedBackendHead) fail('WEB_BACKEND_SOURCE_MISMATCH');
+  for (const role of ['center', 'runner']) if (await inspectOwnedProcess(state.processes[role]) !== 'running') fail('WEB_BACKEND_IDENTITY_UNCONFIRMED');
+  if (!await ownsListener(state.processes.center, config.centerPort)) fail('WEB_BACKEND_IDENTITY_UNCONFIRMED');
+}
+async function launchWeb(config, state, artifact) {
+  const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, 'web'], cwd: config.repository, env: baseServiceEnvironment('web'),
+    onSpawn: async pending => { state.processes.web = pending; await save(join(config.directory, 'state.json'), state); } });
+  state.processes.web = record; await save(join(config.directory, 'state.json'), state);
+  await waitReady(config, 'web', record, artifact);
+}
+/** One-time Web-only host replacement. Backend roles and their running work are never stopped. */
+export async function bootstrapPreviewWeb({ directory, expectedVersion, expectedBackendHead, compatibilityId }) {
+  const config = await load(directory);
+  return locked(config, async () => {
+    await assertMarker(config); const state = await privateJson(join(directory, 'state.json'));
+    await assertWebBackend(config, state, expectedBackendHead);
+    const previous = await readWebRelease(directory);
+    if (expectedVersion !== (previous?.version ?? 0)) fail('WEB_RELEASE_VERSION_CONFLICT');
+    const artifact = previous ? currentWebArtifact(previous) : state.webArtifact;
+    await assertReleaseCompatibility(config.repository, expectedBackendHead, previous?.artifacts ?? [artifact], directory);
+    const release = previous ?? await planWebRelease({ directory, artifact, action: 'bootstrap', expectedVersion, backendHead: expectedBackendHead, compatibilityId });
+    const processState = await inspectOwnedProcess(state.processes.web);
+    if (processState === 'unknown') fail('WEB_PROCESS_IDENTITY_UNCONFIRMED');
+    if (previous && processState === 'running' && await ownsListener(state.processes.web, config.webPort) && await webIdentity(config, artifact, release.version)) return { action: 'bootstrap', release, web: 'ready', alreadyReady: true };
+    // All artifact, compatibility and identity checks finish before changing the pointer or owned Web process.
+    if (!previous) await commitWebRelease(directory, release);
+    try {
+      if (processState === 'running' && await stopOwnedProcess(state.processes.web) !== 'stopped') fail('WEB_STOP_UNCONFIRMED');
+      await launchWeb(config, state, artifact);
+      await assertWebBackend(config, state, expectedBackendHead);
+      state.webReleaseOperation = { action: 'bootstrap', version: release.version, at: new Date().toISOString(), outcome: 'ready' };
+      await save(join(directory, 'state.json'), state);
+      return { action: 'bootstrap', release, web: 'ready' };
+    } catch {
+      state.webReleaseOperation = { action: 'bootstrap', version: release.version, at: new Date().toISOString(), outcome: 'unknown' };
+      await save(join(directory, 'state.json'), state); fail('WEB_BOOTSTRAP_UNCONFIRMED');
+    }
+  });
+}
+async function changePreviewWeb({ directory, artifact, expectedVersion, expectedBackendHead, compatibilityId }, action) {
+  const config = await load(directory);
+  return locked(config, async () => {
+    await assertMarker(config); const state = await privateJson(join(directory, 'state.json'));
+    await assertWebBackend(config, state, expectedBackendHead);
+    const previous = await readWebRelease(directory);
+    if (!previous) fail('WEB_RELEASE_BOOTSTRAP_REQUIRED');
+    if (!await ownsListener(state.processes.web, config.webPort) || !await webIdentity(config, currentWebArtifact(previous), previous.version)) fail('WEB_RELEASE_HOST_UNCONFIRMED');
+    await assertReleaseCompatibility(config.repository, expectedBackendHead, [...previous.artifacts, artifact], directory);
+    const release = await planWebRelease({ directory, artifact, expectedVersion, action, backendHead: expectedBackendHead, compatibilityId });
+    await assertWebBackend(config, state, expectedBackendHead);
+    await commitWebRelease(directory, release);
+    const ready = await webIdentity(config, artifact, release.version);
+    state.webReleaseOperation = { action, version: release.version, at: new Date().toISOString(), outcome: ready ? 'ready' : 'unknown' };
+    await save(join(directory, 'state.json'), state);
+    if (!ready) fail('WEB_RELEASE_COMMITTED_UNCONFIRMED');
+    return { action, release, web: 'ready' };
+  });
+}
+export function publishPreviewWeb(options) { return changePreviewWeb(options, 'publish'); }
+export function rollbackPreviewWeb(options) { return changePreviewWeb(options, 'rollback'); }
+
+export async function preparePreviewRelease({ directory, target, releaseId }) {
+  const config = await load(directory);
+  return locked(config, () => prepareWebArtifact({ directory, repository: config.repository, target, releaseId }));
+}
+export async function importPreviewCompatibility({ directory, reportDirectory }) {
+  const config = await load(directory);
+  return locked(config, async () => ({ compatibilityId: await importWebCompatibility({ directory, reportDirectory }) }));
 }

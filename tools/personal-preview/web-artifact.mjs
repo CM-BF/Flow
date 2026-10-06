@@ -65,13 +65,15 @@ export async function verifyWebArtifact({ directory, artifact }) {
   const bytes = await manifestBytes(path);
   if (sha(bytes) !== artifact.manifestDigest) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
   const manifest = JSON.parse(bytes);
-  if (manifest.format !== 1 || manifest.policy !== 'flow-static-web-v1' || manifest.sourceHead !== artifact.sourceHead) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
+  if (!(manifest.format === 1 && manifest.policy === 'flow-static-web-v1' || manifest.format === 2 && manifest.policy === 'flow-static-web-v2'
+    && /^[a-f0-9]{32}$/.test(manifest.releaseId ?? '')) || manifest.sourceHead !== artifact.sourceHead) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
   const dist = join(path, 'dist'); const actual = await filesAt(dist);
   if (JSON.stringify(actual.files) !== JSON.stringify(manifest.files) || actual.totalBytes !== manifest.totalBytes) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
   return { dist, manifest };
 }
 /** Trusted frozen worktree build. Installation and the current published pointer are untouched. */
-export async function prepareWebArtifact({ repository, target, directory }) {
+export async function prepareWebArtifact({ repository, target, directory, releaseId }) {
+  if (releaseId !== undefined && !/^[a-f0-9]{32}$/.test(releaseId)) fail('WEB_RELEASE_NAMESPACE_INVALID');
   const source = await sourceIdentity(repository, target); const root = await artifactRoot(directory);
   const require = createRequire(join(repository, 'apps/web/package.json'));
   const vite = JSON.parse(await readFile(require.resolve('vite/package.json'))).version;
@@ -80,20 +82,20 @@ export async function prepareWebArtifact({ repository, target, directory }) {
     if (!/^[a-f0-9]{64}$/.test(artifactId)) continue;
     const candidate = { artifactId, manifestDigest: artifactId, sourceHead: target };
     const manifest = JSON.parse(await manifestBytes(join(root, artifactId)));
-    if (manifest.sourceHead !== target || manifest.sourceTree !== source.sourceTree || manifest.lockDigest !== source.lockDigest
+    if (manifest.releaseId !== releaseId || manifest.sourceHead !== target || manifest.sourceTree !== source.sourceTree || manifest.lockDigest !== source.lockDigest
       || manifest.toolchain?.node !== process.versions.node || manifest.toolchain?.vite !== vite) continue;
     await verifyWebArtifact({ directory, artifact: candidate }); return candidate;
   }
   const stage = join(root, `.stage-${randomUUID()}`); await mkdir(stage, { mode: 0o700 });
   try {
     try {
-      await execute(process.execPath, [entry, 'internal-build', repository, join(stage, 'dist')], {
+      await execute(process.execPath, [entry, 'internal-build', repository, join(stage, 'dist'), ...(releaseId ? [releaseId] : [])], {
         cwd: repository, env: buildEnvironment(), timeout: 90_000, killSignal: 'SIGKILL', maxBuffer: 65_536,
       });
     } catch { fail('WEB_BUILD_FAILED'); }
     if (JSON.stringify(await sourceIdentity(repository, target)) !== JSON.stringify(source)) fail('SOURCE_CHANGED_DURING_BUILD');
     const content = await filesAt(join(stage, 'dist'));
-    const manifest = { format: 1, policy: 'flow-static-web-v1', ...source, toolchain: { node: process.versions.node, vite }, ...content };
+    const manifest = { format: releaseId ? 2 : 1, policy: releaseId ? 'flow-static-web-v2' : 'flow-static-web-v1', ...(releaseId ? { releaseId } : {}), ...source, toolchain: { node: process.versions.node, vite }, ...content };
     const bytes = Buffer.from(`${JSON.stringify(manifest)}\n`); const digest = sha(bytes);
     const artifact = { artifactId: digest, sourceHead: target, manifestDigest: digest };
     await writeFile(join(stage, 'manifest.json'), bytes, { flag: 'wx', mode: 0o600 });
@@ -102,14 +104,14 @@ export async function prepareWebArtifact({ repository, target, directory }) {
     await verifyWebArtifact({ directory, artifact }); return artifact;
   } finally { await rm(stage, { recursive: true, force: true }); }
 }
-async function build(repository, outDir) {
+async function build(repository, outDir, releaseId) {
   const require = createRequire(join(repository, 'apps/web/package.json'));
   const vite = await import(pathToFileURL(require.resolve('vite')).href);
-  await vite.build({ root: join(repository, 'apps/web'), envDir: false, mode: 'production', logLevel: 'silent',
+  await vite.build({ ...(releaseId ? { base: `/__flow_releases/${releaseId}/` } : {}), root: join(repository, 'apps/web'), envDir: false, mode: 'production', logLevel: 'silent',
     define: { 'import.meta.env.VITE_FLOW_FIXTURE': JSON.stringify('false') },
     build: { outDir, emptyOutDir: true, sourcemap: false } });
 }
 if (process.argv[1] === entry && process.argv[2] === 'internal-build') {
-  try { await build(process.argv[3], process.argv[4]); }
+  try { await build(process.argv[3], process.argv[4], process.argv[5]); }
   catch { process.stderr.write('WEB_BUILD_FAILED\n'); process.exitCode = 1; }
 }
