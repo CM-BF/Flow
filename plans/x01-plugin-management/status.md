@@ -15,14 +15,14 @@
 | 工作树 dirty 状态 | 8leaf/source/raw已固定2d20e35c；仅packet/status metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 2d20e35ca0019854e102cf051252675eb3f16da6；53distinct与严格局部noEmit0，54own根删除；0PG/SDK/provider |
-| Review | NOT_STARTED 2d20e35ca0019854e102cf051252675eb3f16da6；设计与依赖历史审批不移用 |
+| Review | CHANGES_REQUESTED 2d20e35ca0019854e102cf051252675eb3f16da6；Mika/Astra 1P2：零长度metadata绕过拒绝；正在修复 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
 | 实现目标 | 2d20e35ca0019854e102cf051252675eb3f16da6（静态材料/真实loader leaf） |
 | 实现范围 | packages/plugin-runtime/package.json, packages/plugin-runtime/src/package-store.ts, packages/plugin-runtime/src/package-store.test.ts, apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts, fixtures/plugins/text-tool/package.json, fixtures/plugins/text-tool/index.mjs, fixtures/plugins/text-tool/flow-plugin.json |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 纵向设计3bd1add6已独审；正式workspace/tar依赖方向已审；八literal leaf请求ready；无产品实现 |
+| 当前产出 | 静态安装材料和真实插件加载执行已实现；独审发现零长度归档元数据拒绝缺口，正在定向修复 |
 | 下一可用交付 | 审查通过后交付材料库与loader；随后接入中心安装命令与任务绑定 |
 | 当前阻塞 | ACTIVE: 本片待独立审查；完整管理链仍待中心host资格、共享合同及唯一migration |
 | 需用户决定 | NONE |
@@ -42,13 +42,13 @@
 
 ## 当前事实与边界
 
-当前推进已授权的完整插件管理下一ready纵向片设计；本轮产品implementation仍UNKNOWN，旧plan-only审批不转移到新实现。Web只读入口已完成；trusted Web同realm host不等npm管理/隔离。0新产品测试、PG、SDK/provider。
+当前静态安装材料与trusted self-owned真实loader已实现，原53局部检查通过；独审1P2修复中，尚未产品批准或main集成。Web只读入口已完成；trusted host不等第三方隔离或完整public管理链。本片0PG、SDK/provider。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。旧D04 claim04c5de3f v2已released；当前仅新owner6ddedc73 v1两metadata范围，旧观察不表示当前写权。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。旧D04 claim04c5de3f v2已released；当前新owner6ddedc73 v2八leaf与两metadata范围，旧观察不表示当前写权。真实事实/检查/文档target随本scope metadata单独更新。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -71,3 +71,5 @@
 2026-10-06 13:08:15 UTC：本树正式依赖已准备，最终53distinct/strict0与54own根清理证据固定中；见[leaf-checks](../../docs/evidence/x01/leaf-checks.json)。测试首red/中间失败均保留，fixture/header/Vitest边界修正不伪称产品回归通过。当前只有模块层真实包执行，不是完整publicvertical或native runner负载。ESM稳定URL/旧namespace不可卸载边界已写入Interface/quality，原完整升级/remove/unknown/renderer/verifier/context TODO保持。
 
 固定实现 `2d20e35ca0019854e102cf051252675eb3f16da6` 已停止源码写入，待Mika独审；[leaf-manifest](../../docs/evidence/x01/leaf-manifest.json)绑定8source、直接输入、全部阶段raw和本地tar固定运行来源。main未接本leaf；v2保留修复期。
+
+2026-10-06 13:15:06 UTC：收到Mika对2d20固定leaf的1P2；零长度metadata需真实red后修复。fresh87b clean/v2 ACTIVE，原53 raw/manifest不改；不扩大scope，不新安装/PG/provider。

@@ -1,8 +1,10 @@
 # X01 当前静态材料 / 真实 loader leaf 审查
 
-状态：NOT_STARTED
+状态：CHANGES_REQUESTED
 
 Review target commit：2d20e35ca0019854e102cf051252675eb3f16da6
+
+Mika / gpt-6-astra 对固定target发现 1 P2 / 0 P1：零长度 TAR metadata 绕过全部metadata拒绝策略；[原审收据](../../docs/evidence/x01/leaf-independent-review-initial.json)。修复由owner在原v2范围进行，原53检查/manifest保持历史不改。
 
 [固定manifest](../../docs/evidence/x01/leaf-manifest.json)。8个leaf，材料39+loader14=53distinct，严格局部noEmit0，54自有临时根确认删除。仅模块行为，不含center public vertical / PG / provider / runtime refs / 多版本回收。旧方向审批保留如下，不移用。
 

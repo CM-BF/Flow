@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-10-06 13:16:08 UTC",
+  "initialReviewTarget": "2d20e35ca0019854e102cf051252675eb3f16da6",
+  "initialReview": "CHANGES_REQUESTED 1 P2 / 0 P1; zero-byte metadata bypass",
+  "red": {
+    "exitCode": 1,
+    "selected": 12,
+    "failed": 12,
+    "unselected": 39,
+    "basis": "Real gzip/TAR headers via public Header, prepare wrongly resolved and installed; no mocked parser"
+  },
+  "focusedGreen": {
+    "exitCode": 0,
+    "selected": 12,
+    "passed": 12,
+    "unselected": 39
+  },
+  "final": {
+    "exitCode": 0,
+    "selected": 65,
+    "passed": 65,
+    "distinct": 65,
+    "packageStore": 51,
+    "host": 14,
+    "files": 2
+  },
+  "strict": {
+    "exitCode": 0,
+    "config": "leaf-tsconfig.json",
+    "options": "unchanged; inherits root strict/noUncheckedIndexedAccess/ES2023"
+  },
+  "cleanup": {
+    "storeRoots": 51,
+    "hostRoots": 15,
+    "retained": [],
+    "basis": "exact created paths checked absent by afterAll"
+  },
+  "unchangedOriginalBindings": 41,
+  "pgProviderNetworkActualRunnerLoad": 0,
+  "testCommand": "Node24 node_modules/vitest/vitest.mjs run packages/plugin-runtime/src/package-store.test.ts apps/runner/src/plugins/host.test.ts --no-cache",
+  "limits": [
+    "Only shared static material plus self-owned real module host; no center public vertical",
+    "No arbitrary third-party isolation, no ESM unload or permanent-version cache reclamation",
+    "Original X01 full requirements remain open"
+  ]
+}

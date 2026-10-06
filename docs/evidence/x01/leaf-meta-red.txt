@@ -1,0 +1,772 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts (51 tests | 12 failed | 39 skipped) 431ms
+   ↓ a real npm fixture is installed once and independently read with exact identity after restart
+   ↓ rejects the whole package for traversal without installing a partial tree
+   ↓ rejects the whole package for absolute without installing a partial tree
+   ↓ rejects the whole package for wrong prefix without installing a partial tree
+   ↓ rejects the whole package for backslash without installing a partial tree
+   ↓ rejects the whole package for symbolic link without installing a partial tree
+   ↓ rejects the whole package for hard link without installing a partial tree
+   ↓ rejects the whole package for device without installing a partial tree
+   ↓ rejects the whole package for unsupported ignored entry without installing a partial tree
+   ↓ rejects the whole package for duplicate file without installing a partial tree
+   ↓ rejects the whole package for path under regular file without installing a partial tree
+   ↓ rejects the whole package for metadata without installing a partial tree
+   ↓ rejects the whole package for oversized ignored metadata without installing a partial tree
+   ↓ bounds complete archive consumption for padding bomb
+   ↓ bounds complete archive consumption for file bytes
+   ↓ bounds complete archive consumption for file count
+   ↓ bounds complete archive consumption for nested gzip
+   ↓ bounds complete archive consumption for crc
+   ↓ bounds complete archive consumption for truncated file
+   ↓ rejects incompatible static declarations: name
+   ↓ rejects incompatible static declarations: version
+   ↓ rejects incompatible static declarations: scripts
+   ↓ rejects incompatible static declarations: dependencies
+   ↓ rejects incompatible static declarations: manifest bytes
+   ↓ rejects incompatible static declarations: host api
+   ↓ rejects incompatible static declarations: missing entry
+   ↓ rejects corrupt artifact identity, untrusted content, pre-abort and a symlink store before publication
+   ↓ concurrent identical installations preserve the one receipt and leave no stages
+   ↓ restart read rejects tamper without overwriting the existing installation
+   ↓ restart read rejects extra without overwriting the existing installation
+   ↓ restart read rejects symlink without overwriting the existing installation
+   ↓ restart read rejects missing without overwriting the existing installation
+   ↓ a write failure closes prior writers and removes only its own unpublished stage
+   ↓ unknown writer close retains its owned stage instead of deleting it or claiming success
+   ↓ a lost rename acknowledgement is unknown and the exact committed installation remains independently readable
+   ↓ mid-write cancellation settles the owned file and leaves no unpublished installation
+   ↓ a replaced staging identity is retained and never recursively deleted as the original stage
+   ↓ rejects incomplete or concatenated TAR: nonzero trailing bytes
+   ↓ rejects incomplete or concatenated TAR: missing terminal blocks
+   × rejects zero-length metadata 'ExtendedHeader' 'before' regular package entries 51ms
+   × rejects zero-length metadata 'ExtendedHeader' 'after' regular package entries 33ms
+   × rejects zero-length metadata 'GlobalExtendedHeader' 'before' regular package entries 34ms
+   × rejects zero-length metadata 'GlobalExtendedHeader' 'after' regular package entries 34ms
+   × rejects zero-length metadata 'OldExtendedHeader' 'before' regular package entries 33ms
+   × rejects zero-length metadata 'OldExtendedHeader' 'after' regular package entries 39ms
+   × rejects zero-length metadata 'NextFileHasLongPath' 'before' regular package entries 34ms
+   × rejects zero-length metadata 'NextFileHasLongPath' 'after' regular package entries 35ms
+   × rejects zero-length metadata 'NextFileHasLongLinkpath' 'before' regular package entries 35ms
+   × rejects zero-length metadata 'NextFileHasLongLinkpath' 'after' regular package entries 33ms
+   × rejects zero-length metadata 'OldGnuLongPath' 'before' regular package entries 35ms
+   × rejects zero-length metadata 'OldGnuLongPath' 'after' regular package entries 32ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'ExtendedHeader' 'before' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-qhtTKO/store/d1c01daf668e6a1fb63ca3f863b892fee151863f6294155a75d224b7b5a91704/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "024f4a35-0f6a-487f-8e6f-dfdc400376a0",
++       "bytes": 413,
++       "integrity": "sha512-k6AdmJ0g/Wz2BIBDeblhCN2FHPL8JPSjykbjZsrmhCxeXVTMTOFOp8WZxdLdu90avTP2p50aluhfQiaMM9urUA==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "39d75caa5b86f79f4ced03aa68c439c1e86ac0f7a063c3a90738a3b8930eaed5",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "d1c01daf668e6a1fb63ca3f863b892fee151863f6294155a75d224b7b5a91704",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'ExtendedHeader' 'after' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-6B5MHa/store/9821b3aa68dffee0ef9964a4aee19ff84480314b4ee4a994c8671fa67ecc42c3/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "7a4e255d-db67-4bfb-8f87-79fd8801013c",
++       "bytes": 414,
++       "integrity": "sha512-RcotoAxOP1bL8GMNhksag7lT3ofAWN8UGNPVXmwnwExYYY1mAeK1E0s2O38AaaxIOZSjHIMWuHX+cSqifkjDmQ==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "2bcfc899ce22854f9586339dc25ca41ad951aaa9eeec2c2727107031f20097e3",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "9821b3aa68dffee0ef9964a4aee19ff84480314b4ee4a994c8671fa67ecc42c3",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'GlobalExtendedHeader' 'before' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-bOh6vn/store/d35fd0d2e0defdf4412cd8532c5026daef8b5b9fc06d48203c7c2594c777ea5c/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "0b415633-9993-4e49-ac68-8d349037ae43",
++       "bytes": 413,
++       "integrity": "sha512-ol7VoCv6Zadr0d6+tF63uttFjDK7ZmVGJ4YlgSiVd1sY4yldclAvmIG3fWqoahMhbl3TawKFxjz3L6OhEBKa5Q==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "4cdf5c4b88e66f77c72d28465aa572d93430197401d43f66485783b6b0c5ccef",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "d35fd0d2e0defdf4412cd8532c5026daef8b5b9fc06d48203c7c2594c777ea5c",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'GlobalExtendedHeader' 'after' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-hG0dkO/store/d7511bbee75d100e8ace7acd21f0827ef81324f8bc56277ca5cbf0e4aba0ef4f/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "76499316-0aa2-432e-b67e-783be9441d67",
++       "bytes": 414,
++       "integrity": "sha512-KGnrVjG2ObOGccPX9H9MMj2Y3TzYuKXosLLdRpBsDjRUEqYBpaKwkdhrDaWowSZNY+uhQRyk0fXncOmGn8p6bQ==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "227de2f394583030e3e2750c7cfc70a7e482b6ec5836c80261e9b94084263b14",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "d7511bbee75d100e8ace7acd21f0827ef81324f8bc56277ca5cbf0e4aba0ef4f",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'OldExtendedHeader' 'before' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-38Dxah/store/cff4cce74f25bf384070c51df8026318cfa07c9fc36c40ed259dd4c5d472e2f4/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "9e345358-027b-4189-9fbd-ae90979b2839",
++       "bytes": 414,
++       "integrity": "sha512-O+skzRSt86yLMSZqeNcZ+00QoYk/HwL8tLhBKE71rYBmO8oJp06ldCaaNDesRgJ1EQ0FHQI/RTs1T2dRh0UNWg==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "2e5dd487c1a9c2388bad5040b89cedd0ea2108ca7b608a9fe996b8c76923c2de",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "cff4cce74f25bf384070c51df8026318cfa07c9fc36c40ed259dd4c5d472e2f4",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'OldExtendedHeader' 'after' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-1TDsmk/store/d45d1b241b847ed1d583e9cd5baf9ddbf11e6d3233041e5ba5326b3bcb582e46/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "a6e3ac59-0139-425e-9fc0-e9e46af958d7",
++       "bytes": 415,
++       "integrity": "sha512-eQW9V9mqFbbsvd/v9rHWbi0vB/o09t/RabPjXtS6t2SGK1U48RJ+EAqbTLyOUyrTu3WN6jlRqoamnZUIqF/ZnA==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "0aa2e61b80aac59407ac69b663317a61654c8910fd6fa08a3ee964b51eaf1b52",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "d45d1b241b847ed1d583e9cd5baf9ddbf11e6d3233041e5ba5326b3bcb582e46",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'NextFileHasLongPath' 'before' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-4yd44T/store/ca86475273db198416f984933aef3f56fcc7442e47cdf68197934b425563f43d/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "1aac074e-5057-434c-a87c-46a1fd732de8",
++       "bytes": 413,
++       "integrity": "sha512-9oXge1F4T+/tYzGyKmyuylmMMbBMPb+7M4Yo14my9m7oTE/RF7CQo8ltgwdj2FcANURGVwbrXMydFLI7a6y82Q==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "8c1dd09de3f657126b95feff254b7b1a873d7a8bf8f1434f5e0659116f921a32",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "ca86475273db198416f984933aef3f56fcc7442e47cdf68197934b425563f43d",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'NextFileHasLongPath' 'after' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-BQiyrG/store/7e73e016aca19e505c02e3bddba61525fd69610b825de898e9728a7c1a579000/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "1d04e851-fa13-4ff6-bcfd-e3a47f744891",
++       "bytes": 414,
++       "integrity": "sha512-tK2Ou8dgQNNroe40QNlnGBO6xQWz0GCaYIwWSM2Mho3/4mB7c04ttSx3Ruv7um9Hyg85VnUVBziusIQdOwk2mQ==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "55268fcb8f35f5c4dae0468a0a5760764194ba37ebf083c2924e951cb1005a44",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "7e73e016aca19e505c02e3bddba61525fd69610b825de898e9728a7c1a579000",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'NextFileHasLongLinkpath' 'before' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-oTRbid/store/70285aca009ccd8fe45564c1fece9a8273a50aff7a80c17ef31de576806593a0/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "f3ed77b9-1df4-4116-805d-18c5d53a2750",
++       "bytes": 413,
++       "integrity": "sha512-FybeO2zolT8qcNzt8MWYAWVesLAeQfFRKGqOERLQTGL/b+pRS/IXkmH4K8oGW8sPV6gpDtnCCgy/7l/GwopOKg==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "0f29839c1a5b001f1495c7569568329be192aeca909605eecbda3ce9e1c2c27c",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "70285aca009ccd8fe45564c1fece9a8273a50aff7a80c17ef31de576806593a0",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'NextFileHasLongLinkpath' 'after' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-YDV17l/store/f7b2ca0a27a4faf1c98a98a8e61b2f0d3e093e202bd8fb1a0321a891f75bd319/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "cdef3039-1868-4df1-8d42-6ff9505ed831",
++       "bytes": 415,
++       "integrity": "sha512-39emZB/hS+HQRii6cmxz6JVwi8Of8r8S+Z8JM5b23Hm8DdubH1JjbgiWHvYJCYo1w2atn6mXJMqtPLC7cgXe9A==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "40b991ec9c68879d57499231d2c324e3d766c7ae578110fac8f2bd7919f2a4a3",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "f7b2ca0a27a4faf1c98a98a8e61b2f0d3e093e202bd8fb1a0321a891f75bd319",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'OldGnuLongPath' 'before' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-DI8Ros/store/4d1b2a3c2afbe42fe107691abd2007ef2d3b8cbb949922e4a75b7ec09a8850c3/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "92c494fd-d894-4c8f-aa2a-9a3723a2c106",
++       "bytes": 414,
++       "integrity": "sha512-f6GqbZjgImbOtZ6Ls9fTq8ZUGPL2F5UEXJmfZpIUUg/13SmCW0PoijKY+Xz5Fqln1pEqhIrjWHjNEWxjLZTH+g==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "11d97c92286f7b89355930ae2f84f4e6cf89db4a6a7e6c1ddabee3ffd153f9ef",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "4d1b2a3c2afbe42fe107691abd2007ef2d3b8cbb949922e4a75b7ec09a8850c3",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/12]⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > rejects zero-length metadata 'OldGnuLongPath' 'after' regular package entries
+AssertionError: promise resolved "{ receipt: { …(7) }, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "entrypoint": "file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-material-test-qrJKrW/store/e004ad6b6e640efee7e18084790008e1649345a9e922e038a66fe79f9a804946/package/index.mjs",
++   "receipt": {
++     "artifact": {
++       "artifactId": "dab0890b-05a4-4721-a7b4-54f61ba4494f",
++       "bytes": 415,
++       "integrity": "sha512-Hy48yiQo3I7ryjSRr9VhADaSF7p2ShMGMc2ZCEjDygSJJbmVQYM3b58D2zTCchuCsB71RdvTCBtw8+5OvQE+9g==",
++       "name": "@flow-fixtures/text-tool",
++       "sha256": "02bb01bbd184dbe0b036210682bcc48057097ffe8e0814f57f5011f4190a937e",
++       "version": "1.0.0",
++     },
++     "files": [
++       {
++         "bytes": 93,
++         "path": "flow-plugin.json",
++         "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
++       },
++       {
++         "bytes": 155,
++         "path": "index.mjs",
++         "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
++       },
++       {
++         "bytes": 102,
++         "path": "package.json",
++         "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
++       },
++     ],
++     "installationId": "e004ad6b6e640efee7e18084790008e1649345a9e922e038a66fe79f9a804946",
++     "manifest": {
++       "entrypoint": "index.mjs",
++       "hostApiMajor": 1,
++       "kind": "tool",
++       "schemaVersion": 1,
++     },
++     "schemaVersion": 1,
++     "storeId": "self-owned",
++     "treeDigest": "a1bb2db0a2861736a7f408c329378807ea732bae033a983e8b82060407b6a302",
++   },
+  }
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts:245:50
+    243|     const entries = await fixtureEntries(); const metadata: Entry = { …
+    244|     await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? …
+    245|     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObje…
+       |                                                  ^
+    246|     expect(await readdir(f.input.store.root)).toEqual([]);
+    247|   } finally { await rm(f.root, { recursive: true, force: true }); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/12]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  12 failed | 39 skipped (51)
+   Start at  06:15:06
+   Duration  584ms (transform 43ms, setup 0ms, import 59ms, tests 431ms, environment 0ms)
+

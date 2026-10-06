@@ -49,7 +49,7 @@ test('a real npm fixture is installed once and independently read with exact ide
   } finally { await rm(f.root, { recursive: true, force: true }); }
 });
 
-type Entry = { path: string; body?: Buffer; type?: 'File' | 'Directory' | 'SymbolicLink' | 'Link' | 'CharacterDevice' | 'ExtendedHeader' | 'Unsupported'; linkpath?: string };
+type Entry = { path: string; body?: Buffer; type?: 'File' | 'Directory' | 'SymbolicLink' | 'Link' | 'CharacterDevice' | 'ExtendedHeader' | 'GlobalExtendedHeader' | 'OldExtendedHeader' | 'NextFileHasLongPath' | 'NextFileHasLongLinkpath' | 'OldGnuLongPath' | 'Unsupported'; linkpath?: string };
 function tarBytes(entries: Entry[], tail = Buffer.alloc(1024)) {
   return Buffer.concat([...entries.flatMap(entry => {
     const body = entry.body ?? Buffer.alloc(0); const block = Buffer.alloc(512);
@@ -230,6 +230,18 @@ test.each(['nonzero trailing bytes', 'missing terminal blocks'] as const)('rejec
     const valid = tarBytes(await fixtureEntries());
     const bytes = mode === 'nonzero trailing bytes' ? Buffer.concat([valid, Buffer.from('not-padding')]) : valid.subarray(0, valid.length - 1024);
     await replaceArchive(f, gzipSync(bytes));
+    await expect(prepareInstalledPackage(f.input)).rejects.toMatchObject({ code: 'ARCHIVE_REJECTED' });
+    expect(await readdir(f.input.store.root)).toEqual([]);
+  } finally { await rm(f.root, { recursive: true, force: true }); }
+});
+
+const zeroMetadataCases = (['ExtendedHeader', 'GlobalExtendedHeader', 'OldExtendedHeader', 'NextFileHasLongPath', 'NextFileHasLongLinkpath', 'OldGnuLongPath'] as const)
+  .flatMap(type => (['before', 'after'] as const).map(position => ({ type, position })));
+test.each(zeroMetadataCases)('rejects zero-length metadata $type $position regular package entries', async ({ type, position }) => {
+  const f = await fixture();
+  try {
+    const entries = await fixtureEntries(); const metadata: Entry = { path: 'meta', type };
+    await replaceArchive(f, gzipSync(tarBytes(position === 'before' ? [metadata, ...entries] : [...entries, metadata])));
     await expect(prepareInstalledPackage(f.input)).rejects.toMatchObject({ code: 'ARCHIVE_REJECTED' });
     expect(await readdir(f.input.store.root)).toEqual([]);
   } finally { await rm(f.root, { recursive: true, force: true }); }

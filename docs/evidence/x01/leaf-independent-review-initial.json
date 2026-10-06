@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-10-06 13:15:06 UTC",
+  "reviewer": "Mika / gpt-6-astra",
+  "target": "2d20e35ca0019854e102cf051252675eb3f16da6",
+  "verdict": "CHANGES_REQUESTED",
+  "p1": 0,
+  "p2": 1,
+  "finding": "tar 7.5.22 Parser silently accepts zero-length metadata without entry/meta/ignoredEntry; current all-metadata rejection policy is bypassed.",
+  "scope": "Static package-store only; root read-only checked 43 repo + 5 external bindings and reported no other P1/P2.",
+  "requiredFix": "Public tar API rejection including zero-length metadata; real red/green; old 53 raw retained.",
+  "reviewedAt": "2026-10-06 13:15:39 UTC"
+}

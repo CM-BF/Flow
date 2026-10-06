@@ -128,7 +128,9 @@ function packagePath(raw: string, directory = false): string {
 function parseArchive(expanded: Buffer): Promise<Map<string, Buffer>> {
   return new Promise((resolveFiles, reject) => {
     const files = new Map<string, Buffer>(); const paths = new Set<string>(); let entries = 0; let failed = false; let eof = false;
-    const parser = new Parser({ strict: true, maxMetaEntrySize: MAX_JSON, brotli: false, zstd: false });
+    // tar 7.5.22 silently skips zero-byte metadata, and 0 restores the default maximum.
+    // -1 routes every valid nonnegative metadata size to ignoredEntry, rejecting the whole archive.
+    const parser = new Parser({ strict: true, maxMetaEntrySize: -1, brotli: false, zstd: false });
     const stop = (error: unknown) => {
       if (failed) return; failed = true;
       const safe = error instanceof PackageStoreError ? error : new PackageStoreError('ARCHIVE_REJECTED');
