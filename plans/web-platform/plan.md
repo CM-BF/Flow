@@ -99,8 +99,10 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 
 | 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
 | --- | --- | --- |
-| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability / codex/web-conversation-readability | c832542c v1，固定32c九literal；正文与composer优先，保留折叠外error/unknown，首fce5e07已once送登记，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md) |
-| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅管理两目录；固定33bd发布已fc113逐字接收，authority不迁 |
+| WPF-CONTEXTI01 | w01_owner / web-context-integration / codex/web-context-integration | 55fe7c81 v1，固定d7e二十scope实际UI片；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，实施中 |
+| WPF-STEER01 | workspace_panels_owner / web-steering-control / codex/web-steering-control | 2bae5026 v1，固定PUBLIC_READY ca4八新scope，不占App/Thread；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)，实施中 |
+| D05FIT01 | d01_owner / dashboard-architecture-first-fit / codex/dashboard-architecture-first-fit | 5dc3360e v1，四scope产品冻结；已审0ac7/final4e24 pushed待main，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅管理两目录；固定33bd副本authority不迁，当前必要事件集中收口 |
 
 CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a已main32c，最后3b4a8b8 clean，e06a v2于08:21:14.735释放；9c6图保持固定，旧树只读。S01/PERF03及ActivityI更早已main/releases保留历史，不借旧权续写。
 
@@ -120,11 +122,13 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 | 已集成 / 原范围释放 | WPF-CHAT06S01与PERF03 | 3ac/f909已入6426，八source同批准目标；原d94/2ec已v2释放，保留模块/计数验证边界 |
 | 已集成 / 原范围释放 | WPF-CONTEXT01知识引用选择 | 736ef已审并入fc113；九scope全停写/bfe v2释放；仅选择模块，真实App知识入口仍未实施 |
 | 已集成 / 原范围释放 | WPF-CONTEXT02知识引用回执 | 5e8213/6cacc已main7106，六源码同；66695c收口后b485 v2释放；Queue实际guard，Send guard准备但projection未接 |
-| 独立实施 | WPF-CHATREAD01聊天可读性 | 原CHAT06I已main/released；新32c独立树已c832v1九scope正式take；沿REQ43，不抢CONTEXT02 |
-| 已集成 / 待owner释放 | WPF-CHAT06I01增量正文 | fixed9da/e30已main32c/十一源码同；rootR1 CLOSED，owner只作main metadata与停止全部scope，再fresh release |
+| 已集成 / 原范围释放 | WPF-CHATREAD01聊天可读性 | 527/2f858七源已main d7e，cd26404收口后c832 v2释放，CONTEXTI已正式接Thread窗口 |
+| 独立实施 | WPF-CONTEXTI01 / WPF-STEER01 | d7e二十scope实际知识UI与ca4八scope独立补充指令控制并行；精确写权与canonical见当前owner表 |
+| 已审 / 等main | D05FIT01首次适配 | 0ac7/final4e24已push；5dcv1冻结待接收，DPERF02仅后继只读四scope方案 |
+| 已集成 / 原范围释放 | WPF-CHAT06I01增量正文 | fixed9da/e30已main32c/十一源码同；8ca0684收口后a729 v2已释放 |
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
-| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前三active本队claim按真实范围防交叉；两个独立实现owner与管理者不扩大agent并发。GO说明Mika仍2槽；仅按明确带截止时间的quiet lease协调重负载，不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
+| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 用户总预算Root4/Web4/Mika4=12；本树root+现三成员=4，不新增agent。唯一status→dashboard，普通事件不逐条私信；跨lead裁决或看板无法解决的真实阻塞才一次短消息 |
 
 ## TODO
 
@@ -161,7 +165,10 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 - [x] **WPF-001-27** WPF-CHAT06I01：完整已审6426基线领取十三scope接入增量正文；P01唯一启停/授权、当前turn有限读预算/连接可见性/单Thread语义/phase提示，实际App fixture验证。
 
 - [x] **WPF-001-28** WPF-CONTEXT02（沿REQ42）：纯引用冻结/回执片，固定fc113八scope，5e8213/6cacc已审并入7106，66695c收口/b485 v2释放；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)。该receipt片main收口完成，Send projection与实际UI继续开放。
-- [ ] **WPF-001-29** WPF-CHATREAD01（沿REQ43）：已批准下一可读性片，九literal精确候选见[范围](../../docs/evidence/web-platform/readability-proposal.json)；拟独立web-conversation-readability，[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)已建立；main/release→fresh take→首canonical顺序已完成，已一次登记请求，稳定配置收详情但error/unknown必须可达。
+- [x] **WPF-001-29** WPF-CHATREAD01沿REQ43：527已审并入d7e，cd26404收口后c832 v2释放；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)。
+- [ ] **WPF-001-30** D05FIT01四scope首次适配：0ac7已审/final4e24 pushed，等main；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)。
+- [ ] **WPF-001-31** WPF-STEER01沿REQ44独立控制模块：ca4正式输入，2baev1八scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。
+- [ ] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
 
 ## 验收、风险与持续方式
 

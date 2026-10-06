@@ -1,0 +1,47 @@
+{
+  "taskId": "WPF-DPERF02",
+  "state": "bounded read-only proposal, no feature tree/take/implementation",
+  "owner": "d01_owner",
+  "baseSuggestion": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching",
+  "branch": "codex/dashboard-proof-batching",
+  "scopes": [
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/test/proof-tree-batch.test.mjs",
+    "plans/wpf-dashboard-proof-batching",
+    "docs/evidence/wpf-dashboard-proof-batching"
+  ],
+  "observations": [
+    "tree currently validates commit once then invokes ls-tree once per scope, max128",
+    "git subprocess helper has5000ms timeout and2MiB maxBuffer, UTF8 stdout",
+    "both compareImplementation and integrationProof use tree; requireEveryPath=false only main comparison permits deletions",
+    "root fixed7106 readonly5scope probe batched1 vs5 produced13 identical entries; not rerun here, no latency claim"
+  ],
+  "design": [
+    "Attempt one ls-tree -r -z --full-tree target -- literal scopes, preserve full mode/type/OID/path entries and original Set+sort output",
+    "Validate requireEveryPath by exact path or slash-prefix coverage, never filename-only/OID-only comparison; split default record at first tab only",
+    "Keep2MiB per-process maxBuffer and5000ms timeout. On specific buffer overflow (and argument E2BIG), discard partial output and bisect scope list sequentially; single-scope overflow remains unknown with original error, never missing",
+    "At most128 singleton successful outputs each<=2MiB, recursion depth<=7 and attemptedcalls<=255; process one branch at a time into sharedSet, no parallel multipliers or larger buffers. This preserves the prior bounded worst-case aggregate output envelope<=256MiB, without asserting JS heap byte equivalence",
+    "Non-buffer/non-argument errors and timeouts propagate unknown without retry/reclassification. No cross-snapshotcache, aggregate API or global concurrency change. Dirty/head/main reads remain fresh"
+  ],
+  "testsPlanned": [
+    "real temporary Git object trees:128 declarations, duplicate/parentchild overlap, missing exact vs similarly prefixed path, empty tree and requireEveryPathfalse deletion",
+    "retain full mode blob/symlink/executable/gitlink commit OID path, descendant unicode/tab/newline viaNUL records; reject invalid scoped patterns through existing parseImplementation",
+    "two scopes eachbelow2MiB butcombinedabove2MiB mustfall back and retain exact proof; one scopeabove2MiB staysunknown not missing. Test boundedGitcallcount with actual TRACE2 childcount, not latencyclaim",
+    "existing proof-snapshot tests as readonly regression: changed/missing target/review, fresh dirty/untracked/mode/delete/main integration behavior; no cachegreen",
+    "temporary Git only, no4320 pressure/API or productDB/model, no new deps"
+  ],
+  "openImplementationCheck": "Confirm actual Node24 buffer error shape in focused temporary-fixture regression after take; preserve legacy per-path acceptance rather than silently classifying overflow as absent",
+  "ledger": {
+    "observedAt": "2026-10-06T08:49:33.447Z",
+    "state": "available",
+    "overlaps": [],
+    "taskIdPresent": false
+  },
+  "sourceReferences": [
+    "fixed d7e apps/execution-dashboard/src/proof.mjs:6-9,13-30,compareImplementation,integrationProof",
+    "https://git-scm.com/docs/git-ls-tree",
+    "https://nodejs.org/api/child_process.html#maxbuffer-and-unicode"
+  ],
+  "docsLimit": "Official Node generic documentation describes bytebuffer behavior; latest-v24 docs URL was inaccessible. No version upgrade or new API reliance; installed24 behavior to be verified by focused test."
+}

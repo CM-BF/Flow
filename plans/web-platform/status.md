@@ -4,25 +4,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:41 UTC / 7106知识回执已收；CHATREAD527获root限定批准待最终交接 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:50 UTC / d7e接收READ；CONTEXTI与STEER正式并行 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `354ae158e580d031fdb68e3add99dcc285687cd0`（本次metadata前实核clean；交付HEAD以Git回执为准） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `444f2148da71b6e6c3b5a42e8348b258b739b5c0`（本次metadata前实核clean；交付HEAD以Git回执为准） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 紧凑聊天界面已审并已交主线接收，知识接线等待文件交接 |
-| 下一可用交付 | 交付紧凑且操作顺畅的聊天界面，再接通知识选择 |
+| 当前产出 | 紧凑聊天已进入主线，知识实际接线与补充指令模块正在并行实现 |
+| 下一可用交付 | 交付可实际选择知识并发送的聊天界面 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 管理独核main/origin32c371d389a913f8dd71c3bd8b98dd0697411256 clean；CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；readability c832v1的527修复已root08:39:09限定批准，final2f858 clean已push并once REVIEW_READY交Lead。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
+| 已集成main状态 / HEAD | 当前main/origin d7e1e64e7792f4d1ad4933db042f10f266ad0cca clean（本管理08:49实核）；历史32c接收CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；READ527/2f858已正式main d7e，cd26404收口后c832 v2释放，CONTEXTI55fe v1正式接权。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -55,7 +55,10 @@
 | WPF-001-26 | completed | d01_owner | CONTEXT01独立选择模块736ef/d6已审并入fc113，59b9650收口后bfe v2释放；实际App另属后继，不偷偷扩大本TODO |
 | WPF-001-27 | completed | d01_owner | CHAT06I01 9da/e30已审并入32c、十一源同；owner8ca0684c纯main metadata后a729 v2已释放，实际服务/provider验收单列 |
 | WPF-001-28 | completed | d01_owner | CONTEXT02 5e8213/6cacc已main7106，六源码同；66695c记录后b485 v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)，实际Send projection/App仍后继 |
-| WPF-001-29 | in-progress | d01_owner | 已批WPF-CHATREAD01，原CHAT06I已释放；从32c独立树已c832v1九scope正式take；[候选](../../docs/evidence/web-platform/readability-proposal.json)，[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)已建立并送登记，尚无部署观察 |
+| WPF-001-29 | completed | d01_owner | READ527/2f858已main d7e，cd26404 clean后c832 v2 released；[审计](../../docs/evidence/web-platform/chatread01-final-audit.json) |
+| WPF-001-30 | in-progress | d01_owner | D05FIT01 0ac7已审/final4e24 pushed，四scope冻结待main；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
+| WPF-001-31 | in-progress | workspace_panels_owner | STEER01 ca4/2baev1八scope已开工，首a3bf/parser0；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) |
+| WPF-001-32 | in-progress | w01_owner | CONTEXTI01 d7e/55fev1二十scope已开工，首ea1b/parser0；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md) |
 
 ## 当前唯一owner、claim与下一步
 
@@ -63,14 +66,14 @@
 
 | 当前工作 | 唯一来源、范围与下一步 |
 | --- | --- |
-| WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理两目录；33bd固定副本已fc113发布，authority不迁 |
-
-| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability，c832542c v1，准确32c九scope；已正式派工，fixedb9db独审R1待修；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)，Lead97sources登记来源，管理未API采样 |
+| WPF-001 | d01_owner / web-platform-management，632a7149 v2，管理两目录；当前必要事件集中收口 |
+| WPF-CONTEXTI01 | w01_owner / web-context-integration，55fe7c81 v1，固定d7e二十scope；首ea1b已建立，实施中 |
+| WPF-STEER01 | workspace_panels_owner / web-steering-control，2bae5026 v1，固定PUBLIC_READY ca4八新scope；首a3bf已建立，实施中 |
+| D05FIT01 | d01_owner / dashboard-architecture-first-fit，5dc3360e v1四scope已冻结；0ac7获root批准/final4e24 clean pushed，等main |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
 
-K02、renderer、generic活动及typed ActivityI都已在主线；S01增量正文模块3ac与PERF03消息复用f909也已正式接收于6426，管理独核祖先及八源码相同，旧d94/2ec均v2释放。CHAT06I01以该完整基线领取新十三scope，由同一panels接真实App；CONTEXT01已接收fc113并全九scope释放；CONTEXT02用新独立fc113八scope接纯回执逻辑，知识实际App UI仍后继。主线模块就绪不等新的接线已验证。
-
+K02/renderer/活动/stream/消息复用及CONTEXT01/02均已main。CHAT06I01已32c收口释放，READ527已d7e收口c832v2释放。知识实际UI从完整d7e一个二十scope片正式实施；STEER独立模块仅八新scope，能力与真实个人开关/授权分开。D05首次适配已独审等待集成，不改9c6静态图或个人服务。
 当前个人center/runner版本以ExecutionLead的32c accepting v9回执为准，Web源码、main和后台运行版本分开。 个人Web61228使用main目录Vite，sourceAtStart32c仅启动观察，不能当作当前Web固定源码；用户已登录，本队不刷新其页面或重启服务，固定构建静态服务后继由Lead安排。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
 
 ## 验收边界与开放目标

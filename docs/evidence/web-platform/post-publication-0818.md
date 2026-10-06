@@ -79,3 +79,15 @@ CHATREAD R1修复527176c已root于08:39:09限定APPROVED；七hash与dev8/prod8�
 本次后继批准与交接：D05FIT01四scope已root批准，固定7106，接下来独立新树/fresh take后实施；不是沿D06旧权。CHATREAD最终2f8585985f702ffb57ab34a4ad4c4bb0282a46bf已正常push、local/remote同且clean，管理核73paths/9scope、七hash、6md48links/parser0，见[最终审计](chatread01-final-audit.json)；已一次REVIEW_READY经GO交ExecutionLead，等待正式main再release/CONTEXTI接权。没有重跑产品/浏览器/API。
 
 用户最新并发预算由GO/root转达：Root4 + Web4 + Mika4 = 12，覆盖历史总10；本树仍root与三现有成员合计4，不新增agent。runner可替换优先：统一宿主加独立AI SDK/Pi/native/custom adapters，能力显式协商；Web消费通用profile/caps，不增加Claude SDK类型或凭据耦合，不重写已审片。panels空窗只读REQ44独立sender模块，固定ca4c3f723d2f786601e7cc9bd0363d756d974810仅研究输入，正式main/take前不写。
+
+## 2026-10-06 08:50 UTC 必要领取/交付事件集中收口
+
+CHATREAD已由Lead正式main d7e1e64e7792f4d1ad4933db042f10f266ad0cca接收；管理窄核七源码同527，owner最终cd26404 local/remote clean、九scope停写，fresh c832 v2于08:46:17.837Z[释放](chatread01-release-receipt.json)。不重产品验证。原R1弹窗问题已关闭；root附记已有hi tasktab时Files按App585–588 taskView-first切回hi，是既有来源view绑定后继（非R1再次出现），未来精确scope/claim再处理，不混CONTEXTI/当前片。
+
+实际CONTEXTI一个UI片已从完整d7e新web-context-integration领取[55fe7c81v1二十scope](contexti01-take-receipt.json)08:47:31.680Z，w01首ea1b0995f5ef404903c7e445f6f6244bf4930624 clean，管理actualparser0/human完整/4TODO。独立STEER01以Lead PUBLIC_READY完整ca4c3f723d2f786601e7cc9bd0363d756d974810建树，[2bae5026v1八新scope](steer01-take-receipt.json)08:45:01.297Z；首a3bf1b0实际parser0/human完整/5TODO，首commit clean后开始安装日志dirty如实，不因主线前进重建/reset。两实际worker并行，App仅CONTEXTI持有。
+
+D05FIT01固定0ac7a127f06d534f6514a98331f533e42993378a，final4e24cf666b73eb9d3b4cd82a5fadc97e5887a0c5 clean/pushed，root08:46:46独立APPROVED；当前[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)等待Lead main，四scope产品冻结保留5dcv1。该片实际首屏1280为71%，390保留42%局部滚动；不更新9c6图数据/个人runtime。此前按原流程已一次交Lead，不再重复转发。
+
+新协作规则覆盖前文旧降噪流程：默认唯一status→dashboard。普通进展/完成/review/merge/metadata/claim不再逐条私信、不多路转发或确认套确认；只有跨lead接口/范围/资源裁决、紧急用户影响、看板不能解除的真实阻塞才一次短消息+canonical。登记/集成精确target正常push并在本权威当前队列可见，由ExecutionLead看板领取；已有收到无需ACK。若确有新source登记缺失令Lead不可见，才一次指出。原take/fresh版本/独审/主线独占不变。
+
+DPERF02下一独立有界只读方案见[四scope候选](dperf02-proposal.json)：不改旧DPERF01，不取4320压力样本；固定d7e proof当前每scope一次ls-tree。建议合批先走原2MiB上限，仅overflow/E2BIG按scope二分串行回退，单路径超限仍unknown而非missing，完整mode/type/OID/path及requireEveryPath保留；最多128叶/255次尝试、原每叶2MiB输出边界不变，不无界增buffer/并发/跨snapshotcache。现08:49:33.447Z live四scope无冲突、编号未占用，未建新树/take/写实现。后续需真实临时Git边界测试，再声明调用数变化；不能把root旧13entry probe当正式实现验收。
