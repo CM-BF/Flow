@@ -133,7 +133,7 @@ export class ConversationProjection {
         if (snapshot.lastTurn) assertTurn(snapshot.lastTurn, id);
         if (page) { assertSummary(page.conversation, id); page.turns.forEach(turn => assertTurn(turn, id)); }
         const turns = this.mergeTurns([...(page?.turns ?? []), ...(snapshot.lastTurn ? [snapshot.lastTurn] : [])], sequence);
-        this.update({ snapshot: this.reconcileSnapshot(snapshot, turns, sequence), turns, ...(page && initial ? { nextCursor: page.nextCursor } : {}), loading: false, error: null, connection: "live" });
+        this.update({ snapshot: this.reconcileSnapshot(snapshot, turns, sequence), turns, nextCursor: this.historyCursor(turns, page && initial ? page.nextCursor : this.state.nextCursor), loading: false, error: null, connection: "live" });
       } catch (error) {
         if (this.lifetime.signal.aborted || observation.aborted) return;
         this.update({ loading: false, error: errorMessage(error), connection: "reconnecting" });
@@ -156,7 +156,7 @@ export class ConversationProjection {
       if (signal.aborted) return;
       assertSummary(page.conversation, this.id); page.turns.forEach(turn => assertTurn(turn, this.id!));
       const turns = this.mergeTurns(page.turns, sequence);
-      this.update({ turns, snapshot: this.state.snapshot ? this.reconcileSnapshot(this.state.snapshot, turns, this.snapshotSequence) : null, nextCursor: page.nextCursor, error: null });
+      this.update({ turns, snapshot: this.state.snapshot ? this.reconcileSnapshot(this.state.snapshot, turns, this.snapshotSequence) : null, nextCursor: this.historyCursor(turns, page.nextCursor), error: null });
     } catch (error) {
       if (!this.lifetime.signal.aborted) this.update({ error: errorMessage(error) });
     } finally { this.update({ loadingMore: false }); }
@@ -171,6 +171,12 @@ export class ConversationProjection {
       turns.set(turn.id, previous && JSON.stringify(previous) === JSON.stringify(turn) ? previous : turn);
     }
     return [...turns.values()].sort((a, b) => a.number - b.number);
+  }
+
+  private historyCursor(turns: ConversationTurn[], serverCursor: number | null) {
+    let contiguous = 0;
+    for (const turn of turns) { if (turn.number !== contiguous + 1) break; contiguous = turn.number; }
+    return contiguous < (turns.at(-1)?.number ?? 0) ? contiguous : serverCursor;
   }
 
   private reconcileSnapshot(incoming: ConversationSnapshot, turns: ConversationTurn[], sequence: number): ConversationSnapshot {
@@ -209,7 +215,6 @@ export class ConversationProjection {
 
   private async dispatch(entry: OutboxEntry): Promise<string | undefined> {
     const signal = requestSignal(this.lifetime.signal);
-    const sequence = ++this.readSequence;
     try {
       let id = entry.conversationId;
       if (!id) {
@@ -229,9 +234,15 @@ export class ConversationProjection {
         || accepted.turn.number !== entry.request.expectedRevision + 1 || accepted.turn.user.text !== entry.request.text)
         throw Error("The turn receipt does not match the frozen message. Retry with its original request identity.");
       const current = this.state.snapshot!;
-      const turns = this.mergeTurns([accepted.turn], sequence);
-      const snapshot = this.reconcileSnapshot({ ...current, conversation: accepted.conversation, lastTurn: accepted.turn }, turns, sequence);
-      this.update({ snapshot, turns, loading: false, error: null });
+      const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
+      if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))
+        throw Error("The saved receipt conflicts with this conversation's known turn identity.");
+      // A receipt may be an old admission replay. It confirms delivery, never current execution state.
+      const turns = known ? this.state.turns : this.mergeTurns([accepted.turn], 0);
+      const snapshot = { ...current,
+        conversation: accepted.conversation.revision > current.conversation.revision ? accepted.conversation : current.conversation,
+        lastTurn: turns.at(-1) ?? current.lastTurn };
+      this.update({ snapshot, turns, nextCursor: this.historyCursor(turns, this.state.nextCursor), loading: false, error: null });
       this.outbox.accept(entry.id);
       this.schedule();
       return id;

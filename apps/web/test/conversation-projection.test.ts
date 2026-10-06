@@ -94,6 +94,20 @@ describe("public conversation projection", () => {
     expect(projection.getSnapshot().turns[0]?.assistant.state).toBe("available");
     expect(projection.sendDisabledReason()).toBeNull();
   });
+  it("confirms a retried saved receipt without regressing a final reply already read from the center", async () => {
+    const { projection, client, set } = setup(); await projection.refresh();
+    client.submitConversationTurn.mockRejectedValueOnce(Error("ACK lost")); await projection.send("hi");
+    const frozenKey = projection.getSnapshot().outbox!.turnKey;
+    set(snapshot(reply(turn(), "Final authoritative reply"))); await projection.refresh();
+    const before = projection.getSnapshot().turns[0];
+    client.submitConversationTurn.mockResolvedValueOnce({ conversation: snapshot(turn()).conversation, turn: turn(), replayed: true });
+    await projection.retry();
+    expect(client.submitConversationTurn.mock.calls[1]?.[2]).toBe(frozenKey);
+    expect(projection.getSnapshot().outbox).toBeNull();
+    expect(projection.getSnapshot().turns[0]).toBe(before);
+    expect(projection.getSnapshot().snapshot?.lastTurn?.assistant).toMatchObject({ state: "available", text: "Final authoritative reply" });
+    expect(projection.sendDisabledReason()).toBeNull();
+  });
   it("surfaces a request timeout instead of treating it as a visibility cancellation", async () => {
     const { projection, client } = setup();
     const controller = new AbortController();
@@ -109,6 +123,18 @@ describe("public conversation projection", () => {
     client.conversationTurns.mockResolvedValueOnce({ conversation: snapshot(turn(2)).conversation, turns: [reply(turn())], nextCursor: 1 });
     await projection.refresh(); client.conversationTurns.mockResolvedValueOnce({ conversation: snapshot(turn(2)).conversation, turns: [reply(turn()), reply(turn(2))], nextCursor: null });
     await projection.loadMore(); expect(projection.getSnapshot().turns.map(item => item.number)).toEqual([1, 2]);
+    expect(projection.getSnapshot().nextCursor).toBeNull();
+  });
+  it("exposes a loadable middle gap after another tab admits several turns while this view is hidden", async () => {
+    const { projection, client, set } = setup(snapshot(reply(turn()))); await projection.refresh();
+    expect(projection.getSnapshot().nextCursor).toBeNull();
+    set(snapshot(reply(turn(3)))); await projection.refresh(); await projection.refresh();
+    expect(projection.getSnapshot().turns.map(turn => turn.number)).toEqual([1, 3]);
+    expect(projection.getSnapshot().nextCursor).toBe(1);
+    client.conversationTurns.mockResolvedValueOnce({ conversation: snapshot(turn(3)).conversation, turns: [reply(turn(2)), reply(turn(3))], nextCursor: null });
+    await projection.loadMore();
+    expect(client.conversationTurns).toHaveBeenLastCalledWith("chat", { after: 1, limit: 20 }, expect.any(AbortSignal));
+    expect(projection.getSnapshot().turns.map(turn => turn.number)).toEqual([1, 2, 3]);
     expect(projection.getSnapshot().nextCursor).toBeNull();
   });
   it("rejects mismatched lazy detail versions and lets explicit retry succeed", async () => {
