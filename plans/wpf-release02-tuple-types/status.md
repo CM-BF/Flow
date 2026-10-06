@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06T11:18:25.201733+00:00 |
+| 最近更新时间 | 2026-10-06 11:18:25 UTC |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra（派发要求，工具不独立回显） |
