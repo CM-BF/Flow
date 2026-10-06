@@ -37,3 +37,5 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --filter @flow/web exec tsx test/a
 最终技能与clean-code见[quality](quality.md)，正式接口见[interface](interface.md)。唯一状态与独审入口在[status](../../../plans/wpf-attach-i01-input-preview/status.md)/[review](../../../plans/wpf-attach-i01-input-preview/review.md)。
 
 固定审查预览：http://127.0.0.1:61261（本任务动态端口，保持服务；不会更改个人入口）。
+
+独立审查：root APPROVED固定4c4de124（仅模块），实际17/17与9源四方哈希审计见[independent review](independent-review-audit.json)/[tests](independent-tests.log)。未独立重跑作者10组浏览器/typecheck。主线与生产接线仍pending。

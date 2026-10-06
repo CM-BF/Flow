@@ -9,3 +9,5 @@
 2026-10-06 11:23:35 UTC 交付clean-code：固定4c4de124b24a85b9e2a13e097b29c80b1e84d11a，9source/current/browser hash全同，保护范围零diff。17 tests（405ms）/Web strict types/10 browser组全通过。修复两实际消费者问题：portal表单冒泡误提交；公开composer同步只移除曾拥有的ID，避免误删恢复上传。新增ignored-abort upload/list deadline、原键显式重试、prepared ID顺序和授权代际失效；已知恢复记录提供显式本地forget，unknown仍保留。命名/职责保持controller/recovery/adapter/Picker，未复制DTO/HTTP/权限或另起registry。最后仅元数据和证据绑定，没有新产品改动。
 
 浏览器第二轮错误来自文件按钮大小写，原Promise未及时捕获；现Promise.all等待chooser+click并统一finally。第三轮mock lookup错误携带accepted.replayed，现按真正receipt shape提供typed值。第五轮drop发到outer form而非官方dropzone，现定位其data-slot。保留原失败日志；最终图与hash以browser-results.json为准。运行环境仍共享机器，未作性能声明。独立review/main待交接，真实Send/Queue依然pending。
+
+2026-10-06 11:25:08 UTC 独审交付安全点：root正式限定APPROVED固定4c4de124，独立17/17=807ms，9hash四方一致，0blocking。原样归档root两证据；本段只审metadata/链接/归因，不重复17 tests/10 browser/types。源仍零改；完整metadata diffcheck仅原始module-tests.log/typecheck.log与新增independent-tests.log末尾空行例外，保留原字节，源diffcheck0不代表清洗原日志。真实HTTP/App/Send/Queue、selected draft reload、跨tab原子性和非Chrome仍pending。claim保留等main，不自行集成/释放。
