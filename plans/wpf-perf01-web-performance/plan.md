@@ -37,3 +37,5 @@
 03:20 UTC：测量段完成，1/16脚本c40与修复128脚本3d47生产assets/HTML hash一致；所有raw与原128harness失败保留。下一轮建议活动列表有界DOM实验，未实施优化。独立review等最终报告结论，PERF01-02仍pending、03仍包含未来同条件对比。
 
 2026-10-06 03:24 UTC：本轮3d47测量方法/报告adc2595获root独立APPROVED，范围严格限benchmark。PERF01-02保留未实施事实；03本轮review完成，后续优化验收转新PERF02计划，不重复手填实施状态。performance-probe.ts已明确停写等待管理者amend/take。
+
+2026-10-06 03:26 UTC 优先级纠正：PERF02只是准备候选，真实持续对话优先，未创建新树/领取/实施；PERF01 claim未amend，保留原scope。

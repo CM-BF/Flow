@@ -1,8 +1,8 @@
 # WPF-PERF01 审查
 
-**APPROVED**。独立 reviewer：root / GPT-6，只读；记录时间 2026-10-06 03:24 UTC。
+**状态：APPROVED**。独立 reviewer：root / GPT-6，只读；记录时间 2026-10-06 03:24 UTC。
 
-- Implementation target：`3d47cdd4eae959119f154a0d06964cf65006f8c9`。
+- Review target commit：`3d47cdd4eae959119f154a0d06964cf65006f8c9`。
 - Base：`c526c1c889437ee39155d669921577995195c74e`。
 - 已审报告/证据：`adc2595bbc34986353514d374afeb0eca0188ee2`；本次approval转录是后续metadata，不自动覆盖新实现。
 - Worktree：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance`，branch `codex/web-performance`。
