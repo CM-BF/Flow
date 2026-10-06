@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:54:08 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:56:24 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 9c697c3f9d95f77485e786402575deeceb0e0ed5（本轮PG释放路由基线；ca6a源码与prepared不变） |
-| 工作树dirty状态 | 本轮仅CORE PG窗口释放路由/父状态与共享metadata当前archive计账；0产品/诊断源码、旧raw/input/prepared改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / e457560546a5c0594060747040e4ad299e5df302（本轮恢复/consumer反馈路由基线；ca6a源码与prepared不变） |
+| 工作树dirty状态 | 本轮仅CORE精确恢复及C01补充反馈路由/父状态与共享metadata当前archive计账；0产品/诊断源码、旧raw/input/prepared改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -23,7 +23,7 @@
 | 优先级 | 2 |
 | 当前产出 | Claude逐消息设置的契约与注入执行器检查已通过；公共客户端已领取独立源码范围并开始接线，数据库与界面验收尚未完成。 |
 | 下一可用交付 | 让合法owner并行接通目录、发送和排队快照，保护修改后的草稿，并在Web/TUI保留真实执行设置。 |
-| 当前阻塞 | ACTIVE: 中心专库检查在准备阶段失败，owner正在离线定位；本次窗口已归还。客户端已开工，生产挂载与Web/TUI接线尚未完成。 |
+| 当前阻塞 | ACTIVE: 中心专库准备缺少4份既有迁移文件，等Lead精确恢复和新槽；客户端已交正式独审并收到矛盾回执校验反馈。生产挂载与Web/TUI尚未完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6原SOURCE_REVIEW保留，现四fake通过；[准备包批准](../../docs/evidence/wpf-mature-02/node-owned-openssl/preparation-review.json)绑定c46f2e05，architecture_read16:45:31/Mika接收，0P1/P2仅packet；实际NOT_OPEN，本段0入口/目标/监听/检查执行。 |

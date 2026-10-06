@@ -10,7 +10,7 @@ CORE源码恢复已解阻：Mika本轮报告Lead已恢复并独核155缺源hash�
 
 ## 固定合同与现场
 
-公有输入固定为CORE `ea276572c3c99fb8400808a93efc69ce530d55a4`：`claude-turn-settings.ts`、`execution-profiles.ts`、`conversations.ts`、`conversation-queue.ts`、`assistant.ts`。首leaf已main22d5；后继source未因leaf批准自动通过。Mika核16:21:52 contracts-only三文件16/16、16:25:51合同focused strict exit0；16:26:31注入现Claude adapter单文件5/5 exit0。0真实query/native/PG/provider；related-closure focused strict也已exit0，合计21 distinct与两strict0；Mika已核manifest及输入252项零差异。真实PG仍未运行，见[专库槽位请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-slot-request.md)。完整core合同/范围见[下一片handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)。
+公有输入固定为CORE `ea276572c3c99fb8400808a93efc69ce530d55a4`：`claude-turn-settings.ts`、`execution-profiles.ts`、`conversations.ts`、`conversation-queue.ts`、`assistant.ts`。首leaf已main22d5；后继source未因leaf批准自动通过。Mika核16:21:52 contracts-only三文件16/16、16:25:51合同focused strict exit0；16:26:31注入现Claude adapter单文件5/5 exit0。0真实query/native/PG/provider；related-closure focused strict也已exit0，合计21 distinct与两strict0；Mika已核manifest及输入252项零差异。后续一次PG在beforeAll因动态migration读闭包缺件失败，0case entered；详[固定失败包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/pg-setup-failure-manifest.json)，原[专库槽位请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-slot-request.md)。完整core合同/范围见[下一片handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)。
 
 本owner16:24:10.888 UTC fresh账本：父0dd97484 v6只docs/实验/plan。F01 v40、TUI01F v1、RECOVERY01 v4仍ACTIVE。F01 `5f0fc08bfa84f35ec5728f0dfbee639619496027` clean，权威[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md)仍O14实施/资源等待；不能因另一个产品片已交付而抢公共源。architecture_read 16:21:56.939快照：Web `0eef4cda8813afe336df8dc88256da28e206c0d4` dirty仅6个direct-second evidence；TUI `26e21690c7d100b7115bef07aae7b55ab44529c6` dirty为fixture/journey/cancel_driver，虽slice delivered仍未release。其只读地图基线main65659028；改写前必须再次fresh核，不覆盖这些dirty。
 
@@ -64,7 +64,7 @@ input包含完整请求（expectedRevision或expectedQueueRevision、text、原�
 
 ## 最小合法源码范围与切片
 
-| 当前owner | 本片精确路径 / 直接检查 |
+| 原16:24 owner地图（公共路径已C01接收） | 本片精确路径 / 直接检查 |
 | --- | --- |
 | F01 v40 | `packages/client/src/index.ts`、`packages/client/src/conversation-acknowledgement.ts`、`packages/contracts/src/index.ts`；同目录`execution-profiles.test.ts`、`conversation-acknowledgement.test.ts`、`conversation-queue.test.ts`已持有；`apps/cli/src/index.ts`、`apps/cli/src/cli.test.ts`、`apps/cli/README.md`在既有apps/cli目录scope。`json-input.ts`先只复用。无需新增client test路径或扩大整个目录。 |
 | Web现owner或独立合法leaf | `apps/web/src/execution-profiles/catalog.ts`、`selection.ts`、`ExecutionProfilePicker.tsx`；`apps/web/src/App.tsx`、`TaskThread.tsx`；`apps/web/src/conversations/ConversationThread.tsx`、`outbox.ts`、`projection.ts`；`conversations/queue/commands.ts`、`projection.ts`、`ConversationQueue.tsx`；`apps/web/src/recovery/binding.tsx`。其中App/Thread/outbox/会话projection/queue.commands/recovery.binding被RECOVERY v4持有；其余当时free，仅fresh take后可先独立catalog/选择/视图leaf。 |
@@ -89,3 +89,11 @@ Web直接tests：`apps/web/test/execution-profiles.test.ts`、`conversation-outb
 共同反例：①完整tuple与legacy codec，nested mutation隔离；②材料pending中编辑B及同文不同设置B，A回执不能清B；③错ACK/断线/刷新/重启仍保A原key/body；④queue/history冻结、observed unknown不回填；⑤not-requested resume409保稿，stale profile任一三元不绕creation锁。实际SDK、PG、Web实跑与全产品验收仍独立记录；本页0运行，不冒称这些检查已通过。
 
 方法：本地find-skills匹配TypeScript client/CLI与跨端状态边界，复用clean-code固定sickn33@bdacd76、codebase-design方法；16:24重新读本地技能，核命名、单一请求/状态owner、错误传播与无需第二hash/FSM。未安装技能/依赖。本轮只读固定Git/账本/owner状态并写父交接，0测试/PG/provider/新诊断；旧sealed证据不改。
+
+## 固定C01补充校验反馈，交assignment正式reviewer
+
+Mika/architecture_read只读固定source `563b1ea151d8d26a2100238d8faf26b697f38d71` 提出的补充P2；本parent复读同Git关键段，0测试/代码修改。作者packet HEAD `a23883fbc595564dcb66e0030b430674b896574e` clean（16:55读），[正式包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/README.md) / fixed-manifest SHA `23347f1107af75427b0dd1ca269e4bdc2e31b5744437df761057a4b036f2bca8`；作者86 distinct分轮/focused types0，本组不重复验证，也不签发本片APPROVED。assignment是唯一正式独审者，问题交原owner修复后由其收口。
+
+**P2：新设置回执可接受互相矛盾的旧requested/effective字段。** `packages/client/src/conversation-acknowledgement.ts:118–126`仅在effective.messageSettings wrapper出现时排除runnerRequested；所以turn已含新snapshot但finalwrapper尚无时，仍可接受旧disabled-only runnerRequested。有newwrapper时，又允许effective.thinking='disabled'。固定CORE ea276的replies.ts90–92将新messageSettings与旧runnerRequested互斥；assistant.ts11–12/28规定新effective thinking为unknown。decoder应在snapshot存在时拒绝runnerRequested，并在newwrapper存在时要求thinking='unknown'。这属于外部回执矛盾校验缺口，不声称当前CORE真实会发错值；不能反向要求queued/pending ACK提前有finalwrapper。
+
+请原owner补两直接反例：①合法新turn snapshot+无finalwrapper+旧runnerRequested应unknown；②合法newwrapper+thinking disabled应unknown。沿现UnknownConversationAcknowledgementError保留原intent/key/body，legacy无新snapshot路径不改；queued无finalwrapper仍可正常解析。**P3供正式reviewer判断**：capabilities.messageSettings.profile目前只shape校验，未与conversation.executionProfile三元绑定；需按可信会话/catalog契约评估，暂不将未验证影响升为blocking。本页只传递具体固定接缝，不替代正式review/status或新增共享helper。
