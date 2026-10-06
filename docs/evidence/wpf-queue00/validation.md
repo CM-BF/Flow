@@ -11,6 +11,6 @@
 
 公开projection seam证明false与true均保持snapshot/capabilities，CREATE/submit只用follow-up；活动turn仍禁止send且不建outbox、不读detail、不自动queue/steer/promote。malformed queue undefined/null/string/number与不支持的steer true继续错误。测试wire转换仅用于模拟尚未宽化的共享literalfalse类型；未改共享contract/client，不能代表CHAT04后台或全部Web队列功能已交付。
 
-本片不改布局/官方Thread/App，未跑浏览器/build/真实中心，不生成新的双主题截图或新URL；既有预览不含本片，全部保留。0模型/产品DB/音频/外部服务。独立review已APPROVED，main未集成。
+本片不改布局/官方Thread/App，未跑浏览器/build/真实中心，不生成新的双主题截图或新URL；既有预览不含本片，全部保留。0模型/产品DB/音频/外部服务。独立review已APPROVED；后续main 698ffcd94ae073b23bcc67f6665fb19f707a93e4 已包含，两path相同，仅Git核验无新测试。
 
 Root独立检查（区别于作者执行）：2026-10-06 04:45:45 UTC两个直接模块35项通过（336ms）；04:48:10核固定5acc实现diffcheck0与metadata afd308 clean，完整读取两文件diff，APPROVED限reader片段。未重跑browser/build/真实中心；旧Thread两处静态文案后继UI处理。
