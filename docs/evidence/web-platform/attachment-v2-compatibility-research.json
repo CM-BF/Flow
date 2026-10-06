@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-10-06 10:18:52 UTC",
+  "basis": "Root design decision + w01 fixed-source read; no runtime compatibility test yet",
+  "legacySource": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "hardGuard": {
+    "path": "apps/web/src/conversation-context/receipts.ts",
+    "lines": "21–35",
+    "callers": [
+      "apps/web/src/conversations/projection.ts:294 Send",
+      "apps/web/src/conversations/queue/commands.ts:62 enqueue"
+    ]
+  },
+  "readers": {
+    "turn": "projection.ts:53–68,158–164,183–188 does not validate context",
+    "messages": "messages.ts:12–15 renders text/reply only; attachments not displayed",
+    "queue": "queue/projection.ts:16–21,commands.ts:36–38 accepts context without v1 guard; controls do not invoke it",
+    "detail": "client conversationContext method has no Web callsite at this fixed source"
+  },
+  "matrix": [
+    {
+      "case": "old Web → new center",
+      "required": "Missing or empty attachments and persisted v1 original-key replay retain original template1/digest/receipt. Never globally upgrade conversation/project."
+    },
+    {
+      "case": "new v2 page → old page GET/history/queue",
+      "required": "Old page can display text/control queue but does not show attachments; explicitly limited compatibility, not full material UI."
+    },
+    {
+      "case": "new Web → old center",
+      "required": "Missing/false attachment capability blocks nonempty attachments; plain request omits attachments entirely, because old strictObject rejects even []. No silent material downgrade."
+    },
+    {
+      "case": "new Web → new center",
+      "required": "Nonempty attachments uses template2 and shared F01 decoder ordered identity guard; old v1 remains intact. Malicious v2 ACK to old v1 request remains unknown with original key/body."
+    }
+  ],
+  "notImplemented": [
+    "legacy consumer fixture",
+    "new-to-old actual HTTP fixture"
+  ],
+  "noNewProtocol": "No Accept/header/GET blocking or field stripping/digest alteration is introduced without an actual incompatible reader. Existing queue blocked reason closed enum is preserved."
+}

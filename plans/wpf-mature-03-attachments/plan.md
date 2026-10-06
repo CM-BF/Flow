@@ -43,7 +43,7 @@ root只读实际react0.15.23/core0.3.22：external-store-adapter.ts已有adapter
 
 ### 附件端到端责任已确定（GO正式裁决，经root转达）
 
-Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资源worker与独立Web输入/预览worker并行。当前派panels只读后端接口/scope方案、w01在STEIRI批准metadata安全点后只读Web方案；尚未为附件建树或take。root统一固定轻引用、ready、授权读取与保留合同，然后各自独立worktree/fresh literal claim。ExecutionLead仅协调已占共享index/合同出口、迁移编号与main，不再把“等待Lead后端owner”作为阻塞。02 adapter消费同一协议，04复用metadata，不造第二上传协议。此前[有界owner观察](../../docs/evidence/web-platform/mature03-owner-observation.json)仅保留其历史时点，已由本裁决解除。
+Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资源worker与独立Web输入/预览worker并行。当前panels已在attachment-resources/f181独立树fresh ef617d78 v1领取五scope，实施两个typed合同与pure test；w01继续只读Web adapter/recovery方案，未领Web写权。root统一固定轻引用、ready、授权读取与保留合同，然后各自独立worktree/fresh literal claim。ExecutionLead仅协调已占共享index/合同出口、迁移编号与main，不再把“等待Lead后端owner”作为阻塞。02 adapter消费同一协议，04复用metadata，不造第二上传协议。此前[有界owner观察](../../docs/evidence/web-platform/mature03-owner-observation.json)仅保留其历史时点，已由本裁决解除。
 
 首个支持类型可做有界切片；完整验收仍是按钮/drag/@file→ready固定版本与顺序→Send/Queue→远端runner实际读取同材料并留输入证据。pending/expired/provider unsupported必须阻止并保草稿；不能丢附件只发文字。删除草稿不回收in-use，失败/取消有界清理；断线/重启/撤权/unknown保留身份与原键。复用project/context/storage授权、版本与预算，metadata首屏、正文按需。区分upload、knowledge和授权runner file，不用blob URL、绝对path或base64 timeline假接。先做真实PG/HTTP fixture，0provider；完整模型验收仍须单独明确预算。
 
@@ -51,8 +51,12 @@ Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资�
 
 installed core0.3.22已有attachment add/send/remove接口；当前Thread.onNew仅消费text，忽略message.attachments，因此新输入必须显式映射授权不可变refs，paperclip/预览不等于已发送。现core remove仅对尚未complete的attachment调用adapter.remove，center/outbox负责保留与in-use回收，不能依赖删草稿回调。官方[附件指南](https://www.assistant-ui.com/docs/guides/attachments)与[custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)仅作为方法来源，当前网站推荐版本不构成本项目SDK升级授权。本段无上传、provider或实际附件输入验收。
 
-当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01与Web WPF-ATTACHI01均仅候选：15与23 literal待root合同固定复核；F01仍持contracts/conversations.ts及共享出口，迁移号待其精确预留。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2均是proposal，不写为已批准公共合同。
+当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01的schema phase1已领五scope，15runtime与23Web仍候选待固定合同/精确amend；F01 v23已释放contracts/conversations.ts，026已预留，F01保留公共出口/client/server index。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2设计方向已由root冻结，typed SHA仍待独审发布，不能称公共输入已ready。
 
 ### 共享回执与上传恢复接缝（root/两owner只读方案）
 
 attachments[]/template2固定shape交F01唯一公共receipt decoder扩展，保旧template1与Web queue matcher，不另造第二份ACK验证器；附件UI与该输入成套接收，后台资源可先独立推进，不阻TUI首片。Web候选改recovery.ts替代自有receipts.ts，恢复查找/expiry/replay/pin与浏览器有限metadata intent由root冻结后才实施。unknown lookup404不证明未提交；重选原文件同digest/length/metadata才能原key重试，ready不自动附到新稿。16条/64KiB与recoveryScope仍只是提案，跨reload未知Send/Queue未因此获恢复承诺。详见[集中依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。
+
+### 旧客户端兼容矩阵（固定f181源码研究，待实际consumer验证）
+
+沿[逐路径研究](../../docs/evidence/web-platform/attachment-v2-compatibility-research.json)：仅每请求非空attachments生成template2，省略/[]和原v1 receipt重放不变；不能按项目或会话升级。旧bundle可读v2 turn/queue正文但不展示材料，明确这个限制。新bundle对旧center缺cap禁附件，plain请求彻底省略attachments而不是发[]，旧strictObject否则拒绝。F01唯一shared decoder验v1/v2 exact ordered identity，恶意v2 ACK对v1请求仍unknown保原key/body。此矩阵并入03-04/05/06验收，不增加无证据的Accept协商或GET字段剥离；真实legacy/current HTTPfixture尚未执行。

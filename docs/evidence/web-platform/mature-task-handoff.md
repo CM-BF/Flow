@@ -1,14 +1,16 @@
 # 成熟聊天大task来源与登记队列
 
-## F01需读的具体回复（2026-10-06 10:03:33 UTC）
+## F01需读的具体回复（2026-10-06 10:18:52 UTC）
 
 1. **有效writer与安全点已答**：[09:51:27.662Z四path观察](receipt-shared-writer-observation.json)及[原账本](receipt-shared-writer-ledger.json)：`conversations/projection.ts`、`conversation-context/receipts.ts`、`execution-profiles/selection.ts`、`conversation-context/selection.ts`均无active/handoff writer。这只是时点观察；F01固定公共receipt target与出口后，Web可立即以精确projection调用点+专测/自身记录fresh take，不必等待已释放的STEIRI App范围。所有路径均在apps/web/src下。
 2. **首迁移界限**：已读main f181的 `docs/evidence/tui01/shared-ack-design.md`，queue matcher仍留Web。receipts.ts保freezeKnowledgeRequest和Queue matcher，profile selection保snapshot/history guard；不删整文件，不放宽已读状态。invalid ACK为unknown并保原key/body，late epoch、旧replay不回滚新状态。
 3. **附件v2交接给同一decoder owner**：Web/root唯一后端将冻结attachments[]/template2 shape交F01 packages/client receipt owner，增可选分支或受控后继extension；保旧template1及Queue matcher，不在Web另复制第二套验码器。ATTACHI01候选已用recovery.ts替换自有receipts.ts。后端资源可独立先做，附件UI上线需合同+shared decoder+消费同一固定输入；不阻TUI首片。
-4. **共享出口/编号需唯一writer安排**：[附件依赖](attachment-shared-dependencies.json)列F01 v22 contracts/index、packages/client整目录、server/index及后端候选内conversations.ts冲突；按其受控薄输入或明确stop/CAS交权处理。migration最高025仅固定源事实，未预约编号。Lead协调出口/编号/main，附件后端由Web/root承担，不转嫁给Lead。
-5. **短输入优先**：ATTACH01获scope后先固定小public合同/Interface供root审SHA，再由Lead受控发布准确输入。ATTACHI01可先领取新模块/专测以HTTP fixture与后端PG实施并行；App/receipt等F01短projection迁移交权后精确amend，不能预占整23scope或复制未固定协议。当前尚未预领。
+4. **共享交权/编号已正式收到**：[F01原receipt](f01-attachment-handback-receipt.json)证明10:07:51.636Z v23移出contracts/conversations.ts；[Lead交接](f01-attachment-handoff-observed.json)正式预留026-attachment-resources.sql。预留/释放不是本组写许可；ATTACH当前仍仅五scope，runtime与新路径fresh amend后才写。F01继续独占contracts/index、packages/client、server/index；现f181新树不重建，c340产品同代。Lead协调出口/编号/main，资源域仍本组承担。
+5. **短输入优先**：ATTACH01获scope后先固定小public合同/Interface供root审SHA，再由Lead受控发布准确输入。ATTACHI01可先领取新模块/专测以HTTP fixture与后端PG实施并行；App/receipt等F01短projection迁移交权后精确amend，不能预占整23scope或复制未固定协议。当前ATTACH01 ef617d78 v1仅五schema/记录路径，runtime及Web未预领。
 
-## 当前集中接收队列（2026-10-06 10:03:33 UTC）
+6. **固定旧reader兼容结论（root已定方向）**：[逐路径矩阵](attachment-v2-compatibility-research.json)。旧Web的v1硬门禁只在自身Send/enqueue ACK；history/queue不验context且不显示材料。中心必须按每请求非空attachments产生v2，省略/[]及持久v1原key回执沿v1，不能按会话升级。新Web对旧center缺cap禁附件，plain必须省略attachments字段（旧strictObject连[]也拒）。F01共享decoder加明确v1/v2分支，旧页可看新v2正文但附件不可见是已知限制。先用真实legacy consumer fixture验证；当前无Accept/header/GET阻断或剥字段改digest需求。额外严格消费者请指出固定路径，不阻已批TUI首片。
+
+## 当前集中接收队列（2026-10-06 10:18:52 UTC）
 
 | Task / action | 固定实现 / 最终正常push、clean | 唯一canonical / 边界 |
 | --- | --- | --- |
@@ -18,7 +20,7 @@
 | WPF-ACTIVITYREAD01 → MATURE06，main收口完成 | f2bcaae6623176acd718cf53707892154579970a / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner finalbe977a23cff08edf6ac46d18750c3400bf9a2218 push/clean | web-activity-readability / plans/wpf-activity-readability / docs/evidence/wpf-activity-readability；四source零diff；六scope全停写后[6f427 v3 released](activityread01-main-release-receipt.json)，仅展开活动区简化 |
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
 | WPF-ATTACH01 → MATURE03，合同phase1实施/首source已就绪 | fixed base f181d84b5fb3652d62e2a181acff442d42b3e066；[ef617d78 v1 take](attach01-contract-take-receipt.json)10:06:48.197Z，五literal | attachment-resources / plans/wpf-attach01-resources / docs/evidence/wpf-attach01；两个合同+一专测+自己plan/evidence，owner panels；首canonical b87f8a515c7c8bbe5b76a8202db4f7666924b10d clean；小合同root审后Lead受控输入，runtime/export/migration不在此授权 |
-| D06 → D01，唯一source迁移请求/固定架构实施 | 固定main f181d84b5fb3652d62e2a181acff442d42b3e066；首canonical a8c6d60418478edc7ae1c9f209fbe3df63495e02正常push/clean；[84fd3e7d v1四scope](d06-runtime-take-receipt.json) | 请将唯一D06 source由dashboard-architecture-stream迁至dashboard-architecture-runtime / codex/dashboard-architecture-runtime / plans/d06-architecture-refresh，evidence仍docs/evidence/d06；旧e06a v2已released不双登记，renderer/registry不改 |
+| D06 → D01，APPROVED待主线接收/唯一source迁移请求 | 固定main f181d84b5fb3652d62e2a181acff442d42b3e066；实现2c3160f42784ee814d968a953d557251c81a243d / final ad58d3412b5435bb77b704b55ef8f6d499ea820d正常push/clean；root10:18:41 UTC APPROVED，独立15 Node/局部CUA；author61来源/119行/五图browser；[84fd3e7d v1四scope](d06-runtime-take-receipt.json) | 请将唯一D06 source由dashboard-architecture-stream迁至dashboard-architecture-runtime / codex/dashboard-architecture-runtime / plans/d06-architecture-refresh，evidence仍docs/evidence/d06；旧e06a v2已released不双登记，renderer/registry不改 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
 这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。D08部署后root一次实际检查六大task父关联/take展示才报告计划请求Done，不将局部片段当整体完成。

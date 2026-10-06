@@ -386,5 +386,17 @@
     "branch": "codex/attachment-resources",
     "owner": "workspace_panels_owner",
     "overlap": []
+  },
+  "latestCoordination": {
+    "at": "2026-10-06 10:18:52 UTC",
+    "leadReceipt": "f01-attachment-handoff-observed.json",
+    "f01ClaimVersion": 23,
+    "conversationsHandedBack": true,
+    "migrationReserved": "packages/storage/migrations/026-attachment-resources.sql",
+    "reservationIsWritePermission": false,
+    "backendCurrentTake": "ef617d78 v1 five literal schema-only",
+    "compatibility": "attachment-v2-compatibility-research.json",
+    "basePolicy": "Keep existing f181 tree; c340 product-same input does not require reset/rebase",
+    "next": "fixed DTO root review then controlled F01 input; runtime exact scopes require fresh amend"
   }
 }
