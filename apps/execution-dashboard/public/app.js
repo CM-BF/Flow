@@ -54,17 +54,58 @@ function allocationText(task, summary = true) {
   if (!task.assignments?.length) return '尚无领取登记；接手前须核对';
   return [...new Set(task.assignments.map(claim => `${claim.role === 'review' ? '只读审查' : claim.role === 'integration' ? '受控集成' : claim.state === 'handoff_pending' ? '交接待接收' : '已领取'}${summary ? '' : ` · ${claim.lead} / ${claim.worker}`}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}${claim.matchesSource ? '' : ' · 进度来源待对齐'}`))].join('；');
 }
+function updateClaimReading(row, claim) {
+  // A fingerprint of displayed facts only; all current authority stays in snapshot.
+  row.dataset.record = JSON.stringify(claim);
+  row.querySelector('h3').textContent = claim.taskId;
+  row.querySelector('summary').textContent = `查看领取详情：${claim.taskId}`;
+  row.querySelector('[data-claim-state]').textContent = `${claim.state}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}`;
+  row.querySelector('.detail-facts').replaceWith(assignmentFacts(claim, false));
+}
+function createClaimReading(claim) {
+  const row = element('article', undefined, 'task-row'), copy = element('div', undefined, 'task-copy');
+  row.dataset.claimId = claim.claimId;
+  const state = element('p'); state.dataset.claimState = '';
+  const notice = element('p', undefined, 'notice warning'); notice.dataset.claimObservation = '';
+  const details = element('details'), summary = element('summary', `查看领取详情：${claim.taskId}`);
+  details.append(summary, element('dl', undefined, 'detail-facts'));
+  const refresh = element('button', '更新此详情'); refresh.type = 'button'; refresh.dataset.claimRefresh = '';
+  refresh.addEventListener('click', () => {
+    const current = snapshot.unregisteredAssignments.find(item => item.claimId === claim.claimId);
+    if (!assignmentLoading && snapshot.assignments.state === 'available' && current) {
+      updateClaimReading(row, current); summary.focus(); renderUnregisteredClaims();
+    } else void refreshAssignments();
+  });
+  // Closing an absent old record dismisses this reading surface, never a claim.
+  details.addEventListener('toggle', renderUnregisteredClaims);
+  copy.append(element('h3', claim.taskId), state, notice, details, refresh); row.append(copy);
+  updateClaimReading(row, claim); return row;
+}
+function renderUnregisteredClaims() {
+  const container = $('#unregistered-claim-items');
+  const claims = new Map(snapshot.unregisteredAssignments.map(claim => [claim.claimId, claim]));
+  const rows = new Map([...container.children].map(row => [row.dataset.claimId, row]));
+  for (const [id, claim] of claims) if (!rows.has(id)) container.append(createClaimReading(claim));
+  for (const row of [...container.children]) {
+    const claim = claims.get(row.dataset.claimId), details = row.querySelector('details');
+    const reading = details.open || row.contains(document.activeElement);
+    const available = !assignmentLoading && snapshot.assignments.state === 'available';
+    if (available && !claim && !reading) { row.remove(); continue; }
+    let unchanged = claim && row.dataset.record === JSON.stringify(claim);
+    if (available && claim && !unchanged && !reading) { updateClaimReading(row, claim); unchanged = true; }
+    row.dataset.freshness = available && unchanged ? 'current-observation' : 'prior-observation';
+    row.querySelector('[data-claim-observation]').textContent = !available
+      ? '领取观察正在刷新或未知；以下保留上次记录，禁止据此新接手。'
+      : !claim ? '本次观察中已不在未登记领取列表；以下仅为旧记录，不代表仍占用或已释放。收起并离开详情后移除此旧观察。'
+        : unchanged ? `字段未变化；最近领取观察 ${timestamp(snapshot.assignments.observedAt)}。详情保留原读取时间，接手仍须原子核对。`
+          : '领取版本或内容已变化；以下保留正在阅读的旧记录，请更新此详情，禁止据此新接手。';
+    row.querySelector('[data-claim-refresh]').textContent = available && claim ? '更新此详情' : '重新核对领取';
+  }
+  $('#unregistered-claims').hidden = container.children.length === 0;
+}
 function renderAssignments() {
   if (!snapshot) return;
-  const claims = snapshot.unregisteredAssignments;
-  $('#unregistered-claims').hidden = !claims.length;
-  $('#unregistered-claim-items').replaceChildren(...claims.map(claim => {
-    const row = element('article', undefined, 'task-row'), copy = element('div', undefined, 'task-copy');
-    copy.append(element('h3', claim.taskId), element('p', `${claim.state}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}`));
-    const details = element('details');
-    details.append(element('summary', `查看领取详情：${claim.taskId}`), assignmentFacts(claim, false));
-    copy.append(details); row.append(copy); return row;
-  }));
+  renderUnregisteredClaims();
   for (const node of document.querySelectorAll('[data-allocation]')) {
     const task = snapshot.tasks.find(task => task.id === node.dataset.allocation);
     if (task) node.textContent = allocationText(task, node.dataset.compact !== 'false');

@@ -199,12 +199,14 @@ async function summaryChecks({ page, f, report, output }) {
   };
   const requests = []; page.on('request', request => requests.push(new URL(request.url()).pathname));
   let finishAssignments;
+  let claimVersion = 7, claimObservation = 'available';
+  const claimScopes = ['apps/exact/component.js', 'plans/owned', '#owned/file', '-owned/file', 'literal`name/file', ...Array.from({ length: 95 }, (_, i) => `apps/exact/scope-${i}.js`)];
   const assignmentRelease = new Promise(resolve => { finishAssignments = resolve; });
   await page.route('**/api/assignments', async route => {
     const response = await route.fetch(), value = await response.json(); await assignmentRelease;
-    value.assignments = { state: 'available', observedAt: value.completedAt, claims: [] };
+    value.assignments = { state: claimObservation === 'unknown' ? 'unknown' : 'available', observedAt: value.completedAt, claims: [] };
     value.byTask = Object.fromEntries(f.tasks.map(task => [task.id, []]));
-    value.unregisteredAssignments = [{ claimId: 'unregistered-readonly-fixture', version: 7, taskId: 'U01', role: 'writer', state: 'handoff_pending', lead: '<script>lead</script>', worker: 'fixture-worker', branch: 'codex/unregistered', worktree: '/synthetic/unregistered', scope: ['apps/exact/component.js', 'plans/owned', '#owned/file', '-owned/file', 'literal`name/file'], needsVerification: true, updatedAt: value.completedAt, next: { lead: 'next', worker: 'next-worker', worktree: '/synthetic/next', branch: 'codex/next' } }];
+    value.unregisteredAssignments = claimObservation !== 'available' ? [] : [{ claimId: 'unregistered-readonly-fixture', version: claimVersion, taskId: 'U01', role: 'writer', state: 'handoff_pending', lead: '<script>lead</script>', worker: 'fixture-worker', branch: 'codex/unregistered', worktree: '/synthetic/unregistered', scope: claimVersion === 7 ? claimScopes : ['apps/changed-after-review.js'], needsVerification: true, updatedAt: f.updated, next: { lead: 'next', worker: 'next-worker', worktree: '/synthetic/next', branch: 'codex/next' } }];
     await route.fulfill({ response, json: value });
   });
   await page.goto(f.url); await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
@@ -213,11 +215,48 @@ async function summaryChecks({ page, f, report, output }) {
   finishAssignments(); await page.locator('#unregistered-claims').waitFor({ state: 'visible' });
   const claim = page.getByText('查看领取详情：U01', { exact: true }); await claim.focus(); await page.keyboard.press('Enter');
   assert.match(await page.locator('#unregistered-claim-items').innerText(), /apps\/exact\/component.js/);
-  assert.equal(await page.locator('#unregistered-claim-items dt').filter({ hasText: '精确 scope' }).evaluate(node => node.nextElementSibling.textContent), 'apps/exact/component.js\nplans/owned\n#owned/file\n-owned/file\nliteral`name/file');
+  assert.equal(await page.locator('#unregistered-claim-items dt').filter({ hasText: '精确 scope' }).evaluate(node => node.nextElementSibling.textContent), claimScopes.join('\n'));
   assert.match(await page.locator('#unregistered-claim-items').innerText(), /仍占用/);
   assert.match(await page.locator('#unregistered-claim-items').innerText(), /不适用.*进度来源尚未登记/);
   assert.equal(await page.locator('#unregistered-claim-items script').count(), 0);
   report.checks.push('Summary renders before ledger, requests no full snapshot/proof; unregistered claim exact scope and stale handoff are keyboard reachable');
+  const automaticRefresh = async () => {
+    const previous = await page.locator('#assignment-observation').getAttribute('data-read-id');
+    await page.evaluate(() => window.fixtureAutomaticRefresh());
+    await page.waitForFunction(previous => !document.querySelector('#refresh').disabled && document.querySelector('#assignment-observation').dataset.readId !== previous, previous);
+  };
+  await page.evaluate(() => {
+    const row = document.querySelector('#unregistered-claim-items article');
+    const scope = [...row.querySelectorAll('dt')].find(node => node.textContent === '精确 scope').nextElementSibling;
+    const summary = row.querySelector('summary'); summary.focus();
+    const range = document.createRange(); range.selectNodeContents(scope);
+    const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+    window.fixtureClaimReading = { row, scope, summary, selection: selection.toString(), text: scope.textContent };
+  });
+  const assertClaimReading = async freshness => {
+    assert.deepEqual(await page.evaluate(() => {
+      const { row, scope, summary, selection, text } = window.fixtureClaimReading;
+      return { sameRow: row === document.querySelector('#unregistered-claim-items article'), connected: scope.isConnected,
+        open: row.querySelector('details').open, focus: document.activeElement === summary, selection: getSelection().toString() === selection,
+        sameText: scope.textContent === text, freshness: row.dataset.freshness };
+    }), { sameRow: true, connected: true, open: true, focus: true, selection: true, sameText: true, freshness });
+  };
+  await automaticRefresh(); await assertClaimReading('current-observation');
+  claimVersion = 8;
+  await automaticRefresh(); await assertClaimReading('prior-observation');
+  assert.match(await page.locator('[data-claim-observation]').innerText(), /版本或内容已变化/);
+  await page.locator('[data-claim-refresh]').focus(); await page.keyboard.press('Enter');
+  assert.equal(await page.locator('#unregistered-claim-items dt').filter({ hasText: '精确 scope' }).evaluate(node => node.nextElementSibling.textContent), 'apps/changed-after-review.js');
+  assert.equal(await claim.evaluate(node => node === document.activeElement), true);
+  claimObservation = 'unknown'; await automaticRefresh();
+  assert.equal(await page.locator('#unregistered-claim-items details').evaluate(node => node.open), true);
+  assert.match(await page.locator('[data-claim-observation]').innerText(), /未知.*上次记录/);
+  assert.match(await page.locator('#unregistered-claim-items .detail-facts').innerText(), /changed-after-review/);
+  claimObservation = 'released'; await automaticRefresh();
+  assert.match(await page.locator('[data-claim-observation]').innerText(), /仅为旧记录.*不代表仍占用或已释放/);
+  await page.keyboard.press('Enter'); await page.locator('#refresh').focus(); await automaticRefresh();
+  assert.equal(await page.locator('#unregistered-claims').isVisible(), false);
+  report.checks.push('Unchanged unregistered claim preserves expanded 100 scopes, focus and selection during automatic sync; version changes require explicit update, unknown/released retain labelled old reading until closed');
   const open = id => page.locator(`#active-work [data-open-task="${id}"]`).last();
   await open('T02').click(); await page.locator('#selected-proof .documents').waitFor();
   await page.keyboard.press('Escape');
