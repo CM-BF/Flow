@@ -1,0 +1,33 @@
+{
+  "base": "86a36eaeffbf09f0a3772c3d1509c17dc0a76f92",
+  "c02Implementation": "77f0b152a2be32806b17cc7f8a57d33afc2043b3",
+  "consumerTestDelta": "d9a162738c5c3b3531fc7f5da3a5c0ea1e846e67",
+  "sources": [
+    {
+      "commit": "309be08696b75d5d186ee325cf40d427e22e9b6a",
+      "path": "docs/evidence/chat06c02/interface.md",
+      "sha256": "8c65b6e710ff3105b4bfedb6275680501ecf62959f068171538dfb40fd955eb4",
+      "bytes": 1755
+    },
+    {
+      "commit": "309be08696b75d5d186ee325cf40d427e22e9b6a",
+      "path": "docs/evidence/chat06c02/manifest.json",
+      "sha256": "03b1f552b6bc0a4c5876500163380b9aa7ede182760fbed2ded9e2a348247e3d",
+      "bytes": 3240
+    },
+    {
+      "commit": "309be08696b75d5d186ee325cf40d427e22e9b6a",
+      "path": "apps/server/src/assistant-stream-compatibility/compatibility.test.ts",
+      "sha256": "2466d4e82cb4ef891f896beb2ed563666047005e749d91fa96c3b41cefd70b48",
+      "bytes": 12664
+    },
+    {
+      "commit": "309be08696b75d5d186ee325cf40d427e22e9b6a",
+      "path": "apps/server/src/queries.ts",
+      "sha256": "e7a69ecfb1508d08b04338dd42e4bb0439057b1d45db5fe6ea531567eb36b042",
+      "bytes": 2225
+    }
+  ],
+  "fixtureKind": "Contract fixtures corresponding to passed real HTTP assertions; not historical raw HTTP capture. No server/shared input applied.",
+  "readClarification": "d9a changes assistant-stream/stream.test.ts only; compatibility.test.ts is read at fixed final metadata309be containing77f."
+}
