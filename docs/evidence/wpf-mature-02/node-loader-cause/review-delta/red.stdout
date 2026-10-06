@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ experiments/codex-app-server-conformance/node-loader-cause/review-delta.test.ts (8 tests | 2 failed) 5ms
+   × recognizes the anchored Apple dyld PID prefix without returning PID or text 3ms
+   × outer completion gate observes the clock after the final receipt and byte reads 1ms
+   ✓ rejects unsupported prefix dyld[0]:  0ms
+   ✓ rejects unsupported prefix dyld[-1]:  0ms
+   ✓ rejects unsupported prefix dyld[2147483648]:  0ms
+   ✓ rejects unsupported prefix dyld[11111111111]:  0ms
+   ✓ rejects unsupported prefix prefix dyld[123]:  0ms
+   ✓ rejects unsupported prefix dyld:  0ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 passed (8)
+   Start at  06:29:02
+   Duration  107ms (transform 18ms, setup 0ms, import 25ms, tests 5ms, environment 0ms)
+

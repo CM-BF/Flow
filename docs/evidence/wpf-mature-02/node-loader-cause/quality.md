@@ -6,4 +6,4 @@
 
 账本fresh v5七scope合法，R06/source store已交回只读。回收检查只核本树12个明确路径，均不存在、回收0B；不扫其他树/个人数据。当前仅小检查，禁止大构建。
 
-准备预算实际增长后同256KiB内重分配为prepared76KiB/archive108KiB；3项预算直接消费者定向通过（2重叠+1新），旧source/raw不倒改。captured原chunk与copied、actual disk和receipt预留分别记录；任何截断/观察失败/EOF或group未知使整体计量失效。
+复审修复同256KiB内分配80+112+32+8+16+4=252KiB，仅4KiB余量。新8项red6/2→green8/8；旧消费者6/16未选、预算3/19未选和惰性import通过，累计33distinct非一轮33。outer末次门禁在自动写入后，实际exit另需tool回执；dyld有限PID前缀仅提取精确role。外部27依赖+Node=28。旧f6 manifest/raw按Git保留，当前input另绑定v2。captured原chunk与copied、actual disk和receipt预留分别记录；任何截断/观察失败/EOF或group未知使整体计量失效。

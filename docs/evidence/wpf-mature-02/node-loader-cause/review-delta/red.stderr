@@ -1,0 +1,31 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-loader-cause/review-delta.test.ts > recognizes the anchored Apple dyld PID prefix without returning PID or text
+AssertionError: expected 'UNKNOWN' to be 'library-not-loaded' // Object.is equality
+
+Expected: "library-not-loaded"
+Received: "UNKNOWN"
+
+ ❯ experiments/codex-app-server-conformance/node-loader-cause/review-delta.test.ts:7:28
+      5| it('recognizes the anchored Apple dyld PID prefix without returning PI…
+      6|   const value = observeLoader(Buffer.from('dyld[98765]: Library not lo…
+      7|   expect(value.errorClass).toBe('library-not-loaded'); expect(value.de…
+       |                            ^
+      8|   expect(JSON.stringify(value)).not.toContain('98765'); expect(JSON.st…
+      9| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-loader-cause/review-delta.test.ts > outer completion gate observes the clock after the final receipt and byte reads
+AssertionError: expected -1 to be greater than 1581
+ ❯ experiments/codex-app-server-conformance/node-loader-cause/review-delta.test.ts:15:17
+     13|   const count = source.lastIndexOf('final_receipt_bytes=');
+     14|   const completion = source.lastIndexOf("completion_epoch=$(/bin/date …
+     15|   expect(close).toBeGreaterThan(source.indexOf('self_bytes=')); expect…
+       |                 ^
+     16|   expect(source.slice(completion)).toContain('completion_epoch - start…
+     17|   expect(source.slice(completion)).not.toMatch(/>&[0-9]/); // No autom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

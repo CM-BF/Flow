@@ -8,9 +8,9 @@ import { observeLoader } from './observe.mjs';
 const fail = () => { throw Error('Loader observation unavailable'); };
 const hash = data => createHash('sha256').update(data).digest('hex');
 export function makeCauseBudget(prepared) {
-  if (!Number.isSafeInteger(prepared) || prepared < 0 || prepared > 77824) fail();
+  if (!Number.isSafeInteger(prepared) || prepared < 0 || prepared > 81920) fail();
   const value = { prepared, observed: 0, copied: 0, disk: 0, receipts: 0 };
-  const total = () => prepared + value.observed + value.disk + 16384 + 110592 + 4096;
+  const total = () => prepared + value.observed + value.disk + 16384 + 114688 + 4096;
   const add = (name, n) => {
     if (!Number.isSafeInteger(n) || n < 0 || !Object.hasOwn(value, name)) fail();
     value[name] += n; // Count even the first overflow before failing.

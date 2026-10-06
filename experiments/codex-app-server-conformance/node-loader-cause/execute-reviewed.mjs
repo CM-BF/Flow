@@ -23,7 +23,7 @@ export async function executeReviewed() {
   fingerprint(input.node.path, input.node);
   let prepared = 0; const seen = new Set();
   for (const item of input.prepared) { if (seen.has(item.path)) fail(); seen.add(item.path); check(item); prepared += item.bytes; }
-  if (prepared !== input.preparedBytes || prepared > 77824 || performance.now() >= 20000) fail();
+  if (prepared !== input.preparedBytes || prepared > 81920 || performance.now() >= 20000) fail();
   const roles = JSON.parse(fs.readFileSync(path.join(evidence, 'dependency-roles.json'), 'utf8'));
   return runCause({ evidenceDirectory: evidence, repository, preparedBytes: prepared, roles, initialReceiptBytes: Buffer.byteLength(reservation) });
 }

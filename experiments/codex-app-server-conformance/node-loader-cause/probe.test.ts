@@ -55,7 +55,7 @@ it('missing/conflicting errno and incomplete/nonUTF8 output remain unknown', () 
   expect(observeLoader(Buffer.from('unknown text'), roles, true).errno).toBeNull();
 });
 it('budget records overflow instead of rolling bytes back', () => {
-  const budget = makeCauseBudget(77824); expect(() => budget.observe(100000)).toThrow(); expect(budget.snapshot().observed).toBe(100000); expect(budget.snapshot().withinBudget).toBe(false);
+  const budget = makeCauseBudget(81920); expect(() => budget.observe(100000)).toThrow(); expect(budget.snapshot().observed).toBe(100000); expect(budget.snapshot().withinBudget).toBe(false);
 });
 function setup() {
   const evidenceDirectory = fs.mkdtempSync(path.join(os.tmpdir(), 'flow-cause-test-evidence-')); roots.push(evidenceDirectory);
@@ -121,6 +121,6 @@ it('delivery refuses unknown accounting, late completion, and receipts beyond th
 });
 
 it('preparation boundary leaves the declared archive and automatic receipt reserves', () => {
-  expect(makeCauseBudget(77824).snapshot().reservedBytes).toBe(208896);
-  expect(() => makeCauseBudget(77825)).toThrow();
+  expect(makeCauseBudget(81920).snapshot().reservedBytes).toBe(217088);
+  expect(() => makeCauseBudget(81921)).toThrow();
 });

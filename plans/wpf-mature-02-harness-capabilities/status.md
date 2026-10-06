@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:12:21 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:34:50 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 5b1d3003c540667da0389c1febb1554ee4204e5f（旧结果已封存；新cause文档HEAD由Git核） |
-| 工作树dirty状态 | 旧源码/raw冻结；新cause source42d8707d/input/manifest已固定准备，25distinct纯检查；旧profile/raw冻结，0新target。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / f6bea8076d4663243c4ca9b02850b231d8f99db7（修复源待固定；旧结果仍封存） |
+| 工作树dirty状态 | 原f6两P2修复与v2准备metadata待提交；旧raw/profile冻结，0新target。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | cause source42d8707d32c8f7a26c97224a0807f3d386ba0a82；25distinct纯检查，组合待独审；go-node-loader-cause-once NOT_OPEN |
+| 实现目标 | cause f6原审2P2已修复；33distinct分次证据，新固定包待增量独审；go-node-loader-cause-once NOT_OPEN |
 | 实现范围 | 新node-rootliteral实验；diagnostics/run-diagnostics.mjs导出/计量私有helper；isolation/compose-canary.mjs固定场景/资源清理接缝；本计划与证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 失败结果已独审接收；现有加载库清单不足以定位原因，正在准备一次受限观察方案。 |
-| 下一可用交付 | 固定包交独立审查：双流完整计量、受限错误字段与资源关闭；窗口未开放。 |
+| 当前产出 | 受限观察的计时与错误分类审查问题已修复，正在固定新的准备包。 |
+| 下一可用交付 | 两处修复交独立增量审查；实际观察窗口未开放。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：Mika13:08:21 UTC已限定APPROVED；FAIL/整体输出UNKNOWN，未重跑。 |
+| Review | [review.md](review.md)：原结果限定APPROVED；新cause f6于13:27:13 CHANGES_REQUESTED，两P2修复待复审。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 
@@ -56,12 +56,8 @@
 
 [固定结果](../../docs/evidence/wpf-mature-02/node-rootliteral/run-report.md)及[result-limits](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)：失败槽正常stdout上界未确认，机器accounting=true不能替代整体UNKNOWN。旧e7 raw/manifest不追改；窗口已消费，无剩余授权。58 distinct准备检查与实际失败分开。
 
-## 新cause只读阶段
+## 新cause准备阶段
 
-[候选Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)沿同TODO-03；GO方向已授权，当前NOT_OPEN。仅既有otool归档/profile/static source核对，无新otool/help/target/测试。拟复用既有双流capture/lifecycle，明确宿主差异，待Mika审设计后才实现。旧Node archive129958/131072是5b1d3003历史快照，不用当前共享metadata hash替换旧清单。
+[Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)沿TODO-03；GO方向授权，NOT_OPEN。原f6两P2的纯反例与修复保留：新8项通过，受影响旧消费者6项/预算3项通过，累计33distinct非同轮；native import0spawn/0listener。外部27依赖+Node=28；当前v2与旧f6 manifest/raw分开解释，旧Node5b归档不回填。
 
-资源13:12:21 UTC：Data1813516KiB；只核本树12个明确安装/cache/build路径，均不存在，回收0B。保留raw/unknown资源与所有他树/个人数据；大构建需free≥2.5GiB且共享预留≥1GiB，当前无大构建。
-
-Mika已核5c36设计/8输入并允许实施准备；新增observe完整chunk计量，不能将capture cap当输出总量。保留default65536旧行为，定向纯检查；运行NOT_OPEN。
-
-新cause检查25distinct分次（22新+3旧command）通过，首轮故障注入范围失败已保留；native-source真实惰性import0spawn/0listener。准备包预算同256KiB内分配，实际input/manifest待固定；无实际目标调用。
+资源仅核本树12个明确路径均不存在、回收0B；不扫他树/个人文件，不启动大构建。双流观察计完整received chunk，capture cap不作总量证明；30s末次自动写入门禁之外，实际exit需外部完成回执。clean-code沿固定bdacd76检查命名、单一owner/错误传播/有限分类与资源清理，无扩大权限。
