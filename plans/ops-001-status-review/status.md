@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:41 UTC / main22a0806b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:46 UTC / main22a0806b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原 Docker daemon/PG 身份已恢复；重新开放两树核查在余量达线时停止，实际稀疏操作0/2 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main22a0806b保持固定；已审候选caf1待当前中心恢复窗口关闭再发布。个人源362/v15，原中心退出，runner/Web身份保持 |
+| 已集成main状态 / HEAD | main22a0806b，已审候选caf1将受控发布；个人source362/v15已恢复中心，runner/Web与数据保持 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 原数据库和领取登记已恢复；现有网页和runner仍保持，中心正在同版本恢复准备。 |
-| 下一可用交付 | 先恢复现有中心，再按已就绪顺序恢复页面兼容、连接恢复和完整目标的验证。 |
-| 当前阻塞 | ACTIVE: 个人中心端口未监听；恢复脚本独审发现总期限保护需窄修。共享重验证让位于本次恢复；资源每次准入重新核验。 |
+| 当前产出 | 原数据库、领取登记和个人中心均已恢复；现有网页、runner、配置和任务保持。 |
+| 下一可用交付 | 已审小片受控发布；共享窗口先交已就绪的网页恢复检查，清理归还后再接后续验证。 |
+| 当前阻塞 | ACTIVE: 页面兼容与完整目标旅程尚待实际验证；磁盘准入逐次核验，大构建原门槛保持。现无个人中心恢复阻塞。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -245,3 +245,9 @@ O16单次0query PG 19:15:18→19:15:28.747，1selected/0pass；规划→确认�
 SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator总期限；作者在原记录范围修复，尚未启动个人中心。原数据库与协调账本已恢复、原runner/Web仍在，主线22a保持不动；已审caf1候选不挤占本次固定362启动窗口。19:31实际可用1,436,569,600B触及准备线后，两树恢复核查以0/2稀疏操作收口；该观测不是后续运行准入，也不是删除带来的回收量。窗口准备与ready运行分开，恢复完成后co-leads沿原门槛直接分配，不新增GO命令审批。
 
 2026-10-06 19:45 UTC：OPS-001-13（有界连接观察）与OPS-001-14（独立进程期限）均queued/未领取，复用方向与两个真实消费者已记录到local-validation；这两项职责独立，不阻当前中心恢复。固定d66期限修复已独审通过并进入唯一执行窗口；实际恢复结果待原operator回执。
+
+### 2026-10-06 19:46 UTC 恢复窗口关闭
+
+原operator一次恢复center：19:45:46至19:45:48，外层/operator exit0、2135ms、spawn1、新owned PID/PGID74763，原61227健康。独立只读比对before/after：64业务表摘要、原四成功任务、零未完/uncertain、迁移1..27、维护accepting15、身份/配置/原runner-Web/retained/pointer均保持；没有新任务/provider或其它角色signal。锁已absent；19:46:35唯一Git owner将原checkout恢复clean main22a，运行source仍362，SVC06不可变产物后继未完成。实际canonical见SVC05H center-recovery，I02 source-window-closed记录独立比较。
+
+已将下一共享重检查交Web一项已审ready短项（Recovery准备就绪优先，否则Settings），沿原预算/fresh门槛，actual cleanup或NOT_RUN即归还；R01/O16/Mika不并跑。后继普通准入由co-leads直接协调，无逐命令GO gate。
