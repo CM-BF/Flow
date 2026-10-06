@@ -1,0 +1,32 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission
+
+ ❯ apps/runner/src/configuration.test.ts (10 tests | 1 failed | 9 skipped) 6ms
+   ↓ defaults the ordinary runner entry point to fixture only
+   ↓ enables Claude from an explicit material manifest without starting a query
+   ↓ rejects an invalid or policy-widening manifest {}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":["relative.txt"]}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"tools":["Bash"]}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"query":"injected"}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"maxBudgetUsd":5}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"requireReadApproval":"false"}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"maxTurns":5}
+   × binds explicit active steering to one immutable profile while preserving legacy canonical bytes 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/configuration.test.ts > binds explicit active steering to one immutable profile while preserving legacy canonical bytes
+Error: Claude manifest contains an unsupported field.
+ ❯ parseManifest apps/runner/src/configuration.ts:31:69
+
+ ❯ loadRunnerConfiguration apps/runner/src/configuration.ts:20:19
+ ❯ apps/runner/src/configuration.test.ts:34:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 skipped (10)
+   Start at  01:02:44
+   Duration  345ms (transform 132ms, setup 0ms, import 253ms, tests 6ms, environment 0ms)
+

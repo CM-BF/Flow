@@ -67,10 +67,10 @@ it('does not invoke the configured adapter after cancellation or a failed owners
   expect(calls).toBe(0);
 });
 
-it.each([true, false])('publishes from the real startup entry before polling (publication accepted: %s)', async accepted => {
+it.each([[true, false], [false, false], [true, true], [false, true]])('publishes from the real startup entry before polling (accepted: %s, steering: %s)', async (accepted, activeSteering) => {
   const directory = await mkdtemp(join(tmpdir(), 'flow-chat03-startup-')); directories.push(directory);
   const manifest = join(directory, 'manifest.json');
-  await writeFile(manifest, JSON.stringify({ model: 'startup-alias', materialFiles: [] }));
+  await writeFile(manifest, JSON.stringify({ model: 'startup-alias', materialFiles: [], activeSteering }));
   const paths: string[] = [];
   let configuration: unknown;
   const server = createServer(async (request, response) => {
@@ -106,6 +106,7 @@ it.each([true, false])('publishes from the real startup entry before polling (pu
     expect(await exited).toBe(accepted ? 0 : 1);
     expect(paths[0]).toBe('/api/runner/execution-profile');
     expect(configuration).toMatchObject({ model: 'startup-alias', access: 'none' });
+    expect((configuration as { activeSteering?: unknown }).activeSteering).toEqual(activeSteering ? { protocol: 'flow.active-steering.v1' } : undefined);
     if (!accepted) expect(paths).toEqual(['/api/runner/execution-profile']);
     expect(stderr).not.toContain('synthetic-startup-token');
   } finally {
@@ -113,4 +114,33 @@ it.each([true, false])('publishes from the real startup entry before polling (pu
     await exited;
     server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve()));
   }
+});
+
+it('requires the declared port for pinned streaming work but strips it from legacy unpinned work', async () => {
+  const ports: unknown[] = [];
+  const adapter: HarnessAdapter = { name: 'claude', version: 'claude-sdk-0.3.290-v2', async run(context) { ports.push(context.steering); } };
+  const config = describeExecutionProfile({ materialFiles: [] }, adapter, true);
+  const reference = { id: randomUUID(), runnerId: randomUUID(), configDigest: textDigest(executionProfileConfigurationJson(config)) };
+  const guard = guardExecutionProfile(adapter, reference, config);
+  const steering: NonNullable<HarnessContext['steering']> = { async mailbox() { throw new Error('Unused'); }, async finalize() { throw new Error('Unused'); } };
+  const context: HarnessContext = { task: { title: 'Pinned', harness: 'claude', prompt: 'hi', executionProfile: reference }, workingDirectory: '', signal: new AbortController().signal,
+    async assertOwnership() {}, async emit() {}, async waitForDecision() { return 'reject'; } };
+  await expect(guard.run(context)).rejects.toThrow('steering port');
+  expect(ports).toEqual([]);
+  await guard.run({ ...context, steering });
+  await guard.run({ ...context, steering, task: { title: 'Legacy', harness: 'claude', prompt: 'hi' } });
+  expect(ports).toEqual([steering, undefined]);
+  const legacy = describeExecutionProfile({ materialFiles: [] }, adapter);
+  const legacyRef = { ...reference, configDigest: textDigest(executionProfileConfigurationJson(legacy)) };
+  await expect(guardExecutionProfile(adapter, legacyRef, legacy).run({ ...context, steering, task: { ...context.task, executionProfile: legacyRef } })).rejects.toThrow('steering port');
+});
+
+it('preserves the exact original canonical configuration and digest when steering is absent or disabled', () => {
+  const adapter: HarnessAdapter = { name: 'claude', version: 'claude-sdk-0.3.290-v2', async run() {} };
+  const expected = '{"harness":"claude","adapterVersion":"claude-sdk-0.3.290-v2","model":"sonnet","thinking":"disabled","permissionMode":"dontAsk","access":"none","requireReadApproval":false,"materialScopeDigest":"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945","limits":{"maxTurns":4,"maxBudgetUsd":1,"timeoutMs":90000}}';
+  for (const enabled of [undefined, false]) {
+    expect(executionProfileConfigurationJson(describeExecutionProfile({ materialFiles: [] }, adapter, enabled))).toBe(expected);
+  }
+  expect(textDigest(expected)).toBe('40c6ea4295f5527f2f22fd586e8896984f26493ccac38fdde747cab1ef5d9f78');
+  expect(executionProfileConfigurationJson(describeExecutionProfile({ materialFiles: [] }, adapter, true))).not.toBe(expected);
 });

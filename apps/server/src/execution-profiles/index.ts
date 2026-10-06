@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
-import { executionProfilePublicationSchema, executionProfileReferenceSchema } from '../../../../packages/contracts/src/execution-profiles.js';
+import { executionProfilePublicationSchema, executionProfileReferenceSchema, EXECUTION_PROFILE_HEADER, EXECUTION_PROFILE_STEERING_VERSION } from '../../../../packages/contracts/src/execution-profiles.js';
 import { HttpError, transaction } from '../database.js';
 import { integerQuery } from '../queries.js';
 import { listProfiles, publishProfile } from './store.js';
@@ -20,9 +20,13 @@ export function registerExecutionProfileRoutes(app: FastifyInstance, pool: Pool)
     if (!parsed.success) throw new HttpError(400, 'invalid_execution_profile', 'Invalid execution profile configuration.');
     return publishProfile(pool, request.runnerId!, parsed.data.configuration);
   });
-  app.get<{ Querystring: { after?: string; limit?: string } }>('/api/execution-profiles', request => {
+  app.get<{ Querystring: { after?: string; limit?: string } }>('/api/execution-profiles', (request, reply) => {
+    reply.header('Cache-Control', 'no-store');
     const { after, limit } = request.query;
     if (after !== undefined && !executionProfileReferenceSchema.shape.id.safeParse(after).success) throw new HttpError(400, 'profile_cursor', 'Invalid execution profile cursor.');
-    return listProfiles(pool, after, integerQuery(limit, 20, 100, 1));
+    const header = EXECUTION_PROFILE_HEADER.toLowerCase();
+    const occurrences = request.raw.rawHeaders.filter((_, index) => index % 2 === 0 && request.raw.rawHeaders[index]!.toLowerCase() === header).length;
+    const includeSteering = occurrences === 1 && request.headers[header] === EXECUTION_PROFILE_STEERING_VERSION;
+    return listProfiles(pool, after, integerQuery(limit, 20, 100, 1), includeSteering);
   });
 }

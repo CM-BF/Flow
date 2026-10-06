@@ -1,3 +1,4 @@
+import { assertSteeringExecutionProfile } from '../execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import { MAX_STEERING_COMMANDS_PER_ATTEMPT, steeringSealSchema, type SteeringCommandInput, type SteeringCommandResult, type SteeringReceiptInput, type SteeringSeal, type SteeringSealInput } from '../../../../packages/contracts/src/active-steering.js';
@@ -7,7 +8,8 @@ import { appendAudit, assertNoPending, commandColumns, commandReference, conflic
 
 export async function acceptSteering(pool: Pool, taskId: string, input: SteeringCommandInput, key: string): Promise<SteeringCommandResult> {
   return transaction(pool, async client => {
-    const { attempt } = await ownerAttempt(client, taskId, input);
+    const { task, attempt } = await ownerAttempt(client, taskId, input);
+    await assertSteeringExecutionProfile(client, task.submission, attempt.runner_id);
     const result = await commandInTransaction(client, `steering.accept:${taskId}`, key, input, async () => {
       if ((await client.query('SELECT 1 FROM flow.assistant_messages WHERE attempt_id=$1', [attempt.id])).rowCount) conflict('steering_final_exists', 'This attempt already has a canonical final.');
       const state = await control(client, taskId, attempt.id);

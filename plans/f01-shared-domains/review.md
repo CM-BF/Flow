@@ -1,10 +1,12 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（CHAT08默认关闭的生产挂载）**
+**当前增量状态：APPROVED（CHAT09执行配置格式协商）**
 
-Review target commit：fe5bc2d9b8dab231996b1b156bc086d858846117
+Review target commit：89931e0d9cfd00b5f51f5b266b7aaa38bba2718b
 
-Scope：apps/server/src/index.ts, apps/server/src/steering-production.test.ts。manifest：docs/evidence/f01/steering-production-manifest.json。独立reviewer：Root。领域d4e已由Execution Lead独审，薄client3d811由Root独审，本delta不继承批准。
+Scope：packages/client/src/index.ts, packages/client/src/execution-profiles.test.ts。manifest：docs/evidence/f01/steering-profile-client-manifest.json。独立reviewer：Root；完整2文件delta、2源码/3输出hash与字节核验，2/2真实HTTP122ms、typecheck0，无P1/P2、未重跑。仅显式目录格式协商，不是steering启用或执行授权。
+
+历史CHAT08生产挂载APPROVED target fe5bc2d9b8dab231996b1b156bc086d858846117，范围 apps/server/src/index.ts, apps/server/src/steering-production.test.ts，详见 steering-production-manifest.json；该原批准及后文历史保留。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
@@ -163,3 +165,11 @@ O09 production c587436c12324b5c121957643d51173cfc66009e：NOT_STARTED。只serve
 ## 2026-10-06 08:08 UTC O09 production 独立 APPROVED
 
 Reviewer: Goal Owner / gpt-6-astra ultra。Review target commit: c587436c12324b5c121957643d51173cfc66009e。完整2file与必要domain读取；2fixed source/8raw hashes、5domain输入对7ddd相同，2/2真实factory及final noEmit0/random DB cleanup已核，无P1/P2、未重跑。仅挂载与注入SDK组合，非真实provider/语义/个人部署批准。
+
+## O09 CLI 待独审
+
+Review target commit: 0d48fddd37f55854437946ea04da6c845f5b6119。NOT_STARTED；仅3files，复用readJsonInput与严格公共schema/FlowClient，旧fixture命令不变，生产领域审批不替代本CLI。
+
+## 2026-10-06 08:14 UTC O09 CLI批准 / CHAT09 client待审
+
+Root独立APPROVED 0d48fddd37f55854437946ea04da6c845f5b6119；3源5raw固定hash核，无P1/P2、未重跑，仅薄CLI入口。新Review target commit: 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；NOT_STARTED，仅profile目录header传输与直接HTTP测试。CHAT09领域cd859已由assignment_review唯一独审APPROVED；不继承为此client审查。

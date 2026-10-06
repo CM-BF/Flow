@@ -213,3 +213,11 @@ Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec1
 固定 c587436c12324b5c121957643d51173cfc66009e。继续应用已发现的本地clean-code/codebase-design：仅两行挂载复用深领域，无第二loop/权限分支。新测试直接真实createServer，不用领域fixture自动补路由；默认scan不关闭。最终2/2 2.41s + noEmit0，随机库创建前空/cleanup连接空/正常DROP余库空都在原stdout。参见native-node-production-manifest.json。
 
 首次missingroute2红；readonly测试配置为空正确拒绝、receipt与snapshot字段位置假设失败、TypeScript推断UUID token过窄均保留各独立输出。修正的是测试输入/断言位置，不放宽门禁。最终验证owner auth、24默认关闭、FlowClient精确pin/key重放仅一执行、原readonly adapter stringquery、flow.text+typedfinal、业务accepted仍null。旧27领域不重跑、0provider/0真实登录。final tsc在固定源上exit0；早期绿tsc在两处测试断言修正前，明确历史。个人runtime仍b54不操作。
+
+## 2026-10-06 08:13 UTC — O09 CLI
+
+固定0d48fddd37f55854437946ea04da6c845f5b6119：最薄owner `goal execute-native`，128KiB regular UTF8 JSON→strict DTO→同公共client，key必填，signal/error原传。不新增SDK/PG逻辑。真实Node HTTP一个用例核stable key/原请求/409无重试/abort/缺key/非法字段/超界无send/help和README；47ms green，finaltsc0。unknown command red及测试假profile非UUID导致正确拒绝的历史输出保留，只修synthetic IDs不放宽schema。既有O09领域已审，无重复27/生产2，不执行模型。clean-code检查复用深模块无额外抽象，授权在中心。
+
+## 2026-10-06 08:14 UTC — CHAT09 client
+
+固定89931e0d9cfd00b5f51f5b266b7aaa38bba2718b，2文件薄改。executionProfiles options.profileProtocol只接受steering-v1并每次GET发精确header；不变URL游标/limit、缺省不发、publication不带。红1/2(缺header)→绿2/2 122ms、tsc0；strict新publication schema、ownerBearer、409不fallback/不重试、abort不多发均实NodeHTTP。不写domain、manifest或Web、不启cap/个人服务。原CHAT09 fixed cd859独审输入受控合并，F01历史metadata冲突采用本树canonical，不碰产品。

@@ -285,10 +285,12 @@ export class FlowClient {
     return this.request('/api/runner/goal-tools/command', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
-  executionProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ExecutionProfilePage> {
+  executionProfiles(options: { after?: string; limit?: number; profileProtocol?: 'steering-v1' } = {}, signal?: AbortSignal): Promise<ExecutionProfilePage> {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
-    return this.request(`/api/execution-profiles${query.size ? `?${query}` : ''}`, { signal });
+    return this.request(`/api/execution-profiles${query.size ? `?${query}` : ''}`, { signal,
+      ...(options.profileProtocol === 'steering-v1' ? { headers: { 'X-Flow-Execution-Profile': 'steering-v1' } } : {}),
+    });
   }
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });

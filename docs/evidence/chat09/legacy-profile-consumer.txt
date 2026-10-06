@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission
+
+ ✓ apps/server/src/execution-profiles/execution-profiles.test.ts (7 tests) 3133ms
+   ✓ pins a selected conversation to the configured runner and preserves that choice in the claimed task  532ms
+   ✓ executes the selected configuration, separates reported settings, and resumes only on the original runner  1436ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  01:07:08
+   Duration  3.96s (transform 420ms, setup 0ms, import 741ms, tests 3.13s, environment 0ms)
+

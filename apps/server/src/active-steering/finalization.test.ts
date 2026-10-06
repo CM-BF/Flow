@@ -1,3 +1,4 @@
+import { describeExecutionProfile, guardExecutionProfile } from '../../../runner/src/execution-profiles.js';
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
 import { afterAll, beforeAll, expect, it } from 'vitest';
@@ -25,7 +26,8 @@ async function request(path: string, body?: unknown, token = 'chat08-owner', sta
 }
 async function attempt() {
   const runner = await request('/api/runners', { name: 'Conditional final runner', harnesses: ['claude'], capacity: 1 });
-  const task = (await request('/api/tasks', { title: 'Conditional final', prompt: 'Synthetic SDK only', harness: 'claude' }, undefined, 202)).task;
+  const profile = await publishSteeringProfile(runner);
+  const task = (await request('/api/tasks', { executionProfile: profile.reference, title: 'Conditional final', prompt: 'Synthetic SDK only', harness: 'claude' }, undefined, 202)).task;
   await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [task.id]);
   const claim = await request('/api/runner/claim', {}, runner.token);
   expect(claim.assignment.task.id).toBe(task.id);
@@ -133,7 +135,9 @@ async function eventually(read: () => Promise<boolean>) {
 }
 it('connects one SDK streaming-input query through the real runtime, durable outbox and PG with two results and one consumed command', async () => {
   const runner = await request('/api/runners', { name: 'Injected native runtime', harnesses: ['claude'], capacity: 1 });
-  const task = (await request('/api/tasks', { title: 'Real transport / synthetic provider', prompt: 'Initial instruction', harness: 'claude' }, undefined, 202)).task;
+  const options = { materialFiles: [], maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 6000 };
+  const profile = await publishSteeringProfile(runner, options);
+  const task = (await request('/api/tasks', { executionProfile: profile.reference, title: 'Real transport / synthetic provider', prompt: 'Initial instruction', harness: 'claude' }, undefined, 202)).task;
   await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [task.id]);
   const directory = await mkdtemp(join(tmpdir(), 'flow-chat08-runtime-')), stop = new AbortController();
   const session = randomUUID(), sent: SDKUserMessage[] = []; let queryCount = 0, closed = 0;
@@ -154,7 +158,7 @@ it('connects one SDK streaming-input query through the real runtime, durable out
     await input.next();
   })(), { close() { closed++; } });
   const running = runRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: stop.signal, activeSteering: true, heartbeatIntervalMs: 50, pollIntervalMs: 20,
-    adapters: [createClaudeAdapter({ materialFiles: [], query, maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 6000 })] });
+    adapters: [guardExecutionProfile(createClaudeAdapter({ ...options, query }), profile.reference, profile.configuration)] });
   try {
     await eventually(async () => (await request(`/api/tasks/${task.id}`)).status === 'succeeded');
     expect(queryCount).toBe(1); expect(closed).toBe(1); expect(sent.map(value => value.message.content)).toEqual(['Initial instruction', 'Return revised answer']);
@@ -183,7 +187,9 @@ it('enforces the result evidence bound at the HTTP ingress while identical repla
 });
 it('actual cancellation closes a waiting native input and records delivered-but-unconfirmed steering as unknown without a final', async () => {
   const runner = await request('/api/runners', { name: 'Cancellation runtime', harnesses: ['claude'], capacity: 1 });
-  const task = (await request('/api/tasks', { title: 'Cancel unknown delivery', prompt: 'Initial', harness: 'claude' }, undefined, 202)).task;
+  const options = { materialFiles: [], timeoutMs: 6000 };
+  const profile = await publishSteeringProfile(runner, options);
+  const task = (await request('/api/tasks', { executionProfile: profile.reference, title: 'Cancel unknown delivery', prompt: 'Initial', harness: 'claude' }, undefined, 202)).task;
   await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [task.id]);
   const directory = await mkdtemp(join(tmpdir(), 'flow-chat08-cancel-')), stop = new AbortController();
   const session = randomUUID(); let closed = false, delivered = false, inputAborted = false;
@@ -196,7 +202,7 @@ it('actual cancellation closes a waiting native input and records delivered-but-
     await request(`/api/tasks/${task.id}/cancel`, {});
     try { await input.next(); } catch { inputAborted = true; }
   })(), { close() { closed = true; } });
-  const running = runRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: stop.signal, activeSteering: true, heartbeatIntervalMs: 30, pollIntervalMs: 20, adapters: [createClaudeAdapter({ materialFiles: [], query, timeoutMs: 6000 })] });
+  const running = runRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: stop.signal, activeSteering: true, heartbeatIntervalMs: 30, pollIntervalMs: 20, adapters: [guardExecutionProfile(createClaudeAdapter({ ...options, query }), profile.reference, profile.configuration)] });
   try {
     await eventually(async () => (await request(`/api/tasks/${task.id}`)).status === 'cancelled');
     expect(delivered).toBe(true); expect(inputAborted).toBe(true); expect(closed).toBe(true);
@@ -223,3 +229,8 @@ it('uses the strict HTTP lookup shape after a lost ACK and after a process resta
     expect((await request(`/api/tasks/${a.taskId}`)).status).toBe('running');
   } finally { await rm(directory, { recursive: true, force: true }); }
 });
+
+async function publishSteeringProfile(runner: { token: string }, options: Parameters<typeof createClaudeAdapter>[0] = { materialFiles: [] }) {
+  const configuration = describeExecutionProfile(options, createClaudeAdapter(options), true);
+  return (await request('/api/runner/execution-profile', { configuration }, runner.token)).profile;
+}

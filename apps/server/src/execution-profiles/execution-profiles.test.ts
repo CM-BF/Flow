@@ -13,7 +13,8 @@ import { describeExecutionProfile, guardExecutionProfile, publishExecutionProfil
 import { runRunner } from '../../../runner/src/runtime.js';
 type SDKMessage = ReturnType<ClaudeQuery> extends AsyncIterable<infer Message> ? Message : never;
 
-const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_chat03';
+const database = `flow_chat09_profiles_${randomUUID().replaceAll('-', '')}`;
+const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${database}`;
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
 const ownerToken = 'chat03-local-owner';
 let lock: PoolClient | undefined;
@@ -44,16 +45,16 @@ async function stopServer() {
 }
 beforeAll(async () => {
   lock = await admin.connect();
-  if (!(await lock.query("SELECT pg_try_advisory_lock(hashtextextended('flow_chat03_test_exclusive',0)) AS locked")).rows[0]?.locked) throw new Error('flow_chat03 is in use.');
-  if ((await lock.query("SELECT 1 FROM pg_database WHERE datname='flow_chat03'")).rowCount) throw new Error('Existing flow_chat03 must be preserved.');
-  await lock.query('CREATE DATABASE flow_chat03'); created = true;
+  if (!(await lock.query("SELECT pg_try_advisory_lock(hashtextextended($1,0)) AS locked", [database])).rows[0]?.locked) throw new Error('The owned profile fixture is in use.');
+  if ((await lock.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount) throw new Error('Existing profile fixture must be preserved.');
+  await lock.query(`CREATE DATABASE ${database}`); created = true;
   pool = new Pool({ connectionString: databaseUrl, max: 8, statement_timeout: 5000 });
   await startServer();
 });
 afterAll(async () => {
   try { await stopServer(); } finally {
     await pool?.end();
-    try { if (created) await lock?.query('DROP DATABASE flow_chat03'); }
+    try { if (created) await lock?.query(`DROP DATABASE ${database}`); }
     finally { lock?.release(); await admin.end(); }
   }
 });
