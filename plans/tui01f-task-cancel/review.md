@@ -1,3 +1,13 @@
+# 当前 TUI01F-04 实现
+
+状态：APPROVED_PREPARATION_ONLY。Execution Lead独立核四源与782绑定/4纯检查分轮和两focused types原始证据，无P1/P2，reviewer0重跑。实际HTTP/PG/Chrome/PTY仍NOT_RUN，不继承03实际验收结论。
+
+Review target commit: d147a636f9cb54a8c87a89a89963d13e937cee9c
+
+Scope：fixture.ts及experiments/tui-web-control-handoff三源；[manifest/原始检查](../../docs/evidence/tui01f/web-handoff/README.md)。741固定只读输入；原03产品/原始回执保持。作者4不同纯检查分轮3+1、focused types两次0，PG/Chrome/PTY/provider均未执行。请核真实公开接口/任务身份/409草稿/一次cancel/退出不cancel，固定artifact与backend/TUI三方版本，durable checkpoint/marker/PGID/独立150s监督及unknown保留。独审只读固定源/原证据；完整实际旅程须另行窗口。
+
+预读要求已修：运行合同统一90+60/150s；原始安全失败阶段/原因保留、cleanup分列，新增定向1/1。[唯一准备独审回执](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json)已归档；批准限定源码/局部纯检查，实际双界面旅程仍须另行独占窗口。原03独审与main记录原样保留如下。
+
 # 当前两项窄增量批准
 
 Review target commit: ec30bb6246ac95e5843c7166dee7118b684fd089
@@ -76,3 +86,7 @@ Historical source-only candidate: 044ab84db42606fb1757903258078e3dfbab9545
 审查者先核 owner、worktree/head/dirty、固定输入和技能，再只读检查 task ID 来自可见观察、单 intent 的原 body/key、ACK 校验、未知/拒绝/资源释放、旧 create/send/queue journal 兼容和 Ctrl-C 不取消。当前无执行许可时只给源码结论，不能把用例存在当通过。实际 PG/PTY/App 和 provider 边界分别记录；新问题交原 owner 修复。
 
 Findings 未评估；结论未审查。0 本片运行检查，NOT_RUN。
+
+## 2026-10-06 17:57 UTC 主线接收与后继边界
+
+[main receipt](../../docs/evidence/tui01f/main-8d84-receipt.json)核七源对ec30/工作树零差；受控集成b549为main8d84祖先，原作者提交不是祖先。独审结论不变；03在两行为原证据与单独已审cleanup1/1范围内交付。原整suite exit1、旧tmp KEEP、未重跑事实保留。04只形成文档方案，真实App/PTY交替尚未实施或运行，不继承RELEASE03不同tuple批准。

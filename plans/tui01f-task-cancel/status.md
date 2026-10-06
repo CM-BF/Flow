@@ -2,37 +2,37 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:48 UTC；原main83f不变，本次两test-only增量独审收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:26:45 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
-| 单一status owner / model | assignment_review / gpt-6-astra |
+| 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
-| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5 / test-only兼容 ec30bb6246ac95e5843c7166dee7118b684fd089 |
-| 工作树dirty状态 | 源码已固定；本次仅证据/状态收口，提交后clean |
+| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5；04开始前7c5a739258106a2cf9387ebf3a5e54268c122136 / source d147a636f9cb54a8c87a89a89963d13e937cee9c |
+| 工作树dirty状态 | 四源码冻结；本次仅独审归档/状态，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED f4f9c47c8c36d7c05614ac477f7af3bb49a31680（独立cleanup-only 1/1+focused types0）；ec30bb6246ac95e5843c7166dee7118b684fd089 focused types0；原40508f两行为通过/suite exit1保留 |
-| 已集成main状态 / HEAD | 原a1f限定片已集成83f535b54f2390a729f02bc818e07ba684d94ccb；新cleanup未main，03/04仍open |
-| 实现目标 | ec30bb6246ac95e5843c7166dee7118b684fd089 |
-| 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/fixture-cleanup.ts, apps/tui/src/task-controls/fixture-cleanup.test.ts, apps/tui/src/task-controls/cleanup-journey.test.ts, apps/tui/src/task-controls/journey.test.ts, apps/tui/test-fixtures/cancel_driver.py, apps/tui/src/journey.test.ts |
+| 本片段交付阶段 | implementation |
+| 检查状态 | 4 distinct纯检查分轮3/3+1/1；两次focused types0；04 PG/Chrome/PTY NOT_RUN；原03历史结果保留 |
+| 已集成main状态 / HEAD | 8d84d529a0756116bd0fc8bad969d61a6c26248e；七源逐字接收；03交付，04仍open |
+| 实现目标 | d147a636f9cb54a8c87a89a89963d13e937cee9c |
+| 实现范围 | apps/tui/src/task-controls/fixture.ts, experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/preview.ts, experiments/tui-web-control-handoff/terminal.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 两项真实终端行为和独立数据库收尾证据已审；旧终端测试的配置类型兼容修复已获批准。 |
-| 下一可用交付 | 将已审收尾与兼容修复接入主线；实际浏览器交替保留后继。 |
-| 当前阻塞 | NONE；原旅程整组失败记录保留，旧临时目录缺初始身份继续保留，不自动删除。 |
+| 当前产出 | 双界面验收准备已通过独立审查，真实网页与终端的组合行为仍待独立运行。 |
+| 下一可用交付 | 在共享运行窗口完成一次真实网页与终端接续验收，并保存完整停止和清理证据。 |
+| 当前阻塞 | 等待独占验证窗口；个人服务更新优先，当前未获运行许可。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED ec30bb6246ac95e5843c7166dee7118b684fd089（legacy consumer）；APPROVED f4f9c47c8c36d7c05614ac477f7af3bb49a31680（独立PG收尾），范围分别记录 |
-| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v2；新增旧journey.test.ts直接消费者 |
-| 架构影响 | 现 interaction controller 增一种 task-cancel 意图与可选单方法端口；旧中心/授权/调度不变，架构基线更新待本片固定交 Execution Lead。 |
+| Review | [review.md](review.md)，APPROVED_PREPARATION_ONLY d147a636f9cb54a8c87a89a89963d13e937cee9c；04实际旅程NOT_RUN |
+| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
+| 架构影响 | 仅测试fixture新增显式factory/recipe与受管观察端口，组合固定真实Web/PTY；生产controller/权限/调度不变，固定架构输入由Execution Lead按实际验收接收。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | TUI01F-01 | completed | assignment_review | [Interface](../../docs/evidence/tui01f/interface.md) |
 | TUI01F-02 | completed | assignment_review | [局部36 distinct与focused types](../../docs/evidence/tui01f/validation.md) |
-| TUI01F-03 | in-progress | assignment_review | 原2行为pass/suite exit1保留；独立收尾1/1及类型兼容已审、待main收口 |
-| TUI01F-04 | pending | Execution Lead 协调 Web / owner | 实际双界面旅程未执行 |
+| TUI01F-03 | completed | assignment_review | [main接收](../../docs/evidence/tui01f/main-8d84-receipt.json)；原2行为pass/suite exit1保留；独立收尾1/1已审 |
+| TUI01F-04 | in-progress | native_center_owner | [准备独审](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json)；实际HTTP/PG/Chrome/PTY仍NOT_RUN |
 
 唯一 status 已交 Lead 登记；本轮未重新采样看板。不写第二进度源。SVC05H01 树保持 af51 全冻结，独立任务不交叉修改。
 
@@ -63,3 +63,11 @@
 2026-10-06 17:43 UTC：f4源码独审后获一次cleanup-only窗口，实际1/1/exit0；checkpoint先于正常DROP/tmp，全部自有资源清理，原2行为/suite exit1与未知inode旧tmp不改。随后原子amend v2，legacy profile直接消费者ec30窄修/固定4015只读overlay focused types0；无旧PG/36重跑。[新清理证据](../../docs/evidence/tui01f/cleanup-1740/README.md) / [类型兼容](../../docs/evidence/tui01f/legacy-profile-compatibility/README.md)。
 
 2026-10-06 17:48 UTC：Execution Lead唯一独立APPROVED ec30旧profile消费者/f4独立PG收尾。legacy10+207project+713compiler和cleanup241绑定均核，无P1/P2、reviewer0重跑。原whole-suite exit1/旧tmpKEEP保留；不以新增1/1改写历史。[两增量回执](../../docs/evidence/tui01f/final-two-delta-independent-review.json) / [bindings](../../docs/evidence/tui01f/final-two-delta-review-bindings.json)。源码停止，claim v2待集成或合法后继。
+
+2026-10-06 17:57 UTC：七个已审源码在main8d84逐字一致，受控集成b549祖先成立，原ec30/03a提交非祖先，不用metadata ancestry冒充产品缺失。03按Lead接受的原两行为+独立收尾证据交付，原整suite exit1和缺初始inode旧tmp KEEP原样保留；04只读方案已固定，0新运行。
+
+2026-10-06 20:06:45 UTC：正式accept v4；04采用已授权固定af51中心/d629网页/ec30终端组合，三个实验源及fixture test-only端口实施。原03 history/raw/main与旧tmpKEEP全保留，0新运行。[当前Interface](../../docs/evidence/tui01f/web-handoff/interface.md)，[回执](../../docs/evidence/tui01f/web-handoff/accept-receipt.json)。04独审NOT_STARTED；旧Review/实现目标仍仅03，04首次源固定后单独更新。
+
+2026-10-06 20:24:06 UTC：04完整四源target `d147a636f9cb54a8c87a89a89963d13e937cee9c` 已固定/push；[manifest](../../docs/evidence/tui01f/web-handoff/manifest.json)核782绑定、741只读source inputs，mismatches=[]。4不同纯检查分轮通过/两focused types0；实际PG/Chrome/PTY未运行，当前review，不把源码准备冒实际App验收。阶段/安全原因归因修复与原partial staging事实保留；同claim继续停源写待唯一独审。
+
+2026-10-06 20:26:45 UTC：Execution Lead独立APPROVED_PREPARATION_ONLY，四源d147/782绑定/4纯检查分轮与两focused types原证据已核，无P1/P2/reviewer0重跑。[唯一回执](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json) SHA 42c0908d1645309b3542c55d4afb776813c2603f81282a878d70dd6905414c5b。未创建permit，未启动HTTP/PG/Chrome/PTY/provider；源码保持冻结，90+60/150s候选等待独占运行窗口。

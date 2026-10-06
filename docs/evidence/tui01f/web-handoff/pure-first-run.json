@@ -1,0 +1,54 @@
+{
+  "startedAt": "2026-10-06T20:15:50.660265+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/tui-web-control-handoff/journey.ts",
+    "--self-test"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "freeBefore": 1336094720,
+  "exitCode": 0,
+  "elapsedMs": 176,
+  "pid": 96337,
+  "group": "absent",
+  "stopReason": null,
+  "sourceBindings": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27145,
+      "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 21292,
+      "sha256": "e84bc7777925204045a5b400b8157fef3b7765e8a8d35f00c9a5d61ba2834d55"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/preview.ts",
+      "bytes": 11413,
+      "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+    },
+    {
+      "path": "experiments/tui-web-control-handoff/terminal.py",
+      "bytes": 6228,
+      "sha256": "ebc078dbda617cdcb51472a4b5cc992b002318bf45676f7f50d9dff292bc1480"
+    }
+  ],
+  "outputs": {
+    "stdout": {
+      "bytes": 382,
+      "sha256": "fb229d2c057be92ffd6f27d66493b10d8bc7840dd98132b36e798da75f7cfd65"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "PG": 0,
+  "browser": 0,
+  "provider": 0,
+  "install": 0,
+  "TSX_DISABLE_CACHE": "1"
+}

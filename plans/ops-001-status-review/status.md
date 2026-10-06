@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:26 UTC / mainbd25e763 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:32 UTC / main1f4731b1 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -261,3 +261,7 @@ SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator�
 2026-10-06 20:20 UTC：S01P07直接消费者请求的33份fixed22a源码已补齐，186,913逻辑B，259份原已物化文件及两份owner dirty修改hash保持；当前head不变。TUI01F-04仅追加自有新实验目录的sparse规则，三份未跟踪新源保留，由owner提交。两项无安装/import/PG/工程测试；原请求与回执在source-provision目录。Web Settings已实际归还短窗口，SVC05H执行准备待修观察器对原子rename/未决claim的保守检查；准备不预占共享窗口。
 
 2026-10-06 20:26 UTC：OPS-001-14由queued提升为当前发布/F04短片之后的下一ready工程改进，尚无新writer。SVC07在20:23纯子进程检查出现group_exists的EPERM经finally覆盖原失败，和既有O16/SVC05H期限/组清理重复，作为两个实际消费者提取的输入；co-lead与Mika直接协调。只抽受监督PID/自有组、期限、输出界及原失败/cleanup unknown，不把DB删除、连接观察、资源所有权和源码绑定揉进同一模块。现已固定发布及F04证据保持，不为迁移重开当前检查。
+
+2026-10-06 20:29 UTC：共享重运行窗口svc05h-af51-d629-20261006-2030交assignment_review执行已有GO授权的个人固定更新。Web Recovery已归还、Mika无实际PG/Chrome/native，其他重运行等待；本组F04准备已独审但未运行。Lead已把唯一root checkout从clean main1f4731b1 detach为准确af51，main冻结到operator关闭，4320仍由独立I02树服务。按原20步逐项保存intent/result，fresh身份/工作/资源与三份兼容报告先核；drain起≤15min，unknown停止，0operator模型/任务/用户tab刷新。原运行362/v15及caa1/v2不预报改变，实际结果只由operator回执决定。OPS-001-14同时由native_center_owner只读比较现有三个消费者，尚无新实现take，不改F04候选。
+
+2026-10-06 20:32 UTC：个人窗口2030已STOP-BEFORE-MATERIALS并归还：step01只读181ms因sampler误把真实namespace/admission.json当根文件而失败，0报告导入/搬运/drain/服务/发布；root已恢复main1f4731b1，无pending launch。仅依据已有raw与固定runtime源码定位，作者原scope补真实namespace精确规则/局部小例，未重采个人状态。Web/Mika可按ready-first串行使用窗口。S01P07 main入口补供22源93,543B已完成，319原物化文件/HEAD均保持，详见[source receipt](../../docs/quality/source-provision-2026-10-06/s01p07-main-entry-source-receipt.json)；后续小源码按实际模块闭包供给的取舍已记local-validation。

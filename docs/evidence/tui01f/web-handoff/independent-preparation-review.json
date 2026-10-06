@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-06T20:26:12.175430+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "result": "APPROVED_PREPARATION_ONLY",
+  "target": "d147a636f9cb54a8c87a89a89963d13e937cee9c",
+  "manifestSha256": "20b86053518407618ce2051661abeeb2c60924ba3898ecde966b52c8c3ef95af",
+  "bindingVerification": {
+    "at": "2026-10-06T20:25:59.768226+00:00",
+    "target": "d147a636f9cb54a8c87a89a89963d13e937cee9c",
+    "manifestSha256": "20b86053518407618ce2051661abeeb2c60924ba3898ecde966b52c8c3ef95af",
+    "bindingCount": 782,
+    "uniqueFixedBlobs": 563,
+    "mismatches": [],
+    "reviewerTestsRun": 0,
+    "providerCalls": 0
+  },
+  "scope": [
+    "apps/tui/src/task-controls/fixture.ts",
+    "experiments/tui-web-control-handoff/journey.ts",
+    "experiments/tui-web-control-handoff/preview.ts",
+    "experiments/tui-web-control-handoff/terminal.py"
+  ],
+  "review": [
+    "Complete four-file preparation and fixture default-recipe preservation; actual fixed Web artifact and center dependency inputs.",
+    "Finite two-task public journey; original held request key/body, real conflict and draft preservation, explicit cancellation, observer exit without task cancellation.",
+    "Actual PTY/DOM evidence planned separately from headless; independently supervised total deadline, checkpoint before destructive cleanup, unknown resource retention.",
+    "Incremental failure attribution keeps original stage/type/code and redacted bounded reason separately from cleanup errors."
+  ],
+  "evidence": {
+    "distinctPureChecks": 4,
+    "rounds": [
+      "3 selected / 3 passed",
+      "1 selected / 1 passed"
+    ],
+    "focusedTypes": [
+      "exit0",
+      "exit0"
+    ],
+    "reviewerReexecution": 0
+  },
+  "findings": [],
+  "limitations": [
+    "Actual HTTP/PG/Chrome/PTY journey NOT_RUN; no provider capability or UI success inferred.",
+    "One fresh shared window and exclusive permit still required.",
+    "90s work plus 60s cleanup, 150s total independent deadline; original resource bounds unchanged.",
+    "Installed package manifests and source inputs are bound; not a complete dependency byte rehash."
+  ]
+}
