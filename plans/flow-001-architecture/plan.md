@@ -529,3 +529,11 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 2026-10-06 16:59 UTC REQ-19/SVC06（关联X01）只读研究输入：固定main9314中，server/index静态出口经package-fetch worker/artifact barrel加载pacote，安装routes/commands加载plugin-runtime/tar；只读artifact入口也依赖含resolver的barrel。因此未启用两个可选host的聊天/TUI入口仍需要这些依赖，TUI01F的真实准备清单体现此闭包。当前仅源码耦合事实，没有启动时间/RSS/物理安装节省实测。
 
 后继在CORE/RELEASE收口后的空闲小窗口，沿现SVC06/X01计划核禁用/启用host的真实import边界，再决定最小组合入口按需加载及纯artifact reader/fetcher职责分离。先0PG/0provider、有界import-only，不删功能、不造通用插件框架；迁移完整性、默认禁用、授权和启用失败清理保持。大型release的既有资源门槛不因拆分候选降低，当前writer不被打断。
+
+### CHAT05-06 完整工具原文：下一 ready 交付（2026-10-06 18:56 UTC）
+
+沿既有 CHAT05-06 / REQ-15，不新增大task。当前 mapper 截到65,536B后仅保存前缀与全文hash，不能追回余文；旧历史仍明确 truncated，不能补造可恢复性。此为已知未完成范围，不改原CHAT05批准。当前保留页面兼容与O16安全交付优先，之后由 Execution Lead 负责派工/公共接线，指定 assignment_review 在当前R01正式收口后的首个合适实施槽承担 producer→durable transfer→center immutable body 的窄纵向片；未取得新独立WT/精确claim前不写产品。若O16共用runner接缝尚未释放，先做独立body合同与reader范围，不能双writer。
+
+第一片 Interface 明确来源可公开的tool输入/结果原始bytes、body身份/固定digest/完整性状态、字节与块数上限、授权页读取以及取消/错误/资源释放。复用现有outbox、attempt fence和detail授权，受理/重报/崩溃恢复不重复正文，旧attempt不能覆盖；最终完整受理前不得称已保存全文。超过真实保存上限明确拒绝或incomplete，非公开thinking/redacted材料仍不制造正文。首屏与SSE只轻引用，展开前零正文请求。Web/TUI用同一公共引用和分页合同，呈现各自独立，不新建对象存储平台或scheduler。
+
+零模型合成超过64KiB的可公开正文，验证producer到中心完整bytes/digest、失ACK原key重报、崩溃恢复、旧attempt拒绝、授权HTTP/headless分页拼回原文、旧前缀历史不可恢复，以及超真实上限的明确状态。记录实际传输/持久bytes和有界内存/队列，按实际受影响接缝做直接消费者验证；不重跑无关全集，不把bytes称token收益。Mika已有会话页批量读取仍是另一职责，本片不占其读页实现范围。原CHAT05唯一plan保留具体子片归档，完整REQ15尚未完成。

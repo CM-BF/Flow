@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:43 UTC / main ec5da343 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:56 UTC / main77132408 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 现用页面已恢复；保留网页兼容检查正在实施，看板已展示172个独立来源；保留网页兼容检查正在实施。 |
+| 当前产出 | 现用页面已恢复；看板新增更新时间兼容的权威来源，待本批发布后确认173个来源。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -163,3 +163,7 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 18:43 UTC：新增 SVC05R01 唯一source，172来源候选。只核首canonical、六literal领取、三件套和解析；状态仍由原owner维护，原当前阻塞字段含解释导致unknown已交owner修正。见[登记回执](../../docs/evidence/d05/retained-web-registration.json)。不改架构图或个人服务，不跑产品测试。
 
 实际换载回执：2026-10-06T18:43:03.221Z，main888c clean，172来源/SVC05R01 live/current。原阻塞字段格式unknown已留实采且交原owner修正，不改渲染器猜测。见[实采](../../docs/evidence/d05/retained-web-live-receipt.json)。
+
+2026-10-06 18:56 UTC：WPF-DPERF05唯一status/claim已核，新增第173个registry来源；owner仍implementation/NOT_RUN，不把登记当修复通过。只registry/parser/链接检查，无产品测试/个人服务操作；部署后另记实际聚合。
+
+本条修正上一提交手填19:01为实际18:56管理观察，精确登记时间以timestamp-source-registration.json原始at为准，无运行重采。

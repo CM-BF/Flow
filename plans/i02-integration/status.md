@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:40 UTC / mainec5da343 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:57 UTC / main77132408 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main ec5da343；本批接收已审同版本网页恢复及限定隔离诊断记录，无产品变化 |
+| 工作基线 / HEAD | main77132408；本批登记更新时间修复来源与原文后继，接准备限定独审，无产品变化 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | completed |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main ec5da343含确认CLI/流式哈希/171来源；个人runtime362/v15与Web8d8/v2保留，一次仅Web恢复已完成 |
+| 已集成main状态 / HEAD | main77132408已含恢复记录/172来源；本批173来源登记候选，个人runtime362/v15与Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
@@ -225,3 +225,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 批次标签18:44（实际main888c/快照时间见18:43:03.221Z）：受控接收SVC05H操作封存、FLOW/OPS恢复事实与第172个SVC05R01来源；所有导入文件逐blob核对固定提交一致。个人服务没有本轮新操作，未执行产品测试或provider。见[批次绑定](../../docs/evidence/i02/recovery-registry172-batch.json)。
 
 2026-10-06T18:43:03.221Z实际172源回执与18:43:26固定S01输入供给进入本批；无产品源码/检查新增。上一18:44为管理手填标签，不是执行时钟；实际时间沿原始Git与操作证据。
+
+2026-10-06 18:57 UTC：新增DPERF05已领source，registry173/parser0errors。R01四源码和552绑定独审仅准备APPROVED；实际两App兼容待共享窗口，现MessageSettings先运行。FLOW工具原文ready与OPS精确source/窗口归档按权威提交同步；7绑定同源。无工程重测/provider/个人变更。
