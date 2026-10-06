@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:26:01 UTC / mainec50957f |
+| 最近更新 / 最近main同步核验 | 2026-10-06T15:15:18.606951+00:00 / main7810cbf1 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -18,9 +18,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 5 |
-| 当前产出 | 全项目明确模块职责、复用与扩展方式、性能界限；计划和审查使用同一规则。 |
-| 下一可用交付 | 本片段已交付；后续按真实协作问题维护规则。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 已安全收起四个交付目录的历史副本，源码、各自证据与依赖保持；小型验证仍需更多磁盘余量。 |
+| 下一可用交付 | 空间达标后恢复当前网页兼容与目标推进的局部验证。 |
+| 当前阻塞 | ACTIVE: 可用空间仍不足验证增量与收尾余量，大安装和完整构建继续关闭。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -110,3 +110,5 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 2026-10-06T14:35:35.073416+00:00：GO补充SVC06固定0e6a99c2 lock的只读依赖闭包候选：server+runner prod/optional及显式root tsx涉及5 workspace importers、256/683 snapshots，候选缓存256/581且missing/unsupported/cache-missing=0。保留content求和321,929,020B、排除186,269,334B含共享重复，均非实测物理空间/安装峰值。待原owner只读收敛selected install/peer/SQL/相对入口验证方案；仍保持2.5GiB全准备门槛及1GiB收尾额，不据该候选启动安装或宽删。
 
 2026-10-06T14:36:54.528536Z：唯一Git owner串行建立RELEASE03 fixed362与DPERF04 fixedc837小型稀疏源码树，分别du8,800/5,484KiB；fixedblob全相同、clean/main受保护、shared worktreeConfig原true未改。正式四/九writer scope由Web管理者fresh take，未安装/构建/PG/browser/provider。回执在docs/quality/sparse-worktree-2026-10-06；最后共享卷free1,192,497,152B，后续检查按增量复核，SVC06仍未达2.5GiB。
+
+2026-10-06T15:15:18.606951+00:00：四棵已released/clean/无进程或打开文件消费者的本队工程树逐一可逆稀疏化。全部源码、tests、规则、plans、d04、自己的完整工程证据及已识别fixture闭包保留，收起项均与固定Git及main同blob。每树保留文件hash/8保护树不变，node_modules未动。实采余量1086668800B，非du预计收益；仍不够1GiB+32MiB窗口，未降低门槛。见[批次事实](../../docs/quality/sparse-worktree-2026-10-06/engineering-four-summary.json)。纯资源操作，0PG/产品测试/模型，原个人服务保持。

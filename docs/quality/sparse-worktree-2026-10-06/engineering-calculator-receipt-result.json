@@ -1,0 +1,69 @@
+{
+  "startedAt": "2026-10-06T15:14:06.598333+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-calculator-receipt",
+  "head": "82c91b1646f20cf567a48883f7d78f38cde51c78",
+  "ledgerObservedAt": "2026-10-06T15:14:02.666Z",
+  "openFiles": [],
+  "exit": 0,
+  "stderr": "",
+  "freeBeforeBytes": 1053327360,
+  "freeAfterBytes": 1065426944,
+  "logicalDematerializedBytes": 8739606,
+  "candidateCount": 1309,
+  "retainedCount": 4428,
+  "preflightSha256": "4ef9e6af3cc693dc47c5237a96ade03106b2bae078815ec24ba7f496e8fdec7c",
+  "finishedAt": "2026-10-06T15:14:07.707291+00:00",
+  "allRetainedHashesUnchanged": true,
+  "sameMainBlobForAllDematerialized": true,
+  "protectedWorktreesUnchanged": {
+    "/Users/citrine/Projects/AgentHarness/Flow": {
+      "head": "7810cbf1461f60710a3aad29f86c7b2378aaa32e",
+      "status": "",
+      "index": "4365bf67e50d6e1b5cfe7f5fc6d3c73b83cc93f1dcc37f7ed265549f95ba61d5"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation": {
+      "head": "acbd8e9afbfd346b49c14631f8002439efb4c346",
+      "status": "M apps/cli/README.md\n M apps/cli/src/index.ts\n M apps/server/src/index.ts\n?? apps/cli/src/goal-progression.test.ts\n?? docs/evidence/f01/goal-progression-cli-green.exit\n?? docs/evidence/f01/goal-progression-cli-green.txt\n?? docs/evidence/f01/goal-progression-cli-red.exit\n?? docs/evidence/f01/goal-progression-cli-red.txt\n?? docs/evidence/f01/goal-progression-production-types-red.exit\n?? docs/evidence/f01/goal-progression-production-types-red.txt\n?? docs/evidence/f01/goal-progression-production-types.exit\n?? docs/evidence/f01/goal-progression-production-types.txt\n?? packages/client/src/goal-progression-production.test.ts",
+      "index": "4932cdd206282966f0e5f22df773bf1cbf6dde99ad8e3b90e846a01385489e1a"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration": {
+      "head": "7810cbf1461f60710a3aad29f86c7b2378aaa32e",
+      "status": "",
+      "index": "d86b8e263849a38ddbdba645363a933d620fc2c20b95287f29fb42e84cf4a047"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review": {
+      "head": "8e59d7dcb7fbd8ba8c36c553f7c092d38d5de638",
+      "status": "",
+      "index": "e76f7b9283647ac5dee3b62be66ab9028b7af09f5032b04636c95da998f29a54"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture": {
+      "head": "1d20f15afdc5c1c83145c0674c5789d673452b80",
+      "status": "M apps/execution-dashboard/src/registry.mjs\n?? docs/evidence/d05/o15-registry-validation.json",
+      "index": "86a396140afdaa3696ee216b6fd9f64c9ac9299ee80aa9decbad82ec78f84f83"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session": {
+      "head": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "status": "",
+      "index": "fa675e99acefdfc7a7abdbd505e4660200d00ce4bb7dea3f4cee7ebd771236d0"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls": {
+      "head": "e5c47893b5973571ac02d55bd7b510952d59c06f",
+      "status": "",
+      "index": "b776f6de5668be9ed964a5bb47ba3e9df26e8c0ea4e28dba4754629dd016c2fd"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey": {
+      "head": "8823b5bd44af1b25d651e42b7d16c2a21eaf30fe",
+      "status": "",
+      "index": "470fbaaba0fb385d6db5ef3fadc44d9d074a5120b36b5692c6d00baf27548faa"
+    }
+  },
+  "sharedConfigUnchanged": true,
+  "nodeModulesUntouched": true,
+  "clean": true,
+  "patternsSha256": "89fa8fd019b723ec7962d41b1959d77dc3d305b1a7c431281e89f63976e50ed4",
+  "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+  "providerCalls": 0,
+  "productTests": 0,
+  "observedVolumeDeltaBytes": 12099584,
+  "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+}
