@@ -188,7 +188,10 @@ try {
   check('distinct tasks and attempts preserve native session', first.task.id !== second.task.id && first.task.attempt.id !== second.task.attempt.id && first.task.attempt.nativeSessionId === second.task.attempt.nativeSessionId);
   check('conservative sum of SDK session samples within approved total', first.cost + second.cost <= 0.40);
   evidence.costSemantics = 'SDK modelUsage normalized samples; resumed baseline unknown. Sum is a conservative bound, not incremental provider billing.';
-  await expect(pane(page).locator('[data-slot="aui_assistant-message-content"]')).toHaveCount(2, { timeout: 10000 });
+  const visibleReplies = pane(page).locator('[data-slot="aui_assistant-message-root"] [data-slot="aui_assistant-message-content"]');
+  await expect(visibleReplies).toHaveCount(2, { timeout: 10000 });
+  await expect(visibleReplies.nth(1)).toBeVisible();
+  await expect(visibleReplies.nth(1)).toHaveText(nonce, { timeout: 10000 });
   await page.screenshot({ path: path.join(output, 'two-rounds.png') });
   check('exactly two admitted browser sends', evidence.submittedTurns === 2);
   const stored = await api(`/api/conversations/${conversationId}/turns`);
