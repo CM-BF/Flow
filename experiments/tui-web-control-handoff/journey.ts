@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
-import { spawn, spawnSync } from 'node:child_process';
+import { spawn, spawnSync, type ChildProcessWithoutNullStreams } from 'node:child_process';
+import { StringDecoder } from 'node:string_decoder';
 import { lstat, mkdir, readFile, statfs } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -62,40 +63,89 @@ async function sourceIdentity() {
     backend: BACKEND, artifact: ARTIFACT, inputCount: bindings.length };
 }
 
-/** The process, not its exit promise, is registered before the first stage is awaited. */
+/** One bounded terminal observation: callers own registration; this port drains and reports its already-owned child. */
+export function observeTerminal(child: ChildProcessWithoutNullStreams, stopGroup: () => Promise<{ stopped: boolean }>, secrets: readonly string[]) {
+  const events: Array<{ phase: string; [key: string]: unknown }> = [];
+  const stdout = new StringDecoder('utf8'), stderrDecoder = new StringDecoder('utf8');
+  const redact = (text: string) => {
+    for (const secret of secrets) if (secret) text = text.split(secret).join('[redacted]');
+    return text.replace(/Bearer\s+[^\s"'<>]+/gi, 'Bearer [redacted]')
+      .replace(/([a-z][a-z0-9+.-]*:\/\/)[^\s/@]+:[^\s/@]+@/gi, '$1[redacted]@');
+  };
+  let pending = '', stderr = '', bytes = 0, pipesClosed = false;
+  let failure: ReturnType<typeof safeFailure> | null = null;
+  let exit: { code: number | null; signal: NodeJS.Signals | null } | null = null;
+  let rejectFailure!: (error: Error) => void;
+  const failed = new Promise<never>((_, reject) => { rejectFailure = reject; }); void failed.catch(() => {});
+  const fail = (stage: string, error: unknown) => {
+    if (failure) return;
+    failure = safeFailure(stage, error, secrets);
+    rejectFailure(Object.assign(Error(`${failure.stage}: ${failure.message}`), { name: failure.name, code: failure.code }));
+  };
+  const closed = new Promise<void>(resolve => child.once('close', (code, signal) => {
+    pipesClosed = true; exit = { code, signal }; stderr += stderrDecoder.end();
+    if (pending || stdout.end()) fail('terminal-protocol', Error('PTY JSONL ended with an incomplete record'));
+    if (code !== 0 || !events.some(event => event.phase === 'finished')) fail('terminal-exit', Error(`PTY exited before successful finish (code ${code}, signal ${signal})`));
+    resolve();
+  }));
+  child.once('error', error => fail('terminal-spawn', error));
+  child.stdin.on('error', error => fail('terminal-input', error));
+  child.stdout.on('error', error => fail('terminal-output', error));
+  child.stderr.on('error', error => fail('terminal-stderr', error));
+  child.stdout.on('data', (chunk: Buffer) => {
+    bytes += chunk.length;
+    if (bytes > 512 * 1024) { fail('terminal-output', Error('PTY output bound exceeded')); void stopGroup().catch(error => fail('terminal-stop', error)); return; }
+    pending += stdout.write(chunk); let newline;
+    while ((newline = pending.indexOf('\n')) >= 0) {
+      const line = pending.slice(0, newline); pending = pending.slice(newline + 1);
+      try {
+        const message = JSON.parse(redact(line));
+        assert.ok(events.length < 16 && ['progress', 'submitted', 'conflict-visible', 'cancelled-visible', 'recovered-visible', 'finished', 'failure'].includes(message.phase));
+        if (message.phase === 'progress') assert.ok(['terminal-spawned', 'terminal-rendered', 'terminal-raw', 'terminal-opened'].includes(message.stage));
+        assert.ok(!events.some(event => event.phase === message.phase && (message.phase !== 'progress' || event.stage === message.stage)));
+        events.push(message);
+        if (message.phase === 'failure') fail(message.error?.stage ?? 'terminal-driver', Object.assign(Error(message.error?.message ?? 'PTY driver failed'),
+          { name: message.error?.name ?? 'Error', code: message.error?.code }));
+      } catch (error) { fail('terminal-protocol', error); void stopGroup().catch(error => fail('terminal-stop', error)); }
+    }
+  });
+  child.stderr.on('data', (chunk: Buffer) => {
+    bytes += chunk.length;
+    const available = Math.max(0, 64 * 1024 - Buffer.byteLength(stderr));
+    stderr += stderrDecoder.write(chunk.subarray(0, available));
+    fail('terminal-stderr', Error(redact(stderr)));
+    if (chunk.length > available || bytes > 512 * 1024) void stopGroup().catch(error => fail('terminal-stop', error));
+  });
+  const report = () => ({ bytes, events, failure, stderr: redact(stderr), exit, pipesClosed, incompleteLineBytes: Buffer.byteLength(pending) });
+  return { child, failed, report,
+    send(phase: 'cancel' | 'recover', taskId: string) { assert.equal(failure, null); child.stdin.write(JSON.stringify({ phase, taskId }) + '\n'); },
+    wait: (phase: string, signal: AbortSignal) => Promise.race([failed, until(async () => events.find(event => event.phase === phase), value => !!value, signal, 20_000)]),
+    async settle() {
+      const cleanupFailures: ReturnType<typeof safeFailure>[] = [];
+      let settled: { stopped: boolean } = { stopped: false };
+      try { settled = await bounded(stopGroup(), 4000, 'PTY group stop unknown'); }
+      catch (error) { cleanupFailures.push(safeFailure('terminal-group-stop', error, secrets)); }
+      try { await bounded(closed, 3000, 'PTY pipe close unknown'); }
+      catch (error) { cleanupFailures.push(safeFailure('terminal-pipe-close', error, secrets)); }
+      return { ...report(), settled, cleanupFailures };
+    },
+    async finish() {
+      await Promise.race([failed, bounded(closed, 5000, 'PTY exit unknown')]);
+      const settled = await stopGroup(); assert.equal(settled.stopped, true); assert.equal(failure, null); return { ...report(), settled };
+    } };
+}
+
+/** Register the actual group before waiting for progress. Errors while waiting for held are independently observable. */
 async function startTerminal(fixture: CancelJourney, origin: string, watchdog: { register: (groups: number[]) => Promise<void> }) {
   const connection = fixture.handoffConnection();
   const child = spawn('/usr/bin/python3', ['experiments/tui-web-control-handoff/terminal.py'], { cwd: ROOT, detached: true,
     stdio: ['pipe', 'pipe', 'pipe'], env: { PATH: '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin', TERM: 'xterm-256color', LANG: 'en_US.UTF-8',
       FLOW_URL: origin, FLOW_TOKEN: connection.token, FLOW_TUI_STATE_DIR: fixture.handoffRuntimePath('pty-journal'),
       TSX_DISABLE_CACHE: '1', TUI_TEST_NODE: process.execPath, TUI_TEST_CONVERSATION: connection.conversationId } });
-  assert.ok(child.pid); const group = fixture.registerHandoffGroup(child.pid);
-  const events: Array<{ phase: string; [key: string]: unknown }> = [];
-  let pending = '', bytes = 0, failure: string | null = null;
-  const exited = new Promise<number | null>(resolve => { child.once('error', () => { failure = 'PTY spawn failed'; resolve(null); }); child.once('close', resolve); });
-  child.stdin.on('error', () => { failure = 'PTY input pipe failed'; });
-  child.stdout.on('data', (chunk: Buffer) => {
-    bytes += chunk.length;
-    if (bytes > 512 * 1024) { failure = 'PTY output bound exceeded'; void group.stop().catch(() => {}); return; }
-    pending += chunk.toString(); let newline;
-    while ((newline = pending.indexOf('\n')) >= 0) {
-      const line = pending.slice(0, newline); pending = pending.slice(newline + 1);
-      try { const message = JSON.parse(line); assert.ok(events.length < 8 && ['submitted', 'conflict-visible', 'cancelled-visible', 'recovered-visible', 'finished', 'failure'].includes(message.phase));
-        assert.ok(!events.some(event => event.phase === message.phase)); events.push(message); if (message.phase === 'failure') failure = 'PTY driver failed';
-      } catch { failure = 'PTY protocol unknown'; void group.stop().catch(() => {}); }
-    }
-  });
-  child.stderr.on('data', (chunk: Buffer) => { bytes += chunk.length; failure = 'PTY stderr observed'; });
-  await watchdog.register([child.pid]);
-  return { child, events, send(phase: 'cancel' | 'recover', taskId: string) { assert.equal(failure, null); child.stdin.write(JSON.stringify({ phase, taskId }) + '\n'); },
-    wait: (phase: string, signal: AbortSignal) => until(async () => {
-      assert.equal(failure, null); return events.find(event => event.phase === phase);
-    }, value => !!value, signal, 20_000),
-    async finish() {
-      const code = await bounded(exited, 5000, 'PTY exit unknown'), settled = await group.stop();
-      assert.equal(code, 0); assert.equal(settled.stopped, true); assert.equal(pending, ''); assert.equal(failure, null);
-      return { code, settled, bytes, events };
-    }, report: () => ({ bytes, events, failure, incompleteLineBytes: Buffer.byteLength(pending) }) };
+  let group: ReturnType<CancelJourney['registerHandoffGroup']> | undefined;
+  const terminal = observeTerminal(child, async () => group ? group.stop() : { stopped: child.pid === undefined }, [connection.token]);
+  assert.ok(child.pid); group = fixture.registerHandoffGroup(child.pid);
+  await watchdog.register([child.pid]); return terminal;
 }
 
 async function startBrowser(fixture: CancelJourney, watchdog: { register: (groups: number[]) => Promise<void> }, signal: AbortSignal) {
@@ -198,7 +248,7 @@ export async function runJourney(permitPath: string) {
     const input = page.getByRole('textbox', { name: 'Message input', exact: true }).filter({ visible: true });
     await expect(input).toBeVisible();
     stage = 'terminal-start'; terminal = await startTerminal(fixture, preview.terminalOrigin, watchdog);
-    stage = 'terminal-request-capture'; const held = await bounded(preview.gate.held, 15000, 'Original TUI request was not captured');
+    stage = 'terminal-request-capture'; const held = await bounded(Promise.race([preview.gate.held, terminal.failed]), 15000, 'Original TUI request was not captured');
     await fixture.save('held-original-request.json', { ...held, bodyDigest: sha(held.body) });
     const send = async (text: string, number: number) => {
       stage = `web-send-${number}`; await input.fill(text); await page.getByRole('button', { name: 'Send message', exact: true }).filter({ visible: true }).click();
@@ -231,6 +281,13 @@ export async function runJourney(permitPath: string) {
       bridgeErrors: preview?.errors ?? [], terminal: terminal?.report() ?? null, chrome: chrome?.observation() ?? null, samples }));
     await attempt('browser-close', async () => { await chrome?.browser.close(); });
     await attempt('preview-close', async () => { await preview?.close(); });
+    await attempt('terminal-settle-checkpoint', async () => {
+      if (terminal) {
+        const final = await terminal.settle();
+        await fixture.save('terminal-settlement.json', final);
+        assert.equal(final.settled.stopped, true); assert.equal(final.pipesClosed, true);
+      }
+    });
     await attempt('fixture-close', () => fixture.close(), 50_000);
     stop.abort(); process.off('SIGTERM', terminate); process.off('SIGINT', terminate);
     await writeRecord(join(directory, 'result.json'), { run, sourceDigest: identity.digest, selected: 1, passed: workPassed && failures.length === 0,
