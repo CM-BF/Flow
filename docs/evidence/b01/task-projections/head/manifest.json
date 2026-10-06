@@ -1,0 +1,690 @@
+{
+  "implementationCommit": "7d69f8b48a67bbf08eb1d7dbdebd8437da861b40",
+  "baseCommit": "ec274d6ff927037ad74df003a785f76f032c69de",
+  "firstApprovedTarget": "c96a6bb867bfa83b8ce26f79236ff13b14b63e65",
+  "recordedAt": "2026-10-06T11:56:06.622645+00:00",
+  "claimId": "190bd45e-ffc6-4248-aca9-0ebd282c26b0",
+  "claimVersion": 2,
+  "files": [
+    {
+      "kind": "source",
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5368,
+      "sha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/assistant-stream/task-head.test.ts",
+      "bytes": 9907,
+      "sha256": "2fc6f6ac9f77a65c609d87a092ec6d47c4286e80e9c2568c2405f81155177d71"
+    },
+    {
+      "kind": "source",
+      "path": "docs/evidence/b01/task-projections/head/tsconfig.json",
+      "bytes": 194,
+      "sha256": "8e468fa4ea7646916f26939249f8dc65f45f75f64f0c6ee58b8544dc2a505552"
+    },
+    {
+      "kind": "readonly",
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 8377,
+      "sha256": "2908ae86cd3acf7a415536d1b8c4847a7d791ac7f161c416645ee4e5786b5cad"
+    },
+    {
+      "kind": "readonly",
+      "path": "docs/evidence/b01/task-projections/tsconfig.json",
+      "bytes": 326,
+      "sha256": "f030ade7f07cf96b468e9689275e899fbe1e7fa121f0e015f1d4697196dabff6"
+    },
+    {
+      "kind": "readonly",
+      "path": "docs/evidence/b01/task-projections/manifest.json",
+      "bytes": 17045,
+      "sha256": "ae65ca8837505e329169b79888ef91161ba33ca09395130715a1b41fd44f52c3"
+    },
+    {
+      "kind": "readonly",
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "kind": "readonly",
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "kind": "readonly",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "kind": "readonly",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278771,
+      "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/index.ts",
+      "bytes": 13133,
+      "sha256": "effd24a27add22ca14c508022abc5c132600081da9d3d3d5e3a52855a287dde6"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "bytes": 2061,
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "bytes": 5662,
+      "sha256": "861f058b5c2f407c138bfb1c1cddc5e8997e9af93c744f44b96a1ff938163498"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "bytes": 5126,
+      "sha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream/stream.test.ts",
+      "bytes": 24960,
+      "sha256": "e3307e4bbd9eedd903086bd2fd3218d33f35d653a37fea94e623aca330492bff"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/client/src/assistant-stream-production.test.ts",
+      "bytes": 7993,
+      "sha256": "fa6c7a9e1be9ba9413315829f0661311e8d7d5a7441c72bebcef41aa260ad6c1"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6717,
+      "sha256": "c9867af5852c4349db34396a3f999bebb18100f162a98f39bfee5701245ff2c3"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/red.stdout",
+      "bytes": 1564,
+      "sha256": "94e01088217e4172399a7276b618119832a1368fd6459e2ef948a087439bc28d"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/red.stderr",
+      "bytes": 788,
+      "sha256": "c2771ea34233310b4ca48db738a93ec0c7b5b6320d90b667e97df45b5130b976"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/red-receipt.json",
+      "bytes": 1080,
+      "sha256": "1063ee1eccc7f865709c43dd0962f58771cb7404c4c2633c417d4e8ea568412e"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/final.stdout",
+      "bytes": 3490,
+      "sha256": "f45b9218ae3e18db3b4c47ce6acabc4a5bdd75ace7affa34a8b2ec7b0b21d28f"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/final-receipt.json",
+      "bytes": 1254,
+      "sha256": "8f32485d6cac52809c3570d398b9269407bd263599e92915d188122d4dd73fd7"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/head/strict-receipt.json",
+      "bytes": 1182,
+      "sha256": "144fa85f9780d881f3da3dee743809d3b15184a98007f12fbfa7261e8385edf6"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/head/README.md",
+      "bytes": 3014,
+      "sha256": "379cbb5a1a0a29736463d988e211d71ca7c1460d8e97228f53728f3726c1e8a7"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/head/claim-receipt.json",
+      "bytes": 878,
+      "sha256": "11fb1eb54129dc75c707f5f0624788ce924eb4c6f0480a305c5dc7e61a967944"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/head/clean-code.md",
+      "bytes": 1027,
+      "sha256": "f3e15f9c271074465aa1a9aaeeb3393ed7db5e12f1b7b84fa871debf59569539"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/head/interface.md",
+      "bytes": 2341,
+      "sha256": "c49a604f1d0068fc702ddbf612a982bef64cf49b9f4ca7485ae835560271120c"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/head/measurements.json",
+      "bytes": 8815,
+      "sha256": "801d6608ad557577784bad0be166be7f57adf693cc32eb14ef1e9ca28747622b"
+    }
+  ],
+  "historicalRedBindings": [
+    {
+      "commit": "bb5b13a0f27cfe59ca27b0bec4e2146cdc32b546",
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5082,
+      "sha256": "7dd7cfa459e88e924f57d4ff506c5acf4d660dd1dd381edb30551b17b7b90beb"
+    },
+    {
+      "commit": "bb5b13a0f27cfe59ca27b0bec4e2146cdc32b546",
+      "path": "apps/server/src/assistant-stream/task-head.test.ts",
+      "bytes": 1677,
+      "sha256": "bf7e1f238c1ba752f9a6bc560e9d57f21d0f404704d5a25bf8e5028747b8ccd1"
+    },
+    {
+      "commit": "bb5b13a0f27cfe59ca27b0bec4e2146cdc32b546",
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 8377,
+      "sha256": "2908ae86cd3acf7a415536d1b8c4847a7d791ac7f161c416645ee4e5786b5cad"
+    },
+    {
+      "commit": "bb5b13a0f27cfe59ca27b0bec4e2146cdc32b546",
+      "path": "docs/evidence/b01/task-projections/head/tsconfig.json",
+      "bytes": 194,
+      "sha256": "8e468fa4ea7646916f26939249f8dc65f45f75f64f0c6ee58b8544dc2a505552"
+    }
+  ],
+  "firstSliceBindings": [
+    {
+      "kind": "source",
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/task-read-projection.test.ts",
+      "bytes": 10661,
+      "sha256": "f54b96f9477a6444aa7b54e52163a026562659a29ed67b85cdfc62e808282ffa",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "source",
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 8377,
+      "sha256": "2908ae86cd3acf7a415536d1b8c4847a7d791ac7f161c416645ee4e5786b5cad",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "source",
+      "path": "docs/evidence/b01/task-projections/tsconfig.json",
+      "bytes": 326,
+      "sha256": "f030ade7f07cf96b468e9689275e899fbe1e7fa121f0e015f1d4697196dabff6",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/index.ts",
+      "bytes": 13133,
+      "sha256": "effd24a27add22ca14c508022abc5c132600081da9d3d3d5e3a52855a287dde6",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/streams.ts",
+      "bytes": 2299,
+      "sha256": "7a0c0f30138266515acac72b4a7edc4c9629da709cd4007f89ba7b22f42b29ff",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5082,
+      "sha256": "7dd7cfa459e88e924f57d4ff506c5acf4d660dd1dd381edb30551b17b7b90beb",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": false
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "bytes": 2196,
+      "sha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1050,
+      "sha256": "34d05a279569a727cc54cb4bfca56765d77b0e5b244c1a7faa12f6d0053e7e7d",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278771,
+      "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/package.json",
+      "bytes": 489,
+      "sha256": "2845ef2d760995fa471163249f5fba113082299f3e0c27ff920960c3f7fc32f9",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-event.stdout",
+      "bytes": 1518,
+      "sha256": "b5e4f658de6d98423bbfa923cb526fa0f14d98ad6a26cfb2491f826c8a735858",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-event.stderr",
+      "bytes": 868,
+      "sha256": "442e5d552c5dcf2c44e347fb7b8efd6a2d5ca33efc321c30aa0c18a550685add",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-event-receipt.json",
+      "bytes": 1140,
+      "sha256": "f5c76d70558b78a5d146e6a60ce07bc7007bdd82366d4f9a331a70d872f74b15",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-list.stdout",
+      "bytes": 1834,
+      "sha256": "117ebd4e78fd20e5fa84865e899eec00b361e8207785686d6474ecffb0b06c3d",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-list.stderr",
+      "bytes": 814,
+      "sha256": "465e70a00a304d3312e35404d0a9e29ff7403782933ea1f6cb2abb7bee674d46",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-list-receipt.json",
+      "bytes": 1197,
+      "sha256": "5ac51dad236390e4729cd576cb3899226636340da4feda562ed297f2f9383cf1",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/final.stdout",
+      "bytes": 3756,
+      "sha256": "41122498d8e0732363b80d2bd68bccc7ef97d445977d3409e86f20fba45dd8a7",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/final-receipt.json",
+      "bytes": 1557,
+      "sha256": "53155ca3446972da37a3340c680b68d3ce4f3de21a928077aea6493cdf004047",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-preflight.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-preflight.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-preflight-receipt.json",
+      "bytes": 461,
+      "sha256": "211cf9831a312208fae82b05590fefcf726a1920058279f46beb5dea585d2939",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-second-preflight.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-second-preflight.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-second-preflight-receipt.json",
+      "bytes": 1521,
+      "sha256": "6402a63c1cfbab854937d97bc9abf77276c987c78789675ffe59552196a26b54",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-receipt.json",
+      "bytes": 1521,
+      "sha256": "10e44ab1ed28e5538e29cbddc0b12c7f2af8421b96617f8d1e1358cb6863b635",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/README.md",
+      "bytes": 3714,
+      "sha256": "2b9f76be0672f143096d34291188f5f050bdc9aa61b120815452f5c2ce3b377b",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/authority-request.md",
+      "bytes": 828,
+      "sha256": "9e7d6fdccfe561c79a548377f96097b5fc2be1b11b5a37a140b15efb589c79dc",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/claim-observation.json",
+      "bytes": 971,
+      "sha256": "4a189e73f12885e742ca1cfed3bde187348cbc2a58a64dc0b5670006892eaa3d",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/claim-receipt.json",
+      "bytes": 778,
+      "sha256": "a6b3a7672bce57c13055aabc22b544542b7c777c41ba4a969c2df69b728b4a4a",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/clean-code.md",
+      "bytes": 1822,
+      "sha256": "98a6e8232801ee3b24312142a37b641017a5c1f2a5483fa1d68dd949ca51608c",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/interface.md",
+      "bytes": 3513,
+      "sha256": "d3c4c6d383c0c8c1bb1685c2b53fdd4cfb2d5f80b06ffd46f90177b1f4a654ed",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/measurements.json",
+      "bytes": 12438,
+      "sha256": "1249a938467f875ed6cbc47c4004d6d903a22a44afaefc644a377d878cccf0db",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/runtime-bindings.json",
+      "bytes": 1452,
+      "sha256": "99110cf0859ea3526baf52b3ee84e39f25479f54c7fd53b4f46861bcec698f64",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/skills.json",
+      "bytes": 1803,
+      "sha256": "1224408a7db6047c74c9c454bf4f419afd36b9312d7a131dc707c87028f687aa",
+      "oldGitBindingVerified": true,
+      "currentTargetAndWtUnchanged": true
+    }
+  ],
+  "firstSliceUnchangedCurrentCount": 49,
+  "firstSliceExpectedReadonlyDrift": [
+    "apps/server/src/assistant-stream/queries.ts"
+  ],
+  "all19LegacyB01BindingsUnchanged": true,
+  "evidenceBudget": {
+    "bothSliceDecodedAndHttpBytes": 733075,
+    "allEvidenceBytesBeforeHeadManifest": 88740,
+    "metadataReserveBytes": 1048576,
+    "conservativeUpperBytes": 1870391,
+    "limitBytes": 33554432
+  },
+  "checks": {
+    "newDistinctPassed": 5,
+    "localStrictExit": 0,
+    "headRedSelectedFailed": 1,
+    "firstSlice8NotRerun": true,
+    "actualSdkProviderRuntimeCalls": 0
+  },
+  "limits": [
+    "Decoded row JSON bytes, not wire/TOAST/disk/CPU/latency.",
+    "Current task/attempt cursor semantics tested through real private PG/HTTP; historical ownerVersion0 and terminal state switches are declared SQL fixtures.",
+    "No first-slice source/raw rewrite; old readonly queries input remains reproducible in c96 Git."
+  ]
+}

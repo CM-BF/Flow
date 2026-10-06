@@ -10,12 +10,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections |
 | Branch | codex/task-read-projections |
 | 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264 / c96a6bb867bfa83b8ce26f79236ff13b14b63e65；最终metadata HEAD由Git读取 |
-| 工作树dirty状态 | 源码/raw已固定；本次仅独审/集成交接metadata |
+| 工作树dirty状态 | 源码/raw已固定；第三reader源码/raw固定；本次仅manifest/review/status metadata |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 最终8/8真实PG/HTTP；局部strict exit0。两次目标red原样保留，详见证据 |
+| 检查状态 | PASSED 第三reader5/5真实PG/HTTP、局部strict0；首片8项未重跑；历史red保留 |
 | 已集成main状态 / HEAD | 旧B01已main；本片两reader已实现/未main |
-| 实现目标 | c96a6bb867bfa83b8ce26f79236ff13b14b63e65 |
-| 实现范围 | apps/server/src/tasks.ts, apps/server/src/queries.ts, apps/server/src/task-read-projection.ts, apps/server/src/task-read-projection.test.ts, experiments/bounded-reads/task-projections/fixture.ts, docs/evidence/b01/task-projections/tsconfig.json |
+| 实现目标 | 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40 |
+| 实现范围 | apps/server/src/assistant-stream/queries.ts, apps/server/src/assistant-stream/task-head.test.ts, docs/evidence/b01/task-projections/head/tsconfig.json |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
@@ -23,7 +23,7 @@
 | 下一可用交付 | 首片可独立接收主线；第三reader等价证据等待独审 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED Mika 2026-10-06 11:48:15 UTC，target c96a6bb8，0P1/P2 |
+| Review | REVIEW_REQUIRED 第三reader；首片c96已APPROVED，独立integration-ready保留 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v2 AMEND COMMITTED 2026-10-06 11:50:4
 
 架构影响：只新增固定summary投影/映射Module供两个既有reader复用，生产事务/存储/鉴权/锁和全局调度不改；新目录结构在固定target后请求Lead登记，实际3生产源/1新测试/1私有fixture；目录架构基线待Lead按固定target登记。
 
-第三reader独立证据见[head/README](../../docs/evidence/b01/task-projections/head/README.md)；首片8项没有重跑，本片5项不借旧批准。当前实现目标字段仍首片c96供Lead单独集成，新片target固定后另行标明。
+第三reader独立证据见[head/README](../../docs/evidence/b01/task-projections/head/README.md)；首片8项没有重跑，本片5项不借旧批准。当前实现目标字段是第三reader 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40；首片c96/ec274仍由固定integration-ready供Lead单独集成。
 
 ## 历史owner交付快照（以下不是新片当前状态）
 
