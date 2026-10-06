@@ -42,7 +42,8 @@ export interface ConversationCapabilities {
   /** Capability varies by center version; older centers may not expose durable queues. */
   queue: boolean;
   steer: false;
-  /** Missing/false means unsupported. Enable only with the matching live text consumer. */
+  /** Missing/false means unsupported. GET advertises patch-v1 readability only after explicit
+   * client negotiation; creation ACK stays false. This does not promise provider deltas. */
   liveAssistantText?: boolean;
   perTurnModel: false;
   perTurnThinking: false;

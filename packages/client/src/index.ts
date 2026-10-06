@@ -1,4 +1,5 @@
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
+import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
 import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
 import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
 import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
@@ -26,15 +27,36 @@ export class FlowApiError extends Error {
   }
 }
 
-export interface ClientOptions { baseUrl: string; token: string }
+export interface ClientOptions {
+  baseUrl: string;
+  token: string;
+  /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
+  assistantStreamProtocol?: 'patch-v1';
+}
 
 export class FlowClient {
   private readonly baseUrl: string;
   private readonly token: string;
+  private readonly assistantStreamProtocol: 'patch-v1' | undefined;
 
   constructor(options: ClientOptions) {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+    this.assistantStreamProtocol = options.assistantStreamProtocol;
+  }
+
+  assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal });
+  }
+  assistantStreamPatches(taskId: string, options: { attemptId: string; after?: number; limit?: number }, signal?: AbortSignal): Promise<AssistantStreamPatchPage> {
+    const query = new URLSearchParams({ attemptId: options.attemptId });
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal });
+  }
+  assistantStreamBlock(taskId: string, blockId: string, signal?: AbortSignal): Promise<AssistantStreamBlock> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal });
   }
 
   fetchPluginPackage(pluginId: string, versionId: string, input: PackageFetchRequest, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
@@ -276,7 +298,9 @@ export class FlowClient {
     return this.request(`/api/conversations${query.size ? `?${query}` : ''}`, { signal });
   }
   conversation(id: string, signal?: AbortSignal): Promise<ConversationSnapshot> {
-    return this.request(`/api/conversations/${encodeURIComponent(id)}`, { signal });
+    return this.request(`/api/conversations/${encodeURIComponent(id)}`, {
+      signal, ...(this.assistantStreamProtocol === 'patch-v1' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v1' } } : {}),
+    });
   }
   conversationTurns(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationTurnPage> {
     const query = new URLSearchParams();
