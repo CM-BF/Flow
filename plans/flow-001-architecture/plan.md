@@ -530,7 +530,7 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 
 后继在CORE/RELEASE收口后的空闲小窗口，沿现SVC06/X01计划核禁用/启用host的真实import边界，再决定最小组合入口按需加载及纯artifact reader/fetcher职责分离。先0PG/0provider、有界import-only，不删功能、不造通用插件框架；迁移完整性、默认禁用、授权和启用失败清理保持。大型release的既有资源门槛不因拆分候选降低，当前writer不被打断。
 
-### CHAT05-06 完整工具原文：下一 ready 交付（2026-10-06 18:57 UTC）
+### CHAT05-06 完整工具原文：下一 ready 交付（2026-10-06 18:56 UTC）
 
 沿既有 CHAT05-06 / REQ-15，不新增大task。当前 mapper 截到65,536B后仅保存前缀与全文hash，不能追回余文；旧历史仍明确 truncated，不能补造可恢复性。此为已知未完成范围，不改原CHAT05批准。当前保留页面兼容与O16安全交付优先，之后由 Execution Lead 负责派工/公共接线，指定 assignment_review 在当前R01正式收口后的首个合适实施槽承担 producer→durable transfer→center immutable body 的窄纵向片；未取得新独立WT/精确claim前不写产品。若O16共用runner接缝尚未释放，先做独立body合同与reader范围，不能双writer。
 
