@@ -229,3 +229,5 @@ Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec1
 ## CHAT10可信启动接线 2d69959a50954912c388eddb18d3b6a9574bf680
 
 两文件增量，main仅调用已审严格parser并传activeSteering。真实子进程中心absent/0默认关闭，1只开启受理门且错误attempt仍404；非法值启动exit1且不回显。首次red保留（1仍disabled）；final1selected/2未选，typecheck0。随机专库before[]/createdtrue/connections[]/remaining[]；每个child正常退出断言。域8源对a329精确一致。未重48/106或provider，不动个人服务。
+
+CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source+3raw+8domain hashes无差，1selected green/2未选和清理证据核验，无P1/P2/未重跑。Root接收，默认off/个人profile不改，准受控主线集成。

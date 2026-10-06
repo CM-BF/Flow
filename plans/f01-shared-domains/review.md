@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（CHAT10可信启动配置薄挂载）**
+**当前增量状态：APPROVED（CHAT10可信启动配置薄挂载）**
 
 Review target commit：2d69959a50954912c388eddb18d3b6a9574bf680
 
-Scope：apps/server/src/main.ts, apps/server/src/steering-production.test.ts。仅显式环境配置传入已审factory；证据 steering-startup-manifest.json。领域a329与薄client25a原批准不代替此增量。
+Scope：apps/server/src/main.ts, apps/server/src/steering-production.test.ts。仅显式环境配置传入已审factory；证据 steering-startup-manifest.json。独立reviewer assignment_review，Root接收：2源/3raw与领域8fixed/current hash一致，完整parser→factory/auth/子进程生命周期已读；1red→1green/2未选、types0、专库无残余，无P1/P2、未重跑。默认关闭，可信1仍不绕attempt授权；非个人steering开通。
 
 ## 上一CHAT10薄client独立批准
 
