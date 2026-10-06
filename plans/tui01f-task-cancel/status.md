@@ -2,37 +2,37 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:06:45 UTC；03历史main8d84保持，04新片仅实施 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:24:06 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
-| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5 / test-only兼容 ec30bb6246ac95e5843c7166dee7118b684fd089 |
-| 工作树dirty状态 | 源码已固定；本次仅证据/状态收口，提交后clean |
+| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5；04开始前7c5a739258106a2cf9387ebf3a5e54268c122136 / source d147a636f9cb54a8c87a89a89963d13e937cee9c |
+| 工作树dirty状态 | 源码固定；当前仅manifest/状态收口，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | PASSED f4f9c47c8c36d7c05614ac477f7af3bb49a31680（独立cleanup-only 1/1+focused types0）；ec30bb6246ac95e5843c7166dee7118b684fd089 focused types0；原40508f两行为通过/suite exit1保留 |
+| 本片段交付阶段 | review |
+| 检查状态 | 4 distinct纯检查分轮3/3+1/1；两次focused types0；04 PG/Chrome/PTY NOT_RUN；原03历史结果保留 |
 | 已集成main状态 / HEAD | 8d84d529a0756116bd0fc8bad969d61a6c26248e；七源逐字接收；03交付，04仍open |
-| 实现目标 | ec30bb6246ac95e5843c7166dee7118b684fd089 |
-| 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/fixture-cleanup.ts, apps/tui/src/task-controls/fixture-cleanup.test.ts, apps/tui/src/task-controls/cleanup-journey.test.ts, apps/tui/src/task-controls/journey.test.ts, apps/tui/test-fixtures/cancel_driver.py, apps/tui/src/journey.test.ts |
+| 实现目标 | d147a636f9cb54a8c87a89a89963d13e937cee9c |
+| 实现范围 | apps/tui/src/task-controls/fixture.ts, experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/preview.ts, experiments/tui-web-control-handoff/terminal.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已接收终端与网页接续验收的实现范围，正在连接真实网页与终端；此前取消与退出行为已在主线验收。 |
-| 下一可用交付 | 一条保留冲突草稿、明确取消并从网页接续的真实双界面旅程；完整运行尚待准备和独立审查。 |
+| 当前产出 | 双界面接续验收脚本已完成，冲突与错误记录的局部检查已通过，正在独立审查。 |
+| 下一可用交付 | 独立审查后，在独立运行窗口验证真实网页与终端的草稿保留、取消和退出后继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED ec30bb6246ac95e5843c7166dee7118b684fd089（legacy consumer）；APPROVED f4f9c47c8c36d7c05614ac477f7af3bb49a31680（独立PG收尾），范围分别记录 |
+| Review | [review.md](review.md)，04 IN_PROGRESS；原03批准与main记录保留 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
-| 架构影响 | 现 interaction controller 增一种 task-cancel 意图与可选单方法端口；旧中心/授权/调度不变，架构基线更新待本片固定交 Execution Lead。 |
+| 架构影响 | 仅测试fixture新增显式factory/recipe与受管观察端口，组合固定真实Web/PTY；生产controller/权限/调度不变，固定架构输入由Execution Lead按实际验收接收。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | TUI01F-01 | completed | assignment_review | [Interface](../../docs/evidence/tui01f/interface.md) |
 | TUI01F-02 | completed | assignment_review | [局部36 distinct与focused types](../../docs/evidence/tui01f/validation.md) |
 | TUI01F-03 | completed | assignment_review | [main接收](../../docs/evidence/tui01f/main-8d84-receipt.json)；原2行为pass/suite exit1保留；独立收尾1/1已审 |
-| TUI01F-04 | in-progress | native_center_owner | [最小双界面方案](../../docs/evidence/tui01f/web-handoff-preparation.md)；未实现/运行 |
+| TUI01F-04 | in-progress | native_center_owner | [完整准备与局部原始检查](../../docs/evidence/tui01f/web-handoff/README.md)；独审进行中，完整旅程未运行 |
 
 唯一 status 已交 Lead 登记；本轮未重新采样看板。不写第二进度源。SVC05H01 树保持 af51 全冻结，独立任务不交叉修改。
 
@@ -67,3 +67,5 @@
 2026-10-06 17:57 UTC：七个已审源码在main8d84逐字一致，受控集成b549祖先成立，原ec30/03a提交非祖先，不用metadata ancestry冒充产品缺失。03按Lead接受的原两行为+独立收尾证据交付，原整suite exit1和缺初始inode旧tmp KEEP原样保留；04只读方案已固定，0新运行。
 
 2026-10-06 20:06:45 UTC：正式accept v4；04采用已授权固定af51中心/d629网页/ec30终端组合，三个实验源及fixture test-only端口实施。原03 history/raw/main与旧tmpKEEP全保留，0新运行。[当前Interface](../../docs/evidence/tui01f/web-handoff/interface.md)，[回执](../../docs/evidence/tui01f/web-handoff/accept-receipt.json)。04独审NOT_STARTED；旧Review/实现目标仍仅03，04首次源固定后单独更新。
+
+2026-10-06 20:24:06 UTC：04完整四源target `d147a636f9cb54a8c87a89a89963d13e937cee9c` 已固定/push；[manifest](../../docs/evidence/tui01f/web-handoff/manifest.json)核782绑定、741只读source inputs，mismatches=[]。4不同纯检查分轮通过/两focused types0；实际PG/Chrome/PTY未运行，当前review，不把源码准备冒实际App验收。阶段/安全原因归因修复与原partial staging事实保留；同claim继续停源写待唯一独审。

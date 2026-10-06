@@ -1,6 +1,6 @@
 # TUI01F — 聊天任务显式取消与接续
 
-状态：in-progress；创建：2026-10-06 15:47 UTC；最近更新：2026-10-06 16:23 UTC。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
+状态：in-progress；创建：2026-10-06 15:47 UTC；最近更新：2026-10-06 20:24:06 UTC。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
 
 ## 小交付与 Interface
 
@@ -48,3 +48,5 @@
 2026-10-06 17:57 UTC：03已审组合经受控集成进入main8d84；原两行为suite exit1未被改写，独立cleanup-only1/1足够闭合已定位收尾边界，旧tmp仍KEEP。04仍open，仅形成[一条真实双界面候选](../../docs/evidence/tui01f/web-handoff-preparation.md)，无产品/driver新增、无运行授权。
 
 2026-10-06 20:06:45 UTC：原04明确获实施授权，由native_center_owner合法接收v4；按[固定Interface](../../docs/evidence/tui01f/web-handoff/interface.md)实现测试driver。源码/便宜纯检查可推进；完整PG/Chrome旅程等待另行窗口，0provider。旧默认recipe与所有历史证据保持。
+
+2026-10-06 20:24:06 UTC：04四源准备target `d147a636f9cb54a8c87a89a89963d13e937cee9c`，原同一TODO进入独审；4纯检查/两focused types通过，完整双界面旅程NOT_RUN。固定Interface采用90s行为+60s收尾/150s独立总监督，原03证据和open TODO保持。

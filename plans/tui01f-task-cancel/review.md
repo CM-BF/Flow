@@ -1,6 +1,12 @@
 # 当前 TUI01F-04 实现
 
-状态：NOT_STARTED。04新driver尚未固定源码/运行，不能继承03批准；实际限定Interface见[此处](../../docs/evidence/tui01f/web-handoff/interface.md)。原03独审与main记录原样保留如下。
+状态：IN_PROGRESS。04独立review由Execution Lead进行；当前仅准备，不继承03批准。
+
+Review target commit: d147a636f9cb54a8c87a89a89963d13e937cee9c
+
+Scope：fixture.ts及experiments/tui-web-control-handoff三源；[manifest/原始检查](../../docs/evidence/tui01f/web-handoff/README.md)。741固定只读输入；原03产品/原始回执保持。作者4不同纯检查分轮3+1、focused types两次0，PG/Chrome/PTY/provider均未执行。请核真实公开接口/任务身份/409草稿/一次cancel/退出不cancel，固定artifact与backend/TUI三方版本，durable checkpoint/marker/PGID/独立150s监督及unknown保留。独审只读固定源/原证据；完整实际旅程须另行窗口。
+
+预读要求已修：运行合同统一90+60/150s；原始安全失败阶段/原因保留、cleanup分列，新增定向1/1。尚无正式04批准。原03独审与main记录原样保留如下。
 
 # 当前两项窄增量批准
 
