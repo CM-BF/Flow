@@ -1,0 +1,712 @@
+{
+  "mode": "rehearsal",
+  "base": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+  "source": {
+    "base": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+    "files": [
+      {
+        "path": "experiments/native-graph-acceptance/config.mjs",
+        "bytes": 3531,
+        "sha256": "1df0bbde96a499290cd7ec6dcf2f05137076ac8c2341b824031314c0a4e76303"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/guard.mjs",
+        "bytes": 4803,
+        "sha256": "70cd45853f50de97b243327e47384ff15c8bf00b536b6a6a2f7ba3159bec63e9"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/peer.mjs",
+        "bytes": 2877,
+        "sha256": "839ae672fa23258d255a9d59f25ce015050330173e0ee8c2b0d2e0a55ef5aea3"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/worker.mjs",
+        "bytes": 3427,
+        "sha256": "73396f7d48c9aa0572652feaef8272551af6dc20b099a4ee1ffb831cf8458ea6"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/driver.mjs",
+        "bytes": 12904,
+        "sha256": "1b63f4adc9117a30d41bdf6f9d62479dbfc9df69971cbaa9f4bb1e496133c1bd"
+      },
+      {
+        "path": "apps/runner/src/claude.ts",
+        "bytes": 16372,
+        "sha256": "aa1dab64465c5cd7a4d422985cd5a24b10bbc4df13d7bb07fc64b1f19a769f12"
+      },
+      {
+        "path": "apps/runner/src/runtime.ts",
+        "bytes": 6848,
+        "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+      },
+      {
+        "path": "apps/runner/src/execution-profiles.ts",
+        "bytes": 4052,
+        "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d"
+      },
+      {
+        "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+        "bytes": 3283,
+        "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c"
+      },
+      {
+        "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+        "bytes": 2307,
+        "sha256": "df1b2c75c4042bee4ea01179f51af452465ec8b01707a3cdf41946a1b6338298"
+      },
+      {
+        "path": "apps/runner/src/goal-graph-tools/bind.ts",
+        "bytes": 1572,
+        "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+      }
+    ],
+    "digest": "30af3ab24f79ef3c1ed104ca905160308422289939cb0d88bd864d6927c17d5b",
+    "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance/"
+  },
+  "versions": {
+    "node": "v24.20.0",
+    "claudeSdk": "0.3.290",
+    "mcpSdk": "1.32.1"
+  },
+  "nativeQueryCalls": 0,
+  "approvalId": null,
+  "attemptMarker": null,
+  "startedAt": "2026-10-06T06:44:08.843Z",
+  "outcome": "rehearsal-passed",
+  "cleanup": {
+    "runnerStopped": true,
+    "centerClosed": true,
+    "databaseRemoved": true,
+    "privateTemporaryDirectoryRemoved": true
+  },
+  "workerForcedKill": false,
+  "boundary": "Injected query transport; real official MCP + public HTTP/PostgreSQL + independent runner process. No native broker/model proof.",
+  "ids": {
+    "database": "flow_o08_3141dff756b54f368aa95fb617df8c9b",
+    "projectId": "faf68b86-c8c9-4f9f-b933-dee6d2c961bd",
+    "goalId": "44740cba-9237-453c-be08-5553eb5e3ac6",
+    "runId": "d09b0832-e5e9-4de7-8c76-ed6fa4cf2890",
+    "taskId": "e52afa4c-f9f6-4e66-900a-fb3f670222dc",
+    "runnerId": "f109c20c-b370-409b-ae43-3bbd5b11314d"
+  },
+  "profile": {
+    "reference": {
+      "id": "40e035d5-5351-4f7d-8744-54d72a825eba",
+      "runnerId": "f109c20c-b370-409b-ae43-3bbd5b11314d",
+      "configDigest": "b3a63459fbfe920d325d1ee209e882b1919a3e531b748f33653d025ed459bc85"
+    },
+    "configuration": {
+      "model": "synthetic-no-query",
+      "access": "goal-graph-tools",
+      "limits": {
+        "maxTurns": 4,
+        "timeoutMs": 12000,
+        "maxBudgetUsd": 0.2
+      },
+      "harness": "claude",
+      "thinking": "disabled",
+      "adapterVersion": "claude-sdk-0.3.290-v2",
+      "permissionMode": "dontAsk",
+      "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "requireReadApproval": false
+    },
+    "source": "runner-configured",
+    "availability": "not-probed",
+    "model": {
+      "value": "synthetic-no-query",
+      "resolvedModel": null,
+      "displayName": "synthetic-no-query",
+      "description": "Configured runner request; provider availability has not been probed.",
+      "providerCapabilities": "unknown"
+    },
+    "controls": {
+      "model": "select-configured-profile",
+      "thinking": "fixed-disabled",
+      "effort": "unsupported",
+      "access": "configured-policy",
+      "queue": false,
+      "steer": false
+    },
+    "createdAt": "2026-10-06T06:44:09.683Z"
+  },
+  "runnerPid": 43479,
+  "observationStartedAt": "2026-10-06T06:44:09.692Z",
+  "observationMs": 721.424833,
+  "worker": {
+    "mode": "rehearsal",
+    "pid": 43479,
+    "nativeQueryCalls": 0,
+    "queryAdapterCalls": 1,
+    "queryClosed": true,
+    "requested": {
+      "model": "synthetic-no-query",
+      "maxTurns": 4,
+      "maxBudgetUsd": 0.2,
+      "permissionMode": "dontAsk",
+      "tools": [],
+      "allowedTools": [
+        "mcp__flow-graph__graph_command",
+        "mcp__flow-graph__graph_read"
+      ],
+      "plugins": [],
+      "skills": [],
+      "mcp": {
+        "key": "flow-graph",
+        "name": "flow-graph",
+        "type": "sdk"
+      }
+    },
+    "effective": null,
+    "result": {
+      "subtype": "success",
+      "isError": false,
+      "numTurns": null,
+      "sdkEstimatedCostUsd": null,
+      "nativeSessionId": "o08-synthetic-session",
+      "modelUsage": {}
+    },
+    "wire": [
+      {
+        "name": "graph_read",
+        "args": {
+          "request": {
+            "view": "graph",
+            "limit": 3
+          }
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"goalId\":\"44740cba-9237-453c-be08-5553eb5e3ac6\",\"projectId\":\"faf68b86-c8c9-4f9f-b933-dee6d2c961bd\",\"baseRevision\":1,\"currentRevision\":1,\"stale\":false,\"nodes\":[],\"nextCursor\":null}"
+            }
+          ]
+        },
+        "responseBytes": 237
+      },
+      {
+        "name": "graph_command",
+        "args": {
+          "command": {
+            "kind": "propose",
+            "proposal": {
+              "expectedProjectRevision": 1,
+              "reason": "仅为合成发布说明建立三步计划",
+              "additions": [
+                {
+                  "key": "step1",
+                  "title": "起草发布说明",
+                  "dependencies": []
+                },
+                {
+                  "key": "step2",
+                  "title": "核对事实与格式",
+                  "dependencies": [
+                    {
+                      "kind": "proposed",
+                      "key": "step1"
+                    }
+                  ]
+                },
+                {
+                  "key": "step3",
+                  "title": "交付发布说明",
+                  "dependencies": [
+                    {
+                      "kind": "proposed",
+                      "key": "step2"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "idempotencyKey": "o08-propose-once"
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"kind\":\"propose\",\"proposal\":{\"id\":\"b00abb84-2b13-4cc9-bc77-6e4db2c81859\",\"goalId\":\"44740cba-9237-453c-be08-5553eb5e3ac6\",\"projectId\":\"faf68b86-c8c9-4f9f-b933-dee6d2c961bd\",\"baseRevision\":1,\"goalDigest\":\"a757f2991b1eb1c553fa8408cf3fba49c76a8abfc7ff9cae3c82922ebeb98896\",\"proposalDigest\":\"a2f492aeae0a089e1085b9d520097fcefdf4ebc379bb1e6e2130a11aaa22787d\",\"source\":{\"kind\":\"goal-graph-run\",\"runId\":\"d09b0832-e5e9-4de7-8c76-ed6fa4cf2890\",\"runnerId\":\"f109c20c-b370-409b-ae43-3bbd5b11314d\",\"taskId\":\"e52afa4c-f9f6-4e66-900a-fb3f670222dc\",\"attemptId\":\"e7ba1d9c-766c-4488-9728-99d053a0deb3\",\"ownerVersion\":1},\"createdAt\":\"2026-10-06T06:44:10.253Z\",\"nodeCount\":3,\"edgeCount\":2,\"state\":\"proposed\",\"appliedRevision\":null},\"replayed\":false}"
+            }
+          ]
+        },
+        "responseBytes": 836
+      },
+      {
+        "name": "graph_command",
+        "args": {
+          "command": {
+            "kind": "apply",
+            "proposalId": "b00abb84-2b13-4cc9-bc77-6e4db2c81859",
+            "expectedProjectRevision": 1,
+            "proposalDigest": "a2f492aeae0a089e1085b9d520097fcefdf4ebc379bb1e6e2130a11aaa22787d"
+          },
+          "idempotencyKey": "o08-apply-once"
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"kind\":\"apply\",\"receipt\":{\"proposalId\":\"b00abb84-2b13-4cc9-bc77-6e4db2c81859\",\"goalId\":\"44740cba-9237-453c-be08-5553eb5e3ac6\",\"projectId\":\"faf68b86-c8c9-4f9f-b933-dee6d2c961bd\",\"proposalDigest\":\"a2f492aeae0a089e1085b9d520097fcefdf4ebc379bb1e6e2130a11aaa22787d\",\"fromRevision\":1,\"toRevision\":6,\"nodeIds\":{\"step1\":\"acb8fc8e-f989-4c81-823e-823b3c0a2beb\",\"step2\":\"5e74483c-00f3-457d-b0a6-622c2580740d\",\"step3\":\"a66e6b3a-35fd-4f9a-8902-baa2fa4323bc\"},\"actor\":{\"kind\":\"goal-graph-run\",\"runId\":\"d09b0832-e5e9-4de7-8c76-ed6fa4cf2890\",\"runnerId\":\"f109c20c-b370-409b-ae43-3bbd5b11314d\",\"taskId\":\"e52afa4c-f9f6-4e66-900a-fb3f670222dc\",\"attemptId\":\"e7ba1d9c-766c-4488-9728-99d053a0deb3\",\"ownerVersion\":1},\"appliedAt\":\"2026-10-06T06:44:10.291Z\"},\"alreadyApplied\":false,\"replayed\":false}"
+            }
+          ]
+        },
+        "responseBytes": 885
+      }
+    ],
+    "notices": [],
+    "mcpTools": [
+      {
+        "name": "graph_read",
+        "description": "Read the fixed base graph in bounded pages, or fetch this grant's saved proposal text by id. Nodes are id/title/version; currentRevision and stale describe freshness without replacing the base. No history is appended. Whole-base graph is readable; existing-node write references remain scoped.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "request": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "view": {
+                      "type": "string",
+                      "const": "graph"
+                    },
+                    "after": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 2000
+                    },
+                    "limit": {
+                      "default": 20,
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 50
+                    }
+                  },
+                  "required": [
+                    "view"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "view": {
+                      "type": "string",
+                      "const": "proposal"
+                    },
+                    "proposalId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 128
+                    }
+                  },
+                  "required": [
+                    "view",
+                    "proposalId"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "request"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      },
+      {
+        "name": "graph_command",
+        "description": "Propose or apply a bounded graph within the fixed grant. Retain the same idempotencyKey for the same intent after an unknown outcome. Apply names the returned proposal id, digest and baseRevision. No child execution or engineering writes are supported. The center validates quota, current authority and versions.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "propose"
+                    },
+                    "proposal": {
+                      "type": "object",
+                      "properties": {
+                        "expectedProjectRevision": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 2147483647
+                        },
+                        "reason": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 4000
+                        },
+                        "additions": {
+                          "minItems": 1,
+                          "maxItems": 16,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "key": {
+                                "type": "string",
+                                "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,47}$"
+                              },
+                              "title": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 180
+                              },
+                              "dependencies": {
+                                "maxItems": 128,
+                                "type": "array",
+                                "items": {
+                                  "oneOf": [
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "kind": {
+                                          "type": "string",
+                                          "const": "proposed"
+                                        },
+                                        "key": {
+                                          "type": "string",
+                                          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,47}$"
+                                        }
+                                      },
+                                      "required": [
+                                        "kind",
+                                        "key"
+                                      ],
+                                      "additionalProperties": false
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "kind": {
+                                          "type": "string",
+                                          "const": "existing"
+                                        },
+                                        "nodeId": {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "maxLength": 128
+                                        },
+                                        "expectedVersion": {
+                                          "type": "integer",
+                                          "minimum": 1,
+                                          "maximum": 2147483647
+                                        }
+                                      },
+                                      "required": [
+                                        "kind",
+                                        "nodeId",
+                                        "expectedVersion"
+                                      ],
+                                      "additionalProperties": false
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "key",
+                              "title",
+                              "dependencies"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "expectedProjectRevision",
+                        "reason",
+                        "additions"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "proposal"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "const": "apply"
+                    },
+                    "proposalId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 128
+                    },
+                    "expectedProjectRevision": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 2147483647
+                    },
+                    "proposalDigest": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "proposalId",
+                    "expectedProjectRevision",
+                    "proposalDigest"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "idempotencyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          },
+          "required": [
+            "command",
+            "idempotencyKey"
+          ],
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "idempotentHint": true,
+          "openWorldHint": true
+        },
+        "execution": {
+          "taskSupport": "forbidden"
+        }
+      }
+    ]
+  },
+  "task": {
+    "id": "e52afa4c-f9f6-4e66-900a-fb3f670222dc",
+    "title": "Goal graph run",
+    "harness": "claude",
+    "status": "succeeded",
+    "verificationStatus": "passed",
+    "createdAt": "2026-10-06T06:44:09.691Z",
+    "updatedAt": "2026-10-06T06:44:10.386Z",
+    "prompt": "{\"goal\":{\"acceptance\":\"三个指定标题，按顺序两条依赖；最终明确计划已记录且子任务未执行。\",\"constraints\":\"仅建立计划，不执行任何子任务，不访问工程文件、终端、网页、插件或子代理。只使用授予的graph工具。\",\"originalGoal\":\"为合成产品“纸鸢”0.1版本准备一份短发布说明。本版新增任务筛选，并修复标题换行问题。请先建立起草、核对、交付三个步骤的计划。\"},\"instruction\":\"先用graph_read读取空底稿，再用一次graph_command propose提出三个节点，标题依次为“起草发布说明”、“核对事实与格式”、“交付发布说明”，后一步依赖前一步，总共两条边。然后用返回的proposalId/proposalDigest及baseRevision调用apply一次。对同一意图保持相同idempotencyKey。最后用中文说明已记录计划、尚未执行子任务；不要声称发布说明已完成。\"}",
+    "entries": [
+      {
+        "id": "82159490-ac93-4ebf-af18-54393d8ba46b",
+        "kind": "reference",
+        "cursor": 1,
+        "createdAt": "2026-10-06T06:44:10.311Z",
+        "reference": {
+          "id": "a951b23b-57eb-4336-8c06-f45621e4fe2e",
+          "title": "Native session"
+        }
+      },
+      {
+        "id": "d81bfd7f-9b97-444d-ad81-61119a2689f5",
+        "kind": "reference",
+        "cursor": 2,
+        "createdAt": "2026-10-06T06:44:10.323Z",
+        "reference": {
+          "id": "8b92882a-dfb7-4e40-be2d-b446a8573765",
+          "title": "Usage: claude.modelUsage"
+        }
+      },
+      {
+        "id": "d8293508-7ed4-4b3a-a159-80ba10bdf9f4",
+        "kind": "reference",
+        "cursor": 3,
+        "createdAt": "2026-10-06T06:44:10.341Z",
+        "reference": {
+          "id": "a1d36f48-1bec-4617-9f9f-11c98977ae49",
+          "title": "Claude result"
+        }
+      },
+      {
+        "id": "da1ac71e-70c3-47e6-b128-e07395db7f77",
+        "kind": "reference",
+        "cursor": 4,
+        "createdAt": "2026-10-06T06:44:10.351Z",
+        "reference": {
+          "id": "46b6dd79-ba02-4f87-883c-e9e553af18df",
+          "title": "Verification passed"
+        }
+      },
+      {
+        "id": "1c1976f3-5753-4efa-a51a-c66c471449a3",
+        "kind": "reference",
+        "cursor": 5,
+        "createdAt": "2026-10-06T06:44:10.369Z",
+        "reference": {
+          "id": "9dfb2d6e-d981-4c58-90b5-6bb25b83cd94",
+          "title": "Assistant reply"
+        }
+      }
+    ],
+    "watermark": 5,
+    "hasMore": false,
+    "pendingDecision": null,
+    "attempt": {
+      "id": "e7ba1d9c-766c-4488-9728-99d053a0deb3",
+      "runnerId": "f109c20c-b370-409b-ae43-3bbd5b11314d",
+      "ownerVersion": 1,
+      "leaseExpiresAt": "2026-10-06T06:44:30.365Z",
+      "nativeSessionId": "o08-synthetic-session"
+    },
+    "usage": {
+      "costUsd": null,
+      "costKind": "unknown",
+      "incomplete": true,
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  "graph": {
+    "revision": 6,
+    "reason": "Apply goal graph proposal b00abb84-2b13-4cc9-bc77-6e4db2c81859",
+    "actor": "goal-graph-run",
+    "actorSource": {
+      "kind": "goal-graph-run",
+      "runId": "d09b0832-e5e9-4de7-8c76-ed6fa4cf2890",
+      "runnerId": "f109c20c-b370-409b-ae43-3bbd5b11314d",
+      "taskId": "e52afa4c-f9f6-4e66-900a-fb3f670222dc",
+      "attemptId": "e7ba1d9c-766c-4488-9728-99d053a0deb3",
+      "ownerVersion": 1
+    },
+    "createdAt": "2026-10-06T06:44:10.291Z",
+    "nodes": [
+      {
+        "id": "acb8fc8e-f989-4c81-823e-823b3c0a2beb",
+        "title": "起草发布说明",
+        "taskId": null,
+        "version": 1,
+        "parentId": null,
+        "dependsOn": []
+      },
+      {
+        "id": "5e74483c-00f3-457d-b0a6-622c2580740d",
+        "title": "核对事实与格式",
+        "taskId": null,
+        "version": 2,
+        "parentId": null,
+        "dependsOn": [
+          "acb8fc8e-f989-4c81-823e-823b3c0a2beb"
+        ]
+      },
+      {
+        "id": "a66e6b3a-35fd-4f9a-8902-baa2fa4323bc",
+        "title": "交付发布说明",
+        "taskId": null,
+        "version": 2,
+        "parentId": null,
+        "dependsOn": [
+          "5e74483c-00f3-457d-b0a6-622c2580740d"
+        ]
+      }
+    ]
+  },
+  "audit": {
+    "run": {
+      "id": "d09b0832-e5e9-4de7-8c76-ed6fa4cf2890",
+      "version": 1,
+      "goalId": "44740cba-9237-453c-be08-5553eb5e3ac6",
+      "projectId": "faf68b86-c8c9-4f9f-b933-dee6d2c961bd",
+      "goalDigest": "a757f2991b1eb1c553fa8408cf3fba49c76a8abfc7ff9cae3c82922ebeb98896",
+      "taskId": "e52afa4c-f9f6-4e66-900a-fb3f670222dc",
+      "scope": {
+        "maxNewEdges": 2,
+        "maxNewNodes": 3,
+        "baseRevision": 1,
+        "maxProposals": 1,
+        "maxApplications": 1,
+        "allowedExistingNodes": []
+      },
+      "mode": "claude",
+      "usedCommands": 2,
+      "usedProposals": 1,
+      "usedApplications": 1,
+      "createdAt": "2026-10-06T06:44:09.694Z",
+      "revokedAt": null,
+      "revocationReason": null
+    },
+    "calls": [
+      {
+        "sequence": 1,
+        "runnerId": "f109c20c-b370-409b-ae43-3bbd5b11314d",
+        "attemptId": "e7ba1d9c-766c-4488-9728-99d053a0deb3",
+        "ownerVersion": 1,
+        "key": "o08-propose-once",
+        "digest": "31812aa4aaa5dfc35cb5b61a760eafa9b58bccf5ead20c8d9b7cee8e6a986c5d",
+        "kind": "propose",
+        "proposalId": "b00abb84-2b13-4cc9-bc77-6e4db2c81859",
+        "proposalDigest": "a2f492aeae0a089e1085b9d520097fcefdf4ebc379bb1e6e2130a11aaa22787d",
+        "appliedRevision": null,
+        "createdAt": "2026-10-06T06:44:10.254Z"
+      },
+      {
+        "sequence": 2,
+        "runnerId": "f109c20c-b370-409b-ae43-3bbd5b11314d",
+        "attemptId": "e7ba1d9c-766c-4488-9728-99d053a0deb3",
+        "ownerVersion": 1,
+        "key": "o08-apply-once",
+        "digest": "96dd4a8f615e4fcaae6c6e496c6cb48cf2457f466bac53dcd2e851864cd064d2",
+        "kind": "apply",
+        "proposalId": "b00abb84-2b13-4cc9-bc77-6e4db2c81859",
+        "proposalDigest": "a2f492aeae0a089e1085b9d520097fcefdf4ebc379bb1e6e2130a11aaa22787d",
+        "appliedRevision": 6,
+        "createdAt": "2026-10-06T06:44:10.293Z"
+      }
+    ],
+    "nextCursor": null
+  },
+  "final": {
+    "id": "64a065c688c0d2f584470ef6b9159f8bc55fb2b61e55e751b1be741d410b4a5a",
+    "taskId": "e52afa4c-f9f6-4e66-900a-fb3f670222dc",
+    "attemptId": "e7ba1d9c-766c-4488-9728-99d053a0deb3",
+    "eventId": "4d6575c3-df40-47c3-8595-9dd4c8b5b07a",
+    "sequence": 5,
+    "nativeSessionId": "o08-synthetic-session",
+    "source": "claude.sdk.result",
+    "sourceMessageId": "e21343e0-772f-478c-a594-ecc29df80212",
+    "contentDigest": "fa87d931acdaecbb3971a169cf7365e6201d572641498b37f1f3414077a8d656",
+    "detail": {
+      "id": "9dfb2d6e-d981-4c58-90b5-6bb25b83cd94",
+      "title": "Assistant reply"
+    },
+    "createdAt": "2026-10-06T06:44:10.375Z",
+    "content": "已记录起草→核对→交付三个步骤的计划；尚未执行子任务。",
+    "settings": {
+      "effective": {
+        "model": null,
+        "tools": null,
+        "thinking": "unknown",
+        "permissionMode": null
+      },
+      "requested": {
+        "model": "synthetic-no-query",
+        "thinking": "disabled",
+        "permissionMode": "dontAsk"
+      }
+    }
+  },
+  "totalTasks": 1,
+  "finishedAt": "2026-10-06T06:44:10.534Z"
+}

@@ -1,0 +1,12 @@
+✔ stops its detached group after the leader exits while a grandchild ignores TERM (3180.643833ms)
+ℹ {"node":"v24.20.0","leaderPid":61119,"leaderExit":0,"grandchildPid":61121,"groupPresentAfterStop":false,"elapsedMs":3062.2093750000004,"report":{"workerForcedKill":true,"workerProcessGroup":{"pgid":61119,"state":"stopped"}}}
+✔ an already absent group is confirmed without forced killing (45.15625ms)
+✔ an unobservable group remains unknown and rejects instead of authorizing temporary cleanup (0.866542ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3618.06

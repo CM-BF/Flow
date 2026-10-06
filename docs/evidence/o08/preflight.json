@@ -1,0 +1,334 @@
+{
+  "mode": "preflight",
+  "nativeQueryCalls": 0,
+  "providerAuthenticationCalls": 0,
+  "dependencies": {
+    "node": "v24.20.0",
+    "claudeSdk": "0.3.290",
+    "mcpSdk": "1.32.1"
+  },
+  "source": {
+    "base": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+    "files": [
+      {
+        "path": "experiments/native-graph-acceptance/config.mjs",
+        "bytes": 3531,
+        "sha256": "1df0bbde96a499290cd7ec6dcf2f05137076ac8c2341b824031314c0a4e76303"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/guard.mjs",
+        "bytes": 4803,
+        "sha256": "70cd45853f50de97b243327e47384ff15c8bf00b536b6a6a2f7ba3159bec63e9"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/peer.mjs",
+        "bytes": 2877,
+        "sha256": "839ae672fa23258d255a9d59f25ce015050330173e0ee8c2b0d2e0a55ef5aea3"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/worker.mjs",
+        "bytes": 3427,
+        "sha256": "73396f7d48c9aa0572652feaef8272551af6dc20b099a4ee1ffb831cf8458ea6"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/driver.mjs",
+        "bytes": 12904,
+        "sha256": "1b63f4adc9117a30d41bdf6f9d62479dbfc9df69971cbaa9f4bb1e496133c1bd"
+      },
+      {
+        "path": "apps/runner/src/claude.ts",
+        "bytes": 16372,
+        "sha256": "aa1dab64465c5cd7a4d422985cd5a24b10bbc4df13d7bb07fc64b1f19a769f12"
+      },
+      {
+        "path": "apps/runner/src/runtime.ts",
+        "bytes": 6848,
+        "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+      },
+      {
+        "path": "apps/runner/src/execution-profiles.ts",
+        "bytes": 4052,
+        "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d"
+      },
+      {
+        "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+        "bytes": 3283,
+        "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c"
+      },
+      {
+        "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+        "bytes": 2307,
+        "sha256": "df1b2c75c4042bee4ea01179f51af452465ec8b01707a3cdf41946a1b6338298"
+      },
+      {
+        "path": "apps/runner/src/goal-graph-tools/bind.ts",
+        "bytes": 1572,
+        "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+      }
+    ],
+    "digest": "30af3ab24f79ef3c1ed104ca905160308422289939cb0d88bd864d6927c17d5b",
+    "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance/"
+  },
+  "scope": {
+    "baseRevision": 1,
+    "allowedExistingNodes": [],
+    "maxProposals": 1,
+    "maxApplications": 1,
+    "maxNewNodes": 3,
+    "maxNewEdges": 2
+  },
+  "candidateLimitsNotAuthorized": {
+    "queries": 1,
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 90000
+  },
+  "sdkServer": {
+    "key": "flow-graph",
+    "type": "sdk"
+  },
+  "tools": [
+    {
+      "name": "graph_read",
+      "description": "Read the fixed base graph in bounded pages, or fetch this grant's saved proposal text by id. Nodes are id/title/version; currentRevision and stale describe freshness without replacing the base. No history is appended. Whole-base graph is readable; existing-node write references remain scoped.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "view": {
+                    "type": "string",
+                    "const": "graph"
+                  },
+                  "after": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2000
+                  },
+                  "limit": {
+                    "default": 20,
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 50
+                  }
+                },
+                "required": [
+                  "view"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "view": {
+                    "type": "string",
+                    "const": "proposal"
+                  },
+                  "proposalId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                },
+                "required": [
+                  "view",
+                  "proposalId"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    },
+    {
+      "name": "graph_command",
+      "description": "Propose or apply a bounded graph within the fixed grant. Retain the same idempotencyKey for the same intent after an unknown outcome. Apply names the returned proposal id, digest and baseRevision. No child execution or engineering writes are supported. The center validates quota, current authority and versions.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "const": "propose"
+                  },
+                  "proposal": {
+                    "type": "object",
+                    "properties": {
+                      "expectedProjectRevision": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 2147483647
+                      },
+                      "reason": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 4000
+                      },
+                      "additions": {
+                        "minItems": 1,
+                        "maxItems": 16,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "key": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,47}$"
+                            },
+                            "title": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 180
+                            },
+                            "dependencies": {
+                              "maxItems": 128,
+                              "type": "array",
+                              "items": {
+                                "oneOf": [
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "kind": {
+                                        "type": "string",
+                                        "const": "proposed"
+                                      },
+                                      "key": {
+                                        "type": "string",
+                                        "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,47}$"
+                                      }
+                                    },
+                                    "required": [
+                                      "kind",
+                                      "key"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "kind": {
+                                        "type": "string",
+                                        "const": "existing"
+                                      },
+                                      "nodeId": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 128
+                                      },
+                                      "expectedVersion": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 2147483647
+                                      }
+                                    },
+                                    "required": [
+                                      "kind",
+                                      "nodeId",
+                                      "expectedVersion"
+                                    ],
+                                    "additionalProperties": false
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "required": [
+                            "key",
+                            "title",
+                            "dependencies"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "required": [
+                      "expectedProjectRevision",
+                      "reason",
+                      "additions"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "kind",
+                  "proposal"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "const": "apply"
+                  },
+                  "proposalId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  "expectedProjectRevision": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2147483647
+                  },
+                  "proposalDigest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "proposalId",
+                  "expectedProjectRevision",
+                  "proposalDigest"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "idempotencyKey": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "command",
+          "idempotencyKey"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      },
+      "execution": {
+        "taskSupport": "forbidden"
+      }
+    }
+  ],
+  "boundary": "SDK in-process construction and MCP tools/list only; no query/startup/authentication, HTTP or database."
+}
