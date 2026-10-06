@@ -238,5 +238,12 @@
   "activation": "NOT_ENABLED",
   "remote": "NOT_RUN",
   "runtime": "personal af51 accepting v18 / web d629 v3 unchanged",
-  "verification": "fixed blobs/bytes/hashes; registry/parser/link and diff only; no new product tests, PG, provider or installation"
+  "verification": "fixed blobs/bytes/hashes; registry/parser/link and diff only; no new product tests, PG, provider or installation",
+  "laterStatusCorrection": {
+    "ref": "b628e206",
+    "path": "plans/ops-001-status-review/status.md",
+    "bytes": 62958,
+    "sha256": "bdcf215b3b016a1757e98084e6bbf37783c86c00ea3e1218d5d64f03776ea8e5",
+    "reason": "Initial local status check found NONE with prose invalid; final concrete activation decision uses REQUIRED. No parser change."
+  }
 }
