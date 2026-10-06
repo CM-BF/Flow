@@ -53,6 +53,9 @@ const assignments = [
   ['O04', '原生目标工具运行', '工作线', 'native-goal-execution', 'o04-native-goal-bridge'],
   ['B02', '对话读取成本测量', '技术验证', 'conversation-read-cost', 'b02-conversation-read-cost'],
   ['B03', '长对话预览读取优化', '工作线', 'bounded-conversation-preview', 'b03-bounded-preview'],
+  ['D07', '下一交付与完成片段', '工程协作', 'dashboard-delivery-stage', 'd07-delivery-stage'],
+  ['WPF-PROFILEI01', '聊天执行选项接入', '工作线', 'web-profile-integration', 'wpf-profile-integration'],
+  ['WPF-DPERF01', '看板刷新重复核验优化', '工作线', 'dashboard-proof-performance', 'wpf-dashboard-proof-performance'],
   ['CTX02', '原生上下文插件兼容', '技术验证', 'context-pi-hook-probe', 'ctx02-pi-hook'],
   ['WPF-X03I01', '插件管理产品接线', '工作线', 'web-plugin-management-integration', 'wpf-x03-plugin-integration'],
   ['D05', '代码架构视图', '工程协作', 'dashboard-architecture', 'd05-architecture-view'],
@@ -73,7 +76,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };

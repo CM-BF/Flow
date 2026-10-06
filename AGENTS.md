@@ -76,3 +76,5 @@
 ## 面向用户的进度摘要
 
 status 的“当前产出/下一可用交付/当前阻塞/需用户决定”描述用户已获得或即将获得的能力、实际影响和需要采取的动作。SHA、命令、测试数、内部schema/claim及路径留在已有技术字段与证据，不将技术交接原文贴成首屏摘要。已交付片段与尚未领取的后继分别记录；无当前待交付写“本片段已交付”，不为让首页消失而勾选未完成TODO。真正待审/待集成仍如实可见，由唯一owner维护，页面不得猜测或调用模型代写。
+
+status可选枚举 `本片段交付阶段`：planning（未来计划）、implementation（实施）、review（待审/修复）、integration（已审待集成）、delivered（本片段已交付）。它与完整plan的开放TODO独立，禁止为了首页筛选勾选后继。显式非法值为未知；旧记录只按标准branchState token兼容，completed仅作者完成的legacy历史，不推断review/main事实。当前下一交付只展示implementation/review/integration，真实当前阻塞优先。新增任务及活跃owner在安全更新点采用字段，不要求全历史机械补写。
