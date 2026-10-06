@@ -138,10 +138,10 @@ export function validateWindowSamples(result: CaseResult, observations: Observat
       && gate.owner_version === row.owner_version && gate.runner_id === row.runner_id && gate.native_session_id === row.native_session_id)), 'window_sample_identity_drift');
   }
   assert(eligible.length >= 2, 'insufficient_window_samples');
-  const span = Math.max(...eligible.map(row => Number(row.queryEndedMs))) - Math.min(...eligible.map(row => Number(row.queryStartedMs)));
+  const span = Math.max(...eligible.map(row => Number(row.queryStartedMs))) - Math.min(...eligible.map(row => Number(row.queryEndedMs)));
   assert(span >= 4000, 'insufficient_window_sample_span');
   result.sampledOwnership = { clock: 'parent monotonic query start/end', measureSentMs: result.measureSentMs, startReceivedMs: lower,
-    conservativeEndMs: upper, validatedSamples: eligible.length, sampledSpanMs: span,
+    conservativeEndMs: upper, validatedSamples: eligible.length, conservativeSampleSeparationMs: span,
     excludedBoundarySamples: samples.filter(row => !eligible.includes(row)).map(row => ({ queryStartedMs: row.queryStartedMs, queryEndedMs: row.queryEndedMs })),
     meaning: 'Each completed query lies inside IPC-bounded window; live/fenced at sampled database instants, not continuous lock/lease proof.' };
 }

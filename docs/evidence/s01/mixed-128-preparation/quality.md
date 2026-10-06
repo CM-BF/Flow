@@ -8,4 +8,6 @@
 
 Mika预读提出CLI送达与窗口内DB样本两处已修：stdout timer/error/callback检查180秒与32KiB reserve；DB按IPC界定的parent时间内query始末筛选，跨界排除、至少2样本跨度4s且所有有效样本一致。新增纯反例覆盖缺样、中途lease=false/owner漂移、只有barrier/窗外ACK、短ACK跨度、ACK ordinal/fence/accepted/session/全库129th attempt，以及observation UTF8预付/溢出。
 
-最终40不同纯checks（旧24+新16）/strict0；首次4red和初次strict2均保留，不合计重复运行。工程验证不启动center/runner、PG/HTTP容量或provider；少量Git只读进程用于固定历史输入，不能写成全OS零子进程。尚无实际128成功或资源清理声明，待独立fixed-target review和唯一窗口。
+初稿40不同纯checks（旧24+新16）/strict0；首次4red和初次strict2均保留，不合计重复运行。工程验证不启动center/runner、PG/HTTP容量或provider；少量Git只读进程用于固定历史输入，不能写成全OS零子进程。尚无实际128成功或资源清理声明，待独立fixed-target review和唯一窗口。
+
+2026-10-06 12:25:22 UTC固定前复核：Mika指出DB query envelope不等于样本间隔；改为max(queryStarted)-min(queryEnded)≥4s，新增2个长且相邻query反例必须失败。最终41不同checks=旧24+新17、局部strict0；2f初稿source/40raw保留，最新review-candidate/review-types记录固定当前source，不重跑任何实际负载。

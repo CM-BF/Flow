@@ -74,7 +74,7 @@ test('only DB queries wholly inside IPC-bounded parent window contribute to samp
   const {result,records}=sampled();
   records.push({kind:'attempt-snapshot',caseId:result.id,pid:2,receivedMs:96095,queryStartedMs:96080,queryEndedMs:96095,rows:[]});
   validateWindowSamples(result,records,LARGE_CONTRACT);
-  expect(result.sampledOwnership).toMatchObject({conservativeEndMs:96090,validatedSamples:2,sampledSpanMs:4320});
+  expect(result.sampledOwnership).toMatchObject({conservativeEndMs:96090,validatedSamples:2,conservativeSampleSeparationMs:4280});
   expect(result.sampledOwnership?.excludedBoundarySamples).toHaveLength(1);
 });
 test('zero samples and an intermediate expired lease or changed owner cannot produce a successful window',()=>{
@@ -82,4 +82,10 @@ test('zero samples and an intermediate expired lease or changed owner cannot pro
   const {result,records}=sampled();const row=(records.find(x=>x.kind==='attempt-snapshot')!.rows as Record<string,unknown>[])[0]!;
   row.live=false;expect(()=>validateWindowSamples(result,records,LARGE_CONTRACT)).toThrow('window_sample_not_live_and_fenced');
   row.live=true;row.owner_version=2;expect(()=>validateWindowSamples(result,records,LARGE_CONTRACT)).toThrow('window_sample_not_live_and_fenced');
+});
+
+test('two adjacent slow queries cannot turn SQL execution time into four seconds of sampled separation',()=>{
+  const {result,records}=sample();
+  for(const [start,end] of [[90110,93000],[93001,96000]]) records.push({kind:'attempt-snapshot',caseId:result.id,pid:2,receivedMs:end!,queryStartedMs:start,queryEndedMs:end,rows:structuredClone(result.gate)});
+  expect(()=>validateWindowSamples(result,records,LARGE_CONTRACT)).toThrow('insufficient_window_sample_span');
 });

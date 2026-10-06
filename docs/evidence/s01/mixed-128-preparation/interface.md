@@ -23,3 +23,5 @@
 **失败与清理。** CREATE前creationRequested，专用随机DB/动态loopback/自有目录；最多2自有child且已登记才发TERM/KILL，必须等close。子进程/观察者连接无法确认关闭则不DROP；精确库名查询0连接后普通DROP并核absent，无FORCE。所有unknown admission/outbox/资源保留并使FAIL，不删journal取成功。8 journals/会话状态与全事件证据在drop前提取；drop/admin close/归档均计180秒。禁止触碰61227/61228、旧资源、个人服务、provider/SDK/auth。
 
 本片可验证真实fixture会话与确定性执行/持久化；原REQ-18真实model/tool组合、浏览器断开、完整故障恢复与部署SLO仍单独开放，不能由本片勾完FLOW-001。
+
+设计批准（Mika，2026-10-06 12:11:31 UTC）后实现补充：DB只证明采样时刻。parent measure发送t0/收到start的t1形成[t1,min(t0+6000,首adapter-end收到)]保守内部区间；跨界query单列排除，所有完全内部样本必须匹配原128身份且live/fenced，至少2样本的max(queryStarted)-min(queryEnded)≥4000ms，不能以SQL运行时长充样本间距。stdout outer clock/write callback/error/timer补全180秒送达门禁；128 task/attempt独立全库计数，未知claim不补投。
