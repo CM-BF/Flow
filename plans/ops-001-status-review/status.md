@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:23:11 UTC / main32c371d389a913f8dd71c3bd8b98dd0697411256 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -38,7 +38,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 当前工程配额为本队4/Web4/Mika2，共10。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
+- 当前用户授权配额为本队4/Web4/Mika4，总上限12；不是实际运行数。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -72,3 +72,7 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
 
 2026-10-06 08:37:23 UTC：OPS-001-08已记录用户最新交付要求；已核独立分支commit/push与受审小片即时集成、Lead/worker职责和全局slot协调约束。规则/文档核验，无产品测试或模型调用。
+
+2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
+
+| OPS-001-09 | completed | Execution Lead | 用户最新职责与dashboard默认通道已落根AGENTS和OPS；一次同步外部两Lead，后续不逐条回传普通进度。仅文档检查。 |

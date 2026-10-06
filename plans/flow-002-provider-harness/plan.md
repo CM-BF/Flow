@@ -6,15 +6,15 @@
 | 状态 | `in-progress` |
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-001：Flow 产品与技术架构](../flow-001-architecture/plan.md) |
-| 当前阶段 | 三个上游的源码审查与首轮尝试已记录；三条路径冒烟通过，Claude wrapper 停在身份解析，尚未完成选型 |
+| 当前阶段 | 原生Claude已进入产品；下一小批收拢可替换宿主接口，并以第二个真实harness消费者验证。历史wrapper公平对照仍开放。 |
 
 ## 1. 目标、范围与已确认约束
 
 选择适合 Flow 的 harness 接入方式，找出可以直接复用的 provider 登录和执行模块，并验证已有本机身份是否能使用。用户已要求借鉴 Hermes、T3 Code、Paseo，也已选择本机已有 Claude / Pi 登录状态作为首轮认证环境。
 
-本计划包含源码审查、最小运行对比、能力与故障矩阵、可复用模块清单。测试脚本属于选型实验，不是应用代码；Flow 中心、数据库、Web、CLI 和正式插件尚未实现。本轮不替用户重新登录，不把凭据复制到仓库。
+本计划包含源码审查、最小运行对比、能力与故障矩阵、可复用模块清单。以下首轮记录是2026-10-05历史选型实验；当时中心、数据库、Web、CLI和正式插件尚未实现，不能用作当前状态。本轮不替用户重新登录，不把凭据复制到仓库。
 
-已确认的是需要比较和复用；具体 harness、认证插件接口、首个生产 adapter 仍未选定。建议采用 Flow 自有的薄契约，各 adapter 可以使用最适合其能力的 SDK/RPC；统一采用 HarnessAgent 是待验证方案。
+当前已选原生Claude作为首个产品adapter；完整认证插件接口和第二个可替换harness仍未交付。建议采用 Flow 自有的薄契约，各 adapter 可以使用最适合其能力的 SDK/RPC；统一采用 HarnessAgent 是待验证方案。
 
 ## 2. 先分清五个层次
 
@@ -172,3 +172,15 @@ Paseo 的模型认证主要依赖用户已有 CLI 登录；其 server/auth 是 d
 协作记录：[status.md](status.md) · [review.md](review.md)。状态按实际提交和证据更新，review模板不是通过结论。
 
 2026-10-06 07:18 UTC维护：本片当前摘要与实际main对齐，历史实验/TODO证据保留；详见唯一status。无新产品或模型验证。
+
+## 2026-10-06 用户优先：可替换runner宿主
+
+- [ ] **FLOW-002-T09** 下一小批建立真正可替换的宿主Interface，并由第二个实际harness消费；单纯放宽名字/版本枚举或新增fake consumer不算完成。对应FLOW-001原模块化与REQ-06/07/12/14，不另建替代总计划。
+
+Execution Lead汇总两端只读审查后拆最小独立片：保留既有claim、session、journal、lease、outbox、fence、verifier和默认并发保护；把adapter本地descriptor与有限可选port放在明确边界，中心继续校验已识别协议/来源和不可变profile。不能将Claude选项、字符串harness判断或会话正文来源标签扩散到宿主，也不以宽string/schema绕过能力授权。A2A保留独立持久协议driver，不伪装为本地SDK生命周期。
+
+第二consumer必须使用固定版本的真实Pi或AI SDK实现来证明接口适配；先零provider验证订阅/背压、settled、abort/close、opaque resume locality、usage累计与不可用能力。Pi同步emit没有背压，agent_end可能早于retry/compaction完成，abort需确认idle，dispose不等于停止；wrapper统计累计与本地resume限制须真实表达。具体产品slice/claim在两端审查汇总后冻结，不提前宣称Pi已接入或发起新模型调用。架构影响包括运行器本地宿主/adapter/center协议校验边界；实施交付须登记固定图更新目标并保留旧图基线。
+
+验收保留主线CHAT09配置/pin/port保护与S01默认1/unknown admission；新能力选择只依已核descriptor/port，拒绝未识别配置。第二consumer的测试和真实native预算分开，原O10/QUEUE/R02等额度已封存。
+
+历史动机：[AQ-01质量台账](../../docs/quality/architecture-health-2026-10-06.md)记录M1固定6434fba的P2，不冒充本轮未修bug。下一独立实现子计划R05由assignment_review在native-harness-host建立唯一source，首A保行为配置/descriptor提取；若改变terminal/unknown语义，拆独立可审子步和lease恢复直接消费者。B中心版本化来源/前进迁移；C固定真实Pi SDK零远程query再PG普通正文，不继承未证stream/resume/steer/goal权限。
