@@ -1,6 +1,6 @@
 # I01 独立审查记录
 
-**状态：NOT_STARTED — 模板待review，不构成approval。**
+**状态：SCOPED_APPROVE，限固定提交的4个确定性集成场景；完整M1未审查完成。**
 
 ## Target 与 scope
 
@@ -43,3 +43,8 @@
 ## 作者回应与复审
 
 Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
+
+
+## 已完成独立复核
+
+Reviewer assignment_review / gpt-6-astra，只读，target `5bdb7fa293ebd0d13515fe367f004687927f1897`，worktree起止clean。独立运行4/4真实PostgreSQL/TCP/runner与CLI进程场景通过，diffcheck通过，未发现blocking代码finding。两项文档P2：原I01-02“重连”缺实际中心断线重连场景；status旧HEAD/dirty/待修复叙述需更新。Owner已修正状态并新增真实网络断线场景（5/5通过），新增部分尚待补充复核。原review不覆盖Web/模型/DB硬故障/跨机/容量。

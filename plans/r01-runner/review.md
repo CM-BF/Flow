@@ -6,8 +6,8 @@
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
 - Review target commit：`338263736e2cf64efd32037cfc92bcb49069d9ab`；其他提交不自动继承此结论。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
+- Base commit：`3995ec16ce2cbcb4d5f5e99333b86575233fd89c`；head见target；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner`；branch `codex/m1-runner`；审查起止clean。
+- Scope：apps/runner runtime/outbox/lease/fixture/verifier + public HTTP tests，核对plan TODO、公共契约和证据；排除真实模型、浏览器、跨机/掉电/容量。
 - Reviewer：assignment_review / gpt-6-astra / Codex，时间 2026-10-06 01:15 UTC；Execution Lead 根据只读报告记录。
 
 ## 可直接复制的审查任务说明
@@ -42,4 +42,4 @@
 
 ## 作者回应与复审
 
-Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
+原owner已接受并修复 findings，具体修复target与公开回归检查见上；assignment_review 已针对新head复审通过。后续实现提交不自动继承approval。

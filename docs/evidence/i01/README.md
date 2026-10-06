@@ -5,3 +5,5 @@
 技能方法复用已固定 Node/TypeScript/PostgreSQL 发现记录，实际应用 tdd 的公开Interface测试与 codebase-design 的模块seam；clean-code工作段复核检查子进程清理、动态端口、隔离数据库/临时目录、状态断言与证据界限。C01关键实现独立只读review完成，R01/L01 blocking/已接受问题由原owner修复并通过另一个agent复审。最终全检54/54及typecheck通过。
 
 这是确定性fixture的真实系统集成，不是模型证据。Web、双主题浏览器旅程、R02真实harness与最终main集成尚未完成。测试数据库清理只针对硬编码独立 `flow_i01`，C01原测试只操作 `flow_c01`；不读取其他用户数据库。
+
+2026-10-06 01:18 UTC：独立review对5bdb7fa复跑4/4通过。为补足真实重连证据，新增透明loopback HTTP代理主动中断已连接CLI SSE，确认重新连接cursor与同一任务/attempt终态；5项I01测试全部通过。原全检54/54与新增后5/5为两次检查，不能把旧54结果冒称新完整套件已跑。

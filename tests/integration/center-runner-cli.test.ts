@@ -1,5 +1,7 @@
 import { spawn, type ChildProcess } from 'node:child_process';
 import { once } from 'node:events';
+import { createServer as createProxy, request as proxyRequest } from 'node:http';
+import type { AddressInfo } from 'node:net';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -140,4 +142,47 @@ it('marks an interrupted runner uncertain and never reassigns its task to anothe
   expect(state.attempt?.id).toBe(attemptId);
   expect(state.attempt?.runnerId).toBe(original.runnerId);
   expect((await cli(['watch', id, '--json'])).code).toBe(13);
+}, 15000);
+
+
+it('reconnects an actual CLI stream after a transport disconnect and observes the same durable result', async () => {
+  await startRunner('reconnect');
+  const id = await submit('decision');
+  await expect.poll(async () => (await client.show(id)).status).toBe('waiting');
+  const waiting = await client.show(id);
+  let disconnected!: () => void;
+  const firstConnection = new Promise<void>(resolve => { disconnected = resolve; });
+  const streamPaths: string[] = [];
+  const proxy = createProxy((request, response) => {
+    const stream = request.url!.includes('/stream');
+    if (stream) streamPaths.push(request.url!);
+    const interrupt = stream && streamPaths.length === 1;
+    const upstream = proxyRequest(`${baseUrl}${request.url}`, { headers: request.headers }, incoming => {
+      response.writeHead(incoming.statusCode!, incoming.headers);
+      incoming.on('data', chunk => {
+        response.write(chunk);
+        if (interrupt) { response.end(); incoming.destroy(); disconnected(); }
+      });
+      incoming.on('end', () => response.end());
+      incoming.on('error', () => response.destroy());
+    });
+    response.on('close', () => upstream.destroy());
+    upstream.on('error', () => response.destroy());
+    upstream.end();
+  }).listen(0, '127.0.0.1');
+  await once(proxy, 'listening');
+  try {
+    const observer = cli(['watch', id, '--url', `http://127.0.0.1:${(proxy.address() as AddressInfo).port}`, '--json', '--timeout', '6000']);
+    await firstConnection;
+    await client.decide(id, { decisionId: waiting.pendingDecision!.id, answer: 'approve' }, 'reconnect-approval');
+    const result = await observer;
+    expect(result.code).toBe(0);
+    expect(streamPaths.length).toBeGreaterThanOrEqual(2);
+    expect(streamPaths[1]).toBe(`/api/tasks/${id}/stream?after=${waiting.watermark}`);
+    const last = JSON.parse(result.stdout.trim().split('\n').at(-1)!);
+    expect(last.task.id).toBe(id);
+    expect(last.task.status).toBe('succeeded');
+    expect(last.task.verificationStatus).toBe('passed');
+    expect((await client.show(id)).attempt?.id).toBe(waiting.attempt?.id);
+  } finally { await new Promise<void>(resolve => proxy.close(() => resolve())); }
 }, 15000);

@@ -41,5 +41,13 @@
     "Cross-machine transport/recovery",
     "100+ agent capacity"
   ],
-  "mainIntegrated": false
+  "mainIntegrated": false,
+  "followup": {
+    "observedAt": "2026-10-06 01:18 UTC",
+    "command": "pnpm exec vitest run tests/integration/center-runner-cli.test.ts",
+    "passed": 5,
+    "failed": 0,
+    "newScenario": "An HTTP proxy interrupts the actual CLI SSE; CLI reconnects at delivered cursor and observes same verified task",
+    "independentReview": "Original 4 scenarios approved at 5bdb7fa; fifth pending supplemental review"
+  }
 }

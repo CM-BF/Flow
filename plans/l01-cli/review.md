@@ -6,8 +6,8 @@
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
 - Review target commit：`1baf123e43a9be762342eb51bfe254fa7a6e60f9`；其他提交不自动继承此结论。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
+- Base commit：`eacee76fa7f1b6cc46b06b57ae68458637be4a26`；head见target；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-cli`；branch `codex/m1-cli`；审查起止clean。
+- Scope：apps/cli commands/watch/process entry + client.show optional AbortSignal，核对plan TODO、公共契约和证据；排除真实模型、浏览器、跨机/掉电/容量。
 - Reviewer：assignment_review / gpt-6-astra / Codex，时间 2026-10-06 01:15 UTC；Execution Lead 根据只读报告记录。
 
 ## 可直接复制的审查任务说明
@@ -34,7 +34,7 @@
 
 | ID | Severity | Blocking | 文件/行与复现 | 影响/建议 | Owner回应 | 修复commit | 复审结果 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| L01-FIX | P1/P2 | 已解除 | 原普通命令吞 SIGINT/SIGTERM 的 P2 已修复，独立复审确认无新增finding。 | 原owner修复并加公开行为回归 | 接受并修复 | `1baf123e43a9be762342eb51bfe254fa7a6e60f9` | 通过 |
+| L01-FIX | P2 | 已解除 | 原普通命令吞 SIGINT/SIGTERM 的 P2 已修复，独立复审确认无新增finding。 | 原owner修复并加公开行为回归 | 接受并修复 | `1baf123e43a9be762342eb51bfe254fa7a6e60f9` | 通过 |
 
 ## 结论与限制
 
@@ -42,4 +42,4 @@
 
 ## 作者回应与复审
 
-Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
+原owner已接受并修复 findings，具体修复target与公开回归检查见上；assignment_review 已针对新head复审通过。后续实现提交不自动继承approval。
