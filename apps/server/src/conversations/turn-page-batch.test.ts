@@ -69,7 +69,7 @@ function fixture(count = 50) {
       return { rows: ids.flatMap((id, index) => { const row = messages.get(id); return row?.attempt_id === attempts[index] ? [{ ...row, binding_index: index + 1 }] : []; }).reverse() };
     }
     if (sql.includes('FROM flow.details WHERE id=')) {
-      const row = messages.get(String(values[1])); return { rows: row?.detail_id === values[0] && row.attempt_id === values[2] ? [row] : [] };
+      const row = messages.get(String(values[1])); return { rows: row && row.detail_id === values[0] && row.attempt_id === values[2] ? [row] : [] };
     }
     if (sql.includes('FROM flow.artifacts a')) {
       const ids = Array.isArray(values[0]) ? values[0] as string[] : [String(values[0])];
