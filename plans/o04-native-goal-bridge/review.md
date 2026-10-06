@@ -11,3 +11,5 @@ Reviewer：Goal Owner /root，独立只读。正式结论记录于 2026-10-06T05
 批准范围：显式profile/native grant/ordinary拒绝/ownership准入、host凭据隔离、真实SDK MCP key/provenance及query options、typed final/outbox、旧012升级。**query函数被注入**；实际MCP/HTTP/PG与runner接线已验，原生SDK模型调用、NL规划与真实child执行仍未验证。child execute仍fixture，本轨迹仅queued；不宣称任意工程工具、预算引擎、token/中心性能或自动恢复未知写。
 
 [报告/原始输出](../../docs/evidence/o04/README.md)、[manifest](../../docs/evidence/o04/manifest.json)、[迁移原始JSON](../../docs/evidence/o04/migration-upgrade.json)。本片段已批准待Lead集成，main尚无本owner接收回执；claim19e81eda-5795-45a7-8f1f-a0d9c0c94326 v1保留，不在此树扩O05。
+
+2026-10-06T05:08:23Z 主线接收：da8d73a984118e0a5c406bd04dbfbc5d5c9c148f，已核a169祖先/声明范围零diff；Lead组合tsc通过，批准限制不变。停止写入，release回执交Lead。
