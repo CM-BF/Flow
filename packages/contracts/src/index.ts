@@ -33,3 +33,4 @@ export * from './context-transparency.js';
 export * from './context-observation-event.js';
 export * from './context-observation-history.js';
 export * from './engineering-native.js';
+export * from './browser-session.js';

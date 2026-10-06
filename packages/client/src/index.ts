@@ -1,3 +1,4 @@
+import { BROWSER_SESSION_CSRF_HEADER, browserSessionReadySchema, browserSessionReadSchema, type BrowserSessionReady, type BrowserSessionRead } from '@flow/contracts';
 import { nativeEngineeringProfilePageSchema, nativeEngineeringProfilePublishedSchema, type NativeEngineeringProfileConfiguration, type NativeEngineeringProfilePage, type NativeEngineeringProfilePublished } from '@flow/contracts';
 import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import { EXECUTION_PROFILE_HEADER, NATIVE_EXECUTION_PROFILE_VERSION, nativeExecutionProfileCatalogPageSchema, type NativeExecutionProfileCatalogPage } from '@flow/contracts';
@@ -36,22 +37,46 @@ export class FlowApiError extends Error {
   }
 }
 
-export interface ClientOptions {
+interface ClientConnectionOptions {
   baseUrl: string;
-  token: string;
   /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
   assistantStreamProtocol?: 'patch-v1';
 }
 
+/** Cookie authentication is explicit; the browser owns the HttpOnly session cookie. */
+export type ClientOptions = ClientConnectionOptions & (
+  | { token: string; browserSession?: never }
+  | { token?: never; browserSession: { csrfToken: () => string | undefined } }
+);
+
 export class FlowClient {
   private readonly baseUrl: string;
-  private readonly token: string;
+  private readonly token: string | undefined;
+  private readonly csrfToken: (() => string | undefined) | undefined;
   private readonly assistantStreamProtocol: 'patch-v1' | undefined;
 
   constructor(options: ClientOptions) {
+    if ((options.token !== undefined) === (options.browserSession !== undefined)) throw new Error('Select exactly one authentication mode.');
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+    this.csrfToken = options.browserSession?.csrfToken;
     this.assistantStreamProtocol = options.assistantStreamProtocol;
+  }
+
+  async browserSession(signal?: AbortSignal): Promise<BrowserSessionRead> {
+    return browserSessionReadSchema.parse(await this.request<unknown>('/api/browser-session', { signal }));
+  }
+  /** One explicit login attempt. A lost acknowledgement is recovered by reading the current session. */
+  async connectBrowserSession(ownerToken: string, signal?: AbortSignal): Promise<BrowserSessionReady> {
+    if (!this.csrfToken) throw new Error('Connecting a browser session requires cookie authentication mode.');
+    return browserSessionReadySchema.parse(await this.request<unknown>('/api/browser-session/connect', { method: 'POST', body: '{}', signal }, ownerToken));
+  }
+  /** Revokes this browser session only; it does not cancel tasks. */
+  async logoutBrowserSession(signal?: AbortSignal): Promise<Extract<BrowserSessionRead, { state: 'unauthenticated' }>> {
+    if (!this.csrfToken) throw new Error('Logging out a browser session requires cookie authentication mode.');
+    const receipt = browserSessionReadSchema.parse(await this.request<unknown>('/api/browser-session/logout', { method: 'POST', body: '{}', signal }));
+    if (receipt.state !== 'unauthenticated') throw new Error('Unconfirmed browser session logout.');
+    return receipt;
   }
 
   async contextHistory(taskId: string, signal?: AbortSignal): Promise<ContextHistoryResponse> {
@@ -523,7 +548,7 @@ export class FlowClient {
   protocolState(taskId: string, signal?: AbortSignal): Promise<ProtocolState | null> { return this.request(`/api/tasks/${encodeURIComponent(taskId)}/protocol`, { signal }); }
 
   async *watch(id: string, after = 0, signal?: AbortSignal): AsyncGenerator<EventPage> {
-    const response = await fetch(`${this.baseUrl}/api/tasks/${encodeURIComponent(id)}/stream?after=${after}`, { headers: { Authorization: `Bearer ${this.token}`, Accept: 'text/event-stream' }, signal });
+    const response = await fetch(`${this.baseUrl}/api/tasks/${encodeURIComponent(id)}/stream?after=${after}`, this.transportInit({ headers: { Accept: 'text/event-stream' }, signal }));
     await assertResponse(response);
     if (!response.body) throw new Error('The center returned an empty event stream.');
     const reader = response.body.getReader();
@@ -553,11 +578,22 @@ export class FlowClient {
     catch (error) { if (error instanceof SyntaxError) throw new UnknownConversationAcknowledgementError(); throw error; }
   }
 
-  private async request<T>(path: string, init: RequestInit = {}): Promise<T> {
+  /** HTTP and SSE share authentication; no fallback, token persistence, or retry policy lives here. */
+  private transportInit(init: RequestInit, loginToken?: string): RequestInit {
     const headers = new Headers(init.headers);
-    headers.set('Authorization', `Bearer ${this.token}`);
+    const bearer = loginToken ?? this.token;
+    if (bearer !== undefined) headers.set('Authorization', `Bearer ${bearer}`);
+    else if (!['GET', 'HEAD', 'OPTIONS'].includes((init.method ?? 'GET').toUpperCase())) {
+      const csrf = this.csrfToken?.();
+      if (!csrf || !/^[a-f0-9]{64}$/.test(csrf)) throw new Error('A current browser session CSRF token is required before writing.');
+      headers.set(BROWSER_SESSION_CSRF_HEADER, csrf);
+    }
     if (init.body) headers.set('Content-Type', 'application/json');
-    const response = await fetch(`${this.baseUrl}${path}`, { ...init, headers, signal: init.signal ?? AbortSignal.timeout(15_000) });
+    return { ...init, headers, ...(this.csrfToken ? { credentials: 'include' as const } : {}) };
+  }
+
+  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string): Promise<T> {
+    const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal: init.signal ?? AbortSignal.timeout(15_000) }, loginToken));
     await assertResponse(response);
     return response.json() as Promise<T>;
   }
