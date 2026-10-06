@@ -218,7 +218,7 @@
   ],
   "checks": {
     "sourceDiffCheck": 0,
-    "newDirectCases": "NOT_RUN: 5 lifecycle + 7 observer cases added, historical27 unchanged",
+    "newDirectCases": "NOT_RUN: static expansion38 total, 5 lifecycle + 6 observer cases added; historical27 unchanged",
     "types": "NOT_RUN",
     "browserHTTPPG": "NOT_RUN",
     "statusParser": "separate metadata parse only"
@@ -236,5 +236,6 @@
     "Two confirmed static issues, not unique dynamic causality established",
     "Full feature target UNKNOWN/review NOT_STARTED; center semantics and unfinished journeys stay open",
     "Serialized observer source adjusted for installed tsx keepNames, serialization has not been executed"
-  ]
+  ],
+  "caseCountCorrection": "Root source-only count: 34 ordinary it + two it.each pairs =38. Earlier12/new39 estimate corrected to11/new38; no execution."
 }

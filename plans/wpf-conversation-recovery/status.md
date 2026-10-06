@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:17:58 UTC |
+| 最近更新 | 2026-10-06 18:18:39 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -150,4 +150,6 @@ Root于 `2026-10-06T17:44:07.363712+00:00` 对固定 `667889058d3decc0abc9f635a3
 
 ## 2026-10-06 18:17:58 UTC 五源修复固定 / NOT_RUN
 
-限定checkpoint `7cc7629b6603a6ccc7e2ab6143125dea8daae685`：[19源manifest](../../docs/evidence/wpf-conversation-recovery/idb-lifecycle-checkpoint.json)。P1/P2作者源码修正待独审；新增12个受控case未运行、types/browser未运行。原10raw逐字等2f32，旧1b8的27通过不覆盖新生命周期。当前唯一status时间改为parser支持的UTC格式，真实parse结果单列，不是产品测试。
+限定checkpoint `7cc7629b6603a6ccc7e2ab6143125dea8daae685`：[19源manifest](../../docs/evidence/wpf-conversation-recovery/idb-lifecycle-checkpoint.json)。P1/P2作者源码修正待独审；新增11个受控case未运行、types/browser未运行。原10raw逐字等2f32，旧1b8的27通过不覆盖新生命周期。当前唯一status时间改为parser支持的UTC格式，真实parse结果单列，不是产品测试。
+
+Root静态点数纠正：当前直接文件展开38case，较旧27新增11（5生命周期+6observer），此前估12已改；此为源码计数，全部新增未运行。

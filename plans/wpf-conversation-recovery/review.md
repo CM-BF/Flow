@@ -62,6 +62,6 @@ Source checkpoint `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，相对1b8只有�
 
 Root [原报告](../../docs/evidence/wpf-conversation-recovery/667-first-failure-root-review.json)针对667/2f32结论CHANGES_REQUESTED_SOURCE_SCOPED：REC667-P1-ACTIVATION/P1、REC667-P2-OBSERVER/P2。报告及peer因果报告原样归档。原667 ACK源批准仅原语义断言，不覆盖这两finding。
 
-作者修复checkpoint `7cc7629b6603a6ccc7e2ab6143125dea8daae685`，5源/14其他源不变，[manifest](../../docs/evidence/wpf-conversation-recovery/idb-lifecycle-checkpoint.json)。默认启动通过原host仅registered+configured+authorized；更新actions和host转移共用sync，active后同namespace新generation可重放现有draft，旧namespace不转存；disabled/failed不自动启动。观察器缺库abort upgrade+pending，malformed/sync throw/blocked/timeout统一拒绝关闭，不修库。新增12用例源码未运行，首次真实失败原raw保留。
+作者修复checkpoint `7cc7629b6603a6ccc7e2ab6143125dea8daae685`，5源/14其他源不变，[manifest](../../docs/evidence/wpf-conversation-recovery/idb-lifecycle-checkpoint.json)。默认启动通过原host仅registered+configured+authorized；更新actions和host转移共用sync，active后同namespace新generation可重放现有draft，旧namespace不转存；disabled/failed不自动启动。观察器缺库abort upgrade+pending，malformed/sync throw/blocked/timeout统一拒绝关闭，不修库。新增11用例源码未运行，首次真实失败原raw保留。
 
 本修复独立结论PENDING；完整feature仍NOT_STARTED/targetUNKNOWN，剩余预算不代表运行许可。
