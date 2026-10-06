@@ -31,3 +31,11 @@ scope复核：15自有源+2已批准依赖，与17scope领取和受控输入一�
 root确认离线连接未接reader生命周期。修复采用已存在connection字段独立同步，不修改会话projection、不增加timer/第二状态源。把active与online顺序写清：generic先deactivate再setOnline(true)，避免换source/hidden恢复时提前触发刷新；current在任何read前后仍复核live与身份。新增同turns引用回归直接捕获原bug，两actualApp专项从浏览器request事件验证0尝试。success-null与failure分别展示，修正无效Retry。Interface现明确受控C03与只显示原文digest，无验证冒称。
 
 修复五文件diffcheck0；60相关和dev/prod离线专项通过，未重跑不受影响的P01/完整视觉。原失败/首候选记录不覆盖，新hash另存。无新增未处理作者finding；正式R1关闭须root复审。
+
+## 2026-10-06 07:18 UTC 交付清码与独立审查收口
+
+固定ba341已获root 07:17:38Z APPROVED，R1关闭。本安全停点只复核命名/职责/接口/错误与证据一致性，不再修改已审实现：连接有效性统一由当前read lease判断，React同步显式依赖connection，缓存与flight取消职责分开；success-null展示不再提供不可执行的Retry。无剩余blocking finding。
+
+root完整读前版15源与修复五文件，独立7 adapter通过、17hash一致，并在ba341实际App预览抽验Tool/Reasoning/菜单/两主题/split/草稿；root未CUA复跑offline。旧完整browser及截图=e930，新offline专项=ba341，root目检=ba341，作者60与root7分别记录，未写成新全量76。原失败log与旧REQUEST_CHANGES保留。
+
+当前metadata只改自有计划/证据，source与dist保持冻结；核链接、status/review解析及源码零差后独立文档提交。不因metadata再跑产品套件。main仍未集成，最终交管理统一接收，claim保持以供明确修复。

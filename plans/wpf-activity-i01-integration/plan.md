@@ -25,6 +25,8 @@ Tool采用固定官方AI Elements最小组件；Reasoning复用现assistant-ui�
 
 局部测试覆盖当前页刷新/旧页陈旧、跨attempt顺序、正文身份/字节/错误/取消缓存、permission/visible/epoch；实际App覆盖pending/running用户锚点、两split、native hidden恢复、折叠0请求、hasMore显式分页、队列草稿不回归。dev StrictMode+Activity单独列，不能用它代替native hidden事实。0模型fixture不等真实中心/provider验收。每工作段/约30分钟安全停点/交付应用clean-code。
 
-架构影响：新增宿主活动read port及typed footer slot，固定候选后由Lead协调架构图更新。独立review默认NOT_STARTED。
+架构影响：新增宿主活动read port及typed footer slot，Lead接收固定ba341后协调架构图更新。当前独立review见[review](review.md)，main接收仍未完成。
 
 2026-10-06 07:09 UTC：实现固定e93070c，精确消费已审C03两文件输入889f→07da10c；未改变其内容。局部74、dev11与typecheck/build通过，production10组合通过，独审NOT_STARTED。
+
+2026-10-06 07:18 UTC：ba341修复离线读取生命周期，root固定独审APPROVED / ACTIVITYI-R1 CLOSED；本片进入integration。保留e930历史REQUEST_CHANGES和各版本检查边界，ACTIVITYI01-04的主线接收尚未完成。

@@ -1,6 +1,6 @@
 # ACTIVITYI-R1 离线读取修复
 
-固定修复：ba341d77672ba8456197d64d54193aee79719e46；原候选：e93070cc08339325cd299105f5805ca871a07ea8。独立复审待root结论，不自动继承任何批准。
+固定修复：ba341d77672ba8456197d64d54193aee79719e46；原候选：e93070cc08339325cd299105f5805ca871a07ea8。root于2026-10-06T07:17:38Z固定复审APPROVED，ACTIVITYI-R1 CLOSED；原e930的REQUEST_CHANGES历史保留。
 
 root确认P2：ConversationProjection进入disconnected时turns引用不变，adapter仅依turns同步且current只看visible/身份，离线仍激活native读取。原候选完整74/dev11/prod10未覆盖它。
 
@@ -17,3 +17,7 @@ root确认P2：ConversationProjection进入disconnected时turns引用不变，ad
 两新browser的17文件hash、当前字节、固定ba341全符，见[revision-source-manifest.json](revision-source-manifest.json)。dev执行于27f metadata+修复工作树，随后提交相同源码；prod执行于ba341。原完整browser/raw/screenshots保留e930来源，未伪作本轮全量重跑。
 
 当前保留production预览51454不曾关闭；本树重新build后reload加载修复bundle。0模型/产品DB。真实center/provider、其他浏览器/屏读仍未验证。
+
+## 独立复审来源
+
+root复读五文件delta及前版审查，独立7 adapter通过（07:16:07Z，tests 85ms / 总853ms）。17hash与target/current/两新离线报告一致。root在51454对ba341独立CUA抽验运行锚点、Tool/Reasoning、两主题、插件菜单入口、草稿与split，console warn/error=[]；没有在CUA重跑离线路径。作者离线专项仍是实际App该路径的证据。原完整browser/截图=e930，本修复offline=ba341，root视觉=ba341；没有新全量76或新整套截图。完整结论见[review](../../../plans/wpf-activity-i01-integration/review.md)。
