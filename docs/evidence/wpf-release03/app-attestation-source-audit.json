@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-06 15:47:11 UTC",
+  "target": "1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 26829,
+      "sha256": "6ae1fcdd23bbf6643047d05a0e6bdf8442667119c583a39141b55df5edc2308e"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 43464,
+      "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa"
+    }
+  ],
+  "historyContractSha256": "612f03112126a305785bfce31e51843de05c380724fb2226739b40fe0a37dbe8",
+  "contractBytes": 10340,
+  "originalRawFiles": 10,
+  "originalRawBytes": 80470,
+  "previousRuntimeMs": 3874,
+  "remainingRuntimeMs": 176126,
+  "execution": "NOT_RUN",
+  "staticChecks": [
+    "fixed source equality",
+    "exactly one marker pair",
+    "old ten raw hashes unchanged",
+    "protected local362 inputs unchanged",
+    "source diffcheck0"
+  ],
+  "notProven": [
+    "TypeScript compilation",
+    "actual successful A sealing/reuse",
+    "backend factory/dependency imports",
+    "App/browser compatibility"
+  ]
+}

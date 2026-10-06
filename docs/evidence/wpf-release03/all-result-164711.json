@@ -1,0 +1,103 @@
+{
+  "run": "all-20261006-164711-15b54e",
+  "sourceImplementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+  "actualHead": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+  "files": [
+    {
+      "path": "app-failure.png",
+      "bytes": 54336,
+      "sha256": "767dd49678fdb83a41192e55c9df9c4532e7de10da036628902d8a6f7e7b869a"
+    },
+    {
+      "path": "app.json",
+      "bytes": 1878,
+      "sha256": "e430516442a395fcb00bc06510cddd61534d9eac8f4f54f500bad15d4206df04"
+    },
+    {
+      "path": "budget.json",
+      "bytes": 135,
+      "sha256": "bf6dcf76be58f8ffa29d35bb3f561e3c6dc05000d9c21e70282cc61e2369a671"
+    },
+    {
+      "path": "cleanup.json",
+      "bytes": 414,
+      "sha256": "6db59c1782760399a6e5dd424f08db5fed3dcc43d68dbd476786ebb05c7010a1"
+    },
+    {
+      "path": "database-owner.json",
+      "bytes": 169,
+      "sha256": "26c7e4618e705fe5f20f7e8b794b68fb74b1b7ce9e9dad1c46471be4e7a0f971"
+    },
+    {
+      "path": "history.json",
+      "bytes": 12466,
+      "sha256": "960d62b355e36aa1f0a3ab2ac4fbcaf3bed30810924376830914d738678832ad"
+    },
+    {
+      "path": "outcome.json",
+      "bytes": 293,
+      "sha256": "4059ca8b2ba00147d5e4a255d3710a22ec4fc0db25a6d8427e4f2ada41c32844"
+    },
+    {
+      "path": "process.log",
+      "bytes": 7130,
+      "sha256": "119618847811d66593e9207678215b1dcabd710eee7edb5988646be99197e64c"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 5521,
+      "sha256": "705a1a8dcce18bed7a318c45816f3c24b275eb057e12fbd66761fa7cf351c176"
+    },
+    {
+      "path": "supervisor.json",
+      "bytes": 16929,
+      "sha256": "7d3daea3bf3a8b42fee3b56f7bd049890ccc7e903968f7cb091fed1ebddab49e"
+    },
+    {
+      "path": "wire.json",
+      "bytes": 77397,
+      "sha256": "0625c4f54e11ccd7e6a8f63b2b54d2fe159d18330231a215af2c53a4707e07eb"
+    },
+    {
+      "path": "worker.json",
+      "bytes": 15268,
+      "sha256": "d0c2eec40f45a8ccc92ce50f5fd5e7c3cf6308392a91e872c057e90a95c7afb4"
+    }
+  ],
+  "bytes": 191936,
+  "history": "PASS attachment-only + mixed actual af51 HTTP report/history/detail",
+  "app": "PARTIAL: plain Send passed; Files locator ambiguous between toolbar and conversation buttons; no product failure inferred",
+  "compatibility": "NOT_VERIFIED; no SVC green report/import",
+  "elapsedMs": 12326,
+  "previousMs": 7983,
+  "cumulativeMs": 20309,
+  "remainingMs": 159691,
+  "cleanup": {
+    "databaseName": "flow_release03_8d7a4c6f5bcb45f1acd9",
+    "databaseCreateAttempted": true,
+    "databaseCreated": true,
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "errors": [],
+    "processIds": [
+      {
+        "pid": 85006,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 87401,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "finishedAt": "2026-10-06T16:47:43.636Z"
+  },
+  "resourceObservation": {
+    "errors": [],
+    "minimumFreeBytes": 1199947776,
+    "freeAtEnd": 1203339264
+  },
+  "providerQueries": 0,
+  "automaticRetry": false
+}

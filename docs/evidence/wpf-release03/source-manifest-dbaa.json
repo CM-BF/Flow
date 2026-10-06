@@ -1,0 +1,49 @@
+{
+  "implementationTarget": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "method": "Fixed git bytes/current equality and source-only invariants; new tuple not imported/executed",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 20217,
+      "sha256": "bafbce3c48cc193fc60dd1a86f705abbcfcb9918cbf600d237eee99be24730e0"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 34964,
+      "sha256": "785c2ef5106846825d5a0f506a18403c1b57f4d5c4709502841ae3e0c7e5ae3a"
+    }
+  ],
+  "checks": {
+    "sourceDiffCheck": 0,
+    "protectedDiff": "empty",
+    "sourceAudit": "backend-rebind-static-audit.json",
+    "newTargetTypecheck": "NOT_RUN",
+    "newBackendPG": "NOT_RUN",
+    "Chrome": "NOT_RUN",
+    "compatibility": "NOT_RUN for new backend; old362 A failure preserved separately"
+  },
+  "executionMode": "A-only first; B NOT_RUN unless independently admitted and A passed",
+  "resourcePolicy": {
+    "history": {
+      "startBytes": 1107296256,
+      "stopBytes": 1090519040,
+      "totalMaxMs": 60000,
+      "cleanupReserveMs": 20000
+    },
+    "all": {
+      "startBytes": 1207959552,
+      "stopBytes": 1140850688
+    },
+    "sourcePeakProof": false,
+    "basis": "Lead prior same-factory database size12,360,727B; WAL/OS/other-process peak unknown; 250ms monitor is not hard quota"
+  },
+  "historicalRunEvidence": "history-result-152729.json",
+  "backendInput": "fresh gate backend={path:absolute realpath,head:immutable full commit,tree:full Git tree}; no defaults",
+  "backendProvenance": {
+    "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "onlyChangedPath": "apps/server/src/context-transparency/store.ts",
+    "approvedSource": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "requiredSha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+  }
+}

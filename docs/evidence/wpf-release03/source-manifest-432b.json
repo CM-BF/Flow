@@ -1,0 +1,48 @@
+{
+  "implementationTarget": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "method": "Fixed git object bytes equal current source; no import or execution",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 17862,
+      "sha256": "e56b952b92854bbb9a208ee7a87e763bf3d2b29e05f6e0b58614d5f968d3e18f"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 34649,
+      "sha256": "ef6ae3609533d4188ef02897fe0c0399c7f2248cca05846219ea5ecc1afd6fee"
+    }
+  ],
+  "checks": {
+    "sourceDiffCheck": 0,
+    "protectedDiff": "empty",
+    "productTypecheck": {
+      "state": "PASSED",
+      "result": "typecheck-result.json",
+      "log": "typecheck.log",
+      "execution": "static noEmit only; no product execution",
+      "target": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
+      "currentDelta": "not rerun by explicit instruction; source-only resource guard changes"
+    },
+    "PG": "EXECUTED: one owned isolated database; cleanup removed=true/errors=[]",
+    "Chrome": "NOT_RUN",
+    "compatibility": "FAILED A-only (2/2 failed); B NOT_RUN; no SVC compatibility report"
+  },
+  "executionMode": "A-only first; B NOT_RUN unless independently admitted and A passed",
+  "resourcePolicy": {
+    "history": {
+      "startBytes": 1107296256,
+      "stopBytes": 1090519040,
+      "totalMaxMs": 60000,
+      "cleanupReserveMs": 20000
+    },
+    "all": {
+      "startBytes": 1207959552,
+      "stopBytes": 1140850688
+    },
+    "sourcePeakProof": false,
+    "basis": "Lead prior same-factory database size12,360,727B; WAL/OS/other-process peak unknown; 250ms monitor is not hard quota"
+  },
+  "runEvidence": "history-result-152729.json"
+}

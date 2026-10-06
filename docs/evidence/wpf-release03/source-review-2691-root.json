@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-06T15:55:02.202190+00:00",
+  "reviewer": "root independent source delta",
+  "target": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+  "base": "1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098",
+  "observedHead": "569747eeebd40bc1db711d7d13b8c4c301540082",
+  "dirty": "",
+  "decision": "APPROVED_SOURCE_CHECKPOINT_ZERO_BLOCKING; ACTUAL_NEW_A_B_NOT_RUN",
+  "sources": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 28313,
+      "sha256": "353aabc21dffc9461015f2d798e3a6894f5eeb58714368de21a75bf18d38a1bb"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 43464,
+      "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa"
+    }
+  ],
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "historyContractRegionBytes": 11859,
+  "finding": {
+    "id": "RELEASE1A7-P1",
+    "status": "SOURCE_ADDRESSED",
+    "reason": "Removed reference-consumer schema from Detail path. New assertions use actual declared/observed detail DTO: exact context/conversation/project/digest/template/order, valid timestamp, ordered complete descriptors/sources, actual text and UTF8 size, attachment whole-body digest and observed knowledge version flags. No nonexistent execution fields required or manufactured. Reviewed retained actual two detail bodies against declared DTO and intended assertions, not a new backend run."
+  },
+  "priorSourceReview": {
+    "path": "/tmp/root-release03-1a7-source-review.json",
+    "sha256": "887c6de960c712f452111fa923b8c1bfef61b32c11b56820df0cb35abb9a2307",
+    "disposition": "All browser/backend/evidence/budget review scope retained; its only blocking P1 corrected by this exact fixture delta. Original CHANGES_REQUESTED report preserved."
+  },
+  "independentPeer": {
+    "path": "/tmp/release03-1a7c-app-proof-review/report.md",
+    "sha256": "9c3f73876c0e50cd35ee28587b80880936f87dab78ba07f2c78406177e4c451f",
+    "disposition": "No additional blocker in unchanged browser evidence/cumulative/app-only scope; known fixtureP1 excluded there and resolved here."
+  },
+  "checks": [
+    "Both fixed sources equal current; browser hash unchanged from independently reviewed1a7.",
+    "Exact history contract recomputed; marker unique; no former wrong schema symbol.",
+    "All ten old failed-A bytes and hashes unchanged;3874ms/80470B charged.",
+    "Local protected paths exact362; normal author push reported separately; localHEAD clean observed."
+  ],
+  "conditions": [
+    "Manager may now execute its fresh-source/claim/dependency/artifact/resource/window preflight for ONE A-only under the existing Lead conditional authority. This source report alone is not allowRun.",
+    "Use final backend af51/tree308c41 with exact13metadata from root independent audit,sourceb298parent362/twoapprovedcde sources/tenreadonlydependencies. Candidate remains frozen.",
+    "Use actual runtime metadataHEAD as A sources.head; reviewedimplementationtarget269103 and currenttwohashes separately. Latestobserved569747; further ownmetadata must not alter source.",
+    "History fresh total<=60000 incl20000cleanup, start>=1107296256B/stop1090519040B; remaining cumulative176126ms before run, retain8MiB total. Singlefresh observation, no lowspace polling/retry.",
+    "After actualnewA passes+cleanup, root reviews exacttenraw; only then distinctfreshB128/64MiB gate with externally pinned actualAproof. No green compatibility or personalpublish before actualB."
+  ],
+  "unverified": [
+    "No new types/direct loader negatives/PG/Chrome/HTTP/product imports; original997d types arehistorical only.",
+    "Both repaired-backend historycases and actualApp remainNOT_RUN. Wholefeature reviewNOT_STARTED.",
+    "Source and packageidentity checks are not runtime/transitive integrity proof; polling resourceguard nothardphysicalquota."
+  ],
+  "cleanCode": "Use the DTO that the endpoint actually returns, keep one common history fact assertion and stable source proof, avoid copying another schema or changing sharedcontracts."
+}

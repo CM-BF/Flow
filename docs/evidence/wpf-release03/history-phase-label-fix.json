@@ -1,0 +1,107 @@
+{
+  "target": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+  "runtimeTarget": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+  "change": "gate.mode === history always labels phaseB NOT_RUN even without worker result",
+  "sourceDiff": "diff --git a/apps/web/test/web-current-preview.browser.ts b/apps/web/test/web-current-preview.browser.ts\nindex 1b8446fe..1c6fb7b4 100644\n--- a/apps/web/test/web-current-preview.browser.ts\n+++ b/apps/web/test/web-current-preview.browser.ts\n@@ -336,7 +336,7 @@ async function supervisor() {\n   // Report import/verification is part of the same measured attempt, not an uncounted epilogue.\n   await json(join(directory, \"outcome.json\"), { passed: !!compatibilityId && !errors.length && !cleanupErrors.length,\n     historyPassed: !!result?.historyPassed && !errors.length && !cleanupErrors.length,\n-    mode: gate.mode, phaseB: result?.app.state === \"NOT_RUN\" ? \"NOT_RUN\" : result?.app.passed ? \"PASSED\" : \"FAILED\",\n+    mode: gate.mode, phaseB: gate.mode === \"history\" || result?.app.state === \"NOT_RUN\" ? \"NOT_RUN\" : result?.app.passed ? \"PASSED\" : \"FAILED\",\n     compatibilityId, errors, cleanupErrors, backend: gate.backend.head, artifactId: ARTIFACT, historyEvidence: historyProof });\n   Object.assign(budget, { complete: true, elapsedMs: Date.now() - started });\n   await json(join(directory, \"budget.json\"), budget); clearTimeout(hardStop);\n",
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "fixtureUnchanged": true,
+  "tests": "NOT_RUN; fixed boolean source logic only, root requested no runtime repeat",
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json",
+      "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9",
+      "bytes": 130
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json",
+      "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a",
+      "bytes": 333
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/database-owner.json",
+      "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae",
+      "bytes": 169
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json",
+      "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef",
+      "bytes": 10667
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/outcome.json",
+      "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60",
+      "bytes": 299
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/process.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/sources.json",
+      "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1",
+      "bytes": 1779
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/supervisor.json",
+      "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8",
+      "bytes": 12802
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json",
+      "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82",
+      "bytes": 42857
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/worker.json",
+      "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0",
+      "bytes": 11434
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/budget.json",
+      "sha256": "92893bfc471347a6e2a96567fa7c2f0a05518496699a6909905a6034bb3ef71e",
+      "bytes": 133
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/cleanup.json",
+      "sha256": "c084ba5f9bfa768dd136702aebf30558d0a6ba397f02e47edc55c86599c2e3cb",
+      "bytes": 343
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/database-owner.json",
+      "sha256": "9b7e7cd24dbed8dc6d519fab523072b915656325f78e6a896e4f052ba4c295b5",
+      "bytes": 169
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/history.json",
+      "sha256": "f09d94cd8e194206e7275723738a1232987209883dc95e05692b1c6ee21a6f1d",
+      "bytes": 6401
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/outcome.json",
+      "sha256": "4d966c2bc38556d67717a16eeabffd4068bad4299b8be6a869e8ad907ee59210",
+      "bytes": 385
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/process.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/sources.json",
+      "sha256": "3714a000e8ee188e0e034f5d6cb096625d0f484b9140dda6f38c45716d0d8895",
+      "bytes": 5526
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/supervisor.json",
+      "sha256": "10b5171b2289c7c75f7e5b97afc3e9dc4ca83a01c2254eaa2ce59a7e7c38a9e9",
+      "bytes": 826
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/wire.json",
+      "sha256": "e62fb022ad1cf2e751ec83dd7a621c7e6a0f8e2ad21ae16a1921b5479ca0ac9a",
+      "bytes": 33353
+    }
+  ],
+  "recordedAt": "2026-10-06 16:11:23 UTC"
+}

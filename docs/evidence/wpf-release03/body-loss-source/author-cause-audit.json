@@ -1,0 +1,88 @@
+{
+  "state": "READ_ONLY_SOURCE_RESEARCH",
+  "newRuntime": "NOT_RUN",
+  "fixedSources": [
+    {
+      "commit": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 28313,
+      "sha256": "353aabc21dffc9461015f2d798e3a6894f5eeb58714368de21a75bf18d38a1bb"
+    },
+    {
+      "commit": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 44917,
+      "sha256": "fe3219fa3787eb27c4159f442c01884b64085cb7e3dda32d78213a18afdc084e"
+    },
+    {
+      "commit": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "commit": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 24648,
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db"
+    },
+    {
+      "commit": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    }
+  ],
+  "compiledAsset": {
+    "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/index-CZaGITme.js",
+    "bytes": 790684,
+    "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e",
+    "utf8ByteOffsets": {
+      "async request(": 268333,
+      "async conversationAcknowledgement(": 268145,
+      "submitConversationTurn(": 261946,
+      "Retry same message": 699021
+    }
+  },
+  "rawWire": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/wire.json",
+    "bytes": 47478,
+    "sha256": "fec6ccd225f84a4dc79f153bd2211c573de98c1b5c8f8804d567ac45992cc5d1",
+    "rows": [
+      {
+        "index": 34,
+        "method": "POST",
+        "path": "/api/conversations/e60d2495-4f64-4d8c-bf08-a275f420c314/turns",
+        "status": 202,
+        "dropped": true,
+        "key": "4b758a99-32ee-479e-a354-d746268b9ff9:turn",
+        "bodySha256": "08876ca44e1b29713be2f7e4e46fb2220daf292778005897c2ffaf544cad2bb8",
+        "turnId": "aa38d65e-52d6-4f35-8d0c-0fe4dedaf700",
+        "replayed": false,
+        "responseSha256": "410929eb553335928e00156404cec8d37461a9d2be1a2ff8c5d6637662510588"
+      },
+      {
+        "index": 35,
+        "method": "POST",
+        "path": "/api/conversations/e60d2495-4f64-4d8c-bf08-a275f420c314/turns",
+        "status": 202,
+        "dropped": false,
+        "key": "4b758a99-32ee-479e-a354-d746268b9ff9:turn",
+        "bodySha256": "08876ca44e1b29713be2f7e4e46fb2220daf292778005897c2ffaf544cad2bb8",
+        "turnId": "aa38d65e-52d6-4f35-8d0c-0fe4dedaf700",
+        "replayed": true,
+        "responseSha256": "5792d2f0820f6d60b3eb3635cb45076bd54e1c823b5154176f507cde10ac246e"
+      }
+    ]
+  },
+  "rawIndex": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/app-result-171109.json",
+    "sha256": "128ab5179719372ecac7ce72e4fa4cc4d6dbd33033067e577062518bfb13d782"
+  },
+  "bounds": {
+    "cumulativeRuntimeMs": 39935,
+    "remainingRuntimeMs": 140065,
+    "immutableRawFiles": 43,
+    "immutableRawBytes": 464871
+  }
+}

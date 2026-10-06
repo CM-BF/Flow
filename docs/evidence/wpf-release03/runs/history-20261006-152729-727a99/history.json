@@ -1,0 +1,304 @@
+[
+  {
+    "label": "attachment-only",
+    "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "providerQueries": 0,
+    "conversationId": "96a51bf7-5ece-4472-8fdb-10e9b91f25f7",
+    "taskId": "0f2b525e-b5ea-4bbb-874b-c8fbd592f38b",
+    "attemptId": "fb05efb6-0344-4639-8ba7-5c3be87fe3c0",
+    "context": {
+      "id": "6cdaa3a9-9649-4334-9974-c1814131a415",
+      "contextDigest": "9ae78554812e94393646ffffa09003c584b26354443fb72af698f70dad300bd6",
+      "executionInputId": "1919f3c3-005f-4f4b-9926-56c1f8c5463e",
+      "executionInputDigest": "e7bcebc652e4dc866d2e3581ebfef6cb8ee2cc062bd22a4fc935fb06ce8eaf77",
+      "templateVersion": 2,
+      "order": "knowledge-then-attachments",
+      "sources": [],
+      "attachments": [
+        {
+          "reference": {
+            "kind": "upload",
+            "projectId": "9da92d66-31cb-41df-a647-86562d1e736b",
+            "resourceId": "75bf8f22-8673-45a5-9ecc-e27101ac6e07",
+            "version": 1,
+            "contentDigest": "fc23cbf5b8a598d45ed6ecfc51ccb68855213c2282c659ed472f5a49d9e1a308"
+          },
+          "name": "existing.txt",
+          "mediaType": "text/plain",
+          "byteLength": 45
+        }
+      ]
+    },
+    "reportError": "The center could not complete this request.",
+    "history": {
+      "protocol": "flow.context-history.v1",
+      "taskId": "0f2b525e-b5ea-4bbb-874b-c8fbd592f38b",
+      "attemptId": "fb05efb6-0344-4639-8ba7-5c3be87fe3c0",
+      "latest": null,
+      "current": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      },
+      "remaining": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      }
+    },
+    "task": {
+      "id": "0f2b525e-b5ea-4bbb-874b-c8fbd592f38b",
+      "title": "attachment-only",
+      "harness": "claude",
+      "status": "running",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-06T15:27:58.175Z",
+      "updatedAt": "2026-10-06T15:27:58.613Z",
+      "prompt": "Use attachment-only materials",
+      "entries": [
+        {
+          "id": "63d387a7-fe53-430c-8e71-a18cc2934b66",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T15:27:58.605Z",
+          "reference": {
+            "id": "a7b795e7-d45a-44b1-aa3d-5b62dbda01d8",
+            "title": "Native session"
+          }
+        }
+      ],
+      "watermark": 1,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "fb05efb6-0344-4639-8ba7-5c3be87fe3c0",
+        "runnerId": "6839544b-64c8-4451-ab82-58e7849c23c8",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T15:32:58.588Z",
+        "nativeSessionId": "03a95f2e-5622-4940-a49d-e2a05691f6ad"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    },
+    "passed": false,
+    "error": "Actual reportEvents rejected the native observation\n+ actual - expected\n\n+ 'The center could not complete this request.'\n- undefined\n",
+    "wireRange": [
+      0,
+      20
+    ]
+  },
+  {
+    "label": "mixed",
+    "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "providerQueries": 0,
+    "conversationId": "db528981-d488-44e2-a237-35fb3c424e0a",
+    "taskId": "b4181bbf-b425-435c-b9a6-304d06855529",
+    "attemptId": "7f7476c2-1dd1-4ee9-bfc3-2e5e65f0a994",
+    "context": {
+      "id": "36e4d85f-0dba-4925-9e05-306ebc72b348",
+      "contextDigest": "2477e7a6262fe6bf0a27123f9f3dd8fb5ecbf30a8e511136112a5b132bd9c8f1",
+      "executionInputId": "93fbda2e-9246-4fe1-a128-7300a3147085",
+      "executionInputDigest": "e5dc6a032eae9841215e69fbe79cdea5a7dd208fe967e817093a3e9d674983c5",
+      "templateVersion": 2,
+      "order": "knowledge-then-attachments",
+      "sources": [
+        {
+          "citation": {
+            "projectId": "1843be84-8305-41e3-a097-47f26b1d24df",
+            "sourceId": "13f15c34-b8ee-441b-8772-d62b1d876c5b",
+            "version": 1,
+            "contentDigest": "2d55d57e85e8e5caae16cdb30f84dc8649b035f42c8bec279fdecbaa69eae25d",
+            "locator": {
+              "kind": "utf8-bytes",
+              "start": 0,
+              "end": 28
+            }
+          },
+          "byteLength": 28,
+          "currentVersionAtFreeze": 1,
+          "isCurrentAtFreeze": true
+        }
+      ],
+      "attachments": [
+        {
+          "reference": {
+            "kind": "upload",
+            "projectId": "1843be84-8305-41e3-a097-47f26b1d24df",
+            "resourceId": "d429af14-e97a-4bd9-b6c9-e127b8401743",
+            "version": 1,
+            "contentDigest": "089852235a94e39e7ec10f348f2f7eec1bde3caeca33c0c533bf9f11d8d7379e"
+          },
+          "name": "existing.txt",
+          "mediaType": "text/plain",
+          "byteLength": 35
+        }
+      ]
+    },
+    "report": {
+      "accepted": 1,
+      "lastSequence": 2
+    },
+    "history": {
+      "protocol": "flow.context-history.v1",
+      "taskId": "b4181bbf-b425-435c-b9a6-304d06855529",
+      "attemptId": "7f7476c2-1dd1-4ee9-bfc3-2e5e65f0a994",
+      "latest": {
+        "eventSequence": 2,
+        "receivedAt": "2026-10-06T15:27:59.098Z",
+        "detailRef": {
+          "id": "575db645-f8ee-4d9f-b282-e3b714c536cb",
+          "title": "Claude context summary"
+        },
+        "observation": {
+          "id": "29fe180c-71c6-4ae1-9374-4757165aae49",
+          "identity": {
+            "subject": {
+              "kind": "attempt",
+              "taskId": "b4181bbf-b425-435c-b9a6-304d06855529",
+              "attemptId": "7f7476c2-1dd1-4ee9-bfc3-2e5e65f0a994",
+              "ownerVersion": 1,
+              "nativeSessionId": "5f9f503b-75d4-4a17-bab5-408ab7398921"
+            },
+            "harness": "claude",
+            "requestedModel": "release-synthetic-mixed",
+            "resolvedModel": "synthetic-resolved-model",
+            "profile": {
+              "id": "012e4889-6ee6-48a2-a529-2241f05c259e",
+              "runnerId": "01d2b656-c1c4-41cc-8de7-27fee1a858ba",
+              "configDigest": "c6c66172c971f9d7c25fbb1cdf39f546f5227b3991bc7f60781e83c57ecdd50f"
+            },
+            "executionInputDigest": "e5dc6a032eae9841215e69fbe79cdea5a7dd208fe967e817093a3e9d674983c5",
+            "materialRevisionDigest": "ffb4bbbf71f2f1e16826b1ddb7acef215989d1a8354ca201da409307ea6fdd25",
+            "historyEpoch": null
+          },
+          "observedAt": "2026-10-06T15:27:59.084Z",
+          "modelCapacity": {
+            "kind": "unknown",
+            "value": null,
+            "reason": "not-observed"
+          },
+          "compactionWindow": {
+            "kind": "estimate",
+            "value": 1000,
+            "source": {
+              "name": "claude-sdk-context",
+              "version": "0.3.290"
+            },
+            "measurementMethod": "sdk-summary-estimate",
+            "tokenBasis": "claude-context-summary-0.3.290",
+            "coverage": "full",
+            "evidenceRef": {
+              "id": "575db645-f8ee-4d9f-b282-e3b714c536cb",
+              "title": "Claude context summary"
+            }
+          },
+          "used": {
+            "kind": "estimate",
+            "value": 123,
+            "source": {
+              "name": "claude-sdk-context",
+              "version": "0.3.290"
+            },
+            "measurementMethod": "sdk-summary-estimate",
+            "tokenBasis": "claude-context-summary-0.3.290",
+            "coverage": "full",
+            "evidenceRef": {
+              "id": "575db645-f8ee-4d9f-b282-e3b714c536cb",
+              "title": "Claude context summary"
+            }
+          },
+          "categories": [
+            {
+              "id": "sdk-used",
+              "kind": "used",
+              "tokens": 123
+            }
+          ],
+          "compression": {
+            "state": "not-observed"
+          }
+        },
+        "materials": {
+          "state": "known",
+          "sources": [
+            {
+              "citation": {
+                "projectId": "1843be84-8305-41e3-a097-47f26b1d24df",
+                "sourceId": "13f15c34-b8ee-441b-8772-d62b1d876c5b",
+                "version": 1,
+                "contentDigest": "2d55d57e85e8e5caae16cdb30f84dc8649b035f42c8bec279fdecbaa69eae25d",
+                "locator": {
+                  "kind": "utf8-bytes",
+                  "start": 0,
+                  "end": 28
+                }
+              },
+              "byteLength": 28,
+              "tokens": null
+            }
+          ]
+        }
+      },
+      "current": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      },
+      "remaining": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      }
+    },
+    "task": {
+      "id": "b4181bbf-b425-435c-b9a6-304d06855529",
+      "title": "mixed",
+      "harness": "claude",
+      "status": "running",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-06T15:27:58.726Z",
+      "updatedAt": "2026-10-06T15:27:59.101Z",
+      "prompt": "Use mixed materials",
+      "entries": [
+        {
+          "id": "e4b17bff-7a95-4947-9de2-e089fbe5f3c4",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T15:27:59.078Z",
+          "reference": {
+            "id": "9223d716-58a0-4596-b7c9-9a0dc0e849c3",
+            "title": "Native session"
+          }
+        }
+      ],
+      "watermark": 1,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "7f7476c2-1dd1-4ee9-bfc3-2e5e65f0a994",
+        "runnerId": "01d2b656-c1c4-41cc-8de7-27fee1a858ba",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T15:32:59.066Z",
+        "nativeSessionId": "5f9f503b-75d4-4a17-bab5-408ab7398921"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    },
+    "passed": false,
+    "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   sources: [\n+     {\n+       byteLength: 28,\n+       citation: {\n+         contentDigest: '2d55d57e85e8e5caae16cdb30f84dc8649b035f42c8bec279fdecbaa69eae25d',\n+         locator: {\n+           end: 28,\n+           kind: 'utf8-bytes',\n+           start: 0\n+         },\n+         projectId: '1843be84-8305-41e3-a097-47f26b1d24df',\n+         sourceId: '13f15c34-b8ee-441b-8772-d62b1d876c5b',\n+         version: 1\n+       },\n+       tokens: null\n+     }\n+   ],\n+   state: 'known'\n-   reason: 'metadata-unavailable',\n-   state: 'unknown'\n  }\n",
+    "wireRange": [
+      20,
+      40
+    ]
+  }
+]

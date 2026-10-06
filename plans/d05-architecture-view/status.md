@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:52 UTC / mainb4ab57c6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:54 UTC / main8d84d529 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新增聊天配置兼容修复的唯一来源登记；实际看板当前仍加载上一批168项，随本批主线发布更新。 |
+| 当前产出 | 聊天配置兼容修复已进入看板，169个来源继续读取各自负责人的实际状态。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -149,3 +149,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 17:27 UTC：固定mainc843登记仅换载自有4320，单次HTTP200实际168来源，CHAT06P03 live/current/issues=[]、人读完整；[实采](../../docs/evidence/d05/chat06p03-live-receipt.json)。本次10,786ms聚合只作观察，不称SLO；个人服务/原tabs/固定架构均不变，0产品测试。
 
 2026-10-06 17:52 UTC：WPF-PROFILEC02独立树/合法4scope/唯一status已存在，登记第169来源，父MATURE02。只核registry与该source parser，不重跑工程或架构；实际服务尚未重载，不提前称169已可见。
+
+2026-10-06 17:54 UTC：仅重启owned4320正常TERM/exit后加载main8d84源，实际snapshot169、PROFILEC02 live/current/issues[]/human完整；6.461s为一次观察非SLO，未改个人服务或用户tabs，原架构图保留。见profilec02-live-receipt.json。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:52 UTC / mainb4ab57c6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:57 UTC / main8d84d529 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -19,7 +19,7 @@
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 逐消息配置和终端收尾的已审组合已通过检查，可从公共接口与命令行使用；实际个人版本另行发布。 |
-| 下一可用交付 | 网页新版兼容结果正在独审，完整目标输入的生产接线继续。 |
+| 下一可用交付 | 新版网页兼容证据已接收，准备保留旧页面的实际发布；完整目标输入接线正收口。 |
 | 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
 | 需用户决定 | NONE |
 
@@ -211,3 +211,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 同时接收TUI原真实两行为证据（整suiteexit1不改）、457有限连接观察10项、f4cleanup-only1项及逐字源7项；独立review绑定251manifest条目、207固定project/713compiler输入，未重新跑这些检查。原不明初始inode目录KEEP，真实Web交替仍open。见[tui01f收口](../../docs/evidence/i02/tui01f-closeout-integration.json)。OPS next4c最终2/4，余两树因现场已过准备线而未操作；Web B1750独占PG/Chrome窗口，个人服务不变。
 
 2026-10-06 17:53 UTC：两处类型冲突已由固定ec30/2d1窄修闭合，实际root noEmit exit0（9.09s），保留首次exit2原文。已审45源全hash保持，TUI7检查源/单Web类型源逐字绑定，registry169只做登记与局部parser。此批准备FF main并push，不刷新个人服务、用户tab或调用模型。
+
+2026-10-06 17:57 UTC：接收RELEASE03 ef458两fixture及ee6d固定独审/raw，26源/结果bindings逐字核实；原A两项复用+B真实三场景通过，累计50,809/180,000ms、余129,191ms；实际root noEmit0(9.08s)，不重跑App/PG。批准仅af51后台+d629产物组合，不把本main或当前个人362/8d8当这组已运行版本。原operator正在核全部保留artifact的兼容依据，未drain/发布/刷新用户tab。

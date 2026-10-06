@@ -1,0 +1,91 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "新前端的兼容验证输入已固定，正在准备可审查脚本",
+    "next": "给出新前端与现有后台的真实兼容结果",
+    "blocker": {
+      "state": "active",
+      "text": "实际运行等待依赖和资源门槛；源码可继续"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/test/web-current-preview.fixture.ts",
+      "apps/web/test/web-current-preview.browser.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "taskId": "WPF-RELEASE03",
+  "owner": "w01_owner / gpt-6-astra / ultra",
+  "branch": "codex/web-current-preview-compatibility",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T14:40:27.000Z",
+  "updatedRecord": "2026-10-06 14:40:27 UTC",
+  "todos": [
+    {
+      "id": "RELEASE03-01",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "[take](../../docs/evidence/wpf-release03/take-receipt.json)、[live](../../docs/evidence/wpf-release03/live-claim.json)"
+    },
+    {
+      "id": "RELEASE03-02",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "0兼容运行；180秒预算尚未使用"
+    },
+    {
+      "id": "RELEASE03-03",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "尚未固定实现/独审/交主线"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 首计划提交前",
+  "declaredDirty": "提交前仅本片计划与证据；提交回执另核实际 clean",
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；仅实际领取/固定输入核验"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "mainRecord": "NOT_INTEGRATED；本片无实现提交",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}
