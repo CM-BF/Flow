@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:07 UTC / main0c242483 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:14 UTC / mainbd14f984 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,7 +19,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
 | 当前产出 | 两条已结束实验的构建缓存已清理，数据库服务保留；现场余量已恢复到本轮准备线。 |
-| 下一可用交付 | 逐消息设置先完成专库验证，归还后网页兼容验证接续；目标推进的生产验证已通过并待独审。 |
+| 下一可用交付 | 逐消息设置与目标推进的中心检查已通过；网页兼容仍有待定位项，终端控制接续验证。 |
 | 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证按现场余量准入，已失败的准备记录保留。 |
 | 需用户决定 | NONE |
 
@@ -179,3 +179,11 @@ CORE 16:58新窗口因现场1,192,939,520B低于原1,207,959,552B而NOT_RUN、0D
 依据GO对两个旧Flow Claude harness派生构建cache的明确授权，fresh核buildx0.33.0的精确id filter、两条记录均reclaimable/non-shared/non-mutable、历史终态且无活跃build，仅串行删除jqxa5j9g0ff9bfvfehufaq49t与hx1jupxwu3sw8xhiame8190so。两次exit0/精确记录消失，parent4uusk及运行中项目Postgres身份保留；无全局prune、image/container/volume操作。Docker逻辑27.5+29.11MB不当host物理回收承诺。17:07:11共享卷实际可用1,265,397,760B已过1GiB+160MiB准备线，next4c候选按条件0/4停止，未改稀疏配置。
 
 临时Pi依赖donor只读审计结论KEEP：四个已跟踪脚本仍显式引用，离线重建未证；无进程/入口symlink不等于已解除延迟消费者，不删除。完整[操作与审计](../../docs/quality/resource-space-2026-10-06/buildkit-exact/summary.json)。CORE-PG-RETRY-20261006-1707已条件交Mika：原fixed8组、fresh原gate、120s工作+80s清理；完成明确归还再到Web B。个人服务与模型调用不变，完整SVC06仍2.5GiB门槛。
+
+2026-10-06 17:11 UTC：CORE窗口已于17:09:09.484清理归还，原8/8通过、0provider、DB absent/connections0/errors[]、自有process/cache/temp清理；Mika唯一正式领域review待固定。Web获RELEASE03-B-20261006-1710条件窗口，仍fresh原gate及原剩余159,691ms，仅受影响B不重跑已过A。F01 O14五源和全部审查/原raw已精确main bd14f984，个人服务不变。
+
+CHAT06P03按已批准原CHAT06后继提供独立source-only树，44文件含完整d04治理证据与16项实际输入，2,230,403逻辑B；对Mika固定74bc的16输入零diff，主树/已有共享config不变，0依赖安装/导入/运行。新worker须fresh原子领取四scope再写，非领取回执；[source provision](../../docs/quality/sparse-worktree-2026-10-06/chat06p03-source-provision.json)。
+
+2026-10-06 17:14 UTC：Web B本次17:11:55明确归还，专库removed/errors[]与两个owned PID exit0。复用两项已过A，B plain通过后未知回执断言失败；同key/body/turn第二请求已观察，来源未诊断，不提前断言产品自动重试。累计39,935ms、余140,065ms，未生成兼容报告，个人Web不发布。
+
+TUI01F-03-20261006-1714一次窗口给原assignment_review：固定40508f三源/旧a89后台、原完整2case、fresh≥1GiB+64MiB、120s工作+60s清理、0provider；17:14:13共享卷1,238,429,696B仅调度观察，worker仍须fresh。4MiB总raw/16MiB自有tmp是观测停止阈值、不是硬保留；PG/WAL另计，1GiB剩余线不降。超限/unknown不自动重试或删库，checkpoint成功前不作不可恢复清理。Web/CORE下一运行待本次明确归还。
