@@ -12,3 +12,5 @@ Scope：human.mjs / delivery-stage.test.mjs；base82eaf508a88d8e0c21e3424dade33c
 | 无 | 未发现可行动问题 | 否 | 无需修复 |
 
 2026-10-06 05:11 UTC：Root独立只读APPROVED 951266dcb602078423aef776a6ec2f2a9d7498ab，审查clean9ef438。完整human delta/5行为/4原consumer/raw driver，13文件hash与2源码fixed target一致，实际目视desktop与390；无blocking、未重跑。显式阶段/非法unknown/legacy不推断review和main/pending后继/review与integration/真实阻塞排序和3条上限均接受。批准不涵盖DPERF或模型/产品功能。
+
+2026-10-06 05:13 UTC：Root复审APPROVED test-only delta6d08c3012d8b798e62dd32d249158994e5afbb80（clean60ab），逐读4+3行保留三来源断言，combined3文件hash及31/31日志核，未重跑。D07human产品仍951266；DPERF5cd单独Web Lead批准，两者组合31项覆盖。

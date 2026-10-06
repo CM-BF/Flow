@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fixture, now, git, commit } from './fixture.mjs';
 import { aggregate } from '../src/aggregate.mjs';
 import { parseImplementation } from '../src/proof.mjs';
-import { defaultRegistry } from '../src/registry.mjs';
+import { defaultRegistry, validateRegistry } from '../src/registry.mjs';
 
 const human = { 阶段: 'M2', 优先级: '1', 当前产出: '正在实现安全恢复', 下一可用交付: '可核对的恢复入口', 当前阻塞: 'NONE', 需用户决定: 'NONE' };
 const first = snapshot => snapshot.tasks[0];
@@ -112,8 +112,9 @@ test('scope-tree integration requires existing target and no omitted new impleme
   result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, false);
 });
 
-test('28 distinct registry sources include D03, I02 and bounded Web platform source', () => {
-  const registry = defaultRegistry(); assert.equal(registry.tasks.length, 28);
+test('registry sources have unique valid identities and bounded canonical Web platform paths', () => {
+  const registry = validateRegistry(defaultRegistry());
+  assert.equal(new Set(registry.tasks.map(task => task.id)).size, registry.tasks.length);
   assert.equal(registry.tasks.find(task => task.id === 'I02').planDir, 'plans/i02-integration');
   const source = registry.tasks.find(task => task.id === 'WPF-001');
   assert.equal(source.planDir, 'plans/web-platform'); assert.equal(source.evidenceDir, 'docs/evidence/web-platform');

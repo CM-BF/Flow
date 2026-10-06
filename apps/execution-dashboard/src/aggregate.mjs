@@ -57,7 +57,11 @@ async function aggregateTask(task, registry, observations, now) {
   if (stale) issues.push(ageHours < 0 ? 'status 更新时间在未来，需核对时钟。' : `status 未同步或超过 ${registry.staleAfterHours} 小时，当前进度待核实。`);
   const implementationProof = status.implementation && liveGit.available ? await compareImplementation(task.worktree, status.implementation.target, liveGit.head, status.implementation) : { state: 'unknown', reason: '来源不可核验' };
   if (review.state === 'approved') {
-    const proof = status.implementation && liveGit.available ? await compareImplementation(task.worktree, review.target, liveGit.head, status.implementation) : { state: 'unknown', reason: '实现范围未知' };
+    const proof = status.implementation && liveGit.available
+      ? review.target && review.target === status.implementation.target
+        ? implementationProof
+        : await compareImplementation(task.worktree, review.target, liveGit.head, status.implementation)
+      : { state: 'unknown', reason: '实现范围未知' };
     let state = 'unknown';
     if (proof.state === 'unchanged' && implementationProof.state === 'unchanged') state = 'approved';
     else if (proof.state === 'changed' || implementationProof.state === 'changed') state = 'outdated';

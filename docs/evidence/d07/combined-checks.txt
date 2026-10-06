@@ -1,0 +1,44 @@
+✔ reads only authoritative owners and reflects independent status changes over HTTP (380.77575ms)
+✔ empty review never means approval; historical checks remain unknown without explicit field (289.610167ms)
+✔ missing status uses frozen baseline and marks unknown without affecting another task (513.346334ms)
+✔ malformed, duplicate, stale and future status cannot silently become current (682.1475ms)
+✔ branch changes conflict and registry explicitly switches to a new owner worktree (522.105292ms)
+✔ documents reject traversal, encoded traversal, absolute paths and arbitrary task files (380.611792ms)
+✔ referenced symlinks cannot escape task scope inside or outside registered worktree (256.914375ms)
+✔ untrusted text stays text with read-only HTTP and restrictive browser headers (266.216083ms)
+✔ invalid registry, duplicate owners and oversized files are rejected (227.386084ms)
+✔ delivered slice leaves next deliveries despite open future TODO and changed main scope (2.789708ms)
+✔ review and integration remain actionable after author completion, planning does not (7.263917ms)
+✔ invalid explicit stage stays unknown instead of falling back to active branch (0.24925ms)
+✔ legacy author completion is labelled legacy and preserves review/main uncertainty (0.991042ms)
+✔ current blocked work has delivery priority; stale and invalid facts never become candidates (0.458541ms)
+✔ structured summaries never mine historical risks or no-decision prose (394.958875ms)
+✔ active work is bounded and priority ordered; completed history is separate (346.985167ms)
+✔ metadata-only changes retain exact implementation approval, including dirty docs (1185.857875ms)
+✔ tracked changes, additions, deletions and untracked implementation invalidate approval (1079.374375ms)
+✔ new code outside a narrow scope is unknown, not metadata approval (417.989834ms)
+✔ missing/unsafe/nonexistent scopes and absent target never turn green (699.7885ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-mvfn4r/T01
+ * branch            7a75a37dcb82c72487258fb1e946ab7d2bc04d41 -> FETCH_HEAD
+✔ main ancestry survives unrelated main metadata commits without owner status rewrites (678.645ms)
+✔ scope-tree integration requires existing target and no omitted new implementation (944.760041ms)
+✔ registry sources have unique valid identities and bounded canonical Web platform paths (0.45925ms)
+✔ executable files under docs are not silently treated as metadata (735.53475ms)
+✔ top three never hide other active work, while historical missing summaries stay in history (7.85775ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-0Wf00s/T01
+ * branch            310dd2da17660810997edacb4466e4a12e957430 -> FETCH_HEAD
+✔ historical main ancestry cannot approve later implementation changes, deletions or dirty paths (2019.735541ms)
+✔ global phase comes only from the explicit short phase source (248.482417ms)
+✔ one matching task target starts one comparison; a second snapshot performs fresh reads (887.363166ms)
+ℹ {"phase":"same-target","gitStarts":24,"targetComparisons":1}
+✔ different review target is still independently compared and can invalidate approval (1076.714166ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (1277.561042ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (809.461208ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8838.708666
