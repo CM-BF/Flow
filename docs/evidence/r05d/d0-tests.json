@@ -1,0 +1,11 @@
+{
+  "command": "pnpm exec vitest run apps/runner/src/native-harness/codex/launch.test.ts apps/runner/src/configuration.test.ts apps/runner/src/execution-profiles.test.ts apps/runner/src/native-harness.test.ts apps/runner/src/main.test.ts",
+  "exitCode": 0,
+  "source": "direct process stdout/stderr",
+  "elapsedSeconds": 5.617,
+  "selectedFiles": 4,
+  "selected": 50,
+  "passed": 50,
+  "failed": 0,
+  "unselectedExplicitPath": "apps/runner/src/main.test.ts (does not exist; actual main-concurrency consumer checked separately)"
+}

@@ -2,24 +2,27 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:02:13 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:07:27 UTC |
 | Plan | [plan.md](plan.md) |
-| 所属大task | [FLOW-002](../flow-002-provider-harness/plan.md) |
+| 任务层级 | 子task |
+| 所属大task | [FLOW-002](../../../plan-status-review/plans/flow-002-provider-harness/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch |
 | Branch | codex/codex-native-launch |
-| 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / 首合同待提交 |
-| 工作树dirty状态 | 自己的初始计划/Interface；未改产品 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN：初始合同，依赖bootstrap前不测试 |
+| 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / D0 ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4；后续仅metadata |
+| 工作树dirty状态 | D0四源码固定冻结；仅本scope evidence/status更新 |
+| 工作分支状态 | in-review |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4：72不同检查；bootstrap离线frozen成功；root noEmit exit0 |
 | 已集成main状态 / HEAD | R05D未集成；基线f181d84包含独审R05C/S01 |
+| 实现目标 | ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4 |
+| 实现范围 | apps/runner/src/configuration.ts, apps/runner/src/configuration.test.ts, apps/runner/src/native-harness/codex/launch.ts, apps/runner/src/native-harness/codex/launch.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 正在把原生启动配置接入既有宿主，先明确受信依赖与未支持行为 |
-| 下一可用交付 | 显式小配置的校验和注入检查，保持旧Claude与并发行为 |
-| 当前阻塞 | NONE；配置合同可先行，生产接线等待共享启动证据 |
+| 当前产出 | 显式原生配置与受信依赖组合已验证，默认不会启动Codex；等待独审 |
+| 下一可用交付 | 集成已验证的配置片段；生产启动另作后继 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 | Claim | 47a23186-9f73-4032-bb76-d31ab5bf442c v1；5源码+plans/docs，main.ts尚未领取 |
@@ -28,8 +31,10 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | R05D-01 | completed | native_center_owner | [claim](../../docs/evidence/r05d/claim.json)、[Interface](../../docs/evidence/r05d/interface.md)，R05C release v2 |
-| R05D-02 | in-progress | native_center_owner | 严格配置与factory接缝；无默认原生executable |
+| R05D-02 | completed | native_center_owner | 固定ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4；[manifest](../../docs/evidence/r05d/d0-fixed-manifest.json)，72检查/root types0 |
 | R05D-03 | pending | native_center_owner | S01 main.ts移交/Mika R06 recipe与自然通知证据待固定 |
-| R05D-04 | pending | native_center_owner | 独审/集成未开始 |
+| R05D-04 | in-progress | native_center_owner | D0固定证据待独审；03后继不混入本片 |
 
 本status唯一手填事实源；等待Lead登记权威source并聚合。0真实app-server/auth/provider。R05C已main，仅后继保留release回执，不再修改旧scope。
+
+限制：D0只有显式小配置/注入factory构造；main.ts未领取未修改，真实recipe/通知兼容未证明，03保留独立后继。D0冻结后按Lead优先级转ENG-001零模型通路，不因本后继等待而闲置。
