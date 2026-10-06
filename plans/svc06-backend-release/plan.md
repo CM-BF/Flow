@@ -54,3 +54,5 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 ## 已实现的最小闭包准备（2026-10-06 15:16 UTC）
 
 新[纯Interface](../../docs/evidence/svc06/closure-interface.md)固定于 `87dc292ae2dc8c1357f074ec7bddd41de20108d8`，仅选择/安装投影/CAFS索引身份与去重；正式builder、parser与实际安装仍未接。原锁/12直接输入无变。7个小用例通过，真实固定lock选择256/683；不把它视为physical收益或完整产物。SVC06-03/04/05继续open；本片独审待安排，不改旧个人服务。
+
+2026-10-06 15:20 UTC：新87dc纯模块已独立批准并进入integration，来源与范围见[review](review.md)。不完成03/04/05，后继接线/安装仍受原资源条件约束。

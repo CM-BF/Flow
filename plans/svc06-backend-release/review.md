@@ -1,10 +1,12 @@
 # SVC06 Review
 
-当前片段状态：NOT_STARTED
+当前片段状态：APPROVED（仅纯闭包选择与暂存配置）
 
 Review target commit: `87dc292ae2dc8c1357f074ec7bddd41de20108d8`
 
-新增纯选择器 / cache plan / installation view 待独立审查；[manifest](../../docs/evidence/svc06/closure-manifest.json)绑定6源码/12直接输入/新原始输出。7/7纯测试与固定锁选择只由作者运行，未做安装/fullbuild/PG/provider。下文为已完成保护片历史独审，不继承给本片。
+新增纯选择器 / cache plan / installation view 已由 Execution Lead 独立只读批准；[manifest](../../docs/evidence/svc06/closure-manifest.json)绑定6源码/12直接输入/新原始输出。7/7纯测试与固定锁选择只由作者运行，未做安装/fullbuild/PG/provider。下文为已完成保护片历史独审，不继承给本片。
+
+独立回执：[closure-independent-review.json](../../docs/evidence/svc06/closure-independent-review.json)。15:19:40 UTC，reviewer astra_ultra_execution_lead / gpt-6-astra；6source/12inputs/23raw固定与current完全一致，全文审查、无blocking、未重跑。批准仅纯模块；正式parser/pnpm安装接受/物理峰值/可运行artifact均不在内。
 
 ## 历史保护片批准
 

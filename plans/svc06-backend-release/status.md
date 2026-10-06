@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:16 UTC；main 接收保留14:54观察 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:20 UTC；main旧保护片接收保留14:54观察 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -13,18 +13,18 @@
 | 工作基线 / HEAD | 原基线 280289008a5a3779e4e5e6453181b96062ed9514；本片 base 91402e174022b7568aa21ce2ddfcb69932e111bd；源码 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
 | 工作树dirty状态 | 产品源码已固定停写；当前仅自身证据与计划收尾，最终 clean/push 由 Git 核验 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
 | 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/installation-view.mjs, tools/personal-preview/backend-release/cache-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/cache-plan.test.mjs, docs/evidence/svc06/closure-observe.mjs |
 | 检查状态 | PASSED 87dc292ae2dc8c1357f074ec7bddd41de20108d8：新纯模块 7/7、语法6/6，固定锁只读选择256/683；0安装/fullbuild/PG/provider |
 | 已集成main状态 / HEAD | 已接收 cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8；观察 main/origin d679444c4bed52bbd53d38f4944f914b30fbbd92，6d276 与 185e 均祖先、14 源码零差；[main-receipt](../../docs/evidence/svc06/main-receipt.json)。个人 runtime/Web 未操作 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已完成后台依赖选择与安装配置校验的小模块，正在独立审查；旧启动保护已在主线 |
-| 下一可用交付 | 接入固定解析器后，在空间满足时验证真实离线依赖产物 |
+| 当前产出 | 后台依赖选择与安装配置校验已独立审查通过，待接收；旧启动保护已在主线 |
+| 下一可用交付 | 接收纯模块后，接入固定解析器并在空间满足时验证真实离线产物 |
 | 当前阻塞 | ACTIVE: 完整构建仍需至少2.5 GiB可用空间并保留1 GiB收尾；正式解析器和builder接线待共享依赖，纯模块不受阻 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED 87dc292ae2dc8c1357f074ec7bddd41de20108d8（新选择器）；旧6d276保护片批准与main接收保留 |
+| Review | [review.md](review.md)，APPROVED 87dc292ae2dc8c1357f074ec7bddd41de20108d8（纯选择器限定）；旧6d276保护片批准与main接收保留 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v4，9 literal scopes；见 amend-receipt.json |
 | 架构影响 | 新增私有纯 dependency/cache plan 与 staging投影 Interface；尚未接入builder。固定架构图由 Execution Lead 在模块接收后按实际接线范围更新 |
 
@@ -53,3 +53,7 @@
 ## 闭包选择器固定交付（2026-10-06 15:16 UTC）
 
 87dc292ae2dc8c1357f074ec7bddd41de20108d8：7个不同纯行为用例（分轮重复不累计），固定原锁通过系统测试parser只读选择256/683 snapshots、5workspace+根tsx。12个直接输入逐字保持。安装配置/CAFS仅纯规划，不安装、不clone、不改旧builder；正式YAML及builder接线仍后继。证据：[closure-manifest](../../docs/evidence/svc06/closure-manifest.json) / [Interface](../../docs/evidence/svc06/closure-interface.md)。本片 NOT_STARTED 独审，与旧6d276已main分开。
+
+## 纯模块独审收口（2026-10-06 15:20 UTC）
+
+Execution Lead 独立只读 APPROVED `87dc292ae2dc8c1357f074ec7bddd41de20108d8`；[原回执](../../docs/evidence/svc06/closure-independent-review.json)核6source/12inputs/23raw精确字节与hash，全文阅读，0重跑/provider。当前仅本纯片段 integration；正式YAML/parser、builder接线/安装和完整artifact仍open，2.5GiB与1GiB资源限制不变。源码停止写入，claim v4保留。

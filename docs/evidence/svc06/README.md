@@ -54,3 +54,7 @@
 新源码 `87dc292ae2dc8c1357f074ec7bddd41de20108d8`，见 [Interface](closure-interface.md) / [manifest](closure-manifest.json)。7个不同 Node测试最终7/7，6文件语法通过；旧保护8观察未重跑。原失败 `closure-red` / `closure-view-red` / `closure-cache-red` 保留。fixed lock观察用系统Ruby/Psych仅测试转换，已核锁前后同字节；256/683 snapshots、5workspace+根tsx，未读全部缓存或安装。单个既有cache index只核模式字段，不当cache闭包验证。
 
 本片6源码、12原输入与完整新raw固定；无正式parser依赖、无builder接线或fullbuild通过。源码/证据/文档新增很小，2.5GiB与1GiB门槛不变。新review待审，原6d276独审/主线接收未被改写。
+
+## 纯模块独审（2026-10-06 15:20 UTC）
+
+[独立回执](closure-independent-review.json)批准87dc纯Module，核6+12+23绑定，无finding、无重跑。原closure-manifest的NOT_STARTED为作者封存时事实，未改原manifest/raw。当前待main接收；未变成正式parser/filtered install/fullartifact成功。
