@@ -1,6 +1,6 @@
 # Current C fd v3 combination review
 
-State: NOT_STARTED. Source3636614f3850d7eb9ca63a42c01ea0d95df19db2; [candidate](../../docs/evidence/wpf-mature-02/fd-canary-v3/README.md), new input/manifest. Fixed control-socket→profile-regular only; parent fd identity and child observation separate; automatic compiler inventory inside runtime clock. Final28/28 selected,16unselected,9new+19direct; inert Node24 import/3syntax0. Actual compile/targets0, no runtime authorization. Prior result approvals below are historical snapshots.
+State: APPROVED, architecture_read/gpt-6-astra,2026-10-06 11:38:34 UTC,0P1/P2; Mika accepted. Targeta10b4faedb151805674272e28795fca188639e31/source3636614f3850d7eb9ca63a42c01ea0d95df19db2. [Candidate and fixed bindings](../../docs/evidence/wpf-mature-02/fd-canary-v3/README.md); [new GO request](../../docs/evidence/wpf-mature-02/fd-canary-v3/approval-window-request.md). 31repo Git/WT/SHA/bytes+6external actual hashes,8frozen inputs,30prepared122648B andbaseline101617/131072B verified. Source unchanged after preliminary review;28selected/16unselected,inert Node24 import/3syntax0. v2 41tracked=6b; no new reservation/result/raw. Reviewer reran nothing. Approval covers source/recipe only; current runtime authorizationNONE. NewGO must explicitly accept60s automatic runtime evidence/cleanup/result/CLI, manual review/Git outside time butarchive bytes inside tail.
 
 # Current C fd v2 result review
 
