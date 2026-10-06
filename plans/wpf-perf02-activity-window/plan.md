@@ -1,6 +1,6 @@
 # WPF-PERF02 Activity 有界显示窗口
 
-创建/更新：2026-10-06 03:33 UTC；状态 in-progress。唯一 owner w01_owner，模型派发 gpt-6-astra / ultra；本运行系统身份 GPT-6，派发配置来自协调器。输入 `cc33403cd9b357fcd85484b7bc6952dc1220d689`（已审 PERF01，固定 M02 产品基线，非 I01/CHAT 最终产品）。
+创建/更新：2026-10-06 03:33 UTC；状态 completed（branch；main集成另证）。唯一 owner w01_owner，模型派发 gpt-6-astra / ultra；本运行系统身份 GPT-6，派发配置来自协调器。输入 `cc33403cd9b357fcd85484b7bc6952dc1220d689`（已审 PERF01，固定 M02 产品基线，非 I01/CHAT 最终产品）。
 
 ## 授权与目标
 
@@ -34,6 +34,6 @@ PERF01 真实生产 fixture 每场 10040 条记录同时渲染约 7 万 DOM。�
 - [x] **WPF-PERF02-01** 固定已审输入、claim转交、独立worktree与本 canonical。
 - [x] **WPF-PERF02-02** 实现有界 Activity、稳定锚点与焦点，保留全量数据。
 - [x] **WPF-PERF02-03** 完整性/交互/主题及同方法生产测量，保存失败/clean-code/限制。
-- [ ] **WPF-PERF02-04** 固定target独立review、修复、Lead交付；main集成另证。
+- [x] **WPF-PERF02-04** 固定target独立review、修复、Lead交付；main集成另证。
 
 架构影响：仅 Web 现有 Activity 渲染内部新增深模块；公共Interface/数据库/外部依赖不变。最终target交Lead判断架构图更新入口，不改未领架构文件。

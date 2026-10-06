@@ -1,6 +1,6 @@
 # PERF02 Activity 窗口候选证据
 
-实现 `a87f64f48a3b7e8d03429ab0673c210076a2df0d`；base `cc33403cd9b357fcd85484b7bc6952dc1220d689`。作者13 tests/typecheck、8功能browser与smoke+3正式矩阵全部通过；独立审查尚待正式结论。
+实现 `a87f64f48a3b7e8d03429ab0673c210076a2df0d`；base `cc33403cd9b357fcd85484b7bc6952dc1220d689`。作者13 tests/typecheck、8功能browser与smoke+3正式矩阵全部通过；独立审查 **APPROVED** target `a87f64f48a3b7e8d03429ab0673c210076a2df0d`；[范围和实际独立检查](../../../plans/wpf-perf02-activity-window/review.md)，main未集成。
 
 - [性能结果与全部限制](results.md)、[原始汇总](summary.json)、[协调窗口](measurement-window.json)。
 - [浏览器](window-browser.json)：8组实际普通production功能行为，Chrome154，动态HTTP fixture，无模型调用。
