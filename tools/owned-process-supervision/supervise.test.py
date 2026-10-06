@@ -128,7 +128,7 @@ print(child.pid,flush=True)
                 raise PermissionError(errno.EPERM, 'secret observation detail')
             return real_killpg(pid, action)
         with patch.object(MODULE.os, 'killpg', forbidden_observation):
-            result = supervise(launch('import time; time.sleep(20)', Ownership.NEW_CHILD_SESSION), policy(work=.1))
+            result = supervise(launch('import time; time.sleep(20)', Ownership.NEW_CHILD_SESSION), policy(work=.1, term=.03))
         try:
             self.assertEqual(result.first_failure['code'], 'DEADLINE_EXCEEDED')
             self.assertEqual(result.owned_state, 'unknown')
