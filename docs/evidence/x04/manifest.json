@@ -1,0 +1,158 @@
+{
+  "target": "fa2d872d718bf47c3442a4eb3ca9aefcda7d1570",
+  "base": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "dependencyInput": "9cde2414078201802db03c00888175aa776651a7",
+  "author": "assignment_review / gpt-6-astra",
+  "checks": {
+    "distinctPassed": 13,
+    "latestStdout": "docs/evidence/x04/final-evidence-tests.txt",
+    "typecheck": "docs/evidence/x04/final-evidence-typecheck.txt",
+    "typecheckExit": 0,
+    "modelQueries": 0
+  },
+  "sources": [
+    {
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056",
+      "gitBlob": "3465dd26fabc1eadbf1362f4b703c6ad26135a2c"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/artifacts.test.ts",
+      "bytes": 6548,
+      "sha256": "74a1b6605f3b6739a038360c65fbd5126b6ba992061ed70f271c7ff6927bef3a",
+      "gitBlob": "001aa448ab0225426d438d2087513d5a734f9ff7"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/errors.ts",
+      "bytes": 1068,
+      "sha256": "be3220467a00447b49c750220a241121a58e3316641cfdbb75fd2b4fdf0264b2",
+      "gitBlob": "147ef9dd06a0b7b3e7afea6263692bf75a8323fd"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "bytes": 2619,
+      "sha256": "6335931d2999c3a6581452e0a8e831a969518dd2adcab972b91870cdd0d9ed61",
+      "gitBlob": "1a4d61a60b5494d78e71f87375b1a6caeef39c5f"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/input.ts",
+      "bytes": 2989,
+      "sha256": "4e07ac7a31b9abe6ceb3508968eed5ab9948963d411223615d6231846e5bbb61",
+      "gitBlob": "6d8cfa47f485028b3de15d55a1546d619c427732"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/registry.test.ts",
+      "bytes": 9795,
+      "sha256": "f0cd9c5be9ae82d2d0a1c7d2bf93bddece00f09dac796ae553ca5b2e7c9e7abe",
+      "gitBlob": "17898af40b98eaa3f5529b3f492b80f7aaefb66c"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/source.ts",
+      "bytes": 4093,
+      "sha256": "7a21055545d84ea3bcc2f18fa5d78489404dcc06f7a3f3be1af7413db848dd2d",
+      "gitBlob": "847bb340eae1344b387d2f021ecd57429349dbef"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "bytes": 4464,
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2",
+      "gitBlob": "10ae660afe8b55675adb7cf12e7ca6b8b531cbeb"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/x04/claim-receipt.json",
+      "bytes": 677,
+      "sha256": "2b66dbedd83a30aef3377270e44a7c19e57c90ef13c6380da36e7723b6367205"
+    },
+    {
+      "path": "docs/evidence/x04/final-evidence-tests.txt",
+      "bytes": 400,
+      "sha256": "15779c4b70ae9df12c75bf5363d8028752277e8c43f708dfd9fe371826f5dd8d"
+    },
+    {
+      "path": "docs/evidence/x04/final-evidence-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x04/final-tests.txt",
+      "bytes": 401,
+      "sha256": "52bcdc61af4b00d2aba40384a0b393c7e8894723c2b1d5eaf97515fb0bc0d6c0"
+    },
+    {
+      "path": "docs/evidence/x04/final-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x04/first-module.txt",
+      "bytes": 326,
+      "sha256": "681923111b0e27e16917becc8b2d5c0aa59c523e5109ff4085558dec9a5a0685"
+    },
+    {
+      "path": "docs/evidence/x04/first-registry.txt",
+      "bytes": 4176,
+      "sha256": "df2b3e26c0aa5695e9685bd222c82a164faa118572bcebb73e1abcffc275b088"
+    },
+    {
+      "path": "docs/evidence/x04/first-typecheck.txt",
+      "bytes": 841,
+      "sha256": "d4e7775ab3bb0c7b31b64ab3f17018967e5498e6a6543d65c73061218240e21e"
+    },
+    {
+      "path": "docs/evidence/x04/install.txt",
+      "bytes": 310,
+      "sha256": "dda772e8ecb200f4bcbced8b51260aeeabc55916faa5f955dbc3c43e150a05fc"
+    },
+    {
+      "path": "docs/evidence/x04/red-input.txt",
+      "bytes": 877,
+      "sha256": "b2ae182e45d3f529058f709eecf56678765ebffcc60aec2a8447c358bfd3271b"
+    },
+    {
+      "path": "docs/evidence/x04/registry-facts.json",
+      "bytes": 2353,
+      "sha256": "29ec5835510c0d35b7da66a1b0d0b48b14cd4c9bd85a2e32947d4d42a159b29c"
+    },
+    {
+      "path": "docs/evidence/x04/second-registry.txt",
+      "bytes": 3105,
+      "sha256": "e4e35779c349440861704074bebd1a93952aaa577b4887aa75547b52c6d5da74"
+    },
+    {
+      "path": "docs/evidence/x04/second-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x04/third-registry.txt",
+      "bytes": 400,
+      "sha256": "528d92f3b910d5345793743acfa267c1f19a14b77c702f7b2ef16fed8169b640"
+    },
+    {
+      "path": "docs/evidence/x04/versions.json",
+      "bytes": 222,
+      "sha256": "c224128f71ada9e8ba201cd8d71f3cc31c3e800b259cc4f839a9f2068a2e8141"
+    }
+  ],
+  "limitations": [
+    "no installation/extraction/execution or production registry binding",
+    "cooperative deadline, not hard OS/API timeout",
+    "post-rename cleanup failure may leave committed artifact; operation/list recovery not implemented"
+  ],
+  "independentReview": {
+    "decision": "APPROVED",
+    "reviewer": "Execution Lead / gpt-6-astra",
+    "target": "fa2d872d718bf47c3442a4eb3ca9aefcda7d1570",
+    "recordedAt": "2026-10-06 06:17 UTC",
+    "reviewedManifestSha256": "fd8350cb62732b54d0dabf99356e4743d38ea38bffd7ae0b308db226e2160683",
+    "sourceCount": 8,
+    "outputCount": 15,
+    "mismatches": [],
+    "reranTests": false,
+    "modelQueries": 0,
+    "findings": []
+  }
+}

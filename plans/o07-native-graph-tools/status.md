@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 06:04 UTC |
+| 最近更新 | 2026-10-06 06:15 UTC |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools |
 | Branch | codex/native-graph-tools |
@@ -25,12 +25,14 @@
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| O07-01 | complete | assignment_review | v4保留21literal；已移交claude.ts和contracts/runner.ts给CHAT05 |
-| O07-02 | complete | assignment_review | SDK真实MCP恰好2工具；profile/internalpurpose/受理/019 |
-| O07-03 | complete | assignment_review | 既有runtime/loop/outbox/cancel/final复用；私有executionInput保持 |
-| O07-04 | complete | assignment_review | 67不同检查、原始wire与升级JSON，见证据报告 |
+| O07-01 | completed | assignment_review | v5保留20literal；已移交claude.ts和contracts/runner.ts给CHAT05 |
+| O07-02 | completed | assignment_review | SDK真实MCP恰好2工具；profile/internalpurpose/受理/019 |
+| O07-03 | completed | assignment_review | 既有runtime/loop/outbox/cancel/final复用；私有executionInput保持 |
+| O07-04 | completed | assignment_review | 67不同检查、原始wire与升级JSON，见证据报告 |
 | O07-05 | in-progress | assignment_review | clean-code与Root独立review通过，等待main接收 |
 
-claim `255d6fc3-58cb-494f-ac28-7e3f5d5d8192` v4，[移交回执](../../docs/evidence/o07/chat05-scope-amend-receipt.json)。2026-10-06 06:02:41 UTC 已停止并移出 apps/runner/src/claude.ts 与 packages/contracts/src/runner.ts，其余claim保留至集成/必要回修。 [报告/复跑/边界](../../docs/evidence/o07/README.md)、[manifest](../../docs/evidence/o07/manifest.json)。普通node grant未扩权；测试中query transport为注入，实际MCP/HTTP/PG为真；无native模型/NL/真实child/Web/现服务操作。父O01/U11产品后继仍open。
+claim `255d6fc3-58cb-494f-ac28-7e3f5d5d8192` v5，[CHAT05移交回执](../../docs/evidence/o07/chat05-scope-amend-receipt.json)。2026-10-06 06:02:41 UTC 已停止并移出 apps/runner/src/claude.ts 与 packages/contracts/src/runner.ts，其余claim保留至集成/必要回修。 [报告/复跑/边界](../../docs/evidence/o07/README.md)、[manifest](../../docs/evidence/o07/manifest.json)。普通node grant未扩权；测试中query transport为注入，实际MCP/HTTP/PG为真；无native模型/NL/真实child/Web/现服务操作。父O01/U11产品后继仍open。
 
 架构影响：专属goal-graph-tools profile经host持有的两工具SDK桥接调用O06授权公共接口，node/graph共享authority与权限策略，019前进扩mode；未新增agent loop。固定target c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5，工程dashboard架构基线更新登记给Execution Lead，待实际集成后更新。
+
+2026-10-06 06:14:34 UTC：apps/server/src/runners.ts 对 c224 零diff，明确停止写入并从claim v5移出供K03；[回执](../../docs/evidence/o07/k03-scope-amend-receipt.json)。其余范围保持；未重测。

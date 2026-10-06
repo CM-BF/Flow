@@ -1,0 +1,63 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/package-artifacts
+
+ ❯ apps/server/src/package-artifacts/registry.test.ts (5 tests | 1 failed) 105ms
+   ✓ real pacote stores the exact tarball without npmrc credentials, extraction or install scripts 55ms
+   ✓ real pacote corruption retry receives a fresh file and independently verifies the successful body 26ms
+   ✓ rejects cross-origin metadata and redirect targets before any target request 8ms
+   ✓ rejects changed-path redirects and metadata redirects without requesting their targets 6ms
+   × metadata byte ceiling, tarball ceiling and total deadline bound real network reads 11ms
+ ✓ apps/server/src/package-artifacts/artifacts.test.ts (6 tests) 231ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/package-artifacts/registry.test.ts > metadata byte ceiling, tarball ceiling and total deadline bound real network reads
+AssertionError: expected PackageArtifactError: Package artifact op… { code: '…' } to match object { code: 'TOO_LARGE' }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "TOO_LARGE",
++ PackageArtifactError {
++   "code": "STORAGE_FAILED",
+  }
+
+ ❯ apps/server/src/package-artifacts/registry.test.ts:123:5
+    121|     const opts = { ...settings(root, url), timeoutMs: mode === 'timeou…
+    122|       metadataBytes: mode === 'metadata' ? 100 : 1024, maxBytes: mode …
+    123|     await expect(fetchPackageArtifact(opts, inputFor(body))).rejects.t…
+       |     ^
+    124|       code: mode === 'timeout' ? 'TIMEOUT' : mode === 'same-url-loop' …
+    125|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x04-registry-LNeJta/staging/fetch-DCwbV9/cache/tmp/968575e3-fc82-4077-bb61-3a5858e89561' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x04-registry-LNeJta/staging/fetch-DCwbV9/cache/content-v2/sha512/cc/f6/d68522d54b0a346590bdde79a5baaed386efb538ffd01977c40d8ec22d5eeb16ef8f0d75a34420d73665db8bd9f8c49561ba72c85dd4a84af78139fd8ad2'
+ ❯ Object.rename node:internal/fs/promises:1490:10
+ ❯ moveFile node_modules/.pnpm/@npmcli+fs@5.0.0/node_modules/@npmcli/fs/lib/move-file.js:30:5
+ ❯ node_modules/.pnpm/cacache@20.0.4/node_modules/cacache/lib/content/write.js:173:9
+ ❯ handleContent node_modules/.pnpm/cacache@20.0.4/node_modules/cacache/lib/content/write.js:106:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { errno: -2, code: 'EEXIST', syscall: 'rename', path: '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x04-registry-LNeJta/staging/fetch-DCwbV9/cache/tmp/968575e3-fc82-4077-bb61-3a5858e89561', dest: '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x04-registry-LNeJta/staging/fetch-DCwbV9/cache/content-v2/sha512/cc/f6/d68522d54b0a346590bdde79a5baaed386efb538ffd01977c40d8ec22d5eeb16ef8f0d75a34420d73665db8bd9f8c49561ba72c85dd4a84af78139fd8ad2' }
+This error originated in "apps/server/src/package-artifacts/registry.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "metadata byte ceiling, tarball ceiling and total deadline bound real network reads". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 10 passed (11)
+     Errors  1 error
+   Start at  23:10:19
+   Duration  1.10s (transform 93ms, setup 0ms, import 572ms, tests 336ms, environment 0ms)
+
