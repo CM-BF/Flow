@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 4ba20/20保旧范围；原owner1b8/f297材料完整性/顺序窄审SOURCE_ADDRESSED，27direct/browser NOT_RUN；原06-05新增installed core stop/cancel来源研究 |
-| 下一可用交付 | 1b8两材料源码finding已闭合，仍需原预算/fresh窗口行为验证；语音停止必须等待final、取消失效旧lease，沿原REQ45后继，不占当前Recovery范围 |
+| 下一可用交付 | 1b8两材料源码finding已闭合；[27direct只读材料](../../docs/evidence/web-platform/recovery01-1b8-direct-readiness/report.md)已备，旧2498入口待按实际0eef/19hash重绑；原27.460秒与fresh资源窗口仍必需，当前NOT_RUN |
 | 当前阻塞 | ACTIVE: 2498定向行为与真实IDB/HTTP/browser待资源及中心三语义门槛；轻源码可继续，当前无测试窗口 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |

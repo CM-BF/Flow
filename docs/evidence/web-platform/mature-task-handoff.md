@@ -23,6 +23,8 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
+**Recovery27 direct 只读材料 READY_NOT_RUN**：[报告](recovery01-1b8-direct-readiness/report.md) / [19源、原21claim与既有入口绑定](recovery01-1b8-direct-readiness/readiness.json)，合14,882B。实现1b8/current metadata0eef clean，原6ffv4唯一writer；旧2498 runner/config/sandbox实际存在且未运行，但preflight必须按实际metadataHEAD和19hash重绑。Node24.20/Vitest4.0.18/52个既有只读links已核身份，无install/import。原direct30s已用2.540、余27.460，work≤22.460+cleanup≥5；start1,107,296,256B/stop1,090,519,040B与A相同，tmp8MiB/log2MiB/500ms。A2已不足，故不再为direct采一次或降门槛；0gate/0run/0新space，等真实外部资源/窗口变化，RELEASE优先并串行。
+
 **历史1a7 source HOLD（已由顶部2691闭合），该时点未签gate**：[root1a7正式源审](release03-1a7-source-review-root.json)为 **CHANGES_REQUESTED_P1_DETAIL_CONTRACT_MISMATCH / RELEASE1A7-P1**：真实ConversationContextDetail被送入reference response schema，缺必需executionInputId/digest会导致harness错误红；原W01四scope最小修正并固定复审。target1a7 / metadataa92cb7此前双端clean；[管理gate接缝报告](release03-gate-schema-review/report.md)只确认可提供字段，绝不是源审通过。previousRuntimeMs=3,874，backend.metadata只取root独立af51精确13项，未来B sourceCommit取真实A sources.head（metadataHEAD），实施target另绑定；cleanup无marker字段、旧红raw缺新字段绝不回填。目前没有成功A可签，余176.126秒/8MiB不重置，0新运行/space/allowRun。
 
 **Recovery1b8源码安全点，未行为通过**：owner报告impl1b8a335ecf26ece7539ad19e634508ac12ca3729 / metadataf29751812090f85d5d01a4c67a4bdca09566ec85已push/clean，五源修完整current draft门禁/保存顺序，其余14源对02d相同；[root窄审](recovery01-1b8-material-source-review-root.json)结合[W01独立八源审查](recovery01-1b8-material-source-review-peer/report.md)确认M1/M2 SOURCE_ADDRESSED、0新增blocking。27direct/types/browser NOT_RUN，旧4ba20/20只保原范围，formal review仍NOT_STARTED，types7.186/direct27.460余额不变。原21/6ffv4未amend，本段不开放运行窗口。

@@ -20,13 +20,18 @@
     "evidence": "release03-a2-not-run-intake.json"
   },
   "recoveryDirect": {
-    "state": "PREPARATION_ONLY_NO_RUN_NO_RESOURCE_SAMPLE",
+    "state": "READY_NOT_RUN_EXISTING_ENTRY_REBIND_REQUIRED",
     "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
     "metadata": "0eef4cda8813afe336df8dc88256da28e206c0d4",
     "cases": 27,
     "remainingMs": 27460,
     "startBytes": 1107296256,
-    "stopBytes": 1090519040
+    "stopBytes": 1090519040,
+    "materials": "recovery01-1b8-direct-readiness/readiness.json",
+    "workMs": 22460,
+    "cleanupReserveMs": 5000,
+    "sameStartThresholdAsA": true,
+    "newSpaceSamples": 0
   },
   "groupWindowOwnership": "RETURNED_TO_LEAD; no PG/Chrome/direct window held by this group; Recovery prep only",
   "registry": "Lead latest inbound reports mainfb9fe5e7/dashboard162; prior fixed d679 registry verified by manager. No new4320GET/reload.",
