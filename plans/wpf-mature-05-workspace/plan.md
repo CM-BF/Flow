@@ -41,3 +41,5 @@
 现App tabs.map在groups.map内，跨group移动即使View.key同也可能remount，未来A|B合并/交换/resize需实际验证composer草稿、scroll、知识/附件选择、unknown receipt；不能只测纯reducer。持久仅版本化有界结构/相对比例/view refs，不存token；reload身份另核，未知ID占位不后台遍历conversation。现stream连接预算最多2读取lease、8cachedturn/4MiB（pane4turn/2MiB），3+pane须测公平前进/隐藏释放，不能解开UI上限就声称全部实时，A|B不需改host。原slot手动focus/Enter激活避免方向键触发批量按需读。React官方preserving-and-resetting-state支持tree位置推断，本轮无实测失败；来源https://react.dev/learn/preserving-and-resetting-state 与https://www.w3.org/WAI/ARIA/apg/patterns/tabs/ 。
 
 实际插件入口覆盖见[root固定main80ba只读研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，沿REQ22–23/WPF-001-05；未browser复现或实施，不扩大STEIRI写权。
+
+规模验收补充（GO/root固定0b0源码观察，未browser复现）：大量反复开关后DOM/读缓存/订阅有明确上限，草稿/附件选择/unknown receipt不丢；关视图不cancel、重开恢复固定会话。visible/hidden/closed-clean/closed-protected生命周期和受保护满额拒新开见[既有研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，关联MATURE06-04；不把stream/activity已有预算当整个workspace已有限，不新增大task或提前占App。

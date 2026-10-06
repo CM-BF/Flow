@@ -180,3 +180,9 @@ GO新增DPERF预算已写WPF-001-33与[原proposal](dperf02-proposal.json)：附
 ## MATURE06-04 会话登录恢复接口研究补充（root只读，2026-10-06）
 
 固定当前接口Web README27/App1000–1040仅内存client；client HTTP33/477与SSE450均Bearer，server/index124–135区分owner/runner。后继中心小Interface需覆盖HTTP+SSE同一auth，保CLI/runner Bearer；错误Bearer不能被cookie fallback洗成owner。候选opaque session由服务端expiry/revocation、登录轮换ID；前端只留非秘密中心/会话选择。sessionStorage/关闭浏览器不等可靠过期；HttpOnly仍能被同源JS借权发请求，SameSite不能代替Origin/CSRF。cookie host-only不隔离端口、Path也非安全边界，127.0.0.1多port不能仅改名字/centerId宣称隔离。先定义HTTPS同源受信部署，loopback/跨origin/proxy另做真实浏览器矩阵。研究未读凭据/登录/服务操作，不提前改auth。来源为root已读[MDN会话](https://developer.mozilla.org/en-US/docs/Web/Security/Authentication/Session_management)、[Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie)、[RFC6265§8.5](https://www.rfc-editor.org/rfc/rfc6265#section-8.5)。
+
+## 10:37 UTC 固定后继输入
+
+Lead已正式接收TUI01B：main0cee7556（完整SHA待消费preflight读），impldc7f3e186ee7a628187f82734db73f48866b9f6e，metadata52d3；9source/root types沿Lead回执，70不重跑。公共interface在该main docs/evidence/tui01b/interface.md，FlowClient create/submit同decoder，v1严格、v2待ATTACH明确扩展。RELEASE01后w01可七literal薄Web消费新树/fresh take，不等附件runtime、不追改RELEASE固定pair。
+
+RELEASE01最终验收补充：新Web须SVC04正式format2固定releaseId，旧双v1只诊断；交精确source/toolchain/releaseId/完整descriptor及原bytes报告，Lead同参数构建descriptor相等才复用报告，不同需重新验证；不把miniWeb或另一产物报告作兼容证明。
