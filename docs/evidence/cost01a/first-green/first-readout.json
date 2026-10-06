@@ -1,0 +1,125 @@
+{
+  "bytes": 1887,
+  "readout": {
+    "kind": "task-usage-readout",
+    "version": 1,
+    "taskId": "0eac37b8-e560-4f65-b104-aaa1668c3f26",
+    "legacy": {
+      "costUsd": 0.02,
+      "costKind": "sdk_estimate",
+      "incomplete": false,
+      "inputTokens": 10,
+      "outputTokens": 4
+    },
+    "breakdown": {
+      "uncachedInputTokens": {
+        "value": 10,
+        "knownSubtotal": 10,
+        "knownSamples": 1,
+        "unknownSamples": 0
+      },
+      "cacheReadTokens": {
+        "value": 100,
+        "knownSubtotal": 100,
+        "knownSamples": 1,
+        "unknownSamples": 0
+      },
+      "cacheWriteTokens": {
+        "value": 30,
+        "knownSubtotal": 30,
+        "knownSamples": 1,
+        "unknownSamples": 0
+      },
+      "outputTokens": {
+        "value": 4,
+        "knownSubtotal": 4,
+        "knownSamples": 1,
+        "unknownSamples": 0
+      },
+      "sdkEstimateUsd": {
+        "value": 0.02,
+        "knownSubtotal": 0.02,
+        "knownSamples": 1,
+        "unknownSamples": 0
+      },
+      "providerActualUsd": {
+        "value": null,
+        "knownSubtotal": 0,
+        "knownSamples": 0,
+        "unknownSamples": 1
+      }
+    },
+    "coverage": {
+      "sampleLimit": 1000,
+      "samplesRead": 1,
+      "authoritativeRead": 1,
+      "informationalRead": 0,
+      "hasMore": false,
+      "sourceLimit": 32,
+      "sourcesOmitted": 0
+    },
+    "sources": [
+      {
+        "source": "claude.modelUsage",
+        "model": "model-a",
+        "accounting": "authoritative",
+        "samples": 1,
+        "producerVersion": null,
+        "inputMeaning": "uncached",
+        "coverage": "unverified",
+        "phaseAttribution": "unavailable",
+        "reference": {
+          "package": "@anthropic-ai/claude-agent-sdk",
+          "version": "0.3.290",
+          "coverage": "query-pipeline-excludes-outside-helpers"
+        },
+        "breakdown": {
+          "uncachedInputTokens": {
+            "value": 10,
+            "knownSubtotal": 10,
+            "knownSamples": 1,
+            "unknownSamples": 0
+          },
+          "cacheReadTokens": {
+            "value": 100,
+            "knownSubtotal": 100,
+            "knownSamples": 1,
+            "unknownSamples": 0
+          },
+          "cacheWriteTokens": {
+            "value": 30,
+            "knownSubtotal": 30,
+            "knownSamples": 1,
+            "unknownSamples": 0
+          },
+          "outputTokens": {
+            "value": 4,
+            "knownSubtotal": 4,
+            "knownSamples": 1,
+            "unknownSamples": 0
+          },
+          "sdkEstimateUsd": {
+            "value": 0.02,
+            "knownSubtotal": 0.02,
+            "knownSamples": 1,
+            "unknownSamples": 0
+          },
+          "providerActualUsd": {
+            "value": null,
+            "knownSubtotal": 0,
+            "knownSamples": 0,
+            "unknownSamples": 1
+          }
+        }
+      }
+    ],
+    "caveats": [
+      "producer-version-unrecorded",
+      "phase-attribution-unavailable",
+      "sdk-estimate-not-billing",
+      "input-semantics-source-specific"
+    ]
+  },
+  "replayUnchanged": true,
+  "legacyUnchanged": true
+}
