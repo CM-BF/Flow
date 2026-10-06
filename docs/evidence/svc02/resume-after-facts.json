@@ -1,0 +1,121 @@
+{
+  "observedAt": "2026-10-06T05:40:49.635Z",
+  "operation": "read-only verification after approved single resume",
+  "sourceNow": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "sourceClean": true,
+  "sourceAtStart": {
+    "head": "fb906cb42391971a8b315dbd813f7633927d7265",
+    "dirty": false
+  },
+  "counts": {
+    "tasks": 0,
+    "unfinished_attempts": 0,
+    "nonrevoked_runners": 1
+  },
+  "maintenance": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 3,
+    "state": "accepting",
+    "operationId": null,
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-06T05:40:32.995Z",
+    "stopPermitted": false
+  },
+  "audit": [
+    {
+      "id": "4850bfe6-4237-4640-9587-d136c07d121f",
+      "after": {
+        "state": "draining",
+        "version": 1
+      },
+      "action": "drain",
+      "before": {
+        "state": "accepting",
+        "version": 0
+      },
+      "reason": "Operator requested a local preview update.",
+      "source": "trusted-host",
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "createdAt": "2026-10-06T05:38:40.364Z",
+      "requestId": "1816f45f-57ed-4226-a4a7-74c150f60876",
+      "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+    },
+    {
+      "id": "d75eb2d8-8d52-4648-a943-a7578df55cbd",
+      "after": {
+        "state": "maintenance",
+        "version": 2
+      },
+      "action": "hold",
+      "before": {
+        "state": "draining",
+        "version": 1
+      },
+      "reason": "No active attempts; reserve the local update.",
+      "source": "trusted-host",
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "createdAt": "2026-10-06T05:38:48.158Z",
+      "requestId": "b867720c-2a61-47ac-8e7f-7f06928c4e7b",
+      "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+    },
+    {
+      "id": "26547122-6a4c-407d-846e-42fa2bbd6518",
+      "after": {
+        "state": "accepting",
+        "version": 3
+      },
+      "action": "resume",
+      "before": {
+        "state": "maintenance",
+        "version": 2
+      },
+      "reason": "Operator explicitly resumed the verified local preview.",
+      "source": "trusted-host",
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "createdAt": "2026-10-06T05:40:32.995Z",
+      "requestId": "763156de-0696-4f94-9a0b-72b9f0c6612a",
+      "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+    }
+  ],
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 77104,
+      "pgid": 77104
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 77264,
+      "pgid": 77264
+    },
+    "web": {
+      "identity": "running",
+      "pid": 77304,
+      "pgid": 77304
+    }
+  },
+  "center": {
+    "url": "http://127.0.0.1:61227",
+    "reachable": true
+  },
+  "webUrl": "http://127.0.0.1:61228",
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "databaseOwnership": "owned",
+  "profile": {
+    "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+    "source": "runner-configured",
+    "model": "claude-sonnet-5-5"
+  },
+  "limits": {
+    "maxTurns": 2,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 60000,
+    "scope": "per-query-not-project-total"
+  },
+  "provider": "not-probed",
+  "modelCalls": 0
+}

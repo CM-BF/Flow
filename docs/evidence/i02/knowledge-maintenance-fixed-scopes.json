@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-06T05:36:12.992904+00:00",
+  "integrationHead": "da640521240124e7c72b057744fc485a10c3e9f0",
+  "checks": [
+    {
+      "task": "K01",
+      "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "scopes": [
+        "apps/server/src/knowledge",
+        "packages/contracts/src/knowledge.ts",
+        "packages/storage/migrations/015-knowledge-sources.sql"
+      ],
+      "changed": []
+    },
+    {
+      "task": "SVC02",
+      "target": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+      "scopes": [
+        "apps/server/src/runner-maintenance",
+        "apps/server/src/runners.ts",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/storage/migrations/016-runner-maintenance.sql",
+        "tools/personal-preview"
+      ],
+      "changed": []
+    },
+    {
+      "task": "F01",
+      "target": "59219dbf693964555c075685cf961aa1f9509cf0",
+      "scopes": [
+        "apps/server/src/index.ts",
+        "apps/cli",
+        "packages/client",
+        "packages/contracts/src/index.ts"
+      ],
+      "changed": []
+    }
+  ],
+  "testsRepeated": false
+}

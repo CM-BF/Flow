@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-context
+
+ ❯ apps/server/src/conversation-context/context.test.ts (6 tests | 1 failed | 5 skipped) 919ms
+   ↓ freezes selected text privately while public prompt and bubble remain original
+   ↓ claim rejects mismatched raw input or corrupted digest and rolls back assignment writes
+   ↓ zero-context legacy conversation claims the original prompt without private metadata
+   ↓ enqueue freezes once through restart and automatic promotion despite source update
+   × reconciliation revised-work recompiles frozen context without repeating the old execution input 147ms
+   ↓ reconciliation no-side-effects recompiles frozen context without repeating the old execution input
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/conversation-context/context.test.ts > reconciliation revised-work recompiles frozen context without repeating the old execution input
+AssertionError: expected 200 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 200
+
+ ❯ apps/server/src/conversation-context/context.test.ts:110:212
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  22:50:03
+   Duration  1.33s (transform 212ms, setup 0ms, import 342ms, tests 919ms, environment 0ms)
+

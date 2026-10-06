@@ -1,0 +1,251 @@
+{
+  "turn": {
+    "id": "132570f8-c02f-4917-8866-031f5b6b903c",
+    "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452",
+    "number": 1,
+    "createdAt": "2026-10-06T06:02:20.486Z",
+    "user": {
+      "role": "user",
+      "text": "记住 flow-queue-9326ea64231078bb，现在只回复“已记住”。"
+    },
+    "task": {
+      "id": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+      "title": "记住 flow-queue-9326ea64231078bb，现在只回复“已记住”。",
+      "harness": "claude",
+      "status": "succeeded",
+      "verificationStatus": "passed",
+      "createdAt": "2026-10-06T06:02:20.480Z",
+      "updatedAt": "2026-10-06T06:02:23.703Z"
+    },
+    "assistant": {
+      "state": "available",
+      "role": "assistant",
+      "messageId": "badfdc7a9ab6b5eeb4b087490c3d5c7ee7d5ed2e536a56cc593da586520e423d",
+      "text": "已记住",
+      "truncated": false,
+      "contentRef": {
+        "kind": "detail",
+        "id": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8",
+        "title": "Assistant reply",
+        "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+        "attemptId": "72291dd4-d874-442e-8314-2d8bfe920064"
+      },
+      "source": {
+        "kind": "assistant-final",
+        "source": "claude.sdk.result",
+        "messageId": "badfdc7a9ab6b5eeb4b087490c3d5c7ee7d5ed2e536a56cc593da586520e423d",
+        "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+        "attemptId": "72291dd4-d874-442e-8314-2d8bfe920064",
+        "nativeSessionId": "e7de6e51-6874-4186-a4a0-5af384c81a07",
+        "eventId": "563fcac0-58a9-42da-937f-823fc59df42e",
+        "sourceMessageId": "490eaa3a-dfe5-43c2-a31b-cfe035e85ccc",
+        "contentDigest": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde",
+        "detailId": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8"
+      }
+    },
+    "effective": {
+      "model": "claude-sonnet-5-5",
+      "tools": [],
+      "thinking": "unknown",
+      "permissionMode": "dontAsk",
+      "runnerRequested": {
+        "model": "claude-sonnet-5-5",
+        "thinking": "disabled",
+        "permissionMode": "dontAsk"
+      },
+      "source": {
+        "kind": "assistant-final",
+        "messageId": "badfdc7a9ab6b5eeb4b087490c3d5c7ee7d5ed2e536a56cc593da586520e423d",
+        "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+        "attemptId": "72291dd4-d874-442e-8314-2d8bfe920064",
+        "detailId": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8"
+      }
+    },
+    "telemetry": {
+      "kind": "execution",
+      "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+      "title": "Execution details"
+    }
+  },
+  "task": {
+    "id": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+    "title": "记住 flow-queue-9326ea64231078bb，现在只回复“已记住”。",
+    "harness": "claude",
+    "status": "succeeded",
+    "verificationStatus": "passed",
+    "createdAt": "2026-10-06T06:02:20.480Z",
+    "updatedAt": "2026-10-06T06:02:23.703Z",
+    "prompt": "记住 flow-queue-9326ea64231078bb，现在只回复“已记住”。",
+    "entries": [
+      {
+        "id": "05a5855d-c1cf-4296-b85f-630b4cd8dbb7",
+        "kind": "reference",
+        "cursor": 1,
+        "createdAt": "2026-10-06T06:02:21.776Z",
+        "reference": {
+          "id": "1767a778-d1a7-49c6-88f8-88a282bec86b",
+          "title": "Native session"
+        }
+      },
+      {
+        "id": "cb46a53b-b730-4f90-a8b5-6f50bd367720",
+        "kind": "reference",
+        "cursor": 2,
+        "createdAt": "2026-10-06T06:02:23.571Z",
+        "reference": {
+          "id": "941450e7-3222-43d1-aa5c-bd6afd821c09",
+          "title": "Usage: claude.modelUsage"
+        }
+      },
+      {
+        "id": "b4c47918-2683-4770-8e0e-d0a27c89ded0",
+        "kind": "reference",
+        "cursor": 3,
+        "createdAt": "2026-10-06T06:02:23.599Z",
+        "reference": {
+          "id": "762e935c-c3a8-4f05-a5bd-ee9318bb6def",
+          "title": "Usage: claude.modelUsage"
+        }
+      },
+      {
+        "id": "949d6001-b78a-42bc-a756-833d15782f82",
+        "kind": "reference",
+        "cursor": 4,
+        "createdAt": "2026-10-06T06:02:23.636Z",
+        "reference": {
+          "id": "afa4b666-43ee-43b2-9db4-c295bef05f6f",
+          "title": "Claude result"
+        }
+      },
+      {
+        "id": "219e087f-df5a-4f66-96b2-2d1449df2980",
+        "kind": "reference",
+        "cursor": 5,
+        "createdAt": "2026-10-06T06:02:23.652Z",
+        "reference": {
+          "id": "471389b8-a6c0-430c-990c-f991a94ebc4e",
+          "title": "Verification passed"
+        }
+      },
+      {
+        "id": "99926a95-7ca8-4210-bc2b-8a1babefa7f2",
+        "kind": "reference",
+        "cursor": 6,
+        "createdAt": "2026-10-06T06:02:23.685Z",
+        "reference": {
+          "id": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8",
+          "title": "Assistant reply"
+        }
+      }
+    ],
+    "watermark": 6,
+    "hasMore": false,
+    "pendingDecision": null,
+    "attempt": {
+      "id": "72291dd4-d874-442e-8314-2d8bfe920064",
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "ownerVersion": 1,
+      "leaseExpiresAt": "2026-10-06T06:02:33.667Z",
+      "nativeSessionId": "e7de6e51-6874-4186-a4a0-5af384c81a07"
+    },
+    "usage": {
+      "costUsd": 0.004059,
+      "costKind": "sdk_estimate",
+      "incomplete": false,
+      "inputTokens": 920,
+      "outputTokens": 24
+    }
+  },
+  "normalizedSdkUsage": true,
+  "usage": [
+    {
+      "id": "d2078686-c671-4334-b181-3ead207d234f",
+      "sequence": 2,
+      "type": "usage",
+      "source": "claude.modelUsage",
+      "scope": "session",
+      "scopeId": "e7de6e51-6874-4186-a4a0-5af384c81a07",
+      "sampleId": "3fdca2797164b40f927a5aa709a0fd79a8c700a834d0dab1ecb6f0d8b38a8397",
+      "cumulative": true,
+      "baseline": {
+        "kind": "new-session"
+      },
+      "accounting": "authoritative",
+      "costKind": "sdk_estimate",
+      "model": "claude-haiku-4-5-20251001",
+      "inputTokens": 918,
+      "outputTokens": 19,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0,
+      "costUsd": 0.001013
+    },
+    {
+      "id": "275a441b-9384-4d72-bdbb-7cf960dc183e",
+      "sequence": 3,
+      "type": "usage",
+      "source": "claude.modelUsage",
+      "scope": "session",
+      "scopeId": "e7de6e51-6874-4186-a4a0-5af384c81a07",
+      "sampleId": "6a585f98d6f9d8a1a216ae36d4b1aef8f1b60844c25843f55ae0456fa07cc503",
+      "cumulative": true,
+      "baseline": {
+        "kind": "new-session"
+      },
+      "accounting": "authoritative",
+      "costKind": "sdk_estimate",
+      "model": "claude-sonnet-5-5",
+      "inputTokens": 2,
+      "outputTokens": 5,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 748,
+      "costUsd": 0.0030459999999999997
+    }
+  ],
+  "conservativeCostUsd": 0.004059,
+  "details": [
+    {
+      "id": "1767a778-d1a7-49c6-88f8-88a282bec86b",
+      "title": "Native session",
+      "kind": "session",
+      "content": "{\"id\":\"ea277dd8-94ab-4950-a6d9-15f3c0b91344\",\"sequence\":1,\"type\":\"session\",\"nativeSessionId\":\"e7de6e51-6874-4186-a4a0-5af384c81a07\",\"adapterVersion\":\"claude-sdk-0.3.290-v2\",\"resources\":[\"sdk:0.3.290\",\"runtime:2.1.290\",\"model:claude-sonnet-5-5\",\"plugin:cc-plugin-agents-md\",\"plugin:cc-plugin-telemetry\",\"plugin:cc-plugin-plugin-authoring\",\"skill:design\",\"skill:doctor\",\"skill:plugin-authoring\"]}",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "941450e7-3222-43d1-aa5c-bd6afd821c09",
+      "title": "Usage: claude.modelUsage",
+      "kind": "usage",
+      "content": "{\"id\":\"d2078686-c671-4334-b181-3ead207d234f\",\"sequence\":2,\"type\":\"usage\",\"source\":\"claude.modelUsage\",\"scope\":\"session\",\"scopeId\":\"e7de6e51-6874-4186-a4a0-5af384c81a07\",\"sampleId\":\"3fdca2797164b40f927a5aa709a0fd79a8c700a834d0dab1ecb6f0d8b38a8397\",\"cumulative\":true,\"baseline\":{\"kind\":\"new-session\"},\"accounting\":\"authoritative\",\"costKind\":\"sdk_estimate\",\"model\":\"claude-haiku-4-5-20251001\",\"inputTokens\":918,\"outputTokens\":19,\"cacheReadTokens\":0,\"cacheWriteTokens\":0,\"costUsd\":0.001013}",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "762e935c-c3a8-4f05-a5bd-ee9318bb6def",
+      "title": "Usage: claude.modelUsage",
+      "kind": "usage",
+      "content": "{\"id\":\"275a441b-9384-4d72-bdbb-7cf960dc183e\",\"sequence\":3,\"type\":\"usage\",\"source\":\"claude.modelUsage\",\"scope\":\"session\",\"scopeId\":\"e7de6e51-6874-4186-a4a0-5af384c81a07\",\"sampleId\":\"6a585f98d6f9d8a1a216ae36d4b1aef8f1b60844c25843f55ae0456fa07cc503\",\"cumulative\":true,\"baseline\":{\"kind\":\"new-session\"},\"accounting\":\"authoritative\",\"costKind\":\"sdk_estimate\",\"model\":\"claude-sonnet-5-5\",\"inputTokens\":2,\"outputTokens\":5,\"cacheReadTokens\":0,\"cacheWriteTokens\":748,\"costUsd\":0.0030459999999999997}",
+      "mediaType": "application/json"
+    },
+    {
+      "id": "afa4b666-43ee-43b2-9db4-c295bef05f6f",
+      "title": "Claude result",
+      "kind": "artifact",
+      "content": "已记住",
+      "mediaType": "text/plain",
+      "artifactVersion": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+    },
+    {
+      "id": "471389b8-a6c0-430c-990c-f991a94ebc4e",
+      "title": "Verification passed",
+      "kind": "verification",
+      "content": "{\"id\":\"4286622e-228d-43b5-b5b5-857f7f0d3224\",\"sequence\":5,\"type\":\"verification\",\"artifactId\":\"a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714\",\"artifactVersion\":\"0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde\",\"verifierId\":\"flow.text\",\"verifierVersion\":\"1\",\"inputDigest\":\"c9eee56e1b19753599cfc5a34d722b7c408adb08c4bce246d14364adae6cde4b\",\"result\":\"passed\",\"evidence\":\"Saved artifact is nonempty.\"}",
+      "mediaType": "application/json",
+      "artifactVersion": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+    },
+    {
+      "id": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8",
+      "title": "Assistant reply",
+      "kind": "detail",
+      "content": "已记住",
+      "mediaType": "text/plain"
+    }
+  ]
+}

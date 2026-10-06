@@ -1,0 +1,19 @@
+{
+  "boundary": "Official MCP peer -> SDK in-process server -> public FlowClient -> HTTP/PostgreSQL; production adapter query transport injected, zero native query/model calls; same-process runner runtime, not child-process proof",
+  "wire": [],
+  "facts": [
+    {
+      "scenario": "existing-node-consumer",
+      "taskId": "e9fefa2e-9d10-4752-8e02-a4786bf614dd",
+      "inputVersion": 1,
+      "graphDenied": true,
+      "nativeQueries": 0
+    },
+    {
+      "cleanup": {
+        "database": "flow_o07_http_00853f21050f41c28c7719e03fe6fff2",
+        "removed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store
+
+ ❯ apps/server/src/knowledge/knowledge.test.ts (29 tests | 1 failed) 12738ms
+   ✓ owner creates exact text and resolves immutable UTF8 citation after restart 114ms
+   ✓ search returns a bounded literal excerpt and resolves its full chunk 27ms
+   ✓ dropped ACK body replays original receipt after a newer version and same digest remains a new version 39ms
+   ✓ two publishing clients CAS once without lost version and publication ACK replay stays immutable 37ms
+   ✓ chunk insert failure rolls back version/head/receipt and retry succeeds after fault removal 37ms
+   ✓ owner-only actual center preHandler protects every route and project scope precedes lookup 54ms
+   ✓ citations reject wrong digest, missing version, and split UTF8 boundaries including empty ranges 46ms
+   ✓ invalid raw text is rejected without creating a source (0) 11ms
+   ✓ invalid raw text is rejected without creating a source (1) 11ms
+   ✓ invalid raw text is rejected without creating a source (2) 11ms
+   ✓ invalid raw text is rejected without creating a source (3) 13ms
+   ✓ invalid raw text is rejected without creating a source (4) 15ms
+   ✓ raw normalization is preserved and query limits count actual UTF8 bytes 28ms
+   ✓ lexical coverage 中文两字 20ms
+   ✓ lexical coverage 中文连续句 20ms
+   ✓ lexical coverage camelCase 19ms
+   ✓ lexical coverage path 19ms
+   ✓ lexical coverage underscore 19ms
+   ✓ lexical coverage version 19ms
+   ✓ lexical coverage literal-meta 18ms
+   ✓ lexical coverage query-syntax 17ms
+   ✓ lexical coverage emoji 17ms
+   ✓ lexical coverage 256-byte-cross-chunk 16ms
+   ✓ lexical coverage fts-multiple-words 15ms
+   ✓ lexical coverage fts-case-fold 16ms
+   ✓ metadata pagination is stable, overlap deduplicates, and current/project filters exclude old and foreign text 68ms
+   ✓ search JSON budget handles worst control escaping and hasMore reports budget truncation 167ms
+   ✓ concurrent source count and retained-version caps reject overflow without deleting old citations  949ms
+   × project retained-byte cap is serialized across different sources 10247ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/knowledge/knowledge.test.ts > project retained-byte cap is serialized across different sources
+error: canceling statement due to statement timeout
+ ❯ ../../Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js:694:17
+ ❯ apps/server/src/knowledge/knowledge.test.ts:189:5
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 28 passed (29)
+   Start at  22:19:24
+   Duration  13.13s (transform 191ms, setup 0ms, import 319ms, tests 12.74s, environment 0ms)
+

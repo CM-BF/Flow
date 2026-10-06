@@ -1,0 +1,265 @@
+{
+  "modelCalls": 0,
+  "database": "flow_o06_upgrade_2af7092f570a410d97c32cf0d427ff64",
+  "before": {
+    "versions": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T05:31:34.106Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T05:31:34.162Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T05:31:34.181Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T05:31:34.274Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T05:31:34.301Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T05:31:34.365Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T05:31:34.383Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T05:31:34.419Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T05:31:34.438Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T05:31:34.449Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T05:31:34.473Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T05:31:34.518Z"
+      },
+      {
+        "version": 13,
+        "applied_at": "2026-10-06T05:31:34.526Z"
+      },
+      {
+        "version": 14,
+        "applied_at": "2026-10-06T05:31:34.564Z"
+      }
+    ],
+    "records": {
+      "grant": [
+        {
+          "id": "5c1b86ce-8278-4f1f-821f-1d3c02675c9d",
+          "goal_id": "9513aca4-7e50-4f72-b3f9-5e433cb4a5cb",
+          "task_id": "5d208b81-50f8-4e4a-a292-1c270226cbf4",
+          "version": 1,
+          "scope": {
+            "readScope": "whole-goal",
+            "maxCommands": 1,
+            "allowedNodeIds": [
+              "c91a903b-aeea-46bd-85b5-28e1b813d40b"
+            ],
+            "allowedCommands": [
+              "define-input"
+            ]
+          },
+          "mode": "fixture",
+          "used_commands": 1,
+          "created_at": "2026-10-06T05:31:34.901Z",
+          "revoked_at": null,
+          "revocation_reason": null
+        }
+      ],
+      "calls": [
+        {
+          "run_id": "5c1b86ce-8278-4f1f-821f-1d3c02675c9d",
+          "sequence": 1,
+          "attempt_id": "25aefe70-ec69-4c7b-b596-604e97bb69ac",
+          "owner_version": 1,
+          "command_key": "node-command",
+          "digest": "f8c9a1341265457a231297d1b26fddf51222a6b6c1ee0b8011bce687664f5bac",
+          "kind": "define-input",
+          "node_id": "c91a903b-aeea-46bd-85b5-28e1b813d40b",
+          "result": {
+            "changed": true,
+            "inputVersion": 1,
+            "explanationVersion": 2
+          },
+          "created_at": "2026-10-06T05:31:35.356Z"
+        }
+      ],
+      "revisions": [
+        {
+          "project_id": "e2e2fa16-c5d3-465e-b889-cfbe6fbca089",
+          "revision": 1,
+          "reason": "Project created",
+          "actor": "owner",
+          "nodes": [],
+          "created_at": "2026-10-06T05:31:34.836Z"
+        },
+        {
+          "project_id": "e2e2fa16-c5d3-465e-b889-cfbe6fbca089",
+          "revision": 2,
+          "reason": "Existing",
+          "actor": "owner",
+          "nodes": [
+            {
+              "id": "c91a903b-aeea-46bd-85b5-28e1b813d40b",
+              "title": "A",
+              "taskId": null,
+              "version": 1,
+              "parentId": null,
+              "dependsOn": []
+            }
+          ],
+          "created_at": "2026-10-06T05:31:34.853Z"
+        },
+        {
+          "project_id": "e2e2fa16-c5d3-465e-b889-cfbe6fbca089",
+          "revision": 3,
+          "reason": "Apply goal graph proposal fcf80cbe-584a-49f3-af14-7568d52420c5",
+          "actor": "owner",
+          "nodes": [
+            {
+              "id": "c91a903b-aeea-46bd-85b5-28e1b813d40b",
+              "title": "A",
+              "taskId": null,
+              "version": 1,
+              "parentId": null,
+              "dependsOn": []
+            },
+            {
+              "id": "1425badb-7110-4a97-804d-e257d5f9f38c",
+              "title": "Owner addition",
+              "taskId": null,
+              "version": 1,
+              "parentId": null,
+              "dependsOn": []
+            }
+          ],
+          "created_at": "2026-10-06T05:31:35.368Z"
+        }
+      ],
+      "proposal": [
+        {
+          "id": "fcf80cbe-584a-49f3-af14-7568d52420c5",
+          "goal_id": "9513aca4-7e50-4f72-b3f9-5e433cb4a5cb",
+          "project_id": "e2e2fa16-c5d3-465e-b889-cfbe6fbca089",
+          "base_revision": 2,
+          "goal_digest": "56c31e002dd5c8786032e22990b5a853b44282d97d8deb6437e9595a3de52783",
+          "proposal_digest": "50c9173275d27346d31563f519d8437a1c21b46ace6fc67a4c3fb91de52fdb4a",
+          "input": {
+            "reason": "Owner proposal",
+            "additions": [
+              {
+                "key": "N",
+                "title": "Owner addition",
+                "dependencies": []
+              }
+            ],
+            "expectedProjectRevision": 2
+          },
+          "source": "owner-submission",
+          "node_count": 1,
+          "edge_count": 0,
+          "created_at": "2026-10-06T05:31:35.361Z"
+        }
+      ],
+      "receipt": [
+        {
+          "proposal_id": "fcf80cbe-584a-49f3-af14-7568d52420c5",
+          "project_id": "e2e2fa16-c5d3-465e-b889-cfbe6fbca089",
+          "from_revision": 2,
+          "to_revision": 3,
+          "node_ids": {
+            "N": "1425badb-7110-4a97-804d-e257d5f9f38c"
+          },
+          "actor": "owner",
+          "applied_at": "2026-10-06T05:31:35.369Z"
+        }
+      ]
+    }
+  },
+  "after": {
+    "versions": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T05:31:34.106Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T05:31:34.162Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T05:31:34.181Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T05:31:34.274Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T05:31:34.301Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T05:31:34.365Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T05:31:34.383Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T05:31:34.419Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T05:31:34.438Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T05:31:34.449Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T05:31:34.473Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T05:31:34.518Z"
+      },
+      {
+        "version": 13,
+        "applied_at": "2026-10-06T05:31:34.526Z"
+      },
+      {
+        "version": 14,
+        "applied_at": "2026-10-06T05:31:34.564Z"
+      },
+      {
+        "version": 17,
+        "applied_at": "2026-10-06T05:31:35.389Z"
+      }
+    ],
+    "recordsUnchanged": true,
+    "replayed": true,
+    "actor": "owner"
+  },
+  "databaseRemoved": true
+}

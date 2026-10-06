@@ -97,3 +97,28 @@ O04产品1420+测试a169由Root独审，最终ccfe96：103不同作者检查分7
 CTX02实现8abe014/最终efda7fc按Root方法APPROVED接收；实验脚本对已审target零diff，无模型/无负载重跑。默认loader拒绝、factory默认窗口不压缩、显式toy配置与未知sidecar仅警告降写都保留；不等于生产插件兼容。D07/B03/O04/PROFILE/QUEUE/DPERF仅作者最终metadata和release事实一并接收。
 
 来源登记63：K01、SVC02、WPF-PROFILEUX01的真实三件套及精确权威路径已核。find-skills沿用同stack本地codebase-design/clean-code；本段合并前检查仅组合接口、目标blob、失败语义与证据出处，无新抽象。所有合并无产品冲突。固定scope核对见profile-ctx02-fixed-scopes.json。常驻center/runner仍75a33，Web为开发服务可随源码刷新；新main不代表常驻服务已升级，不发模型消息。
+
+## 05:23 UTC — owner图提案生产接线
+
+O05领域1f211/最终7414及F01薄client e28、生产挂载208a各自获Mika独立APPROVED；受控合并后领域7文件及接线3文件对target零diff，无手工冲突，无新增风险不重跑。已有保存证据是首7绿+client红后定向绿、类型修正后绿；8不同用例有绿记录，不称一次整套8/8。仅owner建立/应用有界版本化提案，不是自然语言/runner图授权。全计划矩阵已更新14c基线，CTX02/profile作者release metadata收到。registry64新增WPF-QUEUE01，当前常驻center仍75a33，不声称用户服务已有014。
+
+## 05:36 UTC — 知识来源与单runner安全刷新接线
+K01领域ea0c/Mika、SVC02领域与host9aa/GoalOwner、F01薄client b5及caea/Mika、生产CLI+015/016 c03/592复审均已固定通过。接收原始失败与修复，JSON FIFO/P2已关闭。scope对固定approved提交无实现差异，见knowledge-maintenance-fixed-scopes.json；无新产品变动，不重复领域全套。直接消费者11/11+纯读取2/2+typecheck，较早CLI组合17通过/1退出码失败修复记录分开保留，不合称一次30绿。
+
+本次只是main集成。61227/61228当前中心runner仍75a33；SVC独有事实05:28显示task0/attempt0、唯一注册受管runner，升级窗口需要重新核对。保留所有DB/凭据/端口/tab，不因main前进宣称用户服务已更新。O06/QUEUE01仍各自分支，真实排队2query只是新提案，未调用。
+
+## 05:50 UTC — 受限目标拆分、队列界面与架构快照
+O06 f6ba/807c由runner_owner独立APPROVED；薄client79e06+a9cd test修复、生产bf03由Mika独审APPROVED。9/9生产PG与1/1严格HTTP/noEmit，原缺route/错误测试字段证据保留；未重跑旧34领域。QUEUE01 309ec/final496、D06 5ec6/final61d已Web独审，组合Webtypecheck及架构7/7通过；固定批准源码与组合HEAD零diff见queue-graph-architecture-fixed-scopes.json，无手工冲突。clean-code合并前核验保持领域边界/证据，不机械拆层。
+SVC02部署a0a2证据已接收：真实中心/runner加载fb906cb，05:40:49 v3接受，唯一runner、0task/未完attempt、0模型，身份/DB/端口保留。后续main变化只可能更新Vite页面，不能称center已加载017。本批67→68注册K02/O07/独立renderer；三任务尚未产品批准。新queue真实两query仅提案/零模型driver准备，旧预算封存。
+
+## 2026-10-06 06:23 UTC：知识上下文、原生目标工具与包产物模块
+
+接收 K02 a6c9b09（Mika独审）、O07 c22412b（GO独审）、Web兼容7633937与renderer747cbe6（Web Lead独审）、X04 fa2d872（Execution Lead独审）。依赖9cde241由runner_owner独立只读批准。共享549f6b3与C02测试隔离d6406f9获GO独立批准，历史固定库归属NOT_PROVEN保留；新12/12随机库归属和清理事实完整。不把旧34与新12算成不同46例。
+
+本次受控合并无手工源码冲突。`context-package-source-comparison.json`核K02 21源（两个runner文件由已审O07有意覆盖）、O07 26源、兼容Web6源、renderer源、X04 8源与共享5源。所有有意覆盖均可追固定输入。直接组合root/Web类型检查exit0，原始stdout `context-package-typecheck.txt` / `context-package-web-typecheck.txt`；offline frozen ignore-scripts安装见`context-package-install.txt`。未重复7PG接线、116Web或任何模型。clean-code复核关注迁移顺序/授权/公开与私有输入边界及原样应用，无新复杂度。
+
+018在scheduler/defaultscan之前，019沿现goalGraph初始化前进迁移；020 CHAT05尚未本批生产挂载。renderer仅独立模块未App接入；X04仅压缩包校验落盘，无解包/安装/启用；O07是0query实际MCP/HTTP/PG与注入SDK，不冒称原生NL规划。
+
+真实排队新预算已关闭：固定Web3d、center/runner fb906；2 SDK query、保守归一化modelUsage和$0.012396，严格second-assistant nonce、专属Chrome退出后真实GET running和新浏览器正文均成立。GO实际读完整事实/目视照片并核最终12file manifest；证据 `../f01/queue-live/README.md`。不重复调用，不以此覆盖旧chat-live弱断言历史。
+
+main发布不刷新个人center/runner；其载入版本仍fb906。dashboard73源已在06:13实采登记，架构仍明确eb149固定snapshot；本批无架构变更重测，K02/O07/X04新结构留下一次有界架构更新。

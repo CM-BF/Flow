@@ -1,33 +1,34 @@
 # D06 独立审查记录
 
-状态：APPROVED — 仅固定源码架构数据与下列限定检查。
+**状态：APPROVED**
 
-## Target 与 scope
+Review target commit：5ec6ce2051ed399be4906c6f99f7183e0ed1bb66
+Base：eb14991a170b72d7d974428b2e440e1faada2c1e
 
-- Review target commit：`ef42277ff55d1cbb76ea707836481a9788619033`。
-- Base commit：`8f1481df880cf5077e1ddb9a8f302fe700a7ece8`；branch codex/dashboard-architecture-refresh，worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh。
-- Scope：architecture-data.js、architecture.test.mjs及本任务plan/evidence，保留既有renderer。固定源码图不是moving main的实时能力说明。
-- Reviewer：root / gpt-6-astra ultra，独立只读，2026-10-06 04:20 UTC记录结论；源码协审w01_owner / gpt-6-astra ultra。
-- [plan](plan.md) · [status](status.md) · [作者验证](../../docs/evidence/d06/validation.md)。
+当前 owner w01_owner；branch codex/dashboard-architecture-current；工作树 dashboard-architecture-current。范围：architecture-data.js、architecture.js、architecture.test.mjs，加 docs/evidence/d06/current/browser-check.mjs / review-fix-check.mjs 两可执行浏览器测试。metadata 不自动继承实现审查。
 
-## 实际独立检查与未执行
+## 验收入口
 
-w01_owner在固定初稿d5a87b851e3d5a820585180cb4efa47b6148632a独立运行Node24 architecture.test.mjs 5/5（825.872ms），读两实现文件和固定源码：FSM所有活动态completed/uncertain、C02安全retry另task、assistant身份/digest/PG、goal/conversation/registry/I01限定、串行runtime、依赖版本与Pool8+3。无代码写入，没有重跑browser/PG产品/模型/全库/性能。
+按固定 baseline 的 git show 核五图事实、统一 source 链接、任务 FSM/PG/assistant 语义、已集成与 planned 边界；标题与底部同一 baseline，并有明确源码核验时间。查局部 Node/source 检查及独立预览双主题/390/键盘记录。修复由唯一 owner 处理，review 默认只读。
 
-root读全范围diff/source及d5→ef一行来源修正，独立diffcheck0、实现对ef diff0；实际目视states-light/modules-light/data-dark390可读；新临时CUA页打开模块→后继执行与插件→源码依据，href精确8f/apps/execution-dashboard/src/registry.mjs，随后只关闭自身临时页。root未重跑五个Node测试、全部浏览器或产品模型；w01在d5的五测试结果复用，不伪称在ef重跑。作者ef已重跑5tests与该href局部Chrome检查，几何/行为没变化，旧六图与全浏览器检查未重跑。
+当前候选已冻结，root于2026-10-06 05:33:19 UTC独立限定APPROVED。作者7 Node与五图Chrome检查见 [本轮证据](../../docs/evidence/d06/current/README.md)；不将作者检查说成独立通过。后续记录severity、blocking与实际独立范围。
 
-## Findings与修复链
+## 历史批准
 
-| ID | Severity | Blocking | 固定target与问题 | 修复与复审 |
+[8f 轮完整 review](../../docs/evidence/d06/current/historical-8f-review.txt)：ef42277ff55d1cbb76ea707836481a9788619033，root APPROVED；原 D06-R1 已修复。该结论只覆盖旧目标，不覆盖本轮源码刷新/renderer。
+
+## 当前轮 findings / 检查来源
+
+| ID | Severity | Blocking | Finding 与响应 | 状态 |
 | --- | --- | --- | --- | --- |
-| D06-R1 | P3 | 否，已关闭 | d5a87b8 nextbackend列R04/P03却指full-plan-matrix，该文件无这两个登记ID | ef42277仅source改实际registry，root独立CUA核href；CLOSED |
+| D06-R2 | P3 | 非功能blocking，需来源修正 | root375发现nextbackend的O06/SVC02编号不在所引固定plan；1ca3e5b改为固定plan方向，nextweb同样只保留固定Thread可证控件；最终5ec6ce2含局部脚本 | CLOSED：root固定源码与CUA复验 |
 
-w01源码范围无P0–P3 actionable finding；root最终无新blocking。原R1保留，不因最终通过删去历史。
+Root375实际独立7 Node PASS（1034.452ms）、3文件diff/source、fixed diffcheck0、CUA58207顶栏与浅色/390深色图；不冒称root重跑作者浏览器套件。作者修复后7 Node PASS（1863.979ms），两节点href局部Chrome PASS，无新产品DB/模型。最终target多含2浏览器脚本，已明确请求root一并只读审查；root最终已明确限定批准。
 
-## 结论与限制
+## 最终独立结论（05:33:19 UTC）
 
-Root正式整体限定APPROVED ef42277/base8f。此审查不代表最新main所有分支、产品执行/模型容量、已部署4320或未来功能通过。独立blob仍planned，中心conversation不等当前8f Web已持续聊天，trusted Web host与PG插件登记不等完整安装/隔离。Safari/Firefox/屏读和产品PG未测。下一源码变更必须新target/复审。
+Root / gpt-6-astra ultra，只读 reviewer。APPROVED target 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66 / base eb14991a170b72d7d974428b2e440e1faada2c1e，覆盖三应用文件和两可执行浏览器脚本。D06-R2 CLOSED，无新blocking。
 
-## 可复制复审入口
+实际检查：完整读375三文件与375→5ec窄diff、两个脚本；5文件与当前bytes相同、fixed diffcheck0；92条source-audit行与固定git-show逐条相同；shared/App/根manifest-lock保护0diff。root实际CUA独立预览标题/O05键盘下钻/深色适配，两planned节点修复后重载、Enter/展开href精确eb；只关闭自身临时tab。目视作者modules-light和data-dark390。root独立7 Node仅在375运行PASS 1034.452ms；两文案修复未再重跑，复用已核作者1ca局部7 PASS 1863.979ms及修复browser。未独立重跑完整browser、产品PG/模型、性能或真实部署。
 
-读本树AGENTS/plans规则、plan/status与证据，核实际base/target/dirty及有效claim；以固定baseline的源码而非当前main逐项核五图。检查source链接、已实现/planned、真实FSM与独立verification、工程PG隔离。只读回传severity/复现/建议与确实运行的检查，修复交owner，不能复用旧approval覆盖新实现。
+边界：这是固定源码策展与静态页面更新，不覆盖实时main/常驻服务、产品执行容量、Safari/Firefox/屏读。metadata HEAD不自动成为新的实现批准目标。本轮等待Lead接收main；当前preview独立保留。

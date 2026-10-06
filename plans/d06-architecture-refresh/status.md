@@ -2,47 +2,48 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:29 UTC / 04:28:28.679Z main4e0289f与4320已核 |
+| 最近更新 | 2026-10-06 05:34 UTC |
 | Plan | [plan.md](plan.md) |
-| 单一status owner / model | d01_owner / gpt-6-astra ultra |
-| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh |
-| Branch | codex/dashboard-architecture-refresh |
-| 工作基线 / HEAD | 8f1481df880cf5077e1ddb9a8f302fe700a7ece8 / ef42277ff55d1cbb76ea707836481a9788619033（实现，后续仅metadata） |
-| 工作树dirty状态 | 提交前仅本任务metadata；实现范围clean，现场dirty由Git聚合显示 |
-| 工作分支状态 | completed（branch）；main已集成 |
-| 检查状态 | PASSED ef42277ff55d1cbb76ea707836481a9788619033；5 Node局部及5视图Chrome/双主题390检查 |
-| 已集成main状态 / HEAD | 已集成main 4e0289f29ffa48c6c49003837d4520f57c22b6b0；ancestor/current/scopeEqual，图仍固定8f |
-| 实现目标 | ef42277ff55d1cbb76ea707836481a9788619033 |
-| 实现范围 | apps/execution-dashboard/public/architecture-data.js,apps/execution-dashboard/test/architecture.test.mjs |
+| 单一status owner / model | w01_owner / 派发 gpt-6-astra ultra |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current |
+| Branch | codex/dashboard-architecture-current |
+| 工作基线 / HEAD | eb14991a170b72d7d974428b2e440e1faada2c1e / 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66（实现；后续 metadata） |
+| 工作树dirty状态 | 实现已冻结，仅本任务 metadata；现场 Git 由聚合器核验 |
+| 工作分支状态 | reviewed |
+| 本片段交付阶段 | integration |
+| 检查状态 | PASSED 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66；7局部Node；初始五图Chrome与R2两节点局部Chrome/补图，来源分列 |
+| 已集成main状态 / HEAD | 旧 ef42277 轮已集成；本轮刷新未集成 |
+| 实现目标 | 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66 |
+| 实现范围 | apps/execution-dashboard/public/architecture-data.js,apps/execution-dashboard/public/architecture.js,apps/execution-dashboard/test/architecture.test.mjs,docs/evidence/d06/current/browser-check.mjs,docs/evidence/d06/current/review-fix-check.mjs |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 固定8f架构图已独审并由Lead集成部署4320 |
-| 下一可用交付 | 本轮完成；标题旁固定快照提示作为后继独立scope |
+| 当前产出 | 架构图已补齐新会话、配置、队列与图提案，图对应版本清晰可见 |
+| 下一可用交付 | 将已审架构图更新到工程看板 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED |
+| Review | [review.md](review.md)，APPROVED 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| D06-01 | completed | d01_owner | 固定8f、clean新树及正式receipt，技能已读 |
-| D06-02 | completed | d01_owner | 已集成/后继、PG与assistant/FSM刷新，固定d5a87b |
-| D06-03 | completed | d01_owner | 5 Node与五视图Chrome、双主题390截图/质量记录 |
-| D06-04 | completed | d01_owner | root APPROVED ef42277；04:28实际47源聚合/claim匹配/main4e同范围/4320图已刷新 |
+| D06-01 | completed | w01_owner | 固定新树 clean、正式 receipt/live v1、原历史归档与技能读取 |
+| D06-02 | completed | w01_owner | 固定eb源码已核，5ec6ce2三应用文件及两浏览器测试，含R2来源修复 |
+| D06-03 | completed | w01_owner | 7 Node/五图Chrome、双主题390与clean-code，current证据 |
+| D06-04 | in-progress | w01_owner | root APPROVED 5ec6ce2；待Lead接收和最终聚合核验 |
 
-## 当前事实与边界
+## 领取与来源
 
-[claim receipt](../../docs/evidence/d06/take-receipt.json) v1 active。原D05先v2移出范围后本任务take，未重建或覆盖旧树。唯一status是本文件，领取另由PG维护。无产品App/shared/renderer/CSS写入；架构影响为图中固定8f事实刷新，本轮不变运行接口。作者浏览器已验证；root整体限定APPROVED，详见review。无需要用户决定。
+[新 receipt](../../docs/evidence/d06/current/take-receipt.json) v1 active，05:26:27.385Z 本人 live 核验。五 scopes 仅数据/renderer/test 与本任务计划证据。旧 claim f619 v2 released、旧树只读；管理者05:31:45.221Z实际4320已核唯一source迁入本树、e5b2v1 matchesSource；该次proof因漏列可执行测试为unknown。现implementationScope已补两mjs，等待最终target单次聚合闭环，不伪称该次proof通过。
 
-## Dashboard同步
+## 当前边界
 
-历史04:20采样45源尚无D06；当前04:28:28.679Z实际47源D06已live聚合，human.complete/errors[]/issues[]、checks与review同ef、proof unchanged、claimv1 matchesSource，main4e ancestor/current/scopeEqual。工程4320不由本owner停止/切换。
+固定 eb14991 为源码依据；实际常驻中心 61227 是历史 75a，不将代码集成当服务已部署。无模型/产品数据库/共享合同改动。旧 8f approval 保留于 [历史 review](../../docs/evidence/d06/current/historical-8f-review.txt)，不覆盖本轮。
 
-## 作者检查、预览与限制
+架构影响：沿同一数据源刷新已集成模块与后继规划；标题和底部共用同一 baseline。下一步由 Lead 接收主线、部署工程看板，并核验所展示的固定源码基线；本轮实现已获独立批准。
 
-[验证/来源](../../docs/evidence/d06/validation.md)、[Chrome报告](../../docs/evidence/d06/browser-checks.json)、[5 Node输出](../../docs/evidence/d06/node-tests.txt)。六图实际目视，原始全局页面/renderer/CSS未改，5图节点标签未溢出各自box；窄屏图画布维持既有水平滚动与缩放，下方文字可读，不宣称小屏同时看全图。
+## 当前验证与预览
 
-本owner独立预览 http://127.0.0.1:55247/#architecture，PID42719，启动 `node docs/evidence/d06/preview.mjs`（Node24，动态端口以stdout为准）。只读真实owner记录但协调环境未注入，图事实固定8f，预览独立于4320；4320已由Lead部署。4320/用户产品端口均未停止。无模型/新依赖/产品PG修改，Safari/Firefox/屏读未测；main与4320集成已实际验证。
+[本轮验证与固定源码](../../docs/evidence/d06/current/README.md)、[质量](../../docs/evidence/d06/current/quality.md)。http://127.0.0.1:58207/#architecture；动态独立预览，未重启4320/旧55247。首次缺依赖/旧测试源定位失败保留，修正后7局部PASS；本树frozen安装不改锁，无新依赖。无模型/产品DB/全库；浏览器仅架构静态UI，Safari/Firefox/屏读未验。
 
-D06-R1 P3 source不匹配已在ef42277修复；五Node及目标href局部检查通过，root独立CUA确认。最终review记录区分w01在d5独立5tests、root图与ef一行diff/实页、作者ef局部复验；不冒称全浏览器在ef重跑。scope/manifest/lock/renderer/registry/CSS无新diff，未停止独立55247。
+D06-R2 P3已在5ec6ce2关闭，root正式限定APPROVED；375首次root独立7测试与目视/CUA是其实际检查，最终5文件diff/bytes、92source行与CUA已独立复核，未重跑作者全browser。最新截图、初次失败和hash绑定见current/README。无新运行服务/产品模型验收。
 
-[实际聚合与部署证据](../../docs/evidence/d06/dashboard-observation.json)保留采样时metadata尚两文件dirty、3/4TODO及旧mainRecord，与新的Git实证分开；本次仅按真实结果收口4/4，不修改原JSON伪造clean。
+05:33:19 UTC root最终独立APPROVED，见review精确检查范围。交付清单/启动/双主题图/hash/技能见current证据；metadata收口后保持claim供必要修复，main尚未接本轮、不自行merge。

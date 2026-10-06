@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/server/src/goal-graph-proposals/proposals.test.ts (6 tests) 1666ms
+   ✓ binds existing references and original goal identity and keeps old runner grants away from new nodes  578ms
+ ✓ apps/server/src/goal-tool-runs/migration.test.ts (1 test) 2047ms
+   ✓ upgrades populated 012 fixture authority to 013 without changing its audit, quota or revocation rules  983ms
+ ❯ packages/client/src/graph-proposal-production.test.ts (1 test | 1 failed) 757ms
+   × serves owner graph proposal commands through the production center and public client 757ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/graph-proposal-production.test.ts > serves owner graph proposal commands through the production center and public client
+AssertionError: expected [ 'check', 'draft', 'deliver' ] to deeply equal [ 'draft', 'check', 'deliver' ]
+
+- Expected
++ Received
+
+  [
+-   "draft",
+    "check",
++   "draft",
+    "deliver",
+  ]
+
+ ❯ packages/client/src/graph-proposal-production.test.ts:29:50
+     27|     const applied = await client.applyGoalGraphProposal(proposal.propo…
+     28|     expect(applied.receipt.actor).toEqual({ kind: 'owner' });
+     29|     expect(Object.keys(applied.receipt.nodeIds)).toEqual(['draft', 'ch…
+       |                                                  ^
+     30|     expect(await client.applyGoalGraphProposal(proposal.proposal.id, i…
+     31|     const denied = new FlowClient({ baseUrl: url, token: 'wrong-owner'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 7 passed (8)
+   Start at  22:18:56
+   Duration  5.50s (transform 221ms, setup 0ms, import 769ms, tests 4.47s, environment 0ms)
+

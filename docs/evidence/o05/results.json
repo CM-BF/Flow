@@ -1,0 +1,228 @@
+{
+  "modelCalls": 0,
+  "facts": [
+    {
+      "scenario": "restart-diamond",
+      "proposal": {
+        "id": "a26ed8b3-86a3-476e-a094-b3f3f27a35a0",
+        "goalId": "cce8f8d3-0316-41a1-97b3-443f3af7c6d4",
+        "projectId": "7f3da0c6-d3ef-4271-9281-0f7605441e8a",
+        "baseRevision": 1,
+        "goalDigest": "1ccdc14cbeb83fad4c5c3d7bcda0b003cd99b2d70207e7504d099fd25f16c464",
+        "proposalDigest": "b93b36e03fd97190c9f8016ab8aebd8fef896e4e110d5bfafa3fc97af2ce018e",
+        "source": {
+          "kind": "owner-submission"
+        },
+        "createdAt": "2026-10-06T05:13:24.849Z",
+        "nodeCount": 4,
+        "edgeCount": 4,
+        "state": "proposed",
+        "appliedRevision": null,
+        "input": {
+          "reason": "Bounded diamond proposal",
+          "additions": [
+            {
+              "key": "A",
+              "title": "Source",
+              "dependencies": []
+            },
+            {
+              "key": "B",
+              "title": "Branch B",
+              "dependencies": [
+                {
+                  "key": "A",
+                  "kind": "proposed"
+                }
+              ]
+            },
+            {
+              "key": "C",
+              "title": "Branch C",
+              "dependencies": [
+                {
+                  "key": "A",
+                  "kind": "proposed"
+                }
+              ]
+            },
+            {
+              "key": "D",
+              "title": "Join",
+              "dependencies": [
+                {
+                  "key": "B",
+                  "kind": "proposed"
+                },
+                {
+                  "key": "C",
+                  "kind": "proposed"
+                }
+              ]
+            }
+          ],
+          "expectedProjectRevision": 1
+        }
+      },
+      "receipt": {
+        "proposalId": "a26ed8b3-86a3-476e-a094-b3f3f27a35a0",
+        "goalId": "cce8f8d3-0316-41a1-97b3-443f3af7c6d4",
+        "projectId": "7f3da0c6-d3ef-4271-9281-0f7605441e8a",
+        "proposalDigest": "b93b36e03fd97190c9f8016ab8aebd8fef896e4e110d5bfafa3fc97af2ce018e",
+        "fromRevision": 1,
+        "toRevision": 8,
+        "nodeIds": {
+          "A": "acc62df3-6da8-40e1-b1a5-24f37f1f1148",
+          "B": "f89e65d6-97ce-44ca-82b2-fed5b6d1c88b",
+          "C": "aa417b4f-843a-4463-afe3-2aaf0be65d9a",
+          "D": "ab933c9c-2ad1-4bef-a450-2cd719c697ab"
+        },
+        "actor": {
+          "kind": "owner"
+        },
+        "appliedAt": "2026-10-06T05:13:24.941Z"
+      },
+      "graph": {
+        "revision": 8,
+        "reason": "Apply goal graph proposal a26ed8b3-86a3-476e-a094-b3f3f27a35a0",
+        "actor": "owner",
+        "createdAt": "2026-10-06T05:13:24.940Z",
+        "nodes": [
+          {
+            "id": "acc62df3-6da8-40e1-b1a5-24f37f1f1148",
+            "title": "Source",
+            "taskId": null,
+            "version": 1,
+            "parentId": null,
+            "dependsOn": []
+          },
+          {
+            "id": "f89e65d6-97ce-44ca-82b2-fed5b6d1c88b",
+            "title": "Branch B",
+            "taskId": null,
+            "version": 2,
+            "parentId": null,
+            "dependsOn": [
+              "acc62df3-6da8-40e1-b1a5-24f37f1f1148"
+            ]
+          },
+          {
+            "id": "aa417b4f-843a-4463-afe3-2aaf0be65d9a",
+            "title": "Branch C",
+            "taskId": null,
+            "version": 2,
+            "parentId": null,
+            "dependsOn": [
+              "acc62df3-6da8-40e1-b1a5-24f37f1f1148"
+            ]
+          },
+          {
+            "id": "ab933c9c-2ad1-4bef-a450-2cd719c697ab",
+            "title": "Join",
+            "taskId": null,
+            "version": 2,
+            "parentId": null,
+            "dependsOn": [
+              "aa417b4f-843a-4463-afe3-2aaf0be65d9a",
+              "f89e65d6-97ce-44ca-82b2-fed5b6d1c88b"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "invalid-proposals",
+      "codes": [
+        "invalid_graph_proposal",
+        "proposal_reference",
+        "dependency_cycle",
+        "dependency_not_found",
+        "stale_project_revision",
+        "invalid_graph_proposal",
+        "invalid_graph_proposal",
+        "invalid_graph_proposal"
+      ],
+      "oversizedStatus": 413
+    },
+    {
+      "scenario": "bounded-read",
+      "detailBytes": 7242,
+      "pageCount": 3,
+      "maxPageBytesAsserted": 1000
+    },
+    {
+      "scenario": "concurrent-proposals",
+      "statuses": [
+        200,
+        409
+      ],
+      "winningReceipt": {
+        "proposalId": "8238215b-c5c8-45ad-849e-b3514c6b68f4",
+        "goalId": "bfbc03e6-dacc-4c3a-8c8d-afd9f811f4db",
+        "projectId": "3e2d3e78-230a-44a3-a191-c25823fa0fe5",
+        "proposalDigest": "07d4875486d919f48754f63d5a0da4c53bb533c5247936c52f2a4f21240ff53a",
+        "fromRevision": 1,
+        "toRevision": 8,
+        "nodeIds": {
+          "A": "7324368b-ff02-4098-9a7e-258a88219069",
+          "B": "c42b0a56-8c89-42c5-a592-48d6f3daea61",
+          "C": "5bd742a5-4ad1-4d2a-946f-e37b6f493eb7",
+          "D": "c9dd1cd9-10a5-4c01-b7b9-b7c22833c32a"
+        },
+        "actor": {
+          "kind": "owner"
+        },
+        "appliedAt": "2026-10-06T05:13:25.130Z"
+      }
+    },
+    {
+      "scenario": "rollback-lost-ack",
+      "receipt": {
+        "actor": {
+          "kind": "owner"
+        },
+        "goalId": "56ec4ed4-bfdd-4651-a25d-7915511f6bdd",
+        "nodeIds": {
+          "A": "12fc7674-07eb-4cd0-a04d-f7d70b166f64",
+          "B": "3f9231f1-dcd6-417a-9fa4-f1ae202456b4",
+          "C": "4fa6223a-36e5-4e8f-b091-0b2da7deb771",
+          "D": "1ea58dad-9e17-495d-bcf0-aadebc9f1348"
+        },
+        "appliedAt": "2026-10-06T05:13:25.187Z",
+        "projectId": "8470693e-0d31-45ab-82ee-54c865aad391",
+        "proposalId": "e0fba62b-35c7-43d4-93a8-116507a893e4",
+        "toRevision": 8,
+        "fromRevision": 1,
+        "proposalDigest": "0b5fb023447b26e791e3e7bf13d78362e3f81705955defe6913c10c6b35895e6"
+      },
+      "replayed": true
+    },
+    {
+      "scenario": "legacy-grant-isolation",
+      "newNode": "5181186e-15e2-497d-90e0-a39b9f98dc58",
+      "existing": "6994e90c-2638-4482-8727-b8aa564256ff",
+      "runnerWriteStatus": 403,
+      "receipt": {
+        "proposalId": "9387570b-c449-4bd0-ad84-83712d036392",
+        "goalId": "9dadc24b-f620-46c0-b993-ae3150a9ed59",
+        "projectId": "d80c31f2-ca58-4a5a-954c-0430b576d435",
+        "proposalDigest": "ee241de6d05e66bc60e45920d8499823562cb3c5784387beb1267ae7a13711c8",
+        "fromRevision": 2,
+        "toRevision": 4,
+        "nodeIds": {
+          "N": "5181186e-15e2-497d-90e0-a39b9f98dc58"
+        },
+        "actor": {
+          "kind": "owner"
+        },
+        "appliedAt": "2026-10-06T05:13:25.820Z"
+      }
+    },
+    {
+      "cleanup": {
+        "database": "flow_o05_1280e04ecfe545ef8934c155ac5599b1",
+        "removed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-06T05:57:16.280614+00:00",
+  "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+  "testedSourceCommit": "2fb1eed9fbb1111e9226f1da458c5612aeb84c6e",
+  "testedSourceDirty": true,
+  "files": [
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "7242783c516311dec0793a6a659a181b5b76c8e1259c732649d5a77379ceb2c2",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "577676a1357e6da20c613f6ed49301ebb954b0982e8b5db972067a2b7c21e004",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "sha256": "a9021f6347c24ce19ff1d21a4ee36c2d816f988db374e58f1c185a85c7629d02",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "c6bddc0c79b3fda9bfb7e1da0b9f31447dabf819c4230893aa978e04620d4d51",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "sha256": "295ce9219ffa1012c315d479d5cb990b2cdfcb56342041f20d63d81a14e4b8a4",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "sha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d",
+      "matchesTarget": true
+    }
+  ]
+}

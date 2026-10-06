@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-graph-runs
+
+ ✓ apps/server/src/goal-graph-runs/runs.test.ts (8 tests) 10415ms
+   ✓ applies an authorized diamond with real actor and recovers lost ACK after restart despite its own revision change  1424ms
+   ✓ pages immutable base nodes with exact versions and explicit staleness, rejecting cross-grant cursors  1099ms
+   ✓ enforces grant identity, existing references, quotas and proposal binding without extending node grants  2894ms
+   ✓ keeps graph commands and audits atomic through a mid-apply database failure and immutable history  514ms
+   ✓ revalidates cached success against concurrent revoke after locking the project  498ms
+   ✓ revalidates cached success against concurrent cancel after locking the project  512ms
+   ✓ serializes competing CAS applies and enforces proposal-only scope and current lease  2555ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  22:29:17
+   Duration  10.81s (transform 192ms, setup 0ms, import 324ms, tests 10.42s, environment 0ms)
+

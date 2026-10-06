@@ -1,0 +1,129 @@
+{
+  "id": "K02",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T06:00:22.167Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-context/plans/k02-conversation-context/status.md",
+    "syncedAt": "2026-10-06T06:00:35.313Z",
+    "stale": false,
+    "ageHours": 0.003975833333333333
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/conversation-context",
+    "head": "09383874a0d21392b42d4e2c45e5b5990111957a",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T06:00:36.279Z"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "a6c9b09a8a4d4020a497341d3fb6deed16b08d02",
+    "proof": {
+      "target": "a6c9b09a8a4d4020a497341d3fb6deed16b08d02",
+      "head": "09383874a0d21392b42d4e2c45e5b5990111957a",
+      "scopes": [
+        "apps/server/src/conversation-context",
+        "apps/server/src/knowledge/storage.ts",
+        "apps/server/src/conversations/admission.ts",
+        "apps/server/src/conversations/commands.ts",
+        "apps/server/src/conversations/state.ts",
+        "apps/server/src/conversation-queue/commands.ts",
+        "apps/server/src/conversation-queue/controls.ts",
+        "apps/server/src/conversation-queue/promotion.ts",
+        "apps/server/src/conversation-queue/queries.ts",
+        "apps/server/src/conversation-queue/store.ts",
+        "apps/server/src/reconciliation.ts",
+        "apps/server/src/runners.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/storage/migrations/018-conversation-context.sql",
+        "docs/evidence/k02/check.mjs"
+      ],
+      "observedAt": "2026-10-06T06:00:36.378Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/k02/README.md",
+        "docs/evidence/k02/approved-dashboard-receipt.json",
+        "docs/evidence/k02/dashboard-receipt.json",
+        "docs/evidence/k02/manifest.json",
+        "docs/evidence/k02/quality.md",
+        "plans/k02-conversation-context/review.md",
+        "plans/k02-conversation-context/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "a6c9b09a8a4d4020a497341d3fb6deed16b08d02",
+    "head": "09383874a0d21392b42d4e2c45e5b5990111957a",
+    "scopes": [
+      "apps/server/src/conversation-context",
+      "apps/server/src/knowledge/storage.ts",
+      "apps/server/src/conversations/admission.ts",
+      "apps/server/src/conversations/commands.ts",
+      "apps/server/src/conversations/state.ts",
+      "apps/server/src/conversation-queue/commands.ts",
+      "apps/server/src/conversation-queue/controls.ts",
+      "apps/server/src/conversation-queue/promotion.ts",
+      "apps/server/src/conversation-queue/queries.ts",
+      "apps/server/src/conversation-queue/store.ts",
+      "apps/server/src/reconciliation.ts",
+      "apps/server/src/runners.ts",
+      "packages/contracts/src/conversation-context.ts",
+      "packages/contracts/src/conversation-queue.ts",
+      "packages/contracts/src/conversations.ts",
+      "packages/contracts/src/runner.ts",
+      "packages/storage/migrations/018-conversation-context.sql",
+      "docs/evidence/k02/check.mjs"
+    ],
+    "observedAt": "2026-10-06T06:00:36.378Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/k02/README.md",
+      "docs/evidence/k02/approved-dashboard-receipt.json",
+      "docs/evidence/k02/dashboard-receipt.json",
+      "docs/evidence/k02/manifest.json",
+      "docs/evidence/k02/quality.md",
+      "plans/k02-conversation-context/review.md",
+      "plans/k02-conversation-context/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "current": true,
+  "issues": [],
+  "generatedAt": "2026-10-06T06:00:35.313Z",
+  "checks": {
+    "state": "passed",
+    "target": "a6c9b09a8a4d4020a497341d3fb6deed16b08d02",
+    "record": "PASSED a6c9b09a8a4d4020a497341d3fb6deed16b08d02；仅23不同模块用例/noEmit，生产挂载后的旧消费者组合待F01"
+  },
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "引用可随发送、排队和受控重试保持固定原文，公开界面不暴露私有执行输入",
+    "next": "与生产接线组合后验证原对话、队列和恢复行为",
+    "blocker": {
+      "state": "active",
+      "text": "等待生产接线后验证原对话、队列和恢复兼容性；责任F01/Lead"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  }
+}

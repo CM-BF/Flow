@@ -1,0 +1,34 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store
+
+ ❯ apps/server/src/knowledge/knowledge.test.ts (2 tests | 1 failed | 1 skipped) 755ms
+   ↓ owner creates exact text and resolves immutable UTF8 citation after restart
+   × search returns a bounded literal excerpt and resolves its full chunk 60ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/knowledge/knowledge.test.ts > search returns a bounded literal excerpt and resolves its full chunk
+AssertionError: expected 501 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 501
+
+ ❯ apps/server/src/knowledge/knowledge.test.ts:30:24
+     28|   const q = '中文连续句/path_v1.2.3\\item%_😀';
+     29|   const found = await f.http(`/api/projects/${projectId}/knowledge/sea…
+     30|   expect(found.status).toBe(200); expect(found.body.hits).toHaveLength…
+       |                        ^
+     31|   const hit = found.body.hits[0]; expect(hit.matchKind).toBe('literal'…
+     32|   expect(Buffer.byteLength(hit.excerpt.text)).toBeLessThanOrEqual(512)…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 skipped (2)
+   Start at  22:17:08
+   Duration  1.14s (transform 180ms, setup 0ms, import 304ms, tests 755ms, environment 0ms)
+
