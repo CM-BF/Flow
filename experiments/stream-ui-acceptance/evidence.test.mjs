@@ -23,23 +23,6 @@ test('wx reservation refuses a second window and refuses real mode', async () =>
     await assert.rejects(reserveWindow(join(dir, 'real.json'), { mode: 'live' }));
   } finally { await rm(dir, { recursive: true }); }
 });
-test('guard consumes before forward and never forwards second create or turn', async () => {
-  const evidence = { mutations: [] }, calls = []; let routeHandler;
-  await mutationGuard({ origin: 'http://127.0.0.1:1', evidence, checkpoint: async () => { calls.push('durable'); }, expectedPrompt: 'only prompt', expectedCreation: creation })({ route: async (_, handler) => { routeHandler = handler; } });
-  const invoke = async (path, text = 'only prompt') => routeHandler({ request: () => ({ url: () => `http://127.0.0.1:1${path}`, method: () => 'POST', postData: () => JSON.stringify(path === '/api/conversations' ? creation : { text }), headers: () => ({ 'idempotency-key': 'one' }) }), continue: async () => { calls.push('forward'); }, abort: async () => { calls.push('abort'); } });
-  await invoke('/api/conversations/chat/turns');
-  await invoke('/api/conversations'); await invoke('/api/conversations');
-  await invoke('/api/conversations/chat/turns'); await invoke('/api/conversations/chat/turns');
-  await invoke('/api/conversations/chat/queue');
-  assert.deepEqual(calls, ['durable','abort','durable','forward','durable','abort','durable','forward','durable','abort','durable','abort']);
-});
-test('unknown forwarding failure never restores consumed turn budget', async () => {
-  const evidence = { mutations: [] }; let handler, forwarded = 0;
-  await mutationGuard({ origin: 'http://127.0.0.1:1', evidence, checkpoint: async () => {}, expectedPrompt: 'prompt', expectedCreation: creation })({ route: async (_, fn) => { handler = fn; } });
-  const route = path => ({ request: () => ({ url: () => `http://127.0.0.1:1${path}`, method: () => 'POST', postData: () => JSON.stringify(path === '/api/conversations' ? creation : { text: 'prompt' }), headers: () => ({ 'idempotency-key': 'one' }) }), continue: async () => { forwarded++; throw Error('response unknown'); }, abort: async () => {} });
-  await assert.rejects(handler(route('/api/conversations')));
-  await handler(route('/api/conversations')); assert.equal(forwarded, 1);
-});
 test('serialized checkpoints persist redacted snapshots in call order', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'chatui-checkpoint-')), evidence = { value: 'secret\n"token' };
   try {

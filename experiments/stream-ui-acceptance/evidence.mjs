@@ -50,12 +50,35 @@ export function mutationGuard({ origin, evidence, checkpoint, expectedPrompt, ex
         try { assert.deepEqual({ harness: body?.harness, requested: body?.requested, executionProfile: body?.executionProfile }, expectedCreation); } catch { creationMatches = false; }
       }
       const blocked = failed || !creationMatches || request.method() !== 'POST' || !allowed.has(kind) || !request.headers()['idempotency-key']
-        || kind === 'turn' && (allowed.has('create') || body?.text !== expectedPrompt || conversationId && match[1] !== conversationId);
+        || kind === 'turn' && (!conversationId || body?.text !== expectedPrompt || match[1] !== encodeURIComponent(conversationId));
       evidence.mutations.push({ path: url.pathname, method: request.method(), kind, blocked, at: new Date().toISOString() });
       if (blocked) { await checkpoint(); return route.abort('blockedbyclient'); }
-      allowed.delete(kind); if (kind === 'turn') conversationId = match[1];
-      // The permission is consumed and durably recorded before forwarding, including unknown outcomes.
-      try { await checkpoint(); await route.continue(); } catch (error) { failed = true; throw error; }
+      allowed.delete(kind);
+      // Spend before sending; neither an unknown response nor a local failure restores permission.
+      try {
+        await checkpoint();
+        if (kind === 'turn') { await route.continue(); return; }
+        const response = await route.fetch({ maxRetries: 0, maxRedirects: 0, timeout: 12000 });
+        assert.ok(response.ok(), 'Creation response was not successful.');
+        const bytes = await response.body(); assert.ok(bytes.length <= 65536, 'Creation receipt exceeds its limit.');
+        const receipt = JSON.parse(bytes.toString('utf8')), created = receipt?.conversation;
+        assert.ok(created && typeof created.id === 'string' && /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/.test(created.id), 'Missing or unsafe conversation identity.');
+        assert.equal(receipt.replayed, false, 'This new window must not adopt a replayed creation.');
+        assert.equal(created.revision, 0, 'Only a newly created conversation is accepted.');
+        assert.equal(created.title, body.title, 'Creation title changed.');
+        assert.deepEqual({ harness: created.harness, requested: created.requested, executionProfile: created.executionProfile }, expectedCreation);
+        assert.equal(created.projectId, body.projectId, 'Creation project changed.');
+        evidence.creationReceipt = { conversationId: created.id, revision: created.revision, requested: created.requested,
+          executionProfile: created.executionProfile, responseDigest: sha256(bytes), receivedAt: new Date().toISOString() };
+        await checkpoint();
+        // Only this verified, durable identity can authorize the one following turn.
+        conversationId = created.id;
+        await route.fulfill({ response });
+      } catch {
+        failed = true;
+        evidence.mutationFailure = { kind, path: url.pathname, state: 'unknown-or-invalid-response', at: new Date().toISOString() };
+        try { await checkpoint(); } finally { await route.abort('blockedbyclient'); }
+      }
     });
   };
 }

@@ -44,6 +44,14 @@
       "findings": "Strict same-frame draft-vs-final snapshot; fixed none-profile UI and mutation binding; archived product source; imports preserve own package identity. Names/responsibilities/errors/duplication checked.",
       "fixes": "Separated browser journey, safety evidence helper, fixture and isolated-source setup. Removed unused hash. Existing full Web suite not repeated.",
       "unresolved": "No live entry/permit/actual usage seam; candidate records exact prerequisites."
+    },
+    {
+      "at": "2026-10-06T08:52:00Z",
+      "scope": "P2 create receipt guard only; owner fix",
+      "findings": "route.continue did not attest a successful creation and allowed an arbitrary first conversation ID. Initial mocked continue failure missed the real network boundary.",
+      "fixes": "Create uses no-retry/no-redirect route.fetch; validate fresh receipt identity/config; fsync checkpoint then bind turn; all invalid or unknown outcomes latch failure. Replaced two weak guard mocks with five real Chrome/HTTP scenarios.",
+      "checks": "5/5 actual network regressions red on prior code; 9/9 current behavior checks green; one same-driver actualApp green. No product or live entry change.",
+      "unresolved": "Independent delta review pending; real live permit/caller/usage remains unimplemented."
     }
   ]
 }
