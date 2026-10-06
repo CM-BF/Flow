@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:17 UTC / main421b2e89（个人窗口期间固定root af51） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:30 UTC / mainc8e2e9e（个人窗口已关闭，root恢复main） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin421b2e89已接F04原失败、独立收尾及c612终端观察修复。个人源窗口固定af51，原运行362/v15与Webcaa1/v2在新事实前保留，不预报发布成功。 |
+| 已集成main状态 / HEAD | main/originc8e2e9e已接F04修复及消息设置独立组件；21:27个人更新成功，实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 终端启动及收尾诊断修复已进入主线；个人新版更新在停服前的产物身份检查停止，未改变服务或运行记录。 |
-| 下一可用交付 | 修正产物字段顺序的比较误拒后，再沿新固定窗口更新；事务、终端和网页已就绪检查按资源准入接续。 |
-| 当前阻塞 | ACTIVE: 本次个人更新窗口已关闭，旧记录仍保留；完整后台产物仍待原空间门槛，F04/SVC07完整检查需重新fresh准入。没有降低磁盘门槛或重新调用模型。 |
+| 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；后续检查窗口已归还，批量读取依赖已补齐。 |
+| 下一可用交付 | 事务连接修复的真实HTTP验证，随后终端与网页双端接续；进程监督复用模块并行实施。 |
+| 当前阻塞 | ACTIVE: 完整后台固定产物仍待2.5GiB门槛；其他检查逐项fresh资源准入，个人发布旧intent阻塞已解除，不降低原门槛。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -283,3 +283,9 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 2026-10-06 21:21 UTC：run211659仅01只读613ms与02比较57ms；唯一retained false为实际descriptor同三字段不同键序，原JSON.stringify误拒，0材料/维护/退役/发布。窗口已关闭，root恢复main421b后正常发布MessageSettings至c8e，operator仅原范围局部修复，不预占PG/Chrome。原失败保持；独立0a8批准与此次实际失败分开。OPS14最小独立树owned-process-supervision/codex已供给c8e、53,701B，原native_center_owner受派fresh take三scope（tools模块/自有plan/evidence），两个在用wrapper不改；完整复用需后继正式交权。
 
 2026-10-06 21:23 UTC：descriptor专用三字段比较6e7109已增量独审，146固定/145现场绑定全同；原保存反例与值/未知键/列表顺序3纯例通过116ms，旧18不重跑。新exclusive run212322、source-window34621ca0，root固定af51/main冻结c8e；原operator已获START，fresh现场/原24步/09起900秒不变，无模型许可。旧211659失败仅作为已封存反例，不改绿。
+
+## 2026-10-06 21:30 个人更新收口与下一运行窗口
+
+同一原operator完成 run-retirement-release-20261006T212322Z 的24步，25个最终check均true、166.030s/900s、0主动任务/provider/tab操作。旧80B intent先0600私有备份与持久审计，再按已批精确语义退役为46B；旧claim结果仍unknown，不造ACK/重放。af51后台accepting v18，新Web d629 v3，三保留产物和旧数据保持。Lead只读核保存回执后恢复root mainc8e2e9e clean；[源码窗口关闭记录](../../../m2-integration/docs/evidence/i02/af51-d629-retirement-source-window-2125-closed.json)。
+
+下一共享短窗口给Mika SVC07既定HTTP消费者，开始前重新核原资源线；结束后直接与Web/F04交还，不把末free1,252,483,072B当未来准入值。REQ15九个原固定依赖链接已核版本/hash并供给，未改tracked/dirty，无install/import/PG，见[供给回执](../../docs/quality/req15-dependency-provision-20261006.json)。OPS14、MATURE02C02、REQ15三来源进入正常登记批，metadata错误仍由原owner修，不改parser猜状态。
