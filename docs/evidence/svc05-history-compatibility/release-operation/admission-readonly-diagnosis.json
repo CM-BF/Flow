@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06T20:42:42.952560+00:00",
+  "scope": "exact namespace admission.json only; no DB/process/service observations",
+  "relativePath": "runner/89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+  "PG": 0,
+  "processProbes": 0,
+  "serviceActions": 0,
+  "provider": 0,
+  "bodyPersisted": false,
+  "outcome": "observed",
+  "identity": {
+    "personal": {
+      "dev": 16777234,
+      "ino": 117819905,
+      "uid": 501,
+      "mode": "0o700",
+      "bytes": 416
+    },
+    "runner": {
+      "dev": 16777234,
+      "ino": 117819908,
+      "uid": 501,
+      "mode": "0o700",
+      "bytes": 96
+    },
+    "namespace": {
+      "dev": 16777234,
+      "ino": 117819985,
+      "uid": 501,
+      "mode": "0o700",
+      "bytes": 224
+    },
+    "file": {
+      "dev": 16777234,
+      "ino": 122453369,
+      "uid": 501,
+      "mode": "0o600",
+      "bytes": 80
+    },
+    "beforeAfterMatched": true
+  },
+  "bytes": 80,
+  "sha256": "67cdfdcdbbf1d646cbfa12552b58299ec68b7ddaa70e8453ae7786ab830f590c",
+  "fields": [
+    "assignments",
+    "inFlight",
+    "version"
+  ],
+  "valueTypes": {
+    "version": "number",
+    "inFlight": "string",
+    "assignments": "array"
+  },
+  "schemaVersion": 1,
+  "inFlight": {
+    "null": false,
+    "presentCount": 1,
+    "uuidSyntaxValid": true
+  },
+  "assignments": {
+    "count": 0
+  },
+  "fixedSchemaMatches": true,
+  "strictIdle": false,
+  "classification": "nonempty-durable-admission-not-proof-of-active-task",
+  "matchesSaved2030": {
+    "bytes": true,
+    "sha256": true
+  },
+  "matchesSaved2040": {
+    "bytes": true,
+    "sha256": true
+  }
+}

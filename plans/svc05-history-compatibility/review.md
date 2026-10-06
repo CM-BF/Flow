@@ -97,3 +97,7 @@ Execution Lead 独立APPROVED a6441a426ea98ee90e8baac44b75fd1d0d61cbeb；67绑�
 ## 2026-10-06 20:36 UTC Namespace修正独立批准
 
 Execution Lead 独立APPROVED_EXECUTABLE_PREPARATION，固定5fe98f97cb7506f65555ab72205ebaea8464af84；79 fixed/current bindings全符，完整3文件/producer真实路径/3新case与原raw已读；旧8未重跑，reviewer0测试/provider。原件[namespace-independent-review](../../docs/evidence/svc05-history-compatibility/release-operation/namespace-independent-review.json)，SHA256 147c31f26b4e43154023ac94c4d4b999191e28fba92362abae2fc929aeef2ddb。原2030窗口181ms只读失败、0后继动作保持。仅准备批准，当前不授权重新observe或任何个人变更；等待Lead新固定source窗口和串行交接。
+
+## 2026-10-06 20:47 UTC 只读诊断（非新的实现批准）
+
+[单文件schema事实](../../docs/evidence/svc05-history-compatibility/release-operation/admission-readonly-diagnosis.json)与[15固定源码绑定](../../docs/evidence/svc05-history-compatibility/release-operation/admission-diagnosis-bindings.json)定位到合法持久未决inFlight，原strictIdle保持，原2030/2040失败均保留。维护锁屏障/既有reconciliation边界已只读核对；[最小恢复提案](../../docs/evidence/svc05-history-compatibility/release-operation/admission-resolution-proposal.md)待Lead核定新增显式操作语义，不作者自批、不执行。0新工程检查/DB/进程/服务/provider。
