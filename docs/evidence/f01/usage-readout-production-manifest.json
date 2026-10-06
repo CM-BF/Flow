@@ -1,0 +1,91 @@
+{
+  "target": "7150d6ee9e1e36b69994da1977aa980139f3458f",
+  "observedAt": "2026-10-06T14:23:46.733769+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13267,
+      "sha256": "ba1e251c59cfb091c8867ce899fa9aad3f89156683cc66ee75a2387371982a00"
+    },
+    {
+      "path": "packages/client/src/usage-readout-production.test.ts",
+      "bytes": 5787,
+      "sha256": "33455862741206c25d12e80f78562c65a1953a24997012006a6d4d1ecf772a1d"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/usage-readout-production-green.txt",
+      "bytes": 468,
+      "sha256": "5fc4856803bfa4ca3a9af96dc76b9fa960c3bec3879fbbb1d5836ad7b1f43679"
+    },
+    {
+      "path": "docs/evidence/f01/usage-readout-production-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/usage-readout-production-facts.json",
+      "bytes": 3727,
+      "sha256": "0f6bc51d23fe845cc482c1c35dfed2115f8999c74695cebc771921328a2812ed"
+    }
+  ],
+  "approvedDomainInputs": [
+    {
+      "path": "apps/server/src/usage-readout/index.ts",
+      "bytes": 2391,
+      "sha256": "d4ae1559864c8aa75e5932190e736868092f4cfc2b647326fee52cde247a3336"
+    },
+    {
+      "path": "apps/server/src/usage-readout/projection.ts",
+      "bytes": 5218,
+      "sha256": "88033a13dfa1bc8c0cc188c795a089aa315d28d9b65f64ffb2d653b2220171dd"
+    },
+    {
+      "path": "apps/server/src/usage-readout/readout.test.ts",
+      "bytes": 16245,
+      "sha256": "550e3a8fef898a023c50b1d3e7de1c9932a5a346c81d138cc93e46a31d821acb"
+    },
+    {
+      "path": "apps/server/src/usage.ts",
+      "bytes": 5768,
+      "sha256": "1382e0e3d399a41be8c0d7e0d197809f02ea7d9b71b3f24140116ccd35648cb7"
+    },
+    {
+      "path": "packages/contracts/src/usage-readout.ts",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5"
+    }
+  ],
+  "domainTarget": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+  "clientTarget": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+  "checks": {
+    "production": {
+      "passed": 1,
+      "selected": 1,
+      "durationMs": 2215,
+      "totalMs": 3230,
+      "exit": 0,
+      "toolChunk": "bb881f"
+    },
+    "typecheck": {
+      "exit": 0,
+      "toolChunk": "0f7ad8"
+    },
+    "providerQueries": 0,
+    "domainMatrixRerun": 0,
+    "newDatabaseCount": 1
+  },
+  "scope": "factory owner-route mount and one true FlowClient/HTTP/PG direct consumer; no new ledger/projection logic",
+  "limits": [
+    "SDK/modelUsage values are synthetic published events, not new provider observation",
+    "No Web/TUI rendering or budget enforcement delivered",
+    "No new cache savings, subscription billing or cost attribution claim"
+  ],
+  "skills": [
+    "find-skills",
+    "codebase-design",
+    "clean-code"
+  ],
+  "review": "NOT_STARTED"
+}
