@@ -9,3 +9,5 @@
 局部复验：在本树使用 `PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/web/test/conversation-outbox.test.ts apps/web/test/conversation-projection.test.ts apps/web/test/conversation-queue.test.ts apps/web/test/execution-profiles.test.ts`；Web类型检查 `pnpm --filter @flow/web typecheck`。依赖 `pnpm install --frozen-lockfile`，不得更改共享依赖。
 
 本片没有独立可视UI或新URL；保留既有QUEUE HTTP fixture58071及所有旧预览，不把其未包含本片的运行版本称新交付。未运行模型、真实中心或DB，没有知识引用选择/发送/详情能力；后端/控件后继另领。main集成由Lead负责，当前未集成。
+
+独立审查已APPROVED：root 2026-10-06T05:58:18Z，六文件源码+102直接测试，详情见review。交Lead时必须同时带原样共享输入e9a0259151fcb215e1bd607b5461d81412da2742与manifest来源7368497；不要把本文当授权合入未审K02领域分支。
