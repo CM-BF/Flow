@@ -12,11 +12,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；当前薄client HTTP1/1与typecheck，原失败保留；不代表PG/原生模型 |
 | 已集成main状态 / HEAD | main fb906cb42391971a8b315dbd813f7633927d7265 已含K01/SVC02领域、薄client、CLI与015/016；SVC02独立部署证据确认常驻同SHA/v3接受。O06共享增量尚未main |
-| Review | O06薄client待独审；K01/SVC02生产c03+592已Mika批准并main，历史见review.md |
+| Review | O06薄client79e06+a9cd与生产bf03均Mika独立APPROVED；test P2已关闭，见review.md |
 | 实现目标 | 79e06efdda45f04e713838086de2400f75949710 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/goal-graph-runs.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 知识原文保存检索与真实预览安全升级已可用；正在接入受限目标拆分 |
 | 下一可用交付 | 让获授权的执行者读取固定计划版本并提交有限拆分提案 |
@@ -65,3 +65,5 @@
 | F01-15 | pending | Lead | 新真实Web排队两query仅提案，待固定Web/运行前置与GO具体许可；旧预算封存 |
 
 2026-10-06 05:46 UTC：O06生产target bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，9/9真实PG/HTTP与noEmit通过；薄client79e06与该2文件挂载分别待独审，不提前声称原生query。
+
+05:49 UTC：O06两共享delta已独立批准，正在受控main集成；真实queue driver仅0模型准备，新预算未开启。
