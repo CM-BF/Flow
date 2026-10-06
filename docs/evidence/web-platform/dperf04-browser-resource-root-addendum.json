@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-06T19:39:40.087077+00:00",
+  "verdict": "CHANGES_REQUESTED_RUNTIME_SUPERVISOR_ADDENDUM_NOT_RUN",
+  "source": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+  "supervisor": {
+    "path": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/supervisor.py",
+    "bytes": 10938,
+    "sha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43"
+  },
+  "priorReviewsRetained": [
+    "/tmp/root-dperf04-b17-browser-wrapper-review.json",
+    "/tmp/root-dperf04-populated-binding-review.json"
+  ],
+  "meaning": "Addendum only. Prior unchanged product/read-model/client/source review and actual abd2 Node8 evidence are not repeated or invalidated. Existing browser supervisor admission must not rely on old structural approval after these concrete new findings.",
+  "findings": [
+    {
+      "id": "DPERF-TAIL",
+      "priority": "P2",
+      "file": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/supervisor.py",
+      "line": 131,
+      "finding": "Last resource checkpoint runs during worker polling. After TERM/KILL/reap, scratch is deleted without a final scratch/free observation; result and budget are then written without a post-write resource/deadline observation. A terminal spike during cleanup or final writes can be erased from evidence and still yield PASS. sizes also silently ignores os.walk scandir errors.",
+      "requestedFix": "Reuse narrow non-deadline resource observation before scratch removal and after evidence writes, explicit non-ENOENT scan-error propagation, actual final timing evidence and failure retention while safe owned cleanup continues. Avoid a new general runner framework."
+    },
+    {
+      "id": "DPERF-SOFT-STOP",
+      "priority": "P2",
+      "file": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/supervisor.py",
+      "line": 106,
+      "finding": "Worker is started in a new session but parent has no SIGTERM/SIGINT handler. Normal SIGTERM terminates Python without entering finally, leaving its separate worker/Chrome group outside the parent cleanup path and budget incomplete. SIGKILL remains unhandleable, but ordinary cooperative stops are handleable.",
+      "requestedFix": "Install a narrow cooperative stop flag/handlers before launch; let the same finally terminate/reap the owned group and persist failure. Restore handlers after cleanup. Do not claim immunity to SIGKILL or inspect unrelated processes."
+    }
+  ],
+  "newCompatibilityEvidence": {
+    "state": "PREPARATION_UPDATE_REQUIRED_BEFORE_BROWSER_ADMISSION",
+    "basis": "Settings b2 actual sandbox initialization EPERM/GPU unusable/SIGTRAP plus primary macOS nested sandbox research; DPERF04 was never launched, so this is not an observed DPERF04 failure or unique proof of installed154 cause.",
+    "currentDPERF04": "Native Chrome inherits custom sandbox-exec via worker. Parent does not explicitly bind MAC_CHROMIUM_TMPDIR or Crashpad location. Chrome only has boolean exited and capped text without dropped-byte/actual exit/close evidence.",
+    "direction": "Before any eventual run, re-use fixed Settings sibling design research and owned path/logging semantics within the original parent/wrapper seam; separately disclose and obtain actual Lead acceptance for any removal of outer Chrome custom write/egress limits. Keep Node sandbox and Chrome native sandbox; no personal profile access, no no-sandbox switch and no exploratory launch. Manager chooses queued owner timing under original9scope.",
+    "boundaryAcceptance": "NOT_GRANTED by this report; Settings acceptance cannot stand in for a differently hashed DPERF04 candidate."
+  },
+  "statusConsistency": {
+    "finding": "Owner status/review still say b17 source review pending despite archived root+manager source and populated-binding reviews. This caused redundant triage and can mislead other leads.",
+    "action": "At next original-owner safe metadata update, retain historical reviews, show this current runtime-preparation addendum and browserNOT_RUN, while keeping fullfeature partial/UNKNOWN. Do not manufacture a second hand-maintained status."
+  },
+  "validation": {
+    "pins": [
+      {
+        "path": "apps/execution-dashboard/src/read-model.mjs",
+        "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+        "matches": true
+      },
+      {
+        "path": "apps/execution-dashboard/src/aggregate.mjs",
+        "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+        "matches": true
+      },
+      {
+        "path": "apps/execution-dashboard/src/server.mjs",
+        "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+        "matches": true
+      },
+      {
+        "path": "apps/execution-dashboard/public/app.js",
+        "sha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+        "matches": true
+      },
+      {
+        "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5",
+        "matches": true
+      },
+      {
+        "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "sha256": "6d62172461fbde892168bfe296c5cd79538e36258da79717a79cc933286dfb6d",
+        "matches": true
+      },
+      {
+        "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+        "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+        "matches": true
+      }
+    ],
+    "pythonAST": "PASS parse only",
+    "runtime": "NOT_RUN",
+    "projectWrites": false,
+    "spaceOrServicesSampling": false,
+    "node8Rerun": false
+  },
+  "budget": "browser0/60000ms with15000cleanup unchanged; Node3950ms historical unchanged. Current personal-center recovery priority, no new shared window.",
+  "cleanCode": "Narrow lifecycle/error propagation gaps only; preserve business assertions and original single-owner budget/process boundaries."
+}

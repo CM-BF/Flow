@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-06T19:41:24.389917+00:00",
+  "state": "DISPATCHED_SOURCE_ONLY_UNDER_EXISTING_COMMITTED_CLAIM",
+  "owner": "w01_owner",
+  "taskId": "WPF-DPERF04",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+  "version": 1,
+  "scope": [
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "docs/evidence/wpf-dperf04",
+    "plans/wpf-dperf04-summary-detail"
+  ],
+  "freshObservation": "dperf04-browser-lifecycle-claim-observation.json",
+  "sourceTarget": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+  "actualHeadAtDispatch": "032b4418f5a944150b888e10fef342b64f3e3655",
+  "sourcePinsMatch": 7,
+  "rootReview": "dperf04-browser-resource-root-addendum.json",
+  "allowedChanges": [
+    "Original summary-detail.browser.mjs wrapper lifecycle plus own plan/evidence",
+    "New task-specific TMP supervisor candidate; preserve bd053 original bytes"
+  ],
+  "requiredFixes": [
+    "Terminal resource/time observations after owned reap before scratch removal and after final writes; non-ENOENT scan failure propagated",
+    "Cooperative SIGTERM/SIGINT handling before launch, common failure/owned cleanup path, handlers restored",
+    "Independently bound native Chrome sibling preparation with owned paths and actual exit/log facts; keep Node custom sandbox and Chrome native sandbox"
+  ],
+  "unchanged": [
+    "Business checks and task-links behavior bodies",
+    "Original Node8 evidence and3950ms accounting",
+    "Browser0/60000ms with15000ms cleanup",
+    "Old candidates and raw failure evidence"
+  ],
+  "boundaryApproval": null,
+  "gateCreated": false,
+  "newTake": false,
+  "runtime": "NOT_RUN; no product import/test/PG/HTTP/Chrome/free sampling or install",
+  "statusAction": "Original owner synchronizes prior b17/root+manager/populated scoped reviews and current addendum into its one status/review; fullfeature UNKNOWN/browserNOT_RUN",
+  "currentWindow": "PERSONAL_CENTER_RECOVERY_PRIORITY; Lead only, no Web runtime window"
+}

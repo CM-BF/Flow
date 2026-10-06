@@ -285,7 +285,14 @@
       "evidence": "dperf04-b17-manager-source-review.json",
       "bindingEvidence": "dperf04-populated-binding-root-review.json",
       "bindingCandidate": "dperf04-summary-binding-candidate/binding.json",
-      "bindingBoundary": "No gate or runnable state; future fresh identity/budget/path/claim/window/free required. Stop guard remains >=1140850688; observed stop fires <= threshold."
+      "bindingBoundary": "No gate or runnable state; future fresh identity/budget/path/claim/window/free required. Stop guard remains >=1140850688; observed stop fires <= threshold.",
+      "runtimePreparation": {
+        "state": "SOURCE_ONLY_REPAIR_DISPATCHED",
+        "evidence": "dperf04-browser-lifecycle-dispatch.json",
+        "rootAddendum": "dperf04-browser-resource-root-addendum.json",
+        "browser": "NOT_RUN",
+        "nativeChromeBoundaryAcceptance": null
+      }
     }
   },
   "leadEvents": [

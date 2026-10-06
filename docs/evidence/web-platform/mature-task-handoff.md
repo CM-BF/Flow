@@ -46,7 +46,7 @@ W01固定 **ed769/8bdc** 六源与[现有依赖和两类检查准备](message-se
 
 ## 看板与视觉后继
 
-DPERF04 唯一[owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md)，b554 v1原9仍占用。abd2实际Node第二次7叶+父8PASS，累计3950/30000ms，不重跑；b17/032b浏览器wrapper与单summary-detail [populated候选](dperf04-summary-binding-candidate/report.md)获[root结构审](dperf04-populated-binding-root-review.json)，仍CANDIDATE/无gate/无Chrome。task-links须后继单独绑定，browser预算原60秒含15清理及128/64MiB门槛不变。注册与实现main、实际运行分别记录。
+DPERF04 唯一[owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md)，b554 v1原9仍占用。abd2实际Node第二次7叶+父8PASS，累计3950/30000ms，不重跑；b17/032b浏览器wrapper与单summary-detail [populated候选](dperf04-summary-binding-candidate/report.md)获[root结构审](dperf04-populated-binding-root-review.json)，仍CANDIDATE/无gate/无Chrome。task-links须后继单独绑定，browser预算原60秒含15清理及128/64MiB门槛不变。后继[root新增监督审查](dperf04-browser-resource-root-addendum.json)只补TAIL/SOFT-STOP两P2及Settings实际故障带来的兼容准备要求，旧产品源码审与Node8证据保留。manager19:40:09 [fresh原b554 v1九范围](dperf04-browser-lifecycle-claim-observation.json)无overlap、032b clean/七hash同后，已[followup唯一W01 source-only窄修](dperf04-browser-lifecycle-dispatch.json)：仅原wrapper、own/tmp父监督与自有记录，保旧bd053和业务断言。原生Chrome分离方案只准备可审候选，独立Lead边界接受仍null、无新gate；owner同段纠正旧“b17待审”文案。注册与实现main、实际运行分别记录。
 
 原MATURE01/05/06视觉验收继续使用[固定506导航研究](app1750-narrow-navigation-root.md)和[accepted queue六源报告](accepted-queue-506-research/report.md)。390展开导航截图不代完整移动/键盘验收；关闭导航后读取/编辑/发送/详情及跨宽度可见焦点仍待实测。最小只折叠accepted enqueue收据，accepted控制ACK不代表无待办；unknown/失败/发送中及真实queue动作、原identity/插件权限/按需详情保留。无新增task/claim/产品修改。
 
