@@ -67,7 +67,16 @@ export const steeringFinalizationSchema = steeringFinalizationMetadataSchema.ext
   .refine(value => new TextEncoder().encode(JSON.stringify(value)).byteLength <= MAX_BATCH_BYTES, 'Final proposal exceeds byte limit');
 export interface EventAcknowledgement { accepted: number; lastSequence: number }
 
+/** Host-assigned facts only. Reading identity does not verify or extend ownership. */
+export interface HarnessExecutionIdentity {
+  readonly taskId: string;
+  readonly attemptId: string;
+  readonly ownerVersion: number;
+  readonly runnerId: string;
+}
+
 export interface HarnessContext {
+  readonly executionIdentity?: HarnessExecutionIdentity;
   steering?: ActiveSteeringPort;
   task: TaskSubmission;
   goalTools?: GoalToolCapability;

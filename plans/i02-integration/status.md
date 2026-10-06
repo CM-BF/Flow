@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:32 UTC / main53ce2ec2 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:39:07.083587+00:00 / main9db6708f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main53ce2ec2 / 附件领域、共享回执及生产入口已审组合 |
+| 工作基线 / HEAD | 139来源主线9db6708f；本批接收工程身份与Codex回合接缝 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 附件23固定source一致；实际factory六例通过（23未选），四专库清零，root types0，0provider |
-| 已集成main状态 / HEAD | 工程配置与终端逐段回复已main648e331c，组合root types exit0；本批仅137来源登记与canonical收口。实际个人Web8d8/caa1已发布v2，backend仍b1c/accepting v12 |
+| 检查状态 | ENG01D固定五源逐字相同，原65不同局部检查及types复用；无新行为冲突/模型 |
+| 已集成main状态 / HEAD | 附件fd132与139来源9db已发布；本批工程接缝待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 附件上传、固定引用与公共读取已完成正式入口组合验证，旧数据和丢失回执可恢复。 |
-| 下一可用交付 | 目标交付统一读口与真实工程执行接缝并行推进；当前个人服务保持不变。 |
+| 当前产出 | 宿主向适配器提供不可变执行身份，现有普通Codex回合逻辑已提取为可复用接口。 |
+| 下一可用交付 | 真实工程写入与受信检查边界、目标交付统一读口并行推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -125,3 +125,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 11:23 UTC：TUI01C焦点修复与ENG01B已审产品在main648，唯一owner均按receipt停写释放；runners交S01P04。137个真实来源登记及canonical收口见[批次清单](../../docs/evidence/i02/registry-137-closeout.json)。ENG01C仅writer生命周期，真实native身份/受信检查后继明确；本批不调用provider、不改变个人服务或架构固定图。
 
 2026-10-06 11:32 UTC：附件23源码均与固定独审target逐字相同；生产factory在8次启动/重启均自动026+六routes，fallback全false。六选中HTTP/PG case通过、23未选，四专库正常清理；root types0。[组合证据](../../docs/evidence/i02/attachment-integration.json)。ENG01C已main53ce，个人服务未更新。
+
+2026-10-06T11:39:07.083587+00:00：[ENG01D固定接收](../../docs/evidence/i02/engineering-native-seams-integration.json)五源零差异；只恢复唯一owner元数据冲突，无产品手改；复用已审直接消费者证据，0provider。

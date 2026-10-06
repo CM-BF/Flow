@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-06T11:36:12.436Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已固定真实执行身份并提取现单回合生命周期；局部检查通过",
+    "next": "等待独立审查后集成；源码已停写",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+      "id": "ENG-001",
+      "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "855e5675245f7774b8ce927ab8b2ffdb6133bddf",
+    "record": "PASSED 855e5675245f7774b8ce927ab8b2ffdb6133bddf；65 distinct通过；32未选；root types0；原raw见[README](../../docs/evidence/eng01d/README.md)"
+  },
+  "implementation": {
+    "target": "855e5675245f7774b8ce927ab8b2ffdb6133bddf",
+    "scopes": [
+      "packages/contracts/src/runner.ts",
+      "apps/runner/src/runtime.ts",
+      "apps/runner/src/execution-identity.test.ts",
+      "apps/runner/src/native-harness/codex/adapter.ts",
+      "apps/runner/src/native-harness/codex/turn.ts",
+      "apps/runner/src/native-harness.test.ts",
+      "plans/eng01d-native-writer-seams",
+      "docs/evidence/eng01d"
+    ],
+    "errors": []
+  }
+}
