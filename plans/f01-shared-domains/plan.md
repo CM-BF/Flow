@@ -65,4 +65,6 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [x] **F01-32** 接受WPF-MATURE-04正式027历史观测迁移/领域后提供共享导出、薄client和生产挂载；027唯一DDL由原Mika领域owner fresh amend领取，先解局部PG依赖，不等工程profile或个人部署。
 
-- [ ] **F01-33** O11目标交付统一读口公共client/export/owner生产挂载；稳定计划与实时状态分离，完整目标归O01/M02。
+- [x] **F01-33** O11目标交付统一读口公共client/export/owner生产挂载；稳定计划与实时状态分离，完整目标归O01/M02。
+
+- [ ] **F01-34** O12公开goal session只读取消/显式command信号与独立package入口薄接线，不另建状态规则。

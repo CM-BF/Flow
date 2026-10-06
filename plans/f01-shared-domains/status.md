@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T11:49:24.529827+00:00 / mainbf067e328bc1dc63cde39acf4b637cfb055e467a |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:54:25.347605+00:00 / main52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 目标统一读口 c05fca7beadd7bc59b1156e582d4d84078c512c8 |
+| 工作基线 / HEAD | goal session transport ec6ad20479872a8cb701917b6fa448ca23a2a843 |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 两项直接HTTP/生产PG通过；修正测试显式默认值后1项定向通过、最终root types0，原失败保留。 |
-| 已集成main状态 / HEAD | 上下文027领域/薄client/生产与O11领域已mainbf067；本次目标公共接线待独审，个人服务不变。 |
-| Review | APPROVED：assignment_review独立只读c05fca7beadd7bc59b1156e582d4d84078c512c8，历史批准范围保留 |
-| 实现目标 | c05fca7beadd7bc59b1156e582d4d84078c512c8 |
-| 实现范围 | apps/server/src/index.ts, packages/contracts/src/index.ts, packages/client/src/index.ts, packages/client/src/goal-delivery.test.ts |
+| 检查状态 | 1HTTP红→绿/5实际请求；root types0，无PG/provider。 |
+| 已集成main状态 / HEAD | 上下文027与O11领域/公共factory/client已main52eb；个人服务不变。 |
+| Review | NOT_STARTED：ec6ad20479872a8cb701917b6fa448ca23a2a843；c05公共读口独审APPROVED且已main |
+| 实现目标 | ec6ad20479872a8cb701917b6fa448ca23a2a843 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/goal-session-transport.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 目标计划和实时执行状态已有独立公共读取入口，正文仅显式读取。 |
-| 下一可用交付 | 完成公共接线独审并接入主线，供终端和网页并行消费。 |
+| 当前产出 | 统一目标读口已主线可用；本地退出观察可通过共享接口释放在途读取。 |
+| 下一可用交付 | 接入持续目标会话控制器，保留决定、取消与未知确认的中心规则。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -165,4 +165,6 @@
 2026-10-06T11:38:45.202495+00:00：F01-28共享ACK、29附件生产、31工程用途均已在主线接收。本次薄client五源限定与初红/初types失败、offline修复和最终绿见 [manifest](../../docs/evidence/f01/context-history-client-manifest.json)；尚未生产挂载。复核clean-code：复用request/严格领域schema，身份匹配独立于显示策略，未新增重试/缓存。
 
 | F01-32 | completed | Lead | mainbf067接受027领域/client/生产，固定36源比较与集成类型检查通过。 |
-| F01-33 | in-progress | Lead | [目标公开接线manifest](../../docs/evidence/f01/goal-delivery-manifest.json)，待独审；不重复O11领域32项。 |
+| F01-33 | completed | Lead | [目标公开接线manifest](../../docs/evidence/f01/goal-delivery-manifest.json)，待独审；不重复O11领域32项。 |
+
+| F01-34 | in-progress | Lead | [transport manifest](../../docs/evidence/f01/goal-session-transport-manifest.json)，待独审；package入口待O12 Interface。 |

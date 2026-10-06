@@ -247,3 +247,9 @@ NOT_STARTED — assignment_review只读新四源薄接线与真实消费者，�
 Review target commit: c05fca7beadd7bc59b1156e582d4d84078c512c8
 
 APPROVED — assignment_review独立只读4source/13raw/9域输入固定hash全符，无P1/P2，未重跑。仅公共接线，完整目标闭环仍open。见[回执](../../docs/evidence/f01/goal-delivery-independent-review.json)。
+
+## O12 transport signal
+
+Review target commit: ec6ad20479872a8cb701917b6fa448ca23a2a843
+
+NOT_STARTED；限定两源与1HTTP，不复核O11领域。

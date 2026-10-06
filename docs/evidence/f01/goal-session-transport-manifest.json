@@ -1,0 +1,55 @@
+{
+  "target": "ec6ad20479872a8cb701917b6fa448ca23a2a843",
+  "time": "2026-10-06T11:54:25.347605+00:00",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "path": "packages/client/src/goal-session-transport.test.ts",
+      "bytes": 2425,
+      "sha256": "dc228afde63ef9e2b9d62bfc884f6f53fda2ac3bef8fd546b8a80a6fdd189150"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/goal-session-transport-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-session-transport-green.stdout",
+      "bytes": 326,
+      "sha256": "cd91b77bd5fd022a6c0bdee1073824aa602029d1a0396d59ec35d8908ef5ddb5"
+    },
+    {
+      "path": "docs/evidence/f01/goal-session-transport-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/f01/goal-session-transport-red.stdout",
+      "bytes": 1362,
+      "sha256": "e246deda6e166cd250bc4b879af14f30680c94ab1b0f0ee1fb33abf1995087ce"
+    },
+    {
+      "path": "docs/evidence/f01/goal-session-transport-types.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-session-transport-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "red": 1,
+    "green": 1,
+    "typecheck": 0,
+    "httpRequests": 5
+  },
+  "limit": "Optional transport AbortSignal only; stop observation does not cancel center work, original mutation key/body unchanged. No PG/provider."
+}
