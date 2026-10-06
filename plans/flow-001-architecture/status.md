@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:09 UTC / main0e4c7b0f |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:20 UTC / main0b8cd6f4 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,12 +12,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main0e4c7b0f已含O15完整输入与一次确认领域/公共接线、Claude逐消息配置与CLI、TUI01F限定取消和收尾证据、RELEASE03实际App兼容证据。registry169已实采17:54；个人后台362/v15、Web8d8/caa1/v2保持。 |
+| 已集成main状态 / HEAD | main0b8cd6f4已含流式增量哈希及O15完整输入与一次确认领域/公共接线、Claude逐消息配置与CLI、TUI01F限定取消和收尾证据、RELEASE03实际App兼容证据。registry170已实采18:15；O16登记171候选；个人后台362/v15、Web8d8/caa1/v2保持。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 用户确认完整计划输入后，中心可继续推进依赖任务；逐消息设置的公共接口和命令行已可用。 |
-| 下一可用交付 | Web消息设置控件、保留旧页面的实际发布与终端双端接续；准备真实连续规划和执行验收。 |
-| 当前阻塞 | ACTIVE: 个人更新须补两组保留旧页面与新后台的兼容证明；完整后台产物仍缺空间，小片继续。 |
+| 下一可用交付 | Web消息设置控件、保留旧页面的实际发布与终端双端接续；O16独立worker已开始真实连续规划与执行的零模型验收准备。 |
+| 当前阻塞 | ACTIVE: 个人更新须补两组保留页面兼容证明，并查明当前网页连接重置；完整后台产物仍缺空间，小片继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
@@ -132,3 +132,5 @@ O14公开CLI/生产scan已独审接收main bd14f984，五源对73a完全相同�
 SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB与真实解析/资源证据；没有把source-only成功当构建可用。两条明确授权旧构建cache清理后恢复小运行窗口，未动项目PG/用户数据；窗口与真实余量统一见[OPS](../ops-001-status-review/status.md)。工程native写改、真正>100agents容量与中心预算仍沿原矩阵开放。
 
 2026-10-06 18:09 UTC：本轮接收O15 e0领域/7f生产17源、CORE ea276/C01 6d114/F01 0ee组合与CLI、TUI01F真实PTY/HTTP行为及独立收尾、RELEASE03 af51+d629固定App兼容证据。各唯一独审和必要root types保留，未重跑相同PG/provider。完整自然语言规划→确认→中心执行→独立语义接受仍开放，下一O16仅先准备固定可审候选，不复用O08/O10封存预算。当前生产保留362/v15与8d8/v2，代码main进展不是部署。
+
+2026-10-06 18:20 UTC：CHAT06P03两源算法原批准＋两type引用适配已main0b8；实际root types0/9.295s，保留初始解析失败，不重跑原5项。O16仅三scope独立实施，first59249，0query/PG未运行。当前61228三次identity GET记录ECONNRESET，实际listener65263/PGID65219的一次1 LISTEN+64 CLOSED与固定maxConnections64相关但非根因；原用户服务未重启/清连接，SVC05H只做独立诊断准备。

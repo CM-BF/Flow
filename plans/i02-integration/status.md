@@ -9,11 +9,11 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main8bd02cc3；流式增量校验优化与归档类型适配已组合通过 |
+| 工作基线 / HEAD | main0b8cd6f4；已审流式增量校验已发布，本批仅171来源和运行边界汇总 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | completed |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main8bd02cc3含确认CLI/170来源；本批流式哈希候选待发布。个人runtime362/v15与Web8d8/v2不变 |
+| 已集成main状态 / HEAD | main0b8cd6f4含确认CLI/流式哈希/170来源；本批O16首来源登记。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
