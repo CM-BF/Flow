@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['TUI01B', '终端与网页共用发送确认', '工作线', 'shared-conversation-ack', 'tui01b-shared-ack'],
   ['ENG01A', '受管工作区与工程检查', '工作线', 'engineering-workspace-pipeline', 'eng01a-workspace-pipeline'],
   ['WPF-ATTACH01', '文本附件资源与引用', '工作线', 'attachment-resources', 'wpf-attach01-resources'],
   ['R05D', 'Codex可信启动配置', '工作线', 'codex-native-launch', 'r05d-codex-launch'],
@@ -102,7 +103,7 @@ const assignments = [
   ['CTX01', '上下文内核合成验证', '技术验证', 'context-kernel-probe', 'ctx01-context-kernel'],
   ['WPF-PROFILE01', '对话执行选项', '工作线', 'web-execution-profiles', 'wpf-profile01-execution-profiles'],
   ['O02', '原生目标工具桥接', '工作线', 'native-goal-tools', 'o02-native-goal-tools'],
-  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-stream', 'd06-architecture-refresh'],
+  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-runtime', 'd06-architecture-refresh'],
   ['CHAT04', '持久消息队列', '工作线', 'conversation-queue', 'chat04-conversation-queue'],
   ['WPF-QUEUE00', '旧新队列能力兼容', '工作线', 'web-queue-compatibility', 'wpf-queue00-compatibility'],
   ['O03', '目标工具执行授权', '工作线', 'goal-tool-authorization', 'o03-goal-tool-authorization'],

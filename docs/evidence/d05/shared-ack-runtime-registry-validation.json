@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-06T10:21:45.599Z",
+  "sources": 126,
+  "registryValid": true,
+  "checks": [
+    {
+      "id": "TUI01B",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack",
+      "errors": [],
+      "humanComplete": true,
+      "branch": "codex/shared-conversation-ack"
+    },
+    {
+      "id": "D06",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "errors": [],
+      "humanComplete": true,
+      "branch": "codex/dashboard-architecture-runtime"
+    }
+  ],
+  "priorScript": "First read-only validation used nonexistent registry export; corrected to actual defaultRegistry, no product test."
+}

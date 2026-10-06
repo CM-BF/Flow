@@ -59,3 +59,5 @@
 2026-10-06 10:12:16 UTC：123源实际回执见[native-launch-registry-live.json](../../docs/evidence/d05/native-launch-registry-live.json)，原R05D人读缺项保留为当时事实、由owner修正。新增ENG01A与WPF-ATTACH01两个真实canonical至125源候选；仅解析、链接和唯一性核对，不重跑架构或产品。
 
 2026-10-06T10:13:49.228Z实际125源回执已归档[engineering-attachment-registry-live.json](../../docs/evidence/d05/engineering-attachment-registry-live.json)：mainc9 clean、协调账本available、unregistered[]，四项current/human完整/issues[]。此为当时实际观察，归档未再次重启或跑产品测试；后继实现状态沿唯一owner自动刷新。
+
+2026-10-06 注册维护：TUI01B真实canonical加入为第126源，D06保持原ID并唯一迁dashboard-architecture-runtime；旧stream树只读历史。两source与registry解析通过，原独审图target2c316按f181固定源码，不追moving main。部署回执另记，不重跑架构/产品。
