@@ -36,3 +36,7 @@
 实现设计：Node 24 内置 HTTP 与文件/Git 读取；聚合、资料访问与浏览器展示分离。只读源由固定登记选取，缺失时展示本分支冻结基线记录及明确警告。首页使用工作线表格和来自 FLOW-003 status 的里程碑，不从计划正文制造进度。字段兼容中文空格及已有 status 表格，无法识别的检查结论保持未知。主题使用命名 CSS tokens，浅深完整映射，可新增 theme 配置。
 
 交付记录：2026-10-06 01:25 UTC，Node24 10/10 行为测试、6组浏览器检查、双主题桌面与390px截图通过。证据见 [验证记录](../../docs/evidence/d01/validation.md) 与 [技能/clean-code](../../docs/evidence/d01/quality.md)。`plans/README.md`跨任务索引由原 Execution Lead 更新，owner 未越界修改。
+
+## 显式任务层级（2026-10-06 09:30:10 UTC metadata）
+
+D01沿原用户工程进度dashboard结果作为大task；由Web /root co-lead协调，D08显式关联子片直接归D01。FLOW/REQ管理仅追溯，不成为第三执行层。本次不新增产品需求或改既有TODO/验收/审查目标，status为唯一来源；原历史实现检查不转移到新metadata。

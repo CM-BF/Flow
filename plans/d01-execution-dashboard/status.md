@@ -1,9 +1,14 @@
 # D01 状态
 
+本轮仅为原工程dashboard用户结果补显式大task身份/co-lead；FLOW/REQ仅追溯，不形成第三执行层。下面既有产品检查/main/服务描述保留原01:25历史观察，不据其推断当前4320或main；当前产品子片以各唯一status及服务owner回执为准。原TODO/审查目标不变。当前metadata写入经[独立窄take](parent-identity-take.json)，全产品范围只读。
+
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近 main 同步核验 | 2026-10-06 01:25 UTC / 2026-10-06 01:25 UTC |
+| 最近更新 / 最近 main 同步核验 | 2026-10-06 09:30:10 UTC 仅显式父身份metadata / 产品记录仍保留历史01:25时点 |
 | Plan | [plan.md](plan.md) |
+| 任务层级 | 大task |
+| 大task ID | [D01](plan.md) |
+| co-lead | Web /root（执行管理 d01_owner） |
 | 单一 status owner / model | d01_owner / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard` |
 | Branch | `codex/execution-dashboard` |
