@@ -89,3 +89,7 @@ ENG01D/E/F均已受控main；E只解释完整受限源码，不执行被测JS；
 下一子片ENG01G由native_center_owner在独立engineering-native-writer树领取：ordinary与工程复用一个Codex receive/close pump，受限fileChange策略及EngineeringWriter为两个真实消费者，不复制agent loop。身份来自宿主assignment。缺真实写权限/模型资格/完整撤销依据在transport之前拒绝，注入authority仅证明组合，不证明OS/native已停。file-only为首片有限策略，不是所有工程能力永禁终端的永久规则；后继可以明确受控shell边界，仍须真实停止后检查。Mika持有原生诊断，无重复实验/新增provider许可。真实部署准备独立SVC05，不把已main当个人预览已更新。
 
 参考原生接口输入的权威位置：claude-codex-capabilities/docs/evidence/wpf-mature-02/native-engineering-boundaries.md。实际本机原生能力、>=Sol与真实工程语义验证仍属04/05，不能用mock/关闭的cap结束大task。
+
+## ENG01G接收后的实际接通（2026-10-06 12:29:32 UTC）
+
+ENG01G已main557397；唯一receive/close pump、finite file策略、真实assignment和authority生命周期的0模型组合已独审。它未注册生产authority，不能把小模块通过当原生写入已交付。原ENG001-04下一项为显式versioned工程purpose/profile与可信host授权接入，保持fixture/readonly旧canonical和恢复语义；与Mika唯一Codex诊断共享qualification/settlement事实，不另开重复probe。权限来源缺失仍拒绝执行，但中心合同、入参绑定与公开受理可独立准备。实际>=Sol模型来源、真实所有writer撤销、固定检查及独立actor接受属于05，不用注入revoked标记替代。
