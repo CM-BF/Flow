@@ -25,7 +25,7 @@ CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提�
 - [x] **WPF-MATURE-03-01** 完成已有知识实际UI子任务：CONTEXTI01从已授权project创建、cap确认后选引用；Send/Queue ordered tuple到真实HTTP并校ACK；不宣称本地上传完成。
 - [ ] **WPF-MATURE-03-02** 冻结附件与文件公共接口：区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用。
 - [ ] **WPF-MATURE-03-03** 实现按钮拖放与@file：三个入口可发现；键盘替代drag；搜索有界且可取消，预览正文按需，删除只影响当前草稿。
-- [ ] **WPF-MATURE-03-04** 保证发送与重试身份：同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；材料真实进入model context。
+- [ ] **WPF-MATURE-03-04** 保证发送与重试身份：同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步attachment prepare期间点击意图/材料与submission/view/project/generation绑定，切delivery或新refs不改变旧提交，仅真实receipt接管后consume；材料真实进入model context。
 - [ ] **WPF-MATURE-03-05** 验证多窗口与失败恢复：双split草稿独立、换连接/close/隐藏/撤权迟到隔离；不支持中心明确plaintext路径；类型/大小/授权失败可行动。
 - [ ] **WPF-MATURE-03-06** 完成实际旅程验收：真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。
 
@@ -64,3 +64,9 @@ attachments[]/template2固定shape交F01唯一公共receipt decoder扩展，保�
 ### ATTACHI01已授权独立输入模块
 
 基线8701a6cf547248e70aa5758f05da1d7d314ae9c0已审DTO，94b84c59 v1十一新scope、w01唯一owner，直接归本大task，[精确方案](../../docs/evidence/web-platform/attachi01-module-proposal.json)/[原子receipt](../../docs/evidence/web-platform/attachi01-take-receipt.json)。controller/recovery/Picker/官方Thread fixture使用typed注入ports与已验证receipt，adapter仅官方UI接口；禁止私写HTTP/重复ACK或upload decoder/虚构公共方法。真正FlowClient六方法、实际HTTP、App Send/Queue接线保持pending，后续消费固定public bridge前核base兼容。不预占原23scope、不把独立组件审过当完整附件Done。
+
+### 异步attachment preparation与提交意图（root固定c450/installed core只读）
+
+installed core0.3.22的Composer.send先快照text/attachments/options，随后可能异步_prepareSubmission；ExternalStore.append最终读取当前_store.onNew。固定c450 ConversationThread在onNew时读取当前intent/profile/knowledge.capture。因此新增异步附件准备后，点击Send到onNew之间切换delivery/knowledge/project可能混入新状态；这是源码风险，尚未browser复现。ATTACHI capture/freeze/consume须绑定同一次submission、view/project和generation，只有真实新receipt接管后消费；后继生产接线必须捕获点击时意图和材料，不能Send变Queue或把新draft refs混入旧submission。本片在原迟到/complete绕过fixture中用可控延迟验证，不扩App/Thread scope。
+
+来源root读取本地assistant-ui skill→llms.txt→[官方custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)，以现react0.15.23/core0.3.22行为为准，不升级SDK。clean-code复核单一状态owner与异步生命周期；不是已确认当前纯文本产品bug。
