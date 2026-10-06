@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T03:50:31.964Z |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:01:12 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra（lead mika） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance |
 | Branch | codex/bounded-read-performance |
 | 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / 70af7b45814d5ed31d9638649512358e1a0a834b（实现target；metadata HEAD由Git聚合） |
-| 工作树dirty状态 | 03:44:08核验clean；本次仅更新交付metadata |
+| 工作树dirty状态 | 本次开始b563826 clean；仅修正status UTC格式与保存聚合回执 |
 | 工作分支状态 | completed（branch，代码与after证据已批准；待main接收） |
 | 检查状态 | PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后23项检查/8.887秒通过 |
 | 已集成main状态 / HEAD | 未集成 B01；03:49:08 main ac4e34de2331dce276440df8969883c1883060ef clean |
@@ -76,3 +76,9 @@ mika独立核7个sourceFiles hash与source748df2d/实现70af7b4/工作树一致�
 ## 2026-10-06T03:50Z Dashboard最终核验
 
 按已实际获批的review补标准字段“状态：APPROVED”“Review target commit：70af7b45814d5ed31d9638649512358e1a0a834b”，未改parser。03:50:31.964Z从4320实采[receipt](../../docs/evidence/b01/dashboard-receipt.json)：review.state=approved、review.proof.state=unchanged、implementationProof.state=unchanged、issues=[]、current=true；dirty=true仅当时一项review metadata尚未提交，主线仍not-contained。此次收尾提交只含review/status与采样receipt，不改变实现或原始性能证据。
+
+## 2026-10-06 04:01:12 UTC 状态格式同步
+
+本次metadata-only；将标准更新时间写为parser支持的无毫秒UTC格式，P03检查前缀/TODO状态按标准值填写（B01原检查/TODO已标准）。源码/原始测试与性能证据未改，不重跑已通过行为测试。main只读核实8f1481df880cf5077e1ddb9a8f302fe700a7ece8；本feature集成事实仍待Execution Lead接收。
+
+04:01:12.915Z live再次确认：issues=[]、current=true、review approved、checks passed、implementation unchanged，更新时间已可解析；见docs/evidence/b01/dashboard-format-receipt.json。
