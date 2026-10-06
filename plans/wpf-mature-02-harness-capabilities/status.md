@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:28:56 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:32:12 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -21,12 +21,12 @@
 | 实现目标 / 范围 | 当前优先Claude逐消息设置：产品core→共享consumer两层子任务，core独立source-only WT已取得/base70cc，core owner已COMMITTED领取两契约文件+sibling管理scope，当前小源码实施；后继分片扩大，本树只parent管理。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude逐消息设置的共用契约与回执匹配首片已提交，检查和独审进行中；用户界面与中心执行接线仍待后继交付。 |
-| 下一可用交付 | 先交付Claude中心冻结配置与执行传递，再把同一能力接到Web/TUI；不等待Codex全资格或Node小对照完成。 |
+| 当前产出 | Claude逐消息设置的共用契约首片已独审通过，等待正常主线接收；用户界面与中心执行尚未接通，完整产品core仍进行中。 |
+| 下一可用交付 | 把已审设置契约接入现有profile、中心事务及Claude adapter，再由Web/TUI共享消费；不再停留于孤立helper。 |
 | 当前阻塞 | ACTIVE: Claude独立源码树已取得；core已正式领取实施，后继共享兼容接线待协调；涉及PG/构建的验证还需磁盘满足预留。小范围计划与源码准备可继续。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | Claude core实施中、实现review尚未开始；OpenSSL ca6已只读SOURCE_REVIEW/PENDING_VALIDATION（0P1/P2、0执行），不是APPROVED/ready/OPEN。 |
+| Review | core首plain-contract leaf已APPROVED（Mika15:31:09/architecture_read15:31:25，source4e7、validation8c56、delivery78c）；无export挂载，完整core后继仍开放。OpenSSL ca6仅PENDING_VALIDATION/NOT_OPEN。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 计划在既有中心profile与事务边界加入逐消息配置snapshot，并由Web/TUI共享消费；当前仅设计交接、无产品结构变化。固定实现后由core owner与Lead同步架构基线。 |
 
@@ -89,3 +89,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 15:25:25 fresh父v5与core c652bc61-f8a9-4848-a709-978adbb425ed v1均ACTIVE；core任务WPF-MATURE-02-CORE/status_read/mika，独立WT/branch70cc四scope已COMMITTED15:24:10.824Z。WT阻塞解除，child canonical存在后Lead登记dashboard；真实检查仍资源pending。[OpenSSL只读源码收据](../../docs/evidence/wpf-mature-02/node-owned-openssl/source-review.json)仅PENDING_VALIDATION，ca6六源不变、0执行。
 
 15:28:56核core实际HEAD4e7b7f968a2160a60989b3b6343506ae8fb5ef6a，两源leaf已提交；检查配置/证据整理中有dirty，不推定通过。canonical已给Lead child唯一[status来源](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md)及README登记入口；child细节只由原owner维护。
+
+15:32:12只读核core HEAD78c73677438efec7455fc68b44109fa7da9ce5f5 clean；首leaf审批来自独立review，未重测。canonical已升正式接收入口；最终integration页和next-slice-handoff由child owner维护后交Lead，不复制child TODO。

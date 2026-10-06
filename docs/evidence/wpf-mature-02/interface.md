@@ -4,9 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **请登记WPF-MATURE-02-CORE唯一状态来源**：[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md) / [README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/README.md)。owner status_read，WT claude-message-settings-core，branch codex/claude-message-settings-core，claim c652bc61 v1；两源leaf已提交4e7b7f968a2160a60989b3b6343506ae8fb5ef6a，检查/独审与证据整理进行中，不是通过或交付。无需GO确认，父不复制child TODO/checks。
+- **Claude core首leaf已正式APPROVED，请Lead登记并正常main接收**：[当前固定输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/review-ready.md) / [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md)。source4e7b7f968a2160a60989b3b6343506ae8fb5ef6a、validation8c56f15c5a70afd4e33031876244f70d1284d957、delivery78c73677438efec7455fc68b44109fa7da9ce5f5；Mika15:31:09 / architecture_read15:31:25 APPROVED，0P1/P2，5/5+strict0，仅plain contract leaf/无export挂载。owner status_read/core WT/branch、claim c652bc61 v1；最终integration入口待原owner回报替换，不重复审测。
 
-- **优先Claude逐消息设置**：[唯一core→consumer交接请求](claude-message-settings-handoff.md)。status_read/mika已COMMITTED core四scope并实施；child canonical存在后请登记dashboard，后继R05/F01 v40/RECOVERY01 v4兼容接线和唯一SQL编号仍逐片协调。02四个execution-profile路径不先amend。
+- **优先Claude逐消息设置**：[唯一core→consumer交接请求](claude-message-settings-handoff.md)。status_read/mika的产品core仍进行中；下一片是现profile/中心/adapter直接consumer，owner正在准备next-slice-handoff，后继R05/F01 v40/RECOVERY01 v4兼容接线和唯一SQL编号仍逐片协调。02四个execution-profile路径不先amend。
 - [F01 goal progression薄client正式APPROVED](goal-progression-client-review.md)：deef0e48，仅薄transport，供Lead受控接收；[plugin installation薄client正式APPROVED](plugin-installation-client-review.md)沿同一既有收据，不重复审。
 
 OpenSSL ca6a候选已只读[SOURCE_REVIEW/PENDING_VALIDATION](node-owned-openssl/source-review.json)，0执行，保持PENDING_RESOURCE/NOT_OPEN，不继续扩诊断，不阻Claude独立产品线。已完成诊断/跨task审查及历史路由保持原证据与Git ca6a7a15；本页仅保留最新可行动请求，进度仍由各owner唯一status维护。
