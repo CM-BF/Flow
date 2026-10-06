@@ -1,0 +1,67 @@
+{
+  "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+    ],
+    "paths": {
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/packages/client/src/index.ts"
+      ],
+      "@flow/protocols": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/packages/protocols/src/index.ts"
+      ],
+      "pg": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/pg"
+      ],
+      "pg-boss": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/pg-boss"
+      ],
+      "fastify": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/fastify"
+      ],
+      "@fastify/cors": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@fastify/cors"
+      ],
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod"
+      ],
+      "npm-package-arg": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/server/node_modules/@types/npm-package-arg/index.d.ts"
+      ],
+      "pacote": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/server/node_modules/@types/pacote/index.d.ts"
+      ],
+      "ssri": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/server/node_modules/@types/ssri/index.d.ts"
+      ],
+      "vitest": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest"
+      ],
+      "@anthropic-ai/claude-agent-sdk": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts"
+      ],
+      "@modelcontextprotocol/sdk/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@modelcontextprotocol/sdk/dist/esm/*"
+      ],
+      "@a2a-js/sdk": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@a2a-js/sdk/dist/index.d.ts"
+      ],
+      "@a2a-js/sdk/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@a2a-js/sdk/dist/*"
+      ]
+    },
+    "incremental": false
+  },
+  "include": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/main.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/main-concurrency.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/concurrency-configuration.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/concurrency-configuration.test.ts"
+  ],
+  "exclude": []
+}

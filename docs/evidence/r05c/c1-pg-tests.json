@@ -1,0 +1,10 @@
+{
+  "command": "FLOW_R05C_EVIDENCE=docs/evidence/r05c/c1-pg-resources.json pnpm exec vitest run apps/runner/src/native-harness/codex/integration.test.ts",
+  "exitCode": 1,
+  "source": "process stdout/stderr captured directly",
+  "output": "c1-pg-tests.stdout",
+  "selected": 5,
+  "passed": 4,
+  "unselected": 0,
+  "failed": 1
+}

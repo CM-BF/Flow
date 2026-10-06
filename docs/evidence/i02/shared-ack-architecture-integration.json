@@ -1,0 +1,55 @@
+{
+  "observedAt": "2026-10-06T10:22:16.377582+00:00",
+  "previousMain": "41315b033deb0b1953484359b686c0b228997367",
+  "candidate": "ed187f428c787343df351349b801b88a96d0e67c",
+  "architectureTarget": "2c3160f42784ee814d968a953d557251c81a243d",
+  "architectureSource": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "checks": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 38931,
+      "sha256": "08c610090eabc3428a8e8584c4dc4d7e79a0062eecd4f3e7488f4b9d8821faf1",
+      "identical": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 19219,
+      "sha256": "709fb6593dea36a90f4ff8b8ee9870ae7829ecd6b8656e0e52a291209cf3f599",
+      "identical": true
+    },
+    {
+      "path": "docs/evidence/d06/runtime/browser-check.mjs",
+      "bytes": 7502,
+      "sha256": "9709c468d44d1fe8e637b73d853f1224a0a5fc2868f932e678140df35d04aabf",
+      "identical": true
+    },
+    {
+      "path": "docs/evidence/d06/runtime/preview.mjs",
+      "bytes": 717,
+      "sha256": "4ed4303abf13cb719db8f1a30ced5666fab1ba636fae09473951fc8830736e02",
+      "identical": true
+    },
+    {
+      "path": "docs/evidence/d06/runtime/source-audit.mjs",
+      "bytes": 8539,
+      "sha256": "e11e138c8ef2844725b378b50328adb9544c6cf4e621dde9351e26a287b33d83",
+      "identical": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "sourceBase": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+      "unchanged": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "sourceBase": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+      "unchanged": true
+    }
+  ],
+  "registryCount": 126,
+  "registryChecks": "docs/evidence/d05/shared-ack-runtime-registry-validation.json",
+  "review": "Web independent APPROVED;15Node and source/browser checks retained, no repeated tests",
+  "otherChanges": "TUI/F01/SVC/R05 main receipts and TUI01B initial interface documents only",
+  "personalRuntime": "unchanged b1c2e398 accepting v12",
+  "providerQueries": 0
+}

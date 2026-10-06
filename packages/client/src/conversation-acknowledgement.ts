@@ -1,0 +1,139 @@
+import {
+  CONVERSATION_CONTEXT_LIMITS, KNOWLEDGE_LIMITS, conversationCreationSchema, conversationTurnSchema,
+  conversationContextSelectionSchema, executionProfileReferenceSchema, idSchema, knowledgeCitationSchema,
+  type ConversationCreated, type ConversationCreation, type ConversationTurnAccepted, type ConversationTurnAdmission, type KnowledgeCitation,
+} from '@flow/contracts';
+
+/** A successful HTTP response did not prove acceptance of the caller's frozen request. */
+export class UnknownConversationAcknowledgementError extends Error {
+  readonly code = 'conversation_ack_unknown';
+  constructor() {
+    super('The conversation acknowledgement is unconfirmed. Keep the original request identity.');
+    this.name = 'UnknownConversationAcknowledgementError';
+  }
+}
+function requireValue(condition: unknown): asserts condition { if (!condition) throw new UnknownConversationAcknowledgementError(); }
+function record(value: unknown): Record<string, unknown> {
+  requireValue(value !== null && typeof value === 'object' && !Array.isArray(value));
+  return value as Record<string, unknown>;
+}
+const text = (value: unknown, max: number, min = 1) => typeof value === 'string' && value.length >= min && value.length <= max;
+const id = (value: unknown) => idSchema.safeParse(value).success;
+const digest = (value: unknown) => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
+const integer = (value: unknown, min = 0, max = 2_147_483_647) => typeof value === 'number' && Number.isInteger(value) && value >= min && value <= max;
+const timestamp = (value: unknown) => text(value, 80) && Number.isFinite(Date.parse(value as string));
+const oneOf = (value: unknown, values: readonly unknown[]) => values.includes(value);
+
+/** Select known fields before parsing; additive response metadata must not alter identity. */
+function creationFields(value: unknown): ConversationCreation {
+  const summary = record(value); const requested = record(summary.requested);
+  requireValue(text(summary.title, 180) && summary.harness === 'claude' && text(requested.model, 180)
+    && oneOf(requested.thinking, ['disabled', 'enabled', 'adaptive']) && oneOf(requested.tools, ['configured-readonly', 'none']));
+  let executionProfile;
+  if (summary.executionProfile !== undefined) {
+    const pin = record(summary.executionProfile);
+    const parsed = executionProfileReferenceSchema.safeParse({ id: pin.id, runnerId: pin.runnerId, configDigest: pin.configDigest });
+    requireValue(parsed.success); executionProfile = parsed.data;
+  }
+  const parsed = conversationCreationSchema.safeParse({ title: summary.title, harness: summary.harness,
+    requested: { model: requested.model, thinking: requested.thinking, tools: requested.tools },
+    ...(executionProfile === undefined ? {} : { executionProfile }), ...(summary.projectId === undefined ? {} : { projectId: summary.projectId }) });
+  requireValue(parsed.success && parsed.data.title === summary.title && parsed.data.requested.model === requested.model);
+  return parsed.data;
+}
+export function assertConversationCreationMatches(expected: ConversationCreation, actual: unknown): void {
+  const parsed = conversationCreationSchema.safeParse(expected); requireValue(parsed.success);
+  requireValue(JSON.stringify(parsed.data) === JSON.stringify(creationFields(actual)));
+}
+function summary(value: unknown): Record<string, unknown> {
+  const result = record(value); creationFields(result);
+  requireValue(id(result.id) && integer(result.revision) && timestamp(result.createdAt) && timestamp(result.updatedAt));
+  return result;
+}
+function citation(value: unknown): KnowledgeCitation {
+  const ref = record(value); const locator = record(ref.locator);
+  const parsed = knowledgeCitationSchema.safeParse({ projectId: ref.projectId, sourceId: ref.sourceId, version: ref.version,
+    contentDigest: ref.contentDigest, locator: { kind: locator.kind, start: locator.start, end: locator.end } });
+  requireValue(parsed.success); return parsed.data;
+}
+const citationKey = (ref: KnowledgeCitation) => JSON.stringify([ref.projectId, ref.sourceId, ref.version, ref.contentDigest, ref.locator.kind, ref.locator.start, ref.locator.end]);
+
+/** Metadata-only v1 matcher. Unknown template versions require an explicit future decoder. */
+export function assertConversationContextMatches(knowledge: readonly KnowledgeCitation[] | undefined, value: unknown): void {
+  const parsed = conversationContextSelectionSchema.safeParse(knowledge ?? []); requireValue(parsed.success);
+  const expected = parsed.data;
+  requireValue(expected.every(ref => ref.projectId === expected[0]?.projectId));
+  requireValue(expected.reduce((sum, ref) => sum + ref.locator.end - ref.locator.start, 0) <= CONVERSATION_CONTEXT_LIMITS.rawBytes);
+  if (value === undefined && expected.length === 0) return;
+  const context = record(value);
+  requireValue(id(context.id) && id(context.executionInputId) && digest(context.contextDigest) && digest(context.executionInputDigest)
+    && context.templateVersion === 1 && Array.isArray(context.sources) && context.sources.length === expected.length);
+  for (let index = 0; index < expected.length; index++) {
+    const source = record(context.sources[index]); const ref = citation(source.citation); const current = source.currentVersionAtFreeze;
+    requireValue(citationKey(ref) === citationKey(expected[index]!) && source.byteLength === ref.locator.end - ref.locator.start
+      && integer(current, ref.version, KNOWLEDGE_LIMITS.versionsPerSource) && source.isCurrentAtFreeze === (current === ref.version));
+  }
+}
+function capabilities(value: unknown) {
+  const result = record(value);
+  requireValue(result.followUp === true && typeof result.queue === 'boolean'
+    && ['steer', 'perTurnModel', 'perTurnThinking', 'perTurnTools'].every(key => result[key] === false)
+    && ['liveAssistantText', 'knowledgeContext'].every(key => result[key] === undefined || typeof result[key] === 'boolean'));
+}
+function effective(value: unknown, taskId: unknown) {
+  const result = record(value);
+  requireValue((result.model === null || text(result.model, 180)) && oneOf(result.thinking, ['disabled', 'unknown'])
+    && (oneOf(result.tools, [null, 'unknown', 'configured-readonly']) || Array.isArray(result.tools) && result.tools.length <= 100 && result.tools.every(tool => text(tool, 200)))
+    && (result.permissionMode === undefined || result.permissionMode === null || text(result.permissionMode, 180)));
+  if (result.source !== null) {
+    const source = record(result.source);
+    requireValue(source.taskId === taskId && id(source.attemptId) && id(source.detailId));
+    requireValue(source.kind === 'assistant-final' ? id(source.messageId) : source.kind === 'recorded-adapter-session' && text(source.adapterVersion, 180));
+  }
+  if (result.runnerRequested !== undefined) {
+    const requested = record(result.runnerRequested);
+    requireValue(text(requested.model, 180) && requested.permissionMode === 'dontAsk' && requested.thinking === 'disabled');
+  }
+}
+function assistant(value: unknown, taskId: unknown) {
+  const result = record(value);
+  if (result.state !== 'available') {
+    requireValue(oneOf(result.state, ['pending', 'unavailable']) && oneOf(result.reason, ['execution-pending', 'execution-not-succeeded', 'unknown-adapter', 'missing-session', 'missing-result', 'ambiguous-result', 'invalid-result']));
+    return;
+  }
+  requireValue(result.role === 'assistant' && id(result.messageId) && text(result.text, 4000, 0) && typeof result.truncated === 'boolean');
+  const ref = record(result.contentRef); const source = record(result.source);
+  requireValue(id(ref.id) && text(ref.title, 180) && id(ref.attemptId) && ref.taskId === taskId
+    && source.taskId === taskId && source.attemptId === ref.attemptId && source.detailId === ref.id);
+  if (source.kind === 'assistant-final') {
+    requireValue(ref.kind === 'detail' && source.source === 'claude.sdk.result' && source.messageId === result.messageId && digest(source.contentDigest)
+      && id(source.nativeSessionId) && id(source.eventId) && id(source.sourceMessageId));
+  } else {
+    requireValue(source.kind === 'adapter-final-artifact' && source.adapterVersion === 'claude-sdk-0.3.290-v1' && ref.kind === 'artifact'
+      && id(source.artifactId) && digest(source.artifactVersion));
+  }
+}
+function turn(value: unknown, conversationId: string, input: ConversationTurnAdmission) {
+  const result = record(value); const user = record(result.user); const task = record(result.task); const telemetry = record(result.telemetry);
+  requireValue(id(result.id) && result.conversationId === conversationId && integer(result.number, 1) && result.number === input.expectedRevision + 1
+    && timestamp(result.createdAt) && user.role === 'user' && user.text === input.text);
+  requireValue(id(task.id) && text(task.title, 180) && task.harness === 'claude' && timestamp(task.createdAt) && timestamp(task.updatedAt)
+    && oneOf(task.status, ['queued', 'running', 'waiting', 'cancel_requested', 'succeeded', 'failed', 'cancelled', 'uncertain'])
+    && oneOf(task.verificationStatus, ['pending', 'passed', 'failed']) && telemetry.kind === 'execution' && telemetry.taskId === task.id && text(telemetry.title, 180));
+  effective(result.effective, task.id); assistant(result.assistant, task.id);
+  assertConversationContextMatches(input.knowledge, result.context);
+}
+export function decodeConversationCreated(raw: unknown, input: ConversationCreation): ConversationCreated {
+  const result = record(raw); const conversation = summary(result.conversation);
+  requireValue(typeof result.replayed === 'boolean' && conversation.revision === 0);
+  assertConversationCreationMatches(input, conversation); capabilities(result.capabilities);
+  return raw as ConversationCreated;
+}
+export function decodeConversationTurnAccepted(raw: unknown, conversationId: string, input: ConversationTurnAdmission): ConversationTurnAccepted {
+  const parsed = conversationTurnSchema.safeParse(input); requireValue(parsed.success && parsed.data.mode === 'follow-up' && id(conversationId));
+  const result = record(raw); const conversation = summary(result.conversation);
+  requireValue(typeof result.replayed === 'boolean' && conversation.id === conversationId && conversation.revision === parsed.data.expectedRevision + 1);
+  requireValue((parsed.data.knowledge ?? []).every(ref => ref.projectId === conversation.projectId));
+  turn(result.turn, conversationId, parsed.data);
+  return raw as ConversationTurnAccepted;
+}

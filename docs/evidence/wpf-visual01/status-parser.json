@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-06T09:28:52.185Z",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "实际App已具轻质圆角外壳与四主题；窄屏、插件回退、工具/流和降级已验，root独审已APPROVED，待主线接收",
+      "next": "ExecutionLead受控接收已审视觉片；个人产物发布另行受控",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "scopes": [
+        "apps/web/src/styles.css",
+        "apps/web/src/assistant-ui.css",
+        "apps/web/src/themes.ts",
+        "apps/web/src/plugins/builtins.ts",
+        "apps/web/src/plugins/host.ts",
+        "apps/web/test/visual-shell.fixture.ts",
+        "apps/web/test/visual-shell.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-VISUAL01",
+    "owner": "d01_owner / gpt-6-astra ultra",
+    "branch": "codex/web-visual-shell",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T09:28:52.000Z",
+    "updatedRecord": "2026-10-06 09:28:52 UTC",
+    "todos": [
+      {
+        "id": "WPF-VISUAL01-01",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "[plan](plan.md)、[quality](../../docs/evidence/wpf-visual01/quality.md)"
+      },
+      {
+        "id": "WPF-VISUAL01-02",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "四主题/共享builtin定义/样式已固定，见source-binding"
+      },
+      {
+        "id": "WPF-VISUAL01-03",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "实际dev8/prod8、双主题/390/错误/工具流/降级，见validation"
+      },
+      {
+        "id": "WPF-VISUAL01-04",
+        "state": "in-progress",
+        "owner": "root / d01_owner / ExecutionLead",
+        "evidence": "已固定a8b2b22，root独审APPROVED；主线接收待完成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 当前HEAD由Git聚合",
+    "declaredDirty": "实现a8b2b22已固定；当前仅自有证据/metadata待提交，交付clean以随后Git为准",
+    "checks": {
+      "state": "passed",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "record": "PASSED a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231；17 direct、Webtsc/build、dev8/prod8；[checks](../../docs/evidence/wpf-visual01/checks.json)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231"
+  }
+}

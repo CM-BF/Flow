@@ -1,0 +1,792 @@
+{
+  "sourceCommit": "be50d36f4bb7fcebc70887881cdca0237ff0d55f",
+  "sourceDirty": " M apps/web/src/styles.css\n M apps/web/test/visual-shell.browser.ts\n M docs/evidence/wpf-visual01/quality.md\n M plans/wpf-visual01-shell/plan.md\n M plans/wpf-visual01-shell/review.md\n M plans/wpf-visual01-shell/status.md\n?? docs/evidence/wpf-visual01/README.md\n?? docs/evidence/wpf-visual01/amend-receipt.json\n?? docs/evidence/wpf-visual01/baseline-browser.json\n?? docs/evidence/wpf-visual01/baseline-empty-light-1280.png\n?? docs/evidence/wpf-visual01/baseline-long-light-1280.png\n?? docs/evidence/wpf-visual01/baseline-long-light-390.png\n?? docs/evidence/wpf-visual01/baseline-method.json\n?? docs/evidence/wpf-visual01/baseline.log\n?? docs/evidence/wpf-visual01/be50-production-browser.json\n?? docs/evidence/wpf-visual01/browser-fifth.log\n?? docs/evidence/wpf-visual01/browser-first.log\n?? docs/evidence/wpf-visual01/browser-fourth.log\n?? docs/evidence/wpf-visual01/browser-second.log\n?? docs/evidence/wpf-visual01/browser-sixth.log\n?? docs/evidence/wpf-visual01/browser-third.log\n?? docs/evidence/wpf-visual01/build-final.log\n?? docs/evidence/wpf-visual01/build.log\n?? docs/evidence/wpf-visual01/checks.json\n?? docs/evidence/wpf-visual01/development-activity-dark-1280.png\n?? docs/evidence/wpf-visual01/development-browser.json\n?? docs/evidence/wpf-visual01/development-dark-1280.png\n?? docs/evidence/wpf-visual01/development-dark-opaque-1280.png\n?? docs/evidence/wpf-visual01/development-empty-light-1280.png\n?? docs/evidence/wpf-visual01/development-error-dark-390.png\n?? docs/evidence/wpf-visual01/development-error-light-390.png\n?? docs/evidence/wpf-visual01/development-failure.png\n?? docs/evidence/wpf-visual01/development-final-v2.log\n?? docs/evidence/wpf-visual01/development-final-v3.log\n?? docs/evidence/wpf-visual01/development-final.log\n?? docs/evidence/wpf-visual01/development-forced-colors.png\n?? docs/evidence/wpf-visual01/development-light-1280.png\n?? docs/evidence/wpf-visual01/development-light-opaque-1280.png\n?? docs/evidence/wpf-visual01/development-long-light-1280.png\n?? docs/evidence/wpf-visual01/development-long-light-390.png\n?? docs/evidence/wpf-visual01/development-reduced-transparency.png\n?? docs/evidence/wpf-visual01/development-split-dark-1280.png\n?? docs/evidence/wpf-visual01/development-split-dark-390.png\n?? docs/evidence/wpf-visual01/development-unsupported-backdrop-branch.png\n?? docs/evidence/wpf-visual01/first-typecheck.log\n?? docs/evidence/wpf-visual01/install.log\n?? docs/evidence/wpf-visual01/layout-comparison.json\n?? docs/evidence/wpf-visual01/plugin-host-direct.log\n?? docs/evidence/wpf-visual01/production-activity-dark-1280.png\n?? docs/evidence/wpf-visual01/production-browser.json\n?? docs/evidence/wpf-visual01/production-dark-1280.png\n?? docs/evidence/wpf-visual01/production-dark-opaque-1280.png\n?? docs/evidence/wpf-visual01/production-empty-light-1280.png\n?? docs/evidence/wpf-visual01/production-error-dark-390.png\n?? docs/evidence/wpf-visual01/production-error-light-390.png\n?? docs/evidence/wpf-visual01/production-failure.png\n?? docs/evidence/wpf-visual01/production-final-v2.log\n?? docs/evidence/wpf-visual01/production-final.log\n?? docs/evidence/wpf-visual01/production-first-browser.json\n?? docs/evidence/wpf-visual01/production-forced-colors.png\n?? docs/evidence/wpf-visual01/production-light-1280.png\n?? docs/evidence/wpf-visual01/production-light-opaque-1280.png\n?? docs/evidence/wpf-visual01/production-long-light-1280.png\n?? docs/evidence/wpf-visual01/production-long-light-390.png\n?? docs/evidence/wpf-visual01/production-reduced-transparency.png\n?? docs/evidence/wpf-visual01/production-split-dark-1280.png\n?? docs/evidence/wpf-visual01/production-unsupported-backdrop-branch.png\n?? docs/evidence/wpf-visual01/review-narrow-split-before.json\n?? docs/evidence/wpf-visual01/review-narrow-split-before.png\n?? docs/evidence/wpf-visual01/source-binding.json\n?? docs/evidence/wpf-visual01/split-build.log\n?? docs/evidence/wpf-visual01/split-development.log\n?? docs/evidence/wpf-visual01/split-final-development.log\n?? docs/evidence/wpf-visual01/split-interim-development-browser.json\n?? docs/evidence/wpf-visual01/split-typecheck.log\n?? docs/evidence/wpf-visual01/theme-typecheck.log\n?? docs/evidence/wpf-visual01/third-development-browser.json\n?? docs/evidence/wpf-visual01/third-development-failure.png\n?? docs/evidence/wpf-visual01/typecheck-final.log\n?? docs/evidence/wpf-visual01/typecheck.log\n?? docs/evidence/wpf-visual01/validation.md\n",
+  "sourceFiles": {
+    "apps/web/src/assistant-ui.css": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+    "apps/web/src/plugins/builtins.ts": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+    "apps/web/src/plugins/host.ts": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "apps/web/src/styles.css": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4",
+    "apps/web/src/themes.ts": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+    "apps/web/test/visual-shell.browser.ts": "d46d0c6e5a06b9e842c08538447e613a5f8ebba7f6e9cea4f9554c9891367df7",
+    "apps/web/test/visual-shell.fixture.ts": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0"
+  },
+  "at": "2026-10-06T09:23:56.284Z",
+  "production": false,
+  "baseline": false,
+  "checks": [
+    "actual empty App and long Markdown keep readable pane/code/table bounds at desktop and 390",
+    "four Appearance choices use scheme, opaque removes blur, persisted choice survives real reload",
+    "plugin palette still applies and disabled contributed theme falls back by dark scheme",
+    "real typed Tool and Reasoning stay lazy, readable and keyboard-operable",
+    "streaming pane and split preserve independent drafts without page overflow",
+    "visible queue error and keyboard focus remain usable in both narrow themes",
+    "unsupported-backdrop CSS branch retains an opaque readable actual App",
+    "reduced transparency and forced colors preserve solid surfaces and visible boundaries"
+  ],
+  "errors": [],
+  "failure": null,
+  "measurements": [
+    {
+      "name": "empty-light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 616,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        }
+      }
+    },
+    {
+      "name": "long-light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "long-light-390",
+      "width": 390,
+      "height": 844,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 334,
+          "height": 798,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 304,
+          "height": 1921.140625,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "dark-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.0941177 0.101961 0.109804 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "light-opaque-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "dark-opaque-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.0941176 0.101961 0.109804)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "activity-dark-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.0941177 0.101961 0.109804 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 616,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "split-dark-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.0941177 0.101961 0.109804 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 489,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 459,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 459,
+          "height": 1516.453125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "narrow-split-bounds",
+      "height": 798,
+      "scrollHeight": 798,
+      "panes": [
+        {
+          "top": 0,
+          "bottom": 397,
+          "composerTop": 233.484375,
+          "composerBottom": 317.984375
+        },
+        {
+          "top": 401,
+          "bottom": 798,
+          "composerTop": 634.078125,
+          "composerBottom": 718.578125
+        }
+      ]
+    },
+    {
+      "name": "split-dark-390",
+      "width": 390,
+      "height": 844,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 334,
+          "height": 397,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 304,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 304,
+          "height": 1921.140625,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "error-light-390",
+      "width": 390,
+      "height": 844,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 334,
+          "height": 798,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "error-dark-390",
+      "width": 390,
+      "height": 844,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 334,
+          "height": 798,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "reduced-transparency",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 1220,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "forced-colors",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgb(255, 255, 255)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 1220,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "none",
+          "background": "rgb(255, 255, 255)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(255, 255, 255, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(255, 255, 255, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    }
+  ],
+  "scope": "Actual Flow App with contract HTTP synthetic materials; no model, DB or personal service"
+}

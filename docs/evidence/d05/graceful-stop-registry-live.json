@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-10-06T10:30:43.113Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "0b0d5fe7af9c0f40861ec6d2847f7383bcd76739",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T10:30:44.636Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "sources": 127,
+  "coordinationState": "available",
+  "selected": [
+    {
+      "id": "S01P03",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "正常停止领取修复已独审通过，明确响应能安全收束，真实未知继续保留",
+        "next": "Lead受控合入主线并登记权威进度来源",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "TUI01B",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已统一会话发送确认的校验设计。",
+        "next": "网页与终端共用发送确认，终端冲突后保留草稿并恢复观察。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ENG-001",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "工程任务的检查收据与交付身份核对已完成局部审查，真实工作区修改和检查正在接通。",
+        "next": "在受管工作区真实修改合成代码，运行受信检查并读回固定差异与日志。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "FLOW-001",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "终端与网页正在共用发送确认规则；工程工作区通路正在接通，网页独立发布工具已进入主线。",
+        "next": "独立更新网页，并交付可实际改代码、运行受信检查和回看差异的工程通路。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    }
+  ],
+  "nextUnregistered": [
+    "WPF-DPERF02",
+    "WPF-RELEASE01"
+  ],
+  "scope": "Saved prior actual 127-source snapshot; not a new sample, deployment or product test"
+}

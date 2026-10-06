@@ -1,6 +1,7 @@
 import { compareImplementation, integrationProof } from './proof.mjs';
 import { assignmentSnapshot } from './coordination/ledger.mjs';
 import { humanOverview } from './human.mjs';
+import { resolveTaskLinks } from './task-links.mjs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { realpath } from 'node:fs/promises';
@@ -80,6 +81,8 @@ export async function aggregate(registry, now = Date.now()) {
   ]);
   await Promise.all(tasks.map(async task => { task.main = await integrationProof(task, registry.mainWorktree, main); }));
   for (const task of tasks) task.assignments = assignments.state === 'available' ? assignments.claims.filter(claim => claim.taskId === task.id && claim.state !== 'released').map(claim => ({ ...claim, matchesSource: claim.worktree === task.worktree && claim.branch === task.branch })) : null;
+  const links = resolveTaskLinks(tasks);
+  for (const task of tasks) task.links = links.get(task.id);
   const registered = new Set(tasks.map(task => task.id));
   const unregisteredAssignments = assignments.claims.filter(claim => claim.state !== 'released' && !registered.has(claim.taskId));
   const milestoneSource = tasks.find(task => task.id === 'FLOW-003');

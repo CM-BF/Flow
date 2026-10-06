@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:21 UTC / 接收前main77c420c |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:39:09 UTC / main0cee7556befa1988e60bae94b510240122c34b88 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
+| 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 本批有界Codex通信与新目标文档 |
-| 工作树dirty状态 | 本批固定输入已合入，集成证据待提交 |
+| 工作基线 / HEAD | 0cee7556befa1988e60bae94b510240122c34b88 / 已审ENG01A E0+E1与129来源候选 |
+| 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；R06七源码逐字等于独审target，root类型检查exit0；registry114来源/三新源parser errors[]，0provider |
-| 已集成main状态 / HEAD | 前批main77c420c含已审补充指令控件；本批R06与TUI/COST计划待发布。个人backend/static仍b1c、accepting v12，不随main更新。 |
+| 检查状态 | 14工程源码固定hash一致；新S01停止语义下3个直接PG旅程通过，2未选；根类型检查通过，10主线保护文件零差 |
+| 已集成main状态 / HEAD | 终端确认/执行器停止0cee已推送；本批工程通路与129源即将fast-forward。个人backend/static仍b1c2e398、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 补充指令控件已接收；新的执行工具通信模块已审，终端客户端开始实施。 |
-| 下一可用交付 | 接通Codex普通任务及可发送、恢复会话的终端首片。 |
+| 当前产出 | 受管工程工作区可以保存真实文件修改、固定检查结果，并在未知结果或确认丢失后保持原执行事实。 |
+| 下一可用交付 | 工程执行配置和启动恢复入口；真实网页新旧版本兼容验证继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -105,3 +105,19 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:58:18 UTC：本批[R05-A与首次fit固定对照](../../docs/evidence/i02/native-harness-fit-integration.json)18项全一致，根类型检查exit0；复用作者42局部检查及Web已有五组浏览器/独立可视审查，不重复工程矩阵。SVC03实际窗口已关闭，后端与静态产物固定b1c/v12，后继main不改变其运行版本。
 
 2026-10-06 09:10:33 UTC：[补充指令独立模块组合](../../docs/evidence/i02/steering-module-integration.json)六源码与Web独审target/manifest逐字一致，当前Web类型检查exit0。未重复33/浏览器、未挂App或启个人steer。登记111源已实采；实际个人center/runner/staticWeb仍b1c/v12，不随main前进。
+
+2026-10-06 09:40 UTC：[视觉与C0组合](../../docs/evidence/i02/visual-c0-source-comparison.json)12源码与各独审target完全一致，其中原10项也与manifest完全一致，root/Web类型检查exit0；沿用固定领域/浏览器证据，无模型或个人服务更新。C0仅可信原生未知状态，不涵盖正在实施的Codex adapter。ENG计划与117源实采回执同批归档；纯文档不跑工程测试。
+
+同批普通终文投影提升6313c885另获Execution Lead限定独审：算法与Mika原0d0524来源逐字相同，15项原断言仅换import后的原始输出已核。当前无adapter连接，不将投影completed等同Flow任务完成；未来adapter必须归一可能含原文的AssertionError。
+
+2026-10-06 09:43 UTC：通用native profile薄client095已由status_read独审、Mika接收；本批两源码对target/manifest完全一致，原3/3 HTTP和类型检查复用，无重复PG/模型。见[独审接收](../../docs/evidence/i02/native-profile-client-integration.json)。此接口只透明发布，配置存在不等于工具授权或原生运行完成。
+
+历史手工管理时间标签 09:54（非执行观测；实际118源快照为09:51:58.837Z）：接收SVC04唯一计划、TUI共享ACK后继、F01/main回执与FLOW当前事实，118来源登记通过；[本批receipt](../../docs/evidence/i02/release-ack-planning-integration.json)。本批只文档与registry，不重跑产品测试、不变个人服务。
+
+2026-10-06T09:58:56.844754+00:00：本批[固定集成回执](../../docs/evidence/i02/native-tui-integration.json)记录59源同获审target一致、4文件50直接检查及root/Web类型检查通过。TUI两项P2已由原owner修复并获Mika独审；离线固定锁安装41复用、0下载、未运行安装脚本。未重跑领域/PTY/浏览器验收，未调用provider或修改个人服务。
+
+2026-10-06 10:13:06 UTC：工程/附件唯一计划与共享026交接、S01配置范围归还、125源候选组成纯metadata批。4个相关source解析/人读字段完整；产品目录无改，不重复工程测试。实际123源旧回执保留，125实际部署另记；个人b1c/v12不动。见[本批记录](../../docs/evidence/i02/attachment-engineering-metadata.json)。
+
+2026-10-06T10:18:50.449758+00:00：已审R05D配置与SVC04独立网页发布组合接收，18项逐文件相同、root类型检查exit0；不重跑已核72/15与原浏览器/PG。首次类型命令退出码包装失败保留，后一次独立记录exit0。个人服务不动。见[固定组合](../../docs/evidence/i02/launch-web-release-integration.json)。
+
+2026-10-06T10:22:16.377582+00:00：固定架构图2c316（源码基线f181）五执行源hash精确相同、renderer/CSS保持；126来源含TUI01B与唯一D06新树。原独审15/浏览器证据复用，不重跑。其他仅明确文档与领取交接，见[本批记录](../../docs/evidence/i02/shared-ack-architecture-integration.json)。

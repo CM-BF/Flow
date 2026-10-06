@@ -86,7 +86,15 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.75rem;
+  --flow-radius-control: 8px;
+  --flow-radius-pane: 14px;
+  --flow-gap: 6px;
+  --flow-shell-color: color-mix(in srgb, var(--sidebar) 88%, var(--border));
+  --flow-material-color: var(--sidebar);
+  --flow-glass-filter: none;
+  --flow-shadow-pane: 0 1px 2px #10182008, 0 4px 16px #10182005;
+  --flow-shadow-overlay: 0 8px 28px #10182018, 0 1px 3px #10182012;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -110,7 +118,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: #eceeed;
   --sidebar-foreground: oklch(0.141 0.005 285.823);
   --sidebar-primary: oklch(0.21 0.006 285.885);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -121,7 +129,9 @@
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
+  --flow-shadow-pane: 0 1px 2px #0005, 0 4px 16px #0002;
+  --flow-shadow-overlay: 0 10px 32px #0006, 0 1px 3px #0004;
+  --background: #222426;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
@@ -144,7 +154,7 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar: #181a1c;
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -170,5 +180,25 @@
   body {
     @apply bg-background text-foreground;
     font-optical-sizing: auto;
+  }
+}
+
+/* Text surfaces stay opaque; translucent chrome is progressive enhancement. */
+@supports (backdrop-filter: blur(1px)) {
+  :root {
+    --flow-material-color: color-mix(in srgb, var(--sidebar) var(--flow-material-opacity, 91%), transparent);
+    --flow-glass-filter: blur(14px);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --flow-material-color: var(--sidebar) !important; --flow-glass-filter: none !important; }
+}
+@media (forced-colors: active) {
+  :root {
+    --flow-shell-color: Canvas;
+    --flow-material-color: Canvas !important;
+    --flow-glass-filter: none !important;
+    --flow-shadow-pane: none;
+    --flow-shadow-overlay: none;
   }
 }

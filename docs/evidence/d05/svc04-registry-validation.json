@@ -1,0 +1,102 @@
+{
+  "observedAt": "2026-10-06T09:51:05.661Z",
+  "kind": "registry-and-canonical-only",
+  "count": 118,
+  "idUnique": true,
+  "task": {
+    "id": "SVC04",
+    "title": "网页独立发布与回退",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+    "branch": "codex/web-artifact-release",
+    "planDir": "plans/svc04-web-release",
+    "evidenceDir": "docs/evidence/svc04"
+  },
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已确定独立更新网页并保留旧页面资源的最小方案。",
+      "next": "网页发布或回退时后台任务持续运行。",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "tools/personal-preview/web-release.mjs",
+        "tools/personal-preview/static-web.mjs",
+        "tools/personal-preview/web-artifact.mjs",
+        "tools/personal-preview/preview.mjs",
+        "tools/personal-preview/cli.mjs"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "SVC04",
+    "owner": "runner_owner / gpt-6-astra",
+    "branch": "codex/web-artifact-release",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T09:41:35.000Z",
+    "updatedRecord": "2026-10-06 09:41:35 UTC",
+    "todos": [
+      {
+        "id": "SVC04-01",
+        "state": "completed",
+        "owner": "runner_owner",
+        "evidence": "[Interface](../../docs/evidence/svc04/interface.md)，12literal已领"
+      },
+      {
+        "id": "SVC04-02",
+        "state": "pending",
+        "owner": "runner_owner",
+        "evidence": "未实现"
+      },
+      {
+        "id": "SVC04-03",
+        "state": "pending",
+        "owner": "runner_owner",
+        "evidence": "未实现/未测"
+      },
+      {
+        "id": "SVC04-04",
+        "state": "pending",
+        "owner": "runner_owner / Lead",
+        "evidence": "NOT_STARTED"
+      },
+      {
+        "id": "SVC04-05",
+        "state": "pending",
+        "owner": "Lead / operator",
+        "evidence": "不在本轮执行个人部署"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "4391bbf9f1785212d098ef6aa1c01a0320a003d3 / 首文档",
+    "declaredDirty": "自有首文档待提交",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN；纯文档仅内容/链接"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "本片未集成；观察基线4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "productTestsRun": false
+}

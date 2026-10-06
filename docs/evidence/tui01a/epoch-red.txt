@@ -1,0 +1,65 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations
+
+ ❯ packages/interaction/src/controller.test.ts (9 tests | 2 failed) 12ms
+   ✓ descriptors parse commands, complete names and preserve ordinary text exactly 3ms
+   ✓ help is offline and creation persists before the typed client mutation 2ms
+   ✓ lost creation ACK retains the immutable body/key and only explicit recover replays it 1ms
+   ✓ startup with saved intent sends nothing and rejects a different connection binding 1ms
+   ✓ disconnect ignores a late read from the old epoch and does not cancel center work 0ms
+   ✓ disconnect during a mutation keeps unknown and quit waits for local cleanup only 0ms
+   ✓ raw draft is preserved while terminal display escapes OSC, ANSI and bidi controls 0ms
+   × disconnect during durable save never dispatches a new POST on the replacement epoch 3ms
+   × disconnect during ACK journal cleanup cannot reselect or reconnect the old epoch 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/controller.test.ts > disconnect during durable save never dispatches a new POST on the replacement epoch
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ packages/interaction/src/controller.test.ts:76:63
+     74|   } }); controllers.push(controller); await controller.initialize();
+     75|   const posting = controller.input('/new interrupted before dispatch')…
+     76|   expect((await posting).code).toBe('UNKNOWN'); expect(posts).toBe(0);…
+       |                                                               ^
+     77| });
+     78| test('disconnect during ACK journal cleanup cannot reselect or reconne…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/interaction/src/controller.test.ts > disconnect during ACK journal cleanup cannot reselect or reconnect the old epoch
+AssertionError: expected { …(4) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "id": "7e353aec-880d-408c-a1f6-b9f0e7b4e252",
+  "requestedModel": "runner-default",
+  "revision": 0,
+  "title": "Saved conversation",
+}
+
+ ❯ packages/interaction/src/controller.test.ts:86:89
+     84|   } }); controllers.push(controller); await controller.initialize();
+     85|   const posting = controller.input('/new accepted before disconnect');…
+     86|   expect((await posting).code).toBe('ACCEPTED'); expect(controller.sna…
+       |                                                                                         ^
+     87|   expect(controller.snapshot().connected).toBe(false); expect(controll…
+     88| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 7 passed (9)
+   Start at  02:32:22
+   Duration  585ms (transform 346ms, setup 0ms, import 484ms, tests 12ms, environment 0ms)
+

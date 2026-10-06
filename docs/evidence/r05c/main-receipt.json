@@ -1,0 +1,92 @@
+{
+  "observedAt": "2026-10-06 10:00:24 UTC",
+  "main": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "sourceTarget": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c",
+  "sourceMatches": [
+    {
+      "path": "apps/runner/src/execution-profiles.test.ts",
+      "bytes": 14503,
+      "sha256": "1332ee5b8539cbb723e4ea9bf1a5cdaf771a0d7bb5344167c2f3cc0e8c389033",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "bytes": 9014,
+      "sha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 6469,
+      "sha256": "59ca472b509f580512b50d6c71406e3e66f411aabd2c8622a90c7ad703821df5",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "bytes": 2430,
+      "sha256": "8140bc49ddf94ee35ff26760a97f7cf5975834f250a87dc6a38d77e3ddde9dd0",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 4041,
+      "sha256": "31c5b334c93f2ca3d1f16d0d1fb8b1233b53fd5254d9975dbf73d23e90159ec9",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "bytes": 851,
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+      "bytes": 11320,
+      "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "bytes": 6699,
+      "sha256": "287e78f0b10c1c008d13365c4bcc099bcae8e6e55a1e2ebbb85c7da85542ff63",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 1064,
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    }
+  ],
+  "integrationValidation": {
+    "source": "Execution Lead MAIN_RECEIPT message; no owner rerun",
+    "checks": "S01 main combination: execution-profile 13 + main 22; root types passed",
+    "nativeProviderCalls": 0
+  },
+  "branchMetadataBeforeReceipt": "c1f5ad92cd0cff84fc402a3ebe72f39b305416b4",
+  "release": "Owner stops all R05C writes after this metadata commit/push, then releases current claim v1; actual ledger receipt stored outside released scope and passed into successor evidence"
+}

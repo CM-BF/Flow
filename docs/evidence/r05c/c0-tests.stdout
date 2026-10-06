@@ -1,0 +1,34 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter
+
+ ✓ apps/runner/src/runner.test.ts (33 tests) 2585ms
+   ✓ starts from environment configuration and stops cleanly on SIGTERM  466ms
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 1 with a local four-slot pool
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_a4a698963b94442a87a7d162edfe464d","remaining":[]}
+
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 4 with a local four-slot pool
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_67dbb6a057ed4eae9ba918a85440c95d","remaining":[]}
+
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP preserves native-session exclusion across overlapping local slots
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_f6089ba90d3841428ae8d25d15681c8b","remaining":[]}
+
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_f04792f27c1d46e283a9c8179db33a76","remaining":[]}
+
+ ✓ apps/runner/src/runtime-capacity.test.ts (23 tests) 8747ms
+   ✓ real PG/HTTP enforces registered capacity 1 with a local four-slot pool  3231ms
+   ✓ real PG/HTTP enforces registered capacity 4 with a local four-slot pool  1466ms
+   ✓ real PG/HTTP preserves native-session exclusion across overlapping local slots  1255ms
+   ✓ real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle  1231ms
+ ✓ apps/runner/src/lease.test.ts (23 tests) 4546ms
+   ✓ publishes grant durations from a real center and refuses expired ownership rather than renewing it  2678ms
+ ✓ apps/runner/src/admission-journal.test.ts (8 tests) 867ms
+   ✓ clears only a definite empty response and bounds retained assignments to sixteen  359ms
+ ✓ apps/runner/src/outbox.test.ts (4 tests) 55ms
+ ✓ apps/runner/src/outbox-resume.test.ts (1 test) 9ms
+
+ Test Files  6 passed (6)
+      Tests  92 passed (92)
+   Start at  02:32:35
+   Duration  19.71s (transform 1.00s, setup 0ms, import 2.37s, tests 16.81s, environment 1ms)
+

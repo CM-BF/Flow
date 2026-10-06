@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-06T09:34:27.866Z",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已确认活动信息的展示边界与现有可复用控件",
+      "next": "简短活动状态与按需技术详情，保留错误和恢复入口",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/test/conversation-activity-integration.browser.ts"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "WPF-ACTIVITYREAD01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-activity-readability",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T09:33:43.000Z",
+    "updatedRecord": "2026-10-06 09:33:43 UTC",
+    "todos": [
+      {
+        "id": "WPF-ACTIVITYREAD01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[take](../../docs/evidence/wpf-activity-readability/take-receipt.json)、[quality](../../docs/evidence/wpf-activity-readability/quality.md)"
+      },
+      {
+        "id": "WPF-ACTIVITYREAD01-02",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-activity-readability/interface.md)，待实现"
+      },
+      {
+        "id": "WPF-ACTIVITYREAD01-03",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "待直接消费者/HTTPfixture核验"
+      },
+      {
+        "id": "WPF-ACTIVITYREAD01-04",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "待固定target/独审/主线接收"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "3418fe682944145494463dca9e09f89c8b9c2295 / 当前Git聚合",
+    "declaredDirty": "首canonical新增，尚未产品实现",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN；首文档parser核不代表产品通过"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  }
+}

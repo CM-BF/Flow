@@ -1,0 +1,35 @@
+{
+  "method": "Actual Chrome through cua, real Vite split-module fixture, loopback recording proxy",
+  "coldFailure": {
+    "visible": "booting",
+    "failedJavaScriptAssets": 4,
+    "status": 503
+  },
+  "afterFix": {
+    "observed": [
+      "old cold 12/12",
+      "after publish: old-12,old-13,old-14,old-15,old-16,old-17,old-18,old-19",
+      "new cold 12/12",
+      "after rollback: new-12,new-13,new-14,new-15,new-16,new-17,new-18,new-19",
+      "rollback new tab: old cold 12/12"
+    ],
+    "javascriptRequests": 58,
+    "failedJavaScriptRequests": 0,
+    "other404": [
+      {
+        "path": "/favicon.ico",
+        "status": 404,
+        "bytes": 0
+      }
+    ]
+  },
+  "screenshotsActuallyViewed": [
+    "initial failed cold page",
+    "new page lazy modules after rollback"
+  ],
+  "screenshotFilesSaved": false,
+  "ownedTabsClosed": 3,
+  "fixtureRemoved": true,
+  "providerQueries": 0,
+  "personalServicesTouched": false
+}

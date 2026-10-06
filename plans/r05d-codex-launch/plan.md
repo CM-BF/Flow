@@ -1,0 +1,22 @@
+# R05D 显式原生启动配置
+
+- 计划编号 / 状态：R05D / in-progress
+- 所属大task：[FLOW-002](../../../plan-status-review/plans/flow-002-provider-harness/plan.md)；co-lead：Execution Lead
+- Owner：native_center_owner / gpt-6-astra
+- Worktree：/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch
+- Branch：codex/codex-native-launch；base：f181d84b5fb3652d62e2a181acff442d42b3e066
+
+目标：显式受信小配置组合已审native descriptor/transport与原宿主，保留旧Claude和S01行为。遵循[模块化规则](../../AGENTS.md#modular-design)。没有新SDK/scheduler loop，不执行真实app-server/account/provider查询。
+
+## TODO
+
+- [x] **R05D-01** 固定来源、scope、claim与Interface，R05C主线收口释放。
+- [x] **R05D-02** 实现严格配置合同与注入行为检查，稳定小Interface先交。
+- [ ] **R05D-03** 接收main.ts writer移交及Mika/R06固定启动recipe/通知观察Interface，完成可证明的最小接线；未具备真实兼容证据时明确unsupported，不伪装可运行。
+- [x] **R05D-04** 固定manifest、局部验证、独审与受控main集成。
+
+当前5源码+本计划/证据scope见claim.json；main.ts尚未take，等待S01 owner停止写入/receipt再原子amend。R06目录、宿主/中心/client/公共exports不在scope，未知通知策略仍属后继受控变更，不能顺手放宽C1。真实诊断仍STOPPED/修复中，以唯一owner回执为准，无新query预算。
+
+D0固定ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4，4源码/72不同检查/root noEmit0；本片只配置合同与注入construction，不开放生产CLI Codex。R05D-03保留独立后继，按Lead最新优先级在D0可冻结点后转ENG-001零模型工程通路，不等待真实诊断。
+
+D0已独审178ef49并于主线41315b033deb0b1953484359b686c0b228997367集成，4源码逐字核实；03独立后继保持开放。当前停止本scope写入并释放，后继实施需新claim。

@@ -32,6 +32,8 @@ export type ContextKind = ResourceContext["kind"];
 export type Capability =
   | "ui.navigate"
   | "ui.layout"
+  | "task.steering.read"
+  | "task.steering.write"
   | "task.activity.read"
   | "task.assistant-stream.read"
   | "reference.read"

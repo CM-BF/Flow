@@ -1,0 +1,29 @@
+{
+  "requestId": "s01p02-runner-entry-take-20261006-v1",
+  "action": "take",
+  "committedAt": "2026-10-06T09:43:47.382Z",
+  "claim": {
+    "claimId": "d2c55153-7116-403d-a7db-44b10e943241",
+    "version": 1,
+    "taskId": "S01P02",
+    "lead": "mika",
+    "worker": "architecture_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+    "branch": "codex/runner-concurrency-entry",
+    "scope": [
+      "apps/runner/src/concurrency-configuration.test.ts",
+      "apps/runner/src/concurrency-configuration.ts",
+      "apps/runner/src/main-concurrency.test.ts",
+      "apps/runner/src/main.ts",
+      "docs/evidence/s01p02",
+      "plans/s01-concurrency-entry"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T09:43:47.382Z",
+    "createdAt": "2026-10-06T09:43:47.382Z"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "implementationTarget": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+  "base": "9d6bd45abdf5149bc44f1e9dc534454e7403f7d7",
+  "scope": [
+    "apps/web/src/assistant-ui.css",
+    "apps/web/src/plugins/builtins.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/styles.css",
+    "apps/web/src/themes.ts",
+    "apps/web/test/visual-shell.browser.ts",
+    "apps/web/test/visual-shell.fixture.ts",
+    "docs/evidence/wpf-visual01",
+    "plans/wpf-visual01-shell"
+  ],
+  "sources": [
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab"
+    },
+    {
+      "path": "apps/web/src/plugins/builtins.ts",
+      "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72"
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "sha256": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4"
+    },
+    {
+      "path": "apps/web/src/themes.ts",
+      "sha256": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f"
+    },
+    {
+      "path": "apps/web/test/visual-shell.browser.ts",
+      "sha256": "ce0141c0fde1432679630242b3c28761ccfa1619b4e7c6929aa36cd60badc505"
+    },
+    {
+      "path": "apps/web/test/visual-shell.fixture.ts",
+      "sha256": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0"
+    }
+  ],
+  "devReport": "development-browser.json",
+  "prodReport": "production-browser.json",
+  "reportsRecordedHead": "1e29967c2ef18429b31ef3bb61b8aa50bf00978c + dirty for final DOM-lower-focus reports",
+  "matchingAllSeven": true,
+  "protected": "App/ConversationThread/plugin-integration/plugins types+validation/contracts/lock/manifest unchanged against base",
+  "reviewFix": "styles.css narrow gap fixed in1e299; browser follows actual last pane, not conversation number. Root prior be50 host17 attributed separately."
+}

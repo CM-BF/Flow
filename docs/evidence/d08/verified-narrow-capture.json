@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-06T09:26:17.953Z",
+  "sourceTarget": "eca59a5edab0820f724a9bd5bc854e22f48d9ea9",
+  "method": "Supplemental screenshot investigation only; existing fixture; fresh 390x844 context for each theme, after two animation frames; no source changes",
+  "images": [
+    {
+      "theme": "light",
+      "file": "docs/evidence/d08/verified-narrow-light.png",
+      "sha256": "63ee09ec288dc196794c829f450ea156024558b3f26ee1cb55664f82f18b6c55",
+      "dom": {
+        "headers": [
+          {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 65,
+              "top": 0,
+              "right": 390,
+              "bottom": 65,
+              "left": 0
+            },
+            "position": "static"
+          }
+        ],
+        "at780": "focus-layout",
+        "width": 390,
+        "height": 844,
+        "scrollY": 0,
+        "overflow": false
+      }
+    },
+    {
+      "theme": "dark",
+      "file": "docs/evidence/d08/verified-narrow-dark.png",
+      "sha256": "8966cb8a4297924fe200d89f522369d2db49c88a10580a61e92ab116d6dbe88f",
+      "dom": {
+        "headers": [
+          {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 65,
+              "top": 0,
+              "right": 390,
+              "bottom": 65,
+              "left": 0
+            },
+            "position": "static"
+          }
+        ],
+        "at780": "focus-layout",
+        "width": 390,
+        "height": 844,
+        "scrollY": 0,
+        "overflow": false
+      }
+    }
+  ]
+}

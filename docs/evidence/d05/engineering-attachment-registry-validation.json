@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-10-06T10:12:16.359Z",
+  "count": 125,
+  "unique": true,
+  "items": [
+    {
+      "id": "ENG01A",
+      "branch": "codex/engineering-workspace-pipeline",
+      "expectedBranch": "codex/engineering-workspace-pipeline",
+      "errors": [],
+      "humanComplete": true,
+      "planDir": "plans/eng01a-workspace-pipeline",
+      "evidenceDir": "docs/evidence/eng01a"
+    },
+    {
+      "id": "WPF-ATTACH01",
+      "branch": "codex/attachment-resources",
+      "expectedBranch": "codex/attachment-resources",
+      "errors": [],
+      "humanComplete": true,
+      "planDir": "plans/wpf-attach01-resources",
+      "evidenceDir": "docs/evidence/wpf-attach01"
+    },
+    {
+      "id": "R05D",
+      "branch": "codex/codex-native-launch",
+      "expectedBranch": "codex/codex-native-launch",
+      "errors": [],
+      "humanComplete": true,
+      "planDir": "plans/r05d-codex-launch",
+      "evidenceDir": "docs/evidence/r05d"
+    }
+  ]
+}

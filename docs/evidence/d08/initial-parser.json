@@ -1,0 +1,89 @@
+{
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已确认任务关系的唯一来源和安全下钻方式",
+      "next": "首页和详情可查看明确的大task与负责人关系",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/public/styles.css",
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/status.mjs",
+        "apps/execution-dashboard/src/task-links.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "apps/execution-dashboard/test/task-links.test.mjs"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "D08",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/dashboard-task-links",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T09:15:18.000Z",
+    "updatedRecord": "2026-10-06 09:15:18 UTC",
+    "todos": [
+      {
+        "id": "D08-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[receipt](../../docs/evidence/d08/take-receipt.json)、[quality](../../docs/evidence/d08/quality.md)"
+      },
+      {
+        "id": "D08-02",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/d08/interface.md)，待实现"
+      },
+      {
+        "id": "D08-03",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "临时样本/浏览器尚未执行"
+      },
+      {
+        "id": "D08-04",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "固定target/独审/实际部署尚未完成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 当前Git聚合",
+    "declaredDirty": "首canonical新增，产品未改",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN；首文档/parser检查，不代表产品通过"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  }
+}

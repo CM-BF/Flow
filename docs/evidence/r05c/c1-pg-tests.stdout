@@ -1,0 +1,31 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter
+
+ ❯ apps/runner/src/native-harness/codex/integration.test.ts (5 tests | 1 failed) 4180ms
+   × runs the real JSONL transport through public profile/task APIs, host claim/outbox and PG final verification 766ms
+   ✓ retains deny:item/commandExecution/requestApproval as uncertain in PG and across host restart without a final or another native process  396ms
+   ✓ retains terminal-tool:mcpToolCall as uncertain in PG and across host restart without a final or another native process  521ms
+   ✓ retains eof as uncertain in PG and across host restart without a final or another native process  495ms
+   ✓ publishes no final after public runner revocation invalidates ownership between native requests  470ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/native-harness/codex/integration.test.ts > runs the real JSONL transport through public profile/task APIs, host claim/outbox and PG final verification
+error: column "created_at" does not exist
+ ❯ node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:45:11
+ ❯ apps/runner/src/native-harness/codex/integration.test.ts:119:20
+    117|   const events = (await pool.query('SELECT e.sequence FROM flow.runner…
+    118|   expect(events.map(event => event.sequence)).toEqual([1, 2, 3, 4, 5])…
+    119|   const details = (await pool.query('SELECT kind,content FROM flow.det…
+       |                    ^
+    120|   expect(details.map(detail => detail.kind)).toEqual(['session', 'deta…
+    121|   expect(details.find(detail => detail.kind === 'artifact')!.content).…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  02:46:02
+   Duration  6.42s (transform 1.21s, setup 0ms, import 2.11s, tests 4.18s, environment 0ms)
+

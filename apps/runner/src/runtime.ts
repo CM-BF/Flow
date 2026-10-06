@@ -11,12 +11,14 @@ import { createFixtureAdapter } from './fixture.js';
 import { textDigest } from './verifier.js';
 import { AttemptControl, type LeaseGrant } from './attempt-control.js';
 import { EventOutbox, EventStorageError, replayPending, reportBatch } from './outbox.js';
+import { NativeExecutionError, type NativeExecutionSettlement } from './native-harness/settlement.js';
 
 export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
 export interface RunnerOptions {
   baseUrl: string;
   token: string;
   workingDirectory: string;
+  /** Stops admission and active attempts; an already-sent claim drains to its original request deadline. */
   signal: AbortSignal;
   adapters?: HarnessAdapter[];
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
@@ -84,7 +86,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         // No request was sent if shutdown/recovery arrived while the intent was persisted.
         if (options.signal.aborted || recoveryPending) { await journal.accept(null); continue; }
         const requestedAt = performance.now();
-        const response = await client.claim(requestSignal(options));
+        // Preserve a definite claim response during normal stop; fatal shutdown still aborts the request.
+        const response = await client.claim(requestSignal(options, shutdown.signal));
         if (!response || !Object.hasOwn(response, 'assignment')) throw new Error('Invalid claim response; admission intent retained.');
         const { assignment, remainingLeaseMs } = response;
         await journal.accept(assignment === null ? null : {
@@ -195,6 +198,7 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   };
   const adapter = adapters.find(adapter => adapter.name === assignment.task.harness);
   let outcome: 'succeeded' | 'failed' | 'cancelled' = 'succeeded';
+  let nativeSettlement: NativeExecutionSettlement = 'settled';
   try {
     if (!adapter) throw new Error('The assigned harness is unavailable.');
     await control.assertOwnership();
@@ -214,20 +218,25 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
     await adapter.run(context);
   } catch (error) {
     if (error instanceof EventStorageError) throw error;
-    if (!options.signal.aborted && control.reason !== 'lost') {
+    if (error instanceof NativeExecutionError && error.settlement === 'unknown') {
+      nativeSettlement = 'unknown';
+      control.interrupt('lost');
+    } else if (!options.signal.aborted && control.reason !== 'lost') {
       if (control.reason !== 'cancel') options.onNotice?.({ type: 'adapter-failed', attemptId: assignment.attempt.id });
       outcome = control.reason === 'cancel' ? 'cancelled' : 'failed';
     }
   } finally { control.close(); await outbox.settle(); }
-  if (!options.signal.aborted && control.reason !== 'lost') {
+  // A prior cancel reason stays authoritative in AttemptControl, but is not proof
+  // that an adapter's external execution stopped. Retain its admission in that case.
+  if (nativeSettlement === 'settled' && !options.signal.aborted && control.reason !== 'lost') {
     await emit({ type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) });
     return true;
   }
   return false;
 }
 
-function requestSignal(options: RunnerOptions) {
-  return AbortSignal.any([options.signal, AbortSignal.timeout(options.requestTimeoutMs ?? 1500)]);
+function requestSignal(options: RunnerOptions, signal = options.signal) {
+  return AbortSignal.any([signal, AbortSignal.timeout(options.requestTimeoutMs ?? 1500)]);
 }
 
 function validateOptions(options: RunnerOptions) {

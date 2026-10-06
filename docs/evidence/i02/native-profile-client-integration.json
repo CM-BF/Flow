@@ -1,0 +1,26 @@
+{
+  "target": "095bdb849a4ba688be7c2b55d90021b9d15e4b53",
+  "observedAt": "2026-10-06T09:41:27.638686+00:00",
+  "comparison": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 38126,
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b",
+      "fixedTargetEqual": true
+    },
+    {
+      "path": "packages/client/src/native-profile-publication.test.ts",
+      "bytes": 3443,
+      "sha256": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a",
+      "fixedTargetEqual": true
+    }
+  ],
+  "independentReview": {
+    "reviewer": "status_read, accepted by Mika",
+    "path": "docs/evidence/f01/native-profile-client-review.md",
+    "sha256": "50d9062ea4b052a05bf9fb422bdcf0ee54436686a584f91bfef0b8b82b33b6cc"
+  },
+  "validation": "Original new HTTP1+legacy profile2=3/3 and root tsc0, no repeat; current contract input same R05B fixed source, unrelated C0/Web source unchanged",
+  "providerCalls": 0,
+  "personalRuntimeChanged": false
+}

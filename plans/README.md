@@ -1,6 +1,6 @@
 # Flow 计划索引
 
-当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status；下文按日期保留的批次记录是历史观察，不代表当前运行状态。2026-10-06 05:29 UTC：main `eb14991a` 已含 O05、O04、知识读取优化、聊天配置接入；K01/SVC02 已审并在共享入口集成，O06 与聊天队列 UI 正在实施。常驻中心/runner 仍为历史 `75a33`，尚未执行安全刷新。
+当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 09:53 UTC固定main253035已审含新视觉外壳、知识聊天接线、Codex有界通信与中心来源规则；原生Codex执行仍在R05C实施。TUI首片进行，ENG-001工程交付排其后、COST-001再后。个人center/runner仍b1c2、accepting v12，Web固定静态产物，不能把main更新称用户运行已更新。下文旧日期批次仅历史观察。
 
 本目录记录 Flow 的设计方向、技术验证和后续实施安排。使用和维护规则见 [AGENTS.md](AGENTS.md)。
 
@@ -131,3 +131,10 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - TUI01A：TUI-001下的[终端会话与可靠发送首片](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/plans/tui01a-conversations/plan.md)，唯一权威 `tui-conversations`；交互与headless共用controller，当前实施，未作完整日用验收。
 - COST-001：[可解释的执行成本与预算](cost01-execution-cost/plan.md)。独立大task承接REQ-09，唯一权威 `execution-cost/plans/cost01-execution-cost`；排在执行工具/成熟交互/终端首片之后，当前只计划，不新增模型或负载。
 - R05B：FLOW-002下的Codex中心身份与来源校验；唯一权威 [r05b-native-center-policy](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy/plans/r05b-native-center-policy/plan.md)。025与生产入口在分支验证，不宣称main已支持Codex。
+
+- ENG-001：[真实工程任务交付](eng01-engineering-delivery/plan.md)，唯一生产大task，承接REQ-06；E01只保留研究输入，当前只计划。
+- R05C：FLOW-002下的[Codex普通执行adapter](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter/plans/r05c-codex-native-adapter/plan.md)，先固定unknown结算，再复用R06/025纵向接线；0provider准备。
+
+- SVC04：FLOW-001下的[网页独立发布与回退](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/plans/svc04-web-release/plan.md)，唯一权威 `web-artifact-release`；先专用fixture证明后台持续、旧资源与失败保旧，个人服务不在本轮切换。
+
+新增唯一来源：S01P02并发入口（runner-concurrency-entry）、D08两层任务关系（dashboard-task-links）、WPF-ACTIVITYREAD01活动阅读（web-activity-readability）、WPF-STEIRI01补充指令接线（web-steering-integration）。各独审范围与main接收分别以唯一status为准；本批不切换个人服务。

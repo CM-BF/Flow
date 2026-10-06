@@ -1,0 +1,18 @@
+{
+  "method": "Ignored real node_modules directories containing symlinks to existing main dependency entries; workspace package links resolve to this fixed worktree. No installation, lock/version/exclude change.",
+  "packageDirectories": [
+    "apps/cli/node_modules",
+    "apps/execution-dashboard/node_modules",
+    "apps/runner/node_modules",
+    "apps/server/node_modules",
+    "apps/web/node_modules",
+    "packages/client/node_modules",
+    "packages/contracts/node_modules",
+    "packages/protocols/node_modules"
+  ],
+  "rootDirectory": "node_modules",
+  "node": "24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "initialImportFailure": "red-null.txt: no tests selected; missing package-local zod link, not behavior red evidence."
+}

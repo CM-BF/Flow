@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-06T09:43:01.193324+00:00",
+  "implementationTarget": "f2bcaae6623176acd718cf53707892154579970a",
+  "base": "3418fe682944145494463dca9e09f89c8b9c2295",
+  "sourceFiles": {
+    "apps/web/src/conversation-activity/native/NativeActivity.tsx": "3438c4dbd5c6cb6ab1c710db0a57126d7cc6644145b5a1957af1256ab0e9ca26",
+    "apps/web/src/conversation-activity/native/tool.tsx": "6a5c79cb90e76398576d75fb2dc185d57a68caba643cf6cd1e644207dce0c89d",
+    "apps/web/test/conversation-activity-integration.browser.ts": "f20e0f6b3c1ec78757a3522977188d76a271dc1f92b45fdf9fcadd0e2fc48f92",
+    "apps/web/test/conversation-activity-integration.test.ts": "f368c026291ff14441b301d34d02d71719afc8251fa4983ced209868abdfc5ab"
+  },
+  "executionSourceCommit": "bd580056d00a1d1f0d71c4d14002d3767e28ff23",
+  "executionSourceDirty": true,
+  "note": "Reports captured bd580 + dirty before implementation commit; fixed git blobs verified equal. No report provenance rewritten.",
+  "checks": [
+    {
+      "name": "native and host direct consumers",
+      "command": "pnpm exec vitest run apps/web/test/native-activity.test.ts apps/web/test/conversation-activity-integration.test.ts",
+      "passed": 16,
+      "exitCode": 0,
+      "log": "direct.log"
+    },
+    {
+      "name": "web typecheck",
+      "exitCode": 0,
+      "log": "typecheck.log",
+      "sourceNote": "Production files unchanged since this check; later changes only runner and scoped direct assertion."
+    },
+    {
+      "name": "production build",
+      "exitCode": 0,
+      "log": "build.log",
+      "warnings": "Existing two chunks over 500 kB; no overall performance claim."
+    },
+    {
+      "name": "development actual App HTTP fixture",
+      "passed": 13,
+      "exitCode": 0,
+      "report": "development-browser.json",
+      "at": "2026-10-06T09:40:58.766Z"
+    },
+    {
+      "name": "production actual App HTTP fixture",
+      "passed": 12,
+      "exitCode": 0,
+      "report": "production-browser.json",
+      "at": "2026-10-06T09:41:15.704Z"
+    }
+  ],
+  "limits": [
+    "0 real center/provider/model/DB",
+    "local HTTP fixture only",
+    "No production CSS/App/Thread/runtime/contract changes"
+  ]
+}

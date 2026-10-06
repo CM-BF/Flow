@@ -1,0 +1,10 @@
+PASS real P01 entry is explicit and current-task bound; registration reads zero
+PASS same mounted draft survives Hide, native hidden, split/merge and independent B task
+PASS Enter sends a separate original-key command; unknown retry and late new draft remain independent
+PASS accepted-unresolved close protection; explicit observation resolves without claiming model compliance
+PASS plugin disable/enable retains local draft and never auto-resubmits or reads on restoration
+PASS offline invalidates in-flight ACK without clearing original receipt or new draft
+PASS 390 light/dark reduced-motion keyboard control remains usable and original composer remains separate
+PASS explicit chat close discards only its warned unknown recovery; another pane keeps its own draft
+PASS change-connection warns before losing page-local recovery and same IDs start empty
+PASS server unavailable remains unavailable despite plugin activation; normal Queue and Send are unchanged

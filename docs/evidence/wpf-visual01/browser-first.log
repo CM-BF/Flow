@@ -1,0 +1,11 @@
+PASS actual empty App and long Markdown keep readable pane/code/table bounds at desktop and 390
+locator.evaluate: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.flow-sidebar')[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:80:80)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:59:67)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:74:5) {
+  log: [ "  - waiting for locator('.flow-sidebar')" ],
+  name: 'TimeoutError'
+}

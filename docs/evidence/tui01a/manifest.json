@@ -1,0 +1,260 @@
+{
+  "implementationTarget": "9e5588d4d6b24234bb829c23269e6e72caca44af",
+  "base": "77c420cf9ee5de0291ea93014b6ea11aead6fab5",
+  "source": [
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 3387,
+      "sha256": "2addde77709d89d3e184fb8ab196ae6f89b44f944ecb4091aac1eb1294c17911"
+    },
+    {
+      "path": "apps/tui/package.json",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8"
+    },
+    {
+      "path": "apps/tui/src/headless.ts",
+      "bytes": 1692,
+      "sha256": "22851575a3c429818ceadd1cc64fef984822699fd8574d438f891e4128df2838"
+    },
+    {
+      "path": "apps/tui/src/intent-store.ts",
+      "bytes": 3546,
+      "sha256": "b51e37f97bdd936a6d27e205372c9ef8fc294ae71fd55d192367c7880d419aa3"
+    },
+    {
+      "path": "apps/tui/src/journey.test.ts",
+      "bytes": 10436,
+      "sha256": "8286ad8f8d7eafb9211d8adc14d8ffd75ac650d7e74b4429cbfa767d101af3bb"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 2748,
+      "sha256": "10fc78b3e311ac1a6b8941423863899da40c10deb85f7a4c33a46f789a92723d"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 3971,
+      "sha256": "cc9d9fa15a899612e06ecfc9c5478180294af0c9ba38ae7486592e49b2dd097a"
+    },
+    {
+      "path": "apps/tui/src/terminal.test.ts",
+      "bytes": 4270,
+      "sha256": "3fb22e26c3f4f3c2094e5b2c60aa6ab1a1cda51ba7cc8090621bb2e020cf8bd7"
+    },
+    {
+      "path": "apps/tui/test-fixtures/terminal_driver.py",
+      "bytes": 3635,
+      "sha256": "595171c857c8e8210e86497a2981a104aad4fda012dc65953cf220aef6a22b93"
+    },
+    {
+      "path": "packages/interaction/README.md",
+      "bytes": 1331,
+      "sha256": "a0f4d8f2bf87ea06304fbe6aaef081b0393ab54c269a6129d52c160005ea4d8c"
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 243,
+      "sha256": "11006ced0e6cdf43929d7e904c5ff7b9d5a2f80a4c808112d3b9a4ef38a25d19"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 3612,
+      "sha256": "70360e585b920de6eb8113ba9cd1b61ab5d1d8a99b5aedb5178b484ef73eba62"
+    },
+    {
+      "path": "packages/interaction/src/controller.test.ts",
+      "bytes": 9528,
+      "sha256": "87b0b0314b4980c4ecaa85c28cd70778b8e12c2833c2894140812df14f892003"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 13439,
+      "sha256": "7cd698bc9ac203d33c1d83ea56a08e6a6544728101078387fed1d3dd0cbea8fe"
+    },
+    {
+      "path": "packages/interaction/src/index.ts",
+      "bytes": 418,
+      "sha256": "8541e6ae3bd78f07ce30f29b8304ac0c2dc22094c8c625c62694004f8e348882"
+    },
+    {
+      "path": "packages/interaction/src/projection.ts",
+      "bytes": 1647,
+      "sha256": "dbba73e9717f17537a0224b4d7a56305bb0ecbd307d2f43225958d5476a83087"
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2221,
+      "sha256": "5651a5675bbfb943185f8f4532d4e0c875cd64d659c8f881142d3990137d1ae4"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/tui01a/behavior-final.txt",
+      "bytes": 1679,
+      "sha256": "9acb4dee7df5ea389e8e5f58d21d0ebbcf41912b5130d8be7e6502f677981a72"
+    },
+    {
+      "path": "docs/evidence/tui01a/behavior-pages-final.txt",
+      "bytes": 1679,
+      "sha256": "30d5b41cadf52106f753dc5dbbe74c6e4320a951db0f095f2ca62449929c39ce"
+    },
+    {
+      "path": "docs/evidence/tui01a/combined-first.txt",
+      "bytes": 3944,
+      "sha256": "a3767d0076b69bed33b7c6f44a787aaf15b992608a959702243eae1bb5093062"
+    },
+    {
+      "path": "docs/evidence/tui01a/controller-close-final.txt",
+      "bytes": 318,
+      "sha256": "1488210ff872e3f5398bc72dff8aaa996c6a2d16424c2dd96907aaefce2144cd"
+    },
+    {
+      "path": "docs/evidence/tui01a/controller-first.txt",
+      "bytes": 315,
+      "sha256": "4380528375db16a93e78ec6c98278e0c7e4ea437199687ac9774d4cec3031167"
+    },
+    {
+      "path": "docs/evidence/tui01a/epoch-red.txt",
+      "bytes": 2936,
+      "sha256": "aba04c7df853d03e1cd55d6dd10362e72596b97bd2a49e1bf88498714e0fdc5b"
+    },
+    {
+      "path": "docs/evidence/tui01a/help-command.txt",
+      "bytes": 730,
+      "sha256": "ed768bca9a848ef7500cf38c73960980c26bb3f7ae681b061fd7b012ce0c657d"
+    },
+    {
+      "path": "docs/evidence/tui01a/install-offline.txt",
+      "bytes": 462,
+      "sha256": "2698ed07fe1a38d7d8c11ec3f843c46ef88129f635c17fea4899479523d1987a"
+    },
+    {
+      "path": "docs/evidence/tui01a/install-registry.txt",
+      "bytes": 660,
+      "sha256": "f3a6e23436f80a7b9f931e50d9ff629801589682fa399800e10d580fe1b660ff"
+    },
+    {
+      "path": "docs/evidence/tui01a/journey-first.txt",
+      "bytes": 2298,
+      "sha256": "b050b18c27a14d13a0e78665f4e3e79215c5a6f8cafb20b67e2316315f3f4139"
+    },
+    {
+      "path": "docs/evidence/tui01a/journey-second.txt",
+      "bytes": 5983,
+      "sha256": "4031da5e6687fa16e37f2faf9e1feb90fdcd52e80d807b29ef2d140e5ad56ab9"
+    },
+    {
+      "path": "docs/evidence/tui01a/journey-third.txt",
+      "bytes": 11770,
+      "sha256": "8d165213f96662484dd349bf32b0a2fdfa62ab35d69daf1e230e281f48bc778d"
+    },
+    {
+      "path": "docs/evidence/tui01a/local-first.txt",
+      "bytes": 315,
+      "sha256": "c59586b5fd5d124886af6d10768fba0c845beeb1f56eaaf83421fb7722f513ff"
+    },
+    {
+      "path": "docs/evidence/tui01a/local-selected.txt",
+      "bytes": 1684,
+      "sha256": "11c4c2e0a0da05a9d0e1888cbca7f08505f324154e6bd87947abf501ed2cbc1f"
+    },
+    {
+      "path": "docs/evidence/tui01a/lock-offline.txt",
+      "bytes": 493,
+      "sha256": "9a46151910d37281146c9d91106ea657335bf73c089b86734f45c91fae8ec063"
+    },
+    {
+      "path": "docs/evidence/tui01a/lock-registry.txt",
+      "bytes": 217,
+      "sha256": "64e7bd9cd5b991a0e4d49a8be523e7b628a2e599c77247c05be41e1480bb88e9"
+    },
+    {
+      "path": "docs/evidence/tui01a/renderer-act.txt",
+      "bytes": 1479,
+      "sha256": "6a9ed7578f6654e53fe469cf91e2873186cdea8565c0efc984d26b85a887966a"
+    },
+    {
+      "path": "docs/evidence/tui01a/terminal-fourth.txt",
+      "bytes": 1611,
+      "sha256": "8fe583aef487a0c55fa13067678ebc7b7dddaafbfdac9e3e2e6b3f3e6896f658"
+    },
+    {
+      "path": "docs/evidence/tui01a/typecheck-close-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01a/typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01a/typecheck-pages-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01a/types-first.txt",
+      "bytes": 206,
+      "sha256": "027824187c54c23677b71d8b938533c497f5c8e01a354cad9c9cf88858c9c98a"
+    },
+    {
+      "path": "docs/evidence/tui01a/types-second.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "readonlyInputs": [
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 37776,
+      "sha256": "84e63baeebed37dd019e72c71b00e32cb4b3962504e916794c814520ddccd2c4"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 5897,
+      "sha256": "72e9ceb34213cc5ba95162bc1f1b3eac926d9349c83d4f54b29a8d0bd7bcd3b2"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 3405,
+      "sha256": "3043252bbf514e5cbfcc57a86a3e70e9a6751b486eee2cd067e8ced46fc8eb0e"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278664,
+      "sha256": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d"
+    }
+  ],
+  "checks": {
+    "distinct": 17,
+    "finalBehavior": {
+      "path": "docs/evidence/tui01a/behavior-pages-final.txt",
+      "passed": 17,
+      "exitCode": 0
+    },
+    "lastNarrowController": {
+      "path": "docs/evidence/tui01a/controller-close-final.txt",
+      "passed": 11,
+      "overlapsPrior": true,
+      "exitCode": 0
+    },
+    "types": {
+      "path": "docs/evidence/tui01a/typecheck-close-final.txt",
+      "exitCode": 0
+    },
+    "providerQueries": 0,
+    "remainingTestDatabases": []
+  }
+}

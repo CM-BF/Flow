@@ -600,3 +600,10 @@ pre {
 }
 
 .allocation { font-size: .75rem; opacity: .78; overflow-wrap: anywhere; }
+
+.task-links { margin-top:8px; min-width:0; font-size:12px; }
+.task-links p { overflow-wrap:anywhere; }
+.task-links button { min-height:28px; padding:2px 6px; margin:2px 4px 2px 0; max-width:100%; white-space:normal; text-align:left; }
+.task-link-records { margin-top:4px; color:var(--muted); }
+.task-link-records summary { cursor:pointer; font-size:12px; min-height:24px; }
+.task-link-records p { white-space:pre-wrap; font-size:12px; }

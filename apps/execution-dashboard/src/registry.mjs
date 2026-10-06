@@ -5,6 +5,20 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['WPF-RELEASE01', '真实网页发布兼容验证', '技术验证', 'web-release-compatibility', 'wpf-release01-product-compatibility'],
+  ['WPF-DPERF02', '看板固定源码核验复用', '工作线', 'dashboard-proof-batching', 'wpf-dashboard-proof-batching'],
+  ['S01P03', '执行器停止与领取排空', '工作线', 'runner-graceful-stop', 's01-graceful-stop'],
+  ['TUI01B', '终端与网页共用发送确认', '工作线', 'shared-conversation-ack', 'tui01b-shared-ack'],
+  ['ENG01A', '受管工作区与工程检查', '工作线', 'engineering-workspace-pipeline', 'eng01a-workspace-pipeline'],
+  ['WPF-ATTACH01', '文本附件资源与引用', '工作线', 'attachment-resources', 'wpf-attach01-resources'],
+  ['R05D', 'Codex可信启动配置', '工作线', 'codex-native-launch', 'r05d-codex-launch'],
+  ['S01P02', '执行器并发配置入口', '工作线', 'runner-concurrency-entry', 's01-concurrency-entry'],
+  ['D08', '两层任务关系展示', '工程协作', 'dashboard-task-links', 'd08-task-links'],
+  ['WPF-ACTIVITYREAD01', '工具活动阅读简化', '工作线', 'web-activity-readability', 'wpf-activity-readability'],
+  ['WPF-STEIRI01', '运行中补充指令接入', '工作线', 'web-steering-integration', 'wpf-steer-i01-integration'],
+  ['SVC04', '网页独立发布与回退', '工作线', 'web-artifact-release', 'svc04-web-release'],
+  ['ENG-001', '真实工程任务交付', '总体计划', 'engineering-delivery', 'eng01-engineering-delivery'],
+  ['R05C', 'Codex普通执行与未知状态', '工作线', 'codex-native-adapter', 'r05c-codex-native-adapter'],
   ['TUI01A', '终端会话与可靠发送', '工作线', 'tui-conversations', 'tui01a-conversations'],
   ['TUI-001', '可日用终端客户端', '总体计划', 'tui-client', 'tui01-terminal-client'],
   ['COST-001', '执行成本与预算解释', '总体计划', 'execution-cost', 'cost01-execution-cost'],
@@ -92,7 +106,7 @@ const assignments = [
   ['CTX01', '上下文内核合成验证', '技术验证', 'context-kernel-probe', 'ctx01-context-kernel'],
   ['WPF-PROFILE01', '对话执行选项', '工作线', 'web-execution-profiles', 'wpf-profile01-execution-profiles'],
   ['O02', '原生目标工具桥接', '工作线', 'native-goal-tools', 'o02-native-goal-tools'],
-  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-stream', 'd06-architecture-refresh'],
+  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-runtime', 'd06-architecture-refresh'],
   ['CHAT04', '持久消息队列', '工作线', 'conversation-queue', 'chat04-conversation-queue'],
   ['WPF-QUEUE00', '旧新队列能力兼容', '工作线', 'web-queue-compatibility', 'wpf-queue00-compatibility'],
   ['O03', '目标工具执行授权', '工作线', 'goal-tool-authorization', 'o03-goal-tool-authorization'],
@@ -132,7 +146,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-DPERF02': 'wpf-dashboard-proof-batching', 'WPF-ACTIVITYREAD01': 'wpf-activity-readability', 'WPF-STEIRI01': 'wpf-steer-i01', 'ENG-001': 'eng01', 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };

@@ -1,0 +1,181 @@
+{
+  "observedAt": "2026-10-06T10:39:09.064286+00:00",
+  "previousMain": "0cee7556befa1988e60bae94b510240122c34b88",
+  "candidate": "271be124ea6f7e88f1263028e0dea884d31b53c7",
+  "domainTarget": "040fdede227fe22504972ea7a053c23f14a30f52",
+  "delivery": "e34f0dd763c45e4d7f54436d5ebaac2415f70c48",
+  "review": "E0 909 independent Execution Lead; E1 040 independent runner_owner; no P1/P2",
+  "sourceComparisons": [
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 3782,
+      "sha256": "b2cdf450897ca260d4807a1c8d765da8c4d206d6890d3e1655e0b3538cad7492",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "bytes": 3244,
+      "sha256": "e0e7910bda4ebd6ddd68efe386db9bdbea91c2d851583cf35d5dc4d30c451435",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "bytes": 15692,
+      "sha256": "4e9bde20a1bceba11ab9396b156490134648c40eafed6c14025abc83e33a4e4f",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "bytes": 12736,
+      "sha256": "e28462676bb6c7fd1d22d4c8e993ce3d3649393074ebb3bf133520b65b6c7a97",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "bytes": 9460,
+      "sha256": "89011679f0a9cd8b2c0fa3c0e5fab1cde59eb2dd82489d286001a0d60d6da315",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/engineering/verification.test.ts",
+      "bytes": 12201,
+      "sha256": "caf484e5b22f677520370276be118e88a8b9dbc5fe41cb0922b51dbf125cacab",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "bytes": 3874,
+      "sha256": "4e297828859515c6429bcdec45b5e456b60b1c67ab1224e477501bc29c6d58ed",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8481,
+      "sha256": "2144b8745e878c373bbe1bba7254fc0bd7dcc7b3563ad6bb78b6f6ac4f6da559",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4095,
+      "sha256": "30124654e78c5db1075f306046d8f7a5e1e72e835531e2a87fc1cfb17587bb20",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 10746,
+      "sha256": "6c15482d13913270affe5f062576f16844aab79c9f4305aa7a6dbe5f6ef3197c",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5109,
+      "sha256": "5f9617feb1b3f00417322784fc6246e7b1f9e741efe577f330939ba9127244c0",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6717,
+      "sha256": "c9867af5852c4349db34396a3f999bebb18100f162a98f39bfee5701245ff2c3",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be",
+      "matches": true
+    }
+  ],
+  "protectedMain": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "unchanged": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "unchanged": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "unchanged": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "unchanged": true
+    }
+  ],
+  "checks": [
+    {
+      "target": "026fea335e5fb32955193310a2911b17b851d603",
+      "startedAt": "2026-10-06T10:37:40.366807+00:00",
+      "finishedAt": "2026-10-06T10:37:50.240831+00:00",
+      "elapsedSeconds": 9.873920166981407,
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "apps/runner/src/engineering/integration.test.ts",
+        "-t",
+        "executes a real synthetic|retains an injected uncertain|replays a lost artifact"
+      ],
+      "exitCode": 0
+    },
+    {
+      "target": "026fea335e5fb32955193310a2911b17b851d603",
+      "startedAt": "2026-10-06T10:37:50.241111+00:00",
+      "finishedAt": "2026-10-06T10:37:57.378821+00:00",
+      "elapsedSeconds": 7.137631250079721,
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "pgFacts": "docs/evidence/i02/engineering-integration-pg-facts.json",
+  "integrationReason": "Current runtime adds reviewed S01P03 in-flight claim drain versus ENG fixed base, so 3 actual PG consumers exercise success, unknown restart and lost artifact ACK. 2 other cases intentionally not selected. No full 80 rerun.",
+  "registry": {
+    "sources": 129,
+    "new": [
+      "WPF-RELEASE01",
+      "WPF-DPERF02"
+    ],
+    "validation": "docs/evidence/d05/web-release-registry-validation.json"
+  },
+  "limits": [
+    "Fixture-only trusted engineering setup; targetRunnerId routing pin not capability authentication",
+    "No daily engineering configuration entry or native provider proof",
+    "No OS sandbox or cross-process setup recovery claim",
+    "Personal runtime b1c2e398 accepting v12 unchanged; 0 new provider/query"
+  ]
+}

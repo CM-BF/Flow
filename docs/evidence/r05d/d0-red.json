@@ -1,0 +1,12 @@
+{
+  "command": "pnpm exec vitest run apps/runner/src/native-harness/codex/launch.test.ts apps/runner/src/configuration.test.ts",
+  "exitCode": 1,
+  "source": "direct process stdout/stderr",
+  "expected": "New launch module and loader functions not implemented",
+  "selectedFiles": 2,
+  "discoveredTests": 19,
+  "passed": 15,
+  "failed": 4,
+  "failedSuites": 1,
+  "newLaunchSuite": "not discovered because implementation intentionally missing; not counted as passing"
+}
