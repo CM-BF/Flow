@@ -10,6 +10,12 @@
 
 6. **固定旧reader兼容结论（root已定方向）**：[逐路径矩阵](attachment-v2-compatibility-research.json)。旧Web的v1硬门禁只在自身Send/enqueue ACK；history/queue不验context且不显示材料。中心必须按每请求非空attachments产生v2，省略/[]及持久v1原key回执沿v1，不能按会话升级。新Web对旧center缺cap禁附件，plain必须省略attachments字段（旧strictObject连[]也拒）。F01共享decoder加明确v1/v2分支，旧页可看新v2正文但附件不可见是已知限制。先用真实legacy consumer fixture验证；当前无Accept/header/GET阻断或剥字段改digest需求。额外严格消费者请指出固定路径，不阻已批TUI首片。
 
+## SVC04真实Web兼容验证优先（root/Lead 2026-10-06 10:26 UTC）
+
+SVC04工具虽已main，实际新Web固定候选8d8ab520a9d43c7b9dafb22911416ee799ebf665对固定b1c2e398 backend的read/send/原keyrecover/协商0provider证据仍缺。现有w01可用，ACK消费等已审固定实现；不新增agent。root已派只读核importWebCompatibility与最小test/evidence范围，正式fresh claim才写；真实App构建+随机专用PG/fixture runner，不能以miniWeb替代。个人61227/61228/凭据/用户tab不可触碰；SVC源码和实际发布仍Lead operator。
+
+DPERF02已合法take并首canonical，因本P1让位暂停实施，保留1cb4 v1四scope；尚无实验/生产修改，不将pending计划当活跃重负载。
+
 ## TUI01B需读的最新具体回复（2026-10-06 10:24:48 UTC）
 
 - ExecutionLead已指定TUI001-09唯一writer TUI01B，F01 handback client index+新module；首Interface `14d0e53cce4a27cd33b274834b941b2417e9cd62`，canonical `/Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack/docs/evidence/tui01b/interface.md`。实现未独审，本组未take消费片。
@@ -29,7 +35,7 @@
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
 | WPF-ATTACH01 → MATURE03，合同phase1实施/首source已就绪 | fixed base f181d84b5fb3652d62e2a181acff442d42b3e066；[ef617d78 v1 take](attach01-contract-take-receipt.json)10:06:48.197Z，五literal | attachment-resources / plans/wpf-attach01-resources / docs/evidence/wpf-attach01；两个合同+一专测+自己plan/evidence，owner panels；首canonical b87f8a515c7c8bbe5b76a8202db4f7666924b10d clean；小合同root审后Lead受控输入，runtime/export/migration不在此授权 |
 | D06 → D01，main收口完成 | impl2c3160f42784ee814d968a953d557251c81a243d / acceptedmain8d8ab520a9d43c7b9dafb22911416ee799ebf665；owner final631173ab正常push/clean，五source逐hash同 | dashboard-architecture-runtime / plans/d06-architecture-refresh；全四scope停写后[84fd v2 release](d06-runtime-main-release-receipt.json)10:24:18.920Z；唯一source迁移/126registry由Lead确认，4320实际部署仍待回执 |
-| WPF-DPERF02 → D01，有界实验实施 | base41315b033deb0b1953484359b686c0b228997367；首canonical08710473，fresh[1cb4f0e3 v1 take](dperf02-take-receipt.json)四literal | dashboard-proof-batching / codex/dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；先临时Git Trace2≤60s/32MiB，不改proof、不取4320，附件合同交接优先 |
+| WPF-DPERF02 → D01，已领取/实验暂缓 | base41315b033deb0b1953484359b686c0b228997367；首canonical08710473，fresh[1cb4f0e3 v1 take](dperf02-take-receipt.json)四literal | dashboard-proof-batching / codex/dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；发布兼容与附件合同优先；实验未执行，恢复后临时Git Trace2≤60s/32MiB，不改proof/不取4320 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
 这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。D08部署后root一次实际检查六大task父关联/take展示才报告计划请求Done，不将局部片段当整体完成。
