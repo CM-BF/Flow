@@ -1,0 +1,48 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-reliability
+
+ ❯ apps/runner/src/lease.test.ts (23 tests | 1 failed | 22 skipped) 364ms
+   ↓ runs a valid grant despite center wall-clock skew of -300000 ms
+   ↓ runs a valid grant despite center wall-clock skew of 300000 ms
+   ↓ counts delayed claim delivery against the initial lease before any heartbeat or adapter execution
+   ↓ expires a hanging heartbeat by the relative initial grant with a fast center wall clock
+   ↓ never revives an expired local lease when a delayed continue response ignores request cancellation
+   ↓ deducts heartbeat round trip from the renewed grant instead of granting a new duration on receipt
+   ↓ checks the monotonic deadline synchronously even when a busy event loop has delayed the expiry timer
+   ↓ keeps shutdown final when an in-flight heartbeat returns after controller closure
+   ↓ fails closed for invalid or missing claim duration undefined
+   ↓ fails closed for invalid or missing claim duration null
+   ↓ fails closed for invalid or missing claim duration 0
+   ↓ fails closed for invalid or missing claim duration -1
+   ↓ fails closed for invalid or missing claim duration 1.5
+   ↓ fails closed for invalid or missing claim duration 300001
+   ↓ fails closed for invalid or missing heartbeat duration undefined
+   ↓ fails closed for invalid or missing heartbeat duration null
+   ↓ fails closed for invalid or missing heartbeat duration 0
+   ↓ fails closed for invalid or missing heartbeat duration -1
+   ↓ fails closed for invalid or missing heartbeat duration 1.5
+   ↓ fails closed for invalid or missing heartbeat duration 300001
+   × stops rather than retrying claim after an attempt directory cannot be prepared 364ms
+   ↓ closes heartbeat timers on event storage failure before any report is sent
+   ↓ publishes grant durations from a real center and refuses expired ownership rather than renewing it
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/lease.test.ts > stops rather than retrying claim after an attempt directory cannot be prepared
+AssertionError: expected Error: Runner did not stop on local stora… to be an instance of EventStorageError
+ ❯ apps/runner/src/lease.test.ts:152:3
+    150|   await mkdir(root); await writeFile(join(root, textDigest('lease-atte…
+    151|   const running = api.start();
+    152|   await expect(Promise.race([running, sleep(350).then(() => { throw ne…
+       |   ^
+    153|   const claims = api.claims; await sleep(60);
+    154|   expect(api.claims).toBe(claims); expect(api.heartbeats).toBe(0); exp…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 22 skipped (23)
+   Start at  20:28:20
+   Duration  774ms (transform 142ms, setup 0ms, import 326ms, tests 364ms, environment 0ms)
+

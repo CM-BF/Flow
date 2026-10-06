@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-reliability
+
+ ✓ apps/runner/src/lease.test.ts (23 tests) 2349ms
+   ✓ publishes grant durations from a real center and refuses expired ownership rather than renewing it  999ms
+ ✓ apps/runner/src/runner.test.ts (25 tests) 1178ms
+   ✓ starts from environment configuration and stops cleanly on SIGTERM  352ms
+ ✓ packages/client/src/client.test.ts (4 tests) 60ms
+ ✓ packages/contracts/src/contracts.test.ts (2 tests) 4ms
+
+ Test Files  4 passed (4)
+      Tests  54 passed (54)
+   Start at  20:28:43
+   Duration  4.36s (transform 157ms, setup 0ms, import 452ms, tests 3.59s, environment 0ms)
+
