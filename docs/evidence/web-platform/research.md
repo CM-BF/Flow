@@ -304,3 +304,5 @@ w01_owner后续有界只读：固定center2d3bb61/clienta3b9/outbox0d4e的确定
 04:00跨Lead队列（root转交，待独立现场核验）：主Lead完整main候选8f1481df880cf5077e1ddb9a8f302fe700a7ece8含已审B01/PERF02/X02、未合moving CHAT App，正在推送。这里只登记候选，不据此把本树PERF02 main pending改成已集成；后续收到交付后核真实HEAD/ancestor与声明范围。
 
 GoalOwner批准Mika X03最小只读插件管理模块，独立apps/web/src/plugin-management与专用tests/plan/evidence，不碰CHAT App.tsx或plugin-integration两接缝。固定合同/claim待Mika交root；未来固定交付后由本队唯一App owner明确受领接线，不同时写核心。X03区分中心registry与浏览器extension，没有verified binding就不合并身份，不下载/加载/授予权限，不造新API。CHAT优先不变，本队不重复实现X03；真实两query仍主Lead唯一执行，复用入口要求已交CHAT owner。
+
+04:02主线集成确认：root04:01:30实核origin/main8f1481df880cf5077e1ddb9a8f302fe700a7ece8、a87ancestor exit0；随后Lead确认main/origin实际push clean。管理者04:01:56.630Z单次GET4320核PERF02 main ancestor/current/historicalIntegrated/scopeEqual真、dirtyScopePaths=[]、issues=[]，[证据](perf02-main-dashboard.json)。不是以review推main，也不抹03:49未集成旧采样。主Lead报42源/CHAT03/R04/P03 live，按来源记录不重复刷；w01下一固定CHAT审查唤醒时顺带canonical纯metadata，当前claim不变。

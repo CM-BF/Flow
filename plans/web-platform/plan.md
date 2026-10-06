@@ -146,7 +146,7 @@ type WorkspacePanelsProps = {
 | 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v2四文件已正式转CHAT，剩余保留回修范围 |
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
 | 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 固定4c240+共享受控a3b9已就绪；Web08259c1d v1受领并正式实施，canonical c72e02；中心2d3bb61已独审，不等于Web/模型验收 |
-| 已审待集成 | WPF-PERF02 | 新d36v1八scope独立实施固定a87f64f与三规模报告获独立APPROVED，最终172d10d交主线集成；不碰App/后端，CHAT持续优先 |
+| 已集成 | WPF-PERF02 | 新d36v1八scope独立实施固定a87f64f与三规模报告获独立APPROVED，最终172d10d交主线并实证main8f1481d已包含/范围相同；不碰App/后端，CHAT持续优先 |
 
 ## TODO
 
@@ -155,7 +155,7 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-03** 接收官方Thread与panels独立提交，完成W01集成、回归与独立review闭环。
 - [x] **WPF-001-04** 向主线D03交付管理来源登记清单并只读验证；02:38:47.600Z新版22源中3个WPF源完整无issues（仅登记验证，不表示实现完成）。
 - [ ] **WPF-001-05** 已审P01/I01前置继续与X01/X02衔接完整插件管理，保留中心生命周期/权限/隔离/CLI与后续Web消费验收。
-- [ ] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮，继续按用户新要求更新追溯。
+- [x] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮：3d47基线/a87窗口获审、a87已实际集入main8f1481d；未来证据另开有限工作包，不宣称无限优化完成。
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
@@ -211,3 +211,5 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 - 2026-10-06 03:47 UTC：主线registry39源已实际核CHAT/PERF02唯一live来源/claim/worker一致、unregistered空；19activewriterclaims literal零重叠。PERF02唯一缺分支字段由owner修，来源注册不代表review通过。
 
 - 2026-10-06 03:50 UTC：PERF02 a87独立APPROVED、最终172d clean且实现diff0；03:49实际dashboard检查/review/proof/字段全闭环，主线集成待执行。原worker转固定版本ACK语义只读调查，CHAT仍唯一实现owner，不扩scope。
+
+- 2026-10-06 04:02 UTC：主Lead确认8f1481d实际push clean；rootorigin/main ancestor核与管理04:01:56 dashboard main current/scopeEqual实证吻合。完成有限基线+窗口两轮TODO06，持续优化愿望不宣称结束。

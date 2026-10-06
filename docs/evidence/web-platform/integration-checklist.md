@@ -214,3 +214,5 @@ REQ40归属不变：Mika写中心模块，ExecutionLead写共享client/export/CL
 ## X03只读管理视图协作边界（主线新授权）
 
 GoalOwner经root确认Mika承担X03最小只读模块，仅新apps/web/src/plugin-management与其专用tests/plan/evidence；具体claim和固定输入待其交付后链接，不当作已有本队权限。禁止并发写CHAT App.tsx/plugin-integration接缝；固定模块通过后再由本队唯一App owner申请明确接线范围。中心registry与浏览器extension独立显示，未验证binding不合并，不下载/加载/赋权，不新造API。P01/I01本地启停与中心持久管理仍分开，外部Web本轮持续聊天优先，不重复建同一模块。
+
+04:02 PERF02已由主线完成集成：Lead明确main/origin8f1481df880cf5077e1ddb9a8f302fe700a7ece8已push且clean；root04:01:30实际origin/main相同、a87ancestor exit0。管理者04:01:56.630Z独立dashboard实采main methodancestor/current/scopeEqual/historicalIntegrated真、dirtyScopePaths空、issues空，[证据](perf02-main-dashboard.json)。这是新增事实，前03:49not-contained证据保留。owner下次canonical元数据同步，不需重复产品测试。CHAT先固定自身当前target再按Lead要求受控消费完整main，不跟随移动main覆写。

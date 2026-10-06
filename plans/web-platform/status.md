@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:50 UTC / 最近管理者main实核为03:17的3773db5；后续主线输入另记来源 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:02 UTC / 04:01:56 dashboard实证main8f1481d包含PERF02且声明范围相同 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `cd0fbd707ff8492ba6a365733bc714194eae288e`（本次文档停点前实核；旧review仍绑定c075bb5） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `a4777b82cc071829297f91b970acd4dc9921bc37`（本次文档停点前实核；旧review仍绑定c075bb5） |
 | 工作树dirty状态 | 仅本管理范围的计划/来源验证/预览交接文档pending，不自指未来提交 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CHAT首独立63743 fixture已可交互，正在用户视角/ACK边界验证；PERF02获审交Lead集成 |
-| 下一可用交付 | CHAT固定可审实现与ACK/reconnect/能力门禁证据；主线PERF02局部集成 |
+| 当前产出 | CHAT首独立63743 fixture已可交互，正在收固定候选；PERF02获审且主线已实际集成 |
+| 下一可用交付 | CHAT固定候选的模块/组合/UI及scope文档独立审查；主线随后真实模型验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -29,7 +29,7 @@
 | WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01完整6ce与I01主App92a均独立APPROVED；完整X01父范围仍开放，X02中心registry首合同4054待后续独立Web消费 |
-| WPF-001-06 | in-progress | d01_owner | PERF01 benchmark3d47与PERF02窗口a87均限定APPROVED；PERF02最终172d已交Lead，当前main集成与CHAT组合验证待执行，持续性能目标未宣称完成 |
+| WPF-001-06 | completed | d01_owner | 有限两轮基线3d47与窗口a87均限定APPROVED，04:01:56实际dashboard main8f1481d ancestor/current/scopeEqual全真；后继性能机会按新证据另排，未宣称完整性能目标完成 |
 | WPF-001-07 | completed | d01_owner | M02 d47 / metadata c526 clean，owner20局部/9总览/6观察/4真实PG组及root限定独立APPROVED；03:17 ancestor核main3773已含d47，非以approval推定 |
 | WPF-001-08 | completed | d01_owner | D04部署且root实际领取详情验证；M02v2移出三文件→I01v1 committed receipt已读/存证，正确应用用户领取展示与唯一写者规则 |
 | WPF-001-09 | in-progress | d01_owner | U11/REQ41～45已落，首合同4c240固定；Web新08259c1d v1正式受领16scope，public client受控输入a3b9已就绪，canonical c72e02已提交并请求登记 |
@@ -41,7 +41,7 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 | 当前工作 | 已核事实与下一步 |
 | --- | --- |
 | [WPF-CHAT01](conversation-core/plan.md) | 新tree web-conversations / claim08259c1d v1精确16scope；共享受控输入a3b9及canonical c72e02就绪，blockerNONE，唯一owner实施持续conversation projection/outbox/官方Thread。首HTTP fixture http://127.0.0.1:63743/ / session14932，作者两轮同conversation正文/0pageerror；仍moving、整体targetUNKNOWN，root与GoalOwner用户视角验收中，未给UI approval |
-| [WPF-PERF02](performance-optimization/plan.md) | web-activity-window / claimd36cd583 v1精确8scope；候选a87f64f48a3b7e8d03429ab0673c210076a2df0d，最终metadata172d10d63179a4861cc0fbf986dec10bd0a45f10 clean、实现diff0。作者13局部tests/typecheck/8productionbrowser与三规模通过；root独立限定APPROVED，03:49已交Lead集成。owner停止八scope主动写入，main仍not-contained |
+| [WPF-PERF02](performance-optimization/plan.md) | web-activity-window / claimd36cd583 v1精确8scope；候选a87f64f48a3b7e8d03429ab0673c210076a2df0d，最终metadata172d10d63179a4861cc0fbf986dec10bd0a45f10 clean、实现diff0。作者13局部tests/typecheck/8productionbrowser与三规模通过；root独立限定APPROVED，03:49已交Lead集成。owner停止八scope主动写入；04:01:56 main8f1481d已实际ancestor/current/scopeEqual，后续组合由集成方验证 |
 | Dashboard来源 | 03:46:41.801Z管理者实采39源，两新任务各唯一live source与claim v1/worker/branch匹配，unregistered=[]；当时CHAT issues=[]，PERF02缺分支字段；最终03:49:13.564Z一次再核字段已补、checks/review均绑a87且proof unchanged、issues=[]。完整证据见下 |
 | 多Lead边界 | Mika独占B01后台投影/feed字节/历史性能及下一X02中心registry；本队不写后端。PERF02只改受领窗口接缝，CHAT只改会话与App受领文件，无字面scope重叠 |
 
@@ -72,6 +72,8 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 
 03:44管理clean-code复核当前正文、单一事实源、接口/领取边界及历史approval：修正旧claim版本、已交付仍称待派/待接口、旧下一交付等陈旧段落，并把详细历史归研究证据；仅文档变化，不重复全库或性能测量。本管理独立review仍只绑定c075bb5首文档，后续增补未自动继承。根lock例外不沿用给新任务；两新owner使用不写lock安装，无新生产依赖。
 
-03:50 PERF02完整交付与唯一status路径已通过“收件人：Execution Lead”桥接回主线；无自行merge。新只读派工固定center2d3bb61/clienta3b9/outbox0d4e并对比新受控typed输入746364ea2581b8c563a09b07560de5e0b63bcab8，检查明确拒绝/ACKunknown/原key重试；不把该链称最新端到端，不审CHAT moving projection、不调用模型、不新增生产scope。
+03:50 PERF02完整交付与唯一status路径已通过“收件人：Execution Lead”桥接回主线；其后Lead于04:01确认main/origin8f1481d已push clean，与rootancestor和管理dashboard核验吻合，本队无自行merge。新只读派工固定center2d3bb61/clienta3b9/outbox0d4e并对比新受控typed输入746364ea2581b8c563a09b07560de5e0b63bcab8，检查明确拒绝/ACKunknown/原key重试；不把该链称最新端到端，不审CHAT moving projection、不调用模型、不新增生产scope。
 
 03:54首CHAT预览由root及管理者近同时桥接一次给GoalOwner（重复通知事实保留，后续统一root UI回程，不再重复）；是新独立fixture，不是将用户49922替换为新版本。ACK形状/身份与先前unknown状态保留正在原scope修正，具体结论等固定候选。
+
+04:02 PERF02 main收口：[04:01:56.630Z实采](../../docs/evidence/web-platform/perf02-main-dashboard.json)显示main8f1481df880cf5077e1ddb9a8f302fe700a7ece8、targeta87、methodancestor/current/historicalIntegrated/scopeEqual真、dirtyScopePaths=[]、issues=[]。owner旧mainRecord未同步不否认Git实证；下次唤醒w01作canonical纯metadata。主Lead另报4320在04:01:07已42源、CHAT03/R04/P03 live/unregistered空，此为Lead来源，不再次轮询。

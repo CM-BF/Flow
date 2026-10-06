@@ -83,3 +83,5 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-w
 ```
 
 基准另用 `pnpm exec tsx apps/web/test/performance-probe.ts --smoke` 或默认完整矩阵，必须协调同机测量窗口、写新证据，不覆盖旧raw。owner已停止主动生产写入、保留claim待回修/受控交接，未自动集成main。
+
+04:02 PERF02 main后续已确认：主Lead完成8f1481df880cf5077e1ddb9a8f302fe700a7ece8 main/origin push，root实际ancestor核与管理[04:01:56 dashboard](perf02-main-dashboard.json)一致，targeta87已包含且scopeEqual/current真。上方03:50交付时not-contained是历史事实，当前集成已闭合；没有新增本队产品实现或重复测量。
