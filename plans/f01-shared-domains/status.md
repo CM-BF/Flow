@@ -14,15 +14,15 @@
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED d6d5089c680f862e34a8e4d25f8f65d03057e70e；新red1后3/3 HTTP/SSE、types0；生产3分轮与旧queue3历史有效 |
-| 已集成main状态 / HEAD | 此前ENG01H与X01 leaf/依赖已main2f16e30a；本批浏览器会话领域/client/生产接线待受控集成 |
+| 已集成main状态 / HEAD | 浏览器会话领域/client/生产接线13固定源已main84005a26并推送；个人runtime362/v15不变 |
 | Review | APPROVED d6d5089c680f862e34a8e4d25f8f65d03057e70e；Mika接收status_read增量独审，P2 CLOSED；生产9406由native_center_owner独审APPROVED |
 | 实现目标 | d6d5089c680f862e34a8e4d25f8f65d03057e70e |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/browser-session.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 登录恢复接口及客户端鉴权修正已通过独立审查，正在合入主线。 |
-| 下一可用交付 | 合入登录恢复公开接口，供网页自动恢复同一连接。 |
+| 当前产出 | 登录恢复公开接口已进入主线，现有个人服务保持。 |
+| 下一可用交付 | 接连续目标旅程的规划运行列表；网页组消费已发布的登录接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
