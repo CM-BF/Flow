@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | WPF-MATURE-02-CORE |
-| 状态 | in-progress |
+| 状态 | completed |
 | 创建日期 / 最近更新 | 2026-10-06 / 2026-10-06 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -30,10 +30,10 @@ effort 必填 discriminated union：level+固定 SDK 五值，或 not-requested�
 - [x] **M02CORE-03** 资源满足后执行本文件 Vitest/局部 strict：5/5 与 exit0，见 checks.json。
 - [x] **M02CORE-04** 独立固定 target review，修复 findings。
 - [x] **M02CORE-05** Lead 受控接收/main 核对；仍有已派后继时保留原合法scope。
-- [ ] **M02CORE-06** 完成中心/queue到既有Claude adapter的实际消息设置纵向片；39 literal源码已固定，29 distinct（16合同+5注入+8专库）与focused strict已通过，仍需共享接线及完整独审，不由局部通过提前完成。
+- [x] **M02CORE-06** 中心/queue到既有Claude adapter的CORE纵向34源已完成；29 distinct（16合同+5注入+8专库）/两strict0、固定独审APPROVED，并接main8d84。owner逐源核同；真实provider/账户资格与完整02验收由父任务继续，未纳为本片完成。
 
 ## 验收
 
 五组直接行为：完整请求/非法与显式 omission；canonical 顺序与不同 effort/speed；缺证据/空策略/非笛卡尔组合；profile 三元身份与 32 条/重复边界；ACK 缺失/篡改与固定请求精确匹配。legacy 文件不改，不能把未跑测试写成 red/green。初始空间不足时未运行。2026-10-06 15:28:41 UTC 两项运行前 fresh 均达到 1GiB+32MiB，使用已授权固定依赖闭包完成单文件5/5与局部strict0；没有PG/build/install/target。
 
-Owner 维护 [status](status.md) 和 [review](review.md)。首leaf验证与独审通过并已main22d5；后继接线source ea276已实施并完成本片合同/注入/真实专库验证，模块职责与精确接口见next-slice-handoff.md，共享消费与整体独审仍开放。原大task其他验收继续开放。
+Owner 维护 [status](status.md) 和 [review](review.md)。首leaf验证与独审通过并已main22d5；后继接线source ea276已实施并完成本片合同/注入/真实专库验证，模块职责与精确接口见next-slice-handoff.md，CORE固定独审与main接收已完成，见vertical-main-acceptance.json；没有重跑工程检查。原大task其他验收继续开放。

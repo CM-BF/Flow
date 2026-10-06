@@ -1,12 +1,12 @@
 # WPF-MATURE-02-CORE 独立审查
 
-**APPROVED — Mika/root gpt-6-astra，2026-10-06 17:13:34 UTC；当前CORE纵向34文件，0剩余P1/P2。NOT_INTEGRATED。**
+**APPROVED — Mika/root gpt-6-astra，2026-10-06 17:13:34 UTC；当前CORE纵向34文件，0剩余P1/P2。INTEGRATED — main 8d84d529a0756116bd0fc8bad969d61a6c26248e。**
 
 ## 当前纵向正式独审
 
 Review target commit: ea276572c3c99fb8400808a93efc69ce530d55a4
 
-生产checkpoint92f，ea为两test修复；完整34source/readonly/config与所有原raw绑定见[交付manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)。已有SOURCE_REVIEW静态无剩余P1/P2；现29 distinct=16合同+5注入+8真实专库，contract/focused strict各0。最新8PG全部执行、14tasks11attempts116HTTP，清理conn0/absent。首PG beforeAll失败与第二窗口resource NOT_RUN原样，不能抹为通过。Mika/root已正式APPROVED，独核packet23016bbb5a56ccc6b12729c4d6ec365819207eba的273bindings与34source Git/WT/hash/bytes全部一致；manifest SHA a49256788e82098ebedaef02af92b7997ae80f995791a21af8964a3bdbc9fa09。architecture_read辅助核49bindings无新增finding，不是第二正式批准；reviewer未重跑。原.extend/cleanup finding关闭。完整[正式receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json)记录边界：F01 production factory/export/client、自动调度端到端、Web/TUI、真实SDK/provider及账号资格未覆盖，不代表完整02完成。源码/raw/manifest冻结，保留claim v3供必要修复，等待Lead受控main接收。
+生产checkpoint92f，ea为两test修复；完整34source/readonly/config与所有原raw绑定见[交付manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)。已有SOURCE_REVIEW静态无剩余P1/P2；现29 distinct=16合同+5注入+8真实专库，contract/focused strict各0。最新8PG全部执行、14tasks11attempts116HTTP，清理conn0/absent。首PG beforeAll失败与第二窗口resource NOT_RUN原样，不能抹为通过。Mika/root已正式APPROVED，独核packet23016bbb5a56ccc6b12729c4d6ec365819207eba的273bindings与34source Git/WT/hash/bytes全部一致；manifest SHA a49256788e82098ebedaef02af92b7997ae80f995791a21af8964a3bdbc9fa09。architecture_read辅助核49bindings无新增finding，不是第二正式批准；reviewer未重跑。原.extend/cleanup finding关闭。完整[正式receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json)记录边界：F01 production factory/export/client、自动调度端到端、Web/TUI、真实SDK/provider及账号资格未覆盖，不代表完整02完成。源码/raw/manifest冻结；现已接固定main8d84，owner逐34源核同。本次metadata提交推送后全部停写并按v3 release，实际结果只存项目外receipt，不在释放后回写。
 
 ## 历史首leaf APPROVED（仅4e7）
 
@@ -66,3 +66,7 @@ Root静态发现prepared PG config的`.js`引用在native loader下不存在；�
 2026-10-06 16:52:30 UTC实际专库验证失败收口：beforeAll缺动态migration URL输入012，1 failed suite/8 skipped/0case断言，保留原raw并交回窗口；真实专库已确认0连接/absent、ownedcache/temp清理。source ea276未修改，先前21distinct与两strict0不重复累计；4个只读SQL5539B补充给Lead，worker未物化/重试。此次失败不据静态审升级为整体APPROVED。错误根因为原静态closure遗漏固定数组模板URL；clean-code复核选择补输入事实，不修改生产错误处理或绕过migration求通过。
 
 2026-10-06 16:58:48 UTC第二窗口仅预核，资源门槛不足NOT_RUN，0新增工程/PG/目标。4动态SQL恢复与独立静态closure输入已核/归档，原失败不回写；known input错误解除但运行未知保留。窗口立即交回，不以资源曾满足或static closure齐备替代fresh准入，不重跑已绿21项/两strict。
+
+## 当前main接收
+
+2026-10-06 17:58:48 UTC：owner只读核固定main 8d84d529a0756116bd0fc8bad969d61a6c26248e 的[canonical回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/message-settings-integration.json)，其CORE34源与本批准target/本WT/hash/bytes一致（239204B，0errors）。[owner核对](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-main-acceptance.json)固定receipt SHA与比较输入。Lead首次root类型exit2及后续兼容修复后的final exit0原样保留，未重跑；旧beforeAll失败和资源NOT_RUN也未改。该接收不扩大原29分轮验证至真实SDK/provider/账号资格或完整02。

@@ -40,3 +40,5 @@
 2026-10-06 16:58:48 UTC第二窗口仅预核，资源门槛不足NOT_RUN，0新增工程/PG/目标。4动态SQL恢复与独立静态closure输入已核/归档，原失败不回写；known input错误解除但运行未知保留。窗口立即交回，不以资源曾满足或static closure齐备替代fresh准入，不重跑已绿21项/两strict。
 
 2026-10-06 17:09:09 UTC交付安全点clean-code复核：34source仍固定ea，未为通过更改断言/生产或绕迁移。四SQL只读恢复后原8个case全部实际运行，通过公开HTTP+原事务验证整批rollback、immutable、legacy/queue/retry兼容；原失败/资源NOT_RUN分别保留。29项与两strict按实际分次计数，unknown qualification/F01mount/UI仍明确。无新抽象/host/FSM或provider调用；资源均自有/普通DROP确认，无FORCE/缓存假成功。仅封存交审metadata，未新增运行。
+
+2026-10-06 17:58:48 UTC main收口clean-code复核：仅五项own metadata，单一status与稳定TODO同步，源/原raw/manifest不变。34source共239204B逐项固定ea276=main8d84=WT且SHA/bytes一致，0errors。复用既有29分轮与两strict0，保留main首次root red及final0，不重复验证或扩大provider声明。提交推送后全部scope停止写入，实际release COMMITTED receipt外置，避免释放后回写。
