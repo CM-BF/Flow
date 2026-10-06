@@ -1,0 +1,33 @@
+{
+  "closedAt": "2026-10-06T19:46:35.414522+00:00",
+  "state": "closed-restored-main",
+  "operation": "svc05h-center-20261006-1945",
+  "originalHead": "22a0806bc2465e11096949618113833f31766b19",
+  "runtimeSource": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "newCenter": {
+    "pid": 74763,
+    "group": 74763
+  },
+  "operatorResultSha256": "67be8151bb39b718763fdc92d9a64437400ea935538eaf316f894ee048f96bf0",
+  "checks": {
+    "source": true,
+    "identity": true,
+    "privateFiles": true,
+    "stateExceptCenter": true,
+    "runnerAndWeb": true,
+    "retained": true,
+    "database": true,
+    "newCenter": true
+  },
+  "readOnlyIndependentComparison": {
+    "databaseTables": 64,
+    "databaseEqual": true,
+    "privateFilesEqual": true,
+    "runnerWebEqual": true,
+    "sourceRestorationChangesNoRunningProcess": true
+  },
+  "providerQueries": 0,
+  "taskCommands": 0,
+  "noExtraPersonalProbe": true,
+  "limitation": "Original TS runtime is not immutable release packaging; SVC06 remains open."
+}

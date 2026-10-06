@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:26 UTC / main22a0806b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:46 UTC / main22a0806b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | 资源 next4c 2/4 到准备线后停止；本次串行验证已清理，共享source-only新路径移交Web |
+| 工作基线 / 本记录核验时HEAD | 原 Docker daemon/PG 身份已恢复；重新开放两树核查在余量达线时停止，实际稀疏操作0/2 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main ec5da343 已接流式增量哈希、逐消息配置、终端收尾、RELEASE03工具证据和完整目标输入接线；个人runtime362/v15保持 |
+| 已集成main状态 / HEAD | main22a0806b，已审候选caf1将受控发布；个人source362/v15已恢复中心，runner/Web与数据保持 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 逐消息设置、终端控制与完整目标输入接线已进入主线；新版网页的发送和恢复兼容验证已通过。 |
-| 下一可用交付 | 恢复既有容器运行环境；局部修复按现有门槛验证，再继续页面兼容与完整目标验收。 |
-| 当前阻塞 | ACTIVE: 原数据库与领取账本已恢复；磁盘仍不足PG/浏览器窗口。个人中心端口未监听，正在只读核对同版本恢复入口；未重启个人服务。 |
+| 当前产出 | 原数据库、领取登记和个人中心均已恢复；现有网页、runner、配置和任务保持。 |
+| 下一可用交付 | 已审小片受控发布；共享窗口先交已就绪的网页恢复检查，清理归还后再接后续验证。 |
+| 当前阻塞 | ACTIVE: 页面兼容与完整目标旅程尚待实际验证；磁盘准入逐次核验，大构建原门槛保持。现无个人中心恢复阻塞。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -239,3 +239,15 @@ O16单次0query PG 19:15:18→19:15:28.747，1selected/0pass；规划→确认�
 2026-10-06 19:27 UTC：OrbStack一次start返回VM启动timeout，但后续实际Running，未盲重试。原容器2c45767d4802仍是原image/volume/ports，状态exited255/restart=no；核对后仅start该完整ID一次，19:26:58 healthy、55432恢复、协调list成功。未重建/删容器/卷。其它原有autostart容器由daemon恢复；本operator未逐项操作。实际free1,089,486,848B，不把此前1.25GB当当前准入。R01九纯例已通过并清理；个人Web23631仍监听61228，旧center64904消失/61227无监听，runner wrapper65168仍存活；实际子进程及原恢复入口只读核对中。
 
 2026-10-06 19:34 UTC：原两候选在fresh领取恢复后均released，44个已知broken依赖入口补核非严格目标，0条触拟收起历史副本；19:31实际free1,436,569,600B重新过准备线，因此本次0/2操作即停止。未删除crash/core/donor，也未将未知共享卷回升归因清理。[候选停止回执](../../docs/quality/resource-space-2026-10-06/daemon-recovery/candidate-stop.json)。个人中心恢复优先于新PG/Chrome：原center已退出而runner/web保持，只准备固定362的现有受管组件单中心组合；不调用会全角色启动的入口、不改发布指针。
+
+### 2026-10-06 19:41 UTC 中心恢复优先
+
+SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator总期限；作者在原记录范围修复，尚未启动个人中心。原数据库与协调账本已恢复、原runner/Web仍在，主线22a保持不动；已审caf1候选不挤占本次固定362启动窗口。19:31实际可用1,436,569,600B触及准备线后，两树恢复核查以0/2稀疏操作收口；该观测不是后续运行准入，也不是删除带来的回收量。窗口准备与ready运行分开，恢复完成后co-leads沿原门槛直接分配，不新增GO命令审批。
+
+2026-10-06 19:45 UTC：OPS-001-13（有界连接观察）与OPS-001-14（独立进程期限）均queued/未领取，复用方向与两个真实消费者已记录到local-validation；这两项职责独立，不阻当前中心恢复。固定d66期限修复已独审通过并进入唯一执行窗口；实际恢复结果待原operator回执。
+
+### 2026-10-06 19:46 UTC 恢复窗口关闭
+
+原operator一次恢复center：19:45:46至19:45:48，外层/operator exit0、2135ms、spawn1、新owned PID/PGID74763，原61227健康。独立只读比对before/after：64业务表摘要、原四成功任务、零未完/uncertain、迁移1..27、维护accepting15、身份/配置/原runner-Web/retained/pointer均保持；没有新任务/provider或其它角色signal。锁已absent；19:46:35唯一Git owner将原checkout恢复clean main22a，运行source仍362，SVC06不可变产物后继未完成。实际canonical见SVC05H center-recovery，I02 source-window-closed记录独立比较。
+
+已将下一共享重检查交Web一项已审ready短项（Recovery准备就绪优先，否则Settings），沿原预算/fresh门槛，actual cleanup或NOT_RUN即归还；R01/O16/Mika不并跑。后继普通准入由co-leads直接协调，无逐命令GO gate。

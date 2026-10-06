@@ -40,3 +40,9 @@ TUI01F与Recovery已遇到pool.end后单次查询的收尾问题；attachment-in
 R01 首次隔离旅程在真实 center 已启动后，runner 的 outbox 导入 @flow/client 失败；0 页面报告，清理完成。原 backend-dependency-view-input 仅列 contracts，静态manifest不能证明所有实际工厂入口可加载。保持固定 af51 源和原失败后，只补同树 client 与已装固定 SDK 两个 ignored alias；对实际 center/runner 的四个入口先只导入并核 export，未调用 createServer/runRunner/query，1002ms exit0、0PG/Chrome/provider。正式页面兼容仍需下一原旅程，不由此取代。
 
 后续仅在已核顶层无启动副作用的入口做廉价加载检查；使用正式执行的相同依赖视图，包入口与动态资源分别核。失败给具体缺件和合法 owner 处理，不生成通用依赖扫描器、不自动安装或借移动主线 workspace alias。额外探针也保持有界输出、时间和自有资源清理，不把导入等同于产品或原生模型验收。
+
+## 待实施：复用独立进程期限（2026-10-06 19:45 UTC）
+
+O16与SVC05H中心恢复初审都发现期限依赖operator自身或证据写盘的问题。当前中心恢复的2项定向修复保持其固定审查边界；恢复后沿OPS-001-14安排独立owner，用本地codebase-design/clean-code检查最小可复用的test/operator Module，先覆盖这两个真实消费者。Interface必须明确监督一个PID还是自有组、哪些detached服务永远不由它停止、期限相对何时开始、父进程先退/证据阻塞时如何收尾，以及停止operator不等于外部效果已停止，结果仍可能unknown。
+
+只复用这项生命周期职责；DB删除权、资源归属、源码绑定及OPS-001-13连接观察仍独立。不造通用测试平台，不为了抽象重跑产品或抹掉历史失败；真实复用价值由两个直接消费者和局部故障证据决定。

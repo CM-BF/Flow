@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:33 UTC / main22a0806b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:47 UTC / main22a0806b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main22a0806b已登记173来源；本批候选尚未发布。个人原source362/v15，Web8d8/v2，中心退出正恢复 |
+| 已集成main状态 / HEAD | main22a0806b已登记173来源；本批已审候选待发布。个人中心已同版本恢复，source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 看板时间解析修复及兼容验证工具的局部修复已审，待当前服务恢复窗口关闭后发布。 |
-| 下一可用交付 | 先恢复现有中心，再发布已审小片并继续页面兼容和完整目标验收。 |
-| 当前阻塞 | ACTIVE: 当前中心进程已退出，同版本恢复准备中；主线暂不移动。 |
+| 当前产出 | 个人中心已同版本恢复，数据与身份保留；看板时间解析与兼容工具的已审小片正在发布。 |
+| 下一可用交付 | 发布已审小片并继续页面兼容和完整目标验收。 |
+| 当前阻塞 | NONE；个人中心恢复窗口已关闭，未完成的实际页面兼容/完整目标旅程在各权威任务继续。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -231,3 +231,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T19:13:50.895805+00:00：本批只受控接收已审R01固定准备与依赖修复、O16有界监督准备，以及OPS/D05权威记录。精确scope逐文件同输入，见[准备接收](../../docs/evidence/i02/retained-goal-preparation-integration.json)。R01首红完整保留，新兼容窗口已独立分配；O16实际PG未运行/无原生许可。未重跑既有检查，个人服务与用户tab未变。
 
 2026-10-06 19:33 UTC：DPERF05已审两源逐字接入候选，实际aggregate直接消费者1/1（330.54ms/外层506ms）通过并清理，无重复62项。R01有界采样与双异常保留九纯例已独审/通过，原两个PG/Chrome红保留、真实兼容未证；O16纯CAS增量源审通过、一次局部执行待收口，旧PG红与KEEP原样。个人同版本中心恢复优先，main22a保持；未将准备工具当真实产品验收。
+
+2026-10-06 19:47 UTC：[中心恢复独立证据审查](../../docs/evidence/i02/center-recovery-operation-review.json)核20固定绑定及原前后事实，64业务表和8组检查相等；仅原版本一个center启动，source窗口已关闭并恢复main22a。与已审caf1候选组成[本批发布](../../docs/evidence/i02/center-recovery-publication.json)。0新provider/个人探针，运行仍362/v15；R01/O16尚未通过实际完整旅程。

@@ -51,3 +51,23 @@ Execution Lead独立APPROVED target `d8b4c961b9d36915f07ff4109299fac642566519`�
 新同版本Web恢复准备是只读操作证据；[manifest](../../docs/evidence/svc05-history-compatibility/web-recovery/manifest.json)绑定现身份、两类准确backend报告和固定362工具。未执行bootstrap；独立审查与单次窗口待Lead。旧af51产品冻结不变。
 
 2026-10-06 18:37 UTC：同版本恢复准备获Lead独立17固定绑定+52实际输入核验，限定原工具一次bootstrap。已执行原窗口、exit0/ready与前后保护事实由Lead只读确认并恢复main；正式事实见web-recovery/operation-manifest.json和source-window-closed回执。未复跑工程测试，个人64 CLOSED根因仍NOT_PROVEN，新af51发布尚未执行。
+
+## 2026-10-06 18:57 UTC 操作独审与main接收
+
+Execution Lead 独立 APPROVED 固定 `796d6d7df6bb500fdabc43b4b46290a1bc6c0149`；21 fixed/source/raw hash核对、前后保护事实独立比较，reviewer0重跑。原始 false preflight、空白解析纠正、唯一 bootstrap ready、旧 group消失均保留；旧Web收到TERM后的exit1不改作clean0。原[独审回执](../../docs/evidence/svc05-history-compatibility/web-recovery/operation-independent-review.json)限定同版本仅Web恢复忠实性，不证明根因，不授权新发布。
+
+main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；原target并非该main祖先，不虚称merge关系。[main receipt](../../docs/evidence/svc05-history-compatibility/web-recovery/operation-main-receipt.json)。未重新探测个人HTTP/服务/数据库。R01已另树领取，不扩大本claim。
+
+## 同版本中心恢复准备（待独立审查）
+
+2026-10-06 19:38 UTC：center-recovery/operator.mjs + facts.mjs仅own evidence实现；固定362工具复用，原产品不改。准备/readonly64表基线已落，操作NOT_RUN。待native_center_owner唯一独审；原网页恢复/发布候选批准不自动扩大到此次恢复。
+
+### 中心恢复期限P2
+
+原独审REQUEST_CHANGES与bindings已归档center-recovery/initial-*。原内部110s回调等fsync后退出且final写在clearTimer后，不能兑现总期限。外层Python subprocess监督从operator启动覆盖reservation至final，超时只kill该child PID。2无服务checks通过（阻塞pipe write与正常返回），真实个人恢复未跑。当前等待native_center_owner唯一增量复审，不自批。
+
+### 期限P2复审及唯一实际恢复
+
+独立native_center_owner APPROVED_PREPARATION source d66bdc41f6f39fbeca93e1bf752bf2729526936e，53绑定与2纯检查核实，P2 CLOSED，0重跑。原报告已归档deadline-independent-review.json。其后Lead明确一次窗口，实际run1945 exit0/2135ms/newcenter74763/8checks全true；操作原始证据等待独立忠实性审查，不作者自批。原center退出原因未知、无新版本发布。
+
+2026-10-06 19:47 UTC：Execution Lead对实际run1945 before/after/result独立只读比对，64表+8组检查成立，19:46:35关闭source窗口并恢复clean main22a，无新probe/重跑。此为同版本恢复事实核对；新发布和个人故障根因不在结论中。原20项operation-manifest/源码/raw保持，source-window-closed另存。

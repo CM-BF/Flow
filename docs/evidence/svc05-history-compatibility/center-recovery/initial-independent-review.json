@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-06T19:40:20.893270+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review",
+  "mode": "independent read-only preparation review",
+  "target": "0a9f5a02fd297366900f497bc6679109ce23626c",
+  "observedDelivery": "b1b759d6bf4c1dbfc1ae27b2369767eb348e4881",
+  "conclusion": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "CENTER-RECOVERY-P2-01",
+      "priority": 2,
+      "file": "docs/evidence/svc05-history-compatibility/center-recovery/operator.mjs",
+      "lines": [
+        49,
+        50,
+        51,
+        52,
+        117,
+        118
+      ],
+      "title": "Total deadline still depends on the potentially stalled operator and persistence",
+      "reason": "The 110-second timer waits for durable(deadline-checkpoint) before exiting. A pending open/write/fsync never reaches its finally; the normal final path clears the timer before durable(result). Initial reservation is also outside the timer. Therefore the promised <=120-second total is not enforced, including the exact storage-stall boundary already identified in O16.",
+      "requiredFix": "Use an independent total-deadline observer armed before the supervised operation. It must terminate only the operator, never the detached personal center/runner/Web, and must not wait on checkpoint I/O before enforcing termination. Keep original durable reservation and unknown lock/state. A best-effort final checkpoint must not become the lifetime authority.",
+      "validation": "Source-only review; no fault stand-in, service, PG, or test executed."
+    }
+  ],
+  "bindings": {
+    "manifest": "docs/evidence/svc05-history-compatibility/center-recovery/manifest.json",
+    "manifestSha256": "e9d72257cbb9768300ac5464ef1b4854ad9a423000acaa797f4eeb26b27b1e87",
+    "report": "/tmp/flow-personal-center-recovery-review-bindings.json",
+    "reportSha256": "bde0cfec50189b332b43845ab887de4c78a8f24bb0a6cc7fab3528070f05a266",
+    "ownEntries": 9,
+    "runtimeEntries": 32,
+    "mismatches": [],
+    "runtimeNote": "Original repository inputs checked against exact362 Git blobs, not current22a files; expected source window has not happened."
+  },
+  "readScope": [
+    "Complete operator.mjs and facts.mjs",
+    "proposal, README, source-precheck, raw snapshot facts-before, manifest/runtime-bindings",
+    "Exact362 private preview/process/maintenance helpers and their fixed current differences, from prior read-only source inspection"
+  ],
+  "positiveFindings": [
+    "One exclusive run directory and one spawn site; private center entry has original nonce/PID admission and original environment filtering.",
+    "Only state.processes.center is assigned; every other state property is preserved and after-state digest excludes only that center record.",
+    "Before spawn: source clean362, runtime bindings, exact baseline, original marker/runner identity/accepting-v15, old center stopped/group absent and port absent, existing runner/Web owned/running.",
+    "No ensureDatabase, registration, maintenance mutation, stop, cancellation, full-start/refresh, or provider entry in operator.",
+    "Each normal success/failure saves checkpoint; unknown preserves spawned/pending center and does not retry/rollback. Deadline durability flaw remains blocking.",
+    "Readonly database snapshot is REPEATABLE READ READ ONLY, bounds tables/rows, hashes user/token-bearing rows inside PostgreSQL rather than exporting row bodies.",
+    "All64 flow table digests included; operational differences remain unknown and are not retroactively filtered. Two retained Web artifacts and compatibility bindings checked."
+  ],
+  "provenanceNotes": [
+    "facts.mjs uses its own worktree relative helpers; three actual helper files are byte-identical to fixed362.",
+    "facts.mjs pg resolves to web-attachment-production installed pg8.23.1, not the original-repository path listed in runtime bindings; lib/index.js and package.json currently byte-identical to the bound installed pg. Record the actual path if further pinning the facts dependency closure.",
+    "A private-file storage failure can also prevent failure checkpoint durability; initial durable reservation/unknown must remain the honest fallback."
+  ],
+  "counts": {
+    "tests": 0,
+    "pgQueries": 0,
+    "personalHttp": 0,
+    "providerQueries": 0,
+    "servicesStarted": 0,
+    "servicesStopped": 0,
+    "projectWrites": 0
+  },
+  "limits": [
+    "This does not approve or execute personal recovery.",
+    "Source window remains Lead-owned and main must not be moved to the runtime ref.",
+    "Current child stderr was discarded; original exit1 cause remains unknown.",
+    "No claim of immutable/hermetic TSX runtime after restoring the development checkout.",
+    "An actual operation needs fresh identities/source/hash checks; snapshot facts alone are not future authority."
+  ]
+}
