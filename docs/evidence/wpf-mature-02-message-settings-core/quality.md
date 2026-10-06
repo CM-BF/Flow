@@ -34,3 +34,5 @@
 2026-10-06 16:21:52 UTC有界contracts验证：不变source执行实际三入口16/16，非全vertical通过。单worker、native config loader避免共享node_modules bundle写入；相对闭包本树/外部仅zod与Vitest/node。raw5945B/缓存332B已清，无source修复/重测/SDK/PG调用；严格类型单独配置尚未运行。
 
 2026-10-06 16:26:54 UTC局部验证收口：固定ea276生产与test没有为通过检查改写。16contracts、5 injected runner分别实际通过，两项noEmit分别覆盖3/5明示entry并继承根strict选项；0PG/provider/native目标。clean-code复核错误/空观察、snapshot身份和安全settings原行为已有定向断言，仍不把注入等同真实账户资格或持久化通过。三个新raw前缀独有，不覆盖旧证据；自有cache/temp已清，Source-only物化与metadata并发如实保留。prepared PG config仅把不存在.js改成已存在.ts，静态修复未运行/不加无关验证。
+
+2026-10-06 16:52:30 UTC实际专库验证失败收口：beforeAll缺动态migration URL输入012，1 failed suite/8 skipped/0case断言，保留原raw并交回窗口；真实专库已确认0连接/absent、ownedcache/temp清理。source ea276未修改，先前21distinct与两strict0不重复累计；4个只读SQL5539B补充给Lead，worker未物化/重试。此次失败不据静态审升级为整体APPROVED。错误根因为原静态closure遗漏固定数组模板URL；clean-code复核选择补输入事实，不修改生产错误处理或绕过migration求通过。

@@ -54,3 +54,5 @@ Mika/root随后对metadata650bb固定包独核34 source + 3 prepared config + 3 
 按ROOT分别开放的局部窗口：contracts-only strict exit0/931.641ms；注入query runner单文件5 selected/5 passed/exit0/713.736ms（raw2326B）；五入口focused strict exit0/2227.619ms。每步fresh free均满足1,107,296,256B，最终1,128,894,464B。runner owncache132B清理，自有TMPDIR结束为空并移除，combined observed peak998994B低于32MiB。当前21 distinct为先前16合同+新5注入，不累计历史leaf5；所有34源仍ea276。PG/真实SDK/provider/共享挂载仍NOT_RUN，完整交付review与main未完成。固定[新局部manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)绑定source/readonly/config/16raw。
 
 Root静态发现prepared PG config的`.js`引用在native loader下不存在；仅改为磁盘已有`.ts`，不放宽compiler、不重跑21项。旧source manifest保留历史config hash，新局部manifest显式绑定这一prepared delta；未实际加载PG配置或连接数据库。
+
+2026-10-06 16:52:30 UTC实际专库验证失败收口：beforeAll缺动态migration URL输入012，1 failed suite/8 skipped/0case断言，保留原raw并交回窗口；真实专库已确认0连接/absent、ownedcache/temp清理。source ea276未修改，先前21distinct与两strict0不重复累计；4个只读SQL5539B补充给Lead，worker未物化/重试。此次失败不据静态审升级为整体APPROVED。错误根因为原静态closure遗漏固定数组模板URL；clean-code复核选择补输入事实，不修改生产错误处理或绕过migration求通过。
