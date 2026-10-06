@@ -1,6 +1,6 @@
 # O13 Interface — continuous goal journey
 
-Fixed base: 2f16e30a7e4dbeb7d4bc28e03284835764ef19a0. Interface-only first slice; implementation and checks pending.
+Fixed base: 2f16e30a7e4dbeb7d4bc28e03284835764ef19a0. First interface-only slice b4f28b9486905c4bee2c468aa39f194e881f0df2. Implementation fixed ddf9f9404561515b61a85d89aa203d609dbfff8e; author checks recorded separately, independent review pending.
 
 ## Center light read (F01 client input)
 
