@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:53 UTC / main253035e11ab18ba33095c018949f856442021d49 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:55 UTC / main187d97648dd2d4edf45641720f8ba771ea9f25fa |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
@@ -51,3 +51,5 @@
 2026-10-06 09:36:30 UTC：确认自有4320进程身份后正常换载main80ba95；117来源，ENG-001/R05C/TUI01A唯一权威source均current、人读完整、parse errors[]与issues[]。见[实际部署回执](../../docs/evidence/d05/engineering-native-registry-live.json)。只登记与看板部署，不改固定架构图或个人61227/61228，也未刷新用户标签。
 
 2026-10-06 09:53 UTC：SVC04首canonical3d36bc3三件套实际存在，登记为第118个唯一source；仅来源/链接/解析检查，无产品或个人部署动作。新快照发布后实采一次，前次117源回执保留。
+
+2026-10-06 09:55 UTC：SVC04实际118源发布见[receipt](../../docs/evidence/d05/svc04-registry-live.json)，生成时间以其中09:51:58.837Z为准；前文手填09:53是管理批标签，不作运行采样时间。另补4个已有canonical来源至122；D08含新关系展示实现须独立受控接收，登记本身不代替产品批准。
