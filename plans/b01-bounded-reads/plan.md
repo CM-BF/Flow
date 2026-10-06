@@ -15,7 +15,7 @@
 - [x] B01-01 可重复短测、分层/UTF-8/批次与分页检查、长历史扫描证据与修复候选。
 - [x] B01-04 按实证修复workspace长历史扫描，保留晚提交/201task并追加per-task prefix回归。
 - [x] B01-02 独立 review 绑定提交、证据复核和 owner 修复。
-- [ ] B01-03 由 Execution Lead 接收集成，核实 main 与 dashboard 来源。
+- [x] B01-03 由 Execution Lead 接收集成，核实 main 与 dashboard 来源。
 
 完成条件：B01-01 需有原始 JSON、命令退出码、资源清理证明、限制和精确候选；不以生成脚本代替执行。B01-02 需实际独立 review；空模板不算通过。B01-03 分支与 main 分开记录。若发现产品修复可另行批准范围后交付，不偷换本轮测量目标。
 
