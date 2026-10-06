@@ -1,6 +1,6 @@
 # X02 插件注册中心基础
 
-状态：in-progress。创建/更新：2026-10-06。Owner：Mika / gpt-6-astra。父计划：[X01](../x01-plugin-management/plan.md) 的 X01-02/03；这是注册基础片段，不是完整插件生命周期。
+状态：completed（注册中心片段，非完整X01）。创建/更新：2026-10-06。Owner：Mika / gpt-6-astra。父计划：[X01](../x01-plugin-management/plan.md) 的 X01-02/03；这是注册基础片段，不是完整插件生命周期。
 
 ## 目标与设计
 
@@ -21,7 +21,7 @@
 - [x] **X02-02** 008 migration、不可变版本/revision/audit、registry commands。
 - [x] **X02-03** 独立临时PG/动态HTTP验证：身份/作用域、CAS/双事务、幂等、重启、配置/授予、版本不可变、分页字节上限。
 - [x] **X02-04** 固定实现SHA、原始检查/质量证据、独立review与修复。
-- [ ] **X02-05** 主Lead接共享 client/CLI/index、受控集成；分支检查不等于main具备。
+- [x] **X02-05** 主Lead接共享 client/CLI/index、受控集成；分支检查不等于main具备。
 
 测试 seam 是真实中心 HTTP + 独立 PostgreSQL，合同拒绝测试通过同接口。数据库触发器不可变性允许直接 SQL 攻击验证，单独标注。0模型/0云，不触碰49922/55049/4320；不清理已有数据库。Node24 / pnpm9.15.4 / Vitest4.0.18；只测本模块及直接消费者。
 
