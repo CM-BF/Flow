@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout
+
+ ✓ apps/server/src/usage-readout/readout.test.ts (8 tests) 11069ms
+   ✓ explains cache separately while stable replay preserves existing totals and excludes bodies  596ms
+   ✓ uses only the strict previous stream sample, and never adds cumulative snapshots or negative deltas  465ms
+   ✓ finds a resume baseline across tasks, keeps unknown resume unknown, and survives center restart  2582ms
+   ✓ separates model streams without inferring roles, preserves missing cache and zero/error unknown values  540ms
+   ✓ does not promote informational foreign-source usage or silently accept changed IDs and overlap  511ms
+   ✓ bounds sample work and source output and labels the known prefix instead of claiming a total  3168ms
+   ✓ keeps zero distinct from missing data and marks unsafe integer totals unknown  723ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  07:05:25
+   Duration  12.24s (transform 488ms, setup 0ms, import 1.08s, tests 11.07s, environment 0ms)
+

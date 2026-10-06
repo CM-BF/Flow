@@ -13,9 +13,9 @@
 
 ## TODO
 
-- [ ] COST01A-01：固定字段口径、原始数值核对和小 Interface。
-- [ ] COST01A-02：有界只读投影与公开 HTTP 路由，复用唯一基线规则。
-- [ ] COST01A-03：真实隔离 PG/HTTP 的去重、累计差分、unknown、授权、无正文和字节界限验证。
+- [x] COST01A-01：固定字段口径、原始数值核对和小 Interface。
+- [x] COST01A-02：有界只读投影与公开 HTTP 路由，复用唯一基线规则。
+- [x] COST01A-03：真实隔离 PG/HTTP 的去重、累计差分、unknown、授权、无正文和字节界限验证。
 - [ ] COST01A-04：clean-code、固定原始证据、独立 review 与 main 接收。
 
 ## 已授权边界与后继

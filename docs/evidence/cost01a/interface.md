@@ -1,6 +1,6 @@
 # COST01A Interface v1
 
-固定合同：`packages/contracts/src/usage-readout.ts`（本文件随首次合同提交绑定）。无新依赖/迁移。
+固定合同：`packages/contracts/src/usage-readout.ts`；最终合同目标 `27d4f5431bff06d44a42588896fc0b435d0f556d`。无新依赖/迁移。
 
 `registerUsageReadoutRoutes(app: FastifyInstance, pool: Pool): void` 挂载 `GET /api/tasks/:id/usage-readout`；复用 factory owner auth。401 缺凭据、403 runner、400 非法 ID/任何 query、404 无任务。`Cache-Control: no-store`。无请求 body、无副作用、无后台循环，Pool 生命周期仍由 factory 持有。
 

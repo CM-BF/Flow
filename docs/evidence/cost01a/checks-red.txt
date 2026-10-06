@@ -1,0 +1,49 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout
+
+ ❯ apps/server/src/usage-readout/readout.test.ts (2 tests | 2 failed) 1978ms
+   × explains cache separately while stable replay preserves existing totals and excludes bodies 599ms
+   × requires owner access and rejects query knobs without reading a task body 24ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/usage-readout/readout.test.ts > explains cache separately while stable replay preserves existing totals and excludes bodies
+AssertionError: {"message":"Route GET:/api/tasks/9b356234-77ee-479d-93f1-161a875f469b/usage-readout not found","error":"Not Found","statusCode":404}: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ read apps/server/src/usage-readout/readout.test.ts:76:136
+
+ ❯ apps/server/src/usage-readout/readout.test.ts:82:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/usage-readout/readout.test.ts > requires owner access and rejects query knobs without reading a task body
+AssertionError: expected 404 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 404
+
+ ❯ apps/server/src/usage-readout/readout.test.ts:98:78
+     96|   expect((await http(`/api/tasks/${id}/usage-readout`, undefined, null…
+     97|   expect((await http(`/api/tasks/${id}/usage-readout`, undefined, awai…
+     98|   expect((await http(`/api/tasks/${id}/usage-readout?limit=100000`)).s…
+       |                                                                              ^
+     99|   expect((await http('/api/tasks/not-found/usage-readout')).status).to…
+    100|   const result = await read(id);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  07:02:51
+   Duration  3.01s (transform 413ms, setup 0ms, import 941ms, tests 1.98s, environment 0ms)
+
