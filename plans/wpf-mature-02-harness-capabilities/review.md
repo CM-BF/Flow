@@ -1,12 +1,12 @@
 # WPF-MATURE-02 当前隔离设计审查
 
-状态：NOT_STARTED；本次只提交静态设计，不申请/执行真实app-server。
+状态：APPROVED；仅静态设计可进入一次合成canary，未证明隔离，不批准真实app-server。
 
 Review target commit: e535fc04364c3be4a08ab0c6bc8bebe25afed977。范围：experiments/codex-app-server-conformance/isolation 与 docs/evidence/wpf-mature-02/isolation，以及隔离方案/接口/本计划metadata。Base 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7，R06固定依赖a239b14d5328c78cca02a8757e26f2b65502f926。
 
 核对[manifest](../../docs/evidence/wpf-mature-02/isolation/manifest.json) source/raw与固定commit；逐条审default-deny的路径、Mach/network/exec边界；是否存在宽泛系统读取或macOS未知扩权路径；是否把POSIX拒绝/timeout/refused误计为Seatbelt通过；R06唯一子进程所有权、两个自有目录/loopback资源、未知关闭保留目录、无重试/放宽。不要执行sandbox/profile/canary/真实Codex，不做provider/auth。
 
-作者只执行2项node --check、SBPL括号/必需deny词法检查、链接和旧语义hash复核；这不是SBPL编译/运行证据。已修Mika草稿预审：control目录0700，使创建失败不再可由POSIX只读目录mode单独解释。其余独立findings待审。
+作者只执行2项node --check、SBPL括号/必需deny词法检查、链接和旧语义hash复核；这不是SBPL编译/运行证据。已修Mika草稿预审：control目录0700，使创建失败不再可由POSIX只读目录mode单独解释。Mika/gpt-6-astra于2026-10-06 09:28:12 UTC实读profile/2scripts/README/R06 binding与固定options/peer/CloseReport，核8份manifest文件现场与Git完全一致；静态范围APPROVED。允许现scope准备最薄driver并固定source/hash后，只运行一次runSyntheticCanary；失败/未知关闭停止，禁止重试或新增profile grant。
 
 ## 已封存语义片段审查（不受后继静态设计冒用）
 

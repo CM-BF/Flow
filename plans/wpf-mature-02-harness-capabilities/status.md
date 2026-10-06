@@ -13,18 +13,18 @@
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / e535fc04364c3be4a08ab0c6bc8bebe25afed977（当前隔离静态设计；后继metadata，实际HEAD由Git核） |
 | 工作树dirty状态 | 语义approval metadata提交后clean；隔离设计target已提交；本次仅固定target和共享review回执metadata，提交后由Git核 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN：隔离片只执行2项JavaScript语法与SBPL词法/链接检查；没有运行sandbox或canary |
 | 已集成main状态 / HEAD | 未集成；最近观察maindf29fb511df029a0922ace0f4973f3fe3736e502；注册已入main，consumer未集成 |
 | 实现目标 | e535fc04364c3be4a08ab0c6bc8bebe25afed977 |
 | 实现范围 | experiments/codex-app-server-conformance/isolation, docs/evidence/wpf-mature-02/isolation, docs/evidence/wpf-mature-02/isolated-run-plan.md, docs/evidence/wpf-mature-02/interface.md, plans/wpf-mature-02-harness-capabilities |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 本地模型语义模块已审；真实目录探针的隔离脚本与检查步骤已准备，尚未执行。 |
+| 当前产出 | 本地模型语义与隔离静态方案已审，正在固定一次合成验证的输入。 |
 | 下一可用交付 | 审查隔离方案后，按明确边界验证自有临时文件与本地连接的拒绝行为。 |
 | 当前阻塞 | ACTIVE: 隔离机制尚无运行证据；真实目录探针仍未启动。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：当前隔离片NOT_STARTED；语义片APPROVED记录保留 |
+| Review | [review.md](review.md)：静态隔离片APPROVED可进入一次合成canary；尚未执行；语义approval保留 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，27/27行为检查，status_read独审APPROVED，metadata1aead2e；未重新运行/未改source/raw |
 | 架构影响 | 当前实验不改产品结构；生产host/合同由R05共享owner维护，后继接线需登记架构target。 |
 

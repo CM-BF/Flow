@@ -25,6 +25,8 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 共享owner需固定实际模型能力目录、请求选项、init/effective回执与unsupported的合同；Web d01仅消费已落地字段，不修改本owner实验来伪造生产支持。
 
+**R05C复用交接：** [final投影提升回执](final-projection-handoff.md)。固定0d0524c算法只读提升至其已领取生产目录；本实验冻结，生产模块独审后改薄入口并复验直接消费者，禁止长期双实现。
+
 共享挂载输入：[Mika R05-B server mount只读review回执](r05b-mount-review.md)，仅固定import/await两行，不是领域/provider批准或main进度。
 
 ## R05-B固定consumer答复（0.154.0，2026-10-06 09:11:04 UTC）

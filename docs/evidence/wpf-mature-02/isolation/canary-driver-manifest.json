@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-06T09:32:03.888653+00:00",
+  "state": "prepared-not-executed",
+  "files": {
+    "experiments/codex-app-server-conformance/isolation/run-once.mjs": "d35912089241ad46e3553eaf3d6090f8d9e06139f3fb94225cdbc07c64835f21",
+    "docs/evidence/wpf-mature-02/isolation/canary-run-input.json": "41b33f8f284fbb3986bb8b449e049575c4c7b2ffd95c43dd490889776f27fe2b"
+  },
+  "syntaxCheck": "node24 --check run-once.mjs exit0; did not execute driver",
+  "command": "/opt/homebrew/opt/node@24/bin/node --import /Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs experiments/codex-app-server-conformance/isolation/run-once.mjs",
+  "profileUnchanged": true,
+  "onceGuard": "canary-once-reservation.json created wx and fsynced before the single function call; no retry"
+}
