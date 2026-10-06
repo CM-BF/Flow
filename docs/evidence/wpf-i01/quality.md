@@ -19,3 +19,11 @@
 文档检查：本目录及 plan 三件套本地链接、receipt JSON、scope 与稳定 TODO 对应、Git diff whitespace 检查；产品类型/单元/浏览器/真实中心均未执行。后续每工作段、约 30 分钟安全停点、交付与合入前重新记录实际发现，不建后台定时任务。
 
 03:04 UTC 文档 clean-code：再次核 live I01 claim v1 active 与本树 clean，补清同 host 局部缓存与跨 connection lifetime 的不同归属。实际消除方案歧义：只换 host prop 不够，必须卸载整棵 plugin view（含 hidden visited）并同步失效旧 ports。上游 P01 只读复验与本 I01 产品验收分开；本段只查文档链接/diff，不以 P01 测试替代 I01 检查。
+
+03:07 UTC 实施开工：live claim v1 active 复核；Node v24.20.0 / pnpm9.15.4 独立安装既有依赖，0新增依赖，@flow/client/contracts 实际链接本树 packages。临时根锁差异保存 dependency-install.patch 后还原；无根 manifest/lock 作者修改。受控完整 no-ff merge 2910ebc8e11fbcb00d1c2773face229c84fe47cd（已审6ce+metadata），merge1002f2688c2b4d2e3a5723d94bdbe965a2a88626无冲突。沿输入带入的W01/P01文档是原作者既有提交，不是本owner改写。纠正rail仅global语义，保留原生Files/Terminal，避免添加第二插件协议。
+
+03:26 UTC 交付前 clean-code：逐项检查 AppPluginSession、真实 Thread ActionBar、WorkspaceContributions 与样式。身份/状态由原 App 与 TaskProjection 负责，bridge 只通过窄 callbacks 暴露权限；store 只通知实际变化，旧 host 同步 closed 后不更新新 callback；所有异步失败返回可见错误。未加第二插件协议或凭据端口。删除未使用的 onActiveTabChange 组合参数；原生 tabs 仍通过已审 builtin 的 flow.workspace.open 回调。
+
+实际浏览器发现与修复：Notes 打开时原生引用请求曾未选择 Task workspace，现显式 request serial 驱动贡献选择并保留 visited Activity 状态；Settings Close/Escape 曾丢焦点到 BODY，现 onCloseAutoFocus 返回实际入口，root 另用 CUA 复验；侧栏装饰箭头曾污染可访问名称，改空 CSS mask；窄屏长产物版本号换行。root 发现 workspace.tabs 仅消费 panel，补同 context 的 button/menu AppSlot，动作与 Close 置于 tablist 外；新增合法声明 fixture 核 button、键盘 menu、本地 B / 全局 A 与 disable。实际看 390px 图时发现贡献按钮挤压 tabs，补最小 tab 区宽度、按钮不缩小与行换行。
+
+检查范围：9 bridge + 15 已审 host 直接依赖测试，9 HTTP fixture browser 组，3 真实隔离 PostgreSQL / public protocol runner 旅程组，typecheck、生产 build 与生产烟测；具体绑定和限制见 validation.md。开发测试自身的版本号/selector/运行中官方 ActionBar 可见性假设错误已修正，不当作产品缺陷。原始 dependency-install.patch 原样保留（统一 diff 空白上下文可被 diff --check 报告），只对实现和非原始证据 Markdown/JSON 作 whitespace 通过声明。未解决：现有两个 >500 kB chunk 告警；composer 插入仍显式 unsupported；完整持久化插件管理归主线 X01；持续真实模型对话归新产品 U11，不在本次可信扩展挂载里宣称完成。

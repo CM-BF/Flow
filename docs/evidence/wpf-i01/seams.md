@@ -1,6 +1,6 @@
 # I01 最小接缝与状态归属
 
-只读基线：M02 metadata `c526c1c889437ee39155d669921577995195c74e`；P01 类型参考固定 `e5341915ebbffd9a667f68f7d1ca9c45c14c7c52`，后者尚未整体批准。2026-10-06 03:00 UTC，workspace_panels_owner。本文是实施映射，不声称已挂载。
+初始只读基线：M02 metadata `c526c1c889437ee39155d669921577995195c74e`。2026-10-06 03:26 UTC 更新，workspace_panels_owner。实际输入 P01 2910ebc8e11fbcb00d1c2773face229c84fe47cd（实现6ce已整体 APPROVED），完整 merge1002f2688c2b4d2e3a5723d94bdbe965a2a88626。下表原行号用于定位输入；最终挂载位于 plugin-integration/react.tsx 与 session.ts，检查证据见 validation.md。
 
 ## 状态归属
 
@@ -14,7 +14,7 @@
 
 | Slot | 当前位置与最小改动 | 局部 context / 既有命令能力 |
 | --- | --- | --- |
-| activityBar.primary / bottom | App 485/527，现竖向 rail 加真实 ExtensionSlot | global 或当前 workspace；flow.chat.open / flow.workspace.open / flow.theme.set，按 manifest capability 授权 |
+| activityBar.primary / bottom | App 485/527，现竖向 rail 加真实 ExtensionSlot | 仅 global（P01 validation 固定）；挂载 flow.theme.set 等 global 贡献，Files/Terminal 仍走 App 原生 task 回调，global 不能伪装 task 调 workspace.open |
 | sidebar.header / footer | App 544/616，常驻容器独立于 fixture 文案 | global；ui.navigate 或 theme.write，不放 owner token |
 | sidebar.item.actions | App ChatListItem 153，移到每一行独立 action 容器，不能套在整 nav 或嵌套 button 内 | task(task.id)，行 B 保持 B；flow.chat.open |
 | chat.header / task.actions | App 626 / ChatPane 223，修正状态条旧 message 标记为 task slot | task(view taskId)；ui.layout 导航。决定/取消仍原 projection 明确 UI，不新增未声明插件命令 |
@@ -46,3 +46,10 @@ Runtime/PTY、任意磁盘、提交/决定/取消等未在 P01 HostCommandArgs �
 PH-R4 证明 `PluginView` context key 重挂会丢 WorkspacePanels per-task Map，修复归 P01。theme descriptor 与 default palette 的适配在 I01 受领 themes.ts 内；禁用贡献后的焦点回到相邻原生 tab 或 rail 入口。最小回归包括 B 行命令、双 split 两个 message 上下文、同 referenceId 跨 task、不在线错误、同 taskId 跨中心、8 chat 连接预算及未展开 0 detail；不为 metadata 重跑产品测试。
 
 03:04 UTC：PH-R4 修复 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 已由本 owner 只读复验建议关闭并回 root；不在本目录复制 P01 进度事实源。I01 尚无实现。跨连接回归需两个中心复用同 task/ref IDs，覆盖可见和隐藏已访问 panel，以及迟到 activation/command；测试不能只验证普通 A→B task 切换。
+
+## 已实施组合决定（03:26 UTC）
+
+- AppPluginSession 每连接唯一，原生导航/theme callbacks 与 workspace display 均为私有 host ports；旧 scope dispose 与新 connectionScope 根重挂共同隔离同名 task/reference。
+- PluginWorkspace 使用 P01 PluginView 与 getSlotSnapshot 组合受控贡献选择；原生 Files/Terminal/detail 继续原 App panelTabs authority。已访问 views 用 Activity 保留同 host state、隐藏暂停 Effects；换连接整体销毁。
+- workspace.tabs 同时消费 panel、button、menu；动作容器和 Close 在 tablist 外，keyboard tabs 与菜单各守自身语义。390px 时可换行，不挤压文本。
+- Settings 是本连接的可信 Web 扩展控制及诊断；不是全产品持久化插件管理。用户新增插件管理计划由主线 X01 承接。真实持续模型对话由 U11 承接；本次所有模拟入口持续标明 fixture。

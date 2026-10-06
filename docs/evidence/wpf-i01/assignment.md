@@ -25,3 +25,9 @@ plans/wpf-i01-plugin-integration
 ```
 
 排除 `apps/web/src/plugins`、plugin-host 测试、shared/backend、其他 owner 工作树。受控集成只应用已审提交，手工冲突不借 integration 绕过 scope。本段未声称占有新的实现能力或完成独立 review。
+
+## 实施受领与交付前核验
+
+03:07 UTC 收到 P01 最终整体 APPROVED 与正式实施派发后，完整 no-ff 合入 2910ebc8e11fbcb00d1c2773face229c84fe47cd，实际输入 merge HEAD 1002f2688c2b4d2e3a5723d94bdbe965a2a88626，无冲突。不是手工复制模块。Node24/pnpm9.15.4 本树依赖安装，临时根锁 patch 原样留存并恢复根锁，@flow/client/contracts 指本树 packages。
+
+03:23:26 UTC 安全 source 后再次实时只读核验 D04：I01 claim b6666c29-ebc5-47b2-b754-55b62687fd00 v1 active、worker workspace_panels_owner、branch codex/web-plugin-integration，与11项 scope 全部相符。最终 authored implementation 仅13个文件，全部在上述 literal scope 内；P01 源、根manifest/lock 与共享实现相对完整 merge 输入无差异。

@@ -1,6 +1,6 @@
 # WPF-I01 主 App 插件挂载
 
-创建：2026-10-06 03:00 UTC；更新：03:04 UTC。状态：in-progress（文档与接缝准备；实现等待输入复审）。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
+创建：2026-10-06 03:00 UTC；更新：03:27 UTC。状态：in-progress（实现交付，待独立 review）。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 
 将已审可信 Web host、内建 WorkspacePanels 与主题接入已审 WPF-M02 产品 App，使声明式贡献在真实界面生效。继承管理计划 WPF-I01-01..04，不另造插件协议。对应用户可插拔 Web 与唯一领取要求；不因此宣称 X01 全栈 npm 生命周期、第三方隔离、CLI 或真实 PTY/任意文件系统完成。
 
@@ -8,9 +8,9 @@
 
 - 独立 worktree：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration`；branch：`codex/web-plugin-integration`。
 - 基线与初始化 HEAD：`c526c1c889437ee39155d669921577995195c74e`；其中 M02 实现 `d47c602f3bab1fe97a9be70fd37780c2918bcfbc` 已获独立 APPROVED。初始化没有改写旧工作树。
-- P01 原候选 `e5341915ebbffd9a667f68f7d1ca9c45c14c7c52` 因 PH-R4 为 REQUEST_CHANGES；新修复 target `6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6` 已获本 owner 的独立只读复验建议关闭，仍待 root 整体审定。两个候选均未合入。
+- P01 固定实现 `6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6` 已获 root 整体 APPROVED，PH-R1..R4 CLOSED。最终 metadata `2910ebc8e11fbcb00d1c2773face229c84fe47cd` 完整 no-ff 合入，本轮实现 base 为 merge `1002f2688c2b4d2e3a5723d94bdbe965a2a88626`，无冲突。
 - D04 I01 claim `b6666c29-ebc5-47b2-b754-55b62687fd00` v1 active；真实 commit receipt 与旧 M02 v2 移交见[领取证据](../../docs/evidence/wpf-i01/assignment.md)。每次新工作先核 live version/state；scope 增改须原子 amend 回执。
-- 可写 literal scope 以 [status](status.md) 与回执为准。当前派发只允许本三件套和 `docs/evidence/wpf-i01` 文档；实现需已审 P01 输入与管理者正式派发。`apps/web/src/plugins` 及 plugin-host 测试仍由 P01 owner 维护；仅受控消费已审提交，不手工修 host。
+- 可写 literal scope 以 [status](status.md) 与回执为准。已获正式实现派发；可写范围仍严格按receipt。`apps/web/src/plugins` 及 plugin-host 测试仍由 P01 owner 维护；仅受控消费已审提交，不手工修 host。
 - 旧 M02 的 App、TaskThread、WorkspacePanels 三路径已停止写入，并由 v2 amend 移出；不得恢复旧树写权。本 feature 不合 main，不修改 shared packages/backend/root manifest/lock。
 
 ## 方案与验收
@@ -27,11 +27,13 @@ App 的 chat groups、每 task 的原生 workspace tab 与草稿保留唯一 aut
 
 ## TODO
 
-- [ ] **WPF-I01-01** 冻结两已审完整输入，完成 D04 旧 scope 转交/新 claim、新 worktree 与唯一 plan/status/review。
-- [ ] **WPF-I01-02** 实现窄 App bridge 与声明式 slots，内建插件及诊断/设置接入。
-- [ ] **WPF-I01-03** 运行局部桥接与产品浏览器/真实中心验收，记录双主题截图、技能与 clean-code。
+- [x] **WPF-I01-01** 冻结两已审完整输入，完成 D04 旧 scope 转交/新 claim、新 worktree 与唯一 plan/status/review。
+- [x] **WPF-I01-02** 实现窄 App bridge 与声明式 slots，内建插件及诊断/设置接入。
+- [x] **WPF-I01-03** 运行局部桥接与产品浏览器/真实中心验收，记录双主题截图、技能与 clean-code。
 - [ ] **WPF-I01-04** 固定 SHA 独立 review、修复闭环并交原 Lead 集成，不代 merge main。
 
 ## 当前风险与交接
 
-实现目标 UNKNOWN；P01 整体复审为当前依赖阻塞，解除条件是固定新完整 SHA 获整体 APPROVED。文档和已审 M02 接缝研究可独立完成。新增文件若超 receipt 范围先由 Lead amend，不以 worktree 隔离代替领取。计划索引和 dashboard task→owner worktree 登记由管理者/原 Lead 维护；旧管理准备目录已由管理者转只读 stub，避免两份进度。
+实现目标 `92a786abb9f7ef16e15482ac00b98ff860ecc47f`；9 bridge + 15 direct host tests、9 fixture browser、3 real PostgreSQL/public runner 旅程、typecheck/build/生产烟测通过，见[验证](../../docs/evidence/wpf-i01/validation.md)。等待固定 target 独立审查，不以作者检查代替 review；实现冻结，无当前实现阻塞。新增文件若超 receipt 范围先由 Lead amend，不以 worktree 隔离代替领取。计划索引和 dashboard task→owner worktree 登记由管理者/原 Lead 维护；旧管理准备目录已由管理者转只读 stub，避免两份进度。
+
+用户后续要求的全产品持久化插件管理（center 公共命令/Web/CLI/npm 版本生命周期/执行版本/权限隔离）归主线 X01；真实持续模型对话归 U11。本 feature 的 Settings 明示本连接可信扩展，不声称这些后续目标完成。workspace.tabs 的 panel/button/menu 均消费，普通动作不混入 tablist。

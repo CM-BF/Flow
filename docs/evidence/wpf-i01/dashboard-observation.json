@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-10-06T03:28:54.605Z",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T03:28:17.153Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md",
+    "syncedAt": "2026-10-06T03:28:54.605Z",
+    "stale": false,
+    "ageHours": 0.03183472222222222
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/web-plugin-integration",
+    "head": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+    "dirty": true,
+    "changedFiles": 20,
+    "observedAt": "2026-10-06T03:28:54.979Z"
+  },
+  "human": {
+    "phase": "M2",
+    "priority": 2,
+    "output": "可信 host 已挂入产品 App；固定实现 92a786abb9f7ef16e15482ac00b98ff860ecc47f，实际消息/工作区/主题贡献与连接隔离验收完成",
+    "next": "固定 target 的独立 review 与修复（如有），随后交原 Lead 集成",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "passed",
+    "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+    "record": "PASSED 92a786abb9f7ef16e15482ac00b98ff860ecc47f; 9 bridge + 15 host direct tests, 9 HTTP fixture browser groups, 3 real PG/public runner journey groups, typecheck, build, production smoke；范围与限定见 validation"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f"
+  },
+  "proof": {
+    "state": "unchanged",
+    "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+    "head": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "progress": {
+    "completed": 3,
+    "total": 4
+  },
+  "assignments": [
+    {
+      "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+      "version": 1,
+      "state": "active",
+      "worker": "workspace_panels_owner",
+      "matchesSource": true
+    }
+  ],
+  "note": "Metadata evidence was pending commit; implementation unchanged. This is generated read-only evidence, not a second editable status."
+}
