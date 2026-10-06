@@ -30,5 +30,7 @@
     "visible entries followed by filtered tail; empty terminal page reaches watermark",
     "reset after > watermark; malformed identities/order/cursor/hasMore/reset rejected"
   ],
-  "sharedApply": "None. Do not merge/pick server or shared branches."
+  "sharedApply": "None. Do not merge/pick server or shared branches.",
+  "testDeltaClarification": "d9a changes apps/server/src/assistant-stream/stream.test.ts only. The fixed compatibility.test.ts HTTP/SSE assertions used for contract fixtures already belong to77f and are preserved in309be; do not attribute their addition to d9a.",
+  "baseCompatibility": "Read-only git diff confirms the two Web reader/test paths are equal between86a and optional newer ba908. Keep the taken86a base."
 }

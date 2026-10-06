@@ -28,5 +28,20 @@
   "researchSources": [
     "https://www.assistant-ui.com/docs/runtimes/custom/external-store",
     "https://react.dev/reference/react/Activity"
-  ]
+  ],
+  "laterEntryPointCorrection": {
+    "source": "root subsequent read-only installed actual runtime-core probe; not rerun by manager",
+    "actualPath": "useExternalStoreRuntime -> ExternalStoreRuntimeCore -> ThreadMessageConverter WeakMap",
+    "differentOriginalPath": "Earlier 100/200 probe used convertExternalMessages/cache, an alternate converter entry point; do not treat its counts as the actual Thread runtime call path.",
+    "actualProbe": {
+      "messages": 3,
+      "roles": "user, retained draft assistant, final assistant",
+      "initialConversions": 3,
+      "newArraySameObjectsAdditionalConversions": 0,
+      "newArrayEquivalentNewObjectsAdditionalConversions": 3,
+      "draftAndFinalIDsPreserved": true
+    },
+    "alternateConverterObservation": "Default convertExternalMessages can merge adjacent assistant parts into retained-draft ID; joinStrategy none separates them. Current direct convertMessage runtime path does not perform this merge.",
+    "scope": "No new hook/runtime change is justified by the alternate-path merge; preserve the current direct adapter. Neither probe measured React renders or elapsed time."
+  }
 }
