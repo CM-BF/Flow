@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-- Review target commit：UNKNOWN
+- Review target commit：2d1e2ade19941e9a8b38f18148e6a2d434f8c730
 - Base commit：4015c667f1e2b833755b2fda6ed205fb951ec576
 - Worktree：/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility；branch codex/web-profile-readonly-compatibility。
 - Scope：selection.ts 的 configuredSelection 形参；现专测只读复用。

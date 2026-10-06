@@ -1,0 +1,97 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "id": "WPF-MATURE-02",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已定位配置选择的只读类型冲突，正在保留原校验的前提下修复",
+      "next": "可被只读配置消费者直接调用的选择接口及局部验证证据",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "apps/web/src/execution-profiles/selection.ts"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "WPF-PROFILEC02",
+    "owner": "w01_owner / gpt-6-astra / ultra",
+    "branch": "codex/web-profile-readonly-compatibility",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T17:46:52.000Z",
+    "updatedRecord": "2026-10-06 17:46:52 UTC",
+    "todos": [
+      {
+        "id": "PROFILEC02-01",
+        "state": "in-progress",
+        "owner": "w01_owner",
+        "evidence": "固定源诊断，尚未修改产品"
+      },
+      {
+        "id": "PROFILEC02-02",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "未运行"
+      },
+      {
+        "id": "PROFILEC02-03",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "独审/main 待完成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "base 4015c667f1e2b833755b2fda6ed205fb951ec576；启动 HEAD 同基线",
+    "declaredDirty": "启动核 clean；当前仅本片计划/证据待提交，提交后状态以 Git 回执为准",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN；先准备精确只读依赖与检查入口"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；本次修复尚未交 main",
+    "next": "完成一行标注及受控局部检查后正常 push 给独立审查者。只有本片交付，不代表完整 MATURE02 UI 完成。索引/登记由管理在其范围负责，不改全局计划。",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": null
+  }
+}

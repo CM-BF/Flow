@@ -12,7 +12,7 @@
 
 ## TODO
 
-- [ ] PROFILEC02-01 一行类型兼容并保留 parser/clone/access/controls。
+- [x] PROFILEC02-01 一行类型兼容并保留 parser/clone/access/controls。
 - [ ] PROFILEC02-02 记录精确依赖、必要定向检查与固定来源。
 - [ ] PROFILEC02-03 独立审查并接收 main。
 

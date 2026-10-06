@@ -1,0 +1,25 @@
+{
+  "base": "4015c667f1e2b833755b2fda6ed205fb951ec576",
+  "implementationTarget": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+  "source": [
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 5068,
+      "sha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0"
+    }
+  ],
+  "protectedPaths": [
+    "apps/web/test/execution-profiles.test.ts",
+    "apps/web/src/execution-profiles/catalog.ts",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "packages/client",
+    "packages/contracts",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "protectedDiff": "empty",
+  "annotationOnlyIdentityProof": "Replacing the sole new parameter annotation with its original yields the complete exact fixed-base bytes. No runtime body changes.",
+  "tests": "Original execution-profiles.test.ts byte-identical; existing readonly callers retained.",
+  "checks": "NOT_RUN; source-only checkpoint"
+}
