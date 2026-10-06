@@ -57,4 +57,6 @@ SSE修复d47已获root整体独立APPROVED：20tests/typecheck、8chat/Approve/d
 
 root最近03:06:17.755Z实采4320为28来源：P01 2910clean、checks/review approved target6ce/proof unchanged、人读完整，I01已registered且claimv1 matchesSource。采样时父/I01仍旧PH-R4文字，双方随后按已通过结论更新NONE/实施步骤；不把过渡快照当当前阻塞。03:01:16.398Z管理者实采W01d263 clean/human完整/blocker none，SSE聚合已闭合。
 
-D04正式PG已部署并实际用来转交：M02 v2移出三文件、I01 v1取得；原样receipt在证据目录。管理v2与P01v1保留范围，PERF新v1独立take；每次续工核当前version/state，历史receipt不覆盖后续变更。主线维护registry，管理nested三个stub不注册；PERF source已由owner建立并交Lead登记待实际复验，不复制第二套状态。
+D04正式PG已部署并实际用来转交：M02 v2移出三文件、I01 v1取得；原样receipt在证据目录。管理v2与P01v1保留范围，PERF新v1独立take；每次续工核当前version/state，历史receipt不覆盖后续变更。主线维护registry，管理nested四个stub不注册；PERF source已由owner建立并交Lead登记待实际复验，不复制第二套状态。
+
+PERF范围纠正已落实：不继承W01 rootlock安装例外，owner保存本scope patch后已恢复自身根lock变更，管理者独立核pnpm-lock/package diff0。后续冻结锁/既有依赖，新依赖归共享owner；初次变更时序与纠正保留research。

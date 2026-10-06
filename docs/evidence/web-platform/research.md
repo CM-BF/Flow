@@ -204,4 +204,7 @@ P01 PH-R4新候选6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6，owner15模块/12bro
 
 root官方研究已直接交PERF唯一owner：MDN [PerformanceEventTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming)默认仅记录>=104ms，durationThreshold最低16ms且时长按8ms取整；input delay与到next paint的duration分列，continuous scroll等事件不在其中。unsupported或无符合门槛样本不能写成零延迟。MDN [PerformanceLongTaskTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming)门槛>=50ms并先能力检测；没有记录不是证明没有较短阻塞。React [Profiler](https://react.dev/reference/react/Profiler)普通production默认禁用，不能将无回调写零render，profiling诊断build与production timing报告分开。
 
-PERF canonical首文档c7bf1a81e5d21a602636f388ff565bae1844d83e已建立，管理旧计划三件套转stub，最新方法/结果由新owner唯一维护。实际source请求已tool给Lead，dirty临时rootlock按已授权安装例外记录，不借此宣称产品改动。完整生产容量/实际模型并发仍未测，1/16/128 synthetic只为UI负载，测量边界不被工具指标名字掩盖。
+PERF canonical首文档c7bf1a81e5d21a602636f388ff565bae1844d83e已建立，管理旧计划三件套转stub，最新方法/结果由新owner唯一维护。实际source请求已tool给Lead；当时rootlock dirty被管理者误按W01历史例外解释，后续明确协调纠正见下段，不能把初次解释当PERF写入授权。完整生产容量/实际模型并发仍未测，1/16/128 synthetic只为UI负载，测量边界不被工具指标名字掩盖。
+
+
+PERF安装范围纠正：GoalOwner明确PERF四scope不含根lock，历史W01临时安装例外不能自动扩到新任务。root已要求唯一owner保存必要diff到docs/evidence/wpf-perf01/dependency-lock.patch后，仅恢复自身pnpm-lock变化；owner完成，管理者实际只读git diff --exit-code -- pnpm-lock.yaml package.json为0，dirty仅受领脚本/计划/证据。后续用已安装依赖与冻结锁，新增依赖交共享owner协调，不能再假定可逆就自动扩大claim。保留最初真实安装时序与本次纠正，不声称从未产生差异。
