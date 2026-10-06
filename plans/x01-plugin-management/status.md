@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:08:15 UTC |
+| 最近更新时间 | 2026-10-06 13:16:46 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,20 +11,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | 受控main7cb→c837；F01依赖三blob→1c93c102；当前实现2d20e35c，后续仅交审metadata |
-| 工作树 dirty 状态 | 8leaf/source/raw已固定2d20e35c；仅packet/status metadata，实际clean由Git聚合 |
+| 工作基线 / HEAD | 受控main7cb→c837；F01依赖三blob→1c93c102；固定实现bf33781450d2a5036e026ace03c1682e4d7f0f17，其后仅交审metadata |
+| 工作树 dirty 状态 | 本片两改动源/新raw已固定bf337814；其余原41绑定不变；实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 2d20e35ca0019854e102cf051252675eb3f16da6；53distinct与严格局部noEmit0，54own根删除；0PG/SDK/provider |
-| Review | CHANGES_REQUESTED 2d20e35ca0019854e102cf051252675eb3f16da6；Mika/Astra 1P2：零长度metadata绕过拒绝；正在修复 |
+| 检查状态 | PASSED bf33781450d2a5036e026ace03c1682e4d7f0f17；65distinct=51材料+14真实loader、严格局部noEmit0，66own根删除；原12red保留，0PG/SDK/provider |
+| Review | NOT_STARTED bf33781450d2a5036e026ace03c1682e4d7f0f17；修复唯一P2后待增量独审，旧2d20历史结论保留 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
-| 实现目标 | 2d20e35ca0019854e102cf051252675eb3f16da6（静态材料/真实loader leaf） |
+| 实现目标 | bf33781450d2a5036e026ace03c1682e4d7f0f17 |
 | 实现范围 | packages/plugin-runtime/package.json, packages/plugin-runtime/src/package-store.ts, packages/plugin-runtime/src/package-store.test.ts, apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts, fixtures/plugins/text-tool/package.json, fixtures/plugins/text-tool/index.mjs, fixtures/plugins/text-tool/flow-plugin.json |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 静态安装材料和真实插件加载执行已实现；独审发现零长度归档元数据拒绝缺口，正在定向修复 |
+| 当前产出 | 静态安装材料与真实插件加载执行已实现；零长度元数据拒绝缺口已修复，等待增量独审 |
 | 下一可用交付 | 审查通过后交付材料库与loader；随后接入中心安装命令与任务绑定 |
-| 当前阻塞 | ACTIVE: 本片待独立审查；完整管理链仍待中心host资格、共享合同及唯一migration |
+| 当前阻塞 | ACTIVE: 本片待修复增量独审；完整管理链仍待中心host资格、共享合同及唯一migration |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -42,7 +42,7 @@
 
 ## 当前事实与边界
 
-当前静态安装材料与trusted self-owned真实loader已实现，原53局部检查通过；独审1P2修复中，尚未产品批准或main集成。Web只读入口已完成；trusted host不等第三方隔离或完整public管理链。本片0PG、SDK/provider。
+当前静态安装材料与trusted self-owned真实loader已实现，原53局部检查通过；独审1P2已修复待复审，尚未产品批准或main集成。Web只读入口已完成；trusted host不等第三方隔离或完整public管理链。本片0PG、SDK/provider。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
@@ -73,3 +73,5 @@
 固定实现 `2d20e35ca0019854e102cf051252675eb3f16da6` 已停止源码写入，待Mika独审；[leaf-manifest](../../docs/evidence/x01/leaf-manifest.json)绑定8source、直接输入、全部阶段raw和本地tar固定运行来源。main未接本leaf；v2保留修复期。
 
 2026-10-06 13:15:06 UTC：收到Mika对2d20固定leaf的1P2；零长度metadata需真实red后修复。fresh87b clean/v2 ACTIVE，原53 raw/manifest不改；不扩大scope，不新安装/PG/provider。
+
+2026-10-06 13:16:46 UTC：固定修复target `bf33781450d2a5036e026ace03c1682e4d7f0f17`，源码/raw停止写入供复审；[增量manifest](../../docs/evidence/x01/leaf-meta-manifest.json)绑定8source/8readonly/34raw/9support以及7tar来源，共59repo。原2d20/53证据和1P2独审结论保留，新65不同/strict0与66own根清理不叠加计数。没有新依赖/PG/provider/真实runner负载，完整X01未完成；当前v2继续修复期。
