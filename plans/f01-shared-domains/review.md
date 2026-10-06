@@ -94,3 +94,5 @@ Review target commit：549f6b3e54f902d7b75ebe6d17f293a2085e7a6c
 
 ## X04 dependency-only independent approval
 runner_owner只读APPROVED9cde2414078201802db03c00888175aa776651a7，范围server manifest/lock importer/new closure/安装输出；既有锁全不变、6根91新增来源与本地metadata核，无脚本/global依赖。未重跑产品/安装，X04消费者另验。
+
+GO发现P2：原C02 legacy fixture固定库归属未证实。F01v13取得精确test scope，随机专库+拒已有库+正常DROP修复；仅12原行为与tsc复跑通过，context-c02-isolation-manifest.json绑定delta。历史34输出保留且资源限制明确，等待GO限定复审，不更改5生产接线源。
