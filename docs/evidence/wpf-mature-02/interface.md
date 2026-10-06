@@ -4,6 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [固定0.154 bootstrap只读事实与两条待选边界](bootstrap-policy-readonly.md)：等待GO策略/证据边界选择；源码差异不证明必要性或SIGABRT因果，不实现或运行新候选。
+- [B01已审首片集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/integration-ready.md)。请Lead按权威输入独立接收，不等待第三reader；原authority请求保留。
+
 - [Codex诊断v3结果：regular-file对照仍SIGABRT](fd-canary-v3/run-report.md)：获批唯一窗口已消费，1compile/2目标，父regular身份已核但子报告缺失；measurement未完成，清理/机器证据/计量完成；architecture_read于11:45:46 UTC限定faithful FAIL APPROVED（d8038d3a），无隔离或因果结论。无剩余运行授权。
 - [B01轻投影权威来源/registry变更请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/authority-request.md)。请Lead按权威请求切换登记；不复制进度。
 
