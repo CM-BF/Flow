@@ -10,8 +10,9 @@ import {
   type AttachmentReference,
 } from "@flow/contracts";
 import { freezeMaterialRequest } from "../conversation-context/receipts";
+import { RecoveryError, recoveryValue, type CommandRecovery, type CommandRecord } from "../recovery/journal";
 import { ReadCache, bodyBytes } from "./read-cache";
-import { ConversationOutbox, type OutboxEntry } from "./outbox";
+import { ConversationOutbox, frozenOutbox, type OutboxEntry } from "./outbox";
 import { freezeContextSelection, type FrozenCitation } from "../conversation-context/selection";
 import { assertCreationReceiptMatches } from "../execution-profiles/selection";
 import { queuePort } from "./queue/commands";
@@ -98,6 +99,14 @@ export class ConversationProjection {
   private readSequence = 0;
   private snapshotSequence = 0;
   private creation: ConversationCreation | null = null;
+  private recovery?: CommandRecovery;
+  configureRecovery(recovery: CommandRecovery) { this.recovery = recovery; this.queue.commands?.configureRecovery(recovery); }
+  restoreReceipt(record: CommandRecord) {
+    this.outbox.restore(record); const entry = this.outbox.getSnapshot()!;
+    if (this.id && entry.conversationId && this.id !== entry.conversationId) { this.outbox.accept(entry.id); throw Error("The receipt belongs to another conversation."); }
+    if (entry.conversationId) this.id = entry.conversationId;
+    this.creation = entry.creation;
+  }
 
   constructor(private readonly client: ConversationPort, private id: string | null = null, private readonly pollMs = 2000) {
     this.queue = new ConversationQueueProjection(queuePort(client), pollMs);
@@ -289,15 +298,21 @@ export class ConversationProjection {
 
   private async dispatch(entry: OutboxEntry): Promise<string | undefined> {
     const signal = requestSignal(this.lifetime.signal);
+    let sent = false;
     try {
+      await this.recovery?.prepare({ id: entry.id, domain: "outbox", slot: entry.conversationId ? `turn:${entry.conversationId}` : `create:${entry.id}`, frozen: frozenOutbox(entry), stage: entry.conversationId ? "submit" : "create" });
+      signal.throwIfAborted();
       let id = entry.conversationId;
       if (!id) {
+        await this.recovery?.dispatch(entry.id, "create"); signal.throwIfAborted(); sent = true;
         const raw = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
         const created = decodeConversationCreated(raw, entry.creation!);
         const capabilities = readCapabilities(created);
         this.creation = entry.creation!;
         id = created.conversation.id;
+        await this.recovery?.checkpoint(entry.id, { phase: entry.kind === "creation" ? "accepted" : "prepared", stage: "submit", slot: `turn:${id}`, data: { conversationId: id, revision: created.conversation.revision } });
+        signal.throwIfAborted();
         this.id = id; this.outbox.bindConversation(entry.id, id);
         this.update({ snapshot: { conversation: created.conversation, capabilities, nativeSession: null, lastTurn: null } });
       }
@@ -306,10 +321,13 @@ export class ConversationProjection {
         this.update({ loading: false, error: null }); this.schedule();
         return id;
       }
+      await this.recovery?.dispatch(entry.id, "submit"); signal.throwIfAborted(); sent = true;
       const raw = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
       const accepted = decodeConversationTurnAccepted(raw, id, entry.request);
       this.validateCreation(accepted.conversation);
+      await this.recovery?.checkpoint(entry.id, { phase: "accepted", data: recoveryValue({ conversationId: id, revision: accepted.conversation.revision, turnId: accepted.turn.id, turnNumber: accepted.turn.number, taskId: accepted.turn.task.id, context: accepted.turn.context }) });
+      signal.throwIfAborted();
       const current = this.state.snapshot!;
       const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
       if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))
@@ -325,8 +343,12 @@ export class ConversationProjection {
       return id;
     } catch (error) {
       if (this.lifetime.signal.aborted) return;
-      const rejected = error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
+      const rejected = (!sent && error instanceof RecoveryError) || error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
       this.outbox.fail(entry.id, errorMessage(error), rejected);
+      if (!(error instanceof RecoveryError)) {
+        try { await this.recovery?.checkpoint(entry.id, { phase: this.outbox.getSnapshot()?.everUnknown ? "unknown" : "rejected" }); }
+        catch { /* Keep the original dispatching record: it must recover as unknown. */ }
+      }
       if (error instanceof FlowApiError && error.status === 409) await this.refresh();
       return undefined;
     }

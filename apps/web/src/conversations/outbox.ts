@@ -4,6 +4,7 @@ import {
   type ConversationCreation,
   type ConversationTurnAdmission, type AttachmentReference,
 } from "@flow/contracts";
+import { recoveryValue, type CommandRecord } from "../recovery/journal";
 import { freezeMaterialRequest } from "../conversation-context/receipts";
 import type { FrozenCitation } from "../conversation-context/selection";
 
@@ -34,6 +35,28 @@ function freezeCreation(input: ConversationCreation) {
   const value = conversationCreationSchema.parse(input);
   return Object.freeze({ ...value, requested: Object.freeze({ ...value.requested }),
     ...(value.executionProfile ? { executionProfile: Object.freeze({ ...value.executionProfile }) } : {}) });
+}
+
+export function frozenOutbox(entry: OutboxEntry) {
+  return recoveryValue({ kind: entry.kind, id: entry.id, conversationId: entry.creation ? null : entry.conversationId,
+    creationKey: entry.creationKey, turnKey: entry.turnKey, creation: entry.creation, request: entry.request });
+}
+function storedObject(value: unknown): Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw Error("Invalid saved conversation receipt.");
+  return value as Record<string, unknown>;
+}
+export function restoreOutbox(record: CommandRecord): OutboxEntry {
+  if (record.domain !== "outbox") throw Error("This is not a conversation receipt.");
+  const value = storedObject(record.frozen), checkpoint = record.checkpoint === null ? {} : storedObject(record.checkpoint);
+  if (value.id !== record.id || typeof value.id !== "string" || typeof value.creationKey !== "string" || !value.creationKey || value.creationKey.length > 128
+    || typeof value.turnKey !== "string" || !value.turnKey || value.turnKey.length > 128 || !["turn", "creation"].includes(String(value.kind))) throw Error("Invalid original receipt keys.");
+  const creation = value.creation === null ? null : freezeCreation(conversationCreationSchema.parse(value.creation));
+  const conversationId = checkpoint.conversationId ?? value.conversationId;
+  if (conversationId !== null && (typeof conversationId !== "string" || !conversationId || conversationId.length > 128)) throw Error("Invalid restored conversation identity.");
+  const base = { id: value.id, conversationId: conversationId as string | null, creationKey: value.creationKey, turnKey: value.turnKey, creation,
+    state: "unknown" as const, error: record.phase === "prepared" ? "This original request was saved before sending. Retry explicitly to send it." : "Original receipt restored. Check or retry using the same keys.", everUnknown: record.phase === "dispatching" || record.phase === "unknown" };
+  if (value.kind === "creation") { if (!creation || value.request !== null) throw Error("Invalid saved creation."); return Object.freeze({ ...base, kind: "creation", creation, request: null }); }
+  return Object.freeze({ ...base, kind: "turn", request: freezeMaterialRequest(conversationTurnSchema.parse(value.request), creation?.projectId) });
 }
 
 /** A receipt owns its frozen input. It never owns or restores the next draft. */
@@ -84,6 +107,11 @@ export class ConversationOutbox {
     };
     this.publish(entry);
     return entry;
+  }
+
+  restore(record: CommandRecord) {
+    if (this.closed || this.entry) throw Error("Resolve the current receipt before restoring another.");
+    this.publish(restoreOutbox(record));
   }
 
   retry(id: string): OutboxEntry | null {

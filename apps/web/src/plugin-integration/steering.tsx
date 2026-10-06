@@ -120,6 +120,7 @@ export class SteeringWorkspace {
         return cached!;
       },
       subscribe: entry.raw.subscribe,
+      configureRecovery: recovery => entry.raw.configureRecovery(recovery), restore: record => entry.raw.restore(record),
       submit: text => this.permission(entry, "write") && this.isCurrent(identity) ? entry.raw.submit(text) : Promise.resolve(false),
       retry: key => this.permission(entry, "write") && entry.raw.retry(key),
       updateGate: gate => entry.raw.updateGate(gate),

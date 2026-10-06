@@ -29,6 +29,7 @@ export interface ContextSelection {
   setReadiness(value: ContextReadiness): void;
   search(query: string): Promise<void>;
   add(citation: FrozenCitation): void;
+  restore(values: readonly SelectedContext[]): void;
   remove(citation: FrozenCitation): void;
   expand(citation: FrozenCitation, options?: { refresh?: boolean }): Promise<void>;
   freeze(): readonly FrozenCitation[];
@@ -107,6 +108,7 @@ export function createContextSelection(options: { binding: ContextBinding; readi
   let disposed = false, epoch = 0, searchRequest: AbortController | undefined;
   const bodyRequests = new Map<string, { controller: AbortController; promise: Promise<void> }>();
   const bodies = new Map<string, ContextBody>();
+  const unverified = new Set<string>();
   const readiness = Object.freeze({ ...options.readiness });
   let snapshot: ContextSnapshot = Object.freeze({ binding, readiness, disabledReason: reason(readiness, false), hits: emptyList, searched: false, query: "", hasMore: false, loading: false, error: null, selected: emptyList, selectedBytes: 0, bodies: emptyBodies });
   function publish(patch: Partial<ContextSnapshot>) {
@@ -158,12 +160,20 @@ export function createContextSelection(options: { binding: ContextBinding; readi
         const result = await readWithDeadline(controller, () => port.search(parsed, controller.signal));
         if (disposed || currentEpoch !== epoch || searchRequest !== controller) return;
         const page = readSearch(result, binding.projectId);
-        publish({ ...page, searched: true, query, loading: false, error: null });
+        for (const hit of page.hits) unverified.delete(citationKey(hit.citation));
+        publish({ ...page, searched: true, query, loading: false, error: unverified.size ? "Restored references require explicit verification before a new message." : null });
       } catch (error) {
         if (!disposed && currentEpoch === epoch && searchRequest === controller) publish({ loading: false, error: timedOut(error)
           ? "Knowledge search timed out. Your previous results and selection are kept. Retry the search."
           : "Knowledge search failed. Your previous results and selection are kept. Retry the search." });
       } finally { if (searchRequest === controller) searchRequest = undefined; }
+    },
+    restore(values) {
+      if (disposed || snapshot.selected.length) throw Error("Keep the current selection before restoring another draft.");
+      const refs = freezeContextSelection(values.map(value => value.citation), binding.projectId);
+      const selected = refs.map((citation, index) => Object.freeze({ title: knowledgeCreateSchema.shape.title.parse(values[index]?.title), citation }));
+      for (const item of selected) unverified.add(citationKey(item.citation));
+      publish({ selected: Object.freeze(selected), selectedBytes: refs.reduce((sum, ref) => sum + citationBytes(ref), 0), error: selected.length ? "Restored references are unverified. Search or explicitly read each reference before a new message." : null });
     },
     add(ref) {
       requireReady();
@@ -177,6 +187,7 @@ export function createContextSelection(options: { binding: ContextBinding; readi
       if (disposed) return;
       const selected = snapshot.selected.filter(item => citationKey(item.citation) !== citationKey(ref));
       if (selected.length === snapshot.selected.length) return;
+      unverified.delete(citationKey(ref));
       publish({ selected: Object.freeze(selected), selectedBytes: selected.reduce((sum, item) => sum + citationBytes(item.citation), 0) });
     },
     expand(ref, { refresh = false } = {}) {
@@ -211,6 +222,7 @@ export function createContextSelection(options: { binding: ContextBinding; readi
       return promise;
     },
     freeze() {
+      if (unverified.size) throw Error("Verify restored knowledge references before sending a new message. Original receipt retries keep their fixed references.");
       if (disposed) throw Error("This knowledge view is closed.");
       if (snapshot.selected.length && (disposed || !snapshot.readiness.authorized || !snapshot.readiness.knowledgeContext))
         throw Error("This view is not authorized to freeze knowledge context.");

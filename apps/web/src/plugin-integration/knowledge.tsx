@@ -1,6 +1,6 @@
 import { createContext, useContext, useSyncExternalStore } from "react";
 import type { ConversationCreation, KnowledgeSearchResult, KnowledgeResolved, ProjectList } from "@flow/contracts";
-import { createContextSelection, type ContextSelection } from "../conversation-context/controller";
+import { createContextSelection, type ContextSelection, type SelectedContext } from "../conversation-context/controller";
 import { ContextPicker } from "../conversation-context/ContextPicker";
 import { ConversationProjects } from "../conversation-context/projects";
 import type { FrozenCitation } from "../conversation-context/selection";
@@ -29,6 +29,14 @@ export class ConversationKnowledge {
   private listeners = new Set<() => void>();
   private closed = false;
   private viewId = "";
+  private restoredProject = false;
+  restore(projectId: string | null, projectTitle: string | null, selected: readonly SelectedContext[]) {
+    const locked = this.locked();
+    if (locked && locked.projectId !== (projectId ?? undefined)) throw Error("Saved materials belong to another conversation project.");
+    if (!locked && this.state.projectId && this.state.projectId !== projectId) throw Error("The current project selection must be kept separately.");
+    this.update({ projectId, projectTitle, error: null }); this.restoredProject = !locked && !!projectId; this.sync();
+    if (selected.length) { if (!this.state.controller) throw Error("Load the original project conversation before restoring knowledge."); this.state.controller.restore(selected); }
+  }
   private unsubscribers: (() => void)[];
   constructor(readonly viewKey: string, readonly projection: ConversationProjection, private readonly session: AppPluginSession) {
     this.projects = new ConversationProjects((after, signal) => this.session.readKnowledgeProjects(this.identity(), this.context(), after, signal));
@@ -63,9 +71,10 @@ export class ConversationKnowledge {
     if (this.locked()) throw Error("The conversation project is locked by its creation receipt.");
     const project = this.projects.getSnapshot().items.find(item => item.id === projectId);
     if (projectId && !project) throw Error("Choose a project from the loaded page.");
+    this.restoredProject = false;
     this.update({ projectId, projectTitle: project?.title ?? null, error: null });
   }
-  creation(input: ConversationCreation): ConversationCreation { return { ...input, ...(this.state.projectId ? { projectId: this.state.projectId } : {}) }; }
+  creation(input: ConversationCreation): ConversationCreation { if (this.restoredProject) throw Error("Confirm the restored project from the center directory before creating a conversation."); return { ...input, ...(this.state.projectId ? { projectId: this.state.projectId } : {}) }; }
   capture(): SelectionCapture {
     if (this.closed) throw Error("This knowledge connection is closed.");
     this.sync();

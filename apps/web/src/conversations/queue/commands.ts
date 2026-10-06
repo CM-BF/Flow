@@ -1,3 +1,4 @@
+import { RecoveryError, recoveryValue, type CommandRecovery, type CommandRecord } from "../../recovery/journal";
 import { FlowApiError, type FlowClient } from "@flow/client";
 import { conversationQueueEnqueueSchema, conversationQueuePauseSchema, conversationQueueResumeSchema, conversationQueueCancelSchema,
   type AttachmentReference, type ConversationQueueItem, type ConversationQueueCurrentTurn, type ConversationQueueEnqueue } from "@flow/contracts";
@@ -80,7 +81,7 @@ function awaitSignal<T>(operation: Promise<T>, signal: AbortSignal): Promise<T> 
   return new Promise((resolve, reject) => {
     const aborted = () => { cleanup(); reject(signal.reason); };
     const cleanup = () => signal.removeEventListener("abort", aborted);
-    if (signal.aborted) { aborted(); return; }
+    if (signal.aborted) { operation.catch(() => undefined); aborted(); return; }
     signal.addEventListener("abort", aborted, { once: true });
     operation.then(value => { cleanup(); resolve(value); }, error => { cleanup(); reject(error); });
   });
@@ -89,6 +90,20 @@ function awaitSignal<T>(operation: Promise<T>, signal: AbortSignal): Promise<T> 
 /** Immutable local receipts. Observation stops never cancel or rewrite sent commands. */
 export class QueueCommands {
   private state: readonly QueueReceipt[] = [];
+  private recovery?: CommandRecovery;
+  configureRecovery(recovery: CommandRecovery) { this.recovery = recovery; }
+  restore(record: CommandRecord) {
+    if (record.domain !== "queue" || !record.frozen || typeof record.frozen !== "object" || Array.isArray(record.frozen)) throw Error("Invalid saved queue receipt.");
+    const value = record.frozen as Record<string, unknown>;
+    if (value.key !== record.id || typeof value.key !== "string" || !value.command || typeof value.command !== "object") throw Error("Invalid original queue identity.");
+    const raw = value.command as Record<string, unknown>;
+    if (typeof raw.conversationId !== "string" || !raw.conversationId || raw.conversationId.length > 128 || !["enqueue", "pause", "resume", "cancel-item", "cancel-task"].includes(String(raw.kind))) throw Error("Invalid saved queue target.");
+    if (raw.kind === "cancel-item" && (typeof raw.itemId !== "string" || !raw.itemId || raw.itemId.length > 128)) throw Error("Invalid saved queue item.");
+    if (raw.kind === "cancel-task" && (typeof raw.taskId !== "string" || !raw.taskId || raw.taskId.length > 128)) throw Error("Invalid saved cancellation target.");
+    const command = freezeCommand(raw as unknown as QueueCommand), key = slot(command);
+    if (this.state.some(receipt => receipt.slot === key)) throw Error("Resolve this queue slot before restoring another receipt.");
+    this.publish({ slot: key, key: value.key, command, state: "unknown", everUnknown: record.phase === "unknown" || record.phase === "dispatching", message: record.phase === "prepared" ? "Saved before sending. Retry this original request explicitly." : "Original queue receipt restored; no command was resent." });
+  }
   private readonly lifetime = new AbortController();
   private readonly listeners = new Set<() => void>();
   constructor(private readonly port: QueuePort, private readonly settled: () => Promise<void>, private readonly timeoutMs = 15_000) {}
@@ -112,7 +127,10 @@ export class QueueCommands {
   private async dispatch(entry: QueueReceipt) {
     const { command, key } = entry;
     const signal = AbortSignal.any([this.lifetime.signal, AbortSignal.timeout(this.timeoutMs)]);
+    let sent = false;
     try {
+      await this.recovery?.prepare({ id: key, domain: "queue", slot: `queue:${command.conversationId}:${entry.slot}`, frozen: recoveryValue({ key, command }) });
+      await this.recovery?.dispatch(key); signal.throwIfAborted(); sent = true;
       let operation: Promise<unknown>;
       switch (command.kind) {
         case "enqueue": operation = this.port.enqueueConversationTurn(command.conversationId, command.input, key, signal); break;
@@ -122,12 +140,17 @@ export class QueueCommands {
         case "cancel-task": operation = this.port.cancel(command.taskId, key); break;
       }
       const result = await awaitSignal(operation, signal); if (this.lifetime.signal.aborted) return;
-      this.publish({ ...entry, state: "accepted", message: receiptMessage(command, result) });
+      const message = receiptMessage(command, result);
+      const value = result as Record<string, unknown>, item = value.item as ConversationQueueItem | undefined;
+      await this.recovery?.checkpoint(key, { phase: "accepted", data: recoveryValue(command.kind === "cancel-task" ? { taskId: command.taskId, status: value.status } : { conversationId: command.conversationId, queueRevision: value.queueRevision, outcome: value.outcome, paused: value.paused, currentTurn: value.currentTurn, promoted: value.promoted ? { id: (value.promoted as ConversationQueueItem).id, promoted: (value.promoted as ConversationQueueItem).promoted } : value.promoted, item: item ? { id: item.id, sequence: item.sequence, state: item.state, promoted: item.promoted, context: item.context } : undefined }) });
+      signal.throwIfAborted();
+      this.publish({ ...entry, state: "accepted", message });
     } catch (error) {
       if (this.lifetime.signal.aborted) return;
-      const rejected = error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
+      const rejected = (!sent && error instanceof RecoveryError) || error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
       const unknown = entry.everUnknown || !rejected;
       this.publish({ ...entry, state: unknown ? "unknown" : "rejected", everUnknown: unknown, message: queueError(error) });
+      if (!(error instanceof RecoveryError)) { try { await this.recovery?.checkpoint(key, { phase: unknown ? "unknown" : "rejected" }); } catch { /* Original dispatching checkpoint remains recoverable. */ } }
     }
     if (!this.lifetime.signal.aborted) await this.settled();
   }

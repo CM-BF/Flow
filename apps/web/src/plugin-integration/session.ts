@@ -1,3 +1,4 @@
+import { RecoveryWorkspace, createRecoveryPlugin, type RecoveryHost } from "../recovery/binding";
 import { ConversationAttachments, createAttachmentPlugin, type AttachmentClient } from "./attachments";
 import type { RecoveryStorage } from "../attachments/recovery";
 import { SteeringWorkspace, createSteeringPlugin, type SteeringIdentity, type SteeringPorts } from "./steering";
@@ -37,6 +38,7 @@ export interface AppActions {
   knowsTask(id: string): boolean;
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
+  recovery?: RecoveryHost;
   activity?: ActivityReaders;
   knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
@@ -62,6 +64,7 @@ export class AppPluginSession {
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
   readonly host: PluginHost;
   readonly steering: SteeringWorkspace;
+  readonly recovery: RecoveryWorkspace;
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
   private readonly attachmentBindings = new Map<string, { binding: ConversationAttachments; stop(): void }>();
@@ -116,6 +119,8 @@ export class AppPluginSession {
     };
     this.host = new PluginHost(port);
     this.steering = new SteeringWorkspace(this);
+    this.recovery = new RecoveryWorkspace(this, () => this.actions.recovery);
+    this.host.register(createRecoveryPlugin(this.recovery));
     this.host.register(createSteeringPlugin(this.steering));
     this.dataRenderers = createDataRendererRegistry([flowReplyDeclaration], this.host);
     this.host.register(createReplyRendererPlugin(this.dataRenderers));
@@ -211,6 +216,7 @@ export class AppPluginSession {
     this.knowledgeBindings.delete(viewKey); binding?.dispose();
     this.attachmentBindings.get(viewKey)?.stop(); this.attachmentBindings.delete(viewKey);
     this.steering.closeView(viewKey);
+    this.recovery.release(viewKey);
   }
   canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
     const binding = this.knowledgeBindings.get(identity.viewKey);
@@ -305,6 +311,7 @@ export class AppPluginSession {
     this.closed = true;
     this.lifetime.abort();
     this.steering.dispose();
+    this.recovery.dispose();
     this.attachmentBindings.forEach(value => value.stop()); this.attachmentBindings.clear();
     this.knowledgeBindings.forEach(binding => binding.dispose()); this.knowledgeBindings.clear();
     this.dataRenderers.dispose();
