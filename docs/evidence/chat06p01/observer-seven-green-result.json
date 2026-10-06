@@ -1,0 +1,72 @@
+{
+  "kind": "observer",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "experiments/assistant-stream-cost/observer.test.ts",
+    "--config",
+    "experiments/assistant-stream-cost/vitest.config.mjs",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T07:36:52.499Z",
+  "completedAt": "2026-10-06T07:36:52.864Z",
+  "elapsedMs": 363.623,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "experiments/assistant-stream-cost/check.mjs",
+      "sha256": "6c78d05b0b907e4bd78f0e21ae57ba2b6c5e2bd92274a033614e876c5bcf40a4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/imports.ts",
+      "sha256": "ce7dc121555bf15efa79188d1e83832cd7fb27f8c9c632b7a3ffeb96fb8d4ced"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.test.ts",
+      "sha256": "3819986ccfaf44c8f5832eccca4944320731a78b3ebfbcb766b1fa9dcff1ed33"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.ts",
+      "sha256": "8bcf1f1e5675e7b8287a1bbcb5d962f3590643bf4e0af23e477d6e2cdaf80a98"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/run.mjs",
+      "sha256": "4dc2388b954765ad19ff95c6fdaa2472cb133b98aaa8fc8e598a129d640050e0"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/runtime.tsconfig.json",
+      "sha256": "ff05401ffd2b91be407affd8062d7865a833f9818dcf7e8d7ae5e4b66bf30334"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "sha256": "14772fdfc9462db079110808939112a960bea8365bb4cfc4774af4a06e5cb0ab"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/types.tsconfig.json",
+      "sha256": "551d9acc0bf582bbc31186ab65263d40ebf6a2dabdcb77958848c058c1132898"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "sha256": "64b7f5fc39fc49222bfc629913ba72057e6c70acdda67cc787b1b09c8f663ce4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/worker.ts",
+      "sha256": "8338c63a50115d3e2e52f4c2a68a5c04aaef4d3413132a0fef5035bedf102e88"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "sha256": "9d6850907da7757fd4eb08752f2990303369a1ae40ee8d032307f48a3931239a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "sha256": "f23f3919a7c7d7e11e4ba4a05bc527be91bed6dee1dc765b288828855ab97421"
+    }
+  ],
+  "log": "docs/evidence/chat06p01/observer-seven-green.log",
+  "logSha256": "5c2374a0cd7c4ea9f8f4534941a29f7dd0f5926f37792d7a120930da1a822870",
+  "scope": "pure checks only; no PG/server/task/model workload"
+}

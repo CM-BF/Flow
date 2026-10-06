@@ -1,0 +1,165 @@
+{
+  "target": "cd8594be137ee165f2745265842fc3678c5dfb46",
+  "base": "9c6fa9b100f04916f43b04280f05f497b28eeb0f",
+  "observedAt": "2026-10-06 08:08:50 UTC",
+  "source": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 3151,
+      "sha256": "cfcdfa0887f544e327261fa0876a50d2080e0de42c8b2c244f1a43b470b96d84"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 3258,
+      "sha256": "bc0b368a9089b97396fe1bc8d7b8eef2c5635daed3beea9f4f5c305f2de73b87"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.test.ts",
+      "bytes": 11165,
+      "sha256": "5ec276b021e1623217ff32354e22069926111e0aace2a102e228489fd4cd88de"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4504,
+      "sha256": "e60bec7b8ff4297721edfc0b1052cfee5b58f82bcd0847bc28984431bb943140"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 1646,
+      "sha256": "d6804fed8f09304e5e9ddd6fc87e335fa080a46994717b0d11af9e5d1e97dc5d"
+    },
+    {
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 6742,
+      "sha256": "2fcb436bd30207e13265f4c8dc7228d4ddd6419d5954d443ff99a6f238b814a6"
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.test.ts",
+      "bytes": 22924,
+      "sha256": "a39e30f9a64060b9bc0120c05d074200191ef51d63db62fbdabeb987b27e8cb4"
+    },
+    {
+      "path": "apps/server/src/active-steering/steering.test.ts",
+      "bytes": 22386,
+      "sha256": "b3b5b3c230aaaa267ff8b5818ad8996e931eb14a1fba221c34f35fa87eb93f4e"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/execution-profiles.test.ts",
+      "bytes": 16452,
+      "sha256": "c2d45d9aac20223374dae16dcd1fc3f43226b1a4d1672884ab8807b00dbda158"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 2268,
+      "sha256": "67c59d3477580e542fc0fca0abe20280dc75e1bbf3491e3f29ae20533cd16934"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/steering-admission.test.ts",
+      "bytes": 14093,
+      "sha256": "e3a1d03701c6684e457d03922ac61d0b3cdceaeab8ceea86ba2c779154230c8b"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 6565,
+      "sha256": "d7ef03b7df8927098fd6590d92c2bb92e0ee28a55fbeea973eaba3516dc450af"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 3405,
+      "sha256": "3043252bbf514e5cbfcc57a86a3e70e9a6751b486eee2cd067e8ced46fc8eb0e"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/chat09/admission-behavior.txt",
+      "bytes": 347,
+      "sha256": "37962869b631e2a3213ba1f9bfc07fc2e3c75c8c96c6f3ba59b24b06d8156019"
+    },
+    {
+      "path": "docs/evidence/chat09/admission-green.txt",
+      "bytes": 346,
+      "sha256": "7822e5d080243117797587c949af48725c8ca9077207795e8072d320e89e0a48"
+    },
+    {
+      "path": "docs/evidence/chat09/admission-red.txt",
+      "bytes": 1362,
+      "sha256": "a1a9c3ccddae60a576720a02e03d51a1b9c5b142faa2f26927e327111bd247d2"
+    },
+    {
+      "path": "docs/evidence/chat09/cleanup.txt",
+      "bytes": 95,
+      "sha256": "25f612a24b9c980716c5d473ec8e24b1736d70b48c81baa22ff44c9f98ef0e79"
+    },
+    {
+      "path": "docs/evidence/chat09/configuration-green.txt",
+      "bytes": 323,
+      "sha256": "885caa9d21a18dcd961d1834bb41980cbb49ae57d4a46a1f1f44ded4b6378c5c"
+    },
+    {
+      "path": "docs/evidence/chat09/configuration-red.txt",
+      "bytes": 1741,
+      "sha256": "584f59a77eceff6a9ecd6a10255784c776cc4084009ac338bc408010b575d9cd"
+    },
+    {
+      "path": "docs/evidence/chat09/consumers-first.txt",
+      "bytes": 1469,
+      "sha256": "a2890e4b144388b8ed074853bc0ad2d6901cd31353d05f426db8ec3fe501d99f"
+    },
+    {
+      "path": "docs/evidence/chat09/install.txt",
+      "bytes": 657,
+      "sha256": "10b702e63689cd8ed9e3bfa55e1ba40043b3c002674228d75583c7c8b0433172"
+    },
+    {
+      "path": "docs/evidence/chat09/legacy-input-final.txt",
+      "bytes": 408,
+      "sha256": "9cc6af467fb6a190c2f37b047a0c16f6f6b4c20242eb3591265c843dc9306771"
+    },
+    {
+      "path": "docs/evidence/chat09/legacy-loader-green.txt",
+      "bytes": 346,
+      "sha256": "a01b6ad47e0db33c6455e4e51f21eacfb5338eb53c4c0f9e325bc38d7e18fb79"
+    },
+    {
+      "path": "docs/evidence/chat09/legacy-loader-red.txt",
+      "bytes": 2635,
+      "sha256": "9d44c2736d9cdad9b22b1246048f31a35c43b9fd40eed09bc02a345abe2c6229"
+    },
+    {
+      "path": "docs/evidence/chat09/legacy-profile-consumer.txt",
+      "bytes": 582,
+      "sha256": "c461163ea04e1075c625336ef9ca42c74ebcb62989025c587b65ae79d51ce071"
+    },
+    {
+      "path": "docs/evidence/chat09/typecheck-delivery.txt",
+      "bytes": 114,
+      "sha256": "36060ca873d81f4827fd2539aac3fc041de59c9f7b29f917714ab253955ceeb8"
+    },
+    {
+      "path": "docs/evidence/chat09/typecheck-final.txt",
+      "bytes": 114,
+      "sha256": "36060ca873d81f4827fd2539aac3fc041de59c9f7b29f917714ab253955ceeb8"
+    },
+    {
+      "path": "docs/evidence/chat09/typecheck-first.txt",
+      "bytes": 114,
+      "sha256": "36060ca873d81f4827fd2539aac3fc041de59c9f7b29f917714ab253955ceeb8"
+    },
+    {
+      "path": "docs/evidence/chat09/web-profile-consumer.txt",
+      "bytes": 325,
+      "sha256": "b9bf3f44c4414630d34595950d6388215d79181c4d78ca5776286a73aa354a1c"
+    }
+  ],
+  "readonlyConsumers": [
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "bytes": 14848,
+      "sha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d"
+    }
+  ],
+  "providerQueries": 0,
+  "distinctPassingBehaviors": 89,
+  "checks": "55 + 21(adds5) + 7 + 21 + 1(new) = 89 distinct; earlier stages overlap",
+  "typecheck": "typecheck-delivery.txt exit0"
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "types",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+    "-p",
+    "experiments/assistant-stream-cost/tsconfig.json",
+    "--noEmit"
+  ],
+  "startedAt": "2026-10-06T07:22:05.702Z",
+  "completedAt": "2026-10-06T07:22:06.320Z",
+  "elapsedMs": 616.703458,
+  "exitCode": 2,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "experiments/assistant-stream-cost/check.mjs",
+      "sha256": "a6cd8e9210cd214355b8b38bb9f1c5ef105abb4c38d2cab876afa3cca3d6c5a4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "sha256": "1a2d15b14dd21e64125d3ded8ede74b02f2017b90baa9a6ec7e9299e63e31e1a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "sha256": "faf44e6525325530a180f8199d0370d578bcc41d72c78a3767a6567ec389cc34"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "sha256": "9d6850907da7757fd4eb08752f2990303369a1ae40ee8d032307f48a3931239a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "sha256": "f23f3919a7c7d7e11e4ba4a05bc527be91bed6dee1dc765b288828855ab97421"
+    }
+  ],
+  "log": "docs/evidence/chat06p01/workload-types.log",
+  "logSha256": "0866d5435938cc53bd3204f9a6d1adf6b05fe27985ff1109ee64ea486d346f68",
+  "scope": "pure checks only; no PG/server/task/model workload"
+}

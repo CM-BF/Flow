@@ -1,0 +1,44 @@
+{
+  "kind": "unit",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "experiments/assistant-stream-cost/workload.test.ts",
+    "--config",
+    "experiments/assistant-stream-cost/vitest.config.mjs",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T07:22:05.227Z",
+  "completedAt": "2026-10-06T07:22:05.628Z",
+  "elapsedMs": 398.940292,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "experiments/assistant-stream-cost/check.mjs",
+      "sha256": "a6cd8e9210cd214355b8b38bb9f1c5ef105abb4c38d2cab876afa3cca3d6c5a4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "sha256": "1a2d15b14dd21e64125d3ded8ede74b02f2017b90baa9a6ec7e9299e63e31e1a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "sha256": "faf44e6525325530a180f8199d0370d578bcc41d72c78a3767a6567ec389cc34"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "sha256": "9d6850907da7757fd4eb08752f2990303369a1ae40ee8d032307f48a3931239a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "sha256": "f23f3919a7c7d7e11e4ba4a05bc527be91bed6dee1dc765b288828855ab97421"
+    }
+  ],
+  "log": "docs/evidence/chat06p01/workload-final-green.log",
+  "logSha256": "1f82f03f9176de9fa3de741728c98f141966d3e7df3adfce2ea3911ebc98d7b1",
+  "scope": "pure checks only; no PG/server/task/model workload"
+}

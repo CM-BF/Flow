@@ -1,3 +1,4 @@
+import { describeExecutionProfile } from '../../../runner/src/execution-profiles.js';
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
 import { afterAll, beforeAll, expect, it } from 'vitest';
@@ -12,9 +13,9 @@ const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${databas
 const pool = new Pool({ connectionString: databaseUrl, max: 4 });
 let app: Awaited<ReturnType<typeof createServer>>, base = '', created = false;
 async function start(port = 0, acceptCommands = true) {
-  app = await createServer({ databaseUrl, ownerToken: 'chat07-owner', automaticQueueScan: false, leaseMs: 300_000 });
+  app = await createServer({ databaseUrl, ownerToken: 'chat07-owner', automaticQueueScan: false, leaseMs: 300_000, activeSteering: acceptCommands });
   await migrateActiveSteering(pool);
-  registerActiveSteeringRoutes(app, pool, { acceptCommands });
+  if (!app.hasRoute({ method: 'POST', url: '/api/runner/steering/finalize' })) registerActiveSteeringRoutes(app, pool, { acceptCommands });
   // Test-only composition: production events are intentionally untouched by this slice.
   app.post<{ Body: { seal: Parameters<typeof sealForFinal>[2]; content: string; fail?: boolean } }>('/api/runner/steering-test-final', request => transaction(pool, async client => {
     const seal = await sealForFinal(client, request.runnerId!, request.body.seal);
@@ -35,7 +36,8 @@ async function request(path: string, body?: unknown, token = 'chat07-owner', sta
 }
 async function attempt() {
   const runner = await request('/api/runners', { name: 'Synthetic steering runner', harnesses: ['claude'], capacity: 1 });
-  const task = (await request('/api/tasks', { title: 'Steering test', prompt: 'Zero provider', harness: 'claude' }, undefined, 202)).task;
+  const profile = (await request('/api/runner/execution-profile', { configuration: steeringConfiguration() }, runner.token)).profile;
+  const task = (await request('/api/tasks', { executionProfile: profile.reference, title: 'Steering test', prompt: 'Zero provider', harness: 'claude' }, undefined, 202)).task;
   await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [task.id]);
   const claim = await request('/api/runner/claim', {}, runner.token);
   expect(claim.assignment.task.id).toBe(task.id);
@@ -255,3 +257,7 @@ it('checks stored body integrity without leaking it into metadata responses', as
   await request(`/api/tasks/${a.taskId}/steering/${command.id}/text`, undefined, undefined, 409);
   expect(JSON.stringify(await request(`/api/tasks/${a.taskId}/steering/audit`))).not.toContain('private body');
 });
+
+function steeringConfiguration() {
+  return describeExecutionProfile({ materialFiles: [] }, { name: 'claude', version: 'claude-sdk-0.3.290-v2', async run() {} }, true);
+}
