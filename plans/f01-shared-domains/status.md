@@ -2,8 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:32:50 UTC / main7106a35 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:54:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | Plan | [plan.md](plan.md) |
+| 所属大task | FLOW-001（[范围](../flow-001-architecture/plan.md)） |
+| co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
@@ -11,15 +13,15 @@
 | 工作树dirty状态 | 产品已固定；本次证据与状态提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；可信启动1 selected/2未选，typecheck0；领域8源对a329精确一致；0provider |
-| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已含O09CLI和CHAT09薄client/领域；个人center/runner已32c/v9，未开启steering。 |
+| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca已接CHAT10领域/薄client/可信启动；个人center/runner仍32c/v9，未开启steering。 |
 | Review | APPROVED：assignment_review独立只读2d699可信启动；25a22由Mika、a329由Lead独立审。 |
 | 实现目标 | 2d69959a50954912c388eddb18d3b6a9574bf680 |
 | 实现范围 | apps/server/src/main.ts, apps/server/src/steering-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 中心可通过明确启动配置决定是否接收运行中的补充指令，默认关闭。 |
-| 下一可用交付 | 发布已审受理条件与启动配置，随后接入界面发送入口。 |
+| 下一可用交付 | 本片段已交付；后继接口按可替换执行工具和聊天知识选择的实际需要接入。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
