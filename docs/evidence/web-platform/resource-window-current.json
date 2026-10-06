@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T20:59:10.728813+00:00",
-  "state": "F04_LEAD_CLEANUP_ONLY_WEB_WAIT",
-  "groupWindowOwnership": "Lead F04 journey ended, runtime stopped, originalDB/tmp retained; allocated cleanup-only<=20s pending actualreturn. Web has no run admission.",
+  "recordedAt": "2026-10-06T21:07:04.751449+00:00",
+  "state": "WEB_NO_HOLDER_OR_RESERVATION_MIKA_SVC07_WINDOW_ACK",
+  "groupWindowOwnership": "Web explicitly yields next one SVC07 HTTP journey to Mika (Lead-authorized target35f78,<=60s/12PG connections/dedicatednewDB/dynamicport/0Chrome/provider). Mika actualstart not yet reported; Web has neither running nor reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -968,5 +968,12 @@
   "recovery4dAdmission": "recovery01-4d-admission.json",
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
-  "recovery4dFinding": "Route-onlyRestore row locator is not unique; exactDOM/useridentity seam pending minimalreadonlyassessment, no sourcefix dispatched"
+  "recovery4dFinding": "Root accepted bounded render identity + exact draftId design; original panels two-file source-only dispatch active, no runtime.",
+  "currentWindowEvidence": "web-svc07-window-handback-2108.json",
+  "webActualHolder": null,
+  "webGate": null,
+  "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
+  "dperf04CurrentPreparation": "SOURCE_PREPARATION_REOPENED_FOR_LATE_STOP; original W01 source-only repair; no gate or holder",
+  "dperf04PreparationEvidence": "dperf04-late-stop-dispatch.json",
+  "webReservation": false
 }

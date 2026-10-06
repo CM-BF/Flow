@@ -1,0 +1,121 @@
+{
+  "state": "READONLY_READY_CANDIDATE_NOT_ADMITTED",
+  "claimObservedAt": "2026-10-06T21:01:31.118Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "docs/evidence/wpf-dperf04",
+      "plans/wpf-dperf04-summary-detail"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-summary-detail",
+    "origin": "new",
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner",
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "createdAt": "2026-10-06T16:10:21.626Z",
+    "updatedAt": "2026-10-06T16:10:21.626Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "head": "12ac7db8bfa9037b16432d848d967c85c6389e05",
+  "clean": true,
+  "bindingHead": "12ac7db8bfa9037b16432d848d967c85c6389e05",
+  "implementation": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "sources": 7,
+  "readonlyPins": 32,
+  "candidatePins": 6,
+  "mismatches": [],
+  "boundary": {
+    "decision": "ACCEPTED",
+    "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+    "recordedAt": "2026-10-06T20:01:14.705781+00:00",
+    "recordedBy": "Web co-lead /root, pursuant to explicit GO decision",
+    "authority": {
+      "sourceThreadId": "01a10e15-b908-7a72-b8c0-222a26bf93ff",
+      "receivedVia": "codex_delegation inbound to this Web coordination task",
+      "decision": "GO explicitly accepted this native Chrome sibling boundary after readingB3 and R01 native-launch evidence; delegated co-lead exact runner/worker binding after SCAN-ERROR/source review; DPERF04 same launch boundary accepted with its own reviewed candidate, budget and window.",
+      "furtherGOOrUserConfirmationRequired": false
+    },
+    "conditions": [
+      "Chrome keeps its own native sandbox and this attempt owned short profile/cache/tmp/crash paths, explicit environment and owned processgroup.",
+      "Node fixture keeps the reviewed custom write/localhost-network sandbox.",
+      "Chrome no longer has the prior custom outer OS write/egress restriction; this is explicitly not equivalent confinement.",
+      "No personal profile, existingtabs, credentials or provider operations are authorized.",
+      "Fresh exact originalclaim/source/head/dependency/resource checks and separately available sharedwindow remain required. This record itself is not a gate or window.",
+      "Old failures, cumulative time and existing retained/scratch/free/cleanup limits are preserved; no blind retry loop."
+    ],
+    "runtime": "NOT_RUN by this acceptance",
+    "currentWindow": "Mika native diagnosis per latestLead message; Web must not start PG/Chrome concurrently.",
+    "task": "WPF-DPERF04",
+    "candidate": "/private/tmp/dperf-b2",
+    "runnerSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+    "workerSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+    "sourceReview": {
+      "path": "/tmp/root-dperf04-45f8-lifecycle-source-review.json",
+      "sha256": "d41be7d5452f0a797a49e337e6627c60df7e8c2abaf04b095a3a77650cb3129a",
+      "scope": "Fixed source/preparation review, no behavior/runtime pass"
+    },
+    "budget": {
+      "spentMs": 0,
+      "remainingMs": 60000,
+      "cleanupReserveMs": 15000,
+      "historicalNodeSpentMs": 3950
+    },
+    "limits": {
+      "scratchObservedMaxBytes": 67108864,
+      "retainedMaxBytes": 8388608,
+      "startFreeBytes": 1207959552,
+      "stopFreeBytes": 1140850688
+    },
+    "scope": "Only this exact reviewed runner and worker boundary; any materially different boundary or launch must remain explicit. Metadata-only sourcehead rebinding does not change these executable hashes."
+  },
+  "bindingSha256": "da8356330f14be29809e64b8bcb73b655067fa5b33e797692d8857b02ae502d5",
+  "manifestSha256": "b23539d520a340feea558b3f05ff96eb8c2e785e023c9242062f990e0e607bb9",
+  "runnerSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+  "candidateState": "PREPARED_NOT_REVIEWED_NOT_RUN",
+  "entry": "summary-detail",
+  "budget": {
+    "previousRuntimeMs": 0,
+    "totalMs": 60000,
+    "workMs": 45000,
+    "cleanupMs": 15000,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "scratchCapBytes": 67108864,
+    "retainedCapBytes": 8388608
+  },
+  "runtimeArtifacts": {
+    "gate.json": false,
+    "gate-consumed.json": false,
+    "result.json": false,
+    "browser-budget.json": false,
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-budget.json": false,
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs": false,
+    "/private/tmp/dperf-b2/consumed-gate.json": false,
+    "/private/tmp/dperf-b2/scratch": false
+  },
+  "runtime": false,
+  "freeSample": false,
+  "remainingAdmission": [
+    "Fresh original b554 v1 nine scopes and actual clean HEAD plus all exact pins",
+    "Explicit shared-window handback coordinated with Lead/Mika; returned F04 alone is not exclusive Web permission",
+    "Promote only reviewed binding state with annotations and recalculate finaldigest/manifest; retain prepared original",
+    "One new free observation and single-use summary-detail-only gate; task-links requires separate later entry/budget binding"
+  ],
+  "recordedAt": "2026-10-06T21:05:10.220168+00:00",
+  "reviewEvidence": "dperf04-45f8-prepared/root-review.json",
+  "ownerStatusIsAuthoritative": true
+}

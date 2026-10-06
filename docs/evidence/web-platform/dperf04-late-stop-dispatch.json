@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-06T21:06:43.434568+00:00",
+  "state": "SOURCE_PREPARATION_REOPENED_ORIGINAL_OWNER_DISPATCHED",
+  "owner": "w01_owner",
+  "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+  "version": 1,
+  "scopeCount": 9,
+  "claimEvidence": "web-p2-source-dispatch-take-observation-2105.json",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "actualHead": "12ac7db8bfa9037b16432d848d967c85c6389e05",
+  "cleanAtDispatch": true,
+  "findingEvidence": "dperf04-late-stop-addendum.json",
+  "priorReadyObservation": "dperf04-browser-ready-readonly-2101.json",
+  "allowedChanges": "Only /private/tmp/dperf-b2 parent preparation/binding/manifest preserving originals, plus original9 own status/plan/evidence; seven product sources remain fixed45f8.",
+  "required": "Immediate FAILED in handler, persisted/exit predicate includes not stopping/no errors, bounded final re-seal and terminalstdout; same cleanup/worker/native boundary; fixed newrunner reviewed then exact GO boundary rebind without newpermission.",
+  "budget": {
+    "spentMs": 0,
+    "totalMs": 60000,
+    "cleanupMs": 15000
+  },
+  "runtimeGate": null,
+  "freeSample": false
+}

@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-06T21:05:10.220168+00:00",
+  "state": "SOURCE_ONLY_DISPATCHED_TO_ORIGINAL_OWNER",
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+  "version": 4,
+  "scopeCount": 21,
+  "claimEvidence": "../web-source-dispatch-take-observation-2101.json",
+  "inputHead": "12955f7d5230ad3ec5f155024bf59eaeb7410d32",
+  "inputClean": true,
+  "finding": "RECOVERY-SAVED-RECORD-IDENTITY/P2",
+  "sourcePaths": [
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "recordPaths": [
+    "plans/wpf-conversation-recovery",
+    "docs/evidence/wpf-conversation-recovery"
+  ],
+  "authority": "Root exact two-file design; followup_task activated original panels after fresh D04 and status/HEAD read. No new task/claim.",
+  "preserve": "Other17 source, journal/App/restore authority and all existing raw; no first/nth, dedupe/delete, hidden-only user distinction or relaxed assertions.",
+  "next": "Fixed minimal delta + normal owner metadata/source manifest/push/clean; independent source review before any fresh browser admission.",
+  "runtimeGate": null,
+  "tests": false,
+  "types": false,
+  "freeSample": false,
+  "focusAddendum": {
+    "recordedAt": "2026-10-06T21:06:43.434568+00:00",
+    "finding": "RECOVERY-RETURN-FOCUS/P2",
+    "evidence": "root-focus-review.json",
+    "claimEvidence": "../web-p2-source-dispatch-take-observation-2105.json",
+    "instruction": "Same two-file source-only dispatch; capture real invoker before modal autofocus, restore normal close only to connected/visible/permitted opener; no focus on revoked/hidden workspace, clear on teardown. Preserve Enter/Escape/toBeFocused test; no manual focus or authority change."
+  }
+}

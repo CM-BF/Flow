@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-06T21:05:10.220168+00:00",
+  "authority": "Execution Lead inbound relayed by root, not manager service/free/process sampling",
+  "state": "F04_CLEANUP_RETURNED_NO_KNOWN_SHARED_HOLDER",
+  "reportedCleanupCompletedAt": "2026-10-06T20:59:20Z",
+  "cleanup": {
+    "dedicatedDatabase": "normal cleanup completed",
+    "ownedTmp": "normal cleanup completed",
+    "ownedGroupsAbsent": 3,
+    "connections": []
+  },
+  "priorRun": {
+    "selected": 1,
+    "passed": 0,
+    "seconds": 26.512,
+    "tasks": 0,
+    "provider": 0,
+    "outcome": "FAILED retained"
+  },
+  "web": {
+    "activeRuntime": false,
+    "gate": null,
+    "freeSample": false
+  },
+  "limitation": "No new Web exclusive handoff inferred. Lead/Mika coordination and original fresh admission still required. Recovery source repair not ready.",
+  "personal": "No Web personal operation; Lead personal publication seam remains source preparation, not executed."
+}

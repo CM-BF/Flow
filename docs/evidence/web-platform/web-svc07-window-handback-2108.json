@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-06T21:07:04.751449+00:00",
+  "state": "WEB_ACK_NO_RUNNING_OR_RESERVATION_WINDOW_YIELDED_TO_MIKA_SVC07",
+  "authority": "Mika direct inbound relayed by root; Lead authorization for one SVC07 HTTP journey. This record is Web handback, not a claim about Mika actual execution.",
+  "target": "35f78c8b1edc67f1646b395dd62bc1cf389ebef9",
+  "requestedBound": {
+    "maximumMs": 60000,
+    "maximumPgConnections": 12,
+    "dedicatedNewDatabase": true,
+    "dynamicPort": true,
+    "Chrome": false,
+    "provider": false
+  },
+  "web": {
+    "running": false,
+    "reserved": false,
+    "gate": null,
+    "PG": false,
+    "Chrome": false
+  },
+  "mikaActualStart": "NOT_REPORTED",
+  "mikaNext": "Own fresh PG/disk/claim and single gate before execution; actual cleanup handback required",
+  "webQueue": "Recovery source repair and DPERF04 preparation repair remain after this window; no reservation",
+  "externalSend": false,
+  "freeSample": false
+}

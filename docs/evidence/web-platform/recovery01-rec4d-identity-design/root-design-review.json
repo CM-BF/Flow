@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T20:59:27.396665+00:00",
+  "verdict": "ACCEPTED_SOURCE_FINDING_AND_BOUNDED_REPAIR_DESIGN",
+  "finding": "RECOVERY-SAVED-RECORD-IDENTITY",
+  "priority": "P2",
+  "fixedSource": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "metadata": "12955f7d5230ad3ec5f155024bf59eaeb7410d32",
+  "research": {
+    "report": "/private/tmp/recovery-rec4d-restore-identity-readonly/report.md",
+    "sha256": "fc52b098eab80288d7cefaa19531a3df2e9906952912e9a1efa3ce8f2a0d3fef",
+    "manifest": "/private/tmp/recovery-rec4d-restore-identity-readonly/manifest.json",
+    "manifestSha256": "0e78e2c0a95631cdd6d024bfcceee67e7f61d03e1a3ff93a64a6b026ec2aeb2a"
+  },
+  "confirmed": "Recovery storage is keyed by namespace plus id=draft:viewKey, whereas UI and two browser locators reduce saved drafts to routeId. Legitimate same-route drafts cannot be distinguished in current rendering. React key is not DOM identity.",
+  "causalLimit": "A fresh view UUID after reload can create another saved record, but actual raw did not retain records. Do not declare that path the unique cause of rec4d ambiguity.",
+  "allowedRepairFiles": [
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "managerPrerequisite": "Fresh original6ff v4/21 exact claim and original owner dispatch before project writes; original plan/status/review/evidence included. No new task or shared contract.",
+  "implementationRequirements": [
+    "Expose exact local record identity as controlled row data attribute. Keep existing workspace.restore(record) ownership and version/generation/namespace validation unchanged.",
+    "Give the user a short plain-text draft preview or explicit empty/invalid fallback, original saved-local time, intent and material counts where valid. An optional collapsed record identity resolves otherwise identical summaries. Do not fetch content or render internal IDs as dominant UI.",
+    "Summary display must tolerate unknown Json shape and invalid Date, escape plain text, bound Unicode preview and narrow layout; do not mutate data or normalize persistent records.",
+    "At both reload and second-tab Restore, use the exact already-captured draftId and explicitly assert exactly one matching row; retain kind/route/preview checks. No first/nth, suppression, dedupe, deleting other records or switching to current draft.",
+    "Retain original text/intent/file order, no auto-POST/content prefetch, CAS and original ACK assertions. Original failure and prior50 evidence stay unchanged.",
+    "Optionally retain a small diagnostic of record id/viewKey/route/version and empty/nonempty/material counts, with a fixed row/byte bound, excluding full text, frozen command bodies and credentials. This is diagnostic only, never substitute for UI Restore."
+  ],
+  "acceptance": [
+    "Root independent review of fixed two-file delta and all other17 unchanged; original fullfeature remains NOT_STARTED/UNKNOWN.",
+    "No 50/types rerun for render/locator-only delta absent an identified need. Existing browser subset with added row visibility/identity assertions supplies meaningful validation after separate admission.",
+    "Real browser is NOT_RUN until fresh final19 pins, source/preparation reviews, resource checks, controlled admin input and separately granted shared window. Prior25520.435 spent, futureinteger maximum64479 includes15000 cleanup."
+  ],
+  "cleanCode": "Single identity preserved from persisted record through render and test; no extra persistence model, summary registry or generic abstraction; render-only display fallback does not swallow recovery execution errors.",
+  "runtime": "NOT_RUN",
+  "projectWrites": false
+}
