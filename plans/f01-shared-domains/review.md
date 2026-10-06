@@ -1,3 +1,9 @@
+# 当前连接会话共享传输审查
+
+Review target commit: 5be830e2614d45dbaa023e98923fc74f470b37ec
+
+状态 NOT_STARTED。3source/3raw/1固定DTO，见[browser-session-client-manifest](../../docs/evidence/f01/browser-session-client-manifest.json)。初始3red→新3+旧51通过与types0；仅传输，不覆盖领域或浏览器。下列批准仅其历史target。
+
 ## 当前附件清理增量独审
 
 Review target commit: f04cb29633ca678b35aa423e02a16953add0cfba

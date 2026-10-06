@@ -72,3 +72,5 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 - [x] **F01-35** 原生工程用途配置公共薄传输与严格解码；不把runner声明当host资格或真实模型写入。
 
 - [ ] **F01-36** X01共享静态安装库正式workspace消费者与固定依赖lock接线；具体安装/loader独立owner，不重复实现。
+
+- [ ] **F01-37** 连接会话三方法与统一HTTP/SSE Cookie传输、固定028领域接收后的生产鉴权接线；父目标为WPF-MATURE-06，旧Bearer与CLI保持，公开thinclient不先冒领域/浏览器完成。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:56 UTC / main280289 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T13:16:16.945431+00:00 / maincde6646 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 已审ENG01H合同916e；共享实现79b569a14d14c218874781e2d05ae6e42e234ce2 |
+| 工作基线 / HEAD | 领域DTO31824d8 / 共享target5be830e2614d45dbaa023e98923fc74f470b37ec |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | offline lock/frozen install/实际resolution exit0；无生命周期脚本或个人服务操作 |
+| 检查状态 | 新HTTP/SSE3 + 既有client/ACK51 =54通过；root类型检查0；无PG/provider/个人操作 |
 | 已集成main状态 / HEAD | ENG01H + native工程薄client已main280289；X01依赖待与leaf独立批准后接收 |
-| Review | NOT_STARTED：X01三共享依赖文件；此前79b thinclient已审main280289 |
-| 实现目标 | f63502e26d44f33a86a01e98761b22aefbd5fa60 |
-| 实现范围 | apps/runner/package.json, apps/server/package.json, pnpm-lock.yaml |
+| Review | NOT_STARTED：连接会话HTTP/SSE传输；X01依赖独审并行，历史批准范围保留 |
+| 实现目标 | 5be830e2614d45dbaa023e98923fc74f470b37ec |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/browser-session.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 原生工程公共接口已进入主线；插件模块已具备明确的本地依赖来源和安装记录。 |
-| 下一可用交付 | 独审固定依赖接线，交插件owner运行真实安装与loader检查。 |
+| 当前产出 | 连接会话的普通读取、写入和持续观察已使用同一明确鉴权方式；旧命令行方式保留。 |
+| 下一可用交付 | 独审共享客户端，并接入中心已验证的会话与撤销规则。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -178,3 +178,5 @@
 2026-10-06 12:52 UTC：F01 v33已交回events.ts给S01P05；[原子回执](../../docs/evidence/f01/s01p05-events-handback.json)。server/runner manifest与lock仍本owner短单写窗口处理X01正式workspace依赖，不阻其他源码领取。
 
 | F01-36 | in-progress | Lead | [插件安装模块依赖](../../docs/evidence/f01/plugin-runtime-dependency-manifest.json)；只3共享路径和正式workspace输入，待独审 |
+
+| F01-37 | in-progress | Lead | 固定领域DTO31824d8；claim v34新增client直接检查；不操作个人服务。 |
