@@ -1,6 +1,6 @@
 # WPF-RELEASE03 当前前端发布兼容验证
 
-状态：in-progress。创建：2026-10-06 14:40:27 UTC；更新：2026-10-06 15:07:34 UTC。直接父任务 WPF-MATURE-01；owner w01_owner / gpt-6-astra / ultra。遵循[模块与性能规则](../../AGENTS.md#modular-design)。
+状态：in-progress。创建：2026-10-06 14:40:27 UTC；更新：2026-10-06 15:29:28 UTC。直接父任务 WPF-MATURE-01；owner w01_owner / gpt-6-astra / ultra。遵循[模块与性能规则](../../AGENTS.md#modular-design)。
 
 ## 目标与固定输入
 
@@ -10,7 +10,7 @@
 
 - fixture：实际 createServer、单随机专库、公开 FlowClient 原生事件模拟、精确静态字节 HTTP host、透传代理和幂等清理；不复制 server/decoder/发布框架。
 - browser：先以独立history入口跑 attachment-only/mixed context_observation（任一失败两项raw后停止/清理，B=NOT_RUN）；A全绿且另获全矩阵准入才可进入真实 App v1/v2 Send、原键丢 ACK 恢复、Queue、新草稿和协商；根据实际结果生成原 SVC 四 observation，不硬填通过。
-- 当前仅源码授权：依赖链接、PG、Chrome、任何兼容运行须独立资源及合法 scope 门槛。未来累计≤180秒（至少20秒清理）、单PG+单Chrome、证据≤8MiB、0provider。失败启动也计时并保留；任意 history/清理失败禁止生成可发布全绿 report。
+- 每次运行须独立资源及合法 scope 门槛；本次已授权A-only单专库HTTP运行结束，后继Chrome/重跑未授权。未来累计≤180秒（至少20秒清理）、单PG+单Chrome、证据≤8MiB、0provider。失败启动也计时并保留；任意 history/清理失败禁止生成可发布全绿 report。
 - 已知362 history producer的附件来源缺口保持原样，先实际验证并报告，不导入 cde 修复、不禁用观察。source scopes 仅两新 test + 此 plan/evidence。
 
 ## TODO
@@ -22,3 +22,7 @@
 ## 完成条件
 
 全部行为必须绑定后端固定源和正式 descriptor；未知/失败不得伪作兼容。只取得源码/部分失败证据时不得勾完运行或发布。主线接收与个人实际运行分开。唯一进度见[status](status.md)，独审见[review](review.md)。
+
+## 实际阶段结果
+
+2026-10-06 15:27 UTC唯一A-only运行两项失败、资源清理完成；累计3,874ms。B仍NOT_RUN，RELEASE03-02不能勾全。原始证据见[状态](status.md)，原后台owner最小修复及新固定输入/准入是后继条件；不在本片改server或发布。

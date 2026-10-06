@@ -1,6 +1,6 @@
-# RELEASE03 固定组合验证（源码准备）
+# RELEASE03 固定组合验证（A实际失败，B未运行）
 
-当前完成固定源码草案与 17 个精确依赖链接，并按后继裁决增加先运行 A 两项历史的独立入口。已执行一次定向strict noEmit（1.84秒/exit0）；没有执行产品运行、PG、Chrome、build 或兼容旅程，不能作为发布通过证据。432b源码独立条件APPROVED，完整兼容审查NOT_STARTED；15:07管理fresh资源门槛未通过，未生成gate。
+当前固定432b已完成唯一一次 A-only 真实HTTP检查：attachment-only与mixed两项均失败，复现固定362的附件历史缺口；专库/worker清理成功。累计3,874/180,000ms，B/Chrome NOT_RUN，0provider，无SVC全绿报告或发布操作。见[本次结果及原样hash](history-result-152729.json)。原strict noEmit成功与源码条件批准保持其历史范围，不等业务兼容通过。
 
 ## 固定输入
 
@@ -16,9 +16,9 @@
 
 ## 准入与资源
 
-当前不可运行。未来 manager/root 明确准入后才能提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、mode（history或all）、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，mode=history单次至多60000ms（含20000ms清理），start>=1GiB+32MiB、stop<=1GiB+16MiB；mode=all保留start128MiB/stop64MiB附加余量。monitor失败也停工作。监视先于business import/CREATE启动，关键await后fresh checkpoint防止已stop后继续spawn；worker import/factory/listen/manifest await亦核abort。250ms轮询不是硬配额，无法排除其他进程/OS并发。Lead此前同factory专库12,360,727B是实测数据库大小，不是PG/WAL物理增量上限；32MiB给A-only一个受监督的增量窗口，不能源级证明瞬间peak。A不生成Chrome profile、不build/clone/install，retained证据仍总8MiB，剩余约1GiB用于未知并发/清理；fresh资源准入仍必要。
+本次唯一A准入已消费完；后续运行仍需 manager/root 新明确准入提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、mode（history或all）、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，mode=history单次至多60000ms（含20000ms清理），start>=1GiB+32MiB、stop<=1GiB+16MiB；mode=all保留start128MiB/stop64MiB附加余量。monitor失败也停工作。监视先于business import/CREATE启动，关键await后fresh checkpoint防止已stop后继续spawn；worker import/factory/listen/manifest await亦核abort。250ms轮询不是硬配额，无法排除其他进程/OS并发。Lead此前同factory专库12,360,727B是实测数据库大小，不是PG/WAL物理增量上限；32MiB给A-only一个受监督的增量窗口，不能源级证明瞬间peak。A不生成Chrome profile、不build/clone/install，retained证据仍总8MiB，剩余约1GiB用于未知并发/清理；fresh资源准入仍必要。
 
-未来命令形式（未运行）：`TSX_DISABLE_CACHE=1 FLOW_RELEASE03_GATE=<manager-owned-admission> /opt/homebrew/opt/node@24/bin/node --import tsx apps/web/test/web-current-preview.browser.ts`。没有install、build、复制源码/依赖步骤。
+实际运行沿此命令形式（本次gate原样保留在[history-gate](history-gate-152729.json)，后续不得复用）：`TSX_DISABLE_CACHE=1 FLOW_RELEASE03_GATE=<manager-owned-admission> /opt/homebrew/opt/node@24/bin/node --import tsx apps/web/test/web-current-preview.browser.ts`。没有install、build、复制源码/依赖步骤。
 
 原始报告保留在本evidence的runs/<唯一run>。保留证据总量<=8MiB（含两脚本对应run日志/原始HTTP/JSON/截图），过程日志另限1MiB，HTTP累计2MiB/1000records/单JSON128KiB。Chrome临时profile只在自有scratch，作为运行物理资源受余量观察，清理后不作为保留证据；不是8MiB峰值保证。只借第三方realpath只读；17links已停止写入且claim收窄回4。[链接结果](dependency-link-result.json)、[收窄回执](dependency-narrow-receipt.json)。
 
@@ -28,6 +28,10 @@
 
 注册runner的临时token在wire持久化前删除（原响应hash保留），Authorization不记录；临时owner/runner token只在进程内与自有待删除Chrome profile中使用。报告不引用用户凭据、个人目录或用户tab。
 
-## 本次未运行事实
+## 15:07 历史未运行事实
 
 [source-review-432b](source-review-432b.json)为root只读源码批准，不是运行/发布批准。[history-admission-not-run](history-admission-not-run.json)为manager15:07:01Z原样观察：free1,058,885,632B<start1,107,296,256B，claim/source/17links通过但gate=null。没有启动PG/HTTP/Chrome，业务累计0；不重采重试，窗口交回Lead，等待未来明确fresh准入。
+
+## 15:27 唯一A运行与失败隔离
+
+[管理fresh准入](history-admission-152729.json)、[本人live claim](history-owner-live-1527.json)、[完整结果索引](history-result-152729.json)。两项均按真实factory/client/HTTP执行，并各自保留上下文与wire，不因第一项失败跳过第二项。attachment-only的事件HTTP500；mixed的事件HTTP200但历史只标记知识sources，不能代表完整v2材料。A失败按固定入口停止，B/原key App retry/Queue均NOT_RUN，不能给正式前端与362整组背书。原raw不改，不追加自动重跑。

@@ -2,42 +2,42 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 15:07:34 UTC |
+| 最近更新时间 | 2026-10-06 15:29:28 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 46395a526ae597958cf3ba801af39e1dbb65d70e（本次metadata提交前已核） |
-| 工作树dirty状态 | 15:07核HEAD46395为clean；随后仅记录源码批准与资源未准入，最终提交回执另核，不将此编辑时点当提交后dirty |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / e212c2de2289a3d3bc3bc173b75050fb4d214270（本次运行前clean已核） |
+| 工作树dirty状态 | 运行前HEAD e212c2de为clean；本段仅新增原始运行证据及计划元数据，提交后clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN（实际兼容矩阵）；定向strict noEmit PASSED，见证据 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；432b仅源码条件批准，实际兼容尚未运行 |
+| 检查状态 | FAILED 432b09ae1b552a68cc4720b369e42ed80bc942c9（实际A两项均失败）；B/Chrome NOT_RUN；原定向strict noEmit PASSED |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；432b源码条件批准，实际A失败；B未运行 |
 | 实现目标 | 432b09ae1b552a68cc4720b369e42ed80bc942c9 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 兼容检查脚本已审查，因磁盘余量不足尚未运行 |
-| 下一可用交付 | 给出新前端与现有后台的真实兼容结果 |
-| 当前阻塞 | ACTIVE: 当前磁盘余量未达到安全启动门槛，真实兼容检查未运行 |
+| 当前产出 | 真实兼容检查已复现附件历史缺陷，运行资源已清理 |
+| 下一可用交付 | 后台最小修复后继续未完成的真实前端验证 |
+| 当前阻塞 | ACTIVE: 固定后台的附件历史记录不兼容；需原后台owner最小修复与新的明确准入，不能发布 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，完整兼容审查NOT_STARTED；432b源码条件APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
-| RELEASE03-02 | pending | w01_owner | 0兼容运行；180秒预算尚未使用；依赖链接窗口20.132ms不是兼容运行 |
-| RELEASE03-03 | pending | w01_owner | 432b源码已固定/条件独审；完整兼容验收与主线交付待运行 |
+| RELEASE03-02 | pending | w01_owner | [实际A结果](../../docs/evidence/wpf-release03/history-result-152729.json)：2/2失败，累计3,874/180,000ms；B未运行 |
+| RELEASE03-03 | pending | w01_owner | 432b源码条件独审已通过；root已独立核实际A失败原始证据；B/主线交付未完成 |
 
 ## 架构影响与未验
 
-仅独立验证脚本，产品/共享/原 SVC 工具不变，无架构图更新。已知后端附件 history 缺口必须先测，不将受理成功当全链兼容。0安装/build/PG/Chrome/provider/个人入口操作。
+仅独立验证脚本，产品/共享/原 SVC 工具不变，无架构图更新。已知后端附件 history 缺口必须先测，不将受理成功当全链兼容。本轮实际单专库HTTP原生事件模拟；0安装/build/Chrome/provider/个人入口操作。
 
 ## Dashboard 与交接
 
-唯一 source 是本 status；首提交交管理登记，当前未声称真实服务卡已上线。领取见原样回执；运行权限尚未开放。
+唯一 source 是本 status；首提交交管理登记，当前未声称真实服务卡已上线。领取见原样回执；本次唯一A授权已执行完并交回窗口，不自动续跑。
 
 ## 历史来源与轻量准入
 
@@ -60,3 +60,11 @@
 root于15:06:08Z独立只读批准432b的A-only资源delta，0blocking；该结论仅允许通过后续fresh准入的一次history运行，不是业务/兼容/发布通过，见[原样审查](../../docs/evidence/wpf-release03/source-review-432b.json)。
 
 manager于15:07:01Z一次实测free1,058,885,632B，低于启动1,107,296,256B，也低于1GiB。原四scope v3/source/17只读依赖通过，但没有生成gate，PG/HTTP/Chrome/B均NOT_RUN，业务累计仍0/180秒；[原样准入](../../docs/evidence/wpf-release03/history-admission-not-run.json)。这是共享磁盘观察，不归因本任务。运行窗口由管理立即交回Lead；本人不重采、不重试，保持两脚本固定，待新明确资源准入。
+
+## 2026-10-06 15:29:28 UTC 唯一 A-only 实际结果
+
+15:27:29管理fresh准入通过；本人live核v3原4scope与两源码432b/clean后，仅执行history模式一次。15:27:55.348Z开始、15:27:59.219Z清理结束，runner exit1，累计3,874/180,000ms，剩余176,126ms。attachment-only原生context-observation POST实际HTTP500、history.latest=null；mixed实际accepted1但materials仍known且仅知识sources，附件遗漏，与已知362缺口一致。两项分别保留原始context/history/wire，非资源未准入，非前端App红。
+
+[结果与原样hash](../../docs/evidence/wpf-release03/history-result-152729.json)、[history raw](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json)、[wire raw](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json)、[cleanup](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json)、[budget](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json)。专库marker确认后删除，唯一worker PID381 exit0，cleanup/errors=[]，supervisor exit1来自业务断言。B/Chrome NOT_RUN，compatibilityId=null，未生成/导入SVC全绿报告，0provider。窗口已交回；脚本及固定产物不改，不重试。仅原后台owner处理最小修复，后续必须固定新输入/准入。全机minimumFree1,103,908,864B与freeAtEnd1,102,282,752B只作共享观察，不归因本次物理写入。
+
+root已只读独立核10份raw共80,470B，见[原样结果审计](../../docs/evidence/wpf-release03/history-root-review-1527.json)；Lead已接收兼容失败与清理事实。此不构成完整兼容批准。新的最小后端组合由原owner固定提供，不在本树自行覆盖共享源码。

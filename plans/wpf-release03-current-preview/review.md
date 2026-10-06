@@ -6,13 +6,13 @@ Review target commit：432b09ae1b552a68cc4720b369e42ed80bc942c9
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
-完整兼容审查范围：两新验证脚本及相应固定输入/原始运行证据。实际矩阵未运行，完整兼容审查仍NOT_STARTED；已完成的源码条件批准单独如下。
+完整兼容审查范围：两新验证脚本及相应固定输入/原始运行证据。实际A已失败、B未运行，完整兼容审查仍NOT_STARTED；已完成的源码条件批准单独如下。
 
 ## 后续只读任务
 
 核 actual factory/client/contracts 来源、正式 format2 全 descriptor、history attachment-only/mixed门槛、实际App原key/body与新稿保护、生命周期/累计预算/清理、SVC observation条件。绑定固定commit；问题交作者修，原始失败不覆盖。检查与未执行范围分别列明；个人发布不在此批准内。
 
-当前0产品运行；整体业务结果未知。原997d定向strict noEmit通过，未对432b重复。
+当前A两项业务失败且清理完成，B未验；无兼容通过结论。原997d定向strict noEmit通过，未对432b重复。
 
 ## 原checkpoint限定审查
 
@@ -25,3 +25,7 @@ Base：362af3bac77541e5a60979326bcf4d4b8c947915
 未执行PG/HTTP/Chrome/build/provider，没有验证实际清理。32MiB仅基于此前12,360,727B数据库观察的准入余量，不是PG/WAL/OS物理峰值硬保证；250ms轮询不等硬配额。budget.complete不等cleanup成功。原997d noEmit1.839676秒证据复用，未重跑本delta。
 
 随后15:07:01Z管理fresh准入因空间不足拒绝，gate未生成；[准入原文](../../docs/evidence/wpf-release03/history-admission-not-run.json)。两项历史与B均NOT_RUN，不能制作或导入SVC全绿报告。
+
+## 2026-10-06 15:29:28 UTC 实际A证据待核
+
+一次已授权history-only运行已结束，两项失败，完整原始索引见[history-result](../../docs/evidence/wpf-release03/history-result-152729.json)。这不是新增源码审查finding或环境错误；需要原后台owner处理已知兼容缺口。B/Chrome未运行，未生成SVC兼容报告。上文15:07无gate为历史时点，不覆盖本次事实。

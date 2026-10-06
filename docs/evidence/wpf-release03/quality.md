@@ -23,3 +23,7 @@
 ## 2026-10-06 15:07:34 UTC 元数据安全点
 
 复用已读clean-code方法，只更新本task计划/状态/审查与原样证据：源码条件批准与未执行兼容分开；记录真实free拒绝、无gate/0运行/窗口交还，不把等待当产品失败，不虚报通过。两源码保持432b，未扩scope/安装/重跑noEmit/PG/Chrome。原JSON逐字复制，最终检查限定metadata链接/parser/差异，提交后clean另核。
+
+## 2026-10-06 15:29:28 UTC 实际运行后clean-code/证据安全点
+
+固定432b两源码未改；仅归档唯一A准入、本人live核、真实两项失败及完整清理。准确区分历史NOT_RUN与本次业务FAILED、A与未跑B、worker exit0与supervisor业务exit1；不把cleanup成功当compatibility成功、不输出SVC全绿报告。raw history/wire/process/budget/cleanup原字节保留，以独立索引记录hash。累计预算不重置，不补跑types/browser。下一步仅元数据parser/链接/scope和normalpush回执，后台修复交唯一owner。

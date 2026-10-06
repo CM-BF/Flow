@@ -25,9 +25,9 @@
       "target": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
       "currentDelta": "not rerun by explicit instruction; source-only resource guard changes"
     },
-    "PG": "NOT_RUN",
+    "PG": "EXECUTED: one owned isolated database; cleanup removed=true/errors=[]",
     "Chrome": "NOT_RUN",
-    "compatibility": "NOT_RUN"
+    "compatibility": "FAILED A-only (2/2 failed); B NOT_RUN; no SVC compatibility report"
   },
   "executionMode": "A-only first; B NOT_RUN unless independently admitted and A passed",
   "resourcePolicy": {
@@ -43,5 +43,6 @@
     },
     "sourcePeakProof": false,
     "basis": "Lead prior same-factory database size12,360,727B; WAL/OS/other-process peak unknown; 250ms monitor is not hard quota"
-  }
+  },
+  "runEvidence": "history-result-152729.json"
 }
