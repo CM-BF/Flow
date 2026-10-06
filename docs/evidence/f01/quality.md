@@ -87,3 +87,7 @@ Mika发现定时扫描与手动领域测试竞争；已交原owner以显式facto
 2026-10-06 04:57 UTC：实际组合接收CHAT04 fac202测试驱动开关+Web reader5acc+profile模块4f；[默认/手动factory分离定向1/1](queue-scan-control-checks.txt)验证显式false确被生产factory读取，关闭后下次默认启动恢复同等待项。此前11/11仍为对应旧测试版本，分别报告不混成一次套件。root与Web组合类型检查见queue-profile-combination-typecheck.txt / queue-profile-web-typecheck.txt；零额外模型。正式独审结论已写review，main合入与常驻服务升级分开。
 
 2026-10-06 05:13:17 UTC：O05 client固定e28d547ed3b446a252595bd1960953382ffa4dd8，沿本地find-skills/codebase-design/clean-code，复用现request小Interface；真实HTTP1/1(38ms、suite218ms)+root typecheck。red因方法缺失为真实失败，未改领域。source+logs见graph-proposal-client-manifest.json，待独立review，无模型/PG调用。
+
+## O05生产挂载 2026-10-06 05:19 UTC
+
+固定208a928969c8e343ea09ecc06db80a6808bbbd74，三文件：014 await在scheduler前、owner鉴权后路由；真实公开client→PG生产入口；旧012/013迁移测试改为旧1..13行及applied_at完整不变、版本唯一，允许合法后继迁移。取得F01 claim v11追加旧迁移test后修改。先实证硬编码13红例，保留red。组合6领域+1迁移通过，新client初次仅JSON对象key顺序断言失败（保存7/8）；排序比较后1/1。类型检查发现缺显式workspaceId，补与server默认相同personal后finaltypecheck及同1client重新通过。8个不同用例最终均有绿证据，不称一次整套8/8。无模型、无103旧套重跑。独立manifest绑定当前源与所有失败/成功输出。clean-code同stack本地方法复用：保持薄接线，领域未手改，错误与auth沿原逻辑；迁移消费者不再耦合未来总数。

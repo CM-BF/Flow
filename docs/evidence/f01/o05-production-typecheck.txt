@@ -1,0 +1,7 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+> tsc --noEmit
+
+packages/client/src/graph-proposal-production.test.ts(17,48): error TS2345: Argument of type '{ title: string; }' is not assignable to parameter of type '{ workspaceId: "personal"; title: string; }'.
+  Property 'workspaceId' is missing in type '{ title: string; }' but required in type '{ workspaceId: "personal"; title: string; }'.
+ ELIFECYCLE  Command failed with exit code 2.
