@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 08:06 UTC |
+| 最近更新时间 | 2026-10-06 08:09 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution |
@@ -19,7 +19,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 单节点只读执行入口已通过独立审查，等待正式接线与主线接收 |
-| 下一可用交付 | 正式接线后交付可调用入口；真实模型验收另有候选预算 |
+| 下一可用交付 | 正式接线后交付可调用入口；单个合成文本的原生验收方案已备，执行预算未批 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 新增owner单节点原生受理Interface；复用任务/冻结输入；Lead统一client与生产挂载 |
@@ -36,3 +36,5 @@ claim34990d98-4a70-4464-b0e2-a3bf561ab053 v1已于07:50:11.346Z提交；6scope�
 2026-10-06 08:00 UTC：作者固定实现7ddd763a2e2274c040dea7e114dcf6d6da226cf6，27个不同检查为新9与旧18分两批，全部通过；固定raw/manifest见[交付](../../docs/evidence/o09/README.md)。真实provider、NL语义、Web/CLI和生产mount未运行，SDK注入不冒充native调用。架构影响由Lead统一登记，claim保留回修；不自审批准。
 
 2026-10-06 08:06 UTC：Lead独立只读APPROVED 7ddd763a2e2274c040dea7e114dcf6d6da226cf6，完整8源码/新测试/相关调用链，8+11+13 hash一致；核作者27不同与tsc/清理，未重跑/0provider。已进入integration阶段。全产品源码明确停止写入，claim34990d98v1保留待main；仅计划/证据内准备0query候选，不自行调用模型或改服务。
+
+2026-10-06 08:09 UTC：批准转录提交a38157e31437348a49fa02626336875c4e5574cc已clean；[单child原生验收候选](../../docs/evidence/o09/native-acceptance-candidate.md)完成。只读对照当前profile/adapter/owner Interface，固定合成材料与机械/语义分层，明确新预算未批、尚无专属登记profile/最终挂载SHA；0新query、0服务操作、0新增测试。产品源码继续停写，候选不冒称验收结果。
