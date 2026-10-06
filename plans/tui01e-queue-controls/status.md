@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls |
 | Branch | codex/tui-queue-controls |
 | 工作基线 / HEAD | aae1eb1054d75e78273e7c91ed048aeac80195da / e061915676089e0f5198c4816280d1b29614bbca（main接收metadata前HEAD） |
-| 工作树dirty状态 | 产品停写；仅独审批准metadata，提交后clean |
+| 工作树dirty状态 | 产品与metadata已停止；最终提交后clean，release回执另由账本持有 |
 | 工作分支状态 | completed |
 | 本片段交付阶段 | delivered |
 | 实现目标 | 22f0e2c2b702112aa1a5d1b36874b56165cd267e |
@@ -24,7 +24,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED：22f0e2c2b702112aa1a5d1b36874b56165cd267e；历史P2关闭，未重跑 |
-| Claim | 625e77c6-303a-40f2-a665-706b6df986b9 v1，12个实际literal范围，见claim.json |
+| Claim | 历史writer 625e77c6-303a-40f2-a665-706b6df986b9 v1，12 literal；全部停写，release结果 /tmp/flow-tui01e-release-receipt.json，以账本为准 |
 | 架构影响 | 现公共interaction controller新增队列命令映射与有界轻投影；无中心FSM变更；target 22f0e2c2b702112aa1a5d1b36874b56165cd267e 已集成main，后续架构输入由Lead统一维护 |
 
 | TODO ID | 状态 | Owner | 证据 |
