@@ -13,7 +13,7 @@
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations |
 | Branch | codex/web-conversations |
-| 工作基线 / HEAD | I01最终b5844442699733558a152c12392ea78f26c393a4 / 合同cherry-pick bac6a6efe6fa4866bac4d777ee61b703a0e2c7e3；Lead精确compat输入a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0；typed输入746364ea2581b8c563a09b07560de5e0b63bcab8；实现84242ca1d214f9a9ff369b07c13657918862f226含0d4e outbox；metadata HEAD由Git聚合 |
+| 工作基线 / HEAD | I01最终b5844442699733558a152c12392ea78f26c393a4 / 合同cherry-pick bac6a6efe6fa4866bac4d777ee61b703a0e2c7e3；Lead精确compat输入a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0；typed输入746364ea2581b8c563a09b07560de5e0b63bcab8；首实现84242ca1d214f9a9ff369b07c13657918862f226 / 最终7cbabb737f26b108275e80f1b6cd0425699f3c18，含0d4e outbox；metadata HEAD由Git聚合 |
 | 工作树dirty状态 | 共享冲突按Lead指令解除，输入已独立提交；实现已固定提交并冻结；实现范围clean；本次仅自有metadata/证据更新，实际dirty由Git聚合核验；未覆盖/重置/手改共享 |
 | 工作分支状态 | APPROVED（首批最小持续对话）；后继capability需求仍pending |
 | 检查状态 | PASSED 7cbabb737f26b108275e80f1b6cd0425699f3c18; 本修复projection16+outbox9/typecheck PASS；先前842的33direct/dev11/production11+局部1证据分别保留，未冒充全重跑；真实模型未跑 |
