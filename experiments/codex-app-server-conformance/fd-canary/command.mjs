@@ -24,7 +24,10 @@ export function runOwnedCommand(options, budget, dependencies = {}) {
       if (settled) return;
       settled = true;
       for (const timer of timers) clearTimeout(timer);
-      if (forced) for (const name of ['stdout', 'stderr']) { captures[name].error(); child?.[name]?.destroy(); }
+      if (forced) {
+        for (const name of ['stdout', 'stderr']) { captures[name].error(); child?.[name]?.destroy(); }
+        if (!closeObserved) child?.unref(); // Bounded observation cannot keep CLI alive through an unknown owned child.
+      }
       child?.stdin?.destroy();
       const streams = Object.fromEntries(['stdout', 'stderr'].map(name => [name, captures[name].report(closeObserved)]));
       const pipes = options.stdio === 'pipe';

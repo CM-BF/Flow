@@ -6,7 +6,8 @@ import { runOwnedCommand } from './command.mjs';
 import { decodeReport, compilerInventory } from './report.mjs';
 
 const LIMIT = 2 * 1024 * 1024;
-const RECEIPT_RESERVE = 16384;
+const RECEIPT_RESERVE = 32768;
+const ARCHIVE_RESERVE = 131072;
 const fail = () => { throw new Error('Owned fd diagnostic unavailable'); };
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const identity = stat => ({ dev: stat.dev, ino: stat.ino, directory: stat.isDirectory(), regular: stat.isFile() });
@@ -29,13 +30,18 @@ function durable(file, data, budget, io) {
   const fd = io.openSync(file, 'wx', 0o600);
   try { io.writeFileSync(fd, bytes); io.fsyncSync(fd); } finally { io.closeSync(fd); }
 }
-function makeBudget() {
+function makeBudget(preparedEvidenceBytes, archiveReserveBytes) {
+  if (!Number.isSafeInteger(preparedEvidenceBytes) || preparedEvidenceBytes < 0 || archiveReserveBytes !== ARCHIVE_RESERVE
+    || preparedEvidenceBytes + archiveReserveBytes + RECEIPT_RESERVE > LIMIT) fail();
   let captured = 0; let receipts = 0; let artifacts = 0; const measured = new Map();
+  const reservedTotal = () => preparedEvidenceBytes + captured + artifacts + RECEIPT_RESERVE + archiveReserveBytes;
   return {
-    consume(length) { if (captured + artifacts + length + RECEIPT_RESERVE > LIMIT) fail(); captured += length; },
+    consume(length) { if (reservedTotal() + length > LIMIT) fail(); captured += length; },
     receipt(length) { if (receipts + length > RECEIPT_RESERVE) fail(); receipts += length; },
-    artifact(file, length) { const old = measured.get(file) ?? 0; if (length > old) { artifacts += length - old; measured.set(file, length); } return captured + artifacts + RECEIPT_RESERVE <= LIMIT; },
-    snapshot() { return { captured, receipts, artifacts, measuredBytes: captured + receipts + artifacts, withinMeasuredBudget: captured + receipts + artifacts <= LIMIT, limit: LIMIT }; },
+    artifact(file, length) { const old = measured.get(file) ?? 0; if (length > old) { artifacts += length - old; measured.set(file, length); } return reservedTotal() <= LIMIT; },
+    snapshot() { return { preparedEvidenceBytes, archiveReserveBytes, receiptReserveBytes: RECEIPT_RESERVE, captured, receipts, artifacts,
+      measuredBytes: preparedEvidenceBytes + captured + receipts + artifacts, reservedUpperBound: reservedTotal(),
+      withinMeasuredBudget: reservedTotal() <= LIMIT, limit: LIMIT }; },
   };
 }
 function inventory(root, budget, io, readBytes = true) {
@@ -62,10 +68,10 @@ const healthy = result => closed(result) && result.reason === 'completed' && res
   && (result.streams === null || Object.values(result.streams).every(stream => !stream.incomplete && !stream.truncated && !stream.observerFailed));
 
 /** Import is inert. Caller verifies fixed source/toolchain inputs before invoking this once. */
-export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, toolchain }, dependencies = {}) {
+export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, toolchain, preparedEvidenceBytes = 0, archiveReserveBytes = ARCHIVE_RESERVE }, dependencies = {}) {
   const io = dependencies.io ?? fs; const now = dependencies.now ?? (() => performance.now());
   const command = dependencies.command ?? runOwnedCommand;
-  const start = dependencies.start ?? now(); const startedAt = dependencies.startedAt ?? new Date().toISOString(); const budget = makeBudget();
+  const start = dependencies.start ?? now(); const startedAt = dependencies.startedAt ?? new Date().toISOString(); const budget = makeBudget(preparedEvidenceBytes, archiveReserveBytes);
   const roots = []; const descriptors = []; const result = { startedAt, compileReservations: 0, compileCalls: 0, targetReservations: 0, targetStartsObserved: 0, stages: [],
     targets: ['NOT_RUN', 'NOT_RUN', 'NOT_RUN'], compilerOutputAccounting: 'unknown', cleanupComplete: false, retainedRoots: [] };
   let reserved = false; let allClosed = true; let descriptorsClosed = true; let creatingRoot = false;
@@ -102,7 +108,7 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
   }
   try {
     durable(path.join(evidenceDirectory, 'batch-reservation.json'), { startedAt, compileCalls: 1, maxTargets: 3, totalMs: 60000,
-      maxBytes: LIMIT, meaning: 'Consumed once; failure or unknown forbids retry or a new clock' }, budget, io); reserved = true;
+      maxBytes: LIMIT, preparedEvidenceBytes, archiveReserveBytes, receiptReserveBytes: RECEIPT_RESERVE, meaning: 'Consumed once; failure or unknown forbids retry or a new clock' }, budget, io); reserved = true;
     const allowed = makeRoot('/private/tmp/flow-wpf02-fd-'); const denied = makeRoot('/private/tmp/flow-wpf02-fd-deny-');
     const control = path.join(allowed, 'control'); const state = path.join(allowed, 'state');
     for (const directory of [control, state, path.join(state, 'home'), path.join(state, 'tmp')]) io.mkdirSync(directory, { mode: 0o700 });

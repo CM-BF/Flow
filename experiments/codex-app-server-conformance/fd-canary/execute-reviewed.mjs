@@ -32,25 +32,37 @@ export async function executeReviewed(start = performance.now(), startedAt = new
   }
   for (const item of input.externalInputs) fingerprint(item.path, item);
   fingerprint(input.node.path, input.node);
-  return runFdCanaryBatch({ sourceDirectory, evidenceDirectory, toolchain: input.toolchain }, { start, startedAt });
+  let preparedEvidenceBytes = 0;
+  const preparedPaths = new Set();
+  for (const item of input.preparedEvidence) {
+    if (item.path.startsWith('/') || item.path.split('/').includes('..') || preparedPaths.has(item.path)) throw new Error();
+    fingerprint(path.join(repository, item.path), item); preparedPaths.add(item.path); preparedEvidenceBytes += item.bytes;
+  }
+  if (preparedEvidenceBytes !== input.preparedEvidenceBytes || input.archiveReserveBytes !== 131072) throw new Error();
+  return runFdCanaryBatch({ sourceDirectory, evidenceDirectory, toolchain: input.toolchain, preparedEvidenceBytes, archiveReserveBytes: input.archiveReserveBytes }, { start, startedAt });
+}
+/** Pure final-output gate; serialized bytes are included before writing the only CLI envelope. */
+export function prepareDelivery(result, elapsedMs) {
+  const { withinBudget, ...rest } = result;
+  const payload = JSON.stringify({ ...rest, withinBudgetBeforeCliDelivery: withinBudget, finalElapsedMs: elapsedMs,
+    finalElapsedBasis: 'after-result-persistence-before-cli-write',
+    output: { ...result.output, accountingBasis: 'before-cli-envelope; exact encoded envelope is included in the exit gate' } });
+  const line = `{"cliPayloadBytes":${Buffer.byteLength(payload)},"result":${payload}}\n`;
+  const bytes = Buffer.byteLength(line);
+  const passes = result.measurementComplete && result.cleanupComplete && result.outputAccountingComplete && result.resultPersisted && withinBudget
+    && elapsedMs <= 60000 && result.output.measuredBytes + bytes + result.output.archiveReserveBytes <= 2097152
+    && result.output.receipts + bytes <= result.output.receiptReserveBytes;
+  return { line, bytes, passes };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  process.stdout.once('error', () => { process.exitCode = 1; });
   if (process.argv.length !== 3 || process.argv[2] !== '--reviewed-fd-window') {
     process.stdout.write('{"state":"NOT_RUN","reason":"explicit-reviewed-window-argument-required"}\n'); process.exitCode = 2;
   } else try {
     const start = performance.now(); const startedAt = new Date().toISOString();
     const result = await executeReviewed(start, startedAt);
-    const beforeCliPassed = result.withinBudget;
-    result.withinBudgetBeforeCliDelivery = result.withinBudget; delete result.withinBudget;
-    result.finalElapsedMs = performance.now() - start;
-    result.finalElapsedBasis = 'after-result-persistence-before-cli-write';
-    result.output.accountingBasis = 'before-cli-envelope; exact encoded envelope is included in the exit gate';
-    const payload = JSON.stringify(result);
-    const line = `{"cliPayloadBytes":${Buffer.byteLength(payload)},"result":${payload}}\n`;
-    const cliBytes = Buffer.byteLength(line);
-    const passes = result.measurementComplete && result.cleanupComplete && result.outputAccountingComplete && result.resultPersisted && beforeCliPassed
-      && result.output.measuredBytes + cliBytes <= 2097152 && result.output.receipts + cliBytes <= 16384;
-    process.stdout.write(line, error => { process.exitCode = !error && passes && performance.now() - start <= 60000 ? 0 : 1; });
+    const delivery = prepareDelivery(result, performance.now() - start);
+    process.stdout.write(delivery.line, error => { process.exitCode = !error && delivery.passes && performance.now() - start <= 60000 ? 0 : 1; });
   } catch {
     process.stdout.write('{"state":"NOT_RUN_OR_UNCONFIRMED","reason":"fixed-input-or-host-failure"}\n'); process.exitCode = 1;
   }

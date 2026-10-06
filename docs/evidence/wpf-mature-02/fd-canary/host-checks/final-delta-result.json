@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+    "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+    "-t",
+    "waits for close|bounds TERM|stops a fake output|requires all final CLI"
+  ],
+  "startedAt": "2026-10-06T11:00:16.366022+00:00",
+  "finishedAt": "2026-10-06T11:00:16.729102+00:00",
+  "elapsedSeconds": 0.3629476659698412,
+  "exitCode": 0,
+  "actualCompileCalls": 0,
+  "actualSyntheticTargetStarts": 0
+}

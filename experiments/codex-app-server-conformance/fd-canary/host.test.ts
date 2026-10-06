@@ -6,6 +6,7 @@ import { afterEach, expect, it, vi } from 'vitest';
 import { runFdCanaryBatch } from './host.mjs';
 import { runOwnedCommand } from './command.mjs';
 import { decodeReport, compilerInventory } from './report.mjs';
+import { prepareDelivery } from './execute-reviewed.mjs';
 const sourceDirectory = path.dirname(new URL(import.meta.url).pathname);
 const toolchain = { clang: '/fixed/clang', linker: '/fixed/ld', sdk: '/fixed/sdk', sandbox: '/fixed/sandbox-exec' };
 const owned: Array<{ directory: string; dev: number; ino: number }> = [];
@@ -118,7 +119,7 @@ it('rejects compiler output claims absent from the owned inventory', () => {
   expect(() => compilerInventory(Buffer.from(' "/fixed/clang" "-cc1" "-o" "/owned/missing.o"\n'), '/owned', [], toolchain.clang, toolchain.linker)).toThrow();
 });
 function fakeChild() {
-  const child = Object.assign(new EventEmitter(), { pid: 123, stdin: new PassThrough(), stdout: new PassThrough(), stderr: new PassThrough() }); return child;
+  const child = Object.assign(new EventEmitter(), { pid: 123, unref: vi.fn(), stdin: new PassThrough(), stdout: new PassThrough(), stderr: new PassThrough() }); return child;
 }
 it('waits for close and captures stderr arriving after exit without a real child', async () => {
   const child = fakeChild(); let finished = false;
@@ -135,7 +136,7 @@ it('bounds TERM/KILL/forced close from the first stop and never claims an undrai
   await vi.advanceTimersByTimeAsync(1000); child.emit('error', new Error('must not extend deadline'));
   await vi.advanceTimersByTimeAsync(750); const result = await pending;
   expect(signals.filter(value => value === 'SIGTERM')).toHaveLength(1); expect(signals.filter(value => value === 'SIGKILL')).toHaveLength(1);
-  expect(result.safe).toMatchObject({ closeObserved: false, groupGone: false, reason: 'deadline' }); expect(result.safe.streams.stderr.incomplete).toBe(true);
+  expect(result.safe).toMatchObject({ closeObserved: false, groupGone: false, reason: 'deadline' }); expect(result.safe.streams.stderr.incomplete).toBe(true); expect(child.unref).toHaveBeenCalledTimes(1);
 });
 it('stops a fake output stream at the capture bound without copying extra bytes', async () => {
   vi.useFakeTimers(); const child = fakeChild(); let consumed = 0;
@@ -168,4 +169,27 @@ it('refuses an unquoted or unknown compiler command instead of omitting it from 
   expect(compilerInventory(Buffer.from(valid), '/owned', artifacts, toolchain.clang, toolchain.linker)).toHaveLength(2);
   expect(() => compilerInventory(Buffer.from(valid + ' /fixed/unknown -o /owned/c\n'), '/owned', artifacts, toolchain.clang, toolchain.linker)).toThrow();
   expect(() => compilerInventory(Buffer.from(valid + ' "/fixed/unknown" "-o" "/owned/c"\n'), '/owned', artifacts, toolchain.clang, toolchain.linker)).toThrow();
+});
+
+it('requires all final CLI gates and counts its exact encoded bytes without claiming post-write elapsed', () => {
+  const good = { measurementComplete: true, cleanupComplete: true, outputAccountingComplete: true, resultPersisted: true,
+    withinBudget: true, output: { measuredBytes: 1000, receipts: 1000, archiveReserveBytes: 131072, receiptReserveBytes: 32768 } };
+  const delivery = prepareDelivery(good, 100); expect(delivery.passes).toBe(true); expect(delivery.bytes).toBe(Buffer.byteLength(delivery.line));
+  const parsed = JSON.parse(delivery.line); expect(parsed.cliPayloadBytes).toBe(Buffer.byteLength(JSON.stringify(parsed.result)));
+  expect(parsed.result.finalElapsedBasis).toBe('after-result-persistence-before-cli-write'); expect(parsed.result).not.toHaveProperty('withinBudget');
+  for (const key of ['measurementComplete', 'cleanupComplete', 'outputAccountingComplete', 'resultPersisted', 'withinBudget']) expect(prepareDelivery({ ...good, [key]: false }, 100).passes).toBe(false);
+  expect(prepareDelivery(good, 60001).passes).toBe(false);
+  expect(prepareDelivery({ ...good, output: { ...good.output, measuredBytes: 2097152 } }, 100).passes).toBe(false);
+  expect(prepareDelivery({ ...good, output: { ...good.output, receipts: 32768 } }, 100).passes).toBe(false);
+});
+
+it('reserves prepared evidence and archive tail before any command can consume the runtime budget', async () => {
+  const f = fixture(); const preparedEvidenceBytes = 1900000;
+  const result = await runFdCanaryBatch({ ...f.input, preparedEvidenceBytes }, f);
+  expect(result.output).toMatchObject({ preparedEvidenceBytes, archiveReserveBytes: 131072, receiptReserveBytes: 32768 });
+  expect(result.output.measuredBytes).toBe(preparedEvidenceBytes + result.output.captured + result.output.artifacts + result.output.receipts);
+  expect(result.output.reservedUpperBound).toBe(preparedEvidenceBytes + result.output.captured + result.output.artifacts + 32768 + 131072);
+  expect(result.withinBudget).toBe(true);
+  const invalid = fixture(); await expect(runFdCanaryBatch({ ...invalid.input, preparedEvidenceBytes: 2097152 }, invalid)).rejects.toThrow();
+  expect(invalid.calls).toHaveLength(0); expect(fs.existsSync(path.join(invalid.evidenceDirectory, 'batch-reservation.json'))).toBe(false);
 });
