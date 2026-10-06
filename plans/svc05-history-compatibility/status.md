@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:32 UTC；实际发布结果获独立APPROVED，无新现场采证 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:54 UTC；最终记录已main，本次仅正式停写收口，无新现场采证 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -14,7 +14,7 @@
 | 工作分支状态 | completed |
 | 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736；实际结果target1994182e4f1d7ff0cb5b08d005defe199d5cbf8c独审APPROVED，24命令/25检查/100绑定 |
-| 已集成main状态 / HEAD | 历史同版本恢复已main；本次实际af51/accepting v18+d629/v3发布已独审接收，最终own记录main接收由Lead后续回执（未新采） |
+| 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json) |
 | 实现目标 | 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 |
 | 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs, docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs |
 | 阶段 | M2 |
@@ -24,7 +24,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；Execution Lead独立APPROVED实际结果1994182e4f1d7ff0cb5b08d005defe199d5cbf8c，100绑定无差、0重跑/新probe |
-| Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
+| Claim | cd2d2e57-f633-444b-9797-f83a45624ae2：全范围正式停写，原v2占用由本owner释放；最终released事实以协调账本外部回执为准，无后继写权 |
 | 架构影响 | 既有host维护与独立Web CAS完成实际发布；限定旧intent退役有私有原件/审计，普通idle/API不变。运行af51与Web5069586/d629独立于moving main。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -119,3 +119,7 @@ GO经Lead已批准a7d提案1–5；当前实现/局部证明而非个人执行�
 2026-10-06 21:27 UTC：唯一2125窗口实际24步骤完成，退役checkpoint先于refresh，保留gate先于resume与独立Web CAS。drain166.030s/900s，原2030/2040/211659失败保持；0模型/任务/tab。见[本次实际记录](../../docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/README.md)。窗口已向Lead归还，未新增探针；操作结果待独审，非作者自批。
 
 2026-10-06 21:32 UTC：Execution Lead已独立APPROVED本次实际发布记录，100 fixed/current绑定无差，24命令及25保留检查逐项核验；无新测试/现场采样。05本片交付完成，完整FLOW-001其他后继不在本批准内。原ordinaryNativeChecks false、old claim unknown、历史失败/raw/manifest保持。
+
+### 2026-10-06 21:54 UTC 最终main接收与停写
+
+本片段已交付。最终cef5两完整范围与已接收main及固定后继零差；原24命令/25检查、全部失败和unknown记录保持。所有个人操作已结束，当前只补接收记录并释放占用；未来OPS14接入须由新owner领取准确文件，不能改写既往运行来源。[正式接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)。

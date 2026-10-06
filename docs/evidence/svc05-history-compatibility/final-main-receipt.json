@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-06T21:54:10.046423+00:00",
+  "owner": "assignment_review",
+  "fixedDelivery": "cef5f4c574c1cc38918f95554e8a69cdce8d42bd",
+  "mainReceived": "2af8639ddfa66252ecf97fd6921eaab40389020d",
+  "verifiedSuccessor": "78fb37704d708e3b3b6ea4f1810947f012666196",
+  "verification": "git diff --name-only of both complete own scopes is empty against cef5 at both fixed main commits; content acceptance, no claim of cef5 Git ancestry.",
+  "scopes": [
+    "docs/evidence/svc05-history-compatibility",
+    "plans/svc05-history-compatibility"
+  ],
+  "authoritativeIntegrationReceipt": {
+    "path": "docs/evidence/i02/svc05h-final-controlled-receipt.json",
+    "bytes": 43465,
+    "sha256": "bf281cd38d85b31aa69717f19a0f201e55de669648c225efb29d60f84eebbdc6"
+  },
+  "fragment": "delivered",
+  "personalOperation": "CLOSED; af51 accepting v18 and d629 v3 per existing approved result, no new sampling.",
+  "writer": "All source/metadata writes stopped after this closure commit. Entire claim cd2d2e57-f633-444b-9797-f83a45624ae2 v2 is to be released by the owner; actual receipt is external coordination ledger, no continued write authority.",
+  "futureOPS14": "New owner must fresh claim exact two wrapper paths before future-version edits; original source/raw/hash bindings remain immutable history.",
+  "checksRepeated": 0,
+  "personalReadsOrActions": 0,
+  "quality": "Metadata-only: canonical main state corrected; finite receipt; no behavior/interface or original raw changes."
+}

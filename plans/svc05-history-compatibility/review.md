@@ -131,3 +131,7 @@ Execution Lead独立APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA，target6e7109c
 Reviewer：Execution Lead / gpt-6-astra；target `1994182e4f1d7ff0cb5b08d005defe199d5cbf8c`，observed clean `cf239ba6694b09c80726efffdf794ad27bc020d5`。原件来自I02 `e07d1e64`，镜像[唯一结果review](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，SHA256 `233543b5b1df69a0735a42ca9cdac81998f4cdeaea087c0fc7470f9ef6d768ae`。100 fixed/current绑定无差，24命令exit0、25最终检查全true；hold/旧runner停止→精确退役checkpoint→af51 refresh/resume18→独立Web CAS d629/v3顺序与64表保护摘要/27迁移/4历史/3retained核验成立。无P1/P2，reviewer0测试/0个人probe/0provider。
 
 批准限已保存实际操作忠实性。原claim outcome unknown、ordinaryNativeChecks false、原失败不回写；保留证明是预先声明保护列摘要，不是所有raw字段相等。原0a8实现与6e比较窄修批准分别保留，不扩大到新的恢复API、个人新probe或当前main全功能。
+
+## 2026-10-06 21:54 UTC main接收与正式关闭
+
+既有独立批准范围不变。最终cef5记录已由Lead受控接收main `2af8639ddfa66252ecf97fd6921eaab40389020d`，本owner只读核该提交与后继 `78fb37704d708e3b3b6ea4f1810947f012666196` 的两个完整own范围逐文件零差。源码、原raw、manifest不改，无产品测试或个人状态采样。全部写入停止，整claim释放后不再写本树；未来wrapper复用需新owner精确领取。[接收回执](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)。
