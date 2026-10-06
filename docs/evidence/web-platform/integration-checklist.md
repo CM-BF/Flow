@@ -1,22 +1,23 @@
 # Web 平台跨 owner 集成清单
 
-2026-10-06 02:50 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
+2026-10-06 03:08 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
 
 ## Dashboard已确认唯一来源
 
-2026-10-06T02:38:47.600Z已只读核验主线新版22来源，下面3个唯一平级源全部聚合。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理树nested plugin-system/unified-workspace均已转只读移交stub，不能登记为第二源。
+root于2026-10-06T03:06:17.755Z已只读核验主线28来源，下面4个唯一平级源已登记；前三项首次验证为02:38:47.600Z。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理树nested plugin-system/unified-workspace均已转只读移交stub，不能登记为第二源。
 
 | Task | Worktree | Branch | planDir | evidenceDir |
 | --- | --- | --- | --- | --- |
 | WPF-001 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management | codex/web-platform-management | plans/web-platform | docs/evidence/web-platform |
 | WPF-M02 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace | codex/web-unified-workspace | plans/wpf-m02-web-workspace | docs/evidence/wpf-m02 |
 | WPF-P01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host | codex/web-plugin-host | plans/wpf-p01-plugin-host | docs/evidence/wpf-p01 |
+| WPF-I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration | codex/web-plugin-integration | plans/wpf-i01-plugin-integration | docs/evidence/wpf-i01 |
 
-留在管理树的WPF-D01协作/ WPF-PERF01排队文档暂无独立实施源，不能冒称已注册nested目录。最新已验证22源中三个WPF来源human.complete=true、missing/issues为空；02:31仍17源是历史观察，见research。来源登记不是实现/测试/review或main集成通过。
+WPF-D01仍为协作；WPF-PERF01已领独立测量范围，canonical source待新owner建立后转交登记，不能冒称已注册nested目录。最新已验证22源中三个WPF来源human.complete=true、missing/issues为空；02:31仍17源是历史观察，见research。来源登记不是实现/测试/review或main集成通过。
 
 D03由主线单owner负责紧凑中性视觉及当前阶段/当前工作/下一交付/真正决策、历史下钻、实现review与metadata区分、main与旧SHA区分。WPF-D01只协作需求与来源，不另派实现、不切换4320。每个唯一owner已收到8字段规范，由各自更新，管理者不代写。
 
-## 已交付W01输入边界与版本
+## 历史W01交付输入边界与版本（原实现现已冻结）
 
 | Owner | Worktree / branch | 独占写入 | 依赖与交接 |
 | --- | --- | --- | --- |
@@ -154,4 +155,11 @@ owner已正式收到followup派工：在新tree建立plans/wpf-i01-plugin-integr
 
 ## WPF-I01唯一进度来源移交
 
-首文档e9dc6904cac949638a993b8f00d0d485a010a1f1，tree/branch已按上节受领且clean，仅8个plan/evidence文件；未安装/合未审P01/改产品。正式source请求已tool交GoalOwner：id WPF-I01、title Web插件主App挂载、worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration、branch codex/web-plugin-integration、planDir plans/wpf-i01-plugin-integration、evidenceDir docs/evidence/wpf-i01。唯一status为新平级目录status.md；管理nested plugin-integration三文件已改stub，不登记第二source。D04claim与进度来源不同：前者已committed，后者等待Lead注册后单次实际聚合验证。
+首文档e9dc6904cac949638a993b8f00d0d485a010a1f1，tree/branch已按上节受领且clean，仅8个plan/evidence文件；未安装/合未审P01/改产品。正式source请求已tool交GoalOwner：id WPF-I01、title Web插件主App挂载、worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration、branch codex/web-plugin-integration、planDir plans/wpf-i01-plugin-integration、evidenceDir docs/evidence/wpf-i01。唯一status为新平级目录status.md；管理nested plugin-integration三文件已改stub，不登记第二source。D04claim与进度来源不同：前者已committed，后者已由Lead注册，root03:06:17.755Z实采I01 source/claimv1 matchesSource；未把它当实施通过。
+
+
+## PERF正式独立领取（2026-10-06 03:07 UTC）
+
+原GoalOwner明确授权外部Lead自助take。管理者先核新web-performance / codex/web-performance实际HEADc526c1c889437ee39155d669921577995195c74e clean与CLI list available无PERFclaim；以stable requestId wpf-perf01-measurement-20261006提交新take，获得[原样committed receipt](perf01-take-receipt.json)：claim4553f315-7fb4-4fe6-babb-0f4a8e5057c6 v1，03:07:10.630Z，lead external_web_d01_owner/worker w01_owner。不是P01amend，不转走其host修复责任。
+
+精确scope为apps/web/test/performance-fixture.ts、apps/web/test/performance-probe.ts、plans/wpf-perf01-web-performance/、docs/evidence/wpf-perf01/；只测量，不写生产代码。owner已正式followup开始本地技能/三件套/有界benchmark，基线是已审M02预I01，不冒称I01最终性能。新canonical status成立后回Lead登记并将管理准备转stub；receipt与实际source聚合分开验。

@@ -125,10 +125,10 @@ type WorkspacePanelsProps = {
 | 已审交付 | W01 Thread/shell/splitmerge及panels | root整体APPROVED cb4a392，owner正式review metadata收尾；组件46a1dbd通过 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
-| 独立审查 | [WPF-M02统一工作总览](unified-workspace/plan.md) | 固定实现d47c602，完整输入含main8c57；root整体复验，owner只做metadata |
-| 独立审查 | WPF-P01插件host | typed接口冻结；模块3d812 scoped APPROVED，整包d81075 React/builtins另审；不覆盖主App |
-| 下一独立集成 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 两输入审定+D04交接后复用M02 owner，新tree/branch；不继续扩大M02已审范围 |
-| 性能轮 | WPF-PERF01 | 当前W01 owner先记录新build基线；测量/优化owner空出后排队，每次一个有证据瓶颈 |
+| 已审待集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；交Lead集成，owner转I01 |
+| 已审输入 | WPF-P01插件host | 整体6ce APPROVED、PH-R1～4关闭，最终2910ebc交I01；不覆盖主App |
+| 当前实施 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 两输入已审，D04v1受领，独立新tree bridge/slots实施 |
+| 当前测量 | WPF-PERF01 | 原P01 owner，新tree固定M02 c526，D04四scope v1；仅benchmark/evidence，先测后申请优化 |
 
 ## TODO
 

@@ -42,3 +42,10 @@ React.lazy会缓存load Promise/rejection；仅reset ErrorBoundary不保证重�
 root只读固定M02 d47：accept对entries/buffered全量Map+sort，当前无客户端驻留上限。不是已证实的UI性能故障。readonly公开refresh探针100批×100条、每条256字符，前50批following、后50批reading；第1/10/50/100批entries为100/1000/5000/5000，末buffered5000，revealNew后entries10000/buffered0。Node sampled refresh0.443～0.702ms（首0.484）仅进程内函数测量，不是浏览器输入延迟、内存、网络或模型容量。
 
 下一固定生产浏览器样本合并现有1/16/128合成task与连续10k记录，记录retained entries、buffered entries、DOM数量、实际输入/滚动延迟、long tasks及可测内存。先证据再选择bounded history/cache或订阅改动；必须保留历史分页锚点、新记录缓冲、决策到达及展开详情缓存语义。content-visibility跳过部分layout/paint不减少JS保留对象，不能把CSS当驻留预算；来源为[MDN content-visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility)和[React external store](https://react.dev/reference/react/useSyncExternalStore)。
+
+
+## 下一段精确测量范围（03:06 UTC）
+
+P01整体6ce已获APPROVED，拟复用w01_owner为WPF-PERF01实施owner；独立tree web-performance / branch codex/web-performance，从已审M02最终metadata c526c1c889437ee39155d669921577995195c74e仅初始化，D04 receipt后正式写入。拟精确scope仅 apps/web/test/performance-fixture.ts、apps/web/test/performance-probe.ts、plans/wpf-perf01-web-performance/、docs/evidence/wpf-perf01/；没有生产路径，也不碰I01 App。
+
+这是固定M02预I01基线，不冒称未来I01最终性能。真实production App指标与公共projection隔离对象驻留计数分报告；浏览器内存API不可用就记录不可用，不推算堆对象。输出原始样本/机器/build/模式/方法与局限，性能因果未验证不抢先优化。实际owner三件套建立后本管理目录转stub，唯一source移交。新实现待基线证据后单独申请生产scope。
