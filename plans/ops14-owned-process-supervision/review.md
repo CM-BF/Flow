@@ -40,3 +40,5 @@ Capture 唯一独审原样[报告](../../docs/evidence/ops14/independent-capture
 ## SVC05H 唯一独审结论
 
 assignment_review，2026-10-06 22:05:04 UTC，APPROVED_LIMITED_SVC05H_CONSUMER，固定12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2 / delivery1f754100bf84633c53c88038ce8630fdccab2e56。完整两源delta与21bindings全部核同；原2/2/410ms、detached stand-in由测试独立清理原raw已读，无P1/P2，reviewer0重跑。原样[报告](../../docs/evidence/ops14/independent-svc05h-review.json)及[绑定](../../docs/evidence/ops14/independent-svc05h-review-bindings.json)。批准只覆盖首个真实wrapper源迁移与受控直接消费者；实际恢复未运行，原已消费许可不复开，SVC07及完整OPS14仍open。
+
+主线收据：fc3246b307f5436ccecb97f38ccaba10c7a72a5a 已接首consumer；2源对12c60、3共享源对afd逐字同，见[比较](../../docs/evidence/ops14/svc05h-main-comparison.json)。无重测/实际恢复；SVC07后继继续open。

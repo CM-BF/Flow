@@ -10,7 +10,7 @@
 - [x] OPS14-02 标准库实现及两种原调用形状的受控故障验证。
 - [x] OPS14-03 固定证据、独立审查与 main 接收。
 - [ ] OPS14-04 双方 owner 移交后迁移两个真实消费者并验证。
-- [ ] OPS14-05 有限 Capture 默认分流 / 单 pipe 合并模式及直接兼容验证、独审接收。
+- [x] OPS14-05 有限 Capture 默认分流 / 单 pipe 合并模式及直接兼容验证、独审接收。
 
 接口、输入输出、资源/错误和责任分工见[Interface](../../docs/evidence/ops14/interface.md)。只接受本次自己 spawn 的 child，不接受外部 PID。数据库、连接观察、resource ownership、source binding、许可与持久证据是调用方职责。有限过程组并非任意后代隔离；已 detached 的服务不在 signal 范围。
 
