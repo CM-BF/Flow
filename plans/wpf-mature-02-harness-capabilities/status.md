@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:23:47 UTC / 2026-10-06 10:23:47 UTC（只读main41315b，未合入本树） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:33:18 UTC / 2026-10-06 10:26:02 UTC（main41315b受控merge944780d已完成） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -26,13 +26,13 @@
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：目录c9c6e891 NOT_STARTED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
-| 架构影响 | R06新增默认关闭的trusted-host私有sink，原process owner不变；R05C同树直接消费者strict通过。共享架构更新待集成target/owner Mika/ExecutionLead。 |
+| 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
-| WPF-MATURE-02-03 | blocked | chatui01_owner | 唯一新batch已封存：2child、控制成功、原profile SIGABRT/空stderr，cleanup完成；实际catalog仍blocked，不再启动child；04目录设计可独立推进 |
+| WPF-MATURE-02-03 | blocked | chatui01_owner | 唯一新batch已封存：2child、控制成功、原profile SIGABRT/空stderr，cleanup完成；实际catalog仍blocked，不再启动诊断child；02-04目录实现已独立交审 |
 | WPF-MATURE-02-04 | in-progress | chatui01_owner | 已接入独审通过的生产投影，薄入口27/27且独审APPROVED，待集成；[原生配置目录设计](../../docs/evidence/wpf-mature-02/native-catalog-seam.md)已实现首个目录合同/reader/routes并局部验证，c9c6e891待独审；client/Web与共享能力全链路尚未完成 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
@@ -42,7 +42,7 @@
 
 ## 跨lead接口与handoff
 
-唯一接口请求：[interface](../../docs/evidence/wpf-mature-02/interface.md)。R05共享host/main/config/contracts及生产transport/adapter apps/runner/src/codex由ExecutionLead/assignment_review及其runner worker维护；R06 runner_owner独占transport与进程生命周期；本owner仅固定schema/模型事实与已解码实验conformance，Web d01挂本bigplan。初始3个scope之外，现已合法amend精确5个R06文件；receipt及边界见当前diagnostics报告。
+唯一接口请求：[interface](../../docs/evidence/wpf-mature-02/interface.md)。R05共享host/main/config/contracts及生产transport/adapter apps/runner/src/codex由ExecutionLead/assignment_review及其runner worker维护；R06 runner_owner独占transport与进程生命周期；本owner仅固定schema/模型事实与已解码实验conformance，Web d01挂本bigplan。初始3个scope之外，现claim v3包含历史5个R06文件与当前5个目录合同/领域文件；当前receipt见native-catalog报告，client/index不在范围。
 
 ## Dashboard同步与限制
 
