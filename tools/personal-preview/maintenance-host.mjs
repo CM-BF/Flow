@@ -39,7 +39,7 @@ function assertOperation(operation, view) {
   if (!operation || operation.operationId !== view.operationId) fail('MAINTENANCE_OPERATION_UNCONFIRMED');
 }
 async function bootstrap(config, pool, state, target, backendId) {
-  const backendArtifact = backendId ? await backendById(config.directory, backendId) : null;
+  const backendArtifact = backendId ? await backendById(config.directory, backendId) : state.backendArtifact ?? null;
   if (backendArtifact) await backendRuntime(config, backendArtifact);
   const facts = await processFacts(state);
   if (Object.values(facts).some(value => value !== 'running')) fail('EXISTING_PROCESSES_UNCONFIRMED');

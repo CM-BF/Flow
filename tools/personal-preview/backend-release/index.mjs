@@ -41,9 +41,10 @@ export async function prepareBackendArtifact({ repository, target, directory, of
     const stage = join(store, `stage-${randomUUID()}`), record = `${stage}.json`;
     await mkdir(stage, { mode: 0o700 });
     await saveJson(record, { phase: 'building', target, stage, at: new Date().toISOString() });
-    let publishedArtifact = null;
+    let publishedArtifact = null, buildOutput = null;
     try {
       const built = await buildBackend({ repository, target, stage, offlineStore, pnpmCli });
+      buildOutput = built.buildOutput;
       const node = await nodeIdentity(), content = await inventory(built.root);
       const manifest = { policy: BACKEND_POLICY, sourceHead: target, sourceRepository: built.sourceRepository, lockDigest: built.lockDigest, pnpm: built.pnpm, installation: built.installation, node, inventory: content };
       const encoded = `${JSON.stringify(manifest)}\n`, id = digest(encoded), published = join(store, id);
@@ -56,11 +57,11 @@ export async function prepareBackendArtifact({ repository, target, directory, of
       await verifyBackendArtifact({ directory, artifact });
       await saveJson(record, { phase: 'published', target, stage, artifact, cleanup: 'pending', at: new Date().toISOString() });
       await rm(stage, { recursive: true });
-      await saveJson(record, { phase: 'published', target, artifact, cleanup: 'complete', at: new Date().toISOString() });
+      await saveJson(record, { phase: 'published', target, artifact, buildOutput, cleanup: 'complete', at: new Date().toISOString() });
       return artifact;
     } catch (error) {
       // Saving failure facts must succeed before deleting the only remaining preparation evidence.
-      await saveJson(record, { phase: 'failed-or-unknown', target, stage, artifact: publishedArtifact, code: /^[A-Z_]+$/.test(error.code ?? '') ? error.code : 'BACKEND_PREPARATION_FAILED', at: new Date().toISOString() });
+      await saveJson(record, { phase: 'failed-or-unknown', target, stage, artifact: publishedArtifact, buildOutput: error.buildOutput ?? buildOutput, code: /^[A-Z_]+$/.test(error.code ?? '') ? error.code : 'BACKEND_PREPARATION_FAILED', at: new Date().toISOString() });
       await rm(stage, { recursive: true, force: true }); throw error;
     }
   });

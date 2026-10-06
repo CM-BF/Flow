@@ -11,8 +11,8 @@ export async function buildBackend({ repository, target, stage, offlineStore, pn
   await mkdir(root); await mkdir(home);
   const space = await statfs(stage);
   const availableBytes = space.bavail * space.bsize;
-  if (availableBytes < LIMITS.bytes + 256 * 1024 ** 2) fail('BACKEND_FREE_SPACE_REQUIRED');
-  await writeFile(join(stage, 'space.json'), JSON.stringify({ availableBytes, minimumBytes: LIMITS.bytes + 256 * 1024 ** 2, reservation: false }));
+  if (availableBytes < LIMITS.bytes + 1536 * 1024 ** 2) fail('BACKEND_FREE_SPACE_REQUIRED');
+  await writeFile(join(stage, 'space.json'), JSON.stringify({ availableBytes, minimumBytes: LIMITS.bytes + 1536 * 1024 ** 2, reservation: false }));
   const source = await realpath(repository), seed = await realpath(offlineStore), cli = await realpath(pnpmCli);
   if (inside(source, stage) || inside(seed, stage) || inside(stage, seed)) fail('BACKEND_STAGE_LOCATION_INVALID');
   const pnpm = JSON.parse(await readFile(join(dirname(dirname(cli)), 'package.json'), 'utf8'));
@@ -27,11 +27,14 @@ export async function buildBackend({ repository, target, stage, offlineStore, pn
   if (JSON.parse(await readFile(join(root, 'package.json'), 'utf8')).packageManager !== 'pnpm@9.15.4') fail('BACKEND_LOCK_TOOL_MISMATCH');
   const lockBefore = await hashFile(join(root, 'pnpm-lock.yaml'));
   await inventory(seed, { bytes: LIMITS.seedBytes, entries: LIMITS.seedEntries, hashes: false, links: false, hardlinks: true });
-  await execute('/usr/bin/python3', [fileURLToPath(new URL('./clone-store.py', import.meta.url)), seed, store], { env: { PATH: '/usr/bin:/bin', HOME: home }, timeout: 180_000, maxBuffer: 65536 });
+  await mkdir(store);
+  await execute('/usr/bin/python3', [fileURLToPath(new URL('./clone-store.py', import.meta.url)), seed, join(store, 'v3')], { env: { PATH: '/usr/bin:/bin', HOME: home }, timeout: 180_000, maxBuffer: 65536 });
   const emptyConfig = join(home, 'empty.npmrc'); await writeFile(emptyConfig, '', { mode: 0o600 });
   const env = { PATH: `${dirname(process.execPath)}:/usr/bin:/bin`, HOME: home, TMPDIR: stage, CI: 'true', LANG: 'C', npm_config_userconfig: emptyConfig, npm_config_globalconfig: emptyConfig, npm_config_update_notifier: 'false' };
   const args = [cli, 'install', '--offline', '--frozen-lockfile', '--ignore-scripts', '--ignore-pnpmfile', '--package-import-method=copy', '--store-dir', store, '--cache-dir', join(stage, 'cache'), '--config.manage-package-manager-versions=false'];
-  const result = await execute(process.execPath, args, { cwd: root, env, timeout: 180_000, maxBuffer: 1024 * 1024 });
+  let result;
+  try { result = await execute(process.execPath, args, { cwd: root, env, timeout: 180_000, maxBuffer: 1024 * 1024 }); }
+  catch (error) { error.buildOutput = { stdout: String(error.stdout ?? '').slice(0, 1024 * 1024), stderr: String(error.stderr ?? '').slice(0, 1024 * 1024), exit: error.code }; throw error; }
   await writeFile(join(stage, 'install.stdout'), result.stdout, { mode: 0o600 });
   if (await hashFile(join(root, 'pnpm-lock.yaml')) !== lockBefore) fail('BACKEND_LOCK_CHANGED');
   // Runtime uses Node/tsx and module-relative executables, never pnpm's absolute build-time shell shims.
@@ -43,5 +46,5 @@ export async function buildBackend({ repository, target, stage, offlineStore, pn
     }
   }
   await strip(root);
-  return { root, sourceRepository: source, lockDigest: lockBefore, pnpm: { version: pnpm.version, cli, sha256: await hashFile(cli) }, installation: { offline: true, frozen: true, scripts: false, importMethod: 'copy' } };
+  return { root, sourceRepository: source, lockDigest: lockBefore, pnpm: { version: pnpm.version, cli, sha256: await hashFile(cli) }, buildOutput: { stdout: result.stdout, stderr: result.stderr, exit: 0 }, installation: { offline: true, frozen: true, scripts: false, importMethod: 'copy' } };
 }

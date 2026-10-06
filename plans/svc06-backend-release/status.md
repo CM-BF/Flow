@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:02 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -16,13 +16,13 @@
 | 本片段交付阶段 | implementation |
 | 实现目标 | UNKNOWN |
 | 实现范围 | tools/personal-preview/backend-release, tools/personal-preview/preview.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/cli.mjs |
-| 检查状态 | NOT_RUN（纯计划，未执行产品/模型） |
+| 检查状态 | 局部 4 个不同 Node 检查通过（分轮）；完整构建两次失败保留，未验证运行 / 0 provider |
 | 已集成main状态 / HEAD | 本计划待本批发布；SVC05实际runtime为362/v15，Web8d8/v2保持 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已接收独立实施范围，正在构建可核验的固定后台产物 |
+| 当前产出 | 已实现固定产物与维护接线候选；已验证独立复制和失败保留，完整运行验证待空间恢复 |
 | 下一可用交付 | 先验证固定源码与独立依赖，再接入现有维护流程 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 完整产物构建等待至少 2.5 GiB 可用空间；小范围验证继续，个人服务未操作 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v4，9 literal scopes；见 amend-receipt.json |
