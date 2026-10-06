@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:45:02 UTC / 2026-10-06T13:44:24.498Z实采156来源 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:06:31 UTC / 上次实采156来源；新158候选 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 156个唯一来源已显示，终端队列与连续目标旅程可查，登录接口已进入主线。 |
+| 当前产出 | 用量说明与执行等待改进已登记，等待本批看板加载；现有目标旅程和终端队列已进入主线。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -109,3 +109,5 @@
 2026-10-06T13:13:50.383099+00:00：归档13:08:38.883Z既有154来源实际快照，maincde6646 clean，新连接恢复/事件优化/原生工程准备三项live且issues为空；见[实际回执](../../docs/evidence/d05/connection-event-154-live.json)。原自有看板进程正常换载为session98309，固定架构aeb数据已部署；未刷新用户原tab，个人runtime362/v15和Web8d8/v2不变。归档不重新运行产品/架构检查。
 
 [156来源实际部署回执](../../docs/evidence/d05/dashboard-156-receipt.json)：保留固定aeb架构基线，仅本工程看板更新登记，个人产品服务/用户tab未操作。
+
+2026-10-06 14:06:31 UTC：[158来源登记](../../docs/evidence/d05/cost-wait-registry-validation.json)新增COST01A/S01P06，唯一ID、实际三件套、人读与解析通过。固定aeb架构未改，未运行产品/全量proof，实际部署另记。

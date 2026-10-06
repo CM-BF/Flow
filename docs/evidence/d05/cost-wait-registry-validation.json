@@ -1,0 +1,73 @@
+{
+  "observedAt": "2026-10-06T14:06:07.077Z",
+  "count": 158,
+  "idsUnique": true,
+  "sources": [
+    {
+      "id": "COST01A",
+      "title": "有来源的执行用量说明",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout",
+      "branch": "codex/cost-usage-readout",
+      "planDir": "plans/cost01a-usage-readout",
+      "evidenceDir": "docs/evidence/cost01a",
+      "head": "e64369e7beee7e6f640fe5bd6bd95d6c4ba7defa",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "正在核对已有用量记录，让缓存消耗与缺失数据能够分别解释。",
+        "next": "同一任务的输入、缓存、输出和估价读口，保留未知与覆盖范围。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "S01P06",
+      "title": "执行等待与资源释放",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds",
+      "branch": "codex/runner-wait-bounds",
+      "planDir": "plans/s01p06-runner-wait",
+      "evidenceDir": "docs/evidence/s01p06",
+      "head": "31c06b4a4a647423e419ee871e704491e2dec7ed",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "有界等待修复已独审通过，保持停止、恢复与及时补槽行为",
+        "next": "已审修复交主线接收",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ],
+  "limits": [
+    "Registration only; no full proof/product/architecture rerun",
+    "Actual previous deployment156; this158 candidate not yet loaded"
+  ]
+}
