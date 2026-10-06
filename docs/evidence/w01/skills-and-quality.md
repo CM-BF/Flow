@@ -32,3 +32,4 @@ Owner：W01 owner；派发配置 gpt-6-astra / ultra（运行时无独立型号�
 - 2026-10-06 01:24 UTC，review修复工作段：协调者独立发现W01-R1（离线与选择generation混用）。采用清楚的接口语义：网络状态只暂停/恢复observer，真正的选择/清理才改变generation；详情返回继续结算，selectedId允许上线重取失败快照。两个公共HTTP回归覆盖延迟详情/快照以及失败快照恢复。修复commit866c20e8462f295736f685541e2ecb9ba8639101；13 tests/typecheck/build/5 browser全部通过。未解决：独立复审与真实中心集成。
 
 - 2026-10-06 01:25 UTC，交付复核：协调者对866c20e独立APPROVED，W01-R1关闭。Owner检查命名、observer与选择生命周期、错误可恢复、两套主题与文档事实一致；无剩余实现阻塞。真实中心/模型、多浏览器/屏读继续明确未验；不合并main。
+- 2026-10-06 01:27 UTC，metadata检查：Git将嵌套lock patch的单空格上下文行提示为尾空格；这些是合法统一diff内容，`git apply --check`通过。添加仅作用于本证据文件的 `.gitattributes` whitespace例外，保留原patch字节，源码/正文仍执行正常diff检查。
