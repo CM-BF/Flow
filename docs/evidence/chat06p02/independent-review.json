@@ -1,0 +1,33 @@
+{
+  "reviewedAt": "2026-10-06T08:05:23.660360Z",
+  "reviewer": "mika",
+  "model": "gpt-6-astra",
+  "status": "APPROVED",
+  "target": "b0090edd594d19e1a441ce54683af65f7e5dc26e",
+  "observedHead": "aa6e124821a0712acdbc0f024764432347b76edd",
+  "clean": true,
+  "sourceFiles": 5,
+  "readOnlySources": 10,
+  "rawEvidence": 18,
+  "manifestSha256": "735fe3414cbd70e36c9f9d18b9b4948c810ca0a44a0fc1623f128f4f808298b0",
+  "distinctPassingTests": 18,
+  "dedicatedPassingTests": 10,
+  "consumerPassingTests": 8,
+  "consumerUnselectedTests": 19,
+  "noEmitExitCode": 0,
+  "findings": [],
+  "reviewActions": [
+    "Read-only target/working/raw hash comparison",
+    "SQL and transaction/lock/public reader review",
+    "Final three check source hashes compared against current target",
+    "Fixed Unicode/NFC/NFD independent digest oracles and atomic/race/consumer evidence review",
+    "Historical failures/CRLF logs/reconstructed snapshot source hashes and four own database cleanup reviewed"
+  ],
+  "limitations": [
+    "Reviewer ran no tests/PG/services",
+    "Decoded return only: value8192->64B/rowsJSON9744->79B; current patch adds3B SELECT input; empty prefix0->64B",
+    "PG still full aggregate/hash; no wire/WAL/CPU/latency/throughput/SLO benefit assertion",
+    "Existing consumer database names not logged; no independent database audit claimed for them",
+    "main acceptance pending"
+  ]
+}

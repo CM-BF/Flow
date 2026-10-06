@@ -9,7 +9,7 @@
 - [x] CHAT06P02-01 核固定base、精确claim、技能与测试seam，初始化唯一事实源。
 - [x] CHAT06P02-02 真实PG行为红后最小写摘要实现，保留完整校验及公开原文。
 - [x] CHAT06P02-03 Unicode/空输入/坏digest回滚/身份幂等及并发行为、直接消费者/noEmit与返回字节证据。
-- [ ] CHAT06P02-04 固定实现与原始证据，Mika独立review；Goal Owner接收范围。
+- [x] CHAT06P02-04 固定实现与原始证据，Mika独立review；Goal Owner接收范围。
 - [ ] CHAT06P02-05 Lead main接收核验与停止写入/release。
 
 ## 已批准设计与测试seam
@@ -26,4 +26,4 @@ saveAssistantStream在现有reportEvents持锁事务中，使用同一SELECT按r
 
 架构影响为现有store内部写校验的PG/Node职责调整；公共接口/FSM/DB/依赖不变。架构target由Lead在主线接收时按需同步现有assistant-stream内部读取说明，owner不写全局图。
 
-实质进展08:03 UTC：18不同用例=专用10+既有直接消费者8，noEmit0；原9/10/cleanup/types失败保留并修复。8192B旧prefix在同输入行为红中返回8192B，最小改动后64B；当前patch新增SQL参数3B。待固定target与Mika独审，main未接收。
+实质进展08:03 UTC：18不同用例=专用10+既有直接消费者8，noEmit0；原9/10/cleanup/types失败保留并修复。8192B旧prefix在同输入行为红中返回8192B，最小改动后64B；当前patch新增SQL参数3B。固定targetb0090ed于08:05:23获Mika独审APPROVED，main未接收。
