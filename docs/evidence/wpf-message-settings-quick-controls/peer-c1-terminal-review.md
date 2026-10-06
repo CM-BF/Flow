@@ -1,0 +1,13 @@
+# MessageSettings QuickControls supervisor: terminal soft-stop review
+
+Pinned input: `/private/tmp/msgquick-checks-c1/run.py`, SHA256 `d9c2ef9813cffa6fd31491fc554e0e79fca001d1c4d652791c783f2868b18f52`.
+
+**Conclusion: one narrow P2 needs correction; source-only, no execution.**
+
+`request_stop` (150–157) records TERM/INT in `stopping`, `stopSignal`, and errors. `persist` (196–206) derives disk PASS from those facts. But the outer finally restores previous handlers at 336–338, before the last stop check/persist (339–340), terminal exit calculation and stdout (341–345), and top-level `sys.exit` (355–360). Thus the asserted coverage “TERM/INT through final seal/stdout/exit” is not implemented.
+
+Concrete trigger: a successful child has been reaped and the final `persist()` at 333 has written PASS; TERM arrives just after handler restoration at 338, before terminal stdout/exit. It no longer reaches `request_stop`; with the normal CLI default TERM disposition the process terminates nonzero while disk result/budget retain PASS. INT in the same interval normally reaches the outer BaseException handler (356–359), which emits FAILED_TERMINAL_REPORT without resealing disk PASS. A signal after PASS stdout but before exit can similarly leave earlier PASS observations. These are static control-flow cases, not reproduced signals or a demonstrated leaked worker: normal child cleanup is earlier at 249–317.
+
+Minimum correction: retain cooperative signal ownership through terminal serialization/output and the decision to exit, and reconcile any recorded late stop as FAILED in the durable terminal facts, stdout, and nonzero exit. Simply moving restoration later is insufficient if `actual_exit` was already computed at 341: a stop arriving afterward must not reuse a stale zero. Bound the terminal reconciliation; do not add a new supervisor framework or retry tests. If the implementation instead defines an explicit earlier finalization boundary, narrow the claim accordingly and require the external actual exit plus complete terminal output to accept PASS; disk PASS alone is never sufficient. No Python-level multi-file/stdout/process-exit sequence should be described as atomic against arbitrarily late interruption.
+
+Scope: only this runner’s soft-stop/finalization path. No dependency/quota audit, product imports, tests, signals, process inspection, network, resource sampling, or project edits. Local find-skills/clean-code methods reused: trace lifecycle ownership, observable failure state, and a concrete late continuation rather than treating earlier PASS as a terminal guarantee.

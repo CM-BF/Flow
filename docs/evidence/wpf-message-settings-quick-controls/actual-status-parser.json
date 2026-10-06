@@ -26,7 +26,7 @@
     },
     "phase": "M2",
     "priority": 1,
-    "output": "后页分页验收与弹窗背景观察定位已补齐，等待窄复审",
+    "output": "快速设置四源已通过限定源码审查；小检查包终态合同已修，待复审",
     "next": "经验证的模型、思考力度与速度快速选择",
     "blocker": {
       "state": "none",
@@ -53,8 +53,8 @@
   "owner": "w01_owner / gpt-6-astra",
   "branch": "codex/web-message-settings-quick-controls",
   "branchState": "in-progress",
-  "updatedAt": "2026-10-06T22:31:41.000Z",
-  "updatedRecord": "2026-10-06 22:31:41 UTC",
+  "updatedAt": "2026-10-06T22:36:57.000Z",
+  "updatedRecord": "2026-10-06 22:36:57 UTC",
   "todos": [
     {
       "id": "MSGQUICK-01",
@@ -78,7 +78,7 @@
       "id": "MSGQUICK-04",
       "state": "pending",
       "owner": "w01_owner",
-      "evidence": "新 target 待 R3 delta 复审；精确 types/direct packet 准备中，未准入"
+      "evidence": "四源限定源码批准；精确 types/direct packet 终态修复待审，检查未准入"
     },
     {
       "id": "MSGQUICK-05",
@@ -95,7 +95,7 @@
     "target": null,
     "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
   },
-  "reviewRecord": "CHANGES_REQUESTED（35bbe 唯一 R3 覆盖缺口；7615 新定位问题已窄修；fe6ece 待复审；非产品 bug 已证）",
+  "reviewRecord": "UNKNOWN（四源 fe6 获 APPROVED_SCOPED_SOURCE_ONLY，R3/locator已闭合；packet终态修复待复审，完整行为未验）",
   "mainRecord": "",
   "next": "",
   "risks": "",

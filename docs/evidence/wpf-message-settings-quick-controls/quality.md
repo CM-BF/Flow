@@ -27,3 +27,7 @@
 ## Modal locator 窄修 2026-10-06 22:31:41 UTC
 
 manager fresh22:30:23 原六scope与clean已核；只改browser这一背景保稿观察，保弹窗和全部验收断言。root/peer源码定位原因归测试，不归组件错误；source diffcheck0，三源逐字未改。下一检查包 /private/tmp/msgquick-checks-c1 为 own/tmp 准备产物，默认 PREPARED/无gate；在本metadata固定后才重绑actualHEAD与四源，避免循环提交，不作为运行证据。所有新types/direct/browser仍NOT_RUN。
+
+## Source approval / terminal contract 2026-10-06 22:36:57 UTC
+
+manager22:35:11 fresh本人窄核原六scope。Root原件确认fe6四源APPROVED_SCOPED_SOURCE_ONLY、R3/locator闭合，保初7615纠正。产品四源完全不动。c1终态P2按报告的早完成边界选项最小修复：旧packet原件备份before-terminal-review；新runner `61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0` 加terminal contract与sealed hashes，不声称through-exit原子性；必须外层真实exit0+完整stdout+sealed结果/预算+两step退出0方接受。该合同待复审，不是假定通过。复用本地clean-code检查错误保真、责任边界、最小差异；未执行prepared源码/语法/产品import/types/direct/browser/信号实验/free。精确候选最后绑定由提交后TMP操作完成。

@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T22:34:55.861210+00:00",
+  "reviewer": "root",
+  "result": "REQUEST_CHANGES_SCOPED_PACKET_TERMINAL_CONTRACT",
+  "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "sourceDisposition": "APPROVED_SCOPED_SOURCE_ONLY; both R3 coverage and locator closed. This finding does not reopen product source.",
+  "packet": "/private/tmp/msgquick-checks-c1",
+  "bindingSha256": "cd3f2fb8beee40bb81005118d3863643472637e103d02573251932a554376aa9",
+  "runnerSha256": "d9c2ef9813cffa6fd31491fc554e0e79fca001d1c4d652791c783f2868b18f52",
+  "sourceAndPinsReview": "/tmp/root-message-settings02-fe6-source-and-packet-review.json",
+  "peer": {
+    "path": "/private/tmp/msgquick-terminal-soft-stop-peer.md",
+    "sha256": "6a1aaab0d2a69e30e75f4d487d4fe3f306676b2332e993dfe7dd370200958b29",
+    "bytes": 2623
+  },
+  "finding": {
+    "id": "MSGQUICK-PACKET-TERMINAL-01",
+    "priority": 2,
+    "file": "run.py",
+    "lines": "336–360",
+    "problem": "Report promises monotonic cooperative stop handling through terminal stdout/exit. Actual outer finally restores TERM/INT handlers before final stopping check, actual_exit calculation, print and sys.exit. A late TERM or KeyboardInterrupt can yield nonzero external exit with a prior disk PASS remaining. This is a report/acceptance boundary mismatch; it is not evidence of a live child leak or product defect.",
+    "minimalRepair": "Make the terminal contract exact and ensure acceptance requires the captured outer process exit0 plus complete matching final stdout plus sealed result/budget and both child exits. Choose one narrow solution: keep stop handling through the declared terminal output/decision boundary and reconcile a handled late stop to FAILED/nonzero; or document an explicit earlier completion linearization boundary, remove the unsupported through-exit claim, and state that any missing/failed external exit receipt invalidates an on-disk PASS. Do not claim immunity to SIGKILL/power loss or add a general supervisor framework.",
+    "important": "Simply moving handler restore later while reusing an already-computed exit0 is insufficient for a promised late-stop guarantee."
+  },
+  "acceptedStaticScope": [
+    "4 implementation pins,116 own-readonly inputs,58 external inputs plus Node,9 prepared artifact hashes verified",
+    "Real source/JS aliases, CSS false Node policy, strict/noEmit and26 exact expected direct names reviewed",
+    "Owned process-group cleanup, bounded output drain, explicit EOF/reap/scratch handling present; no dynamic execution or signal experiment performed"
+  ],
+  "runtime": "NOT_RUN",
+  "resourceDisposition": "No gate/slot/window or new budget grant. Existing original Lead queue and actual resource policy unchanged. Proposed limits require fresh exact admission."
+}
