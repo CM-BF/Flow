@@ -262,3 +262,10 @@ root03:31:52.249Z实际4320为34源，I01/PERF01已正确approved，PERF02仍unr
 
 
 03:35 CHAT正式移交：独立核新web-conversations/codex/web-conversations baseb584 clean；03:34:48.886Z live I01v1，实际plugin-integration五文件遍历核齐。先CAS I01v2 committed03:34:54.170Z，移App/官方Thread/session/react、旧父scope改另外3literal文件，再take CHAT08259c1d-3711-4f5f-bf21-ad355ffa4cf3 v1 committed03:35:00.744Z/16scope。原样[amend](i01-chat-amend-receipt.json)/[take](chat01-take-receipt.json)。owner被正式唤醒，先canonical、固定4c首合同/独立outbox，public client入口待MainLead；不造私有HTTP客户端。默认首页真实对话/Work overview rail、conversation作为路由主键、turn.task只用于执行资源。主线明确可复用内部durable task，不可没有持久lineage拼接；queue/steer暂false，后继完整需求保持开放。
+
+
+03:38共享冲突受控解除：Lead先提出等main/完整merge4e817，随后明确以其共享owner生成的三文件patch+SHA256 manifest替代。owner只abort841冲突保留合同bac6/7自有docs，核before→应用→核after→独立提交a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0，管理者实际复核packages/client/src/index.ts、packages/contracts/src/index.ts、packages/client/src/conversations.test.ts after哈希全匹配。这是共享owner授权输入应用，未转移shared实现ownership，不授权Web私改接口。ACTIVE已关闭，中心module/真实模型仍未据此验证。receipt不受冲突影响。
+
+测量窗口协调由root统一回程：Mika B01先20秒SELECT/EXPLAIN候选、硬上限120秒，结束明确回root后PERF02才开始预计约8分钟smoke与1/16/128矩阵；owner收到等待指令，功能/代码照常。Mika不能app直投本v2子agent，以root作回程，不重复探测/新建任务；同机窗口排队不改变生产功能授权。
+
+03:39管理clean-code停点：当前body中旧“shared冲突/无writer/准备暂停”不能仅靠末尾补事实，已直接更正到a3b受控输入解除、PERF02与CHAT实际claim/canonical；两个准备目录转stub防第二事实源。CHAT c72与PERF02 c779已交ExecutionLead注册，后续一次实采再写完成。固定4c/841的接口研究与queue/draft风险保持同一证据；没有改产品或重复模型/语音调用。

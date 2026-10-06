@@ -1,7 +1,9 @@
-# WPF-CHAT01 审查入口
+# WPF-CHAT01 已移交入口
 
-**NOT_STARTED**。Target UNKNOWN；当前仅需求/接口准备，不代表真实持续对话已实现。未来canonical转交后固定独立base/完整target/currentclaim/dirty。
+此准备目录停止维护手填进度、实现和审查；唯一review在 [review.md](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/review.md)。
 
-审查须核：hi自然回答与同会话追问不是fixture或缺少持久conversation/turn/context lineage的任务拼接；center capability与实际授权；持久queue/顺序/取消与steer确认/生效；首屏/SSE无大详情、0→1→cache；provider未给thinking不伪造；语音录音/转写/失败fallback与真实服务边界；官方Thread/plugin接缝未退化。真实PG/protocol runner/模型/fixture证据分别列，不能互相替代。独立reader不写owner实现，具体finding交唯一writer修复并绑定新SHA复验。
+Owner：workspace_panels_owner / gpt-6-astra ultra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations`，branch `codex/web-conversations`；首canonical文档 `c72e02ba55dc4a5b3eddf1cf2a241e33403a0d16`，输入为已审I01 b584、固定合同4c240→bac6和共享owner841兼容输入a3b9。D04新claim `08259c1d-3711-4f5f-bf21-ad355ffa4cf3` v1于03:35:00.744Z受领16literal范围；I01先v2移出接缝，没有父scope继续覆盖。
 
-[计划](plan.md) · [状态](status.md)。
+父[WPF-001](../plan.md)保留U11与REQ41～45全量追溯；首批只最小持续对话，queue/steer/voice等capfalse后继仍在canonical TODO，不能因输入就绪而声称完成。共享冲突已按原owner精确patch/hash解除，禁止自行改公共接口。固定源码/官方UI研究见[证据](../../../docs/evidence/web-platform/chat-interface-research.md)。
+
+本stub不注册为第二dashboard来源；实际进度与独立review/main集成以canonical为准。

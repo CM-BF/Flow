@@ -187,6 +187,8 @@ U10“plugin管理写进计划里”由原Goal Owner逐字转交。主线负责X
 
 PERF02唯一source已实际建立并交Execution Lead登记：worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window`，branch `codex/web-activity-window`，planDir `plans/wpf-perf02-activity-window`，evidenceDir `docs/evidence/wpf-perf02`，首文档c779f86f1bb34ad8143bf35b8b9ca43c9e226758；当前scope内实现dirty、targetUNKNOWN。新claimd36v1 take已可见，尚未新实采source状态卡。旧管理performance-optimization三件套已转stub。
 
-CHAT合同4c2408e4db3595879f6471cb5fffccadec975b3d和public export/client84117ca1c7446ee2e2b50f0526f3460dd42a2869由Lead明确指定依序消费。owner首笔cherry-pick成功bac6a6efe6fa4866bac4d777ee61b703a0e2c7e3，第二笔client/index与contracts/index冲突；保留原现场，不abort/reset，不越scope自行编辑共享。当前ACTIVE阻塞责任ExecutionLead，解除条件=固定兼容输入或其受控解决。owner可继续自有plan/纯outbox，不能用私有HTTP client解阻或虚称API可编译。
+CHAT合同4c2408e4db3595879f6471cb5fffccadec975b3d和public export/client84117ca1c7446ee2e2b50f0526f3460dd42a2869由Lead明确指定依序消费。owner首笔cherry-pick成功bac6a6efe6fa4866bac4d777ee61b703a0e2c7e3，第二笔client/index与contracts/index冲突；保留原现场，不abort/reset，不越scope自行编辑共享。当时ACTIVE阻塞责任ExecutionLead；03:38已通过其精确patch/manifest按before/after hash受控解除，commit a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0。owner可继续自有plan/纯outbox，不能用私有HTTP client解阻或虚称API可编译。
 
 回程路由：Execution Lead ID01a10ea1-f0bb-7622-ad26-db889c131055为另一主task子agent，app工具不能直投；发送至原GoalOwner01a10e15-b908-7a72-b8c0-222a26bf93ff，以“收件人：Execution Lead”标明，由其原样桥接，无额外审批。Mika独立task01a10f3f-4ef0-7ca2-8e66-f1947fa4b295可直联，负责B01后台、下一X02；本队不重复其scope。B01正式性能窗口03:35:16～31已结束（root转报）；Web此段仅功能浏览器，同机正式矩阵下一次先协调。
+
+CHAT唯一canonical实际建立：/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations，branch codex/web-conversations，planDir plans/wpf-chat01-conversations，evidenceDir docs/evidence/wpf-chat01；首docs c72e02ba55dc4a5b3eddf1cf2a241e33403a0d16 clean / blockerNONE / targetUNKNOWN。已发ExecutionLead登记，旧conversation-core三件套转stub。PERF02与CHAT注册请求已送，不冒称已观测状态卡。
