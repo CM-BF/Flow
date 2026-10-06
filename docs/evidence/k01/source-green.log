@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store
+
+ ❯ apps/server/src/knowledge/knowledge.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/knowledge/knowledge.test.ts [ apps/server/src/knowledge/knowledge.test.ts ]
+Error: Cannot find package 'zod' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/apps/server/src/knowledge/index.ts'
+ ❯ apps/server/src/knowledge/index.ts:4:1
+      2| import type { Pool } from 'pg';
+      3| import { readFile } from 'node:fs/promises';
+      4| import { z } from 'zod';
+       | ^
+      5| import { idSchema } from '../../../../packages/contracts/src/tasks.js';
+      6| import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeListS…
+ ❯ apps/server/src/knowledge/fixture.ts:7:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  22:16:42
+   Duration  628ms (transform 354ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

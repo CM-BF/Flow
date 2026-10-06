@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/knowledge/knowledge.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T05:15:47.113Z",
+  "endedAt": "2026-10-06T05:15:48.642Z",
+  "exitCode": 1,
+  "signal": null
+}
