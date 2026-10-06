@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-10-06T10:00:59.859470+00:00",
+  "taskId": "WPF-ACTIVITYREAD01",
+  "main": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "originMain": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "mainClean": true,
+  "implementationTarget": "f2bcaae6623176acd718cf53707892154579970a",
+  "previousMetadataHead": "4f86c6251a73c33db5882e49a4aa031c52114e83",
+  "targetAndMetadataAreAncestors": true,
+  "sourceComparison": [
+    {
+      "path": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "sha256": "3438c4dbd5c6cb6ab1c710db0a57126d7cc6644145b5a1957af1256ab0e9ca26",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/tool.tsx",
+      "sha256": "6a5c79cb90e76398576d75fb2dc185d57a68caba643cf6cd1e644207dce0c89d",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-activity-integration.browser.ts",
+      "sha256": "f20e0f6b3c1ec78757a3522977188d76a271dc1f92b45fdf9fcadd0e2fc48f92",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-activity-integration.test.ts",
+      "sha256": "f368c026291ff14441b301d34d02d71719afc8251fa4983ced209868abdfc5ab",
+      "targetMainWorkingTreeEqual": true
+    }
+  ],
+  "claimObserved": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "apps/web/src/conversation-activity/native/tool.tsx",
+      "apps/web/test/conversation-activity-integration.browser.ts",
+      "apps/web/test/conversation-activity-integration.test.ts",
+      "docs/evidence/wpf-activity-readability",
+      "plans/wpf-activity-readability"
+    ],
+    "state": "active",
+    "branch": "codex/web-activity-readability",
+    "origin": "new",
+    "taskId": "WPF-ACTIVITYREAD01",
+    "worker": "workspace_panels_owner",
+    "claimId": "6f427ac5-8f10-4c02-8446-07cead914163",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability",
+    "createdAt": "2026-10-06T09:33:19.306Z",
+    "updatedAt": "2026-10-06T09:39:42.651Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "claimObservedAt": "2026-10-06T10:00:59.737Z",
+  "leadEvidence": "docs/evidence/i02/native-tui-integration.json",
+  "leadChecksAttribution": "Lead reported 59 source comparisons, 50 relevant direct tests and root/Web typechecks; owner did not rerun product checks.",
+  "dashboardDeployment": "No new API sample; 122-source deployment receipt not yet confirmed.",
+  "services": "Unchanged; no service, model or product database action."
+}

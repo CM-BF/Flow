@@ -19,3 +19,5 @@ Stable-frame screenshots: [desktop light1280×720](production-light.png), [light
 Independent review: root reran16 direct tests and performed a focused real-App CUA journey; audited author dev13/prod12 evidence without rerunning those suites. No real provider/center/DB or personal-service verification. See the canonical review for attribution.
 
 Canonical [plan](../../../plans/wpf-activity-readability/plan.md), [status](../../../plans/wpf-activity-readability/status.md), [review](../../../plans/wpf-activity-readability/review.md). This slice does not simplify the unowned outer message footer, queue or steering receipts, and does not finish the whole MATURE06 task.
+
+主线接收：f181d84b5fb3652d62e2a181acff442d42b3e066，4源码与已审target相同，[本次只读证据](main-observation.json)。源码已集成，预览仍为原HTTPfixture，不代表个人服务或dashboard部署。

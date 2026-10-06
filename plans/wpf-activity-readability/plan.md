@@ -1,6 +1,6 @@
 # WPF-ACTIVITYREAD01 活动信息的渐进展示
 
-2026-10-06，状态：in-progress。唯一owner workspace_panels_owner / gpt-6-astra ultra。直接所属 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，co-lead Web /root；本片不代表完整对话体验Done。
+2026-10-06，状态：completed（本片段主线已接收）。唯一owner workspace_panels_owner / gpt-6-astra ultra。直接所属 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，co-lead Web /root；本片不代表完整对话体验Done。
 
 用户目标：默认正文、简短自然状态与需要动作优先，技术信息按需。首片仅改善已展开的native活动区；外层MessageFooter/App/Thread正在STEIRI独立领取，不改它们，不更queue/回执/授权/公共契约或projection。遵守[模块规则](../../AGENTS.md#modular-design)。
 
@@ -9,8 +9,10 @@
 - [x] WPF-ACTIVITYREAD01-01：来源/本地技能/领取/小Interface确认。
 - [x] WPF-ACTIVITYREAD01-02：默认简短信息与Details，保留unknown/error/input-ready/truncated/redacted及恢复入口。
 - [x] WPF-ACTIVITYREAD01-03：复用完整HTTP浏览器断言，0→1→cache、分页/两pane/草稿/离线迟到、双主题390与稳定截图。
-- [ ] WPF-ACTIVITYREAD01-04：clean-code、固定target独审、交付与集成记录。
+- [x] WPF-ACTIVITYREAD01-04：clean-code、固定target独审、交付与集成记录。
 
 验证只本模块/直接消费者；真实模型/产品DB/个人服务0操作，独立动态HTTPfixture。报告全部写本片evidence，旧activity-i01只读。页码只表示当前已读页，不推总数；输入就绪不等于运行，活动成功不等于最终回复/验证；received≠applied回执不在本DTO中，不伪造映射。未知和权限错误不被Details隐藏。
 
 2026-10-06 09:47 UTC：固定实现独审APPROVED，无阻塞finding；前三TODO完成，TODO04的审查/交付已完成，主线集成记录仍待正式回执，不提前勾选。当前产品停止修改，六scope保留审后接收期间权属。
+
+2026-10-06 10:00:59 UTC：本片段main接收完成，固定实现不变；见[status](status.md)及main观察，部署/真实环境限制不变。
