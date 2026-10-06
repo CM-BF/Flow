@@ -1,6 +1,6 @@
 # D02 新任务权威状态登记
 
-计划编号D02；状态completed（分支交付，review待执行）；创建/更新2026-10-06。唯一owner/model：assignment_review / gpt-6-astra。
+计划编号D02；状态completed（分支交付，固定实现review通过）；创建/更新2026-10-06。唯一owner/model：assignment_review / gpt-6-astra。
 Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-progress-sync`；branch `codex/dashboard-progress-sync`；base `6783562696cd268274398a02ebd3dff41aed2ce0`。
 
 目标：在D01只读dashboard登记R02/I01/LAB01/LAB02与D02自身；LAB02 owner已确认实际status路径及实现中状态。仅改apps/execution-dashboard、本plan、docs/evidence/d02；不改其他owner status、root依赖、产品Web/中心，不停止现有4320服务。根计划继续读取plan-status-review。
@@ -20,3 +20,5 @@ Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-progress
 metadata HEAD与已审实现target不同导致旧approval显示待复审；无/无新增事项不应列入用户决策；历史风险/已解除/容量限制与当前阻塞分开；SHA及工程原文保留详情。这些不纳入本轮解析语义或UI变更。
 
 [status](status.md)是唯一手填进度源；[review](review.md)绑定具体提交。未知不会自动变绿，分支通过不代表main集成。
+
+MQ-02非阻塞候选：main精确HEAD比较可能让全队反复待同步；后续考虑实现祖先关系/范围比较，将实际集成事实与观察时间分开。本轮仅记录，不改语义。
