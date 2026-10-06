@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-06T11:31:34.914664+00:00",
+  "main": "fd1322f9c0c1d085d5e343e39f6216b20d26c264",
+  "implementedAt": "648e331c58043cf7ee307300521ab1c628cb2ee1",
+  "sourceFacts": [
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "sha256": "ecc97f9795a4ff05a9340c5d71836f59b86246d1f0daa63dfcf3282e3295267f"
+    },
+    {
+      "path": "packages/interaction/src/stream/index.ts",
+      "sha256": "a361f4a3953bd6abd4aecee7c05de7d4ec1320238e986157db273a7ed58c2f79"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "sha256": "fea86a1a4cdc7c17e6be6d48a8ef7f2bb60be1974b74fcf808f46d813971fa52"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "f55dbd8ea75148164e5cc52303338793f2012eb4381b34e62ccd773e72a311fd"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    }
+  ],
+  "integrationEvidence": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/tui-stream-integration.json",
+  "tests": "No new tests; reuse TUI01C independent review/direct focus fix and main root typecheck; shared Web ACK separately reviewed",
+  "completeDailyUse": false
+}

@@ -37,12 +37,12 @@
 
 - [x] **TUI001-01** 建立唯一大task、职责、研究/版本来源、初始范围和完整验收；此项完成不等于产品可用。
 - [x] **TUI001-02** TUI01A：固定实际依赖与小Interface，交付slash/controller/headless/基础交互端到端片，独立review后及时main。
-- [ ] **TUI001-03** 流式正文与活动：task/attempt增量协议、settlement原规则、重放/乱序/重连，展开前零detail请求，输出/缓存/刷新有界。
+- [x] **TUI001-03** 流式正文与活动：task/attempt增量协议、settlement原规则、重放/乱序/重连，展开前零detail请求，输出/缓存/刷新有界。
 - [ ] **TUI001-04** 真实执行选项：消费MATURE02/R05 Claude+Codex能力，model/thinking/fast/access requested/effective/unsupported分明，不把catalog当账号授权。
 - [ ] **TUI001-05** context/files：复用固定citation与附件生命周期合同，发送/排队冻结身份，未就绪拒绝；不直接附本机路径给远端runner。
 - [ ] **TUI001-06** queue/steer/cancel/decision：精确version/pin/attempt，durable ACK与实际生效区分，unknown恢复不自动复投。
 - [ ] **TUI001-07** runner/plugin管理：复用中心已发布功能，列出/详情/明确owner操作，下载不等于启用；不造终端私有插件权限层。
-- [ ] **TUI001-09** 共享发送回执：TUI01A局部修复先交付，后继将创建/提交两种ACK的结构与冻结请求身份核验收敛到client小Interface，Web/TUI复用；unknown保留原key/body，旧回执不覆盖当前执行状态。唯一设计见[共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)。
+- [x] **TUI001-09** 共享发送回执：TUI01A局部修复先交付，后继将创建/提交两种ACK的结构与冻结请求身份核验收敛到client小Interface，Web/TUI复用；unknown保留原key/body，旧回执不覆盖当前执行状态。唯一设计见[共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)。
 - [ ] **TUI001-08** 日常终端与双公开客户端完整验收：同会话交替操作、过期CAS不自动重发、断线/退出后台继续；窄终端/CJK/emoji/粘贴/多行/resize/focus、丢ACK/重启、过载与资源回收，文档/独审/部署入口；真实provider只在具体新预算许可后运行。
 
 ## 验收矩阵
@@ -63,4 +63,6 @@ MATURE02/04提供能力与上下文来源，MATURE03提供文件生命周期，M
 
 研究与来源：[research.md](../../docs/evidence/tui01/research.md)、[provenance](../../docs/evidence/tui01/research-provenance.json)、[包版本候选](../../docs/evidence/tui01/package-candidates.json)。
 
-当前唯一子片：TUI01B已交付共享ACK与冲突恢复；Web WPF-ACK01接其真实第二消费者，TUI001-09暂不关闭。TUI01C承担TUI001-03，以共享浏览器安全协议/中立正文段落复用既有Web规则，不复制终端状态机或迁移Web host。
+当前唯一子片：TUI01B已交付共享ACK与冲突恢复；Web WPF-ACK01接其真实第二消费者，TUI001-09已按两消费者独审/main关闭；完整双客户端旅程仍归08。TUI01C承担TUI001-03，以共享浏览器安全协议/中立正文段落复用既有Web规则，不复制终端状态机或迁移Web host。
+
+11:34主线验收映射：TUI01C已main648e、焦点修复及类型组合通过；03仅流式/详情子片完成。后继06优先复用已发布queue/cancel/decision小typed handler与headless，不等待整个能力目录或Web视觉；实际实施仍由空闲worker独立take，当前无新增writer。

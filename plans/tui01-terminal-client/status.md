@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:51:36 UTC / mainc450c2da |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:34 UTC / mainfd1322f9 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 27d6fef8d95261c1f286a3acdd3d524d907a2a29；本次仅管理metadata |
 | 工作树dirty状态 | 管理metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | TUI01A与TUI01B独审通过并main；本次只对齐父计划，无重复工程测试 |
-| 已集成main状态 / HEAD | TUI01A mainf181，TUI01B dc7f共享ACK与冲突恢复 main0cee；完整日用目标开放 |
+| 检查状态 | TUI01A/B/C独审与必要组合通过并main；本次父状态核对，无新工程测试 |
+| 已集成main状态 / HEAD | TUI01C d26+0fff已main648e；共享Web ACK已主线，附件v2 ACK已mainfd132；完整日用目标开放 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 终端可靠发送与冲突恢复已共用中心回执校验，冲突时保留草稿并恢复观察。 |
-| 下一可用交付 | 网页与终端共用逐段正文和结算规则，终端可按需展开工具详情。 |
+| 当前产出 | 终端已支持逐段正文、可靠发送和按需工具详情，并与网页复用相同回执与结算规则。 |
+| 下一可用交付 | 接入已发布的队列、取消与人工决定，并完成同一会话跨客户端交替操作验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -31,14 +31,16 @@
 | --- | --- | --- | --- |
 | TUI001-01 | completed | Execution Lead | [设计](plan.md)、[研究来源](../../docs/evidence/tui01/research-provenance.json) |
 | TUI001-02 | completed | runner_owner / Mika独审 | [TUI01A唯一状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/plans/tui01a-conversations/status.md)；29b两项P2已闭，mainf181d84；原端到端/PTY和增量19不同用例边界保留 |
-| TUI001-03 | in-progress | runner_owner | [TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)在独立树与claim实施共享body/活动校验，Web五路径正式交接 |
+| TUI001-03 | completed | runner_owner / Execution Lead | [TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)独审及焦点修复通过、main648e接收；[父回执](../../docs/evidence/tui01/tui01c-main-receipt.json) |
 | TUI001-04 | pending | TUI owner / Mika合同 | 真实model能力仍逐项接通 |
 | TUI001-05 | pending | TUI owner / Web合同 | 附件生命周期与context |
 | TUI001-06 | pending | TUI owner | queue/steer/cancel/decision |
 | TUI001-07 | pending | TUI owner | runner/plugin管理 |
-| TUI001-09 | in-progress | runner_owner / Web独立消费者 | TUI01B固定dc7f已main0cee；Web WPF-ACK01独立替换其私有重复，v2附件仍需已审合同扩展 |
+| TUI001-09 | completed | runner_owner / Web独立消费者 | TUI01B与WPF-ACK01均已独审/main；共享v2附件回执df8也已mainfd132，完整双端旅程仍归08 |
 | TUI001-08 | pending | 独立review / Execution Lead | 完整日用/PTY/双公开客户端共同中心/provider验收仍开放 |
 
 本claim仅管理文档；TUI01A由runner_owner在独立tui-conversations树与0ba7e5d7 claim实施，复用R06交付后的同一槽。依赖固定1cec921，既有Web importer/package/snapshot保持，实际core仍0.3.22；lock移交已归还F01。首片9e5588原CHANGES_REQUESTED保持历史；29b已修复两个P2并获MikaAPPROVED，19增量含11重复及8新例，mainf181已接收。P3最大revision边界留共享ACK后继；无provider结论。唯一status进入dashboard；与GO只报真实大task blocker或完整Done。
 
 本次仅收敛既有TUI001-08双客户端验收并分派TUI001-09；不新建大task或状态权威，不改TUI01A已审源码，不重复工程测试。
+
+2026-10-06 11:34 UTC：父状态已按实际main接收更新，未复制子片审查或重跑检查。TUI001-03/09的局部交付关闭，完整日用、真实执行选项/附件发送/队列与双客户端验收保持开放；后台公开合同与headless/终端先验、Web并行，不互设所有开发的串行门禁。
