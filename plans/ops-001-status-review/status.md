@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:32 UTC / main0da869f7（文档接收；个人运行源单列） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:35 UTC / main0da869f7（文档接收；个人运行源单列） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -18,9 +18,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 最小远程验证文件已可审阅；共享运行环境再次停止，正在保留原数据库和身份恢复连接。 |
-| 下一可用交付 | 恢复原数据库与个人后台连接，再按实际空间安排已准备的检查；远程验证继续等待用户原选择。 |
-| 当前阻塞 | ACTIVE: 23:32运行环境已停止、共享数据库与个人后台不可连接，现有网页仍在；空间也仍不足局部验证余量。原因未明，未重建数据库或更改用户任务。 |
+| 当前产出 | 原数据库与协作连接已恢复；个人后台正在按原版本准备恢复，现有网页保留。 |
+| 下一可用交付 | 恢复个人后台后按实际空间安排已准备的检查；远程验证继续等待用户原选择。 |
+| 当前阻塞 | ACTIVE: 共享数据库已恢复，个人后台仍不可连接；原版本恢复准备优先。空间仍不足局部验证余量，远程启用等待用户原选择。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -361,3 +361,5 @@ OPS-CI01唯一source为`ops-remote-validation/plans/ops-ci01-remote-validation`�
 ## 2026-10-06 23:32 UTC 同版本环境恢复
 
 Mika协调读取失败后，Lead独立确认OrbStack Stopped、Docker socket缺失，55432与61227无监听，4320与61228保持。卷可用1,063,374,848B，不足产品验证gate。原PG完整ID与volume由19:26固定回执提供保护锚；先核既有daemon/容器身份，仅恢复既有实例，不重建、删卷、迁移、清journal或重新执行任务。个人已发布af51/v18/d629-v3与旧362/v15操作严格区分；恢复前需fresh现场和固定工具审查。新验证不占用窗口，固定源码独审继续。[本轮只读事实](../../docs/quality/resource-space-2026-10-06/daemon-recovery-2332/preflight.json)。
+
+23:35追加事实：唯一orbctl start在15,118ms返回timeout1，随后只读Running；未重试。固定原容器8项身份均同19:26锚后仅一次start exit0，23:34:50 healthy/55432 listening，协调list正常。未重建容器/卷、未操作其他自启动服务；恢复cause仍unknown。实际free1,055,133,696B，仍不足产品检查余量。个人center61227仍无监听、Web61228保持；旧SVC claim已released，新owner仅准备af51/v18精确恢复，旧362/v15许可不可重用。当前共享重验证无holder，个人恢复准备优先。[实际恢复与identity](../../docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-after.json)。
