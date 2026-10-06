@@ -132,6 +132,8 @@ it('provides an authorized updated-order task index with exact filtered totals a
   expect(second.nextCursor).toBeNull();
   const filtered = (await get('/api/task-index?statuses=queued&updatedAfter=2026-10-06T00%3A00%3A30Z')).json();
   expect(filtered.totalSize).toBe(1);
+  const inclusive = (await get('/api/task-index?statuses=queued&updatedAfter=2026-10-06T00%3A01%3A00Z')).json();
+  expect(inclusive.tasks.map((task: { id: string }) => task.id)).toEqual([b.id]);
   expect(filtered.tasks[0].id).toBe(b.id);
   expect((await get(`/api/task-index?contextId=${a.id}`)).json().totalSize).toBe(1);
   expect((await get(`/api/task-index?statuses=queued&cursor=${encodeURIComponent(first.nextCursor)}`)).statusCode).toBe(400);

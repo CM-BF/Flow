@@ -6,7 +6,7 @@
 
 - `FlowClient.workspace({after?,before?,limit?},signal?)` / `GET /api/workspace`：不带游标读取最新40条；after是向前增量，before是较早历史，二者互斥，limit=1..100。entries升序、nextCursor/previousCursor、watermark、hasMore/hasEarlier；超过水位的旧游标明确409 workspace_cursor_reset，客户端重新取快照。每条task仅id/title，entry只有正文或id/title reference，无详情/原prompt。
 - tasks包含最新100条当前轻量状态（ownerVersion/pendingDecision），attention包含最近100条waiting/uncertain；各有Truncated标记。完整任务索引用queryTasks分页；这些上限不意味着全项目只有100项。状态与条目来自同一个只读repeatable-read快照。
-- `FlowClient.queryTasks({limit?,cursor?,statuses?,contextId?,updatedAfter?},signal?)` / `GET /api/task-index`：按updatedAt/id降序，count在游标分页前计算，与该页同事务快照；cursor绑定过滤。当前personal模型contextId=taskId，未来独立conversation需受控变更，不冒充已实现外部binding。statuses为Flow内部状态。
+- `FlowClient.queryTasks({limit?,cursor?,statuses?,contextId?,updatedAfter?},signal?)` / `GET /api/task-index`：按updatedAt/id降序，count在游标分页前计算，与该页同事务快照；cursor绑定过滤。当前personal模型contextId=taskId，未来独立conversation需受控变更，不冒充已实现外部binding。statuses为Flow内部状态。updatedAfter采用包含端点的>=语义，对齐A2A statusTimestampAfter，不由协议层做减毫秒补偿。
 - 决策仍`client.decide(taskId,{decisionId,answer},key)`，取消仍`cancel(taskId,key)`；任何409应重新取workspace权威当前态并提示旧决策已失效，不自动换decisionId重送。详情仍显式`detail(id)`，未展开禁止请求。
 - CLI `workspace --json` / `workspace --after N` 与中心同接口；`reconcile show|observe|resolve|retry <taskId> --input JSON-file --key stable-key`走C02共享schema，不允许盲retry。
 

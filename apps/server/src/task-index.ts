@@ -33,7 +33,7 @@ async function queryTaskIndex(pool: Pool, input: TaskIndexQuery): Promise<TaskIn
   }
   return transaction(pool, async client => {
     const parameters = [input.statuses ?? null, input.contextId ?? null, input.updatedAfter ?? null];
-    const where = '($1::text[] IS NULL OR status=ANY($1)) AND ($2::text IS NULL OR id=$2) AND ($3::timestamptz IS NULL OR updated_at>$3)';
+    const where = '($1::text[] IS NULL OR status=ANY($1)) AND ($2::text IS NULL OR id=$2) AND ($3::timestamptz IS NULL OR updated_at>=$3)';
     const totalSize = Number((await client.query<{ count: string }>(`SELECT COUNT(*) count FROM flow.tasks WHERE ${where}`, parameters)).rows[0]!.count);
     const result = await client.query<{
       id: string; title: string; harness: TaskSummary['harness']; status: TaskSummary['status'];
