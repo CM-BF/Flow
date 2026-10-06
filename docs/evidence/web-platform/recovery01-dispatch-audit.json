@@ -131,6 +131,40 @@
     "rootAuthorization": "Recovery only conditional direct one-file test, fixedcheckpoint; <=30s including>=5s cleanup each, logs2MiB/tmp8MiB, onefork, start>=1GiB+32MiB/stop<=1GiB+16MiB, sandbox own tmp/evidence and read-only dependencies",
     "managerCoordination": "No group PG/Chrome/build; RELEASE links completed and stopped, sourceonly; notified panels to freshadmit; no actual test result yet",
     "limits": "MockIDB not browser; no new runtime permit for RELEASE",
-    "currentOverride": "resource-window-current.json: X01 first, prepare only until actualclose receipt and freshadmission; prior no-groupwindow observation is not launchauthorization"
+    "currentOverride": "resource-window-current.json: baselinecompletedandstopped;ReleaseA-onlynextaftergates,targetedRecoverymustnotparallel"
+  },
+  "currentFixedCheckpoint": {
+    "commit": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+    "managerGit": "HEAD/originmatchclean",
+    "fixedSourceHashCount": 19,
+    "mismatches": 0,
+    "typesLastSeconds": 6.058,
+    "typesExit": 0,
+    "typesCumulativeSeconds": 40.603,
+    "typesRemainingSeconds": 19.397,
+    "direct": "4ba20/20controlledbaselinePASS2.54s;R4-1notcovered,notrealIDB/browser",
+    "review": "root4bapartialsource audit: priorf13sourcefixesconfirmed, newR4-1P2open;notfullfeatureAPPROVED",
+    "registry": "Bothcanonicalregisteredfixedmain d679;Leadactual161-sourceobservation,notmanagerUI"
+  },
+  "directBaseline": {
+    "fixed": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+    "passed": 20,
+    "total": 20,
+    "elapsedSeconds": 2.54,
+    "remainingSeconds": 27.46,
+    "cleanup": {
+      "state": "fulfilled",
+      "seconds": 0.0,
+      "errors": [],
+      "reservedSeconds": 5,
+      "onlyOwnPgid": true,
+      "onlyOwnTmpCache": true
+    },
+    "maxSampledTmpBytes": 2689356,
+    "tmpBytesBeforeCleanup": 9227,
+    "logBytes": 330,
+    "minSampledFreeBytes": 1109147648,
+    "limits": "controlled IDB event port/mock public fetch;not realIDB/browser/HTTP;R4-1notcovered",
+    "ownerStopped": "All test processes stopped per owner/root; remainingbudget requires newfixedtargetandfreshwindow"
   }
 }

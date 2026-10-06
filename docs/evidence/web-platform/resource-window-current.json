@@ -1,39 +1,76 @@
 {
-  "recordedAt": "2026-10-06T14:51:43.082043+00:00",
+  "recordedAt": "2026-10-06T15:03:05.137272+00:00",
   "source": "Root relay of new Lead inbound; no direct outbound, no personal/4320 sample",
-  "state": "X01_FIRST_AWAITING_ACTUAL_WINDOW_RECEIPTS",
+  "state": "RECOVERY_DIRECT_CLOSED_RELEASE_AWAITING_FIXED_DELTA_AND_FRESH_ADMISSION",
   "release03": {
     "claim": "bfb209ae v3 original4",
-    "state": "Light source only;17links read-only/stopped;0PG/Chrome;180s compatibility not started",
+    "state": "A-only resourcegate delta beingfixed/reviewed;sourceonly,0PG/Chrome",
     "source": "362af3bac77541e5a60979326bcf4d4b8c947915",
     "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
     "futureBudget": "<=180s total including20s cleanup,1PG+1Chrome,8MiB evidence",
     "startConditions": [
-      "X01 actual close receipt",
-      "Fixed scripts reviewed",
-      "Fresh actual peak/approximately1GiB remaining space admission"
+      "Fixedsourceguardreview and necessarytypes",
+      "Dependencyreadonlyidentity",
+      "FreshactualPGincrement and approximately1GiBcleanupspace",
+      "Recoverydirectwindowclosed"
     ],
-    "startTime": null
+    "startTime": null,
+    "candidate": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
+    "metadata": "900fc59ae46cc0c05c563da2d82710393963fe87",
+    "order": "Recovery direct closed;RELEASE A-only next afterfixedreview/types/freshadmission;Recoverytargetednotparallel",
+    "aOnly": "First exact362 attachment-only andmixed HTTP reportEvents/contextHistory, preserve bothraw andcleanup;anyred =>B/ChromeNOT_RUN,noallgreenSVCimport; A green withBunadmitted remainssealed, noautocontinue"
   },
   "recoveryDirect": {
-    "state": "Preparation only; explicitly told owner not to start during pending X01 PG window",
+    "state": "4ba20/20baselinecomplete,alltestprocessesstopped;R4-1sourcefixongoing,newtargetedrunrequiresfreshturn",
     "existingBudget": "One fixed test/onefork,30s total incl>=5s cleanup each,own/tmp8MiB/log2MiB,start>=1GiB+32MiB/stop<=1GiB+16MiB",
     "startConditions": [
-      "Fixedcheckpoint/fullconfig/sandbox/hash",
-      "X01 actual close receipt",
-      "Fresh claim/space/sharedwindow admission"
-    ]
+      "CompleteboundedRELEASE997d readonlyreview",
+      "Finalrunner/config/sandboxhash",
+      "Freshoriginal21claim and ownsourcefixedhash",
+      "Freshstart>=1GiB+32MiB,stop<=1GiB+16MiB,sharedwindow"
+    ],
+    "checkpoint": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+    "result": {
+      "fixed": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+      "passed": 20,
+      "total": 20,
+      "elapsedSeconds": 2.54,
+      "remainingSeconds": 27.46,
+      "cleanup": {
+        "state": "fulfilled",
+        "seconds": 0.0,
+        "errors": [],
+        "reservedSeconds": 5,
+        "onlyOwnPgid": true,
+        "onlyOwnTmpCache": true
+      },
+      "maxSampledTmpBytes": 2689356,
+      "tmpBytesBeforeCleanup": 9227,
+      "logBytes": 330,
+      "minSampledFreeBytes": 1109147648,
+      "limits": "controlled IDB event port/mock public fetch;not realIDB/browser/HTTP;R4-1notcovered",
+      "ownerStopped": "All test processes stopped per owner/root; remainingbudget requires newfixedtargetandfreshwindow"
+    },
+    "resultArchive": "recovery01-direct-prepared-4ba/direct-first.json"
   },
   "leadWindow": {
-    "O14": "Lead says owned PG all closed",
-    "X01": "Lead may proceed under its own authorized<=30s/1randomDB/<=32MiB budget; no observed start/finish receipt yet",
-    "Lead": "Own small HTTP/config checks, no authority transferred to thisgroup"
+    "source": "f01-plugin-window-cleanup-1457.json",
+    "startedAt": "2026-10-06T14:57:16.264Z",
+    "endedAt": "2026-10-06T14:57:18.336Z",
+    "actual": "factory1/1 perLead, singleownedDB12360727B,connections=[]/remaining=[],rootRemoved=true,0provider",
+    "reservation": "Lead says no furtherPG/Chrome until thisgroup returns window",
+    "limits": "Old1,122,291,712B is not freshadmission or reservedcapacity"
   },
-  "registry": "Lead says now registering Recovery and RELEASE03; no completed registration/deployment receipt yet",
+  "registry": "main d679444c4bed52bbd53d38f4944f914b30fbbd92 fixedregistry matches bothcanonical;Lead actual4320 14:51:18 has161sources/live/parser0/humancomplete;manager noUI/API",
   "limits": [
-    "SOURCE_READY is not run",
-    "No invented ETA",
-    "No assumption X01 has finished",
-    "No groupPG/Chrome/build or resource polling"
-  ]
+    "SOURCE_READY is not runtime",
+    "ActualX01closed is not adequatefree-spaceproof",
+    "Original180s/8MiB/oneDB budgetnotreset",
+    "No inventedETA/personalAPI/4320requery"
+  ],
+  "groupWindowOwnership": {
+    "state": "HELD_FOR_RELEASE_A_ONLY_NOT_RETURNED_TO_LEAD",
+    "meaning": "Recoverydirectcompletionendsinternaltestsegment only;LeadPG/Chromewindowstillassignedtothisgroup",
+    "release": "AfterAcleanup or explicitdecisionnottoexecute, recordcanonicalreturn;iffreshspaceinsufficient immediatelyNOT_RUNandreturn,notidlehold"
+  }
 }

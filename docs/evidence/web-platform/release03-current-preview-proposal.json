@@ -104,7 +104,7 @@
   "sparseSourceCandidate": "release03-sparse-source-estimate.json: future fixed362 source-only checkout estimate, no WT created; excludes dependency/PG/browser peak, no run permission.",
   "updatedAt": "2026-10-06T14:33:50.892685+00:00",
   "prepareState": "PREPARED_RELEASED",
-  "validationState": "CLAIMED_LIGHT_SOURCE_IMPLEMENTATION_RUNTIME_GATES_PENDING",
+  "validationState": "A_ONLY_FIXED_SOURCE_AWAITING_REVIEW_AND_FRESH_RUNTIME_ADMISSION",
   "historicalRawArtifact": {
     "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
@@ -165,5 +165,14 @@
     "scopeCount": 4,
     "sourceReady": "422d0fba2bf6f45f61dfde3bcec99f14c62ae5e5",
     "dependencies": "17 exact links created, verified, stopped and returned; runtime still pending"
+  },
+  "aOnlyDecision": {
+    "source": "GOviaRoot",
+    "implementation": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
+    "order": "exact362 attachment-only+mixed actualHTTP history first;cleanupthenstop",
+    "onRed": "Keepbothraw,BandChromeNOT_RUN,noSVCgreenreceipt;handoffexistingapprovedbackendminimumfix tolegaloperator",
+    "onGreen": "SealAresult;Bonlyafterseparateadmission",
+    "budget": "Original<=180s cumulative,8MiB,1ownedDB,0provider;notreset",
+    "publicationGoal": "Completecompatibility+personalpreviewgoalremains,not A-onlyDone"
   }
 }

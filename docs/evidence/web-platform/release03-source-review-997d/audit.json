@@ -1,0 +1,32 @@
+{
+  "reviewer": "workspace_panels_owner / gpt-6-astra ultra",
+  "at": "2026-10-06T14:59:53.101365+00:00",
+  "target": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
+  "metadata": "900fc59ae46cc0c05c563da2d82710393963fe87",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "head": "b1338ca11b0bab0907d9e97d5cf1eb0c6f5a6b56",
+  "branch": "codex/web-current-preview-compatibility",
+  "dirty": "",
+  "sourceHashes": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 17596,
+      "sha256": "41a26ef686cfe6a5ae97ca02fc06f7e4d1a395c6616fed775e7bc3bb51acb52e"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 33559,
+      "sha256": "a73b63890e610684f0f44e2f75eb3767ec462c2116264d1473a2d1566db2a650"
+    }
+  ],
+  "sourceDiffCheck": 0,
+  "protectedDiff": "empty",
+  "conclusion": "APPROVED \u2014 bounded source/Interface review for gated A-only verification; not product, compatibility or release approval",
+  "blockingFindings": [],
+  "execution": "NONE: no product import/tests/HTTP/PG/Chrome/provider/service",
+  "skills": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+  ]
+}

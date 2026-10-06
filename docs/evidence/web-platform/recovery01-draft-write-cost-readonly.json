@@ -1,0 +1,17 @@
+{
+  "source": "Root fixed4ba readonly review, no experiment",
+  "fixed": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+  "scope": "Existing MATURE06 performance follow-up, no Recovery21 expansion/newwriter",
+  "sourcePaths": [
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/src/recovery/journal.ts"
+  ],
+  "hypothesis": "RecoveryWorkspace.changed serially enqueues each draftchange; eachjournaltransaction getAll and budgetvalidation twice for global<=4MiB records. SlowIDB plus rapid input may accumulate waiting closures.",
+  "nextEvidence": "Controlledslowstorage/continuousinput queuelengthandflushlatency before deciding whether to coalesce not-yet-started draftwrites",
+  "constraints": [
+    "Preserve handoff/CAS/generation/originalkey barriers",
+    "Do not merge startedwrites or mutatefrozencommand",
+    "No CPU/p95/regressionmeasurement or benefitclaim",
+    "No additionalrun or currentimplementation scope"
+  ]
+}

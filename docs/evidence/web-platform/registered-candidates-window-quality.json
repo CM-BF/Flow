@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-06T15:04:33.190521+00:00",
+  "scope": "632a7149v3 managementonly",
+  "rawArchives": [
+    {
+      "source": "/tmp/d01-registry-d679-source-observation.json",
+      "archive": "registry-d679-recovery-release03-observation.json",
+      "bytes": 966,
+      "sha256": "5dca5f301bafe7a4c72e0531c0d84a717aea5fdbf15bef3daf49227b405c94bd"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/plugin-installation-production-facts.json",
+      "archive": "f01-plugin-window-cleanup-1457.json",
+      "bytes": 569,
+      "sha256": "bcc89c6e30afc7dbaff5ad1720df8fcba0332113b7d7e69a0de3c84b193390b3"
+    },
+    {
+      "source": "/tmp/recovery01-direct-3t2k6sg6/preflight.json",
+      "archive": "recovery01-direct-prepared-4ba/preflight.json",
+      "bytes": 3584,
+      "sha256": "c93194bfb9a3714889d3c496ddd939efd78dce3288768f3ca9d3b57d3caffa79"
+    },
+    {
+      "source": "/tmp/recovery01-direct-3t2k6sg6/config.mjs",
+      "archive": "recovery01-direct-prepared-4ba/config.txt",
+      "bytes": 407,
+      "sha256": "12e5d4e37cf1c73dbd7a5e0167326bf6378353024f7a5022623437f6922eba53"
+    },
+    {
+      "source": "/tmp/recovery01-direct-3t2k6sg6/sandbox.sb",
+      "archive": "recovery01-direct-prepared-4ba/sandbox.txt",
+      "bytes": 287,
+      "sha256": "1eafd2518e064787d887f4497a1788d54b46b6630344fd5bf176830b4a80632e"
+    },
+    {
+      "source": "/tmp/root-recovery-4ba-fixed-review.json",
+      "archive": "recovery01-direct-prepared-4ba/root-source-review.json",
+      "bytes": 4509,
+      "sha256": "6b9cc7d43b38f12cc6706c858f063b14a3187e2f685319b9aa13bd17baf8b959"
+    },
+    {
+      "source": "/tmp/release03-independent-997d/report.md",
+      "archive": "release03-source-review-997d/report.md",
+      "bytes": 2846,
+      "sha256": "ae421e02dc5b668f5cd004dd1845bdb5e4693fff69a5a1af9b2273d58c93bd0f"
+    },
+    {
+      "source": "/tmp/release03-independent-997d/audit.json",
+      "archive": "release03-source-review-997d/audit.json",
+      "bytes": 1281,
+      "sha256": "a180f8455781116ef33ef17d18ca7e527c5c5a37aaf5079187f2ce7077a646c9"
+    },
+    {
+      "source": "/tmp/recovery01-direct-3t2k6sg6/run.py",
+      "archive": "recovery01-direct-prepared-4ba/runner.py.txt",
+      "bytes": 4619,
+      "sha256": "01650330fcc1bd2a040d9d23e39a428b962d9cf86f8a4a73c398b6755ae304bc"
+    },
+    {
+      "source": "/tmp/d01-recovery-direct-admission.json",
+      "archive": "recovery01-direct-prepared-4ba/management-admission.json",
+      "bytes": 4874,
+      "sha256": "23990e6772ecd13d196dbed51eb15ec6eb3a6e1e9dd1b157a2792bb354780b0b"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-first.json",
+      "archive": "recovery01-direct-prepared-4ba/direct-first.json",
+      "bytes": 4185,
+      "sha256": "e3bfda2f34b09ea8ea4e8856bd9ffafe7d228c103b3bcb5cfbdf5d7f65691cd8"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-first.log",
+      "archive": "recovery01-direct-prepared-4ba/direct-first.log",
+      "bytes": 330,
+      "sha256": "262d62191ab022f2868929d10caef4056cb96082a127345fc4f25ac550032402"
+    }
+  ],
+  "method": "FixedGit registry and sourcehash read; localclean-code consistency of current/historical state, source readiness vs runtime authority; no producttests",
+  "facts": "LeadPGcleanup actual; registryactualPage attributedLead; Recovery4ba/RELEASE997d sourceonly",
+  "checks": {
+    "parser": [
+      {
+        "path": "web-platform-management/plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+        "id": "WPF-RECOVERY01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+        "id": "WPF-RELEASE03",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "rawArchiveCount": 12,
+    "rawHashMismatches": 0,
+    "addedMarkdownLinks": 20,
+    "missingLinks": 0,
+    "managementScopeViolations": 0,
+    "sourceAudit": "19Recoveryfixed/current/preflight hashes matched beforelaunch;root10 andpeer2source rawaudit preserved",
+    "diffCheck": "0",
+    "productChecksByManager": "None;controlled20case owner result accurately attributed",
+    "rootOpenFinding": "R4-1 remainsopen,baseline notcoverage;noformalfeatureapproval"
+  },
+  "actualDirectResult": {
+    "fixed": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+    "passed": 20,
+    "total": 20,
+    "elapsedSeconds": 2.54,
+    "remainingSeconds": 27.46,
+    "cleanup": {
+      "state": "fulfilled",
+      "seconds": 0.0,
+      "errors": [],
+      "reservedSeconds": 5,
+      "onlyOwnPgid": true,
+      "onlyOwnTmpCache": true
+    },
+    "maxSampledTmpBytes": 2689356,
+    "tmpBytesBeforeCleanup": 9227,
+    "logBytes": 330,
+    "minSampledFreeBytes": 1109147648,
+    "limits": "controlled IDB event port/mock public fetch;not realIDB/browser/HTTP;R4-1notcovered",
+    "ownerStopped": "All test processes stopped per owner/root; remainingbudget requires newfixedtargetandfreshwindow"
+  }
+}

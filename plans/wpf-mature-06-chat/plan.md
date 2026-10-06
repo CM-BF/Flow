@@ -80,3 +80,6 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 
 
 06-04插件覆盖后继仍归REQ22–23：[fixed82d78审计](../../docs/evidence/web-platform/recovery01-plugin-surface-coverage-82d78.json)确认P01入口已接，但恢复dialog内部记录动作尚无可贡献接缝。后继由plugin co-lead定义最小受权record context，保原authority；不扩当前21scope，不因入口可插拔冒内部全可插拔，也不把未完成基础片记失败。
+
+
+原06性能后继补充（固定4ba源码假设，未实验）：[draft写入路径研究](../../docs/evidence/web-platform/recovery01-draft-write-cost-readonly.json)记录逐次changed串行enqueue、事务getAll与全局预算复核。未来先用受控慢存储/连续输入测待保存队列与flush延迟，再决定是否合并尚未启动的draft写；保handoff/CAS/generation/原key屏障。没有CPU/p95或退化结论，不扩当前Recovery21、不增加writer或本轮测试。
