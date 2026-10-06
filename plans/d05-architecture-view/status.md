@@ -119,3 +119,5 @@
 2026-10-06T14:35:06.228081+00:00：实际4320于14:29:38.922Z返回159来源，O14/COST01A/F01/OPS current且issues=[]。见[o14-159-live](../../docs/evidence/d05/o14-159-live.json)。后续owner进度由原source自动聚合，固定aeb架构未改，个人页面未刷新。
 
 2026-10-06 14:50:27 UTC：本批仅新增RECOVERY01/RELEASE03两真实writer来源，父任务分别MATURE06/MATURE01；DPERF04未take不登记实施。局部registry唯一性、实际plan/status/review存在与状态解析核验，无产品测试/模型/架构改动。实际换载回执随后更新。
+
+2026-10-06T14:56:30.979103+00:00：实际4320于2026-10-06T14:51:18.920Z显示161唯一来源；RECOVERY01/RELEASE03均live、status parser无错、人读完整、父任务关联明确。实现target尚未固定仍unknown，不冒批准；[实际回执](../../docs/evidence/d05/recovery-release03-live.json)。架构固定aeb、个人服务与原tab保持，无产品测试。
