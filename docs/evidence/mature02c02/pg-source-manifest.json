@@ -1,11 +1,11 @@
 {
   "schema": "flow.c02.pg-source.v1",
-  "sourceTarget": "e1e911777e346209ac2dca3dccd9712066e68102",
+  "sourceTarget": "60e9a755886ab525e5eeb71c19261a310208a456",
   "status": "PREPARATION_ONLY_NOT_OPEN",
   "sqlCount": 30,
   "count": 302,
-  "bytes": 1627664,
-  "orderedSha256": "8c7f16bd42aabe3298d6ba16f174ad7c8844f407b0eaa19d2a58834a76d16f8b",
+  "bytes": 1627992,
+  "orderedSha256": "f3e84cf921fb448a7e127e7b018560f12cb2ddde1b6c46a60919ad348e552afd",
   "serialization": "path-sorted UTF-8: path TAB decimal-bytes TAB sha256 LF",
   "external": [
     {
@@ -1074,8 +1074,8 @@
     },
     {
       "path": "docs/evidence/mature02c02/execute-pg-once.py",
-      "bytes": 17837,
-      "sha256": "df7494b720ddd23a89623eb34a893377c02e64c8c4bb88ac08e0f4d996ac7c06"
+      "bytes": 18165,
+      "sha256": "3e51596b5863d9be16776e06720a8b44f00241612ff7c13c992fe55317dab2ef"
     },
     {
       "path": "docs/evidence/mature02c02/pg-fixture.ts",
@@ -1581,6 +1581,18 @@
       "bytes": 731,
       "sha256": "662e0fbcea6375d55f7ae327b307816d7497497e3383028ea57c74e08cd5c1ea",
       "bindingTarget": "e1e911777e346209ac2dca3dccd9712066e68102"
+    },
+    {
+      "path": "docs/evidence/mature02c02/stop-group-check.py",
+      "bytes": 3095,
+      "sha256": "5d829e5baa4cc2f949350f9af18bc4d3345fbe46acbd6c1c6a5a14d66f3ecd23",
+      "bindingTarget": "60e9a755886ab525e5eeb71c19261a310208a456"
+    },
+    {
+      "path": "docs/evidence/mature02c02/stop-group-check-result.json",
+      "bytes": 474,
+      "sha256": "cdc6030e280f393055c428544816428909b051f72c8d6a1c4f8cf2f918dc3d85",
+      "bindingTarget": "60e9a755886ab525e5eeb71c19261a310208a456"
     }
   ],
   "limits": {

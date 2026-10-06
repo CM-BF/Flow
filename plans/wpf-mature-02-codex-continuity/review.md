@@ -15,3 +15,5 @@ architecture_read / gpt-6-astra 于 2026-10-06 21:26:29 UTC 独审 storage/index
 architecture_read固定3f432/de51只读关闭封套原三P2。Mika随后发现依赖kind schema P2，已实现显式donor/own-worktree分支并完成仅输入解析4/4，待本次固定delta/binding复核。当前PG窗口仍NOT_OPEN，source批准不等运行通过。
 
 2026-10-06 21:58:02 UTC：status_read/root已接受e1e91177依赖kind增量0P1/P2；root全核41263763输入后指出stop_group会以第二次absent覆盖首次unknown。当前只修为首次非present即返回并保留观测，signal OSError立即unknown；4项纯注入反例通过，0Popen/真实signal/PG，见stop-group-check-result.json。增量尚待固定独审，PG_PREPARATION_NOT_APPROVED / NOT_OPEN。reporter文字已与实际JSON命令统一。
+
+最终UNKNOWN窄修源码：60e9a755886ab525e5eeb71c19261a310208a456；检查源SHA3e51596b5863d9be16776e06720a8b44f00241612ff7c13c992fe55317dab2ef，4/4纯反例。新manifest绑定该target，旧8项review证据保持原bindingTarget。等待root复审/共享窗口，无实际PG。

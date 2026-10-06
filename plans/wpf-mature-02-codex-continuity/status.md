@@ -19,8 +19,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 最近观察41263763 clean；本次仅封套未知状态P2窄修与纯函数证据，准备固定新checkpoint。final focused types已实际exit0。 |
-| HEAD（最近观察） | 41263763ef03ccbcbe52f144495542a97a48551d |
+| 工作树dirty状态 | 最近源码60e9a755已固定；本次仅更新运行清单与状态绑定，封套UNKNOWN增量仍待最终独审。final focused types已实际exit0。 |
+| HEAD（最近观察） | 60e9a755886ab525e5eeb71c19261a310208a456 |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v2 ACTIVE，21 literal，amend COMMITTED 2026-10-06T21:25:31.797Z |
 | 实现目标 | 413420a1c0abc76850ab61f8bf67c9d9ac81a494 |
 | 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/native-harness.ts, apps/server/src/execution-profiles/store.ts, apps/runner/src/native-harness/descriptor.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness/codex/wire.ts, apps/runner/src/native-harness/codex/index.ts, apps/runner/src/native-harness/codex/session-storage.ts |
