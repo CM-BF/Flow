@@ -1,3 +1,4 @@
+import { readProgressionProvenance } from '../goal-progression/provenance.js';
 import type { PoolClient } from 'pg';
 import { GOAL_DELIVERY_MAX_NODES } from '../../../../packages/contracts/src/goal-delivery.js';
 import type { GoalArtifactBinding, GoalInput } from '../../../../packages/contracts/src/goals.js';
@@ -43,7 +44,7 @@ export async function readLiveMetadata(client: PoolClient, plan: PlanMetadata): 
     LEFT JOIN flow.artifacts a ON (a.task_id,a.artifact_id,a.version,a.attempt_id)=(t.id,t.latest_artifact_id,t.latest_artifact_version,t.current_attempt_id)
     WHERE e.goal_id=$1 AND e.id=ANY($2::text[]) LIMIT 401`, [plan.goalId, ids])).rows : [];
   if (rows.length > GOAL_DELIVERY_MAX_NODES * 2 || rows.some(row => row.dependencies.length >= GOAL_DELIVERY_MAX_NODES)) throw bound();
-  return { goal: { projectId: plan.projectId }, project: { graph: { nodes: plan.nodes } }, inputs: plan.inputs,
+  return { progressions: await readProgressionProvenance(client, plan.goalId, ids), goal: { projectId: plan.projectId }, project: { graph: { nodes: plan.nodes } }, inputs: plan.inputs,
     knowledgeHeads: await loadGoalKnowledgeHeads(client, plan.projectId, [...plan.inputs.values()].map(def => def.input)),
     nodes: new Map(nodes.map(node => [node.node_id, node])), executions: new Map(rows.map(row => [row.id, row])) };
 }

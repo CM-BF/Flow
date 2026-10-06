@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression
+
+ ❯ apps/server/src/goal-progression/progression.test.ts (13 tests | 1 failed | 6 skipped) 5116ms
+   ↓ bounds finite authorization, rejects duplicate nodes, excess budget, unknown policy and malformed expiry
+   ✓ continues two fixed inputs through injected SDK, restart and lost authorization ACK without semantic acceptance  1685ms
+   × halts failed verification without admitting its dependent and preserves the artifact 439ms
+   ↓ keeps unknown attempts and their links through restart without admitting a new execution
+   ✓ stops for a genuine decision and revocation never cancels that running task  435ms
+   ↓ checks readonly profile revocation before any task is admitted
+   ↓ freezes graph and actual input versions and requires explicit replacement permission
+   ↓ exhausts finite admission budget without silently extending the authorized work
+   ↓ rolls back task/wake/link atomically and reuses the authorization after a transaction failure
+   ✓ preserves immutable authority and exact goal identity, while snapshots stay body-free 96ms
+   ✓ preserves execution failure and never retries an authorized node automatically  614ms
+   ✓ expires a finite authorization without creating a task or reviving it on restart  513ms
+   ✓ requires real accepted external dependencies and rejects a fabricated qualified binding 65ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-progression/progression.test.ts > halts failed verification without admitting its dependent and preserves the artifact
+AssertionError: expected undefined to be defined
+ ❯ apps/server/src/goal-progression/progression.test.ts:75:20
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed | 6 skipped (13)
+   Start at  07:37:22
+   Duration  6.74s (transform 646ms, setup 0ms, import 1.53s, tests 5.12s, environment 0ms)
+

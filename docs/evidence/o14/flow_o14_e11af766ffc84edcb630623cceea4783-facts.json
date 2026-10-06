@@ -1,0 +1,89 @@
+{
+  "database": "flow_o14_e11af766ffc84edcb630623cceea4783",
+  "marker": "c637e39f-7b08-4532-801c-8e03f27b87a3",
+  "providerCalls": 0,
+  "reserveBeforeBytes": 1185902592,
+  "plannedMaxNewBytes": 100663296,
+  "errors": [
+    {
+      "name": "Error",
+      "code": "idempotency_conflict",
+      "message": "This key was used for different content."
+    },
+    {
+      "name": "Error",
+      "code": "progression_active",
+      "message": "Revoke the existing authorization before replacing it."
+    },
+    {
+      "name": "Error",
+      "code": "dependency_version",
+      "message": "Execution requires the exact current verified dependencies."
+    }
+  ],
+  "journey": {
+    "calls": 2,
+    "nodes": [
+      {
+        "nodeId": "6bf847dc-383b-4dd5-967e-63fb5ef68ba7",
+        "inputVersion": 1,
+        "executionId": "e8158451-3632-43e3-a5b3-f9f1eaecf71a",
+        "artifact": {
+          "nodeId": "6bf847dc-383b-4dd5-967e-63fb5ef68ba7",
+          "executionId": "e8158451-3632-43e3-a5b3-f9f1eaecf71a",
+          "taskId": "0954c61f-cb6b-4978-92c5-169c36c5b7c5",
+          "artifactId": "d68ad9cf-b4d2-404b-8f4c-b6e010306941",
+          "artifactVersion": "4e4e9017f76a991000198839d03bd46ed5fc05700538eee5633e982cc6905d5e",
+          "detailId": "546a4069-83d1-41d3-812d-9379b54eda64"
+        },
+        "task": {
+          "id": "0954c61f-cb6b-4978-92c5-169c36c5b7c5",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      },
+      {
+        "nodeId": "cf82450f-060a-441f-a2a1-42b5a79d25cb",
+        "inputVersion": 1,
+        "executionId": "6bdbde46-beff-491f-9449-2869a6b1d3f1",
+        "artifact": {
+          "nodeId": "cf82450f-060a-441f-a2a1-42b5a79d25cb",
+          "executionId": "6bdbde46-beff-491f-9449-2869a6b1d3f1",
+          "taskId": "b36def96-d9ad-42b7-b1b2-a6b1130cdd10",
+          "artifactId": "8d26c364-3d1c-4806-abf7-59917c153f6f",
+          "artifactVersion": "ead8877c18dec49bdf22a6e3d561430eed5cf5d09d2118302a24a3478a2b8108",
+          "detailId": "cf4bc3cf-d600-482e-b3ba-ac5d2b6d3a06"
+        },
+        "task": {
+          "id": "b36def96-d9ad-42b7-b1b2-a6b1130cdd10",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      }
+    ],
+    "lostAckSameKey": true,
+    "concurrentSweepAdmissions": [
+      1,
+      0,
+      0
+    ],
+    "originalClientDisconnected": true,
+    "independentAcceptance": {
+      "nodeId": "cf82450f-060a-441f-a2a1-42b5a79d25cb",
+      "executionId": "6bdbde46-beff-491f-9449-2869a6b1d3f1",
+      "taskId": "b36def96-d9ad-42b7-b1b2-a6b1130cdd10",
+      "artifactId": "8d26c364-3d1c-4806-abf7-59917c153f6f",
+      "artifactVersion": "ead8877c18dec49bdf22a6e3d561430eed5cf5d09d2118302a24a3478a2b8108",
+      "detailId": "cf4bc3cf-d600-482e-b3ba-ac5d2b6d3a06"
+    }
+  },
+  "databaseBytesBeforeDrop": "12729367",
+  "freeBeforeDropBytes": 1163763712,
+  "connections": [],
+  "remaining": [],
+  "runtimeCount": 2,
+  "runtimeStopped": true,
+  "directoryRemoved": true
+}

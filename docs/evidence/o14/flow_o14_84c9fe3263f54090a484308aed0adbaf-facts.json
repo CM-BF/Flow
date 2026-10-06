@@ -1,0 +1,114 @@
+{
+  "database": "flow_o14_84c9fe3263f54090a484308aed0adbaf",
+  "marker": "57156bb3-c309-4eef-b24b-95c0a50d741d",
+  "providerCalls": 0,
+  "reserveBeforeBytes": 1215275008,
+  "plannedMaxNewBytes": 100663296,
+  "errors": [
+    {
+      "name": "Error",
+      "code": "progression_expiry",
+      "message": "Expiry must be in the next 24 hours."
+    },
+    {
+      "name": "Error",
+      "code": "progression_expiry",
+      "message": "Expiry must be in the next 24 hours."
+    },
+    {
+      "name": "Error",
+      "code": "idempotency_conflict",
+      "message": "This key was used for different content."
+    },
+    {
+      "name": "Error",
+      "code": "progression_active",
+      "message": "Revoke the existing authorization before replacing it."
+    },
+    {
+      "name": "Error",
+      "code": "dependency_version",
+      "message": "Execution requires the exact current verified dependencies."
+    },
+    {
+      "name": "Error",
+      "code": "invalid_events",
+      "message": "Invalid event batch."
+    },
+    {
+      "name": "Error",
+      "code": "goal_progression_not_found",
+      "message": "Progression does not belong to this goal."
+    },
+    {
+      "name": "Error",
+      "code": "wrong_role",
+      "message": "An owner credential is required."
+    }
+  ],
+  "journey": {
+    "calls": 2,
+    "nodes": [
+      {
+        "nodeId": "0785042d-d24f-4dc5-8f3f-40bcfa9e1c90",
+        "inputVersion": 1,
+        "executionId": "151cdfa1-5654-43b4-9ba4-3442f69a1a8c",
+        "artifact": {
+          "nodeId": "0785042d-d24f-4dc5-8f3f-40bcfa9e1c90",
+          "executionId": "151cdfa1-5654-43b4-9ba4-3442f69a1a8c",
+          "taskId": "32d4dee3-0d97-4c2e-afd6-587aefca4b25",
+          "artifactId": "7531aecf-2e98-454f-bca5-c126177afb1e",
+          "artifactVersion": "4e4e9017f76a991000198839d03bd46ed5fc05700538eee5633e982cc6905d5e",
+          "detailId": "d4055322-c792-4647-b6b2-40cf884eae41"
+        },
+        "task": {
+          "id": "32d4dee3-0d97-4c2e-afd6-587aefca4b25",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      },
+      {
+        "nodeId": "bb869500-bc73-47ed-adca-42ccd9179b8b",
+        "inputVersion": 1,
+        "executionId": "c26b0b64-c7f6-4a9b-b8fe-1c6741e99db5",
+        "artifact": {
+          "nodeId": "bb869500-bc73-47ed-adca-42ccd9179b8b",
+          "executionId": "c26b0b64-c7f6-4a9b-b8fe-1c6741e99db5",
+          "taskId": "6b5817df-69ed-443e-802b-5d86eba44bcc",
+          "artifactId": "da1dce27-9716-4ed3-a241-22539cecb93d",
+          "artifactVersion": "ead8877c18dec49bdf22a6e3d561430eed5cf5d09d2118302a24a3478a2b8108",
+          "detailId": "c7c5e51c-891f-4c39-bd51-d191bb738c31"
+        },
+        "task": {
+          "id": "6b5817df-69ed-443e-802b-5d86eba44bcc",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      }
+    ],
+    "lostAckSameKey": true,
+    "concurrentSweepAdmissions": [
+      1,
+      0,
+      0
+    ],
+    "originalClientDisconnected": true,
+    "independentAcceptance": {
+      "nodeId": "bb869500-bc73-47ed-adca-42ccd9179b8b",
+      "executionId": "c26b0b64-c7f6-4a9b-b8fe-1c6741e99db5",
+      "taskId": "6b5817df-69ed-443e-802b-5d86eba44bcc",
+      "artifactId": "da1dce27-9716-4ed3-a241-22539cecb93d",
+      "artifactVersion": "ead8877c18dec49bdf22a6e3d561430eed5cf5d09d2118302a24a3478a2b8108",
+      "detailId": "c7c5e51c-891f-4c39-bd51-d191bb738c31"
+    }
+  },
+  "databaseBytesBeforeDrop": "13016087",
+  "freeBeforeDropBytes": 1204916224,
+  "connections": [],
+  "remaining": [],
+  "runtimeCount": 4,
+  "runtimeStopped": true,
+  "directoryRemoved": true
+}

@@ -34,5 +34,15 @@
   "initialToolFailure": {
     "source": "Tool output in this conversation (first new-tree coordination CLI call); no process logfile was redirected for stderr.",
     "error": "ERR_MODULE_NOT_FOUND pg when invoking coordination CLI from new no-deps tree; no ledger mutation occurred. Existing installed O13 CLI then performed fresh list and successful take."
+  },
+  "implementationReview": {
+    "at": "2026-10-06 14:41:53 UTC",
+    "scope": "14 own product literals; one authorization owner, reuse task admission, shared validity/provenance",
+    "findingsClosed": [
+      "physical SQL authorization keyword renamed manifest",
+      "query fixtures corrected to existing owner403/session/detail-reference contracts; original failing stdout retained",
+      "memoize shared DAG validity within snapshot to prevent exponential revisits; no cross-read cache"
+    ],
+    "unresolved": "Independent review and F01 factory mount/actual native budget remain open. No implementation risk knowingly deferred."
   }
 }
