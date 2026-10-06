@@ -95,3 +95,6 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 2026-10-06 原REQ45/06-05后继补充：[GO官方适配器只读研究](../../docs/evidence/web-platform/voice-official-adapter-go-research.json)。优先现官方composer DictationAdapter与已有Dictate/Stop能力，不再做第二mic入口；SpeechInput回调需要实际转写后端，按钮/disabled不是完成。录音/转写分状态，结果只进入当前pane可编辑稿，用户明确Send/Queue；取消/切pane/关闭/替换稿后迟到失效、清理mic订阅、中文/MIME与文本退路必须真验。SpeechRecognition可能远端处理，模式明确；中心provider复用认证/取消/限额，不给浏览器key。仅归GO已核，管理未调用mic/服务/产品，低于恢复与兼容，不新增task/claim。
 
 2026-10-06 15:41 固定审查接收：[02d5材料完整性/顺序与b298输入](../../docs/evidence/web-platform/source-review-02d5-b298-intake.json)。原06-04必须在receipt/HTTP前核完整current draft选择及保存顺序，未验证/部分ready不能静默纯文本或少ref；显式移除、旧held/inTransit与下一draft分开。24case未运行，正式review NOT_STARTED。新backend源预审不代A/B兼容，原累计3,874ms不重置，无新运行/空间采样。
+
+
+2026-10-06 15:52 UTC 原REQ45/MATURE06-05：[installed core0.3.22 stop/cancel原研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)与[管理核验](../../docs/evidence/web-platform/gate-voice-intake.json)。core send会cancel并取当前text，不等待final；官方MediaRecorder示例若stop提前resolve可能先解除转写callbacks。未来同一composer adapter必须定义停止等待final后可编辑/明确SendQueue与取消丢弃，私有pane/auth/draft lease覆盖异步mic获取及每个await，旧回调不能清新session或改新稿。记录/转写状态、5秒有界结束与cleanup只作为来源/候选约束；不是已实现能力或已复现产品bug，无mic/provider/browser/新claim，不改变当前Recovery优先级。

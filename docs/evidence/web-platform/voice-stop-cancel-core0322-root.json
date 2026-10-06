@@ -1,0 +1,68 @@
+{
+  "recordedAt": "2026-10-06T15:48:20.164234+00:00",
+  "scope": "REQ45 / MATURE06-05 installed dictation stop vs cancel, read-only interface research",
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/package.json",
+      "bytes": 2995,
+      "sha256": "eca9c8f55657de768140bac406c84ac18a94111eeb9f99c8d9f30be17dc07a28"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "bytes": 39362,
+      "sha256": "6de137d5c36d9b4278b2363e5e797afddd3ebf9520060783c67cdc26c1831719"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/adapters/speech.ts",
+      "bytes": 9916,
+      "sha256": "9a2e9a044e283faefb5ee27fee7b89e90513d53859f0e91ffdd18850557dec76"
+    }
+  ],
+  "primarySources": [
+    "https://www.assistant-ui.com/llms.txt",
+    "https://www.assistant-ui.com/docs/guides/dictation",
+    "https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/stop",
+    "https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/abort"
+  ],
+  "findings": [
+    {
+      "id": "VOICE-STOP-01",
+      "source": "base-composer-runtime-core.ts:302-330; speech.ts:216-244",
+      "fact": "Installed core0.3.22 send invokes active session.cancel synchronously and cleanup, then snapshots current text. It does not await stop/final transcription. WebSpeech cancel invokes recognition.abort. Official guide generic wording automatically stopped must not be interpreted as final transcription awaited.",
+      "implication": "Product must explicitly define sending while recording/transcribing. Preferred user acceptance: stop/finish to editable text, then explicit Send or Queue; command authority must reject active recording/transcribing if that is the chosen policy. UI disable alone is insufficient."
+    },
+    {
+      "id": "VOICE-STOP-02",
+      "source": "base-composer-runtime-core.ts:1151-1177; official guide custom adapter stop example",
+      "fact": "stopDictation calls session.stop, then cleans runtime subscriptions on Promise settlement. The documented custom MediaRecorder stop example returns without waiting for asynchronous onstop fetch/transcript.",
+      "inference": "Copying that example literally can settle early and detach runtime callbacks before final transcript. Adapter stop must resolve only after final delivery or terminal error/cancellation; no prematurely ended status either, because core polls status every100ms."
+    },
+    {
+      "id": "VOICE-CANCEL-03",
+      "source": "base-composer-runtime-core.ts:119-137,260-287,539-546,1001-1020,1070-1128",
+      "fact": "setText/reset rebase a live dictation session; base dispose handles attachment preparation, not dictation. Core guards callbacks by its dictation session ID, which does not represent Flow pane/namespace/auth/draft generations.",
+      "inference": "Replacing a draft or switching/revoking a Flow owner must invalidate a private voice lease and cancel the exact adapter session before replacement. Do not equate setText, attachment dispose or generic cancel with dictation cancellation. Async mic acquisition/transcription completion must recheck lease after every await before emitting or changing any status. Stop finalizes; cancellation discards pending results. Already committed/user-edited text policy must be explicit, not an accidental rollback."
+    },
+    {
+      "id": "VOICE-RESOURCES-04",
+      "source": "speech.ts:216-244,272-350; MDN stop/abort",
+      "fact": "Native stop attempts a final recognition result; abort does not. Built-in adapter waits for terminal state with a5s timeout then aborts. Support check only detects constructor presence.",
+      "implication": "Keep real capability/error states, a bounded stop timeout, idempotent cleanup, stream-track release, fetch AbortSignal and stale callback rejection. Constructor existence does not prove locale, permission, offline processing or recognition availability. Voice processing mode must be truthful; browser recognition is not assumed local."
+    }
+  ],
+  "acceptance": [
+    "Explicit stop retains final editable text exactly once; stop promise remains pending during delayed final transcription.",
+    "Send and Queue during recording/transcribing follow the same declared policy at actual command entry, with no accidental partial transcript or automatic POST.",
+    "Cancel before getUserMedia resolves stops late tracks and emits no draft mutation; cancel during fetch aborts request and rejects late response even if abort races.",
+    "Pane switch, auth replacement, draft replacement and plugin disable invalidate old callbacks without mutating the next draft; same-pane ordinary user edits are handled deliberately.",
+    "Late end/error from sessionA cannot clean sessionB; repeated stop/cancel/dispose is harmless; typing and final-text concatenation do not duplicate transcript.",
+    "Actual capability/language/mime/microphone and complete flow remain separately unverified; mock adapter/source review cannot close Voice delivery."
+  ],
+  "limits": [
+    "No mic/provider/model/service/browser/test or product imports; dependency source read only.",
+    "This is design evidence for an unimplemented feature, not a reproduced product defect or a new claim.",
+    "Official guide and installed source must be distinguished; installed source controls the exact existing stack.",
+    "No runtime or performance result inferred."
+  ],
+  "cleanCode": "One existing composer adapter and private generation lease; explicit terminal state; one finalization promise; no parallel microphone UI or second command/draft authority."
+}

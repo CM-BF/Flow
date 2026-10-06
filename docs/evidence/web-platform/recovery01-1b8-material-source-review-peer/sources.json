@@ -1,0 +1,47 @@
+{
+  "target": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+  "base": "02d5a49aa2f17261d7dfcc9590f433c84b10defe",
+  "method": "fixed git objects only; no imports or runtime",
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22780,
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24536,
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c"
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 39888,
+      "sha256": "d58903f9ad64054bf233cea28f18574d19bb85af19bcae18a6415e6b7bf3f9b9"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 36653,
+      "sha256": "883c1195584e23ec6bfe1a69b5b8aa50929204826ef26ff8a814b479fe5c6ac5"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 13938,
+      "sha256": "041eda9cb24bd7bcee8156f8784b6c8abf3f253dfff2b111dab7d19eb46c42c0"
+    },
+    {
+      "path": "plans/wpf-conversation-recovery/plan.md",
+      "bytes": 4624,
+      "sha256": "67c9d6f43b13224a90b300b2182137b7f5c9f9fd54b6106315b6a65bbb636675"
+    }
+  ]
+}

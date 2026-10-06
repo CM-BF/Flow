@@ -1,0 +1,165 @@
+{
+  "at": "2026-10-06T15:52:04.993070+00:00",
+  "owner": "d01_owner",
+  "scope": "Existing management six literals only",
+  "managementClaim": {
+    "observedAt": "2026-10-06T15:50:28.167Z",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "active": true,
+    "scope": [
+      "docs/evidence/web-platform",
+      "plans/web-platform",
+      "plans/wpf-mature-01-visual",
+      "plans/wpf-mature-03-attachments",
+      "plans/wpf-mature-05-workspace",
+      "plans/wpf-mature-06-chat"
+    ],
+    "overlap": []
+  },
+  "archives": [
+    {
+      "source": "/tmp/root-voice-stop-cancel-core0322.json",
+      "path": "voice-stop-cancel-core0322-root.json",
+      "bytes": 6269,
+      "sha256": "bdbcfb0ee1d5ad05cea5df38dc3e5a3f101464087836425eb93590012bc57daa"
+    },
+    {
+      "source": "/tmp/root-release03-1a7-source-review.json",
+      "path": "release03-1a7-source-review-root.json",
+      "bytes": 9270,
+      "sha256": "887c6de960c712f452111fa923b8c1bfef61b32c11b56820df0cb35abb9a2307"
+    },
+    {
+      "source": "/tmp/d01-release03-gate-schema-review/audit.json",
+      "path": "release03-gate-schema-review/audit.json",
+      "bytes": 12882,
+      "sha256": "efaf2f898391864d3224745c8413431d14191d80b06e0a0145268f737e97b761"
+    },
+    {
+      "source": "/tmp/d01-release03-gate-schema-review/report.md",
+      "path": "release03-gate-schema-review/report.md",
+      "bytes": 8955,
+      "sha256": "e2b1bd9549878f40f063142fe18e1d5f06cd79b33043be9c978c5ce484abb870"
+    },
+    {
+      "source": "/tmp/root-recovery-1b8-material-source-review.json",
+      "path": "recovery01-1b8-material-source-review-root.json",
+      "bytes": 4249,
+      "sha256": "17387d2523ecdd97b15ce282374ab91ede680f2bf070d586214306c5b9c9532a"
+    },
+    {
+      "source": "/tmp/w01-recovery-1b8-material-review/report.md",
+      "path": "recovery01-1b8-material-source-review-peer/report.md",
+      "bytes": 5120,
+      "sha256": "a9d5c3d8968f02f2ef2d4bf944ced7ff734e7d094a512247b537cdf1b055c884"
+    },
+    {
+      "source": "/tmp/w01-recovery-1b8-material-review/sources.json",
+      "path": "recovery01-1b8-material-source-review-peer/sources.json",
+      "bytes": 1622,
+      "sha256": "3d35419bdb72e3ec2438d1d085e0cd199f9586a69fef6c01e7043e19558ffbf6"
+    }
+  ],
+  "release": {
+    "implementation": "1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098",
+    "metadata": "a92cb7fd5531973ae33501e38f38f23f568077d7",
+    "schemaSeam": "FIELDS_CONSISTENT_NOT_RUNTIME_OR_SOURCE_APPROVAL",
+    "rootSourceDecision": "CHANGES_REQUESTED_P1_DETAIL_CONTRACT_MISMATCH",
+    "finding": "RELEASE1A7-P1",
+    "reason": "Actual ConversationContextDetail was parsed as reference response requiring executionInputId/executionInputDigest absent from actual detail. Original writer fixes exact schema in original four scopes before new fixed review.",
+    "allowRunCreated": false,
+    "spentMs": 3874,
+    "remainingMs": 176126,
+    "successfulAExists": false,
+    "budgetReset": false
+  },
+  "recoveryOwnerNotice": {
+    "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+    "metadata": "f29751812090f85d5d01a4c67a4bdca09566ec85",
+    "attribution": "Owner reports pushed/clean; root beginning narrow material review; no independent runtime inference.",
+    "casesPrepared": 27,
+    "newDirect": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "featureReview": "NOT_STARTED",
+    "originalClaim": "6ff988b2 v4 original21, no amendment in this segment",
+    "sourceReview": "Root + W01 fixed1b8 narrow source review M1/M2 SOURCE_ADDRESSED, no new blocking; full feature NOT_STARTED;27/type/browser NOT_RUN.",
+    "sourceEvidence": "recovery01-1b8-material-source-review-root.json"
+  },
+  "voice": {
+    "mapping": [
+      "WPF-REQ-45",
+      "WPF-MATURE-06-05"
+    ],
+    "source": "Root installed core0.3.22 read-only audit + primary-document research; manager rechecked three local source byte hashes without imports.",
+    "acceptance": "One official composer adapter; explicit stop final delivery versus cancel/discard; Flow pane/auth/draft lease and every-await invalidation; actual mic/transcription/SendQueue verification remains pending.",
+    "newTaskClaimOrRuntime": false
+  },
+  "checks": {
+    "productImportsTestsTypesPGChromeBuildInstallServicesSpaceSamples": 0,
+    "coordination": "One existing read-only D04 control-plane list, not product/runtime PG",
+    "primarySourceClaims": "Attributed to root research, no fresh web capability claim",
+    "temporaryReportTotalBytes": 21837,
+    "documentValidation": {
+      "markdownFiles": 8,
+      "links": 446,
+      "newBroken": [],
+      "preexistingUnresolvedLinks": 15,
+      "sameAsHEADBaseline": true,
+      "note": "15 preexisting cross-task plan/evidence links absent from this management checkout; unchanged. No new broken links; no broad path or product repair."
+    },
+    "statusParser": [
+      {
+        "path": "web-platform-management/plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+        "id": "WPF-RECOVERY01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+        "id": "WPF-RELEASE03",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ]
+  },
+  "cleanCode": {
+    "at": "2026-10-06T15:52:04.993070+00:00",
+    "methods": [
+      "local find-skills discovery reused",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "findings": [
+      "Separate implementation target from runtime metadata HEAD and gate evidence",
+      "Exact external metadata closure; no self-authorized candidate paths",
+      "Gate schema consistency does not imply product source approval",
+      "Voice stop completion differs from cancel and Flow lease validity"
+    ],
+    "resolved": "Canonical current summary now records source P1 HOLD, preserves negative runtime and raw; voice remains same pending TODO.",
+    "unresolved": "Root RELEASE1A7-P1 writer fix/new fixed review; new Recovery runtime/whole feature; actual voice delivery remains pending."
+  }
+}

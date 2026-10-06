@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:41 UTC |
+| 最近更新 | 2026-10-06 15:52 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,8 +15,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 正式format2已备；fixed362实际A两history失败，原raw封存/DB与进程清理完成，B/Chrome NOT_RUN，无兼容绿回执 |
-| 下一可用交付 | b298/af51最终固定tuple/依赖回执已到；等精确闭包与B-only输入窄审批准，同artifact/余176.126秒fresh新A通过后才B，再由原operator发布 |
-| 当前阻塞 | ACTIVE: 362 attachment-only观察POST500、mixed材料误标known；Lead已接收并准备最小固定修复路径，未部署，运行窗口已归还；不等完整Recovery/SVC06 |
+| 下一可用交付 | af51最终tuple已到，1a7 gate字段一致但root源审P1 detail契约误用需原owner修正；新fixed获审后同artifact/余176.126秒fresh先A再B，原operator发布 |
+| 当前阻塞 | ACTIVE: 原362两项实际红保留；1a7 harness P1待修，新af51尚无成功A/B或部署；未发新gate，不等完整Recovery/SVC06 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |

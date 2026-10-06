@@ -382,3 +382,6 @@ DPERF04原九范围Interface消歧（固定c837，未领取）：[固定报告](
 2026-10-06 15:32 原REQ22/23、WPF-001-05补充[唯一host第二意见](../../docs/evidence/web-platform/connection-plugin-2498-second-opinion/report.md)：主题归app lifetime；只有有效业务lease发布navigation；精确registration disposer与按ID停用分开；用户disable/auth revoke/final dispose不同。纠正旧提案措辞：handler后仅activation-current，不再次auth authorize；旧global callback必须绑定原lease/form，不能借新权限requestSubmit。普通exact disposer未证误删新entry，不能机械报bug。均为未实施后继验收，不扩大Recovery21。
 
 2026-10-06 15:41 固定审查接收：[02d5材料完整性/顺序与b298输入](../../docs/evidence/web-platform/source-review-02d5-b298-intake.json)。原06-04必须在receipt/HTTP前核完整current draft选择及保存顺序，未验证/部分ready不能静默纯文本或少ref；显式移除、旧held/inTransit与下一draft分开。24case未运行，正式review NOT_STARTED。新backend源预审不代A/B兼容，原累计3,874ms不重置，无新运行/空间采样。
+
+
+2026-10-06 15:52 UTC 原REQ45/MATURE06-05：[installed core0.3.22 stop/cancel原研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)与[管理核验](../../docs/evidence/web-platform/gate-voice-intake.json)。core send会cancel并取当前text，不等待final；官方MediaRecorder示例若stop提前resolve可能先解除转写callbacks。未来同一composer adapter必须定义停止等待final后可编辑/明确SendQueue与取消丢弃，私有pane/auth/draft lease覆盖异步mic获取及每个await，旧回调不能清新session或改新稿。记录/转写状态、5秒有界结束与cleanup只作为来源/候选约束；不是已实现能力或已复现产品bug，无mic/provider/browser/新claim，不改变当前Recovery优先级。
