@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:53:04 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:02:10 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5；04开始前7c5a739258106a2cf9387ebf3a5e54268c122136 / source d147a636f9cb54a8c87a89a89963d13e937cee9c |
-| 工作树dirty状态 | 四源码冻结；本次仅独审归档/状态，提交后clean |
+| 工作树dirty状态 | 四源/capture保持冻结；本次仅实际raw/状态，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 4 distinct纯检查分轮3/3+1/1；两次focused types0；04 PG/Chrome/PTY NOT_RUN；原03历史结果保留 |
-| 已集成main状态 / HEAD | 352246b850e960e1969711e303765a024ff9fc29；04四源准备已精确接收，完整旅程NOT_RUN；03历史main8d84保持 |
+| 检查状态 | Actual F04 1 selected/0 passed/exit1；最早终端请求未捕获，独立cleanup exit0/正常清理；原4纯+2capture/两focused types仅准备历史 |
+| 已集成main状态 / HEAD | 352246b850e960e1969711e303765a024ff9fc29；04四源准备已精确接收；实际旅程已运行但失败；03历史main8d84保持 |
 | 实现目标 | d147a636f9cb54a8c87a89a89963d13e937cee9c |
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/preview.ts, experiments/tui-web-control-handoff/terminal.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 双界面脚本与有界运行入口均已独立获审，实际加载成功，等待独占运行窗口。 |
-| 下一可用交付 | 在共享运行窗口完成一次真实网页与终端接续验收，并保存完整停止和清理证据。 |
-| 当前阻塞 | 等待独占验证窗口；当前未获运行许可。 |
+| 当前产出 | 网页已连接到合成会话，但终端发送尚未到达中心，完整接续验收未通过。 |
+| 下一可用交付 | 定位终端启动与失败证据缺口，先收敛定向修复及小范围验证。 |
+| 当前阻塞 | 真实双界面验证未通过；最早终端请求未捕获，原因待定向诊断。本次自有资源已清理。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，d147准备APPROVED；076aa544 capture/import增量APPROVED；完整04实际旅程NOT_RUN |
+| Review | [review.md](review.md)，d147准备APPROVED；076aa544 capture/import增量APPROVED；完整04实际旅程FAILED；准备批准不扩展 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
 | 架构影响 | 仅测试fixture新增显式factory/recipe与受管观察端口，组合固定真实Web/PTY；生产controller/权限/调度不变，固定架构输入由Execution Lead按实际验收接收。 |
 
@@ -32,7 +32,7 @@
 | TUI01F-01 | completed | assignment_review | [Interface](../../docs/evidence/tui01f/interface.md) |
 | TUI01F-02 | completed | assignment_review | [局部36 distinct与focused types](../../docs/evidence/tui01f/validation.md) |
 | TUI01F-03 | completed | assignment_review | [main接收](../../docs/evidence/tui01f/main-8d84-receipt.json)；原2行为pass/suite exit1保留；独立收尾1/1已审 |
-| TUI01F-04 | in-progress | native_center_owner | [准备独审](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json)；实际HTTP/PG/Chrome/PTY仍NOT_RUN |
+| TUI01F-04 | in-progress | native_center_owner | [准备独审](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json)；[实际1选中失败](../../docs/evidence/tui01f/web-handoff/one-shot-result.md) / [独立收尾](../../docs/evidence/tui01f/web-handoff/cleanup-once-summary.md) |
 
 唯一 status 已交 Lead 登记；本轮未重新采样看板。不写第二进度源。SVC05H01 树保持 af51 全冻结，独立任务不交叉修改。
 
@@ -77,3 +77,7 @@
 2026-10-06 20:48:50 UTC：仅加载实际factory/helper入口exit0，0调用/连接；最小外层capture复用已审supervise，正常/64KiB溢出两直接checks 2/2且groups stopped。新adapter等待窄审，[准备事实](../../docs/evidence/tui01f/web-handoff/capture-readiness.md)，原四源及782绑定不变、原4纯未重跑，完整运行仍NOT_RUN。
 
 2026-10-06 20:53:04 UTC：capture/import增量076aa544获Execution Lead唯一APPROVED_PREPARATION_DELTA，32绑定/原2纯与import证据已核、reviewer0运行；[唯一回执](../../docs/evidence/tui01f/web-handoff/independent-capture-review.json) SHA f1e85724743eae5cd8b964a942bfff8c023f792df4865b3263dd5202501ef803。actual必须由capture.mjs --run及两fixed digests进入，未生成permit、不启动PG/Chrome/PTY。
+
+2026-10-06 20:58:11 UTC：唯一窗口flow-tui01f04-20261006-2056实际1选中/0通过/exit1，26,512ms；[完整结果](../../docs/evidence/tui01f/web-handoff/one-shot-result.md)。首错终端请求未捕获，0task/provider。自有进程组/center/runner已停，marker/零连接/checkpoint已核；DB/tmp按失败策略KEEP，未DROP/rm/复跑。窗口已即时归还。
+
+2026-10-06 21:02:10 UTC：独立授权cleanup-only退出0/587ms，精确marker/0任务/零连接/3组absent/目录dev-ino确认后，先checkpoint再正常DROP及仅该私有目录移除。原actual red与KEEP当时事实不改；[收尾记录](../../docs/evidence/tui01f/web-handoff/cleanup-once-summary.md)明确纯wrapper遗留PG标签更正，实际有PG清理。窗口已归还，未复跑原旅程，当前仅源码诊断。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:55 UTC / main2d179353 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:07 UTC / maine731bc45 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,12 +13,12 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main/origin 2d179353一致且clean，175源20:21实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main/origin e731bc45一致且clean，175源20:21实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端与网页接续验证准备已通过审查；个人更新的旧记录恢复方案正在补齐受控操作。 |
+| 当前产出 | 终端与网页首验失败和独立资源收尾已固定；个人更新的旧记录恢复方案正在补齐受控操作。 |
 | 下一可用交付 | 本批已交付；个人固定版本更新准备与终端、网页接续driver并行继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |

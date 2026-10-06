@@ -1,0 +1,26 @@
+{
+  "run": "handoff-3ec2369c-0ea7-4dcb-ac19-ce30d7494a7a",
+  "sourceDigest": "b1559d552e0c2eaa875e5c852eb13c0a15db1d69f15cbf6ee8bb9859c47254e5",
+  "selected": 1,
+  "passed": false,
+  "workFailure": {
+    "stage": "terminal-request-capture",
+    "name": "Error",
+    "code": null,
+    "message": "Original TUI request was not captured"
+  },
+  "cleanupFailures": [
+    {
+      "stage": "fixture-close",
+      "name": "Error",
+      "code": null,
+      "message": "TUI01F evidence/cleanup incomplete; inspect explicit evidence before cleanup of flow_tui01f_bb02a6d703a3 or private tmp"
+    }
+  ],
+  "failures": [
+    "handoff-work-failed",
+    "fixture-close"
+  ],
+  "cleanup": "inspect-fixture-result-or-checkpoint; unknown resources retained",
+  "nativeQueryCalls": 0
+}

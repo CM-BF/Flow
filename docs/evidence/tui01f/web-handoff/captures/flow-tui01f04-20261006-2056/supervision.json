@@ -1,0 +1,24 @@
+{
+  "driverPid": 18112,
+  "outcome": "unknown-retain",
+  "phase": "cleanup",
+  "samples": 503,
+  "ownedGroups": [
+    {
+      "pgid": 18112,
+      "state": "stopped"
+    }
+  ],
+  "reason": "driver-nonzero",
+  "last": {
+    "stageBytes": 24971,
+    "outerBytes": 259,
+    "capturedBytes": 685,
+    "totalBytes": 25915
+  },
+  "signal": "unknown",
+  "stopCheckpoint": "pending",
+  "exitCode": 1,
+  "signalCode": null,
+  "elapsedMs": 26512
+}

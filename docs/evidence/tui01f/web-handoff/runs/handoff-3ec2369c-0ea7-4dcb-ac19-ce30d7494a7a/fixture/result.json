@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-06T20:56:41.881Z",
+  "facts": {
+    "providerCalls": 0,
+    "fixtureOnly": true,
+    "resources": {
+      "database": "flow_tui01f_bb02a6d703a3",
+      "directory": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-CviAys",
+      "directoryIdentity": {
+        "dev": 16777234,
+        "ino": 123194387,
+        "directory": true,
+        "symbolicLink": false
+      },
+      "ownerPid": 18112
+    },
+    "handoffOwnership": {
+      "database": "flow_tui01f_bb02a6d703a3",
+      "marker": "3b98f9e6-4f13-48bb-aaee-8723d9141dd9"
+    },
+    "runnerId": "0adee228-75e0-4acd-9667-ded2fac4c7f8",
+    "origins": {
+      "center": "http://127.0.0.1:57453",
+      "proxy": "http://127.0.0.1:57455",
+      "conversationId": "6070b0e1-2b95-49c0-8ca2-f429cd5f2223"
+    }
+  },
+  "requests": [],
+  "failures": [
+    "handoff-work-failed",
+    "incomplete-two-turn-handoff"
+  ],
+  "cleanup": {
+    "database": "flow_tui01f_bb02a6d703a3",
+    "directory": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-CviAys",
+    "irreversibleCleanup": false,
+    "groups": [
+      {
+        "pgid": 19956,
+        "stopped": true,
+        "signals": [
+          "SIGTERM"
+        ]
+      },
+      {
+        "pgid": 24633,
+        "stopped": true,
+        "signals": [
+          "SIGTERM"
+        ]
+      }
+    ],
+    "allTasks": {
+      "totalSize": 0,
+      "tasks": [],
+      "nextCursor": null
+    },
+    "tasks": [],
+    "runnerStopped": true,
+    "proxyStopped": true,
+    "centerStopped": true,
+    "databaseOwnership": {
+      "markerMatches": true
+    },
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 4.8365000000012515,
+          "rows": []
+        }
+      ]
+    },
+    "finalHandoffResourceBounds": {
+      "freeBytes": 1148391424,
+      "rawBytes": 20053,
+      "privateBytes": 59,
+      "chromeBytes": 57226469,
+      "at": "2026-10-06T20:56:41.876Z"
+    },
+    "checkpointConfirmed": true,
+    "databaseRemoved": false,
+    "temporaryRemoved": false,
+    "directoryObservation": null,
+    "failures": [],
+    "adminClosed": true
+  },
+  "outcome": "failed-or-unknown-retained",
+  "checkpoint": "checkpoint.json"
+}

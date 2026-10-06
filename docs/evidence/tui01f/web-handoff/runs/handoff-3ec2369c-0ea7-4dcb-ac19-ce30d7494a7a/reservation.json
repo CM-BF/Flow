@@ -1,0 +1,48 @@
+{
+  "run": "handoff-3ec2369c-0ea7-4dcb-ac19-ce30d7494a7a",
+  "identity": {
+    "digest": "b1559d552e0c2eaa875e5c852eb13c0a15db1d69f15cbf6ee8bb9859c47254e5",
+    "files": [
+      {
+        "path": "apps/tui/src/task-controls/fixture.ts",
+        "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/journey.ts",
+        "sha256": "e54159c4d669dab5426d358695f9c2f925c0e472bf9fb5bc5d5543a81e0a43a8"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/preview.ts",
+        "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/terminal.py",
+        "sha256": "7fdc85cadeb71ad2d9d88e2a463aad6651aeaaf6ecc27f41ce7cd2102e691081"
+      }
+    ],
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+    },
+    "inputCount": 741
+  },
+  "permit": {
+    "windowId": "flow-tui01f04-20261006-2056",
+    "startBefore": "2026-10-06T21:06:00Z",
+    "sourceDigest": "b1559d552e0c2eaa875e5c852eb13c0a15db1d69f15cbf6ee8bb9859c47254e5",
+    "captureDigest": "5063d601b7c40d1a83cfb35bf0a85d09ea069f3ada1de2d5705e558707f9e275",
+    "providerCalls": 0
+  },
+  "bounds": {
+    "workMs": 90000,
+    "totalMs": 150000,
+    "rawBytes": 4194304,
+    "privateBytes": 16777216,
+    "reserveBytes": 1073741824,
+    "startBytes": 1207959552
+  },
+  "watchdogPid": 18447,
+  "outcome": "unknown-retain"
+}
