@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/server/src/goals/goals.test.ts (9 tests) 13425ms
+   ✓ runs the diamond through independent fixture processes and invalidates only changed actual dependencies  5337ms
+   ✓ preserves failed evidence, rejects failed verification, and requires explicit predecessor for retry  1295ms
+   ✓ serializes concurrent authorization, keeps one task and refuses unsettled execution after center restart  4376ms
+   ✓ returns faithful existing provenance for no-op input and delivery commands after another node changes  1511ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  21:32:24
+   Duration  13.86s (transform 164ms, setup 0ms, import 354ms, tests 13.42s, environment 0ms)
+

@@ -40,7 +40,7 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
         stream = (options.query ?? nativeQuery)({
           prompt: [context.task.prompt, ...materials.map(file => `Authorized material: ${file}`)].join('\n'),
           options: {
-            cwd: context.workingDirectory, model: options.model ?? 'sonnet',
+            cwd: context.workingDirectory, model: options.model ?? 'sonnet', env: nativeEnvironment(),
             maxTurns: limits.maxTurns, maxBudgetUsd: limits.maxBudgetUsd,
             abortController: controller, resume: context.task.resumeSessionId,
             tools: materials.length ? ['Read'] : [], allowedTools: materials.length ? ['Read'] : [],
@@ -94,6 +94,16 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
       }
     },
   };
+}
+
+// SDK 0.3.290 replaces its subprocess environment when env is explicit.
+// Keep local runtime/provider authentication; never inherit center, database or runner credentials.
+function nativeEnvironment(): NodeJS.ProcessEnv {
+  const keys = ['PATH', 'HOME', 'USER', 'LOGNAME', 'SHELL', 'TMPDIR', 'TMP', 'TEMP', 'LANG', 'LC_ALL', 'LC_CTYPE', 'TZ',
+    'ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN', 'ANTHROPIC_BASE_URL', 'CLAUDE_CODE_OAUTH_TOKEN', 'CLAUDE_CONFIG_DIR',
+    'HTTP_PROXY', 'HTTPS_PROXY', 'ALL_PROXY', 'NO_PROXY', 'http_proxy', 'https_proxy', 'all_proxy', 'no_proxy',
+    'NODE_EXTRA_CA_CERTS', 'SSL_CERT_FILE', 'SSL_CERT_DIR'];
+  return Object.fromEntries(keys.filter(key => process.env[key] !== undefined).map(key => [key, process.env[key]]));
 }
 
 async function snapshotMaterials(context: HarnessContext, files: readonly string[]) {
