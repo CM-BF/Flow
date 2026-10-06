@@ -18,12 +18,18 @@ class Ownership(str, Enum):
     NEW_CHILD_SESSION = 'newChildSession'
 
 
+class Capture(str, Enum):
+    SEPARATE = 'separate'
+    MERGED = 'merged'
+
+
 @dataclass(frozen=True)
 class Launch:
     argv: tuple[str, ...]
     cwd: str
     env: Mapping[str, str]
     ownership: Ownership
+    capture: Capture = Capture.SEPARATE
 
 
 @dataclass(frozen=True)
@@ -38,6 +44,7 @@ class Policy:
 class Report:
     pid: int | None = None
     ownership: str = ''
+    capture: str = Capture.SEPARATE.value
     exit_code: int | None = None
     elapsed_ms: int = 0
     stdout: bytes = b''
@@ -66,11 +73,14 @@ def supervise(launch: Launch, policy: Policy) -> Report:
     """Return process facts; caller retains resource cleanup and durable reporting."""
     _validate(launch, policy)
     started = time.monotonic()
-    report = Report(ownership=launch.ownership.value)
+    report = Report(ownership=launch.ownership.value, capture=launch.capture.value)
+    if launch.capture is Capture.MERGED:
+        report.eof = {'stdout': False}
     try:
         child = subprocess.Popen(tuple(launch.argv), cwd=launch.cwd, env=dict(launch.env),
                                  stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE, bufsize=0, start_new_session=True)
+                                 stderr=subprocess.STDOUT if launch.capture is Capture.MERGED else subprocess.PIPE,
+                                 bufsize=0, start_new_session=True)
     except OSError as error:
         report.fail('spawn', 'SPAWN_FAILED', error)
         report.owned_state = 'absent'
@@ -98,6 +108,8 @@ def supervise(launch: Launch, policy: Policy) -> Report:
 def _validate(launch, policy):
     if not isinstance(launch, Launch) or not isinstance(policy, Policy):
         raise ValueError('Launch and Policy required')
+    if not isinstance(launch.capture, Capture):
+        raise ValueError('Finite capture mode required')
     if not isinstance(launch.ownership, Ownership):
         raise ValueError('Finite ownership required')
     if not launch.argv or not all(isinstance(arg, str) and '\0' not in arg for arg in launch.argv):
@@ -127,7 +139,8 @@ class _Capture:
     def __init__(self, child, limit, report):
         self.report = report
         self.limit = limit
-        self.streams = {'stdout': child.stdout, 'stderr': child.stderr}
+        self.streams = {name: stream for name, stream in
+                        (('stdout', child.stdout), ('stderr', child.stderr)) if stream is not None}
         self.selector = None
         self.buffers = {'stdout': bytearray(), 'stderr': bytearray()}
 

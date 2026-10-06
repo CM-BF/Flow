@@ -15,11 +15,12 @@ SPEC = importlib.util.spec_from_file_location('owned_supervision', Path(__file__
 MODULE = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
-Launch, Policy, Ownership, supervise = MODULE.Launch, MODULE.Policy, MODULE.Ownership, MODULE.supervise
+Launch, Policy, Ownership, Capture, supervise = MODULE.Launch, MODULE.Policy, MODULE.Ownership, MODULE.Capture, MODULE.supervise
 
 
-def launch(code, ownership=Ownership.CHILD_PID_ONLY):
-    return Launch((sys.executable, '-B', '-c', code), os.getcwd(), dict(os.environ), ownership)
+def launch(code, ownership=Ownership.CHILD_PID_ONLY, capture=None):
+    options = {} if capture is None else {'capture': capture}
+    return Launch((sys.executable, '-B', '-c', code), os.getcwd(), dict(os.environ), ownership, **options)
 
 
 def policy(work=.25, term=0, kill=.3, output=65536):
@@ -54,12 +55,36 @@ class SupervisionTests(unittest.TestCase):
     def test_normal_short_child_keeps_streams_and_exit(self):
         result = supervise(launch("import sys; print('ok'); print('err',file=sys.stderr)"), policy())
         self.assertIsNone(result.first_failure)
+        self.assertEqual(result.capture, Capture.SEPARATE.value)
         self.assertEqual(result.exit_code, 0)
         self.assertEqual((result.stdout, result.stderr), (b'ok\n', b'err\n'))
         self.assertEqual(result.retained_bytes, 7)
         self.assertTrue(all(result.eof.values()))
         self.assertEqual(result.owned_state, 'absent', (result.first_failure, result.secondary_failures, result.observations))
         self.assertEqual(result.signals, [])
+
+    def test_merged_capture_retains_single_pipe_write_order(self):
+        code = "import os; os.write(1,b'A'); os.write(2,b'B'); os.write(1,b'C'); os.write(2,b'D')"
+        result = supervise(launch(code, capture=Capture.MERGED), policy())
+        self.assertIsNone(result.first_failure)
+        self.assertEqual(result.capture, Capture.MERGED.value)
+        self.assertEqual(result.stdout, b'ABCD')
+        self.assertEqual(result.stderr, b'')
+        self.assertEqual(result.eof, {'stdout': True})
+        self.assertEqual(result.retained_bytes, 4)
+        self.assertEqual(result.owned_state, 'absent')
+
+    def test_merged_capture_uses_one_combined_limit_and_stops_owned_group(self):
+        code = "import os,time; os.write(1,b'o'*40000); os.write(2,b'e'*40000); time.sleep(20)"
+        result = supervise(launch(code, Ownership.NEW_CHILD_SESSION, Capture.MERGED), policy(work=1, term=.03))
+        self.assertEqual(result.first_failure['code'], 'OUTPUT_LIMIT_EXCEEDED')
+        self.assertEqual(result.stdout, b'o'*40000 + b'e'*25536)
+        self.assertEqual(result.stderr, b'')
+        self.assertEqual(result.retained_bytes, 65536)
+        self.assertGreater(result.observed_bytes, 65536)
+        self.assertLessEqual(result.observed_bytes, 65536+8192)
+        self.assertEqual(result.owned_state, 'absent')
+        self.assertTrue(absent(result.pid))
 
     def test_svc05h_shape_blocked_report_kills_only_operator(self):
         # The stand-in service is detached, and the operator blocks in a real

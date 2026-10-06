@@ -1,0 +1,255 @@
+{
+  "at": "2026-10-06T21:56:55.623589+00:00",
+  "reviewer": "astra_ultra_execution_lead/assignment_review",
+  "target": "9a4c550f8eaa69d4314ea4529f436542cb299845",
+  "verdict": "APPROVED_LIMITED_RECORDED_RESULTS",
+  "findings": [],
+  "cacheResults": [
+    {
+      "tree": "web-workspace-cache",
+      "state": "COMPLETE",
+      "intentAt": "2026-10-06T21:52:02.321580+00:00",
+      "finishedAt": "2026-10-06T21:52:02.418788+00:00",
+      "deletedExactCount": 60,
+      "deletedLogicalBytes": 17530080,
+      "savedVolumeDeltaBytes": 17661952,
+      "currentExactCacheMetadataOnly": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules/.vite/.",
+          "dev": 16777234,
+          "ino": 121545346,
+          "remainingNames": [
+            "deps"
+          ]
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules/.vite/deps",
+          "dev": 16777234,
+          "ino": 121545347,
+          "remainingNames": []
+        }
+      ],
+      "proof": "Previously reviewed fixed operator writes exclusive intent, fsyncs file+parent before unlink; result list equals all60 reviewed leaves. COMPLETE reached only after siblings metadata, HEAD and clean checks. No package/dependency content re-read in this review."
+    },
+    {
+      "tree": "web-workspace-lifecycle-baseline",
+      "state": "COMPLETE",
+      "intentAt": "2026-10-06T21:52:04.230238+00:00",
+      "finishedAt": "2026-10-06T21:52:04.334994+00:00",
+      "deletedExactCount": 60,
+      "deletedLogicalBytes": 17530080,
+      "savedVolumeDeltaBytes": 17694720,
+      "currentExactCacheMetadataOnly": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules/.vite/.",
+          "dev": 16777234,
+          "ino": 121180652,
+          "remainingNames": [
+            "deps"
+          ]
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules/.vite/deps",
+          "dev": 16777234,
+          "ino": 121180653,
+          "remainingNames": []
+        }
+      ],
+      "proof": "Previously reviewed fixed operator writes exclusive intent, fsyncs file+parent before unlink; result list equals all60 reviewed leaves. COMPLETE reached only after siblings metadata, HEAD and clean checks. No package/dependency content re-read in this review."
+    }
+  ],
+  "sparseResults": [
+    {
+      "tree": "web-workspace-lifecycle-baseline",
+      "state": "COMPLETE",
+      "head": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+      "candidateCount": 72,
+      "logicalBytes": 7488651,
+      "retainedFiles": 4997,
+      "retainedMapSha256": "4fa3b0fb18bb793f58179aac752422518829e14ad226492c9f0d8509426a67a5",
+      "otherConfigHashesEqual": 67,
+      "sharedConfigHashEqual": true,
+      "savedVolumeDeltaBytes": 7598080,
+      "proof": "Source operator computes keep-map SHA before mutation, writes preliminary result, applies exact patterns, then asserts every retained byte hash, candidate absence, HEAD/clean, protected trees, shared/other configs and dependency-root dev/ino before COMPLETE. Fixed result carries count/digest/booleans; this review does not newly rehash retained trees. Preliminary sparse record is overwritten, so this does not claim a separately retained durable-intent proof."
+    },
+    {
+      "tree": "attachment-resources",
+      "state": "COMPLETE",
+      "head": "c6989b894aa4e9103472279e697d129b28cce5ff",
+      "candidateCount": 72,
+      "logicalBytes": 7488651,
+      "retainedFiles": 4670,
+      "retainedMapSha256": "49a7bf2c3af595a30b4ee7ccf440dffa7a3bc5656eb91ebbd0b0c5d16887f3cd",
+      "otherConfigHashesEqual": 68,
+      "sharedConfigHashEqual": true,
+      "savedVolumeDeltaBytes": 7680000,
+      "proof": "Source operator computes keep-map SHA before mutation, writes preliminary result, applies exact patterns, then asserts every retained byte hash, candidate absence, HEAD/clean, protected trees, shared/other configs and dependency-root dev/ino before COMPLETE. Fixed result carries count/digest/booleans; this review does not newly rehash retained trees. Preliminary sparse record is overwritten, so this does not claim a separately retained durable-intent proof."
+    },
+    {
+      "tree": "web-shared-ack-consumer",
+      "state": "COMPLETE",
+      "head": "8301991ad698410478bfbfa1c2443cc1bad37a27",
+      "candidateCount": 72,
+      "logicalBytes": 7488651,
+      "retainedFiles": 4741,
+      "retainedMapSha256": "e924237237750d50f9b74248d238c68f9c97e6dd73e6935de4e40e6b18c29f88",
+      "otherConfigHashesEqual": 69,
+      "sharedConfigHashEqual": true,
+      "savedVolumeDeltaBytes": 7643136,
+      "proof": "Source operator computes keep-map SHA before mutation, writes preliminary result, applies exact patterns, then asserts every retained byte hash, candidate absence, HEAD/clean, protected trees, shared/other configs and dependency-root dev/ino before COMPLETE. Fixed result carries count/digest/booleans; this review does not newly rehash retained trees. Preliminary sparse record is overwritten, so this does not claim a separately retained durable-intent proof."
+    }
+  ],
+  "totals": {
+    "cacheFiles": 120,
+    "cacheLogicalBytes": 35060160,
+    "sparseHistoricalFiles": 216,
+    "sparseLogicalBytes": 22465953,
+    "sumSavedOperationVolumeDeltas": 58277888,
+    "meaning": "Sum of separate shared-volume observations only; not net interval change or exclusive physical reclaim."
+  },
+  "history": "Lifecycle old cleanup UNKNOWN/incomplete remains explicitly excluded by manager confirmation and summary. This completion concerns only these new exact operations; does not change prior runtime/test outcomes.",
+  "admission": "Recorded cache summary explicitly NOT_ADMITTED for original heavy gate; no new free/consumer/PG/service sample performed.",
+  "bindings": [
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/summary.json",
+      "bytes": 471,
+      "sha256": "388e2c641269b121cffb80e3e8b370e06884e2eccf85bbf5f434c87105b4be61",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/manager-confirmation.json",
+      "bytes": 1082,
+      "sha256": "8d2d6509d8d1e482b87b9d72c8b300d01d3286f290f9f6638702b156138c3859",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/web-two-manager-confirmation.json",
+      "bytes": 4190,
+      "sha256": "571c446ff79124f368ecfded27d223d43ec8e2532126623d773ae9bcdb55b8e3",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/nine-audit.json",
+      "bytes": 132462,
+      "sha256": "68915d92e2f2e60ee204dc22e1dfd9e033cc4346f56e929cab8e13aea4a7898b",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/web-two-original-owner-confirmation.md",
+      "bytes": 2904,
+      "sha256": "38c0bb9d568b8600113c105a2f6945fd512f1d626e4c40576e7146a27ef6e79d",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/cleanup-two.py",
+      "bytes": 6385,
+      "sha256": "613ce810e0dde080f3269649dc1d9e9b8b77cc50fd2ad4b3e13266f6cfa11710",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/web-workspace-cache-intent.json",
+      "bytes": 668,
+      "sha256": "af1ffe96f4d77c08aedc0fe18d491dda6a8da373cacf3ced1e2adac0110ce0cb",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/web-workspace-cache-cleanup.json",
+      "bytes": 2825,
+      "sha256": "15a00ea933fe60494d65c31f6b8ff49cb98ffc2a58d3515adf93e82d563cec54",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/web-workspace-lifecycle-baseline-intent.json",
+      "bytes": 694,
+      "sha256": "5e708aabf3897e96652b16ab51962f17d31a6657858f95c48465971320d4de36",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/web-workspace-lifecycle-baseline-cleanup.json",
+      "bytes": 2851,
+      "sha256": "8e606c201f9184fb498a4e862bf681e9014ffaefa67c27313d40b53ec2fd16e3",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/summary.json",
+      "bytes": 1608,
+      "sha256": "1096da246ece4b24318d3c389e31074496d0c5c54f969d8893b7c47166aba56a",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/preflight.json",
+      "bytes": 93209,
+      "sha256": "928eea292d9410adafa598533af1998c50894d8e5b668839495c0963e9112e9a",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/readonly-preflight.json",
+      "bytes": 101412,
+      "sha256": "3be7df89fe30beb017290be1709d50fd2af13b514233d34cc2ddf0dfaa7334a7",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/intake.json",
+      "bytes": 2017,
+      "sha256": "d46ba662433e9c30b1c08c4dc41b2c75edd9cca8852aa959ec111e881f365419",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/operator.py",
+      "bytes": 5992,
+      "sha256": "c90b4d7563c767782ab4283d6cada5715627ac7334a57c52a82a9c750c4b966f",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/web-workspace-lifecycle-baseline-result.json",
+      "bytes": 25847,
+      "sha256": "00e226d3b22b46224fafa995d93d76629d318fe6fddb315acbf8ee721ca240f3",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/web-workspace-lifecycle-baseline-patterns.txt",
+      "bytes": 3536,
+      "sha256": "99d6845ed1da21a3b01be6b1c7b6d6778b510f01618d663e98a07efa85843d0e",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/attachment-resources-result.json",
+      "bytes": 26185,
+      "sha256": "f8b113b629e5b4f91ad37e9cf31a9c4444372712c219d06f1c793240376d76d9",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/attachment-resources-patterns.txt",
+      "bytes": 3536,
+      "sha256": "99d6845ed1da21a3b01be6b1c7b6d6778b510f01618d663e98a07efa85843d0e",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/web-shared-ack-consumer-result.json",
+      "bytes": 26529,
+      "sha256": "c886ba0793160ffead557d2a501f65de73f27f196a3974231e79a043b31fa907",
+      "fixedCurrentSame": true
+    },
+    {
+      "path": "docs/quality/sparse-worktree-2026-10-06/web-three-next/web-shared-ack-consumer-patterns.txt",
+      "bytes": 3536,
+      "sha256": "99d6845ed1da21a3b01be6b1c7b6d6778b510f01618d663e98a07efa85843d0e",
+      "fixedCurrentSame": true
+    }
+  ],
+  "limits": [
+    "Preservation assertions are bound to the executed fixed operators and saved COMPLETE records; no new full-tree/config scan performed.",
+    "Only the two exact cache root/deps directories were metadata-checked; original directory identities remain and generated files are absent.",
+    "No claim of global/future consumer absence; no dependency package deletion, service stop, provider or product test."
+  ],
+  "actions": {
+    "gitOrProjectMutation": 0,
+    "deletion": 0,
+    "lsof": 0,
+    "freeSampling": 0,
+    "PG": 0,
+    "tests": 0,
+    "imports": 0,
+    "serviceOrPersonalProbe": 0
+  }
+}

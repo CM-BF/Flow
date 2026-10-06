@@ -1,0 +1,44 @@
+{
+  "startedAt": "2026-10-06T21:49:39.418787+00:00",
+  "sourceTarget": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+  "freeBeforeBytes": 1129742336,
+  "minimumFreeBytes": 1077936128,
+  "selectedExpected": 3,
+  "unselected": 12,
+  "newDistinct": 2,
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "privateTemporaryFiles": 0,
+  "sources": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "bytes": 12306,
+      "sha256": "494635e4ed3e24e89f565f7d53a74b807565a1020a4c4d7d93a18b60d7451f8d"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "bytes": 2553,
+      "sha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2"
+    }
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py",
+    "SupervisionTests.test_merged_capture_retains_single_pipe_write_order",
+    "SupervisionTests.test_merged_capture_uses_one_combined_limit_and_stops_owned_group",
+    "SupervisionTests.test_normal_short_child_keeps_streams_and_exit"
+  ],
+  "state": "COMPLETED",
+  "exitCode": 0,
+  "elapsedMs": 237,
+  "outputBytes": 533,
+  "outputSha256": "f4f096e7a4f145388a638328380fddc03c8799837e7c05aeb3caada19c753810",
+  "freeAfterBytes": 1129869312
+}

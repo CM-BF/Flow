@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:47 UTC / main2af8639d（个人窗口已关闭） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:45 UTC / main2af8639d（个人窗口已关闭） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -20,7 +20,7 @@
 | 优先级 | 5 |
 | 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；正在回收已结束工作的可恢复副本，恢复后续验证余量。 |
 | 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；进程监督模块已审待主线接收。 |
-| 当前阻塞 | ACTIVE: 最新结束观察约1.15GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
+| 当前阻塞 | ACTIVE: 最新结束观察约1.18GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -296,10 +296,16 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 
 第二树Git操作exit0之后共享/其他worktree配置hash断言失败，原APPLIED_PENDING_VERIFY不改；另次只读复核保留内容map、clean/head及精确候选缺省状态。shared config前值当时仅内存，无法归因该hash变化，明确NOT_PROVEN；未改共享配置、重试sparse或回滚掩盖。后续批次先持久化配置前hash/受保护字段，仍仅单一Git operator；原两树数量到限停。当前等待已授权项目副本的下一组候选事实，worker源码/只读审查可继续；不反复试探运行门槛。
 
-## 2026-10-06 21:47 UTC 资源回收与小验证
+## 2026-10-06 21:45 UTC 资源回收与小验证
 
 两棵本队已结束树按原可逆稀疏方法完成，见 [own-two-next](../../docs/quality/sparse-worktree-2026-10-06/own-two-next/summary.json)：1,226项非自有历史副本、14,050,181逻辑字节；各树原源码/测试/计划/自有原始证据与依赖保留，目标树以外Git配置和保护树均不变。两次局部卷差分别7,983,104B、9,097,216B，不作排他的物理回收归因；最后观察1,152,081,920B。此前readability第二树的共享配置旧before缺失UNKNOWN保持，不追认为本次修复。
 
 第一批六处精确Vite缓存仍由保留预览使用，全部KEEP，见 [cache intake](../../docs/quality/vite-cache-2026-10-06/intake.json)。接着仅审查GO列出的另九处精确缓存；不停止预览，不删除真实npm包、全局store、用户数据或原始证据。资源观察不是未来运行准入，PG/Chrome门槛不降低。
 
 OPS14固定3097730的两项局部补验经fresh小额准入后2/2、11未选、581ms，唯一独审已核；13different来自不同轮次，原失败/NOT_RUN保留。两个真实包装器迁移尚未完成。上述资源操作0产品测试/0provider，模块验证由原owner自有范围完成。
+
+2026-10-06 21:50 UTC：沿新明确资源授权，已请原Web服务owner先核53851/63743两已交付0模型fixture的用途/保留/消费者，再保存身份与启动日志后决定正常退役。个人端口、4320与49922/55049/61108/55616不动；本Lead当前未停止任何preview。另两处无本地消费者的cache仍待外部使用确认，未执行清理。规则见本plan临时预览生命周期；不把历史delivered或tab数量当无人使用证明。
+
+2026-10-06 21:52 UTC：三棵已结束树的216项非自有历史副本可逆收起完成，全部保留tracked/hash及其他树配置相同，[summary](../../docs/quality/sparse-worktree-2026-10-06/web-three-next/summary.json)。独立审核且经原owner外部消费者确认的两处Vite cache实际清理120文件，真实dependencies与源码保留，[summary](../../docs/quality/vite-cache-2026-10-06/summary.json)；最后观察1,182,425,088B，尚差共享重验证门槛25,534,464B。原cleanup脚本P2仅空间采样异常覆盖，未执行前修复并独审关闭；两个实际操作都COMPLETE。原readability配置UNKNOWN与旧失败不变，没有个人服务/预览停止、模型或产品测试。
+
+2026-10-06 21:58 UTC：assignment_review 独立核本批21份固定记录、2cache实际仅剩原empty dirs、120删除项与3tree216副本均一致；未复采空间/进程/个人服务，[结果审查](../../docs/quality/vite-cache-2026-10-06/results-independent-review.json)。当前临时preview退役由原Webowner执行，Lead不抢操作。MESSAGESETTINGS02单一新树已明确委派Web管理者source-only Git操作（fixed c8e352、约3MB、原4MiB上限），其完成后归还；main与其它配置不在该委派范围，不等PG。

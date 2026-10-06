@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-06T21:57:20.434267+00:00",
+  "source": "8652f97d5073c46515f592121f65f9656dc9798a",
+  "approvedProduct": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+  "review": "docs/evidence/ops14/independent-capture-review.json",
+  "manifestSha256": "18f35f2319cedef8773bc0965a82313f660ac40737013fcfc71d8ba19bd0e3f3",
+  "bindingsVerified": 29,
+  "readonlyConsumerBindings": 4,
+  "bindingCheckCorrection": "Initial integration reader assumed external consumer paths existed in module target; git lookup stopped before any write. Corrected to each declared consumer worktree/fixed commit, all equal. No product/test failure or rerun.",
+  "scopes": [
+    "tools/owned-process-supervision",
+    "docs/evidence/ops14",
+    "plans/ops14-owned-process-supervision"
+  ],
+  "checksReused": {
+    "selected": 3,
+    "passed": 3,
+    "unselected": 12,
+    "differentAcrossRounds": 15,
+    "oldMatrixRerun": false
+  },
+  "testsRunByIntegrator": 0,
+  "provider": 0,
+  "runtimeChange": false,
+  "realConsumerMigration": false,
+  "decision": "accept independent module delta; wrappers remain separate"
+}

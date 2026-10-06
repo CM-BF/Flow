@@ -1,7 +1,7 @@
 # OPS14 独立 review
 
-状态：APPROVED；限定模块与局部验证（APPROVED_LIMITED_MODULE），不含两个真实包装器迁移
-Review target commit：3097730ee1abbb054c09ae2ed14c998ebde3ef49
+状态：APPROVED；仅 Capture 增量（APPROVED_LIMITED_CAPTURE_INCREMENT），两真实 consumer 仍未迁移。
+Review target commit：afd01a0387f8cc9d9797109be1fdead74606a4af
 Base：c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05
 Scope：tools/owned-process-supervision
 
@@ -24,3 +24,11 @@ Reviewer：assignment_review / gpt-6-astra，2026-10-06 21:35:48 UTC。完整原
 ## 最终局部验证独审
 
 assignment_review 原样[增量批准](../../docs/evidence/ops14/independent-validation-review.json)，SHA 21eaed7e69417712f278e0e0c4512e1f1b48e2ad53882302329e8e3f72723c9e；最终 source 3097730ee1abbb054c09ae2ed14c998ebde3ef49，新 9 bindings 全核，原两例真实通过 / 正常收尾。13 different 分轮，不是一轮 13/13；无剩余 P1/P2，reviewer 0 重跑。之前 SOURCE_LIMITED 与 NOT_RUN 历史不覆盖本次实际追加事实。真实两 consumer 未迁移，OPS14-04 仍 open。
+
+主线模块接收：78fb37704d708e3b3b6ea4f1810947f012666196，3源与target3097730逐字相同。接收复用原局部检查，无重跑；两真实consumer仍未接入，完整OPS14未完成。
+
+## Capture 增量审查入口
+
+该增量仅 finite enum / Launch 默认 / 单 pipe stderr=STDOUT / Report.mode+实际EOF 与3个直接 consumer。原309 scope独审不覆盖此增量。新3/3、12未选，2新+1默认旧consumer；0PG/Chrome/provider，未重跑原13。核源差异、默认四项Launch兼容、内核单pipe捕获语义、同总cap、原最早错误与unknown逻辑未改、两实际wrapper无差。此增量仍未将两个wrapper接入。
+
+Capture 唯一独审原样[报告](../../docs/evidence/ops14/independent-capture-review.json)/[绑定](../../docs/evidence/ops14/independent-capture-review-bindings.json)：完整3源delta与29bindings一致，无P1/P2，3/3原输出成立，reviewer0重跑；原309范围与raw保持。
