@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-06T18:14:41.698380+00:00",
+  "rawFiles": 12,
+  "rawBytes": 10414,
+  "observedPeakPhysicalBytes": null,
+  "limitInterpretation": "tiny fixture logical contents are bounded; final raw exact; no physical peak sampling/space reservation claim",
+  "temporaryLogicalContentConservativeUpperBytes": 4096,
+  "rawPlusTempContentBoundBytes": 14510,
+  "authorizedBoundBytes": 131072,
+  "hostCalls": 0,
+  "pg": 0,
+  "provider": 0,
+  "tests": [
+    {
+      "run": "red-bounds",
+      "tmpAbsentNow": true,
+      "recordedDevIno": {
+        "dev": 16777234,
+        "ino": 123119352
+      },
+      "recordedCleanup": "removed-after-checkpoint",
+      "groups": [
+        {
+          "pgid": 49454,
+          "absent": true
+        },
+        {
+          "pgid": 49591,
+          "absent": true
+        }
+      ]
+    },
+    {
+      "run": "green-files",
+      "tmpAbsentNow": true,
+      "recordedDevIno": {
+        "dev": 16777234,
+        "ino": 123119404
+      },
+      "recordedCleanup": "removed-after-checkpoint",
+      "groups": [
+        {
+          "pgid": 62249,
+          "absent": true
+        },
+        {
+          "pgid": 63057,
+          "absent": true
+        }
+      ]
+    }
+  ]
+}

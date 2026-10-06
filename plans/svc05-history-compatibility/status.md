@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:07 UTC；候选源码af51冻结，新增固定产物搬运源码准备 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:14 UTC；候选源码af51冻结，搬运读取边界已修并完成tiny验证 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -25,14 +25,14 @@
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，源码预审保留；Root APPROVED RELEASE03 af51+d629限定组合，不代表个人部署 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
-| 架构影响 | 无新增模块/接口/表/依赖；已有历史投影的 v2 未知语义修复，无需改固定架构图。 |
+| 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；实际操作未启用。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | SVC05H01-01 | completed | assignment_review | [source-bindings](../../docs/evidence/svc05-history-compatibility/source-bindings.json) 两源码精确同源 |
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
-| SVC05H01-04 | in-progress | assignment_review | 固定搬运脚本已准备，tiny验证/独审NOT_RUN |
+| SVC05H01-04 | in-progress | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；独立审查待完成 |
 | SVC05H01-05 | pending | Execution Lead窗口 / owner | 个人发布未授权，retained报告与身份仍前置 |
 
 ## Dashboard
@@ -48,3 +48,5 @@
 2026-10-06 18:01 UTC：RELEASE03实际A all12复用+B三项通过，Root独立scoped批准已归档，历史失败与原NOT_RUN观察不改。新报告严格绑定af51+d629。只读安装快照仍362/accepting v15/四成功任务、零未完attempt；两保留产物完整但无af51报告；Web identity读取unknown，细因未捕获，不推定损坏。见[发布准备](../../docs/evidence/svc05-history-compatibility/release-preparation/README.md)。个人服务/配置/token/tab未改。
 
 2026-10-06 18:07 UTC：获准一次身份读取明确ECONNRESET/-54/read，owned PID/port同，未取得HTTP响应，不推定根因；原unknown保留。已准备[固定d629搬运脚本与tiny验证方案](../../docs/evidence/svc05-history-compatibility/artifact-transfer/README.md)，未运行/import或操作个人产物；复用原config/marker/operation.lock，源码/旧报告不改。
+
+2026-10-06 18:14 UTC：搬运候选窄修为非阻塞regular读取及expected+1上限；固定91ce18d33a1edf3cd087020ab0ea761579affc63。原2边界失败、后8/8纯文件通过/538ms，tmp checkpoint后清理；独审待完成，原失败保留。新连接计数记录1 LISTEN+64 CLOSED仅为候选事实，非根因证明。见[本轮manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/tiny-manifest.json)。没有个人搬运/PG/provider/额外HTTP。

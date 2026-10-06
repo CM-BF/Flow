@@ -1,0 +1,159 @@
+{
+  "at": "2026-10-06T18:15:05.628357+00:00",
+  "target": "91ce18d33a1edf3cd087020ab0ea761579affc63",
+  "status": "AUTHOR_TINY_PASSED_INDEPENDENT_REVIEW_PENDING",
+  "candidateProductTupleUnchanged": "af51c621696230fbced12227670f014ca73bd8a1",
+  "sources": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "bytes": 9772,
+      "sha256": "6e89a87292c8c360ea3ee3bcd1563a1d7492e1e8c51b4bbecdc63f3a4581619d",
+      "ref": "91ce18d33a1edf3cd087020ab0ea761579affc63",
+      "blob": "dc4ed2c6390ce8690a645fceb5f059b2d3d78cf7"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/tiny-files.mjs",
+      "bytes": 7500,
+      "sha256": "e164ed097fa5f16741ead0222dc13be67e82bf8af1caf1080e08af15e4f80bf5",
+      "ref": "91ce18d33a1edf3cd087020ab0ea761579affc63",
+      "blob": "c8ddee719e99f9646c437eaf7a36fa27c964650d"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/red-bounds/evidence/checkpoint.json",
+      "bytes": 1106,
+      "sha256": "0f04c1d992ba7c697d248d70e7ee45961f8354c480544860051f8e3cb4a09163"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/red-bounds/evidence/reservation.json",
+      "bytes": 311,
+      "sha256": "56d96241caec49f0680126c1df4412884750d969d89def80f416b7dc1cc0799b"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/red-bounds/evidence/result.json",
+      "bytes": 1144,
+      "sha256": "9c0ec4b8665e88019e4d6009eae3e916074c2fd75f0105238820e75ce361f93f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/red-bounds/process.json",
+      "bytes": 497,
+      "sha256": "21f5996f2d38190ee5cd7e6d9086bcba75c9cafb10a6f2a0af889a0047fca6f6"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/red-bounds/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/red-bounds/stdout.txt",
+      "bytes": 903,
+      "sha256": "9d291c79149f91beda92817716b561e16defac3f00d18c2d10c6b3e8757c026f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/green-files/evidence/checkpoint.json",
+      "bytes": 2003,
+      "sha256": "fd191cb84ad49318ecdbd13e6454bb43bb44d6601a1d77f53aa858ed3d55d5ba"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/green-files/evidence/reservation.json",
+      "bytes": 316,
+      "sha256": "6a37b5e726db67f80a8bf014ab3827d83c1d768d2c783c3f829d1c42e651a9e4"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/green-files/evidence/result.json",
+      "bytes": 2041,
+      "sha256": "d6030abecae775ce5e26fd68d740e37d6175d32b166cd9c27cd69999832c3dd9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/green-files/process.json",
+      "bytes": 585,
+      "sha256": "e5170d95bb255d0ad8588c5bf4ef9b93568600f7fd645500f6f347a471df8f2a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/green-files/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/green-files/stdout.txt",
+      "bytes": 1508,
+      "sha256": "46800b3c9e2a560f8e95d9eed0c78c0d952b0209d895cb167f7f9042a9e83c21"
+    }
+  ],
+  "fixedInputs": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "bytes": 9368,
+      "sha256": "454a1c3c1c3102652770f120c558462e957ac2c399694fd8fd19925a9cae5639",
+      "ref": "f1835337029a0783ec2b6d01a11c869ed1cf74c9",
+      "blob": "956dc1cc58b77b55d46f5a5ebe6c0acf1fc32459"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/manifest.json",
+      "bytes": 1995,
+      "sha256": "d792dba3918fa6b2ce86ca18c282be3ad02b31b44aa0e35d9d28efdbf3f92e8e",
+      "ref": "f1835337029a0783ec2b6d01a11c869ed1cf74c9",
+      "blob": "4534e7b19675d46ab07dc0d4ee6074cd31c1eded"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 26793,
+      "sha256": "95a18d8dac7a71db1841cb432b151fcf045ce59446e9a341ea5e6c263f2240e7",
+      "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+      "blob": "361a654390ea9389f8e119b837e6bc11b24abf81"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2",
+      "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+      "blob": "1fcc223822f872a9d31e03d8f85d352bf7b205f3"
+    }
+  ],
+  "derived": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/README.md",
+      "bytes": 7371,
+      "sha256": "565b8df461f06c7e0fa0cb9d382ec68db438d05eda398b181b164b5747e890a0"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/resource-summary.json",
+      "bytes": 1203,
+      "sha256": "2043ff9bd4cb91b39510496fe1df12d2adcf4fb95729701ac2dcaf4f23193b43"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/web-socket-observation.json",
+      "bytes": 1081,
+      "sha256": "85fa5d4aa9cc0eacf8d45a0fe0166924c56d9da5fdfa09a54f840498a87e6636"
+    }
+  ],
+  "checks": {
+    "red": {
+      "selected": 2,
+      "failed": 2,
+      "exitCode": 1,
+      "durationMs": 608,
+      "testFileHashCaptured": false
+    },
+    "green": {
+      "selected": 8,
+      "passed": 8,
+      "exitCode": 0,
+      "durationMs": 538
+    },
+    "distinctCases": 8,
+    "noWholeProductRerun": true,
+    "hostCalls": 0,
+    "pg": 0,
+    "provider": 0,
+    "personalWrites": 0
+  },
+  "limits": [
+    "file-only helpers tested; transferD629 and marker/lock not called",
+    "Mac RENAME_EXCL local tiny behavior only",
+    "no independent donor persistence/crash/physical peak proof",
+    "identity reset and closed sockets correlation only; no root-cause proof",
+    "original source preparation manifest stays bound to f183, not current hashes"
+  ]
+}

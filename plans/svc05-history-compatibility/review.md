@@ -29,3 +29,7 @@ Findings：源码预审无 P1/P2；完整 A/B / 本候选四测试 / typecheck �
 ## 18:07 新的固定搬运候选
 
 artifact-transfer/import-d629.mjs独立源码/文件验证尚NOT_RUN、审查NOT_STARTED；不继承上述af51兼容批准。仅原evidence路径，目标固定d629/10文件，marker/config/lock复用原host，RENAME_EXCL失败无覆盖fallback，失败保留stage/目标/回执。待Lead审源码并批纯文件tiny检查，不执行个人传输。
+
+## 18:14 搬运读取边界修复待独审
+
+Review target commit：91ce18d33a1edf3cd087020ab0ea761579affc63。Lead已完整读f183候选并指出FIFO/成长读P2；作者仅改boundedFile并新增file-only tiny用例，原2red与新8/8已保存。当前状态 REVIEW_PENDING，不以作者green当独审通过；仅该脚本检查，不扩大af51产品兼容或个人部署批准。原manifest保留f183历史，新绑定见[tiny-manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/tiny-manifest.json)。
