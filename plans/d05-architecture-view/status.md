@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示139项实际进度，目标交付读口与原生工程身份接缝均可查看。 |
+| 当前产出 | 139项实际进度已可查看；工程受信检查已登记为第140项，随本批主线发布。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -79,3 +79,5 @@
 2026-10-06 11:32:44 UTC：139个唯一source已校验；新O11/ENG01D三件套、parser、人读/父任务关联均完整，正式看板部署待本批main接收。[登记核验](../../docs/evidence/d05/goal-native-139-registry-validation.json)。固定架构图不变，无产品重测。
 
 2026-10-06T11:35:26.328928+00:00：4320实际139来源已采，O11/ENG01D live、issues=[]；唯一新session55840替换已核main目录的旧4320进程，个人服务/其他预览未动。[实际回执](../../docs/evidence/d05/goal-native-139-registry-live.json)。
+
+2026-10-06T11:45:06.000446+00:00：ENG01E唯一source存在且parser无错误、人读字段完整；140来源候选见[登记记录](../../docs/evidence/d05/engineering-checker-140-registry.json)，保留架构固定f181快照，不重跑产品/架构检查。
