@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:06:13 UTC / 2026-10-06 10:00:37 UTC（受控固定main） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:07:35 UTC / 2026-10-06 10:00:37 UTC（受控固定main） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,13 +10,13 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；已受控合入f181d84b5fb3652d62e2a181acff442d42b3e066 / d33aec626a809425f3768f0866f3de1528b08063（metadata HEAD由Git核） |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；已受控合入f181d84b5fb3652d62e2a181acff442d42b3e066 / 4e1c989c0503cc73206d4e3de615e57b881d452e（metadata HEAD由Git核） |
 | 工作树dirty状态 | 当前源码/证据已提交；metadata提交后由Git核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED：R06 19/19与driver 9/9 distinct，0真实child；strict R06与同树C1消费者均exit0，31子进程suite未执行 |
+| 检查状态 | PASSED：R06 19/19与driver 10/10 distinct，0真实child；strict R06与同树C1消费者均exit0，31子进程suite未执行 |
 | 已集成main状态 / HEAD | 当前R06可选sink/driver未集成；生产C1/投影输入已在受控mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
-| 实现目标 | d33aec626a809425f3768f0866f3de1528b08063 |
+| 实现目标 | 4e1c989c0503cc73206d4e3de615e57b881d452e |
 | 实现范围 | R06已领取精确5文件；experiments/codex-app-server-conformance/diagnostics；本task计划/证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
-| WPF-MATURE-02-03 | in-progress | chatui01_owner | 原canary失败封存；R06诊断seam已审，driver修复/19+9零child检查已交复审；真实新窗口尚未启动 |
+| WPF-MATURE-02-03 | in-progress | chatui01_owner | 原canary失败封存；R06诊断seam已审，driver修复/19+10零child检查已交复审；真实新窗口尚未启动 |
 | WPF-MATURE-02-04 | in-progress | chatui01_owner | 已接入独审通过的生产投影，薄入口27/27且独审APPROVED，待集成；共享能力全链路尚未完成 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
@@ -74,4 +74,6 @@ WPF-MATURE-02-03新增独立诊断阶段：最多3次自有合成子进程，总
 
 ## 当前诊断准备事实
 
-[诊断报告](../../docs/evidence/wpf-mature-02/diagnostics/README.md)与[manifest-v3](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v3.json)绑定当前source/raw/直接消费者。R06五源已独审通过；driver先前清理不在窗口内的finding已修，根目录和半建sink失败也进入finally，9个真实私有文件/假transport检查通过，待独审。没有真实batch-reservation，没有启动任何新child。受控f181 merge无冲突，integration claim4d035471…已v2 released，writer v2保留。早期v1/v2 manifest及旧许可/失败均为历史，不能重置预算。
+[诊断报告](../../docs/evidence/wpf-mature-02/diagnostics/README.md)与[manifest-v4](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v4.json)绑定当前source/raw/直接消费者。R06五源已独审通过；driver先前清理不在窗口内的finding已修，根目录和半建sink失败也进入finally，10个真实私有文件/假transport检查通过，待独审。没有真实batch-reservation，没有启动任何新child。受控f181 merge无冲突，integration claim4d035471…已v2 released，writer v2保留。早期v1/v2 manifest及旧许可/失败均为历史，不能重置预算。
+
+当前运行HOLD：S01独占窗口已于10:06:34获准，本owner保持0新child，等待其资源receipt和Mika单独窗口。driver最终10项包含fsync预算越界回归；文件注明持久化前elapsed，CLI在durableCreate后给最终耗时和withinBudget。

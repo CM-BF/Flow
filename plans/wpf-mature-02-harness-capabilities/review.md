@@ -1,8 +1,8 @@
 # WPF-MATURE-02 当前诊断driver修复审查
 
-状态：NOT_STARTED。Review target commit: d33aec626a809425f3768f0866f3de1528b08063。R06五源seam固定0778847702e595405f6cba0de51c1058b1436504已由Mika/gpt-6-astra独审APPROVED；当前source逐字未变，19/19零child与strict0保留，不重跑。driver原077版本CHANGES_REQUESTED：私有文件清理未含入60秒窗口。修复为同一finally登记/关闭/固定allowlist分类/按inode移除，unknown诚实retained且cleanupComplete=false；首根创建及半建sink失败受覆盖。
+状态：NOT_STARTED。Review target commit: 4e1c989c0503cc73206d4e3de615e57b881d452e。R06五源seam固定0778847702e595405f6cba0de51c1058b1436504已由Mika/gpt-6-astra独审APPROVED；当前source逐字未变，19/19零child与strict0保留，不重跑。driver原077版本CHANGES_REQUESTED：私有文件清理未含入60秒窗口。修复为同一finally登记/关闭/固定allowlist分类/按inode移除，unknown诚实retained且cleanupComplete=false；首根创建及半建sink失败受覆盖。
 
-[当前manifest-v3](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v3.json)绑定修复、9项零child文件故障/分类检查，以及同树已审C1直接消费者strict0。旧manifest/raw保持历史，不冒称全部重测。只读审预算预留先于spawn、关闭与清理、固定安全标签及保留事实；不要启动driver/真实child/模型。真实窗口未消费，后续须Mika串行安排。
+[当前manifest-v4](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v4.json)绑定修复、10项零child文件故障/分类检查，以及同树已审C1直接消费者strict0。旧manifest/raw保持历史，不冒称全部重测。只读审预算预留先于spawn、关闭与清理、固定安全标签及保留事实；不要启动driver/真实child/模型。真实窗口未消费，后续须Mika串行安排。
 
 架构范围仅host opt-in diagnostic seam，不允许F01/adapter/env变化，不宣称Seatbelt安全或tools隔离。
 
@@ -47,3 +47,5 @@ Base：9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；Review target commit: 0d0524c3
 ## 一次运行结果待审（不是静态approval延伸）
 
 Mika已允许的唯一一次runSyntheticCanary由固定driver `7c6e3d835655e1c2c274b71ce0d65225e87172df` 执行。结果[报告](../../docs/evidence/wpf-mature-02/isolation/canary-run-report.md)：09:32:21.310Z–09:32:21.558Z，SIGABRT且无有效canary报告；七项均不能算通过。R06确认退出、listener关闭、两临时根清理；具体bootstrap原因未知。原静态8文件、语义6source/1raw/29schema未改。无自动重试/新grant/真实app-server。运行结果只读复核尚未开始。
+
+当前driver补充修复：4e1c989将最终预算计算移至batch-result持久化之后，文件标before-result-persistence，CLI为外层最终完成证据。10项driver检查含该回归；旧source/raw/manifest均保留历史。S01窗口进行时禁止运行本driver；当前只交源码复审。
