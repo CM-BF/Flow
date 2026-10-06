@@ -1,12 +1,12 @@
 import type { Pool, PoolClient } from 'pg';
-import type { ProjectNode, ProjectSnapshot, ProjectView, WorkspaceList, ProjectList } from '../../../../packages/contracts/src/projects.js';
+import type { ProjectNode, ProjectSnapshot, ProjectView, WorkspaceList, ProjectList, GraphRunActor } from '../../../../packages/contracts/src/projects.js';
 import type { TaskSummary } from '@flow/contracts';
 import { HttpError, transaction } from '../database.js';
 
 export interface ProjectRecord {
   id: string; workspace_id: string; title: string; revision: number; created_at: Date; updated_at: Date;
 }
-interface RevisionRecord { revision: number; reason: string; actor: 'owner'; nodes: ProjectNode[]; created_at: Date }
+interface RevisionRecord { revision: number; reason: string; actor: string; nodes: ProjectNode[]; created_at: Date }
 export function projectView(row: ProjectRecord): ProjectView {
   return { id: row.id, workspaceId: row.workspace_id, title: row.title, revision: row.revision, createdAt: row.created_at.toISOString(), updatedAt: row.updated_at.toISOString() };
 }
@@ -22,9 +22,10 @@ export async function readProject(client: PoolClient, id: string, revision?: num
   const ids = graph.nodes.flatMap(node => node.taskId ? [node.taskId] : []);
   const rows = ids.length ? (await client.query<{ id: string; title: string; harness: TaskSummary['harness']; status: TaskSummary['status']; verification_status: TaskSummary['verificationStatus']; created_at: Date; updated_at: Date }>(
     `SELECT id,submission->>'title' AS title,submission->>'harness' AS harness,status,verification_status,created_at,updated_at FROM flow.tasks WHERE id=ANY($1) ORDER BY id`, [ids])).rows : [];
+  const actor = graph.actor === 'owner' ? undefined : JSON.parse(graph.actor) as GraphRunActor;
   return {
     project: projectView(project),
-    graph: { revision: graph.revision, reason: graph.reason, actor: graph.actor, createdAt: graph.created_at.toISOString(), nodes: graph.nodes },
+    graph: { revision: graph.revision, reason: graph.reason, actor: actor ? 'goal-graph-run' : 'owner', ...(actor ? { actorSource: actor } : {}), createdAt: graph.created_at.toISOString(), nodes: graph.nodes },
     tasks: rows.map(row => ({ id: row.id, title: row.title, harness: row.harness, status: row.status, verificationStatus: row.verification_status, createdAt: row.created_at.toISOString(), updatedAt: row.updated_at.toISOString() })),
   };
 }

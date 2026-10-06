@@ -101,3 +101,8 @@ CTX02实现8abe014/最终efda7fc按Root方法APPROVED接收；实验脚本对已
 ## 05:23 UTC — owner图提案生产接线
 
 O05领域1f211/最终7414及F01薄client e28、生产挂载208a各自获Mika独立APPROVED；受控合并后领域7文件及接线3文件对target零diff，无手工冲突，无新增风险不重跑。已有保存证据是首7绿+client红后定向绿、类型修正后绿；8不同用例有绿记录，不称一次整套8/8。仅owner建立/应用有界版本化提案，不是自然语言/runner图授权。全计划矩阵已更新14c基线，CTX02/profile作者release metadata收到。registry64新增WPF-QUEUE01，当前常驻center仍75a33，不声称用户服务已有014。
+
+## 05:36 UTC — 知识来源与单runner安全刷新接线
+K01领域ea0c/Mika、SVC02领域与host9aa/GoalOwner、F01薄client b5及caea/Mika、生产CLI+015/016 c03/592复审均已固定通过。接收原始失败与修复，JSON FIFO/P2已关闭。scope对固定approved提交无实现差异，见knowledge-maintenance-fixed-scopes.json；无新产品变动，不重复领域全套。直接消费者11/11+纯读取2/2+typecheck，较早CLI组合17通过/1退出码失败修复记录分开保留，不合称一次30绿。
+
+本次只是main集成。61227/61228当前中心runner仍75a33；SVC独有事实05:28显示task0/attempt0、唯一注册受管runner，升级窗口需要重新核对。保留所有DB/凭据/端口/tab，不因main前进宣称用户服务已更新。O06/QUEUE01仍各自分支，真实排队2query只是新提案，未调用。

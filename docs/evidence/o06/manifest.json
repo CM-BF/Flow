@@ -1,0 +1,173 @@
+{
+  "target": "f6ba02e8898ed1539786de381c41402d342e59a8",
+  "base": "eb14991a170b72d7d974428b2e440e1faada2c1e",
+  "recordedAt": "2026-10-06 05:34 UTC",
+  "modelCalls": 0,
+  "checks": {
+    "selected": 34,
+    "passed": 34,
+    "scope": "O06 9 + O03 9 + O05 6 + G01 10",
+    "durationSeconds": 29.74,
+    "typecheck": "passed",
+    "independentReview": "NOT_STARTED",
+    "productionMount": false
+  },
+  "sources": [
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "bytes": 9383,
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/index.ts",
+      "bytes": 3172,
+      "sha256": "b673e3463db2f37bab9ae09633bf587e71b13c59db70414b98425437fcc05f06"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/migration.test.ts",
+      "bytes": 8104,
+      "sha256": "4a0b4d3645c15411aa4cc07f454914535c9f2e1830c397e4982d12f132944e31"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "bytes": 7935,
+      "sha256": "ca58caa4fa17b5a30188afadd502b6df1f478db3a2e95182ad0d6cacad3026c2"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runs.test.ts",
+      "bytes": 20358,
+      "sha256": "faf85181b491fa4c9209cff1dd7f5f175348d7469a5557a36c1c5a98b37da10e"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/store.ts",
+      "bytes": 6087,
+      "sha256": "393a25d4877e6c4a0aca63377f2f301e16258f13797dea1289fce547f6c07cc2"
+    },
+    {
+      "path": "apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "bytes": 2890,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/authorize.ts",
+      "bytes": 1064,
+      "sha256": "2d725eba8915b62e775a62274a8eff7c6aae33148a6615dd9f883193c403ef5a"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/store.ts",
+      "bytes": 5080,
+      "sha256": "bbe531bc9752b67a03b946466e336202c88ca3f7e59e8102d5ab7e8f14e1545e"
+    },
+    {
+      "path": "apps/server/src/projects/commands.ts",
+      "bytes": 4181,
+      "sha256": "b362828aa9b8a296d46f8105fc40fcd67b0a4efa091d7070f8c13e92f64742ee"
+    },
+    {
+      "path": "apps/server/src/projects/storage.ts",
+      "bytes": 4093,
+      "sha256": "3f2eabe24482b36f0d79bf4d81fadd18e2e2a696b199ac60d695ce658e8c0f3e"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 2888,
+      "sha256": "b6da9b983a2a69d7c444e90212f6079f37f59e9a3d654af773e6b0685b88b15c"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 4404,
+      "sha256": "0a458c436e7ea515e15337c34c2a377e3eb9af639f3a8b07e4a6883f2f70ad9f"
+    },
+    {
+      "path": "packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "packages/storage/migrations/017-goal-graph-runs.sql",
+      "bytes": 3089,
+      "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/o06/claim-receipt.json",
+      "bytes": 1057,
+      "sha256": "c1eb6c14c2178fcfec4d5f3c3d0daa9a31ad7e774c51e587d0257f614b559c6d"
+    },
+    {
+      "path": "docs/evidence/o06/install.txt",
+      "bytes": 597,
+      "sha256": "2f9892692dde0d5cc3f0b9c0436a8eae31a2db2830b7b4c1feb307ca5089cac1"
+    },
+    {
+      "path": "docs/evidence/o06/red-grant.txt",
+      "bytes": 1358,
+      "sha256": "cadd9a6465a9a9a65bec9a15c0402b4aaaff938df07f9cfbb7b4471f7a198c40"
+    },
+    {
+      "path": "docs/evidence/o06/green-grant.txt",
+      "bytes": 317,
+      "sha256": "af2c95f2406f7cbf2d1584506584242bfb8b941fd9b169457052bd3f9b36f9ed"
+    },
+    {
+      "path": "docs/evidence/o06/checks-progress.txt",
+      "bytes": 1083,
+      "sha256": "feccf56eb5fd144f9cb0903cfa960d67a4d8e325a23cbda3bfd1cd63e0255d3e"
+    },
+    {
+      "path": "docs/evidence/o06/results-progress.json",
+      "bytes": 5721,
+      "sha256": "429582fd71872451d2a5ebe09b1016235258880b50a182c48675c06065b55726"
+    },
+    {
+      "path": "docs/evidence/o06/typecheck-progress.txt",
+      "bytes": 103,
+      "sha256": "e113e16e57960ce622a4dee408f300c3ca751936a0d72ad872a727e680abd065"
+    },
+    {
+      "path": "docs/evidence/o06/typecheck-expanded.txt",
+      "bytes": 2923,
+      "sha256": "afaa1c3e1db35571c2a52f68625930fb24dbfa54c47d228e318ee488ecb0de44"
+    },
+    {
+      "path": "docs/evidence/o06/checks-final.txt",
+      "bytes": 2703,
+      "sha256": "078944b71b54e772829f9d039e3736d4958bfeb27ef35da0b9ba41f97a7d05a4"
+    },
+    {
+      "path": "docs/evidence/o06/results-final.json",
+      "bytes": 5721,
+      "sha256": "3e88f40a6daf88f03008bb25ab4b4e0b773c09893f743773b9816bbb47e6c0ad"
+    },
+    {
+      "path": "docs/evidence/o06/upgrade-final.json",
+      "bytes": 7057,
+      "sha256": "c8e25b1cba925370c2ecd635d6f66c0d9ff32ecf6096cd1119c9d5baba1bb53b"
+    },
+    {
+      "path": "docs/evidence/o06/typecheck-final.txt",
+      "bytes": 103,
+      "sha256": "e113e16e57960ce622a4dee408f300c3ca751936a0d72ad872a727e680abd065"
+    },
+    {
+      "path": "docs/evidence/o06/typecheck-delivery.txt",
+      "bytes": 103,
+      "sha256": "e113e16e57960ce622a4dee408f300c3ca751936a0d72ad872a727e680abd065"
+    }
+  ],
+  "independentReview": {
+    "state": "APPROVED",
+    "target": "f6ba02e8898ed1539786de381c41402d342e59a8",
+    "reviewer": "runner_owner",
+    "observedCleanHead": "d070c52f55e919fa6fad37a2d0b01e4833b02bf7",
+    "recordedAt": "2026-10-06 05:38 UTC",
+    "sourceCount": 15,
+    "outputCount": 13,
+    "originalManifestSha256": "d119dfdc69d20c903f650dd383cd0f6eb4037a64efc3a2fd951ae881bdb240b3",
+    "ranTests": false,
+    "modelCalls": 0,
+    "findings": [],
+    "scope": "fixture center module; no production mount/client/native SDK/NL"
+  }
+}

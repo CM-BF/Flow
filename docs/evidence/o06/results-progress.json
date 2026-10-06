@@ -1,0 +1,176 @@
+{
+  "modelCalls": 0,
+  "facts": [
+    {
+      "scenario": "durable-admission",
+      "run": {
+        "id": "9f550e96-638e-4476-84a3-d51b71727f75",
+        "version": 1,
+        "goalId": "454c751d-b3be-4898-8c34-e28e1b708afb",
+        "projectId": "c9936152-64b2-4e93-8445-b842f25782f2",
+        "goalDigest": "2549db8ba2db07e56fe239cc694745fef38227a7741b9274c12df7cf1cc47976",
+        "taskId": "3ced2fc5-b9b6-453d-ac57-cb10c507bb59",
+        "scope": {
+          "maxNewEdges": 128,
+          "maxNewNodes": 16,
+          "baseRevision": 1,
+          "maxProposals": 2,
+          "maxApplications": 1,
+          "allowedExistingNodes": []
+        },
+        "mode": "fixture",
+        "usedCommands": 0,
+        "usedProposals": 0,
+        "usedApplications": 0,
+        "createdAt": "2026-10-06T05:29:18.406Z",
+        "revokedAt": null,
+        "revocationReason": null
+      }
+    },
+    {
+      "scenario": "diamond-ack-restart",
+      "receipt": {
+        "actor": {
+          "kind": "goal-graph-run",
+          "runId": "6ebf9f73-1265-4345-bffe-13ab338d9562",
+          "taskId": "41563aa0-6422-4d0a-ac22-8e204cf3a1f9",
+          "runnerId": "38282b95-7694-44de-862d-68a2be40ab8f",
+          "attemptId": "8067df45-8e24-4a5c-859d-2567a897ec86",
+          "ownerVersion": 1
+        },
+        "goalId": "ac12ee21-c6b8-4e4c-b582-dfacca7aef74",
+        "nodeIds": {
+          "A": "fcdd95a6-95d5-464b-83dc-e9ccc4eb84b8",
+          "B": "08dd75a6-f829-4419-8319-d68f839891c5",
+          "C": "1d618e5d-43a0-44a0-9837-7c312b09b56d",
+          "D": "154c0adc-e897-4bb0-89bb-575ea79d66b4"
+        },
+        "appliedAt": "2026-10-06T05:29:19.694Z",
+        "projectId": "8e4b2d06-56e2-44e7-b3e4-2d8a6664d639",
+        "proposalId": "6798c031-b028-4d57-b276-5171acec354d",
+        "toRevision": 8,
+        "fromRevision": 1,
+        "proposalDigest": "c325e82d62ae7353d585219fe6646974244a9e098c43226dd945197335e64540"
+      },
+      "replayed": true,
+      "audit": [
+        {
+          "sequence": 1,
+          "runnerId": "38282b95-7694-44de-862d-68a2be40ab8f",
+          "attemptId": "8067df45-8e24-4a5c-859d-2567a897ec86",
+          "ownerVersion": 1,
+          "key": "propose",
+          "digest": "c361a4c92e649492a006c79d8e2737d33bbcba131329b77feffc92bf090928c9",
+          "kind": "propose",
+          "proposalId": "6798c031-b028-4d57-b276-5171acec354d",
+          "proposalDigest": "c325e82d62ae7353d585219fe6646974244a9e098c43226dd945197335e64540",
+          "appliedRevision": null,
+          "createdAt": "2026-10-06T05:29:19.536Z"
+        },
+        {
+          "sequence": 2,
+          "runnerId": "38282b95-7694-44de-862d-68a2be40ab8f",
+          "attemptId": "8067df45-8e24-4a5c-859d-2567a897ec86",
+          "ownerVersion": 1,
+          "key": "apply-ack",
+          "digest": "091ef4b65904389217c9f3361a65167f9496a995496946f9ef8896d0b16655eb",
+          "kind": "apply",
+          "proposalId": "6798c031-b028-4d57-b276-5171acec354d",
+          "proposalDigest": "c325e82d62ae7353d585219fe6646974244a9e098c43226dd945197335e64540",
+          "appliedRevision": 8,
+          "createdAt": "2026-10-06T05:29:19.697Z"
+        }
+      ],
+      "read": {
+        "goalId": "ac12ee21-c6b8-4e4c-b582-dfacca7aef74",
+        "projectId": "8e4b2d06-56e2-44e7-b3e4-2d8a6664d639",
+        "baseRevision": 1,
+        "currentRevision": 8,
+        "stale": true,
+        "nodes": [],
+        "nextCursor": null
+      }
+    },
+    {
+      "scenario": "immutable-pages",
+      "baseRevision": 4,
+      "currentRevision": 5,
+      "rows": [
+        {
+          "id": "044cabb4-adfa-407d-a64b-10ea6d4b2225",
+          "title": "Gamma",
+          "version": 1
+        },
+        {
+          "id": "3df59853-03a4-4560-bc82-dcd3d432e40d",
+          "title": "中文🙂",
+          "version": 1
+        },
+        {
+          "id": "8ae46f30-0174-484e-b730-6e479ac56e90",
+          "title": "Beta",
+          "version": 1
+        }
+      ],
+      "bytes": [
+        411,
+        415,
+        251
+      ]
+    },
+    {
+      "scenario": "scope-isolation",
+      "oldNodeGrant": "16227baf-2f85-444c-9471-050425f7fbe7",
+      "graphGrant": "53d88f4c-f3e8-43fa-983a-ecc55a5d71d7",
+      "existingNode": "282544a2-3867-48d6-8211-6ed514200c9d"
+    },
+    {
+      "scenario": "rollback",
+      "receipt": {
+        "proposalId": "bd9a2412-19f6-4c0a-8c4e-853af14df0c3",
+        "goalId": "10a4293f-2c60-401c-9e27-2a08d7622f35",
+        "projectId": "c93c83a3-b894-46aa-b278-1a28f6043c14",
+        "proposalDigest": "be6caa0a85eed0ea9d60d078d1dd5ea908ec31f22a73ad3395b661fa19304f48",
+        "fromRevision": 1,
+        "toRevision": 8,
+        "nodeIds": {
+          "A": "d3a5fac2-adf3-406c-8915-a3d0102482fd",
+          "B": "a1d857a3-6dcd-48fb-bc51-0366c8c47271",
+          "C": "a7f0c8a2-4aad-4af2-9602-7a24d3489021",
+          "D": "ba3b7bcb-cd10-4a9f-88c0-97a4726c5934"
+        },
+        "actor": {
+          "kind": "goal-graph-run",
+          "runId": "035e7be0-41a0-44b2-b583-5d17e8159b91",
+          "runnerId": "c11cf2b6-ea7c-4b03-b786-c1de6ed8212f",
+          "taskId": "e0dff000-b5c6-4f12-942a-be0dc53b3033",
+          "attemptId": "7bd1150e-4a6b-4353-b273-977c5b6c960c",
+          "ownerVersion": 1
+        },
+        "appliedAt": "2026-10-06T05:29:24.417Z"
+      }
+    },
+    {
+      "scenario": "revoke-replay-race",
+      "code": "goal_graph_revoked"
+    },
+    {
+      "scenario": "cancel-replay-race",
+      "code": "goal_graph_inactive"
+    },
+    {
+      "scenario": "cas-lease",
+      "statuses": [
+        409,
+        200
+      ],
+      "expiredReplay": "rejected"
+    },
+    {
+      "cleanup": {
+        "database": "flow_o06_535a7c8b23104148a75e6660a04c98d7",
+        "removed": true
+      }
+    }
+  ]
+}
