@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:57:49 UTC / main与origin/main 017adc276a888a218bed3ef9963bc4dabbc6cec2 clean；已交付18叶源不变，后继仅设计 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:01:16 UTC / main与origin/main 2f4a5789ee13937914fa2c25161c8d5ed1071550 clean；producer设计批准、仅领取4路径 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,22 +10,22 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 本次metadata起点ad23328e1871723c4b6d4464f86ede41b157b1cc；实现c1733a0c4a2ce389489a8bc11ea3b68ef5693d34，后继设计不改源码 |
-| 工作树dirty状态 | fresh ad23328e clean/v7 ACTIVE后仅新增producer设计/固定输入及status；18源写权已归还，源码与旧绑定证据不变 |
+| 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 当前设计37f1385b78e79179f15162e1c90a4706d30aa1ab；拟同步已审main2f4a5789待Root确认，尚无producer实现 |
+| 工作树dirty状态 | fresh 37f1385b clean/v7后原子amend v8成功，仅补同步请求/status/receipt；未修改源码，旧18源冻结 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | planning |
 | 检查状态 | PASSED c1733a0c4a2ce389489a8bc11ea3b68ef5693d34：58/58不同（8helper+27mapper+23projection），root局部strict noEmit0；首次fixture类型错误保留，见[manifest](../../docs/evidence/wpf-mature-04/normalize-manifest.json) |
 | 已集成main状态 / HEAD | 已集成main与origin/main bf067e328bc1dc63cde39acf4b637cfb055e467a clean；879/9ac/c173组合18叶源逐字一致，原target非main祖先，按固定blob集成核验；[唯一接收收据](../../docs/evidence/wpf-mature-04/main-acceptance.json)引用Lead生产接线与root types0，未重测；部署未知 |
 | 实现目标 | c1733a0c4a2ce389489a8bc11ea3b68ef5693d34 |
 | 实现范围 | apps/runner/src/context-observations/claude-summary-values.ts, apps/runner/src/context-observations/claude-summary-values.test.ts, apps/runner/src/context-observations/claude-summary.ts, apps/runner/src/context-observations/claude-summary.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 历史观测保存、授权读回与统一估算校验已进入主线；历史读回明确保留当前占用和剩余额度未知 |
-| 下一可用交付 | 历史片段已交付；下一片普通Claude历史采样设计待局部审查，实际采样、当前剩余额度与Web仍未交付 |
+| 当前产出 | 历史保存与授权读回已在主线；普通Claude采样设计获局部审查通过，正在固定实施所需基准 |
+| 下一可用交付 | 受控接入已审公共入口后实现一次summary历史采样；当前占用和剩余额度仍保持未知 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED c1733a0c4a2ce389489a8bc11ea3b68ef5693d34：status_read/gpt-6-astra，2026-10-06 11:24:10 UTC，Mika接收，0 P1/P2；仅4源纯归一化 |
-| Claim | [COMMITTED amend v7](../../docs/evidence/wpf-mature-04/source-handback-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v7 ACTIVE；仅plans与evidence两个metadata scope；18叶源已停写并归还，不恢复写权 |
+| Claim | [COMMITTED amend v8](../../docs/evidence/wpf-mature-04/producer-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v8 ACTIVE；仅4个新producer精确源码与2metadata目录，原18源未恢复写权 |
 | 架构影响 | 主线已接027、原reportEvents事务与owner历史GET/薄client；纯归一化无IO/SDK运行依赖。固定架构视图对应bf067e3的更新由Lead协调；实际producer/current/cut/Web仍待后继，不能从历史sample推算当前剩余 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -90,3 +90,5 @@
 2026-10-06 11:51:04 UTC：fresh own0c44bed7 clean/v6 ACTIVE、main/origin bf067e3 clean；逐字核18叶源=各批准Git=mainGit=main现场=owner现场，原879/9ac/c173均非main祖先，明确按固定blob接收。Lead收据36源比较/root types0为既有证据，本owner未复跑。18源明确停写后原子amend v7只保留两个metadata目录；[main接收](../../docs/evidence/wpf-mature-04/main-acceptance.json)与[归还收据](../../docs/evidence/wpf-mature-04/source-handback-receipt.json)记录实际事实。本片delivered，完整TODO不变，SDK/provider/current/remaining/Web与部署仍未完成或未知。沿本地find-skills/codebase-design/固定clean-code核元数据职责、链接和历史/当前边界，不修改旧manifest/support/raw。
 
 2026-10-06 11:57:49 UTC：在v7两个metadata范围新增[普通Claude producer设计](../../docs/evidence/wpf-mature-04/ordinary-claude-producer-design.md)，复用原准备/c173归一化与bf067已集成事件入口；固定源码52ebd2b、现场main017adc27的14输入及已交付18叶源不变。仅请求4个精确后继路径，尚未amend/获批实施；候选在首成功result采样、正常EOF与最终校验后才发布，pending control超时/abort经既有unknown settlement处理并防close异常降级。设计待Mika审；0源码/测试/SDK/provider，旧已审交付阶段仍delivered，开放TODO不变。
+
+2026-10-06 12:01:16 UTC：Mika只读APPROVED设计37f1385b方向，0设计P1/P2；按fresh账本原子amend v8领取四路径，尚未写源码。已固定[基准同步请求与补充验收](../../docs/evidence/wpf-mature-04/producer-base-sync.md)：推荐独立integration scope[]仅合入已审main2f4a5789，Root确认前不执行；不摘三共享文件或复制union。接受跨kind总和溢出在read边界unavailable、pre-abort零control、pending unknown不被close异常覆盖。历史片已交付，本后继planning；0工程测试/SDK，旧目标与证据不变。
