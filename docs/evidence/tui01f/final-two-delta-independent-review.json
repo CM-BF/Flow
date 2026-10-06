@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-06T17:47:27.482310+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "status": "APPROVED",
+  "delivery": "113bb992382187f06c0f201e6d6a26473efceb2f",
+  "scope": [
+    {
+      "source": "ec30bb6246ac95e5843c7166dee7118b684fd089",
+      "paths": [
+        "apps/tui/src/journey.test.ts"
+      ],
+      "result": "Full 5-add/1-delete test-only delta read; guard preserves legacy control assertions and avoids unsafe cast. Manifest10/fixed-project207/compiler713 hashes match; focused noEmit0. Root integration Web type issue remains separate."
+    },
+    {
+      "source": "f4f9c47c8c36d7c05614ac477f7af3bb49a31680",
+      "helper": "45709c982df080af5a71ecbd66760a76ab65cf94",
+      "result": "Previously reviewed helper and dedicated case; final241 bindings exact. New cleanup-only real PG1/1 suite0, zero task/attempt/runtime/PTY/provider, checkpoint before normal DROP and original dev/ino tmp cleanup; group33373 absent. No unresolved P1/P2."
+    }
+  ],
+  "bindings": "/tmp/flow-tui01f-final-two-delta-review-bindings.json",
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "limits": [
+    "Original two behavioral cases passed within whole journey suite exit1; original unknown cleanup and old tmp KEEP preserved. New cleanup-only result does not retroactively change it.",
+    "No broad TUI complete or true provider validation claim."
+  ]
+}

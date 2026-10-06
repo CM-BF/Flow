@@ -42,3 +42,5 @@
 2026-10-06 17:29 UTC：原claim内收尾修复仅test-only：≤3s连接观察、初始dev/ino和checkpoint门槛。10新定向检查/types0；未重跑原两行为或36，原suite exit1/旧tmp KEEP保留，03/04继续open。独立审查后再决定必要PG cleanup-only。
 
 2026-10-06 17:43 UTC：独立cleanup-only actual1/1、源f4批准/新证据待审。历史2行为suite exit1不改、旧tmp KEEP；03暂保持开放直到独审收口，04未实现。另原claim v2增旧TUI journey.test.ts用于新profile union直接消费者兼容，仅focused types0，无旧旅程重跑。
+
+2026-10-06 17:48 UTC：两test-only增量获独立APPROVED，legacy profile兼容与单PG收尾分开绑定；保持原whole-suite exit1/旧tmpKEEP，不称旧suite重跑通过。待main接收收口，完整04实际App交替仍open。本轮仅metadata，无新增运行。

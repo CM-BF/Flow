@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:43 UTC；原main83f不变，本次仅test-only及证据收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:48 UTC；原main83f不变，本次两test-only增量独审收口 |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,18 +12,18 @@
 | 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5 / test-only兼容 ec30bb6246ac95e5843c7166dee7118b684fd089 |
 | 工作树dirty状态 | 源码已固定；本次仅证据/状态收口，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED f4f9c47c8c36d7c05614ac477f7af3bb49a31680（独立cleanup-only 1/1+focused types0）；ec30bb6246ac95e5843c7166dee7118b684fd089 focused types0；原40508f两行为通过/suite exit1保留 |
 | 已集成main状态 / HEAD | 原a1f限定片已集成83f535b54f2390a729f02bc818e07ba684d94ccb；新cleanup未main，03/04仍open |
 | 实现目标 | ec30bb6246ac95e5843c7166dee7118b684fd089 |
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/fixture-cleanup.ts, apps/tui/src/task-controls/fixture-cleanup.test.ts, apps/tui/src/task-controls/cleanup-journey.test.ts, apps/tui/src/task-controls/journey.test.ts, apps/tui/test-fixtures/cancel_driver.py, apps/tui/src/journey.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 两项真实终端行为已验证；单独数据库收尾检查通过，旧终端测试已兼容新增配置类型。 |
-| 下一可用交付 | 交付收尾证据和兼容修复供独审；浏览器交替仍待后继。 |
-| 当前阻塞 | ACTIVE: 原旅程整组失败保留；新的独立收尾证据待审，旧临时目录因缺初始身份继续保留。 |
+| 当前产出 | 两项真实终端行为和独立数据库收尾证据已审；旧终端测试的配置类型兼容修复已获批准。 |
+| 下一可用交付 | 将已审收尾与兼容修复接入主线；实际浏览器交替保留后继。 |
+| 当前阻塞 | NONE；原旅程整组失败记录保留，旧临时目录缺初始身份继续保留，不自动删除。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 45709c982df080af5a71ecbd66760a76ab65cf94；f4f9c47c8c36d7c05614ac477f7af3bb49a31680源码批准；实际单PG证据/ec30兼容修复待独审 |
+| Review | [review.md](review.md)，APPROVED ec30bb6246ac95e5843c7166dee7118b684fd089（legacy consumer）；APPROVED f4f9c47c8c36d7c05614ac477f7af3bb49a31680（独立PG收尾），范围分别记录 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v2；新增旧journey.test.ts直接消费者 |
 | 架构影响 | 现 interaction controller 增一种 task-cancel 意图与可选单方法端口；旧中心/授权/调度不变，架构基线更新待本片固定交 Execution Lead。 |
 
@@ -31,7 +31,7 @@
 | --- | --- | --- | --- |
 | TUI01F-01 | completed | assignment_review | [Interface](../../docs/evidence/tui01f/interface.md) |
 | TUI01F-02 | completed | assignment_review | [局部36 distinct与focused types](../../docs/evidence/tui01f/validation.md) |
-| TUI01F-03 | in-progress | assignment_review | 原2行为pass/suite exit1保留；[独立收尾1/1](../../docs/evidence/tui01f/cleanup-1740/README.md)，新证据待独审 |
+| TUI01F-03 | in-progress | assignment_review | 原2行为pass/suite exit1保留；独立收尾1/1及类型兼容已审、待main收口 |
 | TUI01F-04 | pending | Execution Lead 协调 Web / owner | 实际双界面旅程未执行 |
 
 唯一 status 已交 Lead 登记；本轮未重新采样看板。不写第二进度源。SVC05H01 树保持 af51 全冻结，独立任务不交叉修改。
@@ -61,3 +61,5 @@
 2026-10-06 17:36 UTC：45709c纯修复已独立APPROVED/71绑定一致、reviewer0重跑。单PG消费者sourcef4f9c47c8c36d7c05614ac477f7af3bb49a31680仅新增局部types0(2.06s)和172源/27SQL入口静态核对；未运行PG、原suite exit1保留。[新静态证据](../../docs/evidence/tui01f/cleanup-pg-static/README.md)。
 
 2026-10-06 17:43 UTC：f4源码独审后获一次cleanup-only窗口，实际1/1/exit0；checkpoint先于正常DROP/tmp，全部自有资源清理，原2行为/suite exit1与未知inode旧tmp不改。随后原子amend v2，legacy profile直接消费者ec30窄修/固定4015只读overlay focused types0；无旧PG/36重跑。[新清理证据](../../docs/evidence/tui01f/cleanup-1740/README.md) / [类型兼容](../../docs/evidence/tui01f/legacy-profile-compatibility/README.md)。
+
+2026-10-06 17:48 UTC：Execution Lead唯一独立APPROVED ec30旧profile消费者/f4独立PG收尾。legacy10+207project+713compiler和cleanup241绑定均核，无P1/P2、reviewer0重跑。原whole-suite exit1/旧tmpKEEP保留；不以新增1/1改写历史。[两增量回执](../../docs/evidence/tui01f/final-two-delta-independent-review.json) / [bindings](../../docs/evidence/tui01f/final-two-delta-review-bindings.json)。源码停止，claim v2待集成或合法后继。

@@ -1,3 +1,13 @@
+# 当前两项窄增量批准
+
+Review target commit: ec30bb6246ac95e5843c7166dee7118b684fd089
+
+APPROVED。Execution Lead独立全文读旧profile消费者5增1删，核10manifest/207固定project/713compiler输入与focused类型原始exit0；同次批准独立cleanup-only source f4f9c47c8c36d7c05614ac477f7af3bb49a31680（helper45709c已审）、241固定/current绑定与真实单case1/1 suite0。未重跑、无P1/P2。
+
+[原始独审回执](../../docs/evidence/tui01f/final-two-delta-independent-review.json) / [独立绑定](../../docs/evidence/tui01f/final-two-delta-review-bindings.json)。批准按两组范围，不扩为全TUI/native/App验收；原2行为whole-suite exit1和旧tmpKEEP仍原样，新PG收尾不回填历史。主线仍以接收receipt为准，当前integration-ready。
+
+以下为历史提交时观察与此前分段审查：
+
 # 新单项收尾证据与旧 profile 消费者（待独审）
 
 Submitted test-only target: ec30bb6246ac95e5843c7166dee7118b684fd089
@@ -10,7 +20,7 @@ Execution Lead已独立APPROVED source f4f9c47c8c36d7c05614ac477f7af3bb49a31680�
 
 # TUI01F test-only cleanup repair
 
-Review target commit: 45709c982df080af5a71ecbd66760a76ab65cf94
+Historical review target commit: 45709c982df080af5a71ecbd66760a76ab65cf94
 
 APPROVED。Execution Lead独立全文读3源/10用例/原red-green-types-resource，71fixed/current SHA/bytes逐项一致，无P1/P2，未重跑。批准限10纯检查+focused类型，不含新cleanup-only PG case；原suite exit1保留。[独立批准转录](../../docs/evidence/tui01f/cleanup-local/independent-review.json) / [原始binding](../../docs/evidence/tui01f/cleanup-local/independent-review-bindings.json)。
 
