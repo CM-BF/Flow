@@ -123,7 +123,7 @@ export function parseAttachmentContextReceipt(expected: {
   const projectId = idSchema.parse(expected.projectId);
   const knowledge = conversationContextSelectionSchema.parse(expected.knowledge ?? []);
   const attachments = attachmentSelectionSchema.parse(expected.attachments);
-  const descriptors = expected.descriptors?.map(value => attachmentDescriptorSchema.parse(value));
+  const descriptors = expected.descriptors?.map(({ reference, name, mediaType, byteLength }) => attachmentDescriptorSchema.parse({ reference, name, mediaType, byteLength }));
   if (conversationContextTemplate(knowledge, attachments) !== 2) throw Error('Attachment receipt requires nonempty frozen attachments.');
   if (descriptors && descriptors.length !== attachments.length) throw Error('attachment_reference_mismatch');
   const actual = conversationContextResponseSchema.parse(wire);

@@ -210,6 +210,12 @@ describe('additive conversation context receipts', () => {
     expect(() => parseAttachmentContextReceipt({ ...expected, descriptors: [descriptor(secondId), descriptor()] }, received)).toThrow('attachment_reference_mismatch');
     expect(() => parseAttachmentContextReceipt({ ...expected, descriptors: [descriptor(), descriptor(secondId)] }, received)).toThrow('attachment_reference_mismatch');
   });
+  it('accepts optional display expectations directly from a full verified upload resource receipt', () => {
+    const resource = metadata(); const expected = { projectId, knowledge: [citation], attachments: [resource.reference], descriptors: [resource] };
+    expect(parseAttachmentContextReceipt(expected, v2())).toEqual(v2());
+    expect(resource).toHaveProperty('createdAt', '2026-01-01T00:00:00.000Z');
+    expect(() => parseAttachmentContextReceipt({ ...expected, descriptors: [{ ...resource, byteLength: 4 }] }, v2())).toThrow('attachment_reference_mismatch');
+  });
 });
 
 // Real f181 legacy consumers, unchanged on this branch; only HTTP responses are fixtures.
