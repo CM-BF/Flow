@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-06T04:42:07.724Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue",
+  "git": {
+    "available": true,
+    "branch": "codex/conversation-queue",
+    "head": "aef5c6fcd3d811673e8eeb8cd67f225ba0941b8e",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T04:42:08.051Z"
+  },
+  "current": true,
+  "issues": [],
+  "review": {
+    "state": "unknown",
+    "record": "IN_PROGRESS",
+    "target": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2"
+  },
+  "checks": {
+    "state": "passed",
+    "target": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+    "record": "PASSED ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2；32 queue +22原consumer=54不同用例，noEmit exit0"
+  },
+  "implementationProof": {
+    "target": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+    "head": "aef5c6fcd3d811673e8eeb8cd67f225ba0941b8e",
+    "scopes": [
+      "apps/server/src/conversation-queue",
+      "apps/server/src/conversations/commands.ts",
+      "apps/server/src/conversations/admission.ts",
+      "apps/server/src/conversations/state.ts",
+      "packages/contracts/src/conversations.ts",
+      "packages/contracts/src/conversation-queue.ts",
+      "packages/storage/migrations/011-conversation-queue.sql",
+      "docs/evidence/chat04/run-consumer.mjs"
+    ],
+    "observedAt": "2026-10-06T04:42:08.096Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/chat04/README.md",
+      "docs/evidence/chat04/checks.json",
+      "docs/evidence/chat04/quality.md",
+      "docs/evidence/chat04/typecheck-result.json",
+      "docs/evidence/chat04/v2-before-compat-typecheck-result.json",
+      "docs/evidence/chat04/v2-before-compat-typecheck.log",
+      "plans/chat04-conversation-queue/review.md",
+      "plans/chat04-conversation-queue/status.md",
+      "plans/chat04-conversation-queue/plan.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "claim": [
+    {
+      "claimId": "3be53dee-08c2-4c88-85ee-a29781842223",
+      "version": 1,
+      "state": "active"
+    }
+  ]
+}

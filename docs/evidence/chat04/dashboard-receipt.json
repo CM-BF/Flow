@@ -1,20 +1,52 @@
 {
-  "at": "2026-10-06T04:42:07.724Z",
+  "at": "2026-10-06T04:42:16.580Z",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue",
   "git": {
     "available": true,
     "branch": "codex/conversation-queue",
-    "head": "aef5c6fcd3d811673e8eeb8cd67f225ba0941b8e",
+    "head": "f0b2797cd4cbbd2cbca15009eeb44a1af5174eeb",
     "dirty": false,
     "changedFiles": 0,
-    "observedAt": "2026-10-06T04:42:08.051Z"
+    "observedAt": "2026-10-06T04:42:16.908Z"
   },
   "current": true,
   "issues": [],
   "review": {
-    "state": "unknown",
-    "record": "IN_PROGRESS",
-    "target": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2"
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+    "proof": {
+      "target": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+      "head": "f0b2797cd4cbbd2cbca15009eeb44a1af5174eeb",
+      "scopes": [
+        "apps/server/src/conversation-queue",
+        "apps/server/src/conversations/commands.ts",
+        "apps/server/src/conversations/admission.ts",
+        "apps/server/src/conversations/state.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/storage/migrations/011-conversation-queue.sql",
+        "docs/evidence/chat04/run-consumer.mjs"
+      ],
+      "observedAt": "2026-10-06T04:42:17.652Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/chat04/README.md",
+        "docs/evidence/chat04/checks.json",
+        "docs/evidence/chat04/dashboard-receipt.json",
+        "docs/evidence/chat04/quality.md",
+        "docs/evidence/chat04/typecheck-result.json",
+        "docs/evidence/chat04/v2-before-compat-typecheck-result.json",
+        "docs/evidence/chat04/v2-before-compat-typecheck.log",
+        "plans/chat04-conversation-queue/plan.md",
+        "plans/chat04-conversation-queue/review.md",
+        "plans/chat04-conversation-queue/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
   },
   "checks": {
     "state": "passed",
@@ -23,7 +55,7 @@
   },
   "implementationProof": {
     "target": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
-    "head": "aef5c6fcd3d811673e8eeb8cd67f225ba0941b8e",
+    "head": "f0b2797cd4cbbd2cbca15009eeb44a1af5174eeb",
     "scopes": [
       "apps/server/src/conversation-queue",
       "apps/server/src/conversations/commands.ts",
@@ -34,20 +66,21 @@
       "packages/storage/migrations/011-conversation-queue.sql",
       "docs/evidence/chat04/run-consumer.mjs"
     ],
-    "observedAt": "2026-10-06T04:42:08.096Z",
+    "observedAt": "2026-10-06T04:42:16.959Z",
     "state": "unchanged",
     "implementationChanges": [],
     "outsideChanges": [],
     "metadataChanges": [
       "docs/evidence/chat04/README.md",
       "docs/evidence/chat04/checks.json",
+      "docs/evidence/chat04/dashboard-receipt.json",
       "docs/evidence/chat04/quality.md",
       "docs/evidence/chat04/typecheck-result.json",
       "docs/evidence/chat04/v2-before-compat-typecheck-result.json",
       "docs/evidence/chat04/v2-before-compat-typecheck.log",
+      "plans/chat04-conversation-queue/plan.md",
       "plans/chat04-conversation-queue/review.md",
-      "plans/chat04-conversation-queue/status.md",
-      "plans/chat04-conversation-queue/plan.md"
+      "plans/chat04-conversation-queue/status.md"
     ],
     "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
   },
