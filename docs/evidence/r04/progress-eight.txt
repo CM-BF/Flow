@@ -1,0 +1,77 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown
+
+stdout | apps/server/src/shutdown/main.test.ts > bounds real main SIGTERM with an unfinished claim connection and no active database query
+{"databaseActiveBeforeSignal":[],"socketDestroyed":false}
+
+stdout | apps/server/src/shutdown/main.test.ts > bounds real main SIGTERM with an unfinished claim connection and no active database query
+{"case":"SIGTERM","elapsedMs":1041,"result":{"code":0,"signal":null},"output":"Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\n"}
+
+stdout | apps/server/src/shutdown/main.test.ts > lets normal SIGINT exit without exhausting the drain deadline and preserves accepted commands on restart
+{"case":"SIGINT","elapsedMs":23,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > lets normal SIGINT exit without exhausting the drain deadline and preserves accepted commands on restart
+{"case":"SIGTERM","elapsedMs":26,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > ends a live SSE observer and handles repeated signals without killing the process
+{"case":"SIGTERM","elapsedMs":1045,"result":{"code":0,"signal":null},"output":"Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\n"}
+
+stdout | apps/server/src/shutdown/main.test.ts > closes after actual claim client aborts without treating the socket as transaction cancellation
+{"case":"SIGINT","elapsedMs":127,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > recovers a command after shutdown loses its ACK while the owned transaction finishes
+{"case":"SIGTERM","elapsedMs":1229,"result":{"code":0,"signal":null},"output":"Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\n"}
+
+stdout | apps/server/src/shutdown/main.test.ts > recovers a command after shutdown loses its ACK while the owned transaction finishes
+{"case":"SIGTERM","elapsedMs":21,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > rejects new TCP and pipelined commands during drain
+{"case":"SIGTERM","elapsedMs":154,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > rejects new TCP and pipelined commands during drain
+{"duringDrain":"503"}
+
+stdout | apps/server/src/shutdown/main.test.ts > rejects new TCP and pipelined commands during drain
+{"case":"SIGTERM","elapsedMs":21,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > allows an in-flight command to finish normally within grace without losing its ACK
+{"case":"SIGINT","elapsedMs":1034,"result":{"code":0,"signal":null},"output":"Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\n"}
+
+ ❯ apps/server/src/shutdown/main.test.ts (8 tests | 1 failed) 9012ms
+   ✓ bounds real main SIGTERM with an unfinished claim connection and no active database query  1865ms
+   ✓ lets normal SIGINT exit without exhausting the drain deadline and preserves accepted commands on restart  758ms
+   ✓ ends a live SSE observer and handles repeated signals without killing the process  1444ms
+   ✓ closes after actual claim client aborts without treating the socket as transaction cancellation  505ms
+   ✓ recovers a command after shutdown loses its ACK while the owned transaction finishes  1949ms
+   ✓ rejects new TCP and pipelined commands during drain  904ms
+   ✓ supports createServer inject-only close and idempotent repeated close without a listening socket 92ms
+   × allows an in-flight command to finish normally within grace without losing its ACK 1384ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/shutdown/main.test.ts > allows an in-flight command to finish normally within grace without losing its ACK
+AssertionError: expected 'Center shutdown: HTTP drain deadline …' not to contain 'deadline'
+
+- Expected
++ Received
+
+- deadline
++ Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
++
+
+ ❯ apps/server/src/shutdown/main.test.ts:199:33
+    197|     expect((await pending).replayed).toBe(false);
+    198|     expect(await stopping).toEqual({ code: 0, signal: null });
+    199|     expect(center.output()).not.toContain('deadline');
+       |                                 ^
+    200|   } finally { await lock.query('SELECT pg_advisory_unlock_all()'); loc…
+    201| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  21:03:43
+   Duration  9.52s (transform 249ms, setup 0ms, import 414ms, tests 9.01s, environment 0ms)
+

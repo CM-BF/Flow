@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-06T04:06:35Z",
+  "target": "dc1d02fcb7e3edbf99921275d81412768bf08424",
+  "base": "2b2fe6e02c79f1b8ccfab9409adc2c336c5d350e",
+  "runtime": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18",
+    "fastify": "5.12.5",
+    "pgBoss": "12.37.0"
+  },
+  "sourceHashes": {
+    "apps/server/src/index.ts": "190af12458c0575b3db56503fdb986e2d86c58e1d95a51442c60bf0c37e6bd80",
+    "apps/server/src/main.ts": "4ae97354369f586428e9db0a6fff42a7d8891359d5e810e00686748bca09271c",
+    "apps/server/src/shutdown/index.ts": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10",
+    "apps/server/src/shutdown/main.test.ts": "c088d96a3482ea811fd6e16e6ddbf8503ae1823aec16195dcc32dfb162d30c82"
+  },
+  "stdoutHashes": {
+    "final-eight.txt": "bf084fce3494d77219ec0bf9f9625ee2aa138a70d2c4f86e896ab74239e5c3b2",
+    "final-typecheck.txt": "199760e8f4446bfe75195f11dd0b8133a702a2c6fd03a19d3f9950d503327b5c",
+    "green-connection.txt": "5f3f3f797a9185c87abe3dbc4a94ece80e0e714625d711f205e69426c37f2de9",
+    "green-drain.txt": "a34cb93ed7bc241a8ffebddabea063a0546993e3161056340f182e39aa916f12",
+    "hard-deadline.txt": "ff5e663f0be3c84cd8eee742eddf6991e0bcb4413eeb5ded4d8085d6bd8b99d8",
+    "progress-checks.txt": "3a8dfaec81a4caecdf5bf6e5c6f031820a9c5bcc828f2cc7f0d9cca6a38ffecd",
+    "progress-eight.txt": "ab5a905d33e1a6f4e396cc2bfea2c694ad25bbaf1f176f9fa44bda17b2fe9184",
+    "red-main.txt": "be7191498d2ec04948531d4dd4453e92919ccf009b89831a344789e7fd3e5ee2",
+    "setup-path-failure.txt": "92fa1f0a0079a561e28554b06c9178151a1d7679bf9b16ea988111107286b286",
+    "typecheck-initial.txt": "199760e8f4446bfe75195f11dd0b8133a702a2c6fd03a19d3f9950d503327b5c"
+  },
+  "checks": [
+    {
+      "file": "final-eight.txt",
+      "selected": 8,
+      "passed": 8,
+      "notSelected": 1,
+      "testSeconds": 8.889
+    },
+    {
+      "file": "hard-deadline.txt",
+      "selected": 1,
+      "passed": 1,
+      "notSelected": 8,
+      "testSeconds": 21.609
+    },
+    {
+      "file": "final-typecheck.txt",
+      "typecheck": "passed"
+    }
+  ],
+  "uniqueTestsPassed": 9,
+  "testsRunInOneCombinedSuite": false,
+  "modelCalls": 0,
+  "cloudCalls": 0,
+  "cleanup": {
+    "observedAt": "2026-10-06T04:06:35Z",
+    "remainingR04Databases": [],
+    "remainingOwnMainProcesses": []
+  },
+  "limits": [
+    "Deterministic initial red used incomplete body/live claim connection, not an exact reproduction of the original CHAT02 abort race. Actual client-abort scenario separately exercised.",
+    "Socket close does not cancel transactions; task outcomes require authoritative reads or same-key retry.",
+    "Process deadline is abnormal exit code 1, not graceful database cleanup or runner termination.",
+    "No whole CHAT suite, browser, model or OS/event-loop deadlock coverage."
+  ],
+  "independentReview": "NOT_STARTED"
+}
