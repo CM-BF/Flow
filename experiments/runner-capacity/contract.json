@@ -1,7 +1,7 @@
 {
   "id": "S01",
   "kind": "deterministic-local-runner-experiment-contract",
-  "version": 1,
+  "version": 2,
   "productBase": "115b0dbdfa02db5483f9e9699852682ce699633c",
   "modelCalls": 0,
   "cloudCalls": 0,
@@ -22,11 +22,48 @@
   "leaseMs": 10000,
   "queuedReadIntervalMs": 100,
   "formalScenarios": [
-    { "id": "four-processes", "tasks": 16, "processes": 4, "capacityPerRunner": 1, "runFirst": true },
-    { "id": "one-process", "tasks": 16, "processes": 1, "capacityPerRunner": 1, "runFirst": false },
-    { "id": "declared-four", "tasks": 16, "processes": 1, "capacityPerRunner": 4, "runFirst": false }
+    {
+      "id": "four-processes",
+      "tasks": 16,
+      "processes": 4,
+      "capacityPerRunner": 1,
+      "runFirst": true
+    },
+    {
+      "id": "one-process",
+      "tasks": 16,
+      "processes": 1,
+      "capacityPerRunner": 1,
+      "runFirst": false
+    },
+    {
+      "id": "declared-four",
+      "tasks": 12,
+      "processes": 1,
+      "capacityPerRunner": 4,
+      "runFirst": false
+    }
   ],
-  "functionalTasks": { "smoke": 4, "overclaim": 8, "lostAck": 2, "browserClosed": 2 },
+  "functionalTasks": {
+    "smoke": 8,
+    "overclaim": 8,
+    "lostAck": 2,
+    "browserClosed": 2
+  },
   "formalWindowRequiresLeadWebCoordination": true,
-  "quantiles": { "method": "nearest-rank", "values": [0.5, 0.95, 0.99], "publishSampleCount": true, "sloClaim": false }
+  "quantiles": {
+    "method": "nearest-rank",
+    "values": [
+      0.5,
+      0.95,
+      0.99
+    ],
+    "publishSampleCount": true,
+    "sloClaim": false
+  },
+  "functionalSmokeAllocation": {
+    "firstRunTasks": 4,
+    "authorizedRepairCheckTasks": 4,
+    "retryAuthorization": "Goal Owner 2026-10-06; one additional run only, deduct 4 from optional declared-four scenario; second failure stops reruns"
+  }
 }

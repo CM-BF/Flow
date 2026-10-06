@@ -52,8 +52,12 @@ async function runner(config: Extract<Configuration, { role: 'runner' }>) {
       const response = await originalFetch(input, init);
       const body = await boundedText(response);
       if (url.endsWith('/api/runner/claim') && response.ok) {
-        const id: unknown = JSON.parse(body).assignment?.task.id;
+        const claim = JSON.parse(body);
+        const id: unknown = claim.assignment?.task.id;
         claimedTaskId = typeof id === 'string' ? id : null;
+        if (claimedTaskId) send({ kind: 'claim-grant', label: config.label, taskId: claimedTaskId,
+          attemptId: claim.assignment.attempt.id, runnerId: claim.assignment.attempt.runnerId,
+          initialLeaseExpiresAt: claim.assignment.attempt.leaseExpiresAt, remainingLeaseMs: claim.remainingLeaseMs });
       }
       send({ kind: 'http', label: config.label, path: new URL(url).pathname, elapsedMs: performance.now() - start, status: response.status, bytes: Buffer.byteLength(body) });
       if (batch) send({ kind: 'report-response', label: config.label, attemptId: batch.attemptId, status: response.status, response: JSON.parse(body) });
