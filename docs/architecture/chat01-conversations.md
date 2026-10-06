@@ -9,3 +9,12 @@ GET summary/turn page用一致快照读取；完整用户输入不被改写，�
 后继runner seam（本片段不改runner.ts）：fenced ordered assistant-final event带messageId、text或exact artifact reference、native session ID、SDK result ID和effective model/thinking/tools来源；task/attempt已能由envelope绑定turn，无须runner任意指定conversation。可选delta事件带同messageId/fragment序号及final完整摘要，重报去重，旧owner拒绝；未final的流不可假completed。能力注册声明conversation/resume/stream/steer/queue及配置支持；无ack的steer不可当已受理。Lead待R03合同释放后独立接入；这是完整CHAT必要后继，不因本兼容projection通过而取消。
 
 requested模型目前只有runner-default、thinking disabled、tools configured-readonly可兑现，其他选项明确unsupported。effective model只有记录中无歧义model资源才给值，否则null；readonly/thinking-disabled仅以精确已知adapter版本声明并附session detail来源。不能把用户requested当实际模型配置。
+
+
+分页按turn.number递增，after为排除式游标，limit1..50（默认20）；conversation目录按稳定ID字典序，不声称时间流。所有读取使用repeatable-read快照；不存在/跨turn detail返回404，owner身份由注册模块所在中心统一校验。完整正文来自已归属该turn的typed ref，预览最多4000 UTF-16码元且不切断surrogate pair，truncated明示；原始用户输入保持完整。
+
+conversation.revision仅turn受理CAS；task完成、心跳和assistant最终证据不会增加revision。Web不可将revision用作唯一内容缓存/刷新条件，应恢复读取，并用turn.task.updatedAt及assistant source.artifactVersion（后继typed final contentDigest）判断执行/正文变化。命令重报返回最初保存的受理结果，当前状态需GET查询。
+
+上一轮failed/cancelled只有已有受支持且已释放的native session才可接显式新消息，不复制原prompt、不恢复不确定执行；在init之前失败/取消无session时明确resume unavailable并要求单独新conversation。停机与native内容仍依现runner/中心fencing，不证明跨host或SDK历史永不丢失。外部task API仍可在同native session上提交任务，claim提供互斥；本片段不构造新的session锁调度系统。
+
+CHAT02 owner已给readAssistantFinal(client,taskId,currentAttemptId)后继seam，adapter升v2后必须读取typed source，不能误用v1兼容projection。本片段独立基线尚无该模块，待独立合入后消费；完整自然语言/实时chat尚未由本轮0模型检查证明。
