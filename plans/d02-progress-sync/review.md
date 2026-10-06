@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED。模板不是approval。
 
-- Review target commit：待交付后固定。
+- Review target commit：`40bc3336155a143384c196776147a9bc4e9589d8`（登记/验证脚本与实现证据；随后metadata仅同步交付）。
 - Base commit：`6783562696cd268274398a02ebd3dff41aed2ce0`。
 - Worktree：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-progress-sync`；branch：`codex/dashboard-progress-sync`；head/dirty审查时核验。
 - Scope：来源登记、真实snapshot证据、Node验证与本任务记录；排除UI重做、review语义修改、模型/产品测试。

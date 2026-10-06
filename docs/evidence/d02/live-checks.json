@@ -1,7 +1,7 @@
 {
-  "observedAt": "2026-10-06T01:38:52.473Z",
+  "observedAt": "2026-10-06T01:39:57.098Z",
   "node": "v24.20.0",
-  "sourceHead": "6783562696cd268274398a02ebd3dff41aed2ce0",
+  "sourceHead": "40bc3336155a143384c196776147a9bc4e9589d8",
   "tasks": [
     {
       "id": "R02",
@@ -37,7 +37,7 @@
       "id": "I01",
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration/plans/i01-integration/status.md",
       "sha256": "f92b2989c645819ea2c404eef459552d3b10263e134397613b22dc9ff7a173f6",
-      "head": "db60ac6593d56181b5d8dbc0d21940354db4319e",
+      "head": "de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4",
       "dirty": true,
       "source": "live",
       "current": true,
@@ -126,13 +126,13 @@
     {
       "id": "D02",
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-progress-sync/plans/d02-progress-sync/status.md",
-      "sha256": "a9e059d16051820e0d505b92ac39ab7bded1a5a78c9b70427bedd32b85246ab6",
-      "head": "6783562696cd268274398a02ebd3dff41aed2ce0",
+      "sha256": "600376ad572d485751f5a3ab0d9423b521095ea4012b39542fb571d6f237ad98",
+      "head": "40bc3336155a143384c196776147a9bc4e9589d8",
       "dirty": true,
       "source": "live",
       "current": true,
       "progress": {
-        "completed": 0,
+        "completed": 3,
         "total": 3
       },
       "issues": [],
@@ -144,12 +144,12 @@
       "review": {
         "state": "not_started",
         "record": "NOT_STARTED。模板不是approval。",
-        "target": null
+        "target": "40bc3336155a143384c196776147a9bc4e9589d8"
       },
       "checks": {
-        "state": "not_run",
-        "target": null,
-        "record": "NOT_RUN；尚无已提交实现target；未提交代码Node10/10与动态端口HTTP首轮通过，见证据"
+        "state": "passed",
+        "target": "40bc3336155a143384c196776147a9bc4e9589d8",
+        "record": "PASSED `40bc3336155a143384c196776147a9bc4e9589d8`；Node10/10、5新源HTTP/正文/源码摘要一致；后续metadata不改变实现"
       },
       "documentMatches": true
     }
@@ -163,6 +163,6 @@
     "src/documents.mjs": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
     "test/progress-smoke.mjs": "8e85ad76ae8c948620790b46dfba7e9ef560bc61e3b1adc6879ae24436a67812"
   },
-  "url": "http://127.0.0.1:54812",
+  "url": "http://127.0.0.1:55370",
   "closed": true
 }

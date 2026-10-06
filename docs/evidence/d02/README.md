@@ -37,4 +37,4 @@ Node24.20.0，已有10条隔离样本测试全部通过：[结果](node-tests.tx
 
 技能发现、来源版本与clean-code实际应用见[质量记录](quality.md)。最终实现/交付SHA见[唯一status](../../../plans/d02-progress-sync/status.md)，独立review另行执行。
 
-末次交付前核对：5条新增来源均live/current且无解析issues，旧9条登记逐字不变；R02 5/5、I01 3/5、LAB01 4/4、LAB02 1/4反映观察时刻的owner记录。D02最终完成状态在后续metadata快照核验。所有源码hash相同；无新增UI与浏览器验证结论。
+末次交付前核对：5条新增来源均live/current且无解析issues，旧9条登记逐字不变；R02 5/5、I01 3/5、LAB01 4/4、LAB02 1/4反映观察时刻的owner记录。D02在交付metadata快照中为3/3，review仍NOT_STARTED。所有源码hash相同；无新增UI与浏览器验证结论。
