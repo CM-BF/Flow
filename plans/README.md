@@ -124,3 +124,9 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - WPF-CONTEXTI01：知识引用接入聊天；唯一权威来源 [wpf-context-i01-integration](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/plan.md)。登记不代表实现完成。
 - WPF-STEER01：运行中补充指令控件；唯一权威来源 [wpf-steering-control](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/plan.md)。登记不代表实现完成。
 - WPF-VISUAL01：圆角与双主题界面；唯一权威来源 [wpf-visual01-shell](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/plan.md)。登记不代表实现完成。
+
+## 2026-10-06 终端与执行成本新目标
+
+- TUI-001：[可日用终端客户端](tui01-terminal-client/plan.md)。独立大task，唯一权威 `tui-client/plans/tui01-terminal-client`；终端与共享typed交互层并行于Web，首片实施中，完整目标尚未交付。
+- COST-001：[可解释的执行成本与预算](cost01-execution-cost/plan.md)。独立大task承接REQ-09，唯一权威 `execution-cost/plans/cost01-execution-cost`；排在执行工具/成熟交互/终端首片之后，当前只计划，不新增模型或负载。
+- R05B：FLOW-002下的Codex中心身份与来源校验；唯一权威 [r05b-native-center-policy](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy/plans/r05b-native-center-policy/plan.md)。025与生产入口在分支验证，不宣称main已支持Codex。
