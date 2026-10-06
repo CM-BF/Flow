@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:09:53 UTC / main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean；未将分支验证当main功能 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:10:39 UTC / 最近main核2e71fabc clean；本次仅共享owner路由澄清 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -74,3 +74,5 @@
 2026-10-06T11:08:57.479785+00:00：实现固定9ac549dddd12b6bb186bf34116c4c72fe9889cfc，50/50（9真实PG+既有41，前49轮重叠不累计）、strict noEmit0；两次随机专库均0连接后DROP，未用026，未启动server/scheduler/runner/provider。原两轮strict解析错误保留且仅以实际源码声明/已安装类型路径解决。10source/8raw/4support/6旧已审source逐字绑定[manifest](../../docs/evidence/wpf-mature-04/history-pg-manifest.json)；所有source/raw停写待独审。main观测与target祖先事实见manifest，不以本分支通过宣称main已上线。
 
 2026-10-06 11:09:53 UTC：fresh v5 ACTIVE/8251d597 clean后只修dashboard枚举与UTC格式：检查使用PASSED，时间使用显式UTC。只读parseStatus确认target9ac、10literal、review阶段/NOT_STARTED，无source/raw改动或工程重测。正式027入口/薄接线已固定于target内canonical请求。
+
+2026-10-06 11:10:39 UTC：fresh账本11:10:26确认runner.ts/events.ts无active claim，contracts/index、server/index、client/index均F01 Lead8470 v28；[当前接线路由](../../docs/evidence/wpf-mature-04/handoff-current.md)澄清9ac bound页面的ENG01A/TUI01B仅历史快照。空scope不构成授权，后继Lead必须fresh take/amend；本次只改metadata，不改任何9ac绑定source/support/raw/manifest，正式027/Interface不变。
