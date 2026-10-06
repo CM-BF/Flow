@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-06T09:22:21.291785+00:00",
+  "sourceHeadDuringChecks": "f772a1e0d89a92f18dfaedd8f2070ce6f3eff4f9",
+  "sourceDirtyDuringChecks": true,
+  "direct": {
+    "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH node --test apps/execution-dashboard/test/task-links.test.mjs apps/execution-dashboard/test/dashboard.test.mjs apps/execution-dashboard/test/human-proof.test.mjs apps/execution-dashboard/test/proof-snapshot.test.mjs apps/execution-dashboard/test/delivery-stage.test.mjs",
+    "passed": 45,
+    "failed": 0,
+    "log": "direct.log",
+    "logModifiedAt": "2026-10-06T09:19:33.179003+00:00",
+    "note": "Five production sources and direct test unchanged since execution; later browser runner only changes capture framing/launch cleanup."
+  },
+  "browser": {
+    "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH node apps/execution-dashboard/test/task-links.browser.mjs",
+    "groups": 5,
+    "report": "browser-results.json",
+    "errors": []
+  },
+  "syntax": "app.js and task-links.mjs node --check exit 0",
+  "sourceDiffCheck": "git diff --check exit 0 before implementation commit",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "apps/execution-dashboard/src/status.mjs": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748",
+    "apps/execution-dashboard/src/aggregate.mjs": "81a20492f80e58cdbc28a36c49ef514aae0c656782020c413ce8e11f4c29494c",
+    "apps/execution-dashboard/public/app.js": "93fd539d958ba2cbd8cbdfd5451195dd1c7f3fba740091f0d663c0fbaf15d2e9",
+    "apps/execution-dashboard/public/styles.css": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+    "apps/execution-dashboard/test/task-links.test.mjs": "9d1bed77edf9d6847f6a4733b6ea70d2f8a8ffed6272e7a96eebbd7a437bcb87",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "f8cbe7725d3757eb5f32d5946bc9b3d4b36c7b9bd2b00e8296054519ab50a218"
+  },
+  "implementationTarget": "eca59a5edab0820f724a9bd5bc854e22f48d9ea9",
+  "targetHashMatches": true
+}

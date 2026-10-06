@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T09:21:08.116Z",
+  "sourceHead": "f772a1e0d89a92f18dfaedd8f2070ce6f3eff4f9",
+  "sourceDirty": true,
+  "sourceHashes": {
+    "apps/execution-dashboard/src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "apps/execution-dashboard/src/status.mjs": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748",
+    "apps/execution-dashboard/src/aggregate.mjs": "81a20492f80e58cdbc28a36c49ef514aae0c656782020c413ce8e11f4c29494c",
+    "apps/execution-dashboard/public/app.js": "93fd539d958ba2cbd8cbdfd5451195dd1c7f3fba740091f0d663c0fbaf15d2e9",
+    "apps/execution-dashboard/public/styles.css": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+    "apps/execution-dashboard/test/task-links.test.mjs": "9d1bed77edf9d6847f6a4733b6ea70d2f8a8ffed6272e7a96eebbd7a437bcb87",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "f8cbe7725d3757eb5f32d5946bc9b3d4b36c7b9bd2b00e8296054519ab50a218"
+  },
+  "url": "http://127.0.0.1:54123",
+  "checks": [
+    "Explicit parent/co-lead on home; big task has no parent; Enter/Space toggles text-only raw declarations",
+    "Parent Enter opens registered task; plan uses existing registered document endpoint; Escape returns invoker",
+    "Child detail to parent stays in one modal, focuses new title, and returns original child invoker on Escape",
+    "Stale parent stays explicitly unknown; unknown ID and wrong path cannot navigate; HTML/remote declarations stay text and cause zero remote reads",
+    "1280×720 and 390×844 light/dark home and narrow detail: no horizontal overflow, reduced-motion, keyboard raw record"
+  ],
+  "screenshots": [
+    "home-desktop-light.png",
+    "home-desktop-dark.png",
+    "home-narrow-light.png",
+    "home-narrow-dark.png",
+    "detail-narrow-dark.png"
+  ],
+  "errors": [],
+  "failure": null,
+  "outcome": "passed",
+  "finishedAt": "2026-10-06T09:21:09.581Z"
+}
