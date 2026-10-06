@@ -1,6 +1,6 @@
 # D08 显式两层任务关联
 
-创建/更新：2026-10-06 09:15:18 UTC；状态：实施。唯一owner workspace_panels_owner / gpt-6-astra ultra。所属大task [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root；FLOW-003仅需求追溯，不是第三执行层。
+创建/更新：2026-10-06 09:15:18 UTC；状态：实现已独审，待集成。唯一owner workspace_panels_owner / gpt-6-astra ultra。所属大task [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root；FLOW-003仅需求追溯，不是第三执行层。
 
 目标：从每个唯一status显式关联大task/co-lead，并在工程首页与详情展示。既有status仍唯一事实源，不从owner/路径猜关系，不继承父子进度、review或main成功。固定base 77c420cf9ee5de0291ea93014b6ea11aead6fab5，独立dashboard-task-links / codex/dashboard-task-links；[原子领取](../../docs/evidence/d08/take-receipt.json)九scope。[Interface](../../docs/evidence/d08/interface.md)定义解析/关系/导航边界。
 

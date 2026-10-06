@@ -18,3 +18,5 @@
 真实来源仅只读五个登记源：MATURE02/04 owner已经修显式大task，未硬编码；D01旧记录无层级保持unknown。该抽查不等于4320部署。根manifest/lock、registry/server/documents、他人status未修改。无真实模型、产品DB或旧服务操作。
 
 2026-10-06 09:26 UTC review证据纠正：此前只把fullPage切成viewport仍不足，owner/Root图像均见底部旧页头。实际DOM1/rect静态，resize即时capture复现、两animation frame后消失；补每theme独立390context稳定截图与JSON，保留旧图/原来源并明确早期视觉结论过早。无产品或已冻测试源码修改，不重跑无关45；后续截图流程应在resize/theme后等布局绘制稳定。
+
+2026-10-06 09:26:59 UTC后，root独立APPROVED eca59a5（base77c）：独立45/45、完整七源码和hash/scope审读；CUA同modal父导航/资料/Escape与深色，实际看verified390浅深。独审无blocking；旧截图采样问题已作为证据纠正，产品保持冻结。作者5组browser与root局部CUA/独立45准确分开。交付metadata不重复工程测试，main/部署仍待Lead。

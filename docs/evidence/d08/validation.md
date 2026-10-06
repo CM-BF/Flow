@@ -19,3 +19,7 @@ Root发现原home-narrow-light图y≈758重复页头。本owner实际检查[head
 有界复现：同Chrome context从1280×720改390×844、切theme后立即截图，仍可得到[resize原图](header-probe-resize.png)的旧页头像素；等待两次requestAnimationFrame后[settled图](header-probe-resize-settled.png)正确，未改任何产品/测试源码。最终每主题新建390×844 context并等待两帧，得到[真实浅色viewport](verified-narrow-light.png)、[真实深色viewport](verified-narrow-dark.png)，[capture记录](verified-narrow-capture.json)含时间/DOM/尺寸/hash。归因限定为本机Chrome screenshot在resize/theme后的采样呈现尚未稳定，不推成一般浏览器缺陷。原5组行为与无溢出断言仍保留，但原窄屏图不作为已纠正视觉证据；先前“viewport即可纠正”的判断过早，现以这组稳定采样为准。未重跑45直接测试、未改fixed eca产品来源。
 
 全base→交付metadata diffcheck的原始日志例外：first-direct.log第29、31行断言输出空格；保留原log，不称全范围无空白。七实现路径diffcheck为0。
+
+## 独立审查
+
+Root于2026-10-06 09:26:59 UTC后正式APPROVED固定eca59a5，独立45/45 direct（10.355s）与完整七源码/hash核验；CUA实际父导航、modal焦点、plan与Escape、深色，无consoleerror；实看verified390双主题。详情见[review](../../../plans/d08-task-links/review.md)。作者5组浏览器/环境证据不是root全套重跑。独审不代表main或4320已部署。

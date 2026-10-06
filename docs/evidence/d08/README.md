@@ -15,4 +15,4 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH node apps/execution-dashboard/test/task
 
 使用Enter打开卡片父任务；详情里父任务按钮替换同一对话框并聚焦新标题；Escape回原触发按钮。原文以details/summary可达，不生成链接。当前原D01没有层级声明，这种真实资料不会由D08反向改写；更正必须由其合法owner处理。
 
-实现target及review见唯一[status](../../../plans/d08-task-links/status.md)。main接收/4320部署未完成，不把本地样本当生产事实。
+固定实现 eca59a5edab0820f724a9bd5bc854e22f48d9ea9 已root独立APPROVED；review见唯一[status](../../../plans/d08-task-links/status.md)。main接收/4320部署未完成，不把本地样本当生产事实。
