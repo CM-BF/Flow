@@ -1,0 +1,203 @@
+{
+  "at": "2026-10-06T16:16:36.112643+00:00",
+  "reviewer": "native_center_owner",
+  "maximumCandidates": 5,
+  "eligibleCount": 0,
+  "ledger": {
+    "path": "/tmp/flow-next12-own-fourth-ledger.json",
+    "observedAt": "2026-10-06T16:16:17.750Z",
+    "sha256": "7b8685056ff32ebcae177aa2abd3dd6e3493bbd56fcc657503c1b74b13321e80"
+  },
+  "qualification": {
+    "path": "/tmp/flow-next12-own-fourth-qualification.json",
+    "sha256": "66008d06c920ed28c9d5bfa53eb5f87253a217331cf54b43157d5aa2be15abcb"
+  },
+  "trees": [
+    {
+      "name": "steering-profile-admission",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission",
+      "head": "8cebe75ae496b9d0275c631c9a8b79e5c00b3bed",
+      "branch": "codex/steering-profile-admission",
+      "status": "",
+      "canonicalStatus": {
+        "path": "plans/chat09-steering-admission/status.md",
+        "lines": [
+          "| 单一status owner / model | runner_owner / gpt-6-astra |",
+          "| 工作分支状态 | delivered |",
+          "| 已集成main状态 / HEAD | 已集成 main/origin 32c371d389a913f8dd71c3bd8b98dd0697411256；公共cap仍关闭 |",
+          "| 本片段交付阶段 | delivered |"
+        ]
+      },
+      "statusSha256": "21f3de6a6fb4c34f89566323324d93c0bb9a9de58fbfd02f9fc409c67f7bf0d1",
+      "claims": [
+        {
+          "claimId": "ee263bf0-2625-440f-bca8-af276d8edc80",
+          "version": 2,
+          "state": "released"
+        }
+      ],
+      "remote": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_REMOTE_BRANCH_NOT_ADVERTISED_KEEP_UNKNOWN",
+      "candidateCount": 0,
+      "keep": "Entire current worktree; no candidate enumeration, no source/fixture/open-file absence claim after prerequisite failed."
+    },
+    {
+      "name": "native-goal-node-execution",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution",
+      "head": "7da0b1084b96fb5824d8f616c29cc8deeb3ad70e",
+      "branch": "codex/native-goal-node-execution",
+      "status": "",
+      "canonicalStatus": {
+        "path": "plans/o09-native-node-execution/status.md",
+        "lines": [
+          "| 单一status owner / model | assignment_review / gpt-6-astra |",
+          "| 工作分支状态 | completed |",
+          "| 本片段交付阶段 | delivered |",
+          "| 已集成main状态 / HEAD | 2026-10-06 08:10 UTC：已接收main/origin fc113945ff73d1a43092d0a70b51e901aa4be1e2；领域范围对7ddd零diff |"
+        ]
+      },
+      "statusSha256": "2dfa28138667d07542915581a99645e8ea592572f6d8291b8cb47800ad035382",
+      "claims": [
+        {
+          "claimId": "34990d98-4a70-4464-b0e2-a3bf561ab053",
+          "version": 2,
+          "state": "released"
+        }
+      ],
+      "remote": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_REMOTE_BRANCH_NOT_ADVERTISED_KEEP_UNKNOWN",
+      "candidateCount": 0,
+      "keep": "Entire current worktree; no candidate enumeration, no source/fixture/open-file absence claim after prerequisite failed."
+    },
+    {
+      "name": "active-steering",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering",
+      "head": "3a4b4e45002ea7186616ef2d5c6cd82d83d8ae19",
+      "branch": "codex/active-steering",
+      "status": "",
+      "canonicalStatus": {
+        "path": "plans/chat07-active-steering/status.md",
+        "lines": [
+          "| 单一status owner / model | runner_owner / gpt-6-astra |",
+          "| 工作分支状态 | completed；已审领域已集成main |",
+          "| 已集成main状态 / HEAD | 已集成42c1cc85cfbf9fa3ca3fdcbee57dc02394bff6d7；024/routes尚未生产mount |",
+          "| 本片段交付阶段 | delivered |"
+        ]
+      },
+      "statusSha256": "f151c702b8e4202dee8b20d19e4e30bc01ca90d9be08930e65359fd7532b8a06",
+      "claims": [
+        {
+          "claimId": "0bd47363-30a9-4e83-8927-b7a2b21323ba",
+          "version": 2,
+          "state": "released"
+        }
+      ],
+      "remote": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_REMOTE_BRANCH_NOT_ADVERTISED_KEEP_UNKNOWN",
+      "candidateCount": 0,
+      "keep": "Entire current worktree; no candidate enumeration, no source/fixture/open-file absence claim after prerequisite failed."
+    },
+    {
+      "name": "goal-graph-runs",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-graph-runs",
+      "head": "5d9be53a0a1d2e637aeaeed255263db868cb20ea",
+      "branch": "codex/goal-graph-runs",
+      "status": "",
+      "canonicalStatus": {
+        "path": "plans/o06-goal-graph-runs/status.md",
+        "lines": [
+          "| 单一status owner / model | assignment_review / gpt-6-astra |",
+          "| 工作分支状态 | DELIVERED；已审实现已进入main |",
+          "| 已集成main状态 / HEAD | 已集成并推送main3d4985fca060155435b159e0467815bf8e88b8b8；本次观察target为其祖先且15source零diff，不追后继HEAD |",
+          "| 本片段交付阶段 | delivered |"
+        ]
+      },
+      "statusSha256": "fa4d21cfc43642e391b9ce2ba09c48a08a83e76a96741db26ceae6ad4b057042",
+      "claims": [
+        {
+          "claimId": "5553ab55-2c0d-4e00-a3f5-54509e90a847",
+          "version": 3,
+          "state": "released"
+        }
+      ],
+      "remote": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_REMOTE_BRANCH_NOT_ADVERTISED_KEEP_UNKNOWN",
+      "candidateCount": 0,
+      "keep": "Entire current worktree; no candidate enumeration, no source/fixture/open-file absence claim after prerequisite failed."
+    },
+    {
+      "name": "native-goal-execution",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution",
+      "head": "4110d7d8aac727e1838fed4e9c7ec7a163fb65e7",
+      "branch": "codex/native-goal-execution",
+      "status": "",
+      "canonicalStatus": {
+        "path": "plans/o04-native-goal-bridge/status.md",
+        "lines": [
+          "| 单一status owner / model | assignment_review / gpt-6-astra |",
+          "| 工作分支状态 | APPROVED；已集成main，停止本树写入，随后release |",
+          "| 已集成main状态 / HEAD | 已集成main/origin da8d73a984118e0a5c406bd04dbfbc5d5c9c148f；2026-10-06T05:08:23Z核目标a169为祖先且声明实现范围零diff |",
+          "| 本片段交付阶段 | delivered |"
+        ]
+      },
+      "statusSha256": "f809e6582a809371c42130231a655b889940a6c4195d4a88e95d32df90b0aed5",
+      "claims": [
+        {
+          "claimId": "19e81eda-5795-45a7-8f1f-a0d9c0c94326",
+          "version": 2,
+          "state": "released"
+        }
+      ],
+      "remote": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_REMOTE_BRANCH_NOT_ADVERTISED_KEEP_UNKNOWN",
+      "candidateCount": 0,
+      "keep": "Entire current worktree; no candidate enumeration, no source/fixture/open-file absence claim after prerequisite failed."
+    }
+  ],
+  "candidateCount": 0,
+  "candidateLogicalBytes": 0,
+  "candidate4KRoundedBytes": 0,
+  "notes": [
+    "Exactly the five assigned paths checked. All exist and have explicit delivered status and clean working trees, but exact origin branch advertisements are absent.",
+    "No remote pushes, replacement candidates or guessing main ancestry as remote branch qualification. Keep unknown as directed.",
+    "Source/fixture closure and fresh consumers are not claimed because no tree passed remote qualification."
+  ],
+  "actions": {
+    "projectWrites": 0,
+    "GitMutation": 0,
+    "test": 0,
+    "PG": 0,
+    "install": 0,
+    "provider": 0
+  }
+}
