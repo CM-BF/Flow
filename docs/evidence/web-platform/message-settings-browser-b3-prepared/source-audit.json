@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-06T19:30:33.067575+00:00",
+  "state": "PREPARED_NOT_RUN",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "actualMetadataHeadFromLatestManagerObservation": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
+  },
+  "projectWrite": false,
+  "runtimeImportsTestsBrowserPGFreeSampling": false,
+  "staticCheck": "Manual source/diff review and byte/hash equality only; candidate not parsed/imported/executed.",
+  "previousRuntimeMs": 13748,
+  "remainingMs": 46252,
+  "workMs": 31252,
+  "cleanupReserveMs": 15000,
+  "previousRetainedBytes": 360142,
+  "oldCandidateFiles": [
+    {
+      "path": "/tmp/root-settings-native-sandbox-research.json",
+      "bytes": 6797,
+      "sha256": "7f4725601e2b1359a9d1438f6e88417dca4706657533217e16cc91ebcb89dbfc"
+    },
+    {
+      "path": "/private/tmp/msgset-b2/supervisor.py",
+      "bytes": 13169,
+      "sha256": "3fc1067afed63ef9416487996c3669590dd98c90b2bcb6f5cd1cb3bfc3804729"
+    },
+    {
+      "path": "/private/tmp/msgset-b2/worker.mjs",
+      "bytes": 10923,
+      "sha256": "9f9d205fa227da0aa1b6c529dd49f7aa9a2d58625ee13c39824f3c6c1da43fd0"
+    },
+    {
+      "path": "/private/tmp/msgset-b2/binding.json",
+      "bytes": 33843,
+      "sha256": "c32650bb30ef7692e9f9b4fddaa6c3af57139db1a2d7dde5210b64cc89e82d29"
+    },
+    {
+      "path": "/private/tmp/msgset-b2/result.json",
+      "bytes": 35710,
+      "sha256": "c2b23e6d647dc9af5c6f088e29b5896ef793072bdb56ffc1696541c2c78a7788"
+    },
+    {
+      "path": "/private/tmp/msgset-b2/browser-budget.json",
+      "bytes": 199,
+      "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+    }
+  ],
+  "unchangedInputs": {
+    "ownReadOnlyCount": 116,
+    "externalCount": 37,
+    "aliases": true,
+    "runtimeTsconfig": true,
+    "previousBudgetBytes": true,
+    "sixProjectSources": true
+  },
+  "limits": "Entry pins do not exhaustively hash Chrome frameworks or dependency transitive files; current native154 behavior remains unexecuted."
+}

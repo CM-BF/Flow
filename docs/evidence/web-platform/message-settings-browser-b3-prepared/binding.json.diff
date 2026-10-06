@@ -1,0 +1,49 @@
+--- msgset-b2/binding.json
++++ msgset-b3/binding.json
+@@ -1,9 +1,9 @@
+ {
+-  "state": "REVIEWED_SOURCE_BOUND",
++  "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+   "task": "WPF-MESSAGESETTINGS01",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+   "branch": "codex/web-message-settings",
+-  "head": "b41c93e7a7e054faec68faed101be5adf4d21225",
++  "head": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+   "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+   "claim": {
+     "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+@@ -334,7 +334,7 @@
+   "chromeVersion": "154.0.8037.98",
+   "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+   "fixtureModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.browser.ts",
+-  "previousRuntimeMs": 5197,
++  "previousRuntimeMs": 13748,
+   "limits": {
+     "totalMs": 60000,
+     "cleanupMs": 15000,
+@@ -345,16 +345,18 @@
+     "stopFreeBytes": 1140850688
+   },
+   "preparedFiles": {
+-    "worker.mjs": "9f9d205fa227da0aa1b6c529dd49f7aa9a2d58625ee13c39824f3c6c1da43fd0",
++    "worker.mjs": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+     "runtime-tsconfig.json": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c",
+     "aliases.json": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0",
+-    "supervisor.py": "3fc1067afed63ef9416487996c3669590dd98c90b2bcb6f5cd1cb3bfc3804729"
++    "supervisor.py": "29de1249d1a3a982ffe01efbdefe87fc0fc8db0c53a9d37f0e033fad586744d2"
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+-  "previousEvidenceBytes": 177631,
++  "previousEvidenceBytes": 360142,
+   "previousEvidenceBasis": {
+-    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/docs/evidence/wpf-message-settings/browser-first/result.json",
+-    "sha256": "01652e6439fefb5bd49486176fb8d7ac162f2ec5cdb865d9272dae5f2e72f513",
+-    "method": "Prior parent final retainedBytes. Conservatively charged in addition to this new candidate; old raw unchanged."
+-  }
++    "path": "/private/tmp/msgset-b2/result.json",
++    "sha256": "c2b23e6d647dc9af5c6f088e29b5896ef793072bdb56ffc1696541c2c78a7788",
++    "method": "Actual b2 parent retainedBytes, including first attempt carry. Conservatively charged in addition to this new candidate; original raw unchanged."
++  },
++  "nativeChromeBoundaryApproval": null,
++  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox"
+ }

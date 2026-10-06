@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T19:26:58.263479+00:00",
-  "state": "DAEMON_AND_LEDGER_UNAVAILABLE_NO_NEW_RUNTIME_OR_TAKE",
-  "groupWindowOwnership": "Lead19:24space1250004992B recoveredbutdaemon/55432/coordinationledgerunavailable; no sharedruntimewindow granted.WebnoPG/Chrome/HTTP.",
+  "recordedAt": "2026-10-06T19:36:06.395280+00:00",
+  "state": "PERSONAL_CENTER_RECOVERY_PRIORITY",
+  "groupWindowOwnership": "Lead exclusively prioritizes same362/v15 personal center restoration. No Web PG/Chrome/HTTP active or new heavy window.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -390,7 +390,7 @@
     "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "resource-lead-1924-daemon-ledger-unavailable.json",
+  "latestCoordination": "resource-lead-193033-center-priority.json",
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -447,8 +447,8 @@
     "PG": false,
     "browser": "B2_FAILED_BEFORE_UI_CLEANED",
     "sourceReady": "message-settings-source-ready.json",
-    "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
-    "metadata": "478943c0ca5645a06feae46268ccd2e174789c7c",
+    "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+    "metadata": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
     "registration": "message-settings-registration-intake.json",
     "checkPreparation": "message-settings-check-preparation/report.md",
     "sourceFixedBeforeDelta": "Historical ed769 estimate20 not authoritative; actual f3 sixsources executed at85aba",
@@ -477,7 +477,18 @@
       "remainingMs": 54803
     },
     "browserAdmission": "message-settings-browser-b2-admission.json",
-    "browserEvidenceReview": "message-settings-browser-b2-actual/root-runtime-review.json"
+    "browserEvidenceReview": "message-settings-browser-b2-actual/root-runtime-review.json",
+    "nextPreparation": {
+      "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+      "evidence": "message-settings-browser-b4-prepared/report.md",
+      "nativeChromeBoundaryApproval": null,
+      "runtimeGate": false,
+      "previousRuntimeMs": 13748,
+      "remainingMs": 46252,
+      "cleanupReserveMs": 15000,
+      "rootReview": "b4 APPROVED_SCOPED_PREPARATION_NOT_RUN, SCAN-ERROR source addressed; exact Lead boundary acceptance remains null",
+      "supervisorSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3"
+    }
   },
   "retainedAf51": "Lead originalassignment_review accepted six-scope/newtree preparation; no Web ownership or runtime; see retained-af51-owner-scope-proposal.json",
   "currentWindowReturn": "message-settings-browser-window-return-1858.json",
@@ -588,6 +599,37 @@
       ],
       "webBrowser": "SecondSettings18ede sealed;0newattempt,cleanupcomplete/windowreturned",
       "managementAuthority": "Root explicitly requested this bounded normal metadata segment in original6; lastobserved632a7149v3 preserved as pointintime, not fabricatedfreshledger."
+    },
+    {
+      "recordedAt": "2026-10-06T19:30:45.295530+00:00",
+      "source": "LatestLead inbound via root; manager didnot restartdaemon/container or samplefree",
+      "state": "LEDGER_AVAILABLE_HEAVY_RESOURCE_NOT_ADMITTED",
+      "orbStack": "One preexistingstart command timedout,actualRunninglater; no retry reported",
+      "postgresContainer": "2c45767d4802 originalimage/volume/ports preserved; one start19:26:58healthy perLead",
+      "coordination": "Lead list succeeded; manager separatefreshreadonly19:29:13.863Zavailable original5claims/nooverlap",
+      "availableBytes": 1089486848,
+      "resourceMeaning": "Lead pointintime,stillbelowPG/Chrome thresholds; purechecks onlytheir ownfreshconditions,notnewRootapproval",
+      "runtimePermission": "No currentPG/Chrome authorization;no repeatacceptedchecks;personal61227noListener belongsLead",
+      "cause": "Originaldaemoninterruption cause remainsUNKNOWN; no inference ofuser action",
+      "claims": "Outage didnotreleaseoriginalclaims; futurewrites usefreshD04 exactscope,notoldunavailableasfree"
+    },
+    {
+      "recordedAt": "2026-10-06T19:36:06.395280+00:00",
+      "source": "Lead 19:30:33 inbound forwarded by root; no manager service or space probe",
+      "observedAt": "2026-10-06T19:30:33Z",
+      "availableBytes": 1429176320,
+      "attribution": "Shared volume observation; not attributed to any team deletion",
+      "postgres": "Original container healthy per Lead",
+      "personal": "Center61227 exited; Web/runner wrappers remain alive per Lead",
+      "state": "PERSONAL_CENTER_RECOVERY_PRIORITY",
+      "authority": "GO prioritizes managed same362/v15 center restoration; Lead exclusively owns the existing entry preparation, review and service operations",
+      "webRestrictions": [
+        "No new PG/Chrome/native diagnostic runtime or gate",
+        "No personal service, volume, configuration or user-tab operation",
+        "Resume the ready queue only after Lead reports restoration window closed and assigns a new window; then use fresh original predicates"
+      ],
+      "ledger": "Restored; manager separately read original five active claims at19:35:01.030Z with unchanged versions/scopes and no overlap",
+      "cause": "Earlier daemon interruption cause remains unknown; no attribution to user action"
     }
   ],
   "dperf05Pure": {
@@ -618,5 +660,5 @@
     "window": "Independentpurefinished;O16sharedPG/Chromeownershipunchanged",
     "ownerFinal": "825f3245ab857d6f73cf5b49ed51feccce4233c8"
   },
-  "currentLedgerAvailability": "UNKNOWN_UNREADABLE_REPORTED_BY_LEAD"
+  "currentLedgerAvailability": "AVAILABLE_MANAGER_OBSERVATION_193501030"
 }

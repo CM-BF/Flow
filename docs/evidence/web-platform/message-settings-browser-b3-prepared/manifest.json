@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-06T19:31:41.100593+00:00",
+  "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+  "sourceHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
+  },
+  "previousRuntimeMs": 13748,
+  "remainingMs": 46252,
+  "cleanupMs": 15000,
+  "previousRetainedBytes": 360142,
+  "nativeChromeBoundaryApproval": null,
+  "noGate": true,
+  "files": [
+    {
+      "path": "/private/tmp/msgset-b3/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/binding.json",
+      "bytes": 33920,
+      "sha256": "f17946115ad5e14d481d36777a58342d1ef36d69964e809be6317d81868e958b"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/binding.json.diff",
+      "bytes": 2771,
+      "sha256": "c38718a60b602a6763bb4250bb7421a9703364f020870bb87818820633929e00"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/browser-budget.json",
+      "bytes": 199,
+      "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/report.md",
+      "bytes": 6658,
+      "sha256": "e76e4bd855d0fcd4ff90b7976953192c3e8117b83293283d28db46b63844bd52"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/source-audit.json",
+      "bytes": 3018,
+      "sha256": "b6aca982392ae522931f7898ca418c81691d9cfdb27b51c143237d598f043451"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/supervisor.py",
+      "bytes": 20858,
+      "sha256": "29de1249d1a3a982ffe01efbdefe87fc0fc8db0c53a9d37f0e033fad586744d2"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/supervisor.py.diff",
+      "bytes": 27329,
+      "sha256": "0a1c956038c1d122736e87e8c92bce8a6ce44b467ddf7d6d63dec6029be1bdb4"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    },
+    {
+      "path": "/private/tmp/msgset-b3/worker.mjs.diff",
+      "bytes": 11030,
+      "sha256": "23cdddc431033c17d0eeb5f4675baf97635dc961a7e57ff7cea7405b0ae220ee"
+    }
+  ]
+}

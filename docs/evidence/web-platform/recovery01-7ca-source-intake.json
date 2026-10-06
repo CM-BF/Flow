@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-06T19:36:06.395280+00:00",
+  "implementation": "7ca31ca3a65af587b1cf80713b03a6dbe22e1f75",
+  "metadata": "2b4acfb86e3fca6e41a4690f2348eb846be8ebb0",
+  "branch": "codex/web-conversation-recovery",
+  "clean": true,
+  "fixedCurrentSources": 19,
+  "changed": [
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "unchangedSources": 18,
+  "manifest": "recovery01-7ca-checkpoint-owner.json",
+  "priorReview": "recovery01-76a-root-source-review.json",
+  "currentReview": "APPROVED_SCOPED_CRASHPAD_PARENT_SOURCE_NOT_RUN; zero blocking",
+  "claimObservation": "recovery01-crashpad-claim-observation.json",
+  "delta": "Only parent owned crashpad directory, BREAKPAD_DUMP_LOCATION and existing whitelist logging; native MAC temp/HOME/Chrome sandbox and worker unchanged",
+  "runtime": "NOT_RUN; 38 controlled checks and original browser failure retained at their actual targets",
+  "budget": {
+    "browserTotalMs": 90000,
+    "browserPreviousMs": 14846.267375,
+    "browserRemainingMs": 75153.732625,
+    "browserCleanupReserveMs": 15000,
+    "directConsumedMs": 6868,
+    "directRemainingMs": 23132,
+    "typesConsumedMs": 52814,
+    "typesRemainingMs": 7186,
+    "remainingIsRunPermission": false
+  },
+  "boundary": "Configuration is not proof of complete OS containment or a reproduced Recovery nested-sandbox failure",
+  "rootReview": "recovery01-7ca-root-source-review.json",
+  "ownerSeal": {
+    "head": "0ac929040ff6b0347157aa7a0cb28d9966673e1b",
+    "remote": "0ac929040ff6b0347157aa7a0cb28d9966673e1b",
+    "clean": true,
+    "sourceCountMatched": 19,
+    "scopeStoppedWriting": true,
+    "claimRetained": true
+  }
+}

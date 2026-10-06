@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-06T19:36:06.395280+00:00",
+  "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+  "sourceHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "sourceFilesMatched": 6,
+  "clean": true,
+  "archive": [
+    {
+      "path": "message-settings-browser-b3-prepared/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/binding.json",
+      "bytes": 33920,
+      "sha256": "f17946115ad5e14d481d36777a58342d1ef36d69964e809be6317d81868e958b"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/binding.json.diff",
+      "bytes": 2771,
+      "sha256": "c38718a60b602a6763bb4250bb7421a9703364f020870bb87818820633929e00"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/browser-budget.json",
+      "bytes": 199,
+      "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/report.md",
+      "bytes": 6658,
+      "sha256": "e76e4bd855d0fcd4ff90b7976953192c3e8117b83293283d28db46b63844bd52"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/source-audit.json",
+      "bytes": 3018,
+      "sha256": "b6aca982392ae522931f7898ca418c81691d9cfdb27b51c143237d598f043451"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/supervisor.py",
+      "bytes": 20858,
+      "sha256": "29de1249d1a3a982ffe01efbdefe87fc0fc8db0c53a9d37f0e033fad586744d2"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/supervisor.py.diff",
+      "bytes": 27329,
+      "sha256": "0a1c956038c1d122736e87e8c92bce8a6ce44b467ddf7d6d63dec6029be1bdb4"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/worker.mjs.diff",
+      "bytes": 11030,
+      "sha256": "23cdddc431033c17d0eeb5f4675baf97635dc961a7e57ff7cea7405b0ae220ee"
+    },
+    {
+      "path": "message-settings-browser-b3-prepared/manifest.json",
+      "bytes": 3050,
+      "sha256": "db866e481eb70626a1c4bbf0f220649d7a7cbc79ed72b263235a18f121d32a34"
+    }
+  ],
+  "sourceReview": "CHANGES_REQUESTED_SCOPED_PREPARATION_NOT_RUN; one SCAN-ERROR/P2, root-review.json",
+  "nativeChromeBoundaryApproval": null,
+  "runtimeGate": false,
+  "budget": {
+    "previousMs": 13748,
+    "remainingMs": 46252,
+    "workMs": 31252,
+    "cleanupMs": 15000,
+    "previousRetainedBytes": 360142
+  },
+  "architecture": "Parent owns native Chrome sibling and separately sandboxed Node; Chrome retains its native sandbox",
+  "boundaryChange": "Native Chrome no longer has the custom outer OS write/egress restrictions. This is not an equivalent boundary. Exact Lead acceptance and a new shared window are required before any runtime.",
+  "currentHold": "PERSONAL_CENTER_RECOVERY_PRIORITY; no product run/free sampling or service operations in this intake",
+  "limits": [
+    "Source/preparation only; no gate and no binding state promotion",
+    "No personal Library/profile access or Chrome sandbox disabling",
+    "Old failures, raw files and cumulative time remain unchanged"
+  ],
+  "finding": "os.walk without onerror silently ignores scan failures. Preserve original candidate; owner dispatched TMP-only narrow repair, only explicit transient ENOENT may be ignored."
+}

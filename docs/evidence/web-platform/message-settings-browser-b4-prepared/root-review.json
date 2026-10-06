@@ -1,0 +1,107 @@
+{
+  "at": "2026-10-06T19:38:47.868436+00:00",
+  "verdict": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+  "candidate": "/private/tmp/msgset-b4",
+  "manifestSha256": "b927dd1be67f27cab514a00fdf9ceb7136120a6d04303d393ff93ba26b5cbf81",
+  "runnerSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "bindingSha256": "8c7306d6c7162a539b476b9320480d6430e5dc28435777ee3d3a7e6537fa2442",
+  "priorReview": {
+    "path": "/tmp/root-message-settings-b3-preparation-review.json",
+    "sha256": "918b68510b8ea6026098ac602af4ed02edd20e818f185207e68c05f4023785dc"
+  },
+  "findingsClosed": [
+    {
+      "id": "SCAN-ERROR",
+      "result": "SOURCE_ADDRESSED",
+      "reason": "The onerror callback propagates every non-ENOENT directory scan failure to the existing work/final resource failure handling; only a vanished directory is transient."
+    }
+  ],
+  "blockingFindings": [],
+  "validation": {
+    "pythonAST": "PASS ast.parse only",
+    "exactDelta": true,
+    "bindingOnlyRunnerHashChanged": true,
+    "workerAliasesRuntimeBudgetUnchanged": true,
+    "oldB3TwelveFilesPreserved": true,
+    "candidatePins": [
+      {
+        "path": "/private/tmp/msgset-b4/aliases.json",
+        "bytes": 3453,
+        "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/binding.json",
+        "bytes": 33920,
+        "sha256": "8c7306d6c7162a539b476b9320480d6430e5dc28435777ee3d3a7e6537fa2442",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/binding.json.diff",
+        "bytes": 739,
+        "sha256": "5322cd576dc2d2f73ee901e93271d713fb6058cf1604bfadcaeaca36aac9fd3c",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/browser-budget.json",
+        "bytes": 199,
+        "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/report.md",
+        "bytes": 2174,
+        "sha256": "b7c27db3a4b4d934d4140701e229db869fa13faf7a5f9cb17b4446e528a3d552",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/root-b3-review.json",
+        "bytes": 8820,
+        "sha256": "918b68510b8ea6026098ac602af4ed02edd20e818f185207e68c05f4023785dc",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/runtime-tsconfig.json",
+        "bytes": 1590,
+        "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/source-audit.json",
+        "bytes": 2648,
+        "sha256": "6ac388caef3e03665ba16bada0f1ef0b2e4f90cff756816785f583a84e379501",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/supervisor.py",
+        "bytes": 21000,
+        "sha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/supervisor.py.diff",
+        "bytes": 1335,
+        "sha256": "421080bbc0c224773bd5053d06d477503075aafa009240dbea8607838654bbd7",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b4/worker.mjs",
+        "bytes": 6976,
+        "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+        "matches": true
+      }
+    ],
+    "runtime": "NOT_RUN",
+    "projectWrites": false,
+    "resourceSampling": false
+  },
+  "limits": [
+    "All b3 source review limitations retained",
+    "Native Chrome custom outer write/egress restrictions remain absent; separately recorded real Lead boundary acceptance is still null and required before runtime",
+    "Original cumulative13748ms, remaining46252ms including15000cleanup, retained360142B unchanged",
+    "Current Lead personal-center recovery priority; no gate or shared window granted",
+    "No product behavior or actual native154 startup pass; previous failures retained"
+  ],
+  "cleanCode": "One narrow error propagation hook; no changes to business behavior, process ownership, cleanup order or permission scope."
+}

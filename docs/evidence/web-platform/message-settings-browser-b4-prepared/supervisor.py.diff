@@ -1,0 +1,26 @@
+--- msgset-b3/supervisor.py
++++ msgset-b4/supervisor.py
+@@ -1,7 +1,7 @@
+ """PREPARED / NOT_RUN. Native Chrome sibling changes authority; explicit Lead acceptance and a fresh gate are mandatory.
+ Reuses msgset-b2 resource supervision. Never execute for syntax checking.
+ """
+-import datetime, hashlib, json, os, re, selectors, shutil, signal, stat, subprocess, sys, time
++import datetime, errno, hashlib, json, os, re, selectors, shutil, signal, stat, subprocess, sys, time
+ from pathlib import Path
+ BASE = Path(__file__).resolve().parent
+ MiB = 1024 ** 2
+@@ -16,10 +16,13 @@
+ def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+ def save(p, value): Path(p).write_text(json.dumps(value, indent=2) + '\n')
+ def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
++def scan_error(error):
++    if error.errno != errno.ENOENT: raise error  # Only a vanished directory is transient.
++
+ def sizes(root):
+     logical = allocated = 0
+     if not root.exists(): return (0, 0)
+-    for parent, directories, files in os.walk(root, followlinks=False):
++    for parent, directories, files in os.walk(root, followlinks=False, onerror=scan_error):
+         directories[:] = [n for n in directories if not (Path(parent)/n).is_symlink()]
+         for name in files:
+             try: s = (Path(parent)/name).lstat()

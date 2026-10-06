@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-10-06T19:30:45.295530+00:00",
+  "state": "SOURCE_READY_ROOT_REVIEW_PENDING_NOT_RUN",
+  "implementation": "76a766a24614b9b3cfdc996bdb275a8826532a84",
+  "metadata": "43a08129f0f0981a335c104369c9985227465026",
+  "remote": "43a08129f0f0981a335c104369c9985227465026",
+  "clean": true,
+  "sourceCount": 19,
+  "changedSourcePaths": [
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "unchangedSources": 18,
+  "manifest": "recovery01-76a-checkpoint-owner.json",
+  "ledgerAtCheckpoint": "Originalmanifest currentLedger UNKNOWN reflected itsseal time;fresh19:29manageravailable is separate,originalnotrewritten",
+  "currentClaimObservation": "web-ledger-restored-observation-1929.json",
+  "scope": "6ffv4original21,onlybrowserparent+ownrecords;worker/treeBytesunchangedperowner",
+  "runtimeBudgets": {
+    "browserTotalMs": 90000,
+    "browserPreviousMs": 14846.267375,
+    "browserRemainingMs": 75153.732625,
+    "browserCleanupReserveMs": 15000,
+    "directConsumedMs": 6868,
+    "directRemainingMs": 23132,
+    "typesConsumedMs": 52814,
+    "typesRemainingMs": 7186,
+    "remainingIsRunPermission": false
+  },
+  "runtime": "0newruntime;prior38green/firstbrowserfailureunchanged;no gate",
+  "review": "APPROVED_SCOPED_PARENT_SOURCE_NOT_RUN; zero blocking, no feature or runtime approval",
+  "rootReview": {
+    "path": "recovery01-76a-root-source-review.json",
+    "bytes": 7087,
+    "sha256": "a33238c768dc52c62298652fcd440b632a25edf442ded4fa20ce57b324c5e49c"
+  }
+}

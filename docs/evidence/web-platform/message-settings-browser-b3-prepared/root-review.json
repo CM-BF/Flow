@@ -1,0 +1,190 @@
+{
+  "at": "2026-10-06T19:36:45.047926+00:00",
+  "verdict": "CHANGES_REQUESTED_SCOPED_PREPARATION_NOT_RUN",
+  "manifestSha256": "db866e481eb70626a1c4bbf0f220649d7a7cbc79ed72b263235a18f121d32a34",
+  "source": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "metadataHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "branch": "codex/web-message-settings",
+  "dirty": false,
+  "findings": [
+    {
+      "id": "SCAN-ERROR",
+      "priority": "P2",
+      "file": "/private/tmp/msgset-b3/supervisor.py",
+      "line": 22,
+      "finding": "os.walk defaults to ignoring scandir errors; unreadable/erroring owned directories are silently omitted, so observe_resources can record an incomplete tree size as a successful observation. This contradicts the declared observation-failure handling.",
+      "requestedFix": "Pass a small onerror handler that ignores only an explicitly intended transient ENOENT and raises other scan errors; retain existing owned cleanup/failure behavior. No product change or generic walker framework needed.",
+      "validation": "Source-only review of revised fixed candidate; no browser or product test rerun required."
+    }
+  ],
+  "observations": [
+    "Parent owns native Chrome and sandboxed Node in separate sessions; worker neither spawns nor signals Chrome. Pinned Playwright1.63 source independently confirms CDP close disconnects transport through doClose, without process signalling.",
+    "Owned scratch/profile/cache/temp/crash configuration and captured launch/exit/stream facts are explicit. Native Chrome outer custom write/egress protection is removed; candidate states this accurately and requires a real separately pinned boundary decision. Source review supplies no boundary acceptance.",
+    "Both groups are signalled together inside cleanup reserve; scratch deletion requires both absent. Work deadline does not bypass finally. Report failure and budget facts remain distinct.",
+    "Cumulative13748ms and retained360142B preserved;46252ms remaining includes15000ms cleanup. Previous runtime evidence remains failed, not partial behavior approval.",
+    "Strict DevToolsActivePort parsing, exact parent-bound loopback endpoint, four unchanged business scenarios and no added launch diagnostic/retry loop.",
+    "Timing and sizes are sampled observations, not hardOS quotas; elapsed is sampled before result writes and final clock is checked afterward. No exact postWrite elapsed is claimed by this candidate."
+  ],
+  "validation": {
+    "pythonAST": "PASS; ast.parse only, no candidate execution or imports",
+    "runtime": "NOT_RUN",
+    "freeSpaceSampling": false,
+    "projectWrites": false,
+    "candidatePins": [
+      {
+        "path": "/private/tmp/msgset-b3/aliases.json",
+        "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0",
+        "bytes": 3453,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/binding.json",
+        "sha256": "f17946115ad5e14d481d36777a58342d1ef36d69964e809be6317d81868e958b",
+        "bytes": 33920,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/binding.json.diff",
+        "sha256": "c38718a60b602a6763bb4250bb7421a9703364f020870bb87818820633929e00",
+        "bytes": 2771,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/browser-budget.json",
+        "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1",
+        "bytes": 199,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/report.md",
+        "sha256": "e76e4bd855d0fcd4ff90b7976953192c3e8117b83293283d28db46b63844bd52",
+        "bytes": 6658,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/runtime-tsconfig.json",
+        "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c",
+        "bytes": 1590,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/source-audit.json",
+        "sha256": "b6aca982392ae522931f7898ca418c81691d9cfdb27b51c143237d598f043451",
+        "bytes": 3018,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/supervisor.py",
+        "sha256": "29de1249d1a3a982ffe01efbdefe87fc0fc8db0c53a9d37f0e033fad586744d2",
+        "bytes": 20858,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/supervisor.py.diff",
+        "sha256": "0a1c956038c1d122736e87e8c92bce8a6ce44b467ddf7d6d63dec6029be1bdb4",
+        "bytes": 27329,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/worker.mjs",
+        "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+        "bytes": 6976,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b3/worker.mjs.diff",
+        "sha256": "23cdddc431033c17d0eeb5f4675baf97635dc961a7e57ff7cea7405b0ae220ee",
+        "bytes": 11030,
+        "matches": true
+      }
+    ],
+    "sourcePins": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/execution-profiles/catalog.ts",
+        "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+        "bytes": 5649,
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/execution-profiles/selection.ts",
+        "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+        "bytes": 9174,
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+        "bytes": 14325,
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.test.ts",
+        "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+        "bytes": 12100,
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.fixture.tsx",
+        "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+        "bytes": 6381,
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.browser.ts",
+        "sha256": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254",
+        "bytes": 11628,
+        "matches": true
+      }
+    ],
+    "readonlyCount": 116,
+    "readonlyMismatches": [],
+    "externalCount": 37,
+    "externalMismatches": [],
+    "oldInputs": [
+      {
+        "path": "/tmp/root-settings-native-sandbox-research.json",
+        "sha256": "7f4725601e2b1359a9d1438f6e88417dca4706657533217e16cc91ebcb89dbfc",
+        "bytes": 6797,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b2/supervisor.py",
+        "sha256": "3fc1067afed63ef9416487996c3669590dd98c90b2bcb6f5cd1cb3bfc3804729",
+        "bytes": 13169,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b2/worker.mjs",
+        "sha256": "9f9d205fa227da0aa1b6c529dd49f7aa9a2d58625ee13c39824f3c6c1da43fd0",
+        "bytes": 10923,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b2/binding.json",
+        "sha256": "c32650bb30ef7692e9f9b4fddaa6c3af57139db1a2d7dde5210b64cc89e82d29",
+        "bytes": 33843,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b2/result.json",
+        "sha256": "c2b23e6d647dc9af5c6f088e29b5896ef793072bdb56ffc1696541c2c78a7788",
+        "bytes": 35710,
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/msgset-b2/browser-budget.json",
+        "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1",
+        "bytes": 199,
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+        "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+        "bytes": 3477183,
+        "matches": true
+      }
+    ]
+  },
+  "admission": "Lead personal-center restoration holds newPG/Chrome. After source fix, genuine boundary acceptance, fresh uniqueclaim/head/pins and separate current resource/window admission remain required. No gate is supplied.",
+  "cleanCode": "Reviewed explicit resource ownership, bounded evidence and finalization, no generic broker; one resource error-propagation defect identified."
+}
