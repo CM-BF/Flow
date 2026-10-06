@@ -1,13 +1,14 @@
-import type { TaskSnapshot } from "@flow/contracts";
+import type { TaskSnapshot, Detail, EventPage, NativeActivity, NativeActivityPage } from "@flow/contracts";
 import { PluginHost } from "../plugins/host";
 import { createBuiltinPlugins } from "../plugins/builtins";
 import { createSamplePlugin } from "../plugins/sample";
-import type { HostPort, NavigationSnapshot, ResourceContext, ThemeDefinition, ThemeSnapshot, WorkspaceDisplay, WorkspaceTabId } from "../plugins/types";
+import type { Capability, HostPort, NavigationSnapshot, ResourceContext, ThemeDefinition, ThemeSnapshot, WorkspaceDisplay, WorkspaceTabId } from "../plugins/types";
 import { themes } from "../themes";
 import { createTaskActionsPlugin } from "./task-actions";
 import { createDataRendererRegistry } from "../data-renderers/registry";
 import { flowReplyDeclaration } from "../data-renderers/flow-reply-detail";
 import { createReplyRendererPlugin } from "./data-renderers";
+import { createActivityPlugin, ACTIVITY_OWNER, ACTIVITY_PANEL, type ActivityIdentity, type ActivityReaders } from "./activity";
 
 export function createStore<T>(initial: T) {
   let value = initial;
@@ -28,6 +29,7 @@ export interface AppActions {
   knowsTask(id: string): boolean;
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
+  activity?: ActivityReaders;
   ownsMessage?(taskId: string, messageId: string, role: "user" | "assistant"): boolean;
   openTask(id: string): void;
   openWorkspace(id: string, tab: WorkspaceTabId): void;
@@ -60,7 +62,7 @@ export class AppPluginSession {
       navigation: this.navigation,
       theme: this.theme,
       getContext: () => this.context,
-      authorize: (_plugin, _capability, context) => !this.closed && this.validContext(context),
+      authorize: (_plugin, capability, context) => this.authorizeResource(capability, context),
       execute: async (command, args, meta) => {
         this.assertCurrent(meta.signal);
         if (!this.validContext(meta.context)) throw Error("This resource is no longer available in this connection.");
@@ -101,6 +103,7 @@ export class AppPluginSession {
     for (const plugin of createBuiltinPlugins({ workspace: this.workspace })) this.host.register(plugin);
     this.host.register(createSamplePlugin());
     this.host.register(createTaskActionsPlugin());
+    this.host.register(createActivityPlugin());
   }
 
   updateActions(actions: AppActions) { if (!this.closed) this.actions = actions; }
@@ -122,6 +125,33 @@ export class AppPluginSession {
     const old = this.theme.getSnapshot();
     if (old.themeId !== theme.id || old.scheme !== theme.scheme)
       this.theme.set({ themeId: theme.id, scheme: theme.scheme, availableThemes: [...themes, ...(themes.some(item => item.id === theme.id) ? [] : [theme])] });
+  }
+  private authorizeResource(_capability: Capability, context: ResourceContext) { return !this.closed && this.validContext(context); }
+  canReadActivity(identity: ActivityIdentity) {
+    return !this.closed && identity.connectionId === this.id && this.actions.hasDraft(identity.viewId)
+      && this.validContext({ kind: "message", taskId: identity.taskId, messageId: identity.messageId, role: "user" });
+  }
+  readActivity(kind: "events", identity: ActivityIdentity, value: number): Promise<EventPage>;
+  readActivity(kind: "detail", identity: ActivityIdentity, value: string, signal: AbortSignal): Promise<Detail>;
+  readActivity(kind: "nativePage", identity: ActivityIdentity, value: string | null, signal: AbortSignal): Promise<NativeActivityPage>;
+  readActivity(kind: "nativeBody", identity: ActivityIdentity, value: string, signal: AbortSignal): Promise<NativeActivity>;
+  async readActivity(kind: keyof ActivityReaders, identity: ActivityIdentity, value: string | number | null, signal = this.signal): Promise<EventPage | Detail | NativeActivityPage | NativeActivity> {
+    const context: ResourceContext = { kind: "message", taskId: identity.taskId, messageId: identity.messageId, role: "user" };
+    signal = AbortSignal.any([signal, this.signal]);
+    const permitted = () => this.canReadActivity(identity) && this.host.checkView(ACTIVITY_PANEL, context).ok && !signal.aborted
+      && this.authorizeResource("task.activity.read", context)
+      && ((kind !== "detail" && kind !== "nativeBody") || this.authorizeResource("reference.read", context));
+    if (!permitted() || !this.actions.activity) throw Error("Activity reading is not authorized in this view.");
+    // Only the already-authorized builtin receives these host-owned reads; declaration is not a grant.
+    const plugin = this.host.list().find(plugin => plugin.id === ACTIVITY_OWNER);
+    if (plugin?.state !== "active") throw Error("Activity extension is not active.");
+    const readers = this.actions.activity;
+    const result = kind === "events" ? await readers.events(identity, value as number)
+      : kind === "detail" ? await readers.detail(identity, value as string, signal)
+      : kind === "nativePage" ? await readers.nativePage(identity, value as string | null, signal)
+      : await readers.nativeBody(identity, value as string, signal);
+    if (!permitted()) throw Error("Activity read belongs to an expired view.");
+    return result;
   }
   canReadReply(viewId: string, taskId: string, messageId: string) {
     return !this.closed && this.actions.hasDraft(viewId) && this.validContext({ kind: "message", taskId, messageId, role: "assistant" });

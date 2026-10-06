@@ -1,0 +1,341 @@
+{
+  "observedAt": "2026-10-06T07:37:48.873Z",
+  "firstObservedAt": "2026-10-06T07:37:12.377Z",
+  "node": "v24.20.0",
+  "actualMain": "/Users/citrine/Projects/AgentHarness/Flow",
+  "target": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "dependencies": [
+    {
+      "manifest": "apps/server/package.json",
+      "name": "@fastify/cors",
+      "declared": "11.3.0",
+      "installedVersion": "11.3.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/server/package.json",
+      "name": "@flow/contracts",
+      "declared": "workspace:*",
+      "installedVersion": "0.1.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/src/index.ts",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/server/package.json",
+      "name": "fastify",
+      "declared": "5.12.5",
+      "installedVersion": "5.12.5",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/server/package.json",
+      "name": "npm-package-arg",
+      "declared": "13.0.2",
+      "installedVersion": null,
+      "resolvable": false,
+      "errorCode": "MODULE_NOT_FOUND",
+      "packageManifestExists": false,
+      "classification": "runtime-unavailable"
+    },
+    {
+      "manifest": "apps/server/package.json",
+      "name": "pacote",
+      "declared": "21.5.1",
+      "installedVersion": null,
+      "resolvable": false,
+      "errorCode": "MODULE_NOT_FOUND",
+      "packageManifestExists": false,
+      "classification": "runtime-unavailable"
+    },
+    {
+      "manifest": "apps/server/package.json",
+      "name": "pg",
+      "declared": "8.23.1",
+      "installedVersion": "8.23.1",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/server/package.json",
+      "name": "pg-boss",
+      "declared": "12.37.0",
+      "installedVersion": "12.37.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/server/package.json",
+      "name": "ssri",
+      "declared": "13.0.1",
+      "installedVersion": null,
+      "resolvable": false,
+      "errorCode": "MODULE_NOT_FOUND",
+      "packageManifestExists": false,
+      "classification": "runtime-unavailable"
+    },
+    {
+      "manifest": "apps/runner/package.json",
+      "name": "@flow/contracts",
+      "declared": "workspace:*",
+      "installedVersion": "0.1.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/src/index.ts",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/runner/package.json",
+      "name": "@flow/client",
+      "declared": "workspace:*",
+      "installedVersion": "0.1.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/packages/client/src/index.ts",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/runner/package.json",
+      "name": "@anthropic-ai/claude-agent-sdk",
+      "declared": "0.3.290",
+      "installedVersion": "0.3.290",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/runner/package.json",
+      "name": "@flow/protocols",
+      "declared": "workspace:*",
+      "installedVersion": "0.1.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/packages/protocols/src/index.ts",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/runner/package.json",
+      "name": "@a2a-js/sdk",
+      "declared": "1.3.0",
+      "installedVersion": "1.3.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk/dist/index.cjs",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/runner/package.json",
+      "name": "zod",
+      "declared": "4.6.5",
+      "installedVersion": "4.6.5",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@flow/client",
+      "declared": "workspace:*",
+      "installedVersion": "0.1.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/packages/client/src/index.ts",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@flow/contracts",
+      "declared": "workspace:*",
+      "installedVersion": "0.1.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/src/index.ts",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@assistant-ui/react",
+      "declared": "0.15.23",
+      "installedVersion": "0.15.23",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "react",
+      "declared": "19.3.0",
+      "installedVersion": "19.3.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react@19.3.0/node_modules/react/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "react-dom",
+      "declared": "19.3.0",
+      "installedVersion": "19.3.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "lucide-react",
+      "declared": "1.52.0",
+      "installedVersion": "1.52.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react/dist/cjs/lucide-react.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@assistant-ui/react-markdown",
+      "declared": "0.14.18",
+      "installedVersion": "0.14.18",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@radix-ui/react-avatar",
+      "declared": "1.2.7",
+      "installedVersion": "1.2.7",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@radix-ui/react-collapsible",
+      "declared": "1.1.21",
+      "installedVersion": "1.1.21",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@radix-ui/react-dialog",
+      "declared": "1.2.0",
+      "installedVersion": "1.2.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@radix-ui/react-slot",
+      "declared": "1.4.0",
+      "installedVersion": "1.4.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "@radix-ui/react-tooltip",
+      "declared": "1.3.0",
+      "installedVersion": "1.3.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "ansi-to-react",
+      "declared": "6.2.6",
+      "installedVersion": "6.2.6",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react/lib/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "class-variance-authority",
+      "declared": "0.7.1",
+      "installedVersion": "0.7.1",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "clsx",
+      "declared": "2.1.1",
+      "installedVersion": "2.1.1",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "radix-ui",
+      "declared": "1.7.0",
+      "installedVersion": "1.7.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui/dist/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "remark-gfm",
+      "declared": "4.0.1",
+      "installedVersion": "4.0.1",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/remark-gfm@4.0.1/node_modules/remark-gfm/index.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "tailwind-merge",
+      "declared": "3.7.0",
+      "installedVersion": "3.7.0",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge/dist/bundle-cjs.js",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "tw-animate-css",
+      "declared": "1.4.0",
+      "installedVersion": "1.4.0",
+      "resolvable": false,
+      "errorCode": "ERR_PACKAGE_PATH_NOT_EXPORTED",
+      "packageManifestExists": true,
+      "cssOnlyExports": {
+        ".": {
+          "style": "./dist/tw-animate.css"
+        },
+        "./prefix": {
+          "style": "./dist/tw-animate-prefix.css"
+        }
+      },
+      "packageLocation": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css/package.json",
+      "classification": "Node-default-condition-is-not-CSS-import"
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "tw-shimmer",
+      "declared": "0.4.13",
+      "installedVersion": "0.4.13",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tw-shimmer@0.4.13_tailwindcss@4.3.3/node_modules/tw-shimmer/src/index.css",
+      "exists": true,
+      "withinActualMain": true
+    },
+    {
+      "manifest": "apps/web/package.json",
+      "name": "zustand",
+      "declared": "5.0.15",
+      "installedVersion": "5.0.15",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zustand@5.0.15_@types+react@19.3.0_react@19.3.0/node_modules/zustand/index.js",
+      "exists": true,
+      "withinActualMain": true
+    }
+  ],
+  "passed": false,
+  "phase": "before-drain",
+  "serviceActions": 0,
+  "modelQueries": 0
+}

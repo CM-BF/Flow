@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T07:29:51.960749+00:00",
+  "base": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+  "target": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e",
+  "files": [
+    {
+      "path": "apps/web/src/conversations/messages.ts",
+      "sha256": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e",
+      "bytes": 1451,
+      "targetEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-messages.test.ts",
+      "sha256": "2d05762327a42ab8da5d66cd60437ca786235b34cd0a353195beee027bf82f4d",
+      "bytes": 8971,
+      "targetEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-message-reuse.probe.ts",
+      "sha256": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec",
+      "bytes": 8642,
+      "targetEqual": true
+    }
+  ]
+}

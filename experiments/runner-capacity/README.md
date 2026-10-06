@@ -67,3 +67,7 @@ finally顺序：停止新增任务和读循环→关闭本人浏览器/代理连
 3个纯统计单测与noEmit通过，只验证nearest-rank、小样本/非法输入、半开区间与IPC/子进程时钟分离；没有运行正式负载，也没有容量结果。正式之前先在同一已协调窗口运行 `protocol-gate.ts <新标签>`：8个预先ready的任务，8个并发HTTP claim竞争capacity2，必须恰好2个唯一attempt/任务；用正式取消事件及owner cancel使8任务terminal，0 adapter/runner进程。gate与正式各自独有DB、各30秒含清理；gate失败就停止，不启动16任务正式场景。gate首次run-start即封存运行权，失败不能换label自动重跑。
 
 窗口准备复审修复：所有任务terminal后立即退出轻读循环，四个端点即使n=0也列出；按最近SQL观察的running数区分active/queue-only，读取过程中是否恰好完成不作精确保证。gate存储核算包含既有evidence、run-start、owned-process、DB和最终pretty JSON。读取实际PG版本。共用运行回执先检查累计64 tasks/attempts及180秒预算、同scenario禁止重跑、旧未完成run需人工核资源；正式场景还要求已记录成功gate，不能绕过先后次序。新增budget单测3，加统计3，共6通过/noEmit0，未执行gate/formal。
+
+## W2 声明容量对照入口
+
+Goal Owner已批准准备1进程capacity4/12任务；方法及预算见[W2准备说明](../../docs/evidence/s01/w2-readiness.md)。入口为`declared-four.ts`，必须在源码独审及具体窗口批准后运行，环境变量与正式入口相同；不开放更多smoke或capacity1对照。实际并发作为测量输出，不把声明capacity当通过事实。

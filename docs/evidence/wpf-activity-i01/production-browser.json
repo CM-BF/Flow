@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-06T07:09:04.643Z",
+  "sourceCommit": "e93070cc08339325cd299105f5805ca871a07ea8",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "7bf7e58d9a44469588594a02336f4e8fb860df56a707dbf8e7b80d19d38b4226",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+    "apps/web/src/conversation-activity/native/NativeActivity.tsx": "5c7a59f5fddd23c63d12912293caec2d1153f149d6ccfe997709bd0c03eeb69a",
+    "apps/web/src/conversation-activity/native/projection.ts": "55eafaa0aa50a2531667b105801635042ae4391490b36a131c4d5de175af7830",
+    "apps/web/src/conversation-activity/native/tool.tsx": "a30d60afd113f471bf594db5162758e5a64d9ef1185bb4ceece46d8a46db61ff",
+    "apps/web/src/conversations/ConversationThread.tsx": "5b25dbe1f12c7b7f4f4b2f18b2b285889720dafc8a3a99922ff3642a0e93208d",
+    "apps/web/src/plugin-integration/activity.tsx": "3334a4ea394d82b1ebe4354879df2c8f0e8f92788280b5c156bca49e846dc483",
+    "apps/web/src/plugin-integration/react.tsx": "6a04d7837f148d3a02872db86d7ba5da7a14a8898eb008411b8e626554c307c8",
+    "apps/web/src/plugin-integration/session.ts": "df68b2c0b49228d08c35ebc772b43fd6925a5a0b7e584a6deaf2dd09d79c21fe",
+    "apps/web/src/plugins/types.ts": "4f8c093f916ea5a3a2b9608f171bad6c1bd5e1441b1d62eecd0a55708f5faeed",
+    "apps/web/src/plugins/validation.ts": "a489ca5a350f1427265bb929c15516c6094062c848377745737fb4e664efa9ed",
+    "apps/web/test/conversation-activity-integration.browser.ts": "6da5def7d11323a1c05ba2a351784830be35b6fa185b61dd9f53f882f063ad0b",
+    "apps/web/test/conversation-activity-integration.test.ts": "172a8a5f32d9a5a420a6b7a5c6945cdaa9d9a512c5777f5875233f582f4fc13c",
+    "apps/web/test/native-activity.test.ts": "8fe55fcaf4182b17abceb4faaf48bf5848a1f9641c8ca203ede1790b2d524f1c",
+    "apps/web/test/plugin-host.test.ts": "8192ae0a9228d91005d20e3600c8a1fc1ecb8743f2a558e46c13bc1d7d7e6523",
+    "apps/web/src/conversation-activity/projection.ts": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+    "apps/web/test/conversation-activity.test.ts": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+  },
+  "production": true,
+  "url": "http://127.0.0.1:51228",
+  "checks": [
+    "pending/running user anchor is visible, initial and folded native/events/body reads are zero",
+    "Enter expands current native page only, actual Tool and Reasoning lazy bodies cache",
+    "TaskSummary update refreshes displayed metadata without body requests or automatic history drain",
+    "native hidden resume retains disclosure and draft with zero extra activity reads",
+    "split panes use local message context; generic source reads only on explicit selection",
+    "footer menu and button are real plugin actions; disable removes activity without cancelling",
+    "light/dark narrow keyboard geometry keeps footer in full message row",
+    "redacted thinking reads no body and truncated JSON displays an honest prefix",
+    "footer button opens the bound task; queue Enter/button retain delivery intent and draft",
+    "old center delayed body cannot populate new same-ID conversation"
+  ],
+  "errors": [],
+  "reads": [
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "ae12b0796d3b2f7367d11c7db7d4beae607592631427de840a556ae13bc90eb1"
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "475104f3b9a3ac7bfa3b3851adf98ddc3e35d7e36c4501b6215576e430b868dd"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": "35272889724106f470faf5fe5da3a00171e14b60a12e748559df846faf52a9a0"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-1-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "events"
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "72c996eb43bdc993a46af94749c7caa4d3653d92163e08a6601898ced8a267d1"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-1-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "a97318b531ad0592243ff53a22254810fab12d2d924e08b3d2ea8e7d37eb3dd6"
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-1-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "body",
+      "id": "2d4d09699dcec7c7a40841b6caaeaf84ba2341e003017f819ebbcce7f7e371eb"
+    }
+  ]
+}

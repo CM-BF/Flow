@@ -611,3 +611,8 @@ it("checks view resource and current grants synchronously without loading", asyn
   await host.dispose();
   expect(host.checkView("test.plugin.panel", resource).ok).toBe(false);
 });
+
+it("accepts the typed message footer and rejects non-message invocations", () => {
+  expect(() => validateSlot("chat.message.footer", { kind: "message", taskId: "A", messageId: "m", role: "user" })).not.toThrow();
+  expect(() => validateSlot("chat.message.footer", { kind: "task", taskId: "A" })).toThrow();
+});

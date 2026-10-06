@@ -560,10 +560,22 @@ function Workspace({
     if (view.projection.getSnapshot().task?.id !== taskId) await view.projection.select(taskId);
     setPanel(tab, viewId);
   };
+  const assertActivity = (identity: import("./plugin-integration/activity").ActivityIdentity) => {
+    const view = views.get(identity.viewId), state = view?.conversation?.getSnapshot();
+    const turn = state?.turns.find(turn => turn.id === identity.turnId);
+    if (state?.snapshot?.conversation.id !== identity.conversationId || turn?.task.id !== identity.taskId || userMessageId(turn) !== identity.messageId)
+      throw Error("This activity does not belong to the bound conversation view.");
+  };
   const actions: AppActions = {
     knowsTask: id => Boolean(taskView(id)) || conversationOwnsTask(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
     task: id => taskView(id)?.[1].projection.getSnapshot().task ?? null,
     hasDraft: id => Boolean(views.get(id)?.conversation) || (id.startsWith("draft-") && views.has(id)),
+    activity: {
+      events: (identity, after) => { assertActivity(identity); return client.events(identity.taskId, after); },
+      detail: (identity, id, signal) => { assertActivity(identity); return client.conversationDetail(identity.conversationId, identity.turnId, id, signal); },
+      nativePage: (identity, after, signal) => { assertActivity(identity); return client.nativeActivities(identity.taskId, { ...(after ? { after } : {}), limit: 20 }, signal); },
+      nativeBody: (identity, id, signal) => { assertActivity(identity); return client.nativeActivity(id, signal); },
+    },
     ownsMessage: (taskId, id, role) => [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId && (role === "user" ? userMessageId(turn) === id : turn.assistant.state === "available" && turn.assistant.messageId === id))),
     openTask: select,
     openWorkspace: (id, tab) => {

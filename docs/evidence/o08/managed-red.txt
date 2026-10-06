@@ -1,0 +1,22 @@
+✖ known managed declarations are accepted without granting additional tools or implying execution (0.464208ms)
+✔ missing, duplicate and unknown managed declarations or tool provenance fail closed (0.24675ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 226.0545
+
+✖ failing tests:
+
+test at experiments/native-graph-acceptance/managed.test.mjs:10:1
+✖ known managed declarations are accepted without granting additional tools or implying execution (0.464208ms)
+  Error: Unexpected effective extensions/tools
+      at observeFrame (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance/experiments/native-graph-acceptance/guard.mjs:61:174)
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance/experiments/native-graph-acceptance/managed.test.mjs:11:38)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)

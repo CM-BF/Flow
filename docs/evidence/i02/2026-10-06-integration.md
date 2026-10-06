@@ -159,3 +159,26 @@ S01 first-window delivery2784473 includes independently approved preparation9da 
 
 ## 2026-10-06 07:20 UTC steering domain and client preparation
 CHAT07 fixed2137115 independently approved by Execution Lead; thin client1b16d23 independently approved by assignment_review. Seven domain and three client sources match exact approved bytes/hash, no merge edits. 16 actual PG/HTTP domain tests and1 real HTTP transport check/types reused, no rerun or model. Migration024/domain/exports are source-only preparation: production factory still does not mount024/routes and chat steer remains false. Existing final pipeline still does not callseal; only tested explicit transaction seam has the guarantee. CHAT08 will consume through separately claimed runtime/outbox/final integration, not inherit capability proof. CHAT06/C02 fixed combined-review anchors and historical research/coordination human summaries updated, oldraw retained.
+
+
+## 2026-10-06 07:22 UTC actual chat activity mount / native graph evidence
+Web ActivityI ba341 fixed17 paths match approved target bytes/hash. Web Lead independent review and GO fixture CUA accepted collapsed→Tools/Reasoning→lazy bodies/offline/hidden boundaries; integration runs only7adapter+44generic cursor=51 direct consumers and Web typecheck0 with current CHAT06-compatible main. No browser/provider rerun. Actual typed stream body consumer remains a separate Web feature; UI works against real activity routes only after runtime supports CHAT05, personal fb906 is unchanged.
+O08 prepared7403 and native fixed75ff/metadataacaa accepted from GO independent review. Exactly one authorized SDKquery/four turns/SDKestimate0.0318802, three fixed nodes/two dependencies/no child, managed3+3 declared resources. Original driver FAILED/exit1 literal mismatch retained; GO separately accepted actual graph/final semantics. No extra test/query/budget reused, private resources cleaned per fixed raw. This is not open-ended planning, UI proof or child execution.
+
+## 2026-10-06 07:27 UTC metadata与来源登记
+
+受控接收D05 registry 00202ba（含497f三件套86与新增WPF-PERF03后87校验）、O08 ec2ec508 main receipt/release、CHAT07 3a4b4e45 latent-domain receipt/release、ActivityI 9aa3509 owner main receipt/release，以及总体矩阵575e498。相对固定253b，产品apps/server、apps/runner、apps/web、packages、tools均零diff；dashboard仅registry新增三唯一source，不改架构固定115b数据。无产品测试/模型调用，SVC02新owner仅准备目标253b，未停服务。
+
+## 2026-10-06 07:38 UTC Web stream模块候选
+
+受控原样接收3ac11cba/metadata63b7a302：3个新模块+2tests逐hash与Web独审target一致（原54检查复用），当前含ActivityI的组合Web typecheck exit0。模块尚未接App，无新browser/HTTP/provider结论。main仍固定b54供SVC02已授窗口，不提前发布本候选。
+
+
+## 2026-10-06 07:43 UTC — 流式模块与消息复用候选
+
+接收 Web 独审 `3ac11cba14ce8baac3b3a769c19827f6343ca4a7`（3 个独立 stream 模块/2 测试）及 `f909d32f5fcff5b0ac6408dc96e8630bfeffae4e`（immutable turn 的消息转换复用/2 检查文件）。8 个源码逐字节等于各自固定审批 target。stream 模块直接消费 conversationMessages，所以仅运行这条组合：3 文件 62/62（22+32+8），Web typecheck exit0。原输出与摘要见 [组合回执](stream-reuse-integration-receipt.json)。未重跑 browser/性能负载，无 provider 调用；转换次数减少不代表浏览器延迟改善。clean-code 复核模块接口、不可变输入和错误边界，无新实现或待修项。
+
+当前仅候选，main 固定 b54 供 SVC02 窗口；不在 refresh/resume 期间推进 main。stream 模块尚未接入 App，不称用户已看到逐段正文。
+
+
+2026-10-06 07:46 UTC：SVC02明确resume后窗口关闭，可发布上述候选。S01 W2结果5504/独审0dac已受控接收，own source/evidence哈希核对见 `s01-w2-integration-receipt.json`；生产零改、无重跑。12 fixture任务的单进程声明容量4、实际并发峰1为限定事实，不以W1/W2总耗时比较加速比。个人runtime继续固定b54，不将本批main当运行版本。

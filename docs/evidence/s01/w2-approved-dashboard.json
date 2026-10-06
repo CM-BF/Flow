@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-10-06T07:26:58.805Z",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T07:26:47.835Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md",
+    "syncedAt": "2026-10-06T07:26:58.805Z",
+    "stale": false,
+    "ageHours": 0.016334722222222223
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/runner-capacity-probe",
+    "head": "a22329ee181067d1d84d16348356b5709c4ffde9",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T07:26:59.534Z"
+  },
+  "review": {
+    "state": "approved",
+    "target": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+    "proof": "unchanged"
+  },
+  "current": true,
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 4,
+    "output": "单进程声明容量4的对照入口已通过独立审查，正在协调测量窗口",
+    "next": "在独立短窗口测量声明容量与实际并发，并交结果审查",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "issues": []
+}

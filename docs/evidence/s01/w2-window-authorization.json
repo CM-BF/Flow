@@ -1,0 +1,44 @@
+{
+  "windowId": "S01-W2-LEASE-0734",
+  "recordedAt": "2026-10-06T07:36:13.217563+00:00",
+  "quietUntil": "2026-10-06T07:42:00+00:00",
+  "authorization": "Explicit Goal Owner GO received; all lead quiet ACKs complete; stage starts now and includes cleanup within 30 seconds.",
+  "approvedImplementation": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+  "skippedWindows": [
+    {
+      "id": "S01-W2-20261006T072800Z",
+      "started": false,
+      "tasks": 0
+    },
+    {
+      "id": "S01-W2-20261006T072930Z",
+      "started": false,
+      "tasks": 0
+    }
+  ],
+  "quietAcknowledgements": {
+    "goalOwner": {
+      "thread": "01a10e15-b908-7a72-b8c0-222a26bf93ff",
+      "conditionalGo": "S01-W2-LEASE-0734",
+      "latestStart": "2026-10-06T07:41:00Z",
+      "quietUntil": "2026-10-06T07:42:00Z"
+    },
+    "executionLead": {
+      "thread": "01a10ea1-f0bb-7622-ad26-db889c131055",
+      "slots": 3,
+      "ack": "COMPLETE_QUIET_ACK; no tests/build/install/PG/preflight/service processes; through release or 07:42"
+    },
+    "webLead": {
+      "thread": "01a10ec2-ff1a-76d0-a277-446baf89b19d",
+      "slots": 4,
+      "ack": "All four slots QUIET_ACK; workers completed, no heavy tasks; previews retained without restart; through release or 07:42"
+    },
+    "mika": {
+      "slots": 2,
+      "root": "No heavy operations; only messages, clock and file/hash work since conditional GO",
+      "workerLastCheckEndedAt": "2026-10-06T07:33:28.038Z",
+      "workerAck": "No owned process/PG/service; all checks paused until explicit release"
+    },
+    "allReceivedBeforeStart": true
+  }
+}

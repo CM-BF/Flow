@@ -1,0 +1,113 @@
+{
+  "generatedAt": "2026-10-06T07:30:09.368Z",
+  "base": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+  "head": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e",
+  "scope": "Actual installed runtime + actual ConversationProjection; synthetic in-memory responses. Counts only, no React rendering or latency measurement.",
+  "versions": {
+    "node": "v24.20.0",
+    "core": "0.3.22"
+  },
+  "sources": {
+    "baseline": "82f39d90a0cfc80ea4aca1c65333fa255cca428dad94e8d96283c793bbc4caf8",
+    "current": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e",
+    "probe": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec",
+    "core": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtimes/external-store/external-store-thread-runtime-core.ts",
+      "sha256": "11ec03e09d2c49916fd75fb768aba7ed52c2081a858f230b4490071da8d91688"
+    }
+  },
+  "baseline": {
+    "warmupCalls": 200,
+    "unchanged": [
+      {
+        "messageCount": 200,
+        "sameMessageObjects": 0,
+        "converterCalls": 200
+      },
+      {
+        "messageCount": 200,
+        "sameMessageObjects": 0,
+        "converterCalls": 200
+      },
+      {
+        "messageCount": 200,
+        "sameMessageObjects": 0,
+        "converterCalls": 200
+      }
+    ],
+    "update": {
+      "sameMessageObjects": 0,
+      "converterCalls": 200,
+      "finalText": {
+        "type": "text",
+        "text": "Changed final reply"
+      }
+    },
+    "running": {
+      "converterCalls": 1,
+      "status": {
+        "type": "running"
+      }
+    },
+    "stopped": {
+      "converterCalls": 1,
+      "status": {
+        "type": "complete",
+        "reason": "unknown"
+      }
+    },
+    "draft": "Unsent next draft",
+    "requests": {
+      "snapshots": 5,
+      "pages": 5,
+      "details": 0
+    }
+  },
+  "candidate": {
+    "warmupCalls": 200,
+    "unchanged": [
+      {
+        "messageCount": 200,
+        "sameMessageObjects": 200,
+        "converterCalls": 0
+      },
+      {
+        "messageCount": 200,
+        "sameMessageObjects": 200,
+        "converterCalls": 0
+      },
+      {
+        "messageCount": 200,
+        "sameMessageObjects": 200,
+        "converterCalls": 0
+      }
+    ],
+    "update": {
+      "sameMessageObjects": 198,
+      "converterCalls": 2,
+      "finalText": {
+        "type": "text",
+        "text": "Changed final reply"
+      }
+    },
+    "running": {
+      "converterCalls": 1,
+      "status": {
+        "type": "running"
+      }
+    },
+    "stopped": {
+      "converterCalls": 1,
+      "status": {
+        "type": "complete",
+        "reason": "unknown"
+      }
+    },
+    "draft": "Unsent next draft",
+    "requests": {
+      "snapshots": 5,
+      "pages": 5,
+      "details": 0
+    }
+  }
+}

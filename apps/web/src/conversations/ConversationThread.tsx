@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessageLike } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
 import { Thread } from "../components/assistant-ui/elements/thread.aui";
-import { ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers } from "../plugin-integration/react";
+import { ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers, ConversationActivities, MessageFooter } from "../plugin-integration/react";
 import { fixtureMode, type DraftState } from "../TaskThread";
 import { conversationMessages, messageTask } from "./messages";
 import { ConversationProjection } from "./projection";
@@ -13,7 +13,7 @@ import { ConversationQueue } from "./queue/ConversationQueue";
 import "./conversations.css";
 
 const convertConversationMessage = (message: ThreadMessageLike) => message;
-const components = { MessageActions, ComposerActions, Welcome: () => <div className="flow-conversation-welcome"><h1>What’s on your mind?</h1><p>Start a conversation. Keep the next thought in your draft while Flow replies.</p></div> };
+const components = { MessageFooter, MessageActions, ComposerActions, Welcome: () => <div className="flow-conversation-welcome"><h1>What’s on your mind?</h1><p>Start a conversation. Keep the next thought in your draft while Flow replies.</p></div> };
 
 function TurnStatus({ turn, requested, onInspect, onOpenTask }: { turn: ConversationTurn; requested: ConversationSnapshot["conversation"]["requested"] | undefined; onInspect: (id: string) => void; onOpenTask: (id: string) => void }) {
   return <div className="flow-conversation-turn-status">
@@ -78,7 +78,7 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
     });
   }, [runtime, viewId, drafts]);
   return <PluginThreadScope editableComposer viewId={viewId} taskId={last?.task.id ?? null} messageTask={id => messageTask(state.turns, id)}><AssistantRuntimeProvider runtime={runtime}><ConversationDataRenderers viewId={viewId} projection={projection} visible={visible}>
-    <Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
+    <ConversationActivities viewId={viewId} projection={projection} visible={visible}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
       composerSubmit={intent === "queue" ? () => { if (!projection.sendDisabledReason("queue")) runtime.thread.composer.send({ startRun: false }); } : undefined}
       composerInputOnKeyDown={event => {
         if (event.defaultPrevented || event.nativeEvent.isComposing || event.keyCode === 229 || event.key !== "Enter") return;
@@ -90,5 +90,5 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
       composerHeader={<>{!lockedProfile && !viewId.startsWith("draft-") ? <p role="status">Loading conversation configuration…</p> : <ExecutionProfilePicker catalog={profileCatalog} selection={profileSelection} onSelect={onProfileSelection} onRefresh={() => { void profiles.refresh(); }} onLoadMore={() => { void profiles.loadMore(); }} locked={lockedProfile} />}<div className="flow-conversation-controls" aria-label="Conversation capabilities"><button disabled title="Per-turn thinking controls are unavailable">Thinking</button><button disabled title="Per-turn tool controls are unavailable">Tools</button><fieldset className="flex items-center gap-2" aria-label="Message delivery"><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "follow-up"} onChange={() => setIntent("follow-up")} /> Send now</label><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "queue"} disabled={!queue.available} onChange={() => setIntent("queue")} /> Queue next</label></fieldset><button disabled title="Steering is not available in this Web version">Steer</button></div></>}
       footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}<p role="status">{reason ?? (state.snapshot ? "Continue this conversation." : "Your message starts a new conversation.")}</p><span>Replies appear when complete. Steering and per-turn controls are unavailable. Queue next uses durable center acceptance; unresolved receipts are local to this page.</span></div>}
     />
-  </ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
+  </ConversationActivities></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
 }

@@ -1,7 +1,11 @@
 # S01 独立审查
 
 状态：APPROVED
-Review target commit：9da9de1b6778afec5219e55f39b53b365c8cf900
+Review target commit：2ab7967f2eb808fecd1205f7552a119eee8e0b36
+
+当前：W2准备2ab与实际结果0dac均独立APPROVED；页首target绑定实现，结果范围见下节。W2已清理，待main接收。
+
+历史准备target：9da9de1b6778afec5219e55f39b53b365c8cf900
 
 批准范围：`experiments/runner-capacity` 的8任务协议超领门禁和16任务四进程测量入口，**仅运行准备**。运行必须有Goal Owner/Execution Lead协调的窗口；未批准容量结果、ACK故障或浏览器后继。生产基线115b0dbdfa02db5483f9e9699852682ce699633c，apps/packages零diff。唯一owner Mika / gpt-6-astra，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`。
 
@@ -41,3 +45,21 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 [结果报告](../../docs/evidence/s01/w1-results.md)、[冻结manifest](../../docs/evidence/s01/w1-result-manifest.json)、[独审回执](../../docs/evidence/s01/w1-independent-review.json)。原manifest的pending字段保持原始冻结状态，以独审回执更新结论。
 
 可复制复审：固定9e结果commit，校验manifest SHA及两raw，核对before/after源码与执行be923/已审9da；按sender id/sequence/types/ACK逐项重算、以claim租期保守区间统计峰值、核每端点n与分组及清理/预算；只读，不重新运行负载。W1验收无需补对照；可选后继优先declared4/12task，待Goal Owner决定及窗口，ACK故障/浏览器仍开放。main接收另记。
+
+## W2 准备独审任务
+
+范围experiments/runner-capacity，固定target见页首；生产base115b，唯一权威worktree/claim沿用S01。入口与限制见[W2方法](../../docs/evidence/s01/w2-readiness.md)，源码/检查摘要见[W2 manifest](../../docs/evidence/s01/w2-readiness-manifest.json)。只审准备代码，不运行负载或认为已有窗口。
+
+可复制步骤：核head/dirty与manifest哈希；对2784473审delta，核固定12/1/capacity4/128参数、DB真实注册capacity、per-runner上下峰值不预设串行且不超过声明容量；72runner/60timeline/72workspace及12工具/终ACK/清理契约随tasks推导。核领取未emit与unknown ACK按reservation保守扣额、observed/budgetCharged分开、两个历史smoke固定SHA兼容、missing result failclosed及同scenario禁重跑。读11纯unit/noEmit证据及5red原记录，原W1 raw/manifest不改；0新PG/task/服务。检查≤30秒含10秒清理/原64与180秒及64MiB预算，window仍待GO协调。severity与修复绑定新commit，不能沿用W1批准。
+
+2026-10-06T07:26:06Z W2独立准备审查APPROVED：worker只读核25source/3raw与target/current一致、11unit/noEmit0、5 red保留、原raw/产品不变；固定参数/DB容量/peak不预设串行与保守预算门禁成立，无P1/P2。未运行测试/服务/PG。见[W2独审回执](../../docs/evidence/s01/w2-independent-review.json)。本结论仅准备，窗口与结果需另行记录。
+
+## W2 独立结果审查
+
+状态：APPROVED（限定W2结果）
+
+结果target `0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf`，实现2ab、执行a626、生产base115b。独立reviewer `/root/b01_bounded_reads` / gpt-6-astra 于2026-10-06T07:40:32Z只读复核，现场同HEAD clean，无P1/P2。18运行source与2ab/a626/WT、5raw/support hash匹配；独立重算12claims/attempts、注册cap4、保守并发1/1及adapter/tool1、72唯一sender/ACK、12终ACK先于close和工具摘要、读分组与nearest-rank、累计44/38/20.925025秒及正常清理，均一致。未执行测试/服务/PG。
+
+两个非阻断P3已补在报告：首PG样本1条空application_name连接保留unknown；terminal后、runner close前一次claim HTTP failure不等于72事件ACK失败。全部12dispatch具lastFalse→firstTrue区间。原raw/manifest不改，DB/public原行集未留限制明确，不计算12/16速度比或provider容量。
+
+[结果独审回执](../../docs/evidence/s01/w2-result-independent-review.json)；[结果报告](../../docs/evidence/s01/w2-results.md)。可复制复审：固定0dac、比对manifest及5raw/support、18源码，重算sender/ACK/claim区间/分位数与清理，禁止重新运行负载。main事实另记。
