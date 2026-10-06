@@ -14,6 +14,7 @@ function category(value: unknown): string {
   if (sql === 'COMMIT') return 'commit';
   if (sql === 'ROLLBACK') return 'rollback';
   if (sql === 'SELECT * FROM FLOW.RUNNERS WHERE ID=$1 FOR UPDATE') return 'runner-row';
+  if (sql === 'SELECT * FROM FLOW.RUNNERS WHERE ID=$1 FOR SHARE') return 'runner-row-share';
   return 'other';
 }
 export function observePg(poolPrototype: object, report: (event: PgObservation) => void, now = performance.now.bind(performance), onClient: (client: unknown) => void = () => {}) {

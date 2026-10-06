@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ❯ experiments/runner-capacity/mixed/profile.test.ts (4 tests | 4 failed) 11ms
+   × the single approved128 profile binds main, one8x16 case and independent reservation 6ms
+   × 128 budget has no129th submission and preserves30seconds for cleanup 0ms
+   × the128 gate needs128 distinct persisted sessions and exact ownership, never repeated observations 0ms
+   × private SQL observation distinguishes the new SHARE fence without changing returned promises 4ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  05:12:39
+   Duration  662ms (transform 279ms, setup 0ms, import 315ms, tests 11ms, environment 0ms)
+

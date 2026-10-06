@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { readFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+const readFrozenP03 = async (path: string) => execFileSync('git', ['show', '0cee7556befa1988e60bae94b510240122c34b88:' + path]);
 import { selectRunIdentity, verifyRunSources } from './run-identity.js';
 
 describe('separately authorized mixed-run identity', () => {
@@ -18,19 +19,19 @@ describe('separately authorized mixed-run identity', () => {
   it.each(['', '../mixed-run', 'constructor', 'after-drain-v2'])('rejects an unreviewed identity %j', identity => {
     expect(() => selectRunIdentity(identity)).toThrow('Unreviewed mixed-run identity.');
   });
-  it('accepts the two exact already-reviewed P03 source inputs without starting a runtime', async () => {
-    await expect(verifyRunSources(selectRunIdentity('after-drain-v1'), path => readFile(path))).resolves.toBeUndefined();
+  it('accepts the two exact historical P03 Git inputs without starting a runtime', async () => {
+    await expect(verifyRunSources(selectRunIdentity('after-drain-v1'), path => readFrozenP03(path))).resolves.toBeUndefined();
   });
   it('rejects modified production bytes even when their length is unchanged', async () => {
     await expect(verifyRunSources(selectRunIdentity('after-drain-v1'), async path => {
-      const bytes = await readFile(path); bytes[0] = bytes[0]! ^ 1; return bytes;
+      const bytes = await readFrozenP03(path); bytes[0] = bytes[0]! ^ 1; return bytes;
     })).rejects.toThrow('Required source differs from approved implementation: apps/runner/src/runtime.ts');
   });
   it('rejects a missing required shutdown source', async () => {
     const missing = new Error('owned input unavailable');
     await expect(verifyRunSources(selectRunIdentity('after-drain-v1'), async path => {
       if (path.endsWith('runtime-shutdown.test.ts')) throw missing;
-      return readFile(path);
+      return readFrozenP03(path);
     })).rejects.toBe(missing);
   });
   it('does not add the later source requirement to the original identity', async () => {

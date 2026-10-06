@@ -1,12 +1,13 @@
-import { CONTRACT } from './contract.js';
+import { CONTRACT, type RunContract } from './contract.js';
 export type RecordValue = { kind: string; [key: string]: unknown };
-export function childReporter(stop: () => void) {
+export function childReporter(stop: () => void, limits: () => RunContract = () => CONTRACT) {
   let pending = 0; let total = 0; let dropped = 0; let closed = false;
   const send = (value: RecordValue) => {
+    const contract = limits();
     const record = { ...value, childMs: performance.now(), pid: process.pid };
     const bytes = Buffer.byteLength(JSON.stringify(record));
     total += bytes;
-    if (closed || bytes > CONTRACT.responseBytes || pending + bytes > CONTRACT.ipcPendingBytes || total > CONTRACT.softBytes) {
+    if (closed || bytes > contract.responseBytes || pending + bytes > contract.ipcPendingBytes || total > contract.softBytes) {
       dropped++; stop(); return;
     }
     pending += bytes;
@@ -21,4 +22,10 @@ export async function abortable<T>(promise: Promise<T>, signal: AbortSignal): Pr
   const interrupted = new Promise<never>((_, reject) => { abort = () => reject(signal.reason); signal.addEventListener('abort', abort, { once: true }); });
   try { return await Promise.race([promise, interrupted]); }
   finally { signal.removeEventListener('abort', abort); }
+}
+
+export function memoryObservation() {
+  const memory = process.memoryUsage();
+  return { kind: 'memory', rss: memory.rss, heapUsed: memory.heapUsed, external: memory.external,
+    arrayBuffers: memory.arrayBuffers, maxRssKiB: process.resourceUsage().maxRSS };
 }
