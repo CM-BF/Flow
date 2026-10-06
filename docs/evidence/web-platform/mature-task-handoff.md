@@ -1,5 +1,11 @@
 # 成熟聊天大task来源与登记队列
 
+## SVC05 跨队发布窗口：集成暂冻（Lead通知，未复采样）
+
+GO授权个人后台固定 **362af3bac77541e5a60979326bcf4d4b8c947915** 更新，唯一operator **assignment_review** 执行fresh gates。原Flow目录为本窗口clean detached到362，**main/origin ref仍aeb764e5**；这不是main回退，不从临时HEAD推新feature base。集成冻结直到Lead明确resume关闭窗口；各独立WT正常工作，固定新App可交审，窗口后Lead自主接收。[原意及边界记录](svc05-runtime-window-notice.json)。
+
+4320由独立I02树继续服务，**149来源为Lead通知**，未由本组重取API/浏览器验证。个人服务/tab/主动query不动；DPERF已关闭不重开。此次是授权运行窗口，不冒成功发布或新个人backend验收回执。
+
 ## 当前优先队列（12:30 UTC；以下较早时点只作历史）
 
 1. **MATURE04 × attachment-only**：Mika已确认收到，将交原合法owner修复；尚无固定修复target/claim回执。已确认范围是合法v2仅附件触发history known/min1拒绝，运行链影响尚未HTTP/PG验证，mixed材料coverage语义待其明确。[固定诊断与边界](context-attachment-shape-research/source-binding.json)。
@@ -434,3 +440,9 @@ Web consumer/Recovery **拟panels，pending legal scope、尚未take**，必须�
 Root跨片约束及panels八点修订已合入[唯一接口候选](connection-recovery-readonly-proposal.json)：保原outbox/queue同步begin并publish唯一冻结localreceipt，Thread同栈核receipt后consume capture；其后先durable prepare、每次HTTP前CAS dispatching，不能先await IndexedDB再begin。storage/配额/损坏/CAS失败保证本次0HTTP并保同receipt/key/body/materials与下一draft，不把旧稿恢复覆盖新稿，原everUnknown不洗白。
 
 重启prepared不自动发，dispatching一律unknown，ACK到达但checkpoint未完成也保unknown；accepted耐久后不再POST。CREATE ACK和conversation绑定必须耐久后才允许turn HTTP，不自动续发下一步。多tab CAS按认证namespace/稳定draft-conversation/slot，输家保本地收据且0HTTP；中心原key幂等是最后裁决。首次journal提交前崩溃虽无HTTP，最新未落盘文字不保证恢复，UI须分saving/saved。容量候选不截断/淘汰unknown；authenticated center/principal后才hydrate精确匹配记录，同URL换库/账号不可混。这是未来设计与crash验收，尚未实现/测试，不倒填当前ATTACHI或module历史。
+
+## MATURE04 历史详情私有读取接缝（root只读补充）
+
+[原consumer-ready输入](context-history-web-input.json)补充：publiccontextHistory先schema+taskId核验；sample.detailRef由history record/saveDetail产生，并不是timeline entries.reference。旧session assertReference只准timeline引用，未来UI不得把historyref塞旧通用detail命令或放宽任意ID；private context reader先将已验证history的task/attempt+exactdetailRef绑定，再按需调用FlowClient.detail，核view/connection/attempt与迟到结果隔离。原通用授权不改。
+
+只呈history估算与observedAt/receivedAt；current/remaining未知、latestnull不画0、capacityunknown不画百分比、not-observed不称没有压缩。仍属原04-05候选，Mika材料组合缺陷待合法owner固定修复；无真实UI/调用实验，无新take，不抢06-04优先级。

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:30 UTC / ATTACHI02 v2全24接线；DPERF已main/released；下一完整旅程06-04优先Arc |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:37 UTC / SVC05 operator运行窗口集成暂冻；独立WT继续；ATTACHI固定候选待到 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -105,7 +105,7 @@
 
 ## 当前服务与验收边界
 
-ExecutionLead最新正式来源：个人backend仍b1c、static仍8d8，本次RELEASE02/TUI01C main接收未改变它们；本组未操作/采样个人服务或刷新用户页。旧SVC03 artifact461a/accepting v12及main-Vite/32c-v9/fb906仅历史，不能当当前产物。main不等当前页面，不新增真实query。
+ExecutionLead新通知：SVC05由唯一operator assignment_review对固定362个人后台执行授权更新fresh gates；原Flow目录临时clean detached362，main/origin ref仍aeb764e5，集成冻结直至Lead resume。独立WT照常，不从临时HEAD取base；4320由独立I02树149来源继续服务（仅Lead归因，本组未复采样）。这是运行窗口而非成功发布回执，b1c/8d8是前窗口历史状态；[通知](../../docs/evidence/web-platform/svc05-runtime-window-notice.json)。本组未操作个人服务或用户页。旧SVC03 artifact461a/accepting v12及main-Vite/32c-v9/fb906仅历史，不能当当前产物。main不等当前页面，不新增真实query。
 
 完整聊天/附件/主题插件材质/组合tab/真实多provider/context用量/语音成功路径仍按六大task开放验收。局部fixture/独审/main/个人产物分别记录。GO历史真实queue2/2封存结果只引用原证据，本组0真实模型/语音调用，不重复他队实验。
 
