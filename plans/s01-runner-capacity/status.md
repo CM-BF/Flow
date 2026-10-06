@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:47:00 UTC / idle 固定 main8d84d529a0756116bd0fc8bad969d61a6c26248e 只读输入；历史集成 aae |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:45:55 UTC / idle 固定 main8d84d529a0756116bd0fc8bad969d61a6c26248e 只读输入；历史集成 aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -215,4 +215,4 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 
 2026-10-06 18:41:03 UTC：early source73157915已push/clean交只读审，observer/budget 18:38:51 SOURCE_REVIEW无P1/P2；9 fake未运行。现补此实验薄外壳，其独审/实际tool退出和预算仍pending，不继承early结论；供给镜像未到，未物化/执行。
 
-2026-10-06 18:47:00 UTC：Lead独立供给已落到专属source-snapshot，61项284628B逐SHA/bytes核符；owner仅按明确授权复制，0Git物化/安装/import。完整准备9个源码/config与74项固定输入（文件362257B+manifest16618B）交审，9fake草稿及actual单项仍0运行。薄外壳区分预约、stdio/group close、内部case、pre-final快照/最终CLI与外部shell退出；2MiB计量仍保守采样，非硬quota。旧A/B与128证据原样，不读历史unknownjournal。
+2026-10-06 18:45:55 UTC：Lead独立供给已落到专属source-snapshot，61项284628B逐SHA/bytes核符；owner仅按明确授权复制，0Git物化/安装/import。完整准备9个源码/config与74项固定输入（文件362257B+manifest16618B）交审，9fake草稿及actual单项仍0运行。薄外壳区分预约、stdio/group close、内部case、pre-final快照/最终CLI与外部shell退出；2MiB计量仍保守采样，非硬quota。旧A/B与128证据原样，不读历史unknownjournal。

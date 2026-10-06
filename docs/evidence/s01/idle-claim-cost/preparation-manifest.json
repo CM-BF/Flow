@@ -1,0 +1,42 @@
+{
+  "sourceCommit": "0de832643a07191f22b7eb10337958fffd47d39e",
+  "previousSourceReview": "73157915758b934cce5131045317c892288ddc7a observer/budget only; architecture_read 2026-10-06 18:38:51 UTC SOURCE_REVIEW no P1/P2, VALIDATION_PENDING",
+  "fixedProductionRef": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "inputManifestSha256": "5c168044131d5e2fc12988bfe5717f35b70a2469e4a44c6916bd4f56971af0cb",
+  "inputFiles": 74,
+  "inputFileBytes": 362257,
+  "inputManifestBytes": 16618,
+  "bindings": [
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/fixed-input.json",
+      "bytes": 16618,
+      "sha256": "5c168044131d5e2fc12988bfe5717f35b70a2469e4a44c6916bd4f56971af0cb",
+      "git": "0de832643a07191f22b7eb10337958fffd47d39e"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-supply-receipt.json",
+      "bytes": 11362,
+      "sha256": "a883dc915dce693fd1124c07c546e61049e5c0dcbe05e231acadf86247442653",
+      "git": "0de832643a07191f22b7eb10337958fffd47d39e"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "git": "0de832643a07191f22b7eb10337958fffd47d39e"
+    }
+  ],
+  "inputBindingCheck": {
+    "scope": "74 fixed input files at sourceCommit = current bytes/hash, no module imports",
+    "errors": []
+  },
+  "checks": {
+    "fake": "NOT_RUN (9 cases prepared)",
+    "actual": "NOT_OPEN / NOT_RUN",
+    "types": "NOT_RUN",
+    "nodeSyntax": "NOT_RUN",
+    "pg": 0,
+    "provider": 0
+  },
+  "scope": "Full preparation requires independent source review and separate fake/actual OPEN. No preparation APPROVED inferred."
+}
