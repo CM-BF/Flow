@@ -18,3 +18,5 @@
 2026-10-06 15:31:25 UTC 独审收口：Mika与architecture_read固定APPROVED/0P1P2。只记录receipt/status/integration-ready，不改source、旧raw/config/manifest，不重测。后继先在现有scope内设计，未amend不改其他文件。
 
 下一片设计安全点：按architecture_read/Mika意见选择v2 optional turnSettings，拒绝不必要v3迁移。列入queue手动resume、before-limit旧reader隔离、context requestedModel直接消费者；仅自有docs/plans写入，source/raw/manifest不变。首leaf main比对两源一致，未merge/retest。
+
+2026-10-06 15:44:19 UTC设计复核：复用既有精确header选择；legacy/new final严格分支，不假填disabled；SDK init观察有限且null/缺键不混为默认。canonical与PG文本bytes分离，普通/tasks复用assertTaskExecutionProfile防旁路。37 literal合法扩权后才准备源码。仅本scope文档，0新tests/PG/build/install/provider，旧raw/source未改。

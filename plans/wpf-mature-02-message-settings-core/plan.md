@@ -1,4 +1,4 @@
-# WPF-MATURE-02-CORE Claude 消息设置 contract leaf
+# WPF-MATURE-02-CORE Claude 逐消息设置
 
 | 字段 | 内容 |
 | --- | --- |
@@ -11,9 +11,9 @@
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core / codex/claude-message-settings-core |
 | 基线 | 70cc4e852365e974cefde30bfad75c7d233985c6 |
 
-目标：在两个新文件中固定可复用的完整消息设置请求、有限配置策略、规范序列化和 ACK 精确匹配。没有中心 mutable next-settings 实体、settingsRevision、第二哈希、SDK runtime import 或新能力目录。本片不开放产品控件或实际模型资格。
+目标：以已main的纯leaf为基础，将每条消息的完整model/thinking/effort/speed意图沿中心、队列、既有Claude adapter冻结传递，并分开requested与observed。没有中心mutable next-settings实体、settingsRevision、第二哈希或新能力目录；全程0付费验证，UI由后继consumer消费正式合同。
 
-遵循[根模块化规则](../../AGENTS.md#modular-design)。派工仅允许两源和本 plan/evidence 目录；不修改 shared exports、profile、migration、center/client/runner/UI。后继由 Lead 精确协调独立 scope。
+遵循[根模块化规则](../../AGENTS.md#modular-design)。原首leaf四scope已于15:44:19.351Z扩为37 literal，见next-slice-amend-receipt.json；F01 shared exports/client/index、未编号migration及UI仍不在scope。现contracts可实施，其余source仅Leadprovision后继续。
 
 ## Interface 与资源
 
@@ -30,7 +30,7 @@ effort 必填 discriminated union：level+固定 SDK 五值，或 not-requested�
 - [x] **M02CORE-03** 资源满足后执行本文件 Vitest/局部 strict：5/5 与 exit0，见 checks.json。
 - [x] **M02CORE-04** 独立固定 target review，修复 findings。
 - [x] **M02CORE-05** Lead 受控接收/main 核对；仍有已派后继时保留原合法scope。
-- [ ] **M02CORE-06** 收敛中心/queue到既有Claude adapter的实际消息设置纵向片；先只读设计及精确scope请求，合法amend后才实现。
+- [ ] **M02CORE-06** 收敛中心/queue到既有Claude adapter的实际消息设置纵向片；精确37 literal已amend；先contracts，再沿同一纵向接线，未获得验证窗口不运行检查。
 
 ## 验收
 
