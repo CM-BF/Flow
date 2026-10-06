@@ -1,6 +1,5 @@
 import { randomUUID, createHash } from "node:crypto";
-import { createServer as httpServer, type ServerResponse } from "node:http";
-import { Readable } from "node:stream";
+import { createServer as httpServer, request as httpRequest, type IncomingMessage, type ServerResponse } from "node:http";
 import { fileURLToPath } from "node:url";
 import { writeFileSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
@@ -104,21 +103,55 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
       if (!center) throw Error("Fixture center has not started.");
       const chunks: Buffer[] = []; let size = 0;
       for await (const chunk of request) { size += chunk.length; if (size > 256 * 1024) throw Error("Fixture request bound exceeded."); chunks.push(chunk); }
-      const method = request.method ?? "GET", body = Buffer.concat(chunks).toString("utf8"), headers = new Headers();
-      // Preserve the browser's true public destination and source. Do not invent Origin for same-origin GET.
-      for (const name of ["host", "origin", "sec-fetch-site", "cookie", "authorization", "x-flow-csrf", "content-type", "idempotency-key", "accept", "last-event-id", "x-flow-assistant-stream"])
-        if (typeof request.headers[name] === "string") headers.set(name, request.headers[name]);
-      const requestLife = new AbortController(); response.on("close", () => requestLife.abort());
-      const upstream = await fetch(center + path, { method, headers, ...(method !== "GET" && method !== "HEAD" ? { body } : {}), signal: AbortSignal.any([bound, requestLife.signal]) });
-      const row: RecoveryWire = { method, path, key: headers.get("idempotency-key"), body, status: upstream.status, cookie: headers.has("cookie"), bearer: headers.has("authorization"), csrf: headers.has("x-flow-csrf") };
-      wireBytes += Buffer.byteLength(JSON.stringify(row)); if (wireBytes > 1024 * 1024) throw Error("Fixture wire budget exceeded."); wire.push(row);
-      const kind = /\/turns$/.test(path) ? "turn" : /\/queue$/.test(path) ? "queue" : path === "/api/conversations" ? "create" : undefined;
-      if (method === "POST" && upstream.ok && lost && lost === kind) { lost = undefined; row.fault = "center committed, response deliberately dropped"; await upstream.arrayBuffer(); response.destroy(); return; }
-      for (const name of ["content-type", "cache-control", "set-cookie"]) { const value = upstream.headers.get(name); if (value) response.setHeader(name, value); }
-      response.writeHead(upstream.status);
-      if (upstream.headers.get("content-type")?.includes("text/event-stream") && upstream.body) {
-        const stream = Readable.fromWeb(upstream.body as import("node:stream/web").ReadableStream); stream.on("error", () => response.destroy()); stream.pipe(response);
-      } else response.end(await upstream.text());
+      const method = request.method ?? "GET", bytes = Buffer.concat(chunks), body = bytes.toString("utf8"), headers: string[] = [];
+      // Native HTTP keeps the public Host while connecting to the owned center port.
+      // Preserve duplicate caller fields too; the center must decide whether they are valid.
+      const forwarded = new Set(["host", "origin", "sec-fetch-site", "cookie", "authorization", "x-flow-csrf", "content-type", "idempotency-key", "accept", "last-event-id", "x-flow-assistant-stream"]);
+      for (let index = 0; index < request.rawHeaders.length; index += 2) {
+        const name = request.rawHeaders[index], value = request.rawHeaders[index + 1];
+        if (name !== undefined && value !== undefined && forwarded.has(name.toLowerCase())) headers.push(name, value);
+      }
+      const hasBody = method !== "GET" && method !== "HEAD";
+      if (hasBody) headers.push("Content-Length", String(bytes.length));
+      await new Promise<void>((resolve, reject) => {
+        let upstream: IncomingMessage | undefined, settled = false;
+        const finish = (error?: Error) => {
+          if (settled) return;
+          settled = true;
+          response.off("close", closed); response.off("finish", closed);
+          upstream?.destroy(); outgoing.destroy();
+          if (error) reject(error); else resolve();
+        };
+        const closed = () => finish(), failed = (error: Error) => finish(error);
+        const outgoing = httpRequest(center + path, { method, headers, setHost: false, agent: false, signal: bound }, source => {
+          source.on("error", failed); source.once("aborted", () => failed(Error("Fixture upstream response aborted.")));
+          if (settled) { source.destroy(); return; }
+          upstream = source;
+          try {
+            const status = source.statusCode;
+            if (status === undefined) throw Error("Fixture upstream has no HTTP status.");
+            const row: RecoveryWire = { method, path, key: typeof request.headers["idempotency-key"] === "string" ? request.headers["idempotency-key"] : null, body, status, cookie: request.headers.cookie !== undefined, bearer: request.headers.authorization !== undefined, csrf: request.headers["x-flow-csrf"] !== undefined };
+            wireBytes += Buffer.byteLength(JSON.stringify(row)); if (wireBytes > 1024 * 1024) throw Error("Fixture wire budget exceeded."); wire.push(row);
+            const kind = /\/turns$/.test(path) ? "turn" : /\/queue$/.test(path) ? "queue" : path === "/api/conversations" ? "create" : undefined;
+            if (method === "POST" && status >= 200 && status < 300 && lost && lost === kind) {
+              lost = undefined; row.fault = "center committed, response deliberately dropped";
+              source.once("end", () => { response.destroy(); finish(); }); source.resume(); return;
+            }
+            // In particular, Set-Cookie is a string[]: never join separate cookie updates.
+            for (const name of ["content-type", "cache-control", "set-cookie"]) {
+              const value = source.headers[name]; if (value !== undefined) response.setHeader(name, value);
+            }
+            response.writeHead(status);
+            source.pipe(response); // SSE and ordinary bodies share backpressure and browser-close cancellation.
+          } catch (error) { failed(error instanceof Error ? error : Error(String(error))); }
+        });
+        // Keep error handlers until these destroyed streams are collected, including late abort errors.
+        outgoing.on("error", failed);
+        response.once("close", closed); response.once("finish", closed); response.on("error", failed);
+        if (response.destroyed) { finish(); return; }
+        try { outgoing.end(hasBody ? bytes : undefined); }
+        catch (error) { failed(error instanceof Error ? error : Error(String(error))); }
+      });
     } catch (error) { if (response.headersSent || response.destroyed) response.destroy(); else { response.writeHead(502, { "content-type": "application/json" }); response.end(JSON.stringify({ error: { code: "fixture_transport", message: String(error) } })); } }
   });
   let closing: Promise<void> | undefined;
