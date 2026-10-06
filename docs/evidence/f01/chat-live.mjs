@@ -54,7 +54,9 @@ async function stop(item) {
   if (item.child.exitCode === null && item.child.signalCode === null) {
     // Negative PID is only the isolated group created by this script, never a scanned port.
     try { process.kill(-item.pid, 'SIGTERM'); } catch (e) { if (e.code !== 'ESRCH') throw e; }
-    const exited = await Promise.race([once(item.child, 'exit').then(() => true), new Promise(resolve => setTimeout(() => resolve(false), 22000))]);
+    let timer;
+    const exited = await Promise.race([once(item.child, 'exit').then(() => true), new Promise(resolve => { timer = setTimeout(() => resolve(false), 22000); })]);
+    clearTimeout(timer);
     if (!exited) { item.forced = true; try { process.kill(-item.pid, 'SIGKILL'); } catch (e) { if (e.code !== 'ESRCH') throw e; } await once(item.child, 'exit'); }
   }
   return { name: item.name, pid: item.pid, startedAt: item.startedAt, exitCode: item.child.exitCode, signal: item.child.signalCode, forced: Boolean(item.forced) };

@@ -1,0 +1,32 @@
+{
+  "revision": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
+  "centerUrl": "http://127.0.0.1:56080",
+  "webUrl": "http://127.0.0.1:56081",
+  "runnerId": "ffee0215-c5e8-4c4b-86be-af5fd4786a39",
+  "processIds": [
+    {
+      "name": "center",
+      "pid": 1922
+    },
+    {
+      "name": "runner",
+      "pid": 7079
+    },
+    {
+      "name": "web",
+      "pid": 8723
+    }
+  ],
+  "database": "flow_chat_live_7ae6670f532b2126",
+  "privateDir": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-chat-live-NJF1Vg",
+  "manifest": {
+    "materialFiles": [],
+    "allowRead": false,
+    "requireReadApproval": false,
+    "model": "claude-sonnet-5-5",
+    "maxTurns": 2,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 60000
+  },
+  "modelCalls": 0
+}
