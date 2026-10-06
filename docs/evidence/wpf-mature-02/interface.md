@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [Node唯一窗口结果](node-rootliteral/run-report.md)：无profile控制通过、rootliteral SIGABRT；第三NOT_RUN，清理/计量完成，结果待审。当前无剩余运行许可。
+- [Node唯一窗口结果及限定](node-rootliteral/result-limits.md)：rootliteral SIGABRT，第三NOT_RUN；清理确认但整体输出计量UNKNOWN，结果待审。当前无剩余运行许可。
 
 - F01依赖f63502e26d44f33a86a01e98761b22aefbd5fa60已获Mika12:56:50–12:57 UTC限定APPROVED（manifest/lock接线，非插件启用）；请F01在自身证据记review。后继与[X01 leaf Interface](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-interface.md)成套接收。
 

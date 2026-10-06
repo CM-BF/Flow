@@ -14,14 +14,14 @@
 | 工作树dirty状态 | 源码冻结；唯一Node窗口已消费，当前仅结果归档与metadata，提交后核clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | 最终55/55原纯检查+清理delta6/6（2新，51未选）（39新+16直接旧）与Node24 native惰性import0；0实际目标/listener/compile/PG/provider。中间语法失败原样保留，固定source/完整manifest正在收口。 |
+| 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 实现目标 | source d17ad56a / combo1f32735e629873196971ea509b767ddf0436949e APPROVED；唯一窗口已消费 |
 | 实现范围 | 新node-rootliteral实验；diagnostics/run-diagnostics.mjs导出/计量私有helper；isolation/compose-canary.mjs固定场景/资源清理接缝；本计划与证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Node无profile控制通过；受限控制失败，后续七项未运行；已清理并封存。 |
-| 下一可用交付 | 固定本次失败结果与完整资源/计量证据，交独立审查。 |
+| 当前产出 | Node受限控制失败、后继未运行；清理确认，整体输出计量仍未知。 |
+| 下一可用交付 | 交付忠实失败与计量未知的固定结果，等待独立接收。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：Mika于12:37:56 UTC批准ff927712设计；宿主固定loader窄适配获准。Mika13:01:37 UTC批准1f327准备；本次[结果](../../docs/evidence/wpf-mature-02/node-rootliteral/run-report.md)待审。 |
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
-| WPF-MATURE-02-03 | in-progress | chatui01_owner | C rootliteral固定测量已审；[Node三槽小接口](../../docs/evidence/wpf-mature-02/node-rootliteral/design.md)设计已审、实现待组合审，0新运行；实际catalog仍未验证，旧窗口不恢复。 |
+| WPF-MATURE-02-03 | in-progress | chatui01_owner | C测量已审；Node窗口失败已封存，第三NOT_RUN；[结果限定](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)明确整体输出UNKNOWN，实际catalog仍未验证。 |
 | WPF-MATURE-02-04 | in-progress | chatui01_owner | 已接入独审通过的生产投影，薄入口27/27且独审APPROVED，待集成；[原生配置目录设计](../../docs/evidence/wpf-mature-02/native-catalog-seam.md)已实现首个目录合同/reader/routes并局部验证，c9c6e891已独审APPROVED；client/Web与共享能力全链路尚未完成 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
@@ -40,13 +40,9 @@
 | WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
 
-## 跨lead接口与handoff
+## 接口与dashboard
 
-唯一接口请求：[interface](../../docs/evidence/wpf-mature-02/interface.md)。R05共享host/main/config/contracts及生产transport/adapter apps/runner/src/codex由ExecutionLead/assignment_review及其runner worker维护；R06 runner_owner独占transport与进程生命周期；本owner仅固定schema/模型事实与已解码实验conformance，Web d01挂本bigplan。claim v5保留实验/证据/计划与四个目录合同/领域文件；store.ts与R06五源均已停写并部分交回。当前[COMMITTED receipt](../../docs/evidence/wpf-mature-02/r06-source-handback-receipt.json)明确七个保留scope；client/index不在范围。
-
-## Dashboard同步与限制
-
-本status是唯一手填事实源。已只读核main1737cd6a5c8bbb1d5793325ee924802bfbe2a2e9 registry将本task映射到此权威树/status；这不证明4320服务已刷新。claim 0dd97484-f0ce-4738-8075-505bd5e2541a v5 ACTIVE（amend 12:15:20.438 UTC，仅再移除R06五源）；无真实app-server/auth/模型/外部网络执行；唯一自有loopback合成运行见下段。目录schema不是账号或模型可用证明；首片不替代整体目标。
+[canonical](../../docs/evidence/wpf-mature-02/interface.md)唯一路由共享owner；本claim v5七scope见[交回回执](../../docs/evidence/wpf-mature-02/r06-source-handback-receipt.json)，R06/store已停写。status唯一进度，main1737 registry已登记本树；不证明4320服务刷新。未调用真实app-server/auth/provider，目录不是entitlement。
 
 ## 固定证据与边界
 
@@ -56,6 +52,6 @@
 
 方法沿本地find-skills/brainstorming/codebase-design/用户固定clean-code sickn33@bdacd76，详[质量记录](../../docs/evidence/wpf-mature-02/node-rootliteral/quality.md)。不重复安装/测试；本status唯一手填进度，当前摘要不复制别task状态。04 producer eccb本owner只读独审已收口，权威后继由04维护。
 
-## 当前Node准备阶段
+## 当前Node结果
 
-[设计与实现合同](../../docs/evidence/wpf-mature-02/node-rootliteral/design.md)及[只读来源](../../docs/evidence/wpf-mature-02/node-rootliteral/source-check.md)。设计ff927712已审，组合1f327已独审通过；claim v5 fresh ACTIVE七scope。58 distinct纯检查（55原+2清理+1outer预算，非全量重跑）/native惰性加载通过，不等于实际Node隔离。宿主使用固定Node24 transform与六模块resolver；目标env不继承loader。控制close.reason必须DISCONNECTED，canary必须CLOSED，协议异常/额外输出使stdoutBoundConfirmed=false。外层time+UTC与内部时点分开；当前无剩余actual授权。旧C归档仍是e47等历史快照，新工作不冒称其hash或运行时间仍当前。
+[固定结果](../../docs/evidence/wpf-mature-02/node-rootliteral/run-report.md)及[result-limits](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)：失败槽正常stdout上界未确认，机器accounting=true不能替代整体UNKNOWN。旧e7 raw/manifest不追改；窗口已消费，无剩余授权。58 distinct准备检查与实际失败分开。

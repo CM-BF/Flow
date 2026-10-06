@@ -1,0 +1,5 @@
+# 结果限定：整体输出计量 UNKNOWN
+
+固定e7e2311b的raw/run-manifest/source不改。机器outputAccountingComplete=true来自stdoutBoundConfirmed的DISCONNECTED+空队列/ignored门禁；失败槽SIGABRT且不满足exit7/40B，未确认固定控制正常路径。R06无累计stdout计数，故不能由该门禁证明异常启动stdout=0。有效全runtime输出计量为UNKNOWN，不能宣称完整2MiB预算已证明；机器原字段原样保留。
+
+已知runtime220830、CLI4117、outer577及各固定archive数仍是其记录/已知分项，含失败slot预扣stdout0假设，不是完整总量。stderr301B及对应副本、outer207B双计仍已知；cleanup与五根不存在不受此限制。measurement FAIL，第三NOT_RUN，无剩余授权。不从261B分类推路径/原因，不读已删raw，不补跑。后继若修bound资格需绑定该槽预期完成并另审，当前不改源码。
