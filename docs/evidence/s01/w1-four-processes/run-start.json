@@ -1,0 +1,37 @@
+{
+  "label": "w1-four-processes",
+  "scenario": "four-processes",
+  "windowId": "S01-W1-20261006T070330Z",
+  "databaseName": "flow_s01_57062_a064710cdfff4e9dae940ae99eaea9fe",
+  "tasks": 16,
+  "attempts": 16,
+  "requireGate": true,
+  "startedAt": "2026-10-06T07:03:46.496Z",
+  "maxWindowMs": 30000,
+  "usedTasks": 16,
+  "usedAttempts": 10,
+  "usedMs": 9487.236291,
+  "priorRuns": [
+    {
+      "label": "smoke-first",
+      "tasks": 4,
+      "attempts": 4,
+      "elapsedMs": 4333.692333,
+      "failed": true
+    },
+    {
+      "label": "smoke-repair",
+      "tasks": 4,
+      "attempts": 4,
+      "elapsedMs": 2820.801583,
+      "failed": false
+    },
+    {
+      "label": "w1-protocol-gate",
+      "tasks": 8,
+      "attempts": 2,
+      "elapsedMs": 2332.7423750000003,
+      "failed": false
+    }
+  ]
+}

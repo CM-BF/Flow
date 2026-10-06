@@ -1,0 +1,23 @@
+{
+  "reviewer": "/root/b01_bounded_reads / gpt-6-astra, independent read-only",
+  "reviewedAt": "2026-10-06T07:00:33Z",
+  "target": "9da9de1b6778afec5219e55f39b53b365c8cf900",
+  "observedMetadata": "8c5edbfae84d8ca1063cf52e46183a049a775f05",
+  "observedDirty": false,
+  "decision": "APPROVED",
+  "scope": "Gate8 + formal16 readiness only; requires coordinated window; not capacity/results/fault/browser approval",
+  "unresolvedP1P2": [],
+  "readinessManifestAsReviewedSha256": "7ef8aa7e551674746f3a179d767143ebc40fe06fcde68fc7a31d0878461b1331",
+  "verified": {
+    "sources": 15,
+    "rawLogs": 2,
+    "unitTests": 6,
+    "typecheckExit": 0,
+    "productionAppsPackagesDiff": [],
+    "priorSmokeTasks": 8,
+    "priorSmokeAttempts": 8,
+    "priorSmokeElapsedMs": 7154.493916
+  },
+  "reviewerRanTestsOrServices": false,
+  "deferredNonblocking": "Before later ACK-fault scenarios, count claim-grant or conservatively reserve attempts that were claimed but emitted no events. Current two audited smoke runs are complete; gate failure stops formal, and current 32-task window stays bounded."
+}

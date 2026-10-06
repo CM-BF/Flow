@@ -1,0 +1,43 @@
+# S01 独立审查
+
+状态：APPROVED
+Review target commit：9da9de1b6778afec5219e55f39b53b365c8cf900
+
+批准范围：`experiments/runner-capacity` 的8任务协议超领门禁和16任务四进程测量入口，**仅运行准备**。运行必须有Goal Owner/Execution Lead协调的窗口；未批准容量结果、ACK故障或浏览器后继。生产基线115b0dbdfa02db5483f9e9699852682ce699633c，apps/packages零diff。唯一owner Mika / gpt-6-astra，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`。
+
+独立reviewer `/root/b01_bounded_reads` / gpt-6-astra，于2026-10-06T07:00:33Z只读核查；现场metadata8c5edbfae84d8ca1063cf52e46183a049a775f05 clean。15源码/配置与target/工作树逐项同hash，2raw日志同hash；6纯统计/预算unit tests通过、noEmit0。review者没有运行测试、数据库任务或服务。参见[固定准备证据](../../docs/evidence/s01/window-readiness-manifest.json)、[独审回执](../../docs/evidence/s01/window-independent-review.json)。
+
+## 验收与修复
+
+已核：128空会话完整分页/DB零turn；16任务预受理后四进程共同放行；96 runner events、80 timeline、96 workspace独立游标/内容对账；工具/adapter/人工等待独立计量；首次claim租期推导的时间区间及量化边界；四端点single-flight轻读、真实PG版本/连接分类；20秒工作+10秒清理；同scenario禁重跑、累计64 tasks/attempts及180秒含清理预算；旧run缺完成receipt时拒后继，formal必须先有成功gate。
+
+c32d4d1 formal与6c5568a gate初审的两个P2：末次terminal后读取混入load；gate遗漏完整证据存储字节。9da修复已复核：立即break并保留四端点n=0/active与queue-only分类；完整DB+既有evidence+run-start/owned-process+最终JSON核算。PG版本P3也已补。无未解决P1/P2。
+
+非阻断后继事项：ACK故障阶段若领取但尚未emit，不能仅用report-start计attempt；实施该后继前改claim-grant或保守reservation并测试未知ACK计数。当前两份已审smoke历史均完整计8tasks/8attempts/7154.493916ms，gate失败阻止formal，当前窗口最多累计32tasks，不受该后继事项影响。
+
+## 历史已批准片段与证据边界
+
+- 合同target a553f3f由Execution Lead/Goal Owner独立核对，要求single-flight及总时限含清理，允许首4任务功能smoke。
+- bfe49a4首轮smoke整体FAILED：动态SQL引用不存在的attempt.created_at；4任务/24事件/清理局部通过不能抵消失败。[原始结果](../../docs/evidence/s01/smoke-first/result.json)保留。
+- Goal Owner批准从可选declared-capacity4对照扣4，使该组16→12，允许一次额外4任务修复复核，总64不变。[分配记录](../../docs/evidence/s01/budget-reallocation.json)。
+- 执行53c8713、review target65d7a57的smoke-repair于2026-10-06T06:42:10.555→06:42:13.377通过。独立worker于06:43:50Z APPROVED该功能片段：4任务/24事件/4工具，3进程exit0、DB及outbox清空，12source前后同hash；原失败不改写。见[smoke证据](../../docs/evidence/s01/smoke-manifest.json)及[历史独审](../../docs/evidence/s01/independent-review.json)。smoke8额度已用尽，入口已封闭。
+
+所有上述批准均不表示main已集成或个人服务已刷新；纯unit检查、协议claim容量、真实fixture执行、实际provider能力分开陈述。上述准备审查当时尚未运行正式窗口；后续W1结果审查见下节，仍无模型容量或SLO结论。
+
+## 可复制复审步骤
+
+先核权威worktree/branch/head/dirty和原子claim，按find-skills本地优先方法复用clean-code/codebase-design。读取固定target9da的实验目录、window-readiness-manifest、status及原始logs；对照115b实际公开HTTP/schema与runtime，不依赖README想象字段。核先gate后formal、精确预算及同scenario不可重跑、初次lease时间来源、三个event游标空间、IPC时钟边界和finally自有资源回收。review只读，具体修复交唯一owner；不启动服务/负载，未取得协调窗口不得运行正式入口。新增源码或窗口结果需要新的限定审查，不沿用本准备批准。
+
+## W1 独立结果审查
+
+状态：APPROVED（限定W1结果）
+
+结果target `9e10e0949f3f9977e21cf8aab63e56f5f9231157`；实现target9da、执行HEAD be923afab6d95ea21f493c63818dddbea380af7d；生产base115b。独立reviewer `/root/b01_bounded_reads` / gpt-6-astra 于2026-10-06T07:07:22Z只读复核，无P1/P2。owner后继9811仅TODO metadata；当前更新不修改源码或raw。
+
+核验两raw及manifest哈希、gate10/formal16源码前后与固定commit一致；重算96唯一sender events及ACK、16终ACK先于runner closed、16工具摘要/初始claim及每runner4attempt；保守attempt并发下/上界4/4，IPC adapter/tool观察峰值4。复核nearest-rank、小样本/active分组、PG与center采样、窗口/预算/6进程exit0/两DB及outbox清理。没有新增测试、数据库、服务或负载。
+
+DB/public行集清理后未留存，只认可固定程序完整断言通过，不能把重构数据当实测。poll50ms相对生产默认500ms、读端3–4样本且active2–4、正式3.648秒包含会话创建/启动/清理，均已明确；不得外推100执行agents、provider容量或SLO。
+
+[结果报告](../../docs/evidence/s01/w1-results.md)、[冻结manifest](../../docs/evidence/s01/w1-result-manifest.json)、[独审回执](../../docs/evidence/s01/w1-independent-review.json)。原manifest的pending字段保持原始冻结状态，以独审回执更新结论。
+
+可复制复审：固定9e结果commit，校验manifest SHA及两raw，核对before/after源码与执行be923/已审9da；按sender id/sequence/types/ACK逐项重算、以claim租期保守区间统计峰值、核每端点n与分组及清理/预算；只读，不重新运行负载。W1验收无需补对照；可选后继优先declared4/12task，待Goal Owner决定及窗口，ACK故障/浏览器仍开放。main接收另记。

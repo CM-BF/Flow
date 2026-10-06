@@ -1,0 +1,2417 @@
+{
+  "kind": "functional-smoke-not-capacity-measurement",
+  "startedAt": "2026-10-06T06:42:10.555Z",
+  "endedAt": "2026-10-06T06:42:13.377Z",
+  "head": "53c8713cb8e6a3c9b7d869c896656dad4e7a086d",
+  "sourceFiles": [
+    {
+      "path": "experiments/runner-capacity/child.ts",
+      "sha256": "0a683b87655885c91e9a0357259dbc2157a275d3265a81e9f522942f25e6bbd5"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "experiments/runner-capacity/smoke.ts",
+      "sha256": "56c1d4f59ebe05a44325f7181e2b129fa9d4dbb3331b4d5337f769624cd39051"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/contract.json",
+      "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+    },
+    {
+      "path": "experiments/runner-capacity/tsconfig.json",
+      "sha256": "a4b14000b1b940448f7f7682370795997d1645d159a70de9fc31c170834fe85f"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "sha256": "8116119e7249575111951ba8abc21b1933f3c45d86455d32e8febf27f1404db3"
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    }
+  ],
+  "sourceFilesAfter": [
+    {
+      "path": "experiments/runner-capacity/child.ts",
+      "sha256": "0a683b87655885c91e9a0357259dbc2157a275d3265a81e9f522942f25e6bbd5"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "experiments/runner-capacity/smoke.ts",
+      "sha256": "56c1d4f59ebe05a44325f7181e2b129fa9d4dbb3331b4d5337f769624cd39051"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/contract.json",
+      "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+    },
+    {
+      "path": "experiments/runner-capacity/tsconfig.json",
+      "sha256": "a4b14000b1b940448f7f7682370795997d1645d159a70de9fc31c170834fe85f"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "sha256": "8116119e7249575111951ba8abc21b1933f3c45d86455d32e8febf27f1404db3"
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    }
+  ],
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "cpu": "Apple M3 Max",
+    "logicalCpus": 16,
+    "memoryBytes": 68719476736,
+    "loadavg": [
+      8.90087890625,
+      12.5576171875,
+      13.97216796875
+    ]
+  },
+  "modelCalls": 0,
+  "cloudCalls": 0,
+  "submittedTaskIds": [
+    "149824b8-cd48-4c62-818e-23f99db839d5",
+    "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+    "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+    "4e1626d2-9caa-4ed6-88c9-b60be10023e5"
+  ],
+  "checks": [
+    "Four API-created persistent conversation identities match; zero model turns submitted.",
+    "Four real runtime/outbox tasks completed and verified.",
+    "All terminal ACKs received; ordered IPC flushed and pending outboxes empty after runner exit.",
+    "24 exact events match; four initial claim identities match DB, no unfinished attempts or overlap at the conservative timestamp bounds."
+  ],
+  "failure": null,
+  "elapsedMs": 2820.801583,
+  "cleanupMs": 70.84679200000028,
+  "measuredDataBytes": 11392812,
+  "rawFacts": {
+    "conversations": 4,
+    "conversationTurns": 0,
+    "nativeSessions": 4,
+    "tasks": 4,
+    "runnerProcesses": 2,
+    "registeredCapacityPerRunner": 1,
+    "counts": [
+      {
+        "runner_id": "5d516d47-4ffd-4af6-9665-344ccee922b4",
+        "attempts": 2,
+        "unfinished": 0
+      },
+      {
+        "runner_id": "4faebb2a-d2e5-4f98-be4c-cb1f845b247c",
+        "attempts": 2,
+        "unfinished": 0
+      }
+    ],
+    "attempts": [
+      {
+        "id": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+        "task_id": "149824b8-cd48-4c62-818e-23f99db839d5",
+        "runner_id": "4faebb2a-d2e5-4f98-be4c-cb1f845b247c",
+        "completed_at": "2026-10-06T06:42:12.908Z",
+        "completed_epoch_ms": "1791268932908.458000",
+        "task_created_epoch_ms": "1791268932072.000000",
+        "claimedAtLowerMs": 1791268932553,
+        "claimedAtUpperMs": 1791268932554,
+        "queueWaitDerivedMs": 481
+      },
+      {
+        "id": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+        "task_id": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+        "runner_id": "5d516d47-4ffd-4af6-9665-344ccee922b4",
+        "completed_at": "2026-10-06T06:42:12.909Z",
+        "completed_epoch_ms": "1791268932909.626000",
+        "task_created_epoch_ms": "1791268932088.000000",
+        "claimedAtLowerMs": 1791268932562,
+        "claimedAtUpperMs": 1791268932563,
+        "queueWaitDerivedMs": 474
+      },
+      {
+        "id": "849e5912-2541-446e-b714-1665d14afb68",
+        "task_id": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+        "runner_id": "5d516d47-4ffd-4af6-9665-344ccee922b4",
+        "completed_at": "2026-10-06T06:42:13.292Z",
+        "completed_epoch_ms": "1791268933292.136000",
+        "task_created_epoch_ms": "1791268932102.000000",
+        "claimedAtLowerMs": 1791268932972,
+        "claimedAtUpperMs": 1791268932973,
+        "queueWaitDerivedMs": 870
+      },
+      {
+        "id": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+        "task_id": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+        "runner_id": "4faebb2a-d2e5-4f98-be4c-cb1f845b247c",
+        "completed_at": "2026-10-06T06:42:13.293Z",
+        "completed_epoch_ms": "1791268933293.421000",
+        "task_created_epoch_ms": "1791268932095.000000",
+        "claimedAtLowerMs": 1791268932971,
+        "claimedAtUpperMs": 1791268932972,
+        "queueWaitDerivedMs": 876
+      }
+    ],
+    "eventCount": 24,
+    "toolOperations": 4,
+    "databaseBytes": 11058199,
+    "temporaryBytes": 262324,
+    "attemptTimeMethod": "Initial claim lease expiry minus its configured lease duration; no persisted attempt creation timestamp. Claim serialization is millisecond precision; queue differences against millisecond task timestamps are approximate (conservative 2ms quantization allowance)."
+  },
+  "cleanup": [
+    {
+      "pid": 49884,
+      "role": "runner",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 49885,
+      "role": "runner",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 49882,
+      "role": "center",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "observerClosed": true
+    },
+    {
+      "databaseName": "flow_s01_49867_b6d7fb04cedc4a72b45a853231b3e91a",
+      "remaining": []
+    },
+    {
+      "pendingOutboxFiles": []
+    },
+    {
+      "temporaryFilesRemoved": true
+    }
+  ],
+  "samples": [
+    {
+      "path": "/api/conversations",
+      "elapsedMs": 42.54208299999982,
+      "bytes": 478,
+      "status": 201
+    },
+    {
+      "path": "/api/conversations",
+      "elapsedMs": 5.841125000000147,
+      "bytes": 478,
+      "status": 201
+    },
+    {
+      "path": "/api/conversations",
+      "elapsedMs": 4.662207999999964,
+      "bytes": 478,
+      "status": 201
+    },
+    {
+      "path": "/api/conversations",
+      "elapsedMs": 6.114375000000109,
+      "bytes": 478,
+      "status": 201
+    },
+    {
+      "path": "/api/conversations?limit=50",
+      "elapsedMs": 3.592834000000039,
+      "bytes": 1113,
+      "status": 200
+    },
+    {
+      "path": "/api/runners",
+      "elapsedMs": 5.298249999999825,
+      "bytes": 105,
+      "status": 200
+    },
+    {
+      "path": "/api/runners",
+      "elapsedMs": 7.149958999999853,
+      "bytes": 105,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks",
+      "elapsedMs": 15.51195800000005,
+      "bytes": 245,
+      "status": 202
+    },
+    {
+      "path": "/api/tasks",
+      "elapsedMs": 9.84112499999992,
+      "bytes": 245,
+      "status": 202
+    },
+    {
+      "path": "/api/tasks",
+      "elapsedMs": 6.70837500000016,
+      "bytes": 245,
+      "status": 202
+    },
+    {
+      "path": "/api/tasks",
+      "elapsedMs": 6.900499999999965,
+      "bytes": 245,
+      "status": 202
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 3.2625000000000455,
+      "bytes": 439,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 5.750958000000082,
+      "bytes": 439,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 4.7539580000000115,
+      "bytes": 439,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 4.398959000000104,
+      "bytes": 439,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 5.7971669999997175,
+      "bytes": 439,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 4.224707999999737,
+      "bytes": 1037,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 4.524374999999964,
+      "bytes": 1037,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 3.7359999999998763,
+      "bytes": 1235,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 4.0367089999999735,
+      "bytes": 1631,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 4.603874999999789,
+      "bytes": 1631,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 9.22808299999997,
+      "bytes": 1631,
+      "status": 200
+    },
+    {
+      "path": "/api/tasks/149824b8-cd48-4c62-818e-23f99db839d5",
+      "elapsedMs": 3.3200000000001637,
+      "bytes": 1631,
+      "status": 200
+    }
+  ],
+  "observations": [
+    {
+      "kind": "ready",
+      "baseUrl": "http://127.0.0.1:61670",
+      "pid": 49882,
+      "monotonicMs": 900.890792,
+      "receivedAtMs": 1074.035292
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 2,
+      "rssBytes": 136790016,
+      "cpu": {
+        "user": 453606,
+        "system": 62097
+      },
+      "pid": 49882,
+      "monotonicMs": 1002.946083,
+      "receivedAtMs": 1175.710542
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 2,
+      "rssBytes": 136806400,
+      "cpu": {
+        "user": 453969,
+        "system": 62210
+      },
+      "pid": 49882,
+      "monotonicMs": 1104.455958,
+      "receivedAtMs": 1277.227417
+    },
+    {
+      "kind": "ready",
+      "label": "runner-0",
+      "pid": 49884,
+      "monotonicMs": 202.141292,
+      "receivedAtMs": 1362.900667
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 1,
+      "tcpConnections": 3,
+      "rssBytes": 136937472,
+      "cpu": {
+        "user": 455500,
+        "system": 62411
+      },
+      "pid": 49882,
+      "monotonicMs": 1204.523,
+      "receivedAtMs": 1377.260584
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 19.899209000000013,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 229.158792,
+      "receivedAtMs": 1389.820292
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 10.138874999999985,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 292.361459,
+      "receivedAtMs": 1453.279459
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 3,
+      "rssBytes": 137232384,
+      "cpu": {
+        "user": 458247,
+        "system": 63222
+      },
+      "pid": 49882,
+      "monotonicMs": 1305.402625,
+      "receivedAtMs": 1478.177542
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 8.25849999999997,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 353.256417,
+      "receivedAtMs": 1513.921292
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 9.566708000000006,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 415.295875,
+      "receivedAtMs": 1576.010709
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 3,
+      "rssBytes": 137510912,
+      "cpu": {
+        "user": 460971,
+        "system": 63709
+      },
+      "pid": 49882,
+      "monotonicMs": 1406.656375,
+      "receivedAtMs": 1579.377292
+    },
+    {
+      "kind": "ready",
+      "label": "runner-1",
+      "pid": 49885,
+      "monotonicMs": 202.222625,
+      "receivedAtMs": 1590.025292
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 26.678791999999987,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49885,
+      "monotonicMs": 236.397625,
+      "receivedAtMs": 1624.085917
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 6.414708000000019,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 472.341625,
+      "receivedAtMs": 1633.035917
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 1,
+      "tcpConnections": 4,
+      "rssBytes": 141656064,
+      "cpu": {
+        "user": 473367,
+        "system": 65539
+      },
+      "pid": 49882,
+      "monotonicMs": 1507.049583,
+      "receivedAtMs": 1679.784667
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 9.768291999999974,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49885,
+      "monotonicMs": 299.47525,
+      "receivedAtMs": 1687.192375
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 8.465125000000057,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 532.874625,
+      "receivedAtMs": 1693.516542
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 8.795290999999963,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49885,
+      "monotonicMs": 360.906375,
+      "receivedAtMs": 1748.610875
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 7.960542000000032,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 593.27175,
+      "receivedAtMs": 1753.917209
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 4,
+      "rssBytes": 141721600,
+      "cpu": {
+        "user": 478332,
+        "system": 66314
+      },
+      "pid": 49882,
+      "monotonicMs": 1609.197375,
+      "receivedAtMs": 1781.949292
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 13.073290999999983,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49885,
+      "monotonicMs": 426.661459,
+      "receivedAtMs": 1814.431375
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 11.71083299999998,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 657.583084,
+      "receivedAtMs": 1818.283375
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 12.630708000000027,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49885,
+      "monotonicMs": 492.192959,
+      "receivedAtMs": 1880.001
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 12.086999999999989,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 721.041417,
+      "receivedAtMs": 1881.700875
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 4,
+      "rssBytes": 141737984,
+      "cpu": {
+        "user": 483981,
+        "system": 67373
+      },
+      "pid": 49882,
+      "monotonicMs": 1709.366833,
+      "receivedAtMs": 1882.080375
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 13.041832999999997,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49885,
+      "monotonicMs": 558.223334,
+      "receivedAtMs": 1946.024875
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 13.755292000000054,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 787.729042,
+      "receivedAtMs": 1948.373084
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 4,
+      "rssBytes": 141770752,
+      "cpu": {
+        "user": 487444,
+        "system": 68102
+      },
+      "pid": 49882,
+      "monotonicMs": 1810.996208,
+      "receivedAtMs": 1983.762125
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 13.031833000000006,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49884,
+      "monotonicMs": 851.795584,
+      "receivedAtMs": 2012.51375
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 15.887542000000053,
+      "status": 200,
+      "bytes": 40,
+      "pid": 49885,
+      "monotonicMs": 626.92575,
+      "receivedAtMs": 2014.652292
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 1,
+      "tcpConnections": 4,
+      "rssBytes": 141885440,
+      "cpu": {
+        "user": 505015,
+        "system": 70540
+      },
+      "pid": 49882,
+      "monotonicMs": 1910.671875,
+      "receivedAtMs": 2083.497292
+    },
+    {
+      "kind": "claim-grant",
+      "label": "runner-0",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "runnerId": "4faebb2a-d2e5-4f98-be4c-cb1f845b247c",
+      "initialLeaseExpiresAt": "2026-10-06T06:42:22.553Z",
+      "remainingLeaseMs": 10000,
+      "pid": 49884,
+      "monotonicMs": 923.31175,
+      "receivedAtMs": 2084.09525
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 18.914541999999983,
+      "status": 200,
+      "bytes": 426,
+      "pid": 49884,
+      "monotonicMs": 923.373709,
+      "receivedAtMs": 2084.153667
+    },
+    {
+      "kind": "claim-grant",
+      "label": "runner-1",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "runnerId": "5d516d47-4ffd-4af6-9665-344ccee922b4",
+      "initialLeaseExpiresAt": "2026-10-06T06:42:22.562Z",
+      "remainingLeaseMs": 10000,
+      "pid": 49885,
+      "monotonicMs": 704.308792,
+      "receivedAtMs": 2092.060042
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 26.036625000000072,
+      "status": 200,
+      "bytes": 426,
+      "pid": 49885,
+      "monotonicMs": 704.380917,
+      "receivedAtMs": 2092.098959
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 10.161000000000058,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 934.996292,
+      "receivedAtMs": 2095.686917
+    },
+    {
+      "kind": "adapter-start",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "pid": 49884,
+      "monotonicMs": 935.330375,
+      "receivedAtMs": 2095.983917
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 9.098917000000029,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 714.712875,
+      "receivedAtMs": 2102.455209
+    },
+    {
+      "kind": "adapter-start",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "pid": 49885,
+      "monotonicMs": 715.04625,
+      "receivedAtMs": 2102.726042
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 7.5,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 942.909959,
+      "receivedAtMs": 2103.547
+    },
+    {
+      "kind": "tool-start",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "pid": 49884,
+      "monotonicMs": 943.037625,
+      "receivedAtMs": 2103.651459
+    },
+    {
+      "kind": "tool-end",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "elapsedMs": 1.4932919999999967,
+      "bytes": 65536,
+      "digest": "b0685113b75cb7e54bdfd644616749e0a61735946ebf4e2bae50ca1c274c00b2",
+      "pid": 49884,
+      "monotonicMs": 944.584667,
+      "receivedAtMs": 2105.224292
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 8.84462499999995,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 723.987959,
+      "receivedAtMs": 2111.703375
+    },
+    {
+      "kind": "tool-start",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "pid": 49885,
+      "monotonicMs": 724.190375,
+      "receivedAtMs": 2111.86975
+    },
+    {
+      "kind": "tool-end",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "elapsedMs": 1.2841250000000173,
+      "bytes": 65536,
+      "digest": "b0685113b75cb7e54bdfd644616749e0a61735946ebf4e2bae50ca1c274c00b2",
+      "pid": 49885,
+      "monotonicMs": 725.531875,
+      "receivedAtMs": 2113.20325
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "events": [
+        {
+          "id": "dc9085ba-d850-421d-b758-1ace402c328e",
+          "sequence": 1,
+          "type": "session",
+          "digest": "41033bab4d68b3109ec727cf7d00f14bf51ad09e656708868f0c03e3bc445d3f"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 958.047792,
+      "receivedAtMs": 2118.769542
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "events": [
+        {
+          "id": "881e1754-6fed-437b-bb48-d16d057f98b1",
+          "sequence": 1,
+          "type": "session",
+          "digest": "ce180aaa5f0aa432f2353b77f41082d926259bc121e82204a79645954fcf2920"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 738.208625,
+      "receivedAtMs": 2125.983459
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 22.786708999999973,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 971.322834,
+      "receivedAtMs": 2131.982667
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 1
+      },
+      "pid": 49884,
+      "monotonicMs": 971.351459,
+      "receivedAtMs": 2132.019959
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "eventType": "session",
+      "elapsedMs": 26.938084000000003,
+      "pid": 49884,
+      "monotonicMs": 971.871875,
+      "receivedAtMs": 2132.504375
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "events": [
+        {
+          "id": "2364de4f-f4f2-496f-93af-ea1e99393367",
+          "sequence": 2,
+          "type": "message",
+          "digest": "01ef98779770999288d4bfdf678e97aa1f08d12b2612776399b0199c27b6784e"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 972.849792,
+      "receivedAtMs": 2133.489667
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 19.79287499999998,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 748.897459,
+      "receivedAtMs": 2136.611042
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 1
+      },
+      "pid": 49885,
+      "monotonicMs": 748.94375,
+      "receivedAtMs": 2136.637542
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "eventType": "session",
+      "elapsedMs": 23.48920899999996,
+      "pid": 49885,
+      "monotonicMs": 749.3665,
+      "receivedAtMs": 2137.142709
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "events": [
+        {
+          "id": "16597481-a6b8-4334-96d1-b6fb492edc2d",
+          "sequence": 2,
+          "type": "message",
+          "digest": "2647ebf5b2097a00f4aa342bc86f9b01b905708bf5de183de7d3c788bdceb38a"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 750.34625,
+      "receivedAtMs": 2138.051125
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 8.677416999999991,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 981.4905,
+      "receivedAtMs": 2142.151417
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 2
+      },
+      "pid": 49884,
+      "monotonicMs": 981.520917,
+      "receivedAtMs": 2142.173584
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "eventType": "message",
+      "elapsedMs": 9.98616699999991,
+      "pid": 49884,
+      "monotonicMs": 981.872667,
+      "receivedAtMs": 2142.48575
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 6.913041999999905,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 757.21125,
+      "receivedAtMs": 2144.920417
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 2
+      },
+      "pid": 49885,
+      "monotonicMs": 757.235042,
+      "receivedAtMs": 2144.947042
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "eventType": "message",
+      "elapsedMs": 8.190249999999992,
+      "pid": 49885,
+      "monotonicMs": 757.572625,
+      "receivedAtMs": 2145.249709
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 6.124041999999918,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 988.064167,
+      "receivedAtMs": 2148.686459
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 6.014666000000034,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 763.641042,
+      "receivedAtMs": 2151.308667
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 6,
+      "rssBytes": 142196736,
+      "cpu": {
+        "user": 525637,
+        "system": 74670
+      },
+      "pid": 49882,
+      "monotonicMs": 2011.445208,
+      "receivedAtMs": 2184.177625
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 6,
+      "rssBytes": 142213120,
+      "cpu": {
+        "user": 526346,
+        "system": 74830
+      },
+      "pid": 49882,
+      "monotonicMs": 2112.646958,
+      "receivedAtMs": 2285.4335
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 16.59266600000001,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 1207.226584,
+      "receivedAtMs": 2368.020584
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 15.577042000000006,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 980.371875,
+      "receivedAtMs": 2368.075792
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "events": [
+        {
+          "id": "a3e099ed-ab65-4be4-aa7d-ef7f68683c14",
+          "sequence": 3,
+          "type": "artifact",
+          "digest": "79b70ddc41a719009f67c05b4eb67d92739280038543b4f3183f44263b145960"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 984.080292,
+      "receivedAtMs": 2371.862167
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "events": [
+        {
+          "id": "50fd4cec-6816-4291-96c1-bd5b5e0523df",
+          "sequence": 3,
+          "type": "artifact",
+          "digest": "91af9b0a92a8ef857a4b3f1fff004ae8dae1796d1bcc112cd80226148bd21e99"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1213.796125,
+      "receivedAtMs": 2374.478334
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 2,
+      "tcpConnections": 6,
+      "rssBytes": 142311424,
+      "cpu": {
+        "user": 537295,
+        "system": 76912
+      },
+      "pid": 49882,
+      "monotonicMs": 2212.634958,
+      "receivedAtMs": 2385.402917
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 16.164416000000074,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1229.893834,
+      "receivedAtMs": 2390.798417
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 3
+      },
+      "pid": 49884,
+      "monotonicMs": 1229.934625,
+      "receivedAtMs": 2390.803875
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "eventType": "artifact",
+      "elapsedMs": 21.751166999999896,
+      "pid": 49884,
+      "monotonicMs": 1230.576459,
+      "receivedAtMs": 2391.224709
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 20.505499999999984,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1004.508917,
+      "receivedAtMs": 2392.203375
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 3
+      },
+      "pid": 49885,
+      "monotonicMs": 1004.5365,
+      "receivedAtMs": 2392.320542
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "eventType": "artifact",
+      "elapsedMs": 23.14329100000009,
+      "pid": 49885,
+      "monotonicMs": 1004.913625,
+      "receivedAtMs": 2392.611042
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "events": [
+        {
+          "id": "51b6c415-ea59-49e5-b00f-5619826ca0de",
+          "sequence": 4,
+          "type": "verification",
+          "digest": "d5acd39829a165bec3a143eb2e61b885afb05b6c79641d7d7f317cce35aa2ac8"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1232.827709,
+      "receivedAtMs": 2393.500875
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "events": [
+        {
+          "id": "92c65971-54bf-4537-b5f7-52864d0fb0d2",
+          "sequence": 4,
+          "type": "verification",
+          "digest": "5c0d857bcf6890ded7c1048b8715b96c600d1d8a52667624692fa8a8760b58ad"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1006.965334,
+      "receivedAtMs": 2394.6565
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 10.948166000000015,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1017.846917,
+      "receivedAtMs": 2405.5525
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 4
+      },
+      "pid": 49885,
+      "monotonicMs": 1017.876792,
+      "receivedAtMs": 2405.573792
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "eventType": "verification",
+      "elapsedMs": 13.488292000000001,
+      "pid": 49885,
+      "monotonicMs": 1018.565417,
+      "receivedAtMs": 2406.250459
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 14.38587500000017,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1247.151292,
+      "receivedAtMs": 2407.776584
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 4
+      },
+      "pid": 49884,
+      "monotonicMs": 1247.173667,
+      "receivedAtMs": 2407.792584
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "eventType": "verification",
+      "elapsedMs": 16.783915999999863,
+      "pid": 49884,
+      "monotonicMs": 1247.569292,
+      "receivedAtMs": 2408.199584
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "events": [
+        {
+          "id": "60d9cfae-3c65-40db-8960-9b640d2a595d",
+          "sequence": 5,
+          "type": "usage",
+          "digest": "af2dc2f760a870338975abd8798685b27e83458d0bc0be5e5aae2f98352d4303"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1022.732375,
+      "receivedAtMs": 2410.440125
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "events": [
+        {
+          "id": "63a3805e-b03d-494c-95b4-76b1d21f8961",
+          "sequence": 5,
+          "type": "usage",
+          "digest": "8cdaf85729fa7e471db64dc9fe8b865b324695db38a4bdf26237c9689903c2ac"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1249.862292,
+      "receivedAtMs": 2410.479834
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 15.036041000000068,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1264.839084,
+      "receivedAtMs": 2425.518667
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 5
+      },
+      "pid": 49884,
+      "monotonicMs": 1264.869125,
+      "receivedAtMs": 2425.528084
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "eventType": "usage",
+      "elapsedMs": 17.547667000000047,
+      "pid": 49884,
+      "monotonicMs": 1265.153959,
+      "receivedAtMs": 2425.788084
+    },
+    {
+      "kind": "adapter-end",
+      "taskId": "149824b8-cd48-4c62-818e-23f99db839d5",
+      "label": "runner-0",
+      "pid": 49884,
+      "monotonicMs": 1265.17225,
+      "receivedAtMs": 2425.808667
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "events": [
+        {
+          "id": "dc060feb-cc33-4d57-9581-4af5ab48314e",
+          "sequence": 6,
+          "type": "completed",
+          "digest": "6423bed50a6cacaf389f8391676c50166ff3ef003bafb1cb97eb9e40285c68b8"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1266.59175,
+      "receivedAtMs": 2427.228792
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 17.073333000000048,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1039.7325,
+      "receivedAtMs": 2427.402625
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 5
+      },
+      "pid": 49885,
+      "monotonicMs": 1039.757542,
+      "receivedAtMs": 2427.416542
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "eventType": "usage",
+      "elapsedMs": 21.40012499999989,
+      "pid": 49885,
+      "monotonicMs": 1040.024167,
+      "receivedAtMs": 2427.700167
+    },
+    {
+      "kind": "adapter-end",
+      "taskId": "7af7fe7e-6ee5-4e21-95af-76ca6d873965",
+      "label": "runner-1",
+      "pid": 49885,
+      "monotonicMs": 1040.0565,
+      "receivedAtMs": 2427.710625
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "events": [
+        {
+          "id": "d88d9497-10d0-42b1-8f57-11cdc10ccf87",
+          "sequence": 6,
+          "type": "completed",
+          "digest": "6d6e26b4b519d690fc2995d5b9f81f80106d30daa4ad8c9b5410a9f4ea258544"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1041.396042,
+      "receivedAtMs": 2429.065167
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 8.542582999999922,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1275.092667,
+      "receivedAtMs": 2435.745834
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "f81eb2b9-04dd-44b9-a029-962c65001c9b",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 6
+      },
+      "pid": 49884,
+      "monotonicMs": 1275.113209,
+      "receivedAtMs": 2435.753209
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 8.270833999999923,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1049.636209,
+      "receivedAtMs": 2437.310875
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "6aa54eb3-397e-4256-b10f-5b8f1c952a27",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 6
+      },
+      "pid": 49885,
+      "monotonicMs": 1049.650917,
+      "receivedAtMs": 2437.328417
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 6,
+      "rssBytes": 142540800,
+      "cpu": {
+        "user": 552699,
+        "system": 80402
+      },
+      "pid": 49882,
+      "monotonicMs": 2313.537,
+      "receivedAtMs": 2486.339125
+    },
+    {
+      "kind": "claim-grant",
+      "label": "runner-0",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "runnerId": "4faebb2a-d2e5-4f98-be4c-cb1f845b247c",
+      "initialLeaseExpiresAt": "2026-10-06T06:42:22.971Z",
+      "remainingLeaseMs": 10000,
+      "pid": 49884,
+      "monotonicMs": 1338.879625,
+      "receivedAtMs": 2499.540667
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/claim",
+      "elapsedMs": 11.951416999999992,
+      "status": 200,
+      "bytes": 426,
+      "pid": 49884,
+      "monotonicMs": 1338.919625,
+      "receivedAtMs": 2499.565792
+    },
+    {
+      "kind": "claim-grant",
+      "label": "runner-1",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "runnerId": "5d516d47-4ffd-4af6-9665-344ccee922b4",
+      "initialLeaseExpiresAt": "2026-10-06T06:42:22.972Z",
+      "remainingLeaseMs": 10000,
+      "pid": 49885,
+      "monotonicMs": 1113.695667,
+      "receivedAtMs": 2501.407209
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/claim",
+      "elapsedMs": 11.197499999999991,
+      "status": 200,
+      "bytes": 426,
+      "pid": 49885,
+      "monotonicMs": 1113.729834,
+      "receivedAtMs": 2501.4275
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 8.999000000000024,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 1348.823917,
+      "receivedAtMs": 2509.535459
+    },
+    {
+      "kind": "adapter-start",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "pid": 49884,
+      "monotonicMs": 1348.972375,
+      "receivedAtMs": 2509.599542
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 9.673915999999963,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 1123.842709,
+      "receivedAtMs": 2511.563834
+    },
+    {
+      "kind": "adapter-start",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "pid": 49885,
+      "monotonicMs": 1123.986125,
+      "receivedAtMs": 2511.671625
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 7.615041000000019,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 1356.648834,
+      "receivedAtMs": 2517.302417
+    },
+    {
+      "kind": "tool-start",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "pid": 49884,
+      "monotonicMs": 1356.815959,
+      "receivedAtMs": 2517.432417
+    },
+    {
+      "kind": "tool-end",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "elapsedMs": 1.0147500000000491,
+      "bytes": 65536,
+      "digest": "b0685113b75cb7e54bdfd644616749e0a61735946ebf4e2bae50ca1c274c00b2",
+      "pid": 49884,
+      "monotonicMs": 1357.885042,
+      "receivedAtMs": 2518.518917
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 7.145999999999958,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 1131.189625,
+      "receivedAtMs": 2518.859125
+    },
+    {
+      "kind": "tool-start",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "pid": 49885,
+      "monotonicMs": 1131.298417,
+      "receivedAtMs": 2518.9925
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "events": [
+        {
+          "id": "19dad56f-2e8d-4535-81fd-6e07f7a2a278",
+          "sequence": 1,
+          "type": "session",
+          "digest": "1601de6a2331271be68ba678854662725f0fb898be4fc5a2fa76fb5cf2ad5f08"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1358.641667,
+      "receivedAtMs": 2519.266375
+    },
+    {
+      "kind": "tool-end",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "elapsedMs": 0.5637080000001333,
+      "bytes": 65536,
+      "digest": "b0685113b75cb7e54bdfd644616749e0a61735946ebf4e2bae50ca1c274c00b2",
+      "pid": 49885,
+      "monotonicMs": 1131.912792,
+      "receivedAtMs": 2519.578875
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "events": [
+        {
+          "id": "0502f12f-4277-457f-9577-724820e9341b",
+          "sequence": 1,
+          "type": "session",
+          "digest": "9ad50211d1657385eafd93ec87766779d9294ae3b98f4e4c4a7370f322b2aa73"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1132.512125,
+      "receivedAtMs": 2520.190542
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 11.1243750000001,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1369.708959,
+      "receivedAtMs": 2530.389584
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 1
+      },
+      "pid": 49884,
+      "monotonicMs": 1369.739042,
+      "receivedAtMs": 2530.415209
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "eventType": "session",
+      "elapsedMs": 12.147083000000066,
+      "pid": 49884,
+      "monotonicMs": 1370.078584,
+      "receivedAtMs": 2530.696334
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "events": [
+        {
+          "id": "0451cfbe-5e06-4189-8572-b5eb8cda7ec0",
+          "sequence": 2,
+          "type": "message",
+          "digest": "1e1225036081dbf4523f0a12577b3296461570bba108a5b8cd7405ea7fa3558b"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1370.851959,
+      "receivedAtMs": 2531.478209
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 12.599999999999909,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1145.07975,
+      "receivedAtMs": 2532.751209
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 1
+      },
+      "pid": 49885,
+      "monotonicMs": 1145.103042,
+      "receivedAtMs": 2532.765667
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "eventType": "session",
+      "elapsedMs": 13.51150000000007,
+      "pid": 49885,
+      "monotonicMs": 1145.461042,
+      "receivedAtMs": 2533.118834
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "events": [
+        {
+          "id": "6125ae8e-fd4a-406c-9f1d-ac43d4bc20a2",
+          "sequence": 2,
+          "type": "message",
+          "digest": "73492d5bda11f9f98dbbd623a009bf661d8422c790a6313087fc3ac5557890be"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1146.032875,
+      "receivedAtMs": 2533.715625
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 8.667208000000073,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1379.477417,
+      "receivedAtMs": 2540.153167
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 2
+      },
+      "pid": 49884,
+      "monotonicMs": 1379.504292,
+      "receivedAtMs": 2540.194417
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "eventType": "message",
+      "elapsedMs": 9.753124999999955,
+      "pid": 49884,
+      "monotonicMs": 1379.843959,
+      "receivedAtMs": 2540.465917
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 9.163667000000032,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1155.167584,
+      "receivedAtMs": 2542.853125
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 2
+      },
+      "pid": 49885,
+      "monotonicMs": 1155.196625,
+      "receivedAtMs": 2542.866834
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "eventType": "message",
+      "elapsedMs": 10.117749999999887,
+      "pid": 49885,
+      "monotonicMs": 1155.591917,
+      "receivedAtMs": 2543.257709
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 7.543416999999863,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 1387.445875,
+      "receivedAtMs": 2548.071834
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 6.804875000000038,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 1162.460834,
+      "receivedAtMs": 2550.128625
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 6,
+      "rssBytes": 142884864,
+      "cpu": {
+        "user": 569067,
+        "system": 85001
+      },
+      "pid": 49882,
+      "monotonicMs": 2414.62475,
+      "receivedAtMs": 2587.414084
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "tcpConnections": 6,
+      "rssBytes": 142884864,
+      "cpu": {
+        "user": 570167,
+        "system": 85254
+      },
+      "pid": 49882,
+      "monotonicMs": 2516.568125,
+      "receivedAtMs": 2689.406125
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 15.954791999999998,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49884,
+      "monotonicMs": 1605.938792,
+      "receivedAtMs": 2766.674834
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "events": [
+        {
+          "id": "d8070f2c-0431-460f-836c-65ce2a9eb173",
+          "sequence": 3,
+          "type": "artifact",
+          "digest": "f0e72eea8cfaffc30bdb54c14ce272d17a6fe960c124ab2fa3cd7c131b9df069"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1608.858334,
+      "receivedAtMs": 2769.544792
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/heartbeat",
+      "elapsedMs": 16.16904199999999,
+      "status": 200,
+      "bytes": 106,
+      "pid": 49885,
+      "monotonicMs": 1381.850875,
+      "receivedAtMs": 2769.574625
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "events": [
+        {
+          "id": "7b7188a2-abc0-4148-a054-3ba0345494f9",
+          "sequence": 3,
+          "type": "artifact",
+          "digest": "13c919df9f233091eb882c82230fd7e480411c0f77bf3eb2f35cbbf0271eade5"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1383.319084,
+      "receivedAtMs": 2770.99675
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 12.808709000000135,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1396.074834,
+      "receivedAtMs": 2783.811375
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 3
+      },
+      "pid": 49885,
+      "monotonicMs": 1396.10525,
+      "receivedAtMs": 2783.820125
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "eventType": "artifact",
+      "elapsedMs": 13.914082999999891,
+      "pid": 49885,
+      "monotonicMs": 1396.490709,
+      "receivedAtMs": 2784.183375
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "events": [
+        {
+          "id": "95e981fa-73d1-4d5d-8171-8167e8dfb964",
+          "sequence": 4,
+          "type": "verification",
+          "digest": "51734e143337ff88bd7bf08fd291f64384429684c31d52c389de56f0d8c1daae"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1397.526542,
+      "receivedAtMs": 2785.223167
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 16.367917000000034,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1625.180375,
+      "receivedAtMs": 2785.835459
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 3
+      },
+      "pid": 49884,
+      "monotonicMs": 1625.2095,
+      "receivedAtMs": 2785.860834
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "eventType": "artifact",
+      "elapsedMs": 17.854250000000093,
+      "pid": 49884,
+      "monotonicMs": 1625.536542,
+      "receivedAtMs": 2786.154334
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "events": [
+        {
+          "id": "f42ddacf-3e63-4684-bcff-bf7ac838a455",
+          "sequence": 4,
+          "type": "verification",
+          "digest": "bd2d4955af7ef985f9ad69eeb2a3f6394c12ef29d979b012d030c75f587e845a"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1626.401875,
+      "receivedAtMs": 2787.039334
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 2,
+      "tcpConnections": 6,
+      "rssBytes": 142966784,
+      "cpu": {
+        "user": 578842,
+        "system": 87430
+      },
+      "pid": 49882,
+      "monotonicMs": 2616.342667,
+      "receivedAtMs": 2789.07425
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 10.88454200000001,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1408.365292,
+      "receivedAtMs": 2796.121334
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 4
+      },
+      "pid": 49885,
+      "monotonicMs": 1408.399417,
+      "receivedAtMs": 2796.131417
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "eventType": "verification",
+      "elapsedMs": 12.23479099999986,
+      "pid": 49885,
+      "monotonicMs": 1408.79275,
+      "receivedAtMs": 2796.467792
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "events": [
+        {
+          "id": "2dea4e04-7961-4eb5-adbf-6047c4ed0733",
+          "sequence": 5,
+          "type": "usage",
+          "digest": "3d762c8e530c390bac6ad945dafb77b9ad4ab6ba8d816ceea530d3e3b89a2831"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1410.036084,
+      "receivedAtMs": 2797.737375
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 11.461415999999872,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1637.821625,
+      "receivedAtMs": 2798.455209
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 4
+      },
+      "pid": 49884,
+      "monotonicMs": 1637.848542,
+      "receivedAtMs": 2798.473209
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "eventType": "verification",
+      "elapsedMs": 12.530582999999979,
+      "pid": 49884,
+      "monotonicMs": 1638.137292,
+      "receivedAtMs": 2798.760042
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "events": [
+        {
+          "id": "649624e7-4f24-417f-bbed-dd0f86d1ea0e",
+          "sequence": 5,
+          "type": "usage",
+          "digest": "111e7bebef8d94033ef08c844c2743320294672a8ce654eeeb5e53f2353c8fed"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1638.974667,
+      "receivedAtMs": 2799.593875
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 10.966541000000007,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1420.930625,
+      "receivedAtMs": 2808.704792
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 5
+      },
+      "pid": 49885,
+      "monotonicMs": 1420.964167,
+      "receivedAtMs": 2808.714709
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "eventType": "usage",
+      "elapsedMs": 12.61204100000009,
+      "pid": 49885,
+      "monotonicMs": 1421.437875,
+      "receivedAtMs": 2809.171584
+    },
+    {
+      "kind": "adapter-end",
+      "taskId": "4e1626d2-9caa-4ed6-88c9-b60be10023e5",
+      "label": "runner-1",
+      "pid": 49885,
+      "monotonicMs": 1421.460709,
+      "receivedAtMs": 2809.176959
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "events": [
+        {
+          "id": "f86428d5-146e-4ee4-8340-046d19a11678",
+          "sequence": 6,
+          "type": "completed",
+          "digest": "c7aa6e857bb555a6a8e83997bdfa6d0ddac9cb0ce2dc5a84490ffdfa7a60dc86"
+        }
+      ],
+      "pid": 49885,
+      "monotonicMs": 1423.084125,
+      "receivedAtMs": 2810.785417
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 11.518749999999955,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1650.435459,
+      "receivedAtMs": 2811.174
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 5
+      },
+      "pid": 49884,
+      "monotonicMs": 1650.464292,
+      "receivedAtMs": 2811.184792
+    },
+    {
+      "kind": "emit-ack",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "eventType": "usage",
+      "elapsedMs": 12.513666999999941,
+      "pid": 49884,
+      "monotonicMs": 1650.690125,
+      "receivedAtMs": 2811.333292
+    },
+    {
+      "kind": "adapter-end",
+      "taskId": "3edc6ceb-988d-4d09-a325-bf446ee97e4f",
+      "label": "runner-0",
+      "pid": 49884,
+      "monotonicMs": 1650.71075,
+      "receivedAtMs": 2811.343125
+    },
+    {
+      "kind": "report-start",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "events": [
+        {
+          "id": "8d37d88b-16e0-4e1b-911b-61c29601c68e",
+          "sequence": 6,
+          "type": "completed",
+          "digest": "994bed33ac1069ed10bad5f04b1661cd84707bd0e238bf0b01f8581cb6457a08"
+        }
+      ],
+      "pid": 49884,
+      "monotonicMs": 1651.865,
+      "receivedAtMs": 2812.493917
+    },
+    {
+      "kind": "http",
+      "label": "runner-1",
+      "path": "/api/runner/events",
+      "elapsedMs": 9.185958999999912,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49885,
+      "monotonicMs": 1432.231542,
+      "receivedAtMs": 2819.974084
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-1",
+      "attemptId": "849e5912-2541-446e-b714-1665d14afb68",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 6
+      },
+      "pid": 49885,
+      "monotonicMs": 1432.264875,
+      "receivedAtMs": 2819.981709
+    },
+    {
+      "kind": "http",
+      "label": "runner-0",
+      "path": "/api/runner/events",
+      "elapsedMs": 9.795500000000175,
+      "status": 200,
+      "bytes": 31,
+      "pid": 49884,
+      "monotonicMs": 1661.627792,
+      "receivedAtMs": 2822.247042
+    },
+    {
+      "kind": "report-response",
+      "label": "runner-0",
+      "attemptId": "06ba8352-83ab-4f9a-bc09-7465dce9fd50",
+      "status": 200,
+      "response": {
+        "accepted": 1,
+        "lastSequence": 6
+      },
+      "pid": 49884,
+      "monotonicMs": 1661.645209,
+      "receivedAtMs": 2822.392
+    },
+    {
+      "kind": "closed",
+      "pid": 49884,
+      "monotonicMs": 1668.708375,
+      "receivedAtMs": 2829.347417
+    },
+    {
+      "kind": "closed",
+      "pid": 49885,
+      "monotonicMs": 1441.717959,
+      "receivedAtMs": 2829.397917
+    },
+    {
+      "kind": "closed",
+      "pid": 49882,
+      "monotonicMs": 2687.309417,
+      "receivedAtMs": 2860.124834
+    }
+  ]
+}

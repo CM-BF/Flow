@@ -1,0 +1,116 @@
+{
+  "recordedAt": "2026-10-06T06:59:47.416584+00:00",
+  "target": "9da9de1b6778afec5219e55f39b53b365c8cf900",
+  "productionBase": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "productionAppsPackagesDiff": [],
+  "sources": [
+    {
+      "path": "experiments/runner-capacity/README.md",
+      "sha256": "fb806fc2c4b137a52b3ada899f667883ec16d41a414c8603bf187053c6905eb2"
+    },
+    {
+      "path": "experiments/runner-capacity/child.ts",
+      "sha256": "e095dbb7a4c7942e78b0fc03a2a091c4992438d4d6cb3221c18efc5190e8ed99"
+    },
+    {
+      "path": "experiments/runner-capacity/contract.json",
+      "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+    },
+    {
+      "path": "experiments/runner-capacity/evidence.test.ts",
+      "sha256": "2b69a4d30fc7a984322d5ac442de9a8b6d5e5ff56234c00faeb9593c7e263059"
+    },
+    {
+      "path": "experiments/runner-capacity/evidence.ts",
+      "sha256": "1eb2903465c182269dc19ebabed94af89bdd35c8691e2564554d113a156c86fe"
+    },
+    {
+      "path": "experiments/runner-capacity/formal.ts",
+      "sha256": "75c529115f36165cd5009655abbbc38fc74303b972352d5c2845f1dd3ae2bf7d"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "experiments/runner-capacity/protocol-gate.ts",
+      "sha256": "b25380ceeccb26c8d3bf248612293f287bdf9ec3d881f467625b6445bff2feea"
+    },
+    {
+      "path": "experiments/runner-capacity/scenario.ts",
+      "sha256": "14c4d50f6b0860aa88415ae3c000bdcb309beddc9519e73f96d4d1f518009fa1"
+    },
+    {
+      "path": "experiments/runner-capacity/smoke.ts",
+      "sha256": "8aef23015eefdb6a449f7e40c542994162b2663caf21e26bd0e6b120b1fe98f3"
+    },
+    {
+      "path": "experiments/runner-capacity/statistics.test.ts",
+      "sha256": "7f1d5923f3a3b499c51a969b6e60e81144c0eb9aa1768414812b6062fc8326d5"
+    },
+    {
+      "path": "experiments/runner-capacity/statistics.ts",
+      "sha256": "4a783c2a92eaf076e690807c446e6565bb0195b79b611b70c5dccadf5d178209"
+    },
+    {
+      "path": "experiments/runner-capacity/tsconfig.json",
+      "sha256": "a4b14000b1b940448f7f7682370795997d1645d159a70de9fc31c170834fe85f"
+    },
+    {
+      "path": "experiments/runner-capacity/vitest.config.ts",
+      "sha256": "45e1b1077da4ce1d69f6591ae4bedd2248c2f4902376e59e52418c9c0a364597"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/s01/window-unit-tests-final.txt",
+      "sha256": "6c861d2d8f6b6834cd3d17c05c7b1f3304b1d61426402656484abbd751056d84",
+      "completedAtObservedFromLogMtime": "2026-10-06T06:58:02.975863+00:00"
+    },
+    {
+      "path": "docs/evidence/s01/window-typecheck-fixed-target.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "completedAtObservedFromLogMtime": "2026-10-06T06:59:21.135520+00:00"
+    }
+  ],
+  "checks": {
+    "selectedUnitTests": 6,
+    "passedUnitTests": 6,
+    "typecheckExit": 0,
+    "newDatabaseTasks": 0,
+    "modelCalls": 0
+  },
+  "review": "pending independent rereview",
+  "requestedWindow": {
+    "protocolGate": {
+      "tasks": 8,
+      "attemptsMax": 8,
+      "actualRunnerProcesses": 0,
+      "maxMsIncludingCleanup": 30000
+    },
+    "formal": {
+      "tasks": 16,
+      "attemptsMax": 16,
+      "backgroundEmptyConversations": 128,
+      "runnerProcesses": 4,
+      "capacityPerRunner": 1,
+      "maxMsIncludingCleanup": 30000
+    },
+    "combinedMaxMs": 60000,
+    "existingSmokeTasksUsed": 8,
+    "totalTasksAfterWindowMax": 32,
+    "originalTotalTasksLimit": 64,
+    "failureStopsFollowingPhase": true,
+    "automaticReruns": false
+  },
+  "limitations": [
+    "No gate/formal run yet; readiness is not capacity proof.",
+    "Overclaim is protocol-only; browser/ACK-fault phases unimplemented.",
+    "PG center+scheduler combined; pool acquisition wait unmeasured.",
+    "Read latency classified using last observed SQL states; interval can cross task completion."
+  ]
+}

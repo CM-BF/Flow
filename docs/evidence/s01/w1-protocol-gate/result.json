@@ -1,0 +1,571 @@
+{
+  "kind": "protocol-capacity-gate-not-execution-capacity",
+  "scenario": {
+    "id": "protocol-gate"
+  },
+  "reservation": {
+    "label": "w1-protocol-gate",
+    "scenario": "protocol-gate",
+    "windowId": "S01-W1-20261006T070330Z",
+    "databaseName": "flow_s01_gate_38459_10591b47c5b54e51bb39bf4322b838eb",
+    "tasks": 8,
+    "attempts": 8,
+    "startedAt": "2026-10-06T07:03:36.101Z",
+    "maxWindowMs": 30000,
+    "usedTasks": 8,
+    "usedAttempts": 8,
+    "usedMs": 7154.493915999999,
+    "priorRuns": [
+      {
+        "label": "smoke-first",
+        "tasks": 4,
+        "attempts": 4,
+        "elapsedMs": 4333.692333,
+        "failed": true
+      },
+      {
+        "label": "smoke-repair",
+        "tasks": 4,
+        "attempts": 4,
+        "elapsedMs": 2820.801583,
+        "failed": false
+      }
+    ]
+  },
+  "windowId": "S01-W1-20261006T070330Z",
+  "head": "be923afab6d95ea21f493c63818dddbea380af7d",
+  "sourceFiles": [
+    {
+      "path": "experiments/runner-capacity/protocol-gate.ts",
+      "sha256": "b25380ceeccb26c8d3bf248612293f287bdf9ec3d881f467625b6445bff2feea"
+    },
+    {
+      "path": "experiments/runner-capacity/evidence.ts",
+      "sha256": "1eb2903465c182269dc19ebabed94af89bdd35c8691e2564554d113a156c86fe"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "experiments/runner-capacity/child.ts",
+      "sha256": "e095dbb7a4c7942e78b0fc03a2a091c4992438d4d6cb3221c18efc5190e8ed99"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/contract.json",
+      "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+    }
+  ],
+  "sourceFilesAfter": [
+    {
+      "path": "experiments/runner-capacity/protocol-gate.ts",
+      "sha256": "b25380ceeccb26c8d3bf248612293f287bdf9ec3d881f467625b6445bff2feea"
+    },
+    {
+      "path": "experiments/runner-capacity/evidence.ts",
+      "sha256": "1eb2903465c182269dc19ebabed94af89bdd35c8691e2564554d113a156c86fe"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "experiments/runner-capacity/child.ts",
+      "sha256": "e095dbb7a4c7942e78b0fc03a2a091c4992438d4d6cb3221c18efc5190e8ed99"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/contract.json",
+      "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+    }
+  ],
+  "startedAt": "2026-10-06T07:03:36.095Z",
+  "endedAt": "2026-10-06T07:03:38.429Z",
+  "elapsedMs": 2332.7423750000003,
+  "modelCalls": 0,
+  "cloudCalls": 0,
+  "submittedTaskIds": [
+    "1ab5e404-7520-4eb8-9b42-7c841fd392dd",
+    "6f93994c-d719-4001-a583-942d2add9a03",
+    "3f5fb95a-7ed5-485e-bb79-aa46ae9c768c",
+    "4012546a-47c1-49b4-b0ca-ddc395653b17",
+    "321d3632-33eb-4132-9e2f-68b816505c81",
+    "1c62a35e-5b22-492b-adc0-949690e4414e",
+    "b5d44b03-0272-4034-996e-651266e1e380",
+    "5f1c0632-4a30-4c8a-ba1f-da14a87632dc"
+  ],
+  "checks": [
+    "Eight simultaneous protocol claims against capacity2 yield exactly two unique live attempts on distinct tasks.",
+    "All eight tasks cancelled through public APIs, no live attempts or native sessions; no runner/adapter process was executed."
+  ],
+  "failure": null,
+  "facts": {
+    "tasks": 8,
+    "attempts": 2,
+    "protocolClaimRequests": 8,
+    "declaredCapacity": 2,
+    "actualRunnerProcesses": 0,
+    "adapterExecutions": 0,
+    "nativeSessions": 0,
+    "assignments": [
+      {
+        "taskId": "1ab5e404-7520-4eb8-9b42-7c841fd392dd",
+        "attempt": {
+          "id": "11a65cff-ace3-4968-a930-868f137464fe",
+          "runnerId": "d47e1dc5-853e-4554-95b6-bb039d744f35",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-06T07:03:48.259Z"
+        }
+      },
+      {
+        "taskId": "6f93994c-d719-4001-a583-942d2add9a03",
+        "attempt": {
+          "id": "d12dcacd-7067-41dd-ba19-09e3cc7cd368",
+          "runnerId": "d47e1dc5-853e-4554-95b6-bb039d744f35",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-06T07:03:48.268Z"
+        }
+      }
+    ],
+    "active": [
+      {
+        "id": "11a65cff-ace3-4968-a930-868f137464fe",
+        "task_id": "1ab5e404-7520-4eb8-9b42-7c841fd392dd",
+        "runner_id": "d47e1dc5-853e-4554-95b6-bb039d744f35",
+        "owner_version": 1
+      },
+      {
+        "id": "d12dcacd-7067-41dd-ba19-09e3cc7cd368",
+        "task_id": "6f93994c-d719-4001-a583-942d2add9a03",
+        "runner_id": "d47e1dc5-853e-4554-95b6-bb039d744f35",
+        "owner_version": 1
+      }
+    ],
+    "final": [
+      {
+        "id": "1ab5e404-7520-4eb8-9b42-7c841fd392dd",
+        "status": "cancelled"
+      },
+      {
+        "id": "1c62a35e-5b22-492b-adc0-949690e4414e",
+        "status": "cancelled"
+      },
+      {
+        "id": "321d3632-33eb-4132-9e2f-68b816505c81",
+        "status": "cancelled"
+      },
+      {
+        "id": "3f5fb95a-7ed5-485e-bb79-aa46ae9c768c",
+        "status": "cancelled"
+      },
+      {
+        "id": "4012546a-47c1-49b4-b0ca-ddc395653b17",
+        "status": "cancelled"
+      },
+      {
+        "id": "5f1c0632-4a30-4c8a-ba1f-da14a87632dc",
+        "status": "cancelled"
+      },
+      {
+        "id": "6f93994c-d719-4001-a583-942d2add9a03",
+        "status": "cancelled"
+      },
+      {
+        "id": "b5d44b03-0272-4034-996e-651266e1e380",
+        "status": "cancelled"
+      }
+    ],
+    "databaseBytes": 10959895
+  },
+  "cleanup": [
+    {
+      "pid": 38504,
+      "role": "center",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "observerClosed": true
+    },
+    {
+      "databaseName": "flow_s01_gate_38459_10591b47c5b54e51bb39bf4322b838eb",
+      "remaining": []
+    }
+  ],
+  "measuredDataBytes": 11120151,
+  "samples": [
+    {
+      "path": "/api/runners",
+      "status": 200,
+      "elapsedMs": 32.167583999999806,
+      "bytes": 105
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 18.506708000000117,
+      "bytes": 248
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 9.337541000000101,
+      "bytes": 248
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 7.6738339999999425,
+      "bytes": 248
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 6.786665999999968,
+      "bytes": 248
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 5.581417000000101,
+      "bytes": 248
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 5.661083999999846,
+      "bytes": 248
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 5.585417000000007,
+      "bytes": 248
+    },
+    {
+      "path": "/api/tasks",
+      "status": 202,
+      "elapsedMs": 5.323791999999912,
+      "bytes": 248
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 19.73929100000032,
+      "bytes": 404
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 26.29366700000037,
+      "bytes": 404
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 29.926124999999956,
+      "bytes": 40
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 32.2170000000001,
+      "bytes": 40
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 34.98124999999982,
+      "bytes": 40
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 37.35162500000024,
+      "bytes": 40
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 39.93504200000007,
+      "bytes": 40
+    },
+    {
+      "path": "/api/runner/claim",
+      "status": 200,
+      "elapsedMs": 42.54037500000004,
+      "bytes": 40
+    },
+    {
+      "path": "/api/runner/events",
+      "status": 200,
+      "elapsedMs": 11.773707999999715,
+      "bytes": 31
+    },
+    {
+      "path": "/api/runner/events",
+      "status": 200,
+      "elapsedMs": 7.4755419999996775,
+      "bytes": 31
+    },
+    {
+      "path": "/api/tasks/1ab5e404-7520-4eb8-9b42-7c841fd392dd/cancel",
+      "status": 200,
+      "elapsedMs": 5.044832999999926,
+      "bytes": 225
+    },
+    {
+      "path": "/api/tasks/6f93994c-d719-4001-a583-942d2add9a03/cancel",
+      "status": 200,
+      "elapsedMs": 5.235250000000178,
+      "bytes": 225
+    },
+    {
+      "path": "/api/tasks/3f5fb95a-7ed5-485e-bb79-aa46ae9c768c/cancel",
+      "status": 200,
+      "elapsedMs": 8.666834000000108,
+      "bytes": 225
+    },
+    {
+      "path": "/api/tasks/4012546a-47c1-49b4-b0ca-ddc395653b17/cancel",
+      "status": 200,
+      "elapsedMs": 6.487833000000137,
+      "bytes": 225
+    },
+    {
+      "path": "/api/tasks/321d3632-33eb-4132-9e2f-68b816505c81/cancel",
+      "status": 200,
+      "elapsedMs": 6.004374999999982,
+      "bytes": 225
+    },
+    {
+      "path": "/api/tasks/1c62a35e-5b22-492b-adc0-949690e4414e/cancel",
+      "status": 200,
+      "elapsedMs": 7.645125000000007,
+      "bytes": 225
+    },
+    {
+      "path": "/api/tasks/b5d44b03-0272-4034-996e-651266e1e380/cancel",
+      "status": 200,
+      "elapsedMs": 7.396499999999833,
+      "bytes": 225
+    },
+    {
+      "path": "/api/tasks/5f1c0632-4a30-4c8a-ba1f-da14a87632dc/cancel",
+      "status": 200,
+      "elapsedMs": 6.744916999999987,
+      "bytes": 225
+    }
+  ],
+  "observations": [
+    {
+      "kind": "ready",
+      "baseUrl": "http://127.0.0.1:49673",
+      "pid": 38504,
+      "monotonicMs": 1056.765375,
+      "receivedAtMs": 1274.63225
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144769024,
+      "cpu": {
+        "user": 530006,
+        "system": 86600
+      },
+      "pid": 38504,
+      "monotonicMs": 1157.819,
+      "receivedAtMs": 1375.285333
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144769024,
+      "cpu": {
+        "user": 530198,
+        "system": 86675
+      },
+      "pid": 38504,
+      "monotonicMs": 1260.10875,
+      "receivedAtMs": 1477.6255
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144769024,
+      "cpu": {
+        "user": 530475,
+        "system": 86759
+      },
+      "pid": 38504,
+      "monotonicMs": 1361.15275,
+      "receivedAtMs": 1578.753167
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144769024,
+      "cpu": {
+        "user": 530993,
+        "system": 86873
+      },
+      "pid": 38504,
+      "monotonicMs": 1462.940833,
+      "receivedAtMs": 1680.819833
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144785408,
+      "cpu": {
+        "user": 535354,
+        "system": 87233
+      },
+      "pid": 38504,
+      "monotonicMs": 1563.257292,
+      "receivedAtMs": 1780.822208
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144801792,
+      "cpu": {
+        "user": 535786,
+        "system": 87351
+      },
+      "pid": 38504,
+      "monotonicMs": 1664.113042,
+      "receivedAtMs": 1881.772875
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144801792,
+      "cpu": {
+        "user": 536358,
+        "system": 87431
+      },
+      "pid": 38504,
+      "monotonicMs": 1765.82025,
+      "receivedAtMs": 1983.380125
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144801792,
+      "cpu": {
+        "user": 536770,
+        "system": 87548
+      },
+      "pid": 38504,
+      "monotonicMs": 1867.740958,
+      "receivedAtMs": 2085.324667
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144801792,
+      "cpu": {
+        "user": 537279,
+        "system": 87634
+      },
+      "pid": 38504,
+      "monotonicMs": 1969.155417,
+      "receivedAtMs": 2186.664458
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 0,
+      "activeStreams": 0,
+      "tcpConnections": 2,
+      "rssBytes": 144834560,
+      "cpu": {
+        "user": 547512,
+        "system": 88794
+      },
+      "pid": 38504,
+      "monotonicMs": 2068.995667,
+      "receivedAtMs": 2288.254625
+    },
+    {
+      "kind": "center-sample",
+      "activeRequests": 1,
+      "activeStreams": 0,
+      "tcpConnections": 8,
+      "rssBytes": 145080320,
+      "cpu": {
+        "user": 582525,
+        "system": 93316
+      },
+      "pid": 38504,
+      "monotonicMs": 2168.631417,
+      "receivedAtMs": 2386.070667
+    },
+    {
+      "kind": "closed",
+      "pid": 38504,
+      "monotonicMs": 2204.966583,
+      "receivedAtMs": 2422.53425
+    }
+  ]
+}

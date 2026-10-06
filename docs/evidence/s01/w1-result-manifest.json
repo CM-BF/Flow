@@ -1,0 +1,156 @@
+{
+  "recordedAt": "2026-10-06T07:05:09.162788+00:00",
+  "windowId": "S01-W1-20261006T070330Z",
+  "implementationCommit": "9da9de1b6778afec5219e55f39b53b365c8cf900",
+  "productionBase": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "runs": [
+    {
+      "label": "w1-protocol-gate",
+      "path": "docs/evidence/s01/w1-protocol-gate/result.json",
+      "sha256": "caa9720fb4d2ed7da316b6da6053a749002d37172221dc9987e7155fa328acf5",
+      "bytes": 14684,
+      "executionHead": "be923afab6d95ea21f493c63818dddbea380af7d",
+      "startedAt": "2026-10-06T07:03:36.095Z",
+      "endedAt": "2026-10-06T07:03:38.429Z",
+      "elapsedMsIncludingCleanup": 2332.7423750000003,
+      "failure": null,
+      "sourceFiles": [
+        {
+          "path": "experiments/runner-capacity/protocol-gate.ts",
+          "sha256": "b25380ceeccb26c8d3bf248612293f287bdf9ec3d881f467625b6445bff2feea"
+        },
+        {
+          "path": "experiments/runner-capacity/evidence.ts",
+          "sha256": "1eb2903465c182269dc19ebabed94af89bdd35c8691e2564554d113a156c86fe"
+        },
+        {
+          "path": "experiments/runner-capacity/processes.ts",
+          "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+        },
+        {
+          "path": "experiments/runner-capacity/child.ts",
+          "sha256": "e095dbb7a4c7942e78b0fc03a2a091c4992438d4d6cb3221c18efc5190e8ed99"
+        },
+        {
+          "path": "experiments/runner-capacity/http.ts",
+          "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+        },
+        {
+          "path": "experiments/runner-capacity/contract.json",
+          "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+        },
+        {
+          "path": "apps/server/src/database.ts",
+          "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+        },
+        {
+          "path": "apps/server/src/runners.ts",
+          "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+        },
+        {
+          "path": "apps/server/src/events.ts",
+          "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97"
+        },
+        {
+          "path": "apps/server/src/index.ts",
+          "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+        }
+      ]
+    },
+    {
+      "label": "w1-four-processes",
+      "path": "docs/evidence/s01/w1-four-processes/result.json",
+      "sha256": "a8f4f17ab55f5d22231a7fdea6786fa1d4803b3c1bd29e79db078efac3ce448f",
+      "bytes": 351768,
+      "executionHead": "be923afab6d95ea21f493c63818dddbea380af7d",
+      "startedAt": "2026-10-06T07:03:46.480Z",
+      "endedAt": "2026-10-06T07:03:50.133Z",
+      "elapsedMsIncludingCleanup": 3648.039875,
+      "failure": null,
+      "sourceFiles": [
+        {
+          "path": "experiments/runner-capacity/child.ts",
+          "sha256": "e095dbb7a4c7942e78b0fc03a2a091c4992438d4d6cb3221c18efc5190e8ed99"
+        },
+        {
+          "path": "experiments/runner-capacity/processes.ts",
+          "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+        },
+        {
+          "path": "experiments/runner-capacity/smoke.ts",
+          "sha256": "8aef23015eefdb6a449f7e40c542994162b2663caf21e26bd0e6b120b1fe98f3"
+        },
+        {
+          "path": "experiments/runner-capacity/scenario.ts",
+          "sha256": "14c4d50f6b0860aa88415ae3c000bdcb309beddc9519e73f96d4d1f518009fa1"
+        },
+        {
+          "path": "experiments/runner-capacity/formal.ts",
+          "sha256": "75c529115f36165cd5009655abbbc38fc74303b972352d5c2845f1dd3ae2bf7d"
+        },
+        {
+          "path": "experiments/runner-capacity/statistics.ts",
+          "sha256": "4a783c2a92eaf076e690807c446e6565bb0195b79b611b70c5dccadf5d178209"
+        },
+        {
+          "path": "experiments/runner-capacity/evidence.ts",
+          "sha256": "1eb2903465c182269dc19ebabed94af89bdd35c8691e2564554d113a156c86fe"
+        },
+        {
+          "path": "experiments/runner-capacity/http.ts",
+          "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+        },
+        {
+          "path": "experiments/runner-capacity/contract.json",
+          "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+        },
+        {
+          "path": "experiments/runner-capacity/tsconfig.json",
+          "sha256": "a4b14000b1b940448f7f7682370795997d1645d159a70de9fc31c170834fe85f"
+        },
+        {
+          "path": "apps/server/src/index.ts",
+          "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+        },
+        {
+          "path": "apps/server/src/runners.ts",
+          "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+        },
+        {
+          "path": "apps/server/src/events.ts",
+          "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97"
+        },
+        {
+          "path": "apps/runner/src/runtime.ts",
+          "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+        },
+        {
+          "path": "apps/runner/src/outbox.ts",
+          "sha256": "8116119e7249575111951ba8abc21b1933f3c45d86455d32e8febf27f1404db3"
+        },
+        {
+          "path": "apps/runner/src/fixture.ts",
+          "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+        }
+      ]
+    }
+  ],
+  "windowTasks": 24,
+  "windowAttempts": 18,
+  "totalTasksUsed": 32,
+  "totalAttemptsUsed": 26,
+  "totalElapsedMsAcrossRunsIncludingCleanup": 13135.276166,
+  "modelCalls": 0,
+  "cloudCalls": 0,
+  "review": "pending independent result review",
+  "limitations": [
+    "Team test quiet window; resident services retained; not isolated hardware.",
+    "128 empty Flow conversation objects (zero turns), not 128 agents or native sessions.",
+    "16 fixture tasks with one bounded 64KiB FS/hash operation and explicit 200ms wait each; no provider capacity inference.",
+    "Read sample counts 3 or4 per endpoint; no SLO or stable tail estimate.",
+    "Queue waiting includes intentional admission-before-runner-start setup.",
+    "DB/public projection checks executed in fixed source; final DB event/timeline/workspace rowsets were not retained after cleanup. Raw sender identities and assertion counts remain; do not reconstruct rowsets as observed data.",
+    "PG center+scheduler connections observed jointly; pool acquisition wait unmeasured; no SSE/browser phase here.",
+    "ACK-fault/browser/one-runner contrasts unrun."
+  ]
+}
