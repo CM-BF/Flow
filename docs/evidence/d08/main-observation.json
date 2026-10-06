@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-06T10:00:59.859470+00:00",
+  "taskId": "D08",
+  "main": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "originMain": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "mainClean": true,
+  "implementationTarget": "eca59a5edab0820f724a9bd5bc854e22f48d9ea9",
+  "previousMetadataHead": "ce038f0b064d1348d4aa77f1e91f223d7bc5ea31",
+  "targetAndMetadataAreAncestors": true,
+  "sourceComparison": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "93fd539d958ba2cbd8cbdfd5451195dd1c7f3fba740091f0d663c0fbaf15d2e9",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/styles.css",
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "81a20492f80e58cdbc28a36c49ef514aae0c656782020c413ce8e11f4c29494c",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "f8cbe7725d3757eb5f32d5946bc9b3d4b36c7b9bd2b00e8296054519ab50a218",
+      "targetMainWorkingTreeEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.test.mjs",
+      "sha256": "9d1bed77edf9d6847f6a4733b6ea70d2f8a8ffed6272e7a96eebbd7a437bcb87",
+      "targetMainWorkingTreeEqual": true
+    }
+  ],
+  "claimObserved": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/public/styles.css",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/src/task-links.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "apps/execution-dashboard/test/task-links.test.mjs",
+      "docs/evidence/d08",
+      "plans/d08-task-links"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-task-links",
+    "origin": "new",
+    "taskId": "D08",
+    "worker": "workspace_panels_owner",
+    "claimId": "49510580-00ea-469f-a2a2-a86d3de75a03",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links",
+    "createdAt": "2026-10-06T09:13:22.477Z",
+    "updatedAt": "2026-10-06T09:13:22.477Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "claimObservedAt": "2026-10-06T10:00:59.737Z",
+  "leadEvidence": "docs/evidence/i02/native-tui-integration.json",
+  "leadChecksAttribution": "Lead reported 59 source comparisons, 50 relevant direct tests and root/Web typechecks; owner did not rerun product checks.",
+  "dashboardDeployment": "No new API sample; 122-source deployment receipt not yet confirmed.",
+  "services": "Unchanged; no service, model or product database action."
+}

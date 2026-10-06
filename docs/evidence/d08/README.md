@@ -13,6 +13,8 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH node apps/execution-dashboard/test/task
 
 [Interface](interface.md)、[Validation](validation.md)、[Quality](quality.md)、[checks](checks.json)、[browser](browser-results.json)。浅深截图：[desktop light](home-desktop-light.png)、[desktop dark](home-desktop-dark.png)、[390 light 已核采样](verified-narrow-light.png)、[390 dark 已核采样](verified-narrow-dark.png)、[detail](detail-narrow-dark.png)。
 
-使用Enter打开卡片父任务；详情里父任务按钮替换同一对话框并聚焦新标题；Escape回原触发按钮。原文以details/summary可达，不生成链接。当前原D01没有层级声明，这种真实资料不会由D08反向改写；更正必须由其合法owner处理。
+使用Enter打开卡片父任务；详情里父任务按钮替换同一对话框并聚焦新标题；Escape回原触发按钮。原文以details/summary可达，不生成链接。原只读样本核查时D01没有层级声明，这种真实资料不会由D08反向改写；更正必须由其合法owner处理。
 
-固定实现 eca59a5edab0820f724a9bd5bc854e22f48d9ea9 已root独立APPROVED；review见唯一[status](../../../plans/d08-task-links/status.md)。main接收/4320部署未完成，不把本地样本当生产事实。
+固定实现 eca59a5edab0820f724a9bd5bc854e22f48d9ea9 已root独立APPROVED；review见唯一[status](../../../plans/d08-task-links/status.md)。main已接收、4320新版部署尚无本次观察，不把本地样本当生产事实。
+
+主线接收：f181d84b5fb3652d62e2a181acff442d42b3e066，7源码与已审target相同，[本次只读证据](main-observation.json)。源码已集成，预览仍为原HTTPfixture，不代表个人服务或dashboard部署。
