@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:42:37 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:48:50 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -73,3 +73,5 @@
 2026-10-06 20:26:45 UTC：Execution Lead独立APPROVED_PREPARATION_ONLY，四源d147/782绑定/4纯检查分轮与两focused types原证据已核，无P1/P2/reviewer0重跑。[唯一回执](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json) SHA 42c0908d1645309b3542c55d4afb776813c2603f81282a878d70dd6905414c5b。未创建permit，未启动HTTP/PG/Chrome/PTY/provider；源码保持冻结，90+60/150s候选等待独占运行窗口。
 
 2026-10-06 20:42:37 UTC：04准备四源d147与main `352246b850e960e1969711e303765a024ff9fc29` / 后续观察 `13f92d058f6f75ef86b53a19c1be134029d4f59e` 逐字相同，[main回执](../../docs/evidence/tui01f/web-handoff/preparation-main-receipt.json)。仅准备接收，实际HTTP/PG/Chrome/PTY仍NOT_RUN；无新检查、未发permit，原claim/源码冻结。
+
+2026-10-06 20:48:50 UTC：仅加载实际factory/helper入口exit0，0调用/连接；最小外层capture复用已审supervise，正常/64KiB溢出两直接checks 2/2且groups stopped。新adapter等待窄审，[准备事实](../../docs/evidence/tui01f/web-handoff/capture-readiness.md)，原四源及782绑定不变、原4纯未重跑，完整运行仍NOT_RUN。

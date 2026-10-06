@@ -1,0 +1,57 @@
+{
+  "outcome": "unknown-retain",
+  "sourceDigest": "42947a918e2902ca003ddc076e1750b00da3c6f117cecc20f77422675a29c0a4",
+  "observedBytes": 98304,
+  "retainedBytes": 65536,
+  "outputLimit": 65536,
+  "overflow": true,
+  "pipeState": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "supervision": {
+    "driverPid": 42974,
+    "outcome": "unknown-retain",
+    "phase": "cleanup",
+    "samples": 3,
+    "ownedGroups": [
+      {
+        "pgid": 42974,
+        "state": "stopped"
+      }
+    ],
+    "reason": "raw-output-bound-or-write-failed",
+    "last": {
+      "stageBytes": 0,
+      "outerBytes": 339,
+      "capturedBytes": 65536,
+      "totalBytes": 65875
+    },
+    "stopCheckpoint": "durable",
+    "signal": "unknown",
+    "exitCode": null,
+    "signalCode": "SIGTERM",
+    "elapsedMs": 103
+  },
+  "metrics": {
+    "groups": [],
+    "metrics": {
+      "stageBytes": 0,
+      "outerBytes": 66333,
+      "capturedBytes": 0,
+      "totalBytes": 66333
+    }
+  },
+  "raw": [
+    {
+      "bytes": 65536,
+      "sha256": "1f8745f0d2d1387ec1af2211a3cf417b2e9e885e853472649c1d979d0e9370e3"
+    },
+    {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "PG": 0,
+  "provider": 0
+}
