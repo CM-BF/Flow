@@ -32,7 +32,7 @@ Lead/root已纠正准确定位：root `noUncheckedIndexedAccess` 将 fixture 构
 
 **Web co-lead /root确认这5个已交付Web路径目前没有任何待写动作，同意TUI01C原子amend claim1c911f44成功后接管；两原owner均停写，ACK/RELEASE/ATTACH无冲突。**
 
-Lead最新正式来源：已读本中央确认并完成 TUI01C claim1c911f44 v2 amend 接管五路径，无需再ACK；以下保留交权依据。
+Lead最新正式来源：已读本中央确认并完成 TUI01C claim1c911f44 v2 amend 接管五路径，无需再ACK；以下保留交权依据。 当前已审固定target **0fff6790e040ce6d19b8070b61d77709cdaec9be**（主实现d26dde66d01cd667aab54fcb0e348654f1537fd5），final **eae62fa93575eed2a1107fff5569fb9a5e0e4de6** local=remote/clean已只读核；[精确共享输入](tui01c-approved-input.json)。保原协议/browser-safe子路径，未凭此宣称main接收，不触五冻结路径。
 
 五literal：`apps/web/src/conversation-stream/patches.ts`、`apps/web/src/conversation-stream/projection.ts`、`apps/web/src/conversation-stream/messages.ts`、`apps/web/src/conversation-activity/native/projection.ts`、`apps/web/package.json`。10:45:17.544Z [fresh原账本](tui01c-web-scope-ledger.json)与[确认](tui01c-web-scope-handoff.json)可读。已有基础claim应原子amend，不是再建take；成功前不得新增写入。
 
