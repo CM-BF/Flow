@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:30:00 UTC |
+| 最近更新时间 | 2026-10-06 16:33:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -111,3 +111,5 @@
 2026-10-06 16:09:00 UTC：fresh owner HEAD4de33e6688f0b002805388b35deb10723397cff7 clean、账本16:08:31确认6ddedc73 v5 ACTIVE原四scope。仅在[后继准备](../../docs/evidence/x01/enable-binding-preparation.md)及原计划归档GO新增X01-04/07验收：至少一个来源/许可/版本固定的现成npm能力，通过明确bundle或受控依赖接Flow Adapter，证明真实runner产物与升级身份。只读main e807730328a8f220721efcc3e346c03945991965 clean确认host仍无production caller；静态安装/host双gate已交付事实与原10TODO状态不变。当前未选包/安装/工程测试/PG/provider，host两源继续停写，未操作sparse或缓存；质量方法沿本地find-skills/codebase-design/clean-code固定基线，未改旧raw/manifest。只读parseStatus errors=[]、delivered/10TODO，三份文档链接无缺失、diff空白检查通过；不声称看板在线页面已刷新。
 
 2026-10-06 16:30:00 UTC：fresh owner HEAD7f6d82228632ddc46723a3a8a3e3305733940ab7 clean、16:28:29 ledger 6ddedc73 v5 ACTIVE 原四scope；仅收敛[后继一页合同](../../docs/evidence/x01/enable-binding-preparation.md)。固定只读 main65659028ec3aed7c4b5a68eb20a39a32026e5dc5 的 runtime/claim/TaskSubmission/host/插件命令/事件与验证真实接口，推荐 host tuple、单revision enable、中心生成binding、load/invoke当前grant与有来源artifact字段。未知复用原settlement/admission保留，不增加执行FSM；独立领域HTTP/持久冻结片与共享caller逐literal分开。F01现v41、CORE现v3，空闲共享路径也未授写权；新SQL号/共享writer/受控输入由Lead冻结。已交付e682片仍delivered，后继仅design，原10TODO不变；host两源停写，旧raw/manifest不改。方法沿本地find-skills/codebase-design/固定clean-code/brainstorming，检查有限接口、错误保留及锁序；0工程测试、PG、SDK/provider、安装和sparse操作。后继有Module/runtime接线架构影响，实施后由Lead维护固定main视图，本次未改架构图。 只读parseStatus errors=[]、delivered/10TODO，两个文档本地链接无缺失、diff空白检查通过；不声称在线看板已刷新。
+
+2026-10-06 16:33:00 UTC：补固定main656的直接reconciliation consumer：通用retry只复制submission/K02/goal，后继必须显式拒绝plugin binding走普通fixture重试，避免丢来源后伪成功；精确共享guard路径已列入准备页，当前CORE持有，未写入。其余字段/已交付事实不变，0工程运行。
