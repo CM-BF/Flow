@@ -5,3 +5,5 @@
 公共合同只读，原 configuredSelection 的 Immutable 参数保持；没有 any/cast 放宽新接口。实际代码复核与检查证据待实现安全点补充。
 
 2026-10-06 18:18:36 UTC：完整检查6文件 diff。共享一次目录生命周期、两协议独立解码；公共 capture/allowed matcher 保留权限来源条件。修正 tuple 推导为公共 readonly type，首层工程ID收进details。三旧产品文件仅新增分支/私有泛型提取，legacy创建参数逐字保留；旧CSS/官方组件/App/Queue/Recovery/shared/lock均0diff。git diffcheck0。未运行types/Vitest/fixture/Chrome，不记录红绿。后继父supervisor持有所有fixture/browser清理与预算，当前导出检查函数不暗启服务。
+
+2026-10-06 18:24:17 UTC：P2 窄修固定 f3a6a7ec89d5b3f789c49b0d8662401b23032ab2。只改 Picker section断行和已有文本映射及browser对应断言，没有CSS/共享范围扩展；原spec行为检查体保持。原source manifest封存，当前manifest重绑六源；0types/import/HTTP/test/Chrome/space，source diffcheck0。
