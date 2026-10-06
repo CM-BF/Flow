@@ -236,3 +236,7 @@ CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source
 ## Native目录薄client 5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7
 
 复用已批准native-v1固定schema和既有request鉴权/错误/取消；没有另造目录状态或权限判断。只有一个新GET方法及实际HTTP直接消费者；新1+旧2共3绿，根类型先因旧workspace安装缺依赖失败，再用已审锁的offline frozen ignore-scripts安装（下载0、lock零diff）后通过。原红及恢复日志全部保留。find-skills/codebase-design/clean-code沿既有本地方法：接口是显式格式协商和解码，configured、availability与可执行性分开，无动态provider特例。仅传输范围，无新增PG/provider/个人服务操作。
+
+## 工程配置薄client 3a12ed7ebd8e69325309bd004043f06dabbf7ff4
+
+复用两个固定DTO和既有HTTP传输；POST保原body与runner鉴权，owner目录严格解码，purpose非法/409/abort不重试。新HTTP1与旧3通过，types0；独立native_center_owner只读审查已通过，未覆盖其自己领域或后续挂载。后续挂载只组合现registerEngineeringRoutes，无新权限状态机；必须待真实factory+PG和独审。

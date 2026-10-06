@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-当前增量状态：NOT_STARTED（原生配置目录薄client）
+当前增量状态：APPROVED（原生配置目录薄client，Mika独立只读）
 
 Review target commit：5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7
 
-Scope：packages/client/src/index.ts, packages/client/src/native-profile-catalog.test.ts。固定manifest：docs/evidence/f01/native-catalog-client-manifest.json；3/3 HTTP与最终typecheck通过。独立review须核实际协商、严格schema、旧消费者、abort/409无重试；不覆盖领域、原生进程或个人服务。
+Scope：packages/client/src/index.ts, packages/client/src/native-profile-catalog.test.ts。固定manifest：docs/evidence/f01/native-catalog-client-manifest.json；3/3 HTTP与最终typecheck通过。Mika完整固定diff/hash独审通过，回执native-catalog-client-review.md；不覆盖领域、原生进程或个人服务。
 
 ## 历史批准（下列结论仍仅各自范围）
 
@@ -212,3 +212,9 @@ Review status: APPROVED
 Review target commit: 095bdb849a4ba688be7c2b55d90021b9d15e4b53
 
 status_read / gpt-6-astra 独立只读APPROVED，Mika接收；2source/3raw bytes和SHA全同，3/3原HTTP与manifest记载tsc0已核，无P1/P2、未重跑。保持原JSON/Bearer/signal/error、409不重试与旧Claude消费者；仅薄client，不涵盖PG或原生access。完整原结论见[receipt](../../docs/evidence/f01/native-profile-client-review.md)。
+
+## 工程配置薄client独立批准
+
+Review target commit：3a12ed7ebd8e69325309bd004043f06dabbf7ff4
+
+Reviewer native_center_owner，仅3file65行thin client/export，不审自己的工程domain。实际4HTTP与types0原证据已读，fixed/current源码相同，0重跑/noP1/P2，见engineering-profile-client-review.json。独立生产挂载1c081仍等待真实factory/PG组合与review，不能继承此批准。
