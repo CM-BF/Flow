@@ -15,7 +15,14 @@ export const reconciliationResolutionSchema = z.strictObject({
   effectsEvidence: operatorEvidenceSchema,
   outcome: z.enum(['failed', 'cancelled']),
 });
-export const reconciliationRetrySchema = z.strictObject({ ...fence, resolutionId: idSchema });
+export const reconciliationRetrySchema = z.strictObject({
+  ...fence,
+  resolutionId: idSchema,
+  safety: z.discriminatedUnion('strategy', [
+    z.strictObject({ strategy: z.literal('no-side-effects'), evidence: operatorEvidenceSchema }),
+    z.strictObject({ strategy: z.literal('revised-work'), prompt: z.string().trim().min(1).max(16_000), evidence: operatorEvidenceSchema }),
+  ]),
+});
 
 export type OperatorEvidence = z.infer<typeof operatorEvidenceSchema>;
 export type ReconciliationObservation = z.infer<typeof reconciliationObservationSchema>;
