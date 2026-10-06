@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:01 UTC；生产基线115b未改 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:05 UTC；生产基线115b |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；正式入口target 9da9de1b6778afec5219e55f39b53b365c8cf900，metadata后继单列 |
-| 工作树dirty状态 | 仅独审metadata待提交；9da源码停写 |
+| 工作树dirty状态 | 仅W1结果与状态待提交，源码9da未变 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 9da9de1b6778afec5219e55f39b53b365c8cf900：6纯统计/预算unit测试，noEmit0；仅运行准备验证，尚无gate/formal数据库任务 |
 | 已集成main状态 / HEAD | 未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c |
 | 实现目标 | 9da9de1b6778afec5219e55f39b53b365c8cf900 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 正式计量与超领门禁入口已独立审查通过，尚未运行 |
-| 下一可用交付 | 协调最多60秒的运行窗口，先8任务门禁，再16任务四进程测量 |
-| 当前阻塞 | ACTIVE: 等待Goal Owner/Execution Lead协调正式运行窗口；准备代码已通过 |
+| 当前产出 | 首个四进程测量已完成并清理，正在独立核对事件与计量结论 |
+| 下一可用交付 | 交付首个窗口的独立结果审查，再决定是否运行有用的对照或故障片段 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 9da9de1b6778afec5219e55f39b53b365c8cf900：仅gate8+formal16运行准备，不代表容量结果 |
+| Review | [review.md](review.md)，9da准备代码已APPROVED；W1结果待独立review，不宣称容量验收 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -59,3 +59,5 @@ claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执
 2026-10-06 06:58 UTC：两项P2已修，6unit tests/noEmit0；运行入口统一总64任务/attempts及180秒预算与同scenario不重跑，缺完成receipt时failclosed。正式要求先成功gate。尚未创建新的DB/task/进程，窗口申请待固定入口复审。
 
 2026-10-06 07:01 UTC：运行准备独审APPROVED。待协调具体窗口；Mika为解阻责任人，向GO回固定target、60秒总窗、独有DB/PID正常清理。无窗口时可做只读结果报告模板/后继方法核查，不能启动负载。历史smoke8已用，计划本窗再24 tasks，累计最多32/64；0模型。
+
+2026-10-06T07:05:09.162788+00:00 W1实质交付：gate8tasks/2attempts，formal16tasks/16attempts；结果failure=null、完整清理，实测attempt峰值4但结果待独审。累计32tasks/26attempts，余32task原分配未动；0模型。原2份smoke失败/修复证据原样保留；本窗raw已写，生产未变。
