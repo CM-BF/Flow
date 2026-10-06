@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:02 UTC / mainca683820 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:30 UTC / mainc8e2e9e（个人窗口已关闭，root恢复main） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin ca683820已接F04准备独审与SVC07固定HTTP输入回执；175来源已登记。个人后台362/v15与Web8d8/caa1/v2保持；2040更新只读step01停止，0材料/维护/重启/发布。 |
+| 已集成main状态 / HEAD | main/originc8e2e9e已接F04修复及消息设置独立组件；21:27个人更新成功，实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 保留网页与候选后台的兼容证据已完整；终端和网页接续首验在终端请求捕获前失败，未创建任务，专用资源已独立收尾。 |
-| 下一可用交付 | 先修复终端启动诊断与收尾输出留存，再验证双端接续；个人更新的旧未决记录恢复正做限定独审，其他已就绪检查继续串行运行。 |
-| 当前阻塞 | ACTIVE: 新版发布需处理已定位的旧本地未决领取记录；一次保历史退役方案已授权，正做实现/独审，未操作个人记录。完整后台产物仍待原空间门槛；小检查按各自fresh预算继续。 |
+| 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；后续检查窗口已归还，批量读取依赖已补齐。 |
+| 下一可用交付 | 事务连接修复的真实HTTP验证，随后终端与网页双端接续；进程监督复用模块并行实施。 |
+| 当前阻塞 | ACTIVE: 完整后台固定产物仍待2.5GiB门槛；其他检查逐项fresh资源准入，个人发布旧intent阻塞已解除，不降低原门槛。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -277,3 +277,15 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 2026-10-06 20:56 UTC：Web Recovery实际清理归还后，F04取得一次原150s/0provider串行窗口；实际开始仍须fresh源码/领取/空间。Mika/Web已直接协调暂停重运行，源码和审查继续。[准入](../../docs/quality/f04-window-2056.json)。
 
 2026-10-06 21:02 UTC：F04首验26,512ms失败、0task，原证据保留；独立cleanup-only于20:59:20正常完成，3自有组absent、marker/devino匹配、空连接、DB/tmp删除确认，窗口已归还Web/Mika。停止期PTY输出未持久的诊断缺口明确记录，不把清理成功当行为通过；后继先0PG/Chrome修捕获。MATURE02C02新树source-only操作按GO限定委派Mika，本Lead尚未创建；main/其它树/共享配置仍原边界。
+
+2026-10-06 21:17 UTC：SVC07在21:08因空间HOLD/0child/0PG明确归还；原SVC05H operator曾被runtime拒绝唤醒，在GO释放只读槽后一次恢复成功，未更换操作者/claim。固定0a8/7fb已独审130绑定，通过新exclusive run-retirement-release-20261006T211659Z与I02 388bb3f5 source-window启动一次已授权窗口；root准确af51，main421b冻结。09 drain起≤900秒，每步明确成功才继续，unknown保留维护与原件，0provider/用户tab。两peer已通知无新PG/Chrome；源码工作继续。
+
+2026-10-06 21:21 UTC：run211659仅01只读613ms与02比较57ms；唯一retained false为实际descriptor同三字段不同键序，原JSON.stringify误拒，0材料/维护/退役/发布。窗口已关闭，root恢复main421b后正常发布MessageSettings至c8e，operator仅原范围局部修复，不预占PG/Chrome。原失败保持；独立0a8批准与此次实际失败分开。OPS14最小独立树owned-process-supervision/codex已供给c8e、53,701B，原native_center_owner受派fresh take三scope（tools模块/自有plan/evidence），两个在用wrapper不改；完整复用需后继正式交权。
+
+2026-10-06 21:23 UTC：descriptor专用三字段比较6e7109已增量独审，146固定/145现场绑定全同；原保存反例与值/未知键/列表顺序3纯例通过116ms，旧18不重跑。新exclusive run212322、source-window34621ca0，root固定af51/main冻结c8e；原operator已获START，fresh现场/原24步/09起900秒不变，无模型许可。旧211659失败仅作为已封存反例，不改绿。
+
+## 2026-10-06 21:30 个人更新收口与下一运行窗口
+
+同一原operator完成 run-retirement-release-20261006T212322Z 的24步，25个最终check均true、166.030s/900s、0主动任务/provider/tab操作。旧80B intent先0600私有备份与持久审计，再按已批精确语义退役为46B；旧claim结果仍unknown，不造ACK/重放。af51后台accepting v18，新Web d629 v3，三保留产物和旧数据保持。Lead只读核保存回执后恢复root mainc8e2e9e clean；[源码窗口关闭记录](../../../m2-integration/docs/evidence/i02/af51-d629-retirement-source-window-2125-closed.json)。
+
+下一共享短窗口给Mika SVC07既定HTTP消费者，开始前重新核原资源线；结束后直接与Web/F04交还，不把末free1,252,483,072B当未来准入值。REQ15九个原固定依赖链接已核版本/hash并供给，未改tracked/dirty，无install/import/PG，见[供给回执](../../docs/quality/req15-dependency-provision-20261006.json)。OPS14、MATURE02C02、REQ15三来源进入正常登记批，metadata错误仍由原owner修，不改parser猜状态。

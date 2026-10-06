@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:12 UTC / mainf3358439 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:29 UTC / mainc8e2e9e |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 现用页面已恢复；看板来源新增事务连接修复，候选共174项，状态继续读取唯一负责人。 |
+| 当前产出 | 个人预览已更新；看板新增进程监督、会话连续性与批量读取三个来源，状态继续读取各自负责人。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -171,3 +171,7 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 实际部署回执19:02:38.991Z：173源，DPERF05 human完整/errors[]、固定范围unchanged；源审查修复/NOT_RUN保留。只替换本组4320已知旧进程，个人服务/用户tabs未动。见[timestamp-source-live-receipt.json](../../docs/evidence/d05/timestamp-source-live-receipt.json)。
 
 2026-10-06 20:12 UTC：新增SVC07唯一source server-transaction-disconnect/plans/svc07-transaction-recovery，固定首源码e28c4ed0，claim3bbb8293 v1由Mika/db_transaction_owner持有。领域定向验证已由owner完成，独审与main接收尚未完成；登记不宣称功能上线。S01P07/REQ15两树仅source provision，尚无三件套canonical，不冒登记实施。架构固定图未变，不重跑图/UI。
+
+## 2026-10-06 21:29 来源登记
+
+新增 OPS14、MATURE02C02、REQ15，178个唯一来源及三件套/证据目录存在已核；[必要解析检查](../../docs/evidence/d05/ops14-codex-req15-registry-validation.json)。REQ15解析正常，另外两源metadata格式缺项已交原owner修正，不替其推断完成。仅登记维护，固定架构快照不改；个人服务窗口已关闭，main接收与4320加载回执随后记录。
