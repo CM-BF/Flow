@@ -50,6 +50,7 @@ const assignments = [
   ['CHAT04', '持久消息队列', '工作线', 'conversation-queue', 'chat04-conversation-queue'],
   ['WPF-QUEUE00', '旧新队列能力兼容', '工作线', 'web-queue-compatibility', 'wpf-queue00-compatibility'],
   ['O03', '目标工具执行授权', '工作线', 'goal-tool-authorization', 'o03-goal-tool-authorization'],
+  ['O05', '目标拆分提案与应用', '工作线', 'goal-graph-proposals', 'o05-goal-graph-proposals'],
   ['O04', '原生目标工具运行', '工作线', 'native-goal-execution', 'o04-native-goal-bridge'],
   ['B02', '对话读取成本测量', '技术验证', 'conversation-read-cost', 'b02-conversation-read-cost'],
   ['B03', '长对话预览读取优化', '工作线', 'bounded-conversation-preview', 'b03-bounded-preview'],
