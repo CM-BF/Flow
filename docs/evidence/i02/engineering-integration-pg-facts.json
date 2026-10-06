@@ -1,0 +1,31 @@
+{
+  "database": "flow_eng01a_vertical_d2cdb1dd3e12482c993316f8482fe8ea",
+  "databaseRemoved": true,
+  "providerCalls": 0,
+  "samples": [
+    {
+      "scenario": "success",
+      "elapsedMs": 2025,
+      "checkerElapsedMs": 35,
+      "artifactBytes": 3077,
+      "snapshotFiles": 4,
+      "diffBytes": 630,
+      "checkerChildExited": true,
+      "writes": 1
+    },
+    {
+      "scenario": "unknown",
+      "uncertainty": "Explicit fixture injection after awaited writes; no child dispatched",
+      "writes": 1,
+      "reservationHeld": true,
+      "journalRetained": true
+    },
+    {
+      "scenario": "lost-acknowledgement",
+      "writes": 1,
+      "events": 1,
+      "journalRetained": true,
+      "verificationStatus": "pending"
+    }
+  ]
+}

@@ -466,3 +466,31 @@ UI 插件负责渲染或触发公共命令，不能成为某项业务执行的�
 2026-10-06 08:49 UTC协作记录（随后由用户最终规则覆盖）：当前职责、两层任务和跨层消息预算以[OPS-001](../ops-001-status-review/plan.md)及根AGENTS为准；早期分工/额度和泛化重要接口消息例外均为历史。co-lead→GO仅每大task独立blockers+完整Done一次，日常接口/领取/集成由status→dashboard传递。
 
 2026-10-06 09:45 UTC发布后继：FLOW-001-T04/REQ-19增加SVC04独立Web artifact发布与回退。沿用已审SVC03固定artifact/自有进程/锁，纯前端更新不能要求后台任务清零；旧tab的lazy assets需精确manifest白名单、有界保留且不自动reload。先0provider自有fixture验证后台持续、失败保旧和rollback，真实安装切换另走现有受控流程。现SVC03仍是固定单artifact服务，以上是授权后继，不冒称已实现；co-lead已安排原runner_owner在TUI审查修复安全停点准备独立scope。
+
+
+<a id="continuous-goal-delivery"></a>
+## 连续目标交付的下一纵向路径（2026-10-06）
+
+沿原O01-05、M02、REQ-01/22执行，由Execution Lead负责跨端技术规划；不新增重复大task，不以已交付workspace列表代替完整目标。ENG01B与TUI01C当前领取片段先安全交付，随后优先此路径，具体实现仍独立worktree/精确claim。
+
+| 责任 | 复用接口与下一个最小接缝 | 依赖与验收 |
+| --- | --- | --- |
+| 中心目标/计划 | G01/O01 goal、固定revision proposal/apply、受限grant和节点输入；有意义的目标/决策/产物变化保存可追溯解释 | 不扩大旧grant；保存源版本，不每条tool event调用模型；刷新只读 |
+| 执行与验收 | 现runner claim/lease/outbox、queue、C02恢复、ENG受信检查与产物版本 | 执行、机械验证、业务接受分开；失败保留旧证据，重试不重复未知副作用 |
+| 统一公开旅程 | 连接现goal→plan→node execution→verification→decision/delivery，补最窄持久关联或有界读模型 | 由现公开typed命令驱动；无客户端编排权威、无第二调度器；新scope先看已有真实缺口 |
+| 客户端 | CLI/headless/TUI先验证共同协议；Web并行消费同一中心历史/命令 | 不要求逐task找结果，任一端退出不取消任务；只为受影响浏览器交互补验 |
+
+完整验收：在一个连续入口提出目标和约束，理解并决定计划变化；看到并行进展与真实blocker；验证失败后能区分修复结果与旧证据；最终交付绑定内容版本、检查来源/范围与接受状态。固定文案、手动十个task或一个计划图成功均不足。零模型公开旅程只证明协议与恢复，真实native规划/解释/工程语义另用明确有界预算，不复用历史额度。
+
+
+### 连续读取的稳定身份与实时进展（2026-10-06 11:15，研究输入）
+
+GO只读固定4285182（至a7238相应文件无差）：goal-tools-mcp/read.ts先取全GoalSnapshot并hash；非input详情/下一页要求相同snapshotRef。goals/state.ts在snapshot中携带execution.task.updatedAt，而events.ts会随已提交活动更新它。因此无关兄弟任务的新活动可能使当前材料ref失效，迫使重新overview。此为源码推导，尚未复现，不能称token浪费或百agent失败。已有goal-graph-runs/runner.ts的固定baseRevision分页/currentRevision/stale可借鉴，但固定图读取不是动态执行读取已完成。
+
+下一统一读口应将稳定输入、已保存解释、集合分页身份与实时执行进展分开；真实写命令/产物接受仍由中心核节点输入、依赖产物版本、grant/fence，不能将混合观察冒充一致快照。先两节点0模型公共旅程：读A/翻页期间B活动更新；相关输入/依赖变化仍显式识别且过期写拒绝。记录实际请求数、传输字节、重复可读材料，不把bytes当tokens，不造新快照平台或第二调度器。与上述同一连续目标路径一起设计，不另立大task、不打断当前片段。
+
+2026-10-06 11:32:46 UTC 执行映射：原O01/M02下一统一读口已由[O11唯一子计划](../../../goal-delivery-read-model/plans/o11-goal-delivery-read-model/plan.md)领取，实现owner只读plan/state/immutable input/decision分层。独立WT与6literal（含两个type-only共用规则hook）不新造大task或调度器。写权限与相关版本拒绝仍原中心权威；实际验收和成本字节待子片证据，普通进度仅其status。
+
+### 连续入口的历史解释与共享控制器（2026-10-06 11:55:24 UTC）
+
+O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连续观察、显式命令/未知ACK恢复与断开不取消。复用immutable goal_explanations提供轻历史引用和按固定id显式正文，超过旧50条窗口仍可达；兄弟活动不能使旧解释引用失效，历史解释不代表当前状态仍有效。0模型公开旅程覆盖>50条、相关版本冲突、两个公开客户端和同key恢复。状态仍中心权威，客户端不自动调模型或调度child；owner读口不直接授予runner/MCP。公开typed入口由headless/TUI/Web并行消费，完整自然语言目标闭环不因本片通过而勾完。

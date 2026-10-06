@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-06 11:45:43 UTC",
+  "source": "fresh coordination CLI list (full receipt outside project)",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/queries.ts",
+      "apps/server/src/task-read-projection.test.ts",
+      "apps/server/src/task-read-projection.ts",
+      "apps/server/src/tasks.ts",
+      "docs/evidence/b01/task-projections",
+      "experiments/bounded-reads/task-projections",
+      "plans/b01-bounded-reads"
+    ],
+    "state": "active",
+    "branch": "codex/task-read-projections",
+    "origin": "new",
+    "taskId": "B01",
+    "worker": "status_read",
+    "claimId": "190bd45e-ffc6-4248-aca9-0ebd282c26b0",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections",
+    "createdAt": "2026-10-06T11:34:16.232Z",
+    "updatedAt": "2026-10-06T11:34:16.232Z",
+    "observedAt": null,
+    "needsVerification": false
+  }
+}

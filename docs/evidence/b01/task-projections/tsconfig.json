@@ -1,0 +1,5 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "include": ["../../../../apps/server/src/task-read-projection.test.ts", "../../../../apps/server/src/task-read-projection.ts", "../../../../apps/server/src/tasks.ts", "../../../../apps/server/src/queries.ts"],
+  "exclude": ["../../../../node_modules", "../../../../**/dist/**"]
+}

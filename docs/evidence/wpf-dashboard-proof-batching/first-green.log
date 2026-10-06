@@ -1,0 +1,57 @@
+✔ structured summaries never mine historical risks or no-decision prose (334.151083ms)
+✔ active work is bounded and priority ordered; completed history is separate (312.127ms)
+✔ metadata-only changes retain exact implementation approval, including dirty docs (650.341583ms)
+✔ tracked changes, additions, deletions and untracked implementation invalidate approval (791.903375ms)
+✔ new code outside a narrow scope is unknown, not metadata approval (400.399333ms)
+✔ missing/unsafe/nonexistent scopes and absent target never turn green (715.279625ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-rGPk9l/T01
+ * branch            822f3940fb7cb6847945de844672491abf785799 -> FETCH_HEAD
+✔ main ancestry survives unrelated main metadata commits without owner status rewrites (681.744333ms)
+✔ scope-tree integration requires existing target and no omitted new implementation (580.623041ms)
+✔ registry sources have unique valid identities and bounded canonical Web platform paths (0.552916ms)
+✔ executable files under docs are not silently treated as metadata (368.746708ms)
+✔ top three never hide other active work, while historical missing summaries stay in history (7.514417ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-Kzthgz/T01
+ * branch            47e715004236d831fceed787abc6d71f4f2c5f3e -> FETCH_HEAD
+✔ historical main ancestry cannot approve later implementation changes, deletions or dirty paths (1173.623417ms)
+✔ global phase comes only from the explicit short phase source (254.49125ms)
+✔ one matching task target starts one comparison; a second snapshot performs fresh reads (736.428833ms)
+ℹ {"phase":"same-target","gitStarts":24,"targetComparisons":1}
+✔ different review target is still independently compared and can invalidate approval (622.632458ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (973.240167ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (837.081458ms)
+✔ 128 literal declarations use one tree read without changing public proof or next-snapshot freshness (422.339583ms)
+✖ overlapping directories and duplicate declarations preserve full NUL records including unusual descendant names (274.17925ms)
+✔ missing individual scope is unknown even when another scope or similarly named directory returns entries (176.425375ms)
+✔ main deletion is a changed tree, not a missing source or green proof (252.221125ms)
+✔ different repositories or commits cannot reuse a successful tree (375.560709ms)
+✔ combined stdout overflow falls back serially and retains scopes that fit the original per-scope limit (792.508334ms)
+✔ one scope larger than maxBuffer remains unknown without retry or relabeling as missing (722.239834ms)
+✔ bad target fails without tree retries, and invalid declarations retain validation semantics (181.517917ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 24
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6371.072208
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/proof-tree-batch.test.mjs:57:1
+✖ overlapping directories and duplicate declarations preserve full NUL records including unusual descendant names (274.17925ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/apps/execution-dashboard/test/proof-tree-batch.test.mjs:68:10)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

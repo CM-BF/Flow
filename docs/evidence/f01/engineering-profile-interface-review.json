@@ -1,0 +1,21 @@
+{
+  "target": "6c9fbfde15e27ea5be69ef53b6e74d0ec5b83664",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "observedAt": "2026-10-06T10:54:01.398969+00:00",
+  "status": "APPROVED_INTERFACE_ONLY",
+  "sources": [
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    }
+  ],
+  "scope": "Fixed DTO input for F01 client preparation. Full schema and existing engineering intent delta read. Fixture-only closed configuration, no path/argv/env, bounded timeout/page, optional legacy pin, existing fixed reference identity. No domain, publication policy, startup or main approval.",
+  "findings": [],
+  "checksRun": 0
+}

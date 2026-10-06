@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-10-06T11:33:58.364Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "9db6708fa5072915d3354d27becd847dbbf8f6cb",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T11:34:00.083Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "count": 139,
+  "assignmentsState": "available",
+  "unregisteredAssignments": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/read-cache.ts",
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/workspace-retention.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts",
+        "apps/web/test/workspace-retention.fixture.ts",
+        "apps/web/test/workspace-retention.test.ts",
+        "docs/evidence/wpf-workspace-cache",
+        "plans/wpf-workspace-cache"
+      ],
+      "state": "active",
+      "branch": "codex/web-workspace-cache",
+      "origin": "new",
+      "taskId": "WPF-WORKSPACECACHE01",
+      "worker": "workspace_panels_owner",
+      "claimId": "883321bc-933f-4da0-8f86-f200c02620cf",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+      "createdAt": "2026-10-06T11:33:51.839Z",
+      "updatedAt": "2026-10-06T11:33:51.839Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "O11",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T11:29:51.578Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model/plans/o11-goal-delivery-read-model/status.md",
+        "syncedAt": "2026-10-06T11:33:58.364Z",
+        "stale": false,
+        "ageHours": 0.06621222222222223
+      },
+      "statusKeys": [
+        "taskLinks",
+        "human",
+        "implementation",
+        "taskId",
+        "owner",
+        "branch",
+        "branchState",
+        "updatedAt",
+        "updatedRecord",
+        "todos",
+        "errors",
+        "declaredHead",
+        "declaredDirty",
+        "checks",
+        "reviewRecord",
+        "mainRecord",
+        "next",
+        "risks",
+        "decisions"
+      ],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已确定按版本读取输入与轻量刷新执行进度的接口",
+        "next": "其他节点有新进展时，已读材料无需重新加载",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": [],
+      "head": "042e7e99189c04a3184edf3efe22ed0fa6235b33"
+    },
+    {
+      "id": "ENG01D",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T11:30:15.842Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams/plans/eng01d-native-writer-seams/status.md",
+        "syncedAt": "2026-10-06T11:33:58.364Z",
+        "stale": false,
+        "ageHours": 0.08287888888888889
+      },
+      "statusKeys": [
+        "taskLinks",
+        "human",
+        "implementation",
+        "taskId",
+        "owner",
+        "branch",
+        "branchState",
+        "updatedAt",
+        "updatedRecord",
+        "todos",
+        "errors",
+        "declaredHead",
+        "declaredDirty",
+        "checks",
+        "reviewRecord",
+        "mainRecord",
+        "next",
+        "risks",
+        "decisions"
+      ],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在提供不可变的真实执行身份，并复用现有单回合生命周期",
+        "next": "可独立审查的身份和单回合接缝",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": [],
+      "head": "6843a268d2dc3cba0f43737dd143cef760d843e6"
+    }
+  ]
+}

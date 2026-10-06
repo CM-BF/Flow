@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-06T11:41:51.006Z",
+  "source": "http://127.0.0.1:4320/api/snapshot",
+  "registered": true,
+  "task": {
+    "id": "O11",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T11:41:45.184Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model/plans/o11-goal-delivery-read-model/status.md",
+      "syncedAt": "2026-10-06T11:41:45.239Z",
+      "stale": false,
+      "ageHours": -0.004100277777777778
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/goal-delivery-read-model",
+      "head": "a9bde37e3b596adbf5e97c47c7efae09a4682ecd",
+      "dirty": true,
+      "changedFiles": 27,
+      "observedAt": "2026-10-06T11:41:46.737Z"
+    },
+    "progress": {
+      "completed": 3,
+      "total": 4
+    },
+    "issues": [],
+    "checks": {
+      "state": "passed",
+      "target": "a9bde37e3b596adbf5e97c47c7efae09a4682ecd",
+      "record": "PASSED a9bde37e3b596adbf5e97c47c7efae09a4682ecd：新7/7 + 原直接消费者25/25，分两轮32不同；最终 noEmit exit0；[报告](../../docs/evidence/o11/README.md)"
+    },
+    "review": {
+      "state": "not_started",
+      "record": "NOT_STARTED；[review.md](review.md)，固定目标已供独立审查",
+      "target": "a9bde37e3b596adbf5e97c47c7efae09a4682ecd"
+    },
+    "links": {
+      "kind": "subtask",
+      "coLead": {
+        "state": "known",
+        "record": "Execution Lead",
+        "value": "Execution Lead"
+      },
+      "parent": {
+        "state": "unknown",
+        "record": "[FLOW-001](../flow-001-architecture/plan.md)",
+        "reason": "父 ID 与登记计划链接不一致"
+      }
+    }
+  },
+  "localParser": {
+    "errors": [],
+    "checks": {
+      "state": "passed",
+      "target": "a9bde37e3b596adbf5e97c47c7efae09a4682ecd",
+      "record": "PASSED a9bde37e3b596adbf5e97c47c7efae09a4682ecd：新7/7 + 原直接消费者25/25，分两轮32不同；最终 noEmit exit0；[报告](../../docs/evidence/o11/README.md)"
+    }
+  }
+}

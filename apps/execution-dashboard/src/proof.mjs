@@ -19,15 +19,32 @@ export function parseImplementation(target, record) {
   return { target: fullSha.test(target) ? target : null, scopes: [...new Set(scopes)], errors };
 }
 
+async function collectTreeRecords(directory, target, scopes, records) {
+  let output;
+  try {
+    output = await git(directory, 'ls-tree', '-r', '-z', '--full-tree', target, '--', ...scopes.map(scope => `:(literal)${scope}`));
+  } catch (error) {
+    // Discard partial stdout. Preserve the existing per-scope buffer limit, with serial fallback only for size limits.
+    if (!['ERR_CHILD_PROCESS_STDIO_MAXBUFFER', 'E2BIG'].includes(error.code) || scopes.length < 2) throw error;
+    const middle = Math.floor(scopes.length / 2);
+    await collectTreeRecords(directory, target, scopes.slice(0, middle), records);
+    await collectTreeRecords(directory, target, scopes.slice(middle), records);
+    return;
+  }
+  for (const record of pathsFrom(output)) records.add(record);
+}
+
 async function tree(directory, target, scopes, requireEveryPath = true) {
   if ((await git(directory, 'cat-file', '-t', target)).trim() !== 'commit') throw new Error('目标不是 commit');
-  const entries = [];
-  for (const scope of scopes) {
-    const files = pathsFrom(await git(directory, 'ls-tree', '-r', '-z', '--full-tree', target, '--', `:(literal)${scope}`));
-    if (!files.length && requireEveryPath) throw new Error(`目标中不存在实现路径：${scope}`);
-    entries.push(...files);
+  const records = new Set();
+  await collectTreeRecords(directory, target, scopes, records);
+  if (requireEveryPath) {
+    const files = [...records].map(record => record.slice(record.indexOf('\t') + 1));
+    for (const scope of scopes) {
+      if (!files.some(file => file === scope || file.startsWith(`${scope}/`))) throw new Error(`目标中不存在实现路径：${scope}`);
+    }
   }
-  return [...new Set(entries)].sort().join('\0');
+  return [...records].sort().join('\0');
 }
 
 export async function compareImplementation(directory, target, head, implementation) {

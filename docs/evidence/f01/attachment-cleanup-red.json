@@ -1,0 +1,14 @@
+{
+  "startedAt": "2026-10-06T11:25:04.451655+00:00",
+  "endedAt": "2026-10-06T11:25:07.452550+00:00",
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "packages/client/src/attachment-production.test.ts",
+    "-t",
+    "cleans an exclusively|persists unknown cleanup"
+  ],
+  "exitCode": 1
+}

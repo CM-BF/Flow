@@ -1,3 +1,4 @@
+import { canOpenConversation, retentionReasons, MAX_RESIDENT_CONVERSATIONS } from "./workspace-retention";
 import { SteeringSurfaces, type SteeringIdentity } from "./plugin-integration/steering";
 import {
   Activity,
@@ -372,6 +373,14 @@ function Workspace({
   const [views] = useState(() => new Map<string, View>());
   const [drafts] = useState(() => new Map<string, DraftState>());
   const [groups, setGroups] = useState<ChatGroup[]>([]);
+  const currentGroups = useRef(groups);
+  currentGroups.current = groups;
+  const [retainedOpen, setRetainedOpen] = useState(false);
+  const [capacityBlocked, setCapacityBlocked] = useState(false);
+  const retainedInvoker = useRef<HTMLElement | null>(null);
+  const retainedDestination = useRef<string | null>(null);
+  const showRetained = (full: boolean) => { retainedInvoker.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; retainedDestination.current = null; setCapacityBlocked(full); setRetainedOpen(true); };
+  const lastRoute = useRef(location.hash);
   const [activeGroup, setActiveGroup] = useState("main");
   const [sidebar, setSidebar] = useState(() => window.innerWidth > 800);
   const [query, setQuery] = useState("");
@@ -396,15 +405,20 @@ function Workspace({
     await catalog.list(more);
     setLoadingList(false);
   };
-  const ensureView = (id: string): View => {
+  const residentCount = () => new Set([...views.values()].filter(view => view.conversation)).size;
+  const ensureView = (id: string): View | null => {
     let view = views.get(id);
     if (!view && id.startsWith("conversation:")) {
       const cached = [...views.entries()].find(([, item]) => item.conversation?.getSnapshot().snapshot?.conversation.id === id.slice(13));
       if (cached) {
         const [oldId, existing] = cached; view = existing; views.delete(oldId); views.set(id, existing);
         const draft = drafts.get(oldId); if (draft) { drafts.set(id, draft); drafts.delete(oldId); }
+        setPanelTabs(previous => { const next = { ...previous }; if (next[oldId]) { next[id] = next[oldId]!; delete next[oldId]; } return next; });
         setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? id : tab), activeId: group.activeId === oldId ? id : group.activeId })));
       }
+    }
+    if (!view && (id.startsWith("draft-") || id.startsWith("conversation:")) && !canOpenConversation(residentCount(), false)) {
+      showRetained(true); return null;
     }
     if (!view) {
       view = {
@@ -424,9 +438,10 @@ function Workspace({
     return view;
   };
   const newChat = () => {
-    setOverview(false);
+    if (!canOpenConversation(residentCount(), false)) { showRetained(true); return; }
     const id = `draft-${crypto.randomUUID()}`;
-    ensureView(id);
+    if (!ensureView(id)) return;
+    setCapacityBlocked(false); setOverview(false);
     if (!profiles.getSnapshot().loaded && !profiles.getSnapshot().loading) void profiles.refresh();
     if (window.innerWidth <= 800) setSidebar(false);
     setGroups((previous) =>
@@ -436,8 +451,8 @@ function Workspace({
     );
   };
   const select = (id: string) => {
-    setOverview(false);
-    ensureView(id);
+    if (!ensureView(id)) { history.replaceState(null, "", lastRoute.current || location.pathname + location.search); return; }
+    setCapacityBlocked(false); setOverview(false);
     if (window.innerWidth <= 800) setSidebar(false);
     setGroups((previous) => {
       const group = previous.find((item) => item.tabs.includes(id));
@@ -491,6 +506,7 @@ function Workspace({
     tasks.forEach(task => { catalog.syncSummary(task); views.get(task.id)?.projection.syncSummary(task); });
   }, [catalog, views]);
   useEffect(() => {
+    lastRoute.current = overview ? "#workspace" : selectedId?.startsWith("conversation:") ? `#conversation=${encodeURIComponent(selectedId.slice(13))}` : selectedId?.startsWith("draft-") ? "" : selectedId ? `#task=${encodeURIComponent(selectedId)}` : "";
     if (selectedId && !overview)
       history.replaceState(
         null,
@@ -512,7 +528,24 @@ function Workspace({
     requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('.flow-workspace-bar button[aria-label="Toggle workspace panel"]')?.focus());
   };
   const [leaving, setLeaving] = useState<{ kind: "view"; id: string } | { kind: "connection" } | null>(null);
-  const closeNow = (id: string) => {
+  const protectedReasons = (id: string, view: View) => retentionReasons({
+    text: drafts.get(id)?.text ?? "",
+    unsubmittedProfile: !!view.conversation && !view.conversation.getSnapshot().snapshot && Object.hasOwn(profileSelections, view.key),
+    hasOutbox: !!view.conversation?.getSnapshot().outbox,
+    queueReceipts: view.conversation?.queue.getSnapshot().receipts.length ?? 0,
+    host: session?.getViewProtection(view.key) ?? ["Host state unavailable"],
+  });
+  const releaseConversation = (view: View) => {
+    session?.releaseView(view.key);
+    const aliases = [...views].filter(([, candidate]) => candidate.key === view.key).map(([id]) => id);
+    aliases.forEach(id => { views.delete(id); drafts.delete(id); });
+    setProfileSelections(previous => { const next = { ...previous }; delete next[view.key]; return next; });
+    setPanelTabs(previous => { const next = { ...previous }; aliases.forEach(id => { delete next[id]; }); return next; });
+    const taskId = view.projection.getSnapshot().task?.id;
+    setPanelFocusRequest(previous => previous?.taskId === taskId ? null : previous);
+    view.conversation?.dispose(); view.projection.disconnect();
+  };
+  const closeNow = (id: string, discardSteering = false) => {
     const next = closeChat(groups, id);
     setGroups(next);
     const targetGroup =
@@ -528,9 +561,14 @@ function Workspace({
       target?.focus();
     });
     const closing = views.get(id);
-    if (closing) session?.steering.closeView(closing.key);
-    if (closing?.conversation) { closing.conversation.setVisible(false); closing.projection.setVisible(false); }
-    else { closing?.projection.disconnect(); views.delete(id); drafts.delete(id); }
+    if (closing && discardSteering) session?.steering.closeView(closing.key);
+    if (closing?.conversation) {
+      const reasons = protectedReasons(id, closing);
+      closing.conversation.setVisible(false); closing.projection.setVisible(false);
+      closing.conversation.clearReadCache(); session?.steering.hide(closing.key);
+      if (!reasons.length) releaseConversation(closing);
+    }
+    else { if (closing) session?.steering.closeView(closing.key); closing?.projection.disconnect(); views.delete(id); drafts.delete(id); }
     void refreshChats();
   };
   const close = (id: string) => { const view = views.get(id); if (view && session?.steering.risks(view.key)) setLeaving({ kind: "view", id }); else closeNow(id); };
@@ -540,10 +578,16 @@ function Workspace({
     if (!view) return;
     if (view.conversation) {
       const nextId = `conversation:${id}`;
-      if (oldId === nextId) { void conversations.refresh(); return; }
+      const stillOpen = currentGroups.current.some(group => group.tabs.includes(oldId) || group.tabs.includes(nextId));
+      if (oldId === nextId) {
+        if (!stillOpen && !protectedReasons(nextId, view).length) releaseConversation(view);
+        void conversations.refresh(); return;
+      }
       views.delete(oldId); views.set(nextId, view);
       const draft = drafts.get(oldId); if (draft) { drafts.set(nextId, draft); drafts.delete(oldId); }
+      setPanelTabs(previous => { const next = { ...previous }; if (next[oldId]) { next[nextId] = next[oldId]!; delete next[oldId]; } return next; });
       setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? nextId : tab), activeId: group.activeId === oldId ? nextId : group.activeId })));
+      if (!stillOpen && !protectedReasons(nextId, view).length) releaseConversation(view);
       void conversations.refresh(); return;
     }
     views.delete(oldId);
@@ -562,6 +606,7 @@ function Workspace({
   const inspect = async (viewId: string, taskId: string, tab: WorkspaceTabId = "terminal") => {
     const view = views.get(viewId); if (!view) return;
     if (view.projection.getSnapshot().task?.id !== taskId) await view.projection.select(taskId);
+    if (views.get(viewId) !== view || session?.signal.aborted) return;
     setPanel(tab, viewId);
   };
   const assertActivity = (identity: import("./plugin-integration/activity").ActivityIdentity) => {
@@ -645,7 +690,13 @@ function Workspace({
   if (!session) return <p role="status">Opening workspace…</p>;
   return (
     <PluginProvider session={session}><SteeringSurfaces workspace={session.steering} />
-    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>Leave unconfirmed steering receipts?</DialogTitle><DialogDescription>Leaving loses this page’s original command keys and local recovery record. A command may already be accepted or running. Closing this view does not cancel work at the center.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id); else if (destination) disconnectNow(); }}>Leave and discard local recovery</Button></DialogFooter></DialogContent></Dialog>
+    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>Leave unconfirmed steering receipts?</DialogTitle><DialogDescription>Leaving loses this page’s original command keys and local recovery record. A command may already be accepted or running. Closing this view does not cancel work at the center.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id, true); else if (destination) disconnectNow(); }}>Leave and discard local recovery</Button></DialogFooter></DialogContent></Dialog>
+    <Dialog open={retainedOpen} onOpenChange={setRetainedOpen}><DialogContent onCloseAutoFocus={event => { event.preventDefault(); const destination = retainedDestination.current; requestAnimationFrame(() => { const target = destination ? document.getElementById(`tab-${destination}`) : retainedInvoker.current; if (target?.isConnected) target.focus(); }); }}><DialogHeader><DialogTitle>Retained chats</DialogTitle><DialogDescription>{residentCount()} / {MAX_RESIDENT_CONVERSATIONS} conversation views in this connection. Close an empty chat to free a place. Drafts and receipts are kept until you resolve them.</DialogDescription></DialogHeader>
+      {capacityBlocked && <p role="alert">No place for another chat. Your current tabs, route and drafts were kept.</p>}
+      <ul className="max-h-64 space-y-2 overflow-y-auto">{[...views].filter(([, view]) => view.conversation).map(([id, view]) => {
+        const open = groups.some(group => group.tabs.includes(id)), reasons = protectedReasons(id, view);
+        return <li key={view.key}><Button variant="outline" onClick={() => { retainedDestination.current = id; select(id); setRetainedOpen(false); }}>{view.conversation?.getSnapshot().snapshot?.conversation.title ?? "New chat"}</Button><p className="text-xs">{open ? "Open" : "Closed, retained"}{reasons.length ? ` · ${reasons.join(", ")}` : " · No local material"}</p></li>;
+      })}</ul><DialogFooter><Button onClick={() => setRetainedOpen(false)}>Close retained chats</Button></DialogFooter></DialogContent></Dialog>
     <div className="flow-shell">
       <nav
         data-extension-slot="activityBar.primary"
@@ -798,10 +849,11 @@ function Workspace({
             </IconButton>
           </div>
         </header>
+        <button className="flow-link self-start px-3 text-xs" type="button" onClick={() => showRetained(false)}>Retained chats</button>
         <WorkspaceOverview client={client} active={overview} onTaskSummaries={syncWorkspaceSummaries} onOpenTask={select} onOpenReference={(taskId, referenceId) => {
           select(taskId);
           setPanel(`detail:${referenceId}`, taskId);
-          void ensureView(taskId).projection.loadDetail(referenceId);
+          void ensureView(taskId)?.projection.loadDetail(referenceId);
         }} />
         <div className="flow-work-area" hidden={overview}>
           <div

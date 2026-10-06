@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:36:28 UTC / main0b0d5fe7af9c0f40861ec6d2847f7383bcd76739 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:57:48.011301+00:00 / main017adc276a888a218bed3ef9963bc4dabbc6cec2 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 0b0d5fe7af9c0f40861ec6d2847f7383bcd76739 / 已审TUI01B与S01P03组合候选 |
+| 工作基线 / HEAD | 已审附件输入模块与B01任务/活动轻投影；S01P04/O12传输已main2f4 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 组合根类型检查通过；11源码固定hash一致，6主线保护文件零差；不重跑原70/62项 |
-| 已集成main状态 / HEAD | 前批0b0d5fe已推送、实际127源已核；本批终端确认和执行器停止修复紧接发布。个人backend/static仍b1c2e398、accepting v12。 |
+| 检查状态 | 45固定源码/原始证据绑定；root/Web types0；原17附件与8+5读取检查复用，0provider |
+| 已集成main状态 / HEAD | 2f4a5789已接S01P04/O12薄传输与144登记；本批附件模块/轻投影待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 终端发送遇到版本冲突会保留草稿并继续读取；执行器停止时会核清正在领取的结果。 |
-| 下一可用交付 | 工程通路已通过独立审查，准备接收；网页真实发布组合仍在验证。 |
+| 当前产出 | 并发读取修复已进主线；附件输入模块与轻量任务读取正在完成接收。 |
+| 下一可用交付 | 接收已审附件与读取优化，继续目标会话和真实工程路径。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -121,3 +121,19 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T10:18:50.449758+00:00：已审R05D配置与SVC04独立网页发布组合接收，18项逐文件相同、root类型检查exit0；不重跑已核72/15与原浏览器/PG。首次类型命令退出码包装失败保留，后一次独立记录exit0。个人服务不动。见[固定组合](../../docs/evidence/i02/launch-web-release-integration.json)。
 
 2026-10-06T10:22:16.377582+00:00：固定架构图2c316（源码基线f181）五执行源hash精确相同、renderer/CSS保持；126来源含TUI01B与唯一D06新树。原独审15/浏览器证据复用，不重跑。其他仅明确文档与领取交接，见[本批记录](../../docs/evidence/i02/shared-ack-architecture-integration.json)。
+
+2026-10-06 11:23 UTC：TUI01C焦点修复与ENG01B已审产品在main648，唯一owner均按receipt停写释放；runners交S01P04。137个真实来源登记及canonical收口见[批次清单](../../docs/evidence/i02/registry-137-closeout.json)。ENG01C仅writer生命周期，真实native身份/受信检查后继明确；本批不调用provider、不改变个人服务或架构固定图。
+
+2026-10-06 11:32 UTC：附件23源码均与固定独审target逐字相同；生产factory在8次启动/重启均自动026+六routes，fallback全false。六选中HTTP/PG case通过、23未选，四专库正常清理；root types0。[组合证据](../../docs/evidence/i02/attachment-integration.json)。ENG01C已main53ce，个人服务未更新。
+
+2026-10-06T11:39:07.083587+00:00：[ENG01D固定接收](../../docs/evidence/i02/engineering-native-seams-integration.json)五源零差异；只恢复唯一owner元数据冲突，无产品手改；复用已审直接消费者证据，0provider。
+
+2026-10-06T11:45:30.818273+00:00：[上下文历史与目标读取固定组合](../../docs/evidence/i02/context-goal-integration.json)源码hash全符，root types0；只修唯一F01状态的metadata冲突。个人部署不变。
+
+2026-10-06T11:51:35.308692+00:00：接收已审O11公共接线 c05fca7（四源）与ENG01E纯受信checker30dd（四源），8源固定逐字一致、集成root types0；复用原局部证据，不重跑PG/provider。O10/O11/D05/ENG父状态按各canonical窄同步，140源已实际部署。个人backend b1c/static8d8仍未更改。[receipt](../../docs/evidence/i02/goal-checker-integration.json)。
+
+2026-10-06T11:55:41.949116+00:00：接收Web独审DASHSUM01 c1de与WORKSPACECACHE01 4ec；18源码与固定target/manifest一致，main接收前源码等于各base，无手工冲突。Web类型0；原22/133独审与浏览器证据复用，未重跑。个人静态Web/后台不随main变化。[接收比较](../../docs/evidence/i02/web-cache-dashboard-summary-source-comparison.json)。
+
+2026-10-06T11:57:48.011301+00:00：S01P04生产e184+必需94b消费者修复按原独审接收；private FOR SHARE仅替换既有attempt的凭据读取，保留ENG claim/公开lockRunner强锁。31source/raw固定hash，root types0，无重跑容量或PG。O12 thin transport ec6两源exact，四新canonical登记144来源。[回执](../../docs/evidence/i02/runner-read-fence-source-comparison.json)。
+
+2026-10-06T12:02:14.623280+00:00：附件模块4c4与B01 c96/7d69三片固定源码/原始输出45项核验，18source无差、修改路径原main与作者base一致；root/Web类型各0。复用独审行为证据，不重跑PG/浏览器/容量或provider。来源见[接收比较](../../docs/evidence/i02/attachment-task-read-source-comparison.json)。

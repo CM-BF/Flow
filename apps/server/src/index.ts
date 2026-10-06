@@ -1,4 +1,7 @@
+import { migrateContextObservationHistory } from './context-transparency/migration.js';
+import { registerContextHistoryRoutes } from './context-transparency/routes.js';
 import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
+import { registerGoalDeliveryRoutes } from './goal-delivery/index.js';
 import { migrateNativeHarnessSources } from './native-harness-migration.js';
 import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-steering/index.js';
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
@@ -12,6 +15,7 @@ import { migrateGoalGraphProposals, registerGoalGraphProposalRoutes } from './go
 import { migrateExecutionProfiles, registerExecutionProfileRoutes } from './execution-profiles/index.js';
 import { migrateConversationQueue, registerConversationQueueRoutes, scanConversationQueue } from './conversation-queue/index.js';
 import { migrateConversationContext, registerConversationContextRoutes } from './conversation-context/index.js';
+import { migrateAttachments, registerAttachmentRoutes } from './attachments/index.js';
 import { migrateGoalToolRuns, registerGoalToolRunRoutes } from './goal-tool-runs/index.js';
 import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
@@ -34,6 +38,7 @@ import { migrateWorkspace, registerWorkspaceRoutes } from './m2-workspace.js';
 import { registerTaskIndexRoutes } from './task-index.js';
 import { registerReconciliation } from './reconciliation-http.js';
 import { migrateProjects, registerProjectRoutes } from './projects/index.js';
+import { registerEngineeringRoutes } from './engineering/index.js';
 import { migrateProtocolDispatch, registerProtocolDispatch } from './protocol-dispatch/index.js';
 
 import { migrateGoals, registerGoalRoutes } from './goals/index.js';
@@ -80,6 +85,8 @@ export async function createServer(options: ServerOptions) {
     await migratePackageFetches(pool);
     await migrateActiveSteering(pool);
     await migrateNativeHarnessSources(pool);
+    await migrateAttachments(pool);
+    await migrateContextObservationHistory(pool);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {
@@ -141,6 +148,7 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
+  registerGoalDeliveryRoutes(app, pool);
   registerGoalNativeExecutionRoutes(app, pool, boss);
   registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
   registerAssistantStreamRoutes(app, pool);
@@ -151,8 +159,11 @@ export async function createServer(options: ServerOptions) {
   registerNativeActivityRoutes(app, pool);
   registerGoalContextRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
+  registerEngineeringRoutes(app, pool);
   registerConversationQueueRoutes(app, pool, boss);
   registerConversationContextRoutes(app, pool);
+  registerAttachmentRoutes(app, pool);
+  registerContextHistoryRoutes(app, pool);
   registerGoalToolRunRoutes(app, pool, boss);
   registerGoalGraphProposalRoutes(app, pool);
   registerKnowledgeRoutes(app, pool);

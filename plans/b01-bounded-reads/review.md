@@ -1,3 +1,31 @@
+# B01 第三reader独立review
+
+状态：APPROVED
+
+Review target commit：7d69f8b48a67bbf08eb1d7dbdebd8437da861b40
+
+Mika/gpt-6-astra于2026-10-06 11:57:54 UTC正式APPROVED，0P1/P2，未重跑；实现仅assistant-stream/queries.ts三列head与新task-head.test.ts/局部config。5/5真实专库PGHTTP、strict0；red1失败原样保留；head3tasks与首片合计10tasks，5库均closed/absent，无SDK/provider/runtime。新manifest 38项=3source/config+21readonly+9raw+5support；4red历史binding、首片50历史binding（49当前相同/1声明readonly变化）逐项核验，source/raw未重写。详见[head证据](../../docs/evidence/b01/task-projections/head/README.md)。本片不继承首片批准，也未集成main；原首片仍可从ec274快照独立接收。
+
+独审完整读取6行生产差异、113行测试与原始证据；确认38current/4red/50首片历史绑定及19legacy，5库清理与累计数值重算一致。详见[正式回执](../../docs/evidence/b01/task-projections/head/independent-review.json)和[固定集成输入](../../docs/evidence/b01/task-projections/head/integration-ready.md)。
+
+## 已批准首片历史（不覆盖第三reader）
+
+# B01 task轻投影独立review
+
+状态：APPROVED
+
+Review target commit：c96a6bb867bfa83b8ce26f79236ff13b14b63e65
+
+Reviewer：Mika / gpt-6-astra；2026-10-06 11:48:15 UTC正式APPROVED，0P1/P2，未重跑。权威WT task-read-projections / codex/task-read-projections，base fd1322f9c0c1d085d5e343e39f6216b20d26c264，claim190bd45e v1 ACTIVE。
+
+当前新片最终8/8真实PG/HTTP与局部strict0，原2次red及其历史source绑定完整保留；累计7tasks，三库都已确认不存在。检查与边界见[证据说明](../../docs/evidence/b01/task-projections/README.md)，[manifest](../../docs/evidence/b01/task-projections/manifest.json)包含6source/config、17readonly、18raw、9support及9历史red source、19旧B01冻结文件。独审需核固定target三生产源、测试/fixture、字节/SQL/HTTP口径和清理，不默认重跑PG。c855e33f的独立预读暂无P1/P2，明确不覆盖最终list/test，当时不是正式批准；本次Mika已完成最终组合审查。
+
+验收遵循[Interface](../../docs/evidence/b01/task-projections/interface.md)与根模块规则。新TaskSummaryRow/formatter由两个reader真实复用；snapshot/写锁/auth/rawcursor/pagination/RR保留；第三reader、TOAST/吞吐/模型能力没有完成声明。本片尚未main；Lead负责权威registry迁移与集成。
+
+正式结论与范围见[独审回执](../../docs/evidence/b01/task-projections/independent-review.json)及[固定集成输入](../../docs/evidence/b01/task-projections/integration-ready.md)。50current/17readonly=base/9red/19legacy全部匹配。后继第三reader不在本批准内。
+
+## 旧B01固定review历史（不批准新片）
+
 # B01 独立 review
 
 状态：APPROVED

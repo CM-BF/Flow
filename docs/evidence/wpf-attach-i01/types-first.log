@@ -1,0 +1,11 @@
+
+> @flow/web@0.1.0 typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web
+> tsc --noEmit -p tsconfig.json
+
+src/attachments/adapter.ts(6,3): error TS2322: Type 'Readonly<{ id: string; type: "file"; name: string; contentType: "text/plain"; status: Readonly<{ type: "complete"; }>; content: readonly never[]; }>' is not assignable to type 'CompleteAttachment'.
+  Type 'Readonly<{ id: string; type: "file"; name: string; contentType: "text/plain"; status: Readonly<{ type: "complete"; }>; content: readonly never[]; }>' is not assignable to type 'BaseAttachment'.
+    Types of property 'content' are incompatible.
+      The type 'readonly never[]' is 'readonly' and cannot be assigned to the mutable type 'ThreadUserMessagePart[]'.
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @flow/web@0.1.0 typecheck: `tsc --noEmit -p tsconfig.json`
+Exit status 2

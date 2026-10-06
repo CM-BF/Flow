@@ -1,0 +1,68 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+> tsc --noEmit
+
+apps/tui/src/headless.ts(2,44): error TS2307: Cannot find module '@flow/interaction' or its corresponding type declarations.
+apps/tui/src/intent-store.ts(5,61): error TS2307: Cannot find module '@flow/interaction' or its corresponding type declarations.
+apps/tui/src/journey.test.ts(9,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+apps/tui/src/journey.test.ts(10,39): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.
+apps/tui/src/journey.test.ts(11,58): error TS2307: Cannot find module '@flow/interaction' or its corresponding type declarations.
+apps/tui/src/journey.test.ts(73,143): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/tui/src/journey.test.ts(103,53): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/tui/src/main.tsx(1,19): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+apps/tui/src/main.tsx(2,24): error TS2307: Cannot find module 'ink' or its corresponding type declarations.
+apps/tui/src/main.tsx(7,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+apps/tui/src/main.tsx(8,65): error TS2307: Cannot find module '@flow/interaction' or its corresponding type declarations.
+apps/tui/src/main.tsx(15,81): error TS7006: Parameter 'command' implicitly has an 'any' type.
+apps/tui/src/main.tsx(33,26): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+apps/tui/src/recovery.test.ts(7,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+apps/tui/src/recovery.test.ts(8,90): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.
+apps/tui/src/recovery.test.ts(9,82): error TS2307: Cannot find module '@flow/interaction' or its corresponding type declarations.
+apps/tui/src/recovery.test.ts(60,53): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(1,66): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+apps/tui/src/screen.tsx(2,56): error TS2307: Cannot find module 'ink' or its corresponding type declarations.
+apps/tui/src/screen.tsx(3,27): error TS2307: Cannot find module '@assistant-ui/react-ink' or its corresponding type declarations.
+apps/tui/src/screen.tsx(4,73): error TS2307: Cannot find module '@flow/interaction' or its corresponding type declarations.
+apps/tui/src/screen.tsx(15,13): error TS7006: Parameter 'input' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(15,20): error TS7006: Parameter 'key' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(20,10): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+apps/tui/src/screen.tsx(24,49): error TS7006: Parameter 'turn' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(29,64): error TS7006: Parameter 'item' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(30,54): error TS7006: Parameter 'item' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(37,19): error TS7006: Parameter 'text' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(40,22): error TS7006: Parameter 'text' implicitly has an 'any' type.
+apps/tui/src/screen.tsx(41,44): error TS7006: Parameter 'answer' implicitly has an 'any' type.
+apps/tui/src/terminal.test.ts(1,28): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+apps/tui/src/terminal.test.ts(8,33): error TS2307: Cannot find module 'ink-testing-library' or its corresponding type declarations.
+apps/tui/src/terminal.test.ts(9,82): error TS2307: Cannot find module '@flow/interaction' or its corresponding type declarations.
+packages/interaction/src/acknowledgement.ts(1,75): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+packages/interaction/src/acknowledgement.ts(2,42): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.
+packages/interaction/src/commands.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/interaction/src/commands.ts(2,51): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/interaction/src/controller.test.ts(2,30): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+packages/interaction/src/controller.test.ts(4,107): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.
+packages/interaction/src/controller.test.ts(18,32): error TS7006: Parameter 'input' implicitly has an 'any' type.
+packages/interaction/src/controller.test.ts(18,39): error TS7006: Parameter 'key' implicitly has an 'any' type.
+packages/interaction/src/controller.test.ts(38,68): error TS7006: Parameter 'input' implicitly has an 'any' type.
+packages/interaction/src/controller.test.ts(38,75): error TS7006: Parameter 'key' implicitly has an 'any' type.
+packages/interaction/src/controller.test.ts(99,55): error TS7006: Parameter 'options' implicitly has an 'any' type.
+packages/interaction/src/controller.ts(2,30): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+packages/interaction/src/controller.ts(3,117): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.
+packages/interaction/src/controller.ts(41,82): error TS7006: Parameter 'turn' implicitly has an 'any' type.
+packages/interaction/src/controller.ts(62,66): error TS18047: 'state.selected' is possibly 'null'.
+packages/interaction/src/controller.ts(68,59): error TS18046: 'error' is of type 'unknown'.
+packages/interaction/src/controller.ts(68,82): error TS18046: 'error' is of type 'unknown'.
+packages/interaction/src/controller.ts(68,104): error TS18046: 'error' is of type 'unknown'.
+packages/interaction/src/controller.ts(68,129): error TS18046: 'error' is of type 'unknown'.
+packages/interaction/src/controller.ts(75,40): error TS18046: 'error' is of type 'unknown'.
+packages/interaction/src/controller.ts(88,93): error TS7006: Parameter 'item' implicitly has an 'any' type.
+packages/interaction/src/controller.ts(122,35): error TS2722: Cannot invoke an object which is possibly 'undefined'.
+packages/interaction/src/controller.ts(140,74): error TS2722: Cannot invoke an object which is possibly 'undefined'.
+packages/interaction/src/controller.ts(145,28): error TS2532: Object is possibly 'undefined'.
+packages/interaction/src/controller.ts(145,28): error TS2722: Cannot invoke an object which is possibly 'undefined'.
+packages/interaction/src/controller.ts(148,65): error TS18046: 'error' is of type 'unknown'.
+packages/interaction/src/projection.ts(1,39): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.
+packages/interaction/src/types.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/interaction/src/types.ts(2,33): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+packages/interaction/src/types.ts(3,68): error TS2307: Cannot find module '@flow/contracts' or its corresponding type declarations.
+ ELIFECYCLE  Command failed with exit code 2.

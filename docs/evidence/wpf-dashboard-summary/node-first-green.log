@@ -1,0 +1,21 @@
+✔ delivered slice leaves next deliveries despite open future TODO and changed main scope (5.412708ms)
+✔ review and integration remain actionable after author completion, planning does not (7.323417ms)
+✔ invalid explicit stage stays unknown instead of falling back to active branch (1.02325ms)
+✔ legacy author completion is labelled legacy and preserves review/main uncertainty (1.017834ms)
+✔ current blocked work has delivery priority; stale and invalid facts never become candidates (0.579208ms)
+✔ confirmed parent and child use one headline slot while other directions fill both top threes (3.18975ms)
+✔ child blockers and decisions stay independently visible without changing parent priority or facts (0.764625ms)
+✔ a planning parent never suppresses an active child (7.613917ms)
+✔ a delivered parent never suppresses an active child (0.35ms)
+✔ a parent with incomplete human facts does not borrow its child summary (0.157125ms)
+✔ an unknown relation with a registered target remains separate (0.109584ms)
+✔ stale, missing and cyclic parent sources cannot group children (1.283042ms)
+✔ legacy names and undeclared relationships preserve prior priority ordering (0.453125ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178.366833

@@ -1,12 +1,17 @@
 import type { ExecutionProfileReference } from '../../../../packages/contracts/src/execution-profiles.js';
 import type { PoolClient } from 'pg';
 import type { ConversationCapabilities, ConversationSettings, ConversationSummary, ConversationTurn } from '../../../../packages/contracts/src/conversations.js';
+import { attachmentsReady } from '../attachments/storage.js';
 import { contextReference } from '../conversation-context/store.js';
 import { HttpError } from '../database.js';
 import { assistantProjection } from './replies.js';
 import { loadTask, summary } from '../tasks.js';
 
-export const capabilities: ConversationCapabilities = { knowledgeContext: true, followUp: true, queue: true, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false };
+export const capabilities: ConversationCapabilities = { attachmentContext: false, knowledgeContext: true, followUp: true, queue: true, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false };
+/** Creation receipts stay stable; current readiness is read from a project-bound GET. */
+export async function conversationCapabilities(client: PoolClient, projectId?: string | null): Promise<ConversationCapabilities> {
+  return { ...capabilities, attachmentContext: Boolean(projectId) && await attachmentsReady(client) };
+}
 export interface ConversationRow { project_id?: string | null; id: string; title: string; harness: 'claude'; requested: ConversationSettings; execution_profile?: ExecutionProfileReference | null; revision: number; queue_revision: number; queue_paused: boolean; created_at: Date; updated_at: Date }
 export interface TurnRow { conversation_input_id?: string | null; id: string; conversation_id: string; number: number; task_id: string; user_text: string; created_at: Date }
 export function conversationView(row: ConversationRow): ConversationSummary {

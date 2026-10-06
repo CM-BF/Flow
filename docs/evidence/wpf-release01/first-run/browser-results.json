@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T10:32:36.770Z",
+  "backend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "oldWeb": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "newWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "sources": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "sha256": "6dac9ba4b0443bb4b925918535f6934dfd5dae4fcd48cb7db06524318053a4d3"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "sha256": "fb1f4a004c5ce753e98a3ae1298b2d2336ffa5814cb3ac560ecc737cac5a447a"
+    }
+  ],
+  "results": [],
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(first && first.status === 201 || first && first.status === 200)\n\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/apps/web/test/web-release-compatibility.browser.ts:48:14)",
+  "passed": false
+}

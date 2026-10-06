@@ -1,0 +1,47 @@
+{
+  "time": "2026-10-06T11:39:07.083587+00:00",
+  "source": "855e5675245f7774b8ce927ab8b2ffdb6133bddf",
+  "delivery": "4fd1e451e3b5e3b55bb0b15df5d43be2429d948c",
+  "sources": [
+    {
+      "role": "source",
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7027,
+      "sha256": "a440f51cee0776fd6c9b79ae139798baa8a8994c8e62c1463256c885b0c2a117"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/execution-identity.test.ts",
+      "bytes": 6521,
+      "sha256": "d74388c4a8a336d1d105819b29494f0e026dab405061cfc330f3ae37d04bd09d"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 2028,
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 5176,
+      "sha256": "63aa5aa11744497b4c90e8927cbf90aed383f5a9a945b15358fdaeec8ff0f9ad"
+    }
+  ],
+  "matched": 5,
+  "review": "Execution Lead independent read-only APPROVED; 60 manifest entries/hash/base checked; no P1/P2",
+  "validation": "65 distinct author checks / 32 unselected / 2 overlap and root types reused; ordinary turn body and event block exact extraction; no repeated test",
+  "merge": "4 add/add canonical metadata conflicts restored exactly from authoritative reviewed delivery; no product conflict",
+  "providerCalls": 0,
+  "limits": [
+    "immutable identity is not authorization",
+    "no native writer/file tool/full child-stop proof",
+    "no personal deployment"
+  ]
+}

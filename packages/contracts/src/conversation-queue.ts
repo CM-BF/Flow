@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { attachmentSelectionSchema } from './attachments.js';
 import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
 import { idSchema, type TaskSummary } from './tasks.js';
 
@@ -9,6 +10,7 @@ const revision = z.number().int().min(0).max(2_147_483_646);
 export const conversationQueueEnqueueSchema = z.strictObject({
   expectedQueueRevision: revision,
   knowledge: conversationContextSelectionSchema.optional(),
+  attachments: attachmentSelectionSchema.optional(),
   text: z.string().min(1).max(CONVERSATION_QUEUE_TEXT_BYTES).refine(text => text.trim().length > 0 && new TextEncoder().encode(text).length <= CONVERSATION_QUEUE_TEXT_BYTES),
 });
 export const conversationQueueCancelSchema = z.strictObject({ expectedQueueRevision: revision });

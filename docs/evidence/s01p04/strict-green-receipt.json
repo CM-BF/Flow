@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-10-06T11:18:15.148Z",
+  "finishedAt": "2026-10-06T11:18:16.873Z",
+  "elapsedMs": 1723.2055830000002,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "docs/evidence/s01p04/tsconfig.json"
+  ],
+  "rootStrictInherited": true,
+  "scope": "new test and runners plus transitive imports; not root-wide",
+  "exitCode": 0,
+  "signal": null
+}

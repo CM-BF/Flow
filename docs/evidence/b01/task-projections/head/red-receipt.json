@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/assistant-stream/task-head.test.ts"
+  ],
+  "startedAt": "2026-10-06T11:52:20.104963+00:00",
+  "finishedAt": "2026-10-06T11:52:25.732229+00:00",
+  "elapsedMs": 5626.965916948393,
+  "exitCode": 1,
+  "files": [
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5082,
+      "sha256": "7dd7cfa459e88e924f57d4ff506c5acf4d660dd1dd381edb30551b17b7b90beb"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/task-head.test.ts",
+      "bytes": 1677,
+      "sha256": "bf7e1f238c1ba752f9a6bc560e9d57f21d0f404704d5a25bf8e5028747b8ccd1"
+    },
+    {
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 8377,
+      "sha256": "2908ae86cd3acf7a415536d1b8c4847a7d791ac7f161c416645ee4e5786b5cad"
+    },
+    {
+      "path": "docs/evidence/b01/task-projections/head/tsconfig.json",
+      "bytes": 194,
+      "sha256": "8e468fa4ea7646916f26939249f8dc65f45f75f64f0c6ee58b8544dc2a505552"
+    }
+  ]
+}

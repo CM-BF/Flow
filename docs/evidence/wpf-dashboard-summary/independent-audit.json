@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-10-06T11:52:06.236128+00:00",
+  "reviewer": "/root",
+  "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+  "base": "2c6df4754f4fea75fbb2e1e750cad89524b1f5fa",
+  "head": "103bf29e1af5d562b2b176c1df9e119e19e79d9a",
+  "branch": "codex/dashboard-human-summary",
+  "dirty": "",
+  "sourceCount": 4,
+  "sourceMismatches": [],
+  "readonlyDependencies": 0,
+  "dependencyMismatches": [],
+  "outsideScopes": [],
+  "sourceDiffCheck": 0,
+  "browser": [
+    {
+      "sourceHead": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "sourceDifferences": [],
+      "elapsedMs": 8374,
+      "checks": [
+        "Parent occupies one headline/delivery slot; child remains reachable; technical identities live in details; parent→child Enter and Escape focus work",
+        "Parent plan still uses the existing registered-document endpoint",
+        "Child detail to parent stays in one modal, focuses new title, and returns original child invoker on Escape",
+        "Stale parent stays explicitly unknown; unknown ID and wrong path cannot navigate; HTML/remote declarations stay text and cause zero remote reads",
+        "Independent child blocker/decision stay visible; unknown allocation label retained",
+        "1280×720 and 390×844 light/dark home and narrow detail: no horizontal overflow, reduced-motion, keyboard raw record"
+      ],
+      "errors": [],
+      "cleanupErrors": [],
+      "serverClosed": true,
+      "fixtureRemoved": true
+    }
+  ]
+}

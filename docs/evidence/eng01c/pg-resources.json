@@ -1,0 +1,52 @@
+{
+  "database": "flow_eng01a_vertical_893c8d66df6f4187bf585d7a0341c513",
+  "databaseRemoved": true,
+  "providerCalls": 0,
+  "samples": [
+    {
+      "scenario": "success",
+      "elapsedMs": 719,
+      "checkerElapsedMs": 38,
+      "artifactBytes": 3265,
+      "snapshotFiles": 4,
+      "diffBytes": 630,
+      "checkerChildExited": true,
+      "writes": 1
+    },
+    {
+      "scenario": "failed",
+      "checkerChildExited": true,
+      "writes": 1
+    },
+    {
+      "scenario": "unknown",
+      "uncertainty": "Explicit fixture result or ordinary exception after awaited writes; no child dispatched",
+      "writes": 1,
+      "checkerCalls": 0,
+      "reservationHeld": true,
+      "journalRetained": true
+    },
+    {
+      "scenario": "rejected",
+      "uncertainty": "Explicit fixture result or ordinary exception after awaited writes; no child dispatched",
+      "writes": 1,
+      "checkerCalls": 0,
+      "reservationHeld": true,
+      "journalRetained": true
+    },
+    {
+      "scenario": "lost-acknowledgement",
+      "writes": 1,
+      "events": 1,
+      "journalRetained": true,
+      "verificationStatus": "pending"
+    },
+    {
+      "scenario": "misdirected-ordinary-fixture",
+      "accepted": false,
+      "actuallyClaimed": false,
+      "status": 409,
+      "legacyTextTask": "succeeded/passed"
+    }
+  ]
+}

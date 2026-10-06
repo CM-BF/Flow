@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-06T11:20:12.138Z",
+  "historicalGitBindingsVerified": 43,
+  "unchangedWorkingTreePaths": [
+    "apps/server/src/database.ts",
+    "apps/server/src/events.ts",
+    "apps/server/src/goal-run-authority/runner-project-fence.ts",
+    "apps/server/src/protocol-dispatch/store.ts",
+    "apps/server/src/runner-maintenance/store.ts",
+    "docs/evidence/s01p04/interface.md",
+    "docs/evidence/s01p04/preparation-checks.json",
+    "docs/evidence/s01p04/preparation-manifest.json",
+    "docs/evidence/s01p04/quality.md",
+    "docs/evidence/s01p04/red-analysis.json",
+    "docs/evidence/s01p04/red-authorization.json",
+    "docs/evidence/s01p04/red-quality.md",
+    "docs/evidence/s01p04/red-receipt.json",
+    "docs/evidence/s01p04/red.stderr.txt",
+    "docs/evidence/s01p04/red.stdout.txt",
+    "docs/evidence/s01p04/skills.json",
+    "docs/evidence/s01p04/strict-initial.txt",
+    "docs/evidence/s01p04/strict-preparation.txt",
+    "docs/evidence/s01p04/tsconfig.json",
+    "packages/storage/migrations/016-runner-maintenance.sql",
+    "tsconfig.json"
+  ],
+  "declaredCurrentDifferences": {
+    "apps/server/src/runners.ts": "controlled main648 ENG input plus private SHARE helper/call only",
+    "apps/server/src/runner-read-fence.test.ts": "only include already queried PG version number in cleanup receipt; all9 assertions unchanged",
+    "apps/server/src/index.ts": "controlled main648 integration, unedited by P04",
+    "pnpm-lock.yaml": "controlled main648 integration, unedited by P04"
+  },
+  "runnerOtherBytesExactMain": true,
+  "fixtureAllAssertionsExactPreparation": true,
+  "oldRawChanged": false,
+  "originalRedNotRerun": true
+}

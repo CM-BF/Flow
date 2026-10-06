@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-06T10:49:32.757532+00:00",
+  "base": "21e0a56c4b2b65a04a1e8d510a9d132e77c3894b",
+  "fixedImplementation": "902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+  "metadataInput": "aa715ebe3e482118dac08c5bca6651be0e984a59",
+  "review": "Web root independently APPROVED27/27; no new functional replay at integration",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "bytes": 7048,
+      "sha256": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/proof-tree-batch.test.mjs",
+      "bytes": 11478,
+      "sha256": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f",
+      "fixedMatch": true
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-proof-batching/measure.mjs",
+      "bytes": 9656,
+      "sha256": "2dc49d5d5e5615314cad135153a43e65f5d590d5e2b5c9e87922fddc2eacb8c3",
+      "fixedMatch": true
+    }
+  ],
+  "unchangedMain": [
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/main.ts",
+    "apps/server/src/index.ts",
+    "packages/client/src/index.ts",
+    "pnpm-lock.yaml",
+    "apps/execution-dashboard/public/architecture-data.js"
+  ],
+  "directConsumerReason": "proof and aggregate base blobs unchanged at main; only registry source additions, parser131 validated; no new semantic conflict",
+  "resolution": "Git false directory rename suggested d06/runtime/measure.mjs; discarded suggestion and retained exact approved author evidence location. No source edits.",
+  "registrySources": 131,
+  "providerQueries": 0,
+  "personalServicesChanged": false
+}

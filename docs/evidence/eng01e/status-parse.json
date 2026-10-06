@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-06T11:48:49.168Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "受限语法与完整内容绑定的可信检查已完成局部验证",
+    "next": "可独立审查的可信检查模块；源码已停止写入",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+      "id": "ENG-001",
+      "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "30dd8242cccaca3123a23ee3667a601120e8ee17",
+    "record": "PASSED 30dd8242cccaca3123a23ee3667a601120e8ee17；68 distinct/root types0，初红与33未选保留，见[README](../../docs/evidence/eng01e/README.md)"
+  },
+  "implementation": {
+    "target": "30dd8242cccaca3123a23ee3667a601120e8ee17",
+    "scopes": [
+      "apps/runner/src/engineering/calculator-source.ts",
+      "apps/runner/src/engineering/calculator-source.test.ts",
+      "apps/runner/src/engineering/calculator-checker.ts",
+      "apps/runner/src/engineering/calculator-checker.test.ts",
+      "plans/eng01e-trusted-calculator-checker",
+      "docs/evidence/eng01e"
+    ],
+    "errors": []
+  }
+}

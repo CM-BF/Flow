@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T10:42:25.805195+00:00",
+  "target": "902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+  "markdownFiles": 7,
+  "localLinks": 47,
+  "missing": [],
+  "outsideScopes": [],
+  "sourceMatches": {
+    "apps/execution-dashboard/src/proof.mjs": true,
+    "apps/execution-dashboard/test/proof-tree-batch.test.mjs": true,
+    "docs/evidence/wpf-dashboard-proof-batching/measure.mjs": true
+  },
+  "evidenceBytes": 16229900,
+  "rawDiffcheckExceptions": [
+    "first-green.log:45",
+    "first-green.log:47",
+    "overlap-diagnostic.log:16",
+    "overlap-diagnostic.log:18",
+    "red.log:16",
+    "red.log:18"
+  ]
+}

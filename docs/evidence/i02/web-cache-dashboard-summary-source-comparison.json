@@ -1,0 +1,158 @@
+{
+  "time": "2026-10-06T11:54:56.445767+00:00",
+  "matched": 18,
+  "sources": [
+    {
+      "task": "WPF-DASHSUM01",
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-DASHSUM01",
+      "path": "apps/execution-dashboard/public/app.js",
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "bytes": 18589,
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-DASHSUM01",
+      "path": "apps/execution-dashboard/test/human-summary.test.mjs",
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "bytes": 4598,
+      "sha256": "94f70824bc157338de7daf20063384c299ea021f968bdddd337e8e6ab125d098",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-DASHSUM01",
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "bytes": 13880,
+      "sha256": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/App.tsx",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 49689,
+      "sha256": "482e5a9b09d54954dd957f6c711e0603b8e3cf23d5cf1d89cb0cf242420454a9",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/conversations/projection.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 23702,
+      "sha256": "ee90796b38c2bf0c265dffe59d7102dd6d91d5ea8d9e4100f0c6906dcf7185c3",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 8924,
+      "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 12289,
+      "sha256": "bcae3f00aa985c52d57763e9e00483a5c01f6b2d4310109e32f752e566d2d7e5",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/conversations/read-cache.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 1998,
+      "sha256": "18aa9bea835ef742605c639f4e07db1b3ae58e223e1fe982034e921ab2e80a7d",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 6292,
+      "sha256": "a7b10258ec07a3c61a1ff170ea74be95cb872e5b919826c3f9b13ddbf2754fbd",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 19389,
+      "sha256": "10b8466da9dfadab8b202922ce59de9a0ce71e7a98777876e9547923ecbe176f",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/src/workspace-retention.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 885,
+      "sha256": "c6df07b4d238fe449459d25d1596ad43eabadb596c92087ca45034c80ffe41c7",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 52689,
+      "sha256": "173f161082c29cf8cb1c8a995e8f2ccedd4475b8c0fae96a0ee3268b7c5ff957",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 26233,
+      "sha256": "667a35e9a765968f8abc0a4e86610f93b86696c2e86b7eed0e5d23a616f9d5bb",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 10072,
+      "sha256": "a79d701195b93254026a42432c866eeffe4072cf3ec6d9dcdb3ab37dd8ace5f9",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/test/workspace-retention.browser.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 15872,
+      "sha256": "394396d2df48c9fa05df6859c7bae871b69690f3dce9a2be567000383672d8a1",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/test/workspace-retention.fixture.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 2135,
+      "sha256": "d46715af2f97e2441c66ceeee1726bde88438e26211d6de1ad533e273d5a8f1c",
+      "mainBeforeEqualsBase": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "path": "apps/web/test/workspace-retention.test.ts",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "bytes": 3049,
+      "sha256": "400f819269938c7bbd6ad43749f57d4364cec983cc92557d2e4d9b68022f5e84",
+      "mainBeforeEqualsBase": true
+    }
+  ],
+  "mismatches": [],
+  "review": "Web root independent fixed reviews, no repeat whole review/tests",
+  "limits": "No personal artifact or backend change; registry/deployment follow separately",
+  "webTypecheckExit": 0,
+  "reusedChecks": {
+    "dashboard": "author27 / independent22 and fixed browser6 groups",
+    "webCache": "independent133 / original differential browser7 scenarios; no rerun"
+  }
+}

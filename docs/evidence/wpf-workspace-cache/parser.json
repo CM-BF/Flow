@@ -1,0 +1,114 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+        "id": "WPF-MATURE-05",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "关闭空聊天会释放页面，草稿和未确认收据可保留重开",
+      "next": "集成关闭回收，再交接附件输入的接入窗口",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/read-cache.ts",
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/workspace-retention.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts",
+        "apps/web/test/workspace-retention.fixture.ts",
+        "apps/web/test/workspace-retention.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-WORKSPACECACHE01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-workspace-cache",
+    "branchState": "in-progress / approved / waiting-main",
+    "updatedAt": "2026-10-06T11:53:23.000Z",
+    "updatedRecord": "2026-10-06 11:53:23 UTC",
+    "todos": [
+      {
+        "id": "WPF-WORKSPACECACHE01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-workspace-cache/interface.md)"
+      },
+      {
+        "id": "WPF-WORKSPACECACHE01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[固定实现与hash](../../docs/evidence/wpf-workspace-cache/candidate.json)"
+      },
+      {
+        "id": "WPF-WORKSPACECACHE01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[差分验证/原失败/边界](../../docs/evidence/wpf-workspace-cache/validation.md)，累计68.689秒，全部cleanup fulfilled"
+      },
+      {
+        "id": "WPF-WORKSPACECACHE01-04",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "root独审APPROVED；metadata正常push，main接收/六交集交权待正式receipt"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "fd1322f9c0c1d085d5e343e39f6216b20d26c264 / 当前Git聚合",
+    "declaredDirty": "实现已固定；当前仅交付metadata，提交后以Git聚合为准",
+    "checks": {
+      "state": "passed",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "record": "PASSED 4ec291c2381faa0fc212cf598b8126b9feecae71；133直接+Web类型0；7差分场景分次覆盖，原失败与68.689秒累计见validation"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "4ec291c2381faa0fc212cf598b8126b9feecae71"
+  }
+}

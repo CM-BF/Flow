@@ -1,0 +1,20 @@
+✖ ordinary Git failure and timeout stay unknown without splitting or retry (740.148375ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 791.436
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/proof-tree-batch.test.mjs:170:1
+✖ ordinary Git failure and timeout stay unknown without splitting or retry (740.148375ms)
+  Error: {"target":"f298f9a69ab85786aefc4b8b069022c3ff1da748","head":"f298f9a69ab85786aefc4b8b069022c3ff1da748","scopes":["one","two"],"observedAt":"2026-10-06T10:36:22.452Z","state":"unknown","reason":"Command failed: git -C /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-proof-batch-O9neJK/repo cat-file -t f298f9a69ab85786aefc4b8b069022c3ff1da748"}
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/apps/execution-dashboard/test/proof-tree-batch.test.mjs:166:121
+      at async controlledGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/apps/execution-dashboard/test/proof-tree-batch.test.mjs:166:68)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/apps/execution-dashboard/test/proof-tree-batch.test.mjs:173:21)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

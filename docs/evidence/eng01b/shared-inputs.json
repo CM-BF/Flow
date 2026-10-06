@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-06T10:57:43.298967+00:00",
+  "integration": "scope=[] claim6aac0661 v1 accepted then releasev2",
+  "sharedInputs": [
+    {
+      "target": "5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7",
+      "path": "packages/client/src/native-profile-catalog.test.ts",
+      "bytes": 4086,
+      "sha256": "0abc50c6603312330f7194a81e8e36977bb8c1b886fecb10f3ea5b118fa29929"
+    },
+    {
+      "target": "3a12ed7ebd8e69325309bd004043f06dabbf7ff4",
+      "path": "packages/client/src/index.ts",
+      "bytes": 40801,
+      "sha256": "9a11d6c51e0b170166efb41126a65e8d3688a46b79c2087b0e1ff6e24a744ae9"
+    },
+    {
+      "target": "3a12ed7ebd8e69325309bd004043f06dabbf7ff4",
+      "path": "packages/client/src/engineering-profiles.test.ts",
+      "bytes": 3846,
+      "sha256": "1441c8cc5db2abe98fbd83806bd60788c1e3a8c214ecbfb2531044bb9529d14b"
+    },
+    {
+      "target": "3a12ed7ebd8e69325309bd004043f06dabbf7ff4",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1015,
+      "sha256": "4370db0e328f79ebb4f9d775f7a71a63c0c6e58292911b4f4070224b3b4a3f07"
+    },
+    {
+      "target": "1c08160e9748ce23e85cd49cde564e6d23644d82",
+      "path": "apps/server/src/index.ts",
+      "bytes": 12971,
+      "sha256": "6d4a31ce7d3157b5626296fb7c9e836781f22fbf7e53e5413a4d6ec30dda3eb5"
+    }
+  ],
+  "catalogInput": "21e0a56c4b2b65a04a1e8d510a9d132e77c3894b controlled merge332b3402, store then owned under writer v2",
+  "review": "5ffe independently approved Mika;3a12 and1c081 independently approved native_center_owner; engineering domain still unreviewed"
+}

@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-10-06T11:20:21.492Z",
+  "base": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "source": "working tree exact hashes",
+  "sourceHashes": {
+    "src/attachments/controller.ts": "a7e45253e34b3a0e981a4ed094663ae28b09a9b94f4ce960190f9dafdae47c8a",
+    "src/attachments/recovery.ts": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f",
+    "src/attachments/adapter.ts": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+    "src/attachments/AttachmentPicker.tsx": "f130077a313ce58fbe8f9e3e19cdda2066705c12545a18774887c28a08818f39",
+    "src/attachments/attachments.css": "81b78eed67579a8d5122927590cf6b4ad678cad50c9d2694f8af8f4decd27333",
+    "test/attachment-controller.test.ts": "7c62f9662d7a5ce4a3228eba531800579731b2c90738075730e49032c7e602f5",
+    "test/attachment-recovery.test.ts": "df209a6158d6d8250c31bdef0ac8241c7e1887047c056589befb06037a15ecbb",
+    "test/attachment-input.fixture.tsx": "78cd3986e298e177170fc4d8311fd9d927219e79831b0000b72e802640e47e53",
+    "test/attachment-input.browser.ts": "9f81199247b65870529c63554f920861eade20f578e7ce151ab4fc4e19a7d52c"
+  },
+  "url": "http://127.0.0.1:60701",
+  "browser": "154.0.8037.98",
+  "checks": [
+    "Real Thread StrictMode; explicit metadata and keyboard preview 0→1→cache; literal markup escaped; selection preserves draft",
+    "Native hidden stops reads and retains protected ready refs; explicit complete-attachment capture has one frozen reference and no body",
+    "@file Tab uses existing Dialog focus return; removes only unchanged command token; complete attachment remove synchronizes public composer state without DELETE",
+    "Official add/send preparation delay cannot change click-time Send into Queue or consume newer text; Enter and button share capture; metadata only",
+    "Pending upload blocks button and Enter; offline invalidates ignored-abort late result while keeping text and explicit retry required",
+    "Lost acknowledgement preserves journal; explicit lookup finds committed metadata but never auto-attaches or sends",
+    "Browser reload restores only bounded nonsecret journal; mock backend reset returns missing receipt yet same key/body after exact file reselection; no draft auto-restore",
+    "Connection replacement does not restore selected old refs; 390px light/dark, reduced-motion native controls, keyboard focus and draft preserved"
+  ],
+  "errors": [],
+  "failure": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 1\nReceived: 0\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBe (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at main (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web/test/attachment-input.browser.ts:63:319)",
+  "lastScenarioCalls": [],
+  "scope": "Official Thread with typed in-memory ports, no HTTP backend/Send/Queue/provider"
+}

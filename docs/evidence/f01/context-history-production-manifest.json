@@ -1,0 +1,82 @@
+{
+  "target": "e6abc4dde828686661c6b416a17de95b497c9734",
+  "time": "2026-10-06T11:43:05.952768+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13395,
+      "sha256": "bd21cf92f1529539ee1a7312ee0eab6b18b58bff862ee3b8e78c8f0517e643f3"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+    },
+    {
+      "path": "packages/client/src/context-history-production.test.ts",
+      "bytes": 6803,
+      "sha256": "35b1066de695bbc58b140825fcb1de7448ebca0b8a09068065210507a57fe0e3"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/context-history-production-green-resources.json",
+      "bytes": 460,
+      "sha256": "4bce043f80ea6d7a4e49b01f4fa165788d39263a7737a97f83083ccf27a59a70"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-production-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-production-green.stdout",
+      "bytes": 450,
+      "sha256": "5d9668c2e78b8152111cde0afe23a9003127ae03c71a09fdf05a3273bcabea43"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-production-red-resources.json",
+      "bytes": 284,
+      "sha256": "0450dfb5a76c6bf9fbd92487e928dc97497308061a1b6597c81ba8c93e2e5b60"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-production-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-production-red.stdout",
+      "bytes": 1373,
+      "sha256": "1438b4daca516356c5a7ae5b71a0d5f39eb9214ee59c8089d10fe2ed3503d9fc"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-production-types.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-production-types.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    }
+  ],
+  "inputs": {
+    "domainManifest": "docs/evidence/f01/context-history-domain-input.json",
+    "thinClient": "7bbfa1c8c97c5aa871080ddc0efab7cc87b73e42",
+    "immutableIdentity": "855e5675245f7774b8ce927ab8b2ffdb6133bddf"
+  },
+  "checks": {
+    "productionHttpPg": 1,
+    "firstRedPreserved": true,
+    "typecheckExit": 0,
+    "factoryOnly": true,
+    "privateDatabasesRemaining": []
+  },
+  "providerCalls": 0,
+  "limit": "No SDK sampling producer or UI. History stays unknown for current/remaining. Contract execution identity is exact previously approved ENG01D input."
+}

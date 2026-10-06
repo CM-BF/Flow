@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline
+
+ ✓ apps/runner/src/engineering/workspace.test.ts (16 tests) 4826ms
+   ✓ captures staged, unstaged, ignored untracked, deleted and executable modes in one immutable content set  552ms
+   ✓ rejects unsupported submodule content without silently omitting it  329ms
+   ✓ does not run external diff or text conversion configured in the synthetic repository  501ms
+   ✓ requires real fixed checker cases and publishes a digest of the same content set  594ms
+   ✓ refuses engineering success for wrong-result  371ms
+   ✓ refuses engineering success for nonempty-log  345ms
+   ✓ refuses engineering success for missing-case  351ms
+   ✓ refuses engineering success for mutated-workspace  382ms
+   ✓ refuses engineering success for mutated-baseline  324ms
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  03:25:12
+   Duration  5.04s (transform 48ms, setup 0ms, import 126ms, tests 4.83s, environment 0ms)
+

@@ -231,3 +231,14 @@ Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec1
 两文件增量，main仅调用已审严格parser并传activeSteering。真实子进程中心absent/0默认关闭，1只开启受理门且错误attempt仍404；非法值启动exit1且不回显。首次red保留（1仍disabled）；final1selected/2未选，typecheck0。随机专库before[]/createdtrue/connections[]/remaining[]；每个child正常退出断言。域8源对a329精确一致。未重48/106或provider，不动个人服务。
 
 CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source+3raw+8domain hashes无差，1selected green/2未选和清理证据核验，无P1/P2/未重跑。Root接收，默认off/个人profile不改，准受控主线集成。
+
+
+## Native目录薄client 5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7
+
+复用已批准native-v1固定schema和既有request鉴权/错误/取消；没有另造目录状态或权限判断。只有一个新GET方法及实际HTTP直接消费者；新1+旧2共3绿，根类型先因旧workspace安装缺依赖失败，再用已审锁的offline frozen ignore-scripts安装（下载0、lock零diff）后通过。原红及恢复日志全部保留。find-skills/codebase-design/clean-code沿既有本地方法：接口是显式格式协商和解码，configured、availability与可执行性分开，无动态provider特例。仅传输范围，无新增PG/provider/个人服务操作。
+
+## 工程配置薄client 3a12ed7ebd8e69325309bd004043f06dabbf7ff4
+
+复用两个固定DTO和既有HTTP传输；POST保原body与runner鉴权，owner目录严格解码，purpose非法/409/abort不重试。新HTTP1与旧3通过，types0；独立native_center_owner只读审查已通过，未覆盖其自己领域或后续挂载。后续挂载只组合现registerEngineeringRoutes，无新权限状态机；必须待真实factory+PG和独审。
+
+2026-10-06T11:49:24.529827+00:00：O11公共接线按既有codebase-design/clean-code方法复核：领域负责稳定计划与新鲜状态，client只保留参数/错误/取消，生产仅owner mount，无第二状态。2直接用例→定向1/1后类型0；显式测试默认字段修复不改领域。原红/首typecheck失败保留，随机DB正常清理；0provider。

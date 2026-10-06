@@ -1,0 +1,84 @@
+{
+  "target": "69eb2476ba59308a906c891c4391e243e3b2512a",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13133,
+      "sha256": "effd24a27add22ca14c508022abc5c132600081da9d3d3d5e3a52855a287dde6"
+    },
+    {
+      "path": "packages/client/src/attachment-production.test.ts",
+      "bytes": 7811,
+      "sha256": "a5d768f9ea76215945cf792bce4a01230117b89b02abf5ac70244d459902a3fa"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/attachment-production-facts.json",
+      "bytes": 933,
+      "sha256": "501d45318eb92ccd02b9c5d21c95151eb952d87eeba356d6ba4a796fcba5d700"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-final.json",
+      "bytes": 245,
+      "sha256": "19baa23541a0c8377925f53cf743a67b5e8bef38a362cde4a20a15ddb66d5ef0"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-final.stdout",
+      "bytes": 448,
+      "sha256": "6298e3c2bfe8be189d79ccdd1ce4ebe51232d99c683990ac50894d92ee8f84f3"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-green.json",
+      "bytes": 245,
+      "sha256": "7a856c6f0a68010c73b0af2939d39a5e646a28fb5a2c84ccea1317342a26d498"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-green.stdout",
+      "bytes": 448,
+      "sha256": "afbab32bbec8a47e93d51443207a150ae5f037a363b6782406e7a314feb01982"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-red-facts.json",
+      "bytes": 506,
+      "sha256": "882fb140d9368849588e88ea265836d32e2515e15d5cfc76b1d067f49d183763"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-red.json",
+      "bytes": 245,
+      "sha256": "b0be7f6685ce9153d9ef91e7991ef3aa29e5cfc65b3bbcdc84ce34ef73976a3d"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-red.stdout",
+      "bytes": 1363,
+      "sha256": "1dae40a3d236bae6e5ff87f06a48f9ece99ae9b4d733ed9fbc2fdb32fcaf62a5"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-types-final.json",
+      "bytes": 168,
+      "sha256": "bb918b900c9712d1e733f94bdd677884dd476f660029039b8b0b31168eeac430"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-types-final.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-types.json",
+      "bytes": 168,
+      "sha256": "f4cc137dea3bb8143f14d02d660c231b260015a00436f52807b40766e9399e3b"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-production-types.stdout",
+      "bytes": 384,
+      "sha256": "3c77d44c6a35935a34ccf4471b7e73987de227592d0bbaaa78925f7fc28bc09f"
+    }
+  ],
+  "domainInput": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "clientInput": "ab1bcb14",
+  "ackInput": "df8d077accea7a28536f1f56407a729c41e4639c",
+  "scope": "factory026 before scheduler/packageworker, owner role routes; actual factory/client/PG restart and private claim, no manual module install",
+  "checks": "one distinct PG journey final1/1; initial no026 red; intermediate TS union error preserved and narrowed; final root types0; random DB before/remaining/connections[]; no provider",
+  "knownIntegrationGate": "Old ATTACH module fixture currently manually migrates/registers and tests pre026; original owner is preparing explicit prior-schema fixture seam. Do not main until that consumer is updated/reviewed.",
+  "review": "NOT_STARTED"
+}

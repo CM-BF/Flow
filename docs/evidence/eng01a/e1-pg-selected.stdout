@@ -1,0 +1,29 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline
+
+ ❯ apps/runner/src/engineering/integration.test.ts (3 tests | 1 failed | 1 skipped) 10888ms
+   × executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback 8154ms
+   ✓ keeps failed engineering checks readable and lets the existing host publish only failed completion  1206ms
+   ↓ retains an injected uncertain write and project lease across host restart without replaying writes
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/integration.test.ts > executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback
+Error: Expected engineering behavior did not occur.
+ ❯ eventually apps/runner/src/engineering/integration.test.ts:29:62
+     27| async function eventually(predicate: () => boolean | Promise<boolean>)…
+     28|   const until = Date.now() + 8000;
+     29|   while (!await predicate()) { if (Date.now() > until) throw new Error…
+       |                                                              ^
+     30| }
+     31| beforeAll(async () => {
+ ❯ apps/runner/src/engineering/integration.test.ts:92:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed | 1 skipped (3)
+   Start at  03:27:22
+   Duration  13.21s (transform 1.41s, setup 0ms, import 2.21s, tests 10.89s, environment 0ms)
+

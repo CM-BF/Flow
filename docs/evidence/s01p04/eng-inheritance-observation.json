@@ -1,0 +1,105 @@
+{
+  "observedAt": "2026-10-06T11:13:46.405Z",
+  "kind": "read-only inheritance preparation; no merge, source edit or test run",
+  "mainHead": "2e71fabc218df28f6ccb78a927432ae1101c17c5",
+  "mainDirty": false,
+  "engIntegration": "221809d37754f7ccbc22a2f1288ee310b16f3461",
+  "p04HeadBeforeMetadata": "43fac3a2db28153e004b2c3bfef445b590fa4e2f",
+  "p04Base": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8",
+  "engWriter": {
+    "claimId": "172ae2c2-8910-4bc8-bca3-53d797da175b",
+    "version": 2,
+    "state": "active",
+    "worker": "native_center_owner",
+    "ownsRunners": true
+  },
+  "p04Writer": {
+    "claimId": "cb7db4a9-cb89-4589-b2f3-d30b75549ab9",
+    "version": 1,
+    "state": "active",
+    "ownsRunners": false
+  },
+  "minimumSharePlanStillApplicable": true,
+  "fixtureChangesRequiredByInspection": false,
+  "newOwnedAttemptCallers": [],
+  "bindings": [
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11493,
+      "sha256": "9ffedc88787473ea00ca21cace3a66ddf79a2c723303735f00c361b8ba8da842",
+      "unchangedFromP04Base": false
+    },
+    {
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "bytes": 4249,
+      "sha256": "209a01219a22cd621acef8509181c04eb8218de2785b2e29248ae5a8e4dd492a",
+      "unchangedFromP04Base": false
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8",
+      "unchangedFromP04Base": false
+    },
+    {
+      "path": "apps/server/src/engineering/profile.ts",
+      "bytes": 3616,
+      "sha256": "51cf9f37f5e06e4c3ce7f2480054e4a19752db8902a43b305d1133eac5634b8a",
+      "unchangedFromP04Base": false
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12971,
+      "sha256": "6d4a31ce7d3157b5626296fb7c9e836781f22fbf7e53e5413a4d6ec30dda3eb5",
+      "unchangedFromP04Base": false
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8481,
+      "sha256": "2144b8745e878c373bbe1bba7254fc0bd7dcc7b3563ad6bb78b6f6ac4f6da559",
+      "unchangedFromP04Base": true
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926",
+      "unchangedFromP04Base": true
+    },
+    {
+      "path": "apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "bytes": 2890,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965",
+      "unchangedFromP04Base": true
+    },
+    {
+      "path": "apps/server/src/protocol-dispatch/store.ts",
+      "bytes": 9611,
+      "sha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560",
+      "unchangedFromP04Base": true
+    },
+    {
+      "path": "apps/server/src/active-steering/storage.ts",
+      "bytes": 4217,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9",
+      "unchangedFromP04Base": true
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5",
+      "unchangedFromP04Base": true
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd",
+      "unchangedFromP04Base": true
+    },
+    {
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc",
+      "unchangedFromP04Base": true
+    }
+  ]
+}

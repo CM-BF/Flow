@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-06T11:01:28.051376+00:00",
+  "taskId": "WPF-MATURE-04",
+  "migration": "packages/storage/migrations/027-context-observation-history.sql",
+  "owner": "architecture_read",
+  "lead": "mika",
+  "worktree": "context-transparency",
+  "claimBeforeAmend": "d3a9be2b-6321-49b5-992b-9e3f9f216f49 v4",
+  "authorization": "fresh amend required before writing DDL; same domain owner",
+  "reservedOther": "026-attachment-resources.sql remains ATTACH01",
+  "freshLedger": "/tmp/flow-migration-027-claims.json",
+  "scopeBoundary": "formal DDL and module PG checks only; F01 owns shared export/client/mount; no personal DB",
+  "result": "NUMBER_AND_WRITER_ASSIGNED; claim amend and implementation pending"
+}

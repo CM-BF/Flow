@@ -1,0 +1,59 @@
+{
+  "time": "2026-10-06T11:56:19.850Z",
+  "sourceCount": 144,
+  "registered": [
+    {
+      "task": {
+        "id": "O12",
+        "title": "持续目标会话与解释历史",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller",
+        "branch": "codex/goal-session-controller",
+        "planDir": "plans/o12-goal-session",
+        "evidenceDir": "docs/evidence/o12"
+      },
+      "errors": [],
+      "humanComplete": true
+    },
+    {
+      "task": {
+        "id": "ENG01F",
+        "title": "工程快照与可信检查收据",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-calculator-receipt",
+        "branch": "codex/engineering-calculator-receipt",
+        "planDir": "plans/eng01f-calculator-receipt",
+        "evidenceDir": "docs/evidence/eng01f"
+      },
+      "errors": [],
+      "humanComplete": true
+    },
+    {
+      "task": {
+        "id": "WPF-DASHSUM01",
+        "title": "看板目标摘要与详情",
+        "role": "工程协作",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary",
+        "branch": "codex/dashboard-human-summary",
+        "planDir": "plans/wpf-dashboard-summary",
+        "evidenceDir": "docs/evidence/wpf-dashboard-summary"
+      },
+      "errors": [],
+      "humanComplete": true
+    },
+    {
+      "task": {
+        "id": "WPF-WORKSPACECACHE01",
+        "title": "聊天页面回收与恢复",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+        "branch": "codex/web-workspace-cache",
+        "planDir": "plans/wpf-workspace-cache",
+        "evidenceDir": "docs/evidence/wpf-workspace-cache"
+      },
+      "errors": [],
+      "humanComplete": true
+    }
+  ],
+  "validation": "registry/parser/link checks only; no product or architecture tests"
+}

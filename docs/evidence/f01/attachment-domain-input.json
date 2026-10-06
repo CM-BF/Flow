@@ -1,0 +1,23 @@
+{
+  "target": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "independentReview": "Web root APPROVED 2026-10-06T10:49:15Z; 78 original checks reused, no rerun",
+  "sources": {
+    "apps/server/src/attachments/attachments.test.ts": "25f102dccd567251faad7376e240c1d6436ad3a45fe52a62c13be6d5fe7d50f2",
+    "apps/server/src/attachments/context.test.ts": "b5780183837885ef5962ef433020e2c4054c3bef98eb1b5b05d63f3c44cafe17",
+    "apps/server/src/attachments/fixture.ts": "3bef98703f12088a9654848be1cb4a6b452f2c19d5a9bc9eedc24b0ba52c0698",
+    "apps/server/src/attachments/index.ts": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+    "apps/server/src/attachments/storage.ts": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560",
+    "apps/server/src/conversation-context/store.ts": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+    "apps/server/src/conversation-queue/commands.ts": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603",
+    "apps/server/src/conversations/commands.ts": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8",
+    "apps/server/src/conversations/queries.ts": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57",
+    "apps/server/src/conversations/state.ts": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+    "packages/contracts/src/attachments.test.ts": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127",
+    "packages/contracts/src/attachments.ts": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+    "packages/contracts/src/conversation-context.ts": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+    "packages/contracts/src/conversation-queue.ts": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+    "packages/contracts/src/conversations.ts": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+    "packages/storage/migrations/026-attachment-resources.sql": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+  },
+  "boundary": "Exact domain input only; shared client/ACK-v2/mount remain pending"
+}

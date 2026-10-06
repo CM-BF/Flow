@@ -1,0 +1,198 @@
+{
+  "taskId": "ENG01B",
+  "checkedAt": "2026-10-06 11:15:44 UTC",
+  "reviewTarget": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+  "reviewer": "runner_owner/gpt-6-astra",
+  "reviewResult": "APPROVED",
+  "main": "648e331c58043cf7ee307300521ab1c628cb2ee1",
+  "originMainAtObservation": "648e331c58043cf7ee307300521ab1c628cb2ee1",
+  "mainObservedClean": true,
+  "domainSourceCount": 20,
+  "sourceBindings": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/checker.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/identity.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 15379,
+      "sha256": "8809c1b323eeda50322af6755df011d39f4629544b9728b5d0e0c3efba4516e2",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/launch-integration.test.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 11961,
+      "sha256": "d9bf6572a1e64998fc9473204e686d46bf54c130ae7f4e348ea1ccac3ad70647",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/launch.test.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 3563,
+      "sha256": "4f465b36b4f104b23cb50ca2fd8e180a9fb24bf2d4738681dd024a26e8506e79",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/launch.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 8715,
+      "sha256": "df2e75ab590b1843defb10ba79c5d0b5d07866b38277c315c0c39cea09e7b9d1",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/setup.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 6426,
+      "sha256": "68763e7ceb2a02652bfdac9dc54979512a80e41c79d3af16a8cf69ad3fd32c7a",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 8267,
+      "sha256": "d0cff1c8525065b98d8110db37b6a33437646fdef9239bbc442b1822198e1baa",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/main.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/index.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 1387,
+      "sha256": "66269910b1c566bdfe39f9d07bacd11b498add2ae2b410a1097ef22c69cae0b2",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/profile.test.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 11442,
+      "sha256": "c9cf0abe8cf024969aff12f958af1f3021ddaf83fcb13adfb6c67f3b5d62c430",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/profile.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 3616,
+      "sha256": "51cf9f37f5e06e4c3ce7f2480054e4a19752db8902a43b305d1133eac5634b8a",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/verification.test.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 13032,
+      "sha256": "f5e4e38ca5cb4bdfbcf0995b3afcdc5135a5b8a4d3124abb2b0194145f031108",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 4249,
+      "sha256": "209a01219a22cd621acef8509181c04eb8218de2785b2e29248ae5a8e4dd492a",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8",
+      "reviewDeltaFrom": "21e0a56c4b2b65a04a1e8d510a9d132e77c3894b",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/runners.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 11493,
+      "sha256": "9ffedc88787473ea00ca21cace3a66ddf79a2c723303735f00c361b8ba8da842",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "mainBytesIdentical": true
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/engineering.ts",
+      "commit": "a750dbaa482ddd54aedd08495c66e73cc1458e53",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "mainBytesIdentical": true
+    }
+  ],
+  "mainIntegrationTypes": {
+    "path": "docs/evidence/i02/tui-engineering-release-combined-types.json",
+    "sha256": "24e0e319d3a57a86982373dd9764764bc189472c6201c35287ec085d9a60c09c",
+    "bytes": 168,
+    "startedAt": "2026-10-06T11:15:04.860681+00:00",
+    "endedAt": "2026-10-06T11:15:12.628305+00:00",
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exitCode": 0
+  },
+  "priorRootTypesFailurePreserved": "docs/evidence/i02/engineering-profile-types.json (exit 2, RELEASE01 tuple typing); RELEASE02 560cbd narrow independent-approved fix, final combined root exit 0",
+  "checksReused": 123,
+  "ownerNewTests": 0,
+  "providerCalls": 0,
+  "limitations": "Trusted same-UID calculator fixture only. Lost ACK follows checker exit, not proof that unknown external checker stopped. Native writer remains a proposal, not production capability.",
+  "claim": {
+    "claimId": "172ae2c2-8910-4bc8-bca3-53d797da175b",
+    "versionObserved": 2,
+    "stateObserved": "active",
+    "releaseAfterThisMetadataPush": true,
+    "receiptOutsideClaim": "/tmp/flow-eng01b-final-release-receipt.json"
+  }
+}

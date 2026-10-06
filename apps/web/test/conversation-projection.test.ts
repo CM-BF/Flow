@@ -49,6 +49,19 @@ function setup(initial = snapshot(), id: string | null = "chat", withQueue = fal
 }
 
 describe("public conversation projection", () => {
+  it.each(["revision", "task timestamp", "effective source"])("uses the shared decoder for a non-HTTP port's invalid %s success", async field => {
+    const { projection, client } = setup(); await projection.refresh();
+    const value = { conversation: snapshot(turn()).conversation, turn: turn(), replayed: false };
+    if (field === "revision") value.conversation.revision = 2;
+    else if (field === "task timestamp") value.turn.task.updatedAt = "invalid";
+    else value.turn.effective.source = { kind: "recorded-adapter-session", taskId: "different-task", attemptId: "attempt", detailId: "detail", adapterVersion: "fixture" };
+    client.submitConversationTurn.mockResolvedValueOnce(value);
+    await projection.send("hi"); const pending = projection.getSnapshot().outbox!;
+    expect(pending).toMatchObject({ state: "unknown", everUnknown: true }); expect(projection.getSnapshot().turns).toEqual([]);
+    await projection.retry(); expect(client.submitConversationTurn.mock.calls[1]!.slice(0, 3)).toEqual(client.submitConversationTurn.mock.calls[0]!.slice(0, 3));
+    expect(projection.getSnapshot().outbox).toBeNull();
+  });
+
   it("prepares zero-turn conversation using one CREATE receipt, then sends without recreating", async () => {
     const { projection, client } = setup(snapshot(), null);
     const creation = { ...configuredCreation, projectId: "project-a" };
@@ -98,7 +111,7 @@ describe("public conversation projection", () => {
     const initial = snapshot(reply(turn())); initial.conversation.projectId = "project-a";
     const { projection, client } = setup(initial);
     client.conversationTurns.mockResolvedValueOnce({ conversation: initial.conversation, turns: [initial.lastTurn!], nextCursor: 1 });
-    await projection.refresh(); const known = projection.getSnapshot().snapshot;
+    projection.setVisible(true); await projection.refresh(); const known = projection.getSnapshot().snapshot;
     const unbound = { ...initial.conversation, projectId: undefined };
     client.conversationTurns.mockResolvedValueOnce({ conversation: unbound, turns: [reply(turn(2))], nextCursor: null });
     await projection.loadMore();
@@ -250,7 +263,7 @@ describe("public conversation projection", () => {
     expect(client.submitConversationTurn.mock.calls[0]?.[1]).toEqual({ expectedRevision: 1, text: "next", mode: "follow-up" });
   });
   it("refreshes a same-revision asynchronous reply and reads its exact version only on demand", async () => {
-    const { projection, client, set } = setup(snapshot(turn())); await projection.refresh();
+    const { projection, client, set } = setup(snapshot(turn())); projection.setVisible(true); await projection.refresh();
     expect(client.conversationDetail).not.toHaveBeenCalled();
     set(snapshot(reply(turn()))); await projection.refresh();
     expect(projection.getSnapshot().turns[0]!.assistant).toMatchObject({ state: "available", text: "Hello" });
@@ -333,12 +346,12 @@ describe("public conversation projection", () => {
   it("deduplicates overlapping turn pages and preserves typed user/assistant entries", async () => {
     const { projection, client } = setup(snapshot(reply(turn(2))));
     client.conversationTurns.mockResolvedValueOnce({ conversation: snapshot(turn(2)).conversation, turns: [reply(turn())], nextCursor: 1 });
-    await projection.refresh(); client.conversationTurns.mockResolvedValueOnce({ conversation: snapshot(turn(2)).conversation, turns: [reply(turn()), reply(turn(2))], nextCursor: null });
+    projection.setVisible(true); await projection.refresh(); client.conversationTurns.mockResolvedValueOnce({ conversation: snapshot(turn(2)).conversation, turns: [reply(turn()), reply(turn(2))], nextCursor: null });
     await projection.loadMore(); expect(projection.getSnapshot().turns.map(item => item.number)).toEqual([1, 2]);
     expect(projection.getSnapshot().nextCursor).toBeNull();
   });
   it("exposes a loadable middle gap after another tab admits several turns while this view is hidden", async () => {
-    const { projection, client, set } = setup(snapshot(reply(turn()))); await projection.refresh();
+    const { projection, client, set } = setup(snapshot(reply(turn()))); projection.setVisible(true); await projection.refresh();
     expect(projection.getSnapshot().nextCursor).toBeNull();
     set(snapshot(reply(turn(3)))); await projection.refresh(); await projection.refresh();
     expect(projection.getSnapshot().turns.map(turn => turn.number)).toEqual([1, 3]);
@@ -350,7 +363,7 @@ describe("public conversation projection", () => {
     expect(projection.getSnapshot().nextCursor).toBeNull();
   });
   it("rejects mismatched lazy detail versions and lets explicit retry succeed", async () => {
-    const { projection, client } = setup(snapshot(reply(turn()))); await projection.refresh();
+    const { projection, client } = setup(snapshot(reply(turn()))); projection.setVisible(true); await projection.refresh();
     client.conversationDetail.mockResolvedValueOnce({ id: "detail", title: "Wrong", kind: "artifact", content: "wrong", mediaType: "text/plain", artifactVersion: "v0" });
     await projection.loadReply("turn-1"); const key = replyDetailKey("chat", projection.getSnapshot().turns[0]!)!;
     expect(projection.getSnapshot().details[key]?.error).toContain("version"); await projection.loadReply("turn-1"); expect(projection.getSnapshot().details[key]?.data?.content).toBe("Complete reply");
@@ -376,7 +389,7 @@ describe("public conversation projection", () => {
     const digest = [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(content)))].map(byte => byte.toString(16).padStart(2, "0")).join("");
     if (input.assistant.state !== "available") throw Error("Invalid test setup");
     input.assistant = { ...input.assistant, contentRef: { ...input.assistant.contentRef, kind: "detail" }, source: { kind: "assistant-final", source: "claude.sdk.result", messageId: input.assistant.messageId, taskId: input.task.id, attemptId: "attempt", nativeSessionId: "session", eventId: "event", sourceMessageId: "source", contentDigest: digest, detailId: "detail" } };
-    const { projection, client } = setup(snapshot(input)); await projection.refresh();
+    const { projection, client } = setup(snapshot(input)); projection.setVisible(true); await projection.refresh();
     client.conversationDetail.mockResolvedValueOnce({ id: "detail", title: "Reply", kind: "detail", content: "wrong", mediaType: "text/plain" });
     await projection.loadReply(input.id); const key = replyDetailKey("chat", input)!; expect(projection.getSnapshot().details[key]?.error).toContain("version");
     client.conversationDetail.mockResolvedValueOnce({ id: "detail", title: "Reply", kind: "detail", content, mediaType: "text/plain" }); await projection.loadReply(input.id);
@@ -497,5 +510,79 @@ describe("live text capability wire compatibility", () => {
     setCreateResponse(undefined); expect(await projection.retry()).toBe("chat");
     const creates = requests.filter(request => request.path === "/api/conversations");
     expect(creates[1]?.key).toBe(creates[0]?.key); expect(creates[1]?.body).toBe(creates[0]?.body);
+  });
+});
+
+describe("bounded reply reads and view read generations", () => {
+  it("releases only read bodies while preserving a rejected message receipt", async () => {
+    const { projection, client } = setup(snapshot(reply(turn()))); projection.setVisible(true); await projection.refresh();
+    await projection.loadReply("turn-1"); client.submitConversationTurn.mockRejectedValueOnce(new FlowApiError(403, "denied", "Denied"));
+    await projection.send("keep this material"); const receipt = projection.getSnapshot().outbox;
+    projection.setVisible(false); projection.clearReadCache();
+    expect(projection.getSnapshot().details).toEqual({}); expect(projection.getSnapshot().outbox).toBe(receipt);
+    expect(receipt?.state).toBe("rejected");
+  });
+  it("bounds reply/error records and explicitly reloads an evicted body", async () => {
+    const { projection, client } = setup(snapshot(reply(turn(3))));
+    client.conversationTurns.mockResolvedValue({ conversation: snapshot(turn(3)).conversation, turns: [1,2,3].map(n => reply(turn(n))), nextCursor: null });
+    projection.setVisible(true); await projection.refresh();
+    for (const n of [1,2,3]) await projection.loadReply(`turn-${n}`);
+    expect(Object.keys(projection.getSnapshot().details)).toHaveLength(2);
+    await projection.loadReply("turn-1"); expect(client.conversationDetail).toHaveBeenCalledTimes(4);
+    client.conversationDetail.mockResolvedValueOnce(JSON.parse('{"content":4}')); await projection.loadReply("turn-2");
+    expect(Object.values(projection.getSnapshot().details).some(value => value.error?.includes("text"))).toBe(true);
+    expect(Object.keys(projection.getSnapshot().details)).toHaveLength(2);
+  });
+  it("does not let an old hidden read rejection or finally replace a new read", async () => {
+    const { projection, client } = setup(snapshot(reply(turn()))); projection.setVisible(true); await projection.refresh();
+    const old = deferred<Awaited<ReturnType<FlowClient["conversationDetail"]>>>(), next = deferred<Awaited<ReturnType<FlowClient["conversationDetail"]>>>();
+    client.conversationDetail.mockReturnValueOnce(old.promise).mockReturnValueOnce(next.promise);
+    const first = projection.loadReply("turn-1"); await vi.waitFor(() => expect(client.conversationDetail).toHaveBeenCalledTimes(1)); projection.setVisible(false); projection.setVisible(true); await projection.refresh();
+    const second = projection.loadReply("turn-1"); await vi.waitFor(() => expect(client.conversationDetail).toHaveBeenCalledTimes(2)); old.reject(Error("old failure")); await first;
+    expect(Object.values(projection.getSnapshot().details)).toEqual([{ loading: true }]);
+    const duplicate = projection.loadReply("turn-1"); expect(duplicate).toBe(second);
+    next.resolve({ id:"detail", title:"Reply",kind:"artifact",content:"new body",mediaType:"text/plain",artifactVersion:"v1" }); await second;
+    expect(Object.values(projection.getSnapshot().details)[0]?.data?.content).toBe("new body");
+  });
+  it("ignores hidden history success and finally while a new generation is loading", async () => {
+    const { projection, client } = setup(snapshot(turn(3)));
+    client.conversationTurns.mockResolvedValue({ conversation:snapshot(turn(3)).conversation,turns:[turn(1)],nextCursor:1 });
+    projection.setVisible(true); await projection.refresh();
+    const old=deferred<Awaited<ReturnType<FlowClient["conversationTurns"]>>>(), next=deferred<Awaited<ReturnType<FlowClient["conversationTurns"]>>>();
+    client.conversationTurns.mockReturnValueOnce(old.promise); const first=projection.loadMore();
+    projection.setVisible(false); projection.setVisible(true); await projection.refresh();
+    client.conversationTurns.mockReturnValueOnce(next.promise); const second=projection.loadMore();
+    old.resolve({conversation:snapshot(turn(3)).conversation,turns:[turn(2)],nextCursor:null}); await first;
+    expect(projection.getSnapshot().loadingMore).toBe(true); expect(projection.getSnapshot().turns.map(t=>t.number)).not.toContain(2);
+    next.resolve({conversation:snapshot(turn(3)).conversation,turns:[turn(2)],nextCursor:null}); await second;
+    expect(projection.getSnapshot().loadingMore).toBe(false); expect(projection.getSnapshot().turns.map(t=>t.number)).toEqual([1,2,3]);
+  });
+});
+
+
+describe("read validation and digest cancellation", () => {
+  it("does not publish a body after the view is closed during digest verification", async () => {
+    const item = reply(turn());
+    if (item.assistant.state !== "available") throw Error("fixture reply required");
+    item.assistant.source = { kind: "assistant-final", source: "claude.sdk.result", taskId: "task-1", attemptId: "attempt", messageId: item.assistant.messageId, detailId: "detail", eventId: "event", sourceMessageId: "source", nativeSessionId: "native", contentDigest: "0".repeat(64) };
+    const { projection, client } = setup(snapshot(item)); projection.setVisible(true); await projection.refresh();
+    const digest = deferred<ArrayBuffer>(); const spy = vi.spyOn(crypto.subtle, "digest").mockReturnValueOnce(digest.promise);
+    try {
+      const first = projection.loadReply("turn-1"); await vi.waitFor(() => expect(spy).toHaveBeenCalledTimes(1));
+      projection.setVisible(false); projection.clearReadCache(); digest.resolve(new Uint8Array(32).buffer); await first;
+      expect(projection.getSnapshot().details).toEqual({});
+      await projection.loadReply("turn-1"); expect(client.conversationDetail).toHaveBeenCalledTimes(1);
+    } finally { spy.mockRestore(); }
+  });
+  it("serializes body requests and rejects oversized wire strings without retaining them", async () => {
+    const { projection, client } = setup(snapshot(reply(turn(2))));
+    client.conversationTurns.mockResolvedValue({ conversation: snapshot(turn(2)).conversation, turns: [reply(turn(1)), reply(turn(2))], nextCursor: null });
+    projection.setVisible(true); await projection.refresh();
+    const pending = deferred<Awaited<ReturnType<FlowClient["conversationDetail"]>>>(); client.conversationDetail.mockReturnValueOnce(pending.promise);
+    const first = projection.loadReply("turn-1"); await vi.waitFor(() => expect(client.conversationDetail).toHaveBeenCalledTimes(1));
+    await projection.loadReply("turn-2"); expect(client.conversationDetail).toHaveBeenCalledTimes(1);
+    pending.resolve({ id: "detail", title: "Reply", kind: "artifact", content: "🙂".repeat(262145), mediaType: "text/plain", artifactVersion: "v1" }); await first;
+    expect(Object.values(projection.getSnapshot().details).every(entry => !entry.data)).toBe(true);
+    expect(Object.values(projection.getSnapshot().details).some(entry => entry.error?.includes("byte limit"))).toBe(true);
   });
 });

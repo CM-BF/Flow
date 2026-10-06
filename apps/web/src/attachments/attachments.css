@@ -1,0 +1,25 @@
+.attachment-picker { display:grid; gap:10px; min-width:0; font-size:13px; line-height:1.5; color:var(--foreground); }
+.attachment-picker h3 { font-size:13px; font-weight:600; margin:8px 0 4px; }
+.attachment-help { color:var(--muted-foreground); font-size:12px; margin:0; }
+.attachment-search { display:flex; align-items:end; gap:8px; }
+.attachment-search label { display:grid; gap:4px; flex:1; min-width:0; }
+.attachment-picker input:not([type=file]), .attachment-picker button, .attachment-file-action { border:1px solid var(--border); border-radius:6px; background:var(--background); color:var(--foreground); padding:6px 8px; min-height:32px; font:inherit; }
+.attachment-picker button { cursor:pointer; }
+.attachment-picker button:disabled { opacity:.5; cursor:not-allowed; }
+.attachment-picker :is(button,input,summary):focus-visible { outline:2px solid var(--ring); outline-offset:2px; }
+.attachment-row { border-bottom:1px solid var(--border); padding:8px 0; min-width:0; }
+.attachment-row-title { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.attachment-row-title strong { overflow-wrap:anywhere; flex:1; min-width:80px; font-weight:500; }
+.attachment-row-title span { color:var(--muted-foreground); font-size:11px; }
+.attachment-picker summary { cursor:pointer; padding:5px 0; overflow-wrap:anywhere; }
+.attachment-preview pre { white-space:pre-wrap; overflow-wrap:anywhere; max-height:240px; overflow:auto; background:var(--muted); border-radius:6px; padding:10px; font-size:12px; }
+.attachment-picker code { display:block; overflow-wrap:anywhere; white-space:normal; font-size:11px; }
+.attachment-error { color:var(--destructive); margin:4px 0; overflow-wrap:anywhere; }
+.attachment-buttons { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+.attachment-file-action { display:grid; gap:4px; max-width:100%; }
+.attachment-file-action input { max-width:100%; font-size:12px; }
+@media (max-width:420px) { .attachment-search { flex-wrap:wrap; } .attachment-picker { font-size:12px; } }
+@media (prefers-reduced-motion:reduce) { .attachment-picker *, .attachment-picker *::before, .attachment-picker *::after { animation:none; transition:none; scroll-behavior:auto; } }
+.attachment-fixture .fixture-controls { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:10px; font-size:12px; }
+.attachment-fixture .fixture-controls button { border:1px solid var(--border); border-radius:6px; background:var(--background); padding:5px 8px; }
+.attachment-fixture .fixture-controls label { display:flex; align-items:center; gap:4px; }

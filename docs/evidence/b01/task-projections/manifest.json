@@ -1,0 +1,495 @@
+{
+  "implementationCommit": "c96a6bb867bfa83b8ce26f79236ff13b14b63e65",
+  "baseCommit": "fd1322f9c0c1d085d5e343e39f6216b20d26c264",
+  "recordedAt": "2026-10-06T11:47:36.408290+00:00",
+  "owner": "status_read / gpt-6-astra",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections",
+  "branch": "codex/task-read-projections",
+  "claimId": "190bd45e-ffc6-4248-aca9-0ebd282c26b0",
+  "claimVersion": 1,
+  "files": [
+    {
+      "kind": "source",
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/task-read-projection.test.ts",
+      "bytes": 10661,
+      "sha256": "f54b96f9477a6444aa7b54e52163a026562659a29ed67b85cdfc62e808282ffa"
+    },
+    {
+      "kind": "source",
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 8377,
+      "sha256": "2908ae86cd3acf7a415536d1b8c4847a7d791ac7f161c416645ee4e5786b5cad"
+    },
+    {
+      "kind": "source",
+      "path": "docs/evidence/b01/task-projections/tsconfig.json",
+      "bytes": 326,
+      "sha256": "f030ade7f07cf96b468e9689275e899fbe1e7fa121f0e015f1d4697196dabff6"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/index.ts",
+      "bytes": 13133,
+      "sha256": "effd24a27add22ca14c508022abc5c132600081da9d3d3d5e3a52855a287dde6"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/streams.ts",
+      "bytes": 2299,
+      "sha256": "7a0c0f30138266515acac72b4a7edc4c9629da709cd4007f89ba7b22f42b29ff"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5082,
+      "sha256": "7dd7cfa459e88e924f57d4ff506c5acf4d660dd1dd381edb30551b17b7b90beb"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "bytes": 2196,
+      "sha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1050,
+      "sha256": "34d05a279569a727cc54cb4bfca56765d77b0e5b244c1a7faa12f6d0053e7e7d"
+    },
+    {
+      "kind": "readonly",
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "kind": "readonly",
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "kind": "readonly",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "kind": "readonly",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278771,
+      "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/package.json",
+      "bytes": 489,
+      "sha256": "2845ef2d760995fa471163249f5fba113082299f3e0c27ff920960c3f7fc32f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-event.stdout",
+      "bytes": 1518,
+      "sha256": "b5e4f658de6d98423bbfa923cb526fa0f14d98ad6a26cfb2491f826c8a735858"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-event.stderr",
+      "bytes": 868,
+      "sha256": "442e5d552c5dcf2c44e347fb7b8efd6a2d5ca33efc321c30aa0c18a550685add"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-event-receipt.json",
+      "bytes": 1140,
+      "sha256": "f5c76d70558b78a5d146e6a60ce07bc7007bdd82366d4f9a331a70d872f74b15"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-list.stdout",
+      "bytes": 1834,
+      "sha256": "117ebd4e78fd20e5fa84865e899eec00b361e8207785686d6474ecffb0b06c3d"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-list.stderr",
+      "bytes": 814,
+      "sha256": "465e70a00a304d3312e35404d0a9e29ff7403782933ea1f6cb2abb7bee674d46"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/red-list-receipt.json",
+      "bytes": 1197,
+      "sha256": "5ac51dad236390e4729cd576cb3899226636340da4feda562ed297f2f9383cf1"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/final.stdout",
+      "bytes": 3756,
+      "sha256": "41122498d8e0732363b80d2bd68bccc7ef97d445977d3409e86f20fba45dd8a7"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/final-receipt.json",
+      "bytes": 1557,
+      "sha256": "53155ca3446972da37a3340c680b68d3ce4f3de21a928077aea6493cdf004047"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-preflight.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-preflight.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-preflight-receipt.json",
+      "bytes": 461,
+      "sha256": "211cf9831a312208fae82b05590fefcf726a1920058279f46beb5dea585d2939"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-second-preflight.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-second-preflight.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-second-preflight-receipt.json",
+      "bytes": 1521,
+      "sha256": "6402a63c1cfbab854937d97bc9abf77276c987c78789675ffe59552196a26b54"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/b01/task-projections/strict-receipt.json",
+      "bytes": 1521,
+      "sha256": "10e44ab1ed28e5538e29cbddc0b12c7f2af8421b96617f8d1e1358cb6863b635"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/README.md",
+      "bytes": 3714,
+      "sha256": "2b9f76be0672f143096d34291188f5f050bdc9aa61b120815452f5c2ce3b377b"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/authority-request.md",
+      "bytes": 828,
+      "sha256": "9e7d6fdccfe561c79a548377f96097b5fc2be1b11b5a37a140b15efb589c79dc"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/claim-observation.json",
+      "bytes": 971,
+      "sha256": "4a189e73f12885e742ca1cfed3bde187348cbc2a58a64dc0b5670006892eaa3d"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/claim-receipt.json",
+      "bytes": 778,
+      "sha256": "a6b3a7672bce57c13055aabc22b544542b7c777c41ba4a969c2df69b728b4a4a"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/clean-code.md",
+      "bytes": 1822,
+      "sha256": "98a6e8232801ee3b24312142a37b641017a5c1f2a5483fa1d68dd949ca51608c"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/interface.md",
+      "bytes": 3513,
+      "sha256": "d3c4c6d383c0c8c1bb1685c2b53fdd4cfb2d5f80b06ffd46f90177b1f4a654ed"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/measurements.json",
+      "bytes": 12438,
+      "sha256": "1249a938467f875ed6cbc47c4004d6d903a22a44afaefc644a377d878cccf0db"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/runtime-bindings.json",
+      "bytes": 1452,
+      "sha256": "99110cf0859ea3526baf52b3ee84e39f25479f54c7fd53b4f46861bcec698f64"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/b01/task-projections/skills.json",
+      "bytes": 1803,
+      "sha256": "1224408a7db6047c74c9c454bf4f419afd36b9312d7a131dc707c87028f687aa"
+    }
+  ],
+  "historicalRedBindings": [
+    {
+      "run": "red-event",
+      "commit": "0e3ac1454fabf6ad158e69674ad50ebe3211f02a",
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2225,
+      "sha256": "e7a69ecfb1508d08b04338dd42e4bb0439057b1d45db5fe6ea531567eb36b042"
+    },
+    {
+      "run": "red-event",
+      "commit": "0e3ac1454fabf6ad158e69674ad50ebe3211f02a",
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6497,
+      "sha256": "c83f04c42ec26e69147baf929a18b53f49faf560602df4322cefccd67c40c7fc"
+    },
+    {
+      "run": "red-event",
+      "commit": "0e3ac1454fabf6ad158e69674ad50ebe3211f02a",
+      "path": "apps/server/src/task-read-projection.test.ts",
+      "bytes": 1881,
+      "sha256": "8a889d45ea8ea23888876064d7d388daf78d69316bd3d16d170263cecc6c0025"
+    },
+    {
+      "run": "red-event",
+      "commit": "0e3ac1454fabf6ad158e69674ad50ebe3211f02a",
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 7334,
+      "sha256": "804d5125afc09598e1933059282673ab3eeb6da36e0f999dc7a7307d9e447499"
+    },
+    {
+      "run": "red-list",
+      "commit": "c855e33f86e6caed52aaf43b9142bca49672747e",
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "run": "red-list",
+      "commit": "c855e33f86e6caed52aaf43b9142bca49672747e",
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6546,
+      "sha256": "55ff21faab3dd2fe54527253b291c247a63747c821b8feee7399b68a632e8e87"
+    },
+    {
+      "run": "red-list",
+      "commit": "c855e33f86e6caed52aaf43b9142bca49672747e",
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "run": "red-list",
+      "commit": "c855e33f86e6caed52aaf43b9142bca49672747e",
+      "path": "apps/server/src/task-read-projection.test.ts",
+      "bytes": 2471,
+      "sha256": "18ffa7d480f29a17a651e3a95893eb61a266d08086aab6b31043c8fdb6078798"
+    },
+    {
+      "run": "red-list",
+      "commit": "c855e33f86e6caed52aaf43b9142bca49672747e",
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 7674,
+      "sha256": "50281723524ad8c0094d3ac86ee70de7eff6e70d1017af19fc8a6132b5315da4"
+    }
+  ],
+  "legacyFrozenAtBase": [
+    {
+      "path": "docs/evidence/b01/README.md",
+      "bytes": 8966,
+      "sha256": "ab6bbfd8ab11588dd78fef25909098d9af69f24dbbb69028caa0fa99b4327063"
+    },
+    {
+      "path": "docs/evidence/b01/after-results.json",
+      "bytes": 181217,
+      "sha256": "437262b7c5df5a68a554a3ac9c8ec05d258132f5019545d77712ceac75aa829d"
+    },
+    {
+      "path": "docs/evidence/b01/candidate-results.json",
+      "bytes": 302114,
+      "sha256": "621a906834a862ebf04e364a1b6e313e2c03e2fed94c777caaf8364eaa85251e"
+    },
+    {
+      "path": "docs/evidence/b01/dashboard-format-receipt.json",
+      "bytes": 2671,
+      "sha256": "af5a325ca57071adc64e57188fab6b7093609d6d68395f89e9eb8e6451b836b5"
+    },
+    {
+      "path": "docs/evidence/b01/dashboard-receipt.json",
+      "bytes": 9678,
+      "sha256": "e07ec6b41543bd8e374f8ede5469029b293c8623bf26f0a289798ac67d90ae18"
+    },
+    {
+      "path": "docs/evidence/b01/independent-review-checks.txt",
+      "bytes": 1114,
+      "sha256": "3677d88c1461fb9d48f7742eee7f25d30fc4074a79d74b3bf2a5b89111d5413e"
+    },
+    {
+      "path": "docs/evidence/b01/initial-results.json",
+      "bytes": 177106,
+      "sha256": "adb636ba8d17a705adc55b29d923ad744cb1078bde542c2ecf2809808cc1aa93"
+    },
+    {
+      "path": "docs/evidence/b01/quality.md",
+      "bytes": 2315,
+      "sha256": "f6cc212b6c0d585a952c7adbcf69f732f12eac1445d7f549bf2e69c5f11a137a"
+    },
+    {
+      "path": "docs/evidence/b01/validation-history.md",
+      "bytes": 3125,
+      "sha256": "2562172e8c895cb0fdc545bfe35fa3c2cfeab0088eaf5dc49e5fe4f4cb83e62a"
+    },
+    {
+      "path": "docs/evidence/b01/workspace-test-command-failed.json",
+      "bytes": 637,
+      "sha256": "16b8a766f65ee67f8ff2b6a310bd085db5290e1b9dda8b60f051d945defd1e46"
+    },
+    {
+      "path": "docs/evidence/b01/workspace-test-command.json",
+      "bytes": 637,
+      "sha256": "21cb54418d8c386897a66ccb0f0b27486bae7f2bef0bf815afbc89d8fc639a92"
+    },
+    {
+      "path": "docs/evidence/b01/workspace-tests-failed.json",
+      "bytes": 3457,
+      "sha256": "f81a653084db2717df5aca9af6964ed577fbe1907433ebc1155d503edc5f78a7"
+    },
+    {
+      "path": "docs/evidence/b01/workspace-tests.json",
+      "bytes": 3041,
+      "sha256": "fb7f9aa8e787ccd48682b83b0a361467c5a70fb3c28c77d098d28ac832c929be"
+    },
+    {
+      "path": "experiments/bounded-reads/README.md",
+      "bytes": 3941,
+      "sha256": "642eb4ba12c23765c954c78277e0b7730be786e816ba8b3ad56ebdacf740dc06"
+    },
+    {
+      "path": "experiments/bounded-reads/candidate.ts",
+      "bytes": 1558,
+      "sha256": "7fd5f5963e78e081b267a42424b02675a0e05aac6b7a43ef882dbf44cb8217de"
+    },
+    {
+      "path": "experiments/bounded-reads/fixture.ts",
+      "bytes": 2079,
+      "sha256": "3d2ff9fe8a82fc9050e626118a6f09ff2be77cae337e417ef37c10da6dbb8fc2"
+    },
+    {
+      "path": "experiments/bounded-reads/measurements.ts",
+      "bytes": 1114,
+      "sha256": "9bd2ad8bb3111a96e7dab51de73a7f0c5096b1e74f32257ef6d25a07223bba4d"
+    },
+    {
+      "path": "experiments/bounded-reads/probe.ts",
+      "bytes": 18408,
+      "sha256": "84b50f9ea41cb7f2975917a346dec1ebd9d6b5d39561b41a5750e47264822ee4"
+    },
+    {
+      "path": "experiments/bounded-reads/tsconfig.json",
+      "bytes": 241,
+      "sha256": "09568daced802e1d9c4fddf77e2b7528e2a1f83538cb91241e972258ecb32ac4"
+    }
+  ],
+  "evidenceBudget": {
+    "decodedAndHttpAll3Runs": 535645,
+    "evidenceBytesBeforeManifest": 43832,
+    "metadataReserveBytes": 1048576,
+    "conservativeDecodedPlusEvidenceUpperBytes": 1628053,
+    "limitBytes": 33554432
+  },
+  "checks": {
+    "finalDistinct": 8,
+    "passed": 8,
+    "localStrictExit": 0,
+    "rootWideStrict": "NOT_RUN",
+    "realProvider": "NOT_RUN",
+    "thirdReader": "UNCHANGED"
+  },
+  "limitations": [
+    "Decoded row JSON bytes are not PG wire/TOAST/disk/CPU bytes.",
+    "HTTP checks are real; PG counting decorates a separate private Pool passed to the same production domain Interface.",
+    "No throughput/latency/agent-capacity claim; background load and observer overhead remain.",
+    "Original B01 historical evidence and failed red runs retained."
+  ]
+}

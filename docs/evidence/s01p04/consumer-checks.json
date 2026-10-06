@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-06T11:27:55.515926+00:00",
+  "reviewedTarget": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+  "review": {
+    "reviewer": "chatui01_owner",
+    "model": "gpt-6-astra",
+    "at": "2026-10-06 11:24:47 UTC",
+    "verdict": "CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "The direct steering consumer expected runner FOR UPDATE after ownedAttempt changed to SHARE; actual serialization is task FOR UPDATE."
+  },
+  "fix": "Keep real blocked submission and committed final rejection; exact task-lock query plus holder pid in pg_blocking_pids; own pending HTTP settled in finally. No production source change.",
+  "selected": 1,
+  "passed": 1,
+  "unselected": 15,
+  "initial": {
+    "testExit": 1,
+    "selected": 0,
+    "pgStarted": false,
+    "strictExit": 2
+  },
+  "strictExit": 0,
+  "lockEvidence": {
+    "holder": 156359,
+    "waiter": 156347,
+    "blockers": [
+      156359
+    ],
+    "taskId": "44457c4e-3efd-44c0-9fc7-01265aa4b579",
+    "attemptId": "b5c6a5a8-a751-4e73-82ef-6fdc625b7e5a",
+    "relation": "flow.tasks"
+  },
+  "cleanup": {
+    "database": "flow_chat07_ba470e0a738e4f3e9d0fafb9ba6d67fb",
+    "connections": 0,
+    "databaseAbsent": true
+  },
+  "providerCalls": 0,
+  "capacityWindows": 0,
+  "oldChecksRerun": false,
+  "newDistinctPlusPrevious": 11,
+  "scope": "One selected direct consumer; remaining 15 are not run, not passed; module SDK import is not SDK Query execution"
+}

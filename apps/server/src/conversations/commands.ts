@@ -36,7 +36,7 @@ export async function admitTurn(pool: Pool, boss: PgBoss, conversationId: string
       throw new HttpError(409, 'conversation_queue_pending', 'Waiting queue items must be processed or cancelled before a follow-up.');
     }
     const admission = await prepareTurnAdmission(client, conversation, input.text, 'follow-up');
-    const contextInputId = await freezeContext(client, conversationId, conversation.project_id, input.text, input.knowledge);
+    const contextInputId = await freezeContext(client, conversationId, conversation.project_id, input.text, input.knowledge, input.attachments);
     return acceptConversationTurn(client, boss, conversation, admission, contextInputId);
   });
   return { ...result.value, replayed: result.replayed };

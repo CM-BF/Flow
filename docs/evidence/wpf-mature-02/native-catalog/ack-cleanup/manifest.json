@@ -1,0 +1,79 @@
+{
+  "productionTarget": "c9c6e891003af2fc52ca77b0c4527d6d85e20e22",
+  "purpose": "P3 test-only unknown CREATE acknowledgement cleanup",
+  "recordedAt": "2026-10-06 10:37:43 UTC",
+  "files": [
+    {
+      "path": "apps/server/src/execution-profiles/native-catalog.test.ts",
+      "bytes": 13777,
+      "sha256": "6783d35e586d38e7811e4a4197867f58fd024b8db2d76b12f622c2b6f219d478"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog/vitest.config.mjs",
+      "bytes": 1392,
+      "sha256": "b105e86b49bdf8af3a096ce5d69ecfe73eddbfd66a3f5c046dc56ecd79d575dd"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog/tsconfig.json",
+      "bytes": 1830,
+      "sha256": "6c3749ec56290bfd77cd49be042c108357b97de608d922189f173111362446d1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/README.md",
+      "bytes": 2033,
+      "sha256": "c1554fb6db593d0ec477da54e92cd32cf23b944f321a0b18304cace86f8ea799"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/fixture-result.json",
+      "bytes": 526,
+      "sha256": "9781814c11cca80177e9cb32f5bf271bac8fafe462d335f02e97bc8588f1ee97"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/fixture.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/fixture.stdout",
+      "bytes": 463,
+      "sha256": "d8ddeb4daac54f078f407da750f00a847105b3dfa014af14e0f861ecbd7779df"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/typecheck-result.json",
+      "bytes": 398,
+      "sha256": "9581953df53a8c6d909abe91e7a3926999ff2672d62690ab60e69b9b3513e998"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/typecheck.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "unchangedProductionAndContractTest": [
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "bytes": 7301,
+      "sha256": "4ce75b9b03cb138aa9dc39f3577965e73731d0a4f233f34fdbb540b142b5d49d"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 10790,
+      "sha256": "c920d5945291df6ec8994ac26db552b8879025f3d76a0fe8c6182991b916f848"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 2512,
+      "sha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec"
+    }
+  ]
+}

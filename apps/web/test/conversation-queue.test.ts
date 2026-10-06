@@ -175,7 +175,7 @@ describe("queue commands and current projection", () => {
     await queue.refresh(); await queue.loadDetail("item-1"); expect(api.conversationQueue).not.toHaveBeenCalled(); expect(api.conversationQueueItem).not.toHaveBeenCalled(); expect(queue.actionDisabledReason()).toContain("unavailable");
   });
   it("loads detail only on demand, caches its text, and rejects a different conversation identity", async () => {
-    const { api, queue } = setup(); await queue.refresh(); expect(api.conversationQueueItem).not.toHaveBeenCalled();
+    const { api, queue } = setup(); queue.setVisible(true); await queue.refresh(); expect(api.conversationQueueItem).not.toHaveBeenCalled();
     await queue.loadDetail("item-1"); await queue.loadDetail("item-1"); expect(api.conversationQueueItem).toHaveBeenCalledTimes(1);
     api.conversationQueueItem.mockResolvedValueOnce({ ...page({ conversationId: "wrong" }), item: { ...item(2), text: "message 2" } });
     await queue.loadDetail("item-2"); expect(queue.getSnapshot().details["item-2"]?.error).toBeTruthy();
@@ -220,5 +220,26 @@ describe("queue commands and current projection", () => {
     const commands = new QueueCommands(api, async () => {}, 5); disposables.push(commands);
     await commands.execute({ kind: "enqueue", conversationId: "chat", input: { expectedQueueRevision: 1, text: "hi" } }); expect(commands.getSnapshot()[0]?.state).toBe("unknown");
     commands.dispose(); slow.resolve({ conversationId: "chat", queueRevision: 2, replayed: false, item: { ...item(2), preview: "hi" } }); await Promise.resolve(); expect(commands.getSnapshot()).toEqual([]);
+  });
+});
+
+describe("queue body cache lifetime", () => {
+  it("bounds all detail records and preserves every command receipt when clearing reads", async () => {
+    const { api, queue } = setup(); queue.setVisible(true); await queue.refresh();
+    api.conversationQueueItem.mockImplementation(async (_id,id) => ({...page(),item:{...item(Number(id.slice(5))),text:`message ${id.slice(5)}`}}));
+    for (let n=1;n<=5;n++) await queue.loadDetail(`item-${n}`);
+    expect(Object.keys(queue.getSnapshot().details)).toHaveLength(4);
+    await queue.loadDetail("item-1"); expect(api.conversationQueueItem).toHaveBeenCalledTimes(6);
+    await queue.pause(); const receipts=queue.getSnapshot().receipts;
+    queue.setVisible(false); queue.clearReadCache();
+    expect(queue.getSnapshot().details).toEqual({}); expect(queue.getSnapshot().receipts).toBe(receipts); expect(receipts).toHaveLength(1);
+  });
+  it("ignores a late detail error and keeps the new generation flight", async () => {
+    const {api,queue}=setup(); queue.setVisible(true); await queue.refresh();
+    let reject!: (error:Error)=>void, resolve!: (value:Awaited<ReturnType<QueuePort["conversationQueueItem"]>>)=>void;
+    api.conversationQueueItem.mockReturnValueOnce(new Promise((_,no)=>{reject=no;})).mockReturnValueOnce(new Promise(yes=>{resolve=yes;}));
+    const first=queue.loadDetail("item-1"); await vi.waitFor(()=>expect(api.conversationQueueItem).toHaveBeenCalledTimes(1)); queue.setVisible(false); queue.setVisible(true); await queue.refresh(); const second=queue.loadDetail("item-1"); await vi.waitFor(()=>expect(api.conversationQueueItem).toHaveBeenCalledTimes(2));
+    reject(Error("old error")); await first; expect(queue.getSnapshot().details["item-1"]).toEqual({loading:true}); expect(queue.loadDetail("item-1")).toBe(second);
+    resolve({...page(),item:{...item(1),text:"message 1"}});await second;expect(queue.getSnapshot().details["item-1"]?.data?.item.text).toBe("message 1");
   });
 });

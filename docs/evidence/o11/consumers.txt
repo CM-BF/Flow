@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model
+
+ ✓ apps/server/src/goals/goals.test.ts (9 tests) 14638ms
+   ✓ runs the diamond through independent fixture processes and invalidates only changed actual dependencies  5450ms
+   ✓ preserves failed evidence, rejects failed verification, and requires explicit predecessor for retry  2736ms
+   ✓ serializes concurrent authorization, keeps one task and refuses unsettled execution after center restart  3848ms
+   ✓ returns faithful existing provenance for no-op input and delivery commands after another node changes  1212ms
+ ✓ apps/server/src/goal-context/context.test.ts (10 tests) 1636ms
+ ✓ apps/server/src/goal-native-executions/admission.test.ts (6 tests) 5564ms
+   ✓ claims only on the selected profile and preserves a committed receipt after the runner is revoked  817ms
+   ✓ keeps native execution and delivery owner-only while the old node grant still executes and accepts a fixture child  2258ms
+   ✓ does not authorize another execution when a claimed native predecessor becomes uncertain  892ms
+
+ Test Files  3 passed (3)
+      Tests  25 passed (25)
+   Start at  04:35:31
+   Duration  23.70s (transform 415ms, setup 0ms, import 1.57s, tests 21.84s, environment 0ms)
+

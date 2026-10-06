@@ -1,0 +1,54 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/task-read-projection.test.ts"
+  ],
+  "startedAt": "2026-10-06T11:44:08.190155+00:00",
+  "finishedAt": "2026-10-06T11:44:10.977130+00:00",
+  "elapsedMs": 2786.6372920107096,
+  "exitCode": 0,
+  "hostLoadAverageStart": [
+    20.45458984375,
+    20.82958984375,
+    19.0556640625
+  ],
+  "hostLoadAverageEnd": [
+    19.13671875,
+    20.5498046875,
+    18.96728515625
+  ],
+  "files": [
+    {
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "path": "apps/server/src/task-read-projection.test.ts",
+      "bytes": 10661,
+      "sha256": "f54b96f9477a6444aa7b54e52163a026562659a29ed67b85cdfc62e808282ffa"
+    },
+    {
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 8377,
+      "sha256": "2908ae86cd3acf7a415536d1b8c4847a7d791ac7f161c416645ee4e5786b5cad"
+    },
+    {
+      "path": "docs/evidence/b01/task-projections/tsconfig.json",
+      "bytes": 326,
+      "sha256": "f030ade7f07cf96b468e9689275e899fbe1e7fa121f0e015f1d4697196dabff6"
+    }
+  ]
+}

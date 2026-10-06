@@ -1,0 +1,52 @@
+{
+  "operator": "runner_owner",
+  "authorization": "Execution Lead relay 2026-10-06 10:53 UTC / GO one Web-only release",
+  "commands": [
+    {
+      "step": "stage feature-WT import",
+      "exit": 1,
+      "code": "CONFIGURATION_IDENTITY_MISMATCH",
+      "serviceActions": 0
+    },
+    {
+      "step": "stage precreated root copy",
+      "exit": 1,
+      "code": "ERR_FS_CP_EEXIST",
+      "serviceActions": 0,
+      "privateStageRemoved": true
+    },
+    {
+      "step": "stage corrected child copy + exact verification",
+      "exit": 0,
+      "serviceActions": 0
+    },
+    {
+      "step": "CLI missing subcommand",
+      "exit": 1,
+      "code": "PREVIEW_OPERATION_UNCONFIRMED",
+      "serviceActions": 0
+    },
+    {
+      "step": "bootstrap request not yet0600",
+      "exit": 1,
+      "code": "PRIVATE_FILE_REQUIRED",
+      "serviceActions": 0
+    },
+    {
+      "step": "bootstrap same payload0600",
+      "exit": 0,
+      "releaseVersion": 1
+    },
+    {
+      "step": "publish fresh CAS",
+      "exit": 0,
+      "releaseVersion": 2
+    },
+    {
+      "step": "postread all assets/identity",
+      "exit": 0
+    }
+  ],
+  "providerQueries": 0,
+  "userTabReloads": 0
+}

@@ -138,3 +138,10 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - SVC04：FLOW-001下的[网页独立发布与回退](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/plans/svc04-web-release/plan.md)，唯一权威 `web-artifact-release`；先专用fixture证明后台持续、旧资源与失败保旧，个人服务不在本轮切换。
 
 新增唯一来源：S01P02并发入口（runner-concurrency-entry）、D08两层任务关系（dashboard-task-links）、WPF-ACTIVITYREAD01活动阅读（web-activity-readability）、WPF-STEIRI01补充指令接线（web-steering-integration）。各独审范围与main接收分别以唯一status为准；本批不切换个人服务。
+
+## 2026-10-06 11:32:44 UTC 连续目标与原生工程接缝
+
+| 子task | 唯一父任务 | 权威计划 | 状态 |
+| --- | --- | --- | --- |
+| O11 | FLOW-001（O01/M02追溯） | [目标交付读口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model/plans/o11-goal-delivery-read-model/plan.md) | implementation；稳定材料与实时执行分离 |
+| ENG01D | ENG-001 | [真实身份与原生turn接缝](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams/plans/eng01d-native-writer-seams/plan.md) | implementation；不扩旧权限 |

@@ -1,0 +1,31 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile
+
+ ✓ apps/runner/src/engineering/integration.test.ts (5 tests) 7969ms
+   ✓ executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback  1575ms
+   ✓ keeps failed engineering checks readable and lets the existing host publish only failed completion  2122ms
+   ✓ retains an injected uncertain write and project lease across host restart without replaying writes  463ms
+   ✓ replays a lost artifact acknowledgement without fabricating the verification or reexecuting engineering  2330ms
+ ✓ apps/server/src/engineering/verification.test.ts (10 tests) 1836ms
+ ❯ apps/server/src/engineering/profile.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/engineering/profile.test.ts [ apps/server/src/engineering/profile.test.ts ]
+Error: Cannot find package '@flow/client' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile/apps/server/src/engineering/profile.test.ts'
+ ❯ apps/server/src/engineering/profile.test.ts:5:1
+      3| import { Pool } from 'pg';
+      4| import { afterAll, beforeAll, beforeEach, expect, it } from 'vitest';
+      5| import { FlowClient } from '@flow/client';
+       | ^
+      6| import { createServer } from '../index.js';
+      7| import { registerEngineeringRoutes } from './index.js';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  15 passed (15)
+   Start at  03:51:16
+   Duration  11.30s (transform 412ms, setup 0ms, import 1.23s, tests 9.80s, environment 0ms)
+

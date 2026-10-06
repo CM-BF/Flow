@@ -1,0 +1,13 @@
+{
+  "command": [
+    "node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/engineering/profile.test.ts",
+    "-t",
+    "rejects engineering pins"
+  ],
+  "exitCode": 0,
+  "source": "actual process redirected stdout",
+  "completedAt": "2026-10-06T10:52:11.780125+00:00"
+}
