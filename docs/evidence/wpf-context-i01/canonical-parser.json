@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-06T09:10:25.814Z",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "可选择项目知识并发送或排队，草稿和未确认请求分别保留",
+      "next": "接入主线聊天界面",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "d0e05c26df6f331e0b1f15e7b738e4fe53208125",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-context/projects.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/conversation-context-integration.browser.ts",
+        "apps/web/test/conversation-context-integration.fixture.ts",
+        "apps/web/test/conversation-context-integration.test.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-CONTEXTI01",
+    "owner": "w01_owner / gpt-6-astra ultra（派发指定）",
+    "branch": "codex/web-context-integration",
+    "branchState": "completed（branch implementation；independent review approved）",
+    "updatedAt": "2026-10-06T09:10:00.000Z",
+    "updatedRecord": "2026-10-06 09:10:00 UTC",
+    "todos": [
+      {
+        "id": "WPF-CONTEXTI01-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[本人领取核验](../../docs/evidence/wpf-context-i01/claim-observation.json)"
+      },
+      {
+        "id": "WPF-CONTEXTI01-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[实际接口](../../docs/evidence/wpf-context-i01/interface.md)"
+      },
+      {
+        "id": "WPF-CONTEXTI01-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[固定检查与双主题截图](../../docs/evidence/wpf-context-i01/README.md)"
+      },
+      {
+        "id": "WPF-CONTEXTI01-04",
+        "state": "in-progress",
+        "owner": "w01_owner",
+        "evidence": "[固定目标独审通过](review.md)；main 接收仍 pending"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca；实现 HEAD d0e05c26df6f331e0b1f15e7b738e4fe53208125",
+    "declaredDirty": "09:10 收到独审前 HEAD 75c52ff clean；当前仅批准记录 metadata 待提交，十八源码保持固定目标。最终 dirty 以提交后的 Git 回执为准。",
+    "checks": {
+      "state": "passed",
+      "target": "d0e05c26df6f331e0b1f15e7b738e4fe53208125",
+      "record": "PASSED d0e05c26df6f331e0b1f15e7b738e4fe53208125；144 局部/直接依赖、Web typecheck、build、实际 App HTTP fixture dev12/prod12；0 page errors。限模拟中心，详见证据。"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED d0e05c26df6f331e0b1f15e7b738e4fe53208125",
+    "mainRecord": "NOT_INTEGRATED；实现已提交，尚未主线接收",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "d0e05c26df6f331e0b1f15e7b738e4fe53208125"
+  }
+}

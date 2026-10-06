@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:57:11 UTC / mainb1c2e39837c2208e6fc2c59a80e16797f26448b5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:30 UTC / main3418fe682944145494463dca9e09f89c8b9c2295 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | b1c2e39837c2208e6fc2c59a80e16797f26448b5；已审CHAT10/S01P01/CHATREAD/SVC03已main。个人center/runner固定b1c2e398 / accepting v12，Web固定artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90，原61227/61228与数据身份保留；用户tab未reload。4320在08:52:38实际101源。 |
+| 已集成main状态 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295；R06 transport、R05B有限中心来源和知识聊天接线已审main。个人center/runner仍固定b1c2e398、accepting v12，Web固定artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90，原端口和用户tab未变；最近实际4320观察114源，115登记已main待正常换载。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 聊天页面已固定版本，开发更新不会再自动替换用户正在使用的页面。 |
-| 下一可用交付 | 完善Claude与Codex的真实能力选择，并持续补齐成熟聊天界面的交互。 |
+| 当前产出 | 聊天知识引用已接入主线，Codex中心身份与本机通信已审；终端首片正在实施。 |
+| 下一可用交付 | 接通Codex普通执行与终端会话，再交付能改代码、检查并回看产物的工程任务通路。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |

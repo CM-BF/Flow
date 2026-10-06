@@ -1,0 +1,27 @@
+{
+  "target": "a239b14d5328c78cca02a8757e26f2b65502f926",
+  "observedAt": "2026-10-06 09:15:06 UTC",
+  "commands": [
+    {
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/runner/src/codex.test.ts",
+      "exitCode": 0,
+      "passed": 31,
+      "distinct": 31,
+      "stdout": "transport-verified.txt",
+      "cleanup": "every owned handle close confirmed; own temporary directories removed in afterEach"
+    },
+    {
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit",
+      "exitCode": 0,
+      "stdout": "types-verified.txt"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "models": 0,
+  "providerCalls": 0,
+  "realAppServers": 0,
+  "syntheticTransportOnly": true
+}

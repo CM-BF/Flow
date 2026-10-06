@@ -1,0 +1,12 @@
+{
+  "command": "pnpm exec vitest run apps/runner/src/runner.test.ts -t 'lets an already running slot settle'",
+  "exitCode": 0,
+  "reason": "Use public context.task.prompt instead of host-only task.id in the test; final test source validated separately without rerunning unrelated files.",
+  "output": "c0-concurrency-selected.stdout",
+  "source": "process stdout/stderr captured directly",
+  "selectedFiles": 1,
+  "selectedTests": 1,
+  "passedTests": 1,
+  "unselectedTests": 32,
+  "alreadyIncludedInDistinctCount": true
+}

@@ -1,0 +1,128 @@
+{
+  "authorization": "Execution Lead, one controlled SVC03 bootstrap/refresh and one explicit resume after all fresh gates; window closed by lead after accepting receipt.",
+  "parentTask": "FLOW-001",
+  "coLead": "Execution Lead",
+  "product": "d9385185a1474c6b058c41b9187c6e075248cb5b",
+  "deployedMain": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "sourceMatched": [
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 10032,
+      "sha256": "cf0f5431ab4473c4270f96a9f7145e8a27c99b2d888a8e0ddf2aa2aee35e0d32"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "bytes": 2822,
+      "sha256": "98447b34330a3c014f72732ed8aa8fe9e44e3550857299511cc87546e0b61d3f"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8241,
+      "sha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 10302,
+      "sha256": "9e9faa83a4ed6660479b63501acf6f35de8351ac75713a8a548d1de482a541c0"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 19957,
+      "sha256": "5e395cf9bf48467d36a5f86aa24d1c3b55ce3b7b10e9159811e6e90db1ed57dc"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 9846,
+      "sha256": "645cf7ef0d33782d134b367b965da50eaf8d031e907c840c34b96affdc9e71e9"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 2551,
+      "sha256": "836a0ab2331b6270a715c6c12aa2321f74480d9f58e5804d0022c9e3e191cd86"
+    },
+    {
+      "path": "tools/personal-preview/static-web.test.mjs",
+      "bytes": 4740,
+      "sha256": "63b1bf4cf9791be59f179ad025034b1b5abc9046b17c2b3f8efa29bf923fca27"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 7521,
+      "sha256": "2ca4faed5bfe993c996d1957412983b4b6218fae7cf8ac3b75d3a8f34d74916e"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.test.mjs",
+      "bytes": 6746,
+      "sha256": "975cb77fa772f2ac20ca45bf6383533f0b18193ab2be6d2bdca86e92b3d9003e"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/svc03/window-driver.mjs",
+      "bytes": 11986,
+      "sha256": "70b60f8cdde46dd8ddc438c8344479db15c6932c57ca91da5c1ffd24d89f3d4d"
+    },
+    {
+      "path": "docs/evidence/svc03/window-console.txt",
+      "bytes": 252,
+      "sha256": "1e165a126678e50c7bf27be502bb1a11df1c9e1c73dec0cad2fd0ea27b78a44f"
+    },
+    {
+      "path": "docs/evidence/svc03/window-result.json",
+      "bytes": 11583,
+      "sha256": "e1147c0a25741138b4454c7ffed559f9e8a3c4c8fc1c0d69d636f01586c45d8f"
+    },
+    {
+      "path": "docs/evidence/svc03/resume-driver.mjs",
+      "bytes": 11175,
+      "sha256": "7308e1a303781ad709ba0bafd84f7f61e226b69049b97bd217a16180ca45d871"
+    },
+    {
+      "path": "docs/evidence/svc03/resume-console.txt",
+      "bytes": 592,
+      "sha256": "258f813deb5b2ea3bc5cc401f3a6d1417a3414c5646fb2626e4304363044557b"
+    },
+    {
+      "path": "docs/evidence/svc03/resume-result.json",
+      "bytes": 13384,
+      "sha256": "b6500b0edb028ca47478bc95f1d4971a6ef9876b76a0f94ba94fb60f4af4938b"
+    },
+    {
+      "path": "docs/evidence/svc03/paused-status.json",
+      "bytes": 1171,
+      "sha256": "558f0a3427575580f8dc3205b5b9f5cf3d9809c04eca3d57401c536c9e314bf4"
+    },
+    {
+      "path": "docs/evidence/svc03/window-started.json",
+      "bytes": 93,
+      "sha256": "164078e19daccfc8e9f03b8dc64855002a6c2eef65b81f6dd19091214daee12d"
+    },
+    {
+      "path": "docs/evidence/svc03/resume-started.json",
+      "bytes": 94,
+      "sha256": "a5809aa1fe4fb0b07a953bef609750a60d53fa4708113ea18b30f41c21046017"
+    }
+  ],
+  "capturedMaintenanceCommands": [
+    {
+      "action": "bootstrap",
+      "exitCode": 0
+    },
+    {
+      "action": "refresh",
+      "exitCode": 0
+    },
+    {
+      "action": "resume",
+      "exitCode": 0
+    }
+  ],
+  "firstDriverExitNote": "First driver recorded stopped-unconfirmed and sets process.exitCode=1 in its catch. Its surrounding shell ended with cat, so the tool exit was 0; a separate Node exit value was not captured. This limitation is retained. Resume driver exit=0 was separately captured.",
+  "providerCalls": 0,
+  "tabReloads": 0
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "tool-transcript-transcription",
+  "provenance": "Transcribed visible tool output, not a process log. The initial tool command also printed git status, diff statistics and a source excerpt before running Vitest; only its four test-result lines are retained here. The final tool chunk supplies the complete selected-count and exit result.",
+  "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run packages/contracts/src/contracts.test.ts packages/contracts/src/assistant.test.ts packages/contracts/src/execution-profiles.test.ts packages/contracts/src/harnesses.test.ts apps/server/src/native-harness-policy.test.ts",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy",
+  "sessionId": 78771,
+  "chunks": [
+    {
+      "tool": "exec_command",
+      "chunkId": "607a98",
+      "exitCode": null,
+      "excerpt": true,
+      "output": " ✓ packages/contracts/src/assistant.test.ts (3 tests) 8ms\n ✓ packages/contracts/src/execution-profiles.test.ts (3 tests) 6ms\n ✓ packages/contracts/src/harnesses.test.ts (3 tests) 4ms\n ✓ apps/server/src/native-harness-policy.test.ts (2 tests) 2ms\n"
+    },
+    {
+      "tool": "write_stdin",
+      "chunkId": "b67874",
+      "exitCode": 0,
+      "output": " ✓ packages/contracts/src/contracts.test.ts (2 tests) 5ms\n\n Test Files  5 passed (5)\n      Tests  13 passed (13)\n   Start at  02:16:51\n   Duration  726ms (transform 109ms, setup 0ms, import 317ms, tests 24ms, environment 0ms)\n"
+    }
+  ],
+  "result": {
+    "exitCode": 0,
+    "selectedFiles": 5,
+    "selectedTests": 13,
+    "passedTests": 13,
+    "unselectedTests": 0
+  }
+}

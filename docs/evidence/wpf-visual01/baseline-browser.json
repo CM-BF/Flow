@@ -1,0 +1,178 @@
+{
+  "sourceCommit": "f92fd143f73f7a517004a154d3f6f2f2c7794180",
+  "sourceDirty": " M apps/web/src/plugins/builtins.ts\n M apps/web/src/plugins/host.ts\n M apps/web/src/themes.ts\n M docs/evidence/wpf-visual01/quality.md\n M plans/wpf-visual01-shell/plan.md\n M plans/wpf-visual01-shell/status.md\n?? apps/web/test/visual-shell.browser.ts\n?? apps/web/test/visual-shell.fixture.ts\n?? docs/evidence/wpf-visual01/amend-receipt.json\n?? docs/evidence/wpf-visual01/baseline-method.json\n?? docs/evidence/wpf-visual01/baseline.log\n?? docs/evidence/wpf-visual01/browser-fifth.log\n?? docs/evidence/wpf-visual01/browser-first.log\n?? docs/evidence/wpf-visual01/browser-fourth.log\n?? docs/evidence/wpf-visual01/browser-second.log\n?? docs/evidence/wpf-visual01/browser-sixth.log\n?? docs/evidence/wpf-visual01/browser-third.log\n?? docs/evidence/wpf-visual01/development-activity-dark-1280.png\n?? docs/evidence/wpf-visual01/development-browser.json\n?? docs/evidence/wpf-visual01/development-dark-1280.png\n?? docs/evidence/wpf-visual01/development-dark-opaque-1280.png\n?? docs/evidence/wpf-visual01/development-empty-light-1280.png\n?? docs/evidence/wpf-visual01/development-error-dark-390.png\n?? docs/evidence/wpf-visual01/development-error-light-390.png\n?? docs/evidence/wpf-visual01/development-failure.png\n?? docs/evidence/wpf-visual01/development-forced-colors.png\n?? docs/evidence/wpf-visual01/development-light-1280.png\n?? docs/evidence/wpf-visual01/development-light-opaque-1280.png\n?? docs/evidence/wpf-visual01/development-long-light-1280.png\n?? docs/evidence/wpf-visual01/development-long-light-390.png\n?? docs/evidence/wpf-visual01/development-reduced-transparency.png\n?? docs/evidence/wpf-visual01/development-split-dark-1280.png\n?? docs/evidence/wpf-visual01/development-unsupported-backdrop-branch.png\n?? docs/evidence/wpf-visual01/first-typecheck.log\n?? docs/evidence/wpf-visual01/install.log\n?? docs/evidence/wpf-visual01/plugin-host-direct.log\n?? docs/evidence/wpf-visual01/theme-typecheck.log\n?? docs/evidence/wpf-visual01/third-development-browser.json\n?? docs/evidence/wpf-visual01/third-development-failure.png\n?? docs/evidence/wpf-visual01/typecheck.log\n",
+  "sourceFiles": {
+    "apps/web/src/assistant-ui.css": "e34c294a756a1dee05a060edd9c9943e4b5b9540b6e6423c4c64eff3a6b1ff11",
+    "apps/web/src/plugins/builtins.ts": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+    "apps/web/src/plugins/host.ts": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "apps/web/src/styles.css": "aad9fb6bbf812419c8eb538490459ebcfd6504a4f942cebbe3aa201a4ef61229",
+    "apps/web/src/themes.ts": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+    "apps/web/test/visual-shell.browser.ts": "c734c26b849b6fce2238a473cbec9ef54285879dbdb212ebd0b1d262c90fcf4d",
+    "apps/web/test/visual-shell.fixture.ts": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0"
+  },
+  "at": "2026-10-06T09:15:30.095Z",
+  "production": false,
+  "baseline": true,
+  "checks": [
+    "actual empty App and long Markdown keep readable pane/code/table bounds at desktop and 390"
+  ],
+  "errors": [],
+  "failure": null,
+  "measurements": [
+    {
+      "name": "empty-light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(0.985 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 996,
+          "height": 676,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 588,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        }
+      }
+    },
+    {
+      "name": "long-light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(0.985 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 996,
+          "height": 676,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 588,
+          "height": 1281.625,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "22.75px"
+        }
+      }
+    },
+    {
+      "name": "long-light-390",
+      "width": 390,
+      "height": 844,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 342,
+          "height": 800,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 314,
+          "height": 1943.125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "22.75px"
+        }
+      }
+    }
+  ],
+  "scope": "Actual Flow App with contract HTTP synthetic materials; no model, DB or personal service"
+}

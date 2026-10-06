@@ -5,6 +5,22 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['ENG-001', '真实工程任务交付', '总体计划', 'engineering-delivery', 'eng01-engineering-delivery'],
+  ['R05C', 'Codex普通执行与未知状态', '工作线', 'codex-native-adapter', 'r05c-codex-native-adapter'],
+  ['TUI01A', '终端会话与可靠发送', '工作线', 'tui-conversations', 'tui01a-conversations'],
+  ['TUI-001', '可日用终端客户端', '总体计划', 'tui-client', 'tui01-terminal-client'],
+  ['COST-001', '执行成本与预算解释', '总体计划', 'execution-cost', 'cost01-execution-cost'],
+  ['R05B', 'Codex中心身份与来源校验', '工作线', 'native-center-policy', 'r05b-native-center-policy'],
+  ['WPF-MATURE-01', '成熟双主题视觉', '总体计划', 'web-platform-management', 'wpf-mature-01-visual'],
+  ['WPF-MATURE-02', 'Claude与Codex执行选项', '总体计划', 'claude-codex-capabilities', 'wpf-mature-02-harness-capabilities'],
+  ['WPF-MATURE-03', '附件与文件输入', '总体计划', 'web-platform-management', 'wpf-mature-03-attachments'],
+  ['WPF-MATURE-04', '上下文用量与压缩透明', '总体计划', 'context-transparency', 'wpf-mature-04-context-transparency'],
+  ['WPF-MATURE-05', '单标签双面板工作区', '总体计划', 'web-platform-management', 'wpf-mature-05-workspace'],
+  ['WPF-MATURE-06', '完整聊天可靠性', '总体计划', 'web-platform-management', 'wpf-mature-06-chat'],
+  ['R06', 'Codex本机通信与退出', '工作线', 'codex-native-transport', 'r06-codex-native-transport'],
+  ['WPF-CONTEXTI01', '知识引用接入聊天', '工作线', 'web-context-integration', 'wpf-context-i01-integration'],
+  ['WPF-STEER01', '运行中补充指令控件', '工作线', 'web-steering-control', 'wpf-steering-control'],
+  ['WPF-VISUAL01', '圆角与双主题界面', '工作线', 'web-visual-shell', 'wpf-visual01-shell'],
   ['R05', '可替换的原生执行工具接口', '工作线', 'native-harness-host', 'r05-native-harness-host'],
   ['CHATUI01', '真实逐段正文界面验收', '技术验证', 'stream-ui-acceptance', 'chatui01-stream-acceptance'],
   ['D05FIT01', '架构图首次打开适配', '工作线', 'dashboard-architecture-first-fit', 'd05-first-fit'],
@@ -118,7 +134,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'ENG-001': 'eng01', 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };

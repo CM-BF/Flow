@@ -49,6 +49,28 @@ function setup(initial = snapshot(), id: string | null = "chat", withQueue = fal
 }
 
 describe("public conversation projection", () => {
+  it("prepares zero-turn conversation using one CREATE receipt, then sends without recreating", async () => {
+    const { projection, client } = setup(snapshot(), null);
+    const creation = { ...configuredCreation, projectId: "project-a" };
+    client.createConversation.mockRejectedValueOnce(Error("lost"));
+    await projection.prepare(creation);
+    expect(projection.getSnapshot().outbox).toMatchObject({ kind: "creation", state: "unknown", request: null });
+    const receipt = projection.getSnapshot().outbox!; await projection.retry();
+    expect(client.createConversation.mock.calls[1]![1]).toBe(receipt.creationKey);
+    expect(client.submitConversationTurn).not.toHaveBeenCalled(); expect(projection.getSnapshot().turns).toEqual([]);
+    await projection.send("first real message"); expect(client.createConversation).toHaveBeenCalledTimes(2); expect(client.submitConversationTurn).toHaveBeenCalledTimes(1);
+  });
+  it("requires a supported fixed project and checks full ordered knowledge in Send ACK", async () => {
+    const initial = snapshot(); initial.conversation.projectId = "project-a"; initial.capabilities = { ...initial.capabilities, knowledgeContext: true };
+    const { projection, client } = setup(initial); await projection.refresh();
+    const ref = { projectId: "project-a", sourceId: pin.id, version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes" as const, start: 0, end: 4 } };
+    await projection.send("with knowledge", undefined, [ref]);
+    expect(projection.getSnapshot().outbox).toMatchObject({ state: "unknown", request: { knowledge: [ref] } });
+    const first = client.submitConversationTurn.mock.calls[0]!;
+    await projection.retry(); expect(client.submitConversationTurn.mock.calls[1]!.slice(0,3)).toEqual(first.slice(0,3));
+    const unsupported = setup(snapshot()); await unsupported.projection.refresh();
+    await expect(unsupported.projection.send("text", undefined, [ref])).rejects.toThrow("supported project"); expect(unsupported.client.submitConversationTurn).not.toHaveBeenCalled();
+  });
   it.each([undefined, "project-a"])("retains project %s and rejects changed GET identity without replacing known facts", async projectId => {
     const initial = snapshot(reply(turn())); initial.conversation = { ...initial.conversation, ...(projectId === undefined ? {} : { projectId }) };
     const { projection, set } = setup(initial); await projection.refresh();

@@ -45,3 +45,7 @@
 Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
 
 2026-10-06 08:37:23 UTC：OPS-001-08为用户明确管理指示的转录，未改产品/审批权限/既有固定target；链接和TODO唯一性局部检查，无工程测试。
+
+## OPS-001-10 限定文档独审
+
+Reviewer runner_owner / gpt-6-astra，只读APPROVED固定1d36a7a4532bbd2f29300c220d5451f755bd756c（base734e97e），两AGENTS新增23行；职责/Interface/状态生命周期、DRY、注册组合、渐进重构与claim、性能/背压/惰性/实测、避免过抽象、风险相称证据全部覆盖。允许合法领域分支、不新增审批；WPF-MATURE六大task指向唯一根锚点。无finding，0写入/0工程测试。只批准本规则delta，不覆盖本计划历史产品实现或未来feature设计。详见[质量记录](../../docs/quality/modular-design-rules-2026-10-06.md)。

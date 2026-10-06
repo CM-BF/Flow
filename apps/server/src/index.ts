@@ -1,4 +1,5 @@
 import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
+import { migrateNativeHarnessSources } from './native-harness-migration.js';
 import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-steering/index.js';
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
 import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
@@ -78,6 +79,7 @@ export async function createServer(options: ServerOptions) {
     await migrateAssistantStreams(pool);
     await migratePackageFetches(pool);
     await migrateActiveSteering(pool);
+    await migrateNativeHarnessSources(pool);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {

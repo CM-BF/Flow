@@ -1,0 +1,291 @@
+{
+  "observedAt": "2026-10-06T09:19:23.982Z",
+  "count": 114,
+  "rows": [
+    {
+      "id": "TUI-001",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/plans/tui01-terminal-client/status.md",
+      "parsed": {
+        "human": {
+          "delivery": {
+            "state": "planning",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "已规划独立终端客户端，命令与后端共用契约，首个会话交互片准备中。",
+          "next": "可选择会话、发送消息并安全断线重连的交互式终端。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/tui",
+            "packages/interaction"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "TUI-001",
+        "owner": "Execution Lead / gpt-6-astra ultra",
+        "branch": "codex/tui-client",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T09:14:34.000Z",
+        "updatedRecord": "2026-10-06 09:14:34 UTC",
+        "todos": [
+          {
+            "id": "TUI001-01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[设计](plan.md)、[研究来源](../../docs/evidence/tui01/research-provenance.json)"
+          },
+          {
+            "id": "TUI001-02",
+            "state": "pending",
+            "owner": "runner_owner（R06安全交付后）",
+            "evidence": "实现尚未take，无产品修改"
+          },
+          {
+            "id": "TUI001-03",
+            "state": "pending",
+            "owner": "Execution Lead派工",
+            "evidence": "stream/详情尚未实现"
+          },
+          {
+            "id": "TUI001-04",
+            "state": "pending",
+            "owner": "TUI owner / Mika合同",
+            "evidence": "真实model能力仍逐项接通"
+          },
+          {
+            "id": "TUI001-05",
+            "state": "pending",
+            "owner": "TUI owner / Web合同",
+            "evidence": "附件生命周期与context"
+          },
+          {
+            "id": "TUI001-06",
+            "state": "pending",
+            "owner": "TUI owner",
+            "evidence": "queue/steer/cancel/decision"
+          },
+          {
+            "id": "TUI001-07",
+            "state": "pending",
+            "owner": "TUI owner",
+            "evidence": "runner/plugin管理"
+          },
+          {
+            "id": "TUI001-08",
+            "state": "pending",
+            "owner": "独立review / Execution Lead",
+            "evidence": "完整日用/PTY/provider验收仍开放"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 初始计划待提交",
+        "declaredDirty": "仅本计划与研究证据",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；仅设计/来源/文档核对，无产品实现"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "尚未集成本计划；启动main77c420c",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      }
+    },
+    {
+      "id": "COST-001",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost/plans/cost01-execution-cost/status.md",
+      "parsed": {
+        "human": {
+          "delivery": {
+            "state": "planning",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 5,
+          "output": "已明确成本解释与预算的统一目标，保留缺测和订阅账单区别。",
+          "next": "在终端首片与执行工具接通后，先提供有来源说明的token与估价汇总。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "plans/cost01-execution-cost",
+            "docs/evidence/cost01"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "COST-001",
+        "owner": "Execution Lead / gpt-6-astra ultra",
+        "branch": "codex/execution-cost",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T09:19:00.000Z",
+        "updatedRecord": "2026-10-06 09:19 UTC / 固定77c420c",
+        "todos": [
+          {
+            "id": "COST001-01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "plan/research/claim receipt"
+          },
+          {
+            "id": "COST001-02",
+            "state": "pending",
+            "owner": "待空槽派工",
+            "evidence": "来源语义与版本未固定产品合同"
+          },
+          {
+            "id": "COST001-03",
+            "state": "pending",
+            "owner": "待派工",
+            "evidence": "0模型PG纵向片未实施"
+          },
+          {
+            "id": "COST001-04",
+            "state": "pending",
+            "owner": "待派工",
+            "evidence": "归因与三端读口未实施"
+          },
+          {
+            "id": "COST001-05",
+            "state": "pending",
+            "owner": "待派工",
+            "evidence": "中心预算与并发边界未实施"
+          },
+          {
+            "id": "COST001-06",
+            "state": "pending",
+            "owner": "待派工",
+            "evidence": "OTel仅出口候选"
+          },
+          {
+            "id": "COST001-07",
+            "state": "pending",
+            "owner": "独立review / Execution Lead",
+            "evidence": "大task完整验收尚未完成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 初始计划",
+        "declaredDirty": "本计划文档待固定",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；只读源码/一手研究及文档核对，产品未实现"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "本计划待发布；产品尚未实现",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      }
+    },
+    {
+      "id": "R05B",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy/plans/r05b-native-center-policy/status.md",
+      "parsed": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "普通回复来源隔离和旧数据升级已验证，正在核验旧会话与配置兼容",
+          "next": "可独立核验的 Codex 普通任务回复持久化，保留 Claude 既有行为",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "[精确22项范围](../../docs/evidence/r05b/claim-current.json)"
+          ],
+          "errors": [
+            "实现目标需完整 SHA",
+            "实现范围必须为仓库相对 literal 路径，不允许通配符或越界"
+          ]
+        },
+        "taskId": "R05B",
+        "owner": "native_center_owner / gpt-6-astra",
+        "branch": "codex/native-center-policy",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T09:18:00.000Z",
+        "updatedRecord": "2026-10-06 09:18 UTC",
+        "todos": [
+          {
+            "id": "R05B-01",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "claim.json；固定本机0.154.0 schema与旧中心源码"
+          },
+          {
+            "id": "R05B-02",
+            "state": "in-progress",
+            "owner": "native_center_owner",
+            "evidence": "strict union与静态policy已实现；新PG/runner消费者通过"
+          },
+          {
+            "id": "R05B-03",
+            "state": "in-progress",
+            "owner": "native_center_owner",
+            "evidence": "真实PG11/11；1MiB正文列表725B/预览4000B；旧中心消费者运行中"
+          },
+          {
+            "id": "R05B-04",
+            "state": "pending",
+            "owner": "native_center_owner",
+            "evidence": "未独审、未集成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "3d31ba89bc3696e64d15f12f9d8c703e4d7bd914 / 302b7fd5cb4c91b829c2f1b6cb038dd308acc3ff首接口；随后受控接入F01 migration mount",
+        "declaredDirty": "首接口已提交；PG测试及已识别session策略调整待提交",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "部分PASSED：5文件合同/policy 13/13；真实PG 11/11；runner/client直接消费者66/66；旧中心消费者运行中"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "未集成；启动main为3d31ba89bc3696e64d15f12f9d8c703e4d7bd914",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      }
+    }
+  ]
+}

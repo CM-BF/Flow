@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
-import { executionProfilePublicationSchema, executionProfileReferenceSchema, EXECUTION_PROFILE_HEADER, EXECUTION_PROFILE_STEERING_VERSION } from '../../../../packages/contracts/src/execution-profiles.js';
+import { nativeExecutionProfilePublicationSchema, executionProfileReferenceSchema, EXECUTION_PROFILE_HEADER, EXECUTION_PROFILE_STEERING_VERSION } from '../../../../packages/contracts/src/execution-profiles.js';
 import { HttpError, transaction } from '../database.js';
 import { integerQuery } from '../queries.js';
 import { listProfiles, publishProfile } from './store.js';
@@ -16,7 +16,7 @@ export async function migrateExecutionProfiles(pool: Pool): Promise<void> {
 }
 export function registerExecutionProfileRoutes(app: FastifyInstance, pool: Pool): void {
   app.post('/api/runner/execution-profile', request => {
-    const parsed = executionProfilePublicationSchema.safeParse(request.body);
+    const parsed = nativeExecutionProfilePublicationSchema.safeParse(request.body);
     if (!parsed.success) throw new HttpError(400, 'invalid_execution_profile', 'Invalid execution profile configuration.');
     return publishProfile(pool, request.runnerId!, parsed.data.configuration);
   });
