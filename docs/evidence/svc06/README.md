@@ -1,6 +1,6 @@
 # SVC06 有界实现切片（完整构建仍受阻）
 
-固定实现 `6d276baee6d3fbf14eb4b638a9ad773ffcec988d`，基线 `280289008a5a3779e4e5e6453181b96062ed9514`。作者 assignment_review / gpt-6-astra。只读独审尚未开始；本片不能据此发布到个人服务。
+固定实现 `6d276baee6d3fbf14eb4b638a9ad773ffcec988d`，基线 `280289008a5a3779e4e5e6453181b96062ed9514`。作者 assignment_review / gpt-6-astra。native_center_owner 于 13:29 UTC 独立只读批准有界保护/legacy 兼容小片；本批准不能据此发布到个人服务，完整构建/固定运行仍未验。原 manifest 和 raw 不改。
 
 已实现 prepare/verify、精确 Git 树与离线安装策略、Node/非 system dylib 身份、字节和保留上限，以及已有维护流程中的显式 artifact 选择。源和依赖布局复杂度留在私有 artifact module；host 仍只有原 operation/drain/hold/refresh/resume 权威。当前实证只覆盖下表，完整固定产物、从产物启动及开发依赖消失后的延迟 import **未通过/未执行**。
 
@@ -9,7 +9,7 @@
 | 场景 | 实际选择与结果 | 原始证据 |
 | --- | --- | --- |
 | 非固定 target、未知 descriptor 拒绝 | 1，不发布 | artifact-first-green.txt；artifact-red.txt 为缺模块的真实先红 |
-| APFS clone 独立 inode/nlink=1，改 seed 后 clone 不变；已存在/符号源拒绝 | 2 | clone-final.txt；clone-check.txt 保留 Node FICLONE_FORCE ENOSYS |
+| APFS clone 独立 inode/nlink=1，改 seed 后 clone 不变；已存在/符号源拒绝 | 2 | clone-final.txt 为独立 clone（还含前行重复拒绝）；artifact-denials.txt 含已存在/符号源拒绝；clone-check.txt 保留 Node FICLONE_FORCE ENOSYS |
 | 上述三项再次组合 | 3（重复，不累加） | artifact-denials.txt |
 | 空离线 cache 失败先保存 installer 输出再清 stage | 1，历史版本 `f500086b`；随后空间门槛已改变 | offline-denial.txt；最终 2.5 GiB 门槛下未重跑此项，不算最终代码完整套件通过 |
 | 内容修改、外链、hardlink、Node 身份变化、超大 sparse 文件拒绝 | 2 | integrity-final.txt（最终 byte-budget 路径）；integrity.txt 为前轮重复 |
