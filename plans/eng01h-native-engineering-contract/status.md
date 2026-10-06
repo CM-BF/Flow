@@ -36,3 +36,5 @@
 | ENG01H-04 | in-progress | native_center_owner | 固定source待独立review，main未集成 |
 
 实际host qualification缺失，当前无可执行原生工程profile或transport启动路径。本片中心仅核受信runner声明，非原生可用证明。status待Lead登记聚合。
+
+源码冻结待唯一独审；后继宿主的只读准备见[Interface](../../docs/evidence/eng01h/host-successor-interface.md)。未新增claim/产品实现或原生预检，实际资格/全部writer撤销仍缺证。
