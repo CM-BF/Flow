@@ -1,0 +1,17 @@
+# CHAT05 方法与质量
+
+2026-10-06 05:55 UTC，runner_owner / gpt-6-astra。任务 stack：TypeScript SDK mapper、Zod 合同、Fastify/PostgreSQL 持久接纳。实际本地发现/读取 find-skills、brainstorming、codebase-design、tdd、clean-code（/Users/citrine/.agents/skills/*/SKILL.md），无新安装。clean-code 固定来源 sickn33/agentic-awesome-skills bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5。
+
+本段应用：小 Interface 隐藏 SDK 帧和 DB 存储细节；先公共 mapper/HTTP 红例再实现；单一现有 runner/outbox/FSM，不新 agent loop。交付前检查命名/职责/边界/错误/重复与行为验收。已发现 SDK user replay 和 detachedToolCall 不可当本次已成功工具；opaque signature/redacted data 排除。接线需等待 O07 正式归还范围。尚未运行测试。
+
+## X04 后继来源备注（非本任务实现）
+
+X04 五点设计已接受后置：只 registry name@exact semver + expected SHA512 SRI；复用本机 npm11.19.0 自带 pacote21.5.1（ISC）/ssri13.0.1；独立 staging 有界 tarball 后原子 artifact，不解包/安装/执行/启用；本机 tiny registry 验完整性、无脚本、清理、并发；依赖闭包不在首段。固定官方 README https://raw.githubusercontent.com/npm/pacote/v21.5.1/README.md 与本机源码已只读核验。pacote.tarball.stream 回调在内层损坏重试可重入，即使 fetchRetries:0，未来必须每次回调重置独立文件/hash。未安装、未下载生产包、未修改 X01 或共享依赖。
+
+2026-10-06 06:01:35 UTC 工作段 clean-code：mapper 只负责完整帧映射；store 只接受已被公共报告事务锁定的 task/attempt，不自造鉴权。原始 mapper 5 个行为红例→5/5；HTTP 6 红例均在尚未交接的 runner union 被 400 拒绝，非数据库加载失败，后续沿同公开 API 转绿。发现并修复 title 长度与 UTF-8 截断、工具历史读取无界问题（改读取最新/初始各一行）；没有改授权 tools 或服务。模块 tsc 通过，闭环未通过前不标活动已交付。
+
+2026-10-06 06:09:28 UTC 交付前 clean-code：固定SDK mapper/已有 outbox/报告事务/懒读职责分离；SDK匿名帧不造ID、同源块改变kind也不能重复登记；工具terminal吸收迟到progress，取消未完成仍unknown；父链和session严格归属。直接消费者最初66/67失败已保留，修mapper匿名输入兼容，不改原验收断言。最终8文件85/85、tsc、diff检查通过。数据迁移无删除、参数化SQL、详情独立摘要读；没有新增依赖、工具权限、loop、服务操作或模型调用。Root预读截断边界已写正文/合同注释/后继CHAT05-06；剩余为明确范围限制，独立review尚未开始。
+
+2026-10-06 06:14:29 UTC Review P2修复：接受原migration case只验证no-op的发现；新增独立旧schema专库/真实持久task+attempt+detail，明确首次020前无v20与表，升级后全文行保持、活动空、再次幂等。只跑新增1/1+noEmit，原85与原始输出保留，不改产品实现或共享文件。clean-code核生命周期finally、自有随机DB、迁移入口与可观测断言；没有新模型、依赖或服务操作。
+
+2026-10-06 06:20:06 UTC 正式复审收口：fresh ledger核CHAT05 claim v3仍属本owner；仅更新review/status/README，转录Mika对216333f的APPROVED，P2关闭。clean-code检查本段文档职责、目标与证据归属，保留57d产品/2163新升级测试的区分；原始输出与manifest不改，无产品测试、模型、服务操作。提交后停止范围写入，保留claim等待正式交接。
