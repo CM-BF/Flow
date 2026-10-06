@@ -9,8 +9,8 @@
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | base main4391；mixed实现634926238f749fb1547a5973b521bc6dc5498574；实际执行12154f16f6a5e480bc3de64f96d1019102d56c0d；结果target由mixed-run/manifest.json绑定 |
-| 工作树dirty状态 | 执行前12154 clean；当前仅新增mixed-run结果及本任务status/review，driver与旧实验source/raw零diff；结果封存提交后核clean |
+| 工作基线 / HEAD | base main4391；mixed实现634926238f749fb1547a5973b521bc6dc5498574；实际执行12154f16f6a5e480bc3de64f96d1019102d56c0d；结果target6a5961a0d815113bba7cea149bc08ca07fdd128a |
+| 工作树dirty状态 | 执行前12154 clean；当前仅新增mixed-run结果及本任务status/review，driver与旧实验source/raw零diff；结果target6a5961a已固定clean；其后仅manifest/status metadata |
 | 工作分支状态 | in-progress |
 | 检查状态 | 唯一真实窗口FAIL：A组16实际attempt、12成功/4取消，B未启动；保留未知claim。原准备14纯unit/strict0独立，不是本次实测数 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
@@ -139,3 +139,5 @@ Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执�
 [结果报告](../../docs/evidence/s01/mixed-run/report.md)、[最终CLI回执](../../docs/evidence/s01/mixed-run/cli-receipt.json)、[原始冻结hash](../../docs/evidence/s01/mixed-run/raw-freeze.json)、[逐attempt与A窗口分析](../../docs/evidence/s01/mixed-run/analysis.json)。只读复核A中心pool acquisition/transaction/runner-row层级与60样本中31次Lock或blocker正证据，B缺失不能比较拓扑、推纯锁时间或SLO。旧78文件/44tasks/38attempts/20.925025秒完全不变。
 
 本地clean-code结果封存检查完成，质量记录在mixed-run/quality.md。结果待architecture_read独立只读审定，main未接收mixed；唯一status供既有dashboard聚合，待新状态展示，不另写聚合JSON。Mika将另派正常停止领取并有界排空claim的S01P03独立WT/scope，尚未开工，原S01保留writer claim v3做结果收口。
+
+2026-10-06 10:18 UTC：结果target `6a5961a0d815113bba7cea149bc08ca07fdd128a` 固定并核clean；[结果manifest](../../docs/evidence/s01/mixed-run/manifest.json)绑定19source/16readonly/8raw/7support，旧78文件不变。整体FAIL、未知journal保留，交architecture_read独审。追加metadata不改变执行12154或原raw；本次归档保守重复计量上界25,625,526B，含64KiB metadata预留。没有再运行负载或工程测试。
