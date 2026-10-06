@@ -1,0 +1,107 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-06](../../../web-platform-management/plans/wpf-mature-06-chat/plan.md)",
+        "id": "WPF-MATURE-06",
+        "location": "../../../web-platform-management/plans/wpf-mature-06-chat/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "ExecutionLead",
+        "value": "ExecutionLead"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "刷新与真实重启保持连接，退出和过期停止观察已验证",
+      "next": "独立审查后接入公开中心与浏览器",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "582f41f1957709982750f5de5306738e064960ce",
+      "scopes": [
+        "packages/contracts/src/browser-session.ts",
+        "apps/server/src/browser-session/index.ts",
+        "apps/server/src/browser-session/store.ts",
+        "apps/server/src/browser-session/session.test.ts",
+        "apps/server/src/browser-session/fixture.ts",
+        "apps/server/src/streams.ts",
+        "packages/storage/migrations/028-browser-sessions.sql"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-CONNECTION01",
+    "owner": "native_center_owner / gpt-6-astra",
+    "branch": "codex/browser-connection-session",
+    "branchState": "review",
+    "updatedAt": "2026-10-06T13:19:47.000Z",
+    "updatedRecord": "2026-10-06 13:19:47 UTC",
+    "todos": [
+      {
+        "id": "WPF-CONNECTION01-01",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "claim/DTO/Interface"
+      },
+      {
+        "id": "WPF-CONNECTION01-02",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "七产品scope内实现"
+      },
+      {
+        "id": "WPF-CONNECTION01-03",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "README/tool-receipts与全部原raw"
+      },
+      {
+        "id": "WPF-CONNECTION01-04",
+        "state": "pending",
+        "owner": "native_center_owner",
+        "evidence": "未独审/未main"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "280289008a5a3779e4e5e6453181b96062ed9514 / 582f41f1957709982750f5de5306738e064960ce",
+    "declaredDirty": "本metadata提交后clean",
+    "checks": {
+      "state": "passed",
+      "target": "582f41f1957709982750f5de5306738e064960ce",
+      "record": "PASSED 582f41f1957709982750f5de5306738e064960ce；22不同分轮通过，最终root types0；原红/未选保留"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "本片未集成；固定base280289008a5a3779e4e5e6453181b96062ed9514",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "582f41f1957709982750f5de5306738e064960ce"
+  }
+}

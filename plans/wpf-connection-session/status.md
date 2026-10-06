@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:19:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:19:47 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [WPF-MATURE-06](../../../web-platform-management/plans/wpf-mature-06-chat/plan.md) |
@@ -10,13 +10,13 @@
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session |
 | Branch | codex/browser-connection-session |
-| 工作基线 / HEAD | 280289008a5a3779e4e5e6453181b96062ed9514 / 31824d831ef72b331459d568301371bb037d9734 |
+| 工作基线 / HEAD | 280289008a5a3779e4e5e6453181b96062ed9514 / 582f41f1957709982750f5de5306738e064960ce |
 | 工作树dirty状态 | 本metadata提交后clean |
 | 工作分支状态 | review |
 | 本片段交付阶段 | review |
-| 实现目标 | 待固定 |
+| 实现目标 | 582f41f1957709982750f5de5306738e064960ce |
 | 实现范围 | packages/contracts/src/browser-session.ts, apps/server/src/browser-session/index.ts, apps/server/src/browser-session/store.ts, apps/server/src/browser-session/session.test.ts, apps/server/src/browser-session/fixture.ts, apps/server/src/streams.ts, packages/storage/migrations/028-browser-sessions.sql |
-| 检查状态 | 22不同分轮通过；原红/未选保留；最终root types0；待绑定source |
+| 检查状态 | PASSED 582f41f1957709982750f5de5306738e064960ce；22不同分轮通过，最终root types0；原红/未选保留 |
 | 已集成main状态 / HEAD | 本片未集成；固定base280289008a5a3779e4e5e6453181b96062ed9514 |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -35,4 +35,4 @@
 | WPF-CONNECTION01-03 | completed | native_center_owner | README/tool-receipts与全部原raw |
 | WPF-CONNECTION01-04 | pending | native_center_owner | 未独审/未main |
 
-等待Lead登记聚合。中心模块已固定待独审，尚未生产挂载；Web真实浏览器和发送恢复另验。0provider/个人服务不变。
+Lead登记来源；本次parseStatus/reviewState核对见parser.json。中心模块已固定待独审，尚未生产挂载；Web真实浏览器和发送恢复另验。0provider/个人服务不变。
