@@ -218,3 +218,5 @@ Web A-only 实际结束并正常清理后，fresh free1,098,022,912B低于1GiB+3
 2026-10-06 16:01 UTC：消息设置032已分配并由Mika唯一writer原子领取v3；[固定账本观察](../../docs/evidence/f01/claude-message-settings-migration-assignment.json)。031仍为O15，030既有；本次只关闭DDL归属依赖，不表示生产挂载/PG已验，也不修改个人数据库。
 
 2026-10-06T16:25:08.373523+00:00：v41短单写范围修正根/runner使用文档及恢复边界；输入main65659028，只更新并发模式/独立注册capacity/历史probe授权与现reconcile公开命令，补TUI入口。17项只读源码/文档绑定见[runtime-documentation-source-review.json](../../docs/evidence/f01/runtime-documentation-source-review.json)，无产品行为/工程测试/模型调用。原O14 PG仍NOT_RUN，不因文档交付提前批准。
+
+2026-10-06T16:30:00.517966+00:00：三份runtime使用文档已main 74bc72f0d32daebc8f89a75528f3d72002b3a29e，固定hash逐字相同；唯一共享claim v42已移出README、runnerREADME与recovery-boundaries三literal，明确停止这些路径写入。[范围交回](../../docs/evidence/f01/runtime-documentation-scope-release.json)。O14生产PG未运行边界不变。
