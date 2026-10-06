@@ -2,9 +2,9 @@ import { z } from 'zod';
 import { idSchema, verificationRuleSchema, type TaskSummary } from './tasks.js';
 import { projectVersionSchema } from './projects.js';
 
-const goalText = z.string().trim().min(1).max(4_000);
+const goalText = z.string().min(1).max(4_000).refine(value => value.trim().length > 0);
 const constraints = z.string().max(2_000);
-const acceptance = z.string().trim().min(1).max(1_000);
+const acceptance = z.string().min(1).max(1_000).refine(value => value.trim().length > 0);
 export const goalCreationSchema = z.strictObject({
   projectId: idSchema, originalGoal: goalText, constraints, acceptance,
 });
