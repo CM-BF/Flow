@@ -6,4 +6,6 @@
 
 作者固定交付：6源、50不同检查（44局部+6实际PG）、root noEmit0；[manifest](../../docs/evidence/eng01c/fixed-manifest.json)与原raw固定，初红/类型初红保留，0provider。作者没有给自己批准。
 
-独立结论：无未解P1/P2。6源全文与直接消费者delta、47manifest fixed/current及保护base全同；原44+6、类型初红/最终0和随机库清理已核，reviewer0测试/provider。批准仅内部受信writer停止合同与旧fixture恢复，不包括真实assignment身份、native checker隔离或原生停止证明。原始独审收据见 [independent-review.json](../../docs/evidence/eng01c/independent-review.json)。源码停写，等待准确main receipt。
+独立结论：无未解P1/P2。6源全文与直接消费者delta、47manifest fixed/current及保护base全同；原44+6、类型初红/最终0和随机库清理已核，reviewer0测试/provider。批准仅内部受信writer停止合同与旧fixture恢复，不包括真实assignment身份、native checker隔离或原生停止证明。原始独审收据见 [independent-review.json](../../docs/evidence/eng01c/independent-review.json)。源码停写，准确main receipt已核。
+
+main接收：`53ce2ec2c95b489aa7a2a2eaa49849821af00c16`，6源及22保护输入与固定target/base完全一致，原检查复用，不因metadata重跑；见[main回执](../../docs/evidence/eng01c/main-receipt.json)。本最终metadata之后停止所有旧scope写入并release。
