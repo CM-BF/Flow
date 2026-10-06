@@ -86,6 +86,37 @@ Artifacts are kept under the installation's private `web-artifacts/<manifest SHA
 
 The Web child uses Vite's **local preview** with a fixed artifact root, no source config or env loading, no dev server or HMR, loopback binding and a strict original port. `/api` keeps its same-origin proxy to the original loopback center; authorization and SSE stay in the existing request flow. Web receives no DB, owner, runner or provider credentials. This remains a personal local preview, not an internet production server.
 
-`status` reports `sourceAtStart` for the backend separately from `webArtifact` (`sourceHead`, `artifactId`, `manifestDigest`, integrity `state`, and serving identity). The no-store `/__flow_preview_identity` endpoint contains only those three artifact identifiers. Legacy running dev servers report unknown until an explicitly approved maintenance refresh; merely invoking status does not restart them.
+`status` reports `sourceAtStart` for the backend separately from `webArtifact` (`sourceHead`, `artifactId`, `manifestDigest`, integrity `state`, and serving identity). The no-store `/__flow_preview_identity` endpoint contains those artifact identifiers and, when SVC04 is bootstrapped, its release policy/version. Legacy running dev servers report unknown until an explicitly approved maintenance refresh; merely invoking status does not restart them.
 
-Publishing a new artifact never reloads a user's tab automatically. Keep old artifacts for an explicitly reviewed rollback, which must account for API compatibility and use the maintenance/owned-process procedure. No automatic fallback, DB rollback, or automatic resume is provided. Current services and ports must only be changed in a separately approved maintenance window.
+Publishing a new artifact never reloads a user's tab automatically. SVC04 below provides Web-only publication/rollback with explicit compatibility; backend changes still use the maintenance procedure. No automatic fallback, DB rollback, or automatic resume is provided. Current services and ports must only be changed in a separately approved maintenance window.
+
+
+## 独立更新网页（SVC04）
+
+`web bootstrap`只升级Web进程为可切换固定产物的宿主，可能短暂断开网页观察；center、runner、活动任务、原端口/DB/凭据不动。之后publish/rollback只修改原子版本指针，三个进程都不重启，也不主动reload旧页面。不要为Web发布运行`maintenance bootstrap/refresh`。
+
+先固定Web源码提交，在原私有安装目录中构建（32位小写十六进制release ID在构建之前选择，不能用构建后的digest作为base）：
+
+```sh
+node tools/personal-preview/cli.mjs web prepare --directory "$HOME/.flow-personal" --target <40位Web源码提交> --release-id <32位releaseID>
+node tools/personal-preview/cli.mjs web import-compatibility --directory "$HOME/.flow-personal" --report-directory <已核对报告的绝对目录>
+node tools/personal-preview/cli.mjs web bootstrap --directory "$HOME/.flow-personal" --request <0600请求JSON>
+node tools/personal-preview/cli.mjs web publish --directory "$HOME/.flow-personal" --request <0600请求JSON>
+node tools/personal-preview/cli.mjs web rollback --directory "$HOME/.flow-personal" --request <0600请求JSON>
+```
+
+请求字段为`expectedVersion`、`expectedBackendHead`、`compatibilityId`；publish/rollback另需完整`artifact`（artifactId/sourceHead/manifestDigest）。bootstrap首次version为0，后续用status中的releaseVersion；expectedBackendHead必须是实际运行后台的sourceAtStart.head，不是目前Git HEAD。新的Web源码可与后台不同。bootstrap确认失败须先读status核自有Web进程；显式同版本重试只恢复Web，不重置任务。发布确认丢失后指针可能已提交，应读status再决定，不能更换版本盲发。个人安装是否操作由已授权的具体步骤决定，本片测试从未操作它。
+
+兼容记录不是一句自由文字或全量源码相等比较。报告目录包含`report.json`与四个固定检查文件`read.json/send.json/recover.json/negotiation.json`。report严格包含：
+
+- `format:1`、`policy:"flow-web-api-v1"`、真实`backendHead`、完整`artifact`。
+- `checks`四字段为相应原始JSON的SHA256。
+- 每个检查文件严格包含`format:1`、`check`名称、相同backendHead/artifactId、`observations`；read要求ownerAuthenticated/conversationBound/taskBound，send要求acceptedTurnBound/requestedProfilePreserved，recover要求sameKey/sameBody/sameTurn，negotiation要求legacyReadable/streamHeaderHandled/profileHeaderHandled，全部必须true。
+
+导入核每个文件的实际bytes/hash和结构，生成不可变compatibilityId；这是可信本机测试执行者的具体组合声明，不是启动器自动运行兼容测试或证明任意后端语义。必须来自针对该真实Web产物/后台组合的有界验证；本片的合成Web证据不能拿来给生产Web签发记录。缺项、失败、未知组合或证据变更均拒绝；源码中无关加法变化不会单独拒绝。不得把token/连接串放入报告。每文件4KiB、共32个记录；无自动清理。
+
+`web-release.json`是当前/保留集合的唯一权威，带递增version；所有命令复用原`operation.lock`，并发只能一方取得锁/正确版本。新资产带`/__flow_releases/<releaseID>/`命名空间，旧v1资产只按manifest中的精确地址保留；同legacy URL异bytes或重复namespace冲突拒绝。未知资产/越界地址404，损坏元数据503。最多3个保留产物、合计192MiB；新命名空间构建在已有3个完整缓存产物时也拒绝，不静默删除unpublished/旧页面资源。回退只选已保留且兼容的产物，预算满则暂停新发布；本片没有prune命令。后继人工清理需明确旧页面已关闭，不能靠TTL或无请求推断。
+
+每个静态请求核精确文件大小/hash，无目录浏览；宿主最多64连接/4个同时缓冲资产响应，每文件仍32MiB，超额503。API与SSE继续代理原中心，不受资产读取计数限制。现有页面在发布/回退后仍能读取保留chunk；不承诺无限页面寿命，也不自动迁移浏览器草稿。后台整体更新若已有release集合，必须先为每个保留Web产物提供与新后台组合的报告，未知则在停止进程前拒绝；不会默默重建Web覆盖其独立source身份。
+
+本轮用自有随机PG、真实中心/stdio独占确定性runner及编译后合成Web consumer验证：Web初始化/并发发布/回退、端口冲突后的unknown与显式恢复期间，后台进程身份和原attempt不变，两个任务最终成功；0SDK/provider。另验证旧/新chunk、SSE跨发布、路径/损坏/预算与构建环境。它不替代真实产品Web浏览器验收、生产组合兼容报告或个人部署。

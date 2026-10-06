@@ -136,3 +136,144 @@ test('does not authenticate to or stop an unrelated listener occupying the recor
     await removeOwnedFixture(directory); await rm(parent, { recursive: true, force: true });
   }
 });
+
+test('Web-only bootstrap, publish and rollback keep actual center and fixture execution alive with explicit API combination evidence', { timeout: 45_000 }, async () => {
+  const { realpath, mkdir, symlink } = await import('node:fs/promises');
+  const { createHash, randomUUID } = await import('node:crypto'); const { runInNewContext } = await import('node:vm');
+  const { prepareWebArtifact, verifyWebArtifact } = await import('./web-artifact.mjs');
+  const { spawnOwnedProcess, stopOwnedProcess, inspectOwnedProcess } = await import('./process.mjs');
+  const { bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, importPreviewCompatibility } = await import('./preview.mjs');
+  const root = fileURLToPath(new URL('../../', import.meta.url)); const hash = value => createHash('sha256').update(value).digest('hex');
+  const parent = await realpath(await mkdtemp(join(tmpdir(), 'flow-svc04-host-'))); const directory = join(parent, 'state'); const webSource = join(parent, 'web');
+  const admin = new Pool({ connectionString: adminUrl, max: 1 }); const databaseName = `flow_preview_${randomUUID().replaceAll('-', '').slice(0, 24)}`;
+  const databaseUrl = adminUrl.replace(/postgres$/, databaseName); const owned = []; let created = false; let config;
+  const listen = server => new Promise(resolve => server.listen(0, '127.0.0.1', () => resolve(server.address().port)));
+  async function port() { const server = createServer(); const value = await listen(server); await new Promise(resolve => server.close(resolve)); return value; }
+  async function until(read, predicate) { const end = Date.now() + 10_000; do { const value = await read(); if (predicate(value)) return value; await new Promise(resolve => setTimeout(resolve, 40)); } while (Date.now() < end); throw new Error('Owned fixture deadline'); }
+  async function json(path, value) { await writeFile(path, JSON.stringify(value), { mode: 0o600 }); }
+  async function child(path, env) { const record = await spawnOwnedProcess({ args: ['--import', 'tsx', path], cwd: root, env: { PATH: process.env.PATH, ...env } }); owned.push(record); return record; }
+  let taskIds = [];
+  try {
+    await mkdir(directory, { mode: 0o700 }); await mkdir(join(webSource, 'apps/web'), { recursive: true });
+    const backendHead = (await execute('git', ['-C', root, 'rev-parse', 'HEAD'])).stdout.trim();
+    config = { format: 1, installationId: randomUUID(), directory, repository: await realpath(root), databaseName, databaseUrl, adminUrl,
+      ownerToken: `synthetic-${randomUUID()}`, centerPort: await port(), webPort: await port(), runner: null };
+    await admin.query(`CREATE DATABASE "${databaseName}"`); created = true;
+    const db = new Pool({ connectionString: databaseUrl, max: 1 });
+    try { await db.query('CREATE TABLE public.flow_preview_owner(installation_id uuid PRIMARY KEY,directory text NOT NULL)'); await db.query('INSERT INTO public.flow_preview_owner VALUES($1,$2)', [config.installationId, directory]); } finally { await db.end(); }
+    await writeFile(join(webSource, '.gitignore'), 'node_modules\n'); await writeFile(join(webSource, 'pnpm-lock.yaml'), 'standalone-web-fixture');
+    await writeFile(join(webSource, 'apps/web/package.json'), '{"type":"module"}');
+    await symlink(join(root, 'apps/web/node_modules'), join(webSource, 'apps/web/node_modules'));
+    await writeFile(join(webSource, 'apps/web/index.html'), '<html><body>release-one<script type="module" src="/main.js"></script></body></html>');
+    // This compiled Web consumer performs actual authenticated read/send/recovery/negotiation.
+    const consumer = async (base, token, profile, nonce) => {
+      async function request(path, method = 'GET', body, key, more = {}) {
+        const response = await fetch(base + path, { method, headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', ...(key ? { 'idempotency-key': key } : {}), ...more }, ...(body ? { body: JSON.stringify(body) } : {}) });
+        if (!response.ok) throw new Error(`Consumer HTTP ${response.status}`); return response.json();
+      }
+      const created = await request('/api/conversations', 'POST', { title: nonce, executionProfile: profile }, `create-${nonce}`);
+      const id = created.conversation.id; const body = { expectedRevision: 0, text: `synthetic ${nonce}`, mode: 'follow-up' }; const key = `send-${nonce}`;
+      const accepted = await request(`/api/conversations/${id}/turns`, 'POST', body, key);
+      const recovered = await request(`/api/conversations/${id}/turns`, 'POST', body, key);
+      const legacy = await request(`/api/conversations/${id}`); const stream = await request(`/api/conversations/${id}`, 'GET', undefined, undefined, { 'X-Flow-Assistant-Stream': 'patch-v1' });
+      const task = await request(`/api/tasks/${accepted.turn.task.id}`);
+      const profiles = await request('/api/execution-profiles'); const native = await request('/api/execution-profiles', 'GET', undefined, undefined, { 'X-Flow-Execution-Profile': 'steering-v1' });
+      const denied = await fetch(base + `/api/conversations/${id}`);
+      return { taskId: task.id, conversationId: id, observations: {
+        read: { ownerAuthenticated: denied.status === 401, conversationBound: legacy.conversation.id === id, taskBound: task.id === legacy.lastTurn.task.id },
+        send: { acceptedTurnBound: accepted.turn.conversationId === id && accepted.turn.user.text === body.text && accepted.turn.number === 1, requestedProfilePreserved: accepted.conversation.executionProfile.id === profile.id },
+        recover: { sameKey: recovered.replayed === true, sameBody: recovered.turn.user.text === body.text, sameTurn: recovered.turn.id === accepted.turn.id },
+        negotiation: { legacyReadable: legacy.capabilities.liveAssistantText === false, streamHeaderHandled: stream.capabilities.liveAssistantText === true, profileHeaderHandled: profiles.profiles.some(item => item.reference.id === profile.id) && native.profiles.some(item => item.reference.id === profile.id) },
+      } };
+    };
+    await writeFile(join(webSource, 'apps/web/main.js'), `globalThis.fixtureConsumer=${consumer.toString()};`);
+    await execute('git', ['init', '-q', webSource]); await execute('git', ['-C', webSource, 'add', '.']);
+    const commit = async name => { await execute('git', ['-C', webSource, '-c', 'user.name=Flow Test', '-c', 'user.email=fixture@example.invalid', 'commit', '-qam', name]); return (await execute('git', ['-C', webSource, 'rev-parse', 'HEAD'])).stdout.trim(); };
+    const oldSource = await commit('old-web'); const oldArtifact = await prepareWebArtifact({ directory, repository: webSource, target: oldSource });
+    await writeFile(join(webSource, 'apps/web/index.html'), '<html><body>release-two<script type="module" src="/main.js"></script></body></html>');
+    const newSource = await commit('new-web-additive'); const nextArtifact = await prepareWebArtifact({ directory, repository: webSource, target: newSource, releaseId: 'ab'.repeat(16) });
+    assert.notEqual(oldSource, newSource); assert.notEqual(backendHead, newSource);
+    const centerScript = join(parent, 'center.mjs');
+    await writeFile(centerScript, `const {createServer}=await import(${JSON.stringify(`${root}apps/server/src/index.ts`)});const app=await createServer({databaseUrl:process.env.DATABASE_URL,ownerToken:process.env.FLOW_TOKEN});await app.listen({host:'127.0.0.1',port:Number(process.env.PORT)});process.on('SIGTERM',()=>void app.close());`);
+    const centerRecord = await child(centerScript, { DATABASE_URL: databaseUrl, FLOW_TOKEN: config.ownerToken, PORT: String(config.centerPort) });
+    const centerUrl = `http://127.0.0.1:${config.centerPort}`; const webUrl = `http://127.0.0.1:${config.webPort}`;
+    await until(async () => { try { return (await fetch(`${centerUrl}/api/health`)).ok; } catch { return false; } }, Boolean);
+    const call = async (path, body, token = config.ownerToken) => { const response = await fetch(centerUrl + path, { method: body ? 'POST' : 'GET', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' }, ...(body ? { body: JSON.stringify(body) } : {}) }); assert.ok(response.ok, `${path}: ${response.status}`); return response.json(); };
+    config.runner = await call('/api/runners', { name: 'SVC04 synthetic only', harnesses: ['claude'], capacity: 1 });
+    const configuration = { harness: 'claude', adapterVersion: 'claude-sdk-0.3.290-v2', model: 'synthetic', thinking: 'disabled', permissionMode: 'dontAsk', access: 'none', requireReadApproval: false, materialScopeDigest: hash('[]'), limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60_000 } };
+    const profile = (await call('/api/runner/execution-profile', { configuration }, config.runner.token)).profile;
+    const runnerScript = join(parent, 'runner.mjs'); const finished = join(parent, 'finish');
+    await writeFile(runnerScript, `import {readFile} from 'node:fs/promises';import {setTimeout as sleep} from 'node:timers/promises';import {randomUUID,createHash} from 'node:crypto';
+const {runRunner}=await import(${JSON.stringify(`${root}apps/runner/src/runtime.ts`)});const {guardExecutionProfile}=await import(${JSON.stringify(`${root}apps/runner/src/execution-profiles.ts`)});const {verifyText}=await import(${JSON.stringify(`${root}apps/runner/src/verifier.ts`)});const stop=new AbortController();process.on('SIGTERM',()=>stop.abort());
+const adapter={name:'claude',version:'claude-sdk-0.3.290-v2',async run(c){const session=randomUUID();await c.emit({type:'session',nativeSessionId:session,adapterVersion:this.version,resources:['SVC04 deterministic fixture; no SDK/provider']});while(true){try{await readFile(${JSON.stringify(finished)});break;}catch{await sleep(40,undefined,{signal:c.signal});}}await c.assertOwnership();const content='synthetic reply '+c.task.prompt;const digest=createHash('sha256').update(content).digest('hex');const id=randomUUID();const sourceMessageId=randomUUID();const messageId=createHash('sha256').update(JSON.stringify([session,sourceMessageId])).digest('hex');await c.emit({type:'assistant-final',messageId,nativeSessionId:session,source:'claude.sdk.result',sourceMessageId,content,settings:{requested:{model:'synthetic',permissionMode:'dontAsk',thinking:'disabled'},effective:{model:null,permissionMode:null,tools:null,thinking:'unknown'}}});await c.emit({type:'artifact',artifactId:id,title:'Synthetic output',version:digest,content,mediaType:'text/plain'});await c.emit(verifyText(id,content,c.task.verification));}};
+await runRunner({baseUrl:process.env.FLOW_URL,token:process.env.FLOW_RUNNER_TOKEN,workingDirectory:process.env.WORKDIR,signal:stop.signal,pollIntervalMs:30,heartbeatIntervalMs:250,adapters:[guardExecutionProfile(adapter,${JSON.stringify(profile.reference)},${JSON.stringify(configuration)})]});`);
+    const runnerRecord = await child(runnerScript, { FLOW_URL: centerUrl, FLOW_RUNNER_TOKEN: config.runner.token, WORKDIR: join(parent, 'runner') });
+    const webScript = join(parent, 'web.mjs'); await writeFile(webScript, `const {startStaticWeb}=await import(${JSON.stringify(`${root}tools/personal-preview/static-web.mjs`)});const web=await startStaticWeb(${JSON.stringify({ directory, repository: root, artifact: oldArtifact, webPort: config.webPort, centerPort: config.centerPort })});process.on('SIGTERM',()=>void web.close());`);
+    const webRecord = await child(webScript, {});
+    await until(async () => { try { return (await fetch(webUrl)).ok; } catch { return false; } }, Boolean);
+    await json(join(directory, 'config.json'), config); await json(join(directory, 'state.json'), { source: { head: backendHead, dirty: false }, webArtifact: oldArtifact, processes: { center: centerRecord, runner: runnerRecord, web: webRecord } });
+    const records = {};
+    for (const artifact of [oldArtifact, nextArtifact]) {
+      const verified = await verifyWebArtifact({ directory, artifact }); const context = { fetch, document: { body: { dataset: {} }, createElement: () => ({ relList: { supports: () => true } }) } };
+      for (const file of verified.manifest.files.filter(item => item.path.endsWith('.js'))) runInNewContext(await readFile(join(verified.dist, file.path), 'utf8'), context);
+      const result = await context.fixtureConsumer(webUrl, config.ownerToken, profile.reference, randomUUID()); taskIds.push(result.taskId);
+      const reportDirectory = join(parent, artifact.artifactId); await mkdir(reportDirectory); const checks = {};
+      for (const [check, observations] of Object.entries(result.observations)) {
+        assert.ok(Object.values(observations).every(value => value === true), JSON.stringify({ check, observations }));
+        const raw = JSON.stringify({ format: 1, check, backendHead, artifactId: artifact.artifactId, observations }); checks[check] = hash(raw); await writeFile(join(reportDirectory, `${check}.json`), raw);
+      }
+      await json(join(reportDirectory, 'report.json'), { format: 1, policy: 'flow-web-api-v1', backendHead, artifact, checks });
+      records[artifact.artifactId] = (await importPreviewCompatibility({ directory, reportDirectory })).compatibilityId;
+      console.log('SVC04 exact compatibility fixture report', JSON.stringify({ report: { format: 1, policy: 'flow-web-api-v1', backendHead, artifact, checks }, observations: result.observations, compatibilityId: records[artifact.artifactId] }));
+    }
+    await until(() => call(`/api/tasks/${taskIds[0]}`), value => value.status === 'running');
+    const before = await call(`/api/tasks/${taskIds[0]}`);
+    await assert.rejects(bootstrapPreviewWeb({ directory, expectedVersion: 0, expectedBackendHead: '0'.repeat(40), compatibilityId: records[oldArtifact.artifactId] }), { code: 'WEB_BACKEND_SOURCE_MISMATCH' });
+    assert.equal(await inspectOwnedProcess(webRecord), 'running');
+    const bootstrap = await bootstrapPreviewWeb({ directory, expectedVersion: 0, expectedBackendHead: backendHead, compatibilityId: records[oldArtifact.artifactId] }); assert.equal(bootstrap.release.version, 1);
+    const afterBootstrap = JSON.parse(await readFile(join(directory, 'state.json'))); owned.push(afterBootstrap.processes.web);
+    assert.deepEqual(afterBootstrap.processes.center, centerRecord); assert.deepEqual(afterBootstrap.processes.runner, runnerRecord);
+    const options = { directory, artifact: nextArtifact, expectedVersion: 1, expectedBackendHead: backendHead, compatibilityId: records[nextArtifact.artifactId] };
+    await assert.rejects(publishPreviewWeb({ ...options, compatibilityId: '0'.repeat(64) }), { code: 'WEB_COMPATIBILITY_INVALID' });
+    assert.ok((await (await fetch(webUrl)).text()).includes('release-one'));
+    const competing = await Promise.allSettled([publishPreviewWeb(options), publishPreviewWeb(options)]);
+    assert.equal(competing.filter(value => value.status === 'fulfilled').length, 1);
+    assert.ok(['OPERATION_IN_PROGRESS_OR_UNCONFIRMED', 'WEB_RELEASE_VERSION_CONFLICT'].includes(competing.find(value => value.status === 'rejected').reason.code));
+    assert.ok((await (await fetch(webUrl)).text()).includes('release-two'));
+    assert.equal((await call(`/api/tasks/${taskIds[0]}`)).status, 'running');
+    const rolled = await rollbackPreviewWeb({ ...options, artifact: oldArtifact, expectedVersion: 2, compatibilityId: records[oldArtifact.artifactId] }); assert.equal(rolled.release.version, 3);
+    const after = JSON.parse(await readFile(join(directory, 'state.json')));
+    await assert.rejects((await import('./preview.mjs')).preparePreviewWeb(config, '0'.repeat(40)), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    assert.equal(await inspectOwnedProcess(centerRecord), 'running');
+    assert.deepEqual(after.processes, afterBootstrap.processes); assert.deepEqual(after.source, afterBootstrap.source);
+    assert.equal((await call(`/api/tasks/${taskIds[0]}`)).attempt.id, before.attempt.id);
+    // An owned Web restart failure retains the last artifact and never signals the background roles.
+    assert.equal(await stopOwnedProcess(after.processes.web), 'stopped');
+    const foreign = createServer((_request, response) => response.end('unrelated listener'));
+    await new Promise(resolve => foreign.listen(config.webPort, '127.0.0.1', resolve));
+    try {
+      await assert.rejects(bootstrapPreviewWeb({ directory, expectedVersion: 3, expectedBackendHead: backendHead, compatibilityId: records[oldArtifact.artifactId] }), { code: 'WEB_BOOTSTRAP_UNCONFIRMED' });
+      const failed = JSON.parse(await readFile(join(directory, 'state.json'))); owned.push(failed.processes.web);
+      assert.equal(failed.webReleaseOperation.outcome, 'unknown'); assert.deepEqual(failed.source, after.source);
+      assert.deepEqual(failed.processes.center, centerRecord); assert.deepEqual(failed.processes.runner, runnerRecord);
+      assert.equal((await call(`/api/tasks/${taskIds[0]}`)).status, 'running');
+      assert.equal(await (await fetch(webUrl)).text(), 'unrelated listener');
+      assert.equal(JSON.parse(await readFile(join(directory, 'web-release.json'))).current, oldArtifact.artifactId);
+    } finally { foreign.closeAllConnections(); await new Promise(resolve => foreign.close(resolve)); }
+    const retry = await bootstrapPreviewWeb({ directory, expectedVersion: 3, expectedBackendHead: backendHead, compatibilityId: records[oldArtifact.artifactId] });
+    assert.equal(retry.release.version, 3); // Explicit retry restores observation; no extra publication/version.
+    await writeFile(finished, 'finish');
+    for (const id of taskIds) await until(() => call(`/api/tasks/${id}`), value => value.status === 'succeeded');
+    assert.equal(await inspectOwnedProcess(centerRecord), 'running'); assert.equal(await inspectOwnedProcess(runnerRecord), 'running');
+    console.log('SVC04 owned HTTP/PG fixture', JSON.stringify({ backendHead, oldWebSource: oldSource, newWebSource: newSource, compatibilityRecords: Object.values(records), tasks: taskIds.length, final: 'succeeded', operatorProviderQueries: 0, backendAndRunnerIdentityPreserved: true }));
+  } finally {
+    // Capture any newly owned Web wrapper even if bootstrap verification failed.
+    try { const state = JSON.parse(await readFile(join(directory, 'state.json'))); if (state.processes?.web && !owned.some(value => value.pid === state.processes.web.pid)) owned.push(state.processes.web); } catch {}
+    const unknown = [];
+    for (const record of owned.reverse()) if (await stopOwnedProcess(record) !== 'stopped') unknown.push(record.group);
+    if (unknown.length) { await admin.end(); throw new Error(`Owned groups require inspection; retain ${directory}: ${unknown.join(',')}`); }
+    if (created) await admin.query(`DROP DATABASE "${databaseName}"`);
+    console.log('SVC04 cleanup', JSON.stringify({ databaseName, remaining: (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [databaseName])).rows }));
+    await admin.end(); await rm(parent, { recursive: true, force: true });
+  }
+});

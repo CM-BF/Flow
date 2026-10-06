@@ -86,6 +86,7 @@ export async function prepareWebArtifact({ repository, target, directory, releas
       || manifest.toolchain?.node !== process.versions.node || manifest.toolchain?.vite !== vite) continue;
     await verifyWebArtifact({ directory, artifact: candidate }); return candidate;
   }
+  if (releaseId && (await readdir(root)).filter(name => /^[a-f0-9]{64}$/.test(name)).length >= 3) fail('WEB_ARTIFACT_STORAGE_BUDGET_EXCEEDED');
   const stage = join(root, `.stage-${randomUUID()}`); await mkdir(stage, { mode: 0o700 });
   try {
     try {

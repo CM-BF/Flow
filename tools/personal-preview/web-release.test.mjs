@@ -88,3 +88,36 @@ test('changed file bytes, backend mismatch, invalid compatibility and metadata l
     await assert.rejects(readWebRelease(directory), { code: 'WEB_RELEASE_METADATA_INVALID' });
   });
 });
+
+test('hot publish and rollback preserve an open SSE stream, old chunks and same-origin credentials', async () => {
+  const { startStaticWeb } = await import('./static-web.mjs'); const { commitWebRelease } = await import('./web-release.mjs');
+  const { createServer } = await import('node:http'); const { fileURLToPath } = await import('node:url');
+  await fixture(async directory => {
+    const one = await artifact(directory, 'one'); const two = await artifact(directory, 'two', '2'.repeat(32));
+    let finish; let seenAuth; const center = createServer((request, response) => { seenAuth = request.headers.authorization; response.writeHead(200, { 'content-type': 'text/event-stream' }); response.write('data: before\n\n'); finish = () => response.end('data: after\n\n'); });
+    const listen = server => new Promise(resolve => server.listen(0, '127.0.0.1', () => resolve(server.address().port)));
+    const close = server => new Promise(resolve => { server.closeAllConnections(); server.close(resolve); });
+    const centerPort = await listen(center); const reservation = createServer(); const webPort = await listen(reservation); await close(reservation);
+    let server; const abort = new AbortController();
+    try {
+      let value = await planWebRelease({ directory, ...request(one, 0, 'bootstrap') }); await commitWebRelease(directory, value);
+      server = await startStaticWeb({ directory, artifact: one, repository: fileURLToPath(new URL('../../', import.meta.url)), webPort, centerPort });
+      const url = `http://127.0.0.1:${webPort}`;
+      const response = await fetch(`${url}/api/events`, { headers: { authorization: 'Bearer synthetic-owner' }, signal: abort.signal }); const reader = response.body.getReader();
+      assert.equal(new TextDecoder().decode((await reader.read()).value), 'data: before\n\n');
+      value = await planWebRelease({ directory, ...request(two, 1) }); await commitWebRelease(directory, value);
+      assert.equal(await (await fetch(url)).text(), '<html>two</html>');
+      assert.equal(await (await fetch(`${url}/assets/lazy.js`)).text(), "export default 'one'");
+      assert.equal(await (await fetch(`${url}/__flow_releases/${'2'.repeat(32)}/assets/lazy.js`)).text(), "export default 'two'");
+      assert.equal((await fetch(`${url}/__flow_releases/missing/file.js`, { headers: { accept: 'text/html' } })).status, 404);
+      assert.equal((await (await fetch(`${url}/__flow_preview_identity`)).json()).releaseVersion, 2);
+      finish(); assert.equal(new TextDecoder().decode((await reader.read()).value), 'data: after\n\n'); await reader.cancel();
+      assert.equal(seenAuth, 'Bearer synthetic-owner');
+      value = await planWebRelease({ directory, ...request(one, 2, 'rollback') }); await commitWebRelease(directory, value);
+      assert.equal(await (await fetch(url)).text(), '<html>one</html>');
+      assert.equal((await fetch(`${url}/__flow_releases/${'2'.repeat(32)}/assets/lazy.js`)).status, 200);
+      await rm(join(directory, 'web-release.json'));
+      assert.equal((await fetch(url)).status, 503);
+    } finally { abort.abort(); await server?.close(); await close(center); }
+  });
+});

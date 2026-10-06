@@ -9,6 +9,7 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
   const { dist } = await verifyWebArtifact({ directory, artifact });
   const initialRelease = await readWebRelease(directory);
   let hasRelease = Boolean(initialRelease);
+  let assetResponses = 0;
   let cached; let cachedBytes; let loading = Promise.resolve();
   async function snapshot() {
     const release = await readWebRelease(directory);
@@ -40,6 +41,10 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
             response.end(JSON.stringify(active ? { ...active.artifact, releaseVersion: active.version, releasePolicy: 'flow-web-release-v1' } : artifact)); return;
           }
           if (!active) { next(); return; }
+          if (assetResponses >= 4) { response.statusCode = 503; response.end('Web asset readers busy'); return; }
+          assetResponses++; let released = false;
+          const release = () => { if (!released) { released = true; assetResponses--; } };
+          response.once('finish', release); response.once('close', release);
           const asset = await releaseAsset(active, path, request.headers.accept?.includes('text/html'));
           if (!asset) { response.statusCode = 404; response.end(); return; }
           const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.ico': 'image/x-icon' };
@@ -53,6 +58,7 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
       headers: { 'Cache-Control': 'no-store' },
       proxy: { '^/api(?:/|$)': { target: `http://127.0.0.1:${centerPort}`, changeOrigin: false, ws: false } } },
   });
+  server.httpServer.maxConnections = 64;
   return { artifact, close: async () => {
     server.httpServer.closeAllConnections();
     await new Promise((resolve, reject) => server.httpServer.close(error => error ? reject(error) : resolve()));

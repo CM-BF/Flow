@@ -11,7 +11,7 @@ import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener 
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
-import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, verifyWebCompatibility, importWebCompatibility } from './web-release.mjs';
+import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, importWebCompatibility } from './web-release.mjs';
 
 const repository = fileURLToPath(new URL('../../', import.meta.url));
 const entry = fileURLToPath(new URL('./cli.mjs', import.meta.url));
@@ -264,7 +264,7 @@ export async function preparePreviewWeb(config, target) {
   const head = target ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
   const release = await readWebRelease(config.directory);
   if (release) {
-    await assertReleaseCompatibility(config.repository, head, release.artifacts, config.directory);
+    await assertReleaseCompatibility(head, release.artifacts, config.directory);
     return currentWebArtifact(release);
   }
   return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
@@ -273,7 +273,7 @@ export async function startPreviewServices(config, state, preparedArtifact) {
   const backendHead = (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
   const artifact = preparedArtifact ?? await preparePreviewWeb(config);
   const release = await readWebRelease(config.directory);
-  if (release) await assertReleaseCompatibility(config.repository, backendHead, release.artifacts, config.directory);
+  if (release) await assertReleaseCompatibility(backendHead, release.artifacts, config.directory);
   await verifyWebArtifact({ directory: config.directory, artifact });
   state.webArtifact = artifact;
   state.processes = {}; state.lastError = null;
@@ -306,7 +306,7 @@ export async function startPreviewServices(config, state, preparedArtifact) {
 }
 
 
-async function assertReleaseCompatibility(repository, backendHead, artifacts, directory) {
+async function assertReleaseCompatibility(backendHead, artifacts, directory) {
   for (const artifact of artifacts) {
     await verifyWebArtifact({ directory, artifact });
     await findWebCompatibility({ directory, artifact, backendHead });
@@ -332,7 +332,7 @@ export async function bootstrapPreviewWeb({ directory, expectedVersion, expected
     const previous = await readWebRelease(directory);
     if (expectedVersion !== (previous?.version ?? 0)) fail('WEB_RELEASE_VERSION_CONFLICT');
     const artifact = previous ? currentWebArtifact(previous) : state.webArtifact;
-    await assertReleaseCompatibility(config.repository, expectedBackendHead, previous?.artifacts ?? [artifact], directory);
+    await assertReleaseCompatibility(expectedBackendHead, previous?.artifacts ?? [artifact], directory);
     const release = previous ?? await planWebRelease({ directory, artifact, action: 'bootstrap', expectedVersion, backendHead: expectedBackendHead, compatibilityId });
     const processState = await inspectOwnedProcess(state.processes.web);
     if (processState === 'unknown') fail('WEB_PROCESS_IDENTITY_UNCONFIRMED');
@@ -360,7 +360,7 @@ async function changePreviewWeb({ directory, artifact, expectedVersion, expected
     const previous = await readWebRelease(directory);
     if (!previous) fail('WEB_RELEASE_BOOTSTRAP_REQUIRED');
     if (!await ownsListener(state.processes.web, config.webPort) || !await webIdentity(config, currentWebArtifact(previous), previous.version)) fail('WEB_RELEASE_HOST_UNCONFIRMED');
-    await assertReleaseCompatibility(config.repository, expectedBackendHead, [...previous.artifacts, artifact], directory);
+    await assertReleaseCompatibility(expectedBackendHead, [...previous.artifacts, artifact], directory);
     const release = await planWebRelease({ directory, artifact, expectedVersion, action, backendHead: expectedBackendHead, compatibilityId });
     await assertWebBackend(config, state, expectedBackendHead);
     await commitWebRelease(directory, release);
@@ -375,6 +375,7 @@ export function publishPreviewWeb(options) { return changePreviewWeb(options, 'p
 export function rollbackPreviewWeb(options) { return changePreviewWeb(options, 'rollback'); }
 
 export async function preparePreviewRelease({ directory, target, releaseId }) {
+  if (!/^[a-f0-9]{32}$/.test(releaseId ?? '')) fail('WEB_RELEASE_NAMESPACE_INVALID');
   const config = await load(directory);
   return locked(config, () => prepareWebArtifact({ directory, repository: config.repository, target, releaseId }));
 }

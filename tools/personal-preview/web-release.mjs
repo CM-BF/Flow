@@ -106,6 +106,7 @@ export async function loadReleaseAssets({ directory, release }) {
   validateRelease(release);
   const assets = new Map(); const namespaces = new Set(); let totalBytes = 0; let index;
   for (const artifact of release.artifacts) {
+    await verifyWebCompatibility({ directory, artifact, backendHead: release.backendHead, compatibilityId: release.compatibilityIds[artifact.artifactId] });
     const { dist, manifest } = await verifyWebArtifact({ directory, artifact });
     totalBytes += manifest.totalBytes;
     if (totalBytes > MAX_RETAINED_BYTES) fail('WEB_RETENTION_BUDGET_EXCEEDED');

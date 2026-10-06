@@ -1,0 +1,20 @@
+SVC04 cleanup {"databaseName":"flow_preview_2ec55ecd02d44e5fa2bb5072","remaining":[]}
+✖ Web-only bootstrap, publish and rollback keep actual center and fixture execution alive with explicit API combination evidence (17445.201708ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17673.307083
+
+✖ failing tests:
+
+test at tools/personal-preview/preview.test.mjs:140:1
+✖ Web-only bootstrap, publish and rollback keep actual center and fixture execution alive with explicit API combination evidence (17445.201708ms)
+  Error: Owned fixture deadline
+      at until (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/tools/personal-preview/preview.test.mjs:152:234)
+      at async TestContext.<anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/tools/personal-preview/preview.test.mjs:248:31)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
