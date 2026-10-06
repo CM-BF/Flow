@@ -1,9 +1,9 @@
 # CHAT06P01 独立审查
 
-状态：APPROVED
-Review target commit：37709097b879a7afff32b25da971f559d740058a
+状态：NOT_STARTED
+Review target commit：4951ce63945ec6364be050de877715059402095f
 
-Base：fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe；branch codex/assistant-stream-cost-probe。Mika独立只读审查，Goal Owner接收产品范围。本次仅方法和纯生成器准备，未运行任何PG测量，批准只覆盖此固定pure片段。
+Base：fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe；branch codex/assistant-stream-cost-probe。Mika独立只读审查，Goal Owner接收产品范围。当前目标为新observer/隔离入口，未运行任何PG测量，新目标尚未批准。历史pure片段见下文。
 
 ## 可复制任务
 
@@ -14,3 +14,7 @@ Base：fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；worktree /Users/citrine/Projec
 当前已读相关源接口；3个纯单测/noEmit已通过；PG/HTTP测量未执行。Mika于2026-10-06T07:24:15Z独立只读APPROVED，未发现P1/P2；6 source/12 raw hashes与固定target/当前字节一致，独立literal/digest重算通过。不批准后续产品修复或容量推论。详细[独审回执](../../docs/evidence/chat06p01/pure-independent-review.json)。源码准备、独立review、main接收分开记录。
 
 固定pure target 37709097b879a7afff32b25da971f559d740058a；[原始manifest](../../docs/evidence/chat06p01/preparation-manifest.json)含6个源码/12个原始日志与result，首0test加载失败、行为红、类型失败均保留。独审只批准pure方法片段，不包括未实现的pg/hash观察器与测量入口。
+
+## 新入口独审
+
+固定target 4951ce63945ec6364be050de877715059402095f，实际10个不同pure用例（3旧workload+7新observer）及noEmit/只导入/语法预检0。见[readiness-manifest](../../docs/evidence/chat06p01/readiness-manifest.json)。请审查询callback/Promise/失败归属与恢复、精确prefix分类、Fastify ALS、固定84patch及真实端点/schema、同WT内部包、parent/child全时限/自有DB/未知CREATE ACK清理与失败保留。原pure批准不延伸到新源；本轮只请求准备批准，不是PG结果/窗口/容量。

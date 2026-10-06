@@ -18,3 +18,5 @@ clean-code用户指定源sickn33/agentic-awesome-skills，固定 bdacd76ed9e3887
 2026-10-06T07:23:08.134817+00:00 纯生成安全点：保留一个16B literal tile，整tile分片避免不必要的通用UTF8切分器；3组固定正文digest，first/中间prefix已用独立Python hashlib固定期望。第一unit因Vitest require条件误取CJS，0测试，保存原日志，改为既有package明确ESM导出；真正行为红1项之后最小实现，再补offset/revision/完整Unicode/prefix向量/限定N与预测标签，最终3项绿。typecheck起初ES2023 lib未声明Node24 isWellFormed，保留exit2，改实验lib为ES2024后noEmit0；无运行行为差异，不为该metadata/config再次跑纯unit。check.mjs在spawn前wx占日志名，30秒超时且固定unit/types命令，记录所有源码含未跟踪文件hash。不存在新依赖/共享lock/产品变化。观察器尚未写，ALS/query错误/恢复仍待实施与独审，未虚报准备全部完成。
 
 2026-10-06 07:27 UTC：Mika独立复核pure target377，6源码/12raw及literal向量一致，无P1/P2，APPROVED范围仅方法与纯生成/check。B02 observer作为只读接口参考，后续新observer修正其失败查询不计数的局限，不复制该行为；命名区分COMMIT尝试与成功提交，保留原错误身份。S01只读任务已结束，未修改或运行其代码。
+
+2026-10-06T07:38:46.685631+00:00 新入口安全点：按clean-code分成固定workload、可恢复observer、真实HTTP worker、只拥有child/DB的supervisor；避免改产品/通用框架。观察器失败显式计数，多结果解码字节分类；unsupported自定义Query显式失败。10 distinct pure；noEmit/import-only/syntax通过。PG类型与ESM解析失败原日志保留，三依赖既有版本路径写dependency-runtime。新entry资源行为尚无实跑验证，所有声明限于源码/纯检查。无未解决已知代码finding，等待Mika独立review；未把源审当实际PG完成。

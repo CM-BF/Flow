@@ -15,7 +15,7 @@
 ## TODO
 
 - [x] CHAT06P01-01 固定基线、合法claim、Unicode/计量方法与最小预算，交 SOURCE_READY。
-- [ ] CHAT06P01-02 准备纯数据生成/度量入口及必要纯单测、noEmit，绑定源码与失败证据。
+- [x] CHAT06P01-02 准备纯数据生成/度量入口及必要纯单测、noEmit，绑定源码与失败证据。
 - [ ] CHAT06P01-03 Mika只读审入口并取得明确窗口后，执行一次三任务PG/HTTP短测；未获窗口不运行。
 - [ ] CHAT06P01-04 复核输入/前缀/查询/提交延迟/持久化字节与完整性，交限定结论及局部候选。
 - [ ] CHAT06P01-05 Mika独审、Goal Owner接收、Lead main接收；保留claim至明确停写。

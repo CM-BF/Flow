@@ -1,0 +1,223 @@
+apps/server/src/assistant-stream-compatibility/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/assistant-stream/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/assistant-stream/queries.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/assistant-stream/queries.ts(33,61): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/assistant-stream/queries.ts(50,18): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/assistant-stream/queries.ts(51,66): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/assistant-stream/settlement.ts(27,18): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(27,113): error TS7006: Parameter 'marker' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(28,30): error TS7006: Parameter 'marker' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(35,20): error TS7006: Parameter 'tool' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(35,38): error TS7006: Parameter 'marker' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(39,30): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(39,124): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(42,153): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/server/src/assistant-stream/settlement.ts(42,185): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/server/src/assistant-stream/store.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/assistant/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/assistant/store.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/commands.ts(1,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-context/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-context/store.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-context/store.ts(54,27): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/conversation-context/store.ts(96,213): error TS7006: Parameter 'source' implicitly has an 'any' type.
+apps/server/src/conversation-context/store.ts(97,213): error TS7006: Parameter 'source' implicitly has an 'any' type.
+apps/server/src/conversation-context/store.ts(98,41): error TS7006: Parameter 'head' implicitly has an 'any' type.
+apps/server/src/conversation-queue/commands.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-queue/controls.ts(1,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-queue/gate.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-queue/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-queue/promotion.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-queue/queries.ts(1,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversation-queue/queries.ts(13,71): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/conversation-queue/queries.ts(14,32): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/conversation-queue/store.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversations/admission.ts(3,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversations/commands.ts(5,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversations/index.ts(3,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversations/queries.ts(1,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversations/replies.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/conversations/state.ts(2,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/database.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/events.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/evidence.ts(2,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/execution-profiles/index.ts(3,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/execution-profiles/store.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-context/freshness.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-context/freshness.ts(10,27): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goal-context/index.ts(3,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-context/store.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-context/store.ts(95,41): error TS7006: Parameter 'head' implicitly has an 'any' type.
+apps/server/src/goal-context/store.ts(111,27): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-graph-proposals/store.ts(3,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-graph-runs/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-graph-runs/runner.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-graph-runs/store.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-graph-runs/store.ts(71,44): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goal-run-authority/runner-project-fence.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-tool-runs/authorize.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-tool-runs/index.ts(3,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-tool-runs/runner.ts(1,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-tool-runs/store.ts(3,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goal-tool-runs/store.ts(53,61): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goals/commands.ts(5,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goals/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goals/index.ts(47,249): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goals/state.ts(4,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/goals/state.ts(34,38): error TS7006: Parameter 'node' implicitly has an 'any' type.
+apps/server/src/goals/state.ts(34,118): error TS7006: Parameter 'id' implicitly has an 'any' type.
+apps/server/src/goals/state.ts(36,91): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goals/state.ts(39,30): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goals/state.ts(39,86): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goals/state.ts(49,70): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/goals/state.ts(49,110): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/index.ts(20,22): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/index.ts(50,20): error TS7006: Parameter 'error' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/knowledge/search.ts(1,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/knowledge/storage.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/knowledge/storage.ts(94,19): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/m2-workspace.ts(3,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/m2-workspace.ts(76,51): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/m2-workspace.ts(98,19): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/native-activity/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/native-activity/store.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/package-artifacts/input.ts(1,17): error TS2307: Cannot find module 'npm-package-arg' or its corresponding type declarations.
+apps/server/src/package-artifacts/source.ts(3,20): error TS2307: Cannot find module 'pacote' or its corresponding type declarations.
+apps/server/src/package-artifacts/source.ts(73,47): error TS7006: Parameter 'stream' implicitly has an 'any' type.
+apps/server/src/package-artifacts/storage.ts(5,18): error TS2307: Cannot find module 'ssri' or its corresponding type declarations.
+apps/server/src/plugin-package-fetches/commands.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugin-package-fetches/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugin-package-fetches/routes.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugin-package-fetches/routes.ts(37,63): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(46,68): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/store.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugin-package-fetches/store.ts(36,33): error TS7006: Parameter 'attempt' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/store.ts(38,100): error TS7006: Parameter 'attempt' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/worker.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugins/commands.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugins/index.ts(3,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugins/queries.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugins/storage.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/plugins/storage.ts(29,65): error TS7006: Parameter 'field' implicitly has an 'any' type.
+apps/server/src/projects/commands.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/projects/index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/projects/storage.ts(1,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/projects/storage.ts(22,35): error TS7006: Parameter 'node' implicitly has an 'any' type.
+apps/server/src/projects/storage.ts(29,21): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/projects/storage.ts(37,40): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(3,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/protocol-dispatch/store.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/protocol-dispatch/store.ts(36,62): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/queries.ts(1,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/queries.ts(15,3): error TS2322: Type '{ reset?: true | undefined; entries: unknown[]; nextCursor: any; watermark: number; hasMore: boolean; task: TaskSummary; pendingDecision: DecisionRequest | null; usage: UsageTotals; }' is not assignable to type 'EventPage'.
+  Types of property 'entries' are incompatible.
+    Type 'unknown[]' is not assignable to type 'TimelineEntry[]'.
+      Type 'unknown' is not assignable to type 'TimelineEntry'.
+apps/server/src/queries.ts(19,33): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/queries.ts(21,64): error TS2322: Type 'unknown' is not assignable to type 'TimelineEntry'.
+apps/server/src/reconciliation-http.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/reconciliation.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/reconciliation.ts(48,44): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/runner-maintenance/index.ts(3,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/runner-maintenance/store.ts(2,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/runner-maintenance/store.ts(32,31): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/runners.ts(5,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/scheduler.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/sessions.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/streams.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/task-index.ts(2,27): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/task-index.ts(46,41): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/tasks.ts(4,39): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/tasks.ts(68,111): error TS7006: Parameter 'row' implicitly has an 'any' type.
+apps/server/src/timeline.ts(2,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+apps/server/src/usage.ts(1,33): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+experiments/assistant-stream-cost/observer.test.ts(18,12): error TS2532: Object is possibly 'undefined'.
+experiments/assistant-stream-cost/observer.test.ts(19,12): error TS2532: Object is possibly 'undefined'.
+experiments/assistant-stream-cost/observer.ts(78,38): error TS2345: Argument of type 'BinaryLike' is not assignable to parameter of type 'string'.
+  Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'string'.
+experiments/assistant-stream-cost/worker.ts(5,37): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+experiments/assistant-stream-cost/worker.ts(10,60): error TS7016: Could not find a declaration file for module 'pg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
+experiments/assistant-stream-cost/worker.ts(53,22): error TS7006: Parameter 'error' implicitly has an 'any' type.

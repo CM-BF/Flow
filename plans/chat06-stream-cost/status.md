@@ -2,31 +2,31 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:27 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:38 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | chat06p01_owner / gpt-6-astra（符合Sol以上门槛）；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe |
 | Branch | codex/assistant-stream-cost-probe |
-| 工作基线 / HEAD | base fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；纯生成target37709097b879a7afff32b25da971f559d740058a；安全点metadata HEAD2241a8bbfd909954757b66c04102d124ddb3e438 |
-| 工作树dirty状态 | 源码固定3770909；已核2241 clean；本次仅独审metadata待提交 |
+| 工作基线 / HEAD | base fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；实现与当前HEAD 4951ce63945ec6364be050de877715059402095f |
+| 工作树dirty状态 | 实现已固定；本次仅原始证据/manifest/status待提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 37709097b879a7afff32b25da971f559d740058a；3个不同纯生成行为/noEmit0，仅准备片段；首依赖加载0test失败/行为红/类型失败均保留；0PG测量 |
+| 检查状态 | PASSED 4951ce63945ec6364be050de877715059402095f；10个不同pure用例(3 workload+7 observer)、noEmit0、只导入/语法预检0；资源生命周期与PG矩阵未运行 |
 | 已集成main状态 / HEAD | 本片未集成；产品基线main fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 |
-| 实现目标 | 37709097b879a7afff32b25da971f559d740058a |
+| 实现目标 | 4951ce63945ec6364be050de877715059402095f |
 | 实现范围 | experiments/assistant-stream-cost |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 相同正文与三种分片的生成器已独审通过，正在准备请求与SQL观察器 |
-| 下一可用交付 | 完成服务端观察器与隔离运行入口，再申请极小测量窗口 |
+| 当前产出 | 固定正文、请求观察器与隔离测量入口已准备并通过纯检查，等待入口独审 |
+| 下一可用交付 | 入口独审后取得明确窗口，提交三组真实PG成本结果 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED仅pure target377；新observer/入口另审 |
+| Review | [review.md](review.md)，新入口target4951 NOT_STARTED；历史pure377已APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | CHAT06P01-01 | completed | chat06p01_owner | [方法](../../experiments/assistant-stream-cost/README.md)、[source](../../docs/evidence/chat06p01/source-map.json) |
-| CHAT06P01-02 | in-progress | chat06p01_owner | 纯生成器3/3及noEmit0；观察器/PG入口尚未实现，见preparation-manifest |
+| CHAT06P01-02 | completed | chat06p01_owner | [readiness-manifest](../../docs/evidence/chat06p01/readiness-manifest.json)：10 distinct pure/noEmit0/import-only/syntax；没有PG测量 |
 | CHAT06P01-03 | pending | chat06p01_owner / mika | 未运行PG测量；无窗口 |
 | CHAT06P01-04 | pending | chat06p01_owner | 未产生实测 |
 | CHAT06P01-05 | pending | chat06p01_owner / mika / Lead | pure片段已独审；完整准备/实测待独审，main未接收 |
@@ -48,3 +48,9 @@ claim ff4d1ec7-ecd2-4154-94a8-99804b3c1b49 v1 ACTIVE，COMMITTED 2026-10-06T07:1
 解析字段按Lead反馈改为标准UTC及纯NONE；当前方法/纯准备无阻塞，真实PG矩阵尚未获窗口，不因字段规范化变更验收事实。未重测。
 
 2026-10-06 07:27 UTC：完成S01 W2只读独审后回到本唯一worktree。Mika已批准pure片段，GO认可3task/84patch方法预算方向；尚无PG运行窗口，下一观察器先覆盖错误计数与原样回传、ESM named crypto同步、查询发起时ALS归属及finally恢复。新源不会沿用pure批准。
+
+2026-10-06 07:31 UTC：observer首行为红→绿已保存，随后按S01 W2窗口要求自07:27:43.769Z起暂停检查。仅写纯观察器与受控parent/child入口；新源码尚无noEmit/完整pure证明，未运行PG。监督器只拥有本实验child与唯一DB，30秒总预算内保留清理区间，异常回收不冒充正常退出。
+
+2026-10-06T07:38:46.685631+00:00：入口实现固定4951；observer记录失败查询/多result rows及原错误、named SHA同步、Fastify ALS、query开始归属与恢复，7项纯验证。此前失败包括pg runtime/type paths及三包缺依赖、pg CJS named export；均保留，最终复用现有m2-shared-foundation对应版本并显式内部包本WT，无安装。计时包含观察开销，不做资源路径已实测断言。当前停止源码写入交Mika独审；唯一claim仍v1，0PG/model/provider。
+
+2026-10-06T07:39:07.599519+00:00 聚合核验：GET /api/snapshot等待5秒超时，未收到快照；不推断当前聚合状态/claim变化。唯一status已更新，待下一可用只读核验；[回执](../../docs/evidence/chat06p01/dashboard-readiness.json)。不重启服务、不改全局索引。
