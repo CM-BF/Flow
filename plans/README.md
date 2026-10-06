@@ -1,6 +1,6 @@
 # Flow 计划索引
 
-当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 09:31 UTC固定main3418已审含知识聊天接线、Codex有界通信与中心来源规则；原生Codex执行仍在R05C实施。TUI首片进行，ENG-001工程交付排其后、COST-001再后。个人center/runner仍b1c2、accepting v12，Web固定静态产物，不能把main更新称用户运行已更新。下文旧日期批次仅历史观察。
+当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 09:53 UTC固定main253035已审含新视觉外壳、知识聊天接线、Codex有界通信与中心来源规则；原生Codex执行仍在R05C实施。TUI首片进行，ENG-001工程交付排其后、COST-001再后。个人center/runner仍b1c2、accepting v12，Web固定静态产物，不能把main更新称用户运行已更新。下文旧日期批次仅历史观察。
 
 本目录记录 Flow 的设计方向、技术验证和后续实施安排。使用和维护规则见 [AGENTS.md](AGENTS.md)。
 
@@ -134,3 +134,5 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 
 - ENG-001：[真实工程任务交付](eng01-engineering-delivery/plan.md)，唯一生产大task，承接REQ-06；E01只保留研究输入，当前只计划。
 - R05C：FLOW-002下的[Codex普通执行adapter](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter/plans/r05c-codex-native-adapter/plan.md)，先固定unknown结算，再复用R06/025纵向接线；0provider准备。
+
+- SVC04：FLOW-001下的[网页独立发布与回退](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/plans/svc04-web-release/plan.md)，唯一权威 `web-artifact-release`；先专用fixture证明后台持续、旧资源与失败保旧，个人服务不在本轮切换。
