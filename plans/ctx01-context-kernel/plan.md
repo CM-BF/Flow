@@ -1,6 +1,6 @@
 # CTX01 固定上下文core实验
 
-编号CTX01；状态in-progress；创建/更新2026-10-06 04:42:05 UTC。Owner runner_owner / gpt-6-astra，唯一树context-kernel-probe，branch codex/context-kernel-probe，base75a33dec228e17bbbd0d3be9fd01bc9ac18a0133。
+编号CTX01；状态completed；创建2026-10-06 04:42:05 UTC，更新2026-10-06 04:51:14 UTC。Owner runner_owner / gpt-6-astra，唯一树context-kernel-probe，branch codex/context-kernel-probe，base75a33dec228e17bbbd0d3be9fd01bc9ac18a0133。
 
 ## 目标与接口
 
@@ -13,7 +13,7 @@
 - [x] CTX01-01：原子claim、固定npm/完整性/许可/实际API与方法。
 - [x] CTX01-02：最小host封套、公开core行为与真实子进程restart/fork。
 - [x] CTX01-03：1/10/100各20次有界原始测量、失败/限制与可重跑说明。
-- [ ] CTX01-04：固定实现/证据交付独立review（NOT_STARTED），后续生产接入不在此片段。
+- [x] CTX01-04：固定实现f58fdf36与证据获Goal Owner独立APPROVED；后续生产接入不在此片段。
 
 独立scope仅experiments/context-kernel、plans/ctx01-context-kernel、docs/evidence/ctx01。Pi/proxy/self-update、产品deps/入口/PG/实际模型均不改。候选已定位不是用户身份确认；本core toy已授权可推进。采用本地find-skills/codebase-design/clean-code/tdd；公开core和host封套是已授权验收seam。方法/证据见[证据](../../docs/evidence/ctx01/README.md)。
 
