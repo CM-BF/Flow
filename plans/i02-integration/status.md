@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:05:17 UTC / main1c4968354dabce1e6748f3301a2e6eecd33e77d4 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T12:11:20.571694+00:00 / main eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 已审工程完整快照与可信检查收据；附件/B01已main1c496 |
-| 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
+| 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
+| 工作树dirty状态 | 本批固定来源与证据待提交，产品只接已审路径 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | ENG01F51绑定/4源独审；root types0；原20局部Git/HTTP/codec检查复用，0provider |
-| 已集成main状态 / HEAD | 1c496835已接附件/B01与唯一source迁移；本批ENG01F待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 检查状态 | O12固定68绑定、public import/root/Web types0、生产选2过2/4未选；其他原始独审复用，0provider |
+| 已集成main状态 / HEAD | eb95fba已含ENG01F；本批O12、private sink与partial工作区基线待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 附件输入模块和轻量读取已进主线；工程收据完成独审，正在接收。 |
-| 下一可用交付 | 接收完整工程快照收据，继续目标会话及原生写入接线。 |
+| 当前产出 | 目标会话与完整历史已通过独审和主线组合检查，可供终端与网页复用。 |
+| 下一可用交付 | 接收目标入口，并准备现有个人预览的新旧版本兼容发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -139,3 +139,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T12:02:14.623280+00:00：附件模块4c4与B01 c96/7d69三片固定源码/原始输出45项核验，18source无差、修改路径原main与作者base一致；root/Web类型各0。复用独审行为证据，不重跑PG/浏览器/容量或provider。来源见[接收比较](../../docs/evidence/i02/attachment-task-read-source-comparison.json)。
 
 2026-10-06 12:05:17 UTC：ENG01F仅4个新增私有源，固定1b3c独审，37直接旧依赖在owner基线无变；实际集成root types0。前后完整快照与not-attested收据不证明native写入已停，不发旧v1成功。见[接收证据](../../docs/evidence/i02/engineering-calculator-receipt-comparison.json)。
+
+2026-10-06T12:11:20.571694+00:00：接收O12 60e495与公共 ./goal 导出adb91；仅tasks.ts直接依赖已随B01变更，实际生产factory选2过2/4未选、随机两库清理；包入口和root/Web types0。其余21不同领域证据复用。R06仅077已审五源，不接诊断driver；工作区1711原8过1失败partial原样归档，不称全绿。见[目标入口](../../docs/evidence/i02/goal-session-integration.json)、[限定诊断与观测](../../docs/evidence/i02/native-sink-workspace-comparison.json)。

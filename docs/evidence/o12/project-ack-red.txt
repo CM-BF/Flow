@@ -1,0 +1,37 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ❯ packages/interaction/src/goal/lifecycle.test.ts (8 tests | 1 failed | 7 skipped) 9ms
+   ↓ bounds real reads to two active and four queued; disconnect prevents queued dispatch and late body commits
+   ↓ does not send after disconnect interrupts persistence and recovers only through a new explicit call
+   ↓ retains ambiguous receipts through auth/CAS rejection and retries the identical intent only on explicit recovery
+   ↓ keeps an acknowledged remote command recoverable when clearing local storage fails and isolates listener errors
+   ↓ rejects the wrong stored namespace and oversized intent before any mutation
+   ↓ rejects malformed or cross-goal reads without replacing the previously expanded immutable body
+   ↓ does not let an earlier observation repopulate state after a related plan change
+   × keeps an unchanged project snapshot with no mutation identity as an unknown ACK 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/goal/lifecycle.test.ts > keeps an unchanged project snapshot with no mutation identity as an unknown ACK
+AssertionError: expected 'acknowledged' to be 'unknown' // Object.is equality
+
+Expected: "unknown"
+Received: "acknowledged"
+
+ ❯ packages/interaction/src/goal/lifecycle.test.ts:87:24
+     85|   await c.initialize();
+     86|   const result = await c.command({ kind: 'project', input: { expectedR…
+     87|   expect(result.state).toBe('unknown'); expect(c.snapshot().intent).no…
+       |                        ^
+     88| });
+     89| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  05:04:09
+   Duration  326ms (transform 137ms, setup 0ms, import 229ms, tests 9ms, environment 0ms)
+

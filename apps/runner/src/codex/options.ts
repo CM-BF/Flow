@@ -31,6 +31,11 @@ export function normalizeOptions(options: TransportOptions): { options: Transpor
     if (!Object.hasOwn(maxima, key) || !Number.isSafeInteger(value) || value <= 0 || value > maxima[key as keyof Limits]) fail();
     limits[key as keyof Limits] = value;
   }
+  const sink = options.privateStderr;
+  let privateStderr: TransportOptions['privateStderr'];
+  try { privateStderr = sink === undefined ? undefined : { maxBytes: sink.maxBytes, write: sink.write }; }
+  catch { fail(); }
+  if (privateStderr !== undefined && (!Number.isSafeInteger(privateStderr.maxBytes) || privateStderr.maxBytes <= 0 || privateStderr.maxBytes > 65536 || typeof privateStderr.write !== 'function')) fail();
   const initialize: TransportOptions['initialize'] = { clientInfo: { name: info.name, title: info.title, version: info.version }, capabilities: capabilities === null ? null : { experimentalApi: capabilities.experimentalApi, requestAttestation: capabilities.requestAttestation, ...(capabilities.optOutNotificationMethods === undefined ? {} : { optOutNotificationMethods: [...capabilities.optOutNotificationMethods] }) } };
-  return { options: { ...options, initialize, spawn: { ...spawn, args: [...spawn.args], environment: { ...spawn.environment } } }, limits };
+  return { options: { ...options, privateStderr, initialize, spawn: { ...spawn, args: [...spawn.args], environment: { ...spawn.environment } } }, limits };
 }
