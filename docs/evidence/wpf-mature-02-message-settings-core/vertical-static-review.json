@@ -36,5 +36,24 @@
     "No test/PG/child execution",
     "No overall delivery approval",
     "External factory/client/Web/TUI consumers pending"
-  ]
+  ],
+  "rootReview": {
+    "reviewer": "Mika/root",
+    "model": "gpt-6-astra",
+    "kind": "SOURCE_REVIEW",
+    "target": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+    "productionReadTarget": "92f768e3517a64235629858f50cdc3926d099b2d",
+    "packetObserved": "650bb7ef51a93106a7a49ba6df4ecc84e86777a7",
+    "manifestSHA256": "b4625c80ac73161cb52cc5ddf990846402538f9300f0df6a14758cabccbdd606",
+    "checkedBindings": {
+      "source": 34,
+      "preparedConfigurations": 3,
+      "historicalSupport": 3,
+      "errors": 0
+    },
+    "finding": "No additional production P1/P2; source conclusion extends through test-only ea276 delta.",
+    "configReview": "Flow aliases use this worktree; third-party installs fixed; inherited strict unchanged; pure and PG configs separate; cache under owned evidence.",
+    "checksRun": 0,
+    "reviewTime": "not separately supplied; source-message receipt preserved in task history"
+  }
 }
