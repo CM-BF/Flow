@@ -1,0 +1,24 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities[39m
+
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22muses exact native argv/env, one initialized R06 request, and controlled close[32m 39[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mrecords a cursor as partial and never paginates[32m 32[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mcloses on inbound 'server-request' instead of sending catalog or responding[32m 28[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mcloses on inbound 'notification' instead of sending catalog or responding[32m 26[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mcloses for invalid catalog or readiness/request failure[32m 29[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mcloses for invalid catalog or readiness/request failure[32m 26[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mcloses for invalid catalog or readiness/request failure[32m 28[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mkeeps prefix artifact and roots when child/stdio completion is unknown[32m 31[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mregisters the created root before identity acquisition fails, without calling factory[32m 11[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mpreserves original stderr, partial artifact, and descriptors through final result failure[32m 22[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mkeeps result-file partial identity in the final delivery after a write failure[32m 26[2mms[22m[39m
+ [32m✓[39m experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts[2m > [22mnative catalog caller without any real child or listener[2m > [22mrejects byte excess and nested directory replacement in bounded inventory[32m 1[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m12 passed[39m[22m[90m (12)[39m
+[2m   Start at [22m 17:29:53
+[2m   Duration [22m 426ms[2m (transform 40ms, setup 0ms, import 52ms, tests 305ms, environment 0ms)[22m
+
+inert imports complete; no factory invoked
+(node:82302) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

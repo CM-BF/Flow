@@ -1,0 +1,70 @@
+{
+  "kind": "native-catalog-probe-fake-checks",
+  "sourceTarget": "469e97ebc1410acf59106dbbe1891d39dc5c528d",
+  "functionalSource": "c072b156067881f15afc06d8effe3a3deec27589",
+  "checkedAt": "2026-10-06T17:30:38.720220+00:00",
+  "bindings": [
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.mjs",
+      "bytes": 16329,
+      "sha256": "f97cf9afa94f16e227d6c15a5b0173184f708368dfa41f925c4170ad57a14aad"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-reviewed.mjs",
+      "bytes": 5312,
+      "sha256": "17798a63e40ab04cc561a78d21354903a28e3af857b8b5783fd41478ca9cba78"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-window.sh",
+      "bytes": 2984,
+      "sha256": "df1fedc519848f936c4f07b0d669e11cb4e206018d65f122b575eee0421397a0"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts",
+      "bytes": 11686,
+      "sha256": "b7443e0d8b73904bca35941c2489929dc29195145ef3e43b6d04894cc9c22414"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/vitest.config.mjs",
+      "bytes": 415,
+      "sha256": "8d780f512274700ddce95ef70b17393e731fa16332749e7096ed27a06d6dbdf1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/fake-preflight.json",
+      "bytes": 2826,
+      "sha256": "b74743bd6595d1ea761cef645863e356ee06e3c1912e69018569a36e51ada141"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/fake-once.log",
+      "bytes": 3796,
+      "sha256": "43767ff9e6864926b22fa5592b920b0cecdf8533c30b2c8b26051abd84141647"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/fake-result.json",
+      "bytes": 1131,
+      "sha256": "82fa240cc6231b2a957aef90455ecc486baab67b5ccb924f36cfa05dcb3f7bd9"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/fake-roots.json",
+      "bytes": 1394,
+      "sha256": "767c90af982565945f5733932e1a8d91acb400929aecdc1283fbcdd89e95dc8b"
+    }
+  ],
+  "selected": 12,
+  "passed": 12,
+  "exitCodes": [
+    0,
+    0,
+    0
+  ],
+  "realDiagnosticTargets": 0,
+  "listeners": 0,
+  "pg": 0,
+  "provider": 0,
+  "fixtureRoots": {
+    "count": 12,
+    "allRemoved": true,
+    "allNowAbsent": true
+  },
+  "review": "Entry-reservation P2 outstanding; these checks are not actual-window approval"
+}

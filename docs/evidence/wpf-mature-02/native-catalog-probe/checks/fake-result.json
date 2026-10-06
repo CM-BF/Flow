@@ -1,0 +1,47 @@
+{
+  "finishedAt": "2026-10-06T17:29:53.950237+00:00",
+  "wallSeconds": 0.7558764170389622,
+  "commands": [
+    {
+      "index": 0,
+      "pid": 82287,
+      "exitCode": 0,
+      "stdoutEOF": true,
+      "killed": false
+    },
+    {
+      "index": 1,
+      "pid": 82302,
+      "exitCode": 0,
+      "stdoutEOF": true,
+      "killed": false
+    },
+    {
+      "index": 2,
+      "pid": 82308,
+      "exitCode": 0,
+      "stdoutEOF": true,
+      "killed": false
+    }
+  ],
+  "allHarnessProcessesExited": true,
+  "diagnosticTargets": 0,
+  "listeners": 0,
+  "pg": 0,
+  "provider": 0,
+  "rawCaptureBytes": 3796,
+  "rawCaptureSha256": "43767ff9e6864926b22fa5592b920b0cecdf8533c30b2c8b26051abd84141647",
+  "captureLimitHit": false,
+  "cache": {
+    "path": "/tmp/flow-wpf02-native-catalog-vitest-cache",
+    "dev": 16777234,
+    "ino": 123100755,
+    "logicalBytes": 640,
+    "allocatedBytes": 4096,
+    "identityConfirmed": true,
+    "inventoryComplete": true,
+    "removed": true
+  },
+  "testRootsReceipt": "fake-roots.json",
+  "note": "Vitest transformation/thread workers are test harness; no diagnostic factory or target invocation."
+}

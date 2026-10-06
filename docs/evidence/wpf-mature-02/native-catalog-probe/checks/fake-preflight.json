@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-06T17:29:53.193898+00:00",
+  "source": "469e97ebc1410acf59106dbbe1891d39dc5c528d",
+  "previousSource": "c072b156067881f15afc06d8effe3a3deec27589",
+  "reboundSameUnconsumedWindow": true,
+  "claim": {
+    "id": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+    "version": 6,
+    "state": "active"
+  },
+  "freeBytes": 1203499008,
+  "minimumBytes": 1107296256,
+  "commands": [
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+      "run",
+      "--configLoader",
+      "native",
+      "--config",
+      "experiments/codex-app-server-conformance/native-catalog-probe/vitest.config.mjs",
+      "experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts",
+      "--reporter=verbose"
+    ],
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--experimental-transform-types",
+      "--input-type=module",
+      "-e",
+      "import {registerR06Loader} from './experiments/codex-app-server-conformance/node-rootliteral/loader.mjs'; registerR06Loader(); await import('./apps/runner/src/codex/index.ts'); await import('./experiments/codex-app-server-conformance/native-catalog-probe/execute-reviewed.mjs'); process.stdout.write('inert imports complete; no factory invoked\\n');"
+    ],
+    [
+      "/bin/sh",
+      "-n",
+      "experiments/codex-app-server-conformance/native-catalog-probe/execute-window.sh"
+    ]
+  ],
+  "inputs": [
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.mjs",
+      "bytes": 16329,
+      "sha256": "f97cf9afa94f16e227d6c15a5b0173184f708368dfa41f925c4170ad57a14aad"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-reviewed.mjs",
+      "bytes": 5312,
+      "sha256": "17798a63e40ab04cc561a78d21354903a28e3af857b8b5783fd41478ca9cba78"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-window.sh",
+      "bytes": 2984,
+      "sha256": "df1fedc519848f936c4f07b0d669e11cb4e206018d65f122b575eee0421397a0"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts",
+      "bytes": 11686,
+      "sha256": "b7443e0d8b73904bca35941c2489929dc29195145ef3e43b6d04894cc9c22414"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/vitest.config.mjs",
+      "bytes": 415,
+      "sha256": "8d780f512274700ddce95ef70b17393e731fa16332749e7096ed27a06d6dbdf1"
+    }
+  ],
+  "cache": {
+    "path": "/tmp/flow-wpf02-native-catalog-vitest-cache",
+    "dev": 16777234,
+    "ino": 123100755,
+    "created": true,
+    "limitBytes": 33554432
+  },
+  "rawLimitBytes": 16384,
+  "wallLimitSeconds": 30,
+  "expectedSelected": 12,
+  "diagnosticTargets": 0,
+  "listeners": 0,
+  "pg": 0,
+  "provider": 0
+}
