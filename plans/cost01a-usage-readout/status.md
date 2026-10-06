@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 14:13 UTC |
+| 最近更新 | 2026-10-06 14:10 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [COST-001](../../../execution-cost/plans/cost01-execution-cost/plan.md) |
 | co-lead | Execution Lead |
@@ -42,6 +42,6 @@ worktree 创建前可用 1,394,163,712 B，估算已跟踪文件按 4 KiB 取整
 
 ## Dashboard
 
-本 status 是唯一手填事实源。首 canonical 提交后交 Execution Lead 登记；当前未实测聚合，不猜已展示。COST-001 的阶段归因/全局预算/三端完整验收仍 open。
+本 status 是唯一手填事实源。Execution Lead 已实际聚合158源，本项live/errors=[]；最终metadata时间按本机UTC记录。COST-001 的阶段归因/全局预算/三端完整验收仍 open。
 
-共享磁盘14:13低于1GiB reserve，已完成检查自然收尾且自有随机库已DROP；不再启动新PG/安装/大构建。当前仅固定可审片段，后续需要新检查须先解除资源限制。
+共享磁盘低于1GiB reserve（Lead原14:13手填时间已纠正，不作为采样时间），已完成检查自然收尾且自有随机库已DROP；不再启动新PG/安装/大构建。当前仅固定可审片段，后续需要新检查须先解除资源限制。

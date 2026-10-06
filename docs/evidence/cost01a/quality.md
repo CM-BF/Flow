@@ -9,6 +9,6 @@
 - 当前发现：samples 有缓存原值但旧 totals 无缓存；需要共享基线 seam 防止重复规则。readout 不读取正文以追溯 SDK 版本，未存版本就 unknown。Codex authoritativeSources 为空，不能借模型名扩权。
 - 尚未实现/测试；0 provider、0网络安装。官方网页只对照当前文档，固定 SDK 声明优先；不以估价作账单。
 
-2026-10-06 14:13 UTC 工作段/交付前 clean-code：实读 usage.ts/index/projection/合同与9项测试。提取一个实际双消费者纯贡献函数，未新造ledger或授权；SQL批量严格前序，source策略仅解释不扩大写权；发现总和安全范围可能溢出，投影显式null。旧input/output/cost列和unknown费用处理未改。14不同检查分轮通过（新9+既有producer5），noEmit0；原2缺路由失败保留。无未解决产品finding；独审尚未开始。
+2026-10-06 14:10 UTC 工作段/交付前 clean-code：实读 usage.ts/index/projection/合同与9项测试。提取一个实际双消费者纯贡献函数，未新造ledger或授权；SQL批量严格前序，source策略仅解释不扩大写权；发现总和安全范围可能溢出，投影显式null。旧input/output/cost列和unknown费用处理未改。14不同检查分轮通过（新9+既有producer5），noEmit0；原2缺路由失败保留。无未解决产品finding；独审尚未开始。
 
-资源：无安装，own ignored symlinks只复用已验证exact第三方安装，workspace只指本树。首次plugin-runtime缺直接tar链接的解析错误保留于dependencies.json，改用实际同版本传递安装；未改donor。14:13 Lead报告共享空间低于reserve，本agent已无PG/runner进程、四随机DB已清理；停止新PG/安装/大构建，仅源码与证据固化。
+资源：无安装，own ignored symlinks只复用已验证exact第三方安装，workspace只指本树。首次plugin-runtime缺直接tar链接的解析错误保留于dependencies.json，改用实际同版本传递安装；未改donor。Lead报告（其14:13手填时间后确认为笔误，不当采样时间）共享空间低于reserve，本agent已无PG/runner进程、四随机DB已清理；停止新PG/安装/大构建，仅源码与证据固化。
