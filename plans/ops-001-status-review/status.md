@@ -18,10 +18,10 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 三处已退役临时预览的生成缓存已清理，原始证据和依赖保留；本地空间仍不足，最小远程验证文档进入独审。 |
+| 当前产出 | 三处已退役临时预览的生成缓存已清理，原始证据和依赖保留；本地空间仍不足，最小远程验证文档已获独审，等待用户选择启用。 |
 | 下一可用交付 | 交付可由用户启用的远程零模型验证文件；本地真实数据库、浏览器和完整工具正文验证继续等待足够空间。 |
 | 当前阻塞 | ACTIVE: 三缓存结束后卷余量1,073,909,760B，本记录fresh为1063604224B，仍不足1GiB+128MiB的PG/浏览器线。远程候选尚未启用/运行，现只完成静态检查。 |
-| 需用户决定 | NONE：启用候选尚在独审；文件固定后会给一个准确的最终启用动作。 |
+| 需用户决定 | REQUIRED: 是否将已审验证文件启用为手动GitHub Actions并运行一次；现有凭据缺workflow权限，未尝试扩权或启用。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -345,3 +345,5 @@ OPS14 两个实际wrapper通过精确4482字节源码供给后由唯一owner实�
 OPS-CI01唯一source为`ops-remote-validation/plans/ops-ci01-remote-validation`，native_center_owner四scope已原子领取，base37f75d36。源码供给377文件2,821,972逻辑B、0安装；[供给事实](../../docs/quality/ops-ci01-source-provision.json)保留初次未初始化index的准备失败及fresh空树修复。候选只修改docs/ci，两个contract+一个真实PG/Fastify.inject handler检查（非socket/runner旅程），0远程/模型。文件待独审与用户最终启用，不把准备当运行。
 
 | OPS-001-15 | in-progress | native_center_owner / Execution Lead | 远程最小验证候选及准确启用步骤；唯一子任务OPS-CI01，尚未启用/运行。 |
+
+局部status检查发现带说明的NONE不符合既有人读字段格式，原记录保留于9bff6516；已按真实最终启用动作改为REQUIRED，未改parser或运行产品测试。
