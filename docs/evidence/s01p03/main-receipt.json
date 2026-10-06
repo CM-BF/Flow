@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-10-06 10:37:34 UTC",
+  "mainHead": "0cee7556befa1988e60bae94b510240122c34b88",
+  "mainDirty": false,
+  "implementationTarget": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+  "receiptSource": "docs/evidence/i02/ack-graceful-integration.json",
+  "sourceComparisons": [
+    {
+      "task": "S01P03",
+      "target": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14564,
+      "sha256": "790c706fd1207211334e77fa428d31d54e79dca91b6d66b35d56ab54f6512c8e",
+      "matches": true,
+      "ownerChecked": true
+    },
+    {
+      "task": "S01P03",
+      "target": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "bytes": 13720,
+      "sha256": "09670094e39e2a3b2da6286c763d161e5b359231d472e655b2d44fe4c1a8c42d",
+      "matches": true,
+      "ownerChecked": true
+    }
+  ],
+  "checks": {
+    "target": "0a4ca1b22ff05743ef9fd44026d7db2607e77199",
+    "startedAt": "2026-10-06T10:35:48.387925+00:00",
+    "finishedAt": "2026-10-06T10:35:58.336930+00:00",
+    "elapsedSeconds": 9.948888374958187,
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exitCode": 0
+  },
+  "clientCompatibility": "S01 readonly client index differs only in reviewed TUI create/submit acknowledgement decoding and their helper/export. claim/report/heartbeat/request behavior unchanged; original 62 and 70 distinct evidence reused, not rerun.",
+  "ownerTestsRerun": false,
+  "registryRegistered": true,
+  "serviceAggregation": "NOT_VERIFIED",
+  "releaseRequestId": "0884a14d-7de6-43ea-8cf6-abfd3bfa74ae",
+  "releaseStateAtWrite": "NOT_EXECUTED",
+  "limits": [
+    "TUI shared decoder v1 only; Web policy consumer handoff pending",
+    "S01 normal stop drains already-sent claim; unknown admission remains journaled; no auto recovery receipt",
+    "No new provider call, personal runtime or tab operation"
+  ]
+}

@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:36:20 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:37:34 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop |
 | Branch | codex/runner-graceful-stop |
-| 工作基线 / HEAD | base f181d84b5fb3652d62e2a181acff442d42b3e066；实现a677f2b8a22aa5ecdcc1be3709cd73a090f34702；登记收据更新前metadata20271201381134d710ffdd7d02f96414aac2d43c |
-| 工作树dirty状态 | 更新前clean且已push；本次仅登记收据/status/集成说明metadata，提交后核clean |
-| 工作分支状态 | in-progress |
+| 工作基线 / HEAD | base f181d84b5fb3652d62e2a181acff442d42b3e066；实现a677f2b8a22aa5ecdcc1be3709cd73a090f34702；主线闭环前metadata2424a3e5abc340304ae15029969af2dd3cd4018c |
+| 工作树dirty状态 | 更新前clean且已push；本次仅main接收/review/status/停写请求metadata，提交后核clean |
+| 工作分支状态 | completed |
 | 检查状态 | 新10通过；原runner33+capacity loopback19通过，4PG未运行；局部strict noEmit0。root-wide依赖缺失失败保留 |
-| 已集成main状态 / HEAD | 本片实现已审，尚未集成；main 0b0d5fe7af9c0f40861ec6d2847f7383bcd76739已登记权威source，源码与页面刷新分开核验 |
+| 已集成main状态 / HEAD | 已集成main 0cee7556befa1988e60bae94b510240122c34b88；两源逐字等于a677，Lead根typecheck0，页面刷新未核验 |
 | 实现目标 | a677f2b8a22aa5ecdcc1be3709cd73a090f34702 |
 | 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/runtime-shutdown.test.ts, plans/s01-graceful-stop, docs/evidence/s01p03 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 正常停止领取修复已独审通过，明确响应能安全收束，真实未知继续保留 |
-| 下一可用交付 | Lead受控合入已审修复并确认页面进度展示 |
+| 当前产出 | 正常停止领取修复已进入主线；明确响应安全收束，真实未知继续保留 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED a677f2b8；architecture_read于2026-10-06 10:29:27 UTC独审，无P1/P2 |
@@ -31,7 +31,7 @@
 | S01P03-02 | completed | status_read | [checks](../../docs/evidence/s01p03/checks.json)：原1red→green，最终10不同停止回归 |
 | S01P03-03 | completed | status_read | [checks](../../docs/evidence/s01p03/checks.json)：原1red→green，最终10不同停止回归 |
 | S01P03-04 | completed | status_read / architecture_read | a677f2b8独审APPROVED；10+33+19=62 distinct，local strict0，4PG NOT_RUN；根strict2保留 |
-| S01P03-05 | pending | Lead | 未集成 |
+| S01P03-05 | completed | Lead / status_read | [main接收](../../docs/evidence/s01p03/main-receipt.json)，0cee7556两源=a677；完整未知恢复仍开放 |
 
 10:16:09.265Z fresh ledger available且无重叠；10:16:32.150Z take COMMITTED，claim `a3e307fc-a7cc-40d3-a28c-4ec3482b985a` v1，精确4scope，见[回执](../../docs/evidence/s01p03/claim-receipt.json)。领取后仅写本任务metadata；S01原结果raw与driver保持冻结。
 
@@ -51,6 +51,8 @@ Lead于10:22核共享registry暂无S01P03登记；本status待Lead登记权威so
 
 2026-10-06 10:30:12 UTC：独立只读APPROVED固定a677f2b8，时间以reviewer实际clock10:29:27为准，早先10:30估计已更正，不写未来时间。Mika另独核37项hash/bytes；本次只补metadata，不动source/raw、不重测。当前阻塞字段修为精确NONE、顶部更新时间使用完整UTC格式，供既有parser读取；不改共享parser/registry。
 
-[集成说明](../../docs/evidence/s01p03/integration-ready.md)提供Lead所需唯一owner/WT/branch/status来源。claim v1继续保留到明确停写交接；当前源码停止修改，结果审查完成，main尚未接收。本片只交付正常停止中已发claim排空，完整未知恢复/原生生命周期/容量验证仍开放。
+[集成说明](../../docs/evidence/s01p03/integration-ready.md)提供Lead所需唯一owner/WT/branch/status来源。当时claim v1保留到明确停写交接；源码停止修改，结果审查完成，main接收以最新收据为准。本片只交付正常停止中已发claim排空，完整未知恢复/原生生命周期/容量验证仍开放。
 
 2026-10-06 10:36:20 UTC：只读核main `0b0d5fe7af9c0f40861ec6d2847f7383bcd76739` clean，`apps/execution-dashboard/src/registry.mjs:8`已登记S01P03→runner-graceful-stop/s01-graceful-stop。这更新此前“待登记”的历史状态，不表示服务已刷新或源码已合入；当时main runtime尚不等于a677且无新增shutdown测试。详见[登记收据](../../docs/evidence/s01p03/registry-observation.json)。claim v1仍active；本次仅metadata，无重测。
+
+2026-10-06 10:37:34 UTC：已核[主线接收](../../docs/evidence/s01p03/main-receipt.json)，两源逐字等于已审a677；Lead集成点根级typecheck exit0与本树早先root strict2/local strict0分开，原62检查不重跑。review补完整literal target，移除初始化待评估模板，保留独审历史。本次metadata提交push后本owner停止全部P03写入，再以[固定请求](../../docs/evidence/s01p03/release-request.json) `0884a14d-7de6-43ea-8cf6-abfd3bfa74ae` 释放claim v1；写入本记录时release尚未执行，实际回执由账本与项目外owned receipt保存，不在释放后修改本树。

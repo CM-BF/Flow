@@ -13,3 +13,5 @@ architecture_read / gpt-6-astra 于 **2026-10-06 10:29:27 UTC** 独立只读 APP
 受控合入可应用上述已审实现及纯metadata；发生手工冲突或新逻辑时回原owner，不借集成改写语义。架构影响为runtime内部取消所有权，公共字段不新增；Lead按实际合入target更新工程架构基线/registry，本owner不修改共享展示源。
 
 writer claim `a3e307fc-a7cc-40d3-a28c-4ec3482b985a` v1保留至明确停写/交接；source、test、raw已停止修改，当前收尾仅metadata。完整未知claim恢复、强停后自动恢复、任意adapter全进程硬期限与真实容量均不在本片Done范围。主线接收后由owner补唯一status事实，不重测冻结日志。
+
+2026-10-06 10:37:34 UTC 主线闭环：main `0cee7556befa1988e60bae94b510240122c34b88` 已接收两源，owner逐字核=a677；Lead在受控集成点typecheck exit0，原62不重跑。见[main收据](main-receipt.json)。本次metadata commit/push后停止全部P03写入，再执行[release请求](release-request.json)，此文不预写释放成功。实际COMMITTED receipt保存在协调账本与项目外owned路径，由Lead记录全局接收。

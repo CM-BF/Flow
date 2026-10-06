@@ -1,6 +1,6 @@
 # S01P03 正常停止领取与有界排空
 
-状态：独审通过待主线接收，2026-10-06。所属大task：[FLOW-001](../flow-001-architecture/plan.md)，co-lead mika，owner status_read / gpt-6-astra。S01 是前序实验，不作为第三层父任务。
+状态：本片已独审并集成main，2026-10-06。所属大task：[FLOW-001](../flow-001-architecture/plan.md)，co-lead mika，owner status_read / gpt-6-astra。S01 是前序实验，不作为第三层父任务。
 
 目标：已发 claim 的明确响应可在正常停止时按原 deadline 收束，避免已结束所有 attempt 后的正常空轮询产生不必要的未知占用；真实未知和已受理 assignment 必须继续保留。输入为已独审 S01 FAIL 结果 `6a5961a0d815113bba7cea149bc08ca07fdd128a`，原始证据在 runner-capacity-probe 权威树 `docs/evidence/s01/mixed-run/`。
 
@@ -14,8 +14,8 @@
 - [x] **S01P03-02** 公开 runRunner loopback 用例先复现延迟 null 跨正常停止故障，保存 red；最小修改后 green。
 - [x] **S01P03-03** 验证 late non-null 持久不执行、原 deadline 不刷新、丢 ACK/非法响应/强停保留、无第二 claim，以及原活动执行/fatal保护。
 - [x] **S01P03-04** 局部直接消费者与 strict 检查；固定 source/raw/hash、clean-code 记录及独立 review。
-- [ ] **S01P03-05** 修复复审后交 Lead 集成，明确 main target 与仍未实现的完整未知恢复；不补原 B 窗口。
+- [x] **S01P03-05** 修复复审后交 Lead 集成，明确 main target 与仍未实现的完整未知恢复；不补原 B 窗口。
 
 验证仅用有界私有 loopback HTTP、fake adapter、临时 journal/自有 child，不跑实际 PG。runner.test 全量、runtime-capacity 中非 real PG/HTTP 的原消费者及 strict noEmit；四个 PG 参数实例保持未运行，不删除或改写其断言。计数以真实选中结果记录，零测试不算通过。测试生命周期须 finally 关闭自有连接、child和目录；无关工程测试不跑。
 
-技能：本地 find-skills、brainstorming（bounded短方案）、codebase-design、clean-code、tdd；固定文件来源/hash与应用方法见[技能记录](../../docs/evidence/s01p03/skills.json)。不重复安装。Mika已先批准接口，现runtime及10项回归完成；实现a677f2b8已独审APPROVED，主线接收仍待Lead。检查与未运行边界见checks.json。
+技能：本地 find-skills、brainstorming（bounded短方案）、codebase-design、clean-code、tdd；固定文件来源/hash与应用方法见[技能记录](../../docs/evidence/s01p03/skills.json)。不重复安装。Mika已先批准接口，现runtime及10项回归完成；实现a677f2b8已独审APPROVED，主线已接收0cee7556，两源逐字等于a677。检查与未运行边界见checks.json。
