@@ -41,7 +41,7 @@ test('active work is bounded and priority ordered; completed history is separate
   await f.writeStatus(f.tasks[0], { human, branchState: 'completed；已交付' });
   await f.writeStatus(f.tasks[1], { human: { ...human, 优先级: '2' } });
   const snapshot = await aggregate(f.registry, now);
-  assert.deepEqual(snapshot.overview.activeIds, ['T02']); assert.deepEqual(snapshot.overview.historyIds, ['T01']);
+  assert.deepEqual(snapshot.overview.activeIds, ['T02']); assert.deepEqual(snapshot.overview.deliveryIds, ['T02']); assert.deepEqual(snapshot.overview.historyIds, ['T01']);
   await f.writeStatus(f.tasks[1], { human, updated: '2025-01-01 00:00 UTC' });
   assert.deepEqual((await aggregate(f.registry, now)).overview.activeIds, []);
 });
@@ -112,8 +112,8 @@ test('scope-tree integration requires existing target and no omitted new impleme
   result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, false);
 });
 
-test('26 distinct registry sources include D03, I02 and bounded Web platform source', () => {
-  const registry = defaultRegistry(); assert.equal(registry.tasks.length, 26);
+test('28 distinct registry sources include D03, I02 and bounded Web platform source', () => {
+  const registry = defaultRegistry(); assert.equal(registry.tasks.length, 28);
   assert.equal(registry.tasks.find(task => task.id === 'I02').planDir, 'plans/i02-integration');
   const source = registry.tasks.find(task => task.id === 'WPF-001');
   assert.equal(source.planDir, 'plans/web-platform'); assert.equal(source.evidenceDir, 'docs/evidence/web-platform');

@@ -35,7 +35,7 @@ export function humanOverview(tasks, phaseSourceId = 'FLOW-001') {
     phaseSourceId,
     activeIds: featured.map(task => task.id),
     otherActiveIds: otherActive.map(task => task.id),
-    deliveryIds: known.filter(task => !completed(task) || !task.main.current).slice(0, 3).map(task => task.id),
+    deliveryIds: known.filter(task => !completed(task)).slice(0, 3).map(task => task.id),
     blockerIds: tasks.filter(task => task.current && task.status.human?.blocker.state === 'active').map(task => task.id),
     decisionIds: tasks.filter(task => task.current && task.status.human?.decision.state === 'active').map(task => task.id),
     unknownIds: tasks.filter(task => !completed(task) && (!task.current || !task.status.human?.complete)).map(task => task.id),

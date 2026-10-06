@@ -25,7 +25,7 @@ test('literal paths compare by segments, reject traversal/globs, and normalize d
   for (const value of ['../x', 'a/../b', '/tmp/x', './foo', 'a//b', '**/foo', 'a\\b', 'foo[0]', '.git/config']) assert.throws(() => literalScope([value]));
 });
 
-test('independent PostgreSQL processes allocate atomically, replay receipts, fence changes and retain handoff occupancy', { skip: !adminUrl, timeout: 20000 }, async () => {
+test('independent PostgreSQL processes allocate atomically, replay receipts, fence changes and retain handoff occupancy', { skip: !adminUrl, timeout: 20000 }, async context => {
   const temporary = await mkdtemp(path.join(tmpdir(), 'flow-claims-test-'));
   const dbName = `flow_claims_test_${process.pid}`;
   const admin = new pg.Pool({ connectionString: adminUrl });
@@ -103,6 +103,15 @@ test('independent PostgreSQL processes allocate atomically, replay receipts, fen
     assert.ok((await peer(reviewer)).ok);
     const audit = await pool.query('SELECT count(*)::int AS count FROM flow_engineering.audit');
     assert.ok(audit.rows[0].count >= 9);
+    const priorUrl = process.env.FLOW_COORDINATION_DATABASE_URL;
+    process.env.FLOW_COORDINATION_DATABASE_URL = target.toString();
+    try {
+      const f = await fixture(context);
+      const snapshot = await (await fetch(`${f.url}/api/snapshot`)).json();
+      assert.ok(snapshot.unregisteredAssignments.some(value => value.taskId === 'FREE-A'));
+      assert.ok(snapshot.unregisteredAssignments.every(value => value.state !== 'released'));
+      assert.equal(snapshot.tasks.length, 2, 'unregistered claim paths are never read as progress sources');
+    } finally { if (priorUrl === undefined) delete process.env.FLOW_COORDINATION_DATABASE_URL; else process.env.FLOW_COORDINATION_DATABASE_URL = priorUrl; }
   } finally {
     if (pool) await pool.end();
     const listing = await execute('git', ['-C', repository, 'worktree', 'list', '--porcelain']);

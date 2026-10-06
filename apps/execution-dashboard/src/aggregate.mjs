@@ -76,7 +76,9 @@ export async function aggregate(registry, now = Date.now()) {
   ]);
   await Promise.all(tasks.map(async task => { task.main = await integrationProof(task, registry.mainWorktree, main); }));
   for (const task of tasks) task.assignments = assignments.state === 'available' ? assignments.claims.filter(claim => claim.taskId === task.id && claim.state !== 'released').map(claim => ({ ...claim, matchesSource: claim.worktree === task.worktree && claim.branch === task.branch })) : null;
+  const registered = new Set(tasks.map(task => task.id));
+  const unregisteredAssignments = assignments.claims.filter(claim => claim.state !== 'released' && !registered.has(claim.taskId));
   const milestoneSource = tasks.find(task => task.id === 'FLOW-003');
-  return { generatedAt: new Date(now).toISOString(), staleAfterHours: registry.staleAfterHours, main: { ...main, worktree: registry.mainWorktree }, tasks, assignments, overview: humanOverview(tasks, registry.phaseSourceId),
+  return { generatedAt: new Date(now).toISOString(), staleAfterHours: registry.staleAfterHours, main: { ...main, worktree: registry.mainWorktree }, tasks, assignments, unregisteredAssignments, overview: humanOverview(tasks, registry.phaseSourceId),
     milestones: milestoneSource ? { taskId: milestoneSource.id, current: milestoneSource.current, todos: milestoneSource.status.todos } : { taskId: null, current: false, todos: [] } };
 }
