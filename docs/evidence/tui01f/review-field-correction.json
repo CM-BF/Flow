@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-10-06T16:13:18.266699+00:00",
+  "reviewer": "native_center_owner",
+  "originalReviewSha256": "61bcc3a62a6131bbfb57a90d2824f4e5fa29e1712d5881bebc4c53d508161d83",
+  "correctedReviewSha256": "54f3a74f204d977e355f4ed85f1b2ebe321688679d7697752f5b8e3f2aed5246",
+  "reason": "Reviewer corrected a same-name SHA field collision: bindings.sha256 and manifestSha256 now name the validation manifest; bindingsSha256 separately names the binding report. Target/conclusion/checks unchanged; reviewer made correction in original /tmp file.",
+  "manifestSha256": "869f1398f6499cceda7e5ff6804416cfdb4a25823f172e385903116b2e9a6fb5",
+  "bindingsSha256": "85bd7896058d47849f0d07912b56dbac5586812ce015ac6a203e70599babe85e",
+  "reruns": 0
+}

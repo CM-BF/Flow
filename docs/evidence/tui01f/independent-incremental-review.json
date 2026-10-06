@@ -1,0 +1,125 @@
+{
+  "task": "TUI01F",
+  "kind": "independent-incremental-review",
+  "state": "APPROVED",
+  "scope": "Bounded task-cancel interaction/controller and static Ink/main wiring slice; not complete TUI acceptance or actual HTTP/PG/PTY/App conformance.",
+  "author": "assignment_review",
+  "reviewer": "native_center_owner",
+  "reviewedAt": "2026-10-06T16:07:07.137222+00:00",
+  "sourceCommit": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+  "deliveryCommit": "46d8d7cdecf007f44f433a6fcd3139353ffafeeb",
+  "observedHead": "46d8d7cdecf007f44f433a6fcd3139353ffafeeb",
+  "observedStatus": "",
+  "findings": [],
+  "priorFullSourceRead": {
+    "sourceCommit": "044ab84db42606fb1757903258078e3dfbab9545",
+    "path": "/tmp/flow-tui01f-source-precheck.json",
+    "sha256": "d3cd5988b05a031fc7cb5abc569498d3167d0d372ea31c7bb057bf834bad8f15",
+    "conclusion": "SOURCE_PRECHECK / NO_P1_P2_FOUND; combined here with actual bounded validation and test-only delta"
+  },
+  "bindings": {
+    "manifest": "docs/evidence/tui01f/validation-manifest.json",
+    "sha256": "869f1398f6499cceda7e5ff6804416cfdb4a25823f172e385903116b2e9a6fb5",
+    "counts": {
+      "sources": 9,
+      "directInputs": 21,
+      "raw": 11,
+      "derived": 3
+    },
+    "entries": 44,
+    "path": "/tmp/flow-tui01f-incremental-bindings.json",
+    "bytes": 18974,
+    "mismatches": [],
+    "supplementalExecutedDirectTestInputs": [
+      {
+        "path": "packages/interaction/src/controller.test.ts",
+        "bytes": 15628,
+        "sha256": "dc68b8763b0187b09d9e1cc61a343522e503077bb4805fe96ba036ef6f7bba56",
+        "baseMatches": true,
+        "workingMatches": true
+      },
+      {
+        "path": "packages/interaction/src/queue-control/controller.test.ts",
+        "bytes": 13642,
+        "sha256": "460e736c95ce411bd156b46212ae9411a0642608fb9a38c2fce3d6a38c331f4e",
+        "baseMatches": true,
+        "workingMatches": true
+      }
+    ],
+    "dependencyLinksChecked": 11,
+    "bindingsSha256": "85bd7896058d47849f0d07912b56dbac5586812ce015ac6a203e70599babe85e",
+    "manifestSha256": "869f1398f6499cceda7e5ff6804416cfdb4a25823f172e385903116b2e9a6fb5"
+  },
+  "deltaRead": {
+    "paths": [
+      "apps/tui/README.md",
+      "packages/interaction/src/task-control/controller.test.ts"
+    ],
+    "productionLogicDelta": false,
+    "newTest": "Real TurnObservation object with mock read ports, two turns and activity panel; rejects older task while newest displayed, then rejects newest task after /turn 1, dispatches only saved older task/turn and keeps focus after ACK refresh. The other task remains running and body reads remain zero.",
+    "limitations": "Live assistant stream capability is not enabled in this fixture; the test does not establish live network stream timing or real Ink rendering."
+  },
+  "originalEvidenceVerified": [
+    {
+      "name": "checks-initial",
+      "sourceTarget": "044ab84db42606fb1757903258078e3dfbab9545",
+      "selected": 35,
+      "passed": 35,
+      "composition": "7 cancel controller + 1 journal/JSONL + 15 old controller + 12 old queue",
+      "exitCode": 0,
+      "stdoutBytes": 537,
+      "repeatedByReviewer": false
+    },
+    {
+      "name": "focused-observer",
+      "testSourceSha256": "a7f5cf3af02be395dcc50c302b8bcf7280bef9d3dfbb7648ac24ba9a739178e5",
+      "selected": 1,
+      "passed": 1,
+      "notSelected": 7,
+      "exitCode": 0,
+      "stdoutBytes": 350,
+      "repeatedByReviewer": false
+    },
+    {
+      "name": "focused-types",
+      "entries": 6,
+      "exitCode": 0,
+      "stdoutBytes": 0,
+      "scope": "Explicit TS/TSX entries and their dependency closure, strict/noUncheckedIndexedAccess/noEmit; not root noEmit",
+      "repeatedByReviewer": false
+    }
+  ],
+  "validationTotals": {
+    "distinctTests": 36,
+    "newTests": 9,
+    "oldDirectConsumerTests": 27,
+    "rootNoEmit": "NOT_RUN",
+    "HTTP": "NOT_RUN",
+    "PG": "NOT_RUN",
+    "PTY": "NOT_RUN",
+    "App": "NOT_RUN",
+    "providerCalls": 0
+  },
+  "resourceEvidence": "Read original per-process receipts and bounded runner. All three commands exited 0 under 30 seconds; recorded own TMPDIR removal and <=1,357,756 sampled logical temporary bytes. Sampling is not a hard space reservation, global memory measurement or child-tree stop attestation. Own workspace aliases and fixed existing third-party manifests match the dependency-view record; no donor workspace alias used.",
+  "approvalBasis": [
+    "Original complete product-source read remains valid: production logic unchanged from 044ab84d.",
+    "Explicit displayed task binding, immutable original key/body recovery, finite ACK status/identity decoder, unchanged single mutation/epoch, draft preservation and quit-not-cancel remain intact.",
+    "The added focused-old-turn direct check closes the specific mock-observer validation gap from the source precheck without modifying production behavior.",
+    "Current 44 manifest entries match fixed reference and working bytes/hashes; 21 protected direct inputs plus two executed old test sources match the original base.",
+    "Recorded source-only history remains preserved and is explicitly distinguished from later actual bounded execution."
+  ],
+  "openAcceptance": [
+    "Real cancellation over HTTP/PG and public task state transitions with lost ACK.",
+    "Actual PTY resize/CJK/interactive editor behavior and real App/TUI/App handoff.",
+    "Complete TUI-001 control/continuation acceptance, root compilation and actual native/A2A stopped semantics are outside this slice."
+  ],
+  "reviewerActions": {
+    "tests": 0,
+    "typechecks": 0,
+    "pg": 0,
+    "provider": 0,
+    "projectWrites": 0,
+    "installs": 0,
+    "personalServiceOperations": 0
+  }
+}
