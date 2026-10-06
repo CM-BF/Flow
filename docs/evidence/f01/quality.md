@@ -221,3 +221,7 @@ Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec1
 ## 2026-10-06 08:14 UTC — CHAT09 client
 
 固定89931e0d9cfd00b5f51f5b266b7aaa38bba2718b，2文件薄改。executionProfiles options.profileProtocol只接受steering-v1并每次GET发精确header；不变URL游标/limit、缺省不发、publication不带。红1/2(缺header)→绿2/2 122ms、tsc0；strict新publication schema、ownerBearer、409不fallback/不重试、abort不多发均实NodeHTTP。不写domain、manifest或Web、不启cap/个人服务。原CHAT09 fixed cd859独审输入受控合并，F01历史metadata冲突采用本树canonical，不碰产品。
+
+### 2026-10-06 08:24:26 UTC CHAT10只读受理状态client
+
+固定25a22e0488d6d9aef1f3308e3179e0e874fa425f，消费合同3b157a3；一个GET方法复用request/auth/abort/errors。真实HTTP1红（方法不存在）→1绿28ms，suite199ms；403/404/409保持原错误且不重试，abort不发请求，原nullable unavailable/ready身份不推断权限。tsc exit0，0PG/provider。clean-code复核：无重复策略、状态机或输入重写，仅可选attempt查询编码；证据见 steering-admission-client-manifest.json。

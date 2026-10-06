@@ -1,0 +1,49 @@
+{
+  "target": "25a22e0488d6d9aef1f3308e3179e0e874fa425f",
+  "observedAt": "2026-10-06 08:24:26 UTC",
+  "contractTarget": "3b157a3e21166eb06473c1deb6b9f0eded1169e3",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 37776,
+      "sha256": "84e63baeebed37dd019e72c71b00e32cb4b3962504e916794c814520ddccd2c4"
+    },
+    {
+      "path": "packages/client/src/steering-admission.test.ts",
+      "bytes": 2734,
+      "sha256": "06e38b69943ba773369acc4afdee8e9a25f6b0584f74c7c7c75375142430e8e0"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/steering-admission-client-red.txt",
+      "bytes": 1224,
+      "sha256": "a2e47c8585814b1f2395b4d564dbba8066227ee2ce08cf3311a447716476d188"
+    },
+    {
+      "path": "docs/evidence/f01/steering-admission-client-green.txt",
+      "bytes": 320,
+      "sha256": "6f680d43b2aaabce3ad5f02bf0b1910735f8c4c125bb8107c436757add3d4081"
+    },
+    {
+      "path": "docs/evidence/f01/steering-admission-client-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "readonlyContract": {
+    "path": "packages/contracts/src/active-steering.ts",
+    "bytes": 7453,
+    "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+  },
+  "checks": {
+    "http": {
+      "passed": 1,
+      "testMs": 28,
+      "suiteMs": 199
+    },
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "limits": "Thin authenticated GET only. No admission policy, DB, host switch or deployment proven. Ready remains advisory; mutation rechecks current state. No retry/fallback."
+}

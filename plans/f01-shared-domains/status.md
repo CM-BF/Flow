@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:20:30 UTC / main32c371d |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:24:26 UTC / main32c371d |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | main9c6fa9b100f04916f43b04280f05f497b28eeb0f；O09共享生产目标 c587436c12324b5c121957643d51173cfc66009e |
-| 工作树dirty状态 | 产品停写；本次仅main接收记录 |
-| 工作分支状态 | delivered |
-| 检查状态 | PASSED 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；HTTP2/2与tsc0，0provider |
+| 工作树dirty状态 | 产品已固定；本次证据与状态提交 |
+| 工作分支状态 | in-progress |
+| 检查状态 | PASSED 25a22e0488d6d9aef1f3308e3179e0e874fa425f；HTTP1/1与tsc0，0provider |
 | 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已含O09CLI和CHAT09薄client/领域；个人center/runner仍b54/v6，未开启steering。 |
-| Review | APPROVED：Root 89931配置协商与0d48 CLI；领域cd859由独立assignment_review批准。 |
-| 实现目标 | 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/execution-profiles.test.ts |
+| Review | NOT_STARTED：CHAT10只读受理状态client；先前899配置协商已独审main。 |
+| 实现目标 | 25a22e0488d6d9aef1f3308e3179e0e874fa425f |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/steering-admission.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 原生子任务命令行和兼容的执行配置目录已发布到主线。 |
-| 下一可用交付 | 本片段已交付；执行中补充指令的可用状态另由CHAT10推进。 |
+| 当前产出 | 客户端已能读取当前任务是否可提交补充指令及具体原因。 |
+| 下一可用交付 | 完成受理状态读取的独立审查，再接中心实现。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -116,3 +116,5 @@
 2026-10-06 08:17 UTC：Root独立只读APPROVED 89931薄client，2源/3raw固定hashbytes及2/2 HTTP、typecheck0核验，无P1/P2/未重跑。CHAT09领域最终metadata e021已受控接收。目录header仅声明客户端可解析格式，运行服务及steering能力未启用。
 
 2026-10-06 08:20:30 UTC：main/origin32c371d已接CLI0d48、配置client899与CHAT09 cd859；本片批准绑定保持原target，不继承为provider或个人服务已开启。I02固定34source精确相同、O09 readonly组合2/2与root/Webtypes0。
+
+| F01-25 | in-progress | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，待独立审查；不包含中心门禁/模型 |

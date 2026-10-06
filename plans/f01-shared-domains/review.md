@@ -1,5 +1,13 @@
 # F01 共享接线审查
 
+**当前增量状态：NOT_STARTED（CHAT10只读受理状态client）**
+
+Review target commit：25a22e0488d6d9aef1f3308e3179e0e874fa425f
+
+Scope：packages/client/src/index.ts, packages/client/src/steering-admission.test.ts。证据 steering-admission-client-manifest.json；仅公开DTO薄读取，不预先批准CHAT10领域或启用开关。
+
+## 上一薄client批准（已main32c）
+
 **当前增量状态：APPROVED（CHAT09执行配置格式协商）**
 
 Review target commit：89931e0d9cfd00b5f51f5b266b7aaa38bba2718b
