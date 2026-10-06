@@ -53,8 +53,8 @@ export interface GoalExplanation {
   source: { projectRevision: number; nodeId?: string; inputVersion?: number; executionId?: string };
 }
 export interface GoalNodeView {
-  nodeId: string; title: string; dependsOn: string[]; definition: GoalDefinition | null;
-  execution: GoalExecution | null; accepted: GoalArtifactBinding | null;
+  nodeId: string; title: string; dependsOn: string[]; definition: Omit<GoalDefinition, 'input'> | null;
+  execution: Omit<GoalExecution, 'input' | 'dependencies'> | null; accepted: GoalArtifactBinding | null;
   deliveryCurrent: boolean; dependenciesReady: boolean; reason: string;
 }
 export interface GoalSnapshot {
@@ -71,5 +71,11 @@ export interface CreatedGoal { goal: GoalView; replayed: boolean }
 /** Trusted host binds credentials and goal scope; model arguments cannot widen it. */
 export interface GoalToolPort {
   readGoal(goalId: string): Promise<GoalSnapshot>;
+  readGoalInput(goalId: string, nodeId: string, version?: number): Promise<GoalDefinition>;
   commandGoal(goalId: string, command: GoalCommand, idempotencyKey: string): Promise<GoalCommandResult>;
 }
+
+export const goalInputQuerySchema = z.strictObject({ version: z.coerce.number().int().min(1).max(2_147_483_647).optional() });
+export const goalHistoryQuerySchema = z.strictObject({ nodeId: idSchema, after: idSchema.optional(), limit: z.coerce.number().int().min(1).max(100).default(20) });
+export const goalToolReadSchema = z.strictObject({ nodeId: idSchema.optional(), version: projectVersionSchema.optional() });
+export const goalToolCommandSchema = z.strictObject({ command: goalCommandSchema, idempotencyKey: z.string().min(1).max(200) });
