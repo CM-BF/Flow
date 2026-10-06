@@ -1,5 +1,5 @@
 {
-  "state": "CACHE_REVIEW_APPROVED_WAITING_MAIN_ATTACHMENT_FIRST12_APPROVED_NOT_TAKEN",
+  "state": "CACHE_MAIN_ACCEPTED_RELEASED_ATTACHMENT_FIRST12_APPROVED_NOT_TAKEN",
   "source": "root structural approvals; manager fresh D04 COMMITTED after owner main-close",
   "baseObserved": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
   "cache": {
@@ -83,7 +83,10 @@
       "final": "55b48b7daa6928839268c542080e2884a651a1f0",
       "audit": "workspacecache01-candidate-management-audit.json",
       "allSixteenScopesStopped": true,
-      "claimState": "active; retain until formal main and owner closeout"
+      "claimState": "released v2; six overlapping paths require new fresh take/amend",
+      "main": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+      "ownerMainCloseout": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+      "mainAudit": "cache-dashsum-main-closeout-audit.json"
     }
   },
   "attachmentProduction": {
@@ -166,7 +169,9 @@
       "maxEvidenceBytes": 16777216,
       "eachRoundHasFixedPurposeAndCumulativeTime": true
     },
-    "moduleMainObservation": "attachi01-main-input-observation.json"
+    "moduleMainObservation": "web-cache-dashsum-main-observation.json",
+    "validationMatrix": "attachi02-production-validation-matrix.json",
+    "matrixState": "root approved read-only matrix; not executed; first12 still waits module formal main"
   },
   "exactIntersection": [
     "apps/web/src/App.tsx",

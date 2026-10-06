@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:54 UTC |
+| 最近更新 | 2026-10-06 12:00 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-05](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | 已审CACHE关闭视图/正文有界保护待main；组合标签与插件入口仍开放 |
+| 下一可用交付 | CACHE关闭视图/正文保护已main；附件组合验证、标签与插件入口仍开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -53,4 +53,4 @@ WORKSPACEPERF01 [限定审查来源](../../docs/evidence/web-platform/workspacep
 
 11:11管理fresh检查：固定main2e71、App/Thread/outbox/session/workspace-state当前无writer；projection的ACK已release，client归F01。仅时点，不是预占；panels正式只读最小cache Interface，ATTACHI未来App窗口仍需有序协调，[scope依据](../../docs/evidence/web-platform/workspace-cache-scope-observation.json)。
 
-CACHE已root结构批准并fresh领取883321bc v1十六scope，fixed fd1322新独立web-workspace-cache/codex同名；[receipt](../../docs/evidence/web-platform/workspacecache01-take-receipt.json)。固定4ec291c2381faa0fc212cf598b8126b9feecae71/final55b48b7daa6928839268c542080e2884a651a1f0已root限定批准并normalpush双端clean，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md)。32含initial/open/protected，closed-clean0；reply2/2MiB、queue4/64KiB只正文UTF8。未提交profile/project选择、pending composer capture（即使items移除）、未dismiss receipts均保护。与ATTACHI02六条交集含两专测，短窗口后停写交权再amend；本片局部实现已审，main待正式接收；不冒heap/全workspace上限，原基线仍partial。root独立133/14hash/206deps、作者7分次browser68.689s边界见[管理审计](../../docs/evidence/web-platform/workspacecache01-candidate-management-audit.json)，不把早期不同App源码报告当最终完整矩阵。
+CACHE已root结构批准并fresh领取883321bc v1十六scope，fixed fd1322新独立web-workspace-cache/codex同名；[receipt](../../docs/evidence/web-platform/workspacecache01-take-receipt.json)。固定4ec291c2381faa0fc212cf598b8126b9feecae71/final55b48b7daa6928839268c542080e2884a651a1f0已root限定批准并normalpush双端clean，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md)。32含initial/open/protected，closed-clean0；reply2/2MiB、queue4/64KiB只正文UTF8。未提交profile/project选择、pending composer capture（即使items移除）、未dismiss receipts均保护。与ATTACHI02六条交集含两专测，短窗口后停写交权再amend；本片局部实现已审，已正式main017adc、owner10ca8双端clean后883321 v2 released，六交集全停写；后继仍fresh take；不冒heap/全workspace上限，原基线仍partial。root独立133/14hash/206deps、作者7分次browser68.689s边界见[管理审计](../../docs/evidence/web-platform/workspacecache01-candidate-management-audit.json)，不把早期不同App源码报告当最终完整矩阵。

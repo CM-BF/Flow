@@ -1,0 +1,134 @@
+{
+  "observedAt": "2026-10-06T11:58:27.543820+00:00",
+  "ledgerObservedAt": "2026-10-06T11:58:25.384Z",
+  "main": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+  "tasks": [
+    {
+      "task": "WPF-DASHSUM01",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/execution-dashboard/public/app.js",
+          "apps/execution-dashboard/src/human.mjs",
+          "apps/execution-dashboard/test/human-summary.test.mjs",
+          "apps/execution-dashboard/test/task-links.browser.mjs",
+          "docs/evidence/wpf-dashboard-summary",
+          "plans/wpf-dashboard-summary"
+        ],
+        "state": "active",
+        "branch": "codex/dashboard-human-summary",
+        "origin": "new",
+        "taskId": "WPF-DASHSUM01",
+        "worker": "w01_owner",
+        "claimId": "fe63511a-8d99-4b0b-be09-a1efd971dd3d",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary",
+        "createdAt": "2026-10-06T11:43:40.838Z",
+        "updatedAt": "2026-10-06T11:43:40.838Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "final": "2daf0706902d1611a6da4dc4a7ea674186720a1e",
+      "remote": "2daf0706902d1611a6da4dc4a7ea674186720a1e",
+      "clean": true,
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "sourceCount": 4,
+      "parser": {
+        "errors": [],
+        "human": true,
+        "review": {
+          "state": "approved",
+          "record": "APPROVED**",
+          "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044"
+        },
+        "implementation": {
+          "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+          "scopes": [
+            "apps/execution-dashboard/src/human.mjs",
+            "apps/execution-dashboard/public/app.js",
+            "apps/execution-dashboard/test/human-summary.test.mjs",
+            "apps/execution-dashboard/test/task-links.browser.mjs"
+          ],
+          "errors": []
+        }
+      },
+      "ownerStoppedAllScopes": true
+    },
+    {
+      "task": "WPF-WORKSPACECACHE01",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/read-cache.ts",
+          "apps/web/src/data-renderers/flow-reply-detail.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/workspace-retention.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/plugin-integration.test.ts",
+          "apps/web/test/workspace-retention.browser.ts",
+          "apps/web/test/workspace-retention.fixture.ts",
+          "apps/web/test/workspace-retention.test.ts",
+          "docs/evidence/wpf-workspace-cache",
+          "plans/wpf-workspace-cache"
+        ],
+        "state": "active",
+        "branch": "codex/web-workspace-cache",
+        "origin": "new",
+        "taskId": "WPF-WORKSPACECACHE01",
+        "worker": "workspace_panels_owner",
+        "claimId": "883321bc-933f-4da0-8f86-f200c02620cf",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+        "createdAt": "2026-10-06T11:33:51.839Z",
+        "updatedAt": "2026-10-06T11:33:51.839Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "final": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+      "remote": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+      "clean": true,
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "sourceCount": 14,
+      "parser": {
+        "errors": [],
+        "human": true,
+        "review": {
+          "state": "approved",
+          "record": "APPROVED**",
+          "target": "4ec291c2381faa0fc212cf598b8126b9feecae71"
+        },
+        "implementation": {
+          "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+          "scopes": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/conversations/queue/ConversationQueue.tsx",
+            "apps/web/src/conversations/queue/projection.ts",
+            "apps/web/src/conversations/read-cache.ts",
+            "apps/web/src/data-renderers/flow-reply-detail.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/src/workspace-retention.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "apps/web/test/plugin-integration.test.ts",
+            "apps/web/test/workspace-retention.browser.ts",
+            "apps/web/test/workspace-retention.fixture.ts",
+            "apps/web/test/workspace-retention.test.ts"
+          ],
+          "errors": []
+        }
+      },
+      "ownerStoppedAllScopes": true
+    }
+  ],
+  "managerProductTests": 0
+}

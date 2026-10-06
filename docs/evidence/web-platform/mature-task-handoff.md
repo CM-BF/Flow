@@ -1,14 +1,19 @@
 # 成熟聊天大task来源与登记队列
 
-## 当前优先接收：DASHSUM01 与 WORKSPACECACHE01（2026-10-06 11:54 UTC）
+## 当前接收/交权事实（2026-10-06 12:00 UTC）
 
-**Lead已主动读取两份最终批准source并开始受控接收；这是接收进行中，不是MAIN_RECEIPT。** 下一正常登记批纳两source，不复跑矩阵；个人8d8产物不随main集成改变。另一个关键输入仍是ATTACHI01模块4c/4a9b正式接收，CACHE接收不会替代该模块或生产附件接线。
+**DASHSUM01 与 WORKSPACECACHE01 已正式main接收并完成写权释放。** 固定main/origin `017adc276a888a218bed3ef9963bc4dabbc6cec2` clean；DASHSUM c1de四源 + CACHE4ec十四源与获审target/manifest逐字相同，[管理18-source核验](web-cache-dashsum-main-observation.json)、[Lead原比较/组合types0](lead-web-cache-dashboard-summary-main-comparison.json)。这是受控source intake，原feature commit不是main祖先；原独审/浏览器没有重跑，个人8d8产物不随main改变。
 
-**DASHSUM01 已独审批准，请Lead受控接收四源及自身记录。** 固定实现 `c1de71fd316f9bba1ea5f030f5a54d2332d09044`，最终metadata **bc4d0f8bd7c4dbf1351f72f8e6c6ae1696ce130d**；管理实核local=origin/clean、四hash等target/manifest/browser、六scope无越界、parser/review target正确、产品零后续变化，[审计](dashsum01-candidate-management-audit.json)。唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/plans/wpf-dashboard-summary/status.md)、[manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/docs/evidence/wpf-dashboard-summary/source-manifest.json)。root独立22/22与作者27 Node、6 browser/8.374s分开；root已看浅色desktop/深色390详情。首屏去父子重复、短领取身份、父到直属子片下钻同片完成；未验实际4320部署。主线/部署receipt后再由root沿既有页面入口做一次只读首屏核，不用临时fixture冒实际发布。fe63511a v1六scope停写但保留，等待main收口后CAS释放。
+| task | 最终owner主线收口（normalpush、local=origin/clean） | 写权 |
+| --- | --- | --- |
+| DASHSUM01 → D01 | `2daf0706902d1611a6da4dc4a7ea674186720a1e`；[唯一source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/plans/wpf-dashboard-summary/status.md)，获审target c1de71fd316f9bba1ea5f030f5a54d2332d09044 | [fe63511a v2 released](dashsum01-main-release-receipt.json) 11:58:33.433Z，六scope全停写 |
+| WORKSPACECACHE01 → MATURE05 | `10ca8eef12df8dd675ceb61b472778ae529a6201`；[唯一source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md)，获审target 4ec291c2381faa0fc212cf598b8126b9feecae71 | [883321bc v2 released](workspacecache01-main-release-receipt.json) 11:58:33.589Z，十六scope全停写，含ATTACHI六交集 |
 
-**WORKSPACECACHE01 已独审批准，请Lead受控接收十四源及自身记录。** 固定实现 `4ec291c2381faa0fc212cf598b8126b9feecae71`，最终metadata **55b48b7daa6928839268c542080e2884a651a1f0**；管理实核双端同/clean、14hash等target/manifest、16scope无越界、parser/review正确，[审计](workspacecache01-candidate-management-audit.json)。唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md)、[manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/docs/evidence/wpf-workspace-cache/candidate.json)。root独立133/133、14源/206只读依赖核验；作者133 direct/types0及7分次HTTP browser累计68.689s。最终settlement检查与全部14源一致；早期App差accepted收口增量、失败与分次来源全部保留，不能称最终SHA完整browser矩阵重跑。32驻留conversation与正文预算不等全workspace/heap上限，完整Arc/plugin/附件仍开放。883321bc v1十六scope停止写入且保留；main receipt→owner纯metadata正常push双端clean→停写→fresh CAS交权，六ATTACHI交集含两专测，不提前给第二writer。
+[main收口/parser/remote审计](cache-dashsum-main-closeout-audit.json)通过；[独审原日志/audit逐字归档核验](candidate-root-raw-preservation.json)四文件一致。DASHSUM作者27/6browser8.374s与root22分开；CACHE作者/独立133及七分次browser68.689s保原限制：仅最终settlement全部14源匹配，早期App差accepted小增量，不冒最终完整browser重跑。CACHE32conversation及正文预算不等heap/全workspace保证。
 
-**ATTACHI02排程保持明确**：公共桥接已fd1322 main；[本轮只读观察](attachi01-main-input-observation.json)中main bf067仍没有4c模块，未收到Lead正式接收。ATTACHI01原4c/4a9继续已审待接；w01完成DASHSUM交付后，待准确含4c的正式组合base才新树fresh领取已批首12，不复制模块或写stub。CACHE后续六路径移交按[唯一范围方案](workspace-cache-attachment-binding-proposals.json)CAS串行；两片现[fresh writer账本](candidate-management-live-claims.json)仍active，不把源码停写当released。此批管理0产品复测/0 API采样/0个人服务操作。
+**登记与部署仍独立等待。** 固定017adc的registry尚无这两项显式记录，Lead正常登记/4320批次进行中；未收到本次部署receipt，本组没有HTTP采样或刷新页面。DASHSUM需要部署回执后由root沿既有页面一次只读首屏检查；临时fixture不代替实际发布。
+
+**剩余关键输入：ATTACHI01模块4c/4a9b。** 017adc仍不含该模块controller；公共桥接fd1322和CACHE main不等附件输入模块或生产App接线已完成。原4c4de124b24a85b9e2a13e097b29c80b1e84d11a / final4a9b167888cd9dab3490886d039fc50e7fb39083继续已审待Lead按[原9-source manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/docs/evidence/wpf-attach-i01/source-manifest.json)受控接收，94b84保留。w01待准确正式组合base才独立新树fresh取已批ATTACHI02首12；CACHE六交集现已released，后续实际amend仍须fresh查重，不能把本时点释放当永久写许可。详见[唯一范围方案](workspace-cache-attachment-binding-proposals.json)。管理本轮0产品重测/0API/0个人服务操作。 ATTACHI02[实际factory/App验证矩阵](attachi02-production-validation-matrix.json)已结构认可但未执行：直接createServer/FlowClient/026六route无fallback，1PG+1Chrome累计600s含构建启动及每轮20s清理；capture失效0receipt/0POST保材料，真实handoff后同步consume，缺cap proxy不冒真实旧center。
 
 ## ATTACH正式main接收与CACHE领取（11:34历史输入）
 

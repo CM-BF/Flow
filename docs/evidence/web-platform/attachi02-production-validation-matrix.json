@@ -1,0 +1,51 @@
+{
+  "recordedAt": "2026-10-06T12:00:10.845107+00:00",
+  "task": "WPF-ATTACHI02",
+  "parent": "WPF-MATURE-03",
+  "state": "READ_ONLY_MATRIX_ROOT_APPROVED_NOT_EXECUTED_NOT_TAKEN",
+  "source": "w01 read-only proposal and root structure approval; fixed main017adc plus approved module4c, not yet an officially combined input",
+  "fixedMain": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+  "approvedModule": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+  "requiredInput": "Formal module main receipt and exact combined baseline; no copying or stubs",
+  "fixture": {
+    "approach": "Own fixture directly createServer with actual FlowClient and production App through Vite preview",
+    "mustObserve": [
+      "migration026",
+      "all six attachment routes",
+      "fallback=false"
+    ],
+    "avoid": [
+      "historical attachment fixture private owner token/fallback as actual App public input",
+      "old mocked context receipt template1 as evidence for template2",
+      "importing whole existing test or operating personal services"
+    ],
+    "readOnlyReferences": [
+      "apps/server/src/index.ts:54/88/165",
+      "packages/client/src/attachment-production.test.ts:20-30/46-74/100-148",
+      "apps/server/src/attachments/fixture.ts:75",
+      "apps/web/test/conversation-queue.fixture.ts:80-86"
+    ]
+  },
+  "budget": {
+    "cumulativeSecondsIncludingBuildStartupCleanup": 600,
+    "randomPostgresDatabasesPerRound": 1,
+    "chromiumPerRound": 1,
+    "cleanupReserveSecondsPerRound": 20,
+    "evidenceBytes": 16777216,
+    "rounds": "unit first; one actual App/HTTP round, further narrow runs only for specific failures within cumulative budget"
+  },
+  "acceptance": [
+    "Actual Outbox/QueueCommands deepfreeze, omitted empty attachments and exactordered refs; receipt handoff before consumption",
+    "Actual upload metadata/body on demand, Send/Queue v2 shared matcher and plain v1",
+    "Bad200/lostACK unknown same key/body/order explicit recovery, lateACK cannot clear newer draft",
+    "Official paperclip/drop/@file,390themeskeyboard,stableview alias,two panes,disable/hide/close protection",
+    "Damaged/refused storage keeps raw and plaintext; no old-scope read on missing cap/newnamespace",
+    "Async adapter prepare invalidated by hide/offline/revoke: before local handoff,0localreceipt/0POST and original text/refs retained; no silent plaintext downgrade",
+    "Valid capture -> freeze -> verified actual new localreceipt -> consume in same synchronous stack, never await networkACK; removed items with pending capture remain CACHEprotected"
+  ],
+  "legacyBoundary": "Missing-cap proxy simulates old center; not a rerun of real historical backend",
+  "logs": "No token or user body; key/body hashes and ordered references only",
+  "testsExecuted": 0,
+  "servicesStarted": 0,
+  "claimsTaken": 0
+}

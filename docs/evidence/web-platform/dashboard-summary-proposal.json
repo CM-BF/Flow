@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-06T11:43:00.512034+00:00",
-  "state": "ROOT_REVIEW_APPROVED_FINAL_PUSHED_WAITING_MAIN",
+  "state": "MAIN_ACCEPTED_OWNER_CLOSED_RELEASED",
   "taskId": "WPF-DASHSUM01",
   "parent": "D01",
   "parentCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md",
@@ -95,7 +95,10 @@
     "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
     "final": "bc4d0f8bd7c4dbf1351f72f8e6c6ae1696ce130d",
     "audit": "dashsum01-candidate-management-audit.json",
-    "realDeployment": "NOT_OBSERVED",
-    "claimState": "active; all six scopes stopped, pending main closeout"
+    "realDeployment": "PENDING_RECEIPT",
+    "claimState": "released v2",
+    "main": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+    "ownerMainCloseout": "2daf0706902d1611a6da4dc4a7ea674186720a1e",
+    "mainAudit": "cache-dashsum-main-closeout-audit.json"
   }
 }
