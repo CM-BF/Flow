@@ -15,11 +15,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | 薄client1HTTP独审通过；生产实际HTTP/PG1红→1绿与root types0，专用库正常清理；0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | 薄client7bbfa独立APPROVED；本次生产4源窄审等待 |
+| Review | 薄client7bbfa/native_center、生产e6abc/assignment独立APPROVED；待受控main接收 |
 | 实现目标 | e6abc4dde828686661c6b416a17de95b497c9734 |
 | 实现范围 | apps/server/src/events.ts, apps/server/src/index.ts, packages/contracts/src/runner.ts, packages/client/src/context-history-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 中心可持久保存绑定当前执行身份的上下文观测，并提供授权历史读取与重启恢复。 |
 | 下一可用交付 | 完成上下文生产接线独审；并行接入已审目标交付统一读口。 |

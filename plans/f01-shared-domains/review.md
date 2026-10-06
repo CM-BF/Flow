@@ -231,3 +231,9 @@ Reviewer native_center_owner，仅3file65行thin client/export，不审自己的
 Review target commit: 7bbfa1c8c97c5aa871080ddc0efab7cc87b73e42
 
 APPROVED — native_center_owner独立只读；5源/12raw/18领域输入hash一致，无P1/P2。1HTTP与最终types0，初失败保留，未重跑。仅GET解码/身份/导出及固定依赖，生产挂载另审。见[回执](../../docs/evidence/f01/context-history-client-independent-review.json)。
+
+## 上下文历史生产接线
+
+Review target commit: e6abc4dde828686661c6b416a17de95b497c9734
+
+APPROVED — assignment_review独立只读，无P1/P2；4源/8raw/18已审domain输入核同源，027/owner route/reportEvents同TX/身份/重放/重启成立。未重跑检查，provider0，SDK采样/UI仍后继。见[独审回执](../../docs/evidence/f01/context-history-production-independent-review.json)。
