@@ -4,7 +4,7 @@
 
 Review target commit: `a750dbaa482ddd54aedd08495c66e73cc1458e53`
 
-Base：`c5bab40ffd9a334403c0db743f798d10815961f0`；固定 delivery：`8cf6a00ef9d9d3b36a7889312e7b1ccc16fc438a`。后续 metadata 不扩大产品批准范围；main 尚未接收。
+Base：`c5bab40ffd9a334403c0db743f798d10815961f0`；固定 delivery：`8cf6a00ef9d9d3b36a7889312e7b1ccc16fc438a`。后续 metadata 不扩大产品批准范围；main 已在 `648e331c58043cf7ee307300521ab1c628cb2ee1` 接收。
 
 只读核实际 WT/branch/head/dirty 与固定 manifest；20 域源、5 共享已审输入、5 直接验证文件、18 保护输入及 46 原始证据 fixed/current 字节及 SHA 全同。审查范围为 status 所列 literal 产品范围与受控共享输入，验收包括严格有限目的 profile 与旧 Native codec/目录保持、普通/会话/goal 不能借工程 profile、错 target/purpose 在受理及 claim 前拒绝、可信 recipe 不接任务路径/代码/命令、持久自有 marker 校验、unknown lease 不重建，以及复用唯一 host journal/outbox/recovery 和显式 main 互斥组合。
 
@@ -12,4 +12,6 @@ Base：`c5bab40ffd9a334403c0db743f798d10815961f0`；固定 delivery：`8cf6a00ef
 
 批准限定实际受信同 UID 的 calculator-v1 合成 fixture、不可变 pin、用途/目标门禁及真实 main 恢复路径；不是任意模型工程能力、OS 沙箱或远端独立能力认证。lost artifact ACK 在 checker 已退出后发生，证明 artifact 已持久而 verification 仍 pending、任务 uncertain，journal 保留且重启零新 claim；不把该场景当作未知外部 checker 已停止的证明。仍为 0 provider，不涉及真实 app-server、账户或模型预算。
 
-作者回应：接受独立结论，产品源码保持冻结；仅更新 canonical metadata，等待受控 main receipt 后记录集成和释放。
+作者回应：接受独立结论，产品源码保持冻结；仅更新 canonical metadata，已核受控 main receipt；本收口 metadata push 后停止所有写入并释放。
+
+最终集成核验：20域源对原独审target/main/current完全一致，[main receipt](../../docs/evidence/eng01b/main-receipt.json)保留固定逐项hash；最终真实I02组合root noEmit0，原RELEASE01无关类型失败不删除。未重跑123；review批准范围不因共享产品继续推进而扩大。
