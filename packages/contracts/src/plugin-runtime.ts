@@ -9,7 +9,7 @@ export const PLUGIN_RUNTIME_LIMITS = { bodyBytes: 32_768, responseBytes: 65_536,
 const uuid = z.uuid();
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
 const storeId = z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/);
-const reason = z.string().trim().min(1).max(512);
+const reason = z.string().trim().min(1).max(512).refine(isPersistablePluginText, 'Invalid persisted reason');
 const jsonBytes = (value: unknown) => new TextEncoder().encode(JSON.stringify(value)).byteLength;
 const bounded = (value: unknown) => jsonBytes(value) <= PLUGIN_RUNTIME_LIMITS.bodyBytes;
 /** Text ultimately persisted in PostgreSQL text/jsonb: no NUL or unpaired UTF-16 surrogate. */

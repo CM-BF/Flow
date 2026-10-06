@@ -16,6 +16,7 @@ test('new runtime commands do not extend the legacy mutation codec', () => {
   expect(pluginRuntimeCommandSchema.parse(enable)).toEqual(enable);
   expect(pluginCommandSchema.safeParse(enable).success).toBe(false);
   expect(pluginRuntimeCommandSchema.safeParse({ ...base, change: { kind: 'configure', values: {} } }).success).toBe(false);
+  for (const invalid of ['\0', '\ud800', '\udc00']) expect(pluginRuntimeCommandSchema.safeParse({ ...enable, reason: invalid }).success).toBe(false);
   for (const change of [{ kind: 'configure', values: {} }, { kind: 'set-grants', capabilities: ['tool'] }, { kind: 'select-version', versionId: id }]) {
     expect(pluginCommandSchema.safeParse({ ...base, change }).success).toBe(true);
   }

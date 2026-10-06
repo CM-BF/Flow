@@ -19,3 +19,5 @@ Module职责：storage集中registry revision追加；runtime store维护有界�
 ## 2026-10-06 23:27:49 UTC 持久化与直接消费者
 
 9abf静态P2促使把可持久化文本规则留在唯一公有predicate：ES2023 surrogate校验+拒NUL，供新任务合同及窄host输出复用。拒绝而非清洗/替换，保留BOM/emoji/empty verification语义。中心用现ownedAttempt/registration锁与phase独立唯一键；fixture用唯一034迁移、真实owner/runner auth/HTTP/事务/PG发送客户端，无SQL schema副本；安装记录是明确合成来源元数据，真实包执行另在runner测试。新测试均未执行，不能宣称资源清理已完成。测试own root创建立即登记、同inode清理、tar close等待及结果保留；browser输出移自有排他目录，进度写失败不跳cleanup。源码审查发现/修复与运行证据分开，0provider/工程checks。
+
+23:29:27安全点：修复静态lease晚锁P2，用原attempt lease的最终DB时钟检查覆盖首次/重放；保持既有锁序，不续lease、不加FSM。未来PG回归先证明实际pid等待目标锁，再跨原lease释放，避免仅sleep假阳性。本文仅源码审查记录，9case/合同/runner检查仍未执行。

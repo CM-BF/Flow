@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 23:27:49 UTC |
+| 最近更新时间 | 2026-10-06 23:29:27 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,11 +11,11 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；接收metadata065938bf；首源码9abf0993；本次固定持久化文本修复/直接消费者源码，未main |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；接收metadata065938bf；首源码9abf0993；文本/消费者a81b2ed0；本次固定lease等待修复，未main |
 | 工作树 dirty 状态 | 供给overlay已在065938bf固定；当前仅v8所领源码/测试/metadata变更，随本checkpoint提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 当前enable/binding；资源低于门槛，0测试/types/import/build/install/PG/browser/provider；历史通过不移用 |
-| Review | NOT_STARTED 当前领域/持久binding/窄host；9abf静态P2已按源码修复，待固定增量复审/真实检查；历史e682/a578/bf337批准保留 |
+| Review | NOT_STARTED 当前领域/持久binding/窄host；9abf两项静态P2已按源码修复，待固定增量复审/真实检查；历史e682/a578/bf337批准保留 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 领域合同/034/命令与读回/窄host已写；修复9abf静态P2并补合同、PGHTTP、真实包与Web直接消费者源码，全部检查待运行 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql |
@@ -125,3 +125,5 @@
 2026-10-06 23:22:45 UTC：fresh账本23:18:42.545确认v8 ACTIVE。首源码checkpoint形成单revision追加、正式034复合身份/不可变绑定与phase唯一收据、独立runtime命令/未挂载公开路由和原host/flow.text窄适配。旧四change schema不扩，仅operation读回增加两kind并补Web两个label。已落实grant/fence先于幂等缓存，disable不撤旧pin；新claim v3协商/旧reader过滤/retained/reconciliation仍共享后继，生产不mount。Root静态指出ES2023无String.isWellFormed声明，已改局部surrogate检查并保留emoji/lone surrogate/BOM用例；没有修改tsconfig。DB reviewer对034初稿未见NULL/复合FK阻断，非正式实现批准。只做文件/Git空白检查，0工程checks；server/runner行为tests与browser输出修正仍本片待办，不以首checkpoint当交付。方法/架构影响见quality。
 
 2026-10-06 23:27:49 UTC：首checkpoint9abf0993已push。Mika静态发现NUL/孤surrogate无法持久化的P2；当前新增共享ES2023 predicate并应用title/input/contains.expected与包输出，非法输出在artifact创建前OUTPUT_REJECTED，空输出仍交flow.text失败。补齐6组合同、6组实际PGHTTP模块与11个参数化真实package行为case源码，均NOT_RUN，未把计划选择数当通过。中心fixture明确合成terminal材料元数据只验DB绑定，不称真实下载；runner fixture才实际包prepare/import/invoke，未来另受运行门禁。原plugins旧五kind读回断言保留/加强。Web两个label增加有界DTO注入断言，browser输出已改X01独立目录与wx，进度写失败仍执行cleanup；不触X03。接缝/未mount边界见[本片Interface](../../docs/evidence/x01/enable-binding-interface.md)。0工程运行/安装/PG/provider，当前source-only尚无运行依赖就绪证据。
+
+2026-10-06 23:29:27 UTC：Mika完成9abf静态审查，CHANGES_REQUESTED/两项P2：不可持久化文本与锁等待跨lease后仍可授权。文本修复a81保留并补reason拒绝；phase在command缓存/首次插入所有可能阻塞操作后再次clock_timestamp检查，过期整事务回滚。新增3个未运行PGcase：registration等待、首次command等待及缓存replay等待；专属application_name+实际pid/pg_locks未grant屏障证明请求已越过初始live，按原lease与DB时钟再放锁，核409和无新增授权/command。最终检查不称直到COMMIT的绝对墙钟原子。当前计划PG共9case、合同6组/runner11case与旧直接consumer，全部NOT_RUN。源码仍v8范围，0生产挂载/模型/PG/工程check；待固定静态复审与依赖/运行窗口。

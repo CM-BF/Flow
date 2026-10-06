@@ -17,4 +17,6 @@ phase唯一键为(binding,invocation,phase)，绑定task/attempt/ownerVersion/ru
 
 本片不能生产mount：共享owner还须完成v3 current claim资格/旧strict reader排除binding任务、完整请求journal、运行port/retained以及reconciliation拒绝丢binding重试。冻结tuple `{bindingProtocol,storeId,hostApiMajor}` 协商方向由Lead协调，本片不复制共享codec，不调用fixture fallback。actual runRunner/semver bundle/有来源event中心保存仍未接入；loaded/callable显式unknown。
 
-验证准备（尚未运行）：合同6组；中心6组真实专库/动态HTTP验证，包括034重入、单revision、CAS/replay、旧pin/restart、auth/fence/grant、约束失败事务回滚；其terminal installed来源是明确合成DB元数据，不声称下载。runner11参数化case使用真实自有小npm包、原prepareInstalledPackage/import/invoke，覆盖两gate/ACK未知/身份/持久化文本/空输出。旧plugins五kind直接回归与Web有界audit DTO label消费；Web不是enable交互或全生产旅程。所有运行须先由Lead准备依赖与开放各自资源窗口，当前未装依赖、未启动任何子进程/PG/浏览器/provider。
+验证准备（尚未运行）：合同6组；中心9个case真实专库/动态HTTP验证，包括034重入、单revision、CAS/replay、旧pin/restart、auth/fence/grant、约束失败事务回滚；其terminal installed来源是明确合成DB元数据，不声称下载。runner11参数化case使用真实自有小npm包、原prepareInstalledPackage/import/invoke，覆盖两gate/ACK未知/身份/持久化文本/空输出。旧plugins五kind直接回归与Web有界audit DTO label消费；Web不是enable交互或全生产旅程。所有运行须先由Lead准备依赖与开放各自资源窗口，当前未装依赖、未启动任何子进程/PG/浏览器/provider。
+
+23:29补充：phase在registration锁、幂等锁/缓存及授权插入完成之后，再以数据库clock_timestamp检查原lease，失效回滚（包括replay）；仍不宣称最终query到COMMIT之间没有墙钟间隙。3个专属PID/pg_locks真实等待case源码明确覆盖这条边界，未运行。reason同样拒绝NUL/孤surrogate。

@@ -116,6 +116,10 @@ export async function authorizePluginPhase(pool: Pool, runnerId: string, input: 
       return pluginGrantReceiptSchema.parse({ ...input, protocol: PLUGIN_RUNTIME_PROTOCOL, taskId: task.id, runnerId,
         authorizedRevision: prior?.authorized_revision ?? current.revision, replayed: prior !== undefined });
     });
+    // Registration/advisory locks may have consumed the lease. This includes cached replays.
+    // Check after every blocking authority operation; it is not a wall-clock guarantee through COMMIT.
+    const stillLive = (await client.query<{ live: boolean }>('SELECT $1::timestamptz>clock_timestamp() AS live', [attempt.lease_expires_at])).rows[0]!.live;
+    if (!stillLive) throw new HttpError(409, 'plugin_attempt_inactive', 'The tool attempt lease expired while authorization was pending.');
     return { ...result.value, replayed: result.replayed || result.value.replayed };
   });
 }

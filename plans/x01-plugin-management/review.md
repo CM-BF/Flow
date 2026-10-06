@@ -2,11 +2,13 @@
 
 状态：NOT_STARTED
 
-Review target commit：首源码9abf099326a78d4777fed1bdf9d986b3597ad5a3；本次为持久化文本P2修复及消费者源码增量，最终验证target未产生。
+Review target commit：首源码9abf099326a78d4777fed1bdf9d986b3597ad5a3；本次为持久化文本及lease等待两P2修复/消费者源码增量，最终验证target未产生。
 
 唯一owner已转入plugin-enable-binding树，claim6ddedc73 v8 ACTIVE；正式034已分配。已形成领域enable/disable、immutable binding/phase gate和窄host源码，尚无新工程检查或实现批准。前包动态SQL遗漏已由067显式补012/013/017/019；545文件全部供给。browser旧X03输出已改X01排他namespace，未运行；测试/typecheck/PG均NOT_RUN。先固定小合同/DDL交独审，旧host/center/leaf批准仅对应下文原target，不套用新生产链。
 
 2026-10-06 23:27:49 UTC：Mika对9abf静态审发现1P2（新输入/包输出接受NUL或孤surrogate，会导致PG text/jsonb不能持久化）。当前在已领合同/execution修复，不变更旧host或共享lib；合同反例与真实package输出反例源码已加，静态闭环及实际验证仍待，不将此记录为APPROVED。
+
+2026-10-06 23:29:27 UTC：9abf静态结论CHANGES_REQUESTED，追加lease晚锁P2。已补事务末live检查，缓存replay同受约束；3个真实锁屏障用例源码待运行。两P2修复当前待固定增量复审，0tests/typecheck/PG通过声明。
 
 ---
 

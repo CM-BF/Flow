@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { writeFile } from 'node:fs/promises';
+import { setTimeout as sleep } from 'node:timers/promises';
 import { afterAll, beforeAll, expect, test } from 'vitest';
 import { Pool } from 'pg';
 import { PgBoss } from 'pg-boss';
@@ -13,7 +14,7 @@ const database = `flow_x01_binding_${randomUUID().replaceAll('-', '')}`;
 const adminUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
 const databaseUrl = adminUrl.replace('/postgres', `/${database}`);
 const admin = new Pool({ connectionString: adminUrl, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 3000, query_timeout: 3500 });
-const pool = new Pool({ connectionString: databaseUrl, max: 4, connectionTimeoutMillis: 1500, statement_timeout: 4000, query_timeout: 4500 });
+const pool = new Pool({ connectionString: databaseUrl, max: 4, application_name: 'flow-x01-binding', connectionTimeoutMillis: 1500, statement_timeout: 4000, query_timeout: 4500 });
 const owner = `x01-${randomUUID()}`;
 let app: Awaited<ReturnType<typeof createServer>> | undefined;
 let boss: PgBoss | undefined; let base = ''; let creationRequested = false;
@@ -127,6 +128,7 @@ test('owner and runner roles, exact host/store/material and strict public bodies
   for (const change of [{ ...f.enable.change, materialInstallOperationId: other.materialId }, { ...f.enable.change, storeId: 'another' }]) expect((await request(path, { ...f.enable, change })).status).toBe(409);
   expect((await request(path, { ...f.enable, root: '/private' })).status).toBe(400);
   for (const invalid of ['\0', '\ud800', '\udc00']) {
+    expect((await request(path, { ...f.enable, reason: invalid })).status).toBe(400);
     const body = { expectedRevision: 3, title: 'Tool', input: 'input' };
     for (const value of [{ ...body, input: invalid }, { ...body, title: 'title' + invalid }, { ...body, verification: { kind: 'contains', expected: invalid } }]) {
       expect((await request(`/api/plugins/${f.registrationId}/tool-tasks`, value)).status).toBe(400);
@@ -186,4 +188,45 @@ test('binding constraint failure rolls back task and command, and immutable rows
   await expect(pool.query("UPDATE flow.plugin_tool_bindings SET configuration='{}' WHERE id=$1", [binding.bindingId])).rejects.toMatchObject({ code: '23514' });
   await expect(pool.query('DELETE FROM flow.plugin_runtime_hosts WHERE runner_id=$1', [f.runnerId])).rejects.toMatchObject({ code: '23514' });
   expect((await request(`/api/tasks/${binding.taskId}/plugin-binding`)).body).toEqual(binding);
+});
+
+test.each(['registration-first', 'command-first', 'command-replay'] as const)('lease expiry while waiting for %s rolls back positive authority, including cached replay', async gate => {
+  const f = await enabled(); const { binding } = await bound(f); const identity = await active(f, binding);
+  const input = { ...identity, phase: 'load' }; const key = randomUUID(); const operation = `plugin.tool-phase:${f.runnerId}`;
+  const path = '/api/runner/plugin-tool/authorize';
+  if (gate === 'command-replay') expect((await request(path, input, key, f.token)).body.replayed).toBe(false);
+  const blocker = await pool.connect(); let pending: ReturnType<typeof request> | undefined;
+  const waitUntil = async (read: () => Promise<boolean>) => {
+    const deadline = Date.now() + 3000;
+    while (Date.now() < deadline) { if (await read()) return; await sleep(15); }
+    throw new Error('Owned lock-wait condition was not observed');
+  };
+  try {
+    await blocker.query('BEGIN');
+    if (gate === 'registration-first') await blocker.query('SELECT 1 FROM flow.plugin_installations WHERE id=$1 FOR UPDATE', [f.registrationId]);
+    else await blocker.query('SELECT pg_advisory_xact_lock(hashtextextended($1,0))', [JSON.stringify([operation, key])]);
+    const originalLease = (await pool.query<{ lease_expires_at: Date }>("UPDATE flow.attempts SET lease_expires_at=clock_timestamp()+interval '1 second' WHERE id=$1 RETURNING lease_expires_at", [identity.attemptId])).rows[0]!.lease_expires_at;
+    pending = request(path, input, key, f.token);
+    const pattern = gate === 'registration-first' ? '%FROM flow.plugin_installations WHERE id=$1 FOR UPDATE%' : '%pg_advisory_xact_lock%';
+    let blockedPid: number | undefined;
+    await waitUntil(async () => {
+      blockedPid = (await pool.query<{ pid: number }>(`SELECT a.pid FROM pg_stat_activity a WHERE a.datname=$1 AND a.application_name='flow-x01-binding'
+        AND a.wait_event_type='Lock' AND a.query LIKE $2 AND EXISTS(SELECT 1 FROM pg_locks l WHERE l.pid=a.pid AND NOT l.granted)`, [database, pattern])).rows[0]?.pid;
+      return blockedPid !== undefined;
+    });
+    await waitUntil(async () => (await pool.query<{ expired: boolean }>('SELECT $1::timestamptz<=clock_timestamp() AS expired', [originalLease])).rows[0]!.expired);
+    await blocker.query('COMMIT');
+    const result = await pending; expect(result.status).toBe(409); expect(result.body.error.code).toBe('plugin_attempt_inactive');
+    const expected = gate === 'command-replay' ? 1 : 0;
+    expect((await pool.query('SELECT 1 FROM flow.plugin_tool_authorizations WHERE binding_id=$1', [binding.bindingId])).rowCount).toBe(expected);
+    expect((await pool.query('SELECT 1 FROM flow.commands WHERE operation=$1 AND key=$2', [operation, key])).rowCount).toBe(expected);
+    facts.push({ kind: 'lease-expired-under-lock', gate, blockedPid, originalLease: originalLease.toISOString(), observedWait: true,
+      committedPositiveRows: expected, replayWasPreexisting: gate === 'command-replay' });
+  } finally {
+    const rolledBack = await blocker.query('ROLLBACK').then(() => true, () => false);
+    blocker.release(!rolledBack);
+    facts.push({ kind: 'owned-lock-client-release', gate, rolledBack, destroyed: !rolledBack });
+    if (pending) await pending.catch(() => undefined);
+    expect(rolledBack).toBe(true);
+  }
 });
