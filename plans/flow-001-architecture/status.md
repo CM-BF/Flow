@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:45 UTC / main253035e11ab18ba33095c018949f856442021d49 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:03:06 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-001（[大task定义](plan.md)） |
+| 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 253035e11ab18ba33095c018949f856442021d49；R05B中心与client、C0未知执行保护、普通终文纯投影、知识聊天和视觉主题已审main。个人center/runner仍固定b1c2e398、accepting v12，Web固定artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90，原端口和用户tab未变；最近09:36实际4320观察117源；ENG、TUI01A、R05C已可见。 |
+| 已集成main状态 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066；已含TUI01A、R05C/C1、S01P02与聊天操作界面。真实Codex进程诊断和配置接入仍后继；个人backend/static保持b1c2e398、accepting v12。10:00:58.896Z实际看板122源且账本available。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 视觉主题和执行保护已接入主线；终端首片正在修复审查问题，Codex执行器继续接通。 |
-| 下一可用交付 | 接通Codex普通执行与终端会话，再交付能改代码、检查并回看产物的工程任务通路。 |
+| 当前产出 | 终端会话首片、Codex普通任务执行接口和聊天操作已进入主线；工程任务通路进入准备。 |
+| 下一可用交付 | 独立更新网页，并交付可实际改代码、运行受信检查和回看差异的工程通路。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
