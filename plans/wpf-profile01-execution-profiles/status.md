@@ -2,32 +2,32 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:37 UTC；固定输入，不追 moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:43 UTC；固定输入，不追 moving main |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra（派发指定） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles |
 | Branch | codex/web-execution-profiles |
-| 工作基线 / HEAD | 4e0289f29ffa48c6c49003837d4520f57c22b6b0；启动 metadata 未提交 |
-| 工作树dirty状态 | 仅本 feature 计划/证据新增 |
-| 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN |
+| 工作基线 / HEAD | 基线 4e0289f29ffa48c6c49003837d4520f57c22b6b0；实现 b2b2844414172cedf8cdc663e97a0b46c6905202，随后仅metadata |
+| 工作树dirty状态 | 实现已提交；本次仅计划/证据收尾，提交后核clean |
+| 工作分支状态 | implemented |
+| 检查状态 | PASSED：b2b2844414172cedf8cdc663e97a0b46c6905202；13局部 tests、Web typecheck、5组HTTP browser、隔离fixture production bundle；见证据 |
 | 已集成main状态 / HEAD | 未集成新模块；4e 仅为公共接口输入 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | b2b2844414172cedf8cdc663e97a0b46c6905202 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/catalog.ts, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/execution-profiles/selection.ts, apps/web/test/execution-profiles.browser.ts, apps/web/test/execution-profiles.fixture.tsx, apps/web/test/execution-profiles.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已核固定工作树与9范围领取，正在实现独立执行配置选择模块 |
-| 下一可用交付 | 可导入的目录与冻结输入接口、可查看选择器及局部验证 |
+| 当前产出 | 独立配置选择模块、冻结输入及双主题HTTP fixture已验证；待固定目标独立审查 |
+| 下一可用交付 | 独立审查闭环后交App owner另领接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-PROFILE01-01 | in-progress | w01_owner | 目录接口已与接入 owner 确认，尚未实现 |
-| WPF-PROFILE01-02 | pending | w01_owner | frozen creation / locked 设计确认 |
-| WPF-PROFILE01-03 | pending | w01_owner | 尚未验证 |
-| WPF-PROFILE01-04 | pending | w01_owner | 尚无实现 target |
+| WPF-PROFILE01-01 | completed | w01_owner | 13局部tests中真实HTTP分页/错误/连接隔离；固定b2 |
+| WPF-PROFILE01-02 | completed | w01_owner | 完整pin/深冻/旧default局部检查；固定b2 |
+| WPF-PROFILE01-03 | completed | w01_owner | 5组HTTP浏览器，双主题390/键盘/锁；截图已目视 |
+| WPF-PROFILE01-04 | in-progress | w01_owner | b2固定实现已交root，review NOT_STARTED |
 
 ## 领取与架构影响
 
@@ -35,4 +35,11 @@
 
 ## 未验证与下一步
 
-先局部测试及 HTTP fixture，再固定实现交 root 独立 review。实际 App 接入由 workspace_panels_owner 后续独立领取；0模型，根manifest/lock不得改变。Dashboard：canonical source 本文件已建立，待管理者登记后只读核验。
+局部验证已完成；固定实现交 root 独立 review，随后另由 App owner 接入。实际 App 接入由 workspace_panels_owner 后续独立领取；0模型，根manifest/lock不得改变。Dashboard：canonical source 本文件已交管理者登记；当前尚无实际聚合检查，不推已展示。
+
+
+## 本段检查与交付
+
+[验证报告](../../docs/evidence/wpf-profile01/README.md)；[浏览器原始结果](../../docs/evidence/wpf-profile01/browser-results.json)；[接口](../../docs/evidence/wpf-profile01/interface.md)；[技能与清码](../../docs/evidence/wpf-profile01/quality.md)。Node24 / pnpm9.15.4 / Chrome154。已启动独立HTTP fixture http://127.0.0.1:62662（开发预览，启动脚本每次动态端口）。测试自动端口已清理。0真实模型，未运行真实中心/runner、App组合、Safari/Firefox/屏读。
+
+frozen-lockfile安装复用既有449依赖，不新增manifest条目；根manifest/lock diff0。client/contracts均链接本工作树packages。最初fixture漏Vite HTML变换及textarea可访问名称问题已修，最终5组全部通过；不是忽略失败。Review尚未开始，不继承任何W01/P01历史approval。

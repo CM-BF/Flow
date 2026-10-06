@@ -4,7 +4,7 @@
 | --- | --- |
 | 计划编号 | WPF-PROFILE01 |
 | 状态 | in-progress |
-| 创建 / 更新 | 2026-10-06 04:37 UTC |
+| 创建 / 更新 | 2026-10-06 04:43 UTC |
 | Owner / model | w01_owner / gpt-6-astra ultra（派发指定；运行上下文为 GPT-6） |
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles / codex/web-execution-profiles |
 | 基线 | 4e0289f29ffa48c6c49003837d4520f57c22b6b0 |
@@ -15,9 +15,9 @@
 
 ## TODO
 
-- [ ] **WPF-PROFILE01-01** 目录分页、刷新/错误/中止与连接隔离的不可变投影。
-- [ ] **WPF-PROFILE01-02** 整份配置选择、深冻结 creation、完整 pin 回执核对、旧无 pin 兼容。
-- [ ] **WPF-PROFILE01-03** 受控选择器与 HTTP fixture；浅深主题、390px、键盘、错误恢复和未知回执锁定。
+- [x] **WPF-PROFILE01-01** 目录分页、刷新/错误/中止与连接隔离的不可变投影。
+- [x] **WPF-PROFILE01-02** 整份配置选择、深冻结 creation、完整 pin 回执核对、旧无 pin 兼容。
+- [x] **WPF-PROFILE01-03** 受控选择器与 HTTP fixture；浅深主题、390px、键盘、错误恢复和未知回执锁定。
 - [ ] **WPF-PROFILE01-04** 独立审查、修复、固定模块交接；主 App 集成另领。
 
 ## 设计与验证
