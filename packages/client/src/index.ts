@@ -1,3 +1,4 @@
+import type { RunnerMaintenanceView, RunnerMaintenanceHistory, RunnerMaintenanceCommand, RunnerMaintenanceResult } from '@flow/contracts';
 import type { GoalGraphProposalInput, GoalGraphProposalApply, GoalGraphProposalCreated, GoalGraphProposalPage, GoalGraphProposal, GoalGraphProposalApplied } from '@flow/contracts';
 import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage } from '@flow/contracts';
 import type { GoalToolRunAdmission, GoalToolRunAccepted, GoalToolRun, GoalToolRunRevoked, GoalToolAuditPage, GoalToolRunReference, GoalToolInputCall, GoalToolCommandCall, GoalToolSnapshotResult, GoalToolInputResult, GoalToolCommandResult } from '@flow/contracts';
@@ -29,6 +30,21 @@ export class FlowClient {
   constructor(options: ClientOptions) {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+  }
+
+  runnerMaintenance(runnerId: string, signal?: AbortSignal): Promise<RunnerMaintenanceView> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance`, { signal });
+  }
+  runnerMaintenanceHistory(runnerId: string, options: { after?: string } = {}, signal?: AbortSignal): Promise<RunnerMaintenanceHistory> {
+    const query = new URLSearchParams();
+    if (options.after) query.set('after', options.after);
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/history${query.size ? `?${query}` : ''}`, { signal });
+  }
+  drainRunner(runnerId: string, input: RunnerMaintenanceCommand, key: string, signal?: AbortSignal): Promise<RunnerMaintenanceResult> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/drain`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  resumeRunner(runnerId: string, input: RunnerMaintenanceCommand, key: string, signal?: AbortSignal): Promise<RunnerMaintenanceResult> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/resume`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   submit(input: TaskSubmission, key: string): Promise<AcceptedTask> {
