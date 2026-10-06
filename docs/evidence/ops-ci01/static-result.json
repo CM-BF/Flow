@@ -1,0 +1,82 @@
+{
+  "kind": "OPS-CI01-static-validation",
+  "at": "2026-10-06T22:57:32.248113+00:00",
+  "base": "37f75d3654fc500d37b1ddfda0871807d878715f",
+  "workflowSha256": "d4cab9cfd16ab461629a1b8de12ca88589de289beae9dfdd4161d27869bde46f",
+  "yaml": {
+    "parser": "Ruby stdlib Psych 3.1.0, gems disabled",
+    "exit": 0,
+    "keys": [
+      "name",
+      "on",
+      "permissions",
+      "concurrency",
+      "jobs"
+    ]
+  },
+  "syntax": [
+    {
+      "name": "Install the locked public packages in this ephemeral runner",
+      "parser": "bash -n",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "Install the locked public packages in this ephemeral runner",
+      "parser": "Node24 --check only",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "Run the two existing contract checks",
+      "parser": "bash -n",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "Run one real PostgreSQL and public HTTP handler check",
+      "parser": "bash -n",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "Observe connections and normally remove only this job database",
+      "parser": "bash -n",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "Report exact selection, exit and cleanup facts",
+      "parser": "bash -n",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "Report exact selection, exit and cleanup facts",
+      "parser": "Node24 --check only",
+      "exit": 0,
+      "stderr": ""
+    }
+  ],
+  "staticSelection": {
+    "contracts": 2,
+    "handler": 1,
+    "handlerUnselected": 9
+  },
+  "resourceClosure": {
+    "providedInputs": 375,
+    "sqlFiles": 30,
+    "mismatches": [],
+    "semantics": "fixed source/SQL existence and digest only; not a runtime import or Linux execution"
+  },
+  "localExecution": {
+    "projectImports": 0,
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "dependencyInstalls": 0
+  },
+  "remoteWorkflow": "NOT_RUN",
+  "activation": "NOT_ENABLED",
+  "staticChecks": "PASSED"
+}

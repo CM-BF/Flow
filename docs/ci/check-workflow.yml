@@ -1,29 +1,144 @@
-name: checks
-on: [push, pull_request]
+# Candidate only: docs/ci is not a GitHub Actions workflow directory.
+name: bounded zero-model contracts and PostgreSQL
+"on":
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: flow-bounded-ci-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  check:
-    runs-on: ubuntu-latest
+  contracts-and-handler:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
     services:
       postgres:
         image: postgres:16.13-alpine
         env:
           POSTGRES_USER: flow
           POSTGRES_PASSWORD: flow-local-only
-          POSTGRES_DB: flow_test
+          POSTGRES_DB: flow_c01
         ports: ['55432:5432']
         options: >-
-          --health-cmd "pg_isready -U flow -d flow_test"
+          --health-cmd "pg_isready -U flow -d flow_c01"
           --health-interval 2s --health-timeout 2s --health-retries 30
     env:
-      TEST_DATABASE_URL: postgresql://flow:flow-local-only@127.0.0.1:55432/flow_test
+      CI: 'true'
+      FLOW_TEST_DATABASE_URL: postgresql://flow:flow-local-only@127.0.0.1:55432/flow_c01
+    defaults:
+      run:
+        shell: bash
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - name: Check out public source without retaining credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, inspected 2026-10-06
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Select pnpm without installing project packages or caching
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
         with:
           version: 9.15.4
-      - uses: actions/setup-node@v4
+          run_install: false
+          cache: false
+      - name: Select the project Node version without package-manager cache
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: 24.20.0
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm check
+      - name: Install the locked public packages in this ephemeral runner
+        timeout-minutes: 5
+        run: |
+          test "$(node --version)" = v24.20.0
+          test "$(pnpm --version)" = 9.15.4
+          timeout --kill-after=5s 240s pnpm install --frozen-lockfile --ignore-scripts --store-dir "$RUNNER_TEMP/flow-ci-store"
+          node --input-type=module - <<'NODE'
+          import { readFileSync } from 'node:fs';
+          import assert from 'node:assert/strict';
+          assert.equal(JSON.parse(readFileSync('node_modules/vitest/package.json', 'utf8')).version, '4.0.18');
+          assert.equal(process.env.FLOW_TEST_DATABASE_URL, 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_c01');
+          NODE
+          git diff --exit-code -- package.json pnpm-lock.yaml pnpm-workspace.yaml
+          git rev-parse HEAD
+      - name: Run the two existing contract checks
+        id: contracts
+        timeout-minutes: 2
+        run: |
+          set +e
+          timeout --kill-after=5s 60s pnpm exec vitest run packages/contracts/src/contracts.test.ts --reporter=json --outputFile="$RUNNER_TEMP/flow-ci-contracts.json"
+          code=$?
+          printf '%s\n' "$code" > "$RUNNER_TEMP/flow-ci-contracts.exit"
+          exit "$code"
+      - name: Run one real PostgreSQL and public HTTP handler check
+        id: handler
+        timeout-minutes: 3
+        run: |
+          set +e
+          timeout --kill-after=5s 120s pnpm exec vitest run apps/server/src/server.test.ts -t 'persists accepted commands across restart and rejects changed retries$' --reporter=json --outputFile="$RUNNER_TEMP/flow-ci-handler.json"
+          code=$?
+          printf '%s\n' "$code" > "$RUNNER_TEMP/flow-ci-handler.exit"
+          exit "$code"
+      - name: Observe connections and normally remove only this job database
+        id: cleanup
+        if: always()
+        timeout-minutes: 1
+        env:
+          FLOW_CI_POSTGRES_ID: ${{ job.services.postgres.id }}
+        run: |
+          # No FORCE, terminate-backend, host database or persistent volume access.
+          timeout --kill-after=2s 15s bash <<'CLEANUP'
+          set -euo pipefail
+          [[ "$FLOW_CI_POSTGRES_ID" =~ ^[0-9a-f]{12,64}$ ]]
+          query() { docker exec "$FLOW_CI_POSTGRES_ID" psql -X -qAt -U flow -d postgres -v ON_ERROR_STOP=1 -c "$1"; }
+          test "$(query "SELECT count(*) FROM pg_database WHERE datname='flow_c01'")" = 1
+          connections=unknown
+          for observation in {1..15}; do
+            connections=$(query "SELECT count(*) FROM pg_stat_activity WHERE datname='flow_c01'")
+            [[ "$connections" =~ ^[0-9]+$ ]]
+            if test "$connections" = 0; then break; fi
+            sleep 0.2
+          done
+          if test "$connections" != 0; then
+            printf 'cleanup=unknown connections=%s; no normal DROP attempted\n' "$connections"
+            exit 1
+          fi
+          docker exec "$FLOW_CI_POSTGRES_ID" dropdb -U flow flow_c01
+          test "$(query "SELECT count(*) FROM pg_database WHERE datname='flow_c01'")" = 0
+          printf 'normal-drop; connections=0; database-absent\n' > "$RUNNER_TEMP/flow-ci-cleanup.txt"
+          CLEANUP
+      - name: Report exact selection, exit and cleanup facts
+        if: always()
+        timeout-minutes: 1
+        run: |
+          timeout --kill-after=2s 15s node --input-type=module - <<'NODE'
+          import { readFileSync, statSync, appendFileSync } from 'node:fs';
+          import { join } from 'node:path';
+          const read = (name, limit) => {
+            const path = join(process.env.RUNNER_TEMP, `flow-ci-${name}`);
+            if (statSync(path).size > limit) throw new Error('Bounded CI report exceeded its limit.');
+            return readFileSync(path, 'utf8');
+          };
+          let good = true;
+          const facts = [];
+          for (const [name, expectedPassed, expectedPending] of [['contracts', 2, 0], ['handler', 1, 9]]) {
+            try {
+              const exit = Number(read(`${name}.exit`, 16));
+              const result = JSON.parse(read(`${name}.json`, 262144));
+              const passed = result.numPassedTests, failed = result.numFailedTests, pending = result.numPendingTests;
+              const selected = passed + failed;
+              const valid = exit === 0 && result.success === true && passed === expectedPassed && failed === 0
+                && pending === expectedPending && result.numTotalTests === expectedPassed + expectedPending;
+              facts.push({ name, exit, selected, passed, failed, unselected: pending, valid });
+              good &&= valid;
+            } catch { facts.push({ name, status: 'NOT_RUN_OR_REPORT_UNKNOWN' }); good = false; }
+          }
+          let cleanup = 'unknown';
+          try { cleanup = read('cleanup.txt', 256).trim(); } catch { good = false; }
+          good &&= cleanup === 'normal-drop; connections=0; database-absent';
+          const summary = { source: process.env.GITHUB_SHA, facts, cleanup,
+            scope: 'contracts + real PostgreSQL/Fastify.inject; not socket HTTP, runner, model or UI',
+            modelExecution: 'not requested; no runtime or SDK entry selected', success: good };
+          const text = JSON.stringify(summary, null, 2);
+          console.log(text);
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\n\`\`\`json\n${text}\n\`\`\`\n`);
+          if (!good) process.exitCode = 1;
+          NODE
