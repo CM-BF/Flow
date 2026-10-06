@@ -1,6 +1,6 @@
 # TUI01A：基础会话终端
 
-所属大task TUI-001；co-lead Execution Lead；owner runner_owner/gpt-6-astra。固定实现提交随后写入manifest；本分支验收不等于main已部署。0provider、0真实用户凭据/服务操作。
+所属大task TUI-001；co-lead Execution Lead；owner runner_owner/gpt-6-astra。固定实现`9e5588d4d6b24234bb829c23269e6e72caca44af`，见manifest；本分支验收不等于main已部署。0provider、0真实用户凭据/服务操作。
 
 两个实际consumer：Ink屏幕和JSONL无界面入口共享命令descriptor/controller，经既有FlowClient受理。局部intent仅保存未决请求，不复制中心历史、provider loop或assistant-ui LocalRuntime。支持help/list/open/profiles/new/send/recover/disconnect/quit；退出不取消后台工作。使用方法见 [终端README](../../../apps/tui/README.md)，公共端口见 [Interface](interface.md)。
 
