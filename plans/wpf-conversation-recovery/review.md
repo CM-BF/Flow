@@ -119,3 +119,9 @@ Root于2026-10-06T20:24:02.675285+00:00给[DIRECT50_EVIDENCE_ACCEPTED_SCOPED](..
 ## 2026-10-06 20:36:49 UTC — 晚停止P2作者修复待复审
 
 固定 `4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb` / previous2b01(parent7ca)，[manifest](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-checkpoint.json)仅一parentdiff，另18源和worker原样。Root原报告CHANGES_REQUESTED作为输入保留，当前作者SOURCE_ADDRESSED_PENDING_REVIEW，不自行批准。停止与cleanup状态拆开、SIGINT/TERM去重持续监听、原有一次报告失败更正和最终stdout/exit均看停止事实。未做signal注入或任何运行；50/首browser失败保持原范围，完整feature未审。
+
+## 2026-10-06 20:41:28 UTC — 4d330 parent晚停止独立源码批准
+
+Root实际时点2026-10-06T20:39:13.481403+00:00，固定 `4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb` / metadata c059c278；[原始报告](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-root-approval.json) SHA256 `2a3826caf708b570aa4e9fe226a2d2bb31711e943cfdfdd10a9daabd61ec4315`，**APPROVED_SCOPED_LATE_STOP_PARENT_SOURCE_NOT_RUN / 0 blocking**。旧CHANGES_REQUESTED及作者待审段是历史，RECOVERY-BROWSER-LATE-STOP当前SOURCE_ADDRESSED。止停事实与cleanup状态分开、重复信号去重、最终stdout/actualexit晚到失败判定均获源码认可。
+
+没有signal注入或新运行；不声称SIGKILL/进程崩溃/移除listener后的信号均被捕获。另18源和worker/旧10raw不改；2b01/direct50仅保原范围，完整feature NOT_STARTED/targetUNKNOWN。下一browser只读准备必须绑定最终实际HEAD和19源，旧7ca准备不可运行；原75.153732625s剩余包含15s清理，需manager新window/gate和受控admin输入。

@@ -163,3 +163,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-06 20:36:49 UTC — late-stop clean-code安全点
 
 复用已读find-skills/clean-code/codebase-design/webapp-testing方法。具体职责缺陷是stopped同时代表正常cleanup与错误已记账；用私有firststopreason/interrupt事实拆开，保持原parent唯一生命周期owner，不抽通用框架。重复signal不重复TERM、不抛异常穿过cleanup；已有有限失败报告分支承担晚停，不新增循环/场景。18其他源与worker/old10raw逐hash核同，diffcheck0；无类型或行为运行，未知范围不改绿。待独审新target，先前50受控与2b01产品源码批准仍各自原范围。
+
+## 2026-10-06 20:41:28 UTC — 独审归档与只读准备clean-code安全点
+
+本段按本地find-skills优先方法复用clean-code/codebase-design/webapp-testing，无安装。只核批准原字节、19源稳定性、唯一status和旧raw/预算归因；Root确认停止事实与正常cleanup职责分开且复用同一有限报告修正，没有新framework。0blocking是限定source结论，完整feature未验不改绿。按一次metadata提交后再bind最终HEAD，避免prepare与归档互相递归改写；旧准备和失败保留。当前无types/test/产品import/服务/空间采样。
