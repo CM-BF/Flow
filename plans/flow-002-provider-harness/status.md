@@ -62,3 +62,5 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 2026-10-06 08:57:11 UTC：用户新增成熟界面大方向已追溯到FLOW-002-T09与WPF-MATURE-02；Mika负责模型能力与Codex消费方，本队负责共享宿主/中心契约，Web沿唯一界面大task管理。无新增provider/auth操作。
 
 2026-10-06 10:27:04 UTC：本批只对齐已审主线与实际运行版本。TUI01B共享ACK与跨客户端409读恢复由runner_owner独立实施；ENG01A E0收据关联/完成门禁限定批准，E1真实Git/checker纵向实施；SVC04的合成兼容与58项真实构建JS请求不替代个人新Web/旧b1c后台的兼容证据。完整工程、真实Codex与新Web发布保持open；不新增provider或重复产品检查。
+
+2026-10-06T14:35:35.073416+00:00：仅新增T09托管Agents API研究候选；本机Claude/Codex优先不变，无新环境/认证/provider与产品验证。上方10:27环境是历史观察；当前个人runtime362/v15、Web8d8/v2，主线观察59ef2134，参见FLOW-001和SVC05事实，不把新main当已部署版本。
