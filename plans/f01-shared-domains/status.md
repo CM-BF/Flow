@@ -15,11 +15,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | 1HTTP红→绿/5实际请求；root types0，无PG/provider。 |
 | 已集成main状态 / HEAD | 上下文027与O11领域/公共factory/client已main52eb；个人服务不变。 |
-| Review | NOT_STARTED：ec6ad20479872a8cb701917b6fa448ca23a2a843；c05公共读口独审APPROVED且已main |
+| Review | APPROVED：native_center_owner限定ec6ad204，c05公共读口已main |
 | 实现目标 | ec6ad20479872a8cb701917b6fa448ca23a2a843 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/goal-session-transport.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 统一目标读口已主线可用；本地退出观察可通过共享接口释放在途读取。 |
 | 下一可用交付 | 接入持续目标会话控制器，保留决定、取消与未知确认的中心规则。 |

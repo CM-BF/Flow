@@ -253,3 +253,7 @@ APPROVED — assignment_review独立只读4source/13raw/9域输入固定hash全�
 Review target commit: ec6ad20479872a8cb701917b6fa448ca23a2a843
 
 NOT_STARTED；限定两源与1HTTP，不复核O11领域。
+
+Review target commit: ec6ad20479872a8cb701917b6fa448ca23a2a843
+
+APPROVED — native_center_owner独立只读2源/6raw，hash全同，无P1/P2。1HTTP/5请求/types0复用，0重跑；已发送mutation取消观察仍保持未知ACK语义。见[回执](../../docs/evidence/f01/goal-session-transport-independent-review.json)。
