@@ -1,0 +1,22 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity
+
+ ✓ apps/runner/src/claude.test.ts (26 tests) 132ms
+ ✓ apps/server/src/native-activity/activity.test.ts (13 tests) 5606ms
+   ✓ connects injected SDK to real runtime/outbox/PG/owner read on success  850ms
+   ✓ connects injected SDK to real runtime/outbox/PG/owner read on cancel  994ms
+   ✓ recovers an activity outbox after lost acknowledgement before-save and center restart  992ms
+   ✓ recovers an activity outbox after lost acknowledgement after-save and center restart  1132ms
+ ✓ apps/runner/src/runner.test.ts (25 tests) 1231ms
+   ✓ starts from environment configuration and stops cleanly on SIGTERM  330ms
+ ✓ apps/runner/src/goal-tool-bridge/sdk.test.ts (10 tests) 30ms
+ ✓ apps/runner/src/goal-graph-tools/sdk.test.ts (3 tests) 26ms
+ ✓ apps/runner/src/native-activity/mapper.test.ts (5 tests) 7ms
+ ✓ apps/runner/src/outbox-resume.test.ts (1 test) 5ms
+ ✓ packages/contracts/src/contracts.test.ts (2 tests) 4ms
+
+ Test Files  8 passed (8)
+      Tests  85 passed (85)
+   Start at  23:07:03
+   Duration  9.10s (transform 571ms, setup 0ms, import 1.46s, tests 7.04s, environment 1ms)
+

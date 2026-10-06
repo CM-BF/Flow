@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-06T06:02:30.523Z",
+  "version": "0.3.290",
+  "files": {
+    "package.json": {
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "bytes": 2546
+    },
+    "sdk.d.ts": {
+      "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541",
+      "bytes": 530284
+    },
+    "LICENSE.md": {
+      "sha256": "8ce94b9478bb9868f9641f818e06cd722fbe55d4c22e2d2ed11971b20146173a",
+      "bytes": 147
+    }
+  },
+  "notes": [
+    "Only fixed local public SDK declarations consumed. No provider query or authentication call.",
+    "SDKUserMessage tool_use_result detachedToolCall means still running.",
+    "SDKUserMessageReplay isReplay=true is historical, not current-attempt output."
+  ]
+}

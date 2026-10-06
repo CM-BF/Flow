@@ -18,3 +18,4 @@ export * from './goal-graph-proposals.js';
 export * from './runner-maintenance.js';
 export * from './knowledge.js';
 export * from './goal-graph-runs.js';
+export * from './native-activity.js';

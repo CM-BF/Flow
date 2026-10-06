@@ -1,0 +1,71 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity
+
+ ✓ apps/runner/src/runner.test.ts (25 tests) 1511ms
+   ✓ starts from environment configuration and stops cleanly on SIGTERM  417ms
+ ❯ apps/runner/src/claude.test.ts (26 tests | 1 failed) 117ms
+   ✓ runs the public adapter with only a private material snapshot and verifies its saved result 7ms
+   ✓ denies outside access even when permission callbacks would autoallow 2ms
+   ✓ denies shell access even when permission callbacks would autoallow 1ms
+   ✓ denies missing access even when permission callbacks would autoallow 1ms
+   ✓ denies no-tools access even when permission callbacks would autoallow 1ms
+   ✓ checks ownership on every tool and aborts the SDK when the lease is lost 2ms
+   ✓ aborts and closes an active SDK query on cancel without emitting completion 1ms
+   ✓ aborts and closes an active SDK query on timeout without emitting completion 22ms
+   ✓ does not start the SDK when the attempt is already cancelled 1ms
+   ✓ keeps resumed model usage cumulative with unknown baseline and stable sample IDs 2ms
+   ✓ uses durable runtime decisions then rechecks ownership before allowing Read 2ms
+   ✓ does not turn a success-shaped API error into a successful artifact or zero usage 1ms
+   ✓ preserves measured model usage when execution reaches a turn limit 1ms
+   ✓ fails closed when durable decision delivery fails and stops the SDK query 1ms
+   ✓ stops waiting for a human decision when the query deadline expires 23ms
+   ✓ denies a material snapshot that has been replaced with a symlink outside the allowlist 2ms
+   ✓ records SDK permission refusals without publishing their raw tool inputs 1ms
+   ✓ preserves token counts but does not present an unknown SDK price basis as known cost 1ms
+   ✓ rejects an unexpected resumed session before publishing any native session reference 1ms
+   × emits exactly the successful final result as typed assistant text after consuming trailing system frames 4ms
+   ✓ marks effective settings unknown without an init frame and keeps stable source identity across repeat delivery 2ms
+   ✓ rejects conflicting results instead of silently replacing an earlier turn outcome 1ms
+   ✓ publishes no assistant final for session failure 1ms
+   ✓ publishes no assistant final for stream-error failure 0ms
+   ✓ publishes no assistant final for unicode-size failure 2ms
+   ✓ passes only explicit native SDK environment and excludes Flow service credentials 36ms
+ ✓ apps/runner/src/goal-graph-tools/sdk.test.ts (3 tests) 26ms
+ ✓ apps/runner/src/goal-tool-bridge/sdk.test.ts (10 tests) 31ms
+ ✓ packages/contracts/src/contracts.test.ts (2 tests) 5ms
+ ✓ apps/runner/src/outbox-resume.test.ts (1 test) 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/claude.test.ts > emits exactly the successful final result as typed assistant text after consuming trailing system frames
+ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "sourceMessageId"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+ ❯ emit apps/runner/src/native-activity/index.ts:27:144
+     25|     sourceMessageId: source.uuid, nativeMessageId: typeof message.id =…
+     26|     parentToolUseId: source.parent_tool_use_id ?? null };
+     27|   const emit = (blockIndex: number, fields: Pick<NativeActivityData,'k…
+       |                                                                                                                                                ^
+     28|     ...common, blockIndex, activityId:hash(JSON.stringify([nativeSessi…
+     29|   });
+ ❯ plain apps/runner/src/native-activity/index.ts:34:89
+ ❯ apps/runner/src/native-activity/index.ts:41:40
+ ❯ mapNativeActivity apps/runner/src/native-activity/index.ts:32:17
+ ❯ Object.run apps/runner/src/claude.ts:77:30
+ ❯ apps/runner/src/claude.test.ts:258:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  1 failed | 66 passed (67)
+   Start at  23:06:21
+   Duration  2.98s (transform 266ms, setup 0ms, import 852ms, tests 1.70s, environment 0ms)
+

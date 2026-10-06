@@ -1,3 +1,4 @@
+import { migrateNativeActivities, registerNativeActivityRoutes } from './native-activity/index.js';
 import { migrateGoalGraphRuns, registerGoalGraphRunRoutes } from './goal-graph-runs/index.js';
 import { migrateKnowledge, registerKnowledgeRoutes } from './knowledge/index.js';
 import { migrateRunnerMaintenance, registerRunnerMaintenanceRoutes } from './runner-maintenance/index.js';
@@ -61,6 +62,7 @@ export async function createServer(options: ServerOptions) {
     await migrateRunnerMaintenance(pool);
     await migrateConversationContext(pool);
     await migrateGoalGraphRuns(pool);
+    await migrateNativeActivities(pool);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
   let pendingSweep: Promise<void> | undefined;
@@ -118,6 +120,7 @@ export async function createServer(options: ServerOptions) {
   registerConversationRoutes(app, pool, boss);
   registerPluginRoutes(app, pool);
   registerAssistantRoutes(app, pool);
+  registerNativeActivityRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
   registerConversationQueueRoutes(app, pool, boss);
   registerConversationContextRoutes(app, pool);
