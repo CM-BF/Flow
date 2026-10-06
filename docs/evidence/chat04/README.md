@@ -1,4 +1,4 @@
-# CHAT04 验证证据
+# CHAT04 v1 验证证据（v2 pause/resume 待实现）
 
 实现 target `6fc9df40033e135159719121f7a3ae473d025a9f`（包含可执行 consumer harness，产品源码与77168cc完全一致），固定 base `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`。`checks.json` 绑定全部实现文件及原始日志 SHA256、确切命令、实际 UTC 与退出码。
 

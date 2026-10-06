@@ -1,4 +1,4 @@
-# CHAT04 Interface v1 — 模块已实现，生产接线由 Lead
+# CHAT04 Interface — v1已实现；v2草案待Lead接线核定
 
 从 `packages/contracts/src/conversation-queue.ts` 导出 DTO/schema；公共 barrel/client 由 Lead 接线。现有 `ConversationSummary.revision` 继续仅指 turn admission CAS；queueRevision 从 queue response 独立读取。
 
@@ -23,3 +23,14 @@ list 仅返回当前 waiting（含 blocked），terminal 从 readItem 查询；a
 Lead 在生产 index 的迁移链加入 migrate，在路由链加入 register，定时 sweep await scan，避免同实例 overlap，onClose await in-flight（沿原生命周期）。本 owner 不写 index/scheduler/exports/client。最早接口提交 e423abb 的显式 stub 已在 77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310 实现。模块真实 PG/HTTP 验证通过；生产 index/client 接线仍由 Lead 完成并另验。
 
 当前自动提升依据实际 task terminal state。Stop 与 success 竞态的产品表述正由 Goal Owner 锁定；本模块没有暂停队列/停止全部的额外意图接口，不将 succeeded 推断为用户从未发出停止请求。
+
+## 2026-10-06 04:34:22 UTC v2 补充（尚未实现）
+
+- POST /api/conversations/:id/queue/pause，body {expectedQueueRevision}，response {conversationId,queueRevision,paused:true,currentTurn,replayed}。已paused仍严格CAS，可no-op不增revision。
+- POST /api/conversations/:id/queue/resume，body {expectedQueueRevision,expectedTaskId:string|null}，response {conversationId,queueRevision,paused:false,currentTurn,promoted:ConversationQueueItem|null,replayed}。resume原子提升最多首waiting并清pause，只增queueRevision一次；无waiting同门禁unpause，不预授权未来auto。
+- currentTurn={taskId,taskStatus,turnId,turnNumber,queueItemId:string|null}|null；list/detail也带paused/currentTurn。
+- resume仅已终态成功/失败/取消且known空闲session、runner未撤销、pin有效；active/uncertain/unknown拒绝；初次空conversation/null例外。自动提升仍仅succeeded。
+- pause成功后再发当前task原cancel；promotion先于pause时回真实已提升引用。命令ACK重放是历史receipt；UI先GET确认事实。普通follow-up paused=409；enqueue/cancel不清pause。
+- 011新增queue_paused，禁止许可marker；register需要boss供resume复用现有原子task/wake路径，最终签名等待Lead确认。
+
+旧v1源码与37项检查不表示此v2合同已实施。
