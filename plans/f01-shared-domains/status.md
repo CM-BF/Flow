@@ -200,3 +200,5 @@
 | F01-41 | in-progress | Lead | X01五方法client/export；固定67fd4592、真实HTTP1/1、types0，待独审；默认mount/CLI另验 |
 
 2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
+
+| F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）待独审；生产挂载/自动scan尚未修改，待插件共享index审结 |
