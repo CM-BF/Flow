@@ -35,6 +35,8 @@ const capabilities: readonly Capability[] = [
   "theme.write",
   "theme.register",
   "workspace.read",
+  "attachment.read",
+  "attachment.upload",
   "knowledge.read",
   "composer.write",
   "clipboard.write",

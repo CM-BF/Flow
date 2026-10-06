@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { ConversationContextReference, KnowledgeCitation } from "@flow/contracts";
+import type { AttachmentReference, ConversationContextReference, KnowledgeCitation } from "@flow/contracts";
 import { assertContextReceiptMatches, freezeKnowledgeRequest } from "../src/conversation-context/receipts";
 
 const citation = (n = 1): KnowledgeCitation => ({ projectId: "project-a", sourceId: `10000000-0000-4000-8000-${String(n).padStart(12, "0")}`, version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes", start: 2, end: 6 } });
@@ -63,5 +63,25 @@ describe("context receipt acknowledgement", () => {
     for (const patch of [{ byteLength: 5 }, { currentVersionAtFreeze: "2" }, { currentVersionAtFreeze: 17 }, { isCurrentAtFreeze: true }])
       variants.push({ ...context(refs), sources: [{ ...context(refs).sources[0], ...patch }] });
     for (const value of variants) expect(() => assertContextReceiptMatches(refs, value)).toThrow("context");
+  });
+});
+
+
+describe("mixed immutable material requests", () => {
+  const upload = (n = 1): AttachmentReference => ({ kind: "upload", projectId: "project-a", resourceId: `20000000-0000-4000-8000-${String(n).padStart(12, "0")}`, version: 1, contentDigest: "d".repeat(64) });
+  it("deep-freezes both material kinds without changing either order or the text", () => {
+    const attachments = [upload(2), upload(1)], knowledge = [citation(2), citation(1)];
+    const frozen = freezeKnowledgeRequest({ text: "  BOM-free\r\n", knowledge, attachments });
+    attachments[0]!.resourceId = upload(3).resourceId; knowledge[0]!.locator.end = 9;
+    expect(frozen.attachments).toEqual([upload(2), upload(1)]); expect(frozen.knowledge).toEqual([citation(2), citation(1)]);
+    expect(Object.isFrozen(frozen.attachments)).toBe(true); expect(Object.isFrozen(frozen.attachments[0])).toBe(true);
+    expect(frozen.text).toBe("  BOM-free\r\n");
+  });
+  it("enforces the joint count and project while retaining empty legacy shape", () => {
+    expect(() => freezeKnowledgeRequest({ knowledge: [citation(), citation(2)], attachments: [upload(), upload(2), upload(3)] })).toThrow();
+    expect(() => freezeKnowledgeRequest({ knowledge: [citation()], attachments: [{ ...upload(), projectId: "other" }] })).toThrow("project");
+    expect(() => freezeKnowledgeRequest({ attachments: [upload(), upload()] })).toThrow();
+    expect(freezeKnowledgeRequest({ text: "plain" })).not.toHaveProperty("attachments");
+    expect(freezeKnowledgeRequest({ attachments: [] }).attachments).toEqual([]);
   });
 });
