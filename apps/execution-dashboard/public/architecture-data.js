@@ -46,7 +46,7 @@ export const views = [
       node('plugins','中心插件登记','X02 · PG registry',565,535,'apps/server/src/plugins/index.ts','中心保存精确版本/config/grants与操作记录；runtimeStatus为unavailable，未提供npm安装或插件代码执行。','注册 / 配置 / select-version / 查询。','摘要/许可是operator声明；默认无grants，不当作已加载或可信认证。'),
       node('host','可信浏览器插件','I01 · 主App挂载',830,535,'apps/web/src/plugin-integration/session.ts','内置workspace/theme和sample通过trusted Web host挂载，连接epoch失效清理；同realm不等第三方隔离。','typed command / slots / narrow context / dispose。','不把中心token/FlowClient直接传插件，不把本地启停等同中心生命周期。'),
       node('nextweb','后继 Web 能力','持续chat / 管理UI未含',250,730,'apps/web/src/App.tsx','固定8f的Web仍是I01 task界面。CHAT7cb为另一个已审分支；X03管理UI不在此基线，不能由中心路由存在推断UI已交付。','后继消费公开conversation与registry能力。','固定图不追moving分支；新集成后另刷新。','planned'),
-      node('nextbackend','后继执行与插件','R04 / P03 / 完整X01',680,730,'plans/flow-001-architecture/full-plan-matrix.md','R04中心有界停机、P03协议传输优化是后继登记项；当前串行runner与未支持出站持久input-required另属源码限制。完整npm运行/隔离/CLI等价未完成。','沿现有adapter与中心命令演进。','注册库、SDK依赖或transport ACK不证明后继能力完成。','planned'),
+      node('nextbackend','后继执行与插件','R04 / P03 / 完整X01',680,730,'apps/execution-dashboard/src/registry.mjs','R04中心有界停机、P03协议传输优化是后继登记项；当前串行runner与未支持出站持久input-required另属源码限制。完整npm运行/隔离/CLI等价未完成。','沿现有adapter与中心命令演进。','注册库、SDK依赖或transport ACK不证明后继能力完成。','planned'),
     ],
     edges:[edge('web','client','import','dependency'),edge('cli','client','import','dependency'),edge('server','contracts','import','dependency'),edge('runner','client','import','dependency'),edge('runner','protocols','import','dependency'),edge('client','contracts','import','dependency'),edge('server','storage','加载 SQL','dependency')],
   },
