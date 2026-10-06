@@ -1,8 +1,8 @@
-# Current Sandbox67 result review
+# Root literal准备 review
 
-## Root literal候选：NOT_STARTED
+APPROVED，Mika/gpt-6-astra，2026-10-06 12:24:16 UTC，0 P1/P2。combo1c5f78fd72a7d3da492fe37fc51060db7c6f548c/source92435ef10b734bcaf482f10303ac4c8d8cd7dc74；30repo/6external/17runtime/29prepared129510B、9core及旧38+41+37+28逐Git/WT/hash匹配；19通过/31未选未重跑。只批固定准备，root literal可能含根枚举，不证明必要性/因果；实际窗口尚未开。
 
-新枚举/profile/直接检查固定后交另一位≥Sol reviewer。0实际编译/目标，旧sandbox67结果审批保持历史target，不代表本次通过。
+# Historical Sandbox67 result review
 
 State: APPROVED faithful FAIL, Mika/gpt-6-astra, 2026-10-06 12:10:08 UTC, 0 P1/P2. Target `b2a77cf3394e6f63f0385d44a50f2a3427f3f7d1`; [run](../../docs/evidence/wpf-mature-02/sandbox67/run-report.md). Verified 12 result bindings,26 fixed repo,25 prepared115530B; source unchanged. Fixed archive126431/131072B, total435117B, receipt+CLI14965B. One compile/two C targets: control report complete; profile SIGABRT/null report/streamsnull, parent fd does not substitute child evidence. Measurement false; close/group/descriptors/cleanup/accounting/inventory/result true; CLI1. 785.954291ms pre-persist versus794.116208ms post-persist/pre-CLI preserved. Raw only hash/stat/inode0600/ignore checked, no text/rerun. TextEncoder archival-print error separately recorded. No isolation, causal or further-runtime approval. This review does not rewrite the fixed archive snapshot.
 

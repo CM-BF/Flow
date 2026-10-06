@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:18:44 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:24:59 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 92435ef10b734bcaf482f10303ac4c8d8cd7dc74（rootliteral源码；packet/metadata HEAD由Git核） |
-| 工作树dirty状态 | 315ab41692294065ba8bf157f12cdb1313b1a170 clean后仅rootliteral固定枚举/profile、直接检查与自身metadata；source/packet完成后核clean。 |
+| 工作树dirty状态 | 1c5f78fd72a7d3da492fe37fc51060db7c6f548c clean后仅准备审批metadata，提交后核clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | ROOTLITERAL_LOCAL_PASS：19通过/31未选（3新+16直接），Node24惰性import0/3语法0；实际compile/target0。旧片检查/失败均见下方固定证据表，不重跑或累计。 |
@@ -20,11 +20,11 @@
 | 实现范围 | experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs、host.test.ts与rootliteral独立实验目录 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | R06生产接口已进入main并交回写权。根目录精确literal对照已完成零目标检查，准备固定证据供独审。 |
-| 下一可用交付 | 交付只新增根目录自身读取/存在性权限的有界候选；待另一位合格reviewer和Mika门禁，不执行真实模型。 |
-| 当前阻塞 | ACTIVE: 真实Codex隔离仍未证明；新候选尚待独审与独立实际窗口，旧失败因果unknown。 |
+| 当前产出 | R06生产接口已进入main并交回写权。根目录精确literal候选已通过独立准备审查，尚未运行。 |
+| 下一可用交付 | 交付只新增根目录自身读取/存在性权限的有界候选；准备审查已通过，等待Mika唯一窗口门禁；不执行真实模型。 |
+| 当前阻塞 | ACTIVE: 真实Codex隔离仍未证明；新候选已独审，尚待独立实际窗口，旧失败因果unknown。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：rootliteral固定组合待审；sandbox67 b2a77cf3 faithful FAIL APPROVED（Mika，12:10:08 UTC，0P1/P2），旧诊断与生产片审批按固定target保留。 |
+| Review | [review.md](review.md)：rootliteral 1c5f78fd准备APPROVED（Mika，12:24:16 UTC，0P1/P2）；sandbox67 b2a77cf3 faithful FAIL APPROVED（Mika，12:10:08 UTC，0P1/P2），旧诊断与生产片审批按固定target保留。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
@@ -58,7 +58,7 @@
 | 早期隔离与诊断 | [isolation](../../docs/evidence/wpf-mature-02/isolation/canary-run-report.md)、[diagnostics](../../docs/evidence/wpf-mature-02/diagnostics/run-report.md)：均已封存FAIL，原因unknown，不恢复窗口。 |
 | C fd早期窗口 | [原C](../../docs/evidence/wpf-mature-02/fd-canary/run-report.md)：1compile/0target/accountingunknown；[v2](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-report.md)：1compile/2targets/第三NOT_RUN；[v3](../../docs/evidence/wpf-mature-02/fd-canary-v3/run-report.md)：regular目标SIGABRT。各次failure独审仅确认忠实，不证明隔离或因果。 |
 | Sandbox67 | [唯一结果](../../docs/evidence/wpf-mature-02/sandbox67/run-report.md)：b2a77cf3 faithful FAIL APPROVED，1compile/2C，受限目标SIGABRT/nullreport；measurementfalse、cleanup/accountingtrue。6fe审批计量为固定历史快照，旧raw/manifest/archive未变；新metadata不冒称其hash仍为当前。 |
-| Root literal | [当前候选](../../docs/evidence/wpf-mature-02/rootliteral/README.md)：只追加精确根节点read/test，可能含根枚举、非递归。19选择通过/31未选，3新+16直接消费者；Node24惰性import0/3语法0，实际compile/target0。固定组合待独审，未来go-c-rootliteral-once仍需Mika fresh门禁。 |
+| Root literal | [当前候选](../../docs/evidence/wpf-mature-02/rootliteral/README.md)：只追加精确根节点read/test，可能含根枚举、非递归。19选择通过/31未选，3新+16直接消费者；Node24惰性import0/3语法0，实际compile/target0。固定组合已审，未来go-c-rootliteral-once仍需Mika fresh门禁。 |
 
 当前claim v5保留七scope，范围见回执；R06/store.ts均已停写。源码92435ef10b734bcaf482f10303ac4c8d8cd7dc74，后续只有固定input/manifest与metadata。60秒仅自动runtime hash至清理/结果/CLI，人工review/Git在外而bytes仍计128KiB tail；总2MiB、32KiB机器收据。根节点读取新增信息已明确，任何启动/清理/计量未知按已审host停止，不重试，不改旧失败因果。
 
