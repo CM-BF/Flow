@@ -4,7 +4,7 @@
 
 ## 检查与来源
 
-14个不同Node行为：module-final.txt 11/11（release域4、artifact6、旧static1），host-final.txt 1/1真实随机PG/HTTP与独占center/确定性runner/Web，consumers-final.txt 3/3中2项为旧start/maintenance直接消费者、namespace与前11重叠。asset-queue-final.txt是原hot-publish case扩展20个同时HTTP资源的重叠定向复跑，不能再累加。syntax-before-queue.txt 9文件与static-syntax-final.txt覆盖JS语法，无新增TypeScript产品文件，因此未重跑全库types。
+15个不同Node行为（原14 + 1个版本读取竞态）：module-final.txt 11/11（release域4、artifact6、旧static1），host-final.txt 1/1真实随机PG/HTTP与独占center/确定性runner/Web，consumers-final.txt 3/3中2项为旧start/maintenance直接消费者、namespace与前11重叠。asset-queue-final.txt是原hot-publish case扩展20个同时HTTP资源的重叠定向复跑，不能再累加。observation-gate-final.txt为新竞态1例与原HTTP/SSE例1个重叠定向复跑。syntax-before-queue.txt 9文件与static-syntax-final.txt覆盖JS语法，无新增TypeScript产品文件，因此未重跑全库types。
 
 实际命令均使用 `/opt/homebrew/opt/node@24/bin/node`：
 
@@ -36,3 +36,9 @@ browser-fixture.mjs用真实Vite构建12个冷启动模块+8个延迟模块（�
 - Web-only bootstrap可能短暂断观察；失败保留旧artifact/source并报告Web unknown，不保证新进程启动失败时Web继续在线。center/runner不停止。
 - 3个retained artifact/192MiB，准备新namespace时已有3个完整缓存也拒绝；32兼容记录；无自动TTL/GC/prune，满额需后继明确旧tab关闭的清理操作。旧tab只保证保留集合内资源。
 - 未验证断电持久性、OS不可变、公网生产、Windows、多安装容量或真实provider。没有个人部署/浏览器草稿迁移/后端自动回滚。
+
+## 预审并发读取修复
+
+Lead指出版本文件在串行链外读取会把合法旧in-flight观察误判回退。新增窄createWebReleaseSnapshot seam，读取/版本判断/完整集合加载同一串行段。确定性测试先捕获实际旧磁盘记录，再发布并让较新观察先返回，原算法按预期WEB_RELEASE_VERSION_CONFLICT失败（observation-race-red.txt）；修复后1/1通过，实际磁盘回退/同version异body/文件消失仍拒绝，恢复正确指针后可读。最初真实readFile+两个event-loop tick版本没有稳定制造反序，单次通过记录为observation-race-initial-nondeterministic.txt，不能当red或额外coverage；改为读取边界受控返回实际磁盘记录后才获得确定性red。
+
+有界准入现在在snapshot之前，最多4个工作包含读取/验证/响应，32个等待不进入观察链；取消中的工作直到读取结束才释放名额，避免请求断开提前释放而累积未完成加载。API代理仍绕过。最终仅新竞态+既有HTTP/SSE并发资产例2/2，浏览器/PG/其余14未重跑。原浏览器结果绑定上一固定实现，最新增量由该定向检查支持，不改写原始输出。

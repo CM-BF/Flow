@@ -123,3 +123,36 @@ test('hot publish and rollback preserve an open SSE stream, old chunks and same-
     } finally { abort.abort(); await server?.close(); await close(center); }
   });
 });
+
+
+test('serialized release observations preserve valid in-flight reads and reject actual metadata rollback', async () => {
+  const { createWebReleaseSnapshot } = await import('./static-web.mjs');
+  const { setImmediate } = await import('node:timers/promises');
+  await fixture(async directory => {
+    const one = await artifact(directory, 'one'); const two = await artifact(directory, 'two', '2'.repeat(32));
+    const old = await planWebRelease({ directory, ...request(one, 0, 'bootstrap') }); await save(directory, old);
+    let observedPointer = old; let hold = false; let entered; const captured = new Promise(resolve => { entered = resolve; });
+    let release; const delayed = new Promise(resolve => { release = resolve; });
+    const snapshot = createWebReleaseSnapshot(directory, { read: async () => {
+      const value = observedPointer;
+      if (hold) { hold = false; entered(); await delayed; }
+      return value;
+    } });
+    assert.equal((await snapshot()).version, 1);
+    hold = true; const earlier = snapshot(); await captured;
+    const newer = await planWebRelease({ directory, ...request(two, 1) }); await save(directory, newer); observedPointer = await readWebRelease(directory);
+    const later = snapshot();
+    // A read that was already in flight may finish after a later read from the new pointer.
+    // Allow the later read to finish if the observer started it; then complete the older one.
+    await setImmediate(); await setImmediate(); release();
+    const observed = await Promise.all([earlier, later]);
+    assert.deepEqual(observed.map(value => value.version), [1, 2]);
+    await save(directory, old); observedPointer = await readWebRelease(directory);
+    await assert.rejects(snapshot(), { code: 'WEB_RELEASE_VERSION_CONFLICT' });
+    await save(directory, { ...newer, updatedAt: '2020-01-01T00:00:00.000Z' }); observedPointer = await readWebRelease(directory);
+    await assert.rejects(snapshot(), { code: 'WEB_RELEASE_VERSION_CONFLICT' });
+    await save(directory, newer); observedPointer = await readWebRelease(directory); assert.equal((await snapshot()).version, 2);
+    await rm(join(directory, 'web-release.json')); observedPointer = await readWebRelease(directory);
+    await assert.rejects(snapshot(), { code: 'WEB_RELEASE_METADATA_MISSING' });
+  });
+});
