@@ -1,6 +1,6 @@
 # CHAT01 持久对话中心首片段
 
-状态：completed（首中心片段；CHAT02 typed final消费另交delta）；创建2026-10-06。Owner runner_owner / gpt-6-astra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center`，branch `codex/conversation-center`，base6bb380b900f17bfbf808a95e7d9c0313c4991922。
+状态：in-progress（首中心片段APPROVED；typed final消费delta）；创建2026-10-06。Owner runner_owner / gpt-6-astra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center`，branch `codex/conversation-center`，base6bb380b900f17bfbf808a95e7d9c0313c4991922。
 
 目标：普通聊天直接进入持久conversation/有序turn→独立durable task，不等待O01 goal编排。conversation ID与native session ID分开；复用acceptTask事务和已有runner session affinity/互斥/fencing。首片段仅已完成上一轮之后的follow-up，忙/uncertain409；queue/steer明确unsupported，不能偷换为内存队列/取消。
 
@@ -18,3 +18,5 @@
 验收seam按派工已明确为公共HTTP与实际PG；测试红→绿纵向推进，SDK注入只代替真实模型，不把fixture当自然语言验收。专用flow_chat01/动态端口，生命周期清理不影响其他DB/4320。完整自然语言模型验收、实时assistant流、模型选择/思考配置、queue/steer留明确后继，真实模型本轮0。
 
 唯一status见[status](status.md)，独立review默认[NOT_STARTED](review.md)。写scope严格按claim；[架构](../../docs/architecture/chat01-conversations.md)与[证据](../../docs/evidence/chat01/README.md)。
+
+- [ ] **CHAT01-05** 完整合入已固定CHAT02依赖并消费typed助手最终消息；v2缺失不回退v1、实际effective不被旧推断覆盖，局部0模型PG/HTTP绑定/重报/重启验收，独立固定delta target。

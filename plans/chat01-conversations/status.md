@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 03:41 UTC |
+| 最近更新时间 | 2026-10-06 03:42 UTC |
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center |
 | Branch | codex/conversation-center |
 | 工作基线 / HEAD | 6bb380b900f17bfbf808a95e7d9c0313c4991922；合同4c2408e4db3595879f6471cb5fffccadec975b3d；实现2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
 | 工作树 dirty 状态 | 实现target提交后clean；本次仅metadata收尾 |
-| 工作分支状态 | delivered（首中心片段，待独立review） |
+| 工作分支状态 | in-progress（首中心片段已审，typed融合delta开始） |
 | 检查状态 | PASSED；14/14真实PG/HTTP（12.23s）+全库typecheck；target 2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
-| Review | NOT_STARTED |
+| Review | APPROVED；Goal Owner / gpt-6-astra，只读2d3bb61b35318f999c9f0f336bb3f443418bb5dc，无blocking；未重跑 |
 | 已集成 main 状态 / HEAD | 本任务未集成；输入base尚非main能力 |
 | 实现目标 | 2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
 | 实现范围 | packages/contracts/src/conversations.ts, apps/server/src/conversations/, packages/storage/migrations/007-conversations.sql |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 普通消息与追问持久受理、严格最终回复归属已通过本地验证 |
-| 下一可用交付 | 独立审查与共享入口集成；随后消费CHAT02 typed final |
+| 下一可用交付 | 消费CHAT02 typed final，固定delta供独立复审 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -29,3 +29,5 @@
 | CHAT01-04 | completed | runner_owner | flow_chat01专用PG/HTTP、0模型；无真实chat能力声明 |
 
 claim1359dfbb-d48a-4d16-b215-2cd192a0bee0 v1 active于2026-10-06 03:28:21 UTC读回，scope/owner/tree一致。唯一status已通知Lead登记，尚未独立查询dashboard。E01真实预算未批准，R02/I01封存5/5不动。生产入口/client/Web/runner.ts由其他owner接线，不在本scope修改。
+
+| CHAT01-05 | in-progress | runner_owner | 完整合入CHAT02固定2e1098504500a472f50a4f77e57c8220a48b28aa，typed优先/v2禁fallback/实际effective/局部PG验证；其独立review尚由Lead进行 |
