@@ -43,3 +43,19 @@ PG测试使用独立随机数据库和系统动态端口，正常关闭自己ser
 - 剩余边界：仅PG/注入协议验证；没有真实Codex app-server/provider/auth、生产无工具保证、Codex会话或Web目录opt-in。共享client/public exports及native descriptor下一消费片由Lead管理。
 
 最终settings损坏补充：显式 `pnpm exec vitest run apps/server/src/assistant/native-harness.test.ts -t 'rejects unknown sources'` 选择1/11，1通过、10未选择，3.37s；不是11通过，也不重复累计到157。preview原fixture会写B03固定证据路径，本次运行生成文件已保留至R05B的preview-cleanup/resource.json，并把本树B03两文件恢复到已知测试前HEAD（此前clean），不提交其他owner证据。
+
+## 原始工具输出来源补齐
+
+独审期间仅补充证据元数据，产品源码固定为4944d1e795326ad9d437c8d6a4ea88f52db619d9；没有重跑测试。原运行未使用tee等方式保存独立进程日志，现保存的是当时可见的工具输出转录，并保留exec_command/write_stdin的session、chunk、实际退出码与选中数；初始输出有截取的组已明确标记excerpt，不冒充完整进程日志。空stdout的tsc只凭原shell退出0与`&&`顺序推导两个检查退出0。
+
+| 组 | 工具转录 | 实际选择/通过 | exit |
+| --- | --- | --- | --- |
+| 合同与来源策略 | [contracts-policy.json](tool-transcripts/contracts-policy.json) | 13/13，5文件 | 0 |
+| 新PG | [native-pg.json](tool-transcripts/native-pg.json) | 11/11，1文件 | 0 |
+| runner/client | [runner-client.json](tool-transcripts/runner-client.json) | 66/66，5文件 | 0 |
+| 旧中心 | [center-consumers.json](tool-transcripts/center-consumers.json) | 46/46，4文件 | 0 |
+| preview | [preview.json](tool-transcripts/preview.json) | 21/21，1文件 | 0 |
+| 最后settings补充 | [corrupt-settings-selected.json](tool-transcripts/corrupt-settings-selected.json) | 1/1，10未选择；不重复累计 | 0 |
+| tsc与diff | [typecheck-final.json](tool-transcripts/typecheck-final.json) | 非测试选择 | 0 |
+
+[固定清单](fixed-manifest.json)保存20个变更源码、16个验证文件在固定实现目标中的SHA256/字节数，以及7个工具转录与3个结构化测量文件的SHA256/字节数。157是五组不同检查之和；最后settings断言修改由单选补充覆盖，不声称该补充重新通过全部11项。源文件哈希来自固定Git对象，不能将证据metadata提交解释为新一轮产品验证。
