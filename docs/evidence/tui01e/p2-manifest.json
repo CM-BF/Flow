@@ -1,0 +1,138 @@
+{
+  "task": "TUI01E",
+  "createdAt": "2026-10-06T13:50:51.860082+00:00",
+  "sourceTarget": "22f0e2c2b702112aa1a5d1b36874b56165cd267e",
+  "priorSourceTarget": "d4478653918144377696ce83ace128fcf4213961",
+  "originalManifest": {
+    "path": "docs/evidence/tui01e/manifest.json",
+    "bytes": 14046,
+    "sha256": "01fd4a547f3e1f80ab589027f1935c0034b169d9077ee214721f4d758fd740d8"
+  },
+  "sources": [
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 20601,
+      "sha256": "17ad4cc8f2da74a054ff5eabe751607ce4c41ad6c5d48c415dbcb7e2b820b16f",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "packages/interaction/src/queue-control/controller.test.ts",
+      "bytes": 13642,
+      "sha256": "460e736c95ce411bd156b46212ae9411a0642608fb9a38c2fce3d6a38c331f4e",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    }
+  ],
+  "inheritedSources": [
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 9697,
+      "sha256": "a33600856143358d4909a18a1454b411e90e7eaf4f837482a1be285951c047fd",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4140,
+      "sha256": "6ab6415d302838da144eb8cc63eb28904bc7132330db7d2d664da3d541ff8946",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "apps/tui/src/queue-controls/journey.test.ts",
+      "bytes": 14151,
+      "sha256": "44d84c5e197e77cdb536ebef3929ff13a58d563beb3467d622937e9df7a9687e",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 7022,
+      "sha256": "d23da46ddef077bcf19598471d15120ade5bbc6008519d55e1107150b3122831",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "apps/tui/test-fixtures/queue_driver.py",
+      "bytes": 3670,
+      "sha256": "bd6439f3da9eeb94a9a4b8369b6226bd43fc7c297b3703fcfe41393c48ad7534",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "bytes": 598,
+      "sha256": "0949d2771987240f02922fb87d16d6257730d3a07b5f161fea2e8adc1bcec883",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 5840,
+      "sha256": "8045446f377ad60c9c5097f881a22c30abba781d635176f22a9e19f829128756",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "packages/interaction/src/queue-control/index.ts",
+      "bytes": 4673,
+      "sha256": "1622c75652197569842e534d09ac3363fc0105ca276f5ba2a3056018553c4755",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2553,
+      "sha256": "b76e104f3e877172b0c52b6691366a9d6a13a58d77580cdbbd746ba1e1e7e636",
+      "commit": "22f0e2c2b702112aa1a5d1b36874b56165cd267e"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/tui01e/p2-pages-red.txt",
+      "bytes": 4929,
+      "sha256": "5c88b8266b1f5c6b279d898987eda97feffc79e93553e1e1a71f110dc85b7e43"
+    },
+    {
+      "path": "docs/evidence/tui01e/p2-pages-red-exit.json",
+      "bytes": 15,
+      "sha256": "f468f8bf84d59a390a40e5d5ac0291111e0e6eeb79821864810ae628cbd3507e"
+    },
+    {
+      "path": "docs/evidence/tui01e/p2-pages-green.txt",
+      "bytes": 335,
+      "sha256": "f2e1d962921c3b372bf76219cc1df3bf43d7eca842d0ba069b3144229c7be167"
+    },
+    {
+      "path": "docs/evidence/tui01e/p2-pages-green-exit.json",
+      "bytes": 15,
+      "sha256": "47b8b6b49d4695fe6e036bd916538aff4f46773e212ca0d429db80f3963e2cfe"
+    },
+    {
+      "path": "docs/evidence/tui01e/p2-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01e/p2-types-exit.json",
+      "bytes": 15,
+      "sha256": "47b8b6b49d4695fe6e036bd916538aff4f46773e212ca0d429db80f3963e2cfe"
+    }
+  ],
+  "preservedOriginalRows": {
+    "inputs": 21,
+    "raw": 25,
+    "derived": 3,
+    "claim": 1,
+    "mismatches": []
+  },
+  "checks": {
+    "red": {
+      "failed": 3,
+      "unselected": 9
+    },
+    "green": {
+      "selected": 12,
+      "passed": 12,
+      "durationSeconds": 0.446
+    },
+    "typecheckExit": 0,
+    "newDistinct": 3,
+    "historicalDistinct": 41,
+    "totalDistinctAcrossRounds": 44,
+    "originalPgPtyRerun": false,
+    "providerCalls": 0
+  },
+  "review": "AWAITING_INDEPENDENT_DELTA_REVIEW"
+}
