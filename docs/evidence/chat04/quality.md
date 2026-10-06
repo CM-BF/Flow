@@ -9,3 +9,5 @@
 2026-10-06 04:34:22 UTC：Root今日只读 review 应用本地 codebase-design/clean-code：共享admission深模块、conversation→task事务职责、错误/幂等重放边界；发现仅terminal状态不能保留Stop意图，需v2 pause/continue竞争覆盖。未批准旧target，也没有新增并行agent。writer先暂停源码，仅维护唯一status/合同；等待Lead接线确认。
 
 2026-10-06 04:40:18 UTC：v2完成工作段clean-code复核：复用promoteItem封装task/wake/turn/item，pause/resume命令沿既有幂等事务；currentTurn独立小读取，queue gate共享一次。无持久授权marker、隐藏resume策略或runner反序锁。32+22/noEmit通过，固定2f40ac20326dd4084f342297f94c7f1b668ffc7e，待Mika独审；未解决实现finding当前无自知项，生产接线另验。
+
+2026-10-06 04:41:01 UTC：Root独审R01类型兼容finding落实：capabilities.queue允许true/false，保持旧center语义；只改类型不改当前运行行为，noEmit重查通过。跨owner Web运行时projection双值验收交Web/Lead，未越scope。最终target ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2待Root复审。

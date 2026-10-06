@@ -1,8 +1,8 @@
 {
   "version": 2,
   "base": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
-  "implementation": "2f40ac20326dd4084f342297f94c7f1b668ffc7e",
-  "recordedAt": "2026-10-06 04:40:18 UTC",
+  "implementation": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+  "recordedAt": "2026-10-06 04:41:01 UTC",
   "sourceFiles": [
     {
       "path": "apps/server/src/conversation-queue/commands.ts",
@@ -58,7 +58,7 @@
     },
     {
       "path": "packages/contracts/src/conversations.ts",
-      "sha256": "3c40289dce98504ce8547762cae31ede3230ff1a10bb70fde2954a349ba3fde8"
+      "sha256": "e67860c24b542a5cac3864f7596daf87a223c1736438336c884e5909213ff7f5"
     },
     {
       "path": "packages/storage/migrations/011-conversation-queue.sql",
@@ -137,6 +137,10 @@
     "v2-matrix.log": {
       "sha256": "0f4713a46ee5cea570cd4b24cf9c2a9b10f749ab2c81632ed132b0e470181c98",
       "exitCode": 0
+    },
+    "v2-before-compat-typecheck.log": {
+      "exitCode": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   },
   "queueFinal": {
@@ -179,8 +183,8 @@
       "--project",
       "docs/evidence/chat04/tsconfig.json"
     ],
-    "startedAt": "2026-10-06T04:39:00.202244+00:00",
-    "endedAt": "2026-10-06T04:39:01.491306+00:00",
+    "startedAt": "2026-10-06T04:40:32.386921+00:00",
+    "endedAt": "2026-10-06T04:40:33.446801+00:00",
     "exitCode": 0
   },
   "queueCleanup": {
@@ -198,5 +202,13 @@
   "countExplanation": "32 final queue cases + 22 original conversation consumer cases. Earlier 1/2/14/15/16/18 subsets and v1 consumer are not added. resume-red selected 2 and intentionally skipped 16.",
   "models": 0,
   "newCloud": 0,
-  "productionMount": "Owned by Execution Lead; not asserted from module fixtures."
+  "productionMount": "Owned by Execution Lead; not asserted from module fixtures.",
+  "runtimeTestTarget": "2f40ac20326dd4084f342297f94c7f1b668ffc7e",
+  "typeOnlyReviewFix": {
+    "path": "packages/contracts/src/conversations.ts",
+    "change": "ConversationCapabilities.queue literal true \u2192 boolean with compatibility comment",
+    "commit": "ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2",
+    "runtimeBehaviorChanged": false,
+    "verification": "noEmit rerun exit0; original 32+22 behavior logs retained without redundant rerun"
+  }
 }

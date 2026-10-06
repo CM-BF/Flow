@@ -1,6 +1,6 @@
 # CHAT04 v2 验证证据
 
-固定实现 `2f40ac20326dd4084f342297f94c7f1b668ffc7e`，base `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`。完整[manifest](checks.json)绑定产品、测试和consumer可执行harness的实际SHA256、原始日志、命令、退出码及UTC。
+固定实现 `ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2`，base `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`。完整[manifest](checks.json)绑定产品、测试和consumer可执行harness的实际SHA256、原始日志、命令、退出码及UTC。
 
 最终32个queue用例 +22个原conversation消费者用例 = **54个不同用例通过**，noEmit exit0。旧1/2/14/15/16/18片段、v1 consumer均不重复相加；resume-red的16 skipped来自定向测试选择，最终32全跑无skip。
 
@@ -26,3 +26,5 @@ resume严格queue+task双CAS、前task门禁，显式同事务提升首waiting�
 ## 实际边界
 
 SQL fixture仅构造受控执行状态以测queue门禁，不冒充模型执行；stop竞态则走真实既有HTTP cancel/reportEvents。54项是模块及直接consumer证据，生产migration/routes/client/scan生命周期与Web真实入口仍由Lead/Web接线并另验。review尚待Mika绑定本target；main尚未接收该target。
+
+类型兼容独审修复：最终target ae9d7203将queue能力改boolean（旧中心false仍合法），server仍true；运行时源码与32+22测试时2f40ac2完全相同，仅noEmit重跑。Web projection接受true/false需Web owner同步，Lead成套集成。该跨owner依赖不被模块测试替代。

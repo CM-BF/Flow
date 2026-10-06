@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:40:18 UTC / main启动核验2026-10-06 04:20:42 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:41:01 UTC / main启动核验2026-10-06 04:20:42 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue |
 | Branch | codex/conversation-queue |
-| 工作基线 / HEAD | base dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；实现HEAD 2f40ac20326dd4084f342297f94c7f1b668ffc7e；metadata由Git聚合 |
+| 工作基线 / HEAD | base dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；实现HEAD ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2；metadata由Git聚合 |
 | 工作树dirty状态 | 实现已提交；仅交付metadata待提交 |
 | 工作分支状态 | in-progress（v2实现已验证，待独审/生产接线） |
-| 检查状态 | PASSED 2f40ac20326dd4084f342297f94c7f1b668ffc7e；32 queue +22原consumer=54不同用例，noEmit exit0 |
+| 检查状态 | PASSED ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2；32 queue +22原consumer=54不同用例，noEmit exit0 |
 | 已集成main状态 / HEAD | 未集成此target；启动main/origin dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8 clean；不将模块fixture当生产接线 |
-| 实现目标 | 2f40ac20326dd4084f342297f94c7f1b668ffc7e |
+| 实现目标 | ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 |
 | 实现范围 | apps/server/src/conversation-queue, apps/server/src/conversations/commands.ts, apps/server/src/conversations/admission.ts, apps/server/src/conversations/state.ts, packages/contracts/src/conversations.ts, packages/contracts/src/conversation-queue.ts, packages/storage/migrations/011-conversation-queue.sql, docs/evidence/chat04/run-consumer.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -20,7 +20,7 @@
 | 下一可用交付 | Mika固定target独审；Lead/Web接生产入口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED target 2f40ac20326dd4084f342297f94c7f1b668ffc7e |
+| Review | [review.md](review.md)，NOT_STARTED target ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -41,6 +41,10 @@ Goal Owner已明确停止后续意图：UI先pause ACK再既有cancel；同conve
 
 ## 架构 / Dashboard / handoff
 
-新持久queue+pause FSM、HTTP命令/读取、bounded PG公平扫描；架构target 2f40ac20326dd4084f342297f94c7f1b668ffc7e，Execution Lead需在主线接收后更新固定架构基线。生产migration/exports/client/register/scan lifecycle及Web入口由Lead/Web负责，本scope不写它们。
+新持久queue+pause FSM、HTTP命令/读取、bounded PG公平扫描；架构target ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2，Execution Lead需在主线接收后更新固定架构基线。生产migration/exports/client/register/scan lifecycle及Web入口由Lead/Web负责，本scope不写它们。
 
 Dashboard已登记本WT；前次04:31:37 UTC current/issues[]/implementation unchanged；本次更新target后再采样，不伪造review批准。后续ready B02由Goal Owner指定：CHAT04稳定交接后再独立WT/take测聊天turnPage分层读取；当前未创建B02或写其文件。
+
+## 独审修复 / 跨owner依赖
+
+R01：Root指出公共capabilities.queue literal true拒绝旧center的false；已在ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2改为boolean并注明跨中心版本兼容，server运行时仍true。只改类型，noEmit重跑exit0；32+22运行时日志绑定前一产品target 2f40ac2，所有运行时源码不变，manifest明确分开。Web projection此前只接受false，Web owner在其scope修双值并测试；Lead必须成套集成。owner不改Web/client/exports。最终approval待Root复审。
