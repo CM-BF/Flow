@@ -1,42 +1,42 @@
 """Supervise only the fixed operator PID; never signal its detached service groups."""
+import importlib.util
 import json
+import os
 from pathlib import Path
-import subprocess
 import sys
-import time
+
+
+_module_path = Path(__file__).resolve().parents[4] / 'tools/owned-process-supervision/supervise.py'
+_spec = importlib.util.spec_from_file_location('flow_owned_process_supervision', _module_path)
+_supervision = importlib.util.module_from_spec(_spec)
+sys.modules[_spec.name] = _supervision
+_spec.loader.exec_module(_supervision)
 
 
 def supervise(argv, work_seconds=118, exit_seconds=2):
-    started = time.monotonic()
-    child = subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                             start_new_session=True)
-    timed_out = False
-    stopped = False
-    # No evidence writes precede or block this deadline. Every operator action,
-    # including its initial reservation and final fsync, is inside this process.
-    try:
-        out, err = child.communicate(timeout=max(0, work_seconds - (time.monotonic() - started)))
-        stopped = True
-    except subprocess.TimeoutExpired as error:
-        timed_out = True
-        out, err = error.output or b'', error.stderr or b''
-        child.kill()  # Only this unreaped child PID; not killpg and not a service PID.
-        try:
-            # Do not wait on inherited stdout descriptors held by other processes.
-            child.wait(timeout=exit_seconds)
-            stopped = True
-        except subprocess.TimeoutExpired:
-            pass
-    finally:
-        child.stdout.close()
-        child.stderr.close()
-    return {'operatorPid': child.pid, 'operatorExit': child.returncode,
+    report = _supervision.supervise(
+        _supervision.Launch(tuple(argv), os.getcwd(), dict(os.environ),
+                            _supervision.Ownership.CHILD_PID_ONLY),
+        _supervision.Policy(work_seconds, 0, exit_seconds, 65536))
+    failures = ([report.first_failure] if report.first_failure else []) + report.secondary_failures
+    timed_out = any(failure['code'] == 'DEADLINE_EXCEEDED' for failure in failures)
+    stopped = report.pid is not None and report.owned_state == 'absent'
+    returned_zero = (stopped and report.exit_code == 0 and not failures
+                     and all(report.eof.values()))
+    return {'operatorPid': report.pid, 'operatorExit': report.exit_code,
             'deadlineExceeded': timed_out, 'operatorStopped': stopped,
-            'outcome': 'unknown' if timed_out or child.returncode != 0 else 'operator-returned-zero',
-            'elapsedMs': round((time.monotonic() - started) * 1000),
-            'stdout': out.decode('utf8', errors='replace'),
-            'stderr': err.decode('utf8', errors='replace'),
-            'serviceSignals': 0}
+            'outcome': 'operator-returned-zero' if returned_zero else 'unknown',
+            'elapsedMs': report.elapsed_ms,
+            'stdout': report.stdout.decode('utf8', errors='replace'),
+            'stderr': report.stderr.decode('utf8', errors='replace'),
+            'serviceSignals': 0,
+            'supervision': {'ownership': report.ownership, 'capture': report.capture,
+                            'firstFailure': report.first_failure,
+                            'secondaryFailures': report.secondary_failures,
+                            'ownedState': report.owned_state, 'eof': report.eof,
+                            'observedBytes': report.observed_bytes,
+                            'retainedBytes': report.retained_bytes,
+                            'signals': report.signals}}
 
 
 if __name__ == '__main__':
