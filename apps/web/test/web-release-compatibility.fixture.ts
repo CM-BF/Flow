@@ -122,7 +122,7 @@ export async function startReleaseFixture() {
     const { prepareWebArtifact, verifyWebArtifact } = await load(repository, "tools/personal-preview/web-artifact.mjs");
     const { startStaticWeb } = await load(repository, "tools/personal-preview/static-web.mjs");
     const artifacts: Array<{ label: string; source: string; directory: string; dist: string; artifact: Artifact; manifest: unknown }> = [];
-    for (const [label, target] of [["old", BACKEND], ["new", NEW_WEB]]) {
+    for (const [label, target] of [["old", BACKEND], ["new", NEW_WEB]] as const) {
       const source = join(parent, `${label}-source`), directory = join(parent, `${label}-state`);
       await git("worktree", "add", "--detach", source, target); checkoutPaths.push(source); await mkdir(directory, { mode: 0o700 });
       console.log(`Preparing actual ${label} Web ${target}`);
