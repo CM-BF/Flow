@@ -3,7 +3,8 @@ import path from 'node:path';
 import os from 'node:os';
 import { createHash } from 'node:crypto';
 
-const hook = vi.hoisted(() => ({ base: '', point: '', fired: false, privateRoot: '', fds: [] as number[], factoryCalls: 0, stderr: 'Operation not permitted' }));
+const hook = vi.hoisted(() => ({ base: '', point: '', fired: false, privateRoot: '', fds: [] as number[], factoryCalls: 0, stderr: 'Operation not permitted', elapsed: 0, resultFd: -1 }));
+vi.mock('node:perf_hooks', () => ({ performance: { now: () => hook.elapsed } }));
 vi.mock('node:fs', async importOriginal => {
   const real = await importOriginal<typeof import('node:fs')>();
   const mapped = (file: unknown) => typeof file === 'string' && file.includes('/docs/evidence/wpf-mature-02/diagnostics/')
@@ -15,6 +16,7 @@ vi.mock('node:fs', async importOriginal => {
     openSync(file: unknown, ...args: any[]) {
       const fd = (real.openSync as any)(mapped(file), ...args);
       if (typeof file === 'string' && file.endsWith('.stderr')) hook.fds.push(fd);
+      if (typeof file === 'string' && file.endsWith('batch-result.json')) hook.resultFd = fd;
       return fd;
     },
     mkdtempSync(prefix: string) {
@@ -22,6 +24,7 @@ vi.mock('node:fs', async importOriginal => {
     },
     chmodSync(file: string, mode: number) { if (file === hook.privateRoot) fail('root-chmod'); return real.chmodSync(file, mode); },
     lstatSync(file: string) { if (file === hook.privateRoot) fail('root-identity'); return real.lstatSync(file); },
+    fsyncSync(fd: number) { real.fsyncSync(fd); if (hook.point === 'slow-result' && fd === hook.resultFd) hook.elapsed = 60001; },
     fstatSync(fd: number) { if (hook.fds.includes(fd)) fail('sink-fstat'); return real.fstatSync(fd); },
     closeSync(fd: number) {
       if (hook.fds.includes(fd)) fail('sink-close');
@@ -46,8 +49,8 @@ const real = await vi.importActual<typeof import('node:fs')>('node:fs');
 beforeEach(() => {
   hook.base = real.mkdtempSync(path.join(os.tmpdir(), 'flow-diag-prep-test-'));
   real.mkdirSync(path.join(hook.base, 'evidence'), { mode: 0o700 });
-  hook.point = ''; hook.fired = false; hook.privateRoot = ''; hook.fds = []; hook.factoryCalls = 0; hook.stderr = 'Operation not permitted';
-  real.writeFileSync(path.join(hook.base, 'evidence/driver-input-v3.json'), JSON.stringify({ maxChildren: 3, totalMs: 60000,
+  hook.point = ''; hook.fired = false; hook.privateRoot = ''; hook.fds = []; hook.factoryCalls = 0; hook.stderr = 'Operation not permitted'; hook.elapsed = 0; hook.resultFd = -1;
+  real.writeFileSync(path.join(hook.base, 'evidence/driver-input-v4.json'), JSON.stringify({ maxChildren: 3, totalMs: 60000,
     thirdAttempt: 'NOT_RUN', files: {}, externalInputs: {}, node: real.realpathSync(process.execPath),
     nodeSha256: createHash('sha256').update(real.readFileSync(process.execPath)).digest('hex'), controlStderrSha256: 'intentionally-different' }));
 });
@@ -106,4 +109,14 @@ test('a function name without a failure marker remains unknown', async () => {
   hook.stderr = 'uv_thread_create PRIVATE_FAILURE_SENTINEL';
   const result = await runDiagnosticBatch();
   expect(result.privateArtifacts[0].classification).toBe('unknown'); expect(result.cleanupComplete).toBe(true);
+});
+
+
+test('the safe CLI result includes final persistence time without rewriting the before-persistence receipt', async () => {
+  hook.point = 'slow-result'; const result = await runDiagnosticBatch();
+  const stored = JSON.parse(real.readFileSync(path.join(hook.base, 'evidence/batch-result.json'), 'utf8'));
+  expect(stored.elapsedBasis).toBe('before-result-persistence');
+  expect(stored.withinBudgetBeforePersistence).toBe(true); expect(stored).not.toHaveProperty('withinBudget');
+  expect(result.finalElapsedMs).toBe(60001); expect(result.withinBudget).toBe(false);
+  expect(result.cleanupComplete).toBe(true);
 });

@@ -114,7 +114,7 @@ function cleanupPrivate(directory, rootIdentity, cwdRecord, owned) {
 
 /** No retry or third-attempt hook. Later invocation cannot reuse the consumed wx batch or clock. */
 export async function runDiagnosticBatch() {
-  const inputFile = path.join(evidence, 'driver-input-v3.json');
+  const inputFile = path.join(evidence, 'driver-input-v4.json');
   const input = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
   if (input.maxChildren !== 3 || input.totalMs !== 60000 || input.thirdAttempt !== 'NOT_RUN') throw safeError();
   for (const [relative, expected] of Object.entries(input.files)) {
@@ -208,9 +208,12 @@ export async function runDiagnosticBatch() {
     const childCleanup = result.attempts.every(a => a.close?.child === 'confirmed-exited');
     const canaryCleanup = result.attempts.filter(a => a.stage === 'canary').every(a => a.observation.listenerClosed && a.observation.retainedRoots?.length === 0);
     result.cleanupComplete = cleanup.privateRootRemoved && owned.every(item => item.close && item.removed) && childCleanup && canaryCleanup;
-    result.endedAt = new Date().toISOString(); result.elapsedMs = elapsed(); result.withinBudget = result.elapsedMs <= 60000;
+    result.endedAt = new Date().toISOString(); result.elapsedMs = elapsed();
+    result.elapsedBasis = 'before-result-persistence'; result.withinBudgetBeforePersistence = result.elapsedMs <= 60000;
     // Only hashes, allowlist classifications and cleanup facts survive the same batch finally.
     durableCreate(path.join(evidence, 'batch-result.json'), result);
+    // The safe CLI return is the final outside-the-file completion evidence, avoiding recursive receipts.
+    result.finalElapsedMs = elapsed(); result.withinBudget = result.finalElapsedMs <= 60000;
   }
   return result;
 }
