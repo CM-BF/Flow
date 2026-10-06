@@ -43,3 +43,5 @@
 当前 HEAD `e7ab805fa76017392e2d9bcc7a7f33b16402a903`，启动前干净。R01-02 / R01-04 重新进入 in-progress；reviewer 已通过公开 runRunner + HarnessAdapter + HTTP / 磁盘边界复现并发事件在发送前未持久化。owner 获 Execution Lead 授权回到本 worktree 修复；R02 尚无真实调用。待新增并发落盘与旧前缀重启测试，再更新实现 SHA；未获 approval，main 未集成。
 
 修复检查：2026-10-06 01:13 UTC，固定落盘/发送快照，连续 ACK 接受已持久后续前缀；新增 2 条复现回归及 3 条非法 ACK 保留回归。R01-02 / R01-04 的代码与分支验证完成，修复提交后独立复审仍 pending。Dashboard：本 worktree 当前未接入聚合器，等待聚合器展示；不得将本分支修复标记为 main 已集成。
+
+修复交付 commit / review target：`d5b02a880db0a74385f9e07f77901f9f4fc448b3`（父提交 `e7ab805fa76017392e2d9bcc7a7f33b16402a903`）。2026-10-06 01:12:30 UTC 对相同源码执行 `pnpm check`：类型检查通过，28/28（runner 24、公共 4）通过；diff 检查通过。实现提交后工作树干净；本条状态为后续文档提交。R01-02 / R01-04 completed（branch），独立复审 pending；main 集成尚待 Execution Lead。
