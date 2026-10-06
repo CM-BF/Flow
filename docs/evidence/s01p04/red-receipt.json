@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-10-06T11:05:54.391Z",
+  "finishedAt": "2026-10-06T11:05:57.141Z",
+  "elapsedMs": 2748.903083,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/runner-read-fence.test.ts",
+    "--testNamePattern",
+    "different attempts share the runner fence for ownership, heartbeat and event commit"
+  ],
+  "executionHead": "aa7f7a01454c7d7160e5eeaf5090761d0ad44729",
+  "testTarget": "cd13e01e871adaaf7dee1cc6676f7a52145e316f",
+  "exitCode": 1,
+  "signal": null
+}

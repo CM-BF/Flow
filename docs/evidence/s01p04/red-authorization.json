@@ -1,0 +1,13 @@
+{
+  "reviewer": "Mika / gpt-6-astra",
+  "reviewAt": "2026-10-06 11:05:15 UTC",
+  "preparationTarget": "cd13e01e871adaaf7dee1cc6676f7a52145e316f",
+  "preparationManifestSha256": "17dbe0b07b15443f9d9b511a4f95e335079eb83658495ac34522c172af7ccadc",
+  "verdict": "APPROVED preparation only; no blocking fixture issues",
+  "authorization": "One exact target red call, Node24/Vitest4.0.18, no watch/retry. Other8 unselected. Own random PG16 DB, approved loopback environment mapping without output. Unknown fixture/cleanup means stop. No runners.ts edit or capacity window.",
+  "pattern": "different attempts share the runner fence for ownership, heartbeat and event commit",
+  "claimId": "cb7db4a9-cb89-4589-b2f3-d30b75549ab9",
+  "claimVersion": 1,
+  "freshClaimState": "active",
+  "executionHead": "aa7f7a01454c7d7160e5eeaf5090761d0ad44729"
+}

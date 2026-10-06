@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:04:05 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:06:45 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,17 +10,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence |
 | Branch | codex/runner-read-fence |
 | 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；preparation target cd13e01e871adaaf7dee1cc6676f7a52145e316f（非生产实现） |
-| 工作树dirty状态 | preparation已固定；当前仅manifest/status metadata；runners.ts未改 |
+| 工作树dirty状态 | preparation source固定；当前仅目标red证据/status metadata；runners.ts未改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 局部strict 0；初次类型失败保留；9项新PG测试尚NOT_RUN，0 PG连接 |
+| 检查状态 | 局部strict 0；唯一目标red实际1失败/8未选，符合旧锁预期；专库清理已核 |
 | 已集成main状态 / HEAD | 本片尚未实现/集成；观察main c450c2da7e6185b88db9f46e0299ee504ee6f3e8 |
 | 实现目标 | UNKNOWN（尚无生产实现） |
 | 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 同一执行器多attempt的授权读取锁方案与隔离测试已准备，生产改动等待原owner交接 |
-| 下一可用交付 | 先准备专库交错回归，再在合法交接后实施最小修复 |
+| 当前产出 | 已用隔离事务复现同一执行器不同attempt被串行阻塞，等待源码交接后修复 |
+| 下一可用交付 | 正式交接后实施最小修复，并验证撤销、维护和领取保护 |
 | 当前阻塞 | ACTIVE: 核心源码仍由ENG01B持有；Mika协调其ready稳定片后的交接，独立测试准备可继续 |
 | 需用户决定 | NONE |
 | Review | NOT_STARTED；方法已获Mika同意，不等于实现批准 |
@@ -28,7 +28,7 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | S01P04-01 | completed | status_read / mika | [Interface](../../docs/evidence/s01p04/interface.md)，明确移交请求和锁顺序矩阵 |
-| S01P04-02 | in-progress | status_read | 9项专用PG交错测试已写、局部strict 0；尚未连接/运行，见 preparation-checks.json |
+| S01P04-02 | completed | status_read | 9项准备、局部strict 0；授权唯一目标red 1失败/8未选及专库absent，见 [red analysis](../../docs/evidence/s01p04/red-analysis.json) |
 | S01P04-03 | pending | status_read / Mika / ENG01B | runners.ts不在当前claim；等待原owner稳定片停写/amend |
 | S01P04-04 | pending | status_read / 独审者 | NOT_RUN / NOT_STARTED |
 | S01P04-05 | pending | Lead / status_read | 未集成 |
@@ -40,3 +40,5 @@
 本status是唯一手填事实源，source登记及页面聚合待Lead；不写registry/聚合JSON。原S01 PASS结果339与旧FAIL/journal已冻结，本片不重跑其容量窗口，不将S01挂为第三层父任务。
 
 准备固定target `cd13e01e871adaaf7dee1cc6676f7a52145e316f`，18项[preparation manifest](../../docs/evidence/s01p04/preparation-manifest.json)绑定2 source/config、2 raw、4 support、10 readonly。本地strict通过不表示PG交错通过；9项真实检查仍NOT_RUN。
+
+2026-10-06 11:05:15 UTC Mika核18项preparation绑定并批准唯一目标red。实际11:05:54.391Z→11:05:57.141Z、exit1，正Lock/blocker分支在首次ownedAttempt触发预期失败，heartbeat/report段未运行；8项未选不当通过。所有自有连接关闭，专库 `flow_s01p04_a57c5ac6e3c9426f9084d378eb406286` 由实际DROP后查询核absent，无retained。无重跑/容量窗口/provider，runners.ts仍只读base c450；源码交接待ENG稳定片。

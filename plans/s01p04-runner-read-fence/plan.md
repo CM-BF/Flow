@@ -9,7 +9,7 @@
 ## TODO
 
 - [x] **S01P04-01** 固定小Interface、共享/强锁调用矩阵、maintenance与revoke区别、测试seam及合法移交请求。
-- [ ] **S01P04-02** 准备专用随机PG库交错测试；原实现真实red，不执行旧固定共享库fixture。
+- [x] **S01P04-02** 准备专用随机PG库交错测试；原实现真实red，不执行旧固定共享库fixture。
 - [ ] **S01P04-03** 原owner ready后合法amend取得runners.ts，保留其固定源，最小共享fence red→green。
 - [ ] **S01P04-04** 完成同/不同attempt、revoke/drain/hold/claim与强锁嵌套代表检查、必要直接消费者及strict；固定证据和独审。
 - [ ] **S01P04-05** 修复复审与受控main集成，确认权威status/架构影响同步；剩余完整未知claim恢复不混为本片完成。
