@@ -25,13 +25,13 @@ recoveryScopeId是DB初始化opaque namespace，不是principal/凭据/授权；
 
 pending是客户端未获事务结果，没有虚构中心后台processing行。upload command按canonical完整请求持久幂等，重启返回原resource；已有receipt不因TTL变成新资源。首次Send/Queue在幂等replay之后原子pin与冻结。锁序operation-key→conversation（适用时）→project→resource IDs排序；cleanup只project→同resource顺序、不反向锁task/conversation。仅过期未绑定新资源可清；in-use/audit资源和knowledge_sources/versions不删。command receipt保留原key墓碑；TTL到期未回收时current为expired；GC后lookup返原ref+unavailable，metadata404不代表从未受理。全pinned达到128/1MiB明确拒新增；现全局command journal尚无GC，不声称永久元数据全部有界回收。draft remove本地，queue取消不unpin。
 
-失败类：400 invalid_attachment_request/invalid_attachment_text/attachment_digest_mismatch；413 attachment_too_large/conversation_context_budget；415 attachment_type_unsupported；404 attachment_not_found/attachment_upload_receipt_not_found；409 attachment_scope_mismatch/attachment_reference_mismatch/conversation_project_required/attachment_budget/idempotency_conflict；410 attachment_expired；401/403不洗白此前unknown。
+失败类：400 invalid_attachment_request/invalid_attachment_text/attachment_digest_mismatch；413 attachment_too_large；400 conversation_context_budget（保既有v1状态）；415 attachment_type_unsupported；404 attachment_not_found/attachment_upload_receipt_not_found；409 attachment_scope_mismatch/attachment_reference_mismatch/conversation_project_required/attachment_budget/idempotency_conflict；410 attachment_expired；401/403不洗白此前unknown。
 
 ## context v1/v2 与授权runner
 
 无attachments或[]维持原template1；知识也为空则无context。仅非空attachments用template2，strict discriminated reference含order=knowledge-then-attachments、sources[]知识metadata、attachments[]固定metadata；各段保持请求顺序，总数≤4、原bytes≤8192。旧v1字段/算法/guard不松。v2 digest包含版本/顺序/引用及exact正文，executionInputDigest含userText/template2/编排prompt；prompt仍≤16000codeunits/49152bytes。metadata无正文，contextDetail授权按需可含正文。
 
-公共ACK校验由F01/TUI/Web同一合同消费，必须核完整有序refs/bytes/context身份；不以长度或digest存在冒充匹配。后继freezeContext/private executionInputForTask复用现中心权威，queue promotion/recovery沿原input；runner通过授权claim获得private prompt，不增任意文件读取或provider SDK耦合。018原不可变trigger不放宽，026已预留，写权未领取。upload、knowledge、runner file分型；首片runner file/PDF/image均unsupported。
+公共ACK校验由F01/TUI/Web同一合同消费，必须核完整有序refs/bytes/context身份；不以长度或digest存在冒充匹配。后继freezeContext/private executionInputForTask复用现中心权威，queue promotion/recovery沿原input；runner通过授权claim获得private prompt，不增任意文件读取或provider SDK耦合。018原不可变trigger不放宽，026已预留，runtime v2已精确领取。upload、knowledge、runner file分型；首片runner file/PDF/image均unsupported。
 
 ## 验证与非目标
 
@@ -66,3 +66,17 @@ parseAttachmentContextReceipt({
 ```
 
 必选refs核全project/resource/version/contentDigest与请求顺序；响应name/type/bytes均经公开结构与合计预算校验，但name不是执行身份，bare refs不能证明预先知道其值。可选descriptors增加精确name/type/bytes比较，其ref和长度还必须对齐同一ordered request。完整AttachmentMetadata可直接作descriptor输入，先投影reference/name/mediaType/byteLength，createdAt/state等不进入回执比较也不导致拒绝。shared decoder无需第二ACK实现。调用方仍先核外层身份和当前授权，helper不授权限。
+
+## Runtime冻结与保留边界（2026-10-06）
+
+026已由Lead预留、ef617 v2精确领取。资源模块复用现owner认证与command journal；没有上传后台状态机。POST事务提交即ready，客户端pending/unknown不是中心持久processing状态。CREATE原回执attachmentContext:false，GET conversation按固定project及026安装态动态公布；实际路由由F01统一挂载，未安装数据库保持false。
+
+24h是发布后**新准入期**；`unboundTtlSeconds`同时界定未绑定资源最早回收时间。retention只保旧执行/审计，不延长新选择期。24h后metadata/lookup仍expired+retained，ready列表不列，旧授权正文可读、新key的Send/Queue均410；原key原冻结receipt不重新验TTL。draft remove不删除已发布资源，queue取消不unpin，018 knowledge源/版本不清理。
+
+锁顺序：幂等operation/key → conversation（发送/排队适用）→ project → resource UUID排序。GC只project → resource，不反向取conversation/task。首次pin获得这些锁后才用`clock_timestamp()`观察到期；不能用事务起点now()/CURRENT_TIMESTAMP或语句起点statement_timestamp。线性化点是持锁后的到期验证，随后冻结/绑定在同一事务提交；先提交pin则GC保留，先到期则新pin拒绝。上传TTL使用`interval '24 hours'`，不使用会跨DST的`1 day`。参考[PostgreSQL时间函数](https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-CURRENT)与[显式锁](https://www.postgresql.org/docs/current/explicit-locking.html)。
+
+运行时验收另绑新target。phase1固定6bc只证明合同/真实legacy函数加mock fetch；不以该批准代替新PG/HTTP与迁移验证。
+
+测试阶段转换：6bc/49保留旧strict schema拒[]的真实phase1证明；当前runtime的conversations/queue schema已additive支持attachments，因此同一test改验omitted不注入/[]合法，不声称重跑旧schema。旧Web真实projection/queue/FlowClient ACK和GET行为仍作为直接消费者运行；HTTP另外验证迁移前后v1原receipt、空attachment仍v1、非空合法引用v2。
+
+独审运行可设`FLOW_ATTACH_EVIDENCE_DIR=/tmp/<own-empty-output-dir>`，两test共用fixture将全部PG资源/cleanup/有界查询记录写该目录；默认仍本任务证据。fixture创建随机独占DB，默认使用现本机55432测试管理员，动态HTTP端口；无provider。只在crash-center case启动自己的子进程并SIGKILL，保留当前DB重启后验证原key。资源清理逐步执行并记录remaining/connections/errors；有残留不强杀非本fixture会话。

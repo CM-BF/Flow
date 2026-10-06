@@ -1,0 +1,318 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources
+
+ ❯ apps/server/src/attachments/context.test.ts (19 tests | 19 failed) 4065ms
+   × before 026 plain/knowledge remain v1; migration preserves saved receipts and enables project GET only 51ms
+   × frozen ordered upload refs extend metadata without leaking body and preserve knowledge-first input order 22ms
+   × same ordered material digest is stable across user text, and changing attachment order changes it 14ms
+   × lost Send ACK replays before TTL and busy/CAS after restart; retained expiry blocks a fresh key 12ms
+   × first pin checks DB clock after a project-lock wait, rather than transaction or statement start 15ms
+   × GC holding the project lock wins before first pin without partial context; pin-first survives expiry/GC 12ms
+   × queue restart, pause/cancel and promotion retain the original material even after expiry 25ms
+   × Send and Queue reject no-project atomically 13ms
+   × Send and Queue reject foreign-project atomically 12ms
+   × Send and Queue reject wrong-digest atomically 13ms
+   × Send and Queue reject missing atomically 13ms
+   × Send and Queue reject duplicate atomically 13ms
+   × Send and Queue reject five-combined atomically 12ms
+   × Send and Queue reject raw-budget atomically 12ms
+   × Send and Queue reject compiled-budget atomically 12ms
+   × one batched metadata query for 50 items contains descriptors only; large body is read explicitly 17ms
+   × actual runner receives exact frozen input through authorized claim and a generic fake adapter, without provider 27ms
+   × authorized reconciliation copies the same frozen material with a new execution input 13ms
+   × context/input tampering cannot enter a runner and the original immutable triggers remain enforced 13ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 19 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > before 026 plain/knowledge remain v1; migration preserves saved receipts and enables project GET only
+AssertionError: expected 400 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 400
+
+ ❯ knowledge apps/server/src/attachments/context.test.ts:27:132
+
+ ❯ apps/server/src/attachments/context.test.ts:35:99
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > frozen ordered upload refs extend metadata without leaking body and preserve knowledge-first input order
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:49:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > same ordered material digest is stable across user text, and changing attachment order changes it
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:66:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > lost Send ACK replays before TTL and busy/CAS after restart; retained expiry blocks a fresh key
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:75:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > first pin checks DB clock after a project-lock wait, rather than transaction or statement start
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:89:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > GC holding the project lock wins before first pin without partial context; pin-first survives expiry/GC
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:102:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > queue restart, pause/cancel and promotion retain the original material even after expiry
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:115:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject no-project atomically
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject foreign-project atomically
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject wrong-digest atomically
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject missing atomically
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject duplicate atomically
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject five-combined atomically
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject raw-budget atomically
+ FAIL  apps/server/src/attachments/context.test.ts > Send and Queue reject compiled-budget atomically
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:128:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > one batched metadata query for 50 items contains descriptors only; large body is read explicitly
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:144:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > actual runner receives exact frozen input through authorized claim and a generic fake adapter, without provider
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:157:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > authorized reconciliation copies the same frozen material with a new execution input
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:174:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/19]⎯
+
+ FAIL  apps/server/src/attachments/context.test.ts > context/input tampering cannot enter a runner and the original immutable triggers remain enforced
+AssertionError: Expected values to be strictly equal:
+
+409 !== 200
+
+
+- Expected
++ Received
+
+- 200
++ 409
+
+ ❯ Object.upload apps/server/src/attachments/fixture.ts:64:102
+     62|       },
+     63|       upload: async (projectId: string, text = 'exact material', name …
+     64|         const capability = await http(`/api/projects/${projectId}/atta…
+       |                                                                                                      ^
+     65|         const input = { recoveryScopeId: capability.body.recoveryScope…
+     66|         const response = await http(`/api/projects/${projectId}/attach…
+ ❯ material apps/server/src/attachments/context.test.ts:23:55
+ ❯ apps/server/src/attachments/context.test.ts:188:34
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/19]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  19 failed (19)
+   Start at  03:38:26
+   Duration  5.18s (transform 482ms, setup 0ms, import 1.03s, tests 4.06s, environment 0ms)
+

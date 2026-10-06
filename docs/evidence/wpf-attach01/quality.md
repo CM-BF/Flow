@@ -21,3 +21,15 @@ clean-code固定来源sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75
 2026-10-06 10:25:00 UTC 最后接口复核：TUI只持有序列化frozenAdmission，因此公共v2 helper必选输入改为完整ordered refs；已核upload descriptor只作可选额外期望，避免从ref捏造name/bytes。完整accepted.resource结构合法作为descriptor，通过投影四字段兼容其状态/时间附字段；保持完整ref/名称/bytes核验。新增实际结构性consumer回归，最终41+8=49与根types0；正式target 6bc2918cf35a652e241e6378c3b6297cac179adb。producer/consumer共用结构，无新网络/协议/权限状态。原wire48项与additive47项证据各自保留，最终report在resource-checks.json。
 
 2026-10-06 10:27:21 UTC phase1独审交付安全点：root 10:26 UTC完整合同/测试/Interface clean-code review APPROVED，无blocking；独立49/49，source/dependency hashes核实。本人本段只记录结论和原log，未再改已审三源、未重测。下一后端stack仍复用本地find-skills/codebase-design/clean-code；本地无独立PostgreSQL技能，采用现仓库transaction/command/fixed-material模块工程方法，runtime先精确claim再写。
+
+2026-10-06 10:29:57 UTC runtime开始：Node24/TypeScript/Fastify5/pg8/PostgreSQL栈用既有本地codebase-design/clean-code；本地find无专门PG skill，未安装无关技能。复用commandInTransaction与owner hook、project row锁、context private claim，不新建权限状态。原资源状态由DB产生；lazy内容与metadata查询分开；cap查询基于migration/project，旧DB v1查询保兼容。当前runtime NOT_STARTED检查，不复用phase1批准。
+
+2026-10-06 10:39 UTC runtime定段clean-code：storage负责固定资源/锁/幂等，index只挂现owner认证下的窄路由与迁移；context复用既有执行编排而不增runner权限。清码发现JSON对象canonical键序会让attachments先于sources，已改明确两段编排并用实际prompt顺序断言。锁后clock_timestamp、24 hours与retained仅审计策略已统一。首types/resource套件发现server无直接zod依赖，复用已有contract UUID/version schema消除非法包依赖；不是安装新依赖。首context报告19失败中首项是作者knowledge请求漏expectedVersion，后18项因该首setup未安装026级联；修fixture后19通过，不称19产品缺陷。当前7资源+19context真实PGHTTP通过，最终检查尚待后续边界。
+
+Root授权phase1测试单点随runtime转换：原old strict center拒[]断言依赖当时旧schema，正式49/6bc证据永久保留；新schema现在接收optional attachments，其当前测试改验证omitted不注入、[]合法，真实旧Web GET/ACK矩阵仍运行，不把新schema伪称旧center。attachments.ts/conversation-context.ts保持6bc字节。
+
+10:42 UTC运行边界复核：resource/core第一次组合76断言虽通过但有一个unhandled pg错误，整轮不算绿；来自测试直接terminate服务器连接，暴露既有pool异常退出语义。改用cancel_backend专测事务取消，再加独占子中心SIGKILL/restart真实进程崩溃用例，不屏蔽错误、不动共享database.ts。下一轮77/77且无unhandled、3个独占DB均清零。Root要求独审不污染作者证据，fixture新增可选FLOW_ATTACH_EVIDENCE_DIR仅测试输出接缝；逐步cleanup即使单步失败仍观察残留、不得静默清理失败。最终候选后此接缝与实际cleanup并入hash。
+
+2026-10-06 10:46:51 UTC runtime交付clean-code：固定8701a6cf547248e70aa5758f05da1d7d314ae9c0，14文件运行增量、全feature16源；合同实现2文件字节保持phase1。职责仍resource storage/route/migration/context glue，复用owner auth/command journal/private claim，无第二权限或任务权威。清码追加JSON传输fatal decode只封装附件路由，64KiB body与合法U+FFFD/非法UTF8实测；Fastify类型含string分支，显式Buffer收窄而非as断言。最后78/78、根types0，3DB无残留；before/after/sourcecandidate hash全等。
+
+保留原始失败与数据：26早轮通过、76+unhandled非整轮通过、77通过、78-first直接过但types2，最终78/types0。未反复全库；四显式路径覆盖本module+既有收据直接消费者，runner generic adapter没有provider调用。当前metadata收口与parser/link核，源码冻结待独审；F01实际mount/client、App附件输入/持久恢复仍后继，不冒称已上线。
