@@ -91,3 +91,6 @@ Reviewer Mika（跨任务独立只读），Goal Owner接收。APPROVED薄client7
 
 Review target commit：549f6b3e54f902d7b75ebe6d17f293a2085e7a6c
 状态NOT_STARTED，Root独立只读。限定5源码，manifest=context-mount-manifest.json；新3+直接4单次7/7，另旧34/34、Web组合116/116与两层typecheck，原red3/3保留，不称一次157或全域复验。K02a6/O07c224/Web763/747各自独立approval不由本接线替代。
+
+## X04 dependency-only independent approval
+runner_owner只读APPROVED9cde2414078201802db03c00888175aa776651a7，范围server manifest/lock importer/new closure/安装输出；既有锁全不变、6根91新增来源与本地metadata核，无脚本/global依赖。未重跑产品/安装，X04消费者另验。

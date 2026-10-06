@@ -2,21 +2,21 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:04:00 UTC / 2026-10-06 05:49:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:13:00 UTC / 2026-10-06 06:13:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | fb906cb42391971a8b315dbd813f7633927d7265 / 79e06efdda45f04e713838086de2400f75949710 |
-| 工作树dirty状态 | 实现已固定；仅本次证据与status收尾 |
+| 工作基线 / HEAD | main3d4985fca060155435b159e0467815bf8e88b8b8；当前固定接线549f6b3e54f902d7b75ebe6d17f293a2085e7a6c，metadata9bfa00e |
+| 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；当前薄client HTTP1/1与typecheck，原失败保留；不代表PG/原生模型 |
-| 已集成main状态 / HEAD | main 3d4985fca060155435b159e0467815bf8e88b8b8 已含O06 client/mount与QUEUE01；常驻center/runner仍fb906cb/v3接受，Web测试使用独立main3d入口 |
-| Review | O06薄client79e06+a9cd与生产bf03均Mika独立APPROVED；test P2已关闭，见review.md |
-| 实现目标 | 79e06efdda45f04e713838086de2400f75949710 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/goal-graph-runs.test.ts, packages/contracts/src/index.ts |
+| 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
+| 已集成main状态 / HEAD | 823fea9bd8bc868243398d58725b4076528a7ffc 已推送；本轮仅73-source登记先上线，018/019组合待独审接收。个人center/runner仍fb906cb |
+| Review | 当前549f6b3由Root独立只读审查中；历史O06/QUEUE各自批准保留于review.md |
+| 实现目标 | 549f6b3e54f902d7b75ebe6d17f293a2085e7a6c |
+| 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/conversation-context.test.ts, packages/client/src/context-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
 | 下一可用交付 | 接入版本化知识引用与原生目标拆分工具；两次聊天验收额度已封存 |
@@ -71,4 +71,4 @@
 | F01-14 | completed | Lead | O06 client/mount独审并main3d；边界见review/quality |
 | F01-15 | completed | Lead | [真实queue旅程](../../docs/evidence/f01/queue-live/README.md)，GO独立读事实/目视接受；2/2已封存 |
 
-2026-10-06 06:15 UTC F01-16 in-progress/review：固定549f6b3，018生产context与O07/019受控组合、公共owner detail client；真实PG/HTTP新3+直接4=7，旧34与Web116独立运行，typecheck通过。根独立review待收；本地组合HEAD84f3472尚未main，实际个人服务fb906不改。X04依赖9cde241独立只读审查中，未声称包管理已投产。
+2026-10-06 06:13 UTC F01-16 in-progress/review：固定549f6b3，018生产context与O07/019受控组合、公共owner detail client；真实PG/HTTP新3+直接4=7，旧34与Web116独立运行，typecheck通过。根独立review待收；本地组合HEAD84f3472尚未main，实际个人服务fb906不改。X04依赖9cde241独立只读审查中，未声称包管理已投产。

@@ -132,8 +132,11 @@ clean-code复核了秘密不输出、读预检与有副作用执行分隔、浏�
 2026-10-06 06:04 UTC：GO明确窗口后运行固定0695 caller一次，06:02:19～28完整通过；2query保守SDK和$.012396，后台继续用browser exit后即时GET running证明，严格visible第二assistant精确nonce。两实图已目视，原服务/DB保留，0未完attempt。GO已读事实/目视接受，无重跑/第三query；报告保留plugins/skills实际差异、usage累计unknown与显式Continue边界。
 
 
-## 2026-10-06 06:15 UTC K02/O07 production integration
+## 2026-10-06 06:13 UTC K02/O07 production integration
 
 Fixed shared delta549f6b3: only 018 migrate/register, context type export and one owner client method. Existing O07 migrate applies17/19; all awaited before scheduler or default serial queue scan. Domain approvals stay bound to K02a6/O07c224. Production fixture uses createServer default, no module self-mount/manual migrate/scan. First red3/3 preserves missing route/client/migration failures; green7/7=3new+4existing production cases. Separate actual legacy34/34=conversation22+C02reconciliation12, not claimed selected63 or a single run41. Queue32-domain evidence reused; default readiness/in-flight shutdown/disabled scan3 production cases rerun at this integration point. Own DBs/dynamic ports cleaned, facts saved. Old tests do not rewrite owner evidence; no provider. Web controlled compatibility763 and independent renderer747 merged without domain conflicts; local116 tests and Web tsc passed, no repeat browser suite.
 
 Applied existing local find-skills/codebase-design/clean-code: the domain remains a deep module, only startup/auth/client seam changes; avoid per-reader body patches. Public prompt/bubble stay original; startup queue promotes frozenv1 despite sourcev2; explicit owner detail and private runner assignment checked. Restart fixture setup changes paused flag only while its center closed and is labelled synthetic input, not product unpause. Graph native provider/NL and context picking UI remain unproven. Manifest binds source/raw outputs; no metadata-driven retest.
+
+
+X04 shared dependency9cde241 independent reviewer runner_owner APPROVED (read-only): only server importer changed, all91 new package/snapshot entries reachable from6 roots withSRI; existing lock entries including Claude0.3.290/Anthropic0.131.0 untouched. Actual local package metadata verifiedruntime3versions/ISC/engine andtypes3MIT; no preinstall/install/postinstall among added91. Install used--ignore-scripts, no global/file import. Consumer execution belongsX04; this approval does not imply package installation/trust capability.
