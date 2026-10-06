@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-10-06T10:37:27Z",
+  "main": "0cee7556befa1988e60bae94b510240122c34b88",
+  "approvedTarget": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+  "targetAncestorOfMain": true,
+  "source": [
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "sha256": "3f76cfde9b61ea049da7575c905d91588ea9d8a400c5bcc0336036998c0020d5",
+      "sameAsApproved": true
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "sha256": "24190fe6eab6f55a10070ba9004f798749dfb5a61dee44ff02cbef2bb3022561",
+      "sameAsApproved": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "5ff272bec0a6120dd10791d168d260f1c0aea4fef45e51782b067ee1f68305f1",
+      "sameAsApproved": true
+    },
+    {
+      "path": "packages/client/src/conversations.test.ts",
+      "sha256": "f48fe8f522ceefaf8c10f866231ff98239b6bc5dbac728a1cf4c5f808177c5bd",
+      "sameAsApproved": true
+    },
+    {
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "sha256": "ebeea716b5e120f25f9e7b62009c24c1ce8cc9132f441732af632cc91272862c",
+      "sameAsApproved": true
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "sha256": "ef60f5b6fa8c02bdb928c463bc06763cac242f8c7cd6c350c3e6abb6ba0d1db1",
+      "sameAsApproved": true
+    },
+    {
+      "path": "packages/interaction/src/controller.test.ts",
+      "sha256": "87ac3d5aeb1ba495cbe918c7c0a67f885a1425ed8fc9627bc49e427d001a4e71",
+      "sameAsApproved": true
+    },
+    {
+      "path": "apps/tui/src/recovery.test.ts",
+      "sha256": "5cf1af83cc6c2ce2200e9d9546df985cce0e9d871c9a7dfa4ea9e5162f2a2643",
+      "sameAsApproved": true
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "sha256": "5a08ef365cd397c0a4e29f2e78961d84217e7398d4e439b96c7cfb2cb0907be9",
+      "sameAsApproved": true
+    }
+  ],
+  "leadIntegrationEvidence": "I02 docs/evidence/i02/ack-graceful-integration.json",
+  "leadChecks": "root types exit0; no repeat of70",
+  "ownerNewTests": 0,
+  "allOwnedScopesStoppedWriting": true,
+  "releaseReceipt": "/tmp/flow-tui01b-release-receipt.json"
+}
