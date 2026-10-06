@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-06T11:20:12.138Z",
+  "mainInput": "648e331c58043cf7ee307300521ab1c628cb2ee1",
+  "integrationMerge": "d7e9136f558bbd036453cbcab12f17b2858e24f4",
+  "implementationScope": [
+    "apps/server/src/runners.ts",
+    "apps/server/src/runner-read-fence.test.ts"
+  ],
+  "checks": {
+    "newPostgres": {
+      "selected": 9,
+      "passed": 9,
+      "calls": 1,
+      "receipt": "green-receipt.json",
+      "cleanup": {
+        "kind": "s01p04-cleanup",
+        "databaseName": "flow_s01p04_00194b3cfebd4fc0a83b203e7e32fe3e",
+        "postgresVersionNumber": "160013",
+        "connectionsClosed": true,
+        "databaseAbsent": true
+      }
+    },
+    "directEngineering": {
+      "selected": 1,
+      "passed": 1,
+      "unselected": 12,
+      "calls": 1,
+      "receipt": "eng-consumer-receipt.json",
+      "cleanup": {
+        "database": "flow_eng01b_profile_f7fd6fe2c72745908f0d06104679ebf1",
+        "databaseRemoved": true,
+        "providerCalls": 0
+      }
+    },
+    "distinctPassed": 10,
+    "localStrict": {
+      "exitCode": 0,
+      "receipt": "strict-green-receipt.json",
+      "rootStrictOptionsInherited": true,
+      "rootWide": false
+    }
+  },
+  "versions": {
+    "node": "v24.20.0",
+    "vitest": "4.0.18",
+    "postgresServerVersionNum": "160013",
+    "pg": "8.23.1"
+  },
+  "providerCalls": 0,
+  "newCapacityWindow": false,
+  "constraints": [
+    "Public lockRunner remains FOR UPDATE",
+    "Claim/profile/maintenance/revoke remain exclusive",
+    "Same attempt task/attempt locks and owner/lease fences retained",
+    "No throughput or capacity SLO assertion",
+    "Original red and strict-preparation failure logs retained"
+  ]
+}

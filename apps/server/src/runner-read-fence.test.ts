@@ -18,6 +18,7 @@ const leaseMs = 60_000;
 const probeDeadlineMs = 2000;
 let admin: Pool | undefined;
 let creationRequested = false;
+let postgresVersionNumber: string | undefined;
 let bootstrap: Awaited<ReturnType<typeof createServer>> | undefined;
 let observer: Pool;
 let first: Pool;
@@ -36,6 +37,7 @@ beforeAll(async () => {
   url.pathname = '/postgres';
   admin = new Pool({ connectionString: url.href, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 2000, query_timeout: 3000 });
   const version = (await admin.query<{ server_version_num: string }>('SHOW server_version_num')).rows[0]!.server_version_num;
+  postgresVersionNumber = version;
   expect(Math.floor(Number(version) / 10_000)).toBe(16);
   expect((await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [databaseName])).rowCount).toBe(0);
   creationRequested = true;
@@ -80,7 +82,7 @@ afterAll(async () => {
     throw new Error(`Fixture cleanup is unknown; inspect owned database ${databaseName}`);
   } finally {
     try { await admin?.end(); }
-    finally { console.info(JSON.stringify({ kind: 's01p04-cleanup', databaseName, connectionsClosed, databaseAbsent })); }
+    finally { console.info(JSON.stringify({ kind: 's01p04-cleanup', databaseName, postgresVersionNumber, connectionsClosed, databaseAbsent })); }
   }
 }, 15_000);
 
