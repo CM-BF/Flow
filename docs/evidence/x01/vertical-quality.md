@@ -10,3 +10,5 @@
 clean-code固定用户源sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5，未更新。实际应用：明确registered/downloaded/installed/loaded/enabled/callable避免误导命名；复用原immutable revision、command与fence；解包/静态验证和代码执行分离；unknown保留，不把timeout当终止；各模块按同一公有Interface验证，拒绝mock loader证明真实安装。采用[根模块化规则](../../../AGENTS.md#modular-design)，不复制通用框架。
 
 本轮纯metadata，0产品tests/PG负载/SDK/provider/compile/安装。受控merge只固定已审main7cb，无冲突，全部apps/packages与固定main一致；merge前后检查职责、source范围、资源预算及非目标。未解决项是Lead的唯一DDL/共享字段与目标host资格、安装中断reconcile生命周期，并非已实现能力。
+
+2026-10-06 12:41:21 UTC clean-code/codebase-design 安全点：只读核已装 pacote 21.5.1/tar 7.5.22 与固定7cb清单；发现原“共享模块无正式package/依赖”会造成跨包借间接依赖，补显式workspace依赖请求，未安装或写源码。保留原3bd设计绑定，新的metadata说明approval与未决依赖；disable/new-binding与旧pin/claim资格明确分离。0产品测试。

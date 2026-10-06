@@ -58,4 +58,4 @@
 | X01-08/09 | 为未来唯一compression owner保留版本/ref及停用后读历史条件 | lineage/restore/fork/原文版本/损坏store/成本信息损失/native兼容，不宣称billion窗口 |
 | X01-10 | 领域、真实load及中心组合各固定target独审，最后整体集成 | 原完整矩阵不因单包演示缩减 |
 
-后续验证申请：先纯manifest/path/limits拒绝行为，再受控动态loopback registry+真实tarball+唯一正式迁移专库+真实runRunner公开链路（不是mock loader）；无SDK/provider。校验精确provenance、disable/new-binding竞态、当前grant gate、安装/replay/restartunknown、资源close/drop。版本v2/rollback/remove、第三方、renderer/verifier/context分别交付但继续原X01。当前只是设计，不跑这些检查。共享安装材料模块仅新增直接相对导入的TypeScript文件，不为这个复用点引入依赖安装、workspace包注册或新的全局alias。
+后续验证申请：先纯manifest/path/limits拒绝行为，再受控动态loopback registry+真实tarball+唯一正式迁移专库+真实runRunner公开链路（不是mock loader）；无SDK/provider。校验精确provenance、disable/new-binding竞态、当前grant gate、安装/replay/restartunknown、资源close/drop。版本v2/rollback/remove、第三方、renderer/verifier/context分别交付但继续原X01。当前只是设计，不跑这些检查。共享安装材料模块需要正式库依赖归属，后续[依赖补充](installation-dependency-addendum.md)提出显式 tar 7.5.22 workspace 方案；该选择待 Lead 固定，不借 transitive import。原 3bd1add6 设计审批只覆盖纵向方向，不能代替依赖/写权审批。
