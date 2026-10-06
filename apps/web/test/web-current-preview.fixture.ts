@@ -1,20 +1,23 @@
 import assert from "node:assert/strict";
 import { createHash, randomUUID } from "node:crypto";
 import { execFile } from "node:child_process";
-import { readFile, realpath } from "node:fs/promises";
+import { readFile, realpath, lstat } from "node:fs/promises";
 import { createServer as createHttpServer, request as requestHttp, type Server } from "node:http";
 import { extname, isAbsolute, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 import { FlowClient } from "../../../packages/client/src/index.js";
-import { conversationCreationSchema, conversationTurnSchema, type ClaimedTask, type RunnerEventData } from "../../../packages/contracts/src/index.js";
+import { conversationCreationSchema, conversationTurnSchema, conversationContextReferenceSchema, conversationContextResponseSchema, contextHistoryResponseSchema, type ClaimedTask, type RunnerEventData } from "../../../packages/contracts/src/index.js";
 import { CLAUDE_CONTEXT_SOURCE } from "../../../packages/contracts/src/context-observation-event.js";
 
 export const BASE_BACKEND = "362af3bac77541e5a60979326bcf4d4b8c947915";
 const HISTORY_FIX = "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd";
-const HISTORY_PATH = "apps/server/src/context-transparency/store.ts";
-const HISTORY_SHA256 = "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245";
-export type BackendInput = { path: string; head: string; tree: string };
+const SOURCE_TARGET = "b29807979a5589678a61d3fb84781950cf366396";
+const BACKEND_SOURCES = [
+  { path: "apps/server/src/context-transparency/store.ts", sha256: "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245" },
+  { path: "apps/server/src/context-transparency/attachment-history.test.ts", sha256: "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b" },
+];
+export type BackendInput = { path: string; head: string; tree: string; metadata: { path: string; sha256: string }[] };
 export const repository = fileURLToPath(new URL("../../../", import.meta.url));
 export const evidence = join(repository, "docs/evidence/wpf-release03");
 export const ARTIFACT_ROOT = "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts";
@@ -37,22 +40,47 @@ export async function until<T>(read: () => Promise<T>, ready: (value: T) => bool
   throw Error("Fixture condition timed out");
 }
 
-/** Only the admitted clean immutable tree is executable; the harness never patches backend source. */
+/** The trusted admission supplies the exact reviewed metadata closure, never the candidate itself. */
 export async function verifyBackend(input: BackendInput) {
   assert.ok(isAbsolute(input.path)); assert.equal(await realpath(input.path), input.path, "Backend path must be its registered realpath");
   assert.match(input.head, /^[a-f0-9]{40}$/); assert.match(input.tree, /^[a-f0-9]{40}$/);
-  const inspect = async (...args: string[]) => (await execute("git", ["-C", input.path, ...args], { maxBuffer: 1024 * 1024, timeout: 2000 })).stdout.trim();
-  assert.equal(await realpath(await inspect("rev-parse", "--show-toplevel")), input.path);
-  assert.equal(await inspect("rev-parse", "HEAD"), input.head, "Backend HEAD changed");
-  assert.equal(await inspect("rev-parse", "HEAD^{tree}"), input.tree, "Backend tree changed");
-  assert.equal(await inspect("status", "--porcelain"), "", "Backend source is dirty");
-  assert.equal(await inspect("diff", "--name-only", BASE_BACKEND, input.head), HISTORY_PATH, "Backend must contain only the approved history correction");
-  assert.equal(await inspect("diff", HISTORY_FIX, input.head, "--", HISTORY_PATH), "", "History correction differs from approved source");
-  const store = join(input.path, HISTORY_PATH);
-  assert.equal(await realpath(store), store); assert.equal(sha(await readFile(store)), HISTORY_SHA256);
+  const inspect = async (...args: string[]) => (await execute("git", ["-C", input.path, ...args], { maxBuffer: 1024 * 1024, timeout: 2000 })).stdout;
+  const text = async (...args: string[]) => (await inspect(...args)).trim();
+  const changed = async (from: string, to: string) => (await inspect("diff", "--name-only", "-z", from, to)).split("\0").filter(Boolean).sort();
+  assert.equal(await realpath(await text("rev-parse", "--show-toplevel")), input.path);
+  assert.equal(await text("rev-parse", "HEAD"), input.head, "Backend HEAD changed");
+  assert.equal(await text("rev-parse", "HEAD^{tree}"), input.tree, "Backend tree changed");
+  assert.equal(await text("status", "--porcelain"), "", "Backend source is dirty");
+  assert.equal(await text("rev-list", "--parents", "-n", "1", SOURCE_TARGET), `${SOURCE_TARGET} ${BASE_BACKEND}`);
+  await inspect("merge-base", "--is-ancestor", SOURCE_TARGET, input.head);
+  assert.deepEqual(await changed(BASE_BACKEND, SOURCE_TARGET), BACKEND_SOURCES.map(file => file.path).sort());
+  assert.ok(Array.isArray(input.metadata) && input.metadata.length <= 32, "Exact reviewed metadata closure required");
+  for (const file of input.metadata) {
+    assert.match(file.path, /^(?:docs\/evidence|plans)\/svc05-history-compatibility\/[a-z0-9-]+\.(?:json|md)$/);
+    assert.match(file.sha256, /^[a-f0-9]{64}$/);
+  }
+  assert.equal(new Set(input.metadata.map(file => file.path)).size, input.metadata.length);
+  assert.deepEqual(await changed(SOURCE_TARGET, input.head), input.metadata.map(file => file.path).sort());
+  for (const file of [...BACKEND_SOURCES, ...input.metadata]) {
+    const entry = (await inspect("ls-tree", "-z", input.head, "--", file.path)).split("\0");
+    assert.equal(entry.length, 2); assert.equal(entry[1], "");
+    assert.match(entry[0] ?? "", /^100644 blob [a-f0-9]{40}\t/); assert.equal(entry[0]?.split("\t")[1], file.path);
+    const path = join(input.path, file.path); assert.equal(await realpath(path), path);
+    const stat = await lstat(path); assert.ok(stat.isFile() && stat.size <= 256 * 1024);
+    assert.equal(sha(await readFile(path)), file.sha256, `Backend bytes differ: ${file.path}`);
+  }
+  for (const file of BACKEND_SOURCES) assert.equal(await text("diff", HISTORY_FIX, input.head, "--", file.path), "");
   const factoryPath = join(input.path, "apps/server/src/index.ts");
   assert.equal(await realpath(factoryPath), factoryPath, "Factory path must remain inside the admitted tree");
-  return { ...input, base: BASE_BACKEND, approvedHistorySource: HISTORY_FIX, historySha256: HISTORY_SHA256, factoryPath };
+  return { ...input, base: BASE_BACKEND, sourceTarget: SOURCE_TARGET, approvedHistorySource: HISTORY_FIX, sources: BACKEND_SOURCES, factoryPath };
+}
+
+export async function historyContract() {
+  const bytes = await readFile(fileURLToPath(import.meta.url));
+  const start = Buffer.from("// RELEASE03_HISTORY_CONTRACT_BEGIN\n"), end = Buffer.from("// RELEASE03_HISTORY_CONTRACT_END\n");
+  const first = bytes.indexOf(start), last = bytes.indexOf(end);
+  assert.ok(first >= 0 && last > first && bytes.lastIndexOf(start) === first && bytes.lastIndexOf(end) === last);
+  return sha(bytes.subarray(first + start.length, last));
 }
 
 /** Local client/contracts/tools stay at 362; only the separately admitted factory receives the fixed correction. */
@@ -65,7 +93,7 @@ export async function sourceIdentity(backend: BackendInput) {
     "tools/personal-preview/web-artifact.mjs", "tools/personal-preview/web-release.mjs", "tools/personal-preview/environment.mjs",
     "apps/web/test/web-current-preview.fixture.ts", "apps/web/test/web-current-preview.browser.ts"];
   return { head: await git("rev-parse", "HEAD"), backend: backend.head, sourceTree: backend.tree, backendInput,
-    harnessBase: BASE_BACKEND, dirty: await git("status", "--porcelain"),
+    historyContractSha256: await historyContract(), artifact, releaseId: RELEASE_ID, harnessBase: BASE_BACKEND, dirty: await git("status", "--porcelain"),
     files: await Promise.all(paths.map(async path => ({ path, sha256: sha(await readFile(join(repository, path))) }))) };
 }
 
@@ -186,6 +214,7 @@ export async function startCurrentPreview(databaseUrl: string, token: string, si
 }
 export type CurrentPreview = Awaited<ReturnType<typeof startCurrentPreview>>;
 
+// RELEASE03_HISTORY_CONTRACT_BEGIN
 export async function syntheticRunner(fixture: CurrentPreview, label: string, signal: AbortSignal) {
   const registration = await fixture.owner.registerRunner({ name: `RELEASE03 ${label}`, harnesses: ["claude"], capacity: 1 });
   const client = new FlowClient({ baseUrl: fixture.url, token: registration.token });
@@ -209,6 +238,66 @@ export async function createMaterials(fixture: CurrentPreview, title: string, si
   const accepted = await fixture.owner.uploadAttachment(project.id, { recoveryScopeId: capabilities.recoveryScopeId,
     name: "existing.txt", mediaType: "text/plain", text, byteLength: Buffer.byteLength(text), contentDigest: sha(text) }, randomUUID(), signal);
   return { projectId: project.id, text, resource: accepted.resource, ref: accepted.resource.reference };
+}
+
+export function factRecord(value: unknown): Record<string, unknown> {
+  assert.ok(value !== null && typeof value === "object" && !Array.isArray(value));
+  return value as Record<string, unknown>;
+}
+
+function wireResponse(value: unknown) {
+  const row = factRecord(value); assert.ok(typeof row.responseBody === "string");
+  assert.ok(typeof row.status === "number" && row.status >= 200 && row.status < 300); assert.equal(row.dropped, false);
+  assert.equal(sha(row.responseBody), row.responseSha256);
+  return factRecord(JSON.parse(row.responseBody));
+}
+
+/** One set of facts for the live A and subsequent pinned-evidence reuse. */
+export function assertHistoryFacts(value: unknown, captured: unknown, backend: BackendInput) {
+  const facts = factRecord(value); assert.ok(facts.label === "attachment-only" || facts.label === "mixed");
+  const mixed = facts.label === "mixed";
+  assert.equal(facts.backend, backend.head); assert.equal(facts.backendTree, backend.tree);
+  assert.equal(facts.factoryPath, join(backend.path, "apps/server/src/index.ts")); assert.equal(facts.providerQueries, 0);
+  assert.equal(facts.reportError, undefined, "Actual reportEvents rejected the native observation"); assert.equal(facts.error, undefined);
+  assert.deepEqual(facts.report, { accepted: 1, lastSequence: 2 });
+  const context = conversationContextReferenceSchema.parse(facts.context); assert.equal(context.templateVersion, 2);
+  assert.ok("attachments" in context); assert.equal(context.attachments.length, 1); assert.equal(context.sources.length, mixed ? 1 : 0);
+  const history = contextHistoryResponseSchema.parse(facts.history);
+  assert.equal(history.taskId, facts.taskId); assert.equal(history.attemptId, facts.attemptId);
+  assert.equal(JSON.stringify(history).includes("PRIVATE_"), false); assert.ok(history.latest);
+  assert.deepEqual(history.latest.materials, { state: "unknown", reason: "metadata-unavailable" });
+  assert.equal(history.latest.observation.identity.materialRevisionDigest, null);
+  assert.equal(history.latest.observation.identity.executionInputDigest, context.executionInputDigest);
+  const subject = history.latest.observation.identity.subject; assert.equal(subject.kind, "attempt");
+  assert.ok("taskId" in subject); assert.equal(subject.taskId, facts.taskId); assert.equal(subject.attemptId, facts.attemptId);
+  assert.ok(Array.isArray(captured) && Array.isArray(facts.wireRange) && facts.wireRange.length === 2);
+  const [start, end] = facts.wireRange;
+  assert.ok(Number.isInteger(start) && Number.isInteger(end) && start >= 0 && end > start && end <= captured.length);
+  const rows = captured.slice(start, end).map(factRecord);
+  const one = (method: string, path: string) => {
+    const found = rows.filter(row => row.method === method && row.path === path); assert.equal(found.length, 1); return found[0]!;
+  };
+  const admission = one("POST", `/api/conversations/${facts.conversationId}/turns`);
+  const request = conversationTurnSchema.parse(JSON.parse(String(admission.body)));
+  assert.equal(request.attachments?.length, 1); assert.equal(request.knowledge?.length ?? 0, mixed ? 1 : 0);
+  assert.deepEqual(request.attachments, context.attachments.map(item => item.reference));
+  assert.deepEqual(request.knowledge ?? [], context.sources.map(item => item.citation));
+  const turn = factRecord(wireResponse(admission).turn); assert.equal(factRecord(turn.task).id, facts.taskId); assert.deepEqual(turn.context, facts.context);
+  const reports = rows.filter(row => row.method === "POST" && row.path === "/api/runner/events").filter(row => {
+    const body = factRecord(JSON.parse(String(row.body))); assert.equal(body.attemptId, facts.attemptId);
+    return Array.isArray(body.events) && body.events.some(event => factRecord(event).type === "context-observation");
+  });
+  assert.equal(reports.length, 1); const report = reports[0]!;
+  const eventBody = factRecord(JSON.parse(String(report.body))); assert.equal(eventBody.ownerVersion, subject.ownerVersion);
+  assert.ok(Array.isArray(eventBody.events) && eventBody.events.length === 1);
+  const event = factRecord(eventBody.events[0]); assert.equal(event.sequence, 2);
+  assert.equal(factRecord(event.observation).observationId, history.latest.observation.id);
+  assert.deepEqual(wireResponse(report), facts.report);
+  assert.deepEqual(wireResponse(one("GET", `/api/tasks/${facts.taskId}/context/history`)), facts.history);
+  const detail = wireResponse(one("GET", `/api/conversations/${facts.conversationId}/contexts/${context.id}`));
+  conversationContextResponseSchema.parse(detail);
+  assert.ok(Array.isArray(detail.attachments)); assert.equal(factRecord(detail.attachments[0]).text, `PRIVATE_ATTACHMENT_${facts.label}_資料🙂`);
+  if (mixed) { assert.ok(Array.isArray(detail.sources)); assert.equal(factRecord(detail.sources[0]).text, "PRIVATE_KNOWLEDGE_資料🙂"); }
 }
 
 /** Each case is independent. Failure remains a release blocker even if later App checks pass. */
@@ -240,14 +329,10 @@ export async function checkHistory(fixture: CurrentPreview, mixed: boolean, sign
     // Read even when reportEvents failed, preserving both HTTP outcomes and the actual task.
     const history = await fixture.owner.contextHistory(assignment.task.id, signal); facts.history = history;
     facts.task = await fixture.owner.show(assignment.task.id, signal);
-    const detail = await fixture.owner.conversationContext(created.conversation.id, context.id, signal);
-    assert.ok("attachments" in detail); assert.equal(detail.attachments[0]?.text, materials.text);
-    if (mixed) assert.equal(detail.sources[0]?.text, knowledgeText);
-    assert.equal(facts.reportError, undefined, "Actual reportEvents rejected the native observation");
-    assert.equal(JSON.stringify(history).includes("PRIVATE_"), false);
-    assert.ok(history.latest); assert.deepEqual(history.latest.materials, { state: "unknown", reason: "metadata-unavailable" });
-    assert.equal(history.latest.observation.identity.materialRevisionDigest, null);
-    assert.equal(history.latest.observation.identity.executionInputDigest, context.executionInputDigest);
-    return { ...facts, passed: true, wireRange: [start, fixture.wire.length] };
+    await fixture.owner.conversationContext(created.conversation.id, context.id, signal);
+    Object.assign(facts, { wireRange: [start, fixture.wire.length] });
+    assertHistoryFacts(facts, fixture.wire, fixture.backend);
+    return { ...facts, passed: true };
   } catch (error) { return { ...facts, passed: false, error: failure(error), wireRange: [start, fixture.wire.length] }; }
 }
+// RELEASE03_HISTORY_CONTRACT_END
