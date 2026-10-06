@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-context
+
+ ❯ apps/server/src/conversation-context/context.test.ts (4 tests | 1 failed | 3 skipped) 787ms
+   ↓ freezes selected text privately while public prompt and bubble remain original
+   ↓ claim rejects mismatched raw input or corrupted digest and rolls back assignment writes
+   ↓ zero-context legacy conversation claims the original prompt without private metadata
+   × enqueue freezes once through restart and automatic promotion despite source update 64ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/conversation-context/context.test.ts > enqueue freezes once through restart and automatic promotion despite source update
+AssertionError: expected undefined to be defined
+ ❯ apps/server/src/conversation-context/context.test.ts:81:126
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 skipped (4)
+   Start at  22:46:42
+   Duration  1.23s (transform 226ms, setup 0ms, import 368ms, tests 787ms, environment 0ms)
+

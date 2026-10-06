@@ -1,0 +1,97 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit"
+  ],
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/conversation-context/context.test.ts",
+      "sha256": "28cb98ae5b7f9c03895ed6bcc42064098e28fd23127594ab6da23b4ad8c43140"
+    },
+    {
+      "path": "apps/server/src/conversation-context/fixture.ts",
+      "sha256": "676db9f5764142637a3a55bdeb840856cd53564413ece4bd77cbd610096f1df1"
+    },
+    {
+      "path": "apps/server/src/conversation-context/index.ts",
+      "sha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "sha256": "53375cfac10d497a2dedf4c0001d5473525ef8b4b2f16dff39021498b3b26bae"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "sha256": "fcf8babd8cc63c47e689ab112d019a1d215a4a3557dc3a9f10e0617dca0497f0"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "sha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "sha256": "54ad1ef9aba63ea437f6c4ebbec589fe82b0b60b15ad0c153778e1f8e2f95e2f"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "sha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "sha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "e74f5706f8c405f368a9a4c92315ada1a0e0003e10e38189db9e3b5ac6c08da4"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sha256": "5f0a2476593b82d8014bc80ca44a7906d1259d19000e8546dc948712ee1ee581"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sha256": "0a7685acc70a95291b542e97f66390552e55e352a01b6d136b924d2066e746e8"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "a7987afc1157ca4c91786b2d1331fb5b1caee576a2949d452042516e2908e6ff"
+    },
+    {
+      "path": "docs/evidence/k02/check.mjs",
+      "sha256": "6758d8a02d592a8672441e7a99f7a5a0e74df6ef23bf902cac2080ef141c590e"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "sha256": "2ead672628cb411a54ab51345f384a301ff407eb2a30cf604b120b47d68ebdb5"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "sha256": "d7f61fd2c7a68a0efc376112d62ad9d97f911ce94ee9aec75137cc1eb8f9707e"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sha256": "02e2afd8b31827051ecfe84801ae4bd1210ccf9e11ec79b16bed2ae313cbad33"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sha256": "0130db7ba54b4c3899a45caa6056d3696bec14fadc28a254691f38df2870bbf8"
+    },
+    {
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3"
+    }
+  ],
+  "startedAt": "2026-10-06T05:53:58.506Z",
+  "endedAt": "2026-10-06T05:54:03.285Z",
+  "exitCode": 0,
+  "signal": null
+}

@@ -3,11 +3,12 @@ import { CONVERSATION_QUEUE_PREVIEW_BYTES, type ConversationQueueItem } from '..
 import type { ConversationQueueCurrentTurn } from '../../../../packages/contracts/src/conversation-queue.js';
 import { lastTurn } from '../conversations/state.js';
 import { loadTask } from '../tasks.js';
+import { contextReference } from '../conversation-context/store.js';
 import { HttpError } from '../database.js';
 
 export interface QueueRow {
   id: string; conversation_id: string; sequence: number; state: ConversationQueueItem['state']; user_text: string;
-  turn_id: string | null; task_id: string | null; turn_number: number | null; text_truncated?: boolean; created_at: Date; updated_at: Date;
+  conversation_input_id?: string | null; turn_id: string | null; task_id: string | null; turn_number: number | null; text_truncated?: boolean; created_at: Date; updated_at: Date;
 }
 export function itemView(row: QueueRow): ConversationQueueItem {
   let preview = ''; let bytes = 0;
@@ -20,6 +21,10 @@ export function itemView(row: QueueRow): ConversationQueueItem {
     preview, truncated: row.text_truncated ?? preview.length < row.user_text.length,
     promoted: row.state === 'promoted' ? { taskId: row.task_id!, turnId: row.turn_id!, turnNumber: row.turn_number! } : null,
     createdAt: row.created_at.toISOString(), updatedAt: row.updated_at.toISOString() };
+}
+export async function contextualItemView(client: PoolClient, row: QueueRow): Promise<ConversationQueueItem> {
+  const context = await contextReference(client, row.conversation_input_id);
+  return { ...itemView(row), ...(context ? { context } : {}) };
 }
 export async function loadItem(client: PoolClient, conversationId: string, itemId: string): Promise<QueueRow> {
   const row = (await client.query<QueueRow>('SELECT * FROM flow.conversation_queue WHERE conversation_id=$1 AND id=$2', [conversationId, itemId])).rows[0];

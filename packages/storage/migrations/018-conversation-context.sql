@@ -36,3 +36,18 @@ END;
 $$;
 CREATE TRIGGER conversation_project_immutable BEFORE UPDATE OF project_id ON flow.conversations
   FOR EACH ROW EXECUTE FUNCTION flow.reject_conversation_project_mutation();
+
+CREATE FUNCTION flow.reject_conversation_input_unbinding() RETURNS trigger LANGUAGE plpgsql AS $$
+BEGIN
+  IF OLD.conversation_input_id IS NOT NULL AND NEW.conversation_input_id IS DISTINCT FROM OLD.conversation_input_id THEN
+    RAISE EXCEPTION 'Frozen execution input binding is immutable' USING ERRCODE='23514';
+  END IF;
+  RETURN NEW;
+END;
+$$;
+CREATE TRIGGER task_conversation_input_immutable BEFORE UPDATE OF conversation_input_id ON flow.tasks
+  FOR EACH ROW EXECUTE FUNCTION flow.reject_conversation_input_unbinding();
+CREATE TRIGGER queue_conversation_input_immutable BEFORE UPDATE OF conversation_input_id ON flow.conversation_queue
+  FOR EACH ROW EXECUTE FUNCTION flow.reject_conversation_input_unbinding();
+CREATE TRIGGER turn_conversation_input_immutable BEFORE UPDATE OF conversation_input_id ON flow.conversation_turns
+  FOR EACH ROW EXECUTE FUNCTION flow.reject_conversation_input_unbinding();

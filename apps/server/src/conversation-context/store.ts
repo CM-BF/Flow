@@ -42,14 +42,19 @@ export async function freezeContext(client: PoolClient, conversationId: string, 
   await client.query('INSERT INTO flow.conversation_contexts(id,conversation_id,project_id,context_digest,sources,raw_bytes) VALUES($1,$2,$3,$4,$5,$6)', [id, conversationId, projectId, contextDigest(sources), JSON.stringify(sources), rawBytes]);
   return insertInput(client, id, userText, sources);
 }
-/** Metadata SQL removes each frozen text before transport; it never selects execution_prompt. */
+/** Public metadata uses an allowlist; frozen text and execution_prompt never leave this projection. */
+export async function contextReferences(client: PoolClient, inputIds: string[]): Promise<Map<string, ConversationContextReference>> {
+  const ids = [...new Set(inputIds)];
+  if (ids.length > 50) throw new HttpError(400, 'conversation_context_batch_limit', 'At most 50 context references can be read together.');
+  if (!ids.length) return new Map();
+  const rows = (await client.query<{ input_id: string; id: string; context_digest: string; execution_input_digest: string; template_version: 1; sources: ConversationContextSource[] }>(`SELECT i.id AS input_id,c.id,c.context_digest,i.execution_input_digest,i.template_version,
+    (SELECT jsonb_agg(jsonb_build_object('citation',item->'citation','byteLength',item->'byteLength','currentVersionAtFreeze',item->'currentVersionAtFreeze','isCurrentAtFreeze',item->'isCurrentAtFreeze') ORDER BY ordinal) FROM jsonb_array_elements(c.sources) WITH ORDINALITY AS s(item,ordinal)) AS sources
+    FROM flow.conversation_execution_inputs i JOIN flow.conversation_contexts c ON c.id=i.context_id WHERE i.id=ANY($1::text[])`, [ids])).rows;
+  if (rows.length !== ids.length) throw invalid();
+  return new Map(rows.map(row => [row.input_id, { id: row.id, contextDigest: row.context_digest, executionInputId: row.input_id, executionInputDigest: row.execution_input_digest, templateVersion: row.template_version, sources: row.sources }]));
+}
 export async function contextReference(client: PoolClient, inputId: string | null | undefined): Promise<ConversationContextReference | undefined> {
-  if (!inputId) return undefined;
-  const row = (await client.query<{ id: string; context_digest: string; execution_input_digest: string; template_version: 1; sources: ConversationContextSource[] }>(`SELECT c.id,c.context_digest,i.execution_input_digest,i.template_version,
-    (SELECT jsonb_agg(item-'text' ORDER BY ordinal) FROM jsonb_array_elements(c.sources) WITH ORDINALITY AS s(item,ordinal)) AS sources
-    FROM flow.conversation_execution_inputs i JOIN flow.conversation_contexts c ON c.id=i.context_id WHERE i.id=$1`, [inputId])).rows[0];
-  if (!row) throw invalid();
-  return { id: row.id, contextDigest: row.context_digest, executionInputId: inputId, executionInputDigest: row.execution_input_digest, templateVersion: row.template_version, sources: row.sources };
+  return inputId ? (await contextReferences(client, [inputId])).get(inputId) : undefined;
 }
 async function readInput(client: PoolClient, inputId: string, rawPrompt: string): Promise<InputRow> {
   const row = (await client.query<InputRow>(`SELECT i.id AS input_id,i.user_text,i.template_version,i.execution_prompt,i.execution_input_digest,
