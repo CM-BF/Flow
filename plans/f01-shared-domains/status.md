@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:14 UTC / 2026-10-06 07:09 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:57 UTC / 2026-10-06 07:48 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；本轮steering client 1b16d23de5b00f897fe9bd0fa07879c84d78e936 |
-| 工作树dirty状态 | 实现已提交；当前仅证据与状态整理 |
+| 工作基线 / HEAD | main 84fdecebbb4939e43710fb17e48884cc49d1d030；CHAT08共享生产接线 fe5bc2d9b8dab231996b1b156bc086d858846117 |
+| 工作树dirty状态 | 产品实现已固定；当前仅证据与状态提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；本轮薄client实际HTTP1/1与类型检查；领域16项复用原独立审查 |
-| 已集成main状态 / HEAD | fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 已推送；流式协议与两类旧页面兼容已成套接收。个人center/runner仍fb906cb；实际流式聊天页面待Web后继。 |
-| Review | APPROVED；assignment_review只读核本轮steering薄client，历史批准保留 |
-| 实现目标 | 1b16d23de5b00f897fe9bd0fa07879c84d78e936 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/active-steering.test.ts, packages/contracts/src/index.ts |
+| 检查状态 | PASSED fe5bc2d9b8dab231996b1b156bc086d858846117；新生产2/2、原vertical定向1/13（12未选）、独立typecheck0；无provider |
+| 已集成main状态 / HEAD | 84fdecebbb4939e43710fb17e48884cc49d1d030 已含聊天活动、流读取模块与消息复用；个人center/runner固定b54de1dbb08e3ccc7d33a27295a318f2799e76ae、维护v6 accepting。CHAT08 thin client/领域/024接线仍待本批独审与集成。 |
+| Review | NOT_STARTED；当前024共享接线待Root独审。CHAT08领域d4e及薄client3d811各自已独立批准，范围不混同。 |
+| 实现目标 | fe5bc2d9b8dab231996b1b156bc086d858846117 |
+| 实现范围 | apps/server/src/index.ts, apps/server/src/steering-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 逐段回复读取和旧页面兼容已经交付；补充指令的公共接收与查询接口已完成。 |
-| 下一可用交付 | 核验补充指令的公共接口，为实际模型消费准备接线。 |
+| 当前产出 | 已接通执行中补充指令的持久确认与最终答复保护，默认保持关闭。 |
+| 下一可用交付 | 完成中心接线审查，再验证配置与当前执行能力匹配，避免把指令交给不支持的执行器。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -100,3 +100,5 @@
 2026-10-06 07:14 UTC：F01-18/19/20已按各固定独审输入进入main，旧条目中的等待描述为当时记录。本轮仅5个steering薄传输方法及统一export，原文/key/fence/receiptRevision透传，409/abort无自动重投。
 
 2026-10-06 07:18 UTC：steering薄client1b16d23获assignment_review独立只读APPROVED，3source/3raw固定hashbytes一致，无P1/P2/未重跑；仅薄传输，仍无024生产mount或实际模型消费。
+
+2026-10-06 07:57 UTC：024迁移在任何worker/scheduler启动前完成，所有控制路由沿现owner/runner鉴权。默认不受理owner指令，生产CLI无启用参数，对话cap仍false。真实factory新2项与既有纵向定向1项分别绿，旧12项未选；manifest见steering-production-manifest.json。领域20source相对d4e逐hash相同。实际SDK/config/profile/UI开通仍后继，未操作常驻服务。

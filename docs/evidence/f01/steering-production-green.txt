@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/steering-production.test.ts
+STEERING_PRODUCTION_DATABASE_FACTS {"database":"flow_steering_mount_d61d6bd2efc74ec4b906000cf7efd769","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ✓ apps/server/src/steering-production.test.ts (2 tests) 1356ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  00:54:57
+   Duration  2.03s (transform 325ms, setup 0ms, import 604ms, tests 1.36s, environment 0ms)
+

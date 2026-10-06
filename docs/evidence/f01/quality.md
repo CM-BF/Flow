@@ -187,3 +187,18 @@ Clean-code: startup/export seams only; no settlement/authorization duplication. 
 
 ## 2026-10-06 07:14 UTC steering thin client
 Fixed 1b16d23de5b00f897fe9bd0fa07879c84d78e936; approved domain2137115 imported unchanged. Five methods only, strict server DTOs exercised in real Node HTTP transport fixture. Missing-method red→1/1 green33ms/suite210ms, independent typecheck exit0. Original Unicode whitespace/text, current ownership/CAS, stable key, server receipt phase, task+command encoding, numeric pagination, 409 and AbortSignal preserved; no retry/status inference. No production024 mount, runner consumption, model or service action. Manifest binds three source/three raw files. Clean-code review: thin boundary only, no duplicate authorization/state machine.
+
+## 2026-10-06 07:29 UTC CHAT08 薄 transport
+
+Target `3d81141324041c2c67680edbb686996cefaf8b4b` consumes fixed DTO998e2fd; only client index and one direct HTTP test. 3 POST methods preserve exact Unicode payload/proposal/revision/afterSequence/events and current ownership. Success, explicit not-committed, absent and replayed committed remain distinct; 409/transport disconnect/AbortSignal propagate without automatic retry. Strict actual schema fixture validates all requests; no invented taskId or extra key. Existing wildcard export already exposes these types. Test first missing-method red then 1/1 green39ms (suite224ms), typecheck exit0 (empty stdout); individual process exit recorded by execution tool. No provider/PG. clean-code/codebase-design review: same existing request seam, no lifecycle policy in client, no extra abstraction. Request independent review before integrating; domain/production approval remains separate.
+
+Root独立只读APPROVED3d811，2source/3raw/2contract固定hash核对，无重跑。main暂冻结b54用于SVC02已授维护窗口；此候选不越过领域审查/生产启用门槛。
+
+
+## 2026-10-06 07:57 UTC CHAT08 production factory
+
+Fixed fe5bc2d9b8dab231996b1b156bc086d858846117 only server index + steering-production test. Migration024 awaits before package worker, scheduler, lease/queue scans; route registration follows existing role hook. Default owner intake is409 unsupported; authenticated read/runner routes remain available, malformed runner input400 and owner/runner role401/403 are preserved. Conversation steer staysfalse. Trusted factory option is an integration seam, not a claim that registered runners/provider can steer; main CLI provides no enablement.
+
+New production checks2red (missing024/table) →2green1.356s: default migration/routes/role/cap gate and ordinary string-query injectedSDK final with024 present. Random database facts before[]/createdtrue/connections[]/remaining[] captured in both stdout. Existing author vertical selected1/13 (12notselected), actual production factory now owns migration/routes with explicit activeSteering:true; 1green353ms/test1.544s. This separately confirms real runtime→outbox→HTTP/PG→two injectedSDK results/one consumedcommand/onefinal. Typecheck exit0 independently. Three distinct local checks across two green commands, not full106 rerun. No provider or personal service action.
+
+Domain20source hashes match approved d4e; fixed shared source and four raw logs in steering-production-manifest.json. Clean-code/codebase-design: reused domain migration/routes and existing startup/auth lifecycle; no authorization or finalization logic duplicated. Required resources use random owned DB and normal DROP, no global cleanup. Current limitations are explicit profile/startup/attempt capability binding, real SDK optional fields, and Web control enablement; these remain next slices.

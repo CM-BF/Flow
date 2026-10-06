@@ -1,3 +1,5 @@
+import { textDigest, verifyText } from './verifier.js';
+import type { SteeringFinalizationInput } from '../../../packages/contracts/src/active-steering.js';
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -21,6 +23,7 @@ async function center(task: Partial<TaskSubmission> = {}) {
   let answer: 'approve' | 'reject' | null = null;
   let reportHook: ((batch: EventBatch, response: ServerResponse) => boolean) | undefined;
   let beforeReport: typeof reportHook;
+  let steeringHook: ((path: string, body: any, response: ServerResponse) => boolean) | undefined;
   let heartbeatHook: ((response: ServerResponse) => boolean) | undefined;
   const assignment: ClaimedTask = {
     attempt: { id: 'attempt-1', runnerId: 'runner-1', ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 10_000).toISOString() },
@@ -55,6 +58,7 @@ async function center(task: Partial<TaskSubmission> = {}) {
       if (reportHook?.(batch, response)) return;
       response.end(JSON.stringify({ accepted, lastSequence: events.length })); return;
     }
+    if (request.url?.startsWith('/api/runner/steering/') && steeringHook?.(request.url, body, response)) return;
     response.writeHead(404).end('{}');
   });
   await new Promise<void>(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -73,6 +77,7 @@ async function center(task: Partial<TaskSubmission> = {}) {
     onReport(hook: typeof reportHook) { reportHook = hook; },
     beforeReport(hook: typeof reportHook) { beforeReport = hook; },
     onHeartbeat(hook: typeof heartbeatHook) { heartbeatHook = hook; },
+    onSteering(hook: typeof steeringHook) { steeringHook = hook; },
   };
 }
 
@@ -395,4 +400,52 @@ it('executes an injected Claude adapter through the same runner ownership and HT
   expect(api.events).toContainEqual(expect.objectContaining({ type: 'artifact', content: 'native-seam-result' }));
   expect(api.events).toContainEqual(expect.objectContaining({ type: 'verification', result: 'passed' }));
   expect(api.events.filter(event => event.type === 'completed')).toEqual([expect.objectContaining({ outcome: 'succeeded' })]);
+});
+function conditionalEvents(): RunnerEventData[] {
+  const content = 'Runtime conditional final', artifactId = 'artifact-conditional';
+  return [{ type: 'artifact', artifactId, title: 'Final', version: textDigest(content), content, mediaType: 'text/plain' }, verifyText(artifactId, content),
+    { type: 'assistant-final', nativeSessionId: 'session-conditional', source: 'claude.sdk.result', sourceMessageId: 'result-conditional', messageId: textDigest(JSON.stringify(['session-conditional', 'result-conditional'])), content,
+      settings: { requested: { model: 'synthetic', thinking: 'disabled', permissionMode: 'dontAsk' }, effective: { model: null, thinking: 'unknown', permissionMode: null, tools: null } } }];
+}
+it('continues heartbeats while the final event sequence is frozen and completes only after confirmation', async () => {
+  const api = await center({ harness: 'claude' }); let duringProposal = false, heartbeats = 0;
+  api.options.activeSteering = true; api.options.requestTimeoutMs = 1000;
+  api.options.adapters = [{ name: 'claude', version: 'synthetic', async run(context) {
+    await context.emit({ type: 'session', nativeSessionId: 'session-conditional', adapterVersion: 'synthetic' });
+    await context.steering!.finalize({ expectedRevision: 0, nativeSessionId: 'session-conditional', resultId: 'result-conditional', events: conditionalEvents() });
+  } }];
+  api.onHeartbeat(() => { if (duringProposal) heartbeats++; return false; });
+  api.onSteering((path, input: SteeringFinalizationInput, response) => {
+    if (path !== '/api/runner/steering/finalize') return false;
+    duringProposal = true;
+    setTimeout(() => { api.events.push(...input.events); duringProposal = false; response.end(JSON.stringify({ state: 'committed', proposalId: input.proposalId, lastSequence: 4, replayed: false })); }, 150);
+    return true;
+  });
+  api.start(); await eventually(() => api.events.some(event => event.type === 'completed'));
+  expect(heartbeats).toBeGreaterThanOrEqual(2); expect(api.events.at(-1)).toMatchObject({ type: 'completed', sequence: 5, outcome: 'succeeded' });
+});
+it('retains an uncertain final across runner restart without replaying the native query or inventing completion', async () => {
+  const api = await center({ harness: 'claude' }); let directory = '', nativeRuns = 0, proposal: SteeringFinalizationInput | undefined, confirmed = false;
+  api.options.activeSteering = true;
+  api.options.adapters = [{ name: 'claude', version: 'synthetic', async run(context) {
+    nativeRuns++; directory = context.workingDirectory;
+    await context.emit({ type: 'session', nativeSessionId: 'session-conditional', adapterVersion: 'synthetic' });
+    await context.steering!.finalize({ expectedRevision: 0, nativeSessionId: 'session-conditional', resultId: 'result-conditional', events: conditionalEvents() });
+  } }];
+  api.onSteering((path, input, response) => {
+    if (path.endsWith('/finalize')) { proposal = input; response.destroy(); return true; }
+    if (path.endsWith('/status')) { response.end(JSON.stringify(confirmed ? { state: 'committed', proposalId: input.proposalId, lastSequence: 4, replayed: true } : { state: 'absent', proposalId: input.proposalId })); return true; }
+    return false;
+  });
+  api.options.onNotice = notice => { if (notice.type === 'ownership-lost') api.shutdown.abort(); };
+  await api.start();
+  expect(JSON.parse(await readFile(join(directory, 'pending-final-proposal.json'), 'utf8'))).toEqual(proposal);
+  expect(api.events.some(event => event.type === 'completed')).toBe(false);
+  confirmed = true;
+  const stop = new AbortController(), notices: RunnerNotice[] = [];
+  const resumed = runRunner({ ...api.options, signal: stop.signal, onNotice: notice => notices.push(notice) });
+  cleanup.push(async () => { stop.abort(); await resumed; });
+  await eventually(async () => (await readdir(directory)).includes('confirmed-final-proposal.json'));
+  expect(nativeRuns).toBe(1); expect(api.events.some(event => event.type === 'completed')).toBe(false);
+  expect(notices).toContainEqual({ type: 'events-retained', attemptId: 'attempt-1' });
 });
