@@ -1,3 +1,9 @@
+# 当前局部验证
+
+2026-10-06 16:03 UTC：固定候选 `a1f82f36a5e63f859ecdcdbd1da3575724e82101`，36 个不同定向/直接消费者用例分两轮通过，focused noEmit exit0；没有真实 HTTP/PG、PTY、浏览器或 provider。见 [validation.md](validation.md) 与 [validation-manifest.json](validation-manifest.json)。独立源码预检无 P1/P2，但增量执行证据尚待独审；不是完整 TUI 验收。
+
+以下保留首次 source-only 准备说明及当时 NOT_RUN 边界。
+
 # TUI01F：明确取消聊天任务（源码准备）
 
 终端新增 `/cancel <displayed-task-id>`；JSONL 使用同一个公开 controller。只接受当前聚焦/最新会话轮次或队列 current task 的明确 ID。操作沿用现有私有 journal、唯一 intent、公开 FlowClient.cancel；保存原 conversation/turn/task、key 和空 body，未知回执后只允许显式恢复原请求。退出不取消，取消不清未发送草稿，也不替用户暂停队列。

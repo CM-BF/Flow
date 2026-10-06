@@ -1,0 +1,91 @@
+{
+  "task": "TUI01F",
+  "kind": "independent-source-precheck",
+  "state": "SOURCE_PRECHECK",
+  "conclusion": "NO_P1_P2_FOUND",
+  "fullProductApproval": false,
+  "reviewer": "native_center_owner",
+  "author": "assignment_review",
+  "reviewedAt": "2026-10-06T15:59:55.252501+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "baseCommit": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "sourceCommit": "044ab84db42606fb1757903258078e3dfbab9545",
+  "observedDeliveryCommit": "d6b8acb30b9ab4064b9098f32b5afdf54a628f77",
+  "observedStatus": "",
+  "manifest": {
+    "path": "docs/evidence/tui01f/source-manifest.json",
+    "sha256": "1816645ee4f6ff8d5ce9a43659eacf17186595aa8e8b374d2803076bd2187611",
+    "counts": {
+      "sources": 9,
+      "directInputs": 21,
+      "evidence": 8
+    },
+    "evidenceReference": "d6b8acb30b9ab4064b9098f32b5afdf54a628f77",
+    "mismatches": []
+  },
+  "bindings": {
+    "path": "/tmp/flow-tui01f-source-bindings.json",
+    "bytes": 15157,
+    "sha256": "b4f4f17c380d2f52423346e880efc5ec2fdc0b712a3a44ff71981628a91c2f3f",
+    "entries": 38,
+    "sourceAndDirectReference": "044ab84db42606fb1757903258078e3dfbab9545",
+    "directInputsBaseUnchanged": true,
+    "unmaterializedDirectInputsReadFromGit": [
+      "vitest.config.ts",
+      "apps/server/src/commands.ts"
+    ]
+  },
+  "findings": [],
+  "readScope": [
+    "Complete nine-source candidate diff, all seven controller cases and one journal/JSONL case; full surrounding controller and Ink/main consumers.",
+    "Existing center cancel command and published FlowClient.cancel; shared queue intent/ACK, observation lifetime/read scheduler, projection, private journal, intent store, headless and terminal cleanup direct contexts.",
+    "Source manifest, interface, source-only README, quality and claim; design is an input and not implementation evidence."
+  ],
+  "sourceConclusions": [
+    {
+      "topic": "Target identity",
+      "conclusion": "New cancellation requires the explicitly supplied UUID to equal the current conversation observation turn (or latest when no observation) or the displayed queue current task. Other views, disconnected state and missing transport reject before journal writes. Renderer and controller select the same displayed task. Saved conversation/turn/task identity is not replaced on recovery."
+    },
+    {
+      "topic": "Public command and acknowledgement",
+      "conclusion": "Uses existing FlowClient.cancel(taskId,key,signal), whose fixed wire body is {}. Center cancel actually returns only cancel_requested/cancelled/succeeded/failed/uncertain; decoder requires this finite status and exact saved task UUID. Malformed/wrong-task acknowledgements remain unknown; accepted receipts trigger current reads rather than replacing task state with old ACK state. No attempt CAS or proof of stopping is invented."
+    },
+    {
+      "topic": "Durable recovery and error",
+      "conclusion": "One existing immutable intent slot is saved before dispatch. Startup and EOF never replay; explicit recover uses the original key and task. New mutations are blocked by unresolved intent. Existing fresh deterministic-4xx rejection and unknown/recovery rules remain shared, without replacement request or automatic retry."
+    },
+    {
+      "topic": "Draft and observer epoch",
+      "conclusion": "Cancellation does not clear unrelated draft. It reuses rotate/current epoch guarding and the single active mutation; disconnect invalidates late success ACK acceptance. Successful cancel observation refresh is bound to the saved conversation. Ink retains the existing behavior of clearing a successfully submitted slash command itself only when the draft still equals that command."
+    },
+    {
+      "topic": "Exit and compatibility",
+      "conclusion": "Quit/disconnect/EOF/SIGTERM still only dispose observation and settle the local mutation before closing the journal; none invokes cancel implicitly. Old version-one create/send/queue codecs and underlying journal filename/IO remain unchanged. New cancel intent has strict empty input and rejects fabricated attempt or target fields."
+    },
+    {
+      "topic": "Resource boundary",
+      "conclusion": "No new scheduler, provider access, body/detail fetch, dependency, migration or center mutation logic. Post-ACK reads reuse existing bounded conversation/history and opened queue page/observation lifetimes. This static read is not a measured resource or shutdown result."
+    }
+  ],
+  "validation": {
+    "reviewerTestsRun": 0,
+    "reviewerTypechecksRun": 0,
+    "reviewerProviderCalls": 0,
+    "reviewerPgOperations": 0,
+    "reviewerProjectWrites": 0,
+    "candidateTests": "NOT_RUN",
+    "candidateTypecheck": "NOT_RUN",
+    "HTTP": "NOT_RUN",
+    "PG": "NOT_RUN",
+    "PTY": "NOT_RUN",
+    "App": "NOT_RUN",
+    "testSourceCases": 8
+  },
+  "remainingValidation": [
+    "Resolve the authorized own workspace/dependency view, then actually run candidate tests/types and selected legacy mutation consumers before any product approval.",
+    "The seven controller cases do not inject the real TurnObservation port; focused older-turn identity and cancellation while a real observer is active still need direct validation.",
+    "Journal/JSONL source does not establish PTY/CJK/resize/Ink behavior or actual App/TUI/App handoff. HTTP/PG lost-ACK and authority transitions remain unexecuted.",
+    "Cancellation remains task-scoped and may acknowledge uncertain or already terminal work. It cannot prove native/A2A stop or queue pause."
+  ],
+  "limits": "Independent source precheck only. No finding was identified in the read delta; absence of executed checks is explicit and prevents full implementation approval. No test, import, install, PG, provider, personal-service operation or author-tree write performed."
+}

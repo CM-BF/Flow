@@ -1,0 +1,52 @@
+{
+  "capturedAt": "2026-10-06T16:03:54.097970+00:00",
+  "limits": {
+    "freshFreeMinimum": 1082130432,
+    "oneProcessSeconds": 30,
+    "outputBytes": 2097152,
+    "temporaryBudgetBytes": 8388608
+  },
+  "checks": [
+    {
+      "name": "checks-initial",
+      "freeBefore": 1097170944,
+      "freeAfter": 1097146368,
+      "elapsedSeconds": 1.291142583009787,
+      "outputBytes": 537,
+      "temporaryPeakSampledBytes": 1115623,
+      "temporaryFinalBytes": 0,
+      "temporaryRemoved": true
+    },
+    {
+      "name": "focused-observer",
+      "freeBefore": 1091313664,
+      "freeAfter": 1091059712,
+      "elapsedSeconds": 0.7461742910090834,
+      "outputBytes": 350,
+      "temporaryPeakSampledBytes": 990255,
+      "temporaryFinalBytes": 0,
+      "temporaryRemoved": true
+    },
+    {
+      "name": "focused-types",
+      "freeBefore": 1091018752,
+      "freeAfter": 1090707456,
+      "elapsedSeconds": 2.1887475829571486,
+      "outputBytes": 0,
+      "temporaryPeakSampledBytes": 1357756,
+      "temporaryFinalBytes": 1357756,
+      "temporaryRemoved": true
+    }
+  ],
+  "temporaryPeakAcrossSamples": 1357756,
+  "stdoutTotalBytes": 887,
+  "ownDependencyViewGeneratedFiles": [],
+  "monitoringBoundary": "100ms sampled logical temporary bytes, output pipe cap and per-process deadline; not a filesystem space reservation or physical peak claim. Test journal uses own TMPDIR; every own TMPDIR removed.",
+  "HTTPservers": 0,
+  "PG": 0,
+  "PTY": 0,
+  "browser": 0,
+  "provider": 0,
+  "install": 0,
+  "donorWrites": 0
+}

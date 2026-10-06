@@ -7,3 +7,5 @@
 2026-10-06 15:55 UTC：source 工作段 clean-code 复核。新增一份 task-cancel schema/单方法端口/receipt 校验，原宿主持有所有状态；从 handler 提出小 displayedTask 选择，避免嵌套三元混入 dispatch。未复制 journal 或 FIFO/queue 状态机；旧 ack/create/send/queue/退出路径保持。检查发现并修正测试负例合并对象会意外保留有效 id 的问题，现显式构造 missing-id；这是作者静态修正，未声称 test red/green。9 个源码/说明文件已固定，21 直接输入字节未变。
 
 未解决：运行/类型行为 NOT_RUN；真实恢复是用例设计，尚非 OS crash/PG/browser/PTY 证明。scope 中 cancel_driver/跨界面实验暂未创建，以免在缺固定运行资源时造不可验证壳。后续依赖视图由 Lead 处理，本 owner 未创建链接或安装。
+
+2026-10-06 16:03 UTC：已归档独立源码预检（native_center_owner，044ab84d，无 P1/P2，非完整批准）。依 Lead bounded 许可执行 35 原选择 + 1 focused observer / 局部 noEmit，全部 exit0；只新增 test-only older-turn 观察用例，生产六源码无差。clean-code 段末复核单 intent、显式目标、回执/观察分层与释放；不扩中心协议/新 FSM。未解决真实 HTTP/PG/PTY/App；资源记录只称 sampled logical temporary，不称整个机器峰值。
