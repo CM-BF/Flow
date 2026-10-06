@@ -7,7 +7,7 @@ import { extname, isAbsolute, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 import { FlowClient } from "../../../packages/client/src/index.js";
-import { conversationCreationSchema, conversationTurnSchema, conversationContextReferenceSchema, conversationContextResponseSchema, contextHistoryResponseSchema, type ClaimedTask, type RunnerEventData } from "../../../packages/contracts/src/index.js";
+import { conversationCreationSchema, conversationTurnSchema, conversationContextReferenceSchema, contextHistoryResponseSchema, type ClaimedTask, type RunnerEventData } from "../../../packages/contracts/src/index.js";
 import { CLAUDE_CONTEXT_SOURCE } from "../../../packages/contracts/src/context-observation-event.js";
 
 export const BASE_BACKEND = "362af3bac77541e5a60979326bcf4d4b8c947915";
@@ -295,9 +295,27 @@ export function assertHistoryFacts(value: unknown, captured: unknown, backend: B
   assert.deepEqual(wireResponse(report), facts.report);
   assert.deepEqual(wireResponse(one("GET", `/api/tasks/${facts.taskId}/context/history`)), facts.history);
   const detail = wireResponse(one("GET", `/api/conversations/${facts.conversationId}/contexts/${context.id}`));
-  conversationContextResponseSchema.parse(detail);
-  assert.ok(Array.isArray(detail.attachments)); assert.equal(factRecord(detail.attachments[0]).text, `PRIVATE_ATTACHMENT_${facts.label}_資料🙂`);
-  if (mixed) { assert.ok(Array.isArray(detail.sources)); assert.equal(factRecord(detail.sources[0]).text, "PRIVATE_KNOWLEDGE_資料🙂"); }
+  // ConversationContextDetail is a body response, not an execution-input reference.
+  // Match its frozen metadata to the already validated accepted reference.
+  assert.equal(detail.id, context.id); assert.equal(detail.conversationId, facts.conversationId);
+  assert.equal(detail.projectId, context.attachments[0]!.reference.projectId); assert.equal(detail.contextDigest, context.contextDigest);
+  assert.equal(detail.templateVersion, 2); assert.equal(detail.order, context.order);
+  assert.ok(typeof detail.createdAt === "string" && Number.isFinite(Date.parse(detail.createdAt)));
+  assert.ok(Array.isArray(detail.attachments)); assert.equal(detail.attachments.length, context.attachments.length);
+  for (const [index, value] of detail.attachments.entries()) {
+    const { text, ...descriptor } = factRecord(value); assert.deepEqual(descriptor, context.attachments[index]);
+    assert.equal(text, `PRIVATE_ATTACHMENT_${facts.label}_資料🙂`); assert.ok(typeof text === "string");
+    assert.equal(Buffer.byteLength(text), context.attachments[index]!.byteLength);
+    assert.equal(sha(text), context.attachments[index]!.reference.contentDigest);
+  }
+  assert.ok(Array.isArray(detail.sources)); assert.equal(detail.sources.length, context.sources.length);
+  for (const [index, value] of detail.sources.entries()) {
+    const { text, currentVersion, isCurrent, ...source } = factRecord(value); assert.deepEqual(source, context.sources[index]);
+    assert.equal(text, "PRIVATE_KNOWLEDGE_資料🙂"); assert.ok(typeof text === "string");
+    assert.equal(Buffer.byteLength(text), context.sources[index]!.byteLength);
+    assert.ok(typeof currentVersion === "number" && Number.isInteger(currentVersion) && currentVersion >= context.sources[index]!.citation.version);
+    assert.equal(isCurrent, currentVersion === context.sources[index]!.citation.version);
+  }
 }
 
 /** Each case is independent. Failure remains a release blocker even if later App checks pass. */
