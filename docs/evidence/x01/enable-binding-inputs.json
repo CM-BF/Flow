@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "kind": "readonly-next-slice-inputs",
-  "observedAt": "2026-10-06T13:57:10Z",
-  "mainCommit": "d4a2e0a7f255a2c68b99c7aafbc006c7bc3b3b50",
+  "observedAt": "2026-10-06T14:07:30Z",
+  "mainCommit": "5dbabadc7dda02da558f48505677eddbc9c83fb5",
   "mainWorktreeClean": true,
-  "ownerHeadBeforeMetadata": "ada576021317625cca40d60fcd8e547ab4afdbd2",
+  "ownerHeadBeforeMetadata": "cbc8d53fdecb6f3c2337ee961838d7d6997ce265",
   "ownerClaim": {
     "lead": "mika",
     "next": null,
@@ -82,8 +82,8 @@
     },
     {
       "path": "apps/runner/src/runtime.ts",
-      "bytes": 14832,
-      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
     },
     {
       "path": "apps/runner/src/fixture.ts",
@@ -109,6 +109,11 @@
       "path": "apps/runner/src/verifier.ts",
       "bytes": 1069,
       "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "apps/runner/src/attempt-wakeup.ts",
+      "bytes": 1325,
+      "sha256": "49714e1d8d6f0e2a02f333842d0b88a818d91a632ce49443487aa0e349106792"
     }
   ],
   "centerInput": {
@@ -192,5 +197,11 @@
       "unclaimedIsAuthorization": false
     }
   ],
-  "validation": "Read-only fixed Git/source/hash inspection; no engineering tests, provider, SDK, PG test database, child or new source claim."
+  "validation": "Read-only fixed Git/source/hash inspection; no engineering tests, provider, SDK, PG test database, child or new source claim.",
+  "priorMainInputCommit": "d4a2e0a7f255a2c68b99c7aafbc006c7bc3b3b50",
+  "changedPriorInputs": [
+    "apps/runner/src/runtime.ts"
+  ],
+  "additionalDirectInput": "apps/runner/src/attempt-wakeup.ts",
+  "p06Handoff": "MAIN_RECEIPT reported by Lead/root for5db; owner source handback receipt still pending at this design update; no new writer claim."
 }

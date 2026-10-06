@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:58:30 UTC |
+| 最近更新时间 | 2026-10-06 14:07:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -93,3 +93,5 @@
 2026-10-06 13:51:12 UTC：Mika接收chatui01_owner独立APPROVED，正式[审查收据](../../docs/evidence/x01/center-independent-review.json)与[稳定集成输入](../../docs/evidence/x01/center-integration-ready.md)已记录；8source/原raw/support/manifest不改，v4保留修复期。默认mount/client/CLI与完整enable/task绑定仍后继，不冒称整X01完成。仅metadata，无14/65重测。
 
 2026-10-06 13:58:30 UTC：fresh ada576 clean/v4 ACTIVE，仅形成[下一启用与任务绑定接缝](../../docs/evidence/x01/enable-binding-preparation.md)，15输入固定main d4a2e0a。重点保留单revision、disable只拒新binding、真实unknown复用retained/journal/停止新claim；runtime等待P06正式main与原owner交回，未take共享范围。中心a578仍已审待main，不把设计当实现；0新工程测试/PG/SDK/provider。新DDL/host资格/共享字段由Lead协调，完整原TODO不减。
+
+2026-10-06 14:07:30 UTC：按Mika设计门禁补充 import完成→invoke前再次实时tool grant核验，两gate共用binding/invocation身份，任何授权ACK未知不执行/不重放包；旧host两源须fresh重新领取，不沿用v4。新binding资格必须与X02当前revision/version/config/material/host一致，旧enabled指针不能绕过。接收P06 main5db事实后重绑16只读输入，仅runtime改变并纳AttemptWakeup；原owner handback仍待。当前仅metadata，中心a578/100bindings保持，0工程测试。
