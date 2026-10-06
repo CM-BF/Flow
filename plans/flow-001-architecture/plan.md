@@ -520,3 +520,7 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 归REQ-15/B02→B03，当前真实兼容发布与Claude消息设置优先。固定a89f的turnPage仍逐条await turnView，各turn分别取task/context/session/preview；已有有界contextReferences可复用，queue已采用批量读。B02/B03旧无context的50turn实测252 SELECT只作为历史基线，不能称为今日所有混合页的查询量；B03只减少全文向应用搬运，没有消除N+1。
 
 下个共享读路径安全点由co-lead与Mika定精确范围，在同一有限页/只读快照内批量投影，保留逐行归属、current attempt、source、digest、版本及unknown门禁，不用同PG连接Promise.all伪并行或删除完整性核验。0模型小例复用历史口径并加入context/附件/新消息设置、无关及旧attempt拒绝；分别记录SQL数、DB解码/HTTP字节、延迟，不因批量化宣称速度或token收益。源码绑定见[研究输入](../../docs/quality/conversation-page-batch-successor-2026-10-06.json)。这只是可执行后继，无新writer/测试/负载，不扩大当前消息设置范围。
+
+### P01增量协议读取成本（2026-10-06 16:01 UTC，GO只读输入）
+
+固定a89f42ab的observe在updatedAt/watermark变化时从cursor0重新映射；seen仅避免重复发送，events/detail读取仍重做，historyLength=0也因默认artifacts要求扫描。现10k事件/200引用/2MiB界限保留，不称无界泄漏。归原P01/REQ15，与观察取消后继一起：使用真实官方SDK HTTP fixture固定1产物+多次状态/非产物变化，记录events/detail请求数及字节，并核首Task、后继status/artifact updates、重连、水位、权限与unknown可见结果一致；0PG/模型/新依赖，不以无界缓存掩盖成本。官方依据[A2A 1.0规范3.1.6/3.5.2](https://a2a-protocol.org/v1.0.0/specification/)。此为后继设计输入，当前TUI/Claude/兼容发布优先，无新writer或运行。
