@@ -37,3 +37,9 @@ Target `d209eb7275777d50f214fd73f66d6b3c1520c459`，产品6源相对3cd不变；
 Mika，2026-10-06 21:45UTC，target `d209eb7275777d50f214fd73f66d6b3c1520c459`，**APPROVED /0 P1/P2**（限局部source+fake行为+strict）。Reviewer核5b8eb93 clean、6产品与3cd无diff、唯一row guard不删断言；green26/26、strict-v2实际exit0，108B首次类型错误与own组/TMP清理原件保留。source manifest SHA `2abe118da942b25be4f22c872c015dec123b8597f19a740409c2ba2213e1bfd0`（8/55181B）、output SHA `6f4f40ba876ecca2734a5122e0774f851e5e0151d476e033bdba2da65f04b120`（6/12275B）逐Git(d209)=WT=bytes/hash。非PG/HTTP/main批准。
 
 下一片仅[真实PG准备设计](../../docs/evidence/req15-turn-page-batch/pg-acceptance-plan.md)与两SQL固定供给请求，未执行、未作为本approval范围。产品冻结，准备packet待下一轮审查。
+
+## 真实PG设计只读审查
+
+root/Mika + architecture_read，2026-10-06（reviewer消息回传，未提供独立完成时刻），target `98b60b4b18a4f58e03ec9662f54f6d96feac310f`，**DESIGN_REVIEW_APPROVED /0 P1/P2**。请求SHA `5844c5a2e26099362ec85cd4b5aff89562a988177af8eab0cc1fd59ecefe22e1`与计划SHA `d61760f31aec9b406b56504d8f977f4de14b816a143170d7815dbb30052b4003`已核；007/025两SQL2681B待Lead sole供给，002/009=base。仅设计审，不是fixture source/types/collect/PG执行批准。
+
+作者已静态核pg8.23.1/pg-protocol1.16.1接缝，见[driver观察边界](../../docs/evidence/req15-turn-page-batch/pg-driver-seam.md)。direct error.code与turnPage invalid/邻项健康分别验收，duplicate-session用details重复、legacy用不同identity、第51坏项不提前投影；收到供给后落实，不改已审产品。

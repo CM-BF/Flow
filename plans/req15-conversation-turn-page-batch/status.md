@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:49:49 UTC；main未集成，本次仅准备metadata |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:57:19 UTC；main未集成，本次静态driver接缝/设计审归档 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；实现/验证d209eb7275777d50f214fd73f66d6b3c1520c459；准备前HEAD5b8eb93dd2eb282b6bf2d8442a30b99dde6cd8d2 |
-| 工作树dirty状态 | 已审产品8路径冻结；本次仅review/status/plan及evidence下PG准备设计/两SQL请求，提交后clean |
+| 工作树dirty状态 | 归档前98b60b4 clean；本次仅PG driver静态记录与status/review，已审8产品/测试及设计packet hash不变 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | d209eb7275777d50f214fd73f66d6b3c1520c459 |
@@ -20,8 +20,8 @@
 | 已集成main状态 / HEAD | 未集成；实现3cd7a6e8已固定，未在main验证 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 批量读取已通过局部独立验收，真实数据库校验方案已缩减为两个必要SQL输入 |
-| 下一可用交付 | 验证真实数据库的批量绑定、完整摘要和并发快照，并记录实际读取成本 |
+| 当前产出 | 批量读取局部验收和真实数据库设计审均通过，测量接缝已静态核实 |
+| 下一可用交付 | 收到两份SQL后固定真实数据库用例与执行准备包，供独立审查 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED d209eb7275777d50f214fd73f66d6b3c1520c459（局部source+fake+strict）；后继PG准备另审 |
@@ -60,3 +60,5 @@
 2026-10-06 21:44:23 UTC：[检查记录](../../docs/evidence/req15-turn-page-batch/checks.md) green26selected/26pass/exit0/0.853281s；strict首次仅测试替身可空row报错，原件保留，一行guard后strict-v2 exit0/1.602574s。六产品字节与3cd已审source一致，未重跑26绿色组；新target d209eb7275777d50f214fd73f66d6b3c1520c459待独立结果/fixture复核。三次自有组均absent、TMP同inode清理，轻机会已交回。原NOT_RUN_RESOURCE为历史准入事实，现已由实际结果补齐；PG/HTTP/main仍未执行。
 
 2026-10-06 21:49:49 UTC：Mika21:45UTC结果复审APPROVED/0 P1/P2已归档；产品冻结。后继采用原始schema最小读取闭包，额外仅007/025两SQL2681B，0新deps；不引完整createServer闭包，HTTP由实际集成点验收。当前packet仅设计/精确供给请求，NOT_EXECUTABLE，0import/tests/PG；SVC07真实HTTP保持优先，未预约窗口。
+
+2026-10-06 21:57:19 UTC：root/Mika+architecture_read对98b60b4设计packet给出DESIGN_REVIEW_APPROVED/0 P1/P2；非fixture/source/执行批准。owner静态核pg8.23.1 DataRow/ReadyForQuery与pg-protocol1.16.1 UTF8 parser，固定输入/hash与指标边界见[driver接缝](../../docs/evidence/req15-turn-page-batch/pg-driver-seam.md)。两SQL尚待Lead回执并逐bytes/hash核对；当前不写fixture/封套，不自行物化，不运行types/collect/已绿26/strict/PG。claim v1在21:54:33由Mika fresh核active；SVC HTTP优先且NOT_OPEN，OPS14迁移后继不修改历史入口。
