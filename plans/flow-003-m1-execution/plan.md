@@ -3,11 +3,11 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | FLOW-003 |
-| 状态 | `in-progress` |
+| 状态 | `completed` |
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-001：产品与技术架构](../flow-001-architecture/plan.md) |
 | 关联验证 | [FLOW-002：Provider 与 Harness](../flow-002-provider-harness/plan.md) |
-| 当前阶段 | F00/C01/R01/L01/R02/W01/D01已接收；真实Web闭环与93/93通过，I01最终独立review及main集成进行中 |
+| 当前阶段 | F00/C01/R01/L01/R02/W01/D01已接收；真实Web闭环/93测试/独立review通过，main已集成并推送14fea3d |
 | 规划基线 | `main` / `5df746a`，只有计划和实验归档，没有应用骨架 |
 
 ## 1. 已确认方向与首个交付目标
@@ -206,10 +206,10 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 - [x] **W01** Web 与双主题；独立计划见 [W01](../w01-web/plan.md)。
 - [x] **D01** 工程执行 dashboard；独立计划见 [D01](../d01-execution-dashboard/plan.md)。
 - [x] **R02** 真实 harness 接入与有界验证。
-- [ ] **I01** 合并版本的端到端、故障与UI验收；[独立计划](../i01-integration/plan.md)。
+- [x] **I01** 合并版本的端到端、故障与UI验收；[独立计划](../i01-integration/plan.md)。
 - [x] **LAB01** 两个有界性能toy与方法复核；[plan](../lab01-performance/plan.md)。
 - [x] **D02** Dashboard权威来源补齐；[plan](../d02-progress-sync/plan.md)。
-- [ ] **LAB02** 独立观察者诊断与报告；权威owner worktree为observer-probes，不作为M1门槛。
+- [x] **LAB02** 独立观察者诊断与报告；[plan](../lab02-observer-probes/plan.md)，不作为M1门槛。
 
 - 2026-10-05：用户要求所有ready独立任务尽量并行，期望上限10；当前第5worker仍被运行时拒绝。每plan迁移独立status/review，当前feature owners维护各自状态，branch完成与main集成分别记录。
 
@@ -227,7 +227,7 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 
 W01与D01由用户外部分队完成：W01 b04df958（批准实现866c20e），D01 6783562（批准实现9c236c5）。两个 feature 独立 worktree，不共享可写 UI 包、lock 或 contracts。具体输入、任务登记与交付格式见 [外部交接](../../docs/handoffs/external-web-dashboard.md)。当前内部 4 槽运行限制仍据实记录；不将预留写成已运行。
 
-当前真实Web/PG/整浏览器退出/CLI决策/新浏览器一致产物与验证已通过；R02+I01真实原生预算5/5已使用。LAB01两个0模型/0云toy已方法review通过；D02补齐14条来源；LAB02独立观察者诊断不构成M1门槛。main在I01最终独立review后更新，实验不替代产品性能或真实agent容量证据。
+当前真实Web/PG/整浏览器退出/CLI决策/新浏览器一致产物与验证已通过；R02+I01真实原生预算5/5已使用。LAB01两个0模型/0云toy已方法review通过；D02补齐14条来源；LAB02独立观察者诊断不构成M1门槛。main已在I01最终独立review后更新到14fea3d，实验不替代产品性能或真实agent容量证据。
 
 ## M1范围与后续结构质量
 

@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | FLOW-001 | [Flow 产品与技术架构计划](flow-001-architecture/plan.md) | `proposed` | 汇总产品约束、候选 stack、模块边界、验证场景及分阶段落地路线 |
 | FLOW-002 | [Provider 登录与 Harness 对比计划](flow-002-provider-harness/plan.md) | `in-progress` | Hermes / T3 Code / Paseo 源码复用、已有登录、原生 SDK 与 HarnessAgent 对照及证据 |
-| FLOW-003 | [首轮执行与 Agent 分工计划](flow-003-m1-execution/plan.md) | `in-progress` | 个人自托管首版、Goal Owner / Execution Lead 职责、期望10槽/运行时实测容量、worktree/写入范围与端到端验收 |
+| FLOW-003 | [首轮执行与 Agent 分工计划](flow-003-m1-execution/plan.md) | `completed` | 个人自托管首版、Goal Owner / Execution Lead 职责、期望10槽/运行时实测容量、worktree/写入范围与端到端验收 |
 
 ## 当前进度
 
@@ -24,7 +24,7 @@
 - 已确认首版优先个人自托管：一个中心连接本机或远端 runners；原生Claude候选已通过有界系统验证，生产最终选型未定；M1 调度选择 pg-boss，范围及短验证见 F00 记录。
 - 已明确职责：Goal Owner（主 agent）负责用户沟通、总体目标、优先级协调和目标验收；Execution Lead（独立 Astra Ultra agent）负责架构、契约/骨架、client/CLI、工程检查、技术派工与集成，以及计划和索引维护。
 - 用户期望总并发上限10（含Goal Owner和Execution Lead），所有ready独立任务尽量并行；当前运行时第5worker实测被拒绝，实际cap4，暂有两个执行workers。实际并行度取用户上限、运行时cap和ready任务数的最小值。用户已授权正式开工，F00 骨架、契约和调度短验证完成；后续从同一已提交契约基线在独立 worktrees 派发功能任务。
-- F00 已建立工程 workspace、公共契约与薄 client，完成 PostgreSQL/pg-boss 短验证；中心、runner、CLI/Web均已接收，真实整浏览器退出的系统旅程与93/93检查通过；最终独立review和main集成进行中。
+- F00 已建立工程 workspace、公共契约与薄 client，完成 PostgreSQL/pg-boss 短验证；中心、runner、CLI/Web均已接收，真实整浏览器退出的系统旅程与93/93检查通过；独立review和main集成已完成。
 
 本轮按用户授权从 FLOW-003 的 F00 持续推进至 M1：由 Execution Lead 先固定最小公共契约、调度与 runner 失联语义，再按实际可用执行位推进中心、runner 和 Web，容量允许即并行。FLOW-002 的后续选型验证另行记录，不阻塞确定性执行闭环；系统级要求以 FLOW-001 为准。
 
@@ -41,8 +41,8 @@
 | L01 | [CLI](l01-cli/plan.md) | `in-progress` | [status](l01-cli/status.md) / [review](l01-cli/review.md) |
 | W01 | [Web与双主题](w01-web/plan.md) | `completed` | [status](w01-web/status.md) / [review](w01-web/review.md) |
 | D01 | [工程执行 dashboard](d01-execution-dashboard/plan.md) | `completed` | [status](d01-execution-dashboard/status.md) / [review](d01-execution-dashboard/review.md) |
-| I01 | [M1集成验收](i01-integration/plan.md) | `in-progress` | [status](i01-integration/status.md) / [review](i01-integration/review.md) |
-| OPS-001 | [计划状态与review规范](ops-001-status-review/plan.md) | `in-progress` | [status](ops-001-status-review/status.md) / [review](ops-001-status-review/review.md) |
+| I01 | [M1集成验收](i01-integration/plan.md) | `completed` | [status](i01-integration/status.md) / [review](i01-integration/review.md) |
+| OPS-001 | [计划状态与review规范](ops-001-status-review/plan.md) | `completed` | [status](ops-001-status-review/status.md) / [review](ops-001-status-review/review.md) |
 
 总计划状态：[FLOW-001](flow-001-architecture/status.md) / [FLOW-002](flow-002-provider-harness/status.md) / [FLOW-003](flow-003-m1-execution/status.md)。
 
@@ -54,13 +54,13 @@ W01与D01外部成果已接收，分别为b04df958与6783562；权威owner工作
 
 W01与D01由用户外部执行分队完成，原冻结基线eacee76保留；[共同交接与独占范围](../docs/handoffs/external-web-dashboard.md)。
 
-当前M1最终独立review target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真实Web与native系统证据](../docs/evidence/i01/m1-system.md)。整合typecheck/93测试/Webbuild已通过；main仍0763d46，不能把分支证据当main能力。
+M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真实Web与native系统证据](../docs/evidence/i01/m1-system.md)。整合typecheck/93测试/Webbuild已通过；main和origin/main已于01:46 UTC集成14fea3d；最新metadata HEAD另由Git核验。
 
 | 新增任务 | 状态 | 权威资料 |
 | --- | --- | --- |
 | R02 原生adapter | completed（branch） | [plan](r02-native-harness/plan.md) / [status](r02-native-harness/status.md) / [review](r02-native-harness/review.md) |
 | LAB01 两个性能toy | completed（branch） | [plan](lab01-performance/plan.md) / [status](lab01-performance/status.md) / [review](lab01-performance/review.md) |
 | D02 dashboard来源同步 | completed（branch） | [plan](d02-progress-sync/plan.md) / [status](d02-progress-sync/status.md) / [review](d02-progress-sync/review.md) |
-| LAB02 observer短诊断 | in-progress | 唯一owner目录`Flow-worktrees/observer-probes/plans/lab02-observer-probes/`，等待独立交付，不阻塞M1 |
+| LAB02 observer短诊断 | completed（branch） | [plan](lab02-observer-probes/plan.md) / [status](lab02-observer-probes/status.md) / [review](lab02-observer-probes/review.md)；独立方法review通过 |
 
 [工程/管理质量台账](../docs/quality/architecture-health-2026-10-06.md)记录后续P2。M1是持久执行基础；M2优先统一跨任务解释/决策入口，不把目前task页当最终心流体验。

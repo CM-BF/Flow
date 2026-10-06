@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:43 UTC / 2026-10-06 01:41 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:47 UTC / 2026-10-06 01:46 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
 | 工作基线 / HEAD | 冻结外部基线`eacee76fa7f1b6cc46b06b57ae68458637be4a26`；当前同步集成源码`de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`及D02/LAB01 metadata，提交HEAD由实时Git核验 |
 | 工作树dirty状态 | 本次规则/汇总metadata待提交 |
-| 工作分支状态 | in-progress；M1主旅程证据已完成，最终独立review/main集成进行中 |
+| 工作分支状态 | completed；M1主旅程、检查、独立review及main集成均完成 |
 | 检查状态 | PASSED `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`真实Web系统旅程；整合总检93/93/typecheck及Webbuild通过，各证据target分开记录 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584`，应用未合入main |
-| Review | I01最终target `da7ce435e03e7abad1227353e473a35a6e9b1349`独立只读审查进行中；不把总计划空模板当approval |
+| 已集成main状态 / HEAD | INTEGRATED；`14fea3d9b3f831aa35b8c80bf5c465a7039ad609`，2026-10-06 01:46 UTC本机与origin/main确认；后续metadata提交以现场Git为准 |
+| Review | I01最终target `da7ce435e03e7abad1227353e473a35a6e9b1349`独立APPROVED，报告已归档；不把总计划空模板当approval |
 
 ## TODO状态
 
@@ -35,14 +35,14 @@
 | W01 | completed | 外部W01 owner / 汇总 | b04df958已接收；独立APPROVED实现866c20e；真实系统联调见I01 |
 | D01 | completed | 外部D01 owner / 汇总 | 6783562已接收；独立APPROVED实现9c236c5；原9源 |
 | R02 | completed | runner_owner / 汇总 | 实现e4f12ef；4b94d269 metadata；真实5/5预算不再增加 |
-| I01 | in-progress | Execution Lead | 真正Web主旅程/93测试已通过；da7ce435最终独立review及main集成中 |
+| I01 | completed | Execution Lead | [APPROVED da7ce435](../i01-integration/review.md)，真实Web/93测试，main与origin/main已集成14fea3d |
 | LAB01 | completed | assignment_review / 汇总 | 实现f226c42方法review通过；80样本0模型/云，不推荐默认逐帧等待 |
-| D02 | completed | assignment_review / 汇总 | 实现40bc3336独立review+Node10/10，补至14权威源；4320预览更新待Lead |
-| LAB02 | in-progress | runner_owner / 汇总 | observer-probes唯一owner，0模型短诊断已测，报告/review收尾；不阻塞M1 |
+| D02 | completed | assignment_review / 汇总 | 实现40bc3336独立review+Node10/10，补至14权威源；4320已从main正常更新并确认14源 |
+| LAB02 | completed | runner_owner / 汇总 | e202e4ff只读方法APPROVED，56281848批准metadata；[报告](../../docs/evidence/lab02/README.md)，0模型/30秒；另行集成 |
 
 ## 当前阻塞与风险
 
-无需要用户决定的阻塞。最终独立review是main更新前的工程关口。C01端口4320冲突已由948e6bc动态端口修复，93/93全检通过，未停止看板。运行时cap4是资源约束，不是当前未开工借口；用户期望10，实际ready工作按可用槽安排。
+无需要用户决定的阻塞。最终独立review已通过，main已更新。C01端口4320冲突已由948e6bc动态端口修复，93/93全检通过，未停止看板。运行时cap4是资源约束，不是当前未开工借口；用户期望10，实际ready工作按可用槽安排。
 
 uncertain保留占用，没有受审计核对恢复入口；runner当前单进程有效并发1。原生SDK资源仍加载，取消usage可能unknown。跨机/掉电/真实模型容量和完整跨任务心流体验未证明。见[恢复边界](../../docs/architecture/recovery-boundaries.md)、[质量台账](../../docs/quality/architecture-health-2026-10-06.md)。
 
@@ -52,10 +52,12 @@ uncertain保留占用，没有受审计核对恢复入口；runner当前单进�
 
 ## 下一步与handoff
 
-接收I01独立review，修复有证据的阻塞项；合入已审features到main并推送。正常重启已知4320项目预览至D02版本，核对14源和现场main事实，更新跨任务汇总；不把临时动态端口smoke当用户旧预览已更新。LAB02独立收尾，不延长M1门槛。
+I01与D02独立review已接收，main已推送；4320旧PID归属核对后正常重启到main的14源版本，API确认所有来源live无解析issues。接下来只收尾LAB02与本metadata同步，不新开功能；后续受审计核对恢复入口及M2跨任务体验另行规划。
 
 M1只交付持久执行基础；M2优先统一跨任务解释/决策入口，任务页作为下钻，验收包括切换次数/重复提问/人工时间。
 
 ## Dashboard 同步
 
 本status是FLOW-003唯一手填事实源，D02继续从plan-status-review读取；各feature的owner/worktree记录唯一。已核对W01/D01外部完成快照、status、实际head/clean并接收，纠正了旧reserved-external记录。main集成事实独立于工作分支测试。
+
+推送边界：main/集成/Web/Dashboard/R02/LAB分支已推；旧C01/R01单独分支因早期CI文件与OAuth workflow scope不足被拒绝，它们全部实现已进入成功推送main。未更改凭据或强推。

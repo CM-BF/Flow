@@ -9,8 +9,8 @@
 | Branch | `codex/plan-status-review` |
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 本次规则/汇总metadata待提交 |
-| 工作分支状态 | 依下方TODO；M1系统旅程已验证，最终独立review/main集成进行中 |
-| 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
+| 工作分支状态 | 依下方TODO；M1系统旅程、最终独立review及main集成已完成 |
+| 已集成main状态 / HEAD | `14fea3d9b3f831aa35b8c80bf5c465a7039ad609`；2026-10-06 01:46 UTC确认本机与origin/main已集成M1；此SHA是观察值，后续metadata不让既有实现失效 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -31,7 +31,7 @@
 ## 阻塞 / 风险 / 未验证
 
 - 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。
-- M1真实Web旅程、原生approve/cancel与双主题证据已具备；main仍待最终工程review。后续协议/插件/容量和完整跨任务体验未完成。
+- M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
 
