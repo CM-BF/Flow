@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T16:17:28 UTC / input main83f535b5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T16:29:35.867569+00:00 / input main65659028 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main83f535b5；本批只归档资源与TUI限定main回执，无产品源码差异 |
+| 工作基线 / HEAD | main65659028；本批修正文档并归档资源/source与166来源事实，无产品源码差异 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
 | 检查状态 | 终端9产品源对获审a1f82f逐字相同；作者35+1与focused类型检查有效，集成无重跑/PG/provider |
@@ -191,3 +191,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 16:09 UTC：TUI01F controller+Ink接线限定APPROVED已接收，9源逐字同a1f82f；35+1不同局部用例和focused noEmit已有原证据，集成无新源码/测试变化。真实HTTP/PG/PTY/App与完整TUI仍开放，详见[接收回执](../../docs/evidence/i02/tui01f-integration-receipt.json)。
 
 2026-10-06T16:17:28.029524+00:00：本批仅接收OPS七树保留回执、165来源实采与TUI01F独审/main/后继边界；无产品差异、无重跑或provider。见[metadata接收](../../docs/evidence/i02/resource-terminal-metadata-receipt.json)。RELEASE03累计7,983ms，B未运行；不把资源中断写为产品失败，不刷新用户页面。
+
+2026-10-06T16:29:35.867569+00:00：运行并发/恢复/TUI入口三文档按独立只读建议和固定源码事实修正，三文件hash与9878一致；收录166来源已采回执及CORE/TUI source-only闭包事实。无产品/工程检查/PG/provider或个人服务操作；[本批绑定](../../docs/evidence/i02/runtime-source-metadata-receipt.json)。磁盘资源新批按既有授权处理，WebA→B尚未重开。
