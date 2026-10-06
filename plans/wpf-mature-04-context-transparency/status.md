@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:17:36 UTC / main 06118e6014a6efdd682d3442cbb193a4748bc82b clean仅观察；producer尚未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:24:43 UTC / fixed main 7cbda706632c85fc5da12a371b282419c933ab9a；现场 bfe50bb0d152d792f6a9dead5644763f722fb345 clean |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -11,21 +11,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
 | 工作基线 / HEAD | 844fa14bfbf32f5392e48e104b5440a9cb5b9b13 / 固定producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；后续HEAD为metadata，Git聚合实际HEAD |
-| 工作树dirty状态 | source/raw/support/manifest冻结；本轮仅正式review/status/integration输入metadata，实际clean由Git聚合 |
+| 工作树dirty状态 | producer四源/raw/support/manifest冻结且已交回写权；本轮仅main接收/handback metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED eccb1ba6d9f3bf95cca4f50693dde8e32707ed40：121/121不同（19read+27adapter+31Claude+11stream+33runtime），局部root严格noEmit0；首次120/121旧fixture超时及定向1/1记录保留，原因unknown |
-| 已集成main状态 / HEAD | 本producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40未集成main；历史18叶源已集成main与origin/main bf067e328bc1dc63cde39acf4b637cfb055e467a clean；879/9ac/c173组合18叶源逐字一致，原target非main祖先，按固定blob集成核验；[唯一接收收据](../../docs/evidence/wpf-mature-04/main-acceptance.json)引用Lead生产接线与root types0，未重测；部署未知 |
+| 已集成main状态 / HEAD | INTEGRATED 7cbda706632c85fc5da12a371b282419c933ab9a；producer四源逐字=approved eccb Git=固定main Git=双方现场；[接收收据](../../docs/evidence/wpf-mature-04/producer-main-acceptance.json)引用Lead root noEmit0；旧18叶源已集成bf067，未重测；部署未知 |
 | 实现目标 | eccb1ba6d9f3bf95cca4f50693dde8e32707ed40 |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/context-observations/claude-summary-read.ts, apps/runner/src/context-observations/claude-summary-read.test.ts, apps/runner/src/claude-context-observation.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 普通Claude历史观察producer已获独立审查通过，121/121与strict0，待Lead主线接收 |
-| 下一可用交付 | 按固定4源与唯一integration输入接收；Web消费者按既有handoff协调，current/cut仍未知 |
+| 当前产出 | 普通Claude历史观察producer已独审并进入main7cbda706；四源写权已交回，只保留metadata |
+| 下一可用交付 | 处理附件v2材料历史投影的精确组合缺陷；先最小合同/新scope，current/cut仍未知 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED eccb1ba6d9f3bf95cca4f50693dde8e32707ed40：chatui01_owner/gpt-6-astra，2026-10-06 12:16:43 UTC，Mika接收，0 P1/P2；仅普通history producer |
-| Claim | [COMMITTED amend v8](../../docs/evidence/wpf-mature-04/producer-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v8 ACTIVE；仅4个新producer精确源码与2metadata目录，原18源未恢复写权 |
+| Claim | [COMMITTED partial handback v9](../../docs/evidence/wpf-mature-04/producer-source-handback-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v9 ACTIVE；仅2metadata目录，四producer源及旧18源停止写入 |
 | 架构影响 | 本片仅普通Claude result读取和EOF后历史事件；中心继续原reportEvents/027/owner GET。pending control未知复用原settlement和journal，不新增状态机；current/remaining仍未知 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -33,7 +33,7 @@
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
 | WPF-MATURE-04-03 | in-progress | architecture_read / mika | 9ac正式027/历史模块50/50含9真实PG、strict0、独审APPROVED；已随生产reportEvents/owner历史GET进入bf067e3；[接收收据](../../docs/evidence/wpf-mature-04/main-acceptance.json)。当前/remaining/SDK采集仍未知，不据此勾完完整验收 |
-| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | c173纯归一化已main；producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40独审APPROVED、121不同+strict0，待main接收；fake Query不证明真实SDK采样/压缩事件，完整验收仍开放 |
+| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | c173纯归一化已main；producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40独审APPROVED、121不同+strict0，已main7cbda706；fake Query不证明真实SDK采样/压缩事件，完整验收仍开放 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 12:15 fresh核Web管理权威status/registry/active claims，未确认独立history UI开工；已补[现有交接页](../../docs/evidence/wpf-mature-04/handoff-current.md)消费边界；知识引用UI不等于本验收 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | schema/纯投影/历史领域/归一化已有独审并进入main；完整矩阵与producer/current/压缩/Web等后继验收未完成 |
 
@@ -47,7 +47,7 @@
 
 ## Dashboard 同步
 
-本status是WPF-MATURE-04唯一手填事实源，当前main事实为表格中的bf067e3；下文是带时间的历史观察。历史4320于10:45:18 UTC由Mika确认04 source live/stale=false；本轮只读parseStatus检查当前字段可聚合，不把它称作4320已刷新或产品已部署。本owner未改registry/全局架构视图。
+本status是WPF-MATURE-04唯一手填事实源，当前main事实为表格中的7cbda706；下文是带时间的历史观察。历史4320于10:45:18 UTC由Mika确认04 source live/stale=false；本轮只读parseStatus检查当前字段可聚合，不把它称作4320已刷新或产品已部署。本owner未改registry/全局架构视图。
 
 2026-10-06 09:25:10 UTC独立预审绑定e81f200：CHANGES_REQUESTED，status_read/gpt-6-astra，mika接收，1P2/0P1。Query summary仅已有上下文，不能覆盖未发送draft/queued；当前最小修复收窄为有nativeSessionId的attempt，host仍负责已消费input/history cut。历史46/46保留，不算修复后验证。
 
@@ -102,3 +102,5 @@
 2026-10-06 12:15:12 UTC：source/raw仍冻结eccb，HEAD06a3802d clean/v8后仅补已有handoff-current的Web消费核对。Web权威管理树bb30ceb dirty、status12:10明确context仍开放；main registry/源码和fresh账本未确认独立history UI开工，TODO05保留pending，未根据未回传猜测。已有main GET/DTO/thin client可复用，只显示当前attempt按原sequence取latest的历史估算，current/remaining/compression/cut不冒可用；无Web源码、scope或新合同修改，无工程重测。
 
 2026-10-06 12:17:36 UTC：接收chatui01_owner对eccb的APPROVED（12:16:43 UTC，0 P1/P2），Mika接收；58bindings/31readonly/18旧源与121不同+strict0核实，未重测。正式[独审收据](../../docs/evidence/wpf-mature-04/producer-independent-review.json)和[唯一集成入口](../../docs/evidence/wpf-mature-04/producer-integration-ready.md)已固定。source继续冻结、v8修复期保留；main四源未接收，不提前release。原始manifest/raw/support不改，真实SDK/current/cut/Web未知不扩张为完成。
+
+2026-10-06 12:24:43 UTC：正式核main7cbda706接收eccb四源，固定Git/现场逐字一致；Lead58bindings/31inputs/root noEmit0为既有证据，作者未复跑121/provider。明确停止四源写入，原子amend v9仅保留两metadata目录；[收据](../../docs/evidence/wpf-mature-04/producer-source-handback-receipt.json)。历史观察边界及真实SDK/current未知保留。下一已授权附件材料修复另领scope，不恢复旧18/4源码写权。
