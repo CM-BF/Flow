@@ -6,7 +6,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - [04 producer main接收权威比对](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/context-producer-source-comparison.json)；owner维护后续接收状态。
 
-- [Root literal唯一窗口结果](rootliteral/run-report.md)：两份完整C报告，measurement/cleanup/accounting完成、CLI0，待结果独审；不证明Node/Codex或完整隔离，不推断旧根因。窗口已消费。
+- [Root literal唯一窗口结果](rootliteral/run-report.md)：两份完整C报告，measurement/cleanup/accounting完成、CLI0，Mika12:28:41 UTC限定APPROVED；不证明Node/Codex或完整隔离，不推断旧根因。窗口已消费。
 
 - [R06五源已main接收/逐blob核验](r06-main-accepted.json)；已停写并完成[claim v5部分交回](r06-source-handback-receipt.json)。main362af3只接收已审生产seam；薄consumer仍待单独确认，诊断窗口不重开。
 
