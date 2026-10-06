@@ -89,7 +89,7 @@ export function executionView(row: ExecutionRow, inputCurrent: boolean): GoalExe
 export async function explanations(client: PoolClient, goalId: string): Promise<GoalExplanation[]> {
   const rows = (await client.query<GoalExplanation & { created_at: Date }>(
     'SELECT * FROM flow.goal_explanations WHERE goal_id=$1 ORDER BY version DESC LIMIT 50', [goalId])).rows;
-  return rows.reverse().map(row => ({ version: row.version, kind: row.kind, text: row.text, source: row.source, createdAt: row.created_at.toISOString() }));
+  return rows.reverse().map(explanationView);
 }
 export async function snapshot(client: PoolClient, state: GoalState): Promise<GoalSnapshot> {
   const validity = currentDeliveries(state);
@@ -113,4 +113,8 @@ export async function snapshot(client: PoolClient, state: GoalState): Promise<Go
 function executionSummary(row: ExecutionRow, inputCurrent: boolean) {
   const { input: _input, dependencies: _dependencies, ...metadata } = executionView(row, inputCurrent);
   return metadata;
+}
+
+export function explanationView(row: GoalExplanation & { created_at: Date }): GoalExplanation {
+  return { version: row.version, kind: row.kind, text: row.text, source: row.source, createdAt: row.created_at.toISOString() };
 }

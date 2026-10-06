@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { spawn, type ChildProcess } from 'node:child_process';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -23,6 +23,12 @@ let baseUrl: string;
 let runnerDirectory: string | undefined;
 const runners: ChildProcess[] = [];
 const runnerDiagnostics: string[] = [];
+async function evidence(name: string, value: unknown) {
+  const directory = process.env.FLOW_O01_EVIDENCE_DIR;
+  if (!directory) return;
+  await mkdir(directory, { recursive: true });
+  await writeFile(join(directory, `${name}.json`), JSON.stringify({ at: new Date().toISOString(), ...value as object }, null, 2) + '\n', { flag: 'wx' });
+}
 
 async function request(path: string, body?: unknown, options: { key?: string; token?: string } = {}) {
   const response = await fetch(`${baseUrl}${path}`, {
@@ -204,6 +210,9 @@ it('runs the diamond through independent fixture processes and invalidates only 
   expect(view.nodes.every((node: { execution?: object }) => !node.execution || !('input' in node.execution) && !('dependencies' in node.execution))).toBe(true);
   const unchanged = await request(`/api/goals/${goalId}`); expect(unchanged.body).toEqual(view);
   expect(runners.every(runner => runner.exitCode === null)).toBe(true);
+  await evidence('diamond', { outcome: 'passed', goalId, runnerPids: runners.map(runner => runner.pid), testPid: process.pid,
+    acceptedA: acceptedA.body.delivery, replacementA: replaced.body.delivery, firstB: firstB.executionId, secondB: secondB.executionId,
+    actualSecondBPrompt: actualB, oldAStillReadable: oldArtifact.body, finalProjection: view, modelCalls: 0 });
 });
 
 it('preserves failed evidence, rejects failed verification, and requires explicit predecessor for retry', async () => {
@@ -245,6 +254,8 @@ it('serializes concurrent authorization, keeps one task and refuses unsettled ex
   expect(rejected.body.error.code).toBe('execution_unsettled');
   expect((await request('/api/runner/claim', {}, { token: registered.token })).body.assignment).toBeNull();
   expect((await request(`/api/goals/${goalId}/executions?nodeId=${planned.nodeId}`)).body.executions).toHaveLength(1);
+  await evidence('uncertain', { outcome: 'passed', goalId, authorizationStatuses: responses.map(response => response.status), executionId: execution.executionId,
+    afterRestart: (await request(`/api/tasks/${execution.task.id}`)).body, rejectedNewAuthorization: rejected, modelCalls: 0 });
 });
 
 it('keeps maximum inputs out of light reads and preserves immutable history with bounded execution queries', async () => {
@@ -260,11 +271,20 @@ it('keeps maximum inputs out of light reads and preserves immutable history with
   const query = await request(`/api/goals/${goalId}/executions?nodeId=${planned.nodeId}&limit=101`); expect(query.status).toBe(400);
   const oversized = await command(goalId, { kind: 'define-input', nodeId: planned.nodeId, expectedInputVersion: 1, input: { ...actual, goal: 'x'.repeat(4001) }, reason: 'Reject overflow' }); expect(oversized.status).toBe(400);
   expect((await request(`/api/goals/${goalId}`)).body).toEqual(before);
+  const expanding = { ...actual, goal: '\n'.repeat(3999) + 'x', constraints: '\n'.repeat(2000), acceptance: '\n'.repeat(999) + 'z' };
+  expect((await command(goalId, { kind: 'define-input', nodeId: planned.nodeId, expectedInputVersion: 1, input: expanding, reason: 'Valid fields but oversized serialized context' })).status).toBe(200);
+  const tooLarge = await command(goalId, { kind: 'execute', nodeId: planned.nodeId, expectedInputVersion: 2, dependencies: [], previousExecutionId: null, reason: 'Must reject without truncation', fixture: { scenario: 'success' } });
+  expect(tooLarge.body.error.code).toBe('input_too_large');
+  expect((await request(`/api/goals/${goalId}/executions?nodeId=${planned.nodeId}`)).body.executions).toEqual([]);
+  const after = (await request(`/api/goals/${goalId}`)).body;
+  await evidence('bounded-read', { outcome: 'passed', originalAsciiCharacters: 7000, nodeInputAsciiCharacters: 7000,
+    snapshotBytes: Buffer.byteLength(JSON.stringify(before)), inputDetailBytes: Buffer.byteLength(JSON.stringify(actual)),
+    snapshot: before, oversizedSerializedContext: tooLarge, noExecutionAccepted: true, modelCalls: 0 });
   for (const table of ['goal_inputs', 'goal_executions', 'goal_explanations', 'goal_acceptances']) {
     await expect(pool.query(`DELETE FROM flow.${table} WHERE goal_id=$1`, [goalId])).rejects.toMatchObject({ code: '23514' });
   }
   await migrateGoals(pool);
-  expect((await request(`/api/goals/${goalId}`)).body).toEqual(before);
+  expect((await request(`/api/goals/${goalId}`)).body).toEqual(after);
 });
 
 it('rolls back task, wake and execution binding together and retries the same command after a storage failure', async () => {
@@ -294,4 +314,23 @@ it('preserves ordinary submit idempotency and resume validation through the shar
   expect((await request('/api/tasks', { ...task, prompt: 'Different' }, { key })).status).toBe(409);
   expect((await request('/api/tasks', { ...task, resumeSessionId: 'not-recorded' })).body.error.code).toBe('unknown_session');
   await request(`/api/tasks/${submitted.body.task.id}/cancel`, {});
+});
+
+it('returns faithful existing provenance for no-op input and delivery commands after another node changes', async () => {
+  if (!runners.length) await startRunners();
+  const a = await add(await project('Faithful no-op provenance'), 'A'); const b = await add(a.snapshot, 'B');
+  const goalId = (await request('/api/goals', { projectId: b.snapshot.project.id, ...original })).body.goal.id;
+  const definedA = await defineGoalNode(goalId, a.nodeId, 'A unchanged actual input');
+  const executionA = await executeNode(goalId, a.nodeId); await waitTask(executionA.task.id, 'succeeded');
+  const acceptedA = await accept(goalId, a.nodeId, executionA.executionId); expect(acceptedA.status).toBe(200);
+  await defineGoalNode(goalId, b.nodeId, 'B inserts an unrelated last explanation');
+  const before = (await request(`/api/goals/${goalId}`)).body;
+  expect(before.explanations.at(-1).source.nodeId).toBe(b.nodeId);
+  const noopInput = await command(goalId, { kind: 'define-input', nodeId: a.nodeId, expectedInputVersion: 1, input: input('A unchanged actual input'), reason: 'No change' });
+  const noopDelivery = await accept(goalId, a.nodeId, executionA.executionId, executionA.executionId);
+  expect([noopInput.status, noopDelivery.status]).toEqual([200, 200]);
+  expect([noopInput.body.explanation, noopDelivery.body.explanation]).toEqual([definedA.explanation, acceptedA.body.explanation]);
+  expect([noopInput.body.changed, noopDelivery.body.changed]).toEqual([false, false]);
+  expect((await request(`/api/goals/${goalId}`)).body).toEqual(before);
+  await evidence('noop-provenance', { outcome: 'passed', lastOtherNodeExplanation: before.explanations.at(-1), noopInput: noopInput.body, noopDelivery: noopDelivery.body, explanationCountUnchanged: before.explanations.length });
 });

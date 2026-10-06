@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-06T03:18:44.504Z",
+  "outcome": "passed",
+  "lastOtherNodeExplanation": {
+    "version": 5,
+    "kind": "define-input",
+    "text": "Actual input version 1 was saved. Explicit actual input edit",
+    "source": {
+      "nodeId": "b799b54b-f3d7-4a8f-94cb-4718e35317fe",
+      "inputVersion": 1,
+      "projectRevision": 3
+    },
+    "createdAt": "2026-10-06T03:18:44.473Z"
+  },
+  "noopInput": {
+    "goalId": "e5dc3eb5-fd2e-4b4f-b7a8-9537a29eb1f4",
+    "nodeId": "921f8c2e-c5f9-4fa0-878e-97f36abf5d38",
+    "inputVersion": 1,
+    "changed": false,
+    "explanation": {
+      "version": 2,
+      "kind": "define-input",
+      "text": "Actual input version 1 was saved. Explicit actual input edit",
+      "source": {
+        "nodeId": "921f8c2e-c5f9-4fa0-878e-97f36abf5d38",
+        "inputVersion": 1,
+        "projectRevision": 3
+      },
+      "createdAt": "2026-10-06T03:18:42.735Z"
+    },
+    "replayed": false
+  },
+  "noopDelivery": {
+    "goalId": "e5dc3eb5-fd2e-4b4f-b7a8-9537a29eb1f4",
+    "nodeId": "921f8c2e-c5f9-4fa0-878e-97f36abf5d38",
+    "delivery": {
+      "nodeId": "921f8c2e-c5f9-4fa0-878e-97f36abf5d38",
+      "taskId": "da6d805d-e1d1-4799-b10b-db8b1576761a",
+      "detailId": "7cccd441-7d63-4ba8-9956-20403795bbd6",
+      "artifactId": "2b519d91-beda-4ebf-b46c-7cf883fbf1c6",
+      "executionId": "d2253426-00fe-4586-860a-ef32ff1c3185",
+      "artifactVersion": "d0a2f7396c0ef8012a64b2a8f92b090fffcc914f3d4888c39cf6f664b0fbbc93"
+    },
+    "changed": false,
+    "explanation": {
+      "version": 4,
+      "kind": "accept-delivery",
+      "text": "A verified delivery was accepted for actual input version 1. Accept designated verifier evidence",
+      "source": {
+        "nodeId": "921f8c2e-c5f9-4fa0-878e-97f36abf5d38",
+        "executionId": "d2253426-00fe-4586-860a-ef32ff1c3185",
+        "inputVersion": 1,
+        "projectRevision": 3
+      },
+      "createdAt": "2026-10-06T03:18:44.463Z"
+    },
+    "replayed": false
+  },
+  "explanationCountUnchanged": 5
+}

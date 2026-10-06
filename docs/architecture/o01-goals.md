@@ -12,7 +12,7 @@
 - POST /api/goals/:id/commands：define-input / execute / accept-delivery，owner + Idempotency-Key。每种有明确版本门槛，返回持久原始命令结果；GET 另取当前事实。
 - GET /api/goals/:id/executions?nodeId=&after=&limit=：最多 100，保留旧输入和绑定。单个 execution 固定 goal 原始字段、node 输入、依赖内容摘要及 artifact 引用；真实 task prompt 使用这些实际输入。
 
-Goal tools 接收可信 host 注入的固定 goalId、allowedNodeIds、allowedCommands 与 port。tool 输入不能指定 goalId/harness/token/任意 URL；schema strict。纯 handler 不等于模型已挂载，也不声称是沙箱；owner 凭据不传给工具内容或模型。
+Goal tools 接收可信 host 注入的固定 goalId、allowedNodeIds、allowedCommands 与 port。read({}) 明确授予这个固定 goal 的完整轻量概览（包括其他节点、依赖与事实解释）；allowedNodeIds 只约束完整 input 读取和命令修改，不宣称跨节点元数据隔离。个人单 owner 模型不新增 RBAC。tool 输入不能指定 goalId/harness/token/任意 URL；schema strict。纯 handler 不等于模型已挂载，也不声称是沙箱；owner 凭据不传给工具内容或模型。
 
 ## 原子性与版本
 

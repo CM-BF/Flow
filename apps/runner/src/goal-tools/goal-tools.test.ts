@@ -5,7 +5,7 @@ import { createGoalTools } from './index.js';
 function setup() {
   const calls: unknown[][] = [];
   const port = {
-    async readGoal(...args: unknown[]) { calls.push(['read', ...args]); return { id: 'allowed' }; },
+    async readGoal(...args: unknown[]) { calls.push(['read', ...args]); return { id: 'allowed', nodes: [{ nodeId: 'A' }, { nodeId: 'B' }] }; },
     async readGoalInput(...args: unknown[]) { calls.push(['input', ...args]); return { version: 3 }; },
     async commandGoal(...args: unknown[]) { calls.push(['command', ...args]); return { accepted: true }; },
   } as unknown as GoalToolPort;
@@ -17,7 +17,7 @@ function setup() {
 const definition = { kind: 'define-input', nodeId: 'A', expectedInputVersion: 0, input: { goal: 'A', constraints: '', acceptance: 'nonempty', verification: { kind: 'nonempty' } }, reason: 'Actual input' };
 it('binds read/commands to host goal, preserves explicit key and snapshots capability lists', async () => {
   const { tools, calls } = setup();
-  expect(await tools.read({})).toEqual({ id: 'allowed' });
+  expect(await tools.read({})).toEqual({ id: 'allowed', nodes: [{ nodeId: 'A' }, { nodeId: 'B' }] });
   expect(await tools.read({ nodeId: 'A', version: 3 })).toEqual({ version: 3 });
   expect(await tools.command({ command: definition, idempotencyKey: 'stable-key' })).toEqual({ accepted: true });
   expect(calls).toEqual([['read', 'fixed-goal'], ['input', 'fixed-goal', 'A', 3], ['command', 'fixed-goal', definition, 'stable-key']]);

@@ -11,7 +11,7 @@
 - [x] O01-01 固定 domain/受限工具合同、权限、幂等及版本规则，记录 SDK 实际 seam。
 - [x] O01-02 实现持久 goal、节点输入版本、原子命令受理和执行绑定，真实 HTTP/PG 验证。
 - [x] O01-03 真实 fixture runner 验证 diamond、独立分支、共同依赖替换、失败/不确定恢复边界。
-- [ ] O01-04 完成有界纯工具 handlers、质量记录、证据与独立 review 交付。
+- [x] O01-04 完成有界纯工具 handlers、质量记录、证据与独立 review 交付。
 - [ ] O01-05 后续原生 harness 自然语言编排及统一解释验收（依赖 E01 明确 harness/预算，本段不执行）。
 
 ## 范围及取舍
@@ -19,3 +19,5 @@
 接口与取舍见 [设计](../../docs/architecture/o01-goals.md)。不创建通用 workflow 引擎，不改 G01/P02 核心、不改共享 exports/client/入口/锁；Lead 接线。没有自动重试或自动取消正在运行的旧输入任务。固定旧证据保留；当前交付资格通过实际输入及依赖版本判断。
 
 完成条件：前四项须有固定代码、真实公开接口证据、clean-code 和独立审查；O01-05 未验证时整体保持 open。专用 flow_o01、动态端口、受控清理。当前技术决定已授权，无需重复审批。
+
+2026-10-06：首段实现 a4e1348 已通过 author 11/11+typecheck，Root 独立只读 APPROVED/P2 CLOSED。证据见 [report](../../docs/evidence/o01/report.md)。O01-05 仍 pending，整体保持 in-progress。

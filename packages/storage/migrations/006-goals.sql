@@ -42,3 +42,6 @@ CREATE TRIGGER goal_explanations_immutable BEFORE UPDATE OR DELETE OR TRUNCATE O
   FOR EACH STATEMENT EXECUTE FUNCTION flow.reject_goal_history_mutation();
 CREATE TRIGGER goal_acceptances_immutable BEFORE UPDATE OR DELETE OR TRUNCATE ON flow.goal_acceptances
   FOR EACH STATEMENT EXECUTE FUNCTION flow.reject_goal_history_mutation();
+
+CREATE INDEX goal_input_explanation ON flow.goal_explanations(goal_id,(source->>'nodeId'),(source->>'inputVersion')) WHERE kind='define-input';
+CREATE INDEX goal_delivery_explanation ON flow.goal_acceptances(goal_id,(binding->>'executionId'),explanation_version DESC);
