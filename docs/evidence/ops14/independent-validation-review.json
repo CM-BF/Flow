@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-06T21:43:43.019977+00:00",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_MODULE",
+  "target": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+  "observedHead": "7c67600d1694afac0dac38c7bfe9cdad64544a9f",
+  "scope": "Close only the2-case validation gap of prior approved source/module review; real wrapper migration remains excluded",
+  "priorReview": "/tmp/flow-ops14-independent-review.json",
+  "manifestSha256": "82f6c2e65303812bd6d41cb8e7b11f0bcb3434d0bb7e52f9127a1a183a650ee9",
+  "bindings": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "ref": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+      "bytes": 11993,
+      "sha256": "eee3e06564bbc2ec5389af225d0f14bde58a8b7c907e083693e1489715f13575",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "ref": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+      "bytes": 10766,
+      "sha256": "e15034349a0ad4996186de16f75a9215350f729ad0d6ef5d86635accbba9de2a",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-actual.json",
+      "ref": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 1238,
+      "sha256": "d26fd3034322ddb839b59a9d5bad16179e75dbc1aff494fd2b0a4954c2d8764a",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-actual.stdout",
+      "ref": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 712,
+      "sha256": "c76de8f47f4cee28aef722eb951dbf4a53b9752d52729fc93c8be64afef5f121",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/policy-final-cleanup.json",
+      "ref": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 405,
+      "sha256": "b34e3c76631757556915a9eb2c9d5e163515268c1fc6a67f676ae22f2bc8bba1",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/fixed-manifest.json",
+      "ref": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 10172,
+      "sha256": "518594c5cd2be0f69174a602ce6f24348b14bf2ffb6897b174e41a576e231846",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/policy-delta-manifest.json",
+      "ref": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 11210,
+      "sha256": "aaa150bda4fc455ef22fee2d762556f35c76f7cabded5f9041b75a0ac5aac6a6",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/independent-source-review.json",
+      "ref": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 4453,
+      "sha256": "0d2b299c0a4510a8b0a3178efb15c92456a049108a3f18b5442031e155da886d",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/independent-source-review-bindings.json",
+      "ref": "bc822db3e72da502fab99943ae565c7f7e68a645",
+      "bytes": 11346,
+      "sha256": "ea27cfc821cc355a2e1ca429def3e4fb2712226becf8661769d1bd99e523faa3",
+      "fixedMatches": true
+    }
+  ],
+  "mismatches": [],
+  "findings": [],
+  "validation": {
+    "selected": 2,
+    "passed": 2,
+    "unselected": 11,
+    "exitCode": 0,
+    "supervisorElapsedMs": 581,
+    "unittestSeconds": 0.44,
+    "stdoutBytes": 712,
+    "distinctAcrossRounds": 13,
+    "sourceUnchanged": true,
+    "old12Rerun": false,
+    "faultChild": 97698,
+    "pidAndInitialGroupAbsent": true,
+    "ResourceWarningRetained": true,
+    "reviewerTests": 0,
+    "reviewerImports": 0,
+    "PG": 0,
+    "provider": 0
+  },
+  "limitations": [
+    "Original failed rounds and pre-gate NOT_RUN retained, not rewritten.",
+    "13distinct are across rounds, not one13/13 execution.",
+    "Fault child cleanup performed by test finally and exact subsequent read-only PID/group check; no whole-machine proof.",
+    "SVC05H/SVC07 actual wrappers unchanged and not accepted as migrated; personal/PG/provider no new proof."
+  ]
+}

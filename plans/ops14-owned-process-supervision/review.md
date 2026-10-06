@@ -1,6 +1,6 @@
 # OPS14 独立 review
 
-状态：APPROVED；限定源码（APPROVED_SOURCE_LIMITED），最新两例 NOT_RUN，不是完整运行批准
+状态：APPROVED；限定模块与局部验证（APPROVED_LIMITED_MODULE），不含两个真实包装器迁移
 Review target commit：3097730ee1abbb054c09ae2ed14c998ebde3ef49
 Base：c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05
 Scope：tools/owned-process-supervision
@@ -20,3 +20,7 @@ Reviewer：assignment_review / gpt-6-astra，2026-10-06 21:35:48 UTC。完整原
 ## 21:40 参数检查追加（待独立核对）
 
 在 Lead 新许可后只执行 policy-request 两例：2/2，11 未选，exit0 / 581ms，free 1,154,482,176 B；新例无 spawn，原 EPERM 例自有 child 97698 返回 unknown 后由测试 finally 收尾，随后只读 PID/group 均 absent。712B 原 stdout 含真实 ResourceWarning，未删；没有重跑历史12，没有PG/Chrome/provider。该事实补齐原源码批准的运行缺口，但不自行升级独立结论。
+
+## 最终局部验证独审
+
+assignment_review 原样[增量批准](../../docs/evidence/ops14/independent-validation-review.json)，SHA 21eaed7e69417712f278e0e0c4512e1f1b48e2ad53882302329e8e3f72723c9e；最终 source 3097730ee1abbb054c09ae2ed14c998ebde3ef49，新 9 bindings 全核，原两例真实通过 / 正常收尾。13 different 分轮，不是一轮 13/13；无剩余 P1/P2，reviewer 0 重跑。之前 SOURCE_LIMITED 与 NOT_RUN 历史不覆盖本次实际追加事实。真实两 consumer 未迁移，OPS14-04 仍 open。
