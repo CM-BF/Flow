@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { idSchema } from './tasks.js';
+import type { RunnerEvent, RunnerEventData } from './runner.js';
 
 export const MAX_STEERING_TEXT_BYTES = 16_384;
 const revision = z.number().int().min(0).max(2_147_483_647);
@@ -44,7 +45,7 @@ export interface SteeringText { taskId: string; attemptId: string; commandId: st
 export interface SteeringSeal { taskId: string; attemptId: string; revision: number; final: SteeringSealInput['final']; sealedAt: string }
 export interface SteeringAudit {
   id: string; ordinal: number; taskId: string; attemptId: string; commandId: string | null;
-  action: 'accepted' | SteeringReceiptInput['phase'] | 'sealed';
+  action: 'accepted' | SteeringReceiptInput['phase'] | 'sealed' | 'result-observed';
   /** Receipts are authenticated runner observations, never independent proof of model compliance. */
   actor: 'owner' | 'runner'; createdAt: string; data: Record<string, unknown>;
 }
@@ -52,3 +53,37 @@ export interface SteeringAuditPage { entries: SteeringAudit[]; nextCursor: numbe
 
 export const steeringPageSchema = z.strictObject({ after: z.coerce.number().int().min(0).max(Number.MAX_SAFE_INTEGER).default(0), limit: z.coerce.number().int().min(1).max(100).default(100) });
 export const steeringStateQuerySchema = steeringPageSchema.extend({ attemptId: idSchema.optional() });
+
+// CHAT08: all transport methods are runner-authenticated and remain opt-in at the host.
+export const MAX_STEERING_COMMANDS_PER_ATTEMPT = 64;
+export const steeringMailboxSchema = z.strictObject(ownership);
+export interface SteeringMailbox {
+  revision: number;
+  sealed: boolean;
+  commands: SteeringCommandReference[];
+  delivery: { commandId: string; text: string } | null;
+}
+export const steeringResultSchema = z.strictObject({
+  nativeSessionId: idSchema, sourceMessageId: idSchema,
+  consumedUserMessageUuids: z.array(z.uuid()).max(64),
+  queuedTurnCount: z.number().int().min(0).max(1000000).nullable(),
+  outcome: z.enum(['success', 'error']), contentDigest: digest,
+});
+export type SteeringResultObservation = z.infer<typeof steeringResultSchema>;
+export const steeringFinalizationMetadataSchema = z.strictObject({
+  ...ownership, proposalId: idSchema, expectedRevision: revision,
+  afterSequence: revision, nativeSessionId: idSchema, resultId: idSchema,
+});
+export interface SteeringFinalizationInput extends z.infer<typeof steeringFinalizationMetadataSchema> { events: RunnerEvent[] }
+export type SteeringFinalizationResult =
+  | { state: 'committed'; proposalId: string; lastSequence: number; replayed: boolean }
+  | { state: 'not-committed'; proposalId: string; lastSequence: number; controlRevision: number;
+      reason: 'control-changed' | 'pending-command' | 'result-not-current' | 'uncovered-command' | 'sdk-pending' | 'sequence-changed' };
+export const steeringProposalLookupSchema = z.strictObject({ ...ownership, proposalId: idSchema });
+export type SteeringProposalLookup = z.infer<typeof steeringProposalLookupSchema>;
+export type SteeringProposalStatus = Extract<SteeringFinalizationResult, { state: 'committed' }> | { state: 'absent'; proposalId: string };
+/** Runtime owns authorization, deadlines, durable envelopes and sequence allocation. */
+export interface ActiveSteeringPort {
+  mailbox(): Promise<SteeringMailbox>;
+  finalize(input: { expectedRevision: number; nativeSessionId: string; resultId: string; events: RunnerEventData[] }): Promise<SteeringFinalizationResult>;
+}

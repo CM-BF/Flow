@@ -2,6 +2,7 @@ import type { GoalGraphCapability, GoalGraphRunReference } from './goal-graph-ru
 import type { ConversationContextExecutionReference } from './conversation-context.js';
 import type { GoalToolCapability, GoalToolRunReference } from './goal-tool-runs.js';
 import { z } from 'zod';
+import { steeringReceiptSchema, steeringResultSchema, steeringFinalizationMetadataSchema, type ActiveSteeringPort } from './active-steering.js';
 import { assistantStreamDataSchema, assistantStreamMarkerSchema } from './assistant-stream.js';
 import { assistantFinalDataSchema } from './assistant.js';
 import { nativeActivityDataSchema } from './native-activity.js';
@@ -38,6 +39,8 @@ const title = z.string().min(1).max(180);
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
 const tokenCount = z.number().int().nonnegative().nullable();
 export const runnerEventSchema = z.discriminatedUnion('type', [
+  z.strictObject({ ...envelope, type: z.literal('steering-receipt'), receipt: steeringReceiptSchema }),
+  z.strictObject({ ...envelope, type: z.literal('steering-result'), result: steeringResultSchema }),
   assistantFinalDataSchema.extend(envelope),
   assistantStreamDataSchema.safeExtend(envelope),
   assistantStreamMarkerSchema.extend(envelope),
@@ -56,9 +59,12 @@ type WithoutEnvelope<T> = T extends RunnerEvent ? Omit<T, 'id' | 'sequence'> : n
 export type RunnerEventData = WithoutEnvelope<RunnerEvent>;
 export const eventBatchSchema = ownershipSchema.extend({ events: z.array(runnerEventSchema).min(1).max(50) }).refine(batch => new TextEncoder().encode(JSON.stringify(batch)).byteLength <= MAX_BATCH_BYTES, 'Batch exceeds byte limit');
 export type EventBatch = z.infer<typeof eventBatchSchema>;
+export const steeringFinalizationSchema = steeringFinalizationMetadataSchema.extend({ events: z.array(runnerEventSchema).length(3) })
+  .refine(value => new TextEncoder().encode(JSON.stringify(value)).byteLength <= MAX_BATCH_BYTES, 'Final proposal exceeds byte limit');
 export interface EventAcknowledgement { accepted: number; lastSequence: number }
 
 export interface HarnessContext {
+  steering?: ActiveSteeringPort;
   task: TaskSubmission;
   goalTools?: GoalToolCapability;
   goalGraphTools?: GoalGraphCapability;
