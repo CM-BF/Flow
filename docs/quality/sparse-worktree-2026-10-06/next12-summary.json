@@ -1,9 +1,9 @@
 {
-  "at": "2026-10-06T16:16:30.416314+00:00",
+  "at": "2026-10-06T16:20:35.236757+00:00",
   "authorizedMaximum": 12,
-  "applied": 7,
-  "phase": "CONTINUING_BOUNDED_BATCH_BEFORE_WEB_WINDOW",
-  "remainingCandidates": "At most5 further qualified trees. Third intake allKEEP; exact five registry candidates under readonly qualification. No broad scan.",
+  "applied": 12,
+  "phase": "COMPLETE_TWELVE_STOPPED",
+  "remainingCandidates": "Batch limit reached; no additional worktree operations authorized by this batch.",
   "inputs": [
     {
       "path": "next12-own-intake.json",
@@ -109,6 +109,76 @@
       "path": "next12-native-center-policy-sparse-patterns.txt",
       "bytes": 35652,
       "sha256": "afb8fff57e31ac099c2ea9b31d60804bb2e8940994094308a3558120e67dd4c7"
+    },
+    {
+      "path": "next12-own-fourth-intake.json",
+      "bytes": 565336,
+      "sha256": "850659ffe56f2df5c8a739035d464ac7ac82c867c182df8233ebf79a71c8446e"
+    },
+    {
+      "path": "next12-own-fourth-remote-branch-keep.json",
+      "bytes": 8039,
+      "sha256": "380713668e1aefd2a3137c6007d1cc55e3c75c2bfd2ef58ae5644bb98e51b801"
+    },
+    {
+      "path": "next12-last-final-preflight.json",
+      "bytes": 375723,
+      "sha256": "d0b0d475941ec5d34d8e712f31576d9954ce5140cf6e3ef3f902332c65ddd4f8"
+    },
+    {
+      "path": "next12-last-final-consumer-check.json",
+      "bytes": 636,
+      "sha256": "72e1f66283c21403e5ba97a1b94923cd6814b43acc10d13b7ee1c0a3e662384d"
+    },
+    {
+      "path": "next12-steering-profile-admission-sparse-result.json",
+      "bytes": 2892,
+      "sha256": "59c791b88522c9e58a1f01cd8dd8a31744843b08ebc5a786163c2ccfca1822f1"
+    },
+    {
+      "path": "next12-steering-profile-admission-sparse-patterns.txt",
+      "bytes": 31582,
+      "sha256": "3506052c0a2a86be201cee2ac153d976f394986115539afd9e6d53caf64bcb62"
+    },
+    {
+      "path": "next12-native-goal-node-execution-sparse-result.json",
+      "bytes": 2892,
+      "sha256": "435ad66f4417ea1577927b1510b2b358ae026b80944d946a8a8c2bf5091d2dc2"
+    },
+    {
+      "path": "next12-native-goal-node-execution-sparse-patterns.txt",
+      "bytes": 30331,
+      "sha256": "48a59d503d3157ffc0ac63e5f4a9ac1b437d3585a3987fbc5c094bc5b3c215c4"
+    },
+    {
+      "path": "next12-active-steering-sparse-result.json",
+      "bytes": 2881,
+      "sha256": "f0432a99440b50578b2a68b94868f63753422db3384cf6ec344cc3dd311ebb28"
+    },
+    {
+      "path": "next12-active-steering-sparse-patterns.txt",
+      "bytes": 23690,
+      "sha256": "6cd1ff039fece8b1d3a47e0cb56ae0995ca31857a98adc4f2720087dc66f083b"
+    },
+    {
+      "path": "next12-goal-graph-runs-sparse-result.json",
+      "bytes": 2881,
+      "sha256": "41389c29b89f2d82a888a382d49d915c484f72a8d9b882d6211149b49c17d94f"
+    },
+    {
+      "path": "next12-goal-graph-runs-sparse-patterns.txt",
+      "bytes": 16459,
+      "sha256": "925e2e79a46f482e53adbc17377f058619072650bc1b9627cf43a4d44cf18688"
+    },
+    {
+      "path": "next12-native-goal-execution-sparse-result.json",
+      "bytes": 2887,
+      "sha256": "87e610fc2c3e501b3e496a5cbbe88f4d6debafa80310b0868cb52c950bcb9db1"
+    },
+    {
+      "path": "next12-native-goal-execution-sparse-patterns.txt",
+      "bytes": 12609,
+      "sha256": "b6677cf38fbd1b804c75a9e314a448269f56a84e8329be8633e34aed6ceaef1f"
     }
   ],
   "trees": [
@@ -300,10 +370,145 @@
       "productTests": 0,
       "observedVolumeDeltaBytes": 9084928,
       "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    },
+    {
+      "startedAt": "2026-10-06T16:18:31.304115+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission",
+      "head": "8cebe75ae496b9d0275c631c9a8b79e5c00b3bed",
+      "ledgerObservedAt": "2026-10-06T16:18:28.388Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 1114828800,
+      "freeAfterBytes": 1124151296,
+      "logicalDematerializedBytes": 7396280,
+      "candidateCount": 727,
+      "retainedCount": 2472,
+      "preflightSha256": "d0b0d475941ec5d34d8e712f31576d9954ce5140cf6e3ef3f902332c65ddd4f8",
+      "finishedAt": "2026-10-06T16:18:31.989749+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "3506052c0a2a86be201cee2ac153d976f394986115539afd9e6d53caf64bcb62",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 9322496,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    },
+    {
+      "startedAt": "2026-10-06T16:18:57.967733+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution",
+      "head": "7da0b1084b96fb5824d8f616c29cc8deeb3ad70e",
+      "ledgerObservedAt": "2026-10-06T16:18:53.604Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 1119399936,
+      "freeAfterBytes": 1128448000,
+      "logicalDematerializedBytes": 7219367,
+      "candidateCount": 698,
+      "retainedCount": 2375,
+      "preflightSha256": "d0b0d475941ec5d34d8e712f31576d9954ce5140cf6e3ef3f902332c65ddd4f8",
+      "finishedAt": "2026-10-06T16:18:58.630048+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "48a59d503d3157ffc0ac63e5f4a9ac1b437d3585a3987fbc5c094bc5b3c215c4",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 9048064,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    },
+    {
+      "startedAt": "2026-10-06T16:19:02.263693+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering",
+      "head": "3a4b4e45002ea7186616ef2d5c6cd82d83d8ae19",
+      "ledgerObservedAt": "2026-10-06T16:18:58.739Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 1128181760,
+      "freeAfterBytes": 1136873472,
+      "logicalDematerializedBytes": 6901396,
+      "candidateCount": 558,
+      "retainedCount": 2027,
+      "preflightSha256": "d0b0d475941ec5d34d8e712f31576d9954ce5140cf6e3ef3f902332c65ddd4f8",
+      "finishedAt": "2026-10-06T16:19:03.000327+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "6cd1ff039fece8b1d3a47e0cb56ae0995ca31857a98adc4f2720087dc66f083b",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 8691712,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    },
+    {
+      "startedAt": "2026-10-06T16:19:06.666802+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-graph-runs",
+      "head": "5d9be53a0a1d2e637aeaeed255263db868cb20ea",
+      "ledgerObservedAt": "2026-10-06T16:19:03.177Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 1136570368,
+      "freeAfterBytes": 1143980032,
+      "logicalDematerializedBytes": 6543561,
+      "candidateCount": 392,
+      "retainedCount": 1351,
+      "preflightSha256": "d0b0d475941ec5d34d8e712f31576d9954ce5140cf6e3ef3f902332c65ddd4f8",
+      "finishedAt": "2026-10-06T16:19:07.378375+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "925e2e79a46f482e53adbc17377f058619072650bc1b9627cf43a4d44cf18688",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 7409664,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    },
+    {
+      "startedAt": "2026-10-06T16:19:10.102606+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution",
+      "head": "4110d7d8aac727e1838fed4e9c7ec7a163fb65e7",
+      "ledgerObservedAt": "2026-10-06T16:19:07.551Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 1143627776,
+      "freeAfterBytes": 1150287872,
+      "logicalDematerializedBytes": 5868119,
+      "candidateCount": 299,
+      "retainedCount": 1122,
+      "preflightSha256": "d0b0d475941ec5d34d8e712f31576d9954ce5140cf6e3ef3f902332c65ddd4f8",
+      "finishedAt": "2026-10-06T16:19:10.666873+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "b6677cf38fbd1b804c75a9e314a448269f56a84e8329be8633e34aed6ceaef1f",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 6660096,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
     }
   ],
-  "freeLatestObservation": 1127014400,
-  "physicalAttribution": "Shared volume; first-tree preflight was884588544, next-tree preflight1091846144. Transient change unattributed and not counted as sparse reclaim.",
+  "freeLatestObservation": 1143238656,
+  "physicalAttribution": "Per-operation deltas summed for observation only; shared activity between operations prevents exclusive reclaim attribution. No theoretical du or logical-file size claimed as actual gain.",
   "stopRules": "Maximum12 total; each fresh released/clean/own inputs/mainblob/openfile; existing gates unchanged. No personal operation/model.",
   "runAdmissionPolicy": "Aim for B start reserve1GiB+128MiB plus shared fluctuation margin before A thenB. Script stop/cleanup gates and cumulative180000ms unchanged. Do not restart A merely crossing its minimum.",
   "latestWebWindow": {
@@ -319,5 +524,14 @@
     "processStoppedBy": "SIGTERM",
     "closed": true
   },
-  "noQualifyingThirdIntake": "three exact paths absent; two remote advertisements absent => allKEEP. No source or dependency removals."
+  "noQualifyingThirdIntake": "three exact paths absent; two remote advertisements absent => allKEEP. No source or dependency removals.",
+  "BStartGateBytes": 1207959552,
+  "BGateMet": false,
+  "gapToBGateBytes": 64720896,
+  "treeOperationObservedDeltasSumBytes": 116363264,
+  "finalEligibilityPolicy": "Remote feature branch absence retained as fact, not a requirement in GO authorization. Last5 historical blobs each equal fixed HEAD and fixed origin/main8ac4322d actual remote advertised. Own raw/unique blobs/branches/objects all preserved. No feature pushes or branch removals.",
+  "operator": "Execution Lead sole Git mutator",
+  "personallyRunningServicesChanged": false,
+  "productTests": 0,
+  "providerCalls": 0
 }
