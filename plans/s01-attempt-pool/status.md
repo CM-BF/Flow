@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:40 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:48 UTC / main d7e1e64 核验 |
 | Plan | [plan.md](plan.md) |
-| 单一status owner / model | s01p01_owner / gpt-6-astra；lead mika |
+| 单一status owner / model | mika / gpt-6-astra（仅管理收口）；实现作者 s01p01_owner / gpt-6-astra，独立技术review身份保留 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool |
 | Branch | codex/runner-attempt-pool |
 | 工作基线 / HEAD | base9c6fa9b100f04916f43b04280f05f497b28eeb0f；实现HEAD48b73544c0e9e66a7061ddb54e003a03b9234bde |
-| 工作树dirty状态 | 修复与证据已提交，交付前核clean；产品runtime/journal零差异 |
-| 工作分支状态 | in-progress |
-| 检查状态 | PASSED 48b73544c0e9e66a7061ddb54e003a03b9234bde；继承根ES2023严格noEmit0、受影响纯HTTP5/5（18未选）；非全根include检查 |
-| 已集成main状态 / HEAD | 新片未集成；base9c6fa9b100f04916f43b04280f05f497b28eeb0f |
+| 工作树dirty状态 | 接收前66fdb0d8d0cecfb996707de7da7ca0a1a3d881ff clean/已push；本次仅status收口，产品与原始证据不改 |
+| 工作分支状态 | integrated |
+| 检查状态 | PASSED 48b73544c0e9e66a7061ddb54e003a03b9234bde；既有局部检查保留，Lead在实际集成树完成root noEmit exit0 |
+| 已集成main状态 / HEAD | 已集成并推送 main/origin d7e1e64e7792f4d1ad4933db042f10f266ad0cca；固定target为祖先，7source逐字一致 |
 | 实现目标 | 48b73544c0e9e66a7061ddb54e003a03b9234bde |
 | 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/runtime-capacity.test.ts, apps/runner/src/admission-journal.ts, apps/runner/src/admission-journal.test.ts, docs/evidence/s01p01/check.mjs, docs/evidence/s01p01/vitest.config.mjs, docs/evidence/s01p01/types.tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 单个runner可有界并行执行，未知领取时保守停止新任务；兼容修复已审 |
-| 下一可用交付 | 主线接收有界并发核心，命令行配置接线另行推进 |
+| 当前产出 | 有界并发与未知领取保护已进入主线，完整根类型检查通过 |
+| 下一可用交付 | 本片段已交付；启动并发参数由独立后继接通 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，Mika独立APPROVED 48b73544c0e9e66a7061ddb54e003a03b9234bde；主线根检查与接收待Lead |
+| Review | [review.md](review.md)，Mika独立APPROVED 48b73544c0e9e66a7061ddb54e003a03b9234bde；Lead已完成根检查及main接收 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,11 +29,11 @@
 | S01P01-02 | completed | s01p01_owner | journal-final8/8，FIFO原red保留 |
 | S01P01-03 | completed | s01p01_owner | capacity-final23/23，含真实PG4项；最终API收束差异7项定向通过 |
 | S01P01-04 | completed | s01p01_owner | consumer-final9/27、lease-final6/23；types-settle0，46不同用例见manifest |
-| S01P01-05 | in-progress | s01p01_owner / mika / Lead | Mika独审APPROVED；Goal Owner范围接收由lead桥接，main待接收 |
+| S01P01-05 | in-progress | mika管理收口 / Lead | 独审、范围接收、main集成已完成；本status提交推送后停止写入并release，最后账本动作以提交回执为准，非产品待交付 |
 
-claim599454b1-52d2-4f22-8fc2-f68fb7ac6973 v1 ACTIVE，08:07:56.393Z COMMITTED，fresh账本available无六scope冲突。P01/P02均已release并停写；本树唯一writer，不写CHAT09 main/config或CHAT08 outbox/steering。
+领取收口：原作者在66fdb已明确全部停写，因runtime thread limit无法重新唤醒。Root指定Mika为唯一接收方；Lead于08:47:07.615Z提交handoff v2，Mika于08:47:21.095Z accept v3，08:47:35.736Z amend v4把claim599454b1-52d2-4f22-8fc2-f68fb7ac6973缩至本status单文件。源码与证据范围已交回，不执行产品修改或测试。最终metadata提交推送后停止全部写入并release；实际version/state以协调账本为准，不预填成功。原作者与独审结论不因管理接收而改写。
 
-架构：本地有界attempt pool及持久领取guard影响运行/恢复图，由Lead在固定target主线接收时更新，当前分支已独审待主线，未声称provider容量。此status唯一事实源，首canonical交Lead登记，dashboard尚未核新任务聚合。
+架构：本地有界attempt pool及持久领取guard影响运行/恢复图；固定实现已在main d7e1e64，由Lead协调固定架构视图target/owner，更新展示未独立核验。未声称provider容量或启动参数已接线。此status唯一事实源，已交Lead登记；本次等待既有聚合器展示，不因metadata重新采样。
 
 2026-10-06 08:17 UTC：client实例14个实际API入口保留绑定/参数，在吞错前记录401/403为host fatal；journal按baseUrl+workdir作用域，claim前未知runner身份不伪造。启动/active0才全目录恢复，原completion ACK与confirmed-final区别保留。尚无真实PG矩阵或旧consumer回归。
 
@@ -52,3 +52,5 @@ claim599454b1-52d2-4f22-8fc2-f68fb7ac6973 v1 ACTIVE，08:07:56.393Z COMMITTED，
 2026-10-06 08:37 UTC：兼容修复target 48b73544c0e9e66a7061ddb54e003a03b9234bde 已固定，仅8处测试等待器改为本地void deferred及删除局部lib覆盖；runtime/journal与原批准d655逐字不变，原测试bodies经移除helper/还原调用逐字相等。继承根ES2023复现8诊断exit2后noEmit0，4入口/137实际worktree依赖使用与I02字节一致的根编译配置；不是完整root include glob，最终集成根检查仍归Lead。受影响5项纯HTTP通过、18未选，无PG/模型/原46重跑。原manifest/raw冻结，新绑定见manifest-es2023.json。代码/harness停写待Mika delta复审，claim v1保持。
 
 2026-10-06 08:40 UTC：Mika于08:39:29 UTC独立只读批准兼容delta 48b73544c0e9e66a7061ddb54e003a03b9234bde，无剩余P1/P2；新回执independent-review-es2023.json，原manifest/raw冻结不改。fresh账本核claim599454b1…v1 ACTIVE，d7e65324 clean；本次仅批准metadata，不重跑测试/PG或聚合。交付阶段integration，最终root noEmit与main接收仍归Lead，未将局部覆盖当全根成功。提交并按用户要求推送本分支后停止全部写入，claim保留待main回执。
+
+2026-10-06 08:48 UTC 主线收口：Lead MAIN_RECEIPT为d7e1e64e7792f4d1ad4933db042f10f266ad0cca，含48b73544实现和66fdb批准metadata。Mika仅只读核target祖先、7source与目标/当前树逐字相等，以及I02原始检查文件hash；[主线回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/pool-readability-final-comparison.json) SHA256为51cb57d8735944484ea15c2941738636c49ea7b646ce5da068dc46a21f20ff74。Lead实际root noEmit最终exit0，原exit2和既有2/2生产消费者证据保留；没有重跑46项或PG。沿用find-skills/固定clean-code方法，管理改动只核唯一owner、主线/部署/后继边界和原始证据不变，不改变技术独审身份。当前个人服务部署不由此main回执推断；S01P02及后续真实容量、ACK、浏览器验证另行领取。
