@@ -39,3 +39,5 @@ X02接收已独审3d0cfc8完整领域，生产008位于projects/会话之后、�
 固定共享目标095497dc1719d10df8309fdf17d95539fc891e06：真实PG+公开CLI1条纵向行为与client4条共5/5，2.25s；typecheck通过。原始输出plugins-checks.txt/plugins-typecheck.txt。注册重报、配置更新、旧revision冲突、历史读取、project过滤、中心重启和无隐式task/包安装均断言；专库flow_plugin_cli_PID_TIME与临时输入、动态端口清理。没有重复X02全17或全库，0模型。
 
 clean-code检查：错误不回显私密配置，CLI不把登记当安装，领域schema只有一个来源，thin methods保持统一鉴权/AbortSignal。CHAT02正式10模块测试由该owner保存（含首次HTTP teardown失败及修复后10/10）；共享入口独审另绑定37ab，不以CLI测试代替聊天完整验收。
+
+完整模块接收后集成候选149f50eb8440ed56e49cbdddb83f37bd18d6caa0：只选真实adapter注入SDK两轮、typed pending→success/重报重启、unknown与长正文lazy三条直接消费者，3/3通过（明确另外19条未选，非22重跑），3.38s。原始chat-production-consumer.txt；正式createServer含007/008/009，不用测试旁路挂载。CHAT01领域相对独审d0f零diff，CHAT02 test修复fcbc另独审；0模型，Web新聊天尚未完成独审。
