@@ -158,3 +158,16 @@ it('keeps empty/over-budget turnViews free of SQL and leaves unknown failures un
   const original = new Error('query failed'); f.query.mockRejectedValueOnce(original);
   await expect(state.turnViews(f.client, f.turns.slice(0, 1))).rejects.toBe(original);
 });
+
+it.each(['missing', 'invalid-artifact', 'invalid-typed'] as const)('keeps the legacy %s result distinct from a valid final', async mode => {
+  const f = fixture(7); f.turns.splice(0, 6);
+  if (mode === 'missing') f.artifacts.clear();
+  if (mode === 'invalid-artifact') f.artifacts.get('task-6')![0]!.content = 'changed after verification';
+  if (mode === 'invalid-typed') {
+    const row = { ...f.messages.get('task-0')!, task_id: 'task-6', attempt_id: 'attempt-6', native_session_id: 'session-6', digest: 'invalid' };
+    f.messages.set('task-6', row);
+  }
+  const page = await turnPage(f.pool, 'conversation', 0, 50);
+  expect(page.turns[0]!.assistant).toEqual({ state: 'unavailable', reason: mode === 'missing' ? 'missing-result' : 'invalid-result' });
+  if (mode === 'invalid-typed') expect(f.query.mock.calls.some(([sql]) => sql.includes('FROM flow.artifacts a'))).toBe(false);
+});

@@ -1,0 +1,133 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch
+
+ × apps/server/src/conversations/turn-page-batch.test.ts > keeps mixed 50 turns equivalent to single reads with a constant query bound 12ms
+   → expected 214 to be less than or equal to 9
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains limit+1 paging, cross-conversation filtering and empty pages without projection reads 2ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > preserves conversation/task 404 and rolls back the same borrowed client 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current attempt binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current owner binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current session binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > preserves frozen message settings, observed effective settings and allowlisted context 2ms
+ × apps/server/src/conversations/turn-page-batch.test.ts > keeps empty/over-budget turnViews free of SQL and leaves unknown failures unchanged 1ms
+   → __vite_ssr_import_2__.turnViews is not a function
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy missing result distinct from a valid final 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy invalid-artifact result distinct from a valid final 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy invalid-typed result distinct from a valid final 0ms
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for empty 2ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for escapes 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 ASCII 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4001 ASCII prefix 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 BMP prefix 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 UTF16 emoji 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4002 UTF16 emoji 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 codepoint emoji 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for split surrogate 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for combining exact 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for combining overflow 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for ZWJ sequence 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > keeps mixed 50 results aligned, paired and isolated when rows arrive out of order 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > does no reads for empty or rejected over-budget input 0ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ × apps/server/src/assistant/final-preview-batch.test.ts > keeps single-item validation failures throwing and unknown query failures unchanged 1ms
+   → __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for empty
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for escapes
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 ASCII
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4001 ASCII prefix
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 BMP prefix
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 UTF16 emoji
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4002 UTF16 emoji
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 codepoint emoji
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for split surrogate
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for combining exact
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for combining overflow
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for ZWJ sequence
+TypeError: __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ ❯ apps/server/src/assistant/final-preview-batch.test.ts:37:32
+     35| ] as const)('preserves the single preview UTF16 boundary for %s', asyn…
+     36|   const row = message(0, prefix, hasMore), { client, query } = connect…
+     37|   const [result] = await store.readAssistantFinalPreviews(client, [{ t…
+       |                                ^
+     38|   expect(result).toMatchObject({ preview: { text: expected, truncated:…
+     39|     contentDigest: row.content_digest, settings: row.settings } });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/17]⎯
+
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > keeps mixed 50 results aligned, paired and isolated when rows arrive out of order
+TypeError: __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ ❯ apps/server/src/assistant/final-preview-batch.test.ts:52:31
+     50|   const { client, query } = connection(rows.filter((_, index) => index…
+     51|   const requests = rows.map(row => ({ taskId: row.task_id, attemptId: …
+     52|   const results = await store.readAssistantFinalPreviews(client, reque…
+       |                               ^
+     53|   expect(results).toHaveLength(50);
+     54|   expect(results[7]).toEqual({ preview: null });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/17]⎯
+
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > does no reads for empty or rejected over-budget input
+TypeError: __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ ❯ apps/server/src/assistant/final-preview-batch.test.ts:70:22
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/17]⎯
+
+ FAIL  apps/server/src/assistant/final-preview-batch.test.ts > keeps single-item validation failures throwing and unknown query failures unchanged
+TypeError: __vite_ssr_import_1__.readAssistantFinalPreviews is not a function
+ ❯ apps/server/src/assistant/final-preview-batch.test.ts:80:22
+     78|   const original = new Error('database unavailable');
+     79|   const client = { query: vi.fn().mockRejectedValue(original) } as unk…
+     80|   await expect(store.readAssistantFinalPreviews(client, [{ taskId: 'ta…
+       |                      ^
+     81| });
+     82| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/17]⎯
+
+ FAIL  apps/server/src/conversations/turn-page-batch.test.ts > keeps mixed 50 turns equivalent to single reads with a constant query bound
+AssertionError: expected 214 to be less than or equal to 9
+ ❯ apps/server/src/conversations/turn-page-batch.test.ts:99:37
+     97|   expect(page.turns[6]!.effective).toMatchObject({ model: 'legacy-mode…
+     98|   expect(page.nextCursor).toBeNull();
+     99|   expect(f.query.mock.calls.length).toBeLessThanOrEqual(9); // BEGIN/C…
+       |                                     ^
+    100|   expect(f.query.mock.calls[0]![0]).toBe('BEGIN ISOLATION LEVEL REPEAT…
+    101|   expect(f.query.mock.calls.at(-1)![0]).toBe('COMMIT'); expect(f.relea…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/17]⎯
+
+ FAIL  apps/server/src/conversations/turn-page-batch.test.ts > keeps empty/over-budget turnViews free of SQL and leaves unknown failures unchanged
+TypeError: __vite_ssr_import_2__.turnViews is not a function
+ ❯ apps/server/src/conversations/turn-page-batch.test.ts:155:22
+    153| it('keeps empty/over-budget turnViews free of SQL and leaves unknown f…
+    154|   const f = fixture(51);
+    155|   expect(await state.turnViews(f.client, [])).toEqual([]);
+       |                      ^
+    156|   await expect(state.turnViews(f.client, f.turns)).rejects.toMatchObje…
+    157|   expect(f.query).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/17]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  17 failed | 9 passed (26)
+   Start at  14:30:37
+   Duration  569ms (transform 207ms, setup 0ms, import 389ms, tests 24ms, environment 0ms)
+
