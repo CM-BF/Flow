@@ -54,3 +54,7 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | OPS-001-06 | completed | Execution Lead | 三队4/4/2预算、单向主Lead外投/Root即时回桥接、两外部Lead双向；实际CHAT客户端patch与R03证据直接消息已执行。只文档内容核验，无产品测试 |
+
+### 2026-10-06 04:30 UTC
+
+OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留canonical status/evidence。全矩阵更新核实main4e0289f与实际4320的47源，不重跑产品测试；保留原始验收和未完成项。
