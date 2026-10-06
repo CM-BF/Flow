@@ -1,3 +1,4 @@
+import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
 import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
 import { migrateNativeActivities, registerNativeActivityRoutes } from './native-activity/index.js';
 import { migrateGoalContext, registerGoalContextRoutes } from './goal-context/index.js';
@@ -67,6 +68,7 @@ export async function createServer(options: ServerOptions) {
     await migrateGoalGraphRuns(pool);
     await migrateNativeActivities(pool);
     await migrateGoalContext(pool);
+    await migrateAssistantStreams(pool);
     await migratePackageFetches(pool);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
@@ -129,7 +131,8 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
-  registerConversationRoutes(app, pool, boss);
+  registerAssistantStreamRoutes(app, pool);
+  registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });
   registerPluginRoutes(app, pool);
   if (options.packageFetchHost) registerPackageFetchRoutes(app, pool, options.packageFetchHost);
   registerAssistantRoutes(app, pool);
