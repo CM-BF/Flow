@@ -80,3 +80,7 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 | OPS-001-09 | completed | Execution Lead | 根AGENTS与plans/AGENTS已在main648c1cc的a7db989交付；OPS当前规则在本权威树；一次同步外部两Lead，后续不逐条回传普通进度。仅文档检查。 |
 
 2026-10-06 08:53 UTC：最终规则严格两层与每大task#独立blockers+Done(1)，覆盖先前宽泛消息例外；实际根AGENTS/plans规则已写入并由本批发布，OPS历史即时桥接条款已替换。worker向本组lead必要交接不受限制。当前规则修订作为一个大task，只在全部文件/发布与看板记录核验后一次Done。
+
+| OPS-001-10 | completed | Execution Lead | 根规则1d36a7a4532bbd2f29300c220d5451f755bd756c与plan/review门槛完整覆盖；runner_owner独立只读APPROVED；[质量记录](../../docs/quality/modular-design-rules-2026-10-06.md)，仅文档检查。 |
+
+2026-10-06 09:00:57 UTC：用户模块化/DRY/扩展/性能规则完整落实到根AGENTS唯一权威及plans门槛，独立文档审查无finding；与本批受控main发布绑定，实际发布SHA由Git集成事实核验。WPF-MATURE-01～06统一引用根锚点，不复制规则正文。
