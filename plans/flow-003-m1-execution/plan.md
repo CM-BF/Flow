@@ -30,7 +30,7 @@
 | Agent B：runner feature owner | runner、harness 接入、已有身份引用、取消/权限/恢复、usage 映射与指定 verifier 的执行 | `apps/runner/`、`packages/harness-*/`、`packages/provider-*/`、`packages/verifiers/` |
 | Agent C：Web feature owner | Web 页面、交互与组件、按需展开、缓存和重连展示 | `apps/web/`、`packages/ui/` |
 
-用户已将开发并发期望上限提升为 **10 个 agents：Goal Owner + Execution Lead + 最多 8 个 workers**，所有ready且独立的工作尽量并行。实际并行度为 `min(10, 运行时可用槽, ready独立任务数)`；只读审查也占槽。2026-10-06 00:55 UTC实测第5个文档worker启动仍返回 `collab spawn failed: agent thread limit reached`，当前运行时实际cap为4（两个执行workers）。这是真实容量限制，不是人为要求三条feature串行；容量开放后立即并行W01/CLI/文档等独立任务。产品100+ agents目标与开发槽分别管理。
+当前并发以[OPS-001](../ops-001-status-review/plan.md)为准：用户最新授权每Lead任务1+3，三队4/4/4上限12；实际并行度受运行时可用槽和ready独立任务限制，只读审查也占槽。以下是历史容量观察，不作当前额度：2026-10-06 00:55 UTC实测第5个文档worker启动仍返回 `collab spawn failed: agent thread limit reached`，当前运行时实际cap为4（两个执行workers）。这是真实容量限制，不是人为要求三条feature串行；容量开放后立即并行W01/CLI/文档等独立任务。产品100+ agents目标与开发槽分别管理。
 
 所有修改由 Sol / Astra 或已确认达到门槛的模型执行；身份或能力不明的模型不分配写任务。Execution Lead 按用户指定使用 Astra Ultra，其他写入人员至少 Sol，不为压低开发成本降到 Terra / Luna。只读审查可以单独委派，但不获得写权限。
 
@@ -155,7 +155,7 @@ Feature owners 向 Execution Lead 回报工程进展、阻塞和证据；Executi
 
 合并顺序：F00 → C01/R01 的确定性闭环 → L01/W01 → R02 真实接入 → 集成验收。C01 与 R01 在完成前就利用 fixtures 对接，不等到各自“大功告成”才检查接口。
 
-每个 feature 提交前完成自身相关检查，由另一位符合门槛的工程 agent 只读审查；Execution Lead 可以审查子 agent 的提交，其自身实现由可用执行位上的 reviewer 审查。审查遵守用户期望 10 槽和运行时实际容量，修改仍由该 feature owner 在自己的 worktree 执行。Execution Lead 在 integration worktree 合并并检查迁移、依赖与端到端行为，再将工程验收通过的提交集成到 main。禁止强推覆盖其他开发成果；出现冲突由相应 owner 与 Execution Lead 处理。
+每个 feature 提交前完成自身相关检查，由另一位符合门槛的工程 agent 只读审查；Execution Lead 可以审查子 agent 的提交，其自身实现由可用执行位上的 reviewer 审查。审查遵守当前OPS授权配额和运行时实际容量，修改仍由该 feature owner 在自己的 worktree 执行。Execution Lead 在 integration worktree 合并并检查迁移、依赖与端到端行为，再将工程验收通过的提交集成到 main。禁止强推覆盖其他开发成果；出现冲突由相应 owner 与 Execution Lead 处理。
 
 工程验收与目标验收分开：Execution Lead 负责测试命令、技术复核、集成和证据汇总，提供产物版本、检查范围、通过/失败及未验证项；Goal Owner 据此核对 M1 是否满足用户目标并对外汇报，不代替工程执行、不运行测试或 merge。未具备证据的条件不标记完成。
 

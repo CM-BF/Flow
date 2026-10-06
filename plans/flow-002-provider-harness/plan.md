@@ -182,3 +182,5 @@ Execution Lead汇总两端只读审查后拆最小独立片：保留既有claim�
 第二consumer必须使用固定版本的真实Pi或AI SDK实现来证明接口适配；先零provider验证订阅/背压、settled、abort/close、opaque resume locality、usage累计与不可用能力。Pi同步emit没有背压，agent_end可能早于retry/compaction完成，abort需确认idle，dispose不等于停止；wrapper统计累计与本地resume限制须真实表达。具体产品slice/claim在两端审查汇总后冻结，不提前宣称Pi已接入或发起新模型调用。架构影响包括运行器本地宿主/adapter/center协议校验边界；实施交付须登记固定图更新目标并保留旧图基线。
 
 验收保留主线CHAT09配置/pin/port保护与S01默认1/unknown admission；新能力选择只依已核descriptor/port，拒绝未识别配置。第二consumer的测试和真实native预算分开，原O10/QUEUE/R02等额度已封存。
+
+历史动机：[AQ-01质量台账](../../docs/quality/architecture-health-2026-10-06.md)记录M1固定6434fba的P2，不冒充本轮未修bug。下一独立实现子计划R05由assignment_review在native-harness-host建立唯一source，首A保行为配置/descriptor提取；若改变terminal/unknown语义，拆独立可审子步和lease恢复直接消费者。B中心版本化来源/前进迁移；C固定真实Pi SDK零远程query再PG普通正文，不继承未证stream/resume/steer/goal权限。

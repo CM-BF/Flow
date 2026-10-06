@@ -38,3 +38,5 @@ Execution Lead可主动直发Web用户task `01a10ec2-ff1a-76d0-a277-446baf89b19d
 历史2026-10-06 08:38 UTC容量变更（已被用户后续4/4/4覆盖，不作当前规则）：本队降为3（Goal Owner、Execution Lead、SVC03 worker）；Web保持4；Mika升为3（Lead、S01P01 worker、CHATUI01 worker），全局仍10。assignment_review仅完成O10语义metadata/push后正式idle，Mika新worker在此之前只可准备不得激活。CHATUI01未take/无双writer，唯一新执行源由Mika独立tree/claim建立；F01历史proposal不成为第二driver。后续slot转移同样核实际running状态与任务，禁止推测空位。
 
 2026-10-06 08:45 UTC：授权配额4/4/4不代表12个实际运行agent。Mika新增/复用completed worker遇工具threadlimit时停止重试，不开新用户任务绕过；现有工作照常，实际active仅按工具观察记录。assignment_review在O10收口后由GO复用为只读runner宿主抽象审查；CHATUI01仍由Mika唯一worker执行。
+
+- [x] **OPS-001-09** 用户协作方式纠正（2026-10-06 08:49 UTC）：GO负责总规划、查缺、研究、发现问题、督促与全局优化；co-lead自主细化计划/技术优化并管理workers，workers实施。唯一status→dashboard为默认通道，GO主动查看；普通进展/完成/审查/merge/metadata/claim不逐条私信或多路转发，不确认套确认。仅跨Lead重要接口/范围/资源裁决、紧急用户影响或dashboard不能解的真实阻塞才一次短消息加canonical；收到无需ACK，结果回写看板。普通授权技术步骤无需GO再批准，已有独审不重复。已一次同步外部两Lead。
