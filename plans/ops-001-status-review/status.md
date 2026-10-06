@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T23:00:55.047696+00:00 / main37f75d36 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T23:17:09.029Z / main93a92c918b29126b6761b02258cef523906eca94 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
+| 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin37f75d36已接资源回收限定证据，dashboard180源；OPS-CI01第181源待本批发布。个人backend af51 accepting v18、Web d629 v3保持。 |
+| 已集成main状态 / HEAD | main/origin93a92c91已接远程准备、三缓存结果与X01单一来源迁移；23:14:39实际dashboard181源。个人backend af51 accepting v18、Web d629 v3保持。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 三处已退役临时预览的生成缓存已清理，原始证据和依赖保留；本地空间仍不足，最小远程验证文档已获独审，等待用户选择启用。 |
-| 下一可用交付 | 交付可由用户启用的远程零模型验证文件；本地真实数据库、浏览器和完整工具正文验证继续等待足够空间。 |
+| 下一可用交付 | 用户选择启用后执行一次已审远程最小验证；X01独立实施继续，本地数据库、浏览器和完整工具正文验证等待足够空间。 |
 | 当前阻塞 | ACTIVE: 三缓存结束后卷余量1,073,909,760B，本记录fresh为1063604224B，仍不足1GiB+128MiB的PG/浏览器线。远程候选尚未启用/运行，现只完成静态检查。 |
-| 需用户决定 | REQUIRED: 是否将已审验证文件启用为手动GitHub Actions并运行一次；现有凭据缺workflow权限，未尝试扩权或启用。 |
+| 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -349,3 +349,9 @@ OPS-CI01唯一source为`ops-remote-validation/plans/ops-ci01-remote-validation`�
 局部status检查发现带说明的NONE不符合既有人读字段格式，原记录保留于9bff6516；已按真实最终启用动作改为REQUIRED，未改parser或运行产品测试。
 
 2026-10-06T23:05:30.238536+00:00：X01源码供给与CI启用解耦。本组仅只读核fixed60ca/384源码零diff及14literal，未创建新树；Mika获exact `plugin-enable-binding`单树source-only Git委派。正式分配034-plugin-runtime.sql给architecture_read在handoff/accept后fresh amend；033仍CHAT05P01。见[唯一分配与边界](../../docs/quality/x01-enable-binding-allocation.json)，不代表已take或PG/产品通过。
+
+## 2026-10-06 23:17 UTC 接收与唯一等待
+
+远程验证固定候选cdd96bc7已独审并在main93a92c91保持原字节；OPS-CI01原owner已release，启用决定由Goal Owner唯一收集，目前PENDING。三缓存结果已独审封存，不新增同类清理。X01的exact新树供给由Mika完成，claim6ddedc73 v8在plugin-enable-binding实际生效，034唯一DDL与17scope包含其内；[分配](../../docs/quality/x01-enable-binding-allocation.json)和[供给只读核验](../../docs/quality/x01-enable-binding-provision-review.json)保留固定输入。该实现不依赖CI用户启用；PG/产品验证未据源码准备推断通过。
+
+4320实际聚合23:14:39.075Z为181来源，X01已指唯一新树、OPS-CI01当前与需用户决定均可读，issues=[]；原始有界回执在D05唯一来源。只做管理事实与链接核对，0新增产品测试、安装、PG、浏览器或provider。历史余量只作记录，不作新运行准入。
