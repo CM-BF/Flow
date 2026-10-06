@@ -1,4 +1,4 @@
-import { Activity, createContext, useContext, useEffect, useId, useLayoutEffect, useRef, useState, useSyncExternalStore, type ComponentType, type ReactNode, type RefObject } from "react";
+import { Activity, createContext, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type ComponentType, type ReactNode, type RefObject } from "react";
 import { useAuiState } from "@assistant-ui/react";
 import { Puzzle, SlidersHorizontal } from "lucide-react";
 import { ExtensionSlot, PluginView } from "../plugins/react";
@@ -9,6 +9,11 @@ import type { ProjectionState } from "../projection";
 import type { AppPluginSession } from "./session";
 import type { PluginManagementProps, PluginRegistryReader } from "../plugin-management/PluginManagement";
 import "./integration.css";
+import { AssistantDataRenderers } from "../data-renderers/react";
+import { ReplyBindingsProvider, flowReplyFallback } from "../data-renderers/flow-reply-detail";
+import { FLOW_REPLY_OWNER } from "../data-renderers/registry";
+import { createConversationReplyBindings } from "./data-renderers";
+import type { ConversationProjection } from "../conversations/projection";
 
 const SessionContext = createContext<AppPluginSession | null>(null);
 const ThreadScope = createContext<{ viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null }>({ viewId: "", taskId: null });
@@ -18,6 +23,27 @@ export function PluginProvider({ session, children }: { session: AppPluginSessio
 }
 export function PluginThreadScope({ viewId, taskId, messageTask, editableComposer, children }: { viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null; children: ReactNode }) {
   return <ThreadScope.Provider value={{ viewId, taskId, messageTask, editableComposer }}>{children}</ThreadScope.Provider>;
+}
+/** Explicit native-hidden visibility, independent of which split pane owns keyboard focus. */
+export function ConversationDataRenderers({ viewId, projection, visible, children }: { viewId: string; projection: ConversationProjection; visible: boolean; children: ReactNode }) {
+  const session = useContext(SessionContext)!;
+  const bindings = useMemo(() => createConversationReplyBindings(session, viewId, projection), [session, viewId, projection]);
+  const [ready, setReady] = useState<typeof bindings | null>(null);
+  const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
+  const hasReplyDetail = state.turns.some(turn => turn.assistant.state === "available" && turn.assistant.truncated);
+  useLayoutEffect(() => {
+    bindings.setVisible(visible); setReady(visible ? bindings : null);
+    return () => bindings.setVisible(false);
+  }, [bindings, visible]);
+  useEffect(() => {
+    // A disabled/failed owner remains disabled/failed; only untouched registration is lazy activated.
+    if (visible && hasReplyDetail && session.host.list().find(plugin => plugin.id === FLOW_REPLY_OWNER)?.state === "registered")
+      void session.host.activate(FLOW_REPLY_OWNER);
+  }, [session, visible, hasReplyDetail]);
+  return <ReplyBindingsProvider value={bindings}>
+    {visible && ready === bindings && <AssistantDataRenderers registry={session.dataRenderers} fallback={flowReplyFallback} />}
+    {children}
+  </ReplyBindingsProvider>;
 }
 export function AppSlot({ slot, context = globalContext, className = "" }: { slot: SlotId; context?: ResourceContext; className?: string }) {
   const session = useContext(SessionContext);
