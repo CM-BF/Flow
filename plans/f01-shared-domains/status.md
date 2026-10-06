@@ -2,23 +2,23 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:51 UTC / 2026-10-06 03:44 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:11 UTC / 2026-10-06 04:10 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 873738d9eb998c10bc71721d9b325fcc76ecd7b5 / 095497dc1719d10df8309fdf17d95539fc891e06（本次X02接线target；CHAT挂载37ab另审） |
+| 工作基线 / HEAD | 873738d9eb998c10bc71721d9b325fcc76ecd7b5 / 095497dc1719d10df8309fdf17d95539fc891e06（历史X02接线target；新profile client94f50acf38213caacb2852d740c818b8480e3d15另审） |
 | 工作树dirty状态 | 源码已提交；本次同步证据与status |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 095497dc1719d10df8309fdf17d95539fc891e06：插件CLI真实PG1+client4共5/5、typecheck；CHAT生产10/10由CHAT02保存 |
-| 已集成main状态 / HEAD | main ac4e34de2331dce276440df8969883c1883060ef已含历史F01/O01消费者/CHAT薄client841；CHAT中心/typed与X02接线仍仅本分支 |
+| 已集成main状态 / HEAD | main 8f1481df880cf5077e1ddb9a8f302fe700a7ece8 已含CHAT中心/typed/shared37ab和X02共享095；新增profile client94f仍分支待独审 |
 | Review | APPROVED 095497插件接线/Mika；37ab CHAT生产挂载/Goal Owner；领域CHAT01/02/X02各自独审 |
 | 实现目标 | 095497dc1719d10df8309fdf17d95539fc891e06 |
 | 实现范围 | packages/client/src/index.ts, apps/cli/src/index.ts, apps/cli/src/plugins.test.ts, apps/server/src/index.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 真实对话三端接线收口；插件登记公共命令已通过局部验证 |
-| 下一可用交付 | 已审CHAT三端集成后验证真实两轮；插件登记接线待独审 |
+| 当前产出 | 持久聊天后端与插件公共命令已集成；运行配置薄接口已交付独审 |
+| 下一可用交付 | 接收聊天Web后验证真实两轮；执行配置接口等待领域固定交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -32,9 +32,12 @@
 | F01-05 | completed | Lead | O01公共client/CLI真实PG最终1/1+初次6/6、typecheck；Goal Owner2b754批准且main4e817已接收 |
 | F01-06 | in-progress | Lead | CHAT client841已审，生产37ab挂载；CHAT01 typed d0f和CHAT02 2e已独审，真实两轮条件批准但0调用 |
 
+| F01-08 | in-progress | Lead | 薄client94f50已通过HTTP1/1+tsc，待独审/中心领域交付 |
 | F01-07 | completed | Lead | X02已审3d0c领域输入；公共接线095497，真实PG CLI1+client4/typecheck，Mika独审APPROVED |
 
 未调用模型或云；具体检查/已审target后续在本owner更新，main事实独立。dashboard已登记唯一来源；此前共享已集成，O01增量已审/集成；CHAT接线进行中。
 
 
 2026-10-06 03:32 UTC：O01领域接收6bb后实现零diff；本次公共消费者增量待review，不能继承此前36ae审批。首轮typecheck测试输入错误已修，原始失败保留。
+
+2026-10-06 04:11 UTC：新增profile client HTTP1/1(366ms)与typecheck原始记录见quality；不把旧095审批继承到94f。两次真实聊天验收0调用，等待Web固定clean交付。

@@ -43,3 +43,9 @@ clean-code检查：错误不回显私密配置，CLI不把登记当安装，领�
 完整模块接收后集成候选149f50eb8440ed56e49cbdddb83f37bd18d6caa0：只选真实adapter注入SDK两轮、typed pending→success/重报重启、unknown与长正文lazy三条直接消费者，3/3通过（明确另外19条未选，非22重跑），3.38s。原始chat-production-consumer.txt；正式createServer含007/008/009，不用测试旁路挂载。CHAT01领域相对独审d0f零diff，CHAT02 test修复fcbc另独审；0模型，Web新聊天尚未完成独审。
 
 独立接线批准：Mika只读APPROVED 095497，五文件及raw hash已核，未重跑，无finding；Goal Owner只读APPROVED 37ab（1d4父版本→37ab的两文件组合），007/009 await位于serve前、owner auth后注册、pool异常清理与export准确，10/10原始stdout和共享source hash吻合。字段/限制与领域review分开，真实模型仍0。
+
+## 执行配置薄接口 2026-10-06 04:11 UTC
+
+固定target94f50acf38213caacb2852d740c818b8480e3d15：executionProfiles分页只读与publishExecutionProfile runner声明两方法，复用统一HTTP鉴权/AbortSignal，不添加可用性推断。领域合同60b由唯一owner维护。原始execution-profile-client.txt为1/1，366ms；execution-profile-client-typecheck.txt通过。0模型、无PG领域验证或在线能力背书。已发Mika独立只读review，尚未批准。clean-code复核共享方法不复制业务，不暗重试发布，client只传输。
+
+main8f1481现场核实已含X02/CHAT共享接线，原095/37ab独立approval仍各自限定；本新增target不继承。
