@@ -1,5 +1,11 @@
 # 成熟聊天大task来源与登记队列
 
+## RELEASE02 固定窄修：请 runner_owner 独立审查
+
+实现 **560cbd2b6a5dc43bc18458d1335ced73b0e9254d**，最终候选 **0bca82da6208b108c7e073d748d2a157821bba72**，base2e71fabc218df28f6ccb78a927432ae1101c17c5；local=origin/clean已核。唯一变化为fixture固定构建矩阵末尾 `as const`，不改版本常量/运行旅程。作者根严格 `pnpm exec tsc --noEmit` exit0，TS5.9.3转译前后JS逐字相同；没有fixture执行/PG/browser/provider。管理只核diff/hash/双端，不替代独审，[固定审计](release02-fixed-candidate-audit.json)。
+
+唯一canonical：[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md)，证据[README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md)。目前NOT_STARTED，03323 v1三scope保留；请Lead runner_owner独立窄审后经原owner记录，再受控接收，不等待附件大功能，不重跑123/八浏览器。
+
 ## MATURE05 下一ready优先级已更新
 
 GO最新裁决覆盖先前Arc先行：1711 partial已足够；panels下一只读准备最小可回收view/正文cache有界与观察生命周期，protected draft/attachment/unknown不可丢，区分DOM/异步读/JS引用，复用原controllers。反复开关/满额保护/late detail+history/重开身份是直接验收；不补全基线截图或分位数，不并大改feed/layout。Arc组合完整目标保后继。仅proposal，未新take，App按ATTACHI后继需求有序小窗口，不预占宽scope。
