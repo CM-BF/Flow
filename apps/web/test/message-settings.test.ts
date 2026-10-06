@@ -180,7 +180,7 @@ it.each(["apply", "omit"] as const)("host CAS rejects %s from lagging props even
   expect(host.get()).toMatchObject({ writes: 0, callbacks: 1, applied: before });
 });
 
-it.each(["close", "cancel", "details navigation", "unmount"])("revokes old Apply and omit after %s even without a new host token", () => {
+it("revokes old Apply and omit after an opening closes, even without a new host token", () => {
   const host = controlledHost(), first = host.open();
   const oldApply = first.apply;
   first.close();
