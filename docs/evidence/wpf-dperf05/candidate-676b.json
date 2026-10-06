@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-06 18:58:16 UTC",
+  "implementation": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
+  "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "branch": "codex/dashboard-status-timestamps",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+  "sourceFiles": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "target": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
+      "bytes": 6411,
+      "sha256": "ebaa4728caab27fa62471e042720117e881781022a01b79df9487d1ac4208c94",
+      "currentSha256": "ebaa4728caab27fa62471e042720117e881781022a01b79df9487d1ac4208c94",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "target": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
+      "bytes": 5328,
+      "sha256": "d32393ad07a993144161107461dfd7feb4837558c690731ab8fae08550670676",
+      "currentSha256": "d32393ad07a993144161107461dfd7feb4837558c690731ab8fae08550670676",
+      "currentEqualsFixed": true
+    }
+  ],
+  "readOnlyImportClosure": [
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "currentSha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "currentSha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "currentSha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "currentSha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "currentEqualsFixed": true
+    }
+  ],
+  "readOnlyConsumerReferences": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "currentMaterialized": false
+    },
+    {
+      "path": "apps/execution-dashboard/test/dashboard.test.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 8992,
+      "sha256": "f259396f987bb422684b313a1ab8bb3bace0e653e7ed8f7e0e604aba470cb7ea",
+      "currentMaterialized": false
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 4181,
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "currentMaterialized": false
+    }
+  ],
+  "scopeOutside": [],
+  "checks": {
+    "state": "NOT_RUN",
+    "staticCases": 56,
+    "sourceDiffCheck": 0
+  },
+  "pureEntrypoint": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs"
+  ],
+  "runtimeAuthorization": "NONE: future reviewed runner and fresh gate required",
+  "actualAggregateConsumer": "NOT_RUN; separate integration check, no copied age formula",
+  "deployment": "NOT_OBSERVED; source is not service acceptance"
+}

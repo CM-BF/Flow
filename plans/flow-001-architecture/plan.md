@@ -537,3 +537,14 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 第一片 Interface 明确来源可公开的tool输入/结果原始bytes、body身份/固定digest/完整性状态、字节与块数上限、授权页读取以及取消/错误/资源释放。复用现有outbox、attempt fence和detail授权，受理/重报/崩溃恢复不重复正文，旧attempt不能覆盖；最终完整受理前不得称已保存全文。超过真实保存上限明确拒绝或incomplete，非公开thinking/redacted材料仍不制造正文。首屏与SSE只轻引用，展开前零正文请求。Web/TUI用同一公共引用和分页合同，呈现各自独立，不新建对象存储平台或scheduler。
 
 零模型合成超过64KiB的可公开正文，验证producer到中心完整bytes/digest、失ACK原key重报、崩溃恢复、旧attempt拒绝、授权HTTP/headless分页拼回原文、旧前缀历史不可恢复，以及超真实上限的明确状态。记录实际传输/持久bytes和有界内存/队列，按实际受影响接缝做直接消费者验证；不重跑无关全集，不把bytes称token收益。Mika已有会话页批量读取仍是另一职责，本片不占其读页实现范围。原CHAT05唯一plan保留具体子片归档，完整REQ15尚未完成。
+
+
+### 队列与目标扫描的锁隔离后继（2026-10-06 19:10:54 UTC）
+
+- [ ] **FLOW-001-T04-SCAN-01** 沿 REQ-15 / CHAT04 / O14，验证单实体锁等待不阻断无关队列和目标；后台扫描及关闭均有整轮总时限。Execution Lead负责排期，当前兼容发布/消息设置和O16先收口；未分配实施writer/未运行。
+
+GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同一pendingWorkScan串行queue→goals；queue候选轮转SKIP LOCKED提交后，第二阶段逐个promoteReady重新普通锁conversation/task；goal推进亦普通锁project/task。生产10s statement_timeout仅约束每条SQL，条数上限不等于整轮时限。既有抛错后轮转用例未证明候选选出后的锁等待隔离。这是源码推导风险，尚无实测延迟或事故。
+
+最小独立验收复用中心事务/admission/生命周期：少量ready会话与目标，受控屏障使首候选在第二阶段等待行锁；无关项应在声明局部预算内推进，释放后原项恰好一次；pause/cancel/授权/FIFO保持，关闭有界，未知事务保守。不能以Promise.race遗弃仍写SQL，不能新增scheduler框架或用128任务负载代替此因果旅程。模块各自拥有领域规则，跨模块组合入口只管有限轮次与关闭。
+
+一手语义参考（本轮已打开，网页current为PG18，生产固定版本行为仍须局部验证）：[SELECT锁定](https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE)、[客户端超时配置](https://www.postgresql.org/docs/current/runtime-config-client.html)。本段纯规划，不改已审O14 v1或宣称性能提升。

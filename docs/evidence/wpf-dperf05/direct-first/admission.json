@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-06T19:14:19.961474+00:00",
+  "state": "ADMITTED_SINGLE_USE",
+  "ledgerObservedAt": "2026-10-06T19:14:19.505Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "docs/evidence/wpf-dperf05",
+      "plans/wpf-dperf05-status-timestamps"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-status-timestamps",
+    "origin": "new",
+    "taskId": "WPF-DPERF05",
+    "worker": "workspace_panels_owner",
+    "claimId": "9a876001-611c-4f79-819f-2284c04d8f61",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+    "createdAt": "2026-10-06T18:49:44.597Z",
+    "updatedAt": "2026-10-06T18:49:44.597Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "sourceHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "clean": true,
+  "sourcePins": {
+    "apps/execution-dashboard/src/status.mjs": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1"
+  },
+  "readOnlyDependencies": {
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "apps/execution-dashboard/src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "apps/execution-dashboard/src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+  },
+  "gitObjectDependencies": {
+    "pnpm-lock.yaml": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+    "pnpm-workspace.yaml": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+  },
+  "runnerPins": {
+    "run.py": "8256f6b911627348288b43d4deeb040dde6ee073d6d209a3757e2d05b8120963",
+    "binding.json": "28564373a20a4a0a14b63c87002dbba35a0a12ec6bda445b2c42b0b41c3ad8c3",
+    "sandbox.sb": "b57921a64f44becdbf6ad98cd03b654a5528ba8e12cf19e71255e6f3064efc67"
+  },
+  "resourceBytes": 1494110208,
+  "limits": {
+    "totalSeconds": 15,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 2097152,
+    "rawBytes": 524288,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.5
+  },
+  "ownRunnerProcesses": [],
+  "previousRuntimeMs": 0,
+  "coordination": "Root source+supervisor approved pure parser single check; R01 holds sharedPG/Chrome and is unaffected. No HTTP/PG/Chrome/network; one worker.",
+  "gate": "/private/tmp/d01-dperf05-node-gate.json",
+  "gateSha256": "281ca79cca167c49d0d9426a9a2ef56e7a1018bfbcb5e1099d672559cb0923c0"
+}

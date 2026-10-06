@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-06T19:26:58.007081+00:00",
+  "startExit": 0,
+  "state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 761,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-10-06T19:26:41.40474785Z",
+    "FinishedAt": "2026-10-06T19:26:07.632796334Z",
+    "Health": {
+      "Status": "healthy",
+      "FailingStreak": 0,
+      "Log": [
+        {
+          "Start": "2026-10-06T12:26:49.573629854-07:00",
+          "End": "2026-10-06T12:26:49.587616979-07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-10-06T12:26:51.595077063-07:00",
+          "End": "2026-10-06T12:26:51.615784147-07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-10-06T12:26:53.625289314-07:00",
+          "End": "2026-10-06T12:26:53.644710064-07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-10-06T12:26:55.645680357-07:00",
+          "End": "2026-10-06T12:26:55.669916274-07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        },
+        {
+          "Start": "2026-10-06T12:26:57.6733994-07:00",
+          "End": "2026-10-06T12:26:57.6987489-07:00",
+          "ExitCode": 0,
+          "Output": "/var/run/postgresql:5432 - accepting connections\n"
+        }
+      ]
+    }
+  },
+  "preserved": {
+    "Id": true,
+    "Name": true,
+    "Image": true,
+    "Created": true,
+    "Mounts": true
+  },
+  "portsPreserved": true,
+  "restartPolicyPreserved": true,
+  "orbctlStart": "exit1 timeout, then observed Running; not retried",
+  "containerStart": "exact existing full ID once; no recreate",
+  "freeBytes": 1089486848,
+  "listener": {
+    "exit": 0,
+    "stdout": "COMMAND     PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nOrbStack  15292 citrine  148u  IPv4 0x5878c68d2482d26a      0t0  TCP 127.0.0.1:55432 (LISTEN)\n"
+  }
+}

@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 现用页面已恢复；看板新增更新时间兼容的权威来源，待本批发布后确认173个来源。 |
+| 当前产出 | 现用页面已恢复；看板已展示173个独立来源；更新时间修复和保留网页兼容的实际状态已可读取。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -167,3 +167,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 18:56 UTC：WPF-DPERF05唯一status/claim已核，新增第173个registry来源；owner仍implementation/NOT_RUN，不把登记当修复通过。只registry/parser/链接检查，无产品测试/个人服务操作；部署后另记实际聚合。
 
 本条修正上一提交手填19:01为实际18:56管理观察，精确登记时间以timestamp-source-registration.json原始at为准，无运行重采。
+
+实际部署回执19:02:38.991Z：173源，DPERF05 human完整/errors[]、固定范围unchanged；源审查修复/NOT_RUN保留。只替换本组4320已知旧进程，个人服务/用户tabs未动。见[timestamp-source-live-receipt.json](../../docs/evidence/d05/timestamp-source-live-receipt.json)。

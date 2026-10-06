@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-name-pattern=unknown declarations",
+    "experiments/continuous-goal-acceptance/query-policy.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.09394558297935873,
+  "freeBeforeBytes": 1613918208,
+  "stdoutSha256": "92ba8711a5e9ecc85a31b06697b179e5df7941d2269e31af5ed7b149a4a541d3",
+  "sourceHashes": {
+    "experiments/continuous-goal-acceptance/query-policy.mjs": "9065a7f0d5f917ae3dac5d36fd6dbe8a9f2cd699d09663a97231f61024424523",
+    "experiments/continuous-goal-acceptance/query-policy.test.mjs": "39c8ee35dc3bab6006b2394d00172bd7eecc0c2fa0e550b84751f18026153e40"
+  },
+  "boundary": "One changed case selected/passed, two not selected; same distinct test; 0SDK/PG/provider"
+}

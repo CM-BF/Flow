@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "experiments/continuous-goal-acceptance/assignment.test.mjs"
+  ],
+  "exitCode": 1,
+  "seconds": 0.0827524580527097,
+  "stdoutSha256": "c4e38a0969933b5be1fbeb9edd62b12036097f5efd2e2872da45f99abfa3b2a1",
+  "boundary": "Expected missing-module red; no test bodies/SDK/PG/provider"
+}

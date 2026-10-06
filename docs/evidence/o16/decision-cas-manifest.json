@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-06 19:21:06 UTC",
+  "source": "4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa",
+  "previousPreparationSource": "e9319eda0189e878035c2115b9f050f35e130145",
+  "sourceBindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/decision.mjs",
+      "bytes": 892,
+      "sha256": "5731378e23c3c90427bb5173603285add473f9cf0dfd233e15abaf6ce10ff224"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/decision.test.mjs",
+      "bytes": 3191,
+      "sha256": "98593b744b52be1d88c120377b3efd00cd1bb2d5737d03de2d03f101f0b1f2e0"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 18266,
+      "sha256": "bfdbffbfbe6d5616651d5597a038923be18cfb3911e520d521ed0dc06592a6e1"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 8929,
+      "sha256": "b3b55b8c33390b1f756d115bf95a0a7a2a24ab6bc53c7e6f51554f3f2fe75f80"
+    }
+  ],
+  "directInputs": [
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "bytes": 12626,
+      "sha256": "fa77a60fee9c06513969ffa634a6e41832687157770f9894069ea7f902256741"
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "bytes": 3194,
+      "sha256": "5f9f7f0ca5f8494333a3b656514b3289b9c0100e28909db5908cfd7fd15ad530"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 14007,
+      "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/records.mjs",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/o16/decision-cas-not-run.json",
+      "bytes": 264,
+      "sha256": "2d3d2045d19a6c244284bcce9ff5cbc704bd72823cffb04548c9dd375f60c25c"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot-red-summary.json",
+      "bytes": 3795,
+      "sha256": "afe9774ac9a56aaf36b4bbf4a00dbc33debb4fe7bf604eabc7d6390166d04836"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot-red-manifest.json",
+      "bytes": 9665,
+      "sha256": "1d738808cc3895200cd6827c9594254d1b4844705a85f7348d727b8ec490a6c0"
+    }
+  ],
+  "checks": "NOT_RUN_RESOURCE_GATE",
+  "original25": "not repeated; previous evidence unchanged",
+  "originalPG": "1 selected/0 passed/1 failed remains unchanged",
+  "provider": 0,
+  "review": "NOT_STARTED",
+  "limitations": "Pure helper covers accepted=null or prior accepted ID. Actual driver still requires fresh never-accepted nodes; no expanded replacement workflow. Original failed run is not resubmitted or cleaned."
+}

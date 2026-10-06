@@ -8,6 +8,30 @@ function cells(line) {
   return line.trim().replace(/^\||\|$/g, '').split(/(?<!\\)\|/).map(value => value.trim().replace(/\\\|/g, '|'));
 }
 
+function parseUtcUpdate(record) {
+  // A combined field can include a separate main-sync observation. It must
+  // never supply the update, even when the primary record has no date at all.
+  const primary = plain(record).split(/\bmain\s*(?:同步|sync\b)/i, 1)[0];
+  // A standalone year prefix also catches malformed/slash dates, without
+  // treating embedded task identifiers such as WPF-DPERF05-01 as dates.
+  const start = primary.search(/(?<![A-Za-z0-9_-])[+-]?\d{3,}[-/]/);
+  if (start < 0) return null;
+  const match = primary.slice(start).match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?\s*(?:UTC|Z|\+00:00)(?![\w.+:/-])/);
+  if (!match) return null;
+  const [, yearText, monthText, dayText, hourText, minuteText, secondText = '0', fraction = ''] = match;
+  const [year, month, day, hour, minute, second] = [yearText, monthText, dayText, hourText, minuteText, secondText].map(Number);
+  if (month < 1 || month > 12 || day < 1 || day > 31 || hour > 24 || minute > 59 || second > 59) return null;
+  if (hour === 24 && (minute !== 0 || second !== 0 || /[1-9]/.test(fraction))) return null;
+
+  // setUTCFullYear preserves years 0000–0099; Date.UTC remaps them to 1900–1999.
+  const date = new Date(0);
+  date.setUTCFullYear(year, month - 1, day);
+  if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day) return null;
+  const milliseconds = Number(fraction.slice(0, 3).padEnd(3, '0'));
+  date.setUTCHours(hour, minute, second, milliseconds);
+  return Number.isFinite(date.getTime()) ? date.toISOString() : null;
+}
+
 export function parseStatus(markdown, taskId) {
   const fields = {};
   const fieldRows = [];
@@ -38,8 +62,7 @@ export function parseStatus(markdown, taskId) {
   const branch = field(/^branch$/);
   const branchState = field(/工作分支状态/);
   const updatedRecord = field(/最近更新|更新时间/);
-  const updatedMatch = updatedRecord.match(/\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}(?::\d{2})?\s*(?:UTC|Z)/);
-  const updatedAt = updatedMatch ? new Date(updatedMatch[0].replace(' UTC', 'Z').replace(' ', 'T')).toISOString() : null;
+  const updatedAt = parseUtcUpdate(updatedRecord);
   const findSection = pattern => Object.entries(sections).filter(([name]) => pattern.test(name)).flatMap(([, lines]) => lines);
   if (new Set(todos.map(todo => todo.id)).size !== todos.length) errors.push('重复 TODO ID');
   if (!new RegExp(`^#\\s+${taskId}\\b`, 'm').test(markdown)) errors.push('状态标题与登记任务 ID 不符');

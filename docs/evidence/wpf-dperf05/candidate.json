@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-06 19:02:32 UTC",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "branch": "codex/dashboard-status-timestamps",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+  "sourceFiles": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+      "bytes": 6660,
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "currentSha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+      "bytes": 6353,
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "currentSha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "currentEqualsFixed": true
+    }
+  ],
+  "readOnlyImportClosure": [
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "currentSha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "currentSha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "currentSha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "currentSha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "currentEqualsFixed": true
+    }
+  ],
+  "readOnlyConsumerReferences": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "currentMaterialized": false
+    },
+    {
+      "path": "apps/execution-dashboard/test/dashboard.test.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 8992,
+      "sha256": "f259396f987bb422684b313a1ab8bb3bace0e653e7ed8f7e0e604aba470cb7ea",
+      "currentMaterialized": false
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 4181,
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "currentMaterialized": false
+    }
+  ],
+  "scopeOutside": [],
+  "checks": {
+    "state": "NOT_RUN",
+    "staticCases": 62,
+    "sourceDiffCheck": 0
+  },
+  "pureEntrypoint": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs"
+  ],
+  "runtimeAuthorization": "NONE: future reviewed runner and fresh gate required",
+  "actualAggregateConsumer": "NOT_RUN; separate integration check, no copied age formula",
+  "deployment": "NOT_OBSERVED; source is not service acceptance",
+  "previousCandidate": "candidate-676b.json",
+  "repair": "R1 source-only; primary vs main-sync boundary and explanatory task IDs"
+}

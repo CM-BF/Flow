@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T19:26:04.553201+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "result": "APPROVED_SOURCE_NOT_RUN",
+  "source": "4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa",
+  "delivery": "3f6f9647695803a3278674a281919c22ef7fbfcc",
+  "manifestSha256": "13a817cf39db69185dc1410cced5592c75be2b1d0ec1a39ddaf91d0c392c30d9",
+  "bindingsVerified": 11,
+  "finding": [],
+  "review": [
+    "Complete four-file delta read against e931; current/fixed source and direct inputs verified; evidence bound to delivery commit, not earlier source commit.",
+    "Observed accepted delivery ID is CAS value, candidate artifact remains exact binding; original fresh never-accepted driver gate stays.",
+    "Command outcome checkpoint precedes assertion. Original command rejection and independent cleanup failure remain separate durable fields.",
+    "One pure test covers null and previous accepted value and rejection/cleanup combination."
+  ],
+  "checks": "NOT_RUN_RESOURCE_GATE; no reviewer tests, PG, Chrome or provider",
+  "limits": [
+    "Original 1 selected / 0 pass PG remains failed.",
+    "No original run replay or preserved DB/tmp cleanup authorization here.",
+    "No native budget or successful real journey claim."
+  ]
+}

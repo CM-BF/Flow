@@ -1,0 +1,592 @@
+{
+  "at": "2026-10-06T18:53:05.456400+00:00",
+  "mode": "static bytes/paths only; no app imports or execution",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "boundBackendFiles": 487,
+  "sqlFiles": 25,
+  "migrationCallers": [
+    {
+      "caller": "apps/server/src/active-steering/index.ts",
+      "callerSha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/024-active-steering.sql",
+          "relative": "packages/storage/migrations/024-active-steering.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1998,
+          "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/assistant-stream/index.ts",
+      "callerSha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/022-assistant-stream.sql",
+          "relative": "packages/storage/migrations/022-assistant-stream.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1865,
+          "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/assistant/index.ts",
+      "callerSha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/009-assistant-messages.sql",
+          "relative": "packages/storage/migrations/009-assistant-messages.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 736,
+          "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/attachments/index.ts",
+      "callerSha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/026-attachment-resources.sql",
+          "relative": "packages/storage/migrations/026-attachment-resources.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 2994,
+          "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/context-transparency/migration.ts",
+      "callerSha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/027-context-observation-history.sql",
+          "relative": "packages/storage/migrations/027-context-observation-history.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1891,
+          "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/conversation-context/index.ts",
+      "callerSha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/018-conversation-context.sql",
+          "relative": "packages/storage/migrations/018-conversation-context.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 3497,
+          "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/conversation-queue/index.ts",
+      "callerSha256": "c263858be96773183b67ed175ad05c2642e6067ac2e2b124cf7946b5b06ce76e",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/011-conversation-queue.sql",
+          "relative": "packages/storage/migrations/011-conversation-queue.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1357,
+          "sha256": "bea2d6057b4471524ccb89e95e643a7bd2606805d75a775d7d6129857afbc427",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/conversations/index.ts",
+      "callerSha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/007-conversations.sql",
+          "relative": "packages/storage/migrations/007-conversations.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1063,
+          "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/database.ts",
+      "callerSha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/002-reconciliation.sql",
+          "relative": "packages/storage/migrations/002-reconciliation.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1730,
+          "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/execution-profiles/index.ts",
+      "callerSha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/010-execution-profiles.sql",
+          "relative": "packages/storage/migrations/010-execution-profiles.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 765,
+          "sha256": "3a518a6953644c6efada3cfe5d38481fa5b48aaf7ef0819a0d99dc25286d2847",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/goal-context/index.ts",
+      "callerSha256": "7921c324119d60f25f3ffebac1c802a4a8050f9693873e8c138c93e865b6cd5b",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/021-goal-context.sql",
+          "relative": "packages/storage/migrations/021-goal-context.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 2167,
+          "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/goal-graph-proposals/index.ts",
+      "callerSha256": "a8a6fea7f7436df17ca6bc59d902aec7d068af2bbec99c14fac676a928aa966b",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/014-goal-graph-proposals.sql",
+          "relative": "packages/storage/migrations/014-goal-graph-proposals.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1802,
+          "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/goal-graph-runs/index.ts",
+      "callerSha256": "6e6d5f1e0cfec52e69069de9176a49b5689a2fcef67c1f41fb0ea4dc8efe9c77",
+      "readFileNewURL": true,
+      "templateArray": true,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/017-goal-graph-runs.sql",
+          "relative": "packages/storage/migrations/017-goal-graph-runs.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 3089,
+          "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f",
+          "blobMatches": true
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/019-goal-graph-native-mode.sql",
+          "relative": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 189,
+          "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/goal-tool-runs/index.ts",
+      "callerSha256": "5a2949ef6a74ffba06c4e713282f0355ee4639bd552b5eaba7503a175e56024a",
+      "readFileNewURL": true,
+      "templateArray": true,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/012-goal-tool-runs.sql",
+          "relative": "packages/storage/migrations/012-goal-tool-runs.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 2076,
+          "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b",
+          "blobMatches": true
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/013-goal-native-mode.sql",
+          "relative": "packages/storage/migrations/013-goal-native-mode.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 185,
+          "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/goals/index.ts",
+      "callerSha256": "0e33bcbc20f54e91214859d9d2eca096a40bef748ba500938a6015bc488f5842",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/006-goals.sql",
+          "relative": "packages/storage/migrations/006-goals.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 3165,
+          "sha256": "e7174fdb547df194bcae5286981135c1cda3e47a2ea442afcafee0791a762a49",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/knowledge/index.ts",
+      "callerSha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/015-knowledge-sources.sql",
+          "relative": "packages/storage/migrations/015-knowledge-sources.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 2406,
+          "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/native-activity/index.ts",
+      "callerSha256": "81b7ec57e00b503db18402121d7e41fb8c140346d46c5a5614efda64efa94250",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/020-native-activity.sql",
+          "relative": "packages/storage/migrations/020-native-activity.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 970,
+          "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/native-harness-migration.ts",
+      "callerSha256": "171050c81a8677c145319adc51e8c542e2be26373a15262fa0d689ae600c5b98",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/025-native-harness-sources.sql",
+          "relative": "packages/storage/migrations/025-native-harness-sources.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1618,
+          "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/plugin-package-fetches/index.ts",
+      "callerSha256": "cf1cf055e7ae70173ae34b40ff32a41193827403dec5446cbffaefa46c362a00",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/023-plugin-package-fetches.sql",
+          "relative": "packages/storage/migrations/023-plugin-package-fetches.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 2975,
+          "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/plugins/index.ts",
+      "callerSha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/008-plugins.sql",
+          "relative": "packages/storage/migrations/008-plugins.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 3675,
+          "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/projects/index.ts",
+      "callerSha256": "41715a0a5e3868fdf2f958cf5fea19785bbcfc9da75d122c14645c58375fcf7a",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/004-projects.sql",
+          "relative": "packages/storage/migrations/004-projects.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1918,
+          "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/protocol-dispatch/index.ts",
+      "callerSha256": "d69e32c3783c040a917315a6e98380ba71a6b684a5aaf29bf2e1add6020635c7",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/005-protocol-dispatch.sql",
+          "relative": "packages/storage/migrations/005-protocol-dispatch.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 799,
+          "sha256": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f",
+          "blobMatches": true
+        }
+      ]
+    },
+    {
+      "caller": "apps/server/src/runner-maintenance/index.ts",
+      "callerSha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e",
+      "readFileNewURL": true,
+      "templateArray": false,
+      "sql": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/016-runner-maintenance.sql",
+          "relative": "packages/storage/migrations/016-runner-maintenance.sql",
+          "ref": "af51c621696230fbced12227670f014ca73bd8a1",
+          "bytes": 1796,
+          "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc",
+          "blobMatches": true
+        }
+      ]
+    }
+  ],
+  "missingSql": [],
+  "inlineSchema": "database.ts/m2-workspace.ts remain bound source; not represented as absent SQL files",
+  "backendDependencyView": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/dependency-view.json",
+    "sha256": "8eca2632a14ffaf3c8aaf9cec4b0a491b56b88ebc94a55d22ba03679222d4bde",
+    "bytes": 9579
+  },
+  "artifacts": [
+    {
+      "label": "retained-0",
+      "files": [
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/manifest.json",
+          "bytes": 1604,
+          "sha256": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "expected": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/PluginManagement-CD55oqRe.js",
+          "bytes": 9854,
+          "sha256": "3c62514146458f0d2f64beadec5f837a3f87b70ce0309a9f9f6363372b1bc447",
+          "expected": "3c62514146458f0d2f64beadec5f837a3f87b70ce0309a9f9f6363372b1bc447",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/PluginManagement-Dok11XwQ.css",
+          "bytes": 2843,
+          "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+          "expected": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/assistant-ui-BW1JBgq4.js",
+          "bytes": 658870,
+          "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39",
+          "expected": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/assistant-ui-CcdakA0V.css",
+          "bytes": 966,
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+          "expected": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/index-5W26Yecv.css",
+          "bytes": 102548,
+          "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71",
+          "expected": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/index-DuzR10it.js",
+          "bytes": 663320,
+          "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555",
+          "expected": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/rolldown-runtime-qXqUbbKo.js",
+          "bytes": 773,
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+          "expected": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/theme-BPrUys_Y.js",
+          "bytes": 806,
+          "sha256": "d6e70e89790687f7a6f8d916e734d17ae4dda95e549b5ede1061da1c27fac3d5",
+          "expected": "d6e70e89790687f7a6f8d916e734d17ae4dda95e549b5ede1061da1c27fac3d5",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/assets/workspace-J4kYnKpb.js",
+          "bytes": 1906,
+          "sha256": "712d138a75e5cf0132837e304c75bd767aa5276230a1af2b5ddcc28f0f01827a",
+          "expected": "712d138a75e5cf0132837e304c75bd767aa5276230a1af2b5ddcc28f0f01827a",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90/dist/index.html",
+          "bytes": 705,
+          "sha256": "712427f3cb1e1c06cbb7c666da07065d931f36e1bca4896f243df7563dd79943",
+          "expected": "712427f3cb1e1c06cbb7c666da07065d931f36e1bca4896f243df7563dd79943",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        }
+      ],
+      "allMatched": true
+    },
+    {
+      "label": "retained-1",
+      "files": [
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/manifest.json",
+          "bytes": 1651,
+          "sha256": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+          "expected": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/PluginManagement-BD6v6BfC.js",
+          "bytes": 9854,
+          "sha256": "3c8931413324efc58684a6c7b595add63b604cbb22d9705210b8be80795b7cee",
+          "expected": "3c8931413324efc58684a6c7b595add63b604cbb22d9705210b8be80795b7cee",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/PluginManagement-Dok11XwQ.css",
+          "bytes": 2843,
+          "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+          "expected": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/assistant-ui-BpywiqNX.js",
+          "bytes": 659481,
+          "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365",
+          "expected": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/assistant-ui-CcdakA0V.css",
+          "bytes": 966,
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+          "expected": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/index-4FtYFUKm.css",
+          "bytes": 109664,
+          "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f",
+          "expected": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/index-C4nOJxn3.js",
+          "bytes": 720515,
+          "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495",
+          "expected": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/rolldown-runtime-qXqUbbKo.js",
+          "bytes": 773,
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+          "expected": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/theme-B8jpdv70.js",
+          "bytes": 806,
+          "sha256": "55b244704cb6099ef5a3cc281178b4ffcc3bd58645b0e33bee47497551768263",
+          "expected": "55b244704cb6099ef5a3cc281178b4ffcc3bd58645b0e33bee47497551768263",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/assets/workspace-CftlvkTQ.js",
+          "bytes": 1906,
+          "sha256": "aed68bf4b3e8a9bb0d3dafcddeb5730f065c35f2d1b3a2a7875e4d4b57cc9374",
+          "expected": "aed68bf4b3e8a9bb0d3dafcddeb5730f065c35f2d1b3a2a7875e4d4b57cc9374",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        },
+        {
+          "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe/dist/index.html",
+          "bytes": 950,
+          "sha256": "cde7d9fd4622e6d4bb83b71004709e7fcbf4831f1b1146ce8690b763c3715fe0",
+          "expected": "cde7d9fd4622e6d4bb83b71004709e7fcbf4831f1b1146ce8690b763c3715fe0",
+          "regularNoSymlink": true,
+          "bytesMatched": true
+        }
+      ],
+      "allMatched": true
+    }
+  ],
+  "pending": [
+    "Own proposed two dependency links not created by author",
+    "Module import/driver syntax/types/PG/Chrome not executed",
+    "No permitted one-shot gate exists"
+  ],
+  "reporterFailure": "An earlier source-only formatter called .keys() on the authority JSON array after backend binding had already been written. AttributeError retained here; no application operation occurred."
+}

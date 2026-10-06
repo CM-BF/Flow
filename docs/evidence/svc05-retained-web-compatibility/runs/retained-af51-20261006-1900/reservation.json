@@ -1,0 +1,44 @@
+{
+  "gate": {
+    "kind": "flow-svc05r01-once",
+    "run": "retained-af51-20261006-1900",
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifactIds": [
+      "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+    ],
+    "sourceDigest": "984aff592623b350df3d53d6aff115994a6cb4a49775f1216aba2626fa05e71d",
+    "approvalId": "svc05r01-retained-af51-20261006-1859",
+    "expiresAt": "2026-10-06T19:09:00Z",
+    "workMs": 90000,
+    "cleanupMs": 20000,
+    "minimumFreeBytes": 1207959552
+  },
+  "sources": {
+    "files": [
+      {
+        "path": "experiments/personal-current-release/browser.mjs",
+        "bytes": 26731,
+        "sha256": "a8d30e720c1f2c73046f590a28884bc0acaf4f5f8162b0c9c2c282c730109776"
+      },
+      {
+        "path": "experiments/personal-current-release/fixture.mjs",
+        "bytes": 12523,
+        "sha256": "6887416a82758579fb87885911a2710a8131ca847cd665de850f283e6771023a"
+      },
+      {
+        "path": "experiments/personal-current-release/inventory.mjs",
+        "bytes": 5165,
+        "sha256": "7cd7d4bf63b964becae3af7e0cc06be75d42f7ab8311cbd22614c2e822ea5e46"
+      },
+      {
+        "path": "experiments/personal-current-release/transport.mjs",
+        "bytes": 8743,
+        "sha256": "fb1d6cc892c6377b5b66bded4d1f1bd8ccd4968083a272312e3f489888a4d1aa"
+      }
+    ],
+    "digest": "984aff592623b350df3d53d6aff115994a6cb4a49775f1216aba2626fa05e71d"
+  },
+  "startedAt": "2026-10-06T19:01:10.897Z",
+  "state": "one-shot-reserved"
+}

@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T19:26:04.553201+00:00",
+  "state": "DIAGNOSED_DAEMON_STOPPED",
+  "observations": {
+    "at191929FreeBytes": 828592128,
+    "at1924FreeBytes": 1250004992,
+    "dockerSocket": "absent",
+    "orbctlStatus": "Stopped",
+    "port55432": "no listener",
+    "orbStackGuiPid": 6713
+  },
+  "cause": "unknown",
+  "candidates": [
+    "task-read-projections",
+    "protocol-payload"
+  ],
+  "candidateDecision": "KEEP: fresh ledger unreachable, shared volume already above previous preparation target",
+  "mutation": {
+    "sparse": 0,
+    "containers": 0,
+    "volumes": 0,
+    "personalServices": 0
+  },
+  "localChecks": "R01 9 pure / O16 1 pure / DPERF direct consumer previously NOT_RUN at resource gate; may use fresh original gates after explicit sequencing",
+  "knownContainer": {
+    "idPrefix": "2c45767d4802",
+    "name": "flow-f00-postgres-1",
+    "image": "postgres:16.13-alpine",
+    "port": "127.0.0.1:55432->5432",
+    "source": "buildkit-exact/preflight.json"
+  },
+  "next": "Restore existing daemon using installed CLI; verify same container and volume before any container action. Never recreate/reset/remove."
+}

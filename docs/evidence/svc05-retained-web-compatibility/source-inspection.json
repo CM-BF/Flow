@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-06T18:55:26.649467+00:00",
+  "target": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "kind": "author static source/read checks, not independent approval",
+  "checks": {
+    "currentVsFixedSource": "4 files equal",
+    "backendVsAf51": "487 files equal, 25 SQL files; 23 migration read callers names present",
+    "retainedAssets": "2 manifests + 20 asset hashes match authority; no artifact write",
+    "dependencyLinks": "2 manifests/entries verified; 2 authorized own symlinks; require.resolve only",
+    "diffWhitespace": "git diff --check exit0; no stdout"
+  },
+  "noAppImport": true,
+  "runtimeChecks": "NOT_RUN",
+  "toolTranscriptions": [
+    {
+      "chunkId": "841197",
+      "exitCode": 0,
+      "stdout": "{'created': 2, 'donorWrites': 0}\n{\"resolved\":2,\"imported\":0}"
+    },
+    {
+      "chunkId": "6361c9",
+      "exitCode": 0,
+      "stdout": "{'backendFiles': 487, 'sqls': 25, 'callers': 23, 'missingSql': [], 'assets': [{'label': 'retained-0', 'count': 11, 'match': True}, {'label': 'retained-1', 'count': 11, 'match': True}]}"
+    }
+  ],
+  "preFreezeFindings": [
+    {
+      "finding": "PG observer could return a late zero after its advertised deadline",
+      "change": "remaining query_timeout plus pool wait race, explicit late-response unknown"
+    },
+    {
+      "finding": "200ms sampling missed final output/Chrome-exit writes",
+      "change": "final sample after group stop, before irreversible cleanup; merge minimum/peaks"
+    },
+    {
+      "finding": "allocation reservation failure could lose in-memory tmp identity",
+      "change": "assign returned identity before durable reservation and before DB create"
+    },
+    {
+      "finding": "context close exception could skip wire preservation",
+      "change": "wire save in inner finally"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "sourcePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dperf05-utc-source-request.json",
+  "sourceFileSha256": "533ab819a342327a96a8799fd7bdd5c06f540cce47cf4cf3e4cb02d4f9035e74",
+  "reportedProductEvidence": {
+    "source": "GO via root, not manager resampling",
+    "at": "2026-10-06T18:35:38.966Z",
+    "surface": "4320/api/snapshot",
+    "tasks": [
+      "TUI-001",
+      "COST-001",
+      "MATURE02"
+    ],
+    "facts": "source.live/human.complete true while stale/unknown; UTC parser rejects fractional+00:00; MATURE02temporaryZ workaround reported",
+    "examples": [
+      "2026-10-06T16:10:36.850746+00:00",
+      "2026-10-06T14:35:06.228081+00:00"
+    ]
+  },
+  "ownerProductSamples": 0
+}

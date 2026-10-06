@@ -1,0 +1,134 @@
+{
+  "at": "2026-10-06T19:15:51.874168+00:00",
+  "verdict": "APPROVED_SCOPED_PARSER_SOURCE_AND_62_RUNTIME_EVIDENCE",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "runtimeMetadataHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+  "claim": {
+    "id": "9a876001-611c-4f79-819f-2284c04d8f61",
+    "version": 1,
+    "scopeCount": 4,
+    "worker": "workspace_panels_owner"
+  },
+  "blockingFindings": [],
+  "execution": {
+    "startedAt": "2026-10-06T19:14:51.981149+00:00",
+    "finishedAt": "2026-10-06T19:14:52.182116+00:00",
+    "resultElapsedMs": 201,
+    "actualPostWriteElapsedMs": 201.40412508044392,
+    "nodeReportedMs": 64.536708,
+    "previousRuntimeMs": 0,
+    "resultCumulativeMs": 201,
+    "remainingBudgetMeaning": "14799ms is arithmetic from pre-write rounded result, not permission to retry; actual post-write201.404125ms retained separately.",
+    "command": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/dperf05-node-once-iozl0vgo/sandbox.sb",
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "--test-concurrency=1",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs"
+    ],
+    "tests": {
+      "tests": 62,
+      "pass": 62,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "expectedTests": 62
+    },
+    "zeroSkipped": true,
+    "pgid": 22632,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "basis": "Only the owned sandbox/Node process group and own scratch; no service/database created"
+    },
+    "postReapBeforeRemoval": {
+      "groupAbsent": true,
+      "tmpBytes": 73166,
+      "freeBytes": 1492017152
+    },
+    "postWrite": {
+      "tmpBytes": 75618,
+      "rawBytes": 21103,
+      "resultBytes": 2452,
+      "elapsedMs": 201.40412508044392,
+      "withinLimits": true
+    },
+    "freeBytesObservedMin": 1492017152
+  },
+  "audit": [
+    "Root read report, parent stdout, TAP and approved8256 runner. Atomic consumed gate equals manager fresh gate, not expired at start. Runner/binding/sandbox/claim/source/limits match independent review.",
+    "Two source hashes equal fixedc8d and current bytes. Exactly62 top-level ok lines with1..62, totals62 pass and0fail/cancel/skip/todo; log12471B and dropped0.",
+    "Owned sandbox/Node group22632 absence and scratch removal were observed by supervisor; root confirms scratch remains absent. No second runtime or process signal performed for review.",
+    "Post-reap terminal size/free and actual post-write output meet reviewed bounds. Parent source permits no network or project writes. Source graph imports only parser/helper boundaries, no PG/HTTP/Chrome service started.",
+    "Prior root P2 on first-update selection was fixed atc8d;62 runtime cases include primary-invalid/main-later and identifier prefix regressions."
+  ],
+  "acceptanceLimits": [
+    "Only parseStatus pure behavior accepted. Existing real aggregate malformed/duplicate/stale/future test and equivalent fraction/+00:00 actual consumer check remain integration responsibility; no copied aging formula proof.",
+    "No source registry/main integration/deployment/UI/screenshot proof in this run. Lead retains actual TUI-001,COST-001,WPF-MATURE-02 freshness after operator deployment; genuinely old status still stays stale.",
+    "Filesystem sampling is observed logical usage rather than an OS quota; no rerun justified by unused budget."
+  ],
+  "handoff": [
+    "Owner may archive unchanged raw and independent reviews, update its unique plan/status/review and clean-code record in one metadata seal, push clean source-c8d branch.",
+    "Manager canonical should mark parser62 verified/scoped review approved and integration pending, link unique owner status; no duplicate hand-written progress."
+  ],
+  "files": [
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/result.json",
+      "bytes": 2452,
+      "sha256": "abcbaa15e847f6eaf4ca99e773a9c95155ee68feadae09670ccb5d569bb39d22"
+    },
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/node.log",
+      "bytes": 12471,
+      "sha256": "4b9a3f306e07e4ce095840c7807ffccbc26353895ff448659e38f2f22762a76c"
+    },
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/run.py",
+      "bytes": 18871,
+      "sha256": "8256f6b911627348288b43d4deeb040dde6ee073d6d209a3757e2d05b8120963"
+    },
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/binding.json",
+      "bytes": 2394,
+      "sha256": "28564373a20a4a0a14b63c87002dbba35a0a12ec6bda445b2c42b0b41c3ad8c3"
+    },
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/sandbox.sb",
+      "bytes": 165,
+      "sha256": "b57921a64f44becdbf6ad98cd03b654a5528ba8e12cf19e71255e6f3064efc67"
+    },
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/consumed-gate.json",
+      "bytes": 973,
+      "sha256": "281ca79cca167c49d0d9426a9a2ef56e7a1018bfbcb5e1099d672559cb0923c0"
+    },
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/preparation.json",
+      "bytes": 2813,
+      "sha256": "b61540e0dc09f95ba6683976c80895bc6369f8d1567e9d15d255d655267c3c53"
+    },
+    {
+      "path": "/private/tmp/d01-dperf05-node-gate.json",
+      "bytes": 973,
+      "sha256": "281ca79cca167c49d0d9426a9a2ef56e7a1018bfbcb5e1099d672559cb0923c0"
+    },
+    {
+      "path": "/private/tmp/dperf05-node-parent-stdout.jsonl",
+      "bytes": 446,
+      "sha256": "6026942cf0dc26ad4f7c3fd12c15c2a473c0003084f527522669eb91ab3155b3"
+    }
+  ],
+  "cleanCode": {
+    "scope": "Parser exact current source + runner lifecycle + actual evidence classification",
+    "findingsFixed": "Primary timestamp misselection source P2 and terminal resource accounting supervisor gap already fixed and independently reviewed.",
+    "newBlocking": 0,
+    "noRuntimeRepeated": true
+  }
+}

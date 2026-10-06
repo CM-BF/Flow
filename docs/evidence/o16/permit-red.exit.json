@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "experiments/continuous-goal-acceptance/permit.test.mjs"
+  ],
+  "exitCode": 1,
+  "seconds": 0.09601266600657254,
+  "freeBeforeBytes": 1654894592,
+  "stdoutSha256": "866011c7944d4264ea3f3e1d0ca22e475329eeb89cffce9c2fdcce2a338364d4",
+  "boundary": "Expected missing-module red; test bodies not run; 0PG/provider"
+}

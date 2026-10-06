@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-06T19:26:36.057874+00:00",
+  "Id": "2c45767d48024581ca5c320b1dbeb3ecf0e37d5ac4333d114d008e66d93584d0",
+  "Name": "/flow-f00-postgres-1",
+  "Created": "2026-10-06T00:47:24.182121125Z",
+  "Image": "sha256:d394728dee24b7791f1969c683f8b8410fe57450713a1db2aff5a500f0f98ab0",
+  "State": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 255,
+    "Error": "",
+    "StartedAt": "2026-10-06T00:47:24.757179546Z",
+    "FinishedAt": "2026-10-06T19:26:07.632796334Z",
+    "Health": {
+      "Status": "starting",
+      "FailingStreak": 0,
+      "Log": []
+    }
+  },
+  "Mounts": [
+    {
+      "Type": "volume",
+      "Name": "flow-f00_flow-postgres",
+      "Source": "/var/lib/docker/volumes/flow-f00_flow-postgres/_data",
+      "Destination": "/var/lib/postgresql/data",
+      "Driver": "local",
+      "Mode": "rw",
+      "RW": true,
+      "Propagation": ""
+    }
+  ],
+  "RestartPolicy": {
+    "Name": "no",
+    "MaximumRetryCount": 0
+  },
+  "PortBindings": {
+    "5432/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "55432"
+      }
+    ]
+  },
+  "Labels": {
+    "com.docker.compose.config-hash": "2d2a8e3baca8a689de7204d77e1a83874b0586a6297053613a29b8bd34eb0af0",
+    "com.docker.compose.container-number": "1",
+    "com.docker.compose.depends_on": "",
+    "com.docker.compose.image": "sha256:d394728dee24b7791f1969c683f8b8410fe57450713a1db2aff5a500f0f98ab0",
+    "com.docker.compose.oneoff": "False",
+    "com.docker.compose.project": "flow-f00",
+    "com.docker.compose.project.config_files": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-foundation/compose.yaml",
+    "com.docker.compose.project.working_dir": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-foundation",
+    "com.docker.compose.service": "postgres",
+    "com.docker.compose.version": "5.1.2"
+  }
+}

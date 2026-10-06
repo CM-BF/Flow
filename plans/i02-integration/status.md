@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:57 UTC / main77132408 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:33 UTC / main22a0806b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main77132408；本批登记更新时间修复来源与原文后继，接准备限定独审，无产品变化 |
+| 工作基线 / HEAD | main22a0806b；本批接收保留页面/连续目标已审准备工具与运行边界，产品运行版本保持 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
-| 工作分支状态 | completed |
+| 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main77132408已含恢复记录/172来源；本批173来源登记候选，个人runtime362/v15与Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main22a0806b已登记173来源；本批候选尚未发布。个人原source362/v15，Web8d8/v2，中心退出正恢复 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 流式正文校验减少重复处理，保持既有正文与回放结果；完整计划确认已可通过命令行操作。 |
-| 下一可用交付 | Web消息设置与O16准备并行；当前网页已恢复，新版发布继续补齐保留页面兼容。 |
-| 当前阻塞 | ACTIVE: 固定后端大型构建仍缺空间；个人更新等待保留网页组合证据。 |
+| 当前产出 | 看板时间解析修复及兼容验证工具的局部修复已审，待当前服务恢复窗口关闭后发布。 |
+| 下一可用交付 | 先恢复现有中心，再发布已审小片并继续页面兼容和完整目标验收。 |
+| 当前阻塞 | ACTIVE: 当前中心进程已退出，同版本恢复准备中；主线暂不移动。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -227,3 +227,7 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T18:43:03.221Z实际172源回执与18:43:26固定S01输入供给进入本批；无产品源码/检查新增。上一18:44为管理手填标签，不是执行时钟；实际时间沿原始Git与操作证据。
 
 2026-10-06 18:57 UTC：新增DPERF05已领source，registry173/parser0errors。R01四源码和552绑定独审仅准备APPROVED；实际两App兼容待共享窗口，现MessageSettings先运行。FLOW工具原文ready与OPS精确source/窗口归档按权威提交同步；7绑定同源。无工程重测/provider/个人变更。
+
+2026-10-06T19:13:50.895805+00:00：本批只受控接收已审R01固定准备与依赖修复、O16有界监督准备，以及OPS/D05权威记录。精确scope逐文件同输入，见[准备接收](../../docs/evidence/i02/retained-goal-preparation-integration.json)。R01首红完整保留，新兼容窗口已独立分配；O16实际PG未运行/无原生许可。未重跑既有检查，个人服务与用户tab未变。
+
+2026-10-06 19:33 UTC：DPERF05已审两源逐字接入候选，实际aggregate直接消费者1/1（330.54ms/外层506ms）通过并清理，无重复62项。R01有界采样与双异常保留九纯例已独审/通过，原两个PG/Chrome红保留、真实兼容未证；O16纯CAS增量源审通过、一次局部执行待收口，旧PG红与KEEP原样。个人同版本中心恢复优先，main22a保持；未将准备工具当真实产品验收。

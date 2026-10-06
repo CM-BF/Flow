@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T19:31:18.427308+00:00",
+  "state": "STOP_PREPARATION_MARGIN_REACHED_NO_MUTATION",
+  "allowedCandidates": [
+    "task-read-projections",
+    "protocol-payload"
+  ],
+  "operated": [],
+  "freshClaims": "released after same PG restored; 19:26:57 ledger",
+  "aliasSupplement": "44 broken package aliases resolve lexically, no candidate touches; all deps kept",
+  "freeBytes": 1436569600,
+  "stopAtBytes": 1241513984,
+  "sourceOfFreeChange": "unknown shared volume; no cleanup claimed",
+  "inputs": [
+    {
+      "path": "flow-next4c-reopen-audit.json",
+      "bytes": 154202,
+      "sha256": "8a959b8cc4f7654c4151b11a32cdc323692e7993245bf8559362f6e410deffcc"
+    },
+    {
+      "path": "flow-next4c-broken-links-resolution.json",
+      "bytes": 61963,
+      "sha256": "965fdb95c40cde8d37aa5100cc6dd7be590bd9a31845287fe276f391119575a5"
+    },
+    {
+      "path": "flow-r01-owned-chrome-crash-metadata.json",
+      "bytes": 9518,
+      "sha256": "2e2d22b20657662e0de0d562aae8ab52714cf8b563a79a1de1f0470e42b640ec"
+    }
+  ],
+  "next": "Same-version personal center recovery priority; no new PG/Chrome load during restore"
+}

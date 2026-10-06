@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T18:25:28.210578+00:00",
+  "inputSha256": "bf9a7b3d123f862e3de00d51e410009a5875715ebb478b0e572b2d1b2c4020e8",
+  "classification": "prepared-product-closure-only; actual future O16 driver closure still pending",
+  "sources": 223,
+  "externalSQL": 30,
+  "SQLBoundary": "002,004..032;001/003 inline in database.ts. Both dynamic tuple arrays included.",
+  "packages": 21,
+  "configs": 10,
+  "scannerFalsePositive": [
+    {
+      "from": "experiments/native-graph-acceptance/driver.mjs:121",
+      "captured": ", ",
+      "reason": "--import in spawn argv is a quoted Node flag, not a module import; actual tsx package entry exists."
+    }
+  ],
+  "unresolvedPreparedResources": [],
+  "runtimeInputs": [
+    "New O16 worker/config/journals must be added and checked before actual entry",
+    "O08 run() is not invoked; only existing stopWorker export is planned for reuse",
+    "Runner material snapshots/outbox/journals and plugin store paths are runtime-owned; package-fetch host absent from default experiment options, no registry/network setup",
+    "No test fixture body or provider probe executed"
+  ],
+  "boundary": "Static regex/declaration check plus narrow source review, not dynamic execution or proof every possible configuration is supported. No imports/tests/PG/provider."
+}

@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06T18:36:37.796877+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "experiments/continuous-goal-acceptance/query-run.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.414852749905549,
+  "freeBeforeBytes": 1693102080,
+  "stdoutBytes": 424,
+  "stdoutSha256": "225d08a1edfafefbbe71275356c4ce23f889bf62d0f97ec03b3a6ea3973393ee",
+  "providerCalls": 0,
+  "pg": 0
+}

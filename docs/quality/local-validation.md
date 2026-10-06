@@ -34,3 +34,9 @@
 TUI01F与Recovery已遇到pool.end后单次查询的收尾问题；attachment-integration fixture的同类模式目前只是静态风险，不冒称已有失败。固定pg8.23.1→pg-pool3.14.0会先从本地clients移除再异步client.end，await pool.end不能当远端pg_stat_activity零连接的同步屏障；这不证明某一次unknown的根因。
 
 当前固定旅程先收口。后继由独立owner在合法scope检查已有TUI45709c的observeConnections小接口（query/clock可注入），按两个实际消费者决定是否提取test-only共用模块。它只观察有界zero/busy/unknown，不拥有数据库删除权限、资源归属或完整supervisor。新检查复用；不迁移全部fixtures、不造新平台、保留原失败证据。只对直接消费者做必要验证，排在F01/hash/RELEASE解阻之后。
+
+## 固定依赖视图的实际加载（2026-10-06 19:13:01 UTC）
+
+R01 首次隔离旅程在真实 center 已启动后，runner 的 outbox 导入 @flow/client 失败；0 页面报告，清理完成。原 backend-dependency-view-input 仅列 contracts，静态manifest不能证明所有实际工厂入口可加载。保持固定 af51 源和原失败后，只补同树 client 与已装固定 SDK 两个 ignored alias；对实际 center/runner 的四个入口先只导入并核 export，未调用 createServer/runRunner/query，1002ms exit0、0PG/Chrome/provider。正式页面兼容仍需下一原旅程，不由此取代。
+
+后续仅在已核顶层无启动副作用的入口做廉价加载检查；使用正式执行的相同依赖视图，包入口与动态资源分别核。失败给具体缺件和合法 owner 处理，不生成通用依赖扫描器、不自动安装或借移动主线 workspace alias。额外探针也保持有界输出、时间和自有资源清理，不把导入等同于产品或原生模型验收。

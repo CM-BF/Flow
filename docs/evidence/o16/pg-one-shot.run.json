@@ -1,0 +1,24 @@
+{
+  "window": "o16-pg-20261006-1914",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--rehearse"
+  ],
+  "source": "e9319eda0189e878035c2115b9f050f35e130145",
+  "startedAt": "2026-10-06T19:15:18.907062+00:00",
+  "freeBytesBefore": 1489960960,
+  "provider": 0,
+  "query": 0,
+  "automaticRetry": false,
+  "operatorPid": 41066,
+  "exitCode": 1,
+  "elapsedMs": 9856,
+  "finishedAt": "2026-10-06T19:15:28.747060+00:00",
+  "freeBytesAfter": 1464918016,
+  "outerRawBytes": 258,
+  "stdoutSha256": "e691218ccaffe23135afa25986f6cf8c8eb92a4c33f66098603ba54723076a0d",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:56 UTC / main77132408 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:26 UTC / main22a0806b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,8 +19,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
 | 当前产出 | 逐消息设置、终端控制与完整目标输入接线已进入主线；新版网页的发送和恢复兼容验证已通过。 |
-| 下一可用交付 | Web消息设置与O16继续独立实施；同版本网页恢复已完成，下一补齐保留页面兼容。 |
-| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；个人新版发布等保留页面兼容；同版本Web恢复已完成。小验证由两lead串行安排。 |
+| 下一可用交付 | 恢复既有容器运行环境；局部修复按现有门槛验证，再继续页面兼容与完整目标验收。 |
+| 当前阻塞 | ACTIVE: 原数据库与领取账本已恢复；磁盘仍不足PG/浏览器窗口。个人中心端口未监听，正在只读核对同版本恢复入口；未重启个人服务。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -221,3 +221,21 @@ Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 
 2026-10-06 18:56 UTC：共享PG/Chrome窗口交已审MessageSettings浏览器一次60s（含15s清理），原资源门槛、0PG/provider且不重复37项。R01 source25b已固定而manifest刚交，O16正在补外层监督；两项准备不占运行窗口。明确区分准备队列与已审可运行队列，空闲时先给已ready项；Web完整cleanup或NOT_RUN归还后，R01独审同源完成即下一位。DPERF05 edd4/9a876v1已核并登记173候选，本批发布；工具完整原文后继沿CHAT05-06排ready，未领产品scope。
 
 文档时间校正：上一管理提交手填的18:57/19:03为误标，实际时钟18:56:41已核，本次改为18:56；Git提交时间与原始运行回执仍为权威，未改任何运行事实。
+
+2026-10-06 18:59 UTC：Web MessageSettings 18:58:58明确归还；一次浏览器5176ms、Chrome在CDP准备前退出，0行为检查，cleanup组/fixture/tmp已确认，无重试。R01 25b/9b79准备独审4源+552绑定通过，已转唯一一次af51＋两保留App隔离窗口（90s工作/20s清理，原fresh/live资源界、0provider/个人操作）；由assignment_review先fresh后执行，未知止步不换参数。O16仅监督源码修复，不并行PG。准备队列与实际运行holder分开。
+
+2026-10-06 19:10:54 UTC：R01首次隔离运行2927ms/exit1，0页面报告，固定af51 runner缺@flow/client；marker匹配、自有DB正常DROP、进程组/端口/tmp清理已核，19:01:13窗口归还。原红封存，不冒充页面兼容失败。仅补own固定client与已装SDK两ignored links，四个实际center/runner入口的import-only exit0/1002ms、0PG/Chrome/provider，等待固定增量证据独审。O16监督准备已审：独立watchdog三项通过，实际PG尚未授权。共享重运行窗口无holder，Web修复就绪可按ready-first请求，不为准备项预占。
+
+2026-10-06 19:18:11 UTC：R01第二次14,885ms仍0完整App，临时admission.json.tmp原子rename与lstat竞态触发stopWork；实际首页面正文超时另存，不能推断全部Preview错误仅由清理造成。Chrome/CDP已真实启动，自有组/端口/DB/tmp均已清理，累计17,812/90,000ms（保守扣整次elapsed），剩余不是重试许可。原四源只做有界重采及原异常/cleanup分离的0PG局部修复。
+
+O16单次0query PG 19:15:18→19:15:28.747，1selected/0pass；规划→确认→两个依赖children执行后，独立accept返回rejected。固定调用把CAS当前已接受ID误填本次待接受ID；已存accepted=null，具体HTTP code未保存仅可源码推断。5PID/3PGID已gone、中心关闭且connections[]，13,294,615B标记专库及同devino30,872B目录明确KEEP，不算cleanup全删除。原raw封存，先纯局部修驱动，不复投原run。窗口已归还并条件交已ready Settings-next-1916一次剩余原预算；R01/O16准备不占holder。
+
+## 2026-10-06 19:26 UTC 运行环境与资源
+
+19:19共享卷降至828,592,128B，R01九纯例、O16单纯例及DPERF聚合消费者均在启动前NOT_RUN，未创建测试进程或目录。19:24只读观察回到1,250,004,992B，原因未知，不归因清理。GO重新开放的两候选均clean且已有固定输入，但fresh领取查询ECONNREFUSED；达到原准备线且领取未知，因此保持原样，未执行稀疏。
+
+故障现定位为OrbStack状态Stopped、Docker socket不存在、55432无监听；不能推断PG数据损坏。已知原容器2c45767d4802/flow-f00-postgres-1与数据卷必须保留。仅恢复已有daemon并核原身份，禁止重建/删卷/全局清理。原Chrome失败与O16 KEEP库、两次R01失败证据不改；详情见[运行环境核对](../../docs/quality/resource-space-2026-10-06/daemon-recovery/preflight.json)。新PG/Chrome仍暂停，局部无PG检查只按已有门槛fresh准入，不要求GO逐条再批准。
+
+2026-10-06 19:27 UTC：OrbStack一次start返回VM启动timeout，但后续实际Running，未盲重试。原容器2c45767d4802仍是原image/volume/ports，状态exited255/restart=no；核对后仅start该完整ID一次，19:26:58 healthy、55432恢复、协调list成功。未重建/删容器/卷。其它原有autostart容器由daemon恢复；本operator未逐项操作。实际free1,089,486,848B，不把此前1.25GB当当前准入。R01九纯例已通过并清理；个人Web23631仍监听61228，旧center64904消失/61227无监听，runner wrapper65168仍存活；实际子进程及原恢复入口只读核对中。
+
+2026-10-06 19:34 UTC：原两候选在fresh领取恢复后均released，44个已知broken依赖入口补核非严格目标，0条触拟收起历史副本；19:31实际free1,436,569,600B重新过准备线，因此本次0/2操作即停止。未删除crash/core/donor，也未将未知共享卷回升归因清理。[候选停止回执](../../docs/quality/resource-space-2026-10-06/daemon-recovery/candidate-stop.json)。个人中心恢复优先于新PG/Chrome：原center已退出而runner/web保持，只准备固定362的现有受管组件单中心组合；不调用会全角色启动的入口、不改发布指针。

@@ -1,0 +1,17 @@
+✔ one real enumerate→atomic rename gets a bounded fresh sample (5.643958ms)
+✔ persistent enumerated-child churn is unknown after at most two resamples (1.586416ms)
+✔ root inode replacement after a child vanishes is unknown (0.885167ms)
+✔ missing root and permission errors are not treated as transient children (0.743166ms)
+✔ root disappearance and nested directory read disappearance stay unknown (2.070709ms)
+✔ leaf links count only their own bytes; root links and directory swaps are unknown (1.877917ms)
+✔ file-count budget is cumulative across retries and path traversal is refused (0.784292ms)
+✔ a late response is unknown within the one shared sampling deadline (251.602833ms)
+✔ earliest page failure and later cleanup failure retain separate identities (0.541458ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 361.654209

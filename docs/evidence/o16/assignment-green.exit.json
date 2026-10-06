@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "experiments/continuous-goal-acceptance/assignment.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.08896104095038027,
+  "freeBeforeBytes": 1620254720,
+  "stdoutSha256": "9e79db121a9bfc9009406002eeda268bc3b6ef6bd847e9547311afb2dfa27a3a",
+  "sourceHashes": {
+    "experiments/continuous-goal-acceptance/assignment.mjs": "ef2f38123896adca4862a9951a8b20750c13caf49eeb05ada558a4fde7e18cfe",
+    "experiments/continuous-goal-acceptance/assignment.test.mjs": "4402b4394f4b5a22aadd402bc131111af55bacd5423a4bb8638d9155ec6462db"
+  },
+  "boundary": "Two new pure checks only; permit5 not rerun; 0SDK/PG/provider"
+}

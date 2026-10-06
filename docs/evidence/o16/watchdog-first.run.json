@@ -1,0 +1,41 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "experiments/continuous-goal-acceptance/operator-watchdog.test.mjs"
+  ],
+  "exitCode": 0,
+  "elapsedMs": 2017,
+  "freeBytesBefore": 1514835968,
+  "rawBytes": 462,
+  "provider": 0,
+  "postgres": 0,
+  "sourceBindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "bytes": 2882,
+      "sha256": "39e1ce5e1eaa1e06a1d746abe0030e90a7d8131081a042b88d4c09efa12fb216"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "bytes": 9802,
+      "sha256": "a780db267d687ffb7a790e1150c808b0eefbda0e6635417d217cab133886d318"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.test.mjs",
+      "bytes": 4713,
+      "sha256": "1c92e622a347cbdd6eb98448fae74799914bb29e59b02631d8688f6be44c5e3f"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "bytes": 6215,
+      "sha256": "a435b00561da788baf954a4e82f279f8869c65bfc38fae9ab00e571b977ee410"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.test.mjs",
+      "bytes": 2198,
+      "sha256": "3b868f40a083bdbe14bc498c1aa67db98bf4c2350d00c24dc249523b7bd55998"
+    }
+  ]
+}

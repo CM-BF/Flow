@@ -1,0 +1,12 @@
+✔ permits are finite, phase-specific and bound to source plus actual confirmation (3.099875ms)
+✔ reservation consumes approval before any query and a moved output cannot replay it (29.970125ms)
+✔ children slots require distinct actual tasks and a restart never consumes a slot twice (36.471959ms)
+✔ partial or modified phase records fail closed before slot reservation (11.731834ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 130.38275

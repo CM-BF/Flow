@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T19:13:28.623562+00:00",
+  "verdict": "APPROVED_SUPERVISOR_SOURCE_NOT_RUN",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "metadataHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+  "runnerSha256": "8256f6b911627348288b43d4deeb040dde6ee073d6d209a3757e2d05b8120963",
+  "bindingSha256": "28564373a20a4a0a14b63c87002dbba35a0a12ec6bda445b2c42b0b41c3ad8c3",
+  "sandboxSha256": "b57921a64f44becdbf6ad98cd03b654a5528ba8e12cf19e71255e6f3064efc67",
+  "blockingFindings": [],
+  "scope": [
+    "Read complete run.py and binding/sandbox; compare previous62fe and retained DPERF04 source. AST only, no runner/product import or execution, no fresh free-space admission measurement.",
+    "Verify preparation6files, fixed2sources+4helpers+rootpackage and Git-object-only2manifests; current7311/branch/clean. Sparse manifests are read as Git blobs, not materialized.",
+    "Expected62 source cases approved independently at c8d; command exactly Node --test --test-reporter=tap --test-concurrency=1 apps/execution-dashboard/test/status-timestamps.test.mjs. Pure parser dependency graph has no executable Git/PG/HTTP/browser startup."
+  ],
+  "cleanupFixesAccepted": [
+    "reap_owned no longer deletes scratch. Only confirmed owned group absence allows authoritative size/free observation followed by deletion. Alive/unknown group keeps scratch and fails.",
+    "Observation exceptions fail closed while permitting safe deletion after confirmed process absence. Final actual report/raw/tmp/time checked after write, bounded one failure rewrite and terminal stdout result preserve post-write facts."
+  ],
+  "admission": [
+    "Manager fresh 9a876001-611c-4f79-819f-2284c04d8f61 v1/four scopes/no overlap, exact fixed source/HEAD/branch/clean, Node identity and current free thresholds.",
+    "One unique external gate binds exact runner/binding/sandbox/claim/head/limits, previousRuntimeMs0; consume atomically, no automatic retry. No shared browser window needed for this pure run.",
+    "Total15s includes5s cleanup;2MiB observed tmp/512KiB raw, reserved64KiB report; start1090519040/stop1082130432 bytes. Preserve actual post-write stdout with result and TAP raw."
+  ],
+  "passConditions": [
+    "Actual Node exit0, TAP tests=pass=62 and fail/cancelled/skipped/todo0. No observed log drop, no supervision/resource/finalization failure, owned group absent and scratch absent.",
+    "Report type remains pure parser only; no aggregate aging, source registry, deployment, real dashboard or browser proof."
+  ],
+  "remainingLimitations": [
+    "Polling and filesystem operations are observed bounds, not an OS quota or preemptible hard deadline.",
+    "Runtime and sandbox have not run; exact stdout post-write elapsed may exceed report elapsed by final writing cost and must be retained rather than silently rounded away.",
+    "No independent full feature review or main integration claimed."
+  ],
+  "skills": {
+    "find-skills": "Reused installed local relevant skills, no install/update.",
+    "clean-code": "Reviewed single ownership, precise error handling, cleanup ordering and unnecessary complexity; fixed observed cleanup gap only.",
+    "webapp-testing": "Applied process ownership and separation of static review vs actual runtime proof."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-e",
+    "const {sourceIdentity}=await import('./experiments/continuous-goal-acceptance/identity.mjs'); const x=await sourceIdentity(); console.log(JSON.stringify({digest:x.digest,files:x.files.length,dependencies:x.dependencies.length,base:x.base}));"
+  ],
+  "source": "e9319eda0189e878035c2115b9f050f35e130145",
+  "exitCode": 0,
+  "elapsedMs": 361,
+  "freeBytesBefore": 1507749888,
+  "readinessOnly": true,
+  "pg": 0,
+  "provider": 0
+}

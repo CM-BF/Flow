@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-06T19:10:54.072611+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "e9319eda0189e878035c2115b9f050f35e130145",
+  "delivery": "4fa753685b8836149b449cc61c6cbf531c5e18ae",
+  "base": "8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974",
+  "manifestSha256": "e2d7e90caa6a212e01e04144e3cdcd2ad883dc3cea769023dee7ff28a7e90c4c",
+  "sourceDigest": "af58df30aba1deb4760fafb631d1402ae240788b8e1a973ea122df906ca480eb",
+  "conclusion": "APPROVED_ZERO_QUERY_PREPARATION",
+  "verifiedBindings": {
+    "source": 27,
+    "protected": 263,
+    "evidence": 74
+  },
+  "findings": [],
+  "closedFindings": [
+    "Aggregate wall/bytes/cleanup bounds now enforced by operator; cleanup checks live/final resource facts, not only declaration.",
+    "Separate Node watchdog starts before test, remains armed after completion ACK until real parent exit, bounds hanging persistence and a blocked parent event loop."
+  ],
+  "reviewedBehavior": [
+    "Prior complete source review retained; full changed operator/bounds/resources/driver/phase-host/journey and independent watchdog/tests read.",
+    "Watchdog signals registered owned groups and current parent before async final persistence; writes unknown and retains DB/tmp. Completed report does not disarm timer.",
+    "Durable reservation and decision evidence precede irreversible cleanup; marker/dev-ino/zero connections and process groups remain mandatory.",
+    "Actual dynamic entry/30 SQL/21 package/10 configuration input audit reviewed. A static manifest is not a successful PG journey."
+  ],
+  "evidence": {
+    "distinctChecks": 25,
+    "decomposition": "19 original + 3 operator + 3 independent watchdog, separate runs",
+    "watchdog": "3/3, exit0, 2017ms; hung persistence, complete-then-block, normal exit",
+    "assembly": "affected module imports and identity exit0, not typecheck",
+    "newReviewerTests": 0,
+    "postgres": 0,
+    "provider": 0
+  },
+  "limitations": [
+    "Source preparation approval only; actual one-shot public HTTP/PG journey not yet run.",
+    "Watchdog covers registered owned groups, not escaped processes or OS containment.",
+    "No model permit, no personal service mutation, no reuse of sealed native budgets.",
+    "Shared PG window remains separately scheduled ready-first."
+  ]
+}

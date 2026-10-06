@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-06 19:02:04 UTC",
+  "source": "root fixed676b P2, relayed by d01_owner formal source-only dispatch",
+  "reviewedTarget": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
+  "finding": "Missing or slash-form malformed primary update could select later main synchronization timestamp; generic digits-hyphen also rejects a valid explanatory task ID prefix.",
+  "requestedRepair": "Separate the primary update from main synchronization; preserve descriptive prefixes/backticks and add actual parser behavior cases.",
+  "formalRootReport": "not yet received at this source checkpoint",
+  "runtime": "NOT_RUN; original56 preserved, current62 static cases only"
+}

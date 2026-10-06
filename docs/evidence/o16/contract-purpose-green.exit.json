@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T18:43:27.182813+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "--test-name-pattern=the original adapters",
+    "experiments/continuous-goal-acceptance/contract.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.6457059159874916,
+  "freeBeforeBytes": 1576579072,
+  "stdoutBytes": 244,
+  "stdoutSha256": "28c474052196e057b63bfdf3deac560b69bcd49ed21f9c9d8c6dbdd07e153385",
+  "selected": 1,
+  "unselected": 1,
+  "providerCalls": 0,
+  "pg": 0
+}

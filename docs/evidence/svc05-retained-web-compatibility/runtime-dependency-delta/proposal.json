@@ -1,0 +1,123 @@
+{
+  "at": "2026-10-06T19:04:24.451866+00:00",
+  "state": "PROPOSED_ONLY_NO_LINK_WRITES",
+  "reason": "One sealed attempt ended before Chrome; server-only backend view lacks actual runtime consumer imports",
+  "fixedBackend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "links": [
+    {
+      "from": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/@flow/client",
+      "to": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client",
+      "kind": "own fixed workspace",
+      "package": {
+        "name": "@flow/client",
+        "version": "0.1.0",
+        "exports": "./src/index.ts",
+        "dependencies": {
+          "@flow/contracts": "workspace:*"
+        },
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/package.json",
+        "bytes": 183,
+        "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+      },
+      "entry": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/index.ts",
+        "bytes": 44108,
+        "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+      }
+    },
+    {
+      "from": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/@anthropic-ai/claude-agent-sdk",
+      "to": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "kind": "existing pinned third party",
+      "manifest": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+        "bytes": 2546,
+        "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+      },
+      "entry": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+        "bytes": 1230597,
+        "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2"
+      },
+      "version": "0.3.290"
+    }
+  ],
+  "closure": {
+    "localFiles": 64,
+    "edges": 164,
+    "bareImports": [
+      "@flow/client",
+      "@flow/contracts",
+      "@anthropic-ai/claude-agent-sdk",
+      "zod"
+    ],
+    "alreadyPresent": [
+      "@flow/contracts own af51",
+      "zod4.6.5"
+    ],
+    "noProtocolAliasNeeded": "No runtime value import @flow/protocols reachable from these three fixed entry modules; package manifest dependency alone does not make it an eager consumer.",
+    "sdkPackagePeers": {
+      "@anthropic-ai/sdk": ">=0.93.0",
+      "@modelcontextprotocol/sdk": "^1.29.0",
+      "zod": "^4.0.0"
+    },
+    "sdkOptionalPlatformResources": "Declared optional native binaries belong to query-time SDK operation; no query/native adapter run in this fixture. No optional platform installation proposed.",
+    "sdkTextScan": {
+      "method": "Conservative textual scan; minified SDK contains code-shaped strings, so this is not a parsed module graph.",
+      "recognizedBuiltinSpecifiers": [
+        "async_hooks",
+        "child_process",
+        "crypto",
+        "events",
+        "fs",
+        "fs/promises",
+        "module",
+        "net",
+        "node:fs",
+        "node:module",
+        "node:os",
+        "node:path",
+        "node:process",
+        "os",
+        "path",
+        "readline",
+        "string_decoder",
+        "url",
+        "util"
+      ],
+      "discardedNonSpecifierCandidates": [
+        "${e}",
+        "),headers:W(h(),h()).optional().describe(",
+        "),installLocation:h().describe(",
+        "),installLocation:h().optional().describe(",
+        "+f),p.warn(",
+        "+f)}return oc("
+      ],
+      "queryTimeDynamicResourceBoundary": "Nonliteral SDK/native platform loading is not exercised; nativeQuery remains uncalled."
+    },
+    "sdkPeerPublicEntries": [
+      {
+        "name": "@anthropic-ai/sdk",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+sdk@0.131.0_zod@4.6.5/node_modules/@anthropic-ai/sdk/index.js",
+        "bytes": 4261,
+        "sha256": "bec5a6b24aa1f2411f651158f30df4c0574f51b284217bd8ca6a4230f463f9aa"
+      },
+      {
+        "name": "@modelcontextprotocol/sdk/client/index.js",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@4.6.5/node_modules/@modelcontextprotocol/sdk/dist/cjs/client/index.js",
+        "bytes": 29575,
+        "sha256": "e2f909e827a6e08870b400f44f9e90f9545ef5655d6e10f9cc7d0a91a374af45"
+      },
+      {
+        "name": "zod",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+        "bytes": 2132,
+        "sha256": "d93a8730d52c0fedab13619c8bc971cc99934c13d8dce7c97ee4d03a98d4096e"
+      }
+    ]
+  },
+  "followup": "After explicit two-link approval, one bounded0PG module assembly imports actual runtime/execution-profiles/verifier (and exports types by typeof); does not call runRunner/createServer/query/adapter.run/tool/server constructors. Seal failure without automatic install. No new PG/Chrome until new window.",
+  "productsChanged": false,
+  "donorWrites": false,
+  "noMovingMainWorkspaceAlias": true
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T18:58:35.676287+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "experiments/continuous-goal-acceptance/operator.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.6765910829417408,
+  "freeBeforeBytes": 1540251648,
+  "stdoutBytes": 415,
+  "stdoutSha256": "928bebdf9c878b0b67ab5b47d7480960a39fae210a50c426b9336b44c63fd995",
+  "providerCalls": 0,
+  "pg": 0,
+  "selected": 3,
+  "overlapWithFirst": 3,
+  "ownedNodeStandins": 3,
+  "note": "Direct after timer cleanup; all three groups verified ESRCH. Original19 checks not repeated."
+}

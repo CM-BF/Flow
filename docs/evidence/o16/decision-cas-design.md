@@ -1,0 +1,7 @@
+# O16 CAS consumer correction
+
+固定 source 4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa，相对已审准备 e9319eda0189e878035c2115b9f050f35e130145 仅4文件。中心原合同不变：expectedCurrentExecutionId引用当前accepted，executionId引用新候选。小acceptObservedArtifact Module绑定本轮observe的节点/执行/精确artifact，command outcome的原key/code/receipt在断言前交同一decision checkpoint。actual driver原独立actor、完整artifact比对与首次未接受节点门禁保持。cleanupFailure与decisionFailure各自留存；无transport/领域状态机复制。
+
+1组stub涵盖首次null、旧acceptedID、rejected先耐久保存及后续独立cleanup失败；因19:19:37资源门槛未满足，当前NOT_RUN。原25不重跑；源准备批准仍只对应e931。旧red retained DB/tmp不得自动恢复/删掉，任何新PG需Lead另排。
+
+clean-code/codebase-design安全点：把一次accept调用的CAS与保存顺序放在一个小Interface；不新增通用重试、错误恢复或清理能力。实际旧run未捕获HTTPcode，409/delivery_version只属于静态推断，不能回填为原观察。
