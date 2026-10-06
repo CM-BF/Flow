@@ -1,5 +1,6 @@
-import { spawn, type ChildProcess } from 'node:child_process';
+import { spawn, execFile, type ChildProcess } from 'node:child_process';
 import { once } from 'node:events';
+import { promisify } from 'node:util';
 import { mkdtemp, writeFile, rm } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
@@ -8,7 +9,6 @@ import { Pool } from 'pg';
 import { afterEach, beforeEach, expect, test } from 'vitest';
 import { FlowClient } from '@flow/client';
 import { createServer } from '../../../server/src/index.js';
-import { migrateProtocolDispatch, registerProtocolDispatch } from '../../../server/src/protocol-dispatch/index.js';
 import { officialPeer } from './official-peer.js';
 
 const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_p02';
@@ -27,8 +27,6 @@ function holdNextResponse(predicate: (request: ObservedRequest) => boolean) {
 }
 async function startCenter(port = 0, leaseMs = 15_000) {
   server = await createServer({ databaseUrl, ownerToken, leaseMs });
-  await migrateProtocolDispatch(pool);
-  if (!server.hasRoute({ method: 'POST', url: '/api/runner/protocol/prepare' })) registerProtocolDispatch(server, pool);
   server.addHook('preHandler', async (request, reply) => {
     if (rejectHeartbeats && request.url === '/api/runner/heartbeat') {
       heartbeatRejections++; return reply.code(503).send({ error: 'lease-test-unavailable' });
@@ -46,8 +44,8 @@ async function stop(child: ChildProcess) {
   if (child.exitCode !== null || child.signalCode !== null) return;
   const exited = once(child, 'exit'); child.kill('SIGKILL'); await exited;
 }
-async function launch(token: string) {
-  const child = spawn(process.execPath, ['--import', 'tsx', 'apps/runner/src/protocol-dispatch/test-process.ts'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'pipe'],
+async function launch(token: string, entry = 'apps/runner/src/protocol-dispatch/test-process.ts') {
+  const child = spawn(process.execPath, ['--import', 'tsx', entry], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'pipe'],
     env: { ...process.env, FLOW_URL: baseUrl, FLOW_RUNNER_TOKEN: token, FLOW_RUNNER_WORKDIR: join(directory, 'runner'), FLOW_A2A_ENDPOINTS_FILE: join(directory, 'endpoints.json') } });
   children.push(child); return child;
 }
@@ -213,4 +211,46 @@ test('a lost center dispatch ACK times out even while heartbeats remain healthy,
   expect(child.exitCode).toBeNull(); expect(child.signalCode).toBeNull();
   expect(peer.counts.sends).toBe(0);
   expect((await client.protocolState(id))?.intent.reason).toBe('send-result-unknown');
+});
+
+
+test('production server, runner and CLI entry points dispatch and inspect one verified remote task', async () => {
+  const port = Number(new URL(baseUrl).port);
+  await server.close();
+  await pool.query('DROP SCHEMA flow CASCADE; DROP SCHEMA pgboss CASCADE');
+  const centerProcess = spawn(process.execPath, ['--import', 'tsx', 'apps/server/src/main.ts'], {
+    cwd: process.cwd(), stdio: ['ignore', 'ignore', 'pipe'],
+    env: { ...process.env, DATABASE_URL: databaseUrl, FLOW_TOKEN: ownerToken, FLOW_PORT: String(port), FLOW_HOST: '127.0.0.1' },
+  });
+  children.push(centerProcess);
+  await expect.poll(async () => {
+    try { return (await fetch(`${baseUrl}/api/health`)).ok; } catch { return false; }
+  }, { timeout: 7000 }).toBe(true);
+  const cli = async (args: string[]) => {
+    const result = await promisify(execFile)(process.execPath, ['--import', 'tsx', 'apps/cli/src/main.ts', ...args, '--json'], {
+      cwd: process.cwd(), timeout: 5000, maxBuffer: 128 * 1024,
+      env: { ...process.env, FLOW_URL: baseUrl, FLOW_TOKEN: ownerToken },
+    });
+    return JSON.parse(result.stdout);
+  };
+  const registration = await cli(['runner', 'register', '--name', 'Production A2A runner', '--harness', 'a2a']);
+  const submitted = await cli(['submit', '--prompt', 'Produce a checked result.', '--harness', 'a2a', '--endpoint', 'peer']);
+  const id = submitted.task.id as string;
+  const runnerProcess = await launch(registration.token as string, 'apps/runner/src/main.ts');
+  await expect.poll(async () => (await client.protocolState(id))?.intent.phase, { timeout: 7000 }).toBe('bound');
+  const binding = await cli(['protocol', id]);
+  expect(binding.intent.remoteTaskId).toBe(peer.taskId);
+  expect(binding.intent.endpointRef).toBe('peer');
+  await peer.finish('Produced through real server, CLI and runner entry points.');
+  await expect.poll(async () => (await client.show(id)).status, { timeout: 7000 }).toBe('succeeded');
+  const result = await cli(['show', id]);
+  expect(result.verificationStatus).toBe('passed');
+  expect(result.usage.costUsd).toBeNull();
+  expect(peer.counts.sends).toBe(1);
+  const artifactEntry = result.entries.find((entry: { kind: string; reference?: { title: string } }) => entry.kind === 'reference' && entry.reference?.title === 'Remote result');
+  expect((await client.detail(artifactEntry.reference.id)).content).toBe('Produced through real server, CLI and runner entry points.');
+  const runnerExit = once(runnerProcess, 'exit'); runnerProcess.kill('SIGTERM');
+  expect((await runnerExit)[0]).toBe(0);
+  const centerExit = once(centerProcess, 'exit'); centerProcess.kill('SIGTERM');
+  expect((await centerExit)[0]).toBe(0);
 });

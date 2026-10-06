@@ -26,3 +26,9 @@ typecheck通过；首HTTP/PG 3/3通过（3.27s，专用flow_p02），覆盖中�
 ## 02:53 UTC 确认等待上限修复
 
 交付前clean-code检查发现中心命令/事件使用lease.signal时，某个HTTP ACK若一直悬挂而heartbeat正常，可被持续续租掩盖。新增真实中心onSend挂起begin ACK、保持runner存活与heartbeat正常的公开HTTP测试；先红（2.5s仍running），再统一使用ProtocolLease.requestSignal组合ownership中止与独立request timeout。远端SDK已有独立受限transport；没有叠加盲重试。新测试通过，remote send仍0，任务明确uncertain。联合12/12（15.60s）+typecheck通过；11项历史证据与原hash保留，新增证据另存。
+
+## 02:56 UTC 生产入口接入检查
+
+Lead共享9db3ce生产挂载已pick为05a1308。删除测试内所有手工migrate/register备用逻辑，createServer必须自身挂载成功。增加真实server/main、runner/main、CLI/main三个进程入口旅程：从空flow_p02 schema启动中心（独立动态端口），CLI注册a2a、提交endpointRef、查询binding与完成快照，runner导入产物并独立验证，最后runner/center均SIGTERM正常exit0。联合13/13（17.85s）+typecheck通过。
+
+此段clean-code核对测试资源归属、创建/退出、文件配置凭据边界、生产入口与原功能兼容：只在FLOW_A2A_ENDPOINTS_FILE显式配置时选择协议runtime；独立a2a runner注册，不替换fixture/Claude语义。测试不安装新依赖、不用固定业务端口；官方peer的确定性内存TaskStore边界保持明示。已完成自身实现范围，独立review仍NOT_STARTED，P01剩余完整互操作能力不自动勾销。
