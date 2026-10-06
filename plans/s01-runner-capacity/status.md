@@ -189,3 +189,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 13:00:30 UTC：fresh本writer8e4660a6 v3 ACTIVE三scope、HEAD1ca035 clean后登记S01-06长驻wait缺口，证据见[README](../../docs/evidence/s01/long-lived-wait/README.md)与source-observation。只读fixedmain280289及官方TC39，不改本树实验source/旧raw，不改runtime；0测试/PG/容量。后继独立WT/产品scope与owner尚待Mika派工。dashboard依本唯一status聚合，不手填进度JSON。P05独立source6336cd00已9/9+strict0交审，未因此声称本S01增加新实际验证。
 
 2026-10-06 13:13:52 UTC：为Lead解阻新增[mixed完整26源接收入口](../../docs/evidence/s01/mixed-integration/README.md)：6de完整26固定源仅overlay c259两observer，Git/WT逐项核；27历史readonly在固定当前main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd 有4项漂移，接收点必须再核，不覆盖生产依赖。未复制/改raw，0测试/PG/capacity。P05正式审批metadata已固定7d97f737，main待接收。
+
+2026-10-06 13:17:06 UTC：资源安全点仅核本人P05/S01两个WT的非symlink Vitest .vite/.vite-temp缓存，结束后移除4小root、2文件共1039逻辑B/8192已分配文件B；这是删除文件分配量，不是整盘可用空间净增断言。[receipt](../../docs/evidence/s01/long-lived-wait/resource-cleanup.json)。未遍历/删除symlink目标或.pnpm、任何raw/journal（FKye9L未触）、他人WT/个人数据。longwait已向Mika只读回报fresh scope无active覆盖及最小track-once/wait/close候选、32虚拟ticks计数反例与直接消费者，未领取/修改产品或启动任何新检查。
