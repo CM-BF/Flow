@@ -31,6 +31,7 @@ export async function startMessageSettingsFixture(options: { cacheDir: string; a
   let nextStatus = 200, empty = false;
   const server = await createServer({
     root, configFile: false, cacheDir: options.cacheDir, resolve: { alias: options.aliases }, logLevel: "error", server: { host: "127.0.0.1", port: 0 },
+    optimizeDeps: { entries: ["test/message-settings.fixture.tsx"] },
     plugins: [react(), tailwindcss(), { name: "message-settings-http-fixture", configureServer(vite) {
       vite.middlewares.use((request, response, next) => {
         const url = new URL(request.url ?? "/", "http://fixture");
