@@ -2,6 +2,12 @@
 
 2026-10-06 22:50 UTC。唯一任务仍 [X01](../../../plans/x01-plugin-management/plan.md)，owner architecture_read / gpt-6-astra，co-lead mika。GO授权方向已明确；这里只请求受控源码与写权，不请求新用户批准。当前产品未开工、0检查/PG/provider/import/install/build。
 
+## 动态SQL供给纠正（2026-10-06 22:59:39 UTC）
+
+前包 `68db2d60d6e0f17c20474956f60f47b8ceff15b1` 的逐项hash仍是历史事实，但 **source-complete结论撤回**：文字import闭包未覆盖两个迁移入口的有限动态file数组。固定main60ca中 `apps/server/src/goal-tool-runs/index.ts:15–17` 读取012/013，`apps/server/src/goal-graph-runs/index.ts:14–16` 读取017/019；`createServer`和已供给Web直接consumer确实消费它们。新清单显式增加四份官方SQL的路径/blob/bytes/SHA，源码base及14写入候选不变。没有复制DDL、运行迁移或扩大新SQL编号授权。
+
+未来browser验证还有已知前置修正：当前 `apps/web/test/plugin-management/browser.ts:12` 输出固定到旧X03，截图/报告写入也沿该目录。新树取得该literal写权后，先改成本片 `docs/evidence/x01` 独立namespace并用排他创建/拒覆写（O_EXCL等同语义），不得写旧X03。本轮仅记录，不运行浏览器或修改其源码。
+
 ## 固定输入与唯一权威迁移
 
 - Flow源码：main `60ca1942411634843fda14e158f138191b832d8b`，22:46读HEAD/main/origin相同且clean，不追moving main。旧owner启动 `3c5622ad88c34ba19535790c278c3cc941ab0a79` clean；只接本次最终metadata提交的自有docs/plan，绝不把旧owner产品blob覆盖新main。

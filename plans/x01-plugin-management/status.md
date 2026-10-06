@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 22:53:00 UTC |
+| 最近更新时间 | 2026-10-06 22:59:39 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -117,3 +117,5 @@
 2026-10-06 22:48:06 UTC：GO恢复既有X01/REQ11–13后继；fresh旧树3c5622ad clean、6ddedc73 v5 ACTIVE原四scope，host两源维持停写。冻结main60ca1942411634843fda14e158f138191b832d8b作为本次source-only请求输入，新plugin-enable-binding树/branch尚不存在。只准备≤5MiB Flow源码、直接consumer与自有文档；0依赖复制、安装、导入、工程测试、PG或provider。新SQL号待Lead，033属CHAT05P01；现runtime/client/factory/exports占用不抢。迁移前本status仍唯一权威，完整10TODO不减少。技能沿本地find-skills→codebase-design/clean-code固定sickn33基线/brainstorming，已授权设计不增加用户审批。
 
 2026-10-06 22:53:00 UTC：已收敛[一次源码供给/唯一权威移交请求](../../docs/evidence/x01/enable-binding-provision.md)，候选14源码literal及待Lead分配的唯一SQL。补齐008审计kind、旧五操作直接读回与Web两个label consumer；first slice无生产mount，明确claim能力协商/旧strict decoder/fixture fallback门槛。Root选semver7.8.5/ISC compare方向，初始请求不含上游包源或依赖复制；实际bundle及真实runner仍未验。当前仍原树metadata唯一authority，0新产品修改/工程运行。
+
+2026-10-06 22:59:39 UTC：fresh HEAD68db2d60 clean、6ddedc73 v5 ACTIVE原四scope。Lead指出固定main60ca两个迁移入口以file数组读取012/013/017/019，前包未纳这四官方SQL；撤回68db的source-complete结论，仅在本metadata追加精确四Git输入并重算总量。14候选/base/0依赖复制不变，未产品写/执行工程检查。另记录browser固定旧X03输出须在新树合法领取后改自有排他namespace；本轮不改该源码、不运行浏览器。

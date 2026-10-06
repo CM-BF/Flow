@@ -14,6 +14,8 @@
 
 Root已选择 `semver@7.8.5` / ISC 的确定性 compare 能力作为 X01-04/07 真实npm验收方向。拟后续显式build-time单index.mjs bundle，固定源、构建参数、两manifest/license与产物digest；编译常量消除 NODE_DEBUG 读取，不改宿主环境。初始供给不复制任何 node_modules 或上游包源码，不安装/build；锁SRI只声明，不能当tarball已验证。外部来源由独立固定记录交接，本轮不再选包或运行。
 
+2026-10-06 22:59:39 UTC纠正：68db供给包漏两个有限动态迁移数组中的012/013/017/019，source-complete撤回；新版清单在相同main60ca显式绑定四SQL。新树browser检查先修已领脚本输出到自有X01排他namespace，旧X03不可写。详[供给纠正](enable-binding-provision.md)。本段不变更产品合同或14候选。
+
 ## 推荐字段与调用边界
 
 | 入口 / 权威 | 最小字段与确定语义 |
