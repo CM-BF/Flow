@@ -194,3 +194,9 @@ WPF-MATURE-02由Mika统筹Claude+Codex模型、thinking/effort、fast与access�
 ## 2026-10-06 生产工程目标归属
 
 FLOW-002-T07 / REQ-06的实际源码修改、监督检查与固定产物交付统一由[ENG-001](../eng01-engineering-delivery/plan.md)规划生产子任务；E01继续保存公平harness比较输入，不复制工程实现计划。先完成当前TUI/R05基础接通，随后工程纵向片优先于COST观测扩展。只读聊天、文本child或fixture通过不能关闭T07；>=Sol模型门槛与具体provider预算保持。
+
+## 2026-10-06T14:35:35.073416+00:00 T09后继候选：托管Codex harness
+
+GO于本日完成官方只读研究并交付的候选输入：[Agents API architecture](https://developers.openai.com/api/docs/guides/agents-api/architecture)、[self-hosted environments](https://developers.openai.com/api/docs/guides/agents-api/environments/self-hosted)、[overview](https://developers.openai.com/api/docs/guides/agents-api/overview)。其托管Codex harness提供session/compaction/recovery，自托管exec-server主动WebSocket连接，应用消费事件/webhook；采用API费率、alpha示例与独立environment key。以上作为GO来源记录归档，本次未启动环境、安装、认证、query或兼容实验。它不是当前本机订阅或固定0.154 app-server的兼容/替代证明。
+
+决定仍优先本机Claude+Codex；未来作为独立adapter候选，Flow保持目标、授权、预算与独立验收权威。原生harness与执行环境是否抽成独立Interface，须由两个真实消费者的需求决定，不提前建立通用层或第二Flow调度器。本次不改变T09验收、不打断O14/COST/Codex现行工作。
