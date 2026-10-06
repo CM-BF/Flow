@@ -33,3 +33,7 @@ Build before production verification when source changes. Tests start/close thei
 The unsupported-backdrop branch is deliberately simulated by replacing only the CSS `@supports` condition in the HTTP fixture; it is not a claim of testing an old browser engine. Reduced transparency and forced colors use Chromium media emulation. Source images are synthetic actual App screenshots, not the private Arc reference image. No latency, accessibility certification, real-provider or actual personal-page deployment claim.
 
 Plugin theme tokens still accept the existing color whitelist. Radius/shadow/blur extension remains MATURE01 follow-up; this slice uses host-owned material tokens and a narrow CSS override of styled Thread defaults. It does not change App/Thread JSX, plugin validation, workspace layout model or SDK/dependencies. Four built-in choices are not a complete theme/plugin system. Separate workspace navigation/view ownership observations remain their existing backlog.
+
+## Main acceptance
+
+2026-10-06 09:42:20 UTC owner仅只读核accepted main 4391bbf9f1785212d098ef6aa1c01a0320a003d3、现场main/origin 253035e11ab18ba33095c018949f856442021d49 clean，a8/f708祖先、七source与target/current/manifest逐字相同；见[main observation](main-observation.json)。没有重跑测试/浏览器/API，个人61228仍原固定产物，SVC04另行负责发布。所有九scope在本次metadata提交后停止写入，fresh release由管理保存；整体MATURE01仍开放。

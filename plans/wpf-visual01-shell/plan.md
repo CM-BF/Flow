@@ -21,7 +21,7 @@
 - [x] **WPF-VISUAL01-01** 固定设计/技能/基线、fresh无冲突take与唯一三件套；原7scope，现已按CAS扩至9scope。
 - [x] **WPF-VISUAL01-02** 真实App shell/pane/type/material与显式opaque内建主题，保既有palette扩展和纯展示职责。
 - [x] **WPF-VISUAL01-03** 自有HTTPfixture复用startStreamPreview；实际空态、长正文/代码表格、流、typed活动、错误、双主题1280/390/键盘与降级矩阵；sourcehash和真实截图。
-- [ ] **WPF-VISUAL01-04** clean-code、固定target独审、正常push、主线接收/停止写入/release；本大task完整视觉仍开放。
+- [x] **WPF-VISUAL01-04** clean-code、固定target独审、正常push、主线接收与owner停止写入；fresh release由管理按最后版本办理并保存回执，本大task完整视觉仍开放。
 
 ## 验证
 

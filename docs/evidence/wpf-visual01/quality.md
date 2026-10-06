@@ -13,3 +13,5 @@
 2026-10-06T09:28:23.911717+00:00 reviewer caught test positional assumption: Conversation3 was upper, so replaced ID-based focus with actual last pane membership and active-element bounds; previous assertion/report explicitly limited, newdev/prod8 pass. Fixed a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231; CSS unchanged, no unrelatedhost17 rerun.
 
 2026-10-06 09:28:52 UTC delivery clean-code/review stop: root independently APPROVED fixeda8b2b22a29bc3fb6ebd5252754d1e1cdbc975231; both findings closed and exact checks/source binding aligned. Only approval metadata changed; product/lock/shared unchanged, no additional test run. Fourbuiltin material slice remains bounded; overallMATURE01/pluginmaterial/reload/diagnostics work not markedcomplete.
+
+2026-10-06 09:42:20 UTC owner仅只读核accepted main 4391bbf9f1785212d098ef6aa1c01a0320a003d3、现场main/origin 253035e11ab18ba33095c018949f856442021d49 clean，a8/f708祖先、七source与target/current/manifest逐字相同；见[main observation](main-observation.json)。没有重跑测试/浏览器/API，个人61228仍原固定产物，SVC04另行负责发布。所有九scope在本次metadata提交后停止写入，fresh release由管理保存；整体MATURE01仍开放。

@@ -1,0 +1,83 @@
+{
+  "observedAt": "2026-10-06 09:42:20 UTC",
+  "acceptedMain": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "observedMainAndOrigin": "253035e11ab18ba33095c018949f856442021d49",
+  "mainClean": true,
+  "implementation": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+  "delivery": "f708de549685099b370f4436fda2486e1e5671f2",
+  "bothAncestorsOfAccepted": true,
+  "acceptedAncestorOfObserved": true,
+  "comparison": [
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+      "acceptedObservedTargetCurrentMatch": true
+    },
+    {
+      "path": "apps/web/src/plugins/builtins.ts",
+      "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+      "acceptedObservedTargetCurrentMatch": true
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+      "acceptedObservedTargetCurrentMatch": true
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "sha256": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4",
+      "acceptedObservedTargetCurrentMatch": true
+    },
+    {
+      "path": "apps/web/src/themes.ts",
+      "sha256": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+      "acceptedObservedTargetCurrentMatch": true
+    },
+    {
+      "path": "apps/web/test/visual-shell.browser.ts",
+      "sha256": "ce0141c0fde1432679630242b3c28761ccfa1619b4e7c6929aa36cd60badc505",
+      "acceptedObservedTargetCurrentMatch": true
+    },
+    {
+      "path": "apps/web/test/visual-shell.fixture.ts",
+      "sha256": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0",
+      "acceptedObservedTargetCurrentMatch": true
+    }
+  ],
+  "leadEvidence": "docs/evidence/i02/visual-c0-source-comparison.json",
+  "leadChecks": "root/Web typechecks 0, no browser/17 rerun",
+  "ownerChecks": "Git ancestry and seven byte/hash comparisons only",
+  "claimBeforeClose": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/plugins/builtins.ts",
+      "apps/web/src/plugins/host.ts",
+      "apps/web/src/styles.css",
+      "apps/web/src/themes.ts",
+      "apps/web/test/visual-shell.browser.ts",
+      "apps/web/test/visual-shell.fixture.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-visual-shell",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "d01_owner",
+    "claimId": "35e5e5b9-2227-4cfb-bb7a-51249678c9ad",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell",
+    "createdAt": "2026-10-06T09:03:03.666Z",
+    "updatedAt": "2026-10-06T09:08:43.096Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "claimObservedAt": "2026-10-06T09:39:33.306Z",
+  "personalArtifactUnchanged": true,
+  "providerCalls": 0,
+  "testsRerun": 0,
+  "priorPreflight": "initial current-main-equals-receipt assertion stopped because main advanced to 253035; no product or receipt metadata written before checking the descendant and seven source equality"
+}
