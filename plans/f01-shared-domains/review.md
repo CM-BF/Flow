@@ -130,3 +130,6 @@ Root只读APPROVED88a869efd782afd5f64f5d7adad0a9167da121c1，4source/2raw固定b
 
 ## CHAT06 production 独立批准
 assignment_review只读APPROVED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2，核2source/5raw固定与working hashes；2red→2green真实PG/HTTP/noEmit，资源清理事实完整。未重跑/0query，无本delta P1/P2。明确C02模块首case startup适配及Web活动cursor reader兼容仍为发布前置；不以本批准称实际Web/provider流式通过。
+
+
+C02 fixture与生产组合694c3fdbd6ef4affa66140f13a039156f27023e0（test5f + productionda7）获assignment_review独立只读APPROVED：2source/2raw hash匹配，8/8/noEmit证据核，无重跑。Web活动cursor889也已独审，I02按原样文件成套接收；原domain/transport各自批准范围保留。
