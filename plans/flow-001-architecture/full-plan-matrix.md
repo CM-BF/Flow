@@ -1,6 +1,6 @@
 # 完整计划验收矩阵与滚动批次
 
-核验时间：2026-10-06 06:02 UTC。基线 main/origin/main `3d4985fca060155435b159e0467815bf8e88b8b8`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
+核验时间：2026-10-06 06:00 UTC。基线 main/origin/main `3d4985fca060155435b159e0467815bf8e88b8b8`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
 
 | ID / 原始要求 | 任务/依赖 | 验收与所需证据 | 当前事实与缺口 |
 | --- | --- | --- | --- |
@@ -85,7 +85,7 @@ main3d4985f已含CHAT持久会话/typed正文/配置pin/队列后台及UI、O01�
 - [Prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) 与 [context editing](https://platform.claude.com/docs/en/build-with-claude/context-editing)：tools→system→messages前缀，动态改工具schema/早期消息可能失缓存或native签名。通用纯核压缩成功不能证明Claude/Codex opaque resume可透明改历史；Pi hook单独验证。总成本包含cache写读、摘要、检索、重试与质量，目前CTX01只证明合成bytes/CPU/RSS/hash，不声称省token/账单或100真实agents。
 - 用户摘要写获得的能力/实际阻塞，技术SHA/测试命令留详细证据。完成片段与尚未领取后继区分；历史已交付项不因开放TODO重新伪装当前交付。D07与DPERF分别按独立claim实施，不为这次metadata运行产品测试。
 
-## 2026-10-06 06:02 UTC 已排后继研究（非新增交付）
+## 2026-10-06 06:00 UTC 已排后继研究（非新增交付）
 
 - X04拟复用固定pacote21.5.1：精确registry name/version+SRI、ignoreScripts、独立staging与原子包产物；stream handler重入必须新文件/哈希，下载不等于执行许可，生产不得借全局npm路径。官方依据由GO只读核对：[pacote](https://github.com/npm/pacote)、[npm pack生命周期](https://docs.npmjs.com/cli/v11/commands/npm-pack/)。尚未领取/实现完整npm生命周期。
 - CHAT05先完整SDK block和tool_result生命周期，参数完整≠工具成功；正文/输入输出/公开thinking只按需detail，redacted/opaque signature不存可展示正文。partial正文和真正active steering另片，不用快轮询冒充流式或queue别名。
