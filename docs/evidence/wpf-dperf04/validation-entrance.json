@@ -37,22 +37,25 @@
       "chromeExecutable",
       "playwrightModule",
       "playwrightSha256",
-      "supervision: parentPid/startedAtMs/workDeadlineMs/hardDeadlineMs/scratch/output"
+      "supervision: parentPid/startedAtMs/workDeadlineMs/hardDeadlineMs/scratch/output",
+      "nativeChromeBoundaryApproval: pinned real Lead record for exact parent/wrapper",
+      "supervision: chromePid/chromePgid/chromeEndpoint/chromeOwnership"
     ],
     "ownNativeChrome": true,
     "fixture": "Same two temporary repositories and explicit unknown ledger; no real registry/PG",
-    "current": "NOT_RUN, 0/60000ms; wrapper source fixed; no binding or runtime grant",
+    "current": "NOT_RUN 0/60000ms; TAIL/SOFT-STOP and native sibling preparation requires independent delta review, separate Lead boundary decision and fresh gate",
     "temporaryBytes": 67108864,
     "temporaryLimitMeaning": "Both logical and allocated scratch observations; polling guard, not hard quota",
     "retainedLimitMeaning": "8MiB cumulative evidence distinct from 64MiB temporary profile/scratch",
-    "supervision": "Parent starts absolute cumulative clock before source/setup, is sole budget writer, owns worker PGID. Chrome inherits group; child signals only its Chrome PID. Parent confirms group absence before scratch deletion.",
+    "supervision": "Parent sole budget writer owns native Chrome and sandboxed Node in independent PGIDs, signals/reaps both and samples final resources before scratch deletion and after evidence writes; ordinary SIGTERM/INT fails and cleans, handlers restored; SIGKILL not guaranteed",
     "parentDraft": {
-      "path": "/private/tmp/dperf04-browser-preparation/supervisor.py",
-      "bytes": 10938,
-      "sha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
-      "state": "NOT_RUN; revised draft awaiting fixed review and per-entry binding/sandbox",
-      "delta": "Adds child gate playwrightSha256 from the pinned readOnlyFiles entry; no other intended change"
-    }
+      "path": "/private/tmp/dperf-b2/supervisor.py",
+      "sha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+      "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+      "previousSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43"
+    },
+    "nativeChromeBoundaryApproval": null,
+    "boundaryDifference": "Chrome no longer has custom outer OS file-write/egress policy; native sandbox kept; explicit independent acceptance required"
   },
-  "implementationTarget": "b17bb05c797cfccc8dbeb4c3de26e57143600bec"
+  "implementationTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9"
 }

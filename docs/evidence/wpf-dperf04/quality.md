@@ -39,3 +39,9 @@
 ## 2026-10-06 17:31:00 UTC browser wrapper clean-code安全段
 
 复用本地find-skills/webapp-testing/clean-code方法，原既有设计已批准，不重新安装。预算只有父监督一个写者；子进程不自建PGID或负PID误杀、profile删除只在父组清理后。输入验证/绝对deadline/每await后的checkpoint与失败receipt显式，未知cleanup不能通过。行为用例保持字节不变，无新框架或生产修改。静态范围/hash/diffcheck0；所有运行仍NOT_RUN，新wrapper和私有supervisor字段待独审。不会把历史Node绿当此wrapper已验。
+
+## 2026-10-06 19:47:04 UTC TAIL/SOFT-STOP source-only clean-code安全段
+
+本人核管理fresh原9与本树branch/HEAD/clean，沿本地find-skills优先已有clean-code/codebase-design/webapp-testing，未安装。复用Settings sibling准备的单父资源所有权；DPERF独立记录authority而不继承其许可。parent观察函数与工作deadline分离，非ENOENT扫描失败传播；普通信号在cleanup期间也记失败，handler用外层finally恢复；未知group不删scratch，SIGKILL不保证。Chrome日志/code/signal与Node结果分开，新增真实末尾time观察且说明最后序列化随后发生。
+
+wrapper只接精确parent端点、停止spawn/killChrome；fixture与check bodies/全task-links字节恒等，6其他源和15保护路径零差。初次静态差异断言误含旧metadata，已改成apps/源范围；不是产品或运行失败。diffcheck0、源码/hash/本地链接静态核，0新Node/parser/import/browser/PG/free。原独审链补归档；addendum的source回应尚待复审，browser/fullfeature不报绿。

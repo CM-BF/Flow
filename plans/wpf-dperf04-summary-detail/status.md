@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 17:31:00 UTC |
+| 最近更新时间 | 2026-10-06 19:47:04 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / b17bb05c797cfccc8dbeb4c3de26e57143600bec |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 45f8a185ad0d43543a3c9eca7a29da97ebb31ba9（实现；随后metadata提交另核） |
 | 工作树dirty状态 | 七源码固定已提交；本记录为metadata安全点，提交后双端clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | PASSED abd2aff768f97350762b2eaddbe7ae6843902f48；仅Node8/8，browser NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | b17bb05c797cfccc8dbeb4c3de26e57143600bec |
+| 实现目标 | 45f8a185ad0d43543a3c9eca7a29da97ebb31ba9 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 摘要和详情直接检查通过，服务端访问保护已验证 |
-| 下一可用交付 | 完成页面阅读与异步响应的浏览器验收 |
-| 当前阻塞 | NONE |
+| 当前产出 | 摘要与详情的直接检查通过，浏览器验证的清理和停止流程已补修 |
+| 下一可用交付 | 完成浏览器准备复审，再验收页面阅读和异步响应 |
+| 当前阻塞 | ACTIVE: 等待浏览器权限边界确认和独立运行窗口 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：原abd2源码复审与Node8PASS保留；新browser监督入口待源码审，browser/全片未验，4fac保历史 |
+| Review | [review.md](review.md)，UNKNOWN：b17/root+manager与populated限定审已完成；新TAIL/SOFT-STOP准备修复待复审，browser/全片未验，Node8与4fac历史保留 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -90,3 +90,11 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 固定 `b17bb05c797cfccc8dbeb4c3de26e57143600bec` 仅修改原browser生命周期，summaryFixture、summaryChecks和整个task-links脚本逐字不变；[source audit](../../docs/evidence/wpf-dperf04/browser-wrapper-source/audit.json)与[小接口](../../docs/evidence/wpf-dperf04/browser-wrapper-source/interface.md)。父监督唯一累计时钟/预算写者，Chrome继承worker组，child只处理自身Chrome PID；固定绝对只读Playwright输入、scratch/profile与retained证据预算分开。
 
 仅源码和静态字节/范围/diff检查，0新Node/import/types/browser/PG/space；browser仍0/60000ms。新wrapper与更新的私有supervisor字段需固定独审及未来fresh gate，本次无binding/运行许可；既有abd2 Node8PASS不改绑新入口。metadata提交前记录；normal push与双端clean由交付回执实核。
+
+## 2026-10-06 19:47:04 UTC 浏览器资源补充审查修复
+
+已只读核管理19:40:09 fresh原9scope/本人writer/无冲突的[窄回执](../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/fresh-scope-observation.json)。原b17的root+manager源码与populated-binding限定批准实际已做，[原件与当前接口](../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/interface.md)已归档；不再将它们写成尚待首次审查。root后续[资源addendum](../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-addendum.json)为CHANGES_REQUESTED，TAIL与SOFT-STOP两个P2仅涉及准备入口。
+
+固定实现 `45f8a185ad0d43543a3c9eca7a29da97ebb31ba9` 只改共享browser wrapper/import生命周期；6其余源、summaryFixture/summaryChecks/main与整个task-links字节不变。新/tmp父监督器资源扫描非ENOENT错误上抛，双组reap后删除前与结果/预算写后补采样，记录实际末尾monotonic观察；SIGTERM/INT走同清理且记失败，finally恢复handler，不声称SIGKILL可保证。native Chrome独立组保持原生sandbox，Node仍custom sandbox；Chrome失去外层OS写/egress约束必须单独Lead接受，目前null/无gate，Settings批准不能代替。
+
+当前source-only修复待固定独立复审；0新Node/import/parser/Chrome/PG/HTTP/free/安装。Node仍abd2原8PASS/3950ms，browser仍0/60000ms含15000cleanup，fullfeatureUNKNOWN/mainNOT_INTEGRATED。normalpush/双端clean由提交后回执核验，不把提交前metadata dirty冒称提交后事实。

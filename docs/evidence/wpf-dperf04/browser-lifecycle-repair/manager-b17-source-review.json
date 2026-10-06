@@ -1,0 +1,115 @@
+{
+  "reviewer": "d01_owner independent, not feature author",
+  "reviewedAt": "2026-10-06T17:37:05.028229+00:00",
+  "verdict": "APPROVED_SOURCE_SCOPED",
+  "blockingFindings": [],
+  "target": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+  "previousSource": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "metadataObserved": "032b4418f5a944150b888e10fef342b64f3e3655",
+  "branch": "codex/dashboard-summary-detail",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 8802,
+      "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 6686,
+      "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 5487,
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 33937,
+      "sha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 12804,
+      "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 33817,
+      "sha256": "6d62172461fbde892168bfe296c5cd79538e36258da79717a79cc933286dfb6d"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 10845,
+      "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+    }
+  ],
+  "protectedPaths": [
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/src/task-links.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/registry.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/src/documents.mjs",
+    "apps/execution-dashboard/src/coordination/ledger.mjs",
+    "apps/execution-dashboard/test/fixture.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/styles.css",
+    "apps/execution-dashboard/public/architecture-data.js",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "protectedDiff": "",
+  "unchangedSixSources": true,
+  "unchangedBehaviorRegions": {
+    "summaryFixture": {
+      "bytes": 3294,
+      "sha256": "8354cbaa49daec8b8596885ad654e24d8987d7ca73448540e0b72bfc59f2ab1f"
+    },
+    "summaryChecks and main invocation": {
+      "bytes": 19726,
+      "sha256": "9006982e13b6d3e2d1f88b7a89a419b03358f6f85da121897618c78382c66b6e"
+    }
+  },
+  "entireTaskLinksUnchanged": true,
+  "supervisor": {
+    "path": "/private/tmp/dperf04-browser-preparation/supervisor.py",
+    "bytes": 10938,
+    "sha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+    "onlyAddedLine": "'playwrightSha256':next(item['sha256'] for item in binding['readOnlyFiles'] if item['realpath']==binding['playwrightModule']),",
+    "removingLineReproducesPriorSha256": "03e72da4f38ba5c4935dc1c318f9e1eb209f4e1c6d59c042c4b9328a5478adb9"
+  },
+  "reviewed": [
+    {
+      "anchors": "parent42-65; child60-80",
+      "finding": "Gate/binding/source/claim/entry/expiry/one-use/previous-budget exact checks precede worker start. Child validates actual parent PID, exact 60000ms cumulative equation, fixed output and own scratch/env, seven keys and pinned absolute Playwright entry."
+    },
+    {
+      "anchors": "parent66-83,98-115,141-150; child68-72,88-96,125-149",
+      "finding": "Parent monotonic clock owns total60000ms including setup/checks/cleanup; work ends15000ms before hard. Child receives absolute wall deadlines only as cooperative guard, never writes budget. Final cumulative accounting after owned cleanup; prior runtime cannot reset per entry."
+    },
+    {
+      "anchors": "parent94-107,117-139; child103,127-141",
+      "finding": "Parent starts one new session/PGID; Chrome detached:false inherits worker group. Child signals only its Chrome PID; parent TERM/KILL/wait verifies own group absent before scratch removal. PASS requires child source hashes/outcome/no errors/serverclosed/fixture removed/Chrome exited plus parent cleanup/no leftovers."
+    },
+    {
+      "anchors": "parent74-80,94-103,143-150; child107,145-148",
+      "finding": "Own scratch/profile observed64MiB logical/allocated, retained8MiB with128KiB finalreserve, stdout1MiB; stop/start128/64MiB margins. Child sandbox permits only scratch/output and devnull writes; network localhost only. TMP/cache/Git env scoped without resetting HOME or CODEX_HOME."
+    },
+    {
+      "anchors": "fixed diff abd2..b17 and source-manifest",
+      "finding": "Only lifecycle wrapper/import delta; summaryFixture/check bodies/main invocation and task-links preserved byte for byte; other six sources and fifteen protected paths unchanged."
+    }
+  ],
+  "limits": [
+    "No Node/import/syntax/HTTP/Chrome/PG/free sampling or behavior execution in this review.",
+    "No populated binding or runnable gate exists. Each entry still requires concrete Node/Chrome/Playwright readOnlyFiles pins, actual sourceHead, previous browser budget hash, rendered sandbox review and fresh resource/window admission.",
+    "Loopback sandbox is not kernel proof of exclusively owned ports; sampling is not hard filesystem/memory quota. Actual Chrome/plugin filesystem compatibility and descendant cleanup remain untested.",
+    "Historical Node8 PASS remains abd2 at823071,3950ms total; it is not a pass for b17 browser wrapper. Browser budget0used/60000 remains unexecuted.",
+    "Final feature approval/main integration stay separate; final integration owner is Execution Lead."
+  ],
+  "cleanCode": "Applied local find-skills/codebase-design/clean-code to one parent budget authority, narrow child lifecycle, explicit failure/cleanup ownership and unchanged behavior boundaries; no required correction found."
+}

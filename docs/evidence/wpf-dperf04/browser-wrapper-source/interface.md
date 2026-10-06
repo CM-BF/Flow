@@ -1,4 +1,6 @@
-# Browser lifecycle source review entry
+当前后继见 [生命周期修复](../browser-lifecycle-repair/interface.md)。以下保留b17交付当时的准备说明；实际root/manager/populated限定审已完成，后续addendum见当前review。
+
+# 历史 b17 browser lifecycle source review entry
 
 Target `b17bb05c797cfccc8dbeb4c3de26e57143600bec` changes only `runBrowserCheck` and required imports. [Audit](audit.json) pins all seven sources, unchanged check bodies and the complete task-links script; [root prior structure review](root-structure-review.json) is not final wrapper approval.
 

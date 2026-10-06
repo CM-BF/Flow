@@ -1,6 +1,6 @@
 # WPF-DPERF04 首页轻摘要与按需核验
 
-状态：in-progress。创建/更新：2026-10-06 16:12:35 UTC。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
+状态：in-progress。创建：2026-10-06 16:12:35 UTC；更新：2026-10-06 19:47:04 UTC。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果与范围
 
@@ -12,13 +12,13 @@
 
 ## TODO
 
-- [ ] DPERF04-01 实现3读接口及真实首页消费者，保持旧snapshot与全部信息可达。
+- [x] DPERF04-01 实现3读接口及真实首页消费者，保持旧snapshot与全部信息可达。
 - [ ] DPERF04-02 有界直接行为和后置浏览器验证、固定来源及原始证据。
 - [ ] DPERF04-03 独立review修复、主线接收与必要部署观察。
 
 ## 验证与资源
 
-当前仅源码授权，0产品import/tests/PG/browser/install/build/真实4320采样。候选Node30s含5清理、temp8MiB/raw2MiB、最多2临时Gitroot/6任务；browser累计60s含15清理、单fixture+Chrome/raw8MiB。两者均等fresh准入，不运行旧真实registry脚本。GO一次8s超时后10428ms/2071666B/165tasks、静态20ms仅单次来源观察，不作统计基准或宕机判断。
+历史受控Node第二次7叶项+父项8PASS，累计3950ms，首失败保留且不重跑；本轮仅源码。browser仍0/60s含15清理、单fixture+Chrome/raw8MiB、scratch64MiB，需独立修复复审、native Chrome外层权限差异接受与fresh准入。不运行旧真实registry脚本或PG/真实4320。GO一次8s超时后10428ms/2071666B/165tasks、静态20ms仅单次来源观察，不作统计基准或宕机判断。
 
 ## 完成条件
 

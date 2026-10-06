@@ -1,7 +1,7 @@
 {
-  "implementationTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "implementationTarget": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
   "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
-  "recordedAt": "2026-10-06 19:45:45 UTC",
+  "recordedAt": "2026-10-06 17:31:00 UTC",
   "files": [
     {
       "path": "apps/execution-dashboard/src/read-model.mjs",
@@ -30,8 +30,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
-      "bytes": 31990,
-      "sha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7"
+      "bytes": 33817,
+      "sha256": "6d62172461fbde892168bfe296c5cd79538e36258da79717a79cc933286dfb6d"
     },
     {
       "path": "apps/execution-dashboard/test/task-links.browser.mjs",
@@ -60,7 +60,7 @@
   "checks": {
     "sourceDiffCheck": 0,
     "Node": "Historical abd2 second run PASS8/8; unchanged direct source; no rerun for wrapper",
-    "browser": "NOT_RUN; source addendum addressed in preparation, independent delta review/Lead boundary decision/new gate pending",
+    "browser": "NOT_RUN; revised parent-supervised wrapper requires fixed review and fresh per-entry resource gate",
     "production4320": "NOT_OBSERVED",
     "PG": 0,
     "install": 0,
@@ -77,5 +77,5 @@
     "completedProofCache": false,
     "ledgerAuthority": "Original dynamically imported PG ledger; synthetic observer is test-only and grants no writer scope"
   },
-  "revision": "Only shared wrapper lifecycle; parent native sibling, TAIL/SOFT-STOP preparation. No browser run or new full-feature approval."
+  "revision": "Only browser wrapper lifecycle; check bodies and task-links unchanged; new wrapper not run/reviewed"
 }
