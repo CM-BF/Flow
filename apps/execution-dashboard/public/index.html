@@ -1,31 +1,23 @@
 <!doctype html>
 <html lang="zh-CN" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <title>Flow · 工程进度</title>
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/app.js" type="module"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Flow · 项目进度</title><link rel="stylesheet" href="/styles.css"><script src="/app.js" type="module"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到工程进度</a>
-  <header class="topbar">
-    <a class="brand" href="/" aria-label="Flow 工程进度首页"><span class="brand-mark" aria-hidden="true">F</span>Flow <span class="brand-context">工程进度</span></a>
-    <div class="toolbar"><span class="local-label">本地只读</span><label class="theme-label" for="theme">主题</label><select id="theme"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select><button id="refresh" type="button">刷新状态</button></div>
-  </header>
+  <a class="skip-link" href="#main">跳到项目进度</a>
+  <header class="topbar"><a class="brand" href="/">Flow <span>项目进度</span></a><div class="toolbar"><label for="theme">主题</label><select id="theme"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select><button id="refresh" type="button">刷新状态</button></div></header>
   <main id="main" tabindex="-1">
-    <section class="overview" aria-labelledby="page-title">
-      <div><h1 id="page-title">把每一份交付看清楚。</h1><p class="intro">从实现到审查，再到 main 集成。查看各工作线的最新记录和下一步。</p></div>
-      <div class="sync"><span id="sync-state" role="status">正在读取权威状态…</span><span id="sync-time"></span><span>自动刷新每 20 秒</span></div>
-    </section>
+    <section class="overview" aria-labelledby="page-title"><div><h1 id="page-title">正在读取项目进度</h1><p id="phase-note" class="muted">读取各负责人维护的记录。</p></div><div class="sync"><span id="sync-state" role="status">读取中</span><time id="sync-time"></time></div></section>
     <div id="load-error" class="notice warning" role="alert" hidden></div>
-    <section class="milestones-section" aria-labelledby="milestones-title"><div class="section-heading"><h2 id="milestones-title">M1 里程碑</h2><button class="text-button" data-open-task="FLOW-003">查看总计划</button></div><p id="milestone-note" class="muted"></p><div id="milestones" class="milestones"></div></section>
-    <section aria-labelledby="workstreams-title"><div class="section-heading"><div><h2 id="workstreams-title">工作线</h2><p class="muted">完成数来自 owner 的 TODO；检查、审查和集成分别记录。</p></div><label class="filter-label">显示<select id="filter" aria-label="显示工作线"><option value="all">全部工作线</option><option value="attention">需要核对</option><option value="in_progress">进行中</option></select></label></div><div id="workstreams" class="workstreams"></div><p id="empty-filter" class="empty" hidden>当前筛选下没有工作线。</p></section>
-    <section class="attention-grid" aria-label="下一步和需要关注的事项"><div><h2>下一交付</h2><div id="next-deliveries" class="notes-list"></div></div><div><h2>阻塞与待确认</h2><div id="risks" class="notes-list"></div></div><div><h2>需要用户决定</h2><div id="decisions" class="notes-list"></div></div></section>
-    <section aria-labelledby="plans-title"><div class="section-heading"><h2 id="plans-title">总体计划与协作</h2><span class="muted">每项均可下钻原始记录</span></div><div id="plans" class="plan-list"></div></section>
-    <footer><div id="main-observation"></div><p>status.md 是唯一手填进度事实源。此网页与 JSON 均为只读派生结果；缺失、过期和无法解析的记录不会计为完成。</p><a href="/api/snapshot" target="_blank" rel="noopener">查看生成的 JSON</a></footer>
+    <div class="focus-layout">
+      <section class="active-section" aria-labelledby="active-title"><h2 id="active-title">正在推进</h2><div id="active-work"></div><div class="blocker-section"><h2>当前阻塞</h2><div id="blockers"></div></div></section>
+      <aside><section aria-labelledby="next-title"><h2 id="next-title">下一可用交付</h2><div id="next-deliveries"></div></section><section class="decision-section" aria-labelledby="decision-title"><h2 id="decision-title">需要你决定</h2><div id="decisions"></div><p id="decision-note" class="muted small"></p></section></aside>
+    </div>
+    <details class="disclosure" id="unknown-section"><summary>摘要待补与来源待同步 <span id="unknown-count" class="count">0</span></summary><p class="muted small">这些是信息缺口，不自动代表阻塞或需要你决定。原始记录仍可查看。</p><div id="unknown-items"></div></details>
+    <details class="disclosure" id="history-section"><summary>已完成历史 <span id="history-count" class="count">0</span><span class="summary-note">含 M1，默认收起</span></summary><div id="history-items"></div></details>
+    <details class="disclosure" id="all-plans"><summary>全部计划与证据 <span id="source-count" class="count">0</span></summary><div class="section-heading"><p class="muted small">完成、审查与集成分别核对。</p><label class="filter-label">显示<select id="filter" aria-label="显示计划"><option value="all">全部计划</option><option value="in_progress">进行中</option><option value="unknown">摘要待补</option></select></label></div><div id="workstreams"></div><p id="empty-filter" class="empty-state" hidden>当前筛选下没有计划。</p></details>
+    <footer><span>只读进度，每 20 秒同步</span><details><summary>查看同步依据</summary><p id="main-observation"></p><p>各任务 status.md 是唯一手填事实源。未知不算通过，文档变化与实现变化分别核对。</p><a href="/api/snapshot" target="_blank" rel="noopener">生成的 JSON</a></details></footer>
   </main>
   <dialog id="task-dialog" aria-labelledby="detail-title"><div class="dialog-top"><div><span id="detail-id" class="muted"></span><h2 id="detail-title"></h2></div><button id="close-dialog" type="button" aria-label="关闭任务详情">关闭</button></div><div id="detail-content"></div><section id="document-view" hidden><h3 id="document-title"></h3><p id="document-error" class="notice warning" hidden></p><pre id="document-text" tabindex="0"></pre><img id="document-image" alt="任务证据截图" hidden></section></dialog>
-</body>
-</html>
+</body></html>

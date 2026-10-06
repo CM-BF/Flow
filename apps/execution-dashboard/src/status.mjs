@@ -1,3 +1,5 @@
+import { parseHuman } from './human.mjs';
+import { parseImplementation } from './proof.mjs';
 const normaliseKey = value => value.replace(/\s+/g, '').toLowerCase();
 const plain = value => value.replace(/`/g, '').trim();
 
@@ -45,6 +47,7 @@ export function parseStatus(markdown, taskId) {
   if (!todos.length) errors.push('缺少 TODO 状态表');
   if (todos.some(todo => !/^[A-Z][A-Z0-9-]*\d[A-Z0-9-]*$/.test(todo.id))) errors.push('TODO ID 格式未知');
   return {
+    human: parseHuman(field), implementation: parseImplementation(plain(field(/^实现目标$/)), field(/^实现范围$/)),
     taskId, owner: plain(owner), branch: plain(branch), branchState: plain(branchState),
     updatedAt, updatedRecord: plain(updatedRecord), todos, errors,
     declaredHead: field(/工作基线|head/), declaredDirty: field(/工作树dirty状态/),

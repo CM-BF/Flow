@@ -21,6 +21,8 @@ export function status(task, options = {}) {
 | 检查状态 | ${options.checks ?? 'NOT_RUN'} |
 | 已集成 main 状态 / HEAD | ${options.mainHead ?? 'a'.repeat(40)}；${task.id} 未集成 |
 | Review | review.md，${options.review ?? 'NOT_STARTED'} |
+${options.human ? Object.entries(options.human).map(([key, value]) => `| ${key} | ${value} |`).join('\n') : ''}
+${options.implementation ? `| 实现目标 | ${options.implementation.target} |\n| 实现范围 | ${options.implementation.scope} |` : ''}
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |

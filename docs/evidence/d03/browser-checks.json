@@ -1,0 +1,328 @@
+{
+  "outcome": "passed",
+  "at": "2026-10-06T02:24:35.569Z",
+  "sourceHead": "d444608ab6c796c731e44e51a892868bf39bec2a",
+  "sourceDirty": true,
+  "checks": [
+    "实际 19 权威源；当前工作最多 3 项；完成历史和摘要缺口默认收起",
+    "1440px / 390px 浅深主题；页面无横向溢出，四张实际源截图",
+    "主题持久化；窄屏键盘 Enter 打开、读取权威 status、Esc 关闭并恢复焦点；详情不溢出",
+    "首次读取失败明确提示，手动刷新恢复",
+    "隔离真实 HTTP/Git 样本：NONE 不算决定，ACTIVE 才是阻塞，UNKNOWN 不算阻塞，REQUIRED 决定；历史折叠、缺字段待补；metadata 保留审查、未跟踪实现变更要求复审、main 祖先证明",
+    "HTML/script 在摘要和原始资料中作为文本，不执行"
+  ],
+  "screenshots": [
+    "live-desktop-light.png",
+    "live-desktop-dark.png",
+    "live-narrow-light.png",
+    "live-narrow-dark.png",
+    "fixture-current-blocker.png"
+  ],
+  "errors": [],
+  "browser": "154.0.8037.98",
+  "livePort": 61975,
+  "liveSources": [
+    {
+      "id": "FLOW-001",
+      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": null,
+      "review": "not_started",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "FLOW-002",
+      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": null,
+      "review": "not_started",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "FLOW-003",
+      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": null,
+      "review": "not_started",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "OPS-001",
+      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "edca9fc5fe950a05ffe1ff89e5d31686182fb38c",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "C01",
+      "head": "79fc6d7ffb966333405aa52b3cce09212e38efe7",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": null,
+      "review": "not_started",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "R01",
+      "head": "cc20ddd488b8bfb56052b8012f667681720f6ac9",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "338263736e2cf64efd32037cfc92bcb49069d9ab",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "R02",
+      "head": "4b94d269de33b61cab23e840a05cb70cc00b5de3",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "L01",
+      "head": "465899ff052ab5f5affe297d12f5140948200cb5",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "1baf123e43a9be762342eb51bfe254fa7a6e60f9",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "W01",
+      "head": "cb4a39211e264538704ba9d474eeb08fc4b2759c",
+      "dirty": true,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "cb4a39211e264538704ba9d474eeb08fc4b2759c",
+      "review": "not_started",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "D01",
+      "head": "6783562696cd268274398a02ebd3dff41aed2ce0",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "9c236c5f86b197c3e262a6b197f21ba2371ab9b0",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "I01",
+      "head": "e845eb069c594989117fadf380335650efef27a2",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "da7ce435e03e7abad1227353e473a35a6e9b1349",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "LAB01",
+      "head": "40b115c25b42ee6e88c8516e2a27a3a1b158541a",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "f226c42dba577053f64a14dcf213180bf150f66d",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "LAB02",
+      "head": "56281848ed07a3f5ab72e58fc81b4e83ba6b9ab4",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "e202e4ff27c776a662676bfbe333aeb99d811039",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "D02",
+      "head": "e1f0f953e78432ee9a16f662b6a783e2c7dbf111",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "40bc3336155a143384c196776147a9bc4e9589d8",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "C02",
+      "head": "712938d9e35bbfc22f7861765c610ffd631937ff",
+      "dirty": false,
+      "current": true,
+      "missing": [],
+      "reviewTarget": "97ab1e5bd169cda7ed7bf0bbdeddcda1414833f8",
+      "review": "approved",
+      "mainMethod": "ancestor"
+    },
+    {
+      "id": "P01",
+      "head": "b558e6f4a1d21a809f36a0a7a637bbad28606ff8",
+      "dirty": true,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": null,
+      "review": "not_started",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "D03",
+      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "dirty": true,
+      "current": true,
+      "missing": [],
+      "reviewTarget": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "review": "not_started",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "WPF-001",
+      "head": "dfb497e239d9f2c155b93d63d3621eb370b1194a",
+      "dirty": false,
+      "current": true,
+      "missing": [
+        "阶段",
+        "当前产出",
+        "下一可用交付",
+        "优先级",
+        "当前阻塞",
+        "需用户决定"
+      ],
+      "reviewTarget": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+      "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "M02",
+      "head": "e7746df3a60cea1cdf4790a189c4f0e7f94ef099",
+      "dirty": false,
+      "current": true,
+      "missing": [],
+      "reviewTarget": null,
+      "review": "unknown",
+      "mainMethod": "unknown"
+    }
+  ]
+}

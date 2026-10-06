@@ -1,3 +1,5 @@
+import { compareImplementation, integrationProof } from './proof.mjs';
+import { humanOverview } from './human.mjs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { realpath } from 'node:fs/promises';
@@ -52,11 +54,16 @@ async function aggregateTask(task, registry, observations, now) {
   const ageHours = status.updatedAt ? (now - Date.parse(status.updatedAt)) / 3600000 : null;
   const stale = ageHours === null || ageHours > registry.staleAfterHours || ageHours < -0.1;
   if (stale) issues.push(ageHours < 0 ? 'status 更新时间在未来，需核对时钟。' : `status 未同步或超过 ${registry.staleAfterHours} 小时，当前进度待核实。`);
-  if (review.state === 'approved' && review.target !== liveGit.head) {
-    review = { ...review, state: 'outdated', record: '独立 review 绑定旧提交，当前 HEAD 未获 approval。' };
+  const implementationProof = status.implementation && liveGit.available ? await compareImplementation(task.worktree, status.implementation.target, liveGit.head, status.implementation) : { state: 'unknown', reason: '来源不可核验' };
+  if (review.state === 'approved') {
+    const proof = status.implementation && liveGit.available ? await compareImplementation(task.worktree, review.target, liveGit.head, status.implementation) : { state: 'unknown', reason: '实现范围未知' };
+    let state = 'unknown';
+    if (proof.state === 'unchanged' && implementationProof.state === 'unchanged') state = 'approved';
+    else if (proof.state === 'changed' || implementationProof.state === 'changed') state = 'outdated';
+    review = { ...review, proof, declarationProof: implementationProof.state, state };
   }
   const current = source.mode === 'live' && !issues.length;
-  return { ...task, source: { ...source, markdown: undefined, path: `${task.worktree}/${task.planDir}/status.md`, syncedAt: new Date(now).toISOString(), stale, ageHours }, git: liveGit, status, review, documents, issues, current,
+  return { ...task, source: { ...source, markdown: undefined, path: `${task.worktree}/${task.planDir}/status.md`, syncedAt: new Date(now).toISOString(), stale, ageHours }, git: liveGit, status, review, implementationProof, documents, issues, current,
     progress: { completed: status.errors.length ? null : status.todos.filter(todo => todoState(todo.state) === 'completed').length, total: status.errors.length ? null : status.todos.length } };
 }
 
@@ -66,11 +73,8 @@ export async function aggregate(registry, now = Date.now()) {
   const [tasks, main] = await Promise.all([
     Promise.all(registry.tasks.map(task => aggregateTask(task, registry, observations, now))), observations.get(registry.mainWorktree),
   ]);
-  for (const task of tasks) {
-    const recordedHead = task.status.mainRecord?.match(/[a-f0-9]{40}/)?.[0];
-    task.main = { record: task.status.mainRecord || '未记录 main 集成事实。', recordedHead: recordedHead ?? null, current: main.available && !main.dirty && main.branch === 'main' && recordedHead === main.head };
-  }
+  await Promise.all(tasks.map(async task => { task.main = await integrationProof(task, registry.mainWorktree, main); }));
   const milestoneSource = tasks.find(task => task.id === 'FLOW-003');
-  return { generatedAt: new Date(now).toISOString(), staleAfterHours: registry.staleAfterHours, main: { ...main, worktree: registry.mainWorktree }, tasks,
+  return { generatedAt: new Date(now).toISOString(), staleAfterHours: registry.staleAfterHours, main: { ...main, worktree: registry.mainWorktree }, tasks, overview: humanOverview(tasks),
     milestones: milestoneSource ? { taskId: milestoneSource.id, current: milestoneSource.current, todos: milestoneSource.status.todos } : { taskId: null, current: false, todos: [] } };
 }

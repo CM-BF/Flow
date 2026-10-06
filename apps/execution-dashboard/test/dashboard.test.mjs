@@ -81,19 +81,6 @@ test('branch changes conflict and registry explicitly switches to a new owner wo
   assert.match(result.status.owner, /replacement-owner/); assert.equal(result.source.path, `${target.worktree}/${task.planDir}/status.md`);
 });
 
-test('main observations and commit-bound review stay separate from completed branch', async context => {
-  const f = await fixture(context); const task = f.tasks[0];
-  const target = git(task.worktree, 'rev-parse', 'HEAD');
-  await f.writeStatus(task, { todo: 'completed', checks: `PASSED ${target}`, mainHead: git(f.registry.mainWorktree, 'rev-parse', 'HEAD') });
-  await writeFile(path.join(task.worktree, task.planDir, 'review.md'), `**状态：APPROVED**\nReview target commit：${target}\n`);
-  let result = getTask(await aggregate(f.registry, now));
-  assert.equal(result.review.state, 'approved'); assert.equal(result.main.current, true); assert.match(result.main.record, /未集成/);
-  commit(task);
-  result = getTask(await aggregate(f.registry, now)); assert.equal(result.review.state, 'outdated');
-  git(f.registry.mainWorktree, '-c', 'user.name=D01 Test', '-c', 'user.email=d01@example.invalid', 'commit', '-q', '--allow-empty', '-m', 'next');
-  assert.equal(getTask(await aggregate(f.registry, now)).main.current, false);
-});
-
 test('documents reject traversal, encoded traversal, absolute paths and arbitrary task files', async context => {
   const f = await fixture(context); const task = f.tasks[0];
   const requests = ['../../AGENTS.md', '/etc/passwd', `${task.planDir}/../t02/status.md`, '%2e%2e/%2e%2e/AGENTS.md', '.git/config', `${task.evidenceDir}/unreferenced.md`, `${task.evidenceDir}/x.html`, 'plans/t02/status.md', `${task.planDir}\\status.md`];

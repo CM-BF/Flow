@@ -15,58 +15,62 @@ function element(tag, text, className) { const node = document.createElement(tag
 function badge(text, tone = '') { return element('span', text, `badge ${tone}`); }
 function taskButton(task, text = '查看详情') { const button = element('button', text === '查看详情' ? '详情' : text); button.type = 'button'; button.dataset.openTask = task.id; button.setAttribute('aria-label', `${text}：${task.id} ${task.title}`); return button; }
 function plain(value = '') { return value.replace(/!?\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[`*]/g, '').replace(/^[-#]+\s*/gm, '').trim(); }
-function excerpt(value, length = 140) { const content = plain(value); return content.length > length ? `${content.slice(0, length)}…` : content; }
 function timestamp(value) { return value ? new Date(value).toLocaleString('zh-CN', { hour12: false }) : '未记录'; }
 function stateBadge(value) { const states = { completed: ['已完成', 'good'], pending: ['待开始', ''], 'in-progress': ['进行中', 'active'], blocked: ['阻塞', 'bad'] }; const key = value?.match(/^[a-z-]+/)?.[0]; return badge(...(states[key] ?? ['未知', 'warning'])); }
-function reviewBadge(task) { if (!task.current) return badge('待同步', 'warning'); const states = { approved: ['已通过', 'good'], not_started: ['待审查', ''], changes_requested: ['需修复', 'bad'], outdated: ['待复审', 'warning'], unknown: ['未知', 'warning'] }; return badge(...(states[task.review.state] ?? states.unknown)); }
-function checkBadge(task) { if (!task.current) return badge('待同步', 'warning'); if (task.status.checks.state === 'passed' && (task.status.checks.target !== task.git.head || task.git.dirty)) return badge('历史通过', 'warning'); const states = { passed: ['记录通过', 'good'], failed: ['记录失败', 'bad'], not_run: ['未运行', ''], unknown: ['待核对', 'warning'] }; return badge(...(states[task.status.checks.state] ?? states.unknown)); }
-function mainBadge(task) { if (!task.main.current || !task.current) return badge('待同步', 'warning'); if (/未集成|尚未集成|未合并/.test(task.main.record)) return badge('未集成'); return badge('见集成记录'); }
+function reviewBadge(task) { if (!task.current) return badge('待同步', 'warning'); const states = { approved: ['已审范围未变', 'good'], not_started: ['待审查', ''], changes_requested: ['需修复', 'bad'], outdated: ['待复审', 'warning'], unknown: ['未知', 'warning'] }; return badge(...(states[task.review.state] ?? states.unknown)); }
+function mainBadge(task) { return task.main.current ? badge(task.main.method === 'ancestor' ? '实现已合入' : '范围与 main 相同', 'good') : badge('集成待核实'); }
 let snapshot;
 let selectedTask;
 let documentRequest;
 
+function compactTask(task, subtitle) {
+  const row = element('article', undefined, 'task-row');
+  const text = element('div', undefined, 'task-copy');
+  const title = element('div', undefined, 'task-heading');
+  title.append(element('span', task.id, 'task-code'), element('h3', task.title));
+  text.append(title);
+  if (subtitle) text.append(element('p', subtitle));
+  row.append(text, taskButton(task));
+  return row;
+}
+function tasksFor(ids) { return ids.map(id => snapshot.tasks.find(task => task.id === id)).filter(Boolean); }
 function renderWorkstreams() {
   if (!snapshot) return;
   const filter = $('#filter').value;
-  const tasks = snapshot.tasks.filter(task => task.role === '工作线').filter(task => filter === 'all' || (filter === 'attention' ? task.issues.length || task.review.state !== 'approved' || !task.main.current : /in-progress|实现中|进行中/.test(task.status.branchState ?? '')));
+  const tasks = snapshot.tasks.filter(task => filter === 'all' || (filter === 'unknown' ? !task.current || !task.status.human?.complete : /^in-progress/.test(task.status.branchState ?? '')));
   $('#workstreams').replaceChildren(...tasks.map(task => {
-    const row = element('article', undefined, 'workline');
-    const identity = element('div');
-    const title = element('div', undefined, 'work-title'); title.append(element('span', task.id, 'task-code'), element('h3', task.title));
-    identity.append(title, element('p', task.status.owner || 'Owner 未知', 'owner'));
-    const progress = element('div'); progress.append(element('p', excerpt(task.status.branchState || '当前状态未知', 100), 'progress-note'), element('span', `${task.current ? '' : '旧记录 / 待核实：'}TODO ${task.progress.completed ?? '未知'} / ${task.progress.total ?? '未知'} 已完成`, 'progress-count'));
-    if (task.issues.length) progress.append(element('p', task.issues[0], 'source-warning'));
-    const stages = element('div', undefined, 'stages');
-    for (const [label, pill] of [['检查', checkBadge(task)], ['独立审查', reviewBadge(task)], ['main 集成', mainBadge(task)]]) { const stage = element('div'); stage.append(element('span', label, 'stage-label'), pill); stages.append(stage); }
-    const meta = element('div', undefined, 'work-meta'); meta.append(element('span', `更新 ${timestamp(task.status.updatedAt)}`), element('span', `HEAD ${task.git.head?.slice(0, 10) ?? '未知'}`), element('span', task.git.dirty === null ? 'Git 未知' : task.git.dirty ? `${task.git.changedFiles} 项未提交` : '工作树 clean'), element('span', `${task.source.mode === 'live' ? '权威来源' : '冻结 / 缺失'}：${task.worktree.split('/').pop()}`));
-    row.append(identity, progress, stages, taskButton(task), meta); return row;
+    const row = compactTask(task);
+    const status = element('div', undefined, 'task-stages');
+    status.append(task.current ? stateBadge(task.status.branchState) : badge('来源待同步'), element('span', `${task.progress.completed ?? '?'} / ${task.progress.total ?? '?'} 项`, 'muted'), reviewBadge(task), mainBadge(task));
+    row.querySelector('.task-copy').append(status);
+    return row;
   }));
   $('#empty-filter').hidden = tasks.length > 0;
 }
-
-function renderMilestones() {
-  const titles = { F00: '基础契约与骨架', C01: '控制中心', R01: 'Runner 执行', I01: 'M1 集成验收' };
-  const milestones = Object.entries(titles).map(([id, title]) => ({ id, title, todo: snapshot.milestones.todos.find(todo => todo.id === id) }));
-  $('#milestone-note').textContent = snapshot.milestones.current ? '来源：FLOW-003 owner 状态记录；各工作线的更新见下方。' : 'FLOW-003 来源缺失或待同步；以下仅展示已有记录，不能作为当前验收结论。';
-  $('#milestones').replaceChildren(...milestones.map(({ id, title, todo }) => { const node = element('div', undefined, 'milestone'); const line = element('div'); line.append(element('span', id, 'milestone-code'), stateBadge(todo?.state)); node.append(line, element('h3', title), element('p', todo ? excerpt(todo.evidence, 80) : '总计划未记录此项状态')); return node; }));
+function renderSignal(selector, ids, kind, empty) {
+  const tasks = tasksFor(ids);
+  $(selector).replaceChildren(...(tasks.length ? tasks.map(task => compactTask(task, task.status.human[kind].text)) : [element('p', empty, 'empty-state')]));
 }
-
-function renderNotes(selector, field, tasks, fallback) {
-  const notes = tasks.filter(task => task.status[field]);
-  $(selector).replaceChildren(...(notes.length ? notes.map(task => { const note = element('article', undefined, 'note'); note.append(taskButton(task, task.id), element('p', excerpt(task.status[field], field === 'next' ? 150 : 120))); return note; }) : [element('p', fallback, 'muted')]));
-}
-
 function render() {
-  renderMilestones(); renderWorkstreams();
-  const lines = snapshot.tasks.filter(task => task.role === '工作线');
-  renderNotes('#next-deliveries', 'next', lines, 'Owner 尚未记录下一交付。');
-  renderNotes('#risks', 'risks', lines, 'Owner 尚未提供风险记录；不代表没有阻塞。');
-  renderNotes('#decisions', 'decisions', snapshot.tasks, '尚无明确用户决定记录；请从工作线详情核对未决事项。');
-  $('#plans').replaceChildren(...snapshot.tasks.filter(task => task.role !== '工作线').map(task => { const button = taskButton(task, `${task.id}  ${task.title}`); button.className = 'plan-link'; button.append(element('span', `${task.current ? '' : '待同步 · '}${task.progress.completed ?? '未知'} / ${task.progress.total ?? '未知'} 项记录完成`)); return button; }));
-  $('#sync-state').textContent = `已读取 ${snapshot.tasks.length} 个权威登记来源`;
-  $('#sync-time').textContent = `同步 ${timestamp(snapshot.generatedAt)}`;
+  const view = snapshot.overview;
+  $('#page-title').textContent = view.phase ? `当前推进 ${view.phase}` : '当前阶段待补';
+  $('#phase-note').textContent = view.phase ? '每项进展都能打开原始记录。' : '负责人补充阶段摘要后显示；现有计划仍可查看。';
+  const active = tasksFor(view.activeIds);
+  $('#active-work').replaceChildren(...(active.length ? active.map(task => compactTask(task, task.status.human.output)) : [element('p', '暂无已明确记录的进行中事项。', 'empty-state')]));
+  $('#next-deliveries').replaceChildren(...(view.deliveryIds.length ? tasksFor(view.deliveryIds).map(task => compactTask(task, task.status.human.next)) : [element('p', '下一交付摘要待负责人补充。', 'empty-state')]));
+  renderSignal('#decisions', view.decisionIds, 'decision', '已明确的记录中，没有需要你决定的事项。');
+  renderSignal('#blockers', view.blockerIds, 'blocker', '已明确的记录中，暂无当前阻塞。');
+  $('#decision-note').textContent = view.unknownIds.length ? `${view.unknownIds.length} 项记录的摘要或来源仍待补齐，详见下方。` : '全部登记来源已提供当前摘要。';
+  $('#unknown-count').textContent = view.unknownIds.length;
+  $('#unknown-items').replaceChildren(...tasksFor(view.unknownIds).map(task => compactTask(task, task.current ? `摘要待补：${task.status.human?.missing.join('、') || '字段待核对'}` : '来源待同步，当前情况未知')));
+  $('#history-count').textContent = view.historyIds.length;
+  $('#history-items').replaceChildren(...tasksFor(view.historyIds).map(task => compactTask(task, task.status.human?.complete ? task.status.human.output : `已记录 ${task.progress.completed ?? '?'} / ${task.progress.total ?? '?'} 项完成；摘要待补`)));
+  $('#source-count').textContent = snapshot.tasks.length;
+  renderWorkstreams();
+  $('#sync-state').textContent = '已同步';
+  $('#sync-time').textContent = timestamp(snapshot.generatedAt);
   const main = snapshot.main;
-  $('#main-observation').textContent = `main 现场观察：${main.available ? `${main.branch} / ${main.head} / ${main.dirty ? '存在未提交变化' : 'clean'}` : '不可读取'}。来源：${main.worktree}。与 owner 记录的 HEAD 不一致时显示待同步。`;
+  $('#main-observation').textContent = `main 现场观察：${main.available ? `${main.branch} / ${main.head} / ${main.dirty ? '存在未提交变化' : 'clean'}` : '不可读取'}。观察时间 ${timestamp(main.observedAt)}。来源：${main.worktree}。集成以实现目标祖先关系或声明范围树核验。`;
 }
 
 async function refresh() {
@@ -90,8 +94,8 @@ function openTask(id) {
   for (const issue of task.issues) content.append(element('p', issue, 'notice warning'));
   const facts = element('dl', undefined, 'detail-facts');
   for (const [label, value] of [
-    ['Owner', task.status.owner], ['工作分支', task.status.branchState], ['下一交付', task.status.next], ['阻塞 / 风险', task.status.risks], ['用户决定', task.status.decisions],
-    ['检查记录', task.status.checks.record], ['审查结论', `${plain(task.review.record)}\n目标：${task.review.target ?? '未绑定提交'}`], ['main 集成记录', `${plain(task.main.record)}\n${task.main.current ? '记录 HEAD 与现场一致' : '未与现场 HEAD 同步，集成状态待核实'}`],
+    ['Owner', task.status.owner], ['人类摘要缺口', task.status.human?.missing.join('、') || '无；摘要字段完整'], ['声明实现目标', task.status.implementation?.target], ['声明实现范围', task.status.implementation?.scopes.join('\n')], ['实现核验', JSON.stringify(task.implementationProof, null, 2)], ['Review 范围核验', JSON.stringify(task.review.proof ?? { state: '未执行', reason: '无可核验的 approval' }, null, 2)], ['工作分支', task.status.branchState], ['下一交付', task.status.next], ['阻塞 / 风险', task.status.risks], ['用户决定', task.status.decisions],
+    ['检查记录', task.status.checks.record], ['审查结论', `${plain(task.review.record)}\n目标：${task.review.target ?? '未绑定提交'}`], ['main 集成记录', `${plain(task.main.record)}\n${task.main.reason}\n方法：${task.main.method}\n实现目标：${task.main.target ?? '未知'}\n现场 main：${task.main.mainHead ?? '未知'}\n观察时间：${task.main.observedAt}`],
     ['权威 status', task.source.path], ['来源模式', task.source.mode === 'live' ? '权威 worktree' : task.source.mode === 'frozen' ? `冻结旧记录 ${task.source.frozenCommit}` : '缺失'],
     ['状态更新时间', timestamp(task.status.updatedAt)], ['文件修改时间', timestamp(task.source.modifiedAt)], ['本次读取时间', timestamp(task.source.syncedAt)],
     ['登记分支', task.branch], ['现场 Git', `${task.git.branch ?? '未知'}\n${task.git.head ?? 'HEAD 未知'}\n${task.git.dirty === null ? 'dirty 未知' : task.git.dirty ? `dirty；${task.git.changedFiles} 项变化` : 'clean'}`],

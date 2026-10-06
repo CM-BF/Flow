@@ -21,6 +21,8 @@ const assignments = [
   ['D02', '进度来源同步', '工作线', 'dashboard-progress-sync', 'd02-progress-sync'],
   ['C02', '异常核对与恢复', '工作线', 'm2-reconciliation', 'c02-reconciliation'],
   ['P01', '协议互操作', '工作线', 'protocol-adapters', 'p01-protocols'],
+  ['D03', '进度的人类视图', '工作线', 'dashboard-human-view', 'd03-dashboard-human'],
+  ['WPF-001', 'Web 平台持续执行', '工程协作', 'web-platform-management', 'web-platform'],
   ['M02', '统一工作入口', '工作线', 'm2-workspace', 'm02-unified-workspace'],
 ];
 
@@ -33,7 +35,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${id === 'WPF-001' ? 'web-platform' : id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
