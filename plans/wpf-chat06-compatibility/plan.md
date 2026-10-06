@@ -9,8 +9,8 @@
 ## TODO
 
 - [x] WPF-CHAT06C01-01：领取、技能与固定单文件输入/hash核验、唯一三件套。
-- [ ] WPF-CHAT06C01-02：GET/CREATE读取missing→false、严格boolean；其他能力/身份门禁不放宽。
-- [ ] WPF-CHAT06C01-03：局部真实FlowClient wire测试与直接回归、typecheck、clean-code证据。
+- [x] WPF-CHAT06C01-02：GET/CREATE读取missing→false、严格boolean；其他能力/身份门禁不放宽。
+- [x] WPF-CHAT06C01-03：局部真实FlowClient wire测试与直接回归、typecheck、clean-code证据。
 - [ ] WPF-CHAT06C01-04：固定实现独立review、聚合确认与MainLead交付；不自行merge main。
 
 ## 验收
@@ -22,3 +22,5 @@ GET与CREATE分别缺失/false/true；null、字符串、数值、对象拒绝�
 CREATE ACK及同key replay永久原receipt、显式liveAssistantText:false。只有GET snapshot按连接header `X-Flow-Assistant-Stream: patch-v1`协商；缺省/未知false，center mount和产品消费者门槛满足才true。不按lastTurn是否已有patch或provider是否产delta判能力。本片不发该header，不启用正文或流读取。后续共享协商固定SHA和正式产品范围另行受领，不能把本reader片称实时正文已完成。
 
 [status](status.md) · [review](review.md) · [证据](../../docs/evidence/wpf-chat06-compatibility/README.md)
+
+固定候选 8c56211739ae0c20816c67caad13cee510130514；作者104局部checks及Webtsc通过，独立review NOT_STARTED。[验证](../../docs/evidence/wpf-chat06-compatibility/validation.md)保留red/green与源绑定，未启用流式消费者。
