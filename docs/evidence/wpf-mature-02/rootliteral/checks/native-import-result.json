@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-e",
+    "await import('./experiments/codex-app-server-conformance/rootliteral/execute-reviewed.mjs'); process.stdout.write('inert import passed\\n');"
+  ],
+  "startedAt": "2026-10-06T12:18:18.544542+00:00",
+  "finishedAt": "2026-10-06T12:18:18.605103+00:00",
+  "elapsedSeconds": 0.06087674992159009,
+  "exitCode": 0,
+  "actualCompileCalls": 0,
+  "actualSyntheticTargetStarts": 0
+}

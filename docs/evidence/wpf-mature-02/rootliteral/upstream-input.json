@@ -1,0 +1,10 @@
+{
+  "receivedFrom": "Mika / architecture_read read-only primary verification",
+  "sourceCommit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+  "url": "https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/sandboxing/src/seatbelt_read_only_platform_defaults.sbpl#L63",
+  "bytes": 7296,
+  "sha256": "4822f333d5082913f43d4e1e165f0d2d26aad2eb4e45928d690f9973511f1617",
+  "lines": "63 cwd comment;64-65 exact literal root read/test",
+  "boundary": "Root directory own data/enumeration may be newly readable; no descendant grant. Source hypothesis only, not local errno/cause/success evidence.",
+  "issues": "39528 broad config root read and46406 non-minimal multi-denial report are not exact-literal necessity/sufficiency proof. No contradiction found; not imported as runtime evidence."
+}

@@ -370,7 +370,7 @@ it('v3 retains roots when automatic inventory close is unknown without retrying 
   expect(result.retainedRoots).toHaveLength(2); expect(f.calls).toHaveLength(1); expect(closes).toBe(1);
 });
 
-it('sandbox67 selects exactly two fixed recipes and rejects arbitrary profile paths', () => {
+it('sandbox67 preserves its fixed recipe and rejects arbitrary profile paths', () => {
   expect(reviewedCandidate()).toMatchObject({ version: 3, sourceDirectory, flag: '--reviewed-fd-window-v3' });
   const selected = reviewedCandidate('sandbox67');
   expect(selected).toMatchObject({ version: 4, sourceDirectory: path.join(sourceDirectory, '../sandbox67'), flag: '--reviewed-sandbox67-window' });
@@ -386,6 +386,38 @@ it('sandbox67 preserves the C input and adds only the exact authorized Sandbox s
 });
 it('sandbox67 consumes the selected frozen profile through the unchanged host and regular-fd case', async () => {
   const selected = reviewedCandidate('sandbox67'); let copiedProfile: Buffer | undefined;
+  const f = fixture((options, number) => {
+    if (number === 1) copiedProfile = fs.readFileSync(path.join(options.cwd, 'candidate.sb'));
+    if (number === 3) {
+      expect(options.executable).toBe(toolchain.sandbox);
+      expect(options.stdio).toHaveLength(3);
+      for (const fd of options.stdio) expect(fs.fstatSync(fd).isFile()).toBe(true);
+    }
+  });
+  const result = await runFdCanaryBatch({ ...f.input, sourceDirectory: selected.sourceDirectory }, f);
+  expect(copiedProfile).toEqual(fs.readFileSync(path.join(selected.sourceDirectory, 'candidate.sb')));
+  expect(result).toMatchObject({ compileCalls: 1, targetReservations: 2, targetCases: ['control-socket', 'profile-regular'], measurementComplete: true,
+    compilerInventoryPersisted: true, cleanupComplete: true, resultPersisted: true });
+  expect(f.calls).toHaveLength(3); expect(f.calls[1].stdio).toBe('pipe');
+  expect(f.calls[2].args.filter((x: string) => x === '-f')).toHaveLength(1);
+});
+
+it('rootliteral selects only its fixed recipe and rejects arbitrary root profile paths', () => {
+  const selected = reviewedCandidate('rootliteral');
+  expect(selected).toMatchObject({ version: 5, sourceDirectory: path.join(sourceDirectory, '../rootliteral'), flag: '--reviewed-rootliteral-window' });
+  expect(selected.evidenceDirectory).toMatch(/\/wpf-mature-02\/rootliteral$/);
+  expect(Object.isFrozen(selected)).toBe(true);
+  for (const invalid of ['/', '../rootliteral', '/tmp/rootliteral.sb', 'v5']) expect(() => reviewedCandidate(invalid)).toThrow();
+});
+it('rootliteral preserves the C input and adds only exact root literal read and existence permissions', () => {
+  const selected = reviewedCandidate('rootliteral');
+  const previous = reviewedCandidate('sandbox67');
+  expect(fs.readFileSync(path.join(selected.sourceDirectory, 'fd-canary.c'))).toEqual(fs.readFileSync(path.join(sourceDirectory, 'fd-canary.c')));
+  const base = fs.readFileSync(path.join(previous.sourceDirectory, 'candidate.sb'), 'utf8');
+  expect(fs.readFileSync(path.join(selected.sourceDirectory, 'candidate.sb'), 'utf8')).toBe(base + '\n(allow file-read* file-test-existence (literal "/"))\n');
+});
+it('rootliteral passes only its frozen profile through the shared host and regular-fd case', async () => {
+  const selected = reviewedCandidate('rootliteral'); let copiedProfile: Buffer | undefined;
   const f = fixture((options, number) => {
     if (number === 1) copiedProfile = fs.readFileSync(path.join(options.cwd, 'candidate.sb'));
     if (number === 3) {

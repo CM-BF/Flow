@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:43 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:18:44 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,18 +11,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 3636614f3850d7eb9ca63a42c01ea0d95df19db2（v3源码；候选packet与metadata HEAD由Git核） |
-| 工作树dirty状态 | 6fe67ce6e2ea8fe4af58fb7e138bfdec20bbd3ea clean后仅本次R06接收metadata；提交后由Git核clean。 |
+| 工作树dirty状态 | 315ab41692294065ba8bf157f12cdb1313b1a170 clean后仅rootliteral固定枚举/profile、直接检查与自身metadata；source/packet完成后核clean。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | implementation |
 | 检查状态 | C_FD_V3_WINDOW_STOPPED（1编译/2目标，control已报告/profile-regular SIGABRT无报告；measurement=false、cleanup/accounting=true、CLI1）； C_FD_V3_LOCAL_PASS（28通过/16未选，9新+19直接；Node24惰性import/3语法0，新增实际compile/target0）； C_FD_V2_WINDOW_STOPPED（1编译/2目标，control已报告/profile SIGABRT/第三NOT_RUN；measurement=false、cleanup/accounting=true、CLI1）；C_FD_V2_LOCAL_PASS（26/26受影响项，9未选；Node24惰性import/3语法通过，历史检查时新增实际运行0）；C_FD_WINDOW_STOPPED（1编译exit0/0目标，cleanup=true，measurement=false/accounting=unknown，CLI1）；C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 实现目标 | f960a1dcc0dccf86c670a00edb2956d8763f9142 |
-| 实现范围 | experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs, experiments/codex-app-server-conformance/fd-canary/host.test.ts, experiments/codex-app-server-conformance/sandbox67 |
+| 实现范围 | experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs、host.test.ts与rootliteral独立实验目录 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 单项Sandbox容器查询权限对照已运行：控制项成功，受限目标仍异常退出且无子报告。清理与计量完成，独审已确认失败证据准确；隔离能力仍未证实。 |
-| 下一可用交付 | 本次失败结果及R06生产接口已交付；停止诊断。04 producer固定目标进入只读审查，薄入口仍待集成确认。 |
-| 当前阻塞 | ACTIVE: socket与普通文件对照的受限目标均异常退出且无报告，原因仍未知；窗口已消费，真实Codex目录仍缺隔离验证。 |
+| 当前产出 | R06生产接口已进入main并交回写权。根目录精确literal对照已完成零目标检查，准备固定证据供独审。 |
+| 下一可用交付 | 交付只新增根目录自身读取/存在性权限的有界候选；待另一位合格reviewer和Mika门禁，不执行真实模型。 |
+| 当前阻塞 | ACTIVE: 真实Codex隔离仍未证明；新候选尚待独审与独立实际窗口，旧失败因果unknown。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：sandbox67结果b2a77cf3 faithful FAIL APPROVED（Mika，2026-10-06 12:10:08 UTC，0P1/P2）；sandbox67组合4dec9500 APPROVED（status_read，2026-10-06 12:05:24 UTC，0P1/P2）；v3结果d8038d3a faithful FAIL APPROVED（architecture_read，2026-10-06 11:45:46 UTC，0P1/P2）；v3组合a10b4fae APPROVED（architecture_read，2026-10-06 11:38:34 UTC，0P1/P2）；结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
@@ -167,3 +167,7 @@ Sandbox67局部检查：16通过/31未选，3新固定选择/profile/regular接�
 ## R06生产接收与部分交回（独立metadata阶段）
 
 [main接收核验](../../docs/evidence/wpf-mature-02/r06-main-accepted.json)：五源077=本树=main362af3 Git/现场；复用19零child与strict，Lead集成root/Web types0，本owner未测。先[停写](../../docs/evidence/wpf-mature-02/r06-source-stop.json)再v5原子移除五路径；不恢复这些写权，其他七scope保留。sandbox67的b2结果及6fe审批计量为固定历史快照，未更改raw/manifest/archive，不将本阶段计入旧运行时长或声称旧metadata hash仍为当前。当前04 producer只读审查target eccb1ba6d9f3bf95cca4f50693dde8e32707ed40，结论由04 owner维护。
+
+## Root literal新准备阶段
+
+[固定候选](../../docs/evidence/wpf-mature-02/rootliteral/README.md)：只在sandbox67追加精确根节点file-read*/file-test-existence，非递归；枚举可见性是新增权限的一部分。19选择通过/31未选，实际编译/目标0，原C/host/parser/权限及已封存档案不动。当前claim v5；GO授权准备，未来go-c-rootliteral-once仍需独审与Mika fresh门禁。04 producer eccb已由本owner于12:16:43 UTC只读APPROVED，状态由04维护。

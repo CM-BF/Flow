@@ -7,13 +7,16 @@ import { performance } from 'node:perf_hooks';
 import { runFdCanaryBatch } from './host.mjs';
 const originalSourceDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repository = path.resolve(originalSourceDirectory, '../../..');
-/** Two reviewed recipes only: no caller-selected profile, path, toolchain or matrix. */
+/** Three reviewed recipes only: no caller-selected profile, path, toolchain or matrix. */
 export function reviewedCandidate(id = 'v3') {
   if (id === 'v3') return Object.freeze({ version: 3, flag: '--reviewed-fd-window-v3',
     sourceDirectory: originalSourceDirectory, evidenceDirectory: path.join(repository, 'docs/evidence/wpf-mature-02/fd-canary-v3') });
   if (id === 'sandbox67') return Object.freeze({ version: 4, flag: '--reviewed-sandbox67-window',
     sourceDirectory: path.join(repository, 'experiments/codex-app-server-conformance/sandbox67'),
     evidenceDirectory: path.join(repository, 'docs/evidence/wpf-mature-02/sandbox67') });
+  if (id === 'rootliteral') return Object.freeze({ version: 5, flag: '--reviewed-rootliteral-window',
+    sourceDirectory: path.join(repository, 'experiments/codex-app-server-conformance/rootliteral'),
+    evidenceDirectory: path.join(repository, 'docs/evidence/wpf-mature-02/rootliteral') });
   throw new Error('Unknown reviewed candidate');
 }
 function fingerprint(file, expected) {

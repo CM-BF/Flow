@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [Root literal单项候选准备](rootliteral/README.md)：仅根节点读取/存在性（可能含根枚举，非递归），19项零目标检查通过。固定组合待独审，未来go-c-rootliteral-once由Mika单次门禁，当前不运行。
+
 - [R06五源已main接收/逐blob核验](r06-main-accepted.json)；已停写并完成[claim v5部分交回](r06-source-handback-receipt.json)。main362af3只接收已审生产seam；薄consumer仍待单独确认，诊断窗口不重开。
 
 - [Sandbox syscall 67唯一窗口结果](sandbox67/run-report.md)：1编译/2目标，控制成功，新profile regular仍SIGABRT/no report；measurement未完成，cleanup/accounting完成。Mika于12:10:08 UTC接收b2a77cf3 faithful FAIL；窗口已消费，不重试或推断因果。
