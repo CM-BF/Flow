@@ -2,7 +2,7 @@
 
 编号O10；状态in-progress；创建/更新2026-10-06 08:12 UTC。父产品O01/U11；唯一owner assignment_review / gpt-6-astra。固定base fc113945ff73d1a43092d0a70b51e901aa4be1e2，独立branch codex/native-child-acceptance。GO已批准本准备片段和公开HTTP/PG、query注入、进程清理seams；尚无真实query许可。
 
-沿[O09候选](../../docs/evidence/o09/native-acceptance-candidate.md)：一个合成材料、一个普通readonly登记profile、owner固定input/pin/key，只受理一个文本child。机械flow.text与GO业务语义接收分开。复用生产runtime/adapter，不复制SDK loop。复用O08 stopWorker及透明host观察helper；其许可validator硬编码O08预算，因此本片保留相同wx+fsync一次性算法但独立O10限额/目录，不伪造O08许可。
+沿O09候选（原owner提交232b69c46cbcc16170b98963df76a08376b7a212的docs/evidence/o09/native-acceptance-candidate.md；固定产品base不含该后继metadata）：一个合成材料、一个普通readonly登记profile、owner固定input/pin/key，只受理一个文本child。机械flow.text与GO业务语义接收分开。复用生产runtime/adapter，不复制SDK loop。复用O08 stopWorker及透明host观察helper；其许可validator硬编码O08预算，因此本片保留相同wx+fsync一次性算法但独立O10限额/目录，不伪造O08许可。
 
 - [x] O10-01：claim、最小Interface、固定source与技能记录。
 - [x] O10-02：默认0query预检、独立预算reservation及实际init/Read观察校验。
