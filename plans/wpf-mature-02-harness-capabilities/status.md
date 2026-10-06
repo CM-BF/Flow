@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:13:12 UTC / 2026-10-06 10:00:37 UTC（固定main） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:17:08 UTC / 2026-10-06 10:00:37 UTC（固定main） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；已受控合入f181d84b5fb3652d62e2a181acff442d42b3e066 / 7297986fbc879bb5040879daf97c7d5bb8b657ac（metadata HEAD由Git核） |
-| 工作树dirty状态 | 当前修复源码/证据已提交；metadata提交后由Git核clean |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控mainf181 / d35c59682133d77d8581f3c3bce89a4ab3416b26（运行结果；metadata HEAD由Git核） |
+| 工作树dirty状态 | 一次运行safe raw/manifest已提交；metadata提交后由Git核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED：composition delta6/6，0child/0listener；原R06 19/driver10/C1strict保留固定target，未重跑 |
+| 检查状态 | DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | 当前R06可选sink/driver未集成；生产C1/投影输入已在受控mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
-| 实现目标 | 7297986fbc879bb5040879daf97c7d5bb8b657ac |
+| 实现目标 | d35c59682133d77d8581f3c3bce89a4ab3416b26 |
 | 实现范围 | R06已领取精确5文件；experiments/codex-app-server-conformance/diagnostics；本task计划/证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 组合准备失败时也能完整记录自有临时目录；6项针对性故障检查通过，已交原reviewer复审。 |
-| 下一可用交付 | 复审根目录登记修复，再由Mika安排独占诊断窗口。 |
-| 当前阻塞 | ACTIVE: 实际隔离启动原因仍未知；当前只验证诊断代码，未启动真实诊断窗口。 |
+| 当前产出 | 诊断捕获与自有资源清理已验证；隔离样本仍异常退出，实际启动原因未知。 |
+| 下一可用交付 | 独审本次封存结果；并行交付已审共享模块，开展有界只读启动原因研究。 |
+| 当前阻塞 | ACTIVE: 原profile canary仍SIGABRT且无有效七项报告，实际Codex目录验证停止；父管道空stderr不能定位原因。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：原4e1c989组合P2已修，当前7297986待原reviewer复审；R06五源077 APPROVED保留 |
+| Review | [review.md](review.md)：7297986源码APPROVED；当前一次运行结果d35c596待只读复审 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | R06新增默认关闭的trusted-host私有sink，原process owner不变；R05C同树直接消费者strict通过。共享架构更新待集成target/owner Mika/ExecutionLead。 |
 
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
-| WPF-MATURE-02-03 | in-progress | chatui01_owner | 原canary失败封存；R06诊断seam已审，driver修复/19+10零child检查已交复审；真实新窗口尚未启动 |
+| WPF-MATURE-02-03 | blocked | chatui01_owner | 唯一新batch已封存：2child、控制成功、原profile SIGABRT/空stderr，cleanup完成；实际catalog仍blocked，source只读研究继续 |
 | WPF-MATURE-02-04 | in-progress | chatui01_owner | 已接入独审通过的生产投影，薄入口27/27且独审APPROVED，待集成；共享能力全链路尚未完成 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
@@ -79,3 +79,7 @@ WPF-MATURE-02-03新增独立诊断阶段：最多3次自有合成子进程，总
 当前运行HOLD：S01窗口已结束，本owner仍保持0新child，等待原reviewer复审和Mika单独窗口。driver最终10项包含fsync预算越界回归；文件注明持久化前elapsed，CLI在durableCreate后给最终耗时和withinBudget。
 
 组合review修复：原4e1c989有1 P2（创建根后realpath/lstat失败时漏登记）；当前7297986在创建即登记，未知身份/准备不完整保留。新增6/6故障检查，0listener/0child；旧profile/raw保持固定target，本次仅cleanup变动。
+
+## 唯一新诊断窗口已完成并封存
+
+[运行报告](../../docs/evidence/wpf-mature-02/diagnostics/run-report.md)：10:14:37.579Z起，2factory、第三NOT_RUN，控制40bytes精确，canary SIGABRT/exitCode=null、父stderr收到0bytes。282.794417ms含最终持久化；子进程/listener/三个记录根已关闭或清除。CLI0仅采集/清理成功，隔离仍失败。parent空管道不证明子进程没有错误文字或能写stderr。当前STOPPED，不恢复旧clock/新batch，不重试。旧HOLD/NOT_RUN为历史准备时点，只有本段描述该唯一新运行事实。

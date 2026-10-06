@@ -1,6 +1,12 @@
+# Current sealed diagnostic result review
+
+State: NOT_STARTED. Result target d35c59682133d77d8581f3c3bce89a4ab3416b26. Source7297986 was independently APPROVED by architecture_read/gpt-6-astra at2026-10-06 10:13:38 UTC: P2 resolved,0remainingP1/P2;78 manifest entries+8 unchanged bindings and input18/external4 matched Git/WT/hashes. Mika authorized exactly one independent window; it has been consumed and sealed.
+
+[Run manifest](../../docs/evidence/wpf-mature-02/diagnostics/run-manifest.json) / [report](../../docs/evidence/wpf-mature-02/diagnostics/run-report.md). Read-only audit of one reservation,2 factory calls, exact control digest, canary failed/SIGABRT/empty parent pipe, null/unknown preservation, all private cleanup, final CLI elapsed after persistence. Do not rerun, open a new batch, inspect raw private diagnostic history or infer isolation fromCLI0.
+
 # WPF-MATURE-02 composition根登记修复复审
 
-状态：NOT_STARTED。Review target commit: 7297986fbc879bb5040879daf97c7d5bb8b657ac。原reviewer architecture_read/gpt-6-astra对4e1c989c0503cc73206d4e3de615e57b881d452e给CHANGES_REQUESTED，Mika接收2026-10-06 10:10:29 UTC，1 P2/0 P1：组合makeRoot创建后才在realpath/lstat成功时登记。
+状态：APPROVED。Review target commit: 7297986fbc879bb5040879daf97c7d5bb8b657ac。原reviewer architecture_read/gpt-6-astra对4e1c989c0503cc73206d4e3de615e57b881d452e给CHANGES_REQUESTED，Mika接收2026-10-06 10:10:29 UTC，1 P2/0 P1：组合makeRoot创建后才在realpath/lstat成功时登记。
 
 本修复只在mkdtemp成功后立即登记原路径，后续补身份/准备完成状态；realpath/lstat/chmod任意失败保留并报告cleanup-unconfirmed，身份未知或准备不完整不删除。0child/0listener真实临时目录故障6/6通过（3类各覆盖第1/2根）。profile/preload/peer/grants/七项语义未动。R06五源077审批仍有效；19/driver10与C1strict保留原target，不重复运行。当前driver/test只有input selector v4→v5更新，执行输入绑定新compositionhash。
 

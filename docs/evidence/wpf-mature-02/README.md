@@ -1,3 +1,7 @@
+# Current diagnostic result
+
+[One sealed diagnostic batch](diagnostics/run-report.md):2 owned synthetic children, control40bytes exact, original-profile canary SIGABRT/empty parent stderr, actual causeunknown. Cleanup complete, final282.794417ms, thirdNOT_RUN. Collection success does not establish isolation; actual Codex/catalog remains blocked. [Result manifest](diagnostics/run-manifest.json) is current; prior preparation remains fixed history.
+
 # Current diagnostic preparation
 
 [Private stderr seam and revised diagnostic driver](diagnostics/README.md), target `7297986fbc879bb5040879daf97c7d5bb8b657ac`. R06 five-source seam at0778847 independently APPROVED; revised driver awaiting review. 19+10 distinct zero-child cases and strict R06/C1 compile passed. No real diagnostic window, app-server/auth/provider run. [Manifest v5](diagnostics/manifest-v5.json) is current; prior manifests remain fixed history.

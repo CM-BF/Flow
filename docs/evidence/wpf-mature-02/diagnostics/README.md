@@ -1,3 +1,7 @@
+# Current sealed runtime result
+
+The single approved diagnostic batch has completed and stopped: [result report](run-report.md), [run manifest](run-manifest.json). Control capture passed; original-profile canary FAILED with SIGABRT and0bytes received by the parent stderr pipe. Cause remainsunknown. All recorded resources cleaned, final CLI282.794417ms. No retry/new window. The following source preparation record is historical; its earlier NOT_RUN/HOLD language is superseded only by this one sealed result.
+
 # Private stderr seam and bounded diagnostic driver
 
 Current implementation target `7297986fbc879bb5040879daf97c7d5bb8b657ac`; recorded 2026-10-06 10:06:13 UTC. R06 five-source seam at `0778847702e595405f6cba0de51c1058b1436504` is **APPROVED by Mika/gpt-6-astra**, read-only: 10 source / 8 unchanged / 15 raw bindings matched, 19/19 zero-child cases plus strict0; no 31-child rerun or real drain claim. Current R06 bytes are unchanged from that approved target. Driver at077 was CHANGES_REQUESTED for cleanup outside the batch; current cleanup revision is **NOT_STARTED for independent review**. No real diagnostic window has run.

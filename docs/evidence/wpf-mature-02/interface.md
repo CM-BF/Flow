@@ -153,3 +153,7 @@ Mika已独审APPROVED 0778847的五源seam；当前driver清理修复另待审�
 S01P02协调入口：[部分交回receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/docs/evidence/s01p02/main-partial-handback-receipt.json)与[main接收receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/docs/evidence/s01p02/main-accepted.json)。Lead输入：main.ts已在v2停写交回，mainf181已接收4源；这里仅原始回执指针，不复制其进度。
 
 组合根登记修复：7297986把mkdtemp成功后的路径即时入账，后续realpath/lstat/chmod失败保留并标cleanup未知。新增6项零listener/零child故障检查。profile/preload/peer/grants/七项不变，当前用diagnostics/manifest-v5与driver-input-v5；原reviewer正复审，执行继续HOLD。
+
+## 唯一诊断batch封存（当前运行事实）
+
+[运行报告](diagnostics/run-report.md)/[run manifest](diagnostics/run-manifest.json)：source7297986经原reviewer10:13:38 APPROVED，Mika独占窗口后一次执行2child，final282.794417ms、cleanupComplete。控制40bytes精确；原profile canary SIGABRT且父stderr管道0bytes，原因unknown、七项未通过。CLI0仅诊断采集/清理完成，实际catalog仍blocked；不证明sandbox能写stderr或没有错误文字。第三NOT_RUN、预算已消费，不恢复clock/新batch。R06/已审C1交付可独立推进，后续仅有界只读源码研究。
