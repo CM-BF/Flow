@@ -1,0 +1,95 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch
+
+ ❯ apps/runner/src/configuration.test.ts (19 tests | 4 failed) 167ms
+   ✓ defaults the ordinary runner entry point to fixture only 1ms
+   ✓ enables Claude from an explicit material manifest without starting a query 7ms
+   ✓ rejects an invalid or policy-widening manifest {} 5ms
+   ✓ rejects an invalid or policy-widening manifest {"materialFiles":["relative.txt"]} 3ms
+   ✓ rejects an invalid or policy-widening manifest {"materialFiles":[],"tools":["Bash"]} 2ms
+   ✓ rejects an invalid or policy-widening manifest {"materialFiles":[],"query":"injected"} 2ms
+   ✓ rejects an invalid or policy-widening manifest {"materialFiles":[],"maxBudgetUsd":5} 3ms
+   ✓ rejects an invalid or policy-widening manifest {"materialFiles":[],"requireReadApproval":"false"} 2ms
+   ✓ rejects an invalid or policy-widening manifest {"materialFiles":[],"maxTurns":5} 3ms
+   ✓ binds explicit active steering to one immutable profile while preserving legacy canonical bytes 10ms
+   ✓ rejects a non-boolean steering manifest without starting a query: "true" 4ms
+   ✓ rejects a non-boolean steering manifest without starting a query: null 4ms
+   ✓ rejects a non-boolean steering manifest without starting a query: {"protocol":"flow.active-steering.v1"} 5ms
+   ✓ refuses steering configuration for a planner tool profile 10ms
+   ✓ refuses to silently drop steering configuration through the legacy adapter-only loader 6ms
+   × loads a strict Codex profile through the shared descriptor without starting a process 31ms
+   × fails without a trusted factory and refuses relative or oversized Codex files 23ms
+   × uses explicit mutually exclusive native selection while preserving fixture and Claude defaults 3ms
+   × does not accept launch permissions inside an otherwise valid Codex file 43ms
+ ❯ apps/runner/src/native-harness/codex/launch.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/native-harness/codex/launch.test.ts [ apps/runner/src/native-harness/codex/launch.test.ts ]
+Error: Cannot find module './launch.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch/apps/runner/src/native-harness/codex/launch.test.ts'
+ ❯ apps/runner/src/native-harness/codex/launch.test.ts:2:1
+      1| import { expect, it, vi } from 'vitest';
+      2| import { configureCodexLaunch } from './launch.js';
+       | ^
+      3| 
+      4| const profile = { harness: 'codex', adapterVersion: 'codex-app-server-…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/configuration.test.ts > loads a strict Codex profile through the shared descriptor without starting a process
+TypeError: (0 , __vite_ssr_import_4__.loadCodexRunnerConfiguration) is not a function
+ ❯ apps/runner/src/configuration.test.ts:58:24
+     56| it('loads a strict Codex profile through the shared descriptor without…
+     57|   const createTransport = vi.fn(() => { throw new Error('Unexpected la…
+     58|   const loaded = await loadCodexRunnerConfiguration(await manifest(cod…
+       |                        ^
+     59|   expect(loaded.adapters.map(adapter => adapter.name)).toEqual(['fixtu…
+     60|   expect(loaded.profile).toEqual(codexProfile); expect(loaded.activeSt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  apps/runner/src/configuration.test.ts > fails without a trusted factory and refuses relative or oversized Codex files
+TypeError: (0 , __vite_ssr_import_4__.loadCodexRunnerConfiguration) is not a function
+ ❯ apps/runner/src/configuration.test.ts:66:16
+     64| 
+     65| it('fails without a trusted factory and refuses relative or oversized …
+     66|   await expect(loadCodexRunnerConfiguration(await manifest(codexProfil…
+       |                ^
+     67|   await expect(loadCodexRunnerConfiguration('relative.json')).rejects.…
+     68|   await expect(loadCodexRunnerConfiguration(await manifest({ ...codexP…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  apps/runner/src/configuration.test.ts > uses explicit mutually exclusive native selection while preserving fixture and Claude defaults
+TypeError: (0 , __vite_ssr_import_4__.loadSelectedRunnerConfiguration) is not a function
+ ❯ apps/runner/src/configuration.test.ts:72:17
+     70| 
+     71| it('uses explicit mutually exclusive native selection while preserving…
+     72|   expect((await loadSelectedRunnerConfiguration()).adapters.map(adapte…
+       |                 ^
+     73|   const claudeManifestFile = await manifest({ materialFiles: [] });
+     74|   expect((await loadSelectedRunnerConfiguration({ claudeManifestFile }…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  apps/runner/src/configuration.test.ts > does not accept launch permissions inside an otherwise valid Codex file
+TypeError: (0 , __vite_ssr_import_4__.loadCodexRunnerConfiguration) is not a function
+ ❯ apps/runner/src/configuration.test.ts:84:16
+     82| 
+     83| it('does not accept launch permissions inside an otherwise valid Codex…
+     84|   await expect(loadCodexRunnerConfiguration(await manifest({ ...codexP…
+       |                ^
+     85| });
+     86| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 15 passed (19)
+   Start at  03:03:43
+   Duration  1.23s (transform 521ms, setup 0ms, import 799ms, tests 167ms, environment 0ms)
+

@@ -2,10 +2,15 @@
 
 固定base f181d84b5fb3652d62e2a181acff442d42b3e066已含独审C1 7127b5bfda3135670e1595dd4b6e90c4c9ea416c与S01配置并发；R05C owner收口1ca72bb并release v2，回执predecessor-release.json。本任务直接复用configureCodexHarness({publicProfile,createTransport})、R06 CodexTransportFactory与宿主，不实现另一个loop。
 
-首片采用小而严格的配置：Codex文件只承载既有CodexExecutionProfileConfiguration，同一schema/JSON/digest，无重复manifest权限状态。文件必须调用方显式给出绝对路径并≤16KiB；未知字段包括executable/args/env/approved均拒绝。受信createTransport是本地代码依赖，由owner固定的启动recipe提供，不能由JSON声明自注册。缺少该依赖时配置明确unsupported，construction不启动进程、不读取个人配置/credentials。
+D0已固定ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4。首片采用小而严格的配置：Codex文件只承载既有CodexExecutionProfileConfiguration，同一schema/JSON/digest，无重复manifest权限状态。文件必须调用方显式给出绝对路径并≤16KiB；未知字段包括executable/args/env/approved均拒绝。受信createTransport是本地代码依赖，由owner固定的启动recipe提供，不能由JSON声明自注册。缺少该依赖时配置明确unsupported，construction不启动进程、不读取个人配置/credentials。
 
 loadRunnerConfiguration(existingClaudeFile?)旧入口/返回profile具体类型保持。新增显式Codex loader返回既有ConfiguredNativeHarness<CodexProfile>与兼容views；共同选择入口把Claude/Codex显式文件互斥，默认fixture-only不变。profile publication/digest guard共用已审native publisher，main与S01并发参数只在writer移交后接线。生产默认factory不能在Mika实际recipe/0query自然通知证据尚未固定时猜造。
 
 Module职责：configuration拥有有界文件读取、入口选择与兼容views；codex/launch拥有严格Codex配置与受信启动依赖组合；已审adapter负责单turn mapping/deny/evidence；R06独占进程/JSONL/背压/关闭；宿主独占claim/lease/journal/outbox。错误是固定配置失败，原生执行仍沿C0 settled/unknown；本段构造零native I/O，因此无原生effect可结算。
 
 启动兼容来源待Mika/R06。固定0.154 schema的thread/status/changed、thread/closed、tokenUsage/modelRerouted与其他自然通知不能用fixture推断；C1现未知拒绝仍保持，不借配置片静默放宽。0query启动观察不能证明turn/provider/no-tools，access:none继续仅意图，actual unknown。首片仅注入检查，真实app-server/account/provider调用为0，无新query预算。
+
+
+固定入口：`configureCodexLaunch(configuration: unknown, createTransport?: CodexTransportFactory)`严格解析既有profile，缺factory明确失败，然后委托已审configureCodexHarness。`loadCodexRunnerConfiguration(absoluteFile, factory?)`与`loadSelectedRunnerConfiguration({claudeManifestFile?,codexManifestFile?,codexTransportFactory?})`仅加载/构造，后者互斥显式原生文件。原`loadRunnerConfiguration`/`loadRunnerAdapters`保持Claude具体profile类型与旧默认；新增泛型RunnerConfiguration默认仍为旧Claude型。
+
+文件读取同一私有Module服务Claude与Codex，先stat，再O_RDONLY|O_NONBLOCK open/fstat（不依赖前stat防FIFO替换），最多分配/读取16,385bytes探测增长，finally关闭handle，拒绝非普通文件和超限；没有无界readFile。固定recipe、环境、任意args不来自此JSON。main/环境变量选择尚未接线，完整Codex实际调用仍unsupported。72个配置/旧profile/descriptor/main并发消费者通过，不证明真实app-server。
