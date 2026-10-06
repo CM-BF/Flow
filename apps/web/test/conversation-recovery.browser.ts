@@ -266,14 +266,15 @@ async function worker(init: Init) {
       const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
       await picker.getByRole("button", { name: "Browse files", exact: true }).click();
       await picker.getByRole("button", { name: "Use saved.txt", exact: true }).click();
+      await picker.getByRole("button", { name: "Use later.txt", exact: true }).click();
       await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("saved.txt");
       await page.keyboard.press("Escape");
       await input().fill("Original recovery draft 中文🙂"); await page.getByRole("radio", { name: "Queue next", exact: true }).check();
       await expect.poll(async () => (await records(page)).some(record => record.kind === "draft" && record.data?.text === "Original recovery draft 中文🙂" && record.data.intent === "queue")).toBe(true);
       draftId = (await records(page)).find(record => record.data?.text === "Original recovery draft 中文🙂")!.id;
       const saved = (await records(page)).find(record => record.id === draftId)!;
-      expect(saved.data?.attachments).toHaveLength(1);
-      expect(saved.data?.attachments?.[0]).toMatchObject({ name: "saved.txt", metadata: { reference: fixture!.resource.reference } });
+      expect(saved.data?.attachments).toMatchObject([{ name: "saved.txt", metadata: { reference: fixture!.resource.reference } }, { name: "later.txt", metadata: { reference: fixture!.secondResource.reference } }]);
+      expect(saved.data?.attachments).toHaveLength(2);
       const contentReads = () => fixture!.wire.filter(row => /\/attachments\/.*\/content/.test(row.path)).length;
       const bodiesBefore = contentReads(), posts = postRows().length; await page.reload(); await expect(input()).toBeVisible();
       const dialog = await openRecovery(), row = dialog.locator("li").filter({ hasText: "Saved draft" }).filter({ hasText: `conversation:${fixture!.conversationId}` });
@@ -281,21 +282,39 @@ async function worker(init: Init) {
       await expect(input()).toHaveValue("Original recovery draft 中文🙂"); await expect(page.getByRole("radio", { name: "Queue next", exact: true })).toBeChecked(); expect(postRows()).toHaveLength(posts);
       const composerFiles = input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root");
       await expect(composerFiles).toHaveCount(0); // Restored metadata alone is not a ready composer attachment.
+      const commandCount = (await records(page)).filter(record => record.kind === "command").length;
+      const assertMaterialSubmitBlocked = async () => {
+        for (const delivery of ["Send now", "Queue next"]) {
+          await page.getByRole("radio", { name: delivery, exact: true }).check(); await input().press("Enter");
+          await expect(page.getByRole("alert").filter({ hasText: "Verify every selected file" }).first()).toBeVisible();
+          await expect(input()).toHaveValue("Original recovery draft 中文🙂"); expect(postRows()).toHaveLength(posts);
+          expect((await records(page)).filter(record => record.kind === "command")).toHaveLength(commandCount);
+        }
+      };
+      await assertMaterialSubmitBlocked();
       await files.click();
       await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("saved.txt");
       await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("unverified");
       expect(contentReads()).toBe(bodiesBefore);
+      // Verify B first through a real filtered metadata GET. A is still selected
+      // and unverified, so B cannot become a partial or reordered submission.
+      await picker.getByRole("textbox", { name: "Find uploaded files", exact: true }).fill("later.txt");
       await picker.getByRole("button", { name: "Browse files", exact: true }).click();
-      await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("ready");
+      await expect(picker.getByRole("region", { name: "Files in this draft" }).locator("article").filter({ hasText: "later.txt" })).toContainText("ready");
+      await page.keyboard.press("Escape"); await expect(composerFiles).toHaveCount(0); await assertMaterialSubmitBlocked();
+      await files.click(); await picker.getByRole("textbox", { name: "Find uploaded files", exact: true }).fill("saved.txt");
+      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
+      await expect(picker.getByRole("region", { name: "Files in this draft" }).locator("article").filter({ hasText: "saved.txt" })).toContainText("ready");
       await page.keyboard.press("Escape");
-      // Browse must reconcile into the existing composer, without another Use,
-      // selection or remount. A Files/Input row alone does not prove handoff.
-      await expect(composerFiles).toHaveCount(1);
-      await composerFiles.getByRole("button", { name: "File attachment", exact: true }).focus();
+      // No Use/reselection/remount: original A,B order must reach actual chips.
+      await expect(composerFiles).toHaveCount(2);
+      await composerFiles.nth(0).getByRole("button", { name: "File attachment", exact: true }).focus();
       await expect(page.getByRole("tooltip")).toHaveText("saved.txt");
+      await composerFiles.nth(1).getByRole("button", { name: "File attachment", exact: true }).focus();
+      await expect(page.getByRole("tooltip")).toHaveText("later.txt");
       await input().focus();
       expect(contentReads()).toBe(bodiesBefore); expect(postRows()).toHaveLength(posts);
-      expect((await records(page)).find(record => record.id === draftId)?.data?.attachments?.[0]).toMatchObject({ metadata: { reference: fixture!.resource.reference } });
+      expect((await records(page)).find(record => record.id === draftId)?.data?.attachments).toMatchObject([{ metadata: { reference: fixture!.resource.reference } }, { metadata: { reference: fixture!.secondResource.reference } }]);
       coverage.materialDraft = "PASSED";
     });
     await run("two actual tabs cannot overwrite the same restored draft version", "crossTabCas", async () => {
@@ -309,7 +328,7 @@ async function worker(init: Init) {
     await run("lost turn ACK preserves exact key/body; reload and re-auth read never submit; explicit retry replays", "sameKeyTurn", async () => {
       await page.getByRole("radio", { name: "Send now", exact: true }).check(); fixture!.dropNext("turn"); await input().press("Enter");
       await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
-      const first = postRows().find(row => /\/turns$/.test(row.path))!; expect(first.fault).toBeTruthy(); expect(JSON.parse(first.body).attachments).toEqual([fixture!.resource.reference]);
+      const first = postRows().find(row => /\/turns$/.test(row.path))!; expect(first.fault).toBeTruthy(); expect(JSON.parse(first.body).attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
       await input().fill("Next draft stays independent"); await expect.poll(async () => (await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
       const posts = postRows().length; await page.reload(); await expect(input()).toBeVisible(); expect(postRows()).toHaveLength(posts);
       const dialog = await openRecovery(); const command = dialog.locator("li").filter({ hasText: "outbox receipt" }); await expect(command).toHaveCount(1);

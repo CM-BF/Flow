@@ -169,8 +169,10 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
       else conversationTurnSchema.parse({ ...wire, expectedRevision: state.snapshot?.conversation.revision ?? 0, mode: "follow-up" });
       const previous = intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue") ?? null : projection.outbox.getSnapshot();
       if (previous && "kind" in previous && previous.kind !== "turn") throw Error("Wait for conversation preparation to finish.");
-      const material = draft.attachments.length ? attachments?.capture({ ids: draft.attachments.map(item => item.id), submissionId: crypto.randomUUID(), text: draft.text,
-        intent: intent === "queue" ? "queue" : "send", knowledge: selection.knowledge }, previous ?? null) : undefined;
+      // A zero-chip composer can still have restored, unverified selections.
+      // Validate the binding's entire ordered draft before either authority runs.
+      const material = attachments?.captureDraft(runtime.thread.composer, { submissionId: crypto.randomUUID(), text: draft.text,
+        intent: intent === "queue" ? "queue" : "send", knowledge: selection.knowledge }, previous ?? null);
       if (draft.attachments.length && !material) throw Error("Prepare an authorized project before sending files.");
       pending.current = { intent, text: draft.text, selection, creation, material, binding: attachments }; setSendError(null);
       if (session.recovery.configured()) session.recovery.beginHandoff(viewKey, intent === "queue" ? "queue" : "outbox");

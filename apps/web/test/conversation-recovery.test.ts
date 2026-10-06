@@ -91,7 +91,8 @@ async function restoredMaterials() {
   const host = new PluginHost(port), signal = new AbortController(); let binding: ConversationAttachments;
   host.register(createAttachmentPlugin(() => binding));
   const forbidden = async () => { throw Error("No upload, body or receipt read in this recovery check."); };
-  const client: AttachmentClient = { attachmentCapabilities: async () => cap, attachments: async () => ({ resources: [resource(11), resource(12)], nextCursor: null }), attachment: forbidden, attachmentContent: forbidden, attachmentUploadReceipt: forbidden, uploadAttachment: forbidden };
+  let page = [resource(11), resource(12)];
+  const client: AttachmentClient = { attachmentCapabilities: async () => cap, attachments: async () => ({ resources: page, nextCursor: null }), attachment: forbidden, attachmentContent: forbidden, attachmentUploadReceipt: forbidden, uploadAttachment: forbidden };
   binding = new ConversationAttachments({ connectionId: "connection", viewKey: owner.viewKey, projectId: "project" }, { host, client, signal: signal.signal, current: () => view, storage: { read: () => null, write() {} } });
   cleanup.push(() => host.dispose(), () => binding.dispose()); await host.activate(ATTACHMENT_OWNER);
   const items = [11, 12].map(n => ({ id: uuid(n + 10), name: resource(n).name, metadata: resource(n), state: "ready" as const })); binding.restoreDraft(items);
@@ -102,10 +103,50 @@ async function restoredMaterials() {
     subscribe: listener => { listeners.add(listener); return () => { listeners.delete(listener); }; },
     addAttachment: vi.fn<ComposerRuntime["addAttachment"]>(async value => { if (!("content" in value) || !value.id) throw Error("Only existing complete metadata is allowed."); files = [...files, { ...value, id: value.id, type: value.type ?? "file", status: { type: "complete" } }]; emit(); await settle; }),
   };
-  return { binding, composer, items, host, pause: (promise: Promise<void>) => { settle = promise; }, clearComposer: () => { files = []; emit(); }, configure: (patch: Partial<AttachmentView>) => { view = { ...view, ...patch }; binding.sync(); } };
+  return { binding, composer, items, host, page: (ids: number[]) => { page = ids.map(resource); }, pause: (promise: Promise<void>) => { settle = promise; }, clearComposer: () => { files = []; emit(); }, configure: (patch: Partial<AttachmentView>) => { view = { ...view, ...patch }; binding.sync(); } };
 }
 
 describe("restored attachment draft synchronization (controlled composer port)", () => {
+  it.each(["send", "queue"] as const)("blocks %s before receipt/HTTP for unverified or partial selections; explicit removal is intentional", async intent => {
+    const f = await restoredMaterials(), outbox = new ConversationOutbox();
+    const fetch = vi.fn<typeof globalThis.fetch>(async () => { throw Error("ACK deliberately lost"); }); vi.stubGlobal("fetch", fetch);
+    const client = new FlowClient({ baseUrl: "https://center.invalid", token: "fixture-only" }), queue = new QueueCommands(client, async () => {});
+    cleanup.push(() => queue.dispose());
+    // Same private submission seam used by Thread, before original receipt owners.
+    const submit = async () => {
+      const material = f.binding.captureDraft(f.composer, { submissionId: uuid(41), intent, text: "next draft" }, null);
+      const attachments = material?.capture.attachments;
+      if (intent === "queue") await queue.execute({ kind: "enqueue", conversationId: "chat", input: { expectedQueueRevision: 0, text: "next draft", attachments } });
+      else { const receipt = outbox.begin({ conversationId: "chat", expectedRevision: 0, text: "next draft", attachments }); await client.submitConversationTurn("chat", receipt.request, receipt.turnKey).catch(() => {}); }
+    };
+    await expect(submit()).rejects.toThrow("Verify every selected file");
+    f.page([12]); await f.binding.input!.browse("B"); await f.binding.syncComposerDraft(f.composer);
+    expect(f.binding.input!.getSnapshot().items.map(item => item.state)).toEqual(["error", "ready"]);
+    expect(f.composer.getState().attachments).toHaveLength(0); await expect(submit()).rejects.toThrow("Verify every selected file");
+    expect(outbox.getSnapshot()).toBeNull(); expect(queue.getSnapshot()).toEqual([]); expect(fetch).not.toHaveBeenCalled();
+    expect(f.composer.getState().text).toBe("next draft"); expect(f.binding.input!.getSnapshot().items.map(item => item.id)).toEqual(f.items.map(item => item.id));
+    f.binding.input!.remove(f.items[0]!.id); await f.binding.syncComposerDraft(f.composer); await submit();
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(JSON.parse(String(fetch.mock.calls[0]![1]?.body)).attachments).toEqual([f.items[1]!.metadata.reference]);
+  });
+  it("retains A,B order when B is verified before A and rejects incomplete or reordered composer handoff", async () => {
+    const f = await restoredMaterials(); f.page([12]); await f.binding.input!.browse("B"); await f.binding.syncComposerDraft(f.composer);
+    expect(f.composer.addAttachment).not.toHaveBeenCalled();
+    f.page([11]); await f.binding.input!.browse("A");
+    const pendingAdd = deferred<void>(); f.pause(pendingAdd.promise); const syncing = f.binding.syncComposerDraft(f.composer);
+    expect(f.composer.getState().attachments.map(item => item.id)).toEqual([f.items[0]!.id]);
+    const request = { submissionId: uuid(42), intent: "send" as const, text: "next draft" };
+    expect(() => f.binding.captureDraft(f.composer, request, null)).toThrow("not synchronized");
+    pendingAdd.resolve(); await syncing; await f.binding.syncComposerDraft(f.composer);
+    expect(f.composer.getState().attachments.map(item => item.id)).toEqual(f.items.map(item => item.id)); expect(f.composer.addAttachment).toHaveBeenCalledTimes(2);
+    const reversed = { getState: () => ({ ...f.composer.getState(), attachments: [...f.composer.getState().attachments].reverse() }) };
+    expect(() => f.binding.captureDraft(reversed, request, null)).toThrow("original order");
+    const value = f.binding.captureDraft(f.composer, request, null)!;
+    expect(value.capture.attachments).toEqual(f.items.map(item => item.metadata.reference)); expect(value.ids).toEqual(f.items.map(item => item.id));
+    const receipt = new ConversationOutbox().begin({ conversationId: "chat", expectedRevision: 0, text: "next draft", attachments: value.capture.attachments });
+    f.binding.handoff(value, receipt); f.clearComposer(); await f.binding.syncComposerDraft(f.composer);
+    expect(f.binding.captureDraft(f.composer, { ...request, submissionId: uuid(43) }, null)).toBeUndefined(); expect(f.binding.input!.getSnapshot().items).toHaveLength(0);
+  });
   it("adds the same verified IDs once and removes explicit deletions without re-binding preparation", async () => {
     const f = await restoredMaterials(); const failure = vi.fn(), unbind = f.binding.bindComposer(f.composer, failure); cleanup.push(unbind);
     await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(0);
@@ -122,10 +163,16 @@ describe("restored attachment draft synchronization (controlled composer port)",
     await f.host.deactivate(ATTACHMENT_OWNER); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(1);
     await f.host.activate(ATTACHMENT_OWNER); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(1);
     await f.binding.input!.browse(); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(2);
+    const inTransit = { getState: () => ({ ...f.composer.getState(), attachments: [], inTransit: [{ id: uuid(45), role: "user" as const, text: "old captured draft", quote: undefined, attachments: f.composer.getState().attachments }] }), addAttachment: f.composer.addAttachment };
+    const adds = vi.mocked(f.composer.addAttachment).mock.calls.length;
+    await f.binding.syncComposerDraft(inTransit);
+    expect(f.binding.captureDraft(inTransit, { submissionId: uuid(46), intent: "send", text: "next draft" }, null)).toBeUndefined();
+    expect(f.composer.addAttachment).toHaveBeenCalledTimes(adds); expect(f.binding.input!.getSnapshot().items).toHaveLength(2);
     const held = f.binding.capture({ ids: f.items.map(item => item.id), submissionId: uuid(40), intent: "send", text: "old captured draft" }, null);
     f.clearComposer(); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(0);
     f.binding.failed(held, Error("Original preparation stopped")); await f.binding.syncComposerDraft(f.composer); expect(f.composer.getState().attachments).toHaveLength(0);
     expect(f.binding.getSnapshot().submission?.value).toBe(held);
+    expect(f.binding.captureDraft(f.composer, { submissionId: uuid(44), intent: "send", text: "next draft" }, null)).toBeUndefined();
     expect(f.composer.getState().text).toBe("next draft");
   });
 });
