@@ -144,11 +144,12 @@ export class ContinuityCenterFixture {
     Object.assign(this.facts, { httpRequests: this.http, creationRequested: this.creationRequested, creationAcknowledged: this.creationAcknowledged,
       databaseIdentity: this.identity ?? null, cleanup: { startupSettled, runnersClosed, appClosed, poolClosed, adminClosed, databaseIdentityConfirmed, connections, databaseAbsent },
       retainedDatabase: this.creationRequested && !databaseAbsent ? this.database : null, finishedAt: new Date().toISOString() });
+    if (this.facts.adminError) errors.push('unexpected-admin-pool-error');
+    if (this.facts.poolError) errors.push('unexpected-fixture-pool-error');
     const complete = startupSettled && runnersClosed && appClosed && poolClosed && adminClosed && databaseAbsent && !errors.length
       && (this.facts.roots as { state: string }[]).every(root => root.state === 'removed');
     this.facts.cleanupComplete = complete;
-    this.facts.resultPersisted = false;
-    try { if (this.receiptPath) { await this.persist('', this.facts); this.facts.resultPersisted = true; } } catch { errors.push('final-receipt'); }
+    try { if (this.receiptPath) await this.persist('', this.facts); } catch { errors.push('final-receipt'); }
     console.log(JSON.stringify(this.facts));
     if ((!complete || errors.length) && !this.primaryFailure) throw new Error('Owned fixture cleanup is incomplete; preserve exact identities.');
   }

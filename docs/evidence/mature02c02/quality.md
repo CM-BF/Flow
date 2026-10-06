@@ -19,3 +19,5 @@
 post-terminal独立只读review裁定：仅测试预取真实port的terminal后一帧，串行缓存后按原顺序交付；外部断言late真实交付与身份，保留原unknown/noevents断言与close。旧失败未记录deliverytrace，因此原因只是代码支持的时序解释，非那次调度事实；未声称closing后未消费尾帧全排空。
 
 2026-10-06 21:34:11 UTC: 本轮fixture安全收口复用SVC07/ClaimCenterFixture的既有方法，在own evidence中保留最小生命周期：wx/fsync预约先于CREATE，ACK/OID/随机marker才形成删除资格，同startup/close promise与绝对deadline；未知CREATE保留，不凭名字DROP。独审指出跨runner heartbeat应403/attempt_forbidden，已修测试而不动fence。public API六项尚NOT_RUN；最终strict因fresh free 1035788288 < 1107296256不启动。status按既有模板修正UTC/四列TODO/branch/ACTIVE字段，非验收升级。
+
+2026-10-06 21:36:45 UTC: root固定3cc源码审识别PG准备两P2：删除durable resultPersisted自指字段，写ACK交外部独立确认；admin/fixture pool错误纳入有限失败列表，保留原primary异常。仅测试/证据helper窄修，原8已绿不重跑；工作/清理/outer deadline覆盖case finally。最终外部运行收据仍待准备审。
