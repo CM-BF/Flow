@@ -83,3 +83,9 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 独立reviewer root，时间2026-10-06T19:30:46.598697+00:00，固定76a766a24614b9b3cfdc996bdb275a8826532a84，metadata43a081；[原报告](../../docs/evidence/wpf-conversation-recovery/76a-root-parent-source-review.json)APPROVED_SCOPED_PARENT_SOURCE_NOT_RUN，0blocking，TAIL-RESOURCE/GROUP-ABSENCE源码addressed。未运行任何新检查。另按primary来源边界补自有BREAKPAD_DUMP_LOCATION，待新固定diff复核；不把此配置当Chrome完整OS写入隔离或Recovery实际nested故障。38/首失败仍各原范围，完整feature NOT_STARTED/targetUNKNOWN。
 
 新配置待审固定 `7ca31ca3a65af587b1cf80713b03a6dbe22e1f75`，见[manifest](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-checkpoint.json)。仅parent窄diff，76a尾部批准保持原范围；本配置NOT_RUN。
+
+## 2026-10-06 19:38:35 UTC — Root 7ca限定源码批准
+
+独立reviewer root；实际报告时间2026-10-06T19:37:18.288778+00:00；固定target7ca31ca3a65af587b1cf80713b03a6dbe22e1f75，观察metadata2b4acfb86e3fca6e41a4690f2348eb846be8ebb0且clean。[原文](../../docs/evidence/wpf-conversation-recovery/7ca-root-crashpad-source-review.json)APPROVED_SCOPED_CRASHPAD_PARENT_SOURCE_NOT_RUN / 0blocking。独审核19源/原10raw、worker不变、owned目录准备/环境/白名单及原清理路径；不复跑types/38/HTTP/PG/Chrome。
+
+批准只限本parent配置；installed154 Crashpad实际行为未验，未声称所有Chrome写路径受OS限制或曾复现Settings nested问题。76a两P2源码关闭仍原范围。首真实browser失败保留；下一实际run必须新gate并保原14846.267375ms累计。完整feature review NOT_STARTED/targetUNKNOWN不变。

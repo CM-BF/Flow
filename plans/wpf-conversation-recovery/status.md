@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:33:24 UTC |
+| 最近更新 | 2026-10-06 19:38:35 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,12 +10,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前限定source7ca31ca3a65af587b1cf80713b03a6dbe22e1f75；38受控执行仍bf14/7cc；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | Crashpad配置限定source已提交并冻结；当前只metadata收口，normalpush后核local=origin/clean |
+| 工作树dirty状态 | 2b4acfb clean输入；19源固定7ca，本段仅审批metadata归档，normalpush后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 默认草稿保存受控检查通过；浏览器验证的清理与终态记录修正待源码审查，首轮真实失败保留 |
+| 当前产出 | 默认草稿保存受控检查通过；浏览器验证的清理与启动配置已通过限定源码审查，真实修复旅程待新运行窗口 |
 | 下一可用交付 | 在新准入后验证真实默认保存、材料恢复与原身份重试；重新连接仍不自动投递 |
 | 当前阻塞 | ACTIVE: 当前受控检查已通过，但修复后的真实浏览器旅程未运行；完整恢复及中心语义仍开放 |
 | 需用户决定 | NONE |
@@ -24,7 +24,7 @@
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T19:31:48.442Z管理fresh观察active/唯一owner/无overlap，本人核原件；仅parent Crashpad配置及own记录，不含运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T19:35:01.030Z管理观察active/唯一owner/无overlap，本人核原件；只metadata封存，不含运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -33,7 +33,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)源绑定7cc通过，38/38、0skip/todo；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；38受控case通过；[父监督尾部源码修复](../../docs/evidence/wpf-conversation-recovery/browser-tail-checkpoint.json)待审/NOT_RUN，真实旅程未重跑 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；38受控case通过；[父监督及Crashpad源码修复](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-checkpoint.json)已获限定源审/NOT_RUN，真实旅程未重跑 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -179,3 +179,9 @@ Root于2026-10-06T19:30:46.598697+00:00对76a给[APPROVED_SCOPED_PARENT_SOURCE_N
 [本段权属观察](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-claim.json)已核19:31:48.442Z原21/v4/无overlap。没有Recovery复现nested问题的证据，也不声明Chrome所有文件写入受OS约束。新配置待固定源审，0runtime/import/types/38复跑/HTTP/PG/Chrome/free；首失败14.846267375s和10raw保持，余75.153732625s含15s清理仍非许可，完整feature NOT_STARTED。
 
 固定配置checkpoint `7ca31ca3a65af587b1cf80713b03a6dbe22e1f75`；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-checkpoint.json)核仅parent两处环境字段和一个owned目录准备变化、18源等76a，当前types/运行NOT_RUN，原10raw不变。源码diffcheck0；源冻结交root窄审，metadata正常push后核clean。
+
+## 2026-10-06 19:38:35 UTC — 7ca限定源码批准归档 / 源继续冻结
+
+Root于2026-10-06T19:37:18.288778+00:00对固定7ca31ca3a65af587b1cf80713b03a6dbe22e1f75给[APPROVED_SCOPED_CRASHPAD_PARENT_SOURCE_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/7ca-root-crashpad-source-review.json)，0blocking；10063B原文SHA256 `5ad7f65c856acf5193b44fd3a01dec63b4706c2d155efd177b5029a08f65b006`原样归档。76a原尾部源码批准保持。19源和10历史raw逐hash保持，本段仅metadata正常push，不改原候选manifest历史PENDING字段。
+
+此为配置与清理父监督源码审，不是installed Chrome154行为、完整OS写入隔离、真实IDB/材料恢复或完整feature通过。首browser14846.267375ms失败不改绿，余75153.732625ms含15000ms清理仍无新准入；38受控结果保持7cc范围。本段0runtime/types/38重跑/browser/free采样。完整feature NOT_STARTED/targetUNKNOWN/main未接；封存后停写等调度。
