@@ -11,14 +11,14 @@
 | 工作树dirty状态 | 交付前观察9811f5967184efb9f444ad01c34313fa4c9e743f clean；本次仅结果review/status metadata，源码9da未变 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 9da9de1b6778afec5219e55f39b53b365c8cf900：6纯统计/预算unit测试，noEmit0；W1 gate8tasks/2attempts与formal16tasks/16attempts通过，固定结果9e独审APPROVED |
-| 已集成main状态 / HEAD | 未集成；07:11 UTC观察main/origin fa9a8288341d4f2bd8160e03fe9173dafa2de1a6，S01仍待Lead接收 |
+| 已集成main状态 / HEAD | W1已集成main/origin30b97cbf3665c4ef7a314a6a8b59394ae68781af；W2新准备未集成 |
 | 实现目标 | 9da9de1b6778afec5219e55f39b53b365c8cf900 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 首个四进程测量和独立结果审查已完成，固定事实等待主线接收 |
-| 下一可用交付 | 主线接收首个窗口证据；后继优先核实单进程声明容量与实际并发 |
+| 当前产出 | 首个窗口已限定验收；正在准备单进程声明容量4的对照 |
+| 下一可用交付 | 交付12任务对照入口与预算修复的独立源码审查，再协调短运行窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，9da准备代码与9e固定W1结果均限定APPROVED；不宣称模型容量或SLO |
@@ -65,3 +65,7 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:11 UTC W1独立结果审查APPROVED target9e10e09，无P1/P2，报告补充poll50/默认500ms、读端小样本和总时长非吞吐窗口。冻结manifest/raw未改，独审回执独立保存。本片段已审待main接收，完整S01仍开放；可选12task declared4优先建议待GO决定，0新增运行。架构影响：仅实验消费者与证据，无产品接口/DB/生命周期变更。
 
 2026-10-06 07:12 UTC dashboard实读：权威S01 source live/stale=false，9cda03662783c58ce606958d68ed7526d8847179 clean，review approved、implementation unchanged、issues=[]；首窗片段integration，等待Lead主线接收。见[当前dashboard回执](../../docs/evidence/s01/w1-dashboard-receipt.json)。原子账本07:11实读claim v1仍ACTIVE，scope与唯一owner未变；本段之后继续保留后继协调权，不释放或启动新负载。
+
+2026-10-06 07:16 UTC W2准备启动：Goal Owner明确批准仅准备declared4/12，继续同WT/claim/base115b；root唯一writer，worker转独立CHAT06P01。按声明capacity校验且保留实际peak；修复claim未emit/未知结果的保守预算扣额。W1已限定验收并交Lead接收2784473，新源码不沿用旧批准。0新增smoke/负载/模型，纯unit与noEmit检查允许；固定源码独审后申请≤30秒窗口。S01-04继续in-progress。
+
+2026-10-06 07:19 UTC 实质进展：W1获MAIN_ACCEPTED30b，owner核2784473祖先且三scope对main零diff，见w1-main-receipt.json。W2固定场景解析/真实注册容量与per-runner峰值、未知attempt保守预算已实现；新6预算用例先复现5失败，再与统计/参数共11tests通过，noEmit0（最终源码11pass/noEmit0）。未创建任何新PG或负载。新源码待固定与独审；W1 main事实不覆盖W2。

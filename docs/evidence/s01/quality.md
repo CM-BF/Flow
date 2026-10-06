@@ -11,3 +11,7 @@
 2026-10-06 06:58 UTC 运行准备review修复：P2末次terminal读混入load已break，保留4端点n=0并细分观测active/queue；P2 gate存储漏计已使用共用evidence文件大小/预算入口，计最终JSON。P3 PG版本已加SHOW只读。共用evidence模块同时减少重复目录统计并保留失败/partial-before-result门禁，无自动重跑；6纯unit tests/noEmit0。正式资源从未启动，原8个smoke计数/2份raw hash不变。
 
 2026-10-06 07:11 UTC W1交付安全停点：沿用固定clean-code来源，核计量命名、职责和事实接口，区分全阶段elapsed/观测执行区间、协议容量/adapter并发、冻结证据/后继review。独审无P1/P2，源码零变；报告补足50ms与生产500ms参数差异、读端n/active定义和raw未留DB行集限制。纯metadata不重复工程测试；检查链接、JSON、原始SHA与dashboard。后继ACK领取无emit的预算计数问题仍明确开放，须在该后继实现前修复。
+
+2026-10-06 07:16 UTC W2 bounded准备：find-skills复用本任务已核load-testing发现结果，无新stack/依赖；重读本地codebase-design、clean-code与brainstorming，GO已明确批准小方案及普通实现。方法只扩固定场景参数和失败预算，保留测量与声明容量区别，不建通用压测框架；已有W1冻结证据不改。每个工作段核命名、失败路径、直接调用方与有意义纯unit。
+
+2026-10-06T07:20:47.163838+00:00 W2源码安全停点：固定场景Interface收窄为已批准id+window，不能传任意任务量；注册容量由DB核验，per-runner上下峰值不预设串行。预算身份并集与budgetCharged/observed明确分离，仅两已审旧smoke哈希兼容，未知失败缺reservation拒绝。6预算tests先5red，修复后加参数2/原统计3共11pass，noEmit0；覆盖claim未emit、未知ACK、去重、非法预留、仅attempt超限及完整历史32/26。仅本模块与直接消费者变化，apps/packages相对115b零diff；不扩大测试到全库。raw/manifest原样，0新DB/task/服务/模型。

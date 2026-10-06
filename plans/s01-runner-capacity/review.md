@@ -1,7 +1,11 @@
 # S01 独立审查
 
-状态：APPROVED
-Review target commit：9da9de1b6778afec5219e55f39b53b365c8cf900
+状态：IN_PROGRESS
+Review target commit：W2准备代码尚未固定
+
+当前：W2声明capacity4/12任务与保守预算修复正在实施，未获源码批准。以下为历史已批准W1准备与结果。
+
+历史准备target：9da9de1b6778afec5219e55f39b53b365c8cf900
 
 批准范围：`experiments/runner-capacity` 的8任务协议超领门禁和16任务四进程测量入口，**仅运行准备**。运行必须有Goal Owner/Execution Lead协调的窗口；未批准容量结果、ACK故障或浏览器后继。生产基线115b0dbdfa02db5483f9e9699852682ce699633c，apps/packages零diff。唯一owner Mika / gpt-6-astra，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`。
 

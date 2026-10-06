@@ -10,27 +10,18 @@ import { startProcess, stopProcess, type Observation, type OwnedProcess } from '
 import { boundedText } from './http.js';
 import { observedIntervals, peak, quantiles } from './statistics.js';
 import { directoryBytes, reserveRun } from './evidence.js';
+import { resolveScenario } from './scenarios.js';
 
-export interface Scenario {
-  id: 'smoke' | 'four-processes';
-  tasks: number;
-  runners: number;
-  conversations: number;
-  formal: boolean;
-  windowId?: string | undefined;
-}
-
-export async function runScenario(label: string | undefined, scenario: Scenario) {
+export async function runScenario(label: string | undefined, scenarioId: string, windowId: string | undefined) {
+const scenario = resolveScenario(scenarioId, windowId);
 if (!label || !/^[a-z][a-z0-9-]{1,60}$/.test(label)) throw new Error('Provide a new bounded evidence label.');
 const startedAt = new Date().toISOString(); const start = performance.now();
-assert(scenario.tasks === (scenario.formal ? 16 : 4) && scenario.runners === (scenario.formal ? 4 : 2) && scenario.conversations === (scenario.formal ? 128 : 4), 'Unapproved scenario dimensions.');
-if (scenario.formal) assert(scenario.windowId, 'Formal run needs a coordinated window identifier.');
 const databaseName = 'flow_s01_' + process.pid + '_' + randomUUID().replaceAll('-', '');
 const { output, reservation } = await reserveRun(resolve('docs/evidence/s01'), { label, scenario: scenario.id, windowId: scenario.windowId!, databaseName, tasks: scenario.tasks, attempts: scenario.tasks, requireGate: true });
 const hardBudgetMs = 30000;
 const hardDeadline = start + hardBudgetMs;
 const workDeadline = start + hardBudgetMs - 10000;
-const sourcePaths = ['experiments/runner-capacity/child.ts','experiments/runner-capacity/processes.ts','experiments/runner-capacity/smoke.ts','experiments/runner-capacity/scenario.ts','experiments/runner-capacity/formal.ts','experiments/runner-capacity/statistics.ts','experiments/runner-capacity/evidence.ts','experiments/runner-capacity/http.ts','experiments/runner-capacity/contract.json','experiments/runner-capacity/tsconfig.json','apps/server/src/index.ts','apps/server/src/runners.ts','apps/server/src/events.ts','apps/runner/src/runtime.ts','apps/runner/src/outbox.ts','apps/runner/src/fixture.ts'];
+const sourcePaths = ['experiments/runner-capacity/child.ts','experiments/runner-capacity/processes.ts','experiments/runner-capacity/smoke.ts','experiments/runner-capacity/scenario.ts','experiments/runner-capacity/formal.ts','experiments/runner-capacity/declared-four.ts','experiments/runner-capacity/scenarios.ts','experiments/runner-capacity/statistics.ts','experiments/runner-capacity/evidence.ts','experiments/runner-capacity/http.ts','experiments/runner-capacity/contract.json','experiments/runner-capacity/tsconfig.json','apps/server/src/index.ts','apps/server/src/runners.ts','apps/server/src/events.ts','apps/runner/src/runtime.ts','apps/runner/src/outbox.ts','apps/runner/src/fixture.ts'];
 const sourceHashes = () => Promise.all(sourcePaths.map(async path => ({ path, sha256: createHash('sha256').update(await readFile(path)).digest('hex') })));
 const sourceFiles = await sourceHashes();
 const implementationHead = execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
@@ -151,11 +142,14 @@ try {
   const background = (await workQuery(observer, 'SELECT (SELECT count(*)::int FROM flow.conversations) AS conversations,(SELECT count(*)::int FROM flow.conversation_turns) AS turns')).rows[0];
   assert.equal(background.conversations, scenario.conversations); assert.equal(background.turns, 0);
   checks.push(`${scenario.conversations} API-created persistent conversation identities match all pages and DB; zero model turns.`);
-  const runners: { token: string; label: string; directory: string }[] = [];
+  const runners: { runnerId: string; token: string; label: string; directory: string }[] = [];
   for (let i = 0; i < scenario.runners; i++) {
-    const registered = await request('/api/runners', { name: 'S01 owned process ' + i, harnesses: ['fixture'], capacity: 1 });
-    runners.push({ token: registered.token, directory: join(workdir, String(i)), label: 'runner-' + i });
+    const registered = await request('/api/runners', { name: 'S01 owned process ' + i, harnesses: ['fixture'], capacity: scenario.capacityPerRunner });
+    runners.push({ runnerId: registered.runnerId, token: registered.token, directory: join(workdir, String(i)), label: 'runner-' + i });
   }
+  const registeredRunners = (await workQuery(observer, 'SELECT id,capacity FROM flow.runners ORDER BY id')).rows;
+  assert.deepEqual(new Set(registeredRunners.map(row => row.id)), new Set(runners.map(runner => runner.runnerId)));
+  assert(registeredRunners.every(row => row.capacity === scenario.capacityPerRunner), 'Registered capacity differs from selected scenario.');
   for (let i = 0; i < scenario.tasks; i++) taskIds.push((await request('/api/tasks', { title: 'S01 task ' + i, prompt: 'S01 deterministic task ' + i, harness: 'fixture', fixture: { scenario: 'success', delayMs: 0 }, verification: { kind: 'nonempty' } })).task.id);
   // All tasks are admitted before any runner starts claiming; ready children wait at an IPC gate.
   const ownedRunners = await Promise.all(runners.map(runner => startProcess({ role: 'runner', baseUrl, ...runner, deferStart: true, measuredDelayMs: 200 }, collect, processes, workDeadline)));
@@ -176,7 +170,7 @@ try {
     }
     const connections = (await workQuery(observer, 'SELECT pid,application_name,state,wait_event_type,wait_event FROM pg_stat_activity WHERE datname=current_database() ORDER BY pid')).rows;
     databaseSamples.push({ receivedAtMs: performance.now(), connections, taskStates: rows });
-    assert(!rows.some(row => ['failed', 'cancelled', 'uncertain'].includes(row.status)), 'Normal smoke task did not succeed.');
+    assert(!rows.some(row => ['failed', 'cancelled', 'uncertain'].includes(row.status)), 'Fixture task did not succeed.');
     finished = rows.length === scenario.tasks && rows.every(row => row.status === 'succeeded' && row.verification_status === 'passed');
     if (finished) break;
     observedRunningTasks = rows.filter(row => row.status === 'running').length;
@@ -238,11 +232,15 @@ try {
     return { ...row, claimedAtLowerMs, claimedAtUpperMs: claimedAtLowerMs + 1,
       queueWaitDerivedMs: claimedAtLowerMs - Number(row.task_created_epoch_ms) };
   });
-  for (const runnerId of new Set(attempts.map(a => a.runner_id))) {
-    const ordered = attempts.filter(a => a.runner_id === runnerId).sort((a, b) => a.claimedAtLowerMs - b.claimedAtLowerMs);
-    for (let i = 1; i < ordered.length; i++) assert(ordered[i]!.claimedAtLowerMs >= Number(ordered[i - 1]!.completed_epoch_ms), 'Attempt overlap or insufficient initial-lease timestamp precision.');
-  }
-  checks.push(`${scenario.tasks * 6} exact events match; initial claim identities match DB, no unfinished attempts or overlap at conservative timestamp bounds.`);
+  const perRunnerPeaks = registeredRunners.map(runner => {
+    const owned = attempts.filter(attempt => attempt.runner_id === runner.id);
+    const lower = peak(owned.map(a => ({ start: a.claimedAtUpperMs, end: Number(a.completed_epoch_ms) })));
+    const upper = peak(owned.map(a => ({ start: a.claimedAtLowerMs, end: Number(a.completed_epoch_ms) })));
+    assert(upper <= runner.capacity, 'Conservative attempt peak exceeds registered capacity.');
+    return { runnerId: runner.id, declaredCapacity: runner.capacity, attempts: owned.length, lower, upper };
+  });
+  assert(attempts.every(attempt => registeredRunners.some(runner => runner.id === attempt.runner_id)), 'Attempt belongs to an unregistered runner.');
+  checks.push(`${scenario.tasks * 6} exact events match; initial claims match DB, no unfinished attempts, per-runner peaks within registered capacity.`);
   const nativeSessions = Number((await workQuery(observer, 'SELECT count(*) AS count FROM flow.sessions')).rows[0].count);
   assert.equal(nativeSessions, scenario.tasks);
   const timelineRows = (await workQuery(observer, 'SELECT task_id,cursor,entry FROM flow.timeline ORDER BY task_id,cursor')).rows;
@@ -297,7 +295,7 @@ try {
       return { first, successes: quantiles(selected.filter(s => !s.error).map(s => s.elapsedMs)), failures: selected.filter(s => s.error), bytes: quantiles(selected.map(s => s.bytes)),
         activeObserved: quantiles(selected.filter(s => !s.error && (s.observedRunningTasks ?? 0) > 0).map(s => s.elapsedMs)),
         queueOnlyObserved: quantiles(selected.filter(s => !s.error && s.observedRunningTasks === 0).map(s => s.elapsedMs)) }; }) }));
-  rawFacts = { conversations: scenario.conversations, conversationTurns: 0, nativeSessions, tasks: scenario.tasks, runnerProcesses: scenario.runners, registeredCapacityPerRunner: 1, counts, attempts, eventCount: saved.length, toolOperations: tools.length, databaseBytes, temporaryBytes,
+  rawFacts = { conversations: scenario.conversations, conversationTurns: 0, nativeSessions, tasks: scenario.tasks, runnerProcesses: scenario.runners, registeredCapacityPerRunner: scenario.capacityPerRunner, registeredRunners, perRunnerPeaks, counts, attempts, eventCount: saved.length, toolOperations: tools.length, databaseBytes, temporaryBytes,
     pageSizes, postgresVersion, timelineCount: timelineRows.length, workspaceCount: workspaceRows.length, windowStartedAtMs, windowEndedAtMs, dispatchObservations: Object.fromEntries(dispatchObservations),
     attemptPeakLower, attemptPeakUpper, achievedFourConcurrentAttempts: attemptPeakLower >= 4,
     adapterPeakObserved: peak(adapterIntervals), toolPeakObserved: peak(toolIntervals), adapterIntervals, toolIntervals, waitIntervals,
@@ -307,7 +305,7 @@ try {
     eventHttpAck: quantiles(observations.filter(o => o.kind === 'http' && o.path === '/api/runner/events').map(o => Number(o.elapsedMs))),
     connectionMethod: 'TCP/HTTP/SSE are distinct sampled observations. PG observer URL has its own application_name; center and scheduler share one name and are reported combined. Configured max8/max3 are not observed pool usage. Pool acquisition wait is not measured.',
     attemptTimeMethod: 'Initial claim lease expiry minus its configured lease duration; no persisted attempt creation timestamp. Claim serialization is millisecond precision; queue differences against millisecond task timestamps are approximate (conservative 2ms quantization allowance).' };
-} catch (error) { failure = error instanceof Error ? error.message.replace(/postgres(?:ql)?:\/\/[^\s'"`]+/g, '<redacted-db-url>') : 'Unknown smoke failure'; }
+} catch (error) { failure = error instanceof Error ? error.message.replace(/postgres(?:ql)?:\/\/[^\s'"`]+/g, '<redacted-db-url>') : 'Unknown scenario failure'; }
 finally {
   const cleanupStartedAtMs = performance.now();
   const stillRunning = (owned: OwnedProcess) => owned.child.exitCode === null && owned.child.signalCode === null;
