@@ -5,7 +5,7 @@
   "observedHead": "e86d81c7851ec7606649fb266d63224a5a0a00c6",
   "clean": true,
   "rootTechnicalChecks": "191/191;21 actual apps changes/22 declaredsource;6readonlyunchanged;15cleanup and samekey/bodyTurnQueue wire passed",
-  "finalReview": "PENDING_390_LONG_FILENAME_CHECK_NOT_FINAL_APPROVED",
+  "finalReview": "REQUEST_CHANGES / P2 confirmed longfilename390 overflow",
   "extraCheckBudget": "<=45s including >=20scleanup within original600s",
   "scope": "Existing ATTACHI02 only; any originalmodule/CSS fix mustfreshamend; do not fabricate failure ornewvisualtask",
   "longNameFirstRun": {
@@ -17,5 +17,7 @@
     "secondAuthorization": "root <=45s 25work/20cleanup; initializeFiles/cap andimmediatePromise.all chooser/click; samplerfailagain stopandlocate",
     "formalReview": "IN_PROGRESS",
     "moduleScope": "Original five modules still unauthorized"
-  }
+  },
+  "currentFinding": "attachi02-longnames-request-changes.json",
+  "currentClaim": "0b7fc000 v3 active26 after committed exact2scopeamend"
 }

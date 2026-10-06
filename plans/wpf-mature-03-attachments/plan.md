@@ -90,3 +90,5 @@ root本轮只读发现createAttachmentInput初始journal list可因storage拒绝
 ATTACHI02生产验证准备（12:00）：[只读矩阵](../../docs/evidence/web-platform/attachi02-production-validation-matrix.json)已root结构认可，未执行/未take；仍等4c模块正式组合main。真实factory+FlowClient+生产App、026/六routes/fallback=false，累计600s含构建启动与每轮20s清理；pending capture失效在local handoff前0receipt/0POST保原text/refs，实际receipt同步接管后才consume，不以ACK清新稿。旧center缺cap的proxy仅模拟，token/正文不入日志。
 
 12:07输入更新：4c模块已正式main1c496，ATTACHI02新树首12 fresh受领，不再等待模块输入。完整生产消费者仍沿原TODO，第二阶段余12需fresh amend；上述验证准备不是已执行结果。
+
+同既有附件预览/键盘窄屏验收补证：ATTACHI02 f82真实合法255 UTF16unit ASCII/中文emoji文件名在浅深390的Picker/恢复动作导致Dialog横溢与焦点不可达（root P2 REQUEST_CHANGES），功能191项不抹掉。仅原任务追加Picker与CSS两literal，0b7fc000 v3/26scope已fresh committed；保持完整名字/aria及语义，visible动作精简/网格换行，定向复验新target后才接收，见[原诊断与领取](../../docs/evidence/web-platform/attachi02-longnames-request-changes.json)。原controller/recovery/adapter未授权修改，不另造视觉task。

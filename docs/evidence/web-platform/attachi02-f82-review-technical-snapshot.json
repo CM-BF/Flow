@@ -1,0 +1,68 @@
+{
+  "reviewer": "/root",
+  "reviewedAt": "2026-10-06T12:55:21.467888+00:00",
+  "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+  "base": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "verdict": "REQUEST_CHANGES",
+  "scope": "ATTACHI02 authorized production Web binding against fixed base; not MATURE03 whole outcome or main/deployment approval",
+  "blockingFindings": [
+    {
+      "priority": 2,
+      "title": "Keep valid long filenames inside narrow attachment actions",
+      "source": "apps/web/src/attachments/AttachmentPicker.tsx:35 plus40/49/51/52; attachments.css:7",
+      "reproduction": "Author real App/HTTP longnames-only second round; both255 UTF16unit ASCII and mixed Chinese/emoji filenames, 390px, both themes",
+      "evidence": "production-longnames-second-geometry.json; Dialog clientWidth388 vs scrollWidth1740, buttons about1698px; focus moves left edge to-1309px",
+      "impact": "Legal names push Use/Remove/recovery action text and dialog content outside narrow viewport, defeating narrow-screen operability despite short-name screenshots passing",
+      "reviewerEvidence": "Root directly read raw geometry; author actual browser reproduction, not root second browser run",
+      "requiredFix": "Visible concise actions while preserving exact full accessible names and adjacent filenames, constrained grid/button styles; fresh literal claim before module writes, delta screenshot/geometry/keyboard verification"
+    }
+  ],
+  "resolvedFindings": [
+    "Global unknown upload directory incorrectly pinned unrelated empty views; actual key ownership now scoped to originating view",
+    "Official preparation failure/cancel bypasses onNew; pending capture now settles via public core state",
+    "Mixed complete/requires-action prepare failure then direct complete chip removal previously left input ghost; exact independent pure-memory repro now passes"
+  ],
+  "independentVerification": {
+    "unitTests": 191,
+    "testFiles": 7,
+    "runnerExitCode": 0,
+    "log": "/tmp/root-attachi02-f82-tests-final.log",
+    "priorWrapperNote": "Initial Vitest emitted 191/191 pass but zsh readonly status variable made wrapper exit1; final same fixed target rerun exit0. Prior log retained.",
+    "sourceAudit": "/tmp/root-attachi02-f82-source-audit.json",
+    "sourceChanges": 21,
+    "declaredApplicationPaths": 22,
+    "protectedDependenciesUnchanged": 6,
+    "authorCleanupReportsRead": 15,
+    "authorCleanupIssues": 0,
+    "wire": [
+      {
+        "kind": "turn",
+        "sameKeyBody": true,
+        "posts": 2
+      },
+      {
+        "kind": "queue",
+        "sameKeyBody": true,
+        "posts": 2
+      }
+    ],
+    "visual": "Inspected stored production-complete light/dark390 PNG; no visible horizontal overflow; not a fresh browser run"
+  },
+  "authorEvidenceBoundaries": {
+    "actualApp": "10 passed in partial complete report + 1 focused plain pass; complete original failure retained",
+    "finalDelta": "Private binding mixed-removal change covered by exact root diagnostic and final191 tests; no whole browser rerun",
+    "rawBudgetMs": 218362,
+    "providerQueries": 0
+  },
+  "limitations": [
+    "Source fixed1c496 earlier than current main context-history producer; legal history owner fix and actual attachment-only combined validation required before asserting main journey works",
+    "Ready drafts and Send/Queue receipts not durable across reload in this slice; original MATURE06-04 remains pending",
+    "Cross-tab upload journal CAS not implemented; future send journal does not imply upload journal isolation",
+    "No real provider/personal center/screens-reader/Firefox/Safari validation",
+    "Local fixture deadline-abort normal paths/15cleanup checked; no independent injected shutdown-hang experiment"
+  ],
+  "cleanCode": "Applied existing local skill: receipt authority, immutable exact body and keys, plugin authority separation, stable view identity, error/cleanup paths and no duplicate registry; no new unnecessary production abstraction identified",
+  "projectEditsByReviewer": 0,
+  "technicalSourceReview": "191/191 and source/receipt/lifecycle audit retained; final approval superseded by newly reproduced narrow viewport finding",
+  "pendingChecks": []
+}

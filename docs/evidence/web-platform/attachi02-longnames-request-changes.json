@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-06T12:56:10.030628+00:00",
+  "task": "WPF-ATTACHI02",
+  "parent": "WPF-MATURE-03",
+  "fixedCandidate": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+  "review": "REQUEST_CHANGES",
+  "priority": "P2",
+  "authority": "Root explicit final instruction after actual longnames-second evidence, not manager product retest",
+  "finding": "Legal255 UTF16unit ASCII/Chineseemoji filenames: light/dark390 Dialogclient388 scroll1740; button~1698; keyboardfocusleft-1309, horizontal overflow and reachability",
+  "authorRun": {
+    "elapsedSeconds": 8.62,
+    "cumulativeSeconds": 265.958,
+    "cleanup": "normalautomatic all empty",
+    "previousRun": "39.143s sampler failure beforetarget; ownDBmanualcleanup, originalraw retained"
+  },
+  "rootTechnicalChecks": "191 functional checks remain valid; final newtarget requires delta review, not allgreen",
+  "raw": [
+    {
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-longnames-second-geometry.json",
+      "sha256": "311cfba575b4f92470bcbdc3de55667d8c6ca88ffd5a579f1d250fda0ad331ed",
+      "bytes": 13942
+    },
+    {
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-longnames-second-browser.json",
+      "sha256": "33a7b367860ead0f8ea7b9e27705ec289c5b5da9ac7c2dd9a3ffee94d2ad26fb",
+      "bytes": 16517
+    },
+    {
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-longnames-second-cleanup.json",
+      "sha256": "a3fc97be48cc6bedd64b285054902706697376a283c52c5be39afacf53bc693f",
+      "bytes": 325
+    }
+  ],
+  "rootTechnicalSnapshot": {
+    "path": "attachi02-f82-review-technical-snapshot.json",
+    "sha256": "8f32aa9bd733901948e2034db6db074a77f78ef3938348d85f0746a57ed70446",
+    "boundary": "SnapshotmaystillIN_PROGRESS; current REQUEST_CHANGES fromrootlaterexplicitmessage"
+  },
+  "freshLedger": {
+    "observedAt": "2026-10-06T12:55:11.412Z",
+    "available": true,
+    "overlap": []
+  },
+  "claim": {
+    "id": "0b7fc000-2096-4075-95c1-f6c5a347d584",
+    "version": 3,
+    "scopeCount": 26,
+    "committedAt": "2026-10-06T12:55:21.884Z",
+    "onlyAdded": [
+      "apps/web/src/attachments/AttachmentPicker.tsx",
+      "apps/web/src/attachments/attachments.css"
+    ]
+  },
+  "protected": [
+    "apps/web/src/attachments/controller.ts",
+    "apps/web/src/attachments/recovery.ts",
+    "apps/web/src/attachments/adapter.ts"
+  ],
+  "repair": "Short visible actions, keepcompletearia/name; boundedgrid minmax0 andbuttonwrapping; single longnames delta<=45s incl20cleanup inside600total",
+  "dispatch": "followup_task actualw01 owner, freshreceiptbeforewrites",
+  "managerProductTests": 0
+}
