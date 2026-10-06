@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { PLUGIN_RUNTIME_LIMITS, pluginGrantRequestSchema, pluginHostPublicationSchema, pluginRuntimeCommandSchema, pluginToolTaskRequestSchema } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { HttpError, transaction } from '../database.js';
 import { authorizePluginPhase, admitPluginToolTask, changePluginRuntime } from './commands.js';
-import { publishPluginHost, readBinding, readRuntime } from './store.js';
+import { publishPluginHost, readBinding, readRuntime, type TrustedPluginHostPolicy } from './store.js';
 
 function id(value: string): string {
   if (!z.uuid().safeParse(value).success) throw new HttpError(400, 'invalid_plugin_runtime_id', 'Invalid plugin runtime identity.');
@@ -19,13 +19,14 @@ function bounded<T>(value: T): T {
  * Local registration only: no default factory mount. The integrator must first provide
  * current claim capability negotiation, legacy claim exclusion and retained recovery.
  * Reuses createServer's owner auth and /api/runner/ credential hook; never accepts runnerId in a body.
+ * Missing operator policy denies host publication; this port does not accept public filesystem paths.
  */
-export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss): void {
+export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss, trustedHostPolicy?: TrustedPluginHostPolicy): void {
   app.post('/api/runner/plugin-host', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
     const input = pluginHostPublicationSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_plugin_host', 'Invalid plugin host publication.');
     if (!request.runnerId) throw new HttpError(401, 'runner_required', 'Runner authentication is required.');
-    await publishPluginHost(pool, request.runnerId, input.data);
+    await publishPluginHost(pool, request.runnerId, input.data, trustedHostPolicy);
     return reply.header('cache-control', 'no-store').send({ published: true });
   });
   app.post('/api/runner/plugin-tool/authorize', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {

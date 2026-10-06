@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import type { Pool, PoolClient } from 'pg';
-import { PLUGIN_RUNTIME_PROTOCOL, pluginToolBindingSchema, pluginRuntimeViewSchema, type PluginHostPublication, type PluginRuntimeView, type PluginToolBinding } from '../../../../packages/contracts/src/plugin-runtime.js';
+import { PLUGIN_RUNTIME_PROTOCOL, pluginToolBindingSchema, pluginRuntimeViewSchema, type PluginHostIdentity, type PluginHostPublication, type PluginRuntimeView, type PluginToolBinding } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { HttpError, transaction } from '../database.js';
 import { lockRunner } from '../runners.js';
 import { readSnapshot } from '../plugins/storage.js';
@@ -26,12 +26,17 @@ export async function migratePluginRuntime(pool: Pool): Promise<void> {
   });
 }
 
+/** Operator-owned synchronous policy; a runner credential alone cannot authorize its material store. */
+export type TrustedPluginHostPolicy = (identity: Readonly<PluginHostIdentity>) => boolean;
+
 /** Authenticated runner identity is supplied by the host route; this is not current claim eligibility. */
-export async function publishPluginHost(pool: Pool, runnerId: string, input: PluginHostPublication): Promise<void> {
+export async function publishPluginHost(pool: Pool, runnerId: string, input: PluginHostPublication, policy?: TrustedPluginHostPolicy): Promise<void> {
+  const identity = Object.freeze({ ...input, runnerId });
   await transaction(pool, async client => {
     await lockRunner(client, runnerId);
-    await client.query('INSERT INTO flow.plugin_runtime_hosts(runner_id,store_id,host_api_major) VALUES($1,$2,$3) ON CONFLICT DO NOTHING', [runnerId, input.storeId, input.hostApiMajor]);
-    if (!(await client.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1 AND store_id=$2 AND host_api_major=$3', [runnerId, input.storeId, input.hostApiMajor])).rowCount) {
+    if (policy?.(identity) !== true) throw new HttpError(403, 'plugin_host_not_trusted', 'The operator has not authorized this exact plugin host.');
+    await client.query('INSERT INTO flow.plugin_runtime_hosts(runner_id,store_id,host_api_major) VALUES($1,$2,$3) ON CONFLICT DO NOTHING', [runnerId, identity.storeId, identity.hostApiMajor]);
+    if (!(await client.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1 AND store_id=$2 AND host_api_major=$3', [runnerId, identity.storeId, identity.hostApiMajor])).rowCount) {
       throw new HttpError(409, 'plugin_host_conflict', 'A runner cannot change its published material store.');
     }
   });

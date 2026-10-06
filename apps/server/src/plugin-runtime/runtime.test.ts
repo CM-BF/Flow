@@ -7,7 +7,7 @@ import { PgBoss } from 'pg-boss';
 import { createServer } from '../index.js';
 import { transaction } from '../database.js';
 import { PLUGIN_RUNTIME_PROTOCOL, type PluginToolBinding } from '../../../../packages/contracts/src/plugin-runtime.js';
-import { migratePluginRuntime } from './store.js';
+import { migratePluginRuntime, publishPluginHost, type TrustedPluginHostPolicy } from './store.js';
 import { registerPluginRuntimeRoutes } from './routes.js';
 
 const database = `flow_x01_binding_${randomUUID().replaceAll('-', '')}`;
@@ -19,6 +19,12 @@ const owner = `x01-${randomUUID()}`;
 let app: Awaited<ReturnType<typeof createServer>> | undefined;
 let boss: PgBoss | undefined; let base = ''; let creationRequested = false;
 const facts: Record<string, unknown>[] = [];
+const trustedHosts = new Set<string>();
+const hostKey = (runnerId: string, storeId: string, hostApiMajor: number) => JSON.stringify([runnerId, storeId, hostApiMajor]);
+const trustedHostPolicy: TrustedPluginHostPolicy = identity => {
+  expect(Object.isFrozen(identity)).toBe(true);
+  return identity.protocol === PLUGIN_RUNTIME_PROTOCOL && trustedHosts.has(hostKey(identity.runnerId, identity.storeId, identity.hostApiMajor));
+};
 async function request(path: string, body?: unknown, key = randomUUID(), token = owner) {
   const response = await fetch(base + path, { method: body === undefined ? 'GET' : 'POST', headers: {
     authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': key },
@@ -32,7 +38,7 @@ async function openApp() {
   boss = new PgBoss({ connectionString: databaseUrl, max: 1, connectionTimeoutMillis: 1500 });
   boss.on('error', () => { facts.push({ kind: 'send-client-error' }); });
   await boss.start();
-  registerPluginRuntimeRoutes(app, pool, boss);
+  registerPluginRuntimeRoutes(app, pool, boss, trustedHostPolicy);
   base = await app.listen({ host: '127.0.0.1', port: 0 });
 }
 beforeAll(async () => {
@@ -69,6 +75,7 @@ async function fixture() {
   const runner = await request('/api/runners', { name: 'Plugin test host', harnesses: ['fixture'], capacity: 1 });
   expect(runner.status).toBe(200);
   const runnerId: string = runner.body.runnerId; const token: string = runner.body.token;
+  trustedHosts.add(hostKey(runnerId, 'test-material', 1));
   expect((await request('/api/runner/plugin-host', { protocol: PLUGIN_RUNTIME_PROTOCOL, storeId: 'test-material', hostApiMajor: 1 }, randomUUID(), token)).status).toBe(200);
   const materialId = randomUUID(); const fetchId = randomUUID(); const fetchAttempt = randomUUID(); const artifactId = randomUUID();
   const artifact = { artifactId, name, version: '1.0.0', bytes: 123, sha256: 'a'.repeat(64), integrity: 'sha512-' + 'a'.repeat(86) + '==',
@@ -109,6 +116,23 @@ async function active(f: Awaited<ReturnType<typeof fixture>>, binding: PluginToo
   return { attemptId, ownerVersion: 1, bindingId: binding.bindingId, invocationId: binding.invocationId };
 }
 
+test('host publication requires an exact operator tuple before the first immutable insert', async () => {
+  const runner = await request('/api/runners', { name: 'Publication policy host', harnesses: ['fixture'], capacity: 1 });
+  expect(runner.status).toBe(200);
+  const runnerId: string = runner.body.runnerId; const token: string = runner.body.token;
+  const publication = { protocol: PLUGIN_RUNTIME_PROTOCOL, storeId: 'operator-material', hostApiMajor: 1 } as const;
+  const absent = async () => expect((await pool.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1', [runnerId])).rowCount).toBe(0);
+  await expect(publishPluginHost(pool, runnerId, publication)).rejects.toMatchObject({ status: 403, code: 'plugin_host_not_trusted' });
+  await absent();
+  expect((await request('/api/runner/plugin-host', publication, randomUUID(), token)).status).toBe(403);
+  await absent();
+  trustedHosts.add(hostKey(runnerId, publication.storeId, publication.hostApiMajor));
+  expect((await request('/api/runner/plugin-host', { ...publication, storeId: 'wrong-first-store' }, randomUUID(), token)).status).toBe(403);
+  await absent();
+  expect((await request('/api/runner/plugin-host', publication, randomUUID(), token)).status).toBe(200);
+  expect((await pool.query('SELECT store_id,host_api_major FROM flow.plugin_runtime_hosts WHERE runner_id=$1', [runnerId])).rows).toEqual([{ store_id: publication.storeId, host_api_major: 1 }]);
+  expect((await request('/api/runner/plugin-host', publication, randomUUID(), token)).status).toBe(200);
+});
 test('enable advances the same revision, preserves old operation readback and replays the original receipt', async () => {
   const f = await fixture(); const path = `/api/plugins/${f.registrationId}/runtime/commands`; const key = randomUUID();
   const result = await request(path, f.enable, key);
