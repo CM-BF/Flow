@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:59 UTC / main 280289008a5a3779e4e5e6453181b96062ed9514 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:03 UTC / main 280289008a5a3779e4e5e6453181b96062ed9514 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -20,8 +20,8 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 原生工程的独立用途、固定执行配置和检查收据关联已进入主线；终端可读取目标交付历史。 |
-| 下一可用交付 | 复用现宿主完成写入结束、完整内容检查和中心收据的编排，同时验证真实写权限与模型身份。 |
-| 当前阻塞 | NONE |
+| 下一可用交付 | 取得真实写权限与模型资格后接通受信宿主编排；已完成的工程合同和检查模块继续复用。 |
+| 当前阻塞 | ACTIVE: 真实工程执行仍缺固定宿主权限与模型资格证据，原负责人继续核验；没有要求用户追加决定。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 | Claim | 2c8bf375-8247-458b-8891-2dc2b4a289cd v1，仅plan/evidence |
@@ -32,7 +32,7 @@
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | completed | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner | ENG01H已审main280289；ENG01I受信宿主编排独立准备，具体authority资格由Mika唯一原生诊断提供，不重复probe |
+| ENG001-04 | in-progress | native_center_owner | ENG01H已审main280289；ENG01I仅合同准备已固定66fc4068且释放写权，等待Mika唯一原生资格事实后重新领取实施，不重复probe |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
@@ -61,3 +61,5 @@
 2026-10-06 12:40:26 UTC：ENG01H 以aeb764e5固定base独立实施；首合同分离声明配置、任务用途和原生检查收据，复用已有发布表、授权锁及S01读取隔离。profile存在不等可执行，缺真实host qualification仍fail closed；中心只关联声明、产物和当前attempt，不冒充OS停止证明。F01已正式交回runner合同，公开出口/薄client后续局部接线。没有新provider许可，TUI01D和个人SVC更新独立推进。
 
 2026-10-06 12:59 UTC：H13源码对916e/main280289一致；中心验证的是可信宿主声明与固定产物关联，不证明OS停止。下一I模块组合真实G通信与F检查，不新增默认authority，不把注入peer验证写成真实模型通过。
+
+2026-10-06 13:03 UTC 安全停点：ENG01I仅六份计划/接口文件、零产品修改，原claim v2已释放；不是实现交付。执行位暂用于MATURE06的可恢复中心连接，SVC06另位并行。工程目标与05/06真实验收保持开放；资格到位后沿唯一ENG01I计划重新fresh take，不把等待写成模型能力已经通过。

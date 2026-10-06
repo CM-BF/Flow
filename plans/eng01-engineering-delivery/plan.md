@@ -101,3 +101,7 @@ ENG01G已main557397；唯一receive/close pump、finite file策略、真实assig
 ## ENG01H接收与宿主编排（2026-10-06 12:59 UTC）
 
 中心v2用途/独立catalog/固定pin及native收据关联已main280289，旧fixture和readonly保持。下一ENG01I在独立树组合G writer→停止/同authority撤销事实→F完整snapshot检查→A receipt→原outbox；不另造loop或资格签发。真实Node/Codex强制权限、>=Sol/no-fallback与全部writer撤销仍消费Mika固定预检，缺失不启用个人服务；本模块先0provider证明组合与未知恢复，真实验收05仍开放。
+
+## 13:03 UTC 当前顺序
+
+ENG01I [唯一准备合同](../../../engineering-native-host/plans/eng01i-native-host/plan.md)已固定为docs-only候选并释放旧claim，尚无adapter产品改动。Mika唯一原生资格核验仍进行；取得可用的固定authority/模型/停止依据后重新领取该宿主组合。当前空出的worker先交付MATURE06可恢复连接，SVC06固定后台产物另位并行；不取消ENG原真实写改与独立接受目标，也不以空closed capability当完成。
