@@ -11,3 +11,5 @@
 03:38 UTC首段：真实HTTP注册预期201先404红，增加008/registry注册+读取后1/1绿；typecheck通过。固定依赖offline/frozen/ignore-scripts本WT还原，449缓存复用、0下载、未改lock。命名区分declaration/registered/unavailable；manifest requested capabilities不授予，原始输入不回显到错误；mutation复用command事务。配置/授予/CAS/list尚未实现，不把首测试外推。测试临时flow_x02_PID_random库及动态端口，finally清理。
 
 03:43 UTC交付前复核：commands内部承担registry事务，storage只做固定view/read，queries集中scope/游标/字节预算，路由仅schema/接线。全部使用参数SQL，无动态用户SQL；相同幂等key锁→installation行锁，scope唯一约束阻止双登记。对象必填判断改Object.hasOwn，避免继承toString作为配置；数字prerelease前导零由真实red修复。输入声明与实际运行、历史revision与当前pointer显式分离。17/17行为+typecheck+diff检查通过，独立review未执行，main尚未接线。无机械拆函数、无新包/通用权限平台。
+
+03:49 UTC review修复/交付复核：fixture按实际生产hasRoute决定局部挂载，保持生产迁移缺失仍可观察，避免重复接线。17/17通过，产品核心无变化；Root独立APPROVED、无剩余findings。命名/职责/接口/错误/重复复核无需额外抽象；仅metadata更新不重跑全库。main接线与实际执行宿主仍未完成。
