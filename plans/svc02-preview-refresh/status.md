@@ -84,3 +84,5 @@
 2026-10-06 08:29 UTC：Root实核并接受第四维护列差异，给RESUME_GO SVC02-32-0828。一次fresh门禁08:28:47.967发现新增queued1，tasks2→3/conversations1→2/turns2→3，attempt仍2/未完0；source/ownedgroups/身份/v8同op通过。按新工作即停条件未调用resume，原任务保留，已同步Root/Lead。原false门禁保存，不改判定。
 
 2026-10-06 08:30 UTC：Root明确恢复用户新queued请求（不是operator实验调用），复用已保存fresh后一次resume成功08:29:29.365/v9。08:29:40后置三owned/source32c/身份通过、4succeeded/未完0。窗口CLOSED；原false保留，operator主动0query/0任务/0tab，停止服务操作，当前claim仅回执metadata。[结果](../../docs/evidence/svc02/refresh-32-result.md)与[manifest](../../docs/evidence/svc02/refresh-32-deployment-manifest.json)。
+
+2026-10-06 08:39 UTC：工具实现/服务动作已全停止，fresh账本a5c0fc33v1原子amend至v2（08:38:17.609Z），正式移出tools/personal-preview父scope供SVC03新owner领取；只保本plan/docs证据待mainreceipt。未改工具/服务/用户数据，原窗口CLOSED；[handoff receipt](../../docs/evidence/svc02/refresh-32-tools-handoff.json)。
