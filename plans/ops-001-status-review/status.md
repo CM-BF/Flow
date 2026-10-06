@@ -213,3 +213,5 @@ Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 
 2026-10-06 18:20 UTC：CHAT06P03两源算法原批准＋两type引用适配已main0b8；实际root types0/9.295s，保留初始解析失败，不重跑原5项。O16仅三scope独立实施，first59249，0query/PG未运行。当前61228三次identity GET记录ECONNRESET，实际listener65263/PGID65219的一次1 LISTEN+64 CLOSED与固定maxConnections64相关但非根因；原用户服务未重启/清连接，SVC05H只做独立诊断准备。
 
 2026-10-06 18:38 UTC：短源码窗口18:34:03固定362，18:36:52恢复main ec5 clean，refs未移动、依赖未改。GO授权下唯一operator一次Web bootstrap，中心/runner/DB/pointer保持；原外层ps空白误判证据保留，正式身份helper确认后才继续。新页面发布与本次恢复分开，不重复模型或产品矩阵。源窗口见[I02记录](../../docs/evidence/i02/svc05h-same-web-source-window.json)。
+
+2026-10-06T18:43:26.218360Z：按S01唯一request固定8d84逐Git blob供应57源码+4元数据，共284,628B，供给在私有临时目录由合法owner复制归档；没有触其dirty源码、安装、import或PG。实际free1,577,123,840→1,576,652,800B仅本次共享卷观察，不作后续窗口准入。见[精确供给](../../docs/quality/sparse-worktree-2026-10-06/s01-idle-fixed-source-receipt.json)。Web仍持唯一PG/Chrome窗口，R01/O16源实现并行。

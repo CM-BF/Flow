@@ -136,3 +136,5 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 2026-10-06 18:20 UTC：CHAT06P03两源算法原批准＋两type引用适配已main0b8；实际root types0/9.295s，保留初始解析失败，不重跑原5项。O16仅三scope独立实施，first59249，0query/PG未运行。当前61228三次identity GET记录ECONNRESET，实际listener65263/PGID65219的一次1 LISTEN+64 CLOSED与固定maxConnections64相关但非根因；原用户服务未重启/清连接，SVC05H只做独立诊断准备。
 
 2026-10-06 18:38 UTC：SVC05H固定362工具一次bootstrap exit0/922ms，新owned Web group23534，旧65219消失；中心/runner原组、配置、pointercaa1/v2、retained资产/报告及已观察DB元数据保持，0query/无tab reload。独立读取17固定输入和52实际绑定，隔离socket实验另证capacity拒绝但未复现个人残留。主线与runtime继续区分；新af51+d629发布仍待两旧页面实际兼容。见[恢复记录](../../docs/evidence/i02/svc05h-web-recovery-independent-review.json)。
+
+2026-10-06T18:43:03.221Z：恢复记录已main888c，dashboard实采172source；SVC05R01旧保留网页对af51的兼容脚本与O16连续目标旅程独立实施。个人运行仍362/v15、caa1/v2，新版发布尚未发生。
