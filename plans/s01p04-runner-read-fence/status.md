@@ -42,3 +42,5 @@
 准备固定target `cd13e01e871adaaf7dee1cc6676f7a52145e316f`，18项[preparation manifest](../../docs/evidence/s01p04/preparation-manifest.json)绑定2 source/config、2 raw、4 support、10 readonly。本地strict通过不表示PG交错通过；9项真实检查仍NOT_RUN。
 
 2026-10-06 11:05:15 UTC Mika核18项preparation绑定并批准唯一目标red。实际11:05:54.391Z→11:05:57.141Z、exit1，正Lock/blocker分支在首次ownedAttempt触发预期失败，heartbeat/report段未运行；8项未选不当通过。所有自有连接关闭，专库 `flow_s01p04_a57c5ac6e3c9426f9084d378eb406286` 由实际DROP后查询核absent，无retained。无重跑/容量窗口/provider，runners.ts仍只读base c450；源码交接待ENG稳定片。
+
+目标red证据固定 `2d93ec616ee479c3c42ba2a0193327ad1e29e539`，25项[red manifest](../../docs/evidence/s01p04/red-manifest.json)包括原18 preparation绑定及7个新raw/support；全部fixedGit=WT=hash/bytes。当前无green产品结论，仍等待正式路径移交。
