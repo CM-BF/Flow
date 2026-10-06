@@ -1,0 +1,26 @@
+✔ rejects unknown source and descriptors before publishing or adopting a path (2.948041ms)
+✖ APFS clone is a separate file: subsequent seed edits do not alter published bytes (2.981708ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 56.752958
+
+✖ failing tests:
+
+test at tools/personal-preview/backend-release/artifact.test.mjs:16:1
+✖ APFS clone is a separate file: subsequent seed edits do not alter published bytes (2.981708ms)
+  Error: ENOSYS: function not implemented, copyfile '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/svc06-clone-fTDiXO/seed' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/svc06-clone-fTDiXO/artifact'
+      at async copyFile (node:internal/fs/promises:1327:10)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/artifact.test.mjs:23:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    errno: -78,
+    code: 'ENOSYS',
+    syscall: 'copyfile',
+    path: '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/svc06-clone-fTDiXO/seed',
+    dest: '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/svc06-clone-fTDiXO/artifact'
+  }

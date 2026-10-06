@@ -11,6 +11,8 @@ import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener 
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
+import { backendRuntime, assertInstallationSource } from './backend-release/host.mjs';
+import { prepareBackendArtifact } from './backend-release/index.mjs';
 import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, importWebCompatibility } from './web-release.mjs';
 
 const repository = fileURLToPath(new URL('../../', import.meta.url));
@@ -49,8 +51,9 @@ async function directoryPath(input) {
 async function load(directory) {
   const path = await directoryPath(directory);
   const config = await privateJson(join(path, 'config.json'));
-  if (config.format !== 1 || config.directory !== path || config.repository !== await realpath(repository)
+  if (config.format !== 1 || config.directory !== path || typeof config.repository !== 'string'
     || !/^flow_preview_[a-f0-9]{24}$/.test(config.databaseName) || !/^[a-f0-9-]{36}$/.test(config.installationId)) fail('CONFIGURATION_IDENTITY_MISMATCH');
+  await assertInstallationSource(config, repository);
   const url = new URL(config.databaseUrl);
   const admin = new URL(config.adminUrl);
   if (url.pathname !== `/${config.databaseName}` || !['postgres:', 'postgresql:'].includes(admin.protocol) || admin.hostname !== '127.0.0.1' || admin.pathname !== '/postgres'
@@ -235,7 +238,8 @@ export async function runService(directory, role) {
   await assertMarker(config);
   if (role === 'runner' && JSON.stringify(await privateJson(join(config.directory, 'claude.json'))) !== JSON.stringify(NATIVE_CONFIGURATION)) fail('NATIVE_CONFIGURATION_CHANGED');
   const env = serviceEnvironment(role, config);
-  let args; let cwd = config.repository;
+  const runtime = await backendRuntime(config, (await privateJson(join(config.directory, 'state.json'))).backendArtifact);
+  let args; let cwd = runtime.root;
   if (role === 'center') {
     args = ['--import', 'tsx', 'apps/server/src/main.ts'];
   } else if (role === 'runner') {
@@ -246,7 +250,7 @@ export async function runService(directory, role) {
     const artifact = release ? currentWebArtifact(release) : state.webArtifact;
     await verifyWebArtifact({ directory: config.directory, artifact });
     cwd = config.directory;
-    args = [fileURLToPath(new URL('./static-web.mjs', import.meta.url)), config.directory, config.repository,
+    args = [fileURLToPath(new URL('./static-web.mjs', import.meta.url)), config.directory, runtime.root,
       String(config.webPort), String(config.centerPort), artifact.artifactId, artifact.sourceHead, artifact.manifestDigest];
   }
   const child = spawn(process.execPath, args, { cwd, env, stdio: 'ignore' });
@@ -269,13 +273,15 @@ export async function preparePreviewWeb(config, target) {
   }
   return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
 }
-export async function startPreviewServices(config, state, preparedArtifact) {
-  const backendHead = (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
-  const artifact = preparedArtifact ?? await preparePreviewWeb(config);
+export async function startPreviewServices(config, state, preparedArtifact, selectedBackend = state.backendArtifact) {
+  const runtime = await backendRuntime(config, selectedBackend);
+  const backendHead = selectedBackend?.sourceHead ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
+  const artifact = preparedArtifact ?? await preparePreviewWeb(config, backendHead);
   const release = await readWebRelease(config.directory);
   if (release) await assertReleaseCompatibility(backendHead, release.artifacts, config.directory);
   await verifyWebArtifact({ directory: config.directory, artifact });
   state.webArtifact = artifact;
+  if (selectedBackend) state.backendArtifact = selectedBackend;
   state.processes = {}; state.lastError = null;
   try {
     for (const role of roles) {
@@ -286,14 +292,17 @@ export async function startPreviewServices(config, state, preparedArtifact) {
           if (!(await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked', [config.runner.runnerId, tokenHash])).rowCount) fail('RUNNER_IDENTITY_UNAVAILABLE');
         });
       }
-      const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, role], cwd: config.repository, env: baseServiceEnvironment(role),
+      const record = await spawnOwnedProcess({ args: [runtime.entry, 'internal-service', config.directory, role], cwd: runtime.root, env: baseServiceEnvironment(role),
         onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
       state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
       await waitReady(config, role, record, artifact);
     }
+    if (selectedBackend) await backendRuntime(config, selectedBackend);
+    else {
     const revision = await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 });
     const changes = await execute('git', ['-C', config.repository, 'status', '--porcelain'], { timeout: 1000 });
     if (revision.stdout.trim() !== backendHead || changes.stdout.length > 0) fail('SOURCE_CHANGED_DURING_START');
+    }
     state.source = { head: backendHead, dirty: false };
     state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
     return statusPreview({ directory: config.directory });
@@ -318,7 +327,8 @@ async function assertWebBackend(config, state, expectedBackendHead) {
   if (!await ownsListener(state.processes.center, config.centerPort)) fail('WEB_BACKEND_IDENTITY_UNCONFIRMED');
 }
 async function launchWeb(config, state, artifact) {
-  const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, 'web'], cwd: config.repository, env: baseServiceEnvironment('web'),
+  const runtime = await backendRuntime(config, state.backendArtifact);
+  const record = await spawnOwnedProcess({ args: [runtime.entry, 'internal-service', config.directory, 'web'], cwd: runtime.root, env: baseServiceEnvironment('web'),
     onSpawn: async pending => { state.processes.web = pending; await save(join(config.directory, 'state.json'), state); } });
   state.processes.web = record; await save(join(config.directory, 'state.json'), state);
   await waitReady(config, 'web', record, artifact);
@@ -382,4 +392,10 @@ export async function preparePreviewRelease({ directory, target, releaseId }) {
 export async function importPreviewCompatibility({ directory, reportDirectory }) {
   const config = await load(directory);
   return locked(config, async () => ({ compatibilityId: await importWebCompatibility({ directory, reportDirectory }) }));
+}
+
+/** Preparation is explicit and cannot change running services or the maintenance gate. */
+export async function preparePreviewBackend({ directory, target, offlineStore, pnpmCli }) {
+  const config = await load(directory);
+  return locked(config, () => prepareBackendArtifact({ repository: config.repository, target, directory, offlineStore, pnpmCli }));
 }
