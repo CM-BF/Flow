@@ -1,13 +1,13 @@
-# F01 独立审查
+# F01 共享接线审查
 
-状态：NOT_STARTED，模板不表示批准。
+**状态：APPROVED**
+Review target commit：36aeaff12000d77ebd025859f999c69612fce653
+Reviewer：Goal Owner，只读，2026-10-06 03:02:23 UTC。
 
-目标：待实现提交；base873738d9eb998c10bc71721d9b325fcc76ecd7b5。范围：共享contracts/client、center入口/usage、runner共享outbox/heartbeat与CLI，实际实现target提交后固定。
+Scope：9db3ce1 protocol production挂载、71bff1f projects合同export/client/CLI、36aeaff测试setup适配。已读完整delta和新增真实PG/CLI测试；未运行工程测试。作者实际11/11+client4/4+typecheck见[质量记录](../../docs/evidence/f01/quality.md)。无blocking。G01/P02核心模块各自批准，不由接线审查替代；不覆盖G01自动调度、原生runner时钟、MCP持久交互或额外模型。
 
-先核对实际worktree/branch/base/head/dirty，读取plan/status与证据；只读审查公共契约兼容、拒绝未知usage来源、task配置、续接序号、租期时钟边界和领域注册。已执行/未执行检查分别记录，缺少真实消费者不可只靠类型通过。
+| Severity | Finding | Blocking | 作者回应/复审 |
+| --- | --- | --- | --- |
+| — | 无新增发现 | 否 | 绑定上述target |
 
-| finding | severity | blocking | target/证据 | owner回应/修复commit | 复审 |
-| --- | --- | --- | --- | --- | --- |
-| 待审 | — | — | 未开始 | — | — |
-
-可复制审查任务：在上述指定worktree核对当前具体commit，读本plan/status/review，依据F01四项验收做只读检查；报告具体target、已跑/未跑检查、证据、severity与blocking结论，不沿用旧main approval。Claude Code或其他agent可只读；修复由符合Sol门槛的owner在独立worktree进行。
+可复制审查：先核对本plan/status及实际base/head/dirty，仅对明确新commit的共享接线差异只读审查，列已执行/未执行与限制；修复交owner，直接写入须Sol以上、独立worktree和有效claim。
