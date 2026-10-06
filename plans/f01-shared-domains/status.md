@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T11:38:45.202495+00:00 / main9db6708f |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:43:05.952768+00:00 / main2c6df475 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 附件已mainfd132；上下文历史薄client固定 7bbfa1c8c97c5aa871080ddc0efab7cc87b73e42 |
+| 工作基线 / HEAD | 上下文历史生产接线 e6abc4dde828686661c6b416a17de95b497c9734 |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 上下文历史1/1真实HTTP；首次types缺依赖exit2保留，固定zod及offline workspace链接后root types0；0provider |
+| 检查状态 | 薄client1HTTP独审通过；生产实际HTTP/PG1红→1绿与root types0，专用库正常清理；0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | 附件已审/main；当前上下文历史client固定target待独立窄审 |
-| 实现目标 | 7bbfa1c8c97c5aa871080ddc0efab7cc87b73e42 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/context-history.test.ts, packages/contracts/src/index.ts, apps/server/package.json, pnpm-lock.yaml |
+| Review | 薄client7bbfa独立APPROVED；本次生产4源窄审等待 |
+| 实现目标 | e6abc4dde828686661c6b416a17de95b497c9734 |
+| 实现范围 | apps/server/src/events.ts, apps/server/src/index.ts, packages/contracts/src/runner.ts, packages/client/src/context-history-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 客户端能够读取有来源的上下文历史，拒绝错任务或伪造剩余容量的响应。 |
-| 下一可用交付 | 上下文历史持久记录与公开读取接入中心；目标交付统一读口并行准备。 |
+| 当前产出 | 中心可持久保存绑定当前执行身份的上下文观测，并提供授权历史读取与重启恢复。 |
+| 下一可用交付 | 完成上下文生产接线独审；并行接入已审目标交付统一读口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
