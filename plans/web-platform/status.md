@@ -2,18 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:03 UTC / 已发布main698由Lead确认且管理git ls-remote核；两新canonical与claim已交登记 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:12 UTC / 两项固定实现已审，配置摘要新片已take；服务源以root05:08实采为准 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `776daaba61246366ba136d3c5156538b06bc8911`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `213c0a83333fbea3d45934037115b76e7d819232`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
+| 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 插件入口已接入；聊天执行选项已验证，正在接入聊天界面 |
-| 下一可用交付 | 把执行选项接到聊天界面，再开放排队操作 |
+| 当前产出 | 聊天执行选项接线已通过审查；配置摘要正在优化 |
+| 下一可用交付 | 集成聊天选项与紧凑摘要，再开放排队操作 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -37,19 +38,21 @@
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
 | WPF-001-12 | completed | d01_owner | QUEUE00 5acc已审，d10b4b0记录main698实现相同、claim13185v2 released |
 | WPF-001-13 | in-progress | d01_owner | PROFILEI01从main698独立树正式受领7f1daa29v1，10scope；唯一owner先canonical再App接线 |
-| WPF-001-14 | in-progress | d01_owner | WPF-DPERF01新698树正式受领bb7ef22fv1，4scope；重复proof临时Git样本与窄修改，非主线D07 |
+| WPF-001-14 | completed | d01_owner | DPERF5cd限定APPROVED/final4d7425 clean；5md15links3TODO/范围0越界，4新检查与旧关联失败分开；main另计 |
+| WPF-001-15 | in-progress | d01_owner | PROFILEUX01新698树正式take d113be51v1六scope；独立压缩locked模块，先canonical后实现 |
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录，04:59:05.593Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审；workspace_panels_owner在独立PROFILEI01树接聊天选项，w01_owner在独立DPERF树做重复证明的小片。两者写scope不重叠；本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
+管理者只写本树两目录，05:06:45.684Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审；workspace_panels_owner在独立PROFILEI01树接聊天选项，w01_owner已交付DPERF并在独立PROFILEUX树压缩配置摘要。两者写scope不重叠；本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
 | WPF-X03I01 | web-plugin-management-integration / codex/web-plugin-management-integration，base4e，claim a1044bb0-46ed-4cc4-a39a-c3f27a67cea4 v2 released，04:46:47.517Z；原v1于04:28:04.867Z committed；7scope限App/react/CSS、2test与plan/evidence，不改Mika模块。实现84acdcaaa9687a4ca75ebdb40a6efc7e5539029a获rootAPPROVED，原final4b7e0f，集成metadata05b92d30c953413ab66d8b69447c9b44c9121a6a clean，main80e祖先/5实现paths相同，全部七scope已停写释放；作者04:37:33实采checks/review84、claim匹配/proof unchanged/main未含（采样HEAD692，后续仅metadata），管理未重复采样 |
 | 已交付PROFILE模块 | 4f限定APPROVED；7f10889d9cb0ce015c2d72ac4f95c57236b74995 clean实核main698祖先/7path零差，claim17093v2 released于04:59:19.406Z；全部9scope停写，64954保留。旧e730交付/04:53采样保留为历史，实际App另片 |
 | 已交付QUEUE00 | 5acc限定APPROVED；d10b4b0f00dff88cbb74cd67abfd4f5f657d6183 clean实核main698祖先/两path相同，claim13185v2 released于04:59:07.633Z；旧04:56:56.921Z一次54源已注册、checks/review5acc/claim匹配/proofunchanged，当时main e802未含 |
-| WPF-PROFILEI01 | workspace_panels_owner，web-profile-integration / codex/web-profile-integration，base698，claim7f1daa29-78e0-463e-ab88-99e295e9e648 v1于04:59:25.825Z committed；10scope含App/Thread/projection/outbox/4tests/plan/evidence，首canonical9fefee445567ee8d6e1f7b5a2a11d2378c79c23c已核，只有自身install.log新增；正在App接线，尚无实现target |
+| WPF-PROFILEI01 | workspace_panels_owner，web-profile-integration / codex/web-profile-integration，base698，claim7f1daa29-78e0-463e-ab88-99e295e9e648 v1于04:59:25.825Z committed；10scope含App/Thread/projection/outbox/4tests/plan/evidence，首canonical9fefee445567ee8d6e1f7b5a2a11d2378c79c23c；作者已接App/Thread/projection/outbox并通过60直接检查，原17fail形状问题已修保留log；固定候选2e4c5fe7d795e397ab1b1e492605562a847c5fb0，作者60直接检查/typecheck/dev9+prod9/build通过，root05:11:08限定APPROVED，独立44直接检查/源码与两报告hash核验；metadata收口中，51832明确HTTPfixture0模型 |
 | WPF-DPERF01 | w01_owner，dashboard-proof-performance / codex/dashboard-proof-performance，base698，claimbb7ef22f-e7d9-4cd3-8b72-cc69c591c2c7 v1于04:59:56.342Z committed；4scope仅aggregate、新直接test和自身plan/evidence；proof.mjs/registry/human不写，尚无实现target |
+| WPF-PROFILEUX01 | w01_owner / web-execution-profile-summary / codex/web-execution-profile-summary，base698，claimd113be51-5ccd-48a6-95a9-2f9f8f5b3756 v1于05:10:12.187Z committed；模块TSX/CSS+两fixturetest+plan/evidence六scope；公开Interface/catalog/selection不变，首canonicaldd6d8b6e65ccddd275ac44a12753f05ce112837d已实核并一次交root登记；两UI文件实施中 |
 | 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v4已转App/react给X03与projection/直接test给QUEUE00，04:59再转Thread/outbox/outbox-test给PROFILEI01，当前其余9scope保留。真实两query不冒称通过 |
 | 已交付D06 | ef42277ff55d1cbb76ea707836481a9788619033 / final6ea2e68a3362df3cb50ef4a063fc4cbfc3026966 clean；固定8f图已集成4e，04:28:28.679Z实际47源/图已部署。claimf619 v2 released于04:29:52.844Z，旧树全部停写；后继标题快照提示需新take |
 | 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
@@ -136,3 +139,7 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:01 root独立CUA实证（页面同步04:59:56，临时tab21已关）：首页WPF-001人类摘要/下一交付已经直接描述能力；已领取但进度来源待登记区同时可见WPF-DPERF01/w01_owner/dashboard-proof-performance及WPF-PROFILEI01/workspace_panels_owner/web-profile-integration，lead/branch/tree正确。仅领取展示，不冒称canonical已注册；对应REQ37实际验收。PROFILEI01首source9fefee已核，等DPERF首SHA齐后一次桥Lead登记。
 
 05:03 两新canonical首SHA均核三件套/claim/人类摘要及实际源路径后，一次给root桥Lead登记；尚未获得registry通知，不声称进度卡已出现。DPERF首次send_message未唤醒idle的实际时序已记research，05:02 followup正式唤醒后37e1ed已实际创建，未在此前伪报开工产物。后续MainLead82e只metadata组合，两树继续698不追moving。
+
+05:06 新可选“本片段交付阶段”只描述本轮planning/implementation/review/integration/delivered，不以开放后继TODO阻止已交付片段如实标明；规则已入plan并交两owner，进度仍各status唯一。DPERF作者检查和root独审分别记录，不将25/26关联检查写成全绿；基线失败归主线原test/registry维护协调。两source已Lead接收待批次，不在通知前宣称进度卡注册。
+
+05:08:42.686Z root真实4320采样56源/main1f59f826…，两新task仍未在卡片出现、unregistered仍含PROFILEI01/DPERF；main registry已登记不等服务切换。当前等待Lead部署通知，不重复poll。主线D07新增片段阶段字段由各owner安全点维护；DPERF已integration，PROFILEI01固定候选进入review，后继TODO无需全勾。

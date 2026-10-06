@@ -168,7 +168,8 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-11** WPF-PROFILE01：独立选择模块4f198576限定APPROVED/finale730，混合目录/显式聊天allowlist/冻结creation与pin校验完成；真实App接线另受领，U11完整目标继续开放。
 - [x] **WPF-001-12** WPF-QUEUE00：最小boolean reader已5acc限定APPROVED/final498，false旧行为保持且不伪启完整队列；source字段已交root一次桥接ready与注册，Lead成套集成另计。
 - [ ] **WPF-001-13** WPF-PROFILEI01：将整份执行配置选择接入聊天，验证创建即锁、完整pin、原key未知回执、新草稿与连接隔离；仅正式受领10scope，模块存在不等用户旅程完成。
-- [ ] **WPF-001-14** WPF-DPERF01：只消除同task单snapshot同target的重复实现/审查证明，临时Git样本证明语义保持和实际工作量变化；不跨snapshot缓存、不改human筛选或真实服务。
+- [x] **WPF-001-14** WPF-DPERF01：5cd限定APPROVED/final4d7425，临时样本同target比较2→1、Git启动29→24，4新检查通过；关联旧registry计数失败明确保留，main接收另计。
+- [ ] **WPF-001-15** WPF-PROFILEUX01：压缩已锁配置常驻摘要，将完整身份放原生details；保留requested/actual未知、pending锁定、legacy无pin与同model多runner辨识，不改公开Interface/校验/创建语义。
 
 ## 验收、风险与持续方式
 
@@ -268,3 +269,7 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 05:00 两新片正式受领：MainLead明确发布698ffcd94ae073b23bcc67f6665fb19f707a93e4含QUEUE00/CHAT04/client/PROFILE，管理git ls-remote独立核同SHA。QUEUE00与PROFILE各owner先主线纯metadata（d10b4b0/7f10889）再全scope停写release；CHATv3→v4仅移出Thread/outbox/outbox-test3文件，保留9。PROFILEI01新698树核clean后take7f1daa29 v1于04:59:25.825Z，10scope精确无冲突。性能小片正式身份WPF-DPERF01，旧研究临时代称D07保留历史映射，主线D07另做人类摘要筛选不能重号；新698树takebb7ef22f v1于04:59:56.342Z仅aggregate/直接test/plan/evidence4scope，无旧占用不需amend。两owner先canonical/source再实现，未有成品/审批，不动常驻61227的75a构建。
 
 05:01 REQ37现场追溯补证：root独立CUA在04:59:56同步的4320页面看见两新任务领取状态及owner/lead/worktree/branch，处于“已领取，进度来源待登记”，并确认本父人类摘要已可直接阅读。领取展示与进度源注册分开；等两个canonical首SHA齐后一次交Lead登记，不另手填状态。
+
+05:06 MainLead新增status可选字段“本片段交付阶段”，枚举planning/implementation/review/integration/delivered。该字段仍由唯一status owner手填：作者实现完成待独审为review、独审通过待main为integration、main接收为delivered；它描述当前片段，不要求把后继开放TODO全勾，也不替代checks/review/main证据。已通知两活跃owner安全点维护。D07 claim84f80ac0v1只负责human.mjs/其新test/资料，与我方DPERF aggregate四scope无重叠。
+
+05:10 root CUA22在真实App HTTPfixture51832看到locked配置块约250px、UUID/digest常显挤压对话；这是实际观察触发的有限UX改善，不新增全栈插件/模型功能。新WPF-PROFILEUX01从698已核clean，旧PROFILE17093v2released、六scope无冲突，[05:10:12.187Z正式take](../../docs/evidence/web-platform/profileux01-take-receipt.json) d113be51v1，w01仅模块TSX/CSS/两fixturetests/自有plan-evidence。原生details默认折叠、摘要仍解释requested不等实际生效，Interface/catalog/selection/权限/CREATE冻结零变；不碰PROFILEI01八实现路径，独立动态服务与0模型验证。

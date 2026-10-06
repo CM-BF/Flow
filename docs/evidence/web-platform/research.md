@@ -387,3 +387,21 @@ GoalOwner明确授权首连帮助小UX，沿既有U11/SVC候选，不新重复�
 05:00 名称纠正与方法冻结：此前D07只是我队proof性能候选临时代称，主线已用D07作human下一交付筛选，正式新片改WPF-DPERF01，不能重用编号。首片仅同task/同snapshot/review.target等于implementation.target时直接复用既有compare结果；tree/main dirty重复只留后继假设，不建通用缓存接口。root已核官方[Git Trace2](https://git-scm.com/docs/api-trace2)，可对子进程设置临时GIT_TRACE2_EVENT记录start argv统计真实调用，不改全局Git配置/公开proof接口/真实凭据命令。owner独立新698树、4scope receipt已受领，事实与counter结果由其canonical单写。
 
 05:02 派工时序纠正：DPERF新take后管理者首次使用send_message时worker已completed，消息只入邮箱未启动。root通过actual list_agents发现HEAD仍698 clean/无canonical；管理者改用followup_task携完整bb7ef22fv1 receipt/四scope正式唤醒，明确直接开工。此前仅宣称领取与等待canonical，没有伪造source/实现。以后completed/idle统一followup，running才send_message；不新增agent绕过队列。
+
+## 05:06 证明复用固定候选与范围外基线失败
+
+WPF-DPERF01实现5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52/base698：仅aggregate六行和新proof-snapshot.test.mjs，proof.mjs/registry/human不变。root05:06:23限定APPROVED，独立4新tests PASS/2790ms、单task同snapshot同target24个Git start/1次comparison；作者原29/2基线由root读日志核，未冒充root重跑前测或生产速度幅度。不同target仍单独调用，缺失/unknown不借成功值，跨snapshot重新观察。
+
+作者关联26项25PASS/1FAIL，根因固定698的human-proof.test.mjs:115–116硬编码registry.tasks.length=28，而固定输入实际54源。管理只读git show698核断言，并核当前test/registry对698零diff；root也独立核两文件不变。本feature不改旧test或registry、不删断言、不把完整套件称绿；原red/direct/related日志由owner保留，主线原owner协调后继修复。该已确认旧失败不变成新增产品结论或借口越scope。
+
+PROFILEI01作者已完成60项局部检查（34projection/10outbox/16模块），首strict helper调用形状错误17fail已修且原log保留；真实App HTTPfixture51832/session68857浏览器验证进行中，0模型/DB。只有作者进行中来源，不作为固定候选独立审批。
+
+## 后继可信消息内容renderer候选（root只读，归既有WPF-001-05/X01）
+
+当前main插件ContributionDeclaration只有button/menu/panel/theme，host.contribute只允许panel；ConversationThread直接makeAssistantDataUI注册内建flow-reply-detail，14slots不等完整消息内容renderer扩展。root通过本地assistant-ui技能、官方[Tool Rendering](https://www.assistant-ui.com/docs/api-reference/tools/rendering)/[Message](https://www.assistant-ui.com/docs/primitives/message)与已装react0.15.23/core0.3.22核实：useAssistantDataUI挂载注册卸载撤销；DataRenderers同name数组取首个，无renderer返回null，不能依mount顺序处理插件冲突。
+
+后继仅可信data-renderer窄接缝：专属type/name及schema/version，确定性冲突拒绝，保留Flow命名空间；窄只读payload和已有授权commands，失败/disable/unknown escaped有界fallback不丢正文，不让renderer激活触发模型tool执行、不改中心DTO或凭据，不宣称same-realm隔离。先迁移一个已有data part，验官方Thread插拔、split两provider/disable重启/异常/未知版/0额外detail。候选待PROFILE/queue窗口后正式take，完整第三方隔离/npm生命周期仍Main/Mika，不另造全栈计划或立即生产scope。
+
+K01引用研究依赖来自Mika经root预告：GoalOwner已批准其独立take，未触Web/Thread/host。拟KnowledgeCitation={projectId,sourceId,version,contentDigest,locator:{kind:'utf8-bytes',start,end}}，不可变版本正文、UTF8半开有界范围，resolve显式isCurrent/currentVersion；首片owner-only项目内文本/词法，不扩runner/MCP授权，暂不发中心消息renderer DTO。等待正式contracts commit与Lead统一export/client；当前仅接口预告，不写成类型已存在，不造私有Web协议。可作为后继可信renderer引用场景，已有flow-reply-detail迁移也仍是候选。
+
+PROFILEUX组合边界：root已审PROFILEI01测试使用region `Locked execution profile`及`Creation receipt pending`/`Conversation profile locked`/`Unpinned legacy default`；已交UX唯一owner保留产品含义/稳定入口，details闭合不另建pin状态。后续组合只验证受影响摘要/草稿/焦点旅程，不机械重跑原18组。

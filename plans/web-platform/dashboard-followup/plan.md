@@ -34,7 +34,7 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 
 - [ ] **WPF-D01-06** 后继取得标题/renderer正式scope后，把架构短SHA与固定快照提示放标题旁。GoalOwner目视D06无阻塞但当前“当前代码”标题易与底部折叠说明不一致；不扩本轮四scope、不阻D06集成。
 
-- [ ] **WPF-D01-07** 评估单次snapshot内重复Git proof复用的收益与正确性；可能未来独立D07新树/take，不写当前dashboard或跨snapshot缓存事实。
+- [x] **WPF-D01-07** 已移交WPF-DPERF01独立领取与验证：5cd获审，临时样本Git启动29→24且跨snapshot/异target语义保留；不是线上提速承诺，main集成另计。
 
 ## 有证据的后继性能候选（未领取）
 

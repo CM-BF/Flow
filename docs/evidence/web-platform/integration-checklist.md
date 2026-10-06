@@ -21,6 +21,7 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-QUEUE00 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
 | WPF-PROFILEI01（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration | codex/web-profile-integration | plans/wpf-profile-integration | docs/evidence/wpf-profile-integration |
 | WPF-DPERF01（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance | codex/dashboard-proof-performance | plans/wpf-dashboard-proof-performance | docs/evidence/wpf-dperf01 |
+| WPF-PROFILEUX01（待登记） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary | codex/web-execution-profile-summary | plans/wpf-profileux-execution-summary | docs/evidence/wpf-profileux |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -280,3 +281,11 @@ CHATowner明确停写Thread/outbox/outbox-test，管理实核083clean+livev3后[
 PROFILEI01首canonical9fefee445567ee8d6e1f7b5a2a11d2378c79c23c已管理只读核：三件套、人类字段、UNKNOWN target/NOT_STARTED和claim7f1daav1一致；检查时只有自身install.log未跟踪，安装无产品变更。root04:59:56页面同期实看两新claim在未登记区，正确显示lead/worker/branch/tree；这是已领取事实，不表示已有进度卡。两首source齐后统一登记，避免重复桥接。
 
 05:03 两canonical实际齐全后一次给root桥Lead：PROFILEI01首9fefee445567ee8d6e1f7b5a2a11d2378c79c23c，planDir plans/wpf-profile-integration / evidenceDir docs/evidence/wpf-profile-integration（核时只有自身install.log新增）；DPERF01首37e1eddbbb3f5258a3887fccaceea5a86278c464 clean，4md8links通过，planDir plans/wpf-dashboard-proof-performance / evidenceDir docs/evidence/wpf-dperf01。各M2/UNKNOWN/NOT_STARTED/唯一worker和claim一致，真实代码工作已启动。仍等待registry明确通知，届时各owner一次自身采样；不重复读取4320。Lead新main82eaf508a88d8e0c21e3424dade33c86811905c6仅登记/B02/metadata，据其确认与698产品相同；两任务保持698冻结base，不追moving。
+
+05:06 Lead已接收两source等待下一registry批次，暂不重复API采样。D07 claim84f80ac0-ed1a-431b-acf8-37cdfa0e734b v1主线human筛选与WPF-DPERF01 bb7efv1 aggregate范围独立，05:06:45.684Z live均active。DPERF5cd已root独审APPROVED等待owner最终metadata；唯一旧基线human-proof28/54失败已如实保留，root最终桥Lead时带上，不越权修范围外文件。新增片段阶段字段由各owner安全点维护，注册完成后核实际解析/claim/check/review而非只看issues空。
+
+05:10 DPERF最终4d7425c220bd89c536856c3569a736784528cfdb clean只在1d11后精确补两份文档：fixed实现diffcheck0，完整metadata raw red20/22和related46/48尾空格不清洗。管理11paths全在4scope、实现/保护路径0diff、5md15links3TODO一致，root批准5cd保持；已向root补SHA，不因原日志空格阻主线接收。
+
+新PROFILEUX01仅有限已观察UI改善：旧PROFILE已release，05:09:55.683Z freshledger六scope空闲、新698树branch/head/clean独立核；[take](profileux01-take-receipt.json) d113be51-5ccd-48a6-95a9-2f9f8f5b3756 v1于05:10:12.187Z committed。实际App接线与模块摘要写权完全分开，保持公开接口及创建校验不变，owner先canonical再实现，独审后由Lead受控组合。
+
+05:12 PROFILEUX首canonical dd6d8b6e65ccddd275ac44a12753f05ce112837d已实核，唯一source planDir plans/wpf-profileux-execution-summary、evidenceDir docs/evidence/wpf-profileux（不可默认误设wpf-profileux01），M2/priority3/implementation/UNKNOWN/NOT_STARTED，claimd113v1。核时两个自有UI文件已dirty，准确登记为实施中。完整字段已一次root桥Lead，尚未服务聚合确认。PROFILEI01固定2e4c获root05:11:08批准，作者metadata仍收口；scope/docs完成后交Lead，模块UI后继不自动纳入其审批。

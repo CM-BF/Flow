@@ -12,8 +12,8 @@
 | 工作分支状态 | in-progress；来源/领取视图已证实，D06固定8f已审集成并释放；后继候选未领取 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | D06 ef固定8f已审集成；root51源快照观察显示重复proof可实验，未实施 |
-| 下一可用交付 | 后继标题快照提示与单snapshot proof复用实验候选，先精确scope/新take |
+| 当前产出 | 架构图已交付；看板重复核验优化已通过独立审查 |
+| 下一可用交付 | 集成刷新优化；架构快照提示另行领取 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -30,7 +30,7 @@
 | WPF-D01-04 | completed | d01_owner（协作）；原Lead实施 | U09架构tab已部署，root读取固定3773图；管理04:07 CUA见可访问架构入口；不是最新8f图已交付 |
 | WPF-D01-05 | completed | d01_owner（协作） | D06 ef42277独审通过，04:28实际47源/claim匹配/main4e同范围/4320部署；最终6ea2，v2释放 |
 | WPF-D01-06 | pending | d01_owner（协作） | GoalOwner非阻塞建议标题旁显示固定SHA/快照，待renderer新scope；本轮不改 |
-| WPF-D01-07 | pending | d01_owner（协作） | root两次2.67/2.73秒51源端到端观察与重复Git proof源码线索；先受控实验，未D07 take/实现 |
+| WPF-D01-07 | completed | d01_owner（协作） | 已移交独立WPF-DPERF01，5cd限定APPROVED/final4d7425；4新检查与临时Git计数证据，main接收另计 |
 
 ## 阻塞 / 风险 / 未验证
 
