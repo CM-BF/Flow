@@ -9,7 +9,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 - [S01P06唯一已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds/docs/evidence/s01p06/integration-ready.md)：metadata31c06b4a / impl cdd3，沿原owner接收。
 - [X01 enable binding后继设计待决策](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-preparation.md)：8e520b7274a6d4112e91318c6eb5ba1758bf7c1c方向已审；029保留，后续SQL由Lead定号，030属O14；host/store资格与公共字段需冻结，runtime待P06交回再fresh领取。
 
-- [运行库元数据两槽候选](node-runtime-metadata/interface.md)：2ac设计已审，42 distinct纯检查完成，组合e3183758准备APPROVED，go-node-runtime-metadata-once NOT_OPEN；旧cause9605封存。
+- [运行库元数据窗口结果](node-runtime-metadata/run-report.md)：首槽code1/246B有限分类UNKNOWN，第二槽NOT_RUN；完整计量与清理确认，measurement FAIL，结果待独审；窗口CONSUMED。旧cause9605封存，无自动后继。
 - [X01中心静态安装已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-integration-ready.md)：a578固定领域/029；host及共享接线边界沿唯一owner，不可将executionSettled恒置true。
 
 - [F01 goal run list薄client已审98e5](goal-run-list-client-review.md)：Mika13:46:39 UTC APPROVED，仅transport。

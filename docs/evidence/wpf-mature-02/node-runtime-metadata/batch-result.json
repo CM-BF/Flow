@@ -1,0 +1,111 @@
+{
+  "window": "go-node-runtime-metadata-once",
+  "startedAt": "2026-10-06T14:34:31.725Z",
+  "targets": [
+    "FAILED",
+    "NOT_RUN"
+  ],
+  "targetCalls": 1,
+  "compileCalls": 0,
+  "codexStarts": 0,
+  "providerCalls": 0,
+  "retainedRoots": [],
+  "control": {
+    "state": "FAILED",
+    "close": {
+      "pid": 57590,
+      "reason": "completed",
+      "closeObserved": true,
+      "groupGone": true,
+      "code": 1,
+      "signal": null,
+      "streams": {
+        "stdout": {
+          "observedBytes": 0,
+          "writtenBytes": 0,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        },
+        "stderr": {
+          "observedBytes": 246,
+          "writtenBytes": 246,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        }
+      },
+      "observationFailed": false
+    },
+    "streams": [
+      {
+        "name": "stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "complete": true,
+        "mode": "0600",
+        "identity": {
+          "dev": 16777234,
+          "ino": 123033180,
+          "regular": true,
+          "symlink": false
+        }
+      },
+      {
+        "name": "stderr",
+        "bytes": 246,
+        "sha256": "4aa1b4430000089cc1a025822a34234bb92232ba16fec09a35210c68c48a4fe0",
+        "complete": true,
+        "mode": "0600",
+        "identity": {
+          "dev": 16777234,
+          "ino": 123033183,
+          "regular": true,
+          "symlink": false
+        }
+      }
+    ],
+    "observation": {
+      "errorClass": "UNKNOWN",
+      "errno": null,
+      "errnoState": "unknown",
+      "dependencyRoles": [],
+      "reasonState": "UNKNOWN",
+      "reasons": []
+    },
+    "cleanupComplete": true,
+    "outputAccountingComplete": true
+  },
+  "stopReason": "control-failed-or-unknown",
+  "ownerPending": null,
+  "retainedRootsComplete": true,
+  "cleanupComplete": true,
+  "measurementComplete": false,
+  "knownTargetCalls": 1,
+  "outputAccountingComplete": true,
+  "inventoryPersisted": true,
+  "endedAt": "2026-10-06T14:34:31.955Z",
+  "elapsedMs": 229.960208,
+  "elapsedBasis": "before-result-persistence",
+  "output": {
+    "prepared": 343145,
+    "controlObserved": 246,
+    "controlDisk": 17387,
+    "canaryStderrObserved": 0,
+    "canaryDisk": 0,
+    "canaryStdoutSourceUpperBound": 0,
+    "receipts": 3660,
+    "knownBytes": 364438,
+    "unqualifiedStdoutReserveBytes": 0,
+    "reservedBytes": 532810,
+    "receiptReserveBytes": 32768,
+    "archiveReserveBytes": 131072,
+    "outerReserveBytes": 8192,
+    "limit": 2097152
+  },
+  "withinBudget": true
+}

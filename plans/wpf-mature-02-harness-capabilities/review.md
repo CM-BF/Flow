@@ -1,5 +1,7 @@
 # WPF-MATURE-02 review
 
+当前runtime-metadata结果：1目标code1、第二槽NOT_RUN，measurement FAIL但清理/完整计量确认；[结果](../../docs/evidence/wpf-mature-02/node-runtime-metadata/run-report.md)待固定target忠实性独审。窗口已消费，无后继授权。准备审批仅原范围。
+
 运行库元数据新片：Mika14:03对2ac固定设计APPROVED；[实现与定向证据](../../docs/evidence/wpf-mature-02/node-runtime-metadata/implementation.md)记录42 distinct纯检查、原生惰性import与7语法检查，96ba功能独审architecture_read14:24 CHANGES_REQUESTED（唯一1P2：组合末次persist丢safe结果）；修复26148841已获architecture_read/gpt-6-astra 2026-10-06 14:26:01 UTC功能APPROVED，原P2 CLOSED/0剩余；最终组合e3183758已获architecture_read14:27:58与Mika14:28:15准备APPROVED，0P1/P2；[正式收据](../../docs/evidence/wpf-mature-02/node-runtime-metadata/preparation-review.json)，实际NOT_OPEN。设计通过不替代源码检查；旧cause9605封存审批仍成立。
 
 Cause结果忠实性 APPROVED：Mika/gpt-6-astra，2026-10-06 13:42:44 UTC，target12f502b1fdd1f468f96557a619e2a88ae99e1dc0，0P1/P2。15bindings与11+69固定输入核同；[run-report](../../docs/evidence/wpf-mature-02/node-loader-cause/run-report.md)仅完整单目标观察：SIGABRT/library-not-loaded/errno未知，非启动或隔离通过。205333B及外部4s可信；deny根仅driver收据，未重跑，无后继授权。
