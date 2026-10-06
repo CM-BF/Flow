@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { createHash, randomUUID } from "node:crypto";
 import { execFile } from "node:child_process";
 import { readFile, realpath, lstat } from "node:fs/promises";
-import { createServer as createHttpServer, request as requestHttp, type Server } from "node:http";
+import { createServer as createHttpServer, request as requestHttp, type IncomingMessage, type Server, type ServerResponse } from "node:http";
 import { extname, isAbsolute, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
@@ -100,7 +100,46 @@ export async function sourceIdentity(backend: BackendInput) {
 export type Wire = {
   method: string; path: string; status: number; key: string | null; body: string; responseBody: string | null; responseSha256: string | null;
   stream: string | null; forwardedStream: string | null; profile: string | null; dropped: boolean;
+  fault?: { kind: "truncated-ack-body"; contentLength: number; contentType: string; prefixBytes: number; prefixSha256: string;
+    headersFlushed: boolean; prefixFlushed: boolean; endFlushed: boolean; socketClosed: boolean; error?: string };
 };
+
+/** Keep the real receipt in wire evidence; lose only a strict downstream body suffix. */
+async function truncateAcknowledgement(incoming: IncomingMessage, response: ServerResponse, bytes: Buffer, record: Wire) {
+  assert.ok(incoming.complete && bytes.length > 1 && bytes.length <= 128 * 1024, "Complete bounded upstream ACK required");
+  assert.ok(!incoming.headers["content-encoding"] || incoming.headers["content-encoding"] === "identity", "Compressed ACK is not injectable");
+  const contentType = incoming.headers["content-type"] ?? "";
+  assert.match(contentType, /^application\/json(?:\s*;|$)/i);
+  const length = incoming.headers["content-length"], transfer = incoming.headers["transfer-encoding"];
+  assert.ok(!(length && transfer) && (!transfer || transfer.toLowerCase() === "chunked"), "Ambiguous upstream framing");
+  if (length !== undefined) { assert.match(length, /^\d+$/); assert.equal(Number(length), bytes.length); }
+  assert.ok(bytes.equals(Buffer.from(bytes.toString("utf8"))), "ACK must be valid UTF8");
+  const ack = JSON.parse(bytes.toString("utf8"));
+  assert.ok(ack && typeof ack === "object" && !Array.isArray(ack));
+  assert.equal(typeof (/\/turns$/.test(record.path) ? ack.turn?.id : ack.item?.id), "string", "Real accepted identity required");
+  const socket = response.socket; assert.ok(socket && !socket.destroyed);
+  const prefix = bytes.subarray(0, 1);
+  const fault: NonNullable<Wire["fault"]> = { kind: "truncated-ack-body", contentLength: bytes.length, contentType,
+    prefixBytes: prefix.length, prefixSha256: sha(prefix), headersFlushed: false, prefixFlushed: false, endFlushed: false, socketClosed: false };
+  record.fault = fault;
+  await new Promise<void>((resolve, reject) => {
+    const timeout = setTimeout(() => { fault.error = "ACK fault close deadline"; socket.destroy(); }, 1000);
+    response.once("error", error => { fault.error = failure(error); socket.destroy(); });
+    socket.once("error", error => { fault.error = failure(error); });
+    socket.once("close", hadError => {
+      clearTimeout(timeout); fault.socketClosed = true;
+      if (hadError || fault.error || !fault.prefixFlushed || !fault.endFlushed) reject(Error(fault.error ?? "ACK fault closed before local flush"));
+      else resolve();
+    });
+    response.writeHead(record.status, { "content-type": contentType, "content-length": bytes.length, "connection": "close", "cache-control": "no-store" });
+    response.flushHeaders(); fault.headersFlushed = true;
+    response.write(prefix, error => {
+      if (error) { fault.error = failure(error); socket.destroy(); return; }
+      fault.prefixFlushed = true;
+      socket.end(() => { fault.endFlushed = true; });
+    });
+  });
+}
 async function listen(server: Server) {
   await new Promise<void>((resolve, reject) => { server.once("error", reject); server.listen(0, "127.0.0.1", () => { server.off("error", reject); resolve(); }); });
   const address = server.address(); assert.ok(address && typeof address !== "string"); return address.port;
@@ -126,6 +165,7 @@ async function previewHost(centerPort: number, signal: AbortSignal) {
     .map(file => [`/__flow_releases/${RELEASE_ID}/${file.path}`, { ...file, path: join(dist, file.path) }])) };
   const wire: Wire[] = []; const problems: string[] = []; let captureBytes = 0; let legacy = false; let drop: "turn" | "queue" | null = null;
   const upstreams = new Set<ReturnType<typeof requestHttp>>();
+  const faultWrites = new Set<Promise<void>>();
   const server = createHttpServer((request, response) => {
     void (async () => {
       const path = request.url ?? "/";
@@ -149,6 +189,7 @@ async function previewHost(centerPort: number, signal: AbortSignal) {
         const json = incoming.headers["content-type"]?.includes("application/json");
         const capture: Buffer[] = []; let received = 0;
         const dropped = inject && (incoming.statusCode ?? 500) >= 200 && (incoming.statusCode ?? 500) < 300;
+        if (inject && !dropped) problems.push(`ACK fault requires real upstream success: ${path}`);
         if (!dropped) response.writeHead(incoming.statusCode ?? 502, incoming.headers);
         incoming.on("data", (chunk: Buffer) => {
           if (json) { received += chunk.length; if (received <= 128 * 1024) capture.push(chunk); }
@@ -168,9 +209,16 @@ async function previewHost(centerPort: number, signal: AbortSignal) {
             stream: request.headers["x-flow-assistant-stream"] ? String(request.headers["x-flow-assistant-stream"]) : null,
             forwardedStream: headers["x-flow-assistant-stream"] ? String(headers["x-flow-assistant-stream"]) : null,
             profile: request.headers["x-flow-execution-profile"] ? String(request.headers["x-flow-execution-profile"]) : null };
-          captureBytes += Buffer.byteLength(JSON.stringify(record));
+          const recordBytes = Buffer.byteLength(JSON.stringify(record)); captureBytes += recordBytes;
           if (captureBytes > 2 * 1024 * 1024 || wire.length >= 1000) { problems.push("Wire evidence limit exceeded"); response.destroy(); return; }
-          wire.push(record); if (dropped) response.destroy(); else response.end();
+          wire.push(record);
+          if (dropped) {
+            if (!json || received > 128 * 1024 || !incoming.complete) { problems.push("ACK fault requires complete bounded JSON"); response.destroy(); return; }
+            const write = truncateAcknowledgement(incoming, response, Buffer.concat(capture), record)
+              .catch(error => { problems.push(`ACK fault: ${failure(error)}`); response.destroy(); })
+              .finally(() => { captureBytes += Buffer.byteLength(JSON.stringify(record)) - recordBytes; if (captureBytes > 2 * 1024 * 1024) problems.push("Wire evidence limit exceeded"); });
+            faultWrites.add(write); void write.finally(() => faultWrites.delete(write));
+          } else response.end();
         });
         incoming.on("error", () => { if (!signal.aborted && !response.destroyed) problems.push(`Upstream response interrupted: ${path}`); response.destroy(); });
       });
@@ -185,7 +233,7 @@ async function previewHost(centerPort: number, signal: AbortSignal) {
     const port = await listen(server);
     signal.throwIfAborted();
     return { url: `http://127.0.0.1:${port}`, manifest, wire, problems, loseNext: (kind: "turn" | "queue") => { assert.equal(drop, null); drop = kind; },
-      setLegacy: (value: boolean) => { legacy = value; }, close: async () => { for (const upstream of upstreams) upstream.destroy(); await closeHttp(server); } };
+      setLegacy: (value: boolean) => { legacy = value; }, close: async () => { for (const upstream of upstreams) upstream.destroy(); await closeHttp(server); await Promise.all(faultWrites); } };
   } catch (error) { await closeHttp(server); throw error; }
 }
 

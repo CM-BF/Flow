@@ -5,7 +5,7 @@ import { constants, writeFileSync } from "node:fs";
 import { mkdir, readFile, writeFile, readdir, lstat, statfs, rm, realpath, open } from "node:fs/promises";
 import { isAbsolute, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { Browser, Locator, Page } from "@playwright/test";
+import type { Browser, Locator, Page, Request, Response } from "@playwright/test";
 import type { ConversationTurnAccepted, ConversationQueueAccepted } from "../../../packages/contracts/src/index.js";
 import type { BackendInput, CurrentPreview, Wire } from "./web-current-preview.fixture.js";
 
@@ -375,6 +375,9 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
   const pageErrors: string[] = [], consoleErrors: Array<{ text: string; url: string }> = [];
   const loadedAssets: Array<{ path: string; sha256: string }> = [], assetReads: Promise<void>[] = [];
   const checks: string[] = [];
+  type FaultObservation = { kind: "turn" | "queue"; path: string | null; key: string | null; bodySha256: string | null;
+    status: number | null; headers: Record<string, string> | null; events: string[]; failure: string | null; finished: boolean };
+  const faultObservations: FaultObservation[] = [], stopObservers: Array<() => void> = [];
   page.on("pageerror", error => pageErrors.push(error.message));
   page.on("console", message => { if (message.type() === "error") consoleErrors.push({ text: message.text(), url: message.location().url }); });
   page.on("response", response => {
@@ -402,6 +405,46 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
     await dialog.getByRole("button", { name: "Use existing.txt", exact: true }).click(); await page.keyboard.press("Escape");
     await expect(chat.locator(".aui-composer-attachments .aui-attachment-root")).toHaveCount(1);
   };
+  const observeBodyLoss = (kind: "turn" | "queue", text: string) => {
+    const observation: FaultObservation = { kind, path: null, key: null, bodySha256: null, status: null, headers: null, events: [], failure: null, finished: false };
+    faultObservations.push(observation);
+    let selected: Request | undefined;
+    const onRequest = (request: Request) => {
+      if (selected || request.method() !== "POST" || !(kind === "turn" ? /\/turns$/ : /\/queue$/).test(new URL(request.url()).pathname)) return;
+      const body = request.postData(); if (!body) return;
+      try { if (JSON.parse(body).text !== text) return; } catch { observation.events.push("invalid-request-json"); return; }
+      selected = request; observation.path = new URL(request.url()).pathname;
+      observation.key = request.headers()["idempotency-key"] ?? null; observation.bodySha256 = sha(body); observation.events.push("request");
+    };
+    const onResponse = (response: Response) => {
+      if (response.request() !== selected) return;
+      const headers = response.headers(); observation.status = response.status();
+      observation.headers = Object.fromEntries(["content-type", "content-length", "connection", "transfer-encoding"].map(name => [name, headers[name] ?? ""]));
+      observation.events.push("response-headers");
+    };
+    const onFailed = (request: Request) => {
+      if (request !== selected) return;
+      observation.failure = request.failure()?.errorText ?? null; observation.events.push("requestfailed");
+    };
+    const onFinished = (request: Request) => { if (request === selected) { observation.finished = true; observation.events.push("requestfinished"); } };
+    page.on("request", onRequest); page.on("response", onResponse); page.on("requestfailed", onFailed); page.on("requestfinished", onFinished);
+    const stop = () => { page.off("request", onRequest); page.off("response", onResponse); page.off("requestfailed", onFailed); page.off("requestfinished", onFinished); };
+    stopObservers.push(stop); fixture.loseNext(kind);
+    return async (record: Wire) => {
+      // Playwright 1.63 response.finished() may never settle on requestfailed; use the exact Request events.
+      await until(async () => observation, value => !!value.failure && !!record.fault?.socketClosed, signal, 2000);
+      assert.equal(observation.path, record.path); assert.equal(observation.key, record.key); assert.equal(observation.bodySha256, sha(record.body));
+      assert.deepEqual(observation.events, ["request", "response-headers", "requestfailed"]); assert.equal(observation.finished, false);
+      assert.match(observation.failure ?? "", /^net::ERR_(?:CONTENT_LENGTH_MISMATCH|FAILED)$/);
+      assert.ok(record.dropped && record.fault); const fault = record.fault;
+      assert.equal(fault.kind, "truncated-ack-body"); assert.equal(observation.status, record.status);
+      assert.deepEqual(observation.headers, { "content-type": fault.contentType, "content-length": String(fault.contentLength), "connection": "close", "transfer-encoding": "" });
+      const bytes = Buffer.from(record.responseBody!); assert.equal(fault.contentLength, bytes.length);
+      assert.ok(fault.prefixBytes > 0 && fault.prefixBytes < bytes.length); assert.equal(fault.prefixSha256, sha(bytes.subarray(0, fault.prefixBytes)));
+      assert.ok(fault.headersFlushed && fault.prefixFlushed && fault.endFlushed && fault.socketClosed); assert.equal(fault.error, undefined);
+      stop();
+    };
+  };
   try {
     await connect(); await profile();
     const index = fixture.manifest.files.find((file: { path: string }) => file.path === "index.html");
@@ -424,10 +467,12 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
     const chat = page.getByRole("region", { name: text, exact: true });
     const composer = chat.getByRole("textbox", { name: "Message input", exact: true });
     await expect(composer).toHaveValue(text); await chooseFile(chat);
-    fixture.loseNext("turn"); await chat.getByRole("button", { name: "Send message", exact: true }).click();
+    const verifyTurnLoss = observeBodyLoss("turn", text); await chat.getByRole("button", { name: "Send message", exact: true }).click();
     await expect(composer).toHaveValue(""); await composer.fill(nextDraft);
     await expect(chat.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
-    const first = posts(/\/turns$/).at(-1)!; assert.ok(first.dropped); assert.deepEqual(JSON.parse(first.body).attachments, [material.ref]);
+    const first = posts(/\/turns$/).find(row => row.dropped); assert.ok(first);
+    await verifyTurnLoss(first); assert.equal(posts(/\/turns$/).filter(row => row.path === first.path).length, 1, "Exactly one POST before explicit turn retry");
+    assert.deepEqual(JSON.parse(first.body).attachments, [material.ref]);
     const accepted = decoded<ConversationTurnAccepted>(first), conversationId = accepted.conversation.id, taskId = accepted.turn.task.id;
     decodeConversationTurnAccepted(accepted, conversationId, conversationTurnSchema.parse(JSON.parse(first.body)));
     assert.equal(accepted.turn.context?.templateVersion, 2);
@@ -440,12 +485,15 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
     assert.equal(retry.key, first.key); assert.equal(retry.body, first.body); assert.equal(retried.turn.id, accepted.turn.id); assert.equal(retried.replayed, true);
     checks.push("Real v2 lost successful ACK retries the same key/body/turn; next draft survives");
     await chooseFile(chat); await chat.getByRole("radio", { name: "Queue next", exact: true }).check();
-    await composer.fill("Queue fixed attachment"); fixture.loseNext("queue"); await composer.press("Enter");
+    await composer.fill("Queue fixed attachment"); const verifyQueueLoss = observeBodyLoss("queue", "Queue fixed attachment"); await composer.press("Enter");
     await expect(chat.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("Receipt unknown");
-    const queued = posts(/\/queue$/).at(-1)!; assert.ok(queued.dropped); await composer.fill("Independent queue draft");
+    const queued = posts(/\/queue$/).find(row => row.dropped); assert.ok(queued);
+    await verifyQueueLoss(queued); assert.equal(posts(/\/queue$/).filter(row => row.path === queued.path).length, 1, "Exactly one POST before explicit queue retry");
+    assert.deepEqual(JSON.parse(queued.body).attachments, [material.ref]); await composer.fill("Independent queue draft");
     await chat.getByRole("button", { name: "Retry same enqueue", exact: true }).click();
     await expect(chat.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("accepted");
-    const queueRetry = posts(/\/queue$/).at(-1)!; const queueAck = decoded<ConversationQueueAccepted>(queueRetry);
+    const sameQueuePosts = posts(/\/queue$/).filter(row => row.path === queued.path); assert.equal(sameQueuePosts.length, 2);
+    const queueRetry = sameQueuePosts[1]!; const queueAck = decoded<ConversationQueueAccepted>(queueRetry); assert.equal(queueAck.replayed, true);
     assert.equal(queueRetry.key, queued.key); assert.equal(queueRetry.body, queued.body);
     assert.equal(queueAck.item.id, decoded<ConversationQueueAccepted>(queued).item.id); assert.equal(queueAck.item.context?.templateVersion, 2);
     assertConversationContextMatches(undefined, queueAck.item.context, { projectId: material.projectId, attachments: [material.ref] });
@@ -469,7 +517,8 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
     await Promise.all(assetReads); assert.deepEqual(pageErrors, []);
     const permittedErrors = consoleErrors.every(error => {
       const path = error.url ? new URL(error.url).pathname : "";
-      return fixture.wire.some(row => row.path === path && row.dropped) && /ERR_EMPTY_RESPONSE|ERR_FAILED/.test(error.text)
+      return faultObservations.some(fault => fault.path === path && fault.events.join(",") === "request,response-headers,requestfailed"
+        && !!fault.failure && error.text.includes(fault.failure) && fixture.wire.some(row => row.path === path && row.key === fault.key && row.dropped && row.fault?.socketClosed))
         || path === `/api/conversations/${conversationId}` && /401/.test(error.text) || path === "/favicon.ico" && /404/.test(error.text);
     });
     assert.ok(permittedErrors, `Unexpected console errors: ${JSON.stringify(consoleErrors)}`);
@@ -488,13 +537,13 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
         profileHeaderHandled: supplemental.status === 200 && supplemental.found },
     };
     assert.ok(Object.values(observations).every(values => Object.values(values).every(Boolean)));
-    const result = { passed: true, checks, observations, pageErrors, consoleErrors, loadedAssets };
+    const result = { passed: true, checks, observations, faultObservations, pageErrors, consoleErrors, loadedAssets };
     await json(join(directory, "app.json"), result); return result;
   } catch (error) {
     await page.screenshot({ path: join(directory, "app-failure.png") }).catch(() => {});
-    const result = { passed: false, checks, error: errorText(error), pageErrors, consoleErrors, loadedAssets };
+    const result = { passed: false, checks, error: errorText(error), faultObservations, pageErrors, consoleErrors, loadedAssets };
     await json(join(directory, "app.json"), result); return result;
-  } finally { await context.close(); }
+  } finally { stopObservers.forEach(stop => stop()); await context.close(); }
 }
 
 async function worker() {
