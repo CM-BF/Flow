@@ -1,3 +1,15 @@
+# TUI01A current delta review receipt
+
+Current fixed target `29b546537862c562569ce9df74919f2239d94df8`: **APPROVED**, no remaining P1/P2. Independent reviewer status_read / gpt-6-astra; Mika accepted 2026-10-06 09:53:16 UTC. This is a cross-task receipt, not a second progress source; original CHANGES_REQUESTED history follows unchanged below.
+
+P2-A: dispose settles both branches of activeMutation; main handles stop rejection and independent finally guarantees journal.close. Real temporary journal reopen is covered. P2-B: validation precedes intent clearing and checks epoch, ACK shape, original create fields and send conversation revision/turnNumber/text/taskId. Real HTTP malformed 200 then explicit recover with the same key/body passes.
+
+architecture_read independently verified 6 source / 5 raw manifest bytes/hashes against target Git and WT; observed HEAD `1a0494a1f7cc034edbbeef6a38f6f97896de2461` clean. 19/19 consists of 11 overlapping + 8 new cases; original 7/7 red reproduced the issues, existing assertions retained; tsc exit0. Root/peer did not rerun PG/PTY/provider.
+
+Non-blocking P3 remains at acknowledgement.ts:9: response revision ceiling 2147483646 should allow valid expected2147483646 → ACK2147483647. Current behavior retains the key but can leave permanent UNKNOWN; a small boundary correction is suggested, without blocking acceptance of the two original P2 fixes. This receipt neither updates TUI owner's progress nor changes WPF-MATURE-02 checks.
+
+---
+
 # TUI01A — cross-task review receipt
 
 Conclusion：**CHANGES_REQUESTED**；2 P2 / 0 P1。Fixed implementation：`9e5588d4d6b24234bb829c23269e6e72caca44af`。Reviewers：Mika / gpt-6-astra 与 status_read / gpt-6-astra；只读独审时间：2026-10-06 09:39:58 UTC。
