@@ -13,27 +13,46 @@
     "network": "Owned loopback HTTP only; external network and real registry/PG forbidden",
     "supervision": "External parent runner required: 25s work + 5s cleanup, own TMPDIR/PGID, tmp8MiB/raw2MiB; node:test timeout alone is insufficient",
     "spentMs": 3950,
-    "remainingMs": 26050
+    "remainingMs": 26050,
+    "implementationTarget": "abd2aff768f97350762b2eaddbe7ae6843902f48"
   },
   "browser": {
     "commands": [
-      "DPERF04_BROWSER_GATE=<fresh gate> /opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/test/summary-detail.browser.mjs",
-      "DPERF04_BROWSER_GATE=<separate fresh gate, same cumulative budget> /opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/test/task-links.browser.mjs"
+      "Only the independently reviewed external parent runner with populated binding/sandbox and fresh single-use gate; direct child invocation is not admitted"
     ],
     "combinedBudgetMs": 60000,
     "cleanupReserveMs": 15000,
     "retainedBytes": 8388608,
     "gateFields": [
       "allowRun",
+      "mode=dperf-browser",
+      "singleUse",
+      "entry",
       "expiresAt",
       "run",
-      "chromeExecutable",
       "sourceHead",
-      "sourceHashes"
+      "sourceHashes",
+      "previousRuntimeMs",
+      "totalMs",
+      "chromeExecutable",
+      "playwrightModule",
+      "playwrightSha256",
+      "supervision: parentPid/startedAtMs/workDeadlineMs/hardDeadlineMs/scratch/output"
     ],
     "ownNativeChrome": true,
     "fixture": "Same two temporary repositories and explicit unknown ledger; no real registry/PG",
-    "current": "NOT_RUN; no browser dependencies provisioned or assumed"
+    "current": "NOT_RUN, 0/60000ms; wrapper source fixed; no binding or runtime grant",
+    "temporaryBytes": 67108864,
+    "temporaryLimitMeaning": "Both logical and allocated scratch observations; polling guard, not hard quota",
+    "retainedLimitMeaning": "8MiB cumulative evidence distinct from 64MiB temporary profile/scratch",
+    "supervision": "Parent starts absolute cumulative clock before source/setup, is sole budget writer, owns worker PGID. Chrome inherits group; child signals only its Chrome PID. Parent confirms group absence before scratch deletion.",
+    "parentDraft": {
+      "path": "/private/tmp/dperf04-browser-preparation/supervisor.py",
+      "bytes": 10938,
+      "sha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+      "state": "NOT_RUN; revised draft awaiting fixed review and per-entry binding/sandbox",
+      "delta": "Adds child gate playwrightSha256 from the pinned readOnlyFiles entry; no other intended change"
+    }
   },
-  "implementationTarget": "abd2aff768f97350762b2eaddbe7ae6843902f48"
+  "implementationTarget": "b17bb05c797cfccc8dbeb4c3de26e57143600bec"
 }

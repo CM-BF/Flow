@@ -35,3 +35,7 @@
 ## 2026-10-06 17:10:34 UTC 独审来源归档清码
 
 遵循fresh原scope仅metadata：归档五组原review及source manifest，当前target对齐abd2。限定source批准与行为/整片批准分开，UNKNOWN不造parser枚举；历史措辞标历史，避免已审源码误显示仍待复审。Node仍原3950ms，不重跑；准备稿/tmp15,683B分retained8MiB与scratch64MiB估计，不改变原source或运行权限。
+
+## 2026-10-06 17:31:00 UTC browser wrapper clean-code安全段
+
+复用本地find-skills/webapp-testing/clean-code方法，原既有设计已批准，不重新安装。预算只有父监督一个写者；子进程不自建PGID或负PID误杀、profile删除只在父组清理后。输入验证/绝对deadline/每await后的checkpoint与失败receipt显式，未知cleanup不能通过。行为用例保持字节不变，无新框架或生产修改。静态范围/hash/diffcheck0；所有运行仍NOT_RUN，新wrapper和私有supervisor字段待独审。不会把历史Node绿当此wrapper已验。
