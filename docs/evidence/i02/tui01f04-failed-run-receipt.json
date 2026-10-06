@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-06T21:07:00Z",
+  "at": "2026-10-06T21:05:09.569061+00:00",
   "target": "32bc56c0bd29167e2aa29909743f87f23fa98a91",
   "scope": "F04 one-shot failed execution, independently authorized exact cleanup, source-only diagnosis; no new product behavior approval",
   "reviewer": "astra_ultra_execution_lead",
@@ -28,5 +28,6 @@
   "reviewActions": [
     "Read actual one-shot and cleanup records and exact cleanup source.",
     "Verified 36 fixed bindings without running tests, PG, Chrome or provider."
-  ]
+  ],
+  "metadataCorrection": "Previous handwritten 21:07 timestamp was a labeling mistake; this recorded time replaces it. No execution evidence or result changed."
 }
