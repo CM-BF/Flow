@@ -5,10 +5,10 @@
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
-- Reviewer / model / harness / 时间：待填写。
+- Review target commit：`338263736e2cf64efd32037cfc92bcb49069d9ab`；通过状态仅属于该 target。
+- Base：`e7ab805fa76017392e2d9bcc7a7f33b16402a903`；head：`338263736e2cf64efd32037cfc92bcb49069d9ab`；worktree：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner`；branch：`codex/m1-runner`；复审时干净。
+- Scope：R01-01..04、outbox.ts / runner.test.ts / runtime.ts / attempt-control.ts；排除真实模型与主分支集成。重点复核固定持久快照、ACK连续前缀、生命周期和回归证据。
+- Reviewer：assignment_review / gpt-6-astra / Codex；2026-10-06 01:14 UTC。
 
 ## 可直接复制的审查任务说明
 
@@ -28,17 +28,18 @@
 
 | 检查 | 执行状态 | 环境/commit | 结果与证据链接 |
 | --- | --- | --- | --- |
-| 待填写 | 未执行 | 未核验 | 无；模板不表示检查通过 |
+| pnpm check / git diff --check | 独立执行通过 | Node24 / 338263736e2cf64efd32037cfc92bcb49069d9ab | 28/28、typecheck与diff通过，见文末回传和status |
 
 ## Findings
 
 | ID | Severity | Blocking | 文件/行与复现 | 影响/建议 | Owner回应 | 修复commit | 复审结果 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待审查 | 未评估 | 未评估 | 无结论 | 无结论 | 待回应 | 无 | 未复审 |
+| R01-F01 | P1 | 是，已解决 | outbox.ts：并发emit发送未落盘内容 | 固定落盘/发送snapshot | 接受并修复 | d5b02a8 | 已解决 |
+| R01-F02 | P2 | 否，已解决 | outbox.ts：旧前缀重报严格ACK相等 | 接受安全整数且>=尾的连续前缀 | 接受并修复 | d5b02a8 | 已解决 |
 
 ## 结论与限制
 
-结论：未审查。Blocking findings：未评估。Nonblocking findings：未评估。未执行范围：全部。不得据此声称通过。
+结论：PASSED，仅绑定338263736e2cf64efd32037cfc92bcb49069d9ab。未解决blocking/nonblocking均为0。未执行真实Claude、真实中心系统验收与main集成检查；这些仍由R02/I01完成。
 
 ## 作者回应与复审
 
