@@ -1,17 +1,13 @@
-# F01 消息设置生产直接消费准备
+# F01 消息设置生产直接消费
 
-2026-10-06 17:14:15 UTC。准备源码 `a9ea7ca8ac00fef8243f0e0b7906b76b5652690a`，只新增专测，**NOT_RUN**。F01 claim8470e7d2 v46已新增该literal；O14此前已main `bd14f984e3927df139815597c4c3171af84ec4b7`，原批准只覆盖73a，C01原树停止写。父能力合同CORE `ea276572c3c99fb8400808a93efc69ce530d55a4` 与C01 `563b1ea151d8d26a2100238d8faf26b697f38d71` 不重设计。CORE当前等待唯一正式独审；新test不表示生产已接入。
+2026-10-06 17:29:14 UTC，新写source `0ee2494ed4298169c56ac3a6950fa1910ed62a7a`，scope仅index与专测；CORE34源ea276与C01最终9源6d114均独审后精确受控输入，禁止编辑domain或重新设计client。前一O14片已main bd14，原批准不覆盖本片。
 
-生产改动只需从`conversations/message-settings-migration.ts`导入`migrateClaudeMessageSettings`，在现createServer migration block内、030后且authentication/package worker/scheduler/onReady扫描之前await。现profiles/conversations/queue已由唯一注册入口在全局authentication hook后挂载，无需第二route/鉴权或新timer。CORE未APPROVED及受控输入未接前不改该入口。
+唯一factory新增import/await migrateClaudeMessageSettings：030后，authentication/package worker/scheduler/任何scan之前。现profiles/conversations/queue继续同一全局auth和既有route注册，不加timer/transport。
 
-专测唯一入口`packages/client/src/claude-message-settings-production.test.ts`：调用真实createServer，**不手动迁移032、不替换路由**。公开FlowClient发布合成configured profile、严格协商catalog并核旧reader隔离，发送冻结A/入队冻结B时修改调用方草稿；接受receipt、当前read和数据库snapshot保持A/B。精确多字节preview；已收ACK后关闭/重启以同key/body重放、异body409且只有1task/1queue/0attempt。该旅程不启动runner或SDK，不把profile记录当实际模型资格；没有observed execution断言。
+唯一生产专测调用真实createServer，不手动迁移032。公开FlowClient发布合成configured tuple、协商新catalog并核旧reader隔离。create ACK明确无动态messageSettings；当前GET返回profile绑定能力，create原key重放保持原receipt。发送A/入队B后变更草稿，receipt/current read/SQL仍各自冻结；多字节preview精确。已收到ACK后重启，以原key/body恢复send/enqueue，异body409；1task/1queue/0attempt，无runner/SDK/query，配置不代表账号资格。
 
-一个随机专库；名/marker/创建请求先落独占0600 checkpoint，正常关闭app/pool、marker和零连接后先fsync清理前证据再DROP。unknown关闭/marker/连接则保留，不FORCE。证据≤32KiB；beforeAll fresh≥1GiB+32MiB，单case30s、setup30s、cleanup30s；外层工作120s+清理观察30s、raw≤2MiB/cache≤8MiB是待Lead窗口核准的计划界限，不是已测峰值。两库/额外SDK矩阵均不在此片。
+一个随机marked DB；exclusive0600 checkpoint先记录DB/marker/creationRequested。关闭app/pool后最多3s观察pid/state，逐次有限查询、安全错误事实；仍非零或异常保留，不FORCE。marker+零连接后先fsync checkpoint再正常DROP。证据<=32KiB。fresh门槛/实际独占窗口由Lead安排，计划总增量32MiB、work120s/cleanup30s、raw<=2MiB/cache<=8MiB，不是已测峰值。
 
-动态资源闭包：沿已核208源/28SQL/19包的O14真实factory闭包，再增加032 SQL与migration入口；固定数组12/13、17/19不能被TSimport扫描遗漏。新增public client调用依赖C01固定方法/ACK/export；CORE约34源由Lead批准后受控接收，不能只复制DTO或伪造本树已有能力。实际输入准备状态见`claude-message-settings-production-inputs.json`。无新依赖安装/运行配置/公共client更改。
+实际闭包179源、29SQL（2/4..30/32，含12/13与17/19数组，inline1/3）、15包入口、11配置；missing=[]，全部@flow本树；[预检](claude-message-settings-production-preflight.json)绑定两来源和当前新写target。无安装。旧source/raw不重复测。
 
-准备命令（NOT_RUN）：`Node24 node_modules/vitest/vitest.mjs run packages/client/src/claude-message-settings-production.test.ts --maxWorkers=1 --no-cache`。须CORE正式APPROVED、固定输入/materialization完整、薄032接线固定且Leader明确独占PG窗口后执行。当前待TUI资源正常收尾及Lead重新排窗口，本片不会自行启动。
-
-只读直接消费者复核发现 registerRunner 既有签名只有一个参数，已仅修专测调用；其请求沿原client默认15s timeout，其余显式signal仍5s。没有扩client API，也未运行types或PG。
-
-2026-10-06 17:26:03 UTC：CORE正式独审已到，34源以8269a0ef精确受控接收（core-input.json）。新写源target `f4375f07a841f7937010f132a6a34546c177b8f5`，index仅import/await两行、顺序如上。新专测在pool.end后最多3s观察pid/state，异常或非零保留，不把本地end回调当远端已消失。C01等待6d114补充独审及9源固定输入；此组合仍NOT_RUN。
+仅focused types已执行：首次per-query query_timeout字面量不匹配@types/pg（exit2原样保存），沿已安装pg8.23.1真实支持的同query对象修为类型推断，未cast或去除超时；最终exit0。创建capability测试预期由Lead只读纠正到现CORE契约，未改CORE。PG/生产旅程仍NOT_RUN。
