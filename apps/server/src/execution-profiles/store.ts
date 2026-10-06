@@ -3,6 +3,7 @@ import type { Pool, PoolClient } from 'pg';
 import type { ExecutionProfile, ExecutionProfileConfiguration, ExecutionProfilePage, NativeExecutionProfile, NativeExecutionProfileConfiguration, NativeExecutionProfilePublished, ExecutionProfileReference } from '../../../../packages/contracts/src/execution-profiles.js';
 import { executionProfileConfigurationJson, executionProfileConfigurationSchema, nativeExecutionProfileConfigurationJson, nativeExecutionProfileConfigurationSchema } from '../../../../packages/contracts/src/execution-profiles.js';
 import type { TaskSubmission } from '@flow/contracts';
+import { nativeExecutionProfileCatalogEntrySchema, NATIVE_EXECUTION_PROFILE_CATALOG_PROTOCOL, type NativeExecutionProfileCatalogEntry, type NativeExecutionProfileCatalogPage } from '../../../../packages/contracts/src/execution-profiles.js';
 import { HttpError, sha256, transaction } from '../database.js';
 
 interface ProfileRow { id: string; runner_id: string; config_digest: string; configuration: NativeExecutionProfileConfiguration; created_at: Date }
@@ -43,6 +44,37 @@ export async function listProfiles(pool: Pool, after: string | undefined, limit:
     const profiles = rows.slice(0, limit).map(legacyProfileView);
     return { profiles, nextCursor: rows.length > limit ? profiles.at(-1)!.reference.id : null };
   }, true);
+}
+
+/** Native readers opt into known codecs before pagination. Corrupt recognized rows fail the whole page. */
+export async function listNativeProfiles(pool: Pool, after: string | undefined, limit: number): Promise<NativeExecutionProfileCatalogPage> {
+  return transaction(pool, async client => {
+    const rows = (await client.query<ProfileRow>(`SELECT p.* FROM flow.execution_profiles p JOIN flow.runners r ON r.id=p.runner_id
+      WHERE NOT r.revoked AND (
+        (p.configuration->>'harness'='claude' AND p.configuration->>'adapterVersion'='claude-sdk-0.3.290-v2') OR
+        (p.configuration->>'harness'='codex' AND p.configuration->>'adapterVersion'='codex-app-server-0.154.0-v1'))
+      AND ($1::text IS NULL OR p.id>$1) ORDER BY p.id LIMIT $2`, [after ?? null, limit + 1])).rows;
+    // Validate the sentinel too: it must not hide a corrupt next-page boundary.
+    const entries = rows.map(nativeCatalogEntry);
+    const profiles = entries.slice(0, limit);
+    return { protocol: NATIVE_EXECUTION_PROFILE_CATALOG_PROTOCOL, profiles,
+      nextCursor: entries.length > limit ? profiles.at(-1)!.profile.reference.id : null };
+  }, true);
+}
+function nativeCatalogEntry(row: ProfileRow): NativeExecutionProfileCatalogEntry {
+  const parsed = nativeExecutionProfileConfigurationSchema.safeParse(row.configuration);
+  if (!parsed.success || sha256(nativeExecutionProfileConfigurationJson(parsed.data)) !== row.config_digest) {
+    throw new HttpError(409, 'execution_profile_unavailable', 'The stored execution profile is not recognized.');
+  }
+  const configuration = parsed.data;
+  const reason = configuration.harness === 'codex' ? 'codex-conversation-unimplemented'
+    : configuration.access === 'goal-tools' || configuration.access === 'goal-graph-tools' ? 'profile-purpose-not-supported' : null;
+  const entry = nativeExecutionProfileCatalogEntrySchema.safeParse({
+    profile: profileView({ ...row, configuration }),
+    conversation: reason ? { state: 'unsupported', reason } : { state: 'existing-claude-contract', capabilitySource: 'conversation-response' },
+  });
+  if (!entry.success) throw new HttpError(409, 'execution_profile_unavailable', 'The stored execution profile is not recognized.');
+  return entry.data;
 }
 
 export type ExecutionPurpose = 'ordinary' | 'goal-tools' | 'goal-graph-tools';

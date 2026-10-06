@@ -1,3 +1,7 @@
+# Current native configured catalog review
+
+State: NOT_STARTED. Fixed source target will be recorded after this source commit. [Manifest](../../docs/evidence/wpf-mature-02/native-catalog/manifest.json) binds5 approved production files+2 local check configs,11 unchanged direct inputs,raw and receipts. Please read-only review native protocol gating, SQL filter/limit/sentinel/digest, strict cross-field compatibility, unchanged legacy bytes/admission, safe errors and actual selected counts. 33 distinct local checks with explicit fixture-failure/delta history; strict0. No real app-server/provider/diagnostic child; do not rerun by default. client/index is a later shared-owner dependency, not implemented here.
+
 # Current sealed diagnostic result review
 
 State: APPROVED (honest diagnostic result only; canary FAILED). Result target d35c59682133d77d8581f3c3bce89a4ab3416b26. Source7297986 was independently APPROVED by architecture_read/gpt-6-astra at2026-10-06 10:13:38 UTC: P2 resolved,0remainingP1/P2;78 manifest entries+8 unchanged bindings and input18/external4 matched Git/WT/hashes. Mika authorized exactly one independent window; it has been consumed and sealed.

@@ -1,0 +1,14 @@
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/execution-profiles/native-catalog.test.ts [ apps/server/src/execution-profiles/native-catalog.test.ts ]
+Error: Cannot find package 'npm-package-arg' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/apps/server/src/package-artifacts/input.ts'
+ ❯ apps/server/src/package-artifacts/input.ts:1:1
+      1| import npa from 'npm-package-arg';
+       | ^
+      2| import { isAbsolute } from 'node:path';
+      3| import { packageArtifactRequestSchema, type PackageArtifactRequest } f…
+ ❯ apps/server/src/plugin-package-fetches/commands.ts:7:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

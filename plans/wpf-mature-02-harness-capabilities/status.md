@@ -13,15 +13,15 @@
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控mainf181 / d35c59682133d77d8581f3c3bce89a4ab3416b26（运行结果；metadata HEAD由Git核） |
 | 工作树dirty状态 | 0ddb2a4ffb8e434af7ec2dc1902ee6b413a48ec3 clean时核；本次仅metadata更新，提交后由Git核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
+| 本片段交付阶段 | review |
+| 检查状态 | CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | R06五源/薄consumer仍待Lead集成；只读main41315b含R05D四源，尚无optional sink；本树仅受控mainf181 |
 | 实现目标 | d35c59682133d77d8581f3c3bce89a4ab3416b26 |
 | 实现范围 | R06已领取精确5文件；experiments/codex-app-server-conformance/diagnostics；本task计划/证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已审共享模块可独立集成；诊断结果已接收，隔离样本仍异常退出，原因未知。 |
-| 下一可用交付 | 集成已审共享模块；提交可展示原生配置及明确会话限制的目录设计。 |
+| 当前产出 | 原生配置目录已实现并完成局部验证，明确显示Codex尚不支持普通会话；旧目录保持兼容。 |
+| 下一可用交付 | 独审原生配置目录；已审共享模块独立排入集成，client接线由共享owner后续完成。 |
 | 当前阻塞 | ACTIVE: 原profile canary仍SIGABRT且无有效七项报告，实际Codex目录验证停止；父管道空stderr不能定位原因。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：7297986源码APPROVED；d35c596诚实诊断结果APPROVED（Mika10:17、architecture_read10:22 UTC），canary仍FAILED |
@@ -46,7 +46,7 @@
 
 ## Dashboard同步与限制
 
-本status是唯一手填事实源。已只读核main1737cd6a5c8bbb1d5793325ee924802bfbe2a2e9 registry将本task映射到此权威树/status；这不证明4320服务已刷新。claim 0dd97484-f0ce-4738-8075-505bd5e2541a v2 ACTIVE（amend 09:52:00.081 UTC）；无真实app-server/auth/模型/外部网络执行；唯一自有loopback合成运行见下段。目录schema不是账号或模型可用证明；首片不替代整体目标。
+本status是唯一手填事实源。已只读核main1737cd6a5c8bbb1d5793325ee924802bfbe2a2e9 registry将本task映射到此权威树/status；这不证明4320服务已刷新。claim 0dd97484-f0ce-4738-8075-505bd5e2541a v3 ACTIVE（amend 10:25:51.085 UTC）；无真实app-server/auth/模型/外部网络执行；唯一自有loopback合成运行见下段。目录schema不是账号或模型可用证明；首片不替代整体目标。
 
 ## 本片验证与后继
 
@@ -89,3 +89,7 @@ WPF-MATURE-02-03新增独立诊断阶段：最多3次自有合成子进程，总
 [集成收据](../../docs/evidence/wpf-mature-02/integration-readiness.md)精确区分R06五源0778847、薄入口38516be与失败诊断结果d35c596的approval范围；不复制全局进度，v2写权继续保留。固定f181的versioned native catalog设计属于02-04：复用已发布配置、保留legacy Claude-only和原digest，Codex只configured/not-probed且conversation显式unsupported。无源码amend、工程测试或新child。
 
 只读main41315b相关17目录blob=f181，R05D四源=已审178ef49e；显式配置/可信factory已main，不代表真实启动。目录设计已吸收独立约束，可先实现合同/域reader，client挂载受现writer占用由Lead协调；不是02整task blocker。fd后继候选见interface，当前只读、无额外child/新预算。
+
+目录首片已领取：claim0dd97484…原子amend v3 COMMITTED 2026-10-06T10:25:51.085Z，追加已批五路径；scope[] integration e4f289cf…已v2 released，受控main41315b无冲突merge944780d803ed36deb010d0760f7dd46f75cc3a6f。新合同/reader/routes与局部测试实施中，尚未获得运行通过证据；client/index无写入。
+
+目录首实现已通过33 distinct行为检查与strict0，见[native-catalog报告](../../docs/evidence/wpf-mature-02/native-catalog/README.md)。7合同、9真实PG/HTTP（8先绿+Host修正后1单验）、17旧消费者，所有未选中数/早期setup失败留档。源码交审中，未触client/index、descriptor/runner启动、server/contracts全局index或migration。架构影响为已挂载目录Module新增versioned reader/DTO，待Lead按最终source更新dashboard架构基线；不是实际模型或账户探测。

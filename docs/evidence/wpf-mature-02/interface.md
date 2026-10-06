@@ -173,3 +173,9 @@ R05D接入依赖：已只读核[main41315b四源接收](r05d-dependency.json)等
 03后继只读候选：[pre-JS fd/平台初始化/JS三层判别接口](pre-js-fd-hypothesis.md)。固定源码说明pipe可能AF_UNIX、早期fstat/fcntl可在JS前失败，但现场fd/errno未知，不据此扩大任何grant；自有native helper候选需另审source/recipe/运行窗口，当前0额外child/无新预算。
 
 共享集成短请求（正文仍只在04维护）：请Lead安全点先接收其已审六源，并为后继store分配迁移号及共享events/runner union接线；权威入口为[04 center-store-request](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)与[04 integration-readiness](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/integration-readiness.md)。本处只路由接收请求，不复制04进度或代分配迁移号。
+
+## 原生配置目录首实现交审
+
+[固定source/raw/checks](native-catalog/README.md)落实设计：精确native-v1、strict新page、known-pair SQL过滤与哨兵digest、Codex/goal conversation unsupported；旧reader/codec与公共挂载不变。writer v3已原子追加五文件；受控main41315b merge944780d无冲突。33 distinct局部行为检查（7合同+9目录分次证据+17旧消费者）及strict0，真实Codex/provider/新诊断child0。client/index无修改，由当前TUI01B/Lead后续接新method。该新实现待独立review，不继承此前诊断/语义approval。
+
+共享接收指针：[S01P03 integration-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/docs/evidence/s01p03/integration-ready.md)及[权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/plans/s01-graceful-stop/status.md)。这里只指向owner交付，时间/进度由该处维护。
