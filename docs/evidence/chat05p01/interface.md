@@ -11,3 +11,11 @@ Outbox在原tail/barrier内先将完整bytes及固定ownership/eventID/sequence�
 授权GET `/api/tasks/:taskId/native-activities/:activityId/body`只返回descriptor；其`/chunks?afterIndex&limit`仅按固定identity分页返回base64 bytes。展开前无正文，旧activity refs继续轻量；缺新body记录标legacy而非可追回。body complete只指完整材料，不等tool成功。legacy detail保持原样，不扩通用对象/附件生命周期。
 
 共享接线：本owner写contracts/runner.ts union+port、events.ts窄dispatch和033；runtime.ts绑定、server/index迁移/mount、client/exports由Lead与S01P07协调。此首合同后实现仍需独审与局部证据，PG尚未运行。
+
+## 聚合容量与恢复限制
+
+8MiB/body、16MiB/attempt、256材料是单attempt公开原文字节约束，不是runner总内存或磁盘上限。并发16的256MiB原文不含SDK已经分配的帧、Buffer/JSON/base64、manifest、未ACK历史。ACK后原文可释放，但manifest/ack仍保留；启动恢复遍历历史attempt及材料。spool扫描每attempt最多256个有界manifest，未给无限历史attempt数量提供整体扫描保证。
+
+高并发正式开通须由S01 admission/outbox后继验证runner聚合在途与保留字节、历史扫描开销，以及空间不足停止新admission但保留恢复/心跳的规则。只有中心确认且符合保留策略才回收；unknown不能因超时被丢弃。本片不扩12scope实现上述全宿主政策，缺少明确host port仍为旧协议。
+
+读口`legacy`表示没有本协议保存的完整材料，不能把旧prefix当可追回尾部。`receiving`表示尚未封存；`interrupted`保留已收到块但完整性未完成；仅`complete`代表完整字节与固定hash校验成功，仍不代表工具成功/任务成功。

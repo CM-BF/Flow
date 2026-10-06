@@ -2,7 +2,7 @@ import type { Pool, PoolClient } from 'pg';
 import { NATIVE_ACTIVITY_BODY_LIMITS as limits, NATIVE_ACTIVITY_BODY_PROTOCOL as protocol,
   type NativeActivityBodyDescriptor, type NativeActivityBodyPage } from '../../../../packages/contracts/src/native-activity-body.js';
 import { HttpError, transaction } from '../database.js';
-import type { BodyRow, ChunkRow } from './store.js';
+import { assertStoredChunk, type BodyRow, type ChunkRow } from './store.js';
 
 type DescriptorRow = Partial<BodyRow> & { id:string; task_id:string; attempt_id:string; ended:boolean };
 async function descriptor(client: PoolClient, taskId: string, activityId: string): Promise<NativeActivityBodyDescriptor> {
@@ -29,6 +29,8 @@ export function nativeActivityBodyPage(pool: Pool, taskId: string, activityId: s
     if (afterIndex > info.receivedChunks) throw new HttpError(409,'activity_body_cursor','Cursor is beyond this material.');
     const rows = (await client.query<ChunkRow>(`SELECT chunk_index,byte_offset,bytes,sha256,content FROM flow.native_activity_body_chunks
       WHERE activity_id=$1 AND chunk_index>=$2 ORDER BY chunk_index LIMIT $3`,[activityId,afterIndex,limit])).rows;
+    rows.forEach((row,index)=>assertStoredChunk(row,afterIndex+index,info.bytes ?? 0));
+    if (rows.length !== Math.min(limit,info.receivedChunks-afterIndex)) throw new HttpError(409,'activity_body_content','Saved material page is incomplete.');
     const nextIndex = rows.length ? rows.at(-1)!.chunk_index+1 : afterIndex;
     return {descriptor:info,chunks:rows.map(row=>({index:row.chunk_index,offset:row.byte_offset,bytes:row.bytes,sha256:row.sha256,base64:row.content.toString('base64')})),
       nextIndex,hasMore:nextIndex < info.receivedChunks};

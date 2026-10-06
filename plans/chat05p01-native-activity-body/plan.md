@@ -16,3 +16,5 @@
 确认范围和小Interface见[interface](../../docs/evidence/chat05p01/interface.md)。共享runtime/client/index/exports由Lead与现S01P07协调；当前不写这些路径。8MiB/body、16MiB/attempt、256材料、64KiB/chunk，<=8chunk/批、<=4chunk/页。原2MiB/50events限制保持。完整材料先持久，首次网络前冻结ID/sequence；未知保留原件/身份，不自动模型重跑、换key或迁移attempt。最终正文/成功completed不得越过未sealed材料。
 
 生命周期、错误、背压与验证方法统一引用[模块规则](../../AGENTS.md#modular-design)。不记录隐藏/redacted thinking或整个SDK帧；JSON/UTF8可公开表示不等于原HTTP网络编码。产品未挂载/未测试时不称可用。
+
+后继聚合容量（CHAT05P01-06 / S01）：16MiB/attempt乘并发16的256MiB仅原文，不含JSON/base64/Buffer/manifest和未ACK历史。高并发正式开通前须验证runner聚合字节/历史扫描/空间不足停止新admission而保恢复心跳，以及确认后的受控保留回收；未知不能超时丢弃。本片缺port仍旧协议，不扩scope实现全宿主容量政策。

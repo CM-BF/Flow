@@ -8,3 +8,9 @@
 - [技能与质量](quality.md)
 
 0provider；无安装/个人操作。纯模块验证准备与PG后验分开。
+
+首轮纯检查：`pure-run-01` 21/22，>2MiB字节深比较超时（原exit1保留）；`pure-run-02` 仅该项1/1、8未选，完整Buffer字节比较后108ms。22不同检查分轮，不称一次22/22。2,097,275B材料被分为36事件/5批，最大JSON批702,184B；SDK mapper另核>2MiB公开材料与原prefix逐字相同。`types-run-01`记录实际tuple类型/narrowing和pg-boss声明缺件；前两者已修，依赖按批准精确链接。`types-run-02`因fresh1,011,576,832B未达门槛NOT_RUN，未启动compiler。之后新增final barrier与读取/预算保护检查尚NOT_RUN。
+
+精确原临时目录只stat：见`pure-resources-observation.json`。两轮所有body fixture目录已正常移除；411B/134B独立Vitest生成cache仍保留，原raw2209B/609B保留。无安装/PG/provider/个人服务操作。
+
+PG源码候选为`apps/server/src/native-activity-body/{fixture,body.test}.ts`，仅3case：实际ownerHTTP大材料与丢ACK重启重放、冲突/成功final前置/取消与篡改、legacy及033幂等。一随机markedDB、动态loopback port、实际createServer+显式本模块033/routes、原EventOutbox，0runtime/provider；不冒生产默认mount。至少1GiB+96MiB准入，90s工作/后续外层监督待窗口固定；原码仍NOT_RUN，不能据此称通过。checkpoint为追加并fsync，正常DROP前marker与3s有限零连接验证，tmp删除前dev/ino验证；未知保留。运行依赖/类型闭包尚待完整核查，不自动安装或因窗口空闲启动。

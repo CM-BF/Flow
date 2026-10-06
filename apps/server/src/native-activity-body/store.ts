@@ -20,6 +20,16 @@ export function decodeBodyChunk(event: Extract<NativeActivityBodyEvent,{action:'
       || bytes.toString('base64') !== event.base64 || digest(bytes) !== event.sha256) fail('Chunk encoding, size or digest differs.');
   return bytes;
 }
+export function assertMaterialCapacity(current: {bodies:number;bytes:number;pending:number}, incomingBytes: number): void {
+  if (![current.bodies,current.bytes,current.pending,incomingBytes].every(value=>Number.isSafeInteger(value)&&value>=0)
+      || incomingBytes > limits.bodyBytes || current.bodies >= limits.bodies
+      || current.bytes + incomingBytes > limits.attemptBytes || current.pending > 0) fail('Material limit or single-material backpressure exceeded.');
+}
+export function assertStoredChunk(chunk: ChunkRow, index: number, totalBytes: number): void {
+  if (chunk.chunk_index !== index || chunk.byte_offset !== index * limits.chunkBytes
+      || chunk.bytes !== Math.min(limits.chunkBytes,totalBytes-chunk.byte_offset)
+      || chunk.bytes < 1 || chunk.content.length !== chunk.bytes || digest(chunk.content) !== chunk.sha256) fail('Saved material chunks are inconsistent.');
+}
 /** Caller owns the existing runner/task/attempt locks and event transaction. */
 export async function saveNativeActivityBody(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: NativeActivityBodyEvent): Promise<void> {
   if (attempt.native_session_id !== event.nativeSessionId) fail('Material session differs from the reporting attempt.');
@@ -40,7 +50,7 @@ export async function saveNativeActivityBody(client: PoolClient, task: TaskRecor
     if (prefix.originalBytes !== event.bytes || prefix.sha256 !== event.sha256 || prefix.mediaType !== event.mediaType) fail('Material differs from its original prefix identity.');
     const totals = (await client.query<{bodies:string;bytes:string;pending:string}>(`SELECT count(*) AS bodies,coalesce(sum(bytes),0) AS bytes,
       count(*) FILTER(WHERE NOT complete) AS pending FROM flow.native_activity_bodies WHERE attempt_id=$1`,[attempt.id])).rows[0]!;
-    if (Number(totals.bodies) >= limits.bodies || Number(totals.bytes) + event.bytes > limits.attemptBytes || Number(totals.pending) > 0) fail('Material limit or single-material backpressure exceeded.');
+    assertMaterialCapacity({bodies:Number(totals.bodies),bytes:Number(totals.bytes),pending:Number(totals.pending)},event.bytes);
     await client.query(`INSERT INTO flow.native_activity_bodies(activity_id,task_id,attempt_id,native_session_id,bytes,sha256,media_type)
       VALUES($1,$2,$3,$4,$5,$6,$7)`,[event.activityId,task.id,attempt.id,event.nativeSessionId,event.bytes,event.sha256,event.mediaType]);
     return;
@@ -68,7 +78,7 @@ export async function saveNativeActivityBody(client: PoolClient, task: TaskRecor
   const full = createHash('sha256');
   let offset = 0;
   for (const [index, chunk] of chunks.entries()) {
-    if (chunk.chunk_index !== index || chunk.byte_offset !== offset || chunk.content.length !== chunk.bytes || digest(chunk.content) !== chunk.sha256) fail('Saved material chunks are inconsistent.');
+    assertStoredChunk(chunk,index,prior.bytes);
     full.update(chunk.content); offset += chunk.bytes;
   }
   if (offset !== prior.bytes || full.digest('hex') !== prior.sha256) fail('Complete material digest differs.');

@@ -1,0 +1,144 @@
+{
+  "at": "2026-10-06T22:33:12.697084+00:00",
+  "method": "Read-only stat on exact own pure-run directories; no removal, no global or donor scan.",
+  "runs": [
+    {
+      "run": "pure-run-01",
+      "result": {
+        "startedAt": "2026-10-06T22:29:10.422610+00:00",
+        "source": "f197a1612ec200bddc3ce6e354f579d7f2432c07",
+        "freshFreeBytes": 1091751936,
+        "required": 1090519040,
+        "status": "failed-or-unknown",
+        "provider": 0,
+        "pg": 0,
+        "pid": 88590,
+        "exitCode": 1,
+        "wallMs": 12668,
+        "group": "absent",
+        "stopReason": null,
+        "peakObservedBytes": 3716025,
+        "minimumObservedFree": 1087561728,
+        "tmpEntries": [
+          "vite"
+        ],
+        "finalRawBytes": 2209
+      },
+      "files": [
+        {
+          "path": "stdout.txt",
+          "bytes": 1346,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123247894
+        },
+        {
+          "path": "result.json",
+          "bytes": 452,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123248100
+        },
+        {
+          "path": "stderr.txt",
+          "bytes": 863,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123247895
+        },
+        {
+          "path": "reservation.json",
+          "bytes": 219,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123247893
+        },
+        {
+          "path": "tmp/vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+          "bytes": 411,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123248099
+        }
+      ],
+      "rawBytes": 2209,
+      "tmpBytes": 411,
+      "bodyFixtureDirectoriesRemaining": [],
+      "cacheRetained": "Only Vitest generated cache remains under this run; no body fixture remains. Original raw is retained."
+    },
+    {
+      "run": "pure-run-02",
+      "result": {
+        "startedAt": "2026-10-06T22:29:56.163491+00:00",
+        "source": "80a543890a5408a2390320b9bfec43d032e03411",
+        "freshFreeBytes": 1101873152,
+        "required": 1090519040,
+        "status": "completed",
+        "provider": 0,
+        "pg": 0,
+        "command": [
+          "/opt/homebrew/opt/node@24/bin/node",
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/node_modules/vitest/vitest.mjs",
+          "run",
+          "--config",
+          "docs/evidence/chat05p01/pure-check.config.mjs",
+          "apps/runner/src/native-activity-body/body.test.ts",
+          "-t",
+          "durably freezes"
+        ],
+        "exitCode": 0,
+        "pid": 23012,
+        "group": "absent",
+        "wallMs": 854,
+        "stopReason": null,
+        "peakObservedBytes": 3190850,
+        "minimumObservedFree": 1098514432,
+        "tmpEntries": [
+          "vite"
+        ],
+        "finalRawBytes": 609
+      },
+      "files": [
+        {
+          "path": "stdout.txt",
+          "bytes": 609,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123248385
+        },
+        {
+          "path": "result.json",
+          "bytes": 783,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123248470
+        },
+        {
+          "path": "stderr.txt",
+          "bytes": 0,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123248386
+        },
+        {
+          "path": "reservation.json",
+          "bytes": 561,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123248384
+        },
+        {
+          "path": "tmp/vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+          "bytes": 134,
+          "regular": true,
+          "dev": 16777234,
+          "ino": 123248469
+        }
+      ],
+      "rawBytes": 609,
+      "tmpBytes": 134,
+      "bodyFixtureDirectoriesRemaining": [],
+      "cacheRetained": "Only Vitest generated cache remains under this run; no body fixture remains. Original raw is retained."
+    }
+  ]
+}
