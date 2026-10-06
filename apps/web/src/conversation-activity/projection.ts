@@ -43,9 +43,10 @@ function validatePage(page: EventPage, taskId: string, after: number) {
   if (!Array.isArray(page.entries) || page.entries.length > MAX_PAGE_SIZE || !cursor(page.nextCursor) || !cursor(page.watermark) || typeof page.hasMore !== "boolean"
     || (page.reset !== undefined && typeof page.reset !== "boolean")) throw Error("Invalid activity page cursor.");
   if (page.reset) {
-    if (after === 0 || page.entries.length || page.nextCursor !== 0 || page.hasMore) throw Error("Invalid activity reset. Refresh explicitly to retry.");
+    if (after <= page.watermark || page.entries.length || page.nextCursor !== 0 || page.hasMore) throw Error("Invalid activity reset. Refresh explicitly to retry.");
     return;
   }
+  // Scan cursors include filtered references, so they may exceed the last returned entry.
   if (page.nextCursor < after || page.nextCursor > page.watermark || (page.hasMore && page.nextCursor <= after)
     || page.hasMore !== (page.nextCursor < page.watermark)) throw Error("Activity cursor did not advance consistently. Refresh to retry.");
   let last = 0;
@@ -56,7 +57,6 @@ function validatePage(page: EventPage, taskId: string, after: number) {
       throw Error("Invalid activity entry identity or order.");
     last = entry.cursor;
   }
-  if (page.nextCursor !== Math.max(after, last)) throw Error("Activity cursor does not match the returned entries.");
 }
 function validateDetail(value: Detail, id: string) {
   if (!value || value.id !== id || typeof value.title !== "string" || typeof value.content !== "string" || typeof value.mediaType !== "string"
