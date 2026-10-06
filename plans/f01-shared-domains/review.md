@@ -1,11 +1,15 @@
 # F01 当前 O14 生产收尾审查
 
-状态：NOT_STARTED；实际PG证据已固定，等待独立审查
+状态：APPROVED；独立 Reviewer：assignment_review / gpt-6-astra，独立于原产品作者ExecutionLead
 Review target commit：73aabff4fac96c0439817bdc72358c1385371e8d
 
-2026-10-06 17:00:42 UTC：共享树由ExecutionLead停止写后正式移交native_center_owner（claim v45）。原O14作者为ExecutionLead；已完成的native_center_owner源前检及P2静态修复核验不等于PG/完整批准。该5源保持73a字节，当前owner未改产品。最终审查须独立于该目标作者；历史各target结论只覆盖其原范围。
+2026-10-06 17:07:58 UTC唯一独审完成。观察交付3f6a8a1b08cf7082f519e92ab09088550d2f1694 clean/pushed；完整5源及现factory/鉴权/迁移/scan/CLI/关闭直接接缝已读。275固定/current绑定一致，原O14 b808的14域输入全同；无P1/P2，reviewer0测试/types/PG/provider/写项目。
 
-[新静态资源预检](../../docs/evidence/f01/goal-progression-handoff-preflight.json)：208源、28外部SQL、19包入口声明闭包，missing=[]，@flow均指本WT；含固定数组形式12/13、17/19迁移。无import/test/install/productPG/provider。实际专库已在Lead独占窗口一次执行2/2并正常清理；[原始证据](../../docs/evidence/f01/goal-progression-production-README.md)。既有CLI/types绿项未重复。
+原样归档[独立结论](../../docs/evidence/f01/goal-progression-production-independent-review.json)，SHA846f1fbb8dc750981c705352110514c12aa4c03f8422fbd52d8a5724b23d882c；[绑定](../../docs/evidence/f01/goal-progression-production-review-bindings.json)，SHAe93b73fea30062820cea991df5f476d575aac764f20082274670d3059398ee61。审查限定[生产原始证据](../../docs/evidence/f01/goal-progression-production-README.md)。
+
+当前一次真实PG选中2/通过2，Node退出0、随机marker库与自有目录正常清理；旧CLI1/types0未重跑。接受ACK后重启同key恢复，不是lost ACK；单scan/关闭等待不证明关闭时首次admission或OS硬停止。两次SDK注入、0provider/SDK child/UI。模块与thinclient审批独立，无整体容量/自然语言规划/032资格推断。当前owner接收仅验证并保存证据，没有修改该目标产品。
+
+032消息设置后继尚待CORE正式批准，scope新增与准备不继承本批准。main receipt待ExecutionLead。
 
 以下历史原记录保留，不代表当前target批准。
 

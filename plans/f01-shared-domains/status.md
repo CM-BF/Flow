@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:03:29 UTC / 当前source固定，未追moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:09:20 UTC / 当前source固定，待main接收 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,14 +15,14 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 73aabff4fac96c0439817bdc72358c1385371e8d；本轮真实PG2/2，旧CLI1/root types0保留且未重跑；[证据](../../docs/evidence/f01/goal-progression-production-README.md) |
 | 已集成main状态 / HEAD | X01静态安装已审进入7810cbf1；O14领域与薄client已mainfb9，当前生产候选73aab未集成。个人runtime362/v15未更新。 |
-| Review | NOT_STARTED 当前O14生产候选；薄deef由status_read独审APPROVED，Mika接收。X015e121/67fd原独审已接收main。 |
+| Review | APPROVED 73aabff4fac96c0439817bdc72358c1385371e8d；assignment_review唯一独审，原样回执见review.md；后继032未批准 |
 | 实现目标 | 73aabff4fac96c0439817bdc72358c1385371e8d |
 | 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/goal-progression.test.ts, apps/server/src/index.ts, packages/client/src/goal-progression-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 自动推进接线已通过真实中心两条场景，依赖继续、重启恢复和关闭清理均有记录。 |
-| 下一可用交付 | 独立审查后接入主线；随后接已批准消息设置领域的最薄生产入口。 |
+| 当前产出 | 自动推进的生产接线已通过独立审查，依赖继续、重启恢复与正常关闭有真实证据。 |
+| 下一可用交付 | 接入主线；消息设置生产入口另待领域批准后组合。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -234,3 +234,5 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 2026-10-06 17:00:42 UTC 静态预检完成：[固定记录](../../docs/evidence/f01/goal-progression-handoff-preflight.json)核208源/28外部SQL（含动态tuple数组）/19包声明，missing=[]，工作区依赖均指本树，73a五源逐字保持。无测试/import/安装/产品PG。当前仅等待独占窗口；固定8 MiB的C01检查限制不冒充本片数据库额度，O14继续按其1 GiB+32 MiB源门槛与Lead窗口。
 
 2026-10-06 17:03:29 UTC：O14一次独占验证完成并归还窗口。73a五源未改，实际PG2/2、随机库12,958,743B、连接零/remaining=[]、runtime正常等待退出及目录清除，0provider。固定[原始交付](../../docs/evidence/f01/goal-progression-production-README.md)保留全部原未运行/红证据；此前资源等待为历史事实。当前等待独审/main，CORE032仍独立未批准，不提前挂载。
+
+2026-10-06 17:09:20 UTC：O14唯一独审APPROVED原样归档，source73a不变，等待main精确接收。F01 fresh无冲突后已原子amend v46（17:08:13.061Z），新增唯一 packages/client/src/claude-message-settings-production.test.ts，60literal；[回执](../../docs/evidence/f01/claude-message-settings-production-scope-amend.json)。032当前只准备设计/闭包，不应用未审CORE或启动PG；O14源继续冻结，C01目录不动。
