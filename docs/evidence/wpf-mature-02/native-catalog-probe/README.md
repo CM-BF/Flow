@@ -1,6 +1,6 @@
-# 固定 native Codex 的一次目录观察（设计，NOT_OPEN）
+# 固定 native Codex 的一次目录观察（准备，NOT_OPEN）
 
-沿 WPF-MATURE-02-03。本片只回答固定 Codex 0.154 native binary 能否在既定隔离边界完成握手和一页目录读取；Flow Node 宿主、Node synthetic canary、Codex native 是三种角色。旧 Node/OpenSSL 失败不是本片前置或结论。GO 已授权准备；实现、固定组合独审和 Mika 的精确 HEAD 单次 OPEN 尚未完成，当前目标/测试/监听/PG/provider 均 0。
+沿 WPF-MATURE-02-03。本片只回答固定 Codex 0.154 native binary 能否在既定隔离边界完成握手和一页目录读取；Flow Node 宿主、Node synthetic canary、Codex native 是三种角色。旧 Node/OpenSSL 失败不是本片前置或结论。GO 已授权准备；源码51c11fca已独审通过，12项原fake与6项增量分轮覆盖17 distinct，原生惰性import通过；固定输入组合审查与 Mika 的精确 HEAD 单次 OPEN 尚未完成。0实际目标/监听/PG/provider。
 
 ## 固定输入与调用
 
@@ -32,12 +32,12 @@ ownTMP 上限8MiB同时检查 logical 和 allocated（blocks×512），覆盖两
 
 新实验目录仅 `probe.mjs`（消费/own roots/有限记录）、`execute-reviewed.mjs`（指纹/预约/固定参数/CLI）、`execute-window.sh`（既有 time+UTC 方式）、`probe.test.ts`与其单文件Vitest config；新 evidence 保存设计/inputs/固定 packet/局部 ignore。不改 R06/loader/catalog/policy/private-text 和其他任务源码。复用其现接口，不串接多个旧 runner。
 
-必要 fake 覆盖：exact argv/env/一次握手与一次请求、partial 不分页、server-request/未知通知立即 close、bad page/timeout 最终 close、child/stream unknown 保根、mkdtemp后身份失败、stderr partial+最终persist失败仍保 identity、inventory 超界/未知停止。fake transport 不调用 R06 factory，0子进程/监听；惰性 import 另核 0factory。执行小检查前向 Mika 给出单文件/1worker/native configLoader、raw≤16KiB/cache≤32MiB与 fresh≥1GiB+32MiB门槛；不与 CORE/他队实际窗口争用，尚未执行。
+必要 fake 覆盖：exact argv/env/一次握手与一次请求、partial 不分页、server-request/未知通知立即 close、bad page/timeout 最终 close、child/stream unknown 保根、mkdtemp后身份失败、stderr partial+最终persist失败仍保 identity、inventory 超界/未知停止。fake transport 不调用 R06 factory，0子进程/监听；惰性 import 另核 0factory。两次小检查均按Mika单次窗口执行：单文件/1worker/native configLoader、raw≤16KiB/cache≤32MiB、fresh≥1GiB+32MiB；绑定原validation及delta-validation清单，不再重跑。
 
 方法：本地 find-skills / openai-docs / brainstorming / clean-code（既定 sickn33 bdacd76 方法基线，不安装）；固定来源优先于当前 docs，未知保持未知。clean-code 检查单一进程 owner、固定 recipe、错误不泄露/不丢资源、没有第二 FSM；本设计不是 source approval 或运行 receipt。
 
-设计7e9bd5b2已获Mika/root 17:17:20 UTC只读APPROVED，16repo+4external+2archived无差异；实现只纳pendingRequests=1与双root全量计量收紧。此处实现仍未验证/未独审，实际NOT_OPEN。固定窗口字面go-native-catalog-probe-once。caller不发turn/auth/login/推理请求；native自身外网尝试/账单未经观察保持unknown，不由deny配置推0。
+设计7e9bd5b2已获Mika/root 17:17:20 UTC只读APPROVED，16repo+4external+2archived无差异；实现只纳pendingRequests=1与双root全量计量收紧。源码已获Mika17:39:30批准，见source-review.json；实际NOT_OPEN。固定窗口字面go-native-catalog-probe-once。caller不发turn/auth/login/推理请求；native自身外网尝试/账单未经观察保持unknown，不由deny配置推0。
 
-源码checkpoint包含薄caller/entry/outer与12项fake用例，检查PENDING；末次result部分写失败返回safe result与该descriptor身份，CLI另判post-persistence字节/时间。fingerprint直接复用原node-rootliteral inert entry的具名函数（它仅静态加载原loader；旧host动态执行分支不会进入），不复制transport或拉入旧canarydriver。
+源码包含薄caller/entry/outer；17 distinct分次通过，不称单轮17/17。末次result部分写失败返回safe result与该descriptor身份，CLI另判post-persistence字节/时间。fingerprint直接复用原node-rootliteral inert entry的具名函数（它仅静态加载原loader；旧host动态执行分支不会进入），不复制transport或拉入旧canarydriver。
 
-实现审查增量：入口预约open即记录身份、成功部分bytes与flush/close状态；任何失败返回targetCalls=0的有限receipt，不落成generic null。载入失败仍保预约，若factory已调用则target数量/根完整性unknown。现source增量另以5个必要定向检查（原inventory1+新4）验证，原12raw固定不改；实际仍NOT_OPEN。
+实现审查增量：入口预约open即记录身份、成功部分bytes与flush/close状态；任何失败返回targetCalls=0的有限receipt，不落成generic null。载入失败仍保预约，若factory已调用则target数量/根完整性unknown。最终增量6/6（原inventory1+新5）验证，6fixture/cache均同identity清理；关闭后先完整inventory才向control写原件，静态symlink仅保独立副本与根。原12raw固定不改；实际仍NOT_OPEN。

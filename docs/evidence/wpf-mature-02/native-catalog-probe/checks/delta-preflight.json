@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-06T17:38:51.425223+00:00",
+  "source": "51c11fca6e91069c69790c787025a214a3e114bf",
+  "previousSource": "8e59be9aad09d52866b4f9eb10b227ff668e8dd2",
+  "authorization": "Mika narrow symlink fix plus one incremental fake window",
+  "claim": {
+    "id": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+    "version": 6,
+    "state": "active",
+    "observedAt": "2026-10-06T17:38:12.480Z"
+  },
+  "freeBytes": 1175924736,
+  "minimumBytes": 1107296256,
+  "commands": [
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+      "run",
+      "--configLoader",
+      "native",
+      "--config",
+      "experiments/codex-app-server-conformance/native-catalog-probe/vitest.config.mjs",
+      "experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts",
+      "-t",
+      "review delta|rejects byte excess",
+      "--reporter=verbose"
+    ],
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--experimental-transform-types",
+      "--input-type=module",
+      "-e",
+      "import {registerR06Loader} from './experiments/codex-app-server-conformance/node-rootliteral/loader.mjs'; registerR06Loader(); await import('./apps/runner/src/codex/index.ts'); await import('./experiments/codex-app-server-conformance/native-catalog-probe/execute-reviewed.mjs'); process.stdout.write('inert imports complete; no factory invoked\\n');"
+    ]
+  ],
+  "inputs": [
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.mjs",
+      "bytes": 17457,
+      "sha256": "8c389946637f19bbb87591bf51a4d0318c2e85d55a0760fb049d10a93f011a73"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-reviewed.mjs",
+      "bytes": 7965,
+      "sha256": "2ac940f1caa1699f8489bf3c04d4d5370eee4dd02e8ff8eaee45dac25f3ce570"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-window.sh",
+      "bytes": 2984,
+      "sha256": "df1fedc519848f936c4f07b0d669e11cb4e206018d65f122b575eee0421397a0"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts",
+      "bytes": 17750,
+      "sha256": "a377adbd54b0d11dac91f3ecc1ddd2939e6e42d0f10e3cdd4ab5329181f7a759"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/vitest.config.mjs",
+      "bytes": 415,
+      "sha256": "8d780f512274700ddce95ef70b17393e731fa16332749e7096ed27a06d6dbdf1"
+    }
+  ],
+  "cache": {
+    "path": "/tmp/flow-wpf02-native-catalog-vitest-cache",
+    "dev": 16777234,
+    "ino": 123103730,
+    "limitBytes": 33554432
+  },
+  "rawLimitBytes": 16384,
+  "wallLimitSeconds": 30,
+  "expectedSelected": 6,
+  "expectedUnselected": 11,
+  "diagnosticTargets": 0,
+  "listeners": 0,
+  "pg": 0,
+  "provider": 0
+}

@@ -1,0 +1,20 @@
+{
+  "reviewer": "Mika/root",
+  "model": "gpt-6-astra",
+  "at": "2026-10-06T17:39:30Z",
+  "target": "51c11fca6e91069c69790c787025a214a3e114bf",
+  "verdict": "SOURCE_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "closed": [
+    "entry reservation failure receipt",
+    "active directory traversal and closed control symlink"
+  ],
+  "checks": "12 historical + 6 selected/11 unselected (5 new); 17 distinct",
+  "scope": "source only; input packet and actual window pending",
+  "limits": [
+    "wholeWriterSettlement unknown",
+    "sampled own-root bytes, not hard quota",
+    "account/actual model unknown"
+  ]
+}

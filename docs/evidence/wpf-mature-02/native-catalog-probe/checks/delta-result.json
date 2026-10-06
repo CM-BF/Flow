@@ -1,0 +1,52 @@
+{
+  "startedAt": "2026-10-06T17:38:51.425223+00:00",
+  "finishedAt": "2026-10-06T17:38:51.972566+00:00",
+  "source": "51c11fca6e91069c69790c787025a214a3e114bf",
+  "wallSeconds": 0.5473602080019191,
+  "commands": [
+    {
+      "pid": 71703,
+      "exitCode": 0,
+      "wallSeconds": 0.45147920900490135,
+      "stdioEOF": true,
+      "closed": true,
+      "terminationRequested": false
+    },
+    {
+      "pid": 71705,
+      "exitCode": 0,
+      "wallSeconds": 0.09208249999210238,
+      "stdioEOF": true,
+      "closed": true,
+      "terminationRequested": false
+    }
+  ],
+  "failure": null,
+  "log": {
+    "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/delta-once.log",
+    "bytes": 5061,
+    "sha256": "825a8492037e3ff5b0c3e0128e53a7a46600df1c9c1cb77be979592ec6d3cf78"
+  },
+  "cache": {
+    "path": "/tmp/flow-wpf02-native-catalog-vitest-cache",
+    "dev": 16777234,
+    "ino": 123103730,
+    "logicalBytes": 160,
+    "allocatedBytes": 4096,
+    "removedSameIdentity": true,
+    "within32MiB": true
+  },
+  "fixtureReceipt": {
+    "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/delta-roots.json",
+    "bytes": 716,
+    "sha256": "f0aaf94c9272e461afc58365949bdc8846eeb4c661c88f4e7a87faec365ba9dd"
+  },
+  "fixtureRootsNowAbsent": true,
+  "diagnosticTargets": 0,
+  "listeners": 0,
+  "pg": 0,
+  "provider": 0,
+  "harness": "Vitest threads/transformation plus inert Node import; not a real diagnostic target",
+  "selectedExpected": 6,
+  "unselectedExpected": 11
+}

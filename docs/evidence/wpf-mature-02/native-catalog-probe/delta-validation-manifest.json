@@ -1,0 +1,70 @@
+{
+  "kind": "native-catalog-probe-review-delta",
+  "sourceTarget": "51c11fca6e91069c69790c787025a214a3e114bf",
+  "previousSource": "8e59be9aad09d52866b4f9eb10b227ff668e8dd2",
+  "bindings": [
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.mjs",
+      "bytes": 17457,
+      "sha256": "8c389946637f19bbb87591bf51a4d0318c2e85d55a0760fb049d10a93f011a73"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-reviewed.mjs",
+      "bytes": 7965,
+      "sha256": "2ac940f1caa1699f8489bf3c04d4d5370eee4dd02e8ff8eaee45dac25f3ce570"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/execute-window.sh",
+      "bytes": 2984,
+      "sha256": "df1fedc519848f936c4f07b0d669e11cb4e206018d65f122b575eee0421397a0"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/probe.test.ts",
+      "bytes": 17750,
+      "sha256": "a377adbd54b0d11dac91f3ecc1ddd2939e6e42d0f10e3cdd4ab5329181f7a759"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog-probe/vitest.config.mjs",
+      "bytes": 415,
+      "sha256": "8d780f512274700ddce95ef70b17393e731fa16332749e7096ed27a06d6dbdf1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/delta-preflight.json",
+      "bytes": 2842,
+      "sha256": "0dc2b3619e4da5bad8b3dc50422e4bc0d603730a691ba5a4b4fbc7b806f3ff2c"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/delta-once.log",
+      "bytes": 5061,
+      "sha256": "825a8492037e3ff5b0c3e0128e53a7a46600df1c9c1cb77be979592ec6d3cf78"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/delta-result.json",
+      "bytes": 1497,
+      "sha256": "9e0b9df658d608318da84ecc9da025b9d0a2145e6d121627f593ded4658a2543"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog-probe/checks/delta-roots.json",
+      "bytes": 716,
+      "sha256": "f0aaf94c9272e461afc58365949bdc8846eeb4c661c88f4e7a87faec365ba9dd"
+    }
+  ],
+  "selected": 6,
+  "passed": 6,
+  "unselected": 11,
+  "newDistinct": 5,
+  "cumulativeDistinct": 17,
+  "previousChecks": "12 at 469e97eb; one inventory case repeated, not accumulated",
+  "exitCodes": [
+    0,
+    0
+  ],
+  "rawBytes": 10116,
+  "diagnosticTargets": 0,
+  "listeners": 0,
+  "pg": 0,
+  "provider": 0,
+  "fixtureRoots": 6,
+  "fixtureRootsNowAbsent": true,
+  "actualAuthorization": "NOT_OPEN"
+}

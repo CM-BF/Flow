@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:16:00 UTC / 2026-10-06 16:07:03 UTC（032 assignment只证明号/领取；本轮未核main部署） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:40:00 UTC / 2026-10-06 16:07:03 UTC（本轮未核main部署） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；本轮83adeeddf2f9d3f6555afdaa91649306bab9ffa1为native设计/父接口基线；旧ca6 packet/source冻结 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
 | 工作树dirty状态 | 本轮新native-catalog-probe薄caller/入口/测试、设计补充与父管理更新；R06、policy、旧source/raw/input/prepared不改，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | 本片native probe一次12/12 fake+原生惰性import/sh-n exit0，0实际目标；entry预约P2与活动期walker窄修待增量5检查/独审，NOT_OPEN；OpenSSL四fake4/4及准备批准仍仅原packet。Mika17:13:34正式接收CORE sourceea276/packet23016bbb，29distinct分次16+5+8、两strict0；本owner不重跑，provider/UI未验。 |
+| 当前检查 | native原12fake+增量6/6（11未选、5新增）共17 distinct；entry原生惰性import与原sh-n均0，0真实目标/监听/PG/provider。源码已审，固定输入包待审；CORE29distinct/两strict0复用，未重跑。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；core首leaf main22d5ca67159b35bb794b2711cf6df0cb905b92e8已接收；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude逐消息设置的中心、队列与注入执行器已通过限定独审和专库检查；客户端原片已审，补充矛盾回执反馈仍待处理。真实Codex目录观察已开始独立准备。 |
-| 下一可用交付 | 由合法owner完成共享挂载与客户端修正，接通Web/TUI冻结设置；并固定真实Codex一次目录探针供独审。 |
-| 当前阻塞 | ACTIVE: 生产挂载与Web/TUI尚未完成，C01补充回执校验待指定reviewer处置；真实Codex探针仅准备、实际窗口未开放。 |
+| 当前产出 | Claude中心、队列和客户端设置回执已通过限定审查，正在合法组合接入；真实Codex单页目录探针的源码与模拟检查已收束。 |
+| 下一可用交付 | 接通共享挂载及Web/TUI冻结设置；固定真实Codex目录探针输入包并完成独审。 |
+| 当前阻塞 | ACTIVE: 产品组合尚待main接收与Web/TUI验收；真实Codex探针尚未获得实际运行窗口。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | CORE sourceea276/packet23016bbb获Mika17:13:34限定APPROVED；全产品仍未验收。native设计7e9bd5b2获Mika17:17:20批准；新源码/12fake检查PENDING，无源码/运行批准；owned-openssl c46 packet准备APPROVED仍NOT_OPEN。 |
+| Review | CORE sourceea276/packet23016bbb限定APPROVED；C01补充6d114已assignment APPROVED。native source51c11fca获Mika17:39:30 SOURCE_REVIEW_APPROVED/0P1P2；完整packet待审、actual NOT_OPEN。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
 
@@ -48,7 +48,7 @@
 
 [canonical](../../docs/evidence/wpf-mature-02/interface.md)唯一路由共享owner。本claim v6仅docs/实验/plan三scope，四profile路径已停写并[原子交回](../../docs/evidence/wpf-mature-02/claude-core-profile-handback-receipt.json)，R06/store此前已交回。Lead报告2026-10-06 15:38:16 UTC实际4320快照164来源、CORE live/issues=[]，后续9bdb仅registry；本owner未重采。子进度由其唯一status维护，完整02仍in-progress。
 
-原CHAT06-07 runner prefix SHA小优化已归档到[研究输入](../../docs/evidence/wpf-mature-02/research-inputs.md)，请求Lead受控小树供architecture_read领取CHAT06P03四literal；16项输入329854逻辑B，0本owner源码/测试/运行。CORE/consumer优先；CORE首次PG失败已清理；恢复缺件后的新窗因空间未启动并归还，Lead可安排后续任务；Node NOT_OPEN。本段不建立该任务第二status。
+CHAT06P03已获原owner独审并等待Lead接收，唯一status与receipt由canonical链接；本父不维护该子task第二状态。CORE/C01组合接入与Web/TUI仍优先，native实际NOT_OPEN。
 
 ## 固定证据与边界
 
