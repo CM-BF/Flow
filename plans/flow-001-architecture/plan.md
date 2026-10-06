@@ -507,3 +507,10 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 ### P01读取取消的局部后继（2026-10-06 15:25 UTC）
 
 固定7810至本轮已审客户端增量，a2a-mapping的read包装组合signal只中断等待，flow.events/detail未收到该signal；client detail支持signal，events尚无可选signal。底层HTTP仍到自身默认15秒超时，并非无限泄漏。归原P01/REQ-08/10低优先后继：兼容地透传观察取消，实际挂起HTTP证明observer abort后events/detail关闭、没有后继页/详情读取，正常和默认超时保持；断开观察绝不cancel中心任务。0PG/provider/新依赖，仅直接模块。现reference仅id/title，不能无依据先判断artifact种类；不借本片建缓存/事件系统或重跑全库。
+
+
+### 版本化依赖原文按需读取（2026-10-06 15:28 UTC，后继输入）
+
+归REQ-08/15/22与原连续目标路径。GO只读固定fb9fe5e7：goals/commands.ts在每个child受理前读取依赖全文/hash并拼入prompt，任一依赖或最终JSON超过16,000 code units即拒绝；这是O01/K03已声明v1界限，不作新回归。多child共享大产物会重复输入，换provider窗口不自动解决。
+
+后继采用明确版本的固定artifactId/version/digest引用及受限原文读取能力，普通child只获本attempt授权依赖，不获planner广泛工具权。原文不截断、不只留摘要、不暗读latest；复用goal input/context与R05扩展点，不让Web/TUI各造状态。0模型验收同一128KiB产物给多个独立child：初始受理/输入不搬全文、显式读取有界、越权/失效拒绝、旧版本仍可追溯，并完成真实下游路径。记录请求/字节/读取次数，不称token节省。旧v1/兼容reader保持，当前O14生产与O15确认优先，不扩大其writer。
