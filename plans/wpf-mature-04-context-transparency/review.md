@@ -1,9 +1,11 @@
 # WPF-MATURE-04 当前纯归一化片审查
 
-状态：NOT_STARTED
+状态：APPROVED（仅c173四源纯归一化；实际producer/runtime/current/cut/Web不在批准范围）
 
 - Review target commit：c1733a0c4a2ce389489a8bc11ea3b68ef5693d34；起点9f9bb00e263b8517a036822f74ae65ce94b86200。
 - 范围：新增claude-summary-values.ts/.test.ts，保持行为提取claude-summary.ts/.test.ts。
+- 独立reviewer：status_read / gpt-6-astra，2026-10-06 11:24:10 UTC；Mika接收，0 P1/P2。[正式收据](../../docs/evidence/wpf-mature-04/normalize-independent-review.json)；只读审查，无tests/PG/provider重跑。
+- 24项target Git/WT/hash/bytes核验一致，v6 ACTIVE；9ac独立历史输入保持原样。作者回应：冻结源码与绑定raw/support，待Lead受控集成；不启动后继producer。
 - 检查：58/58不同=8helper+27mapper+23直接projection；root局部严格noEmit0。旧26mapper断言逐字保留，首次fixture缺apiUsage类型错误保留；没有新provider/PG/采集。
 - [新固定manifest](../../docs/evidence/wpf-mature-04/normalize-manifest.json)：4source/12raw/4support/4readonly均在本target；manifest及本状态后续metadata提交。
 - 独审重点：null model仍完整校验、类别ID/顺序与拒绝行为兼容、同kind安全和/预算、无私有字段或伪ref，SDK只type import。

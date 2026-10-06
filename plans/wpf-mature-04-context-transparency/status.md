@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:21:22 UTC / main648e331c clean；纯归一化target固定待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:25:14 UTC / main53ce2ec2 clean；记录纯归一化独审批准 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
 | 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 本片起点9f9bb00e；实现c1733a0c4a2ce389489a8bc11ea3b68ef5693d34，metadata随后提交 |
-| 工作树dirty状态 | 实现target已提交，4源及raw停止写入；本次仅manifest/status/review metadata；v6 ACTIVE |
+| 工作树dirty状态 | fresh 5293d55c clean/v6 ACTIVE后仅录批准与固定集成metadata；4源及全部绑定raw/support冻结 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED c1733a0c4a2ce389489a8bc11ea3b68ef5693d34：58/58不同（8helper+27mapper+23projection），root局部strict noEmit0；首次fixture类型错误保留，见[manifest](../../docs/evidence/wpf-mature-04/normalize-manifest.json) |
-| 已集成main状态 / HEAD | 未集成：本次核main 648e331c58043cf7ee307300521ab1c628cb2ee1 clean，879/3ab/9ac均非祖先；[固定集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
+| 已集成main状态 / HEAD | 待Lead接收，尚未确认集成：本次核main 53ce2ec2c95b489aa7a2a2eaa49849821af00c16 clean，9ac/c173均非祖先；[归一化固定输入](../../docs/evidence/wpf-mature-04/normalize-integration-ready.json)，历史9ac输入不变；部署未知 |
 | 实现目标 | c1733a0c4a2ce389489a8bc11ea3b68ef5693d34 |
 | 实现范围 | apps/runner/src/context-observations/claude-summary-values.ts, apps/runner/src/context-observations/claude-summary-values.test.ts, apps/runner/src/context-observations/claude-summary.ts, apps/runner/src/context-observations/claude-summary.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 数值归一化提取已通过局部验证，待独立审查；历史样本持久化片已审待集成 |
-| 下一可用交付 | 归一化模块可供下一片采样复用；历史保存与公开读回仍沿固定已审输入接线 |
+| 当前产出 | 纯归一化模块已获独立审查通过；历史持久化与归一化两片均可按固定输入集成 |
+| 下一可用交付 | Lead受控接收后复用统一估算校验；实际采样和当前剩余额度仍待后续实现 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED c1733a0c4a2ce389489a8bc11ea3b68ef5693d34：新4源独审待执行；9ac历史Module+027批准保持原target |
+| Review | APPROVED c1733a0c4a2ce389489a8bc11ea3b68ef5693d34：status_read/gpt-6-astra，2026-10-06 11:24:10 UTC，Mika接收，0 P1/P2；仅4源纯归一化 |
 | Claim | [COMMITTED amend v6](../../docs/evidence/wpf-mature-04/normalize-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v6 ACTIVE；20 scopes，新增仅2归一化文件 |
 | 架构影响 | 纯数值归一化为单一Module，mapper仅绑定host身份/证据；无IO/SDK运行依赖/状态或采集挂载。9ac正式历史模块的架构接线仍由Lead集成时更新 |
 
@@ -33,7 +33,7 @@
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
 | WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v5已追加唯一027及局部入口；50/50含9真实PG、严格noEmit0，正式组合已独审APPROVED待集成；当前/remaining/SDK采集仍未知 |
-| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 原3ab纯Adapter批准保留；新纯归一化c1733a0c4a2ce389489a8bc11ea3b68ef5693d34，58/58+strict0，待独审；不含真实采集、压缩事件或生产接线 |
+| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 原3ab纯Adapter批准保留；新纯归一化c1733a0c4a2ce389489a8bc11ea3b68ef5693d34，58/58+strict0，status_read独审APPROVED；不含真实采集、压缩事件或生产接线 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | 仅schema/纯投影独审已过；完整矩阵与后继独审、main交付未完成 |
 
@@ -82,3 +82,5 @@
 2026-10-06 11:14:40 UTC：下一producer仅完成[有界接缝准备](../../docs/evidence/wpf-mature-04/producer-seam-preparation.md)：fresh11:12:19核共享归一化/Claude caller候选写权，提出单一纯normalize与普通result一次summary接缝、fake Query验证及真实SDK生命周期unknown；未amend/改源码/测试。既有coalescer在result yield之后才next的本地事实已确认，不扩大为SDK内部消费cut。全局事件接线和包含两片的base待Lead，当前片仍integration。
 
 2026-10-06 11:20:53 UTC：纯归一化片4源实现，58不同=8helper+27mapper+23直接projection，strict0；旧26断言逐字保留，首次strict fixture缺apiUsage记录未删。9ac domain10源及固定集成输入不变；新mapper待独审，旧3ab批准不转移。保持v6修复期；无采集/SDK/provider/global接线。
+
+2026-10-06 11:25:14 UTC：记录status_read于11:24:10 UTC对c1733a0c的独立APPROVED，0 P1/P2；24bindings与58不同/strict0已核，无重测。[独审收据](../../docs/evidence/wpf-mature-04/normalize-independent-review.json)与[固定集成入口](../../docs/evidence/wpf-mature-04/normalize-integration-ready.md)仅绑定本片。9ac原输入保持不变，main接收/部署未确认；v6保持修复期，源码/raw冻结，未开producer。

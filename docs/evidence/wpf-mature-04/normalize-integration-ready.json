@@ -1,0 +1,58 @@
+{
+  "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+  "approved": true,
+  "reviewReceipt": "docs/evidence/wpf-mature-04/normalize-independent-review.json",
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-04/normalize-manifest.json",
+    "sha256": "fe21b9217fb8fa2eaee2a88e1b2fde07c57bf218303b642c485d396a6e7f7d9f"
+  },
+  "sources": [
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.test.ts",
+      "bytes": 6270,
+      "sha256": "b7492fc438723f2ca6543250c0da3fedaa12856af7d2af835030e869235ce216"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "bytes": 2905,
+      "sha256": "4637f84caeb8bef5e002fe2c2e98b306813e0462d24a670d441e44fc6da21ae5"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "bytes": 13246,
+      "sha256": "fa71594307d87e7c8e53d204dcd7448391993cbac2e33a80161466552a58d040"
+    }
+  ],
+  "rawAlreadyAtTarget": true,
+  "interface": "normalizeClaudeSummary(response, expectedResolvedModel): finite detached SDK summary values; no identity or refs",
+  "historicalDomainIntegrationInput": {
+    "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+    "path": "docs/evidence/wpf-mature-04/history-integration-ready.json",
+    "unchanged": true
+  },
+  "claim": {
+    "id": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 6,
+    "state": "active",
+    "writing": "source and bound raw/support frozen; retained for integration fixes"
+  },
+  "mainObservation": {
+    "head": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+    "dirty": false,
+    "observedAt": "2026-10-06 11:25:14 UTC",
+    "targetIsAncestor": false,
+    "historyTargetIsAncestor": false,
+    "integration": "not confirmed; pending Lead acceptance",
+    "deployment": "unknown"
+  },
+  "limitations": [
+    "Only this four-source pure normalization slice approved",
+    "No producer/runtime/current/cut/Web approval",
+    "Apply fixed targets under coordinated integration; do not substitute latest metadata HEAD"
+  ]
+}
