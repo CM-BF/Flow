@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 06:20:12 UTC |
+| 最近更新 | 2026-10-06 06:24:32 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context |
 | Branch | codex/goal-knowledge-context |
 | 工作基线 / HEAD | 已审K02分支a6c9b09a8a4d4020a497341d3fb6deed16b08d02；不是main基线 |
-| 工作树dirty状态 | 领域片段与证据待本次提交；runners原文件未改 |
+| 工作树dirty状态 | private claim接线与检查证据待本次提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PARTIAL；16不同用例通过，domain noEmit exit0；private claim组合仍待固定基线 |
+| 检查状态 | PARTIAL；16领域+3实际claim用例通过；完整旧consumer组合待执行 |
 | 已集成main状态 / HEAD | 未集成；已观察main3d4985fca060155435b159e0467815bf8e88b8b8，O06后续受控组合 |
 | 实现目标 | 未固定 |
 | 实现范围 | apps/server/src/goal-context, apps/server/src/goal-tool-runs/runner.ts, apps/server/src/goals/state.ts, packages/contracts/src/goal-context.ts, packages/contracts/src/goals.ts, apps/server/src/goals/commands.ts, apps/server/src/reconciliation.ts, apps/server/src/runners.ts, packages/storage/migrations/021-goal-context.sql, docs/evidence/k03/check.mjs |
@@ -18,8 +18,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 节点已能冻结知识版本，并沿实际依赖识别过期、限制执行和安全恢复 |
-| 下一可用交付 | 节点输入可选择精确知识版本并识别来源过期 |
-| 当前阻塞 | ACTIVE: 实际执行连接等待共享已审基线接入；领域行为已验证 |
+| 下一可用交付 | 完成直接消费者组合验证，交独立审查 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 
@@ -45,3 +45,5 @@ claim fcde300a-4851-415a-ae42-74009f721920 v4 ACTIVE，COMMITTED06:04:25.366Z，
 2026-10-06 06:20:12 UTC：领域验证完成15项矩阵 + 主动选旧版本1项，source同digest升级stale、运行中原文不变、真实A→B传播与独立C保留、runner首次callback权限与旧ACK、两种C02恢复/预算全回滚已核。range首red为PGint越界500，现400。无模型。domain-matrix行为/恢复两文件的a/b清理JSON同名覆盖了两个早期观察，保留事实并修后续file前缀；独立只读资源audit remaining=[]，不倒填丢失DB观察。
 
 06:17:23.731Z v4接收runners.ts，[receipt](../../docs/evidence/k03/runner-handoff-receipt.json)。未用旧a6文件覆盖O07；收到c22412b5但O06表/权限purpose/DTO缺依赖，已向Mika/Lead请求完整固定基线，先保存已验证domain。
+
+2026-10-06 06:24:32 UTC：已按授权完整merge固定main115b0db，合并06c9ea5无冲突；runners完整输入与O07 c224零diff后只加4行private goal读取/提示副本覆盖，保留graph授权/K02。actual-claim-red正确得到raw旧prompt；修后3/3，含实际runRunner+原fixture adapter以及损坏rollback。新goalContext字段未增加。首生产自动021挂载仍归Lead。此安全停点暂停K03写入，顺序完成K02已接收main的metadata收口后回来。

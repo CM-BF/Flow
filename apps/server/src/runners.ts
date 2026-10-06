@@ -1,3 +1,4 @@
+import { goalExecutionInputForTask } from './goal-context/index.js';
 import { executionInputForTask } from './conversation-context/store.js';
 import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomBytes, randomUUID } from 'node:crypto';
@@ -70,7 +71,9 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
     const inserted = await client.query<AttemptRecord>("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,$4,clock_timestamp()+$5 * interval '1 millisecond') RETURNING *", [id, task.id, runnerId, task.owner_version + 1, leaseMs]);
     await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=owner_version+1,updated_at=clock_timestamp() WHERE id=$1", [task.id, id]);
     const executionInput = await executionInputForTask(client, task.id, task.submission.prompt);
-    return { assignment: { ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id, ...(executionInput ? { prompt: executionInput.prompt } : {}) }, ...(goalRun?.mode === 'claude' ? { goalToolRun: { id: goalRun.id, version: goalRun.version } } : {}), ...(graphRun?.mode === 'claude' ? { goalGraphRun: { id: graphRun.id, version: graphRun.version } } : {}) }, remainingLeaseMs: leaseMs };
+    const goalInput = await goalExecutionInputForTask(client, task.id, task.submission.prompt);
+    const privatePrompt = goalInput?.prompt ?? executionInput?.prompt;
+    return { assignment: { ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id, ...(privatePrompt !== undefined ? { prompt: privatePrompt } : {}) }, ...(goalRun?.mode === 'claude' ? { goalToolRun: { id: goalRun.id, version: goalRun.version } } : {}), ...(graphRun?.mode === 'claude' ? { goalGraphRun: { id: graphRun.id, version: graphRun.version } } : {}) }, remainingLeaseMs: leaseMs };
   });
 }
 export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownership, leaseMs: number): Promise<HeartbeatResponse> {
