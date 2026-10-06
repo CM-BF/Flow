@@ -12,11 +12,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED fe5bc2d9b8dab231996b1b156bc086d858846117；新生产2/2、原vertical定向1/13（12未选）、独立typecheck0；无provider |
 | 已集成main状态 / HEAD | 84fdecebbb4939e43710fb17e48884cc49d1d030 已含聊天活动、流读取模块与消息复用；个人center/runner固定b54de1dbb08e3ccc7d33a27295a318f2799e76ae、维护v6 accepting。CHAT08 thin client/领域/024接线仍待本批独审与集成。 |
-| Review | NOT_STARTED；当前024共享接线待Root独审。CHAT08领域d4e及薄client3d811各自已独立批准，范围不混同。 |
+| Review | APPROVED；Root独立批准fe5默认关闭挂载；领域d4e与薄client3d811分别已独审。O09 client后继单独待审。 |
 | 实现目标 | fe5bc2d9b8dab231996b1b156bc086d858846117 |
 | 实现范围 | apps/server/src/index.ts, apps/server/src/steering-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 已接通执行中补充指令的持久确认与最终答复保护，默认保持关闭。 |
 | 下一可用交付 | 完成中心接线审查，再验证配置与当前执行能力匹配，避免把指令交给不支持的执行器。 |
@@ -102,3 +102,6 @@
 2026-10-06 07:18 UTC：steering薄client1b16d23获assignment_review独立只读APPROVED，3source/3raw固定hashbytes一致，无P1/P2/未重跑；仅薄传输，仍无024生产mount或实际模型消费。
 
 2026-10-06 07:57 UTC：024迁移在任何worker/scheduler启动前完成，所有控制路由沿现owner/runner鉴权。默认不受理owner指令，生产CLI无启用参数，对话cap仍false。真实factory新2项与既有纵向定向1项分别绿，旧12项未选；manifest见steering-production-manifest.json。领域20source相对d4e逐hash相同。实际SDK/config/profile/UI开通仍后继，未操作常驻服务。
+
+
+2026-10-06 08:00 UTC：Root独立批准fe5/61ed共享生产片段，当前只接该固定输入到main；后继O09薄client1bd已单独交Mika，不混本批。

@@ -1,6 +1,6 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（CHAT08默认关闭的生产挂载）**
+**当前增量状态：APPROVED（CHAT08默认关闭的生产挂载）**
 
 Review target commit：fe5bc2d9b8dab231996b1b156bc086d858846117
 
@@ -144,3 +144,7 @@ Review status: APPROVED
 只覆盖packages/client/src/index.ts与steering-finalization.test.ts；固定领域合同998e2fd是早期输入，不表示领域批准。manifest见docs/evidence/f01/steering-finalization-client-manifest.json。
 
 Root于2026-10-06 07:34 UTC独立只读APPROVED3d81141324041c2c67680edbb686996cefaf8b4b（观测clean f4ca028）。完整2-file diff及73行真实HTTP测试、2source/3raw/2固定998 DTO hash逐项一致；exact body/Bearer/AbortSignal/409/disconnect/committed/not-committed/absent覆盖，无暗重试/生命周期决策，无P1/P2。原1红→1绿39ms+tsc证据支持薄传输，reviewer无重跑/0模型。absent不允许换candidate，unknown继续传播；不批准moving CHAT08领域/生产挂载。
+
+
+## 2026-10-06 08:00 UTC CHAT08 production独立批准
+Root只读APPROVED fe5bc2d9b8dab231996b1b156bc086d858846117 / delivery61ed4b5f969ed1d5d4e2310411873ca1b94f0404。完整2file/factory/auth/迁移顺序已读，2源4raw hash/bytes与manifest e85d515c一致，20domain对d4e不变；2/2生产、既有纵向1selected/12未选及tsc0/随机库连接和余库[]支持限定交付，无重跑/0provider/P1P2。024先worker/scheduler，可信option严格true才受理；CLI/profile/conversation仍关闭，普通stringfinal保留。本批准不含后继O09薄client或CHAT09能力开通。
