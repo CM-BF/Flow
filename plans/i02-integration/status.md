@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:20 UTC / 2026-10-06 04:12 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:43 UTC / 2026-10-06 04:43 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -15,8 +15,8 @@
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 持续对话三端与配置声明已审接收，准备有界真实两轮验收 |
-| 下一可用交付 | 同一会话的真实两轮回复、重连和按需详情 |
+| 当前产出 | 真实预览已常驻、两次聊天预算已封存；接收插件管理App与O03授权模块 |
+| 下一可用交付 | 持久队列前后端兼容成套接线与受限原生目标工具 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -29,7 +29,7 @@
 | I02-T05 | completed | Lead / 外部UI | 新Thread真实中心完整旅程；WPF-M02 d47独审、10task真PG/HTTP4组及8chat/双split/窄屏证据，集成Web20项通过 |
 
 | I02-T06 | completed | Lead | main4e817；各固定target独审及[第二批原始检查](../../docs/evidence/i02/2026-10-06-integration.md) |
-| I02-T07 | in-progress | Lead/CHAT owners | 后端d0f/2e/fcbc与shared37ab已审并进入本批；Web仍独立验收，真实预算0调用 |
+| I02-T07 | completed | Lead/CHAT owners | 三端各自独审并进入main；2次真实query封存，后台两轮与第一轮UI成立，第二轮live UI未证明、重放另记；[限定报告](../../docs/evidence/f01/chat-live/README.md) |
 
 | I02-T08 | completed | Lead | [第三批来源/原始检查](../../docs/evidence/i02/2026-10-06-integration.md)，各领域零diff，root/Web typecheck |
 
@@ -56,3 +56,5 @@
 ### 2026-10-06 04:26 UTC 接收检查点
 
 X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精确一致；root/Web typecheck通过，见 `docs/evidence/i02/approved-slices.md`。registry47含D06/CHAT04。此刻main仍dd1b9daf，下一动作是fast-forward发布与4320刷新；不把分支接收写成main已发布。CHAT live预算2/2已封存，后台真实回复与第二轮UI重放的边界另在F01保留。
+
+2026-10-06 04:43 UTC：现场main75a33dec clean；本批受控接收WPF-X03I01 84ac/4b7e、O03 94e/67ac以及SVC/X01/CHAT03/O02/R03/CHAT02最终metadata。原主线对X03三产品文件相对base零diff，合并后保持owner已审blob；Web与root两个组合typecheck均exit0（见本批原始输出）。O03模块未生产挂载，native仍409。CHAT04尚未进入本批；需兼容Web reader与后端queue能力成套上线。服务61228继续sourceAtStart75a33/0消息，合并不等于常驻服务已重启。
