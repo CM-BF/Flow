@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-06 15:26:50 UTC",
+  "operator": "astra_ultra_execution_lead",
+  "mode": "Existing reversible sparse-checkout; sole Git operator; no objects/branches/data/production/dependencies removed.",
+  "authorizedMaximum": 8,
+  "applied": 7,
+  "excluded": [
+    {
+      "id": "ENG01I",
+      "reason": "canonical planning/NOT_STARTED despite released/clean; left unchanged"
+    }
+  ],
+  "stop": "All seven positively qualified candidates processed; no expansion to unknown/eighth tree.",
+  "targetStopFreeBytes": 2952790016,
+  "currentFreeBytes": 1127505920,
+  "logicalDematerializedBytes": 61286021,
+  "firstFreeBeforeBytes": 1048158208,
+  "lastFreeAfterBytes": 1132175360,
+  "physicalAttribution": "Shared-volume observations only; not exclusive attribution or future guarantee.",
+  "trees": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout",
+      "head": "dbb73916d5ccd5e0cc37f4e3fb8125f11f02eeb8",
+      "before": 1048158208,
+      "after": 1060241408,
+      "delta": 12083200,
+      "retainedCount": 5589,
+      "clean": true,
+      "sameMainBlobs": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session",
+      "head": "5d502150d779bdf3d1cbd5045d2055ebd220c90d",
+      "before": 1061638144,
+      "after": 1074663424,
+      "delta": 13025280,
+      "retainedCount": 4882,
+      "clean": true,
+      "sameMainBlobs": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release",
+      "head": "9dafb865b56e5b065f54a78d9122abac8bd0ddb0",
+      "before": 1074679808,
+      "after": 1086820352,
+      "delta": 12140544,
+      "retainedCount": 4764,
+      "clean": true,
+      "sameMainBlobs": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller",
+      "head": "5b394c6e9f27ec9db3531e9d61e50bcf5ed7a8ab",
+      "before": 1086926848,
+      "after": 1099206656,
+      "delta": 12279808,
+      "retainedCount": 4466,
+      "clean": true,
+      "sameMainBlobs": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-checker",
+      "head": "ca71f8e96e5e1b2c9532b46fd1a6935d3d9965b6",
+      "before": 1099341824,
+      "after": 1111355392,
+      "delta": 12013568,
+      "retainedCount": 4338,
+      "clean": true,
+      "sameMainBlobs": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model",
+      "head": "7f9ee65e58754f425885e44d7d944752107283e6",
+      "before": 1111289856,
+      "after": 1123262464,
+      "delta": 11972608,
+      "retainedCount": 4092,
+      "clean": true,
+      "sameMainBlobs": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-child-acceptance",
+      "head": "3da862cadf1d3b22f6a62cc7f94cb18fffd60eb2",
+      "before": 1120440320,
+      "after": 1132175360,
+      "delta": 11735040,
+      "retainedCount": 2754,
+      "clean": true,
+      "sameMainBlobs": true
+    }
+  ],
+  "decision": "Web RELEASE03 A-only first, >=1GiB+32MiB fresh gate and original monitor; O14/O15 PG wait cleanup. SVC06 full 2.5GiB remains blocked. No lowered reserve.",
+  "providerCalls": 0,
+  "productTests": 0
+}

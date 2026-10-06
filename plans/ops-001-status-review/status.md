@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:21:36 UTC / main70cc4e85 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:26:50 UTC / mainfb9fe5e7 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -18,9 +18,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 已安全收起四个交付目录的历史副本，源码、各自证据与依赖保持；小型验证仍需更多磁盘余量。 |
+| 当前产出 | 新批已安全收起七个交付目录的重复历史资料，保留源码、各自证据和依赖；已恢复最小网页验证的准入机会。 |
 | 下一可用交付 | 空间达标后恢复当前网页兼容与目标推进的局部验证。 |
-| 当前阻塞 | ACTIVE: 可用空间仍不足验证增量与收尾余量，大安装和完整构建继续关闭。 |
+| 当前阻塞 | ACTIVE: 可用空间仅略高于局部验证起点，大型安装和完整构建仍关闭，运行前须重新核空间。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -119,4 +119,6 @@ GO已授权最多再8棵本队已交付且released树，达到2.75GiB可用或8�
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| OPS-001-11 | in-progress | Execution Lead | 已交付四树回执；新八树批次只读预检中，尚未变更候选。 |
+| OPS-001-11 | in-progress | Execution Lead | 四树与本批七树已逐棵验证；第八planning树排除，完整SVC资源仍未达。 |
+
+2026-10-06 15:26:50 UTC：[本批实际结果](../../docs/quality/sparse-worktree-2026-10-06/next-eight-summary.json)保留每树fresh ledger、固定head、全部保留hash、同main blob与八保护树不变；最终操作可用1,132,175,360B，本文落盘前fresh 1127505920B。Web先一次history-only，O14/O15不并跑PG；不把逻辑61,286,021B当physical回收。
