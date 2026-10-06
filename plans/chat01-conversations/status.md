@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 03:47 UTC |
+| 最近更新时间 | 2026-10-06 03:48 UTC |
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center |
 | Branch | codex/conversation-center |
-| 工作基线 / HEAD | 6bb380b900f17bfbf808a95e7d9c0313c4991922；合同4c2408e4db3595879f6471cb5fffccadec975b3d；实现2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
-| 工作树 dirty 状态 | 仅本claim允许的typed消费/测试/证据；本次提交后固定target |
+| 工作基线 / HEAD | 6bb380b900f17bfbf808a95e7d9c0313c4991922；合同4c2408e4db3595879f6471cb5fffccadec975b3d；历史首片段2d3bb61b35318f999c9f0f336bb3f443418bb5dc；当前typed实现d0f4f5d8abc8995b22a43879880e090bfb898024 |
+| 工作树 dirty 状态 | 源码target提交后clean；本次仅metadata收尾 |
 | 工作分支状态 | delivered（typed消费delta待独立review） |
-| 检查状态 | PASSED；typed delta 22/22真实PG/HTTP（16.51s）+全库typecheck；最终target提交后记录 |
+| 检查状态 | PASSED；typed delta 22/22真实PG/HTTP（16.51s）+全库typecheck；target d0f4f5d8abc8995b22a43879880e090bfb898024 |
 | Review | NOT_STARTED（typed delta）；历史首片段2d3bb61b35318f999c9f0f336bb3f443418bb5dc已由Goal Owner只读APPROVED，未重跑 |
 | 已集成 main 状态 / HEAD | 本任务未集成；输入base尚非main能力 |
-| 实现目标 | 2d3bb61b35318f999c9f0f336bb3f443418bb5dc |
+| 实现目标 | d0f4f5d8abc8995b22a43879880e090bfb898024 |
 | 实现范围 | packages/contracts/src/conversations.ts, apps/server/src/conversations/, packages/storage/migrations/007-conversations.sql |
 | 阶段 | M2 |
 | 优先级 | 1 |

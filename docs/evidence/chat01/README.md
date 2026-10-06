@@ -25,3 +25,5 @@
 新增8条负例/绑定验收覆盖typed正文优先、v2无final拒绝fallback、pending直到task完成、固定批次重报/中心重启、异task/session/fence拒绝与跨turn detail、旧attempt typed隔离、真实adapter非success SDK结果不发正文、typed内容hash损坏不回退、nullable effective与长Unicode正文（原14中真实adapter两轮用例随依赖升级到v2，增加的独立it数量为8）。实际runRunner→当前Claude adapter→注入SDK两轮仍通过，另非成功注入路径通过；真实模型/云调用0。临时文件与flow_chat01已由teardown清理。
 
 本工作段继续应用既有本地find-skills/codebase-design/clean-code/tdd方法，不安装技能。2026-10-06 03:47 UTC clean-code：正文来源读写分离，只消费公共readAssistantFinal；精简共享Unicode预览规则，避免非空断言；仅识别具体content mismatch而不吞数据库故障；实际effective完整传递，不按旧policy推测。保留N+1性能后继，不增加本段平台机制。生产挂载和公共export仍交Lead，Web/真实自然语言未测。
+
+Typed最终实现 `d0f4f5d8abc8995b22a43879880e090bfb898024`，[单独源码/log hash](typed-source-manifest.json)；2026-10-06 03:48 UTC 实查flow_chat01不存在（剩余0）。首target 2d3bb61已获Root独立只读APPROVED，未重跑；当前typed target尚NOT_STARTED。其依赖CHAT02由Lead另审，不把作者或旧target批准扩张。
