@@ -7,8 +7,8 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 聊天正文空间已增大，配置可按需打开，队列提醒保持可见 |
-| 下一可用交付 | 完成独立审查后，把紧凑聊天展示集成主线 |
-| 当前阻塞 | NONE |
+| 下一可用交付 | 修复执行入口的弹窗关闭与焦点，再完成复审 |
+| 当前阻塞 | ACTIVE: 配置弹窗内执行导航尚未关闭弹窗，目标被遮挡，正在修复 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability |
 | Branch | codex/web-conversation-readability |
@@ -20,7 +20,7 @@
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | b9db679e403fb2a814261cdc9b68f462b31b65b7 |
 | 实现范围 | apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/conversations.css, apps/web/src/conversations/queue/ConversationQueue.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-readability.browser.ts, apps/web/test/conversation-readability.fixture.ts |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，REQUEST_CHANGES / R1 P2 |
 | D04 claim | c832542c-0222-4167-bb6f-3746d585a10c v1 active，08:23:06.246Z COMMITTED；08:23:21.603Z live核 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
