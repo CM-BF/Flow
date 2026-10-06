@@ -7,3 +7,5 @@
 2026-10-06 06:49 UTC：交付前逐读5生产实验mjs+2tests，检查许可前置、once marker/source/worktree绑定、native环境分支不在0query路径、query计数与effective观察拒绝、任务/actor/final因果、PG/PID/tmp清理与错误脱敏。修复实测移动permit绕marker位置；收紧实际mcp.source缺失/未知extensions failclosed；停止进程的ESRCH竞态有界处理。7Node+1演练共8不同、syntax通过。未新增agent loop/生产依赖/SDK版本；native超时和强杀未验、权限记录是可信operator转录而非加密授权证明。源码已冻结，独立review待Root。
 
 2026-10-06 07:00 UTC：Root P2修复段实际重读find-skills/clean-code/tdd/codebase-design本地版本，无安装。按已授权生命周期seam先红后绿：真实detached三代进程，leader先退；组状态与leader状态分离，拒绝未知，停止promise在并发两caller复用。3场景+2直接消费者、同一0query演练/9文件syntax通过。交付前检查只有driver及实验tests/docs改动，无第二loop/产品修改；保留原红与原manifest。未解决：主动脱组进程、native模型/真实SDK超时/OS硬期限、managed扩展不匹配；不是通过弱化gate解阻。
+
+2026-10-06 07:08 UTC：GO授权managed声明候选，复用本段已读本地技能。clean-code复核请求与声明/授权与执行分离，exactNames一个集合核验，不建立新权限状态机；只wrap既有host gate、64条上限、未知failclosed、32条结果拒绝摘要不存参数。先红后绿5项+2受影响guard与同一worker演练，0query。原decf批准与原raw不改；新target待唯一Root限定review，组织hooks/当前native配置/语义仍未证明。

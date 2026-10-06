@@ -11,7 +11,7 @@
 - [x] O08-01 claim/固定基线/技能与三件套。
 - [x] O08-02 默认零query预检、单次授权/marker与预算guard。
 - [x] O08-03 可运行隔离配置、复用生产runner/SDK桥接的0query真实MCP/HTTP/PG演练。
-- [x] O08-04 原始证据/清理/clean-code/固定交付与独立review。
+- [ ] O08-04 原始证据/清理/clean-code/固定交付与独立review。
 - [ ] O08-05 新GO单次预算后才真实原生query/NL验收；本轮不执行。
 
 范围只有experiments/native-graph-acceptance、plans/o08-native-graph-acceptance、docs/evidence/o08；不改生产/lock/真实服务/真实凭据。普通技术选择沿已批准边界直接执行，后继原生调用须另获授权。
@@ -23,3 +23,5 @@ Root审查P2：原stopWorker以leader退出判断进程组停止有误；原clai
 已知native阻塞：BASE中的[F01 turn-1](../../docs/evidence/f01/queue-live/turn-1.json)真实历史SDK init/session资源含3个managed plugins及design/doctor/plugin-authoring skills，零扩展gate不满足。当前未重新探测，不为此开query，不绕组织配置；按GO既有预算/配置流程解除后才考虑单次执行。准备验收与原生就绪分开，不把后者写成已完成。
 
 07:01 UTC：Root独立APPROVED decfcee，P2 CLOSED，仅0query准备；10source/32raw/6dependencies核验，未重跑、未query。片段stage integration，O08-05仍pending且native未就绪，等待Lead限定接收。
+
+07:08 UTC：GO接受在历史3+3managed资源声明下仅授予两图工具；新候选7403b56b98070848c189c2d36663cb89846977be已实现、局部检查并固定，待唯一Root复审。原零扩展门槛被显式新候选替代，但原生当前配置/语义仍unknown，未发permit。O08-04为新候选审查暂open，原decf批准记录保留。
