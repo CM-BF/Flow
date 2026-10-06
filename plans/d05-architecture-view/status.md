@@ -137,3 +137,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06T16:02:28.501687+00:00：本次main e807登记后仅重载自有4320，单次实际GET为165来源，TUI01F live/current/issues[]；[实际回执](../../docs/evidence/d05/tui-cancel-live-receipt.json)。同期产品个人服务、用户tabs未动，10.45秒是这次聚合观察而非性能SLO。
 
 2026-10-06T16:20:03.749698+00:00：WPF-DPERF04真实独立canonical已按D01子片唯一登记，166 sources；三件套/ID唯一/状态解析与人读字段检查通过，源码仍原owner实施/未审。见[dperf04-registration.json](../../docs/evidence/d05/dperf04-registration.json)。当前实际4320仍165，候选发布后一次换载另记；本次不改架构固定snapshot/个人页面或重跑产品。
+
+2026-10-06 16:21 UTC：main65659028登记已在唯一自有4320实际加载，单次GET观察166来源，DPERF04 live/current/issues=[]且关联D01；[实际回执](../../docs/evidence/d05/dperf04-live-receipt.json)。6352ms是本次聚合观察，不作SLO结论。个人端口/用户页不变；本记录复用已采事实，不再次重启或采样。
