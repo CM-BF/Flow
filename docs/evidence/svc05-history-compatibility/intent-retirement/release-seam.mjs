@@ -19,7 +19,10 @@ export function requestFromReceipts(template, baseline, held, authorization) {
 }
 
 export async function observeLegacyIntent(request) {
-  return observeHost((root, baseUrl) => sampleLegacyIntent(request, root, baseUrl));
+  const facts = await observeHost((root, baseUrl) => sampleLegacyIntent(request, root, baseUrl));
+  if (facts.files['config.json'].sha256 !== request.configSha256 || facts.files['state.json'].sha256 !== request.stateSha256)
+    throw Error('FROZEN_INSTALLATION_FILES_CHANGED');
+  return facts;
 }
 /** Same private file sampler as the real observation; it needs no future maintenance identity. */
 export async function sampleLegacyIntent(request, root, baseUrl) {

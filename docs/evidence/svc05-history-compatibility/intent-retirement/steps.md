@@ -1,11 +1,13 @@
-# 退役接入原发布：固定步骤，尚未执行
+# 单次退役接入原发布：固定输入，未执行
 
-输入 source=af51；普通 idle gate、两个失败窗口、原 report/transfer/refresh/resume/publish 工具不改。所有步骤用原外层 supervise、独占 intent/result 和新串行窗口；drain 起累计≤15min，失败未知立即停后继。GO 经 Lead 已批准这一旧 intent 的新语义，**实现/独审与窗口条件仍未自动满足**。
+实际输入在 [execution-inputs.json](execution-inputs.json)，不是许可或自动执行器。原20步只替换前置读取/比较，插入4个显式步骤；材料、refresh、resume、publish仍是原工具。每步必须上一步明确成功且其原始结果已持久化；unknown停止，不改参重试。
 
-1. 新现场完整身份、源、资源、三报告/产物准入照原流程；退役前基线用既有 center-recovery `snapshot()`（其全表原摘要完整保存），单独绑定精确非空 v1 journal 与原历史文件。它不是普通 idle 通过。`snapshot` 内 362 compatibility 检查用于当前仍运行的旧后台，af51 三报告另按既有材料 gate 核实；不冒充已更新。原 observer 的 idle=false 不改绿。
-2. 既有材料导入/搬运与 maintenance bootstrap 按原顺序、原受审入口进行，持久 drain receipt 后停止计时重置。新 `holdAndStopRunner(request, output)` 复用原 snapshot、维护 hold 命令和 `stopOwnedProcess`，只确认停止旧 runner；center/Web 不发信号。请求固定同 operation/drainVersion，原 local holdKey；不得换 key 重投。before/intent/hold receipt 先持久，停止未知只保留，不重启或继续退役。
-3. 根据已存 before/hold/stop 结果生成新的0600 request，精确 root/runner/namespace/journal devino、原 hash、config/state hash、四历史文件、holdVersion/op、单次 retirementId。它是新审计输入；原 inFlight UUID 不上 wire，也不进入公开输出。调用 `operator.mjs --retire-once` 的唯一执行入口；实际命令须经既有 Python `supervise()`，不得直接无总限运行。当前未生成个人 request 或 permit。
-4. 退役结果为 retired 且独立只读复核原件/新字节/审计、hold 仍成立后，可直接调用既有 `maintenance refresh`：源码支持 maintenance + runner stopped，其他进程必须已确认；它沿原 operation 停 center/Web 并启动固定 af51 三角色，生成 ready-paused。**不先伪装 runner running，也不单独 resume**。未知时不走 refresh。
-5. 更新后保存普通 observer 的新事实与整个保留 checkpoint。原前置旧 journal 未决→新 idle 是此次唯一额外允许字段差异，私有备份/审计目录是明确新增；四个历史 result 与其余旧字段保持。四维护列+新增维护audit、预声明 queue_checked_at 仍按原口径；不同 baseline shape 不得直接交旧 compare 凑绿，先通过已保存的逐表/逐文件映射核对，原 raw 永久保留。然后同 op 一次显式 resume，最后独立 Web CAS d629/v3。
+1. 新窗口先固化review、源和全部绑定、授权引用、新exclusive RUN与step intents。建立空hold-stop/retirement证据子目录。01/07/10实际调用 `observeLegacyIntent(frozen-input-template)`→`observeHost`；没有手工DTO转换。仅原件路径/hash/schema和四历史允许此只读采样，返回idle=false，不需要虚构未来hold编号。普通observe仍使用严格idle sampler。
+2. 02/08/11用同一个 `compareLegacyRelease` 检查所有原身份/数据/审计/材料/版本规则。preflight/materials/drained只接受完全相同的旧journal。模板来源是已保存精确诊断及旧四历史，不依据不匹配现场重基准。
+3. 03–06原材料导入/搬运后，09原bootstrap发drain。**09开始前** `window.run_step(..., begin_drain=True)` exclusive写一次wall/monotonic时标并fsync；写入耗时计入900秒。09及全部10–20/新增步骤都使用同一时标，剩余不足2秒不启动；每步工作上限min(118,remaining−2)，退出2秒。时钟回退、身份错误、deadline、未知均停止后继。标准supervisor只终止operator PID，不信号服务组；不以保存报告阻塞终止。
+4. 11a复用当前snapshot作为单次hold前的额外全库事实；与基线DTO不混用。它要求同runner/draining16/op/全库无工作，沿原holdKey及同runner锁写hold17，保存receipt；然后原 `stopOwnedProcess` 仅停止旧runner并确认整组stopped，其他角色无信号。源码证明/后续核心双确认分别保留，不把本轮纯检查说成真实PG锁序验证。
+5. 11b `requestFromReceipts` 只取新definite hold operationId与授权引用；所有原文件hash/devino/config/state/四历史从固定template带入，版本精确17，不能从不匹配现场重算。11c先durable reservation，在host lock+同runner DB锁下再次确认唯一安装/marker/全部pending/旧runner停止，再原件0600备份+file/dirsync、持久意图、固定新字节、二次确认、精确rename+dirsync、审计。未记录原ACK、不重放claim。
+6. 11d只读核原件与固定新字节、private audit五文件stat/hash并持久checkpoint。仅结果retired且当前retired-bytes可继续；最后审计unknown只能保留/定位，不据字节相同自动重写。私有原件不复制公开证据正文。
+7. 12原refresh源码明确允许maintenance+旧runner stopped，沿原持久op换固定af51三个角色，不虚构runner running。13/16/19恢复普通严格idle observer。14/17/20仍用显式比较器：仅journal80→46B+独立私有审计是此次允许增量，四历史/其余旧字段逐值摘要保持；原nativeIdle=false检查保存在report，不伪改raw。旧runner四维护列+新增维护audit、预声明queue_checked_at按旧口径。原15 resume一次、18独立WebCAS d629/v3。
 
-边界：当前新 host Adapter 只源码/语法核验；真实hold/DB锁序/runnerstop/全部pending确认和本次退役尚未执行。新增 private audit 的 byte/hash 判定只定位 unknown，不构成原ACK，也不批准自动重写。这里没有第二维护状态机或自动重试循环；任何映射/检查缺证据就停止在 maintenance，由 Lead 核定。
+执行前必须Lead固定原Flow checkout af51并给窗口。当前仅准备；未创建个人request/permit、未drain/stop/写journal。实际操作、PG锁/停止/新版本健康仍NOT_RUN。普通idle/旧比较规则原文不改；新增private seams只有这次已批准语义。
