@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-06T19:44:48.059715+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review",
+  "target": "d66bdc41f6f39fbeca93e1bf752bf2729526936e",
+  "observedDelivery": "b0e2cde65859d7be4dcea91ba03af594c75aca80",
+  "conclusion": "APPROVED_PREPARATION",
+  "findings": [],
+  "closedFinding": {
+    "id": "CENTER-RECOVERY-P2-01",
+    "state": "CLOSED",
+    "previousTarget": "0a9f5a02fd297366900f497bc6679109ce23626c",
+    "reason": "External Python subprocess supervision starts before the complete Node operator, so both initial reservation and final fsync remain under its deadline. Timeout kills only the still-owned unreaped operator child PID and waits at most2s; it never signals the detached center, runner, or Web groups. Termination does not wait for any checkpoint write. Removed the misleading internal timer and retained initial durable unknown reservation.",
+    "scope": "118s operator work plus2s confirmation under normal OS scheduling. Uninterruptible OS stalls and report persistence failure remain explicitly unknown; no OS-wide hard-stop claim."
+  },
+  "readScope": [
+    "Full new supervise.py and supervision_test.py",
+    "Complete operator delta against originally reviewed0a9f target",
+    "deadline proposal/runtime bindings and README delta",
+    "Original2-case stdout/stderr/reservation/result only; no repeated execution"
+  ],
+  "bindings": {
+    "manifest": "docs/evidence/svc05-history-compatibility/center-recovery/deadline-manifest.json",
+    "manifestSha256": "a82a5fe7eb1062a66abcff71db18e9311e2130f1f11794a5e758f53763810f76",
+    "ownEntries": 13,
+    "runtimeEntries": 40,
+    "report": "/tmp/flow-personal-center-recovery-deadline-review-bindings.json",
+    "reportSha256": "d0ba7f96a9d71368df071ea4cd68d74a5a14acd038d267f72acf18bca9f11650",
+    "mismatches": [],
+    "scopeNote": "11 original-repository runtime source entries are compared with expected362 Git blobs; no claim that the current checkout is already362. Actual facts donor/relative helpers and supervisor interpreter now explicitly included."
+  },
+  "validationObserved": {
+    "selected": 2,
+    "passed": 2,
+    "exit": 0,
+    "engineMs": 346,
+    "outerMs": 423,
+    "rawBytes": 519,
+    "blockedPipeWrite": {
+      "operatorPid": 56050,
+      "operatorExit": -9,
+      "elapsedMs": 303,
+      "deadlineExceeded": true,
+      "operatorStopped": true,
+      "detachedStandInSurvived": true,
+      "standInPid": 56108,
+      "testOwnedCleanup": "group-absent"
+    },
+    "normalReturn": "passed",
+    "meaning": "Actual no-service stand-ins validate external deadline and PID-only stop ownership; they do not demonstrate personal center recovery."
+  },
+  "preservedOriginalConclusions": [
+    "The rest of original whole-source independent review remains: one exact private center spawn, current original identity/source gates, no full restart/maintenance command/provider/task submit, only state.processes.center mutation.",
+    "Before and after preservation compares all64 flow table digests, original private state outside center, runner/Web identities and both Web artifacts; changes remain unknown rather than silently excluded.",
+    "Actual private stderr remains discarded, so original center exit1 cause is still unknown.",
+    "No automatic retry, rollback, or resource deletion. Deadline may leave operation.lock and new/pending center state, which must remain unknown."
+  ],
+  "operationState": "NOT_RUN; authorization.json absent at review. Lead owns exact362 checkout window and one-shot operational authorization; this review does not execute it.",
+  "counts": {
+    "reviewerTests": 0,
+    "reviewerPG": 0,
+    "reviewerPersonalHttp": 0,
+    "reviewerProvider": 0,
+    "reviewerServiceActions": 0,
+    "reviewerProjectWrites": 0
+  },
+  "limits": [
+    "Original facts-before snapshot19:34 is historical; the eventual operator must pass its fresh-under-lock gates.",
+    "This is a local operator preparation approval, not source362 personal recovery success or a new backend release approval.",
+    "No hermetic TSX runtime claim after restoring the development checkout.",
+    "No new migrations, registration, credential rotation, task or provider permissions are granted."
+  ]
+}

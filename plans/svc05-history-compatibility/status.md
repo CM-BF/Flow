@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:43 UTC；中心恢复期限P2已定向修复待复审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:46 UTC；中心单次恢复ready，操作证据待独审 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,9 +19,9 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 网页和执行器仍在运行；中心退出后，已准备仅恢复原版本中心的受控步骤，原数据与身份已只读核对。 |
-| 下一可用交付 | 独立审查后在固定版本窗口恢复中心；新后台与保留页面兼容仍由后继验证。 |
-| 当前阻塞 | ACTIVE: 中心当前无监听；受控恢复步骤待独立审查和固定版本操作窗口。 |
+| 当前产出 | 原版本中心已恢复，网页和执行器持续运行；原身份、会话、任务和页面版本保留。 |
+| 下一可用交付 | 收口本次恢复证据；继续保留页面与新后台的兼容验证后再准备版本发布。 |
+| 当前阻塞 | ACTIVE: 新后台发布仍待两个保留页面的对应兼容报告；原版本中心恢复已完成。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，源码/RELEASE03限定批准保留；同版本恢复796d由Execution Lead独立APPROVED，0重跑 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
@@ -34,7 +34,7 @@
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
 | SVC05H01-05 | pending | Execution Lead窗口 / owner | 新版本发布仍待retained报告；同版本恢复不替代 |
-| SVC05H01-06 | in-progress | assignment_review | [中心恢复准备](../../docs/evidence/svc05-history-compatibility/center-recovery/README.md)，尚未执行 |
+| SVC05H01-06 | in-progress | assignment_review | 已单次ready/保留检查全true，操作证据待独审；原期限P2已关闭 |
 
 ## Dashboard
 
@@ -67,3 +67,5 @@
 2026-10-06 19:38 UTC：新增已授权同版本中心恢复准备，原v15/64表只读基线已持久；仅own plan/evidence，产品源码未动。原网页恢复与R01两次失败保持；新operator未获执行窗口、未启动服务。
 
 2026-10-06 19:43 UTC：中心operator独审仅P2期限，原回执保留；外层标准进程监督已固定，2/2无服务定向检查通过，阻塞写不会推迟operator停止且不向服务发信号。个人恢复仍NOT_RUN；等待唯一复审/固定窗口。
+
+2026-10-06 19:46 UTC：中心恢复审批svc05h-center-20261006-1945一次执行exit0/2135ms、新74763，八组保留检查true、lock释放；0operator模型/任务/其他role signal。64flow全列摘要/27迁移/runner15均同，保留原exit1与未知根因。见[operation-analysis](../../docs/evidence/svc05-history-compatibility/center-recovery/operation-analysis.json)；不把本次同版本恢复称新版本发布。

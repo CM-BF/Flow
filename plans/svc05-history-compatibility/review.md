@@ -65,3 +65,7 @@ main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；
 ### 中心恢复期限P2
 
 原独审REQUEST_CHANGES与bindings已归档center-recovery/initial-*。原内部110s回调等fsync后退出且final写在clearTimer后，不能兑现总期限。外层Python subprocess监督从operator启动覆盖reservation至final，超时只kill该child PID。2无服务checks通过（阻塞pipe write与正常返回），真实个人恢复未跑。当前等待native_center_owner唯一增量复审，不自批。
+
+### 期限P2复审及唯一实际恢复
+
+独立native_center_owner APPROVED_PREPARATION source d66bdc41f6f39fbeca93e1bf752bf2729526936e，53绑定与2纯检查核实，P2 CLOSED，0重跑。原报告已归档deadline-independent-review.json。其后Lead明确一次窗口，实际run1945 exit0/2135ms/newcenter74763/8checks全true；操作原始证据等待独立忠实性审查，不作者自批。原center退出原因未知、无新版本发布。

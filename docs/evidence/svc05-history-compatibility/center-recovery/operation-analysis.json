@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-06 19:46 UTC",
+  "operation": "svc05h-center-20261006-1945",
+  "outcome": "ready",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "operatorSource": "d66bdc41f6f39fbeca93e1bf752bf2729526936e",
+  "elapsedMs": 2135,
+  "supervisorExit": 0,
+  "operatorExit": 0,
+  "operatorPid": 74145,
+  "operatorStopped": true,
+  "newCenter": {
+    "pid": 74763,
+    "group": 74763
+  },
+  "spawnCalls": 1,
+  "checks": {
+    "source": true,
+    "identity": true,
+    "privateFiles": true,
+    "stateExceptCenter": true,
+    "runnerAndWeb": true,
+    "retained": true,
+    "database": true,
+    "newCenter": true
+  },
+  "database": {
+    "tableDigestsExactlyEqual": true,
+    "flowTables": 64,
+    "markerMatched": true,
+    "runnerIdentityMatched": true,
+    "maintenance": [
+      {
+        "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "maintenance_state": "accepting",
+        "maintenance_version": 15,
+        "maintenance_operation_id": null
+      }
+    ],
+    "tasks": 4,
+    "allSucceeded": true,
+    "unfinished": 0,
+    "uncertain": 0,
+    "queue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ],
+    "migrationVersions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "excludedFlowColumns": [],
+    "notComparedSchemas": [
+      "pgboss/internal PostgreSQL"
+    ]
+  },
+  "retained": {
+    "version": 2,
+    "currentArtifact": null,
+    "count": 2,
+    "actualReportBackend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "pointerHistoricalBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+  },
+  "operatorTaskCommands": 0,
+  "operatorProviderQueries": 0,
+  "serviceSignals": 0,
+  "afterRunProbes": "Only operation.lock lstat; no new HTTP or SQL after fixed operator complete.",
+  "limits": [
+    "Same version center restoration only; no af51/d629 publish.",
+    "old center exit1 cause remains unknown; no lost stderr invented.",
+    "Whole64flow-table row hash preservation at before/after instants; not a guarantee against future user work or pg-boss internal writes.",
+    "health+owned listener is readiness, not task execution/semantic or model test.",
+    "Known TSX development-source restoration boundary remains; no immutable runtime closure claim."
+  ]
+}
