@@ -16,7 +16,7 @@
 | 检查状态 | PASSED；3实际App组合 + 旧24→27迁移/历史/重启/公开读取，0provider；[summary](../../docs/evidence/svc05/summary.json) |
 | 已集成main状态 / HEAD | 本片未集成；基线已核main/origin362af3 |
 | 实现目标 | dc8e25f141a1f52964056df823b988a5fe24cbea |
-| 实现范围 | experiments/personal-current-release, plans/svc05-current-release, docs/evidence/svc05 |
+| 实现范围 | experiments/personal-current-release |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 保留网页及新网页已在隔离环境连接新版后台通过基本聊天与恢复验证 |
