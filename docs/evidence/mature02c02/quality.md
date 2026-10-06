@@ -25,3 +25,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-06 21:43:12 UTC: 清理设计复核：未知CREATE ACK即便某次查询暂未见DB也不宣称已回收；持久最终收据标明before-final-receipt，最终写ACK/末时钟仅stdout独立delivery，避免自指矛盾。单入口沿既有S01 subprocess/process-group方法，不通用化、不重试；源码尚待独审。资源恢复后的唯一focused noEmit实际0，0PG/native。
 
 2026-10-06 21:49:04 UTC：固定封套独审发现依赖请求schema差异：17donor含package指纹、3本树条目不含；原provision请求保持原字节。显式kind分支改从302 source manifest取本树package.json固定指纹，未知kind拒绝。仅输入解析4/4（20合法bindings与3反例）、0subprocess/PG；不重跑types/8用例，不把此当外封套实际验证。
+
+2026-10-06 21:58:02 UTC：clean-code安全点仅核stop_group错误单调性：第一次unknown立即返回，不用后续absent抹去未知；保留有限signals/observations及显式signal errno。4项纯注入反例覆盖unknown→absent、present→absent、signal EPERM和观察EPERM；0subprocess/真实signal/PG。复用原函数，无新监督器、不重跑既有types/8行为。reporter文档改为实际json，旧raw/manifest等待独立新绑定、不覆盖历史。

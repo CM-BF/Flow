@@ -1,10 +1,10 @@
 # C02 public task API validation — NOT_OPEN
 
-实现413420a，测试/生命周期固定3ccae21a。6个用例经真实公开task HTTP、原runRunner及两个独立注入transport验收，0真实Codex/SDK/provider。外部只运行一个固定Vitest进程组，无通用参数平台，工作输入/claim/20link/输出absence/resource失败立即停止。当前仅源码准备；最终focused strict于21:41:58 UTC实际exit0，且外部单worker记录入口未审，PG_PREPARATION_NOT_APPROVED，不能自动启动。
+实现413420a，测试/生命周期固定3ccae21a。6个待运行用例将经真实公开task HTTP、原runRunner及两个独立注入transport验收，0真实Codex/SDK/provider。外部只运行一个固定Vitest进程组，无通用参数平台，工作输入/claim/20link/输出absence/resource失败立即停止。当前仅源码准备；最终focused strict于21:41:58 UTC实际exit0，且外部单worker记录入口未审，PG_PREPARATION_NOT_APPROVED，不能自动启动。
 
 覆盖：旧native-v1在LIMIT前排除host-owned（含sentinel/cursor/旧digest）；旧resume明确unsupported；原runner/pin/session/fence；两次执行读取同一host-owned文件与typed final；SSE observer断开不停止runner。注入storage证明不替代真实native恢复、生产loader、新目录或完整conversation/Web/TUI。
 
-拟单次入口：固定Node24，主树既有Vitest4绝对入口，`run --config docs/evidence/mature02c02/vitest.pg.config.mjs --configLoader native --reporter=verbose`。精确选择唯一 `apps/server/src/codex-continuity.test.ts`，1worker/不安装；禁止默认全库。执行前必须得到独立共享PG窗口、fresh claim/HEAD/输入hash/资源准入及全新输出namespace。当前资源HOLD不重采等待授权。
+拟单次入口：固定Node24，主树既有Vitest4绝对入口，`run --config docs/evidence/mature02c02/vitest.pg.config.mjs --configLoader native --reporter=json --outputFile=<new-window-prefix>.vitest.json`。精确选择唯一 `apps/server/src/codex-continuity.test.ts`，1worker/不安装；禁止默认全库。执行前必须得到独立共享PG窗口、fresh claim/HEAD/输入hash/资源准入及全新输出namespace。当前资源HOLD不重采等待授权。
 
 资源提案（尚未执行）：fresh free≥1GiB+128MiB；工作60s+fixture清理最多50s+外部最多10s，完整case内finally等待runner.done、afterAll、外部worker和stdio实际退出都受同一外部120s总限，内层共享绝对workUntil/cleanupUntil。单个随机专库、动态127.0.0.1 listener、≤256收到的HTTP请求、≤8任务；连接配置上界14=admin1+fixture2+server8+pg-boss3，不冒称实际同时峰值。DB末次完整logical样本≤64MiB（非硬配额/未观测峰值未知），自有TMP/cache/持久fixture总≤32MiB，stdout/stderr raw≤32KiB，四个有限fixture收据各≤8KiB，人工准备/结果证据另≤128KiB。源码输入文件不计新增运行数据，均已有定量manifest；不触碰其他数据库/缓存/个人配置。
 

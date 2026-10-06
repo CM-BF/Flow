@@ -49,16 +49,17 @@ def group_state(pid):
 
 
 def stop_group(child):
-    actions = []
+    actions, observations = [], []
     for action in [signal.SIGTERM, signal.SIGKILL]:
-        state = group_state(child.pid)
-        if state != 'present': break
+        state = group_state(child.pid); observations.append(state)
+        if state != 'present': return {'state': state, 'signals': actions, 'observations': observations}
         try: os.killpg(child.pid, action); actions.append(int(action))
-        except ProcessLookupError: break
-        except OSError: return {'state': 'unknown', 'signals': actions}
+        except ProcessLookupError: return {'state': 'absent', 'signals': actions, 'observations': observations}
+        except OSError as error: return {'state': 'unknown', 'signals': actions, 'observations': observations, 'signalErrno': error.errno}
         try: child.wait(timeout=.5)
         except subprocess.TimeoutExpired: pass
-    return {'state': group_state(child.pid), 'signals': actions}
+    state = group_state(child.pid); observations.append(state)
+    return {'state': state, 'signals': actions, 'observations': observations}
 
 
 def temp_sample(root, identity, deadline):
