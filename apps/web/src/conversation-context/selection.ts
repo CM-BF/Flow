@@ -2,7 +2,7 @@ import { conversationContextSelectionSchema, knowledgeCitationSchema, type Knowl
 
 export type Immutable<T> = T extends readonly (infer Item)[] ? readonly Immutable<Item>[] : T extends object ? { readonly [Key in keyof T]: Immutable<T[Key]> } : T;
 export type FrozenCitation = Immutable<KnowledgeCitation>;
-export const CONTEXT_BUDGET = Object.freeze({ references: 4, selectedBytes: 8192, hits: 20, queryBytes: 256, bodyBytes: 4096, cacheEntries: 8, bodyRequests: 2 });
+export const CONTEXT_BUDGET = Object.freeze({ references: 4, selectedBytes: 8192, hits: 20, queryBytes: 256, bodyBytes: 4096, cacheEntries: 8, bodyRequests: 2, requestTimeoutMs: 15000 });
 export const utf8Length = (value: string) => new TextEncoder().encode(value).length;
 export const citationKey = (ref: FrozenCitation) => JSON.stringify([ref.projectId, ref.sourceId, ref.version, ref.contentDigest, ref.locator.kind, ref.locator.start, ref.locator.end]);
 export const citationBytes = (ref: FrozenCitation) => ref.locator.end - ref.locator.start;

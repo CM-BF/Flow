@@ -76,6 +76,29 @@ function readBody(value: KnowledgeResolved, citation: FrozenCitation): Immutable
   return Object.freeze({ citation: returned, text: value.text, isCurrent: value.isCurrent, currentVersion: value.currentVersion });
 }
 
+/** Settle local state even when a trusted adapter ignores AbortSignal. */
+function readWithDeadline<T>(controller: AbortController, read: () => Promise<T>): Promise<T> {
+  return new Promise<T>((resolve, reject) => {
+    let settled = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const finish = (result: { ok: true; value: T } | { ok: false; error: unknown }) => {
+      if (settled) return;
+      settled = true; clearTimeout(timer); controller.signal.removeEventListener("abort", aborted);
+      if (result.ok) resolve(result.value); else reject(result.error);
+    };
+    const aborted = () => finish({ ok: false, error: controller.signal.reason ?? Error("Knowledge read cancelled.") });
+    if (controller.signal.aborted) { aborted(); return; }
+    controller.signal.addEventListener("abort", aborted, { once: true });
+    timer = setTimeout(() => controller.abort(new DOMException("Knowledge read timed out.", "TimeoutError")), CONTEXT_BUDGET.requestTimeoutMs);
+    // Install both settlement handlers before calling the port; late throws/rejections stay handled.
+    Promise.resolve().then(() => {
+      if (controller.signal.aborted) throw controller.signal.reason;
+      return read();
+    }).then(value => finish({ ok: true, value }), error => finish({ ok: false, error }));
+  });
+}
+const timedOut = (error: unknown) => error instanceof Error && error.name === "TimeoutError";
+
 /** One host-authorized project/view/connection. No polling or automatic reads, including resume. */
 export function createContextSelection(options: { binding: ContextBinding; readiness: ContextReadiness; port: ContextReadPort }): ContextSelection {
   const binding = Object.freeze({ ...options.binding, projectId: idSchema.parse(options.binding.projectId) });
@@ -132,12 +155,14 @@ export function createContextSelection(options: { binding: ContextBinding; readi
       searchRequest = controller;
       publish({ loading: true, error: null });
       try {
-        const result = await port.search(parsed, controller.signal);
+        const result = await readWithDeadline(controller, () => port.search(parsed, controller.signal));
         if (disposed || currentEpoch !== epoch || searchRequest !== controller) return;
         const page = readSearch(result, binding.projectId);
         publish({ ...page, searched: true, query, loading: false, error: null });
-      } catch {
-        if (!disposed && currentEpoch === epoch && searchRequest === controller) publish({ loading: false, error: "Knowledge search failed. Your previous results and selection are kept. Retry the search." });
+      } catch (error) {
+        if (!disposed && currentEpoch === epoch && searchRequest === controller) publish({ loading: false, error: timedOut(error)
+          ? "Knowledge search timed out. Your previous results and selection are kept. Retry the search."
+          : "Knowledge search failed. Your previous results and selection are kept. Retry the search." });
       } finally { if (searchRequest === controller) searchRequest = undefined; }
     },
     add(ref) {
@@ -172,11 +197,13 @@ export function createContextSelection(options: { binding: ContextBinding; readi
       const promise = Promise.resolve().then(async () => {
         try {
           if (controller.signal.aborted) return;
-          const result = await port.resolve(citation, controller.signal);
+          const result = await readWithDeadline(controller, () => port.resolve(citation, controller.signal));
           if (disposed || currentEpoch !== epoch || controller.signal.aborted) return;
           updateBody(key, { data: readBody(result, citation), observedAt: new Date().toISOString(), loading: false, error: null });
-        } catch {
-          if (!disposed && currentEpoch === epoch && !controller.signal.aborted) updateBody(key, { ...cached, loading: false, error: "Knowledge content could not be verified against this reference. Retry the read." });
+        } catch (error) {
+          if (!disposed && currentEpoch === epoch && bodyRequests.get(key)?.controller === controller) updateBody(key, { ...cached, loading: false, error: timedOut(error)
+            ? "Knowledge content timed out. Your cached content is kept. Retry the read."
+            : "Knowledge content could not be verified against this reference. Retry the read." });
         } finally { if (bodyRequests.get(key)?.controller === controller) bodyRequests.delete(key); }
       });
       bodyRequests.set(key, { controller, promise });
