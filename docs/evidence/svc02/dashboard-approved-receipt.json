@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-10-06T05:29:37.925Z",
+  "id": "SVC02",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T05:28:09.509Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/plans/svc02-preview-refresh/status.md",
+    "syncedAt": "2026-10-06T05:29:37.925Z",
+    "stale": false,
+    "ageHours": 0.0358125
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/preview-refresh",
+    "head": "129cc7751900809e321080d770c8a55710954ab1",
+    "dirty": true,
+    "changedFiles": 4,
+    "observedAt": "2026-10-06T05:29:38.380Z"
+  },
+  "progress": {
+    "completed": 3,
+    "total": 4
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+    "proof": {
+      "target": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+      "head": "129cc7751900809e321080d770c8a55710954ab1",
+      "scopes": [
+        "packages/contracts/src/runner-maintenance.ts",
+        "apps/server/src/runner-maintenance",
+        "apps/server/src/runners.ts",
+        "packages/storage/migrations/016-runner-maintenance.sql",
+        "tools/personal-preview"
+      ],
+      "observedAt": "2026-10-06T05:29:38.398Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/svc02/README.md",
+        "docs/evidence/svc02/dashboard-receipt.json",
+        "docs/evidence/svc02/manifest.json",
+        "docs/evidence/svc02/typecheck-delivery.txt",
+        "plans/svc02-preview-refresh/plan.md",
+        "plans/svc02-preview-refresh/review.md",
+        "plans/svc02-preview-refresh/status.md",
+        "docs/evidence/svc02/live-readonly-facts.json"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+    "head": "129cc7751900809e321080d770c8a55710954ab1",
+    "scopes": [
+      "packages/contracts/src/runner-maintenance.ts",
+      "apps/server/src/runner-maintenance",
+      "apps/server/src/runners.ts",
+      "packages/storage/migrations/016-runner-maintenance.sql",
+      "tools/personal-preview"
+    ],
+    "observedAt": "2026-10-06T05:29:38.398Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/svc02/README.md",
+      "docs/evidence/svc02/dashboard-receipt.json",
+      "docs/evidence/svc02/manifest.json",
+      "docs/evidence/svc02/typecheck-delivery.txt",
+      "plans/svc02-preview-refresh/plan.md",
+      "plans/svc02-preview-refresh/review.md",
+      "plans/svc02-preview-refresh/status.md",
+      "docs/evidence/svc02/live-readonly-facts.json"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": []
+}
