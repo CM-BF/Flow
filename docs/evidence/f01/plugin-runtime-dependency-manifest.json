@@ -1,0 +1,60 @@
+{
+  "target": "f63502e26d44f33a86a01e98761b22aefbd5fa60",
+  "input": "5346bd83:packages/plugin-runtime/package.json",
+  "entries": [
+    {
+      "role": "source",
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "role": "source",
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "role": "input",
+      "path": "packages/plugin-runtime/package.json",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/f01/plugin-runtime-lock.txt",
+      "bytes": 253,
+      "sha256": "491194c63960175b1deb3c9e7c2c4a8a7368ddaa6884e3636a3ed51bce1ba3a2"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/f01/plugin-runtime-install.txt",
+      "bytes": 118,
+      "sha256": "8962efa45aea9c7724377b768437a1042c2de6d8eeb0c73ab632e7f7639c2cff"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/f01/plugin-runtime-resolution.json",
+      "bytes": 903,
+      "sha256": "9726dd0fc859f5f008be0b6d55c25af0dccb454907a7fb491f01fc830eb0803f"
+    }
+  ],
+  "checks": {
+    "offlineLockfileOnly": 0,
+    "offlineFrozenIgnoreScripts": 0,
+    "actualResolution": 0,
+    "diffCheck": 0
+  },
+  "limits": [
+    "Only importers +explicit workspace dependencies changed; package resolution blocks unchanged",
+    "tar7.5.22 metadata license BlueOak-1.0.0, not assumed MIT",
+    "No leaf source/runtime loader validation, no personal install/service/provider"
+  ],
+  "recordedAt": "2026-10-06T12:56:36.687622+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-06T13:33:02.909103+00:00",
+  "mainInput": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+  "domain": "bf33781450d2a5036e026ace03c1682e4d7f0f17",
+  "domainMetadata": "845294419b466f212077f86f1b3a5ed77b2f6374",
+  "dependencies": "f63502e26d44f33a86a01e98761b22aefbd5fa60",
+  "independentReview": "Mika APPROVED per leaf-integration-ready.json, including 3 dependency paths",
+  "sourceComparison": "plugin-leaf-source-comparison.json",
+  "checks": {
+    "offlineFrozenIgnoreScripts": 0,
+    "resolutionStep": "skipped, already up to date",
+    "actualPublicImportTwoConsumers": 0,
+    "rootTypes": 0,
+    "domainReruns": 0,
+    "providerQueries": 0,
+    "personalOperations": 0
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/i02/plugin-leaf-install.txt",
+      "bytes": 118,
+      "sha256": "68cae1f1ba50ead21b8f53590326c5ffdfd8d7ef570250a557b9039c0708fc74"
+    },
+    {
+      "path": "docs/evidence/i02/plugin-leaf-root-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/plugin-leaf-resolution.json",
+      "bytes": 490,
+      "sha256": "9a4712367f3a9079926da75b5cd7870aa8f275ebae2195b76cb45ec2eb0a67d3"
+    }
+  ],
+  "limits": [
+    "self-owned static material and loader, not complete public enable/binding lifecycle",
+    "old runtime 362/v15 and Web8d8/v2 unchanged",
+    "029 reserved for X01 center material operations, not yet implemented/mounted"
+  ]
+}

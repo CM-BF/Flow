@@ -1,0 +1,272 @@
+{
+  "implementationTarget": "2d20e35ca0019854e102cf051252675eb3f16da6",
+  "tracerBase": "673c3b8e68089cf87844c9ec79b873078ecbc83c",
+  "controlledDependencyBase": "1c93c102",
+  "fixedDependencyInput": "f63502e26d44f33a86a01e98761b22aefbd5fa60",
+  "reviewState": "NOT_STARTED",
+  "source": [
+    {
+      "path": "packages/plugin-runtime/package.json",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "bytes": 17371,
+      "sha256": "1f2b1e90a8e5a14167cfd0cd9ad0c36fa119993903aa41fee4a176f478dabed6"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.test.ts",
+      "bytes": 15966,
+      "sha256": "c3553d0bdc657e37328377d6506e21711fad15215b4582c0ff8135176c8ff4bd"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 5834,
+      "sha256": "e0e8f276fdc217f889ca9dc2464f9abca0b32a210a84e9fdaf48f99a2c58445c"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.test.ts",
+      "bytes": 12077,
+      "sha256": "abd442fb9eec3fb50ad235158611b24e1d9441c154d5881c597639b3050d13e6"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/package.json",
+      "bytes": 102,
+      "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/index.mjs",
+      "bytes": 155,
+      "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/flow-plugin.json",
+      "bytes": 93,
+      "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/x01/leaf-behaviors-expanded.txt",
+      "bytes": 390,
+      "sha256": "094a2a24406a1c42da64ab0946c9ea00cadf3f6badb7620e39392736b648742d"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-final-strict.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-final-tests.txt",
+      "bytes": 390,
+      "sha256": "61f1819408c7771c8935cd6731cab982dca4368558d56dceabf1ca2b24097adc"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-host-behaviors-first.txt",
+      "bytes": 2557,
+      "sha256": "a786e0c7ddcbe38d16fd12bbb6aa6d8b3f1ef201e3503742474bab68128a7196"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-host-behaviors-green.txt",
+      "bytes": 318,
+      "sha256": "c410b5225adf6250800c8d74ba21e459f93b7d17b17d3327ae18f44811b3722a"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-host-red.txt",
+      "bytes": 1096,
+      "sha256": "7707bf72b55213337ffd0de318cb2c3e996e8fe28faa82617575fa46c5a8394d"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-host-tracer-green.txt",
+      "bytes": 312,
+      "sha256": "a36c91b7860d104fd99dab37ba3ffe70065bbac8c1ce56a9979615bd53a1b670"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-offline-install.txt",
+      "bytes": 778,
+      "sha256": "e588e72530565df62d60654d700aefc7bdb3a85cc4d0a398b643c357fb0c3975"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-store-behaviors-first.txt",
+      "bytes": 4366,
+      "sha256": "8f6a2764ce9f7a0342016f5a820c45b2db80d2ad0fcd54477832e70e7a0c4294"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-store-behaviors-green.txt",
+      "bytes": 331,
+      "sha256": "fc7ac3bb8920219294e017a6d4d78ff0c0af356bc197045d3c09751dccb0e4cb"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-store-first-green.txt",
+      "bytes": 1500,
+      "sha256": "9cb3c35622d34efb4f44599e9df601589e21c2da7d34a24ba9bf6f41be010035"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-store-red.txt",
+      "bytes": 1211,
+      "sha256": "999da234992e7c472f9a830e52dd33497a36169236329bc067ec33ebefa11a97"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-store-tracer-green.txt",
+      "bytes": 325,
+      "sha256": "ffdddb4391e1b81bf3df9f6ebf8a9445b8727571630fe333675635d326b3166e"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-strict-expanded.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-strict-first.txt",
+      "bytes": 365,
+      "sha256": "de8c92be723d97e0bebd314f673bccd4c53391c4906e10cdd317f21292205c00"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-strict-intermediate.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-terminal-green.txt",
+      "bytes": 354,
+      "sha256": "f40ca132b020b26fe95686ce0875549b2933a0cc661f36c5005f540729edb715"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-terminal-red.txt",
+      "bytes": 8257,
+      "sha256": "899b7d36c807bab3343fba3054a3e49ea2bda5bbe2369796563bf0f3884f1feb"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-store-cleanup.json",
+      "bytes": 3348,
+      "sha256": "194c2808f94ccfb7353836e252849aa361895a98d4d0091337cab1a3458cce59"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-host-cleanup.json",
+      "bytes": 1272,
+      "sha256": "2085fd786a399d167ca8140dabdc28ec51627c02599b210accd040fba6ee0338"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-checks.json",
+      "bytes": 2893,
+      "sha256": "6338de9f25f65558d6795c776f8440857c9bd8b266e578a824e12762b5a466c5"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-effective-tsconfig.json",
+      "bytes": 1563,
+      "sha256": "060bd971f9d4b9abca991c651776adf8af685a9529be8de2f7783f2f4bfef12b"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/x01/leaf-amend-receipt.json",
+      "bytes": 922,
+      "sha256": "3294c3ee48e870fa5c46346ff1b3ae5b9d2e63d97d52ca2abac9057b8a46b353"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-dependency-receipt.json",
+      "bytes": 1770,
+      "sha256": "21e750d92e8e7d783cb8231ff45c80d46f3532ed81bb5b927535d9577c172da7"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-dependency-release.json",
+      "bytes": 567,
+      "sha256": "291667cc8abd3f5aa638316e5aab0603503e07c87decf555137d502c81194b93"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-interface.md",
+      "bytes": 5197,
+      "sha256": "d945c0c536efb7ad03aa390a210285a893d3abdcd6af301a9dc95b47c34f7d13"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-quality.md",
+      "bytes": 4947,
+      "sha256": "8fea990c9f671d3851accde60a4b304800c4e9d89ce7823130c01b7ce040fdbb"
+    },
+    {
+      "path": "docs/evidence/x01/leaf-tsconfig.json",
+      "bytes": 329,
+      "sha256": "33720c852d35ac0b8f37c48d2e30ab5c5a948f5e2adebc0c7ebfb0d052d6f466"
+    }
+  ],
+  "external": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/plugin-runtime/node_modules/tar/package.json",
+      "bytes": 7839,
+      "sha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/plugin-runtime/node_modules/tar/dist/esm/index.min.js",
+      "bytes": 84473,
+      "sha256": "1902a2a0b8cc2771f7e2aa0a855e9215a2d1023b1345fd504d28eb9c420c958c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/plugin-runtime/node_modules/tar/dist/esm/parse.js",
+      "bytes": 24366,
+      "sha256": "6528a15bef7787adca4920eacc3131263c3d4114448a60522923fdfe37a584f6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/plugin-runtime/node_modules/tar/dist/esm/read-entry.js",
+      "bytes": 4111,
+      "sha256": "f6633626a5ea499bd83701aeab9b5f6b813f9ed0e4b26027bf49060ab6b59edd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/packages/plugin-runtime/node_modules/tar/README.md",
+      "bytes": 52349,
+      "sha256": "74be64d36b24666b94a0261bd1b03b789a2c67d189cc02b722b6af161c547365"
+    }
+  ],
+  "checks": {
+    "selected": 53,
+    "passed": 53,
+    "distinct": 53,
+    "store": 39,
+    "host": 14,
+    "strictExit": 0,
+    "rootsRemoved": 54,
+    "pgProviderNetworkActualRunnerLoad": 0
+  },
+  "limits": [
+    "Only shared static material plus self-owned real module host; no center public vertical",
+    "No arbitrary third-party isolation, no ESM unload or permanent-version cache reclamation",
+    "Original X01 full requirements remain open"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "recordedAt": "2026-10-06 13:18:54 UTC",
+  "taskId": "X01",
+  "owner": "architecture_read",
+  "coLead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+  "branch": "codex/plugin-management-plan",
+  "implementationTarget": "bf33781450d2a5036e026ace03c1682e4d7f0f17",
+  "deltaBase": "2d20e35ca0019854e102cf051252675eb3f16da6",
+  "review": {
+    "recordedAt": "2026-10-06 13:18:54 UTC",
+    "reviewedAt": "2026-10-06 13:17:47 UTC",
+    "reviewer": "Mika / gpt-6-astra",
+    "target": "bf33781450d2a5036e026ace03c1682e4d7f0f17",
+    "verdict": "APPROVED",
+    "p1": 0,
+    "p2": 0,
+    "closedFinding": {
+      "target": "2d20e35ca0019854e102cf051252675eb3f16da6",
+      "severity": "P2",
+      "issue": "Zero-length metadata rejection bypass",
+      "status": "CLOSED"
+    },
+    "evidence": "Independent read-only full material/host source and tests plus 59 repo/7 tar Git-WT-SHA-bytes;12 real red/green,65 distinct and strict0; exact cleanup paths absent. No reviewer execution.",
+    "scope": [
+      "Only shared static material plus self-owned real module host; no center public vertical",
+      "No arbitrary third-party isolation, no ESM unload or permanent-version cache reclamation",
+      "Original X01 full requirements remain open"
+    ],
+    "manifest": {
+      "path": "docs/evidence/x01/leaf-meta-manifest.json",
+      "sha256": "62660fbf3c3d27e4f3dd6f83f10ce470916f55333ad2d50a3c16fbe555bf688b"
+    }
+  },
+  "sources": [
+    {
+      "path": "packages/plugin-runtime/package.json",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "bytes": 17555,
+      "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.test.ts",
+      "bytes": 16963,
+      "sha256": "6a8f4f7d72a336a8681f05a819eddca339c1cc93932b7547498018daf4303cc5"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 5834,
+      "sha256": "e0e8f276fdc217f889ca9dc2464f9abca0b32a210a84e9fdaf48f99a2c58445c"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.test.ts",
+      "bytes": 12077,
+      "sha256": "abd442fb9eec3fb50ad235158611b24e1d9441c154d5881c597639b3050d13e6"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/package.json",
+      "bytes": 102,
+      "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/index.mjs",
+      "bytes": 155,
+      "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/flow-plugin.json",
+      "bytes": 93,
+      "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1"
+    }
+  ],
+  "dependencyInput": {
+    "target": "f63502e26d44f33a86a01e98761b22aefbd5fa60",
+    "sourceBindings": [
+      {
+        "path": "apps/server/package.json",
+        "bytes": 552,
+        "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+      },
+      {
+        "path": "apps/runner/package.json",
+        "bytes": 466,
+        "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "bytes": 279163,
+        "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+      }
+    ],
+    "ownerControlledResult": "1c93c10296cea2426a600d214acf48005c4fabeb",
+    "approval": "Mika / gpt-6-astra, 2026-10-06 12:56:50–12:57 UTC, APPROVED dependency wiring only; 3 source/14 lines, 7 bindings, offline/frozen ignore-scripts resolution0",
+    "canonicalF01": "docs/evidence/f01/plugin-runtime-dependency-manifest.json in m2-shared-foundation worktree",
+    "integrationRule": "Use approved source changes while retaining any newer shared owner changes; do not overwrite current shared manifests/lock blindly."
+  },
+  "checks": {
+    "distinct": 65,
+    "store": 51,
+    "host": 14,
+    "strictExit": 0,
+    "cleanedRoots": 66,
+    "retained": [],
+    "newChecksAfterReview": 0
+  },
+  "writing": "Eight source literals frozen; writer6ddedc73 v2 retained until formal MAIN_RECEIPT. Only authorized metadata continues.",
+  "mainStatus": "NOT_INTEGRATED; no formal receipt yet",
+  "limits": [
+    "Only shared static material plus self-owned real module host; no center public vertical",
+    "No arbitrary third-party isolation, no ESM unload or permanent-version cache reclamation",
+    "Original X01 full requirements remain open"
+  ]
+}

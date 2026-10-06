@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "target": "es2023",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "lib": [
+            "es2023",
+            "dom",
+            "dom.iterable"
+        ],
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "jsx": "react-jsx",
+        "types": [
+            "node"
+        ],
+        "allowSyntheticDefaultImports": true,
+        "resolvePackageJsonExports": true,
+        "resolvePackageJsonImports": true,
+        "useDefineForClassFields": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictBuiltinIteratorReturn": true,
+        "alwaysStrict": true,
+        "useUnknownInCatchVariables": true
+    },
+    "files": [
+        "../../../packages/plugin-runtime/src/package-store.ts",
+        "../../../packages/plugin-runtime/src/package-store.test.ts",
+        "../../../apps/runner/src/plugins/host.ts",
+        "../../../apps/runner/src/plugins/host.test.ts"
+    ],
+    "include": [
+        "../../../packages/plugin-runtime/src/package-store.ts",
+        "../../../packages/plugin-runtime/src/package-store.test.ts",
+        "../../../apps/runner/src/plugins/host.ts",
+        "../../../apps/runner/src/plugins/host.test.ts"
+    ],
+    "exclude": [
+        "../../../node_modules"
+    ]
+}

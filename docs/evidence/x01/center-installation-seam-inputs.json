@@ -1,0 +1,86 @@
+{
+  "recordedAt": "2026-10-06 13:20:51 UTC",
+  "fixedMain": "a3e670b906c1b65d586b7730ca19da83109f1dcc",
+  "mainAtObservationClean": true,
+  "entries": [
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "bytes": 4885,
+      "sha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747"
+    },
+    {
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "path": "packages/storage/migrations/008-plugins.sql",
+      "bytes": 3675,
+      "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452"
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "bytes": 6407,
+      "sha256": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5"
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "bytes": 3153,
+      "sha256": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd"
+    },
+    {
+      "path": "apps/server/src/plugins/index.ts",
+      "bytes": 4058,
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/commands.ts",
+      "bytes": 5071,
+      "sha256": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/store.ts",
+      "bytes": 4032,
+      "sha256": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/routes.ts",
+      "bytes": 4593,
+      "sha256": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/host.ts",
+      "bytes": 1829,
+      "sha256": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "bytes": 4464,
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    }
+  ],
+  "approvedLeafTarget": "bf33781450d2a5036e026ace03c1682e4d7f0f17",
+  "ledgerObservation": "2026-10-06T13:18:06.837Z",
+  "writeAuthority": "Only existing X01 claim v2 metadata; all proposed new source and migration paths are unclaimed/unwritten by this owner.",
+  "migration028": "WPF-CONNECTION01 / native_center_owner, active035119fd v1; must not use."
+}

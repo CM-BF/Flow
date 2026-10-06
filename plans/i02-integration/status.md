@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T13:19:31.453782+00:00 / maina3e670b；事件状态与实验固定输入接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T13:33:02.909103+00:00 / mainaae1 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,8 +18,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 减少事件状态的重复数据库写入；容量实验完整源码与原结果可追溯。 |
-| 下一可用交付 | 本批完成主线接收；连接恢复和固定后台发布继续。 |
+| 当前产出 | 插件的有界安装材料与自有加载模块已通过独审和主线依赖核对，正发布本批；个人运行版本保持。 |
+| 下一可用交付 | 接收连接会话生产入口；终端队列控制和插件公开安装命令并行推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -157,3 +157,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T13:16:42.301120+00:00：154来源实际部署回执与OPS磁盘预算本批归档。前文13:11为早期手填批标签，运行时间以13:08:38.883Z原snapshot及commit时间为准；没有在归档时重测产品或变更个人服务。
 
 2026-10-06T13:19:31.453782+00:00：P05 Mika接受独审APPROVED6336，S01完整准备6de/结果64911/observer c259分别已有独立批准。本次精确source组合与4个当前public PG消费者/root+mixed types0见[event-capacity-integration](../../docs/evidence/i02/event-capacity-integration.json)。原容量raw与UNKNOWN口径不改，无新provider/容量窗口/个人服务操作。
+
+2026-10-06T13:33:02.909103+00:00：X01 bf3378 + F01 f635 已审11源逐字接收；offline frozen无重新解析/已up-to-date，server/runner实际公开import与root types0；未重跑65领域检查。见 [集成回执](../../docs/evidence/i02/plugin-leaf-integration.json)。中心029后继另由原owner领取，不提前宣称完整生命周期。

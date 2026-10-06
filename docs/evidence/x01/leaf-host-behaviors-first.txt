@@ -1,0 +1,39 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ❯ apps/runner/src/plugins/host.test.ts (14 tests | 1 failed) 598ms
+   ✓ loads the installed real npm module after authorization and returns bounded text with frozen provenance 54ms
+   ✓ authority and ownership failures block module top-level execution and propagate the original failure 38ms
+   ✓ pre-abort, untrusted digest, and mismatched frozen material never authorize a load 36ms
+   ✓ a frozen invocation detaches configuration before asynchronous authorization 39ms
+   ✓ bounds input and package behavior: input 37ms
+   ✓ bounds input and package behavior: configuration 36ms
+   ✓ bounds input and package behavior: output 41ms
+   ✓ bounds input and package behavior: nontext 40ms
+   ✓ bounds input and package behavior: invoke rejection 38ms
+   ✓ bounds input and package behavior: import rejection 38ms
+   ✓ bounds input and package behavior: host api 40ms
+   × one installation has a stable ESM identity across invocations while a different version remains distinct 84ms
+   ✓ abort after pending import is unknown; it does not claim package termination 39ms
+   ✓ abort after pending invoke is unknown; it does not claim package termination 37ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/plugins/host.test.ts > one installation has a stable ESM identity across invocations while a different version remains distinct
+Error: Cannot find module 'file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-plugin-host-test-TD2xu6/store/3975ed6fdd577459cea8abb2334dccbf0f3b15d18b0f0ed5e8b4444d4c5d978b/package/index.mjs' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/apps/runner/src/plugins/host.test.ts'
+ ❯ apps/runner/src/plugins/host.test.ts:129:12
+    127|     const namespace = await import(installed.entrypoint.href);
+    128|     await rm(join(first.store.root, installed.receipt.installationId),…
+    129|     expect(await import(installed.entrypoint.href)).toBe(namespace);
+       |            ^
+    130|     await expect(invokeInstalledTool(invocation(first))).rejects.toMat…
+    131|   } finally { await rm(first.root, { recursive: true, force: true }); …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 13 passed (14)
+   Start at  06:03:29
+   Duration  746ms (transform 64ms, setup 0ms, import 62ms, tests 598ms, environment 0ms)
+

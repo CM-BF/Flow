@@ -1,0 +1,29 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ❯ packages/plugin-runtime/src/package-store.test.ts (1 test | 1 failed) 10ms
+   × a real npm fixture is installed once and independently read with exact identity after restart 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/plugin-runtime/src/package-store.test.ts > a real npm fixture is installed once and independently read with exact identity after restart
+PackageStoreError: Package store operation failed: INVALID_STORE
+ ❯ fail packages/plugin-runtime/src/package-store.ts:56:47
+     54| const MAX_JSON = 16 * 1024;
+     55| const hash = (bytes: Uint8Array | string) => createHash('sha256').upda…
+     56| const fail = (code: string): never => { throw new PackageStoreError(co…
+       |                                               ^
+     57| const cancelled = (signal?: AbortSignal) => { if (signal?.aborted) fai…
+     58| const isCode = (error: unknown, code: string) => !!error && typeof err…
+ ❯ trustedRoot packages/plugin-runtime/src/package-store.ts:83:109
+ ❯ prepareInstalledPackage packages/plugin-runtime/src/package-store.ts:260:5
+ ❯ packages/plugin-runtime/src/package-store.test.ts:29:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  05:59:08
+   Duration  157ms (transform 38ms, setup 0ms, import 53ms, tests 10ms, environment 0ms)
+
