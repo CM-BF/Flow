@@ -13,7 +13,7 @@ export async function enqueue(pool: Pool, conversationId: string, input: Convers
     requireQueueRevision(conversation.queue_revision, input.expectedQueueRevision);
     const pending = (await client.query('SELECT id FROM flow.conversation_queue WHERE conversation_id=$1 AND state=\'waiting\' LIMIT $2', [conversationId, CONVERSATION_QUEUE_MAX_PENDING])).rowCount!;
     if (pending >= CONVERSATION_QUEUE_MAX_PENDING) throw new HttpError(409, 'conversation_queue_full', 'Cancel a waiting item before adding more.');
-    const inputId = await freezeContext(client, conversationId, conversation.project_id, input.text, input.knowledge);
+    const inputId = await freezeContext(client, conversationId, conversation.project_id, input.text, input.knowledge, input.attachments);
     const queueRevision = await advanceQueueRevision(client, conversationId);
     const row = (await client.query<QueueRow>('INSERT INTO flow.conversation_queue(id,conversation_id,sequence,user_text,conversation_input_id) VALUES($1,$2,$3,$4,$5) RETURNING *', [randomUUID(), conversationId, queueRevision, input.text, inputId])).rows[0]!;
     return { conversationId, queueRevision, item: await contextualItemView(client, row) };

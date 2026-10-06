@@ -241,13 +241,13 @@ function legacyPage(context: ConversationContextReference): ConversationQueuePag
 const clientForFixture = () => new FlowClient({ baseUrl: 'http://fixture.invalid', token: 'public-fixture' });
 
 describe('legacy consumer compatibility using real projection/client/queue code', () => {
-  it('requires new clients to omit attachments entirely when sending plain requests to an old strict center', () => {
+  it('runtime accepts optional empty attachments without injecting them into omitted plain requests', () => {
     const turn = { expectedRevision: 0, mode: 'follow-up', text: 'plain' };
     const queue = { expectedQueueRevision: 0, text: 'plain' };
     expect(conversationTurnSchema.parse(turn)).toEqual(turn);
     expect(conversationQueueEnqueueSchema.parse(queue)).toEqual(queue);
-    expect(conversationTurnSchema.safeParse({ ...turn, attachments: [] }).success).toBe(false);
-    expect(conversationQueueEnqueueSchema.safeParse({ ...queue, attachments: [] }).success).toBe(false);
+    expect(conversationTurnSchema.parse({ ...turn, attachments: [] }).attachments).toEqual([]);
+    expect(conversationQueueEnqueueSchema.parse({ ...queue, attachments: [] }).attachments).toEqual([]);
   });
   it('reads v2 history and waiting metadata without treating it as body or requesting attachment content', async () => {
     const context = v2(); const turn = legacyTurn(context); const initial = legacySnapshot();
