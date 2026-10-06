@@ -137,9 +137,19 @@ try {
         expect(box.top).toBeGreaterThanOrEqual(0); expect(box.bottom).toBeLessThanOrEqual(bounds.height + 1);
         expect(box.composerTop).toBeGreaterThanOrEqual(box.top); expect(box.composerBottom).toBeLessThanOrEqual(box.bottom);
       }
-      await input(3).fill("Lower pane remains editable"); await expect(input(3)).toBeFocused();
-      await expect(input(2)).toHaveValue("Draft beside a stream");
-      measurements.push({ name: "narrow-split-bounds", ...bounds }); await capture("split-dark-390");
+      const groups = page.locator(".flow-chat-groups.split > .flow-chat-group");
+      const upperInput = groups.first().getByRole("textbox", { name: "Message input", exact: true });
+      const lowerInput = groups.last().getByRole("textbox", { name: "Message input", exact: true });
+      const upperDraft = await upperInput.inputValue(); expect(upperDraft).not.toBe(await lowerInput.inputValue());
+      await lowerInput.fill("Lower pane remains editable"); await expect(lowerInput).toBeFocused();
+      await expect(upperInput).toHaveValue(upperDraft);
+      const focusedLower = await groups.last().evaluate(element => {
+        const active = document.activeElement!, pane = element.getBoundingClientRect(), input = active.getBoundingClientRect();
+        return { belongs: element.contains(active), top: input.top - pane.top, bottom: input.bottom - pane.top, paneHeight: pane.height };
+      });
+      expect(focusedLower.belongs).toBe(true); expect(focusedLower.top).toBeGreaterThanOrEqual(0);
+      expect(focusedLower.bottom).toBeLessThanOrEqual(focusedLower.paneHeight);
+      measurements.push({ name: "narrow-split-bounds", ...bounds, focusedLower, upperDraft }); await capture("split-dark-390");
       await page.setViewportSize({ width: 1280, height: 720 });
       await page.getByRole("button", { name: "Close Conversation 3", exact: true }).click();
     });
