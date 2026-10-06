@@ -26,6 +26,8 @@ export type GoalToolRunReference = z.infer<typeof goalToolRunReferenceSchema>;
 export const goalToolRunCallSchema = ownershipSchema.extend({ grant: goalToolRunReferenceSchema });
 export const goalToolInputCallSchema = goalToolRunCallSchema.extend({ nodeId: idSchema, version: z.number().int().min(1).max(2_147_483_647) });
 export const goalToolCommandCallSchema = goalToolRunCallSchema.extend({ command: goalCommandSchema });
+export type GoalToolInputCall = z.infer<typeof goalToolInputCallSchema>;
+export type GoalToolCommandCall = z.infer<typeof goalToolCommandCallSchema>;
 export const goalToolRevokeSchema = z.strictObject({ reason: z.string().trim().min(1).max(1_000) });
 export const goalToolAuditQuerySchema = z.strictObject({ after: z.coerce.number().int().min(0).default(0), limit: z.coerce.number().int().min(1).max(50).default(20) });
 export interface GoalToolRun {
