@@ -33,3 +33,5 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 ## MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
 
 在原证据范围准备专用relative配置与标准Node→TypeScript/Vitest入口，独立接收外层真实退出和cleanup回执；不新增workflow、安装器或通用supervisor。本机资源不足期间仅源码准备，不把文档启用当远程授权。候选与fe6产品分开固定；实际26direct/6browser仍未运行。
+
+2026-10-06 23:21:55 UTC：dc67可移植验证准备已由root/peer限定静态通过，0blocking；MSGQUICK-04继续开放，types/direct/browser均NOT_RUN，本机资源/准入与remote未启用边界不变。原fe6与c1/b1未改。

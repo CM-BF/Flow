@@ -1,0 +1,20 @@
+# QuickControls portable checks — independent failure-path source review
+
+Conclusion: **NO_BLOCKING_SOURCE_SCOPED / NOT_RUN** for fixed candidate `dc67b3410c12f321d62a1565145e184b52b0ca84` (metadata supplied: `ffdc513a5836281ead4908a66b2b50cf931644bd`). Reviewed only the three fixed Git blobs below. This is a dedicated checks candidate; the future admitted CI owner supplies containment, resource admission and independent cleanup. It is not a second OS supervisor, a runtime grant, or a browser prerequisite approval.
+
+- Failure / zero tests: `run.mjs:55–61` rejects spawn errors, timeout/signal, nonzero exit and output overflow even when logs exist. `63–72` then requires bounded regular JSON, success=true, exactly26 total/passed and0 failed/pending/todo, one exact test file,26 passed assertions and the full expected name multiset. Zero collection, a missing/malformed/truncated report, count drift or import failure cannot reach the success state. `77–83` retains failure/unknown and sets nonzero exit. Argument/preflight failures before result creation produce no accepted result; they do not produce PASS.
+- Time / actual exit: `54–55` passes the remaining work allowance to each direct child; `73–79` performs source recheck and rejects exceeded work time. The Git calls have their own2s bound (`16–18`), so this is not a recursive hard job deadline, and final writes occur after the recorded internal elapsed. This is accurately assigned to the outer owner by README:21–23,34; `accept.mjs:17–22,28–29` requires actual external exit0, matching single terminal record, admitted total elapsed and internal elapsed no greater than external elapsed. A late fatal signal/nonzero observed exit cannot be accepted solely from a previously written pending-success result.
+- Cleanup: `run.mjs:31–32,76,83–84` only emits `CHECKS_PASSED_PENDING_CLEANUP`, deliberately not a complete cleanup receipt. `accept.mjs:14–24` requires the independently trusted receipt hash, exact source/run/result identity, exactly one terminal line, cleanup complete, all owned processes absent, scratch absent and no cleanup errors. Missing/unknown cleanup cannot pass. Direct-child SIGKILL alone is explicitly insufficient (README:21).
+- Raw/provenance: `accept.mjs:26–36` requires error-free candidate result, both successful named steps, exactly the four retained evidence names, all hashes and bounded reads/aggregate retained size. `README:25–40` clearly assigns receipt authenticity and admission provenance to independent CI, rather than claiming the receipt JSON authenticates itself. A deliberately fabricated trusted receipt is outside this offline check's stated trust boundary; I did not expand scope into a new attestation protocol.
+
+No concrete false-PASS path found within these trusted-caller and admitted-outer-owner boundaries. The outer owner still must actually enforce whole-job limits, observe final process closure/complete stdout and verify its cleanup facts. Source/config/117-file/package closure is assigned to root's parallel review, not independently certified here. Dependencies, platform command behavior, the26 actual tests, types, cleanup and all browser results remain NOT_RUN for this candidate.
+
+Method: reused local find-skills/clean-code source-review method; traced normal and exceptional paths, explicit responsibilities, state transitions and error preservation. No project writes, candidate/product imports, test/syntax execution, HTTP/PG/Chrome/process/resource sampling or installs.
+
+## Fixed blob pins
+
+- `docs/evidence/wpf-message-settings-quick-controls/portable-check/run.mjs` — 7085 B; SHA256 `403fcb09b9c3869d27407e543240710307c610dae43618fb8a0662cb65bffbe0`.
+
+- `docs/evidence/wpf-message-settings-quick-controls/portable-check/accept.mjs` — 3418 B; SHA256 `2a984882181ac85f65353f09cfb5894631819121f24523dcf9d1f3cb26b3bfd7`.
+
+- `docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md` — 6657 B; SHA256 `b6829b272e05abeb7ee2f0ea045ad492f784b5166168e9d7a90f89e930bd620c`.

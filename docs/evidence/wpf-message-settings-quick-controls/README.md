@@ -10,4 +10,4 @@
 
 独立browser准备包已获root限定静态批准，见browser-preparation；真实CSS/六组场景/双组清理全部为源码准备，当前browser仍NOT_RUN。c1实际检查先行，无任何新gate或运行授权。
 
-本次新增 [portable-check](portable-check/README.md)，固定候选 `dc67b3410c12f321d62a1565145e184b52b0ca84` / [manifest](portable-candidate-manifest.json)，独审 NOT_STARTED。只做有限语法及alias-helper静态校验；实际版本解析/类型/direct/browser依然NOT_RUN。远程资源/清理/启用由未来owner独立承担，本机c1/b1不改。
+本次新增 [portable-check](portable-check/README.md)，固定候选 `dc67b3410c12f321d62a1565145e184b52b0ca84` / [manifest](portable-candidate-manifest.json)，现获 APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking（[root](root-dc67-portable-preparation-review.json)、[peer](peer-dc67-portable-failure-review.md)）。候选目录/manifest的NOT_STARTED保留送审历史；已审9文件不改。只做有限语法及alias-helper静态校验；实际版本解析/类型/direct/browser依然NOT_RUN。远程资源/清理/启用由未来owner独立承担，本机c1/b1不改。

@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-06 23:18:53 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-06 23:21:55 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
@@ -36,8 +36,10 @@ R3：fixture 增加明确的 profile21 会话授权，使用现 HTTP 分页和�
 
 [浏览器准备](../../docs/evidence/wpf-message-settings-quick-controls/browser-preparation/report.md)、[固定消费者闭包](../../docs/evidence/wpf-message-settings-quick-controls/root-browser-consumer-scope.json)。此轮档案存declared inputs；TMP actualHEAD在本metadata固定后统一重绑，不由档案预授运行。
 
-## 本地浏览器准备已审 / 可移植候选待审
+## 本地浏览器与可移植候选限定静态已审
 
 [root b1](../../docs/evidence/wpf-message-settings-quick-controls/root-b1-preparation-review.json)限定静态通过，未运行/无gate，原生Chrome边界与同fe6 c1真实结果仍为前置。当前c1/b1保持原字节。
 
-Portable review：**NOT_STARTED**。固定候选 `dc67b3410c12f321d62a1565145e184b52b0ca84`，仅 [manifest](../../docs/evidence/wpf-message-settings-quick-controls/portable-candidate-manifest.json) 的9证据文件；产品fe6四源不变。核相对type/JS真实解析、117输入、26展开名、实际child结果/有界JSON/外层信任回执及失败清理职责。有限三语法与14alias纯表达式检查通过，不是types/direct。不得执行候选或移植本地已审结论为远程通过。
+Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**。固定候选 `dc67b3410c12f321d62a1565145e184b52b0ca84`，仅 [manifest](../../docs/evidence/wpf-message-settings-quick-controls/portable-candidate-manifest.json) 的9证据文件；产品fe6四源不变。核相对type/JS真实解析、117输入、26展开名、实际child结果/有界JSON/外层信任回执及失败清理职责。有限三语法与14alias纯表达式检查通过，不是types/direct。不得执行候选或移植本地已审结论为远程通过。
+
+[root dc67 原件](../../docs/evidence/wpf-message-settings-quick-controls/root-dc67-portable-preparation-review.json)、[peer失败路径原件](../../docs/evidence/wpf-message-settings-quick-controls/peer-dc67-portable-failure-review.md)已原样归档。独审只读核117输入/9candidate/7prepared/4fe6/26names与两本地包manifest；没有执行types/direct/browser。当前外层审查结论覆盖固定dc67；候选目录README及原manifest的NOT_STARTED保留其送审时历史字节，不改已审候选。运行仍需本机资源和独立准入，remote未启用、外层隔离与真实cleanup责任仍归未来CI owner。
