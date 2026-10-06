@@ -146,3 +146,7 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 当前S01 HEAD `65a9c7b4b577d49ff302581d590b31f3425cd900` clean，runtime blob为bdbad6e8而非目标b639，HEAD没有attempt-wakeup.ts；不能直接测这棵旧运行时冒充4df。实施前需要受控固定4df只读输入/准确loader绑定；不盲merge主线、改历史A/B或复制另一框架。最小执行入口为runtime.ts和新probe，实际静态import还需admission-journal、attempt-wakeup、goal-tool/graph绑定、active-steering/proposal、fixture、verifier、attempt-control、outbox、native-harness/settlement、@flow/client及其contract与zod闭包；这些模块即使无attempt也要能解析。当前只核到上述直接依赖，完整转递入口/依赖metadata/动态读取尚待固定manifest，未宣称可启动。既有shutdown测试只作参考只读输入，不运行其原全部cases。
 
 方法：沿已固定本地 find-skills、clean-code（sickn33 bdacd76）、codebase-design；本段检查接口复用、静态与实际分层、错误/unknown保留、资源闭包和不制造新状态机。0测试、0目标、0PG、0物化；既有A/B source/raw及128结果原样，64 pure checks仍只属于此前A/B。
+
+### S01-06 idle 准备当前派工（2026-10-06 18:31:35 UTC）
+
+上述17:21只读候选保留为历史。当前claim508f v2已合法追加专属evidence，owner status_read 在原mixed实验目录实施；最新固定输入为main8d84的57source/283197B加4metadata/1431B，完整literal见[供给请求](../../docs/evidence/s01/idle-claim-cost/source-supply-request.json)。镜像仅由Lead供应到该evidence/source-snapshot，不覆盖本树旧产品src。旧4df→8d84的空claim路径无行为改动；新增contract加载成本未知。fake与actual均待固定源码review后另OPEN；尚未进行任何运行。继续沿S01-06验证原目标，不新增benchmark或产品优化。

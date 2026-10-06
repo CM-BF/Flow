@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:21:13 UTC / idle候选只读固定main4df08fb3186f4af4373554deb93406214f44fc63；历史集成aae |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:31:35 UTC / idle 固定 main8d84d529a0756116bd0fc8bad969d61a6c26248e 只读输入；历史集成 aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | A/B固定生产A=a3e670b906c1b65d586b7730ca19da83109f1dcc、B=aae1eb1054d75e78273e7c91ed048aeac80195da；source d3ba03a88b8d25d134b7abade7f55f8198b182ba；本次metadata前HEAD65a9c7b4b577d49ff302581d590b31f3425cd900 clean；idle固定main4df仅只读，未合入 |
-| 工作树dirty状态 | metadata前clean；本次仅原plan/status登记低优先idle候选，所有source/raw冻结 |
+| 工作基线 / HEAD | idle 固定生产8d84；本次准备前 HEAD7fd60892e2c4e8d5e6a7ea88d205d1c07a5a9859 clean；未合入新main。历史 A/B 固定A=a3e670b、B=aae1eb、已审 source=d3ba03a |
+| 工作树dirty状态 | 本次 idle 观察器/新证据/owner metadata 实施中；历史 A/B/128 source 与 raw 未修改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | idle候选NOT_RUN（只读登记）；历史A/B PASSED：64 distinct pure/fake分次最终覆盖=原61+新增3；17为重叠定向检查，不加为78；局部strict0；0actual |
+| 检查状态 | idle NOT_RUN，fake/actual/strict 均未运行；历史 A/B 64 distinct 分次最终覆盖与 local strict0 不覆盖新准备 |
 | 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
-| 实现目标 | 新A/B d3ba03a88b8d25d134b7abade7f55f8198b182ba；原da932 CHANGES_REQUESTED历史保留，唯一P2已关闭 |
-| 实现范围 | 新claim仅mixed目录、mixed-ab-preparation、mixed-ab-run、原plan目录；无产品写权 |
+| 实现目标 | idle 准备尚未固定/未独审/未集成；历史 A/B d3ba03a 独立批准仅准备 |
+| 实现范围 | claim508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE，mixed、两个A/B evidence、idle-claim-cost evidence、原plan共5 literal；无产品写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 低优先idle journal候选已登记固定源码/静态计数与15s小探针设计，未实现/未运行；历史A/B准备批准不覆盖它 |
-| 下一可用交付 | CORE/Codex优先；idle候选待精确evidence scope与固定4df依赖闭包后再准备。A/B原[已审入口](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md)仍NOT_OPEN |
-| 当前阻塞 | idle未获实现/运行窗口，专属evidence需amend且本WT运行时不等于4df；A/B原资源条件PENDING/NOT_OPEN，不沿用旧df |
+| 当前产出 | 准备单个空闲 runner 的领取持久化调用计量，区分真实 API 调用、静态预期和未知；尚未运行 |
+| 下一可用交付 | 固定有界观察器/loopback 探针与输入预算供只读 review；Lead 供应固定源码镜像后再安排检查窗口 |
+| 当前阻塞 | 输入镜像待Lead sole Git供给；实现可继续；fake/actual NOT_OPEN。A/B 仍 RESOURCE_PENDING/NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | idle候选NOT_STARTED；历史A/B APPROVED preparation d3ba03a88b8d25d134b7abade7f55f8198b182ba；architecture_read 14:11:28 UTC、Mika接收14:12:06 UTC，0剩余P1/P2；非实际窗口授权 |
+| Review | idle NOT_STARTED；历史 A/B APPROVED preparation d3ba03a，0剩余P1/P2；不覆盖本次准备 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -210,3 +210,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 
 
 2026-10-06 17:21:13 UTC：GO低优先idle-runner候选已在原plan的S01-06登记。fresh17:20:13.977账本508f9c85-a27c-4382-bfe9-caca43be4b0e v1 ACTIVE，4scope仍本owner/WT/branch；故本次仅合法plan/status小写，拟新idle证据目录不在scope、未创建。固定main4df三blob核符，每完整明确空轮静态2replace/4sync，不是实际物理IO/功耗结论。当前WT runtime旧blob且无attempt-wakeup，未来必须绑定固定4df闭包，不能直接执行旧树。候选1runtime/capacity1/active0、≤12空claim/15s含清理/raw+ownTMP≤2MiB，0PG/provider/install；未实现/未运行，不宣称100agents实测。原A/B64项、历史128/旧raw不变；未碰FKye9L，native source ready时优先返回只读审。clean-code复核只登记实际边界与解除条件，不新增框架。
+
+2026-10-06 18:31:35 UTC：原子 amend COMMITTED 18:26:18.855Z，v2/5 scope；[receipt](../../docs/evidence/s01/idle-claim-cost/claim-amend-receipt.json)。[供给请求](../../docs/evidence/s01/idle-claim-cost/source-supply-request.json)固定8d84：57 source 283197B、4metadata1431B，共284628B，全部计未来2MiB输入预算。仅Lead物化，owner未导出产品源；当前创建观察器与fake用例，0checks。首次ENOENT保留，unknown不变null，不接触历史保留journal。架构影响仅实验观察器/直接公开runtime消费者，不改生产durability/poll/recovery。

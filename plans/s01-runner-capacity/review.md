@@ -1,5 +1,9 @@
 # S01 独立审查
 
+当前 idle-claim-cost 准备：NOT_STARTED。输入固定8d84，尚未固定实现 target，0fake/actual/strict。历史批准均不覆盖新准备。
+
+## 历史 A/B 准备批准
+
 状态：APPROVED（仅A/B准备）
 Review target commit：d3ba03a88b8d25d134b7abade7f55f8198b182ba
 
