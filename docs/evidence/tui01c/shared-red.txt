@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+ ❯ packages/interaction/src/stream/presentation.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/stream/presentation.test.ts [ packages/interaction/src/stream/presentation.test.ts ]
+Error: Cannot find module './presentation.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity/packages/interaction/src/stream/presentation.test.ts'
+ ❯ packages/interaction/src/stream/presentation.test.ts:3:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import type { ConversationTurn } from '@flow/contracts';
+      3| import { projectBodySegments, readCanonicalFinal } from './presentatio…
+       | ^
+      4| import type { StreamState } from './projection.js';
+      5| const at = '2026-10-06T10:00:00Z';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  03:45:41
+   Duration  171ms (transform 21ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

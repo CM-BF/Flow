@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-06T10:47:25.891Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "新旧页面的发送、原请求恢复和兼容记录已验证",
+    "next": "主线按已验证产物接收发布证据",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "passed",
+    "target": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+    "record": "PASSED 7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b；两脚本定向TypeScript0；真实旧/新产品浏览器两旅程及四类SVC记录/哈希验证通过，清理成功"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b"
+  },
+  "todos": [
+    {
+      "id": "RELEASE01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[来源与清理](../../docs/evidence/wpf-release01/source-manifest.json)，两真实固定构建与隔离中心/runner"
+    },
+    {
+      "id": "RELEASE01-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[最终报告](../../docs/evidence/wpf-release01/README.md)，实际页面与原字节验证通过"
+    },
+    {
+      "id": "RELEASE01-03",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "root固定target独审通过；仍待主线接收/个人发布"
+    }
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "target": "c05fca7beadd7bc59b1156e582d4d84078c512c8",
+  "recordedAt": "2026-10-06T11:49:24.529827+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 44014,
+      "sha256": "9ceed51415a4544f2eb96920265394d5db56d06c4dea4759b90ac96745393236"
+    },
+    {
+      "path": "packages/client/src/goal-delivery.test.ts",
+      "bytes": 6918,
+      "sha256": "f58515fb8dddb8caa3fd39dcdb95078099e577673d8ca4a3fa53eeee37ae34af"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/goal-delivery-final-resources.json",
+      "bytes": 355,
+      "sha256": "3c5cd0434ccef89e4a47f474bee09f17a455aff7c65da6fd42593567244a7710"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-final-typecheck.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-final-typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-final.stdout",
+      "bytes": 454,
+      "sha256": "d0f9c354d940f54b60d0b9afcbb808a96fbb5ce1b3653e8e961f3ac284351ca4"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-green-resources.json",
+      "bytes": 355,
+      "sha256": "33eed07ab52bef1241a659cdca4ed9671fa8c6538bb22956904168155aacf022"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-green.stdout",
+      "bytes": 430,
+      "sha256": "5cf23c8a2b2b95c9d3ebe156e3a66fd4f4d1a82013ffbce96d476939193f600b"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-red-resources.json",
+      "bytes": 278,
+      "sha256": "a3462e1d89ca7d5cc72ae64ad87e19941ccd45453e88de502cf73485cdde891e"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-red.stdout",
+      "bytes": 1721,
+      "sha256": "ff16076fb56959f8df71d4a20810ec9623137bc83528626733d8df976e3b33f5"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-typecheck.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "docs/evidence/f01/goal-delivery-typecheck.stdout",
+      "bytes": 942,
+      "sha256": "5fe71fdd6342edc43d02c84d127ebd6f2c31fe45fcfa4ebafb1b29d75e1d6176"
+    }
+  ],
+  "domainInput": "docs/evidence/f01/o11-domain-input.json",
+  "domainTarget": "a9bde37e3b596adbf5e97c47c7efae09a4682ecd",
+  "checks": {
+    "distinct": 2,
+    "firstRed": 2,
+    "firstGreen": 2,
+    "typecheckFirstExit": 2,
+    "typecheckReason": "Test author omitted explicit workspaceId/taskId/parent defaults required by public output DTO",
+    "finalSelected": 1,
+    "finalUnselected": 1,
+    "finalTypecheckExit": 0,
+    "privateDatabasesRemaining": []
+  },
+  "scope": "Thin client/export and actual production owner mount. No domain rerun, provider, UI, CLI or personal service change."
+}

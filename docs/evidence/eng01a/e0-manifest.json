@@ -1,0 +1,149 @@
+{
+  "sourceCommit": "909b45e232e1477426cb1d44e696a3187f80cdd8",
+  "base": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "source": [
+    {
+      "path": "apps/server/src/engineering/verification.test.ts",
+      "bytes": 12201,
+      "sha256": "caf484e5b22f677520370276be118e88a8b9dbc5fe41cb0922b51dbf125cacab"
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "bytes": 3874,
+      "sha256": "4e297828859515c6429bcdec45b5e456b60b1c67ab1224e477501bc29c6d58ed"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8481,
+      "sha256": "2144b8745e878c373bbe1bba7254fc0bd7dcc7b3563ad6bb78b6f6ac4f6da559"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4095,
+      "sha256": "30124654e78c5db1075f306046d8f7a5e1e72e835531e2a87fc1cfb17587bb20"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 10746,
+      "sha256": "6c15482d13913270affe5f062576f16844aab79c9f4305aa7a6dbe5f6ef3197c"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5109,
+      "sha256": "5f9617feb1b3f00417322784fc6246e7b1f9e741efe577f330939ba9127244c0"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6717,
+      "sha256": "c9867af5852c4349db34396a3f999bebb18100f162a98f39bfee5701245ff2c3"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/eng01a/bootstrap.json",
+      "bytes": 148,
+      "sha256": "257570428f1bd0ff1713c6e011f7346392ccc05605ac1d9fb386fb0b8761852e"
+    },
+    {
+      "path": "docs/evidence/eng01a/bootstrap.stdout",
+      "bytes": 656,
+      "sha256": "af8b6b66869995d78d7dbda831d5aa27f2fa823f3633db129bf9fbad20b1a961"
+    },
+    {
+      "path": "docs/evidence/eng01a/claim-amend-completion.json",
+      "bytes": 902,
+      "sha256": "b43d87ac7e84d17a2a69479f086059eafadd7b0df3d36e15bf2d3530c831f67b"
+    },
+    {
+      "path": "docs/evidence/eng01a/claim.json",
+      "bytes": 864,
+      "sha256": "334e086d4716f3dfe365dceb99fd2cd62d93cc299aaa1d1bdb5be22beb8e785f"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-first-resources.json",
+      "bytes": 207,
+      "sha256": "e3b125ddb5c7e441eb51ad9d8b75396f46de46646710220feef20f80ec02898c"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-first.json",
+      "bytes": 144,
+      "sha256": "1a4ddc8a5300f328940854ef4961f560f49b2c777022aa106a3abc60f9cc229e"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-first.stdout",
+      "bytes": 1848,
+      "sha256": "32928c528c1e20d7b9f13e3905ab2420ac921ee5f447661244345d5cb3e83a30"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-load-failure.json",
+      "bytes": 384,
+      "sha256": "47c6bf457f2ddc6c8864e1a1c5746ff326469d10fcec1b0fd70e15c77d4eb5d7"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-load-failure.stdout",
+      "bytes": 821,
+      "sha256": "0e2cb33a14a2c14b327dce197ff63597e807856659cceb36a5ce899eb95faf02"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-selected-resources.json",
+      "bytes": 207,
+      "sha256": "7ca675c3db4fa9455ab2efa0a0ab915a267685536d67f3c9173782806d659c06"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-selected.json",
+      "bytes": 176,
+      "sha256": "745385835b7db5e8d2970d836e8d08e6764b79aa1249b746d45ad26af74b9b5e"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-pg-selected.stdout",
+      "bytes": 364,
+      "sha256": "77182d4e796827bd2bd0b0de2617275513e0654880f6d304464262a7292e0b4e"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-typecheck-first.json",
+      "bytes": 156,
+      "sha256": "dc1f0914dfff4771f423e1450511d03d65889f773a2b18bfa4ccd7fbc1ad1fe8"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-typecheck-first.stdout",
+      "bytes": 263,
+      "sha256": "f62a03cf73b317d2c607e6e1bacc01e41a837777cb43dc6e631f0f4ae11a53cd"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-typecheck.json",
+      "bytes": 97,
+      "sha256": "bb1d862e7a2eab416f284c688350dda168bfe3dc9ad18996ddb35b1b4df72c9c"
+    },
+    {
+      "path": "docs/evidence/eng01a/contract-typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01a/r05d-release.json",
+      "bytes": 822,
+      "sha256": "118f5fb1f5148dbfcca8ef7fcff807f82f05357366cbc05854b8bd3791c6d389"
+    }
+  ],
+  "checks": {
+    "distinct": 10,
+    "first": {
+      "selected": 10,
+      "passed": 9,
+      "failed": 1
+    },
+    "supplement": {
+      "selected": 1,
+      "passed": 1,
+      "unselected": 9
+    },
+    "typecheckExitCode": 0,
+    "providerCalls": 0
+  },
+  "limits": "Receipts injected; real Git/workspace/checker and host vertical are E1, not yet implemented."
+}

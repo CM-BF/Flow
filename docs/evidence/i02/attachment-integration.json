@@ -1,0 +1,147 @@
+{
+  "recordedAt": "2026-10-06T11:30:30.225160+00:00",
+  "base": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+  "fixedSources": 23,
+  "sourceBinding": "attachment-source-comparison.json",
+  "componentApprovals": [
+    "8701 domain Webroot",
+    "1f0 fixture Webroot",
+    "df8 ACK native_center_owner",
+    "ab1 client Mika",
+    "69eb+f04 production and cleanup Mika"
+  ],
+  "checks": {
+    "actualFactory": {
+      "passed": 6,
+      "deselected": 23,
+      "durationSeconds": 14.62,
+      "execution": "fixed approved sources combined with main53ce; working combination before final integration commit"
+    },
+    "rootTypecheck": {
+      "exitCode": 0,
+      "stdoutBytes": 0
+    },
+    "providerQueries": 0
+  },
+  "factoryObservations": 8,
+  "allFactoryMigrationAndSixRoutes": true,
+  "anyFallback": false,
+  "cleanup": [
+    {
+      "path": "docs/evidence/i02/attachment-combination/resources-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/context-runtime-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/upgrade-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/crash-center-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/i02/attachment-combination/context-runtime-cleanup.json",
+      "bytes": 189,
+      "sha256": "f2a580b713de4d2e6ff689dfa44ea525ebcf941d781710d91520790763d36ff3"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/context-runtime-factory.json",
+      "bytes": 2186,
+      "sha256": "79a3a2841dd522554e21015e5c8e20a76eaa2ce1510c69159ef25ebcb057dfe4"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/context-runtime-resource.json",
+      "bytes": 93,
+      "sha256": "f4124768e0a5235171d042355c9c2f125ef965cf81ed69a2f80c71a5bf4eb8d5"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/crash-center-cleanup.json",
+      "bytes": 189,
+      "sha256": "df75ba2d03050beec50590ac5a24c40b13457b1281b2ccaaf2ef5f5109c3d5e4"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/crash-center-factory.json",
+      "bytes": 2186,
+      "sha256": "9629a85609ac0367f037af08cb07c4780040ff42db02b549857c8bf741830a58"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/crash-center-resource.json",
+      "bytes": 93,
+      "sha256": "c561d55b90c610f441f807a01432f166f208adae5e9a0f7f53265575cd1e8ccb"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/resources-cleanup.json",
+      "bytes": 189,
+      "sha256": "f77c5de7f15381a807790892119354d499f10f36762269e9f63c6325ee1ecd69"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/resources-factory.json",
+      "bytes": 2186,
+      "sha256": "8c614c2cd4a80db7d9baa7666d5897a1b64aa49b51fec02ae1c235ec1f2ef820"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/resources-resource.json",
+      "bytes": 93,
+      "sha256": "cf60437d22dd99538f7afedbb3fa9b726ee08ae98aa2d5f4dba1113cd1cd547e"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/upgrade-assertions.json",
+      "bytes": 27786,
+      "sha256": "3b3af609995a61be312d6e24c19563070c78a3eddbc60e497bb5fda622cbc50c"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/upgrade-cleanup.json",
+      "bytes": 189,
+      "sha256": "0d7f78c63683e9c13da85f147da0313e2fbf03122977340e1ee4a1d519a972fd"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/upgrade-factory.json",
+      "bytes": 2186,
+      "sha256": "f0e365dbc1dcc10a7a381710e5c169ee74395a6a26e54dc52e1b3d14d511ed59"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination/upgrade-resource.json",
+      "bytes": 93,
+      "sha256": "2942b2f56413f96899f677e3270d199637c7050f13bed15deb6aeb68cf6b774c"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination.stdout",
+      "bytes": 643,
+      "sha256": "d34a9c33bacf82634dbac4032f8ba3d0cf62399d74fd7f81e005bec640c09424"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-combination.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-types.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    }
+  ],
+  "limits": [
+    "upgrade-assertions.json generic afterTransport label mentions separately recorded fallback; actual factory observation files prove fallback=false for every start",
+    "six selected cases, not a rerun of78 domain",
+    "personal runtime unchanged; frontend selection/sender integration separate"
+  ]
+}

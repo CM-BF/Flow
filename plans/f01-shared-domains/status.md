@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:10:00 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:54:25.347605+00:00 / main52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / client095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
-| 工作树dirty状态 | 本次仅共享范围交接和计划记录；提交后clean |
+| 工作基线 / HEAD | goal session transport ec6ad20479872a8cb701917b6fa448ca23a2a843 |
+| 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：新native publication HTTP1 + 旧profile2，共3/3；根noEmit exit0，原红保留；0provider |
-| 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client已独审进入main253035e11ab18ba33095c018949f856442021d49。个人服务仍b1c/v12，无运行变更。 |
-| Review | 当前client由status_read独立APPROVED095，经Mika接收；025独审5365已main。 |
-| 实现目标 | 095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/native-profile-publication.test.ts |
+| 检查状态 | 1HTTP红→绿/5实际请求；root types0，无PG/provider。 |
+| 已集成main状态 / HEAD | 上下文027与O11领域/公共factory/client已main52eb；个人服务不变。 |
+| Review | APPROVED：native_center_owner限定ec6ad204，c05公共读口已main |
+| 实现目标 | ec6ad20479872a8cb701917b6fa448ca23a2a843 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/goal-session-transport.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 原生执行配置接口已交付，附件领域可独立开工所需的共享文件已交回。 |
-| 下一可用交付 | 已交付片段保持可用；后继接入附件接口并统一会话回执校验。 |
+| 当前产出 | 统一目标读口已主线可用；本地退出观察可通过共享接口释放在途读取。 |
+| 下一可用交付 | 接入持续目标会话控制器，保留决定、取消与未知确认的中心规则。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -141,3 +141,30 @@
 2026-10-06 10:10 UTC：F01 v23 正式移出 `packages/contracts/src/conversations.ts`，原 owner 已停写，Web 须 fresh amend/take 才写；026 已预留给 WPF-ATTACH01。公共出口、client 与生产挂载仍由 F01 唯一维护。此为范围与计划记录，未运行工程测试、未改变个人服务。
 
 2026-10-06 10:19:29.714 UTC：F01 v24原子amend将packages/client目录展开为其他literal文件，明确归还index.ts与conversations.test.ts给TUI01B；本owner已停写两个路径，新owner须fresh take。共享ACK后继唯一设计在TUI-001，Web独立消费者由同级协调；附件薄client接入须等待该文件正式handback，不阻附件模块独立实现。见[交接](../../docs/evidence/f01/tui-ack-handoff.json)。0产品修改/工程重测。
+
+2026-10-06 10:40:27 UTC：TUI01B已在main0cee收口、198f v2released。F01 fresh CAS v25仅接回client/index.ts；新ACK decoder文件保持已审输入且无本次改写。见[回收回执](../../docs/evidence/f01/tui-ack-return-receipt.json)。普通共享后继不继承095的产品批准范围。
+
+| F01-30 | completed | Lead | 原生目录严格薄client；[固定证据](../../docs/evidence/f01/native-catalog-client-manifest.json)，没有原生能力或认证结论。 |
+
+| F01-31 | completed | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
+
+| F01-32 | in-progress | Lead / Mika context owner | [027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)；已交同级fresh amend，后续固定DDL/真实PG及共享接线待验，不改个人DB |
+
+11:12 管理安全点：工程domain/client/mount各有独审且main2e71已接，组合root typecheck仍因既有RELEASE fixture tuple类型失败，已交Web原owner窄修；不冒称组合通过。附件ACK v2 target df8d077accea7a28536f1f56407a729c41e4639c 47/47/root types0待独审，不扩domain批准。027已正式给Mika原owner，现50/50含9PG、v5 DDL已实装并独审中，不再等待编号。
+
+11:16 附件ACK v2 df8d由native_center_owner独立APPROVED；原47/47/types0不重跑。六薄方法固定 ab1bcb14531995ccb3916492eaf328cdae2213b3，真实HTTP1/1/types0待独审，未挂生产/不称附件全链完成。
+
+11:19 附件生产factory026/owner接线固定 69eb2476ba59308a906c891c4391e243e3b2512a，真实独立PG1/1（同一个旅程重跑不累计）及最终root types0；前置red/类型窄修原输出保留。组合gate是原ATTACH pre026/重复注册fixture最小维护，已交原owner，不删除历史升级断言；domain/shared client/ACK齐套独审后才main，个人DB/服务无改。
+
+11:27：Mika附件六薄client独审APPROVED已归档；生产69eb的唯一P2是失败清理，修复固定f04cb29633ca678b35aa423e02a16953add0cfba，2失败分支原red保留、3/3及types0。新facts单独保存，不覆盖旧成功证据；生产3行/领域无改。Web pre026 fixture增量1f0已独审，待正式factory下有限组合验证。
+
+2026-10-06 11:30 UTC：Mika增量只读APPROVED f04，原69eb挂载保持；1source/8raw核同、清理P2关闭、未重测。下一I02仅实际factory与已审fixture1f0组合六case，不重跑78领域。原审查字节归档 [独审](../../docs/evidence/f01/attachment-production-independent-review.md)，个人服务不变。
+
+2026-10-06T11:33:11.623489+00:00：已审附件23source与原main精确匹配，I02实际factory六例/四专库/类型检查通过。[main回执](../../docs/evidence/f01/attachment-main-receipt.json)。受控main同步只选既有已审product，冲突均取固定main；不改变已审source或再跑产品。
+
+2026-10-06T11:38:45.202495+00:00：F01-28共享ACK、29附件生产、31工程用途均已在主线接收。本次薄client五源限定与初红/初types失败、offline修复和最终绿见 [manifest](../../docs/evidence/f01/context-history-client-manifest.json)；尚未生产挂载。复核clean-code：复用request/严格领域schema，身份匹配独立于显示策略，未新增重试/缓存。
+
+| F01-32 | completed | Lead | mainbf067接受027领域/client/生产，固定36源比较与集成类型检查通过。 |
+| F01-33 | completed | Lead | [目标公开接线manifest](../../docs/evidence/f01/goal-delivery-manifest.json)，待独审；不重复O11领域32项。 |
+
+| F01-34 | in-progress | Lead | [transport manifest](../../docs/evidence/f01/goal-session-transport-manifest.json)，待独审；package入口待O12 Interface。 |

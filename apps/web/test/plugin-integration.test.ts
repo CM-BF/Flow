@@ -1,4 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { ConversationProjection } from "../src/conversations/projection";
+import { FlowClient } from "@flow/client";
 import type { TaskSnapshot } from "@flow/contracts";
 import { AppPluginSession, type AppActions } from "../src/plugin-integration/session";
 import { themes } from "../src/themes";
@@ -95,5 +97,30 @@ describe("App bridge resource and connection authority", () => {
     await vi.waitFor(() => expect(old.actions.loadReference).toHaveBeenCalledTimes(1));
     await old.session.dispose(); const next = setup(); old.session.updateActions(next.actions); gate.resolve();
     expect((await pending).ok).toBe(false); expect(next.actions.loadReference).not.toHaveBeenCalled();
+  });
+});
+
+
+describe("retained view bindings", () => {
+  it("protection queries do not allocate and final release unsubscribes the existing knowledge binding", () => {
+    const { session } = setup();
+    const projection = new ConversationProjection(new FlowClient({ baseUrl: "http://unused.invalid", token: "fixture" }), null);
+    const unsubscribe = vi.fn(), hostUnsubscribe = vi.fn();
+    const sourceSubscribe = projection.subscribe.bind(projection), hostSubscribe = session.host.subscribe.bind(session.host);
+    const subscribe = vi.spyOn(projection, "subscribe").mockImplementation(listener => { const stop = sourceSubscribe(listener); return () => { stop(); unsubscribe(); }; });
+    const hostSpy = vi.spyOn(session.host, "subscribe").mockImplementation(listener => { const stop = hostSubscribe(listener); return () => { stop(); hostUnsubscribe(); }; });
+    try {
+      expect(session.getViewProtection("view")).toEqual([]);
+      expect(session.getViewProtection("view")).toEqual([]);
+      expect(subscribe).not.toHaveBeenCalled(); expect(hostSpy).not.toHaveBeenCalled();
+      const first = session.knowledgeBinding("view", projection);
+      expect(subscribe).toHaveBeenCalledTimes(1);
+      session.releaseView("view");
+      expect(unsubscribe).toHaveBeenCalledTimes(1); expect(hostUnsubscribe).toHaveBeenCalledTimes(1);
+      const next = session.knowledgeBinding("view", projection);
+      expect(next).not.toBe(first); expect(subscribe).toHaveBeenCalledTimes(2);
+      session.releaseView("view"); expect(unsubscribe).toHaveBeenCalledTimes(2);
+      session.releaseView("view"); expect(unsubscribe).toHaveBeenCalledTimes(2); expect(hostUnsubscribe).toHaveBeenCalledTimes(2);
+    } finally { projection.dispose(); }
   });
 });

@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-06T10:46:15.230Z",
+  "state": "available",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversation-context/receipts.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/test/conversation-ack-http.test.ts",
+      "apps/web/test/conversation-projection.test.ts",
+      "docs/evidence/wpf-ack01",
+      "plans/wpf-ack01-shared-consumer"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-ack-consumer",
+    "origin": "new",
+    "taskId": "WPF-ACK01",
+    "worker": "w01_owner",
+    "claimId": "a2674416-2084-48b9-962b-d09cd5bb7afe",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer",
+    "createdAt": "2026-10-06T10:45:38.879Z",
+    "updatedAt": "2026-10-06T10:45:38.879Z",
+    "observedAt": null,
+    "needsVerification": false
+  }
+}

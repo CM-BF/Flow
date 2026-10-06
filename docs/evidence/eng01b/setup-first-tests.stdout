@@ -1,0 +1,28 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile
+
+ ✓ apps/runner/src/engineering/workspace.test.ts (18 tests) 10078ms
+   ✓ captures staged, unstaged, ignored untracked, deleted and executable modes in one immutable content set  1564ms
+   ✓ rejects unsupported binary content without silently omitting it  491ms
+   ✓ rejects unsupported symlink content without silently omitting it  410ms
+   ✓ rejects unsupported hardlink content without silently omitting it  499ms
+   ✓ rejects unsupported oversized content without silently omitting it  748ms
+   ✓ rejects unsupported untracked-count content without silently omitting it  1789ms
+   ✓ rejects unsupported submodule content without silently omitting it  530ms
+   ✓ does not run external diff or text conversion configured in the synthetic repository  476ms
+   ✓ refuses a content set that changes while its diff is captured  361ms
+   ✓ requires real fixed checker cases and publishes a digest of the same content set  512ms
+   ✓ refuses engineering success for wrong-result  494ms
+   ✓ refuses engineering success for nonempty-log  473ms
+   ✓ refuses engineering success for missing-case  470ms
+   ✓ refuses engineering success for mutated-workspace  419ms
+   ✓ refuses engineering success for mutated-baseline  422ms
+ ✓ apps/runner/src/engineering/setup.test.ts (10 tests) 1268ms
+   ✓ publishes only after a matching task pin and executes the fixed recipe from restored storage  494ms
+   ✓ loads in a fresh Node process while retaining an active project lease and preventing new writes  424ms
+
+ Test Files  2 passed (2)
+      Tests  28 passed (28)
+   Start at  03:45:19
+   Duration  11.94s (transform 207ms, setup 0ms, import 390ms, tests 11.35s, environment 0ms)
+

@@ -1,26 +1,31 @@
 import { randomUUID } from 'node:crypto';
 import { FlowApiError } from '@flow/client';
-import { conversationCreationSchema, conversationTurnSchema, type ConversationSummary, type ExecutionProfile } from '@flow/contracts';
+import { conversationCreationSchema, conversationTurnSchema, type ConversationSummary, type ConversationTurn, type ExecutionProfile } from '@flow/contracts';
 import { commandDescriptors, commandSchema, parseInput, type Command } from './commands.js';
 import { turnView } from './projection.js';
 import { acknowledgedConversation } from './acknowledgement.js';
 import { intentSchema, type CommandResult, type Intent, type IntentStore, type InteractionClient, type InteractionController, type InteractionSnapshot } from './types.js';
+import { TurnObservation, type ObservationClient } from './observation/index.js';
+import { ObservationReads } from './observation/reads.js';
 class LocalError extends Error { constructor(readonly code: string, message: string) { super(message); } }
 const result = (ok: boolean, code: string, message: string): CommandResult => ({ ok, code, message });
 const freeze = <T>(value: T): T => { if (value && typeof value === 'object') { Object.freeze(value); for (const child of Object.values(value)) freeze(child); } return value; };
 
 /** Owns local observation and immutable intent, never center task/queue/execution state. */
-export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number }): InteractionController {
+export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number; observe?: ObservationClient }): InteractionController {
   if (!options.connectionId || options.connectionId.length > 160 || options.pollMs !== undefined && (!Number.isInteger(options.pollMs) || options.pollMs < 100 || options.pollMs > 60_000)) throw new Error('Invalid interaction options');
   const { client, intents } = options;
-  let state: InteractionSnapshot = freeze({ view: 'conversations', connected: false, busy: false, closed: false, draft: '', notice: 'Use /help or /conversations.', selected: null, turns: [], conversations: [], conversationCursor: null, profiles: [], profileCursor: null, pending: null });
+  let state: InteractionSnapshot = freeze({ view: 'conversations', connected: false, busy: false, closed: false, draft: '', notice: 'Use /help or /conversations.', observation: null, selected: null, turns: [], conversations: [], conversationCursor: null, profiles: [], profileCursor: null, pending: null });
   const listeners = new Set<() => void>();
+  const reads = new ObservationReads();
+  let loadedTurns: ConversationTurn[] = []; let focused: number | null = null; let streamCapability = false;
+  const observation = options.observe ? new TurnObservation(options.observe, options.connectionId, reads, value => patch({ observation: value })) : null;
   let initialized = false; let epoch = 0; let connection = new AbortController(); let timer: NodeJS.Timeout | undefined;
   let activeMutation: Promise<CommandResult> | null = null;
   let disposed: Promise<void> | null = null;
   let intent: Intent | null = null; let profiles: ExecutionProfile[] = [];
-  function patch(value: Partial<InteractionSnapshot>) { state = freeze({ ...state, ...value }); for (const listener of listeners) listener(); }
-  function rotate() { clearTimeout(timer); timer = undefined; connection.abort(); connection = new AbortController(); epoch++; }
+  function patch(value: Partial<InteractionSnapshot>) { state = freeze({ ...state, ...value }); if (value.connected === false || value.view && value.view !== 'conversation') observation?.pause(); for (const listener of listeners) listener(); }
+  function rotate() { observation?.pause(); clearTimeout(timer); timer = undefined; connection.abort(); connection = new AbortController(); epoch++; }
   function current(version: number) { return version === epoch && !state.closed; }
   function selection(conversation: ConversationSummary) { return { id: conversation.id, title: conversation.title, revision: conversation.revision, requestedModel: conversation.requested.model }; }
   function schedule() {
@@ -33,19 +38,27 @@ export function createInteractionController(options: { client: InteractionClient
     }, options.pollMs ?? 1000);
   }
   async function refresh(id: string, version: number) {
-    const snapshot = await client.conversation(id, connection.signal);
+    const signal = connection.signal;
+    const snapshot = await reads.run(signal, () => client.conversation(id, signal));
     if (!current(version)) return;
     if (snapshot.conversation.id !== id) throw new LocalError('INVALID_RESPONSE', 'Conversation identity mismatch.');
-    const page = await client.conversationTurns(id, { after: Math.max(0, (snapshot.lastTurn?.number ?? 0) - 20), limit: 20 }, connection.signal);
+    const page = await reads.run(signal, () => client.conversationTurns(id, { after: Math.max(0, (snapshot.lastTurn?.number ?? 0) - 20), limit: 20 }, signal));
     if (!current(version)) return;
     if (page.conversation.id !== id || page.turns.length > 20 || page.turns.some(turn => turn.conversationId !== id)) throw new LocalError('INVALID_RESPONSE', 'History identity or bound mismatch.');
-    patch({ selected: selection(page.conversation), turns: page.turns.map(turnView), connected: true });
+    loadedTurns = page.turns; streamCapability = snapshot.capabilities.liveAssistantText === true;
+    patch({ selected: selection(page.conversation), turns: page.turns.map(turnView), connected: true }); syncObservation();
   }
+  function syncObservation() {
+    const turn = focused === null ? loadedTurns.at(-1) : loadedTurns.find(value => value.number === focused);
+    if (turn) observation?.update(turn, streamCapability, state.connected && state.view === 'conversation');
+    else { observation?.dispose(); patch({ observation: null }); }
+  }
+  function requireObservation() { if (!observation || !state.connected || !loadedTurns.length) throw new LocalError('NO_TURN', 'Open a connected turn first.'); return observation; }
   function requireFree() { if (intent) throw new LocalError('UNRESOLVED', 'An earlier request is unresolved. Use /recover with its original identity.'); }
   async function mutate(pending: Intent, recovering: boolean) {
     rotate();
     const operation = performMutation(pending, recovering); activeMutation = operation;
-    try { return await operation; } finally { if (activeMutation === operation) activeMutation = null; }
+    try { return await operation; } finally { if (activeMutation === operation) activeMutation = null; schedule(); }
   }
   async function performMutation(pending: Intent, recovering: boolean) {
     const version = epoch; const signal = connection.signal;
@@ -59,14 +72,23 @@ export function createInteractionController(options: { client: InteractionClient
       const conversation = acknowledgedConversation(pending, response);
       await intents.clear(); intent = null;
       if (!current(version)) { patch({ pending: null }); return result(true, 'ACCEPTED', 'Center accepted the request; observation remains stopped.'); }
-      patch({ pending: null, view: 'conversation', selected: selection(conversation), connected: true,
+      if (state.selected?.id !== conversation.id) {
+        focused = null; loadedTurns = []; streamCapability = false; observation?.dispose();
+        patch({ observation: null, turns: [] });
+      }
+      const selected = state.selected?.id === conversation.id && state.selected.revision > conversation.revision ? state.selected : selection(conversation);
+      patch({ pending: null, view: 'conversation', selected, connected: true,
         ...(pending.kind === 'send' && state.draft === pending.input.text ? { draft: '' } : {}) });
       try { await refresh(conversation.id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Accepted by center. Observation needs /recover.' }); }
       schedule(); return result(true, 'ACCEPTED', 'Center accepted the request; this is not execution completion.');
     } catch (error) {
-      if (!recovering && error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408) {
+      if (!recovering && error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes('idempotency')) {
         try {
           await intents.clear(); intent = null; patch({ pending: null });
+          if (current(version) && state.selected) {
+            try { await refresh(state.selected.id, version); }
+            catch { if (current(version)) patch({ connected: false }); }
+          }
           return result(false, `HTTP_${error.status}`, 'Center rejected the request. No replacement request was sent.');
         } catch { /* Keep the immutable intent if durable cleanup could not be confirmed. */ }
       }
@@ -77,14 +99,14 @@ export function createInteractionController(options: { client: InteractionClient
   const handlers: { [K in Command['type']]: (command: Extract<Command, { type: K }>) => Promise<CommandResult> } = {
     help: async () => { patch({ view: 'help' }); return result(true, 'HELP', commandDescriptors.map(entry => `${entry.usage} — ${entry.description}`).join('\n')); },
     conversations: async command => {
-      const version = epoch; const page = await client.conversations({ after: command.after, limit: 6 }, connection.signal);
+      const version = epoch, signal = connection.signal; const page = await reads.run(signal, () => client.conversations({ after: command.after, limit: 6 }, signal));
       if (!current(version)) return result(false, 'STALE', 'Old observation ignored.');
       if (page.conversations.length > 6) throw new LocalError('INVALID_RESPONSE', 'List limit exceeded.');
       patch({ connected: true, view: 'conversations', conversations: page.conversations.map(item => ({ id: item.id, title: item.title })), conversationCursor: page.nextCursor });
       return result(true, 'CONVERSATIONS', 'Conversation page loaded.');
     },
     profiles: async command => {
-      const version = epoch; const page = await client.executionProfiles({ after: command.after, limit: 6 }, connection.signal);
+      const version = epoch, signal = connection.signal; const page = await reads.run(signal, () => client.executionProfiles({ after: command.after, limit: 6 }, signal));
       if (!current(version)) return result(false, 'STALE', 'Old observation ignored.');
       if (page.profiles.length > 6) throw new LocalError('INVALID_RESPONSE', 'Profile limit exceeded.');
       profiles = page.profiles;
@@ -92,8 +114,8 @@ export function createInteractionController(options: { client: InteractionClient
       return result(true, 'PROFILES', 'Configured profiles loaded; provider availability has not been probed.');
     },
     open: async command => {
-      requireFree(); rotate(); const version = epoch;
-      patch({ view: 'conversation', selected: null, turns: [], connected: false }); await refresh(command.id, version); schedule();
+      requireFree(); rotate(); focused = null; loadedTurns = []; observation?.dispose(); const version = epoch;
+      patch({ observation: null, view: 'conversation', selected: null, turns: [], connected: false }); await refresh(command.id, version); schedule();
       if (!current(version)) return result(false, 'STALE', 'Old observation ignored.');
       return result(true, 'OPENED', 'Saved conversation opened.');
     },
@@ -117,15 +139,24 @@ export function createInteractionController(options: { client: InteractionClient
       if (!state.selected) return handlers.conversations({ type: 'conversations' });
       const version = epoch; await refresh(state.selected.id, version);
       if (!current(version)) return result(false, 'STALE', 'Old observation ignored.');
-      patch({ view: 'conversation' }); schedule(); return result(true, 'RECOVERED', 'Center history reloaded.');
+      patch({ view: 'conversation' }); syncObservation(); schedule(); return result(true, 'RECOVERED', 'Center history reloaded.');
     },
+    turn: async command => {
+      requireObservation(); if (!loadedTurns.some(turn => turn.number === command.number)) throw new LocalError('TURN_NOT_LOADED', 'Select a turn from the loaded history.');
+      focused = command.number; patch({view:'conversation'}); syncObservation(); await observation!.refresh(); return result(true,'TURN','Turn selected.');
+    },
+    page: async command => { requireObservation().page(command.number); return result(true,'PAGE','Text page selected; /back follows the latest text.'); },
+    activity: async command => { await requireObservation().activities(command.next ?? false); return result(true,'ACTIVITY','Activity references loaded; bodies are read only on request.'); },
+    detail: async command => { await requireObservation().detail(command.number); return result(true,'DETAIL','Selected activity body loaded.'); },
+    reply: async () => { await requireObservation().reply(); return result(true,'REPLY','Recorded final reply loaded.'); },
+    back: async () => { patch({view:'conversation'}); syncObservation(); requireObservation().back(); return result(true,'BACK','Back to assistant text.'); },
     disconnect: async () => { disconnect(); return result(true, 'DISCONNECTED', 'Observation stopped. Center work is not cancelled.'); },
     quit: async () => { await dispose(); return result(true, 'QUIT', 'Terminal closed. Center work is not cancelled.'); },
   };
   function disconnect() { rotate(); patch({ connected: false, notice: 'Disconnected; center work continues.', ...(intent ? { pending: { kind: intent.kind, status: 'unknown' } } : {}) }); }
   function dispose(): Promise<void> {
     if (disposed) return disposed;
-    disconnect(); patch({ closed: true }); listeners.clear();
+    disconnect(); observation?.dispose(); patch({ closed: true }); listeners.clear();
     disposed = (async () => { await activeMutation?.then(() => undefined, () => undefined); })(); return disposed;
   }
   async function execute(raw: Command): Promise<CommandResult> {
@@ -141,7 +172,7 @@ export function createInteractionController(options: { client: InteractionClient
     } catch (error) {
       const answer = error instanceof LocalError ? result(false, error.code, error.message)
         : result(false, error instanceof FlowApiError ? `HTTP_${error.status}` : 'READ_FAILED', 'Request failed. No automatic mutation retry was performed.');
-      if (!state.closed) patch({ notice: answer.message }); return answer;
+      if (!state.closed) patch({ notice: answer.message, ...(['recover', 'open'].includes(command.type) ? { connected: false } : {}) }); return answer;
     } finally { if (!state.closed) patch({ busy: false }); }
   }
   return {

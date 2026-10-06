@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-06T11:06:45.467Z",
+  "verdict": "EXPECTED_RED",
+  "selected": 1,
+  "failed": 1,
+  "passed": 0,
+  "unselected": 8,
+  "executionCalls": 1,
+  "retry": false,
+  "providerCalls": 0,
+  "nativeSdkCalls": 0,
+  "capacityWindow": false,
+  "productionSourceModified": false,
+  "observedFailure": "First different-attempt ownedAttempt transaction waits behind held transaction from the same runner; source throws only on positive Lock wait_event_type and pg_blocking_pids match. Subsequent heartbeat/report sections were not reached.",
+  "proofLocation": "apps/server/src/runner-read-fence.test.ts:131 at target cd13e01e871adaaf7dee1cc6676f7a52145e316f",
+  "notClaimed": [
+    "9 PG checks passed",
+    "heartbeat/report independently observed blocked",
+    "capacity improvement or SLO"
+  ],
+  "cleanup": {
+    "kind": "s01p04-cleanup",
+    "databaseName": "flow_s01p04_a57c5ac6e3c9426f9084d378eb406286",
+    "connectionsClosed": true,
+    "databaseAbsent": true
+  },
+  "preparationBindingsUnchanged": 18,
+  "retainedResources": [],
+  "limitations": "No additional PG inspection or retry after fixture. Database absence is the actual post-DROP query recorded by the fixture; existing approved source determines the positive blocker branch."
+}

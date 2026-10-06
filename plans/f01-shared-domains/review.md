@@ -1,4 +1,20 @@
+## 当前附件清理增量独审
+
+Review target commit: f04cb29633ca678b35aa423e02a16953add0cfba
+
+结论 APPROVED；Mika 独立只读复审 2026-10-06 11:26:54 UTC，P2 CLOSED，原69eb三行生产接线保持。1source/8raw字节hash一致，3/3与types0原证据核验，reviewer不重跑。仅共享接线；实际factory与附件fixture组合另验。
+[原审查](../../docs/evidence/f01/attachment-production-independent-review.md)
+
 # F01 共享接线审查
+
+当前增量状态：APPROVED（原生配置目录薄client，Mika独立只读）
+
+Review target commit：5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7
+
+Scope：packages/client/src/index.ts, packages/client/src/native-profile-catalog.test.ts。固定manifest：docs/evidence/f01/native-catalog-client-manifest.json；3/3 HTTP与最终typecheck通过。Mika完整固定diff/hash独审通过，回执native-catalog-client-review.md；不覆盖领域、原生进程或个人服务。
+
+## 历史批准（下列结论仍仅各自范围）
+
 
 **当前增量状态：APPROVED（CHAT10可信启动配置薄挂载）**
 
@@ -203,3 +219,41 @@ Review status: APPROVED
 Review target commit: 095bdb849a4ba688be7c2b55d90021b9d15e4b53
 
 status_read / gpt-6-astra 独立只读APPROVED，Mika接收；2source/3raw bytes和SHA全同，3/3原HTTP与manifest记载tsc0已核，无P1/P2、未重跑。保持原JSON/Bearer/signal/error、409不重试与旧Claude消费者；仅薄client，不涵盖PG或原生access。完整原结论见[receipt](../../docs/evidence/f01/native-profile-client-review.md)。
+
+## 工程配置薄client独立批准
+
+Review target commit：3a12ed7ebd8e69325309bd004043f06dabbf7ff4
+
+Reviewer native_center_owner，仅3file65行thin client/export，不审自己的工程domain。实际4HTTP与types0原证据已读，fixed/current源码相同，0重跑/noP1/P2，见engineering-profile-client-review.json。独立生产挂载1c081仍等待真实factory/PG组合与review，不能继承此批准。
+
+## 上下文历史薄client独立审查
+
+Review target commit: 7bbfa1c8c97c5aa871080ddc0efab7cc87b73e42
+
+APPROVED — native_center_owner独立只读；5源/12raw/18领域输入hash一致，无P1/P2。1HTTP与最终types0，初失败保留，未重跑。仅GET解码/身份/导出及固定依赖，生产挂载另审。见[回执](../../docs/evidence/f01/context-history-client-independent-review.json)。
+
+## 上下文历史生产接线
+
+Review target commit: e6abc4dde828686661c6b416a17de95b497c9734
+
+APPROVED — assignment_review独立只读，无P1/P2；4源/8raw/18已审domain输入核同源，027/owner route/reportEvents同TX/身份/重放/重启成立。未重跑检查，provider0，SDK采样/UI仍后继。见[独审回执](../../docs/evidence/f01/context-history-production-independent-review.json)。
+
+## 目标统一读口公共接线
+
+Review target commit: c05fca7beadd7bc59b1156e582d4d84078c512c8
+
+NOT_STARTED — assignment_review只读新四源薄接线与真实消费者，不复审O11领域。
+
+Review target commit: c05fca7beadd7bc59b1156e582d4d84078c512c8
+
+APPROVED — assignment_review独立只读4source/13raw/9域输入固定hash全符，无P1/P2，未重跑。仅公共接线，完整目标闭环仍open。见[回执](../../docs/evidence/f01/goal-delivery-independent-review.json)。
+
+## O12 transport signal
+
+Review target commit: ec6ad20479872a8cb701917b6fa448ca23a2a843
+
+NOT_STARTED；限定两源与1HTTP，不复核O11领域。
+
+Review target commit: ec6ad20479872a8cb701917b6fa448ca23a2a843
+
+APPROVED — native_center_owner独立只读2源/6raw，hash全同，无P1/P2。1HTTP/5请求/types0复用，0重跑；已发送mutation取消观察仍保持未知ACK语义。见[回执](../../docs/evidence/f01/goal-session-transport-independent-review.json)。

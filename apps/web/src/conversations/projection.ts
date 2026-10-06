@@ -1,4 +1,4 @@
-import { FlowApiError, type FlowClient } from "@flow/client";
+import { decodeConversationCreated, decodeConversationTurnAccepted, FlowApiError, type FlowClient } from "@flow/client";
 import {
   TERMINAL_STATUSES,
   conversationCreationSchema,
@@ -8,8 +8,8 @@ import {
   type ConversationTurn,
   type Detail,
 } from "@flow/contracts";
+import { ReadCache, bodyBytes } from "./read-cache";
 import { ConversationOutbox, type OutboxEntry } from "./outbox";
-import { assertContextReceiptMatches } from "../conversation-context/receipts";
 import { freezeContextSelection, type FrozenCitation } from "../conversation-context/selection";
 import { assertCreationReceiptMatches } from "../execution-profiles/selection";
 import { queuePort } from "./queue/commands";
@@ -89,6 +89,8 @@ export class ConversationProjection {
   private timer: ReturnType<typeof setTimeout> | undefined;
   private refreshFlight: Promise<void> | undefined;
   private readonly detailFlights = new Map<string, Promise<void>>();
+  private reads = new AbortController();
+  private readonly bodies = new ReadCache<DetailState>(value => value.data?.content, { entries: 2, bytes: 2 * 1024 * 1024 });
   private readonly turnVersions = new Map<string, number>();
   private readSequence = 0;
   private snapshotSequence = 0;
@@ -116,17 +118,25 @@ export class ConversationProjection {
   setVisible(visible: boolean) {
     if (this.visible === visible) return;
     this.visible = visible;
+    if (!visible) this.invalidateReads(false);
     this.queue.setVisible(visible);
     this.pauseObservation();
     if (visible && this.online) void this.refresh();
   }
   setOnline(online: boolean) {
     this.online = online;
+    if (!online) this.invalidateReads(false);
     this.queue.setOnline(online);
     this.pauseObservation();
     if (!online) this.update({ connection: "disconnected" });
     else if (this.visible) void this.refresh();
   }
+  private invalidateReads(clear: boolean) {
+    this.reads.abort(); this.reads = new AbortController(); this.detailFlights.clear();
+    this.update({ loadingMore: false, details: clear ? this.bodies.clear() : this.bodies.retain(value => !!value.data) });
+  }
+  /** Closing a retained view drops re-readable bodies, never its command receipts. */
+  clearReadCache() { this.invalidateReads(true); this.queue.clearReadCache(); }
   private pauseObservation() {
     clearTimeout(this.timer);
     this.observation.abort(); this.observation = new AbortController();
@@ -175,20 +185,23 @@ export class ConversationProjection {
 
   async loadMore() {
     const after = this.state.nextCursor;
-    if (!this.id || after === null || this.state.loadingMore || this.lifetime.signal.aborted) return;
-    const signal = requestSignal(this.lifetime.signal);
+    if (!this.id || after === null || this.state.loadingMore || !this.visible || !this.online || this.lifetime.signal.aborted) return;
+    const reads = this.reads;
+    const current = () => reads === this.reads && !reads.signal.aborted && !this.lifetime.signal.aborted;
+    const signal = requestSignal(this.lifetime.signal, reads.signal);
     const sequence = ++this.readSequence;
     this.update({ loadingMore: true });
     try {
       const page = await this.client.conversationTurns(this.id, { after, limit: 20 }, signal);
-      if (signal.aborted) return;
+      if (!current()) return;
+      if (signal.aborted) throw signal.reason;
       assertSummary(page.conversation, this.id); page.turns.forEach(turn => assertTurn(turn, this.id!));
       this.validateCreation(page.conversation);
       const turns = this.mergeTurns(page.turns, sequence);
       this.update({ turns, snapshot: this.state.snapshot ? this.reconcileSnapshot(this.state.snapshot, turns, this.snapshotSequence) : null, nextCursor: this.historyCursor(turns, page.nextCursor), error: null });
     } catch (error) {
-      if (!this.lifetime.signal.aborted) this.update({ error: errorMessage(error) });
-    } finally { this.update({ loadingMore: false }); }
+      if (current()) this.update({ error: errorMessage(error) });
+    } finally { if (current()) this.update({ loadingMore: false }); }
   }
 
   private mergeTurns(incoming: ConversationTurn[], sequence: number) {
@@ -269,11 +282,10 @@ export class ConversationProjection {
     try {
       let id = entry.conversationId;
       if (!id) {
-        const created = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
+        const raw = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
-        assertSummary(created.conversation); const capabilities = readCapabilities(created);
-        if (typeof created.replayed !== "boolean") throw Error("The creation receipt is not confirmed.");
-        assertCreationReceiptMatches(entry.creation!, created.conversation);
+        const created = decodeConversationCreated(raw, entry.creation!);
+        const capabilities = readCapabilities(created);
         this.creation = entry.creation!;
         id = created.conversation.id;
         this.id = id; this.outbox.bindConversation(entry.id, id);
@@ -284,14 +296,10 @@ export class ConversationProjection {
         this.update({ loading: false, error: null }); this.schedule();
         return id;
       }
-      const accepted = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
+      const raw = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
-      assertSummary(accepted.conversation, id); assertTurn(accepted.turn, id);
+      const accepted = decodeConversationTurnAccepted(raw, id, entry.request);
       this.validateCreation(accepted.conversation);
-      if (typeof accepted.replayed !== "boolean" || accepted.conversation.revision < entry.request.expectedRevision + 1
-        || accepted.turn.number !== entry.request.expectedRevision + 1 || accepted.turn.user.text !== entry.request.text)
-        throw Error("The turn receipt does not match the frozen message. Retry with its original request identity.");
-      assertContextReceiptMatches(entry.request.knowledge, accepted.turn.context);
       const current = this.state.snapshot!;
       const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
       if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))
@@ -316,30 +324,40 @@ export class ConversationProjection {
 
   loadReply(turnId: string): Promise<void> {
     const turn = this.state.turns.find(item => item.id === turnId);
-    if (!this.id || !turn || turn.assistant.state !== "available" || this.lifetime.signal.aborted) return Promise.resolve();
+    if (!this.id || !turn || turn.assistant.state !== "available" || !this.visible || !this.online || this.lifetime.signal.aborted) return Promise.resolve();
     const key = replyDetailKey(this.id, turn)!;
-    if (this.state.details[key]?.data) return Promise.resolve();
+    if (this.state.details[key]?.data) { this.update({ details: this.bodies.touch(key) }); return Promise.resolve(); }
     const existing = this.detailFlights.get(key); if (existing) return existing;
-    const id = this.id; const reference = turn.assistant.contentRef;
-    const source = turn.assistant.source;
-    const signal = requestSignal(this.lifetime.signal);
-    this.update({ details: { ...this.state.details, [key]: { loading: true } } });
-    const flight = this.client.conversationDetail(id, turnId, reference.id, signal).then(async data => {
-      if (signal.aborted) return;
+    const publish = (value: DetailState) => this.update({ details: this.bodies.put(key, value) });
+    if (this.detailFlights.size) { publish({ error: "Another reply is loading. Retry after it finishes." }); return Promise.resolve(); }
+    const id = this.id, reference = turn.assistant.contentRef, source = turn.assistant.source;
+    const reads = this.reads, current = () => reads === this.reads && !reads.signal.aborted && !this.lifetime.signal.aborted;
+    const signal = requestSignal(this.lifetime.signal, reads.signal);
+    publish({ loading: true });
+    const flight = Promise.resolve().then(() => {
+      if (!current()) throw Error("Reply read ended.");
+      return this.client.conversationDetail(id, turnId, reference.id, signal);
+    }).then(async data => {
+      if (!current()) return;
+      if (signal.aborted) throw signal.reason;
+      bodyBytes(data?.content, 1024 * 1024);
       const versionMatches = source.kind === "assistant-final"
         ? [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(data.content)))].map(byte => byte.toString(16).padStart(2, "0")).join("") === source.contentDigest
         : data.artifactVersion === source.artifactVersion;
+      if (!current()) return;
+      if (signal.aborted) throw signal.reason;
       if (data.id !== reference.id || data.kind !== reference.kind || !versionMatches)
         throw Error("The detail no longer matches this reply version. Refresh the conversation.");
-      if (!signal.aborted) this.update({ details: { ...this.state.details, [key]: { data } } });
-    }).catch(error => {
-      if (!this.lifetime.signal.aborted) this.update({ details: { ...this.state.details, [key]: { error: errorMessage(error) } } });
-    }).finally(() => { if (this.detailFlights.get(key) === flight) this.detailFlights.delete(key); });
+      publish({ data });
+    }).catch(error => { if (current()) publish({ error: errorMessage(error) }); })
+      .finally(() => { if (this.detailFlights.get(key) === flight) this.detailFlights.delete(key); });
     this.detailFlights.set(key, flight); return flight;
   }
 
   dispose() {
-    this.queue.dispose();
+    this.clearReadCache(); this.reads.abort(); this.queue.dispose();
+    this.turnVersions.clear();
+    this.state = { ...this.state, snapshot: null, turns: [], nextCursor: null, details: {} };
     this.lifetime.abort(); this.pauseObservation(); this.outbox.dispose(); this.detailFlights.clear(); this.listeners.clear();
   }
 }

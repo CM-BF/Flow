@@ -1,0 +1,65 @@
+{
+  "observedAt": "2026-10-06T11:33:36.183578+00:00",
+  "base": "fd1322f9c0c1d085d5e343e39f6216b20d26c264",
+  "inputs": [
+    {
+      "source": "7e37e95e07bb8423af774710bfa999c50ad4b50c",
+      "paths": [
+        "apps/execution-dashboard/src/registry.mjs",
+        "plans/README.md",
+        "plans/d05-architecture-view",
+        "docs/evidence/d05"
+      ]
+    },
+    {
+      "source": "77a6905b5a3b49abe331c15321d721b9cf338048",
+      "paths": [
+        "plans/tui01-terminal-client",
+        "docs/evidence/tui01"
+      ]
+    },
+    {
+      "source": "9f59c4a974a10047335f40fa9c42b270aba9a4e4",
+      "paths": [
+        "plans/eng01-engineering-delivery",
+        "docs/evidence/eng01"
+      ]
+    },
+    {
+      "source": "719b16e1559ceb76b071cfe73ea32db6bc78fc04",
+      "paths": [
+        "plans/flow-001-architecture"
+      ]
+    },
+    {
+      "source": "08b635f7f14dbb970d093dadbd5366eb193e3e99",
+      "paths": [
+        "plans/eng01c-writer-settlement",
+        "docs/evidence/eng01c"
+      ]
+    },
+    {
+      "source": "042e7e99189c04a3184edf3efe22ed0fa6235b33",
+      "paths": [
+        "plans/o11-goal-delivery-read-model",
+        "docs/evidence/o11"
+      ]
+    },
+    {
+      "source": "6843a268d2dc3cba0f43737dd143cef760d843e6",
+      "paths": [
+        "plans/eng01d-native-writer-seams",
+        "docs/evidence/eng01d"
+      ]
+    },
+    {
+      "source": "4b0d7f4c6b06ae13711fa0acca675c3cd382f815",
+      "paths": [
+        "plans/f01-shared-domains",
+        "docs/evidence/f01"
+      ]
+    }
+  ],
+  "sources": 139,
+  "validation": "Two new canonical parsers/parent/coLead/human complete; prior137 unchanged. No product sources or tests rerun."
+}

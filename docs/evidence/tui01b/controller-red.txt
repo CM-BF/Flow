@@ -1,0 +1,64 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack
+
+ ❯ packages/interaction/src/controller.test.ts (13 tests | 2 failed | 11 skipped) 9ms
+   ↓ descriptors parse commands, complete names and preserve ordinary text exactly
+   ↓ help is offline and creation persists before the typed client mutation
+   ↓ lost creation ACK retains the immutable body/key and only explicit recover replays it
+   ↓ startup with saved intent sends nothing and rejects a different connection binding
+   ↓ disconnect ignores a late read from the old epoch and does not cancel center work
+   ↓ disconnect during a mutation keeps unknown and quit waits for local cleanup only
+   ↓ raw draft is preserved while terminal display escapes OSC, ANSI and bidi controls
+   ↓ disconnect during durable save never dispatches a new POST on the replacement epoch
+   ↓ disconnect during ACK journal cleanup cannot reselect or reconnect the old epoch
+   ↓ saved unsupported queue intent is rejected without dispatch
+   ↓ discovery pages remain selectable while a conversation is open and expose every bounded row
+   × a stale send rejection preserves the draft, reloads only observations and resumes polling 8ms
+   × a failed explicit observation recovery becomes disconnected instead of a silent connected non-poller 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/controller.test.ts > a stale send rejection preserves the draft, reloads only observations and resumes polling
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ packages/interaction/src/controller.test.ts:118:52
+    116|   expect((await controller.execute({ type: 'send', text: 'Unsent origi…
+    117|   expect(controller.snapshot().draft).toBe('Unsent original draft'); e…
+    118|   expect(controller.snapshot().selected?.revision).toBe(1); expect(con…
+       |                                                    ^
+    119|   const before = reads; await vi.advanceTimersByTimeAsync(60_001);
+    120|   expect(reads).toBeGreaterThan(before); expect(sends).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/interaction/src/controller.test.ts > a failed explicit observation recovery becomes disconnected instead of a silent connected non-poller
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ packages/interaction/src/controller.test.ts:127:43
+    125|   await controller.initialize(); await controller.execute({ type: 'ope…
+    126|   expect((await controller.execute({ type: 'recover' })).ok).toBe(fals…
+    127|   expect(controller.snapshot().connected).toBe(false);
+       |                                           ^
+    128| });
+    129| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 11 skipped (13)
+   Start at  03:24:01
+   Duration  806ms (transform 436ms, setup 0ms, import 634ms, tests 9ms, environment 0ms)
+

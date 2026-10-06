@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-06T11:34:47.537Z",
+  "scope": "Two matched HTTP refreshes, UTF-8 uncompressed JSON; not tokens or total workload speed",
+  "refreshRequests": {
+    "legacy": 2,
+    "delivery": 2
+  },
+  "bytes": {
+    "legacy": [
+      4598,
+      4598
+    ],
+    "delivery": [
+      1218,
+      1411
+    ]
+  },
+  "originalGoalRepeated": {
+    "legacy": [
+      true,
+      true
+    ],
+    "delivery": [
+      false,
+      false
+    ]
+  },
+  "inputMaterialInRefresh": {
+    "legacy": [
+      false,
+      false
+    ],
+    "delivery": [
+      false,
+      false
+    ]
+  },
+  "fixedInputReads": 1,
+  "separateCorrectnessReread": 1,
+  "inputBytes": 2092,
+  "originalGoalBytes": 2537,
+  "planBytes": 732,
+  "inputReferenceStable": true,
+  "planReferenceStable": true,
+  "oldSnapshotHashChanged": true
+}

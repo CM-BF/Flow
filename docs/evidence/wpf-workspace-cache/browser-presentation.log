@@ -1,0 +1,60 @@
+locator.click: Timeout 2500ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Retained chats', exact: true })[22m
+[2m    - locator resolved to <button type="button" class="flow-link self-start px-3 text-xs">Retained chats</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    5 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 500ms[22m
+
+    at retained (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.browser.ts:37:102)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.browser.ts:95:101)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.browser.ts:38:306)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.browser.ts:93:3) {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Retained chats', exact: true })",
+    '    - locator resolved to <button type="button" class="flow-link self-start px-3 text-xs">Retained chats</button>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    5 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events',
+    '    - retrying click action',
+    '      - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
+{"checks":0,"failure":"TimeoutError: locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Retained chats', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"flow-link self-start px-3 text-xs\">Retained chats</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    5 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n","elapsedMs":8937,"cleanup":[{"name":"browser","state":"fulfilled"},{"name":"fixture","state":"fulfilled"}],"evidenceBytes":473098}

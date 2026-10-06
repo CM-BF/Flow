@@ -20,7 +20,8 @@ export async function runTerminal(args = process.argv.slice(2), env = process.en
   if (!token || token.length > 4096 || /[\r\n]/.test(token)) throw new Error('FLOW_TOKEN is required in the environment');
   const connectionId = createHash('sha256').update(JSON.stringify([url.origin, token])).digest('hex');
   const store = await openIntentStore(env.FLOW_TUI_STATE_DIR ?? join(homedir(), '.flow-terminal'), connectionId);
-  const controller = createInteractionController({ client: new FlowClient({ baseUrl: url.origin, token }), connectionId, intents: store });
+  const client = new FlowClient({ baseUrl: url.origin, token, assistantStreamProtocol: 'patch-v1' });
+  const controller = createInteractionController({ client, observe: client, connectionId, intents: store });
   let unmount: (() => void) | undefined;
   const stopObservation = () => { try { unmount?.(); } finally { if (args.includes('--headless')) process.stdin.destroy(); } };
   const stop = () => { void controller.dispose().then(stopObservation, stopObservation).catch(() => { process.exitCode = 1; }); };

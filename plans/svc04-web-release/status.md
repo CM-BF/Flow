@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:19:36 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:55:04 UTC；main源码接收仍41315b |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -20,8 +20,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 1 |
-| 当前产出 | 独立更新网页时后台任务持续，旧页面仍可加载保留资源。 |
-| 下一可用交付 | 验证当前产品网页与个人后台的兼容性，交付可查看的发布候选。 |
+| 当前产出 | 个人网页已独立更新，后台与执行器持续运行，旧页面资源仍保留。 |
+| 下一可用交付 | 本片段已交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED a2386f0575a961e5bf52fb9a8b152d587d94dc73 |
@@ -34,7 +34,7 @@
 | SVC04-02 | completed | runner_owner | 固定命名空间/版本CAS/精确资源/保留预算/结构化组合声明；[manifest](../../docs/evidence/svc04/manifest.json) |
 | SVC04-03 | completed | runner_owner | 15不同Node行为；真实PG后台任务持续；Chrome5阶段/58个JS请求全200，首次503保留 |
 | SVC04-04 | completed | runner_owner / Lead | Execution Lead独立APPROVED并进入main；[receipt](../../docs/evidence/svc04/main-receipt.json) |
-| SVC04-05 | pending | Lead / operator | 不在本轮执行个人部署 |
+| SVC04-05 | completed | runner_owner / Lead | [实际发布](../../docs/evidence/svc04/personal-release.md)，Web v2，后台不变 |
 
 [交付证据](../../docs/evidence/svc04/README.md)与[manifest](../../docs/evidence/svc04/manifest.json)为本分支事实。初次Chrome冷启动4个JS请求503；有界4 active/32 waiting修复后，发布及回退后的旧tab延迟资源均可读取。原始red保留；未保存PNG不称有截图文件。
 
@@ -43,3 +43,7 @@
 预审读取竞态已在最终实现修复：版本读取进入同一串行观察段；准入覆盖读取和响应，取消不提前释放仍在读的工作。新增1例有确定性red→green；最终2/2含原HTTP例重叠，未重跑PG/浏览器。Execution Lead独立只读复审APPROVED，无未解决P1/P2；未重跑检查。源码已停写，main已接收；仅保留计划/证据范围供下一实际兼容候选，工具源码停写移出。
 
 下一实际交付明确为当前产品Web artifact与个人已运行b1c2e39837c2208e6fc2c59a80e16797f26448b5 backend的0provider读取/发送/恢复/协商兼容证据及可看发布候选。合成fixture声明不能签该真实组合。本次未读取或操作个人服务，未发布/回退网页；实际窗口另行安排。
+
+## 实际个人发布
+
+2026-10-06 10:55:04 UTC：经co-lead转达GO完整Web-only授权，已完成真实bootstrap→publish，详见[发布证据](../../docs/evidence/svc04/personal-release.md)。旧文中“个人未部署”是原实现检查的历史范围，不代表现态。当前source8d8网页artifact caa1，后台b1c/maintenance accepting v12/4成功task；0模型/用户tab reload。工具实现a238未改，不扩大其独审；RELEASE01兼容证据另以7805批准固定输入为依据。发布操作结束，不再采样服务。

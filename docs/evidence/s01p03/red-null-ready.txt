@@ -1,0 +1,37 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop
+
+ × apps/runner/src/runtime-shutdown.test.ts > drains a definite null claim across normal stop and can claim after same-directory restart 34ms
+   → expected { version: 1, …(2) } to deeply equal { version: 1, inFlight: null, …(1) }
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/runtime-shutdown.test.ts > drains a definite null claim across normal stop and can claim after same-directory restart
+AssertionError: expected { version: 1, …(2) } to deeply equal { version: 1, inFlight: null, …(1) }
+
+- Expected
++ Received
+
+  {
+    "assignments": [],
+-   "inFlight": null,
++   "inFlight": "c742d504-704d-465a-bd28-911a06fbed96",
+    "version": 1,
+  }
+
+ ❯ apps/runner/src/runtime-shutdown.test.ts:69:31
+     67|   response.end(JSON.stringify({ assignment: null, remainingLeaseMs: 0 …
+     68|   await first.promise;
+     69|   expect(await api.journal()).toEqual({ version: 1, inFlight: null, as…
+       |                               ^
+     70|   const next = deferred<ServerResponse>(); api.onClaim((_index, reply)…
+     71|   const restarted = api.start(); const nextResponse = await next.promi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  03:23:30
+   Duration  386ms (transform 159ms, setup 0ms, import 264ms, tests 35ms, environment 0ms)
+

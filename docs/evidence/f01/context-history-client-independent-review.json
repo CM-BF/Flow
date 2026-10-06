@@ -1,0 +1,11 @@
+{
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-06T11:41:04.398018+00:00",
+  "decision": "APPROVED",
+  "target": "7bbfa1c8c97c5aa871080ddc0efab7cc87b73e42",
+  "delivery": "21532082cf74742d90235ca348f553ed512cf20a",
+  "manifestSha256": "d2bee6fa360c86403b9ad81d16594b11eeeae8b647d62d388dc62ea2acca8f93",
+  "findingCount": 0,
+  "evidence": "5source+12raw+18domain input hashes matched; 1red/1green/types2->offline install/types0; no rerun",
+  "scope": "validated GET/client/export/existing zod dependency; excludes PG/mount/provider"
+}

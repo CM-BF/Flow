@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model
+
+ ❯ apps/server/src/goal-delivery/delivery.test.ts (1 test | 1 failed) 2289ms
+   × keeps input and plan page identity stable through unrelated live activity without repeating materials 83ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-delivery/delivery.test.ts > keeps input and plan page identity stable through unrelated live activity without repeating materials
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ apps/server/src/goal-delivery/delivery.test.ts:81:88
+     79| it('keeps input and plan page identity stable through unrelated live a…
+     80|   const s = await setup(); const [a, b] = s.nodes as [string, string];
+     81|   const first = await read(s.goalId, { view: 'plan', limit: 1 }); expe…
+       |                                                                                        ^
+     82|   const material = await read(s.goalId, { view: 'input', nodeId: a, ve…
+     83|   expect(material.body.definition.input).toEqual(input());
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  04:31:04
+   Duration  4.73s (transform 1.09s, setup 0ms, import 2.30s, tests 2.29s, environment 0ms)
+

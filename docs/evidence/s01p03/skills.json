@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-06T10:18:19.486601+00:00",
+  "domain": "Node24 TypeScript runner lifecycle, durable admission and bounded HTTP shutdown",
+  "discovery": "Local installed skills match; no remote search or installation necessary.",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "name": "tdd",
+      "path": "/Users/citrine/.agents/skills/tdd/SKILL.md",
+      "sha256": "93ea419b76e9caaf26153b828e984f7c3fb136f4caa67b14af95f32ea965a1cc"
+    }
+  ],
+  "methods": {
+    "brainstorming": "Bounded existing lifecycle; short Interface proposal to mika before implementation. Required repository plan/status/review overrides skill no-spec preference.",
+    "codebase-design": "One private claim cancellation seam; ownership and unknown results stay in runtime/AdmissionJournal, no second state machine.",
+    "clean-code": "Name normal admission stop vs fatal shutdown; keep execution/outbox cancellation separate; no general framework.",
+    "tdd": "Public runRunner with real loopback HTTP, injected fake adapter and private journal; red/green vertical slices after seam approval; no product PG/provider.",
+    "find-skills": "Local-first match; no install or read of credentials."
+  }
+}

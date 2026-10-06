@@ -1,0 +1,4 @@
+packages/client/src/goal-delivery.test.ts(56,52): error TS2345: Argument of type '{ title: string; }' is not assignable to parameter of type '{ workspaceId: "personal"; title: string; }'.
+  Property 'workspaceId' is missing in type '{ title: string; }' but required in type '{ workspaceId: "personal"; title: string; }'.
+packages/client/src/goal-delivery.test.ts(57,143): error TS2322: Type '{ kind: "add-node"; title: string; }' is not assignable to type '{ kind: "add-node"; title: string; taskId: string | null; parent: { nodeId: string; expectedVersion: number; } | null; } | { kind: "update-node"; nodeId: string; expectedNodeVersion: number; title: string; } | { ...; } | { ...; } | { ...; } | { ...; }'.
+  Type '{ kind: "add-node"; title: string; }' is missing the following properties from type '{ kind: "add-node"; title: string; taskId: string | null; parent: { nodeId: string; expectedVersion: number; } | null; }': taskId, parent

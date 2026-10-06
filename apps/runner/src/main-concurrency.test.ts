@@ -3,8 +3,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 const dependencies = vi.hoisted(() => ({
   load: vi.fn(), publish: vi.fn(), guard: vi.fn(),
   native: vi.fn<(options: Record<string, unknown>) => Promise<void>>(),
-  endpoints: vi.fn(), protocol: vi.fn(),
+  endpoints: vi.fn(), protocol: vi.fn(), engineering: vi.fn(),
 }));
+vi.mock('./engineering/launch.js', () => ({ loadEngineeringRunner: dependencies.engineering }));
 vi.mock('./configuration.js', () => ({ loadRunnerConfiguration: dependencies.load }));
 vi.mock('./execution-profiles.js', () => ({ publishExecutionProfile: dependencies.publish, guardExecutionProfile: dependencies.guard }));
 vi.mock('./runtime.js', () => ({ runRunner: dependencies.native }));
@@ -19,6 +20,7 @@ beforeEach(() => {
   priorSignals = [process.listenerCount('SIGINT'), process.listenerCount('SIGTERM')];
   vi.stubEnv('FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS', undefined);
   vi.stubEnv('FLOW_A2A_ENDPOINTS_FILE', undefined);
+  vi.stubEnv('FLOW_ENGINEERING_SETUP_FILE', undefined);
   vi.stubEnv('FLOW_CLAUDE_MATERIALS_FILE', '/synthetic-materials.json');
   vi.stubEnv('FLOW_URL', 'http://synthetic.invalid');
   vi.stubEnv('FLOW_RUNNER_TOKEN', 'synthetic-token');
@@ -98,6 +100,32 @@ describe('runner main concurrency entry', () => {
     dependencies.native.mockRejectedValue(new Error('synthetic-private-dependency-error'));
     await start();
     expect(process.exitCode).toBe(1);
+    expect(process.stderr.write).toHaveBeenCalledExactlyOnceWith('Runner stopped: check its configuration, center authentication and local event storage.\n');
+  });
+});
+
+
+describe('dedicated engineering main entry', () => {
+  function configure() {
+    vi.stubEnv('FLOW_CLAUDE_MATERIALS_FILE', undefined);
+    vi.stubEnv('FLOW_ENGINEERING_SETUP_FILE', '/synthetic-engineering.json');
+    dependencies.engineering.mockResolvedValue(adapter);
+  }
+  it('composes only the pinned engineering adapter with the existing single-slot host', async () => {
+    configure(); await start();
+    expect(dependencies.engineering).toHaveBeenCalledWith(expect.objectContaining({ manifestFile: '/synthetic-engineering.json', workingDirectory: '/synthetic-workdir' }));
+    expect(dependencies.native).toHaveBeenCalledWith(expect.objectContaining({ adapters: [adapter], maxConcurrentAttempts: 1 }));
+    expect(dependencies.load).not.toHaveBeenCalled(); expect(dependencies.publish).not.toHaveBeenCalled(); expect(dependencies.protocol).not.toHaveBeenCalled();
+  });
+  it.each(['FLOW_CLAUDE_MATERIALS_FILE', 'FLOW_A2A_ENDPOINTS_FILE'])('refuses engineering plus %s before storage or publication', async name => {
+    configure(); vi.stubEnv(name, '/other-config'); await start(); noStartup();
+  });
+  it('refuses parallel claims against one engineering project before startup', async () => {
+    configure(); vi.stubEnv('FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS', '2'); await start(); noStartup();
+  });
+  it('does not enter the host after rejected setup and keeps startup errors private', async () => {
+    configure(); dependencies.engineering.mockRejectedValue(new Error('private-storage-location')); await start();
+    expect(dependencies.native).not.toHaveBeenCalled(); expect(process.exitCode).toBe(1);
     expect(process.stderr.write).toHaveBeenCalledExactlyOnceWith('Runner stopped: check its configuration, center authentication and local event storage.\n');
   });
 });

@@ -1,0 +1,40 @@
+✔ structured summaries never mine historical risks or no-decision prose (1008.445791ms)
+✔ active work is bounded and priority ordered; completed history is separate (626.3155ms)
+✔ metadata-only changes retain exact implementation approval, including dirty docs (1500.451417ms)
+✔ tracked changes, additions, deletions and untracked implementation invalidate approval (2058.425334ms)
+✔ new code outside a narrow scope is unknown, not metadata approval (1058.042959ms)
+✔ missing/unsafe/nonexistent scopes and absent target never turn green (1752.207084ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-YDMUC7/T01
+ * branch            3cf93878066e2ee9be29fba85eb973438cac5707 -> FETCH_HEAD
+✔ main ancestry survives unrelated main metadata commits without owner status rewrites (659.803708ms)
+✔ scope-tree integration requires existing target and no omitted new implementation (1615.728834ms)
+✔ registry sources have unique valid identities and bounded canonical Web platform paths (0.720834ms)
+✔ executable files under docs are not silently treated as metadata (746.51125ms)
+✔ top three never hide other active work, while historical missing summaries stay in history (7.8825ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-PNUy41/T01
+ * branch            30c1bec97ad6478d96ae79dba6a17e4c3848c19a -> FETCH_HEAD
+✔ historical main ancestry cannot approve later implementation changes, deletions or dirty paths (2775.854042ms)
+✔ global phase comes only from the explicit short phase source (656.334083ms)
+✔ one matching task target starts one comparison; a second snapshot performs fresh reads (1694.914125ms)
+ℹ {"phase":"same-target","gitStarts":24,"targetComparisons":1}
+✔ different review target is still independently compared and can invalidate approval (1362.4565ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (2626.270375ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (2028.322167ms)
+✔ 128 literal declarations use one tree read without changing public proof or next-snapshot freshness (1312.652167ms)
+✔ overlapping directories and duplicate declarations preserve full NUL records including unusual descendant names (1012.524209ms)
+✔ missing individual scope is unknown even when another scope or similarly named directory returns entries (517.728459ms)
+✔ main deletion is a changed tree, not a missing source or green proof (607.7915ms)
+✔ different repositories or commits cannot reuse a successful tree (862.810625ms)
+✔ combined stdout overflow falls back serially and retains scopes that fit the original per-scope limit (2153.154125ms)
+✔ one scope larger than maxBuffer remains unknown without retry or relabeling as missing (1690.699958ms)
+✔ bad target fails without tree retries, and invalid declarations retain validation semantics (109.405542ms)
+✔ argument overflow splits the batch but an oversized literal remains unknown (314.771291ms)
+✔ ordinary Git failure and timeout stay unknown without splitting or retry (5747.015333ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14568.745417

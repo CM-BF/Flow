@@ -1,0 +1,109 @@
+{
+  "task": "F01",
+  "slice": "context-history-client",
+  "target": "7bbfa1c8c97c5aa871080ddc0efab7cc87b73e42",
+  "time": "2026-10-06T11:38:45.202495+00:00",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 43491,
+      "sha256": "13ab142cf4420c2fbcc38095e69eb34f9fae4e06664e5846de197985051b7a44"
+    },
+    {
+      "path": "packages/client/src/context-history.test.ts",
+      "bytes": 2578,
+      "sha256": "462b04fe59edc00aa190107fbef2ccce5d0c564ecd6337e31f17a6f3acf4507d"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1191,
+      "sha256": "b2a4fa50d5c14cdcee0c1e2b162b6940015feb2faf0e48ca03926fb52557f06b"
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/context-history-client-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-client-green.stdout",
+      "bytes": 319,
+      "sha256": "4e1362fb0a602e8f4dc505ac4b3ccb109bc66a4601de3b83ca0dd20838d64919"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-client-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-client-red.stdout",
+      "bytes": 1160,
+      "sha256": "7d2aeef60db30d5728a7e9d80aa5c8ea86fd3a51314051d3a4ab43dc1511125d"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-client-types-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-client-types-final.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-client-types.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-client-types.stdout",
+      "bytes": 3801,
+      "sha256": "8381668937f4eb96d1fa8375706e33bcd57af20f4583adfaa9b00259c82f7edd"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-dependency-install.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-dependency-install.stdout",
+      "bytes": 262,
+      "sha256": "9d42e0748c1960bb79dbb1fd537631a314402937ec8e2ca42afe9f3c96d861fb"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-workspace-install.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/context-history-workspace-install.stdout",
+      "bytes": 118,
+      "sha256": "ec4a7551fc89130b676bc40dff03a11f64e792893a2ac9a33eb080fe518b3bb1"
+    }
+  ],
+  "domainInput": "docs/evidence/f01/context-history-domain-input.json",
+  "checks": {
+    "http": {
+      "passed": 1,
+      "firstRedPreserved": true
+    },
+    "typecheck": {
+      "initialExit": 2,
+      "finalExit": 0
+    },
+    "dependency": "zod 4.6.5 server dependency and existing lock importer only; offline frozen install, no scripts"
+  },
+  "scope": "Transparent GET plus strict schema/task binding; no PG/mount/provider evidence",
+  "providerCalls": 0
+}

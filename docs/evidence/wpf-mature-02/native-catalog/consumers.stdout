@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ✓ apps/server/src/execution-profiles/execution-profiles.test.ts (7 tests) 5296ms
+   ✓ pins a selected conversation to the configured runner and preserves that choice in the claimed task  530ms
+   ✓ executes the selected configuration, separates reported settings, and resumes only on the original runner  1791ms
+ ✓ apps/server/src/execution-profiles/steering-admission.test.ts (7 tests) 3646ms
+   ✓ rejects unknown declarations and configuration mutation, then preserves profiles and command receipts across restart  437ms
+   ✓ runs legacy unpinned work through string input even when the same runner publishes steering capability  419ms
+ ✓ packages/client/src/execution-profiles.test.ts (2 tests) 34ms
+ ✓ packages/client/src/native-profile-publication.test.ts (1 test) 22ms
+
+ Test Files  4 passed (4)
+      Tests  17 passed (17)
+   Start at  03:29:35
+   Duration  11.09s (transform 514ms, setup 0ms, import 1.81s, tests 9.00s, environment 0ms)
+

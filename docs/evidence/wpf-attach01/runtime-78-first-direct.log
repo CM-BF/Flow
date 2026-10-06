@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources
+
+ ✓ apps/server/src/attachments/attachments.test.ts (10 tests) 6022ms
+   ✓ committed upload survives a real fixture center SIGKILL and same-key HTTP replay  4224ms
+ ✓ apps/server/src/attachments/context.test.ts (19 tests) 4798ms
+   ✓ before 026 plain/knowledge remain v1; migration preserves saved receipts and enables project GET only  396ms
+   ✓ lost Send ACK replays before TTL and busy/CAS after restart; retained expiry blocks a fresh key  341ms
+   ✓ one batched metadata query for 50 items contains descriptors only; large body is read explicitly  473ms
+ ✓ packages/contracts/src/attachments.test.ts (41 tests) 38ms
+ ✓ apps/web/test/conversation-context-receipts.test.ts (8 tests) 8ms
+
+ Test Files  4 passed (4)
+      Tests  78 passed (78)
+   Start at  03:44:54
+   Duration  13.74s (transform 883ms, setup 0ms, import 2.40s, tests 10.87s, environment 0ms)
+

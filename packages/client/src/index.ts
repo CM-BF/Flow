@@ -1,3 +1,8 @@
+import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+import { EXECUTION_PROFILE_HEADER, NATIVE_EXECUTION_PROFILE_VERSION, nativeExecutionProfileCatalogPageSchema, type NativeExecutionProfileCatalogPage } from '@flow/contracts';
+import { engineeringProfilePageSchema, engineeringProfilePublishedSchema, type EngineeringProfileConfiguration, type EngineeringProfilePage, type EngineeringProfilePublished } from '@flow/contracts';
+import { contextHistoryResponseSchema, type ContextHistoryResponse } from '@flow/contracts';
+export { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
@@ -12,12 +17,14 @@ import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQue
 import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
 import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
 import type { ConversationContextDetail } from '@flow/contracts';
+import type { AttachmentCapabilities, AttachmentUpload, AttachmentAccepted, AttachmentList, AttachmentMetadata, AttachmentContent, AttachmentReceiptLookup } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
 import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage, GoalContextDetail, GoalNativeExecution, GoalNativeExecutionResult } from '@flow/contracts';
+import type { GoalDeliveryQuery, GoalDeliveryRead } from '@flow/contracts';
 
 import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
 
@@ -44,6 +51,13 @@ export class FlowClient {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
     this.assistantStreamProtocol = options.assistantStreamProtocol;
+  }
+
+  async contextHistory(taskId: string, signal?: AbortSignal): Promise<ContextHistoryResponse> {
+    const raw = await this.request<unknown>(`/api/tasks/${encodeURIComponent(taskId)}/context/history`, { signal });
+    const history = contextHistoryResponseSchema.parse(raw);
+    if (history.taskId !== taskId) throw new Error('Context history task identity mismatch');
+    return history;
   }
 
   assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {
@@ -203,6 +217,14 @@ export class FlowClient {
   readGoal(id: string, signal?: AbortSignal): Promise<GoalSnapshot> {
     return this.request(`/api/goals/${encodeURIComponent(id)}`, { signal });
   }
+  goalDelivery(id: string, input: GoalDeliveryQuery, signal?: AbortSignal): Promise<GoalDeliveryRead> {
+    const query = new URLSearchParams();
+    for (const [name, value] of Object.entries(input)) {
+      if (value === undefined) continue;
+      for (const item of Array.isArray(value) ? value : [value]) query.append(name, String(item));
+    }
+    return this.request(`/api/goals/${encodeURIComponent(id)}/delivery?${query}`, { signal });
+  }
   commandGoal(id: string, input: GoalCommand, key: string, signal?: AbortSignal): Promise<GoalCommandResult> {
     return this.request(`/api/goals/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
@@ -297,8 +319,25 @@ export class FlowClient {
       ...(options.profileProtocol === 'steering-v1' ? { headers: { 'X-Flow-Execution-Profile': 'steering-v1' } } : {}),
     });
   }
+  async nativeExecutionProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeExecutionProfileCatalogPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return nativeExecutionProfileCatalogPageSchema.parse(await this.request<unknown>(`/api/execution-profiles${query.size ? `?${query}` : ''}`, {
+      signal, headers: { [EXECUTION_PROFILE_HEADER]: NATIVE_EXECUTION_PROFILE_VERSION },
+    }));
+  }
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  async publishEngineeringProfile(input: { configuration: EngineeringProfileConfiguration }, signal?: AbortSignal): Promise<EngineeringProfilePublished> {
+    return engineeringProfilePublishedSchema.parse(await this.request<unknown>('/api/runner/engineering-profile', {
+      method: 'POST', body: JSON.stringify(input), signal,
+    }));
+  }
+  async listEngineeringProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<EngineeringProfilePage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return engineeringProfilePageSchema.parse(await this.request<unknown>(`/api/engineering-profiles${query.size ? `?${query}` : ''}`, { signal }));
   }
   publishNativeExecutionProfile(input: { configuration: NativeExecutionProfileConfiguration }, signal?: AbortSignal): Promise<NativeExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
@@ -332,8 +371,9 @@ export class FlowClient {
     return this.request(`/api/plugins/${encodeURIComponent(id)}/operations/${encodeURIComponent(operationId)}`, { signal });
   }
 
-  createConversation(input: ConversationCreation, key: string, signal?: AbortSignal): Promise<ConversationCreated> {
-    return this.request('/api/conversations', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  async createConversation(input: ConversationCreation, key: string, signal?: AbortSignal): Promise<ConversationCreated> {
+    const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationCreation;
+    return decodeConversationCreated(await this.conversationAcknowledgement('/api/conversations', body, key, signal), frozen);
   }
   conversations(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationList> {
     const query = new URLSearchParams();
@@ -350,14 +390,39 @@ export class FlowClient {
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns${query.size ? `?${query}` : ''}`, { signal });
   }
-  submitConversationTurn(id: string, input: ConversationTurnAdmission, key: string, signal?: AbortSignal): Promise<ConversationTurnAccepted> {
-    return this.request(`/api/conversations/${encodeURIComponent(id)}/turns`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  async submitConversationTurn(id: string, input: ConversationTurnAdmission, key: string, signal?: AbortSignal): Promise<ConversationTurnAccepted> {
+    const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationTurnAdmission;
+    return decodeConversationTurnAccepted(await this.conversationAcknowledgement(`/api/conversations/${encodeURIComponent(id)}/turns`, body, key, signal), id, frozen);
   }
   conversationDetail(id: string, turnId: string, detailId: string, signal?: AbortSignal): Promise<Detail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns/${encodeURIComponent(turnId)}/details/${encodeURIComponent(detailId)}`, { signal });
   }
   conversationContext(id: string, contextId: string, signal?: AbortSignal): Promise<ConversationContextDetail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/contexts/${encodeURIComponent(contextId)}`, { signal });
+  }
+
+  attachmentCapabilities(projectId: string, signal?: AbortSignal): Promise<AttachmentCapabilities> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/capabilities`, { signal });
+  }
+  uploadAttachment(projectId: string, input: AttachmentUpload, key: string, signal?: AbortSignal): Promise<AttachmentAccepted> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  attachments(projectId: string, options: { after?: string; limit?: number; q?: string } = {}, signal?: AbortSignal): Promise<AttachmentList> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit', 'q'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments${query.size ? `?${query}` : ''}`, { signal });
+  }
+  attachment(projectId: string, resourceId: string, signal?: AbortSignal): Promise<AttachmentMetadata> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/${encodeURIComponent(resourceId)}`, { signal });
+  }
+  attachmentContent(projectId: string, resourceId: string, version: number, digest: string, signal?: AbortSignal): Promise<AttachmentContent> {
+    const query = new URLSearchParams({ digest });
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/${encodeURIComponent(resourceId)}/versions/${encodeURIComponent(version)}/content?${query}`, { signal });
+  }
+  /** A missing receipt leaves a previous upload unresolved; no automatic retry or new key. */
+  attachmentUploadReceipt(projectId: string, input: { scope: string; key: string }, signal?: AbortSignal): Promise<AttachmentReceiptLookup> {
+    const query = new URLSearchParams(input);
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/upload-receipt?${query}`, { signal });
   }
 
   enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
@@ -389,15 +454,15 @@ export class FlowClient {
   }
 
   show(id: string, signal?: AbortSignal): Promise<TaskSnapshot> { return this.request(`/api/tasks/${encodeURIComponent(id)}`, { signal }); }
-  detail(id: string): Promise<Detail> { return this.request(`/api/details/${encodeURIComponent(id)}`); }
+  detail(id: string, signal?: AbortSignal): Promise<Detail> { return this.request(`/api/details/${encodeURIComponent(id)}`, { signal }); }
   events(id: string, after = 0): Promise<EventPage> { return this.request(`/api/tasks/${encodeURIComponent(id)}/events?after=${after}`); }
 
-  decide(id: string, answer: DecisionAnswer, key: string): Promise<TaskSummary> {
-    return this.request(`/api/tasks/${encodeURIComponent(id)}/decision`, { method: 'POST', body: JSON.stringify(answer), headers: { 'Idempotency-Key': key } });
+  decide(id: string, answer: DecisionAnswer, key: string, signal?: AbortSignal): Promise<TaskSummary> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/decision`, { method: 'POST', body: JSON.stringify(answer), headers: { 'Idempotency-Key': key }, signal });
   }
 
-  cancel(id: string, key: string): Promise<TaskSummary> {
-    return this.request(`/api/tasks/${encodeURIComponent(id)}/cancel`, { method: 'POST', body: '{}', headers: { 'Idempotency-Key': key } });
+  cancel(id: string, key: string, signal?: AbortSignal): Promise<TaskSummary> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/cancel`, { method: 'POST', body: '{}', headers: { 'Idempotency-Key': key }, signal });
   }
 
   reconciliation(id: string, after = 0): Promise<ReconciliationView> {
@@ -470,6 +535,11 @@ export class FlowClient {
       await reader.cancel().catch(() => undefined);
       reader.releaseLock();
     }
+  }
+
+  private async conversationAcknowledgement(path: string, body: string, key: string, signal?: AbortSignal): Promise<unknown> {
+    try { return await this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal }); }
+    catch (error) { if (error instanceof SyntaxError) throw new UnknownConversationAcknowledgementError(); throw error; }
   }
 
   private async request<T>(path: string, init: RequestInit = {}): Promise<T> {

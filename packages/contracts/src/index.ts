@@ -7,6 +7,7 @@ export * from './protocol-dispatch.js';
 export { isAuthoritativeUsageAllowed } from './harnesses.js';
 export * from './projects.js';
 export * from './goals.js';
+export * from './goal-delivery.js';
 export * from './conversations.js';
 export * from './assistant.js';
 export * from './plugins.js';
@@ -25,3 +26,9 @@ export * from './goal-context.js';
 export * from "./assistant-stream.js";
 export * from './active-steering.js';
 export * from './goal-native-executions.js';
+export * from './engineering-profile.js';
+
+export * from './attachments.js';
+export * from './context-transparency.js';
+export * from './context-observation-event.js';
+export * from './context-observation-history.js';

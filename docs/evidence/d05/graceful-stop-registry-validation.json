@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-06T10:29:20.129Z",
+  "sources": 127,
+  "registryValid": true,
+  "checks": [
+    {
+      "id": "S01P03",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop",
+      "branch": "codex/runner-graceful-stop",
+      "errors": [
+        "缺少可解析 UTC 更新时间"
+      ],
+      "humanComplete": false,
+      "missing": [
+        "当前阻塞"
+      ]
+    }
+  ],
+  "statusCorrection": "Owner asked to correct actual parser fields at safe metadata point; registration remains valid and does not guess progress",
+  "scope": "registration/parser only; no product test",
+  "currentParser": {
+    "sourceMain": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "observedAt": "2026-10-06T10:29:56.549Z",
+    "errors": [
+      "缺少可解析 UTC 更新时间"
+    ],
+    "humanComplete": false
+  },
+  "initialParser": "D05 authority historical parser; current main parser follow-up explicitly separate"
+}

@@ -1,0 +1,30 @@
+✔ confirmed parent and child use one headline slot while other directions fill both top threes (23.770417ms)
+✔ child blockers and decisions stay independently visible without changing parent priority or facts (0.496958ms)
+✔ a planning parent never suppresses an active child (46.366542ms)
+✔ a delivered parent never suppresses an active child (0.201875ms)
+✔ a parent with incomplete human facts does not borrow its child summary (0.147333ms)
+✔ an unknown relation with a registered target remains separate (0.109625ms)
+✔ stale, missing and cyclic parent sources cannot group children (34.129208ms)
+✔ legacy names and undeclared relationships preserve prior priority ordering (0.413959ms)
+✔ explicit two-level declarations resolve without changing progress or inferring slash-separated leads (3.174125ms)
+✔ explicit big task can omit its redundant self ID, but old tasks do not become big implicitly (0.134125ms)
+✔ duplicate fields and multi-value parents remain unknown and retain declarations (0.202917ms)
+✔ the actual status parser retains duplicate rows instead of trusting the last value (47.932667ms)
+✔ ID and canonical plan path must both match before creating a navigation action (0.172667ms)
+✔ self, cycle, and third level are unknown, including MATURE-shaped IDs (0.145ms)
+✔ unknown parent is pending registration; registered legacy parent remains unknown (0.082375ms)
+✔ registered missing parent stays inspectable but never known (0.079292ms)
+✔ registered frozen parent stays inspectable but never known (0.06925ms)
+✔ registered stale parent stays inspectable but never known (0.103625ms)
+✔ invalid own source invalidates relation and co-lead, without borrowing parent ownership (0.642ms)
+✔ contradictory big identity, layer or self plan does not resolve (0.145584ms)
+✔ external and malicious link declarations never become locations, bounded raw text remains visible (0.15725ms)
+✔ actual aggregation follows status changes, missing/frozen sources, and registered-only documents (1650.98125ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1835.955417

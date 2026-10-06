@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:12:16 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:32:44 UTC / mainfd1322f9c0c1d085d5e343e39f6216b20d26c264 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示125项实际进度，工程交付与附件资源两条工作线均可见。 |
+| 当前产出 | 140项实际进度可查看；目标会话、工程收据和两项网页改进已登记，随本批更新。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -61,3 +61,27 @@
 2026-10-06T10:13:49.228Z实际125源回执已归档[engineering-attachment-registry-live.json](../../docs/evidence/d05/engineering-attachment-registry-live.json)：mainc9 clean、协调账本available、unregistered[]，四项current/human完整/issues[]。此为当时实际观察，归档未再次重启或跑产品测试；后继实现状态沿唯一owner自动刷新。
 
 2026-10-06 注册维护：TUI01B真实canonical加入为第126源，D06保持原ID并唯一迁dashboard-architecture-runtime；旧stream树只读历史。两source与registry解析通过，原独审图target2c316按f181固定源码，不追moving main。部署回执另记，不重跑架构/产品。
+
+2026-10-06T10:22:38.966Z实际126源回执见[shared-ack-runtime-registry-live.json](../../docs/evidence/d05/shared-ack-runtime-registry-live.json)，main8d8 clean、账本available；新S01P03当时仅claim尚未登记。当前补其真实canonical为127源候选；只验证唯一性/三件套/解析，未把未来部署写成已发生，不重跑架构或产品。
+
+2026-10-06 10:38:41 UTC：已保存10:30:43实际127源回执（main0b0，S01P03时间/人读字段已纠正），本批候选129源登记WPF-RELEASE01真实网页兼容与WPF-DPERF02核验复用，当前main parser两者errors=[]/human完整；固定f181架构资源不改，0产品测试/模型/个人操作。见[登记](../../docs/evidence/d05/web-release-registry-validation.json)与[原实际回执](../../docs/evidence/d05/graceful-stop-registry-live.json)。
+
+新增 ENG01B/TUI01C 至131个唯一来源，登记与解析验证见 engineering-tui-registry-validation.json；129实际历史快照已归档 engineering-129-registry-live.json。固定架构仍由D06维护，本批不改图、不把新登记当产品完成。
+
+10:49:58.895Z实际131来源、ENG01B/TUI01C/DPERF02 current=true且errors/issues空，见proof-131-registry-live.json。新增Web共享ACK来源待下一正常132来源换载，不为metadata重复架构或产品检查。
+
+2026-10-06 11:00:58.883Z：实际4320重载132唯一来源，main4285182a clean；ACK01/ENG01B/TUI01C/SVC04人读字段完整、source live、errors/issues空。仅替换核PID18687的本看板服务，个人61227/61228未动；[实际快照摘要](../../docs/evidence/d05/proof-132-registry-live.json)。
+
+2026-10-06 11:21:28 UTC：登记ENG01C、S01P04、WPF-ATTACHI01、WPF-RELEASE02和WPF-WORKSPACEPERF01至137个唯一来源。三件套/证据目录实际存在，状态解析、人读字段与唯一父任务/co-lead通过；见[登记回执](../../docs/evidence/d05/engineering-attachment-137-registry-validation.json)。部署前仍以132实采为准；只维护登记，不改固定架构图、不跑产品或模型。
+
+2026-10-06T11:22:38.886Z实际137来源发布，main a3195c12；本批5项source live、人读完整、errors/issues空。原4320自有PID50668正常停止后新session5633，固定架构与个人服务不变；见[实采回执](../../docs/evidence/d05/engineering-attachment-137-registry-live.json)。
+
+2026-10-06 11:32:44 UTC：139个唯一source已校验；新O11/ENG01D三件套、parser、人读/父任务关联均完整，正式看板部署待本批main接收。[登记核验](../../docs/evidence/d05/goal-native-139-registry-validation.json)。固定架构图不变，无产品重测。
+
+2026-10-06T11:35:26.328928+00:00：4320实际139来源已采，O11/ENG01D live、issues=[]；唯一新session55840替换已核main目录的旧4320进程，个人服务/其他预览未动。[实际回执](../../docs/evidence/d05/goal-native-139-registry-live.json)。
+
+2026-10-06T11:45:06.000446+00:00：ENG01E唯一source存在且parser无错误、人读字段完整；140来源候选见[登记记录](../../docs/evidence/d05/engineering-checker-140-registry.json)，保留架构固定f181快照，不重跑产品/架构检查。
+
+2026-10-06T11:49:00.745135+00:00：4320实际140来源已部署，ENG01E live/current、人读完整、issues=[]，见[实际回执](../../docs/evidence/d05/engineering-checker-140-live.json)。仅替换已核main目录的自有59884进程；架构固定快照和个人服务保持。
+
+2026-10-06T11:56:33.581142+00:00：O12/ENG01F及两Web已审片的canonical三件套、父任务、人读字段已核，144来源候选，见[登记](../../docs/evidence/d05/goal-checker-web-144-registry.json)。网页摘要源码由Web独立批准后在I02接收，本登记不修改human/app/图。

@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-06T10:57:23.068Z",
+  "stack": "Node24 TypeScript PostgreSQL16 row authorization fence and controlled transaction concurrency",
+  "discovery": "Local installed matches preferred; no installation. PG16 primary docs used for exact row-lock conflict matrix.",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "name": "tdd",
+      "path": "/Users/citrine/.agents/skills/tdd/SKILL.md",
+      "sha256": "93ea419b76e9caaf26153b828e984f7c3fb136f4caa67b14af95f32ea965a1cc"
+    }
+  ],
+  "sourceBaseline": "docs/quality/skills.md; existing user-selected clean-code source remains fixed, not reinstalled",
+  "methods": {
+    "brainstorming": "Bounded existing ownedAttempt seam; Mika approved private fixed SHARE helper before implementation",
+    "codebaseDesign": "One file-private authorization Interface hides fixedSQL and revoked check, transaction owner unchanged",
+    "cleanCode": "No arbitrary lock-mode parameter or duplicated module/state machine; keep error identities and resource ownership",
+    "tdd": "Real dedicated PG transaction interleavings at existing production Interface; future actual red/green count separately",
+    "findSkills": "Local-first source/hash recorded; no unrelated install"
+  },
+  "references": [
+    "https://www.postgresql.org/docs/16/explicit-locking.html#LOCKING-ROWS"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "database": "flow_eng01a_vertical_1c828d29594b4b0ba657a96bdb1f291e",
+  "databaseRemoved": true,
+  "providerCalls": 0,
+  "samples": [
+    {
+      "scenario": "success",
+      "elapsedMs": 1304,
+      "checkerElapsedMs": 46,
+      "artifactBytes": 3077,
+      "snapshotFiles": 4,
+      "diffBytes": 630,
+      "checkerChildExited": true,
+      "writes": 1
+    },
+    {
+      "scenario": "lost-acknowledgement",
+      "writes": 1,
+      "events": 1,
+      "journalRetained": true,
+      "verificationStatus": "pending"
+    }
+  ]
+}

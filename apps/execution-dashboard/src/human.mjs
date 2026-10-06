@@ -40,7 +40,11 @@ export function humanOverview(tasks, phaseSourceId = 'FLOW-001') {
   const priorityOrder = (a, b) => (a.status.human?.priority ?? 9) - (b.status.human?.priority ?? 9) || a.id.localeCompare(b.id);
   const known = tasks.filter(task => task.current && task.status.human?.complete).sort(priorityOrder);
   const active = known.filter(activeState);
-  const featured = active.slice(0, 3);
+  const activeIds = new Set(active.map(task => task.id));
+  // Only verified direct relationships may share headline space. Parent facts stay its own.
+  const headlines = active.filter(task => !(task.links?.kind === 'subtask'
+    && task.links.parent.state === 'known' && activeIds.has(task.links.parent.targetId)));
+  const featured = headlines.slice(0, 3);
   const featuredIds = new Set(featured.map(task => task.id));
   const otherActive = tasks.filter(task => task.current && activeState(task) && !featuredIds.has(task.id)).sort(priorityOrder);
   return {
@@ -48,7 +52,7 @@ export function humanOverview(tasks, phaseSourceId = 'FLOW-001') {
     phaseSourceId,
     activeIds: featured.map(task => task.id),
     otherActiveIds: otherActive.map(task => task.id),
-    deliveryIds: known.filter(activeState).sort((a, b) => Number(b.status.human.blocker.state === 'active') - Number(a.status.human.blocker.state === 'active') || priorityOrder(a, b)).slice(0, 3).map(task => task.id),
+    deliveryIds: [...headlines].sort((a, b) => Number(b.status.human.blocker.state === 'active') - Number(a.status.human.blocker.state === 'active') || priorityOrder(a, b)).slice(0, 3).map(task => task.id),
     blockerIds: tasks.filter(task => task.current && task.status.human?.blocker.state === 'active').map(task => task.id),
     decisionIds: tasks.filter(task => task.current && task.status.human?.decision.state === 'active').map(task => task.id),
     unknownIds: tasks.filter(task => !completed(task) && (!task.current || !task.status.human?.complete)).map(task => task.id),

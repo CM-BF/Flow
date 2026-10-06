@@ -1,0 +1,29 @@
+apps/server/src/context-transparency/projection.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+apps/server/src/context-transparency/projection.ts(7,230): error TS7006: Parameter 'input' implicitly has an 'any' type.
+apps/server/src/context-transparency/projection.ts(7,237): error TS7006: Parameter 'context' implicitly has an 'any' type.
+apps/server/src/context-transparency/projection.ts(8,73): error TS7006: Parameter 'source' implicitly has an 'any' type.
+apps/server/src/context-transparency/projection.ts(60,36): error TS7006: Parameter 'source' implicitly has an 'any' type.
+apps/web/src/conversation-activity/native/projection.ts(1,134): error TS2307: Cannot find module '@flow/interaction/activity' or its corresponding type declarations.
+apps/web/src/conversation-stream/host.ts(96,22): error TS7006: Parameter 'options' implicitly has an 'any' type.
+apps/web/src/conversation-stream/host.ts(96,31): error TS7006: Parameter 'signal' implicitly has an 'any' type.
+apps/web/src/conversation-stream/host.ts(97,21): error TS7006: Parameter 'options' implicitly has an 'any' type.
+apps/web/src/conversation-stream/host.ts(97,30): error TS7006: Parameter 'signal' implicitly has an 'any' type.
+apps/web/src/conversation-stream/host.ts(179,243): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/web/src/conversation-stream/messages.ts(3,73): error TS2307: Cannot find module '@flow/interaction/stream' or its corresponding type declarations.
+apps/web/src/conversation-stream/messages.ts(5,53): error TS2307: Cannot find module '@flow/interaction/stream' or its corresponding type declarations.
+apps/web/src/conversation-stream/messages.ts(6,37): error TS2307: Cannot find module '@flow/interaction/stream' or its corresponding type declarations.
+apps/web/src/conversation-stream/messages.ts(18,76): error TS7006: Parameter 'segment' implicitly has an 'any' type.
+apps/web/src/conversation-stream/patches.ts(1,158): error TS2307: Cannot find module '@flow/interaction/stream' or its corresponding type declarations.
+apps/web/src/conversation-stream/patches.ts(2,45): error TS2307: Cannot find module '@flow/interaction/stream' or its corresponding type declarations.
+apps/web/src/conversation-stream/projection.ts(1,82): error TS2307: Cannot find module '@flow/interaction/stream' or its corresponding type declarations.
+apps/web/src/conversation-stream/projection.ts(2,71): error TS2307: Cannot find module '@flow/interaction/stream' or its corresponding type declarations.
+apps/web/test/conversation-stream-projection.test.ts(29,139): error TS7006: Parameter 'options' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(49,52): error TS7031: Binding element 'options' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(86,63): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(94,73): error TS7031: Binding element 'options' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(95,63): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(139,53): error TS7006: Parameter 'options' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(167,83): error TS7006: Parameter 'options' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(167,92): error TS7006: Parameter 'signal' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(167,172): error TS7006: Parameter 'options' implicitly has an 'any' type.
+apps/web/test/conversation-stream-projection.test.ts(167,181): error TS7006: Parameter 'signal' implicitly has an 'any' type.

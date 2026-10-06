@@ -1,0 +1,36 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/engineering/calculator-source.test.ts",
+    "apps/runner/src/engineering/calculator-checker.test.ts"
+  ],
+  "startedAt": "2026-10-06T11:44:35.716911+00:00",
+  "finishedAt": "2026-10-06T11:44:37.613134+00:00",
+  "exitCode": 1,
+  "implementation": "Initial parser returns null and checker returns rejected; behavior-red tests, not a module-load failure",
+  "sources": [
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "bytes": 7414,
+      "sha256": "ba794b6c2d6eee1f72f9c54e25132d67242c87a30faab5f4812da87054a84ad1"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "bytes": 121,
+      "sha256": "5bf02c0ecb71e8f7adf37496b50affba14858c06bf0378f05c73e82cd5938baf"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "bytes": 89,
+      "sha256": "3b33c7a64c89834443ee8664015c01e6d291767ef3b1d5107c7c59f240b8e296"
+    }
+  ]
+}

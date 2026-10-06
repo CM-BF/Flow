@@ -1,0 +1,101 @@
+{
+  "kind": "flow-o10-main-receipt-v1",
+  "observedAt": "2026-10-06T11:45:16.405048+00:00",
+  "owner": "assignment_review",
+  "coLead": "Execution Lead",
+  "productTask": "FLOW-001",
+  "main": "2c6df4754f4fea75fbb2e1e750cad89524b1f5fa",
+  "approvedImplementation": "b1a88ce90d2366f0fda6e4411471a4ddc5894e5e",
+  "implementationIsAncestor": true,
+  "ownerHeadBeforeMetadata": "cf27e12121947db0c0a70e9e896d57250c684793",
+  "sourceComparisons": [
+    {
+      "path": "experiments/native-child-acceptance/README.md",
+      "bytes": 5971,
+      "sha256": "eb55329a4281a5bbb7ac4261640eccfb021c5bc3786ae09cec175002d4be9d0b",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/checkpoint.test.mjs",
+      "bytes": 4159,
+      "sha256": "1e51630d9105ee5cfb9c50168afdf7e62f83958aa04d9a4566f4d7a11320cfab",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/config.mjs",
+      "bytes": 3664,
+      "sha256": "2cc4570905284fdc3c5f875cfa944a4619a26c7f0832929f9351e5693a7624ea",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/driver.mjs",
+      "bytes": 14299,
+      "sha256": "9a8fe174724569b010c8b01dded55cc21fceb03469bcb39527d5ca46441f1f19",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/driver.test.mjs",
+      "bytes": 787,
+      "sha256": "cdd6351e5349ac5428caff521fc43a8eb20fa5f69c4dfadaf046a1f3b6da008a",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/facts.mjs",
+      "bytes": 2723,
+      "sha256": "17cb94aa582caa03cf142c253d2d5a54df99402cf6001222d7e53160d16aa517",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/guard.mjs",
+      "bytes": 7070,
+      "sha256": "067bdfcbe78fe1ee1385fe25fe1ab094f4f2d82e51344e72fa1717d7eda205d2",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/guard.test.mjs",
+      "bytes": 5392,
+      "sha256": "37185b4c895a18ca7e2c459bc10bf06b9673f27de53fbb9e00bd7634392ee326",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/journey.test.mjs",
+      "bytes": 1807,
+      "sha256": "5b1cd8a93c125859f80779bcca1ebb8d29ca35dcacfdd9b0d4bad7bebab7aef2",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "experiments/native-child-acceptance/worker.mjs",
+      "bytes": 5396,
+      "sha256": "11c9d1595cb2fe104837495ed08be4dce646082a8260d9f9cea20acc9a0874f7",
+      "approvedEqualsMainEqualsOwner": true
+    }
+  ],
+  "historicalEvidenceUnchanged": [
+    {
+      "path": "docs/evidence/o10/manifest.json",
+      "sha256": "0101beb540b75fe2d20b88ec979ee5251a764316ea79a73909ee287c3c2528da"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-manifest.json",
+      "sha256": "16341fc7628fd5ac082c787b1644409f5a9aec1ca16b296e9819b7e70ef801c4"
+    },
+    {
+      "path": "docs/evidence/o10/native-0834-manifest.json",
+      "sha256": "3a4f4617a0f75e098311c47040913cdc08a1aa92d9da9b10d152715b910d8861"
+    },
+    {
+      "path": "docs/evidence/o10/native-root-review.md",
+      "sha256": "8981dfbc4f2afb610702479676128ba005e2115ca8484be2cb3e0440b16a08be"
+    }
+  ],
+  "claimBefore": {
+    "claimId": "3c13f3b0-b6c2-4e48-a148-8cbe09ae6494",
+    "version": 1,
+    "state": "active",
+    "freshLedgerConfirmed": true
+  },
+  "releaseBoundary": "All product/experiment execution already stopped. After committing this metadata, stop metadata writes and release all remaining O10 scopes; resulting receipt is in the coordination ledger, not written after release.",
+  "budget": "SEALED; no new provider call or permit",
+  "checksThisCloseout": "git ancestry, 10 source blob/hash equality, existing approval facts; no engineering tests/provider/service operations",
+  "limitation": "Only approved single material readonly text child; original accepted=null and historical pending/raw remain. No automatic accept-delivery, engineering write, batch/UI/128-agent claim."
+}

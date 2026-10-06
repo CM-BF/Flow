@@ -3,6 +3,7 @@ import type { PoolClient } from 'pg';
 import type { Detail, RunnerEvent } from '@flow/contracts';
 import { HttpError, sha256 } from './database.js';
 import type { TaskRecord } from './tasks.js';
+import { assertEngineeringVerification } from './engineering/verification.js';
 
 export async function saveDetail(client: PoolClient, taskId: string, attemptId: string, detail: Omit<Detail, 'id'>): Promise<{ id: string; title: string }> {
   const id = randomUUID();
@@ -22,6 +23,11 @@ export async function saveArtifact(client: PoolClient, task: TaskRecord, attempt
 export async function verifyArtifact(client: PoolClient, task: TaskRecord, attemptId: string, event: Extract<RunnerEvent, { type: 'verification' }>) {
   const artifact = (await client.query<{ content: string }>('SELECT d.content FROM flow.artifacts a JOIN flow.details d ON d.id=a.detail_id WHERE a.task_id=$1 AND a.artifact_id=$2 AND a.version=$3 AND a.attempt_id=$4', [task.id, event.artifactId, event.artifactVersion, attemptId])).rows[0];
   if (!artifact || sha256(artifact.content) !== event.artifactVersion) throw new HttpError(409, 'artifact_not_found', 'The exact artifact version was not submitted by this attempt.');
+  if (task.submission.engineering || event.verifierId === 'flow.engineering') {
+    await assertEngineeringVerification(client, task, attemptId, event, artifact.content);
+    if (task.latest_artifact_id === event.artifactId && task.latest_artifact_version === event.artifactVersion) task.verification_status = event.result;
+    return saveDetail(client, task.id, attemptId, { title: `Engineering verification ${event.result}`, kind: 'verification', content: JSON.stringify(event), mediaType: 'application/json', artifactVersion: event.artifactVersion });
+  }
   const requested = task.submission.verification;
   const rule = requested?.kind === 'contains' ? { kind: 'contains' as const, expected: requested.expected } : { kind: 'nonempty' as const };
   const inputDigest = sha256(JSON.stringify({ artifactVersion: event.artifactVersion, rule }));

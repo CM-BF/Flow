@@ -1,0 +1,13 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/execution-identity.test.ts"
+  ],
+  "startedAt": "2026-10-06T11:34:02.760604+00:00",
+  "finishedAt": "2026-10-06T11:34:04.349546+00:00",
+  "exitCode": 0,
+  "reason": "Compare two concurrent contexts by assigned identity, independent of filesystem scheduling; same two assertions/scenarios as direct-green, not additional distinct checks."
+}

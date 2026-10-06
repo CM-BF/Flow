@@ -1,0 +1,46 @@
+{
+  "kind": "CHATUI01 full P2 transport fix delta",
+  "implementationTarget": "4a442af83faa91b419357ef0036627566e5f85a8",
+  "priorTarget": "f80fb6606fbcba942fc8741f56b2f2c6f285f2df",
+  "priorManifest": "docs/evidence/chatui01/guard-fix-manifest.json",
+  "canonicalRun": "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6",
+  "sourceFiles": {
+    "experiments/stream-ui-acceptance/prepare-runtime.mjs": "339e7b812b670a7c5c4e6cbd9dd81966b0c8714cf1429bcb1d50711b8c7969c1",
+    "experiments/stream-ui-acceptance/fixture.mjs": "e60fc42b7d64728d919ca0e5772ae333bf6f2cfe96b949d76472c5706fb27e24",
+    "experiments/stream-ui-acceptance/evidence.mjs": "6b9c5d02f1db2b9f167b367dae840170d0da8ea31de2fd92a3e9b1f7655c3ff4",
+    "experiments/stream-ui-acceptance/preflight.mjs": "26f12a62839201d54b2c7d00d6bb330c33ce681485d833357ed5df25523d424e",
+    "experiments/stream-ui-acceptance/journey.mjs": "cf987752367428f3694d0f66e8a76fdbf6ad0c4c6c5525c4073b09a93991333a",
+    "experiments/stream-ui-acceptance/guard-network.test.mjs": "f59e6073b13ff1c829dc76c3c59ac600e7bf2978d08fbd0a717f247da3b3e7ef",
+    "experiments/stream-ui-acceptance/evidence.test.mjs": "cff46c8dd8c8cdebed6f6293dcc13b22c8415db6d8fc5f76bbc3c9cdfa6a6d1c"
+  },
+  "rawFiles": {
+    "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/checks.json": "aa501490b1ff20eb9e470084597e39bfd6e7c58f8183aa77ec64fd00a0ed3cfa",
+    "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/reservation.json": "6209758c72e04c13aa2b1b4390cc13b39bcc0a96666eec4fadef8057706ae5d2",
+    "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/final-dark-narrow.png": "e1a9c9c527e4e07af945aec354177012bb80f8ffbc1a1f5a12b907212a8f8a45",
+    "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/final-light.png": "a24d22b5c9d19d97df6625b8c256680c33f6230fdc287e1b604d7edfa2d8dba4",
+    "docs/evidence/chatui01/turn-fix-checks.txt": "61a9da8afb3c46a1e55b7f6215633f9229c7df18ca6cfc19c483d12928006fde",
+    "docs/evidence/chatui01/turn-network-red.txt": "7a25dd5bcec8a5ec4e65a135df3a08c24b50b1bf2bd80e3f33155f4af9bb3dea"
+  },
+  "reproduction": {
+    "implementationTarget": "f80fb6606fbcba942fc8741f56b2f2c6f285f2df",
+    "testSource": "experiments/stream-ui-acceptance/guard-network.test.mjs",
+    "testSourceSha256": "f59e6073b13ff1c829dc76c3c59ac600e7bf2978d08fbd0a717f247da3b3e7ef",
+    "selected": 2,
+    "failed": 2,
+    "raw": "docs/evidence/chatui01/turn-network-red.txt"
+  },
+  "checks": {
+    "currentSelectedNetwork": 3,
+    "currentPassedNetwork": 3,
+    "currentNewCases": 2,
+    "currentOverlappingCase": 1,
+    "browserJourneysSelected": 1,
+    "browserJourneysPassed": 1,
+    "sdkQueries": 0,
+    "priorChecks": "9 passed at f80; not all repeated at 4a442. Create path same no-retry transport; changed turn path tested by current three network cases and actualApp."
+  },
+  "productCommit": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+  "productSourceChanges": false,
+  "independentReview": "DELTA_PENDING",
+  "live": "NOT_AUTHORIZED; entry not implemented"
+}

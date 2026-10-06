@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:03:06 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:55:24 UTC / main52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066；已含TUI01A、R05C/C1、S01P02与聊天操作界面。真实Codex进程诊断和配置接入仍后继；个人backend/static保持b1c2e398、accepting v12。10:00:58.896Z实际看板122源且账本available。 |
+| 已集成main状态 / HEAD | 52ebd2b1 已含O11统一目标公共读口、027上下文历史和ENG01D/E身份/可信检查模块；个人backend b1c2e398 accepting v12、独立Web8d8ab520/artifact caa1e938 release v2保持。实际看板140源，后继登记按真实canonical批发布。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 终端会话首片、Codex普通任务执行接口和聊天操作已进入主线；工程任务通路进入准备。 |
-| 下一可用交付 | 独立更新网页，并交付可实际改代码、运行受信检查和回看差异的工程通路。 |
+| 当前产出 | 目标计划与执行状态可通过公共接口分别读取；工程检查证据与模型输出保持分离，已审功能持续接入主线。 |
+| 下一可用交付 | 并行交付连续目标会话与原生工程检查接线，保留历史解释和未知执行事实。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -92,3 +92,17 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 2026-10-06 08:57:11 UTC：SVC03实际窗口已结束，接受v12；4任务成功、无未完attempt/等待队列、业务摘要及迁移列表保留。一次属性顺序比较误报保留，未重复refresh。0operator provider/用户tab操作。新成熟界面六大task沿WPF-001唯一源，宿主依赖见FLOW-002-T09。
 
 2026-10-06 09:45 UTC：新增已授权SVC04 Web独立发布后继，复用当前固定artifact并保留正在执行的后台任务与旧tab惰性资源；具体实现由原runner_owner在TUI修复安全点独立领取。视觉片已main不等个人服务已更新，不为纯前端发布复用全后台drain假称独立。
+
+2026-10-06 10:27:04 UTC：本批只对齐已审主线与实际运行版本。TUI01B共享ACK与跨客户端409读恢复由runner_owner独立实施；ENG01A E0收据关联/完成门禁限定批准，E1真实Git/checker纵向实施；SVC04的合成兼容与58项真实构建JS请求不替代个人新Web/旧b1c后台的兼容证据。完整工程、真实Codex与新Web发布保持open；不新增provider或重复产品检查。
+
+## 2026-10-06 11:00:27 UTC 当前交付与连续目标路径
+
+SVC04真实Web-only发布已完成，固定报告与脱敏操作事实见[发布回执](../../docs/evidence/svc04/personal-release.md)。这是新旧资产和后台保持的发布验收，不新增模型/用户页面操作。ENG01A E0/E1已审main；ENG01B工程配置与TUI01C共用流/活动模块正在安全交付点收口。
+
+之后优先推进原O01-05与M02/REQ-01、REQ-22的连续目标闭环，不新增重复大task：由Execution Lead协调中心命令/持久因果事实与CLI/headless/TUI公开旅程，Web并行消费。下一片先固定现有goal/proposal/execute/verification/decision之间的有界关联和统一交付读模型；原有入口/逐任务手动操作不算自动闭环。完整验收、接口责任与依赖见[计划的连续目标路径](plan.md#continuous-goal-delivery)，零模型协议旅程与实际native语义分开，不复用已封存预算。
+
+2026-10-06 11:15：连续目标统一读口新增GO只读研究输入，见plan同名小节；稳定材料分页与实时活动分离仍是待实现验收，不冒称已测token收益。工程ENG01B已审main2e71，TUI01C唯一P2已闭合、待组合接收；真实native工程仍沿ENG001-04/05/06继续，非fixture完成即大目标Done。无新模型/工程测试。
+
+2026-10-06 11:32:46 UTC 当前主线核对：fd132已含ENG01B/C、TUI01C及附件026公共接口；个人backend b1c/Web8d8保持。原连续目标路径已由[O11](../../../goal-delivery-read-model/plans/o11-goal-delivery-read-model/status.md)独立实施，与[ENG01D](../../../engineering-native-seams/plans/eng01d-native-writer-seams/status.md)并行。139来源登记随本批；不以小读口或fixture工程代表完整自然语言交付。
+
+2026-10-06 11:55:24 UTC：O11模块与F01公共接线已独审/main52eb，稳定计划、实时状态与显式正文分层。O12接续同一目标会话控制器及固定解释历史，不另造大task；ENG01D/E已main，ENG01F将完整host snapshot绑定到新检查证据，原生writer/接受验收仍开放。普通进度沿各唯一status，不重复已审测试或provider。

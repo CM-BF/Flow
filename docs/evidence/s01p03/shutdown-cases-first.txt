@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop
+
+ ✓ apps/runner/src/runtime-shutdown.test.ts > drains a definite null claim across normal stop and can claim after same-directory restart 83ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > persists a late assignment without starting it or manufacturing completion after normal stop 27ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > uses the original request deadline during normal stop and keeps its unresolved intent across restart 20ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > retains the same intent on connection reset without a replacement claim 26ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > retains the same intent on malformed response without a replacement claim 24ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > sends no request if normal stop already happened before admission 2ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > clears only its unsent intent when normal stop occurs while real durable rename is returning 37ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > fatal host authentication 401 still preempts a pending claim and awaits the active adapter 61ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > fatal host authentication 403 still preempts a pending claim and awaits the active adapter 56ms
+ ✓ apps/runner/src/runtime-shutdown.test.ts > retains a real in-flight intent after killing its owned child and blocks same-directory restart 421ms
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  03:25:21
+   Duration  1.60s (transform 458ms, setup 0ms, import 718ms, tests 758ms, environment 0ms)
+

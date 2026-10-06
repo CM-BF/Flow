@@ -1,0 +1,209 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-writer-settlement
+
+ ❯ apps/runner/src/engineering/writer.test.ts (16 tests | 15 failed) 16ms
+   × passes only the owned writer input and preserves the existing v1 successful receipt 5ms
+   × releases a explicitly stopped failed writer without running checker or producing a pass 4ms
+   × retains the lease and skips checker for unknown writer output 1ms
+   × retains the lease and skips checker for void writer output 1ms
+   × retains the lease and skips checker for null writer output 0ms
+   × retains the lease and skips checker for wrong-lease writer output 0ms
+   × retains the lease and skips checker for missing-outcome writer output 0ms
+   × retains the lease and skips checker for claimed-success-only writer output 0ms
+   × never derives writer settlement from the ordinary exception type 0ms
+   × never derives writer settlement from the native-settled exception type 1ms
+   ✓ never derives writer settlement from the native-unknown exception type 0ms
+   × never derives writer settlement from the abort exception type 0ms
+   × does not dispatch a writer when cancellation is already known before dispatch 0ms
+   × a cancellation request does not resolve a pending writer or release its resources 0ms
+   × waits for explicit stopped failure after cancellation and then permits release 0ms
+   × an unknown return cannot authorize checking while separately tracked fixture work remains active 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 15 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > passes only the owned writer input and preserves the existing v1 successful receipt
+AssertionError: expected [ 'directory', 'leaseId', …(2) ] to deeply equal [ 'assertOwnership', …(5) ]
+
+- Expected
++ Received
+
+  [
+-   "assertOwnership",
+-   "baseCommit",
+    "directory",
+    "leaseId",
+-   "prompt",
+-   "signal",
++   "release",
++   "snapshot",
+  ]
+
+ ❯ Object.<anonymous> apps/runner/src/engineering/writer.test.ts:30:39
+     28| it('passes only the owned writer input and preserves the existing v1 s…
+     29|   const api = scenario(async input => {
+     30|     expect(Object.keys(input).sort()).toEqual(['assertOwnership', 'bas…
+       |                                       ^
+     31|     expect(Object.isFrozen(input)).toBe(true); expect(input.directory)…
+     32|     await input.assertOwnership(); return stopped(input);
+ ❯ Object.run apps/runner/src/engineering/adapter.ts:27:54
+ ❯ apps/runner/src/engineering/writer.test.ts:34:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > releases a explicitly stopped failed writer without running checker or producing a pass
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/engineering/writer.test.ts:42:25
+     40| it('releases a explicitly stopped failed writer without running checke…
+     41|   const api = scenario(async input => stopped(input, 'failed'));
+     42|   await expect(api.run()).rejects.toMatchObject({ settlement: 'settled…
+       |                         ^
+     43|   expect(api.checker.run).not.toHaveBeenCalled(); expect(api.snapshot)…
+     44| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > retains the lease and skips checker for unknown writer output
+ FAIL  apps/runner/src/engineering/writer.test.ts > retains the lease and skips checker for void writer output
+ FAIL  apps/runner/src/engineering/writer.test.ts > retains the lease and skips checker for null writer output
+ FAIL  apps/runner/src/engineering/writer.test.ts > retains the lease and skips checker for wrong-lease writer output
+ FAIL  apps/runner/src/engineering/writer.test.ts > retains the lease and skips checker for missing-outcome writer output
+ FAIL  apps/runner/src/engineering/writer.test.ts > retains the lease and skips checker for claimed-success-only writer output
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/engineering/writer.test.ts:52:25
+     50|     return outputs[kind] as Awaited<ReturnType<EngineeringWriter['exec…
+     51|   });
+     52|   await expect(api.run()).rejects.toMatchObject({ settlement: 'unknown…
+       |                         ^
+     53|   expect(api.checker.run).not.toHaveBeenCalled(); expect(api.snapshot)…
+     54| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > never derives writer settlement from the ordinary exception type
+AssertionError: expected Error: private native data to be an instance of NativeExecutionError
+ ❯ apps/runner/src/engineering/writer.test.ts:59:17
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > never derives writer settlement from the native-settled exception type
+AssertionError: expected 'settled' to be 'unknown' // Object.is equality
+
+Expected: "unknown"
+Received: "settled"
+
+ ❯ apps/runner/src/engineering/writer.test.ts:59:80
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > never derives writer settlement from the abort exception type
+AssertionError: expected DOMException{ stack: 'AbortError: pr…' } to be an instance of NativeExecutionError
+ ❯ apps/runner/src/engineering/writer.test.ts:59:17
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > does not dispatch a writer when cancellation is already known before dispatch
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/engineering/writer.test.ts:65:25
+     63| it('does not dispatch a writer when cancellation is already known befo…
+     64|   const controller = new AbortController(); controller.abort(); const …
+     65|   await expect(api.run()).rejects.toThrow(); expect(api.invoked).not.t…
+       |                         ^
+     66| });
+     67| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > a cancellation request does not resolve a pending writer or release its resources
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/engineering/writer.test.ts:75:33
+     73|   await entered; controller.abort(); await Promise.resolve();
+     74|   expect(done).toBe(false); expect(api.release).not.toHaveBeenCalled()…
+     75|   finish(); await expect(running).rejects.toMatchObject({ settlement: …
+       |                                 ^
+     76| });
+     77| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > waits for explicit stopped failure after cancellation and then permits release
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/engineering/writer.test.ts:80:25
+     78| it('waits for explicit stopped failure after cancellation and then per…
+     79|   const controller = new AbortController(); const api = scenario(async…
+     80|   await expect(api.run()).rejects.toMatchObject({ settlement: 'settled…
+       |                         ^
+     81| });
+     82| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/15]⎯
+
+ FAIL  apps/runner/src/engineering/writer.test.ts > an unknown return cannot authorize checking while separately tracked fixture work remains active
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/engineering/writer.test.ts:87:31
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/15]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  15 failed | 1 passed (16)
+   Start at  04:19:46
+   Duration  218ms (transform 42ms, setup 0ms, import 114ms, tests 16ms, environment 0ms)
+

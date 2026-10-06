@@ -1,0 +1,39 @@
+{
+  "observedAt": "2026-10-06T10:57:38.851401+00:00",
+  "base": "c450c2da",
+  "nativeClientTarget": "5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7",
+  "review": "Mika10:48:33APPROVED",
+  "fixedSources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 39800,
+      "sha256": "e986d23b9701ec6c97beea57caa3417cdd183419c7e62b2f16ab77efa7d7201c"
+    },
+    {
+      "path": "packages/client/src/native-profile-catalog.test.ts",
+      "bytes": 4086,
+      "sha256": "0abc50c6603312330f7194a81e8e36977bb8c1b886fecb10f3ea5b118fa29929"
+    }
+  ],
+  "personalRelease": {
+    "fixedEvidence": "5d26bf875fd73b90f2a55ce19fd6d664e8fbe175",
+    "manifestEntries": 16,
+    "releaseVersion": 2,
+    "backend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "webSource": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "providerQueries": 0
+  },
+  "preservedMain": [
+    "pnpm-lock.yaml",
+    "apps/web/package.json",
+    "apps/server/src/index.ts",
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/main.ts"
+  ],
+  "notIncluded": [
+    "engineering domain/mount/client code",
+    "TUI01C workspace link"
+  ],
+  "registrySources": 132,
+  "checks": "Exact source binding; reuse approved directHTTP/types; no product rerun"
+}

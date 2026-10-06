@@ -1,0 +1,63 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "首页摘要与父子详情已通过独立审查",
+    "next": "主线接收后更新执行看板",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "passed",
+    "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+    "record": "PASSED c1de71fd316f9bba1ea5f030f5a54d2332d09044：作者27项Node；root独立22项通过；作者6组浏览器检查、5图、0页面错误；累计8.374秒，fixture已清理"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044"
+  },
+  "todos": [
+    {
+      "id": "WPF-DASHSUM01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "固定实现 c1de71fd316f9bba1ea5f030f5a54d2332d09044"
+    },
+    {
+      "id": "WPF-DASHSUM01-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[验证与预算](../../docs/evidence/wpf-dashboard-summary/README.md)"
+    },
+    {
+      "id": "WPF-DASHSUM01-03",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "固定target已获独立批准并正常推送；main接收仍待"
+    }
+  ],
+  "implementation": {
+    "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+    "scopes": [
+      "apps/execution-dashboard/src/human.mjs",
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/test/human-summary.test.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs"
+    ],
+    "errors": []
+  }
+}

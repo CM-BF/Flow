@@ -1,0 +1,31 @@
+PASS closed-clean views release immediately, repeated reopen rereads history with no close cancellation
+PASS late reply and history reads cannot populate a closed view; reopen explicitly rereads
+PASS closed draft and selected knowledge retain identity and do not prefetch body
+4:44:52 AM [vite] http proxy error: /api/conversations/chat-4/turns
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+4:44:53 AM [vite] http proxy error: /api/conversations/chat-5/queue
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS unknown Send and Queue survive close with their original key/body and independent next draft
+locator.click: Error: strict mode violation: getByRole('button', { name: 'New chat', exact: true }) resolved to 2 elements:
+    1) <button class="flow-new-chat">…</button> aka getByRole('complementary', { name: 'Chats' }).getByRole('button', { name: 'New chat' })
+    2) <button title="New chat" class="flow-icon " aria-label="New chat">…</button> aka getByRole('button', { name: 'New chat', description: 'New chat' })
+
+Call log:
+[2m  - waiting for getByRole('button', { name: 'New chat', exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.browser.ts:89:99)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.browser.ts:38:80)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.browser.ts:84:3) {
+  log: [
+    "  - waiting for getByRole('button', { name: 'New chat', exact: true })"
+  ]
+}
+{"checks":4,"failure":"Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'New chat', exact: true }) resolved to 2 elements:\n    1) <button class=\"flow-new-chat\">…</button> aka getByRole('complementary', { name: 'Chats' }).getByRole('button', { name: 'New chat' })\n    2) <button title=\"New chat\" class=\"flow-icon \" aria-label=\"New chat\">…</button> aka getByRole('button', { name: 'New chat', description: 'New chat' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'New chat', exact: true })\u001b[22m\n","elapsedMs":13217,"cleanup":[{"name":"browser","state":"fulfilled"},{"name":"fixture","state":"fulfilled"}],"evidenceBytes":277190}

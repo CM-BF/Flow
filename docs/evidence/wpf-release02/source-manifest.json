@@ -1,0 +1,15 @@
+{
+  "target": "560cbd2b6a5dc43bc18458d1335ced73b0e9254d",
+  "base": "2e71fabc218df28f6ccb78a927432ae1101c17c5",
+  "source": "apps/web/test/web-release-compatibility.fixture.ts",
+  "sha256": "4d37bd07dc4c312d7509fbf367bb07b3d3065a7f0cea7709c7b6ba3ea2c6c355",
+  "onlyChange": "as const on the existing fixed two-row build matrix",
+  "runtimeConstantsAndBodiesUnchanged": true,
+  "rootTypecheck": {
+    "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit",
+    "exitCode": 0,
+    "strict": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "browserPgProviderRuns": 0
+}
