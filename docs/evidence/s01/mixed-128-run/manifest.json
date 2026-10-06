@@ -1,11 +1,11 @@
 {
-  "resultTarget": "c7a8ad1d333ef8d148a21e8bb2ca627274a04fbb",
+  "resultTarget": "64911a3c88488dfdebaa3a678bad659211e29209",
   "implementationTarget": "6de928d8092ba8c22ac2222ac7c16af3660be48a",
   "executionHead": "70c92414d3f0fc90b256e857acf64ba3dba35b30",
   "productionBase": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
   "runIdentity": "after-light-reads-128-v1",
   "windowId": "s01-128-after-light-reads-once",
-  "recordedAt": "2026-10-06 12:35:33 UTC",
+  "recordedAt": "2026-10-06 12:36:00 UTC",
   "reviewState": "PENDING_FIXED_RESULT_REVIEW",
   "runVerdict": "PASS",
   "source": [
@@ -352,8 +352,8 @@
     },
     {
       "path": "docs/evidence/s01/mixed-128-run/report.md",
-      "bytes": 5634,
-      "sha256": "562fa2b9c08f9c13d9b2504773bb9e7bf83c7effc57d525af61fe6d046c8d03f"
+      "bytes": 5670,
+      "sha256": "54e1dff9c6b9e9d338c25d2d4396a949196b5bb9f4d6fff58e5d0b371fec0de3"
     }
   ],
   "preparation": [
@@ -463,5 +463,9 @@
     "Pool acquisition/transaction/query elapsed are not pure lock wait; no strict speedup or SLO",
     "One runner process hosts eight runtimes; fixture session is not native agent/conversation",
     "Outer time includes import/exit; inner driver timing alone is incomplete"
-  ]
+  ],
+  "reportClarification": {
+    "originalResultTarget": "c7a8ad1d333ef8d148a21e8bb2ca627274a04fbb",
+    "change": "Light reads allow max2 concurrent requests; DB observer is single-flight. No raw/source/check rerun."
+  }
 }
