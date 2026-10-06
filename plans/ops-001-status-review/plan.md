@@ -34,3 +34,5 @@ Execution Lead可主动直发Web用户task `01a10ec2-ff1a-76d0-a277-446baf89b19d
 2026-10-06 07:18 UTC维护：本片当前摘要与实际main对齐，历史实验/TODO证据保留；详见唯一status。无新产品或模型验证。
 
 - [x] **OPS-001-08** 用户及时交付与Lead职责（2026-10-06 08:37:23 UTC）：有界功能或修复达到可审停点即提交并推送独立分支；独立审查通过后，只完成必要直接消费者验证便受控合入main并推送，不积压等待无关片段。不得为频繁提交把同一不可分验证拆成伪完成，也不得改写已审固定target。各Lead优先负责完整方向、优先级、公共接口、scope移交、验收和集成；新实现、测试driver与服务工具由具备权限和有效独立worktree/claim的workers承担。尽量并行独立任务，slot转移先核真实状态/当前工作，合计仍≤10；不以开新用户task或新增隐形agent绕cap。运行窗口明确要求固定source时，候选分支可及时push，main仍遵守窗口冻结。
+
+2026-10-06 08:38 UTC容量变更（Goal Owner明确决定）：本队降为3（Goal Owner、Execution Lead、SVC03 worker）；Web保持4；Mika升为3（Lead、S01P01 worker、CHATUI01 worker），全局仍10。assignment_review仅完成O10语义metadata/push后正式idle，Mika新worker在此之前只可准备不得激活。CHATUI01未take/无双writer，唯一新执行源由Mika独立tree/claim建立；F01历史proposal不成为第二driver。后续slot转移同样核实际running状态与任务，禁止推测空位。
