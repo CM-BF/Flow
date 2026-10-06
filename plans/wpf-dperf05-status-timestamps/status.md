@@ -2,13 +2,13 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:58:16 UTC |
+| 最近更新 | 2026-10-06 19:02:04 UTC |
 | 单一 status owner | workspace_panels_owner / gpt-6-astra Ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 高精度 UTC 与坏时间隔离的源码和专测已固定，等待独立审查。 |
+| 当前产出 | 已修复独审发现的主更新时间边界，等待固定复审。 |
 | 下一可用交付 | 支持高精度 UTC，坏时间不会中断任务状态读取。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -22,7 +22,7 @@
 | 实现目标 | 676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1 |
 | 实现范围 | apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 检查状态 | NOT_RUN — 尚无产品运行准入 |
-| review | NOT_STARTED |
+| review | CHANGES_REQUESTED — 676b source P2 已修待新固定复审；无运行 |
 | 已集成 main 状态 | NOT_INTEGRATED；base 仅输入，不代表本片完成 |
 | Dashboard 同步 | 唯一 canonical 已建立；登记与实际 parser 读取待管理回执，不冒展示完成 |
 | claim | 9a876001-611c-4f79-819f-2284c04d8f61 v1 active，原四 literal |
@@ -33,7 +33,7 @@
 | TODO ID | 状态 | owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF05-01 | completed | workspace_panels_owner | [claim](../../docs/evidence/wpf-dperf05/claim-observation.json)、[设计](../../docs/evidence/wpf-dperf05/approved-design.json) |
-| DPERF05-02 | completed | workspace_panels_owner | 私有 parser + 56 静态 case；尚未运行 |
+| DPERF05-02 | completed | workspace_panels_owner | 私有 parser + 62 静态 case；旧56及本次均未运行 |
 | DPERF05-03 | pending | workspace_panels_owner | 定向检查 NOT_RUN |
 | DPERF05-04 | pending | workspace_panels_owner | 独审/main 未开始 |
 

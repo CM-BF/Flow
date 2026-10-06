@@ -96,6 +96,31 @@ for (const first of ['2026-13-06T16:10Z', '2026-10-06T16:10+00:000', '2026-xx-06
   });
 }
 
+for (const input of [
+  '更新时间待确认；main 同步 2026-10-07T01:00Z',
+  '更新 2026/13/06 16:10 UTC；main 同步 2026-10-07T01:00Z',
+  '更新时间待确认；`main` 同步 `2026-10-07T01:00Z`',
+  'update pending; MAIN sync 2026-10-07T01:00Z',
+]) {
+  test(`main synchronization cannot supply a missing or malformed primary update: ${input}`, () => {
+    const parsed = parseStatus(status(input), 'T01');
+    assert.equal(parsed.updatedAt, null);
+    assert.deepEqual(parsed.errors, ['缺少可解析 UTC 更新时间']);
+    assert.equal(parsed.updatedRecord, input.replace(/`/g, ''));
+  });
+}
+
+for (const input of [
+  '任务 WPF-DPERF05-01 更新于2026-10-06T16:10:36Z',
+  '任务 `WPF-DPERF05-01` 更新于 `2026-10-06T16:10:36Z`；main 同步待确认',
+]) {
+  test(`allows a task identifier in the explanatory prefix: ${input}`, () => {
+    const parsed = parseStatus(status(input), 'T01');
+    assert.equal(parsed.updatedAt, '2026-10-06T16:10:36.000Z');
+    assert.deepEqual(parsed.errors, []);
+  });
+}
+
 test('old first update remains old even when main sync is newer', () => {
   assert.equal(parseStatus(status('2020-01-01 00:00 UTC；main 同步 2026-10-06T18:00Z'), 'T01').updatedAt, '2020-01-01T00:00:00.000Z');
 });

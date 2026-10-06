@@ -9,11 +9,14 @@ function cells(line) {
 }
 
 function parseUtcUpdate(record) {
-  // Select the first date prefix, including malformed dates. Searching for a
-  // complete valid timestamp could silently promote a later main-sync time.
-  const start = record.search(/[+-]?\d+-/);
+  // A combined field can include a separate main-sync observation. It must
+  // never supply the update, even when the primary record has no date at all.
+  const primary = plain(record).split(/\bmain\s*(?:同步|sync\b)/i, 1)[0];
+  // A standalone year prefix also catches malformed/slash dates, without
+  // treating embedded task identifiers such as WPF-DPERF05-01 as dates.
+  const start = primary.search(/(?<![A-Za-z0-9_-])[+-]?\d{3,}[-/]/);
   if (start < 0) return null;
-  const match = record.slice(start).match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?\s*(?:UTC|Z|\+00:00)(?![\w.+:/-])/);
+  const match = primary.slice(start).match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?\s*(?:UTC|Z|\+00:00)(?![\w.+:/-])/);
   if (!match) return null;
   const [, yearText, monthText, dayText, hourText, minuteText, secondText = '0', fraction = ''] = match;
   const [year, month, day, hour, minute, second] = [yearText, monthText, dayText, hourText, minuteText, secondText].map(Number);
