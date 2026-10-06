@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity
+
+ ❯ apps/web/test/conversation-activity.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts [ apps/web/test/conversation-activity.test.ts ]
+Error: Cannot find module '../src/conversation-activity/projection' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web/test/conversation-activity.test.ts'
+ ❯ apps/web/test/conversation-activity.test.ts:3:1
+      1| import { afterEach, describe, expect, it, vi } from "vitest";
+      2| import { MAX_DETAIL_BYTES, type Detail, type EventPage, type TaskSumma…
+      3| import { createConversationActivity, type ActivityPort } from "../src/…
+       | ^
+      4| 
+      5| const at = "2026-10-06T06:00:00Z";
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  23:07:21
+   Duration  378ms (transform 125ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+
