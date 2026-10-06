@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-06T07:56:22.172581+00:00",
+  "generatedAt": "2026-10-06T07:56:18.809Z",
+  "id": "S01",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T07:55:01.192Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md",
+    "syncedAt": "2026-10-06T07:56:18.809Z",
+    "stale": false,
+    "ageHours": 0.13855805555555556
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/runner-capacity-probe",
+    "head": "834ffb6d21f45e6cb5890d49ccfa9ddf0b18cfbf",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T07:56:19.550Z"
+  },
+  "delivery": {
+    "state": "delivered",
+    "source": "explicit"
+  },
+  "output": "W2测量已独审并集成main；slot提案已补未知claim恢复缺口",
+  "review": "approved",
+  "implementationProof": "unchanged",
+  "current": true,
+  "issues": [],
+  "main": {
+    "record": "W1/W2已集成main/origin6426b44cd32d10216141af13ecfa83b8879025fb，W2交接5504三scope零diff；slot提案未集成",
+    "recordedHead": "6426b44cd32d10216141af13ecfa83b8879025fb",
+    "target": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+    "mainHead": "84fdecebbb4939e43710fb17e48884cc49d1d030",
+    "scopes": [
+      "experiments/runner-capacity"
+    ],
+    "observedAt": "2026-10-06T07:56:19.550Z",
+    "current": true,
+    "historicalIntegrated": true,
+    "method": "ancestor",
+    "scopeEqual": true,
+    "dirtyScopePaths": [],
+    "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+  }
+}
