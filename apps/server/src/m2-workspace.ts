@@ -45,6 +45,7 @@ async function projectCommittedEvents(pool: Pool): Promise<boolean> {
     const updates = await client.query(`INSERT INTO flow.workspace_feed(task_id,task_cursor,task_title,entry)
       SELECT tl.task_id,tl.cursor,t.submission->>'title',tl.entry
       FROM flow.timeline tl JOIN flow.tasks t ON t.id=tl.task_id
+      JOIN flow.workspace_feed acceptance ON acceptance.task_id=tl.task_id AND acceptance.task_cursor=0
       LEFT JOIN flow.workspace_feed f ON f.task_id=tl.task_id AND f.task_cursor=tl.cursor
       WHERE f.ordinal IS NULL ORDER BY t.created_at,t.id,tl.cursor LIMIT $1`, [batchSize]);
     return accepted.rowCount === batchSize || updates.rowCount === batchSize;

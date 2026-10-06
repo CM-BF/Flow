@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:21 UTC / 2026-10-06 02:20 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:27 UTC / 2026-10-06 02:23 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -11,11 +11,11 @@
 | 工作树dirty状态 | 本段证据和状态metadata待提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED C02集成13703a4accef004d16fd40312dd565d390896e09直接影响16/16；C02+M02交叉5/5（另12未选择） |
-| 已集成main状态 / HEAD | C02已进入main/origin 13703a4accef004d16fd40312dd565d390896e09；M02首段集成检查通过待推送 |
+| 已集成main状态 / HEAD | C02+M02首段已进入main/origin 108fddbd8261963f3d49088873b5a611b70a5dbf；跨批次受理顺序修复待独立review |
 | Review | [review.md](review.md)，整体NOT_STARTED，component review分别引用 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 异常恢复已进入主线，统一工作入口和协议接入正在集成 |
+| 当前产出 | 异常恢复与统一入口接口已进入主线；正在核验跨批次事件顺序和协议接入 |
 | 下一可用交付 | Web与CLI共享跨任务决策和安全恢复能力 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -35,3 +35,7 @@
 ## Dashboard同步
 
 唯一来源本status；已通知D03 owner登记I02，未部署前不说4320已新增此项。
+
+## 本段修复
+
+[201 task 因果顺序回归](../../docs/evidence/i02/causal-order.md)：先红后绿，workspace 6/6；修复未改变公共接口，独立 delta review 待执行。
