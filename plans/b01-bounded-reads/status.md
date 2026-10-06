@@ -2,6 +2,49 @@
 
 | 字段 | 记录 |
 | --- | --- |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:35:43 UTC |
+| Plan | [plan.md](plan.md) |
+| 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
+| co-lead | mika |
+| 单一status owner / model | status_read / gpt-6-astra |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections |
+| Branch | codex/task-read-projections |
+| 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264，新树创建核clean |
+| 工作树dirty状态 | 初始化plan/Interface/authority metadata |
+| 工作分支状态 | in-progress |
+| 检查状态 | 新片NOT_RUN；旧B01完成证据不重复计数 |
+| 已集成main状态 / HEAD | 旧B01已main；本片尚无实现/未main |
+| 实现目标 | NOT_IMPLEMENTED |
+| 实现范围 | apps/server/src/tasks.ts, apps/server/src/queries.ts, apps/server/src/task-read-projection.ts, apps/server/src/task-read-projection.test.ts, docs/evidence/b01/task-projections, experiments/bounded-reads/task-projections |
+| 阶段 | M2 |
+| 本片段交付阶段 | implementation |
+| 优先级 | 2 |
+| 当前产出 | 已确定减少事件轮询和任务列表无用正文读取的小接口 |
+| 下一可用交付 | 保持公开响应与分页行为的轻量读取及真实字节证据 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
+| Review | NOT_STARTED；旧B01批准不覆盖新片 |
+
+| TODO ID | 状态 | Owner | 证据 |
+| --- | --- | --- | --- |
+| B01-01 | completed | 历史b01_bounded_reads | 旧有界短测/分层证据，见以下历史 |
+| B01-04 | completed | 历史b01_bounded_reads | workspace局部修复已main |
+| B01-02 | completed | 历史b01_bounded_reads / mika | 原独审记录保留 |
+| B01-03 | completed | Lead | 原main/聚合记录保留 |
+| B01-05 | completed | status_read | [claim](../../docs/evidence/b01/task-projections/claim-receipt.json)、[Interface](../../docs/evidence/b01/task-projections/interface.md) |
+| B01-06 | in-progress | status_read | 当前仅设计，源码/真实PG尚未实施 |
+| B01-07 | pending | reviewer / Lead | 尚未固定target |
+
+writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v1 COMMITTED 2026-10-06 11:34:16.232 UTC，七精确scope。等待Lead按[迁移请求](../../docs/evidence/b01/task-projections/authority-request.md)登记新权威来源，尚未确认聚合；本status唯一手填事实，不改registry。P04源码/raw冻结与claim保留完全独立。
+
+架构影响：只新增固定summary投影/映射Module供两个既有reader复用，生产事务/存储/鉴权/锁和全局调度不改；新目录结构在固定target后请求Lead登记，当前planned。
+
+## 历史owner交付快照（以下不是新片当前状态）
+
+# B01 状态
+
+| 字段 | 记录 |
+| --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-06 04:03:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra（lead mika） |

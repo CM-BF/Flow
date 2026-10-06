@@ -1,3 +1,11 @@
+# B01 task轻投影独立review
+
+Review target commit: NOT_IMPLEMENTED
+
+NOT_STARTED：新片源码未实现、尚无独审批准。权威WT task-read-projections / codex/task-read-projections，base fd1322f9c0c1d085d5e343e39f6216b20d26c264。review默认只读固定source/raw/hash与scope，不重复PG。验收按[Interface](../../docs/evidence/b01/task-projections/interface.md)：两真实reader无prompt结果字段、完整输出/分页/rawcursor/reset/状态更新等价、snapshot/写锁/auth未变、数据字节口径和有界清理；不把TOAST/吞吐/第三reader当已优化。固定提交后补实际检查和独审结论。
+
+## 旧B01固定review历史（不批准新片）
+
 # B01 独立 review
 
 状态：APPROVED
