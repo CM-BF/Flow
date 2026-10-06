@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:58:18 UTC / mainb1c2e398（接收前） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:10:33 UTC / main1737cd6（接收前） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 固定聊天页面已上线；执行器配置边界与架构图首次显示适配已审接收。 |
+| 当前产出 | 固定聊天页面保持可用；补充指令控件已审接收，等待实际聊天接线。 |
 | 下一可用交付 | 继续接通Codex与Claude的能力选择，并接收已审界面改进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -103,3 +103,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:55 UTC：SVC03固定artifact与static Web独立审查通过，11源码在实际集成点对d938逐字一致；原7+10行为/有界构建证据复用，无重复测试。两层任务与消息预算最终规则在根AGENTS/plans/OPS同步，101来源含R05/CHATUI01/D05FIT01/SVC03均本地parse无错/人读字段完整。即将发布本批；实际个人服务切换尚未执行，原32c/v9保留。
 
 2026-10-06 08:58:18 UTC：本批[R05-A与首次fit固定对照](../../docs/evidence/i02/native-harness-fit-integration.json)18项全一致，根类型检查exit0；复用作者42局部检查及Web已有五组浏览器/独立可视审查，不重复工程矩阵。SVC03实际窗口已关闭，后端与静态产物固定b1c/v12，后继main不改变其运行版本。
+
+2026-10-06 09:10:33 UTC：[补充指令独立模块组合](../../docs/evidence/i02/steering-module-integration.json)六源码与Web独审target/manifest逐字一致，当前Web类型检查exit0。未重复33/浏览器、未挂App或启个人steer。登记111源已实采；实际个人center/runner/staticWeb仍b1c/v12，不随main前进。
