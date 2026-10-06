@@ -81,5 +81,62 @@
     "D06 and ATTACHI02 main receipts pending",
     "Picker item plugin coverage and durable recovery remain original TODOs",
     "ENOSPC combination verification boundary recorded separately"
-  ]
+  ],
+  "finalSafetyPoint": {
+    "at": "2026-10-06T13:07:31.197268+00:00",
+    "freshLedgerAt": "2026-10-06T13:07:31.004Z",
+    "managementClaim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    },
+    "uncommittedPaths": [
+      "docs/evidence/web-platform/connection-session-consumer-interface.md",
+      "docs/evidence/web-platform/environment-enospc-intake-note.json",
+      "docs/evidence/web-platform/mature-task-handoff.md",
+      "plans/web-platform/status.md",
+      "docs/evidence/web-platform/history-attachment-ready-management-observation.json",
+      "docs/evidence/web-platform/history-attachment-ready-root-observation.json"
+    ],
+    "outsideScope": [],
+    "newLinks": [
+      {
+        "source": "docs/evidence/web-platform/mature-task-handoff.md",
+        "target": "history-attachment-ready-management-observation.json",
+        "exists": true
+      },
+      {
+        "source": "docs/evidence/web-platform/mature-task-handoff.md",
+        "target": "history-attachment-ready-root-observation.json",
+        "exists": true
+      },
+      {
+        "source": "docs/evidence/web-platform/mature-task-handoff.md",
+        "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-integration-ready.json",
+        "exists": true
+      }
+    ],
+    "missingLinks": [],
+    "sourceReview": "Read current Mika canonical and two fixed source hashes; original root observation copied byte-for-byte; no new review or tests. Center six points and normative late-cookie risk remain DTO conditions. ENOSPC resolved per Lead, not current blocker."
+  }
 }

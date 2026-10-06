@@ -179,5 +179,28 @@
     "consumerInterfaceAddendum": "connection-session-consumer-interface.md",
     "sharedOwner": "F01, existing mount/contracts exports/public client handoff"
   },
-  "assignmentUpdatedAt": "2026-10-06T13:04:32.047398+00:00"
+  "assignmentUpdatedAt": "2026-10-06T13:04:32.047398+00:00",
+  "firstFixedCenterDto": {
+    "target": "31824d831ef72b331459d568301371bb037d9734",
+    "source": "Root actual read relayed to management; management has not independently reviewed this new DTO",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/docs/evidence/wpf-connection-session/interface.md",
+    "contract": "packages/contracts/src/browser-session.ts",
+    "readyFields": [
+      "centerId",
+      "ownerPrincipalId",
+      "expiresAt",
+      "csrfToken"
+    ],
+    "resolvedByRootRead": [
+      "same-origin no-Origin GET uses Sec-Fetch-Site:same-origin with exact configured scheme/Host, no Forwarded trust",
+      "cookie-only read does not create/renew",
+      "32 valid sessions is DB singleton scope"
+    ],
+    "pendingDelta": [
+      "late clearCookie response race",
+      "repeat connect behavior"
+    ],
+    "fieldPolicy": "Six consumer points are semantic goals; no mechanical requirement for sessionRef/authEpoch or extra public fields if CSRF and private generation provide equivalent protections. Panels narrows delta against fixed DTO.",
+    "claimReceipt": "not received"
+  }
 }

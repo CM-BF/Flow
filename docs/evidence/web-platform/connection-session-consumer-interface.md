@@ -14,3 +14,15 @@ Lead 设计语义为绝对 8 小时、GET 不续期、32 有效 session 满额�
 6. **32 session 与多 tab。** 固定计数域和过期释放规则；刷新/新 tab 不占新槽。建议有效同身份 cookie 重复 connect 复用且不延长原 8 小时；connect 丢 ACK 先 cookie-only read，避免盲建占槽。满额不踢旧、不清有效 cookie。logout(expectedSessionRef) 或等价校验防旧 tab 晚到撤新 session；同 cookie 各 tab 共享退出，只停观察、不 cancel task、不删 journal。BroadcastChannel 仅触发重新核验，不授身份。
 
 不扩展账户 CRUD、会话管理页面或第二命令 authority。现 upload journal 单 namespace read→JSON→write 无跨 tab CAS、RecoveryPicker 未认证 metadata 展示是独立缺口，不能由新 session/send journal 支持推定已修。4 MiB/32 draft/128 command 仍为待完整序列化和状态增长预算审定的恢复容量候选，不与中心 32 有效 session 配额混同。
+
+## 迟到注销响应补充（panels/root规范推演，未浏览器复现）
+
+expectedSessionRef只能限制服务端撤销目标：A已撤销S1，但B的connect先用同名/domain/path设置S2，A迟到的clearCookie或过期Set-Cookie仍可能让浏览器清掉S2；JS epoch也无法拦浏览器处理响应头。最小候选为logout只撤销指定session，不在logout/read/error中无条件clearCookie；保留的旧cookie仅是失效标识，下次read明确revoked/missing，显式connect覆盖。此项须中心owner冻结，不是现实现已验证保证；不能推为任意connect响应乱序已解决，仍以cookie-only read核最终实际身份。
+
+来源为panels只读规范核对：[RFC6265并发Set-Cookie](https://www.rfc-editor.org/rfc/rfc6265.html#section-4.1.1)、[cookie存储算法](https://www.rfc-editor.org/rfc/rfc6265.html#section-5.3)、[MDN Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie)。固定aeb公开client index:38–53/545–551强制Bearer，514–537的watch独立Bearer并将data当EventPage；该固定代码尚无session协议，不能声称竞态已解决。
+
+## 首个固定 DTO 输入（13:08 root 实读回传，字段建议按此收敛）
+
+已收到中心固定 `31824d831ef72b331459d568301371bb037d9734`，权威入口为 browser-connection-session 的 `docs/evidence/wpf-connection-session/interface.md` 与 `packages/contracts/src/browser-session.ts`。root实际读取后报告：ready字段为centerId/ownerPrincipalId/expiresAt/csrfToken；安全同源GET无Origin采用Sec-Fetch-Site:same-origin＋明确配置scheme/Host且不信Forwarded，cookie-only read不创建/续期，全DB singleton32上限明确。本管理仅归因记录，没有新运行或审查。
+
+上方六项保持语义目标，不机械要求新增每个字段：csrfToken若按cookie派生，可等价绑定旧tab意图而省sessionRef；generation可以宿主私有local实现。固定logout目前空body＋Cookie＋CSRF并clearCookie；迟到clear响应仍待中心确认，重复connect行为待补。panels正在针对此固定输入收敛最小delta，不把早期字段建议冒成最终合同或要求扩大账号模型。COMMITTED领取回执仍待正式来源；fixed DTO不等整个中心实现或Web已接通。

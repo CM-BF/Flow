@@ -37,7 +37,7 @@
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
 | WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv5→QUEUE01v1与旧D06v2释放→新e5b2v1均有原始receipt |
-| WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；新附件v2材料投影缺口交Mika合法owner，未推断HTTP失败 |
+| WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；附件v2材料投影最小修复4f879已Mika独审READY，待Leadmain组合验收，不冒完整材料展示 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
 | WPF-001-12 | completed | d01_owner | QUEUE00 5acc已审，d10b4b0记录main698实现相同、claim13185v2 released |
