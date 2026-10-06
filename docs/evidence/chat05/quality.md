@@ -7,3 +7,5 @@
 ## X04 后继来源备注（非本任务实现）
 
 X04 五点设计已接受后置：只 registry name@exact semver + expected SHA512 SRI；复用本机 npm11.19.0 自带 pacote21.5.1（ISC）/ssri13.0.1；独立 staging 有界 tarball 后原子 artifact，不解包/安装/执行/启用；本机 tiny registry 验完整性、无脚本、清理、并发；依赖闭包不在首段。固定官方 README https://raw.githubusercontent.com/npm/pacote/v21.5.1/README.md 与本机源码已只读核验。pacote.tarball.stream 回调在内层损坏重试可重入，即使 fetchRetries:0，未来必须每次回调重置独立文件/hash。未安装、未下载生产包、未修改 X01 或共享依赖。
+
+2026-10-06 06:02 UTC 工作段 clean-code：mapper 只负责完整帧映射；store 只接受已被公共报告事务锁定的 task/attempt，不自造鉴权。原始 mapper 5 个行为红例→5/5；HTTP 6 红例均在尚未交接的 runner union 被 400 拒绝，非数据库加载失败，后续沿同公开 API 转绿。发现并修复 title 长度与 UTF-8 截断、工具历史读取无界问题（改读取最新/初始各一行）；没有改授权 tools 或服务。模块 tsc 通过，闭环未通过前不标活动已交付。
