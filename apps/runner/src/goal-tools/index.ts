@@ -5,6 +5,7 @@ export class GoalToolError extends Error {
 }
 export interface GoalToolOptions {
   goalId: string;
+  /** Full input reads and mutations only; read({}) grants the entire fixed goal overview. */
   allowedNodeIds: readonly string[];
   allowedCommands: readonly GoalCommand['kind'][];
   port: GoalToolPort;

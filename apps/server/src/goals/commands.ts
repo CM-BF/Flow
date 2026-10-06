@@ -6,7 +6,7 @@ import { taskSubmissionSchema } from '../../../../packages/contracts/src/tasks.j
 import { canonical, HttpError, sha256 } from '../database.js';
 import { loadProject } from '../projects/storage.js';
 import { acceptTask, command, loadTask } from '../tasks.js';
-import { currentDeliveries, equalBindings, executionRows, explanations, loadState, requireNode, sortBindings, type GoalState } from './state.js';
+import { currentDeliveries, equalBindings, executionRows, explanationView, loadState, requireNode, sortBindings, type GoalState } from './state.js';
 
 type Result = Omit<GoalCommandResult, 'replayed'>;
 export async function createGoal(pool: Pool, input: GoalCreation, key: string) {
@@ -42,7 +42,7 @@ async function defineInput(client: PoolClient, state: GoalState, input: Extract<
   const current = state.inputs.get(input.nodeId);
   if ((current?.version ?? 0) !== input.expectedInputVersion) throw new HttpError(409, 'input_version', 'Refresh the actual input version before editing.');
   if (current && canonical(current.input) === canonical(input.input)) return {
-    goalId: state.goal.id, nodeId: input.nodeId, inputVersion: current.version, changed: false, explanation: (await explanations(client, state.goal.id)).at(-1)!,
+    goalId: state.goal.id, nodeId: input.nodeId, inputVersion: current.version, changed: false, explanation: await inputExplanation(client, state.goal.id, input.nodeId, current.version),
   };
   const version = input.expectedInputVersion + 1;
   await client.query('INSERT INTO flow.goal_inputs(goal_id,node_id,version,input,project_revision) VALUES($1,$2,$3,$4,$5)', [state.goal.id, input.nodeId, version, JSON.stringify(input.input), state.project.project.revision]);
@@ -100,9 +100,23 @@ async function acceptDelivery(client: PoolClient, state: GoalState, input: Extra
   const artifact = (await client.query<{ detail_id: string }>('SELECT detail_id FROM flow.artifacts WHERE task_id=$1 AND artifact_id=$2 AND version=$3', [task.id, task.latest_artifact_id, task.latest_artifact_version])).rows[0];
   if (!artifact) throw new HttpError(409, 'delivery_artifact', 'Verified artifact is unavailable.');
   const binding: GoalArtifactBinding = { nodeId: input.nodeId, executionId: execution.id, taskId: task.id, artifactId: task.latest_artifact_id, artifactVersion: task.latest_artifact_version, detailId: artifact.detail_id };
-  if (current && canonical(current) === canonical(binding)) return { goalId: state.goal.id, nodeId: input.nodeId, delivery: current, changed: false, explanation: (await explanations(client, state.goal.id)).at(-1)! };
+  if (current && canonical(current) === canonical(binding)) return { goalId: state.goal.id, nodeId: input.nodeId, delivery: current, changed: false, explanation: await deliveryExplanation(client, state.goal.id, current) };
   const explanation = await explain(client, state, input.kind, `A verified delivery was accepted for actual input version ${execution.input_version}. ${input.reason}`, { nodeId: input.nodeId, inputVersion: execution.input_version, executionId: execution.id });
   await client.query('INSERT INTO flow.goal_acceptances(goal_id,explanation_version,binding) VALUES($1,$2,$3)', [state.goal.id, explanation.version, JSON.stringify(binding)]);
   await client.query('UPDATE flow.goal_nodes SET accepted_binding=$3 WHERE goal_id=$1 AND node_id=$2', [state.goal.id, input.nodeId, JSON.stringify(binding)]);
   return { goalId: state.goal.id, nodeId: input.nodeId, executionId: execution.id, delivery: binding, changed: true, explanation };
+}
+
+async function inputExplanation(client: PoolClient, goalId: string, nodeId: string, version: number): Promise<GoalExplanation> {
+  const row = (await client.query<GoalExplanation & { created_at: Date }>(`SELECT * FROM flow.goal_explanations
+    WHERE goal_id=$1 AND kind='define-input' AND source->>'nodeId'=$2 AND source->>'inputVersion'=$3 LIMIT 1`, [goalId, nodeId, String(version)])).rows[0];
+  if (!row) throw new Error('Persisted input explanation is missing.');
+  return explanationView(row);
+}
+async function deliveryExplanation(client: PoolClient, goalId: string, binding: GoalArtifactBinding): Promise<GoalExplanation> {
+  const row = (await client.query<GoalExplanation & { created_at: Date }>(`SELECT e.* FROM flow.goal_acceptances a
+    JOIN flow.goal_explanations e ON (e.goal_id,e.version)=(a.goal_id,a.explanation_version)
+    WHERE a.goal_id=$1 AND a.binding->>'executionId'=$2 AND a.binding=$3::jsonb ORDER BY a.explanation_version DESC LIMIT 1`, [goalId, binding.executionId, JSON.stringify(binding)])).rows[0];
+  if (!row) throw new Error('Persisted delivery explanation is missing.');
+  return explanationView(row);
 }
