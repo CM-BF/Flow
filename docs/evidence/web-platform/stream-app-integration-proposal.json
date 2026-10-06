@@ -6,7 +6,9 @@
     "currentAcceptedMain": "253b8ad38fd869297e7d9948a26c1d310fef5c6c (manager independently verified product main); Lead later b54de1dbb08e3ccc7d33a27295a318f2799e76ae metadata/registry receipt",
     "hostCandidate": "ba341d77672ba8456197d64d54193aee79719e46 accepted in253b8ad38fd869297e7d9948a26c1d310fef5c6c",
     "streamModuleInterface": "63b7a302e3630075b2472904805ff3fe07eb9989:docs/evidence/wpf-chat06-stream/interface.md",
-    "moduleImplementation": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7 APPROVED07:26:24Z; final63b7a302 clean; REVIEW_READY sent once; main receipt pending"
+    "moduleImplementation": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7 APPROVED07:26:24Z; final63b7a302 clean; REVIEW_READY sent once; main receipt pending",
+    "integrationCandidate": "902e2d1cbed4d930ab885e7cd276124872ef57cf (I02 candidate reported by ExecutionLead via root; not accepted main)",
+    "mainReceiptState": "Formal main still b54de1dbb08e3ccc7d33a27295a318f2799e76ae; SVC02 freeze pending. Wait for full MAIN_RECEIPT containing S01."
   },
   "proposedBase": "Wait for exact accepted main containing approved ActivityI and approved stream module; do not use moving main or restart existing trees.",
   "scopeDecisionPending": "Design approved by root; exact accepted combination base and fresh 13-scope take remain prerequisites. No tree or implementation claim.",
@@ -24,7 +26,9 @@
     "Use current MessageFooter seam for phase/interrupted/observationPaused/truncated/non-canonical notices while preserving P01 footer. Explicit message.status, global task isRunning and verification remain separate; block-complete is not task success.",
     "Only bounded current/active observed work should read stream metadata; no fetching streams for every loaded historical turn and no per-message polling. Exact settling/retained cache budget follows the fixed module interface.",
     "Only existing explicitly loaded finalContent may resolve truncated-final settlement; no automatic full reply/detail read. Existing canonical final/flow-reply-detail remains usable.",
-    "Fixed253b existing MessageFooter renders only user anchors. Draft phase notices may be pure host presentation via Thread wrapper; do not give draft actions authority from conversation-stream prefix. Any action mapping must originate in verified pane snapshot membership and exact App ownsMessage. Incomplete reason other alone does not cause MessagePrimitive.Error UI."
+    "Fixed253b existing MessageFooter renders only user anchors. Draft phase notices may be pure host presentation via Thread wrapper; do not give draft actions authority from conversation-stream prefix. Any action mapping must originate in verified pane snapshot membership and exact App ownsMessage. Incomplete reason other alone does not cause MessagePrimitive.Error UI.",
+    "P01 host authorize is private, not a public generic read API. Prefer a real flow.assistant-stream footer contribution and existing checkView for manifest capability plus current resource; active state alone is insufficient and no second authorization system is allowed.",
+    "Module updateHost publishes each time; host must compare effective inputs and expose a stable snapshot to avoid sync/publish loops while preserving dynamic identity/connection changes. Reuse the existing module scheduler/singleflight."
   ],
   "requiredChecks": [
     "GET opt-in exact header versus CREATE stable false; cap false/missing/disabled produce zero stream reads.",
@@ -32,7 +36,8 @@
     "Final/draft message task ownership, same IDs across centers and split panes, hidden/offline/close/late digest rejection.",
     "Observable paused/interrupted/truncated/non-final states; queue Enter/button/IME, profile locking, unknown receipt retry and fresh composer draft unchanged.",
     "Bounded requests for long replies/reconnect, no automatic lazy-detail body reads; actual Thread path counts not alternate converter benchmark.",
-    "Desktop and390px both themes, keyboard, truthful fixture labeling; no model or product DB."
+    "Desktop and390px both themes, keyboard, truthful fixture labeling; no model or product DB.",
+    "Unchanged host sync does not form an updateHost/publication loop; direct permission denial/disabled/capability false blocks reads independently of active plugin state."
   ],
   "protected": [
     "apps/web/src/conversations/projection.ts",
@@ -80,5 +85,15 @@
     "eviction": "Explicitly record which display history may be evicted and any user-driven lazy recovery; preserve canonical final and existing full-reply entry. Do not silently call eviction complete lossless stream history.",
     "scheduler": "Reuse module singleflight/bounded drain/error budget; no second interval/poll loop."
   },
-  "updatedAt": "2026-10-06T07:33:04Z"
+  "updatedAt": "2026-10-06T07:37:05Z",
+  "proposedWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration",
+  "proposedBranch": "codex/web-conversation-stream-integration",
+  "proposedOwner": "workspace_panels_owner",
+  "handoffOrder": [
+    "Read formal accepted main receipt, independently verify main/origin/clean,3ac andfinal63b ancestry and five source bytes.",
+    "Original S01 owner records main receipt only in its own metadata, commits clean and confirms all seven scopes stopped; fresh version release.",
+    "Preflight unique proposed tree/branch at explicit full accepted main; preserve any pre-existing checkout rather than overwrite.",
+    "Fresh D04 overlap check for exact thirteen literal scopes, committed take, then followup existing owner to write canonical and implement.",
+    "Send first canonical SOURCE_READY once via GO to ExecutionLead; no repeated API snapshot without new authorized deployment fact."
+  ]
 }

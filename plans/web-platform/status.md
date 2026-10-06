@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:33 UTC / 增量正文模块已审待主线，消息复用固定候选待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:39 UTC / 增量正文与消息复用均已审待集成；知识上下文模块只读准备 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `79a9eebd503caa3fc154aa64d7a729a1bb08d628`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `be5be7212fe8d0019626d42f8b8e305f4f2d7f65`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 聊天工具与思考界面已入主线；增量正文模块已通过审查 |
-| 下一可用交付 | 将增量正文接入聊天，并验证消息复用 |
+| 下一可用交付 | 将增量正文接入聊天，准备知识引用选择 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -58,8 +58,8 @@
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
 | WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理plan/evidence |
-| WPF-PERF03 | w01_owner / web-message-reuse，2ec58c2c v1，五scope；固定已审30b且messages对253b相同，仅对象复用/计数，首canonical8f2959d7/parser0已一次SOURCE_READY；当前固定f909d32f候选、metadata b35b6f81 clean，独审未定 |
-| WPF-CHAT06S01 | workspace_panels_owner / web-conversation-stream，d94ae4bb v1，七scope；固定3ac/final63b已独审并管理核验，全部产品停写等main，首ed187已登记。Lead07:16:38.910Z观察84源live/issues[]；App接线未受领 |
+| WPF-PERF03 | w01_owner / web-message-reuse，2ec58c2c v1，五scope；固定已审30b且messages对253b相同，仅对象复用/计数，首canonical8f2959d7/parser0已一次SOURCE_READY；固定f909d32f/root07:37:06批准、最终7998e591 clean，已一次交Lead；五scope停写保留回修权 |
+| WPF-CHAT06S01 | workspace_panels_owner / web-conversation-stream，d94ae4bb v1，七scope；固定3ac/final63b已独审并管理核验，全部产品停写，已进I02候选902e但尚非main，首ed187已登记。Lead07:16:38.910Z观察84源live/issues[]；App接线未受领 |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
 
@@ -312,3 +312,15 @@ PERF03固定候选f909d32f5fcff5b0ac6408dc96e8630bfeffae4e/metadata b35b6f814a59
 07:33:04 UTC管理clock确认07:32:30 quiet lease自动失效，未收到延长；本段只写管理文档/Git，无重负载或新worker实现派工。clean-code安全停点复核当前/历史、人读摘要、唯一来源、受控输入与固定批准范围；修正proposal里“模块仍待独审”的旧当前句，并使当前owner表与S01已审/消息复用候选一致。
 
 PERF03[候选管理核验](../../docs/evidence/web-platform/perf03-candidate-audit.json)读取b35b6f81 clean，三执行文件target/current/manifest哈希一致、五scope外0、parser0/human完整/proof unchanged；审查字段仍NOT_STARTED，管理不替root审批、不重跑计数/8消息或77关联检查。
+
+## 07:37 接线待正式主线与跨队租约
+
+ExecutionLead经root通知S01已进入I02候选902e2d1cbed4d930ab885e7cd276124872ef57cf；正式main仍b54，SVC02窗口结束后才给main receipt。候选不等主线，现不以902e建CHAT06I01树或提前take。接线[唯一13scope提案及交接顺序](../../docs/evidence/web-platform/stream-app-integration-proposal.json)明确workspace_panels_owner、web-conversation-stream-integration/codex/web-conversation-stream-integration；批准设计保持，精确base仍待正式回执，不重复请求许可。S01原claim仍由owner在main记录/clean/全部停写后fresh release。
+
+GO/Mika新的quiet lease原截止07:42，随后root转达Mika正式提前QUIET_RELEASE：实际07:36:13.218–07:36:21.191、12tasks/attempts、cleanup remaining[]/outbox[]及临时目录已移除，均为对方回执，未由本管理复测。lease与release连续收到后本管理确认无重任务并恢复轻量管理，未补造租约ACK或容量结论。87源仍引用Lead07:27:49观察，没有新部署就不fetch。PERF03 root独立8项窄审进行中，不重复77项。
+
+07:39 PERF03[最终增量管理审计](../../docs/evidence/web-platform/perf03-approved-audit.json)绑定f909/7998：新增只有五份metadata，三个实现/current/manifest哈希一致，parser0/human完整/review approved同target/proof unchanged/5md22links。root07:37:06独立批准与8项来源已准确转录，一次REVIEW_READY经GO交Lead。只声明对象身份/真实core转换调用数，未测React渲染/延迟/内存；2ec58 v1全部产品停写待main。
+
+原U11/REQ42下一独立知识context模块由同一w01只读准备，不新增agent或重复产品需求，尚未take/建树。root固定b54核公共K01/K02 lookup/citation/project身份齐备，后继可从已审b54独立受领，不依赖S01 main。候选仅新模块/测试/自己资料，App/Thread后继另领；当前17/13等已交权与新写权仍经D04 fresh检查，研究不授写权。
+
+本段管理清码复核：S01 candidate/main边界、PERF独立审查与管理核验职责、quiet lease时点、现有REQ42后继范围分开；25TODO/parser0、人读完整、四维护md157本地链接全可解、diffcheck0。未执行产品检查/API/模型或服务操作。

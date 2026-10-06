@@ -115,8 +115,9 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | --- | --- | --- |
 | 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
 | 已审待集成 | WPF-CHAT06S01增量正文独立模块 | 3ac/63b已root独立54批准且管理hash/docs核验，d94七scope停写等main；仅mock模块，不将模块完成当App接通 |
-| 并行窄优化 | WPF-PERF03消息对象复用 | 五scope已take，固定f909候选待root独审，仅同turn对象复用与转换调用计数，不声称浏览器延迟收益；stream接线只读消费现conversationMessages接口 |
-| 后继准备 | stream实际App接线 | 仅scope/interface proposal；ActivityI已main并release；模块3ac已固定独审，仍需准确组合mainbase后新take。不并行抢App/Thread，不新建agent |
+| 并行窄优化 | WPF-PERF03消息对象复用 | 五scope已take，固定f909/7998已root独审并一次交Lead，仅同turn对象复用与转换调用计数，不声称浏览器延迟收益；stream接线只读消费现conversationMessages接口 |
+| 后继只读准备 | 知识上下文选择独立模块 | w01_owner复用原U11/REQ42；固定b54公共K01/K02可用，等具体literal/新tree/新take，不写App/Thread；不可变citation、明确project、旧中心unsupported、展开才正文 |
+| 后继准备 | stream实际App接线 | WPF-CHAT06I01由workspace_panels_owner；独立web-conversation-stream-integration/codex/web-conversation-stream-integration，精确13scope见[提案](../../docs/evidence/web-platform/stream-app-integration-proposal.json)。ActivityI已main/release，S01在I02候选902e，等正式完整main→原模块收口→fresh take，不取候选抢App/Thread |
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
 | 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前三active本队claim按真实范围防交叉。GO说明Mika仍2槽；仅按明确带截止时间的quiet lease协调重负载，不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
