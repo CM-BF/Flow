@@ -16,3 +16,7 @@ Scope：tools/owned-process-supervision
 Reviewer：assignment_review / gpt-6-astra，2026-10-06 21:35:48 UTC。完整原 3 源与最终 2 文件增量已读，原 26 / 最终 30 bindings 全同，无剩余 P1/P2；0 reviewer 测试 / PG / provider / 项目写入。[原报告](../../docs/evidence/ops14/independent-source-review.json)与[绑定](../../docs/evidence/ops14/independent-source-review-bindings.json)原样保存。
 
 原 12 different 分轮证据保留；group grace 新反例与受影响 EPERM 用例因 fresh gate 未运行，不能报 13 passed / 2 passed。两真实包装器迁移继续未授权且未实施。只有追加原两例实际通过与必要独立核对后，才可请求模块完整接收。
+
+## 21:40 参数检查追加（待独立核对）
+
+在 Lead 新许可后只执行 policy-request 两例：2/2，11 未选，exit0 / 581ms，free 1,154,482,176 B；新例无 spawn，原 EPERM 例自有 child 97698 返回 unknown 后由测试 finally 收尾，随后只读 PID/group 均 absent。712B 原 stdout 含真实 ResourceWarning，未删；没有重跑历史12，没有PG/Chrome/provider。该事实补齐原源码批准的运行缺口，但不自行升级独立结论。

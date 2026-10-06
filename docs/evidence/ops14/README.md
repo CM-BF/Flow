@@ -18,3 +18,5 @@ Darwin zombie EPERM 不是 absent：报告保留 unknown observation，禁止再
 通过没有把长期资源清理收进模块；组 outside-session 逃逸仍 open。两真实 consumer 需双方 owner 正式移交后迁移，OPS14-04 保持 pending。
 
 21:33:44 UTC 窄参数修复 gate：free 1,032,241,152 B <1,077,936,128 B，NOT_RUN，未启动检查子进程。newChildSession 正 TERM grace 新增无 spawn 反例，并按独立源码预读将原 EPERM 例设 term=.03 保留全部断言。后续最小选择仅这两例，未追加运行；当前总 13 个 case 中原 12 有历史通过，新例尚无运行证据。
+
+21:40:41 UTC 重新获准一次 fresh gate 后，policy-request **2/2** 实际通过，11 未选，exit0 / 581ms /712B；当前共 **13 different 分轮**，不是一次13/13。first NOT_RUN 仍保留。新反例无 spawn，唯一实际 fault child 97698 的原 ResourceWarning 及测试 finally 保留，测试结束后额外一次只读 PID/group 确认 absent。0 PG/Chrome/provider/私有临时文件；不重跑历史12。Module README 的“12个”描述原首片矩阵，追加第13例以本记录为准，未为了计数改写原获审源码。
