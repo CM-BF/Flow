@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T23:27:16.947708+00:00",
+  "state": "NOT_RUN",
+  "reason": "freeBytes 1065254912 below original local gate 1107296256",
+  "gateBytes": 1107296256,
+  "dependencies": "dependency-receipt.json; links prepared, no import confirmation",
+  "candidates": [
+    "Node24 node_modules/vitest/vitest.mjs run --config docs/evidence/tui01g/vitest.config.mts packages/interaction/src/message-settings apps/tui/src/message-settings.test.tsx",
+    "Node24 node_modules/typescript/bin/tsc -p docs/evidence/tui01g/tsconfig.json --noEmit"
+  ],
+  "runtimeBound": "future bounded 30s command; <=8MiB cache/raw combined; no PG/HTTP/PTY/provider",
+  "counts": "12 newly prepared cases (3 pure + 8 controller + 1 Ink); no executed tests",
+  "notRun": [
+    "new tests",
+    "old direct consumers",
+    "focused typecheck",
+    "HTTP",
+    "PTY",
+    "PG",
+    "provider"
+  ]
+}

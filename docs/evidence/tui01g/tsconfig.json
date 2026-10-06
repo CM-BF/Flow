@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "../../../packages/interaction/src/**/*.ts",
+    "../../../apps/tui/src/main.tsx",
+    "../../../apps/tui/src/screen.tsx",
+    "../../../apps/tui/src/message-settings.test.tsx"
+  ],
+  "exclude": [
+    "../../../node_modules",
+    "../../../packages/interaction/src/goal/native-journey.test.ts"
+  ]
+}

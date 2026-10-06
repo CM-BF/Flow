@@ -3,6 +3,7 @@
 固定输入 main 93a92c918b29126b6761b02258cef523906eca94。新 Module 只管有限 Claude 目录选择及有来源的显示。依赖方向：Ink/headless → typed command/controller → 可选 `Pick<FlowClient, 'claudeMessageSettingsProfiles'>` 与既有 mutation port → public contracts。默认缺端口不影响旧 client 构造。
 
 - `settings { after? }` / `/settings [cursor]`：读一页≤6 profile，原合同每项≤32完整 choices。无无限累积/自动分页；失败或 epoch 变化不采用旧响应。
+- `settings-page { number }` / `/settings-page <number>`：对已加载最多 192 项做每页 8 项本地展示，不新增读取或无限缓存。
 - `setting { profileId, choice }` / `/setting <profile-id> <1-based-choice>`：必须当前连接会话明确支持协议，conversation.executionProfile、capability.profile 和目录 reference 三元相等，原样 tuple 校验通过。无任意字段拼装/无 access 参数。
 - `setting-clear` / `/setting-clear`：清除尚未发送的本地选择；未知 intent 不可由此改写。
 - `/new --profile <id>`：可选当前普通目录或 settings 目录的 profile；creation ACK 仍旧稳定 capabilities，随后公开 GET 决定逐消息支持。Codex 不在该目录/创建合同内。
