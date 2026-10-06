@@ -47,5 +47,15 @@
     "svc06GateGiB": 2.5,
     "largePreparation": "paused; no full retry",
     "nextDesign": "fixed-lock platform-specific seed closure has read-only size facts, no narrowed install/physical peak proof"
-  }
+  },
+  "observations": [
+    {
+      "observedAt": "2026-10-06 13:49:04 UTC",
+      "availableKiB": 1388440,
+      "source": "actual df -k on Data volume",
+      "attribution": "unknown, shared host concurrent work",
+      "decision": "full SVC06 remains blocked; small work continues; preserve ~1GiB shared completion reserve; both co-leads notified once",
+      "cleanupActions": 0
+    }
+  ]
 }
