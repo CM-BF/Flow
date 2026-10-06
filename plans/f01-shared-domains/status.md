@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:09:20 UTC / 当前source固定，待main接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:14:15 UTC / O14 main bd14f984e3927df139815597c4c3171af84ec4b7 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,19 +11,19 @@
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | 受控移交 HEAD c67d6973d5b9f516fcb3000538939d1046b39367；O14生产候选73aabff4fac96c0439817bdc72358c1385371e8d保持 |
-| 工作树dirty状态 | 产品73a五源码零差；本次仅验证证据和metadata，提交后clean |
+| 工作树dirty状态 | 新增032专测源码已固定，未运行；当前仅元数据收口，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 73aabff4fac96c0439817bdc72358c1385371e8d；本轮真实PG2/2，旧CLI1/root types0保留且未重跑；[证据](../../docs/evidence/f01/goal-progression-production-README.md) |
-| 已集成main状态 / HEAD | X01静态安装已审进入7810cbf1；O14领域与薄client已mainfb9，当前生产候选73aab未集成。个人runtime362/v15未更新。 |
-| Review | APPROVED 73aabff4fac96c0439817bdc72358c1385371e8d；assignment_review唯一独审，原样回执见review.md；后继032未批准 |
-| 实现目标 | 73aabff4fac96c0439817bdc72358c1385371e8d |
-| 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/goal-progression.test.ts, apps/server/src/index.ts, packages/client/src/goal-progression-production.test.ts |
+| 检查状态 | NOT_RUN 当前032准备；此前O14 PG2/2与旧CLI/types已独审并main，原证据保持 |
+| 已集成main状态 / HEAD | O14五源已main bd14f984e3927df139815597c4c3171af84ec4b7；032/C01本组合尚未main，个人服务不变 |
+| Review | NOT_STARTED 当前032准备；历史O14 73a已独审APPROVED/main，见review.md |
+| 实现目标 | 5ce424ee5676b24863f3b0c3e5d21c578650a415 |
+| 实现范围 | packages/client/src/claude-message-settings-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 自动推进的生产接线已通过独立审查，依赖继续、重启恢复与正常关闭有真实证据。 |
-| 下一可用交付 | 接入主线；消息设置生产入口另待领域批准后组合。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 自动推进的生产接线已进入主线；消息设置的生产直连用例已形成源码准备。 |
+| 下一可用交付 | 领域获批后组合生产入口，验证设置目录、发送和排队记录一致。 |
+| 当前阻塞 | ACTIVE: 等待消息设置领域正式独审及受控输入；现可继续源码与依赖准备。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -201,7 +201,7 @@
 
 2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
 
-| F01-42 | in-progress | native_center_owner | 生产73a真实PG2/2与正常专库/目录清理已完成；旧CLI1/types0保留，待独审/main。 |
+| F01-42 | completed | native_center_owner | 73a独审APPROVED，main bd14f984e3927df139815597c4c3171af84ec4b7精确接收；本片delivered。 |
 
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
 
@@ -236,3 +236,7 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 2026-10-06 17:03:29 UTC：O14一次独占验证完成并归还窗口。73a五源未改，实际PG2/2、随机库12,958,743B、连接零/remaining=[]、runtime正常等待退出及目录清除，0provider。固定[原始交付](../../docs/evidence/f01/goal-progression-production-README.md)保留全部原未运行/红证据；此前资源等待为历史事实。当前等待独审/main，CORE032仍独立未批准，不提前挂载。
 
 2026-10-06 17:09:20 UTC：O14唯一独审APPROVED原样归档，source73a不变，等待main精确接收。F01 fresh无冲突后已原子amend v46（17:08:13.061Z），新增唯一 packages/client/src/claude-message-settings-production.test.ts，60literal；[回执](../../docs/evidence/f01/claude-message-settings-production-scope-amend.json)。032当前只准备设计/闭包，不应用未审CORE或启动PG；O14源继续冻结，C01目录不动。
+
+| F01-43 | in-progress | native_center_owner | [032生产Interface](../../docs/evidence/f01/claude-message-settings-production-interface.md)，新专测固定5ce，NOT_RUN；待CORE正式批准/受控输入/独占窗口。 |
+
+2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。

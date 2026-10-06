@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-06 17:14:15 UTC",
+  "main": "bd14f984e3927df139815597c4c3171af84ec4b7",
+  "sourceTarget": "73aabff4fac96c0439817bdc72358c1385371e8d",
+  "delivered": true,
+  "leadReceiptPath": "docs/evidence/i02/o14-production-main-comparison.json",
+  "leadReceiptSha256": "8bfb395475b2eec8367beb9324df078eaef55ba68905b2ebeaeb49ff404400f3",
+  "sourceComparison": [
+    {
+      "path": "apps/cli/README.md",
+      "bytes": 7066,
+      "sha256": "301b7980c9a00ed50b5eaf73ea2737234bd5f42e405f03adb6a5bcd4699eff11",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 23730,
+      "sha256": "fb15f3e7b9485ffe53124ba861ed859f490d545725d28644cf539fe820f766a2",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/cli/src/goal-progression.test.ts",
+      "bytes": 4437,
+      "sha256": "7137659de95aac3ba33ddbcc2fe40fe3186ac12349feef13eebb33726514fe3b",
+      "matchesTarget": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 14219,
+      "sha256": "1f64303d80b30a342912c350281ca96d38ba68509201649393ca94c90b3f84fc",
+      "matchesTarget": true
+    },
+    {
+      "path": "packages/client/src/goal-progression-production.test.ts",
+      "bytes": 12925,
+      "sha256": "75a2b76adaca87b74a9fa80c221113a21ed64d1c864d143f5c95c067bfdf3809",
+      "matchesTarget": true
+    }
+  ],
+  "testsRerun": 0,
+  "provider": 0,
+  "limits": "Original fixed review limits remain; 032 preparation is independent and NOT_RUN."
+}
