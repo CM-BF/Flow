@@ -17,7 +17,7 @@
 
 ## 请求、资源与预算
 
-全部3784次runner请求都有同ordinal的send/settled记录：setup1342、window2306、settlement136（phase按parent接收）；实际状态均200，记录的runner-http-error为0。owner请求61次200、128次202。停止的child单调时刻后没有新send、没有未结算请求；本次未观察到HTTP错误，结论来自完整记录而非PASS推断。未来错误仍须逐项保留status/类别/identity/stop关系；本次不能替代故障恢复验收。轻读实际53次，single-flight预算跳过5次。
+全部3784次runner请求都有同ordinal的send/settled记录：setup1342、window2306、settlement136（phase按parent接收）；实际状态均200，记录的runner-http-error为0。owner请求61次200、128次202。停止的child单调时刻后没有新send、没有未结算请求；本次未观察到HTTP错误，结论来自完整记录而非PASS推断。未来错误仍须逐项保留status/类别/identity/stop关系；本次不能替代故障恢复验收。轻读实际53次，最多2个并发的门限跳过5次；DB观测才是single-flight。
 
 8份journal均`inFlight:null/assignments:[]`，无unknown占用；runner与center两个自有child均自然exit0，非TERM/KILL强收束，专DB已普通DROP并确认absent，新工作目录已删除，无本次retained。旧失败窗口的retained journal没有打开/重放/删除。
 
