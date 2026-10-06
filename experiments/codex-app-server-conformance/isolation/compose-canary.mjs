@@ -56,6 +56,7 @@ async function ownListener(register) {
 // Fixed recipes only; no caller-supplied executable, profile or alternate peer.
 function recipeFor(scenario) {
   if (scenario === 'original-canary') return { canary: true, sandbox: true, profile: path.join(here, 'default-deny.sb') };
+  if (scenario === 'node-runtime-metadata-canary') return { canary: true, sandbox: true, profile: path.join(here, '../node-runtime-metadata/candidate.sb') };
   if (!['node-control', 'node-profile-control', 'node-canary'].includes(scenario)) throw Error('Unknown fixed scenario');
   return { canary: scenario === 'node-canary', sandbox: scenario !== 'node-control', profile: path.join(here, '../node-rootliteral/candidate.sb') };
 }

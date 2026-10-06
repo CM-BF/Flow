@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:57:28 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:19:38 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 51fc68db5acaf977019808319c72307adc67f6d1（新准备基线；实际HEAD由Git核） |
-| 工作树dirty状态 | 新node-runtime-metadata设计/精确profile派生及本status/interface；既有运行源码与sealed raw未改。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 2ac2993652e21d77c62a25e46c012c0188abfb05（已审设计；新源码待固定） |
+| 工作树dirty状态 | 新runtime-metadata组合/观察/用例，以及cause/Node host/compose最小接缝；定向验证完成、固定包整理中；sealed raw/旧profile/R06未改。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 当前cause准备33distinct；实际1目标SIGABRT但双流完整、受限分类与清理确认。原58/2目标及其计量UNKNOWN仍按旧结果保留。 |
+| 检查状态 | 40 distinct分轮pure（29+8+5含2重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合尚待独审。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | cause source4331c267bc5ef7c01328369ecaa57fc9434c7473；原f6两P2已修复，33distinct分次证据，v2 a5984db6已独审APPROVED；go-node-loader-cause-once CONSUMED；1目标完整观察，SIGABRT启动失败 |
+| 实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合待固定独审；实际NOT_OPEN |
 | 实现范围 | 新node-runtime-metadata实验/证据；后继仅复用cause双流/Node单canary固定recipe；R06已交回只读 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已观察到公开运行库角色的加载错误；正在准备精确路径元数据对照，尚未获得启动能力。 |
-| 下一可用交付 | 固定两步对照方案：先验证启动，再验证原有七项隔离检查；实际运行须通过独审门禁。 |
-| 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
+| 当前产出 | 两步对照已完成接线与定向验证，失败时会保留未知资源和不完整计量事实。 |
+| 下一可用交付 | 固定组合与精确预算清单交独审；实际运行尚未开放。 |
+| 当前阻塞 | ACTIVE: Node/Codex启动隔离与真实权限资格仍未证明；新对照待固定独审及运行门禁。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：Mika13:42:44 UTC APPROVED结果12f502b1，仅完整观察与忠实性；启动/隔离未通过。 |
+| Review | [review.md](review.md)：当前仅设计APPROVED，组合准备未审；旧cause12f502b1结果批准只在历史范围成立。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 
@@ -64,4 +64,4 @@
 
 ## 运行库元数据新准备
 
-[最小Interface/策略差异](../../docs/evidence/wpf-mature-02/node-runtime-metadata/interface.md)沿TODO-03；GO允许准备，go-node-runtime-metadata-once NOT_OPEN。61固定种子派生177精确metadata/test literal，44解析成功/17独立系统文件不存在，不推断缓存或实际需要。0目标/编译/监听；旧cause9605及Node失败结果不回写。下一独审先核策略与两Module组合，之后只测直接pure消费者；当前未修改运行driver。X01 a578只读独审已交原owner收口，接收入口只在canonical路由。
+[最小Interface/策略差异](../../docs/evidence/wpf-mature-02/node-runtime-metadata/interface.md)沿TODO-03；GO允许准备，go-node-runtime-metadata-once NOT_OPEN。61固定种子派生177精确metadata/test literal，44解析成功/17独立系统文件不存在，不推断缓存或实际需要。0目标/编译/监听；旧cause9605及Node失败结果不回写。策略设计已审；当前两Module接线与直接pure验证完成，固定组合待审。X01 a578只读独审已交原owner收口，接收入口只在canonical路由。

@@ -92,3 +92,13 @@ test('listener close rejection returns exact retained roots instead of losing th
   expect(hook.roots.every(p => real.existsSync(p))).toBe(true);
   expect(JSON.stringify(result)).not.toContain('FAKE_CLOSE_FAILURE');
 });
+
+test('runtime metadata fixed canary uses its exact profile under sandbox and one synthetic listener', async () => {
+  const result = await run('node-runtime-metadata-canary');
+  expect(result.passed).toBe(true); expect(hook.calls).toBe(1); expect(hook.listeners).toBe(1); expect(hook.listenerCloses).toBe(1);
+  expect(hook.seen[0].spawn.executable).toBe('/usr/bin/sandbox-exec'); expect(hook.seen[0].spawn.args.at(-1)).toBe('normal');
+  const profile = result.outputInventory.files.find((row: any) => row.path.endsWith('/default-deny.sb'));
+  const expected = real.readFileSync('experiments/codex-app-server-conformance/node-runtime-metadata/candidate.sb');
+  expect(profile.sha256).toBe(createHash('sha256').update(expected).digest('hex')); expect(profile.bytes).toBe(16762);
+  expect(result.stdoutBoundConfirmed).toBe(true); expect(result.retainedRoots).toEqual([]);
+});

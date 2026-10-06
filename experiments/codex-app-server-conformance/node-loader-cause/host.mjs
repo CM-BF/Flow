@@ -5,25 +5,42 @@ import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
 import { runOwnedCommand } from '../fd-canary/command.mjs';
 import { observeLoader } from './observe.mjs';
+import { observeRuntimeLoader } from '../node-runtime-metadata/observe.mjs';
 const fail = () => { throw Error('Loader observation unavailable'); };
 const hash = data => createHash('sha256').update(data).digest('hex');
-export function makeCauseBudget(prepared) {
+const controlHash = 'ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c';
+function fixedRecipe(name) {
+  if (name === 'loader-cause') return { window: 'go-node-loader-cause-once', profile: 'node-rootliteral/candidate.sb', diskLimit: 24576, control: false };
+  if (name === 'runtime-metadata-control') return { window: 'go-node-runtime-metadata-once', profile: 'node-runtime-metadata/candidate.sb', diskLimit: 65536, control: true };
+  return fail();
+}
+export function makeCauseBudget(prepared, recipeName = 'loader-cause') {
+  const recipe = fixedRecipe(recipeName);
   if (!Number.isSafeInteger(prepared) || prepared < 0 || prepared > 81920) fail();
+  if (recipe.control && prepared !== 0) fail(); // The combined caller owns the one prepared charge.
   const value = { prepared, observed: 0, copied: 0, disk: 0, receipts: 0 };
   const total = () => prepared + value.observed + value.disk + 16384 + 114688 + 4096;
   const add = (name, n) => {
     if (!Number.isSafeInteger(n) || n < 0 || !Object.hasOwn(value, name)) fail();
     value[name] += n; // Count even the first overflow before failing.
-    if (total() > 262144 || value.receipts > 16384 || value.disk > 24576) fail();
+    if (total() > 262144 || value.receipts > 16384 || value.disk > recipe.diskLimit) fail();
   };
   return { observe: n => add('observed', n), consume: n => add('copied', n), disk: n => add('disk', n), receipt: n => add('receipts', n),
-    reserveDisk(n) { if (value.disk + n > 24576 || total() + n > 262144) fail(); },
-    snapshot: () => ({ ...value, reservedBytes: total(), limit: 262144, withinBudget: total() <= 262144 && value.receipts <= 16384 && value.disk <= 24576 }) };
+    reserveDisk(n) { if (value.disk + n > recipe.diskLimit || total() + n > 262144) fail(); },
+    snapshot: () => ({ ...value, reservedBytes: total(), limit: 262144, withinBudget: total() <= 262144 && value.receipts <= 16384 && value.disk <= recipe.diskLimit }) };
 }
 
-export async function runCause({ evidenceDirectory, repository, preparedBytes, roles, initialReceiptBytes = 0 }, dependencies = {}) {
+export function isExpectedControl(result) {
+  const stdout = result.streams?.find(row => row.name === 'stdout'), stderr = result.streams?.find(row => row.name === 'stderr');
+  return Boolean(result.targetCalls === 1 && result.close?.reason === 'completed' && result.close?.code === 7 && result.close?.signal === null
+    && result.close?.closeObserved && result.close?.groupGone && stdout?.complete && stdout.bytes === 0 && stderr?.complete
+    && stderr.bytes === 40 && stderr.sha256 === controlHash && result.outputAccountingComplete && result.cleanupComplete
+    && result.resultPersisted && result.withinBudget);
+}
+export async function runCause({ evidenceDirectory, repository, preparedBytes, roles, initialReceiptBytes = 0, recipe: recipeName = 'loader-cause' }, dependencies = {}) {
+  const recipe = fixedRecipe(recipeName);
   const io = dependencies.io ?? fs, command = dependencies.command ?? runOwnedCommand;
-  const now = dependencies.now ?? (() => performance.now()); const budget = makeCauseBudget(preparedBytes);
+  const now = dependencies.now ?? (() => performance.now()); const budget = makeCauseBudget(preparedBytes, recipeName);
   budget.receipt(initialReceiptBytes);
   const roots = [], files = [], descriptors = [], directories = [];
   let allClosed = true, descriptorsClosed = true, inventoryComplete = true, stage = 'reservation';
@@ -53,7 +70,7 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
     const stat = io.lstatSync(directory); if (!stat.isDirectory() || stat.isSymbolicLink()) fail();
     record.identity = { ino: stat.ino, dev: stat.dev }; io.chmodSync(directory, 0o700); record.prepared = true; return directory;
   }
-  receipt('batch-reservation.json', { consumed: true, window: 'go-node-loader-cause-once', maxTargets: 1, totalMs: 30000 });
+  receipt('batch-reservation.json', { consumed: true, window: recipe.window, maxTargets: 1, totalMs: 30000 });
   try {
     stage = 'prepare'; if (now() >= 20000) fail();
     const allowed = root('/private/tmp/flow-wpf02-cause-allow-'), denied = root('/private/tmp/flow-wpf02-cause-deny-');
@@ -62,7 +79,7 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
       io.mkdirSync(directory, { mode: 0o700 }); const row = { directory, identity: null }; directories.push(row);
       const stat = io.lstatSync(directory); row.identity = { ino: stat.ino, dev: stat.dev };
     }
-    for (const [from, name] of [['node-rootliteral/candidate.sb', 'default-deny.sb'], ['diagnostics/immediate-exit.mjs', 'immediate-exit.mjs']]) {
+    for (const [from, name] of [[recipe.profile, 'default-deny.sb'], ['diagnostics/immediate-exit.mjs', 'immediate-exit.mjs']]) {
       const bytes = io.readFileSync(path.join(repository, 'experiments/codex-app-server-conformance', from));
       persist(path.join(control, name), bytes, true); io.chmodSync(path.join(control, name), 0o400);
     }
@@ -84,13 +101,13 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
       const complete = allClosed && !returned.safe.observationFailed && stream?.streamEnded && stream.childCloseObserved
         && !stream.incomplete && !stream.truncated && !stream.observerFailed && stream.observedBytes === bytes.length && stream.writtenBytes === bytes.length;
       result.streams.push({ name, bytes: saved.bytes, sha256: saved.hash, complete: Boolean(complete), mode: '0600', identity: saved.identity });
-      if (name === 'stderr') result.observation = observeLoader(bytes, roles, complete);
+      if (name === 'stderr') result.observation = (recipe.control ? observeRuntimeLoader : observeLoader)(bytes, roles, complete);
     }
     const observed = Object.values(returned.safe.streams ?? {}).reduce((n, s) => n + s.observedBytes, 0);
     result.outputAccountingComplete = result.streams.length === 2 && result.streams.every(x => x.complete) && observed === budget.snapshot().observed;
     result.observationComplete = result.outputAccountingComplete && returned.safe.reason === 'completed' && result.observation.errorClass !== 'UNKNOWN';
   } catch { result.failedStage = stage; } finally {
-    stage = 'cleanup'; result.retainedRoots = roots.map(x => x.directory);
+    stage = 'cleanup'; result.retainedRoots = roots.map(x => x.directory); result.retainedRootsComplete = true;
     // Exact owned tree inventory precedes deletion; unknown child or any unexpected entry retains roots.
     try {
       if (!allClosed || !descriptorsClosed || descriptors.some(x => !x.closed)) fail();
@@ -119,8 +136,14 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
     result.privateFiles = files.map(({ file, identity, bytes, hash, closed, removed }) => ({ file, identity, bytes, sha256: hash, closed, removed }));
     result.elapsedMs = now(); result.elapsedBasis = 'before-result-persistence'; result.output = budget.snapshot();
     result.withinBudget = result.outputAccountingComplete && result.output.withinBudget && now() <= 30000;
-    receipt('batch-result.json', result); result.resultPersisted = true;
+    try { receipt('batch-result.json', result); result.resultPersisted = true; }
+    catch (error) {
+      if (!recipe.control) throw error;
+      result.resultPersisted = false; result.outputAccountingComplete = false; result.withinBudget = false;
+      result.failedStage = 'result-persistence';
+    }
     result.output = budget.snapshot(); result.finalElapsedMs = now(); result.withinBudget &&= now() <= 30000;
+    if (recipe.control) result.controlPassed = isExpectedControl(result);
   }
   return result;
 }

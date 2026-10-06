@@ -1,0 +1,46 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ experiments/codex-app-server-conformance/node-runtime-metadata/recipe.test.ts (20 tests | 2 failed | 18 skipped) 173ms
+   ↓ new control uses fixed metadata profile, separate exact success predicate and no loader-error prerequisite
+   ↓ both full 8192-byte streams fit the new profile local disk cap; legacy 24KiB still rejects
+   ↓ combination runs exactly one control plus one sandbox canary with prepared charged once
+   ↓ control-abort consumes one slot and never creates the canary
+   ↓ control-stdout consumes one slot and never creates the canary
+   ↓ control-unknown consumes one slot and never creates the canary
+   × bad-reason disqualifies the canary stdout source bound despite an empty queue receipt 93ms
+   × canary-report disqualifies the canary stdout source bound despite an empty queue receipt 79ms
+   ↓ single-canary recipe rejects unsandboxed executable before creating its transport
+   ↓ the second Module uses the global clock and cannot restart its budget origin
+   ↓ a control completion beyond its own 30s never qualifies the second slot
+   ↓ a Module rejection before a receipt leaves owner settlement unknown
+   ↓ canary failure extracts bounded reason before private cleanup without qualifying stdout
+   ↓ fixed input gate rejects changed link targets and absent paths becoming present
+   ↓ delivery refuses a late automatic receipt or the combined CLI/receipt overflow
+   ↓ an unconfirmed extra observation descriptor retains the private root and invalidates accounting
+   ↓ unknown recipe names never create an owned target or accept an arbitrary profile path
+   ↓ new control preserves known retained identities if its final receipt cannot persist
+   ↓ new canary preserves its resource receipt when final persistence fails
+   ↓ legacy cause still rejects failed final persistence
+ ❯ experiments/codex-app-server-conformance/node-runtime-metadata/observe.test.ts (15 tests | 1 failed | 14 skipped) 4ms
+   ↓ recognizes search no such file without inventing errno
+   ↓ recognizes search not a file without inventing errno
+   ↓ recognizes search blocked by sandbox without inventing errno
+   ↓ recognizes search cannot override a protected system dylib without inventing errno
+   ↓ recognizes search errno=13 without inventing errno
+   ↓ keeps distinct attempts and explicit errno conflicts instead of selecting the last error
+   ↓ keeps the exact finite operation for file system sandbox blocked stat("/opt/homebrew/opt/libuv/lib/libuv.1.dylib")
+   ↓ keeps the exact finite operation for stat("/opt/homebrew/opt/libuv/lib/libuv.1.dylib") failed with errno=2
+   ↓ keeps the exact finite operation for file system sandbox blocked mmap() of '/opt/homebrew/opt/libuv/lib/libuv.1.dylib'
+   ↓ keeps the exact finite operation for code signing blocked mmap() of '/opt/homebrew/opt/libuv/lib/libuv.1.dylib'
+   ↓ keeps the exact finite operation for mmap(addr=0x12, size=0x00001000) failed with errno=13 for /opt/homebrew/opt/libuv/lib/libuv.1.dylib
+   ↓ unknown text/errno, partial role and private path never become a new public token or inferred cause
+   ↓ truncated/non-UTF8 observations preserve unknown and never parse copied prefixes
+   ↓ bounded reasons retain the unknown suffix marker and suppress addresses/PIDs
+   × ninth valid attempt preserves errno conflict after the eight-detail cap 4ms
+
+ Test Files  2 failed (2)
+      Tests  3 failed | 32 skipped (35)
+   Start at  07:20:26
+   Duration  401ms (transform 67ms, setup 0ms, import 96ms, tests 177ms, environment 0ms)
+

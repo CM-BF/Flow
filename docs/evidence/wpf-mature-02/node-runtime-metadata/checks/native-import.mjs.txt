@@ -1,0 +1,13 @@
+import cp from 'node:child_process';
+import net from 'node:net';
+import { syncBuiltinESMExports } from 'node:module';
+let factories=0,listeners=0;
+cp.spawn=()=>{factories++;throw Error('NO_ACTUAL_TARGET');};
+net.createServer=()=>{listeners++;throw Error('NO_ACTUAL_LISTENER');};
+syncBuiltinESMExports();
+await import('./experiments/codex-app-server-conformance/node-runtime-metadata/execute-reviewed.mjs');
+const {registerR06Loader}=await import('./experiments/codex-app-server-conformance/node-rootliteral/loader.mjs');
+registerR06Loader();
+await import('./experiments/codex-app-server-conformance/node-runtime-metadata/host.mjs');
+if(factories!==0||listeners!==0)throw Error('IMPORT_SIDE_EFFECT');
+process.stdout.write(JSON.stringify({factories,listeners})+'\n');
