@@ -1,6 +1,6 @@
 # 完整计划验收矩阵与滚动批次
 
-核验时间：2026-10-06 07:18 UTC。基线 main/origin/main `30b97cbf3665c4ef7a314a6a8b59394ae68781af`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
+核验时间：2026-10-06 07:26 UTC。基线 main/origin/main `253b8ad38fd869297e7d9948a26c1d310fef5c6c`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
 
 | ID / 原始要求 | 任务/依赖 | 验收与所需证据 | 当前事实与缺口 |
 | --- | --- | --- | --- |
@@ -25,7 +25,7 @@
 | REQ-19 §12/13 自托管部署和故障 | S01 | 一中心本机/远端runner部署文档、持久存储/权限/重启恢复/故障演练；浏览器/中心/runner断连承诺分开 | M1浏览器退出、queued中心重启已有证据；R04 bounded HTTP drain/主进程20s unknown退出已审集成；SVC01独立启动器已审集成并0消息启动61227/61228，用户需首次认证后主动发消息；SVC02 durable drain/maintenance/bootstrap已独审集成并完成一次真实受控升级和恢复接受，center/runner实际加载fb906cb，原DB/runner身份/端口保留、0模型调用；Vite Web可随main变化，启动SHA不代表整套当前源码，active跨机恢复未完整 |
 | REQ-20 §11 验证和证据链 | M02/G01/X01/S01 | 要求→产物版本→独立验证→合并版本可追溯；知识结论来源范围；不同任务可选verifier | M1 flow.text非空/contains已有；工程/知识/扩展验证未完整 |
 | REQ-21 工程协作dashboard用户要求 | D03/D04已集成部署 | 结构化human摘要；首屏当前阶段/2–3项工作/下一交付/真正决策，历史折叠；细节可追溯；review实现target与metadata、main祖先关系分离 | D03中性紧凑视图、D04PG原子claim/self-service已独审部署；4320 07:16:38实际84源，新增逐段正文模块已登记；CHAT06/C02组合review锚点已按独立审查与main receipt修正，旧scope已释放；D07显式片段阶段与DPERF单快照核验复用已独审部署，新增claim未登记仍可见；D05架构tab与D06固定115b快照已上线，标题明确源码SHA/核验日期，独立标注常驻runtime版本，历史快照不当最新架构全量证明 |
-| REQ-22 §1/5/7/11 自然语言目标到交付 | O01，接G01/M02/E01 | 目标→后台生成/修订版本化子任务与依赖→不同agents产出→独立验证循环→统一解释/用户决策→固定产物交付；复用harness，计划变更仅受限中心commands | O01 a4持久受限命令/真实PG diamond/独立进程失效证据已审集成；O02 d819真实MCP桥接已审集成但无query。O03中心授权与公共client/生产挂载已审集成；O04固定1420dfa+012升级测试a169已独审集成（102+1不同检查）；O05 owner持久graph proposal/apply领域1f211与F01生产挂载208a已独审集成；O06受限graph grant/审计/同TX重放及017/shared接线已独审集成；O07原生graph工具c224与生产018/019依赖已独审main115b闭合，保持注入query/实际MCP边界，不把owner提案等同模型拆图；O08零query真实MCP/PG验收driver与自有进程组清理已独审；原零扩展门槛与实际managed3+3冲突已明确；新已知声明资源基线候选7403获准备独审。GO新单query授权已执行一次，作者报告3节点/2依赖但原严格字面oracle失败，原始证据与语义结论待固定独审；无重试/不将后台图成功等于child交付。完整自动拆图→执行→验收仍open，手动10任务不替代最终编排 |
+| REQ-22 §1/5/7/11 自然语言目标到交付 | O01，接G01/M02/E01 | 目标→后台生成/修订版本化子任务与依赖→不同agents产出→独立验证循环→统一解释/用户决策→固定产物交付；复用harness，计划变更仅受限中心commands | O01 a4持久受限命令/真实PG diamond/独立进程失效证据已审集成；O02 d819真实MCP桥接已审集成但无query。O03中心授权与公共client/生产挂载已审集成；O04固定1420dfa+012升级测试a169已独审集成（102+1不同检查）；O05 owner持久graph proposal/apply领域1f211与F01生产挂载208a已独审集成；O06受限graph grant/审计/同TX重放及017/shared接线已独审集成；O07原生graph工具c224与生产018/019依赖已独审main115b闭合，保持注入query/实际MCP边界，不把owner提案等同模型拆图；O08零query真实MCP/PG验收driver与自有进程组清理已独审；原零扩展门槛与实际managed3+3冲突已明确；新已知声明资源基线候选7403获准备独审。GO独立接收O08真实单query固定75ff：原生两图工具持久化3节点/2依赖、同attempt提案与应用、最终解释明确未执行子任务；原driver字面正则误拒导致exit1/FAIL永久保留，GO逐项只读补验实际语义APPROVED，1/1预算封存/SDK估算$.0318802含辅助Haiku；known managed 3plugins/3skills不是隔离沙箱，host read allow不单独证明read执行；无重试，不将后台图成功等于child交付。完整自动拆图→执行→验收仍open，手动10任务不替代最终编排 |
 
 ## 早期研究/实验输入（保留当时范围；当前结果以上表为准）
 
@@ -35,11 +35,11 @@
 
 ## 当前滚动调度
 
-本任务cap4（Root + Lead + CHAT07 runner_owner + O08/限定审查 assignment_review），外部Web最多4，Mika最多2，合计10。任务claim实际原子领取、唯一status、worktree隔离；三队回程限制见OPS-001-06，不把subagent说成可直投用户task。
+本任务cap4（Root + Lead + CHAT08 runner_owner + SVC02更新准备 assignment_review），外部Web最多4，Mika最多2，合计10。任务claim实际原子领取、唯一status、worktree隔离；三队回程限制见OPS-001-06，不把subagent说成可直投用户task。
 
 main115b0db已含CHAT持久会话/typed正文/配置pin/队列后台及UI、O01～O06相应限定片段、K01版本原文与词法检索、X02登记与X03只读App挂载、R04/P03/B01/B03、CTX01/02、SVC02维护。实际center/runner固定fb906cb/v3接受；Web与后台各自版本须记录，不以同SHA作为前后端分离部署门槛。原R02 5/5与CHAT 2/2预算封存，第二轮旧live UI限制保留；新QUEUE两query已真实验收并封存2/2，实际同session正文、运行中排队与浏览器关闭后后台继续成立；保持显式Continue和归一化SDK成本边界，不追改旧日志。
 
-当前ready主线：K03知识节点引用、renderer主界面接线、D06固定115b图已main07b；X05持久下载域与可选生产入口已mainba908。Lead优先CHAT06领域+C02兼容+022公共入口+Web兼容和实际consumer集成，typed activity App由Web独立接入。聊天发布/受控个人环境更新不等待S01负载、O08原生许可或CHAT07。CHAT07仅持久owner控制/runner收据与final seal领域seam，生产cap关闭，旧loop未接；received不是consumed更不是模型遵从。S01由Mika独占测量窗口执行；O08因已知扩展冲突保持native未就绪。全部旧query预算封存，完整npm生命周期/隔离、KB向量、工程harness、FS/PTY与真实容量仍open。
+当前ready主线：CHAT06/022/C02及Web兼容已mainfa9；聊天工具活动主界面ba341已main253b。个人常驻中心/runner仍固定fb906；SVC02唯一owner准备新受控更新窗口，0query、不先停服务，不等CHAT08或性能实验。Web逐段正文模块继续独立实施；CHAT08同query多turn与条件final协议0provider实施、cap仍false。S01后继计时窗口及CHAT06prefix成本测量由Mika协调，不抢用户聊天发布。O08原生固定合成图验收已获GO限定接收且预算封存；真正子任务交付/工程harness/插件完整生命周期仍open。
 
 **持续执行**：完成→核查实际证据/验收→集成→下一ready项。阻塞→记录原因/owner/解除条件/绕行与其他独立工作。暂时无ready实现→有界研究或低成本实验，用证据改计划，不增加无意义复杂度，不降低原验收。所有feature仍各自独立worktree/status/review；此矩阵不替代owner状态。
 
@@ -106,5 +106,8 @@ GO只读官方[npm registry API](https://github.com/npm/registry/blob/main/docs/
 CHAT06以明确patch-v1 header协商连接读取能力，旧未协商客户端false，创建幂等ACK稳定false；实际turn是否有patch看持久事实。legacy过滤不删除PG事件，raw-scan cursor可能越过最后可见条目，新Web reader必须接受空页进展。缓存no-store，不能因同批新Web部署假定旧已加载JS消失。
 
 
-## 2026-10-06 07:18 UTC 当前滚动派工
-已审CHAT06后台/旧客户端兼容已main；Web工具活动接入与逐段正文模块为下一用户可见交付，之后才准备SVC02安全更新个人真实入口。CHAT07领域及薄client已审，CHAT08先收敛同query多result与原子final候选语义，不交永久关闭的假steer。O08仅一次新预算试验已结束、严格断言失败原样保留，独立验收后再判断语义；S01后继计时窗口与CHAT06prefix成本测量由Mika在原2槽安排，不抢用户聊天实现。现main不等个人center/runner已重载。
+## 2026-10-06 07:26 UTC 当前滚动派工
+
+已审聊天活动主界面已main253b，SVC02复用已审操作工具准备把同一受管安装更新至此固定target；现只读核全库任务/队列/runner与自有进程身份，等GO新窗口，旧窗口不可复用。不会为了等stream App或steer延迟已交付聊天改进。CHAT08从新独立tree领取同query多result/原子final候选闭环，0provider；Web stream只新模块，与消息复用五scope并行。CHAT06P01只有方法/生成器准备，未PG测量；S01原预算中的单进程声明capacity4对照尚待独占窗口。登记87个唯一source的校验通过后由dashboard正常发布，不把数量当完成率。
+
+O08真实一次合成规划已获限定独立语义接收；原driver字面判断FAIL、实际成功图与GO审查三者分别保留，1/1不可重试。下一文本child仅只读设计，尚未授权模型执行；原flow.text是机械验证，不能当语义质量或工程写入能力。
