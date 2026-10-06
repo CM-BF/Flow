@@ -1,0 +1,140 @@
+{
+  "at": "2026-10-06T16:07:14.191175+00:00",
+  "authorizedMaximum": 12,
+  "applied": 3,
+  "phase": "PAUSED_FOR_PRIORITY_WEB_A2_ADMISSION",
+  "remainingCandidates": "Await bounded peer intakes; do not full-scan or reuse prior-operated trees.",
+  "inputs": [
+    {
+      "path": "next12-own-intake.json",
+      "bytes": 760921,
+      "sha256": "2331a71aaadf50485bc3a4d035d67f74465d39695c3d5b83e3d8122d3a7047dc"
+    },
+    {
+      "path": "next12-final-preflight.json",
+      "bytes": 486583,
+      "sha256": "c66df573be4d66721065b4c293510117b5f57fd65e5495fd13ee4418769b83cb"
+    },
+    {
+      "path": "next12-final-consumer-check.json",
+      "bytes": 460,
+      "sha256": "22aeca68632bfcfc8b6440d07eeb864830965a777a1813517c5f6594df91d840"
+    },
+    {
+      "path": "next12-tui-stream-activity-sparse-result.json",
+      "bytes": 2885,
+      "sha256": "c9a2cab772a904c59d194723d3c4af3bf8e57e977600f19ec4674e4522f18d92"
+    },
+    {
+      "path": "next12-tui-stream-activity-sparse-patterns.txt",
+      "bytes": 52566,
+      "sha256": "0dbd1c9de14f2e55bfc245cfd94db65331bda6f7d0a3a9fc15c2ded17fbf7834"
+    },
+    {
+      "path": "next12-engineering-execution-profile-sparse-result.json",
+      "bytes": 2897,
+      "sha256": "6f54f3a1c4c533d9e89facfb95a8daa9e3fb06fc4f742710b2b2e13661d3641b"
+    },
+    {
+      "path": "next12-engineering-execution-profile-sparse-patterns.txt",
+      "bytes": 52566,
+      "sha256": "0dbd1c9de14f2e55bfc245cfd94db65331bda6f7d0a3a9fc15c2ded17fbf7834"
+    },
+    {
+      "path": "next12-engineering-writer-settlement-sparse-result.json",
+      "bytes": 2897,
+      "sha256": "5429b0f764d88b04b19ce72a112ca5dd7f95ee976604c598eca2f8d85854dffa"
+    },
+    {
+      "path": "next12-engineering-writer-settlement-sparse-patterns.txt",
+      "bytes": 58163,
+      "sha256": "cb1ed3765a5c0f403160374029c8ecabc3dffb9da0d3ac37c75775de0e0bee7f"
+    }
+  ],
+  "trees": [
+    {
+      "startedAt": "2026-10-06T16:05:58.338241+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity",
+      "head": "58165c51312f7b9e90277d2dd9602769567141c6",
+      "ledgerObservedAt": "2026-10-06T16:05:54.990Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 884588544,
+      "freeAfterBytes": 896360448,
+      "logicalDematerializedBytes": 8300290,
+      "candidateCount": 1175,
+      "retainedCount": 3784,
+      "preflightSha256": "c66df573be4d66721065b4c293510117b5f57fd65e5495fd13ee4418769b83cb",
+      "finishedAt": "2026-10-06T16:05:59.199231+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "0dbd1c9de14f2e55bfc245cfd94db65331bda6f7d0a3a9fc15c2ded17fbf7834",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 11771904,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    },
+    {
+      "startedAt": "2026-10-06T16:06:27.449516+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile",
+      "head": "b0ae9ad41eb4c56195f06f31bc2487288e968d27",
+      "ledgerObservedAt": "2026-10-06T16:06:23.597Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 1091846144,
+      "freeAfterBytes": 1102913536,
+      "logicalDematerializedBytes": 8300290,
+      "candidateCount": 1175,
+      "retainedCount": 3793,
+      "preflightSha256": "c66df573be4d66721065b4c293510117b5f57fd65e5495fd13ee4418769b83cb",
+      "finishedAt": "2026-10-06T16:06:28.398915+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "0dbd1c9de14f2e55bfc245cfd94db65331bda6f7d0a3a9fc15c2ded17fbf7834",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 11067392,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    },
+    {
+      "startedAt": "2026-10-06T16:06:37.823250+00:00",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-writer-settlement",
+      "head": "08b635f7f14dbb970d093dadbd5366eb193e3e99",
+      "ledgerObservedAt": "2026-10-06T16:06:34.217Z",
+      "openFiles": [],
+      "exit": 0,
+      "stderr": "",
+      "freeBeforeBytes": 1101217792,
+      "freeAfterBytes": 1113837568,
+      "logicalDematerializedBytes": 8518533,
+      "candidateCount": 1297,
+      "retainedCount": 3977,
+      "preflightSha256": "c66df573be4d66721065b4c293510117b5f57fd65e5495fd13ee4418769b83cb",
+      "finishedAt": "2026-10-06T16:06:38.652457+00:00",
+      "allRetainedHashesUnchanged": true,
+      "sameMainBlobForAllDematerialized": true,
+      "sharedConfigUnchanged": true,
+      "nodeModulesUntouched": true,
+      "clean": true,
+      "patternsSha256": "cb1ed3765a5c0f403160374029c8ecabc3dffb9da0d3ac37c75775de0e0bee7f",
+      "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+      "providerCalls": 0,
+      "productTests": 0,
+      "observedVolumeDeltaBytes": 12619776,
+      "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+    }
+  ],
+  "freeLatestObservation": 1113837568,
+  "physicalAttribution": "Shared volume; first-tree preflight was884588544, next-tree preflight1091846144. Transient change unattributed and not counted as sparse reclaim.",
+  "stopRules": "Maximum12 total; each fresh released/clean/own inputs/mainblob/openfile; existing gates unchanged. No personal operation/model."
+}

@@ -134,3 +134,5 @@ GO已授权最多再8棵本队已交付且released树，达到2.75GiB可用或8�
 2026-10-06 16:01 UTC：源码物化更正：15:54 sparse add新清单时重套初始规则，导致CORE已提交的自有metadata/leaf暂时收起；15:57将四个currentScopes与新增清单一并显式恢复，HEAD5239未变，后续作者dirty保留。原经过与纠正见[回执](../../docs/quality/sparse-worktree-2026-10-06/claude-message-settings-source-expansion.json)，不把中间状态改写为一直完整。后续活跃树物化须先保留全部当前实际文件及完整已领取闭包。
 
 Web A2新tuple脚本独审已过，但15:58 fresh资源少约4MB，实际检查NOT_RUN、原3874ms预算不变；本批四树已到限，未扩大名单。TUI01F用既有精确第三方链接、仅本树workspace aliases进入一次有界纯检查（1GiB+8MiB/输出≤2MiB/≤30s），无PG或浏览器，不降低其他窗口门槛。
+
+2026-10-06T16:07:14.191175+00:00：GO已授权下一批最多12棵已结束自有树，当前3棵完成、1旧树排除；全部保留hash/保护树/shared config不变，依赖未动。最后free1,113,837,568B；首树前884,588,544到第二树前1,091,846,144的共享波动归因未知，不计回收。优先交Web A2现场重新准入，余下候选仅只读核、实际操作等该窗口归还；B/full SVC门槛不降。[本批逐树证据](../../docs/quality/sparse-worktree-2026-10-06/next12-summary.json)。
