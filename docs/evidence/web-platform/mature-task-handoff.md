@@ -12,7 +12,9 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
-**Recovery01仍只读候选**：[fixedcde21literal/P01入口/容量/真实消费者与验证预算](recovery01-fixed-cde-proposal.json)已收，原20方向认可，新增单一binding接现sidebar.footer，最终21范围裁决待到；未建树/take。F01 cookie client只有精确薄接口候选、尚无fixedSHA；不以stub取代。
+**Recovery01结构已批准、尚未领取**：[fixedcde21literal/P01入口/完整材料恢复](recovery01-fixed-cde-proposal.json)获root正式结构批准，子task直归MATURE06、panels唯一owner；90秒累计真实App/HTTP含15秒清理、8MiB、1PG+1Chrome/0provider预算获准。[W01固定public请求正文上界](recovery01-request-bounds/report.md)已核：CREATE+turn103303B，示例完整record对象107379B/字符串双转义124533B；不等实际journal完整128KiB已验。初始+32KiB预留/4MiB最终仍待owner完整envelope与准入验证，不截断。
+
+[本段只读就绪核验](recovery01-readiness-preflight.json)：F01已有固定 **5be830e2614d45dbaa023e98923fc74f470b37ec** 三源，manifest与fixed完全匹配，canonical review仍NOT_STARTED；当前共享树正在集成，不能拿moving出口作base。中心 **582f41f…** 已由ExecutionLead13:21:44领域独审APPROVED（metadata5f19），但实际callerOrigin绑定、迟到ClearCookie、重复connect/32slot三项Web消费语义仍待对齐；不把后续消费差异改写为中心独审失败。[root固定源码三项审计](connection-fixed-consumer-root-audit.json)已补真实行/hash；它不替代领域review，不称浏览器复现，受信Origin共享是设计差异待明确。现场available1708720KiB低于完整构建2.5GiB门槛，另需physical增量+1GiB余量。新树/branch均不存在，未take/派实现/安装/测试；root排程澄清：F01固定/已审/主线组合输入与轻量资源满足后即可fresh21精确claim并实施；三项中心语义可并行处理，在完整浏览器旅程/整片批准前必须对齐，不等它们才写第一行。完整install/build门槛不放宽；当前不预占App、不复制HTTP/DTO。
 
 **单目录资源清理未执行**：经Lead明确授权只盘点原CONTEXTI01自有node_modules；fresh临时005375ad v1单literal已取，但原owner发现实际运行消费者，决定保留、不停进程，随后v2释放13:17:20.601Z。[take](contexti-owned-dependencies-cleanup-take-receipt.json) / [release](contexti-owned-dependencies-cleanup-release-receipt.json)。现场13:16:50观察先于13:16:52领取回执，两者并行交叉到达；没有删除或旧source写入。[原owner完整盘点与df归因](contexti-owned-dependencies-cleanup-outcome.json)已原样归档；两组fixture/12个native或executable FD确有消费者，删除0。没有继续跨WT反向扫描，不冒完整排除；总df变化不归本组。
 

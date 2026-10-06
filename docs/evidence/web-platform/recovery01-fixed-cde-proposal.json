@@ -1,8 +1,8 @@
 {
-  "recordedAt": "2026-10-06T13:18:04.895488+00:00",
-  "source": "workspace_panels_owner final21-literal read-only refinement; root20 direction认可, final21 scope decision and fixed shared input pending",
+  "recordedAt": "2026-10-06T13:25:08Z",
+  "source": "Root formally approved21literal structure, then clarified fixed approved main client+freshscope+light resources allow implementation while three center semantics proceed in parallel until final realbrowser acceptance",
   "fixedMain": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
-  "state": "PROPOSED_NOT_TAKEN",
+  "state": "STRUCTURE_APPROVED_NOT_TAKEN",
   "parent": "WPF-MATURE-06",
   "stableTodo": "WPF-MATURE-06-04",
   "candidateTask": "WPF-RECOVERY01",
@@ -62,7 +62,7 @@
     "Hydrate prepared never autosends; dispatching becomesunknown; ACK checkpointfailure remains originalkey recoverable; reauth/GETsamebody/reload never autoPOST."
   ],
   "capacityProposal": {
-    "status": "Root decision pending, not current capability",
+    "status": "W01 fixedpublicbody bounds completed and archived; actualfullenvelope/owneradmission tests and finalcapacityfreeze pending, nevertruncate",
     "webOriginTotalChargedBytes": 4194304,
     "maxDraftRecords": 32,
     "maxLogicalCommandRecords": 128,
@@ -75,12 +75,13 @@
     "limits": "Must test actual maximum legal schemas fit full128KiB envelope; otherwise revisecapacity rather than truncate. 32KiB reserve for shortACKidentity/binding/state/code/boundeddiagnostic. Does not promise128 maximalrecords fit4MiB. Oversizeunsenttextarea stays completeinmemory visiblyunsaved. Unknown neverLRU; explicitdismiss reclaims settledrecords.",
     "chargeFormula": "manifest+namespace actualUTF8JSON + sum(command initialRecordBytes +32768 reserved growth) + sum(draft recordBytes); initialcommand<=131072, maxcharge163840. Immutableinitialbase kept, checkpoint consumes reserve without doublecharge or returningunusedreserve. Newrecord>initial+reserve preservesold/unknown. Explicitconfirmed dismiss releases. Genericquotaerrors do not disclose othernamespace counts/content.",
     "boundedAckProjection": "Only decodedknownidentity projections: CREATEid/revision+match; turnid/task/number/revision/context identity; queue slot/key/request/revision/item/sequence/outcome/currentturn; steer command/task/attempt/owner/native/useruuid/revisions/status/bytes/digest/dates. Do not duplicate fullsummaries/replies/contextbody/history. Fixedinput savedonce.",
-    "worstCaseValidation": "Construct complete envelope with publicid<=128 arbitrarycodeunits, creationtitle/model<=180, turn<=16000, references<=4, name<=512UTF8 plus localview/slot/keys/materialdisplay/namespace reference. If legalrequest exceeds128KiB raiseperrecordcap/acceptfewercount, nevertruncate. Logicalcharge is not UA physicalquota/heap/disk guarantee."
+    "worstCaseValidation": "Construct complete envelope with publicid<=128 arbitrarycodeunits, creationtitle/model<=180, turn<=16000, references<=4, name<=512UTF8 plus localview/slot/keys/materialdisplay/namespace reference. If legalrequest exceeds128KiB raiseperrecordcap/acceptfewercount, nevertruncate. Logicalcharge is not UA physicalquota/heap/disk guarantee.",
+    "independentBodyBounds": "recovery01-request-bounds/report.md"
   },
   "dependencies": {
     "ATTACHI02": "9eec main cde, oldclaim nowv4released; no inheritedwrite right",
-    "Center": "31824d8 firstDTO; actualcallerOrigin/lateclear/repeatconnect semantics pending",
-    "F01": "No fixed SHA yet. Proposed mutually exclusive legacyBearer or browserSession:{csrfToken:()=>string|undefined}; HTTP/watchinclude/noAuthorization; browserSession/connectBrowserSession(ownerToken)/logoutBrowserSession, no tokensaved/noautoretry. MissingCSRF is localbeforefetchfailure, not definitiveHTTP4xx; frozenlogoutCSRF not auto-updated/retried.",
+    "Center": "Domain582f independentlyapproved; callerOrigin/lateclear/repeatconnect remain explicit parallel center inputs/finalWebjourney gates. FourDTOfields/threeclientmethods unchanged; no localserverwrites.",
+    "F01": "Fixed client5be830e2614d45dbaa023e98923fc74f470b37ec now exists; canonical review NOT_STARTED, three manifest source hashes verified; moving integration not a consumer base. See readiness record.",
     "SharedAck": "Sole ACKdecoder; queue existingcontextguard retained. No localdecoder",
     "UploadJournal": "Existing localStoragecross-tabCAS remains independent, not implicitly fixed"
   },
@@ -139,5 +140,15 @@
     "fixedAnchors": "types48–64/85–113/186–200; App803; session117–132"
   },
   "baseAddress": "Normalize fullcenter baseURL including APIpathname/proxy mode; reject userinfo/query/fragment without echoing secrets. No token/cookie/CSRF/tokenhash persisted. Durable namespace=canonicaladdress+verifiedcenter/principal; ephemeralauthgeneration excluded. Revalidate savedschema/version/identity/hash; expiry only wakesserverread, localclock neverauthority.",
-  "restoreRefinement": "Selection restoration can displayunverified/expired/unavailable while retaining exactref/order; no autobody/reupload/newversion/refreplacement. NewSend checks currentgrant/cap/bytes/expiry, unverifiablekeepsdraftblocked. Originalunknownretry usesfrozenbody/key and serverreplay, notcurrentpickerexpiry/newdraft; uploadjournalcross-tab remains separate."
+  "restoreRefinement": "Selection restoration can displayunverified/expired/unavailable while retaining exactref/order; no autobody/reupload/newversion/refreplacement. NewSend checks currentgrant/cap/bytes/expiry, unverifiablekeepsdraftblocked. Originalunknownretry usesfrozenbody/key and serverreplay, notcurrentpickerexpiry/newdraft; uploadjournalcross-tab remains separate.",
+  "structureApproval": {
+    "authority": "root",
+    "decision": "APPROVED21",
+    "directParent": "WPF-MATURE-06",
+    "owner": "workspace_panels_owner",
+    "actualValidationBudgetApproved": "cumulative90s incl>=15scleanup/raw<=8MiB/onePG/oneChrome/0provider",
+    "record": "recovery01-readiness-preflight.json",
+    "claim": "NOT_TAKEN",
+    "implementationGates": "F01 fixed+approved+main combination; fresh exact21/nooverlap; isolatednewtree; light resourcefit. Threecentersemantics are parallel work and finalbrowser/featureapproval gates, not mandatory firstline blockers."
+  }
 }

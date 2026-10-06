@@ -1,10 +1,12 @@
 # MATURE06-04 中心会话消费者接口补充
 
-## 当前固定输入与三项最小差异（13:10更新）
+## 当前固定输入与三项最小差异（13:26更新）
 
-中心首DTO固定 **31824d831ef72b331459d568301371bb037d9734**。原[035119fd v1 receipt](connection-session-center-claim-receipt.json)已核为13:03:35.196Z COMMITTED，native_center_owner独占六中心源码+028迁移+own records共九literal；这不是Web consumer已领取。固定DTO无运行模块/028实现的阶段观察，不能宣称整个session可用。
+中心首DTO固定 **31824d831ef72b331459d568301371bb037d9734**。原[035119fd v1 receipt](connection-session-center-claim-receipt.json)已核为13:03:35.196Z COMMITTED，native_center_owner独占六中心源码+028迁移+own records共九literal；这不是Web consumer已领取。首DTO时尚无运行实现；现领域target582f41f1957709982750f5de5306738e064960ce已由ExecutionLead独立APPROVED，metadata5f19，批准不含共享mount或Web真实cookie旅程。
 
 现ready的centerId/ownerPrincipalId/expiresAt/csrfToken已足够Web最小消费，无需强制增加sessionRef/authEpoch/issuedAt/serverTime/boundOrigin。恢复namespace用可信中心地址+centerId+principal；expiresAt只是提示，授权最终归中心。若CSRF严格绑定cookie，可等价保护旧tab请求意图；前端须冻结点击时CSRF，失败后不取新CSRF自动重试logout。cookie模式无Authorization、HTTP/watch统一credentials、cookie-only read/SSE确认以及原unknown身份验收继续。read不建/不续、8h绝对期、无Origin安全同源判定和DB singleton32方向已明确。
+
+[root固定582f中心与5be830客户端窄审原报告](connection-fixed-consumer-root-audit.json)已给逐行hash：store实际只绑定中心cookieOrigin，任何trusted caller可session-read；logout revoke后发同名Max-Age=0；每次connect确实新建token并占另一个slot。前两者中的迟到响应是规范推演，无浏览器复现；trusted allowlist跨Origin共享属于需明确的设计差异，不自动当安全finding。F01固定接口已存在但canonical尚待独审，HTTP/watch共用cookie transport/noAuthorization、getter在fetch前与无自动POST重试已源核，当前moving集成树不作新consumer基线。
 
 以下三项由root认可为当前最小冻结条件，中心owner需确认，不扩DTO/账户管理：
 

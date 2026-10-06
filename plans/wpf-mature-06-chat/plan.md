@@ -64,3 +64,8 @@ Root方向已批准进入Interface与合法owner协调，不授共享中心写�
 同TODO04容量冻结门槛（fixedaeb只读）：4MiB/32draft/128command仍proposal，普通turn16k UTF16、Queue16k UTF8、Steer16384 UTF8并不等价；128合法中文turn仅正文6,144,000bytes已超4MiB，JSON控制字符转义还会膨胀。计完整最终版本化record UTF8，明确namespace/记录单位及CREATE绑定、ACK状态增长预留；不得承诺所有合法输入均可恢复，不截断请求或淘汰unknown。未来发送journal CAS不自动覆盖当前上传journal跨tab read-modify-write风险，详原[候选Interface](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。本轮无实现/实验。
 
 中心具体指派已落[原proposal](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)：WPF-CONNECTION01仍是06的直接子task；8h绝对期限/GET不续、32有效session满拒不踢、同DB稳定中心/主体与token轮换epoch、trusted Origin和mutation CSRF、invalid Bearer不fallback。cookie名称不提供port隔离。冻结前六项[Web消费者接口差异](../../docs/evidence/web-platform/connection-session-consumer-interface.md)包括cookie-only read+HTTP/watch、无Origin同源读取、失败码、SSE关流诊断及旧tab logout；中心已正式九scope领取但不等已实现；Web仍pending合法范围。首DTO31824d8四字段足够，原六点按实际callerOrigin、迟到ClearCookie与重复connect三项收敛，原建议不作为额外字段硬合同。
+
+
+06-04实施准备更新：root正式批准[RECOVERY01的21精确范围和接口](../../docs/evidence/web-platform/recovery01-fixed-cde-proposal.json)，直接归本大task、panels唯一owner。P01真实入口、材料恢复、原authority同步交接与IDB complete/CAS/CREATE两步沿固定方案；90秒实际旅程预算已批，容量尚待最大合法请求和完整记录验证。F01已有固定待审客户端，中心领域已独审但三项Web消费语义仍需对齐；资源门槛未满足，尚未创建树或领取。[具体核验与解除条件](../../docs/evidence/web-platform/recovery01-readiness-preflight.json)。
+
+排程门槛已明确：F01固定且独审/main组合输入到位、fresh无冲突和轻量开发资源满足即可开工，中心三项语义并行对齐，完整浏览器旅程与整片批准前必须解决；不因这些不改DTO的方法细节推迟所有journal/controller工作。[独立正文容量依据](../../docs/evidence/web-platform/recovery01-request-bounds/report.md)已到，仅证明public请求body上界；owner必须测实际完整record与预留增长，全量预算不足不得截断或淘汰unknown。完整构建资源门槛独立保留。

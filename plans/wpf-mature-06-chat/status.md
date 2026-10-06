@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 13:12 UTC |
+| 最近更新 | 2026-10-06 13:26 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -44,6 +44,10 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 调度以[GO经root原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)为准；panels暂先只读方案，ATTACHI02已main cde6646且0b7f v4释放，Web后继仍需新claim，Arc18候选未领取。两已有Connect页不用于推断断线原因，T3后续root已核9bd1/MIT，方法audit已归档；未采用实现或声称恢复完成。
 
-恢复方案已获root方向批准，仅Interface/合法owner协调；中心native_center_owner035119fd v1九scope含028已COMMITTED，首DTO31824d8已到；当前callerOrigin/迟到ClearCookie/重复connect三项待确认。Web consumer/Recovery拟workspace_panels_owner **pending legal scope，尚未take**。ATTACHI02 main/release后再取App交集；4MiB/32/128仍候选非定案，完整checkpoint身份/下一草稿及跨账号隔离必验。[具体dispatch输入](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
+恢复方案已获root正式21范围结构批准，尚未领取；中心native_center_owner035119fd v1九scope含028已COMMITTED，中心582f领域已独审，F01固定5be830客户端待审；当前callerOrigin/迟到ClearCookie/重复connect三项Web消费语义待确认。Web consumer/Recovery拟workspace_panels_owner **pending legal scope，尚未take**。ATTACHI02 main/release后再取App交集；4MiB/32/128仍候选非定案，完整checkpoint身份/下一草稿及跨账号隔离必验。[具体dispatch输入](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
 
-Recovery设计已补同步receipt接管→durable barrier→HTTP及crash边界；本地写失败保原材料/下一稿、本次0HTTP，首次未落盘文字不保证崩溃恢复。此为候选接口，无新claim/实现/实验。
+Recovery设计已补同步receipt接管→durable barrier→HTTP及crash边界；本地写失败保原材料/下一稿、本次0HTTP，首次未落盘文字不保证崩溃恢复。结构已批准，无新claim/实现/实验。
+
+[本轮就绪预检](../../docs/evidence/web-platform/recovery01-readiness-preflight.json)：新树/branch未建、无Recovery claim；完整build资源门槛未满足。结构批准不等已开始实现，public请求body上界已独立核验，实际完整record与容量准入仍待owner验证。
+
+root已细分开工/最终验收门槛：正式获审主线client到位且轻量资源允许，可先实现journal/controller与App接线；中心三语义并行但最终真实旅程前必须对齐。W01仅publicbody容量核验已到，实际record仍待owner验证；未将候选数量上限说成可同时满载。

@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-06T13:24:54.479446+00:00",
+  "purpose": "fixed-source consumer interface audit; not replacement of Execution Lead domain review",
+  "sources": [
+    {
+      "target": "582f41f1957709982750f5de5306738e064960ce",
+      "path": "apps/server/src/browser-session/index.ts",
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "anchors": [
+        {
+          "line": 58,
+          "text": "    if (typeof source === 'string' && settings.trustedOrigins.includes(source)) return;"
+        },
+        {
+          "line": 66,
+          "text": "    const row = await store.read(sha256(token), settings.cookieOrigin); if (!row) return null;"
+        },
+        {
+          "line": 91,
+          "text": "  function setCookie(reply: FastifyReply, value: string, expiresAt?: string) {"
+        },
+        {
+          "line": 105,
+          "text": "      const token = randomBytes(32).toString('base64url'), row = await store.create(sha256(token), settings.cookieOrigin);"
+        },
+        {
+          "line": 112,
+          "text": "      await store.revoke(sha256(current.token), settings.cookieOrigin); setCookie(reply, '');"
+        }
+      ]
+    },
+    {
+      "target": "582f41f1957709982750f5de5306738e064960ce",
+      "path": "apps/server/src/browser-session/store.ts",
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5",
+      "anchors": [
+        {
+          "line": 42,
+          "text": "        WHERE s.token_hash=$1 AND s.cookie_origin=$2 AND s.auth_epoch_hash=$3 AND s.expires_at>clock_timestamp()`, [tokenHash, cookieOrigin, epochHash])).rows[0];"
+        },
+        {
+          "line": 45,
+          "text": "    async create(tokenHash: string, cookieOrigin: string): Promise<{ expiresAt: string }> {"
+        },
+        {
+          "line": 51,
+          "text": "        if (count >= BROWSER_SESSION_MAX_ACTIVE) throw new HttpError(409, 'session_capacity', 'End an existing connection or wait for it to expire.');"
+        },
+        {
+          "line": 58,
+          "text": "      await pool.query('DELETE FROM flow.browser_sessions WHERE token_hash=$1 AND cookie_origin=$2 AND auth_epoch_hash=$3', [tokenHash, cookieOrigin, epochHash]);"
+        }
+      ]
+    },
+    {
+      "target": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+      "path": "packages/client/src/index.ts",
+      "sha256": "304718dfb1940cab5a60057301f9b673dcc63fa8923777bdef1d42dbe99328e3",
+      "anchors": [
+        {
+          "line": 66,
+          "text": "  async browserSession(signal?: AbortSignal): Promise<BrowserSessionRead> {"
+        },
+        {
+          "line": 70,
+          "text": "  async connectBrowserSession(ownerToken: string, signal?: AbortSignal): Promise<BrowserSessionReady> {"
+        },
+        {
+          "line": 75,
+          "text": "  async logoutBrowserSession(signal?: AbortSignal): Promise<Extract<BrowserSessionRead, { state: 'unauthenticated' }>> {"
+        },
+        {
+          "line": 582,
+          "text": "  private transportInit(init: RequestInit, loginToken?: string): RequestInit {"
+        },
+        {
+          "line": 592,
+          "text": "    return { ...init, headers, ...(this.csrfToken ? { credentials: 'include' as const } : {}) };"
+        }
+      ]
+    }
+  ],
+  "client": "Explicit cookie-only HTTP/watch shares transport; getter is evaluated before fetch; connect single explicit Bearer, no persistent loginToken; missing CSRF ordinary local Error; no POST retry. Web must still verify cookie-only read after connect and guard local generation.",
+  "remainingSemantics": [
+    {
+      "name": "caller-origin binding",
+      "fact": "Session store lookup/create/revoke bind configured center cookieOrigin; browserOrigin accepts any configured trustedOrigins independently. Connect caller origin is not persisted or compared.",
+      "effect": "Does not implement earlier proposed new-caller-origin-requires-explicit-connect semantics. Align center policy before claiming that property; trusted allowlist sharing is a different deliberate policy, not automatically a vulnerability."
+    },
+    {
+      "name": "late logout clear cookie",
+      "fact": "logout revokes the request cookie then sets same-name cookie to Max-Age=0.",
+      "inference": "If that response arrives after another tab successful connect sets a new same-name cookie, UA can remove the new cookie. Current CSRF binds server request intent but cannot prevent late response cookie processing. Source+RFC reasoning, no browser reproduction."
+    },
+    {
+      "name": "repeat connect slots",
+      "fact": "Every connect generates a random token and calls create; create counts all currently valid sessions and inserts another until32.",
+      "effect": "Repeat explicit connect consumes another slot and leaves prior valid session until expiry/revocation. This is known source behavior; consumer must not auto retry POST, and should read session after lost ACK. Reuse vs intentional rotation policy must be explicit."
+    }
+  ],
+  "checksPerformed": [
+    "Read fixed transport, session authentication and store source; hash/line anchors only"
+  ],
+  "experiments": 0,
+  "providerQueries": 0,
+  "mutations": 0,
+  "authority": "Center domain review APPROVED attribution belongs to Execution Lead; Web actual cookie/refresh acceptance remains future."
+}

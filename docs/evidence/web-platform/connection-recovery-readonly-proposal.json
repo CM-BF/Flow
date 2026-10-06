@@ -224,9 +224,11 @@
   },
   "latestRecoveryScopeProposal": {
     "record": "recovery01-fixed-cde-proposal.json",
-    "state": "root20direction认可; final21scope/P01 entry refinement pending finaldecision; no claim",
+    "state": "ROOT_STRUCTURE_APPROVED21_NOT_TAKEN; implementation waits approvedmainclient/freshscope/lightresources; threecentersemantics parallel until finaljourney",
     "fixedMain": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
     "reason": "Add existing-slot trusted P01 binding to20candidate rather than hardcoded recoveryentry; underlying16+4materialseams retained",
-    "F01FixedSha": null
+    "F01FixedSha": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+    "F01Review": "NOT_STARTED observed at c1a173 metadata",
+    "readinessRecord": "recovery01-readiness-preflight.json"
   }
 }

@@ -1,0 +1,185 @@
+{
+  "fixedBase": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "at": "2026-10-06T13:22:35.769Z",
+  "runtime": "v24.20.0",
+  "unit": "bytes = UTF-8 byteLength of compact JSON.stringify. KiB=1024, MiB=1048576.",
+  "limits": {
+    "commandInitialBytes": 131072,
+    "commandReserveBytes": 32768,
+    "draftBytes": 131072,
+    "globalBytes": 4194304,
+    "maxDrafts": 32,
+    "maxLogicalCommands": 128
+  },
+  "requestResults": [
+    {
+      "name": "create-schema-upper",
+      "utf8JSONBytes": 3248,
+      "sha256": "7f49984426a2e0a6343f0cea144f11ccb9aff1f42bedb8c27d8be642ad4a97c2",
+      "schemaValid": true,
+      "note": "Schema-valid upper bound; control-char model cannot match supported catalog model, so not claimed server-admissible."
+    },
+    {
+      "name": "create-catalog-model-upper",
+      "utf8JSONBytes": 2348,
+      "sha256": "0247e308d94530e5abec6995d7727f0c299b966db4f196bceb3132783670d3d4",
+      "schemaValid": true,
+      "note": "Model constrained to actual ASCII catalog syntax; existence/profile/project authorization not asserted."
+    },
+    {
+      "name": "turn-joint4-k0-a4",
+      "utf8JSONBytes": 99883,
+      "sha256": "77f53fd6c79bc1abe6b0c173a9a8ee0d32eaa2e840ffe3528d487acdf23b7dcf",
+      "schemaValid": true,
+      "note": "Joint reference count valid, JSON ceiling conservative: execution input + material text/metadata may reject max text before admission."
+    },
+    {
+      "name": "enqueue-joint4-k0-a4",
+      "utf8JSONBytes": 99869,
+      "sha256": "27fc62797f45c4d9026809a467a7263bebcd4e9b03fa55e9c15e70521d08eac8",
+      "schemaValid": true,
+      "note": "Same conservative ceiling, queue raw text also exactly16000 UTF8 bytes."
+    },
+    {
+      "name": "turn-joint4-k1-a3",
+      "utf8JSONBytes": 99925,
+      "sha256": "b41da672c13591ccea5ab4064075a1487524968ff611e22110ea0035cbc707ba",
+      "schemaValid": true,
+      "note": "Joint reference count valid, JSON ceiling conservative: execution input + material text/metadata may reject max text before admission."
+    },
+    {
+      "name": "enqueue-joint4-k1-a3",
+      "utf8JSONBytes": 99911,
+      "sha256": "d484d984556f4bcb91118e53fc323aa73a2a8ab224e6a1ca55a1a66b1371e6fa",
+      "schemaValid": true,
+      "note": "Same conservative ceiling, queue raw text also exactly16000 UTF8 bytes."
+    },
+    {
+      "name": "turn-joint4-k2-a2",
+      "utf8JSONBytes": 99968,
+      "sha256": "29ef519b9db55c63028f89c99bda8c597c4d5bf0f0024add61e6aacf7babd94c",
+      "schemaValid": true,
+      "note": "Joint reference count valid, JSON ceiling conservative: execution input + material text/metadata may reject max text before admission."
+    },
+    {
+      "name": "enqueue-joint4-k2-a2",
+      "utf8JSONBytes": 99954,
+      "sha256": "2d28a965d6e54d8dd4dce6fffb21c2d70ce89e2ee1f22238b3b12f9721e39b23",
+      "schemaValid": true,
+      "note": "Same conservative ceiling, queue raw text also exactly16000 UTF8 bytes."
+    },
+    {
+      "name": "turn-joint4-k3-a1",
+      "utf8JSONBytes": 100011,
+      "sha256": "c877583bbbd5cfdc65c1088256dc48909eb657084de76a24ba0436510e0b35d6",
+      "schemaValid": true,
+      "note": "Joint reference count valid, JSON ceiling conservative: execution input + material text/metadata may reject max text before admission."
+    },
+    {
+      "name": "enqueue-joint4-k3-a1",
+      "utf8JSONBytes": 99997,
+      "sha256": "db6058d0db717082bf434f34bc7579daaf8ad47cea09dd5842009934e0093147",
+      "schemaValid": true,
+      "note": "Same conservative ceiling, queue raw text also exactly16000 UTF8 bytes."
+    },
+    {
+      "name": "turn-joint4-k4-a0",
+      "utf8JSONBytes": 100055,
+      "sha256": "098c4bc44c2c7e27d2aa7bd523dd71c2ed7dbcc7cc6c8d455610c9667a6cf4c7",
+      "schemaValid": true,
+      "note": "Joint reference count valid, JSON ceiling conservative: execution input + material text/metadata may reject max text before admission."
+    },
+    {
+      "name": "enqueue-joint4-k4-a0",
+      "utf8JSONBytes": 100041,
+      "sha256": "d38007a72792f797aa4457bfcfc3b8f6f488202eb97bcedfadb7554bb06b3761",
+      "schemaValid": true,
+      "note": "Same conservative ceiling, queue raw text also exactly16000 UTF8 bytes."
+    },
+    {
+      "name": "turn-dto8-upper",
+      "utf8JSONBytes": 103846,
+      "sha256": "be8638b8dd11ba152d20af605e969f216a32f10c68958b0d86590da21f8e2ff7",
+      "schemaValid": true,
+      "note": "DTO parser accepts4+4 but joint context helper rejects; NOT a valid combined admission. Included as defensive parser-only ceiling."
+    },
+    {
+      "name": "enqueue-dto8-upper",
+      "utf8JSONBytes": 103832,
+      "sha256": "687f601d1349f4c5a9bb9be4ee0c0b431c03d9b850e722ffc7f33439a68ed7b7",
+      "schemaValid": true,
+      "note": "Parser-only ceiling; not admitted by joint4 limit."
+    },
+    {
+      "name": "queue-cancel-item",
+      "utf8JSONBytes": 36,
+      "sha256": "e69bbab45365f2341be4ce9212fdf9a1edc089875fb1064dec5652d5e170949e",
+      "schemaValid": true,
+      "note": "Route also needs immutable conversationId/itemId and original key."
+    },
+    {
+      "name": "queue-pause",
+      "utf8JSONBytes": 36,
+      "sha256": "e69bbab45365f2341be4ce9212fdf9a1edc089875fb1064dec5652d5e170949e",
+      "schemaValid": true,
+      "note": "Stop flow requires separate cancel-task original key/target, not reuse this key."
+    },
+    {
+      "name": "queue-resume",
+      "utf8JSONBytes": 824,
+      "sha256": "54f28e2f066174098549f863e302a5f70fc742cda30309d28a492da1ec23d95a",
+      "schemaValid": true,
+      "note": "Freeze expectedTaskId, including null shape, never replace by current task when retrying."
+    },
+    {
+      "name": "steer",
+      "utf8JSONBytes": 99160,
+      "sha256": "ffff23eb66e4a174c093bc9f0b3cd928ad944e710c511ee43ed4d2f20389e8e3",
+      "schemaValid": true,
+      "note": "Public zod int() uses safe-integer maximum; Web admission narrows ownerVersion to2147483647. No task/attempt authority claimed."
+    },
+    {
+      "name": "cancel-task",
+      "utf8JSONBytes": 2,
+      "note": "FlowClient.cancel sends {}, but immutable target taskId and original key must persist."
+    }
+  ],
+  "components": {
+    "id128_JSONStringBytes": 770,
+    "controlText16000_JSONStringBytes": 96002,
+    "key200_visibleASCIIescaped_JSONStringBytes": 402,
+    "key200_schemaOnlyCeiling_JSONStringBytes": 1202,
+    "knowledgeCitation_JSONBytes": 990,
+    "attachmentReference_JSONBytes": 947,
+    "twoBody_sum": 103303
+  },
+  "illustrativeEnvelopes": {
+    "createThenTurn_structuredBodies": 106613,
+    "createThenTurn_jsonBodyStrings": 123767,
+    "createThenTurn_structured_afterBind": 107379,
+    "createThenTurn_jsonStrings_afterBind": 124533,
+    "queueEnqueue_structured": 103685,
+    "cancelTask_structured": 4419
+  },
+  "illustrativeEnvelopeWarning": "These field lists/length bounds are explicitly illustrative, not a finalized journal schema or a journal capacity proof. A body is stored once; JSON-string nesting has its own escaping cost. No full ACK/error/draft duplicate retained.",
+  "acceptedMinimalIdentityCandidateBytes": {
+    "conversation": 811,
+    "turn": 2391,
+    "queue": 1618,
+    "steer": 3376
+  },
+  "globalArithmetic": {
+    "onlyWorstReservations": 4194304,
+    "maxSize32Drafts": 4194304,
+    "maxSizeCommandWithReserve": 163840,
+    "floorMaxSizedCommandsBeforeAnyOtherStorage": 25
+  },
+  "sideEffects": {
+    "http": 0,
+    "pg": 0,
+    "browser": 0,
+    "provider": 0,
+    "projectWrites": 0,
+    "installs": 0
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "target": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+  "observedAt": "2026-10-06T13:16:16.945431+00:00",
+  "contractTarget": "31824d831ef72b331459d568301371bb037d9734",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 47852,
+      "sha256": "304718dfb1940cab5a60057301f9b673dcc63fa8923777bdef1d42dbe99328e3"
+    },
+    {
+      "path": "packages/client/src/browser-session.test.ts",
+      "bytes": 6457,
+      "sha256": "2b5bafef02af850f4909c4ca8d637c9f59936031b35c95cb56d5237cb54dffd1"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1306,
+      "sha256": "b8c49088bc8feacf60b3d5b4813fd628e0b14338bf81ade017871ff83abf8a47"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/browser-session-client-red.txt",
+      "bytes": 2944,
+      "sha256": "1784c97df29d2a10a842fcea325338adab4b7d44305c591d2a0e8a19f4bc4c7f"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-client-green.txt",
+      "bytes": 456,
+      "sha256": "ee9033fe404bd62019426413bd4c06fe9546617c1a0f0033d086d5bb4ab3239e"
+    },
+    {
+      "path": "docs/evidence/f01/browser-session-client-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "readonlyContract": {
+    "path": "packages/contracts/src/browser-session.ts",
+    "bytes": 1095,
+    "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+  },
+  "checks": {
+    "initialRed": {
+      "exit": 1,
+      "failed": 3
+    },
+    "final": {
+      "exit": 0,
+      "newHttpSse": 3,
+      "directExisting": 51,
+      "total": 54,
+      "ms": 732
+    },
+    "typecheckExit": 0,
+    "providerQueries": 0,
+    "personalOperations": 0
+  },
+  "limits": "Real Node HTTP and SSE with fetch RequestInit observation. Does not prove browser cookie storage/CORS, domain PG authorization, production mount or UI recovery. POSTs are never automatically retried; malformed/unknown acknowledgement is not a definitive rejection."
+}

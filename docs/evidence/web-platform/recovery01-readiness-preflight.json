@@ -1,0 +1,237 @@
+{
+  "recordedAt": "2026-10-06T13:25:08Z",
+  "role": "read-only management readiness, not implementation review",
+  "design": {
+    "decision": "ROOT_STRUCTURE_APPROVED",
+    "fixedSource": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "literalCount": 21,
+    "task": "WPF-RECOVERY01",
+    "parent": "WPF-MATURE-06",
+    "owner": "workspace_panels_owner",
+    "authority": "root message approving final21 stored in1437 management; no extra user permission needed"
+  },
+  "F01": {
+    "implementationTarget": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+    "metadataRef": "c1a173e57f56a108841a33a2bf1367f09ed2b0d8",
+    "reviewObserved": "NOT_STARTED",
+    "sourceManifestChecks": [
+      {
+        "path": "packages/client/src/index.ts",
+        "ref": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+        "fixedHash": "304718dfb1940cab5a60057301f9b673dcc63fa8923777bdef1d42dbe99328e3",
+        "manifestHash": "304718dfb1940cab5a60057301f9b673dcc63fa8923777bdef1d42dbe99328e3",
+        "currentHash": "d5e89277c61cc3bde6e0be45b3e55f742e62787c90abd3f30b4086bb3679e5bb",
+        "matches": false
+      },
+      {
+        "path": "packages/client/src/browser-session.test.ts",
+        "ref": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+        "fixedHash": "2b5bafef02af850f4909c4ca8d637c9f59936031b35c95cb56d5237cb54dffd1",
+        "manifestHash": "2b5bafef02af850f4909c4ca8d637c9f59936031b35c95cb56d5237cb54dffd1",
+        "currentHash": "2b5bafef02af850f4909c4ca8d637c9f59936031b35c95cb56d5237cb54dffd1",
+        "matches": true
+      },
+      {
+        "path": "packages/contracts/src/index.ts",
+        "ref": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+        "fixedHash": "b8c49088bc8feacf60b3d5b4813fd628e0b14338bf81ade017871ff83abf8a47",
+        "manifestHash": "b8c49088bc8feacf60b3d5b4813fd628e0b14338bf81ade017871ff83abf8a47",
+        "currentHash": "126068790a423a3d48d54deb5af9d810ac334599472b32a4803e2b217edba177",
+        "matches": false
+      },
+      {
+        "path": "packages/contracts/src/browser-session.ts",
+        "ref": "5be830e2614d45dbaa023e98923fc74f470b37ec",
+        "fixedHash": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+        "manifestHash": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+        "currentHash": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/f01/browser-session-client-red.txt",
+        "ref": "c1a173e57f56a108841a33a2bf1367f09ed2b0d8",
+        "fixedHash": "1784c97df29d2a10a842fcea325338adab4b7d44305c591d2a0e8a19f4bc4c7f",
+        "manifestHash": "1784c97df29d2a10a842fcea325338adab4b7d44305c591d2a0e8a19f4bc4c7f",
+        "currentHash": "1784c97df29d2a10a842fcea325338adab4b7d44305c591d2a0e8a19f4bc4c7f",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/f01/browser-session-client-green.txt",
+        "ref": "c1a173e57f56a108841a33a2bf1367f09ed2b0d8",
+        "fixedHash": "ee9033fe404bd62019426413bd4c06fe9546617c1a0f0033d086d5bb4ab3239e",
+        "manifestHash": "ee9033fe404bd62019426413bd4c06fe9546617c1a0f0033d086d5bb4ab3239e",
+        "currentHash": "ee9033fe404bd62019426413bd4c06fe9546617c1a0f0033d086d5bb4ab3239e",
+        "matches": true
+      },
+      {
+        "path": "docs/evidence/f01/browser-session-client-types.txt",
+        "ref": "c1a173e57f56a108841a33a2bf1367f09ed2b0d8",
+        "fixedHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "manifestHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "currentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "matches": true
+      }
+    ],
+    "movingWorktreeObservation": "1543 staged/dirty paths while integration in progress; index.ts and contracts/index.ts current bytes differ from fixed client target. Fixed sources/DTO and metadata raw all match manifest; moving state is not consumer base.",
+    "checksAttributedOnly": {
+      "authorNewHttpSse": 3,
+      "authorExistingDirect": 51,
+      "authorTypesExit": 0
+    },
+    "notProven": [
+      "browserCookieStorage",
+      "CORS",
+      "productionMount",
+      "UIRecovery"
+    ]
+  },
+  "center": {
+    "implementationTarget": "582f41f1957709982750f5de5306738e064960ce",
+    "deliveryRef": "5f19f107de07a2ca8ca686d73cb1c8f7104fdd5f",
+    "observedClean": true,
+    "review": "ExecutionLead APPROVED2026-10-06 13:21:44UTC, domain and optional stream port only; no shared mount/browser/deployment approval",
+    "remainingConsumerAlignment": [
+      "actual caller/sourceOrigin binding rather than only center cookieOrigin and trusted allowlist",
+      "delayed expired Set-Cookie response after newer connect: normative race, not browser reproduced",
+      "repeat valid-cookie connect/32-slot semantics"
+    ],
+    "noContradiction": "Consumer alignment requirements are kept separate from domain independent approval, not rewritten as failed review."
+  },
+  "resourceObservation": {
+    "availableKiB": 1708720,
+    "fullInstallBuildMinimumGiB": 2.5,
+    "alsoRequires": "expected physical increment +1GiB margin",
+    "scope": "Read-only df; not all development blocked; no resource recovered"
+  },
+  "execution": {
+    "newWorktreeExists": false,
+    "newBranchExists": false,
+    "recoveryClaimTaken": false,
+    "implementationDispatched": false,
+    "tests": 0,
+    "builds": 0,
+    "installs": 0,
+    "PG": 0,
+    "browser": 0,
+    "provider": 0,
+    "personalOrDashboardRequests": 0
+  },
+  "decision": "STRUCTURE_APPROVED_NOT_TAKEN: implementation can start after F01 fixed/independently approved/main combination, fresh no-overlap and light-development resource conditions. Three center semantics may proceed in parallel and must align before complete browser acceptance/feature APPROVED. No moving base, copied protocol or server write.",
+  "capacity": "W01 fixed public body upper bounds now archived; full actual journal envelope and quota admission still pending owner tests/root capacity freeze. Nevertruncate.",
+  "archives": [
+    {
+      "sourceWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+      "sourceRef": "c1a173e57f56a108841a33a2bf1367f09ed2b0d8",
+      "sourcePath": "docs/evidence/f01/browser-session-client-manifest.json",
+      "archive": "recovery-f01-client-fixed-manifest.json",
+      "bytes": 2016,
+      "sha256": "feb79ef22517571e2596b1d3e0f78c9b37585f74f67b08bcd5e8e5e36bd6add1"
+    },
+    {
+      "sourceWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+      "sourceRef": "c1a173e57f56a108841a33a2bf1367f09ed2b0d8",
+      "sourcePath": "docs/evidence/f01/browser-session-client-interface.md",
+      "archive": "recovery-f01-client-fixed-interface.md",
+      "bytes": 1500,
+      "sha256": "0c20645d0d40d1fad11df53853fc63724232f2deea4baaa61f173a01e2739e5a"
+    },
+    {
+      "sourceWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session",
+      "sourceRef": "5f19f107de07a2ca8ca686d73cb1c8f7104fdd5f",
+      "sourcePath": "docs/evidence/wpf-connection-session/independent-review.json",
+      "archive": "recovery-center-fixed-review.json",
+      "bytes": 1290,
+      "sha256": "29c87b6ac9894caab63d77b445cd9277b9c2111332c7e5805774143df0a5b39c"
+    }
+  ],
+  "managementClaim": {
+    "observedAt": "2026-10-06T13:23:42.850Z",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    }
+  },
+  "existingContextiCleanup": "KEEP active consumers, zero deletion/reclamation;005375ad v2 already released",
+  "rootConsumerAudit": {
+    "path": "connection-fixed-consumer-root-audit.json",
+    "sha256": "30166fd511851bf409a03416d3b84cbec07ae77bd9370be9028d09589bf82d5f",
+    "bytes": 5353,
+    "at": "2026-10-06T13:24:54.479446+00:00",
+    "limits": "fixed-source interface audit only; no browser/HTTP/PG run, not replacement of Lead domain review"
+  },
+  "implementationGateClarification": {
+    "source": "root subsequent scheduling clarification",
+    "requires": [
+      "fixed approved main F01/center public consumer combination",
+      "fresh exact21 no-overlap and isolated worktree",
+      "light development resources fit; no build/install below full gate"
+    ],
+    "parallelFinalAcceptanceGate": [
+      "callerOrigin policy",
+      "late clearCookie response",
+      "repeat connect slot policy"
+    ],
+    "fullInstallBuildGate": "at least2.5GiB free AND anticipatedphysicalincrement+1GiB margin"
+  },
+  "capacityResearch": {
+    "source": "w01_owner pure-memory diagnostic 2026-10-06T13:22:35.769Z",
+    "fixedSource": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "report": "recovery01-request-bounds/report.md",
+    "archives": [
+      {
+        "name": "report.md",
+        "bytes": 12188,
+        "sha256": "28ad44bdd79d6e144ed349275429f397f390bb69383f27ddf53c0599fce01c9c"
+      },
+      {
+        "name": "probe.mjs",
+        "bytes": 7293,
+        "sha256": "ec141a7a5cfa49322b995211ead98137aea611384218cf044ddf32d06cf74d1f"
+      },
+      {
+        "name": "results.json",
+        "bytes": 7441,
+        "sha256": "39df10a2ad1ced66ba614acf989e92631f7c5edb9c9781244a74232e18136a3b"
+      },
+      {
+        "name": "source-manifest.json",
+        "bytes": 12116,
+        "sha256": "d34dec73abd22c2f41e4483c7557b09fe88f0408b97b2453324b34ee74387d00"
+      }
+    ],
+    "bodyBytes": {
+      "create": 3248,
+      "turn": 100055,
+      "enqueue": 100041,
+      "steer": 99160,
+      "createPlusTurn": 103303
+    },
+    "illustrativeEnvelopeBytes": {
+      "bodyObjects": 107379,
+      "bodyJsonStrings": 124533
+    },
+    "boundary": "Public compactbody bounds, not actualjournal128KiB verification; example envelope not canonical; commands128xreserve32KiB already4MiB; all counts conjunctive not promised occupancy",
+    "managerReruns": 0
+  }
+}
