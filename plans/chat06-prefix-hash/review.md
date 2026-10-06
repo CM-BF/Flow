@@ -12,3 +12,5 @@ Mika独立技术review，Goal Owner接收产品范围。固定base84fdecebbb4939
 独立核5 source/10只读基线/18 raw与固定target、metadata及工作树hash全部一致；最终3检查source一致。确认同TX有序完整prefix、显式UTF8/$2::text/COALESCE、小写严格比较，公开readPrefix逐字不变。Unicode/NFC/NFD双引擎oracle、坏摘要整批回滚、旧prefix腐坏、重放/ownership/session/并发与直接consumer证据成立。4自有库清理完整，原失败/CRLF raw和事后重建snapshot均绑定原run hash；不对未记录旧consumer库额外声称独立审计。
 
 Reviewer未运行测试/PG/服务或写入。decoded返回8192→64B/JSON9744→79B之外新增3B输入参数，空prefix0→64B；PG仍全文聚合/hash，不批准wire/WAL/CPU/总速度/SLO收益。详见[独审回执](../../docs/evidence/chat06p02/independent-review.json)。owner仅记录metadata，原manifest/raw/source不变，无重跑；claim保留待main，产品/harness停止写入。
+
+Main收口：fc113945ff73d1a43092d0a70b51e901aa4be1e2已接收b009/546完整片段，owner于2026-10-06 08:11 UTC核祖先及完整scope零diff。批准范围不变，无重跑；claim待本metadata停写后release。
