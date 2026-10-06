@@ -7,6 +7,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { pathToFileURL } from 'node:url';
 import { Pool } from 'pg';
 import { queueJourney } from './queue-journey.mjs';
+import { evidenceJson, redactText } from './queue-evidence.mjs';
 
 const root = '/Users/citrine/Projects/AgentHarness/Flow';
 const webHead = '3d4985fca060155435b159e0467815bf8e88b8b8';
@@ -22,6 +23,8 @@ async function privateJson(name) {
   return JSON.parse(await readFile(file, 'utf8'));
 }
 const config = await privateJson('config.json');
+const secrets = [config.ownerToken, config.runner?.token, config.databaseUrl, config.adminUrl];
+const saveEvidence = (file, value, options) => writeFile(file, evidenceJson(value, secrets), options);
 const manifest = await privateJson('claude.json');
 assert.deepEqual(manifest, expectedManifest);
 assert.equal(execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim(), webHead);
@@ -67,14 +70,14 @@ if (!execute) {
     } finally { await server.close(); }
   }
   await pool.end(); evidence.status = 'PASSED_ZERO_QUERY_PREFLIGHT';
-  await writeFile(`${output}/real-deployment-preflight.json`, JSON.stringify(evidence, null, 2) + '\n');
+  await saveEvidence(`${output}/real-deployment-preflight.json`, evidence);
   console.log(JSON.stringify({ status: evidence.status, webHead, loadedHead, counts: initialCounts, sdkQueries: 0 }));
   process.exit(0);
 }
 
 // The flag is used only after the Goal Owner grants a concrete execution window.
 assert.equal(process.env.FLOW_QUEUE_APPROVED_WEB_HEAD, webHead);
-await writeFile(`${output}/started.json`, JSON.stringify({ at: evidence.startedAt, webHead, loadedHead }), { flag: 'wx' });
+await saveEvidence(`${output}/started.json`, { at: evidence.startedAt, webHead, loadedHead }, { flag: 'wx' });
 let web, firstQueryAt = 0;
 const allowed = new Set(['create', 'turn', 'pause', 'enqueue', 'resume']);
 function mutationKind(path) {
@@ -116,7 +119,7 @@ async function inspectTurn(conversationId, number) {
   const cost = usage.reduce((sum, event) => sum + event.costUsd, 0); assert.ok(cost <= .20);
   const proof = { turn, task, normalizedSdkUsage: true, usage, conservativeCostUsd: cost, details };
   evidence.turns.push(proof); evidence.sdkQueryCount = evidence.turns.length;
-  await writeFile(`${output}/turn-${number}.json`, JSON.stringify(proof, null, 2) + '\n'); return proof;
+  await saveEvidence(`${output}/turn-${number}.json`, proof); return proof;
 }
 try {
   web = await startTestWeb(); const webUrl = `http://127.0.0.1:${web.httpServer.address().port}`; evidence.testWebUrl = webUrl;
@@ -140,7 +143,7 @@ try {
   evidence.attempts = (await pool.query('SELECT id,task_id,runner_id,native_session_id,completed_at FROM flow.attempts ORDER BY task_id')).rows;
   assert.equal(evidence.attempts.length, 2); assert.ok(evidence.attempts.every(attempt => attempt.runner_id === config.runner.runnerId));
   evidence.status = 'PASSED_TWO_QUERY_QUEUE_AND_VISIBLE_MEMORY';
-} catch (error) { evidence.status = 'STOPPED_NO_RETRY'; evidence.error = String(error); process.exitCode = 1; }
+} catch (error) { evidence.status = 'STOPPED_NO_RETRY'; evidence.error = redactText(error, secrets); process.exitCode = 1; }
 finally {
   await web?.close(); evidence.endedAt = new Date().toISOString(); evidence.elapsedFromFirstQueryMs = firstQueryAt ? Date.now() - firstQueryAt : null;
   evidence.sdkQueryInvocationsWithKnownUsage = evidence.sdkQueryCount;
@@ -150,6 +153,6 @@ finally {
   if (evidence.status !== 'PASSED_TWO_QUERY_QUEUE_AND_VISIBLE_MEMORY') evidence.sdkQueryCount = 'unknown; see attempt upper bound and saved usage';
   evidence.finalCounts = await counts().catch(() => 'unknown'); await pool.end();
   evidence.cleanup = 'Only isolated test browsers and test Vite closed. Personal center/runner/web, database and conversation retained.';
-  await writeFile(`${output}/checks.json`, JSON.stringify(evidence, null, 2) + '\n');
-  console.log(JSON.stringify({ status: evidence.status, sdkQueries: evidence.sdkQueryCount, cost: evidence.conservativeCostUsd, error: evidence.error }));
+  await saveEvidence(`${output}/checks.json`, evidence);
+  console.log(evidenceJson({ status: evidence.status, sdkQueries: evidence.sdkQueryCount, cost: evidence.conservativeCostUsd, error: evidence.error }, secrets));
 }

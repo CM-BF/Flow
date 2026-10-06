@@ -126,3 +126,5 @@ Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarra
 新live caller默认只读：0600配置、owned进程/DB、固定Web3d与后台fb906、manifest精确比对、0tasks/attempts/唯一runner/v3 accepting；独立动态Vite的真实代理health可达且正常关闭，未POST/未query。显式执行flag仍须GO窗口；浏览器只允许create/turn/pause/enqueue/resume各一次，首结果完整modelUsage已知且≤$.20并预留第二60s才Continue。SDK query上界与底层provider请求unknown分开；browser退出后实时task状态决定后台继续能否证明；失败无重试，现有服务/DB保留。
 
 clean-code复核了秘密不输出、读预检与有副作用执行分隔、浏览器/Vite生命周期、失败保存、已存在started文件拒绝重跑；发现attempt表无created_at，最终审计只读实际列，避免成功后证据SQL失败。没有重复产品全套测试/模型调用。
+
+2026-10-06 06:02 UTC：assignment_review只读outerguard发现Playwright fill失败call log可含password值；本轮真实调用尚未开始。修复为统一evidenceJson/错误输出脱敏ownerToken、runner token与DB URLs；合成fill TimeoutError/转义秘密回归1/1通过，不触真实凭据/模型。已保存证据扫描无秘密匹配。120s是query准入与结果观察门槛，每query实际SDK60s/$.20；driver截图/资源关闭可超过120s，不称OS硬终止或provider底层request≤2。
