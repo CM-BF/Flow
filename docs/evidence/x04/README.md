@@ -40,3 +40,7 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit
 ```
 
 官方固定来源：[pacote 21.5.1](https://raw.githubusercontent.com/npm/pacote/v21.5.1/README.md)、[ssri 13.0.1](https://raw.githubusercontent.com/npm/ssri/v13.0.1/README.md)。已读源码确认callback可重入；npm-registry-fetch未转发size/redirect，不靠伪配置保护。限制通过Node流式metadata读取与真实per-URL Agent实施。
+
+## 独立审查
+
+2026-10-06 06:17 UTC：Execution Lead / gpt-6-astra 独立只读APPROVED fa2d872d718bf47c3442a4eb3ca9aefcda7d1570；完整8source/13tests及8+15hash核验一致，无finding；未重跑工程检查/模型。范围与本报告限制不变，原始证据保留；main接收前claim v1继续保留。
