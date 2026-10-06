@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:30 UTC / main3418fe682944145494463dca9e09f89c8b9c2295 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:45 UTC / main253035e11ab18ba33095c018949f856442021d49 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,10 +12,10 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295；R06 transport、R05B有限中心来源和知识聊天接线已审main。个人center/runner仍固定b1c2e398、accepting v12，Web固定artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90，原端口和用户tab未变；最近实际4320观察114源，115登记已main待正常换载。 |
+| 已集成main状态 / HEAD | 253035e11ab18ba33095c018949f856442021d49；R05B中心与client、C0未知执行保护、普通终文纯投影、知识聊天和视觉主题已审main。个人center/runner仍固定b1c2e398、accepting v12，Web固定artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90，原端口和用户tab未变；最近09:36实际4320观察117源；ENG、TUI01A、R05C已可见。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 聊天知识引用已接入主线，Codex中心身份与本机通信已审；终端首片正在实施。 |
+| 当前产出 | 视觉主题和执行保护已接入主线；终端首片正在修复审查问题，Codex执行器继续接通。 |
 | 下一可用交付 | 接通Codex普通执行与终端会话，再交付能改代码、检查并回看产物的工程任务通路。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -90,3 +90,5 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
 
 2026-10-06 08:57:11 UTC：SVC03实际窗口已结束，接受v12；4任务成功、无未完attempt/等待队列、业务摘要及迁移列表保留。一次属性顺序比较误报保留，未重复refresh。0operator provider/用户tab操作。新成熟界面六大task沿WPF-001唯一源，宿主依赖见FLOW-002-T09。
+
+2026-10-06 09:45 UTC：新增已授权SVC04 Web独立发布后继，复用当前固定artifact并保留正在执行的后台任务与旧tab惰性资源；具体实现由原runner_owner在TUI修复安全点独立领取。视觉片已main不等个人服务已更新，不为纯前端发布复用全后台drain假称独立。
