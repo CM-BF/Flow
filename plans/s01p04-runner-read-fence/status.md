@@ -2,42 +2,42 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:28:53 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:30:12 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence |
 | Branch | codex/runner-read-fence |
-| 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；preparation target cd13e01e871adaaf7dee1cc6676f7a52145e316f（非生产实现） |
+| 工作基线 / HEAD | base c450；受控输入648→d7e9136f；收尾前实际HEAD 225f4f4bc5c86073f3b5b06ac3418f546a26a5bd clean |
 | 工作树dirty状态 | 生产e184和消费者fix 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88已固定；仅manifest/status/review metadata跟随 |
-| 工作分支状态 | in-progress |
+| 工作分支状态 | delivered |
 | 检查状态 | 原10 distinct冻结；消费者定向1通过/15未选，局部strict0，累计11不同通过；专库absent |
-| 已集成main状态 / HEAD | main648e331c58043cf7ee307300521ab1c628cb2ee1已作输入合入d7e9136f；P04本身尚未main |
+| 已集成main状态 / HEAD | 输入648已受控合入；最新main 53ce2ec2c95b489aa7a2a2eaa49849821af00c16 clean，e184/94b尚未集成 |
 | 实现目标 | e1847ce1c66646eb40b7eb4111a31468d4681e1f |
 | 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts, apps/server/src/runners.ts, apps/server/src/active-steering/steering.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 不同attempt可共享授权读取锁，撤销、维护和领取保护已通过隔离检查 |
-| 下一可用交付 | 消费者P2已修复，固定target交原reviewer复审 |
+| 下一可用交付 | APPROVED组合等待Lead受控集成main |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | REVIEW_REQUIRED；P2历史CHANGES_REQUESTED保留，fix 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88待原reviewer复审 |
+| Review | APPROVED；chatui01_owner / gpt-6-astra，2026-10-06 11:29:47 UTC，fix 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88，原P2已关闭，0P1/P2 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | S01P04-01 | completed | status_read / mika | [Interface](../../docs/evidence/s01p04/interface.md)，明确移交请求和锁顺序矩阵 |
 | S01P04-02 | completed | status_read | 9项准备、局部strict 0；授权唯一目标red 1失败/8未选及专库absent，见 [red analysis](../../docs/evidence/s01p04/red-analysis.json) |
 | S01P04-03 | completed | status_read | v2合法追加、main648受控继承、私有共享锁修复；见 implementation-checks.json |
-| S01P04-04 | in-progress | status_read / 独审者 | 10 distinct通过、局部strict0；待固定target独审 |
+| S01P04-04 | completed | status_read / chatui01_owner | 11 distinct及局部strict0；固定94b复审APPROVED，原e184 P2关闭 |
 | S01P04-05 | pending | Lead / status_read | 未集成 |
 
 2026-10-06T10:55:28.409Z take COMMITTED：claim cb7db4a9-cb89-4589-b2f3-d30b75549ab9 v1，精确三scope，见[receipt](../../docs/evidence/s01p04/claim-receipt.json)。原ENG01B claim172ae2c2 v2由native_center_owner持有runners.ts，不覆盖、不抢占。
 
 [skills](../../docs/evidence/s01p04/skills.json)记录本地技能及方法；结构影响预计为ownedAttempt runner授权锁从独占到共享，public Interface/事务状态 owner不变。实现fixed target后由Lead登记工程架构baseline更新；当前planned，不冒充main。
 
-本status是唯一手填事实源，source登记及页面聚合待Lead；不写registry/聚合JSON。原S01 PASS结果339与旧FAIL/journal已冻结，本片不重跑其容量窗口，不将S01挂为第三层父任务。
+本status是唯一手填事实源；Lead已报告137-source实际采样含正式卡，不推断后续服务刷新；不写registry/聚合JSON。原S01 PASS结果339与旧FAIL/journal已冻结，本片不重跑其容量窗口，不将S01挂为第三层父任务。
 
 准备固定target `cd13e01e871adaaf7dee1cc6676f7a52145e316f`，18项[preparation manifest](../../docs/evidence/s01p04/preparation-manifest.json)绑定2 source/config、2 raw、4 support、10 readonly。本地strict通过不表示PG交错通过；当时9项真实检查尚NOT_RUN（后续red/green见以下记录）。
 
@@ -56,3 +56,5 @@
 2026-10-06 11:25:39.842 UTC cb7 writer amend v3 COMMITTED，仅追加 `apps/server/src/active-steering/steering.test.ts`。独审指出seal与accept都能取得runner SHARE，真正等待点是同task FOR UPDATE；保留真实交错与阻塞断言，改精确holder/blocker绑定并仅定向检查该消费者。生产e184两源及原9PG/ENG/strict证据冻结，无新容量窗口。
 
 消费者修复固定 `94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88`，见[34项manifest](../../docs/evidence/s01p04/consumer-manifest.json)。实际2026-10-06 11:27:17.829→11:27:22.387 UTC，1通过/15未选；精确task SQL与holder/blocker正证据、final commit后409、sealed且commands空均通过，专库零连接/absent。局部strict0；初始import0tests/exit1及strict2完整保留。原e184生产和48绑定逐字冻结，未重跑原9PG/ENG。writer cb7 v3保留修复期，尚未main。Lead报告137-source实际dashboard采样已有S01P04卡；该事实由Lead提供，本worker未另造聚合JSON或重查服务。
+
+2026-10-06 11:30:12 UTC正式接收原reviewer对 `94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88` 的APPROVED（2026-10-06 11:29:47 UTC），原e184唯一P2关闭，0剩余P1/P2。34修复绑定和48历史绑定在review时全部逐字核验；当前只追加Interface页首集成metadata，其旧Git绑定保持可重现，source/raw不变。原9PG+ENG1+consumer1共11不同通过，未重测。fresh本树225f4f4bc5c86073f3b5b06ac3418f546a26a5bd clean / cb7 v3 ACTIVE；main53ce2ec2c95b489aa7a2a2eaa49849821af00c16 clean且实现未集成。已交[固定集成输入](../../docs/evidence/s01p04/interface.md)，writer保留至明确移交/释放，不领取runtime、不运行capacity。

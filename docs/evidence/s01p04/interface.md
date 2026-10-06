@@ -1,3 +1,21 @@
+# S01P04 固定集成输入 — APPROVED
+
+2026-10-06 11:30:12 UTC，owner status_read / gpt-6-astra，co-lead mika。权威 WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence`，branch `codex/runner-read-fence`，唯一 [status](../../../plans/s01p04-runner-read-fence/status.md)。所属大task [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)。
+
+- 生产固定提交：`e1847ce1c66646eb40b7eb4111a31468d4681e1f`；只新增文件内私有 FOR SHARE 授权读取点，公开 lockRunner 继续排他。
+- 消费者修复固定提交：`94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88`；修正 steering final/command 的实际 task 锁等待断言，生产不变。
+- 独审：chatui01_owner / gpt-6-astra，2026-10-06 11:29:47 UTC，APPROVED；原 e184 唯一 P2 关闭，无剩余 P1/P2。Mika已接收。详见 [review](../../../plans/s01p04-runner-read-fence/review.md)。
+- 检查：9项真实专库 PG + 1项 ENG claim过滤 + 1项 steering消费者，共11不同通过；不是单次11/11。ENG12未选、steering15未选；各片局部strict0，初始失败完整保留。三个专库均关闭连接/普通DROP后确认absent；没有新的capacity/SDK Query/provider窗口。
+- 固定证据：[生产48项manifest](implementation-manifest.json)，[修复34项manifest](consumer-manifest.json)；source/raw冻结。仅本Interface页首按Lead要求追加集成metadata，所以它在生产manifest的旧Git绑定仍可重现，当前WT支持文档有已声明metadata变化，不重写旧manifest/hash或原始证据。
+- fresh现场：收尾前HEAD `225f4f4bc5c86073f3b5b06ac3418f546a26a5bd` clean，writer `cb7db4a9-cb89-4589-b2f3-d30b75549ab9` v3 ACTIVE、五个精确scope；保留占用直到明确handoff/release。main `53ce2ec2c95b489aa7a2a2eaa49849821af00c16` clean，两个实现target均未集成；不因无关main前移重新base。
+- dashboard：Lead已报告实际137-source采样包含S01P04正式卡；这是Lead采样事实，不代表当前服务随后已刷新。本owner不写registry或第二状态JSON。
+
+接收边界：Lead从本canonical分支接收上述生产+消费者修复组合，保留maintenance drain允许既有attempt、revoke拒绝后续授权、runner→task→attempt顺序及外层强锁。没有吞吐/SLO/>100执行容量结论；未领取共享runtime。
+
+以下为原设计及路径移交历史快照；其中v1/ENG占用与尚未修改的文字是当时记录，当前权属及实现以页首为准。
+
+---
+
 # S01P04 runner 授权读取锁 Interface
 
 所属大task：[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)。co-lead mika，owner status_read / gpt-6-astra；S01-06仅作前序追溯，不建立第三层。权威worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence`，branch `codex/runner-read-fence`，初始base `c450c2da7e6185b88db9f46e0299ee504ee6f3e8`。本页是已同Mika确认的最小设计，生产实现尚未领取/修改。
