@@ -86,8 +86,8 @@ describe('center public HTTP interface', () => {
   it('streams durable pages and state-only changes, then closes observers without cancelling work', async () => {
     const runner = await register();
     const task = (await post('/api/tasks', submission)).json().task;
-    await server.listen({ host: '127.0.0.1', port: 4320 });
-    const response = await fetch(`http://127.0.0.1:4320/api/tasks/${task.id}/stream?after=0`, { headers: ownerHeaders, signal: AbortSignal.timeout(10_000) });
+    const baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
+    const response = await fetch(`${baseUrl}/api/tasks/${task.id}/stream?after=0`, { headers: ownerHeaders, signal: AbortSignal.timeout(10_000) });
     expect(response.status).toBe(200);
     const reader = response.body!.getReader();
     const decoder = new TextDecoder();
@@ -109,7 +109,7 @@ describe('center public HTTP interface', () => {
     expect(await nextPage()).toMatchObject({ nextCursor: 40, hasMore: false });
     await reader.cancel();
     expect((await get(`/api/tasks/${task.id}`)).json().status).toBe('running');
-    const stillOpen = await fetch(`http://127.0.0.1:4320/api/tasks/${task.id}/stream?after=40`, { headers: ownerHeaders, signal: AbortSignal.timeout(10_000) });
+    const stillOpen = await fetch(`${baseUrl}/api/tasks/${task.id}/stream?after=40`, { headers: ownerHeaders, signal: AbortSignal.timeout(10_000) });
     await server.close();
     expect(await stillOpen.text()).toContain('event: update');
   });
