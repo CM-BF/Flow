@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-06T21:08:57.559956+00:00",
+  "authority": "Mika actual terminal inbound relayed by root; no Web resource sampling",
+  "state": "HOLD_NOT_RUN_WINDOW_RETURNED",
+  "target": "35f78c8b1edc67f1646b395dd62bc1cf389ebef9",
+  "actualExit": 2,
+  "attempts": 0,
+  "children": 0,
+  "PG": false,
+  "HTTP": false,
+  "Chrome": false,
+  "pendingLaunches": 0,
+  "expectedOutputsAbsent": 8,
+  "admission": {
+    "observedAt": "2026-10-06T21:08:06Z",
+    "freeBytes": 1176248320,
+    "requiredStartFreeBytes": 1207959552,
+    "shortfallBytes": 31711232
+  },
+  "claimAndInputs": "Correct per Mika inbound",
+  "priorHandoff": "mika-svc07-handoff-accepted.json",
+  "currentKnownHolder": null,
+  "web": "No gate/reservation/run; Recovery/DPERF source fixes not yet reviewed ready. Do not resample chasing space or retry thiswindow. Future true-ready/newexplicitwindow permits one fresh originalthreshold admission.",
+  "runtimeAdmissionGrantedToWeb": false,
+  "personalOperation": false
+}

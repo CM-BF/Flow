@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T21:07:04.751449+00:00",
-  "state": "WEB_NO_HOLDER_OR_RESERVATION_MIKA_SVC07_WINDOW_ACK",
-  "groupWindowOwnership": "Web explicitly yields next one SVC07 HTTP journey to Mika (Lead-authorized target35f78,<=60s/12PG connections/dedicatednewDB/dynamicport/0Chrome/provider). Mika actualstart not yet reported; Web has neither running nor reservation.",
+  "recordedAt": "2026-10-06T21:08:57.559956+00:00",
+  "state": "NO_HOLDER_LAST_SVC07_ADMISSION_RESOURCE_HOLD",
+  "groupWindowOwnership": "Mika SVC07 freshgate HOLD/NOT_RUN exit2 with0attempt/child/PG/HTTP and no pendinglaunch; window returned. Latest attributed21:08:06 free1176248320<1207959552. Web source fixes continue, no newgate/reservation/resourcepolling.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -969,7 +969,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "Root accepted bounded render identity + exact draftId design; original panels two-file source-only dispatch active, no runtime.",
-  "currentWindowEvidence": "web-svc07-window-handback-2108.json",
+  "currentWindowEvidence": "mika-svc07-not-run-return.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",

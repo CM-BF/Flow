@@ -1,12 +1,13 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T21:06:43.434568+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-06T21:08:57.559956+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 共享窗口
 
-**Web 明确 ACK：无已运行或已预约的 PG/Chrome，无 gate；下一单次窗口让给 Mika SVC07。**
-Lead 已授权其 fixed35f78 一次 HTTP 旅程（最多60秒、12个PG连接、专库动态端口、0Chrome/provider）；Mika 实际启动尚未回报。
-见[本次交回回执](web-svc07-window-handback-2108.json)及[当前资源事实](resource-window-current.json)。其实际清理归还前，Web 全部重检查排后。
+**当前无 holder：Mika SVC07 fresh 准入 HOLD / NOT_RUN 后已归还，Web 无运行、预约或 gate。**
+Mika 回报 21:08:06 可用 1,176,248,320B，低于原 1,207,959,552B 门槛；exit2、0 attempt/child/PG/HTTP，8 个预期输出均 absent，无待启动进程。
+见[实际 NOT_RUN 归还](mika-svc07-not-run-return.json)及[当前资源事实](resource-window-current.json)；[原交接](web-svc07-window-handback-2108.json)和[接收](mika-svc07-handoff-accepted.json)保留。
+Recovery/DPERF04 继续源码修复；不追涨采样、不自动重试或降门槛。候选真正 ready 并获新明确窗口后，才按原门槛一次 fresh 准入。
 此前 F04 20:59:20 完整清理的[回执](f04-cleanup-return-205920.json)保为历史；个人服务不由本组操作。
 
 ## 唯一 owner 与领取

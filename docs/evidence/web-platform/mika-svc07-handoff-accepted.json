@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-10-06T21:08:23.492294+00:00",
+  "authority": "Mika direct inbound relayed by root; Mika explicitly read Web21:07 canonical handback",
+  "state": "MIKA_SVC07_HANDOFF_ACCEPTED_FRESH_ADMISSION_STARTING",
+  "target": "35f78c8b1edc67f1646b395dd62bc1cf389ebef9",
+  "bound": "One approved <=60s HTTP journey, <=12 PG connections, owned newDB/dynamicport, 0Chrome/provider",
+  "actualResult": "NOT_RECEIVED",
+  "admission": "Mika originalowner begins own fresh disk/claim/inputgate; HOLD/notopened or actualcleanup will be reported",
+  "web": {
+    "running": false,
+    "reservation": false,
+    "gate": null
+  },
+  "externalSend": false,
+  "productProbe": false,
+  "freeSample": false
+}
