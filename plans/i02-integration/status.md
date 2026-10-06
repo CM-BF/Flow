@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:54 UTC / 接收前main253035e11ab18ba33095c018949f856442021d49 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T09:58:56.844754+00:00 / 接收前 main187d97648dd2d4edf45641720f8ba771ea9f25fa |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 80ba95ad70cdf724251be4d88130b6bac56d3606 / 本批已审视觉与未知执行边界 |
-| 工作树dirty状态 | 固定源码比对及root/Web类型检查通过；本次记录随后提交 |
+| 工作基线 / HEAD | 187d97648dd2d4edf45641720f8ba771ea9f25fa / 已审终端、Codex adapter 与聊天操作组合 |
+| 工作树dirty状态 | 固定实现零差；本批证据随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；视觉7源/C0 3源与普通终文投影2源均与独审target逐字一致，root/Web类型检查exit0；117源实际可见，0provider |
-| 已集成main状态 / HEAD | main80ba95已含R05B中心接线与ENG计划；视觉/C0及native profile publication client已审main253035；本批仅后继计划与来源登记。个人backend/static仍b1c、accepting v12，不随main更新。 |
+| 检查状态 | PASSED；59 个实现源与获审 target 一致，root/Web 类型检查 exit0，4 个直接消费者文件 50/50；0provider |
+| 已集成main状态 / HEAD | main187d976已发布118源计划批；本批59源及122源登记已在集成分支验证，即将发布。个人backend/static仍b1c2、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 新的视觉主题、未知执行保护和执行配置发布接口已进入主线；终端修复正在增量复审。 |
-| 下一可用交付 | 接通Codex普通任务及可发送、恢复会话的终端首片。 |
+| 当前产出 | 终端可选择、发送与恢复会话；聊天活动与补充指令界面、Codex普通任务接入已完成独审和组合检查。 |
+| 下一可用交付 | 发布本批已审成果，再接通Codex可信启动配置与Web独立发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -112,4 +112,6 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 
 2026-10-06 09:43 UTC：通用native profile薄client095已由status_read独审、Mika接收；本批两源码对target/manifest完全一致，原3/3 HTTP和类型检查复用，无重复PG/模型。见[独审接收](../../docs/evidence/i02/native-profile-client-integration.json)。此接口只透明发布，配置存在不等于工具授权或原生运行完成。
 
-2026-10-06 09:54 UTC：接收SVC04唯一计划、TUI共享ACK后继、F01/main回执与FLOW当前事实，118来源登记通过；[本批receipt](../../docs/evidence/i02/release-ack-planning-integration.json)。本批只文档与registry，不重跑产品测试、不变个人服务。
+历史手工管理时间标签 09:54（非执行观测；实际118源快照为09:51:58.837Z）：接收SVC04唯一计划、TUI共享ACK后继、F01/main回执与FLOW当前事实，118来源登记通过；[本批receipt](../../docs/evidence/i02/release-ack-planning-integration.json)。本批只文档与registry，不重跑产品测试、不变个人服务。
+
+2026-10-06T09:58:56.844754+00:00：本批[固定集成回执](../../docs/evidence/i02/native-tui-integration.json)记录59源同获审target一致、4文件50直接检查及root/Web类型检查通过。TUI两项P2已由原owner修复并获Mika独审；离线固定锁安装41复用、0下载、未运行安装脚本。未重跑领域/PTY/浏览器验收，未调用provider或修改个人服务。
