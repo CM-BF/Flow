@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-06T22:21:25.091504+00:00",
+  "reviewer": "root",
+  "result": "REQUEST_CHANGES_SCOPED_ACCEPTANCE_COVERAGE",
+  "target": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+  "metadataRead": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+  "branch": "codex/web-message-settings-quick-controls",
+  "observedHead": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+  "observedDirty": "",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "fixedSources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "bytes": 25804
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "bytes": 20068
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "sha256": "844d10633bdc173f46d1f1bad1d4c1b76a673639747131f6d5541265453b34c5",
+      "bytes": 8993
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "4fb957f17eaad48a26a1ab81ce1119e793c1d958da9ebadea29c853a392551b2",
+      "bytes": 18843
+    }
+  ],
+  "protectedInputsVerified": 13,
+  "legacyPickerFunctionBodiesByteUnchanged": true,
+  "changedPathsWithinSixScope": true,
+  "closedEarlyFindings": [
+    {
+      "id": "MSGQUICK-EARLY-R1",
+      "state": "CLOSED_SOURCE_ONLY",
+      "evidence": "Picker now separates codec failure from host exception and returns unknown; UI explicitly says outcome unknown and no auto retry. Direct real-seam test mutates C then throws and asserts one write/unknown/stale retry."
+    },
+    {
+      "id": "MSGQUICK-EARLY-R2",
+      "state": "CLOSED_SOURCE_ONLY",
+      "evidence": "Details navigate callback checks captured opening identity; opening.navigate additionally reconciles and consumes active lifetime. Direct regression retains old navigation across close/reopen with same token."
+    },
+    {
+      "id": "MSGQUICK-EARLY-PEER-FOCUS",
+      "state": "CLOSED_SOURCE_ONLY",
+      "evidence": "Draft-only invalidation no longer suppresses eligible trigger return; disabled/hidden/unmount guarded. Browser138–141 asserts actual same-pane Escape focus without prefocusing the trigger. Peer final conclusion separate."
+    }
+  ],
+  "findings": [
+    {
+      "id": "MSGQUICK-R3",
+      "priority": 2,
+      "category": "missing explicitly requested mounted acceptance coverage, no proven product defect",
+      "files": [
+        "apps/web/test/message-settings.fixture.tsx:14",
+        "apps/web/test/message-settings.fixture.tsx:81",
+        "apps/web/test/message-settings.browser.ts:180",
+        "apps/web/test/message-settings.test.ts:34"
+      ],
+      "problem": "Both mounted panes always authorize profile1, which is present on the first 20-entry page. Loading40 entries only proves other profiles do not leak into current32 choices. Missing-catalog unit rejection and adding unrelated profile2 do not verify an existing selected/authorized profile becomes available only after explicit LoadMore. Accepted provision request includes laterselectedprofile.",
+      "requestedFix": "Within existing fixture/browser scopes add one real HTTP paging journey with current authorized selected profile only on a later page. Before loading that page, retain applied C, expose meaningful missing availability and prohibit defined Apply/automatic fallback. After load, show only that profile exact tuples, preserve C/A/B, then an explicit Apply commits exactly once. Bind final scenario and fixed target before spending browser budget."
+    }
+  ],
+  "otherSourceConclusions": [
+    "Read-only public catalog/capture codecs and legacy creation behavior remain unchanged.",
+    "Fresh host getter compare/capture/write remains synchronous; defined settings revalidate current capability/tuple; omit still checks expected owner/editability without inventing a capability.",
+    "UI staging is separate from controlled C; current profile alone drives at most32 schema-validated tuple choices.",
+    "Direct new cases exercise actual exported seams, including lagging props, same-tuple new token, independent pane and capability revoke/restore, reentrancy, unknown write and old navigation. They are not mounted UI or actual production host proof.",
+    "No product source blocking bug found beyond acceptance coverage; do not infer runtime correctness from this static review."
+  ],
+  "validationProposalReview": "TSX imports React/Radix/CSS; proposal correctly calls for real JS runtime aliases and Vitest/Vite CSS policy instead of bare tsx or mockhelpers. Exact config/runner/resource manifest remains to be prepared and reviewed; proposed30s direct/type and60s browser are not granted gates or inherited budgets.",
+  "notRun": [
+    "types",
+    "Vitest/direct",
+    "browser/Chrome",
+    "build",
+    "HTTP fixture execution",
+    "PG/provider",
+    "resource/proc sampling"
+  ],
+  "cleanCode": {
+    "skills": [
+      "find-skills",
+      "clean-code",
+      "codebase-design"
+    ],
+    "scope": "complete four-source diff, outcome semantics, opening authority, real behavior assertions, immutable public input reuse, bounded projection, no second draft store",
+    "remaining": "MSGQUICK-R3 coverage fix and actual new validation. No unrelated refactor or new abstraction requested."
+  }
+}
