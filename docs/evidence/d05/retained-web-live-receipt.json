@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-06T18:43:03.221Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "888cfd3b1c414b32298661f1fdf5f33bddbe956c",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T18:43:03.323Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "count": 172,
+  "task": {
+    "id": "SVC05R01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T18:39:14.668Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/plans/svc05-retained-web-compatibility/status.md",
+      "syncedAt": "2026-10-06T18:43:03.221Z",
+      "stale": false,
+      "ageHours": 0.06756138888888889
+    },
+    "issues": [],
+    "current": true,
+    "git": {
+      "available": true,
+      "branch": "codex/personal-retained-web-compatibility",
+      "head": "406dec4d22878fced7a8d58f32f4fc0e743c6a08",
+      "dirty": true,
+      "changedFiles": 3,
+      "observedAt": "2026-10-06T18:43:03.331Z"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "正在准备两个保留页面对新后台的独立兼容检查，避免发布后旧页面失去读写或恢复能力。",
+    "next": "固定只读产物、真实后台及显式恢复的可审隔离脚本。",
+    "blocker": {
+      "state": "unknown",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [
+      "当前阻塞"
+    ],
+    "complete": false
+  },
+  "errors": [],
+  "snapshotBytes": 2212548,
+  "snapshotSHA256": "a2ad763e60517a49d61b1df01f24d9eb34beb6485fcda04c2155cf41f723f372",
+  "own4320": "verified old PID41339 cwd m2-integration; TERM and absent; new session95456",
+  "architecture": "unchanged",
+  "personalServicesAndTabs": "untouched",
+  "newTests": 0,
+  "provider": 0
+}

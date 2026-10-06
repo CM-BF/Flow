@@ -222,4 +222,6 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 
 2026-10-06 18:40 UTC：SVC05H隔离诊断d8b固定40项binding通过；恢复准备ce6固定17及实际52项binding通过；一次同版本Web bootstrap exit0/922ms，固定结果796d的13raw+8input再次核hash/fixed。原外层ps误判保留、正式helper修正且没有重复命令；旧Web exit1 on TERM保留，whole group absent与新owned ready已证。仅own计划/证据同步，无新的产品测试或provider，个人残留根因仍未证明。
 
-2026-10-06 18:44 UTC：受控接收SVC05H操作封存、FLOW/OPS恢复事实与第172个SVC05R01来源；所有导入文件逐blob核对固定提交一致。个人服务没有本轮新操作，未执行产品测试或provider。见[批次绑定](../../docs/evidence/i02/recovery-registry172-batch.json)。
+2026-10-06 批次标签18:44（实际main888c/快照时间见18:43:03.221Z）：受控接收SVC05H操作封存、FLOW/OPS恢复事实与第172个SVC05R01来源；所有导入文件逐blob核对固定提交一致。个人服务没有本轮新操作，未执行产品测试或provider。见[批次绑定](../../docs/evidence/i02/recovery-registry172-batch.json)。
+
+2026-10-06T18:43:03.221Z实际172源回执与18:43:26固定S01输入供给进入本批；无产品源码/检查新增。上一18:44为管理手填标签，不是执行时钟；实际时间沿原始Git与操作证据。

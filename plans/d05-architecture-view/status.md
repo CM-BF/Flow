@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 现用页面已恢复；保留网页兼容检查正在实施，本批登记172个独立来源，实际换载后另记回执。 |
+| 当前产出 | 现用页面已恢复；保留网页兼容检查正在实施，看板已展示172个独立来源；保留网页兼容检查正在实施。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -161,3 +161,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 18:19:44 UTC：mainf8be来源已在唯一owned4320换载；单次snapshot171，O16 live/current/issues[]/人读完整，NOT_RUN保持。[实采](../../docs/evidence/d05/o16-live-receipt.json)。仅自身工程看板换载，个人端口/用户tab及固定架构不动。
 
 2026-10-06 18:43 UTC：新增 SVC05R01 唯一source，172来源候选。只核首canonical、六literal领取、三件套和解析；状态仍由原owner维护，原当前阻塞字段含解释导致unknown已交owner修正。见[登记回执](../../docs/evidence/d05/retained-web-registration.json)。不改架构图或个人服务，不跑产品测试。
+
+实际换载回执：2026-10-06T18:43:03.221Z，main888c clean，172来源/SVC05R01 live/current。原阻塞字段格式unknown已留实采且交原owner修正，不改渲染器猜测。见[实采](../../docs/evidence/d05/retained-web-live-receipt.json)。
