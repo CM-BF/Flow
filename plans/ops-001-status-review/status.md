@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:38 UTC / mainec5da343 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:03 UTC / main77132408 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -217,3 +217,5 @@ Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 
 2026-10-06T18:43:26.218360Z：按S01唯一request固定8d84逐Git blob供应57源码+4元数据，共284,628B，供给在私有临时目录由合法owner复制归档；没有触其dirty源码、安装、import或PG。实际free1,577,123,840→1,576,652,800B仅本次共享卷观察，不作后续窗口准入。见[精确供给](../../docs/quality/sparse-worktree-2026-10-06/s01-idle-fixed-source-receipt.json)。Web仍持唯一PG/Chrome窗口，R01/O16源实现并行。
 
 2026-10-06T18:46:29.411800Z：Web以权威 web-validation-window-return-1845.json 明确归还，Recovery原浏览器专库/Chrome/worker已清理，后续受控38和设置37均无PG/Chrome且已清理；不把局部通过当浏览器修复已验。当前共享重运行窗口无holder，R01候选待固定独审，O16仍源准备。18:48:22供给DPERF05精确10固定源码79,472B，du108KiB，主树/sharedconfig不变；新leaf需Web原子take，见[记录](../../docs/quality/sparse-worktree-2026-10-06/dperf05-source-provision.json)。本供给未安装/import/test/PG，实际空间不用于后续免fresh准入。
+
+2026-10-06 19:03 UTC：共享PG/Chrome窗口交已审MessageSettings浏览器一次60s（含15s清理），原资源门槛、0PG/provider且不重复37项。R01 source25b已固定而manifest刚交，O16正在补外层监督；两项准备不占运行窗口。明确区分准备队列与已审可运行队列，空闲时先给已ready项；Web完整cleanup或NOT_RUN归还后，R01独审同源完成即下一位。DPERF05 edd4/9a876v1已核并登记173候选，本批发布；工具完整原文后继沿CHAT05-06排ready，未领产品scope。
