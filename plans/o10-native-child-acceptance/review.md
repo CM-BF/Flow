@@ -15,3 +15,7 @@ Root独立只读核原3c770的9source/16raw/15dep和五旅程sourceDigest一致�
 ## Root正式增量结论 2026-10-06 08:34 UTC
 
 **APPROVED；P2 CLOSED。Review target commit = b1a88ce90d2366f0fda6e4411471a4ddc5894e5e。** 3changed/10all/11raw/15deps固定target全核，2/2原证据已读，未重跑原11；限checkpoint/0query准备。原始failed/pending记录按历史保留，见[回执](../../docs/evidence/o10/checkpoint-root-review.md)。另发one-shot预算是独立运行授权，不把准备批准当native成功。
+
+## Root真实单child语义结论 2026-10-06 08:38 UTC
+
+**APPROVED。Raw review target commit = d2cc8075d1f1ffc8d242a2a674adc9d321d16412。** 独立亲读39码点正文忠实四事实，≤120；10source/15dep/6raw/2derived固定/current全核，真实Read与host允许各有证据，身份/产物一致；1query/2turn/估算$.0148666与cleanup成立。见[正式独立回执](../../docs/evidence/o10/native-root-review.md)。不改变原始pending/markers unknown/accepted=null，不伪造accept-delivery；无模型重跑，预算封存。批准仅本次固定材料文本child。
