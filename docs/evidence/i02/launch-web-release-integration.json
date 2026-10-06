@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-06T10:18:50.449758+00:00",
+  "previousMain": "c9c0842406e77082f2ba4bd6e98c5279da7cd2dd",
+  "candidate": "863c1f2ea44bf0db93ea748df791b90d6fc92399",
+  "inputs": [
+    {
+      "task": "R05D",
+      "implementation": "178ef49e568147849e63e08b3f7211ee5df823d3",
+      "delivery": "014b2dc3a926b93640ff4f9cb967fa25580fb6f8",
+      "review": "Execution Lead independent APPROVED; FIFO P2 closed; domain72 reused and focused1 preserved"
+    },
+    {
+      "task": "SVC04",
+      "implementation": "a2386f0575a961e5bf52fb9a8b152d587d94dc73",
+      "delivery": "33f64b6db7a1cb8ea60e34f5b7166535e4975e78",
+      "review": "Execution Lead independent APPROVED; serialized observation P2 closed; all43 manifest entries verified fixed/working"
+    }
+  ],
+  "comparisons": "launch-web-release-source-comparison.json",
+  "comparisonCount": 18,
+  "rootTypecheck": "launch-web-release-typecheck.json",
+  "additionalProductTests": "none; exact approved code combined in disjoint modules; existing direct consumers reused",
+  "providerQueries": 0,
+  "personalServiceChanges": 0,
+  "limitations": [
+    "Codex configuration construction requires an injected trusted factory; no production launch or provider proof",
+    "Web release mechanism validated with owned synthetic compatibility pairs and real browser chunks; no personal Web/backend compatibility attestation or deployment",
+    "Prior typecheck stdout retained with unrecorded exit after shell wrapper error; final exit0 separately captured"
+  ]
+}

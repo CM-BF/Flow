@@ -1,6 +1,6 @@
 # TUI01A 基础会话终端
 
-状态：in-progress。创建/更新2026-10-06。所属大task：[TUI-001](../tui01-terminal-client/plan.md)。co-lead Execution Lead。唯一owner runner_owner/gpt-6-astra。[统一模块规则](../../AGENTS.md#modular-design)。
+状态：completed。创建/更新2026-10-06。所属大task：[TUI-001](../tui01-terminal-client/plan.md)。co-lead Execution Lead。唯一owner runner_owner/gpt-6-astra。[统一模块规则](../../AGENTS.md#modular-design)。
 
 首片范围为 [Interface](../../docs/evidence/tui01a/interface.md) 中共享命令/controller、Ink与headless、私有未决intent和基础会话。中心持久事实不复制；slash仅语法层，不建立第二协议/agent loop。原文/身份/epoch、未知ACK与退出不cancel是验收不变量。
 

@@ -30,7 +30,7 @@
 ## 稳定TODO与sub-task顺序
 
 - [x] **TUI001-01** 建立唯一大task、职责、研究/版本来源、初始范围和完整验收；此项完成不等于产品可用。
-- [ ] **TUI001-02** TUI01A：固定实际依赖与小Interface，交付slash/controller/headless/基础交互端到端片，独立review后及时main。
+- [x] **TUI001-02** TUI01A：固定实际依赖与小Interface，交付slash/controller/headless/基础交互端到端片，独立review后及时main。
 - [ ] **TUI001-03** 流式正文与活动：task/attempt增量协议、settlement原规则、重放/乱序/重连，展开前零detail请求，输出/缓存/刷新有界。
 - [ ] **TUI001-04** 真实执行选项：消费MATURE02/R05 Claude+Codex能力，model/thinking/fast/access requested/effective/unsupported分明，不把catalog当账号授权。
 - [ ] **TUI001-05** context/files：复用固定citation与附件生命周期合同，发送/排队冻结身份，未就绪拒绝；不直接附本机路径给远端runner。

@@ -1,0 +1,260 @@
+{
+  "format": 1,
+  "task": "SVC04",
+  "base": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "target": "a2386f0575a961e5bf52fb9a8b152d587d94dc73",
+  "observedAt": "2026-10-06 10:16:43 UTC",
+  "sources": [
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 14917,
+      "sha256": "1cabefba6cc2f05325f53fc92a1ddc16f2699a25b76586ef2796ce96b5b03857"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 3782,
+      "sha256": "9e5de1042d649f58d322c296673728117cd09de2aa98d4d260a53937bc11fe69"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 26793,
+      "sha256": "95a18d8dac7a71db1841cb432b151fcf045ce59446e9a341ea5e6c263f2240e7"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 28803,
+      "sha256": "c0f5313b4bf6431329ca5ed921545efc9714579f8e8b67b6a50959448ff299d0"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.test.mjs",
+      "bytes": 8388,
+      "sha256": "5e89a614825242538233363a994833f6d8b04dd580ddd82d3061617db33d6578"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/web-release.test.mjs",
+      "bytes": 14192,
+      "sha256": "506c5fc6754bf39a18c968bdaeb1def1a85c20908fd6cf9c446193f2eaf0a977"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-fixture.mjs",
+      "bytes": 7415,
+      "sha256": "f9d7e98af8753951821ece89d5e5357b9b3498a0d7fa308e2a9fb056b8dcf409"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/svc04/asset-queue-final.txt",
+      "bytes": 227,
+      "sha256": "b0de943a929b8def43f38a83651ad4b4c067f7c237555e762ba21ab1b93c47b0"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-cleanup.txt",
+      "bytes": 60,
+      "sha256": "7a3c9cfe30d2df2543010e29ce16c2535fa7124565a66a38cb0d8f66f729fc56"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-cold-red-network.txt",
+      "bytes": 1039,
+      "sha256": "576045909e9e0ff7188508caf87ed66f1123fa8b4fa3ff51af8543be52d1dc0c"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-final_network.txt",
+      "bytes": 1928,
+      "sha256": "deac34a39298d1c2060db310032a18ae71a5dd7b4900c1f183454e56ca55b7a5"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-publish.txt",
+      "bytes": 1057,
+      "sha256": "3cf9910a3b036bfb8d736582bc8bf139d805caf496fceb088db5a07fcece994e"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-ready.txt",
+      "bytes": 561,
+      "sha256": "7ef990a94315831c7560c7470972f6cdb473628ccfcdc4a196b721d0ad8a14f0"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-rollback.txt",
+      "bytes": 2226,
+      "sha256": "f6c57ad7665c8ba47deeaa82245eef76ba0dc5e71de1ce8a4fc913016b0fd64c"
+    },
+    {
+      "path": "docs/evidence/svc04/consumers-final.txt",
+      "bytes": 474,
+      "sha256": "b51ef930473508600d85ffaab5d630a1d2d6af3a71841fe630c8bc4f84f62ff9"
+    },
+    {
+      "path": "docs/evidence/svc04/domain-first.txt",
+      "bytes": 482,
+      "sha256": "d8181971f12f738d0396cbdf8e872f49b2709c1290f63cb592ceee9fdf52f98b"
+    },
+    {
+      "path": "docs/evidence/svc04/domain-red.txt",
+      "bytes": 1604,
+      "sha256": "ea920f2acfda8163d3d339fb33e322c44884fb6ec9e5255adf9be5be00e065be"
+    },
+    {
+      "path": "docs/evidence/svc04/host-final.txt",
+      "bytes": 3003,
+      "sha256": "e69fcebdcec3d6ea9bfde1479e6a9e7a48b7ee53e5d537ee5c168d2dbaa4d4b3"
+    },
+    {
+      "path": "docs/evidence/svc04/host-first-green.txt",
+      "bytes": 3004,
+      "sha256": "e704244f508a764e287fe32e0e37af99c21dd83c873ce1840f10499ee6652321"
+    },
+    {
+      "path": "docs/evidence/svc04/host-fixture-first-red.txt",
+      "bytes": 1053,
+      "sha256": "afea064cad2ebfcf32d17ce204ea2bf1c9ef86bcb7fb6221e55a4dc03031d3f3"
+    },
+    {
+      "path": "docs/evidence/svc04/install.txt",
+      "bytes": 657,
+      "sha256": "b1382e386054fff96606767010ada9ce2dcdb19b3ba99114d460677f53b31f01"
+    },
+    {
+      "path": "docs/evidence/svc04/module-final.txt",
+      "bytes": 1355,
+      "sha256": "2e96221d2b264cab7e05ad3e7ec2ed17dd1907d32a75caafe72302c83f0ab73d"
+    },
+    {
+      "path": "docs/evidence/svc04/module-first.txt",
+      "bytes": 1067,
+      "sha256": "54687b95778380702de3b95077a016069d6dcd1c2ae57f8df1e7bf1c76481075"
+    },
+    {
+      "path": "docs/evidence/svc04/module-second.txt",
+      "bytes": 1277,
+      "sha256": "54c6d9f45bd45d578aebb23ed188c0eb1dc55fb386f63d42cf45ac3e04bdcd2c"
+    },
+    {
+      "path": "docs/evidence/svc04/observation-gate-final.txt",
+      "bytes": 344,
+      "sha256": "cf6d3dc7ec6ec0ad3eb0ae5aff6d43d5d02b73c3abb859d18fc9c5b228541718"
+    },
+    {
+      "path": "docs/evidence/svc04/observation-race-final.txt",
+      "bytes": 230,
+      "sha256": "72cacea6f20713ece47fc5c3f28de799923957037238d9423a507183f6861c40"
+    },
+    {
+      "path": "docs/evidence/svc04/observation-race-initial-nondeterministic.txt",
+      "bytes": 232,
+      "sha256": "65043137cdff7fd55900f94430ab4e8d396b04449cf34e5fbbc8ee1fab1b1656"
+    },
+    {
+      "path": "docs/evidence/svc04/observation-race-red.txt",
+      "bytes": 1442,
+      "sha256": "bf05e71b63ace6f43baad8edd97bf451245d32e64799e3e70b72d17e00f800e5"
+    },
+    {
+      "path": "docs/evidence/svc04/static-syntax-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc04/syntax-before-queue.txt",
+      "bytes": 283,
+      "sha256": "79a89ad03753735710628085ed9197d4269b3ebcbf281be69e396e242a279698"
+    },
+    {
+      "path": "docs/evidence/svc04/compatibility-fixture-results.json",
+      "bytes": 4145,
+      "sha256": "35ca72c7fa4cffdc5a84df6f60a5900984cc39194eacf82473471e599f649b26"
+    },
+    {
+      "path": "docs/evidence/svc04/browser-observations.json",
+      "bytes": 934,
+      "sha256": "5196669a06eada8bc0fee9d8ed2d1a87b2cbd5f473624c079cdb719c3fd3083e"
+    }
+  ],
+  "readonlyInputs": [
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8241,
+      "sha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 10302,
+      "sha256": "9e9faa83a4ed6660479b63501acf6f35de8351ac75713a8a548d1de482a541c0"
+    },
+    {
+      "path": "tools/personal-preview/static-web.test.mjs",
+      "bytes": 4740,
+      "sha256": "63b1bf4cf9791be59f179ad025034b1b5abc9046b17c2b3f8efa29bf923fca27"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12863,
+      "sha256": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14314,
+      "sha256": "5437645e446b53f558cb960582f09a90f1df49fb0c6a90be24c36d239f057bd2"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 3535,
+      "sha256": "c0b1fd4ae2bcbebdd0c1e1d4f3e46af8def2697e38da89f62d360c21b3926729"
+    }
+  ],
+  "checks": {
+    "distinctNodeCases": 15,
+    "moduleFinal": 11,
+    "hostFinal": 1,
+    "directConsumersFinal": {
+      "passed": 3,
+      "newDistinct": 2
+    },
+    "assetQueueFinal": {
+      "passed": 1,
+      "newDistinct": 0
+    },
+    "browserObservedStages": 5,
+    "browserJavaScriptRequests": 58,
+    "browserFailedJavaScriptRequestsAfterFix": 0,
+    "providerQueries": 0,
+    "observationGateFinal": {
+      "passed": 2,
+      "newDistinct": 1
+    }
+  },
+  "notes": [
+    "Host backend source 40f1e13af9244ba378391cf681ffa697b433ac44; apps/server and apps/runner equal target.",
+    "Host 1/1 was not repeated after the isolated static asset gate change; affected HTTP case and actual Chrome cold/publish/rollback lazy loading were rechecked.",
+    "Browser fixture stdin.pause added after actual browser run to exit the harness after cleanup; actual runs required EOF and exited 0. Product source unchanged by that fixture-only line.",
+    "Initial browser 503 and initial fixture identity rejection are preserved; neither is represented as success.",
+    "Compatibility reports are trusted fixed-shape attestations for the exact synthetic Web/backend combinations, not production compatibility proof.",
+    "No personal-service operations or provider calls.",
+    "Lead preview feedback addressed in a2386f0: release pointer reads now enter the same serial observation chain, and HTTP bounded admission covers read/verification until work finishes plus response ends.",
+    "Final incremental checks are 2/2: 1 new deterministic reversed-read case and 1 existing HTTP/SSE case; original Chrome/PG checks were not repeated.",
+    "observation-race-initial-nondeterministic.txt is an initial passing attempt that did not deterministically exercise the race; observation-race-red.txt is the actual controlled failure."
+  ]
+}
