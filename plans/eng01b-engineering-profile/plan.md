@@ -9,8 +9,8 @@
 
 ## TODO
 
-- [ ] **ENG01B-01** 固定claim、Interface与工程profile codec，共享接缝交Lead。
-- [ ] **ENG01B-02** 受信命名recipe/setup与持久marker恢复，未知资源保留。
+- [x] **ENG01B-01** 固定claim、Interface与工程profile codec，共享接缝交Lead。
+- [x] **ENG01B-02** 受信命名recipe/setup与持久marker恢复，未知资源保留。
 - [ ] **ENG01B-03** immutable profile publication/pin/revoke与受理/claim purpose门禁，复用既有同表规则。
 - [ ] **ENG01B-04** main薄互斥组合、局部/直接消费者与真实PG/Git重启验证。
 - [ ] **ENG01B-05** 固定manifest、独审、受控main集成与释放。
