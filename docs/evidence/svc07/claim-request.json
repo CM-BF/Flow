@@ -1,0 +1,17 @@
+{
+  "requestId": "svc07-db-transaction-owner-take-20261006-2000",
+  "actor": {
+    "lead": "mika",
+    "worker": "db_transaction_owner"
+  },
+  "taskId": "SVC07",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect",
+  "branch": "codex/server-transaction-disconnect",
+  "scope": [
+    "apps/server/src/database.ts",
+    "apps/server/src/database-transaction.test.ts",
+    "plans/svc07-transaction-recovery",
+    "docs/evidence/svc07"
+  ]
+}
