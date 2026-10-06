@@ -1,0 +1,17 @@
+exitCode=1; PG error code=57P01
+node:events:505
+    throw er; // Unhandled 'error' event
+    ^
+
+error: terminating connection due to administrator command
+    at parseErrorMessage (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/parser.ts:395:9)
+    at Parser.handlePacket (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/parser.ts:212:19)
+    at Parser.parse (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/parser.ts:105:30)
+    at Socket.<anonymous> (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-protocol@1.16.1/node_modules/pg-protocol/src/index.ts:7:48)
+    at Socket.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:567:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:518:3)
+    at Readable.push (node:internal/streams/readable:398:5)
+    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)
+
+[PG client internals omitted, including transient backend cancellation key.]

@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-10-06T04:12:07.400976+00:00",
+  "logModifiedAt": "2026-10-06T04:10:30.921103+00:00",
+  "exitCode": 1,
+  "code": "57P01",
+  "message": "terminating connection due to administrator command",
+  "cause": "Forced DROP of own temporary database raced connection close; exact pool identity is unconfirmed; process died before final JSON. Prior browser-results is the separate 10-check run, not this run.",
+  "completedCheckCount": "not persisted; do not claim 11 passed",
+  "affectedOwnDatabases": [
+    "flow_x03_24539_0_e44df3a2",
+    "flow_x03_24539_1_eeaaf3d1"
+  ]
+}
