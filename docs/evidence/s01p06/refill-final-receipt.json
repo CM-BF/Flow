@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "--testNamePattern",
+    "refills a completed slot",
+    "--reporter=verbose"
+  ],
+  "startedAt": "2026-10-06T13:25:37.366069+00:00",
+  "endedAt": "2026-10-06T13:25:38.812753+00:00",
+  "exitCode": 0
+}

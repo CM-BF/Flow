@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "docs/evidence/s01p06/tsconfig.json"
+  ],
+  "startedAt": "2026-10-06T13:24:52.553262+00:00",
+  "endedAt": "2026-10-06T13:24:54.701165+00:00",
+  "exitCode": 2,
+  "scope": "local include + transitive imports, unchanged root compilerOptions"
+}

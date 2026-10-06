@@ -1,0 +1,31 @@
+{
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "observedAt": "2026-10-06T13:51:48.553684+00:00",
+  "target": "22f0e2c2b702112aa1a5d1b36874b56165cd267e",
+  "originalTarget": "d4478653918144377696ce83ace128fcf4213961",
+  "result": "APPROVED",
+  "findings": [],
+  "closed": [
+    "P2 old same-epoch queue poll overwrote new selected page"
+  ],
+  "scope": "11 product/test/document sources; initial full review plus two-file incremental correction",
+  "bindings": [
+    "/tmp/flow-tui01e-review-binding.json",
+    "/tmp/flow-tui01e-p2-review-binding.json"
+  ],
+  "checksRead": {
+    "originalDistinct": 41,
+    "incrementalDistinct": 3,
+    "incrementalModule": 12,
+    "typecheckExit": 0,
+    "reviewerTests": 0,
+    "providerCalls": 0
+  },
+  "reason": "Queue selection generation captured before metadata waits; old page responses and errors ignored; connection epoch remains separate. Three controlled public-controller interleavings reproduce red then pass. All new source/raw and inherited sources fixed/working match. Original HTTP/PG/PTY and cleanup evidence retained; no repeated engineering tests.",
+  "limits": [
+    "Not actual TUI-Web-TUI or provider acceptance",
+    "Only queue light read/pause/resume; other chat controls remain parent plan",
+    "Disk journal reopen is not crash/power-loss durability proof",
+    "Current integration with newer browser-session factory still requires bounded direct-consumer check"
+  ]
+}

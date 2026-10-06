@@ -72,3 +72,7 @@ MATURE02/04提供能力与上下文来源，MATURE03提供文件生命周期，M
 继续TUI001-06/08：后台typed contract/FlowClient/HTTP为唯一业务入口，slash/Ink/headless可替换；新能力先有可复用headless验收，Web独立消费。O12目标会话/固定历史已main，可按[小设计](../../docs/evidence/tui01/goal-session-next-design.md)接终端；不复制业务状态。完整日用和同会话双端验收保持原08，普通文本不会被自动解释为goal执行。下一执行owner候选assignment_review，待当前SVC05准备安全点由co-lead派工，不等待全部模型目录。
 
 2026-10-06 12:59 UTC：TUI01D显式goal模式已审main280289，原下一goal入口已实际交付。后继优先同一公开接口的聊天queue/steer/cancel/decision及实际TUI→Web→TUI；不等所有能力目录或视觉，但真实streaminginput受理仍按中心readiness/fence，不以终端按钮绕过。实施按空闲worker新claim，不把headless替代实际PTY/浏览器。
+
+2026-10-06执行顺序：TUI001-06先由[TUI01E](../../../tui-queue-controls/plans/tui01e-queue-controls/plan.md)交付现公共queue轻读/暂停/继续，其他聊天控制另按能力推进；完整TUI→Web→TUI归TUI001-08，不以两Node客户端或headless替代实际界面。
+
+2026-10-06 13:57:22 UTC：TUI01E的queue轻读/暂停/继续已独审进入maind4a2e0a7，当前固定证据不替代完整06/08。后继按已发布能力接聊天取消/决定/steer及真实双端操作；实现槽当前用于COST首纵向片，完整TUI验收保持开放。

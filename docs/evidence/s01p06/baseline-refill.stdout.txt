@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds
+
+ ✓ apps/runner/src/runtime-capacity.test.ts > refills a completed slot before the long poll timer while another attempt remains active 140ms
+ ↓ apps/runner/src/runtime-capacity.test.ts > defaults to one slot and explicitly overlaps four attempts without exceeding the local limit
+ ↓ apps/runner/src/runtime-capacity.test.ts > honors a lower center capacity and isolates one adapter failure from other slots
+ ↓ apps/runner/src/runtime-capacity.test.ts > cancels only the requested slot while the other attempt continues
+ ↓ apps/runner/src/runtime-capacity.test.ts > awaits every started adapter on host abort and on swallowed heartbeat authentication rejection
+ ↓ apps/runner/src/runtime-capacity.test.ts > stops every slot on event storage failure even if the adapter catches the rejected emit
+ ↓ apps/runner/src/runtime-capacity.test.ts > persists an unknown claim, lets a known slot finish, and refuses another claim after restart
+ ↓ apps/runner/src/runtime-capacity.test.ts > does not send a claim when its durable intent cannot be saved
+ ↓ apps/runner/src/runtime-capacity.test.ts > never replays an active outbox while another slot is being admitted
+ ↓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 0 before admission
+ ↓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 17 before admission
+ ↓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 1.5 before admission
+ ↓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit NaN before admission
+ ↓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit null before admission
+ ↓ apps/runner/src/runtime-capacity.test.ts > rejects an invalid local slot limit 4 before admission
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 1 with a local four-slot pool
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 4 with a local four-slot pool
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP preserves native-session exclusion across overlapping local slots
+ ↓ apps/runner/src/runtime-capacity.test.ts > real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle
+ ↓ apps/runner/src/runtime-capacity.test.ts > preserves authentication failure before quiescent events recovery can swallow it
+ ↓ apps/runner/src/runtime-capacity.test.ts > preserves authentication failure before quiescent final-status recovery can swallow it
+ ↓ apps/runner/src/runtime-capacity.test.ts > settles all slots when final submission converts an authentication failure to FinalizationUnknown
+ ↓ apps/runner/src/runtime-capacity.test.ts > settles all slots when a goal tool consumer catches its own authorization rejection
+ ↓ apps/runner/src/runtime-capacity.test.ts > keeps a goal permission denial local while a second known attempt continues
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 23 skipped (24)
+   Start at  06:24:40
+   Duration  1.37s (transform 526ms, setup 0ms, import 1.13s, tests 140ms, environment 0ms)
+

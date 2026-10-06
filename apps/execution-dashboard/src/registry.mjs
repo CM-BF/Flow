@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['COST01A', '有来源的执行用量说明', '工作线', 'cost-usage-readout', 'cost01a-usage-readout'],
+  ['S01P06', '执行等待与资源释放', '工作线', 'runner-wait-bounds', 's01p06-runner-wait'],
+  ['O13', '从目标到计划与文本交付', '工作线', 'continuous-goal-journey', 'o13-continuous-goal-journey'],
   ['TUI01E', '终端队列控制与断线续接', '工作线', 'tui-queue-controls', 'tui01e-queue-controls'],
   ['WPF-CONNECTION01', '刷新后恢复中心连接', '工作线', 'browser-connection-session', 'wpf-connection-session'],
   ['S01P05', '执行事件状态写入优化', '工作线', 'event-state-persistence', 's01p05-event-state'],

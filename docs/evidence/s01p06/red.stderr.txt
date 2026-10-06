@@ -1,0 +1,26 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/attempt-wakeup.test.ts > keeps completion subscriptions bounded over 32 polling ticks with two pending attempts
+AssertionError: expected [ 32, 32 ] to deeply equal [ 1, 1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1,
++   32,
++   32,
+  ]
+
+ ❯ apps/runner/src/attempt-wakeup.test.ts:14:77
+     12|     await vi.advanceTimersByTimeAsync(5); await waiting;
+     13|   }
+     14|   expect(subscriptions.map(subscription => subscription.mock.calls.len…
+       |                                                                             ^
+     15| });
+     16| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,115 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls
+
+ ❯ packages/interaction/src/queue-control/controller.test.ts (12 tests | 3 failed | 9 skipped) 14ms
+   ↓ queue pause uses the observed revision and the one durable intent before dispatch
+   ↓ unknown malformed ACK survives restart and explicit recover reuses the original key/body
+   ↓ deterministic CAS rejection keeps draft, refreshes queue and never retries with a new version
+   ↓ resume persists observed task identity and ignores unexpected unsigned user fields
+   ↓ old center capability false and unrelated queue pages fail closed
+   ↓ a queue ACK with an impossible revision remains unknown and keeps its durable request
+   ↓ a resume ACK without promotion must retain the frozen task identity
+   ↓ only twenty bounded previews are retained and unsolicited item bodies are omitted
+   ↓ disconnect drops a late queue read without installing it in the new epoch
+   × a late old-page poll response cannot replace or disconnect the selected next page 11ms
+   × a late old-page poll error cannot replace or disconnect the selected next page 1ms
+   × a poll awaiting conversation metadata cannot start an old-page read during an explicit next-page selection 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/queue-control/controller.test.ts > a late old-page poll response cannot replace or disconnect the selected next page
+AssertionError: expected { view: 'queue', …(14) } to match object { Object (connected, draft, ...) }
+(16 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -7,19 +7,19 @@
+      "currentTurn": null,
+      "items": [
+        {
+          "conversationId": "bdd577c9-e0dd-41ca-854a-253623896cee",
+          "createdAt": "2026-10-06T00:00:00Z",
+-         "id": "92432b51-3cb5-4761-9692-2bdeef7f447c",
+-         "preview": "page ending 40",
++         "id": "494496e0-2f3a-444f-aa88-13efce23810d",
++         "preview": "page ending 20",
+          "promoted": null,
+-         "sequence": 40,
++         "sequence": 20,
+          "state": "waiting",
+          "truncated": false,
+          "updatedAt": "2026-10-06T00:00:00Z",
+        },
+      ],
+-     "nextCursor": 40,
++     "nextCursor": 20,
+      "paused": false,
+      "queueRevision": 60,
+    },
+  }
+
+ ❯ packages/interaction/src/queue-control/controller.test.ts:140:35
+    138|   expect((await f.controller.input('/queue next')).code).toBe('QUEUE')…
+    139|   settle(); await poll;
+    140|   expect(f.controller.snapshot()).toMatchObject({ connected: true, dra…
+       |                                   ^
+    141|   expect((await f.controller.input('/queue next')).code).toBe('QUEUE');
+    142|   expect(requested).toEqual([0, 0, 20, 40]); expect(f.requests).toHave…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  packages/interaction/src/queue-control/controller.test.ts > a late old-page poll error cannot replace or disconnect the selected next page
+AssertionError: expected { view: 'queue', …(14) } to match object { Object (connected, draft, ...) }
+(16 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "connected": true,
++   "connected": false,
+    "draft": "保留草稿",
+    "queue": {
+      "blocked": null,
+      "conversationId": "bc2c3b6b-8740-4f69-a6bc-2fb7f53674cf",
+      "currentTurn": null,
+
+ ❯ packages/interaction/src/queue-control/controller.test.ts:140:35
+    138|   expect((await f.controller.input('/queue next')).code).toBe('QUEUE')…
+    139|   settle(); await poll;
+    140|   expect(f.controller.snapshot()).toMatchObject({ connected: true, dra…
+       |                                   ^
+    141|   expect((await f.controller.input('/queue next')).code).toBe('QUEUE');
+    142|   expect(requested).toEqual([0, 0, 20, 40]); expect(f.requests).toHave…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  packages/interaction/src/queue-control/controller.test.ts > a poll awaiting conversation metadata cannot start an old-page read during an explicit next-page selection
+AssertionError: expected [ 20, +0 ] to deeply equal [ 20 ]
+
+- Expected
++ Received
+
+  [
+    20,
++   0,
+  ]
+
+ ❯ packages/interaction/src/queue-control/controller.test.ts:160:21
+    158|   const next = f.controller.input('/queue next'); await nextStarted;
+    159|   releasePoll(); await poll; releaseNext(); expect((await next).code).…
+    160|   expect(requested).toEqual([20]); expect(f.controller.snapshot().queu…
+       |                     ^
+    161| });
+    162| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 9 skipped (12)
+   Start at  06:49:06
+   Duration  421ms (transform 188ms, setup 0ms, import 314ms, tests 14ms, environment 0ms)
+

@@ -85,6 +85,30 @@ async function peer(total = 8, capacity = 16) {
 }
 function adapter(run: HarnessAdapter['run']): HarnessAdapter { return { name: 'fixture', version: '1', run }; }
 
+it('refills a completed slot before the long poll timer while another attempt remains active', async () => {
+  const api = await peer(3, 2), release = deferred(), replacement = deferred();
+  const entered = new Set<string>();
+  const running = api.start(adapter(async context => {
+    const identity = context.executionIdentity;
+    if (!identity) throw new Error('Runner execution identity missing.');
+    entered.add(identity.taskId);
+    if (identity.taskId === 'task-1') await Promise.race([release.promise, held(context)]);
+    else { if (identity.taskId === 'task-3') replacement.resolve(); await held(context); }
+  }), { maxConcurrentAttempts: 2, pollIntervalMs: 10_000, requestTimeoutMs: 1000 });
+  try {
+    await eventually(() => entered.size === 2);
+    release.resolve();
+    const deadline = new AbortController();
+    try {
+      await Promise.race([replacement.promise, sleep(2000, undefined, { signal: deadline.signal }).then(() => { throw new Error('Slot was not refilled before polling.'); }, () => undefined)]);
+    } finally { deadline.abort(); }
+    expect(api.outcomes.get('attempt-1')).toBe('succeeded');
+    expect(entered).toEqual(new Set(['task-1', 'task-2', 'task-3']));
+    expect(api.running).toEqual(new Set(['attempt-2', 'attempt-3']));
+    expect(api.claims).toBe(3); expect(api.peak).toBe(2);
+  } finally { release.resolve(); running.shutdown.abort(); await running.promise; }
+});
+
 it('defaults to one slot and explicitly overlaps four attempts without exceeding the local limit', async () => {
   const serial = await peer(); const release = deferred(); let active = 0, peak = 0;
   const run = async (context: HarnessContext) => { active++; peak = Math.max(peak, active); try { await Promise.race([release.promise, held(context)]); } finally { active--; } };

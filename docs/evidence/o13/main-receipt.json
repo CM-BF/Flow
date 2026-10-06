@@ -1,0 +1,111 @@
+{
+  "observedAt": "2026-10-06 14:06:12 UTC",
+  "main": "5dbabadc7dda02da558f48505677eddbc9c83fb5",
+  "sourceTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+  "deliveryMetadata": "62b589b68843b9925f41639186f3255a0a665b0b",
+  "sourceComparisons": [
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 5853,
+      "sha256": "2219151efc4b1daa1f76c40a2ca770c9dd587b4844914bfe7c92923ffd9f8160",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/index.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 3595,
+      "sha256": "0819ff52946f1281c5fcb0e02d4ed5c80a17bb4a88cd7e6207c8ea9174512726",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/store.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 10236,
+      "sha256": "68932da87a4edf306167782954498370efb3d3eb5fb3c0d4377d64087e139ecc",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/journey.test.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 6617,
+      "sha256": "8a15a9be61a1c4a2785e6b49b93a94c46c78a0d5cb873168ddcafea3bab2dd88",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 3194,
+      "sha256": "5f9f7f0ca5f8494333a3b656514b3289b9c0100e28909db5908cfd7fd15ad530",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 7354,
+      "sha256": "17fadb855b12a59e9c134f748f2cf0cb8400139fc66bee9ade5f2caf69d77e99",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 12626,
+      "sha256": "fa77a60fee9c06513969ffa634a6e41832687157770f9894069ea7f902256741",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/interaction/src/goal/reads.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 9092,
+      "sha256": "541b06bab98c6bff10b6db52379d151fc26027ff960a19e81b9360fb51c1a99f",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/interaction/src/goal/entry.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 5709,
+      "sha256": "09aa857883c484849a4367ea2e75ac33c6d31fc750238a70a23cf937272ee7d0",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/interaction/src/goal/entry.test.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 12396,
+      "sha256": "4420fc85e043d57f8a2c945c6b0ade8be0cca2358145f9c9be2a29ac81375c06",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/interaction/src/goal/native-journey.test.ts",
+      "approvedTarget": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+      "bytes": 19786,
+      "sha256": "3f9fced48abe3bad7833f677313dc5fd6f8def71aae650f2fc21efb5fdcf5793",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "approvedTarget": "98e5b2012ffb57b357adcfa7ce68b25608ed631c",
+      "bytes": 48283,
+      "sha256": "ce63ac3f233ff82d2cc9ab77c71b5b01f452cd0bd3e0a87b0bb625933f095f62",
+      "matchesApprovedTarget": true
+    },
+    {
+      "path": "packages/client/src/goal-graph-runs.test.ts",
+      "approvedTarget": "98e5b2012ffb57b357adcfa7ce68b25608ed631c",
+      "bytes": 6732,
+      "sha256": "781772b70dca8ae19adc00bc3be0d3b263273c1d0eeb4d922c26a8e22e36fd72",
+      "matchesApprovedTarget": true
+    }
+  ],
+  "integrationEvidence": "5dbabadc7dda02da558f48505677eddbc9c83fb5:docs/evidence/i02/o13-s01p06-integration.json",
+  "checksFromLead": {
+    "selected": 1,
+    "unselected": 1,
+    "rootTypes": 0,
+    "webTypes": 0,
+    "ownedDatabaseRemaining": [],
+    "providerCalls": 0
+  },
+  "ownerReruns": 0,
+  "sharedClientBoundary": "Main client equals approved F01 98e whole blob. O13 test tree cherry-pick onto older base has a different whole index; no false equality to that index is claimed.",
+  "limits": "Injected queries, explicit input/execution, independent semantic acceptance; autonomous progression and actual model/UI remain successors."
+}

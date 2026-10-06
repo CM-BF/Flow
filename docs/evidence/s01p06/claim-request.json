@@ -1,0 +1,19 @@
+{
+  "requestId": "30d51592-5728-464b-9d88-42880018843c",
+  "actor": {
+    "lead": "mika",
+    "worker": "status_read"
+  },
+  "taskId": "S01P06",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds",
+  "branch": "codex/runner-wait-bounds",
+  "scope": [
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/attempt-wakeup.ts",
+    "apps/runner/src/attempt-wakeup.test.ts",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "docs/evidence/s01p06",
+    "plans/s01p06-runner-wait"
+  ]
+}

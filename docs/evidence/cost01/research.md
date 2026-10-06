@@ -19,3 +19,9 @@ COST001-02后继可在空槽做一个0模型结构toy：固定合成资料与不
 
 
 可复用的既有真实回归输入：main的`docs/evidence/r02/native-results.json`中runs[first/resume/control]已有保存adapter usage事件。GO只读核到first Sonnet input/output/cacheRead/cacheWrite为4/142/1769/1983，resume累计为6/163/1769/3213；Haiku首轮与resume均983/11/cache0。作为COST001-02的来源/辅助覆盖/基线候选，不重启R02或读其prompt，不冒称完整原始SDK wire或完整费用来源。不能按模型名自动归为协调成本，也不能把两累计值相加；resume baseline=unknown继续保持，后续按固定sample身份及计数段验证。
+
+## 2026-10-06 13:56:52 UTC 已保存原生样本复核与首片输入
+
+只读固定maind4a2e0a7中的O08/O10结果，仅取task.usage与worker.result.modelUsage，未读prompt/凭据、未新增调用。O08：legacy input1217/output838、SDK估算0.0318802、incomplete=false；modelUsage另有cacheRead10771/cacheCreation5059。O10：legacy input1403/output272、SDK估算0.0148666、incomplete=false；另有cacheRead2298/cacheCreation2600。这说明旧incomplete并不声明缓存分解完备；旧字段与原回执保留。辅助模型有独立行，但不能仅按模型名赋予协调阶段。
+
+固定来源：`docs/evidence/o08/native-20261006-071420.json`和`docs/evidence/o10/native-0834/result.json`；见本目录usage-observation.json的来源hash与最小字段。GO本轮复核的[官方cost-tracking](https://code.claude.com/docs/en/agent-sdk/cost-tracking)区分main-loop usage与modelUsage全树、resume计数段及错误零值；这是新文档研究输入，采用必须比对本地0.3.290声明/保存事实，不能覆盖其历史未知baseline。TTL随订阅/credit变化仅候选，不转化为当前账单或节省结论。
