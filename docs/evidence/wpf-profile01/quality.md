@@ -21,3 +21,6 @@
 实际13局部tests+typecheck+5HTTP浏览器+隔离生产编译已过。未增加cmdk/状态库或修改原Thread/App。首安装`pnpm install --frozen-lockfile --ignore-scripts`复用449包，根锁未变；@flow/client/contracts解析到本树packages。
 
 本地技能文件SHA256：find-skills c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f；codebase-design 2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2；clean-code 3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317；AI Elements model-selector reference b483b684512abf2dea82e5867f0a575f7124531925c83a9eefe99e12ceaf1e1b。未重新安装/更新技能。
+
+
+04:46 UTC review补充停点：GoalOwner明确未来goal/tools类profile不能当普通chat选项，正式合同尚未冻结。未猜测新字段，只给未知占位access做消费者测试：合法none/configured-readonly精确保持，未知由共享schema拒绝、整页原子失败。a28仅增1测试，14/14通过；production与b2零diff。界面与bundle沿用b2证据，不无关重测。缺点保留：未知access导致整页错误而非逐项分类；未来受控合同另片。

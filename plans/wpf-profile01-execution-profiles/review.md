@@ -4,7 +4,7 @@
 
 ## 固定目标
 
-- implementation target：`b2b2844414172cedf8cdc663e97a0b46c6905202`
+- implementation target：`a28c78cc3a1ac8557f7fd95afa074c4971128246`
 - base：`4e0289f29ffa48c6c49003837d4520f57c22b6b0`
 - worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles`，branch `codex/web-execution-profiles`。
 - 7实现/测试文件见[status](status.md)；后续本批metadata不改变上述target。
@@ -15,8 +15,13 @@
 
 ## 作者检查
 
-13局部 tests、Web typecheck、5组真实FlowClient HTTP浏览器与隔离fixture生产bundle通过；截图已目视。详见[报告](../../docs/evidence/wpf-profile01/README.md)。最初fixture HTML/textarea名称失败已修并重跑。
+14局部 tests；b2生产零差异，复用其Web typecheck、5组真实FlowClient HTTP浏览器与隔离fixture生产bundle通过；截图已目视。详见[报告](../../docs/evidence/wpf-profile01/README.md)。最初fixture HTML/textarea名称失败已修并重跑。
 
 ## 独立检查 / Findings
 
 未执行；无独立结论。此模块不包含 App 集成、真实模型/中心/runner能力或任意每 turn 配置切换；独立测试通过不能覆盖这些范围。
+
+
+## 复审前增补（04:46 UTC）
+
+root已对b2源独立执行13局部tests PASS（04:44:18，219ms）及CUA分页/展开details不改选择/明确选择/Escape焦点与草稿/pending完整pin。GoalOwner要求新增未知access拒绝的消费者回归，owner在a28仅增1测试，生产4文件与b2 diff0；14/14作者PASS。root新target复审尚未返回，整体仍NOT_STARTED，以上不先转完整approval。

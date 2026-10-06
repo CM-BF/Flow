@@ -14,3 +14,5 @@
 消费接缝确认（2026-10-06 04:41 UTC）：Picker 无 mount 请求，初次 catalog.refresh 由调用者明确执行；locked 无目录依赖。刷新成功只加载第一页，选择项不在 loaded profiles 只表示“尚未在已加载页确认”，不能推全目录删除。消费端新 configured CREATE 应同步核 loaded、非 stale、所选 ref 在当前已读页完整确认；旧 default 不冒充在线。未知 CREATE ACK 的相同 key/body retry 绕开目录门禁；已知 CREATE 成功后即使首 turn 失败仍锁 created。若现 outbox 再次 schema.parse，解析会产生新对象，必须由接入 owner 再深冻 executionProfile/requested；本 helper 不保证跨后续 parse 的对象仍冻结。
 
 `canLoadMore` 表示当前可执行分页请求：refresh在途/失败后为false（需重试refresh），append失败保留cursor且true可原页重试，防止看似可点但无操作的分页按钮。
+
+当前消费者只接受固定4e合同的 `none` / `configured-readonly` access。未知或不支持的 access 由共享schema拒绝，绝不激活；当前catalog按整页原子验证，包含未知access的页会整体错误并保留上一份已确认数据（若有），不会静默过滤出可用部分。后继 goal/tools 类profile的正式区分字段尚未冻结；此模块不预制字段、不将其当普通chat可选项。未来正式合同的过滤/分类消费须另行受控实现。
