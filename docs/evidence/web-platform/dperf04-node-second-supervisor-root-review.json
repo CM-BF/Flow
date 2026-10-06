@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T16:57:04.100356+00:00",
+  "state": "APPROVED_SUPERVISOR_DELTA_NOT_RUN",
+  "reviewer": "root",
+  "previousReview": "/tmp/root-dperf04-node-supervisor-review.json",
+  "files": {
+    "run.py": {
+      "bytes": 13617,
+      "sha256": "37c6f02aa5f6947e43549c2a79836852bbf1f1e018e95345417be09926cc7440"
+    },
+    "sandbox.sb": {
+      "bytes": 313,
+      "sha256": "5d4e7295e1780c75f46b5bf340226c85cb6deb8fc2f377f4bfa57e7ba83389d6"
+    },
+    "first-to-second.diff": {
+      "bytes": 3819,
+      "sha256": "2c34e81f534b1e20dc5ca62c33bd5e3e2ae74df02584a4ac84787061760671a6"
+    }
+  },
+  "checks": [
+    "Actual supplied diff and corrected profile read. Previous runtime1632 is required in gate/binding; total28.368s and5s cleanup enforced.",
+    "Report computes cumulative previous+elapsed and30s remainder; PASS requires both per-run and cumulative limits. Failure report retains all budget fields.",
+    "New owned directory/profile scratch; old raw untouched; original single-use gate, precise hashes, loopback restriction, own PGID cleanup, tmp/free/raw limits unchanged."
+  ],
+  "findings": [],
+  "scope": "Source-binding pending; final Host test repair and exact new source/metadata hashes plus fresh admission still required. No gate, free sample or execution by root.",
+  "limits": [
+    "Original loopback rule is not a kernel own-port restriction; fixed test source owns fixture address.",
+    "Sampled tmp/free limits are not hard physical quotas or peak guarantees.",
+    "Permitted small HTTP check does not grant PG/Chrome or use of shared service endpoints."
+  ]
+}

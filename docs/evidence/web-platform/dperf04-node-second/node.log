@@ -1,0 +1,60 @@
+TAP version 13
+# Subtest: summary/detail reads preserve declared vs observed boundaries
+    # Subtest: live summary is all declarations with zero Git, proof, documents or ledger work
+    ok 1 - live summary is all declarations with zero Git, proof, documents or ledger work
+      ---
+      duration_ms: 11.855417
+      type: 'test'
+      ...
+    # Subtest: source errors, bounded declarations and frozen fallback remain explicit
+    ok 2 - source errors, bounded declarations and frozen fallback remain explicit
+      ---
+      duration_ms: 50.475541
+      type: 'test'
+      ...
+    # Subtest: summary HTTP finishes while assignment observation is unresolved; no completed response cache
+    ok 3 - summary HTTP finishes while assignment observation is unresolved; no completed response cache
+      ---
+      duration_ms: 14.7765
+      type: 'test'
+      ...
+    # Subtest: selected detail observes only task+main, fresh dirty/deleted/main changes and legacy shape
+    ok 4 - selected detail observes only task+main, fresh dirty/deleted/main changes and legacy shape
+      ---
+      duration_ms: 1086.127916
+      type: 'test'
+      ...
+    # Subtest: status changing during detail is not a current proof
+    ok 5 - status changing during detail is not a current proof
+      ---
+      duration_ms: 187.143833
+      type: 'test'
+      ...
+    # Subtest: assignment matching preserves all claims, stale ownership and unknown failures
+    ok 6 - assignment matching preserves all claims, stale ownership and unknown failures
+      ---
+      duration_ms: 0.344125
+      type: 'test'
+      ...
+    # Subtest: server read-only boundary, selected detail coalescing, documents and snapshot compatibility
+    ok 7 - server read-only boundary, selected detail coalescing, documents and snapshot compatibility
+      ---
+      duration_ms: 555.644458
+      type: 'test'
+      ...
+    1..7
+ok 1 - summary/detail reads preserve declared vs observed boundaries
+  ---
+  duration_ms: 2124.907708
+  type: 'test'
+  ...
+# {"repositories":2,"tasks":2,"pg":0,"registry":"synthetic only"}
+1..1
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2187.708416

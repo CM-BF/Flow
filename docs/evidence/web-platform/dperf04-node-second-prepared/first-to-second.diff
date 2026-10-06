@@ -1,0 +1,54 @@
+--- first/run.py
++++ second/run.py
+@@ -88,7 +88,9 @@
+     assert gate['sourceHead'] == binding['head']
+     assert gate['implementation'] == binding['implementation']
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+-    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 0
++    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 1632
++    assert binding['limits']['totalSeconds'] == (30000 - binding['previousRuntimeMs']) / 1000
++    assert binding['limits']['cleanupReserveSeconds'] == 5
+     assert gate['limits'] == binding['limits']
+     assert not SCRATCH.exists() and not RESULT.exists() and not LOG.exists()
+     assert not (BASE / 'consumed-gate.json').exists(), 'This runner has already consumed its gate'
+@@ -178,7 +180,7 @@
+               'bindingSha256': digest(BINDING), 'runnerSha256': digest(__file__),
+               'sandboxSha256': digest(PROFILE), 'limits': limits,
+               'kind': 'one Node test file; one owned loopback HTTP server; two tiny Git repositories; synthetic ledger; no PG/browser/external network',
+-              'samples': samples, 'previousRuntimeMs': 0}
++              'samples': samples, 'previousRuntimeMs': binding['previousRuntimeMs']}
+     # Atomic consumption prevents retries even when a later admission/source check fails.
+     with (BASE / 'consumed-gate.json').open('x') as target:
+         target.write(json.dumps(gate, indent=2) + '\n')
+@@ -248,8 +250,8 @@
+         report['logBytes'] = log_bytes
+         report['droppedObservedLogBytes'] = dropped_bytes
+         report['elapsedMs'] = round((time.monotonic() - started) * 1000)
+-        report['cumulativeMs'] = report['elapsedMs']
+-        report['remainingMs'] = max(0, 30000 - report['elapsedMs'])
++        report['cumulativeMs'] = binding['previousRuntimeMs'] + report['elapsedMs']
++        report['remainingMs'] = max(0, 30000 - report['cumulativeMs'])
+         report['finishedAt'] = utc_now()
+         text = LOG.read_text(errors='replace') if LOG.exists() else ''
+         passed = re.search(r'^# pass (\d+)\s*$', text, re.MULTILINE)
+@@ -258,7 +260,8 @@
+                          'failed': int(failed[1]) if failed else None,
+                          'expectedTests': binding['expectedTestCount']}
+         okay = (not reason and report['exitCode'] == 0 and not cleanup_errors
+-                and report['elapsedMs'] <= 30000 and report['tap']['passed'] == binding['expectedTestCount']
++                and report['elapsedMs'] <= round(limits['totalSeconds'] * 1000)
++                and report['cumulativeMs'] <= 30000 and report['tap']['passed'] == binding['expectedTestCount']
+                 and report['tap']['failed'] == 0 and dropped_bytes == 0)
+         report['state'] = 'PASS' if okay else reason or 'FAIL'
+         report['sourceMeaning'] = 'A successful bounded fixture does not establish production4320 latency, realPG assignments or browser behavior.'
+@@ -266,7 +269,9 @@
+         if len(encoded) > limits['finalReportReserveBytes'] or static_raw_bytes + log_bytes + len(encoded) > limits['rawBytes']:
+             report = {'state': 'REPORT_LIMIT_FAILURE', 'cleanup': report['cleanup'],
+                       'elapsedMs': report['elapsedMs'], 'logBytes': log_bytes,
+-                      'fullReportBytes': len(encoded), 'sourceHead': binding['head']}
++                      'fullReportBytes': len(encoded), 'sourceHead': binding['head'],
++                      'previousRuntimeMs': report['previousRuntimeMs'],
++                      'cumulativeMs': report['cumulativeMs'], 'remainingMs': report['remainingMs']}
+             encoded = (json.dumps(report, indent=2) + '\n').encode()
+         RESULT.write_bytes(encoded)
+     print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup']}))

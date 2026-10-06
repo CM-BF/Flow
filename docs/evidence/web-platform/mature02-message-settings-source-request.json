@@ -1,0 +1,156 @@
+{
+  "at": "2026-10-06T16:56:40.340473+00:00",
+  "state": "FIXED_PUBLIC_INPUT_AVAILABLE_AWAITING_SOLE_GIT_OWNER_PROVISION",
+  "taskCandidate": "WPF-MESSAGESETTINGS01",
+  "parent": "WPF-MATURE-02",
+  "todo": "WPF-MATURE-02-11",
+  "proposedOwner": "workspace_panels_owner; current agent slot, no spawn",
+  "candidateWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+  "candidateBranch": "codex/web-message-settings",
+  "candidateBase": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+  "baseRationale": "Self-contained immutable C01 controlled source commit with typed public exports. Source-only leaf can use it under Lead/root authorization while domain review/main remain pending. No cherry-pick/copy to shared packages by Web; final integration is leaf scopes only by Lead.",
+  "upstreamMetadata": "a23883fbc595564dcb66e0030b430674b896574e",
+  "upstreamReview": "APPROVED fixed563 by assignment_review16:55:18; fixed metadata5739900142a0ec04f492ccea15ec54e5e6520841; main still NOT_INTEGRATED",
+  "upstreamCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/plans/mature02c01-claude-message-settings-client/status.md",
+  "sourceManifestSha256": "23347f1107af75427b0dd1ca269e4bdc2e31b5744437df761057a4b036f2bca8",
+  "verifiedPublicSources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "6355ed6f114a7b01833a03488ed4b0c59fb9ebd91f88acedffcd4051834bbee5",
+      "bytes": 52725
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "d62739a19e76a0f65effacb34d4e1b0d2d7d5fd90bf32fd2e2bcb1ef79351384",
+      "bytes": 1467
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "bytes": 4857
+    }
+  ],
+  "authorValidationOnly": {
+    "distinct": 86,
+    "new": 19,
+    "existingDirect": 67,
+    "matrix": 82,
+    "readerQueueFollowup": {
+      "passed": 11,
+      "overlap": 9,
+      "new": 2
+    },
+    "previewFix": {
+      "red": 2,
+      "green": 2,
+      "notSelected": 6
+    },
+    "types": "3 focused exit0 rounds; not root",
+    "PG": 0,
+    "provider": 0,
+    "browser": 0,
+    "newInstalls": 0
+  },
+  "scope": [
+    "apps/web/src/execution-profiles/catalog.ts",
+    "apps/web/src/execution-profiles/selection.ts",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.test.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "apps/web/test/message-settings.browser.ts",
+    "plans/wpf-message-settings",
+    "docs/evidence/wpf-message-settings"
+  ],
+  "readiness": {
+    "fixedInputMissing": false,
+    "sourceProvisionMissing": true,
+    "candidatePathExists": false,
+    "candidateBranchExists": false,
+    "ledgerObservedAt": "2026-10-06T16:53:32.439Z",
+    "activeOverlaps": [],
+    "taskIdLedgerMatches": [],
+    "observedOriginMain": "9314c81a9966fefe9bfec759eea4eac6e6f9276a",
+    "registrySearchPaths": [
+      "apps/execution-dashboard/src/registry.mjs"
+    ],
+    "registryNameMatches": [],
+    "leafSourceComparison": [
+      {
+        "path": "apps/web/src/execution-profiles/catalog.ts",
+        "baseSha256": "b4092cd354d9058457eaa531fb35567ddbe16228363720741bd4365932197ec3",
+        "sameAsObservedOriginMain": true
+      },
+      {
+        "path": "apps/web/src/execution-profiles/selection.ts",
+        "baseSha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82",
+        "sameAsObservedOriginMain": true
+      },
+      {
+        "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "baseSha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+        "sameAsObservedOriginMain": true
+      }
+    ],
+    "registrySha256": "a937c9793b8bd5d74370445e6c2d02d73dc5bc9e61cbf71930a7853d49a70c70"
+  },
+  "sourceProvisionRequest": {
+    "operator": "Execution Lead sole Git owner",
+    "base": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+    "branch": "codex/web-message-settings",
+    "sourceOnly": true,
+    "sparseCandidatePatterns": [
+      "AGENTS.md",
+      "plans/AGENTS.md",
+      "package.json",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      "tsconfig.json",
+      "vitest.config.ts",
+      "apps/web",
+      "packages/client",
+      "packages/contracts",
+      "packages/interaction",
+      "docs/evidence/d04/README.md"
+    ],
+    "trackedFileCount": 349,
+    "logicalBytes": 2974184,
+    "fourKiBAllocationEstimate": 3715072,
+    "notPhysicalOrDependencyBudget": true,
+    "requiredReceipt": [
+      "actual fixed HEAD/branch/clean",
+      "exact materialized source closure",
+      "no install/build/runtime",
+      "controlled input provenance preserved"
+    ],
+    "afterReceipt": "Manager verifies base/branch/clean and fresh 8 literal D04 overlap then COMMITTED; only then owner creates canonical and implements. No extra user approval requested.",
+    "authorization": "Root accepted fixed563 controlled-base proposal; Lead sole Git source operator. No new approval or PG wait for source-only leaf; normal provision receipt/fresh claim remains."
+  },
+  "remainingGate": "Lead-controlled source materialization/immutable base receipt and normal fresh D04 take; not generic missing contract or PG validation wait. No self-provision/shared config modification.",
+  "runtime": false,
+  "newClaim": false,
+  "newWorktree": false,
+  "spaceSample": false,
+  "updatedAt": "2026-10-06T16:59:40.410278+00:00",
+  "reviewMetadata": "5739900142a0ec04f492ccea15ec54e5e6520841",
+  "publicAlignment": "mature02-web-leaf-563b-public-alignment.md",
+  "fixedReviewSources": {
+    "plans/mature02c01-claude-message-settings-client/status.md": {
+      "sha256": "27b4835365c8cc8b35e3ce797ac576594cd4ae15bc7453324a13ed102de0f85d",
+      "bytes": 3500
+    },
+    "plans/mature02c01-claude-message-settings-client/review.md": {
+      "sha256": "4ede13be9cd715a4a687d076cc12beeed4b963478790a5464472e9d3f1086a6a",
+      "bytes": 2074
+    },
+    "docs/evidence/mature02c01/independent-review.json": {
+      "sha256": "0732a01023745c4ee58efa8b24d22cab43b419e0491cfefbbdd336fb93d0cb36",
+      "bytes": 7115
+    }
+  },
+  "extensibilityRequirement": {
+    "source": "mature02-picker-extensibility-root.json",
+    "mapping": "Original MATURE02/TODO-11, U04, REQ22/23",
+    "constraint": "Preserve existing details(navigate)/close-focus; new controlled picker equivalent owner-supplied presentation-only callback; no new host/registry/permissions/HTTP/draft or scope. Future fixture assertion in original8."
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-06T16:59:40.410278+00:00",
+  "archives": [
+    {
+      "source": "/tmp/mature02-web-leaf-563b-public-alignment.md",
+      "archive": "mature02-web-leaf-563b-public-alignment.md",
+      "bytes": 4972,
+      "sha256": "baaef13441ddf0cdf3d2f15fc881b6c21fcbd857c3cda99f062307a424db7550"
+    },
+    {
+      "source": "/tmp/root-release03-9927-source-review.json",
+      "archive": "release03-9927-root-review.json",
+      "bytes": 2423,
+      "sha256": "bf6aa0cd6dd342ffe437524ae9a32c0e5b7234072bb180b77e8c8c9ef6e27ba5"
+    },
+    {
+      "source": "/tmp/release03-9927-source-rereview.md",
+      "archive": "release03-9927-peer-review.md",
+      "bytes": 5405,
+      "sha256": "d3e9cb59dbbae3b019dee4de2c6356510c0a7a36281fa2191f3f94b496502502"
+    },
+    {
+      "source": "/tmp/root-dperf04-second-supervisor-review.json",
+      "archive": "dperf04-node-second-supervisor-root-review.json",
+      "bytes": 1597,
+      "sha256": "f7765dd44028123243ac61dd3be4397bd796dc6cbd9b6674bc0bf528c505149c"
+    },
+    {
+      "source": "/tmp/root-dperf04-abd2-host-source-review.json",
+      "archive": "dperf04-abd2-host-root-review.json",
+      "bytes": 1576,
+      "sha256": "b3a98ed47f33c6d48afdf5cd12d3d308b1da9369f08699ec5ba3840610c798c1"
+    },
+    {
+      "source": "/tmp/dperf04-abd2-host-source-review.md",
+      "archive": "dperf04-abd2-host-peer-review.md",
+      "bytes": 3518,
+      "sha256": "ec3bbd729b2517832406345941fb9e6947f89f0d97cb1b3558f8da95cc5097ec"
+    },
+    {
+      "source": "/private/tmp/dperf04-node-second-l86ua318/run.py",
+      "archive": "dperf04-node-second-prepared/run.py",
+      "bytes": 13617,
+      "sha256": "37c6f02aa5f6947e43549c2a79836852bbf1f1e018e95345417be09926cc7440"
+    },
+    {
+      "source": "/private/tmp/dperf04-node-second-l86ua318/sandbox.sb",
+      "archive": "dperf04-node-second-prepared/sandbox.sb",
+      "bytes": 313,
+      "sha256": "5d4e7295e1780c75f46b5bf340226c85cb6deb8fc2f377f4bfa57e7ba83389d6"
+    },
+    {
+      "source": "/private/tmp/dperf04-node-second-l86ua318/binding.json",
+      "archive": "dperf04-node-second-prepared/binding.json",
+      "bytes": 3945,
+      "sha256": "fbb213dfdcb2d5f0e2e8c284d177e06b2f317448286e9600d89355eea7e9db01"
+    },
+    {
+      "source": "/private/tmp/dperf04-node-second-l86ua318/first-to-second.diff",
+      "archive": "dperf04-node-second-prepared/first-to-second.diff",
+      "bytes": 3819,
+      "sha256": "2c34e81f534b1e20dc5ca62c33bd5e3e2ae74df02584a4ac84787061760671a6"
+    },
+    {
+      "source": "/private/tmp/dperf04-node-second-l86ua318/preparation.json",
+      "archive": "dperf04-node-second-prepared/preparation.json",
+      "bytes": 1609,
+      "sha256": "5770bba926079ac1a3c5dbcc1495309dbe5c7fcd95c0c835eec11d22ee64ede5"
+    },
+    {
+      "source": "/private/tmp/dperf04-node-second-l86ua318/source-binding-abd2.json",
+      "archive": "dperf04-node-second-prepared/source-binding-abd2.json",
+      "bytes": 3171,
+      "sha256": "6242fce2de3354652d63c69e94b49c0125bc6990d16eebc0da629ddefef882c9"
+    },
+    {
+      "source": "/tmp/root-dperf04-node-second-evidence-review.json",
+      "archive": "dperf04-node-second-root-review.json",
+      "bytes": 2795,
+      "sha256": "98bdcbaa658a1887d3122a4c7de46ffb78d957fff660eda4f56716ac70518f58"
+    },
+    {
+      "source": "/tmp/root-mature02-picker-extensibility-65659028.json",
+      "archive": "mature02-picker-extensibility-root.json",
+      "bytes": 1686,
+      "sha256": "06b1cba90a221b20353f88b3628083790889656c9aafde5ca3a8a1fab838c94f"
+    }
+  ],
+  "method": "Reused local find-skills/clean-code/codebase-design; precise source bindings, one canonical owner, source/runtime/provision distinct",
+  "findingsCorrected": [
+    "M02 fixed input is now available and approved; remaining missingprovision rather than missingcontract",
+    "Source-only9927/abd2 reviews do not change original failed runtime evidence or CORE window",
+    "Second Node cumulative1632 included; old raw remains untouched",
+    "Current DPERF summary now second-run scopedPASS while retaining first failedraw; no broad browser/performance approval"
+  ],
+  "runtimeByThisArchive": false,
+  "newSpaceSamplingByThisArchive": false,
+  "claim": "management632a7149v3",
+  "validation": {
+    "parsers": [
+      {
+        "tree": "web-platform-management",
+        "path": "plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "tree": "dashboard-summary-detail",
+        "path": "plans/wpf-dperf04-summary-detail/status.md",
+        "id": "WPF-DPERF04",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "files": 29,
+    "JSONValid": 18,
+    "introducedLocalLinks": 19,
+    "scopeErrors": 0,
+    "stagedDiffCheck": 0
+  },
+  "runtimeSeparateEvidence": "dperf04-node-second-intake.json"
+}

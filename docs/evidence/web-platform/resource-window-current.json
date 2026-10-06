@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T16:54:37.680739+00:00",
+  "recordedAt": "2026-10-06T17:00:24.519258+00:00",
   "state": "MIKA_CORE_PG_WINDOW_RELEASE_SOURCE_REPAIR_ONLY",
   "groupWindowOwnership": "Mika CORE8 groups after Lead accepted RELEASE all cleanup/return. This group has no PG/Chrome runtime window.",
   "release03": {
@@ -55,7 +55,14 @@
     },
     "run": "all-20261006-164711-15b54e",
     "evidenceReview": "release03-all-164711-root-review.json",
-    "reuse": "A facts accepted from all12; explicit adapter/source review and externally pinned all12 required before separate fresh B-only admission."
+    "reuse": "A facts accepted from all12; explicit adapter/source review and externally pinned all12 required before separate fresh B-only admission.",
+    "sourceRepair": {
+      "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+      "metadata": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
+      "review": "APPROVED_SOURCE_SCOPED root+peer",
+      "runtime": "NOT_RUN",
+      "evidence": "release03-9927-root-review.json"
+    }
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",
@@ -82,17 +89,31 @@
     "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
     "version": 1,
     "scopeCount": 9,
-    "mode": "FAILED_NODE_CLEANED",
-    "runtime": "6 leafpass/1 leaffail; TAP6/2 inclparent.1632ms, remaining28368; ownPGID/scratchclosed",
+    "mode": "NODE_SECOND_PASS_CLEANED",
+    "runtime": "7 leaves+parent8 PASS;2318ms/cumulative3950/remaining26050; group+scratch absent",
     "firstCanonical": "704894e97f573f7683e1c3fa37020fc0d9a5205c",
     "sourceReady": "dperf04-source-ready.json",
     "registration": "REGISTERED",
     "registrationCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
     "registrationEvidence": "dperf04-registration-656-intake.json",
-    "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
-    "actualHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
-    "evidence": "dperf04-node-first-intake.json",
-    "browser": "NOT_RUN"
+    "implementation": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+    "actualHead": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+    "evidence": "dperf04-node-second-intake.json",
+    "browser": "NOT_RUN",
+    "nextSource": {
+      "implementation": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+      "metadata": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+      "review": "APPROVED_SOURCE_SCOPED root+peer",
+      "budgetMs": 28368,
+      "supervisor": "dperf04-node-second-prepared/preparation.json",
+      "runtime": "Executed once, PASS; browserNOT_RUN"
+    },
+    "firstRuntime": {
+      "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
+      "actualHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+      "runtime": "6 leafpass/1 leaffail; TAP6/2 inclparent.1632ms, remaining28368; ownPGID/scratchclosed",
+      "evidence": "dperf04-node-first-intake.json"
+    }
   },
   "leadEvents": [
     {
@@ -123,6 +144,10 @@
     {
       "source": "Lead via root, current-turn confirmation",
       "coordination": "Accepted all cleanup; nextPG Mika CORE8, start+128MiB/120s+80s; no concurrent ownPG. main564 docs/registry only, personal unchanged."
+    },
+    {
+      "source": "Lead via root16:58",
+      "coordination": "CORE initial0/8 due4missingSQL, cleaned; exact28SQL closure fixed; oneCORE-PG-RETRY-20261006-1658 under+128MiB/200s. PG remainsCORE, no B/O14 overlap; <=8MiB pureHTTP allowed separately."
     }
   ],
   "limits": [

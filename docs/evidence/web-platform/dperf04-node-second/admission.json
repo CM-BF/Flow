@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-06T16:58:37.049881+00:00",
+  "state": "ADMITTED",
+  "freeBytes": 1194041344,
+  "startBytes": 1090519040,
+  "stopBytes": 1082130432,
+  "resourceSamples": 1,
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "docs/evidence/wpf-dperf04",
+      "plans/wpf-dperf04-summary-detail"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-summary-detail",
+    "origin": "new",
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner",
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "createdAt": "2026-10-06T16:10:21.626Z",
+    "updatedAt": "2026-10-06T16:10:21.626Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-06T16:58:36.993Z",
+  "overlaps": [],
+  "implementation": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "head": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/read-model.mjs": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+    "apps/execution-dashboard/src/aggregate.mjs": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+    "apps/execution-dashboard/src/server.mjs": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+    "apps/execution-dashboard/public/app.js": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "d0a07d497b6842a581b3a52c57f44ad10a132cd7adaa0057d1b236855871d4e5",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+  },
+  "previousRuntimeMs": 1632,
+  "remainingMs": 28368,
+  "coordination": "Lead/root explicitly allows <=8MiB own-loopback pureHTTP alongside CORE PG; no ownPG/Chrome. Root source approval plus peer fixedabd2 review; no old-target retry.",
+  "gate": "/tmp/d01-dperf04-node-second-gate.json"
+}

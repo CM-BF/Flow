@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T16:58:17.920021+00:00",
+  "reviewer": "root",
+  "target": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "state": "APPROVED_SOURCE_DELTA",
+  "changedProductPaths": [
+    "apps/execution-dashboard/test/summary-detail.test.mjs"
+  ],
+  "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5",
+  "findings": [],
+  "checks": [
+    "Read full delta. node:http.request connects to actual fixture URL127.0.0.1/dynamicport, not Host domain. Explicit outgoing Host must be witnessed by temporary listener on same real server before original403 assertion.",
+    "Owned non-reused agent,2s socket timeout destroying request, request/response errors and aborted response reject, full response drain/end; finally removes the exact observer. Outer cumulative parent also bounds the test.",
+    "Original guard product code unchanged. Document read/traversal/symlink and final snapshot checks remain after the repaired assertion, so a full passing run must execute them.",
+    "Actual incoming header assertion closes the fetch premise defect; explicit setHost:false is not needed to trust a value that is directly asserted at the server."
+  ],
+  "limits": [
+    "No test/HTTP/runtime/free sample by root. PriorFAIL raw remains the actual result until a separately admitted run passes.",
+    "Source is only a test transport repair; not evidence of an observed product Host bypass or fullbrowser/production acceptance."
+  ],
+  "method": "Fixed-source control-flow and error/cleanup ownership; clean-code applied, no broad test or product rewrite."
+}

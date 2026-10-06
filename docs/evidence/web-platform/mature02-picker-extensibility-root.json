@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T17:00:34.472201+00:00",
+  "state": "READ_ONLY_REQUIREMENT_CONTINUITY",
+  "parent": "Existing MATURE02/TODO-11 and user U04 / plugin REQ22-23; not a new task",
+  "source": {
+    "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+    "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "bytes": 8619,
+    "sha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c"
+  },
+  "finding": "Existing picker already accepts a details(navigate) render callback; both editable and locked Dialog branches render it. useProfileDialog defers owner-supplied navigation until dialog close/focus handoff. This is an existing composition seam, not a new global plugin API.",
+  "leafConstraint": [
+    "Preserve existing details callback and close/focus behavior when sharing Dialog helpers for MessageSettingsPicker.",
+    "Expose an equivalent owner-supplied supplementary action/details composition seam on the new controlled picker, using the existing callback type where appropriate, so host plugin content can add a button without editing tuple parsing/selection.",
+    "Keep injected content presentation-only in this leaf: no new registry, permission bypass, connection object, HTTP or draft authority. Later App integration supplies the existing plugin host/permission wrapper.",
+    "Document and fixture-check supplementary action/close focus at the existing eight claimed paths; this does not require expanding shared plugin scope or modifying Recovery."
+  ],
+  "limits": "Source/design requirement only, not implemented/plugin-runtime-verified. Preserves user extensibility request rather than adding a third execution layer."
+}
