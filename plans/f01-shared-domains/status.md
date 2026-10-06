@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:10:00 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:40:54 UTC / mainc5bab40ffd9a334403c0db743f798d10815961f0 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / client095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
-| 工作树dirty状态 | 本次仅共享范围交接和计划记录；提交后clean |
+| 工作基线 / HEAD | mainc5bab40f同步；当前无新共享产品delta |
+| 工作树dirty状态 | 本批仅已交付ACK的scope回收与状态事实 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED：新native publication HTTP1 + 旧profile2，共3/3；根noEmit exit0，原红保留；0provider |
-| 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client已独审进入main253035e11ab18ba33095c018949f856442021d49。个人服务仍b1c/v12，无运行变更。 |
+| 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
 | Review | 当前client由status_read独立APPROVED095，经Mika接收；025独审5365已main。 |
 | 实现目标 | 095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/native-profile-publication.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 原生执行配置接口已交付，附件领域可独立开工所需的共享文件已交回。 |
-| 下一可用交付 | 已交付片段保持可用；后继接入附件接口并统一会话回执校验。 |
+| 当前产出 | 终端和公开客户端已共用发送确认校验，冲突恢复保持原草稿；共享出口已接回。 |
+| 下一可用交付 | 附件与工程配置的固定合同接线，随后Web替换重复回执校验。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -141,3 +141,5 @@
 2026-10-06 10:10 UTC：F01 v23 正式移出 `packages/contracts/src/conversations.ts`，原 owner 已停写，Web 须 fresh amend/take 才写；026 已预留给 WPF-ATTACH01。公共出口、client 与生产挂载仍由 F01 唯一维护。此为范围与计划记录，未运行工程测试、未改变个人服务。
 
 2026-10-06 10:19:29.714 UTC：F01 v24原子amend将packages/client目录展开为其他literal文件，明确归还index.ts与conversations.test.ts给TUI01B；本owner已停写两个路径，新owner须fresh take。共享ACK后继唯一设计在TUI-001，Web独立消费者由同级协调；附件薄client接入须等待该文件正式handback，不阻附件模块独立实现。见[交接](../../docs/evidence/f01/tui-ack-handoff.json)。0产品修改/工程重测。
+
+2026-10-06 10:40:27 UTC：TUI01B已在main0cee收口、198f v2released。F01 fresh CAS v25仅接回client/index.ts；新ACK decoder文件保持已审输入且无本次改写。见[回收回执](../../docs/evidence/f01/tui-ack-return-receipt.json)。普通共享后继不继承095的产品批准范围。
