@@ -1,3 +1,4 @@
+import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
 import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
 import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
@@ -24,10 +25,11 @@ import { migrateGoals, registerGoalRoutes } from './goals/index.js';
 
 declare module 'fastify' { interface FastifyRequest { runnerId: string | null } }
 
-export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string }
+export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number }
 export async function createServer(options: ServerOptions) {
   if (!options.ownerToken) throw new Error('ownerToken is required.');
   const app = Fastify({ bodyLimit: MAX_BATCH_BYTES, logger: false });
+  registerShutdown(app, options.shutdownGraceMs);
   app.decorateRequest('runnerId', null);
   const leaseMs = options.leaseMs ?? 10_000;
   if (!Number.isSafeInteger(leaseMs) || leaseMs < 50 || leaseMs > 300_000) throw new Error('Invalid leaseMs.');
