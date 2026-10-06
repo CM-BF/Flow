@@ -233,30 +233,30 @@ export async function runService(directory, role) {
 /** Trusted local maintenance reuses the same private validation and launch implementation. */
 export { load as loadPreviewConfiguration, privateJson as readPreviewJson, save as savePreviewJson, locked as withPreviewLock, assertMarker as assertPreviewMarker };
 export async function startPreviewServices(config, state) {
-state.processes = {}; state.lastError = null;
-    try {
-      for (const role of roles) {
-        if (role === 'runner') {
-          if (!config.runner) { config.runner = await api(config, '/api/runners', { name: 'Personal preview', harnesses: ['claude'], capacity: 1 }); await save(join(config.directory, 'config.json'), config); }
-          await database(config, async pool => {
-            const tokenHash = createHash('sha256').update(config.runner.token).digest('hex');
-            if (!(await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked', [config.runner.runnerId, tokenHash])).rowCount) fail('RUNNER_IDENTITY_UNAVAILABLE');
-          });
-        }
-        const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, role], cwd: config.repository, env: baseServiceEnvironment(role),
-          onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
-        state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
-        await waitReady(config, role, record);
+  state.processes = {}; state.lastError = null;
+  try {
+    for (const role of roles) {
+      if (role === 'runner') {
+        if (!config.runner) { config.runner = await api(config, '/api/runners', { name: 'Personal preview', harnesses: ['claude'], capacity: 1 }); await save(join(config.directory, 'config.json'), config); }
+        await database(config, async pool => {
+          const tokenHash = createHash('sha256').update(config.runner.token).digest('hex');
+          if (!(await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked', [config.runner.runnerId, tokenHash])).rowCount) fail('RUNNER_IDENTITY_UNAVAILABLE');
+        });
       }
-      const revision = await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 });
-      const changes = await execute('git', ['-C', config.repository, 'status', '--porcelain'], { timeout: 1000 });
-      state.source = { head: revision.stdout.trim(), dirty: changes.stdout.length > 0 };
-      state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
-      return statusPreview({ directory: config.directory });
-    } catch {
-      state.lastError = 'START_UNCONFIRMED';
-      for (const record of Object.values(state.processes).reverse()) await stopOwnedProcess(record);
-      await save(join(config.directory, 'state.json'), state);
-      fail('START_UNCONFIRMED_CHECK_STATUS');
+      const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, role], cwd: config.repository, env: baseServiceEnvironment(role),
+        onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
+      state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
+      await waitReady(config, role, record);
     }
+    const revision = await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 });
+    const changes = await execute('git', ['-C', config.repository, 'status', '--porcelain'], { timeout: 1000 });
+    state.source = { head: revision.stdout.trim(), dirty: changes.stdout.length > 0 };
+    state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
+    return statusPreview({ directory: config.directory });
+  } catch {
+    state.lastError = 'START_UNCONFIRMED';
+    for (const record of Object.values(state.processes).reverse()) await stopOwnedProcess(record);
+    await save(join(config.directory, 'state.json'), state);
+    fail('START_UNCONFIRMED_CHECK_STATUS');
+  }
 }

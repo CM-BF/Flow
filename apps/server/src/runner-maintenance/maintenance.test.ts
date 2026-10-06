@@ -177,7 +177,7 @@ it('lets the actual runner heartbeat and durable outbox finish after a drain com
 });
 it('rolls back a contended bootstrap migration within its short lock bound before enabling any gate', async () => {
   const name = `flow_svc02_m_${randomUUID().replaceAll('-', '').slice(0, 10)}`;
-  await admin.query(`CREATE DATABASE ${name}`);
+  await lock!.query(`CREATE DATABASE ${name}`);
   const local = new Pool({ connectionString: databaseUrl.replace('/flow_svc02', `/${name}`), max: 2 });
   let blocker: PoolClient | undefined;
   try {
@@ -191,5 +191,5 @@ it('rolls back a contended bootstrap migration within its short lock bound befor
     expect((await local.query("SELECT 1 FROM information_schema.columns WHERE table_schema='flow' AND table_name='runners' AND column_name='maintenance_state'")).rowCount).toBe(0);
     await migrateRunnerMaintenance(local);
     expect((await local.query('SELECT 1 FROM flow.migrations WHERE version=16')).rowCount).toBe(1);
-  } finally { if (blocker) { await blocker.query('ROLLBACK'); blocker.release(); } await local.end(); await admin.query(`DROP DATABASE ${name}`); }
+  } finally { if (blocker) { await blocker.query('ROLLBACK'); blocker.release(); } await local.end(); await lock!.query(`DROP DATABASE ${name}`); }
 });
