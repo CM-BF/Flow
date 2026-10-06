@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示123项实际进度，工程交付与附件资源两条工作线正在加入。 |
+| 当前产出 | 看板已显示125项实际进度，工程交付与附件资源两条工作线均可见。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -57,3 +57,5 @@
 本次122源部署与领取配置修正见[实际回执](../../docs/evidence/d05/native-tui-registry-live.json)；首次遗漏环境导致unknown保留，10:00:58.896Z账本available。临时独立浏览器核122与父任务按钮后已关闭，未改用户tab。R05D首canonical后登记123源候选，metadata不重跑架构/产品测试。
 
 2026-10-06 10:12:16 UTC：123源实际回执见[native-launch-registry-live.json](../../docs/evidence/d05/native-launch-registry-live.json)，原R05D人读缺项保留为当时事实、由owner修正。新增ENG01A与WPF-ATTACH01两个真实canonical至125源候选；仅解析、链接和唯一性核对，不重跑架构或产品。
+
+2026-10-06T10:13:49.228Z实际125源回执已归档[engineering-attachment-registry-live.json](../../docs/evidence/d05/engineering-attachment-registry-live.json)：mainc9 clean、协调账本available、unregistered[]，四项current/human完整/issues[]。此为当时实际观察，归档未再次重启或跑产品测试；后继实现状态沿唯一owner自动刷新。
