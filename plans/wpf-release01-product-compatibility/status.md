@@ -11,7 +11,7 @@
 | Branch | codex/web-release-compatibility |
 | 工作基线 / HEAD | base 8d8ab520a9d43c7b9dafb22911416ee799ebf665；实现 7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b |
 | 工作树dirty状态 | 主线收口前db08e7b5976ce462a0b829bbf6a5554fcaf43121已核clean；本次仅main记录待提交，提交后clean由Git交付回执证明 |
-| 工作分支状态 | implemented / approved |
+| 工作分支状态 | completed / approved |
 | 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b；两脚本定向TypeScript0；真实旧/新产品浏览器两旅程及四类SVC记录/哈希验证通过，清理成功 |
 | 已集成main状态 / HEAD | INTEGRATED c450c2da7e6185b88db9f46e0299ee504ee6f3e8；两源码与独审target逐字相同，原分支SHA非其祖先；个人服务未发布 |
