@@ -1,6 +1,6 @@
 # D08 Interface
 
-parseTaskLinks(taskId, original field rows) owns bounded parsing of parent, co-lead and explicit top-level declarations. Duplicate rows cannot become last-wins. Full single markdown [stable ID](link) identifies a declared parent; the original link is display text only. Missing/invalid/multiple values retain a bounded original record with an unknown reason. A declared big task can omit parent; legacy lack of relation metadata is unknown. No name/path/owner inference.
+parseTaskLinks(taskId, original field rows) owns bounded parsing of parent, co-lead and explicit top-level declarations. Duplicate rows cannot become last-wins. Full single markdown `[stable ID](link)` identifies a declared parent; the original link is display text only. Missing/invalid/multiple values retain a bounded original record with an unknown reason. A declared big task can omit parent; legacy lack of relation metadata is unknown. No name/path/owner inference.
 
 resolveTaskLinks(tasks) uses one registered ID Map and bounded direct-parent checks, not recursive progress aggregation. Parent unregistered, self/cycle/third level and source missing/frozen/stale/conflict remain separately unknown. An ID match alone is not live trustworthy evidence. A registered target can still be safely inspected with an explicit warning. co-lead is always the task's own declaration, never inherited.
 

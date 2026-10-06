@@ -20,3 +20,5 @@
 2026-10-06 09:26 UTC review证据纠正：此前只把fullPage切成viewport仍不足，owner/Root图像均见底部旧页头。实际DOM1/rect静态，resize即时capture复现、两animation frame后消失；补每theme独立390context稳定截图与JSON，保留旧图/原来源并明确早期视觉结论过早。无产品或已冻测试源码修改，不重跑无关45；后续截图流程应在resize/theme后等布局绘制稳定。
 
 2026-10-06 09:26:59 UTC后，root独立APPROVED eca59a5（base77c）：独立45/45、完整七源码和hash/scope审读；CUA同modal父导航/资料/Escape与深色，实际看verified390浅深。独审无blocking；旧截图采样问题已作为证据纠正，产品保持冻结。作者5组browser与root局部CUA/独立45准确分开。交付metadata不重复工程测试，main/部署仍待Lead。
+
+2026-10-06 09:32 UTC 管理P3：示例 `[stable ID](link)` 原先形成假文档链接，已仅加inline code；实际doc内容/diff核对，无源/测试变化，未重跑产品。fresh claim49510580 v1 active于09:32:06.587核。
