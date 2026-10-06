@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:22 UTC / main648e331c |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:34 UTC / mainfd1322f9 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -32,7 +32,7 @@
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | in-progress | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner | ENG01B已main并释放；[ENG01C](../../../engineering-writer-settlement/plans/eng01c-writer-settlement/status.md)实施内部writer停止/unknown小接口，原生身份与受信检查仍后继 |
+| ENG001-04 | in-progress | native_center_owner | ENG01B已main并释放；ENG01C已main53ce；[ENG01D](../../../engineering-native-seams/plans/eng01d-native-writer-seams/status.md)实施真实只读身份与单Codex turn复用，受信检查与实际native后继仍开放 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
@@ -48,4 +48,6 @@
 
 11:15 当前ENG01B领域与公共挂载已独审并main，fixture用途不扩为native。原ENG001-04/05/06进入后继准备，唯一worker先给native writer小接口/精确scope，Mika Codex诊断不重复；同FLOW统一读口按可用scope并行。无新provider授权，不等完整UI才做0模型准备。
 
-11:22：ENG01B canonical b0ae9ad已核main648的20源码零差并释放v3；runners.ts正式交S01P04，不被native准备预占。ENG01C已在独立树/claim v2实施8literal范围。真实执行身份与不受被测源码控制的检查报告/完整停止判定是native前置，见plan新增边界；未授权provider调用。
+11:22：ENG01B canonical b0ae9ad已核main648的20源码零差并释放v3；runners.ts正式交S01P04，不被native准备预占。ENG01C已main53ce并释放v3；此句更新当前事实，原范围证据不变。真实执行身份与不受被测源码控制的检查报告/完整停止判定是native前置，见plan新增边界；未授权provider调用。
+
+11:34：ENG01D a1177b12 v1已独立take8scope，首6843/interface固定；只加真实assignment身份与保持ordinary生命周期，不扩工具/工作区权限。首真实native必须模型自身实际工程通路，host应用有限代码候选不能默认为替代完整验收。与O11统一目标读口独立并行，0provider。

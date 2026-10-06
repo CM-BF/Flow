@@ -73,3 +73,7 @@ ENG01B固定a750及已审shared client/mount现已main2e71，123不同局部证�
 [ENG01C](../../../engineering-writer-settlement/plans/eng01c-writer-settlement/plan.md)当前只提取内部 writer 的 stopped/unknown 生命周期，复用原 workspace/checker，旧固定 fixture 的 JSON、hash 和行为保持。独立执行身份必须来自宿主真实 assignment：现 HarnessContext 没有 taskId/attemptId，后继需明确 readonly 身份 Interface 及 contracts/runtime 直接消费者 scope；本片不得从目录推断或生成替代身份。
 
 现 checker 在断言进程 import 被测源码并读取同进程 stdout JSON，resources 仅观察直接子进程 close；固定受信 fixture 的既有证据成立，但不能扩成不受信 native 代码的检查真实性或全体写入已停。native 前须选择并验证最小方案：执行前明确可审的源码限制，或隔离被测执行并由宿主独占断言、报告与完整停止判定。定向验收覆盖伪造 JSON/提前退出和残留写入；基线 hash、事后 diff 不能单独代替来源与停止证明。按独立子scope渐进处理，不把通用 OS 沙箱工程当所有工作的前置。
+
+## ENG01D 已实施的下一接缝（11:34）
+
+[唯一子计划](../../../engineering-native-seams/plans/eng01d-native-writer-seams/plan.md)在ENG01C已main53ce后，以真实assignment冻结身份及一个Codex ordinary turn生命周期提取解决两个已识别依赖；不复制SDK循环，不从目录生成执行身份。旧profile/hash/readonly和S01多个attempt语义保持。host-applied有限代码仅可作明确中间验证候选，不自动替代用户要求的native工程写改。完整停止、受信检查及实际>=Sol模型来源仍需后继定向证明。
