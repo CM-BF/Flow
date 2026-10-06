@@ -5,3 +5,5 @@
 PG16官方依据：https://www.postgresql.org/docs/16/functions-binarystring.html 与 https://www.postgresql.org/docs/16/functions-string.html；保留convert_to UTF8，不用content::bytea；PG仍全量hash。
 
 2026-10-06 05:02 UTC：代码工作段复查：preview数据/hasMore/digest同SELECT，detail三键/小写摘要严格比对，类型不暴露content，pending有效settings原样；full/legacy未改。21+22=43不同用例全通过，首1绿已含21不重复计。原consumer bodies byte-identical，新harness语法失败修正并保留；Root预审指出stopServer异常应finally pool.end，已补且仅影响失败清理路径，不为纯seam修复重复22。
+
+2026-10-06 05:04:22 UTC：after/交付自查：9实现文件与固定target字节一致；43行为/126HTTP字段一致，自有库均清理；raw只含SQL模板/数值无正文/凭据。decoded JSON、Node→PG hash迁移、短正文92B开销及latency波动明确，禁止速度/CPU臆测。不重测metadata。内部preview接口影响由Lead同步固定架构。
