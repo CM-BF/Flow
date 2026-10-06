@@ -1,0 +1,5 @@
+apps/server/src/engineering/profile.test.ts(5,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+apps/server/src/engineering/profile.test.ts(72,148): error TS2345: Argument of type '{ 'X-Flow-Execution-Profile'?: undefined; } | { 'X-Flow-Execution-Profile': string; }' is not assignable to parameter of type 'Record<string, string> | undefined'.
+  Type '{ 'X-Flow-Execution-Profile'?: undefined; }' is not assignable to type 'Record<string, string>'.
+    Property ''X-Flow-Execution-Profile'' is incompatible with index signature.
+      Type 'undefined' is not assignable to type 'string'.

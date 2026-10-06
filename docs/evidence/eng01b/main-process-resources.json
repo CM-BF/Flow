@@ -1,0 +1,62 @@
+{
+  "database": "flow_eng01b_main_64aa494d63a948d9a3bb4675da915235",
+  "databaseRemoved": true,
+  "providerCalls": 0,
+  "children": [
+    {
+      "pid": 18534,
+      "closed": true,
+      "code": 0,
+      "signal": null,
+      "outputTruncated": false
+    },
+    {
+      "pid": 24001,
+      "closed": true,
+      "code": 0,
+      "signal": null,
+      "outputTruncated": false
+    },
+    {
+      "pid": 28664,
+      "closed": true,
+      "code": 0,
+      "signal": null,
+      "outputTruncated": false
+    },
+    {
+      "pid": 29416,
+      "closed": true,
+      "code": 0,
+      "signal": null,
+      "outputTruncated": false
+    }
+  ],
+  "samples": [
+    {
+      "scenario": "public-main-success-and-restart",
+      "pids": [
+        18534,
+        24001
+      ],
+      "sameSetup": true,
+      "sameProfile": true,
+      "taskCount": 2,
+      "worktrees": 2,
+      "checkerChildExited": true
+    },
+    {
+      "scenario": "main-process-lost-ack-restart",
+      "pids": [
+        28664,
+        29416
+      ],
+      "artifactEvents": 1,
+      "worktrees": 1,
+      "nextClaimCount": 0,
+      "verification": "pending",
+      "result": "uncertain",
+      "journalRetained": true
+    }
+  ]
+}

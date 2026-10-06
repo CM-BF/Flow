@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile
+
+ ✓ apps/runner/src/engineering/launch-integration.test.ts (2 tests) 7821ms
+   ✓ runs the explicit main configuration through public profile/claim/artifact APIs and restores the same setup in a new process  5071ms
+   ✓ retains the host journal after a real lost artifact response and refuses another claim after process restart  1476ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  03:56:36
+   Duration  8.91s (transform 412ms, setup 0ms, import 1.00s, tests 7.82s, environment 0ms)
+
