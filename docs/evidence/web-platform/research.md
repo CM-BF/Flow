@@ -325,3 +325,12 @@ reviewer读固定outbox/projection/messages与9outbox/14projection测试，2个i
 正式CHAT-R1/R2已由7cbabb737f26b108275e80f1b6cd0425699f3c18窄修复；w01独立16projection tests+3公开探针（旧ACK不盖final、[1]→55且分页中到62完整补齐、新ACK后GET升级）通过，root限定整体APPROVED/baseb584。未重跑无关视觉/benchmark，原842 REQUEST_CHANGES与对应两P2保留。最后metadata待owner固定后再核，不把当前修复元数据自动改已审范围。
 
 D05架构刷新由GoalOwner新增授权：仅fixedmain8f架构数据与必要局部可读性/来源检查、自身plan/status/review/evidence；root可只读研究，manager等CHAT交付收口及旧claim释放/正式转交，独立新tree receipt后才写。保持frontend/center/runner、Flow/外包、PG/blob/FSM边界，未交付CHAT03/X03/R04不当交付。本段clean-code检查事实所有权/当前与历史/错误边界：修正父当前阻塞到已复审关闭，留下历史两P2；D05协作旧“未有tab”改已部署待刷新；不代写其他ownerstatus。
+
+
+## 04:20 增补：X03、composer与CHAT04候选
+
+Root只读固定X03 c2发现useRead重试清data可能卸载Refresh/Next；Mika作者实际Next Enter焦点断言红后修保留控件，模块895c8999d22fb3d911de2d46969e37b40051fdea已由其root独审APPROVED（12checks），本队未写/未测Mika模块。workspace_panels_owner只读建议在现Settings新增Plugin management折叠区，展开才挂模块/读取registry；personal为首无项目上下文。4方法bound useMemo([client])只经App，session.id隔离；不按名称合并中心registry与本地runtime。拟新feature生产仅App.tsx、plugin-integration/react.tsx、integration.css（需收窄现ul/li全局样式），专用fixture/browser两测试及新三件套证据；等双方固定main及正式移交，不提前take或改代码。
+
+w01固定CHAT7cb/metadata331与assistant-ui react0.15.23/core0.3.22只读composer插入候选：既有flow.composer.insertText和sample调用存在，session故意unsupported。最小私有registerComposer(viewId,appendText)，仅当前可见/可编辑同连接pane绑定，同步getState().text→setText追加；不暴露runtime/client/token/draft getter，不发送/取消/steer。running/isSendDisabled不等不可编辑，16k溢出整次拒绝保留draft。隐藏HTML不卸effect，必须显式eligibility。WeakMap仅保护首次authorize后已开始调用的异步跨代，不能保证尚未调用的旧UI回调在reopen后第一次执行也被拒；更强语义须UI签发代际另议。不把研究当现功能或安全漏洞。原key待确认A与新draft B+C分离，ACK不能覆写；A/Bsplit、disable/center换同ID、StrictMode与IME/undo/caret均需未来真实验收。拟四生产App/bridge两文件/ConversationThread与两专用tests，未领取，排X03实际挂载之后，不增加新agent。
+
+CHAT04中心queue（Mika/root转交方向，尚无TS实现）：enqueue(conversationId,expectedQueueRevision,text,key)，paged queue，cancel(itemId,expectedQueueRevision,key)。queueRevision独立conversation.revision，稳定itemID/顺序/state、promoted关联真正task/turn，原key恢复unknown；普通followup不能越等待项。只succeeded自动提升，failed/cancelled/uncertain、失效pin/无knownsession冻结并说明；停当前轮不悄启下一项。首段只取消等待项，恢复/继续未启用；steering另项，需受理/送达/生效分别证明。官方SDK能力不等已接adapter；所有既有Webunsupported控件保持。

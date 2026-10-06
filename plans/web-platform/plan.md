@@ -216,3 +216,7 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 - 2026-10-06 04:02 UTC：主Lead确认8f1481d实际push clean；rootorigin/main ancestor核与管理04:01:56 dashboard main current/scopeEqual实证吻合。完成有限基线+窗口两轮TODO06，持续优化愿望不宣称结束。
 
 - 2026-10-06 04:08 UTC：U12逐字重申映射既有REQ37；独立CUA实际领取详情和42源/当前21writerclaims literal0overlap留时点证据，新增X03待登记如实显示。D05架构刷新8f只排队、待正式移交；CHAT优先收固定7cb复审闭环。
+
+- 2026-10-06 04:20 UTC：CHAT7cb最终331已限定APPROVED并dashboard验证，root一次交主线；PERF02集成后04:12正式release v2，无finding不长期占scope。REQ39后继D06按D05v2移出→新f619v1受领固定8f四scope，唯一canonical见[计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/plan.md)。主线4320继续其owner部署，不新造分配事实源。
+
+U11后继queue与steer仍分别开放：Mika准备CHAT04中心持久queue，具体TS合同与scope由ExecutionLead固定；enqueue与队列取消独立queueRevision、原key ACK恢复、仅succeeded自动提升，失败/取消/uncertain或未知session冻结，不通过停止当前任务偷偷启动下一项。恢复/继续与steering首段不启用。SDK有streamInput/interrupt不等当前adapter已支持。Web等中心独审后独立消费，不提前启用disabled控件。此为跨lead已授权方向，非已有实现或新增用户原话。

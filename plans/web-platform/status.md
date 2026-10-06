@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:12 UTC / 04:01:56 dashboard实证main8f1481d包含PERF02且声明范围相同 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:20 UTC / 04:01:56 dashboard实证main8f1481d包含PERF02且声明范围相同 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `0dca0db3d8ab98f900a74236498390908cfbcd38`（本次文档停点前实核；旧review仍绑定c075bb5） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `c9d9fb124c17f016230100ecbad22476d32a336d`（本次文档停点前实核；旧review仍绑定c075bb5） |
 | 工作树dirty状态 | 仅本管理范围的计划/来源验证/预览交接文档pending，不自指未来提交 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | CHAT实现7cb与最终metadata3319122已限定APPROVED且dashboard闭环；PERF02已集成，领取视图已实证 |
-| 下一可用交付 | root统一交付CHAT给主线；D05已v2释放图范围，本owner下一步独立领取D06固定8f架构刷新 |
+| 下一可用交付 | D06独立review与主线图集成；X03已审模块待固定main/新scope接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -36,7 +36,7 @@
 
 ## 当前管理工作
 
-root持续只读研究与独立验收；管理者只写此管理树。workspace_panels_owner为WPF-CHAT01唯一Web实现owner；w01_owner已交PERF02并停止主动实现，已完成固定CHAT复审；按GoalOwner指示释放已集成PERF02全部scope，04:12:26.441Z已committed v2 released，原样receipt已存。无新增agent。本队最多4、主线4、Mika2总上限10，sources/claims数不代表活跃agent数。
+root持续只读研究与独立验收；管理者维护此管理树，并已正式领取独立D06图数据四scope，在dashboard-architecture-refresh树写该feature。workspace_panels_owner为WPF-CHAT01唯一Web实现owner；w01_owner已交PERF02并停止主动实现，已完成固定CHAT复审；按GoalOwner指示释放已集成PERF02全部scope，04:12:26.441Z已committed v2 released，原样receipt已存。无新增agent。本队最多4、主线4、Mika2总上限10，sources/claims数不代表活跃agent数。
 
 | 当前工作 | 已核事实与下一步 |
 | --- | --- |
@@ -85,10 +85,16 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 
 04:08 U12逐字重申已映射既有REQ37。管理者自建隐藏CUA页实读WPF-CHAT01“领取与写入范围”：ID/version、Lead/Worker、active/writer、branch/worktree、16scope、原子领取来源/时间/接收方及唯一status均可见；只关自己的临时页。API04:07:57.845Z为42源、PERF02 b617 clean/main8f current/scopeEqual；21activewriterclaims literal0重叠，仅X03新claim未登记，见[证据](../../docs/evidence/web-platform/assignment-visibility-verification.json)。该时点事实不宣称永久无冲突。
 
-D05新授权刷新排队：固定main8f1481df880cf5077e1ddb9a8f302fe700a7ece8，窄architecture-data.js与必要局部图验证/自有三件套证据；旧claim释放/正式转交由主Lead协调。本agent可在CHAT收口后复用，独立newtree与明确literal claim receipt后才写；不新增第5agent、不写旧树/App/chat、不把CHAT03/X03/R04列交付。
+D06固定8f刷新已正式受领并实现，原D05释放时序保留；新canonical唯一来源见下。无新agent、未写旧树/App/chat，图不混后继能力。
 
 04:12最终CHAT交付停点：7 Markdown/39本地链接/7 TODO一致，7cb→331实现与共享路径diff0、tree clean；[04:10:28.566Z真实dashboard](../../docs/evidence/web-platform/chat-approved-dashboard.json)绑定checks/review7cb且main未含。已回root完整确认，由root一次桥接主线，管理者不重复通知或模型调用。原842 REQUEST_CHANGES与修复历史保留。
 
 D06准备：原D05 claim3a6240d0-f861-41fd-b245-3546b2e2dbf3已04:09:05.366Z amend为v2，移出图/UI/测试；后续须新claim精确四scope后才写。目标固定8f，不把新CHAT7cb/X03/R04画成此基线已交付。clean-code本段检查 current/history、状态单源与受控输入，修正当前表内旧842未批准及保留PERF回修权过期文字；仅文档校验，不跑产品套件。
 
 [PERF02释放回执](../../docs/evidence/web-platform/perf02-release-receipt.json)：owner04:12:33.630Z再次live核v2 released，旧canonical b617 clean停止写入，后续修复须新take。
+
+## 04:20 管理安全停点
+
+D06 claim f6196ecc-b1e4-4ae2-9bd5-a2c36a6570bc v1（04:13:12.526Z）已先核原D05v2释放。独立tree/branch dashboard-architecture-refresh，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/status.md)，首canonical35e97863cfa0b184d39b4db2a3c54364b14d92bd已由root报Lead登记。实现d5a87b8、来源P3修正ef42277ff55d1cbb76ea707836481a9788619033正在root复审；作者5局部tests+五视图Chrome/六双主题窄屏图，原w01独立固定d5源码5/5通过；不能提前称整体APPROVED。独立55247图预览不替换4320。
+
+X03 Mika固定895c8999d22fb3d911de2d46969e37b40051fdea模块已获其root独审APPROVED，12checks与分页键盘焦点红→修通过；最终metadata/main等待。实际App挂载尚未受领，scope候选与composer/CHAT04研究进入research，不先动现App。queue/steer分别open，既有disabled保持。
