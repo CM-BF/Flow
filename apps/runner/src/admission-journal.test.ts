@@ -1,5 +1,6 @@
 import { mkdtemp, readFile, rm, writeFile, mkdir } from 'node:fs/promises';
 import { execFileSync, spawnSync } from 'node:child_process';
+import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -76,12 +77,13 @@ it('retains the original storage error and the persisted guard when a handoff ca
 it.each(['admission.json', 'admission.json.tmp'])('rejects a real FIFO at %s within a bounded child lifetime', async filename => {
   const path = await directory(); execFileSync('mkfifo', [join(path, filename)]);
   const modulePath = fileURLToPath(new URL('./admission-journal.ts', import.meta.url));
-  const runtime = '/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs';
+  const runtime = process.env.FLOW_RUNNER_TEST_TSX_LOADER ?? createRequire(import.meta.url).resolve('tsx');
+  const tsconfig = process.env.FLOW_RUNNER_TEST_TSCONFIG;
   const script = `import { AdmissionJournal, AdmissionStorageError } from ${JSON.stringify(modulePath)};
     try { const journal = await AdmissionJournal.open(${JSON.stringify(path)}); ${filename.endsWith('.tmp') ? 'await journal.begin();' : ''} process.exitCode = 3; }
     catch(error) { if (!(error instanceof AdmissionStorageError)) throw error; process.stdout.write('bounded-storage-rejection'); }`;
   const child = spawnSync(process.execPath, ['--import', runtime, '--input-type=module', '-e', script], {
-    env: { ...process.env, TSX_TSCONFIG_PATH: fileURLToPath(new URL('../../../docs/evidence/s01p01/types.tsconfig.json', import.meta.url)) },
+    env: { ...process.env, ...(tsconfig ? { TSX_TSCONFIG_PATH: tsconfig } : {}) },
     encoding: 'utf8', timeout: 2000,
   });
   expect({ exit: child.status, signal: child.signal, error: child.error?.message, stderr: child.stderr }).toEqual({ exit: 0, signal: null, error: undefined, stderr: '' });

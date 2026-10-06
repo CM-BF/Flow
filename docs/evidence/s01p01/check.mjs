@@ -23,7 +23,7 @@ const logPath = `${directory}/${label}.log`;
 const log = openSync(logPath, 'wx');
 const startedAt = new Date().toISOString(), started = performance.now();
 let result;
-try { result = spawnSync(process.execPath, args, { stdio: ['ignore', log, log], timeout: 120000 }); }
+try { result = spawnSync(process.execPath, args, { stdio: ['ignore', log, log], timeout: 120000, env: { ...process.env, FLOW_RUNNER_TEST_TSX_LOADER: resolve(repository, 'node_modules/tsx/dist/loader.mjs'), FLOW_RUNNER_TEST_TSCONFIG: resolve(directory, 'types.tsconfig.json') } }); }
 finally { closeSync(log); }
 const record = { kind, selection: selection ?? null, command: [process.execPath, ...args], startedAt, completedAt: new Date().toISOString(), elapsedMs: performance.now() - started,
   exitCode: result.status, signal: result.signal, error: result.error?.message ?? null, sourceFiles, log: logPath, logSha256: sha(logPath),

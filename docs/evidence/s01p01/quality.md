@@ -17,3 +17,5 @@
 2026-10-06 08:19 UTC 工作段复核：journal单一原子snapshot、64KiB读取上界、最多16已知绑定（不随localLimit降低丢弃）；intent仅UUID，runner身份仅从实际assignment获得。runtime维持唯一admission/recovery loop，14明确绑定的API包装保留this/参数/原错误；不改outbox或controller。测试发现正常完成被错误标记需恢复造成健康slot空位停领，已移除无意义恢复barrier；未知/失败仍等active0。首fixture不存在log类型与noEmit失败均保留。
 
 2026-10-06 08:25 UTC 交付前clean-code：两项Mika预审P2已修，FIFO读/写不阻塞且短读循环有界，真实子进程red被2s上限回收、green正常exit0；auth区分401/wrong_role与goal scope拒绝，保留this/参数/原Error。全局终止先停admission，再等待全部slots及API请求，不造调度框架；公共原outbox/proposal/controller未改。46不同用例通过，最终API pending资源差异另定向7+6/noEmit通过，不将重复计数累加。不输出凭据，8次自有PG库remaining[]，未跑固定旧PG库或provider。最终源码固定后仅metadata，正式独审尚待。
+
+2026-10-06 08:29 UTC Mika正式review P2测试可移植性已修：apps内FIFO子进程默认createRequire(import.meta.url).resolve(tsx)，使用正常项目配置；本机已有依赖/专用tsconfig仅check.mjs经显式FLOW_RUNNER_TEST_*环境覆盖。journal-portable8/8与types-portable exit0；产品runtime/journal未变，不重跑PG。正常安装下默认解析分支未在本机无node_modules的独立树强行模拟；root package确有tsx4.23.15依赖。原target/manifest/raw保留，下一target作此2文件delta复审。
