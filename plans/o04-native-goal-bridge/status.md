@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T04:55:03Z；base80e3c50，受控接收dc9a9f及b87a4bb生产挂载 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T04:58:05Z；base80e3c50，受控接收dc9a9f及b87a4bb生产挂载 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution |
 | Branch | codex/native-goal-execution |
 | 工作基线 / HEAD | base80e3c50e7a368c562a7730567503d8c82772b77a；实现1420dfa2f44117f49ec022665bcddc11739e36ae |
-| 工作树dirty状态 | 源码已提交；仅本scope证据/交付metadata待提交 |
+| 工作树dirty状态 | 2026-10-06T04:58:05Z 核对b53db99285760b49ef6506593b448ad6d626e659 clean；本次只保存聚合回执 |
 | 工作分支状态 | delivered；待独立review |
 | 检查状态 | PASSED 1420dfa2f44117f49ec022665bcddc11739e36ae；77/77（18.96s）+25/25（2.03s）+tsc |
 | 已集成main状态 / HEAD | O04未集成，base如上；O03已集成 |
@@ -30,3 +30,5 @@
 | O04-04 | completed | assignment_review | [原始报告/manifest](../../docs/evidence/o04/README.md)，固定target待独立review |
 
 Claim19e81eda-5795-45a7-8f1f-a0d9c0c94326 v1，2026-10-06T04:45:16.175Z；[receipt](../../docs/evidence/o04/claim-receipt.json)。本status唯一事实源。架构影响：host MCP capability与native profile准入/claim关联，待Lead更新固定架构图；dashboard源已发Lead登记。
+
+2026-10-06T04:58:05Z实际4320聚合：canonical来源live、4/4、checks passed绑定1420dfa、review not_started、issues=[]；见 [聚合回执](../../docs/evidence/o04/dashboard.json)。23源码与20原始输出hash、相对链接均核对通过。本片段已直接请Root固定target独审，claim保留。main接收尚未发生，不追全局HEAD。
