@@ -10,3 +10,4 @@ export * from './goals.js';
 export * from './conversations.js';
 export * from './assistant.js';
 export * from './plugins.js';
+export * from './execution-profiles.js';

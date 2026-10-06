@@ -1,3 +1,4 @@
+import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomBytes, randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { AttemptView, ClaimResponse, Ownership, RegisterRunner, RunnerRegistration, HeartbeatResponse, DecisionAnswer } from '@flow/contracts';
@@ -44,10 +45,12 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
     const result = await client.query<{ id: string }>(`
       SELECT t.id FROM flow.tasks t LEFT JOIN flow.sessions s ON s.id=t.submission->>'resumeSessionId' AND s.harness=t.submission->>'harness'
       WHERE t.status='queued' AND t.dispatch_ready AND t.submission->>'harness'=ANY($1)
+      AND (t.submission->'executionProfile' IS NULL OR t.submission->'executionProfile'->>'runnerId'=$2)
       AND (t.submission->>'resumeSessionId' IS NULL OR (s.runner_id=$2 AND s.active_task_id IS NULL))
       ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId]);
     if (!result.rows[0]) return { assignment: null, remainingLeaseMs: 0 };
     const task = await loadTask(client, result.rows[0].id);
+    await assertTaskExecutionProfile(client, task.submission);
     if (task.submission.resumeSessionId) {
       const session = await client.query('UPDATE flow.sessions SET active_task_id=$3 WHERE id=$1 AND harness=$2 AND runner_id=$4 AND active_task_id IS NULL RETURNING id', [task.submission.resumeSessionId, task.submission.harness, task.id, runnerId]);
       if (!session.rowCount) return { assignment: null, remainingLeaseMs: 0 };

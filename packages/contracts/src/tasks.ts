@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { harnessSchema, type HarnessName } from './harnesses.js';
+import { executionProfileReferenceSchema } from './execution-profiles.js';
 import { protocolTaskSchema } from './protocol-task.js';
 export { harnessSchema, type HarnessName } from './harnesses.js';
 
@@ -27,7 +28,9 @@ export const taskSubmissionSchema = z.strictObject({
   }).optional(),
   verification: verificationRuleSchema.optional(),
   resumeSessionId: idSchema.optional(),
+  executionProfile: executionProfileReferenceSchema.optional(),
 }).superRefine((task, context) => {
+  if (task.executionProfile && task.harness !== 'claude') context.addIssue({ code: 'custom', message: 'Execution profiles are only supported for Claude tasks.' });
   if (task.harness === 'a2a') {
     if (!task.protocol || task.resumeSessionId || task.fixture) context.addIssue({ code: 'custom', message: 'A2A tasks require an endpoint reference and cannot reuse native sessions or fixture options.' });
   } else if (task.protocol) context.addIssue({ code: 'custom', message: 'Protocol endpoint configuration is only valid for A2A tasks.' });

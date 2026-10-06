@@ -1,3 +1,4 @@
+import { requireExecutionProfile } from '../execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -9,11 +10,15 @@ import { capabilities, conversationView, loadConversation, lastTurn, turnView, t
 
 export async function createConversation(pool: Pool, input: ConversationCreation, key: string): Promise<ConversationCreated> {
   const result = await command(pool, 'conversation.create', key, input, async client => {
-    if (input.requested.model !== 'runner-default' || input.requested.thinking !== 'disabled' || input.requested.tools !== 'configured-readonly') {
-      throw new HttpError(409, 'conversation_settings_unsupported', 'Per-conversation model, thinking and tool overrides are not supported by this adapter.');
+    const profile = input.executionProfile ? await requireExecutionProfile(client, input.executionProfile) : undefined;
+    const requestedModelSupported = input.requested.model === 'runner-default' || input.requested.model === profile?.configuration.model;
+    const requestedToolsSupported = input.requested.tools === 'configured-readonly' || profile?.configuration.access === 'none';
+    if (!requestedModelSupported || input.requested.thinking !== 'disabled' || !requestedToolsSupported) {
+      throw new HttpError(409, 'conversation_settings_unsupported', 'The selected configuration cannot fulfill these requested controls.');
     }
     const id = randomUUID();
-    await client.query('INSERT INTO flow.conversations(id,title,harness,requested) VALUES($1,$2,$3,$4)', [id, input.title, input.harness, input.requested]);
+    if (profile) await client.query('INSERT INTO flow.conversations(id,title,harness,requested,execution_profile) VALUES($1,$2,$3,$4,$5)', [id, input.title, input.harness, input.requested, profile.reference]);
+    else await client.query('INSERT INTO flow.conversations(id,title,harness,requested) VALUES($1,$2,$3,$4)', [id, input.title, input.harness, input.requested]);
     return { conversation: conversationView(await loadConversation(client, id)), capabilities };
   });
   return { ...result.value, replayed: result.replayed };
@@ -33,7 +38,7 @@ export async function admitTurn(pool: Pool, boss: PgBoss, conversationId: string
       if (session.activeTaskId) throw new HttpError(409, 'conversation_busy', 'The native session is still occupied.');
       resumeSessionId = session.identity.nativeSessionId;
     }
-    const task = await acceptTask(client, boss, { title: conversation.title, harness: 'claude', prompt: input.text, ...(resumeSessionId ? { resumeSessionId } : {}) });
+    const task = await acceptTask(client, boss, { title: conversation.title, harness: 'claude', prompt: input.text, ...(conversation.execution_profile ? { executionProfile: conversation.execution_profile } : {}), ...(resumeSessionId ? { resumeSessionId } : {}) });
     const row = (await client.query<TurnRow>('INSERT INTO flow.conversation_turns(id,conversation_id,number,task_id,user_text) VALUES($1,$2,$3,$4,$5) RETURNING *', [randomUUID(), conversationId, conversation.revision + 1, task.id, input.text])).rows[0]!;
     await client.query('UPDATE flow.conversations SET revision=revision+1,updated_at=clock_timestamp() WHERE id=$1', [conversationId]);
     return { conversation: conversationView(await loadConversation(client, conversationId)), turn: await turnView(client, row) };
