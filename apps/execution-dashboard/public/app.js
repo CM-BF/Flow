@@ -24,6 +24,7 @@ function mainBadge(task) {
 }
 let snapshot, assignmentObservation, assignmentFailure, summaryFailure, assignmentLoading = false;
 let selectedTask, returnFocus;
+let detailSource;
 let documentRequest, detailRequest, assignmentRequest, summaryFlight;
 let summaryEpoch = 0, assignmentEpoch = 0, selectionEpoch = 0, documentEpoch = 0, detailEpoch = 0;
 
@@ -45,7 +46,7 @@ function assignmentFacts(claim, registered = true) {
     ['更新 / 核对', `${timestamp(claim.updatedAt)}${claim.needsVerification ? '；记录陈旧但仍占用，禁止抢占' : ''}`],
     ['账本观察时间', timestamp(snapshot?.assignments.observedAt)],
     ['接收方', claim.next ? `${claim.next.lead} / ${claim.next.worker}\n${claim.next.worktree}\n${claim.next.branch ?? ''}` : '无'],
-  ]) addFact(facts, label, value);
+  ]) facts.append(element('dt', label), element('dd', value));
   return facts;
 }
 function allocationText(task, summary = true) {
@@ -170,6 +171,31 @@ function invalidateDetail() {
   selectionEpoch++; detailEpoch++; detailRequest?.abort(); detailRequest = undefined;
   invalidateDocument();
 }
+function sameSource(left, right) {
+  return left && right && left.id === right.id && left.sourceKey === right.sourceKey
+    && left.source.digest === right.source.digest && left.source.mode === right.source.mode;
+}
+function retainDetail(message) {
+  // Background observations invalidate freshness, not the user's reading surface.
+  const notice = $('#detail-update-notice'); if (notice) notice.textContent = message;
+  const proof = $('#selected-proof'); if (!proof) return;
+  proof.dataset.freshness = 'prior-observation';
+  for (const node of proof.querySelectorAll('.badge.good')) node.classList.remove('good');
+}
+function syncSelectedSource() {
+  if (!selectedTask) return;
+  const next = snapshot.tasks.find(task => task.id === selectedTask.id);
+  if (!sameSource(selectedTask, next)) {
+    // Stop pending old reads, but retain already displayed text/images and focus.
+    detailEpoch++; detailRequest?.abort(); detailRequest = undefined;
+    documentEpoch++; documentRequest?.abort(); documentRequest = undefined;
+  }
+  selectedTask = next ?? selectedTask;
+  retainDetail(!next ? '任务已不在当前登记中；保留上次读取内容，不视为当前核验。'
+    : !sameSource(detailSource, next) ? '来源已变化；保留上次读取内容与文档，请显式刷新详情。'
+      : '摘要已同步；详情与文档保留上次读取，现场核验未刷新。');
+  $('#refresh-detail').disabled = !next;
+}
 async function refreshAssignments() {
   const epoch = ++assignmentEpoch;
   assignmentLoading = true; renderAssignments();
@@ -191,7 +217,7 @@ async function refreshAssignments() {
 function refresh() {
   if (summaryFlight) return summaryFlight;
   const epoch = ++summaryEpoch;
-  if (selectedTask) { invalidateDetail(); renderDetailShell(selectedTask, '摘要正在刷新，旧现场核验已失效。'); }
+  if (selectedTask) retainDetail('摘要正在刷新；保留阅读内容，旧现场核验不代表本次同步。');
   $('#refresh').disabled = true;
   // Assignment latency never holds the summary request or its refresh control.
   void refreshAssignments();
@@ -204,17 +230,13 @@ function refresh() {
       if (value.kind !== 'summary' || value.version !== 1) throw new Error('摘要格式不受支持');
       snapshot = { ...value, tasks: value.tasks.map(task => ({ ...task, status: task.declarations })) };
       summaryFailure = null; applyAssignments(); render(); $('#load-error').hidden = true;
-      if (selectedTask) {
-        const next = snapshot.tasks.find(task => task.id === selectedTask.id);
-        if (next) { selectedTask = next; renderDetailShell(next); void loadDetail(next); }
-        else { invalidateDetail(); $('#detail-content').replaceChildren(element('p', '任务登记已变化；关闭后重新选择。', 'notice warning')); }
-      }
+      syncSelectedSource();
     } catch (error) {
       if (epoch !== summaryEpoch) return;
       summaryFailure = { at: new Date().toISOString(), message: error.message };
       $('#load-error').hidden = false; $('#load-error').textContent = `读取失败 ${timestamp(summaryFailure.at)}：${error.message}。${snapshot ? '保留上次摘要及其原时间，内容可能已过期。' : '请确认本地服务和登记路径后重试。'}`;
       $('#sync-state').textContent = '当前同步失败';
-      if (selectedTask) renderDetailShell(selectedTask, '摘要刷新失败；现场核验未恢复，请重试刷新。');
+      if (selectedTask) retainDetail('摘要刷新失败；保留上次读取内容，现场核验未恢复。');
     } finally {
       if (epoch === summaryEpoch) { summaryFlight = undefined; $('#refresh').disabled = false; }
     }
@@ -242,14 +264,25 @@ function childTasks(parent) {
 }
 function renderSelectedAssignments() {
   const content = $('#selected-assignments'); if (!content || !selectedTask) return;
+  if (content.hasChildNodes()) {
+    // Do not replace selected claim text while the reader selects or copies it.
+    $('#selected-assignment-update').textContent = `${$('#assignment-observation').textContent} 此处保留打开详情时的领取记录；显式刷新详情可重新读取。`;
+    return;
+  }
   const task = snapshot.tasks.find(task => task.id === selectedTask.id);
-  content.replaceChildren(element('h3', '领取与写入范围'));
+  const update = element('p', $('#assignment-observation').textContent, 'muted'); update.id = 'selected-assignment-update';
+  content.append(element('h3', '领取与写入范围'), update);
   if (!task || task.assignments === null) content.append(element('p', '领取状态未知；禁止据此新接手。', 'notice warning'));
   else if (!task.assignments.length) content.append(element('p', '尚无领取登记；接手前须核对。'));
   else for (const claim of task.assignments) content.append(assignmentFacts(claim));
 }
 function renderDetailShell(task, message = '正在读取选中任务的现场核验…') {
   const content = $('#detail-content'); content.replaceChildren();
+  detailSource = task;
+  const notice = element('p', '详情与文档按需读取；后台同步保留阅读内容，刷新详情会重新读取。', 'notice warning'); notice.id = 'detail-update-notice';
+  const refreshButton = element('button', '刷新所选详情'); refreshButton.type = 'button'; refreshButton.id = 'refresh-detail';
+  refreshButton.addEventListener('click', () => openTask(task.id));
+  content.append(notice, refreshButton);
   content.append(element('p', '以下任务关联来自 status 声明；不表示父子现场核验。', 'muted'), element('h3', '任务关联'), taskLinks(task));
   const children = childTasks(task); if (children) content.append(children);
   for (const issue of task.source.issues) content.append(element('p', issue, 'notice warning'));
@@ -275,7 +308,7 @@ function openTask(id) {
 }
 async function loadDetail(summaryTask) {
   const token = { request: ++detailEpoch, epoch: selectionEpoch, summary: summaryEpoch, id: summaryTask.id, key: summaryTask.sourceKey, digest: summaryTask.source.digest };
-  const active = () => detailEpoch === token.request && selectedTask?.id === token.id && selectionEpoch === token.epoch && summaryEpoch === token.summary
+  const active = () => detailEpoch === token.request && selectedTask?.id === token.id && selectionEpoch === token.epoch
     && selectedTask.sourceKey === token.key && selectedTask.source.digest === token.digest && $('#task-dialog').open;
   detailRequest?.abort(); const controller = new AbortController(); detailRequest = controller;
   try {
@@ -283,17 +316,18 @@ async function loadDetail(summaryTask) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const value = await response.json(); if (!active()) return;
     if (value.kind !== 'task-detail' || value.version !== 1 || value.taskId !== token.id || value.sourceKey !== token.key || value.registryFingerprint !== snapshot.registryFingerprint) throw new Error('登记来源已变化，请刷新摘要');
-    const matched = value.consistency === 'matched' && value.statusDigestBefore === token.digest && value.statusDigestAfter === token.digest;
+    const matched = summaryEpoch === token.summary && value.consistency === 'matched' && value.statusDigestBefore === token.digest && value.statusDigestAfter === token.digest;
     renderTaskProof(value, matched);
   } catch (error) {
     if (!active() || error.name === 'AbortError') return;
     const retry = element('button', '重试现场核验'); retry.type = 'button';
-    retry.addEventListener('click', () => { if (active()) { $('#selected-proof').replaceChildren(element('p', '读取中…')); void loadDetail(selectedTask); } });
+    retry.addEventListener('click', () => { if (active()) openTask(selectedTask.id); });
     $('#selected-proof').replaceChildren(element('p', `现场核验未取得：${error.message}`, 'notice warning'), retry);
   }
 }
 function renderTaskProof(observation, matched) {
   const task = observation.task, content = $('#selected-proof'); content.replaceChildren();
+  content.dataset.freshness = matched ? 'current-observation' : 'prior-observation';
   content.append(element('h3', '现场核验'), element('p', `本次核验 ${timestamp(observation.startedAt)} 至 ${timestamp(observation.completedAt)}。status一致仅指读取字节相同，不是Git与文件系统原子快照。`, 'muted'));
   if (matched) content.append(reviewBadge(task), mainBadge(task));
   else content.append(element('p', '观察期间来源变化或与摘要不一致；以下仅为本次旧观察，请刷新，不视为当前已核通过。', 'notice warning'));
@@ -309,17 +343,20 @@ function renderTaskProof(observation, matched) {
   ]) addFact(facts, label, value);
   content.append(facts, element('h3', '计划、状态与证据'));
   const documents = element('div', undefined, 'documents');
-  for (const doc of task.documents) { const button = element('button', doc.title); button.type = 'button'; button.addEventListener('click', () => openDocument(task, doc)); documents.append(button); }
+  const source = detailSource;
+  for (const doc of task.documents) { const button = element('button', doc.title); button.type = 'button'; button.addEventListener('click', () => openDocument(task, doc, source)); documents.append(button); }
   content.append(documents, element('h3', 'Owner 的 TODO 记录'));
   const scroll = element('div', undefined, 'table-scroll'); const table = element('table', undefined, 'todo-list');
   const head = element('thead'); const header = element('tr'); for (const title of ['ID', '状态', 'Owner', '证据 / 检查']) header.append(element('th', title)); head.append(header); table.append(head);
   const body = element('tbody'); for (const todo of task.status.todos) { const row = element('tr'); for (const value of [todo.id, todo.state, todo.owner, plain(todo.evidence)]) row.append(element('td', value)); body.append(row); } table.append(body); scroll.append(table); content.append(scroll);
 }
 
-async function openDocument(task, doc) {
+async function openDocument(task, doc, source) {
+  const current = snapshot.tasks.find(item => item.id === task.id);
+  if (!sameSource(source, current)) { retainDetail('文档入口属于上次来源；保留已读内容，请显式刷新详情后再读取。'); return; }
   documentRequest?.abort(); const controller = new AbortController(); documentRequest = controller;
-  const token = { epoch: ++documentEpoch, selection: selectionEpoch, summary: summaryEpoch, task: task.id, path: doc.path };
-  const active = () => documentEpoch === token.epoch && selectionEpoch === token.selection && summaryEpoch === token.summary && selectedTask?.id === token.task && $('#task-dialog').open;
+  const token = { epoch: ++documentEpoch, selection: selectionEpoch, task: task.id, path: doc.path };
+  const active = () => documentEpoch === token.epoch && selectionEpoch === token.selection && sameSource(source, selectedTask) && $('#task-dialog').open;
   $('#document-view').hidden = false; $('#document-title').textContent = doc.path; $('#document-error').hidden = true;
   $('#document-text').hidden = false; $('#document-text').textContent = '读取中…';
   const oldImage = $('#document-image'); oldImage.onload = null; oldImage.onerror = null; oldImage.removeAttribute('src');
@@ -348,7 +385,7 @@ const assignmentNote = element('p', '领取状态未知：等待独立观察。'
 $('#load-error').after(assignmentNote);
 $('#close-dialog').addEventListener('click', () => $('#task-dialog').close());
 $('#task-dialog').addEventListener('close', () => {
-  invalidateDetail(); selectedTask = undefined;
+  invalidateDetail(); selectedTask = undefined; detailSource = undefined;
   const target = returnFocus?.node?.isConnected ? returnFocus.node : [...document.querySelectorAll('[data-open-task]')].find(node => node.dataset.openTask === returnFocus?.taskId);
   target?.focus(); returnFocus = undefined;
 });

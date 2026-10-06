@@ -78,14 +78,14 @@ export async function runBrowserCheck(name, check) {
   const groupAlive = () => { if (!chrome?.pid) return false; try { process.kill(-chrome.pid, 0); return true; } catch (error) { if (error.code === 'ESRCH') return false; throw error; } };
   const signalChrome = signal => { if (groupAlive()) process.kill(-chrome.pid, signal); };
   const checkpoint = () => { if (stopped || Date.now() - started > limit - spentMs - cleanupReserve) throw new Error('Browser work deadline reached'); };
-  const workDeadline = setTimeout(() => { stopped = true; signalChrome('SIGTERM'); fixture?.server.closeAllConnections(); }, Math.max(1, limit - spentMs - cleanupReserve));
+  const workDeadline = setTimeout(() => { stopped = true; signalChrome('SIGTERM'); fixture?.server.closeAllConnections(); }, Math.max(1, started + limit - spentMs - cleanupReserve - Date.now()));
   const hardDeadline = setTimeout(() => {
     signalChrome('SIGKILL'); fixture?.server.closeAllConnections();
     report.cleanupErrors.push('Hard deadline: cleanup not confirmed'); report.elapsedMs = Date.now() - started;
     writeFileSync(path.join(output, 'browser-results.json'), JSON.stringify(report, null, 2));
     writeFileSync(budgetFile, JSON.stringify({ complete: false, spentMs: spentMs + report.elapsedMs, run: gate.run }));
     process.exit(1);
-  }, limit - spentMs);
+  }, Math.max(1, started + limit - spentMs - Date.now()));
   try {
     checkpoint(); fixture = await summaryFixture({ after: cleanup => cleanups.push(cleanup) }); checkpoint();
     profile = await mkdtemp(path.join(tmpdir(), 'flow-summary-chrome-')); checkpoint();
@@ -144,9 +144,59 @@ async function summaryChecks({ page, f, report, output }) {
   // Deliberately ignore cancellation for read responses, so generation guards carry the proof.
   await page.addInitScript(() => {
     const original = window.fetch.bind(window);
-    window.fetch = (url, init) => String(url).startsWith('/api/') ? original(url, { ...init, signal: undefined }) : original(url, init);
+    window.fixtureLateResponses = {};
+    window.fetch = async (url, init) => {
+      const response = await original(url, String(url).startsWith('/api/') ? { ...init, signal: undefined } : init);
+      const id = response.headers.get('x-dperf04-late');
+      if (!id) return response;
+      const state = { delivered: true, status: response.status, body: 'pending' };
+      window.fixtureLateResponses[id] = state;
+      // Failed assignment responses are rejected before the product reads their body.
+      // Drain that exact test response too, rather than treating headers as delivery.
+      if (!response.ok) {
+        try { await response.clone().text(); state.errorBody = 'fulfilled'; }
+        catch (error) { state.errorBody = 'rejected'; state.error = String(error); throw error; }
+      }
+      for (const method of ['json', 'text', 'arrayBuffer']) {
+        const read = response[method].bind(response);
+        response[method] = async (...args) => {
+          try { const value = await read(...args); state.body = 'fulfilled'; return value; }
+          catch (error) { state.body = 'rejected'; state.error = String(error); throw error; }
+        };
+      }
+      return response;
+    };
+    const interval = window.setInterval.bind(window);
+    window.setInterval = (callback, ms, ...args) => {
+      if (ms === 20000) { window.fixtureAutomaticRefresh = () => callback(...args); return 0; }
+      return interval(callback, ms, ...args);
+    };
   });
-  report.transport = 'Synthetic late transport ignores AbortSignal; actual DOM must reject stale results';
+  report.transport = 'Synthetic late transport ignores AbortSignal; exact fulfill and body settlement precede DOM assertions. Production 20s callback is invoked explicitly by this fixture.';
+  const deliveries = new Map();
+  const deliveryFor = id => {
+    if (!deliveries.has(id)) {
+      let resolve; const promise = new Promise(done => { resolve = done; });
+      deliveries.set(id, { promise, resolve });
+    }
+    return deliveries.get(id);
+  };
+  const deliverLate = async (route, id, options) => {
+    try {
+      await route.fulfill({ ...options, headers: { ...options.response?.headers(), ...options.headers, 'x-dperf04-late': id } });
+      deliveryFor(id).resolve({ fulfilled: true });
+    } catch (error) { deliveryFor(id).resolve({ fulfilled: false, error: String(error) }); }
+  };
+  const waitForLate = async (id, readsBody = true) => {
+    const delivery = await deliveryFor(id).promise;
+    assert.equal(delivery.fulfilled, true, `Late response was not delivered: ${id}: ${delivery.error ?? ''}`);
+    const field = readsBody ? 'body' : 'errorBody';
+    await page.waitForFunction(({ id, field }) => ['fulfilled', 'rejected'].includes(window.fixtureLateResponses[id]?.[field]), { id, field });
+    const response = await page.evaluate(id => window.fixtureLateResponses[id], id);
+    assert.equal(response[field], 'fulfilled', `Late response body failed: ${id}: ${response.error ?? ''}`);
+    // Evaluation is a new browser task, after the consumer's fetch/body continuations.
+    (report.lateResponses ??= []).push({ id, readsBody, ...delivery, ...response });
+  };
   const requests = []; page.on('request', request => requests.push(new URL(request.url()).pathname));
   let finishAssignments;
   const assignmentRelease = new Promise(resolve => { finishAssignments = resolve; });
@@ -154,7 +204,7 @@ async function summaryChecks({ page, f, report, output }) {
     const response = await route.fetch(), value = await response.json(); await assignmentRelease;
     value.assignments = { state: 'available', observedAt: value.completedAt, claims: [] };
     value.byTask = Object.fromEntries(f.tasks.map(task => [task.id, []]));
-    value.unregisteredAssignments = [{ claimId: 'unregistered-readonly-fixture', version: 7, taskId: 'U01', role: 'writer', state: 'handoff_pending', lead: '<script>lead</script>', worker: 'fixture-worker', branch: 'codex/unregistered', worktree: '/synthetic/unregistered', scope: ['apps/exact/component.js', 'plans/owned'], needsVerification: true, updatedAt: value.completedAt, next: { lead: 'next', worker: 'next-worker', worktree: '/synthetic/next', branch: 'codex/next' } }];
+    value.unregisteredAssignments = [{ claimId: 'unregistered-readonly-fixture', version: 7, taskId: 'U01', role: 'writer', state: 'handoff_pending', lead: '<script>lead</script>', worker: 'fixture-worker', branch: 'codex/unregistered', worktree: '/synthetic/unregistered', scope: ['apps/exact/component.js', 'plans/owned', '#owned/file', '-owned/file', 'literal`name/file'], needsVerification: true, updatedAt: value.completedAt, next: { lead: 'next', worker: 'next-worker', worktree: '/synthetic/next', branch: 'codex/next' } }];
     await route.fulfill({ response, json: value });
   });
   await page.goto(f.url); await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
@@ -163,6 +213,7 @@ async function summaryChecks({ page, f, report, output }) {
   finishAssignments(); await page.locator('#unregistered-claims').waitFor({ state: 'visible' });
   const claim = page.getByText('查看领取详情：U01', { exact: true }); await claim.focus(); await page.keyboard.press('Enter');
   assert.match(await page.locator('#unregistered-claim-items').innerText(), /apps\/exact\/component.js/);
+  assert.equal(await page.locator('#unregistered-claim-items dt').filter({ hasText: '精确 scope' }).evaluate(node => node.nextElementSibling.textContent), 'apps/exact/component.js\nplans/owned\n#owned/file\n-owned/file\nliteral`name/file');
   assert.match(await page.locator('#unregistered-claim-items').innerText(), /仍占用/);
   assert.match(await page.locator('#unregistered-claim-items').innerText(), /不适用.*进度来源尚未登记/);
   assert.equal(await page.locator('#unregistered-claim-items script').count(), 0);
@@ -178,11 +229,11 @@ async function summaryChecks({ page, f, report, output }) {
   await page.route('**/api/task?*', async route => {
     if (!delayOne) return route.continue(); delayOne = false;
     const response = await route.fetch(), value = await response.json(); firstDetail(); await detailRelease;
-    value.task.status.owner = 'STALE-DETAIL-MUST-NOT-RENDER'; await route.fulfill({ response, json: value }).catch(() => {});
+    value.task.status.owner = 'STALE-DETAIL-MUST-NOT-RENDER'; await deliverLate(route, 'closed-detail', { response, json: value });
   });
   await open('T02').click(); await detailStarted; await page.keyboard.press('Escape'); await open('T02').click();
   await page.locator('#selected-proof .documents').waitFor(); finishDetail();
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  await waitForLate('closed-detail');
   assert.doesNotMatch(await page.locator('#detail-content').innerText(), /STALE-DETAIL/);
   report.checks.push('Same ID close/reopen refuses prior detail result independently of abort');
   await page.keyboard.press('Escape');
@@ -194,13 +245,13 @@ async function summaryChecks({ page, f, report, output }) {
   await page.route('**/api/task?*', async route => {
     if (!delayOne) return route.continue(); delayOne = false;
     const response = await route.fetch(), value = await response.json(); startABA(); await abaRelease;
-    value.task.status.owner = 'STALE-ABA-MUST-NOT-RENDER'; await route.fulfill({ response, json: value });
+    value.task.status.owner = 'STALE-ABA-MUST-NOT-RENDER'; await deliverLate(route, 'aba-detail', { response, json: value });
   });
   await open('T02').click(); await abaStarted;
   await page.locator('.direct-children').getByRole('button', { name: '查看详情：T01 任务 T01', exact: true }).click();
   await page.locator('#detail-content > .task-links').getByRole('button', { name: '查看所属大task T02：T02 任务 T02', exact: true }).click();
   await page.locator('#selected-proof .documents').waitFor(); finishABA();
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  await waitForLate('aba-detail');
   assert.doesNotMatch(await page.locator('#detail-content').innerText(), /STALE-ABA/);
   report.checks.push('A→B→A navigation rejects the first A detail');
   let finishDocument, startDocument;
@@ -208,21 +259,22 @@ async function summaryChecks({ page, f, report, output }) {
   const documentRelease = new Promise(resolve => { finishDocument = resolve; });
   await page.route('**/api/document?*', async route => {
     if (!new URL(route.request().url()).searchParams.get('path').endsWith('plan.md')) return route.continue();
-    startDocument(); await documentRelease; await route.fulfill({ status: 500, contentType: 'application/json', body: JSON.stringify({ error: 'STALE-DOCUMENT-ERROR' }) }).catch(() => {});
+    startDocument(); await documentRelease; await deliverLate(route, 'old-document', { status: 500, contentType: 'application/json', body: JSON.stringify({ error: 'STALE-DOCUMENT-ERROR' }) });
   });
   await page.getByRole('button', { name: 'plan.md', exact: true }).click(); await documentStarted;
   await page.getByRole('button', { name: 'review.md', exact: true }).click();
   await page.waitForFunction(() => document.querySelector('#document-text').textContent.includes('APPROVED'));
-  finishDocument(); await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  finishDocument(); await waitForLate('old-document');
   assert.equal(await page.locator('#document-error').isVisible(), false);
   report.checks.push('Same-task plan→review rejects late document error and keeps new document');
+  await page.unroute('**/api/document?*');
   await page.keyboard.press('Escape');
   let finishOldAssignment, startOldAssignment, delayAssignment = true;
   const assignmentStarted = new Promise(resolve => { startOldAssignment = resolve; });
   const oldAssignmentRelease = new Promise(resolve => { finishOldAssignment = resolve; });
   await page.unroute('**/api/assignments');
   await page.route('**/api/assignments', async route => {
-    if (delayAssignment) { delayAssignment = false; startOldAssignment(); await oldAssignmentRelease; return route.fulfill({ status: 500, contentType: 'application/json', body: '{}' }); }
+    if (delayAssignment) { delayAssignment = false; startOldAssignment(); await oldAssignmentRelease; return deliverLate(route, 'old-assignment', { status: 500, contentType: 'application/json', body: '{}' }); }
     const response = await route.fetch(), value = await response.json();
     value.assignments = { state: 'available', observedAt: value.completedAt, claims: [] };
     value.byTask = Object.fromEntries(f.tasks.map(task => [task.id, []]));
@@ -233,11 +285,51 @@ async function summaryChecks({ page, f, report, output }) {
   const oldRead = await page.locator('#assignment-observation').getAttribute('data-read-id');
   await page.locator('#refresh').click();
   await page.waitForFunction(old => document.querySelector('#assignment-observation').dataset.readId !== old, oldRead);
-  finishOldAssignment(); await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  finishOldAssignment(); await waitForLate('old-assignment', false);
   assert.doesNotMatch(await page.locator('#assignment-observation').innerText(), /本次失败/);
   assert.match(await page.locator('#active-work').innerText(), /尚无领取登记/);
   report.checks.push('Late previous assignment error cannot overwrite a newer available observation');
   await page.waitForFunction(() => !document.querySelector('#refresh').disabled);
+  const parent = f.tasks.find(task => task.id === 'T02');
+  const planText = '# 阅读中的计划\n' + '保留正文、焦点、选区与阅读位置。\n'.repeat(80);
+  await writeFile(path.join(parent.worktree, parent.planDir, 'plan.md'), planText);
+  await open('T02').click(); await page.locator('#selected-proof .documents').waitFor();
+  await page.getByRole('button', { name: 'plan.md', exact: true }).click();
+  await page.waitForFunction(text => document.querySelector('#document-text').textContent === text, planText);
+  await page.evaluate(() => {
+    const node = document.querySelector('#document-text'); node.focus();
+    document.querySelector('#task-dialog').scrollTop += 80;
+    const range = document.createRange(); range.setStart(node.firstChild, 2); range.setEnd(node.firstChild, 9);
+    const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+    window.fixtureReading = { node, text: node.textContent, selection: selection.toString(), top: node.getBoundingClientRect().top };
+  });
+  const readsBefore = requests.filter(url => ['/api/task', '/api/document'].includes(url)).length;
+  const assertReading = async () => {
+    const state = await page.evaluate(() => {
+      const { node, text, selection, top } = window.fixtureReading;
+      return { sameNode: node === document.querySelector('#document-text'), visible: !document.querySelector('#document-view').hidden,
+        focus: document.activeElement === node, sameText: node.textContent === text, selection: getSelection().toString() === selection,
+        scrollDelta: Math.abs(node.getBoundingClientRect().top - top), freshness: document.querySelector('#selected-proof').dataset.freshness };
+    });
+    assert.deepEqual({ ...state, scrollDelta: undefined }, { sameNode: true, visible: true, focus: true, sameText: true, selection: true, scrollDelta: undefined, freshness: 'prior-observation' });
+    assert.ok(state.scrollDelta <= 1, `Reading anchor moved ${state.scrollDelta}px`);
+    assert.equal(requests.filter(url => ['/api/task', '/api/document'].includes(url)).length, readsBefore);
+  };
+  await page.evaluate(() => window.fixtureAutomaticRefresh());
+  await page.waitForFunction(() => !document.querySelector('#refresh').disabled);
+  await assertReading();
+  await f.writeStatus(parent, { owner: 'changed-source-owner' });
+  await writeFile(path.join(parent.worktree, parent.planDir, 'plan.md'), '# 显式刷新后的新计划\n');
+  await page.evaluate(() => window.fixtureAutomaticRefresh());
+  await page.waitForFunction(() => !document.querySelector('#refresh').disabled);
+  await assertReading(); assert.match(await page.locator('#detail-update-notice').innerText(), /来源已变化/);
+  await page.locator('#refresh-detail').focus(); await page.keyboard.press('Enter');
+  await page.locator('#selected-proof .documents').waitFor();
+  await page.getByRole('button', { name: 'plan.md', exact: true }).click();
+  await page.waitForFunction(() => document.querySelector('#document-text').textContent.includes('显式刷新后的新计划'));
+  await page.keyboard.press('Escape');
+  assert.equal(await open('T02').evaluate(node => node === document.activeElement), true);
+  report.checks.push('Automatic refresh preserves the exact document node/focus/selection/reading anchor for unchanged and changed status; proof becomes old and explicit keyboard refresh reads new content');
   const oldTime = await page.locator('#sync-time').textContent();
   await page.route('**/api/summary', route => route.fulfill({ status: 500, contentType: 'application/json', body: '{}' }));
   await page.locator('#refresh').click(); await page.locator('#load-error').waitFor({ state: 'visible' });
