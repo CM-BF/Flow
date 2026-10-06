@@ -191,3 +191,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 23:14 UTC：既有X01唯一source迁到plugin-enable-binding，first canonical065938bf/claim6dd v8已核；旧plugin-management-plan仅历史，不双登记。181数量不变，固定status解析errors[]/human complete；源码实施开始，PG及真实runner链未验。[迁移记录](../../docs/evidence/d05/x01-binding-source-move.json)。
 
 2026-10-06 23:14:39.075 UTC 实采：181源不变；X01已从plugin-enable-binding唯一status读取，implementation/current/issues[]/human complete；OPS-CI01 delivered且REMOTE_NOT_ENABLED与用户选择明确可见。见[有界快照](../../docs/evidence/d05/x01-binding-live.json)。只重载自有4320来源配置，无用户页面或个人服务操作，未运行产品检查。
+
+2026-10-06 23:23 UTC：TUI01G 首canonical fabc7af2/11scope原子领取已核，原TUI01F v5保留7scope、6共享源正式移交；登记单一tui-message-settings来源，候选总182。仅registry/source必要解析，不改架构固定快照、parser或运行产品测试；实际部署回执后补。[登记](../../docs/evidence/d05/tui01g-source-registration.json)。
