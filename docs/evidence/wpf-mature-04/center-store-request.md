@@ -1,6 +1,6 @@
 # 历史上下文样本：一页实施与共享输入请求
 
-**Execution Lead 必需输入：唯一 migration 编号及 DDL owner 尚未分配。真实 PG 检查必须采用该唯一迁移，禁止临时重复建表。** 2026-10-06 10:28 UTC，GO 已授权推进历史持久化和公开读回；04 claim v3 有效，新增八文件须原子 amend 后写。固定 main `8d8ab520a9d43c7b9dafb22911416ee799ebf665` clean，六个已审源码尚未 main；879/3ab 两片批准、检查及逐文件 hash 见 [integration-readiness.json](integration-readiness.json)。进度唯一源为 [status](../../../plans/wpf-mature-04-context-transparency/status.md)。不等待 Codex；本片 current/remaining 恒为 unknown，完整 CT-02/CT-06 仍未达成。
+**Execution Lead 必需输入：唯一 migration 编号及 DDL owner 尚未分配。真实 PG 检查必须采用该唯一迁移，禁止临时重复建表。** 2026-10-06 10:28 UTC，GO 已授权推进历史持久化和公开读回；04 claim v4 已于10:29:24.897 UTC原子追加八文件；实现进行中。固定 main `8d8ab520a9d43c7b9dafb22911416ee799ebf665` clean，已受控合入本分支108d427，六个已审源码尚未 main；879/3ab 两片批准、检查及逐文件 hash 见 [integration-readiness.json](integration-readiness.json)。进度唯一源为 [status](../../../plans/wpf-mature-04-context-transparency/status.md)。不等待 Codex；本片 current/remaining 恒为 unknown，完整 CT-02/CT-06 仍未达成。
 
 **小 Interface / 状态归属。** `record(tx, task, attempt, event)` 仅在既有 `reportEvents → ownedAttempt → applyEvent` 的事务、runner→task→attempt 锁及 fence 后调用；不另开事务、sequence 或 runner POST。`readLatestHistory(tx, task)` 由中心选择 task.current_attempt_id 并核 task/attempt 归属，按原始 event_sequence 降序返回最多一条有限历史样本；GET `/api/tasks/:id/context/history` 沿既有 owner 鉴权，不接受 reporter 的 expected/current identity。DTO 明示 history-only，current/remaining unknown；事件序号只作历史排序，不能用 sample.sequence===attempt.last_sequence 宣称 current（artifact/final/verification/completed 仍推进序号，完成后不再接受新 sample）。
 

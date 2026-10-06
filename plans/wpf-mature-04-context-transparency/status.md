@@ -25,14 +25,14 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，当前3ab95d288a91214d03dec719dc6b44024206118a APPROVED，status_read/gpt-6-astra，root于09:28 UTC接收，无剩余P1/P2；旧e81f200 CHANGES_REQUESTED，status_read/gpt-6-astra，1P2/0P1；第一片879c989a594a8f4f266b9a78a885e311c52eca0d仍APPROVED，Mika/gpt-6-astra，09:14:39 UTC |
-| Claim | [COMMITTED amend v3](../../docs/evidence/wpf-mature-04/sdk-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v3 ACTIVE；追加2个runner新文件，已审4源码保持固定 |
-| 架构影响 | ContextObservation/schema/pure projection及单一SDK summary纯Adapter，无运行/FSM/DB变化；879和当前Adapter target待mika协调架构视图登记，不把未挂载模块画成生产流程 |
+| Claim | [COMMITTED amend v4](../../docs/evidence/wpf-mature-04/history-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v4 ACTIVE；仅追加8新history文件，已审6源码冻结 |
+| 架构影响 | 原六源码无挂载；新增中心历史record/readLatestHistory与局部GET待固定，沿原事务/fence，无新runner端点；唯一DDL编号与全局挂载由Lead协调，架构视图待集成target更新 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
-| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；待amend和唯一迁移DDL，当前/remaining/SDK采集仍未知 |
+| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v4已追加；33/33局部合同/HTTP/早拒绝与strict noEmit0；唯一迁移DDL及真实PG待验，当前/remaining/SDK采集仍未知 |
 | WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 纯Adapter P2修复源码已完成，49/49与strict noEmit0，独立APPROVED；不含真实采集、压缩事件或生产接线 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | 仅schema/纯投影独审已过；完整矩阵与后继独审、main交付未完成 |
@@ -60,3 +60,5 @@
 09:40:56 UTC补核main4391的runtime.ts新settlement门禁：unknown不发送completed；确定结束仍在adapter后发送。只读行依据已更新为216/229–230，对accepted completed导致旧等式失效的结论不变；不以没有completed推断上下文未变化。
 
 2026-10-06T10:25:47.007032+00:00：GO优先推进历史保存/公开读回；mika批准8新独立文件与合入固定main 8d8ab520a9d43c7b9dafb22911416ee799ebf665。本轮先固定已审两片integration-readiness，不重跑原检查；后继唯一migration号/owner待Lead，禁止复制临时DDL。当前计划继续推进，不等待Codex，完整current/压缩/Web验收仍开放。
+
+2026-10-06T10:33:41.339595+00:00：固定main8d8已通过scope[] integration受控无冲突合入108d4276298b52911426bba166724298ee3cafdf，未借merge实现；integration claim1de954b3 v2已released。writer v4生效后8新文件实施中；33不同局部用例通过、8根文件继承root严格选项noEmit0，PG/真实owner鉴权/全局事件挂载仍待验。requestedModel保持DB配置alias，resolvedModel独立保留固定host报告，不以二者相等冒充provider验证。新增源码未提交；已审6源不变。
