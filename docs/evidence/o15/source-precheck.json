@@ -1,0 +1,304 @@
+{
+  "at": "2026-10-06T15:28:56.773244+00:00",
+  "reviewer": "assignment_review / gpt-6-astra, independent from native_center_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation",
+  "base": "af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458",
+  "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+  "observedHead": "8d6e5bc63f1b9687fe31cf351ee2c2763267ff94",
+  "clean": true,
+  "conclusion": "SOURCE_PRECHECK_NO_P1_P2; VALIDATION_PENDING; NOT A MODULE APPROVAL",
+  "scope": "All changed product implementation and new tests/diffs in 16 declared literals; direct authority, graph application, input freezing, progression admission and HTTP authentication call chain. Three declared old consumer test files are unchanged, not rerun or claimed re-reviewed in full.",
+  "findings": [],
+  "verifiedSourceFacts": [
+    "Owner-only route registration is documented and uses factory preHandler authentication; runner credential is rejected on non-runner route before replay.",
+    "Explicit optional inputProposalProtocol is persisted without a default. Old graph grants reject a complete-input payload before command cache recovery; host MCP gate is additional, center fence remains authoritative.",
+    "Confirm locks project then proposal, verifies immutable proposal digest, and uses commandInTransaction. Live graph CAS is confined to new mutation; original same-key/body receipt remains recoverable after own graph application.",
+    "One transaction reuses O05 applyProposalInTransaction, O01 define-input/K03 freeze, O14 authorization admission and immutable031 linkage; no copied mutation algorithm, nested transaction, task admission or new scheduler.",
+    "Existing confirmation with identical body returns its immutable receipt; altered authority body conflicts even under a new key. Former applied graph must still match current revision; expected inputVersion0 rejects pre-defined nodes.",
+    "O14 authority function body matches former callback after indentation normalization; original public wrapper retains command operation/key/body/result.",
+    "Current profile/material/external accepted dependencies are delegated to existing authorities; bounded proposed keys/nodes/edges and request/stored JSON ceilings remain explicit.",
+    "Migration031 immutable unique association checks proposal/application/progression goal+project+revision+digest identity; actual SQL execution remains unverified."
+  ],
+  "authorEvidenceObserved": {
+    "sdkMcp": "6 selected passed, 35ms, retained green.stdout; source/closure historical record, not rerun",
+    "schema": "1 selected passed / 4 unselected in historical run,4ms; later test additions are not covered by this run",
+    "types": "types-tests-fixed.exit contains0,stdout empty; no new typecheck",
+    "postgresql": "NOT_RUN; six current HTTP/PG scenarios exist in source but no run evidence yet"
+  },
+  "remainingAcceptance": [
+    "Run the already-authored scoped real HTTP/PG migration and atomic rollback/ACK recovery journey only after authorized resource gate.",
+    "Validate explicit new/old grant, revoked/stale ownership and new confirmation roles against the real route; source review does not replace DB behavior.",
+    "Exercise exact previously applied graph and changed input/material/profile rejection,031 immutable linkage, unknown execution restart no-readmission and cleanup.",
+    "Production migrate/register, client wiring, automatic progression scanning and real natural-language/provider planning remain separate; injected SDK is not native model proof."
+  ],
+  "checksByReviewer": {
+    "tests": 0,
+    "databaseQueries": 0,
+    "providerCalls": 0,
+    "projectWrites": 0,
+    "sourceBindings": 16,
+    "directInputs": 15,
+    "rawBindings": 13
+  },
+  "protectedExtraction": {
+    "file": "apps/server/src/goal-progression/store.ts",
+    "formerCallbackEqualsNewBodyIgnoringIndentation": true
+  },
+  "sourceBindings": [
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97",
+      "fixedMatches": true
+    },
+    {
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e",
+      "fixedMatches": true
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/index.ts",
+      "bytes": 1737,
+      "sha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/store.ts",
+      "bytes": 6857,
+      "sha256": "3f4013289d5438f468acf9821e422c4e01d52f16f1a23ab08f8a555620dc5da8",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/confirmation.test.ts",
+      "bytes": 18885,
+      "sha256": "815a4141f3a4d5130140b38fba8043356f526fcb166e75d13b081345a1df77b1",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/fixture.ts",
+      "bytes": 7530,
+      "sha256": "68768b7ae51ae58bd75196850b38b3431497ce719f7e2360517bc5223e210df1",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/store.ts",
+      "bytes": 11079,
+      "sha256": "d307d41b2df5a5922fa3bb1a25c965d5ca4ad30585c998cc72a49e5fcc129bd0",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/progression.test.ts",
+      "bytes": 15600,
+      "sha256": "73dda47d81740d7832805a60a43955e123309b6f0cc94d03d31bf0ce37db44fc",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/proposals.test.ts",
+      "bytes": 16687,
+      "sha256": "f72efe1548fc8a12f925e8c83a9979cb0a7bc4680a1c12fb7dd7e623296f6836",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/store.ts",
+      "bytes": 10417,
+      "sha256": "5550bfc4296587f13348ed0833d6bc5bcb3b8820cb85e16cb6943904c551b058",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "bytes": 8237,
+      "sha256": "01b2abaf6729ce6fd9eabf5a4f3f51b35a8b89f24737ce1619ce548b96e09e26",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runs.test.ts",
+      "bytes": 20358,
+      "sha256": "faf85181b491fa4c9209cff1dd7f5f175348d7469a5557a36c1c5a98b37da10e",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "bytes": 2749,
+      "sha256": "cdb38e534cb7ce5abdfb237999a6ca285cec75ed211757b225c8ea350902737c",
+      "fixedMatches": true
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.test.ts",
+      "bytes": 7674,
+      "sha256": "c29688c5dd89ae63f274c7cb8a79ef86e8a288e31600512f132752134caadf7d",
+      "fixedMatches": true
+    },
+    {
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "bytes": 2279,
+      "sha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606",
+      "fixedMatches": true
+    }
+  ],
+  "directInputs": [
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "bytes": 9383,
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a"
+    },
+    {
+      "path": "apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "bytes": 2890,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 14007,
+      "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32"
+    },
+    {
+      "path": "apps/server/src/goals/state.ts",
+      "bytes": 15446,
+      "sha256": "23365f92b07fa98eb658e6900a22edaeff336ec69ca1e11c794fdf5c806e1405"
+    },
+    {
+      "path": "apps/server/src/goal-context/store.ts",
+      "bytes": 11740,
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c"
+    },
+    {
+      "path": "apps/server/src/goal-context/freshness.ts",
+      "bytes": 1195,
+      "sha256": "d9ea198ab18f1e13a52c933ffb1210a74b703476371370799145705e198dfcf1"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13267,
+      "sha256": "ba1e251c59cfb091c8867ce899fa9aad3f89156683cc66ee75a2387371982a00"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "packages/contracts/src/goal-progression.ts",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10"
+    },
+    {
+      "path": "packages/storage/migrations/014-goal-graph-proposals.sql",
+      "bytes": 1802,
+      "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba"
+    }
+  ],
+  "rawBindings": [
+    {
+      "path": "docs/evidence/o15/confirmation-schema.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/o15/confirmation-schema.stdout",
+      "bytes": 361,
+      "sha256": "6810acfb84f2adcddef504c7a076c0633c179d63fb39d2fb343e4778b4132943"
+    },
+    {
+      "path": "docs/evidence/o15/mcp-capability-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/o15/mcp-capability-green.stdout",
+      "bytes": 324,
+      "sha256": "3f3ccc54f92c9c57b54f161be4a2cfa6acebaee8ceb8e06e343b14e4e9cb0984"
+    },
+    {
+      "path": "docs/evidence/o15/mcp-capability-red.stdout",
+      "bytes": 1719,
+      "sha256": "264d1fa51c8ba9a78c6ec6a36b49a814454e0cf333a0693b9a1e0faafe12a301"
+    },
+    {
+      "path": "docs/evidence/o15/types-contract.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "docs/evidence/o15/types-contract.stdout",
+      "bytes": 1006,
+      "sha256": "26a74dfe699ecb6c487193d903c28b502c110456c3f050bfeeeeb0cc973540cb"
+    },
+    {
+      "path": "docs/evidence/o15/types-domain.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/o15/types-domain.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o15/types-tests-fixed.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/o15/types-tests-fixed.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o15/types-tests.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "docs/evidence/o15/types-tests.stdout",
+      "bytes": 2837,
+      "sha256": "cc7f115198a28e1159b20708fc2bb771765e71111ec3aa2fd3c4aafd652a2019"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "method": "Applied local skill discovery reuse; reviewed Module/Interface ownership, transaction/replay ordering, narrow deep reuse, error/resource bounds and test evidence honesty. No remote discovery or install was needed."
+}

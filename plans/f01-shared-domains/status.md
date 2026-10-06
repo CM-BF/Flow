@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:35:32 UTC / O14 main bd14f984e3927df139815597c4c3171af84ec4b7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:57:49 UTC / settings main 8d84d529a0756116bd0fc8bad969d61a6c26248e |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
-| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v47 active；仅032两源+自身plan/evidence；56旧scope已原子交回，[receipt](../../docs/evidence/f01/old-scope-closeout-receipt.json) |
+| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v48 active；7literal：[O15追加回执](../../docs/evidence/f01/goal-plan-confirmation-scope-amend.json)，client/contracts index已由C01 v2合法交回 |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 受控移交 HEAD c67d6973d5b9f516fcb3000538939d1046b39367；O14生产候选73aabff4fac96c0439817bdc72358c1385371e8d保持 |
-| 工作树dirty状态 | 当前两新源固定停写；仅证据/metadata收口，提交后clean |
+| 工作基线 / HEAD | O15受控input 1c0018d2；本共享source 7f59daa552aa0618776468ec54b6ed4c5a6990cb；原settings组合与O14保持 |
+| 工作树dirty状态 | 四新源停止写入；本次只固定1case实际PG证据，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 0ee2494ed4298169c56ac3a6950fa1910ed62a7a；真实生产PG1/1、focused types最终0（首次2保留）；CORE29/C0186不重跑；原O14独审/main保持 |
-| 已集成main状态 / HEAD | O14五源已main bd14f984e3927df139815597c4c3171af84ec4b7；032/C01本组合尚未main，个人服务不变 |
-| Review | APPROVED 0ee2494ed4298169c56ac3a6950fa1910ed62a7a；历史O14已独审/main，见review.md |
-| 实现目标 | 0ee2494ed4298169c56ac3a6950fa1910ed62a7a |
-| 实现范围 | apps/server/src/index.ts, packages/client/src/claude-message-settings-production.test.ts |
+| 检查状态 | 新生产PG1选中/1过/exit0，正常DROP与目录清理；focusedtypes0；214源/30SQL/19包预检无缺件；原O15 thirteen/settings不重跑 |
+| 已集成main状态 / HEAD | O14已main bd14；settings45源已main 8d84d529a0756116bd0fc8bad969d61a6c26248e exact。当前O15共享接线尚未main，个人服务不变 |
+| Review | O15新共享target7f59待Lead唯一最终窄审；原032/O15领域独审分别保持 |
+| 实现目标 | 7f59daa552aa0618776468ec54b6ed4c5a6990cb |
+| 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/goal-plan-confirmation-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 消息设置的生产入口已通过独立审查，发送与排队记录在重启后保持原设置。 |
-| 下一可用交付 | 将已审生产接线与固定客户端、中心合同一起接入主线。 |
+| 当前产出 | 生产入口已验证一次确认后自动推进两步依赖任务，重启保留原确认与执行记录。 |
+| 下一可用交付 | 独立审查与主线接收这段生产接线；真实模型规划仍为后继。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -238,6 +238,12 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 
 2026-10-06 17:09:20 UTC：O14唯一独审APPROVED原样归档，source73a不变，等待main精确接收。F01 fresh无冲突后已原子amend v46（17:08:13.061Z），新增唯一 packages/client/src/claude-message-settings-production.test.ts，60literal；[回执](../../docs/evidence/f01/claude-message-settings-production-scope-amend.json)。032当前只准备设计/闭包，不应用未审CORE或启动PG；O14源继续冻结，C01目录不动。
 
-| F01-43 | in-progress | native_center_owner | [032生产Interface](../../docs/evidence/f01/claude-message-settings-production-interface.md)，新专测固定5ce，NOT_RUN；待C01补充批准/受控输入/独占窗口。 |
+| F01-43 | completed | native_center_owner | 0ee唯一独审APPROVED；[45源main精确回执](../../docs/evidence/f01/claude-message-settings-production-main-receipt.json)，本段delivered |
 
 2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。
+
+| F01-44 | in-progress | native_center_owner | [真实生产1case](../../docs/evidence/f01/goal-plan-confirmation-production-README.md)，正常资源清理；target7f59待独立最终审查 |
+
+2026-10-06 17:53:52 UTC：F01-44固定四源7f59daa552aa0618776468ec54b6ed4c5a6990cb，复用既有scan不新增timer；[真实入口预检](../../docs/evidence/f01/goal-plan-confirmation-production-preflight.json)与[下一窗口请求](../../docs/evidence/f01/goal-plan-confirmation-production-request.json)。新PG未跑，旧13领域/032不重复。
+
+2026-10-06 17:57:49 UTC：F01-O15-PRODUCTION-1756窗口已正常归还；1/1实际生产入口通过，未补跑13领域/旧settings。源码停写，Lead唯一最终窄审。

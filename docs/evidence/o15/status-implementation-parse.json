@@ -1,0 +1,28 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "完整提案的显式权限与一次确认事务已实现；纯检查通过，正在准备数据库边界验证。",
+    "next": "用户可一次审阅并确认完整输入，由中心按已授权依赖推进。",
+    "blocker": {
+      "state": "active",
+      "text": "本机磁盘低于保留线，数据库验收等待Lead与Web协调窗口；源码工作可继续。"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN：PG验收未执行；SDK6+schema1不同检查通过、权限首red保留，domain及测试类型修复后roottypes0"
+  }
+}

@@ -22,19 +22,21 @@ export async function requireReadonlyProfile(client: PoolClient, selection: Goal
   return profile.reference;
 }
 export async function authorizeProgression(pool: Pool, goalId: string, input: GoalProgressionAuthorization, key: string): Promise<GoalProgressionResult> {
-  const result = await command(pool, `goal:progression:${goalId}`, key, input, async client => {
-    const state = await loadState(client, goalId, true);
-    const encoding = (await client.query<{ now: Date; bytes: number }>('SELECT clock_timestamp() AS now,octet_length($1::jsonb::text) AS bytes', [JSON.stringify(input)])).rows[0]!;
-    if (encoding.bytes > 65_536) throw new HttpError(400, 'progression_manifest_size', 'Stored authorization exceeds its byte bound.');
-    const now = encoding.now;
-    if (Date.parse(input.expiresAt) <= now.getTime() || Date.parse(input.expiresAt) > now.getTime() + 86_400_000) throw new HttpError(409, 'progression_expiry', 'Expiry must be in the next 24 hours.');
-    if ((await client.query('SELECT 1 FROM flow.goal_progressions WHERE goal_id=$1 AND revoked_at IS NULL AND finished_at IS NULL', [goalId])).rowCount) throw new HttpError(409, 'progression_active', 'Revoke the existing authorization before replacing it.');
-    await validateAuthorization(client, state, input);
-    const row = (await client.query<ProgressionRow>(`INSERT INTO flow.goal_progressions(id,goal_id,project_id,manifest,authorization_digest,created_at,expires_at)
-      VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *,manifest AS "authorization"`, [randomUUID(), goalId, state.goal.projectId, JSON.stringify(input), sha256(canonical(input)), now, input.expiresAt])).rows[0]!;
-    return progressionSnapshot(row, await loadState(client, goalId, false, row.id));
-  });
+  const result = await command(pool, `goal:progression:${goalId}`, key, input, client => authorizeProgressionInTransaction(client, goalId, input));
   return { progression: result.value, replayed: result.replayed };
+}
+/** Caller owns current authorization, transaction and replay; ordinary owner and plan confirmation share this admission. */
+export async function authorizeProgressionInTransaction(client: PoolClient, goalId: string, input: GoalProgressionAuthorization): Promise<GoalProgressionSnapshot> {
+  const state = await loadState(client, goalId, true);
+  const encoding = (await client.query<{ now: Date; bytes: number }>('SELECT clock_timestamp() AS now,octet_length($1::jsonb::text) AS bytes', [JSON.stringify(input)])).rows[0]!;
+  if (encoding.bytes > 65_536) throw new HttpError(400, 'progression_manifest_size', 'Stored authorization exceeds its byte bound.');
+  const now = encoding.now;
+  if (Date.parse(input.expiresAt) <= now.getTime() || Date.parse(input.expiresAt) > now.getTime() + 86_400_000) throw new HttpError(409, 'progression_expiry', 'Expiry must be in the next 24 hours.');
+  if ((await client.query('SELECT 1 FROM flow.goal_progressions WHERE goal_id=$1 AND revoked_at IS NULL AND finished_at IS NULL', [goalId])).rowCount) throw new HttpError(409, 'progression_active', 'Revoke the existing authorization before replacing it.');
+  await validateAuthorization(client, state, input);
+  const row = (await client.query<ProgressionRow>(`INSERT INTO flow.goal_progressions(id,goal_id,project_id,manifest,authorization_digest,created_at,expires_at)
+    VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *,manifest AS "authorization"`, [randomUUID(), goalId, state.goal.projectId, JSON.stringify(input), sha256(canonical(input)), now, input.expiresAt])).rows[0]!;
+  return progressionSnapshot(row, await loadState(client, goalId, false, row.id));
 }
 async function validateAuthorization(client: PoolClient, state: GoalState, input: GoalProgressionAuthorization) {
   if (state.project.project.revision !== input.projectRevision) throw new HttpError(409, 'progression_graph_changed', 'Authorization must name the current graph revision.');

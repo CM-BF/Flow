@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:57 UTC / main8d84d529 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:04 UTC / main8fc76397 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main0c242483；本批接收已审目标推进生产/CLI五源与资源清理记录 |
-| 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
+| 工作基线 / HEAD | main8fc76397；受控接收 O15 13 个领域源码和 F01 4 个生产/消费者源码 |
+| 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | completed |
-| 检查状态 | 目标推进五源与独审73a逐字相同，运行只读闭包无差；本轮2/2生产PG及旧CLI1/types0分轮有效，集成无重跑 |
-| 已集成main状态 / HEAD | 目标推进生产/CLI五源已main bd14f984并推送，4df08fb3含资源与交接记录；167来源不变。个人runtime362/v15与Web8d8/v2不变 |
+| 检查状态 | 17源对各唯一已审target精确一致；领域13分轮、生产1/1原证据复用；本次root noEmit exit0 9.342s，未重复PG/provider |
+| 已集成main状态 / HEAD | 上一批main8fc76397已含RELEASE03证据；本批O15候选待fast-forward。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 逐消息配置和终端收尾的已审组合已通过检查，可从公共接口与命令行使用；实际个人版本另行发布。 |
-| 下一可用交付 | 新版网页兼容证据已接收，准备保留旧页面的实际发布；完整目标输入接线正收口。 |
-| 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
+| 当前产出 | 完整计划输入经确认后可由中心持续推进依赖任务，重开后保留进度；真实模型语义验收仍开放。 |
+| 下一可用交付 | 发布已核组合；个人新版网页准备补齐保留旧页面的兼容依据。 |
+| 当前阻塞 | ACTIVE: 固定后端大型构建仍缺空间；个人更新等待保留网页组合证据。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -213,3 +213,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 17:53 UTC：两处类型冲突已由固定ec30/2d1窄修闭合，实际root noEmit exit0（9.09s），保留首次exit2原文。已审45源全hash保持，TUI7检查源/单Web类型源逐字绑定，registry169只做登记与局部parser。此批准备FF main并push，不刷新个人服务、用户tab或调用模型。
 
 2026-10-06 17:57 UTC：接收RELEASE03 ef458两fixture及ee6d固定独审/raw，26源/结果bindings逐字核实；原A两项复用+B真实三场景通过，累计50,809/180,000ms、余129,191ms；实际root noEmit0(9.08s)，不重跑App/PG。批准仅af51后台+d629产物组合，不把本main或当前个人362/8d8当这组已运行版本。原operator正在核全部保留artifact的兼容依据，未drain/发布/刷新用户tab。
+
+2026-10-06 18:04 UTC：O15 e0领域由 assignment 唯一独审，F01 7f生产接线由 Lead 窄审，17个新增/变更源码精确受控接收。组合root noEmit exit0（9.342s）；不重跑已审13领域或1生产PG。原ACK已收后重开与真实lostACK范围分开，0provider，不自动语义接受。见 [固定输入](../../docs/evidence/i02/o15-confirmation-integration.json)。

@@ -1,0 +1,164 @@
+{
+  "at": "2026-10-06 17:40:25 UTC",
+  "sourceTarget": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+  "priorSourcePrecheck": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+  "counts": {
+    "changedFixture": 1,
+    "unchangedDomainAndTests": 15,
+    "validation": 5
+  },
+  "entries": [
+    {
+      "kind": "source",
+      "path": "apps/runner/src/goal-graph-tools/mcp.test.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 7674,
+      "sha256": "c29688c5dd89ae63f274c7cb8a79ef86e8a288e31600512f132752134caadf7d"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 2749,
+      "sha256": "cdb38e534cb7ce5abdfb237999a6ca285cec75ed211757b225c8ea350902737c"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-graph-proposals/proposals.test.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 16687,
+      "sha256": "f72efe1548fc8a12f925e8c83a9979cb0a7bc4680a1c12fb7dd7e623296f6836"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 8237,
+      "sha256": "01b2abaf6729ce6fd9eabf5a4f3f51b35a8b89f24737ce1619ce548b96e09e26"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-graph-runs/runs.test.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 20358,
+      "sha256": "faf85181b491fa4c9209cff1dd7f5f175348d7469a5557a36c1c5a98b37da10e"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-graph-runs/store.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 10417,
+      "sha256": "5550bfc4296587f13348ed0833d6bc5bcb3b8820cb85e16cb6943904c551b058"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-plan-confirmation/confirmation.test.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 18885,
+      "sha256": "815a4141f3a4d5130140b38fba8043356f526fcb166e75d13b081345a1df77b1"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-plan-confirmation/fixture.ts",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 11375,
+      "sha256": "df6198f7f2fb2a8d2efb6dc65cba931a6c008be8f851148eed893b75406c3fc7"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-plan-confirmation/index.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 1737,
+      "sha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-plan-confirmation/store.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 6857,
+      "sha256": "3f4013289d5438f468acf9821e422c4e01d52f16f1a23ab08f8a555620dc5da8"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/progression.test.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 15600,
+      "sha256": "73dda47d81740d7832805a60a43955e123309b6f0cc94d03d31bf0ce37db44fc"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/store.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 11079,
+      "sha256": "d307d41b2df5a5922fa3bb1a25c965d5ca4ad30585c998cc72a49e5fcc129bd0"
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97"
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524"
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e"
+    },
+    {
+      "kind": "source",
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "ref": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "bytes": 2279,
+      "sha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606"
+    },
+    {
+      "kind": "validation",
+      "path": "docs/evidence/o15/tsconfig.cleanup-focused.json",
+      "ref": "17f182109324ee83ad3a5eed3c4c47f41c6cc0f2",
+      "bytes": 227,
+      "sha256": "1daa8c69aefccf1ae844c7099bfa92a342b2b176d7bd368743f1d18edc3c30e8"
+    },
+    {
+      "kind": "validation",
+      "path": "docs/evidence/o15/cleanup-focused-types.stdout.txt",
+      "ref": "17f182109324ee83ad3a5eed3c4c47f41c6cc0f2",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "validation",
+      "path": "docs/evidence/o15/cleanup-focused-types.exit.json",
+      "ref": "17f182109324ee83ad3a5eed3c4c47f41c6cc0f2",
+      "bytes": 811,
+      "sha256": "60f0f2549bd8b0f11b8122e3955676bb6fa539fb351b29c1c7194a21d9f11cbb"
+    },
+    {
+      "kind": "validation",
+      "path": "docs/evidence/o15/cleanup-bound-types.stdout.txt",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "validation",
+      "path": "docs/evidence/o15/cleanup-bound-types.exit.json",
+      "ref": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+      "bytes": 808,
+      "sha256": "c852f27655ca685263747557921ccf6765b7d7736c26c37484e6b2ce3d1389a3"
+    }
+  ],
+  "mismatches": [],
+  "PG": "NOT_RUN",
+  "types": "focused exit0",
+  "notes": "Adds LIMIT33/reject>32, deadline check including zero rows, first checkpoint parent directory fsync before CREATE. Other15 source remain9fd1; only focused types rerun, PG_NOT_RUN.",
+  "priorFixture": "17f182109324ee83ad3a5eed3c4c47f41c6cc0f2"
+}

@@ -7,6 +7,7 @@ import { commandInTransaction } from '../tasks.js';
 import { applyProposalInTransaction, createProposalInTransaction, goalContext, readProposalInTransaction } from '../goal-graph-proposals/store.js';
 import { withRunnerAuthority } from '../goal-run-authority/runner-project-fence.js';
 import { counts, graphAuthorityStore, runView, type GraphRunRow } from './store.js';
+import { GOAL_INPUT_PROPOSAL_PROTOCOL } from '../../../../packages/contracts/src/goal-graph-proposals.js';
 
 export function runnerGrant(pool: Pool, runnerId: string, input: Ownership) {
   return withRunnerAuthority(pool, graphAuthorityStore, runnerId, input, undefined, (client, run) => runView(client, run));
@@ -48,6 +49,9 @@ export function runnerDetail(pool: Pool, runnerId: string, input: GoalGraphDetai
 }
 function requireProposalScope(run: GraphRunRow, command: Extract<GoalGraphCommandCall['command'], { kind: 'propose' }>) {
   const input = command.proposal;
+  if (input.inputProposal && run.scope.inputProposalProtocol !== GOAL_INPUT_PROPOSAL_PROTOCOL) {
+    throw new HttpError(403, 'goal_graph_scope', 'This grant permits graph-only proposals.');
+  }
   const edges = input.additions.flatMap(node => node.dependencies);
   if (input.expectedProjectRevision !== run.scope.baseRevision || input.additions.length > run.scope.maxNewNodes || edges.length > run.scope.maxNewEdges) throw new HttpError(403, 'goal_graph_scope', 'The proposal exceeds this grant.');
   for (const ref of edges) if (ref.kind === 'existing' && !run.scope.allowedExistingNodes.some(allowed => allowed.nodeId === ref.nodeId && allowed.expectedVersion === ref.expectedVersion)) throw new HttpError(403, 'goal_graph_scope', 'An existing reference is outside this grant.');

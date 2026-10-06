@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | packages/client/src/goal-plan-confirmation-production.test.ts
+{"confirmationProductionEvidence":"docs/evidence/f01/goal-plan-confirmation-production-2e70c97d-45c8-4afc-a39b-20c15626517c.json","database":"flow_f01_confirmation_9ccd3015f7e2407abfcab7cc2b272a99"}
+
+ ✓ packages/client/src/goal-plan-confirmation-production.test.ts (1 test) 3660ms
+   ✓ uses public confirmation and production scanning across restart without a client dispatch loop  2008ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  10:56:53
+   Duration  5.35s (transform 918ms, setup 0ms, import 1.60s, tests 3.66s, environment 0ms)
+

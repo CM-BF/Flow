@@ -1,0 +1,48 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已固定完整输入提案和一次确认的范围，正在实现权限与事务组合。",
+    "next": "用户可一次审阅并确认完整输入，由中心按已授权依赖推进。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458"
+  }
+}

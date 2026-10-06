@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-06T17:48:02.987351+00:00",
+  "reviewer": "assignment_review / gpt-6-astra; independent from native_center_owner",
+  "conclusion": "APPROVED",
+  "target": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+  "domainTarget": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+  "observedHead": "75fe5cb76d7a492b7942713d714ab653562963ac",
+  "clean": true,
+  "localOriginTrackingMatches": true,
+  "scope": "O15 bounded complete-input proposal/owner confirmation module plus explicit sweep/injected SDK HTTP/PG journey; no shared production mount/client/automatic scan approval",
+  "findings": [],
+  "reusedReview": {
+    "path": "/tmp/flow-o15-source-precheck.json",
+    "sha256": "0805e0190f5af3edf00591aa56de31b4c7aed6fe282e0550a66f9319213bf041",
+    "scope": "Original complete source precheck9fd;15 unchanged declared domain/test sources verified against prior hashes. Fixture-only cleanup delta read and prior Lead source review reused."
+  },
+  "bindings": {
+    "manifestPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/docs/evidence/o15/fixed-manifest.json",
+    "manifestSha256": "8e9eacead8ed91384df0bc31e76259522b2507363d7bd1b38c7527aeddd7dafa",
+    "report": "/tmp/flow-o15-final-review-bindings.json",
+    "reportSha256": "8807c8c16cd9db349b6d2bf82bcc92e1b9c474efe2d5559dbb0becab61cae54d",
+    "total": 288,
+    "ownedSource": 16,
+    "protectedRuntimeInput": 232,
+    "evidence": 40,
+    "fixedCurrentHashByteMismatches": [],
+    "validationHeadOwnedSourcesEqual": true,
+    "protectedEqualBase": true
+  },
+  "newEvidenceRead": {
+    "PG": {
+      "selected": 6,
+      "passed": 6,
+      "schemaUnselected": 1,
+      "suiteExit": 0,
+      "vitestSeconds": 7.85,
+      "testSeconds": 6.492,
+      "wrapperSeconds": 8.11286112491507,
+      "runSourceHead": "3f08d57f890f94b350b30d1344e615e2ddab77dd",
+      "window": "O15-PG-20261006-1742"
+    },
+    "historical": {
+      "SDKMCP": 6,
+      "schema": 1,
+      "distinctAcrossRounds": 13,
+      "statement": "No single13case run claimed; historical red/types receipts preserved; original old3tests not rerun."
+    },
+    "finalFixtureTypes": "Original two focused exit0 receipts inspected; current fixture hash matches final cleanup-bound receipt, earlier fixture receipt is historical.",
+    "assertionCoverage": [
+      "Actual SDK in-process tool protocol with injected planner query; saved proposal input contains fixed goal/constraints/acceptance/material references, one bounded owner confirmation, two dependent child artifacts. This is zero-provider, not live natural-language planning.",
+      "Lost success reply is dropped in onSend after accepted route result; exact key/body recovers unchanged confirmation after center restart. Runner-role confirmation denied.",
+      "Injected final link failure rolls back graph, inputs, context, progression and confirmation together; immutable031 association rejects delete/update.",
+      "Incomplete/old graph proposal, stale revision/digest, malformed budget/expiry, revoked profile, stale knowledge and wrong-purpose profile reject without partially frozen inputs.",
+      "Old graph grants reject new input payload before replay; explicit new grant is required; stale fence/revoke remains authoritative on repeated command.",
+      "Already-applied exact graph reuse and pre-defined node conflict are covered. Uncertain first execution after expiry/restart remains blocked with one admission and no duplicate task.",
+      "Explicit owner accepts B then changes B input; old artifact/detail and inputv1 remain readable, but prior delivery/execution becomes noncurrent. This is no new result-driven live planning/semantic proof."
+    ]
+  },
+  "resources": {
+    "database": "flow_o15_735607bfe87c4d7c9c2a54fd19aab402",
+    "marker": "ea49ae1a-4fe7-44c5-9c76-85888dacefaa",
+    "runtimeCount": 2,
+    "runtimeStopped": true,
+    "appBossPoolClosed": true,
+    "adminClosed": true,
+    "connectionObservations": [
+      {
+        "elapsedMs": 1,
+        "connections": []
+      }
+    ],
+    "normalDrop": true,
+    "remaining": [],
+    "directoryInitialIdentity": {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o15-6v1mGJ",
+      "dev": 16777234,
+      "ino": 123105364
+    },
+    "directoryRemoved": true,
+    "phase": "cleaned",
+    "checkpointOrdering": "Source calls synced bounded checkpoint before normal DROP and directory removal; initial reservation and parent directory sync precede CREATE. Final facts and exit0 confirm normal path; reviewer did not query PG or re-check OS resources.",
+    "processGroup": 73101,
+    "processGroupAlive": false,
+    "stopReason": null,
+    "freeBeforeBytes": 1159888896,
+    "observedMinimumFreeBytes": 1127624704,
+    "freeAfterBytes": 1129635840,
+    "stdoutBytes": 1159,
+    "cachePeakBytes": 239,
+    "sampledRuntimePeakBytes": 492,
+    "databaseBytesBeforeDrop": "13163543",
+    "limits": "Sampled byte/space observations; no continuous resource guarantee or separate WAL measurement. Expected negative route errors are distinct from cleanup failure."
+  },
+  "limitations": [
+    "Production migration031 registration/routes/client/automatic scan remain separate F01 delivery.",
+    "No provider/model calls, native planning semantic acceptance, actual engineering eligibility, browser delivery or OS crash proof.",
+    "No implicit expansion of old grant authority; no automatic semantic acceptance claimed.",
+    "Independent result review does not rewrite prior NOT_RUN/pending/red raw."
+  ],
+  "reviewerActivity": {
+    "tests": 0,
+    "typechecks": 0,
+    "productImports": 0,
+    "PGQueries": 0,
+    "providerCalls": 0,
+    "projectWrites": 0,
+    "temporaryReportsOnly": true
+  },
+  "method": "Local find-skills, codebase-design and clean-code reused; Interface/state owner/transaction and cleanup boundaries reviewed; no installation."
+}

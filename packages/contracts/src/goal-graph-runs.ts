@@ -3,7 +3,7 @@ import { idSchema, type TaskSummary } from './tasks.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
 import { ownershipSchema } from './runner.js';
 import { projectNodeReferenceSchema, projectVersionSchema } from './projects.js';
-import { goalGraphProposalInputSchema, goalGraphProposalApplySchema, type GoalGraphProposalSummary, type GoalGraphProposalReceipt, type GoalGraphProposalInput } from './goal-graph-proposals.js';
+import { GOAL_INPUT_PROPOSAL_PROTOCOL, goalGraphProposalInputSchema, goalGraphProposalApplySchema, type GoalGraphProposalSummary, type GoalGraphProposalReceipt, type GoalGraphProposalInput } from './goal-graph-proposals.js';
 
 export const goalGraphScopeSchema = z.strictObject({
   baseRevision: projectVersionSchema,
@@ -12,6 +12,8 @@ export const goalGraphScopeSchema = z.strictObject({
   maxApplications: z.number().int().min(0).max(1),
   maxNewNodes: z.number().int().min(1).max(16),
   maxNewEdges: z.number().int().min(0).max(128),
+  // Absent legacy grants retain exactly their original graph-only authority and JSON.
+  inputProposalProtocol: z.literal(GOAL_INPUT_PROPOSAL_PROTOCOL).optional(),
 });
 export type GoalGraphScope = z.infer<typeof goalGraphScopeSchema>;
 export const goalGraphRunAdmissionSchema = z.strictObject({

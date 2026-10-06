@@ -1,0 +1,14 @@
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(79,43): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(153,68): error TS2322: Type '{ inputProposalProtocol?: string | undefined; baseRevision: number; allowedExistingNodes: never[]; maxProposals: number; maxApplications: number; maxNewNodes: number; maxNewEdges: number; }' is not assignable to type '{ baseRevision: number; allowedExistingNodes: { nodeId: string; expectedVersion: number; }[]; maxProposals: number; maxApplications: number; maxNewNodes: number; maxNewEdges: number; inputProposalProtocol?: "flow.goal-input-proposal.v1" | undefined; }'.
+  Types of property 'inputProposalProtocol' are incompatible.
+    Type 'string | undefined' is not assignable to type '"flow.goal-input-proposal.v1" | undefined'.
+      Type 'string' is not assignable to type '"flow.goal-input-proposal.v1"'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(158,105): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(164,111): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(167,118): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(172,63): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(173,53): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(174,107): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(176,53): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(184,103): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.
+apps/server/src/goal-plan-confirmation/confirmation.test.ts(190,65): error TS2345: Argument of type 'string' is not assignable to parameter of type '`${string}-${string}-${string}-${string}-${string}`'.

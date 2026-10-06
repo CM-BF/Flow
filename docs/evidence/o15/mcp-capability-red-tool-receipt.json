@@ -1,0 +1,11 @@
+{
+  "source": "This conversation tools.exec_command result chunk c128ab, then saved stdout read in chunk2fd35e",
+  "command": "Node24 Vitest selected requires the explicit host-bound",
+  "stdout": "mcp-capability-red.stdout",
+  "selected": 1,
+  "failed": 1,
+  "unselected": 5,
+  "shellExit": 1,
+  "limitation": "Vitest failure is in actual stdout. Attempt to capture its exact exit failed because zsh status is readonly; the shell exit1 includes that capture error. No invented Vitest exit file. Later invocations use task_exit.",
+  "toolOutput": "zsh:1: read-only variable: status"
+}

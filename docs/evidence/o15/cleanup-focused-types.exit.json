@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-06T17:36:01.806952+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/o15/tsconfig.cleanup-focused.json",
+    "--pretty",
+    "false"
+  ],
+  "freeBytesBefore": 1179291648,
+  "sourceHashes": {
+    "apps/server/src/goal-plan-confirmation/fixture.ts": "b9219d83110281c099a3ff45261de15a64e2a7d36325619629cf671f2cb32311"
+  },
+  "headBefore": "ac8fb8f923f7a28582fc269870d7666d80cbda23",
+  "testsRerun": "focused types only; no tests",
+  "productPG": 0,
+  "provider": 0,
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 2.3824052499840036,
+  "stdout": "cleanup-focused-types.stdout.txt",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
