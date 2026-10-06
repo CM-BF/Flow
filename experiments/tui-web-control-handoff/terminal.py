@@ -24,16 +24,11 @@ def safe_failure(stage, error, token=''):
             'message': message.encode('utf8')[:512].decode('utf8', 'ignore')}
 
 
-def run():
-    master, slave = pty.openpty()
-    original = termios.tcgetattr(slave)
-    fcntl.ioctl(slave, termios.TIOCSWINSZ, struct.pack('HHHH', 28, 100, 0, 0))
-    # Inherit the explicitly registered Python PGID, including the actual TUI child.
-    child = subprocess.Popen([os.environ['TUI_TEST_NODE'], '--import', 'tsx', 'apps/tui/src/main.tsx'],
-                             stdin=slave, stdout=slave, stderr=slave, close_fds=True,
-                             env={key: os.environ[key] for key in ['PATH', 'TERM', 'LANG', 'FLOW_URL', 'FLOW_TOKEN', 'FLOW_TUI_STATE_DIR', 'TSX_DISABLE_CACHE']})
+def run(startup_only=False):
+    master = slave = child = None
+    original = None
     output, checkpoints = bytearray(), []
-    deadline = time.monotonic() + 80
+    deadline = time.monotonic() + (15 if startup_only else 80)
 
     def interrupted(_signal, _frame):
         raise RuntimeError('Owned PTY interrupted')
@@ -56,7 +51,7 @@ def run():
         end = min(deadline, time.monotonic() + 15)
         while text.encode() not in output[after:]:
             if child.poll() is not None or time.monotonic() >= end:
-                raise RuntimeError('Visible PTY marker missing')
+                raise RuntimeError('Visible PTY marker missing: ' + text)
             read_output()
         checkpoints.append({'text': text, 'after': after, 'observedBytes': len(output)})
 
@@ -81,10 +76,41 @@ def run():
         os.write(master, b'\r'); wait_for(expected, start)
         wait_for('Message or /command', start)
 
-    stage = 'terminal-open'
+    stage = 'terminal-spawn'
     try:
+        master, slave = pty.openpty()
+        original = termios.tcgetattr(slave)
+        fcntl.ioctl(slave, termios.TIOCSWINSZ, struct.pack('HHHH', 28, 100, 0, 0))
+        # Inherit the registered Python PGID; never detach the actual TUI child.
+        child = subprocess.Popen([os.environ['TUI_TEST_NODE'], '--import', 'tsx', 'apps/tui/src/main.tsx'],
+                                 stdin=slave, stdout=slave, stderr=slave, close_fds=True,
+                                 env={key: os.environ[key] for key in ['PATH', 'TERM', 'LANG', 'FLOW_URL', 'FLOW_TOKEN', 'FLOW_TUI_STATE_DIR', 'TSX_DISABLE_CACHE']})
+        emit('progress', stage='terminal-spawned', tuiPid=child.pid, pgid=os.getpgrp())
+        stage = 'terminal-render'
         wait_for('Ctrl-C disconnect and quit')
+        emit('progress', stage='terminal-rendered', transcriptBytes=len(output))
+        stage = 'terminal-raw-mode'
+        until = min(deadline, time.monotonic() + 2)
+        while termios.tcgetattr(slave)[3] & termios.ICANON:
+            if time.monotonic() >= until:
+                raise RuntimeError('PTY did not enter raw mode')
+            read_output(0.01)
+        emit('progress', stage='terminal-raw', canonicalInput=False)
+        if startup_only:
+            stage = 'startup-quit'
+            os.write(master, b'\x03')
+            while child.poll() is None:
+                read_output()
+            mask = termios.ICANON | termios.ECHO
+            if child.returncode != 0 or termios.tcgetattr(slave)[3] & mask != original[3] & mask:
+                raise RuntimeError('TUI exit or raw-mode restoration failed')
+            emit('finished', result={'startupOnly': True, 'exitCode': child.returncode, 'tuiPid': child.pid,
+                 'pgid': os.getpgrp(), 'rawModeRestored': True, 'checkpoints': checkpoints,
+                 'transcriptBytes': len(output), 'transcript': output.decode('utf8', 'replace')})
+            return
+        stage = 'terminal-open'
         command('/open ' + os.environ['TUI_TEST_CONVERSATION'], 'Saved conversation opened.')
+        emit('progress', stage='terminal-opened')
         stage = 'draft-submit'
         draft = '保留中文🙂\nconflicting terminal draft'
         start = len(output)
@@ -138,17 +164,19 @@ def run():
         raise SystemExit(1)
     finally:
         signal.signal(signal.SIGTERM, signal.SIG_IGN)
-        if child.poll() is None:
+        if child is not None and child.poll() is None:
             child.terminate()
             try:
                 child.wait(timeout=2)
             except subprocess.TimeoutExpired:
                 child.kill(); child.wait(timeout=2)
-        os.close(master); os.close(slave)
+        for descriptor in [master, slave]:
+            if descriptor is not None:
+                os.close(descriptor)
 
 
 if __name__ == '__main__':
     if sys.argv[1:] == ['--failure-self-test']:
         print(json.dumps(safe_failure('conflict-redraw', RuntimeError('Visible PTY marker missing synthetic-token'), 'synthetic-token')))
     else:
-        run()
+        run(startup_only=sys.argv[1:] == ['--startup-only'])

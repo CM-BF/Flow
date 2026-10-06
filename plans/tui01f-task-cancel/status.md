@@ -81,3 +81,5 @@
 2026-10-06 20:58:11 UTC：唯一窗口flow-tui01f04-20261006-2056实际1选中/0通过/exit1，26,512ms；[完整结果](../../docs/evidence/tui01f/web-handoff/one-shot-result.md)。首错终端请求未捕获，0task/provider。自有进程组/center/runner已停，marker/零连接/checkpoint已核；DB/tmp按失败策略KEEP，未DROP/rm/复跑。窗口已即时归还。
 
 2026-10-06 21:02:10 UTC：独立授权cleanup-only退出0/587ms，精确marker/0任务/零连接/3组absent/目录dev-ino确认后，先checkpoint再正常DROP及仅该私有目录移除。原actual red与KEEP当时事实不改；[收尾记录](../../docs/evidence/tui01f/web-handoff/cleanup-once-summary.md)明确纯wrapper遗留PG标签更正，实际有PG清理。窗口已归还，未复跑原旅程，当前仅源码诊断。
+
+2026-10-06 21:07:19 UTC：Lead批准仅journey/terminal观察修复：启动progress、失败/退出与held竞争、有限脱敏stderr、停止并收束pipe后第二durable报告。原controller/Ink/fixture与red/cleanup不改。仅一次PTY初屏/ICANON/退出及小故障检查获准，0中心/PG/Chrome/provider，完整旅程未获重跑。
