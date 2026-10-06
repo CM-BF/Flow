@@ -25,7 +25,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-001-01 | completed | d01_owner | U00～U08及WPF-REQ-01～37已落[plan](plan.md) |
-| WPF-001-02 | completed | d01_owner | 5个子计划齐三件套；P01/M02/I01转独立唯一owner，dashboard/性能准备在管理树 |
+| WPF-001-02 | completed | d01_owner | 5个子计划齐三件套；P01/M02/I01/PERF转独立唯一owner，仅dashboard协作准备留管理树 |
 | WPF-001-03 | in-progress | d01_owner | W01 cb4a392历史APPROVED；后发现SSE由M02 d47修复，M02 d47独立APPROVED已关闭；待正式交原Lead集成 |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01完整6ce整体APPROVED、PH-R1～4关闭；最终metadata2910ebc clean，I01开始实际主App消费；完整X01父范围仍开放；I01实际App挂载另计划 |
@@ -43,7 +43,7 @@ root持续只读研究与独立验收；管理者仅写此管理树。workspace_
 - WPF-M02：实现d47c602f3bab1fe97a9be70fd37780c2918bcfbc整体APPROVED；最终metadata c526c1c889437ee39155d669921577995195c74e clean，parser规范已修、dashboard checks/review及scope proof正确。预览http://127.0.0.1:49922为HTTP fixture。主线集成另核，不由branch approval推定。
 - WPF-P01：整体实现6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 APPROVED，PH-R1～4 CLOSED；最终metadata2910ebc8e11fbcb00d1c2773face229c84fe47cd clean，03:06 root采样proof unchanged/human完整。http://127.0.0.1:5190/src/plugins/fixture/index.html是隔离fixture。
 - [WPF-I01](plugin-integration/plan.md)：claim b6666c29-ebc5-47b2-b754-55b62687fd00 v1 active，新平级source已registered。基线c526，正式完整输入2910ebc合入，owner报告merge1002且bridge正在实施；精确mergeSHA/dirty以新status/liveGit为准，不以输入批准当I01通过。
-- [WPF-PERF01](performance-cycle/plan.md)：新tree web-performance/codex/web-performance从c526初始化并独立核clean，claim4553f315-7fb4-4fe6-babb-0f4a8e5057c6 v1于03:07:10.630Z committed；仅4项measurement/evidence范围，canonical source待owner建立后登记。
+- [WPF-PERF01](performance-cycle/plan.md)：新tree web-performance/codex/web-performance从c526初始化并独立核clean，claim4553f315-7fb4-4fe6-babb-0f4a8e5057c6 v1于03:07:10.630Z committed；仅4项measurement/evidence范围，canonical首文档c7bf1a8已独立核，source请求已交Lead；管理nested改stub。
 
 ## 阻塞与未验证
 
@@ -57,4 +57,4 @@ SSE修复d47已获root整体独立APPROVED：20tests/typecheck、8chat/Approve/d
 
 root最近03:06:17.755Z实采4320为28来源：P01 2910clean、checks/review approved target6ce/proof unchanged、人读完整，I01已registered且claimv1 matchesSource。采样时父/I01仍旧PH-R4文字，双方随后按已通过结论更新NONE/实施步骤；不把过渡快照当当前阻塞。03:01:16.398Z管理者实采W01d263 clean/human完整/blocker none，SSE聚合已闭合。
 
-D04正式PG已部署并实际用来转交：M02 v2移出三文件、I01 v1取得；原样receipt在证据目录。管理v2与P01v1保留范围，PERF新v1独立take；每次续工核当前version/state，历史receipt不覆盖后续变更。主线维护registry，管理nested三个stub不注册；PERF source待owner建立，不复制第二套状态。
+D04正式PG已部署并实际用来转交：M02 v2移出三文件、I01 v1取得；原样receipt在证据目录。管理v2与P01v1保留范围，PERF新v1独立take；每次续工核当前version/state，历史receipt不覆盖后续变更。主线维护registry，管理nested三个stub不注册；PERF source已由owner建立并交Lead登记待实际复验，不复制第二套状态。

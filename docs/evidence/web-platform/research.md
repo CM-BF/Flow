@@ -198,3 +198,10 @@ P01 PH-R4新候选6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6，owner15模块/12bro
 
 
 03:08管理clean-code工作段：重读current status/queue后发现先前追加事实仍留旧“待parser修正/整包另审/等待注册”在当前正文，已直接替换为M02c526、P01最终2910/6ce approved、I01正式实施与PERF已领v1，不仅尾部追加；删除重复X01句并保持完整父范围开放。核单一source与scope/receipt/独立review边界，管理层无生产实现、无全库测试。PERF自助take已回Lead，原始JSON存证；当前4个权威WPF源，PERF第五源待owner建立后登记，claim不是source。
+
+
+## RS21 性能测量语义与PERF权威来源
+
+root官方研究已直接交PERF唯一owner：MDN [PerformanceEventTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming)默认仅记录>=104ms，durationThreshold最低16ms且时长按8ms取整；input delay与到next paint的duration分列，continuous scroll等事件不在其中。unsupported或无符合门槛样本不能写成零延迟。MDN [PerformanceLongTaskTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming)门槛>=50ms并先能力检测；没有记录不是证明没有较短阻塞。React [Profiler](https://react.dev/reference/react/Profiler)普通production默认禁用，不能将无回调写零render，profiling诊断build与production timing报告分开。
+
+PERF canonical首文档c7bf1a81e5d21a602636f388ff565bae1844d83e已建立，管理旧计划三件套转stub，最新方法/结果由新owner唯一维护。实际source请求已tool给Lead，dirty临时rootlock按已授权安装例外记录，不借此宣称产品改动。完整生产容量/实际模型并发仍未测，1/16/128 synthetic只为UI负载，测量边界不被工具指标名字掩盖。

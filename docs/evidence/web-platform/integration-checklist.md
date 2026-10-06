@@ -163,3 +163,6 @@ owner已正式收到followup派工：在新tree建立plans/wpf-i01-plugin-integr
 原GoalOwner明确授权外部Lead自助take。管理者先核新web-performance / codex/web-performance实际HEADc526c1c889437ee39155d669921577995195c74e clean与CLI list available无PERFclaim；以stable requestId wpf-perf01-measurement-20261006提交新take，获得[原样committed receipt](perf01-take-receipt.json)：claim4553f315-7fb4-4fe6-babb-0f4a8e5057c6 v1，03:07:10.630Z，lead external_web_d01_owner/worker w01_owner。不是P01amend，不转走其host修复责任。
 
 精确scope为apps/web/test/performance-fixture.ts、apps/web/test/performance-probe.ts、plans/wpf-perf01-web-performance/、docs/evidence/wpf-perf01/；只测量，不写生产代码。owner已正式followup开始本地技能/三件套/有界benchmark，基线是已审M02预I01，不冒称I01最终性能。新canonical status成立后回Lead登记并将管理准备转stub；receipt与实际source聚合分开验。
+
+
+PERF source移交已落实：首文档c7bf1a81e5d21a602636f388ff565bae1844d83e，management已只读核新树branch/HEAD与唯一status字段。source登记请求：id WPF-PERF01、title Web性能基线测量、worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance、branch codex/web-performance、planDir plans/wpf-perf01-web-performance、evidenceDir docs/evidence/wpf-perf01。管理nested performance-cycle已stub；初始实采dirty仅本树授权临时根lock安装，不冒称clean。登记后一次真实聚合核验，未测量/未优化保持unknown。
