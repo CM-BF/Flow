@@ -12,7 +12,7 @@ CREATE TABLE flow.conversation_queue (
   created_at timestamptz(3) NOT NULL DEFAULT clock_timestamp(),
   updated_at timestamptz(3) NOT NULL DEFAULT clock_timestamp(),
   UNIQUE(conversation_id,sequence),
-  CHECK ((state='promoted' AND turn_id IS NOT NULL AND task_id IS NOT NULL AND turn_number>0)
+  CHECK ((state='promoted' AND turn_id IS NOT NULL AND task_id IS NOT NULL AND turn_number IS NOT NULL AND turn_number>0)
     OR (state<>'promoted' AND turn_id IS NULL AND task_id IS NULL AND turn_number IS NULL))
 );
 CREATE INDEX conversation_queue_waiting ON flow.conversation_queue(conversation_id,sequence) WHERE state='waiting';

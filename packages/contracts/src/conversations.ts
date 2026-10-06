@@ -34,7 +34,7 @@ export const conversationListQuerySchema = z.strictObject({
 
 export interface ConversationCapabilities {
   followUp: true;
-  queue: false;
+  queue: true;
   steer: false;
   liveAssistantText: false;
   perTurnModel: false;
