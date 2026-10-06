@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [Sandbox syscall 67固定候选](sandbox67/README.md)：GO已选唯一grant，固定源码f960a1dc、16局部检查通过；status_read独审及Mika执行门禁前0新运行。
+- [Sandbox syscall 67固定候选](sandbox67/README.md)：GO已选唯一grant，组合4dec9500已获status_read于12:05:24 UTC独审APPROVED；Mika已开放唯一go-c-sandbox67-once，执行前fresh固定门禁。
 - [P04已main接收的权威比对回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/runner-read-fence-source-comparison.json)。覆盖先前移交历史；P04最终owner064183b984f0dd7bc6818ef84e68dbc9e4fc5de7，release实际以[外部COMMITTED回执](/tmp/flow-p04-final-release-receipt-20261006.json)为准，详情只查权威输入。
 
 - [Native工程file-only / ≥Sol身份 / 全writer停止边界](native-engineering-boundaries.md)：固定main52eb与0.154/R06输入；缺证阻native promote，不阻零模型fixture/checker/snapshot。
