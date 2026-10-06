@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-06T16:54:37.680739+00:00",
+  "state": "A_EVIDENCE_ACCEPTED_B_SOURCE_REPAIR_PENDING",
+  "archives": [
+    {
+      "source": "/tmp/root-release03-all-164711-evidence-review.json",
+      "archive": "release03-all-164711-root-review.json",
+      "bytes": 5695,
+      "sha256": "22633a83cc5ca9b38456b54d209ef18b89240b0bde2ee09638b135f8e08ed2a3"
+    },
+    {
+      "source": "/tmp/release03-c18-files-and-history-review.md",
+      "archive": "release03-c18-files-and-history-peer.md",
+      "bytes": 5612,
+      "sha256": "d9e36a0bdd687bd79c27f84da6c0fbd40149f66df38769e1461bd4f83d006906"
+    }
+  ],
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e",
+  "rawFilesVerified": 12,
+  "rawBytes": 191936,
+  "rootReviewState": "A_TWO_CASES_ACCEPTED_B_HARNESS_FAILURE",
+  "independentManagerChecks": [
+    "12 regular files, exact set/bytes/SHA256 equal root report and peer report",
+    "Two peer source hashes equal fixed c18 blobs",
+    "Fresh management/RELEASE/DPERF active scopes have no active literal/prefix overlap"
+  ],
+  "ledgerObservedAt": "2026-10-06T16:53:32.439Z",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/read-model.mjs",
+        "apps/execution-dashboard/src/server.mjs",
+        "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "docs/evidence/wpf-dperf04",
+        "plans/wpf-dperf04-summary-detail"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-summary-detail",
+      "origin": "new",
+      "taskId": "WPF-DPERF04",
+      "worker": "w01_owner",
+      "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "createdAt": "2026-10-06T16:10:21.626Z",
+      "updatedAt": "2026-10-06T16:10:21.626Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/test/web-current-preview.browser.ts",
+        "apps/web/test/web-current-preview.fixture.ts",
+        "docs/evidence/wpf-release03",
+        "plans/wpf-release03-current-preview"
+      ],
+      "state": "active",
+      "branch": "codex/web-current-preview-compatibility",
+      "origin": "new",
+      "taskId": "WPF-RELEASE03",
+      "worker": "w01_owner",
+      "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "createdAt": "2026-10-06T14:37:56.939Z",
+      "updatedAt": "2026-10-06T14:47:08.816Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "reuseBoundary": "All remains failed all-mode with 12 original files, not modehistory/exact10. Candidate adapter is source-only advice, not approved implementation or runtime gate. Full12326ms charged; total20309ms/remaining159691ms.",
+  "rootWireReview": {
+    "matchingNonRedactedBodies": 64,
+    "redactedRegistrationRows": [
+      0,
+      20,
+      39
+    ],
+    "noCredentialRetrieval": true
+  },
+  "runtimeThisIntake": false,
+  "resourceSampleThisIntake": false
+}

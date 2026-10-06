@@ -90,7 +90,7 @@
       "supersededBy": "resource-policy-1349.json"
     }
   },
-  "recoveryParallel": "Recovery1b8 original21 frozen, rebound27directNOT_RUN after one fresh resource failure under new pure-check16/8 margins. W01 sequentially moves from RELEASE safety point to committed DPERF04 source; no PG/Chrome window held.",
+  "recoveryParallel": "Recovery27 controlled direct passed; real IDB/HTTP/browser/fullreview remain open. W01 sequential RELEASE source repair then DPERF Host test; no new runtime.",
   "archives": [
     {
       "source": "/tmp/root-attachi02-existing-release-artifact-audit.json",
@@ -120,11 +120,11 @@
   "currentResourcePolicy": "resource-policy-1349.json",
   "existingSourceReuseStudy": "release03-existing-source-resource-study/report.md",
   "runScopeProposal": "release03-run-scope-proposal.json",
-  "currentRunState": "A3 attachment-only actual passed; mixed interrupted by resource stop, no completeA/B; window returnedLead. c18bd label source narrowly approved, doesnotreplace runtime269103/0b3e.",
+  "currentRunState": "all12326ms: attachment-only+mixed passed on af51; Bplain202 then Files strict locator failure. Cleanup complete, total20309ms/remaining159691ms. Lead accepts returned window; Mika CORE now holds PG.",
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
-  "updatedAt": "2026-10-06T16:12:56.808881+00:00",
+  "updatedAt": "2026-10-06T16:54:37.680739+00:00",
   "prepareState": "PREPARED_RELEASED",
-  "validationState": "A3_RESOURCE_STOP_PARTIAL_HISTORY_CLEANED",
+  "validationState": "A_TWO_CASES_ACCEPTED_B_LOCATOR_FAILED_SOURCE_REPAIR_PENDING",
   "historicalRawArtifact": {
     "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
@@ -214,5 +214,8 @@
     "evidence": "release03-c18bd-label-review-root.json",
     "newRuntime": 0,
     "historyContract": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086"
-  }
+  },
+  "latestActualEvidence": "release03-all-164711-root-review.json",
+  "sourceRepairAdvice": "release03-c18-files-and-history-peer.md",
+  "currentWindow": "lead-core-window-after-release-all.json"
 }

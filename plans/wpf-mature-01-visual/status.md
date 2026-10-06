@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 16:23 UTC |
+| 最近更新 | 2026-10-06 16:54 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 正式产物已备；新后台A3附件单独输入实际通过，混合输入因空间停止；清理完成，无完整兼容绿回执 |
-| 下一可用交付 | A/B继续暂停，待Lead新的运行条件按余172.017秒完成兼容；原01-03视觉三件已归档，后继保可发现详情与异常 |
-| 当前阻塞 | ACTIVE: A3达到资源停止线；混合输入与实际App未验，B/Chrome未运行；个人预览保持原版本 |
+| 当前产出 | 正式产物506/d629已备；af51附件单独与混合两项A完整通过，B普通Send通过后Files定位器失败；原证据/清理获root与Lead接收 |
+| 下一可用交付 | 原RELEASE四scope窄修定位器/显式all12证据适配后独审；CORE窗口归还后再fresh B-only准入，累计剩159.691秒 |
+| 当前阻塞 | ACTIVE: B harness定位器失败未完成兼容；Mika CORE持当前PG窗口，本组仅源码修复；个人预览保持原版本 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -47,6 +47,6 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查发现fixture构建矩阵的noUncheckedIndexedAccess两错，RELEASE02独立base2e71/03323bce v1三scope由w01窄修，runner_owner独立审。不是env/ENG失败，旧定向检查与原browser报告保其真实范围；不重跑旅程或个人发布。[当前接收队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
-实际发布新增[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01唯一验证owner、四范围已bfb209ae v1 COMMITTED，原SVCoperator发布。现成9eec hash核齐但无正式format2；14:25fresh准入后一次正式prepare成功，14:28两cache已释放；backend362有特定history v2缺口须最小差分/合法修复，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
+实际发布新增[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01唯一验证owner、四范围已bfb209ae v1 COMMITTED，原SVCoperator发布。历史9eec原产物无format2；14:25fresh准入后正式506/d629 prepare成功，14:28两cache已释放。旧backend362缺口已由af51固定组合闭合两A实证，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
 
-最新原始结果已由Lead接收；上一next12已完成，Lead新批最多12棵资源整理进行中，A/B继续暂停；[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
+[最新all两A实证审查](../../docs/evidence/web-platform/release03-all-164711-root-review.json)已接收；B只完成plainSend，Files定位器失败由原owner窄修，完整兼容未通过。12原raw不裁改，all12复用必须显式适配/独审。[Lead接受窗口归还并交Mika CORE](../../docs/evidence/web-platform/lead-core-window-after-release-all.json)；后继B另fresh准入，不因A通过自动启用。

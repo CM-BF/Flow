@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T16:49:24.551616+00:00",
-  "state": "RELEASE03_A_PASSED_B_LOCATOR_FAILED_CLEANED_WINDOW_RETURNED",
-  "groupWindowOwnership": "Returned toLead afteractual worker+Chromeexit0 and ownedDBremoved; no next run until reviewedsource and freshwindow/admission.",
+  "recordedAt": "2026-10-06T16:54:37.680739+00:00",
+  "state": "MIKA_CORE_PG_WINDOW_RELEASE_SOURCE_REPAIR_ONLY",
+  "groupWindowOwnership": "Mika CORE8 groups after Lead accepted RELEASE all cleanup/return. This group has no PG/Chrome runtime window.",
   "release03": {
     "state": "A_PASS_B_LOCATOR_FAILURE_CLEANED_WINDOW_RETURNED",
     "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
@@ -24,7 +24,7 @@
       "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
       "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
       "review": "APPROVED_SOURCE_LABEL_FIX",
-      "runtime": "NOT_RUN; A3remains269103/0b3e",
+      "runtime": "Executed in all-20261006-164711-15b54e at ba7dea; A3 remains earlier269103/0b3e.",
       "evidence": "release03-c18bd-label-review-root.json"
     },
     "previousRun": {
@@ -53,7 +53,9 @@
         "evidence": "release03-c18bd-label-review-root.json"
       }
     },
-    "run": "all-20261006-164711-15b54e"
+    "run": "all-20261006-164711-15b54e",
+    "evidenceReview": "release03-all-164711-root-review.json",
+    "reuse": "A facts accepted from all12; explicit adapter/source review and externally pinned all12 required before separate fresh B-only admission."
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",
@@ -117,6 +119,10 @@
       "freeBytes": 1243852800,
       "source": "Lead via root; not managerfresh",
       "coordination": "next12b12/12 complete; >=1GiB+160MiB; one serial A->B allowed, O14/O15/TUI PG held"
+    },
+    {
+      "source": "Lead via root, current-turn confirmation",
+      "coordination": "Accepted all cleanup; nextPG Mika CORE8, start+128MiB/120s+80s; no concurrent ownPG. main564 docs/registry only, personal unchanged."
     }
   ],
   "limits": [
@@ -125,5 +131,5 @@
     "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
     "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
   ],
-  "latestCoordination": "release03-all-admission.json"
+  "latestCoordination": "lead-core-window-after-release-all.json"
 }
