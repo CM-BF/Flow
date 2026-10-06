@@ -141,3 +141,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID、受控exact row；browser两处原draftId+count1，未去重/删稿/first/nth或减弱原断言。RECOVERY-RETURN-FOCUS：Radix原autofocus生命周期保真实invoker，只在同namespace/generation授权和仍visible/connected/enabled时回焦；旧Workspace撤权/隐藏/卸载不能抢焦点。当前types/direct/browser NOT_RUN；旧50不覆盖新render/焦点。
 
 [Root rec4d运行原件](../../docs/evidence/wpf-conversation-recovery/browser-second-root-review.json)仅FAILED_RUNTIME_EVIDENCE_AND_CLEANUP_ONLY，原两次失败和25raw逐hash保持。完整feature NOT_STARTED、target UNKNOWN、main未接；待root限定两源独审，后续实际验收须另准入。
+
+## 2026-10-06 21:15:21 UTC — 8ed两项P2限定源码批准
+
+[Root原件](../../docs/evidence/wpf-conversation-recovery/8ed-identity-focus-root-approval.json)绑定 `8ed2741327779e57d717653d10c2180e1897c26a` / metadata b9957e8d6cbe542c18a7dd4e856dcb77dd4865e7，APPROVED_SCOPED_IDENTITY_FOCUS_SOURCE_NOT_RUN，0blocking。两项P2均SOURCE_ADDRESSED：exact本地record呈现/定位与原授权代际invoker回焦；原restore/17源/25raw不变，原键盘断言保留。Root0运行，owner本段仅归档，不把source结论扩成浏览器通过。完整feature review NOT_STARTED、target UNKNOWN。原rec4d失败及晚终态预算不改，下一入口只是独立/tmp来源准备。

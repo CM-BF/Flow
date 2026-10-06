@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-06T21:13:25.405734+00:00",
+  "verdict": "APPROVED_SCOPED_IDENTITY_FOCUS_SOURCE_NOT_RUN",
+  "target": "8ed2741327779e57d717653d10c2180e1897c26a",
+  "metadataHead": "b9957e8d6cbe542c18a7dd4e856dcb77dd4865e7",
+  "branch": "codex/web-conversation-recovery",
+  "dirty": false,
+  "manifestSha256": "e57e2b685f306d4f08f4d3206cb4bb2869e315558de9a4b441e2a241370028f7",
+  "findingsClosed": [
+    {
+      "id": "RECOVERY-SAVED-RECORD-IDENTITY",
+      "status": "SOURCE_ADDRESSED",
+      "reason": "Actual persisted id is rendered in controlled row data attribute; both browser Restore paths use original captured draftId with UUID validation/count1/kind/route/preview/intent/files/time assertions. Bounded plain-text summary/local timestamp/optional exact id distinguishes saved records without dedupe or new storage."
+    },
+    {
+      "id": "RECOVERY-RETURN-FOCUS",
+      "status": "SOURCE_ADDRESSED",
+      "reason": "Existing modal lifecycle captures real pre-autofocus element and an authorization predicate bound to namespace/generation; normal close returns focus only while still allowed, connected/visible/enabled and the modal is closed. Effect teardown clears retained invoker; original Escape test remains."
+    }
+  ],
+  "blockingFindings": [],
+  "reviewed": [
+    "Preview iterates at most121 codepoints and renders120 plus ellipsis; replaces whitespace/control/unpaired-surrogate codepoints, preserves React escaping and uses wrap/dirauto. Unknown text/count/time shapes have explicit nonthrowing display fallbacks.",
+    "Saved material counts describe local arrays, not verified readiness; full restore still validates complete data. Timestamp Date-range check prevents toISOString failure; no material/body GET introduced.",
+    "captureFocusPermission reuses current(): authorization, active plugin, session/disposal checks plus captured namespace/generation. No activation or mutation from its predicate.",
+    "Original restore method is byte-identical, and entire other17source unchanged. No original same-key replay/CAS/file ordering/noPOST/content-prefetch expectations removed.",
+    "Browser supervisor function unchanged apart from erased type-only Locator import; all same-origin/cleanup/resource limits retained."
+  ],
+  "validation": {
+    "currentEqualsFixedSources": 19,
+    "changedFiles": [
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ],
+    "otherSourcesUnchanged": 17,
+    "oldRawCount": 25,
+    "oldRawBytes": 40735,
+    "oldRawEqualsOriginalManifestsAnd12955": true,
+    "restoreMethodUnchanged": true,
+    "parentLogicUnchanged": true,
+    "originalThemesKeyboardAssertionUnchanged": true,
+    "diffCheck": 0,
+    "runtime": "NOT_RUN",
+    "types": "NOT_RUN",
+    "productImports": false,
+    "spaceSampling": false,
+    "projectWrites": false
+  },
+  "budget": {
+    "priorActualBrowserMs": 25520.435,
+    "remainingMs": 64479.565,
+    "conservativeNextIntegerTotalMs": 64479,
+    "cleanupReserveMs": 15000,
+    "direct50": "Prior2b01 controlled evidence remains historical; no currentUI/runtime claim"
+  },
+  "next": [
+    "One normal owner approval archive and preparation-only rebind of actual finalHEAD19pins/deps/old25raw and retained late-terminal budget. Old4d prepared candidate is historical, not runnable for8ed.",
+    "No browser before separately available shared window, fresh original6ffv4/21/resources, new controlledadmin input and single-use admission. Latest known resource observation was below startfloor; no new sample was taken byroot."
+  ],
+  "limits": [
+    "Actual restore/material/CAS/authloss/390themes/focus behavior remains unverified; this source review does not close native browser acceptance.",
+    "The source explains legitimate same-route distinct IDs but does not prove exact creation history of originalrec4d two rows.",
+    "Malformed summary shapes/revocation returnfocus reviewed in source only, not dynamically exercised.",
+    "Fullfeature remainsNOT_STARTED/targetUNKNOWN, mainnotintegrated and remainingCREATE/Queue/Steer/complete three-center journeys open."
+  ],
+  "cleanCode": "Kept display derivation local and bounded; persistence authority unchanged. Used modal lifecycle and small read-only permission predicate instead of duplicate plugin focus registry or timers. Shared exact-row helper removes repeated ambiguous locator."
+}

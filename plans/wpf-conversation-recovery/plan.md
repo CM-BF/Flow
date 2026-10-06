@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 21:10:21 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 21:15:21 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -122,3 +122,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ### 2026-10-06 21:10:21 UTC — 同route多稿呈现与普通关闭回焦
 
 限定两源 `8ed2741327779e57d717653d10c2180e1897c26a`：本地已载入草稿提供有界plain-text摘要、保存UTC时间/intent/材料条数及可展开完整record ID。两处browser精确使用原draftId、count1及原kind/route/preview，保材料原序/noPOST/CAS与全部历史raw。外部P01普通button的invoker由现Radix open/close autofocus回调保存/恢复，同namespace/权限代际和可见性不符则不回焦；不扩公开slot/authority、不去重删稿。见[固定接口](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-source.md)。仅源码修复待独审，0runtime，TODO03/05/06仍开放。
+
+### 2026-10-06 21:15:21 UTC — 8ed源码复审闭合，真实旅程仍开放
+
+两项P2获[root限定源码批准](../../docs/evidence/wpf-conversation-recovery/8ed-identity-focus-root-approval.json)，完整TODO仍开放。下一准备沿原入口、same-origin既有subset和原90s累计预算，最多64479ms含15000ms清理；只重绑最终metadata/19源/依赖/旧25raw，不创建新wrapper/gate或提前读取admin。0运行，真实browser失败不回填通过。

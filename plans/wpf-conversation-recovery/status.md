@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 21:10:21 UTC |
+| 最近更新 | 2026-10-06 21:15:21 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段两源checkpoint 8ed2741327779e57d717653d10c2180e1897c26a；其余17源=4d330；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 两源已固定；本次仅收口own metadata，正常push后核local=origin/clean |
+| 工作树dirty状态 | b9957e8d clean独审输入；19源8ed冻结，本次只approval metadata，normalpush后核双端clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 同会话多稿增加本地摘要、保存时间与完整身份详情，两处恢复按原record精确定位；外部P01入口回焦具备原namespace/代际守护 |
-| 下一可用交付 | 本段两源固定候选交root独立源码复审；实际浏览器须另fresh准入 |
-| 当前阻塞 | ACTIVE: 新UI/定位/回焦源码未运行，原第二次browser失败保持；完整恢复与中心旅程未通过 |
+| 当前产出 | 两项P2已获root限定源码批准；原真实browser两次失败保持，完整旅程尚未复验 |
+| 下一可用交付 | 封存metadata后仅在新own/tmp重绑下一浏览器来源与剩余预算，等待单独fresh准入 |
+| 当前阻塞 | ACTIVE: 两项P2仅SOURCE_ADDRESSED，真实材料/焦点/完整恢复及中心旅程未复验 |
 | 需用户决定 | NONE |
 | 检查状态 | FAILED: 第二次browser strict locator匹配2记录，actualexit1/清理完整；browser晚终态累计25520.435ms；2b01受控50/50原PASS/direct保守9969ms不改，types未新增 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；21:01:31.118Z及21:05:22.444Z管理fresh原件已本人窄核、唯一owner/nooverlap；仅本段source-only，无运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；21:13:59.691Z管理fresh原件已本人窄核、唯一owner/nooverlap；仅metadata与/tmp准备，无gate或运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -235,3 +235,9 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 固定 `8ed2741327779e57d717653d10c2180e1897c26a`；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-checkpoint.json)及[接口/限制](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-source.md)。RECOVERY-SAVED-RECORD-IDENTITY与RECOVERY-RETURN-FOCUS按授权源码修正，作者SOURCE_ADDRESSED_PENDING_REVIEW；原restore/journal/App和另17源不变，原25browser raw逐hash保持。Root[第二次运行证据](../../docs/evidence/wpf-conversation-recovery/browser-second-root-review.json)仅接受失败与清理，不能当功能批准。
 
 本地草稿摘要/UTC时间/intent/材料数+折叠完整ID、不读取正文；两处用已捕获draftId exact count1，不删除/合并记录或弱化原材料/noPOST/CAS。P01实际invoker通过原Radix生命周期回焦，同namespace/generation授权、可见/connected/未disabled才可返回；正常teardown清理。当前types/direct/browser均NOT_RUN，原50仅旧2b01范围，完整feature NOT_STARTED/targetUNKNOWN/main未接。browser晚累计25520.435ms/余64479.565ms含15s清理保持，无新gate。只做静态源/原件hash、相对链接与Git格式核查，未运行产品或status parser。
+
+## 2026-10-06 21:15:21 UTC — 8ed限定源码批准归档 / 下一入口仅准备
+
+Root于2026-10-06T21:13:25.405734+00:00对固定 `8ed2741327779e57d717653d10c2180e1897c26a` 给 [APPROVED_SCOPED_IDENTITY_FOCUS_SOURCE_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/8ed-identity-focus-root-approval.json)，0blocking；RECOVERY-SAVED-RECORD-IDENTITY与RECOVERY-RETURN-FOCUS均SOURCE_ADDRESSED。19source、另17不变、25旧raw40735B、原restore/父监督/keyboard未弱化已独核。原件4386B/SHA7a7f7e5590fc8189b0b4d0f7bec15ef05c53d661fd15f7b2860de491eee2485a原样归档。
+
+这是源码批准，不是新summary/真实focus/nativeIDB/材料/CAS行为通过。完整feature NOT_STARTED/targetUNKNOWN/main未接，原50仍绑定2b01、两次browser失败保留；累计晚终态25520.435ms/余64479.565ms，下一整数total64479含15000cleanup/work49479仅候选。0types/tests/import/HTTP/PG/Chrome/free/newenv/凭据读取。metadata封存后，仅新own/tmp绑定实际最终HEAD、19pin/既有依赖/25raw，保旧4d准备不动；不签gate、不预约窗口。

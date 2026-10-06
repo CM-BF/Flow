@@ -179,3 +179,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 发现并修正：合法同route不同viewKey不能当重复稿删除，原locator必须跟已捕获draftId；同时受控Radix没有Trigger引用，补自有invoker与原authority的namespace/generation谓词，而不是绕过host/写第二焦点系统。权限谓词只读，失效返回false；element已移除/hidden/inert/disabled或页面不可见时不focus，teardown清引用。保持原focus trap/default open autofocus和原键盘断言。
 
 源diffcheck0，19current=fixed、仅两源delta/17不变；25raw保真。未知项：摘要窄屏/Unicode/invalid-record展示、真实button回焦及下一browser材料/CAS仍NOT_RUN，不能从静态检查或旧50推行为通过。仅小源码/Git/metadata操作，0tests/types/产品import/HTTP/PG/Chrome/free；完整feature未批准。
+
+## 2026-10-06 21:15:21 UTC — 8ed approval metadata clean-code安全点
+
+本地既有find-skills/clean-code/codebase-design方法复用，无安装/新架构。核root4386B原文hash、限定source与runtime边界、19固定源码不变、own元数据链接和当前状态。两P2只SOURCE_ADDRESSED；旧raw/原direct50和browser失败各保自己的目标与计时。没有重跑检查来制造新绿色，也不为准备/tmp绑定递归更改HEAD。下一准备显式带晚终态25520.435ms而非较早budget序列化合计；total64479/work49479是保守候选，不是授权。当前0产品import/types/tests/HTTP/PG/Chrome/free/凭据读取。
