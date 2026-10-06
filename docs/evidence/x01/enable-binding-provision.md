@@ -28,6 +28,8 @@
 | apps/web/src/plugin-management/PluginManagement.tsx | operation新增两种kind的两个审计label，无UI布局变化 |
 | apps/web/test/plugin-management/browser.ts | 现audit rendering直接断言；不新建页面/运行框架 |
 
+公开命令选择以 [准备页当前段](enable-binding-preparation.md) 为唯一说明：enable/disable用新 `/api/plugins/:id/runtime/commands`，旧command schema/入口仍四change；只拓展旧operation读回kind。相同revision权威与原operation+key幂等语义不改。
+
 新 migration 编号/确切文件名由Execution Lead分配后才加入claim；033属于CHAT05P01，不能借用。只消费唯一正式DDL；前向扩008 kind CHECK、关联029 installed来源、runner/task/registration复合身份、immutable pin/phase receipt。不得修改008/029历史SQL或在fixture复制第二套DDL。
 
 22:50:27 fresh账本：领域/runner 12 literal未见active/handoff_pending重叠；这仅观察，不是写权。当前S01P07 `9ec4dbc8 v2`持runtime、journal、runners、factory、client、contracts/index/runner-claim；CHAT05P01 `b447f2ce v1`持claude/outbox/contracts runner/server events/033；C02 `8ad6536b v2`持tasks/profile/native合同与Codex adapter。22:52:10读取Web管理源子树亦未见占用；Web audit现有fixture也作为只读输入保留。精确scope以最终take/amend时fresh账本为准。
@@ -43,3 +45,5 @@
 ## 方法与资源
 
 已读本地 find-skills、codebase-design、brainstorming 和 clean-code（sickn33固定bdacd76）。按职责/状态owner/小接口审单revision、DB→host权限与错误/未知、字节界限；不复制运行FSM，不卡在重复设计审批。现资源未过运行门禁，只做Git/文件读取和小metadata，未执行任何工程check、依赖导入、安装、PG或provider。后续测试须fresh资源、独立专库/动态端口与本lead窗口；不得据source provision直接起跑。结构变更在正式交付后交Lead更新固定main架构数据，本次只登记。
+
+Web两个label沿find-skills本地 `/Users/citrine/.agents/skills/vercel-react-best-practices/SKILL.md`，本段只读确认映射/直接consumer，不加状态、副作用、layout或视觉设计；Web检查未运行。
