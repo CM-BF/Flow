@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react";
 import { FileIcon, FolderTreeIcon, TerminalIcon, XIcon } from "lucide-react";
 import type { Reference } from "@flow/contracts";
 import { WorkspaceFiles, WorkspaceDetail, WorkspaceTerminal } from "./panels";
@@ -33,6 +33,7 @@ function TaskWorkspace({
 }: WorkspacePanelsProps & { layout: WorkspaceLayout }) {
   const prefix = useId();
   const tabsRef = useRef<HTMLDivElement>(null);
+  const focusAfterOpen = useRef<WorkspaceTabId | null>(null);
   const [localTab, setLocalTab] = useState<WorkspaceTabId>(layout.tab);
   const [focusedTab, setFocusedTab] = useState<WorkspaceTabId>(controlledTab ?? layout.tab);
   const [openDetails, setOpenDetails] = useState<string[]>(layout.openDetails);
@@ -61,6 +62,12 @@ function TaskWorkspace({
 
   useEffect(() => { if (controlledTab) setFocusedTab(controlledTab); }, [controlledTab]);
   useEffect(() => { layout.tab = activeTab; layout.openDetails = openDetails; }, [layout, activeTab, openDetails]);
+  useLayoutEffect(() => {
+    if (!focusAfterOpen.current || visibleTab !== focusAfterOpen.current) return;
+    const index = tabs.findIndex((tab) => tab.id === focusAfterOpen.current);
+    const button = tabsRef.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[index];
+    if (button) { button.focus(); focusAfterOpen.current = null; }
+  }, [visibleTab, tabs.length]);
 
   function selectTab(tab: WorkspaceTabId) {
     setLocalTab(tab);
@@ -69,6 +76,7 @@ function TaskWorkspace({
   }
 
   function openReference(reference: Reference) {
+    focusAfterOpen.current = `detail:${reference.id}`;
     setOpenDetails((ids) => ids.includes(reference.id) ? ids : [...ids, reference.id]);
     selectTab(`detail:${reference.id}`);
   }

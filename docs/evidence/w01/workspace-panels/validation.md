@@ -14,7 +14,7 @@ FLOW_WORKSPACE_PREVIEW_URL=http://127.0.0.1:58077 /opt/homebrew/opt/node@24/bin/
 git diff --check
 ```
 
-结果：组件 TypeScript 0 diagnostics；Chrome headless 浏览器 12 组行为通过，0 page errors；diff whitespace 通过。结果 JSON：`browser-results.json`。
+结果：组件 TypeScript 0 diagnostics；Chrome headless 浏览器 13 组行为通过，0 page errors；diff whitespace 通过。结果 JSON：`browser-results.json`。
 
 浏览器覆盖：FileTree 单 tabstop、方向/Home/End/Space；详情首次激活才请求；内容转义与产物版本/任务验证；tabs 箭头只移焦点、Enter 激活；关闭焦点转邻 tab；明确错误/重试；终端只读/暂停追尾/恢复追尾；clipboard 拒绝/成功反馈；双主题与减少动画；A→B→A 布局恢复及相同 referenceId 的 props 数据隔离；390px 窄屏不超宽；无任务状态清除当前引用 tabs。
 
@@ -27,6 +27,7 @@ git diff --check
 | 02:08 | 首段实现/上游组件 | 保留官方组合结构；将 tabs、显示内容、官方源分别集中；没有引入第二套业务状态或虚拟PTY。明确共享依赖由W01写入。 | 首候选需浏览器验证 |
 | 02:12 | 浏览器真实故障与审查反馈 | 找到 ansi-to-react 6.2.6 CommonJS default 在 Vite8 返回 namespace object，导致 TerminalContent 崩溃；加局部兼容适配。W01 owner 已确认其实际app同样复现。 | 只对实际发布包的两种导出形式适配 |
 | 02:14 | 交付前布局/可访问性 | 缓存每task纯布局，移除每个close图标额外tabstop（Delete可关闭），controlled activeTab同步单焦点入口；已选引用分组变化时展开其真实group；复制失败显式反馈，ResizeObserver仅在追尾时保持底部。 | 父级提供的details必须属于当前task；组件不保存detail副本 |
+| 02:22 | WP-R1 review 修复 | root 对 `a2be896405304111379d72e9b22e46f8e47a11a4` 独立 CUA review 发现 P2 blocking：FileTree 键盘打开详情后焦点落到 body。加入显式 pending focus，等待活动 detail tab 挂载后在 layout effect 聚焦；新增首次 Enter 与缓存 Space 打开的焦点/不重复请求检查。13组浏览器与类型检查通过。 | 待 root 对修复提交独立复审；不自行标记 APPROVED |
 
 未验证：实际中心 HTTP/SSE 与该新版完整 shell 集成、真正 PTY、任意工作区文件系统、Safari/Firefox、真实屏幕阅读器。无可调用 PTY/fs 契约，不将只读组件测试声称为这两项后端能力。fixture 的 clipboard 成功/失败为浏览器API显式模拟。
 

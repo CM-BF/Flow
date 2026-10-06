@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-06T02:14:49.012Z",
+  "timestamp": "2026-10-06T02:16:54.560Z",
   "source": "isolated component fixture, not live center",
   "baseURL": "http://127.0.0.1:58077",
   "checks": [
@@ -17,6 +17,10 @@
     },
     {
       "name": "tabs use manual arrow activation and one tabstop",
+      "result": "passed"
+    },
+    {
+      "name": "cached reference keyboard activation retains panel focus without refetch",
       "result": "passed"
     },
     {

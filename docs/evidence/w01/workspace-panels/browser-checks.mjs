@@ -40,6 +40,7 @@ try {
     await page.getByRole("treeitem", { name: "report.md", exact: true }).press("Enter");
     await expect(page.getByText("Loading report.md…")).toBeVisible();
     await expect(page.getByRole("heading", { name: "report.md" })).toBeVisible();
+    await expect(page.getByRole("tab", { name: "report.md", exact: true })).toBeFocused();
     await expect(page.getByText("v1", { exact: true })).toBeVisible();
     await expect(page.getByText("passed", { exact: true })).toBeVisible();
     await expect(page.getByLabel("Detail requests")).toHaveText("1");
@@ -54,6 +55,13 @@ try {
     await page.keyboard.press("Enter");
     await expect(page.getByRole("tree")).toBeVisible();
     await expect(page.getByLabel("Detail requests")).toHaveText("1");
+  });
+  await check("cached reference keyboard activation retains panel focus without refetch", async () => {
+    await page.getByRole("treeitem", { name: "report.md", exact: true }).press("Space");
+    await expect(page.getByRole("tab", { name: "report.md", exact: true })).toBeFocused();
+    await expect(page.getByRole("heading", { name: "report.md" })).toBeVisible();
+    await expect(page.getByLabel("Detail requests")).toHaveText("1");
+    await page.getByRole("tab", { name: "Files", exact: true }).click();
   });
   await check("second detail opens; closing selected detail focuses adjacent tab", async () => {
     await page.getByRole("treeitem", { name: "Verification results", exact: true }).press("Space");
