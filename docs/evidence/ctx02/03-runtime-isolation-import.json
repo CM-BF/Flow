@@ -1,0 +1,56 @@
+{
+  "startedAt": "2026-10-06T04:59:09.117Z",
+  "completedAt": "2026-10-06T04:59:09.906Z",
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "pi": "/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent",
+  "plugin": "/private/tmp/flow-ctx02-upstream-0.1.83/package",
+  "policy": "(version 1)\n(allow default)\n(deny network*)\n(deny process-fork)\n(deny file-write*)\n(allow file-write* (subpath \"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-0Jwmfg\") (literal \"/dev/null\"))\n",
+  "nodePermissions": [
+    "--permission",
+    "--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules",
+    "--allow-fs-read=/private/tmp/flow-ctx02-upstream-0.1.83/package",
+    "--allow-fs-read=/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-0Jwmfg",
+    "--allow-fs-write=/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-0Jwmfg"
+  ],
+  "status": 0,
+  "signal": null,
+  "child": {
+    "probe": "CTX02",
+    "cases": [
+      {
+        "name": "OS barriers before any dependency import",
+        "result": {
+          "deniedSyntheticRead": "ERR_ACCESS_DENIED",
+          "deniedLoopbackConnect": "EPERM",
+          "deniedChildProcess": "ERR_ACCESS_DENIED",
+          "enforcement": "Node Permission Model read/child-process; macOS sandbox-exec network/fork/write; no JS interception"
+        },
+        "elapsedMs": 1.469417,
+        "passed": true
+      },
+      {
+        "name": "import unmodified fixed SDK and plugin",
+        "result": {
+          "sdkCreateAgentSession": "function",
+          "pluginCreateAcpExtension": "function"
+        },
+        "elapsedMs": 732.6119580000001,
+        "passed": true
+      }
+    ],
+    "outcome": "imported",
+    "promptCalls": 0,
+    "providerCalls": 0,
+    "loaded": {
+      "sdkCreateAgentSession": "function",
+      "pluginCreateAcpExtension": "function"
+    },
+    "elapsedMs": 734.107875
+  },
+  "stdout": "{\"probe\":\"CTX02\",\"cases\":[{\"name\":\"OS barriers before any dependency import\",\"result\":{\"deniedSyntheticRead\":\"ERR_ACCESS_DENIED\",\"deniedLoopbackConnect\":\"EPERM\",\"deniedChildProcess\":\"ERR_ACCESS_DENIED\",\"enforcement\":\"Node Permission Model read/child-process; macOS sandbox-exec network/fork/write; no JS interception\"},\"elapsedMs\":1.469417,\"passed\":true},{\"name\":\"import unmodified fixed SDK and plugin\",\"result\":{\"sdkCreateAgentSession\":\"function\",\"pluginCreateAcpExtension\":\"function\"},\"elapsedMs\":732.6119580000001,\"passed\":true}],\"outcome\":\"imported\",\"promptCalls\":0,\"providerCalls\":0,\"loaded\":{\"sdkCreateAgentSession\":\"function\",\"pluginCreateAcpExtension\":\"function\"},\"elapsedMs\":734.107875}\n",
+  "stderr": "",
+  "sourceHashes": {
+    "run.mjs": "f12b913db40182b513db244485641ffaeaa567a087063b2dcdea5c78e01f2980",
+    "worker.mjs": "f0071b7b34d6a3a3d1fd1275abbe8d565a782d6e014d38ed04a5a79f1a205ec8"
+  }
+}

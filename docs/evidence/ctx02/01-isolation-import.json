@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-10-06T04:58:02.987Z",
+  "completedAt": "2026-10-06T04:58:03.011Z",
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "pi": "/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent",
+  "plugin": "/private/tmp/flow-ctx02-upstream-0.1.83/package",
+  "policy": "(version 1)\n(allow default)\n(deny network*)\n(deny process-fork)\n(deny file-read-data)\n(allow file-read-data (subpath \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-pi-hook-probe/experiments/context-pi-hook\") (subpath \"/private/tmp/flow-harness-eval.iq7BzZ/node_modules\") (subpath \"/private/tmp/flow-ctx02-upstream-0.1.83/package\") (subpath \"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-Na6TZa\") (subpath \"/opt/homebrew/Cellar/node@24/24.20.0\") (subpath \"/System\") (subpath \"/usr/lib\") (subpath \"/usr/share\") (literal \"/dev/null\") (literal \"/dev/urandom\"))\n(deny file-write*)\n(allow file-write* (subpath \"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-Na6TZa\") (literal \"/dev/null\"))\n",
+  "status": null,
+  "signal": "SIGABRT",
+  "stdout": "",
+  "stderr": "",
+  "sourceHashes": {
+    "run.mjs": "edc9004ba67d07fb753cb33d11b7758d21f60ef129efc6cdff33256f48d76cfa",
+    "worker.mjs": "3c1931e379961753905684848ae11419dff1918e0eea63e62a7c15ed27183bdf"
+  }
+}

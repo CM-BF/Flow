@@ -1,0 +1,132 @@
+{
+  "startedAt": "2026-10-06T05:02:44.350Z",
+  "completedAt": "2026-10-06T05:02:44.851Z",
+  "mode": "factory",
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "pi": "/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent",
+  "plugin": "/private/tmp/flow-ctx02-upstream-0.1.83/package",
+  "policy": "(version 1)\n(allow default)\n(deny network*)\n(deny process-fork)\n(deny file-write*)\n(allow file-write* (subpath \"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI\") (literal \"/dev/null\"))\n",
+  "nodePermissions": [
+    "--permission",
+    "--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules",
+    "--allow-fs-read=/private/tmp/flow-ctx02-upstream-0.1.83/package",
+    "--allow-fs-read=/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI",
+    "--allow-fs-write=/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI"
+  ],
+  "status": 0,
+  "signal": null,
+  "child": {
+    "probe": "CTX02",
+    "mode": "factory",
+    "cases": [
+      {
+        "name": "OS barriers before any dependency import",
+        "result": {
+          "deniedSyntheticRead": "ERR_ACCESS_DENIED",
+          "deniedLoopbackConnect": "EPERM",
+          "deniedChildProcess": "ERR_ACCESS_DENIED",
+          "enforcement": "Node Permission Model read/child-process; macOS sandbox-exec network/fork/write; no JS interception"
+        },
+        "elapsedMs": 1.7224590000000006,
+        "passed": true
+      },
+      {
+        "name": "import unmodified fixed SDK and plugin",
+        "result": {
+          "sdkCreateAgentSession": "function",
+          "pluginCreateAcpExtension": "function"
+        },
+        "elapsedMs": 415.381083,
+        "passed": true
+      },
+      {
+        "name": "real SDK loads two isolated sessions and projects real context hooks",
+        "result": {
+          "sessions": 2,
+          "inputBytes": 48168
+        },
+        "elapsedMs": 23.876999999999953,
+        "passed": true
+      },
+      {
+        "name": "registered compress/decompress preserve exact source and session separation",
+        "error": {
+          "name": "AssertionError",
+          "code": "ERR_ASSERTION",
+          "message": "The expression evaluated to a falsy value:\n\n  assert(visible.includes(summary))\n",
+          "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(visible.includes(summary))\n\n    at file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:144:7\n    at async check (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:20:43)\n    at async file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:130:3"
+        },
+        "elapsedMs": 7.612875000000031,
+        "passed": false
+      }
+    ],
+    "outcome": "blocked",
+    "probeInvokedPrompt": false,
+    "probeInvokedProvider": false,
+    "providerAttemptCount": "not-instrumented; OS network blocked",
+    "loaded": {
+      "sdkCreateAgentSession": "function",
+      "pluginCreateAcpExtension": "function"
+    },
+    "A": {
+      "sessionId": "01a10f97-bc50-70ad-96b1-fcf36e90583d",
+      "sessionFile": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/A/sessions/2026-10-06T05-02-44-816Z_01a10f97-bc50-70ad-96b1-fcf36e90583d.jsonl",
+      "sourceHashes": [
+        "ef2ede774bb88d4d0b413b329b9dc7b675ec3d81421d85a3433e6bf72fdd7e93",
+        "f97f17cc0a62b53459ef16a86397db619d0fdfef2233b5684eaeefa9bcc141ca",
+        "8e297629ff19d2c7c82b4f64544661f2dd6fd207f54d25a9fd1dcc47af3d95e7",
+        "dbbb7d8f893025b34a5e43ea01843172c6804777865ca1f734e5990717080508"
+      ],
+      "visibleCharacters": 24230,
+      "contextPreview": "Keep the session-specific material available.\n\n<acp tokens=\"12\" type=\"text\">m00001</acp>\n\nCTX02_A_0_中文🚀_private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value priva",
+      "hooks": [
+        [
+          "context",
+          true
+        ],
+        [
+          "session_before_compact",
+          true
+        ]
+      ],
+      "compressResult": "▣ ACP | 6.1K → 6.1K tokens (~0 reclaimed, 0 blocks)\nErrors: range m00002..m00005: Range is entirely within the protected zone (the last 0 messages and/or the most recent user message): m00002, m00003, m00004, m00005. Adjust startId/endId to older messages.",
+      "restoredPreview": "Block b1 not found. Active blocks: (none)."
+    },
+    "B": {
+      "sessionId": "01a10f97-bc62-70ad-96b1-fcf58001e1f7",
+      "sessionFile": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/B/sessions/2026-10-06T05-02-44-834Z_01a10f97-bc62-70ad-96b1-fcf58001e1f7.jsonl",
+      "sourceHashes": [
+        "1b06dc35b187e5a2c7d95c156970289b01eabd0d32a5de7d274bbcc738ff9ccb",
+        "b5e2eb0c149b3577db323ac5659c9277a4c0d5e2a01d9a447b125a38684d49f7",
+        "a5a8e5ed2f2cf3c22d5aa08b8c69e8c35ae3a0ea5c886728dd7e3322ac477987",
+        "9e1cb6c18bc155a0cbfc91e4d29b445ec2c3fc77e309fe7063c6d9906ff012a3"
+      ],
+      "visibleCharacters": 24230,
+      "contextPreview": "Keep the session-specific material available.\n\n<acp tokens=\"12\" type=\"text\">m00001</acp>\n\nCTX02_B_0_中文🚀_private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value priva",
+      "hooks": [
+        [
+          "context",
+          true
+        ],
+        [
+          "session_before_compact",
+          true
+        ]
+      ]
+    },
+    "inputBytes": 48168,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "The expression evaluated to a falsy value:\n\n  assert(visible.includes(summary))\n",
+      "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(visible.includes(summary))\n\n    at file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:144:7\n    at async check (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:20:43)\n    at async file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:130:3"
+    },
+    "elapsedMs": 450.140708
+  },
+  "stdout": "{\"probe\":\"CTX02\",\"mode\":\"factory\",\"cases\":[{\"name\":\"OS barriers before any dependency import\",\"result\":{\"deniedSyntheticRead\":\"ERR_ACCESS_DENIED\",\"deniedLoopbackConnect\":\"EPERM\",\"deniedChildProcess\":\"ERR_ACCESS_DENIED\",\"enforcement\":\"Node Permission Model read/child-process; macOS sandbox-exec network/fork/write; no JS interception\"},\"elapsedMs\":1.7224590000000006,\"passed\":true},{\"name\":\"import unmodified fixed SDK and plugin\",\"result\":{\"sdkCreateAgentSession\":\"function\",\"pluginCreateAcpExtension\":\"function\"},\"elapsedMs\":415.381083,\"passed\":true},{\"name\":\"real SDK loads two isolated sessions and projects real context hooks\",\"result\":{\"sessions\":2,\"inputBytes\":48168},\"elapsedMs\":23.876999999999953,\"passed\":true},{\"name\":\"registered compress/decompress preserve exact source and session separation\",\"error\":{\"name\":\"AssertionError\",\"code\":\"ERR_ASSERTION\",\"message\":\"The expression evaluated to a falsy value:\\n\\n  assert(visible.includes(summary))\\n\",\"stack\":\"AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\\n\\n  assert(visible.includes(summary))\\n\\n    at file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:144:7\\n    at async check (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:20:43)\\n    at async file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:130:3\"},\"elapsedMs\":7.612875000000031,\"passed\":false}],\"outcome\":\"blocked\",\"probeInvokedPrompt\":false,\"probeInvokedProvider\":false,\"providerAttemptCount\":\"not-instrumented; OS network blocked\",\"loaded\":{\"sdkCreateAgentSession\":\"function\",\"pluginCreateAcpExtension\":\"function\"},\"A\":{\"sessionId\":\"01a10f97-bc50-70ad-96b1-fcf36e90583d\",\"sessionFile\":\"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/A/sessions/2026-10-06T05-02-44-816Z_01a10f97-bc50-70ad-96b1-fcf36e90583d.jsonl\",\"sourceHashes\":[\"ef2ede774bb88d4d0b413b329b9dc7b675ec3d81421d85a3433e6bf72fdd7e93\",\"f97f17cc0a62b53459ef16a86397db619d0fdfef2233b5684eaeefa9bcc141ca\",\"8e297629ff19d2c7c82b4f64544661f2dd6fd207f54d25a9fd1dcc47af3d95e7\",\"dbbb7d8f893025b34a5e43ea01843172c6804777865ca1f734e5990717080508\"],\"visibleCharacters\":24230,\"contextPreview\":\"Keep the session-specific material available.\\n\\n<acp tokens=\\\"12\\\" type=\\\"text\\\">m00001</acp>\\n\\nCTX02_A_0_中文🚀_private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value priva\",\"hooks\":[[\"context\",true],[\"session_before_compact\",true]],\"compressResult\":\"▣ ACP | 6.1K → 6.1K tokens (~0 reclaimed, 0 blocks)\\nErrors: range m00002..m00005: Range is entirely within the protected zone (the last 0 messages and/or the most recent user message): m00002, m00003, m00004, m00005. Adjust startId/endId to older messages.\",\"restoredPreview\":\"Block b1 not found. Active blocks: (none).\"},\"B\":{\"sessionId\":\"01a10f97-bc62-70ad-96b1-fcf58001e1f7\",\"sessionFile\":\"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/B/sessions/2026-10-06T05-02-44-834Z_01a10f97-bc62-70ad-96b1-fcf58001e1f7.jsonl\",\"sourceHashes\":[\"1b06dc35b187e5a2c7d95c156970289b01eabd0d32a5de7d274bbcc738ff9ccb\",\"b5e2eb0c149b3577db323ac5659c9277a4c0d5e2a01d9a447b125a38684d49f7\",\"a5a8e5ed2f2cf3c22d5aa08b8c69e8c35ae3a0ea5c886728dd7e3322ac477987\",\"9e1cb6c18bc155a0cbfc91e4d29b445ec2c3fc77e309fe7063c6d9906ff012a3\"],\"visibleCharacters\":24230,\"contextPreview\":\"Keep the session-specific material available.\\n\\n<acp tokens=\\\"12\\\" type=\\\"text\\\">m00001</acp>\\n\\nCTX02_B_0_中文🚀_private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value private synthetic value priva\",\"hooks\":[[\"context\",true],[\"session_before_compact\",true]]},\"inputBytes\":48168,\"error\":{\"name\":\"AssertionError\",\"code\":\"ERR_ASSERTION\",\"message\":\"The expression evaluated to a falsy value:\\n\\n  assert(visible.includes(summary))\\n\",\"stack\":\"AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\\n\\n  assert(visible.includes(summary))\\n\\n    at file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:144:7\\n    at async check (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:20:43)\\n    at async file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-8hccKI/worker.mjs:130:3\"},\"elapsedMs\":450.140708}\n",
+  "stderr": "",
+  "sourceHashes": {
+    "run.mjs": "f809475afeb1189274a9643c5f426a15f6ea8d7db3c241a9ab8258c47399880f",
+    "worker.mjs": "9bded40846d5de30b7fd4cda8c8ff99d7f4a5d0d7d3c256244e2d103706fb840"
+  }
+}
