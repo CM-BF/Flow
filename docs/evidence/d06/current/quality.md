@@ -8,3 +8,11 @@
 - `/Users/citrine/.agents/skills/webapp-testing/SKILL.md`：沿现浏览器脚本侦察→动作→截图，动态端口自管服务，不重启共享预览。
 
 启动 clean-code：旧 canonical 把历史 claim 写为 active，现已明确旧历史、当前新 receipt/live；旧 approval 归档原文并从当前 NOT_STARTED 分离。未写运行代码，未执行产品测试。
+
+## 05:31 UTC 工作段与交付前 clean-code
+
+检查三实现文件的命名、数据/renderer职责、错误与重复、原语义和局部行为。固定时间/commit保持单一baseline；标题与底部复用snapshotLink，不加新cache、任意读路径或第二状态源。旧SQL定位测试随实际admission拆分修正，未弱化受理断言。模块额外一排保留原节点/边模型，不重构renderer或CSS。历史md移位产生14处相对断链，现原文转raw txt并建可读索引，保留原字节出处。无当前已知未修结构问题。
+
+7局部Node/五图浏览器已过，目视模块浅色与390深色；实际历史源码记录、未验证运行与未来计划分开。模块不是运行测量，不借目录或依赖声称已生产启用。根manifest/lock/shared范围未改；只冻结三实现文件后整理metadata。独立review仍NOT_STARTED，不能由作者检查自动批准。
+
+本轮local skill SHA256：find-skills c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f；brainstorming 74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608；clean-code 3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317；webapp-testing 51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2。
