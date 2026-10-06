@@ -21,7 +21,7 @@
 | 实现目标 | 6d1145de30eea1eb4c267c88386ebc0479dfbd99 |
 | 实现范围 | apps/cli/README.md, apps/cli/src/cli.test.ts, apps/cli/src/index.ts, packages/client/src/conversation-acknowledgement.test.ts, packages/client/src/conversation-acknowledgement.ts, packages/client/src/conversation-queue.test.ts, packages/client/src/execution-profiles.test.ts, packages/client/src/index.ts, packages/contracts/src/index.ts |
 | 检查状态 | 补充2红→2绿/52未选，focused types0；[增量](../../docs/evidence/mature02c01/supplement-README.md)；历史 PASSED 563b1ea151d8d26a2100238d8faf26b697f38d71；86不同用例分轮，最后2 selected/6未选；focused types exit0；[原始记录](../../docs/evidence/mature02c01/README.md) |
-| Review | REVIEW_PENDING 补充P2；历史 APPROVED 563b1ea151d8d26a2100238d8faf26b697f38d71；[独立审查](review.md)，reviewer assignment_review |
+| Review | NOT_STARTED 修复后增量；历史 APPROVED 563b1ea151d8d26a2100238d8faf26b697f38d71；[独立审查](review.md)，reviewer assignment_review |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片不能推断父CORE/O14待验输入已通过 |
 | Claim | 85784ec0-9695-470d-b1bd-b1a447c9805a v1 active；16:37:05.888Z committed，16:38:03 fresh核一致 |
 

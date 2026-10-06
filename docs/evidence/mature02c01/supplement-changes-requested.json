@@ -1,0 +1,114 @@
+{
+  "reviewer": "assignment_review / gpt-6-astra",
+  "reviewedAt": "2026-10-06T17:22:37.918559+00:00",
+  "decision": "REQUEST_CHANGES",
+  "target": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+  "coreContract": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "currentHead": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+  "dirty": [
+    " M plans/mature02c01-claude-message-settings-client/status.md"
+  ],
+  "scope": "Supplemental §93 review only; original 563b approval and 86-check evidence remain historical. No tests/import/PG/provider/install/project mutations performed.",
+  "findings": [
+    {
+      "priority": "P2",
+      "file": "packages/client/src/conversation-acknowledgement.ts",
+      "lines": [
+        118,
+        126
+      ],
+      "title": "Reject contradictory new-settings acknowledgement fields",
+      "evidence": "A parsed turn snapshot does not currently exclude runnerRequested unless effective.messageSettings exists. The shared initial effective guard also accepts disabled even when the final wrapper exists. Both branches contradict fixed CORE new-settings projection/schema. This is malformed response acceptance, not a claim CORE emits either contradiction.",
+      "counterexamples": [
+        {
+          "input": "Otherwise valid queued/pending turn + matching turn.messageSettings snapshot + no effective.messageSettings + legacy runnerRequested {model: valid, permissionMode: dontAsk, thinking: disabled}",
+          "actualStaticTrace": "Accepted: legacy requested validates; wrapper-only exclusion is skipped.",
+          "expected": "UnknownConversationAcknowledgementError, preserve original request identity."
+        },
+        {
+          "input": "Otherwise valid turn + matching turn.messageSettings + valid effective.messageSettings with observed:null and effective.model:null + effective.thinking:disabled",
+          "actualStaticTrace": "Accepted: disabled allowed by common guard; wrapper checks snapshot/model but not thinking.",
+          "expected": "UnknownConversationAcknowledgementError; new final effective thinking must be unknown."
+        }
+      ],
+      "minimumFix": "With snapshot present reject runnerRequested; with final messageSettings wrapper require effective.thinking===unknown. Do not require final wrapper merely because a snapshot exists; keep legacy no-snapshot handling.",
+      "minimumValidation": "Two new public FlowClient HTTP negative variants, asserting exactly one request per call and unchanged original body/key + unknown error; focused existing valid queued/no-wrapper and observed absent/null/alias cases and legacy no-settings direct consumers. No need to rerun 86/PG/provider. Owner may combine positive assertions into one small local test."
+    }
+  ],
+  "nonBlocking": [
+    {
+      "priority": "P3",
+      "file": "packages/client/src/conversation-acknowledgement.ts",
+      "lines": [
+        88,
+        97
+      ],
+      "title": "Capability profile identity binding",
+      "assessment": "Not a release blocker for this fixed slice. The capabilities decoder is used on create receipt; fixed CORE createConversation returns stable legacy capabilities without messageSettings. Current readiness is separately produced by conversationCapabilities using the conversation profile. The handoff requires Web/TUI to match capability, conversation and catalog triples, and server admission independently checks immutable profile/choices. Shape-only creation capability acceptance is weaker than this semantic invariant, but no permission widening or actual current readiness acceptance through this matcher was established. Keep cross-tuple validation as bounded follow-up, rather than expand this P2 repair.",
+      "caveat": "A consumer that treats decoder success as readiness authorization would need explicit triple checks; this review does not certify that future behavior."
+    }
+  ],
+  "bindings": [
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "ref": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+      "bytes": 14295,
+      "sha256": "fac3bbd4bc09a7527011059f27d6f8580981d59d57f0a52bcecb4fb4ea895c31",
+      "workingMatches": false
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "ref": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+      "bytes": 22022,
+      "sha256": "953da2195fb7a34b9bddd0783e757e92903be04d1bec758a9379169ffc02a67d",
+      "workingMatches": false
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997",
+      "workingMatches": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "bytes": 6621,
+      "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "bytes": 8395,
+      "sha256": "d05d668c4b893c3eea2fe97bb168995ad65f4daf460b9536e0b00427dfd0afab",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "bytes": 4173,
+      "sha256": "d98272700f1f73de98cdce0f2aeaa09328089a70cc3236b3d94bafcfd06b7c32",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "bytes": 3834,
+      "sha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631",
+      "workingMatches": true
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "ref": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c",
+      "workingMatches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md",
+      "bytes": 17951,
+      "sha256": "5c1a93658ece729b7eccc11ed056ae76a3108bed327f783dddbe8c1f3241109c"
+    }
+  ]
+}
