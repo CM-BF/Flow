@@ -24,3 +24,5 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm typecheck
 ```
 
 限制：模块自行注册到真实createServer/auth，**共享生产017挂载/client不在本交付**；尚无native graph profile/claim/SDK桥接/NL/真实runner子进程。fixture只验证中心授权和事务，不证明自然语言规划。授权读取整个base graph；allowedExistingNodes只限制写引用。当前共用authority仍通过既有loadState载入当前goal状态，响应轻分页不代表数据库内部读取已全面分页或性能优化。owner可独立应用proposal，此时receipt如实owner，不伪造graph actor。撤销不回滚先前已受理变化，也不等于runner已停止。幂等成功恢复仍受当前权限约束；owner可读持久事实。候选1query预算未执行。
+
+2026-10-06 05:38 UTC 独立review runner_owner APPROVED `f6ba02e8898ed1539786de381c41402d342e59a8`，现场`d070c52f55e919fa6fad37a2d0b01e4833b02bf7` clean，15source/13raw output全核，无blocking；只核作者34/34+tsc，未重跑。批准限上述fixture中心模块，main接收仍待Lead。
