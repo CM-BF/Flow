@@ -1,0 +1,90 @@
+{
+  "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+  "observedAt": "2026-10-06T06:15:23.052101+00:00",
+  "reports": [
+    {
+      "report": "browser-results.json",
+      "sourceCommit": "598e5e2e78d7ef57d1add8e6ee797f519da1c0c8",
+      "sourceDirty": true,
+      "startedAt": "2026-10-06T06:13:37.256Z",
+      "finishedAt": "2026-10-06T06:13:40.419Z",
+      "checks": 7,
+      "errors": [],
+      "failure": null,
+      "files": [
+        {
+          "path": "apps/web/src/conversation-activity/projection.ts",
+          "sha256": "c79571eb7e927da46bc7d655ccf89a1025a7067191d65f51cf2472cf3518a6c9",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/src/conversation-activity/ConversationActivity.tsx",
+          "sha256": "bf98db02a5b3a26725780ee8bc182351d242d2530e604834fc58b6fcad405d9d",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/src/conversation-activity/activity.css",
+          "sha256": "ac472493c80d162a1da4ac93517c8c292f3dd680c52d5ce8f8963e88079e217b",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/test/conversation-activity.test.ts",
+          "sha256": "1bcacbd20e040ca2741ca3e9addbfe8e91fc6352d690f638b42ee27e5c7ba6c8",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/test/conversation-activity.fixture.ts",
+          "sha256": "9e23dd168a78430cbde3b448a6ecb9e2f95dbb84ada0d27eb514aa2d9152cb04",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/test/conversation-activity.browser.ts",
+          "sha256": "d699bece1f0aac48f96a8bbe0bb7d3d055340bb7b9dd28a8a1d5f4666d876d99",
+          "matchesTarget": true
+        }
+      ]
+    },
+    {
+      "report": "production-browser-results.json",
+      "sourceCommit": "598e5e2e78d7ef57d1add8e6ee797f519da1c0c8",
+      "sourceDirty": true,
+      "startedAt": "2026-10-06T06:13:37.256Z",
+      "finishedAt": "2026-10-06T06:13:40.297Z",
+      "checks": 7,
+      "errors": [],
+      "failure": null,
+      "files": [
+        {
+          "path": "apps/web/src/conversation-activity/projection.ts",
+          "sha256": "c79571eb7e927da46bc7d655ccf89a1025a7067191d65f51cf2472cf3518a6c9",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/src/conversation-activity/ConversationActivity.tsx",
+          "sha256": "bf98db02a5b3a26725780ee8bc182351d242d2530e604834fc58b6fcad405d9d",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/src/conversation-activity/activity.css",
+          "sha256": "ac472493c80d162a1da4ac93517c8c292f3dd680c52d5ce8f8963e88079e217b",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/test/conversation-activity.test.ts",
+          "sha256": "1bcacbd20e040ca2741ca3e9addbfe8e91fc6352d690f638b42ee27e5c7ba6c8",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/test/conversation-activity.fixture.ts",
+          "sha256": "9e23dd168a78430cbde3b448a6ecb9e2f95dbb84ada0d27eb514aa2d9152cb04",
+          "matchesTarget": true
+        },
+        {
+          "path": "apps/web/test/conversation-activity.browser.ts",
+          "sha256": "d699bece1f0aac48f96a8bbe0bb7d3d055340bb7b9dd28a8a1d5f4666d876d99",
+          "matchesTarget": true
+        }
+      ]
+    }
+  ]
+}

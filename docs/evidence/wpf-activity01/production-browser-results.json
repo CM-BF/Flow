@@ -1,0 +1,26 @@
+{
+  "startedAt": "2026-10-06T06:13:37.256Z",
+  "finishedAt": "2026-10-06T06:13:40.297Z",
+  "sourceCommit": "598e5e2e78d7ef57d1add8e6ee797f519da1c0c8",
+  "sourceDirty": true,
+  "sourceFiles": {
+    "apps/web/src/conversation-activity/projection.ts": "c79571eb7e927da46bc7d655ccf89a1025a7067191d65f51cf2472cf3518a6c9",
+    "apps/web/src/conversation-activity/ConversationActivity.tsx": "bf98db02a5b3a26725780ee8bc182351d242d2530e604834fc58b6fcad405d9d",
+    "apps/web/src/conversation-activity/activity.css": "ac472493c80d162a1da4ac93517c8c292f3dd680c52d5ce8f8963e88079e217b",
+    "apps/web/test/conversation-activity.test.ts": "1bcacbd20e040ca2741ca3e9addbfe8e91fc6352d690f638b42ee27e5c7ba6c8",
+    "apps/web/test/conversation-activity.fixture.ts": "9e23dd168a78430cbde3b448a6ecb9e2f95dbb84ada0d27eb514aa2d9152cb04",
+    "apps/web/test/conversation-activity.browser.ts": "d699bece1f0aac48f96a8bbe0bb7d3d055340bb7b9dd28a8a1d5f4666d876d99"
+  },
+  "production": true,
+  "checks": [
+    "collapsed zero reads; keyboard expansion reads one timeline and no detail",
+    "reference is lazy/cached; text escaped and paged below the public 1 MiB limit",
+    "explicit pagination keeps at most 25 rows and updates source/stale without overriding host summary",
+    "errors preserve old entries and hide/offline stop new requests",
+    "same-ID center switch clears cached details and suppresses delayed old events",
+    "detail pending across hidden view and new center cannot reveal old content",
+    "light/dark narrow keyboard view has no overflow or animation and keeps one disclosure"
+  ],
+  "errors": [],
+  "failure": null
+}

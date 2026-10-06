@@ -11,8 +11,8 @@
 ## TODO
 
 - [x] WPF-ACTIVITY01-01：领取、技能和固定接口设计。
-- [ ] WPF-ACTIVITY01-02：独立读取/缓存/身份生命周期与直接行为测试。
-- [ ] WPF-ACTIVITY01-03：通用活动视图、独立HTTPfixture、键盘/双主题390/边界验证。
+- [x] WPF-ACTIVITY01-02：独立读取/缓存/身份生命周期与直接行为测试。
+- [x] WPF-ACTIVITY01-03：通用活动视图、独立HTTPfixture、键盘/双主题390/边界验证。
 - [ ] WPF-ACTIVITY01-04：clean-code、固定目标独立review、聚合与交Lead；main集成单列。
 
 后继：唯一Thread writer在运行中也可见的message footer接入；现ActionBar hideWhenRunning/autohide不适用。pending turn仅真实user消息→turn，单一折叠入口避免重复Execution details，默认常用profile/queue与技术footer收拢留主组合；CHAT05后按明确Reference.activity接 typed，不猜测。不把独立fixture当App已上线。
