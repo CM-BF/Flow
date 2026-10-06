@@ -24,3 +24,12 @@
 真实PostgreSQL借用期间断连、HTTP继续服务、直接消费者和main集成仍未执行。server.test.ts既有fixture硬锁flow_c01并DROP schema，不能未经隔离直接运行。后续在同claim证据内准备专库公共transaction探针，仅终止自己已核backend；精确源码/依赖/资源窗口另行准入，不停止共享PG，不扩scope、不改变已审源码。
 
 后续若实现修改，必须绑定新commit复审；metadata不自动扩大本次approval。
+
+
+## 后继PG验收packet（待审，不扩大上文approval）
+
+- 准备source target：`edbe2e0a04b58fd95207904889cbc0e7e5666c53`。
+- Manifest：`docs/evidence/svc07/pg-prepared-manifest.json`，19个固定路径，SHA256 `89a8ae8de72f1af0239e364cec6243b422accb0585a4203932c9232eee6f383b`。
+- 源码：[pg-transaction.test.ts](../../docs/evidence/svc07/pg-transaction.test.ts)、[固定执行封套](../../docs/evidence/svc07/execute-pg-once.py)、[精确边界/命令](../../docs/evidence/svc07/pg-window.md)。
+- 局部types v2 exit0；监督v3 6选6过仅自有process接缝；产品15fake证据保留且不重跑/累计。监督首红与两个明确UNKNOWN案例保留，不能由6过推断全部组消失。
+- Mika已中间只读核v3与三态/即时spawn/主错误保留；正式approval仍PENDING，需绑定固定target。实际PG/HTTP/main仍NOT_RUN，不提前开窗。
