@@ -5,9 +5,9 @@
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
+- Review target commit：`e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2`；此处仅指定目标，尚无approval。
+- Base commit `64b4f69355bc75b2e7c7c47141c110020b3b93da` / implementation head `e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2`；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-native-harness` / branch `codex/m1-native-harness`；实现提交后干净，reviewer应核对后续文档HEAD。
+- Scope：R02-01..05、apps/runner/src/claude.ts/configuration.ts/main.ts与SDK seam测试；生产只读路径/所有权gate、abort/decision错误处理、usage基线、native恢复、显式manifest入口。排除真实中心系统验收（由I01负责）、跨机、容量、wrapper登录。
 - Reviewer / model / harness / 时间：待填写。
 
 ## 可直接复制的审查任务说明

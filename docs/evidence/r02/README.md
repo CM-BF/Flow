@@ -50,3 +50,5 @@ Owner：runner_owner / gpt-6-astra。仅 R02 分支证据，不是主分支或�
 `pnpm check`：57/57（runner25、Claude19、manifest9、公共4）与 typecheck通过；`git diff --check`通过。权限拒绝、路径/symlink越界、cancel、ownership loss、timeout和decision异常证据来自模拟SDK seam，没有为它们启动付费调用。真实恢复证据只限同host已有session；跨机、并发容量、在途外部副作用回滚、操作系统沙箱、凭据包装器修复未验证。
 
 普通启动见 [Runner README](../../../apps/runner/README.md)：默认fixture；仅显式设置 FLOW_CLAUDE_MATERIALS_FILE 才加载manifest启用Claude，未知字段/相对材料路径/超限配置被拒绝。清单与任务材料均不自动扫描Flow源码。
+
+代码/模拟证据交付commit：`e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2`。真实证据文件 SHA256：`5a5e8554ebb49535c0716e87857dcd7e71b2d5658bbb24b60ea1a7a3fafaa543`。16条本地文档链接检查通过；结构化真实记录逐项核对3次invoked/passed、turns和wall limits，未发现凭据标记。此后的记录更新不代表重复真实调用。
