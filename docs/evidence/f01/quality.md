@@ -26,3 +26,5 @@ Goal Owner独立只读接线APPROVED：9db3ce18e17ded201673bb3e514d5005cd68d866 
 首次局部6/6（目标CLI1+项目CLI1+client4）2.09s；typecheck发现测试构造缺schema默认化后的workspaceId/taskId/parent，原错误保留。仅补明确测试字段，最终typecheck通过、受影响目标CLI1/1 1.10s。真实独立flow_goal_cli_PID_TIME DB/动态端口，重启保留原文、历史input读取、旧revision拒绝、幂等重放、无implicit任务。原始输出分列goals-*.txt，0模型，没有重跑O01完整模块/全库。
 
 clean-code复核：领域事务不复制进client/CLI，JSON输入受schema约束，所有命令显式key/AbortSignal，无不明自动重试。尚不含自然语言规划或native tool挂载；CHAT01普通会话走独立模块，不等待编排。
+
+CHAT client/export frozen84117ca：真实HTTP传输5/5、typecheck，0模型；中心模块尚未可用。Web基线无O01上下文导致pick冲突，共享owner生成web-chat-transport.patch（基线bac6）仅同三文件聊天内容，manifest逐文件hash，外部受控应用而非另改client。两轮真实模型提案见chat-live-proposal.md，调用尚未批准/未执行。

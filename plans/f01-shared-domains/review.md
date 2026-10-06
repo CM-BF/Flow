@@ -11,3 +11,11 @@ Scope：9db3ce1 protocol production挂载、71bff1f projects合同export/client/
 | — | 无新增发现 | 否 | 绑定上述target |
 
 可复制审查：先核对本plan/status及实际base/head/dirty，仅对明确新commit的共享接线差异只读审查，列已执行/未执行与限制；修复交owner，直接写入须Sol以上、独立worktree和有效claim。
+
+## O01消费者增量独立批准
+
+Goal Owner只读APPROVED `2b75416326162000e517d1e845cc7b9921b54695`，核clean metadata28aa5f5。完整审查3文件110行与实际route/schema、幂等/error、公开PG CLI测试，读取初次6/6、final1/1/typecheck及保留初始类型失败；未运行测试。O01领域相对6bb零diff，无blocking。只覆盖手动goal命令/read/input/history与CLI，不是自然语言或真实模型工程验收。后续CHAT客户端841另独立审查，不能继承本批准。
+
+## CHAT薄客户端独立批准
+
+Goal Owner只读APPROVED `84117ca1c7446ee2e2b50f0526f3460dd42a2869`：6methods/export/HTTP test、raw5/5(386ms)+tsc输出均已读，原文/key/revision/路径编码/鉴权/AbortSignal/unsupported409不暗重试；无blocking。未独立重跑，不覆盖中心PG/真实聊天。Web受控patch仅移除无关上下文，before/after hash和来源保存，不重测metadata。

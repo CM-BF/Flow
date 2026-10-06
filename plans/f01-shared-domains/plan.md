@@ -11,4 +11,6 @@
 
 status唯一事实源；review绑定实现target。G01迁移004，P02迁移005，互不争写；远端绝不因ACK丢失自动重发。一般native runner的远端时钟可靠性另R03验证，不将P02新剩余租期字段说成旧runtime已修。
 
-- [ ] **F01-05** O01中心注册/client/CLI薄接线与真实消费者验证、固定target独立review、集成。
+- [x] **F01-05** O01中心注册/client/CLI薄接线与真实消费者验证、固定target独立review、集成。
+
+- [ ] **F01-06** CHAT public合同/client/中心挂载与typed final接缝，先接口独立批准，三端真实旅程另验。

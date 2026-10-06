@@ -7,3 +7,4 @@ export * from './protocol-dispatch.js';
 export { isAuthoritativeUsageAllowed } from './harnesses.js';
 export * from './projects.js';
 export * from './goals.js';
+export * from './conversations.js';
