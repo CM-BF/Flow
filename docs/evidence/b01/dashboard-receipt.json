@@ -1,0 +1,240 @@
+{
+  "generatedAt": "2026-10-06T03:50:31.964Z",
+  "task": {
+    "id": "B01",
+    "title": "分层读取性能与界限",
+    "role": "技术验证",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance",
+    "branch": "codex/bounded-read-performance",
+    "planDir": "plans/b01-bounded-reads",
+    "evidenceDir": "docs/evidence/b01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T03:49:42.748Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance/plans/b01-bounded-reads/status.md",
+      "syncedAt": "2026-10-06T03:50:31.964Z",
+      "stale": false,
+      "ageHours": 0.023323333333333335
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/bounded-read-performance",
+      "head": "7f84cdf03adcfb431da3ef84eaf157b4f17d4e69",
+      "dirty": true,
+      "changedFiles": 1,
+      "observedAt": "2026-10-06T03:50:32.231Z"
+    },
+    "status": {
+      "human": {
+        "phase": "M2",
+        "priority": 3,
+        "output": "已修复workspace历史扫描，8项PG回归通过",
+        "next": "代码与after证据均已批准，等待Execution Lead接收main",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+        "scopes": [
+          "apps/server/src/m2-workspace.ts",
+          "apps/server/src/m2-workspace.test.ts",
+          "experiments/bounded-reads"
+        ],
+        "errors": []
+      },
+      "taskId": "B01",
+      "owner": "b01_bounded_reads / gpt-6-astra ultra（lead mika）",
+      "branch": "codex/bounded-read-performance",
+      "branchState": "completed（branch，代码与after证据已批准；待main接收）",
+      "updatedAt": "2026-10-06T03:49:08.000Z",
+      "updatedRecord": "2026-10-06T03:49:08Z",
+      "todos": [
+        {
+          "id": "B01-01",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "[首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选8组等价、已交具体修复"
+        },
+        {
+          "id": "B01-04",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "实现70af7b4已审；8/8功能，after23检查/8.887秒通过"
+        },
+        {
+          "id": "B01-02",
+          "state": "completed",
+          "owner": "mika / b01_bounded_reads",
+          "evidence": "[APPROVED target70af7b4](review.md)，独立8/8；after样本/hash/清理已独立复核"
+        },
+        {
+          "id": "B01-03",
+          "state": "pending",
+          "owner": "Execution Lead",
+          "evidence": "未集成"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / 70af7b45814d5ed31d9638649512358e1a0a834b（实现target；metadata HEAD由Git聚合）",
+      "declaredDirty": "03:44:08核验clean；本次仅更新交付metadata",
+      "checks": {
+        "state": "passed",
+        "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+        "record": "PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后23项检查/8.887秒通过"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED 实现target70af7b4及after证据SHA256437262b7",
+      "mainRecord": "未集成 B01；03:49:08 main ac4e34de2331dce276440df8969883c1883060ef clean",
+      "next": "领取回执 claimId 827ff1f2-bb11-45c3-824c-4ce63ab39a55 / version 2；2026-10-06T03:38:42.747Z amend 已提交。分支实现和证据已交付。API 消费者证据不代表 UI；128 合成任务不代表 128 agent。架构影响：内部projection读取改为per-task前缀游标；公共API/FSM/表结构/DB连接与外部依赖不变。dashboard固定架构数据待Execution Lead核实是否需同步中心投影说明与源码基线target（apps/server/src/m2-workspace.ts）；不将分支当main。\n实现target 70af7b45814d5ed31d9638649512358e1a0a834b 已由mika独立APPROVED，claimv2保留。8项功能与类型检查已通过；修后正式短测已完成，代码与after证据均已APPROVED；尚未main集成。没有新用户决定。",
+      "risks": "领取回执 claimId 827ff1f2-bb11-45c3-824c-4ce63ab39a55 / version 2；2026-10-06T03:38:42.747Z amend 已提交。分支实现和证据已交付。API 消费者证据不代表 UI；128 合成任务不代表 128 agent。架构影响：内部projection读取改为per-task前缀游标；公共API/FSM/表结构/DB连接与外部依赖不变。dashboard固定架构数据待Execution Lead核实是否需同步中心投影说明与源码基线target（apps/server/src/m2-workspace.ts）；不将分支当main。",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED",
+      "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+      "proof": {
+        "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+        "head": "7f84cdf03adcfb431da3ef84eaf157b4f17d4e69",
+        "scopes": [
+          "apps/server/src/m2-workspace.ts",
+          "apps/server/src/m2-workspace.test.ts",
+          "experiments/bounded-reads"
+        ],
+        "observedAt": "2026-10-06T03:50:32.499Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/b01/README.md",
+          "docs/evidence/b01/after-results.json",
+          "docs/evidence/b01/independent-review-checks.txt",
+          "docs/evidence/b01/validation-history.md",
+          "plans/b01-bounded-reads/plan.md",
+          "plans/b01-bounded-reads/review.md",
+          "plans/b01-bounded-reads/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+      "head": "7f84cdf03adcfb431da3ef84eaf157b4f17d4e69",
+      "scopes": [
+        "apps/server/src/m2-workspace.ts",
+        "apps/server/src/m2-workspace.test.ts",
+        "experiments/bounded-reads"
+      ],
+      "observedAt": "2026-10-06T03:50:32.248Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/b01/README.md",
+        "docs/evidence/b01/after-results.json",
+        "docs/evidence/b01/independent-review-checks.txt",
+        "docs/evidence/b01/validation-history.md",
+        "plans/b01-bounded-reads/plan.md",
+        "plans/b01-bounded-reads/review.md",
+        "plans/b01-bounded-reads/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/b01-bounded-reads/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/b01-bounded-reads/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/b01-bounded-reads/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/b01/initial-results.json",
+        "title": "首轮结果",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/b01/README.md",
+        "title": "报告",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/b01/after-results.json",
+        "title": "after-results.json",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/b01/independent-review-checks.txt",
+        "title": "stdout",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 3,
+      "total": 4
+    },
+    "main": {
+      "record": "未集成 B01；03:49:08 main ac4e34de2331dce276440df8969883c1883060ef clean",
+      "recordedHead": "ac4e34de2331dce276440df8969883c1883060ef",
+      "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+      "mainHead": "ac4e34de2331dce276440df8969883c1883060ef",
+      "scopes": [
+        "apps/server/src/m2-workspace.ts",
+        "apps/server/src/m2-workspace.test.ts",
+        "experiments/bounded-reads"
+      ],
+      "observedAt": "2026-10-06T03:50:32.232Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/server/src/m2-workspace.test.ts",
+          "apps/server/src/m2-workspace.ts",
+          "docs/evidence/b01",
+          "experiments/bounded-reads",
+          "plans/b01-bounded-reads"
+        ],
+        "state": "active",
+        "branch": "codex/bounded-read-performance",
+        "origin": "new",
+        "taskId": "B01",
+        "worker": "b01_bounded_reads",
+        "claimId": "827ff1f2-bb11-45c3-824c-4ce63ab39a55",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance",
+        "createdAt": "2026-10-06T03:32:11.543Z",
+        "updatedAt": "2026-10-06T03:38:42.747Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}
