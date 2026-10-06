@@ -18,7 +18,7 @@ export async function startKnowledgeFixture(label: string) {
   async function startServer() {
     app = await createServer({ databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false });
     await migrateKnowledge(pool!);
-    registerKnowledgeRoutes(app, pool!);
+    if (!app.hasRoute({ method: 'GET', url: '/api/projects/:projectId/knowledge/sources' })) registerKnowledgeRoutes(app, pool!);
     base = await app.listen({ host: '127.0.0.1', port: 0 });
   }
   async function http(path: string, body?: unknown, options: { key?: string; token?: string } = {}) {
