@@ -1,0 +1,19 @@
+{
+  "kind": "flow-o10-one-shot",
+  "authorizedBy": "Goal Owner",
+  "approvalId": "o10-native-20261006-0834-b1a88",
+  "approvedAt": "2026-10-06T08:34:12Z",
+  "expiresAt": "2026-10-06T09:04:12Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-child-acceptance/",
+  "target": "b1a88ce90d2366f0fda6e4411471a4ddc5894e5e",
+  "sourceDigest": "c7fa26cdf75f63eb62723a13f3a6ea29b9f82b1453a1ed51b56b8c2743b8d0c6",
+  "model": "sonnet",
+  "limits": {
+    "queries": 1,
+    "maxTurns": 3,
+    "maxBudgetUsd": 0.1,
+    "timeoutMs": 60000
+  },
+  "authorizationReference": "Goal Owner /root ONE_SHOT_GO at 2026-10-06 08:34 UTC, budget allocated under the user existing authorization for local Claude/Pi real comparisons and low-cost prototypes; this is not a new direct user approval message. Lead confirmed no concurrent agent flow-UI/provider query.",
+  "scope": "One fixed synthetic \u7eb8\u9e22 material, configured-readonly single text child only; no engineering writes/MCP/planner/extra child task/individual service/UI actions. Native output not automatically accepted."
+}

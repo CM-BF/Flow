@@ -1,0 +1,3 @@
+# Root独立增量批准
+
+2026-10-06 08:34 UTC，Root只读APPROVED固定b1a88ce90d2366f0fda6e4411471a4ddc5894e5e，收尾8b28985192f958440bfb28eb8c14d844dadbfee3 clean。实际核manifest16341fc7628fd5ac082c787b1644409f5a9aec1ca16b296e9819b7e70ef801c4、3changed/10all/11raw/15deps与固定target全吻合；完整checkpoint写失败保留/成功清理2/2作者证据已读，未重跑原11，P2关闭。批准仅准备与证据耐久顺序，不证明native/语义/费用；原始失败与pending原manifest保留历史。

@@ -11,3 +11,7 @@ NOT_STARTED。Review target commit = 3c770b52bb4e2e8b3c8b217b9d7900dda688263d，
 Root独立只读核原3c770的9source/16raw/15dep和五旅程sourceDigest一致，认可11不同作者检查，未重跑/无native。唯一P2：完整report在DROP/rm后写，可能丢失不可重现证据，结论REQUEST_CHANGES。
 
 固定修复target b1a88ce90d2366f0fda6e4411471a4ddc5894e5e，Review target commit = b1a88ce90d2366f0fda6e4411471a4ddc5894e5e；增量3文件、局部2/2，见[回应](../../docs/evidence/o10/checkpoint-review-response.md)和[增量manifest](../../docs/evidence/o10/checkpoint-manifest.json)。作者不自判APPROVED，等待Root增量复审。旧manifest/初始not-started段落保留历史，不当当前结论。
+
+## Root正式增量结论 2026-10-06 08:34 UTC
+
+**APPROVED；P2 CLOSED。Review target commit = b1a88ce90d2366f0fda6e4411471a4ddc5894e5e。** 3changed/10all/11raw/15deps固定target全核，2/2原证据已读，未重跑原11；限checkpoint/0query准备。原始failed/pending记录按历史保留，见[回执](../../docs/evidence/o10/checkpoint-root-review.md)。另发one-shot预算是独立运行授权，不把准备批准当native成功。
