@@ -6,7 +6,7 @@ Review target commit：ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
-当前审查范围：root于2026-10-06 17:52:25.375464Z对固定ef458 / 实际HEAD5819796 / B1750原始证据正式限定批准。复用原A-all12，24新raw逐字与59wire中58个非redact响应hash通过。原失败历史保留，个人部署/main均尚未发生。
+当前审查范围：root于2026-10-06 17:52:25.375464Z对固定ef458 / 实际HEAD5819796 / B1750原始证据正式限定批准。复用原A-all12，24新raw逐字与59wire中58个非redact响应hash通过。原失败历史保留；main已正式接收，个人部署尚未发生。
 
 ## 后续只读任务
 
@@ -79,3 +79,7 @@ B1750 target ef458/actual HEAD5819796 三Appchecks PASS；原all12 A直接复用
 ## 2026-10-06 17:53:24 UTC 最终限定独审
 
 Reviewer root，原结论 APPROVED_RELEASE03_COMPATIBILITY_EVIDENCE_SCOPED，完整原件见[report](../../docs/evidence/wpf-release03/app1750-root-review.json)。无重跑，核原始hash、identity、fault Request顺序、手动Retry、新稿、兼容report/四observations、exactbackend/artifact、清理和累计预算。实际看过浅色desktop/深色390截图，但后者侧栏覆盖内容，不承诺所有窄屏/a11y。审批仅af51+d629 tuple，不涵盖真实provider、Recovery浏览器或个人部署。当前无需产品修复；主线/发布仍原owner接收。
+
+## 2026-10-06 18:02:51 UTC 主线接收
+
+正式main `8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981`，两source与fixed ef458/current逐字一致；B1750 24文件与Lead绑定逐字同。Lead仅追加root noEmit exit0/9.075298625秒/原stdout0B，未重复行为/PG/Chrome/provider。详见[main-close](../../docs/evidence/wpf-release03/main-close.json)。原root限定兼容批准范围不扩展；个人发布仍未执行，侧栏遮挡390截图限制保留。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 17:53:24 UTC |
+| 最近更新时间 | 2026-10-06 18:02:51 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -10,17 +10,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7（响应正文丢失注入源码修复） |
-| 工作树dirty状态 | 产品两源固定且未改；本段仅新增实际raw与metadata，最终normalpush/clean回执另核 |
-| 工作分支状态 | in-progress / approved / waiting-main |
-| 本片段交付阶段 | integration |
+| 工作树dirty状态 | 收口前HEAD/source clean；此段仅own metadata，normalpush后双端clean回执交管理释放 |
+| 工作分支状态 | completed / approved |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7；实际B 3项通过，复用已审all12两A；不是新类型检查/个人发布 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；限定兼容证据已独审，main与个人部署尚未发生 |
+| 已集成main状态 / HEAD | INTEGRATED 8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981；两source/24B原raw逐字同，个人部署未发生 |
 | 实现目标 | ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实页面普通发送和附件发送/队列的原键恢复已通过，草稿保留 |
-| 下一可用交付 | 将已独审的固定兼容组合交主线和原发布操作员受控接收 |
+| 当前产出 | 固定前端与修复后后台的兼容证据已独审并接收主线 |
+| 下一可用交付 | 本片段已交付；个人更新由原发布操作员按固定组合处理 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；APPROVED ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7，仅af51+d629限定兼容证据；root17:52:25Z独审，无重跑 |
@@ -29,7 +29,7 @@
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
 | RELEASE03-02 | completed | w01_owner | [B1750通过](../../docs/evidence/wpf-release03/app-result-175014.json)：原A-all12复用，B三项PASS；累计50809/180000ms |
-| RELEASE03-03 | in-progress | w01_owner | [ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；[root实际结果独审](../../docs/evidence/wpf-release03/app1750-root-review.json)完成；主线交付待完成 |
+| RELEASE03-03 | completed | w01_owner | [ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；[root实际结果独审](../../docs/evidence/wpf-release03/app1750-root-review.json)完成；[主线接收](../../docs/evidence/wpf-release03/main-close.json)已核 |
 
 ## 架构影响与未验
 
@@ -142,3 +142,11 @@ B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files 
 ## 2026-10-06 17:53:24 UTC root限定独审完成
 
 root于17:52:25.375464Z独立接受B1750 retained evidence，APPROVED_RELEASE03_COMPATIBILITY_EVIDENCE_SCOPED；[原件](../../docs/evidence/wpf-release03/app1750-root-review.json)。核24raw/59wire/58未redact响应hash、Send及Queue真实同key/body identity、同Request截断、原A-all12/hash保真、4observations与import5文件逐字、预算/清理。没有重跑PG/浏览器或轮询进程；实际看过两张截图，390图侧栏覆盖内容，不证明完整响应式交互/a11y。仅af51+d629组合，compat599a5b17，0provider/个人部署；main接收待Lead。
+
+## 2026-10-06 18:02:51 UTC 正式主线接收/全范围停写
+
+Lead main/origin `8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981` 正式接收两harness与B1750限定兼容证据；本人只用git show固定main取三原件并核两源码=ef458=current、全部24B绑定=main=current。[来源与26项字节核验](../../docs/evidence/wpf-release03/main-close.json)、[Lead集成原件](../../docs/evidence/wpf-release03/main-release03-source-and-evidence-bindings.json)、[root类型检查](../../docs/evidence/wpf-release03/main-release03-root-types.json)、[stdout0B](../../docs/evidence/wpf-release03/main-release03-root-types.txt)。
+
+Lead组合root noEmit exit0/9.075298625044525秒，仅当前组合类型检查；未重跑A/B/PG/Chrome/provider。本人亦无产品重测/空间采样。实际兼容仍只af51+d629与固定release388371，compat599a5b17，预算50809/余129191不变；原失败、67raw保留。个人服务/指针/用户页面未更新，不把main接收当已部署。
+
+本片TODO已满足；normalpush/双端clean后全四scope停止写，交管理fresh CAS release bfb v3，释放后不补写。完整MATURE01及个人受管发布保持其原owner/验收，不归本片自动Done。

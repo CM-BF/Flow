@@ -1,6 +1,6 @@
 # RELEASE03 固定组合兼容证据已独审通过
 
-固定harness target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` / B实际HEAD5819796，后台af51 + format2 artifact d629/release388371；B1750三Appchecks通过，复用原all12两项A，没有重跑A。[最新原始结果索引](app-result-175014.json)包含24文件225635B。累计50809ms/余129191ms，原43raw逐字不变，专库/两进程清理errors=[]。[root限定独审](app1750-root-review.json)于17:52:25Z通过；main接收和个人发布未操作。
+固定harness target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` / B实际HEAD5819796，后台af51 + format2 artifact d629/release388371；B1750三Appchecks通过，复用原all12两项A，没有重跑A。[最新原始结果索引](app-result-175014.json)包含24文件225635B。累计50809ms/余129191ms，原43raw逐字不变，专库/两进程清理errors=[]。[root限定独审](app1750-root-review.json)于17:52:25Z通过；main `8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981` 已正式接收；个人发布未操作。
 
 兼容报告ID `599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9`，生成/verify仅在本证据目录。新故障观测为真实成功ACK的headers后正文截断；turn和Queue均同Request ERR_CONTENT_LENGTH_MISMATCH→unknown→手动原key/body恢复，新稿保留。原旧362红、定位器失败、preheader重发事实均保留，不能把旧source/raw改绑为本轮。
 
@@ -51,3 +51,7 @@
 ## B1736资源未准入
 
 [管理原件](app2-admission-not-run-173543.json)：17:35:43.958730Z free1,179,914,240 < start1,207,959,552B，gate=null，0运行/预算不变；所有非资源predicate通过。不是产品红，不授权重试。
+
+## 主线接收
+
+[固定main对照](main-close.json)与[Lead原件](main-release03-source-and-evidence-bindings.json)记录两源/24B文件逐字同，组合root noEmit exit0/9.075298625秒，0行为重跑。个人未部署，发布必须维持原批准tuple。
