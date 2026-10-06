@@ -15,6 +15,7 @@ import { DETAIL_MARKER, DETAIL_TEXT, PROMPT_TEXT, seedHistory } from './fixture.
 
 const started = performance.now();
 const output = new URL(process.argv[2] ?? '../../docs/evidence/b01/results.json', import.meta.url);
+const compareExperimentalCandidate = process.env.FLOW_B01_COMPARE_CANDIDATE === '1';
 const maxBytes = 96 * 1024 * 1024;
 const signal = AbortSignal.timeout(110_000);
 const adminUrl = new URL(process.env.FLOW_B01_ADMIN_URL ?? 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres');
@@ -36,6 +37,7 @@ let checkCount = 0;
 let reserved = false;
 const cleanupErrors: string[] = [];
 const scenarios: Record<string, unknown>[] = [];
+const resources: { database: string; port?: number; dropped: boolean }[] = [];
 const checks: { label: string; result: 'passed' }[] = [];
 const evidence: Record<string, unknown> = {
   status: 'started', startedAt: new Date().toISOString(),
@@ -44,11 +46,13 @@ const evidence: Record<string, unknown> = {
   node: process.version, loadAverageStart: loadavg(), modelCalls: 0, cloudResources: 0, userFiles: 0,
   limits: { elapsedMs: 120000, responseBytes: maxBytes, tasksPerScenario: 128, timelineRowsPerScenario: 16384 },
   method: { consumer: 'sequential HTTP API consumer; no browser or UI evidence', warmSamples: 50,
-    cold: 'One first application request per endpoint/scenario after seed; PG/OS caches NOT flushed. No cold percentiles.',
+    cold: 'Snapshot/events initial requests are after seed; workspaceFirstRequest is before catchup. workspaceSteady is already warm. PG/OS caches NOT flushed.',
     percentiles: 'nearest rank; n=50 p99 equals maximum, not a stable tail estimate',
+    latency: 'HTTP request to completed response body; JSON.parse excluded',
+    candidateComparison: compareExperimentalCandidate,
     bytes: 'UTF-8 uncompressed HTTP response body only; excludes headers/TCP/TLS',
     seededHistory: 'SQL bulk synthetic completed records, bypassing write ingress; HTTP ingress limits checked separately',
-    agentCapacity: 'Not measured; 1/16/128 are stored task counts, never executing agents' }, scenarios, checks, cleanupErrors,
+    agentCapacity: 'Not measured; 1/16/128 are stored task counts, never executing agents' }, scenarios, checks, cleanupErrors, resources,
 };
 
 const hardStop = setTimeout(() => {
@@ -83,27 +87,29 @@ async function startScenario(label: string) {
   assert(/^flow_b01_[0-9]+_[a-z0-9_]+$/.test(databaseName));
   await admin.query(`CREATE DATABASE ${databaseName}`);
   database = databaseName;
+  const resource: typeof resources[number] = { database, dropped: false }; resources.push(resource);
   const databaseUrl = new URL(adminUrl); databaseUrl.pathname = `/${database}`;
   pool = new Pool({ connectionString: databaseUrl.href, max: 1, connectionTimeoutMillis: 3000, statement_timeout: 5000 });
   server = await createServer({ databaseUrl: databaseUrl.href, ownerToken, leaseMs: 300000 });
   origin = await server.listen({ host: '127.0.0.1', port: 0 });
-  return { database, port: Number(new URL(origin).port) };
+  resource.port = Number(new URL(origin).port);
+  return { database, port: resource.port };
 }
 
 async function cleanupScenario() {
   if (server) { await server.close(); server = undefined; }
   if (pool) { await pool.end(); pool = undefined; }
-  if (database) { await admin.query(`DROP DATABASE ${database}`); database = undefined; }
+  if (database) { await admin.query(`DROP DATABASE ${database}`); resources.find(resource => resource.database === database)!.dropped = true; database = undefined; }
 }
 
-async function measureEndpoint(path: string) {
+async function measureEndpoint(path: string, phase = 'first-after-seed') {
   const first = await request(path);
   const milliseconds: number[] = [];
   const bytes: number[] = [];
   for (let sample = 0; sample < 50; sample++) {
     const result = await request(path); milliseconds.push(result.elapsedMs); bytes.push(result.bytes);
   }
-  return { path, firstRequest: { elapsedMs: first.elapsedMs, bytes: first.bytes }, warm: distribution(milliseconds), milliseconds, bytes };
+  return { path, phase, firstRequest: { elapsedMs: first.elapsedMs, bytes: first.bytes }, warm: distribution(milliseconds), milliseconds, bytes };
 }
 
 async function verifyLayering(eventsPerTask: number) {
@@ -183,16 +189,20 @@ async function runReadScenario(tasks: number, eventsPerTask: number) {
   record.workspaceFirstRequest = await request<WorkspacePage>('/api/workspace?after=0&limit=100').then(result => ({ elapsedMs: result.elapsedMs, bytes: result.bytes, returned: result.body.entries.length, projectionPending: result.body.projectionPending }));
   const baselineInsert = [...projection.queries.keys()].find(sql => sql.includes('SELECT tl.task_id'));
   assert(baselineInsert, 'Must capture the real projection update query');
-  record.candidateBacklog = await compareCandidate(pool!, baselineInsert);
-  check('candidate SQL preserves baseline backlog batch', () => {});
+  if (compareExperimentalCandidate) {
+    record.candidateBacklog = await compareCandidate(pool!, baselineInsert);
+    check('candidate SQL preserves baseline backlog batch', () => {});
+  }
   record.catchup = await drainWorkspace(tasks * (eventsPerTask + 1));
   const watermark = (record.catchup as { cursor: number }).cursor;
-  record.workspaceSteady = await measureEndpoint(`/api/workspace?after=${watermark}&limit=100`);
+  record.workspaceSteady = await measureEndpoint(`/api/workspace?after=${watermark}&limit=100`, 'after-catchup-already-warm');
   record.layering = await verifyLayering(eventsPerTask);
   record.eventPagination = await drainEvents(eventsPerTask);
   record.projectionPlansAfterCatchup = await projectionPlans();
-  record.candidateConverged = await compareCandidate(pool!, baselineInsert);
-  check('candidate SQL preserves empty converged batch', () => {});
+  if (compareExperimentalCandidate) {
+    record.candidateConverged = await compareCandidate(pool!, baselineInsert);
+    check('candidate SQL preserves empty converged batch', () => {});
+  }
   record.storage = (await pool!.query(`SELECT pg_database_size(current_database())::text database_bytes,
     pg_total_relation_size('flow.timeline')::text timeline_bytes,pg_total_relation_size('flow.workspace_feed')::text workspace_bytes`)).rows[0];
   await cleanupScenario(); record.cleanedUp = true;
@@ -254,6 +264,7 @@ try {
   try { await cleanupScenario(); } catch { cleanupErrors.push('scenario resources; must inspect own DB/process'); process.exitCode = 1; }
   try { await admin.end(); } catch { cleanupErrors.push('admin pool'); process.exitCode = 1; }
   projection.restore(); clearTimeout(hardStop);
+  evidence.endedAt = new Date().toISOString();
   evidence.elapsedMs = performance.now() - started;
   evidence.responseBytes = transferredBytes; evidence.requestBodyBytes = requestBodyBytes; evidence.checkCount = checkCount;
   evidence.cleanup = { serverClosed: !server, poolClosed: !pool, databaseDropped: !database, errors: cleanupErrors };

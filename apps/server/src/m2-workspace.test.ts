@@ -1,13 +1,19 @@
 import { randomUUID } from 'node:crypto';
-import { Pool } from 'pg';
-import { beforeEach, afterEach, expect, it } from 'vitest';
+import { Pool, type QueryResult } from 'pg';
+import { beforeAll, afterAll, beforeEach, afterEach, expect, it } from 'vitest';
 import type { FastifyInstance } from 'fastify';
 import type { ClaimedTask, WorkspacePage } from '@flow/contracts';
 import { createServer } from './index.js';
 
-const databaseUrl = process.env.FLOW_M02_DATABASE_URL ?? 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_m02';
-const database = new URL(databaseUrl);
-if (database.pathname !== '/flow_m02' || database.hostname !== '127.0.0.1' || database.port !== '55432') throw new Error('M02 tests require isolated local flow_m02.');
+const adminUrl = new URL(process.env.FLOW_M02_DATABASE_URL ?? 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_m02');
+if (adminUrl.hostname !== '127.0.0.1' || adminUrl.port !== '55432') throw new Error('M02 tests require the local development PostgreSQL.');
+adminUrl.pathname = '/postgres';
+const databaseName = `flow_m02_test_${process.pid}_${randomUUID().replaceAll('-', '')}`;
+const database = new URL(adminUrl);
+database.pathname = `/${databaseName}`;
+const databaseUrl = database.href;
+const admin = new Pool({ connectionString: adminUrl.href, max: 1, connectionTimeoutMillis: 3000 });
+let createdDatabase = false;
 const ownerToken = 'm02-owner-test';
 const headers = { authorization: `Bearer ${ownerToken}` };
 let server: FastifyInstance;
@@ -15,6 +21,13 @@ let pool: Pool;
 const get = (path = '/api/workspace') => server.inject({ method: 'GET', url: path, headers });
 const submit = (title: string) => server.inject({ method: 'POST', url: '/api/tasks', headers: { ...headers, 'idempotency-key': randomUUID() }, payload: { title, prompt: 'Keep full task material out of the shared feed.', harness: 'fixture' } });
 
+beforeAll(async () => {
+  await admin.query(`CREATE DATABASE ${databaseName}`);
+  createdDatabase = true;
+});
+afterAll(async () => {
+  try { if (createdDatabase) await admin.query(`DROP DATABASE ${databaseName}`); } finally { await admin.end(); }
+});
 beforeEach(async () => {
   pool = new Pool({ connectionString: databaseUrl });
   await pool.query('DROP SCHEMA IF EXISTS flow CASCADE; DROP SCHEMA IF EXISTS pgboss CASCADE');
@@ -160,4 +173,63 @@ it('provides an authorized updated-order task index with exact filtered totals a
   expect((await get('/api/task-index?updatedAfter=bad-date')).statusCode).toBe(400);
   expect((await server.inject({ method: 'GET', url: '/api/task-index' })).statusCode).toBe(401);
   expect(JSON.stringify(first)).not.toContain('Keep full task material');
+});
+
+it('preserves per-task cursor prefixes when another writer waits for the task lock', async () => {
+  const task = (await submit('Per-task ordered commits')).json().task;
+  const initial = (await get()).json<WorkspacePage>();
+  const firstWriter = await pool.connect();
+  const secondWriter = await pool.connect();
+  let waitingWriter: Promise<QueryResult<{ cursor: number }>> | undefined;
+  try {
+    await firstWriter.query('BEGIN');
+    await firstWriter.query('SELECT cursor FROM flow.tasks WHERE id=$1 FOR UPDATE', [task.id]);
+    await firstWriter.query(`INSERT INTO flow.timeline(task_id,cursor,entry) VALUES($1,1,$2)`, [task.id,
+      { id: 'first-commit', cursor: 1, createdAt: new Date().toISOString(), kind: 'text', text: 'First writer' }]);
+    await firstWriter.query('UPDATE flow.tasks SET cursor=1 WHERE id=$1', [task.id]);
+    await secondWriter.query('BEGIN');
+    const secondPid = (await secondWriter.query('SELECT pg_backend_pid() pid')).rows[0].pid;
+    waitingWriter = secondWriter.query<{ cursor: number }>('SELECT cursor FROM flow.tasks WHERE id=$1 FOR UPDATE', [task.id]);
+    await expect.poll(async () => (await pool.query('SELECT wait_event_type FROM pg_stat_activity WHERE pid=$1', [secondPid])).rows[0]?.wait_event_type).toBe('Lock');
+    expect((await get(`/api/workspace?after=${initial.nextCursor}`)).json().entries).toEqual([]);
+    await firstWriter.query('COMMIT');
+    expect((await waitingWriter).rows[0]?.cursor).toBe(1);
+    await secondWriter.query('COMMIT');
+    const firstPage = (await get(`/api/workspace?after=${initial.nextCursor}`)).json<WorkspacePage>();
+    expect(firstPage.entries.map(item => item.entry.id)).toEqual(['first-commit']);
+    await secondWriter.query('BEGIN');
+    await secondWriter.query('SELECT cursor FROM flow.tasks WHERE id=$1 FOR UPDATE', [task.id]);
+    await secondWriter.query(`INSERT INTO flow.timeline(task_id,cursor,entry) VALUES($1,2,$2)`, [task.id,
+      { id: 'second-commit', cursor: 2, createdAt: new Date().toISOString(), kind: 'text', text: 'Second writer' }]);
+    await secondWriter.query('UPDATE flow.tasks SET cursor=2 WHERE id=$1', [task.id]);
+    await secondWriter.query('COMMIT');
+    const secondPage = (await get(`/api/workspace?after=${firstPage.nextCursor}`)).json<WorkspacePage>();
+    expect(secondPage.entries.map(item => item.entry.id)).toEqual(['second-commit']);
+    expect(secondPage.entries[0]!.cursor).toBeGreaterThan(firstPage.nextCursor);
+  } finally {
+    await firstWriter.query('ROLLBACK');
+    await waitingWriter;
+    await secondWriter.query('ROLLBACK');
+    firstWriter.release(); secondWriter.release();
+  }
+});
+
+it('projects a long task in ordered prefixes across multiple 200-event batches', async () => {
+  const task = (await submit('Long per-task prefix')).json().task;
+  await pool.query(`INSERT INTO flow.timeline(task_id,cursor,entry)
+    SELECT $1,n,jsonb_build_object('id','prefix-'||n,'cursor',n,'createdAt','2026-10-06T00:00:00.000Z',
+      'kind','text','text','Prefix entry '||n) FROM generate_series(1,450) n`, [task.id]);
+  await pool.query('UPDATE flow.tasks SET cursor=450 WHERE id=$1', [task.id]);
+  const all: WorkspacePage['entries'] = [];
+  let cursor = 0;
+  for (let page = 0; page < 5; page++) {
+    const result = (await get(`/api/workspace?after=${cursor}&limit=100`)).json<WorkspacePage>();
+    expect(result.entries.length).toBeLessThanOrEqual(100);
+    all.push(...result.entries); cursor = result.nextCursor;
+  }
+  expect(all.map(item => item.entry.cursor)).toEqual(Array.from({ length: 451 }, (_, cursor) => cursor));
+  expect(new Set(all.map(item => item.entry.id)).size).toBe(451);
+  const caughtUp = (await get(`/api/workspace?after=${cursor}`)).json<WorkspacePage>();
+  expect(caughtUp.entries).toEqual([]);
+  expect(caughtUp.projectionPending).toBe(false);
 });
