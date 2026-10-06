@@ -1,5 +1,13 @@
 # ACTIVITY01 交付入口
 
+## 当前预览状态：已退役
+
+`http://127.0.0.1:53851/` / session46011 已按 Lead/GO 本次明确授权退役。2026-10-06T21:54:20.866804Z 仅向确证 PID31365 发 SIGTERM；原session实际 exit143，随后原父链/PGID30394和53849/53850/53851监听均无残留。未把exit143写成exit0，也不冒称每个异步handler完成。[原始回执与consumer边界](preview-retirement/README.md)。
+
+以下原 URL、启动命令、检查与“预览保持/不关闭”均是历史记录；53851旧默认保留已被此次授权覆盖。命令仅作来源追溯，本次未重启服务，其他KEEP服务和用户页面未操作。
+
+## 历史交付与启动说明
+
 实现 `61b9349af390c137cc4cfeabd38bad058ec69cb5`；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity`；branch `codex/web-conversation-activity`；base `3d4985fca060155435b159e0467815bf8e88b8b8`。独立活动模块，无App接线，无CHAT05/K02/renderer输入。
 
 本地预览 [http://127.0.0.1:53851/](http://127.0.0.1:53851/) / session46011 / owner workspace_panels_owner。HTTP fixture · simulated · no model；Show activity→引用二次展开，Load more/Refresh/host complete/offline/sameID center切换。启动 `PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation-activity.fixture.ts --activity-preview`，动态端口以stdout为准。浏览器脚本自行创建/关闭专属fixture，不关闭此长期preview或其它任务服务。

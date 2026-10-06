@@ -1,0 +1,114 @@
+{
+  "service": "activity",
+  "signal": "SIGTERM",
+  "targetPid": 31365,
+  "before": [
+    {
+      "argv": [
+        "ps",
+        "-p",
+        "31365",
+        "-o",
+        "pid=,ppid=,pgid=,lstart=,command="
+      ],
+      "exit": 0,
+      "stdout": "31365 31281 30394 Mon Oct  5 23:14:10 2026     /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/conversation-activity.fixture.ts --activity-preview\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-a",
+        "-p",
+        "31365",
+        "-d",
+        "cwd",
+        "-Fpcn"
+      ],
+      "exit": 0,
+      "stdout": "p31365\ncnode\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-a",
+        "-p",
+        "31365",
+        "-iTCP:53851",
+        "-sTCP:LISTEN",
+        "-Fpcn"
+      ],
+      "exit": 0,
+      "stdout": "p31365\ncnode\nf21\nn127.0.0.1:53851\n",
+      "stderr": ""
+    }
+  ],
+  "signalAt": "2026-10-06T21:54:20.866804+00:00",
+  "sent": true,
+  "waitSeconds": 0.26887020794674754,
+  "afterAt": "2026-10-06T21:54:21.136755+00:00",
+  "groupAfter": {
+    "argv": [
+      "/usr/bin/pgrep",
+      "-g",
+      "30394"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "chainAfter": {
+    "argv": [
+      "ps",
+      "-p",
+      "31365,31281,30394",
+      "-o",
+      "pid=,ppid=,pgid=,stat=,command="
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "portsAfter": [
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-iTCP:53849",
+        "-sTCP:LISTEN",
+        "-Fpcn"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-iTCP:53850",
+        "-sTCP:LISTEN",
+        "-Fpcn"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-iTCP:53851",
+        "-sTCP:LISTEN",
+        "-Fpcn"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "allObservedAbsent": true
+}

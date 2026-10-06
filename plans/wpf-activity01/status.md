@@ -1,20 +1,22 @@
 # WPF-ACTIVITY01 状态
 
+当前独立模拟预览 `http://127.0.0.1:53851/` 已于 2026-10-06 21:54 UTC 按 Lead/GO 新授权退役；历史 URL 和启动方法保留作追溯，不表示仍在运行。[退役原件与边界](../../docs/evidence/wpf-activity01/preview-retirement/README.md)。
+
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T06:28:42Z / acfd409a493315a00f1cc19ac96c5f1b36c19e57 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:58:02 UTC / 最近main核验仍为2026-10-06T06:28:42Z，acfd409a493315a00f1cc19ac96c5f1b36c19e57 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 可按需查看执行活动与详情，长记录按页显示 |
+| 当前产出 | 独立活动模块已交付；旧模拟预览已退役，历史验证与源码保留 |
 | 下一可用交付 | 本片段已交付；聊天入口挂载后继另领 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity |
 | Branch | codex/web-conversation-activity |
 | 工作基线 / HEAD | 3d4985fca060155435b159e0467815bf8e88b8b8 / 实际HEAD由Git聚合 |
-| 工作树dirty状态 | 六个新源/专测已固定；当前仅本任务metadata收口 |
+| 工作树dirty状态 | 六个新源/专测继续冻结；本轮仅三项metadata范围，基线8cc13eaa9c2aa29f77f841637d9891b67fd1264f clean；最终HEAD/dirty由Git聚合 |
 | 工作分支状态 | COMPLETED |
 | 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 61b9349af390c137cc4cfeabd38bad058ec69cb5；22 direct、typecheck、dev7/prod7与独立fixture build；[验证](../../docs/evidence/wpf-activity01/validation.md) |
@@ -22,7 +24,8 @@
 | 实现目标 | 61b9349af390c137cc4cfeabd38bad058ec69cb5 |
 | 实现范围 | apps/web/src/conversation-activity/projection.ts, apps/web/src/conversation-activity/ConversationActivity.tsx, apps/web/src/conversation-activity/activity.css, apps/web/test/conversation-activity.test.ts, apps/web/test/conversation-activity.fixture.ts, apps/web/test/conversation-activity.browser.ts |
 | Review | [review.md](review.md)，APPROVED 61b9349af390c137cc4cfeabd38bad058ec69cb5 |
-| D04 claim | 51f962ee-7e6f-4806-a9f9-df3838dc27f5 / v1 active，06:04:36.078Z committed，06:28:24.458Z live核；[receipt](../../docs/evidence/wpf-activity01/take-receipt.json) |
+| D04历史claim（非当前写权） | 51f962ee-7e6f-4806-a9f9-df3838dc27f5 / v1 active，06:04:36.078Z committed，06:28:24.458Z live核；[receipt](../../docs/evidence/wpf-activity01/take-receipt.json) |
+| D04当前metadata claim | 707b1c6c-1032-42ec-a876-9476d40bc181 / v1 active；21:56:34.337Z新take，owner本人live核；仅status/README/preview-retirement。正常提交推送clean后全三scope停写，由管理fresh release |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -30,6 +33,10 @@
 | WPF-ACTIVITY01-02 | completed | workspace_panels_owner | reader与身份/代际/reset/详情按需22直接检查 |
 | WPF-ACTIVITY01-03 | completed | workspace_panels_owner | dev7/prod7、双主题390/键盘、只读HTTPfixture；不是App接线 |
 | WPF-ACTIVITY01-04 | completed | workspace_panels_owner | root06:17:33独立APPROVED；06:14唯一合采已确认过渡来源，当前字段由本地parser核；Lead已集成main，六路径与target零diff |
+
+## 历史实现与预览记录
+
+以下截至 06:28 UTC 的“保留/保持/不关闭”和原检查均为历史；仅53851默认保留已由本次明确退役授权覆盖，其余服务未操作。原TODO与产品审核范围不变。
 
 架构影响：已集成宿主绑定只读执行活动模块，尚未App挂载，不增加SSE/自动poll或公共API。固定交付后列入主Lead架构更新队列。0模型/真实DB，旧全部服务保持。
 
@@ -40,3 +47,7 @@ Dashboard已由manager一次合采实际展示：2026-10-06T06:14:43.956Z，73�
 独立review：root / gpt-6-astra ultra，2026-10-06T06:17:33Z，固定61b APPROVED；独立22 direct与CUA限定旅程，作者7+7/typecheck/build仅证据复核未独立重跑。模块通过不代表App接线或CHAT05/真实中心已验证。全八scope产品停写，本次main元数据提交后八scope全部停写，按fresh v1执行已授权release，原receipt交管理保存；释放后不追写本canonical。
 
 2026-10-06T06:28:42Z 集成停点：main/origin精确acfd、主树clean、target祖先及六源码零diff已独立核。不重跑产品检查，不将模块集成说成App接通或真实CHAT05运行验证；53851/session46011及旧服务保持。
+
+## 2026-10-06 预览退役收口
+
+2026-10-06T21:54:20.866804Z 仅向重新确证的 Node PID31365 发 SIGTERM；session46011 实际 exit143。PGID30394、父链和53849/53850/53851监听随后均未见残留；exit143不能证明每个异步关闭handler完成。固定8cc13e源与工作树均前后不变、clean。Root对当前冻结输入未发现声明依赖冲突，见[有界consumer核验](../../docs/evidence/wpf-activity01/preview-retirement/root-two-preview-known-consumer-check.json)。未改用户tab或任何KEEP服务，未删除cache/deps，未新跑产品检查、parser、HTTP/PG/模型。Dashboard由管理读本status，未在本轮复采。
