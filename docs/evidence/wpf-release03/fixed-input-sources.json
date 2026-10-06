@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-06T14:32:37.728306+00:00",
+  "method": "Fixed git object reads only; no product imports/checks, PG, Chrome, build, services, credentials or project writes.",
+  "files": [
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "apps/server/src/index.ts",
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "bytes": 13507
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "bytes": 6424
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "apps/server/src/events.ts",
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853",
+      "bytes": 8678
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7",
+      "bytes": 10963
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "apps/server/package.json",
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0",
+      "bytes": 509
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "packages/client/src/index.ts",
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "bytes": 44108
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "packages/client/package.json",
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "bytes": 183
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f",
+      "bytes": 1227
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+      "bytes": 2828
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+      "bytes": 3520
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "packages/contracts/package.json",
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "bytes": 168
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "package.json",
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "bytes": 729
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "pnpm-lock.yaml",
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "bytes": 278830
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "sha256": "4d37bd07dc4c312d7509fbf367bb07b3d3065a7f0cea7709c7b6ba3ea2c6c355",
+      "bytes": 16058
+    },
+    {
+      "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "sha256": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc",
+      "bytes": 13184
+    },
+    {
+      "commit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+      "bytes": 8163
+    },
+    {
+      "commit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "path": "tools/personal-preview/environment.mjs",
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "bytes": 1983
+    },
+    {
+      "commit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "path": "tools/personal-preview/web-release.mjs",
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674",
+      "bytes": 12759
+    },
+    {
+      "commit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "path": "tools/personal-preview/static-web.mjs",
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2",
+      "bytes": 6387
+    },
+    {
+      "commit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b",
+      "bytes": 12618
+    },
+    {
+      "commit": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "path": "apps/web/test/attachment-integration.fixture.ts",
+      "sha256": "340c839bf921febd23bde195276691701f94419fad66adfc6d7a87d5da51857f",
+      "bytes": 9794
+    },
+    {
+      "commit": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "path": "apps/web/test/attachment-integration.browser.ts",
+      "sha256": "cfae16b770bf217855e5e0d03415fb90ba0a448ac07dd141ee31069681a61f46",
+      "bytes": 26685
+    }
+  ]
+}
