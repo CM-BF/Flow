@@ -11,10 +11,16 @@ export interface RunnerRegistration { runnerId: string; token: string }
 export const ownershipSchema = z.strictObject({ attemptId: idSchema, ownerVersion: z.number().int().positive() });
 export type Ownership = z.infer<typeof ownershipSchema>;
 export interface ClaimedTask { attempt: AttemptView; task: TaskSubmission & { id: string } }
-export interface ClaimResponse { assignment: ClaimedTask | null }
+export interface ClaimResponse {
+  assignment: ClaimedTask | null;
+  /** Milliseconds granted at center lease creation, before response transport; 0 without an assignment.
+   * Consumers must subtract elapsed time since BEFORE sending claim. Missing/invalid grants fail closed. */
+  remainingLeaseMs: number;
+}
 export interface HeartbeatResponse {
   action: 'continue' | 'cancel' | 'stop';
   leaseExpiresAt: string;
+  /** Milliseconds granted by this heartbeat before response transport; 0 for stop. */
   remainingLeaseMs: number;
   decision: DecisionAnswer | null;
 }

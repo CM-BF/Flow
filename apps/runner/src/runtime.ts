@@ -5,7 +5,7 @@ import { FlowApiError, FlowClient } from '@flow/client';
 import type { ClaimedTask, DecisionAnswer, HarnessAdapter, HarnessContext, RunnerEventData } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
 import { textDigest } from './verifier.js';
-import { AttemptControl } from './attempt-control.js';
+import { AttemptControl, type LeaseGrant } from './attempt-control.js';
 import { EventOutbox, EventStorageError, replayPending, reportBatch } from './outbox.js';
 
 export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained'; attemptId?: string }
@@ -31,9 +31,10 @@ export async function runRunner(options: RunnerOptions): Promise<void> {
   while (!options.signal.aborted) {
     try {
       await replayPending(stateDirectory, batch => reportBatch(client, batch, requestSignal(options)), attemptId => options.onNotice?.({ type: 'events-retained', attemptId }));
-      const { assignment } = await client.claim(requestSignal(options));
+      const requestedAt = performance.now();
+      const { assignment, remainingLeaseMs } = await client.claim(requestSignal(options));
       disconnected = false;
-      if (assignment && !options.signal.aborted) await execute(assignment, client, adapters, options, stateDirectory);
+      if (assignment && !options.signal.aborted) await execute(assignment, client, adapters, options, stateDirectory, { requestedAt, remainingLeaseMs });
     } catch (error) {
       if (options.signal.aborted) return;
       if (error instanceof EventStorageError) throw error;
@@ -45,11 +46,11 @@ export async function runRunner(options: RunnerOptions): Promise<void> {
   }
 }
 
-async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string) {
+async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant) {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await mkdir(directory, { recursive: true, mode: 0o700 });
-  const control = new AttemptControl(assignment, client, options);
+  const control = new AttemptControl(assignment, client, options, initialLease);
   const outbox = new EventOutbox(directory, ownership, async batch => {
     try { await reportBatch(client, batch, requestSignal(options)); }
     catch (error) { control.interrupt('lost'); throw error; }
