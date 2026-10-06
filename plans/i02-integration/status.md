@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:03 UTC / 2026-10-06 05:01 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:10 UTC / 2026-10-06 05:03 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -62,3 +62,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T04:57:37.668400+00:00：队列后台+兼容reader成套候选已独审并通过局部组合检查，profile目录模块已接收但实际App待后继；证据见本批integration清单。主线合入不自动升级常驻中心，不扩大两次聊天模型预算。
 
 2026-10-06 05:03 UTC：接收B02已审baseline dace800（无产品变化/无负载重跑），登记CTX02/B03为56个来源候选；人类摘要规范与全计划22要求已校准。原698ffcd共享与产品实现未改变；O04仍待独立审查，不提前并入。
+
+2026-10-06 05:10 UTC：O04已审原生goal工具注入链与B03已审长正文预览受控接收，原固定scope零diff、组合root/Web类型检查通过。未改变模型调用预算；原native/NL缺口仍open。59源登记候选待本次发布/重载。

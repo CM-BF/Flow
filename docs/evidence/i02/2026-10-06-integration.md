@@ -82,3 +82,10 @@ Root已独立复核固定f58fdf36b073e2a98a683c8f40442dbb64ee7eec/最终c003444�
 ### 05:03 UTC 有界实验和管理事实接收
 
 基线 main698ffcd；候选fa9d8b9。B02 impl38b2353/finaldace800已获Mika独立方法批准，只追加experiments/conversation-read-cost及自身plan/evidence；保留126样本、7guards、失败类型输出和字节口径，无重复负载。Profile3919/QUEUE00d604/CHAT04bf41均为原实现不变的owner metadata与release回执。D05fdd083登记CTX02/B03，validateRegistry56源合法且各真实三件套存在；FLOW00128bd004逐项保留22未完成要求。clean-code复核无新增产品接口/依赖/权限；只检查文档与diff，不跑全库或新模型。常驻61227/61228未重启，Vite源码可能随主线更新，center/runner仍原加载版本。
+
+
+### 05:10 UTC 原生目标工具与长对话预览接收
+
+O04产品1420+测试a169由Root独审，最终ccfe96：103不同作者检查分77+25+1，未复跑；B03产品9b2156/final781a09由Mika独审，43行为+126测量保存证据。合并唯一冲突为共享queue-production.test.ts的旧2测试副本对已主线3测试版本：保留已审主线原文件，git diff82eaf确认零变化，不手工改语义。O04/B03各已批准实现scope对组合HEAD零diff，见o04-b03-fixed-scopes.json。组合root/Web typecheck两个真实输出均exit0，未重复全库/负载/模型。O04仍query注入而非native子进程或NL图生成；B03只减DB→应用正文搬运，252SELECT/50次PG完整digest仍在。
+
+本批registry59源候选包括D07/PROFILEI01/DPERF01；D07实现仍独立review中未合入，本批只登记和阶段规则。常驻center/runner未刷新，下一SVC02要先有durable drain证据，不能用主线合并宣称用户运行能力已更新。
