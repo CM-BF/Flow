@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06 21:34:02 UTC",
+  "target": "3cd7a6e867bd84ca877e07ea4e6e97f70d685e32",
+  "state": "SOURCE_CHECKPOINT_NOT_GREEN",
+  "files": [
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 14117,
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a"
+    },
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "bytes": 1710,
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598"
+    },
+    {
+      "path": "apps/server/src/assistant/final-preview-batch.test.ts",
+      "bytes": 5348,
+      "sha256": "ed597db77862c9a94ac64372c478ab203e2a6b7bc08beae65439202580e53846"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3554,
+      "sha256": "2e1182123eddf4128a73794fb317f46d74b7f3a2bb5155a1408d450698800e08"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 11107,
+      "sha256": "a1bcf82cd2c7be8c5632e7c4be46c78772456cca762b568e7ee6b18bda8f2c7a"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3309,
+      "sha256": "9af76197ed8924049e5a0ca979664eba8a022ccbc7ce9d376fee98c11c4788f4"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "bytes": 2234,
+      "sha256": "52512aac932658183465a4b617062e7858f07d2b56c4e686de36a0c9f502efcb"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-page-batch.test.ts",
+      "bytes": 13796,
+      "sha256": "5d4e4777eada2632bf71feec89fd2339894501a07aaa046c0f4c8707897f3ad1"
+    }
+  ]
+}

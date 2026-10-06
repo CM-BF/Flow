@@ -23,7 +23,7 @@
 ## TODO
 
 - [x] **REQ15-01** 核实际源、规则/技能、独立worktree并取得原子claim。
-- [ ] **REQ15-02** 先固定批量Interface与失败反例，最小实现单轮/分页复用。
+- [x] **REQ15-02** 先固定批量Interface与失败反例，最小实现单轮/分页复用。
 - [ ] **REQ15-03** 显式两个非PG测试入口及局部types；记录selected/pass/exit/wall，固定源码独审。
 - [ ] **REQ15-04** 隔离真实PG/HTTP消费者、当前roundtrip/UTF8字节测量和main集成，由Lead窗口协调。
 
