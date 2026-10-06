@@ -51,8 +51,9 @@
       "coLead": "Web /root",
       "parent": "WPF-MATURE-01",
       "claimId": "35e5e5b9-2227-4cfb-bb7a-51249678c9ad",
-      "claimVersion": 2,
-      "kind": "sub-task"
+      "claimVersion": 3,
+      "kind": "sub-task",
+      "claimState": "released"
     },
     {
       "id": "D08",
@@ -80,6 +81,20 @@
       "claimId": "bc0ded75-3f9f-496b-abce-22b3af4f277a",
       "claimVersion": 1,
       "firstCanonical": "82d2c98e407684b945467e1ce6b992dba6b4603c"
+    },
+    {
+      "id": "WPF-ACTIVITYREAD01",
+      "title": "活动自然状态与按需诊断",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability",
+      "branch": "codex/web-activity-readability",
+      "planDir": "plans/wpf-activity-readability",
+      "evidenceDir": "docs/evidence/wpf-activity-readability",
+      "coLead": "Web /root",
+      "parent": "WPF-MATURE-06",
+      "kind": "sub-task",
+      "claimId": "6f427ac5-8f10-4c02-8446-07cead914163",
+      "claimVersion": 2,
+      "firstCanonical": "bd580056d00a1d1f0d71c4d14002d3767e28ff23"
     }
   ],
   "mikaParentsAwaitingCanonical": [],

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:31:08 UTC / CONTEXTI正式df29接收；VISUAL与D08已审待集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:43:01 UTC / VISUAL正式4391接收并释放；D08仍待main/部署 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,14 +17,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 六项成熟聊天目标已登记；知识App已main；轻质视觉与两层看板关联已审等待集成，补充指令App与活动自然状态小片并行实施 |
-| 下一可用交付 | Lead接收已审VISUAL/D08并部署；推进补充指令App实际接线 |
+| 当前产出 | 六项成熟聊天目标已登记；知识App已main；轻质视觉已main并释放，两层看板关联已审待集成，补充指令App与活动自然状态小片并行实施 |
+| 下一可用交付 | Lead接收D08并部署关联；SVC04受控发布视觉片；推进补充指令App实际接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 最新正式接收df29含CONTEXTI与STEER；后继STEIRI独立实施。已审管理发布a5/33bd按当时快照同步，后续事实不继承旧审批；历史逐项见status-history.md |
+| 已集成main状态 / HEAD | 最新正式接收4391含VISUAL（a8）及先前df29的CONTEXTI与STEER；后继STEIRI独立实施。已审管理发布a5/33bd按当时快照同步，后续事实不继承旧审批；历史逐项见status-history.md |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -33,7 +33,7 @@
 | WPF-001-02 | completed | d01_owner | 七子计划三件套齐；六准备目录已转独立canonical stub；新增实现各自独立平级source |
 | WPF-001-03 | completed | d01_owner | W01 cb4通过；SSE由M02 d47修复/复验，实证main已含 |
 | WPF-001-04 | completed | d01_owner | 管理源和后继来源已实际聚合；05:31:45.221Z65源核QUEUE01新卡与D06唯一迁移/claim匹配 |
-| WPF-001-05 | in-progress | d01_owner | P01/I01可信host与X02 registry已审集成；X03I01消费只读管理模块，完整npm生命周期/第三方隔离仍开放 |
+| WPF-001-05 | in-progress | d01_owner | P01/I01可信host与X02 registry已审集成；X03I01消费只读管理模块，完整npm生命周期/第三方隔离及实际conversation/pane插件入口仍开放，关联MATURE05-02/03 |
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
 | WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv5→QUEUE01v1与旧D06v2释放→新e5b2v1均有原始receipt |
@@ -62,19 +62,19 @@
 | WPF-001-31 | completed | workspace_panels_owner | STEER01 b2模块已main77c，01842收口后2bae v2释放；App与跨reload恢复属MATURE06后继。 |
 | WPF-001-32 | completed | w01_owner | CONTEXTI 已正式main df29；fe2b收口/55fe v2释放，唯一source见当前表。 |
 | WPF-001-33 | pending | d01_owner | DPERF02方案已批准；成熟度P1优先，未take/建树，仍候选队列。 |
-| WPF-001-34 | in-progress | d01_owner | 六计划已登记111源（Lead09:09:25观察）；D08父关联实现已固定待独审/部署，整体可见性验收未完成。 |
+| WPF-001-34 | in-progress | d01_owner | 六计划已登记111源（Lead09:09:25观察）；D08父关联实现已独审通过待main/部署，整体可见性验收未完成。 |
 
 ## 当前唯一来源、写权与下一步
 
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
-| VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，d01_owner，35e5 v2九scope | a8b/f708已审push；390两pane边界/实际下方composer焦点闭环，待main受控接收 |
+| VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [新App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，w01_owner，bc0ded75 v1十三scope | df29独立树正式实施，首82d2与登记输入已交集中队列 |
-| ACTIVITYREAD01 → MATURE06 | panels / web-activity-readability，6f427ac5 v1五scope；[原始take](../../docs/evidence/web-platform/activityread01-take-receipt.json) | 3418独立树已授权，首canonical待落盘；不写STEIRI/原projection |
+| ACTIVITYREAD01 → MATURE06 | panels / web-activity-readability，6f427ac5 v2六scope；[原始take](../../docs/evidence/web-platform/activityread01-take-receipt.json) | 3418独立树已授权，首bd580/parser0已落盘，等待正常登记；不写STEIRI/原projection |
 | D08 → D01 | [关联source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，panels，49510580 v1九scope | eca59/ce038已审push；待main/4320部署，不称关联UI已可见 |
-| STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线13scope只proposal，等CONTEXTI交权 |
+| STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
 | DPERF02 | [有界提案](../../docs/evidence/web-platform/dperf02-proposal.json) | 未建树/未take，排队，不算active writer |
 

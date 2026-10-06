@@ -82,7 +82,7 @@ MATURE01主题扩展后继（root固定be50只读）：descendant!important的th
 
 | Task / action | 固定实现 / 最终正常push、clean | 唯一canonical / 边界 |
 | --- | --- | --- |
-| WPF-VISUAL01 → MATURE01，受控main接收 | a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231 / f708de549685099b370f4436fda2486e1e5671f2；root APPROVED，35e5 v2保留 | web-visual-shell / plans/wpf-visual01-shell / docs/evidence/wpf-visual01；九scope、七源码，实际App四builtin材质与390split；readonly source-binding/checks已对齐；无个人产物发布或整体MATURE01完成声明 |
+| WPF-VISUAL01 → MATURE01，主线收口完成 | a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231 / main4391bbf9f1785212d098ef6aa1c01a0320a003d3；owner final558895d7a64e1502ac4b397e24daf7946296e0ca 已push/clean，35e5 v3 released | web-visual-shell / plans/wpf-visual01-shell / docs/evidence/wpf-visual01；七source/祖先已只读核，九scope停写；SVC04另受控发布个人产物，非整个MATURE01完成 |
 | D08 → D01，受控main接收及4320新UI部署 | eca59a5edab0820f724a9bd5bc854e22f48d9ea9 /ce038f0b064d1348d4aa77f1e91f223d7bc5ea31；root APPROVED，49510580 v1保留 | dashboard-task-links / plans/d08-task-links / docs/evidence/d08；九scope、七执行文件，registry仍Lead单写；45direct/5browser按作者/root归因，不重测 |
 | WPF-STEIRI01 → MATURE06，登记新source | 首82d2c98e407684b945467e1ce6b992dba6b4603c，base df29fb511df029a0922ace0f4973f3fe3736e502；bc0ded75 v1 /13scope | web-steering-integration / plans/wpf-steer-i01-integration / docs/evidence/wpf-steer-i01；w01唯一owner已正式实施，父字段明确，不等登记 |
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
@@ -93,3 +93,15 @@ MATURE01主题扩展后继（root固定be50只读）：descendant!important的th
 2026-10-06 09:32:24 UTC D01仅父身份metadata完成，正常push2f3f33b/clean、原产品零改；全部窄scope停写后[5fa8 v2 release](d01-parent-release-receipt.json)09:31:36.475Z，旧D01不继续修改。D08管理核七hash/范围正确，interface语法例子断链已owner仅metadata ce038修正push；[最终范围/链接/hash审计](visual-d08-delivery-audit.json)通过，不改变root产品批准。
 
 2026-10-06 09:33:54 UTC 新并行P1子片WPF-ACTIVITYREAD01由root批准，独立web-activity-readability/codex/web-activity-readability，固定3418fe682944145494463dca9e09f89c8b9c2295；fresh[6f427ac5 v1 take](activityread01-take-receipt.json)五literal无冲突COMMITTED09:33:19.306Z，panels唯一owner，直接归MATURE06。只改native活动两显示组件+原browser脚本的本片输出/断言、自己的plan/evidence，不碰STEIRI的App/Thread/host、shared或projection。首canonical待owner落盘再登记，不把take当进度卡。
+
+## 2026-10-06 09:37:01 UTC 有界需求与依赖安全点
+
+MATURE01原01/02 TODO已绑定[主题研究](mature-theme-presentation-research.md)：color-only whitelist、descendant硬值、plugin initialTheme覆盖风险、官方三链接及未browser复现边界；VISUAL已审产品不变。MATURE06原03 TODO已扩明确自然状态/Details四旅程，ACTIVITYREAD仅展开活动区域、queue/stream/react后继仍开放，不新增大task或用片段关闭全验收。
+
+MATURE03唯一附件资源后端owner尚无本次可读范围内的实质回执，[有界观察](mature03-owner-observation.json)明确限制；建议Lead统一共享资源模块owner，02adapter消费、04复用metadata。需要owner/canonical/scope与ready/固定版本/retention/清理合同；不私自领后端、不复制上传协议、不经GO普通转发、不重复催促。
+
+ACTIVITYREAD01首canonical bd580056d00a1d1f0d71c4d14002d3767e28ff23已owner建立、parser0/human完整；唯一web-activity-readability/plans/wpf-activity-readability、evidence docs/evidence/wpf-activity-readability，父06/co-lead正确。请Lead正常source批接，不把claim当已注册卡。D08/VISUAL仍等正式main/部署receipt；只读main80ba移动不当接收批准，收到后原owner仅metadata/停止写再release，4320部署后由root一次真实六大task关联核对。DPERF02仍等D08 aggregate写权释放后择优，当前未take。
+
+2026-10-06 09:40:30 UTC 补同一安全点：REQ22–23/WPF-001-05与MATURE05-02/03已绑定[实际conversation/pane插件入口覆盖](conversation-plugin-coverage-research.md)，root固定80ba静态核查，非新browser finding，App/types仍待STEIRI释放。ACTIVITYREAD原15pass/1skip诊断暴露旧footer总数断言未计已有stream贡献；root批准只按ACTIVITY_OWNER过滤后保精确三项与原lazy/lifecycle断言。fresh09:39:33无重叠后[6f427 v2原子amend](activityread01-amend-receipt.json)09:39:42.651Z添加唯一direct test，六scope、无释放窗口，owner已收到正式receipt。
+
+2026-10-06 09:43:01 UTC VISUAL正式main receipt为4391bbf9f1785212d098ef6aa1c01a0320a003d3；owner现场已推进的main/origin253035e11ab18ba33095c018949f856442021d49 clean，accepted为其祖先且七source均与a8/manifest/current相同。owner仅metadata558895d正常push/clean、全部九scope停写，再fresh[35e5 v3 released](visual01-main-release-receipt.json)09:42:31.202Z。0产品复测/API/服务操作；SVC04唯一owner负责Web产物发布与回滚/旧lazyassets有界保留，不由本组重复实施；D08仍待正式main/4320部署。
