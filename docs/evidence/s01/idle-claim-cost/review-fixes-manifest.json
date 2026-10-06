@@ -1,0 +1,91 @@
+{
+  "sourceCommit": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+  "basePacket": "38066603c6b9058fb9d7ef51c3a57956d80c8310",
+  "review": "P2 fix candidate; all three findings pending independent closure",
+  "bindings": [
+    {
+      "path": "experiments/runner-capacity/mixed/execute-idle.mjs",
+      "git": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+      "bytes": 14811,
+      "sha256": "746057b484f5712799f6fa77cfcee29d4430c37cc8c76a177b0385b988d618b3"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.ts",
+      "git": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+      "bytes": 4338,
+      "sha256": "3191803229539e221a3510e7818405825b3af8b552e0eb95f8c41f377d8382e6"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.test.ts",
+      "git": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+      "bytes": 1268,
+      "sha256": "52818a1e4534facdef00a6b465b50a9a2675c27387a75d1b9fa0d57dad34365a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim.test.ts",
+      "git": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+      "bytes": 12249,
+      "sha256": "26d53b2c1bd839f487db3fd047920bd4696e51a5fa775667bb1d88c1a0821b60"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/fixed-input-v2.json",
+      "git": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+      "bytes": 17630,
+      "sha256": "9123a741cb27c999c28d55211a89cc98510c2553ed3f4be96b6e37b9a8b699bc"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/archive-ledger.json",
+      "git": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+      "bytes": 2308,
+      "sha256": "8e6882032cc01bdf221e357d84a347f18aa7a74298378918d34df9af0398ef62"
+    },
+    {
+      "path": "tsconfig.json",
+      "git": "a41e5126a6e5df12b140afe2db7a274fac6ced43",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "oldPacketUnchanged": [
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/fixed-input.json",
+      "git": "38066603c6b9058fb9d7ef51c3a57956d80c8310",
+      "bytes": 16618,
+      "sha256": "5c168044131d5e2fc12988bfe5717f35b70a2469e4a44c6916bd4f56971af0cb"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/preparation-manifest.json",
+      "git": "38066603c6b9058fb9d7ef51c3a57956d80c8310",
+      "bytes": 1654,
+      "sha256": "3d1a5409cbc89cf4b33f2f7206e9bc6c0d68a7a43956a3621a936dbf8abab2c4"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/preparation-ready.md",
+      "git": "38066603c6b9058fb9d7ef51c3a57956d80c8310",
+      "bytes": 2161,
+      "sha256": "178e619dab03641899ea163676aef185018d7cd94e55fee5d9f84c42fc4520bb"
+    }
+  ],
+  "inputRows": 79,
+  "inputFileBytes": 388750,
+  "inputManifestBytes": 17630,
+  "inputSha256": "9123a741cb27c999c28d55211a89cc98510c2553ed3f4be96b6e37b9a8b699bc",
+  "bindingsErrors": [],
+  "budget": {
+    "total": 2097152,
+    "reserve": 262144,
+    "automaticRaw": 131072,
+    "manualArchive": 131072,
+    "manualExistingBeforeThisManifest": 89990,
+    "lightResourceFloor": 1107296256
+  },
+  "checks": {
+    "fake": "NOT_RUN (same9 groups; one expected reservation value updated)",
+    "types": "NOT_RUN",
+    "nodeSyntax": "NOT_RUN",
+    "actual": "NOT_OPEN / NOT_RUN",
+    "pg": 0,
+    "provider": 0
+  },
+  "quality": "2026-10-06 18:56:32 UTC local clean-code/codebase-design static review: known final sample gates all reads/deletion, fresh original deadline gates spawn, observed tail is charged, unknown is not withinTotal; no generic supervisor or product change."
+}
