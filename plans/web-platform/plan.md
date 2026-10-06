@@ -117,10 +117,10 @@ type WorkspacePanelsProps = {
 
 | 队列 | 计划/交付 | 状态与开工条件 |
 | --- | --- | --- |
-| 当前并行 | W01 Thread/shell/splitmerge；workspace panels | 两owner已在独立树实施；先组件提交再W01集成复验 |
+| 当前验收 | W01 Thread/shell/splitmerge及已审panels | 稳定候选cb4a392整体review；panels组件target46a1dbd通过，metadata已接齐 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
-| 下一ready实现 | [WPF-M02统一工作总览](unified-workspace/plan.md) | 当前W01可审稳定SHA后新worktree；完整M02 e888862输入，拟复用panels owner，后端由Lead维护 |
+| 下一ready实现 | [WPF-M02统一工作总览](unified-workspace/plan.md) | 已正式派发原panels owner；新树web-unified-workspace，从W01 cb4a392与完整M02 e888862输入准备，后端由Lead维护 |
 | 随后工程轮 | WPF-P01插件host | W01布局稳定+空出owner后派发；原Lead X01/M02能力对齐；不动共享契约 |
 | 性能轮 | WPF-PERF01 | 当前W01 owner先记录新build基线；测量/优化owner空出后排队，每次一个有证据瓶颈 |
 
@@ -149,3 +149,5 @@ type WorkspacePanelsProps = {
 - 2026-10-06后续：root文档review绑定c075bb5 APPROVED；按主线请求细化WPF-REQ-32为BR-01定位/只读文件/日志/交互shell四项，交Lead接收，不改变当前W01冻结契约。
 
 - 2026-10-06主线接口交接：M02完整e888862可消费，新增WPF-M02作为当前W01稳定后的下一ready功能；插件/性能保持队列，rootUI提案明确非用户原话。
+
+- 2026-10-06 02:24 UTC：W01稳定可审cb4a392到位；panels完成复审后复用其owner正式派发WPF-M02独立新树，优先主线受控main，备用完整e888862合入已获主线授权。
