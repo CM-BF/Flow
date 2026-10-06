@@ -14,6 +14,6 @@ export const packageArtifactSchema = packageArtifactRequestSchema.extend({
   bytes: z.number().int().positive().max(8 * 1024 * 1024),
   sha256: z.string().regex(/^[a-f0-9]{64}$/),
   verifiedAt: z.iso.datetime(),
-  source: z.object({ registry: z.url(), tarball: z.url() }).strict(),
+  source: z.object({ registry: z.url().max(1024), tarball: z.url().max(1024) }).strict(),
 }).strict();
 export type PackageArtifact = z.infer<typeof packageArtifactSchema>;
