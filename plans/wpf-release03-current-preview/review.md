@@ -1,18 +1,18 @@
 # WPF-RELEASE03 独立审查
 
-**状态：UNKNOWN — ef458源码双独审通过，实际A/B证据已齐备，完整结果独审待完成。
+**状态：UNKNOWN — ef458源码双独审通过，实际A/B证据已齐备，完整结果独审待完成。**
 
 Review target commit：ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
-当前审查范围：after-headers真实ACK正文截断的fixture/browser两脚本窄delta；root与workspace_panels_owner均已APPROVED_SOURCE_SCOPED、0blocking。本target未运行，完整兼容未完成，不能将限定源码批准冒作整片APPROVED。原all两项A独立证据通过，后继9927 B已越过Files但unknownUI未出现，原失败和源码条件批准分开保留；完整兼容未通过。
+当前审查范围：固定ef458源码双独审已通过，B1750实际三Appchecks通过，A沿完整all12原证据复用；本轮完整结果供独立复核，作者不将限定源码批准自动提升为整片APPROVED。原9927失败与旧362负兼容记录保留；个人发布未操作。
 
 ## 后续只读任务
 
 核 actual factory/client/contracts 来源、正式 format2 全 descriptor、history attachment-only/mixed门槛、实际App原key/body与新稿保护、生命周期/累计预算/清理、SVC observation条件。绑定固定commit；问题交作者修，原始失败不覆盖。检查与未执行范围分别列明；个人发布不在此批准内。
 
-历史362两项业务失败保留；新af51两项A实际通过，B未完成；无完整兼容通过结论。原997d定向strict noEmit通过，未对432b重复。
+历史362两项业务失败保留；新af51两项A与后继B1750实际通过，完整独立结果审查待完成。原997d定向strict noEmit只沿原范围归因，没有借后继通过冒称重复检查。
 
 ## 原checkpoint限定审查
 
