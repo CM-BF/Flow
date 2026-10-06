@@ -1,6 +1,6 @@
 # WPF-X03I01 交付入口
 
-固定实现 `84acdcaaa9687a4ca75ebdb40a6efc7e5539029a` / base `4e0289f29ffa48c6c49003837d4520f57c22b6b0`。branch codex/web-plugin-management-integration。三生产接缝+两个专测，本批仅已审X03真实App入口；独立review入口见[review](../../../plans/wpf-x03-plugin-integration/review.md)，已于04:36:39 UTC获root独立APPROVED，尚未main集成。
+固定实现 `84acdcaaa9687a4ca75ebdb40a6efc7e5539029a` / base `4e0289f29ffa48c6c49003837d4520f57c22b6b0`。branch codex/web-plugin-management-integration。三生产接缝+两个专测，本批仅已审X03真实App入口；独立review入口见[review](../../../plans/wpf-x03-plugin-integration/review.md)，已于04:36:39 UTC获root独立APPROVED，04:47实采已集成main 80e3c50e7a368c562a7730567503d8c82772b77a，五实现/测试文件与84相同。
 
 在现有 **Extensions and appearance → Plugin management** 展开。Personal center registry只读显示版本/config/grants/audit；下方This browser connection独立显示本地trusted runtime，上方原本地controls继续启停，不把注册记录按名字匹配本地插件。关闭/折叠停止读取，换中心以session.id清除旧读取状态。模块加载失败可继续聊天，需先保留未发送文字再手动reload；不自动重载。
 
