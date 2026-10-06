@@ -26,7 +26,8 @@
     "docs/evidence/s01/idle-claim-cost/validation/syntax.stdout.txt",
     "docs/evidence/s01/idle-claim-cost/validation/syntax.stderr.txt",
     "docs/evidence/s01/idle-claim-cost/validation/syntax.receipt.json",
-    "docs/evidence/s01/idle-claim-cost/receipt-accounting-fix-manifest.json"
+    "docs/evidence/s01/idle-claim-cost/receipt-accounting-fix-manifest.json",
+    "docs/evidence/s01/idle-claim-cost/validation/runtime-types-retry.receipt.json"
   ],
   "semantics": "Listed manual files are counted whole, not just changed lines. Missing future files use the same reserved headroom. Any additional manual output needs this ledger and fixed input updated before execution, or an explicit failed/unknown final accounting result.",
   "automatic": "run reservation/root/case/console/outer files + up to 16KiB captured-copy bytes + up to8KiB CLI. Any observed bytes beyond capture cap are charged additionally, never hidden in reserve. Final shell receipt and raw/metadata reconciliation are required.",

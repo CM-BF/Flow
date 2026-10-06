@@ -106,7 +106,7 @@ test('one public idle runtime retains twelve definite empty claims through norma
     timer = setTimeout(() => fault('WORK_DEADLINE'), Math.max(0, started + IDLE_LIMITS.workMs - now()));
     runtime = runRunner({ baseUrl, token: 'synthetic-idle-token', workingDirectory: workDirectory, signal: stop.signal,
       maxConcurrentAttempts: 1, requestTimeoutMs: 1500,
-      adapters: [{ name: 'fixture', async run() { adapterStarts++; throw Error('NO_ASSIGNMENT_EXPECTED'); } }],
+      adapters: [{ name: 'fixture', version: '1', async run() { adapterStarts++; throw Error('NO_ASSIGNMENT_EXPECTED'); } }],
       onNotice(notice) { if (notices.length < 16) notices.push(notice.type); else fault('NOTICE_LIMIT'); },
     }).then(() => { runtimeClosed = true; runtimeClosedAtMs = sampleTime(); }, () => { runtimeClosed = true; runtimeClosedAtMs = sampleTime(); fault('RUNTIME_REJECTED'); });
     await settle(runtime, started + IDLE_LIMITS.workMs + 1750);

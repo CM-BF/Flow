@@ -1,7 +1,7 @@
 {
   "fixedRef": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
   "version": 3,
-  "state": "RECEIPT_ACCOUNTING_FIX_NOT_VALIDATED",
+  "state": "FIXTURE_VERSION_FIX_VALIDATION_PENDING",
   "supersedesFixedInputSha256": "9123a741cb27c999c28d55211a89cc98510c2553ed3f4be96b6e37b9a8b699bc",
   "files": [
     {
@@ -366,8 +366,8 @@
     },
     {
       "path": "experiments/runner-capacity/mixed/idle-claim.test.ts",
-      "bytes": 12249,
-      "sha256": "6ec8e5fc3bf28375731bcee499fa521a1e7dacde0d22a2efc4c0b34bd697aaa5"
+      "bytes": 12263,
+      "sha256": "a26af83464892a9da39f5a76478baab084e4519b263b7d1813a8e90464f6f006"
     },
     {
       "path": "experiments/runner-capacity/mixed/idle-claim.vitest.config.mjs",
@@ -406,8 +406,8 @@
     },
     {
       "path": "docs/evidence/s01/idle-claim-cost/archive-ledger-v3.json",
-      "bytes": 2510,
-      "sha256": "bccec912375d3442290a8ca57d895e4d74d7257bfab7d6498d409ed9f0da6373"
+      "bytes": 2595,
+      "sha256": "a11b3bc053663409939887837f866132fccac9dc4a555f47c08475077625af12"
     }
   ],
   "accounting": "Fixed file bytes plus this manifest are precharged; 256KiB reserve = 128KiB automatic raw/capture/CLI +128KiB manual plan/status/review/check/final archive per archive-ledger-v3. Total remains2MiB/15s. Capture beyond16KiB is added to charges or complete accounting remains unknown. Installed readonly toolchain is not copied or represented as measured OS I/O."
