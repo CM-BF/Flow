@@ -78,7 +78,9 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     await expect(page.getByTestId("catalog-state")).toContainText("current; 1");
     const standard = dialog.getByRole("radio", { name: new RegExp(`^${model}`) });
     await standard.focus(); await page.keyboard.press("Space"); await expect(standard).toBeChecked();
-    await expect(dialog.getByRole("group")).not.toContainText("Adapter");
+    const combinations = dialog.getByRole("group", { name: "完整消息设置组合", exact: true });
+    await expect(combinations).toHaveCount(1); await expect(combinations).toBeVisible();
+    await expect(combinations).not.toContainText("Adapter");
     await expect(dialog.getByText(`Runner ${id(101)}`, { exact: true }).first()).not.toBeVisible();
     await close(); await expect(left.getByRole("button", { name: /^消息设置：/ })).toBeFocused();
     await expect(left.getByRole("button", { name: /^消息设置：/ })).toContainText("力度高");
