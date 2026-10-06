@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:32:00 UTC；main最近核验为基线，未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:49:54 UTC；main最近核验为基线，未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
@@ -19,12 +19,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 最近固定3ccae21a clean/pushed；最新源码/封套checkpoint 3f432c31；本提交仅固定输入清单与状态。final focused types已实际exit0。 |
-| HEAD（最近观察） | 3f432c318c201034249d68f652639014e4173705 |
+| 工作树dirty状态 | 最近固定3ccae21a clean/pushed；最新源码/封套checkpoint e1e91177；本提交仅固定输入清单与状态。final focused types已实际exit0。 |
+| HEAD（最近观察） | e1e911777e346209ac2dca3dccd9712066e68102 |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v2 ACTIVE，21 literal，amend COMMITTED 2026-10-06T21:25:31.797Z |
 | 实现目标 | 413420a1c0abc76850ab61f8bf67c9d9ac81a494 |
 | 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/native-harness.ts, apps/server/src/execution-profiles/store.ts, apps/runner/src/native-harness/descriptor.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness/codex/wire.ts, apps/runner/src/native-harness/codex/index.ts, apps/runner/src/native-harness/codex/session-storage.ts |
-| Review | 413420a1 SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，mika + architecture_read 2026-10-06T21:26:29Z附近；0P1/P2，仅固定源码范围。3ccae21a test delta与3c33ca4a PG helper窄修已SOURCE_REVIEW_APPROVED/VALIDATION_PENDING；外部运行记录入口三P2已窄修，固定3f432c31待复审。 |
+| Review | 413420a1 SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，mika + architecture_read 2026-10-06T21:26:29Z附近；0P1/P2，仅固定源码范围。3ccae21a test delta与3c33ca4a PG helper窄修已SOURCE_REVIEW_APPROVED/VALIDATION_PENDING；外部运行记录入口原三P2已复审关闭；依赖kind修复e1e91177/输入解析4/4，等待最终包复审。 |
 | 检查 | 合同red 1/3；首5文件log 50/53，fixture时间戳修后定向7/7、exit0。直接consumer65/66、exit1；随后仅post-terminal真实交付与抽取影响8/8、43未选、exit0；类型1个fixture推断诊断已窄修，先resource NOT_RUN，恢复后唯一finalfocused types exit0/2.417s/raw0B（含PG源码静态、不执行）。0PG/Codex/provider/install。 |
 | main集成 | NOT_INTEGRATED；基线 eae85567ba5dfb650ba71b473917130f87b5945c |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |

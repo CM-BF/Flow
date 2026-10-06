@@ -1,11 +1,11 @@
 {
   "schema": "flow.c02.pg-source.v1",
-  "sourceTarget": "3f432c318c201034249d68f652639014e4173705",
+  "sourceTarget": "e1e911777e346209ac2dca3dccd9712066e68102",
   "status": "PREPARATION_ONLY_NOT_OPEN",
   "sqlCount": 30,
   "count": 302,
-  "bytes": 1626915,
-  "orderedSha256": "a432004257efe20ea42467c7c1495ae16eba15987b1d813d5ac3d3d472a09b9f",
+  "bytes": 1627664,
+  "orderedSha256": "8c7f16bd42aabe3298d6ba16f174ad7c8844f407b0eaa19d2a58834a76d16f8b",
   "serialization": "path-sorted UTF-8: path TAB decimal-bytes TAB sha256 LF",
   "external": [
     {
@@ -1074,8 +1074,8 @@
     },
     {
       "path": "docs/evidence/mature02c02/execute-pg-once.py",
-      "bytes": 17088,
-      "sha256": "80d4da3c27b885a93251b13ffb022f3c7a121ee0a3399a5e5c4c2ca9779ca48d"
+      "bytes": 17837,
+      "sha256": "df7494b720ddd23a89623eb34a893377c02e64c8c4bb88ac08e0f4d996ac7c06"
     },
     {
       "path": "docs/evidence/mature02c02/pg-fixture.ts",
@@ -1575,6 +1575,12 @@
       "bytes": 442,
       "sha256": "8c4683579ce0b08c591bce1154340cae9b83e86910125322fbdc493d05f4e2fb",
       "bindingTarget": "3f432c318c201034249d68f652639014e4173705"
+    },
+    {
+      "path": "docs/evidence/mature02c02/dependency-resolution-check.json",
+      "bytes": 731,
+      "sha256": "662e0fbcea6375d55f7ae327b307816d7497497e3383028ea57c74e08cd5c1ea",
+      "bindingTarget": "e1e911777e346209ac2dca3dccd9712066e68102"
     }
   ],
   "limits": {
