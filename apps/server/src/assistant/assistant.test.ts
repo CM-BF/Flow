@@ -5,13 +5,12 @@ import { mkdtemp, readFile, rm, access } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { runRunner } from '../../../runner/src/runtime.js';
+import { runRunner, type RunnerOptions } from '../../../runner/src/runtime.js';
 import { createClaudeAdapter, type ClaudeQuery } from '../../../runner/src/claude.js';
 type SDKMessage = ReturnType<ClaudeQuery> extends AsyncIterable<infer Message> ? Message : never;
 import { afterAll, beforeAll, expect, it, vi } from 'vitest';
 import { createServer } from '../index.js';
 import { sha256 } from '../database.js';
-import { migrateAssistantMessages, registerAssistantRoutes } from './index.js';
 
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
 const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_chat02';
@@ -19,17 +18,38 @@ let lock: PoolClient;
 let created = false;
 let app: Awaited<ReturnType<typeof createServer>>;
 let base = '';
-let pool: Pool;
-async function start(port = 0, leaseMs = 5000) { app = await createServer({ databaseUrl, ownerToken: 'chat02-owner', leaseMs }); pool = new Pool({ connectionString: databaseUrl });
-  if (!app.hasRoute({ method: 'GET', url: '/api/assistant-messages/:id' })) { await migrateAssistantMessages(pool); registerAssistantRoutes(app, pool); }
-  base = await app.listen({ host: '127.0.0.1', port }); }
+const activeRunners = new Set<Promise<void>>();
+let activeSdkQueries = 0;
+function startRunner(options: RunnerOptions) {
+  const running = runRunner(options);
+  activeRunners.add(running);
+  void running.finally(() => activeRunners.delete(running)).catch(() => undefined);
+  return running;
+}
+async function start(port = 0, leaseMs = 5000) {
+  app = await createServer({ databaseUrl, ownerToken: 'chat02-owner', leaseMs });
+  expect(app.hasRoute({ method: 'GET', url: '/api/assistant-messages/:id' })).toBe(true);
+  expect(app.hasRoute({ method: 'GET', url: '/api/tasks/:id/assistant-messages' })).toBe(true);
+  base = await app.listen({ host: '127.0.0.1', port });
+}
+async function stopServer() {
+  expect(activeRunners.size).toBe(0);
+  expect(activeSdkQueries).toBe(0);
+  // Tests own these connections; aborted claim requests must not delay fixture teardown.
+  // This does not change or prove the production server's graceful-shutdown behavior.
+  app?.server.closeAllConnections();
+  await app?.close();
+}
 beforeAll(async () => {
   lock = await admin.connect();
   expect((await lock.query("SELECT pg_try_advisory_lock(hashtextextended('flow_chat02_exclusive',0)) AS locked")).rows[0].locked).toBe(true);
   if ((await lock.query("SELECT 1 FROM pg_database WHERE datname='flow_chat02'")).rowCount) throw Error('Existing flow_chat02 must be preserved.');
   await lock.query('CREATE DATABASE flow_chat02'); created = true; await start();
 });
-afterAll(async () => { try { await app?.close(); await pool?.end(); } finally { try { if (created) await lock.query('DROP DATABASE flow_chat02'); } finally { lock?.release(); await admin.end(); } } });
+afterAll(async () => {
+  try { await stopServer(); }
+  finally { try { if (created) await lock.query('DROP DATABASE flow_chat02'); } finally { lock?.release(); await admin.end(); } }
+});
 async function request(path: string, body?: unknown, token = 'chat02-owner', expected = 200) {
   const response = await fetch(`${base}${path}`, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': randomUUID() }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(5000) });
   const json = await response.json(); expect(response.status, JSON.stringify(json)).toBe(expected); return json;
@@ -67,7 +87,7 @@ it('deduplicates an acknowledged final across center restart and terminal acknow
   const completed = { id: randomUUID(), sequence: 3, type: 'completed', outcome: 'succeeded' };
   const batch = { ...a.ownership, events: [a.session, event, completed] };
   expect(await request('/api/runner/events', batch, a.token)).toEqual({ accepted: 3, lastSequence: 3 });
-  const port = Number(new URL(base).port); await app.close(); await pool.end(); await start(port);
+  const port = Number(new URL(base).port); await stopServer(); await start(port);
   expect(await request('/api/runner/events', batch, a.token)).toEqual({ accepted: 0, lastSequence: 3 });
   expect((await request(`/api/tasks/${a.taskId}/assistant-messages`)).messages).toHaveLength(1);
   expect(await request(`/api/assistant-messages/${event.messageId}`)).toMatchObject({ content: event.content });
@@ -127,9 +147,9 @@ it.each(['before-save', 'after-save'] as const)('recovers a durable final after 
   const runner = await request('/api/runners', { name: 'Durable synthetic SDK', harnesses: ['claude'], capacity: 1 });
   const accepted = await request('/api/tasks', { title: 'Actual adapter final', prompt: 'No model call', harness: 'claude' }, undefined, 202);
   const session = randomUUID(); const source = randomUUID();
-  const query: ClaudeQuery = () => { calls++; return Object.assign((async function* () {
+  const query: ClaudeQuery = () => { calls++; activeSdkQueries++; return Object.assign((async function* () {
     yield { type: 'result', subtype: 'success', is_error: false, uuid: source, session_id: session, result: '持久回复 🌱', modelUsage: {}, permission_denials: [] } as unknown as SDKMessage;
-  })(), { close() {} }); };
+  })(), { close() { activeSdkQueries--; } }); };
   const adapter = createClaudeAdapter({ materialFiles: [], query });
   const transport = vi.spyOn(globalThis, 'fetch').mockImplementation(async (url, init) => {
     if (!intercepted && String(url).endsWith('/api/runner/events') && typeof init?.body === 'string') {
@@ -143,7 +163,7 @@ it.each(['before-save', 'after-save'] as const)('recovers a durable final after 
     return nativeFetch(url, init);
   });
   try {
-    firstRun = runRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: firstStop.signal, adapters: [adapter], pollIntervalMs: 10,
+    firstRun = startRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: firstStop.signal, adapters: [adapter], pollIntervalMs: 10,
       onNotice(notice) { if (notice.type === 'ownership-lost') firstStop.abort(); },
     });
     await expect.poll(() => intercepted, { timeout: 3000, interval: 20 }).toBe(true); await firstRun;
@@ -152,8 +172,8 @@ it.each(['before-save', 'after-save'] as const)('recovers a durable final after 
     expect(JSON.parse(await readFile(pending, 'utf8'))).toEqual(savedBatch);
     const before = await request(`/api/tasks/${accepted.task.id}/assistant-messages`);
     expect(before.messages).toHaveLength(window === 'after-save' ? 1 : 0);
-    const port = Number(new URL(base).port); await app.close(); await pool.end(); await start(port);
-    secondRun = runRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: secondStop.signal, adapters: [adapter], pollIntervalMs: 10 });
+    const port = Number(new URL(base).port); await stopServer(); await start(port);
+    secondRun = startRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: secondStop.signal, adapters: [adapter], pollIntervalMs: 10 });
     await expect.poll(async () => { try { await access(pending); return false; } catch { return true; } }, { timeout: 2000, interval: 20 }).toBe(true);
     secondStop.abort(); await secondRun;
     const page = await request(`/api/tasks/${accepted.task.id}/assistant-messages`);
@@ -167,23 +187,23 @@ it.each(['before-save', 'after-save'] as const)('recovers a durable final after 
   }
 });
 it('refuses a new final after lease expiry even when its native session remains recorded', async () => {
-  const port = Number(new URL(base).port); await app.close(); await pool.end(); await start(port, 100);
+  const port = Number(new URL(base).port); await stopServer(); await start(port, 100);
   const a = await attempt(); await request('/api/runner/events', { ...a.ownership, events: [a.session] }, a.token);
   await sleep(160);
   await request('/api/runner/events', { ...a.ownership, events: [final(a.sessionId)] }, a.token, 409);
   expect((await request(`/api/tasks/${a.taskId}/assistant-messages`)).messages).toEqual([]);
   await expect.poll(async () => (await request(`/api/tasks/${a.taskId}`)).status, { timeout: 1500, interval: 20 }).toBe('uncertain');
-  await app.close(); await pool.end(); await start(port);
+  await stopServer(); await start(port);
 });
 
 it('records a failed synthetic SDK run without persisting error text as an assistant reply', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'flow-chat02-error-')); const stop = new AbortController();
   const runner = await request('/api/runners', { name: 'SDK error', harnesses: ['claude'], capacity: 1 });
   const accepted = await request('/api/tasks', { title: 'Failed reply', prompt: 'Synthetic error only', harness: 'claude' }, undefined, 202);
-  const query: ClaudeQuery = () => Object.assign((async function* () {
+  const query: ClaudeQuery = () => { activeSdkQueries++; return Object.assign((async function* () {
     yield { type: 'result', subtype: 'success', is_error: true, uuid: randomUUID(), session_id: randomUUID(), result: 'API error must not become assistant text', modelUsage: {}, permission_denials: [] } as unknown as SDKMessage;
-  })(), { close() {} });
-  const running = runRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: stop.signal, adapters: [createClaudeAdapter({ materialFiles: [], query })], pollIntervalMs: 10 });
+  })(), { close() { activeSdkQueries--; } }); };
+  const running = startRunner({ baseUrl: base, token: runner.token, workingDirectory: directory, signal: stop.signal, adapters: [createClaudeAdapter({ materialFiles: [], query })], pollIntervalMs: 10 });
   try {
     await expect.poll(async () => (await request(`/api/tasks/${accepted.task.id}`)).status, { timeout: 3000, interval: 20 }).toBe('failed');
     expect((await request(`/api/tasks/${accepted.task.id}/assistant-messages`)).messages).toEqual([]);
