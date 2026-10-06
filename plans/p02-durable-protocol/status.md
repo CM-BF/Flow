@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:35 UTC / 未重新核验 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:42 UTC / 未重新核验 |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch |
 | Branch | codex/protocol-dispatch |
 | 工作基线 / HEAD | 72278b22ae81f551dc13d68da2fb45f2ef182038 |
-| 工作树dirty状态 | 开工核验clean；当前仅P02合同与计划未提交 |
+| 工作树dirty状态 | 开工核验clean；当前P02中心/runtime源码及检查记录未提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN |
+| 检查状态 | PASSED：P02中心公开HTTP/PG 3/3、typecheck；仅首切片，独立runner旅程未跑，提交后绑定target |
 | Review | [review](review.md)，NOT_STARTED |
 | 已集成main状态 / HEAD | P02未集成；基线为Lead集成树，不冒充main |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已固定外部任务持久状态和独立runner方案，正在实现公开接口 |
+| 当前产出 | 中心持久许可与恢复3项通过，独立runner已写、正在接实际对端验证 |
 | 下一可用交付 | 外部任务重启恢复与不确定发送窗口的可核对闭环 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -23,9 +23,9 @@
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| P02-01 | in-progress | assignment_review | domain草案已写，Lead集中共享入口 |
-| P02-02 | pending | assignment_review | 未实现 |
-| P02-03 | pending | assignment_review | 未实现 |
+| P02-01 | completed | assignment_review | domain/schema与b8155共享client/harness/outbox/lease已接入；endpointDigest固定远端URL身份 |
+| P02-02 | in-progress | assignment_review | 首3项HTTP/PG通过：一次许可、绑定重启、sending未知、过期不复活、取消pending |
+| P02-03 | in-progress | assignment_review | 独立runtime/租约/产物代码已写，待真实进程验证 |
 | P02-04 | pending | assignment_review | 未测试，0模型0云 |
 | P02-05 | pending | assignment_review | 未交付 |
 
