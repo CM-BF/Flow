@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-06T01:43:15.313Z",
+  "sourceHead": "da7ce435e03e7abad1227353e473a35a6e9b1349",
+  "taskId": "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+  "errors": [],
+  "screenshots": [
+    "light-artifact-scrolled.png",
+    "light-verification-scrolled.png"
+  ],
+  "requests": [
+    "http://127.0.0.1:56289/api/details/931fb23b-eb1b-4072-8c34-650001dfe58e",
+    "http://127.0.0.1:56289/api/details/7fca3781-61b8-4555-be28-9cef2a58b529"
+  ],
+  "checks": [
+    "0 detail requests from before navigation through connected task",
+    "artifact visible in viewport after scroll, light theme",
+    "verification visible in viewport after scroll, light theme"
+  ],
+  "status": "passed",
+  "cleanupErrors": []
+}

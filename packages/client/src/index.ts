@@ -1,4 +1,6 @@
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
+import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
+import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
 export class FlowApiError extends Error {
   constructor(public readonly status: number, public readonly code: string, message: string) {
@@ -28,7 +30,20 @@ export class FlowClient {
     return this.request(`/api/tasks?${query}`);
   }
 
-  show(id: string): Promise<TaskSnapshot> { return this.request(`/api/tasks/${encodeURIComponent(id)}`); }
+  workspace(options: WorkspaceQuery = {}, signal?: AbortSignal): Promise<WorkspacePage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'before', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/workspace${query.size ? `?${query}` : ''}`, { signal });
+  }
+
+  queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {
+    const query = new URLSearchParams();
+    for (const name of ['limit', 'cursor', 'contextId', 'updatedAfter'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    if (options.statuses) query.set('statuses', options.statuses.join(','));
+    return this.request(`/api/task-index${query.size ? `?${query}` : ''}`, { signal });
+  }
+
+  show(id: string, signal?: AbortSignal): Promise<TaskSnapshot> { return this.request(`/api/tasks/${encodeURIComponent(id)}`, { signal }); }
   detail(id: string): Promise<Detail> { return this.request(`/api/details/${encodeURIComponent(id)}`); }
   events(id: string, after = 0): Promise<EventPage> { return this.request(`/api/tasks/${encodeURIComponent(id)}/events?after=${after}`); }
 
@@ -38,6 +53,22 @@ export class FlowClient {
 
   cancel(id: string, key: string): Promise<TaskSummary> {
     return this.request(`/api/tasks/${encodeURIComponent(id)}/cancel`, { method: 'POST', body: '{}', headers: { 'Idempotency-Key': key } });
+  }
+
+  reconciliation(id: string, after = 0): Promise<ReconciliationView> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation?after=${after}`);
+  }
+
+  recordReconciliation(id: string, input: ReconciliationObservation, key: string): Promise<ReconciliationResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation/observations`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key } });
+  }
+
+  resolveReconciliation(id: string, input: ReconciliationResolution, key: string): Promise<ReconciliationResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation/resolve`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key } });
+  }
+
+  retryReconciledTask(id: string, input: ReconciliationRetry, key: string): Promise<ReconciliationRetryResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/reconciliation/retry`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key } });
   }
 
   registerRunner(input: RegisterRunner): Promise<RunnerRegistration> {

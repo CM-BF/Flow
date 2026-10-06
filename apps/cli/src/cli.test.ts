@@ -1,0 +1,185 @@
+import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
+import { once } from 'node:events';
+import { spawn } from 'node:child_process';
+import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import type { AddressInfo } from 'node:net';
+import { expect, it } from 'vitest';
+import { runCli } from './index.js';
+
+async function withCenter(handler: (request: IncomingMessage, response: ServerResponse) => void, action: (env: NodeJS.ProcessEnv) => Promise<void>) {
+  const server = createServer(handler).listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  try { await action({ FLOW_URL: `http://127.0.0.1:${(server.address() as AddressInfo).port}`, FLOW_TOKEN: 'test-owner' }); }
+  finally { await new Promise<void>(resolve => server.close(() => resolve())); }
+}
+
+it('submits through the center with a caller-controlled idempotency key', async () => {
+  let received: unknown;
+  await withCenter(async (request, response) => {
+    expect(request.url).toBe('/api/tasks');
+    expect(request.headers['idempotency-key']).toBe('stable-request');
+    let body = '';
+    for await (const chunk of request) body += chunk;
+    received = JSON.parse(body);
+    response.writeHead(202, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ task: { id: 'task-1', status: 'queued' }, replayed: false }));
+  }, async env => {
+    const output: string[] = [];
+    const code = await runCli(['submit', 'Read notes', '--title', 'Notes', '--key', 'stable-request', '--json'], { out: text => output.push(text), err: text => output.push(text) }, env);
+    expect(code).toBe(0);
+    expect(JSON.parse(output[0]!).task.id).toBe('task-1');
+  });
+  expect(received).toEqual({ title: 'Notes', prompt: 'Read notes', harness: 'fixture' });
+});
+
+const queuedTask = { id: 'task-1', title: 'Background job', status: 'queued', verificationStatus: 'pending', harness: 'fixture', createdAt: '2026-10-05T00:00:00Z', updatedAt: '2026-10-05T00:00:00Z', entries: [], watermark: 0, hasMore: false, pendingDecision: null, attempt: null, usage: { inputTokens: null, outputTokens: null, costUsd: null, costKind: 'unknown', incomplete: true }, prompt: 'Continue in background' };
+
+it('stops watching at its timeout without sending a cancellation command', async () => {
+  const requests: string[] = [];
+  await withCenter((request, response) => {
+    requests.push(request.url!);
+    if (request.url!.includes('/stream')) {
+      response.writeHead(200, { 'content-type': 'text/event-stream' });
+      response.write(': connected\n\n');
+    } else {
+      response.writeHead(200, { 'content-type': 'application/json' });
+      response.end(JSON.stringify(queuedTask));
+    }
+  }, async env => {
+    const code = await runCli(['watch', 'task-1', '--timeout', '200', '--json'], { out() {}, err() {} }, env);
+    expect(code).toBe(124);
+  });
+  expect(requests.some(path => path.includes('/cancel'))).toBe(false);
+  expect(requests).toContain('/api/tasks/task-1/stream?after=0');
+});
+
+it('reports cancel requested without claiming the runner already stopped', async () => {
+  await withCenter((request, response) => {
+    expect(request.url).toBe('/api/tasks/task-1/cancel');
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ ...queuedTask, status: 'cancel_requested' }));
+  }, async env => {
+    const output: string[] = [];
+    expect(await runCli(['cancel', 'task-1'], { out: text => output.push(text), err() {} }, env)).toBe(0);
+    expect(output.join()).toContain('cancel_requested');
+    expect(output.join()).not.toContain('stopped');
+  });
+});
+
+
+it('sends the selected durable decision and preserves conflict errors', async () => {
+  let body = '';
+  await withCenter(async (request, response) => {
+    expect(request.url).toBe('/api/tasks/task-1/decision');
+    expect(request.headers['idempotency-key']).toBe('decision-key');
+    for await (const chunk of request) body += chunk;
+    response.writeHead(409, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ error: { code: 'decision_conflict', message: 'Decision already answered.' } }));
+  }, async env => {
+    const errors: string[] = [];
+    const code = await runCli(['decision', 'task-1', 'approve', '--decision', 'choice-1', '--key', 'decision-key'], { out() {}, err: text => errors.push(text) }, env);
+    expect(code).toBe(3);
+    expect(errors).toEqual(['Decision already answered.']);
+  });
+  expect(JSON.parse(body)).toEqual({ decisionId: 'choice-1', answer: 'approve' });
+});
+
+it.each([
+  ['succeeded', 'passed', 0], ['succeeded', 'failed', 12],
+  ['failed', 'pending', 10], ['cancelled', 'pending', 11], ['uncertain', 'pending', 13],
+])('watch exposes %s / %s as exit %s', async (status, verificationStatus, expected) => {
+  await withCenter((_request, response) => {
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ ...queuedTask, status, verificationStatus }));
+  }, async env => {
+    const output: string[] = [];
+    expect(await runCli(['watch', 'task-1', '--json'], { out: text => output.push(text), err() {} }, env)).toBe(expected);
+    expect(JSON.parse(output[0]!).status).toBe(status);
+  });
+});
+
+it('reconnects at delivered cursor and drains terminal pages before exiting', async () => {
+  const requests: string[] = [];
+  const output: string[] = [];
+  await withCenter((request, response) => {
+    requests.push(request.url!);
+    if (!request.url!.includes('/stream')) {
+      response.writeHead(200, { 'content-type': 'application/json' });
+      response.end(JSON.stringify(queuedTask));
+      return;
+    }
+    const first = request.url!.endsWith('after=0');
+    const task = { ...queuedTask, status: 'succeeded', verificationStatus: 'passed' };
+    const page = { entries: [{ id: first ? 'event-1' : 'event-2', cursor: first ? 1 : 2, createdAt: queuedTask.createdAt, kind: 'text', text: first ? 'first' : 'last' }], nextCursor: first ? 1 : 2, watermark: 2, task, usage: task.usage, pendingDecision: null, hasMore: first };
+    response.writeHead(200, { 'content-type': 'text/event-stream' });
+    response.end(`data: ${JSON.stringify(page)}\n\n`);
+  }, async env => {
+    expect(await runCli(['watch', 'task-1', '--json', '--timeout', '3000'], { out: text => output.push(text), err() {} }, env)).toBe(0);
+  });
+  expect(requests).toEqual(['/api/tasks/task-1', '/api/tasks/task-1/stream?after=0', '/api/tasks/task-1/stream?after=1']);
+  expect(output.map(text => JSON.parse(text)).at(-1).entries[0].text).toBe('last');
+});
+
+it('applies observation timeout to the initial snapshot request too', async () => {
+  await withCenter((_request, _response) => {}, async env => {
+    expect(await runCli(['watch', 'task-1', '--timeout', '100'], { out() {}, err() {} }, env)).toBe(124);
+  });
+});
+
+
+it('does not swallow SIGINT while an ordinary CLI command waits for HTTP', async () => {
+  let received!: () => void;
+  const pending = new Promise<void>(resolve => { received = resolve; });
+  await withCenter((_request, _response) => { received(); }, async env => {
+    const child = spawn(process.execPath, ['--import', 'tsx', 'apps/cli/src/main.ts', 'show', 'task-1'], { cwd: process.cwd(), env: { ...process.env, ...env }, stdio: 'ignore' });
+    const exited = once(child, 'exit');
+    try {
+      await pending;
+      child.kill('SIGINT');
+      expect(await exited).toEqual([null, 'SIGINT']);
+    } finally { child.kill('SIGKILL'); }
+  });
+});
+
+it('reads cross-task activity and decisions without fetching folded details', async () => {
+  const requests: string[] = [];
+  await withCenter((request, response) => {
+    requests.push(request.url!);
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ entries: [{ task: { id: 'task-2', title: 'Second task' }, entry: { kind: 'reference', reference: { id: 'artifact-2', title: 'Delivery' } } }], attention: [{ id: 'task-1', title: 'First task', pendingDecision: { id: 'decision-1', prompt: 'Approve release?' } }], tasksTruncated: false, attentionTruncated: false, projectionPending: false }));
+  }, async env => {
+    const output: string[] = [];
+    expect(await runCli(['workspace', '--after', '0', '--limit', '20'], { out: text => output.push(text), err() {} }, env)).toBe(0);
+    expect(output.join()).toContain('Second task: [Delivery] artifact-2');
+    expect(output.join()).toContain('Approve release? [decision decision-1]');
+  });
+  expect(requests).toEqual(['/api/workspace?after=0&limit=20']);
+});
+
+it('validates a recovery file and sends only an explicit safe retry using its stable key', async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'flow-cli-recovery-'));
+  const filename = path.join(directory, 'retry.json');
+  let received: unknown;
+  const input = { attemptId: 'old', ownerVersion: 3, resolutionId: 'audit-1', safety: { strategy: 'revised-work', prompt: 'Inspect existing delivery, do not repeat the external write.', evidence: { explanation: 'The write succeeded before its acknowledgement was lost.', references: [] } } };
+  try {
+    await writeFile(filename, JSON.stringify(input));
+    await withCenter(async (request, response) => {
+      expect(request.url).toBe('/api/tasks/task-1/reconciliation/retry');
+      expect(request.headers['idempotency-key']).toBe('safe-retry');
+      let body = '';
+      for await (const chunk of request) body += chunk;
+      received = JSON.parse(body);
+      response.writeHead(202, { 'content-type': 'application/json' });
+      response.end('{"task":{"id":"task-new"}}');
+    }, async env => {
+      const output: string[] = [];
+      expect(await runCli(['reconcile', 'retry', 'task-1', '--input', filename, '--key', 'safe-retry'], { out: text => output.push(text), err() {} }, env)).toBe(0);
+      expect(JSON.parse(output[0]!).task.id).toBe('task-new');
+      await writeFile(filename, JSON.stringify({ attemptId: 'old', ownerVersion: 3, resolutionId: 'audit-1' }));
+      expect(await runCli(['reconcile', 'retry', 'task-1', '--input', filename, '--key', 'unsafe'], { out() {}, err() {} }, env)).toBe(2);
+    });
+    expect(received).toEqual(input);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});

@@ -1,0 +1,113 @@
+{
+  "startedAt": "2026-10-06T01:26:05.138Z",
+  "status": "passed",
+  "nativeQuerySlotsReserved": 2,
+  "previousR02Queries": 3,
+  "limits": {
+    "maxTurns": 4,
+    "maxBudgetUsd": 1,
+    "timeoutMs": 90000
+  },
+  "scenarios": [
+    {
+      "action": "approve",
+      "durationMs": 10792.041709000001,
+      "taskId": "2e6787e0-792d-46c3-a83b-13eba782de83",
+      "attemptId": "6e7502f5-13f7-4708-a621-62cf81c73187",
+      "nativeSessionId": "65dab030-d530-40f8-b7ff-ea5a3af7b9b9",
+      "executionStatus": "succeeded",
+      "verificationStatus": "passed",
+      "durableDecisionId": "f8cc9d31636d64d8cd2752f8a8259fff5ee30a0cdb54a6410e0c55ef5e8e759f",
+      "usage": {
+        "costUsd": 0.0088802,
+        "costKind": "sdk_estimate",
+        "incomplete": false,
+        "inputTokens": 1062,
+        "outputTokens": 247
+      },
+      "artifactVersion": "6a91ec8c0e3d9feeb699c990a0d75908591d9c349f0e736cc18ea50984ab3394",
+      "expectedDigest": "6a91ec8c0e3d9feeb699c990a0d75908591d9c349f0e736cc18ea50984ab3394",
+      "expectedWasInModelPrompt": false,
+      "detailKinds": [
+        "session",
+        "usage",
+        "usage",
+        "artifact",
+        "verification"
+      ],
+      "sessionResources": [
+        [
+          "sdk:0.3.290",
+          "runtime:2.1.290",
+          "model:claude-sonnet-5-5",
+          "tool:Read",
+          "plugin:cc-plugin-agents-md",
+          "plugin:cc-plugin-telemetry",
+          "plugin:cc-plugin-plugin-authoring",
+          "skill:design",
+          "skill:doctor",
+          "skill:plugin-authoring"
+        ]
+      ],
+      "verification": [
+        {
+          "id": "6e3eeb30-313a-48a4-b8d5-88a69f802916",
+          "sequence": 6,
+          "type": "verification",
+          "artifactId": "2fe975ce-861d-4b85-bec8-d4d382b60dee",
+          "artifactVersion": "6a91ec8c0e3d9feeb699c990a0d75908591d9c349f0e736cc18ea50984ab3394",
+          "verifierId": "flow.text",
+          "verifierVersion": "1",
+          "inputDigest": "30d7f815a92cb542be00d7bf81c5455fc85433d2a7bf2090b00761e10a792e16",
+          "result": "passed",
+          "evidence": "Saved artifact contains the required text."
+        }
+      ]
+    },
+    {
+      "action": "cancel",
+      "durationMs": 6521.614041000001,
+      "taskId": "99909260-3aab-46ec-a72a-81dd81a14a27",
+      "attemptId": "d56b65aa-0252-46a0-9e47-579228b204f7",
+      "nativeSessionId": "b2d08530-983b-4787-b02b-3144f03ea393",
+      "executionStatus": "cancelled",
+      "verificationStatus": "pending",
+      "durableDecisionId": "da9cc305caea83f173fdffe69adb701a86d6897654fd99a502daa72027e7cd3e",
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      },
+      "artifactVersion": null,
+      "expectedDigest": "6a91ec8c0e3d9feeb699c990a0d75908591d9c349f0e736cc18ea50984ab3394",
+      "expectedWasInModelPrompt": false,
+      "detailKinds": [
+        "session"
+      ],
+      "sessionResources": [
+        [
+          "sdk:0.3.290",
+          "runtime:2.1.290",
+          "model:claude-sonnet-5-5",
+          "tool:Read",
+          "plugin:cc-plugin-agents-md",
+          "plugin:cc-plugin-telemetry",
+          "plugin:cc-plugin-plugin-authoring",
+          "skill:design",
+          "skill:doctor",
+          "skill:plugin-authoring"
+        ]
+      ],
+      "verification": []
+    }
+  ],
+  "finishedAt": "2026-10-06T01:26:22.919Z",
+  "limitsOfEvidence": [
+    "Two read-only native tasks on this host; no project writes",
+    "Cancellation stopped at human-gated read; no claim to undo in-flight external effects",
+    "SDK cost is an estimate; cancelled query usage may be unknown",
+    "No product Web, remote host, DB power loss or capacity validation"
+  ]
+}

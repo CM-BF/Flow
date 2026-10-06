@@ -1,0 +1,18 @@
+✔ reads only authoritative owners and reflects independent status changes over HTTP (305.107291ms)
+✔ empty review never means approval; historical checks remain unknown without explicit field (254.137792ms)
+✔ missing status uses frozen baseline and marks unknown without affecting another task (277.14275ms)
+✔ malformed, duplicate, stale and future status cannot silently become current (364.113292ms)
+✔ branch changes conflict and registry explicitly switches to a new owner worktree (291.440916ms)
+✔ main observations and commit-bound review stay separate from completed branch (409.25375ms)
+✔ documents reject traversal, encoded traversal, absolute paths and arbitrary task files (240.702459ms)
+✔ referenced symlinks cannot escape task scope inside or outside registered worktree (218.073458ms)
+✔ untrusted text stays text with read-only HTTP and restrictive browser headers (252.215166ms)
+✔ invalid registry, duplicate owners and oversized files are rejected (216.179958ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2894.474

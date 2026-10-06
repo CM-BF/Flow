@@ -1,0 +1,245 @@
+{
+  "startedAt": "2026-10-06T01:42:25.767Z",
+  "status": "passed",
+  "paidModelCalls": 0,
+  "database": "flow_web_i01",
+  "node": "v24.20.0",
+  "events": [
+    {
+      "name": "center ready",
+      "at": "2026-10-06T01:42:26.557Z",
+      "url": "http://127.0.0.1:56160",
+      "pid": 3100
+    },
+    {
+      "name": "whole browser opened",
+      "at": "2026-10-06T01:42:27.675Z",
+      "pid": 3137
+    },
+    {
+      "name": "Web durably accepted",
+      "at": "2026-10-06T01:42:27.829Z",
+      "taskId": "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+      "httpStatus": 202,
+      "harness": "fixture"
+    },
+    {
+      "name": "whole browser exited",
+      "at": "2026-10-06T01:42:28.015Z",
+      "pid": 3137,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "name": "center ready",
+      "at": "2026-10-06T01:42:28.574Z",
+      "url": "http://127.0.0.1:56160",
+      "pid": 3177
+    },
+    {
+      "name": "queued acceptance survived center restart with browser closed",
+      "at": "2026-10-06T01:42:28.587Z",
+      "taskId": "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+      "previousCenterPid": 3100,
+      "centerPid": 3177
+    },
+    {
+      "name": "independent runner started with browser closed",
+      "at": "2026-10-06T01:42:28.595Z",
+      "pid": 3178,
+      "runnerId": "bcb3428d-f9f0-46ed-b6ac-94cbe54b907e"
+    },
+    {
+      "name": "CLI observed decision with browser closed",
+      "at": "2026-10-06T01:42:30.641Z",
+      "taskId": "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+      "attemptId": "8490f05b-e7fe-4cbe-a2e4-cc534d00d072",
+      "decisionId": "721811be-c2b3-4c3c-bcfd-df2b900c0b6a"
+    },
+    {
+      "name": "whole browser opened",
+      "at": "2026-10-06T01:42:31.600Z",
+      "pid": 3182
+    },
+    {
+      "name": "fresh browser verified same task and versioned evidence",
+      "at": "2026-10-06T01:42:32.147Z",
+      "taskId": "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+      "attemptId": "8490f05b-e7fe-4cbe-a2e4-cc534d00d072",
+      "artifactVersion": "dd5df11a76d0f832d04e9307ef3aa1ac4e821d89da71becb52868bca6df3aeca"
+    },
+    {
+      "name": "Web durably accepted",
+      "at": "2026-10-06T01:42:32.271Z",
+      "taskId": "fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7",
+      "httpStatus": 202,
+      "harness": "fixture"
+    },
+    {
+      "name": "whole browser exited",
+      "at": "2026-10-06T01:42:33.239Z",
+      "pid": 3182,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "name": "whole browser opened",
+      "at": "2026-10-06T01:42:35.766Z",
+      "pid": 3196
+    },
+    {
+      "name": "whole browser exited",
+      "at": "2026-10-06T01:42:35.990Z",
+      "pid": 3196,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "cli": [
+    {
+      "args": [
+        "show",
+        "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+        "--json"
+      ],
+      "pid": 3179,
+      "code": 0,
+      "stdout": "{\"id\":\"5a3f2ff4-f5c8-4e1d-91fa-59f761279292\",\"title\":\"Review the launch checklist\",\"harness\":\"fixture\",\"status\":\"waiting\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-06T01:42:27.776Z\",\"updatedAt\":\"2026-10-06T01:42:29.479Z\",\"prompt\":\"Prepare the checklist, then ask me before publishing the artifact.\",\"entries\":[{\"id\":\"a17475ec-3e48-46e0-bf5a-4610a83d33ac\",\"kind\":\"reference\",\"cursor\":1,\"createdAt\":\"2026-10-06T01:42:28.833Z\",\"reference\":{\"id\":\"c32e15d3-334a-4ecb-a1ff-a3f85099000c\",\"title\":\"Native session\"}},{\"id\":\"c8039d11-a2bf-4cd6-9576-75e12f5d266e\",\"kind\":\"text\",\"text\":\"The deterministic test runner is preparing a verified artifact.\",\"cursor\":2,\"createdAt\":\"2026-10-06T01:42:28.843Z\"}],\"watermark\":2,\"hasMore\":false,\"pendingDecision\":{\"id\":\"721811be-c2b3-4c3c-bcfd-df2b900c0b6a\",\"prompt\":\"Publish the prepared test artifact?\"},\"attempt\":{\"id\":\"8490f05b-e7fe-4cbe-a2e4-cc534d00d072\",\"runnerId\":\"bcb3428d-f9f0-46ed-b6ac-94cbe54b907e\",\"ownerVersion\":1,\"leaseExpiresAt\":\"2026-10-06T01:42:38.853Z\",\"nativeSessionId\":\"fixture-4d68b0c1-a83d-46f1-95f6-208614fe0857\"},\"usage\":{\"costUsd\":null,\"costKind\":\"unknown\",\"incomplete\":true,\"inputTokens\":null,\"outputTokens\":null}}\n",
+      "stderr": "",
+      "at": "2026-10-06T01:42:30.641Z"
+    },
+    {
+      "args": [
+        "decision",
+        "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+        "approve",
+        "--decision",
+        "721811be-c2b3-4c3c-bcfd-df2b900c0b6a",
+        "--key",
+        "a8ee81f1-c1c0-43ac-bd7f-09f7da04a89b",
+        "--json"
+      ],
+      "pid": 3180,
+      "code": 0,
+      "stdout": "{\"id\":\"5a3f2ff4-f5c8-4e1d-91fa-59f761279292\",\"title\":\"Review the launch checklist\",\"harness\":\"fixture\",\"status\":\"running\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-06T01:42:27.776Z\",\"updatedAt\":\"2026-10-06T01:42:30.767Z\"}\n",
+      "stderr": "",
+      "at": "2026-10-06T01:42:30.786Z"
+    },
+    {
+      "args": [
+        "watch",
+        "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+        "--timeout",
+        "10000",
+        "--json"
+      ],
+      "pid": 3181,
+      "code": 0,
+      "stdout": "{\"id\":\"5a3f2ff4-f5c8-4e1d-91fa-59f761279292\",\"title\":\"Review the launch checklist\",\"harness\":\"fixture\",\"status\":\"succeeded\",\"verificationStatus\":\"passed\",\"createdAt\":\"2026-10-06T01:42:27.776Z\",\"updatedAt\":\"2026-10-06T01:42:30.878Z\",\"prompt\":\"Prepare the checklist, then ask me before publishing the artifact.\",\"entries\":[{\"id\":\"a17475ec-3e48-46e0-bf5a-4610a83d33ac\",\"kind\":\"reference\",\"cursor\":1,\"createdAt\":\"2026-10-06T01:42:28.833Z\",\"reference\":{\"id\":\"c32e15d3-334a-4ecb-a1ff-a3f85099000c\",\"title\":\"Native session\"}},{\"id\":\"c8039d11-a2bf-4cd6-9576-75e12f5d266e\",\"kind\":\"text\",\"text\":\"The deterministic test runner is preparing a verified artifact.\",\"cursor\":2,\"createdAt\":\"2026-10-06T01:42:28.843Z\"},{\"id\":\"45c9e2d2-5f77-484c-8c79-7d9244e34649\",\"kind\":\"reference\",\"cursor\":3,\"createdAt\":\"2026-10-06T01:42:30.844Z\",\"reference\":{\"id\":\"931fb23b-eb1b-4072-8c34-650001dfe58e\",\"title\":\"Fixture result\"}},{\"id\":\"2f475a0b-6265-4717-a652-5137b4fd7902\",\"kind\":\"reference\",\"cursor\":4,\"createdAt\":\"2026-10-06T01:42:30.854Z\",\"reference\":{\"id\":\"7fca3781-61b8-4555-be28-9cef2a58b529\",\"title\":\"Verification passed\"}},{\"id\":\"7d781a63-9795-48ad-bcf9-b6f1534852f4\",\"kind\":\"reference\",\"cursor\":5,\"createdAt\":\"2026-10-06T01:42:30.867Z\",\"reference\":{\"id\":\"175b9577-e137-47b0-bfdf-3419fb09f192\",\"title\":\"Usage: fixture\"}}],\"watermark\":5,\"hasMore\":false,\"pendingDecision\":null,\"attempt\":{\"id\":\"8490f05b-e7fe-4cbe-a2e4-cc534d00d072\",\"runnerId\":\"bcb3428d-f9f0-46ed-b6ac-94cbe54b907e\",\"ownerVersion\":1,\"leaseExpiresAt\":\"2026-10-06T01:42:40.832Z\",\"nativeSessionId\":\"fixture-4d68b0c1-a83d-46f1-95f6-208614fe0857\"},\"usage\":{\"costUsd\":null,\"costKind\":\"unknown\",\"incomplete\":true,\"inputTokens\":0,\"outputTokens\":0}}\n",
+      "stderr": "",
+      "at": "2026-10-06T01:42:30.917Z"
+    },
+    {
+      "args": [
+        "cancel",
+        "fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7",
+        "--key",
+        "b1b2d34a-70b8-4dd0-a55c-e716c4a3ae70",
+        "--json"
+      ],
+      "pid": 3194,
+      "code": 0,
+      "stdout": "{\"id\":\"fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7\",\"title\":\"Continue after the browser closes\",\"harness\":\"fixture\",\"status\":\"cancel_requested\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-06T01:42:32.223Z\",\"updatedAt\":\"2026-10-06T01:42:33.369Z\"}\n",
+      "stderr": "",
+      "at": "2026-10-06T01:42:33.385Z"
+    },
+    {
+      "args": [
+        "watch",
+        "fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7",
+        "--timeout",
+        "10000",
+        "--json"
+      ],
+      "pid": 3195,
+      "code": 11,
+      "stdout": "{\"id\":\"fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7\",\"title\":\"Continue after the browser closes\",\"harness\":\"fixture\",\"status\":\"cancel_requested\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-06T01:42:32.223Z\",\"updatedAt\":\"2026-10-06T01:42:33.369Z\",\"prompt\":\"Complete in the background.\",\"entries\":[{\"id\":\"a35fc006-c3ec-4fc0-b40b-d4bc19e7bf76\",\"kind\":\"reference\",\"cursor\":1,\"createdAt\":\"2026-10-06T01:42:32.973Z\",\"reference\":{\"id\":\"da01905b-f2a3-4db9-97c9-a5ac8d673cb6\",\"title\":\"Native session\"}},{\"id\":\"4a74ebc6-73b6-41e4-9a46-8b412f28ad2e\",\"kind\":\"text\",\"text\":\"The deterministic test runner is preparing a verified artifact.\",\"cursor\":2,\"createdAt\":\"2026-10-06T01:42:32.986Z\"},{\"id\":\"dfc467d6-cf9f-4fb5-9ad0-aa30b81258d2\",\"kind\":\"text\",\"text\":\"Cancellation requested.\",\"cursor\":3,\"createdAt\":\"2026-10-06T01:42:33.367Z\"}],\"watermark\":3,\"hasMore\":false,\"pendingDecision\":null,\"attempt\":{\"id\":\"a187a4f2-fae2-4b55-9746-8b87b4f2b9d5\",\"runnerId\":\"bcb3428d-f9f0-46ed-b6ac-94cbe54b907e\",\"ownerVersion\":1,\"leaseExpiresAt\":\"2026-10-06T01:42:42.997Z\",\"nativeSessionId\":\"fixture-79779bad-ae4f-41ab-9994-bea22ecbab4b\"},\"usage\":{\"costUsd\":null,\"costKind\":\"unknown\",\"incomplete\":true,\"inputTokens\":null,\"outputTokens\":null}}\n{\"entries\":[],\"nextCursor\":3,\"watermark\":3,\"hasMore\":false,\"task\":{\"id\":\"fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7\",\"title\":\"Continue after the browser closes\",\"harness\":\"fixture\",\"status\":\"cancel_requested\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-06T01:42:32.223Z\",\"updatedAt\":\"2026-10-06T01:42:33.369Z\"},\"pendingDecision\":null,\"usage\":{\"costUsd\":null,\"costKind\":\"unknown\",\"incomplete\":true,\"inputTokens\":null,\"outputTokens\":null}}\n{\"entries\":[],\"nextCursor\":3,\"watermark\":3,\"hasMore\":false,\"task\":{\"id\":\"fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7\",\"title\":\"Continue after the browser closes\",\"harness\":\"fixture\",\"status\":\"cancelled\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-06T01:42:32.223Z\",\"updatedAt\":\"2026-10-06T01:42:34.981Z\"},\"pendingDecision\":null,\"usage\":{\"costUsd\":null,\"costKind\":\"unknown\",\"incomplete\":true,\"inputTokens\":null,\"outputTokens\":null}}\n",
+      "stderr": "",
+      "at": "2026-10-06T01:42:35.059Z"
+    }
+  ],
+  "browsers": [
+    {
+      "pid": 3137,
+      "openedAt": "2026-10-06T01:42:27.675Z",
+      "closedAt": "2026-10-06T01:42:28.015Z",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 3182,
+      "openedAt": "2026-10-06T01:42:31.600Z",
+      "closedAt": "2026-10-06T01:42:33.239Z",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 3196,
+      "openedAt": "2026-10-06T01:42:35.766Z",
+      "closedAt": "2026-10-06T01:42:35.990Z",
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "pageErrors": [],
+  "webUrl": "http://127.0.0.1:56161/",
+  "centerUrl": "http://127.0.0.1:56160",
+  "probePid": 3099,
+  "delivery": {
+    "taskId": "5a3f2ff4-f5c8-4e1d-91fa-59f761279292",
+    "attemptId": "8490f05b-e7fe-4cbe-a2e4-cc534d00d072",
+    "runnerId": "bcb3428d-f9f0-46ed-b6ac-94cbe54b907e",
+    "runnerPid": 3178,
+    "centerPid": 3177,
+    "executionStatus": "succeeded",
+    "verificationStatus": "passed",
+    "artifactVersion": "dd5df11a76d0f832d04e9307ef3aa1ac4e821d89da71becb52868bca6df3aeca",
+    "verification": {
+      "id": "20e666fe-aec4-4fc5-9d8a-b337a62e7ace",
+      "sequence": 5,
+      "type": "verification",
+      "artifactId": "4218035f-4421-4ef3-a185-91561db26cae",
+      "artifactVersion": "dd5df11a76d0f832d04e9307ef3aa1ac4e821d89da71becb52868bca6df3aeca",
+      "verifierId": "flow.text",
+      "verifierVersion": "1",
+      "inputDigest": "9c0f67e45eaab614e2b1a0a5d38f16ec15af2755fde9e2a750336785c2bd692d",
+      "result": "passed",
+      "evidence": "Saved artifact is nonempty."
+    },
+    "artifactContent": "Flow fixture result\nPrepare the checklist, then ask me before publishing the artifact.\n"
+  },
+  "detailRequestsBeforeExpansion": 0,
+  "detailRequestsAfterArtifactExpansion": 1,
+  "detailRequestsAfterArtifactAndVerificationExpansion": 2,
+  "cancellation": {
+    "taskId": "fda3ed5f-5c57-4572-8e8b-b9aa92e5a6b7",
+    "attemptId": "a187a4f2-fae2-4b55-9746-8b87b4f2b9d5",
+    "status": "cancelled",
+    "artifacts": 0
+  },
+  "cleanupErrors": [],
+  "finishedAt": "2026-10-06T01:42:36.036Z",
+  "sourceHead": "da7ce435e03e7abad1227353e473a35a6e9b1349",
+  "sourceHashes": {
+    "scripts/web-system-probe.ts": "ef42d310a06620e48d7a9fb224ae578942ae2a0ca50551fe522686d6fdfc0a14",
+    "apps/web/src/App.tsx": "8bb07056cd462e3923fedb12915861d280104d9e129be1496adf752b5b9c9996",
+    "apps/web/src/projection.ts": "4b2d6bf3e21698cbbd34c6c53f87bf7a0bdf4b79b8914aeb3182338682a536a6",
+    "apps/server/src/index.ts": "bc559f6107b0e8cf5ba115e2dcde119e23319f09b18e2462a111ebee05331255",
+    "apps/runner/src/fixture.ts": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+  },
+  "limits": [
+    "Real PostgreSQL, center, Web and independent runner/CLI/browser processes; deterministic adapter only",
+    "Queued center restart, not transparent recovery of an active native query",
+    "No new native model calls, cross-host validation, database power loss or capacity/SLO claim"
+  ]
+}
