@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 08:58 UTC |
+| 最近更新 | 2026-10-06 09:20 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 知识选择与receipt模块已入主线，实际知识App接线由CONTEXTI01实施；本地附件/拖放/@file尚未完成。 |
-| 下一可用交付 | 先交付可选择项目知识并Send/Queue的实际聊天旅程 |
+| 当前产出 | 知识选择与receipt模块已入主线，实际知识App接线CONTEXTI01已root独审通过待main；本地附件/拖放/@file尚未完成。 |
+| 下一可用交付 | 主线接收已审知识聊天旅程；本地附件生命周期待唯一后端owner和固定合同 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |

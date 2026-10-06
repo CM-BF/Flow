@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:58 UTC / 六大task已明确；管理scope v3合法扩展四计划目录 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:20 UTC / Lead 77c接收STEER，111源已登记；父关联D08实施 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,14 +17,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 六项成熟聊天目标已明确，知识实际接线和补充指令正在并行实现 |
-| 下一可用交付 | 完善六项计划的看板关联，并交付可选择知识发送的实际聊天界面 |
+| 当前产出 | 六项成熟聊天目标已登记；知识App已审待集成，补充指令模块已main；轻质视觉与两层看板关联实施中 |
+| 下一可用交付 | 完成两层看板实际展示，并交付轻质双主题实际App；知识接线进入主线队列 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 当前main/origin 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 clean（本管理08:59实核）；D05FIT target/final祖先、两路径相同，0e528267f3c8aaf5bccdfb34330e73e8f3b01e67已push/clean，5dc v2 released08:59:36.337Z；历史32c接收CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；READ527/2f858已正式main d7e，cd26404收口后c832 v2释放，CONTEXTI55fe v1正式接权。历史ExecutionLead SVC02回执个人center/runner32c accepting v9；最新SVC03已固定static/backend b1c2、artifact461a9732/accepting v12，用户tab未reload；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
+| 已集成main状态 / HEAD | 最近已核main 77c420cf9ee5de0291ea93014b6ea11aead6fab5含STEER，owner已仅metadata收口/2bae v2释放；CONTEXTI待正式main。历史08:59 main/origin 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 clean；D05FIT target/final祖先、两路径相同，0e528267f3c8aaf5bccdfb34330e73e8f3b01e67已push/clean，5dc v2 released08:59:36.337Z；历史32c接收CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；READ527/2f858已正式main d7e，cd26404收口后c832 v2释放，CONTEXTI55fe v1正式接权。历史ExecutionLead SVC02回执个人center/runner32c accepting v9；最新SVC03已固定static/backend b1c2、artifact461a9732/accepting v12，用户tab未reload；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -371,4 +371,4 @@ ExecutionLead最新REGISTERED回执：main/origin bbe2b4f7ed1adf58f6f81de0f23a65
 
 ## 成熟度大task当前依赖
 
-[四Web大task、两Mika待链接、当前子task及精确registry输入](../../docs/evidence/web-platform/mature-task-handoff.md)是本轮协调入口，不另填产品子task进度。完整规则覆盖旧WPF单父映射。root08:53采样缺两进度卡，主线解析器尚无父/co-lead字段，D05证据路径需修；由ExecutionLead/现dashboard owner消费此队列，未解决前不宣称计划请求已全体验收。当前独立实现继续，无需新agent或GO普通消息。
+[四Web大task、两Mika唯一路径、当前子task及精确registry输入](../../docs/evidence/web-platform/mature-task-handoff.md)是本轮协调入口，不另填产品子task进度。完整规则覆盖旧WPF单父映射。root08:53历史缺两进度卡；Lead09:09:25正式111源已含六大task/CONTEXTI/STEER/VISUAL。父/co-lead真实关联由D08实施，D05证据路径仍原registry owner待修；未解决前不宣称计划请求已全体验收。当前独立实现继续，无需新agent或GO普通消息。

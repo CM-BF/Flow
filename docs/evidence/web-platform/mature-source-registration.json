@@ -53,6 +53,19 @@
       "claimId": "35e5e5b9-2227-4cfb-bb7a-51249678c9ad",
       "claimVersion": 2,
       "kind": "sub-task"
+    },
+    {
+      "id": "D08",
+      "title": "明确两层任务关系",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links",
+      "branch": "codex/dashboard-task-links",
+      "planDir": "plans/d08-task-links",
+      "evidenceDir": "docs/evidence/d08",
+      "coLead": "Web /root",
+      "parent": "D01",
+      "kind": "sub-task",
+      "claimId": "49510580-00ea-469f-a2a2-a86d3de75a03",
+      "claimVersion": 1
     }
   ],
   "mikaParentsAwaitingCanonical": [],
