@@ -3,7 +3,7 @@
 ## 当前优先队列（12:30 UTC；以下较早时点只作历史）
 
 1. **MATURE04 × attachment-only**：Mika已确认收到，将交原合法owner修复；尚无固定修复target/claim回执。已确认范围是合法v2仅附件触发history known/min1拒绝，运行链影响尚未HTTP/PG验证，mixed材料coverage语义待其明确。[固定诊断与边界](context-attachment-shape-research/source-binding.json)。
-2. **ATTACHI02**：w01实际持0b7fc000 v2全24范围实施真实App/HTTP，未独审/未交付；唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md)。SVC05等其固定Send/Queue输入，实施不等待发布准备。
+2. **ATTACHI02**：w01实际持0b7fc000 v2全24范围实施真实App/HTTP，未独审/未交付；唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md)。SVC05等其固定Send/Queue输入，实施不等待发布准备。 新增[12:32–12:33 moving预审](attachi02-journal-protection-pre-review.json)：全局journal未知记录不得让无关view继承保护；合法privatebinding窄修和两binding定向测试，正式review仍待固定target。
 3. **下一完整旅程MATURE06-04**：附件与获审dashboard安全点后优先于Arc/装饰。Root已批准Interface/合法owner协调；请Lead指定中心session唯一writer，独立六产品路径+own records可先行，mount/exports/client/精确migration由Lead协调现写权。Web consumer/Recovery拟panels **pending legal scope，未领取**，App交集须ATTACHI02 main/release后fresh领取。详[具体dispatch及两Module接口](connection-recovery-readonly-proposal.json)、[共享writer观察](connection-session-shared-owner-observation.json)、[完整原要求](connection-recovery-priority.md)。
 4. **DPERF03已完成主线收口并释放**：5609五源已main a8aef，owner7cc5正常push双端clean，全七scope停写后db0b v3 released12:26:50.034Z，[原receipt](dperf03-main-release-receipt.json)。不是待接收任务。
 5. **实际看板148有限观察已到**：[root既有DOM/Lead账本来源](dashboard-148-root-dom-observation.json)。main a8aef/148、顶部ENG/TUI/WPF分散；未点击领取详情、未刷新或新GET，不扩大为完整交互复验。用户U08/REQ37的唯一status/fresh精确take/释放可见要求持续，不建重复事实源。

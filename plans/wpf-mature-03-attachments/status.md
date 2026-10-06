@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 12:18 UTC |
+| 最近更新 | 2026-10-06 12:34 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -36,7 +36,7 @@
 
 ## 依赖与领取
 
-CONTEXTI01已main并释放；ATTACH01 runtime/fixture与公共六client/sharedv2/factory已正式main fd1322，23源逐字相同，Lead有限组合6项/8自动启动无fallback/4DB清零。owner c698正常pushclean后18scope全停写，ef617 v3已release；[正式证据](../../docs/evidence/web-platform/attachment-main-fd1322-observation.json)。ATTACHI01 fixed4c4d/final4a9、9源码仍已审待main，不在这23源内，94b84 v1保留。ATTACHI02完整24literal结构已批准但未take，公共依赖已满足，待模块准确组合base及CACHE六路径短窗口交权。真实App/SendQueue仍开放。
+CONTEXTI01已main并释放；ATTACH01 runtime/fixture与公共六client/sharedv2/factory已正式main fd1322，23源逐字相同，Lead有限组合6项/8自动启动无fallback/4DB清零。owner c698正常pushclean后18scope全停写，ef617 v3已release；[正式证据](../../docs/evidence/web-platform/attachment-main-fd1322-observation.json)。ATTACHI01 fixed4c4d九源已另外接收main1c496，owner2b0a33e收口后94b84 v2释放；不混入fd1322的23源。ATTACHI02完整24literal已0b7fc000 v2合法领取并在实施，CACHE六路径已交权。真实App/SendQueue固定交付与独审仍开放。
 
 当前子任务来源：[ATTACH01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)；[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 
@@ -53,3 +53,5 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 12:07正式执行：模块4c已main1c496九源同，owner2b0a33e pushclean后94b84 v2释放。生产绑定WPF-ATTACHI02以准确1c496新独立web-attachment-production，首12 fresh0b7fc000 v1 COMMITTED；真实Outbox/Queue/PluginHost消费者先行，App等余12后amend，矩阵未执行/大task未完成。详[当前队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
 12:18作者安全点后追加十二literal已fresh0b7fc000 v2 COMMITTED，详[原始receipt](../../docs/evidence/web-platform/attachi02-phase2-amend-receipt.json)。首段十源码固定审计通过但独审NOT_STARTED；后段真实生产接线在同一task内，仍不得改原module五产品源/shared。
+
+12:34新增独立moving预审：共享journal的unknown误被所有binding保护；root要求仅私有binding内归属修复，同/异project的无关clean B不继承A保护，A移除未知item仍保其record，旧恢复目录不删。五源时点hash及预审边界见[证据](../../docs/evidence/web-platform/attachi02-journal-protection-pre-review.json)；不是固定target正式APPROVED，不扩旧模块/PG/browser。

@@ -56,5 +56,16 @@
     "result": "before chips/controller1/1; after rejected submission text/chips restore but controller0, retry capture fails; held capture retains1ref",
     "scope": "same ATTACHI02 binding lifecycle and budget; protected original module not amended or rewritten",
     "acceptance": "Fix/test actual consumer rollback ordering in authorized scope; retain original historical module approval evidence, actual App/HTTP validation still pending"
+  },
+  "additionalViewOwnershipPreReview": {
+    "source": "attachi02-journal-protection-pre-review.json",
+    "state": "MOVING_SOURCE_NOT_FIXED_APPROVAL",
+    "acceptance": [
+      "Same-project clean B does not inherit A unknown upload protection",
+      "Different-project clean B does not inherit A unknown upload protection",
+      "A still protects its original unknown record after item remove",
+      "Existing connection recovery directory remains intact"
+    ],
+    "budget": "Only bounded two-binding direct test in claimed privatebinding scope; no additionalPG/browser"
   }
 }

@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-10-06T12:36:17.155693+00:00",
+  "task": "WPF-ATTACHI02",
+  "parent": "WPF-MATURE-03",
+  "state": "MOVING_SOURCE_PRE_REVIEW_FINDING_NOT_FORMAL_APPROVAL",
+  "source": "workspace_panels_owner completed read-only review message retrieved from collaboration.list_agents; root source-level confirmation and bounded fix direction",
+  "observation": {
+    "head": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+    "dirty": true,
+    "from": "2026-10-06T12:32:41Z",
+    "to": "2026-10-06T12:33:48Z",
+    "repeatedHashesStable": true,
+    "managerDidNotRehashMovingTree": true
+  },
+  "sourceHashes": {
+    "apps/web/src/plugin-integration/attachments.tsx": "93cb98acac5642e3e8fb66ce2e90fbea99bde6fe57706bdd4bbff8769b4a3d39",
+    "apps/web/src/plugin-integration/session.ts": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+    "apps/web/src/App.tsx": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+    "apps/web/src/plugin-integration/react.tsx": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+    "apps/web/src/conversations/ConversationThread.tsx": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+  },
+  "finding": {
+    "paths": [
+      "App.tsx:636 allbindings shareglobaljournal",
+      "attachments/controller.ts:89 snapshot.recovery includesalldirectoryrecords",
+      "plugin-integration/attachments.tsx:218-221 anyunknown protectsview",
+      "plugin-integration/session.ts:197-212 unrelatedviewretention"
+    ],
+    "reachableScenario": "A upload lostACK leavesunknown; clean B receives A protection fromglobalrecoverylisting. DifferentprojectB cannotuse recoverybutton yetcannotbereclaimed; repeatednewcleanviews canoccupyresidentcapacity. No networkauthorizationbreach evidence found.",
+    "rootAcceptedFixBoundary": "Only legalprivatebinding plus two-bindingdirecttests. SameprojectanddifferentprojectcleanB mustnotinheritAprotection; A ownunknown remainsprotected evenitemremoved; persisteddirectorynotdeleted. No originalfiveattachmentmodule edits, no extraPG/browser."
+  },
+  "otherSourceChecks": "Reviewer reported stableviewkey/projection/project authorization, oldconnectiondispose, hiddenabort, remove-not-deleteresource, automaticreconcileprotection andlocalstorageerrorboundary followcurrentdirection; not substitutesforfixedtargettests. Reviewer skippedthreeongoingfixes asrootrequested.",
+  "verification": {
+    "reviewerTests": 0,
+    "reviewerBrowserRuns": 0,
+    "reviewerServiceOperations": 0,
+    "managerTests": 0,
+    "formalReview": "NOT_STARTED_UNTIL_FIXED_CANDIDATE",
+    "fixedTarget": null,
+    "scopeAmend": false
+  },
+  "followup": "w01 already received root/peer finding; update own status actualpartial/browsercumulative atsafe stop. Manager does not duplicate sampling or mark PASS."
+}
