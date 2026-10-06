@@ -27,3 +27,15 @@
 | 时间 | 范围 | 发现与处理 | 未解决项 |
 | --- | --- | --- | --- |
 | 2026-10-05 开工 | AGENTS、派工计划、技能基线 | 对齐正式开工授权，保留 Goal Owner / Execution Lead 分工；确认尚无应用代码，外部技能不能扩大授权 | F00 实现与技术验证待执行 |
+
+## 指定 UI skills（安装完成，W01 实际接入待验证）
+
+- assistant-ui：按用户指定 `npx skills add https://github.com/assistant-ui/skills --skill assistant-ui` 加 `--global --yes` 安装；来源 commit `139674dc888ee076982b6726e8e6f5d0fe0b5f67`；本地 `/Users/citrine/.agents/skills/assistant-ui/SKILL.md`，SHA-256 `20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c`。已读 SKILL 与 architecture reference。选择 ExternalStoreRuntime 接收中心快照/事件并通过回调发命令，不引入第二套 authoritative messages。实施前核对官方 llms.txt 和安装版本的类型。
+- ai-elements：按用户指定 `npx skills add https://github.com/vercel/ai-elements --skill ai-elements` 加 `--global --yes` 安装；来源 commit `6a9d5b1822ffb10bba4bd97175f01edd7d8651cd`；本地 `/Users/citrine/.agents/skills/ai-elements/SKILL.md`，SHA-256 `6e1697f6728f131cfbbb6b53543438921ce11faafcc4d5e0cc361b1643324e71`。已读 SKILL。只按实际依赖复用展示/工具/产物组件；不因 skill 的 Next.js/AI Gateway 示例改变已批准 Vite/自托管架构，不新增云凭据要求。
+- 两项对 Codex 安装均成功；installer 对无关 PromptScript 的 global 安装提示不支持，不影响本任务。安装不等于功能实现；W01 必须记录实际组件使用、兼容性和两主题验收。
+
+## F00 工作段检查
+
+2026-10-06 00:50 UTC：Execution Lead 检查 contracts/client/probe；中心与runner owners独立只读复核公共Interface。已修复分页末游标与最新水位歧义、终态重报确认、批量字节上限、usage基线/唯一入账口径/成本类型、指定verifier摘要，以及SSE跨块CRLF解析。命名与职责检查通过；stream parser保留单一状态循环，未为函数长度拆出无价值转发层。
+
+验证范围：Node24.20.0下类型检查、4个contracts/client行为测试；真实PostgreSQL16.13 + pg-boss12.37.0的事务回滚、队列进程重启、稳定ID重试和完成。人工等待、取消、失联、应用重启、UI及真实模型验收仍待C01/R01/I01/R02，不由短probe代替。

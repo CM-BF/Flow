@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:16.13-alpine
+    environment:
+      POSTGRES_USER: flow
+      POSTGRES_PASSWORD: flow-local-only
+      POSTGRES_DB: flow
+    ports:
+      - '127.0.0.1:${FLOW_PG_PORT:-55432}:5432'
+    volumes:
+      - flow-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U flow -d flow']
+      interval: 2s
+      timeout: 2s
+      retries: 30
+volumes:
+  flow-postgres:

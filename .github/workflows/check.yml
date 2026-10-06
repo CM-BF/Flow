@@ -1,0 +1,29 @@
+name: checks
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16.13-alpine
+        env:
+          POSTGRES_USER: flow
+          POSTGRES_PASSWORD: flow-local-only
+          POSTGRES_DB: flow_test
+        ports: ['55432:5432']
+        options: >-
+          --health-cmd "pg_isready -U flow -d flow_test"
+          --health-interval 2s --health-timeout 2s --health-retries 30
+    env:
+      TEST_DATABASE_URL: postgresql://flow:flow-local-only@127.0.0.1:55432/flow_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.20.0
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check

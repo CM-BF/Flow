@@ -1,0 +1,14 @@
+{
+  "name": "@flow/server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "@flow/contracts": "workspace:*",
+    "fastify": "5.12.5",
+    "@fastify/cors": "11.3.0",
+    "pg": "8.23.1",
+    "pg-boss": "12.37.0"
+  }
+}

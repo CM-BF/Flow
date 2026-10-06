@@ -7,7 +7,7 @@
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-001：产品与技术架构](2026-10-05-flow-architecture-plan.md) |
 | 关联验证 | [FLOW-002：Provider 与 Harness](2026-10-05-provider-auth-harness-evaluation-plan.md) |
-| 当前阶段 | 用户已授权实施；F00 技能/规则准备开始，应用骨架和 feature worktrees 待建立 |
+| 当前阶段 | F00 骨架、公共契约与调度短验证已完成；准备从统一提交基线派发 C01/R01 |
 | 规划基线 | `main` / `5df746a`，只有计划和实验归档，没有应用骨架 |
 
 ## 1. 已确认方向与首个交付目标
@@ -128,7 +128,7 @@ R01 完成后，Execution Lead 在有执行位且依赖具备时派发 **R02：�
 
 开发 Flow 的模型门槛与产品支持哪些 harness 是两个问题。接入 Claude / Pi 不自动授予模型修改本项目的权限。真实模型验收先操作隔离的测试材料；任何修改 Flow 项目本身的模型都必须符合根 AGENTS.md。
 
-Web 的美观要有具体产物：一套字体/间距/颜色/密度/动效变量，一套真实状态完整的界面，以及键盘、窄屏、减少动画和长记录的检查证据。UI fixtures 是开发依据，不能作为后台可靠执行的证据。
+Web 的美观要有具体产物：一套字体/间距/颜色/密度/动效变量；完整的浅色与深色主题，主题由可扩展 tokens/注册机制管理，新增主题不改业务组件；真实主要状态在两种主题下都有检查证据，以及键盘、窄屏、减少动画和长记录的检查证据。用户明确指定安装并应用 assistant-ui skill；assistant-ui 仅负责客户端展示，中心仍是业务事实来源。UI fixtures 是开发依据，不能作为后台可靠执行的证据。
 
 ## 6. 派工单与沟通方式
 
@@ -194,3 +194,5 @@ M1 完成后沿用 Goal Owner + Execution Lead + 最多两个执行子 agents �
 - 2026-10-05：按用户纠正分离 Goal Owner 与 Astra Ultra Execution Lead；工程写入、F00、client/CLI、技术派工、审查与集成归 Execution Lead。明确四槽总上限与最多两个执行子 agents，三条 feature 线滚动调度；本轮仅修订计划及索引，不实现、不实验、不提交或推送。
 
 - 2026-10-05：用户授权正式从 F00 推进至 M1；解除上一轮仅规划限制。加入逐 stack 的 find-skills 和固定版本 clean-code 质量关卡，允许提交与隔离集成，应用能力仍按实际证据记录。
+
+- 2026-10-05：F00建立Node24/pnpm/TypeScript工程、contracts/client、独立PostgreSQL开发环境；选择pg-boss，短验证与两位owner接口复核通过。用户新增浅色/深色主题及assistant-ui/AI Elements技能要求，纳入W01。

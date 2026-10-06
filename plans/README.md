@@ -21,10 +21,10 @@
 - 已使用本机已有登录运行原生 Claude、原生 Pi 与 HarnessAgent + Pi 的小任务和恢复接口冒烟；详细限制与结果见 FLOW-002。
 - Claude HarnessAgent 本地容器与 bridge 依赖已准备，创建会话时登录解析器刷新返回 HTTP 400，尚无模型调用；失败证据与后续排查已记录。
 - 已发现累计 usage 和资源发现控制差异，尚不能据此声称省 token、恢复可靠或支持 100+ 并发。
-- 已确认首版优先个人自托管：一个中心连接本机或远端 runners；harness 接入路线和调度选型仍未最终确定。
+- 已确认首版优先个人自托管：一个中心连接本机或远端 runners；生产 harness 接入仍待验证；M1 调度选择 pg-boss，范围及短验证见 F00 记录。
 - 已明确职责：Goal Owner（主 agent）负责用户沟通、总体目标、优先级协调和目标验收；Execution Lead（独立 Astra Ultra agent）负责架构、契约/骨架、client/CLI、工程检查、技术派工与集成，以及计划和索引维护。
-- 首轮总并发为 Goal Owner + Execution Lead + 最多两个执行子 agents；中心、runner 和 Web 各有 feature owner，依赖与空闲执行位决定滚动顺序。用户已授权正式开工，F00 技能与规则准备开始；后续从同一已提交契约基线在独立 worktrees 派发功能任务。
-- 尚未初始化 Flow 应用。依赖安装与模型调用仅用于隔离选型实验，未接入正式中心、数据库或前端。
+- 首轮总并发为 Goal Owner + Execution Lead + 最多两个执行子 agents；中心、runner 和 Web 各有 feature owner，依赖与空闲执行位决定滚动顺序。用户已授权正式开工，F00 骨架、契约和调度短验证完成；后续从同一已提交契约基线在独立 worktrees 派发功能任务。
+- F00 已建立工程 workspace、公共契约与薄 client，完成 PostgreSQL/pg-boss 短验证；中心、runner、CLI/Web 的完整应用行为尚待 feature 实现。
 
 本轮按用户授权从 FLOW-003 的 F00 持续推进至 M1：由 Execution Lead 先固定最小公共契约、调度与 runner 失联语义，再按最多两个执行子 agents 滚动推进中心、runner 和 Web。FLOW-002 的后续选型验证另行记录，不阻塞确定性执行闭环；系统级要求以 FLOW-001 为准。
 

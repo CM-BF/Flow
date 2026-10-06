@@ -1,0 +1,12 @@
+{
+  "result": "passed",
+  "pgBoss": "12.37.0",
+  "node": "v24.20.0",
+  "scenarios": [
+    "transaction rollback",
+    "durable queue process restart",
+    "retry with stable job id",
+    "completion"
+  ],
+  "schema": "probe_1791247717476"
+}

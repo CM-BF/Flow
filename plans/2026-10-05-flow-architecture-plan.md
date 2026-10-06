@@ -64,7 +64,7 @@ Flow（心流）希望让一个人通过连续、易读的交互，管理大量�
 | 执行后端 | 独立 runner 进程或服务 | 一个中心连接多个执行端，按能力与容量分派任务，内部再适配不同 harness |
 | AI 应用接口 | AI SDK 为候选 | 按需用于模型调用、流式输出；HarnessAgent 是否作为统一入口由对比验证决定 |
 | 执行 harness | Claude / Pi 原生接入与对应 HarnessAgent 适配层并列验证 | 保留各自会话、工具和扩展能力，首个生产接入尚未选定 |
-| 可靠执行 | 倾向 Temporal | 长任务恢复、等待决策、取消与重试；运维成本需要评估 |
+| 可靠执行 | M1 采用 pg-boss + PostgreSQL 领域状态 | 同事务持久排队；等待、取消与所有权由中心记录，取舍见 F00 ADR |
 | 轻量调度备选 | pg-boss | 使用现有 PostgreSQL 处理后台队列，额外基础设施较少 |
 | 主数据库 | PostgreSQL + 候选 Drizzle | 保存任务、依赖、决策、证据和费用等关系数据 |
 | 知识检索 | PostgreSQL 全文检索 + pgvector | 先统一关系数据与检索；中文分词及混合检索质量单独验证 |
@@ -445,3 +445,5 @@ UI 插件负责渲染或触发公共命令，不能成为某项业务执行的�
 - 2026-10-05：加入 Hermes / T3 Code / Paseo 的源码借鉴与 provider 身份模块；取消默认优先 Pi + AI SDK 的倾向，建立 FLOW-002 对原生 Claude / Pi 与各自适配层进行实际比较。使用用户选择的本机已有登录状态，结果不外推为生产可靠性或 token 节省结论。
 - 2026-10-05：用户确认个人自托管优先、一个中心连接本机或远端 runners；建立 FLOW-003 派工计划，落实独立 worktrees、单一接口/迁移负责人及首个端到端闭环。
 - 2026-10-05：同步 FLOW-003 的职责修订：Goal Owner 负责沟通与目标验收，Astra Ultra Execution Lead 承担工程执行、技术审查和集成；四槽并发下最多两个执行子 agents，三个 feature owners 滚动派工，F00 尚未启动。
+
+- 2026-10-05：M1选定pg-boss，保留Temporal为复杂工作流后续重评对象；短验证与边界见 `docs/architecture/m1-scheduler.md`。
