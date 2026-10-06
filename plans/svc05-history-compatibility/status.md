@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:16 UTC；候选源码af51冻结，搬运准备独立APPROVED |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:33 UTC；候选源码af51冻结，搬运与隔离诊断独立APPROVED |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,9 +19,9 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新后台与固定新版网页的兼容性及固定产物搬运准备均已独立验收；个人安装尚未更新。 |
-| 下一可用交付 | 补齐个人安装保留的旧页面组合证据，核清网页身份后准备受控发布。 |
-| 当前阻塞 | ACTIVE: 两个保留旧页面尚无新后台兼容报告，网页在线身份读取未确认；当前仅准备，未获操作窗口。 |
+| 当前产出 | 已确认可复用现有工具恢复同版本网页，并保留后台、会话及页面版本；恢复前身份和旧版本兼容报告已核实。 |
+| 下一可用交付 | 待固定源码窗口下发后，仅恢复网页进程；随后继续两个保留页面与新后台的兼容验证。 |
+| 当前阻塞 | ACTIVE: 等待本次仅网页恢复操作窗口；新后台发布仍缺两个保留页面的对应报告。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，源码预审保留；Root APPROVED RELEASE03 af51+d629限定组合，不代表个人部署 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
@@ -56,3 +56,5 @@
 2026-10-06 18:20 UTC：已完成[只读loopback复现方案](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-reproduction-proposal.json)。固定af51 static-web、现装Vite8.3.2与Node24.20源码区分capacity drop/HTTP错误/代理abort；候选136连接尝试、35s工作+10s清理、1MiB输出/4MiB自有tmp。未启动，需Lead独立窗口；不追加个人HTTP、不升cap/重启。
 
 2026-10-06 18:28 UTC：授权单次隔离诊断已完成133attempts/exit0，churn残留NOT_REPRODUCED；64保持流达到cap时drop先于HTTP且释放后恢复。全部自有group/port/tmp清理，原个人身份问题仍unknown，不作为健康/根因证明。[诊断与manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-diagnostic-README.md)。无个人HTTP/服务变化，source d8b4c961b9d36915f07ff4109299fac642566519，独审待完成。
+
+2026-10-06 18:33 UTC：隔离诊断获Lead限定APPROVED，原133attempt/清理证据不变，个人残留根因仍未证明。按新优先级暂停SVC05R01（尚未take/写）；一次只读恢复快照确认后台362、runner accepting/v15、原三个group身份/监听，Web子进程64 CLOSED。两个362兼容报告及两个pointer历史b1c报告均独立核验，pointer仍caa1/v2；config/profile/marker一致，0新增HTTP/provider/服务动作。现只准备原`web bootstrap`同版本入口，原Flow checkout须由Lead固定到362；见[固定facts与操作方案](../../docs/evidence/svc05-history-compatibility/web-recovery/proposal.json)。

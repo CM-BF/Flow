@@ -43,3 +43,9 @@ Review target commit：91ce18d33a1edf3cd087020ab0ea761579affc63。Reviewer：Exe
 ## 单次隔离诊断待独审
 
 Review target commit：d8b4c961b9d36915f07ff4109299fac642566519。按3980已授权提案执行一次，133attempts/exit0，churn NOT_REPRODUCED、容量drop隔离成立，cleanup完整。[固定manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-run-manifest.json)。当前REVIEW_PENDING，不继承搬运91ce准备批准、不推个人根因或发布授权。
+
+## 2026-10-06 18:33 UTC：隔离诊断独立结论及恢复准备
+
+Execution Lead独立APPROVED target `d8b4c961b9d36915f07ff4109299fac642566519`，完整2source及40绑定核对；原133次隔离连接、228close、容量drop-beforeHTTP及checkpoint先于清理成立，reviewer未重跑。原件见[独立回执](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-independent-review.json)。本批准只覆盖隔离诊断，不证明个人64 CLOSED的原因，不授权扩大cap或任意服务修复。
+
+新同版本Web恢复准备是只读操作证据；[manifest](../../docs/evidence/svc05-history-compatibility/web-recovery/manifest.json)绑定现身份、两类准确backend报告和固定362工具。未执行bootstrap；独立审查与单次窗口待Lead。旧af51产品冻结不变。

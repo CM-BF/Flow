@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-06T18:32:59.996720+00:00",
+  "state": "PREPARED_NOT_EXECUTED",
+  "scope": "same-version Web-only recovery",
+  "authorization": "GO direction relayed by Execution Lead; operator awaits explicit fixed source window and one operation approval.",
+  "operator": "assignment_review",
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "requiredCheckout": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "tool": "tools/personal-preview/cli.mjs web bootstrap",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+    "web",
+    "bootstrap",
+    "--directory",
+    "/Users/citrine/.flow-personal",
+    "--request",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/web-recovery/request-candidate.json"
+  ],
+  "request": {
+    "expectedVersion": 2,
+    "expectedBackendHead": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "compatibilityId": "e0d2abd4bb161407e547dd934fb08a004d11e61c5cee448f227f3becb6c88ae1"
+  },
+  "currentArtifact": {
+    "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+  },
+  "pointerVersion": 2,
+  "pointerBackendHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "bootstrapReportBackend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "reportDistinction": "bootstrap assertReleaseCompatibility finds both actual 362 reports; existing pointer is unchanged and static asset loading verifies its historic b1c reports. compatibilityId is structurally required by CLI but previous-release branch does not use it to rewrite pointer.",
+  "sourceWindow": [
+    "Lead only: verify original Flow clean, detach checkout to fixed362 without moving main/origin refs, freeze checkout and node_modules.",
+    "Operator verifies checkout and fixed 7 tool modules; dependency resolve/hash only, original installation/config/marker/owned groups/source unchanged.",
+    "Run existing bootstrap exactly once; it checks installation lock, marker, center/runner identity, current source, version and both artifacts/reports before stopping Web.",
+    "Old Web group TERM only, 5 seconds; no SIGKILL. Existing launch checks Web readiness internally (identity requests only within authorized action), wait at most10 seconds.",
+    "Preserve fixed checkout through Web ready/preservation evidence. Lead alone restores main after receipt; loaded Web module/Vite state survives checkout restore, immutable asset files remain separate. No node_modules mutation; this is not a general immutable runtime closure claim."
+  ],
+  "beforeAfterInvariant": [
+    "config.json/claude.json/maintenance.json/web-release.json hashes unchanged",
+    "center/runner process records exactly unchanged, same owned groups/listeners, runtime source362/dirtyfalse unchanged",
+    "all retained manifest/asset/report hashes unchanged, caa1 current/v2 unchanged",
+    "runner accepting/v15 and formal identity unchanged; no maintenance command, task creation/cancel/retry or DB migration",
+    "task/queue/conversation metadata compared; concurrent user work may naturally change and must be reported, never overwritten"
+  ],
+  "allowedMutations": [
+    "state.processes.web",
+    "state.webReleaseOperation action=bootstrap/version2/outcome",
+    "web-exit.json for old owned nonce; operator evidence only"
+  ],
+  "failureStop": [
+    "source/lock/config/marker/identity/retained report/dependency mismatch before action: no operation",
+    "unknown Web ownership or failed5s TERM: stop, no force/no second command",
+    "new Web startup/identity unknown: preserve state/processes/evidence, do not retry/bootstrap/publish/rollback",
+    "no pointer, token, profile, ports, DB, center/runner, user tab changes; no managed cap changes"
+  ],
+  "observationPolicy": {
+    "newPersonalHttpBeforeApproval": 0,
+    "providerQueries": 0,
+    "tests": 0,
+    "dbRead": "one bounded READ ONLY marker/metadata snapshot saved; no user body/token emitted"
+  },
+  "diagnosisBoundary": "Capacity behavior reproduced in isolation; personal64CLOSED root cause still NOT_PROVEN."
+}
