@@ -4,7 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **当前诊断为资源与协调双重HOLD，OPEN已撤回，0目标。** [准入更正收据](native-catalog-observation/preflight-correction.json)：19:19:22磁盘829472768B低于1107296256B，账本ECONNREFUSED、fresh claim未知；原收据误写true的编排错误已明确保留更正，未调用wrapper/13输出全absent。不重采/重试/新领取；等待Lead明确恢复、root重新点名门禁。S01成功发生在此前且已结束，0PG/Chrome，与R01独占无冲突。
+- **协调已恢复；真实探针仍NOT_OPEN，等待root重新准入。** [单次恢复观察](native-catalog-observation/coordination-recovery.json)：19:29:36 UTC claim v6 ACTIVE、HEAD=origin/clean，磁盘1115254784B，较light门槛仅多7958528B。本次仅metadata收口，不重试wrapper或目标；Lead受管center恢复窗口关闭前也不启动PG/Chrome/native。[原准入更正](native-catalog-observation/preflight-correction.json)及错误原件保留。当前归档字节另见[恢复后会计](native-catalog-observation/recovery-accounting.json)，旧快照不追改。
+
+- **S01P07受控provision请求（父FLOW-001/S01-06）。** owner status_read/Astra，lead mika；固定main22a0806bc2465e11096949618113833f31766b19；WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery`，branch `codex/runner-claim-recovery`。Mika转述19:29:48 fresh：main/原S01 clean，新WT/branch/task不存在，15literal无active/handoff冲突；仅Lead soleprovision，owner须fresh原子take后才写。精确范围：`apps/server/src/runners.ts`、`apps/server/src/runner-claim-receipts.ts`、`apps/server/src/runner-claim-receipts.test.ts`、`apps/runner/src/admission-journal.ts`、`apps/runner/src/admission-journal.test.ts`、`apps/runner/src/runtime.ts`、`apps/runner/src/runtime-claim-recovery.test.ts`、`packages/contracts/src/runner-claim.ts`、`packages/contracts/src/runner-claim.test.ts`、`plans/s01p07-runner-claim-recovery`、`docs/evidence/s01p07`、`packages/contracts/src/index.ts`、`packages/client/src/index.ts`、`packages/client/src/runner-claim.test.ts`、`apps/server/src/index.ts`。稳定claim key空闲复用/500ms不变；首次非空allocation在原锁/事务存receipt，accept原子落assignment+nextkey后才执行；实时lease/cancel/owner fence与v1unknown保守阻塞不变，复用SQL不加scheduler。当前0take/写入/检查，原S01仍唯一owner状态。
 
 - **REQ-15会话页批量读取：请求Lead sole provision准备树。** 原global REQ15后继，拟owner architecture_read/Astra，`/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch` / `codex/conversation-turn-page-batch`；固定main `22a0806bc2465e11096949618113833f31766b19`，19:09:42只读核5入口相对ec5无diff、B02/B03 v2已释放、拟范围无active writer。精确10literal：`apps/server/src/conversations/queries.ts`、`apps/server/src/conversations/state.ts`、`apps/server/src/conversations/replies.ts`、`apps/server/src/conversations/turn-read.ts`、`apps/server/src/conversations/turn-page-batch.test.ts`、`apps/server/src/assistant/store.ts`、`apps/server/src/assistant/index.ts`、`apps/server/src/assistant/final-preview-batch.test.ts`、`docs/evidence/req15-turn-page-batch`、`plans/req15-conversation-turn-page-batch`。S01 actual安全点后准备；take前0写。首片同PoolClient批量final+turnViews≤50接turnPage，保RR/冻结settings-context/invalid-legacy/PG全UTF8hash；不领tasks/contracts/client/migration/contextwrite。仅路由provision，不改旧B02/B03或建立第二status。
 
@@ -12,7 +14,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - **系统配置窗口已消费：初始化成功，但目录与完整计量未完成。** [固定失败结果](native-system-config/run-report.md)：1native ready=true/1次model-list，未知通知触发受控关闭；完整stdio、两个own根因清单不完整KEEP，私有诊断KEEP。无目录/模型资格，完整预算UNKNOWN，不重试；[结果已双审限定接收](native-system-config/result-review.json)，保留整体失败/未知。
 
-- **S01只读镜像已供给，准备包进入审查。** [唯一preparation-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/preparation-ready.md)，owner报告fixed38066603c6b9058fb9d7ef51c3a57956d80c8310 clean/pushed，61项284628B已逐hash；无需重复物化，实际测量仍NOT_OPEN，唯一status由原owner维护。
+- **S01空领取测量已双审收口。** [唯一result-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/result-ready.md)，固定e61ba2c3；原owner维护唯一status，dashboard一次timeout仍PENDING_SYNC。本次实际已结束且0PG/Chrome，与R01串行窗口无冲突；不重复供给、测量或轮询。
 
 - **原生目录单项许可窗口已消费，仍在握手前退出。** [本次固定失败结果](native-catalog-pagesize-compat/run-report.md)：1native exit1、ready=false/model-list 0；process/root/stdio收束，156B私有诊断KEEP，明确os error1，具体操作/原因unknown。[结果忠实性已双审接收](native-catalog-pagesize-compat/result-review.json)，功能仍失败；无重试或模型资格。
 
@@ -20,30 +22,20 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 - **numeric pagesize单许可出现正差异，窗口已消费。** [固定结果](native-pagesize-compat/run-report.md)：A三API −1/EPERM；B只增加hw.pagesize_compat后三API全16384/errno0，1compile+2helper正常关闭、自有根清理。仅本C组合改善，不自动native重试或声称根因/修复；[忠实性已接收](native-pagesize-compat/result-review.json)。
 - **CHAT06P03已main接收并交回写权（Mika核验）。** [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash/plans/chat06-runner-prefix-hash/status.md)：owner567d62042f273f6a8b23ff6da334e698bed94ff7 clean/pushed；main0b8cd6f4六源与refs一致，真实noEmit0已关闭类型P2，v2于18:22:14.915 RELEASED；[实际外部release](/tmp/flow-chat06p03-main-release-receipt.json)。无需重复集成或重测。
 
-- **REQ-15会话页批量读取后继READY（GO路由事实）。** CORE共享读路径已交付/释放；排在hash接收和空领取测量安全点后，由Lead按[原FLOW-001计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)登记独立WT/精确scope。保持权限/REPEATABLE READ、冻结context与requested/effective语义，以减少DB往返为目标；当前0实现/PG，不把历史B03样本当当前性能。
+- **Claude逐消息设置CORE/C01/F01已main接收。** main8d84唯一[组合接收回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/message-settings-integration.json)；CORE [owner main acceptance](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-main-acceptance.json)固定3e768151，claim v4已释放，不让原owner回写。Web/TUI完整用户验收与真实provider仍开放。
+- **共享consumer沿现有交接接线。** [具体函数、冻结请求、ACK/observed及跨端验收](claude-message-settings-consumer-handoff.md)是本父唯一接口；公共client/CLI由MATURE02C01交付并已进入上述main组合，[controlled输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/controlled-inputs.json)按历史时点解释。Web RECOVERY/TUI01F源须协调合法owner，本父不领取或复制HTTP/FSM；[C01补充P2已关闭收据](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/supplement-approved.json)保留。
+- **历史诊断已消费。** [页大小原键无改善结果](native-pagesize/run-report.md)/[忠实性收据](native-pagesize/result-review.json)；[首次native握手前失败结果](native-catalog-probe/run-report.md)/[忠实性收据](native-catalog-probe/result-review.json)。344B私有原件KEEP；不据历史结果恢复授权或声称根因。
+- **资源只供sole Lead判断。** [B01/P03必要KEEP与本组有限消费者说明](resource-candidates.md#next4c补充)保留；未登记外部consumer仍unknown，本组0稀疏/回收。原O14窗口、CORE闭包供给和旧PG过程已保留Git564421ba及child证据，不再列作当前待接线：CORE [首次setup失败](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/pg-setup-failure-manifest.json)、[16:58资源NOT_RUN](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/pg-retry-resource-not-run.json)与后续批准分开。
 
-- **页大小对照已消费，单许可未改善。** [本次结果](native-pagesize/run-report.md)：1次clang+2个C均正常收束；A/B的三项页大小读取均−1/errno1，pthread元数据可读。measurement完成与权限成功分开，原native失败未复跑；本次清理/有限计量完成，[结果忠实性已接收](native-pagesize/result-review.json)，原窗口无剩余授权。
-- **next4c有限回复**：[原KEEP清单与本组无新增依赖说明](resource-candidates.md#next4c补充)。B01/P03指定HEAD本轮由Mika核clean；没有本组新增历史evidence消费者/KEEP路径，外部未登记consumer仍unknown，sole Lead决定操作。
-- **Claude逐消息设置CORE/C01/F01已main接收。** Lead MAIN_RECEIPT `8d84d529`，唯一[组合接收回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/message-settings-integration.json)。CORE原owner在`3e7681512b4d4448c695e1bc6a4c7ff3aa12b43d`收口，34源与ea276/main逐hash一致；[owner main acceptance](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-main-acceptance.json)，claim v4已释放，实际回执`/tmp/flow-core-main-closeout-release-receipt.json`。仅本片集成，Web/TUI完整用户验收与真实provider仍待完成；不让已释放owner回写。
-- **真实native目录窗口已消费，握手前失败。** [固定安全结果](native-catalog-probe/run-report.md)：1个native SIGABRT、ready=false/model-list 0，目标和标准流关闭、两个自有根已清理，344B私有诊断材料独立保留待审；仅确认Rust panic类文字，原因未知。45s/留存预算事实与目录FAIL分开，0重试/新权限/模型调用；[结果忠实性收据](native-catalog-probe/result-review.json)已Mika17:50:22.663接收；功能仍失败，344B私有原件KEEP。
-- **Lead next4c资源保留回复**：[B01/P03有界依赖核验](resource-candidates.md#b01p03历史输入的有界核验2026-10-06-1705)。B01保留b03 baseline-reference、d04 migration-inputs及S01四个既有result fixture；P03 KEEP完整`docs/evidence/w01/workspace-panels`可执行脚本/preview/html/CSS和`packages/protocols/test/fixtures/mcp-2026.json`。两树clean/released，已知CORE/S01无该依赖；未登记absolute manifest/其他consumer仍unknown，不等于全局无依赖，sole Lead决定操作。
-- **串行窗口与共享owner（Lead报告）**：O14在CORE NOT_RUN归还后明确开窗，2/2、9.89s；markerDB12.96MB普通DROP、conn0/remaining[]，runtime/Node退出，0provider，于17:02归还。本组未实读该raw。F01现v45由native_center_owner承接，032仍须CORE批准后接线；资源next4c依停止条件0/4结束，无稀疏操作；本组不重复df/PG。CHAT06P03已取得独立树并领取，见页首。
-- CORE此前专库历史：[首次beforeAll缺SQL/0passed/8skipped](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/pg-setup-failure-manifest.json)；4SQL经soleLead恢复后，[16:58资源NOT_RUN收据](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/pg-retry-resource-not-run.json)对应0新运行并已归还。这两窗口不混为1707的8项实测，当前批准见页首。
-- **C01补充矛盾回执P2已关闭。** assignment_review独立APPROVED `6d1145de30eea1eb4c267c88386ebc0479dfbd99`，2红→2绿/52未选、types0，原86未重跑；[唯一批准receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/supplement-approved.json)。CORE/C01/F01已由main8d84接收，见页首唯一回执。
-- **Claude publicclient/CLI已合法独立开工，不等CORE PG。** native_center_owner在claude-message-settings-client / codex/claude-message-settings-client，MATURE02C01 claim85784ec0-9695-470d-b1bd-b1a447c9805a v1/11literal；F01 v43已交回client/ACK/export/CLI。固定[controlled输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/controlled-inputs.json)8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6基于74bc，五个ea受控合同+main既有leaf+冻结O14CLI三源；本owner16:38:23只读见同HEAD clean。 [可直接实施的consumer接口](claude-message-settings-consumer-handoff.md)已固定`claudeMessageSettingsProfiles` selector/类型、send+enqueue请求冻结和ACK身份/observed校验、CLI新增3薄命令及最小paths/tests；16:24 F01 v40观察已由上述v43移交替代；Web RECOVERY/TUI01F对应源仍须现owner协调，不能重复writer或复制HTTP/FSM。Web/TUI free catalog/投影leaf可先合法领取，与CORE验证并行。
-- [CHAT06P03原研究与精确闭包](research-inputs.md#chat06-07runner完整prefix-sha的增量计算候选1648交接)为历史provision输入；现已领取实施，唯一status见页首，不再请求重复建树。
-- **CORE精确闭包已恢复（Mika本轮报告并独核155hash零错误）。** [固定92f768 checkpoint](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-source-checkpoint.md) / [227文件closure](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-source-closure.json)原缺155文件/673771逻辑B、4KiB名义1,003,520B；manifest.head5239是采样父head。由Lead sole operator保留scope/dirty恢复，本owner0sparse。固定合同`ea276572c3c99fb8400808a93efc69ce530d55a4`的contracts-only三文件16/16（Mika核16:21:52）；Mika另核合同strict16:25:51 exit0、注入adapter5/5于16:26:31 exit0；related-closure focused strict也exit0，合计21 distinct及两strict0，Mika核252bindings零差异。CORE HEAD723d4bb153be418584f34f77dab42cb67fac8243的[专库PG槽位请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-slot-request.md)历史首次PG beforeAll失败/后一次资源NOT_RUN分别封存；1707的8项及CORE限定批准见页首。旧局部21项不替代PG或UI。F01 exports/client与actual factory032仍需合法owner接线；[032 assignment](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/f01/claude-message-settings-migration-assignment.json)仅号/领取，不证明DDL运行。
+- [资源候选与KEEP边界](resource-candidates.md)仅供sole Lead核历史后决定，本owner0回收/稀疏。
+- [X01后继enable/binding准备](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-preparation.md)由原owner维护；唯一SQL号、writer与当前main输入须Lead协调，旧core占用观察按历史解释，不抢写。
+- [GO性能研究输入](research-inputs.md)路由S01/REQ15、CHAT08原计划；静态推算不当容量事实，0新增PG/provider预算。
 
-- **资源有界候选供Lead唯一Git operator判断**：[较新P05/P06优先及P03/P04四个已释放树](resource-candidates.md)。X01 ACTIVE、02与CORE明确KEEP；当前full view不证明历史未操作，仅soleLead核历史后决定，本owner0WT回收/0稀疏化。
-- [X01后继enable/binding准备](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-preparation.md)固定3c5622ad，等待Lead唯一SQL号/writer/main输入；CORE持reconciliation.ts的窄plugin retry guard须协调，不混入本次检查或抢写。
-- [GO性能研究输入：active-steering轮询及旧pool样本/SSE空读成本](research-inputs.md)仅路由S01/REQ15与CHAT08原owner/计划；固定e807源码推算，未实测，0新压测/PG/provider授权，不改变CORE优先级。
+- **本父仅三项管理scope。** 四profile路径已[停止写入](claude-core-profile-stopped-writing.json)并[原子交回](claude-core-profile-handback-receipt.json)，claim v6保留docs/实验/plan；后续core接收和main事实以上述唯一回执为准。本父不恢复产品写权。
+- **跨端consumer验收仍保留。** [交接](claude-message-settings-consumer-handoff.md)要求材料await前冻结nested snapshot、recovery保存原key/body、同文本不同设置保护新草稿、新blocked codec与profile三元资格；Web/TUI须协调现owner，不能复制第二状态机。首leaf[main接收](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)与[父级职责](claude-message-settings-handoff.md)保留历史。
+- 其他共享薄client独审入口：[goal progression](goal-progression-client-review.md)、[plugin installation](plugin-installation-client-review.md)，只在各自transport范围成立。
 
-- **四条profile路径已交回**：[COMMITTED回执](claude-core-profile-handback-receipt.json) / [停写记录](claude-core-profile-stopped-writing.json)。2026-10-06 15:43:03.052 UTC原claim原子amend为v6，仅保留本父docs/实验/plan；core现已原子amend至c652bc61 v2（15:44:19.351 UTC），含四路径与context store，见[接收receipt](/tmp/flow-core-next-scope-amend-receipt.json)；父owner不恢复写入。保留main已有templateVersion2→unknown三行修复，不改SVC旧362固定候选。其余独立源可先行，context直接消费者仍须纳入最终纵向验收。
-- **共享consumer请先协调现owner**：[实际交接与直接验证边界](claude-message-settings-consumer-handoff.md)。公共client/CLI已转MATURE02C01，见上方current controlled-inputs；Web RECOVERY01 workspace_panels_owner v4、TUI01F assignment_review v1仍按现有owner协调，不重复派writer。Web在材料await前冻结完整draft/设置并保留recovery；TUI沿同Intent恢复；新blocked codec与同文本不同设置草稿保护不能遗漏。具体路径由该交接页列明，本父不领取前端源码。
-- 首leaf已进入main`22d5ca67159b35bb794b2711cf6df0cb905b92e8`，见[正式接收收据](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)；仅plain contract，无export/产品挂载，不再重复派集成。Lead报告后续`9bdb`仅registry；2026-10-06 15:38:16 UTC的4320实际快照有164来源、CORE live/issues=[]；本owner未重新采集。完整02仍in-progress。[父级职责/交接边界](claude-message-settings-handoff.md)。
-- [F01 goal progression薄client正式APPROVED](goal-progression-client-review.md)：deef0e48，仅薄transport，供Lead受控接收；[plugin installation薄client正式APPROVED](plugin-installation-client-review.md)沿既有收据，不重复审。
-
-OpenSSL ca6a六源不变；[四fake局部检查](node-owned-openssl/validation-manifest.json)16:36一次4/4 exit0，0诊断目标/listener/PG/provider；本次自建cache同inode清理。原[SOURCE_REVIEW](node-owned-openssl/source-review.json)不自动升级组合批准，[准备包c46f2e05已独审APPROVED](node-owned-openssl/preparation-review.json)（architecture_read 16:45:31 UTC，Mika接收；0P1/P2，仅packet）。实际仍NOT_OPEN；未来OPEN前需独立fresh核13输出，entry未遍历absentOutputs。本段0入口/目标/新检查；实际排程以Lead为准，CORE本次PG已释放，Node尚无OPEN，不阻Claude产品线。旧诊断/跨task证据与封存快照不变；当前共享metadata属于新的产品交接阶段；诊断accounting文件保留各固定提交快照，最终OPEN前fresh核当前共享metadata增量与128KiB/tail，不循环改写Node packet。
+OpenSSL ca6a候选独立于native探针：[四fake局部检查](node-owned-openssl/validation-manifest.json)、[SOURCE_REVIEW](node-owned-openssl/source-review.json)、[c46f准备批准](node-owned-openssl/preparation-review.json)均保留，实际仍NOT_OPEN，不是Claude或native的前置。未来必须重新核13输出和准入；不因资源恢复执行。各诊断accounting仅对应固定提交快照，旧raw/清单不追改；新共享metadata按当前实际字节计费。
 
 ## 首片可独立实现
 
@@ -62,15 +54,15 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 ## Claude固定0.3.290 consumer缺口（Mika只读输入）
 
-现有manifest只接受materialFiles/activeSteering/goalTools/goalGraphTools/model/allowRead/requireReadApproval/maxTurns/maxBudgetUsd/timeoutMs；adapter固定thinking.disabled+dontAsk，profile controls固定effort unsupported，不能由Web选择框宣称已贯通。
+原manifest仅model与固定thinking.disabled的限制属于早期基线；CORE/C01/F01已main接入逐消息合同。当前入口和跨端缺口以上方组合回执及consumer交接为准，不能从SDK声明推断账号或实际推理效果。
 
 固定SDK声明ModelInfo已有resolvedModel、supportsEffort/supportedEffortLevels、supportsAdaptiveThinking、supportsFastMode；Options有thinking/effort；Settings有fastMode/fastModePerSessionOptIn；init fast_mode_state为off/cooldown/on并带disabled_reason（含sdk_opt_in_required），effort可缺/null且受org/model降级。因此directory/requested/actual分层，未知实际fast不得写已生效。Query.supportedModels存在不等于可零副作用调用；初始化/账户读取安全路径另证，不新开query。
 
 共享owner需固定实际模型能力目录、请求选项、init/effective回执与unsupported的合同；Web d01仅消费已落地字段，不修改本owner实验来伪造生产支持。
 
-共享审查输入：[TUI01A delta APPROVED回执](tui01a-review.md)（原2 P2已修，保留历史与非阻断P3）；[R05C纯投影APPROVED回执](production-projection-review.md)（仅projection.mjs/.d.mts；已审main提供共享entry）。两者均非第二进度源，当前不跨WT导入或合入未审C1。
+共享历史独审入口：[TUI01A delta](tui01a-review.md)、[R05C纯投影](production-projection-review.md)。各自固定范围，不另建进度源。
 
-**R05C复用交接：** [final投影提升回执](final-projection-handoff.md)。固定0d0524c算法只读提升至其已领取生产目录；生产模块已由已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 进入本树；实验薄入口target 38516be71bf267ab546347a39da2adbe71f79e20已删除算法副本，27/27直接消费者通过，Mika于2026-10-06 09:47:22 UTC独审APPROVED。见[当前消费证据](production-import/README.md)，禁止长期双实现。
+**R05C复用：** [final投影提升回执](final-projection-handoff.md)与[生产模块消费证据](production-import/README.md)保留；已审生产模块取代实验算法副本，历史27/27不重跑，禁止长期双实现。
 
 共享client输入：[native profile client独立review回执](native-profile-client-review.md)，固定095bdb8仅批准薄client接口，不复制F01进度，也不证明实际access:none。
 
@@ -121,7 +113,7 @@ Codex没有这里可直接套用的Claude SDK maxBudgetUsd/maxTurns效果声明�
 
 ### 运行边界
 
-当前Node准备包见页首，真实Codex仍NOT_RUN；旧握手方案及原R06输入时点保留Git ff927。组合必须复用唯一R06进程owner，不能二次initialize、重发unknown或把目录当entitlement。
+真实native已观测到握手完成，但目录仍未取得；旧结果与当前未开放后继见页首。复用唯一R06进程owner，不二次initialize、不重发unknown，不把目录当entitlement。
 
 ## 下一条配置与历史冻结（完整验收增补）
 
@@ -152,10 +144,10 @@ Mika转交status_read对固定Codex0.154.0 schema及官方current文档的只读
 
 ## 已封存诊断与可独立交付
 
-旧隔离/诊断/C各窗口已经消费，结论及来源以页首固定结果链接和[review索引](../../../plans/wpf-mature-02-harness-capabilities/review.md)为准；早期实现过程全文保留Git ff927712。本页不把旧HOLD/候选许可当当前运行许可，不修改旧raw/manifest。R06五源已main362接收且停写交回；[独立集成输入](integration-readiness.md)中的历史待接收字段按其固定时点解释。当前Node结果待独审，真实Codex资格/访问约束/全writer撤销继续unknown。
+旧隔离/Node/C/native窗口结论见页首固定结果链接与[review索引](../../../plans/wpf-mature-02-harness-capabilities/review.md)，过程全文保留历史Git。本页不恢复旧授权、不改raw/manifest；R06五源已main接收并交回，[集成输入](integration-readiness.md)按固定时点解释。真实资格、访问强制与全writer撤销仍unknown。
 
 ## 原生配置目录与共享接线
 
-生产targetc9c6e891已独审；P3 test-only a761已关闭CREATE-ACK未知清理。4源=c9/测试=a761由main21e0a56c接收，[核验](native-catalog/main-accepted.json)。33 distinct与1 delta分别复用，不重跑，不代表个人服务部署。store.ts已停写并[原子交回](catalog-store-partial-handback.json)，余四个目录路径仍claim v5；client共享owner接线不由本worker写。
+生产目录4源/测试已由main21e0a56c接收，见[核验](native-catalog/main-accepted.json)；不代表个人服务部署。store已[原子交回](catalog-store-partial-handback.json)，其余profile路径也已交回，本claim v6仅管理三scope；共享client不由本worker写。
 
 [目录合同设计](native-catalog-seam.md)及[集成输入](integration-readiness.md)保留exact-single native-v1、owner gate、knownpair SQL先于LIMIT、严格sentinel/digest与Codex/goal conversation unsupported约束。目录仅configured/not-probed；原legacy Claude reader与JSON/hash保真。client review收据见页首。完整02的运行/下一条设置/跨端验收仍开放。
