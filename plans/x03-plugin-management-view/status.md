@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 04:19:07 UTC |
+| 最近更新 | 2026-10-06 04:28:05 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra，lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management |
 | Branch | codex/plugin-management |
 | 工作基线 / HEAD | 8f1481df880cf5077e1ddb9a8f302fe700a7ece8 / 895c8999d22fb3d911de2d46969e37b40051fdea（实现HEAD，metadata由Git聚合） |
-| 工作树dirty状态 | 七源码/测试已提交；本次仅最终metadata整理 |
+| 工作树dirty状态 | 已审实现与最终证据 clean；仅追加 main 接收 metadata |
 | 工作分支状态 | completed（独立模块已审；X03-04真实入口待验） |
 | 检查状态 | PASSED 895c8999d22fb3d911de2d46969e37b40051fdea；12命名浏览器检查exit0、typecheck exit0，docs/evidence/x03/checks.json |
 | 实现目标 | 895c8999d22fb3d911de2d46969e37b40051fdea |
 | 实现范围 | apps/web/src/plugin-management, apps/web/test/plugin-management |
-| 已集成main状态 / HEAD | X03未集成；依赖X02/095497已在main8f1481df880cf5077e1ddb9a8f302fe700a7ece8 |
+| 已集成main状态 / HEAD | 已集成 main/origin 4e0289f29ffa48c6c49003837d4520f57c22b6b0；七源码/fixture 对895零diff |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 独立只读模块12检查通过并APPROVED；真实App挂载待X03-04 |
@@ -45,4 +45,10 @@ claim bae9bd94-fc7a-4094-8f5c-288706ffb668 v1，committedAt2026-10-06T04:01:49.8
 
 895c8999在固定源码执行12命名检查，04:16:17.584–04:16:24.201Z/exit0，pageErrors/closeErrors[]、两库remaining0；typecheck04:17:13.041748–04:17:14.517156Z/exit0。焦点red、长值、开放态切中心和401/offline均覆盖；历史10检查不代替最终12。Mika七文件/日志/截图独审APPROVED，未重跑。X03-04真实App挂载/验收仍pending，不以fixture充当App完成；main尚未集成X03，claimv1保留。
 
-最终dashboard实际2026-10-06T04:19:04.563Z：来源本WT、review approved、checks passed、implementation unchanged、issues=[]、current=true、claimv1 active；回执docs/evidence/x03/dashboard-receipt.json。此次只提交metadata；实际git HEAD由看板聚合。X03-03完成，X03-04真实App入口与main接收仍pending。
+最终dashboard实际2026-10-06T04:19:04.563Z：来源本WT、review approved、checks passed、implementation unchanged、issues=[]、current=true、claimv1 active；回执docs/evidence/x03/dashboard-receipt.json。此次只提交metadata；实际git HEAD由看板聚合。X03-03完成，X03-04真实App入口仍pending；main接收已在下段更新。
+
+## 2026-10-06 04:28:05 UTC main 接收 / 停写交接
+
+只读复核 main/origin 4e0289f29ffa48c6c49003837d4520f57c22b6b0，已含最终metadata1290e7db897a522788ccc80e905586f0a23fe7eb，七源码/fixture 与已审895c8999零diff。未重复浏览器或typecheck；本次metadata不改变实现。X03-04实际App入口仍待WPF-CHAT01 / Execution Lead，不能把模块集成视为入口验收。
+
+本owner提交本次metadata后明确停止X03全部范围写入，再以当前claim v1原子release；receipt外报Root（不再写已释放范围）。架构与真实入口后续由Execution Lead/Web协调；后续新修复须重新领取。
