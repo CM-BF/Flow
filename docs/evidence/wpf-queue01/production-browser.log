@@ -1,0 +1,23 @@
+PASS legacy false makes no queue reads and leaves queue delivery disabled
+PASS running official Thread accepts explicit queue intent by Enter and button without turning it into steering
+PASS Shift Enter, composition and unsupported steer do not send; oversized UTF-8 draft stays intact before any HTTP allocation
+10:38:48 PM [vite] http proxy error: /api/conversations/chat-2/queue
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS unknown admission keeps its original identity through offline reconnect and a separate editable draft
+10:38:48 PM [vite] http proxy error: /api/conversations/chat-2/queue/pause
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS pause replay is historical; fresh current execution is confirmed and cancelled with a separate receipt
+PASS same-revision terminal state enables explicit Continue; only server promotion adds a turn
+PASS cancelling an item already promoted reports that outcome without cancelling its execution
+PASS waiting pagination is explicit, message content is lazy and cached, and failed refresh preserves marked stale facts
+PASS reload restores durable waiting and paused facts, without claiming page-local receipt recovery
+PASS connection replacement isolates same-id queue details and ignores the previous connection's late response
+PASS compact queue actions and official composer fit both themes at 390px with reduced motion and keyboard operation

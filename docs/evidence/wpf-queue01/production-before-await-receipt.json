@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-06T05:36:10.890Z",
+  "endedAt": "2026-10-06T05:36:17.274Z",
+  "sourceCommit": "c80d1769442b7b610397efe04f49da0bb1eeda6e",
+  "sourceFiles": {
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx": "0aab6261b27cbbb818a9be0150353aae902fa05101997a4ef7ef112ce86cca0e",
+    "apps/web/src/conversations/ConversationThread.tsx": "f89562923746cda802664037a827b1e5467d2bf61069f2caae4adce5b6fec5cc",
+    "apps/web/src/conversations/projection.ts": "99a3f4592d7fe8923061b01f2336c3dc38482d1b3e7929b1f23962551e750858",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "31fca7318c582cebad80677f1864fc66a3da946c9d95f8d56fe3561d814be0e3",
+    "apps/web/src/conversations/queue/commands.ts": "ca58ae059571de9b757767784365006b2130cd82935997fe7e2ea774c52a35da",
+    "apps/web/src/conversations/queue/projection.ts": "6221c0d51c448bec53d4dc5dd48152eda483104630e1a6d1e37b24e3141912f9",
+    "apps/web/src/conversations/queue/queue-elements.tsx": "31df655f4836511653fc991d5ece7fdb33ec21a2e6ccce586d80440718d875fa",
+    "apps/web/test/conversation-projection.test.ts": "ed27391bffce8074f23abf5a90b2316354690eaa6b4846190c05f4dc66aba852",
+    "apps/web/test/conversation-queue.test.ts": "80d639d9b86b6a43389f1a082a18f0aa8b23667a49756cface2d9c0a01fe8b35",
+    "apps/web/test/conversation-queue.fixture.ts": "dbc40701633abbb7a493d8be1c12dc6d33f113e89cb80cc9b6cd354c2006e908",
+    "apps/web/test/conversation-queue.browser.ts": "317fa378db27614ba9118e3852c0c3f361d15f81b8651ae40144dc3dddd1d9b0"
+  },
+  "production": true,
+  "checks": [
+    "legacy false makes no queue reads and leaves queue delivery disabled",
+    "running official Thread accepts explicit queue intent by Enter and button without turning it into steering",
+    "Shift Enter, composition and unsupported steer do not send; oversized UTF-8 draft stays intact before any HTTP allocation"
+  ],
+  "pageErrors": [],
+  "failure": "Error: expect(locator).toContainText(expected) failed\n\nLocator: locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('region', { name: 'Conversation queue', exact: true }).getByRole('region', { name: 'enqueue receipt', exact: true })\nExpected substring: \"Receipt unknown\"\nReceived string:    \"enqueue · acceptedValid long message xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxMessage accepted into the center queue. Current progress comes from the refreshed list.Dismiss enqueue receipt\"\nTimeout: 5000ms\n\nCall log:\n  - Expect \"toContainText\" locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('region', { name: 'Conversation queue', exact: true }).getByRole('region', { name: 'enqueue receipt', exact: true }) with timeout 5000ms\n  - waiting for locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('region', { name: 'Conversation queue', exact: true }).getByRole('region', { name: 'enqueue receipt', exact: true })\n    - locator resolved to <section aria-label=\"enqueue receipt\" class=\"my-2 rounded border p-3 text-xs\">…</section>\n    - unexpected value \"enqueue · sendingValid long message xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWaiting for durable acceptance.\"\n    13 × locator resolved to <section aria-label=\"enqueue receipt\" class=\"my-2 rounded border p-3 text-xs\">…</section>\n       - unexpected value \"enqueue · acceptedValid long message xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxMessage accepted into the center queue. Current progress comes from the refreshed list.Dismiss enqueue receipt\"\n",
+  "scope": "Actual Flow App via private HTTP fixtures; no model, real center or DB; receipt recovery across reload explicitly not implemented"
+}
