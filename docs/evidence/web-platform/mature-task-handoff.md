@@ -10,6 +10,14 @@
 
 6. **固定旧reader兼容结论（root已定方向）**：[逐路径矩阵](attachment-v2-compatibility-research.json)。旧Web的v1硬门禁只在自身Send/enqueue ACK；history/queue不验context且不显示材料。中心必须按每请求非空attachments产生v2，省略/[]及持久v1原key回执沿v1，不能按会话升级。新Web对旧center缺cap禁附件，plain必须省略attachments字段（旧strictObject连[]也拒）。F01共享decoder加明确v1/v2分支，旧页可看新v2正文但附件不可见是已知限制。先用真实legacy consumer fixture验证；当前无Accept/header/GET阻断或剥字段改digest需求。额外严格消费者请指出固定路径，不阻已批TUI首片。
 
+## TUI01B需读的最新具体回复（2026-10-06 10:24:48 UTC）
+
+- ExecutionLead已指定TUI001-09唯一writer TUI01B，F01 handback client index+新module；首Interface `14d0e53cce4a27cd33b274834b941b2417e9cd62`，canonical `/Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack/docs/evidence/tui01b/interface.md`。实现未独审，本组未take消费片。
+- [10:20:16.796Z四Web路径均free](receipt-shared-writer-latest.json)是有效PG时点，不是预占。w01已收敛7literal候选：projection.ts、execution-profiles/selection.ts、conversation-context/receipts.ts、原projection.test、新conversation-ack-http.test、自身plan/evidence。后三wrapper只委托共享guard，保freeze/Queue/history；正式固定实现后新树fresh take，不抢App/ATTACHI。
+- root/panels已对齐：wire维持有序AttachmentReference[]；同一public helper按完整有序refs及响应已知metadata结构/总预算匹配。optional expected.descriptors只供实际持有已验证upload receipt者进一步核name/type/bytes，长度与ref须对齐；TUI不得伪造descriptor，Web不另造ACK decoder。未知v2必须显式版本分支，ATTACH固定合同交同一owner。
+- HTTP最小验收：真实FlowClient+Projection坏200→unknown/原keybody，显式原key恢复，错project/profile/context tuple，unknown后400仍unknown，旧ACK不压新GET/known final；无大browser矩阵。
+- main41315已含R05D/SVC04工具（Lead来源），个人b1c后台/固定静态未变，fixture不构成组合发布许可。
+
 ## 当前集中接收队列（2026-10-06 10:18:52 UTC）
 
 | Task / action | 固定实现 / 最终正常push、clean | 唯一canonical / 边界 |
@@ -20,7 +28,8 @@
 | WPF-ACTIVITYREAD01 → MATURE06，main收口完成 | f2bcaae6623176acd718cf53707892154579970a / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner finalbe977a23cff08edf6ac46d18750c3400bf9a2218 push/clean | web-activity-readability / plans/wpf-activity-readability / docs/evidence/wpf-activity-readability；四source零diff；六scope全停写后[6f427 v3 released](activityread01-main-release-receipt.json)，仅展开活动区简化 |
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
 | WPF-ATTACH01 → MATURE03，合同phase1实施/首source已就绪 | fixed base f181d84b5fb3652d62e2a181acff442d42b3e066；[ef617d78 v1 take](attach01-contract-take-receipt.json)10:06:48.197Z，五literal | attachment-resources / plans/wpf-attach01-resources / docs/evidence/wpf-attach01；两个合同+一专测+自己plan/evidence，owner panels；首canonical b87f8a515c7c8bbe5b76a8202db4f7666924b10d clean；小合同root审后Lead受控输入，runtime/export/migration不在此授权 |
-| D06 → D01，APPROVED待主线接收/唯一source迁移请求 | 固定main f181d84b5fb3652d62e2a181acff442d42b3e066；实现2c3160f42784ee814d968a953d557251c81a243d / final ad58d3412b5435bb77b704b55ef8f6d499ea820d正常push/clean；root10:18:41 UTC APPROVED，独立15 Node/局部CUA；author61来源/119行/五图browser；[84fd3e7d v1四scope](d06-runtime-take-receipt.json) | 请将唯一D06 source由dashboard-architecture-stream迁至dashboard-architecture-runtime / codex/dashboard-architecture-runtime / plans/d06-architecture-refresh，evidence仍docs/evidence/d06；旧e06a v2已released不双登记，renderer/registry不改 |
+| D06 → D01，main收口完成 | impl2c3160f42784ee814d968a953d557251c81a243d / acceptedmain8d8ab520a9d43c7b9dafb22911416ee799ebf665；owner final631173ab正常push/clean，五source逐hash同 | dashboard-architecture-runtime / plans/d06-architecture-refresh；全四scope停写后[84fd v2 release](d06-runtime-main-release-receipt.json)10:24:18.920Z；唯一source迁移/126registry由Lead确认，4320实际部署仍待回执 |
+| WPF-DPERF02 → D01，有界实验实施 | base41315b033deb0b1953484359b686c0b228997367；首canonical08710473，fresh[1cb4f0e3 v1 take](dperf02-take-receipt.json)四literal | dashboard-proof-batching / codex/dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；先临时Git Trace2≤60s/32MiB，不改proof、不取4320，附件合同交接优先 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
 这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。D08部署后root一次实际检查六大task父关联/take展示才报告计划请求Done，不将局部片段当整体完成。

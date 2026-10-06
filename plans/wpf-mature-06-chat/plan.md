@@ -42,3 +42,7 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 GO最新要求（非新增大task）：默认先正文、简短自然状态与需要行动；识别tool标题即可，native ID/Provider observations分页、来源计数/原因统一Details按需。系统状态与模型正文来源分开，不用模板冒充回复或模型润色；真实error/unknown/未确认取消/queue-steer受理≠生效及恢复动作必须可达。验收普通hi、正常stream/tool、queue等待、断线unknown四旅程，390及双pane不长期被工程说明占据。此为原MATURE06呈现验收、MATURE01视觉依赖，不扩大已审VISUAL或STEIRI业务写权。
 
 WPF-MATURE-06-03的事实/呈现边界与四旅程细目见[固定研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。[ACTIVITYREAD01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/plans/wpf-activity-readability/status.md)首bd580已正式实施，仅已展开活动区域；外层queue/stream/react仍后继，不将本片当整条TODO完成。
+
+## 会话刷新恢复补充（GO经root，2026-10-06 10:24:48 UTC）
+
+归原WPF-MATURE-06-04，不新task：明确浏览器登录有效期内刷新/重开应回同中心/会话，避免反复复制owner token。GO只读Connect页面/README，未reload/登录/发送，不推断断开原因。候选中心可撤销有限期HttpOnly session，token不入localStorage/URL；须中心owner精确接口与独立claim后实施。验退出/撤销/过期/重启、多tab/切中心；退出停止观察不cancel，unknown发送不自动重投。同源自托管优先，跨origin/127.0.0.1多端口边界单列，cookie须Origin/CSRF防护不只SameSite。此为结果/责任/验收研究，未实现/未授权改auth。
