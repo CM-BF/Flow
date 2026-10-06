@@ -21,3 +21,5 @@ PG16官方函数依据已读：https://www.postgresql.org/docs/16/functions-bina
 保留首次边界9/10（错误码断言误写invalid_request，server现有真实invalid_events）及afterAll即时查零连接失败；只查自有残库发现已零连接后普通DROP，修复回执boundaries-cleanup-repair.json。fixture改2秒有界等待自身连接，不强杀；修后完整10/10及清理通过。首types因JS runtime paths缺类型，改本evidence类型配置为既有package声明，types-fixed0。原失败不删除、不冒充通过。
 
 计量边界：新增SELECT向PG传当前patch text参数，本例3UTF8B；旧空prefix返回0B，新摘要固定64B。只证明长已存prefix的返回不再增长，不声称端到端wire、CPU、总时延或每patch净节约。PG仍完整聚合/hash，INSERT原patch/JSON开销仍在。P01原矩阵未重跑。
+
+08:04 UTC证据存储校正：首次metadata提交Git提示prefix-red.log中的真实Unicode CRLF会规范化；逐blob核对发现仅该log提交对象与原working字节不符。原working/raw未改，添加本evidence局部*.log -text并重新stage原字节，确保最终Git blob与已冻结manifest/source-run hash相同；不重跑或重写日志。
