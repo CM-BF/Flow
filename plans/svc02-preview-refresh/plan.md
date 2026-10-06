@@ -1,6 +1,6 @@
 # SVC02 常驻预览安全更新
 
-编号SVC02；状态completed；创建2026-10-06 05:13:45 UTC。当前操作唯一owner assignment_review / gpt-6-astra；原实现作者runner_owner。base6b4b89f397b35d7e769846df457e76bb29f4a265。
+编号SVC02；原工具实现状态completed；本次更新操作completed；创建2026-10-06 05:13:45 UTC。当前操作唯一owner assignment_review / gpt-6-astra；原实现作者runner_owner。base6b4b89f397b35d7e769846df457e76bb29f4a265。
 
 ## 已批准目标
 
@@ -23,6 +23,10 @@
 - [x] SVC02-05：本次新领取、只读fresh facts与新窗口方案；精确b54产品等价253b。
 - [x] SVC02-06：GO窗口SVC02-b54-0736中drain→hold→refresh b54完成，fresh验证与保留证据已采，仍maintenance。
 - [x] SVC02-07：GO RESUME_GO SVC02-b54-resume-0745后一次显式resume完成，v6 accepting，窗口CLOSED。
+
+- [x] SVC02-08：新32c固定方案/fresh只读事实/claim和同源核验。
+- [x] SVC02-09：新GO窗口实际drain→hold→refresh32c，固定保留核验/原false解释接受。
+- [x] SVC02-10：GO明确放行合法用户queued后一次resume v9，窗口CLOSED。
 
 共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。初始实现仅在临时专库/自有进程验证；随后按下述独立批准窗口完成真实部署。本窗口已结束，未来61227/61228操作须新领取并给出已审main/实际状态/回退语义，另获Root窗口确认。
 
