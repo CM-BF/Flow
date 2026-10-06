@@ -1,0 +1,37 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web
+
+ ❯ test/conversation-steering-integration.test.ts (7 tests | 1 failed) 1057ms
+     ✓ registration makes zero reads; only a real current message and explicit P01 open allocate 61ms
+     ✓ separates host read and write permissions and calls raw write once without recursion 106ms
+     × unknown retains original key/body when an ended turn retries and another 4xx cannot erase uncertainty 107ms
+     ✓ hide/disable/offline revoke in-flight ports; restoration keeps receipt and controller without eager reads 54ms
+     ✓ read revocation aborts pending metadata and late success cannot refresh a new authority generation 104ms
+     ✓ bounded visited bindings never silently evict unknown receipts; explicit close releases only that view  521ms
+     ✓ session disposal synchronously invalidates old reads/writes before async host cleanup and same IDs start empty 102ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/conversation-steering-integration.test.ts > actual steering host binding > unknown retains original key/body when an ended turn retries and another 4xx cannot erase uncertainty
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/conversation-steering-integration.test.ts:48:132
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  02:36:14
+   Duration  2.70s (transform 502ms, setup 0ms, import 1.54s, tests 1.06s, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/conversation-steering-integration.test.ts

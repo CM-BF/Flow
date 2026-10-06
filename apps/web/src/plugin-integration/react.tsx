@@ -255,3 +255,5 @@ export function PluginWorkspace({ state, activeTab, focusRequest, container, onC
     <WorkspaceContributions context={context} request={focusRequest?.serial} onClose={onClose} />
   </div></WorkspaceChromeContext.Provider>;
 }
+
+export { ConversationSteering } from "./steering";
