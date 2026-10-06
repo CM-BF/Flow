@@ -70,6 +70,24 @@ try {
       await page.keyboard.press("Escape"); await expect(trigger).toBeFocused(); await expect(input(3)).toHaveValue("Keep this new draft");
       await trigger.press("Space"); await dialog.getByRole("button", { name: "Close", exact: true }).click(); await expect(trigger).toBeFocused();
     });
+    await check("execution navigation closes settings and hands focus to interactive workspace/task while preserving conversation draft", async () => {
+      await open(3); await input(3).fill("Retain across execution navigation");
+      const trigger = pane(3).getByRole("button", { name: /^Conversation settings:/ });
+      await trigger.click(); let dialog = page.getByRole("dialog", { name: "Conversation settings", exact: true });
+      await dialog.getByText("Execution history · 1 turn", { exact: true }).click(); await dialog.getByText("Execution · turn 1", { exact: true }).click();
+      await dialog.getByRole("button", { name: "Inspect turn 1", exact: true }).click();
+      await expect(dialog).toHaveCount(0); const terminal = page.getByRole("tab", { name: "Terminal", exact: true });
+      await expect(terminal).toBeFocused(); await terminal.press("ArrowLeft"); await page.keyboard.press("Enter");
+      await expect(page.getByRole("tab", { name: "Files", exact: true })).toBeFocused();
+      await expect(input(3)).toHaveValue("Retain across execution navigation");
+      await trigger.click(); dialog = page.getByRole("dialog", { name: "Conversation settings", exact: true });
+      await dialog.getByText("Execution history · 1 turn", { exact: true }).click(); await dialog.getByText("Execution · turn 1", { exact: true }).click();
+      const controls = dialog.getByRole("button", { name: "Open task controls", exact: true }); await controls.focus(); await controls.press("Enter");
+      await expect(dialog).toHaveCount(0); const taskTab = page.locator('[id="tab-chat-3-task-1"]'); await expect(taskTab).toBeFocused();
+      await expect(page).toHaveURL(/#task=chat-3-task-1/); await expect(page.locator('[id="panel-chat-3-task-1"]')).toBeVisible();
+      await open(3); await expect(input(3)).toHaveValue("Retain across execution navigation");
+      await page.getByRole("button", { name: "Close extensions", exact: true }).click();
+    });
     await check("collapsed queue exposes stale error, pause and blockers; disclosure Enter/Space retains keyboard focus", async () => {
       await open(3); const toggle = queueToggle(3); await toggle.focus(); await toggle.press("Enter"); await expect(toggle).toHaveAttribute("aria-expanded", "true");
       await queueRegion(3).getByRole("button", { name: "Pause queue", exact: true }).click();

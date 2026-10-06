@@ -123,7 +123,9 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
       afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}<MessageReceipt projection={projection} onAccepted={onAccepted} /></>}
       composerHeader={<ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={setIntent}
         profile={{ catalog: profileCatalog, selection: profileSelection, onSelect: onProfileSelection, onRefresh: () => { void profiles.refresh(); }, onLoadMore: () => { void profiles.loadMore(); }, locked: lockedProfile,
-          details: <ConversationBehavior live={streamState.enabled}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested} onInspect={onInspect} onOpenTask={onOpenTask} /></ConversationBehavior> }} />}
+          details: navigate => <ConversationBehavior live={streamState.enabled}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
+            onInspect={id => navigate(() => onInspect(id))}
+            onOpenTask={id => navigate(() => { onOpenTask(id); requestAnimationFrame(() => document.getElementById(`tab-${id}`)?.focus()); })} /></ConversationBehavior> }} />}
       footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
 
     />

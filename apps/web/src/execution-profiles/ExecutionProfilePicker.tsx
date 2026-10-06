@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from "react";
+import { useId, useRef, useState, type ReactNode } from "react";
 import type { ConversationCreation } from "@flow/contracts";
 import { Button } from "../components/ui/button";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../components/ui/dialog";
@@ -12,19 +12,33 @@ export interface ExecutionProfilePickerProps {
   onSelect(selection: ProfileSelection): void;
   onRefresh(): void;
   onLoadMore(): void;
-  details?: ReactNode;
+  details?: (navigate: (action: () => void) => void) => ReactNode;
   locked?: { creation: ConversationCreation; reason: "created" | "receipt-pending" };
+}
+
+function useProfileDialog() {
+  const [open, setOpen] = useState(false);
+  const navigation = useRef<(() => void) | null>(null);
+  return {
+    open, onOpenChange: setOpen,
+    navigate: (action: () => void) => { navigation.current = action; setOpen(false); },
+    onCloseAutoFocus: (event: Event) => {
+      const action = navigation.current; navigation.current = null;
+      if (action) { event.preventDefault(); action(); }
+    },
+  };
 }
 
 export function ExecutionProfilePicker({ catalog, selection, onSelect, onRefresh, onLoadMore, locked, details }: ExecutionProfilePickerProps) {
   const groupId = useId();
+  const dialog = useProfileDialog();
   if (locked) return <FrozenConfiguration creation={locked.creation} pending={locked.reason === "receipt-pending"} details={details} />;
   const selected = selection.kind === "configured" ? selection.profile : null;
   const missing = selected && catalog.loaded && !catalog.profiles.some(profile => profile.reference.id === selected.reference.id && profile.reference.configDigest === selected.reference.configDigest && profile.reference.runnerId === selected.reference.runnerId);
   return <div className="ep-picker">
-    <Dialog>
+    <Dialog open={dialog.open} onOpenChange={dialog.onOpenChange}>
       <DialogTrigger asChild><Button type="button" variant="outline" className="ep-trigger" aria-label={`Execution profile: ${selected?.configuration.model ?? "Runner default"}`}><span>{selected?.configuration.model ?? "Runner default"}</span><span className="ep-trigger-access">{selected?.configuration.access === "none" ? "No tools" : "Read-only"}</span><span aria-hidden="true">⌄</span></Button></DialogTrigger>
-      <DialogContent className="ep-dialog">
+      <DialogContent className="ep-dialog" onCloseAutoFocus={dialog.onCloseAutoFocus}>
         <DialogTitle>Execution profile</DialogTitle>
         <DialogDescription>Choose a complete configured profile for a new conversation. The choice locks when creation is submitted.</DialogDescription>
         <div className="ep-directory-actions"><Button type="button" variant="outline" onClick={onRefresh} disabled={catalog.loading}>{catalog.loading ? "Loading profiles…" : "Refresh profiles"}</Button><span role="status">{catalog.loaded ? `${catalog.profiles.length} profiles loaded${catalog.nextCursor ? "; more available" : ""}` : "Directory not loaded"}</span></div>
@@ -42,20 +56,21 @@ export function ExecutionProfilePicker({ catalog, selection, onSelect, onRefresh
         {!catalog.loading && catalog.loaded && !catalog.profiles.length && <p>No configured profiles were returned. Runner default remains an explicit compatibility choice.</p>}
         {catalog.nextCursor && <Button type="button" variant="outline" disabled={!catalog.canLoadMore} onClick={onLoadMore}>Load more profiles</Button>}
         <p className="ep-footnote">This is a paged directory, not a global model search. A profile declares configuration; it does not attest that a runner or provider is online.</p>
-        {details}
+        {details?.(dialog.navigate)}
       </DialogContent>
     </Dialog>
   </div>;
 }
 
-function FrozenConfiguration({ creation, pending, details }: { creation: ConversationCreation; pending: boolean; details?: ReactNode }) {
+function FrozenConfiguration({ creation, pending, details }: { creation: ConversationCreation; pending: boolean; details?: ExecutionProfilePickerProps["details"] }) {
+  const dialog = useProfileDialog();
   const access = creation.requested.tools === "none" ? "No tools" : creation.requested.tools === "configured-readonly" ? "Read-only" : `Access: ${creation.requested.tools}`;
   return <section className="ep-locked" aria-label="Locked execution profile">
-    <Dialog>
+    <Dialog open={dialog.open} onOpenChange={dialog.onOpenChange}>
       <DialogTrigger asChild><Button type="button" variant="outline" className="ep-trigger" aria-label={`Conversation settings: ${creation.requested.model}`}>
         <span>{creation.requested.model === "runner-default" ? "Runner default" : creation.requested.model}</span><span className="ep-trigger-access">{access}</span><span className="ep-trigger-lock">{pending ? "Receipt pending" : "Locked"}</span><span aria-hidden="true">⌄</span>
       </Button></DialogTrigger>
-      <DialogContent className="ep-dialog ep-configuration-dialog">
+      <DialogContent className="ep-dialog ep-configuration-dialog" onCloseAutoFocus={dialog.onCloseAutoFocus}>
         <DialogTitle>Conversation settings</DialogTitle>
         <DialogDescription>{pending ? "Creation receipt pending. Retry keeps the same frozen configuration." : "This conversation’s requested configuration is locked. Start a new conversation to choose another profile."}</DialogDescription>
         <section className="ep-requested" aria-label="Requested configuration">
@@ -64,7 +79,7 @@ function FrozenConfiguration({ creation, pending, details }: { creation: Convers
           <details className="ep-identities"><summary>Profile identifiers</summary><dl><dt>Profile</dt><dd>{creation.executionProfile?.id ?? "Unpinned legacy default"}</dd>{creation.executionProfile && <><dt>Runner</dt><dd>{creation.executionProfile.runnerId}</dd><dt>Configuration digest</dt><dd>{creation.executionProfile.configDigest}</dd></>}</dl></details>
           <p className="ep-footnote">Requested configuration only. Actual settings and provider availability are unknown until execution reports them.</p>
         </section>
-        {details}
+        {details?.(dialog.navigate)}
       </DialogContent>
     </Dialog>
   </section>;
