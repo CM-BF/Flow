@@ -1,0 +1,155 @@
+{
+  "at": "2026-10-06T09:58:02.469234+00:00",
+  "kind": "optional bounded private stderr capture; zero-child validation; unexecuted diagnostic driver",
+  "base": "e942a991e3662ef88809ae647ada2fc3bdb17377",
+  "sources": {
+    "apps/runner/src/codex/index.ts": {
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    "apps/runner/src/codex/types.ts": {
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    "apps/runner/src/codex/options.ts": {
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    "apps/runner/src/codex/stderr-capture.ts": {
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    "apps/runner/src/codex/stderr-capture.test.ts": {
+      "bytes": 10273,
+      "sha256": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/immediate-exit.mjs": {
+      "bytes": 379,
+      "sha256": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/run-diagnostics.mjs": {
+      "bytes": 11377,
+      "sha256": "c7452a4d15f34811430437e82e15b8fa554f3a4631832cd8e2710511a836ed59"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/execute-reviewed.mjs": {
+      "bytes": 703,
+      "sha256": "0bc8645de8ff0556ae41be02376bc5f1347590532202a3d5fd708bc0ae2144e2"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/vitest.config.mjs": {
+      "bytes": 451,
+      "sha256": "0010c1017f72aa3810ea3970d72ec5b8f11e21c76a2b7221d54a364e3e11a275"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/tsconfig.json": {
+      "bytes": 467,
+      "sha256": "e36339d24921a36ecd047ec38e3311cfafdf94353ce530c9a5b272926ed82425"
+    }
+  },
+  "unchangedInputs": {
+    "apps/runner/src/codex/framing.ts": {
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    "apps/runner/src/codex/writer.ts": {
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    },
+    "apps/runner/src/codex/fixtures/peer.mjs": {
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+    },
+    "experiments/codex-app-server-conformance/isolation/compose-canary.mjs": {
+      "bytes": 7810,
+      "sha256": "f292ab419840a96f5158203fd4c909860ec9e96f05c35ef44ff0b674bf0ceb85"
+    },
+    "experiments/codex-app-server-conformance/isolation/canary-preload.mjs": {
+      "bytes": 3457,
+      "sha256": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30"
+    },
+    "experiments/codex-app-server-conformance/isolation/default-deny.sb": {
+      "bytes": 6252,
+      "sha256": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779"
+    },
+    "docs/evidence/wpf-mature-02/isolation/bootstrap-inspection.json": {
+      "bytes": 19917,
+      "sha256": "98cd28ee66084d5562c3cfed8e143e246118e68884d2eaf1713ddd11a66d18a1"
+    },
+    "docs/evidence/wpf-mature-02/isolation/r06-binding.json": {
+      "bytes": 384,
+      "sha256": "0b5746cbe159ab5d82291f8a8d087029f59fbd95f7cc3a0406a1dd85e78e8dbd"
+    }
+  },
+  "rawAndReceipts": {
+    "docs/evidence/wpf-mature-02/diagnostics/amend-receipt.json": {
+      "bytes": 853,
+      "sha256": "2c3382bf4115568ea67f9d59e278b108c295382ef0db282e11688a1e87b14610"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-input.json": {
+      "bytes": 3590,
+      "sha256": "d851cc3a46bf255ccdfb608262e39f87ea302d0f53c98688f747f5f9db8e77ba"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/static-checks.json": {
+      "bytes": 580,
+      "sha256": "dbfbe07841223cae5caf960486c7095fa5cfe565874a52bbf21875895f77f70f"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-1.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-final-result.json": {
+      "bytes": 548,
+      "sha256": "416b0a4ba35d058e6905f46ac4364df82c93a411f9ec6d58ab6d0f55d341efec"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-final.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-final.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-1.stdout": {
+      "bytes": 327,
+      "sha256": "5b73d660c45169c8a29c67b1c28a6179118d3287a4bbd084059b2410f41e9471"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-final-result.json": {
+      "bytes": 400,
+      "sha256": "469ca9584a8b02d8948dd243941052ab209cd1c97198d3078a14f25b76f6bea3"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-final.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-final.stdout": {
+      "bytes": 327,
+      "sha256": "5208949c650c740df1e8c2475b46a9554d34200e40861468777dc3a9e9c909dc"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-initial.stderr": {
+      "bytes": 1152,
+      "sha256": "e2630838604096579a4acd7792af5cb9486a62dd9399a65507a8e82030e082bb"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-initial.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "checks": {
+    "distinctSelected": 19,
+    "passed": 19,
+    "failed": 0,
+    "skipped": 0,
+    "unitExit": 0,
+    "strictTypecheckExit": 0,
+    "actualChildSpawns": 0,
+    "diagnosticWindowConsumed": false,
+    "history": "First toolchain invocation failed to load config: zero selected. 18 overlapping cases passed; getter snapshot regression added, final 19/19. No sum of overlapping runs."
+  },
+  "oldManifestsAndRaw": "unchanged history; original failed canary and approved thin consumer not rerun"
+}

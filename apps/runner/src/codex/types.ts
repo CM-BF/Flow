@@ -19,6 +19,12 @@ export interface Limits {
   inboundBytes: number; inboundFrames: number; pendingRequests: number; serverRequests: number;
   requestTimeoutMs: number; initializeTimeoutMs: number; terminateMs: number; killMs: number;
 }
+/** Trusted host only. Must return undefined synchronously; async/thenable results fail observation. */
+export interface PrivateStderrSink { maxBytes: number; write: (chunk: Uint8Array) => unknown }
+export interface StderrCaptureReport {
+  observedBytes: number; writtenBytes: number; truncated: boolean; observerFailed: boolean;
+  streamEnded: boolean; childCloseObserved: boolean; incomplete: boolean;
+}
 export interface TransportOptions {
   spawn: { executable: string; args: string[]; cwd: string; environment: Record<string, string> };
   initialize: {
@@ -27,10 +33,12 @@ export interface TransportOptions {
   };
   limits?: Partial<Limits>;
   signal?: AbortSignal;
+  privateStderr?: PrivateStderrSink;
 }
 export interface CloseReport {
   reason: ErrorCode; child: 'confirmed-exited' | 'unconfirmed';
   exitCode: number | null; signal: NodeJS.Signals | null; remoteEffects: 'unknown';
+  stderrCapture?: StderrCaptureReport;
 }
 export interface TransportSnapshot {
   state: 'starting' | 'ready' | 'closing' | 'closed'; pid: number | null;

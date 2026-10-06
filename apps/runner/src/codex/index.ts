@@ -1,10 +1,11 @@
 import { spawn } from 'node:child_process';
+import { createStderrCapture } from './stderr-capture.js';
 import { JsonLineDecoder, encodeJsonLine } from './framing.js';
 import { BoundedWriter, type WriteTicket } from './writer.js';
 import { normalizeOptions, validText } from './options.js';
 import { CodexTransportError, type CloseReport, type CodexTransport, type ErrorCode, type Inbound, type Json, type ReadyInfo, type Reply, type RequestId, type TransportOptions, type TransportSnapshot } from './types.js';
 export { CodexTransportError } from './types.js';
-export type { CloseReport, CodexTransport, Inbound, Json, Limits, ReadyInfo, Reply, RequestId, TransportOptions, TransportSnapshot } from './types.js';
+export type { CloseReport, CodexTransport, Inbound, Json, Limits, ReadyInfo, Reply, RequestId, PrivateStderrSink, StderrCaptureReport, TransportOptions, TransportSnapshot } from './types.js';
 interface Pending { sent: boolean; ticket?: WriteTicket; resolve: (result: Json) => void; reject: (error: CodexTransportError) => void; cleanup: () => void }
 const object = (value: unknown): value is Record<string, unknown> => typeof value === 'object' && value !== null && !Array.isArray(value);
 const idValid = (id: unknown): id is RequestId => typeof id === 'number' ? Number.isSafeInteger(id) : validText(id, 256);
@@ -16,6 +17,8 @@ export function createCodexTransport(rawOptions: TransportOptions): CodexTranspo
   const { options, limits } = normalizeOptions(rawOptions);
   if (options.signal?.aborted) throw new CodexTransportError('ABORTED', 'not-sent');
   const child = spawn(options.spawn.executable, options.spawn.args, { cwd: options.spawn.cwd, env: options.spawn.environment, shell: false, stdio: ['pipe', 'pipe', 'pipe'] });
+  const stderrCapture = options.privateStderr ? createStderrCapture(options.privateStderr) : undefined;
+  let childCloseObserved = false;
   let state: TransportSnapshot['state'] = 'starting';
   let reason: ErrorCode = 'CLOSED';
   let nextId = 0; let ignoredResponses = 0; let stderrBytes = 0;
@@ -27,6 +30,7 @@ export function createCodexTransport(rawOptions: TransportOptions): CodexTranspo
   const serverRequests = new Map<string, 'queued' | 'delivered' | 'responding'>();
   let receiver: ((value: Inbound | null) => void) | undefined;
   let terminateTimer: NodeJS.Timeout | undefined; let killTimer: NodeJS.Timeout | undefined;
+  let drainTimer: NodeJS.Timeout | undefined;
   let resolveClosed!: (report: CloseReport) => void;
   const closed = new Promise<CloseReport>(resolve => { resolveClosed = resolve; });
   const writer = new BoundedWriter(child.stdin, limits.outboundBytes, limits.outboundFrames, limits.requestTimeoutMs, timeout => stop(timeout ? 'TIMEOUT' : 'WRITE_FAILED'));
@@ -37,12 +41,13 @@ export function createCodexTransport(rawOptions: TransportOptions): CodexTranspo
 
   function finishClose(): void {
     if (state === 'closed') return;
-    state = 'closed'; clearTimeout(terminateTimer); clearTimeout(killTimer);
+    state = 'closed'; clearTimeout(terminateTimer); clearTimeout(killTimer); clearTimeout(drainTimer);
     options.signal?.removeEventListener('abort', onAbort);
     child.stdin.destroy(); child.stdout.destroy(); child.stderr.destroy(); decoder.clear();
     serverRequests.clear();
     receiver?.(null); receiver = undefined;
-    resolveClosed({ reason, child: child.exitCode !== null || child.signalCode !== null ? 'confirmed-exited' : 'unconfirmed', exitCode: child.exitCode, signal: child.signalCode, remoteEffects: 'unknown' });
+    resolveClosed({ reason, child: child.exitCode !== null || child.signalCode !== null ? 'confirmed-exited' : 'unconfirmed', exitCode: child.exitCode, signal: child.signalCode, remoteEffects: 'unknown',
+      ...(stderrCapture ? { stderrCapture: stderrCapture.report(childCloseObserved) } : {}) });
   }
   function stop(code: ErrorCode): void {
     if (state === 'closing' || state === 'closed') return;
@@ -51,12 +56,17 @@ export function createCodexTransport(rawOptions: TransportOptions): CodexTranspo
     reservations.clear(); writer.stop(); decoder.clear();
     receiver?.(null); receiver = undefined;
     child.stdin.destroy();
-    if (child.exitCode !== null || child.signalCode !== null) { finishClose(); return; }
+    if (stderrCapture) {
+      // One absolute drain deadline from first stop; repeated close/chunks never extend it.
+      drainTimer = setTimeout(finishClose, limits.terminateMs + limits.killMs);
+      if (childCloseObserved) { finishClose(); return; }
+      if (child.exitCode !== null || child.signalCode !== null) return;
+    } else if (child.exitCode !== null || child.signalCode !== null) { finishClose(); return; }
     try { child.kill('SIGTERM'); } catch { /* Report unconfirmed if the owned handle cannot be signalled. */ }
     terminateTimer = setTimeout(() => {
-      if (child.exitCode !== null || child.signalCode !== null) { finishClose(); return; }
+      if (child.exitCode !== null || child.signalCode !== null) { if (!stderrCapture) finishClose(); return; }
       try { child.kill('SIGKILL'); } catch { /* The bounded deadline still settles closed as unconfirmed. */ }
-      killTimer = setTimeout(finishClose, limits.killMs);
+      if (!stderrCapture) killTimer = setTimeout(finishClose, limits.killMs);
     }, limits.terminateMs);
   }
   function settle(id: number, error?: CodexTransportError, result?: Json): void {
@@ -120,12 +130,17 @@ export function createCodexTransport(rawOptions: TransportOptions): CodexTranspo
     if (state === 'closing' || state === 'closed') return;
     try { decoder.end(); stop('DISCONNECTED'); } catch { stop('PROTOCOL'); }
   });
-  child.stderr.on('data', (chunk: Buffer) => { stderrBytes = addCount(stderrBytes, chunk.length); });
+  child.stderr.on('data', (chunk: Buffer) => {
+    stderrBytes = addCount(stderrBytes, chunk.length);
+    if (state !== 'closed') stderrCapture?.push(chunk);
+  });
+  if (stderrCapture) child.stderr.on('end', () => stderrCapture.end());
   child.stdin.on('error', () => stop('WRITE_FAILED'));
   child.stdout.on('error', () => stop('DISCONNECTED'));
-  child.stderr.on('error', () => stop('DISCONNECTED'));
+  child.stderr.on('error', () => { stderrCapture?.error(); stop('DISCONNECTED'); });
   child.on('error', () => stop('SPAWN_FAILED'));
-  child.on('close', () => { stop('DISCONNECTED'); finishClose(); });
+  if (stderrCapture) child.on('exit', () => stop('DISCONNECTED'));
+  child.on('close', () => { childCloseObserved = true; stop('DISCONNECTED'); finishClose(); });
   const ready = (async (): Promise<ReadyInfo> => {
     try {
       const result = await sendRequest('initialize', options.initialize as unknown as Json, limits.initializeTimeoutMs);

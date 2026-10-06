@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T09:58:02.469234+00:00",
+  "checks": [
+    {
+      "command": "Node24 --check experiments/codex-app-server-conformance/diagnostics/immediate-exit.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "Node24 --check experiments/codex-app-server-conformance/diagnostics/run-diagnostics.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "Node24 --check experiments/codex-app-server-conformance/diagnostics/execute-reviewed.mjs",
+      "exitCode": 0
+    }
+  ],
+  "diagnosticBatchInvocations": 0,
+  "syntheticChildSpawns": 0,
+  "trueAppServerStarts": 0
+}
