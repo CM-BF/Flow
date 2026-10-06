@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:18 UTC / RELEASE02已独审并main，owner收口中；ATTACH fixture接缝修复、ATTACHI实施 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:21 UTC / RELEASE02已main收口释放；ATTACH fixture接缝修复、ATTACHI实施 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -80,7 +80,7 @@
 | D08 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，原panels，49510580 v2 released | 已main f181；605957 push/clean后9scope停写释放；root实际六计划父关联/take页面核已完成 |
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
-| RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v1三scope | fixed560c/final0bca已Lead独审并main648e；owner仅metadata收口，push双端clean并停写后freshrelease；0浏览器/PG/个人发布 |
+| RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v2 released三scope | fixed560c已Lead独审并main648e；ownerfed5 normalpush双端clean/parser0后全停写，03323 v2已release；0浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | base8701已审DTO/typed ports/官方Threadfixture；六client/HTTP/App仍pending，首canonical d6e6eba clean/parser0已owner建立 |
 | WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711/final628156已独审partial基线待main；8完成/1失败、累计79.322s，0生产优化 |
 | ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展仍待准确输入 |

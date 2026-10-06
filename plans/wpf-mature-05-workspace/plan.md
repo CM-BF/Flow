@@ -24,7 +24,7 @@
 
 - [ ] **WPF-MATURE-05-01** 固定组与pane模型：顶层tab/group包含任意有界pane数组，不写死两栏；首验A与B，最大pane数在实现前明确。
 - [ ] **WPF-MATURE-05-02** 接真实conversation双pane：同顶层tab显示A与B，独立焦点/滚动/未发草稿/上下文，不靠全局focused授权其他pane；真实ConversationList扩展用conversation/view上下文，不借旧task slot冒覆盖。
-- [ ] **WPF-MATURE-05-03** 提供布局操作与恢复：比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。
+- [ ] **WPF-MATURE-05-03** 提供布局操作与恢复：比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。比例键盘与窄屏焦点实际验证；有显著按需加载延迟的tab使用方向键移动focus、Enter/Space手动激活，关闭后焦点落相邻tab或New Chat。
 - [ ] **WPF-MATURE-05-04** 兼容内容种类与窄屏：模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。
 - [ ] **WPF-MATURE-05-05** 固定真实交互验收：实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；另核overview/feed同时服务sidebar的观察与命令生命周期，按visible overview/聊天隐藏overview/pagehidden区分请求，不能仅离开overview就全停；后继裁剪必须保raw稀疏cursor/watermark、阅读anchor/hasEarlier/可重取和单一轻摘要来源，不用DOM推算CPU/heap；关联MATURE06-04，没有实现的3+明确开放。
 
@@ -49,3 +49,5 @@
 WORKSPACEPERF01固定partial基线已足够，不再补齐所有截图/分位数。下一生产片优先05的最小cache回收/观察生命周期：可回收view与正文缓存有界，protected draft/attachment/unknown与未dismiss rejected/queue receipt材料不丢，现steering离开确认不可绕过；views.delete不代表knowledge bindings订阅释放，须原session窄release seam并保selected/project，读cache代次在catch/finally也核，queue详情范围显式；区分关闭DOM、异步读取与JS引用；复用原controllers和唯一mutation authority，不造第二workspace状态源。panels先只读固定当前main，提出小Interface、精确scope及容量/选择策略；反复开关、保护满额、late detail/history与重开原身份为直接验收，原8项沿用、新差异重测。
 
 不同时大改feed/layout，不预占宽App范围；与ATTACHI后继App接线按精确有序窗口交权。Arc组合目标01/02/03完整保留为随后产品片：A与B同顶层tab、swap/merge/比例、独立焦点/滚动/草稿，任意有界pane数组、首验2/3+开放；复用唯一P01真实conversation/view身份。当前仅只读proposal，未take新生产范围，不能沿基线四scope修改产品。
+
+Arc后继键盘参考（root本轮只读来源）：[W3C tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)支持有明显加载延迟时手动激活；[window splitter](https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/)给出可聚焦separator、名称/controls/value/min/max和方向键，但该页面说明模式仍待工作组完成review，不写成完整认证。03/04须用真实比例、窄屏和关闭后焦点验收，不只添加role；此研究不改变当前cache优先级、不新增scope/测试。

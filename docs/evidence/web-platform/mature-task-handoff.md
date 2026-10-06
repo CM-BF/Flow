@@ -12,13 +12,13 @@ Root已批准panels仅原十八scope内的 `apps/server/src/attachments/fixture.
 
 ## RELEASE02：Execution Lead 独审及main已接收
 
-Execution Lead已完成唯一独立窄审，[原始审查回执](release02-lead-independent-review.json)绑定560cbd2b6a5dc43bc18458d1335ced73b0e9254d/0bca82da6208b108c7e073d748d2a157821bba72；去掉as const即与parent字节相同。正式main/origin **648e331c58043cf7ee307300521ab1c628cb2ee1** clean已只读核，组合root types0按Lead归因，未重跑PG/browser。w01已收到仅own metadata收口，正常push双端clean、明确三scope停写后才由管理fresh release03323 v1。此前runner_owner未启动，不等待/重复review。个人backend b1c/static8d8按Lead正式来源未变，本组不操作/采样。
+Execution Lead已完成唯一独立窄审，[原始审查回执](release02-lead-independent-review.json)绑定560cbd2b6a5dc43bc18458d1335ced73b0e9254d/0bca82da6208b108c7e073d748d2a157821bba72；去掉as const即与parent字节相同。正式main/origin **648e331c58043cf7ee307300521ab1c628cb2ee1** clean已只读核，组合root types0按Lead归因，未重跑PG/browser。w01收口最终 **fed5bcdaf84c9d985ce64759c7e1dd82de8da65a** 已normalpush且管理核local=origin/clean、源码对560c零diff。更新时间先出现ISO小数+offset解析失败，释放前由合法owner改为标准UTC，actualparser0后全三scope停写；[03323 v2 RELEASED](release02-main-release-receipt.json)于11:20:14.755Z正式提交，原scope不再写。此前runner_owner未启动，不等待/重复review。个人backend b1c/static8d8按Lead正式来源未变，本组不操作/采样。
 
 ## RELEASE02 固定窄修入口
 
 实现 **560cbd2b6a5dc43bc18458d1335ced73b0e9254d**，最终候选 **0bca82da6208b108c7e073d748d2a157821bba72**，base2e71fabc218df28f6ccb78a927432ae1101c17c5；local=origin/clean已核。唯一变化为fixture固定构建矩阵末尾 `as const`，不改版本常量/运行旅程。作者根严格 `pnpm exec tsc --noEmit` exit0，TS5.9.3转译前后JS逐字相同；没有fixture执行/PG/browser/provider。管理只核diff/hash/双端，不替代独审，[固定审计](release02-fixed-candidate-audit.json)。
 
-唯一canonical：[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md)，证据[README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md)。该固定候选已由上述Lead独审并接收main；03323 v1暂保留到owner完成合法main收口/push停写，不重跑123/八浏览器。
+唯一canonical：[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md)，证据[README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md)。该固定候选已由上述Lead独审并接收main；03323 v2已在owner完成合法main收口/push停写后释放，不重跑123/八浏览器。
 
 ## MATURE05 下一ready优先级已更新
 

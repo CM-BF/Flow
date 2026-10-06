@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 10:56 UTC |
+| 最近更新 | 2026-10-06 11:21 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-05](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | WORKSPACEPERF01 fixed1711 partial基线足够；GO最新优先最小cache回收/观察生命周期，panels只读精确方案；Arc组合随后、不并改feed/layout |
+| 下一可用交付 | 先设计关闭视图后的有界缓存与草稿保护；附件中心验证修复优先，组合标签仍保留后继 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -29,7 +29,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-05-01 | pending | Web co-lead | 顶层tab/group包含任意有界pane数组，不写死两栏；首验A与B，最大pane数在实现前明确。 |
 | WPF-MATURE-05-02 | pending | Web co-lead | 同顶层tab显示A与B，独立焦点/滚动/未发草稿/上下文，不靠全局focused授权其他pane；真实ConversationList扩展用conversation/view上下文，不借旧task slot冒覆盖。 |
-| WPF-MATURE-05-03 | pending | Web co-lead | 比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。 |
+| WPF-MATURE-05-03 | pending | Web co-lead | 比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。比例键盘与窄屏焦点实际验证；有显著按需加载延迟的tab使用方向键移动focus、Enter/Space手动激活，关闭后焦点落相邻tab或New Chat。 |
 | WPF-MATURE-05-04 | pending | Web co-lead | 模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。 |
 | WPF-MATURE-05-05 | pending | Web co-lead | 实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；overview/feed观察与命令生命周期须分离，后台请求仅预算内观测，不从源码推算QPS/heap；关联MATURE06-04，没有实现的3+明确开放。 |
 
@@ -43,7 +43,7 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 实际插件入口覆盖见[root固定main80ba只读研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，沿REQ22–23/WPF-001-05；未browser复现或实施，不扩大STEIRI写权。
 
-WORKSPACEPERF01：panels，base c450，c815bc00 v1四scope，[receipt](../../docs/evidence/web-platform/workspaceperf01-take-receipt.json)。90s含清理/8MiB，仅HTTPfixture真实App累计8/16/32会话观察，生产无改；原TODO05仍pending，首canonical待实际提交。
+WORKSPACEPERF01：panels，base c450，c815bc00 v1四scope，[receipt](../../docs/evidence/web-platform/workspaceperf01-take-receipt.json)。90s含清理/8MiB，仅HTTPfixture真实App累计8/16/32会话观察，生产无改；固定1711/final628156已限定partial独审待main，原TODO05仍pending。
 
 GO/root固定c450的Overview/feed发现已落[原研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)与TODO05；WORKSPACEPERF只在原预算未冻结时补请求分类，否则后继，不扩90s/8MiB、不改生产。
 
