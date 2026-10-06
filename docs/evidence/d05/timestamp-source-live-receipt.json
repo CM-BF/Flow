@@ -1,0 +1,118 @@
+{
+  "observedAt": "2026-10-06T19:02:38.991Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "22a0806bc2465e11096949618113833f31766b19",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T19:02:39.063Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "count": 173,
+  "selected": [
+    {
+      "id": "WPF-DPERF05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T19:02:32.230Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps/plans/wpf-dperf05-status-timestamps/status.md",
+        "syncedAt": "2026-10-06T19:02:38.991Z",
+        "stale": false,
+        "ageHours": 0.0019419444444444445
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/dashboard-status-timestamps",
+        "head": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T19:02:39.081Z"
+      },
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已修复独审发现的主更新时间边界，等待固定复审。",
+        "next": "支持高精度 UTC，坏时间不会中断任务状态读取。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "errors": [],
+      "review": {
+        "state": "changes_requested",
+        "record": "CHANGES_REQUESTED",
+        "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2"
+      },
+      "implementationProof": "unchanged"
+    },
+    {
+      "id": "SVC05R01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T18:58:29.652Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/plans/svc05-retained-web-compatibility/status.md",
+        "syncedAt": "2026-10-06T19:02:38.991Z",
+        "stale": false,
+        "ageHours": 0.0774975
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/personal-retained-web-compatibility",
+        "head": "40898a0499a5d4e02d5ef4fd9de03b66356ad741",
+        "dirty": true,
+        "changedFiles": 2,
+        "observedAt": "2026-10-06T19:02:39.104Z"
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "两份保留网页的检查准备已通过独立审查；实际页面兼容结果仍待隔离运行。",
+        "next": "当前Web检查归还资源后，执行一次两份保留网页的真实检查；尚无通过报告。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "errors": [],
+      "review": {
+        "state": "unknown",
+        "record": "APPROVED_SOURCE_PREPARATION_ONLY target 25b70880619037ddd2ad84ba2790ad23267dc5f9；[review.md](review.md)",
+        "target": "25b70880619037ddd2ad84ba2790ad23267dc5f9"
+      },
+      "implementationProof": "unchanged"
+    }
+  ],
+  "deployment": {
+    "previousOwnPid": 21380,
+    "previousConfirmedAbsent": true,
+    "newExecSession": 11863,
+    "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+    "source": "22a0806b",
+    "port": 4320
+  },
+  "personalChanges": 0,
+  "userTabsReloaded": 0,
+  "newProductTests": 0
+}
