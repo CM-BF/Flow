@@ -2,16 +2,16 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:13 UTC / 2026-10-06 01:05 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:05 UTC / 2026-10-06 02:05 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner` |
 | Branch | `codex/m1-runner` |
 | 工作基线 / 本记录核验时HEAD | F00 `542f70ba430b3236055d736198bfd5444c684348` / 实现 `b393a5196b687bf81fd65ee7785ee198006e344b` |
 | 工作树dirty状态 | 实现提交后干净；本状态记录作为后续文档提交，review时重新核对最终HEAD |
-| 工作分支状态 | review P1 修复已完成，新增并发落盘与旧前缀恢复回归通过，待提交后复审 |
-| 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
-| Review | [review.md](review.md)，PASSED：独立 reviewer 绑定 `338263736e2cf64efd32037cfc92bcb49069d9ab` 复审通过；见下方记录 |
+| 工作分支状态 | completed；review P1 修复已通过独立复审，已随 M1 入 main |
+| 已集成main状态 / HEAD | 已集成 main；固定观察点 `e845eb069c594989117fadf380335650efef27a2`，3382637 为其 ancestor |
+| Review | [review.md](review.md)，APPROVED：独立 reviewer 绑定 `338263736e2cf64efd32037cfc92bcb49069d9ab` 复审通过；见下方记录 |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -32,11 +32,11 @@
 ## 阻塞 / 风险 / 未验证
 
 - 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。
-- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。
+- R01 单独测试不等同系统验收；Execution Lead 已完成 M1 系统验收并集成，旧分支 workflow 推送拒绝属于历史交付路径信息，不再是主线阻塞。
 
 ## 下一步与handoff
 
-实现与自查完成，已把 `b393a5196b687bf81fd65ee7785ee198006e344b` 交给 Execution Lead；本次文档提交后附最终HEAD供独立review。尚未获得review approval，尚未合并 main；R02真实harness另行派工。
+R01 已完成独立复审与 main 集成，无实现待办。本次只同步 plan/status 元数据，不改实现或历史检查结果。下列时间段保留当时事实，后续集成状态以上表为准。
 
 ## Review 修复启动 — 2026-10-06 01:11 UTC
 
@@ -49,3 +49,7 @@
 ## 独立复审结果 — 2026-10-06 01:14 UTC
 
 assignment_review / gpt-6-astra 在实现不变的 `338263736e2cf64efd32037cfc92bcb49069d9ab` 独立复跑 28/28、类型检查和 diff 检查，确认 P1 snapshot 与 P2 ACK prefix 均已解决，无新增 finding。该结论由 reviewer 只读回传，owner 如实登记；未将空模板当 approval。Main 尚未合入；Execution Lead 正在 I01 集成工作树验证，不能提前标记 main 能力。
+
+## 当前集成同步 — 2026-10-06 02:05 UTC
+
+经 Execution Lead 确认 M1 完成，并只读核验 338263736e2cf64efd32037cfc92bcb49069d9ab 是 main 观察点 e845eb069c594989117fadf380335650efef27a2 的 ancestor。R01 plan 改 completed；无需跟随每个 main metadata HEAD 追写。历史分支 workflow 推送拒绝保留为交付路径说明，不当作当前 main 阻塞。本工作段 clean-code 文档复核只修正当前状态与历史记录的区分，未重跑工程测试或模型。

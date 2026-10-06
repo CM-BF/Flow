@@ -3,8 +3,8 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | R01 |
-| 状态 | `in-progress` |
-| 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
+| 状态 | `completed` |
+| 创建日期 / 最近更新 | 2026-10-05 / 2026-10-06 |
 | 父计划 | [FLOW-003](../flow-003-m1-execution/plan.md) |
 | Owner / model | runner_owner / gpt-6-astra（至少Sol） |
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner` / `codex/m1-runner` |
@@ -19,7 +19,7 @@
 - [x] **R01-03** fixture各状态、决策、取消、产物和指定verifier
 - [x] **R01-04** 公开runner/harness测试、clean-code与提交交付
 
-以上勾选表示功能分支交付，证据绑定 `b393a5196b687bf81fd65ee7785ee198006e344b`；独立review与main集成仍待执行，计划状态保持 `in-progress`。
+以上 TODO 已完成。历史初版证据绑定 b393a51；修复经独立复审 target `338263736e2cf64efd32037cfc92bcb49069d9ab` 通过，已随 M1 集成 main。本次同步以 `e845eb069c594989117fadf380335650efef27a2` 为固定观察点，详见 status。
 
 ## 验证和交付
 
@@ -32,4 +32,4 @@
 - 仅实现 fixture 六种场景与 `flow.text` v1；真实 Claude 属于后续 R02，当前不调用模型。
 - 测试使用 loopback 动态端口和独立临时目录模拟中心 HTTP 接口；本分支不启动或迁移数据库。与真实 C01/PostgreSQL 的联调由 I01 验证。
 
-2026-10-06 review 修复：固定并发 emit 的持久快照与发送批次一致性；ACK 按连续 durable prefix 验证。修复回归与具体提交见 status，独立复审待执行。
+2026-10-06 review 修复：固定并发 emit 的持久快照与发送批次一致性；ACK 按连续 durable prefix 验证。修复回归与具体提交见 status，独立复审通过并已随 M1 入 main。
