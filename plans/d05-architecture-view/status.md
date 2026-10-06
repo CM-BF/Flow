@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:29 UTC / mainec50957f |
+| 最近更新 / 最近main同步核验 | 2026-10-06T14:35:06.228081+00:00 / main59ef2134 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 158个唯一来源已显示；用量说明正在审查，执行等待改进和目标入口已进入主线。 |
+| 当前产出 | 159个唯一来源已显示；用量读口已进入主线，持续推进目标的实现已登记。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -115,3 +115,5 @@
 2026-10-06 14:10:11 UTC：[158来源真实回执](../../docs/evidence/d05/cost-wait-158-live.json)记录14:09:14.587Z，四源live/issues空，人读完整。仅替换已核自有4320，架构基线/个人服务/用户tab不变。
 
 2026-10-06 14:29 UTC：新增O14唯一source goal-persistent-progression/plans/o14-goal-progression，固定首e0569488/claimf2f8e15av1；159源候选registry校验ID唯一、Plan/status/review存在、parser0/human完整。仅注册/链接检查，未重跑产品/架构；实际4320仍158，随本批已审COST发布一次加载159。[登记](../../docs/evidence/d05/o14-registry-validation.json)。
+
+2026-10-06T14:35:06.228081+00:00：实际4320于14:29:38.922Z返回159来源，O14/COST01A/F01/OPS current且issues=[]。见[o14-159-live](../../docs/evidence/d05/o14-159-live.json)。后续owner进度由原source自动聚合，固定aeb架构未改，个人页面未刷新。
