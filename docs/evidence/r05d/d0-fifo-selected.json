@@ -1,0 +1,10 @@
+{
+  "command": "pnpm exec vitest run apps/runner/src/configuration.test.ts -t replaced with a FIFO",
+  "exitCode": 0,
+  "source": "direct process stdout/stderr",
+  "reason": "Independent P2 review: stat/open replacement to FIFO must not block and opened handle must close",
+  "selected": 1,
+  "passed": 1,
+  "unselected": 19,
+  "failed": 0
+}

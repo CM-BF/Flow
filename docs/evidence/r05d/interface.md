@@ -13,4 +13,4 @@ Module职责：configuration拥有有界文件读取、入口选择与兼容view
 
 固定入口：`configureCodexLaunch(configuration: unknown, createTransport?: CodexTransportFactory)`严格解析既有profile，缺factory明确失败，然后委托已审configureCodexHarness。`loadCodexRunnerConfiguration(absoluteFile, factory?)`与`loadSelectedRunnerConfiguration({claudeManifestFile?,codexManifestFile?,codexTransportFactory?})`仅加载/构造，后者互斥显式原生文件。原`loadRunnerConfiguration`/`loadRunnerAdapters`保持Claude具体profile类型与旧默认；新增泛型RunnerConfiguration默认仍为旧Claude型。
 
-文件读取同一私有Module服务Claude与Codex，先stat再open/fstat，最多分配/读取16,385bytes探测增长，finally关闭handle，拒绝非普通文件和超限；没有无界readFile。固定recipe、环境、任意args不来自此JSON。main/环境变量选择尚未接线，完整Codex实际调用仍unsupported。72个配置/旧profile/descriptor/main并发消费者通过，不证明真实app-server。
+文件读取同一私有Module服务Claude与Codex，先stat，再O_RDONLY|O_NONBLOCK open/fstat（不依赖前stat防FIFO替换），最多分配/读取16,385bytes探测增长，finally关闭handle，拒绝非普通文件和超限；没有无界readFile。固定recipe、环境、任意args不来自此JSON。main/环境变量选择尚未接线，完整Codex实际调用仍unsupported。72个配置/旧profile/descriptor/main并发消费者通过，不证明真实app-server。
