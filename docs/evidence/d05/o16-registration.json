@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-06T18:18:27.858Z",
+  "count": 171,
+  "task": {
+    "id": "O16",
+    "title": "连续目标的原生验收",
+    "role": "技术验证",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "planDir": "plans/o16-continuous-goal-acceptance",
+    "evidenceDir": "docs/evidence/o16"
+  },
+  "firstCanonical": "59249f90",
+  "base": "8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974",
+  "claim": {
+    "requestId": "o16-native-goal-acceptance-take-20261006-1818",
+    "action": "take",
+    "committedAt": "2026-10-06T18:16:25.736Z",
+    "claim": {
+      "claimId": "f72ba7c9-52e9-4037-aed0-27af9ed1aae6",
+      "version": 1,
+      "taskId": "O16",
+      "lead": "astra_ultra_execution_lead",
+      "worker": "native_center_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+      "branch": "codex/continuous-native-goal-acceptance",
+      "scope": [
+        "docs/evidence/o16",
+        "experiments/continuous-goal-acceptance",
+        "plans/o16-continuous-goal-acceptance"
+      ],
+      "role": "writer",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-06T18:16:25.736Z",
+      "createdAt": "2026-10-06T18:16:25.736Z"
+    }
+  },
+  "parseErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "已明确规划和执行分段确认的验收路径，正在准备可恢复的零模型旅程。",
+    "next": "可核对调用预算、确认边界和中心自动推进的独立验收入口。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；仅只读proposal输入核对，0import/test/PG/provider"
+  },
+  "deployment": "pending",
+  "provider": 0
+}
