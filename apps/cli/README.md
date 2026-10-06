@@ -45,3 +45,9 @@ The required stable key recovers the same receipt after a lost response; a confl
 `plugin install-change OP --input FILE --key KEY` accepts `{ "action": "start" | "reconcile", "reason": "..." }`. All mutation files are bounded to 4096 bytes and strictly validated. Conflicts exit 3 without retry; unknown transport outcomes keep the original key/body. Static `installed` means verified local material only, not enabled, loaded, callable or isolated. Reconciliation without proven execution settlement remains unknown.
 
 These routes are disabled until the center host sets `FLOW_PLUGIN_INSTALL_CONFIG` to an owned 0600 regular JSON file. It contains only `artifactStore: {root, storeId}` and `materialStore: {root, storeId, allowedDigests}`; roots must be canonical absolute paths and at most 512 permitted SHA-256 digests are accepted. This private configuration is capped at 65536 bytes, cannot inject credentials, URLs or a lifecycle callback, and is never a public command argument. Existing personal preview configuration is unchanged.
+
+## Bounded goal progression
+
+`goal authorize-progress GOAL --input FILE --key KEY` explicitly authorizes a finite set of existing node/input versions and registered read-only profiles, exact external dependencies, expiry and admission budget (at most 20 nodes). JSON is bounded to 65536 bytes and validated against the public authorization contract. The center continues eligible dependency work after this client exits; it never derives input from a node title.
+
+`goal progression GOAL PROGRESSION` reads the durable state and reason for waiting or stopping. `goal revoke-progress GOAL PROGRESSION --input FILE --key KEY` accepts `{ "reason": "..." }` and stops later admissions; it does not cancel already admitted tasks. Mutations require the original stable key/body for recovery and do not retry a conflict. Mechanical verification within this authorization remains distinct from independent owner acceptance.

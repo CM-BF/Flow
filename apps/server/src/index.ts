@@ -1,3 +1,4 @@
+import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
 import { migratePluginInstallations } from './plugin-installations/migration.js';
 import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
@@ -97,6 +98,7 @@ export async function createServer(options: ServerOptions) {
     await migrateContextObservationHistory(pool);
     await migrateBrowserSessions(pool);
     await migratePluginInstallations(pool);
+    await migrateGoalProgressions(pool);
     authentication = await createBrowserSessionAuthentication(pool, options);
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
     if (corsOptions) await app.register(cors, corsOptions);
@@ -114,21 +116,26 @@ export async function createServer(options: ServerOptions) {
     }).catch(error => app.log.error(error)).finally(() => { pendingSweep = undefined; });
   }, Math.min(1000, leaseMs));
   sweep.unref();
-  let pendingQueueScan: Promise<void> | undefined;
+  let pendingWorkScan: Promise<void> | undefined;
   let closing = false;
-  const scanQueue = () => {
+  const scanWork = () => {
     if (closing) return Promise.resolve();
-    return pendingQueueScan ??= scanConversationQueue(pool, boss).then(result => {
-      for (const error of result.errors) app.log.error(error);
-    }).catch(error => app.log.error(error)).finally(() => { pendingQueueScan = undefined; });
+    return pendingWorkScan ??= (async () => {
+      // Each module owns its durable admission rules; this lifecycle only schedules bounded sweeps.
+      for (const scan of [scanConversationQueue, scanGoalProgressions]) {
+        if (closing) break;
+        try { for (const error of (await scan(pool, boss)).errors) app.log.error(error); }
+        catch (error) { app.log.error(error); }
+      }
+    })().finally(() => { pendingWorkScan = undefined; });
   };
   // Module tests may drive promotion explicitly; the production entry always uses automatic scanning.
-  const queueSweep = options.automaticQueueScan === false ? undefined : setInterval(() => { void scanQueue(); }, 1000);
+  const queueSweep = options.automaticQueueScan === false ? undefined : setInterval(() => { void scanWork(); }, 1000);
   queueSweep?.unref();
-  if (options.automaticQueueScan !== false) app.addHook('onReady', scanQueue);
+  if (options.automaticQueueScan !== false) app.addHook('onReady', scanWork);
   app.addHook('preClose', async () => {
     closing = true; clearInterval(queueSweep);
-    await Promise.all([pendingQueueScan, packageWorker?.stop()]);
+    await Promise.all([pendingWorkScan, packageWorker?.stop()]);
   });
   app.addHook('onClose', async () => {
     clearInterval(sweep);
@@ -153,6 +160,7 @@ export async function createServer(options: ServerOptions) {
   registerGoalRoutes(app, pool, boss);
   registerGoalDeliveryRoutes(app, pool);
   registerGoalNativeExecutionRoutes(app, pool, boss);
+  registerGoalProgressionRoutes(app, pool);
   registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
   registerAssistantStreamRoutes(app, pool);
   registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });
