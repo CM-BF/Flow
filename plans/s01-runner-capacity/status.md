@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:12:22 UTC / 历史aae1eb1054d75e78273e7c91ed048aeac80195da |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:21:13 UTC / idle候选只读固定main4df08fb3186f4af4373554deb93406214f44fc63；历史集成aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | A/B固定生产A=a3e670b906c1b65d586b7730ca19da83109f1dcc、B=aae1eb1054d75e78273e7c91ed048aeac80195da；source d3ba03a88b8d25d134b7abade7f55f8198b182ba；本次metadata前HEAD dcc630790a9a063cb756ad4e576b0d5ab5aed8c5 clean |
-| 工作树dirty状态 | metadata前clean；本次仅owner状态/审批/ready收口，source与raw冻结 |
+| 工作基线 / HEAD | A/B固定生产A=a3e670b906c1b65d586b7730ca19da83109f1dcc、B=aae1eb1054d75e78273e7c91ed048aeac80195da；source d3ba03a88b8d25d134b7abade7f55f8198b182ba；本次metadata前HEAD65a9c7b4b577d49ff302581d590b31f3425cd900 clean；idle固定main4df仅只读，未合入 |
+| 工作树dirty状态 | metadata前clean；本次仅原plan/status登记低优先idle候选，所有source/raw冻结 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：64 distinct pure/fake分次最终覆盖=原61+新增3；17为重叠定向检查，不加为78；局部strict0；0actual |
+| 检查状态 | idle候选NOT_RUN（只读登记）；历史A/B PASSED：64 distinct pure/fake分次最终覆盖=原61+新增3；17为重叠定向检查，不加为78；局部strict0；0actual |
 | 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
 | 实现目标 | 新A/B d3ba03a88b8d25d134b7abade7f55f8198b182ba；原da932 CHANGES_REQUESTED历史保留，唯一P2已关闭 |
 | 实现范围 | 新claim仅mixed目录、mixed-ab-preparation、mixed-ab-run、原plan目录；无产品写权 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | A/B准备已独审并由Mika接收；实际窗口NOT_OPEN，未导出固定输入/未运行负载 |
-| 下一可用交付 | [已审准备入口](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md)；等待资源条件与Mika唯一OPEN，不自行执行 |
-| 当前阻塞 | 实现NONE；资源RESOURCE_HOLD（条件PENDING）；实际窗口NOT_OPEN |
+| 当前产出 | 低优先idle journal候选已登记固定源码/静态计数与15s小探针设计，未实现/未运行；历史A/B准备批准不覆盖它 |
+| 下一可用交付 | CORE/Codex优先；idle候选待精确evidence scope与固定4df依赖闭包后再准备。A/B原[已审入口](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md)仍NOT_OPEN |
+| 当前阻塞 | idle未获实现/运行窗口，专属evidence需amend且本WT运行时不等于4df；A/B原资源条件PENDING/NOT_OPEN，不沿用旧df |
 | 需用户决定 | NONE |
-| Review | APPROVED preparation d3ba03a88b8d25d134b7abade7f55f8198b182ba；architecture_read 14:11:28 UTC、Mika接收14:12:06 UTC，0剩余P1/P2；非实际窗口授权 |
+| Review | idle候选NOT_STARTED；历史A/B APPROVED preparation d3ba03a88b8d25d134b7abade7f55f8198b182ba；architecture_read 14:11:28 UTC、Mika接收14:12:06 UTC，0剩余P1/P2；非实际窗口授权 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | status_read / mika | 旧W1/W2冻结；mixed唯一窗口A16实测部分有效、整体FAIL/B未启动，无补跑。ACK/browser仍未执行 |
 | S01-05 | in-progress | architecture_read / Lead | W1/W2结果历史APPROVED；mixed结果6a5961a独审APPROVED仅如实失败；新窗口准备/结果另审 |
-| S01-06 | in-progress | 后继独立owner / Mika / Lead | [长驻wait登记](../../docs/evidence/s01/long-lived-wait/README.md)；[独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：核心已独审并集成main d7e1e64，根检查通过；启动参数及真实provider另计 |
+| S01-06 | in-progress | status_read / 后继独立owner / Mika / Lead | idle候选见本plan末节（只读/NOT_RUN）； [长驻wait登记](../../docs/evidence/s01/long-lived-wait/README.md)；[独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：核心已独审并集成main d7e1e64，根检查通过；启动参数及真实provider另计 |
 
 ## 历史权限、优先级与事实边界（当前接收见末节）
 
@@ -207,3 +207,6 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 14:09:19 UTC P2修复固定：`d3ba03a88b8d25d134b7abade7f55f8198b182ba`，[delta manifest](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/manifest.json) SHA `4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040`。3fake反例全红→17绿（3new+14direct）/strict0，旧61未重跑。原87bindings按fixedGit完整保留，当前仅ab-input/ab-driver声明差异；977固定输入清单不变未重做。待原reviewer增量复审，actual RESOURCE_PENDING/NOT_OPEN，低空间仅metadata封存。
 
 2026-10-06 14:12:22 UTC：architecture_read/gpt-6-astra于14:11:28 UTC正式增量APPROVED固定d3ba03a88b8d25d134b7abade7f55f8198b182ba，Mika/root于14:12:06 UTC独立复核18项并正式接收，唯一P2 CLOSED、0剩余P1/P2。[审批回执](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/independent-review.json)、[准备入口](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md)。原da932撤回APPROVED→CHANGES_REQUESTED历史及所有source/raw/manifest保留；64 distinct=原61+新增3的分次最终覆盖，17只是重叠定向，0新增检查/真实导出/PG/容量。当前仅小metadata收口；RESOURCE_HOLD/资源条件PENDING/窗口NOT_OPEN分别记录。须fresh磁盘至少1GiB+512MiB，并确认共享PG/WAL条件、串行安排和Mika唯一OPEN后才可执行；不为等空间再测或持续轮询。新A/B未main，历史main事实不变，claim508f v1修复/接收范围保留。
+
+
+2026-10-06 17:21:13 UTC：GO低优先idle-runner候选已在原plan的S01-06登记。fresh17:20:13.977账本508f9c85-a27c-4382-bfe9-caca43be4b0e v1 ACTIVE，4scope仍本owner/WT/branch；故本次仅合法plan/status小写，拟新idle证据目录不在scope、未创建。固定main4df三blob核符，每完整明确空轮静态2replace/4sync，不是实际物理IO/功耗结论。当前WT runtime旧blob且无attempt-wakeup，未来必须绑定固定4df闭包，不能直接执行旧树。候选1runtime/capacity1/active0、≤12空claim/15s含清理/raw+ownTMP≤2MiB，0PG/provider/install；未实现/未运行，不宣称100agents实测。原A/B64项、历史128/旧raw不变；未碰FKye9L，native source ready时优先返回只读审。clean-code复核只登记实际边界与解除条件，不新增框架。

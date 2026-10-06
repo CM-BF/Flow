@@ -107,3 +107,42 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 ## S01-04 / S01-05 A/B准备（2026-10-06 13:43 UTC）
 
 沿既有TODO实施固定A3e/Baae、共同observerc259、单一300s/512MiB总账本，详见[Interface](../../docs/evidence/s01/mixed-ab-preparation/interface.md)。只授权准备与pure/fake验证；实际窗口NOT_OPEN。产品唯一events差异，旧raw冻结；原未验收ACK/browser/native/SLO边界不变。
+
+
+## S01-06 空闲 runner journal 成本候选（2026-10-06 17:21 UTC，仅登记/只读）
+
+优先级低于 CORE、真实 Codex 与当前 prefix-hash 工作；本候选属于原 S01 / REQ >100 验收，不新建 benchmark 大任务。当前没有实现、测试或实际探针授权，状态 NOT_OPEN。不得据此修改 poll、fsync、claim intent、恢复逻辑或增加 broker/FSM。
+
+### 固定事实与规模口径
+
+只读固定 main `4df08fb3186f4af4373554deb93406214f44fc63`，三 Git blob 已逐项核对：
+
+| 输入 | Git blob | 实际代码含义 |
+| --- | --- | --- |
+| apps/runner/src/runtime.ts | b6393a6a043233ce0bf674a3ec3b47fb463e722a | :81 begin → :86 claim HTTP → :89 accept(null) → :95 wait；默认 poll 500ms |
+| apps/runner/src/admission-journal.ts | 9ede38d52a764cb6135853648f1473028723d8fb | :83–93 每次 change 为 writeFile、file.sync、rename、directory.sync |
+| apps/runner/src/attempt-wakeup.ts | 6d5cb24b0ebff20a06c83e08f4cbd24c3807b41d | 单 waiter/有界订阅不移除空领取的 journal 持久化 |
+
+因此正常完整空轮静态为 **2 次原子替换、2 次 writeFile、2 次 file.sync + 2 次 directory.sync**。begin 已持久而未发送的停止分支同样可能产生一对写入，不能把所有 journal 变化都算成 HTTP 空轮。默认500ms是每轮响应/持久化后再等待，不能直接当精确2Hz；只能以实际相邻请求时刻计算。`writeFile` API 次数也不等于内核 write 次数。
+
+[Node24.20 FileHandle.sync 官方说明](https://nodejs.org/download/release/v24.20.0/docs/api/fs.html#filehandlesync)表示请求将该描述符数据刷新到存储设备，具体由 OS/设备实现决定。以上不是物理 I/O、写放大、功耗、SSD寿命或小时驻留实测。100 agents不等于100 runner：报告必须分列 processCount、runtimeInstances、configuredCapacity、activeAttempts；本候选只1 runtime/本地capacity1/active0，不声称测过100 agents，也不拿旧128执行窗替代空闲成本测量。
+
+### 最小未来探针，不在本轮执行
+
+沿公开 `runRunner`，借鉴固定 `apps/runner/src/runtime-shutdown.test.ts:29–70` 的动态127.0.0.1 listener与私有journal；固定响应 `{assignment:null,remainingLeaseMs:0}`。不得直接导入整测试文件：其中包含其它case和强停child；也不使用 runtime-capacity.test.ts，因为其静态导入真实server/PG闭包。FlowClient.claim固定index.ts:571使用原POST/空body，原auth/signal/no retry保持。
+
+拟只1 runner、最多12个空claim，保留默认500ms和原requestTimeout1500ms；在第12个请求已接收时正常abort，再返回明确null，等待原runRunner把intent持久清空，保证不出现第13请求。到工作截止仍未达12如实少计，不加快poll补数。全局从固定输入校验开始≤15s，拟前10s工作、后5s收束/证据；只有owned handles，未知清理保留精确资源身份且结果UNKNOWN，截止不当作OS已取消。最终新journal必须inFlight=null/assignments=[]，0adapter、0heartbeat、0event；异常/超时不得删journal求通过。未知旧journal完全不接触。
+
+计量分两层：实际记录HTTP已接收/明确null响应、begin/accept完成、单调时刻、最终journal与资源关闭；另用只针对本次私有journal路径的现有Vitest fs mock seam透传真实open/writeFile/sync/rename（不修改生产源），可计API发起/成功/失败、文件与目录sync分列。透传this/Promise/错误/返回值，句柄仅包装一次，所有全局替换finally恢复；先由fake覆盖透传，实际探针才能声称真实调用数。若该seam未获固定验证，sync列仍只报静态预测，绝不由HTTP数冒充测到sync。不得用耗时相减声称纯磁盘延迟；注明观测开销/同机负载。
+
+原始记录、CLI、cache和ownTMP合计≤2MiB：拟raw/receipt≤128KiB、journal/临时文件≤128KiB、余量包括工具cache/日志，越限停止新增、不通过删除扣回累计写入。不复制依赖/产品全树；任何自有导出也计2MiB。实际进程拓扑、外壳到exit总时长、计量/清理余量必须在固定实现前确定，不能仅把test函数耗时写成完整15s。0PG/provider/auth凭据读取/install，不停止个人或他队服务。
+
+### 写权与输入解除条件
+
+17:20:13.977Z fresh ledger：`508f9c85-a27c-4382-bfe9-caca43be4b0e` v1 ACTIVE，mika/status_read、当前WT/branch，4literal为 `experiments/runner-capacity/mixed`、两个 mixed-ab evidence目录、`plans/s01-runner-capacity`。旧8e4660 claim已v4 RELEASED。本次只更新原plan/status，不把idle证据塞入A/B目录。
+
+候选未来源码路径 `experiments/runner-capacity/mixed/idle-claim.test.ts` 与定向配置属现mixed scope，但当前未授权实施。专属证据拟 `docs/evidence/s01/idle-claim-cost` **不在现claim**，必须先获允许并原子amend；无需产品source scope。未来实际只有固定实现独审+Mika明确OPEN后执行一次，失败无自动重跑。
+
+当前S01 HEAD `65a9c7b4b577d49ff302581d590b31f3425cd900` clean，runtime blob为bdbad6e8而非目标b639，HEAD没有attempt-wakeup.ts；不能直接测这棵旧运行时冒充4df。实施前需要受控固定4df只读输入/准确loader绑定；不盲merge主线、改历史A/B或复制另一框架。最小执行入口为runtime.ts和新probe，实际静态import还需admission-journal、attempt-wakeup、goal-tool/graph绑定、active-steering/proposal、fixture、verifier、attempt-control、outbox、native-harness/settlement、@flow/client及其contract与zod闭包；这些模块即使无attempt也要能解析。当前只核到上述直接依赖，完整转递入口/依赖metadata/动态读取尚待固定manifest，未宣称可启动。既有shutdown测试只作参考只读输入，不运行其原全部cases。
+
+方法：沿已固定本地 find-skills、clean-code（sickn33 bdacd76）、codebase-design；本段检查接口复用、静态与实际分层、错误/unknown保留、资源闭包和不制造新状态机。0测试、0目标、0PG、0物化；既有A/B source/raw及128结果原样，64 pure checks仍只属于此前A/B。
