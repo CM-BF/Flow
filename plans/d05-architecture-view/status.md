@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:14:00 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:12:16 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -56,4 +56,4 @@
 
 本次122源部署与领取配置修正见[实际回执](../../docs/evidence/d05/native-tui-registry-live.json)；首次遗漏环境导致unknown保留，10:00:58.896Z账本available。临时独立浏览器核122与父任务按钮后已关闭，未改用户tab。R05D首canonical后登记123源候选，metadata不重跑架构/产品测试。
 
-2026-10-06 10:14 UTC：123源实际回执见[native-launch-registry-live.json](../../docs/evidence/d05/native-launch-registry-live.json)，原R05D人读缺项保留为当时事实、由owner修正。新增ENG01A与WPF-ATTACH01两个真实canonical至125源候选；仅解析、链接和唯一性核对，不重跑架构或产品。
+2026-10-06 10:12:16 UTC：123源实际回执见[native-launch-registry-live.json](../../docs/evidence/d05/native-launch-registry-live.json)，原R05D人读缺项保留为当时事实、由owner修正。新增ENG01A与WPF-ATTACH01两个真实canonical至125源候选；仅解析、链接和唯一性核对，不重跑架构或产品。
