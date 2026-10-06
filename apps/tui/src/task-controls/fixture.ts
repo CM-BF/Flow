@@ -106,7 +106,9 @@ export class CancelJourney {
   }
   private adapter(): HarnessAdapter {
     return { name: 'claude', version: 'claude-sdk-0.3.290-v1', run: async context => {
-      const id = context.task.id; this.activeAdapters.add(id);
+      const id = context.executionIdentity?.taskId;
+      if (!id) throw Error('Fixture requires the runner-assigned task identity');
+      this.activeAdapters.add(id);
       try {
         await context.emit({ type: 'session', nativeSessionId: context.task.resumeSessionId ?? randomUUID(),
           adapterVersion: 'claude-sdk-0.3.290-v1', resources: ['fixture:no SDK/provider'] });
