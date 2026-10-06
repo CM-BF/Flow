@@ -1,0 +1,2118 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "tasks": [
+        {
+          "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:17.472Z",
+          "updatedAt": "2026-10-06T12:23:17.704Z"
+        },
+        {
+          "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:13.775Z",
+          "updatedAt": "2026-10-06T12:23:14.191Z"
+        },
+        {
+          "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:06.042Z",
+          "updatedAt": "2026-10-06T12:23:06.511Z"
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 735
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversations": [
+        {
+          "id": "170b8ef4-79cd-440d-97d5-18e247251acc",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:17.450Z",
+          "updatedAt": "2026-10-06T12:23:17.474Z"
+        },
+        {
+          "id": "4be6c390-5908-4388-a4c0-0f72c59b4746",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "requested": {
+            "model": "runner-default",
+            "tools": "configured-readonly",
+            "thinking": "disabled"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:06.017Z",
+          "updatedAt": "2026-10-06T12:23:06.049Z"
+        },
+        {
+          "id": "8516f6d8-f355-4a35-a85c-af4065ecb6b1",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:13.756Z",
+          "updatedAt": "2026-10-06T12:23:13.779Z"
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 1268
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles?limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "svc05-synthetic",
+            "resolvedModel": null,
+            "displayName": "svc05-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "createdAt": "2026-10-06T12:23:07.596Z",
+          "configuration": {
+            "model": "svc05-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 30000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          }
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 1032
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "workspaceId": "personal",
+      "entries": [
+        {
+          "id": "workspace-1",
+          "cursor": 1,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "accepted:dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:06.042Z"
+          }
+        },
+        {
+          "id": "workspace-2",
+          "cursor": 2,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "ef314766-ce11-4db7-92f2-9dec0ee0877b",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:06.499Z",
+            "reference": {
+              "id": "f9620c97-a569-4021-958b-301d4ef776c2",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-3",
+          "cursor": 3,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "3963485d-adba-4951-8c2d-f3fb45cc20b3",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:06.504Z",
+            "reference": {
+              "id": "3862a9f8-1932-4cef-b1c5-48af52e80a37",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-4",
+          "cursor": 4,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "ac2fc006-9441-4a05-99ab-673b91ea0ce5",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:06.506Z",
+            "reference": {
+              "id": "0be14fd8-0f42-49ed-bc37-cdce30670759",
+              "title": "Synthetic historical output"
+            }
+          }
+        },
+        {
+          "id": "workspace-5",
+          "cursor": 5,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "94616bfb-8eb2-462a-b230-41c5ee3936f5",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:06.508Z",
+            "reference": {
+              "id": "3bcd255c-f4d6-4947-aa74-6f76b2c525bf",
+              "title": "Verification passed"
+            }
+          }
+        },
+        {
+          "id": "workspace-6",
+          "cursor": 6,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "accepted:368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:13.775Z"
+          }
+        },
+        {
+          "id": "workspace-7",
+          "cursor": 7,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "5e86a239-dd3d-48e4-8832-9d01133a97e9",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:14.137Z",
+            "reference": {
+              "id": "3f512761-5ac5-40b0-8f64-fb51d3114ffd",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-8",
+          "cursor": 8,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "19305e01-4ab2-4571-8968-3c2fdcc08bb8",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:14.160Z",
+            "reference": {
+              "id": "64e65df8-cb2a-4533-84c6-7706ea1f26b5",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-9",
+          "cursor": 9,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "c0a0a79c-d6fc-4792-b798-2e14ae9ec2f6",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:14.172Z",
+            "reference": {
+              "id": "5fb6dcc4-c9f0-476c-942b-7b0ccc9d3357",
+              "title": "SVC05 synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-10",
+          "cursor": 10,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "1e40875c-d506-48b9-a140-6daefa530e63",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:14.181Z",
+            "reference": {
+              "id": "2866ced6-503c-49d0-b0b0-cdca19e84150",
+              "title": "Verification passed"
+            }
+          }
+        },
+        {
+          "id": "workspace-11",
+          "cursor": 11,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "accepted:94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:17.472Z"
+          }
+        },
+        {
+          "id": "workspace-12",
+          "cursor": 12,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "54a67711-7721-4027-9ea6-ff4179ad5e88",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:17.662Z",
+            "reference": {
+              "id": "59f42c2e-5b28-4eed-92ff-ef25ef38df74",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-13",
+          "cursor": 13,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "b4dd0078-282f-4a3b-b923-760c6e883c33",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:17.680Z",
+            "reference": {
+              "id": "0652473e-58aa-4d81-8180-ff29223f9ecc",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-14",
+          "cursor": 14,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "a07e8fb3-8bc1-461a-a83d-88e6ffd5fc8a",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:17.688Z",
+            "reference": {
+              "id": "00f4b282-e4ad-4997-a856-9283a5b172f0",
+              "title": "SVC05 synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-15",
+          "cursor": 15,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "a2b86f69-d140-4315-a07c-cb9926c3ca48",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:17.696Z",
+            "reference": {
+              "id": "bb4efa69-9066-40e9-867f-36d72f56d99e",
+              "title": "Verification passed"
+            }
+          }
+        }
+      ],
+      "nextCursor": 15,
+      "previousCursor": 1,
+      "watermark": 15,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [
+        {
+          "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:17.472Z",
+          "updatedAt": "2026-10-06T12:23:17.704Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:13.775Z",
+          "updatedAt": "2026-10-06T12:23:14.191Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:06.042Z",
+          "updatedAt": "2026-10-06T12:23:06.511Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        }
+      ],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    },
+    "responseBytes": 5929
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations",
+    "status": 201,
+    "key": "ab443b04-0803-4e6b-9d60-718b68a12cfe:create",
+    "body": "{\"title\":\"SVC05 candidate durable message\",\"harness\":\"claude\",\"executionProfile\":{\"id\":\"a8244a36-bf58-4d5b-b6ee-28519896ea9b\",\"runnerId\":\"3c288bc0-31c7-4967-8c3c-922877ff2ec9\",\"configDigest\":\"e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d\"},\"requested\":{\"model\":\"svc05-synthetic\",\"thinking\":\"disabled\",\"tools\":\"none\"}}",
+    "dropped": false,
+    "response": {
+      "conversation": {
+        "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "title": "SVC05 candidate durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "svc05-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+          "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+          "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+        },
+        "revision": 0,
+        "createdAt": "2026-10-06T12:23:21.339Z",
+        "updatedAt": "2026-10-06T12:23:21.339Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": false,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "replayed": false
+    },
+    "responseBytes": 707
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005/queue?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": null
+    },
+    "responseBytes": 153
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005/turns",
+    "status": 202,
+    "key": "ab443b04-0803-4e6b-9d60-718b68a12cfe:turn",
+    "body": "{\"expectedRevision\":0,\"text\":\"SVC05 candidate durable message\",\"mode\":\"follow-up\"}",
+    "dropped": true,
+    "response": {
+      "conversation": {
+        "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "title": "SVC05 candidate durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "svc05-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+          "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+          "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T12:23:21.339Z",
+        "updatedAt": "2026-10-06T12:23:21.363Z"
+      },
+      "turn": {
+        "id": "45d4c68f-089e-4d75-b902-69fc854f1dde",
+        "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "number": 1,
+        "createdAt": "2026-10-06T12:23:21.362Z",
+        "user": {
+          "role": "user",
+          "text": "SVC05 candidate durable message"
+        },
+        "task": {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "status": "queued",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:21.359Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "Execution details"
+        }
+      },
+      "replayed": false
+    },
+    "responseBytes": 1219
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005/turns",
+    "status": 202,
+    "key": "ab443b04-0803-4e6b-9d60-718b68a12cfe:turn",
+    "body": "{\"expectedRevision\":0,\"text\":\"SVC05 candidate durable message\",\"mode\":\"follow-up\"}",
+    "dropped": false,
+    "response": {
+      "turn": {
+        "id": "45d4c68f-089e-4d75-b902-69fc854f1dde",
+        "task": {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "status": "queued",
+          "harness": "claude",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:21.359Z",
+          "verificationStatus": "pending"
+        },
+        "user": {
+          "role": "user",
+          "text": "SVC05 candidate durable message"
+        },
+        "number": 1,
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "createdAt": "2026-10-06T12:23:21.362Z",
+        "effective": {
+          "model": null,
+          "tools": "unknown",
+          "source": null,
+          "thinking": "unknown"
+        },
+        "telemetry": {
+          "kind": "execution",
+          "title": "Execution details",
+          "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc"
+        },
+        "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005"
+      },
+      "conversation": {
+        "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "title": "SVC05 candidate durable message",
+        "harness": "claude",
+        "revision": 1,
+        "createdAt": "2026-10-06T12:23:21.339Z",
+        "requested": {
+          "model": "svc05-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "updatedAt": "2026-10-06T12:23:21.363Z",
+        "executionProfile": {
+          "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+          "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+          "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+        }
+      },
+      "replayed": true
+    },
+    "responseBytes": 1218
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/961e23e2-8376-49d8-9e97-079e49ff8adc",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+      "title": "SVC05 candidate durable message",
+      "harness": "claude",
+      "status": "succeeded",
+      "verificationStatus": "passed",
+      "createdAt": "2026-10-06T12:23:21.359Z",
+      "updatedAt": "2026-10-06T12:23:22.236Z",
+      "prompt": "SVC05 candidate durable message",
+      "entries": [
+        {
+          "id": "bac659e1-18ff-4ecb-8107-00529fda978c",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T12:23:21.742Z",
+          "reference": {
+            "id": "f2b155e2-c138-43a7-b22b-423a31b5bb86",
+            "title": "Native session"
+          }
+        },
+        {
+          "id": "6da0462b-d98b-4b19-b49c-bcc6daa7d300",
+          "kind": "reference",
+          "cursor": 2,
+          "createdAt": "2026-10-06T12:23:21.975Z",
+          "reference": {
+            "id": "142cf102-b946-4a6a-950e-bd0c4caa7a7d",
+            "title": "Assistant reply"
+          }
+        },
+        {
+          "id": "bc66a8ea-ceac-4cce-ba46-d8d0e68afd4b",
+          "kind": "reference",
+          "cursor": 3,
+          "createdAt": "2026-10-06T12:23:22.159Z",
+          "reference": {
+            "id": "41db1896-d224-4b30-bd49-f17986117589",
+            "title": "SVC05 synthetic output"
+          }
+        },
+        {
+          "id": "e4949c13-9e12-47b3-94ec-f4a1e21bd5ae",
+          "kind": "reference",
+          "cursor": 4,
+          "createdAt": "2026-10-06T12:23:22.189Z",
+          "reference": {
+            "id": "812a0f9f-05ee-4de6-a260-257b07a80ef8",
+            "title": "Verification passed"
+          }
+        }
+      ],
+      "watermark": 4,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "e1223236-4297-48ea-aed1-31e3d225263d",
+        "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T12:23:32.214Z",
+        "nativeSessionId": "6177dd84-0cbf-4b24-b2e9-9e8956c0bc5d"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    },
+    "responseBytes": 1476
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "tasks": [
+        {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:22.236Z"
+        },
+        {
+          "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:17.472Z",
+          "updatedAt": "2026-10-06T12:23:17.704Z"
+        },
+        {
+          "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:13.775Z",
+          "updatedAt": "2026-10-06T12:23:14.191Z"
+        },
+        {
+          "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:06.042Z",
+          "updatedAt": "2026-10-06T12:23:06.511Z"
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 971
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversations": [
+        {
+          "id": "170b8ef4-79cd-440d-97d5-18e247251acc",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:17.450Z",
+          "updatedAt": "2026-10-06T12:23:17.474Z"
+        },
+        {
+          "id": "4be6c390-5908-4388-a4c0-0f72c59b4746",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "requested": {
+            "model": "runner-default",
+            "tools": "configured-readonly",
+            "thinking": "disabled"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:06.017Z",
+          "updatedAt": "2026-10-06T12:23:06.049Z"
+        },
+        {
+          "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:21.339Z",
+          "updatedAt": "2026-10-06T12:23:21.363Z"
+        },
+        {
+          "id": "8516f6d8-f355-4a35-a85c-af4065ecb6b1",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:13.756Z",
+          "updatedAt": "2026-10-06T12:23:13.779Z"
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 1740
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005/queue?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": {
+        "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+        "taskStatus": "succeeded",
+        "turnId": "45d4c68f-089e-4d75-b902-69fc854f1dde",
+        "turnNumber": 1,
+        "queueItemId": null
+      }
+    },
+    "responseBytes": 305
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace?after=15",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "workspaceId": "personal",
+      "entries": [
+        {
+          "id": "workspace-16",
+          "cursor": 16,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "accepted:961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:21.359Z"
+          }
+        },
+        {
+          "id": "workspace-17",
+          "cursor": 17,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "bac659e1-18ff-4ecb-8107-00529fda978c",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:21.742Z",
+            "reference": {
+              "id": "f2b155e2-c138-43a7-b22b-423a31b5bb86",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-18",
+          "cursor": 18,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "6da0462b-d98b-4b19-b49c-bcc6daa7d300",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:21.975Z",
+            "reference": {
+              "id": "142cf102-b946-4a6a-950e-bd0c4caa7a7d",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-19",
+          "cursor": 19,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "bc66a8ea-ceac-4cce-ba46-d8d0e68afd4b",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:22.159Z",
+            "reference": {
+              "id": "41db1896-d224-4b30-bd49-f17986117589",
+              "title": "SVC05 synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-20",
+          "cursor": 20,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "e4949c13-9e12-47b3-94ec-f4a1e21bd5ae",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:22.189Z",
+            "reference": {
+              "id": "812a0f9f-05ee-4de6-a260-257b07a80ef8",
+              "title": "Verification passed"
+            }
+          }
+        }
+      ],
+      "nextCursor": 20,
+      "previousCursor": 16,
+      "watermark": 20,
+      "hasMore": false,
+      "hasEarlier": true,
+      "projectionPending": false,
+      "tasks": [
+        {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:22.236Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:17.472Z",
+          "updatedAt": "2026-10-06T12:23:17.704Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:13.775Z",
+          "updatedAt": "2026-10-06T12:23:14.191Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:06.042Z",
+          "updatedAt": "2026-10-06T12:23:06.511Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        }
+      ],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    },
+    "responseBytes": 2960
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+    "status": 200,
+    "stream": "patch-v1",
+    "forwardedStream": "patch-v1",
+    "dropped": false,
+    "response": {
+      "conversation": {
+        "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "title": "SVC05 candidate durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "svc05-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+          "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+          "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T12:23:21.339Z",
+        "updatedAt": "2026-10-06T12:23:21.363Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": true,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "6177dd84-0cbf-4b24-b2e9-9e8956c0bc5d",
+        "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+        "sourceTaskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+        "sourceAttemptId": "e1223236-4297-48ea-aed1-31e3d225263d"
+      },
+      "lastTurn": {
+        "id": "45d4c68f-089e-4d75-b902-69fc854f1dde",
+        "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "number": 1,
+        "createdAt": "2026-10-06T12:23:21.362Z",
+        "user": {
+          "role": "user",
+          "text": "SVC05 candidate durable message"
+        },
+        "task": {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:22.236Z"
+        },
+        "assistant": {
+          "state": "available",
+          "role": "assistant",
+          "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+          "text": "SVC05 synthetic reply: SVC05 candidate durable message",
+          "truncated": false,
+          "contentRef": {
+            "kind": "detail",
+            "id": "142cf102-b946-4a6a-950e-bd0c4caa7a7d",
+            "title": "Assistant reply",
+            "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "source": "claude.sdk.result",
+            "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+            "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d",
+            "nativeSessionId": "6177dd84-0cbf-4b24-b2e9-9e8956c0bc5d",
+            "eventId": "f93330e0-e8db-486f-81f1-287656eecbb9",
+            "sourceMessageId": "0943e196-356e-48c7-9e7f-d490bfb800e1",
+            "contentDigest": "6fc49ef5001eb8d94a40b7564c7f780d89da9ba73a813f209d35799fa195efe9",
+            "detailId": "142cf102-b946-4a6a-950e-bd0c4caa7a7d"
+          }
+        },
+        "effective": {
+          "model": null,
+          "permissionMode": null,
+          "tools": null,
+          "thinking": "unknown",
+          "runnerRequested": {
+            "model": "svc05-synthetic",
+            "permissionMode": "dontAsk",
+            "thinking": "disabled"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+            "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d",
+            "detailId": "142cf102-b946-4a6a-950e-bd0c4caa7a7d"
+          }
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "Execution details"
+        }
+      }
+    },
+    "responseBytes": 2899
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "tasks": [
+        {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:22.236Z"
+        },
+        {
+          "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:17.472Z",
+          "updatedAt": "2026-10-06T12:23:17.704Z"
+        },
+        {
+          "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:13.775Z",
+          "updatedAt": "2026-10-06T12:23:14.191Z"
+        },
+        {
+          "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:06.042Z",
+          "updatedAt": "2026-10-06T12:23:06.511Z"
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 971
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversations": [
+        {
+          "id": "170b8ef4-79cd-440d-97d5-18e247251acc",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:17.450Z",
+          "updatedAt": "2026-10-06T12:23:17.474Z"
+        },
+        {
+          "id": "4be6c390-5908-4388-a4c0-0f72c59b4746",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "requested": {
+            "model": "runner-default",
+            "tools": "configured-readonly",
+            "thinking": "disabled"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:06.017Z",
+          "updatedAt": "2026-10-06T12:23:06.049Z"
+        },
+        {
+          "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:21.339Z",
+          "updatedAt": "2026-10-06T12:23:21.363Z"
+        },
+        {
+          "id": "8516f6d8-f355-4a35-a85c-af4065ecb6b1",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "svc05-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T12:23:13.756Z",
+          "updatedAt": "2026-10-06T12:23:13.779Z"
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 1740
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles?limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "svc05-synthetic",
+            "resolvedModel": null,
+            "displayName": "svc05-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "createdAt": "2026-10-06T12:23:07.596Z",
+          "configuration": {
+            "model": "svc05-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 30000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          }
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 1032
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "workspaceId": "personal",
+      "entries": [
+        {
+          "id": "workspace-1",
+          "cursor": 1,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "accepted:dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:06.042Z"
+          }
+        },
+        {
+          "id": "workspace-2",
+          "cursor": 2,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "ef314766-ce11-4db7-92f2-9dec0ee0877b",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:06.499Z",
+            "reference": {
+              "id": "f9620c97-a569-4021-958b-301d4ef776c2",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-3",
+          "cursor": 3,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "3963485d-adba-4951-8c2d-f3fb45cc20b3",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:06.504Z",
+            "reference": {
+              "id": "3862a9f8-1932-4cef-b1c5-48af52e80a37",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-4",
+          "cursor": 4,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "ac2fc006-9441-4a05-99ab-673b91ea0ce5",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:06.506Z",
+            "reference": {
+              "id": "0be14fd8-0f42-49ed-bc37-cdce30670759",
+              "title": "Synthetic historical output"
+            }
+          }
+        },
+        {
+          "id": "workspace-5",
+          "cursor": 5,
+          "task": {
+            "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+            "title": "Preserved synthetic history"
+          },
+          "entry": {
+            "id": "94616bfb-8eb2-462a-b230-41c5ee3936f5",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:06.508Z",
+            "reference": {
+              "id": "3bcd255c-f4d6-4947-aa74-6f76b2c525bf",
+              "title": "Verification passed"
+            }
+          }
+        },
+        {
+          "id": "workspace-6",
+          "cursor": 6,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "accepted:368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:13.775Z"
+          }
+        },
+        {
+          "id": "workspace-7",
+          "cursor": 7,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "5e86a239-dd3d-48e4-8832-9d01133a97e9",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:14.137Z",
+            "reference": {
+              "id": "3f512761-5ac5-40b0-8f64-fb51d3114ffd",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-8",
+          "cursor": 8,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "19305e01-4ab2-4571-8968-3c2fdcc08bb8",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:14.160Z",
+            "reference": {
+              "id": "64e65df8-cb2a-4533-84c6-7706ea1f26b5",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-9",
+          "cursor": 9,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "c0a0a79c-d6fc-4792-b798-2e14ae9ec2f6",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:14.172Z",
+            "reference": {
+              "id": "5fb6dcc4-c9f0-476c-942b-7b0ccc9d3357",
+              "title": "SVC05 synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-10",
+          "cursor": 10,
+          "task": {
+            "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+            "title": "SVC05 retained-0 durable message"
+          },
+          "entry": {
+            "id": "1e40875c-d506-48b9-a140-6daefa530e63",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:14.181Z",
+            "reference": {
+              "id": "2866ced6-503c-49d0-b0b0-cdca19e84150",
+              "title": "Verification passed"
+            }
+          }
+        },
+        {
+          "id": "workspace-11",
+          "cursor": 11,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "accepted:94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:17.472Z"
+          }
+        },
+        {
+          "id": "workspace-12",
+          "cursor": 12,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "54a67711-7721-4027-9ea6-ff4179ad5e88",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:17.662Z",
+            "reference": {
+              "id": "59f42c2e-5b28-4eed-92ff-ef25ef38df74",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-13",
+          "cursor": 13,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "b4dd0078-282f-4a3b-b923-760c6e883c33",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:17.680Z",
+            "reference": {
+              "id": "0652473e-58aa-4d81-8180-ff29223f9ecc",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-14",
+          "cursor": 14,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "a07e8fb3-8bc1-461a-a83d-88e6ffd5fc8a",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:17.688Z",
+            "reference": {
+              "id": "00f4b282-e4ad-4997-a856-9283a5b172f0",
+              "title": "SVC05 synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-15",
+          "cursor": 15,
+          "task": {
+            "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+            "title": "SVC05 retained-1 durable message"
+          },
+          "entry": {
+            "id": "a2b86f69-d140-4315-a07c-cb9926c3ca48",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:17.696Z",
+            "reference": {
+              "id": "bb4efa69-9066-40e9-867f-36d72f56d99e",
+              "title": "Verification passed"
+            }
+          }
+        },
+        {
+          "id": "workspace-16",
+          "cursor": 16,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "accepted:961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T12:23:21.359Z"
+          }
+        },
+        {
+          "id": "workspace-17",
+          "cursor": 17,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "bac659e1-18ff-4ecb-8107-00529fda978c",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T12:23:21.742Z",
+            "reference": {
+              "id": "f2b155e2-c138-43a7-b22b-423a31b5bb86",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-18",
+          "cursor": 18,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "6da0462b-d98b-4b19-b49c-bcc6daa7d300",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T12:23:21.975Z",
+            "reference": {
+              "id": "142cf102-b946-4a6a-950e-bd0c4caa7a7d",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-19",
+          "cursor": 19,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "bc66a8ea-ceac-4cce-ba46-d8d0e68afd4b",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T12:23:22.159Z",
+            "reference": {
+              "id": "41db1896-d224-4b30-bd49-f17986117589",
+              "title": "SVC05 synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-20",
+          "cursor": 20,
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message"
+          },
+          "entry": {
+            "id": "e4949c13-9e12-47b3-94ec-f4a1e21bd5ae",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T12:23:22.189Z",
+            "reference": {
+              "id": "812a0f9f-05ee-4de6-a260-257b07a80ef8",
+              "title": "Verification passed"
+            }
+          }
+        }
+      ],
+      "nextCursor": 20,
+      "previousCursor": 1,
+      "watermark": 20,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [
+        {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:22.236Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "94a78c9f-bfed-439b-a6c7-55392f0a5aec",
+          "title": "SVC05 retained-1 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:17.472Z",
+          "updatedAt": "2026-10-06T12:23:17.704Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "368fcfec-0773-4bc8-a465-7c28bf0871ad",
+          "title": "SVC05 retained-0 durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:13.775Z",
+          "updatedAt": "2026-10-06T12:23:14.191Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        },
+        {
+          "id": "dcf4e885-76df-4b7d-a82b-624cf7f30019",
+          "title": "Preserved synthetic history",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:06.042Z",
+          "updatedAt": "2026-10-06T12:23:06.511Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        }
+      ],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    },
+    "responseBytes": 7839
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005/turns?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversation": {
+        "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "title": "SVC05 candidate durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "svc05-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+          "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+          "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T12:23:21.339Z",
+        "updatedAt": "2026-10-06T12:23:21.363Z"
+      },
+      "turns": [
+        {
+          "id": "45d4c68f-089e-4d75-b902-69fc854f1dde",
+          "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+          "number": 1,
+          "createdAt": "2026-10-06T12:23:21.362Z",
+          "user": {
+            "role": "user",
+            "text": "SVC05 candidate durable message"
+          },
+          "task": {
+            "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "SVC05 candidate durable message",
+            "harness": "claude",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "createdAt": "2026-10-06T12:23:21.359Z",
+            "updatedAt": "2026-10-06T12:23:22.236Z"
+          },
+          "assistant": {
+            "state": "available",
+            "role": "assistant",
+            "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+            "text": "SVC05 synthetic reply: SVC05 candidate durable message",
+            "truncated": false,
+            "contentRef": {
+              "kind": "detail",
+              "id": "142cf102-b946-4a6a-950e-bd0c4caa7a7d",
+              "title": "Assistant reply",
+              "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+              "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d"
+            },
+            "source": {
+              "kind": "assistant-final",
+              "source": "claude.sdk.result",
+              "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+              "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+              "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d",
+              "nativeSessionId": "6177dd84-0cbf-4b24-b2e9-9e8956c0bc5d",
+              "eventId": "f93330e0-e8db-486f-81f1-287656eecbb9",
+              "sourceMessageId": "0943e196-356e-48c7-9e7f-d490bfb800e1",
+              "contentDigest": "6fc49ef5001eb8d94a40b7564c7f780d89da9ba73a813f209d35799fa195efe9",
+              "detailId": "142cf102-b946-4a6a-950e-bd0c4caa7a7d"
+            }
+          },
+          "effective": {
+            "model": null,
+            "permissionMode": null,
+            "tools": null,
+            "thinking": "unknown",
+            "runnerRequested": {
+              "model": "svc05-synthetic",
+              "permissionMode": "dontAsk",
+              "thinking": "disabled"
+            },
+            "source": {
+              "kind": "assistant-final",
+              "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+              "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+              "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d",
+              "detailId": "142cf102-b946-4a6a-950e-bd0c4caa7a7d"
+            }
+          },
+          "telemetry": {
+            "kind": "execution",
+            "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "title": "Execution details"
+          }
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 2479
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+    "status": 200,
+    "stream": "patch-v1",
+    "dropped": false,
+    "response": {
+      "conversation": {
+        "id": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "title": "SVC05 candidate durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "svc05-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+          "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+          "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T12:23:21.339Z",
+        "updatedAt": "2026-10-06T12:23:21.363Z"
+      },
+      "capabilities": {
+        "attachmentContext": false,
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": false,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "6177dd84-0cbf-4b24-b2e9-9e8956c0bc5d",
+        "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+        "sourceTaskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+        "sourceAttemptId": "e1223236-4297-48ea-aed1-31e3d225263d"
+      },
+      "lastTurn": {
+        "id": "45d4c68f-089e-4d75-b902-69fc854f1dde",
+        "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+        "number": 1,
+        "createdAt": "2026-10-06T12:23:21.362Z",
+        "user": {
+          "role": "user",
+          "text": "SVC05 candidate durable message"
+        },
+        "task": {
+          "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "SVC05 candidate durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T12:23:21.359Z",
+          "updatedAt": "2026-10-06T12:23:22.236Z"
+        },
+        "assistant": {
+          "state": "available",
+          "role": "assistant",
+          "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+          "text": "SVC05 synthetic reply: SVC05 candidate durable message",
+          "truncated": false,
+          "contentRef": {
+            "kind": "detail",
+            "id": "142cf102-b946-4a6a-950e-bd0c4caa7a7d",
+            "title": "Assistant reply",
+            "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "source": "claude.sdk.result",
+            "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+            "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d",
+            "nativeSessionId": "6177dd84-0cbf-4b24-b2e9-9e8956c0bc5d",
+            "eventId": "f93330e0-e8db-486f-81f1-287656eecbb9",
+            "sourceMessageId": "0943e196-356e-48c7-9e7f-d490bfb800e1",
+            "contentDigest": "6fc49ef5001eb8d94a40b7564c7f780d89da9ba73a813f209d35799fa195efe9",
+            "detailId": "142cf102-b946-4a6a-950e-bd0c4caa7a7d"
+          }
+        },
+        "effective": {
+          "model": null,
+          "permissionMode": null,
+          "tools": null,
+          "thinking": "unknown",
+          "runnerRequested": {
+            "model": "svc05-synthetic",
+            "permissionMode": "dontAsk",
+            "thinking": "disabled"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "messageId": "fd063747c2a8cff03064b323161c6a4f4f3adec27f1bfd2df0a8096476c8e141",
+            "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+            "attemptId": "e1223236-4297-48ea-aed1-31e3d225263d",
+            "detailId": "142cf102-b946-4a6a-950e-bd0c4caa7a7d"
+          }
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+          "title": "Execution details"
+        }
+      }
+    },
+    "responseBytes": 2900
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/961e23e2-8376-49d8-9e97-079e49ff8adc",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "id": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+      "title": "SVC05 candidate durable message",
+      "harness": "claude",
+      "status": "succeeded",
+      "verificationStatus": "passed",
+      "createdAt": "2026-10-06T12:23:21.359Z",
+      "updatedAt": "2026-10-06T12:23:22.236Z",
+      "prompt": "SVC05 candidate durable message",
+      "entries": [
+        {
+          "id": "bac659e1-18ff-4ecb-8107-00529fda978c",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T12:23:21.742Z",
+          "reference": {
+            "id": "f2b155e2-c138-43a7-b22b-423a31b5bb86",
+            "title": "Native session"
+          }
+        },
+        {
+          "id": "6da0462b-d98b-4b19-b49c-bcc6daa7d300",
+          "kind": "reference",
+          "cursor": 2,
+          "createdAt": "2026-10-06T12:23:21.975Z",
+          "reference": {
+            "id": "142cf102-b946-4a6a-950e-bd0c4caa7a7d",
+            "title": "Assistant reply"
+          }
+        },
+        {
+          "id": "bc66a8ea-ceac-4cce-ba46-d8d0e68afd4b",
+          "kind": "reference",
+          "cursor": 3,
+          "createdAt": "2026-10-06T12:23:22.159Z",
+          "reference": {
+            "id": "41db1896-d224-4b30-bd49-f17986117589",
+            "title": "SVC05 synthetic output"
+          }
+        },
+        {
+          "id": "e4949c13-9e12-47b3-94ec-f4a1e21bd5ae",
+          "kind": "reference",
+          "cursor": 4,
+          "createdAt": "2026-10-06T12:23:22.189Z",
+          "reference": {
+            "id": "812a0f9f-05ee-4de6-a260-257b07a80ef8",
+            "title": "Verification passed"
+          }
+        }
+      ],
+      "watermark": 4,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "e1223236-4297-48ea-aed1-31e3d225263d",
+        "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T12:23:32.214Z",
+        "nativeSessionId": "6177dd84-0cbf-4b24-b2e9-9e8956c0bc5d"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    },
+    "responseBytes": 1476
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005/queue?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversationId": "4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": {
+        "taskId": "961e23e2-8376-49d8-9e97-079e49ff8adc",
+        "taskStatus": "succeeded",
+        "turnId": "45d4c68f-089e-4d75-b902-69fc854f1dde",
+        "turnNumber": 1,
+        "queueItemId": null
+      }
+    },
+    "responseBytes": 305
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/4f4fb4c1-efab-460a-8f3a-7d27e5098005",
+    "status": 401,
+    "dropped": false,
+    "response": {
+      "error": {
+        "code": "unauthorized",
+        "message": "Authentication required."
+      }
+    },
+    "responseBytes": 70
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles",
+    "status": 200,
+    "profile": "steering-v1",
+    "dropped": false,
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "a8244a36-bf58-4d5b-b6ee-28519896ea9b",
+            "runnerId": "3c288bc0-31c7-4967-8c3c-922877ff2ec9",
+            "configDigest": "e54ba669f9a611e0ad75747dc412dd8eb3c08431b77a604b24d7a5381f328e0d"
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "svc05-synthetic",
+            "resolvedModel": null,
+            "displayName": "svc05-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "createdAt": "2026-10-06T12:23:07.596Z",
+          "configuration": {
+            "model": "svc05-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 30000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          }
+        }
+      ],
+      "nextCursor": null
+    },
+    "responseBytes": 1032
+  }
+]

@@ -14,8 +14,8 @@
 
 ## TODO
 
-- [ ] **SVC05-01** 核固定目标/现部署/全部保留artifact脱敏事实、最小接口与兼容矩阵。
-- [ ] **SVC05-02** 随机专库、动态端口、真实factory与真实静态App验证read/send/original-key recover/cap；026/027迁移与历史恢复仅验受影响范围。
+- [x] **SVC05-01** 核固定目标/现部署/全部保留artifact脱敏事实、最小接口与兼容矩阵。
+- [x] **SVC05-02** 随机专库、动态端口、真实factory与真实静态App验证read/send/original-key recover/cap；026/027迁移与历史恢复仅验受影响范围。
 - [ ] **SVC05-03** 固定原始证据/源码绑定/cleanup、独立review；准备满足不变量后的单次操作方案。
 - [ ] **SVC05-04** 另获实际窗口后按drain→active0→hold→refresh→fresh preservation→明确resume部署；本次未授权执行。
 
