@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:37:33 UTC |
+| 最近更新 | 2026-10-06 17:40:25 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation |
 | Branch | codex/goal-input-confirmation |
-| 工作基线 / HEAD | af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 / 17f182109324ee83ad3a5eed3c4c47f41c6cc0f2（原域固定、fixture窄修；PG待验） |
+| 工作基线 / HEAD | af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 / e0c0db91d7e6c52b9bb5df890787930db8b7e91d（原域固定、fixture窄修；PG待验） |
 | 工作树dirty状态 | 16源已固定；本次仅验证准备证据与状态，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 实现目标 | 17f182109324ee83ad3a5eed3c4c47f41c6cc0f2 |
+| 实现目标 | e0c0db91d7e6c52b9bb5df890787930db8b7e91d |
 | 实现范围 | packages/contracts/src/goal-graph-proposals.ts, packages/contracts/src/goal-plan-confirmation.ts, packages/contracts/src/goal-graph-runs.ts, apps/server/src/goal-plan-confirmation/index.ts, apps/server/src/goal-plan-confirmation/store.ts, apps/server/src/goal-plan-confirmation/confirmation.test.ts, apps/server/src/goal-plan-confirmation/fixture.ts, apps/server/src/goal-progression/store.ts, apps/server/src/goal-progression/progression.test.ts, apps/server/src/goal-graph-proposals/proposals.test.ts, apps/server/src/goal-graph-runs/store.ts, apps/server/src/goal-graph-runs/runner.ts, apps/server/src/goal-graph-runs/runs.test.ts, apps/runner/src/goal-graph-tools/mcp.ts, apps/runner/src/goal-graph-tools/mcp.test.ts, packages/storage/migrations/031-goal-plan-confirmations.sql |
 | 检查状态 | NOT_RUN：PG验收未执行；SDK6+schema1旧检查保持，权限首red保留；本次仅cleanup focusedtypes0，不重跑SDK/schema |
 | 已集成main状态 / HEAD | 未集成；固定base af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 |
@@ -37,3 +37,5 @@
 看板来源已交Execution Lead列D05候选；本status为唯一手填事实源。PG窗口仅限制验证，不阻当前源码实施。无真实provider预算，未触个人服务。
 
 本次按 find-skills/codebase-design/clean-code 方法核实际 factory、动态 SQL 数组、包导出与资源所有权；16 个固定源零差。预检不等于运行通过，预算是待协调上限，SDK/schema/types 未重复。
+
+2026-10-06 17:40:25 UTC：fixture补充上界固定 e0c0db91d7e6c52b9bb5df890787930db8b7e91d；LIMIT33且>32拒绝、零连接也核deadline、首次checkpoint父目录fsync。局部types0、[21绑定](../../docs/evidence/o15/cleanup-bound-manifest.json)，PG仍待独占窗口。

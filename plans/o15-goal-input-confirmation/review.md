@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-Review target commit：17f182109324ee83ad3a5eed3c4c47f41c6cc0f2（固定实现候选；完整模块审查与PG验收尚待执行）。
+Review target commit：e0c0db91d7e6c52b9bb5df890787930db8b7e91d（固定实现候选；完整模块审查与PG验收尚待执行）。
 
 范围为已claim16产品literal，三件套及证据；共享client/export/mount另属F01。首DTO只是接口输入，不代表当前runner已安全启用此payload。
 
