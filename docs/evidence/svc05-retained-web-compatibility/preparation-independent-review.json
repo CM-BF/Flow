@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T18:57:23.873959+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "delivery": "9b79ee0cf502e200c38b220361627d40976298b4",
+  "manifestSha256": "1d8d780ce582bb3d219c139b0147b79d84a6edc4ca2d0a73cba325ca9832c649",
+  "conclusion": "APPROVED_SOURCE_PREPARATION_ONLY",
+  "scope": [
+    "experiments/personal-current-release/browser.mjs",
+    "experiments/personal-current-release/fixture.mjs",
+    "experiments/personal-current-release/inventory.mjs",
+    "experiments/personal-current-release/transport.mjs"
+  ],
+  "verifiedBindings": {
+    "source": 4,
+    "backend": 487,
+    "artifacts": 22,
+    "dependencies": 14,
+    "historicalMethodReferences": 6,
+    "evidence": 19
+  },
+  "sourceReview": [
+    "Full four-file read; exact af51 bytes before real factory, immutable actual App assets; synthetic adapter through original runtime only.",
+    "Truncated accepted ACK after real response headers; explicit App retry preserves original key/body/task and unsent draft; real old/new capability read matrix.",
+    "Durable reservation/checkpoint before irreversible cleanup, process-group identity and whole-group stop, bounded DB zero-connections observation rejects late zero, normal DROP only marked owned DB.",
+    "Independent work/hard deadlines, live and final pre-cleanup free/raw/tmp samples, stop unknown preserves evidence; sampling is not OS quota.",
+    "Actual immutable source/manifest assets and dependency bytes independently verified; donor paths unchanged."
+  ],
+  "findings": [],
+  "newTests": 0,
+  "providerQueries": 0,
+  "limitations": [
+    "No actual new compatibility result yet.",
+    "No personal service mutation or model permission.",
+    "One shared isolated PG/Chrome window required after current Web MessageSettings cleanup.",
+    "Old source method approvals are inputs, not proof this changed journey passed."
+  ]
+}
