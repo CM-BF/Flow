@@ -1,0 +1,74 @@
+{
+  "id": "SVC02",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T05:24:55.414Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/plans/svc02-preview-refresh/status.md",
+    "syncedAt": "2026-10-06T05:25:10.384Z",
+    "stale": false,
+    "ageHours": 0.025106666666666666
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/preview-refresh",
+    "head": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+    "dirty": true,
+    "changedFiles": 6,
+    "observedAt": "2026-10-06T05:25:10.876Z"
+  },
+  "progress": {
+    "completed": 3,
+    "total": 4
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "9aa790552cb8847d6feb8c8f90c870407a54e572"
+  },
+  "implementationProof": {
+    "target": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+    "head": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+    "scopes": [
+      "packages/contracts/src/runner-maintenance.ts",
+      "apps/server/src/runner-maintenance",
+      "apps/server/src/runners.ts",
+      "packages/storage/migrations/016-runner-maintenance.sql",
+      "tools/personal-preview"
+    ],
+    "observedAt": "2026-10-06T05:25:10.896Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "plans/svc02-preview-refresh/plan.md",
+      "plans/svc02-preview-refresh/review.md",
+      "plans/svc02-preview-refresh/status.md",
+      "docs/evidence/svc02/README.md",
+      "docs/evidence/svc02/manifest.json",
+      "docs/evidence/svc02/typecheck-delivery.txt"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "main": {
+    "record": "未集成",
+    "recordedHead": null,
+    "target": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+    "mainHead": "eb14991a170b72d7d974428b2e440e1faada2c1e",
+    "scopes": [
+      "packages/contracts/src/runner-maintenance.ts",
+      "apps/server/src/runner-maintenance",
+      "apps/server/src/runners.ts",
+      "packages/storage/migrations/016-runner-maintenance.sql",
+      "tools/personal-preview"
+    ],
+    "observedAt": "2026-10-06T05:25:10.876Z",
+    "current": false,
+    "historicalIntegrated": false,
+    "method": "not-contained",
+    "scopeEqual": false,
+    "dirtyScopePaths": [],
+    "reason": "main 声明范围与目标不同，或存在未提交变化"
+  },
+  "generatedAt": "2026-10-06T05:25:10.384Z"
+}

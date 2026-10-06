@@ -10,15 +10,15 @@
 
 ## 最小模块与并发规则
 
-中心维护domain承担版本CAS、幂等、不可变审计与admission gate；claim仅调用gate，heartbeat/report保持原语义。状态accepting→draining→maintenance，后者仅在相同runner行锁下核completed_at IS NULL为0。可信host临界stop/start持相同锁，普通status/旧pending计数不授予停止许可。维护期间失败保持关门/unknown，不用revoke代替drain。
+中心维护domain承担版本CAS、幂等、不可变审计与admission gate；claim仅调用gate，heartbeat/report保持原语义。状态accepting→draining→maintenance，后者仅在相同runner行锁下核completed_at IS NULL为0。事务在设置maintenance后立即提交；不跨stop/start持PG锁，避免新中心迁移/配置发布死锁。持久gate加HTTP禁止maintenance恢复、本机operation.lock覆盖更新；普通status/旧pending计数不授予停止许可。维护期间失败保持关门/unknown，不用revoke代替drain。
 
 本机CLI保持operation.lock，停止只用原有PID/启动时间/命令/PGID核验，不扫描端口杀人。HTTP owner可停止领取或放弃尚未进入maintenance的排空；maintenance恢复仅可信host核新进程后调用同domain显式resume并审计，避免并发HTTP提前放行。无热更新、多宿主协调、通用服务框架或新依赖。
 
 ## TODO
 
-- [ ] SVC02-01：固定公开小合同与016/domain，真实旧claim SQL并发及完整回滚证据。
-- [ ] SVC02-02：受信本机bootstrap/drain/refresh/resume入口与私有持有校验。
-- [ ] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
+- [x] SVC02-01：固定公开小合同与016/domain，真实旧claim SQL并发及完整回滚证据。
+- [x] SVC02-02：受信本机bootstrap/drain/refresh/resume入口与私有持有校验。
+- [x] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
 - [ ] SVC02-04：独立review、main接收与另经批准的真实部署窗口。
 
 共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。真实61227/61228本轮禁止操作；当前仅临时专库/自有进程验证，真实部署须另给已审main/实际状态/回退语义并获Root窗口确认。
