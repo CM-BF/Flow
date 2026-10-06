@@ -1,0 +1,54 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/steering-production.test.ts
+STEERING_PRODUCTION_DATABASE_FACTS {"database":"flow_steering_mount_b12a0855b1cc41e6a303218c1a6049e8","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ❯ apps/server/src/steering-production.test.ts (2 tests | 2 failed) 984ms
+   × mounts 024 and authenticated control routes but keeps default intake and conversation capability disabled 9ms
+   × preserves a default string-query runner final through the production factory with 024 installed 181ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/steering-production.test.ts > mounts 024 and authenticated control routes but keeps default intake and conversation capability disabled
+AssertionError: expected [] to deeply equal [ { version: 24 } ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "version": 24,
+-   },
+- ]
++ []
+
+ ❯ apps/server/src/steering-production.test.ts:50:91
+     48| }
+     49| it('mounts 024 and authenticated control routes but keeps default inta…
+     50|   expect((await pool.query('SELECT version FROM flow.migrations WHERE …
+       |                                                                                           ^
+     51|   const conversation = await request('/api/conversations', { title: 'D…
+     52|   expect(conversation.capabilities.steer).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/steering-production.test.ts > preserves a default string-query runner final through the production factory with 024 installed
+error: relation "flow.steering_commands" does not exist
+ ❯ node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:45:11
+ ❯ apps/server/src/steering-production.test.ts:93:13
+     91|     const messages = await request(`/api/tasks/${task.id}/assistant-me…
+     92|     expect(messages.messages).toHaveLength(1);
+     93|     expect((await pool.query('SELECT count(*)::int AS count FROM flow.…
+       |             ^
+     94|     expect((await request(`/api/tasks/${task.id}/steering`)).commands)…
+     95|   } finally { stop.abort(); await running; await rm(directory, { recur…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  00:54:42
+   Duration  2.07s (transform 408ms, setup 0ms, import 966ms, tests 984ms, environment 0ms)
+

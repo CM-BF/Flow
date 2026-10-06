@@ -1,0 +1,11 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/server/src/active-steering/finalization.test.ts (13 tests | 12 skipped) 1544ms
+   ✓ connects one SDK streaming-input query through the real runtime, durable outbox and PG with two results and one consumed command  353ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 12 skipped (13)
+   Start at  00:55:22
+   Duration  2.48s (transform 488ms, setup 0ms, import 844ms, tests 1.54s, environment 0ms)
+

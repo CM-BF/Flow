@@ -1,0 +1,183 @@
+{
+  "at": "2026-10-06T07:56:30.879324+00:00",
+  "target": "fe5bc2d9b8dab231996b1b156bc086d858846117",
+  "domainTarget": "d4e7445fca4fbc261cbf33101fca4d9407879315",
+  "thinClientTarget": "3d81141324041c2c67680edbb686996cefaf8b4b",
+  "source": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12600,
+      "sha256": "6d93a437899c1bfdcfe8ccd2026b17860b48a61dbc2ccfbde0a1e5a62ca2e9e1",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/server/src/steering-production.test.ts",
+      "bytes": 6721,
+      "sha256": "38d5a1f13cf690dc0fd9fa07dde13eeadc4bbd4f09f837fe8c0cda4a973acbb9",
+      "fixedBlobMatchesWorking": true
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/steering-production-red.txt",
+      "bytes": 2531,
+      "sha256": "5f1addacbf6fb12276ee4b37274b3feedc43432516945ba97b5d1ee75c7e6c61"
+    },
+    {
+      "path": "docs/evidence/f01/steering-production-green.txt",
+      "bytes": 539,
+      "sha256": "3fb807be5efedb8ef56aea720d3db332278b39f67f0f82118716048f09b65590"
+    },
+    {
+      "path": "docs/evidence/f01/steering-production-vertical.txt",
+      "bytes": 503,
+      "sha256": "a6ad7487b5b4f00ab033cc0eb7e7892a42a9e5c79f86a4f538f5c911bfc79713"
+    },
+    {
+      "path": "docs/evidence/f01/steering-production-typecheck.txt",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    }
+  ],
+  "domainUnchanged": [
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "bytes": 7143,
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/input.ts",
+      "bytes": 1460,
+      "sha256": "ef3adcdfc2ec84984fa9fb6fc0d84fbf80ca23f14ce2406919e5bf5919b48c02",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/proposal.ts",
+      "bytes": 3388,
+      "sha256": "45a8502e8d07c861210976de19ec90c6361f26d1a63994007a4fcaf10199da02",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/state.test.ts",
+      "bytes": 3270,
+      "sha256": "ece0bfbe99bc1e538ca097fabb0c37dda33a6a42654223ff22ee150fae0bbd5b",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/state.ts",
+      "bytes": 2511,
+      "sha256": "6b03718a65845f191744918ea4910fac7301da83667d0e95867a47dac5d92e08",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/claude.test.ts",
+      "bytes": 28030,
+      "sha256": "15ff8ce5bda76108a849f24d49858a96ee92fa15b4da1227afc24a14425bb113",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/outbox.test.ts",
+      "bytes": 5323,
+      "sha256": "8edcf030c59342a43a2091b4bb1c3fe5b22bb6204741961c1d27f73480f8a38a",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 27340,
+      "sha256": "1052d12560ea69483b5b8617b2a62065a4d83104950a09bf5921a9d05915658f",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 8200,
+      "sha256": "38448a6d89890315047d3e82f192481eb78fc159c98ab44547d70925a6d65042",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 6569,
+      "sha256": "df97f328e2ba64fd19cd66d17922fd58f1ba11df6d4c98649349ccf1857d2983",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.test.ts",
+      "bytes": 21979,
+      "sha256": "8871d2254ff4ef6076c2532aaf6fb1a100c0e9217b7b0e9bd888854f02a7eb6a",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "bytes": 3702,
+      "sha256": "747a19681c298ecc0d9a93dc966b58147855297c4ad8805952673d8d3a6dd17c",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/server/src/active-steering/results.ts",
+      "bytes": 3660,
+      "sha256": "080082ee48e9c7df31d47c5fb24491c1bfb15b4f28e7343e7e294821f91fd86e",
+      "domainHashMatches": true
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8276,
+      "sha256": "a54632c3c869f5f7c8d859d1dc3718c518883d9ebf56b429ae10718c47701fdf",
+      "domainHashMatches": true
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 6405,
+      "sha256": "02b83e6a194e043cb8a0a5296ae9a7b6c41a88e7fb9e8cdc03a68724f974e395",
+      "domainHashMatches": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6419,
+      "sha256": "6636f0dd920184a70dec7cfcf488aae2c4712e1c526c6694527a11ff27e3e5ac",
+      "domainHashMatches": true
+    }
+  ],
+  "checks": {
+    "newProduction": {
+      "passed": 2,
+      "selected": 2,
+      "red": 2
+    },
+    "existingVertical": {
+      "passed": 1,
+      "selected": 1,
+      "notSelected": 12
+    },
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "limitations": [
+    "Explicit trusted factory option is for controlled integration; CLI and public capability remain disabled.",
+    "Injected SDK is not a provider process or compliance proof.",
+    "No new profile capability or production service update."
+  ]
+}
