@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:20 UTC / mainfc113945 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:22 UTC / main32c371d |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -11,13 +11,13 @@
 | 工作树dirty状态 | 候选已提交；当前交付记录整理 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；34固定源码比较一致，原生只读直接消费者2/2，root与Web类型检查exit0；0provider |
-| 已集成main状态 / HEAD | fc113945ff73d1a43092d0a70b51e901aa4be1e2；当前已审批次候选待发布。个人center/runner仍b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6。 |
+| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已推送；CHAT09、CLI与流式界面已审main。个人center/runner仍b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6，受控升级准备中。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 聊天逐段正文界面、兼容的执行配置目录和原生子任务命令行已完成组合核验。 |
-| 下一可用交付 | 发布本批界面和入口，再按受控更新流程让个人服务采用已审版本。 |
+| 当前产出 | 流式聊天界面、执行配置目录和原生子任务命令行已发布到主线。 |
+| 下一可用交付 | 个人服务受控更新后验证实际聊天体验。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
