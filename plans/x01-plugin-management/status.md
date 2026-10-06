@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 12:41:21 UTC |
+| 最近更新时间 | 2026-10-06 12:46:02 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -15,16 +15,16 @@
 | 工作树 dirty 状态 | 设计已固定；后续仅review/status/readiness metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 产品；仅设计文档/链接/10TODO/固定20源码/hash/原计划完整验收与受控merge检查，0PG负载/SDK/provider |
-| Review | APPROVED 3bd1add6ef7e868765b4508e88286bd62f49edd7（Mika，12:40:12 UTC，仅纵向方向设计）；依赖补充待固定，0产品approval |
+| Review | APPROVED 3bd1add6ef7e868765b4508e88286bd62f49edd7（Mika，12:40:12 UTC，仅纵向方向设计）；依赖91ac13d0方向亦APPROVED，0产品approval |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
 | 实现目标 | 3bd1add6ef7e868765b4508e88286bd62f49edd7（仅Interface设计；无产品实现） |
 | 实现范围 | docs/evidence/x01, plans/x01-plugin-management |
 | 本片段交付阶段 | planning |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 纵向设计3bd1add6已独审；显式安装库依赖/disable旧pin边界补充；无产品实现 |
-| 下一可用交付 | Lead固定安装库归属，可先领取静态prepare/read+真实loader小片；公共vertical仍待唯一migration/host/task/event/commands |
-| 当前阻塞 | ACTIVE: 安装库精确依赖/源码scope待Lead固定；公共vertical待target runner/store资格、共享union/命令及唯一migration |
+| 当前产出 | 纵向设计3bd1add6已独审；正式workspace/tar依赖方向已审；八literal leaf请求ready；无产品实现 |
+| 下一可用交付 | Lead分配八leaf及F01 manifest/lock接线，随后领取静态prepare/read+真实loader小片；公共vertical仍待唯一migration/host/task/event/commands |
+| 当前阻塞 | ACTIVE: leaf源码scope与manifest/lock writer待Lead分配；公共vertical待target runner/store资格、共享union/命令及唯一migration |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -61,3 +61,5 @@
 2026-10-06 12:36:22 UTC：设计target 3bd1add6ef7e868765b4508e88286bd62f49edd7固定，[ready](../../docs/evidence/x01/design-readiness.json)绑定6设计/输入文档；20产品源码输入均固定main7cb，产品源码0改动/0tests。原10TODO与完整scope保留，writer6ddedc73 v1仍仅metadata；等待Mika设计审与Lead明确公共合同/DDL后再精确amend，未预领源码。
 
 2026-10-06 12:41:21 UTC：fresh 核 HEAD4e6afb0 clean 与 writer6ddedc73 v1 ACTIVE 两metadata scope；录 [设计独审](../../docs/evidence/x01/vertical-design-review.json)，只批准3bd1add6方向。新增 [安装依赖请求](../../docs/evidence/x01/installation-dependency-addendum.md)明确没有现成受限解包 seam、不得借间接依赖；产品源码0改动/0测试/0安装。disable后只拒新binding，旧pin不被claim资格检查意外强断。主仓个人发布临时detached HEAD不视为main新基线，本树仍受控7cb。
+
+2026-10-06 12:46:02 UTC：fresh HEAD91ac13d0 clean、writer6ddedc73 v1 ACTIVE；Mika批准显式workspace/tar7.5.22方向，[收据](../../docs/evidence/x01/dependency-design-review.json)。已给 [八literal请求](../../docs/evidence/x01/leaf-scope-request.md)；F01 v32持三共享依赖路径，未领取/修改产品。独立prepare/read/loader片可先推进，整体publicvertical/唯一DDL仍待协调。0新工程测试/安装。

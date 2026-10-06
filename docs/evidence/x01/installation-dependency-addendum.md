@@ -22,3 +22,5 @@
 | tar@7.5.22/node_modules/tar/dist/esm/index.d.ts | 945 | 3d4067cbcf736efe67cba7bfe232841b45944da843304ca9ea12f5a316a18c5e |
 
 沿本地 find-skills / codebase-design / clean-code 固定基线：依赖属于实际 Module，命名与单一职责维持；不新造解析器/安装器平台。0 工程测试、0 child/PG/SDK/provider、0产品源码修改。
+
+2026-10-06 12:46:02 UTC 后续回执：Mika 已批准本页91ac13d0的正式workspace/tar依赖方向，见 [dependency-design-review](dependency-design-review.json)。选择已固定为前述workspace方案；manifest/lock唯一writer及具体leaf scope仍待Lead分配，不能据此安装或写产品。后继精确请求见 [leaf-scope-request](leaf-scope-request.md)。

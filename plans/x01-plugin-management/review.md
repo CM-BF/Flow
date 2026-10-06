@@ -5,7 +5,7 @@
 - Review target commit：3bd1add6ef7e868765b4508e88286bd62f49edd7；[ready](../../docs/evidence/x01/design-readiness.json)绑定6个文档与20固定main源码输入。
 - 当前owner architecture_read/gpt-6-astra；仅原两个metadata目录。原plan-only approval不覆盖新Interface/产品源码。
 - Mika / gpt-6-astra 于 2026-10-06 12:40:12 UTC 只读独审 APPROVED，0 P1/P2；独立核6设计绑定+20固定source。收据见 [vertical-design-review.json](../../docs/evidence/x01/vertical-design-review.json)。
-- migration、target runner/store资格、共享合同仍待Lead；后续安装库依赖补充未冒用此审批。实施前领取精确源码scope，0产品验证。
+- migration、target runner/store资格、共享合同仍待Lead；依赖补充91ac13d0已获Mika独立方向批准（12:46 UTC），见[收据](../../docs/evidence/x01/dependency-design-review.json)；不是产品实施批准。实施前领取精确源码scope，0产品验证。
 
 ---
 

@@ -18,3 +18,5 @@
 建议工程顺序：先冻结“同机store/host资格+revision绑定+operation envelope”的唯一小合同和DDL，再领域install/enable/disable/绑定与真实loader并行可审小片，随后Lead一次接公共入口、专库/真实runner纵向验收。可独立先验证静态安装/loader，但不能把模块检查当完整public vertical完成。独立review候选Mika/status_read，实施owner不可自审。
 
 2026-10-06 12:41:21 UTC：Mika 已批准 3bd1add6 的 bounded v1 方向；[正式设计收据](vertical-design-review.json)。精确停用合同：disable 拒新 binding，已受理 task 继续固定原 pin；claim 的 host/store/hostAPI 资格核验不得顺带用 enabled=false 强断旧 task。任何不同选择先固定公开合同。安装依赖新增请求仅 metadata 提案；共享 writer/migration 仍由 Lead fresh 协调。
+
+2026-10-06 12:46:02 UTC：依赖方向获Mika批准，正式采用@flow/plugin-runtime+tar7.5.22；[首片八literal请求](leaf-scope-request.md)供Lead一次分配。fresh账本F01 v32持server/runner manifests及lock；未amend、未安装。公开vertical的其他合同/DDL仍未解除。
