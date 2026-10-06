@@ -12,3 +12,4 @@ export * from './assistant.js';
 export * from './plugins.js';
 export * from './execution-profiles.js';
 export * from './conversation-queue.js';
+export * from './goal-tool-runs.js';
