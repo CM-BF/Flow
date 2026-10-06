@@ -41,14 +41,21 @@ test('summary/detail reads preserve declared vs observed boundaries', { timeout:
     assert.deepEqual(summary.overview.blockerIds, [child.id]); assert.deepEqual(summary.overview.decisionIds, [child.id]);
   });
   await t.test('source errors, bounded declarations and frozen fallback remain explicit', async () => {
-    await f.writeStatus(child, { updated: '2026-10-01 00:00 UTC', owner: 'x'.repeat(2000) });
-    let summary = await readSummary(f.registry); let task = summary.tasks[0];
+    const now = Date.parse(f.updated); assert.ok(Number.isFinite(now));
+    const utc = offset => new Date(now + offset).toISOString().slice(0, 19).replace('T', ' ') + ' UTC';
+    const oldTime = utc(-48 * 60 * 60 * 1000), futureTime = utc(48 * 60 * 60 * 1000);
+    await f.writeStatus(child, { updated: oldTime, owner: 'x'.repeat(2000) });
+    const oldRecord = await readFile(statusFile(child), 'utf8');
+    assert.notEqual(oldRecord, original); assert.ok(oldRecord.includes(`| 最近更新 / 最近 main 同步核验 | ${oldTime} /`));
+    let summary = await readSummary(f.registry, now); let task = summary.tasks[0];
     assert.equal(task.sourceCurrent, false); assert.equal(task.source.stale, true); assert.equal(task.links.parent.state, 'unknown');
     assert.equal(task.links.parent.targetId, parent.id); assert.ok(task.declarations.owner.length < 600); assert.ok(task.declarations.truncatedFields.includes('owner'));
     await writeFile(statusFile(child), original.replace('| Branch | codex/summary-fixture |', '| Branch | wrong |'));
     assert.match((await readSummary(f.registry)).tasks[0].source.issues.join(' '), /分支.*冲突/);
-    await writeFile(statusFile(child), original.replace(/2026-10-06 \d\d:\d\d:\d\d UTC/, '2099-10-06 00:00:00 UTC'));
-    assert.equal((await readSummary(f.registry)).tasks[0].source.stale, true);
+    await f.writeStatus(child, { updated: futureTime });
+    const futureRecord = await readFile(statusFile(child), 'utf8');
+    assert.notEqual(futureRecord, original); assert.ok(futureRecord.includes(`| 最近更新 / 最近 main 同步核验 | ${futureTime} /`));
+    assert.equal((await readSummary(f.registry, now)).tasks[0].source.stale, true);
     await writeFile(statusFile(child), '# invalid'); assert.equal((await readSummary(f.registry)).tasks[0].progress.total, null);
     await writeFile(statusFile(child), 'x'.repeat(documentLimit + 1));
     const trace = traced(); summary = await readSummary(f.registry, Date.now(), trace.context);
