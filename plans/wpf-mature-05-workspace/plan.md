@@ -84,3 +84,5 @@ Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/
 原05-03/04/05加入[app1750固定截图的用户结果验收](../../docs/evidence/web-platform/app1750-product-acceptance-followup.json)：390展开导航遮盖内容不是完整移动验收或单独bug证据；关闭导航后需完整读消息/编辑发送/展开详情，desktop↔narrow切换保持草稿、焦点与可见性，导航开关键盘语义明确。沿现布局/草稿authority，不新增状态源、任务或App写范围；不重跑已green RELEASE。
 
 同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。
+
+原05-03插件菜单验收补充（fixed main22a，仅研究）：[九源报告](../../docs/evidence/web-platform/workspace-native-tab-seam-22a/report.md)与[root限定核验](../../docs/evidence/web-platform/workspace-native-tab-seam-22a/root-review.json)确认外层workspace.tabs、header/actions及active artifact.actions已接P01，剩余一项是右侧Task workspace逐内置tab动作位，尤其inactive detail B。后继必须在A激活时准确绑定B原task/tab身份；仅显示/展开菜单零正文GET，显式读取才沿原reference.load；禁用/卸载/撤权、换连接和B关闭后旧callback受tab lifetime限制，不能借全局active A或第二tab状态源；390浅深与键盘核动作发现、tab焦点/激活和关闭回交，不在role=tab内嵌button。04内容/窄屏与05真实App验收沿用。具体接缝由原P01接口owner协调，不在此新建slot/公共契约/任务或领取写权；原Close/Delete和私有布局owner保持，Recovery P1优先。全部为源码覆盖和候选验收，不是运行通过。

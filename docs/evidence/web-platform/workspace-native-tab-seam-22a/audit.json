@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-06T19:45:50.668079+00:00",
+  "fixedSource": "22a0806bc2465e11096949618113833f31766b19",
+  "method": "Fixed git show only; current main/origin claim supplied by manager, not refetched. Full blob hashes, only relevant ranges inspected. Local find-skills/clean-code/codebase-design/webapp-testing methods reused; no installation.",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861",
+      "bytes": 9167,
+      "equalsEarlierArcF3e": true
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/workspace.tsx",
+      "sha256": "abe905bffb768e260623eee35fa45db8de68f1c4cda264ea3eac401a98c00a3a",
+      "bytes": 4020,
+      "equalsEarlierArcF3e": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725,
+      "equalsEarlierArcF3e": false
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "bytes": 6794,
+      "equalsEarlierArcF3e": false
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+      "bytes": 8788,
+      "equalsEarlierArcF3e": false
+    },
+    {
+      "path": "apps/web/src/plugins/builtins.ts",
+      "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+      "bytes": 2770,
+      "equalsEarlierArcF3e": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+      "bytes": 22822,
+      "equalsEarlierArcF3e": false
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "bytes": 12209,
+      "equalsEarlierArcF3e": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "bytes": 50767,
+      "equalsEarlierArcF3e": false
+    }
+  ],
+  "reuseInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/plugin-seams.md",
+      "sha256": "a1117cbead64ea126045095e75d266a6e7052029ff4434fc07015b1d4f972a48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/conversation-plugin-coverage-research.md",
+      "sha256": "44439ea2e7c924b095a6e90fae02ebf3d2d2384aa1db1c0270cda31acb0540d8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/workspace-arc-readonly-proposal.json",
+      "sha256": "fa7c5a3682460044c78124ce5a8feeb86fc21cb4f04d131d2c5139be17ca3e49"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/workspace-arc-recovery-2498-interface.json",
+      "sha256": "97ddcb27332ae7fa56697093e763858dc70e3a99e261cf9b3307839bda3ca6b3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md",
+      "sha256": "793cb3ec8f413cb66c9c1865f27777b7077fd693860c3be41b11f491ead4238b"
+    }
+  ],
+  "duplicateCheck": "Read five requested sources; targeted management research.md/integration-checklist.md/mature-theme-presentation-research.md references. Existing outer workspace.tabs button/menu work and PH-R4 tab state regression were found; no separate per-native-tab-action report found in these bounded sources. Not a repository-wide absence claim.",
+  "execution": "0 product imports/runtime/tests/HTTP/PG/Chrome/space/claim/project writes. Only this tmp report and audit.",
+  "approval": "Research only; no implementation scope/take or new contract/registry proposed."
+}

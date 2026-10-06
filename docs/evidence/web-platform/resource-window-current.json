@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T19:36:06.395280+00:00",
-  "state": "PERSONAL_CENTER_RECOVERY_PRIORITY",
-  "groupWindowOwnership": "Lead exclusively prioritizes same362/v15 personal center restoration. No Web PG/Chrome/HTTP active or new heavy window.",
+  "recordedAt": "2026-10-06T19:48:03.976583+00:00",
+  "state": "NOT_RUN_READINESS_WINDOW_RETURNED",
+  "groupWindowOwnership": "Web ready-first offer returned NOT_RUN; no current Web PG/Chrome/HTTP. Lead schedules next holder.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -397,7 +397,7 @@
     "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "resource-lead-193033-center-priority.json",
+  "latestCoordination": "web-validation-window-return-1946.json",
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -498,7 +498,7 @@
     }
   },
   "retainedAf51": "Lead originalassignment_review accepted six-scope/newtree preparation; no Web ownership or runtime; see retained-af51-owner-scope-proposal.json",
-  "currentWindowReturn": "message-settings-browser-window-return-1858.json",
+  "currentWindowReturn": "web-validation-window-return-1946.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -637,6 +637,56 @@
       ],
       "ledger": "Restored; manager separately read original five active claims at19:35:01.030Z with unchanged versions/scopes and no overlap",
       "cause": "Earlier daemon interruption cause remains unknown; no attribution to user action"
+    },
+    {
+      "recordedAt": "2026-10-06T19:48:03.976583+00:00",
+      "source": "Lead actual19:46:35 center-window close and ready-first offer, forwarded byroot",
+      "state": "NOT_RUN_READINESS_WINDOW_RETURNED",
+      "window": "Web ready-first after personal center recovery19:46:35",
+      "leadCenterReceipt": {
+        "closedAt": "2026-10-06T19:46:35Z",
+        "centerPid": 74763,
+        "source": "362/v15",
+        "unchanged": "Original64tables/runner/Web/config/pointer perLead",
+        "taskCalls": 0,
+        "providerCalls": 0,
+        "flowMain": "22a0806bc2465e11096949618113833f31766b19"
+      },
+      "decision": "No eligible ready candidate; window returned immediately without starting or holding it",
+      "recovery": {
+        "state": "SOURCE_REPAIR_IN_PROGRESS_NOT_READY",
+        "finding": "RECOVERY-RESTORE-EDIT/P1",
+        "evidence": "recovery01-restore-edit-dispatch.json",
+        "next": "Original owner fixes full local draft ownership and persistence; fixedsource independent review before any fresh runtime gate"
+      },
+      "settings": {
+        "state": "SOURCE_PREPARATION_APPROVED_BOUNDARY_NOT_ACCEPTED",
+        "candidate": "/private/tmp/msgset-b4",
+        "supervisorSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+        "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+        "sourceReview": "message-settings-browser-b4-prepared/root-review.json",
+        "boundary": "native Chrome sibling preserves Chrome native sandbox but loses custom outer OS write/egress restriction; Node retains its own custom sandbox",
+        "boundaryAcceptance": null,
+        "needed": "Real Lead acceptance of this exact boundary and pinned candidate, then a separate new window/fresh original predicates. Generic ready-first offer is not that acceptance."
+      },
+      "execution": {
+        "started": false,
+        "gateCreated": false,
+        "spaceSampled": false,
+        "PG": 0,
+        "Chrome": 0,
+        "HTTP": 0,
+        "provider": 0
+      },
+      "budgetsUnchanged": {
+        "settingsPreviousMs": 13748,
+        "settingsRemainingMs": 46252,
+        "recoveryPreviousMs": 14846.267375,
+        "recoveryRemainingMs": 75153.732625
+      },
+      "cleanup": "No new process/DB/scratch created. Prior Settings b2, Recovery browser and pure-check cleanup receipts remain actual historical proof.",
+      "nextHolder": "Lead schedules R01/O16/Mika or other authorized holder; Web retains no heavy window",
+      "externalMessageSent": false
     }
   ],
   "dperf05Pure": {

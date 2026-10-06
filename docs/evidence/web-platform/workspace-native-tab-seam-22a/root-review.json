@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-06T19:46:44.798041+00:00",
+  "verdict": "ACCEPTED_SCOPED_SOURCE_COVERAGE_GAP_NOT_IMPLEMENTED",
+  "fixedSource": "22a0806bc2465e11096949618113833f31766b19",
+  "ownerResearch": {
+    "path": "/private/tmp/workspace-native-tab-seam-22a/report.md",
+    "bytes": 6943,
+    "sha256": "6e919accaf754f7b8c91fb100cefdd3edd3049238d9997fb77292ed09f6d39d2",
+    "auditSha256": "435d1c64822de2bb5935f2b3773fce219b0edb9606571fe655c61b8972f120cc"
+  },
+  "findings": [
+    "Per-native-tab row only contains tab button and hardcoded close; shared WorkspaceChromeContext has header/actions/artifact, no row action renderer.",
+    "Existing external workspace.tabs P01 AppSlot and current-reference artifact.actions are real and preserved; they do not receive an inactive tab row identity.",
+    "data-extension-slot on native tablist is an annotation, not an extension host; replacing the entire builtin panel is broader than contributing a row action."
+  ],
+  "validation": {
+    "sourcePins": [
+      {
+        "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861",
+        "bytes": 9167,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugins/builtins/workspace.tsx",
+        "sha256": "abe905bffb768e260623eee35fa45db8de68f1c4cda264ea3eac401a98c00a3a",
+        "bytes": 4020,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/react.tsx",
+        "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+        "bytes": 23725,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugins/types.ts",
+        "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+        "bytes": 6794,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugins/validation.ts",
+        "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+        "bytes": 8788,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugins/builtins.ts",
+        "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+        "bytes": 2770,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/session.ts",
+        "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+        "bytes": 22822,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugins/react.tsx",
+        "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+        "bytes": 12209,
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/App.tsx",
+        "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+        "bytes": 50767,
+        "matches": true
+      }
+    ],
+    "rootRead": "Independently inspected fixed WorkspacePanels row/Context and PluginWorkspace provider/outer contribution renderer, plus currentMATURE05 TODO ownership.",
+    "runtime": "NOT_RUN",
+    "projectWrites": false
+  },
+  "plan": "Append to existingWPF-MATURE-05-03 only: real inactiveB row action receivesB whileA active; no bodyload on merely showing menu; same P01 registry/command and native layoutowner; disable/unload/connection/task/tab lifetime fencing;390 themes/keyboard and no nestedbutton. Other TODO04/05 remain applicable.",
+  "scopeBoundary": "No public slot naming/contract change, newwriteclaim or implementation is granted here. Reuse previousplugin-seams/Arc reports and coordinate with legitimate P01owner when a concrete implementation candidate is taken.",
+  "cleanCode": "One actual missing seam and four behavior acceptance conditions; no duplicate registry, genericDOM injector or secondtab state."
+}
