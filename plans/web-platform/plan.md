@@ -81,12 +81,12 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-36 | 主线D03要求各权威status提供明确人读字段与实现范围 | 每个唯一owner自行写；管理者协调 | 阶段/优先级1–9/当前产出/下一可用交付/明确阻塞与决定/完整实现target与literal范围；不写其他owner状态 |
 | WPF-REQ-37 | U08/U12 多lead避免重叠、take工作在dashboard标清 | 主线D04唯一账本；各Lead真实actor领取；各owner唯一范围 | taskID/owner/lead/worktree/branch/精确范围、claim版本/状态/时间与交出接收方可见；PG事务拒绝同task及同/父子路径冲突，跨task部分转交先停写→amend→take，不靠口头抢占；[04:07领取视图与42源实证](../../docs/evidence/web-platform/assignment-visibility-verification.json) |
 | WPF-REQ-38 | U09 产品Web打开并保留，可随时查看 | 原Goal Owner选已审M02 49922；原owner保留服务 | 已审M02 http://127.0.0.1:49922/用户tab已打开并保留，明确fixture及恢复方式；I01 55049仅开发验证，不能声称稳定main或真实中心服务已起 |
-| WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一[D05计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录，现有架构tab已部署但图固定3773；GoalOwner授权刷新到固定main8f1481d，待旧claim正式释放/转交后才由独立owner/tree领取，我方当前只协作排队 |
+| WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一[D05计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录，D06 ef42277固定8f图已审并集成main4e，实际4320已部署；D06 v2 released。后继标题旁显示短SHA/固定快照提示仅WPF-D01-06排队，须新renderer范围take |
 | WPF-REQ-40 | U10 plugin管理写进计划里 | 主线X01唯一canonical owner；我方父计划关联 | 主线计划包含Web管理页和CLI公共center命令、持久版本/配置/权限/作用域、npm install/enable/disable/upgrade/rollback/remove、活跃执行版本绑定、可信/隔离边界；实际[X01计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)已建立，文档888308d/产品未实施。P01/I01本地Settings不冒充完整插件管理 |
 | WPF-REQ-41 | U11 真实持续对话优先与明确演示边界 | [WPF-CHAT01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/plan.md) / workspace_panels_owner；主线center/runner | hi自然回应、同conversation追问、断线重连；49922不暗换/重启，固定fixture不冒充模型输出。Web已按[CHAT receipt](../../docs/evidence/web-platform/chat01-take-receipt.json)独立受领；[PERF02 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/plan.md)依[独立receipt](../../docs/evidence/web-platform/perf02-take-receipt.json)并行，不占CHAT范围或替代对话优先 |
 | WPF-REQ-42 | U11 模型/effort/access/context/files与发送 | 主线capability catalog契约；Web真实消费 | 控件只展示中心支持的模型/能力和授权范围；unsupported明确，权限不由前端自授；context/files使用授权资源与版本，不能凭显示路径假接文件 |
 | WPF-REQ-43 | U11 消息气泡与正文优先、tool/thinking懒详情 | Web renderer与中心投影owner | 用户/assistant正文为主；tool及provider可展示thinking初始仅id/title/状态，初始响应/SSE没有大payload；鉴权展开前0detail，首次1/重复缓存，provider无thinking则不伪造 |
-| WPF-REQ-44 | U11 queue和steering | 主线持久commands/runner；Web有权触发与渲染 | queue持久、明确顺序/取消与重连；steering仅对运行中同会话/执行，记录受理与实际生效边界，不用提交新task冒充，不把HTTP超时当取消 |
+| WPF-REQ-44 | U11 queue和steering | 主线持久commands/runner；Web有权触发与渲染 | queue持久、明确顺序/取消与重连；新决定要求PG持久pause/明确continue，先pause ACK再按ACK currentTurn取消任务，两份结果分别显示，不能称stop-all；新v2尚待冻结。steering另项，须受理/送达/实际生效证据，不以HTTP超时当取消 |
 | WPF-REQ-45 | U11 语音录音/转写与失败恢复 | 主线能力接口；Web受控交互 | 录音与转写分开、明确开始/停止/失败，失败保留文本输入；本轮不偷接付费语音服务，未支持明确，凭据不放浏览器/插件 |
 
 ## 当前 owner 与接口冻结
@@ -99,10 +99,12 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | panels组件已交付 | workspace_panels_owner / web-workspace-panels / codex/web-workspace-panels | 已审输入46a1dbd、metadata16d518；不作为当前App writer |
 | WPF-M02已审工作入口 | workspace_panels_owner / web-unified-workspace / codex/web-unified-workspace | claim v3：projection、workspace-feed剩余四literal模块与对应tests/自身plan/evidence；Overview/css已正式转PERF02，App/TaskThread/WorkspacePanels此前转I01，不恢复父范围 |
 | WPF-P01已审可信host | w01_owner / web-plugin-host / codex/web-plugin-host | claim v1：plugins、三plugin-host test/config、自身plan/evidence；保留修复责任，不写App |
-| WPF-I01主App挂载 | workspace_panels_owner / web-plugin-integration / codex/web-plugin-integration | 实现92a已审；claim b6666c29 v2移出App/官方Thread/session/react给CHAT，保留其余literal修复范围；排除plugins |
+| WPF-I01主App挂载 | workspace_panels_owner / web-plugin-integration / codex/web-plugin-integration | 实现92a已审；claim b6666c29 v3：此前四文件转CHAT，现integration.css已正式转X03I01；其余literal保留；排除plugins |
 | WPF-PERF01测量 | w01_owner / web-performance / codex/web-performance | claim4553f315 v2保留fixture脚本+plan/evidence，probe已正式转PERF02；无生产/rootlock范围 |
-| WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | claim08259c1d v1精确16scope，公共输入由Lead受控给出，不改shared/后端 |
-| WPF-PERF02有界窗口 | w01_owner / web-activity-window / codex/web-activity-window | claimd36cd583 v1精确8scope；不改App、会话、projection与共享接口 |
+| WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | 已审7cb / 集成metadata083978b；claim08259c1d v2已将App/react转X03I01，原其余14scope保留；实现已在dd1/main4e，真实模型验收仍归Lead |
+| WPF-PERF02有界窗口 | w01_owner / web-activity-window / codex/web-activity-window | 实现a87已审且集成；claimd36cd583 v2 released，全部8scope停写，后续修复须新take |
+| WPF-X03I01实际插件管理挂载 | workspace_panels_owner / web-plugin-management-integration / codex/web-plugin-management-integration | claim a1044bb0 v1七scope，固定main4e；不改Mika模块/shared；canonical a534已建立 |
+| WPF-PROFILE01配置选择模块 | w01_owner / 拟web-execution-profiles / codex/web-execution-profiles | 仅7个新模块/测试文件+plan/evidence两目录，旧CHAT/App不转交；核新树后take才写 |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实 |
 
 冻结 `WorkspacePanels` 接口（在panels owner的 `types.ts` 权威定义）：
@@ -141,13 +143,15 @@ type WorkspacePanelsProps = {
 | --- | --- | --- |
 | 已审交付 | W01 Thread/shell/splitmerge及panels | root整体APPROVED cb4a392，owner正式review metadata收尾；组件46a1dbd通过 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
-| 跨团队协作 | WPF-D01需求+管理来源登记 | D03/D04已部署并实际42源/领取字段核验；D05刷新固定8f排队，待正式claim转交才独立take，不抢旧树 |
+| 跨团队协作 | WPF-D01需求+管理来源登记 | D03/D04实际领取字段已核；D06固定8f已集成main4e，04:28实际47源/图已部署，全部scope已released；后继仅标题快照提示排队 |
 | 已集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；main3773已含实现，owner转I01 |
 | 已审输入 | WPF-P01插件host | 整体6ce APPROVED、PH-R1～4关闭，最终2910ebc交I01；不覆盖主App |
-| 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v2四文件已正式转CHAT，剩余保留回修范围 |
+| 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v3已转出CHAT四文件和X03I01 CSS，剩余保留范围 |
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
-| 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 固定4c240+共享受控a3b9已就绪；Web08259c1d v1受领并正式实施，canonical c72e02；中心2d3bb61已独审，不等于Web/模型验收 |
-| 已集成 | WPF-PERF02 | 新d36v1八scope独立实施固定a87f64f与三规模报告获独立APPROVED，最终172d10d交主线并实证main8f1481d已包含/范围相同；不碰App/后端，CHAT持续优先 |
+| 已集成首批 / 后继开放 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 7cb限定APPROVED，083978b记录dd1/main已含；queue/steer/语音及完整模型控制仍开放，真实两query仅Lead执行、结果未收到 |
+| 当前实施 | WPF-X03I01 | 固定4e / a104v1七scope，实际App只读插件管理挂载；唯一owner workspace_panels_owner |
+| 下一独立模块 | WPF-PROFILE01 | 已发布整份profile选择与纯pin helper，无旧UI文件；新树/receipt后实施，不把模块当App接通 |
+| 已集成 | WPF-PERF02 | 固定a87f64f及报告获独立APPROVED，metadata b617实证main8f包含/范围相同；claimv2已released，不继续占用已完成八scope |
 
 ## TODO
 
@@ -160,7 +164,8 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
-- [ ] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；固定main输入、新独立tree/七scope receipt后实施并独审。
+- [ ] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；固定main4e/新独立tree/a104v1七scope已开工，完成局部检查和独立review。
+- [ ] **WPF-001-11** WPF-PROFILE01：独立新模块实现整份已发布执行配置选择、冻结creation与pin校验；局部测试/fixture后独审，真实App接线另受领，不能把模块完成当U11完成。
 
 ## 验收、风险与持续方式
 
@@ -220,10 +225,12 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 
 - 2026-10-06 04:20 UTC：CHAT7cb最终331已限定APPROVED并dashboard验证，root一次交主线；PERF02集成后04:12正式release v2，无finding不长期占scope。REQ39后继D06按D05v2移出→新f619v1受领固定8f四scope，唯一canonical见[计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/plan.md)。主线4320继续其owner部署，不新造分配事实源。
 
-U11后继queue与steer仍分别开放：Mika准备CHAT04中心持久queue，具体TS合同与scope由ExecutionLead固定；enqueue与队列取消独立queueRevision、原key ACK恢复、仅succeeded自动提升，失败/取消/uncertain或未知session冻结，不通过停止当前任务偷偷启动下一项。恢复/继续与steering首段不启用。SDK有streamInput/interrupt不等当前adapter已支持。Web等中心独审后独立消费，不提前启用disabled控件。此为跨lead已授权方向，非已有实现或新增用户原话。
+U11后继queue与steer分别开放。CHAT04首合同e423无pause/continue；此为历史版本事实。最新GoalOwner已授权中心PG持久pause/明确continue：Web先pause ACK再对ACK currentTurn的active任务取消，两份结果分开；terminal不再取消，pause前已promoted诚实展示，uncertain/revoke/unknownsession不能被continue绕过。v2尚待固定/技术核定，不先改按钮。完整[队列研究与变更](../../docs/evidence/web-platform/chat-queue-research.md)保存e423来源、UTF8限制、immutable receipt/分页/journal与assistant-ui适配边界；steering仍单独受理/送达/生效验收，SDK能力不等已接实现。
 
 CHAT04 Web接缝研究补充：assistant-ui实装queue adapter会接管普通tail发送，运行中默认steer，且Interface同时暴露move/edit/remove；不能以dummy回调伪造未支持能力。未来queue-only显式入口或严格adapter需合同冻结后独立验收，durable ACK/unknown与库草稿/队列items分离。此为工程研究约束，不是新实现或主计划完成。
 
 04:22 WPF-X03I01正式排队：MainLead授权真实两query期间固定main，结束后合X03/D06给含CHAT+X03准确base。worker=workspace_panels_owner，tree/branch拟web-plugin-management-integration/codex/web-plugin-management-integration；当前未创建、不从moving ref启动。owner完成CHAT主线metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean并明确三旧文件停写。管理04:21:43 live核身份/版本，04:22:08.820Z CHAT v1→v2移App/react，04:22:12.797Z I01 v2→v3移integration.css，原其余范围完整保留。新take待准确base/真实tree，任何冲突停协调，不能旧树恢复或新claim前写。七scope：App.tsx、plugin-integration/react.tsx、integration.css，两专用plugin-management-integration fixture/browser测试、plans/wpf-x03-plugin-integration、docs/evidence/wpf-x03。不改Mika模块/共享API，折叠展开才读registry，连接epoch/键盘回焦点/registry与本地extension区分必须验证。
 
 U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示runner配置声明、未探测可用性，不是任意模型目录。未来首draft选择整profile并在create锁定，follow-up沿pin；thinking fixed-disabled、effort unsupported等不能做伪选择。固定dd1只读研究与ACK/跨连接验收已归[证据](../../docs/evidence/web-platform/execution-profiles-research.md)，尚无新take/实现，不抢X03接线scope。
+
+04:34 当前轮：X03I01七scope已正式开工；PROFILE01根据GoalOwner新切分只创建独立选择模块、pure pin helpers/局部tests与自身三件套，不转交现ConversationThread/projection/outbox/App。04:33 live ledger可读、拟9scope无literal冲突，等待新树实际核验后原子take。REQ44已更新PG pause/continue新决定，保留旧e423历史，不新增queue writer。

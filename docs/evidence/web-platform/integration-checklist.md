@@ -1,6 +1,6 @@
 # Web 平台跨 owner 集成清单
 
-2026-10-06 03:47 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
+2026-10-06 04:34 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
 
 ## Dashboard来源登记与核验
 
@@ -15,6 +15,8 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-PERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance | codex/web-performance | plans/wpf-perf01-web-performance | docs/evidence/wpf-perf01 |
 | WPF-PERF02 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window | codex/web-activity-window | plans/wpf-perf02-activity-window | docs/evidence/wpf-perf02 |
 | WPF-CHAT01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
+| D06 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh | codex/dashboard-architecture-refresh | plans/d06-architecture-refresh | docs/evidence/d06 |
+| WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -226,3 +228,10 @@ GoalOwner经root确认Mika承担X03最小只读模块，仅新apps/web/src/plugi
 输入等待：Lead两次真实query结束后的精确含CHAT与MikaX03 main；不将1290e7db模块metadata或movingmain自行当综合base。原owner已明确三文件停写。CHAT claim08259c1d v2移出App.tsx与plugin-integration/react.tsx，[原receipt](chat-x03-amend-receipt.json)；I01 claimb666 v3移出integration.css，[原receipt](i01-x03-amend-receipt.json)。没有释放整claim，其他14/10范围保留。新task WPF-X03I01/worker workspace_panels_owner，七scope已在父plan，独立新tree须精确base+clean才take。receipt未有不实施；source到位后向Lead登记唯一canonical，不建第二手填状态。
 
 CHAT04候选e423abb5f404334b4bb781de1fe1a429278762d4仅固定合同/stub，路径[Interface](/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue/docs/evidence/chat04/interface.md)随owner实施会变化，读取需固定gitshow。claim3be53dee v1为Mika队唯一writer，外部Web未take新消费；waiting列表与独立queueRevision/receipt重放语义已记research。生产实现、client/export与独审ready前不得代替已有unsupported行为。
+
+
+## 04:34 当前消费与后继边界
+
+D06 final6ea2/impl ef已在main4e且4320图固定8f实际部署，claimf619 v2 released，四scope全部停写；后继标题旁固定快照提示必须另领renderer范围。WPF-X03I01 fixed4e/a104v1七scope实际开工，canonical a534已由Lead登记；Lead04:32:26.186Z报main292ad4d/49源、X03I01/O03 live/issues空。作者在下一固定交付时单次实采，不重复轮询。旧CHATv2/I01v3两CAS原样receipt与新take链已经存证。
+
+WPF-PROFILE01下一片仅新选择模块/pure creation与pin helpers、局部tests/自身plan-evidence；无App/旧conversation文件，不amend旧CHAT范围。新9scope与现claim无重叠，待真实新树/commit后receipt派工；真实App接线后续单独受领。queue v2由Mika/Lead冻结及独审，Web无queue claim；最新PG pause/continue/currentTurn与旧ACK replay的新鲜度规则详见[队列证据](chat-queue-research.md)，不能用旧e423stub或内存adapter启用按钮。

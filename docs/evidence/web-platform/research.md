@@ -348,3 +348,12 @@ U11执行配置消费候选已收到w01固定dd1只读报告，完整[研究](ex
 Mika/root交候选e423abb5f404334b4bb781de1fe1a429278762d4，claim3be53dee-08c2-4c88-85ee-a29781842223 v1，canonical conversation-queue/docs/evidence/chat04/interface.md。管理读时该树已出现后续实施dirty，故以git show固定SHA重读interface/合同，不沿用先前clean声称当前仍clean，也不评审moving实现。候选commands/reads/promotion显式stub、生产未批准。公共barrel/client/迁移接线仍Lead唯一writer。
 
 固定合同：POST queue `{expectedQueueRevision,text}`→202 receipt、GET waiting页after稳定sequence/default20/max50、GET item有界全文、POST item/cancel `{expectedQueueRevision}`。两个命令需幂等key；旧receipt的queueRevision/item不可当最新状态。preview≤512 UTF8 bytes/text≤16000/waiting≤100。promoted绑定task/turn/turnNumber；取消已promoted返回already-promoted而不撤回。root额外澄清（固定首文档尚未显式写、后续接口文本已补）：list只waiting含blocked，after不是feed，queueRevision变化从头重读；promoted/cancelled从readItem/receipt恢复。只succeeded+knownsession+有效pin提升，failed/cancelled/uncertain冻结。缺steer/edit/reorder/resume明确不支持。Web队列接线继续待完整实现/公共client/独审，不以stub签名开放按钮。
+
+
+## 04:34 队列语义变更与独立配置模块
+
+w01完整固定e423/Core0.3.22研究及root新pause/currentTurn竞态已归[同一队列证据](chat-queue-research.md)。GoalOwner决定PG持久pause/明确continue，未来先pause ACK再对commit快照active task取消，结果分别显示；这覆盖未来方案而非改写旧e423缺接口的历史。新v2尚待冻结，Mika v1短SHA6fc9df4/3347e7a仅进展来源，不等Web可启用，现无queue writer。
+
+PROFILE01按GoalOwner细化只做新选择模块+pure creation/pin helpers与局部测试，不转交现ConversationThread/projection/outbox/App。w01已给7新文件+plan/evidence两目录精确9scope，04:33 live账本无literal冲突。锁定显示采用creation+reason（created/receipt-pending），不要求未知ACK已有conversation summary。实际App消费由后继唯一owner受领，不称模块交付即U11完成。
+
+root固定dd1只读的低优先REQ22/23候选：slot允许的context与command.contexts可能完全无交集，现ExtensionSlot实际点击才经host拒绝；没有已确认builtin故障。未来可静态拒绝无交集组合，按当前context给不可用理由，渲染不activate，执行前与async load后仍重新authorize；不引任意表达式DSL、不改权限。参考[VS Code contribution points](https://code.visualstudio.com/api/references/contribution-points)的menu when与command enablement区别及[activation events](https://code.visualstudio.com/api/references/activation-events)。未来验证global/task/composer、非法组合、键盘理由与直接execute拒绝；排profile/queue/X03后，不新take或阻断当前功能。

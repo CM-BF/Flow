@@ -2,75 +2,72 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:30 UTC / 04:01:56 dashboard实证main8f1481d包含PERF02且声明范围相同 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:34 UTC / 04:28:28 D06 dashboard与4320图实际核验main4e |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `93e59eb341444a05216935f98d1fac4532af7983`（本次文档停点前实核；旧review仍绑定c075bb5） |
-| 工作树dirty状态 | 仅本管理范围的计划/来源验证/预览交接文档pending，不自指未来提交 |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `704cfdaaaf1ca1dd46fd89ddabcd3bd86e373f95`（本次管理停点前实核） |
+| 工作树dirty状态 | 仅本管理范围的当前状态、队列研究和PROFILE派工文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CHAT实现7cb与最终metadata3319122已限定APPROVED且dashboard闭环；PERF02已集成，领取视图已实证 |
-| 下一可用交付 | X03I01实际App只读插件管理挂载；PROFILE01无重叠模块待精确scope |
+| 当前产出 | CHAT7cb与D06 ef已审并集成；X03I01七scope已开工，PROFILE01九scope核占用中 |
+| 下一可用交付 | X03I01实际App只读插件管理挂载；PROFILE01独立整份执行配置选择模块 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
-| 检查状态 | PASSED c075bb5c00ac2f27d54dd264982be30261a9dc51；历史14份文档链接/ID/TODO/diff及root独立检查；本轮增补另做文档一致性检查，不继承产品或全量review |
-| 已集成main状态 / HEAD | 本管理计划未集成；03:17本地main及origin/main均为 `3773db5d014a6d38d09553acd0a5fe8df900b7c4`，独立ancestor核W01 cb4与M02 d47已包含 |
+| 检查状态 | PASSED c075bb5c00ac2f27d54dd264982be30261a9dc51；历史管理文档独审目标；后续增补只作本地文档/事实一致性检查，不继承产品或全量review |
+| 已集成main状态 / HEAD | 本管理计划未集成；最新已知主线4e0289f29ffa48c6c49003837d4520f57c22b6b0，由Lead已push且本地D06 ancestor/声明范围与实际4320图已核 |
 | Review | [review.md](review.md)，APPROVED仅管理文档target c075bb5；后续增补未自动获审 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-001-01 | completed | d01_owner | U00～U12及WPF-REQ-01～45已落[plan](plan.md) |
-| WPF-001-02 | completed | d01_owner | 7个子计划齐三件套；P01/M02/I01/PERF01/PERF02/CHAT已转独立唯一owner；dashboard协作仅留管理树 |
-| WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
-| WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
-| WPF-001-05 | in-progress | d01_owner | P01完整6ce与I01主App92a均独立APPROVED；完整X01父范围仍开放，X02中心registry首合同4054待后续独立Web消费 |
-| WPF-001-06 | completed | d01_owner | 有限两轮基线3d47与窗口a87均限定APPROVED，04:01:56实际dashboard main8f1481d ancestor/current/scopeEqual全真；后继性能机会按新证据另排，未宣称完整性能目标完成 |
-| WPF-001-07 | completed | d01_owner | M02 d47 / metadata c526 clean，owner20局部/9总览/6观察/4真实PG组及root限定独立APPROVED；03:17 ancestor核main3773已含d47，非以approval推定 |
-| WPF-001-08 | completed | d01_owner | D04部署且root实际领取详情验证；M02v2移出三文件→I01v1 committed receipt已读/存证，正确应用用户领取展示与唯一写者规则 |
-| WPF-001-09 | in-progress | d01_owner | CHAT7cb首批已独审，最终331后083记录main dd1b已含；真实两query仍Lead待验收，queue/steer后继open |
-| WPF-001-10 | in-progress | d01_owner | 新WPF-X03I01 claima104v1/固定main4e/七scope已受领，canonical a534已交root注册，实际接线中 |
+| WPF-001-01 | completed | d01_owner | U00～U12与WPF-REQ-01～45落[plan](plan.md)，REQ44后继pause/continue变更保持来源 |
+| WPF-001-02 | completed | d01_owner | 七子计划三件套齐；六准备目录已转独立canonical stub；新增实现各自独立平级source |
+| WPF-001-03 | completed | d01_owner | W01 cb4通过；SSE由M02 d47修复/复验，实证main已含 |
+| WPF-001-04 | completed | d01_owner | 管理源和既有Web来源均实际聚合；X03I01已获Lead注册通知，作者下一固定交付时实采 |
+| WPF-001-05 | in-progress | d01_owner | P01/I01可信host与X02 registry已审集成；X03I01消费只读管理模块，完整npm生命周期/第三方隔离仍开放 |
+| WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
+| WPF-001-07 | completed | d01_owner | M02 d47已审集成，当前v3范围按正式转交保留 |
+| WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv2/I01v3→X03I01v1有原始receipt |
+| WPF-001-09 | in-progress | d01_owner | CHAT7cb/083已审集成main；真实两query仅Lead执行、结果未收到；profile/queue/steer/voice完整需求仍开放 |
+| WPF-001-10 | in-progress | d01_owner | X03I01固定4e、a104v1七scope、canonical a534已交root注册且Lead04:32采样确认live，owner实施中 |
+| WPF-001-11 | in-progress | d01_owner | PROFILE01只含新模块/局部tests，04:33 live ledger九scope无冲突，独立树核验后正式take；实际App接入另受领 |
 
-## 当前管理工作
+## 当前唯一owner、claim与下一步
 
-root持续只读研究与独立验收；管理者维护此管理树，D06独立图刷新已完成集成并释放全部scope；55247只读预览保留。workspace_panels_owner为WPF-CHAT01唯一Web实现owner；w01_owner已交PERF02并停止主动实现，已完成固定CHAT复审；按GoalOwner指示释放已集成PERF02全部scope，04:12:26.441Z已committed v2 released，原样receipt已存。无新增agent。本队最多4、主线4、Mika2总上限10，sources/claims数不代表活跃agent数。
+管理者只写本树两目录，04:33:08.996Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审。workspace_panels_owner当前写X03I01；w01_owner转PROFILE01模块，不并发改旧CHAT文件。本队最多4、主线4、Mika2总上限10；claim数不代表agent数。
 
-| 当前工作 | 已核事实与下一步 |
+| 当前工作 | 已核事实与边界 |
 | --- | --- |
-| [WPF-CHAT01](conversation-core/plan.md) | 唯一树web-conversations，claim08259c1d v1。最终实现7cbabb737f26b108275e80f1b6cd0425699f3c18 / metadata3319122ea2d225e96f587a86a0f5ff97a3191b0b clean，root限定整体APPROVED、R1/R2关闭；04:10:28真实dashboard checks/review同7cb、proof unchanged/issues空/main未含。owner停止产品实现，root统一交主线消费。63743 fixture/session14932保留，0模型 |
-| [WPF-PERF02](performance-optimization/plan.md) | 实现a87f64f48a3b7e8d03429ab0673c210076a2df0d / 集成metadata b61707d20ee9803e7397f21961549deb65ceef1d clean；main8f已ancestor/current/scopeEqual。owner停止全部8scope，04:12:26.441Z v1→v2已released，receipt已存；后续修复须新take，无重复产品测试 |
-| Dashboard来源 | 04:07:57.845Z实采42源、21active writer claims、literal0重叠，仅新X03未注册；CUA独立实读CHAT领取详情所有身份/路径/状态字段。04:10:28.566Z再核CHAT最终331/7cb，人类字段、claim、checks/review/proof一致；证据下列链接 |
+| WPF-X03I01 | web-plugin-management-integration / codex/web-plugin-management-integration，base4e，claim a1044bb0-46ed-4cc4-a39a-c3f27a67cea4 v1，04:28:04.867Z committed；7scope限App/react/CSS、2test与plan/evidence，不改Mika模块。canonical a5340cd9a4a41790de5cffa026949fbf3ff12ec7已注册；Lead04:32:26.186Z确认49源含X03I01且issues空，作者下一固定交付时再核claim/checks，不重复采样 |
+| WPF-PROFILE01 | w01_owner，仅execution-profiles四新文件/三test与plan/evidence九scope；拟树web-execution-profiles，固定4e，核现有claim无冲突。未有receipt前不写；旧conversation/App不转交，模块不等App消费完成 |
+| 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v2已转App/react给X03，其余保留。真实两query不冒称通过 |
+| 已交付D06 | ef42277ff55d1cbb76ea707836481a9788619033 / final6ea2e68a3362df3cb50ef4a063fc4cbfc3026966 clean；固定8f图已集成4e，04:28:28.679Z实际47源/图已部署。claimf619 v2 released于04:29:52.844Z，旧树全部停写；后继标题快照提示需新take |
+| 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
+| 跨Lead | Mika负责CHAT04持久队列和X03模块；ExecutionLead负责公共API/集成/4320。queue v2 pause/continue待固定技术合同；不另设Web queue writer |
 
-| 多Lead边界 | Mika独占B01后台投影/feed字节/历史性能及下一X02中心registry；本队不写后端。PERF02只改受领窗口接缝，CHAT只改会话与App受领文件，无字面scope重叠 |
+## 验收边界与开放目标
 
-## 已交付输入与仍开放范围
+- 完整SHA、来源、检查、screenshots、技能和限制见[交付快照](../../docs/evidence/web-platform/delivery-snapshot.md)与各唯一owner三件套。本表不复制其他任务TODO。
+- [队列研究](../../docs/evidence/web-platform/chat-queue-research.md)区分e423历史stub、后继PG pause/continue/currentTurn提案、immutable ACK和assistant-ui实际adapter限制；当前按钮不变。steering仍须受理/送达/实际生效证据。
+- [执行配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)仅整份已发布runner配置选择；catalog not-probed，不声称模型在线或任意effort/access。PROFILE01第一段只交模块。
+- 完整X01插件npm生命周期/权限/隔离/CLI等价、BR-01真实PTY/fs、后继对话能力仍开放；I01本地Settings和中心registry不是完整插件管理。
+- 本队0真实模型/语音调用；Lead的真实两query验收结果尚未收到。现有预览均明确fixture，未暗换用户页面。
 
-- W01 cb4a39211e264538704ba9d474eeb08fc4b2759c、M02 d47c602f3bab1fe97a9be70fd37780c2918bcfbc均独立APPROVED；管理者03:17 ancestor实核main3773包含两实现。M02最新metadata0c209c83786c411e3b2756110c032e2e6626a27a记录v3范围转交，owner核main edee集成；不把metadata旧SHA当未集成实现。
-- P01可信host实现6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 / metadata2910ebc8e11fbcb00d1c2773face229c84fe47cd整体APPROVED，PH-R1～4 CLOSED。I01实际App实现92a786abb9f7ef16e15482ac00b98ff860ecc47f / metadatab5844442699733558a152c12392ea78f26c393a4整体APPROVED，root独立24模块与关键实页。I01 v2已正式移出4文件给CHAT，不再称只是停写待转交。
-- PERF01 benchmark实现3d47cdd4eae959119f154a0d06964cf65006f8c9 / 固定报告adc2595bbc34986353514d374afeb0eca0188ee2 / 最终metadatacc33403cd9b357fcd85484b7bc6952dc1220d689获限定APPROVED；claimv2已转probe给PERF02。原始raw不覆盖，旧报告未声称做过生产优化。
-- 完整[X01插件管理](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)、第三方隔离/CLI等价、BR-01真实PTY/fs及CHAT后继queue/steer/voice/模型控制仍开放。X02固定4054仅中心registry初步合同，runtime unavailable，不能冒充完整安装启用或把I01本地Settings当持久管理。
+## Dashboard与服务
 
-详细完整SHA、检查来源、截图、限制与入口见[交付快照](../../docs/evidence/web-platform/delivery-snapshot.md)及各唯一owner三件套；这里不维护第二套任务TODO。
+04:07:57实际42源/21activewriterclaims literal0overlap、领取详情字段都可见；04:28:28 D06实际47源/唯一source/人读字段/checks+review ef/proof unchanged/main相同。两次是固定时点，不称永久无冲突。Lead已通知main292ad4d/4320于04:32:26.186Z共49源，X03I01/O03 live且issues空；该事实明确为Lead采样，X03作者下一固定交付时实读，我不重复同采样。PROFILE待receipt/canonical再送。
 
-## 真实对话输入与验收责任
+[用户M02预览](http://127.0.0.1:49922/) session17885、[I01](http://127.0.0.1:55049/) session79831、[CHAT](http://127.0.0.1:63743/) session14932均由workspace_panels_owner保留；[D06固定8f图](http://127.0.0.1:55247/#architecture) PID42719保留。4320服务仍主线独占；本管理者不重启、不替换用户预览。
 
-首合同4c2408e4db3595879f6471cb5fffccadec975b3d已由共享owner受控输入至Web；841公共导出在旧基线冲突，03:38采用Lead给三文件patch/manifest核before与after后形成a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0。未手工改共享接口，原冲突已关闭，过程保留[研究](../../docs/evidence/web-platform/research.md)。
+## 本次质量停点
 
-03:44 root转主线：中心固定2d3bb61b35318f999c9f0f336bb3f443418bb5dc独审APPROVED（14真实PG HTTP、tsc），公共client841亦批准、主线main ac4e34d；此为转交来源，不冒充管理者重跑或Web通过。两次真实模型聊天验收由主Lead在三端独审后的固定main执行，本队不重复调用。cap=false的queue/steer/实时文本/每turn模型控制必须明确unsupported；首合同ready不关闭REQ41～45全部需求。
+04:34按本地find-skills/clean-code复核事实所有权、当前与历史、receipt和错误边界；直接更正主plan/status旧“CHAT实施中/待main”、旧claim版本及D06仍排队，保留后段带时间历史。新增队列研究记录来源与暂停语义演进，不把候选当已实现。仅文档一致性验证，不跑产品/性能/模型；c075旧审批不扩到本轮。
 
-## Dashboard、领取与保留预览
-
-03:43:21.506Z管理者续工前CLI实核协调available、管理claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，两授权目录未变。最新跨owner实际转交为M02v3、PERF01v2、PERF02v1、I01v2、CHATv1；原样receipts与路径见[集成清单](../../docs/evidence/web-platform/integration-checklist.md)。不使用旧回执覆盖当前version。
-
-历史source闭环：root03:12五源完整；管理者03:17确认30源保留全部原17；root03:37:38采样时两新源仍unregistered；主线登记后管理者03:46:41.801Z单次实采39源、CHAT/PERF02各唯一live source，worktree/branch/planDir/claim/worker全一致，unregistered=[]，19 active writer claims literal同/父子路径0重叠。见[本次来源与范围证据](../../docs/evidence/web-platform/chat-perf-source-verification.json)。该采样PERF02缺工作分支字段如实保留；03:49:13.564Z最终metadata172d已补齐，checks passed/review approved均绑a87、proof unchanged、human完整/issues空，[最终实证](../../docs/evidence/web-platform/perf02-approved-dashboard.json)。该03:46历史采样CHAT target UNKNOWN符合当时事实；当前7cb已正式通过，见04:10最终快照。六个准备目录均stub，不重复注册。
-
-[用户保留产品预览](http://127.0.0.1:49922/)仍为已审M02 HTTP fixture，workspace_panels_owner保留session17885；[I01预览](http://127.0.0.1:55049/)为App集成fixture，session79831。不会暗换用户49922或将固定结果宣称真实模型回应；动态端口恢复法在集成清单。工程4320仍归主线管理服务；D05图数据已正式释放，D06由本owner独立领取后刷新，不控制4320。
-
-## 本段记录与限制
+## 历史停点记录（以日期为准，不覆盖上方当前状态）
 
 03:44管理clean-code复核当前正文、单一事实源、接口/领取边界及历史approval：修正旧claim版本、已交付仍称待派/待接口、旧下一交付等陈旧段落，并把详细历史归研究证据；仅文档变化，不重复全库或性能测量。本管理独立review仍只绑定c075bb5首文档，后续增补未自动继承。根lock例外不沿用给新任务；两新owner使用不写lock安装，无新生产依赖。
 
