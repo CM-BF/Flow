@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 12:58 UTC |
+| 最近更新时间 | 2026-10-06 13:02 UTC |
 | 所属大task | [WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -11,26 +11,26 @@
 | Branch | codex/web-attachment-production |
 | 工作基线 / HEAD | base 1c4968354dabce1e6748f3301a2e6eecd33e77d4；完整实现 9eec51b72c6432b5b41df52f5b8fa783eb45e65b |
 | 工作树dirty状态 | 实现已固定；本记录提交前仅 own evidence/plans metadata 待提交，提交后 clean/remote 以最终回执核验 |
-| 工作分支状态 | in-progress / awaiting-review |
-| 本片段交付阶段 | review |
+| 工作分支状态 | in-progress / approved / waiting-main |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 9eec51b72c6432b5b41df52f5b8fa783eb45e65b；长名actual App2项/浅深390/cleanup、Webtypes0；此前191独审和10+1旅程各按原target保留 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；本片固定实现待独审/主线接收，个人服务未操作 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；本片已独审APPROVED，待主线接收及history组合验收，个人服务未操作 |
 | 实现目标 | 9eec51b72c6432b5b41df52f5b8fa783eb45e65b |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/AttachmentPicker.tsx, apps/web/src/attachments/attachments.css, apps/web/src/conversation-context/receipts.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/messages.ts, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/test/attachment-integration.browser.ts, apps/web/test/attachment-integration.fixture.ts, apps/web/test/attachment-integration.test.ts, apps/web/test/conversation-context-receipts.test.ts, apps/web/test/conversation-messages.test.ts, apps/web/test/conversation-outbox.test.ts, apps/web/test/conversation-projection.test.ts, apps/web/test/conversation-queue.test.ts, apps/web/test/plugin-host.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 聊天附件发送、故障恢复和长文件名窄屏操作已验证 |
-| 下一可用交付 | 完成修复复审后接入主线 |
+| 下一可用交付 | 接入主线并验证历史上下文中的附件材料 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED；新target待P2复审，旧f82请求修改历史保留 |
+| Review | [review.md](review.md)，APPROVED 9eec51b72c6432b5b41df52f5b8fa783eb45e65b；P2 CLOSED，旧f82历史保留 |
 
 | TODO ID | 状态 | Owner | 证据/检查 |
 | --- | --- | --- | --- |
 | ATTACHI02-01 | completed | w01_owner | [启动证据](../../docs/evidence/wpf-attach-i02/README.md) |
 | ATTACHI02-02 | completed | w01_owner | 真实P01和官方core消费者已验证；App组合仍在核验 |
 | ATTACHI02-03 | completed | w01_owner | [实际App与HTTP证据](../../docs/evidence/wpf-attach-i02/README.md)，10+1旅程；最后mixed delta直接官方core验证 |
-| ATTACHI02-04 | pending | w01_owner | 固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b，P2修复待复审/main待接 |
+| ATTACHI02-04 | pending | w01_owner | 固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b，分支实现/检查/独审完成；main接收及history组合待完成 |
 
 ## 证据与边界
 
@@ -38,9 +38,9 @@
 
 ## 下一步与handoff
 
-固定完整候选与 [22路径hash/逐轮绑定](../../docs/evidence/wpf-attach-i02/source-manifest.json) 交 root 独审。v2 claim 保留回修权。15轮生产App/HTTP共217.181秒，最终候选纯build1.181秒，总218.362/600秒；每轮同一专库与Chrome，全部专库已清理、无残留错误，0provider。最后 production-complete 是10项通过+末项失败，不能称整轮全绿；production-plain只重跑末项并通过。末项是会话GET未完成就按Enter的时序，改等实际加载/按钮可发送，没有产品修复。最终mixed失败/取消后直接remove另用17项真实官方core delta验证，未重复全browser。
+固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b 已独立APPROVED，24声明source与[manifest](../../docs/evidence/wpf-attach-i02/source-manifest.json)一致，v3/26scope保留待主线接收；产品停止写入。19轮含所有失败及独立build保守290.133/600秒、0provider；全部专库最终清空，首长名轮为人工恢复清理，不假称正常自动cleanup。原10+1完整行为与最后2项长名复验按各自target，原日志不覆盖。
 
-原始 first～final 历史均保留；第八轮起已实际验证badUpload原scope/key查询及明确恢复。存储失败纯文本可用、@file/drag、两主题390/键盘与CACHE保护均有实际App证据。只读根诊断已确认mixed修复，不等于本片整体APPROVED。下一步独审/主线接收，无额外dashboard取样。
+**必须后继组合验证：当前main context-history producer × attachment-only合法材料。** 本树较早factory的HTTP通过不能替代它，由合法owner/Execution Lead接收时处理。**持久Send/Queue未知收据恢复仍待MATURE06-04**，ready草稿reload与跨tab journal原子性不在本片完成范围。未操作个人服务，也不自行dashboard采样。
 
 ## 架构影响
 
@@ -69,3 +69,7 @@ Root 已完成固定 f82 技术审查191/191及source/claim/cleanup/wire审计�
 已核 [v3/26scope](../../docs/evidence/wpf-attach-i02/longnames-claim-receipt.json) 并仅修改Picker可见动作/完整aria-label及有界CSS，原controller/recovery/adapter不变。产品修复14ddfa99，最终target **9eec51b72c6432b5b41df52f5b8fa783eb45e65b** 的后继只把专测改成每项真实ACK和draft ready后再上传。此前production-longnames-fixed失败是采样器撞既有单上传门禁（只1 POST201），13.679s自动cleanup全部成功；没有改门禁或称CSS回归。
 
 [最终longnames-ready](../../docs/evidence/wpf-attach-i02/production-longnames-ready-browser.json) 2项通过、errors=[]，实际浅深390 Dialog388/scroll388、11操作按钮最大124.954px，恢复Enter/Escape回Files与草稿保留通过；10.325s含cleanup87ms，remaining=[]/errors=[]。总19轮及独立build保守 **290.133/600秒**，0provider，首longnames轮仅人工清理，其余自动清理事实分列。原15轮/两次采样器失败/布局红报告均未覆盖。新24apps hash=target=current=最终报告，独审等root，不冒main/真实provider已验。
+
+## 2026-10-06 13:02 UTC：正式批准收口
+
+[Root正式review](../../docs/evidence/wpf-attach-i02/root-9eec-review.json) APPROVED/0blocking，P2 CLOSED。复用未变业务源191独立结果，root本轮读3文件delta、24hash、26scope及截图/几何，无新全量运行。仅更新自己的元数据，产品与target零差；本提交前metadata dirty，提交后clean和remote相等以命令回执为准。先前990483首次push服务器500，核remote旧HEAD后一次普通重试成功，未force或改写历史。主线未接收，不提前release。

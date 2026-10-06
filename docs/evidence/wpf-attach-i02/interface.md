@@ -1,6 +1,6 @@
 # 实际附件生产接线 Interface
 
-固定输入为 `1c4968354dabce1e6748f3301a2e6eecd33e77d4`。既有五个 Input/adapter/UI 模块与公共 DTO/client/matcher 均未修改。P01 是唯一插件生命周期，App/CACHE 是唯一 view 保留与回收 owner；本片没有第二 registry。
+固定输入为 `1c4968354dabce1e6748f3301a2e6eecd33e77d4`。既有Input controller/recovery/adapter与公共DTO/client/matcher均未修改；Picker/CSS经v3显式授权仅修窄屏动作展示，公开接口/冻结语义不变。P01 是唯一插件生命周期，App/CACHE 是唯一 view 保留与回收 owner；本片没有第二 registry。
 
 ## 材料与收据
 

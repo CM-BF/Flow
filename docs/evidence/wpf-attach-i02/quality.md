@@ -41,3 +41,7 @@ root已证实官方complete恢复窗口；本段真实core0.3.22消费者（完�
 ## 2026-10-06 12:58 UTC 交付安全复核
 
 已读取/核验v3原子scope后修改两UI文件。短动作与完整accessible name拆分只影响展示，无第二状态/权限或新依赖；原强文本保留文件名，CSS尺寸适配所有同面板动作。旧Single-upload门禁未改，专测逐文件真实ACK与draft ready等待，消除同步setFiles不代表上传完成的误用；Chooser两个promise立即接管。最终longnames源码hash固定，scope26外0、保护3模块/官方Thread/shared零改；Webtypes0与实际App2项通过。前15旅程不伪称用新CSS重跑，首长名轮人工清理/次轮产品溢出/修后首轮采样竞争均保原始日志。无未修作者发现，正式P2关闭待独审。
+
+## 2026-10-06 13:02 UTC 批准metadata安全段
+
+原样归档root新target独审，准确区分旧f82业务191通过与本轮仅UI/sampler delta只读复审；P2关闭历史不覆盖。纠正README首摘要、当前24源/26scope、3保护模块及main未接边界。检查命名/单一source/错误和限制措辞，无产品变更、无重复测试/build/browser；主线history合法attachment-only组合与MATURE06-04持久收据仍醒目标开放。仅实际parser/本地链接与源码diff验证后正常commit/push。

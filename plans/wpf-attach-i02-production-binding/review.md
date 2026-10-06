@@ -1,16 +1,18 @@
 # WPF-ATTACHI02 review
 
-**状态：NOT_STARTED**
+**状态：APPROVED**
 
 Review target commit：9eec51b72c6432b5b41df52f5b8fa783eb45e65b
 
 Base：1c4968354dabce1e6748f3301a2e6eecd33e77d4
 
-完整候选已固定，22声明apps路径（13生产+9测试，其中既有queue test未变）。独立review须核[source manifest](../../docs/evidence/wpf-attach-i02/source-manifest.json)与实际源码、公共matcher/授权/稳定view、原key/recovery、pending hold、official prepare failure/cancel及精确自动/显式remove、fixture期限/清理。作者检查与原始边界见[README](../../docs/evidence/wpf-attach-i02/README.md)。
+Reviewer：root / gpt-6-astra / ultra。独立复审时间2026-10-06 13:02:28 UTC，0 blocking，[原样报告](../../docs/evidence/wpf-attach-i02/root-9eec-review.json)。
 
-root提前只读预审/纯内存诊断已促成本轮修复：全局journal不再pin无关空view；mixed准备失败/取消后直接移除complete项与Input一致。原始JSON和红绿日志保留；这些不是整体固定候选批准。主线/真实provider/后继context-history producer组合未验，原五module/共享/官方Thread不改。
+完整范围为24声明apps路径（15生产+9测试，既有queue test未变），26scope已核无越界。Root完整读Picker/CSS及定向browser差异，核fixed/current/browser hash、保护范围0diff与后继产品0diff，目视浅深390截图/几何388/388和11按钮≤125。P2长名溢出 **CLOSED**。
 
-待独立review结论。main尚未接收，不把作者局部通过或空模板当APPROVED。
+原191/191（7文件）独立结果仅按未变f82业务源复用，未冒称新全量运行；作者实际App10+1及最后2项longnames分别保留各target/hash，首长名轮人工清理与后续单上传采样器失败原样保留。未额外跑PG/browser/provider/个人服务。
+
+**集成前条件：当前main context-history producer × attachment-only合法组合须由合法owner/Execution Lead验证，本树较早factory不能替代。持久Send/Queue未知收据恢复仍待MATURE06-04。** ready草稿reload、跨tab upload journal CAS、真实provider/屏读/Firefox/Safari未验。main NOT_INTEGRATED；此为片段通过而非MATURE03大task完成或部署批准。
 
 ## 2026-10-06 12:49 root 技术独审进展
 
@@ -25,3 +27,7 @@ Root确认f82 REQUEST_CHANGES：合法255字符文件名在390px使按钮横向�
 ## 修复待复审 2026-10-06 12:58 UTC
 
 正式历史：f82 REQUEST_CHANGES/P2长名溢出，191独立功能检查保留。新target 9eec51b72c6432b5b41df52f5b8fa783eb45e65b 仅2UI展示文件+定向browser脚本delta；v3明示新增写权。最终actual App longnames2项通过、浅深390几何和键盘恢复/草稿保持，Webtypes0；single-flight采样器失败保留，按实际ready串行后通过。新整体结论待root，不自动继承f82技术检查为最终APPROVED。
+
+## 2026-10-06 13:02 UTC：结论更新
+
+f82 REQUEST_CHANGES/P2历史保留；以上新target正式APPROVED关闭P2，不回写旧报告。后续仅合法metadata/main收口，产品停止写入，claim保留待主线接收。

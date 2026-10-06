@@ -27,8 +27,12 @@ Input 的 immutable viewId 使用 view.key。临时 draft→conversation 路由�
 - [x] ATTACHI02-01：材料深冻结接入真实 Outbox/Queue 命令并验证兼容与 ACK。
 - [x] ATTACHI02-02：P01 私有授权附件 binding 与直接消费者测试。
 - [x] ATTACHI02-03：依法取得剩余范围，实际 App/Thread/CACHE 与 HTTP 旅程贯通。
-- [ ] ATTACHI02-04：固定候选、独立 review、主线接收与 scope 收口。
+- [ ] ATTACHI02-04：固定分支/检查/独立review已完成；主线接收、当前history组合验证与scope收口待完成。
 
 ## 2026-10-06 12:58 UTC：P2窄屏修复
 
 原模块UI两literal经v3合法追加：动作按钮短文案保完整accessible name，旁边strong仍显示完整名称；grid minmax与button界限避免min-content撑开。固定9eec51b72c6432b5b41df52f5b8fa783eb45e65b，只新增实际App定向longnames验证，不重跑旧矩阵；最终2项通过待root复审，完整记录见status。
+
+## 2026-10-06 13:02 UTC：独立review完成
+
+Root批准固定9eec51b72c6432b5b41df52f5b8fa783eb45e65b并关闭P2，原f82 REQUEST_CHANGES历史保留。产品冻结；本任务04仍开放以等待main接收/合法history producer×attachment-only组合及scope收口，持久Send/Queue恢复仍为MATURE06-04后继。本次只核metadata/links/parser，不重复测试。
