@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 20:51:12 UTC |
+| 最近更新 | 2026-10-06 20:52:21 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
-| 工作基线 / HEAD | 22a0806bc2465e11096949618113833f31766b19；产品源码83a0799293057f7472f0329c61e566708b2a2381；当前准备HEAD e419641f2ccf04145344961e8c7a781e6edf6670，最后监督门禁与raw待固定 |
-| 工作树dirty状态 | 本 owner 已领源码与文档待提交 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；固定证据包2cae2903b72bd973356c7ec9c4b36a7d6bca5b78 |
+| 工作树dirty状态 | 本次状态提交前 source/raw clean；仅更新本管理记录，固定包已push |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 85 distinct non-PG分批通过；focused strict5 exit0（含最终PG fixture静态类型）；外层3纯fake另列。原CLI/UUID/types失败原样保留，未重跑已绿；真实PG NOT_OPEN |
@@ -22,7 +22,7 @@
 | 任务层级 | 子task |
 | 当前产出 | 空闲复用持久领取身份、丢响应恢复同一分配已通过公开runner与旧停机/并发直接检查，中心事务专库验证已准备。 |
 | 下一可用交付 | 保持领取及时性与崩溃保护的中心、客户端和 runner 完整接线。 |
-| 当前阻塞 | 实现与依赖供应NONE；中心专库8组等待固定准备审查与独立运行窗口。 |
+| 当前阻塞 | 实现与依赖供应NONE；中心专库8组准备已固定交审，等待独立运行窗口（NOT_OPEN）。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，SOURCE_REVIEW APPROVED / VALIDATION_PENDING |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
