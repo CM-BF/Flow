@@ -1,0 +1,11 @@
+[
+  {
+    "label": "concurrent-retained-byte-cap",
+    "retainedBytes": 67108864,
+    "statuses": [
+      201,
+      409
+    ],
+    "fixture": "255 real immutable versions plus 17595 derived chunks seeded in one transaction, then two HTTP writers"
+  }
+]

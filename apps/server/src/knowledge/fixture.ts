@@ -48,7 +48,11 @@ export async function startKnowledgeFixture(label: string) {
     await admin.query('CREATE DATABASE "' + databaseName + '"'); created = true;
     pool = new Pool({ connectionString: databaseUrl.href, max: 6, connectionTimeoutMillis: 3000, statement_timeout: 10_000 });
     await startServer();
-    return { pool, http, close, restart: async () => { await app!.close(); await startServer(); }, project: async () => {
+    return { pool, http, close, discardReply: async (path: string, body: unknown, key: string) => {
+      const response = await fetch(base + path, { method: 'POST', headers: { authorization: 'Bearer ' + ownerToken, 'content-type': 'application/json', 'idempotency-key': key }, body: JSON.stringify(body), signal: AbortSignal.timeout(20_000) });
+      await response.body?.cancel(); // The committed response body is deliberately not decoded or retained.
+      return response.status;
+    }, restart: async () => { await app!.close(); await startServer(); }, project: async () => {
       const response = await http('/api/projects', { workspaceId: 'personal', title: 'K01 isolated project' }); assert.equal(response.status, 201); return response.body.snapshot.project.id as string;
     } };
   } catch (error) { await close(); throw error; }
