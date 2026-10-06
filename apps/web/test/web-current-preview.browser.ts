@@ -336,7 +336,7 @@ async function supervisor() {
   // Report import/verification is part of the same measured attempt, not an uncounted epilogue.
   await json(join(directory, "outcome.json"), { passed: !!compatibilityId && !errors.length && !cleanupErrors.length,
     historyPassed: !!result?.historyPassed && !errors.length && !cleanupErrors.length,
-    mode: gate.mode, phaseB: result?.app.state === "NOT_RUN" ? "NOT_RUN" : result?.app.passed ? "PASSED" : "FAILED",
+    mode: gate.mode, phaseB: gate.mode === "history" || result?.app.state === "NOT_RUN" ? "NOT_RUN" : result?.app.passed ? "PASSED" : "FAILED",
     compatibilityId, errors, cleanupErrors, backend: gate.backend.head, artifactId: ARTIFACT, historyEvidence: historyProof });
   Object.assign(budget, { complete: true, elapsedMs: Date.now() - started });
   await json(join(directory, "budget.json"), budget); clearTimeout(hardStop);
