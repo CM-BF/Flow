@@ -362,3 +362,5 @@ RENDERER首canonical d298b45076f448c8363b5befa1ad325d000c8bc5独立Gitclean、5p
 06:05 正式ACTIVITY01前置闭合：ROOT/GO P1授权→worker独立3d树preflight→管理实核branch/HEAD/clean→freshledger八scope冲突0→原子take06:04:36.078Z→followup带receipt实施。记录一次completed消息未触发纠正，不以send邮箱当工作执行；新任务统一followup。K02/renderer批准范围与新活动任务严格分离；真实<=2query窗口只Lead运行，本队未碰服务/模型。
 
 GO跨Lead效率约定已采纳到父plan：后继只对接口动作/阻断/fixed-review-ready/mainreceipt发送合并外部消息；metadata状态更新留canonical并入下一实质回执。现K02/renderer/source通知已发送，不重复催促；真实queue封存证据只读消费，不复验。管理本段研究与文案提交不单独对外刷同事实，继续实际ACTIVITY与准确base到后的renderer受领。
+
+06:17 合采仅一次：原全响应临时文件与SHA、四task原对象摘录保存，K02/renderer正确approved+unchanged；Activity workingmetadata的UNKNOWN未洗成后续绿色，父历史reviewoutdated准确保留。后续owner只复制原样摘录，不并行fetch。Activity新固定candidate范围/链接/报告六blob核对通过，不重复22/浏览器/真实queue；最终approval待root。

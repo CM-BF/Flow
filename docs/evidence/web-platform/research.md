@@ -525,3 +525,7 @@ CHAT05后继输入边界补充（Lead→root，经GO接收）：超过64KiB仅�
 ## X01/RS08后继npm renderer互操作约束（root只读研究）
 
 Root核本地frontend/codebase-design、固定747 trusted renderer/P01 hostApi1，并实际读[React invalid hook call](https://react.dev/warnings/invalid-hook-call-warning)与[npm peerDependencies](https://docs.npmjs.com/cli/v11/configuring-npm/package-json/#peerdependencies)：未来第三方npm renderer进入同一React树时，hostApiMajor=1不涵盖React/aui模块实例兼容；组件与renderer需要解析同一React模块。peerDependencies可声明宿主版本范围，但声明不证明打包后单实例。后继真实X01 Web包接入需固定host-shared React/ReactDOM/aui上下文模块，核peer范围并做同树useState/useAuiState装卸smoke；独立iframe/独立root可以有自己React，不能粗暴禁止整页多副本。当前747仅build-time trusted模块，无新loader/依赖，这不是当前finding、不影响既有approval，不新增授权系统或任务，排在聊天关键路径之后。
+
+RS08固定3d追加精确证据（w01只读）：ConversationThread的queue/profile状态可使父组件render，inline identity converter改变身份；installed core0.3.22 useExternalStoreRuntime effect每次setAdapter，converter身份变化清旧converter并绕过相同messages/isRunning早返，原message WeakMap复用因此失效。最窄未来候选为module-level纯identity converter，保留onNew实时closure与新intent门禁（store更新在早返前）；不memo整个adapter、不做revision-only缓存、不省略converter。SDK早返仍通知订阅，不等零render或延迟收益；plugin后代自身render也不必触发该父组件。此固定3d静态证据与旧eb20turn内存探针分别保留，没有新测试/时延测量，准确scope/base与必要行为验证后再决定实现，不默认混入renderer接线。
+
+ACTIVITY作者61b固定候选已在validation记录awaitSignal factory/gate、双reject handler与reset独立detail代际，并以22direct通过覆盖此前moving反馈；管理仅核source hash/范围与原始报告，root固定行为独审仍未出结论，不把作者修复记录冒充独立关闭。

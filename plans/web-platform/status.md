@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:09 UTC / 执行活动模块实施中；两项已审片段等待组合基线与部署 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:17 UTC / 四来源已单次聚合核验；活动模块固定候选独审中 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `400f5d09f5ee807f4743390fbe5f7f2864291ff7`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `0aaeb1b23ab60aadf5e8e5b01271f054ac8eb6da`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的候选范围审计与当前/历史事实文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 真实排队旅程已通过验收；正在制作会话内执行活动展示 |
-| 下一可用交付 | 交付可按需查看执行记录的模块，再接入聊天界面 |
+| 当前产出 | 执行记录模块已提交审查；项目身份兼容和按需详情待集成 |
+| 下一可用交付 | 将按需详情接入聊天，再接入执行活动展示 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
 | 检查状态 | PASSED c075bb5c00ac2f27d54dd264982be30261a9dc51；历史管理文档独审目标；后续增补只作本地文档/事实一致性检查，不继承产品或全量review |
-| 已集成main状态 / HEAD | 本管理计划未集成；MainLead确认3d4985fca060155435b159e0467815bf8e88b8b8已push/clean，管理者实核主仓同HEAD/clean；含QUEUE309/D065ec且11/5paths相同，既有PROFILEI01/UX/DPERF均已集成。GO/SVC确认05:40:49常驻61227/61228 center/runner已受控更新为fb906cb、ready/v3 accepting、0任务/0query；此前75a为历史，本队未登录或服务验证，不据main推自动部署 |
+| 已集成main状态 / HEAD | 本管理后续文档未按新target审定；06:14:43.956Z实际dashboard读main823fea9bd8bc868243398d58725b4076528a7ffc clean，K02/renderer均not-contained；此前MainLead确认3d4985已push/clean且管理独核；含QUEUE309/D065ec且11/5paths相同，既有PROFILEI01/UX/DPERF均已集成。GO/SVC确认05:40:49常驻61227/61228 center/runner已受控更新为fb906cb、ready/v3 accepting、0任务/0query；此前75a为历史，本队未登录或服务验证，不据main推自动部署 |
 | Review | [review.md](review.md)，APPROVED仅管理文档target c075bb5；后续增补未自动获审 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -41,13 +41,13 @@
 | WPF-001-14 | completed | d01_owner | DPERF5cd限定APPROVED/final4d7425 clean；5md15links3TODO/范围0越界，4新检查与旧关联失败分开；main6b4已含、08bd记录后bb7efv2 released |
 | WPF-001-15 | completed | d01_owner | PROFILEUX55b获root限定APPROVED，60d8交付与5md27links3TODO通过，ef869记录main14c61；d113v2已release |
 | WPF-001-16 | completed | d01_owner | QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432croot05:40:36 APPROVED、最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean，41paths/13scope、6md36links、原样聚合和11源码hash核验通过；main3d4985已含309且11paths零差，跨reload原key后继F01仍未完成 |
-| WPF-001-17 | in-progress | d01_owner | [RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md)固定747cbe616408dc3e44ab3587216c5753e6de3994、final7ff614f6aa210aae5a08119f1f16f2ef08b2298a clean；23paths/8scope、6md28links/4TODO与六source hash已核；作者14tests/typecheck/10browser，root05:58:49Z独立14+局部CUA通过并APPROVED，最终metadata approved/目标匹配已核，聚合部署待单次确认，App未接 |
-| WPF-001-18 | in-progress | d01_owner | [K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md)固定7633937c322090bbd6d526f378df464f2a7436ed、finalbec72daec26e6bfc3d944ec3af01fb0bb4ee7796 clean；受控输入e9a0259与自有八scope分开；25paths/6md25links/4TODO/六hash已核，作者102direct/typecheck，root05:58:18Z独立102并APPROVED、最终metadata approved/目标匹配已核，待登记部署单次聚合，无context UI |
-| WPF-001-19 | in-progress | d01_owner | WPF-ACTIVITY01 / web-conversation-activity / base3d4985；51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1于06:04:36.078Z committed，八新scope，首canonical598e5e2e78d7ef57d1add8e6ee797f519da1c0c8已实核clean/parse0errors/4TODO，5md5links通过、完整source已给root一次登记；无App/shared写入 |
+| WPF-001-17 | in-progress | d01_owner | [RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md)固定747cbe616408dc3e44ab3587216c5753e6de3994、final7ff614f6aa210aae5a08119f1f16f2ef08b2298a clean；23paths/8scope、6md28links/4TODO与六source hash已核；作者14tests/typecheck/10browser，root05:58:49Z独立14+局部CUA通过并APPROVED，最终metadata approved/目标匹配已核，06:14单次聚合通过（7ff/两proof不变），App未接 |
+| WPF-001-18 | in-progress | d01_owner | [K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md)固定7633937c322090bbd6d526f378df464f2a7436ed、final394e2ae35ab9f526c339705b59f6a2bf8a5a6efd clean；受控输入e9a0259与自有八scope分开；25paths/6md25links/4TODO/六hash已核，作者102direct/typecheck，root05:58:18Z独立102并APPROVED、最终metadata approved/目标匹配已核，06:14单次聚合通过（样本bec72/两proof不变），无context UI |
+| WPF-001-19 | in-progress | d01_owner | WPF-ACTIVITY01 / web-conversation-activity / base3d4985；51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1于06:04:36.078Z committed，八新scope，固定61b9349af390c137cc4cfeabd38bad058ec69cb5，candidate d933/后继41da仅metadata；29paths/8scope、7md28links/四TODO、dev/prod各7旅程六hash独立match，root独审中；无App/shared写入 |
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录；本次fresh CLI确认claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，时间见本轮候选审计。root持续只读独审；workspace_panels_owner的K02薄兼容已批准待集成，同时在全新八scope实施执行活动模块；w01_owner的renderer模块已批准待集成，当前只读准备App接线准确输入与范围。QUEUE/D06已在main3d4985且原owner全部停写、正式release v2；不恢复旧树写入。两新feature范围不重叠，本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
+管理者只写本树两目录；本次fresh CLI确认claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，时间见本轮候选审计。root持续只读独审；workspace_panels_owner的K02薄兼容已批准待集成，同时在全新八scope交付执行活动固定候选待独审；w01_owner的renderer模块已批准待集成，当前只读准备App接线准确输入与范围。QUEUE/D06已在main3d4985且原owner全部停写、正式release v2；不恢复旧树写入。两新feature范围不重叠，本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
@@ -194,3 +194,7 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 06:07 GO经root更新：真实queue两query窗口实际06:02结束，2/2封存且GO独立功能验收通过，main冻结解除。当前等待原因已从模型窗口改为Lead组合接收后准确mainbase；历史06:02管理观察保留，不倒改当时信息。ACTIVITY首source登记已由GO转Lead，尚无部署回执，不空采；F01跨reload未知原key恢复/steer等后继仍开放。
 
 06:09 ACTIVITY作者报告首projection16直接检查通过，仍无固定candidate；正补reset/同ID迟到隔离及UI/fixture，不提前批准。root已真正目视queue-live两轮窄屏图（非旧synthetic），固定manifest/检查封存2of2已由管理只读核字段；[后继布局观察](../../docs/evidence/web-platform/queue-live-ux-observation.json)归原U11/REQ43，功能仍通过、0本队重测/模型。K02/renderer集成base与source部署仍待Lead精确回执，不重复API。
+
+06:17 部署通知后唯一[实际合采](../../docs/evidence/web-platform/combined-source-deployment-observation.json)：generated06:14:43.956Z，73源/main823fea9clean/unregistered空；四source live/current/issues空/human完整/claim匹配。K02 bec72与renderer7ff clean，checks/review绑定763/747 approved、两proof unchanged、mainnot-contained。Activity采到61b+dirty15但当时status仍进行中/UNKNOWN，checks/proofunknown如实保留；后续本地41da metadata已绑定61b，不倒改raw、不为凑绿重采。父管理0aaeb1b clean，旧c075 reviewoutdated/proofchanged是持续文档增补的事实，不伪延伸旧approval。owner均原样复用单次样本，无各自fetch。
+
+活动candidate管理[审核](../../docs/evidence/web-platform/activity01-candidate-audit.json)只读范围/链接/hash通过；原日志五处空白保留，源码diffcheck0，root行为独审独立。精确mainbase尚未回，renderer新App树不建、不提前amend旧session。
