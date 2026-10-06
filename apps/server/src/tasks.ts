@@ -21,21 +21,25 @@ export async function loadTask(client: PoolClient, id: string, lock = false): Pr
   return result.rows[0];
 }
 export async function command<T>(pool: Pool, operation: string, key: string, input: unknown, run: (client: PoolClient) => Promise<T>): Promise<{ value: T; replayed: boolean }> {
+  return transaction(pool, client => commandInTransaction(client, operation, key, input, run));
+}
+
+/** Caller owns the transaction and must authorize before entering, including replays. */
+export async function commandInTransaction<T>(client: PoolClient, operation: string, key: string, input: unknown, run: (client: PoolClient) => Promise<T>): Promise<{ value: T; replayed: boolean }> {
   if (!key || key.length > 200) throw new HttpError(400, 'idempotency_key_required', 'A valid Idempotency-Key is required.');
   const digest = sha256(canonical(input));
-  return transaction(pool, async client => {
-    await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1,0))', [JSON.stringify([operation, key])]);
-    const previous = await client.query<{ digest: string; response: T }>('SELECT digest,response FROM flow.commands WHERE operation=$1 AND key=$2', [operation, key]);
-    const saved = previous.rows[0];
-    if (saved) {
-      if (saved.digest !== digest) throw new HttpError(409, 'idempotency_conflict', 'This key was used for different content.');
-      return { value: saved.response, replayed: true };
-    }
-    const value = await run(client);
-    await client.query('INSERT INTO flow.commands(operation,key,digest,response) VALUES($1,$2,$3,$4)', [operation, key, digest, JSON.stringify(value)]);
-    return { value, replayed: false };
-  });
+  await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1,0))', [JSON.stringify([operation, key])]);
+  const previous = await client.query<{ digest: string; response: T }>('SELECT digest,response FROM flow.commands WHERE operation=$1 AND key=$2', [operation, key]);
+  const saved = previous.rows[0];
+  if (saved) {
+    if (saved.digest !== digest) throw new HttpError(409, 'idempotency_conflict', 'This key was used for different content.');
+    return { value: saved.response, replayed: true };
+  }
+  const value = await run(client);
+  await client.query('INSERT INTO flow.commands(operation,key,digest,response) VALUES($1,$2,$3,$4)', [operation, key, digest, JSON.stringify(value)]);
+  return { value, replayed: false };
 }
+
 export async function wake(boss: PgBoss, client: PoolClient, taskId: string): Promise<void> {
   const id = await boss.send('flow-wake', { taskId }, { db: { executeSql: (text, values) => client.query(text, values) } });
   if (!id) throw new Error('Task wake-up was not persisted.');
