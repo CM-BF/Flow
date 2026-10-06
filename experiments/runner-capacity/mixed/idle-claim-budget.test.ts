@@ -3,7 +3,7 @@ import { idleBudget, IDLE_LIMITS } from './idle-claim-budget.js';
 
 test('includes fixed mirror inputs, cumulative attempted journal writes and the full raw reserve', () => {
   const result = idleBudget(284628, 4096, 1000, 5500, 1000);
-  expect(result).toEqual({ known: true, chargedBytes: 284628 + 4096 + 1000 + 131072, workAllowed: true, withinTotal: true });
+  expect(result).toEqual({ known: true, chargedBytes: 284628 + 4096 + 1000 + 262144, workAllowed: true, withinTotal: true });
 });
 test('work stops at its original deadline, while cleanup uses only the remaining total interval', () => {
   expect(idleBudget(0, 0, 0, 11000, 1000)).toMatchObject({ workAllowed: false, withinTotal: true });

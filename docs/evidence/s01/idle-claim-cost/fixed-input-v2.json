@@ -1,0 +1,404 @@
+{
+  "fixedRef": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "version": 2,
+  "state": "P2_FIX_PREPARATION_NOT_VALIDATED",
+  "supersedesFixedInputSha256": "5c168044131d5e2fc12988bfe5717f35b70a2469e4a44c6916bd4f56971af0cb",
+  "files": [
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/active-steering/proposal.ts",
+      "bytes": 3388,
+      "sha256": "45a8502e8d07c861210976de19ec90c6361f26d1a63994007a4fcaf10199da02"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/attempt-wakeup.ts",
+      "bytes": 1325,
+      "sha256": "49714e1d8d6f0e2a02f333842d0b88a818d91a632ce49443487aa0e349106792"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/fixture.ts",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/goal-graph-tools/bind.ts",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/goal-tool-bridge/authority.ts",
+      "bytes": 1281,
+      "sha256": "5f005fdd53eaf8974498bb20e42af558e0381897e78e7ca0162e781c8d357d5e"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/goal-tool-bridge/index.ts",
+      "bytes": 2175,
+      "sha256": "77f540e0d82bc3519daac4f2faaf36f0ee97e3a9fc8c14d86cc37cbb402e5c6a"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/goal-tools/index.ts",
+      "bytes": 2085,
+      "sha256": "1def37a4dcc48150687305ed15994ab2d49ce4a5f7e518b9ab992d9acc1b09ce"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 14330,
+      "sha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/client/src/index.ts",
+      "bytes": 52725,
+      "sha256": "6355ed6f114a7b01833a03488ed4b0c59fb9ebd91f88acedffcd4051834bbee5"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/assistant-stream.ts",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/assistant.ts",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/attachments.ts",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/conversation-queue.ts",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/conversations.ts",
+      "bytes": 6621,
+      "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/execution-profiles.ts",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/fixtures.ts",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goal-context.ts",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goal-delivery.ts",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 2888,
+      "sha256": "b6da9b983a2a69d7c444e90212f6079f37f59e9a3d654af773e6b0685b88b15c"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 5853,
+      "sha256": "2219151efc4b1daa1f76c40a2ca770c9dd587b4844914bfe7c92923ffd9f8160"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goal-progression.ts",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/index.ts",
+      "bytes": 1467,
+      "sha256": "d62739a19e76a0f65effacb34d4e1b0d2d7d5fd90bf32fd2e2bcb1ef79351384"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/knowledge.ts",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/package-artifacts.ts",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/plugin-installations.ts",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/plugin-package-fetches.ts",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/plugins.ts",
+      "bytes": 4885,
+      "sha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/protocol-dispatch.ts",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/reconciliation.ts",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/runner-maintenance.ts",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/tasks.ts",
+      "bytes": 6428,
+      "sha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/usage-readout.ts",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/workspace.ts",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/README.md",
+      "bytes": 7443,
+      "sha256": "d82b1023070d38d91aba4ab2cc94ea74809ab2a07ed8c3d698711f7af81c7f25"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/claim-amend-receipt.json",
+      "bytes": 700,
+      "sha256": "86a3b1e811871148e41edf3b5bb0c6133ac106c11667e9923b3154a214f95354"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-supply-receipt.json",
+      "bytes": 11362,
+      "sha256": "a883dc915dce693fd1124c07c546e61049e5c0dcbe05e231acadf86247442653"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/source-supply-request.json",
+      "bytes": 11706,
+      "sha256": "dc0ad6c3a49446278ec4524064ad466e1166dac48ef78535e3c1bc2aa89a5802"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/execute-idle.mjs",
+      "bytes": 14811,
+      "sha256": "746057b484f5712799f6fa77cfcee29d4430c37cc8c76a177b0385b988d618b3"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.test.ts",
+      "bytes": 1268,
+      "sha256": "52818a1e4534facdef00a6b465b50a9a2675c27387a75d1b9fa0d57dad34365a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.ts",
+      "bytes": 4338,
+      "sha256": "3191803229539e221a3510e7818405825b3af8b552e0eb95f8c41f377d8382e6"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-observer.test.ts",
+      "bytes": 6961,
+      "sha256": "57c7af7164a25e1c465a2b8e122975cdeafd48ca29afb5b4bd2972a17480e1b1"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-observer.ts",
+      "bytes": 7394,
+      "sha256": "d55e83abff72551924ebf3666396472abb15ed949971225936dcd4dbc371b530"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-pure-tsconfig.json",
+      "bytes": 423,
+      "sha256": "3c3155799a70e6cf9da7a13aa897820c1ca2090a020dfe43873a5efbcd84b985"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-runtime-tsconfig.json",
+      "bytes": 725,
+      "sha256": "f1b05c8b6fcbdc92bfe6e4142eb6b00ee59bece4c679e18d6e8854a0d0799a2b"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim.test.ts",
+      "bytes": 12249,
+      "sha256": "26d53b2c1bd839f487db3fd047920bd4696e51a5fa775667bb1d88c1a0821b60"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim.vitest.config.mjs",
+      "bytes": 1387,
+      "sha256": "56cd5d6c59757bd38962ddf1cb91983a090b9011a53e22e9c6a3b297f740b258"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/fixed-input.json",
+      "bytes": 16618,
+      "sha256": "5c168044131d5e2fc12988bfe5717f35b70a2469e4a44c6916bd4f56971af0cb"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/preparation-manifest.json",
+      "bytes": 1654,
+      "sha256": "3d1a5409cbc89cf4b33f2f7206e9bc6c0d68a7a43956a3621a936dbf8abab2c4"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/preparation-ready.md",
+      "bytes": 2161,
+      "sha256": "178e619dab03641899ea163676aef185018d7cd94e55fee5d9f84c42fc4520bb"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/archive-ledger.json",
+      "bytes": 2308,
+      "sha256": "8e6882032cc01bdf221e357d84a347f18aa7a74298378918d34df9af0398ef62"
+    }
+  ],
+  "accounting": "Fixed file bytes plus this manifest are precharged; 256KiB reserve = 128KiB automatic raw/capture/CLI +128KiB manual plan/status/review/check/final archive per archive-ledger. Total remains2MiB/15s. Capture beyond16KiB is added to charges or complete accounting remains unknown. Installed readonly toolchain is not copied or represented as measured OS I/O."
+}

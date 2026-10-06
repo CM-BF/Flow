@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:45:55 UTC / idle 固定 main8d84d529a0756116bd0fc8bad969d61a6c26248e 只读输入；历史集成 aae |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:56:32 UTC / idle 固定 main8d84d529a0756116bd0fc8bad969d61a6c26248e 只读输入；历史集成 aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -21,9 +21,9 @@
 | 优先级 | 4 |
 | 当前产出 | 准备单个空闲 runner 的领取持久化调用计量，区分真实 API 调用、静态预期和未知；尚未运行 |
 | 下一可用交付 | 固定完整有界观察器、单项探针与薄外壳供只读 review；获独立检查窗口后再验证 |
-| 当前阻塞 | 输入镜像READY（61项逐hash核）；实现已具备交审稿，fake/actual NOT_OPEN。A/B 仍 RESOURCE_PENDING/NOT_OPEN |
+| 当前阻塞 | 输入镜像READY（61项逐hash核）；3个外壳P2窄修已落实待复审，fake/actual NOT_OPEN。A/B 仍 RESOURCE_PENDING/NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | idle observer/budget 73157915 SOURCE_REVIEW 无P1/P2/VALIDATION_PENDING（architecture_read18:38:51）；完整组合 NOT_STARTED；历史 A/B APPROVED preparation d3ba03a，0剩余P1/P2；不覆盖本次准备 |
+| Review | idle observer/budget 73157915 SOURCE_REVIEW 无P1/P2/VALIDATION_PENDING（architecture_read18:38:51）；完整组合原0de832 CHANGES_REQUESTED/3P2，窄修待固定复审；历史 A/B APPROVED preparation d3ba03a，0剩余P1/P2；不覆盖本次准备 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -216,3 +216,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 18:41:03 UTC：early source73157915已push/clean交只读审，observer/budget 18:38:51 SOURCE_REVIEW无P1/P2；9 fake未运行。现补此实验薄外壳，其独审/实际tool退出和预算仍pending，不继承early结论；供给镜像未到，未物化/执行。
 
 2026-10-06 18:45:55 UTC：Lead独立供给已落到专属source-snapshot，61项284628B逐SHA/bytes核符；owner仅按明确授权复制，0Git物化/安装/import。完整准备9个源码/config与74项固定输入（文件362257B+manifest16618B）交审，9fake草稿及actual单项仍0运行。薄外壳区分预约、stdio/group close、内部case、pre-final快照/最终CLI与外部shell退出；2MiB计量仍保守采样，非硬quota。旧A/B与128证据原样，不读历史unknownjournal。
+
+2026-10-06 18:56:32 UTC：固定0de832完整组合静态审3P2已接受，owner窄修最终inventory/identity gate、预约后10s fresh spawn gate和超截断实际尾流补账/unknown。原fixed-input及原prep包不覆写，新v2独立绑定；literal root tsconfig614B计入输入，统一light floor1107296256B。总2MiB/15s未改，reserve256KiB明确自动128+人工128，单清单含完整plan/status/review及checks/收口；仍0checks、修复待独立复核、NOT_OPEN。

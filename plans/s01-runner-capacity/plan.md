@@ -150,3 +150,5 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 ### S01-06 idle 准备当前派工（2026-10-06 18:31:35 UTC）
 
 上述17:21只读候选保留为历史。当前claim508f v2已合法追加专属evidence，owner status_read 在原mixed实验目录实施；最新固定输入为main8d84的57source/283197B加4metadata/1431B，完整literal见[供给请求](../../docs/evidence/s01/idle-claim-cost/source-supply-request.json)。镜像仅由Lead供应到该evidence/source-snapshot，不覆盖本树旧产品src。旧4df→8d84的空claim路径无行为改动；新增contract加载成本未知。fake与actual均待固定源码review后另OPEN；尚未进行任何运行。继续沿S01-06验证原目标，不新增benchmark或产品优化。
+
+2026-10-06 18:56:32 UTC 当前准备修正：原128KiB reserve内部拆分不足以覆盖整份owner plan/status/review与检查归档；按Mika明确允许，在原2MiB总额内改为统一256KiB reserve（自动raw/capture/CLI128KiB、manual128KiB），全数预扣。单份archive-ledger明确路径，新增或超限不能默认为已涵盖；旧准备input/manifest按固定Git保留。15s、12空claim与0PG/provider不变，0检查。

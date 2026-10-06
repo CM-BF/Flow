@@ -26,7 +26,7 @@ test('one public idle runtime retains twelve definite empty claims through norma
   const rootIdentity = lstatSync(root);
   if (!rootIdentity.isDirectory() || rootIdentity.isSymbolicLink()) throw Error('OWN_ROOT_IDENTITY');
   const worktree = process.cwd();
-  const manifestPath = resolve(worktree, 'docs/evidence/s01/idle-claim-cost/fixed-input.json');
+  const manifestPath = resolve(worktree, 'docs/evidence/s01/idle-claim-cost/fixed-input-v2.json');
   const inputs = verifyIdleInputs(worktree, manifestPath, process.env.FLOW_S01_IDLE_INPUT_SHA256);
   if (inputs.manifestSha256 !== process.env.FLOW_S01_IDLE_INPUT_SHA256) throw Error('REVIEWED_INPUT_MISMATCH');
   const actual = await vi.importActual<typeof import('node:fs/promises')>('node:fs/promises');
@@ -162,8 +162,8 @@ test('one public idle runtime retains twelve definite empty claims through norma
       resources: { runtimeClosed, serverClosed, openSockets: sockets.size, root, workDirectory, retainedUntilOuterExit: true },
       budget: { ...budget, peakOwnBytesSampled: peakOwnBytes, rootSample, inputBytes: inputs.inputBytes, rawReserve: IDLE_LIMITS.rawReserve,
         internalElapsedMs: now() - started, fullOuterElapsedMs: null, cachePeakBetweenSamples: 'UNKNOWN' } };
-    const encoded = JSON.stringify(receipt, null, 2) + '\n';
-    if (Buffer.byteLength(encoded) > 65536) throw Error('RECEIPT_SIZE');
+    const encoded = JSON.stringify(receipt) + '\n';
+    if (Buffer.byteLength(encoded) > IDLE_LIMITS.caseReceiptBytes) throw Error('RECEIPT_SIZE');
     writeFileSync(join(root, 'receipt.json'), encoded, { flag: 'wx', mode: 0o600 });
     expect(receipt.internalBehaviorPassed).toBe(true);
   }
