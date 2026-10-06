@@ -1,0 +1,111 @@
+{
+  "at": "2026-10-06T16:13:54.143738+00:00",
+  "reviewer": "native_center_owner",
+  "maximumCandidates": 5,
+  "eligibleCount": 0,
+  "ledger": {
+    "path": "/tmp/flow-next12-own-third-ledger.json",
+    "observedAt": "2026-10-06T16:13:17.087Z",
+    "sha256": "61525b9dea252c95c0f4b804276e567ea040ec6aa07b87cbb4aa14199e6cdafd"
+  },
+  "trees": [
+    {
+      "name": "native-active-steering",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering",
+      "head": "eb1caeb529697c7521cb710e5441bb207d2840a0",
+      "branch": "codex/native-active-steering",
+      "status": "",
+      "delivered": true,
+      "statusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering/plans/chat08-native-active-steering/status.md",
+      "statusSha256": "d05bf2b730ec6be6383ba0aa8d34f0e7418f95f83edc698a3af0ff63ccfa8e10",
+      "claims": [
+        {
+          "claimId": "ca2ad795-88e5-4c54-8a95-ac35982c68b0",
+          "version": 2,
+          "state": "released"
+        },
+        {
+          "claimId": "2f7b66e3-a18c-40df-a5f9-7d5977a4618e",
+          "version": 3,
+          "state": "released"
+        }
+      ],
+      "remoteCheck": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_REMOTE_BRANCH_NOT_ADVERTISED_KEEP_UNKNOWN",
+      "keep": "Entire current worktree including own evidence chat08; no candidate enumeration or operation proposed."
+    },
+    {
+      "name": "native-graph-tools",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools",
+      "head": "2c6ce1baeb92e959488f6b1e46234637fcf88fd1",
+      "branch": "codex/native-graph-tools",
+      "status": "",
+      "delivered": true,
+      "statusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools/plans/o07-native-graph-tools/status.md",
+      "statusSha256": "3d16a164782b785fc6b7e2ea3bf5fe10d842e8e4c8906236465b39bad8f38f5a",
+      "claims": [
+        {
+          "claimId": "255d6fc3-58cb-494f-ac28-7e3f5d5d8192",
+          "version": 6,
+          "state": "released"
+        }
+      ],
+      "remoteCheck": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_REMOTE_BRANCH_NOT_ADVERTISED_KEEP_UNKNOWN",
+      "keep": "Entire current worktree including own evidence o07; no candidate enumeration or operation proposed."
+    },
+    {
+      "name": "native-profile-steering",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-profile-steering",
+      "exists": false,
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_PATH_NOT_FOUND_NO_REPLACEMENT"
+    },
+    {
+      "name": "goal-native-executions",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-native-executions",
+      "exists": false,
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_PATH_NOT_FOUND_NO_REPLACEMENT"
+    },
+    {
+      "name": "goal-progression",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-progression",
+      "exists": false,
+      "eligible": false,
+      "approvedForSparse": false,
+      "reason": "EXACT_PATH_NOT_FOUND_NO_REPLACEMENT"
+    }
+  ],
+  "candidateCount": 0,
+  "candidateLogicalBytes": 0,
+  "candidate4KRoundedBytes": 0,
+  "notes": [
+    "Only five explicitly assigned paths checked; missing paths and unavailable remote qualification are skipped without replacing candidates.",
+    "Initial bounded scanner failed read-only on missing remote-tracking branch, before any report/product/Git changes; subsequent actual git ls-remote exact refs exited0 with no advertisements for both existing branches.",
+    "Both existing worktrees kept entirely. Further source/fixture closure and open-file scans were not needed after qualification failed; no absence of consumers is claimed.",
+    "Not a branch deletion request or assertion that local commits are missing from main; remote branch identity could not be qualified under this intake."
+  ],
+  "actions": {
+    "projectWrites": 0,
+    "gitMutations": 0,
+    "test": 0,
+    "PG": 0,
+    "install": 0,
+    "provider": 0
+  }
+}
