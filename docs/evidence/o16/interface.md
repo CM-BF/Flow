@@ -23,3 +23,7 @@ Assignment binding: the planner matches the immutable admitted task/run and conf
 决定的实际current/history/接受结果先耐久保存，再允许normal DROP/rm；纯故障注入2例已证checkpoint失败仍关闭center并保留资源。所有暂停阶段关闭owned进程组与center，保留随机marker DB和dev/ino目录供有限人工审阅；未知不自动重新创建run或消费新槽。三个query槽只是候选，真实预算仍未授权。
 
 19不同纯/有限MCP检查、driver模块装配通过；不是类型全集、PG旅程或真实模型结论。首合同测试误把既有configured-readonly写为readonly导致1红，已定向1绿；源码身份首次将workspace依赖误当installedVersion导致装配1红，已绑定固定BASE package version后0，均保原输出。
+
+## 2026-10-06 18:58:35 UTC operator 边界补充
+
+实际PG候选改为 `operator.mjs --rehearse`，不再把node:test timeout当总墙钟。独立监督固定120s工作/30s清理、已登记driver及两phase进程组；stdout/stderr和本轮stage evidence合计2MiB。runtime与raw/余量采用同一测量函数，DROP/rm之前再复核，STOP或unknown禁止删除。3个自有Node stand-in例涵盖非零退出、忽略TERM后的有限KILL/组消失、raw超界保留；两轮重复只计3不同，没有PG/provider。当前operator只支持零query候选；真实分阶段operator和实际新许可仍后继待审，当前native函数不等于获准可跑。

@@ -12,17 +12,17 @@ are not granted. The historical O08/O10 permits are sealed and cannot be reused.
 
 All commands run in this worktree with the fixed Node24 executable and `--import tsx`.
 The driver only accepts a bounded run label; evidence lives in `docs/evidence/o16/runs`.
-No command defaults to native execution. Each PG stage also requires a Lead resource window.
+No command defaults to native execution. Each PG stage also requires a Lead resource window. Current operator is zero-query-only; the native stage functions are preparation interfaces and need a separately reviewed real-phase operator window before use. Direct driver cleanup fails closed without the operator reservation.
 
 ```
-node --import tsx experiments/continuous-goal-acceptance/driver.mjs rehearse RUN
+FLOW_O16_PG_WINDOW=approved-one-shot node --import tsx experiments/continuous-goal-acceptance/operator.mjs --rehearse
 node --import tsx experiments/continuous-goal-acceptance/driver.mjs plan RUN PLAN_PERMIT.json
 node --import tsx experiments/continuous-goal-acceptance/driver.mjs confirm RUN OWNER_CONFIRMATION.json
 node --import tsx experiments/continuous-goal-acceptance/driver.mjs children RUN CHILDREN_PERMIT.json
 node --import tsx experiments/continuous-goal-acceptance/driver.mjs decide RUN INDEPENDENT_DECISION.json
 ```
 
-`rehearse` uses an explicitly synthetic proposal/query stream and synthetic acceptance.
+`operator --rehearse` first writes a synced exclusive source/resource reservation, then supervises one test process independently: 120s work, 30s bounded group cleanup. It sums stdout, stderr, and this run's stage evidence; both DROP and directory removal recheck the shared 2MiB raw / 8MiB runtime / 1GiB free policy. A budget or process uncertainty leaves a STOP record and preserves resources. Both phase PGIDs remain in the durable resource file. The internal `rehearse` uses an explicitly synthetic proposal/query stream and synthetic acceptance.
 It exercises the same public center and original runner, and is never model planning evidence.
 Its phases stop their owned process groups and close the center between stages.
 

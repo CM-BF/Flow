@@ -8,7 +8,6 @@ import { stopWorker } from '../native-graph-acceptance/driver.mjs';
 import { readRecord, writeRecord } from './records.mjs';
 import { bindChildAssignment } from './assignment.mjs';
 import { PHASE_LIMITS } from './permit.mjs';
-import { liveResources } from './resources.mjs';
 export const experimentStop = new AbortController();
 import { GRAPH_TOOLS } from './config.mjs';
 
@@ -48,10 +47,10 @@ export async function runPhase(center, state, phase, { source, permit, report, d
     for (;;) {
       experimentStop.signal.throwIfAborted();
       if (performance.now() - sampledAt >= 500) {
-        const current = await liveResources(center.root); sampledAt = performance.now();
+        const current = await center.measureResources(); sampledAt = performance.now();
         report.resourceSamples = (report.resourceSamples ?? 0) + 1;
         report.minimumFreeBytes = Math.min(report.minimumFreeBytes ?? Infinity, current.freeBytes);
-        report.peakOwnedBytes = Math.max(report.peakOwnedBytes ?? 0, current.ownedBytes);
+        report.peakOwnedBytes = Math.max(report.peakOwnedBytes ?? 0, current.runtimeBytes);
       }
       if (failure) throw failure;
       assert(child.exitCode === null && !child.signalCode, 'Worker exited before public completion.');

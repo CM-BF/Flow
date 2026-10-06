@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:48:40 UTC |
+| 最近更新 | 2026-10-06 18:58:35 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,7 +14,7 @@
 | HEAD | 固定实现 2daf37ee8b56d52620e68750e169097cdc015037；当前仅证据/metadata |
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 纯检查19不同通过（permit5+assignment2+policy3+query入口3+合同2+records2+decision2）；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
+| 检查状态 | 局部22不同通过（原19纯检查+operator3自有进程例，3例定向重复不累计）；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
 | Review | NOT_STARTED |
 | 实现目标 | 2daf37ee8b56d52620e68750e169097cdc015037 |
 | 实现范围 | experiments/continuous-goal-acceptance |
@@ -30,9 +30,9 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | O16-01 | completed | native_center_owner | [claim](../../docs/evidence/o16/claim.json)、[Interface](../../docs/evidence/o16/interface.md) |
-| O16-02 | in-progress | native_center_owner | phase/assignment/query入口及合同/持久记录共19不同检查；无SDK query/auth；新candidate尚未独审 |
+| O16-02 | in-progress | native_center_owner | phase/assignment/query入口及合同/持久记录共22不同检查；无SDK query/auth；新candidate尚未独审 |
 | O16-03 | in-progress | native_center_owner | public staged driver已实现、模块装配0通过；真实PG旅程NOT_RUN，proposal/decision同一中心公开口 |
-| O16-04 | pending | native_center_owner | 19不同纯检查分轮通过；真实SDK MCP仅tools/list、不query；装配red后0；PG需Lead串行窗口 |
+| O16-04 | pending | native_center_owner | 22不同局部检查分轮通过；真实SDK MCP仅tools/list、不query；装配red后0；PG需Lead串行窗口 |
 | O16-05 | pending | native_center_owner | manifest/独审待固定 |
 | O16-06 | pending | native_center_owner | 新模型预算未授，旧O08/O10封存；不影响零query准备 |
 

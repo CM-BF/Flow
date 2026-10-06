@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T18:57:56.306700+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--input-type=module",
+    "-e",
+    "import './experiments/continuous-goal-acceptance/driver.mjs'; import './experiments/continuous-goal-acceptance/operator.mjs'; console.log('operator/driver module assembly only; zero stages, PG, SDK query, auth');"
+  ],
+  "exitCode": 0,
+  "seconds": 1.5965752080082893,
+  "freeBeforeBytes": 1542914048,
+  "stdoutBytes": 71,
+  "stdoutSha256": "ec45968ea1602b5277055971ffe37c342e3a4db92f8e8b2e95b0af953c2bacee",
+  "providerCalls": 0,
+  "pg": 0,
+  "note": "Module assembly is not a typecheck or journey."
+}

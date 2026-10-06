@@ -42,6 +42,7 @@ async function ensureCompleted(task) {
 
 /** Plan permission is distinct from later actual-proposal confirmation and child permission. */
 export async function plan(run, mode, permitPath) {
+  experimentStop.signal.throwIfAborted();
   const source = await sourceIdentity(), permit = await permitFor(mode, permitPath, source, 'plan');
   const directory = output(run); await mkdir(RUNS, { recursive: true, mode: 0o700 }); await mkdir(directory, { mode: 0o700 });
   const report = { stage: 'plan', mode, sourceDigest: source.digest, outcome: 'unknown', nativeQueryCalls: 0, workerStopped: true };
@@ -91,6 +92,7 @@ export async function plan(run, mode, permitPath) {
 
 /** Explicit owner action; no runner starts here and production automatic scanning remains off. */
 export async function confirm(run, body) {
+  experimentStop.signal.throwIfAborted();
   const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true });
   const report = { stage: 'confirm', outcome: 'unknown', nativeQueryCalls: 0 };
   try {
@@ -118,6 +120,7 @@ export async function confirm(run, body) {
 }
 
 export async function children(run, permitPath) {
+  experimentStop.signal.throwIfAborted();
   const source = await sourceIdentity(), directory = output(run), confirmation = await readRecord(join(directory, 'confirmation.json'));
   assert.equal(confirmation.outcome, 'confirmed-awaiting-separate-children-permit');
   const permit = await permitFor(confirmation.mode, permitPath, source, 'children', confirmation.confirmationBinding);
@@ -158,6 +161,7 @@ export async function children(run, permitPath) {
 
 /** The independent actor names exact observed artifact digests. Mechanical verification cannot supply this decision. */
 export async function decide(run, decision) {
+  experimentStop.signal.throwIfAborted();
   const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true });
   const report = { stage: 'independent-decision', outcome: 'unknown', nativeQueryCalls: 0 }; let controller, destroy = false;
   try {
@@ -197,7 +201,8 @@ export async function rehearse(run) {
     artifacts: completed.artifacts.map(a => a.binding) });
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  process.once('SIGTERM', () => experimentStop.abort()); process.once('SIGINT', () => experimentStop.abort());
+  const stop = () => { process.env.FLOW_O16_STOPPED = '1'; experimentStop.abort(); };
+  process.once('SIGTERM', stop); process.once('SIGINT', stop);
   try {
     const [command, run, file] = process.argv.slice(2); assert(process.argv.length <= 5);
     let result;

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { lstat, mkdir, mkdtemp, readdir, realpath, rm, statfs } from 'node:fs/promises';
+import { lstat, mkdir, mkdtemp, realpath, rm, statfs } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -7,6 +7,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { createServer } from '../../apps/server/src/index.ts';
 import { FlowClient } from '../../packages/client/src/index.ts';
+import { assertCleanupBudget, measureRun } from './operator-bounds.mjs';
 import { readRecord, writeRecord } from './records.mjs';
 
 const ADMIN = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
@@ -16,21 +17,6 @@ export async function resourceGate() {
   const space = await statfs(process.cwd()), freeBytes = space.bavail * space.bsize;
   assert(freeBytes >= MIN_FREE, 'Resource reserve unavailable; no database or process may start.');
   return { freeBytes, requiredBytes: MIN_FREE };
-}
-export async function liveResources(root) {
-  const space = await statfs(root), freeBytes = space.bavail * space.bsize;
-  assert(freeBytes >= 1024 ** 3, 'Live resource reserve was crossed.');
-  let bytes = 0, entries = 0;
-  async function visit(path, depth) {
-    assert(depth <= 12);
-    for (const entry of await readdir(path, { withFileTypes: true })) {
-      assert(++entries <= 2048); const child = join(path, entry.name), info = await lstat(child);
-      assert(!info.isSymbolicLink(), 'Unknown resource link is retained.');
-      if (info.isDirectory()) await visit(child, depth + 1);
-      else if (info.isFile()) { bytes += info.size; assert(bytes <= 8 * 1024 ** 2, 'Owned runtime byte bound crossed.'); }
-    }
-  }
-  await visit(root, 0); return { freeBytes, ownedBytes: bytes, ownedEntries: entries };
 }
 async function assertDirectory(value) {
   const current = await lstat(value.path);
@@ -81,15 +67,17 @@ export async function privateCenter(output, source, { resume = false } = {}) {
   async function finish({ destroy, workersStopped }) {
     const errors = []; facts.workersStopped = workersStopped;
     if (workersStopped && typeof facts.workerProcess === 'object') facts.workerProcess.state = 'stopped';
+    if (workersStopped) for (const row of facts.workerProcesses ?? []) row.state = 'stopped';
     try { await stopServer(); } catch { errors.push('center-close-unconfirmed'); }
     if (!workersStopped) errors.push('worker-process-group-unconfirmed');
     if (!errors.length) {
       try {
         await ownership(); await closedConnections();
         if (destroy) {
+          facts.finalBudgetBeforeDrop = await assertCleanupBudget(output.split('/').at(-1), facts.directory);
           await checkpoint('before-normal-drop'); await admin.query(`DROP DATABASE "${facts.database}"`); facts.databaseDropped = true;
           facts.remaining = (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [facts.database])).rows; assert.deepEqual(facts.remaining, []);
-          await assertDirectory(facts.directory); await checkpoint('before-owned-directory-remove');
+          await assertDirectory(facts.directory); facts.finalBudgetBeforeRemove = await assertCleanupBudget(output.split('/').at(-1), facts.directory); await checkpoint('before-owned-directory-remove');
           await rm(facts.directory.path, { recursive: true }); facts.directoryRemoved = true;
           await assert.rejects(lstat(facts.directory.path), { code: 'ENOENT' });
         }
@@ -114,8 +102,9 @@ export async function privateCenter(output, source, { resume = false } = {}) {
       await mkdir(join(path, 'intents'), { mode: 0o700 });
     }
     return { root: facts.directory.path, start, stopServer, finish, checkpoint,
+      measureResources() { return measureRun(output.split('/').at(-1), facts.directory); },
       async beforeWorker() { facts.workersStopped = false; facts.workerProcess = 'allocation-unknown'; await checkpoint('before-worker-spawn'); },
-      async trackWorker(pgid) { assert(Number.isSafeInteger(pgid) && pgid > 1); facts.workerProcess = { pgid, groupLeader: true, state: 'unknown' }; await checkpoint('worker-group-recorded'); },
+      async trackWorker(pgid) { assert(Number.isSafeInteger(pgid) && pgid > 1); facts.workerProcess = { pgid, groupLeader: true, state: 'unknown' }; facts.workerProcesses ??= []; assert(facts.workerProcesses.length < 2); facts.workerProcesses.push({ ...facts.workerProcess }); await checkpoint('worker-group-recorded'); },
       get client() { assert(client); return client; }, get origin() { assert(client); return origin; } };
   } catch {
     facts.errors = ['allocation-or-reopen-unconfirmed']; await checkpoint('unknown-retained'); await admin.end();

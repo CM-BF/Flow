@@ -11,3 +11,5 @@
 2026-10-06 18:38:41 UTC：沿codebase-design/clean-code复核phase query仅装饰原adapter唯一迭代，禁止resume/额外tools和budget漂移；close-before-iterate不启动，durable槽先于native入口，三个纯检查通过。worker/资源均新候选尚未运行；不以纯检查代表PG/原生通过。
 
 2026-10-06 18:48:40 UTC：重新检查资源与职责。parent只持owner观察权限，worker只持runner token；两阶段复用原loop。decision cleanup曾有先删除再保存业务结果的窗口，经Lead只读指出已改为durable decision先于destroy，2纯故障例覆盖。live临时目录限定8MiB/2048条/12层，native未知保留，不把PID退出当group已停。当前为候选代码，PG未验证。
+
+2026-10-06 18:58:35 UTC：按Lead第二个准入前缺口补独立operator，复用单一operator-bounds于持续采样和最后清理，避免两份配额判定漂移。记录所有已登记PGID，node:test timeout仅测试保护非工作墙钟。3owned stand-in全退出/ESRCH；未重复19原检查。native/PG仍未执行。
