@@ -32,7 +32,7 @@ PERF01 真实生产 fixture 每场 10040 条记录同时渲染约 7 万 DOM。�
 ## TODO
 
 - [x] **WPF-PERF02-01** 固定已审输入、claim转交、独立worktree与本 canonical。
-- [ ] **WPF-PERF02-02** 实现有界 Activity、稳定锚点与焦点，保留全量数据。
+- [x] **WPF-PERF02-02** 实现有界 Activity、稳定锚点与焦点，保留全量数据。
 - [ ] **WPF-PERF02-03** 完整性/交互/主题及同方法生产测量，保存失败/clean-code/限制。
 - [ ] **WPF-PERF02-04** 固定target独立review、修复、Lead交付；main集成另证。
 
