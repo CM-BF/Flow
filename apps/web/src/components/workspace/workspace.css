@@ -9,7 +9,8 @@
 }
 .flow-workspace-tabs-row { display: flex; align-items: center; border-bottom: 1px solid var(--workspace-line); flex-shrink: 0; min-width: 0; }
 .flow-workspace-tabs { display: flex; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: thin; }
-.flow-workspace-tab-item { display: flex; align-items: center; min-width: 90px; max-width: 220px; border-right: 1px solid var(--workspace-line); color: var(--workspace-secondary); }
+.flow-workspace-tab-item { display: flex; flex-shrink: 0; align-items: center; min-width: 90px; max-width: 220px; border-right: 1px solid var(--workspace-line); color: var(--workspace-secondary); }
+.flow-workspace-tab-item svg { flex-shrink: 0; }
 .flow-workspace-tab-item[data-active="true"] { background: var(--workspace-muted); color: var(--workspace-ink); box-shadow: inset 0 -2px currentColor; }
 .flow-workspace-tab-item > [role="tab"] { display: flex; flex: 1; gap: 7px; min-width: 0; align-items: center; padding: 0 11px; height: 36px; text-align: left; }
 .flow-workspace-tab-item > [role="tab"] > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

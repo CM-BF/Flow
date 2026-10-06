@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-10-06T02:14:49.012Z",
+  "source": "isolated component fixture, not live center",
+  "baseURL": "http://127.0.0.1:58077",
+  "checks": [
+    {
+      "name": "file tree starts with one tabstop and no detail requests",
+      "result": "passed"
+    },
+    {
+      "name": "tree supports arrows, Home, End, Space without page scroll",
+      "result": "passed"
+    },
+    {
+      "name": "reference activation loads once and renders escaped artifact/version/verification",
+      "result": "passed"
+    },
+    {
+      "name": "tabs use manual arrow activation and one tabstop",
+      "result": "passed"
+    },
+    {
+      "name": "second detail opens; closing selected detail focuses adjacent tab",
+      "result": "passed"
+    },
+    {
+      "name": "detail errors stay visible and explicit retry issues one new read",
+      "result": "passed"
+    },
+    {
+      "name": "terminal is read-only, user scrolling pauses follow, resume follows output",
+      "result": "passed"
+    },
+    {
+      "name": "copy reports clipboard denial and succeeds with an available clipboard",
+      "result": "passed"
+    },
+    {
+      "name": "both themes and reduced motion apply to official terminal",
+      "result": "passed"
+    },
+    {
+      "name": "A/B/A retains per-task layout and isolates equal reference ids",
+      "result": "passed"
+    },
+    {
+      "name": "narrow panel remains within viewport",
+      "result": "passed"
+    },
+    {
+      "name": "clearing task removes its open reference tabs",
+      "result": "passed"
+    }
+  ],
+  "errors": []
+}

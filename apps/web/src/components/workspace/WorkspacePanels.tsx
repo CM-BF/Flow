@@ -7,20 +7,35 @@ import "./workspace.css";
 
 export type { WorkspacePanelsProps, WorkspaceTabId } from "./types";
 
+interface WorkspaceLayout {
+  tab: WorkspaceTabId;
+  openDetails: string[];
+  expanded: Set<string>;
+  selectedPath?: string;
+  follow: boolean;
+}
+
 /** Task-scoped view state never writes or infers task execution state. */
 export function WorkspacePanels(props: WorkspacePanelsProps) {
-  return <TaskWorkspace key={props.task?.id ?? "empty"} {...props} />;
+  const layouts = useRef(new Map<string, WorkspaceLayout>());
+  const taskId = props.task?.id ?? "empty";
+  let layout = layouts.current.get(taskId);
+  if (!layout) {
+    layout = { tab: "files", openDetails: [], expanded: new Set(["artifact", "verification", "detail", "usage", "session", "unopened"]), follow: true };
+    layouts.current.set(taskId, layout);
+  }
+  return <TaskWorkspace key={taskId} {...props} layout={layout} />;
 }
 
 function TaskWorkspace({
   task, details, onLoadDetail, connection, activeTab: controlledTab,
-  onActiveTabChange, onClose, className = "",
-}: WorkspacePanelsProps) {
+  onActiveTabChange, onClose, className = "", layout,
+}: WorkspacePanelsProps & { layout: WorkspaceLayout }) {
   const prefix = useId();
   const tabsRef = useRef<HTMLDivElement>(null);
-  const [localTab, setLocalTab] = useState<WorkspaceTabId>("files");
-  const [focusedTab, setFocusedTab] = useState<WorkspaceTabId>("files");
-  const [openDetails, setOpenDetails] = useState<string[]>([]);
+  const [localTab, setLocalTab] = useState<WorkspaceTabId>(layout.tab);
+  const [focusedTab, setFocusedTab] = useState<WorkspaceTabId>(controlledTab ?? layout.tab);
+  const [openDetails, setOpenDetails] = useState<string[]>(layout.openDetails);
   const references = [...new Map((task?.entries ?? []).flatMap((entry) =>
     entry.kind === "reference" ? [[entry.reference.id, entry.reference] as const] : [],
   )).values()];
@@ -43,6 +58,9 @@ function TaskWorkspace({
     if (!activeReference) return;
     setOpenDetails((ids) => ids.includes(activeReference.id) ? ids : [...ids, activeReference.id]);
   }, [activeReference?.id]);
+
+  useEffect(() => { if (controlledTab) setFocusedTab(controlledTab); }, [controlledTab]);
+  useEffect(() => { layout.tab = activeTab; layout.openDetails = openDetails; }, [layout, activeTab, openDetails]);
 
   function selectTab(tab: WorkspaceTabId) {
     setLocalTab(tab);
@@ -101,7 +119,7 @@ function TaskWorkspace({
                   <Icon aria-hidden="true" size={14} /><span>{tab.title}</span>
                 </button>
                 {tab.id.startsWith("detail:") && (
-                  <button type="button" className="flow-workspace-tab-close" aria-label={`Close ${tab.title}`}
+                  <button type="button" tabIndex={-1} className="flow-workspace-tab-close" aria-label={`Close ${tab.title}`}
                     onClick={() => closeDetail(tab.id.slice(7))}><XIcon size={13} aria-hidden="true" /></button>
                 )}
               </div>
@@ -115,8 +133,11 @@ function TaskWorkspace({
         id={`${prefix}-panel-${encodeURIComponent(visibleTab)}`}
         aria-labelledby={`${prefix}-tab-${encodeURIComponent(visibleTab)}`}>
         {!task ? <p className="flow-workspace-empty">Select a chat to see its files and output.</p>
-          : visibleTab === "files" ? <WorkspaceFiles references={references} details={details} onOpen={openReference} />
-          : visibleTab === "terminal" ? <WorkspaceTerminal task={task} connection={connection} />
+          : visibleTab === "files" ? <WorkspaceFiles references={references} details={details} onOpen={openReference}
+              defaultExpanded={layout.expanded} onExpandedChange={(expanded) => { layout.expanded = expanded; }}
+              selectedPath={layout.selectedPath} onSelectedPathChange={(path) => { layout.selectedPath = path; }} />
+          : visibleTab === "terminal" ? <WorkspaceTerminal task={task} connection={connection}
+              defaultFollow={layout.follow} onFollowChange={(follow) => { layout.follow = follow; }} />
           : activeReference ? <WorkspaceDetail key={activeReference.id} reference={activeReference}
               state={details[activeReference.id]} onLoad={onLoadDetail} verification={task.verificationStatus} />
           : <p className="flow-workspace-empty">This reference is no longer in the task snapshot.</p>}

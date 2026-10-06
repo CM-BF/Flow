@@ -9,13 +9,21 @@ const groupLabels: Record<Detail["kind"] | "unopened", string> = {
   artifact: "Artifacts", verification: "Verification", detail: "Details",
   usage: "Usage", session: "Sessions", unopened: "Unopened references",
 };
-const allGroups = new Set(Object.keys(groupLabels));
-
-export function WorkspaceFiles({ references, details, onOpen }: {
+export function WorkspaceFiles({ references, details, onOpen, defaultExpanded, onExpandedChange, selectedPath, onSelectedPathChange }: {
   references: Reference[];
   details: Record<string, WorkspaceDetailState>;
   onOpen: (reference: Reference) => void;
+  defaultExpanded: Set<string>;
+  onExpandedChange: (expanded: Set<string>) => void;
+  selectedPath?: string;
+  onSelectedPathChange: (path: string) => void;
 }) {
+  const [expanded, setExpanded] = useState(() => {
+    const next = new Set(defaultExpanded);
+    const selectedId = selectedPath?.startsWith("reference:") ? selectedPath.slice(10) : null;
+    if (selectedId) next.add(details[selectedId]?.data?.kind ?? "unopened");
+    return next;
+  });
   const groups = Object.entries(groupLabels).map(([kind, label]) => ({
     kind, label, references: references.filter((reference) =>
       (details[reference.id]?.data?.kind ?? "unopened") === kind),
@@ -25,8 +33,10 @@ export function WorkspaceFiles({ references, details, onOpen }: {
     <div className="flow-workspace-files">
       <p className="flow-workspace-caption">Task artifacts and references</p>
       {!references.length ? <p className="flow-workspace-empty">No files or references have been returned yet.</p> : (
-        <FileTree className="flow-workspace-tree" aria-label="Task artifacts and references" defaultExpanded={allGroups}
+        <FileTree className="flow-workspace-tree" aria-label="Task artifacts and references" expanded={expanded}
+          selectedPath={selectedPath} onExpandedChange={(next) => { setExpanded(next); onExpandedChange(next); }}
           onSelect={(path) => {
+            onSelectedPathChange(path);
             const reference = references.find((item) => `reference:${item.id}` === path);
             if (reference) onOpen(reference);
           }}>
@@ -43,10 +53,13 @@ export function WorkspaceFiles({ references, details, onOpen }: {
   );
 }
 
-export function WorkspaceTerminal({ task, connection }: {
+export function WorkspaceTerminal({ task, connection, defaultFollow, onFollowChange }: {
   task: TaskSnapshot; connection: WorkspacePanelsProps["connection"];
+  defaultFollow: boolean;
+  onFollowChange: (follow: boolean) => void;
 }) {
-  const [follow, setFollow] = useState(true);
+  const [follow, setFollowState] = useState(defaultFollow);
+  function setFollow(value: boolean) { setFollowState(value); onFollowChange(value); }
   const [copyMessage, setCopyMessage] = useState("");
   const output = task.entries.flatMap((entry) => entry.kind === "text" ? [entry.text] : []).join("\n\n");
   const streaming = connection === "live" && task.status === "running";
@@ -71,7 +84,7 @@ export function WorkspaceTerminal({ task, connection }: {
       </Terminal>
       {!follow && <button type="button" className="flow-workspace-follow" onClick={() => setFollow(true)}>Follow latest output</button>}
       <p className="flow-workspace-footnote">Read-only task text. An interactive shell is not connected.</p>
-      <p className="flow-workspace-copy-feedback" role="status">{copyMessage}</p>
+      <p className="flow-workspace-copy-feedback" role="status" aria-label="Clipboard feedback">{copyMessage}</p>
     </div>
   );
 }

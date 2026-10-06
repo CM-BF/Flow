@@ -4,7 +4,7 @@
 
 import { Button } from "../../ui/button";
 import { cn } from "../../../lib/utils";
-import Ansi from "ansi-to-react";
+import AnsiExport from "ansi-to-react";
 import { CheckIcon, CopyIcon, TerminalIcon, Trash2Icon } from "lucide-react";
 import type { ComponentProps, HTMLAttributes } from "react";
 import {
@@ -16,6 +16,10 @@ import {
   useRef,
   useState,
 } from "react";
+
+// ansi-to-react 6 publishes CommonJS; Vite 8 can expose its default as a namespace.
+const Ansi = typeof AnsiExport === "function" ? AnsiExport
+  : (AnsiExport as unknown as { default: typeof AnsiExport }).default;
 
 interface TerminalContextType {
   output: string;
@@ -203,9 +207,13 @@ export const TerminalContent = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (autoScroll && containerRef.current) {
-      containerRef.current.scrollTop = containerRef.current.scrollHeight;
-    }
+    const container = containerRef.current;
+    if (!autoScroll || !container) return;
+    const follow = () => { container.scrollTop = container.scrollHeight; };
+    follow();
+    const observer = new ResizeObserver(follow);
+    observer.observe(container);
+    return () => observer.disconnect();
   }, [output, autoScroll]);
 
   return (
