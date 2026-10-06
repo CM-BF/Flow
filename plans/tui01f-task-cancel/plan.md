@@ -36,3 +36,5 @@
 2026-10-06 16:49 UTC：静态增量40508f已SCOPED_APPROVED；真实03/04不因源码/类型通过完成。仅列运行依赖视图提议，交Lead按后续窗口建立，未安装或运行。
 
 2026-10-06 17:02 UTC：运行links由Lead完成，固定实际factory/PTY入口文件已核齐；本轮只metadata，后续唯一命令/2选择及unknown保留边界见[journey-runtime-entry](../../docs/evidence/tui01f/journey-runtime-entry.md)。03/04尚未执行/完成；等待另定串行窗口，原建议32MiB不冒实测峰值。
+
+2026-10-06 17:17 UTC：03首次真实2场景行为通过，但afterAll连接检查unknown导致suite失败，未完成03。原DB/tmp和checkpoint保留；[窗口结果](../../docs/evidence/tui01f/journey-1714/README.md)。未自动重试/清理，04浏览器仍open。

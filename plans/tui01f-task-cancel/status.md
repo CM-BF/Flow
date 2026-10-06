@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:02 UTC；原限定片main83f事实不变，03静态入口文件已核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:17 UTC；原main83f不变，03首次真实行为完成但清理失败 |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -13,15 +13,15 @@
 | 工作树dirty状态 | 40508f18固定fixture增量；本次只证据/状态收口，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED 40508f18432ffc20eadd638b208841a364c72bea（2 roots focused noEmit0；首次1诊断已修）；实际03旅程NOT_RUN，原36历史不重复 |
+| 检查状态 | FAILED 40508f18432ffc20eadd638b208841a364c72bea（实际03：2 selected/2 behavior passed，afterAll connections unknown、suite exit1）；此前focused noEmit0保留 |
 | 已集成main状态 / HEAD | 原a1f限定片已集成 83f535b54f2390a729f02bc818e07ba684d94ccb，9源零差；40508f静态增量待接收，03/04实际未验 |
 | 实现目标 | 40508f18432ffc20eadd638b208841a364c72bea |
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/journey.test.ts, apps/tui/test-fixtures/cancel_driver.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 显式取消控制已在主线；依赖链接和入口文件已核对到位，真实终端取消与恢复旅程尚未运行。 |
-| 下一可用交付 | 资源窗口允许后，实测中心回执恢复、终端取消及退出续跑。 |
-| 当前阻塞 | ACTIVE: 真实HTTP/PG/PTY旅程等待串行资源窗口；文件已到位，实际运行与资源峰值尚未验证。 |
+| 当前产出 | 真实终端取消和原回执恢复两项行为已通过；数据库收尾检查未确认，整组验收尚未通过。 |
+| 下一可用交付 | 核清本次保留资源的状态，完成取消旅程收尾；浏览器交替仍待后继。 |
+| 当前阻塞 | ACTIVE: 本次数据库连接检查未确认；数据库与临时目录按规则保留，未重试或自动清理。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 40508f18432ffc20eadd638b208841a364c72bea（限定源/类型准备，原回执SCOPED_APPROVED）；实际03 NOT_RUN |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v1 |
@@ -47,3 +47,5 @@
 2026-10-06 16:49 UTC：归档Execution Lead限定静态批准，source40508f与原raw/manifest不变。[运行依赖只读提议](../../docs/evidence/tui01f/journey-runtime-dependency-view-proposal.json)列9个第三方links+1个own alias缺件、既有donor公开entry与直接依赖存在、28SQL固定hash；没有创建link/import/安装，不能视作runtime ready。实际03/04继续等待Web A→B后的串行窗口。
 
 2026-10-06 17:02 UTC：原样归档Lead运行依赖视图回执，218本地源/27实际SQL、14第三方公开入口/4 own aliases、PTY脚本/配置逐文件核对无确定缺件；未import或运行。已固定[唯一2场景入口及上限](../../docs/evidence/tui01f/journey-runtime-entry.md)。03/04仍open；现存source40508f及旧批准/raw均不改。
+
+2026-10-06 17:17 UTC：一次窗口原2case均通过，整suite因cleanup connections unknown而exit1，原库/tmp保留。自有runner/HTTP已关闭，测试与PTY两组不存在，0provider；[完整原始事实](../../docs/evidence/tui01f/journey-1714/README.md)。不勾03/04、不重试，当前等待有界收尾安排。
