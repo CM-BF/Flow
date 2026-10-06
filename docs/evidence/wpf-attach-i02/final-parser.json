@@ -22,13 +22,13 @@
     },
     "human": {
       "delivery": {
-        "state": "integration",
+        "state": "delivered",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 1,
-      "output": "聊天附件发送、故障恢复和长文件名窄屏操作已验证",
-      "next": "接入主线并验证历史上下文中的附件材料",
+      "output": "聊天文本附件已并入主线，发送、恢复与长文件名操作通过验证",
+      "next": "本片段已交付",
       "blocker": {
         "state": "none",
         "text": ""
@@ -73,9 +73,9 @@
     "taskId": "WPF-ATTACHI02",
     "owner": "w01_owner / gpt-6-astra / ultra",
     "branch": "codex/web-attachment-production",
-    "branchState": "in-progress / approved / waiting-main",
-    "updatedAt": "2026-10-06T13:02:00.000Z",
-    "updatedRecord": "2026-10-06 13:02 UTC",
+    "branchState": "completed / approved",
+    "updatedAt": "2026-10-06T13:09:00.000Z",
+    "updatedRecord": "2026-10-06 13:09 UTC",
     "todos": [
       {
         "id": "ATTACHI02-01",
@@ -87,7 +87,7 @@
         "id": "ATTACHI02-02",
         "state": "completed",
         "owner": "w01_owner",
-        "evidence": "真实P01和官方core消费者已验证；App组合仍在核验"
+        "evidence": "真实P01和官方core消费者已验证；主线组合17通过沿Lead归因"
       },
       {
         "id": "ATTACHI02-03",
@@ -97,9 +97,9 @@
       },
       {
         "id": "ATTACHI02-04",
-        "state": "pending",
+        "state": "completed",
         "owner": "w01_owner",
-        "evidence": "固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b，分支实现/检查/独审完成；main接收及history组合待完成"
+        "evidence": "固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b，分支/检查/独审/main已完成；全26scope停写交manager release"
       }
     ],
     "errors": [],
@@ -111,8 +111,8 @@
       "record": "PASSED 9eec51b72c6432b5b41df52f5b8fa783eb45e65b；长名actual App2项/浅深390/cleanup、Webtypes0；此前191独审和10+1旅程各按原target保留"
     },
     "reviewRecord": "[review.md](review.md)，APPROVED 9eec51b72c6432b5b41df52f5b8fa783eb45e65b；P2 CLOSED，旧f82历史保留",
-    "mainRecord": "NOT_INTEGRATED；本片已独审APPROVED，待主线接收及history组合验收，个人服务未操作",
-    "next": "固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b 已独立APPROVED，24声明source与[manifest](../../docs/evidence/wpf-attach-i02/source-manifest.json)一致，v3/26scope保留待主线接收；产品停止写入。19轮含所有失败及独立build保守290.133/600秒、0provider；全部专库最终清空，首长名轮为人工恢复清理，不假称正常自动cleanup。原10+1完整行为与最后2项长名复验按各自target，原日志不覆盖。\n**必须后继组合验证：当前main context-history producer × attachment-only合法材料。** 本树较早factory的HTTP通过不能替代它，由合法owner/Execution Lead接收时处理。**持久Send/Queue未知收据恢复仍待MATURE06-04**，ready草稿reload与跨tab journal原子性不在本片完成范围。未操作个人服务，也不自行dashboard采样。",
+    "mainRecord": "INTEGRATED cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd；24源等已审target，Lead实际history组合通过；个人backend362/v15、Web8d8/v2未切换",
+    "next": "固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b 已独立APPROVED并由Lead接收至 cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd。本人只读核24source逐字等于fixed/main/current；实现及元数据提交均非main祖先（exit1），集成依据是Lead受控接收回执和逐源相等，不宣称ancestor，[主线核对](../../docs/evidence/wpf-attach-i02/main-source-observation.json)和[Lead原样回执](../../docs/evidence/wpf-attach-i02/main-integration-receipt.json)。本次未重跑产品检查；提交/push与双端clean核完后全26scope停止写入，交manager fresh CAS release v3，释放后不追写。\n此前主线组合条件已由Execution Lead完成：实际production createServer HTTP/PG **attachment-only + mixed v2 history 2通过/2未选**，官方core/binding **17通过**，root/Webtypes0。ENOSPC两次import前0tests作为环境事件保留，不改写为产品红/测试通过；这些执行均归Lead，本人只引用固定回执。未新增browser/provider，也未切换个人backend362/v15或Web8d8/v2。\n**整个MATURE03仍未Done，持久Send/Queue未知收据恢复仍待MATURE06-04。** ready草稿reload、跨tab upload journal CAS、真实provider与其他浏览器等既有限制保持；history附件inventory明确unknown，真实执行digest保留。本片成功不等个人运行已升级。",
     "risks": "",
     "decisions": ""
   },

@@ -1,10 +1,10 @@
 # ATTACHI02 生产附件接线证据
 
-固定实现 **9eec51b72c6432b5b41df52f5b8fa783eb45e65b**，base **1c4968354dabce1e6748f3301a2e6eecd33e77d4**。[计划](../../../plans/wpf-attach-i02-production-binding/plan.md) / [状态](../../../plans/wpf-attach-i02-production-binding/status.md) / [review](../../../plans/wpf-attach-i02-production-binding/review.md)。Root独立复审 **APPROVED / 0 blocking**（2026-10-06 13:02:28 UTC），[原样结论](root-9eec-review.json)。main **NOT_INTEGRATED**。
+固定实现 **9eec51b72c6432b5b41df52f5b8fa783eb45e65b**，base **1c4968354dabce1e6748f3301a2e6eecd33e77d4**。[计划](../../../plans/wpf-attach-i02-production-binding/plan.md) / [状态](../../../plans/wpf-attach-i02-production-binding/status.md) / [review](../../../plans/wpf-attach-i02-production-binding/review.md)。Root独立复审 **APPROVED / 0 blocking**（2026-10-06 13:02:28 UTC），[原样结论](root-9eec-review.json)。main **cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd 已正式接收**，[原样Lead回执](main-integration-receipt.json) / [本人只读24源核对](main-source-observation.json)。
 
 真实App已接 P01 Files/@file、官方上传/拖入、按需预览、Send/Queue有序固定附件、旧key恢复与CACHE保护。只读共享decoder、Input controller/recovery/adapter、官方Thread、contracts/client/deps；原模块Picker与CSS经v3授权仅做长名布局修复；无第二registry。完整职责与限制见[Interface](interface.md)。
 
-**主线集成条件仍开放：**本树factory固定较早base，不能证明当前main的context-history producer × attachment-only合法材料组合；须由其合法owner/Execution Lead在接收时组合验证。**持久Send/Queue未知收据恢复仍待MATURE06-04**，本片不提供ready草稿跨reload或跨tab journal原子性，也不是完整附件大task Done。
+**主线组合条件已由Lead完成：**实际production createServer的attachment-only及mixed v2 history为2通过/2未选，官方core/binding17通过，root/Webtypes0；此为Lead当前main组合证据，未把旧fixture倒称新main验收。ENOSPC两次import前0项仍按环境事件保留。**持久Send/Queue未知收据恢复仍待MATURE06-04**，本片不提供ready草稿跨reload或跨tab journal原子性，也不是完整附件大task Done。
 
 ## 作者实际检查
 
@@ -58,3 +58,7 @@
 ## 正式独立复审
 
 [root原样review](root-9eec-review.json)已读两UI与browser完整delta，24声明源fixed/current/最终browser相同、26scope外0、剩余保护零差；目视浅深390和几何388/388、11按钮≤125，关闭长名P2。先前f82 REQUEST_CHANGES记录保留。191/191是对未变业务源的既有独立结果，本轮未重新跑191或旧完整browser/PG；作者定向longnames检查与root只读审图/几何分开归因。APPROVED只表示此固定片段通过，主线与部署仍待正式接收。
+
+## 主线接收 2026-10-06 13:09 UTC
+
+固定main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd，24声明源与已审target/current逐字一致。owner只做Git对象/摘要及metadata核验，未重跑191/浏览器/build/PG/provider。Lead组合详见 [receipt](main-integration-receipt.json)，专库remaining=[]/errors=[]；个人backend362/v15、Web8d8/v2未切换。完整MATURE03和持久Send/Queue未知恢复06-04仍开放，全部26scope在本次metadata推送后停写交manager释放。

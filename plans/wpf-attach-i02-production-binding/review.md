@@ -12,7 +12,7 @@ Reviewer：root / gpt-6-astra / ultra。独立复审时间2026-10-06 13:02:28 UT
 
 原191/191（7文件）独立结果仅按未变f82业务源复用，未冒称新全量运行；作者实际App10+1及最后2项longnames分别保留各target/hash，首长名轮人工清理与后续单上传采样器失败原样保留。未额外跑PG/browser/provider/个人服务。
 
-**集成前条件：当前main context-history producer × attachment-only合法组合须由合法owner/Execution Lead验证，本树较早factory不能替代。持久Send/Queue未知收据恢复仍待MATURE06-04。** ready草稿reload、跨tab upload journal CAS、真实provider/屏读/Firefox/Safari未验。main NOT_INTEGRATED；此为片段通过而非MATURE03大task完成或部署批准。
+**历史集成条件现已满足：Execution Lead在当前main完成context-history producer × attachment-only及mixed合法组合，原样回执见下。持久Send/Queue未知收据恢复仍待MATURE06-04。** ready草稿reload、跨tab upload journal CAS、真实provider/屏读/Firefox/Safari未验。main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd 已正式接收；此前history组合条件由Lead实际2项PG+17项core验证完成（原样回执）。此仍是片段交付，非MATURE03大task完成或个人部署。
 
 ## 2026-10-06 12:49 root 技术独审进展
 
@@ -31,3 +31,7 @@ Root确认f82 REQUEST_CHANGES：合法255字符文件名在390px使按钮横向�
 ## 2026-10-06 13:02 UTC：结论更新
 
 f82 REQUEST_CHANGES/P2历史保留；以上新target正式APPROVED关闭P2，不回写旧报告。后续仅合法metadata/main收口，产品停止写入，claim保留待主线接收。
+
+## 2026-10-06 13:09 UTC：主线接收事实
+
+[Lead原样receipt](../../docs/evidence/wpf-attach-i02/main-integration-receipt.json) / [owner只读24源核对](../../docs/evidence/wpf-attach-i02/main-source-observation.json)。main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd 与获审target全24源相同；Lead真实production PG2通过/2未选、officialUI17、root/Webtypes0，不冒owner重复测试。原ENOSPC两次import前0项和历史P2/采样失败全部保留。独审target及判定不变；个人服务未升级。
