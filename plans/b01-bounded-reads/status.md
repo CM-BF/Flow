@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:55:17 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:58:50 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections |
 | Branch | codex/task-read-projections |
-| 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264 / c96a6bb867bfa83b8ce26f79236ff13b14b63e65；最终metadata HEAD由Git读取 |
-| 工作树dirty状态 | 源码/raw已固定；第三reader源码/raw固定；本次仅manifest/review/status metadata |
-| 工作分支状态 | in-progress |
+| 工作基线 / HEAD | 第三片base ec274d6ff927037ad74df003a785f76f032c69de / 实现7d69f8b48a67bbf08eb1d7dbdebd8437da861b40；metadata HEAD由Git读取 |
+| 工作树dirty状态 | 源码/raw已固定；两片源码/raw固定，本次仅正式review/status/integration metadata |
+| 工作分支状态 | completed（两轻读片已审待main，非完整FLOW-001完成） |
 | 检查状态 | PASSED 第三reader5/5真实PG/HTTP、局部strict0；首片8项未重跑；历史red保留 |
-| 已集成main状态 / HEAD | 旧B01已main；本片两reader已实现/未main |
+| 已集成main状态 / HEAD | 旧B01已main；两新片未main。2f4a5789ee13937914fa2c25161c8d5ed1071550 clean只读核c96/7d69均非祖先 |
 | 实现目标 | 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40 |
 | 实现范围 | apps/server/src/assistant-stream/queries.ts, apps/server/src/assistant-stream/task-head.test.ts, docs/evidence/b01/task-projections/head/tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 前两个轻读入口已批准；assistant stream也已实现三列读取并通过等价验证 |
-| 下一可用交付 | 首片可独立接收主线；第三reader等价证据等待独审 |
+| 当前产出 | 三个轻读入口均已实现并获独立批准，原响应与分页行为保持 |
+| 下一可用交付 | 已审轻读实现交由Lead接收主线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | REVIEW_REQUIRED 第三reader；首片c96已APPROVED，独立integration-ready保留 |
+| Review | APPROVED Mika 2026-10-06 11:57:54 UTC，第三片7d69；首片c96独立批准保留 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -35,13 +35,15 @@
 | B01-06 | completed | status_read | [8/8与字节证据](../../docs/evidence/b01/task-projections/README.md)，7tasks累计/三库清理，局部strict0 |
 | B01-07 | in-progress | mika / Lead | 独审APPROVED；[固定集成输入](../../docs/evidence/b01/task-projections/integration-ready.md)，待Lead main接收 |
 | B01-08 | completed | status_read | 5/5真实PG/HTTP、strict0；新片3tasks/两库已清理，待固定独审 |
-| B01-09 | in-progress | mika / Lead | 新片source/raw固定准备独审，不套首片批准 |
+| B01-09 | in-progress | mika / Lead | APPROVED 7d69；[固定集成输入](../../docs/evidence/b01/task-projections/head/integration-ready.md)，待Lead main |
 
-writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v2 AMEND COMMITTED 2026-10-06 11:50:43.493 UTC，新增仅assistant-stream/queries.ts及task-head.test.ts，共九scope；[新片Interface](../../docs/evidence/b01/task-projections/head/interface.md)。等待Lead按[迁移请求](../../docs/evidence/b01/task-projections/authority-request.md)登记新权威来源，尚未确认聚合；本status唯一手填事实，不改registry。P04源码/raw冻结与claim保留完全独立。
+writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v2 AMEND COMMITTED 2026-10-06 11:50:43.493 UTC，新增仅assistant-stream/queries.ts及task-head.test.ts，共九scope；[新片Interface](../../docs/evidence/b01/task-projections/head/interface.md)。最新main 2f4a5789ee13937914fa2c25161c8d5ed1071550 registry仍指旧bounded-read-performance；等待Lead按[迁移请求](../../docs/evidence/b01/task-projections/authority-request.md)登记新权威来源，尚未确认聚合；本status唯一手填事实，不改registry。P04源码/raw冻结与claim保留完全独立。
 
 架构影响：只新增固定summary投影/映射Module供两个既有reader复用，生产事务/存储/鉴权/锁和全局调度不改；新目录结构在固定target后请求Lead登记，实际3生产源/1新测试/1私有fixture；目录架构基线待Lead按固定target登记。
 
 第三reader独立证据见[head/README](../../docs/evidence/b01/task-projections/head/README.md)；首片8项没有重跑，本片5项不借旧批准。当前实现目标字段是第三reader 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40；首片c96/ec274仍由固定integration-ready供Lead单独集成。
+
+交付后当前两片source/raw停止修改，未领取新实现；writer v2保留到明确handoff/release。无需用户决定，不再PG/测试。
 
 ## 历史owner交付快照（以下不是新片当前状态）
 
