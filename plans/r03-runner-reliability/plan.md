@@ -7,8 +7,8 @@
 ## TODO
 
 - [x] R03-01 固定 claim 剩余租期合同、兼容和单调时钟规则。
-- [ ] R03-02 公开 runRunner/HTTP 红绿验证 ±5分钟时钟偏差、claim/heartbeat 延迟与晚回包不复活。
-- [ ] R03-03 明确本地存储失败退出，验证无持续心跳和退出清理；检查直接消费者。
+- [x] R03-02 公开 runRunner/HTTP 红绿验证 ±5分钟时钟偏差、claim/heartbeat 延迟与晚回包不复活。
+- [x] R03-03 明确本地存储失败退出，验证无持续心跳和退出清理；检查直接消费者。
 - [ ] R03-04 固定证据、clean-code、独立 review 与交付。
 - [ ] R03-05 后续 BR-01 实际执行位置/只读版本化FS/process logs/PTY，以及 S01 多runner（独立范围，本段不实现）。
 
