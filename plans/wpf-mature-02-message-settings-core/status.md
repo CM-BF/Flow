@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:31:25 UTC / fixed base 70cc4e852365e974cefde30bfad75c7d233985c6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:39:05 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a（source）；validation 8c56f15c5a70afd4e33031876244f70d1284d957（后续仅metadata） |
-| 工作树dirty状态 | 78c73677438efec7455fc68b44109fa7da9ce5f5 已核 clean；本次仅独审/集成 metadata |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 已核metadata HEAD e898137fb55dbe852e83202f8c16ee08ac87967d；历史source4e7、validation8c56冻结 |
+| 工作树dirty状态 | e898137fb55dbe852e83202f8c16ee08ac87967d 已核 clean且origin同；本次仅main收口/下一设计metadata |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | planning |
 | 检查状态 | 下一纵向 NOT_RUN；首leaf4e7b7f968a2160a60989b3b6343506ae8fb5ef6a历史5/5与strict0不重跑 |
