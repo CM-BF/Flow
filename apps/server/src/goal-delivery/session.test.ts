@@ -18,9 +18,15 @@ it('shares one goal across two clients, keeps material reads explicit and reject
   try {
     await Promise.all([one.initialize(), two.initialize()]);
     const body = await one.read({ kind: 'input', nodeId: a, version: 1 });
-    const start = f.requests.length;
-    await one.observe([a, b]); await one.observe([a, b]);
-    const refresh = f.requests.slice(start); expect(refresh).toHaveLength(2); expect(refresh.every(r => !r.materials)).toBe(true);
+    const originalPlanRef = one.snapshot().plan!.planRef;
+    const sibling = await f.client().commandGoal(s.goalId, { kind: 'execute', nodeId: b, expectedInputVersion: 1, dependencies: [], previousExecutionId: null, reason: 'Unrelated sibling activity', fixture: { scenario: 'success' } }, randomUUID());
+    const siblingPeer = await peer(sibling.task!.id); const refresh = [];
+    for (const text of ['Sibling working', 'Sibling progress']) {
+      await siblingPeer.emit({ type: 'message', text }); const start = f.requests.length;
+      await one.observe([a, b]); refresh.push(...f.requests.slice(start));
+    }
+    await siblingPeer.emit({ type: 'completed', outcome: 'succeeded' });
+    expect((await one.plan()).planRef).toBe(originalPlanRef); expect(refresh).toHaveLength(2); expect(refresh.every(r => !r.materials)).toBe(true);
     expect(one.snapshot().body).toEqual(body);
     expect((await one.command(define(a))).state).toBe('acknowledged');
     const beforeConflict = f.requests.filter(r => r.method === 'POST').length;
@@ -33,7 +39,7 @@ it('shares one goal across two clients, keeps material reads explicit and reject
     expect((await one.command({ kind: 'project', input: { expectedRevision: revision, reason: 'Explicit graph change', change: { kind: 'add-node', title: 'C', parent: null, taskId: null } } })).state).toBe('acknowledged');
     const graphConflict = await two.command({ kind: 'project', input: { expectedRevision: revision, reason: 'Conflicting stale graph', change: { kind: 'add-node', title: 'D', parent: null, taskId: null } } });
     expect(graphConflict.state).toBe('rejected'); expect(two.snapshot().plan!.totalNodes).toBe(3);
-    await save('two-client', { refresh, explicitMaterialReads: 1, staleInput: conflict.state, staleProject: graphConflict.state, replacementCommands: 0, oldBodyRetained: true });
+    await save('two-client', { refresh, explicitMaterialReads: 1, staleInput: conflict.state, staleProject: graphConflict.state, replacementCommands: 0, oldBodyRetained: true, siblingActivity: 'two real public runner event batches', planRefStable: true });
   } finally { await Promise.all([one.dispose(), two.dispose()]); }
 });
 it('recovers a committed lost ACK with the original frozen key/body after controller and center restart', async () => {
