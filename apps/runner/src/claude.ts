@@ -66,7 +66,10 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
             effective = { model: event.model ?? null, permissionMode: event.permissionMode ?? null, tools: event.tools ?? null, thinking: 'unknown' };
             await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION, resources: resources(event) });
           }
-          if (event.type === 'result') final = event;
+          if (event.type === 'result') {
+            if (final && finalIdentity(final) !== finalIdentity(event)) throw new Error('Claude returned multiple different results for one task.');
+            final = event;
+          }
         }
         controller.signal.throwIfAborted();
         if (!final) throw new Error('Claude ended without a result.');
@@ -202,4 +205,8 @@ function validateLimits(options: ClaudeAdapterOptions) {
   if (!Number.isFinite(maxBudgetUsd) || maxBudgetUsd <= 0 || maxBudgetUsd > 1) throw new Error('Claude maxBudgetUsd must be greater than zero and at most 1.');
   if (!Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 90_000) throw new Error('Claude timeoutMs must be between 1 and 90000.');
   return { maxTurns, maxBudgetUsd, timeoutMs };
+}
+
+function finalIdentity(result: SDKResultMessage) {
+  return JSON.stringify([result.uuid, result.session_id, result.subtype, result.is_error, result.subtype === 'success' ? result.result : null]);
 }

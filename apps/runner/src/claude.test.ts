@@ -264,3 +264,30 @@ it('emits exactly the successful final result as typed assistant text after cons
   expect(JSON.stringify(test.events)).not.toMatch(/repeated draft|tool secret|private thinking|child output/);
   expect(test.events.findIndex(event => event.type === 'assistant-final')).toBeGreaterThan(test.events.findIndex(event => event.type === 'verification'));
 });
+
+it('marks effective settings unknown without an init frame and keeps stable source identity across repeat delivery', async () => {
+  const first = await setup(); const second = await setup();
+  const query = sdk(async function* () { yield result(); });
+  await createClaudeAdapter({ materialFiles: [], query }).run(first.context);
+  await createClaudeAdapter({ materialFiles: [], query }).run(second.context);
+  const a = first.events.find(event => event.type === 'assistant-final');
+  const b = second.events.find(event => event.type === 'assistant-final');
+  expect(a).toEqual(b);
+  expect(a).toMatchObject({ settings: { effective: { model: null, permissionMode: null, tools: null, thinking: 'unknown' } } });
+});
+it('rejects conflicting results instead of silently replacing an earlier turn outcome', async () => {
+  const test = await setup();
+  const query = sdk(async function* () { yield result(); yield result({ result: 'different result', uuid: 'result-2' }); });
+  await expect(createClaudeAdapter({ materialFiles: [], query }).run(test.context)).rejects.toThrow('multiple');
+  expect(test.events.some(event => event.type === 'assistant-final' || event.type === 'artifact')).toBe(false);
+});
+it.each(['session', 'stream-error', 'unicode-size'] as const)('publishes no assistant final for %s failure', async failure => {
+  const test = await setup();
+  const query = sdk(async function* () {
+    if (failure === 'session') yield { type: 'system', subtype: 'init', session_id: 'native-different', model: 'model', permissionMode: 'dontAsk', tools: [], plugins: [], skills: [], mcp_servers: [] } as unknown as SDKMessage;
+    yield result({ result: failure === 'unicode-size' ? '🌱'.repeat(262_145) : 'ordinary response' });
+    if (failure === 'stream-error') throw new Error('Stream failed after result');
+  });
+  await expect(createClaudeAdapter({ materialFiles: [], query }).run(test.context)).rejects.toThrow();
+  expect(test.events.some(event => event.type === 'assistant-final' || event.type === 'artifact')).toBe(false);
+});

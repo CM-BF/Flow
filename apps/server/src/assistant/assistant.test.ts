@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { setTimeout as sleep } from 'node:timers/promises';
-import { Pool } from 'pg';
+import { Pool, type PoolClient } from 'pg';
 import { afterAll, beforeAll, expect, it } from 'vitest';
 import { createServer } from '../index.js';
 import { sha256 } from '../database.js';
@@ -8,7 +8,7 @@ import { migrateAssistantMessages, registerAssistantRoutes } from './index.js';
 
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
 const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_chat02';
-let lock: Awaited<ReturnType<typeof admin.connect>>;
+let lock: PoolClient;
 let created = false;
 let app: Awaited<ReturnType<typeof createServer>>;
 let base = '';
