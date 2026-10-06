@@ -71,6 +71,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(task, `${taskLine(task)}\n${task.entries.map(entry => entry.kind === 'text' ? entry.text : `[${entry.reference.title}] ${entry.reference.id}`).join('\n')}${task.pendingDecision ? `\nDecision ${task.pendingDecision.id}: ${task.pendingDecision.prompt}` : ''}`);
       return 0;
     }
+    case 'usage': { print(await client.taskUsage(required(id, 'task ID'), context.signal)); return 0; }
     case 'watch': return watchTask(client, required(id, 'task ID'), { json: values.json ?? false, signal: context.signal, ...(values.timeout ? { timeoutMs: positiveNumber(values.timeout, 'timeout') } : {}) }, io);
     case 'decision': {
       const result = await client.decide(required(id, 'task ID'), decisionSchema.parse({ decisionId: required(values.decision, '--decision'), answer }), key);
@@ -284,6 +285,7 @@ Commands:
   list
   workspace [--after cursor | --before cursor] [--limit count]
   show <task-id>
+  usage <task-id>  # source/cache/coverage readout; SDK estimate is not billing
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
