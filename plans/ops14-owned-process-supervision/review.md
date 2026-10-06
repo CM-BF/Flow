@@ -1,9 +1,9 @@
 # OPS14 独立 review
 
-状态：APPROVED；仅 Capture 增量（APPROVED_LIMITED_CAPTURE_INCREMENT），两真实 consumer 仍未迁移。
-Review target commit：afd01a0387f8cc9d9797109be1fdead74606a4af
+状态：PENDING；SVC05H 两文件迁移待独审；原Module/Capture批准仅覆盖各自固定target。
+Review target commit：12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2
 Base：c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05
-Scope：tools/owned-process-supervision
+Scope：docs/evidence/svc05-history-compatibility/center-recovery/supervise.py, docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py
 
 审查任务：核固定 target / manifest / 当前字节，完整读取 Module 和行为测试。确认只 spawn 自有子进程、有限捕获与工作/停止期限、childPidOnly 不触 detached 用户服务、group unknown 不升级信号，最早错误与 cleanup 分离；调用方 persistence 不进入监督关键路径。核两调用形状及原日志，未迁移生产 consumer 不得称完整复用。review 默认只读，不重复已绿检查；finding 交唯一 owner 修复。
 
@@ -32,3 +32,7 @@ assignment_review 原样[增量批准](../../docs/evidence/ops14/independent-val
 该增量仅 finite enum / Launch 默认 / 单 pipe stderr=STDOUT / Report.mode+实际EOF 与3个直接 consumer。原309 scope独审不覆盖此增量。新3/3、12未选，2新+1默认旧consumer；0PG/Chrome/provider，未重跑原13。核源差异、默认四项Launch兼容、内核单pipe捕获语义、同总cap、原最早错误与unknown逻辑未改、两实际wrapper无差。此增量仍未将两个wrapper接入。
 
 Capture 唯一独审原样[报告](../../docs/evidence/ops14/independent-capture-review.json)/[绑定](../../docs/evidence/ops14/independent-capture-review-bindings.json)：完整3源delta与29bindings一致，无P1/P2，3/3原输出成立，reviewer0重跑；原309范围与raw保持。
+
+## SVC05H 真实调用者迁移（待审）
+
+固定12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2。仅两个移交文件；共享Module保持afd原字节，实际operator与授权不变。核固定相对导入、legacy字段/unknown映射、CHILD_PID_ONLY、118+2及显式64KiB上限、无第二监督循环。原2用例实际2/2与stand-in清理原输出见[检查](../../docs/evidence/ops14/svc05h-checks.md)。没有实际个人恢复/PG/provider；SVC07未迁移，不宣称OPS14完成。以上旧段是按当时时间记录的历史，未覆盖本次target。
