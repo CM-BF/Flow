@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:41 UTC / 架构新轮已进入主线集成队列；05:37:09.032Z实际proof与claim完整 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:44 UTC / 架构与排队操作已审待主线；聚合/claim证据均已核 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `24817c604dd6a7ff4757c55bebe6d988276d84ea`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `12120a6ccc91b5480bede96548b0fe6aaa8d8fea`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 聊天执行选项和紧凑摘要已合入；新版架构图待上线，排队界面待独立验收 |
+| 当前产出 | 聊天执行选项和紧凑摘要已合入；新版架构图和排队操作均通过审查，等待集成 |
 | 下一可用交付 | 可操作的消息队列与标明版本的架构图 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
 | 检查状态 | PASSED c075bb5c00ac2f27d54dd264982be30261a9dc51；历史管理文档独审目标；后续增补只作本地文档/事实一致性检查，不继承产品或全量review |
-| 已集成main状态 / HEAD | 本管理计划未集成；MainLead确认14c61b4062f8040ba6c7239860929366e5bd3fc1已push/clean，管理者实核主仓同HEAD/clean；含PROFILEI01及PROFILEUX，DPERF已集成。SVC常驻center/runner仍75a，不据main推已升级部署 |
+| 已集成main状态 / HEAD | 本管理计划未集成；MainLead确认14c61b4062f8040ba6c7239860929366e5bd3fc1已push/clean，管理者实核主仓同HEAD/clean；含PROFILEI01及PROFILEUX，DPERF已集成。GO/SVC确认05:40:49常驻61227/61228 center/runner已受控更新为fb906cb、ready/v3 accepting、0任务/0query；此前75a为历史，本队未登录或服务验证，不据main推自动部署 |
 | Review | [review.md](review.md)，APPROVED仅管理文档target c075bb5；后续增补未自动获审 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -40,7 +40,7 @@
 | WPF-001-13 | completed | d01_owner | PROFILEI01固定2e4c获审/finalc1dc clean；36paths/10scope、6md37links4TODO与原样60源聚合通过；主线14c61已含，最后07cff记录main/7f1v2 released |
 | WPF-001-14 | completed | d01_owner | DPERF5cd限定APPROVED/final4d7425 clean；5md15links3TODO/范围0越界，4新检查与旧关联失败分开；main6b4已含、08bd记录后bb7efv2 released |
 | WPF-001-15 | completed | d01_owner | PROFILEUX55b获root限定APPROVED，60d8交付与5md27links3TODO通过，ef869记录main14c61；d113v2已release |
-| WPF-001-16 | in-progress | d01_owner | QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c作者完成、metadata收口，等待root独审 |
+| WPF-001-16 | in-progress | d01_owner | QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432croot05:40:36 APPROVED、最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean，41paths/13scope、6md36links、原样聚合和11源码hash核验通过，待主线 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -54,7 +54,7 @@
 | WPF-PROFILEI01 | 实现2e4c5fe7d795e397ab1b1e492605562a847c5fb0/rootAPPROVED，交付c1dc；最后07cffeba1a818f5697c23efc37a7e5c2b813c035 clean亲核main14c61/8paths相同，7f1daa29 v2于05:18:50.266Z released，全部10scope停写；51832保留 |
 | WPF-DPERF01 | 实现5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52限定APPROVED，最后canonical08bd0a71494f54809f4c4a2fa5b9718285103ea3 clean核main6b4祖先/两path相同；全部四scope停写，bb7ef22f v2于05:14:24.445Z released。4新检查与关联旧registry-count失败分开；proof.mjs/registry/human未修改 |
 | WPF-PROFILEUX01 | w01_owner / web-execution-profile-summary / codex/web-execution-profile-summary，base698；55b244b22a147f3360b12281bac152666749364b获root05:14:39限定APPROVED，交付60d8，main记录ef8698344f90412891e35fed05c21743d97cb708 clean；main14c61祖先/四path相同，d113be51 v2于05:18:15.732Z released，全六scope停写；54239保留 |
-| WPF-QUEUE01 | workspace_panels_owner / web-conversation-queue / codex/web-conversation-queue，固定14c61b4062f8040ba6c7239860929366e5bd3fc1，新树clean预检；b4ea85d0-ad87-4903-9a59-73281ad17752 v1于05:19:31.947Z committed，13scope只含conversation queue+必要官方Input seam/专测/plan/evidence；首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e，05:31:45.221Z实采卡片live/claim匹配/human完整/NOT_STARTED，该观察后作者已固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c，51direct/typecheck/build及dev11/prod11通过；metadata收口中，未独审 |
+| WPF-QUEUE01 | workspace_panels_owner / web-conversation-queue / codex/web-conversation-queue，固定14c61b4062f8040ba6c7239860929366e5bd3fc1，新树clean预检；b4ea85d0-ad87-4903-9a59-73281ad17752 v1于05:19:31.947Z committed，13scope只含conversation queue+必要官方Input seam/专测/plan/evidence；首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e，05:31:45.221Z实采卡片live/claim匹配/human完整/NOT_STARTED，该观察后作者已固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c，51direct/typecheck/build及dev11/prod11通过；root05:40:36已APPROVED，最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean；05:41:16.755Z作者唯一实采两proof unchanged/claim匹配/stageintegration，main尚未含 |
 | 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v5已转App/react给X03与projection/直接test给QUEUE00，04:59再转Thread/outbox/outbox-test给PROFILEI01，05:19再转officialThread给QUEUE01，当前其余8scope保留。真实两query不冒称通过 |
 | D06（新轮受领） | 旧ef42277固定8f已审集成且f619v2released，旧tree只读；新w01_owner / dashboard-architecture-current / codex/dashboard-architecture-current / 固定eb14991a170b72d7d974428b2e440e1faada2c1e，e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1于05:26:04.403Z committed，五scope限原data/renderer/test/同D06plan-evidence；唯一source迁移获Lead确认，首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26已核clean/current三件套后一次交root，05:31:45.221Z实采唯一source迁移已生效；固定5ec6ce2051ed399be4906c6f99f7183e0ed1bb66/rootAPPROVED，最终61d70fda9988e7dc5370fb567e4346bd926fdb7d clean；05:37:09.032Z实采两proof unchanged/claim匹配/integration，本轮未main；MainLead已ACCEPTED_INTEGRATION_QUEUE，SVC窗口后集成，五scope停写保留回修权 |
 | 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
@@ -67,8 +67,8 @@
 ## 验收边界与开放目标
 
 - 完整SHA、来源、检查、screenshots、技能和限制见[交付快照](../../docs/evidence/web-platform/delivery-snapshot.md)与各唯一owner三件套。本表不复制其他任务TODO。
-- [队列研究](../../docs/evidence/web-platform/chat-queue-research.md)区分e423历史stub、后继PG pause/continue/currentTurn提案、immutable ACK和assistant-ui实际adapter限制；当前按钮不变。steering仍须受理/送达/实际生效证据。
-- [执行配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)仅整份已发布runner配置选择；catalog not-probed，不声称模型在线或任意effort/access。PROFILE01第一段只交模块。
+- [队列研究](../../docs/evidence/web-platform/chat-queue-research.md)保留e423历史stub与当时按钮未开放的边界；当前QUEUE01固定309已独审通过，排队/暂停/继续/独立取消待主线接收和实际部署，不能用旧研究覆盖新分支能力。steering仍未支持，须独立受理/送达/实际生效证据。
+- [执行配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)仅整份已发布runner配置选择；catalog not-probed，不声称模型在线或任意effort/access。PROFILE01模块及PROFILEI01实际App接线均已入main，真实部署状态另核。
 - 完整X01插件npm生命周期/权限/隔离/CLI等价、BR-01真实PTY/fs、后继对话能力仍开放；I01本地Settings和中心registry不是完整插件管理。
 - 本队0真实模型/语音调用；Lead的真实两query验收结果尚未收到。现有预览均明确fixture，未暗换用户页面。
 
@@ -161,3 +161,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:37 D06最终局部管理审核完成：35paths/原5claimscope，6Markdown44links4TODO一致，5源码/脚本hash与target相同，历史raw三文件原字节保持；原全metadata仅失败日志22/61尾空格例外。最后status旧下一步已改Lead接收/部署；[一次最终API](../../docs/evidence/web-platform/d06-current-approved-observation.json)绑定61d70clean/5ecapproved/两proof unchanged/e5b2v1matchesSource/human完整/integration/issues空，mainfb906未含本轮。root已获完整OPS交接字段，管理不重复产品/Node/浏览器。QUEUE作者51direct+dev11通过与production待验只是进行中事实，未固定target，不提前approve。
 
 05:41 MainLead正式接收D06进入集成队列，当前固定main fb906，SVC bootstrap→refresh窗口结束后再合D06/更新4320；未收到main/部署完成前不改为delivered、不释放claim、不停55247/58207。QUEUE01作者固定309/base14c61，全部11实现/测试文件的dev/prod报告hash据作者已匹配，管理等待其最终metadata核scope/links/TODO；root负责产品独审，当前不称通过。
+
+05:44 QUEUE01最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean管理检查闭合，复用作者05:41:16.755Z唯一API原样摘录，不另取样。实现309 root05:40:36批准；41paths在13scope、6md36links/5TODO、11源码及两份报告hash匹配，F01 pending与三个raw日志空白例外保留。产品全scope停写保留claim回修，完整OPS字段已交root一次桥Lead。当前无真实queue模型旅程通过的主张。

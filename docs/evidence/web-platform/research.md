@@ -445,3 +445,9 @@ RS08同一后继面补静态证据：root固定eb查看ConversationThread的`con
 root/w01只读实际react0.15.23/core0.3.22源码：在当前无SDK queue adapter、无voice的路径，显式排队调用 `send({startRun:false})` 保留官方canSend、草稿分离、附件准备、dispatch/send事件与onNew，跳过默认user新run触发的client-tool abort。按钮submit与普通Enter必须走同一form override；普通follow-up仍原primitive，IME/ShiftEnter/defaultPrevented不绕过，steer显式unsupported。publicsend返回void，isSubmitting只表示附件准备，不能充当HTTP ACK门禁；Flow同步inflight/unknown与冻结receipt仍权威。若以后启用SDK `_store.queue`，running默认steer分派会改变该结论，须重核。此次0项目写/测试/浏览器/模型，非moving QUEUE实现批准。
 
 05:40:26.108Z管理freshledger更新早期K02未take历史：Mika K02 claim347d4777-d430-4f06-8cba-ed8b180f2ba9 v1现active，范围是后台context/queue/conversation与shared合同；此领取事实不表示合同冻结/独审/可部署。renderer仍既有八新scope候选无literal冲突，完整X01 npm/第三方隔离属主线，不因空闲就另造全栈计划；固定接口/base建议回root再协调。
+
+## 05:42 renderer readiness建议收口（仍未take）
+
+w01固定main/origin `fb906cb42391971a8b315dbd813f7633927d7265` 建议为新模块base；正式派发若换base须明示。八literal为data-renderers/registry.ts、react.tsx、flow-reply-detail.tsx，test/data-renderers.test.ts、data-renderers.browser.ts、data-renderers.fixture.tsx，以及plans/wpf-renderer01-data-renderers、docs/evidence/wpf-renderer01（源码与test均apps/web前缀）。均新路径，05:40 freshledger无相交，未建树/领取/实现。优先级低于QUEUE及K02正式reader合同，已交root统一协调Lead。
+
+接口建议为静态可信catalog(ownerId/name/version/parse)整批校验+受控registry snapshot/subscribe/resolve/attach Disposable，现PluginHost.list/subscribe/activate只作lifecycle窄输入，attach由context.own/signal回收；不新增manifest kind/公共DTO。每provider一个稳定且独有的注册Bridge，pane只传message绑定资源及reply port；现flow-reply-detail仅此保留名接受无version legacy v1，strict turnId再核message/turn/task，port仅getSnapshot/subscribe/read()，不接受任意detail/task参数。未知版/schema不发load，合法builtin禁用保留App-owned安全显式详情fallback。App接线另需ConversationThread/session/react正式受领，现QUEUE写界不可抢。此独立可信展示模块不关闭完整X01 npm/第三方隔离/CLI生命周期。
