@@ -79,8 +79,8 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-36 | 主线D03要求各权威status提供明确人读字段与实现范围 | 每个唯一owner自行写；管理者协调 | 阶段/优先级1–9/当前产出/下一可用交付/明确阻塞与决定/完整实现target与literal范围；不写其他owner状态 |
 | WPF-REQ-37 | U08 多lead避免重叠、take工作在dashboard标清 | 主线D04唯一账本；各Lead真实actor领取；各owner唯一范围 | taskID/owner/lead/worktree/branch/精确范围、claim版本/状态/时间与交出接收方可见；PG事务拒绝同task及同/父子路径冲突，跨task部分转交先停写→amend→take，不靠口头抢占 |
 | WPF-REQ-38 | U09 产品Web打开并保留，可随时查看 | 原Goal Owner选已审M02 49922；原owner保留服务 | 已审M02 http://127.0.0.1:49922/用户tab已打开并保留，明确fixture及恢复方式；I01 55049仅开发验证，不能声称稳定main或真实中心服务已起 |
-| WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一plan/status记录，我方仅协作追踪，不跨写dashboard |
-| WPF-REQ-40 | U10 plugin管理写进计划里 | 主线X01唯一canonical owner；我方父计划关联 | 主线计划包含Web管理页和CLI公共center命令、持久版本/配置/权限/作用域、npm install/enable/disable/upgrade/rollback/remove、活跃执行版本绑定、可信/隔离边界；取得实际路径后链接。P01/I01本地Settings不冒充完整插件管理 |
+| WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一[D05计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录，当前未固定目标，我方仅协作追踪，不跨写dashboard |
+| WPF-REQ-40 | U10 plugin管理写进计划里 | 主线X01唯一canonical owner；我方父计划关联 | 主线计划包含Web管理页和CLI公共center命令、持久版本/配置/权限/作用域、npm install/enable/disable/upgrade/rollback/remove、活跃执行版本绑定、可信/隔离边界；实际[X01计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)已建立，文档888308d/产品未实施。P01/I01本地Settings不冒充完整插件管理 |
 
 ## 当前 owner 与接口冻结
 
@@ -183,4 +183,8 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 
 - 2026-10-06 03:13 UTC：持久化经原Goal Owner逐字转交U09，追加REQ38产品预览保留与REQ39架构tab；前者最终选择既有M02 49922并保留用户tab/服务，I0155049仅开发fixture，后者主线唯一owner承接，我队不重复实现。
 
-- 2026-10-06 03:19 UTC：U10逐字转交“plugin管理写进计划里”已新增REQ40；主线X01 canonical路径待回传，我队只关联已获授权Web前置，不重复实现完整生命周期。
+- 2026-10-06 03:19 UTC：U10逐字转交“plugin管理写进计划里”已新增REQ40；主线[X01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)已只读核验888308d文档，我队只关联已获授权Web前置，不重复实现完整生命周期。
+
+- 2026-10-06 03:23 UTC：只读核主线X01 canonical888308d clean和D05 canonical dirty实施中，REQ39/40补真实路径；不代其给approval或重复产品实现。
+
+下一准备轮：[WPF-PERF02有界Activity](performance-optimization/plan.md)，依据PERF三规模实际数据；仅管理计划，待明确停写、逐文件amend/take、稳定输入与独立owner转交。不扩PERF四scope，不改I01 App。

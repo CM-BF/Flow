@@ -13,7 +13,7 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 五个WPF canonical源已聚合；旧17源全部保留；D04领取转交实证 |
-| 下一可用交付 | 主线架构tab canonical计划与入口关联 |
+| 下一可用交付 | 主线D05架构tab可查看入口与固定交付关联 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -27,7 +27,7 @@
 | WPF-D01-01 | completed | d01_owner（协作） | 原Lead已承接D03/D04，所有权及canonical来源清单已实际交付，未另派dashboard实现 |
 | WPF-D01-02 | completed | d01_owner（协作） | 03:17:14.324Z实际30源与main8c57原17ID比较missing=[]；03:12 root五源human完整 |
 | WPF-D01-03 | completed | d01_owner（协作） | 四独立feature平级planDir已注册，nested转stub；4320入口与receipts真实验证，无放宽nested安全范围 |
-| WPF-D01-04 | pending | d01_owner（协作）；原Lead实施 | U09已交主线承接；canonical任务ID/实现target/可访问架构tab尚待回传 |
+| WPF-D01-04 | pending | d01_owner（协作）；原Lead实施 | U09已关联主线[D05 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)；03:23观察实施未固定target，可访问交付仍待验 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -35,7 +35,7 @@
 
 ## 下一步与handoff
 
-收到主线架构tab canonical路径后关联父REQ39并只读核入口。原Lead单写4320与registry；本文件仅协作事实源，不作为重复dashboard实现任务注册。
+主线[D05 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)已关联父REQ39；待固定交付后只读核入口。原Lead单写4320与registry；本文件仅协作事实源，不作为重复dashboard实现任务注册。
 
 ## Dashboard同步
 

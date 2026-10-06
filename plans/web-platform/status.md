@@ -25,7 +25,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-001-01 | completed | d01_owner | U00～U10及WPF-REQ-01～40已落[plan](plan.md) |
-| WPF-001-02 | completed | d01_owner | 5个子计划齐三件套；P01/M02/I01/PERF转独立唯一owner，仅dashboard协作准备留管理树 |
+| WPF-001-02 | completed | d01_owner | 6个子计划齐三件套；P01/M02/I01/PERF转独立唯一owner，仅dashboard协作准备留管理树 |
 | WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01完整6ce整体APPROVED、PH-R1～4关闭；最终metadata2910ebc clean，I01开始实际主App消费；完整X01父范围仍开放；I01实际App挂载另计划 |
@@ -65,4 +65,6 @@ U09/REQ38～39已逐字落plan：原Goal Owner已打开并保留已审M02 49922�
 
 产品预览当前为[已审M02 HTTP fixture](http://127.0.0.1:49922/)，原Goal Owner已打开并保留用户tab，服务owner workspace_panels_owner / exec session17885；恢复法见[集成清单](../../docs/evidence/web-platform/integration-checklist.md)。I01 55049仅开发fixture。工程架构tab由主线承接，WPF-D01只协作追踪。
 
-U10 / REQ40已落父plan：主线独立X01维护全产品插件管理计划，待canonical路径回传后关联；本地Settings启停只是可信Web host能力，不代表中心持久生命周期、CLI或第三方隔离完成。
+U10 / REQ40已落父plan：主线独立X01维护全产品插件管理计划，已只读关联[X01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)，文档target888308d、产品未实现；本地Settings启停只是可信Web host能力，不代表中心持久生命周期、CLI或第三方隔离完成。
+
+下一准备轮WPF-PERF02已建[plan/status/review](performance-optimization/plan.md)，只管理准备。原M02停写确认/精确测试路径/正式PERF review与主线协调未齐前不领取写入。

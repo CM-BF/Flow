@@ -4,7 +4,7 @@
 
 ## 唯一实施边界
 
-紧凑中性工作台和高层语义由主线D03实现；D04负责PostgreSQL分配账本与领取展示。4320服务由原Lead单写管理，我方不停止、重启、改代码或另派dashboard owner。用户U09新增架构tab同样由主线承接，具体任务ID/目标SHA待其回传。
+紧凑中性工作台和高层语义由主线D03实现；D04负责PostgreSQL分配账本与领取展示。4320服务由原Lead单写管理，我方不停止、重启、改代码或另派dashboard owner。用户U09新增架构tab同样由主线承接，具体任务为[D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)，原Lead唯一实施；03:23观察仍moving tree/target UNKNOWN。
 
 我方负责提交用户需求与canonical status来源，核对领取/来源是否真实呈现。手填进度只在各唯一status，JSON/网页派生；assignment账本只记owner/lead/scope/claim/handoff，不复制TODO/check/review。分支实现、检查、独立审查和main集成分开，缺失/过时/失败标未知，不猜百分比或ETA。
 
@@ -16,7 +16,7 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 
 ## 新架构tab协作验收
 
-父U09原话为“把产品Web UI打开留着可随时看，且工程dashboard增架构tab”，由原Goal Owner逐字转交。主线唯一owner建立该tab，提供canonical计划、实际可访问入口和检查/审查目标；本计划仅确认链接与需求覆盖，不自行定义第二架构事实源或代写其实现。收到交付后只读验入口与来源，若未实现保持pending。
+父U09原话为“把产品Web UI打开留着可随时看，且工程dashboard增架构tab”，由原Goal Owner逐字转交。主线唯一owner按已建立[D05 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)实施该tab，后续提供实际可访问入口和检查/审查目标；本计划仅确认链接与需求覆盖，不自行定义第二架构事实源或代写其实现。收到交付后只读验入口与来源，若未实现保持pending。
 
 ## TODO
 

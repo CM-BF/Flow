@@ -235,3 +235,7 @@ U10原话由原Goal Owner逐字转交：“plugin管理写进计划里”。父p
 03:19管理clean-code工作段：检查当前正文与历史追加是否矛盾、唯一来源与TODO一致、权限scope与review范围清晰；修复dashboard协作子计划仍停在17源/未注册的陈旧状态，改实际30源且原17全保留、四nested转平级canonical、新增U09架构tab待办。当前main3773对cb4/d47的ancestor实核用于关闭已完成管理TODO，不以测试通过推集成。将预览最终选择49922、恢复handle和PERF rootlock边界写进当前正文。仅文档/JSON摘要修改，无实现或全库测试。
 
 本段文档检查：21个Markdown、66个本地链接、全部plan勾选与status行一致，修正父status两处多一级相对路径后零错误；git diff --check通过。独立review仍绑定旧c075文档，本增补不自动继承。
+
+03:23管理者主动只读实核主线X01：tree plugin-management-plan、branch codex/plugin-management-plan、HEAD888308dce1d8061ab66ce93c10c023ec66d6eb58 clean，canonical plans/x01-plugin-management；读完整目标/版本/授权/CAS/生命周期/隔离/CLI及P01/I01前置关系，文档target有但产品UNKNOWN、独立review未开始，不替主线审定。D05 canonical为dashboard-architecture/plans/d05-architecture-view，Execution Lead唯一owner、base3773、dirty实施/targetUNKNOWN。父REQ39/40与WPF-D01已补实际路径。
+
+PERF01正式benchmark review：root APPROVED target3d47cdd4eae959119f154a0d06964cf65006f8c9，basec526，固定证据adc2595bbc34986353514d374afeb0eca0188ee2 clean。独立源码/窄分页修复/报告审阅与三成功raw SHA/count/min/median/max/DOM/API重算，资产bytes/gzip/hash+HTML相同、双图核验；未独立重跑browser/typecheck，作者结果归作者。不覆盖生产优化或I01。PERF02准备三件套/8精确scope已报主线；旧M02明确停写三生产接缝，PERF原owner待metadata后停写probe，正式amend/take尚未发生。
