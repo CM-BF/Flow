@@ -128,5 +128,6 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 ## 2026-10-06 终端与执行成本新目标
 
 - TUI-001：[可日用终端客户端](tui01-terminal-client/plan.md)。独立大task，唯一权威 `tui-client/plans/tui01-terminal-client`；终端与共享typed交互层并行于Web，首片实施中，完整目标尚未交付。
+- TUI01A：TUI-001下的[终端会话与可靠发送首片](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/plans/tui01a-conversations/plan.md)，唯一权威 `tui-conversations`；交互与headless共用controller，当前实施，未作完整日用验收。
 - COST-001：[可解释的执行成本与预算](cost01-execution-cost/plan.md)。独立大task承接REQ-09，唯一权威 `execution-cost/plans/cost01-execution-cost`；排在执行工具/成熟交互/终端首片之后，当前只计划，不新增模型或负载。
 - R05B：FLOW-002下的Codex中心身份与来源校验；唯一权威 [r05b-native-center-policy](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy/plans/r05b-native-center-policy/plan.md)。025与生产入口在分支验证，不宣称main已支持Codex。
