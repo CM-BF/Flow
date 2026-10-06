@@ -9,3 +9,5 @@
 2026-10-06 18:24:17 UTC：P2 窄修固定 f3a6a7ec89d5b3f789c49b0d8662401b23032ab2。只改 Picker section断行和已有文本映射及browser对应断言，没有CSS/共享范围扩展；原spec行为检查体保持。原source manifest封存，当前manifest重绑六源；0types/import/HTTP/test/Chrome/space，source diffcheck0。
 
 2026-10-06 18:26:27 UTC：本人人员/范围 fresh ledger 核 a5b0c231 v1 active；原样归档 root/peer 独审。Root 六hash/两个窄修与四源不变核符，P2 source addressed；当前顶层 UNKNOWN 仅表示完整验收尚未完成，源码批准单列。未import产品/采空间/跑检查，没有暗继承运行结果。
+
+2026-10-06 18:35:05 UTC：按唯一准入运行一次父检查，0产品修改。noEmit/direct真实通过但父20vs37计数FAIL；读取原predicate及两个suite原断言数21/16，独立归因不覆盖原raw。cleanup groupAbsent/scratchAbsent/errors[]；新报告和Lead注册观察一起归档，不复采空间/4320。后续仅审证据，不为监督计数重跑未变产品。

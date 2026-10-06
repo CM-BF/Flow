@@ -16,3 +16,7 @@ Root 转述 peer 对 catalog/selection/direct 源码未发现 blocking；此不�
 ## 审查入口
 
 [计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前实现/专测固定，等待检查准入；真实App/Send/Queue/Recovery后继。
+
+## 作者实际检查更新（不替代独立验收）
+
+[首次raw](../../docs/evidence/wpf-message-settings/checks-first-observation.json)：f3a6/85aba，strict noEmit0与两direct37/37，监督器因expected20仍FAIL。保留失败原件/无重跑，pending独立证据核；先前全部NOT_RUN为源码审查时点。浏览器、真实挂载与完整feature仍未验，当前顶层UNKNOWN保持。

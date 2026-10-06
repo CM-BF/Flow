@@ -1,0 +1,32 @@
+{
+  "allowRun": true,
+  "mode": "types-and-direct",
+  "taskId": "WPF-MESSAGESETTINGS01",
+  "singleUse": true,
+  "expiresAt": "2026-10-06T18:38:44.763268+00:00",
+  "bindingSha256": "cb474beea225ca25335d666c93e36e453cc52127323f755d5f619e66f159a59d",
+  "runnerSha256": "adb3580e17e66894f1b4c06608b7a92f66c02b5630660afc1a407ba80d56db70",
+  "sandboxSha256": "a77a7ee558cd86737b88a857878d551a745352788b5ae3df7c1823c480629eab",
+  "sourceHead": "85abae9dd5ec95a52422fcca357007c124b60a49",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "claim": {
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "scopeCount": 8,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "previousRuntimeMs": 0,
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "admissionSha256": "20c79ad6f683a5c584a35e07af3a7738d4b71bf2dddd906c1a4e5aa35b8c5bd2"
+}
