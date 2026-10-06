@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:21 UTC；父计划后继链接及原W1/W2证据已核main32c371 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:43 UTC；父计划后继链接及原W1/W2证据已核main32c371，后继主线事实独立记录 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 已确认单runner的串行执行瓶颈，实验结果已集成；并行执行改进已独立开工 |
-| 下一可用交付 | 本实验片段已交付；有界并发及未知领取保护由S01P01验证 |
+| 当前产出 | 串行瓶颈的实验已交付；并发核心及兼容修复已通过独立审查，等待主线接收 |
+| 下一可用交付 | 本实验片段已交付；后继将接通启动并发参数，再补丢回执和关闭浏览器的验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，W2准备2ab与结果0dac均APPROVED；W1已批准并集成 |
@@ -30,7 +30,7 @@
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
 | S01-05 | in-progress | 独立reviewer / Lead | W1/W2结果均独审APPROVED并main6426；完整S01后继ACK/browser仍开放 |
-| S01-06 | in-progress | s01p01_owner / Mika独审 / Lead集成 | [独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：已领取保守并发核心，尚无产品验收；真实provider另计 |
+| S01-06 | in-progress | s01p01_owner / Mika独审 / Lead集成 | [独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：保守并发核心与ES2023兼容修复已独审，主线根检查待Lead；启动参数及真实provider另计 |
 
 ## 权限、优先级与事实边界
 
@@ -95,3 +95,7 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 08:11 UTC 后继已开工：GO/Lead授权S01P01保守并发核心，worker独立WT `runner-attempt-pool` / branch `codex/runner-attempt-pool`、base9c6、现场155494b clean，canonical plan/status/review已就绪。fresh账本08:10:53 available，S01原claim v1 ACTIVE、原三scope不变，S01P01独立claim599454b1 v1 ACTIVE、六scope无重叠。S01-06保持未完成并转in-progress；实际进度只读后继status，不复制其TODO。已桥接Lead登记权威聚合源及全局索引，等待新源聚合展示；本S01沿用07:56已核聚合事实。W1/W2冻结证据、累计预算及原ACK/browser未验收范围不变，0新增运行/模型。架构影响只登记后继runtime调度与持久恢复边界待Lead按实现target更新，本树仍无产品变化。
 
 2026-10-06 08:21 UTC 父计划main接收：Lead明确接收c86cab，owner独立核其为main32c371祖先且原三scope零diff，见[后继链接接收回执](../../docs/evidence/s01/successor-main-receipt.json)。Lead报告registry95已登记S01P01、部署紧随；本人没有再采同一dashboard或重测。本claim v1 ACTIVE/三scope与唯一owner未变。此main事实只覆盖父计划及原实验，不覆盖S01P01尚待固定的实现/独审。
+
+2026-10-06 08:43 UTC 后继独审与下一片段：Mika于08:30批准S01P01主体d655，Lead实际根检查发现测试采用ES2024方法；原owner保留失败、移除局部lib覆盖并改void deferred，Mika于08:39:29独审批准固定48b73544c0e9e66a7061ddb54e003a03b9234bde。末端66fdb0d8d0cecfb996707de7da7ca0a1a3d881ff clean且已push，主线接收和完整根检查仍归Lead；唯一检查/审查事实详见后继status及manifest-es2023，不复制其矩阵。原实验没有新运行，44 tasks/38 attempts/20.925025秒保持不变。
+
+Root已确认S01P02最小入口方向：省略并发参数为1，显式整数1..16；注册容量独立，A2A显式非1须明确拒绝，无效输入在网络之前拒绝。独立树/claim与主线精确基线由Lead协调，尚未领取或实施，不由方案冒称已开工。ACK2仍要求真实loopback代理的到中心前/提交后丢响应边界；browser2必须关闭独有浏览器进程。旧child的lastClaim单变量不能用于新pool并发计量，后继需稳定attempt映射；历史结果不改写。fresh账本08:43:40 available确认本claim v1 ACTIVE且三scope不变。本次仅父状态/质量metadata，等待既有聚合器展示，不重复dashboard采样或工程测试。
