@@ -1,10 +1,10 @@
 # Web 平台跨 owner 集成清单
 
-2026-10-06 03:08 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
+2026-10-06 03:18 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
 
 ## Dashboard已确认唯一来源
 
-root于2026-10-06T03:06:17.755Z已只读核验主线28来源，下面4个唯一平级源已登记；前三项首次验证为02:38:47.600Z。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理树nested plugin-system/unified-workspace均已转只读移交stub，不能登记为第二源。
+root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段完整，PERF claim匹配；管理者03:17:14.324Z专项确认30源包含旧8c57登记的17原ID。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理nested四个转交stub不注册第二源。
 
 | Task | Worktree | Branch | planDir | evidenceDir |
 | --- | --- | --- | --- | --- |
@@ -12,8 +12,9 @@ root于2026-10-06T03:06:17.755Z已只读核验主线28来源，下面4个唯一�
 | WPF-M02 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace | codex/web-unified-workspace | plans/wpf-m02-web-workspace | docs/evidence/wpf-m02 |
 | WPF-P01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host | codex/web-plugin-host | plans/wpf-p01-plugin-host | docs/evidence/wpf-p01 |
 | WPF-I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration | codex/web-plugin-integration | plans/wpf-i01-plugin-integration | docs/evidence/wpf-i01 |
+| WPF-PERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance | codex/web-performance | plans/wpf-perf01-web-performance | docs/evidence/wpf-perf01 |
 
-WPF-D01仍为协作；WPF-PERF01已领独立测量范围，canonical source待新owner建立后转交登记，不能冒称已注册nested目录。最新已验证22源中三个WPF来源human.complete=true、missing/issues为空；02:31仍17源是历史观察，见research。来源登记不是实现/测试/review或main集成通过。
+WPF-D01仅协作，无第二dashboard实现；五源已经实际聚合，未知/未验证项仍来自各owner。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
 D03由主线单owner负责紧凑中性视觉及当前阶段/当前工作/下一交付/真正决策、历史下钻、实现review与metadata区分、main与旧SHA区分。WPF-D01只协作需求与来源，不另派实现、不切换4320。每个唯一owner已收到8字段规范，由各自更新，管理者不代写。
 
@@ -28,9 +29,9 @@ D03由主线单owner负责紧凑中性视觉及当前阶段/当前工作/下一�
 ## 共享能力需求（不在当前W01伪造）
 
 - 现冻结契约仅TimelineEntry text/reference与Detail kind/content/mediaType；无真实PTY会话、stdin/stdout通道、文件目录list/read或可信path。当前UI明确任务输出/任务产物，未来能力由Lead统一contracts/client及权限边界后消费。
-- 主线M02提供跨任务工作记录/决策接口SHA与例子后，由W01明确消费接缝；不在Web另造中心命令。
+- 主线M02已提供统一workspace/queryTasks契约，WPF-M02 d47消费已获审并进入main3773；未来PTY/fs仍是独立BR-01，不在Web另造中心命令。
 - WPF-P01是X01 Web插件host子项；请求Lead对齐能力ID/权限作用域/API版本/第三方隔离/配置与完整npm生命周期。原P01协议计划不改名、不抢共享接口。
-- 原Lead更新plans/README总索引和派工交接，登记WPF-001及三个子计划关系。只有实际实施owner转移时受控修改权威来源，不能任意树的陈旧status覆盖owner。
+- 原Lead更新plans/README总索引和派工交接，登记WPF-001及独立后续计划关系。只有实际实施owner转移时受控修改权威来源，不能任意树的陈旧status覆盖owner。
 
 ## 验证与交付门槛
 
@@ -58,14 +59,14 @@ WPF-M02早期草案曾在管理树`plans/web-platform/unified-workspace/status.m
 
 ## 唯一来源实际转交：WPF-M02
 
-已创建新tree并建立唯一status，管理草案三文件已转移交stub。请Lead/D03增加平级安全源：id `WPF-M02`、title `Web统一工作入口`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace`、branch `codex/web-unified-workspace`、planDir `plans/wpf-m02-web-workspace`、evidenceDir `docs/evidence/wpf-m02`。不聚合旧nested草案。初始化W01 cb4a392+完整M02 e888862合并c0c41f9881713f3b371ba62c8f4e68ca5d71e8db；新main108f已通知，owner保留已授权完整输入，不reset。现已完整合入main8c57因果修正至base35f0bb9；当前实现targetd47c602已获root整体APPROVED，待owner metadata与Lead集成。
+已创建新tree并建立唯一status，管理草案三文件已转移交stub。请Lead/D03增加平级安全源：id `WPF-M02`、title `Web统一工作入口`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace`、branch `codex/web-unified-workspace`、planDir `plans/wpf-m02-web-workspace`、evidenceDir `docs/evidence/wpf-m02`。不聚合旧nested草案。初始化W01 cb4a392+完整M02 e888862合并c0c41f9881713f3b371ba62c8f4e68ca5d71e8db；新main108f已通知，owner保留已授权完整输入，不reset。现已完整合入main8c57因果修正至base35f0bb9；当前实现targetd47c602已获root整体APPROVED，最终metadata c526c1 clean；03:17实核main3773及origin/main已包含实现d47。
 
 
 ## 唯一来源实际转交：WPF-P01
 
-已只读核验独立tree与三件套，管理nested草案已转移交stub。登记条目：id `WPF-P01`、title `可信Web插件host`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host`、branch `codex/web-plugin-host`、planDir `plans/wpf-p01-plugin-host`、evidenceDir `docs/evidence/wpf-p01`。初始化108f完整main+已审W01 a22ae38，merge0673653ac6b2da8259bc8ca40d9ae723da2ce875；typed接口v1已与消费owner冻结，模块target3d812已获scoped approval；整包d81075 UI另审。主App挂载改为WPF-I01独立feature，拟复用M02 owner，经D04明确交接后新树实施；hostowner不改App或旧Thread/workspace目录。
+已只读核验独立tree与三件套，管理nested草案已转移交stub。登记条目：id `WPF-P01`、title `可信Web插件host`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host`、branch `codex/web-plugin-host`、planDir `plans/wpf-p01-plugin-host`、evidenceDir `docs/evidence/wpf-p01`。初始化108f完整main+已审W01 a22ae38，merge0673653ac6b2da8259bc8ca40d9ae723da2ce875；typed接口v1已与消费owner冻结；整体最终实现6ce3ba0 / metadata2910ebc获root APPROVED，PH-R1～4关闭。WPF-I01已经D04v1受领独立新树实际挂载，hostowner保留plugins回修职责，不改App或旧Thread/workspace目录。
 
-D03已聚合父WPF-001及两个新的平级owner源；旧nestedM02/plugin入口不登记。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。
+D03已聚合表中五个平级owner源；旧nested四个移交入口不登记。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。
 
 
 ## X01父范围保持开放
@@ -165,4 +166,16 @@ owner已正式收到followup派工：在新tree建立plans/wpf-i01-plugin-integr
 精确scope为apps/web/test/performance-fixture.ts、apps/web/test/performance-probe.ts、plans/wpf-perf01-web-performance/、docs/evidence/wpf-perf01/；只测量，不写生产代码。owner已正式followup开始本地技能/三件套/有界benchmark，基线是已审M02预I01，不冒称I01最终性能。新canonical status成立后回Lead登记并将管理准备转stub；receipt与实际source聚合分开验。
 
 
-PERF source移交已落实：首文档c7bf1a81e5d21a602636f388ff565bae1844d83e，management已只读核新树branch/HEAD与唯一status字段。source登记请求：id WPF-PERF01、title Web性能基线测量、worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance、branch codex/web-performance、planDir plans/wpf-perf01-web-performance、evidenceDir docs/evidence/wpf-perf01。管理nested performance-cycle已stub；初始实采dirty仅安装产生的根lock变更；管理者曾沿用W01例外解释，随后被GoalOwner明确纠正：PERF四scope不含根lock，不能自动套用历史例外。owner已在本scope保留差异并恢复自身根lock变更；管理者只读核pnpm-lock.yaml/package.json diff为0。登记后一次真实聚合核验，未测量/未优化保持unknown。
+PERF source移交已落实：首文档c7bf1a81e5d21a602636f388ff565bae1844d83e，management已只读核新树branch/HEAD与唯一status字段。source登记请求：id WPF-PERF01、title Web性能基线测量、worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance、branch codex/web-performance、planDir plans/wpf-perf01-web-performance、evidenceDir docs/evidence/wpf-perf01。管理nested performance-cycle已stub；初始实采dirty仅安装产生的根lock变更；管理者曾沿用W01例外解释，随后被GoalOwner明确纠正：PERF四scope不含根lock，不能自动套用历史例外。owner已在本scope保留差异并恢复自身根lock变更；管理者只读核pnpm-lock.yaml/package.json diff为0。root03:12首注册实采已确认PERF源与claim匹配；完整测量尚进行，未做生产优化。
+
+## 保留给用户的产品预览（U09）
+
+原Goal Owner已打开并保留[已审M02预览](http://127.0.0.1:49922/)用户tab；这是HTTP fixture，不能声称真实中心或另起的main3773服务。服务唯一owner workspace_panels_owner，exec session17885，原进程未停止/重启。恢复在 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace`、branch `codex/web-unified-workspace`、metadata `c526c1c889437ee39155d669921577995195c74e`：
+
+```sh
+PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-preview.ts --preview
+```
+
+恢复默认动态端口，以stdout真实URL为准，不承诺自动复用49922，不杀其他owner服务。I01 [55049](http://127.0.0.1:55049/)是正在验证的开发fixture（owner exec session79831），不替代已审预览。工程dashboard架构tab已由主线承接，具体唯一任务ID/交付target等待主线回报，我方仅WPF-D01协作登记。
+
+U10“plugin管理写进计划里”由原Goal Owner逐字转交。主线负责X01 canonical全产品计划，Web管理页/CLI同公共center命令、持久版本/配置/权限/作用域、npm安装启停升级回滚移除、活跃执行版本绑定和信任隔离均属父范围；收到真实路径后关联。P01/I01仅可信Web前置，不以本地Settings替代，当前claim不扩大。

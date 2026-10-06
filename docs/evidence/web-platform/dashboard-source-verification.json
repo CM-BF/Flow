@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-10-06T03:17:14.324Z",
+  "method": "read-only GET /api/snapshot; compare task IDs with git show 8c57f2f97345167207fa0d2590e9ad6310c922d4:apps/execution-dashboard/src/registry.mjs",
+  "sourceCount": 30,
+  "baselineSourceCount": 17,
+  "baselineTaskIds": [
+    "FLOW-001",
+    "FLOW-002",
+    "FLOW-003",
+    "OPS-001",
+    "C01",
+    "R01",
+    "R02",
+    "L01",
+    "W01",
+    "D01",
+    "I01",
+    "LAB01",
+    "LAB02",
+    "D02",
+    "C02",
+    "P01",
+    "M02"
+  ],
+  "missingBaselineTaskIds": [],
+  "wpfTaskIds": [
+    "WPF-001",
+    "WPF-M02",
+    "WPF-P01",
+    "WPF-I01",
+    "WPF-PERF01"
+  ],
+  "scope": "source preservation only; not product behavior or fresh independent approval"
+}

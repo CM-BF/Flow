@@ -208,3 +208,30 @@ PERF canonical首文档c7bf1a81e5d21a602636f388ff565bae1844d83e已建立，管�
 
 
 PERF安装范围纠正：GoalOwner明确PERF四scope不含根lock，历史W01临时安装例外不能自动扩到新任务。root已要求唯一owner保存必要diff到docs/evidence/wpf-perf01/dependency-lock.patch后，仅恢复自身pnpm-lock变化；owner完成，管理者实际只读git diff --exit-code -- pnpm-lock.yaml package.json为0，dirty仅受领脚本/计划/证据。后续用已安装依赖与冻结锁，新增依赖交共享owner协调，不能再假定可逆就自动扩大claim。保留最初真实安装时序与本次纠正，不声称从未产生差异。
+
+
+## RS22 I01进行中反馈、首次来源闭环与新用户需求
+
+root在I01未固定55049预览独立CUA观察官方Thread Task output→插件Terminal、引用→产物tab、Notes往返保留、Ocean主题/禁用sample回Dark并移贡献成功；这不是approval。发现Settings关闭及Escape焦点落BODY，已交唯一I01 owner修入口回焦点与局部验证；反馈无固定target，不扩大旧P01审批。
+
+root03:12:04.035Z实采4320：WPF001/M02/P01/I01/PERF五源human.complete=true/blocker none，PERF已注册且claim4553v1 matchesSource，unregisteredAssignments空；协调available，当前14 active writer claims按literal同路径/父子前缀两两检查0重叠。首注册验证完成，不再重复刷；claims数不代表agent并发，零literal overlap也不证明无逻辑重复。
+
+U09由原Goal Owner逐字转交：“把产品Web UI打开留着可随时看，且工程dashboard增架构tab”。主plan已追加稳定REQ38/39并标转交来源，不扩写成更多未提出功能。最终预览选择为已审M02 49922并保留用户tab；I01现有55049由原owner保留标fixture/未固定，不另起重复服务。早期main3773预览设想未实施；架构tab主线唯一owner承接，我方不写dashboard。
+
+
+U09预览选择落定：原Goal Owner最终已打开并保留已审M02 http://127.0.0.1:49922/ 用户tab，明确fixture，要求原owner保留服务并回handle/恢复法；此前main3773另起稳定预览只是安排方向，未实施，不再声称其已启动。I01 55049只作开发验证，无重复服务。root另以新CUA tab13复验I01 Settings Close/Escape两路均回入口BUTTON Extensions and appearance，进行中反馈已关闭；未固定实现的正式review仍NOT_STARTED，临时review tab已关。
+
+
+49922服务恢复信息由原owner明确回报：workspace_panels_owner / exec session17885，未停止或重启；固定树web-unified-workspace、branch codex/web-unified-workspace、metadata c526c1c889437ee39155d669921577995195c74e，运行Node24 `pnpm exec tsx apps/web/test/workspace-preview.ts --preview`。默认动态端口以stdout为准；恢复法在集成清单，不假装总能占49922。
+
+## RS23 性能首样本与下一轮候选（03:19 UTC）
+
+PERF唯一owner已交固定脚本c40f1a02252198f4a4b1a80474743d72b1fa1dca，2组HTTP/projection有效性、typecheck与普通production最小100/240样本通过；完整1/16/128任务矩阵仍进行，每场总10000新增+初始40、256字符、100条每50msproducer，原App分页/轮询未改；180秒追赶/60秒reveal超限真实记失败，不无限放宽。root方法只读初审尚无立即blocking，正式review待完整结果。
+
+root读取完成的1任务生产首样本：最终10040行/70404 DOM，reveal自动化综合壁钟约2495ms，整场8 long tasks/max705ms；这是单次样本，尚须分phase，不能推为该动作因果或p95。源码候选为Overview每次map全部entries/格式化时间、anchor遍历DOM bounds，以及App query变化可能连带render。先用完整结果决定有界列表/行渲染/anchor查找优化范围，不能把hypothesis写成确认瓶颈或扩PERF四scope到生产；尤其不能抢I01 App.tsx。未来改动须独立base、精确claim与唯一writer，不为猜测先加框架。
+
+U10原话由原Goal Owner逐字转交：“plugin管理写进计划里”。父plan新增REQ40，X01全产品canonical由主线维护，路径待回传；持久版本/配置/权限/作用域、npm完整生命周期含rollback、活跃执行版本绑定、Web+CLI同center命令和可信/隔离边界均属主线父范围，P01/I01前置不替代完整管理。
+
+03:19管理clean-code工作段：检查当前正文与历史追加是否矛盾、唯一来源与TODO一致、权限scope与review范围清晰；修复dashboard协作子计划仍停在17源/未注册的陈旧状态，改实际30源且原17全保留、四nested转平级canonical、新增U09架构tab待办。当前main3773对cb4/d47的ancestor实核用于关闭已完成管理TODO，不以测试通过推集成。将预览最终选择49922、恢复handle和PERF rootlock边界写进当前正文。仅文档/JSON摘要修改，无实现或全库测试。
+
+本段文档检查：21个Markdown、66个本地链接、全部plan勾选与status行一致，修正父status两处多一级相对路径后零错误；git diff --check通过。独立review仍绑定旧c075文档，本增补不自动继承。

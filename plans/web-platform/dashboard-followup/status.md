@@ -2,36 +2,41 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:12 UTC / 固定基线核验2026-10-06 02:07 UTC |
+| 最近更新 | 2026-10-06 03:19 UTC |
 | Plan | [plan.md](plan.md) |
-| 单一status owner / model | d01_owner（计划管理，D03实施由原Lead负责）/ gpt-6-astra ultra |
+| 单一status owner / model | d01_owner（协作记录）；实际dashboard由原Lead负责 / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `d444608ab6c796c731e44e51a892868bf39bec2a`（首版文档提交前快照） |
-| 工作树dirty状态 | 仅plans/web-platform与docs/evidence/web-platform新增文档待提交 |
-| 工作分支状态 | pending；方向accepted，未实施 |
-| 检查状态 | NOT_RUN（未来实现）；管理文档target c075bb5c00ac2f27d54dd264982be30261a9dc51的链接/ID/TODO检查通过，不能继承为功能通过 |
-| 已集成main状态 / HEAD | 未集成本计划；最近核验main `d444608ab6c796c731e44e51a892868bf39bec2a`，后续由Lead推进不追写其状态 |
-| Review | [review.md](review.md)，NOT_STARTED |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `94bf0e1841b35dde12ea2ba860c3410b3c57b3fc`（本段修改前核验） |
+| 工作树dirty状态 | 当前仅管理claim两目录的文档/来源证据待提交 |
+| 工作分支状态 | in-progress；来源协作完成，U09架构tab关联待交付 |
+| 阶段 | M2 |
+| 优先级 | 3 |
+| 当前产出 | 五个WPF canonical源已聚合；旧17源全部保留；D04领取转交实证 |
+| 下一可用交付 | 主线架构tab canonical计划与入口关联 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
+| 实现目标 | UNKNOWN |
+| 实现范围 | plans/web-platform/dashboard-followup/,docs/evidence/web-platform/dashboard-source-verification.json |
+| 检查状态 | 本段只读来源比对与文档一致性检查；不宣称dashboard实现检查 |
+| 已集成main状态 | 主线D03/D04已部署由其status记录；此管理协作增补未合main |
+| Review | [review.md](review.md)，本次文档增补NOT_STARTED；旧父文档approval不自动继承 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-D01-01 | pending | d01_owner（管理） | 未执行；将紧凑视觉/高层语义需求及WPF-001来源清单交主线D03，确认唯一owner边界。 |
-| WPF-D01-02 | pending | d01_owner（管理） | 未执行；Lead登记后只读确认17原来源保留、WPF-001源正确且未知项诚实显示。 |
-| WPF-D01-03 | pending | d01_owner（管理） | 未执行；核验子计划下钻或受控nested注册方案，记录D03真实验收入口与未验证项。 |
+| WPF-D01-01 | completed | d01_owner（协作） | 原Lead已承接D03/D04，所有权及canonical来源清单已实际交付，未另派dashboard实现 |
+| WPF-D01-02 | completed | d01_owner（协作） | 03:17:14.324Z实际30源与main8c57原17ID比较missing=[]；03:12 root五源human完整 |
+| WPF-D01-03 | completed | d01_owner（协作） | 四独立feature平级planDir已注册，nested转stub；4320入口与receipts真实验证，无放宽nested安全范围 |
+| WPF-D01-04 | pending | d01_owner（协作）；原Lead实施 | U09已交主线承接；canonical任务ID/实现target/可访问架构tab尚待回传 |
 
 ## 阻塞 / 风险 / 未验证
 
-当前方向已授权；排队和跨owner依赖见plan，不再索取设计批准。未运行该计划实现检查，不以其他feature通过替代。本文件是唯一手填事实源。
-
-## 需要用户决定
-
-无新增决定。
+没有需要用户新增决定。主线架构tab交付尚未到达，不把已承接写成实现完成；本协作记录不代表D03/D04代码、视觉或安全套件重新验收。详情决定NONE显示未知的部署后问题已交原owner。
 
 ## 下一步与handoff
 
-管理者协调唯一实施owner和输入，按plan推进；实现开工时显式转交权威owner/worktree，禁止两个status副本同时更新。我方不另派dashboard实现；D03实现与4320服务由原Lead单写管理。
+收到主线架构tab canonical路径后关联父REQ39并只读核入口。原Lead单写4320与registry；本文件仅协作事实源，不作为重复dashboard实现任务注册。
 
 ## Dashboard同步
 
-等待主线D03受控登记；当前nested planDir未被registry支持，不宣称已聚合。父WPF-001先注册，子项通过下钻或后续安全支持纳入。
+WPF-001父源和四个独立feature canonical源已实际注册；本nested协作计划经父资料下钻，不重复注册。来源校验见[JSON摘要](../../../docs/evidence/web-platform/dashboard-source-verification.json)，入口[工程dashboard](http://127.0.0.1:4320/)。

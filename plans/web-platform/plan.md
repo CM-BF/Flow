@@ -23,9 +23,11 @@
 | U03 角色分工（原话） | “你负责不停做research优化，你的一个subagent来负责管理” | root 持续只读研究/独立审查；d01_owner 执行管理；两个实现 owner 独立 worktree。当前4活跃，实际cap4，满槽排队，不额外spawn |
 | U04 持续执行与插件（原话） | “记好plan，status，review，dashboard。然后你要不停的加plan，不停的增加新的功能，不停的优化性能，没有上限，只要不是完美就优化。并且确保我们所有组件都一定是被设计成可插拔的，我们要完整的plugin系统。所以所有的地方都要能随时加一个按钮之类的。” | 每轮形成可验证产出，持续记录下一功能/性能/研究队列；全栈 plugin 系统与所有适当 UI 扩展位置纳入计划，不把局部 slots 当完整 plugin 系统 |
 | U05 需求持久化（原话） | “我和你说的话全部记进plan里，不要只靠脑子记” | 本文逐条追溯；每个新增 plan 都有唯一 status/review，未审查保持 NOT_STARTED |
-| U06 Dashboard 视觉反馈（准确摘要，由 root 转交） | 用户不满意4320样式并提供 dashboard 截图，要求紧凑中性视觉；最新主线确认4320为17来源 | 主线 D03 独占视觉与语义实现；WPF-D01仅协作需求/来源登记，不另派实现，不停/重启/覆盖原Lead4320服务 |
+| U06 Dashboard 视觉反馈（准确摘要，由 root 转交） | 用户不满意4320样式并提供 dashboard 截图，要求紧凑中性视觉；当时主线确认4320为17来源；03:17已实核30来源且原17保留 | 主线 D03 独占视觉与语义实现；WPF-D01仅协作需求/来源登记，不另派实现，不停/重启/覆盖原Lead4320服务 |
 | U07 速度与验证（原总体 Goal Owner 经 root 转达，准确摘要） | 用户强调推进速度与 local tests；按实际影响范围先测本模块与直接依赖，共享接口变更才测链路，metadata不重复全库测试 | 保留真实行为、视觉、a11y验收，不为提速假连接；主线D03承担dashboard全部后续，M02提供公共工作/决策能力，W01保留消费接缝 |
-| U08 多lead领取协调（原话） | “和你在一起工作的还有其他agent leads，一定要管理好执行dashboard，你们才不会overlap工作。take 工作最好也在dashboard上标清楚” | 主线D04/Execution Lead唯一登记领取和转交，dashboard展示唯一owner/负责lead/范围/领取状态；进度仍各status唯一，不凭旧源或缺失源当空闲 |
+| U08 多lead领取协调（原话） | “和你在一起工作的还有其他agent leads，一定要管理好执行dashboard，你们才不会overlap工作。take 工作最好也在dashboard上标清楚” | 主线D04维护唯一PG领取账本，多Lead按真实actor原子领取/显式转交；进度仍各status唯一，不凭旧源或缺失源当空闲 |
+| U09 产品预览与架构tab（原Goal Owner逐字转交，经root传达） | “把产品Web UI打开留着可随时看，且工程dashboard增架构tab” | 原Goal Owner最终选择已审M02的49922并已打开保留用户tab，明确HTTP fixture；原owner保留服务，55049仅I01开发验证，不另起重复服务。工程dashboard架构tab由主线已承接，我方不改其代码 |
+| U10 插件管理入计划（原Goal Owner逐字转交，经root传达） | “plugin管理写进计划里” | 主线维护独立X01全产品插件管理canonical计划；我方链接追溯并继续P01/I01前置，不重复建立X01或扩大已领生产范围 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -73,20 +75,26 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-32 | U02 扩展视图不伪造终端/文件系统能力 | panels、原Lead | 现契约只有Timeline text/reference和Detail；标“任务输出/任务产物”，BR-01-A～D具体能力请求交Runner/M02/X01，由Lead登记owner及SHA；不称文本为stdout |
 | WPF-REQ-33 | U04 与既有全栈插件/协议计划对齐 | 管理者、原Lead X01 | WPF-P01仅X01 Web host子项；原P01=协议接入不重用，M02公共命令不另造 |
 | WPF-REQ-34 | U07 按影响范围做 local tests 并加快可审查交付 | 所有owner | 模块+直接依赖优先；共享接口才链路；纯metadata仅文档核验，保留必要视觉/行为/a11y |
-| WPF-REQ-35 | 主线M02已交付完整接口；Web整改稳定后接入统一工作总览 | WPF-M02 / 独立owner待派 | 连续feed/attention原地决策、锚点/409/100+分页/懒详情/连接隔离，真实Web验收独立 |
+| WPF-REQ-35 | 主线M02已交付完整接口；Web整改稳定后接入统一工作总览 | WPF-M02 / workspace_panels_owner（已独立交付） | 连续feed/attention原地决策、锚点/409/100+分页/懒详情/连接隔离，真实Web验收独立 |
 | WPF-REQ-36 | 主线D03要求各权威status提供明确人读字段与实现范围 | 每个唯一owner自行写；管理者协调 | 阶段/优先级1–9/当前产出/下一可用交付/明确阻塞与决定/完整实现target与literal范围；不写其他owner状态 |
-| WPF-REQ-37 | U08 多lead避免重叠、take工作在dashboard标清 | 原Lead/D04领取登记；各唯一owner声明范围；管理者协调 | taskID/owner/lead/worktree/branch/精确范围、reservation→claimed→active→review→integration/transfer、领取/更新时间与交出接收方可见；同task/source或范围冲突提示，原Lead单点登记防竞态 |
+| WPF-REQ-37 | U08 多lead避免重叠、take工作在dashboard标清 | 主线D04唯一账本；各Lead真实actor领取；各owner唯一范围 | taskID/owner/lead/worktree/branch/精确范围、claim版本/状态/时间与交出接收方可见；PG事务拒绝同task及同/父子路径冲突，跨task部分转交先停写→amend→take，不靠口头抢占 |
+| WPF-REQ-38 | U09 产品Web打开并保留，可随时查看 | 原Goal Owner选已审M02 49922；原owner保留服务 | 已审M02 http://127.0.0.1:49922/用户tab已打开并保留，明确fixture及恢复方式；I01 55049仅开发验证，不能声称稳定main或真实中心服务已起 |
+| WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一plan/status记录，我方仅协作追踪，不跨写dashboard |
+| WPF-REQ-40 | U10 plugin管理写进计划里 | 主线X01唯一canonical owner；我方父计划关联 | 主线计划包含Web管理页和CLI公共center命令、持久版本/配置/权限/作用域、npm install/enable/disable/upgrade/rollback/remove、活跃执行版本绑定、可信/隔离边界；取得实际路径后链接。P01/I01本地Settings不冒充完整插件管理 |
 
 ## 当前 owner 与接口冻结
 
-| 工作 | 唯一实现owner / worktree / branch | 边界与状态入口 |
+当前可写范围以D04 live claim为准，下表不重新授权历史广范围。历史源码输入与交付保留在各owner记录。
+
+| 工作 | 唯一owner / worktree / branch | 当前边界 |
 | --- | --- | --- |
-| W01官方Thread+主shell+split/merge | w01_owner / `Flow-worktrees/m1-web` / `codex/m1-web`；本轮起点 `b04df95821a55384c55c833e94405daaf35af8ad` | `apps/web/**`（排除正在委派的workspace子组件合入前并发写）、`plans/w01-web/**`、`docs/evidence/w01/**`；唯一手填status在该树 |
-| 右侧workspace子交付 | workspace_panels_owner / `Flow-worktrees/web-workspace-panels` / `codex/web-workspace-panels`；同base `b04df958...` | 仅 `apps/web/src/components/workspace/**`、`docs/evidence/w01/workspace-panels/**`；不建第二W01 status。提交后由W01显式cherry-pick并复验 |
-| WPF-M02统一工作入口 | workspace_panels_owner / `Flow-worktrees/web-unified-workspace` / `codex/web-unified-workspace`；初始化merge c0c41f9881713f3b371ba62c8f4e68ca5d71e8db | App接缝、TaskThread/projection、workspace-feed及对应测试、plans/wpf-m02-web-workspace、docs/evidence/wpf-m02（精确literal文件清单由owner提交Lead）；排除plugins及plugin-host测试，host仅稳定提交→明确handoff后集成，不自行重复实施 |
-| WPF-P01可信Web host | w01_owner / `Flow-worktrees/web-plugin-host` / `codex/web-plugin-host`；初始化0673653ac6b2da8259bc8ca40d9ae723da2ce875 | `apps/web/src/plugins/**`、plugin-host测试、`plans/wpf-p01-plugin-host/**`、`docs/evidence/wpf-p01/**`；不写主App、现有workspace组件或共享契约 |
-| 本管理计划 | d01_owner / `Flow-worktrees/web-platform-management` / `codex/web-platform-management` | 仅本文范围，管理与需求事实；不复制别人的进度事实 |
-| 只读研究/独立review | root | 原始研究#1～5转化为实现/验证条目，证据见[研究台账](../../docs/evidence/web-platform/research.md) |
+| W01已审交付 | w01_owner / m1-web / codex/m1-web | 实现冻结；claim v2仅plans/w01-web，SSE后发现已由M02闭合 |
+| panels组件已交付 | workspace_panels_owner / web-workspace-panels / codex/web-workspace-panels | 已审输入46a1dbd、metadata16d518；不作为当前App writer |
+| WPF-M02已审工作入口 | workspace_panels_owner / web-unified-workspace / codex/web-unified-workspace | claim v2剩余projection/workspace-feed/对应tests及自身plan/evidence；App、TaskThread、WorkspacePanels已明确转出，不恢复写 |
+| WPF-P01已审可信host | w01_owner / web-plugin-host / codex/web-plugin-host | claim v1：plugins、三plugin-host test/config、自身plan/evidence；保留修复责任，不写App |
+| WPF-I01主App挂载 | workspace_panels_owner / web-plugin-integration / codex/web-plugin-integration | claim b6666c29 v1精确11scope，接管3已转出文件及plugin-integration/官方Thread/themes窄接缝；排除plugins |
+| WPF-PERF01测量 | w01_owner / web-performance / codex/web-performance | claim4553f315 v1仅2 benchmark脚本+plan/evidence；无生产/rootlock范围 |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实 |
 
 冻结 `WorkspacePanels` 接口（在panels owner的 `types.ts` 权威定义）：
 
@@ -113,7 +121,7 @@ type WorkspacePanelsProps = {
 - split/merge只组织tabGroup，不合并消息。root建议的Arc“合并为分屏项目/拆回独立tab”作为语义研究，本轮实际动作以用户“split、merge回一个tab组”为准。
 - FileTree/Terminal保留官方源及必要可访问性/主题修订；新功能还没有PTY或任意文件读取API。不能从UI能力推断后端能力。
 - [WPF-P01](plugin-system/plan.md)正式编号避免与现有P01协议计划冲突。root早期“P01插件”只是临时代称。X01仍为全栈插件总范围/总owner；Web host是其实现子项。
-- [WPF-D01](dashboard-followup/plan.md)仅为协作需求与来源登记；原Lead D03独占dashboard紧凑中性视觉和高层语义全部实现，我方不另派owner、不启动第二实现，不控制其4320服务（02:38已实观22来源）。
+- [WPF-D01](dashboard-followup/plan.md)仅为协作需求与来源登记；原Lead D03独占dashboard紧凑中性视觉和高层语义全部实现，我方不另派owner、不启动第二实现，不控制其4320服务（03:17已实核30来源，旧17全部保留）。
 - [WPF-PERF01](performance-cycle/plan.md)采用生产基线/规模与请求/交互证据，禁止用单个bundle阈值或synthetic规模宣称真实模型容量。
 
 ## 当前执行队列
@@ -134,11 +142,11 @@ type WorkspacePanelsProps = {
 
 - [x] **WPF-001-01** 持久化全部已传达用户要求与原话/摘要、来源轮次、稳定ID。
 - [x] **WPF-001-02** 明确owner/独占范围/接口/依赖，建立无编号冲突的后续plan/status/review。
-- [ ] **WPF-001-03** 接收官方Thread与panels独立提交，完成W01集成、回归与独立review闭环。
+- [x] **WPF-001-03** 接收官方Thread与panels独立提交，完成W01集成、回归与独立review闭环。
 - [x] **WPF-001-04** 向主线D03交付管理来源登记清单并只读验证；02:38:47.600Z新版22源中3个WPF源完整无issues（仅登记验证，不表示实现完成）。
 - [ ] **WPF-001-05** 空槽后派发WPF-P01，与X01/M02对齐完整插件系统而非只做UI插槽。
 - [ ] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮，继续按用户新要求更新追溯。
-- [ ] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
+- [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
 
 ## 验收、风险与持续方式
@@ -172,3 +180,7 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 - 2026-10-06 02:41 UTC：两owner精确literal范围已收齐并回报原Goal Owner/Lead，登记时间不倒填；迁移输入见integration-checklist，D04 receipt与展示尚待交付。
 
 - 2026-10-06 02:50 UTC：M02 d47固定候选进入独立review，P01模块PH-R1/R2修到3d812获scoped approval；新增WPF-I01独立主App挂载三件套，root同意新树与精确claim，既有两owner不扩写未登记路径。
+
+- 2026-10-06 03:13 UTC：持久化经原Goal Owner逐字转交U09，追加REQ38产品预览保留与REQ39架构tab；前者最终选择既有M02 49922并保留用户tab/服务，I0155049仅开发fixture，后者主线唯一owner承接，我队不重复实现。
+
+- 2026-10-06 03:19 UTC：U10逐字转交“plugin管理写进计划里”已新增REQ40；主线X01 canonical路径待回传，我队只关联已获授权Web前置，不重复实现完整生命周期。
