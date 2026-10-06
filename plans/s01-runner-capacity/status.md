@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:28:43 UTC；固定base main1c496835，当前0新窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:30:27 UTC；固定base main1c496835，当前0新窗口 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | main 1c4968354dabce1e6748f3301a2e6eecd33e77d4；受控integration 07c8a0b；实现 6de928d8092ba8c22ac2222ac7c16af3660be48a；metadata HEAD见Git现场 |
-| 工作树dirty状态 | 实现/source/raw已固定；本次仅manifest/owner metadata收口，提交后clean |
+| 工作树dirty状态 | 源码/raw冻结；本次仅审批metadata，提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED：最终41 distinct纯checks（旧直接24+新17）/局部strict exit0；真实128窗口NOT_OPEN |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | 6de928d8092ba8c22ac2222ac7c16af3660be48a |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 128固定8×16 profile、身份/持续行为/采样/预算/资源证明实现已固定，41纯检查与strict原证据已封存 |
-| 下一可用交付 | Mika固定target独审；通过后另点名clean execution HEAD与唯一窗口，当前不运行 |
+| 当前产出 | 128准备source6de928d经Mika于2026-10-06 12:29:56 UTC独审APPROVED，0P1/P2 |
+| 下一可用交付 | 提交clean execution HEAD与fresh claim/absent事实，由Mika点名开启唯一窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED：本次128准备实现待固定commit独立审查；设计已于2026-10-06 12:11:31 UTC批准；历史32窗口批准不覆盖本片 |
+| Review | APPROVED：6de928d8092ba8c22ac2222ac7c16af3660be48a，Mika/gpt-6-astra，2026-10-06 12:29:56 UTC，0P1/P2；仅准备 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -169,3 +169,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 最终9文件41/41不同纯checks（原直接24+新17）及局部strict0，初始4red/类型失败和40项中间记录保留，不重复累计；[raw](../../docs/evidence/s01/mixed-128-preparation/review-candidate.stdout)与[类型回执](../../docs/evidence/s01/mixed-128-preparation/review-types-receipt.json)。保守样本跨度用末query开始减首query结束，慢查询包络反例已测。工程检查只有fake与readonly Git，无真实PG/HTTP/center/runner/SDK/provider容量调用。
 
 新window仍NOT_OPEN；预算180秒含最终CLI/256MiB/128task与attempt硬上限不变。实际运行时外层time独立记录spawn/import到exit，超180即FAIL；不把driver内部elapsed冒充完整外层时长。源码/raw冻结等待Mika独审，不追main、不重测；dashboard只更新此唯一status，等待既有聚合。未完成原ACK/browser/真实provider/完整unknown恢复验收。
+
+2026-10-06 12:30:27 UTC：Mika正式独审APPROVED source6de928d/packetffee77ca，105绑定/6runtime/172历史及41distinct/strict0证据核符，0P1/P2，无review重测。两个预读样本证明问题已在固定源码和反例关闭。fresh claim v3 ACTIVE且新output absent；当前仅审批metadata，不代表执行OPEN。源码/raw不动，待明确executionHEAD门禁。
