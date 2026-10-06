@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:31 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:37 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | s01p01_owner / gpt-6-astra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool |
 | Branch | codex/runner-attempt-pool |
-| 工作基线 / HEAD | base9c6fa9b100f04916f43b04280f05f497b28eeb0f；实现HEADd655a3315bf8d967f4c822969e1a0b72952dc493 |
-| 工作树dirty状态 | 已核固定实现clean；仅交付metadata准备，源码停止写入 |
+| 工作基线 / HEAD | base9c6fa9b100f04916f43b04280f05f497b28eeb0f；实现HEAD48b73544c0e9e66a7061ddb54e003a03b9234bde |
+| 工作树dirty状态 | 修复与证据已提交，交付前核clean；产品runtime/journal零差异 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED d655a3315bf8d967f4c822969e1a0b72952dc493；46不同用例；末尾资源收束差异定向7+6/noEmit0，范围见manifest |
+| 检查状态 | PASSED 48b73544c0e9e66a7061ddb54e003a03b9234bde；继承根ES2023严格noEmit0、受影响纯HTTP5/5（18未选）；非全根include检查 |
 | 已集成main状态 / HEAD | 新片未集成；base9c6fa9b100f04916f43b04280f05f497b28eeb0f |
-| 实现目标 | d655a3315bf8d967f4c822969e1a0b72952dc493 |
+| 实现目标 | 48b73544c0e9e66a7061ddb54e003a03b9234bde |
 | 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/runtime-capacity.test.ts, apps/runner/src/admission-journal.ts, apps/runner/src/admission-journal.test.ts, docs/evidence/s01p01/check.mjs, docs/evidence/s01p01/vitest.config.mjs, docs/evidence/s01p01/types.tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已验证一个runner可有界并行执行，并在未知领取时保守阻断新任务 |
-| 下一可用交付 | 主线接收有界并发核心；命令行配置接线另行推进 |
-| 当前阻塞 | NONE |
+| 当前产出 | 测试已恢复根编译选项兼容，有界并发核心保持原实现 |
+| 下一可用交付 | 恢复根编译兼容后交复审，再由主线接收核心 |
+| 当前阻塞 | integration blocked: 兼容修复待独立复审与主线根检查 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，Mika独立APPROVED d655a331 |
+| Review | [review.md](review.md)，Mika原产品主体APPROVED d655a331；本测试/config delta待复审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -46,3 +46,7 @@ claim599454b1-52d2-4f22-8fc2-f68fb7ac6973 v1 ACTIVE，08:07:56.393Z COMMITTED，
 2026-10-06 08:29 UTC：Mika正式review可移植性P2已修，变化仅FIFO测试和check环境覆盖；journal-portable8/8、types-portable0，产品runtime/journal未变。当前targetd655a3315bf8d967f4c822969e1a0b72952dc493，原manifest/raw完整保留，等待delta复审；source/harness再次停写，claim v1保留，dashboard沿既有UNKNOWN不重复采样。
 
 2026-10-06 08:31 UTC：Mika独立review于08:30:14 UTC批准固定d655a331，无剩余P1/P2；三项P2均关闭。独审JSON绑定manifest-final，原raw/manifest冻结，无新增验证。当前仅approval metadata，提交后停止本feature全部写入；claim599454b1…v1保留等待main回执/明确修复。main仍未集成，dashboard沿单次超时UNKNOWN，不重试。架构影响为native本地并发/持久admission与恢复安全点，由Lead在主线接收target后更新固定架构视图。
+
+2026-10-06 08:35 UTC：Lead实际I02根noEmit exit2发现8处Promise.withResolvers；此前局部ES2024 lib掩盖该兼容错误。保留原log，移除局部lib覆盖以继承根ES2023，再仅替换测试deferred helper。fresh CLI claim599454b1…v1 ACTIVE，原fe63a932 clean；未新增PG/模型或重跑46项。Mika此前产品主体批准保留，本测试/config delta尚待复审；main7106尚未发布pool。
+
+2026-10-06 08:37 UTC：兼容修复target 48b73544c0e9e66a7061ddb54e003a03b9234bde 已固定，仅8处测试等待器改为本地void deferred及删除局部lib覆盖；runtime/journal与原批准d655逐字不变，原测试bodies经移除helper/还原调用逐字相等。继承根ES2023复现8诊断exit2后noEmit0，4入口/137实际worktree依赖使用与I02字节一致的根编译配置；不是完整root include glob，最终集成根检查仍归Lead。受影响5项纯HTTP通过、18未选，无PG/模型/原46重跑。原manifest/raw冻结，新绑定见manifest-es2023.json。代码/harness停写待Mika delta复审，claim v1保持。

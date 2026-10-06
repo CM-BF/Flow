@@ -1,6 +1,6 @@
 # S01P01：单 runner 的有限并发与保守领取恢复
 
-固定实现 `d655a3315bf8d967f4c822969e1a0b72952dc493`，base `9c6fa9b100f04916f43b04280f05f497b28eeb0f`。本片修改 runtime/journal 及两个专用测试；不修改中心、outbox、AttemptControl、SDK、CLI/config。`RunnerOptions.maxConcurrentAttempts` 默认1，显式整数1..16；CLI配置接线由其owner负责，不能把这片当CLI选项已上线。
+当前测试兼容修复实现 `48b73544c0e9e66a7061ddb54e003a03b9234bde`（原产品批准 `d655a3315bf8d967f4c822969e1a0b72952dc493`），base `9c6fa9b100f04916f43b04280f05f497b28eeb0f`。本片修改 runtime/journal 及两个专用测试；不修改中心、outbox、AttemptControl、SDK、CLI/config。`RunnerOptions.maxConcurrentAttempts` 默认1，显式整数1..16；CLI配置接线由其owner负责，不能把这片当CLI选项已上线。
 
 一个领取/恢复循环管理有限attempt Map。每个attempt复用原独立控制器、outbox、decision及steering。中心registered capacity/session排他仍权威。普通失败/取消只结束对应slot；401凭据错误或403 `wrong_role`、全局abort、EventStorageError停止领取，收束所有已起slot及未决API。goal scope等403保持局部授权失败。
 
@@ -41,3 +41,5 @@ Node24.20.0 / pnpm9.15.4 / Vitest4.0.18，固定本WT `@flow/*` paths，只复�
 Mika正式review的测试可移植性P2：FIFO测试移除本机loader/证据tsconfig绝对路径，默认从当前项目依赖解析tsx并用正常配置；本机复用安装仅check.mjs传入显式测试环境覆盖。原root package已声明tsx4.23.15。journal-portable8/8、types-portable0绑定新7文件，runtime/journal产品源码对0bf71a3逐字不变；未追加PG/不同用例，也未声称此未安装依赖的WT已运行默认解析分支。
 
 2026-10-06 08:30:14 UTC：Mika独立只读review **APPROVED** 固定d655a331；三项P2关闭，无剩余P1/P2，详见`independent-review.json`。原raw/manifest冻结；当前待main集成。reviewer无测试/PG/provider/服务操作。
+
+2026-10-06 08:37 UTC：集成发现根ES2023不支持测试withResolvers，局部ES2024覆盖掩盖错误。保留integration-es2023-failure.log与本地types-es2023-red，现改为本地void deferred并继承根lib；5受影响纯HTTP通过/18未选及严格noEmit0。编译覆盖4owned入口与137worktree transitive source，根选项与I02一致，未声称完整root glob通过。原46与PG证据不重跑；原产品不变，新target/delta与9原始证据见manifest-es2023.json，待Mika复审和Lead集成。
