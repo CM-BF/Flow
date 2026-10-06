@@ -1,0 +1,71 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-prefix-hash
+
+stdout | apps/server/src/assistant-stream/prefix-hash.test.ts
+CHAT06P02_DATABASE {"database":"flow_chat06p02_9ac3f1b10e464359931bdf2f422b98a9","version":"16.13"}
+
+stdout | apps/server/src/assistant-stream/prefix-hash.test.ts > returns only the verified digest while keeping the full Unicode block publicly readable
+CHAT06P02_DECODED_RETURN {"prefixUtf8Bytes":8192,"appendedUtf8Bytes":3,"queryCount":1,"fields":["digest"],"decodedValueUtf8Bytes":64,"decodedRowsJsonUtf8Bytes":79,"unit":"decoded UTF8 values/JSON, not PostgreSQL wire or CPU cost"}
+
+ ❯ apps/server/src/assistant-stream/prefix-hash.test.ts (10 tests | 1 failed) 1057ms
+   ✓ returns only the verified digest while keeping the full Unicode block publicly readable 78ms
+   ✓ preserves exact empty bytes from an empty prefix without normalization 38ms
+   ✓ preserves exact Unicode, CRLF and backslash bytes from an empty prefix without normalization 33ms
+   ✓ preserves exact NFC bytes from an empty prefix without normalization 34ms
+   ✓ preserves exact NFD bytes from an empty prefix without normalization 31ms
+   ✓ sees earlier patches in its own batch and accepts an empty closing patch without re-normalizing 34ms
+   ✓ rejects a bad full-prefix digest atomically, including earlier session and patch facts in that batch 44ms
+   ✓ still hashes the whole stored prefix and rejects corruption before its last patch 37ms
+   × retains offset, revision, session, ownership and sealed replay guards 43ms
+   ✓ serializes two conflicting same-revision reports and commits only one full prefix 44ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant-stream/prefix-hash.test.ts [ apps/server/src/assistant-stream/prefix-hash.test.ts ]
+AssertionError: expected [ { pid: 106823 } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "pid": 106823,
++   },
++ ]
+
+ ❯ apps/server/src/assistant-stream/prefix-hash.test.ts:32:29
+     30|       if (created) {
+     31|         const connections = (await admin.query('SELECT pid FROM pg_sta…
+     32|         expect(connections).toEqual([]);
+       |                             ^
+     33|         await admin.query(`DROP DATABASE ${database}`);
+     34|         const remaining = (await admin.query('SELECT datname FROM pg_d…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant-stream/prefix-hash.test.ts > retains offset, revision, session, ownership and sealed replay guards
+AssertionError: expected 'invalid_events' to be 'invalid_request' // Object.is equality
+
+Expected: "invalid_request"
+Received: "invalid_events"
+
+ ❯ apps/server/src/assistant-stream/prefix-hash.test.ts:162:105
+    160|   }
+    161|   expect((await request('/api/runner/events', { ...a.ownership, ownerV…
+    162|   expect((await post(a, [{ ...next, prefixDigest: next.prefixDigest.to…
+       |                                                                                                         ^
+    163|   expect(await facts(a)).toEqual(before);
+    164|   expect(await post(a, [a.session, first])).toMatchObject({ accepted: …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  01:00:52
+   Duration  1.78s (transform 302ms, setup 0ms, import 646ms, tests 1.06s, environment 0ms)
+

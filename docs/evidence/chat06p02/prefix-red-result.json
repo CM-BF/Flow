@@ -1,0 +1,45 @@
+{
+  "kind": "prefix",
+  "selection": null,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/assistant-stream/prefix-hash.test.ts",
+    "--config",
+    "docs/evidence/chat06p02/vitest.config.mjs",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T07:57:28.060Z",
+  "completedAt": "2026-10-06T07:57:29.937Z",
+  "elapsedMs": 1876.23075,
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/assistant-stream/prefix-hash.test.ts",
+      "sha256": "7c4996867ed830301c6d464b1931b14178c9e03cfef45dd3cd57bfa2d8329859"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "sha256": "fe1f09c1065ef9d1172b5f785504acc0ae6358e3da589ee569fa37acc20aac2a"
+    },
+    {
+      "path": "docs/evidence/chat06p02/check.mjs",
+      "sha256": "882b7fe437c53714b75274ca63c7435242749a968c4aaeca311fb8c95639aeb7"
+    },
+    {
+      "path": "docs/evidence/chat06p02/types.tsconfig.json",
+      "sha256": "0867520f05952f8e4902abd60e9a2ab7d01ca7baa98983e5b24bbadafdc0548f"
+    },
+    {
+      "path": "docs/evidence/chat06p02/vitest.config.mjs",
+      "sha256": "bb0fbaafaa1b628c9820af02213b4c856c9f509ef89180a417488ec56f35bfcc"
+    }
+  ],
+  "log": "docs/evidence/chat06p02/prefix-red.log",
+  "logSha256": "365cd5fce5da85f728d989610fc07e85c2bd5a36301262ceabb1a3f3437725d5",
+  "sourceHead": "4cd85bd922f9a54f4f4efb14d5bf3c3ab3942346"
+}
