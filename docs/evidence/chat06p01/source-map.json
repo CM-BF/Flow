@@ -1,0 +1,51 @@
+{
+  "observedAt": "2026-10-06T07:19:04.990350+00:00",
+  "base": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "kind": "read-only source inventory, not a measurement",
+  "sources": [
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "sha256": "fe1f09c1065ef9d1172b5f785504acc0ae6358e3da589ee569fa37acc20aac2a"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "sha256": "7dd7cfa459e88e924f57d4ff506c5acf4d660dd1dd381edb30551b17b7b90beb"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "bc66bfe0da3d1f72f491efaa42cfdd1cfb3c80b5f3242b32d71c35e767591e74"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/timeline.ts",
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "9e293af3092aba2e138cd8b36fd763ff29923a60bb8f8166bd5b8e490c8dcb8c"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "b65dc11d3296e060d11243580e1e36217f6502ed260842b370a967777ea1cc43"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "path": "experiments/conversation-read-cost/instrument.ts",
+      "sha256": "da1cde761e8afd6f62a87c7338af262cba73661fb247b1404b93f0112cf64d74"
+    }
+  ]
+}
