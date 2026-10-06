@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, expect, test } from 'vitest';
 import { TaskReadFixture } from '../../../experiments/bounded-reads/task-projections/fixture.js';
 import { eventPage } from './queries.js';
-import { loadTask } from './tasks.js';
+import { list, loadTask } from './tasks.js';
 import { transaction } from './database.js';
 
 const fixture = new TaskReadFixture();
@@ -23,4 +23,14 @@ test('event reads keep public output while omitting a legal long prompt from dec
   expect(current.measurement.taskFields).not.toContain('submission');
   expect(current.measurement.taskRowJsonBytes).toBeLessThan(baseline.measurement.taskRowJsonBytes - Buffer.byteLength(legalPrompt));
   expect(current.measurement.selectCalls).toBe(2);
+});
+
+test('list reads omit the legal long prompt without adding a query', async () => {
+  const current = await fixture.sample('public-prompt:task-list', () => list(fixture.pool, 1));
+  expect(current.value.tasks).toHaveLength(1);
+  expect(current.value.tasks[0]).toMatchObject({ id: primaryId, title: 'Public Unicode prompt', harness: 'fixture' });
+  expect(current.value.nextCursor).toBeNull();
+  expect(current.measurement.taskFields).not.toContain('submission');
+  expect(current.measurement.taskRowJsonBytes).toBeLessThan(1024);
+  expect(current.measurement.queryCalls).toBe(1);
 });

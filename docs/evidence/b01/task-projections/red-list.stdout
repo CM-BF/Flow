@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections
+
+stdout | apps/server/src/task-read-projection.test.ts
+{"kind":"b01-task-projection-fixture","database":"flow_b01_projection_1544ef6a757045bc9d7294cfd23e0950","postgresVersion":"160013","tasks":1,"elapsedMs":1360.7345409999998,"decodedAndHttpBytes":76415,"connectionsClosed":true,"databaseAbsent":true,"samples":[{"name":"public-prompt:old-full-task-row","queryCalls":3,"selectCalls":1,"taskRows":1,"taskRowJsonBytes":37899,"taskFields":["conversation_input_id","created_at","current_attempt_id","cursor","dispatch_ready","goal_input_id","id","latest_artifact_id","latest_artifact_version","owner_version","pending_decision","status","submission","updated_at","usage","verification_status"]},{"name":"public-prompt:event-page","queryCalls":4,"selectCalls":2,"taskRows":1,"taskRowJsonBytes":367,"taskFields":["created_at","cursor","harness","id","pending_decision","status","title","updated_at","usage","verification_status"]},{"name":"public-prompt:task-list","queryCalls":1,"selectCalls":1,"taskRows":1,"taskRowJsonBytes":37899,"taskFields":["conversation_input_id","created_at","current_attempt_id","cursor","dispatch_ready","goal_input_id","id","latest_artifact_id","latest_artifact_version","owner_version","pending_decision","status","submission","updated_at","usage","verification_status"]}],"reportBytes":1243}
+
+ ❯ apps/server/src/task-read-projection.test.ts (2 tests | 1 failed) 1362ms
+   ✓ event reads keep public output while omitting a legal long prompt from decoded PG rows 9ms
+   × list reads omit the legal long prompt without adding a query 4ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  04:38:48
+   Duration  2.29s (transform 365ms, setup 0ms, import 845ms, tests 1.36s, environment 0ms)
+

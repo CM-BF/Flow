@@ -74,15 +74,22 @@ export class TaskReadFixture {
       const sample = this.current;
       const first = args[0]; const sql = typeof first === 'string' ? first : (first as { text?: string })?.text ?? '';
       if (sample) { sample.queryCalls++; if (/^SELECT\b/i.test(sql.trim())) sample.selectCalls++; }
-      const result = Reflect.apply(query, receiver, args);
-      if (!sample || !result || typeof result.then !== 'function') return result;
-      return result.then((answer: QueryResult) => {
-        if (/\bFROM\s+flow\.tasks\b/i.test(sql)) {
+      const record = (answer: QueryResult) => {
+        if (sample && /\bFROM\s+flow\.tasks\b/i.test(sql)) {
           const bytes = jsonBytes(answer.rows); sample.taskRowJsonBytes += bytes; sample.taskRows += answer.rows.length; this.observedBytes += bytes;
           sample.taskFields = [...new Set([...sample.taskFields, ...answer.fields.map(field => field.name)])].sort();
         }
         return answer;
-      });
+      };
+      const callback = args.at(-1);
+      if (sample && typeof callback === 'function') {
+        args[args.length - 1] = function (this: unknown, error: unknown, answer: QueryResult) {
+          if (!error && answer) record(answer);
+          return Reflect.apply(callback, this, [error, answer]);
+        };
+      }
+      const result = Reflect.apply(query, receiver, args);
+      return sample && result && typeof result.then === 'function' ? result.then(record) : result;
     } });
   }
   async close(): Promise<void> {

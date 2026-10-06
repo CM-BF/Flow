@@ -1,3 +1,4 @@
+import { toTaskSummary } from './task-read-projection.js';
 import { legacyTimelineEntries } from './assistant-stream-compatibility/index.js';
 import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
@@ -13,8 +14,8 @@ export interface TaskRecord {
   pending_decision: DecisionRequest | null; usage: UsageTotals; latest_artifact_id: string | null; latest_artifact_version: string | null;
 }
 export function summary(task: TaskRecord): TaskSummary {
-  return { id: task.id, title: task.submission.title, harness: task.submission.harness, status: task.status,
-    verificationStatus: task.verification_status, createdAt: task.created_at.toISOString(), updatedAt: task.updated_at.toISOString() };
+  return toTaskSummary({ id: task.id, title: task.submission.title, harness: task.submission.harness, status: task.status,
+    verification_status: task.verification_status, created_at: task.created_at, updated_at: task.updated_at });
 }
 export async function loadTask(client: PoolClient, id: string, lock = false): Promise<TaskRecord> {
   const result = await client.query<TaskRecord>(`SELECT * FROM flow.tasks WHERE id=$1${lock ? ' FOR UPDATE' : ''}`, [id]);

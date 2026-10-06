@@ -2,7 +2,9 @@ import type { Pool } from 'pg';
 import { legacyTimelineEntries } from './assistant-stream-compatibility/index.js';
 import type { Detail, EventPage, TimelineEntry } from '@flow/contracts';
 import { HttpError, transaction } from './database.js';
-import { loadTask, summary } from './tasks.js';
+import { TASK_SUMMARY_COLUMNS, toTaskSummary, type TaskSummaryRow } from './task-read-projection.js';
+
+type EventTaskRow = TaskSummaryRow & { cursor: number; pending_decision: EventPage['pendingDecision']; usage: EventPage['usage'] };
 
 export function integerQuery(value: string | undefined, fallback: number, maximum: number, minimum = 0): number {
   if (value === undefined) return fallback;
@@ -13,13 +15,14 @@ export function integerQuery(value: string | undefined, fallback: number, maximu
 }
 export async function eventPage(pool: Pool, id: string, after: number, limit = 100): Promise<EventPage> {
   return transaction(pool, async client => {
-    const task = await loadTask(client, id);
+    const task = (await client.query<EventTaskRow>(`SELECT ${TASK_SUMMARY_COLUMNS},cursor,pending_decision,usage FROM flow.tasks WHERE id=$1`, [id])).rows[0];
+    if (!task) throw new HttpError(404, 'not_found', 'Task not found.');
     const reset = after > task.cursor;
     const rows = reset ? [] : (await client.query<{ entry: TimelineEntry }>('SELECT entry FROM flow.timeline WHERE task_id=$1 AND cursor>$2 ORDER BY cursor LIMIT $3', [id, after, limit])).rows;
     const rawEntries = rows.map(row => row.entry);
     const nextCursor = reset ? 0 : rawEntries.at(-1)?.cursor ?? after;
     const entries = legacyTimelineEntries(rawEntries, entry => entry);
-    return { entries, nextCursor, watermark: task.cursor, hasMore: !reset && nextCursor < task.cursor, task: summary(task), pendingDecision: task.pending_decision, usage: task.usage, ...(reset ? { reset: true } : {}) };
+    return { entries, nextCursor, watermark: task.cursor, hasMore: !reset && nextCursor < task.cursor, task: toTaskSummary(task), pendingDecision: task.pending_decision, usage: task.usage, ...(reset ? { reset: true } : {}) };
   }, true);
 }
 export async function detail(pool: Pool, id: string): Promise<Detail> {
