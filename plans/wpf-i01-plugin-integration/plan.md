@@ -1,6 +1,6 @@
 # WPF-I01 主 App 插件挂载
 
-创建/更新：2026-10-06 03:00 UTC。状态：in-progress（文档与接缝准备；实现等待输入复审）。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
+创建：2026-10-06 03:00 UTC；更新：03:04 UTC。状态：in-progress（文档与接缝准备；实现等待输入复审）。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 
 将已审可信 Web host、内建 WorkspacePanels 与主题接入已审 WPF-M02 产品 App，使声明式贡献在真实界面生效。继承管理计划 WPF-I01-01..04，不另造插件协议。对应用户可插拔 Web 与唯一领取要求；不因此宣称 X01 全栈 npm 生命周期、第三方隔离、CLI 或真实 PTY/任意文件系统完成。
 
@@ -8,7 +8,7 @@
 
 - 独立 worktree：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration`；branch：`codex/web-plugin-integration`。
 - 基线与初始化 HEAD：`c526c1c889437ee39155d669921577995195c74e`；其中 M02 实现 `d47c602f3bab1fe97a9be70fd37780c2918bcfbc` 已获独立 APPROVED。初始化没有改写旧工作树。
-- P01 候选 `e5341915ebbffd9a667f68f7d1ca9c45c14c7c52` 仍为 REQUEST_CHANGES：PH-R4 切换 task/contribution 丢失面板局部状态，等待唯一 P01 owner 修复及 root 整体复审。此候选尚未合入。
+- P01 原候选 `e5341915ebbffd9a667f68f7d1ca9c45c14c7c52` 因 PH-R4 为 REQUEST_CHANGES；新修复 target `6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6` 已获本 owner 的独立只读复验建议关闭，仍待 root 整体审定。两个候选均未合入。
 - D04 I01 claim `b6666c29-ebc5-47b2-b754-55b62687fd00` v1 active；真实 commit receipt 与旧 M02 v2 移交见[领取证据](../../docs/evidence/wpf-i01/assignment.md)。每次新工作先核 live version/state；scope 增改须原子 amend 回执。
 - 可写 literal scope 以 [status](status.md) 与回执为准。当前派发只允许本三件套和 `docs/evidence/wpf-i01` 文档；实现需已审 P01 输入与管理者正式派发。`apps/web/src/plugins` 及 plugin-host 测试仍由 P01 owner 维护；仅受控消费已审提交，不手工修 host。
 - 旧 M02 的 App、TaskThread、WorkspacePanels 三路径已停止写入，并由 v2 amend 移出；不得恢复旧树写权。本 feature 不合 main，不修改 shared packages/backend/root manifest/lock。
@@ -18,6 +18,8 @@
 独立 `plugin-integration` 模块拥有稳定窄 stores、HostPort bridge、连接 epoch、声明式 slot 包装与设置/诊断组合；App 保留组合与原生 UI 状态。具体落点和命令见[接缝映射](../../docs/evidence/wpf-i01/seams.md)。复用 P01 `ResourceContext`/`HostPort` 类型，局部 task/message/reference 身份必须来自当前渲染对象；不能以全局 active task 覆盖 B 行上下文。插件不接收 FlowClient、token 或任意数据访问器。
 
 App 的 chat groups、每 task 的原生 workspace tab 与草稿保留唯一 authority；窄 store 只发布快照。内建 WorkspacePanels 保留 Files/Terminal/detail 的键盘和 task 局部布局，host contribution 选择不能重建其缓存。换中心先同步失效旧 bridge epoch/signal，再 dispose 旧 host；即使新中心 taskId 相同，旧 activation、命令与 render 闭包也不得生效。
+
+同一 host 内 task/贡献切换应保留局部 state；host 实例或 connection epoch 变化则必须卸载整个 plugin view lifetime，例如在视图根绑定 connectionScope key。旧中心与新中心同名 task/reference 不继承 tabs/tree/cache，active 与 hidden visited panels 一并清理；旧 bound commands 在 dispose 后拒绝。实际浏览器验收中心 A→B 同 ID、迟到 activation/command 与 hidden 面板，不能用正常 task 切换缓存保留代替跨连接隔离。
 
 真实消息动作放官方 Thread 的 ActionBar 内，composer 动作放 composer action 区，不以状态条/textarea 属性冒充接入。现有 composer 没有安全外部命令注册入口，本段默认 `flow.composer.insertText` 明确 unsupported；不得静默成功或直接操作 DOM。主题使用已验证 descriptor，移除旧 tokens，禁用后回退内建主题；断开中心时不清草稿以外的未经授权状态、不取消中心任务。
 
@@ -32,4 +34,4 @@ App 的 chat groups、每 task 的原生 workspace tab 与草稿保留唯一 aut
 
 ## 当前风险与交接
 
-实现目标 UNKNOWN；P01 PH-R4 为当前依赖阻塞，解除条件是固定新完整 SHA 获整体 APPROVED。文档和已审 M02 接缝研究可独立完成。新增文件若超 receipt 范围先由 Lead amend，不以 worktree 隔离代替领取。计划索引和 dashboard task→owner worktree 登记由管理者/原 Lead 维护；旧管理准备目录转只读 stub，避免两份进度。
+实现目标 UNKNOWN；P01 整体复审为当前依赖阻塞，解除条件是固定新完整 SHA 获整体 APPROVED。文档和已审 M02 接缝研究可独立完成。新增文件若超 receipt 范围先由 Lead amend，不以 worktree 隔离代替领取。计划索引和 dashboard task→owner worktree 登记由管理者/原 Lead 维护；旧管理准备目录已由管理者转只读 stub，避免两份进度。

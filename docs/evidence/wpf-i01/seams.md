@@ -8,6 +8,7 @@
 - `plugin-integration` 管连接级稳定 host/ports、navigation/theme/workspace 窄 store 与 declarative slot 包装。publish 只在对应值实际变化时发通知；不能把每次 JSX 新 object 当稳定 snapshot。App 组合时同步快照，不向插件暴露 Map、FlowClient 或 token。
 - 原生 `WorkspaceTabId`（files/terminal/detail:id）由 App 每 task 的 `panelTabs` 控制；WorkspacePanels 自有 Map 保存 openDetails/tree/follow。插件 contribution 的面板选择只控制扩展容器，不能另管这些原生 tab。保留 mounted view 或已验证布局缓存以跨 task/贡献切换；依赖 PH-R4 修复，不通过复制旧面板实现绕过。
 - 连接会话持有单调 epoch/closed 标记。断开或替换 client 时立即令 bridge 无效并调用 host.dispose；所有 bridge 副作用检查 epoch 与 meta.signal，await 前后都核对。旧 closures 不可使用最新 callback 指向新中心相同 ID。普通断网只改连接状态，不能因暂停 SSE 取消已发送命令/清幂等键。
+- 2026-10-06 03:04 UTC 补充：整个 plugin view lifetime 必须 key 到 host/connection scope；只替换 host prop 不保证清除 renderer 局部 state。切中心卸载 active 与 hidden visited panels，丢弃旧 tabs/tree/cache；新中心相同 task/reference IDs 也重新建立。正常 task/贡献切换保持缓存，和此销毁规则分别验收。旧 host dispose 后 bound commands 必须拒绝；迟到 activation/command 不得跨 epoch；不向 context 发布 token/client 或未经授权原始数据。
 
 ## Slot 映射
 
@@ -43,3 +44,5 @@ Runtime/PTY、任意磁盘、提交/决定/取消等未在 P01 HostCommandArgs �
 ## 实施前风险
 
 PH-R4 证明 `PluginView` context key 重挂会丢 WorkspacePanels per-task Map，修复归 P01。theme descriptor 与 default palette 的适配在 I01 受领 themes.ts 内；禁用贡献后的焦点回到相邻原生 tab 或 rail 入口。最小回归包括 B 行命令、双 split 两个 message 上下文、同 referenceId 跨 task、不在线错误、同 taskId 跨中心、8 chat 连接预算及未展开 0 detail；不为 metadata 重跑产品测试。
+
+03:04 UTC：PH-R4 修复 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 已由本 owner 只读复验建议关闭并回 root；不在本目录复制 P01 进度事实源。I01 尚无实现。跨连接回归需两个中心复用同 task/ref IDs，覆盖可见和隐藏已访问 panel，以及迟到 activation/command；测试不能只验证普通 A→B task 切换。

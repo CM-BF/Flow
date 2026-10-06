@@ -17,3 +17,5 @@
 03:00 UTC：核验领取、唯一 source、TODO 稳定 IDs 与依赖事实。实际发现：旧 App 的 chat.message.actions 位于 task 状态条、sidebar.item.actions 位于整 nav、composer 标记在 Input；接缝方案把它们放回真实局部对象。PH-R4 已交 P01 修复，I01 不重复写 host。明确主题/原生 tabs/草稿单一 authority，避免副本和随意新协议。此段未改实现，尚不能声称错误隔离或性能验证通过。
 
 文档检查：本目录及 plan 三件套本地链接、receipt JSON、scope 与稳定 TODO 对应、Git diff whitespace 检查；产品类型/单元/浏览器/真实中心均未执行。后续每工作段、约 30 分钟安全停点、交付与合入前重新记录实际发现，不建后台定时任务。
+
+03:04 UTC 文档 clean-code：再次核 live I01 claim v1 active 与本树 clean，补清同 host 局部缓存与跨 connection lifetime 的不同归属。实际消除方案歧义：只换 host prop 不够，必须卸载整棵 plugin view（含 hidden visited）并同步失效旧 ports。上游 P01 只读复验与本 I01 产品验收分开；本段只查文档链接/diff，不以 P01 测试替代 I01 检查。

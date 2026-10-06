@@ -4,7 +4,7 @@
 
 Review target commit：UNKNOWN。
 
-Base：`c526c1c889437ee39155d669921577995195c74e`（已审 M02 实现加 metadata）；P01 最终输入仍待 PH-R4 修复与整体批准。当前只有文档初始化，无 I01 实现提交。
+Base：`c526c1c889437ee39155d669921577995195c74e`（已审 M02 实现加 metadata）；P01 修复 target `6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6` 仍待整体批准。当前只有文档，无 I01 实现提交。
 
 ## 范围与验收
 
@@ -19,3 +19,5 @@ Base：`c526c1c889437ee39155d669921577995195c74e`（已审 M02 实现加 metadat
 先核实际 worktree、branch、live claim version/state、base、完整 target 与 dirty。只读固定 target，核 P01 和 M02 输入已各自批准，不能用 dirty 代码代替提交。审阅上述行为并针对变化运行直接消费者检查，区分 HTTP fixture 与真实中心、作者与独立证据。每个 finding 给 severity、trigger、文件位置、blocking 与复验条件；修改交唯一 owner。最终结论绑定完整 SHA，metadata 新 HEAD 不自动扩大行为 approval；原 Lead 负责 main 集成。
 
 作者回应/修复提交/复审：尚无 I01 实现审查。
+
+追加验收：同 host 的缓存保留与换 host/connection epoch 的清理分别验证。新中心复用 task/reference ID 时，active/hidden visited views 的 tabs/tree/cache 必须重新初始化；旧 bound commands、迟到 activation/command 不得作用新连接，plugin context 不包含 token/client 或未经授权源数据。P01 PH-R4 fixture 复验不替代此 I01 真实挂载检查。
