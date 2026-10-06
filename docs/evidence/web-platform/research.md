@@ -294,3 +294,5 @@ root 03:44 UTC再次核官方测量语义（时间采用工具03:44:48，纠正�
 w01_owner后续有界只读：固定center2d3bb61/clienta3b9/outbox0d4e的确定拒绝与ACKunknown、create/turn两步receipt、原key重试和409语义，另说明新受控typed746364ea2581b8c563a09b07560de5e0b63bcab8差异；不称最新端到端、不审moving projection、不写CHAT/后端/新计划或调用模型。管理者不为满槽创造新功能或扩大已领范围。
 
 03:51跨Lead固定事实（root转交，管理者未重跑外队）：Mika B01 after窗口03:46:01.332Z～03:46:10.218Z，8.887秒、23checks、47,496,555bytes，已清理，独立审查批准该实现/after；不推因果倍率或SLO。X02实现3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee、metadataf9d6dd2a34db78d1818876088ebf9de153a1d3b7获Mika root批准交主Lead，registered/runtime unavailable边界保持；管理者仅git rev-parse补全给定短SHA，没有另做X02 approval。GoalOwner批准CHAT typed融合d0f4f5d8abc8995b22a43879880e090bfb898024，计划在Web首独立交互preview就绪后做用户视角验收；URL/固定输入/fixture身份由CHAT owner回，49922不动，两次真实模型query仍只由主Lead执行。
+
+03:53 w01只读ACK研究交付已合入[同一CHAT接口证据](chat-interface-research.md)，固定2d3/a3/0d4e与typed746差异、源码行号、两事务ACK恢复、unknown后重试401/403不可抹旧不确定性、malformed2xx身份校验全部明确；已交CHAT owner转实际验收，未读moving caller不先判bug。内存outbox不假称跨reload持久，固定中心注册函数不等于单commit可部署，真实模型仍主Lead统一。owner只读交付后空闲，不为填槽创建新生产工作。
