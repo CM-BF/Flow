@@ -16,6 +16,6 @@ Base：698ffcd94ae073b23bcc67f6665fb19f707a93e4
 
 ## 结论与限制
 
-本片范围APPROVED，无blocking findings。未运行真实看板刷新benchmark、浏览器或全库；主线集成仍pending。本次不覆盖TTL/跨快照缓存、tree/main读取去重或registry/human改变，也不新增原子快照保证。后续实现改动不自动继承此批准；metadata提交不改变target。
+本片范围APPROVED，无blocking findings。未运行真实看板刷新benchmark、浏览器或全库；05:14 UTC主线集成已由owner只读核验，详见status；没有新实现改动。本次不覆盖TTL/跨快照缓存、tree/main读取去重或registry/human改变，也不新增原子快照保证。后续实现改动不自动继承此批准；metadata提交不改变target。
 
 复现与原始记录：[报告](../../docs/evidence/wpf-dperf01/README.md)、[质量记录](../../docs/evidence/wpf-dperf01/quality.md)。
