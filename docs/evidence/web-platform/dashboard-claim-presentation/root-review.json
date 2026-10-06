@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-06T21:32:56.518212+00:00",
+  "verdict": "ACCEPTED_BOUNDED_DISPLAY_FOLLOWUP_NOT_MUTUAL_EXCLUSION_DEFECT",
+  "report": {
+    "path": "/private/tmp/dashboard-claim-presentation-2_bgsb4b/report.md",
+    "bytes": 8225,
+    "sha256": "ffc2ddb436f3f229bbbde18eb7e0ab6e8c1fb0bab90d9c6c236edb9b3aa50a18"
+  },
+  "verifiedSourceCount": 19,
+  "sourceChecks": [
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "AGENTS.md",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "plans/AGENTS.md",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "apps/execution-dashboard/src/coordination/input.mjs",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "apps/execution-dashboard/public/app.js",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "docs/evidence/d04/README.md",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "plans/d04-coordination/plan.md",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "plans/d04-coordination/review.md",
+      "matches": true
+    },
+    {
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "path": "plans/d01-execution-dashboard/plan.md",
+      "matches": true
+    },
+    {
+      "commit": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+      "path": "docs/evidence/wpf-dperf04/interface.md",
+      "matches": true
+    },
+    {
+      "commit": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+      "path": "docs/evidence/wpf-dperf04/review-4fac/root.json",
+      "matches": true
+    },
+    {
+      "commit": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+      "path": "plans/wpf-dperf04-summary-detail/status.md",
+      "matches": true
+    },
+    {
+      "commit": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "matches": true
+    },
+    {
+      "commit": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+      "path": "apps/execution-dashboard/public/app.js",
+      "matches": true
+    },
+    {
+      "commit": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "matches": true
+    },
+    {
+      "commit": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "matches": true
+    },
+    {
+      "commit": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+      "path": "apps/execution-dashboard/public/app.js",
+      "matches": true
+    }
+  ],
+  "rootRead": "Independently read fixed c8e ledger/aggregate/card/detail and fixed45f8 aggregate/card/detail. Both preserve global released records but filter task claims; empty task claims display never-claimed wording. Agent additional read-model evidence confirms45f8 exclusion.",
+  "acceptedFinding": "Derived task display cannot distinguish a released historical claim from a task never registered in the ledger. This is a traceability/display follow-up under the original request that take be clear in dashboard; not a new literal user quote or evidence of an atomic take failure.",
+  "acceptedBoundaries": [
+    "Active means claimed/held, not a proven running writer. No paused enum or live-process inference is required by this review.",
+    "unknown, stale observation, rejected take and source mismatch remain distinct; do not manufacture released from a disappearing row.",
+    "When a new active claim follows release, current owner remains prominent and previous release is explicitly historical, bound to claim/version/owner and observation.",
+    "Do not alter current45f8 candidate or use its approved browser budget for this follow-up. It preserves the original accepted D04 exclusion; this result does not reverse that scoped implementation review.",
+    "Existing D04-03 / D01-02/03 and U08/U12/REQ37 only; exact successor scope intersects read-model.mjs/public/app.js and meaningful summary-detail tests after lawful handoff. Ledger needs no new state source."
+  ],
+  "methods": "Local find-skills/codebase-design/clean-code. Fixed source/hash review only; no testing, service/ledger/API access, free sampling, implementation/claim change or deployment verification."
+}

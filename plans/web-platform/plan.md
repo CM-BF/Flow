@@ -121,6 +121,13 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 - FileTree/Terminal与现有详情只据真实公共接口展示，不从UI推导PTY或任意文件读取能力。完整X01生命周期/第三方隔离/CLI等价仍归主线唯一计划；P01可组合slot不冒称全栈交付。
 - dashboard由Lead唯一部署/登记；我方只管理本队source和已授权窄采样。性能需实际消费者/规模证据，合成probe不能宣称生产容量或用户延迟收益。
 
+
+### 已审后继接口与显示边界
+
+MATURE02/TODO11的[快速控件接口提案](../../docs/evidence/web-platform/message-settings-ownership-interface/report.md)及[root限定接收](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛：必填不透明草稿token交给唯一host，同步比较当前归属、live authority、完整tuple后写入；仅key/remount不足以保护旧callback或same-tuple新稿。每次打开另有私有liveness，cancel/close/details navigation/success/unmount同步撤销旧Apply/omit，即使草稿token未变也不得提交。两种校验互不替代，不引第二草稿store。组件设计可与真实App/Recovery交权分开；[精确source-only provision候选](../../docs/evidence/web-platform/message-settings-quick-controls-provision/request.json)给原Lead审阅，四产品literal加own plan/evidence共6scope仍NOT_TAKEN，固定c8e352输入/3,019,669逻辑B。新实现/验证需合法独立树与fresh领取，原37/4不外推；不争当前Recovery/DPERF/SVC运行优先。
+
+U08/U12/REQ37的[领取显示固定源研究](../../docs/evidence/web-platform/dashboard-claim-presentation/report.md)及[root接收](../../docs/evidence/web-platform/dashboard-claim-presentation/root-review.json)确认一项派生可追溯性验收：任务卡应能区分曾释放历史与从未领取；新take之后突出当前owner、旧release只读。unknown/陈旧/行消失不推释放；active只表示已领取，不证明正在写。该行为原D04已接受过滤，不是原子互斥失效或新的逐字用户要求。后继仅归D04-03/D01-02/03，两个产品文件和两个消费者测试与现DPERF04范围相交，等原片交回后串行，不改45f8候选/账本或挪用其browser预算。
+
 ## 执行顺序与交权规则
 
 当前优先级、fixed输入、检查窗口和具体下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及上列owner status；这里不再维护第二份滚动状态表。共享PG/Chrome由Lead明确交接，纯检查按自身获批预算独立fresh准入。所有项目写入先核D04精确范围与唯一writer；源码、独审、运行证据、main接收、实际页面发布分别记录。

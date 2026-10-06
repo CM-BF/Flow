@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-06T21:32:56.240990+00:00",
+  "state": "ACCEPTED_BOUNDED_DISPLAY_FOLLOWUP_NOT_TAKEN",
+  "parent": "Existing U08/U12/REQ37, D04-03 and D01-02/03",
+  "finding": "Ledger/globalsnapshot retain released, but taskprojection/filter and card/details empty state collapse previouslyreleased and neverclaimed. Known accepted originalscope, not atomic take failure.",
+  "candidateIntersection": [
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs"
+  ],
+  "currentOwner": "DPERF04 original b554/9; futurechange needs serialhandoff",
+  "constraints": [
+    "No current45f8candidate/budget/source change",
+    "No newtask/schema/ledger/registry/statusauthority",
+    "active means claimed, not evidence of currentwriting; no paused inference",
+    "No runtime/API/free probes or claim mutation"
+  ],
+  "rootReview": "root-review.json",
+  "requirementAttribution": "Derived traceability acceptance under existing take-readable requirement, not a new literal user quote and not atomic exclusion failure.",
+  "acceptance": [
+    "Distinguish no current claim with released history from neverclaimed; history binds claim/version/owner/update and read observation.",
+    "Retake after release keeps currentowner prominent, previousrelease readonlyhistory.",
+    "Unknown/stale/disappearing rows never inferrelease; currenttake still atomicD04.",
+    "Active means allocated/held, not provenediting; no paused enum or liveprocess inference."
+  ]
+}

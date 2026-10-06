@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-06T21:34:57.906838+00:00",
+  "state": "PROVISION_CANDIDATE_NOT_TAKEN_NOT_MATERIALIZED",
+  "taskCandidate": "WPF-MESSAGESETTINGS02",
+  "parent": "WPF-MATURE-02",
+  "todo": "WPF-MATURE-02-11",
+  "ownerCandidate": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "branch": "codex/web-message-settings-quick-controls",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "scope": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.test.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "apps/web/test/message-settings.browser.ts",
+    "plans/wpf-message-settings-quick-controls",
+    "docs/evidence/wpf-message-settings-quick-controls"
+  ],
+  "claim": null,
+  "registration": null,
+  "designReady": "Bounded component interface accepted: opaque draft token, synchronous host CAS, independent per-opening liveness. Production App/Recovery handoff is separate, not a component-design blocker.",
+  "sourceInputManifest": "source-input-manifest.json",
+  "sourceFiles": 352,
+  "logicalBytes": 3019669,
+  "provisionOperator": "Original Execution Lead sole Git operator unless an explicit one-path delegation is later received. No current manager materialization authorization.",
+  "sourceOnly": true,
+  "install": false,
+  "copyDependencies": false,
+  "newRuntimePermit": false,
+  "pureProjection": "Begin with a private declared-tuple projection inside existing Picker; no new helper path requested. If extraction is necessary, owner must propose exact path/responsibility/test before scope amendment.",
+  "readOnlyInputs": [
+    "catalog.ts",
+    "selection.ts",
+    "existingpublic contracts/client codecs",
+    "existingUI/CSS/typedconsumer inputs from fixed manifest"
+  ],
+  "outsideScope": [
+    "App.tsx",
+    "ConversationThread.tsx",
+    "Recovery/outbox/queue/session",
+    "shared packages/config/registry/lock/dependency trees"
+  ],
+  "uniqueness": {
+    "ledgerObservedAt": "2026-10-06T21:32:30.418Z",
+    "activeWriterConflicts": [],
+    "fixedRegistryTaskAbsent": true,
+    "localBranchAbsent": true,
+    "pathAbsent": true,
+    "freshTakeStillRequired": true
+  },
+  "sequence": [
+    "Lead reviews/provisions fixed exact sparse input closure only; stops on missinginput rather than broadening checkout or copyingdeps.",
+    "Manager freshactualWT/branch/HEAD/clean + D04 atomictake6 and solewriter/unique source registration.",
+    "Owner implements component + samefixture; root independent source review, no inherited37/4 results.",
+    "Necessary types/direct/browser get separate exactcandidate/budget/freshgate; no reservation now and existingRecovery/DPERF/SVC keep priority.",
+    "Production host uses real synchronous expectedownership/liveauthority CAS plus existing receipt/Recovery handoffs before fullTODO11 acceptance."
+  ],
+  "acceptance": [
+    "Privatefilters only currentauthorized declaredtuples; no Cartesian/default/nearest/automaticomit.",
+    "Privateopeningliveness rejects oldApply/omit aftercancel/close/navigation/unmount, even same drafttoken.",
+    "Synchronous hostCAS rejects oldcallback/props lag/same-tupleABA/newview/connection/permissionloss independently.",
+    "32choices/currentprofile,20profilepage/laterselectedprofile/errors/emptyfilters/390dualtheme/keyboard/A-B-C frozen boundaries, measured at newfixedtarget."
+  ]
+}

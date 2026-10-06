@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T21:32:14.054382+00:00",
+  "verdict": "ACCEPTED_BOUNDED_INTERFACE_DIRECTION_WITH_ONE_LIFETIME_CLARIFICATION_NOT_IMPLEMENTED",
+  "fixedMain": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "proposal": {
+    "report.md": {
+      "bytes": 5616,
+      "sha256": "357a6ab824d70cd1eec3702028e3494646e25e2360f7a751eb13334eb517b082"
+    },
+    "audit.json": {
+      "bytes": 1895,
+      "sha256": "6670ab82ac06b14f718e8afc0609da890480816580caeb38f9875e69d12bbf3e"
+    }
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "matches": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "matches": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "matches": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "matches": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "matches": true
+    }
+  ],
+  "accepted": [
+    "Component design can proceed independently of App/Recovery writing: current fixed main has only the controlled fixture importing MessageSettingsPicker. Production host handoff is a separate real requirement.",
+    "Required opaque nonserialized draft ownership token plus synchronous host compare/live-authority/validate/write is an appropriate small controlled interface. A key/remount or stale props check alone is insufficient.",
+    "Both Apply and explicit omit use ownership checks; original sent/queued receipts remain separate immutable owners; refresh/profile absence/authority unknown cannot silently clear the draft.",
+    "Four literal component/test candidates are a design starting point only; no fresh claim/tree/runtime approval. Existing 37 direct/4 browser evidence does not cover new staged controls."
+  ],
+  "clarificationBeforeImplementation": [
+    "Separate dialog edit-session lifetime from host draft ownership. A component/dialog can close, cancel or remount while the same view draft still exists; an otherwise-current draft token does not itself revoke an old UI callback. Use a private per-opening liveness guard (invalidated synchronously on cancel/close/navigation/success and on unmount) before invoking the host CAS, or document an equivalent existing mechanism. This is local transient edit state, not another draft store or authorization authority.",
+    "Host CAS still independently rejects connection/view/draft replacement, same-value ABA and live permission loss even before React receives updated props. UI liveness must not replace this check. Test ordinary close/unmount without draft rotation separately from actual draft/view/connection invalidation; avoid claiming token equality alone handles both."
+  ],
+  "scope": "Existing MATURE02 TODO11 and original quick-controls acceptance only. No current-leaf defect or review reversal. Manager may archive this alongside the original proposal and keep source implementation queued until legal provisioning/take.",
+  "methods": "Reused local find-skills/codebase-design/clean-code: smallest controlled interface, single host authority, edit lifetime vs durable draft identity, error result semantics. Fixed-object reads only; no runtime, browser, PG, service, resource sample or project edit."
+}

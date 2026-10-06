@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:29 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:33 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -36,7 +36,7 @@
 | WPF-001-05 | in-progress | d01_owner | P01/I01可信host与X02 registry已审集成；X03I01消费只读管理模块，完整npm生命周期/第三方隔离与conversation/pane入口仍开放；[连接页固定2498候选](../../docs/evidence/web-platform/connection-plugin-2498-intake.json)已核十源，唯一host/既有slot/preauth可信builtin与postauth撤权未实施，待Recovery交权 |
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
-| WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv5→QUEUE01v1与旧D06v2释放→新e5b2v1均有原始receipt |
+| WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验，原始receipt保留；[已释放/从未领取的派生显示验收](../../docs/evidence/web-platform/dashboard-claim-presentation/root-review.json)沿原D04/D01后继，不撤销原限定通过 |
 | WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；附件v2材料投影最小修复4f879已main cde，Lead组合PG2已验；实际backend362仍缺该修复，不冒完整材料展示 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
@@ -67,6 +67,8 @@
 | WPF-001-35 | pending | d01_owner | RS13固定f82候选5asset/1,571,669 raw bytes仅观察，初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
 | WPF-001-36 | completed | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后原28→23初为算术预期，实施后仅该临时样本已实测23，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，已main a8aef五源同；7cc5双端clean全停写后db0b v3 released；不泛化CPU/SLO。 |
+
+已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛，组件实现未take；真实host接线仍需后继交权。
 
 ## 当前唯一来源、写权与下一步
 

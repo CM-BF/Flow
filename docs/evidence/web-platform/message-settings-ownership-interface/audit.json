@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-06T21:31:01.260590+00:00",
+  "fixedMain": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "state": "READONLY_INTERFACE_PROPOSAL_NOT_TAKEN_NOT_RUN",
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    }
+  ],
+  "priorResearch": [
+    {
+      "path": "/tmp/root-message-settings-quick-controls-research.json",
+      "bytes": 10588,
+      "sha256": "211462993053a0d77c4cdfe25dc86440b4bd30a167b8fccbad2be3abe4ea89cc"
+    },
+    {
+      "path": "/tmp/root-message-settings-quick-controls-peer-addendum.json",
+      "bytes": 2681,
+      "sha256": "4be27f924e077fa507d85b604e8c378b16737fa69f01cb59794d3600326d5b51"
+    },
+    {
+      "path": "/tmp/message-settings-quick-controls-review/report.md",
+      "bytes": 4967,
+      "sha256": "cf5ddf4f030a8c1c58fcf5634fe4744c34efe93565713188c1650c676c7ad7a6"
+    }
+  ],
+  "methods": "Reused installed find-skills/codebase-design/clean-code; focused on controlled ownership, compare/write atomicity, no second authority.",
+  "projectWrites": false,
+  "newRuntimeChecks": 0,
+  "claim": null
+}

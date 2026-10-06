@@ -1,0 +1,32 @@
+{
+  "observedAt": "2026-10-06T21:32:30.418Z",
+  "raw": "/private/tmp/d01-interface-display-intake-live.json",
+  "rawSha256": "dcc7707652b81258105faf2fc834e2e8f2f928bfb52caf6d249487676aeac476",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/web-platform",
+      "plans/web-platform",
+      "plans/wpf-mature-01-visual",
+      "plans/wpf-mature-03-attachments",
+      "plans/wpf-mature-05-workspace",
+      "plans/wpf-mature-06-chat"
+    ],
+    "state": "active",
+    "branch": "codex/web-platform-management",
+    "origin": "migration",
+    "taskId": "WPF-001",
+    "worker": "external_web_d01_owner",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+    "createdAt": "2026-10-06T02:48:43.295Z",
+    "updatedAt": "2026-10-06T08:56:20.186Z",
+    "observedAt": "2026-10-06T02:48:42.000Z",
+    "needsVerification": false
+  },
+  "overlap": [],
+  "writes": "Original management6 only; original featureclaims and stoppedsources untouched; no newtake or runtime."
+}
