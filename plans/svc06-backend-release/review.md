@@ -1,5 +1,13 @@
 # SVC06 Review
 
+当前片段状态：NOT_STARTED
+
+Review target commit: `87dc292ae2dc8c1357f074ec7bddd41de20108d8`
+
+新增纯选择器 / cache plan / installation view 待独立审查；[manifest](../../docs/evidence/svc06/closure-manifest.json)绑定6源码/12直接输入/新原始输出。7/7纯测试与固定锁选择只由作者运行，未做安装/fullbuild/PG/provider。下文为已完成保护片历史独审，不继承给本片。
+
+## 历史保护片批准
+
 状态：APPROVED（仅有界保护/legacy 兼容小片）
 
 目标：`6d276baee6d3fbf14eb4b638a9ad773ffcec988d`；base `280289008a5a3779e4e5e6453181b96062ed9514`。独立 reviewer native_center_owner / gpt-6-astra，2026-10-06 13:29:15 UTC；作者 assignment_review 仅转录。

@@ -50,3 +50,7 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 ## 主线接收记录（2026-10-06 14:54 UTC）
 
 已审有界保护/legacy兼容切片为 delivered；main `cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8` 已含14个相同实现文件与交付185e。观察 main/origin `d679444c4bed52bbd53d38f4944f914b30fbbd92`，祖先/文件核验见 [main-receipt.json](../../docs/evidence/svc06/main-receipt.json)。此为限定接收，不扩独立review、不复跑、不完成 SVC06-03/04/05；完整依赖构建/固定host和个人窗口仍按原后继条件执行。
+
+## 已实现的最小闭包准备（2026-10-06 15:16 UTC）
+
+新[纯Interface](../../docs/evidence/svc06/closure-interface.md)固定于 `87dc292ae2dc8c1357f074ec7bddd41de20108d8`，仅选择/安装投影/CAFS索引身份与去重；正式builder、parser与实际安装仍未接。原锁/12直接输入无变。7个小用例通过，真实固定lock选择256/683；不把它视为physical收益或完整产物。SVC06-03/04/05继续open；本片独审待安排，不改旧个人服务。

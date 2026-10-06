@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:54 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:16 UTC；main 接收保留14:54观察 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 280289008a5a3779e4e5e6453181b96062ed9514；本段前 HEAD 185e377437cbe474d208f65657871010f4fbd9be；固定源码 6d276baee6d3fbf14eb4b638a9ad773ffcec988d；本次仅 main 接收 metadata |
-| 工作树dirty状态 | 本段开始 185e377 clean；本次仅自身 plan/status/review/evidence；产品对固定 target 与已接收 main 14 文件零差，提交后状态由 Git 核验 |
+| 工作基线 / HEAD | 原基线 280289008a5a3779e4e5e6453181b96062ed9514；本片 base 91402e174022b7568aa21ce2ddfcb69932e111bd；源码 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
+| 工作树dirty状态 | 产品源码已固定停写；当前仅自身证据与计划收尾，最终 clean/push 由 Git 核验 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
-| 实现目标 | 6d276baee6d3fbf14eb4b638a9ad773ffcec988d |
-| 实现范围 | tools/personal-preview/backend-release, tools/personal-preview/preview.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/cli.mjs, tools/personal-preview/README.md |
-| 检查状态 | PASSED 6d276baee6d3fbf14eb4b638a9ad773ffcec988d，仅有界保护片：分轮 8 个不同作者行为观察（1 个是旧空间门槛历史版本），最终 JS 语法 12/12；完整构建 NOT_PROVEN，两次原失败保留；此次 0 重测/provider |
+| 本片段交付阶段 | review |
+| 实现目标 | 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
+| 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/installation-view.mjs, tools/personal-preview/backend-release/cache-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/cache-plan.test.mjs, docs/evidence/svc06/closure-observe.mjs |
+| 检查状态 | PASSED 87dc292ae2dc8c1357f074ec7bddd41de20108d8：新纯模块 7/7、语法6/6，固定锁只读选择256/683；0安装/fullbuild/PG/provider |
 | 已集成main状态 / HEAD | 已接收 cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8；观察 main/origin d679444c4bed52bbd53d38f4944f914b30fbbd92，6d276 与 185e 均祖先、14 源码零差；[main-receipt](../../docs/evidence/svc06/main-receipt.json)。个人 runtime/Web 未操作 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 旧启动兼容和停服务前拒绝保护已进入主线，本片段已交付；完整固定后台产物仍未验证 |
-| 下一可用交付 | 后继缩小固定运行依赖闭包，资源恢复并确认实施范围后验证完整产物及独立启动 |
-| 当前阻塞 | ACTIVE: 完整构建仍等至少 2.5 GiB 可用空间并保留 1 GiB 收尾余量；目前仅源码/文档工作，个人服务未操作 |
+| 当前产出 | 已完成后台依赖选择与安装配置校验的小模块，正在独立审查；旧启动保护已在主线 |
+| 下一可用交付 | 接入固定解析器后，在空间满足时验证真实离线依赖产物 |
+| 当前阻塞 | ACTIVE: 完整构建仍需至少2.5 GiB可用空间并保留1 GiB收尾；正式解析器和builder接线待共享依赖，纯模块不受阻 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 6d276baee6d3fbf14eb4b638a9ad773ffcec988d，仅有界保护/legacy 小片；完整 fixed artifact gate 未完成 |
+| Review | [review.md](review.md)，NOT_STARTED 87dc292ae2dc8c1357f074ec7bddd41de20108d8（新选择器）；旧6d276保护片批准与main接收保留 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v4，9 literal scopes；见 amend-receipt.json |
-| 架构影响 | 已接收 artifact module/host 显式选择与失败关闭保护；完整依赖隔离运行仍为后继。固定图待 Execution Lead 按 6d276 的限定主线范围更新 |
+| 架构影响 | 新增私有纯 dependency/cache plan 与 staging投影 Interface；尚未接入builder。固定架构图由 Execution Lead 在模块接收后按实际接线范围更新 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -45,3 +45,11 @@
 ## 限定主线接收（2026-10-06 14:54 UTC）
 
 [接收与逐文件核验](../../docs/evidence/svc06/main-receipt.json)证明14源码与已审target相同；9个直接输入相同，lock的workspace importer与server main/index的已审主线变化共3项另记，不能称全部直接输入零差。接收未复跑原检查，完整 artifact/SQL与SDK延迟加载/产物host正例仍 NOT_PROVEN；2.5GiB门槛和1GiB余量不变。原claim v4本段fresh核有效，保留后继范围，不新增产品写入/安装/PG实验或个人操作。
+
+## 闭包选择器实施
+
+2026-10-06 15:06 UTC：原 HEAD `91402e174022b7568aa21ce2ddfcb69932e111bd` clean；fresh claim v4 active。仅原 backend-release 私有目录与本 plan/evidence，新写预算≤5 MiB；不安装/复制/fullbuild/PG/provider。旧已审6d276保护片及 main 接收不变，新选择器另待审。正式 YAML parser 尚未接入，纯已解析 lock Interface 与 staging 投影先独立验证，不冒完整安装。
+
+## 闭包选择器固定交付（2026-10-06 15:16 UTC）
+
+87dc292ae2dc8c1357f074ec7bddd41de20108d8：7个不同纯行为用例（分轮重复不累计），固定原锁通过系统测试parser只读选择256/683 snapshots、5workspace+根tsx。12个直接输入逐字保持。安装配置/CAFS仅纯规划，不安装、不clone、不改旧builder；正式YAML及builder接线仍后继。证据：[closure-manifest](../../docs/evidence/svc06/closure-manifest.json) / [Interface](../../docs/evidence/svc06/closure-interface.md)。本片 NOT_STARTED 独审，与旧6d276已main分开。
