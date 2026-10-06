@@ -1,0 +1,207 @@
+{
+  "implementationTarget": "5ff8880b3518992121216998c169dd01ab44cee0",
+  "base": "79d6204e4a5781a7041a1545a7424513feaccdae",
+  "mainDependency": "acfd409a493315a00f1cc19ac96c5f1b36c19e57",
+  "providerCalls": 0,
+  "cloudCalls": 0,
+  "checks": {
+    "selectedFiles": 7,
+    "passed": 72,
+    "failed": 0,
+    "durationSeconds": 11.56,
+    "typecheckExit": 0,
+    "oldChat05TestsRerun": false
+  },
+  "sources": [
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382",
+      "bytes": 4993
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sha256": "f26aba91317c254f8266b2aae39107e71d30207e94afd7b0065ca714dd4ebf90",
+      "bytes": 5766
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "sha256": "d0d98d6767be97cd8ac8447dca328e060668f6345862792abed7a2028446d4fd",
+      "bytes": 4654
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "sha256": "6959ec02de0df33b9d1fdd13537072861f7a7e8d6627338cbe14db4060c575b6",
+      "bytes": 17189
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "bc66bfe0da3d1f72f491efaa42cfdd1cfb3c80b5f3242b32d71c35e767591e74",
+      "bytes": 7345
+    },
+    {
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48",
+      "bytes": 1865
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "sha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792",
+      "bytes": 9939
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "sha256": "bb538c0e1646ab206ef4417006054edbce66854e12d4939f0750fbd1ca540cfd",
+      "bytes": 3485
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/stream.test.ts",
+      "sha256": "366435364809e97ce68fd4a03ee27fc1b8bc8eba0dc972532b19a5fcb16e12c5",
+      "bytes": 9946
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34",
+      "bytes": 2061
+    },
+    {
+      "path": "apps/server/src/assistant-stream/migration.test.ts",
+      "sha256": "dee7ca4b30618f90e1f3c8cff7bcc92cfc94c19e47669d7555cb6bdb01a9c2ff",
+      "bytes": 3350
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "sha256": "7dd7cfa459e88e924f57d4ff506c5acf4d660dd1dd381edb30551b17b7b90beb",
+      "bytes": 5082
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "sha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13",
+      "bytes": 5126
+    },
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "sha256": "fe1f09c1065ef9d1172b5f785504acc0ae6358e3da589ee569fa37acc20aac2a",
+      "bytes": 5349
+    },
+    {
+      "path": "apps/server/src/assistant-stream/stream.test.ts",
+      "sha256": "ebecedbb2e8ab9daafd9869e2f13831fc69adc319607d665b07587428dbd5ce4",
+      "bytes": 24756
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/chat06/boundary-green.txt",
+      "sha256": "61bc0e7f6fe111962c9c635057d5508649b242226cc870166a255b3eb29f48d0",
+      "bytes": 330
+    },
+    {
+      "path": "docs/evidence/chat06/boundary-red.txt",
+      "sha256": "57de5de57f0fc077331ed123556eca445950ea2dc3bade24139edfba5f35c54f",
+      "bytes": 2782
+    },
+    {
+      "path": "docs/evidence/chat06/checks-before-integrity-refinement.txt",
+      "sha256": "13bc6ecdb55763e6298c1c4eef43c8037d725e40a04d3863cfef4c5de4065318",
+      "bytes": 1790
+    },
+    {
+      "path": "docs/evidence/chat06/checks-final.txt",
+      "sha256": "835c8e95e4e0dd761829914d264eda45e25f0e409b6d212df726e1da1e038184",
+      "bytes": 1680
+    },
+    {
+      "path": "docs/evidence/chat06/checks-first.txt",
+      "sha256": "b91b820657428d7cae1a9b845aee1ac262fcbdd4e6a2fa4c55e4c4c5f810140a",
+      "bytes": 1248
+    },
+    {
+      "path": "docs/evidence/chat06/claim-take.json",
+      "sha256": "c31a7f96e35a17c77f9825108bd827f1b5e0c033a3d8312918f55f46c214ba17",
+      "bytes": 908
+    },
+    {
+      "path": "docs/evidence/chat06/cleanup.json",
+      "sha256": "cb57498b607b07b66362f322fcdfea15b62a82dfb4d3b10d81ba35c0efaf41fa",
+      "bytes": 84
+    },
+    {
+      "path": "docs/evidence/chat06/closure-first.txt",
+      "sha256": "acd9a55469e94d7095faf51d620cfd1a9d4fb4066ee126ec29b6e783931fe9ea",
+      "bytes": 1089
+    },
+    {
+      "path": "docs/evidence/chat06/domain-first.txt",
+      "sha256": "d314d7f52cba1eda91bc545ee1ba3e227b3df1faa1281c34aa036ad2a84138ae",
+      "bytes": 401
+    },
+    {
+      "path": "docs/evidence/chat06/http-first-green.txt",
+      "sha256": "3ecad67c681a025b28c6e1258c2e82747efb5542a4cc49035c6fa99450b86bb8",
+      "bytes": 329
+    },
+    {
+      "path": "docs/evidence/chat06/http-red.txt",
+      "sha256": "1a1d170b026c7055ffa6e5ccc27ab6702df12f4cb9ee10c0a78568014e1020e9",
+      "bytes": 1048
+    },
+    {
+      "path": "docs/evidence/chat06/integrity-red.txt",
+      "sha256": "d3cddc4caa113bdda4ffdc6a35a2e5cdb2226b91381e85ebbb0fd710c0a4c81e",
+      "bytes": 5571
+    },
+    {
+      "path": "docs/evidence/chat06/mapper-expanded.txt",
+      "sha256": "938e4eeeaa75d51fe0f547b05fff71cd6c03637057b9dca47d21c2deabe9989d",
+      "bytes": 327
+    },
+    {
+      "path": "docs/evidence/chat06/mapper-first-green.txt",
+      "sha256": "cfa14f601f4920dd3f2433c2ab2196bc74bac594275638a24364bc57f9166117",
+      "bytes": 322
+    },
+    {
+      "path": "docs/evidence/chat06/mapper-red.txt",
+      "sha256": "785bcd8fe5286963f044c59baf712d5b4567a31769e80be8da46f95d077b96ee",
+      "bytes": 872
+    },
+    {
+      "path": "docs/evidence/chat06/previous-scope-amend.json",
+      "sha256": "f3a12df5f688a3d456b3cc4adb7b8a0660f125b75a862823e3989d63e60d1076",
+      "bytes": 755
+    },
+    {
+      "path": "docs/evidence/chat06/sdk-source.json",
+      "sha256": "22b1056fa8fdc6d61845018b83deffb21220cd23ff515ea26cd23e438916b9e9",
+      "bytes": 1115
+    },
+    {
+      "path": "docs/evidence/chat06/typecheck-before-integrity-refinement.txt",
+      "sha256": "61385e17360f0dbe026c13d9266286d91195a593c589210f4a70048f68876957",
+      "bytes": 111
+    },
+    {
+      "path": "docs/evidence/chat06/typecheck-final.txt",
+      "sha256": "61385e17360f0dbe026c13d9266286d91195a593c589210f4a70048f68876957",
+      "bytes": 111
+    },
+    {
+      "path": "docs/evidence/chat06/typecheck-first.txt",
+      "sha256": "e68ce5bf38b020eac979a9010c340d7aed76da67d43ed84af098376bc720778c",
+      "bytes": 394
+    },
+    {
+      "path": "docs/evidence/chat06/wire-bytes.json",
+      "sha256": "a41e737f89eb78cdfe0277f0cef8b4a73bdc534f6559d44059741a25d4739f58",
+      "bytes": 231
+    }
+  ],
+  "limitations": [
+    "injected SDK only",
+    "presentation policy, not provider identity",
+    "no Web capability flip or conversation write",
+    "unflushed tail not durable",
+    "logical JSON bytes, not WAL or provider traffic",
+    "production 022/client/mount pending Lead"
+  ]
+}

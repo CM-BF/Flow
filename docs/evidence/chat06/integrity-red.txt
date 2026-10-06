@@ -1,0 +1,84 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream
+
+ ❯ apps/server/src/assistant-stream/stream.test.ts (19 tests | 1 failed | 18 skipped) 1444ms
+   ↓ makes durable root text readable before final through task-bound owner patch and block routes
+   ↓ rejects cross-task block/attempt reads and keeps stream endpoints owner-only
+   ↓ rejects offset/revision/hash/session conflicts atomically and preserves ordered idempotent patches through restart
+   ↓ transfers each text byte once across bounded patch pages and reconnects without growing-prefix reads
+   ↓ retains the persisted prefix with interrupted state after cancelled
+   ↓ retains the persisted prefix with interrupted state after failed
+   ↓ retains the persisted prefix with interrupted state after uncertain
+   ↓ streams injected SDK text through outbox before result and preserves success semantics
+   ↓ streams injected SDK text through outbox before result and preserves failure semantics
+   ↓ streams injected SDK text through outbox before result and preserves cancel semantics
+   ↓ recovers a text outbox after lost acknowledgement before-save and center restart
+   ↓ recovers a text outbox after lost acknowledgement after-save and center restart
+   ↓ settles no-tool drafts once in the final transaction and never appends or accepts later patches
+   ↓ does not invent a replacement mapping for source-gap or aborted text; final still remains readable
+   ↓ rejects over-limit durable bytes and preserves its acknowledged prefix
+   ↓ keeps final and settlement atomic when a forged tool boundary lacks supporting native input
+   ↓ detects a text block crossing an ordered tool boundary instead of guessing a replacement set
+   ↓ rolls back all preceding text and final facts when a marker identity fails in their batch
+   × refuses corrupted persisted patch data through the active incremental read route 135ms
+ ❯ apps/runner/src/assistant-stream/stream.test.ts (11 tests | 1 failed | 10 skipped) 7ms
+   ↓ root text survives full single-block frames arriving before stop without double append
+   ↓ preserves text before tools, later root messages and multiple text block indexes; excludes children/thinking
+   ↓ handles duplicate wire identity, abort and superseded complete blocks without declaring turn success
+   ↓ bounds sealed UTF-8 patches and attempt content, with explicit truncation
+   ↓ missing start and a conflicting full block fail closed without inventing source identity
+   ↓ timer emits text while SDK next is pending, and keeps only one provider read outstanding
+   ↓ normal close and ordinary failure flush known text as incomplete; cancellation returns promptly
+   ↓ seals buffered text before the actual root tool boundary and leaves child tools out
+   ↓ late aborted complete frame makes a uniquely identified stopped block incomplete
+   ↓ contract rejects contradictory block completion flags and non-scalar/NUL text before storage
+   × a missing complete block frame cannot silently certify a possibly gapped prefix 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/assistant-stream/stream.test.ts > a missing complete block frame cannot silently certify a possibly gapped prefix
+AssertionError: expected { type: 'assistant-stream', …(14) } to match object { phase: 'incomplete', …(2) }
+(12 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "phase": "incomplete",
+-   "reason": "source-gap",
++   "phase": "block-complete",
++   "reason": null,
+    "text": "observed",
+  }
+
+ ❯ apps/runner/src/assistant-stream/stream.test.ts:116:22
+    114|   const stream=new AssistantTextAccumulator();stream.observe(begin('mi…
+    115|   const stopped=stream.observe(frame({type:'content_block_stop',index:…
+    116|   expect(stopped[0]).toMatchObject({phase:'incomplete',reason:'source-…
+       |                      ^
+    117| });
+    118| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/assistant-stream/stream.test.ts > refuses corrupted persisted patch data through the active incremental read route
+AssertionError: {"taskId":"66bd817d-ea0c-4ab8-96b7-490ecb8e2310","attemptId":"86a8f4e2-5185-467b-8ef4-4609e85a4d10","patches":[{"text":"tampered","type":"assistant-stream","phase":"streaming","reason":null,"source":"claude.sdk.stream","revision":1,"streamId":"706978323a440950e74a50389eff39f3388af4b6111f9ac61821bc61e603c111","fromBytes":0,"truncated":false,"blockIndex":0,"prefixDigest":"0682c5f2076f099c34cfdd15a9e063849ed437a49677e6fcc5b4198c76575be5","nativeMessageId":"acb3b2d4-3ecc-45a2-9113-bda6a0777e28","nativeSessionId":"1bec9f30-ca02-47dd-9871-3ef80e3690e6","parentToolUseId":null,"sourceMessageId":"39d64d1b-d203-4075-b26a-ff2e511e9db4","taskId":"66bd817d-ea0c-4ab8-96b7-490ecb8e2310","attemptId":"86a8f4e2-5185-467b-8ef4-4609e85a4d10","eventId":"481ccc91-5872-4405-bf04-846d6ce38489","sequence":2,"createdAt":"2026-10-06T06:36:44.433Z"}],"nextCursor":2,"hasMore":false}: expected 200 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 200
+
+ ❯ request apps/server/src/assistant-stream/stream.test.ts:36:81
+
+ ❯ apps/server/src/assistant-stream/stream.test.ts:248:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 28 skipped (30)
+   Start at  23:36:41
+   Duration  2.86s (transform 783ms, setup 0ms, import 1.19s, tests 1.45s, environment 0ms)
+

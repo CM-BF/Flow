@@ -1,0 +1,60 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream
+
+ ❯ apps/runner/src/assistant-stream/stream.test.ts (10 tests | 2 failed | 8 skipped) 8ms
+   ↓ root text survives full single-block frames arriving before stop without double append
+   ↓ preserves text before tools, later root messages and multiple text block indexes; excludes children/thinking
+   ↓ handles duplicate wire identity, abort and superseded complete blocks without declaring turn success
+   ↓ bounds sealed UTF-8 patches and attempt content, with explicit truncation
+   ↓ missing start and a conflicting full block fail closed without inventing source identity
+   ↓ timer emits text while SDK next is pending, and keeps only one provider read outstanding
+   ↓ normal close and ordinary failure flush known text as incomplete; cancellation returns promptly
+   ↓ seals buffered text before the actual root tool boundary and leaves child tools out
+   × late aborted complete frame makes a uniquely identified stopped block incomplete 4ms
+   × contract rejects contradictory block completion flags and non-scalar/NUL text before storage 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/assistant-stream/stream.test.ts > late aborted complete frame makes a uniquely identified stopped block incomplete
+AssertionError: expected undefined to match object { phase: 'incomplete', …(2) }
+
+- Expected: 
+{
+  "phase": "incomplete",
+  "reason": "aborted",
+  "text": "",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/assistant-stream/stream.test.ts:103:23
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/assistant-stream/stream.test.ts > contract rejects contradictory block completion flags and non-scalar/NUL text before storage
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ apps/runner/src/assistant-stream/stream.test.ts:109:99
+    107|   const stream=new AssistantTextAccumulator();stream.observe(begin('sc…
+    108|   const patch={...stream.flush()[0],id:randomUUID(),sequence:1};
+    109|   expect(runnerEventSchema.safeParse({...patch,phase:'block-complete',…
+       |                                                                                                   ^
+    110|   expect(runnerEventSchema.safeParse({...patch,text:'\u0000'}).success…
+    111|   expect(runnerEventSchema.safeParse({...patch,text:'\ud800'}).success…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 skipped (10)
+   Start at  23:34:45
+   Duration  175ms (transform 54ms, setup 0ms, import 93ms, tests 8ms, environment 0ms)
+
