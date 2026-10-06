@@ -142,16 +142,27 @@ it("a fresh catalog never sends until explicitly refreshed, and removes subscrip
   expect(catalog.getSnapshot()).toMatchObject({ loaded: true, stale: false, profiles: [], canLoadMore: false }); catalog.dispose();
 });
 
-it("rejects unknown access declarations instead of activating them, while supported access remains exact", async () => {
-  for (const access of ["none", "configured-readonly"] as const) {
-    const allowed = profile(); allowed.configuration.access = access;
-    expect(freezeConversationCreation("Allowed", configuredSelection(allowed)).requested.tools).toBe(access);
+it("retains mixed directory purposes and pagination while only explicit chat access can become creation", async () => {
+  const goal = { ...profile(2), configuration: { ...profile(2).configuration, access: "goal-tools", materialScopeDigest: "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945" } };
+  const unsupported = { ...profile(3), configuration: { ...profile(3).configuration, access: "unsupported-fixture-access" } };
+  const readonly = profile(4); readonly.configuration.access = "configured-readonly";
+  for (const allowed of [profile(), readonly]) expect(freezeConversationCreation("Allowed", configuredSelection(allowed)).requested.tools).toBe(allowed.configuration.access);
+  for (const blocked of [goal, unsupported]) {
+    expect(() => configuredSelection(blocked)).toThrow(/cannot be used for ordinary chat/);
+    expect(() => freezeConversationCreation("Blocked", { kind: "configured", profile: blocked } as never)).toThrow(/cannot be used for ordinary chat/);
   }
-  const unsupported = { ...profile(2), configuration: { ...profile(2).configuration, access: "unsupported-fixture-access" } } as unknown as ExecutionProfile;
-  expect(() => configuredSelection(unsupported)).toThrow();
-  const catalog = createExecutionProfileCatalog({ executionProfiles: async () => ({ profiles: [profile(), unsupported], nextCursor: null }) });
+  const catalog = createExecutionProfileCatalog({ executionProfiles: async ({ after } = {}) => after ? { profiles: [profile(5)], nextCursor: null } : { profiles: [profile(), goal, unsupported, readonly] as ExecutionProfile[], nextCursor: id(4) } });
   await catalog.refresh();
-  expect(catalog.getSnapshot()).toMatchObject({ profiles: [], loaded: false, stale: true });
-  expect(catalog.getSnapshot().error).toBeTruthy();
-  catalog.dispose();
+  expect(catalog.getSnapshot()).toMatchObject({ loaded: true, stale: false, error: null, nextCursor: id(4) });
+  expect(catalog.getSnapshot().profiles.map(item => item.configuration.access)).toEqual(["none", "goal-tools", "unsupported-fixture-access", "configured-readonly"]);
+  await catalog.loadMore(); expect(catalog.getSnapshot().profiles).toHaveLength(5); catalog.dispose();
+});
+
+it.each([
+  { requireReadApproval: true, materialScopeDigest: "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945" },
+  { requireReadApproval: false, materialScopeDigest: "b".repeat(64) },
+])("rejects known invalid goal-tools policy without exposing a partial page", async policy => {
+  const invalid = { ...profile(2), configuration: { ...profile(2).configuration, access: "goal-tools", ...policy } } as unknown as ExecutionProfile;
+  const catalog = createExecutionProfileCatalog({ executionProfiles: async () => ({ profiles: [profile(), invalid], nextCursor: null }) });
+  await catalog.refresh(); expect(catalog.getSnapshot().error).toBeTruthy(); expect(catalog.getSnapshot().profiles).toHaveLength(0); catalog.dispose();
 });

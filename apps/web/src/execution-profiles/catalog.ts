@@ -1,9 +1,9 @@
 import { FlowApiError, type FlowClient } from "@flow/client";
 import { executionProfileReferenceSchema, type ExecutionProfilePage } from "@flow/contracts";
-import { configuredSelection, type Immutable } from "./selection";
+import { readDirectoryProfile, type DirectoryProfile, type Immutable } from "./selection";
 
 export interface ExecutionProfileCatalogSnapshot {
-  readonly profiles: Immutable<ExecutionProfilePage["profiles"]>;
+  readonly profiles: Immutable<DirectoryProfile[]>;
   readonly nextCursor: string | null;
   readonly loading: boolean;
   readonly error: string | null;
@@ -23,7 +23,7 @@ const limit = 20;
 
 function readPage(page: ExecutionProfilePage, after: string | null) {
   if (!Array.isArray(page?.profiles) || page.profiles.length > limit) throw new Error("Invalid execution profile page");
-  const profiles = page.profiles.map(profile => configuredSelection(profile).profile);
+  const profiles = page.profiles.map(readDirectoryProfile);
   let previous = after;
   for (const profile of profiles) {
     if (previous !== null && profile.reference.id <= previous) throw new Error("Execution profile pagination did not advance");

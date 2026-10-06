@@ -5,15 +5,15 @@ import { chromium, expect } from "@playwright/test";
 import { createServer } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import type { ExecutionProfile } from "@flow/contracts";
+import type { DirectoryProfile } from "../src/execution-profiles/selection";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const evidence = fileURLToPath(new URL("../../../docs/evidence/wpf-profile01/", import.meta.url));
 const id = (value: number) => `10000000-0000-4000-8000-${String(value).padStart(12, "0")}`;
-function profile(value: number, connection: number): ExecutionProfile {
+function profile(value: number, connection: number): DirectoryProfile {
   return {
     reference: { id: id(value), runnerId: id(100 + value), configDigest: "a".repeat(64) },
-    configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: connection === 1 ? "configured-alias" : "other-center-alias", thinking: "disabled", permissionMode: "dontAsk", access: value === 1 ? "none" : "configured-readonly", requireReadApproval: value !== 1, materialScopeDigest: "b".repeat(64), limits: { maxTurns: 4, maxBudgetUsd: 1, timeoutMs: 90000 } },
+    configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: connection === 1 ? "configured-alias" : "other-center-alias", thinking: "disabled", permissionMode: "dontAsk", access: value === 1 ? "none" : value === 2 ? "goal-tools" : value === 3 ? "unsupported-fixture-access" : "configured-readonly", requireReadApproval: value > 3, materialScopeDigest: value === 2 ? "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945" : "b".repeat(64), limits: { maxTurns: 4, maxBudgetUsd: 1, timeoutMs: 90000 } },
     source: "runner-configured", availability: "not-probed",
     model: { value: connection === 1 ? "configured-alias" : "other-center-alias", resolvedModel: null, displayName: "Configured model", description: "Fixture declaration", providerCapabilities: "unknown" },
     controls: { model: "select-configured-profile", thinking: "fixed-disabled", effort: "unsupported", access: "configured-policy", queue: false, steer: false }, createdAt: "2026-10-06T04:00:00Z",
@@ -60,8 +60,13 @@ async function main() {
     assert.equal(fixture.requests.length, 1);
     await page.getByLabel("Draft", { exact: true }).fill("Draft remains mine"); await open();
     await expect(page.getByRole("radio")).toHaveCount(21);
+    await expect(page.getByRole("radio").nth(2)).toBeDisabled();
+    await expect(page.getByRole("radio").nth(3)).toBeDisabled();
+    await expect(page.getByText("Cannot be used for ordinary chat", { exact: true })).toHaveCount(2);
     await page.getByRole("radio").nth(1).focus(); await page.keyboard.press("Space");
     await expect(page.getByRole("radio").nth(1)).toBeChecked();
+    await page.keyboard.press("ArrowDown"); await expect(page.getByRole("radio").nth(4)).toBeChecked();
+    await page.getByRole("radio").nth(1).check();
     await page.screenshot({ path: `${evidence}profiles-light.png` });
     await page.request.get(`${fixture.url}/fixture-control?fail=503`);
     await page.getByRole("button", { name: "Load more profiles" }).click();
@@ -69,7 +74,7 @@ async function main() {
     await expect(page.getByRole("radio")).toHaveCount(21);
     await page.getByRole("button", { name: "Load more profiles" }).click(); await expect(page.getByRole("radio")).toHaveCount(22);
     await expect(page.getByRole("button", { name: "Load more profiles" })).toHaveCount(0); assert.equal(fixture.requests.length, 3);
-    checks.push("Failed later page retains choices and retry successfully fetches that page; Actual FlowClient HTTP pages: 20 then 1; identical model labels preserve 21 distinct runner/profile choices; keyboard native radio selection");
+    checks.push("Failed later page retains choices and retry successfully fetches that page; Actual FlowClient HTTP pages: 20 then 1; identical model labels preserve distinct runner/profile declarations; goal-tools/unknown stay visible and disabled; keyboard skips disabled entries");
     await close(); await expect(page.getByRole("button", { name: /^Execution profile:/ })).toBeFocused();
     await expect(page.getByLabel("Draft", { exact: true })).toHaveValue("Draft remains mine");
     checks.push("Escape returns focus to trigger and changing selection preserves unsent draft; no send endpoint exists");
@@ -92,7 +97,7 @@ async function main() {
     checks.push("Dark 390px/reduced-motion dialog has no horizontal overflow; pending receipt locks exact frozen creation before any summary");
 
     await page.getByRole("button", { name: "New connection" }).click(); await expect(page.getByTestId("catalog-state")).toContainText("connection 2"); await expect(page.getByTestId("selection")).toHaveText("legacy-default");
-    await open(); await expect(page.getByText("Requested model: other-center-alias")).toHaveCount(20); await page.getByRole("radio").nth(2).check(); await close();
+    await open(); await expect(page.getByText("Requested model: other-center-alias")).toHaveCount(20); await page.getByRole("radio").nth(4).check(); await close();
     await page.getByRole("button", { name: "Show created lock" }).click(); await expect(page.getByRole("region", { name: "Locked execution profile" })).toContainText("Conversation profile locked");
     await expect(page.getByTestId("selection")).toContainText('"tools":"configured-readonly"');
     checks.push("New connection has new catalog and explicit default; created lock reports selected access without claiming effective settings");
