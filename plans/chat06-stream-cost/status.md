@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 测量入口已独审通过，等待常驻服务操作结束后执行一次有界矩阵 |
+| 当前产出 | 测量入口已独审通过，服务操作窗口已结束，准备执行唯一矩阵 |
 | 下一可用交付 | 提交三组真实PG成本结果及请求/查询/哈希/持久化完整证据 |
-| 当前阻塞 | 等待GO或Execution Lead明确SVC本次操作窗口已结束；解除后最迟08:15 UTC开始唯一矩阵 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED仅入口target4951准备；实际PG结果待审 |
 
@@ -27,7 +27,7 @@
 | --- | --- | --- | --- |
 | CHAT06P01-01 | completed | chat06p01_owner | [方法](../../experiments/assistant-stream-cost/README.md)、[source](../../docs/evidence/chat06p01/source-map.json) |
 | CHAT06P01-02 | completed | chat06p01_owner | [readiness-manifest](../../docs/evidence/chat06p01/readiness-manifest.json)：10 distinct pure/noEmit0/import-only/syntax；没有PG测量 |
-| CHAT06P01-03 | pending | chat06p01_owner / mika | 条件GO已到；SVC结束回执尚未到，未运行PG测量 |
+| CHAT06P01-03 | pending | chat06p01_owner / mika | 条件GO与SVC结束回执均到；提交授权metadata后运行唯一矩阵 |
 | CHAT06P01-04 | pending | chat06p01_owner | 未产生实测 |
 | CHAT06P01-05 | pending | chat06p01_owner / mika / Lead | pure片段已独审；完整准备/实测待独审，main未接收 |
 
@@ -56,3 +56,5 @@ claim ff4d1ec7-ecd2-4154-94a8-99804b3c1b49 v1 ACTIVE，COMMITTED 2026-10-06T07:1
 2026-10-06T07:39:07.599519+00:00 聚合核验：GET /api/snapshot等待5秒超时，未收到快照；不推断当前聚合状态/claim变化。唯一status已更新，待下一可用只读核验；[回执](../../docs/evidence/chat06p01/dashboard-readiness.json)。不重启服务、不改全局索引。
 
 2026-10-06T07:45:37.810501+00:00：Mika已限定APPROVED入口，GO已授权单次3task/84patch/30秒，无需全队静默；启动前必须收到SVC本次操作结束明确回执，最迟08:15 UTC开始，否则不启动。配置明确lease300000ms、automaticQueueScan=false且scheduler仍开；保留背景load/观察开销，0runner/provider/model/云。源码/config保持4951。dashboard因主队SVC更新仍留先前UNKNOWN，不重复请求或重启服务。
+
+2026-10-06T07:46:54.303710+00:00：收到Mika转Execution Lead明确SVC02_OPERATION_CLOSED（07:45:26三服务ready），启动条件已满足。即将按4951固定source执行一次，不要求全队静默；完整具体来源见window-authorization。
