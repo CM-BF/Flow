@@ -14,10 +14,12 @@
 
 ## TODO
 
-- [ ] **R01-01** 常驻领取、心跳、独立租约gate和优雅停机
-- [ ] **R01-02** 稳定事件序列、有界buffer、响应丢失重报
-- [ ] **R01-03** fixture各状态、决策、取消、产物和指定verifier
-- [ ] **R01-04** 公开runner/harness测试、clean-code与提交交付
+- [x] **R01-01** 常驻领取、心跳、独立租约gate和优雅停机
+- [x] **R01-02** 稳定事件序列、有界buffer、响应丢失重报
+- [x] **R01-03** fixture各状态、决策、取消、产物和指定verifier
+- [x] **R01-04** 公开runner/harness测试、clean-code与提交交付
+
+以上勾选表示功能分支交付，证据绑定 `b393a5196b687bf81fd65ee7785ee198006e344b`；独立review与main集成仍待执行，计划状态保持 `in-progress`。
 
 ## 验证和交付
 

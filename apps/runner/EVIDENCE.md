@@ -2,6 +2,8 @@
 
 Owner：runner_owner / gpt-6-astra。Worktree：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner`；branch：`codex/m1-runner`。基线 F00 `542f70b`，已同步 client `3995ec1` 与计划协作 `edca9fc`。本记录的开发结果不代表 main 已集成。
 
+实现提交：`b393a5196b687bf81fd65ee7785ee198006e344b`。下列最终测试对应该提交内的源码；提交后仅补充交付记录，不改变实现或测试。
+
 ## 技能发现与实际应用
 
 - 任务/stack：Node 24、TypeScript、Vitest、HTTP runner/harness 生命周期。已先读本地 `/Users/citrine/.agents/skills/find-skills/SKILL.md`，查本地技能、skills.sh，再使用 skills CLI 1.7.0 查找 `claude agent sdk typescript`。
