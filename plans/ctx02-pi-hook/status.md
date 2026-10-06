@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 05:05:27 UTC |
+| 最近更新时间 | 2026-10-06 05:06:37 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-pi-hook-probe |
 | Branch | codex/context-pi-hook-probe |
-| 工作基线 / HEAD | e802854f346a81749efdef3f36737b16141b98ef |
-| 工作树dirty状态 | 默认负结果9733f4b已固定；factory对照待提交；原始JSON不覆写 |
+| 工作基线 / HEAD | base e802854f346a81749efdef3f36737b16141b98ef；固定实现8abe014f61df5ed7e1548e30d53538e7c4580c4c |
+| 工作树dirty状态 | 固定实现已提交；本次仅target/review metadata；raw不覆写 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：factory 7组观察完成；default加载失败如实保留，未知版本接受是采用缺口；无模型 |
+| 检查状态 | PASSED 8abe014f61df5ed7e1548e30d53538e7c4580c4c：factory 7组观察完成；default加载失败如实保留，未知版本接受是采用缺口；无模型 |
 | Review | NOT_STARTED |
 | 已集成main状态 / HEAD | 未集成；本实验尚未实现 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | 8abe014f61df5ed7e1548e30d53538e7c4580c4c |
 | 实现范围 | experiments/context-pi-hook/ |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -29,6 +29,8 @@
 | CTX02-03 | completed | runner_owner | 07实际重开、缺失重建、future仅warn并重写、owner/disabled |
 | CTX02-04 | in-progress | runner_owner | 固定source/raw后交独立review；NOT_STARTED |
 
-唯一status已发Lead登记；dashboard待首次聚合核对。claim 8c5882e2-17c5-43c2-bca8-691fbfb111fa v1，scope仅本计划/实验/证据。
+唯一status已发Lead登记；2026-10-06 05:06:58 UTC实际聚合live/current、3/4、checks passed、review not_started、无issues，源码unchanged。claim 8c5882e2-17c5-43c2-bca8-691fbfb111fa v1，scope仅本计划/实验/证据。
 
 2026-10-06 05:05:27 UTC 第二入口获Root/Lead明确授权；固定7份raw，07为7组完成观察，6组断言+1组实际存储行为。默认入口不兼容、未知sidecar仅warn接受、同进程重开、手写summary/无provider限制见[证据](../../docs/evidence/ctx02/README.md)。这不是生产集成或真实模型验收。
+
+[Dashboard回执](../../docs/evidence/ctx02/dashboard-receipt.json)记录独立聚合观察，不覆盖本status。固定实现8abe014f61df5ed7e1548e30d53538e7c4580c4c交Root只读方法review；保持claim v1，待review/可能修复，不再重复负载。

@@ -1,0 +1,68 @@
+{
+  "id": "CTX02",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T05:06:58.317Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-pi-hook-probe/plans/ctx02-pi-hook/status.md",
+    "syncedAt": "2026-10-06T05:06:58.328Z",
+    "stale": false,
+    "ageHours": 0.005924444444444445
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/context-pi-hook-probe",
+    "head": "8abe014f61df5ed7e1548e30d53538e7c4580c4c",
+    "dirty": true,
+    "changedFiles": 2,
+    "observedAt": "2026-10-06T05:06:58.732Z"
+  },
+  "progress": {
+    "completed": 3,
+    "total": 4
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "8abe014f61df5ed7e1548e30d53538e7c4580c4c"
+  },
+  "implementationProof": {
+    "target": "8abe014f61df5ed7e1548e30d53538e7c4580c4c",
+    "head": "8abe014f61df5ed7e1548e30d53538e7c4580c4c",
+    "scopes": [
+      "experiments/context-pi-hook"
+    ],
+    "observedAt": "2026-10-06T05:06:58.792Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "plans/ctx02-pi-hook/review.md",
+      "plans/ctx02-pi-hook/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "main": {
+    "record": "未集成；本实验尚未实现",
+    "recordedHead": null,
+    "target": "8abe014f61df5ed7e1548e30d53538e7c4580c4c",
+    "mainHead": "82eaf508a88d8e0c21e3424dade33c86811905c6",
+    "scopes": [
+      "experiments/context-pi-hook"
+    ],
+    "observedAt": "2026-10-06T05:06:58.733Z",
+    "current": false,
+    "historicalIntegrated": false,
+    "method": "not-contained",
+    "scopeEqual": false,
+    "dirtyScopePaths": [],
+    "reason": "main 声明范围与目标不同，或存在未提交变化"
+  },
+  "generatedAt": "2026-10-06T05:06:58.328Z",
+  "checks": {
+    "state": "passed",
+    "target": "8abe014f61df5ed7e1548e30d53538e7c4580c4c",
+    "record": "PASSED 8abe014f61df5ed7e1548e30d53538e7c4580c4c：factory 7组观察完成；default加载失败如实保留，未知版本接受是采用缺口；无模型"
+  },
+  "note": "仅CTX02聚合观察；metadata提交前dirty不是源码变更，不是另一进度事实源。"
+}
