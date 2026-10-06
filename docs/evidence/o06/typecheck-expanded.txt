@@ -1,0 +1,20 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-graph-runs
+> tsc --noEmit
+
+apps/server/src/goal-graph-runs/runs.test.ts(156,33): error TS2345: Argument of type '{ expectedProjectRevision: number; reason: string; additions: { key: string; title: string; dependencies: { kind: string; nodeId: any; expectedVersion: number; }[]; }[]; }' is not assignable to parameter of type '{ expectedProjectRevision: number; reason: string; additions: { key: string; title: string; dependencies: { kind: string; key: string; }[]; }[]; }'.
+  Types of property 'additions' are incompatible.
+    Type '{ key: string; title: string; dependencies: { kind: string; nodeId: any; expectedVersion: number; }[]; }[]' is not assignable to type '{ key: string; title: string; dependencies: { kind: string; key: string; }[]; }[]'.
+      Type '{ key: string; title: string; dependencies: { kind: string; nodeId: any; expectedVersion: number; }[]; }' is not assignable to type '{ key: string; title: string; dependencies: { kind: string; key: string; }[]; }'.
+        Types of property 'dependencies' are incompatible.
+          Type '{ kind: string; nodeId: any; expectedVersion: number; }[]' is not assignable to type '{ kind: string; key: string; }[]'.
+            Property 'key' is missing in type '{ kind: string; nodeId: any; expectedVersion: number; }' but required in type '{ kind: string; key: string; }'.
+apps/server/src/goal-graph-runs/runs.test.ts(157,93): error TS2322: Type '{ nodeId: any; expectedVersion: number; }' is not assignable to type 'never'.
+apps/server/src/goal-graph-runs/runs.test.ts(158,44): error TS2345: Argument of type '{ expectedProjectRevision: number; reason: string; additions: { key: string; title: string; dependencies: { kind: string; nodeId: any; expectedVersion: number; }[]; }[]; }' is not assignable to parameter of type '{ expectedProjectRevision: number; reason: string; additions: { key: string; title: string; dependencies: { kind: string; key: string; }[]; }[]; }'.
+  Types of property 'additions' are incompatible.
+    Type '{ key: string; title: string; dependencies: { kind: string; nodeId: any; expectedVersion: number; }[]; }[]' is not assignable to type '{ key: string; title: string; dependencies: { kind: string; key: string; }[]; }[]'.
+      Type '{ key: string; title: string; dependencies: { kind: string; nodeId: any; expectedVersion: number; }[]; }' is not assignable to type '{ key: string; title: string; dependencies: { kind: string; key: string; }[]; }'.
+        Types of property 'dependencies' are incompatible.
+          Type '{ kind: string; nodeId: any; expectedVersion: number; }[]' is not assignable to type '{ kind: string; key: string; }[]'.
+            Property 'key' is missing in type '{ kind: string; nodeId: any; expectedVersion: number; }' but required in type '{ kind: string; key: string; }'.
+ ELIFECYCLE  Command failed with exit code 2.

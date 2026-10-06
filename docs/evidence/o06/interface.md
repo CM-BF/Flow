@@ -1,6 +1,6 @@
 # O06 公开 Interface
 
-初版合同 commit `cf3f802`（本文件与命名结果类型一起固定后以该提交为准）。领域基于 main eb14991a170b72d7d974428b2e440e1faada2c1e；017 模块独立挂载，当前未声明生产接入。类型见 packages/contracts/src/goal-graph-runs.ts。
+合同 commit `f48434d8d9ca53813d2bfaf0783135193121138e`（初版cf3f8028a566226b7daa817d7dfea618085ac749）；完整领域target `f6ba02e8898ed1539786de381c41402d342e59a8`。领域基于 main eb14991a170b72d7d974428b2e440e1faada2c1e；017 模块独立挂载，当前未声明生产接入。类型见 packages/contracts/src/goal-graph-runs.ts。
 
 共享挂载：先既有 012/013/014，再 `migrateGoalGraphRuns(pool)`（版本017幂等）；在 Fastify ready/listen 前 `registerGoalGraphRunRoutes(app,pool,boss)`。复用 createServer 全局 owner/runner auth。调用方不能提供 SQL 表名/actor。无新环境变量或依赖。
 
