@@ -11,12 +11,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 5b1d3003c540667da0389c1febb1554ee4204e5f（旧结果已封存；新cause文档HEAD由Git核） |
-| 工作树dirty状态 | 旧源码/raw冻结；新cause源码与25distinct纯检查固定准备；旧profile/raw冻结，0新target。 |
+| 工作树dirty状态 | 旧源码/raw冻结；新cause source42d8707d/input/manifest已固定准备，25distinct纯检查；旧profile/raw冻结，0新target。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | source d17ad56a / combo1f32735e629873196971ea509b767ddf0436949e APPROVED；唯一窗口已消费 |
+| 实现目标 | cause source42d8707d32c8f7a26c97224a0807f3d386ba0a82；25distinct纯检查，组合待独审；go-node-loader-cause-once NOT_OPEN |
 | 实现范围 | 新node-rootliteral实验；diagnostics/run-diagnostics.mjs导出/计量私有helper；isolation/compose-canary.mjs固定场景/资源清理接缝；本计划与证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
