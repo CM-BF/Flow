@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:38 UTC / main80ba95ad70cdf724251be4d88130b6bac56d3606 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:53 UTC / main253035e11ab18ba33095c018949f856442021d49 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已纳入真实工程交付目标，终端客户端和执行工具接入进度可见。 |
+| 当前产出 | 看板已登记网页独立发布后继，终端和执行工具接入继续由各自进度展示。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -49,3 +49,5 @@
 实际部署：2026-10-06 09:09:25.827 UTC，原4320自有进程身份核对后正常换载，main1737cd6，111源；本批十项current=true/issues=[]，见 [mature-registry-live.json](../../docs/evidence/d05/mature-registry-live.json)。新R05B刚领取在下一正常登记批，未把领取状态当已登记。个人静态预览保持原b1c/v12。
 
 2026-10-06 09:36:30 UTC：确认自有4320进程身份后正常换载main80ba95；117来源，ENG-001/R05C/TUI01A唯一权威source均current、人读完整、parse errors[]与issues[]。见[实际部署回执](../../docs/evidence/d05/engineering-native-registry-live.json)。只登记与看板部署，不改固定架构图或个人61227/61228，也未刷新用户标签。
+
+2026-10-06 09:53 UTC：SVC04首canonical3d36bc3三件套实际存在，登记为第118个唯一source；仅来源/链接/解析检查，无产品或个人部署动作。新快照发布后实采一次，前次117源回执保留。
