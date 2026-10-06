@@ -40,6 +40,7 @@ export interface ConversationCapabilities {
 }
 export interface ConversationSummary extends ConversationCreation {
   id: string;
+  /** Admission CAS only. Execution updates require task.updatedAt/reply-source refresh. */
   revision: number;
   createdAt: string;
   updatedAt: string;
