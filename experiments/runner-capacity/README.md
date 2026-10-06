@@ -1,6 +1,6 @@
 # S01 本机零模型执行合同
 
-这是可逐步执行的实验合同；已有四任务功能smoke入口，尚未运行，没有容量结果。只消费固定main `115b0dbdfa02db5483f9e9699852682ce699633c` 的真实 `createServer`、HTTP、`runRunner`、`EventOutbox`。所有新增代码局限本目录；不得把实验内改过的调度逻辑称产品。参数以 [contract.json](contract.json) 为准。
+这是可逐步执行的实验合同；已有四任务功能smoke入口，修复复核通过；没有容量结果。只消费固定main `115b0dbdfa02db5483f9e9699852682ce699633c` 的真实 `createServer`、HTTP、`runRunner`、`EventOutbox`。所有新增代码局限本目录；不得把实验内改过的调度逻辑称产品。参数以 [contract.json](contract.json) 为准。
 
 ## 先回答的问题与最小场景
 
@@ -53,3 +53,5 @@ finally顺序：停止新增任务和读循环→关闭本人浏览器/代理连
 正式运行必须绑定实施commit与固定基线及当时实际source hash。功能入口为 `experiments/runner-capacity/smoke.ts`，需要本机专用PostgreSQL的 `FLOW_S01_ADMIN_URL`（不输出值）。从本worktree以Node24运行：`node --import tsx experiments/runner-capacity/smoke.ts <全新证据标签>`，并设置 `TSX_TSCONFIG_PATH=experiments/runner-capacity/tsconfig.json`。目录拒绝覆盖；4任务/2个runner，30秒含清理，工作预算20秒。正式场景和故障/浏览器入口尚未实现。runner HTTP计量包装会完整读取响应后重新构造Response，此观察开销属于实验配置，不能将延迟当无观察器的生产值。
 
 首轮功能结果整体FAIL：固定bfe49a4的smoke-first因校验SQL引用不存在的attempt.created_at失败；4任务完成与24事件核验、ACK/outbox/资源清理通过只是部分事实。原结果不改写。修复依据实际schema并由独立worker核对首次租期推导方法，第二轮另用新目录。
+
+修复复核固定实现 `53c8713cb8e6a3c9b7d869c896656dad4e7a086d`：smoke-repair整体PASS，4任务/24事件/4工具，源前后hash一致，3自有进程exit0、DB与outbox清空。两次smoke总8任务额度已耗尽，不再运行；正式后继未执行。见 [固定证据](../../docs/evidence/s01/smoke-manifest.json)。

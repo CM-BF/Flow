@@ -17,3 +17,5 @@ Execution Lead 与 Goal Owner 已独立读取合同 target `a553f3f71db29243b698
 Mika回应（2026-10-06 06:38 UTC）：补终态ACK等待、待发文件为空、runner退出IPC flush；IPC失败仍走kill/reap，清理runner并行且为center/DB留预算；readiness/HTTP使用共同work deadline，响应流1MiB上限；工具按task唯一性和摘要检查，开跑前后源码hash比对。修复后TypeScript noEmit0。首次功能smoke尚未运行，正式review须绑定后继实现commit与真实结果。
 
 首次功能smoke暴露P2：attempt表无created_at或claimed_at，静态审查遗漏；原bfe49a4整体FAIL保留。Mika修复为首次claim不可变租期观测与实际completed_at/task.created_at同clock推导，worker已只读确认runners.ts计算来源，要求逐attempt唯一初次记录及量化边界保守判定，避免误称精确时间。正式复审待后继固定target及一次获准复核结果。
+
+2026-10-06 06:43 UTC：功能实现复审target `53c8713cb8e6a3c9b7d869c896656dad4e7a086d`，[smoke-manifest](../../docs/evidence/s01/smoke-manifest.json)绑定首轮失败及修复复核。修复复核PASS，不将一次功能测试耗时作为容量结果；独立worker正在核源码、原始event/ACK/清理与哈希。正式review结论未收到前不标APPROVED。
