@@ -1,0 +1,249 @@
+{
+  "at": "2026-10-06T14:16:25.200731+00:00",
+  "fixedBaseCandidate": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "oldRootDesignBase": "d4a2e0a7f255a2c68b99c7aafbc006c7bc3b3b50",
+  "sourceChecks": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+      "equalsRootDesign": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "equalsRootDesign": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "equalsRootDesign": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "equalsRootDesign": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/documents.mjs",
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "equalsRootDesign": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "equalsRootDesign": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+      "equalsRootDesign": true
+    }
+  ],
+  "candidateIdentity": "WPF-DPERF04",
+  "existingClaimsForCandidate": [],
+  "coreScopeConflictsAtObservation": [],
+  "ledgerObservedAt": "2026-10-06T14:16:25.178Z",
+  "trackedSourceCheckoutEstimate": {
+    "selection": [
+      "apps/execution-dashboard/",
+      "AGENTS.md",
+      "package.json",
+      "pnpm-workspace.yaml",
+      "pnpm-lock.yaml",
+      "plans/AGENTS.md",
+      "plans/README.md",
+      ".gitignore"
+    ],
+    "files": 44,
+    "logicalBytes": 667441,
+    "rounded4096Bytes": 761856,
+    "manifest": [
+      {
+        "path": ".gitignore",
+        "bytes": 108
+      },
+      {
+        "path": "AGENTS.md",
+        "bytes": 17226
+      },
+      {
+        "path": "apps/execution-dashboard/README.md",
+        "bytes": 10657
+      },
+      {
+        "path": "apps/execution-dashboard/package.json",
+        "bytes": 362
+      },
+      {
+        "path": "apps/execution-dashboard/public/app.js",
+        "bytes": 18589
+      },
+      {
+        "path": "apps/execution-dashboard/public/architecture-data.js",
+        "bytes": 41828
+      },
+      {
+        "path": "apps/execution-dashboard/public/architecture.css",
+        "bytes": 4082
+      },
+      {
+        "path": "apps/execution-dashboard/public/architecture.js",
+        "bytes": 7689
+      },
+      {
+        "path": "apps/execution-dashboard/public/index.html",
+        "bytes": 6397
+      },
+      {
+        "path": "apps/execution-dashboard/public/styles.css",
+        "bytes": 8947
+      },
+      {
+        "path": "apps/execution-dashboard/src/aggregate.mjs",
+        "bytes": 7025
+      },
+      {
+        "path": "apps/execution-dashboard/src/coordination/cli.mjs",
+        "bytes": 1248
+      },
+      {
+        "path": "apps/execution-dashboard/src/coordination/input.mjs",
+        "bytes": 5970
+      },
+      {
+        "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+        "bytes": 7058
+      },
+      {
+        "path": "apps/execution-dashboard/src/documents.mjs",
+        "bytes": 2917
+      },
+      {
+        "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+        "bytes": 2396
+      },
+      {
+        "path": "apps/execution-dashboard/src/human.mjs",
+        "bytes": 4459
+      },
+      {
+        "path": "apps/execution-dashboard/src/proof.mjs",
+        "bytes": 6883
+      },
+      {
+        "path": "apps/execution-dashboard/src/registry.mjs",
+        "bytes": 21146
+      },
+      {
+        "path": "apps/execution-dashboard/src/server.mjs",
+        "bytes": 4034
+      },
+      {
+        "path": "apps/execution-dashboard/src/status.mjs",
+        "bytes": 5238
+      },
+      {
+        "path": "apps/execution-dashboard/src/task-links.mjs",
+        "bytes": 5903
+      },
+      {
+        "path": "apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+        "bytes": 10764
+      },
+      {
+        "path": "apps/execution-dashboard/test/architecture.test.mjs",
+        "bytes": 23045
+      },
+      {
+        "path": "apps/execution-dashboard/test/browser-check.mjs",
+        "bytes": 11316
+      },
+      {
+        "path": "apps/execution-dashboard/test/coordination-browser.mjs",
+        "bytes": 5394
+      },
+      {
+        "path": "apps/execution-dashboard/test/coordination.test.mjs",
+        "bytes": 11486
+      },
+      {
+        "path": "apps/execution-dashboard/test/dashboard.test.mjs",
+        "bytes": 8992
+      },
+      {
+        "path": "apps/execution-dashboard/test/delivery-stage.test.mjs",
+        "bytes": 3802
+      },
+      {
+        "path": "apps/execution-dashboard/test/fixture.mjs",
+        "bytes": 4181
+      },
+      {
+        "path": "apps/execution-dashboard/test/git-snapshot.test.mjs",
+        "bytes": 19615
+      },
+      {
+        "path": "apps/execution-dashboard/test/human-proof.test.mjs",
+        "bytes": 12005
+      },
+      {
+        "path": "apps/execution-dashboard/test/human-summary.test.mjs",
+        "bytes": 4598
+      },
+      {
+        "path": "apps/execution-dashboard/test/migrate-assignments.mjs",
+        "bytes": 1698
+      },
+      {
+        "path": "apps/execution-dashboard/test/progress-smoke.mjs",
+        "bytes": 3772
+      },
+      {
+        "path": "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+        "bytes": 6832
+      },
+      {
+        "path": "apps/execution-dashboard/test/proof-tree-batch.test.mjs",
+        "bytes": 11478
+      },
+      {
+        "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+        "bytes": 13880
+      },
+      {
+        "path": "apps/execution-dashboard/test/task-links.test.mjs",
+        "bytes": 8816
+      },
+      {
+        "path": "package.json",
+        "bytes": 729
+      },
+      {
+        "path": "plans/AGENTS.md",
+        "bytes": 15077
+      },
+      {
+        "path": "plans/README.md",
+        "bytes": 20596
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "bytes": 279163
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "bytes": 40
+      }
+    ],
+    "sourceCheckoutBudgetBytes": 20971520,
+    "limits": "Git blob bytes/4KiB data rounding only; not physical checkout/index/directory/build/dependency/PG/Chrome peak. New plan/evidence small; Lead sole Git owner decides safe sparse provisioning, no action now."
+  },
+  "dependencyRisk": "aggregate static ledger import loads pg even without connecting; server/fixture inherit it. A Node-only route/check needs narrow lazy default ledger import or exact existing read-only dependency, not a fake claim authority. No install or test executed.",
+  "operations": {
+    "take": false,
+    "provision": false,
+    "sharedGitConfig": false,
+    "tests": false,
+    "serviceSamples": false
+  }
+}

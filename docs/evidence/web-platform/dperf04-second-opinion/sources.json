@@ -1,0 +1,78 @@
+{
+  "fixedMain": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "mainAndOriginMatchedAtSingleRead": true,
+  "at": "2026-10-06T14:18:22.280145+00:00",
+  "method": "Fixed git objects only; no aggregate, tests, browser, service/API/PG, installation, config change or project writes.",
+  "files": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "bytes": 7025
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+      "bytes": 4034
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "bytes": 4459
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "bytes": 5903
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "bytes": 2396
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "bytes": 6883
+    },
+    {
+      "path": "apps/execution-dashboard/src/documents.mjs",
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "bytes": 2917
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "bytes": 7058
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+      "bytes": 18589
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "bytes": 4181
+    },
+    {
+      "path": "apps/execution-dashboard/test/browser-check.mjs",
+      "sha256": "2cba53ed66ec8bdf65b627192ce79bd22bc9984417cf82e1c4c08dafcacb1b6e",
+      "bytes": 11316
+    },
+    {
+      "path": "apps/execution-dashboard/test/coordination-browser.mjs",
+      "sha256": "bd82005ad6e41d62bb5e6bfa22255ee48d8a1c5564448e5e48af5e407ca8a58e",
+      "bytes": 5394
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103",
+      "bytes": 13880
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+      "bytes": 362
+    }
+  ]
+}

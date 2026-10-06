@@ -37,5 +37,31 @@
       "availableKiB": 887108,
       "reason": "Lead explicitly corrected the prior timestamp/readout in subsequent inbound"
     }
+  },
+  "nonEmittingTypecheckException": {
+    "source": "Root subsequent explicit limited authorization",
+    "allowed": "One current Recovery Node24 tsc --noEmit at owner safe point, <=15s+5s cleanup/log<=64KiB, own evidence only, existing dependencies read-only, no incremental/cache/emit",
+    "notExpanded": [
+      "No RELEASE03 take/build",
+      "No install/new dependency or big checkout",
+      "No PG/browser/Vitest/service/provider",
+      "No new resource sampling by management"
+    ],
+    "execution": "Owner executes and reports separately; this records permission only, no success claim",
+    "supersededBySegmentBudget": {
+      "source": "Root subsequent implementation-segment authorization",
+      "totalSeconds": 60,
+      "reportedUsedSeconds": 17.432,
+      "remainingSeconds": 42.568,
+      "perRunSeconds": 15,
+      "totalLogBytes": 524288,
+      "condition": "Only after actual source changes when another typecheck is necessary; zero dependency/cache/emit/PG/browser/build/service. Not behavioral verification."
+    },
+    "latestOwnerResultViaRoot": {
+      "thirdNoEmitSeconds": 6.191,
+      "exit": "red",
+      "finding": "Two new integration narrowing issues fixed by owner; no unrequested rerun, fixes not yet validated",
+      "featureState": "No fixed review candidate or APPROVED"
+    }
   }
 }

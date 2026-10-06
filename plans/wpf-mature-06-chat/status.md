@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 14:09 UTC |
+| 最近更新 | 2026-10-06 14:21 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,7 +14,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 连接与持久草稿恢复正在接线，部分源码Web类型检查通过；原21实现范围继续，临时依赖写权已归还 |
+| 当前产出 | 连接与持久草稿恢复继续原21范围接线，临时依赖写权已归还；最新类型窄化问题已修，尚待必要复查 |
 | 下一可用交付 | 先实现原回执同步接管和持久检查点、完整材料恢复及真实插件入口，再按资源条件验证刷新与显式原key恢复 |
 | 当前阻塞 | ACTIVE: 可用空间低于1GiB保留额，暂停新依赖和浏览器/PG/构建；小源码继续，最终旅程还需对齐callerOrigin、迟到注销Cookie及重复连接名额语义 |
 | 需用户决定 | NONE |
@@ -52,4 +52,4 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 
 仅轻量代码/metadata先开工；13:46实际建后available1,416,241,152B事实不改。按[13:49最新政策](../../docs/evidence/web-platform/resource-policy-1349.json)，仅SVC06需2.5GiB，其他Web新产物/依赖复制先估峰值并留约1GiB；当前仍无build许可。真实App/HTTP仍累计90秒含15秒清理/8MiB/1PG+1Chrome，开始前复核资源；center三语义并行，是最终验收gate而非第一行代码blocker。上传journal跨tabCAS仍独立未解，未因本片设计冒称修复。
 
-最新两轮依赖/类型诊断及原始红日志见[窗口记录](../../docs/evidence/web-platform/recovery01-dependency-window.json)；全部依赖写停后v4恢复原21scope。第二types0只属于82d78阶段源码；[五项独立早期finding](../../docs/evidence/web-platform/recovery01-82d78-root-readonly-findings.json)待原owner修复，未形成feature终审。当前资源决定见[分时记录](../../docs/evidence/web-platform/resource-admission-1405.json)，不重复采样或将整体目标标阻塞。
+最新两轮依赖/类型诊断及原始红日志见[窗口记录](../../docs/evidence/web-platform/recovery01-dependency-window.json)；全部依赖写停后v4恢复原21scope。第二types0只属于82d78阶段源码；[八项独立早期finding及来源](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)待原owner修复，未形成feature终审。当前资源决定见[分时记录](../../docs/evidence/web-platform/resource-admission-1405.json)，不重复采样或将整体目标标阻塞。

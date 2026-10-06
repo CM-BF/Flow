@@ -1,0 +1,135 @@
+{
+  "at": "2026-10-06T14:19:38.081908+00:00",
+  "state": "STRUCTURE_APPROVED_AWAITING_LEAD_SOURCE_PROVISION_AND_FRESH_CLAIM",
+  "candidateTaskId": "WPF-DPERF04",
+  "directParent": "D01",
+  "continuity": "Existing WPF-001-36 / D01 DPERF successor; prior DPERF01–03 completion remains unchanged. No third task layer or new broad plan.",
+  "candidateOwner": "w01_owner",
+  "candidateWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "candidateBranch": "codex/dashboard-summary-detail",
+  "candidateBase": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "sourcePreflight": "dperf04-source-scope-preflight.json",
+  "priority": "Below Recovery and usable preview; above decorative work. Release presently resource-gated and W01 available, so a small independent Node source slice may proceed only after explicit structure approval/legal provisioning/COMMITTED.",
+  "scopes": [
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "plans/wpf-dperf04-summary-detail",
+    "docs/evidence/wpf-dperf04"
+  ],
+  "scopeRationale": {
+    "read-model.mjs": "Read bounded registered status, parse source declarations/freshness and project summary DTO; share reading/error semantics with aggregate, no proof or ledger authority.",
+    "aggregate.mjs": "Reuse existing aggregateTask/proof logic for one selected registered task; preserve complete aggregate API. Move top-level ledger import to default observation boundary so Node-only read tests need no installed pg.",
+    "server.mjs": "Add summary/task/assignment read routes and request coalescing; maintain old snapshot/document and loopback/read-only restrictions. No mutable claim endpoint.",
+    "public/app.js": "Render all summary/unknown/claim entries, load task proof/doc links on demand; distinct declared vs checked labels; refresh/detail generation and abort handling. Existing styling/components reused.",
+    "tests": "New direct consumer tests and fixture-only browser smoke; old real-registry browser-check is not run.",
+    "task-links.browser.mjs": "Required ninth scope: existing snapshot-route claim injection no longer reaches summary homepage. Preserve parent/child, short claim and full owner/detail assertions, adapt actual routes and output only new evidence; never overwrite old D08/DASHSUM evidence."
+  },
+  "interface": {
+    "legacy": "GET /api/snapshot and /api/document retain their old shape and security boundaries; no cross-snapshot proof cache.",
+    "summary": "GET /api/summary returns explicit versioned summary DTO with every registered task, identity/parent/co-lead, owner author records, stage/output/next/blocker/decision/time, progress counts, source errors/staleness/status digest. It reads authoritative status only: no all-task Git, proof, review-body or document-link enumeration prerequisite. Missing live status can remain unknown with frozen fallback marked old; never mark fallback current.",
+    "sourceTruth": "Summary sourceCurrent is live/valid/nonstale declaration source only, not full Task.current/Git proof. Internal explicit declaration projection may reuse unchanged humanOverview/resolveTaskLinks; it never leaves read-model as a complete Task or enters green badges. Summary links carry basis=status-source; old full snapshot current semantics unchanged. Author approval/main are labelled declarations. No cross-round proof cache.",
+    "details": "Registered-ID-only selected detail reuses existing proof/documents for that task+main, returns status fingerprint and start/end observations. Status changes across detail read mean unknown consistency, not an atomic snapshot. Child list remains from all-summary relationships. Client rejects stale selection/generation responses and visibly marks old detail when summary fingerprint changes.",
+    "assignments": "GET /api/assignments independently calls the real read-only assignmentSnapshot default observer. Initial summary shows pending/unknown without waiting for PG; errors preserve unknown and old observations explicitly time-stamped. Show unregistered active claims and still-occupied stale claims. Tests may inject read-only observations; this is not PG authorization verification. Real take remains existing atomic PG CLI. Independent response can retain full ledger data first; construct long scopes DOM only on demand. Measure summary bytes AND appended claim response separately; never claim all payload disappears by counting summary alone.",
+    "client": "Coalesce visible refreshes; no concurrent timer/manual full payloads, discard old generations and aborted detail/doc responses, preserve last summary and its timestamp on failure. All tasks/history/issues/documents/claim scopes remain reachable. No auto global proof pass.",
+    "moduleBoundary": "One small reader plus existing aggregate/server/UI, no generic query/cache/telemetry framework. No D04 ledger/transaction/proof rewrite."
+  },
+  "directValidationProposal": {
+    "secondsTotal": 30,
+    "cleanupReserveSeconds": 5,
+    "rawMaxBytes": 2097152,
+    "runtime": "Existing Node24 built-ins only; no install/build/browser/PG/provider/real registry. At most two owned tiny Git repos and six synthetic task declarations; random loopback server if needed.",
+    "checks": [
+      "summary zero detailed proof/document enumeration and no all-worktree Git observation",
+      "selected detail accesses only registered task; rejects unknown id/path escape",
+      "legacy snapshot/document semantics still hold on the same controlled fixture",
+      "author-approved without fresh proof remains unverified; missing/frozen/stale/invalid and explicit parent relationships preserved",
+      "assignment failure means unknown, including unregistered active claims; injected observer never supplies take authority",
+      "request generation/late detail and failed refresh preserve source/time and selected task",
+      "single sample response byte/work-count comparison on same tiny fixture, no production latency/CPU claim"
+    ],
+    "failure": "Hard deadline ends tests, cleanup included; retain partial/failures, no automatic repeat budget. Required existing consumer checks selected by changed behavior, no rerun prior DPERF benchmarks.",
+    "temporaryFixtureMaxBytes": 8388608
+  },
+  "browserValidationProposal": {
+    "state": "FUTURE_RESOURCE_GATE_NOT_AUTHORIZED_NOW",
+    "secondsTotal": 60,
+    "cleanupReserveSeconds": 15,
+    "rawMaxBytes": 8388608,
+    "scope": "Single owned synthetic server and one Chrome, existing approved read-only Playwright dependency only after explicit resource/precise cache permission; no install, PG or realregistry/4320.",
+    "checks": "Actual homepage summary first, on-demand selected detail, parent-child/unknown/claim scope reachability, delayed response A-to-B discard, failed refresh retains timestamp, keyboard close and light/dark390 compact smoke.",
+    "limits": "Node tests do not establish DOM/keyboard behavior; full UI acceptance remains pending until this gate is met. No temporary page evidence as deployed4320 acceptance."
+  },
+  "resourceAndGit": {
+    "sourceCheckoutBudgetBytes": 20971520,
+    "estimate": "44 existing files667441 logical bytes;4096-round761856. New small plan/evidence only, no historical evidence tree. Not index/physical/working-set or available-space proof.",
+    "provision": "SOURCE_REQUEST to Lead sole Git owner: confirm unused path/branch, provision fixedc837 isolated sparse checkout with only listed source/rules set <=20MiB budget, check actual branch/HEAD/clean; manager then fresh exact9 take before any source/plan/evidence edit. Do not create a WT or shared config in this management turn.",
+    "dependencies": "No node_modules in source budget. Default ledger import deferred; injected observer direct tests avoid pg loading. Actual server ledger query still requires existing real pg, failure explicitly unknown, no install licensed.",
+    "resourceGate": "No build/PG/Chrome/install now. Small source provisioning still requires Lead resource decision, <=20MiB actual checkout allowance and no interference with Recovery; current below1GiB observations are not waived."
+  },
+  "notDone": [
+    "No take or worktree provision",
+    "No source edit or test/experiment",
+    "No performance improvement measured",
+    "No deployment/service request",
+    "No shared Git config write"
+  ],
+  "candidateCanonical": "plans/wpf-dperf04-summary-detail/status.md",
+  "secondOpinion": "dperf04-second-opinion/report.md",
+  "archives": [
+    {
+      "source": "/tmp/dashboard-summary-second-opinion-c837b5d/report.md",
+      "archive": "dperf04-second-opinion/report.md",
+      "bytes": 10020,
+      "sha256": "1bf2cf63890b84bda1723651d14307fb56e2999d49f98471aa89d55660dca497"
+    },
+    {
+      "source": "/tmp/dashboard-summary-second-opinion-c837b5d/sources.json",
+      "archive": "dperf04-second-opinion/sources.json",
+      "bytes": 2799,
+      "sha256": "b2726204f7be062b12d7181ac2384e2683356977af71b85febdfcf519720b912"
+    }
+  ],
+  "readOnlyProtected": [
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/src/task-links.mjs",
+    "apps/execution-dashboard/src/registry.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/src/documents.mjs",
+    "apps/execution-dashboard/src/coordination/",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/styles.css",
+    "apps/execution-dashboard/public/architecture*",
+    "apps/execution-dashboard/test/fixture.mjs",
+    "root dependency manifests/lock"
+  ],
+  "allNineScopeObservation": {
+    "observedAt": "2026-10-06T14:20:31.828Z",
+    "conflicts": [],
+    "notAuthority": "Read-only proposal inventory, not reservation or COMMITTED; repeat fresh only after root approval and safe provisioning."
+  },
+  "rootApproval": {
+    "scopeCount": 9,
+    "owner": "w01_owner",
+    "coLead": "Web /root",
+    "parent": "D01",
+    "constraints": "sourceCurrent/links.basis only; old snapshot/CLI semantics unchanged; independent read-only PG observations; no coordination writes; Node30s/tmp8MiB; later browser60s including15cleanup/evidence8MiB; source checkout20MiB via Lead sole Git owner."
+  },
+  "ownerScheduling": "When RELEASE03 resource conditions recover, W01 pauses this task at a safe point and returns to the higher-priority usable preview. Never write two feature implementations concurrently in one owner window.",
+  "sourceRequest": {
+    "state": "PENDING_LEAD_GIT_OWNER",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "branch": "codex/dashboard-summary-detail",
+    "fixedBase": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+    "sourceSet": "dperf04-source-scope-preflight.json trackedSourceCheckoutEstimate.selection",
+    "actualProvisionReceipt": null,
+    "claimReceipt": null,
+    "canonicalNotCreated": "plans/wpf-dperf04-summary-detail/status.md"
+  }
+}

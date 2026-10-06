@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-06T14:16:04.442127+00:00",
+  "target": "82d78a9d77f4f51a27dc76fdc413a63dcd88ea72",
+  "role": "Management aggregation of two independent early read-only inspections; not feature acceptance",
+  "rootFindings": {
+    "count": 5,
+    "report": "recovery01-82d78-root-readonly-findings-corrected.json",
+    "anchorCorrection": "logout line100; prior raw retained unchanged"
+  },
+  "w01Findings": {
+    "count": 3,
+    "report": "recovery01-foundation-review-82d78a9/report.md",
+    "summary": [
+      "accepted/rejected hydrate becomes unknown and occupies pending slot",
+      "exact knowledge resolve does not clear restored unverified state",
+      "attachment restore240 limit conflicts with public255 filename validator"
+    ]
+  },
+  "totalDistinct": 8,
+  "managerSourceHashAudit": {
+    "files": 13,
+    "mismatches": []
+  },
+  "disposition": "Root confirmed and sent to sole implementation owner panels; corrections stay original21scope. No final fixed candidate or APPROVED.",
+  "operations": {
+    "productTests": 0,
+    "PG": 0,
+    "browser": 0,
+    "provider": 0,
+    "serviceSamples": 0
+  },
+  "archives": [
+    {
+      "source": "/tmp/recovery01-foundation-review-82d78a9/report.md",
+      "archive": "recovery01-foundation-review-82d78a9/report.md",
+      "bytes": 6463,
+      "sha256": "db4b3987fe2fbba50cff47758da7ff094e3f75536d2ad94098e915cc1453e5fd"
+    },
+    {
+      "source": "/tmp/recovery01-foundation-review-82d78a9/source-manifest.json",
+      "archive": "recovery01-foundation-review-82d78a9/source-manifest.json",
+      "bytes": 3430,
+      "sha256": "408068d2c0fff6e384165e25d7feb5d0567e92cd073b91be95645dcf176ee094"
+    },
+    {
+      "source": "/tmp/root-recovery82-foundation-readonly-findings.json",
+      "archive": "recovery01-82d78-root-readonly-findings-corrected.json",
+      "bytes": 5634,
+      "sha256": "2a75bb5f0565430fe5835ec43e8dc680d4873d463ed75b6dc16aa46759479d11"
+    }
+  ],
+  "methods": "Local find-skills/clean-code/codebase-design: review exact authority, terminal-state preservation, validator reuse and asynchronous ownership; no new implementation authority."
+}

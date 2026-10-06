@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:09 UTC / 两轮types与写权归还、发布资源未准入 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:21 UTC / 八项部分预审与DPERF源码请求 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,7 +17,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 刷新恢复已开工并通过部分源码类型检查，临时依赖写权已归还；稳定页面发布准备已界定但未运行 |
+| 当前产出 | 刷新恢复持续接线，临时依赖写权已归还；稳定页面发布未运行，看板摘要后继已获结构批准待源码树 |
 | 下一可用交付 | 继续完整草稿与未决回执恢复接线；空间满足门槛后准备正式页面产物并验证当前后台兼容 |
 | 当前阻塞 | ACTIVE: 全机可用空间低于1GiB保留额，发布prepare未take/build，新依赖与浏览器/PG验证暂停；恢复小源码继续，最终旅程仍需中心三语义，发布仍需后台362附件历史组合验证 |
 | 需用户决定 | NONE |
@@ -118,3 +118,5 @@ SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服�
 恢复正式领取与唯一来源见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)和[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json)；当前实施事实由新owner status维护，不由管理表复制TODO。13源比对不是13tests，Lead组合为1pass/2未选+types0；本组无产品复测。
 
 DPERF既有后继：[单次首页观察/固定摘要设计](../../docs/evidence/web-platform/dperf-home-summary-followup.json)待排，优先级低于恢复与可用预览、高于装饰。已交DPERF01–03不回改，后继未领取；首页尽快可读与按需proof/详情的验收仍需未来独立片，当前不复采服务。
+
+[DPERF04精确后继候选](../../docs/evidence/web-platform/dperf04-summary-detail-proposal.json)已收敛为direct D01 / w01 / 九literal，已root结构批准并SOURCE_REQUEST交Lead唯一Git owner，无take/provision；小源码可独立于Recovery，但新树仅Lead串行sparse、实际检查仍守各自资源门槛。恢复82d78原五项与W01新增三项合计[八项早期partial发现](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)，已交唯一owner，非完整独审结论。
