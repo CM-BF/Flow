@@ -18,7 +18,12 @@ const appRoot = join(root, "apps/web");
 const BASE = "c526c1c889437ee39155d669921577995195c74e";
 const smoke = process.argv.includes("--smoke");
 const selfTestOnly = process.argv.includes("--self-test");
-const taskCounts = smoke ? [1] : [1, 16, 128];
+const selectedTasks = process.argv.find(argument => argument.startsWith("--tasks="))?.slice(8);
+const taskCounts = selectedTasks ? selectedTasks.split(",").map(Number) : smoke ? [1] : [1, 16, 128];
+assert(taskCounts.length > 0 && new Set(taskCounts).size === taskCounts.length && taskCounts.every(count => [1, 16, 128].includes(count)), "--tasks must be a unique subset of 1,16,128");
+assert(!smoke || (taskCounts.length === 1 && taskCounts[0] === 1), "Smoke uses one task");
+const label = process.argv.find(argument => argument.startsWith("--label="))?.slice(8) ?? (smoke ? "smoke" : "baseline");
+assert(/^[a-z0-9-]+$/.test(label), "--label must be a plain filename prefix");
 const milestones = smoke ? [100, 240] : [100, 1000, 5000, 10000];
 const pause = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
 const git = (...args: string[]) => execFileSync("git", args, { cwd: root, encoding: "utf8" }).trim();
@@ -170,7 +175,7 @@ async function runScenario(browser: Browser, dist: string, count: number) {
   const requests: { path: string; type: string }[] = []; page.on("request", request => requests.push({ path: new URL(request.url()).pathname, type: request.resourceType() }));
   const checkpoints: Awaited<ReturnType<typeof measure>>[] = [];
   const stages: unknown[] = [];
-  const result: Record<string, unknown> = { taskCount: count, liveEntries: milestones.at(-1), initialVisibleEntries: 40, url, checks: [], status: "running" };
+  const result: Record<string, unknown> = { taskCount: count, environmentFile: `${label}-environment.json`, scriptHead: git("rev-parse", "HEAD"), liveEntries: milestones.at(-1), initialVisibleEntries: 40, url, checks: [], status: "running" };
   let aborted = false;
   try {
     const navigationStart = performance.now(); await page.goto(url);
@@ -185,7 +190,10 @@ async function runScenario(browser: Browser, dist: string, count: number) {
     // Task snapshots use latest 100 entries. Run detail/observer validity before long histories hide old references.
     await page.getByRole("button", { name: "Task index", exact: true }).click();
     await expect(page.getByText(`${Math.min(40, count)} loaded · ${count} matching tasks`, { exact: true })).toBeVisible();
-    while (await page.getByRole("button", { name: "Load more tasks", exact: true }).isVisible()) await page.getByRole("button", { name: "Load more tasks", exact: true }).click();
+    for (let loaded = Math.min(40, count); loaded < count; loaded = Math.min(loaded + 40, count)) {
+      await page.getByRole("button", { name: "Load more tasks", exact: true }).click();
+      await expect(page.getByRole("article", { name: /^Task:/ })).toHaveCount(Math.min(loaded + 40, count));
+    }
     await expect(page.getByRole("article", { name: /^Task:/ })).toHaveCount(count);
     await page.getByRole("button", { name: "Activity", exact: true }).click();
     checkpoints.push(await measure(page, cdp, "initial"));
@@ -208,15 +216,15 @@ async function runScenario(browser: Browser, dist: string, count: number) {
       await phase(page, `settled-${target}`); await interactions(page); await follow(page);
       previous = target;
       process.stdout.write(`PERF tasks=${count} live=${target} records=${40 + target}\n`);
-      await writeJson(`${smoke ? "smoke" : "baseline"}-${count}.json`, { ...result, stages, checkpoints, timing: await page.evaluate(() => window.__flowPerf), status: "running" });
+      await writeJson(`${label}-${count}.json`, { ...result, stages, checkpoints, timing: await page.evaluate(() => window.__flowPerf), status: "running" });
     }
     await phase(page, "attention"); const attentionStart = performance.now(); fixture.waitForDecision();
     await page.getByRole("button", { name: "Refresh activity", exact: true }).click();
     await expect(page.getByRole("region", { name: "Work overview" }).getByText(`Review synthetic change for ${fixture.ids[0]}.`, { exact: true })).toBeVisible();
     result.attentionRefreshAutomationMs = performance.now() - attentionStart;
-    await page.screenshot({ path: join(output, `${smoke ? "smoke" : "baseline"}-${count}-light.png`) });
+    await page.screenshot({ path: join(output, `${label}-${count}-light.png`) });
     await page.getByRole("button", { name: "Use dark theme", exact: true }).click();
-    await page.screenshot({ path: join(output, `${smoke ? "smoke" : "baseline"}-${count}-dark.png`) });
+    await page.screenshot({ path: join(output, `${label}-${count}-dark.png`) });
     assert.equal(pageErrors.length, 0); result.status = "passed";
     const timing = await page.evaluate(() => window.__flowPerf);
     assert(timing.keys.length >= milestones.length * 24 && timing.keys.every(sample => sample.trusted));
@@ -225,12 +233,12 @@ async function runScenario(browser: Browser, dist: string, count: number) {
   } catch (error) {
     result.status = "failed"; result.error = error instanceof Error ? error.stack : String(error);
     result.timing = await page.evaluate(() => window.__flowPerf).catch(() => null);
-    await page.screenshot({ path: join(output, `${smoke ? "smoke" : "baseline"}-${count}-failure.png`) }).catch(() => {});
+    await page.screenshot({ path: join(output, `${label}-${count}-failure.png`) }).catch(() => {});
     throw error;
   } finally {
     aborted = true;
     Object.assign(result, { at: new Date().toISOString(), stages, checkpoints, requests, workspaceResponses: fixture.workspaceResponses, pageErrors, apiRequests: fixture.requests.map(({ method, path }) => ({ method, path })), memoryLimit: "measureUserAgentSpecificMemory support recorded, not called without isolation; no forced GC; separate projection counts are not this App heap", p95: null, p95Reason: "One scenario run per scale; threshold-filtered Event Timing is not an unbiased latency distribution", renderCount: null });
-    try { await writeJson(`${smoke ? "smoke" : "baseline"}-${count}.json`, result); }
+    try { await writeJson(`${label}-${count}.json`, result); }
     finally { try { await context.close(); } finally { await fixture.close(); } }
   }
 }
@@ -247,14 +255,14 @@ async function main() {
     const assets = await readdir(join(dist, "assets"));
     const files = await Promise.all(assets.map(async name => { const data = await readFile(join(dist, "assets", name)); return { name, bytes: data.length, gzipBytes: gzipSync(data).length, sha256: createHash("sha256").update(data).digest("hex") }; }));
     browser = await chromium.launch({ channel: "chrome", headless: true });
-    await writeJson(`${smoke ? "smoke" : "baseline"}-environment.json`, { at: new Date().toISOString(), base: BASE, scriptHead: git("rev-parse", "HEAD"), scriptDirty: git("status", "--short"), mode: "Vite production; no fixture build flag, actual connection form", platform: platform(), osRelease: release(), arch: process.arch, cpu: cpus()[0]?.model, logicalCPUs: cpus().length, totalMemoryBytes: totalmem(), freeMemoryBeforeBytes: freemem(), loadAverage: execFileSync("sysctl", ["-n", "vm.loadavg"], { encoding: "utf8" }).trim(), node: process.version, browser: browser.version(), viewport: { width: 1440, height: 1000 }, headless: true, network: "Local HTTP/1.1 uncompressed static assets and synthetic in-memory fixture; no CPU/network throttle", reducedMotion: "reduce", textLength: TEXT_LENGTH, taskCounts, milestones, assets: files, html: await readFile(join(dist, "index.html"), "utf8"), versions: { web: JSON.parse(await readFile(join(appRoot, "package.json"), "utf8")), root: JSON.parse(await readFile(join(root, "package.json"), "utf8")) } });
+    await writeJson(`${label}-environment.json`, { at: new Date().toISOString(), base: BASE, scriptHead: git("rev-parse", "HEAD"), scriptDirty: git("status", "--short"), mode: "Vite production; no fixture build flag, actual connection form", platform: platform(), osRelease: release(), arch: process.arch, cpu: cpus()[0]?.model, logicalCPUs: cpus().length, totalMemoryBytes: totalmem(), freeMemoryBeforeBytes: freemem(), loadAverage: execFileSync("sysctl", ["-n", "vm.loadavg"], { encoding: "utf8" }).trim(), node: process.version, browser: browser.version(), viewport: { width: 1440, height: 1000 }, headless: true, network: "Local HTTP/1.1 uncompressed static assets and synthetic in-memory fixture; no CPU/network throttle", reducedMotion: "reduce", textLength: TEXT_LENGTH, taskCounts, milestones, assets: files, html: await readFile(join(dist, "index.html"), "utf8"), versions: { web: JSON.parse(await readFile(join(appRoot, "package.json"), "utf8")), root: JSON.parse(await readFile(join(root, "package.json"), "utf8")) } });
     await isolatedProjection();
     const failures: { taskCount: number; error: string }[] = [];
     for (const count of taskCounts) {
       try { await runScenario(browser, dist, count); }
       catch (error) { failures.push({ taskCount: count, error: error instanceof Error ? error.message : String(error) }); process.stderr.write(`PERF tasks=${count} failed; evidence preserved\n`); }
     }
-    await writeJson(`${smoke ? "smoke" : "baseline"}-run.json`, { at: new Date().toISOString(), scenarios: taskCounts.length, failures });
+    await writeJson(`${label}-run.json`, { at: new Date().toISOString(), scenarios: taskCounts.length, failures });
     if (failures.length) process.exitCode = 1;
   } finally { try { await browser?.close(); } finally { await rm(temporary, { recursive: true, force: true }); } }
 }
