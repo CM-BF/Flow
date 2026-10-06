@@ -71,3 +71,9 @@ main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；
 独立native_center_owner APPROVED_PREPARATION source d66bdc41f6f39fbeca93e1bf752bf2729526936e，53绑定与2纯检查核实，P2 CLOSED，0重跑。原报告已归档deadline-independent-review.json。其后Lead明确一次窗口，实际run1945 exit0/2135ms/newcenter74763/8checks全true；操作原始证据等待独立忠实性审查，不作者自批。原center退出原因未知、无新版本发布。
 
 2026-10-06 19:47 UTC：Execution Lead对实际run1945 before/after/result独立只读比对，64表+8组检查成立，19:46:35关闭source窗口并恢复clean main22a，无新probe/重跑。此为同版本恢复事实核对；新发布和个人故障根因不在结论中。原20项operation-manifest/源码/raw保持，source-window-closed另存。
+
+## 2026-10-06 20:04 UTC 恢复main接收与新发布准备
+
+Execution Lead独立 APPROVED_SAME_VERSION_CENTER_RECOVERY target3271dcb449ce426d31136bd3ed03d2804fa4b1de，20原operation绑定/64表/8检查已核，0新probe。回执见[operation-independent-review](../../docs/evidence/svc05-history-compatibility/center-recovery/operation-independent-review.json)；main6223c7493a3b6f392813a5d9d82c24d87312ad26的41本片文件逐字相同，非祖先接收如实记录。
+
+R01 f74结果由Lead独立批准，两retained的新af51报告已齐，不扩大成个人发布。当前[release-operation](../../docs/evidence/svc05-history-compatibility/release-operation/README.md)只读小提案待独立审查：现有host工具/单artifact搬运/三报告精确绑定、先后台后Web、允许变更与未知保持；0新增运行。原各source/raw/manifest均不改。

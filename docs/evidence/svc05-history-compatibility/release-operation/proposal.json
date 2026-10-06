@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-06 20:03 UTC",
+  "kind": "PREPARATION_ONLY_NOT_AUTHORIZATION",
+  "owner": "assignment_review",
+  "backend": {
+    "currentSaved": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "target": "af51c621696230fbced12227670f014ca73bd8a1",
+    "onlyChangedProductAndTestPaths": [
+      "apps/server/src/context-transparency/attachment-history.test.ts",
+      "apps/server/src/context-transparency/store.ts"
+    ],
+    "productionChange": "Three additive lines for templateVersion2 historical material unknown projection; no migration/lock/package/tool change."
+  },
+  "originalRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "installation": "/Users/citrine/.flow-personal",
+  "lastPrivateFacts": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/run-svc05h-center-20261006-1945/after.json",
+  "factFreshness": "Saved operation facts only; not sampled during preparation; future fresh gates required.",
+  "savedMaintenance": {
+    "state": "accepting",
+    "version": 15,
+    "operationId": null
+  },
+  "savedWeb": {
+    "version": 2,
+    "current": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "historicalPointerBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "retained": 2
+  },
+  "reports": [
+    {
+      "label": "retained-0",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/runs/retained-af51-20261006-1952/retained-0",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "review": "R01 Execution Lead actual 2 Apps",
+      "personalImport": "NOT_EXECUTED"
+    },
+    {
+      "label": "retained-1",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/runs/retained-af51-20261006-1952/retained-1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "review": "R01 Execution Lead actual 2 Apps",
+      "personalImport": "NOT_EXECUTED"
+    },
+    {
+      "label": "new-d629",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+      "review": "RELEASE03 Root A12+B3",
+      "personalImport": "NOT_EXECUTED"
+    }
+  ],
+  "webPublishRequestCandidate": {
+    "expectedVersion": 2,
+    "expectedBackendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+    "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+    }
+  },
+  "retention": {
+    "beforeCount": 2,
+    "afterCount": 3,
+    "limitCount": 3,
+    "afterFiles": 30,
+    "afterLogicalBytes": 4538660,
+    "limitBytes": 201326592,
+    "deletions": 0,
+    "logicalNotPhysical": true
+  },
+  "sequence": [
+    "Lead fixes clean original config.repository checkout to exact af51, no branch ref rewind.",
+    "Fresh source/dependencies/private identity/all-runner unfinished and queue gates, new durable reservation, report/artifact preflight.",
+    "Under existing lock: import all three exact reports and execute reviewed one-artifact transfer once; verify returned IDs and bytes; pointer remains caa1/v2.",
+    "maintenance bootstrap (one durable operation/drain), wait naturally for all unfinished/uncertain work to reach zero, then refresh --target exact af51 (hold and Web/runner/center replacement).",
+    "Checkpoint ready-paused and permitted field/data differences; one explicit maintenance resume only under the new window and successful fresh gates.",
+    "Separate checkpoint and exact web publish request: expected v2, target af51, d629; expected v3/3 retained, actual response and persisted pointer authoritative.",
+    "Seal after/result before source window return; Lead alone restores development checkout."
+  ],
+  "notPerformed": {
+    "personalReads": 0,
+    "personalWrites": 0,
+    "pg": 0,
+    "browser": 0,
+    "provider": 0,
+    "tests": 0,
+    "imports": 0
+  },
+  "authorization": "Existing user release intent retained; this document does not reuse any expired restoration/isolated-test window or issue a permit. Lead assigns one explicit operation window."
+}
