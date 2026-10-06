@@ -1,0 +1,210 @@
+{
+  "target": "9ebb3bdd781b3667f0c164405e9a17387ce89d76",
+  "base": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "recordedAt": "2026-10-06T06:34:28Z",
+  "node": "24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "modelQueries": 0,
+  "sources": [
+    {
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+      "gitBlob": "4b10a60a51804e24292d293784e80d95e72e792e"
+    },
+    {
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "bytes": 2975,
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9",
+      "gitBlob": "7a89b5ce9e5fdec51c3c117eee5b77dc12325171"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/input.ts",
+      "bytes": 3239,
+      "sha256": "aa25eb1f1c68d04f207fc35fa755c034f959c654629f0b7a27ea1c1bcdb731d9",
+      "gitBlob": "abdf2e730670e839f161ecfce36b2c7d89b26286"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "bytes": 2641,
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c",
+      "gitBlob": "79fb30f8acaee6b63e58f0e1416cbef207478082"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/commands.ts",
+      "bytes": 5071,
+      "sha256": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74",
+      "gitBlob": "3e5d1029c2a6a8d8c84d36d13560ba3518390bba"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/fetches.test.ts",
+      "bytes": 6662,
+      "sha256": "b0bfebd4e7c34384e0319bd32f534e37b4ceb0e4ccc78aaacf62f46aff2c4012",
+      "gitBlob": "7e25cf15530a52b4baccf102535e2f4cdb09f4cc"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/host.ts",
+      "bytes": 1829,
+      "sha256": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760",
+      "gitBlob": "fccb3a99116d30526dde57bfd6bc0b67c6d1efbe"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/index.ts",
+      "bytes": 853,
+      "sha256": "cf1cf055e7ae70173ae34b40ff32a41193827403dec5446cbffaefa46c362a00",
+      "gitBlob": "8174bf2918904a0660f0f75369ae0acda8697a64"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/process-fixture.ts",
+      "bytes": 1272,
+      "sha256": "21d3f27bef98ad79bbec2187f04b468eed1868f10cc476ccfcbcf6471bb6a9ad",
+      "gitBlob": "9faa342b18741090acff80953ceb2881562eacc3"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/publication.test.ts",
+      "bytes": 1769,
+      "sha256": "3f712c53e2480a3e6072d20580de677343c444f066db760aaf9d7470777f8f12",
+      "gitBlob": "879eda565c8f04f56b1532ee4ef7cbd3e97faa67"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/routes.ts",
+      "bytes": 4593,
+      "sha256": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b",
+      "gitBlob": "69ea52ab4464633de4936f67674272cb3d107520"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/store.ts",
+      "bytes": 4032,
+      "sha256": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3",
+      "gitBlob": "6fcfeb8573f1a338663eeb1ff71123f2540fc352"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648",
+      "gitBlob": "2f8529a351b79073a4e1795b7c17f3e4657d4df1"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/workflow.test.ts",
+      "bytes": 13781,
+      "sha256": "1f655b087a460218978bc504f0f11f2742f9de793feef0a222d5f2b408559f57",
+      "gitBlob": "7bda3713cde6f73d866c784e81f0a99d07b13aa2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/x05/admission-boundaries.txt",
+      "bytes": 336,
+      "sha256": "d37c1d4cbfd5f78a0df20fba1bf72a190f9c73e03f72c2aeb6e5d63ee47f26bd"
+    },
+    {
+      "path": "docs/evidence/x05/admission-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x05/claim-receipt.json",
+      "bytes": 902,
+      "sha256": "7fa2a034088f82b596938ad9fc7ea02e168c64968b3e72aa3ae6bc9339aa3b46"
+    },
+    {
+      "path": "docs/evidence/x05/final-tests.txt",
+      "bytes": 1177,
+      "sha256": "f9d966a5ed87a62d0152acf9a4ec768de60be16c5af3f9d000e46afcd44a3006"
+    },
+    {
+      "path": "docs/evidence/x05/final-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x05/first-typecheck.txt",
+      "bytes": 135,
+      "sha256": "dbc1ea18de70d28a6301b4289f14343e4c7ba686cb6088b2024f74be95f1db13"
+    },
+    {
+      "path": "docs/evidence/x05/green-admission-fixed.txt",
+      "bytes": 334,
+      "sha256": "74f773c997e0466c55923033873ec8fb1b3469955d42c15606aaf13189239484"
+    },
+    {
+      "path": "docs/evidence/x05/green-admission.txt",
+      "bytes": 1164,
+      "sha256": "7173ad121965125992bba3add42c33067cba615915e831c47d926023332904d5"
+    },
+    {
+      "path": "docs/evidence/x05/input-handoff-receipt.json",
+      "bytes": 841,
+      "sha256": "edebadf8ce3c99e59251f1c35d473dba4b7f2404b197d0b7ace89b6b3203cd82"
+    },
+    {
+      "path": "docs/evidence/x05/install.txt",
+      "bytes": 595,
+      "sha256": "9793f6f5f4e8736eeea2b5e11647db8d83c6c7a43bc4088aab78923504c189b3"
+    },
+    {
+      "path": "docs/evidence/x05/process-final.json",
+      "bytes": 2546,
+      "sha256": "79e01ea28dbb47c87e836c62ce72348a6d6258b813bdcc2a5e40f8bcef05a1d9"
+    },
+    {
+      "path": "docs/evidence/x05/process-first.json",
+      "bytes": 2250,
+      "sha256": "bccc37596d9759017d89712edf003d2b7d04970362f943f091499a7906baf738"
+    },
+    {
+      "path": "docs/evidence/x05/process-first.txt",
+      "bytes": 864,
+      "sha256": "9ba39de26cec2a8f9d33fa018d46db90d3d4c7e8369ded0c896ad51a1541c464"
+    },
+    {
+      "path": "docs/evidence/x05/process-tests-typecheck-failure.txt",
+      "bytes": 436,
+      "sha256": "369edcbc8ab4e2848626310767ff1e5a3315796d8ba4f93e75741ec19206ca94"
+    },
+    {
+      "path": "docs/evidence/x05/publication-and-admission-final.txt",
+      "bytes": 414,
+      "sha256": "05d46c43e724a87b06115d500acd00622a868f84d96d381d99ed03dce5ec780b"
+    },
+    {
+      "path": "docs/evidence/x05/red-admission.txt",
+      "bytes": 1273,
+      "sha256": "6b72685162566c19bbdf74a7f460aafc872fdd1657b8377b71bc83c8fb1b9aa2"
+    },
+    {
+      "path": "docs/evidence/x05/worker-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "command": "vitest run fetches.test.ts workflow.test.ts artifacts.test.ts registry.test.ts (full paths in README)",
+      "exitCode": 0,
+      "passed": 23,
+      "stdout": "docs/evidence/x05/final-tests.txt"
+    },
+    {
+      "command": "vitest run fetches.test.ts publication.test.ts (full paths in README)",
+      "exitCode": 0,
+      "passed": 5,
+      "repeatedFromPrevious": 4,
+      "stdout": "docs/evidence/x05/publication-and-admission-final.txt"
+    },
+    {
+      "command": "pnpm exec tsc --noEmit",
+      "exitCode": 0,
+      "stdout": "docs/evidence/x05/final-typecheck.txt"
+    }
+  ],
+  "differentChecks": 24,
+  "limitations": [
+    "Module routes registered on production createServer, not production main/CLI mount",
+    "No models/provider/cloud/extraction/install/enable",
+    "15s cooperative signal, not hard OS limit",
+    "Hardkill unpublished staging has no GC",
+    "No power-loss/directory-fsync proof"
+  ]
+}

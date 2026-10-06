@@ -1,0 +1,59 @@
+{
+  "node": "v24.20.0",
+  "recordedAt": "2026-10-06T06:30:03.070Z",
+  "modelQueries": 0,
+  "facts": [
+    {
+      "case": "queued-restart-and-replay",
+      "operationId": "91b97336-e0aa-4c6f-8f76-d3670387abb0",
+      "status": "succeeded",
+      "artifactId": "fdeb9287-53ae-4242-82a4-689033d3b5df",
+      "requests": 1
+    },
+    {
+      "case": "published-before-PG-hard-exit",
+      "operationId": "faa08d3e-0495-4c83-a9f5-d08f3194bddf",
+      "artifactId": "21d3ba17-a9b6-459e-ab0d-6eb3b97d7270",
+      "requests": 1,
+      "status": "succeeded"
+    },
+    {
+      "case": "interrupted-reconcile-explicit-retry",
+      "operationId": "8621229d-2c84-4d97-b6d9-16204cb667ed",
+      "requests": 2,
+      "attempts": [
+        {
+          "id": "612401c0-945a-4ad7-8b3e-d14a6b2b6bed",
+          "ordinal": 1,
+          "artifactId": "50e80e6f-0879-420a-a7b8-2cd40897a0a7",
+          "status": "interrupted",
+          "error": "NOT_FOUND",
+          "createdAt": "2026-10-06T06:29:59.132Z",
+          "updatedAt": "2026-10-06T06:30:00.242Z"
+        },
+        {
+          "id": "fb1bfb98-741a-4085-91ce-8ec3fff99074",
+          "ordinal": 2,
+          "artifactId": "ac3564f3-0df5-4c61-819a-86724abf9e7e",
+          "status": "succeeded",
+          "error": null,
+          "createdAt": "2026-10-06T06:30:00.267Z",
+          "updatedAt": "2026-10-06T06:30:00.484Z"
+        }
+      ]
+    },
+    {
+      "case": "declaration-mismatch-budget",
+      "operationId": "b79489ed-ff48-48da-a2ae-3b6f3236f059",
+      "requests": 3,
+      "status": "failed"
+    },
+    {
+      "case": "foreign-store-observation-only",
+      "operationId": "eae5ff4f-d13a-482c-ac06-6cae43f9b8e0",
+      "requests": 2
+    }
+  ],
+  "processOutput": "{\"ready\":true,\"address\":\"http://127.0.0.1:57705\",\"pid\":16766}\n{\"ready\":true,\"address\":\"http://127.0.0.1:57715\",\"pid\":18344}\n{\"ready\":true,\"address\":\"http://127.0.0.1:57723\",\"pid\":18345}\n{\"ready\":true,\"address\":\"http://127.0.0.1:57738\",\"pid\":18349}\n{\"ready\":true,\"address\":\"http://127.0.0.1:57754\",\"pid\":19862}\n{\"ready\":true,\"address\":\"http://127.0.0.1:57772\",\"pid\":25871}\n{\"ready\":true,\"address\":\"http://127.0.0.1:57785\",\"pid\":28210}\n",
+  "databaseRemoved": true
+}
