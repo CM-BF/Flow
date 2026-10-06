@@ -8,6 +8,10 @@ Mika/gpt-6-astra于2026-10-06 11:57:54 UTC正式APPROVED，0P1/P2，未重跑；
 
 独审完整读取6行生产差异、113行测试与原始证据；确认38current/4red/50首片历史绑定及19legacy，5库清理与累计数值重算一致。详见[正式回执](../../docs/evidence/b01/task-projections/head/independent-review.json)和[固定集成输入](../../docs/evidence/b01/task-projections/head/integration-ready.md)。
 
+## 2026-10-06 12:04:06 UTC main收口
+
+两片已由Lead接收main `1c4968354dabce1e6748f3301a2e6eecd33e77d4`，owner只读核36 source/raw逐项固定target Git=WT=main/hash/bytes，registry已唯一迁至task-read-projections。原8+5行为证据复用，Lead root/Web类型exit0，不新增工程检查；见[接收核验](../../docs/evidence/b01/task-projections/main-acceptance.json)。上文“未main”及下方旧快照是当时历史，当前以本节和唯一status为准。历史TODO表改成散文以去重复解析，未删除完成事实；源码/raw/既有manifest不变。全部scope在本次metadata commit/push后停止写入，release事实由账本及外部真实回执记录。
+
 ## 已批准首片历史（不覆盖第三reader）
 
 # B01 task轻投影独立review

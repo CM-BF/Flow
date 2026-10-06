@@ -1,0 +1,52 @@
+{
+  "taskId": "B01",
+  "owner": "status_read / gpt-6-astra",
+  "branch": "codex/task-read-projections",
+  "updatedAt": "2026-10-06T12:04:06.000Z",
+  "errors": [],
+  "todos": [
+    {
+      "id": "B01-01",
+      "state": "completed"
+    },
+    {
+      "id": "B01-04",
+      "state": "completed"
+    },
+    {
+      "id": "B01-02",
+      "state": "completed"
+    },
+    {
+      "id": "B01-03",
+      "state": "completed"
+    },
+    {
+      "id": "B01-05",
+      "state": "completed"
+    },
+    {
+      "id": "B01-06",
+      "state": "completed"
+    },
+    {
+      "id": "B01-07",
+      "state": "completed"
+    },
+    {
+      "id": "B01-08",
+      "state": "completed"
+    },
+    {
+      "id": "B01-09",
+      "state": "completed"
+    }
+  ],
+  "checks": {
+    "state": "passed",
+    "target": "7d69f8b48a67bbf08eb1d7dbdebd8437da861b40",
+    "record": "PASSED 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40 第三reader5/5真实PG/HTTP、局部strict0；首片8项未重跑；历史red保留"
+  },
+  "registryObservedMain": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "scope": "read-only metadata parse; no engineering tests or live dashboard refresh claim"
+}

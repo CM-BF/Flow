@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:58:50 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:04:06 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,17 +10,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections |
 | Branch | codex/task-read-projections |
 | 工作基线 / HEAD | 第三片base ec274d6ff927037ad74df003a785f76f032c69de / 实现7d69f8b48a67bbf08eb1d7dbdebd8437da861b40；metadata HEAD由Git读取 |
-| 工作树dirty状态 | 源码/raw已固定；两片源码/raw固定，本次仅正式review/status/integration metadata |
-| 工作分支状态 | completed（两轻读片已审待main，非完整FLOW-001完成） |
-| 检查状态 | PASSED 第三reader5/5真实PG/HTTP、局部strict0；首片8项未重跑；历史red保留 |
-| 已集成main状态 / HEAD | 旧B01已main；两新片未main。2f4a5789ee13937914fa2c25161c8d5ed1071550 clean只读核c96/7d69均非祖先 |
+| 工作树dirty状态 | 源码/raw已固定；本次仅main收口/status解析metadata |
+| 工作分支状态 | completed（两轻读片已审且已main，非完整FLOW-001完成） |
+| 检查状态 | PASSED 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40 第三reader5/5真实PG/HTTP、局部strict0；首片8项未重跑；历史red保留 |
+| 已集成main状态 / HEAD | 两片已main 1c4968354dabce1e6748f3301a2e6eecd33e77d4 clean；36 source/raw逐项固定Git=WT=main/hash/bytes |
 | 实现目标 | 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40 |
 | 实现范围 | apps/server/src/assistant-stream/queries.ts, apps/server/src/assistant-stream/task-head.test.ts, docs/evidence/b01/task-projections/head/tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 三个轻读入口均已实现并获独立批准，原响应与分页行为保持 |
-| 下一可用交付 | 已审轻读实现交由Lead接收主线 |
+| 当前产出 | 三个轻读入口已独审并集成main，原响应与分页行为保持 |
+| 下一可用交付 | 本次metadata提交后停止全部scope写入并原子release；后继由Lead另派 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED Mika 2026-10-06 11:57:54 UTC，第三片7d69；首片c96独立批准保留 |
@@ -33,17 +33,17 @@
 | B01-03 | completed | Lead | 原main/聚合记录保留 |
 | B01-05 | completed | status_read | [claim](../../docs/evidence/b01/task-projections/claim-receipt.json)、[Interface](../../docs/evidence/b01/task-projections/interface.md) |
 | B01-06 | completed | status_read | [8/8与字节证据](../../docs/evidence/b01/task-projections/README.md)，7tasks累计/三库清理，局部strict0 |
-| B01-07 | in-progress | mika / Lead | 独审APPROVED；[固定集成输入](../../docs/evidence/b01/task-projections/integration-ready.md)，待Lead main接收 |
-| B01-08 | completed | status_read | 5/5真实PG/HTTP、strict0；新片3tasks/两库已清理，待固定独审 |
-| B01-09 | in-progress | mika / Lead | APPROVED 7d69；[固定集成输入](../../docs/evidence/b01/task-projections/head/integration-ready.md)，待Lead main |
+| B01-07 | completed | mika / Lead | 独审APPROVED；[main接收核验](../../docs/evidence/b01/task-projections/main-acceptance.json) |
+| B01-08 | completed | status_read | 5/5真实PG/HTTP、strict0；新片3tasks/两库已清理，独审APPROVED 7d69 |
+| B01-09 | completed | mika / Lead | APPROVED 7d69；[main接收核验](../../docs/evidence/b01/task-projections/main-acceptance.json) |
 
-writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v2 AMEND COMMITTED 2026-10-06 11:50:43.493 UTC，新增仅assistant-stream/queries.ts及task-head.test.ts，共九scope；[新片Interface](../../docs/evidence/b01/task-projections/head/interface.md)。最新main 2f4a5789ee13937914fa2c25161c8d5ed1071550 registry仍指旧bounded-read-performance；等待Lead按[迁移请求](../../docs/evidence/b01/task-projections/authority-request.md)登记新权威来源，尚未确认聚合；本status唯一手填事实，不改registry。P04源码/raw冻结与claim保留完全独立。
+writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v2 AMEND COMMITTED 2026-10-06 11:50:43.493 UTC，新增仅assistant-stream/queries.ts及task-head.test.ts，共九scope；[新片Interface](../../docs/evidence/b01/task-projections/head/interface.md)。最新main 1c4968354dabce1e6748f3301a2e6eecd33e77d4 registry已登记本WT唯一B01来源；本次仅parseStatus只读元数据核验，不宣称服务页面已刷新。本status唯一手填事实，不改registry；P04已单独main闭环并release。
 
 架构影响：只新增固定summary投影/映射Module供两个既有reader复用，生产事务/存储/鉴权/锁和全局调度不改；新目录结构在固定target后请求Lead登记，实际3生产源/1新测试/1私有fixture；目录架构基线待Lead按固定target登记。
 
 第三reader独立证据见[head/README](../../docs/evidence/b01/task-projections/head/README.md)；首片8项没有重跑，本片5项不借旧批准。当前实现目标字段是第三reader 7d69f8b48a67bbf08eb1d7dbdebd8437da861b40；首片c96/ec274仍由固定integration-ready供Lead单独集成。
 
-交付后当前两片source/raw停止修改，未领取新实现；writer v2保留到明确handoff/release。无需用户决定，不再PG/测试。
+交付后两片source/raw停止修改。本次main收口metadata commit/push后停止全部scope写入，随后以当前v2原子release；实际COMMITTED身份仅由协调账本及项目外回执记录，不预写未发生成功、不释放后回写。无需用户决定，不再PG/测试。
 
 ## 历史owner交付快照（以下不是新片当前状态）
 
@@ -71,12 +71,12 @@ writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v2 AMEND COMMITTED 2026-10-06 11:50:4
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 实现target70af7b4及after证据SHA256437262b7 |
 
-| TODO ID | 状态 | Owner | 完成证据/检查 |
-| --- | --- | --- | --- |
-| B01-01 | completed | b01_bounded_reads | [首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选8组等价、已交具体修复 |
-| B01-04 | completed | b01_bounded_reads | 实现70af7b4已审；8/8功能，after23检查/8.887秒通过 |
-| B01-02 | completed | mika / b01_bounded_reads | [APPROVED target70af7b4](review.md)，独立8/8；after样本/hash/清理已独立复核 |
-| B01-03 | completed | Execution Lead | main8f1481df880cf5077e1ddb9a8f302fe700a7ece8已含b563826；两产品文件与已审70af7b4零diff |
+历史TODO完成事实（当前唯一状态表在页首）：
+
+- B01-01；completed；b01_bounded_reads；[首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选8组等价、已交具体修复
+- B01-04；completed；b01_bounded_reads；实现70af7b4已审；8/8功能，after23检查/8.887秒通过
+- B01-02；completed；mika / b01_bounded_reads；[APPROVED target70af7b4](review.md)，独立8/8；after样本/hash/清理已独立复核
+- B01-03；completed；Execution Lead；main8f1481df880cf5077e1ddb9a8f302fe700a7ece8已含b563826；两产品文件与已审70af7b4零diff
 
 ## 检查、风险与下一步
 

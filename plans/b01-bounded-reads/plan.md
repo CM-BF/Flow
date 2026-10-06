@@ -1,6 +1,6 @@
 # B01 分层读取与传输有界性
 
-创建 / 最近更新：2026-10-06。状态：in-progress。当前Owner：status_read（mika lead），模型gpt-6-astra；原b01_bounded_reads完成史保留。
+创建 / 最近更新：2026-10-06。状态：completed。当前Owner：status_read（mika lead），模型gpt-6-astra；原b01_bounded_reads完成史保留。
 
 目标：在真实 center/PostgreSQL HTTP 上用 1/16/128 个合成任务测量 snapshot、events、workspace feed 的分层与传输上限，提供可重复的低成本基线和有证据的局部修复候选。任务数不是 agent 执行容量；0 模型、0 用户文件、0 新云。
 
@@ -27,7 +27,7 @@
 
 - [x] **B01-05** 核旧owner停止/原子领取、权威迁移请求、小Interface和直接消费者影响。
 - [x] **B01-06** eventPage与list共享轻投影，保留snapshot/写锁/auth/cursor；真实专库等价、解码字节/查询数与局部strict取证。
-- [ ] **B01-07** 固定target/source/raw独立review、修复复审和Lead受控main接收；第三reader仅证据后决策，不默认领取。
+- [x] **B01-07** 固定target/source/raw独立review、修复复审和Lead受控main接收；第三reader仅证据后决策，不默认领取。
 
 - [x] **B01-08** assistant stream只读head三列，独立真实PG/HTTP等价与有界字节检查；首片source/raw冻结。
-- [ ] **B01-09** 第三reader固定新target独审与Lead接收，不套首片批准。
+- [x] **B01-09** 第三reader固定新target独审与Lead接收，不套首片批准。
