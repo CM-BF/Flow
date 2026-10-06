@@ -1,9 +1,13 @@
 # WPF-CONNECTION01 独立review
 
-状态：NOT_STARTED
+状态：APPROVED；Reviewer astra_ultra_execution_lead / ExecutionLead（独立于作者 native_center_owner）；2026-10-06 13:21:44 UTC
 
 Review target commit: 582f41f1957709982750f5de5306738e064960ce
 
-Base: 280289008a5a3779e4e5e6453181b96062ed9514，scope为status七产品literal。独立review只读核固定/current/hash及真实HTTP/PG原证据；检查随机稳定身份、hash-only八小时32个session、startup epoch撤销、Bearer优先/角色、精确Origin/CSRF与SSE循环授权、退出不cancel、default unsupported、migration与资源界限。禁止凭fixture组合宣称生产/Web已挂。原失败/未选/清理须保留，0provider；finding交作者。
+Base: 280289008a5a3779e4e5e6453181b96062ed9514。Observed delivery: b8617c767938a2941184231e5ed7f154aeaba888 clean。
 
-作者已冻结7source；22不同HTTP/PG检查及最终types0，失败、重叠、未选与7随机DB/2进程清理见证据。独立review尚未执行，未集成main。
+独立review通读7源/22用例及直接store/028/auth precedence/CSRF/Origin/SSE循环/preClose，71 bindings fixed/working bytes/hash一致，39保护输入对base零差。已读原分轮22不同检查、最后2 direct、types0、7随机库正常removed与2自有Node exit0证据；reviewer未重跑/0provider，无P1/P2。作者仅转录此结论，完整回执见[独审记录](../../docs/evidence/wpf-connection-session/independent-review.json)。
+
+批准范围：中心领域与可选stream port；不包括共享factory挂载、Web真实Cookie旅程、个人部署。HTTPS仅header策略验证，**不证明当前HTTP createServer的反向代理/TLS部署可用**；先接loopback，未改trustProxy或放宽Forwarded。早期失败、测试计数误记、旧HTTP drain deadline限制仍保留。实际边界见[部署说明](../../docs/evidence/wpf-connection-session/deployment-boundary.md)。
+
+源码停止，等待受控main receipt；保留claim供唯一review修复。新增metadata不改已审target/原manifest/原始输出。验收时核7固定产品hash与必要共享组合，不重复领域22。空模板不能当approval；本结论来自上述独立审查。

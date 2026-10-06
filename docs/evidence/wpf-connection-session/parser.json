@@ -22,13 +22,13 @@
     },
     "human": {
       "delivery": {
-        "state": "review",
+        "state": "integration",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 1,
       "output": "刷新与真实重启保持连接，退出和过期停止观察已验证",
-      "next": "独立审查后接入公开中心与浏览器",
+      "next": "接入公开中心与浏览器",
       "blocker": {
         "state": "none",
         "text": ""
@@ -56,9 +56,9 @@
     "taskId": "WPF-CONNECTION01",
     "owner": "native_center_owner / gpt-6-astra",
     "branch": "codex/browser-connection-session",
-    "branchState": "review",
-    "updatedAt": "2026-10-06T13:19:47.000Z",
-    "updatedRecord": "2026-10-06 13:19:47 UTC",
+    "branchState": "integration",
+    "updatedAt": "2026-10-06T13:21:44.000Z",
+    "updatedRecord": "2026-10-06 13:21:44 UTC",
     "todos": [
       {
         "id": "WPF-CONNECTION01-01",
@@ -80,9 +80,9 @@
       },
       {
         "id": "WPF-CONNECTION01-04",
-        "state": "pending",
+        "state": "in-progress",
         "owner": "native_center_owner",
-        "evidence": "未独审/未main"
+        "evidence": "已独审；待main"
       }
     ],
     "errors": [],
@@ -93,15 +93,15 @@
       "target": "582f41f1957709982750f5de5306738e064960ce",
       "record": "PASSED 582f41f1957709982750f5de5306738e064960ce；22不同分轮通过，最终root types0；原红/未选保留"
     },
-    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "reviewRecord": "[review.md](review.md)，APPROVED 582f41f1957709982750f5de5306738e064960ce",
     "mainRecord": "本片未集成；固定base280289008a5a3779e4e5e6453181b96062ed9514",
     "next": "",
     "risks": "",
     "decisions": ""
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED",
+    "state": "approved",
+    "record": "APPROVED；Reviewer astra_ultra_execution_lead / ExecutionLead（独立于作者 native_center_owner）；2026-10-06 13:21:44 UTC",
     "target": "582f41f1957709982750f5de5306738e064960ce"
   }
 }
