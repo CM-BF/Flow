@@ -135,3 +135,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 15:56 UTC：TUI01F首canonical d658与fresh9fe77a96 v1真实存在，登记为165来源候选；父TUI-001/Execution Lead关联及六个人读字段完整，parser0。只做registry/路径核验，当前运行实采仍164，安全换载后另记实际值；不改固定架构或个人服务，不跑产品测试。见[登记](../../docs/evidence/d05/tui-cancel-registration.json)。
 
 2026-10-06T16:02:28.501687+00:00：本次main e807登记后仅重载自有4320，单次实际GET为165来源，TUI01F live/current/issues[]；[实际回执](../../docs/evidence/d05/tui-cancel-live-receipt.json)。同期产品个人服务、用户tabs未动，10.45秒是这次聚合观察而非性能SLO。
+
+2026-10-06T16:20:03.749698+00:00：WPF-DPERF04真实独立canonical已按D01子片唯一登记，166 sources；三件套/ID唯一/状态解析与人读字段检查通过，源码仍原owner实施/未审。见[dperf04-registration.json](../../docs/evidence/d05/dperf04-registration.json)。当前实际4320仍165，候选发布后一次换载另记；本次不改架构固定snapshot/个人页面或重跑产品。
