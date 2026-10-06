@@ -11,3 +11,7 @@
 脚本执行时HEAD95d8664、五执行文件尚未提交；冻结6570后的逐hash绑定证明同源，不冒称浏览器是在冻结commit之后重跑。独审APPROVED（独立18项/source审计，未重跑browser），main未集成，4320/个人服务未采。既有服务版本只引用[SVC05正式receipt](service-owner-observation.json)，不把fixedaeb source当部署。
 
 独立预览可用Node24运行本目录preview.mjs，它只提供空管理snapshot和真实static assets；结束需SIGTERM关闭自有server。本次浏览器自管preview已清理，没有新增常驻服务。
+
+## 正式主线收口
+
+2026-10-06 13:09:35 UTC：main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd按固定清单接收五source，当前/target/manifest/main逐字一致，详[只读观察](main-observation.json)与[原Lead组合receipt](main-intake-receipt.json)。图源固定aeb，个人服务与实际部署仍各自回执；原独立18/作者browser证据不改，无产品复测。clean-code复核仅元数据职责、来源/审查/主线/部署分离，未扩大实现范围。push双端clean后全部四scope停写，由管理fresh CAS释放。

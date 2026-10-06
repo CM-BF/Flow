@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-06T13:09:35.366136+00:00",
+  "mainReceiptCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "mainRefAtObservation": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "originMainAtObservation": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "mainDirty": "",
+  "implementationTarget": "6570ef7e896d29040961247f46aa62dc4e466284",
+  "graphSource": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+  "intake": "Controlled fixed source intake; ancestry recorded separately",
+  "implementationAncestorExit": 1,
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "fixedMainTargetCurrentEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "sha256": "1cccd582ff3a53c7f1e7583fa810f2c03e366bec19963eb8bd62c4f5e0af2c98",
+      "fixedMainTargetCurrentEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "sha256": "9778ced323329503a7803e29ea75af8dc88dbe5964585a8f25f54ad70909bd37",
+      "fixedMainTargetCurrentEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/preview.mjs",
+      "sha256": "3e4389f4c8237fc97f003e0ab9b7da16de433569aa6a7db4140f33ed85294963",
+      "fixedMainTargetCurrentEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1",
+      "fixedMainTargetCurrentEqual": true
+    }
+  ],
+  "receiptSha256": "0538b101935f0469888b255ef2a487cdd61bcc5abb06b2827e897c214dc2cf89",
+  "freshClaimObservation": {
+    "at": "2026-10-06T13:09:07.818Z",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06",
+        "plans/d06-architecture-refresh"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-architecture-runtime",
+      "origin": "new",
+      "taskId": "D06",
+      "worker": "d01_owner",
+      "claimId": "6cad30a2-aa67-4baa-b465-4c957b682670",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "createdAt": "2026-10-06T12:39:42.275Z",
+      "updatedAt": "2026-10-06T12:39:42.275Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  },
+  "checksAttribution": "Lead combination PG2/UI17/root+Webtypes0 are attachment integration checks, not a new D06 test. D06 original independent18 and author browser retained. Manager no product test, PG, browser, API, provider or service operations.",
+  "deployment": "personal backend362/v15 and Web8d8/v2 unchanged per Lead. registry154 is dashboard observation, not product deployment."
+}

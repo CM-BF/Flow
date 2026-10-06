@@ -13,4 +13,4 @@ Root已读candidate/README、独立audit/log并fresh核e771 clean，正式接受
 
 实际目视既有390浅深和modules-bottom-light截图；保原42%最小zoom局部滚动。没有重跑作者9.034s browser/领域/PG/provider/个人服务/4320。浏览器行为和cleanup为作者证据复核，不能归因独立重跑。baseline12:43为源码策展时点、12:46自动hash审计时点不同且明确。独立审计helper最初范围分类错误后纠正，原audit保留说明，不是产品finding。
 
-源码固定aeb不等个人部署。原2c审批只见[历史](../../docs/evidence/d06/snapshot-aeb/previous-review.md)，不替代本批。五source固定，主线接收尚未发生；6cad v1保留回修权，产品停写。
+源码固定aeb不等个人部署。原2c审批只见[历史](../../docs/evidence/d06/snapshot-aeb/previous-review.md)，不替代本批。五source固定，现正式main cde6646受控接收；[main观察](../../docs/evidence/d06/snapshot-aeb/main-observation.json)五hash相同，审查target/原测试未变。该收口不新增审批或产品复测。
