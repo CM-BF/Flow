@@ -1,0 +1,255 @@
+{
+  "createdAt": "2026-10-06T22:04:31.741281+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision",
+  "head": "1f754100bf84633c53c88038ce8630fdccab2e56",
+  "clean": true,
+  "manifestSha256": "df990646c79e46e60c4e20b03bc673aac298dff21e402d8bfd4c249aa178eac2",
+  "manifestBytes": 9218,
+  "entryCount": 21,
+  "fixedCount": 21,
+  "currentCount": 18,
+  "entries": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "commit": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+      "role": "source",
+      "fixedBytes": 2740,
+      "fixedSha256": "4a775b680fc5b358490c744af66311d8d1ba1169216cac0eeed1b23741a2fcda",
+      "fixedMatches": true,
+      "currentBytes": 2740,
+      "currentSha256": "4a775b680fc5b358490c744af66311d8d1ba1169216cac0eeed1b23741a2fcda",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "commit": "78fb37704d708e3b3b6ea4f1810947f012666196",
+      "role": "historical-input",
+      "fixedBytes": 2328,
+      "fixedSha256": "cb9e20c2db02fdb590c3ac1195f96453d65b832822143f65497e89d101e44299",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py",
+      "commit": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+      "role": "source",
+      "fixedBytes": 3002,
+      "fixedSha256": "86174d6d8994d06e57622b160ea56e3c43bc74c96ec6bdfaa98e087d5984d265",
+      "fixedMatches": true,
+      "currentBytes": 3002,
+      "currentSha256": "86174d6d8994d06e57622b160ea56e3c43bc74c96ec6bdfaa98e087d5984d265",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py",
+      "commit": "78fb37704d708e3b3b6ea4f1810947f012666196",
+      "role": "historical-input",
+      "fixedBytes": 2154,
+      "fixedSha256": "0e4ff39a790ce469401ced881e135b8dec78040e9b8b384c8a20c89e18778c44",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "commit": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "role": "approved-shared-module",
+      "fixedBytes": 12543,
+      "fixedSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "fixedMatches": true,
+      "currentBytes": 12543,
+      "currentSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "currentMatches": true
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "commit": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "role": "approved-shared-module",
+      "fixedBytes": 12306,
+      "fixedSha256": "494635e4ed3e24e89f565f7d53a74b807565a1020a4c4d7d93a18b60d7451f8d",
+      "fixedMatches": true,
+      "currentBytes": 12306,
+      "currentSha256": "494635e4ed3e24e89f565f7d53a74b807565a1020a4c4d7d93a18b60d7451f8d",
+      "currentMatches": true
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "commit": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "role": "approved-shared-module",
+      "fixedBytes": 2553,
+      "fixedSha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2",
+      "fixedMatches": true,
+      "currentBytes": 2553,
+      "currentSha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2",
+      "currentMatches": true
+    },
+    {
+      "path": "AGENTS.md",
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "role": "protected-rule",
+      "fixedBytes": 17226,
+      "fixedSha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "fixedMatches": true,
+      "currentBytes": 17226,
+      "currentSha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "currentMatches": true
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "role": "protected-rule",
+      "fixedBytes": 15077,
+      "fixedSha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c",
+      "fixedMatches": true,
+      "currentBytes": 15077,
+      "currentSha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/operator.mjs",
+      "commit": "78fb37704d708e3b3b6ea4f1810947f012666196",
+      "role": "protected-operator-git-only",
+      "fixedBytes": 8729,
+      "fixedSha256": "2a5eee0c10604aa4df2a4fc9ee0bdf0da86f14ea154247ddeb9bff3fd960bff0",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-amend-receipt.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 815,
+      "fixedSha256": "8a6fd5be78fa933f7d5f424d56471db1eef60ad3c3e34a10d735c45a654a2b43",
+      "fixedMatches": true,
+      "currentBytes": 815,
+      "currentSha256": "8a6fd5be78fa933f7d5f424d56471db1eef60ad3c3e34a10d735c45a654a2b43",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-amend-request.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 466,
+      "fixedSha256": "0fa6f63ab5b07cfd4869f6882817495f9ad003aa3b7cb004e8b0a08f27335f03",
+      "fixedMatches": true,
+      "currentBytes": 466,
+      "currentSha256": "0fa6f63ab5b07cfd4869f6882817495f9ad003aa3b7cb004e8b0a08f27335f03",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-checks.md",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 1144,
+      "fixedSha256": "f4592cbea24cba6de8cc1b0ac41e1e10d0014a4dc7dbd54043797c23a2d53fe3",
+      "fixedMatches": true,
+      "currentBytes": 1144,
+      "currentSha256": "f4592cbea24cba6de8cc1b0ac41e1e10d0014a4dc7dbd54043797c23a2d53fe3",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-interface.md",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 1754,
+      "fixedSha256": "ed1d54e888309c92f220e75cf422da648b118841c97227aa0d550764c1ddf3a0",
+      "fixedMatches": true,
+      "currentBytes": 1754,
+      "currentSha256": "ed1d54e888309c92f220e75cf422da648b118841c97227aa0d550764c1ddf3a0",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-prior-release-receipt.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 682,
+      "fixedSha256": "c0b17b20fef48b8121241493948da1cb5d1cbbe950b465575a2e5358f9732336",
+      "fixedMatches": true,
+      "currentBytes": 682,
+      "currentSha256": "c0b17b20fef48b8121241493948da1cb5d1cbbe950b465575a2e5358f9732336",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-source-provision.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 1082,
+      "fixedSha256": "35e6515326f10689a8a00b513bebea07e2553db84fd024c23767a9a142cb6352",
+      "fixedMatches": true,
+      "currentBytes": 1082,
+      "currentSha256": "35e6515326f10689a8a00b513bebea07e2553db84fd024c23767a9a142cb6352",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-status-parse.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 3733,
+      "fixedSha256": "125ebe00e6029e4f128a78808c8fa937c4491907936c27e73b6df018e1e8343d",
+      "fixedMatches": true,
+      "currentBytes": 3733,
+      "currentSha256": "125ebe00e6029e4f128a78808c8fa937c4491907936c27e73b6df018e1e8343d",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-tests.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 1793,
+      "fixedSha256": "e291b7912f8c208a1fb1d21a30c8971b91e1b7ca51cc62129093f04cbc197825",
+      "fixedMatches": true,
+      "currentBytes": 1793,
+      "currentSha256": "e291b7912f8c208a1fb1d21a30c8971b91e1b7ca51cc62129093f04cbc197825",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-tests.stdout",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 1137,
+      "fixedSha256": "e04ba449ce54097fd5c58be64d5a217dbb55ca568e3ba65bd9651d5e8103d32f",
+      "fixedMatches": true,
+      "currentBytes": 1137,
+      "currentSha256": "e04ba449ce54097fd5c58be64d5a217dbb55ca568e3ba65bd9651d5e8103d32f",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/independent-capture-review.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 2681,
+      "fixedSha256": "e53112000042c78094d40f14ed7165487b8e67c6e10dcd01d291305738d1f70f",
+      "fixedMatches": true,
+      "currentBytes": 2681,
+      "currentSha256": "e53112000042c78094d40f14ed7165487b8e67c6e10dcd01d291305738d1f70f",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/ops14/independent-capture-review-bindings.json",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "role": "evidence",
+      "fixedBytes": 18074,
+      "fixedSha256": "3b4d3cb3ad2a48edb123c716a2d7da2b507184b9adc326219f8cfde3d5b2a19c",
+      "fixedMatches": true,
+      "currentBytes": 18074,
+      "currentSha256": "3b4d3cb3ad2a48edb123c716a2d7da2b507184b9adc326219f8cfde3d5b2a19c",
+      "currentMatches": true
+    }
+  ],
+  "mismatches": [],
+  "protectedOperatorSha256": "2a5eee0c10604aa4df2a4fc9ee0bdf0da86f14ea154247ddeb9bff3fd960bff0",
+  "protectedOperatorBytes": 8729,
+  "protectedOperatorEqual": {
+    "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2": true,
+    "HEAD": true
+  },
+  "centerRecoveryChangedPaths": [
+    "docs/evidence/svc05-history-compatibility/center-recovery/operation-independent-review.json",
+    "docs/evidence/svc05-history-compatibility/center-recovery/operation-main-receipt.json",
+    "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+    "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py"
+  ],
+  "sharedModuleEqualAtSource": {
+    "tools/owned-process-supervision/supervise.py": true,
+    "tools/owned-process-supervision/supervise.test.py": true,
+    "tools/owned-process-supervision/README.md": true
+  },
+  "testsRerun": false,
+  "projectMutations": false
+}
