@@ -71,3 +71,25 @@ main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；
 独立native_center_owner APPROVED_PREPARATION source d66bdc41f6f39fbeca93e1bf752bf2729526936e，53绑定与2纯检查核实，P2 CLOSED，0重跑。原报告已归档deadline-independent-review.json。其后Lead明确一次窗口，实际run1945 exit0/2135ms/newcenter74763/8checks全true；操作原始证据等待独立忠实性审查，不作者自批。原center退出原因未知、无新版本发布。
 
 2026-10-06 19:47 UTC：Execution Lead对实际run1945 before/after/result独立只读比对，64表+8组检查成立，19:46:35关闭source窗口并恢复clean main22a，无新probe/重跑。此为同版本恢复事实核对；新发布和个人故障根因不在结论中。原20项operation-manifest/源码/raw保持，source-window-closed另存。
+
+## 2026-10-06 20:04 UTC 恢复main接收与新发布准备
+
+Execution Lead独立 APPROVED_SAME_VERSION_CENTER_RECOVERY target3271dcb449ce426d31136bd3ed03d2804fa4b1de，20原operation绑定/64表/8检查已核，0新probe。回执见[operation-independent-review](../../docs/evidence/svc05-history-compatibility/center-recovery/operation-independent-review.json)；main6223c7493a3b6f392813a5d9d82c24d87312ad26的41本片文件逐字相同，非祖先接收如实记录。
+
+R01 f74结果由Lead独立批准，两retained的新af51报告已齐，不扩大成个人发布。当前[release-operation](../../docs/evidence/svc05-history-compatibility/release-operation/README.md)只读小提案待独立审查：现有host工具/单artifact搬运/三报告精确绑定、先后台后Web、允许变更与未知保持；0新增运行。原各source/raw/manifest均不改。
+
+## 2026-10-06 20:16 UTC 可执行观察增量待审
+
+Lead对033dd方案/4文档及41input独立通读核验，方向批准。为实际执行，仅新增observe.mjs/preservation.mjs与固定steps/request输入；原SVC05摘要、H bounded/durable及外层supervise方法直接沿用。source review待完成；仅Node --check，两脚本0import/PG/服务行为。原center-recovery恢复源码、raw和期限P2历史不改；af51更新时raw全保留与四维护字段/queue扫描时间投影、旧audit保留、新操作审计精确检查均需本delta审查。
+
+## 2026-10-06 20:26 UTC 发布采样P2增量待独审
+
+Lead完整读56306d后发现临时admission原子rename与瞬时inFlight误比较P2。作者窄修source a6441a426ea98ee90e8baac44b75fd1d0d61cbeb，私有观察Module/原两脚本调用与纯直接检查；8不同检查最终8/8，历史初8/8及语法记录不改。当前 REVIEW_PENDING，不把作者green当独审；0个人服务/PG/provider。详见 release-operation/admission-fix-README.md 和增量manifest。
+
+## 2026-10-06 20:30 UTC 执行准备P2独立批准
+
+Execution Lead 独立APPROVED a6441a426ea98ee90e8baac44b75fd1d0d61cbeb；67绑定/4源/8不同直接用例及原52完整审查成立，0重跑。原件 release-operation/executable-final-independent-review.json。随后授唯一svc05h-af51-d629-20261006-2030操作窗口，逐步intent/result/freshgate；实际结果另记，不预称发布成功。
+
+## 2026-10-06 20:34 UTC 实际layout窄修待独审
+
+2030窗口step01实际停止，原完整raw保留；原sampler错误要求root/admission，而固定runtime的path是baseUrl摘要一级目录。后继target5fe98f97cb7506f65555ab72205ebaea8464af84仅observer/helper/原专测：同规范精确namespace，不放宽missing/idle/历史hash。3新定向检查3过/100ms，旧8未重跑，0新个人观察/PG/服务；REVIEW_PENDING，不以作者检查替代窗口。

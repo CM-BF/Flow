@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:46 UTC；中心单次恢复ready，操作证据待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:34 UTC；精确runner子目录修复已固定，个人服务未变更 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,18 +12,18 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 两源码已冻结；仅本次自身 metadata 收口后提交 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
-| 已集成main状态 / HEAD | 操作796d的21绑定内容已main 888cfd3b1c414b32298661f1fdf5f33bddbe956c；非祖先同内容；实际仍362+caa1/v2，新发布未执行 |
+| 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
 | 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原版本中心已恢复，网页和执行器持续运行；原身份、会话、任务和页面版本保留。 |
-| 下一可用交付 | 收口本次恢复证据；继续保留页面与新后台的兼容验证后再准备版本发布。 |
-| 当前阻塞 | ACTIVE: 新后台发布仍待两个保留页面的对应兼容报告；原版本中心恢复已完成。 |
+| 当前产出 | 现场检查在任何发布变更前安全停止；观察脚本已对齐runner真实受理目录，三个定向检查通过，等待增量独审。 |
+| 下一可用交付 | 独审通过后按新的唯一窗口做现场准入，再逐步更新后台和网页；旧失败保留。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，源码/RELEASE03限定批准保留；同版本恢复796d由Execution Lead独立APPROVED，0重跑 |
+| Review | [review.md](review.md)；033dd固定方案获Lead方向批准；56306d两脚本已完整审读；a6441a426ea98ee90e8baac44b75fd1d0d61cbeb的admission采样P2独立APPROVED，8个不同本地检查，0个人运行 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
 | 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web恢复已执行，d629搬运及af51新发布未启用。 |
 
@@ -33,7 +33,7 @@
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
-| SVC05H01-05 | pending | Execution Lead窗口 / owner | 新版本发布仍待retained报告；同版本恢复不替代 |
+| SVC05H01-05 | pending | Execution Lead窗口 / owner | 三份准确af51报告已齐；固定操作方案待审及新窗口，同版本恢复不替代 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 
 ## Dashboard
@@ -71,3 +71,23 @@
 2026-10-06 19:46 UTC：中心恢复审批svc05h-center-20261006-1945一次执行exit0/2135ms、新74763，八组保留检查true、lock释放；0operator模型/任务/其他role signal。64flow全列摘要/27迁移/runner15均同，保留原exit1与未知根因。见[operation-analysis](../../docs/evidence/svc05-history-compatibility/center-recovery/operation-analysis.json)；不把本次同版本恢复称新版本发布。
 
 2026-10-06 19:47 UTC：Lead已独立比对恢复原始before/after/result，64表与8组检查成立；19:46:35窗口关闭，原checkout回clean main22a。原操作raw/manifest不改，无新增探针。实际center仍362、runner15、Web原caa1/v2；本次记录待main接收，新版发布TODO05保持open。
+
+2026-10-06 20:04 UTC：两retained→af51报告已由R01真实App和独审补齐，旧缺口仅为历史；新后台/网页尚未上线。[下一次固定操作方案](../../docs/evidence/svc05-history-compatibility/release-operation/README.md)区分停服前材料准备、后台drain/hold/refresh/resume、独立Web pointer切换。41输入binding，0新个人探针/PG/browser/provider；原恢复41文件main内容相同，原raw不改。
+
+2026-10-06 20:16 UTC：按Lead已准方向完成[可执行小增量](../../docs/evidence/svc05-history-compatibility/release-operation/executable-preparation.md)。仅2脚本语法解析0；未import/个人文件读取/PG/操作。旧中心恢复与033dd方案批准不自动扩大到本增量；fixed source/manifest随后绑定。raw/protected摘要同RR，新增审计与maintenance字段单列，不增加新的维护状态机。
+
+2026-10-06 20:16 UTC：操作准备 source `56306d1e464a3a172800b5f81a339ea22903adab`；[增量manifest](../../docs/evidence/svc05-history-compatibility/release-operation/executable-manifest.json)共52绑定。两源码语法0，全部业务观察/比较/操作NOT_RUN，源码停写待唯一独审。
+
+### 当前发布准备增量
+
+- 固定执行准备source：a6441a426ea98ee90e8baac44b75fd1d0d61cbeb；完整绑定见[admission-fix-manifest](../../docs/evidence/svc05-history-compatibility/release-operation/admission-fix-manifest.json)。原56306d与syntax-only输出保留。
+- 8不同本地文件/纯比较检查：初8/8后收紧临时目录拒绝再8/8，累计596ms；不是16不同、不是个人操作验收。checkpoint先于自有tiny目录清理，group absent，0PG/provider/个人服务。
+- 发布未开始；历史数据库/身份事实只作保护锚，未来窗口须全新现场准入，不使用旧零任务替代。
+
+### 20:30窗口实际停止
+
+唯一01-before退出1/181ms，RUNNER_ADMISSION_MISSING；原raw其实保存了baseUrl摘要一级目录下的admission文件hash，不能从hash猜idle。观察器误匹配根路径，停在任何材料导入/维护/服务变更前。02–20均未执行，0主动模型/用户tab。Lead已关闭窗口并负责恢复开发checkout；不换参数重试。见[原始失败与分析](../../docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2030/analysis.json)。
+
+### 精确namespace后继
+
+固定source5fe98f97cb7506f65555ab72205ebaea8464af84；[namespace manifest](../../docs/evidence/svc05-history-compatibility/release-operation/namespace-fix-manifest.json)。3新定向检查/3过，100ms；旧8未重跑。独立review待完成，0新的个人probe/PG/服务。20:30原失败与停止事实已固定9bbffd683776f1f9b82e8c4edf0eccd9d7c14083，不改成绿、不自动重用许可。

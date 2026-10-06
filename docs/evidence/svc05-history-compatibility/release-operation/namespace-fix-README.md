@@ -1,0 +1,15 @@
+# Fixed runner namespace correction
+
+Source `5fe98f97cb7506f65555ab72205ebaea8464af84`; independent incremental review PENDING. Personal release remains unperformed.
+
+The 2030 operation stopped on its sole read-only step01: exit1/181ms `RUNNER_ADMISSION_MISSING`. No report import, artifact copy, drain, refresh, resume or publication followed. The original output remains unchanged at run-svc05h-af51-d629-20261006-2030; its saved observation actually contains the admission file inside one namespace directory. No subsequent personal observation was made to debug this.
+
+Fixed af51 runtime.ts:43–45 constructs `join(workingDirectory, textDigest(baseUrl.replace(/\/$/, '')))`. Its verifier textDigest is SHA256 UTF8; fixed environment.mjs supplies `http://127.0.0.1:${config.centerPort}`. For saved port61227 this is namespace `89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1`. The previous observer wrongly required admission at the runner root.
+
+The observer now supplies exactly that trusted host baseUrl. The private helper derives the identical single namespace and recognizes only `<digest>/admission.json` and its `.tmp`. It continues traversing and hashing the **entire** runner root. Root fake journals or another namespace cannot satisfy idle; other disappearing temporary files cannot enter this journal's bounded rename exception. No directory discovery, broad filename search, missing-file exemption, historical result omission or product change was introduced. Admission idle/schema, uid/dev/ino/non-symlink, fixed byte/count/depth/deadline and persistent-history preservation rules stay unchanged.
+
+Three new namespaced direct cases passed in one100ms command: normalized trailing slash/real one-level layout and whole-root history; root/wrong namespace rejection; exact namespace atomic rename with unrelated temporary disappearance rejection. Only these3 selected, previous8 not rerun. All source bytes were committed before execution and matched reservation/process hashes. Temporary sampled logical peak305B/8files (not exact physical peak); checkpoint fsync preceded same-dev/ino removal, owned process group absent. Raw stdout389B; 0PG/provider/HTTP/browser/personal service or private-file probe. Existing tests were mechanically given the same namespace fixture Interface; their earlier eight results remain historical, not a claimed new full run.
+
+The original outer operation was properly stopped but its readiness oracle used the wrong layout. This correction requires independent delta review and a **new** serial operation window; it does not reuse the closed2030 authorization or prove current idle state. Current source and operation evidence are distinct. Existing reservation/query budgets are not changed.
+
+Local skills method retained: small private observation Module, production caller and deterministic file tests through one Interface; no additional deployment engine. Checked naming, error handling, exact producer path derivation and preservation responsibility at this safe point. No new author finding; review decides the delta.

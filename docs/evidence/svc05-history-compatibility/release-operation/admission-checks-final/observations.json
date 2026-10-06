@@ -1,0 +1,2787 @@
+{
+  "kind": "self-owned tiny filesystem and synthetic comparison observations",
+  "records": [
+    {
+      "dev": 16777234,
+      "ino": 123172422,
+      "uid": 501,
+      "files": [
+        {
+          "path": "admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "history.result",
+          "bytes": 25,
+          "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+        }
+      ],
+      "totalBytes": 71,
+      "admission": {
+        "idle": true,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "unknown",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            }
+          ],
+          "totalBytes": 46,
+          "admission": {
+            "idle": true
+          },
+          "code": "RUNNER_ADMISSION_RENAMED"
+        },
+        {
+          "attempt": 1,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            },
+            {
+              "path": "history.result",
+              "bytes": 25,
+              "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+            }
+          ],
+          "totalBytes": 71,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "idle": true,
+            "bytes": 46,
+            "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+          }
+        }
+      ],
+      "retries": 1,
+      "observedEntries": 4,
+      "observedBytes": 163,
+      "nonAtomic": true
+    },
+    {
+      "dev": 16777234,
+      "ino": 123172426,
+      "uid": 501,
+      "files": [
+        {
+          "path": "admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "history.result",
+          "bytes": 25,
+          "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+        }
+      ],
+      "totalBytes": 71,
+      "admission": {
+        "idle": true,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "unknown",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            }
+          ],
+          "totalBytes": 46,
+          "admission": {
+            "idle": true
+          },
+          "code": "RUNNER_ADMISSION_RENAMED"
+        },
+        {
+          "attempt": 1,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            },
+            {
+              "path": "history.result",
+              "bytes": 25,
+              "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+            }
+          ],
+          "totalBytes": 71,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "idle": true,
+            "bytes": 46,
+            "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+          }
+        }
+      ],
+      "retries": 1,
+      "observedEntries": 4,
+      "observedBytes": 163,
+      "nonAtomic": true
+    },
+    {
+      "dev": 16777234,
+      "ino": 123172430,
+      "uid": 501,
+      "files": [
+        {
+          "path": "admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "history.result",
+          "bytes": 25,
+          "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+        }
+      ],
+      "totalBytes": 71,
+      "admission": {
+        "idle": true,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            },
+            {
+              "path": "history.result",
+              "bytes": 25,
+              "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+            }
+          ],
+          "totalBytes": 71,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "idle": true,
+            "bytes": 46,
+            "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+          }
+        }
+      ],
+      "retries": 0,
+      "observedEntries": 2,
+      "observedBytes": 117,
+      "nonAtomic": true
+    },
+    {
+      "dev": 16777234,
+      "ino": 123172430,
+      "uid": 501,
+      "files": [
+        {
+          "path": "admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "history.result",
+          "bytes": 25,
+          "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+        }
+      ],
+      "totalBytes": 71,
+      "admission": {
+        "idle": true,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            },
+            {
+              "path": "history.result",
+              "bytes": 25,
+              "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+            }
+          ],
+          "totalBytes": 71,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "idle": true,
+            "bytes": 46,
+            "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+          }
+        }
+      ],
+      "retries": 0,
+      "observedEntries": 2,
+      "observedBytes": 117,
+      "nonAtomic": true
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172433,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 80,
+                "sha256": "82d1b306b969e47585fafdf61bd5728d4f99e4013877011451ff886c1da0f7f9"
+              }
+            ],
+            "totalBytes": 80,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 1,
+        "observedBytes": 80,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172436,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 75,
+                "sha256": "f0497e54ed0eef136946d1602bb15952ef0cc7a38a69224b1e5929aab09c134c"
+              }
+            ],
+            "totalBytes": 75,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 1,
+        "observedBytes": 75,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172439,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 59,
+                "sha256": "921c62e43638963265ca6ed9b9e25ea26822f1fc7b6ccf171ef584d6d99f3c53"
+              }
+            ],
+            "totalBytes": 59,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 1,
+        "observedBytes": 59,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_TEMP_PRESENT",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172442,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              },
+              {
+                "path": "admission.json.tmp",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              },
+              {
+                "path": "history.result",
+                "bytes": 25,
+                "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+              }
+            ],
+            "totalBytes": 117,
+            "admission": {
+              "idle": true
+            },
+            "code": "RUNNER_ADMISSION_TEMP_PRESENT"
+          }
+        ],
+        "observedEntries": 3,
+        "observedBytes": 117,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "ENOENT",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172446,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              }
+            ],
+            "totalBytes": 46,
+            "admission": {
+              "idle": true
+            },
+            "code": "ENOENT"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 46,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "ENOENT",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172449,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "sampling",
+            "files": [],
+            "totalBytes": 0
+          }
+        ],
+        "observedEntries": 0,
+        "observedBytes": 0,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_FILE_IDENTITY",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172452,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              }
+            ],
+            "totalBytes": 46,
+            "admission": {
+              "idle": true
+            },
+            "code": "RUNNER_FILE_IDENTITY"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 46,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_FILE_IDENTITY",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172456,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              },
+              {
+                "path": "history.result",
+                "bytes": 25,
+                "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+              }
+            ],
+            "totalBytes": 71,
+            "admission": {
+              "idle": true
+            },
+            "code": "RUNNER_FILE_IDENTITY"
+          }
+        ],
+        "observedEntries": 3,
+        "observedBytes": 71,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_RENAMED",
+      "observation": {
+        "dev": 16777234,
+        "ino": 123172460,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              }
+            ],
+            "totalBytes": 46,
+            "admission": {
+              "idle": true
+            },
+            "code": "RUNNER_ADMISSION_RENAMED"
+          },
+          {
+            "attempt": 1,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              }
+            ],
+            "totalBytes": 46,
+            "admission": {
+              "idle": true
+            },
+            "code": "RUNNER_ADMISSION_RENAMED"
+          },
+          {
+            "attempt": 2,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              }
+            ],
+            "totalBytes": 46,
+            "admission": {
+              "idle": true
+            },
+            "code": "RUNNER_ADMISSION_RENAMED"
+          }
+        ],
+        "observedEntries": 6,
+        "observedBytes": 138,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "at": "2026-10-06T20:24:54.966Z",
+      "phase": "preflight",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 15,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "previous-operation",
+        "phase": "resumed"
+      },
+      "addedAudit": [],
+      "passed": true,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.967Z",
+      "phase": "materials",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 15,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "previous-operation",
+        "phase": "resumed"
+      },
+      "addedAudit": [],
+      "passed": true,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.967Z",
+      "phase": "drained",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "draining",
+        "maintenance_version": 16,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "drain-requested",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.967Z",
+      "phase": "paused",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 17,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "ready-paused",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.967Z",
+      "phase": "resumed",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "resumed",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        },
+        {
+          "id": "new-audit-2",
+          "request_id": "resume-key",
+          "audit": {
+            "action": "resume",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 17,
+              "state": "maintenance"
+            },
+            "after": {
+              "version": 18,
+              "state": "accepting"
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.967Z",
+      "phase": "published",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true,
+        "webOperation": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "resumed",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        },
+        {
+          "id": "new-audit-2",
+          "request_id": "resume-key",
+          "audit": {
+            "action": "resume",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 17,
+              "state": "maintenance"
+            },
+            "after": {
+              "version": 18,
+              "state": "accepting"
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.968Z",
+      "phase": "resumed",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": false,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "resumed",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        },
+        {
+          "id": "new-audit-2",
+          "request_id": "resume-key",
+          "audit": {
+            "action": "resume",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "unknown",
+            "before": {
+              "version": 17,
+              "state": "maintenance"
+            },
+            "after": {
+              "version": 18,
+              "state": "accepting"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.968Z",
+      "phase": "resumed",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": false,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "resumed",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        },
+        {
+          "id": "new-audit-2",
+          "request_id": "other",
+          "audit": {
+            "action": "resume",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 17,
+              "state": "maintenance"
+            },
+            "after": {
+              "version": 18,
+              "state": "accepting"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.968Z",
+      "phase": "resumed",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": false,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "resumed",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        },
+        {
+          "id": "new-audit-2",
+          "request_id": "resume-key",
+          "audit": {
+            "action": "resume",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 17,
+              "state": "maintenance"
+            },
+            "after": {
+              "version": 19,
+              "state": "accepting"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.968Z",
+      "phase": "resumed",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": false,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "resumed",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        },
+        {
+          "id": "new-audit-2",
+          "request_id": "resume-key",
+          "audit": {
+            "action": "resume",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 17,
+              "state": "maintenance"
+            },
+            "after": {
+              "version": 18,
+              "state": "accepting"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "dev": 16777234,
+      "ino": 123172466,
+      "uid": 501,
+      "files": [
+        {
+          "path": "admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "history.result",
+          "bytes": 25,
+          "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+        }
+      ],
+      "totalBytes": 71,
+      "admission": {
+        "idle": true,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            },
+            {
+              "path": "history.result",
+              "bytes": 25,
+              "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+            }
+          ],
+          "totalBytes": 71,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "idle": true,
+            "bytes": 46,
+            "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+          }
+        }
+      ],
+      "retries": 0,
+      "observedEntries": 2,
+      "observedBytes": 117,
+      "nonAtomic": true
+    },
+    {
+      "dev": 16777234,
+      "ino": 123172466,
+      "uid": 501,
+      "files": [
+        {
+          "path": "admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "history.result",
+          "bytes": 27,
+          "sha256": "d71b681390d0f027d0e0f89dd91e40967a203be58e5c8914a85ac0123d8f0b54"
+        }
+      ],
+      "totalBytes": 73,
+      "admission": {
+        "idle": true,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            },
+            {
+              "path": "history.result",
+              "bytes": 27,
+              "sha256": "d71b681390d0f027d0e0f89dd91e40967a203be58e5c8914a85ac0123d8f0b54"
+            }
+          ],
+          "totalBytes": 73,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "idle": true,
+            "bytes": 46,
+            "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+          }
+        }
+      ],
+      "retries": 0,
+      "observedEntries": 2,
+      "observedBytes": 119,
+      "nonAtomic": true
+    },
+    {
+      "at": "2026-10-06T20:24:54.990Z",
+      "phase": "paused",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": false,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 17,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "ready-paused",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.991Z",
+      "phase": "paused",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": false,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": false
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 17,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "ready-paused",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.991Z",
+      "phase": "paused",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": false,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": false,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 17,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "ready-paused",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.991Z",
+      "phase": "paused",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": false,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 17,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "ready-paused",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.991Z",
+      "phase": "paused",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": true,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": false
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 17,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "ready-paused",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    },
+    {
+      "at": "2026-10-06T20:24:54.991Z",
+      "phase": "paused",
+      "checks": {
+        "source": true,
+        "runtime": true,
+        "identity": true,
+        "config": true,
+        "nativeIdle": true,
+        "nativeFiles": true,
+        "invariantState": true,
+        "lockAbsent": true,
+        "owned": true,
+        "singleKnownRunner": true,
+        "zeroWork": true,
+        "queue": true,
+        "migrations": true,
+        "maintenance": true,
+        "dependencies": true,
+        "tableNames": true,
+        "tables": false,
+        "oldAudit": true,
+        "newAudit": true,
+        "operation": true,
+        "retained": true,
+        "materials": true,
+        "pointer": true
+      },
+      "tables": {
+        "tasks": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": true,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "conversations": {
+          "omitted": [
+            "queue_checked_at"
+          ],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        },
+        "runners": {
+          "omitted": [
+            "maintenance_state",
+            "maintenance_version",
+            "maintenance_operation_id",
+            "maintenance_updated_at"
+          ],
+          "omittedRunnerId": "runner",
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": false,
+          "countExpected": true
+        },
+        "runner_maintenance_audit": {
+          "omitted": [],
+          "omittedRunnerId": null,
+          "columnsEqual": true,
+          "rawEqual": false,
+          "oldProtectedRowsPreserved": true,
+          "countExpected": true
+        }
+      },
+      "runner": {
+        "id": "runner",
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 17,
+        "maintenance_operation_id": "new-operation"
+      },
+      "operation": {
+        "operationId": "new-operation",
+        "initialVersion": 15,
+        "target": "af51c621696230fbced12227670f014ca73bd8a1",
+        "phase": "ready-paused",
+        "drainKey": "drain-key",
+        "holdKey": "hold-key",
+        "resumeKey": "resume-key"
+      },
+      "addedAudit": [
+        {
+          "id": "new-audit-0",
+          "request_id": "drain-key",
+          "audit": {
+            "action": "drain",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 15,
+              "state": "accepting"
+            },
+            "after": {
+              "version": 16,
+              "state": "draining"
+            }
+          }
+        },
+        {
+          "id": "new-audit-1",
+          "request_id": "hold-key",
+          "audit": {
+            "action": "hold",
+            "operationId": "new-operation",
+            "runnerId": "runner",
+            "source": "trusted-host",
+            "before": {
+              "version": 16,
+              "state": "draining"
+            },
+            "after": {
+              "version": 17,
+              "state": "maintenance"
+            }
+          }
+        }
+      ],
+      "passed": false,
+      "limits": [
+        "Raw MD5 row summaries are preserved change detectors, not semantic or cryptographic authenticity proof.",
+        "Only queue_checked_at and this runner four maintenance fields are projected out, checked separately; old audits remain exact.",
+        "No new migration expected; user concurrent activity requires separate causal review rather than widening this allowlist.",
+        "Filesystem/process and RR DB snapshots are observations, not admission locks; admission must be observed idle at both ends.",
+        "Native sample retry metadata may differ; every persistent file remains byte/hash compared, including admission and historical results."
+      ]
+    }
+  ]
+}
