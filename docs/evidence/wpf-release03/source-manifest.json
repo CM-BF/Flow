@@ -17,7 +17,12 @@
   "checks": {
     "sourceDiffCheck": 0,
     "protectedDiff": "empty",
-    "productTypecheck": "NOT_RUN",
+    "productTypecheck": {
+      "state": "PASSED",
+      "result": "typecheck-result.json",
+      "log": "typecheck.log",
+      "execution": "static noEmit only; no product execution"
+    },
     "PG": "NOT_RUN",
     "Chrome": "NOT_RUN",
     "compatibility": "NOT_RUN"

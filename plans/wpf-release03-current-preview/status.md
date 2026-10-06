@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:55:16 UTC |
+| 最近更新时间 | 2026-10-06 14:59:40 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -10,18 +10,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 997d731a98c837ccfce61712d2c7318ae13fb3d2 |
-| 工作树dirty状态 | A-only实现已固定997d；本次仅metadata待提交，提交后实际clean另核 |
+| 工作树dirty状态 | 实现997d持续冻结；本次仅定向noEmit证据与metadata待提交，提交后实际clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN；仅实际领取/固定输入核验 |
+| 检查状态 | NOT_RUN（实际兼容矩阵）；定向strict noEmit PASSED，见证据 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片尚未送固定实现独审 |
 | 实现目标 | 997d731a98c837ccfce61712d2c7318ae13fb3d2 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 兼容脚本已准备先验证附件历史，失败会停止后续页面验证 |
+| 当前产出 | 验证脚本已通过类型检查，实际兼容仍待受控运行 |
 | 下一可用交付 | 给出新前端与现有后台的真实兼容结果 |
-| 当前阻塞 | ACTIVE: 脚本仍待定向检查与运行资源准入，尚无兼容结果 |
+| 当前阻塞 | ACTIVE: 脚本待独立审查与实际运行资源准入，尚无兼容结果 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 
@@ -46,3 +46,7 @@
 ## A-only 后继裁决
 
 本次先固定 history-only 入口供独审，仍无运行授权。两项exact362 HTTP attachment-only/mixed都保原始结果，任一失败禁止启动Chrome；A全绿但B未准入则封存，不能发布或后台续跑。180秒累计/8MiB/单专库/0provider不变。先前f333是原全矩阵准备checkpoint，无执行结果；新target以本段提交记录为准。
+
+## 单次定向类型检查
+
+2026-10-06 14:58:51.441Z 起，本人fresh核v3四scope/source997d与clean后，Node24/TS5.9.3实际执行两个显式入口的strict+noUncheckedIndexedAccess noEmit，exit0/1,839.676ms/log0B，自身PGID退出，0产品执行/PG/Chrome。原命令、全机free观察和停止条件保留在[typecheck-result](../../docs/evidence/wpf-release03/typecheck-result.json)，日志原样保留。20秒获准上限未扩大，不重复绿色检查。180秒业务矩阵仍0使用。

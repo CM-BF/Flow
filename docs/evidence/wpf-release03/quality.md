@@ -11,3 +11,7 @@
 ## 2026-10-06 14:55:16 UTC A-only 源码复核
 
 只增加明确mode与父/子双重Chrome门禁，A失败两项raw保留后finally清理；A成功仍不自动发布。原完整矩阵保留为后续明确准入，未运行。原f333 source checkpoint不冒兼容证据，所有产品/共享字节仍保护。
+
+## 2026-10-06 14:59:40 UTC 单次noEmit后安全点
+
+固定997d源码未改。明确两入口/strict/noUncheckedIndexedAccess命令通过，静态类型检查不等业务import或兼容通过；原始空stdout完整保留，资源和PGID退出见typecheck-result。没有重复检查、没有以pass解除A运行门槛。
