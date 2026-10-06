@@ -8,7 +8,7 @@ Base：4e0289f29ffa48c6c49003837d4520f57c22b6b0。Scope：status声明五个实�
 
 可复制审查任务：核tree/branch/HEAD/dirty/liveclaim，在固定target只读审App→Settings私有bound四读接口、session隔离、懒加载/卸载/焦点/CSS；用专用动态HTTP fixture验证初始0读/显式展开/中心相同ID迟到清理、local启停独立与390双主题/原Thread草稿。不要运行模型或DB，不修改其他owner模块；问题交本owner按severity/trigger/文件/复验条件记录。现有49922/55049/63743/55247保留。
 
-作者已执行：输入/receipt、app typecheck/build/dev8/prod7与双主题截图，详见[validation](../../docs/evidence/wpf-x03/validation.md)。真实报告sourceCommit为a534+dirty，五文件hash匹配固定target见[source manifest](../../docs/evidence/wpf-x03/source-manifest.json)。未执行：main集成、真实中心或模型；独立review结果见下文。本批不是完整npm安装/隔离/生命周期管理，也不等于真实中心或模型验收。
+作者已执行：输入/receipt、app typecheck/build/dev8/prod7与双主题截图，详见[validation](../../docs/evidence/wpf-x03/validation.md)。真实报告sourceCommit为a534+dirty，五文件hash匹配固定target见[source manifest](../../docs/evidence/wpf-x03/source-manifest.json)。作者未执行merge/真实中心或模型；最新main集成只读观察见status；独立review结果见下文。本批不是完整npm安装/隔离/生命周期管理，也不等于真实中心或模型验收。
 
 ## 正式独立结论
 
