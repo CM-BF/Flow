@@ -1,10 +1,10 @@
-.attachment-picker { display:grid; gap:10px; min-width:0; font-size:13px; line-height:1.5; color:var(--foreground); }
+.attachment-picker { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; min-width:0; font-size:13px; line-height:1.5; color:var(--foreground); }
 .attachment-picker h3 { font-size:13px; font-weight:600; margin:8px 0 4px; }
 .attachment-help { color:var(--muted-foreground); font-size:12px; margin:0; }
 .attachment-search { display:flex; align-items:end; gap:8px; }
 .attachment-search label { display:grid; gap:4px; flex:1; min-width:0; }
 .attachment-picker input:not([type=file]), .attachment-picker button, .attachment-file-action { border:1px solid var(--border); border-radius:6px; background:var(--background); color:var(--foreground); padding:6px 8px; min-height:32px; font:inherit; }
-.attachment-picker button { cursor:pointer; }
+.attachment-picker button { cursor:pointer; min-width:0; max-width:100%; white-space:normal; overflow-wrap:anywhere; }
 .attachment-picker button:disabled { opacity:.5; cursor:not-allowed; }
 .attachment-picker :is(button,input,summary):focus-visible { outline:2px solid var(--ring); outline-offset:2px; }
 .attachment-row { border-bottom:1px solid var(--border); padding:8px 0; min-width:0; }

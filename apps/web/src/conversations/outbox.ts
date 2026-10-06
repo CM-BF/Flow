@@ -2,9 +2,9 @@ import {
   conversationCreationSchema,
   conversationTurnSchema,
   type ConversationCreation,
-  type ConversationTurnAdmission,
+  type ConversationTurnAdmission, type AttachmentReference,
 } from "@flow/contracts";
-import { freezeKnowledgeRequest } from "../conversation-context/receipts";
+import { freezeMaterialRequest } from "../conversation-context/receipts";
 import type { FrozenCitation } from "../conversation-context/selection";
 
 export interface OutgoingConversationTurn {
@@ -13,6 +13,7 @@ export interface OutgoingConversationTurn {
   text: string;
   creation?: ConversationCreation;
   knowledge?: readonly FrozenCitation[];
+  attachments?: readonly Readonly<AttachmentReference>[];
 }
 interface ReceiptBase {
   readonly id: string;
@@ -67,11 +68,12 @@ export class ConversationOutbox {
     this.assertReady();
     const creation = input.creation ? freezeCreation(input.creation) : null;
     if (!input.conversationId && !creation) throw Error("New conversations require creation settings.");
-    if (!input.conversationId && input.knowledge?.length && !creation?.projectId)
-      throw Error("Knowledge requires a fixed conversation project.");
-    const request = freezeKnowledgeRequest(conversationTurnSchema.parse({
+    if (!input.conversationId && (input.knowledge?.length || input.attachments?.length) && !creation?.projectId)
+      throw Error("Materials require a fixed conversation project.");
+    const request = freezeMaterialRequest(conversationTurnSchema.parse({
       expectedRevision: input.expectedRevision, text: input.text, mode: "follow-up",
       ...(input.knowledge !== undefined ? { knowledge: input.knowledge } : {}),
+      ...(input.attachments !== undefined ? { attachments: input.attachments } : {}),
     }), creation?.projectId);
     const id = this.nextId();
     const entry: TurnReceipt = {

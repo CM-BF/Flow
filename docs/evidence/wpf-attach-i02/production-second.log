@@ -1,0 +1,20 @@
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+PASS explicit project preparation preserves the text and performs zero turns
+locator.click: Error: strict mode violation: getByRole('button', { name: 'Files', exact: true }).visible() resolved to 2 elements:
+    1) <button title="Files" class="flow-icon " aria-label="Files">…</button> aka getByRole('button', { name: 'Files', description: 'Files' })
+    2) <button type="button">Files</button> aka getByText('Files', { exact: true })
+
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Files', exact: true }).visible()[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:40:21)
+    at check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:27:81)
+    at work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:39:11)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:112:7)
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/attachment-integration.browser.ts production-second

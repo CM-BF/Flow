@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-06T13:07:26.147Z",
+  "sourceCount": 154,
+  "unique": true,
+  "rows": [
+    {
+      "id": "WPF-CONNECTION01",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/plans/wpf-connection-session/status.md",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "连接会话身份和恢复接口已固定",
+        "next": "刷新保留连接、过期与退出停止观察",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "errors": []
+    },
+    {
+      "id": "S01P05",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/plans/s01p05-event-state/status.md",
+      "human": {
+        "delivery": {
+          "state": "unknown",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 4,
+        "output": "最小SQL合并完成，真实PG9/9与局部strict0；准备固定source/manifest独审",
+        "next": "固定commit独审后交Lead；未来A/B固定两版/observer预算后另开门禁",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [
+          "本片段交付阶段"
+        ],
+        "complete": false
+      },
+      "errors": []
+    },
+    {
+      "id": "ENG01I",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/plans/eng01i-native-engineering-host/status.md",
+      "human": {
+        "delivery": {
+          "state": "planning",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "宿主编排接口已固定，按优先级暂缓实施",
+        "next": "恢复本片后连接完整检查与中心收据",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "errors": []
+    }
+  ],
+  "scope": "Registration metadata only; no product tests/full aggregate"
+}

@@ -1,0 +1,1411 @@
+{
+  "observedAt": "2026-10-06T12:46:00.701Z",
+  "baseline": {
+    "commit": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+    "date": "2026-10-06",
+    "verifiedAt": "2026-10-06T12:43:00Z",
+    "repository": "https://github.com/CM-BF/Flow"
+  },
+  "sourceFiles": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "sha256": "4a2cb7b2343158a1ecf5cd5b2add35e9e1e19c0f366c09fa649a949b853229f7",
+      "lines": 328
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "lines": 90
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "lines": 98
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "lines": 95
+    },
+    {
+      "path": "apps/runner/package.json",
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063",
+      "lines": 19
+    },
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923",
+      "lines": 100
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "sha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b",
+      "lines": 324
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3",
+      "lines": 10
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "lines": 74
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "sha256": "d449d350dd2d91611184861df68ce70c4f3b7c9d1543a7d19c61ff26c246547c",
+      "lines": 59
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "sha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b",
+      "lines": 42
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8",
+      "lines": 64
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "sha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54",
+      "lines": 51
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "lines": 58
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "sha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d",
+      "lines": 62
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "sha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270",
+      "lines": 79
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "lines": 76
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "lines": 156
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c",
+      "lines": 22
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "lines": 45
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b",
+      "lines": 28
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "sha256": "d55636b7160917ec377e02fc0c862a9b881398a46489507dc09685d92f89488a",
+      "lines": 85
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a",
+      "lines": 12
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef",
+      "lines": 11
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "lines": 20
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "lines": 121
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "lines": 261
+    },
+    {
+      "path": "apps/server/package.json",
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0",
+      "lines": 24
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd",
+      "lines": 57
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "sha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244",
+      "lines": 45
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34",
+      "lines": 28
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "sha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5",
+      "lines": 57
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "sha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13",
+      "lines": 45
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa",
+      "lines": 129
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+      "lines": 64
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7",
+      "lines": 33
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7",
+      "lines": 106
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+      "lines": 130
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8",
+      "lines": 44
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+      "lines": 34
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "lines": 102
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "sha256": "4e297828859515c6429bcdec45b5e456b60b1c67ab1224e477501bc29c6d58ed",
+      "lines": 50
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853",
+      "lines": 116
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "sha256": "30124654e78c5db1075f306046d8f7a5e1e72e835531e2a87fc1cfb17587bb20",
+      "lines": 39
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "sha256": "df68185b3229b606084fc775a0cda8716e421ca5b4214a902fcbf2b7dbeb9a1d",
+      "lines": 32
+    },
+    {
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "sha256": "afa2812cc6c6eb4e70be02a995053c68b22be1c73a3a4431a6cb6fbe97b68144",
+      "lines": 51
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a",
+      "lines": 105
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "sha256": "ca58caa4fa17b5a30188afadd502b6df1f478db3a2e95182ad0d6cacad3026c2",
+      "lines": 86
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "lines": 215
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42",
+      "lines": 47
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21",
+      "lines": 106
+    },
+    {
+      "path": "apps/server/src/m2-workspace.ts",
+      "sha256": "e1653357b06f16e016c898b54b210b3f53af76557ca8a8498fb53c47eb1f7e78",
+      "lines": 102
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "sha256": "d29980feece7e8094f3d317fd6761edc132f6e7827d458e748e9e0ec77a92180",
+      "lines": 38
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "sha256": "33d86d709452bc5546f1f8aa44c9832826f58607299574e2682b11afb69b43e4",
+      "lines": 91
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c",
+      "lines": 45
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2",
+      "lines": 86
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648",
+      "lines": 130
+    },
+    {
+      "path": "apps/server/src/plugins/index.ts",
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c",
+      "lines": 56
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd",
+      "lines": 157
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9",
+      "lines": 131
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a",
+      "lines": 17
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e",
+      "lines": 85
+    },
+    {
+      "path": "apps/server/src/timeline.ts",
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5",
+      "lines": 11
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "sha256": "faa19ab6c089abdd61d38567ada8a5ee5580507c0fc703abce6938bd0e8f399f",
+      "lines": 45
+    },
+    {
+      "path": "apps/web/README.md",
+      "sha256": "a10fe9d1ee4f73a7dea00110b370bd6b08df8aa111cd7c4c8af6383aa5d66bc8",
+      "lines": 59
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "lines": 47
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "482e5a9b09d54954dd957f6c711e0603b8e3cf23d5cf1d89cb0cf242420454a9",
+      "lines": 1094
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "sha256": "383539ceb5735626f2738576e30869eccf820d99d9133ed3076aa838f2b08231",
+      "lines": 125
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848",
+      "lines": 195
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "sha256": "45c7c0f1f4bb4049764cae6dad7436e2a2c457948bca2b6880fb75d7aff5bef7",
+      "lines": 24
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "sha256": "c8ac83d12411021949d12dedb342669555b33987b162734d3ff51c55fa37119a",
+      "lines": 3
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "38669bba0b3697b48e180ee6119474cbeeda6ce9aa0f2a9bb1fc2148a5efd433",
+      "lines": 160
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ee90796b38c2bf0c265dffe59d7102dd6d91d5ea8d9e4100f0c6906dcf7185c3",
+      "lines": 387
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+      "lines": 79
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "sha256": "cdd1f19e355a9023e677cff7a9c1a1e28ee0ced49c7818002ebb60fffcc31e53",
+      "lines": 93
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82",
+      "lines": 86
+    },
+    {
+      "path": "apps/web/src/plugin-integration/data-renderers.ts",
+      "sha256": "868d7915f6d95eacdb6d7a1e647e5873a1987c84ee84cf7abe46d69e61a4b8e6",
+      "lines": 62
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "8a325158037cb0d2c59cd6b5c86630a0fe6495feb4195b254c1fd58673c83298",
+      "lines": 131
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "eebfb3472c356f0e9514ec2984f4c12b624722263735b23f7d3b8b2feb9869b4",
+      "lines": 260
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "10b8466da9dfadab8b202922ce59de9a0ce71e7a98777876e9547923ecbe176f",
+      "lines": 286
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9",
+      "lines": 224
+    },
+    {
+      "path": "docs/evidence/svc04/interface.md",
+      "sha256": "7b7a2e8ce2632d0b4e286bca2ac9c0ebe2371b99d93350cb0074ba16a85191bd",
+      "lines": 16
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8",
+      "lines": 148
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "lines": 560
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311",
+      "lines": 106
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382",
+      "lines": 103
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+      "lines": 147
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f",
+      "lines": 35
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a",
+      "lines": 56
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "sha256": "ecc97f9795a4ff05a9340c5d71836f59b86246d1f0daa63dfcf3282e3295267f",
+      "lines": 194
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "sha256": "87788e3280d279ea7a7656f36c06bcbe8f20cda0ed68e3097f60bf4c8b44a79c",
+      "lines": 51
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "sha256": "91766e60c23c589151fa75549bf87af840de651b26f55db8212e1fd7627e4135",
+      "lines": 143
+    },
+    {
+      "path": "packages/protocols/package.json",
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "lines": 17
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85",
+      "lines": 6
+    },
+    {
+      "path": "packages/storage/migrations/004-projects.sql",
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07",
+      "lines": 46
+    },
+    {
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6",
+      "lines": 21
+    },
+    {
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48",
+      "lines": 44
+    },
+    {
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9",
+      "lines": 47
+    },
+    {
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac",
+      "lines": 41
+    },
+    {
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d",
+      "lines": 44
+    },
+    {
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241",
+      "lines": 33
+    },
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "sha256": "69d54653a33a334d21eb54aa9ef5b15719f4cc7252994005a7747f145ccdb926",
+      "lines": 497
+    },
+    {
+      "path": "plans/flow-002-provider-harness/plan.md",
+      "sha256": "b85b5245ec4cbc7299cf8468f5a3c4a64b1a35089576cdc0a2451293912e4590",
+      "lines": 197
+    },
+    {
+      "path": "plans/templates/status.md",
+      "sha256": "285b484f43d1cc55f802356fafcdb891443f9bdcadb7f4b0b10f0f0c37632bfb",
+      "lines": 52
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "sha256": "88115b5d4781f92449aeea1cf20c872955d57c1ae1a0dbada16a1950fafd688e",
+      "lines": 124
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2",
+      "lines": 103
+    }
+  ],
+  "evidence": [
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 169,
+      "text": "  registerKnowledgeRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 164,
+      "text": "  registerConversationContextRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 171,
+      "text": "  registerGoalGraphRunRoutes(app, pool, boss);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 159,
+      "text": "  registerNativeActivityRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 154,
+      "text": "  registerAssistantStreamRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 153,
+      "text": "  registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 90,
+      "text": "    if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 149,
+      "text": "      afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === \"pending\" && <p className=\"flow-conversation-notice\" role=\"status\">Reply pending. You can keep writing below.</p>}{last?.assistant.state === \"unavailable\" && <p className=\"flow-conversation-notice\" role=\"status\">Reply unavailable · {last.assistant.reason.replaceAll(\"-\", \" \")}</p>}<MessageReceipt projection={projection} onAccepted={onAccepted} /></>}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 142,
+      "text": "      composerSubmit={intent === \"queue\" ? () => { if (!projection.sendDisabledReason(\"queue\")) runtime.thread.composer.send({ startRun: false }); } : undefined}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 141,
+      "text": "    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder=\"Message Flow…\" sendLabel={intent === \"queue\" ? \"Add to queue\" : \"Send message\"}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 141,
+      "text": "    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder=\"Message Flow…\" sendLabel={intent === \"queue\" ? \"Add to queue\" : \"Send message\"}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 141,
+      "text": "    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder=\"Message Flow…\" sendLabel={intent === \"queue\" ? \"Add to queue\" : \"Send message\"}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 90,
+      "text": "  const runtime = useExternalStoreRuntime<ThreadMessage>({ messageRepository: streamState.repository,"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 100,
+      "text": "        if (intent === \"queue\") { if (!conversationQueueEnqueueSchema.safeParse({ expectedQueueRevision: queue.page?.queueRevision, text, knowledge: capture.knowledge }).success) throw Error(\"Use a non-empty message up to 16,000 UTF-8 bytes for the queue. Your references are kept.\"); }"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "line": 37,
+      "text": "        <QueueSectionTrigger className=\"gap-2 bg-transparent px-2 py-1.5 text-xs\"><QueueSectionLabel label={page ? `${page.items.length} waiting loaded${page.nextCursor ? \"; more available\" : \"\"}` : \"Queue\"} /><span>{state.loading ? \"Refreshing…\" : state.stale ? \"Needs refresh\" : page?.paused ? \"Paused\" : \"Center queue\"}</span></QueueSectionTrigger>"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "line": 48,
+      "text": "          {cancelTarget && <div className=\"my-2 rounded border p-2\" role=\"group\" aria-label=\"Confirm current execution cancellation\"><p>Request cancellation of {cancelTarget}? Pausing and cancellation have separate receipts. Work already performed is not undone.</p><div className=\"mt-2 flex flex-wrap gap-2\"><Button type=\"button\" variant=\"destructive\" size=\"sm\" onClick={event => void preserveFocus(event.currentTarget, async () => { await projection.cancelCurrentTask(cancelTarget); setCancelTarget(null); })}>Confirm execution cancellation</Button><Button type=\"button\" variant=\"outline\" size=\"sm\" onClick={event => void preserveFocus(event.currentTarget, async () => { setCancelTarget(null); })}>Keep execution</Button></div></div>}"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 28,
+      "text": "      FROM flow.knowledge_sources s JOIN flow.knowledge_versions v ON v.source_id=s.id AND v.version=s.current_version"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 29,
+      "text": "      JOIN flow.knowledge_chunks c ON c.source_id=s.id AND c.version=s.current_version WHERE s.project_id=$1"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 31,
+      "text": "      SELECT *,strpos(content,$2)>0 AS literal,ts_rank(search_vector,plainto_tsquery('simple',$2)) AS rank"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 16,
+      "text": "    citation: { projectId: row.project_id, sourceId: row.id, version: row.current_version, contentDigest: row.content_digest, locator: { kind: 'utf8-bytes', start: row.start_byte, end: row.end_byte } },"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 31,
+      "text": "  const row = (await client.query<VersionRow>('INSERT INTO flow.knowledge_versions(source_id,version,content,content_digest) VALUES($1,$2,$3,$4) RETURNING source_id,version,content_digest,byte_length,created_at', [sourceId, version, text, sha256(text)])).rows[0]!;"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 33,
+      "text": "  await client.query(`INSERT INTO flow.knowledge_chunks(source_id,version,ordinal,start_byte,end_byte,content)"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 55,
+      "text": "      if (source.current_version !== input.expectedVersion) throw new HttpError(409, 'knowledge_version_conflict', 'Read the current source version before publishing.');"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 52,
+      "text": "  const sources: FrozenSource[] = (await resolveCitationsInTransaction(client, projectId, citations)).map(({ citation, text, isCurrent, currentVersion }) => ({ citation, text, byteLength: Buffer.byteLength(text), currentVersionAtFreeze: currentVersion, isCurrentAtFreeze: isCurrent }));"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 43,
+      "text": "  await client.query('INSERT INTO flow.conversation_execution_inputs(id,context_id,user_text,template_version,execution_prompt,execution_input_digest) VALUES($1,$2,$3,$4,$5,$6)', [id, contextId, userText, version, prompt, inputDigest(userText, prompt, version)]);"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 97,
+      "text": "  if (input.conversation_id !== conversationId) throw invalid();"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 117,
+      "text": "    const row = (await client.query<ContextRow>(\"SELECT id AS context_id,conversation_id,project_id,context_digest,sources,coalesce(to_jsonb(c)->'attachments','[]'::jsonb) AS attachments,raw_bytes,created_at FROM flow.conversation_contexts c WHERE id=$1 AND conversation_id=$2\", [contextId, conversationId])).rows[0];"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 101,
+      "text": "export async function executionInputForTask(client: PoolClient, taskId: string, rawPrompt: string): Promise<{ prompt: string; context: ConversationContextExecutionReference } | null> {"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "line": 30,
+      "text": "  const context = await contextReference(client, row.conversation_input_id);"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "line": 32,
+      "text": "    ...(context ? { context } : {}), user: { role: 'user', text: row.user_text }, task: summary(task), ...await assistantProjection(client, task), telemetry: { kind: 'execution', taskId: task.id, title: 'Execution details' } };"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "line": 50,
+      "text": "    ...(value.projectId === undefined ? {} : { projectId: value.projectId }),"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "line": 72,
+      "text": "    || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== \"boolean\")"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 8,
+      "text": "import { withRunnerAuthority } from '../goal-run-authority/runner-project-fence.js';"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 62,
+      "text": "      if (run.scope.maxApplications === 0) throw new HttpError(403, 'goal_graph_scope', 'This grant permits proposals only.');"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 6,
+      "text": "import { commandInTransaction } from '../tasks.js';"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 70,
+      "text": "      if (context.project.revision !== run.scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The base graph changed; no silent rebase is allowed.');"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 11,
+      "text": "  const invoke = ownedCalls(input);"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 3,
+      "text": "import { ownedCalls, assertNativeGrant, type HostAuthority } from '../goal-tool-bridge/authority.js';"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 19,
+      "text": "    commandGraph: (command, key) => invoke(signal => client.goalGraphCommand({ ...call, command }, key, signal)),"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "line": 304,
+      "text": "  if (options.goalTools && options.goalGraphTools) throw new Error('Node and graph tools need separate configured profiles.');"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "line": 305,
+      "text": "  if ((options.goalTools || options.goalGraphTools) && (options.materialFiles.length || options.allowRead !== false || options.requireReadApproval)) throw new Error('Goal tools require an empty material scope and explicitly disabled material reads.');"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 2,
+      "text": "import { bindGraphToolCapability } from './goal-graph-tools/bind.js';"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 63,
+      "text": "    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop)"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 46,
+      "text": "  const active = new Map<string, Promise<void>>();"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 80,
+      "text": "        if (journal.unresolved(new Set(active.keys()))) {"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 84,
+      "text": "        if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wait(); continue; }"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 213,
+      "text": "    if (options.activeSteering && adapter.name === 'claude') context.steering = {"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 15,
+      "text": "export async function fetchPackageArtifact(options: PackageArtifactOptions, input: unknown,"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 8,
+      "text": "import { stageStream, publishArtifact } from './storage.js';"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 33,
+      "text": "    const receipt = packageArtifactSchema.parse({ ...request, artifactId: options.artifactId ?? randomUUID(), format: 'npm-tarball',"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 21,
+      "text": "  const verifier = ssri.create({ algorithms: ['sha512'] });"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 29,
+      "text": "    file = await open(join(directory, 'package.tgz'), 'wx', 0o600);"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 58,
+      "text": "  await rename(staged.directory, join(root, 'artifacts', receipt.artifactId));"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 40,
+      "text": "export function createDataRendererRegistry(declarations: readonly DataDeclaration[], host: Lifecycle) {"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 81,
+      "text": "      if (disposed || !entry || entry.signal.aborted || host.list().find(item => item.id === declaration.ownerId)?.state !== \"active\")"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 73,
+      "text": "      if (!declaration) return { kind: \"unknown\", reason: \"No trusted renderer for this data type\" };"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "line": 51,
+      "text": "  liveAssistantText?: boolean;"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "line": 48,
+      "text": "  steer: false;"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 85,
+      "text": "  const client = await pool.connect();"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 102,
+      "text": "    const locked = (await client.query<{ locked: boolean }>('SELECT pg_try_advisory_lock(hashtextextended($1,0)) AS locked', [lock])).rows[0]?.locked;"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 64,
+      "text": "    artifact = job.recovery"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 65,
+      "text": "      ? await readPackageArtifact(host.root, job.attempt.artifact_id)"
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "line": 67,
+      "text": "    detail:{id:row.detail_id,title:'Native activity'},status:unresolved && ended?'unknown':row.latest_phase};"
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "line": 88,
+      "text": "    return {...reference(row),body:JSON.parse(detail.content)};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "line": 54,
+      "text": "    return {taskId,attemptId,patches,nextCursor:patches.at(-1)?.sequence??after,hasMore:rows.length>limit};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "line": 16,
+      "text": "  const status=current.final_id?'final-available':ended?'interrupted':row.header.phase;"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "line": 42,
+      "text": "    taskId:task.id,attemptId:attempt.id,nativeSessionId:attempt.native_session_id!,finalMessageId,retainStreamIds:retain,replaceStreamIds:blocks.filter(block=>!keep.has(block.id)).map(block=>block.id)};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "line": 42,
+      "text": "    taskId:task.id,attemptId:attempt.id,nativeSessionId:attempt.native_session_id!,finalMessageId,retainStreamIds:retain,replaceStreamIds:blocks.filter(block=>!keep.has(block.id)).map(block=>block.id)};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "line": 43,
+      "text": "  await client.query('INSERT INTO flow.assistant_stream_settlements(attempt_id,task_id,final_id,data) VALUES($1,$2,$3,$4)',[attempt.id,task.id,finalMessageId,data]);"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "line": 9,
+      "text": "    return entry.kind !== 'reference' || entry.reference.stream?.kind !== 'assistant-stream';"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "line": 19,
+      "text": "  if (options.assistantStreamReadable !== true || !hasSinglePatchHeader(rawHeaders)) return false;"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "line": 41,
+      "text": "    supported = rawHeaders[index + 1] === 'patch-v1';"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "line": 10,
+      "text": "const packageFetchHost = await readPackageFetchConfiguration(process.env.FLOW_PACKAGE_FETCH_CONFIG);"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "line": 11,
+      "text": "const activeSteering = parseActiveSteeringConfiguration(process.env.FLOW_ACTIVE_STEERING);"
+    },
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "line": 11,
+      "text": "export class NativeSteeringHost {"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "line": 28,
+      "text": "export type SteeringStatus = 'accepted' | 'received' | 'observed-consumed' | 'rejected' | 'unknown';"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "line": 49,
+      "text": "  /** Receipts are authenticated runner observations, never independent proof of model compliance. */"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "line": 4,
+      "text": "export const ASSISTANT_PATCH_BYTES = 8192;"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "line": 5,
+      "text": "export const ASSISTANT_ATTEMPT_BYTES = 1048576;"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "line": 11,
+      "text": " * block-complete is a native block observation, NOT a successful Flow turn. */"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "line": 4,
+      "text": "export const MAX_ACTIVITY_DETAIL_BYTES = 65_536;"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "line": 6,
+      "text": "/** A truncated body is only a UTF-8 prefix, possibly invalid JSON; render as text."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "line": 52,
+      "text": "export function ConversationActivities({ viewId, projection, visible, children }: { viewId: string; projection: ConversationProjection; visible: boolean; children: ReactNode }) {"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "line": 85,
+      "text": "export function MessageFooter() {"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "line": 14,
+      "text": "export function streamConversationMessages(turn: ConversationTurn, state: StreamState): ThreadMessageLike[] {"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "line": 3,
+      "text": "  const limit = raw === undefined ? 1 : Number(raw);"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "line": 4,
+      "text": "  if (!Number.isInteger(limit) || limit < 1 || limit > 16 || (raw !== undefined && String(limit) !== raw)) {"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "line": 7,
+      "text": "  if (mode === 'a2a' && limit !== 1) throw new Error('A2A runner supports a local attempt limit of 1 only.');"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "line": 16,
+      "text": "  const maxConcurrentAttempts = parseRunnerConcurrency(process.env.FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS, endpointsFile ? 'a2a' : 'native');"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "line": 36,
+      "text": "    await runRunner({ ...common, adapters, activeSteering: loaded.activeSteering, maxConcurrentAttempts });"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "line": 30,
+      "text": "  if (!manifestFile) return { harnesses: [fixture], adapters: [fixture.adapter], profile: null, activeSteering: false };"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "line": 31,
+      "text": "  const configured = configureClaudeHarness(await readManifest(manifestFile, 'Claude'));"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "line": 10,
+      "text": "      protocol: 'flow.native-harness.v1', harness: adapter.name, adapterVersion: adapter.version,"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "line": 11,
+      "text": "      ports: {"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "line": 6,
+      "text": "export function configureCodexHarness(options: { publicProfile: CodexExecutionProfileConfiguration; createTransport: CodexTransportFactory }) {"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "line": 2,
+      "text": "import { describeNativeHarness } from '../descriptor.js';"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "line": 9,
+      "text": "export function createCodexAdapter(configuration: CodexExecutionProfileConfiguration, createTransport: CodexTransportFactory): HarnessAdapter {"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "line": 4,
+      "text": "import { NativeExecutionError } from '../settlement.js';"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "line": 8,
+      "text": "import { commandDescriptors, createInteractionController } from '@flow/interaction';"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "line": 7,
+      "text": "import { FlowClient } from '@flow/client';"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "line": 9,
+      "text": "import { openIntentStore } from './intent-store.js';"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "line": 36,
+      "text": "      if (!state.busy) { try { await refresh(state.selected!.id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Observation interrupted. Use /recover; center tasks continue.' }); } }"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "line": 74,
+      "text": "    const knowledge = controller?.freeze();"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "line": 75,
+      "text": "    this.projection.validateKnowledge(knowledge);"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "line": 110,
+      "text": "      admission: (options, signal) => this.read(entry, signal, bound => this.session.steeringAdmission(identity, options, bound)),"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "line": 37,
+      "text": "export class SteeringWorkspace {"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "line": 32,
+      "text": "export class StreamConnectionBudget {"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "line": 46,
+      "text": "      if (count <= 8 && size <= 4 * 1024 * 1024) break;"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "line": 10,
+      "text": "  await client.query('INSERT INTO flow.details(id,task_id,attempt_id,title,kind,content,media_type,artifact_version) VALUES($1,$2,$3,$4,$5,$6,$7,$8)', [id, taskId, attemptId, detail.title, detail.kind, detail.content, detail.mediaType, detail.artifactVersion ?? null]);"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "line": 33,
+      "text": "  const inputDigest = sha256(JSON.stringify({ artifactVersion: event.artifactVersion, rule }));"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "line": 32,
+      "text": "  const rule = requested?.kind === 'contains' ? { kind: 'contains' as const, expected: requested.expected } : { kind: 'nonempty' as const };"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "line": 4,
+      "text": "import { verifyWebArtifact } from './web-artifact.mjs';"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "line": 23,
+      "text": "export async function startStaticWeb({ directory, artifact, repository, webPort, centerPort }) {"
+    },
+    {
+      "path": "docs/evidence/svc04/interface.md",
+      "line": 3,
+      "text": "`publishPreviewWeb({directory, artifact, expectedVersion, expectedBackendHead, compatibilityId})`、`rollbackPreviewWeb({...})`、`bootstrapPreviewWeb({...})`；操作由现CLI显式进入，加载现私有配置、复用同operation.lock。bootstrap只更新Web进程持有，publish/rollback只原子更新Web release指针。center/runner的PID/source、DB/token/profile/native目录及maintenance gate均不改。"
+    },
+    {
+      "path": "docs/evidence/svc04/interface.md",
+      "line": 3,
+      "text": "`publishPreviewWeb({directory, artifact, expectedVersion, expectedBackendHead, compatibilityId})`、`rollbackPreviewWeb({...})`、`bootstrapPreviewWeb({...})`；操作由现CLI显式进入，加载现私有配置、复用同operation.lock。bootstrap只更新Web进程持有，publish/rollback只原子更新Web release指针。center/runner的PID/source、DB/token/profile/native目录及maintenance gate均不改。"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "line": 27,
+      "text": "export function parseTaskLinks(taskId, rows) {"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "line": 91,
+      "text": "export function resolveTaskLinks(tasks) {"
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "line": 15,
+      "text": "用户能在产品 Web 的插件管理页和 CLI 中，对同一中心持久化的插件执行安装、配置、授予权限、启用、停用、升级、回滚、移除，并了解当前版本、实际能力、作用范围、运行中引用、错误与审计。客户端只调用公共中心 commands，不各自保存另一份权威安装/授权状态。Web 的管理页不能成为业务的唯一入口。"
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "line": 65,
+      "text": "可信 npm 服务端扩展是明确 operator 授予的信任级别，在固定宿主接口运行；第三方未知 npm 不加载到中心进程或可信浏览器 realm，必须走隔离进程/容器、窄消息协议与文件/网络/时间/内存限制。JS context、隐藏 token 参数或 same-realm React ErrorBoundary 不是安全隔离。包预检也不执行未知 install hook。第三方 renderer 使用独立隔离文档/消息桥且逐次校验来源与 schema，不能读取宿主 DOM/连接凭据；无法建立隔离时保持不可启用，显示原因。"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "line": 12,
+      "text": "export function readGoalDelivery(pool: Pool, goalId: string, query: ReturnType<typeof goalDeliveryQuerySchema.parse>): Promise<GoalDeliveryRead> {"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "line": 14,
+      "text": "    if (query.view === 'explanations') return explanationPage(client, goalId, query.limit, query.after);"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "line": 20,
+      "text": "    return query.view === 'plan' ? planPage(plan, query.limit, query.after) : readState(client, plan, query.nodeIds);"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "line": 21,
+      "text": "  }, true);"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "line": 14,
+      "text": "export async function readPlanMetadata(client: PoolClient, goalId: string): Promise<PlanMetadata> {"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "line": 32,
+      "text": "export async function readLiveMetadata(client: PoolClient, plan: PlanMetadata): Promise<LiveMetadata> {"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "line": 2,
+      "text": "import { GOAL_DELIVERY_MAX_NODES } from '../../../../packages/contracts/src/goal-delivery.js';"
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "line": 12,
+      "text": "export function createGoalSession(options: GoalSessionOptions) {"
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "line": 93,
+      "text": "  async function transmit(intent: GoalIntent, recovering: boolean, signal: AbortSignal): Promise<GoalCommandOutcome> {"
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "line": 2,
+      "text": "import { goalDeliveryQuerySchema } from '../../../contracts/src/goal-delivery.js';"
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "line": 20,
+      "text": "export function dispatch(client: GoalSessionPort, intent: GoalIntent, signal: AbortSignal): Promise<GoalCommandReceipt> {"
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "line": 33,
+      "text": "export function checkReceipt(intent: GoalIntent, value: unknown): void {"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "line": 134,
+      "text": "export function decodeConversationCreated(raw: unknown, input: ConversationCreation): ConversationCreated {"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "line": 140,
+      "text": "export function decodeConversationTurnAccepted(raw: unknown, conversationId: string, input: ConversationTurnAdmission): ConversationTurnAccepted {"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "line": 3,
+      "text": "  conversationContextSelectionSchema, parseAttachmentContextReceipt, executionProfileReferenceSchema, idSchema, knowledgeCitationSchema,"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "line": 423,
+      "text": "  attachmentUploadReceipt(projectId: string, input: { scope: string; key: string }, signal?: AbortSignal): Promise<AttachmentReceiptLookup> {"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "line": 4,
+      "text": "import { contextHistoryResponseSchema, type ContextHistoryResponse } from '@flow/contracts';"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "line": 1,
+      "text": "import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "line": 1,
+      "text": "export { ConversationStreamProjection, createConversationStreamProjection } from \"@flow/interaction/stream\";"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "line": 1,
+      "text": "import { nativeActivityIdentity as identity, parseNativeActivityPage as validatePage, parseNativeActivityBody as validateBody } from '@flow/interaction/activity';"
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "line": 15,
+      "text": "    await client.query(await readFile(new URL('../../../../packages/storage/migrations/026-attachment-resources.sql', import.meta.url), 'utf8'));"
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "line": 36,
+      "text": "export function registerAttachmentRoutes(app: FastifyInstance, pool: Pool): void {"
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "line": 53,
+      "text": "    routes.get<{ Params: Project }>('/api/projects/:projectId/attachments/upload-receipt', request => {"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "line": 75,
+      "text": "    const materials = contextHistoryMaterialsSchema.parse({ state: 'known', sources: context.sources.map(({ citation, byteLength }) => ({ citation, byteLength, tokens: null })) });"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "line": 101,
+      "text": "    WHERE c.task_id=$1 AND c.attempt_id=$2 ORDER BY c.event_sequence DESC LIMIT 1`, [task.id, task.current_attempt_id])).rows[0] : undefined;"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "line": 104,
+      "text": "    current: { kind: 'unknown', value: null, reason: 'history-only' }, remaining: { kind: 'unknown', value: null, reason: 'history-only' } });"
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "line": 10,
+      "text": "export interface WorkspaceSnapshot { baseCommit: string; headCommit: string; files: EngineeringFile[]; digest: string; diff: string }"
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "line": 11,
+      "text": "export interface EngineeringWorkspace { directory: string; leaseId: string; snapshot(): Promise<WorkspaceSnapshot>; release(): Promise<void> }"
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "line": 11,
+      "text": "export interface EngineeringWorkspace { directory: string; leaseId: string; snapshot(): Promise<WorkspaceSnapshot>; release(): Promise<void> }"
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "line": 31,
+      "text": "  const root = join(parent, 'engineering-fixture'); let created = false;"
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "line": 1,
+      "text": "import { mkdir, realpath, rm, writeFile } from 'node:fs/promises';"
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "line": 17,
+      "text": "/** Creates a host-owned baseline outside every workspace. Source/expected checks come from trusted setup, never task data. */"
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "line": 5,
+      "text": "import { digest, readTextFile, runCommand } from './resources.js';"
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "line": 48,
+      "text": "      await context.emit({ type: 'verification', artifactId, artifactVersion: version, verifierId: 'flow.engineering', verifierVersion: '1',"
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "line": 48,
+      "text": "      await context.emit({ type: 'verification', artifactId, artifactVersion: version, verifierId: 'flow.engineering', verifierVersion: '1',"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "line": 40,
+      "text": "  if (snapshot.files.length !== 1 || !file || file.path !== 'calculator.mjs'"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "line": 8,
+      "text": "export type CalculatorCaptureContext = Pick<HarnessContext, 'executionIdentity' | 'signal' | 'assertOwnership'>;"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "line": 12,
+      "text": "  protocol: z.literal('flow.calculator-workspace-check.v1'), writerSettlement: z.literal('not-attested'), identity: calculatorExecutionIdentitySchema,"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "line": 10,
+      "text": "export const calculatorExecutionIdentitySchema = z.strictObject({ taskId: id, attemptId: id, ownerVersion: z.number().int().positive().max(Number.MAX_SAFE_INTEGER), runnerId: id });"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "line": 10,
+      "text": "export const calculatorExecutionIdentitySchema = z.strictObject({ taskId: id, attemptId: id, ownerVersion: z.number().int().positive().max(Number.MAX_SAFE_INTEGER), runnerId: id });"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "line": 17,
+      "text": "export interface NativeWriteAuthority {"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "line": 19,
+      "text": "    binding: NativeWriteBinding; policy: 'calculator-file-only-v1'; modelAssurance: 'locked-no-fallback'; createTransport: CodexTransportFactory;"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "line": 8,
+      "text": "import { runCodexExchange, type CodexTransportFactory } from '../native-harness/codex/exchange.js';"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "line": 11,
+      "text": "  changes: z.array(z.strictObject({ path: z.literal('calculator.mjs'),"
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "line": 9,
+      "text": "/** Checks receipt linkage and declared host results; the center does not run a remote checker. */"
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "line": 18,
+      "text": "  try { receipt = engineeringReceiptSchema.parse(JSON.parse(content)); }"
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "line": 36,
+      "text": "    throw new HttpError(409, 'engineering_completion_unverified', 'The latest engineering artifact has no passed check for this attempt.');"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "line": 22,
+      "text": "export async function runCodexExchange<Thread extends { threadId: string }>(createTransport: CodexTransportFactory, input: CodexExchangeInput,"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "line": 37,
+      "text": "    // Exactly one R06 consumer. No SDK loop, request retries, durable state or lifecycle events here."
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "line": 53,
+      "text": "    try { response = await connected.request('thread/start', recipe.startThread, { signal }); }"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "line": 59,
+      "text": "    const started = await connected.request('turn/start', recipe.startTurn(thread.threadId), { signal });"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "line": 6,
+      "text": "export function configureCodexLaunch(configuration: unknown, createTransport?: CodexTransportFactory) {"
+    }
+  ],
+  "absent": [
+    "apps/server/src/browser-session/index.ts"
+  ],
+  "presentMigrations": [
+    "020-native-activity.sql",
+    "022-assistant-stream.sql",
+    "023-plugin-package-fetches.sql",
+    "024-active-steering.sql",
+    "025-native-harness-sources.sql",
+    "026-attachment-resources.sql",
+    "027-context-observation-history.sql"
+  ],
+  "limits": "Fixed source inspection only; no product model/database/service verification. App mounts stream, knowledge and steering; native execution is configurable but configured/provider capacity is not inferred. Codex explicit library selection exists but ordinary startup remains fixture/Claude. Engineering default is synthetic fixture; production native write authority and calculator receipt to center bridge are not claimed. Goal reader/controller exists, TUI goal consumer pending. 026 installed; 027 history-only has recorded attachment-only material gap; Web consumer pending. Steering stays opt-in; package fetch is not installation. Fixed artifact and backend deployment require separate owner receipts; no personal service inspected."
+}

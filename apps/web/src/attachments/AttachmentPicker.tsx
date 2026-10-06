@@ -32,12 +32,12 @@ export function AttachmentPicker({ input, onAttach, onRemove }: AttachmentPicker
     {state.disabledReason && <p className="attachment-help">{state.disabledReason}</p>}
     {state.capable === false && <p className="attachment-help">This center does not support text attachments. Plain text remains available.</p>}
     {!!state.items.length && <section aria-label="Files in this draft"><h3>In this draft</h3>{state.items.map(item => <article className="attachment-row" key={item.id}>
-      <div className="attachment-row-title"><strong>{item.name}</strong><span>{item.state === 'ready' && item.metadata && Date.parse(item.metadata.expiresAt) <= Date.now() ? 'Expired' : item.state}</span><button type="button" onClick={() => void run(() => onRemove(item.id))}>Remove {item.name}</button></div>
+      <div className="attachment-row-title"><strong>{item.name}</strong><span>{item.state === 'ready' && item.metadata && Date.parse(item.metadata.expiresAt) <= Date.now() ? 'Expired' : item.state}</span><button type="button" aria-label={`Remove ${item.name}`} onClick={() => void run(() => onRemove(item.id))}>Remove</button></div>
       {item.error && <p className="attachment-error">{item.error}</p>}
       {item.metadata && <Preview resource={item.metadata} input={input} disabled={disabled} />}
     </article>)}</section>}
     <section aria-label="Uploaded project files"><h3>Uploaded to this project</h3>{state.page.map(resource => <article className="attachment-row" key={attachmentReferenceKey(resource.reference)}>
-      <div className="attachment-row-title"><strong>{resource.name}</strong><span>{resource.byteLength} bytes</span><button type="button" disabled={disabled || resource.state !== 'ready' || Date.parse(resource.expiresAt) <= Date.now()} onClick={() => void add(resource)}>Use {resource.name}</button></div>
+      <div className="attachment-row-title"><strong>{resource.name}</strong><span>{resource.byteLength} bytes</span><button type="button" aria-label={`Use ${resource.name}`} disabled={disabled || resource.state !== 'ready' || Date.parse(resource.expiresAt) <= Date.now()} onClick={() => void add(resource)}>Use</button></div>
       <Preview resource={resource} input={input} disabled={disabled} />
     </article>)}
       {state.nextCursor && <button type="button" disabled={disabled || state.loading} onClick={() => void run(() => input.browse(query, state.nextCursor!))}>Next page</button>}
@@ -46,10 +46,10 @@ export function AttachmentPicker({ input, onAttach, onRemove }: AttachmentPicker
       {state.recovery.map(record => <article className="attachment-row" key={record.key}>
         <div className="attachment-row-title"><strong>{record.name}</strong><span>{record.state}</span></div>
         <details><summary>Recovery identity</summary><code>{record.projectId} · {record.scope} · {record.key}</code></details>
-        <div className="attachment-buttons"><button type="button" disabled={disabled || record.projectId !== state.binding.projectId} onClick={() => void run(() => input.recover(record.key))}>Check receipt for {record.name}</button>
+        <div className="attachment-buttons"><button type="button" aria-label={`Check receipt for ${record.name}`} disabled={disabled || record.projectId !== state.binding.projectId} onClick={() => void run(() => input.recover(record.key))}>Check receipt</button>
           {record.state === 'unknown' && <label className="attachment-file-action">Reselect original file<input aria-label={`Reselect original ${record.name}`} type="file" accept=".txt,text/plain" disabled={disabled || !state.readiness.canUpload || record.projectId !== state.binding.projectId} onChange={event => { const file = event.currentTarget.files?.[0]; event.currentTarget.value = ''; if (file) void retry(record, file); }} /></label>}
-          {record.state !== 'unknown' && <button type="button" onClick={() => void run(() => input.forgetRecovery(record.key))}>Forget local record for {record.name}</button>}
-          {record.state === 'ready' && record.resource && <button type="button" disabled={disabled || record.projectId !== state.binding.projectId} onClick={() => void add(record.resource!)}>Use recovered {record.name}</button>}
+          {record.state !== 'unknown' && <button type="button" aria-label={`Forget local record for ${record.name}`} onClick={() => void run(() => input.forgetRecovery(record.key))}>Forget local record</button>}
+          {record.state === 'ready' && record.resource && <button type="button" aria-label={`Use recovered ${record.name}`} disabled={disabled || record.projectId !== state.binding.projectId} onClick={() => void add(record.resource!)}>Use recovered</button>}
         </div>
       </article>)}
     </details>}

@@ -1,0 +1,20 @@
+PASS explicit project preparation preserves the text and performs zero turns
+PASS P01 Files entry loads only explicit metadata; Enter preview is lazy and cached
+PASS real Send v2 bad-200 becomes unknown; retry preserves key/body and next draft
+PASS official upload adapter and Queue Enter use a frozen v2 receipt, never cancel the task
+PASS offline before submit prevents receipt/POST and preserves original uploaded material
+PASS disable/enable and native hidden retain materials without automatic reads; protected close is retained
+PASS 390 light/dark keyboard and metadata-only retained material
+PASS unknown upload survives browser reload; sixth public receipt lookup recovers without a new POST or automatic attachment
+locator.click: Timeout 8000ms exceeded.
+Call log:
+[2m  - waiting for locator('.aui-composer-attachments .aui-attachment-root').last().getByRole('button', { name: 'Remove Attachment', exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:142:90)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:37:109)
+    at async work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:131:5)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:165:7)
+Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/attachment-integration.browser.ts production-ninth

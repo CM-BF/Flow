@@ -1,30 +1,23 @@
 {
-  "recordedAt": "2026-10-06T12:54:57.136259+00:00",
+  "recordedAt": "2026-10-06T13:07:57.981857+00:00",
   "main": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
   "sourceSampleAt": "2026-10-06T12:24:33.364Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [
     {
-      "taskId": "WPF-WORKSPACEPERF01",
-      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/plans/wpf-workspace-lifecycle-baseline/status.md",
-      "classification": "already-main-awaiting-owner-close",
-      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
-      "differentPaths": []
+      "taskId": "WPF-ATTACHI02",
+      "classification": "approved-controlled-integration-in-this-batch",
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b"
     },
     {
       "taskId": "WPF-MATURE-04",
-      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md",
-      "classification": "already-main-awaiting-owner-close",
-      "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
-      "evidence": "context-producer-integration.json",
-      "main": "7cbda706632c85fc5da12a371b282419c933ab9a"
+      "classification": "approved-controlled-integration-in-this-batch",
+      "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f"
     },
     {
-      "taskId": "WPF-DPERF03",
-      "classification": "already-main-awaiting-owner-close",
-      "target": "5609ea719ec400a803bb6036429312b7a212c90f",
-      "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
-      "evidence": "dperf03-integration.json"
+      "taskId": "D06",
+      "classification": "approved-controlled-integration-in-this-batch",
+      "target": "6570ef7e896d29040961247f46aa62dc4e466284"
     }
   ],
   "mainButNotUserSurface": [
@@ -32,11 +25,6 @@
       "taskId": "O12",
       "next": "TUI01D approved explicit goal terminal accepted in this batch; Web cross-client remains open",
       "note": "Package/controller and historical reads main; no NL or UI acceptance claimed"
-    },
-    {
-      "taskId": "WPF-ATTACHI01",
-      "next": "Web ATTACHI02 actual Send/Queue integration",
-      "note": "Module main; no actual production App attachment journey yet"
     },
     {
       "taskId": "ENG01G",
@@ -47,6 +35,11 @@
       "taskId": "WPF-MATURE-04",
       "next": "Historical observation producer main; Web consumer and real SDK control evidence remain independent",
       "note": "Historical producer main and backend deployed362; actual UI/SDK control evidence still independent"
+    },
+    {
+      "taskId": "WPF-ATTACHI02",
+      "next": "fixed Web artifact release separately; durable unknown/draft recovery independent",
+      "note": "Current production combination in this batch, not personal runtime deployment"
     }
   ],
   "releaseQueue": [
@@ -62,10 +55,10 @@
     },
     {
       "taskId": "SVC06",
-      "phase": "plan-only",
+      "phase": "implementation",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/status.md",
-      "next": "assignment_review read-only module/layout scope preparation; no personal cutover"
+      "next": "assignment_review unique fixed-backend artifact/host implementation; own scope; no personal cutover"
     }
   ],
-  "mainBeforeBatch": "3609d8dabd3713e37d877af4f96d2daa2bd96e57"
+  "mainBeforeBatch": "280289008a5a3779e4e5e6453181b96062ed9514"
 }

@@ -1,0 +1,14 @@
+{
+  "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f",
+  "packet": "7c93b05ee579a205fe18c5f3693bf625b5041395",
+  "reviewer": "Mika / gpt-6-astra",
+  "reviewedAt": "2026-10-06 12:30:29 UTC",
+  "verdict": "APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "manifestSha256": "6651c75a82724e22b95a776a5ba49dc5290a550864a293f1325fdfc0b055a38f",
+  "bindings": 41,
+  "method": "Independent read-only source/tests and Git/WT/hash/bytes audit; no repeated tests or PG",
+  "checks": "21 distinct (4 real public PG/HTTP +17 direct); strict0; original red retained; two dedicated DBs conn0/drop/remaining[]",
+  "scope": "Three-line v2 history materials guard and four combination tests only; no public DTO/current/SDK proof"
+}

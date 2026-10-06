@@ -1,0 +1,159 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web
+
+ ❯ test/conversation-outbox.test.ts (18 tests | 3 failed) 12ms
+     ✓ prepares creation with one frozen key and no synthetic turn, preserving unknown retries 3ms
+     ✓ freezes knowledge independently of the next draft and reuses it after a lost receipt 1ms
+     ✓ requires a matching frozen creation project for new turns with knowledge before allocating a key 0ms
+     ✓ keeps explicit empty knowledge distinct from an omitted field 0ms
+     ✓ detaches and freezes project identity through unknown CREATE and turn retries without adding knowledge 0ms
+     ✓ deep-freezes the cloned execution profile pin through unknown CREATE and turn retries 0ms
+     ✓ freezes sent payload and retries an unknown receipt with the same identity while a new draft remains independent 0ms
+     ✓ keeps creation and first turn keys separate and preserves an acknowledged conversation through a lost turn receipt 0ms
+     ✓ does not dispatch a second retry while the first attempt is pending 0ms
+     ✓ keeps a definite rejection visible and requires an explicit new submission to use a new revision/key 0ms
+     ✓ ignores stale acknowledgements/failures after a different explicit command 0ms
+     ✓ disposes the old connection without late callbacks reviving its command 0ms
+     ✓ preserves earlier receipt uncertainty when a later retry is definitely rejected 0ms
+     ✓ validates before replacing an existing rejection and publishes stable snapshots 0ms
+     ✓ does not let a pending or unknown admission be dismissed as if it never reached the center 0ms
+     × detaches ordered attachment references at local handoff and preserves unknown request identity 3ms
+     × rejects absent or wrong new conversation project and mixed material projects before allocating identity 1ms
+     × preserves omitted and explicitly empty attachments 0ms
+ ❯ test/conversation-context-receipts.test.ts (10 tests | 2 failed) 14ms
+     ✓ preserves omitted and explicit empty inputs without adding context or normalizing text 2ms
+     ✓ detaches every mutable citation layer and preserves selection order 1ms
+     ✓ enforces exact duplicates, one project, four references and aggregate byte budget before publication 1ms
+     ✓ accepts exact ordered citations even when their version was no longer current at freeze 0ms
+     ✓ supports plain legacy receipts and valid empty metadata but rejects unrequested sources 0ms
+     ✓ rejects missing, shortened, extra and reordered context sources 0ms
+     ✓ compares every immutable tuple field rather than just source ID or version 0ms
+     ✓ rejects malformed context identity, digests, template and source metadata 1ms
+     × deep-freezes both material kinds without changing either order or the text 6ms
+     × enforces the joint count and project while retaining empty legacy shape 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/conversation-context-receipts.test.ts > mixed immutable material requests > deep-freezes both material kinds without changing either order or the text
+AssertionError: expected [ { kind: 'upload', …(4) }, …(1) ] to deeply equal [ { kind: 'upload', …(4) }, …(1) ]
+
+- Expected
++ Received
+
+@@ -1,11 +1,11 @@
+  [
+    {
+      "contentDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "kind": "upload",
+      "projectId": "project-a",
+-     "resourceId": "20000000-0000-4000-8000-000000000002",
++     "resourceId": "20000000-0000-4000-8000-000000000003",
+      "version": 1,
+    },
+    {
+      "contentDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "kind": "upload",
+
+ ❯ test/conversation-context-receipts.test.ts:76:32
+     74|     const frozen = freezeKnowledgeRequest({ text: "  BOM-free\r\n", kn…
+     75|     attachments[0]!.resourceId = upload(3).resourceId; knowledge[0]!.l…
+     76|     expect(frozen.attachments).toEqual([upload(2), upload(1)]); expect…
+       |                                ^
+     77|     expect(Object.isFrozen(frozen.attachments)).toBe(true); expect(Obj…
+     78|     expect(frozen.text).toBe("  BOM-free\r\n");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  test/conversation-context-receipts.test.ts > mixed immutable material requests > enforces the joint count and project while retaining empty legacy shape
+AssertionError: expected [Function] to throw an error
+ ❯ test/conversation-context-receipts.test.ts:81:131
+     79|   });
+     80|   it("enforces the joint count and project while retaining empty legac…
+     81|     expect(() => freezeKnowledgeRequest({ knowledge: [citation(), cita…
+       |                                                                                                                                   ^
+     82|     expect(() => freezeKnowledgeRequest({ knowledge: [citation()], att…
+     83|     expect(() => freezeKnowledgeRequest({ attachments: [upload(), uplo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  test/conversation-outbox.test.ts > attachment material admission > detaches ordered attachment references at local handoff and preserves unknown request identity
+AssertionError: expected undefined to deeply equal [ { kind: 'upload', …(4) }, …(1) ]
+
+- Expected: 
+[
+  {
+    "contentDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "kind": "upload",
+    "projectId": "project-a",
+    "resourceId": "20000000-0000-4000-8000-000000000002",
+    "version": 1,
+  },
+  {
+    "contentDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "kind": "upload",
+    "projectId": "project-a",
+    "resourceId": "20000000-0000-4000-8000-000000000001",
+    "version": 1,
+  },
+]
+
++ Received: 
+undefined
+
+ ❯ test/conversation-outbox.test.ts:150:39
+    148|     const first = box.begin({ ...input, attachments });
+    149|     attachments[0]!.contentDigest = "f".repeat(64); attachments.revers…
+    150|     expect(first.request.attachments).toEqual([ref(2), ref(1)]);
+       |                                       ^
+    151|     expect(Object.isFrozen(first.request.attachments)).toBe(true);
+    152|     expect(Object.isFrozen(first.request.attachments?.[0])).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  test/conversation-outbox.test.ts > attachment material admission > rejects absent or wrong new conversation project and mixed material projects before allocating identity
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ test/conversation-outbox.test.ts:160:109
+    158|     let keys = 0; const box = new ConversationOutbox(() => String(++ke…
+    159|     for (const settings of [creation, { ...creation, projectId: "proje…
+    160|       expect(() => box.begin({ ...input, conversationId: null, creatio…
+       |                                                                                                             ^
+    161|     expect(() => box.begin({ ...input, attachments: [ref(), { ...ref(2…
+    162|     expect(keys).toBe(0); expect(box.getSnapshot()).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  test/conversation-outbox.test.ts > attachment material admission > preserves omitted and explicitly empty attachments
+AssertionError: expected undefined to deeply equal []
+
+- Expected: 
+[]
+
++ Received: 
+undefined
+
+ ❯ test/conversation-outbox.test.ts:166:39
+    164|   it("preserves omitted and explicitly empty attachments", () => {
+    165|     const box = setup(), first = box.begin({ ...input, attachments: []…
+    166|     expect(first.request.attachments).toEqual([]); expect(Object.isFro…
+       |                                       ^
+    167|     box.accept(first.id); expect(box.begin(input).request).not.toHaveP…
+    168|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  5 failed | 23 passed (28)
+   Start at  05:10:26
+   Duration  367ms (transform 298ms, setup 0ms, import 502ms, tests 25ms, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/conversation-outbox.test.ts test/conversation-context-receipts.test.ts

@@ -72,6 +72,9 @@ async function frozenMaterials(client: PoolClient, taskId: string): Promise<{ ex
   if (!binding || binding.conversation_input_id && binding.goal_input_id) throw invalid();
   const context = await contextReference(client, binding.conversation_input_id);
   if (context) {
+    // This history DTO describes knowledge citations only; a v2 subset is not a complete inventory.
+    if (context.templateVersion === 2) return { executionInputDigest: context.executionInputDigest,
+      materialRevisionDigest: null, materials: { state: 'unknown', reason: 'metadata-unavailable' } };
     const materials = contextHistoryMaterialsSchema.parse({ state: 'known', sources: context.sources.map(({ citation, byteLength }) => ({ citation, byteLength, tokens: null })) });
     return { executionInputDigest: context.executionInputDigest, materialRevisionDigest: sha256(canonical({ version: 1, citations: context.sources.map(source => source.citation) })), materials };
   }

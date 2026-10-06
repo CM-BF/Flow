@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ❯ apps/server/src/context-transparency/attachment-history.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/context-transparency/attachment-history.test.ts [ apps/server/src/context-transparency/attachment-history.test.ts ]
+Error: ENOSPC: no space left on device, write
+ ❯ apps/server/src/goal-graph-runs/store.ts:7:1
+      5| import { HttpError, transaction } from '../database.js';
+      6| import { acceptTask, command } from '../tasks.js';
+      7| import { goalContext } from '../goal-graph-proposals/store.js';
+       | ^
+      8| import { readProject } from '../projects/storage.js';
+      9| import { revokeAuthority, type AuthorityStore } from '../goal-run-auth…
+ ❯ apps/server/src/goal-graph-runs/index.ts:9:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  06:04:51
+   Duration  1.05s (transform 444ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

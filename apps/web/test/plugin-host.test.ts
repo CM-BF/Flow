@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { createAttachmentPlugin, ATTACHMENT_OWNER, ATTACHMENT_OPEN } from "../src/plugin-integration/attachments";
 import { PluginHost } from "../src/plugins/host";
 import { validateContext, validateSlot } from "../src/plugins/validation";
 import type {
@@ -648,4 +649,15 @@ it("steering read declaration cannot grant write execution, and host policy stil
   s.port.authorize=()=>true;
   expect((await s.host.execute("test.steering.accept",{}, {kind:"message",taskId:"A",messageId:"m",role:"user"})).ok).toBe(true);expect(writes).toBe(1);
   await s.host.dispose();
+});
+
+
+it("validates the attachment builtin in the existing host and rechecks its explicit read authority", async () => {
+  const f = setup(); let lookups = 0;
+  f.host.register(createAttachmentPlugin(() => { lookups++; return undefined; }));
+  f.deny();
+  const result = await f.host.execute(ATTACHMENT_OPEN, undefined, { kind: "composer", viewId: "view-a", isDraft: true });
+  expect(result.ok).toBe(false); expect(lookups).toBe(0);
+  expect(f.host.list().find(plugin => plugin.id === ATTACHMENT_OWNER)?.state).toBe("registered");
+  await f.host.dispose();
 });

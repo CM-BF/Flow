@@ -150,3 +150,11 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 
 - ENG01H：[原生工程用途与检查收据](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract/plans/eng01h-native-engineering-contract/plan.md)，ENG-001下唯一中心合同片；不把配置声明当原生资格。
 - SVC06：[固定后台发布产物](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/plan.md)，FLOW-001/REQ-19后继，开发checkout与运行依赖解耦；当前仅plan/evidence，不抢终端/原生实现。
+
+## 2026-10-06 13:10 UTC 连接与运行边界
+
+- WPF-CONNECTION01：[刷新后恢复中心连接](/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/plans/wpf-connection-session/plan.md)，直接归WPF-MATURE-06；native_center_owner实施中心会话、统一HTTP/流鉴权，028已唯一领取。Web恢复后继独立。
+- S01P05：[事件状态写入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/plans/s01p05-event-state/plan.md)，FLOW-001下原S01并发后继，原events范围已交唯一owner。
+- ENG01I：[受信原生宿主编排](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/plans/eng01i-native-engineering-host/plan.md)，ENG-001下已固定准备合同，当前planning且原claim释放；资格事实齐备再fresh take，不表示产品实施。
+
+SVC06已由assignment_review接收原唯一树与九scope实施固定后台产物；原条目“仅plan/evidence”是历史观察。个人backend仍362/v15 accepting，Web8d8/v2，不随本次源码与看板登记切换。

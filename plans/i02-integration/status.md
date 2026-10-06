@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:54 UTC / main3609受控接收候选 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:11 UTC / main280289，附件/历史/架构固定接收批 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 前main3609；本批ENG01H/F01/TUI01D固定已审输入，source比较见工程终端接收记录 |
+| 工作基线 / HEAD | 前main280289；本批附件App、历史兼容与固定aeb架构，31源精确比对 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
-| 检查状态 | 28源码对独审目标逐字一致，实际组合root noEmit0；复用原领域61/HTTP2/TUI21，不重跑PG/PTY/provider |
-| 已集成main状态 / HEAD | 已审工程合同与终端控制本批待fast-forward；个人backend362/v15 accepting、Web8d8/caa1/v2保持 |
+| 检查状态 | 31源同获审target；当前组合PG2（2未选）+官方UI绑定17/root与Web types0；首次ENOSPC导入前0tests保留，不重跑原矩阵 |
+| 已集成main状态 / HEAD | ENG01H/F01/TUI01D已main280289；本批附件接线和历史组合待fast-forward；个人backend362/v15、Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端可在同一目标入口看计划、历史和控制；原生工程用途与回执合同已完成独立审查并组合。 |
-| 下一可用交付 | 本批已交付；固定后台release与真实工程宿主继续独立推进。 |
+| 当前产出 | 附件可随消息发送和排队，当前历史记录兼容组合通过；固定架构快照已更新。 |
+| 下一可用交付 | 本批准备主线发布；连接恢复与固定后台发布并行。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -151,3 +151,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 12:45:41 UTC：SVC05窗口真实receipt已独立只读接收，22source/28raw全同，63.132秒/0query/0tab操作，原checkpoint与初依赖缺链失败保留。恢复main aeb未改变loaded source362或node_modules；原Web指针与两保留产物不变。ENG01G最终metadata和ENG01H/SVC06首计划本批同步，151来源登记；无需重跑工程/架构检查。见[固定输入](../../docs/evidence/i02/release-close-metadata-integration.json)、[实际接收](../../docs/evidence/i02/svc05-live-acceptance.json)。
 
 2026-10-06 12:54 UTC：ENG01H916e / F01薄传输79b / TUI01D0aaa分别独审批准，28源对固定目标逐字一致，实际组合root noEmit0；[接收记录](../../docs/evidence/i02/engineering-terminal-integration.json)。复用原局部证据，0产品重跑/0provider。个人runtime362/v15、Web8d8保持；SVC05收口metadata纳入，P01产物读取仅研究后继。
+
+2026-10-06 13:11 UTC：本批31固定source无改写，attachment-only/mixed真实production HTTP/PG2与官方core绑定17通过，root/Web类型0；磁盘临时不足仅导致两次导入前0tests，原失败保留，自有stage清理后仅重跑未执行局部。没有重复191/浏览器/provider或个人服务操作。详细[受控组合](../../docs/evidence/i02/attachment-current-integration.json)。154来源只做登记/解析，D06仍固定aeb。

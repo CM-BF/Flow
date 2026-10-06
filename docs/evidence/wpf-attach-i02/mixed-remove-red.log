@@ -1,0 +1,97 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web
+
+stderr | test/attachment-integration.test.ts > official prepare-failure async rejection restores controller ownership and supports a fresh captured retry
+[assistant-ui] Failed to send attachments Error: Controlled preparation failure
+    at Object.send (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:186:94)
+    at AttachmentSendOperations.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/utils/attachment-send-operations.js:21:32)
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:91
+    at Array.map (<anonymous>)
+    at Composer._prepareSubmission (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:49)
+    at Composer.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:234:14)
+    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:203:28
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+stderr | test/attachment-integration.test.ts > official mixed-failure async rejection restores controller ownership and supports a fresh captured retry
+[assistant-ui] Failed to send attachments Error: Controlled preparation failure
+    at Object.send (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:186:94)
+    at AttachmentSendOperations.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/utils/attachment-send-operations.js:21:32)
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:91
+    at Array.map (<anonymous>)
+    at Composer._prepareSubmission (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:49)
+    at Composer.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:234:14)
+    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:203:28
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+ ❯ test/attachment-integration.test.ts (17 tests | 2 failed) 141ms
+     ✓ is lazy, uses stable view identity across CREATE aliases, and closes only its Dialog 8ms
+     ✓ checks distinct P01 upload grant, never recurses into its own port, and never borrows global focus 4ms
+     ✓ revokes hidden/offline/disabled reads, rejects late data and rechecks capability on resume 54ms
+     ✓ keeps storage errors local without erasing unknown bytes or constructing an input 1ms
+     ✓ only maps the documented absent upload receipt, not denied or malformed responses 1ms
+     ✓ protects only the view that owns an unknown upload, including after chip removal 2ms
+     ✓ propagates local upload cancellation through the P01 command to the real private client 51ms
+     ✓ preserves unknown recovery on bad 200 and expired namespace instead of treating either as absence 2ms
+     ✓ requires a new matching real local Outbox receipt, then consumes before network and leaves the next draft 1ms
+     ✓ fails before local handoff on hidden capture, preserving held recovery after items are removed 1ms
+   ✓ real QueueCommands + FlowClient retains ordered v2 materials after a malformed ACK and retries original bytes/key 3ms
+   ✓ official complete async rejection restores controller ownership and supports a fresh captured retry 2ms
+   ✓ official requires-action async rejection restores controller ownership and supports a fresh captured retry 1ms
+   ✓ official prepare-failure async rejection restores controller ownership and supports a fresh captured retry 4ms
+   ✓ official prepare-cancel async rejection restores controller ownership and supports a fresh captured retry 1ms
+   × official mixed-failure async rejection restores controller ownership and supports a fresh captured retry 3ms
+   × official mixed-cancel async rejection restores controller ownership and supports a fresh captured retry 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/attachment-integration.test.ts > official mixed-failure async rejection restores controller ownership and supports a fresh captured retry
+AssertionError: expected [ …(2) ] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+  [
++   "3b2ce4c1-0908-4c95-8aca-c01a1afb2eb7",
+    "81b578df-ae74-4bf4-9187-8bcec6ebd03e",
+  ]
+
+ ❯ test/attachment-integration.test.ts:215:71
+    213|     await composer.removeAttachment(ids[0]!); await new Promise<void>(…
+    214|     expect(composer.attachments.map(file => file.id)).toEqual([ids[1]]…
+    215|     expect(f.binding.input!.getSnapshot().items.map(item => item.id)).…
+       |                                                                       ^
+    216|     expect(f.binding.getSnapshot().submission?.value.ids).toEqual(ids);
+    217|     expect(f.binding.protection()).toContain("Material submission or r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  test/attachment-integration.test.ts > official mixed-cancel async rejection restores controller ownership and supports a fresh captured retry
+AssertionError: expected [ …(2) ] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+  [
++   "c6666fac-ea6f-446f-9bfd-cf7c60c6a7e5",
+    "6dcac3fe-10ae-4f2d-b2a4-97e62e74e8cd",
+  ]
+
+ ❯ test/attachment-integration.test.ts:215:71
+    213|     await composer.removeAttachment(ids[0]!); await new Promise<void>(…
+    214|     expect(composer.attachments.map(file => file.id)).toEqual([ids[1]]…
+    215|     expect(f.binding.input!.getSnapshot().items.map(item => item.id)).…
+       |                                                                       ^
+    216|     expect(f.binding.getSnapshot().submission?.value.ids).toEqual(ids);
+    217|     expect(f.binding.protection()).toContain("Material submission or r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 15 passed (17)
+   Start at  05:43:44
+   Duration  1.26s (transform 254ms, setup 0ms, import 1.03s, tests 141ms, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/attachment-integration.test.ts

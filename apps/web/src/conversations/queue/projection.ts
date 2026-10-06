@@ -1,6 +1,7 @@
+import { freezeMaterialRequest } from "../../conversation-context/receipts";
 import { ReadCache, bodyBytes } from "../read-cache";
 import { freezeContextSelection, type FrozenCitation } from "../../conversation-context/selection";
-import { TERMINAL_STATUSES, type ConversationQueuePage, type ConversationQueueItemDetail } from "@flow/contracts";
+import { TERMINAL_STATUSES, type AttachmentReference, type ConversationQueuePage, type ConversationQueueItemDetail } from "@flow/contracts";
 import { QueueCommands, assertCurrentTurn, assertQueueItem, queueError, validRevision, type QueuePort, type QueueReceipt } from "./commands";
 
 export interface QueueState {
@@ -28,6 +29,9 @@ export class ConversationQueueProjection {
   readonly commands: QueueCommands | null;
   private state: QueueState = { available: false, page: null, loading: false, stale: false, online: true, error: null, receipts: [], details: {} };
   private id: string | null = null;
+  private attachmentProject: string | null = null;
+  private attachmentSupported = false;
+  configureAttachments(projectId: string | null, supported: boolean) { this.attachmentProject = projectId; this.attachmentSupported = supported; }
   private knowledgeProject: string | null = null;
   private knowledgeSupported = false;
   private visible = false;
@@ -104,7 +108,17 @@ export class ConversationQueueProjection {
     return null;
   }
   private ready(slot: string) { const reason = this.actionDisabledReason(slot); if (reason) throw Error(reason); return this.state.page!; }
-  async enqueue(text: string, knowledge?: readonly FrozenCitation[]) { const page = this.ready("enqueue"); if (knowledge?.length) { if (!this.knowledgeProject || !this.knowledgeSupported) throw Error("Knowledge requires a supported fixed conversation project."); freezeContextSelection(knowledge, this.knowledgeProject); } await this.commands!.execute({ kind: "enqueue", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision, text, ...(knowledge === undefined ? {} : { knowledge }) } }); }
+  async enqueue(text: string, knowledge?: readonly FrozenCitation[], attachments?: readonly AttachmentReference[]) {
+    const page = this.ready("enqueue");
+    if (knowledge?.length) {
+      if (!this.knowledgeProject || !this.knowledgeSupported) throw Error("Knowledge requires a supported fixed conversation project.");
+      freezeContextSelection(knowledge, this.knowledgeProject);
+    }
+    if (attachments?.length && (!this.attachmentProject || !this.attachmentSupported)) throw Error("Files require a supported fixed conversation project.");
+    freezeMaterialRequest({ knowledge, attachments }, this.attachmentProject ?? this.knowledgeProject ?? undefined);
+    await this.commands!.execute({ kind: "enqueue", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision, text,
+      ...(knowledge === undefined ? {} : { knowledge }), ...(attachments?.length ? { attachments } : {}) } });
+  }
   async pause() { const page = this.ready("control"); await this.commands!.execute({ kind: "pause", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision } }); }
   async resume() {
     this.ready("control"); if (!(await this.refresh(true))) return;

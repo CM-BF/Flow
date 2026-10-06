@@ -1,0 +1,196 @@
+{
+    "compilerOptions": {
+        "target": "es2023",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "lib": [
+            "es2023",
+            "dom",
+            "dom.iterable"
+        ],
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "jsx": "react-jsx",
+        "types": [
+            "node"
+        ],
+        "typeRoots": [
+            "../Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+        ],
+        "paths": {
+            "pg": [
+                "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/pg/index.d.ts"
+            ],
+            "@assistant-ui/react": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@assistant-ui/react"
+            ],
+            "react": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/react"
+            ],
+            "react-dom": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/react-dom"
+            ],
+            "lucide-react": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/lucide-react"
+            ],
+            "@assistant-ui/react-markdown": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@assistant-ui/react-markdown"
+            ],
+            "@radix-ui/react-avatar": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@radix-ui/react-avatar"
+            ],
+            "@radix-ui/react-collapsible": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@radix-ui/react-collapsible"
+            ],
+            "@radix-ui/react-dialog": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@radix-ui/react-dialog"
+            ],
+            "@radix-ui/react-slot": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@radix-ui/react-slot"
+            ],
+            "@radix-ui/react-tooltip": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@radix-ui/react-tooltip"
+            ],
+            "ansi-to-react": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/ansi-to-react"
+            ],
+            "class-variance-authority": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/class-variance-authority"
+            ],
+            "clsx": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/clsx"
+            ],
+            "radix-ui": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/radix-ui"
+            ],
+            "remark-gfm": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/remark-gfm"
+            ],
+            "tailwind-merge": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/tailwind-merge"
+            ],
+            "tw-animate-css": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/tw-animate-css"
+            ],
+            "tw-shimmer": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/tw-shimmer"
+            ],
+            "zustand": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/zustand"
+            ],
+            "@types/react": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@types/react"
+            ],
+            "@types/react-dom": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@types/react-dom"
+            ],
+            "vite": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/vite"
+            ],
+            "@vitejs/plugin-react": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@vitejs/plugin-react"
+            ],
+            "@tailwindcss/vite": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/@tailwindcss/vite"
+            ],
+            "tailwindcss": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/web/node_modules/tailwindcss"
+            ],
+            "@flow/runner": [
+                "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/index.ts"
+            ],
+            "@anthropic-ai/claude-agent-sdk": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk"
+            ],
+            "@a2a-js/sdk": [
+                "/Users/citrine/Projects/AgentHarness/Flow/packages/protocols/node_modules/@a2a-js/sdk"
+            ],
+            "zod": [
+                "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod"
+            ],
+            "@modelcontextprotocol/sdk": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@modelcontextprotocol/sdk"
+            ],
+            "@flow/server": [
+                "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/index.ts"
+            ],
+            "@fastify/cors": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@fastify/cors"
+            ],
+            "fastify": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/fastify"
+            ],
+            "npm-package-arg": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/npm-package-arg/index.d.ts"
+            ],
+            "pacote": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/pacote/index.d.ts"
+            ],
+            "pg-boss": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/pg-boss"
+            ],
+            "ssri": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/ssri/index.d.ts"
+            ],
+            "@types/npm-package-arg": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/npm-package-arg"
+            ],
+            "@types/pacote": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/pacote"
+            ],
+            "@types/ssri": [
+                "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/ssri"
+            ],
+            "@flow/cli": [
+                "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/cli/src/index.ts"
+            ],
+            "@flow/contracts": [
+                "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/contracts/src/index.ts"
+            ],
+            "@flow/client": [
+                "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/client/src/index.ts"
+            ],
+            "@flow/protocols": [
+                "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/protocols/src/index.ts"
+            ],
+            "@modelcontextprotocol/client": [
+                "/Users/citrine/Projects/AgentHarness/Flow/packages/protocols/node_modules/@modelcontextprotocol/client"
+            ],
+            "@modelcontextprotocol/server": [
+                "/Users/citrine/Projects/AgentHarness/Flow/packages/protocols/node_modules/@modelcontextprotocol/server"
+            ],
+            "@flow/interaction": [
+                "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/interaction/src/index.ts"
+            ],
+            "vitest": [
+                "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest"
+            ]
+        },
+        "incremental": false,
+        "noEmit": true,
+        "allowSyntheticDefaultImports": true,
+        "resolvePackageJsonExports": true,
+        "resolvePackageJsonImports": true,
+        "useDefineForClassFields": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "strictBuiltinIteratorReturn": true,
+        "alwaysStrict": true,
+        "useUnknownInCatchVariables": true
+    },
+    "include": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/store.ts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/attachment-history.test.ts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/store.test.ts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/contracts/src/context-observation-history.test.ts",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/index.ts"
+    ],
+    "exclude": []
+}

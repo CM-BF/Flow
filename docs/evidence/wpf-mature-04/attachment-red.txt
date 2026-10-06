@@ -1,0 +1,31 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency
+
+ ❯ apps/server/src/context-transparency/attachment-history.test.ts (4 tests | 1 failed | 3 skipped) 1980ms
+   × records attachment-only v2 through reportEvents, completes and reads history without claiming known empty materials 588ms
+   ↓ keeps mixed v2 inventory explicitly unknown while retaining both frozen inputs
+   ↓ preserves v1 known citations and original persisted history across center restart
+   ↓ rolls back the entire event batch after a later invalid sample and replays the corrected batch exactly once
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/context-transparency/attachment-history.test.ts > records attachment-only v2 through reportEvents, completes and reads history without claiming known empty materials
+FlowApiError: The center could not complete this request.
+ ❯ assertResponse packages/client/src/index.ts:558:9
+    556|   if (response.ok) return;
+    557|   const body = await response.json().catch(() => ({})) as { error?: { …
+    558|   throw new FlowApiError(response.status, body.error?.code ?? 'http_er…
+       |         ^
+    559| }
+    560| 
+ ❯ FlowClient.request packages/client/src/index.ts:550:5
+ ❯ apps/server/src/context-transparency/attachment-history.test.ts:106:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 skipped (4)
+   Start at  05:27:06
+   Duration  3.13s (transform 473ms, setup 0ms, import 1.06s, tests 1.98s, environment 0ms)
+
