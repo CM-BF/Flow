@@ -45,3 +45,5 @@ FLOW_O04_MIGRATION_EVIDENCE="$PWD/docs/evidence/o04/migration-upgrade.json" PATH
 PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm typecheck
 ```
 复跑会使用新的随机专属DB；独立review需另设临时输出路径，不覆盖本原始JSON。
+
+2026-10-06T05:06:54Z Root正式独立只读APPROVED组合 `a169a2e139e5db5e7bc2fd6f55699014a41e9926`：产品 `1420dfa2f44117f49ec022665bcddc11739e36ae` 与test-only `a169a2e139e5db5e7bc2fd6f55699014a41e9926`，审查收尾clean `66bf563c9c80fb77cfab1919e1ca4aa40a9b41a6`。23源码/20原输出+补证4hash均核，作者103个不同检查按77+25+1三次运行，Root未重跑；产品源码没有变化。query注入、原生模型/NL/真实child仍未验边界不变。本片段待Lead集成，claim保留。
