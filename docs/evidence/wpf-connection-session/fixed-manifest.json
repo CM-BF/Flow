@@ -1,0 +1,436 @@
+{
+  "task": "WPF-CONNECTION01",
+  "sourceTarget": "582f41f1957709982750f5de5306738e064960ce",
+  "base": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "createdAt": "2026-10-06 13:19:47 UTC",
+  "entries": [
+    {
+      "role": "source",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "bytes": 26902,
+      "sha256": "c6085f7179e8af66d41ab041f09d26cd9003080b864aec493a290b5c7067cbd6"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/browser-session/fixture.ts",
+      "bytes": 3183,
+      "sha256": "c3e5ca59bddde1f6da0e9338f8ea752d43195d0cc9a8e31f801e711fe3b042b2"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/streams.ts",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c"
+    },
+    {
+      "role": "source",
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1"
+    },
+    {
+      "role": "protected",
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "role": "protected",
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "role": "protected",
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "role": "protected",
+      "path": "apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "role": "protected",
+      "path": "apps/server/src/shutdown/index.ts",
+      "bytes": 1327,
+      "sha256": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10"
+    },
+    {
+      "role": "protected",
+      "path": "packages/client/src/index.ts",
+      "bytes": 45195,
+      "sha256": "8f1c48b8a938c65450417064204153bfaa3d2d669354ffd0dc6aaf020c68d6dc"
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1268,
+      "sha256": "214f8b9c9f1c7c72aedac28a6b147c57079beca4a50f9829d4677153b0ed5a86"
+    },
+    {
+      "role": "protected",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "role": "protected",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    },
+    {
+      "role": "protected",
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "role": "protected",
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "role": "protected",
+      "path": "apps/server/package.json",
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0"
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "role": "protected",
+      "path": "packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/002-reconciliation.sql",
+      "bytes": 1730,
+      "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/004-projects.sql",
+      "bytes": 1918,
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/005-protocol-dispatch.sql",
+      "bytes": 799,
+      "sha256": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/006-goals.sql",
+      "bytes": 3165,
+      "sha256": "e7174fdb547df194bcae5286981135c1cda3e47a2ea442afcafee0791a762a49"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/007-conversations.sql",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/008-plugins.sql",
+      "bytes": 3675,
+      "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/009-assistant-messages.sql",
+      "bytes": 736,
+      "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/010-execution-profiles.sql",
+      "bytes": 765,
+      "sha256": "3a518a6953644c6efada3cfe5d38481fa5b48aaf7ef0819a0d99dc25286d2847"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/011-conversation-queue.sql",
+      "bytes": 1357,
+      "sha256": "bea2d6057b4471524ccb89e95e643a7bd2606805d75a775d7d6129857afbc427"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/012-goal-tool-runs.sql",
+      "bytes": 2076,
+      "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/013-goal-native-mode.sql",
+      "bytes": 185,
+      "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/014-goal-graph-proposals.sql",
+      "bytes": 1802,
+      "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "bytes": 2406,
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/017-goal-graph-runs.sql",
+      "bytes": 3089,
+      "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "bytes": 3497,
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "bytes": 189,
+      "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "bytes": 970,
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "bytes": 2167,
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "bytes": 2975,
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/025-native-harness-sources.sql",
+      "bytes": 1618,
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+    },
+    {
+      "role": "protected",
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/README.md",
+      "bytes": 4278,
+      "sha256": "61443af294a6eadcb7fbfec109f3679ccc5b16f11394e0d762a485888bed933c"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/claim.json",
+      "bytes": 951,
+      "sha256": "ed7fbd69af60504b0c90402e6e74ce1c1421d58bd5587ecf81cd1880d819cefd"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/install.stdout",
+      "bytes": 957,
+      "sha256": "c682175b15c69c137b176a88ed7541d3743ce98ac668d0b12066d51a5e50614c"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/interface.md",
+      "bytes": 5851,
+      "sha256": "596e947a92a890cd4e3072151f59c8f08f7b0154af7899706b4d7ac8a13d0188"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-consumers-cleanup.json",
+      "bytes": 230,
+      "sha256": "0f2543cd57341d3338761e6417bba6c9710e31e45a23d310b3a5a210902210bf"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-consumers.stdout",
+      "bytes": 674,
+      "sha256": "867ca430bdc88c3256481689651c293e8d17e9b660e81c2a4f3d5c5163d3ed29"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-first.stdout",
+      "bytes": 1125,
+      "sha256": "429de2419db09ab58e4d3893bf6a1b1b72c70a3f837a17d6eeda2ba2c5f4e317"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-increment-cleanup.json",
+      "bytes": 230,
+      "sha256": "20d53aa83163c184f6031f5b5ddd3bc23444dc0b928baa3dd6c670ee92df2cee"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-increment-final-cleanup.json",
+      "bytes": 707,
+      "sha256": "c6c5f8208d4bfade7b3cb3e8d4d34af080925543c1d66aa1732975307140cddd"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-increment-final.stdout",
+      "bytes": 361,
+      "sha256": "7e359b3cd211a985b8c16b977c8cbfa0085e5dd4b04462fa09823672e6690b28"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-increment-fixed-cleanup.json",
+      "bytes": 476,
+      "sha256": "fd363d73fa245a9628c8ae5da4b605f0c1e33bdf32ef9d5f4234f60b787c72f2"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-increment-fixed.stdout",
+      "bytes": 4131,
+      "sha256": "ec5a05d519e5c569548341f6bbaf445151db49a8b6b8a0c4569f63f5aed5a7fc"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-increment.stdout",
+      "bytes": 4883,
+      "sha256": "d0559159dfc1100e68d66978876f491c078023c3bb4dcb8b1bd19eb6a0b43c46"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-restart-cleanup.json",
+      "bytes": 651,
+      "sha256": "9a36ced8d9d6f71889248a32c9121d39622029d68c81e7aec257d67d777d7319"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-restart.stdout",
+      "bytes": 457,
+      "sha256": "6e61bca2a26d34a35c8e55015f71536623c41d0b943637fce0e2e4607de6f985"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-second-cleanup.json",
+      "bytes": 1126,
+      "sha256": "d76e54265f04178fa7a0af8ee8319ae16d07ac21fc3820d41b1922a8a2fb7b42"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/pg-second.stdout",
+      "bytes": 893,
+      "sha256": "676ba50952fe4c436696d8c08218e3816a9fbc9977520b6184cf5d73c485e472"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/quality.json",
+      "bytes": 1992,
+      "sha256": "695ca3460086f1dda1cae9929cbf5ae42a2ebb3b409c28cb57435ef5cee67794"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/tool-receipts.json",
+      "bytes": 4454,
+      "sha256": "6ed5d42d49940234a60bb4ab680720e0f83b416f0bd87c5b12540741dc768a6a"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/types-delivery.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/types-final.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/types-first.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/types-fixed.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/types-restart.stdout",
+      "bytes": 213,
+      "sha256": "6d0e82513fb3b399f559eccf0de5baa06fb3a746611d10c460e57103d271b007"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/wpf-connection-session/types-tests.stdout",
+      "bytes": 143,
+      "sha256": "b7c990439100662cc6901eeae77486d31b2f0a81278aea78c59ba6a35d62d1e7"
+    }
+  ],
+  "providerCalls": 0,
+  "validation": "22 distinct cases across preserved rounds; final root types0. All evidence fixed at sourceTarget. No production cookie mount or browser UI acceptance."
+}

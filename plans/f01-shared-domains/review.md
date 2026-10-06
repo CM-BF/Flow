@@ -1,3 +1,9 @@
+# 当前连接会话共享传输审查
+
+Review target commit: 5be830e2614d45dbaa023e98923fc74f470b37ec
+
+状态 NOT_STARTED。3source/3raw/1固定DTO，见[browser-session-client-manifest](../../docs/evidence/f01/browser-session-client-manifest.json)。初始3red→新3+旧51通过与types0；仅传输，不覆盖领域或浏览器。下列批准仅其历史target。
+
 ## 当前附件清理增量独审
 
 Review target commit: f04cb29633ca678b35aa423e02a16953add0cfba
@@ -267,3 +273,13 @@ NOT_STARTED；仅3source、2HTTP与types，领域916e另已独审；不复跑PG/
 Review target commit: 79b569a14d14c218874781e2d05ae6e42e234ce2
 
 APPROVED — assignment_review独立只读3source/3raw/1input同源，无P1/P2；不重跑。限定薄传输，见[回执](../../docs/evidence/f01/native-engineering-client-review.json)。
+
+## Browser connection production mount
+
+2026-10-06 13:35 UTC，native_center_owner独立只读APPROVED固定9406ca5f2aa5a88dbc028d64e09f48f438bd627e。完整3file delta/测试和25 bindings核验（3source+10输入+12raw），无P1/P2，0reviewer tests/provider；本人此前域仅作固定input hash，未自审。[正式回执](../../docs/evidence/f01/browser-session-production-independent-review.json)。新3distinct分轮2+1、旧queue3/types0、4DB正常清理；Node jar非实际浏览器、remoteTLS/proxy未验，个人服务未动。
+
+## Browser connection client P2 incremental closure
+
+Review target commit: d6d5089c680f862e34a8e4d25f8f65d03057e70e
+
+APPROVED — status_read/gpt-6-astra 2026-10-06 13:38:04 UTC独立只读，Mika13:38:16接收；2source/3raw固定hash、两行修复核验，原5be P2 CLOSED，无P1/P2。Bearer显式omit、cookie/connect仍include；原1red→3green与types0复用，0新增PG/provider/reviewer测试。[完整收据](../../docs/evidence/f01/browser-session-client-independent-review.md)。生产9406原批准继续限定三源；其历史manifest保留5be输入，不追溯改写。

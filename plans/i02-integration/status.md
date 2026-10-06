@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T13:33:02.909103+00:00 / mainaae1 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:42:00 UTC / main2f16e30a |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | maina3e670b；P05固定6336，两种public caller保持；mixed全26源+2覆盖 |
+| 工作基线 / HEAD | main2f16e30a；本批13个领域/客户端/生产固定源逐hash相同 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
-| 检查状态 | 30个固定源/config逐hash相等；当前PG4选中/5未选通过，root与mixed类型0；不重跑容量 |
-| 已集成main状态 / HEAD | 附件/历史/固定aeb图已maincde；本片已审P05/mixed待本次fast-forward，个人runtime362/v15不变 |
+| 检查状态 | 当前生产1选中/2未选通过、root/Web类型0；155注册来源有效，不重跑22领域 |
+| 已集成main状态 / HEAD | 前批X01/P05已main2f16e30a；本批登录恢复接口待受控fast-forward，个人runtime362/v15不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 插件的有界安装材料与自有加载模块已通过独审和主线依赖核对，正发布本批；个人运行版本保持。 |
-| 下一可用交付 | 接收连接会话生产入口；终端队列控制和插件公开安装命令并行推进。 |
+| 当前产出 | 登录恢复接口已完成主线组合验证；终端队列控制正在独立实现。 |
+| 下一可用交付 | 发布已审登录接口，网页连接恢复与连续目标旅程并行推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -159,3 +159,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T13:19:31.453782+00:00：P05 Mika接受独审APPROVED6336，S01完整准备6de/结果64911/observer c259分别已有独立批准。本次精确source组合与4个当前public PG消费者/root+mixed types0见[event-capacity-integration](../../docs/evidence/i02/event-capacity-integration.json)。原容量raw与UNKNOWN口径不改，无新provider/容量窗口/个人服务操作。
 
 2026-10-06T13:33:02.909103+00:00：X01 bf3378 + F01 f635 已审11源逐字接收；offline frozen无重新解析/已up-to-date，server/runner实际公开import与root types0；未重跑65领域检查。见 [集成回执](../../docs/evidence/i02/plugin-leaf-integration.json)。中心029后继另由原owner领取，不提前宣称完整生命周期。
+
+2026-10-06 13:42:00 UTC：浏览器会话13固定源受控组合，当前真实HTTP/PG 1选中+两类型检查通过，私有DB正常移除；[输入与原始事实](../../docs/evidence/i02/browser-session-integration.json)。默认能力关闭，实际Web恢复另由Web组消费；不改变用户现服务。

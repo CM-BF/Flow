@@ -1,0 +1,59 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session
+
+ ❯ apps/server/src/browser-session/session.test.ts (21 tests | 2 failed | 16 skipped) 7033ms
+   ↓ keeps unconfigured sessions unsupported while the old bearer-only HTTP and stream consumers remain usable
+   ↓ persists random center/principal and the same absolute session across GET reload and process-factory restart
+   ↓ revokes old cookies on trusted startup token rotation while keeping random principal identity
+   ↓ revokes old cookies on trusted startup epoch rotation while keeping random principal identity
+   ↓ expires absolutely without read mutation and logout revokes only its session without cancelling task work
+   ↓ never falls back to a valid cookie from invalid explicit authorization wrong
+   ↓ never falls back to a valid cookie from invalid explicit authorization 
+   ↓ never falls back to a valid cookie from invalid explicit authorization Basic secret
+   ↓ preserves runner bearer authority and denies owner cookies access to runner endpoints
+   ↓ requires exact trusted Origin and CSRF on cookie writes, allowing only same-origin safe browser reads without Origin
+   ↓ rejects Cookie confusion across ports and centers even when local browser cookie delivery shares a hostname
+   ↓ serializes a 32-session capacity limit and rejects overflow without evicting a live session
+   ✓ closes an already-open SSE on logout without cancelling its running task  313ms
+   × closes an already-open SSE on expiry without cancelling its running task 41ms
+   ✓ closes an already-open SSE on rotation without cancelling its running task 292ms
+   ↓ rechecks authorization after a read and before publishing a newly fetched SSE page
+   ↓ rejects malformed settings/commands and duplicate session cookies without turning reads into control
+   ↓ preserves the unmodified public createServer bearer client and two-argument stream consumer
+   ✓ keeps a no-cookie read side-effect free and rejects a mismatched destination despite forwarded headers 29ms
+   ↓ sets the HTTPS cookie policy without claiming a browser or TLS journey
+   × does not create an observer after preClose overtakes its initial asynchronous authorization 5023ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/browser-session/session.test.ts > closes an already-open SSE on expiry without cancelling its running task
+error: new row for relation "browser_sessions" violates check constraint "browser_sessions_check"
+ ❯ node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:45:11
+ ❯ apps/server/src/browser-session/session.test.ts:187:35
+    185|     expect(await s.page()).toContain('running');
+    186|     if (reason === 'logout') await request(f, '/api/browser-session/lo…
+    187|     else if (reason === 'expiry') await pool.query("UPDATE flow.browse…
+       |                                   ^
+    188|     else await createBrowserSessionAuthentication(pool, { ownerToken, …
+    189|     expect(await s.page()).toBeNull(); expect((await pool.query('SELEC…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/browser-session/session.test.ts > does not create an observer after preClose overtakes its initial asynchronous authorization
+Error: Timed out: HTTP close
+ ❯ Timeout.<anonymous> apps/server/src/browser-session/session.test.ts:71:99
+     69| async function bounded(promise: Promise<unknown>, stage: string) {
+     70|   let timer: NodeJS.Timeout | undefined;
+     71|   try { await Promise.race([promise, new Promise((_, reject) => { time…
+       |                                                                                                   ^
+     72|   finally { clearTimeout(timer); }
+     73| }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed | 16 skipped (21)
+   Start at  06:15:47
+   Duration  8.10s (transform 452ms, setup 0ms, import 969ms, tests 7.03s, environment 0ms)
+

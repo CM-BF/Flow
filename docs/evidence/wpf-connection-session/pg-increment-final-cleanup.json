@@ -1,0 +1,36 @@
+{
+  "providerCalls": 0,
+  "productionMount": false,
+  "samples": [
+    {
+      "case": "open-SSE-logout",
+      "closed": true,
+      "taskStatus": "running",
+      "authChecks": 4
+    },
+    {
+      "case": "open-SSE-expiry",
+      "closed": true,
+      "taskStatus": "running",
+      "authChecks": 4
+    },
+    {
+      "case": "open-SSE-rotation",
+      "closed": true,
+      "taskStatus": "running",
+      "authChecks": 4
+    },
+    {
+      "case": "initial-authorization-close",
+      "observerCreated": false,
+      "status": 503
+    }
+  ],
+  "databases": [
+    {
+      "database": "flow_connection01_3e91fac46ee048ec856b41b0afd207e8",
+      "identityVerified": true,
+      "removed": true
+    }
+  ]
+}

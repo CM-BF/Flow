@@ -1,0 +1,52 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/browser-session.test.ts (3 tests | 3 failed) 28ms
+   × uses one explicit cookie mode for real HTTP and SSE, and reads the latest CSRF only for writes 5ms
+   × does not retry rejected or unknown session changes and rejects missing CSRF before sending 15ms
+   × preserves old Bearer HTTP and SSE without cookies or CSRF, and refuses mixed auth configuration 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/browser-session.test.ts > uses one explicit cookie mode for real HTTP and SSE, and reads the latest CSRF only for writes
+TypeError: client.browserSession is not a function
+ ❯ packages/client/src/browser-session.test.ts:30:25
+     28|   const client = new FlowClient({ baseUrl: host.baseUrl, browserSessio…
+     29|   try {
+     30|     expect(await client.browserSession()).toEqual(ready);
+       |                         ^
+     31|     expect(await client.connectBrowserSession('one-login-token')).toEq…
+     32|     csrf = ready.csrfToken;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  packages/client/src/browser-session.test.ts > does not retry rejected or unknown session changes and rejects missing CSRF before sending
+AssertionError: expected FlowApiError: Rejected. { …(2) } to not be an instance of FlowApiError
+ ❯ packages/client/src/browser-session.test.ts:59:5
+     57|   const client = new FlowClient({ baseUrl: host.baseUrl, browserSessio…
+     58|   try {
+     59|     await expect(client.cancel('one', 'key')).rejects.not.toBeInstance…
+       |     ^
+     60|     expect(seen).toEqual([]);
+     61|     await expect(client.connectBrowserSession('token')).rejects.toThro…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  packages/client/src/browser-session.test.ts > preserves old Bearer HTTP and SSE without cookies or CSRF, and refuses mixed auth configuration
+AssertionError: expected [Function] to throw an error
+ ❯ packages/client/src/browser-session.test.ts:85:133
+     83|     expect(inits.every(init => init.credentials === undefined)).toBe(t…
+     84|     // @ts-expect-error Runtime callers must not silently downgrade an…
+     85|     expect(() => new FlowClient({ baseUrl: host.baseUrl, token: 'inval…
+       |                                                                                                                                     ^
+     86|     await expect(client.connectBrowserSession('token')).rejects.toThro…
+     87|   } finally { spy.mockRestore(); await host.close(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  06:14:49
+   Duration  342ms (transform 128ms, setup 0ms, import 226ms, tests 28ms, environment 0ms)
+

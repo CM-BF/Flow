@@ -1,3 +1,4 @@
+import { createBrowserSessionAuthentication, migrateBrowserSessions, registerBrowserSessionRoutes, type BrowserSessionAuthentication, type BrowserSessionOptions } from './browser-session/index.js';
 import { migrateContextObservationHistory } from './context-transparency/migration.js';
 import { registerContextHistoryRoutes } from './context-transparency/routes.js';
 import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
@@ -23,10 +24,9 @@ import { migrateConversations, registerConversationRoutes } from './conversation
 import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
-import { timingSafeEqual } from 'node:crypto';
 import { Pool } from 'pg';
 import { MAX_BATCH_BYTES, taskSubmissionSchema, registerRunnerSchema, ownershipSchema, eventBatchSchema, decisionSchema } from '@flow/contracts';
-import { HttpError, migrate, sha256 } from './database.js';
+import { HttpError, migrate } from './database.js';
 import { list, snapshot, submit } from './tasks.js';
 import { startScheduler } from './scheduler.js';
 import { claim, expireLeases, heartbeat, registerRunner, revoke } from './runners.js';
@@ -48,6 +48,8 @@ declare module 'fastify' { interface FastifyRequest { runnerId: string | null } 
 export interface ServerOptions {
   databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number;
   automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost;
+  /** Explicit browser trust policy; absent keeps credentialed browser sessions disabled. */
+  browserSession?: BrowserSessionOptions;
   /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
   activeSteering?: boolean;
 }
@@ -58,10 +60,10 @@ export async function createServer(options: ServerOptions) {
   app.decorateRequest('runnerId', null);
   const leaseMs = options.leaseMs ?? 10_000;
   if (!Number.isSafeInteger(leaseMs) || leaseMs < 50 || leaseMs > 300_000) throw new Error('Invalid leaseMs.');
-  if (options.allowedOrigin) await app.register(cors, { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] });
   const pool = new Pool({ connectionString: options.databaseUrl, max: 8, connectionTimeoutMillis: 5000, statement_timeout: 10_000 });
   pool.on('error', error => app.log.error(error));
   let packageWorker: PackageFetchWorker | undefined;
+  let authentication: BrowserSessionAuthentication;
   try {
     await migrate(pool);
     await migrateWorkspace(pool);
@@ -87,6 +89,10 @@ export async function createServer(options: ServerOptions) {
     await migrateNativeHarnessSources(pool);
     await migrateAttachments(pool);
     await migrateContextObservationHistory(pool);
+    await migrateBrowserSessions(pool);
+    authentication = await createBrowserSessionAuthentication(pool, options);
+    const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
+    if (corsOptions) await app.register(cors, corsOptions);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {
@@ -128,19 +134,8 @@ export async function createServer(options: ServerOptions) {
     const status = candidate.statusCode === 413 ? 413 : candidate.statusCode === 400 ? 400 : 500;
     return reply.code(status).send({ error: { code: status === 413 ? 'body_too_large' : status === 400 ? 'invalid_request' : 'internal_error', message: status === 500 ? 'The center could not complete this request.' : 'Invalid request.' } });
   });
-  app.addHook('preHandler', async request => {
-    if (request.routeOptions.url === '/api/health' || request.method === 'OPTIONS') return;
-    const token = request.headers.authorization?.replace(/^Bearer /, '');
-    if (!token || !request.headers.authorization?.startsWith('Bearer ')) throw new HttpError(401, 'unauthorized', 'Authentication required.');
-    const owner = timingSafeEqual(Buffer.from(sha256(token)), Buffer.from(sha256(options.ownerToken)));
-    const runnerRoute = request.routeOptions.url?.startsWith('/api/runner/');
-    if (owner && !runnerRoute) return;
-    if (owner) throw new HttpError(403, 'wrong_role', 'A runner credential is required.');
-    const runner = (await pool.query<{ id: string }>('SELECT id FROM flow.runners WHERE token_hash=$1 AND NOT revoked', [sha256(token)])).rows[0];
-    if (!runner) throw new HttpError(401, 'unauthorized', 'Authentication required.');
-    if (!runnerRoute) throw new HttpError(403, 'wrong_role', 'An owner credential is required.');
-    request.runnerId = runner.id;
-  });
+  app.addHook('preHandler', authentication.authenticate);
+  registerBrowserSessionRoutes(app, authentication);
   app.get('/api/health', async () => ({ ok: true }));
   registerWorkspaceRoutes(app, pool);
   registerTaskIndexRoutes(app, pool);
@@ -169,7 +164,7 @@ export async function createServer(options: ServerOptions) {
   registerKnowledgeRoutes(app, pool);
   registerRunnerMaintenanceRoutes(app, pool);
   registerGoalGraphRunRoutes(app, pool, boss);
-  registerStreams(app, pool);
+  registerStreams(app, pool, authentication.authorizeStream);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_runner', 'Invalid runner registration.');

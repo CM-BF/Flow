@@ -1,0 +1,28 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/browser-session-production.test.ts (3 tests | 1 failed) 3452ms
+   ✓ mounts migration and the unsupported public probe by default while preserving owner/runner roles  1252ms
+   × uses the actual factory and client for durable cookie identity, restart, write guards and revoked SSE without cancelling work 993ms
+   ✓ starts the public entry with explicit bounded configuration and rejects malformed configuration before serving  1083ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/browser-session-production.test.ts > uses the actual factory and client for durable cookie identity, restart, write guards and revoked SSE without cancelling work
+TypeError: Cannot read properties of undefined (reading 'status')
+ ❯ packages/client/src/browser-session-production.test.ts:120:71
+    118|     expect((await browser.logoutBrowserSession()).state).toBe('unauthe…
+    119|     expect((await stream.next()).done).toBe(true);
+    120|     const task = await owner.show(accepted.task.id); expect(task.task.…
+       |                                                                       ^
+    121|     const rejected = await realFetch(address + '/api/tasks', { headers…
+    122|     expect(rejected.status).toBe(401); await rejected.arrayBuffer();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  06:27:25
+   Duration  4.62s (transform 482ms, setup 0ms, import 1.08s, tests 3.45s, environment 0ms)
+

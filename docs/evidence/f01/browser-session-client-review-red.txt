@@ -1,0 +1,35 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/browser-session.test.ts (3 tests | 1 failed | 2 skipped) 24ms
+   ↓ uses one explicit cookie mode for real HTTP and SSE, and reads the latest CSRF only for writes
+   ↓ does not retry rejected or unknown session changes and rejects missing CSRF before sending
+   × preserves old Bearer HTTP and SSE without cookies or CSRF, and refuses mixed auth configuration 24ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/browser-session.test.ts > preserves old Bearer HTTP and SSE without cookies or CSRF, and refuses mixed auth configuration
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ packages/client/src/browser-session.test.ts:83:62
+     81|     await client.cancel('old', 'original-key'); for await (const _page…
+     82|     expect(seen).toEqual([{ bearer: 'Bearer legacy-owner', csrf: undef…
+     83|     expect(inits.every(init => init.credentials === 'omit')).toBe(true…
+       |                                                              ^
+     84|     // @ts-expect-error Runtime callers must not silently downgrade an…
+     85|     expect(() => new FlowClient({ baseUrl: host.baseUrl, token: 'inval…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  06:35:42
+   Duration  394ms (transform 155ms, setup 0ms, import 274ms, tests 24ms, environment 0ms)
+
