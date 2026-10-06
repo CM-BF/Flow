@@ -1,0 +1,53 @@
+{
+  "recordedAt": "2026-10-06 05:11:00 UTC",
+  "main": "da8d73a984118e0a5c406bd04dbfbc5d5c9c148f",
+  "implementation": "9b2156d1b3481643bc5abd01241831e8c7f4dbdf",
+  "implementationAncestor": true,
+  "fullImplementationScopeDiff": [],
+  "verifiedFiles": [
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "9443faf1dff64220e651b02acba13c7fe5069e5c8be10b05aa9fe70e121cd2c5"
+    },
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "sha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3"
+    },
+    {
+      "path": "apps/server/src/assistant/preview.test.ts",
+      "sha256": "3e3aa5287816b5aa58383ebdcb6001329cc79f4ea0702f9b6bf4e8be137c7adf"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "sha256": "f674a526e14f7534b3b11bb284b3f177a1128d8169274e522536434ef48d969c"
+    },
+    {
+      "path": "experiments/bounded-preview/fixture.ts",
+      "sha256": "80f70cc02e702af25f806ce43f2216fb6ab5f76b4c141d39ff9e6964c6fcc0fc"
+    },
+    {
+      "path": "experiments/bounded-preview/instrument.ts",
+      "sha256": "da1cde761e8afd6f62a87c7338af262cba73661fb247b1404b93f0112cf64d74"
+    },
+    {
+      "path": "experiments/bounded-preview/run-consumer.mjs",
+      "sha256": "7eadc98cdf0966931ab0ee74c1df7775afc8f8388a7ee52d1ad8420dea5d5347"
+    },
+    {
+      "path": "experiments/bounded-preview/run.ts",
+      "sha256": "703f2fda993d95ac91e100f4a2bcbf0a9aa252ec0e56ae61e3905d8aebfa5450"
+    },
+    {
+      "path": "experiments/bounded-preview/vitest.consumer.config.ts",
+      "sha256": "fce9706fc7c0172c28ac5627bac45e89e5cd578236bb278b4f673f861c992194"
+    }
+  ],
+  "checksRerun": false,
+  "deployment": "main integration only; no new resident runtime verification by this worker",
+  "claimAtClose": {
+    "claimId": "681ae135-02b1-403e-8a32-685b8ce603b3",
+    "version": 1,
+    "state": "active"
+  },
+  "ownerWrites": "stop after metadata/dashboard commit; Root performs release"
+}
