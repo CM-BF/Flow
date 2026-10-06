@@ -1,0 +1,105 @@
+{
+  "observedAt": "2026-10-06T06:27:13.782Z",
+  "productBase": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "parents": [
+    {
+      "id": "B01",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance",
+      "head": "a2b56ac2085b8943b38cc78ee1cd59c0242f9e2c",
+      "dirty": false,
+      "files": [
+        {
+          "path": "docs/evidence/b01/README.md",
+          "sha256": "ab6bbfd8ab11588dd78fef25909098d9af69f24dbbb69028caa0fa99b4327063"
+        },
+        {
+          "path": "plans/b01-bounded-reads/status.md",
+          "sha256": "a3166622f0ee13c5b53b87768a1a197c5c18bef001c1f4886edce70db079d2ca"
+        }
+      ]
+    },
+    {
+      "id": "LAB01",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes",
+      "head": "40b115c25b42ee6e88c8516e2a27a3a1b158541a",
+      "dirty": false,
+      "files": [
+        {
+          "path": "docs/evidence/lab01/README.md",
+          "sha256": "f003ce821d0d1c8df25d06769d1b1c4e8b10008d6ab820624a013832bd20e8fa"
+        },
+        {
+          "path": "plans/lab01-performance/status.md",
+          "sha256": "c763b22859adda687a168bbba8bc8379e3b4055f53a0e06ac7e324cdf2c00c5b"
+        }
+      ]
+    },
+    {
+      "id": "LAB02",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/observer-probes",
+      "head": "56281848ed07a3f5ab72e58fc81b4e83ba6b9ab4",
+      "dirty": false,
+      "files": [
+        {
+          "path": "docs/evidence/lab02/README.md",
+          "sha256": "cd082f63d49d8cb5c9a0d22f1bda96da333a42bdfa95869cc402448ecf569f39"
+        },
+        {
+          "path": "plans/lab02-observer-probes/status.md",
+          "sha256": "147b5b49b985b023dbdacbd3000196fcea1d426ee90ed2b49107bf53887062ab"
+        }
+      ]
+    },
+    {
+      "id": "R03",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-reliability",
+      "head": "b4e5bbd56232b0a16339ee1f49fe1e53ae437ae3",
+      "dirty": false,
+      "files": [
+        {
+          "path": "docs/evidence/r03/report.md",
+          "sha256": "0de5bbcd2b3986cc0fadebbe99ba74d75ca154616b3c5636cd223b9013c0ea8c"
+        },
+        {
+          "path": "plans/r03-runner-reliability/status.md",
+          "sha256": "b1370b855446c1073242009962621ae7d363229dfd339e56750d8a6e16a6b684"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "name": "webapp-testing",
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    }
+  ],
+  "checks": {
+    "localLinks": 15,
+    "todoRows": 6,
+    "taskBudget": 64,
+    "errors": []
+  },
+  "modelCalls": 0,
+  "experimentRuns": 0
+}
