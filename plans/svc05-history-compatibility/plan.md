@@ -48,4 +48,4 @@
 
 ## SVC05H01-07 同版本中心恢复
 
-- [ ] **SVC05H01-07** 共享PG恢复后，只恢复af51/v18的缺失中心，保留runner/Web/数据/配置；固定新授权与OPS14 PID-only监督，单次执行/未知停止，不复用旧362许可。当前只准备，实际NOT_RUN。
+- [x] **SVC05H01-07** 共享PG恢复后，已按新单次许可恢复af51/v18中心；runner/Web/数据/配置保持，OPS14 PID-only监督2095ms、8保留检查通过。Execution Lead独立14项结果核验通过，64表raw无变，窗口23:46关闭；记录尚待main接收，原失败与许可不重用。见[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。
