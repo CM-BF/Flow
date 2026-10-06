@@ -1,6 +1,6 @@
 # D01 验证记录
 
-时间：2026-10-06 01:22 UTC。Owner：d01_owner / gpt-6-astra ultra。冻结基线 `eacee76fa7f1b6cc46b06b57ae68458637be4a26`；本轮未提交实现候选，后续 metadata 将绑定完整实现 SHA。
+时间：2026-10-06 01:22 UTC。Owner：d01_owner / gpt-6-astra ultra。冻结基线 `eacee76fa7f1b6cc46b06b57ae68458637be4a26`；实现检查 target `9c236c5f86b197c3e262a6b197f21ba2371ab9b0`；本次后续提交仅为交付 metadata。
 
 ## 环境与命令
 
@@ -36,10 +36,14 @@ PLAYWRIGHT_MODULE=/Users/citrine/.cache/codex-runtimes/codex-primary-runtime/dep
 
 ## 未验证与限制
 
-- 独立 review 尚未开始；不代表 main 集成或产品中心端到端通过。
+- 协调者独立 review 对 `9c236c5f86b197c3e262a6b197f21ba2371ab9b0` 已通过，记录在 `plans/d01-execution-dashboard/review.md`；不代表 main 集成或产品中心端到端通过。
 - 只测 Chrome headless；未做 Safari/Firefox、实际屏幕阅读器人工验收、多用户远程部署、恶意本地并发文件系统替换压力测试。
 - 保守解析既有 Markdown表格；未识别的检查/审查字段显示未知，不做语义猜测。超过24h显示待核实，阈值可在登记调整。
 - 首页风险和下一步使用 owner 原文摘要；旧 owner 记录的旧风险仍可能出现，资料下钻保留完整原文。
 - 浅深、窄屏检查符合 D01；W01 的产品 UI 行为独立交付。
 
 技能与阶段 clean-code：[quality.md](quality.md)。
+
+2026-10-06 01:25 UTC：预览4320已从owner持有的server session重启，加载实现target所有模块；重新聚合真实9源与自身交付状态，未改其他owner记录。
+
+2026-10-06 01:26 UTC：最终真实只读同步 W01、D01 均4/4，来源分别 m1-web / execution-dashboard，无解析警告；独立review当时与实现HEAD一致。随后的交付metadata不自动继承review，页面会保留目标SHA并提示待复审。
