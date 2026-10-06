@@ -145,3 +145,9 @@ full-plan-matrix已按main115b对齐REQ01/08/10/11/15/19/21/22及滚动队列，
 公共liveAssistantText optionalboolean只类型兼容，现生产GET依旧false；CHAT06领域/022与协商/legacy过滤不在本次。86fc单合同已由C02独审逐字核；当前Webtypes支持。个人服务center/runner仍fb906，本次不重启或修改其配置。后续CHAT06独立组合还要Web cursor reader兼容，不能由X05审批背书。
 
 07:04 UTC evidence correction: initial X05 domain comparison listed shortened nonexistent paths, so its empty diff was insufficient. Retained original record and added all14 actual manifest paths with existence, fixed-target byte equality and approved hash equality; all match. Six shared source comparisons were valid. No product change/test rerun.
+
+
+## 2026-10-06 07:08 UTC negotiated text stream / legacy compatibility
+CHAT06领域5ff（Root独审）、d9消费者（C02独审）、C02兼容77与test-only5f、F01薄client88（Root）、生产da7及组合694（assignment_review）、Web能力reader8c和活动cursor889（Web Lead独审）成套接收。stream-source-comparison.json逐个实际文件存在并对其精确审批target字节比对全部相等。唯一冲突是shared conversations注释旧短句对88已审协议定义，完整选择88文件，不产生新语义。
+组合只跑两实际Web consumer121/121（77+44）、root/Web types0；F01真实factory2/2、C02实际mounted组合8/8保存证据复用，不重复原72领域/模型。022在scheduler/worker/scan前迁移；GET需patch-v1且实际schema/routes可读才广告true；旧未协商与创建幂等ACK均false。过滤legacystream引用但保留durablelog/rawcursor，已挂载旧Task/Workspace接受空页进展，新增ACTIVITYreader889也已兼容。
+本片交付持久增量协议/adapter接线，网页真正逐段正文模块与App接入仍后继，不能称provider首token/live UI已验收。实际SDK仅注入；64KiB活动截断/1MiB正文限制/未flush尾段与累计prefix重hash风险保留。个人center/runner仍fb906，未重启，现服务不会因main自动获得022。下一真实入口更新复用SVC02单runner安全流程，独立核activeattempt，不由这次merge默许模型调用。
