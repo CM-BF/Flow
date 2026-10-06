@@ -1,0 +1,53 @@
+{
+  "recordedAt": "2026-10-06T12:16:20.132155+00:00",
+  "main": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "sourceSampleAt": "2026-10-06T12:15:08.415Z",
+  "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
+  "reviewedQueue": [
+    {
+      "taskId": "WPF-WORKSPACEPERF01",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/plans/wpf-workspace-lifecycle-baseline/status.md",
+      "classification": "already-main-awaiting-owner-close",
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
+      "differentPaths": []
+    },
+    {
+      "taskId": "WPF-MATURE-04",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md",
+      "classification": "independent-review-in-progress",
+      "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40"
+    }
+  ],
+  "mainButNotUserSurface": [
+    {
+      "taskId": "O12",
+      "next": "TUI-001 existing shared-goal/control successor; Web consumes independently",
+      "note": "Package/controller and historical reads main; no NL or UI acceptance claimed"
+    },
+    {
+      "taskId": "WPF-ATTACHI01",
+      "next": "Web ATTACHI02 actual Send/Queue integration",
+      "note": "Module main; no actual production App attachment journey yet"
+    },
+    {
+      "taskId": "ENG01F",
+      "next": "ENG01G native writer composition and explicit future real model acceptance",
+      "note": "Complete snapshot receipt main; writer settlement not-attested"
+    },
+    {
+      "taskId": "WPF-MATURE-04",
+      "next": "New native summary producer still independent review; history read UI consumer independent",
+      "note": "027 public history already main; current/cut not implied"
+    }
+  ],
+  "releaseQueue": [
+    {
+      "taskId": "SVC05",
+      "phase": "isolated compatibility preparation",
+      "fixedBackendCandidate": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "actualBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "actualWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "note": "All retained artifact compatibility must be explicit. No personal-service action/query permitted in preparation."
+    }
+  ]
+}

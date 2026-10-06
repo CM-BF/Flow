@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:32:04 UTC / mainfd1322f9 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:31 UTC / main 362af3bac77541e5a60979326bcf4d4b8c947915 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 管理metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | TUI01A/B/C独审与必要组合通过并main；本次父状态核对，无新工程测试 |
-| 已集成main状态 / HEAD | TUI01C d26+0fff已main648e；共享Web ACK已主线，附件v2 ACK已mainfd132；完整日用目标开放 |
+| 已集成main状态 / HEAD | TUI01A/B/C已main；O12共享goal controller/历史公开入口已main362。终端goal模式与完整双端控制尚未实施。 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 终端已支持逐段正文、可靠发送和按需工具详情，并与网页复用相同回执与结算规则。 |
-| 下一可用交付 | 接入已发布的队列、取消与人工决定，并完成同一会话跨客户端交替操作验收。 |
+| 当前产出 | 终端流式正文、按需工具详情和可靠回执已交付；共享目标会话现在可作为后继公开入口。 |
+| 下一可用交付 | 让终端通过已发布的目标会话与控制接口查看计划、处理决定、恢复命令，并补跨客户端旅程。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T12:01:50.170012+00:00 / main2f4a5789ee13937914fa2c25161c8d5ed1071550 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:31 UTC / main 362af3bac77541e5a60979326bcf4d4b8c947915 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | goal session transport ec6ad20479872a8cb701917b6fa448ca23a2a843 |
+| 工作基线 / HEAD | ec6 transport + adb91 public export 已分别独审并main362 |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 1HTTP红→绿/5实际请求；root types0，无PG/provider。 |
-| 已集成main状态 / HEAD | 上下文027、O11公共读口与ec6目标会话取消传输已main2f4；个人服务不变。 |
+| 检查状态 | 原1HTTP/5request证据保留；组合public import/root/Web types0、O12 production2/2/4未选，详见I02 |
+| 已集成main状态 / HEAD | O12公开控制器与 ./goal 入口已main362；个人服务不变。 |
 | Review | APPROVED：native_center_owner限定ec6ad204，c05公共读口已main |
 | 实现目标 | ec6ad20479872a8cb701917b6fa448ca23a2a843 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/goal-session-transport.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 统一目标读口已主线可用；本地退出观察可通过共享接口释放在途读取。 |
-| 下一可用交付 | 接入持续目标会话控制器，保留决定、取消与未知确认的中心规则。 |
+| 当前产出 | 终端和网页可复用同一目标会话入口，稳定读取历史并恢复原未决命令。 |
+| 下一可用交付 | 本片段已交付；后继公开接口按已冻结模块继续接线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -148,7 +148,7 @@
 
 | F01-31 | completed | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
 
-| F01-32 | in-progress | Lead / Mika context owner | [027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)；已交同级fresh amend，后续固定DDL/真实PG及共享接线待验，不改个人DB |
+历史 F01-32 领取记录（已由下方 completed 主线记录替代）：Lead / Mika context owner 的[027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)曾交同级fresh amend；当时DDL/PG/接线待验，个人DB未改。
 
 11:12 管理安全点：工程domain/client/mount各有独审且main2e71已接，组合root typecheck仍因既有RELEASE fixture tuple类型失败，已交Web原owner窄修；不冒称组合通过。附件ACK v2 target df8d077accea7a28536f1f56407a729c41e4639c 47/47/root types0待独审，不扩domain批准。027已正式给Mika原owner，现50/50含9PG、v5 DDL已实装并独审中，不再等待编号。
 
@@ -167,6 +167,8 @@
 | F01-32 | completed | Lead | mainbf067接受027领域/client/生产，固定36源比较与集成类型检查通过。 |
 | F01-33 | completed | Lead | [目标公开接线manifest](../../docs/evidence/f01/goal-delivery-manifest.json)，待独审；不重复O11领域32项。 |
 
-| F01-34 | in-progress | Lead | [transport manifest](../../docs/evidence/f01/goal-session-transport-manifest.json)，待独审；package入口待O12 Interface。 |
+| F01-34 | completed | Lead | ec6 transport、adb91 package export分别独审；main362，公开入口与直接production组合见I02。 |
 
 目标会话ec6薄传输已由main2f4接收，源码与固定target一致；F01-34仍保留O12公共package export后继，待其冻结模块输入，不把薄传输批准扩大到controller。metadata不重测。
+
+2026-10-06T12:14:43.577454+00:00：package export adb91已由assignment_review限定只读APPROVED（1行导出/旧3入口和deps不变），60e495领域由native_center_owner独审。main362逐源一致、实际Web声明依赖的public import成功；初次CLI无interaction依赖导致import失败原样保留，不扩CLI依赖来伪装测试。完整NL/TUI UI仍后继。

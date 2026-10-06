@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T12:11:20.571694+00:00 / main eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:31 UTC / main 362af3bac77541e5a60979326bcf4d4b8c947915 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -10,16 +10,16 @@
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
 | 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
-| 工作树dirty状态 | 本批固定来源与证据待提交，产品只接已审路径 |
+| 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | O12固定68绑定、public import/root/Web types0、生产选2过2/4未选；其他原始独审复用，0provider |
-| 已集成main状态 / HEAD | eb95fba已含ENG01F；本批O12、private sink与partial工作区基线待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 已集成main状态 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 已推送、当前源码与固定target一致。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 目标会话与完整历史已通过独审和主线组合检查，可供终端与网页复用。 |
-| 下一可用交付 | 接收目标入口，并准备现有个人预览的新旧版本兼容发布。 |
+| 当前产出 | 已审目标会话、工程快照、附件模块和轻量读取已进入主线。 |
+| 下一可用交付 | 本批已交付；个人预览发布与终端后继在独立任务推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

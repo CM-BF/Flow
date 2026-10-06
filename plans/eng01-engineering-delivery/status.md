@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:51:15 UTC / mainbf067e328bc1dc63cde39acf4b637cfb055e467a |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:31 UTC / main 362af3bac77541e5a60979326bcf4d4b8c947915 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 本次仅父计划与实际子片状态对齐，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 各子片固定独审与直接消费者证据复用；ENG01E68不同局部检查/类型0，无新增provider。 |
-| 已集成main状态 / HEAD | ENG01A/B/C/D 已受控 main；ENG01D 身份与单次 Codex turn 接缝在bf067，ENG01E纯受信检查模块独审通过待当前接收。 |
+| 检查状态 | E/F独审和直接类型组合已复用；本次仅父计划事实对齐，不重跑工程或provider。 |
+| 已集成main状态 / HEAD | ENG01A/B/C/D/E/F均已受控main；E/F固定30dd/1b3c，后者于eb95接收。原native模型写入与业务接收尚未完成。 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 工程宿主已保存真实执行身份；受限源码检查可由宿主独立生成结果，避免信任模型自报。 |
-| 下一可用交付 | 把真实完整文件快照与可信检查收据接入原生writer，补齐停止证明后准备真实工程验收。 |
+| 当前产出 | 工程工作区的完整文件快照和独立检查收据已进主线，实际原生写入能力继续接线。 |
+| 下一可用交付 | 复用同一原生执行循环接入工程writer，明确写入授权、停止与未知结果，再准备真实受限场景。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -53,3 +53,5 @@
 11:32:04：ENG01D a1177b12 v1已独立take8scope，首6843/interface固定；只加真实assignment身份与保持ordinary生命周期，不扩工具/工作区权限。首真实native必须模型自身实际工程通路，host应用有限代码候选不能默认为替代完整验收。与O11统一目标读口独立并行，0provider。
 
 2026-10-06 11:51:15 UTC：ENG01D 855e 已mainbf067且原claim释放；[ENG01E受信检查](../../../engineering-native-checker/plans/eng01e-trusted-calculator-checker/status.md)固定30dd独审通过，仅解释完整受限calculator源码并生成host报告。下一步先以真实已停writer的完整snapshot来源接线，独立versionedreceipt不冒充旧fixture v1；模型实际写入/停止和业务接受保持open。不为父状态更新重复测试。
+
+2026-10-06T12:13:55.672556+00:00：ENG01F主线eb95已接、作者82c91收口/claim释放；ENG01G已正式派原worker新WT/fresh claim后推进。09原始native预算均封存；本段没有新调用。
