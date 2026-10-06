@@ -1,0 +1,162 @@
+{
+  "taskId": "CHAT06P03",
+  "fixSource": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+  "validation": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+  "originalAlgorithm": "4c6676caf545aea1939a9b676b419cf702eed19c",
+  "originalManifest": "6658db0b68066cbc065d2093a4500d4b6e824d72a0d3649c9c732d457b25f832",
+  "historicalCurrentDriftOnly": [
+    "docs/evidence/chat06p03/baseline/accumulator.ts",
+    "docs/evidence/chat06p03/baseline/index.ts"
+  ],
+  "bindings": [
+    {
+      "role": "source",
+      "path": "docs/evidence/chat06p03/baseline/accumulator.ts",
+      "ref": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 10007,
+      "sha256": "f362bab2dd7b54dcd80fa0525c5553e78c57930c1c5073736764cc95a1d5ef7f"
+    },
+    {
+      "role": "source",
+      "path": "docs/evidence/chat06p03/baseline/index.ts",
+      "ref": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 3863,
+      "sha256": "bf8f6972371438857b56c33630644ae098999629def359507aabe4c1f72d3d6b"
+    },
+    {
+      "role": "source",
+      "path": "docs/evidence/chat06p03/baseline/accumulator.ts.txt",
+      "ref": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 9939,
+      "sha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792"
+    },
+    {
+      "role": "source",
+      "path": "docs/evidence/chat06p03/baseline/index.ts.txt",
+      "ref": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5"
+    },
+    {
+      "role": "readonly",
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "ref": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 10069,
+      "sha256": "d81c8c0c2b975f257b0efb934fc3279633f73ef3a41c68f5634580b311c6a4fc"
+    },
+    {
+      "role": "readonly",
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "ref": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5"
+    },
+    {
+      "role": "readonly",
+      "path": "apps/runner/src/assistant-stream/accumulator-incremental.test.ts",
+      "ref": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 10511,
+      "sha256": "a7c87fcbf7ec9bfb0acd39794f01d50fd12d882f014c5774e2eaba6a1777e645"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/integration-red.txt",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 973,
+      "sha256": "da7d7933356ad7847b1ad5cac7b8f0498bd905520cb3c8ad3670d629cf53d95e"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/integration-red.json",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 371,
+      "sha256": "3bdc295ded5c5501afa81587b92617b8504a87ada9ece9ec48b49751eba49b79"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/runtime-proof.json",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 862,
+      "sha256": "244f9db09274e5637a2d207c729f31ffaa2970e322f44321dbaad464edc03147"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/proof-preflight.json",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 377,
+      "sha256": "d9183a7f770c887beaedc3036aeb538c41d8713d964cd63ab79c2b23e9f87bda"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/proof-receipt.json",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 496,
+      "sha256": "9c274031641a24135f52a030f2d7990631ae267cfb0bc0f36d4b8cb0891fb5fd"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/proof.stdout",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 730,
+      "sha256": "4efa51b63cd7c6fbb3729c439de670a07b3cffa03e048a00e6de9f2bf94f6bdd"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/proof.stderr",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/chat06p03/type-fix/proof-completion.json",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 441,
+      "sha256": "7e8a711e67f714df2569128b2146f637cbd9053e0c5baa86f3924f0cc34b7e42"
+    },
+    {
+      "role": "support",
+      "path": "docs/evidence/chat06p03/type-fix/README.md",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 1976,
+      "sha256": "dd4e0ad2c542dc58d156e3e45a7c5e72eeee07a7af304b0454e2e54d423781ac"
+    },
+    {
+      "role": "support",
+      "path": "docs/evidence/chat06p03/type-fix/adaptation.json",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 1441,
+      "sha256": "70c4628bded46ba11fe165927c0de79eded9cf8c5fbe7161921d9358e78d6203"
+    },
+    {
+      "role": "support",
+      "path": "docs/evidence/chat06p03/type-fix/runtime-proof.mjs",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 1793,
+      "sha256": "89325b2c95ca3c4bc43178559b8fd547a63ef13184457c2da0cc680cab0499c8"
+    },
+    {
+      "role": "support",
+      "path": "docs/evidence/chat06p03/type-fix/tsconfig.integration.json",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 696,
+      "sha256": "8fbe278334ec921d4d79258318539a5d2f3525924c65aa3eefdcd99625b4385e"
+    },
+    {
+      "role": "support",
+      "path": "docs/evidence/chat06p03/type-fix/quality.md",
+      "ref": "68172a87beb5d652d958edd2b0223c89b904fcbe",
+      "bytes": 842,
+      "sha256": "6f29936df89d84369fa8ca6b48855c375baa66b1f9d066afc1be348bc65c46c9"
+    }
+  ],
+  "checks": {
+    "sourceReview": "status_read SOURCE_REVIEW no P1/P2, no reviewer execution",
+    "runtimeErasure": "2 of 2 emitted outputs byte-identical",
+    "proofExit": 0,
+    "proofAfterReceiptMs": 236.61737504880875,
+    "behaviorRerun": false,
+    "actualConsumerTypes": "PENDING_LEAD_STAGING; do not treat prior SDK paths alias as integration proof"
+  },
+  "mainIntegration": "NOT_INTEGRATED"
+}
