@@ -1,10 +1,12 @@
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
+import type { PgBoss } from 'pg-boss';
 import { readFile } from 'node:fs/promises';
-import { conversationQueueEnqueueSchema, conversationQueueCancelSchema, conversationQueueQuerySchema } from '../../../../packages/contracts/src/conversation-queue.js';
+import { conversationQueueEnqueueSchema, conversationQueueCancelSchema, conversationQueueQuerySchema, conversationQueuePauseSchema, conversationQueueResumeSchema } from '../../../../packages/contracts/src/conversation-queue.js';
 import { idSchema } from '../../../../packages/contracts/src/tasks.js';
 import { HttpError, transaction } from '../database.js';
 import { enqueue, cancel } from './commands.js';
+import { pause, resume } from './controls.js';
 import { list, readItem } from './queries.js';
 export { promoteReady, scanConversationQueue } from './promotion.js';
 
@@ -23,7 +25,9 @@ function parse<T>(schema: { safeParse(input: unknown): { success: true; data: T 
   return result.data;
 }
 /** The enclosing center supplies owner authentication and its HttpError handler. */
-export function registerConversationQueueRoutes(app: FastifyInstance, pool: Pool): void {
+export function registerConversationQueueRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss): void {
+  app.post<{ Params: { id: string } }>('/api/conversations/:id/queue/pause', request => pause(pool, parse(idSchema, request.params.id), parse(conversationQueuePauseSchema, request.body), String(request.headers['idempotency-key'] ?? '')));
+  app.post<{ Params: { id: string } }>('/api/conversations/:id/queue/resume', async (request, reply) => reply.code(202).send(await resume(pool, boss, parse(idSchema, request.params.id), parse(conversationQueueResumeSchema, request.body), String(request.headers['idempotency-key'] ?? ''))));
   app.post<{ Params: { id: string } }>('/api/conversations/:id/queue', async (request, reply) => reply.code(202).send(await enqueue(pool, parse(idSchema, request.params.id), parse(conversationQueueEnqueueSchema, request.body), String(request.headers['idempotency-key'] ?? ''))));
   app.get<{ Params: { id: string } }>('/api/conversations/:id/queue', request => {
     const query = parse(conversationQueueQuerySchema, request.query);

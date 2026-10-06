@@ -1,5 +1,8 @@
 import type { PoolClient } from 'pg';
 import { CONVERSATION_QUEUE_PREVIEW_BYTES, type ConversationQueueItem } from '../../../../packages/contracts/src/conversation-queue.js';
+import type { ConversationQueueCurrentTurn } from '../../../../packages/contracts/src/conversation-queue.js';
+import { lastTurn } from '../conversations/state.js';
+import { loadTask } from '../tasks.js';
 import { HttpError } from '../database.js';
 
 export interface QueueRow {
@@ -29,4 +32,12 @@ export function requireQueueRevision(actual: number, expected: number): void {
 }
 export async function advanceQueueRevision(client: PoolClient, conversationId: string): Promise<number> {
   return (await client.query<{ queue_revision: number }>('UPDATE flow.conversations SET queue_revision=queue_revision+1 WHERE id=$1 RETURNING queue_revision', [conversationId])).rows[0]!.queue_revision;
+}
+
+export async function currentTurn(client: PoolClient, conversationId: string, lock = false): Promise<ConversationQueueCurrentTurn | null> {
+  const turn = await lastTurn(client, conversationId);
+  if (!turn) return null;
+  const task = await loadTask(client, turn.task_id, lock);
+  const item = (await client.query<{ id: string }>('SELECT id FROM flow.conversation_queue WHERE turn_id=$1', [turn.id])).rows[0];
+  return { taskId: task.id, taskStatus: task.status, turnId: turn.id, turnNumber: turn.number, queueItemId: item?.id ?? null };
 }

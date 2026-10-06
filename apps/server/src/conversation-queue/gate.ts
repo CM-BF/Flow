@@ -20,6 +20,7 @@ export async function prepareQueueAdmission(client: PoolClient, conversation: Co
 }
 /** One shared conversation check per page, independent of item count. */
 export async function queueBlock(client: PoolClient, conversation: ConversationRow): Promise<ConversationQueueBlockReason | null> {
+  if (conversation.queue_paused) return 'queue-paused';
   if (!(await client.query("SELECT 1 FROM flow.conversation_queue WHERE conversation_id=$1 AND state='waiting' LIMIT 1", [conversation.id])).rowCount) return null;
   return (await prepareQueueAdmission(client, conversation, '', false)).blocked;
 }

@@ -16,7 +16,7 @@ list 仅返回当前 waiting（含 blocked），terminal 从 readItem 查询；a
 `apps/server/src/conversation-queue/index.ts`：
 
 - await migrateConversationQueue(pool)：在 migration7/10 后执行；011 使用既有 migration advisory lock。
-- registerConversationQueueRoutes(app,pool)：在 app ready/listen 前；复用中心 owner authentication 和 HttpError handler。
+- registerConversationQueueRoutes(app,pool,boss)：在 app ready/listen 前；复用中心 owner authentication 和 HttpError handler。
 - await promoteReady(pool,boss,conversationId)：一次最多提升一项，返回 promoted / blocked / empty。
 - await scanConversationQueue(pool,boss,limit=20)：limit 1..100，返回 inspected/promoted/blocked/errors；PG queue_checked_at 公平轮转，变化不递增 queueRevision。失败只报 promotion_failed、保留事实、继续其他 candidate。
 
@@ -24,13 +24,13 @@ Lead 在生产 index 的迁移链加入 migrate，在路由链加入 register，
 
 当前自动提升依据实际 task terminal state。Stop 与 success 竞态的产品表述正由 Goal Owner 锁定；本模块没有暂停队列/停止全部的额外意图接口，不将 succeeded 推断为用户从未发出停止请求。
 
-## 2026-10-06 04:34:22 UTC v2 补充（尚未实现）
+## 2026-10-06 04:34:22 UTC v2 补充（已固定签名，controls暂为显式stub）
 
 - POST /api/conversations/:id/queue/pause，body {expectedQueueRevision}，response {conversationId,queueRevision,paused:true,currentTurn,replayed}。已paused仍严格CAS，可no-op不增revision。
 - POST /api/conversations/:id/queue/resume，body {expectedQueueRevision,expectedTaskId:string|null}，response {conversationId,queueRevision,paused:false,currentTurn,promoted:ConversationQueueItem|null,replayed}。resume原子提升最多首waiting并清pause，只增queueRevision一次；无waiting同门禁unpause，不预授权未来auto。
 - currentTurn={taskId,taskStatus,turnId,turnNumber,queueItemId:string|null}|null；list/detail也带paused/currentTurn。
 - resume仅已终态成功/失败/取消且known空闲session、runner未撤销、pin有效；active/uncertain/unknown拒绝；初次空conversation/null例外。自动提升仍仅succeeded。
 - pause成功后再发当前task原cancel；promotion先于pause时回真实已提升引用。命令ACK重放是历史receipt；UI先GET确认事实。普通follow-up paused=409；enqueue/cancel不清pause。
-- 011新增queue_paused，禁止许可marker；register需要boss供resume复用现有原子task/wake路径，最终签名等待Lead确认。
+- 011新增queue_paused，禁止许可marker；register需要boss供resume复用现有原子task/wake路径，技术签名已锁定为 registerConversationQueueRoutes(app,pool,boss)，生产接线由Lead。
 
 旧v1源码与37项检查不表示此v2合同已实施。

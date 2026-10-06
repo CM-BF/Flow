@@ -22,7 +22,7 @@ const startedAt = new Date().toISOString();
 async function start() {
   server = await createServer({ databaseUrl: databaseUrl.href, ownerToken });
   await migrateConversationQueue(pool);
-  registerConversationQueueRoutes(server, pool);
+  if (!server.hasRoute({ method: 'POST', url: '/api/conversations/:id/queue' })) registerConversationQueueRoutes(server, pool, boss);
   server.addHook('onSend', async (request, reply, payload) => {
     if (request.headers['x-chat04-drop-ack'] === 'yes' && reply.statusCode === 202) reply.raw.destroy();
     return payload;
@@ -43,10 +43,10 @@ beforeAll(async () => {
   await writeFile(new URL('../../../../docs/evidence/chat04/latest-resource.json', import.meta.url), JSON.stringify({ databaseName, startedAt }));
   await admin.query(`CREATE DATABASE "${databaseName}"`); created = true;
   pool = new Pool({ connectionString: databaseUrl.href, max: 10, statement_timeout: 5000 });
-  await start();
   boss = new PgBoss({ connectionString: databaseUrl.href, max: 2 });
   boss.on('error', error => console.error('CHAT04 scheduler:', error.message));
   await boss.start();
+  await start();
 });
 afterAll(async () => {
   try {
@@ -191,7 +191,7 @@ it('restarts pending work and permits only one promotion across two center insta
   await server!.close(); await start();
   const otherPool = new Pool({ connectionString: databaseUrl.href, max: 2 });
   const other = await createServer({ databaseUrl: databaseUrl.href, ownerToken });
-  registerConversationQueueRoutes(other, otherPool);
+  if (!other.hasRoute({ method: 'POST', url: '/api/conversations/:id/queue' })) registerConversationQueueRoutes(other, otherPool, boss);
   const otherUrl = await other.listen({ host: '127.0.0.1', port: 0 });
   try {
     const before = await fetch(`${otherUrl}/api/conversations/${c.id}/queue`, { headers: { authorization: `Bearer ${ownerToken}` } }).then(response => response.json());
