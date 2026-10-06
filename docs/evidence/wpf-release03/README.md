@@ -1,8 +1,8 @@
-# RELEASE03 固定组合验证（新A部分通过／资源中断）
+# RELEASE03 固定组合验证（A通过，B定位器失败）
 
-当前后继target `c18bd6630cbdbb431460688a0f6bea9248f4151f` 为一行标签修复待窄审；实际A3运行target `269103d44f153f13a2f35fadb08bf11d4f62e48d` 获源码条件批准；A3以实际HEAD0b3e/backend af51/artifact d629运行4,109ms：attachment-only通过，mixed因磁盘停止线中断。完整兼容未通过，B/Chrome NOT_RUN、0provider；[本次结果与raw hash](history3-result.json)。累计7,983/180,000ms，剩余172,017ms。数据库与自有worker清理完成。原outcome的phaseB=FAILED是无worker完成结果的fallback标签，不代表实际运行B，原raw保留。
+固定target `c18bd6630cbdbb431460688a0f6bea9248f4151f` / 实际HEADba7dea，backend af51 + formal artifact d629，16:47一次all已完成：attachment-only与mixed真实history两项PASS，B真实App plain Send通过后Files双按钮定位歧义失败。完整兼容未通过，未生成/import SVC绿报告，0provider；[原样结果与12raw hash](all-result-164711.json)。本次12,326ms，累计20,309/180,000ms、余159,691ms。DB/worker/Chrome清理errors=[]，窗口已交回。
 
-旧362两项业务失败绑定432b，原1a7详情DTO P1及后继269103源码修复均保留。A2资源未准入是0运行，不混为产品失败。A3部分通过不能复用为成功A证明；新准入仍由管理提供，不自动重试/发布。
+原362失败、A2 NOT_RUN、A3资源中断均保留；A3不是成功证明。本次完整A必须经独立raw核验与fresh app-only gate后才能复用，不能凭historyPassed布尔自动续跑/发布。只读[root标签修复审查](source-review-c18bd-root.json)不是整组兼容批准。
 
 ## 初始432b输入与后继
 

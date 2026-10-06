@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06T16:15:12.401460+00:00",
+  "reviewer": "root independent narrow source review",
+  "target": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+  "actualHead": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+  "branch": "codex/web-current-preview-compatibility",
+  "dirty": "",
+  "decision": "APPROVED_SOURCE_LABEL_FIX",
+  "findingClosed": "RELEASE-A3-PHASELABEL",
+  "inspection": "Single conditional disjunct gate.mode === history forces NOT_RUN before consulting absent worker result; nonhistory app result handling unchanged. No runtime safety, request assertion or admission logic altered.",
+  "changed": [
+    "apps/web/test/web-current-preview.browser.ts"
+  ],
+  "sourceSha256": "fd5a216059bfc85600dfb832c00b7948bd89f35d7f4d985a203017ee7a8d0e10",
+  "fixtureIdenticalToActualA3Implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+  "oldA3RawPreserved": true,
+  "oldA3Inventory": [
+    {
+      "name": "budget.json",
+      "bytes": 133,
+      "sha256": "92893bfc471347a6e2a96567fa7c2f0a05518496699a6909905a6034bb3ef71e"
+    },
+    {
+      "name": "cleanup.json",
+      "bytes": 343,
+      "sha256": "c084ba5f9bfa768dd136702aebf30558d0a6ba397f02e47edc55c86599c2e3cb"
+    },
+    {
+      "name": "database-owner.json",
+      "bytes": 169,
+      "sha256": "9b7e7cd24dbed8dc6d519fab523072b915656325f78e6a896e4f052ba4c295b5"
+    },
+    {
+      "name": "history.json",
+      "bytes": 6401,
+      "sha256": "f09d94cd8e194206e7275723738a1232987209883dc95e05692b1c6ee21a6f1d"
+    },
+    {
+      "name": "outcome.json",
+      "bytes": 385,
+      "sha256": "4d966c2bc38556d67717a16eeabffd4068bad4299b8be6a869e8ad907ee59210"
+    },
+    {
+      "name": "process.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sources.json",
+      "bytes": 5526,
+      "sha256": "3714a000e8ee188e0e034f5d6cb096625d0f484b9140dda6f38c45716d0d8895"
+    },
+    {
+      "name": "supervisor.json",
+      "bytes": 826,
+      "sha256": "10b5171b2289c7c75f7e5b97afc3e9dc4ca83a01c2254eaa2ce59a7e7c38a9e9"
+    },
+    {
+      "name": "wire.json",
+      "bytes": 33353,
+      "sha256": "e62fb022ad1cf2e751ec83dd7a621c7e6a0f8e2ad21ae16a1921b5479ca0ac9a"
+    }
+  ],
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "actualRuntimeTarget": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+  "actualRuntimeHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+  "tests": "NOT_RUN; narrow boolean logic inspected, no repeat runtime requested or needed for label",
+  "limitations": [
+    "Approval covers this one-line source label fix, not full RELEASE03 compatibility.",
+    "Existing A3 raw phaseB FAILED remains unchanged and is interpreted as actual B NOT_RUN using mode/history facts.",
+    "Mixed A3 interrupted, no complete A proof, B remains NOT_RUN.",
+    "No fresh admission/free-space sample or PG/Chrome/query/personalservice operation."
+  ]
+}

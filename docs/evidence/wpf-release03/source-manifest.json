@@ -19,10 +19,10 @@
     "protectedLocalInputDiff": "empty",
     "oldTenRawHashes": "unchanged",
     "newTargetTypecheck": "NOT_RUN",
-    "newBackendPG": "A3 partial on269103: attachment-only pass, mixed resource interruption",
-    "Chrome": "NOT_RUN",
+    "newBackendPG": "A all-run164711 attachment-only+mixed PASS",
+    "Chrome": "Actual App plain Send PASS then Files locator ambiguity; full B FAIL",
     "compatibility": "NOT_VERIFIED",
-    "newTargetRuntime": "NOT_RUN"
+    "newTargetRuntime": "all run12326ms, cleanup errors[]"
   },
   "executionMode": "history / app (pinned successful history only) / all; each requires its own fresh explicit gate",
   "resourcePolicy": {
@@ -41,7 +41,8 @@
   },
   "historicalRunEvidence": [
     "history-result-152729.json",
-    "history3-result.json"
+    "history3-result.json",
+    "all-result-164711.json"
   ],
   "backendInput": "External fresh gate backend={path,head,tree,metadata:[{path,sha256}]}; root approved final af51 audit is candidate input, not run permission",
   "backendProvenance": {
@@ -54,5 +55,5 @@
   },
   "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
   "historyContractRegionBytes": 11859,
-  "gateAccounting": "All completed runs7983/180000ms; remaining172017ms; no automatic retry"
+  "gateAccounting": "All completed runs20309/180000ms; remaining159691ms; no automatic retry"
 }

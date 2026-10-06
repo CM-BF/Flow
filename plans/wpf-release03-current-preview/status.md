@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:10:42 UTC |
+| 最近更新时间 | 2026-10-06 16:47:43 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -10,30 +10,30 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / c18bd6630cbdbb431460688a0f6bea9248f4151f（后继标签源码固定） |
-| 工作树dirty状态 | 执行时0b3e clean；本次只更新原始证据与metadata，提交后local/remote/clean另核 |
+| 工作树dirty状态 | 执行前ba7dea clean；本次仅原始证据/metadata待提交，提交后双端clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | NOT_RUN c18bd6630cbdbb431460688a0f6bea9248f4151f（仅标签修复）；269103实际A3 PARTIAL，B NOT_RUN |
+| 检查状态 | PARTIAL c18bd6630cbdbb431460688a0f6bea9248f4151f；A两项PASS，B plain通过后locator失败 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；源码条件已审，新组合部分运行；完整兼容未通过 |
 | 实现目标 | c18bd6630cbdbb431460688a0f6bea9248f4151f |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 附件单独使用检查通过，混合材料检查因磁盘余量停止 |
-| 下一可用交付 | 后台最小修复后继续未完成的真实前端验证 |
-| 当前阻塞 | ACTIVE: 磁盘触及停止余量；混合材料与真实页面检查未完成，等待明确新准入 |
+| 当前产出 | 附件单独与混合使用检查通过，真实页面验证停在按钮定位歧义 |
+| 下一可用交付 | 修正测试定位并复用已通过后台证据完成真实页面检查 |
+| 当前阻塞 | ACTIVE: 页面Files测试定位歧义；完整兼容未完成，修复与新准入待定 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，269103d源码条件APPROVED，1a7 P1源修已闭合；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
-| RELEASE03-02 | pending | w01_owner | [A3部分结果](../../docs/evidence/wpf-release03/history3-result.json)：单附件通过、混合中断，累计7,983/180,000ms；旧362两失败保留，B未运行 |
+| RELEASE03-02 | in-progress | w01_owner | [all实际结果](../../docs/evidence/wpf-release03/all-result-164711.json)：A两项PASS，B plain通过后locator失败；累计20,309/180,000ms |
 | RELEASE03-03 | pending | w01_owner | 432b源码条件独审已通过；root已独立核实际A失败原始证据；B/主线交付未完成 |
 
 ## 架构影响与未验
 
-仅独立验证脚本，产品/共享/原 SVC 工具不变，无架构图更新。已知后端附件 history 缺口必须先测，不将受理成功当全链兼容。本轮实际单专库HTTP原生事件模拟；0安装/build/Chrome/provider/个人入口操作。
+仅独立验证脚本，产品/共享/原 SVC 工具不变，无架构图更新。已知后端附件 history 缺口必须先测，不将受理成功当全链兼容。本轮实际单专库HTTP原生事件模拟+一次自有Chrome真实App；0安装/build/provider/个人入口操作。
 
 ## Dashboard 与交接
 
@@ -96,3 +96,11 @@ A2 15:57唯一freshfree1,103,237,120B<start1,107,296,256B，未生成gate、0运
 ## 2026-10-06 16:11:23 UTC 后继标签窄修待独审
 
 固定c18bd6630cbdbb431460688a0f6bea9248f4151f只有一行：history模式phaseB恒为NOT_RUN，即使worker未返回。A3真实运行仍绑定269103/0b3e，旧19raw不改，history契约59cde不变；[静态差异/原raw hashes](../../docs/evidence/wpf-release03/history-phase-label-fix.json)。未重跑任何类型/业务/浏览器，后继标签修复独审待root；不将此源码回填为A3执行版本。
+
+## 2026-10-06 16:47:43 UTC 唯一 all 串行旅程
+
+manager16:47:11 fresh all准入通过，本人live核bfb v3四scope后，固定c18bd/实际HEADba7dea沿已审父监督器只执行一次。16:47:31.312Z开始，12,326ms完成；实际factory为af51候选realpath，正式format2 artifact d629/release388371原字节不变。attachment-only和mixed分别reportEvents/history/detail全PASS，materials诚实unknown/metadata-unavailable、digest null；这次两A完整结果可供独立raw审查，不回填旧362红或A3中断。
+
+B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files locator匹配顶栏和聊天region两个button，Playwright strict mode失败。未到附件Send/Queue同键重试与主题全旅程；不推断产品失败，不生成/import兼容报告，compatibilityId=null。页面pageErrors=[]；另favicon404如实保留待判断，未吞日志。12份raw191,936B，包括完整worker/history/wire/screenshot；[结果及hash](../../docs/evidence/wpf-release03/all-result-164711.json)。
+
+自有DB flow_release03_8d7a4c6f5bcb45f1acd9 marker确认并删除，worker85006/Chrome87401 exit0，cleanup errors=[]。累计20,309ms、余159,691ms/180秒；旧raw不改，源不改，0自动重试。窗口已交回manager/root，后继仅可独立审查已成功A后另fresh app-only准入，不擅自再跑A或发布。

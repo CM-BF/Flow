@@ -1,0 +1,373 @@
+[
+  {
+    "label": "attachment-only",
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "backendTree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "factoryPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/index.ts",
+    "providerQueries": 0,
+    "conversationId": "6d213c2f-0ccb-4df1-9f03-69d0f348d196",
+    "taskId": "8d7d1450-aff2-4f4b-8838-c0e368bfb248",
+    "attemptId": "5a5e121f-36ce-4d88-b687-37b75293011b",
+    "context": {
+      "id": "421993fd-9187-4720-9059-d7846c98ac16",
+      "contextDigest": "0c58f832db6d285402f7f5d19c2f4878613c0ecb09b96a290300da495ee5db5f",
+      "executionInputId": "5375eec3-a7a4-49d0-895d-be9067b7f8d7",
+      "executionInputDigest": "b48edf6315b755478ff9e65c653cb6801410eaba308fd9c5a2f33836b7a4ff16",
+      "templateVersion": 2,
+      "order": "knowledge-then-attachments",
+      "sources": [],
+      "attachments": [
+        {
+          "reference": {
+            "kind": "upload",
+            "projectId": "4e0b0501-8a88-456d-a8d5-a01f3ffdb36c",
+            "resourceId": "80656559-4fb6-4148-b15f-ae7f9e98118b",
+            "version": 1,
+            "contentDigest": "fc23cbf5b8a598d45ed6ecfc51ccb68855213c2282c659ed472f5a49d9e1a308"
+          },
+          "name": "existing.txt",
+          "mediaType": "text/plain",
+          "byteLength": 45
+        }
+      ]
+    },
+    "report": {
+      "accepted": 1,
+      "lastSequence": 2
+    },
+    "history": {
+      "protocol": "flow.context-history.v1",
+      "taskId": "8d7d1450-aff2-4f4b-8838-c0e368bfb248",
+      "attemptId": "5a5e121f-36ce-4d88-b687-37b75293011b",
+      "latest": {
+        "eventSequence": 2,
+        "receivedAt": "2026-10-06T16:47:35.019Z",
+        "detailRef": {
+          "id": "94db9dcb-7f25-4556-82a9-460122ba4579",
+          "title": "Claude context summary"
+        },
+        "observation": {
+          "id": "26bd5142-2c42-4744-a5a1-07d4f2ceb64c",
+          "identity": {
+            "subject": {
+              "kind": "attempt",
+              "taskId": "8d7d1450-aff2-4f4b-8838-c0e368bfb248",
+              "attemptId": "5a5e121f-36ce-4d88-b687-37b75293011b",
+              "ownerVersion": 1,
+              "nativeSessionId": "ef0909c3-30dd-44c9-9082-80b676bdb3ca"
+            },
+            "harness": "claude",
+            "requestedModel": "release-synthetic-attachment-only",
+            "resolvedModel": "synthetic-resolved-model",
+            "profile": {
+              "id": "994801e7-ce67-42ae-bb17-3b45224be857",
+              "runnerId": "a3953c1c-8aa0-4deb-9829-56c51bc7032e",
+              "configDigest": "3a10a17b7dfbf37ec07ccb8c226f69e871c8da0bd512d4777fc3c8b83286ff7d"
+            },
+            "executionInputDigest": "b48edf6315b755478ff9e65c653cb6801410eaba308fd9c5a2f33836b7a4ff16",
+            "materialRevisionDigest": null,
+            "historyEpoch": null
+          },
+          "observedAt": "2026-10-06T16:47:35.001Z",
+          "modelCapacity": {
+            "kind": "unknown",
+            "value": null,
+            "reason": "not-observed"
+          },
+          "compactionWindow": {
+            "kind": "estimate",
+            "value": 1000,
+            "source": {
+              "name": "claude-sdk-context",
+              "version": "0.3.290"
+            },
+            "measurementMethod": "sdk-summary-estimate",
+            "tokenBasis": "claude-context-summary-0.3.290",
+            "coverage": "full",
+            "evidenceRef": {
+              "id": "94db9dcb-7f25-4556-82a9-460122ba4579",
+              "title": "Claude context summary"
+            }
+          },
+          "used": {
+            "kind": "estimate",
+            "value": 123,
+            "source": {
+              "name": "claude-sdk-context",
+              "version": "0.3.290"
+            },
+            "measurementMethod": "sdk-summary-estimate",
+            "tokenBasis": "claude-context-summary-0.3.290",
+            "coverage": "full",
+            "evidenceRef": {
+              "id": "94db9dcb-7f25-4556-82a9-460122ba4579",
+              "title": "Claude context summary"
+            }
+          },
+          "categories": [
+            {
+              "id": "sdk-used",
+              "kind": "used",
+              "tokens": 123
+            }
+          ],
+          "compression": {
+            "state": "not-observed"
+          }
+        },
+        "materials": {
+          "state": "unknown",
+          "reason": "metadata-unavailable"
+        }
+      },
+      "current": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      },
+      "remaining": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      }
+    },
+    "task": {
+      "id": "8d7d1450-aff2-4f4b-8838-c0e368bfb248",
+      "title": "attachment-only",
+      "harness": "claude",
+      "status": "running",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-06T16:47:34.553Z",
+      "updatedAt": "2026-10-06T16:47:35.023Z",
+      "prompt": "Use attachment-only materials",
+      "entries": [
+        {
+          "id": "46377534-e5f4-43a8-b305-1e5ca4945fe3",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T16:47:34.990Z",
+          "reference": {
+            "id": "8266791b-4c91-4acf-b78e-8b0cc6d4872e",
+            "title": "Native session"
+          }
+        }
+      ],
+      "watermark": 1,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "5a5e121f-36ce-4d88-b687-37b75293011b",
+        "runnerId": "a3953c1c-8aa0-4deb-9829-56c51bc7032e",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T16:52:34.969Z",
+        "nativeSessionId": "ef0909c3-30dd-44c9-9082-80b676bdb3ca"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    },
+    "wireRange": [
+      0,
+      20
+    ],
+    "passed": true
+  },
+  {
+    "label": "mixed",
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "backendTree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "factoryPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/index.ts",
+    "providerQueries": 0,
+    "conversationId": "c1515a79-eeb4-4193-8ed5-19bc2ed2c15d",
+    "taskId": "41b77949-723d-41b6-ae30-e627a79dfaf8",
+    "attemptId": "41800110-714b-4f41-99e7-b340d5e122e6",
+    "context": {
+      "id": "916e0813-212b-463e-8f27-dfaa4e7c0c8b",
+      "contextDigest": "7e5332ca55d05688de8fc7fe4f559d1a3b9cb679b77125e318b8d63f3fddece5",
+      "executionInputId": "0f56c6e9-76a6-4736-8702-269deb7a5212",
+      "executionInputDigest": "d8cc50483bba9df445987aa4db9ab31255fbd278d153edf9a6f700d20f055b17",
+      "templateVersion": 2,
+      "order": "knowledge-then-attachments",
+      "sources": [
+        {
+          "citation": {
+            "projectId": "a2991794-c3cf-4c82-8703-1833c1b15f91",
+            "sourceId": "cefe4e5b-8a51-4ba8-baaa-220a039f7609",
+            "version": 1,
+            "contentDigest": "2d55d57e85e8e5caae16cdb30f84dc8649b035f42c8bec279fdecbaa69eae25d",
+            "locator": {
+              "kind": "utf8-bytes",
+              "start": 0,
+              "end": 28
+            }
+          },
+          "byteLength": 28,
+          "currentVersionAtFreeze": 1,
+          "isCurrentAtFreeze": true
+        }
+      ],
+      "attachments": [
+        {
+          "reference": {
+            "kind": "upload",
+            "projectId": "a2991794-c3cf-4c82-8703-1833c1b15f91",
+            "resourceId": "bdb0476c-3b5e-4e51-b750-c04629944893",
+            "version": 1,
+            "contentDigest": "089852235a94e39e7ec10f348f2f7eec1bde3caeca33c0c533bf9f11d8d7379e"
+          },
+          "name": "existing.txt",
+          "mediaType": "text/plain",
+          "byteLength": 35
+        }
+      ]
+    },
+    "report": {
+      "accepted": 1,
+      "lastSequence": 2
+    },
+    "history": {
+      "protocol": "flow.context-history.v1",
+      "taskId": "41b77949-723d-41b6-ae30-e627a79dfaf8",
+      "attemptId": "41800110-714b-4f41-99e7-b340d5e122e6",
+      "latest": {
+        "eventSequence": 2,
+        "receivedAt": "2026-10-06T16:47:35.495Z",
+        "detailRef": {
+          "id": "eefbd246-915a-4235-9279-aa3ddebd6868",
+          "title": "Claude context summary"
+        },
+        "observation": {
+          "id": "a7f97900-57b4-4019-8acb-799f34002989",
+          "identity": {
+            "subject": {
+              "kind": "attempt",
+              "taskId": "41b77949-723d-41b6-ae30-e627a79dfaf8",
+              "attemptId": "41800110-714b-4f41-99e7-b340d5e122e6",
+              "ownerVersion": 1,
+              "nativeSessionId": "efcd4c68-e79f-4f13-876f-115842f96471"
+            },
+            "harness": "claude",
+            "requestedModel": "release-synthetic-mixed",
+            "resolvedModel": "synthetic-resolved-model",
+            "profile": {
+              "id": "e4223fee-ba84-4204-a919-79bbdd30052c",
+              "runnerId": "60aa1d6a-e80f-40b4-ae82-71791c0c4e10",
+              "configDigest": "c6c66172c971f9d7c25fbb1cdf39f546f5227b3991bc7f60781e83c57ecdd50f"
+            },
+            "executionInputDigest": "d8cc50483bba9df445987aa4db9ab31255fbd278d153edf9a6f700d20f055b17",
+            "materialRevisionDigest": null,
+            "historyEpoch": null
+          },
+          "observedAt": "2026-10-06T16:47:35.488Z",
+          "modelCapacity": {
+            "kind": "unknown",
+            "value": null,
+            "reason": "not-observed"
+          },
+          "compactionWindow": {
+            "kind": "estimate",
+            "value": 1000,
+            "source": {
+              "name": "claude-sdk-context",
+              "version": "0.3.290"
+            },
+            "measurementMethod": "sdk-summary-estimate",
+            "tokenBasis": "claude-context-summary-0.3.290",
+            "coverage": "full",
+            "evidenceRef": {
+              "id": "eefbd246-915a-4235-9279-aa3ddebd6868",
+              "title": "Claude context summary"
+            }
+          },
+          "used": {
+            "kind": "estimate",
+            "value": 123,
+            "source": {
+              "name": "claude-sdk-context",
+              "version": "0.3.290"
+            },
+            "measurementMethod": "sdk-summary-estimate",
+            "tokenBasis": "claude-context-summary-0.3.290",
+            "coverage": "full",
+            "evidenceRef": {
+              "id": "eefbd246-915a-4235-9279-aa3ddebd6868",
+              "title": "Claude context summary"
+            }
+          },
+          "categories": [
+            {
+              "id": "sdk-used",
+              "kind": "used",
+              "tokens": 123
+            }
+          ],
+          "compression": {
+            "state": "not-observed"
+          }
+        },
+        "materials": {
+          "state": "unknown",
+          "reason": "metadata-unavailable"
+        }
+      },
+      "current": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      },
+      "remaining": {
+        "kind": "unknown",
+        "value": null,
+        "reason": "history-only"
+      }
+    },
+    "task": {
+      "id": "41b77949-723d-41b6-ae30-e627a79dfaf8",
+      "title": "mixed",
+      "harness": "claude",
+      "status": "running",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-06T16:47:35.180Z",
+      "updatedAt": "2026-10-06T16:47:35.496Z",
+      "prompt": "Use mixed materials",
+      "entries": [
+        {
+          "id": "747c75c5-c77e-4134-bba3-4d43f3c4655f",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T16:47:35.483Z",
+          "reference": {
+            "id": "1e743bdc-c892-4d4d-bdf0-14d2f10537d0",
+            "title": "Native session"
+          }
+        }
+      ],
+      "watermark": 1,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "41800110-714b-4f41-99e7-b340d5e122e6",
+        "runnerId": "60aa1d6a-e80f-40b4-ae82-71791c0c4e10",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T16:52:35.473Z",
+        "nativeSessionId": "efcd4c68-e79f-4f13-876f-115842f96471"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    },
+    "wireRange": [
+      20,
+      39
+    ],
+    "passed": true
+  }
+]
