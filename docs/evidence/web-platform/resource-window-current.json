@@ -1,9 +1,9 @@
 {
-  "recordedAt": "2026-10-06T17:14:44.184965+00:00",
-  "state": "TUI01F_PG_WINDOW_RELEASE_B_CLEANED",
-  "groupWindowOwnership": "Lead accepted B return at17:11:55 and assigned next PG window to TUI01F original2group shortjourney. Web source review only; next B needs new window.",
+  "recordedAt": "2026-10-06T17:21:55.982824+00:00",
+  "state": "TUI01F_CLEANED_NO_SUCCESSOR_WINDOW_GRANTED",
+  "groupWindowOwnership": "Lead confirms TUI01F window returned after17:18 owned cleanup; no PG/Chrome holder or successor Web grant. Wait explicit next coordination.",
   "release03": {
-    "state": "B_FAILED_RECEIPT_WAIT_CAUSE_NOT_YET_REVIEWED",
+    "state": "B_FAILURE_PRESERVED_FAULT_FIX_SOURCE_ONLY",
     "run": "app-20261006-171109-8cf8c3",
     "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
     "actualHead": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
@@ -17,7 +17,7 @@
     "remainingMs": 140065,
     "gateConsumed": true,
     "cleanupComplete": true,
-    "B": "FAILED_RECEIPT_WAIT_CAUSE_PENDING",
+    "B": "FAILED_REUSED_ACK_OBSERVED_DETERMINISTIC_FAULT_DELTA_PENDING",
     "compatibilityId": null,
     "A": "REUSED_ATTESTED_ALL12_NOT_RERUN",
     "evidence": "release03-app-171109-intake.json",
@@ -197,6 +197,10 @@
     {
       "source": "Lead via root afterB",
       "coordination": "Accepted17:11:55Breturn; nextPG TUI01F original2shortjourneys. A not rerun, personalservices unchanged."
+    },
+    {
+      "source": "LatestLead via root",
+      "coordination": "TUI01F2behaviorpassed/afterAllexit1;17:18oneownership+zero-connectionsnormalDROP, ownprocesses stopped/windowreturned. RELEASE39935/remaining140065 unchanged; sourcefix/review only, no autoB/A."
     }
   ],
   "limits": [
@@ -205,5 +209,5 @@
     "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
     "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
   ],
-  "latestCoordination": "lead-release-b-1710-window.json"
+  "latestCoordination": "lead-tui01f-return-1718.json"
 }

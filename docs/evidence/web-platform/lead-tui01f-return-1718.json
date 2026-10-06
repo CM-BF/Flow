@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-06T17:21:55.982824+00:00",
+  "source": "Lead inbound via root, no manager runtime or space sampling",
+  "task": "TUI01F",
+  "state": "WINDOW_RETURNED_NO_SUCCESSOR_GRANTED",
+  "initialWindow": "2026-10-06 17:14 UTC",
+  "behaviorChecks": "2 passed",
+  "processResult": "exit1 because afterAll connection ownership was unknown; not full clean success at initial end",
+  "cleanupFollowup": "2026-10-06 17:18 UTC one ownership/zero-connections check then normal DROP; all owned processes stopped; no PG/Chrome held",
+  "next": "Lead coordinates later window after CORE review/F01 counterexample work and group032 factory; no Web successor grant",
+  "release03": {
+    "cumulativeMs": 39935,
+    "remainingMs": 140065,
+    "currentWork": "original4 W01 source-only ACK body-loss narrowfix then fixed independent review",
+    "notAuthorized": [
+      "automatic B retry",
+      "rerun A",
+      "new PG/Chrome gate from oldspace"
+    ]
+  },
+  "managementLive": {
+    "observedAt": "2026-10-06T17:21:19.297Z",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3
+  }
+}
