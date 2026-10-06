@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:54:21 UTC |
+| 最近更新 | 2026-10-06 19:55:40 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -64,7 +64,7 @@
 
 ## Dashboard 与管理观察
 
-唯一手填进度源为本文件。GO 于2026-10-06 19:50 UTC已核聚合器读取本WT、HEAD e61ba2c3及508f v2，idle详情和双审正确；旧摘要/目标/范围格式不完整，由本次管理更新修正。owner此前19:16:46及19:48:16两次各自授权的5秒GET均超时，历史PENDING_SYNC事实保留。当前提交后安排一次≤10秒GET核对来源与摘要；无循环轮询，不凭分支完成推断main接收。
+唯一手填进度源为本文件。GO 于2026-10-06 19:50 UTC已核聚合器读取本WT、HEAD e61ba2c3及508f v2，idle详情和双审正确；旧摘要/目标/范围格式不完整，由本次管理更新修正。owner此前19:16:46及19:48:16两次各自授权的5秒GET均超时，历史PENDING_SYNC事实保留。本次管理提交 `a8a5e3be7545004cd8b0cba7886410edc3a44309` 后，于2026-10-06 19:55:25 UTC仅一次GET（max-time10秒）返回curl28/10011ms/0B超时；当前 owner API核对仍为PENDING_SYNC，无重试。本次没有拿到新来源行或摘要，GO19:50的成功观察只覆盖旧e61版本；不凭分支完成推断main接收。
 
 ## 本次质量与交接
 
