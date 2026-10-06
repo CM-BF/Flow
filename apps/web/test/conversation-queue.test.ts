@@ -24,6 +24,16 @@ function setup() { const api = port(); const queue = new ConversationQueueProjec
 const citation = (n = 1) => ({ projectId: "project-a", sourceId: `10000000-0000-4000-8000-${String(n).padStart(12, "0")}`, version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes" as const, start: 0, end: 4 } });
 const contextFor = (refs = [citation()]) => ({ id: "ctx", contextDigest: "b".repeat(64), executionInputId: "input", executionInputDigest: "c".repeat(64), templateVersion: 1 as const, sources: refs.map(ref => ({ citation: structuredClone(ref), byteLength: 4, currentVersionAtFreeze: 1, isCurrentAtFreeze: true })) });
 describe("queue commands and current projection", () => {
+  it("queues knowledge only with current fixed project capability, while unknown retry retains original refs", async () => {
+    const { api, queue } = setup(); await queue.refresh();
+    await expect(queue.enqueue("message 2", [citation()])).rejects.toThrow("supported fixed"); expect(api.enqueueConversationTurn).not.toHaveBeenCalled();
+    queue.configureKnowledge("other", true); await expect(queue.enqueue("message 2", [citation()])).rejects.toThrow("different project");
+    queue.configureKnowledge("project-a", true); await queue.enqueue("message 2", [citation()]);
+    const receipt = queue.commands!.getSnapshot()[0]!; expect(receipt.state).toBe("unknown");
+    queue.configureKnowledge(null, false); api.enqueueConversationTurn.mockResolvedValueOnce({ conversationId: "chat", queueRevision: 2, replayed: true, item: { ...item(2), context: contextFor() } });
+    await queue.retry(receipt.key); expect(queue.commands!.getSnapshot()[0]?.state).toBe("accepted");
+    expect(api.enqueueConversationTurn.mock.calls[1]!.slice(0,3)).toEqual(api.enqueueConversationTurn.mock.calls[0]!.slice(0,3));
+  });
   it("serializes the frozen citations through the real client unchanged across unknown ACK replay", async () => {
     const client = new FlowClient({ baseUrl: "http://fixture.invalid", token: "public-fixture" });
     const calls: { url: string; body: string; key: string | null }[] = [];

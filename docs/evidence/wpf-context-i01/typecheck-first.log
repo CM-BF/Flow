@@ -1,0 +1,11 @@
+
+> @flow/web@0.1.0 typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web
+> tsc --noEmit -p tsconfig.json
+
+test/conversation-context-integration.browser.ts(40,60): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+test/conversation-context-integration.browser.ts(43,269): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @flow/web@0.1.0 typecheck: `tsc --noEmit -p tsconfig.json`
+Exit status 2

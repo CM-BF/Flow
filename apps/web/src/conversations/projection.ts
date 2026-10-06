@@ -9,6 +9,8 @@ import {
   type Detail,
 } from "@flow/contracts";
 import { ConversationOutbox, type OutboxEntry } from "./outbox";
+import { assertContextReceiptMatches } from "../conversation-context/receipts";
+import { freezeContextSelection, type FrozenCitation } from "../conversation-context/selection";
 import { assertCreationReceiptMatches } from "../execution-profiles/selection";
 import { queuePort } from "./queue/commands";
 import { ConversationQueueProjection } from "./queue/projection";
@@ -103,6 +105,7 @@ export class ConversationProjection {
   private update(patch: Partial<ConversationState>) {
     if (this.lifetime.signal.aborted) return;
     this.state = { ...this.state, ...patch };
+    this.queue.configureKnowledge(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.knowledgeContext === true);
     this.queue.configure(this.id, this.state.snapshot?.capabilities.queue === true);
     this.listeners.forEach(listener => listener());
   }
@@ -229,11 +232,28 @@ export class ConversationProjection {
     return null;
   }
 
-  async send(text: string, creation?: ConversationCreation): Promise<string | undefined> {
+  async prepare(creation: ConversationCreation): Promise<string | undefined> {
     const reason = this.sendDisabledReason();
     if (reason) throw Error(reason);
+    if (this.id) throw Error("This conversation already has a fixed project and execution configuration.");
+    return this.dispatch(this.outbox.beginCreation(creation));
+  }
+
+  validateKnowledge(knowledge?: readonly FrozenCitation[]) {
+    if (!knowledge?.length) return;
+    const snapshot = this.state.snapshot;
+    if (!snapshot?.conversation.projectId || snapshot.capabilities.knowledgeContext !== true)
+      throw Error("Prepare a supported project conversation before sending knowledge.");
+    freezeContextSelection(knowledge, snapshot.conversation.projectId);
+  }
+
+  async send(text: string, creation?: ConversationCreation, knowledge?: readonly FrozenCitation[]): Promise<string | undefined> {
+    const reason = this.sendDisabledReason();
+    if (reason) throw Error(reason);
+    this.validateKnowledge(knowledge);
     const entry = this.outbox.begin({
       conversationId: this.id, expectedRevision: this.state.snapshot?.conversation.revision ?? 0, text,
+      ...(knowledge === undefined ? {} : { knowledge }),
       ...(!this.id ? { creation: creation ?? { title: text.trim().split("\n")[0]!.slice(0, 180), harness: "claude" as const,
         requested: { model: "runner-default", thinking: "disabled" as const, tools: "configured-readonly" as const } } } : {}),
     });
@@ -259,6 +279,11 @@ export class ConversationProjection {
         this.id = id; this.outbox.bindConversation(entry.id, id);
         this.update({ snapshot: { conversation: created.conversation, capabilities, nativeSession: null, lastTurn: null } });
       }
+      if (entry.kind === "creation") {
+        this.outbox.accept(entry.id);
+        this.update({ loading: false, error: null }); this.schedule();
+        return id;
+      }
       const accepted = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
       assertSummary(accepted.conversation, id); assertTurn(accepted.turn, id);
@@ -266,6 +291,7 @@ export class ConversationProjection {
       if (typeof accepted.replayed !== "boolean" || accepted.conversation.revision < entry.request.expectedRevision + 1
         || accepted.turn.number !== entry.request.expectedRevision + 1 || accepted.turn.user.text !== entry.request.text)
         throw Error("The turn receipt does not match the frozen message. Retry with its original request identity.");
+      assertContextReceiptMatches(entry.request.knowledge, accepted.turn.context);
       const current = this.state.snapshot!;
       const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
       if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))

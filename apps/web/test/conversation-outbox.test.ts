@@ -6,6 +6,15 @@ const input = { conversationId: "chat-a", expectedRevision: 2, text: "  hi\n" };
 const setup = () => { let id = 0; return new ConversationOutbox(() => `command-${++id}`); };
 
 describe("conversation admission outbox", () => {
+  it("prepares creation with one frozen key and no synthetic turn, preserving unknown retries", () => {
+    const box = setup(), source = { ...creation, projectId: "project-a" };
+    const entry = box.beginCreation(source); source.projectId = "project-b";
+    expect(entry.kind).toBe("creation"); expect(entry.request).toBeNull(); expect(entry.creation.projectId).toBe("project-a");
+    box.fail(entry.id, "lost CREATE", false); expect(box.retry(entry.id)).toMatchObject({ kind: "creation", creationKey: entry.creationKey, request: null });
+    expect(() => box.begin({ ...input, creation })).toThrow("unresolved");
+    box.bindConversation(entry.id, "prepared"); box.accept(entry.id);
+    expect(box.begin({ ...input, conversationId: "prepared" })).toMatchObject({ kind: "turn", conversationId: "prepared", creation: null });
+  });
   it("freezes knowledge independently of the next draft and reuses it after a lost receipt", () => {
     const ref = { projectId: "project-a", sourceId: "10000000-0000-4000-8000-000000000001", version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes" as const, start: 0, end: 4 } };
     const knowledge = [ref], draft = { ...input, knowledge };
@@ -97,7 +106,7 @@ describe("conversation admission outbox", () => {
     const outbox = setup(); const first = outbox.begin(input);
     outbox.fail(first.id, "Revision conflict", true);
     expect(outbox.getSnapshot()?.state).toBe("rejected"); expect(outbox.retry(first.id)).toBeNull();
-    expect(outbox.getSnapshot()?.request.expectedRevision).toBe(2);
+    expect(outbox.getSnapshot()?.request?.expectedRevision).toBe(2);
     const next = outbox.begin({ ...input, expectedRevision: 3 });
     expect(next.turnKey).not.toBe(first.turnKey); expect(next.request.expectedRevision).toBe(3);
   });

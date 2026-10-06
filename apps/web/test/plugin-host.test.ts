@@ -125,6 +125,15 @@ function definition(
 }
 
 describe("trusted PluginHost lifecycle and authority", () => {
+  it("allows the declared composer context panel only in a composer and rechecks knowledge authority", async () => {
+    const s = setup(); const declaration = manifest({ capabilities: ["knowledge.read"], activationEvents: ["view:chat.composer.context"], commands: [], contributions: [{ kind: "panel", id: "test.plugin.knowledge-panel", slot: "chat.composer.context", title: "Knowledge", capability: "knowledge.read" }] });
+    s.host.register({ manifest: declaration, load: async () => ({ activate(context) { context.contribute("test.plugin.knowledge-panel", () => null); } }) });
+    await s.host.activate(declaration.id);
+    expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "composer", viewId: "draft", isDraft: true }).ok).toBe(true);
+    expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "task", taskId: "A" }).ok).toBe(false);
+    s.deny(); expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "composer", viewId: "draft", isDraft: true }).ok).toBe(false);
+    await s.host.dispose();
+  });
   it("validates JSON declarations atomically without running a loader", () => {
     const { host } = setup();
     let loads = 0;
