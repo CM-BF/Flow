@@ -172,3 +172,18 @@ root对固定M02 d47公开refresh做只读内存fixture：100批×100条、每�
 
 
 PH-R4 P2正式blocking，target e5341915ebbffd9a667f68f7d1ca9c45c14c7c52：workspace_panels_owner独立只读审查发现，root二次CUA确认A打开report detail→B→A，原report tab count1→0。PluginView contextKey/loading/RenderBoundary remount销毁真实WorkspacePanels内部每task布局缓存，退化已验证A/B/A保留。P01唯一owner仅plugins范围修，不能跨改待转交WorkspacePanels；需A/B与Notes↔Workspace回归和新target独立复验。整包REQUEST_CHANGES，模块scoped不撤；管理者已tool通知原Lead I01只建树/账本准备，P01输入尚未审定。
+
+
+PH-R4方案研究（root只读官方来源）：[React Activity](https://react.dev/reference/react/Activity)隐藏时保留state/DOM并清理Effects，恢复重建Effects；隐藏仍可随props低优先级render，初始hidden可预渲染/Suspense取数，媒体DOM副作用不会自动终止。已交P01唯一owner：必须显式visited/activation gate，不宣称Activity天然零fetch，disable/dispose/权限失效仍清理。技术选型与实现由owner负责，后续行为实测证明保留与清理，不以官方API替代验收。
+
+I01预留树已由拟owner仅git worktree add创建，管理者独立核branch codex/web-plugin-integration / HEADc526c1c889437ee39155d669921577995195c74e / clean；无安装/修改/P01合入。已回主线take所需实物前提，等待D04 M02 amend与I01 receipt；这是准备不是实施。
+
+
+## RS20 D04部署与真实交接
+
+主线D04独立APPROVED0dec109并集成main/remote b5b4ce21bd8ae5e0fd729c526226e8f8a49a7a47，原Lead单写切换4320；root实际CUA看到领取ID/version/Lead/Worker/scope/branch/时间。管理者读主仓AGENTS与D04 README，并02:58:06.804Z经主仓CLI只读list核PG available、M02v2/I01v1/管理v2/P01v1。正式amend/take receipts已保存集成清单链接；新旧路径无重叠writer。用户U08“take可见”已实现，后续领取规则继续采用，不把一次通过写成永不冲突保证。
+
+部署后非阻断展示问题由root交原dashboard owner：WPF001 human.decision.state=none且missing空，详情却显示用户决定未知，原因仍读旧status.decisions章节。建议详情决定/next/risks优先使用同一已解析human语义；外部分队不写dashboard app.js，不撤销D04领取功能验证。E01认证probe由主线唯一owner独立推进，我方不重复。
+
+
+03:00:30聚合收口发现W01 NONE；解释同样不合D03严格字段语法，human blocker unknown/missing。交唯一W01 owner在plans-only claim v2改纯NONE、解释留正文，metadata d2631f03b4bdc9bc0d543f09c11c8961a1fdf557 clean。管理者03:01:16.398Z再读4320确认human完整、none、missing/issues空；只修事实源格式，不改解析器。当前26来源、activeclaim数均不代表活跃agent数。

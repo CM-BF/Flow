@@ -121,7 +121,7 @@ WPF-M02 WorkspacePanels.tsx追加已获过渡登记c2de313ce5a6f036f07bbfb28d52a
 
 ## WPF-I01 主App插件挂载：准备领取，尚未开写
 
-目的为在固定已审M02与P01输入上实际消费同一typed host，非第二插件协议。root已同意独立feature；拟owner workspace_panels_owner，lead d01_owner，新tree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration`、branch `codex/web-plugin-integration`。当前尚未创建，不冒称claim有效。主线D04先明确M02已审实现冻结后的相交路径交接，再确认新claim；P01独占plugins继续保留，host修复回原owner。
+目的为在固定已审M02与P01输入上实际消费同一typed host，非第二插件协议。root已同意独立feature；拟owner workspace_panels_owner，lead d01_owner，新tree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration`、branch `codex/web-plugin-integration`。现已仅初始化预留树，HEAD c526c1c889437ee39155d669921577995195c74e clean，无安装/文件修改/P01合入；尚未收到I01 claim，不冒称领取有效。主线D04先明确M02已审实现冻结后的相交路径交接，再确认新claim；P01独占plugins继续保留，host修复回原owner。
 
 拟精确scope（主线登记前不写）：
 
@@ -143,3 +143,10 @@ docs/evidence/wpf-i01/
 
 
 02:55迁移/转交进展：实际只读PG receipt文件核验M02 claim dea92c6b-3450-404c-a32c-3fd007485ac6 v1、P01 0686525b-d323-49b5-affa-cefc66cb13be v1；管理claim632a7149-e812-4ddb-b342-99572c554cc5 v2。M02 c526c1 metadata clean已回Lead，三相交路径owner明确停写，等待Lead按v1 amend后I01take；未收到新committed receipt前不得开写。P01整包新输入e534仍复验，旧d810 PH-R3未以旧approval掩盖。初始化I01目录可从c526只读建树满足take实物校验，P01审定后再明确合入。
+
+
+## D04正式转交完成（2026-10-06 02:58 UTC）
+
+已读取并原样保存[旧scope amend回执](m02-to-i01-amend-receipt.json)与[I01 take回执](i01-take-receipt.json)：requestId分别wpf-m02-stop-three-paths-20261006 / wpf-i01-plugin-integration-20261006。M02 claim dea92c6b-3450-404c-a32c-3fd007485ac6于02:58:05.940Z升v2移出3相交文件；I01 claim b6666c29-ebc5-47b2-b754-55b62687fd00 v1于02:58:06.016Z committed，active精确11scope，lead external_web_d01_owner/worker workspace_panels_owner。此处为原始receipt证据副本，当前version/state仍必须从PG核验，不作为第二可编辑claim账本。
+
+owner已正式收到followup派工：在新tree建立plans/wpf-i01-plugin-integration唯一三件套和docs/evidence/wpf-i01；P01 PH-R4依赖未审定时只做文档与只读接口准备，不安装/merge/写产品。source成立后管理准备stub化并交Lead registry登记。已读采用主仓AGENTS多Lead规则及D04 README；安全source配置不输出，续工核live version/state，未知不当闲置，review修复保留writer范围，任何额外scope须amend receipt。
