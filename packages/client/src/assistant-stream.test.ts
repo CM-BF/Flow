@@ -14,8 +14,14 @@ it('opts in only snapshot reads and keeps stable creation receipts, task binding
     requests.push({ url: request.url!, protocol: request.headers['x-flow-assistant-stream'] as string | undefined,
       key: request.headers['idempotency-key'] as string | undefined, body: chunks.length ? JSON.parse(Buffer.concat(chunks).toString()) : undefined });
     const denied = request.url!.includes('denied');
+    const creationReceipt = request.method === 'POST' && request.url === '/api/conversations'
+      ? { conversation: { ...conversationCreationSchema.parse(requests.at(-1)!.body), id: 'chat/1', revision: 0,
+        createdAt: '2026-10-06T00:00:00Z', updatedAt: '2026-10-06T00:00:00Z' }, replayed: false,
+        capabilities: { followUp: true, queue: false, steer: false, liveAssistantText: false,
+          perTurnModel: false, perTurnThinking: false, perTurnTools: false } }
+      : undefined;
     response.writeHead(denied ? 403 : 200, { 'content-type': 'application/json' });
-    response.end(JSON.stringify(denied ? { error: { code: 'wrong_role', message: 'Owner only.' } } : responseBody));
+    response.end(JSON.stringify(denied ? { error: { code: 'wrong_role', message: 'Owner only.' } } : creationReceipt ?? responseBody));
   }).listen(0, '127.0.0.1');
   await once(server, 'listening');
   const options = { baseUrl: `http://127.0.0.1:${(server.address() as AddressInfo).port}`, token: 'stream-owner' };

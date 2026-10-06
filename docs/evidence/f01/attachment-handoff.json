@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-10-06T10:10:32.466407+00:00",
+  "task": "WPF-ATTACH01",
+  "parent": "WPF-MATURE-03",
+  "base": "c34033234e0f313e89b0982eb233f268b5f2172e",
+  "productBase": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "migrationReserved": "packages/storage/migrations/026-attachment-resources.sql",
+  "migrationBasis": "main highest 025 and available ledger 2026-10-06T10:06:05.849Z had no active migration writer; reservation is number allocation, backend must atomically amend exact path before writing",
+  "scopeHandback": {
+    "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+    "version": 23,
+    "committedAt": "2026-10-06T10:07:51.636Z",
+    "path": "packages/contracts/src/conversations.ts",
+    "ownerStopped": true
+  },
+  "retainedSharedOwner": "F01 retains contracts index, packages/client, server index; no resource-domain implementation by F01",
+  "publicContractOrder": "fixed attachment DTO/interface first; backend independently claims resource/context runtime paths; thin client/export and final factory combination follow fixed contract/domain approvals",
+  "receiptDecoder": "shared create/submit decoder under TUI001-09 handles shape and frozen request identity; Web history/display remain Web-owned, no duplicate attachment ACK decoder",
+  "compatibilityReviewRequired": "Existing old Web context reader requires templateVersion 1. Additive capability alone cannot make v2 context readable. Before freezing runtime representation, vertical owner must specify and test old loaded client/new center and new client/old center behavior with legacy v1 unchanged; do not silently strip fields while retaining incompatible digest.",
+  "modelCalls": 0,
+  "productChanges": false,
+  "runtime": "personal backend/static b1c2e398 unchanged"
+}

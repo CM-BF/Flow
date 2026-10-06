@@ -1,14 +1,14 @@
 # D06 架构固定快照更新
 
-2026-10-06；in-progress。本轮唯一owner d01_owner / gpt-6-astra ultra，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-stream`，branch `codex/dashboard-architecture-stream`。沿原D06任务与ID更新，旧三件套见[原样历史](../../docs/evidence/d06/stream/history.md)。
+2026-10-06；in-progress。唯一owner d01_owner / gpt-6-astra ultra，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime`，branch `codex/dashboard-architecture-runtime`。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，FLOW-001只是需求追溯，不第三执行层。
 
-把既有五图更新到已发布main `9c6fa9b100f04916f43b04280f05f497b28eeb0f` 的固定源码事实。只改architecture-data.js、直接architecture.test.mjs及本plan/evidence；renderer/CSS不动。每项能力与source都由git show固定SHA核验，目录存在不是运行或真实provider证明。完整源码snapshot与个人b54 accepting v6运行回执分开。
+按root/GO既有授权，把原五图策展数据更新到正式main `f181d84b5fb3652d62e2a181acff442d42b3e066`：Web/TUI/CLI→公共client→center→runner host/adapter、PG轻投影/按需details、并发和unknown领取、已接stream/final/知识/steering、Flow与SDK职责。runtime可配置并发不等入口实际配置或provider容量；受理/读取/执行成功/正文规则验证分别表达。TUI首片/受控Codex adapter/个人发布及未main附件分开。
 
-本轮补齐CHAT05 typed工具/思考按需正文，CHAT06持久正文patch/settlement和模块尚未App接线，CHAT07/08持久指令及默认关闭factory，022–024迁移、X05包worker。浏览器→中心→Runner/SDK/PG连线沿现架构，持久受理不等于实际生效，worker不等第三方沙箱。固定基线未含O09/CHAT09/CHAT06I App实现，后继保持planned。保留cancel/uncertain/verification和PG content/blob未实现的既有界限。
+四literal仅architecture-data.js、architecture.test.mjs、原D06 plan/evidence；renderer/CSS/registry/4320与所有产品实现不改。固定source逐条git对象核，未知部署不写成当前runtime。按[根模块规则](../../AGENTS.md#modular-design)复用现data Interface；没有新增产品Module或缓存。
 
-- [x] D06-01：独立树、精确claim、唯一source迁移与历史保存。
+- [x] D06-01：独立树、精确claim、旧source停写与历史保存；唯一登记迁移列handoff待Lead办理。
 - [x] D06-02：固定源码事实审阅与五图数据刷新。
-- [x] D06-03：直接Node/来源审计、五图浅深390/键盘与局部实际目视。
-- [ ] D06-04：固定target独立review、Lead主线接收与停写释放。
+- [x] D06-03：直接Node/来源审计、局部五图/浅深390/键盘与实际目视。
+- [ ] D06-04：固定target独立review、正常push、Lead主线接收与停写释放。
 
-[状态](status.md) · [审查](review.md) · [领取](../../docs/evidence/d06/stream/take-receipt.json) · [方法/质量](../../docs/evidence/d06/stream/quality.md)。registry迁唯一source由Lead处理，本owner不写registry/4320/其他任务。动态独立preview无产品DB/模型，不停旧预览。
+[状态](status.md) · [审查](review.md) · [原claim](../../docs/evidence/d06/runtime/take-receipt.json) · [历史](../../docs/evidence/d06/runtime/history.md) · [方法/质量](../../docs/evidence/d06/runtime/quality.md)。当前不声称main或部署；不跑全产品/真实服务/provider/产品DB。

@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:57:11 UTC / mainb1c2e39837c2208e6fc2c59a80e16797f26448b5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-002（[大task定义](plan.md)） |
+| 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -12,14 +12,14 @@
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
 | 工作分支状态 | planning；原历史TODO与独立review边界保留 |
-| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca；首个原生Claude adapter已用于聊天与限定只读目标子任务。可替换接口和第二真实harness消费者尚未完成；历史wrapper工程对照保持开放。 |
+| 已集成main状态 / HEAD | 8d8ab520a9d43c7b9dafb22911416ee799ebf665；已含TUI01A、R05C/C1、R05D配置D0、SVC04工具与D06固定f181图。真实Codex启动与实际新Web/旧后台兼容仍待验；个人backend/static保持b1c2e398、accepting v12。10:22:38.966Z实际看板126源/账本available；S01P03新canonical下一批登记。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 1 |
-| 当前产出 | 原生聊天与恢复路径已有实际验收，身份刷新和上下文插件实验记录了明确限制。 |
-| 下一可用交付 | 保留Claude使用体验，接通Codex的真实模型与执行能力。 |
+| 当前产出 | 终端与网页正在共用发送确认规则；工程工作区通路正在接通，网页独立发布工具已进入主线。 |
+| 下一可用交付 | 核清Codex可信启动的实际运行边界，并完成受管工程工作区的首条交付通路。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -55,8 +55,10 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 
 2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
 
-| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | R05-A已main，R06有界transport与R05B有限中心来源已审main3418；R05C准备普通Codex adapter。Pi/AI SDK研究保留不作串行门槛，真实原生与会话完整可替换性未完成。 |
+| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | R05-A/R06/R05B/R05C/C1已main，R05D配置D0于41315b接收；实际app-server启动诊断未通过，不能把配置/注入证据当原生可用。Pi/AI SDK研究保留不作串行门槛，真实原生与会话完整可替换性未完成。 |
 
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
 
 2026-10-06 08:57:11 UTC：用户新增成熟界面大方向已追溯到FLOW-002-T09与WPF-MATURE-02；Mika负责模型能力与Codex消费方，本队负责共享宿主/中心契约，Web沿唯一界面大task管理。无新增provider/auth操作。
+
+2026-10-06 10:27:04 UTC：本批只对齐已审主线与实际运行版本。TUI01B共享ACK与跨客户端409读恢复由runner_owner独立实施；ENG01A E0收据关联/完成门禁限定批准，E1真实Git/checker纵向实施；SVC04的合成兼容与58项真实构建JS请求不替代个人新Web/旧b1c后台的兼容证据。完整工程、真实Codex与新Web发布保持open；不新增provider或重复产品检查。

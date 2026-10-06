@@ -8,6 +8,12 @@
 
 所有动作消费共享typed commands / FlowClient / HTTP。中心保持持久任务/会话/授权/队列/最终结果权威；终端不直连DB/provider，不另建scheduler、权限或任务状态机。退出/断线仅停止观察，任务继续；显式cancel与真实停止结果分开。普通slash/help/status不调用模型。真实provider仅按另行固定预算验收，已有封存额度不复用。
 
+## 跨客户端的共同中心验收
+
+同一会话由两个公开客户端交替操作，能观察彼此已提交的变化；过期revision只产生确定冲突，不自动改revision重发，原草稿保留并恢复只读观察。重复请求、未知ACK与断线恢复复用同一中心幂等/CAS规则和原key/body。任一客户端退出只停止其观察，中心后台任务继续。核心协议旅程允许共享headless/终端驱动，Web只补实际受影响的浏览器交互，不另建测试平台或状态权威。
+
+后台新能力可先交付公开contract及可重复headless/终端验收，Web与TUI并行消费；两端互不作为全部开发的串行门禁。此验收并入TUI001-08，TUI001-09先完成共同回执与冲突恢复基础，不以局部共享模块代替完整双端日用验收。
+
 ## 最小架构与取舍
 
 | Module | Interface / ownership | 扩展与界限 |
@@ -30,13 +36,14 @@
 ## 稳定TODO与sub-task顺序
 
 - [x] **TUI001-01** 建立唯一大task、职责、研究/版本来源、初始范围和完整验收；此项完成不等于产品可用。
-- [ ] **TUI001-02** TUI01A：固定实际依赖与小Interface，交付slash/controller/headless/基础交互端到端片，独立review后及时main。
+- [x] **TUI001-02** TUI01A：固定实际依赖与小Interface，交付slash/controller/headless/基础交互端到端片，独立review后及时main。
 - [ ] **TUI001-03** 流式正文与活动：task/attempt增量协议、settlement原规则、重放/乱序/重连，展开前零detail请求，输出/缓存/刷新有界。
 - [ ] **TUI001-04** 真实执行选项：消费MATURE02/R05 Claude+Codex能力，model/thinking/fast/access requested/effective/unsupported分明，不把catalog当账号授权。
 - [ ] **TUI001-05** context/files：复用固定citation与附件生命周期合同，发送/排队冻结身份，未就绪拒绝；不直接附本机路径给远端runner。
 - [ ] **TUI001-06** queue/steer/cancel/decision：精确version/pin/attempt，durable ACK与实际生效区分，unknown恢复不自动复投。
 - [ ] **TUI001-07** runner/plugin管理：复用中心已发布功能，列出/详情/明确owner操作，下载不等于启用；不造终端私有插件权限层。
-- [ ] **TUI001-08** 日常终端完整验收：窄终端/CJK/emoji/粘贴/多行/resize/focus、丢ACK/重启、过载与资源回收，文档/独审/部署入口；真实provider只在具体新预算许可后运行。
+- [ ] **TUI001-09** 共享发送回执：TUI01A局部修复先交付，后继将创建/提交两种ACK的结构与冻结请求身份核验收敛到client小Interface，Web/TUI复用；unknown保留原key/body，旧回执不覆盖当前执行状态。唯一设计见[共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)。
+- [ ] **TUI001-08** 日常终端与双公开客户端完整验收：同会话交替操作、过期CAS不自动重发、断线/退出后台继续；窄终端/CJK/emoji/粘贴/多行/resize/focus、丢ACK/重启、过载与资源回收，文档/独审/部署入口；真实provider只在具体新预算许可后运行。
 
 ## 验收矩阵
 

@@ -18,6 +18,7 @@ export interface RunnerOptions {
   baseUrl: string;
   token: string;
   workingDirectory: string;
+  /** Stops admission and active attempts; an already-sent claim drains to its original request deadline. */
   signal: AbortSignal;
   adapters?: HarnessAdapter[];
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
@@ -85,7 +86,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         // No request was sent if shutdown/recovery arrived while the intent was persisted.
         if (options.signal.aborted || recoveryPending) { await journal.accept(null); continue; }
         const requestedAt = performance.now();
-        const response = await client.claim(requestSignal(options));
+        // Preserve a definite claim response during normal stop; fatal shutdown still aborts the request.
+        const response = await client.claim(requestSignal(options, shutdown.signal));
         if (!response || !Object.hasOwn(response, 'assignment')) throw new Error('Invalid claim response; admission intent retained.');
         const { assignment, remainingLeaseMs } = response;
         await journal.accept(assignment === null ? null : {
@@ -233,8 +235,8 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   return false;
 }
 
-function requestSignal(options: RunnerOptions) {
-  return AbortSignal.any([options.signal, AbortSignal.timeout(options.requestTimeoutMs ?? 1500)]);
+function requestSignal(options: RunnerOptions, signal = options.signal) {
+  return AbortSignal.any([signal, AbortSignal.timeout(options.requestTimeoutMs ?? 1500)]);
 }
 
 function validateOptions(options: RunnerOptions) {

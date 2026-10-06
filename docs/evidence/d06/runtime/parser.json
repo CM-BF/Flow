@@ -1,0 +1,105 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+        "id": "D01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "固定五图已获独立审查通过，等待主线受控接收",
+      "next": "主线接收后由服务owner发布，个人运行版本仍需独立部署回执",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "2c3160f42784ee814d968a953d557251c81a243d",
+      "scopes": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06/runtime/source-audit.mjs",
+        "docs/evidence/d06/runtime/browser-check.mjs",
+        "docs/evidence/d06/runtime/preview.mjs"
+      ],
+      "errors": []
+    },
+    "taskId": "D06",
+    "owner": "d01_owner / gpt-6-astra ultra",
+    "branch": "codex/dashboard-architecture-runtime",
+    "branchState": "approved",
+    "updatedAt": "2026-10-06T10:19:31.000Z",
+    "updatedRecord": "2026-10-06 10:19:31 UTC",
+    "todos": [
+      {
+        "id": "D06-01",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "fixed f181独立树clean，fresh claim4scope，旧e06a v2 released与原样历史；source迁移待Lead"
+      },
+      {
+        "id": "D06-02",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "数据已更新，固定f181来源与部署/容量边界分开"
+      },
+      {
+        "id": "D06-03",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "15 Node/source/browser通过，五hash固定绑定；见runtime/validation"
+      },
+      {
+        "id": "D06-04",
+        "state": "in-progress",
+        "owner": "d01_owner",
+        "evidence": "root固定target APPROVED；main未接收，保留claim"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "f181d84b5fb3652d62e2a181acff442d42b3e066；当前HEAD/dirty由Git聚合",
+    "declaredDirty": "",
+    "checks": {
+      "state": "passed",
+      "target": "2c3160f42784ee814d968a953d557251c81a243d",
+      "record": "PASSED 2c3160f42784ee814d968a953d557251c81a243d；15 Node、61来源/119行、五图browser；[证据](../../docs/evidence/d06/runtime/checks.json)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 2c3160f42784ee814d968a953d557251c81a243d /root 10:18:41 UTC",
+    "mainRecord": "NOT_INTEGRATED；source base f181已main，本轮图尚未交付",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "2c3160f42784ee814d968a953d557251c81a243d"
+  }
+}

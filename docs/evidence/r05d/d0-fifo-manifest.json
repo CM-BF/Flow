@@ -1,0 +1,68 @@
+{
+  "sourceCommit": "178ef49e568147849e63e08b3f7211ee5df823d3",
+  "previousTarget": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4",
+  "source": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 7311,
+      "sha256": "337f7ee2af4dfc9d60f3f82c38f573dbab4f828d3ab1cba40b48247da347c190",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 2135,
+      "sha256": "4e4cc90057bc5f700f1485578d7b71f78f9034b87c26f6a7c65218c28374fbd6",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 757,
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    }
+  ],
+  "validation": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 7311,
+      "sha256": "337f7ee2af4dfc9d60f3f82c38f573dbab4f828d3ab1cba40b48247da347c190",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/r05d/d0-fifo-selected.json",
+      "bytes": 342,
+      "sha256": "9e20a83444d66395abb11a51f5dcd4397baeb4d2b35a6caa8ce4a204544a6b58"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-fifo-selected.stdout",
+      "bytes": 341,
+      "sha256": "578c4823877048125ac024bd56f0cd44287dd4cfa58e7e80b5a84fb56eaf3806"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-fifo-typecheck.json",
+      "bytes": 103,
+      "sha256": "b373d6d10d72fa2ac08416aae1593c77780858bd84bc89b84f6ce7feaf61c55c"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-fifo-typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "selected": 1,
+    "passed": 1,
+    "unselected": 19,
+    "typecheckExitCode": 0,
+    "inheritedDistinct": 72,
+    "nativeCalls": 0
+  }
+}

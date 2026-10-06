@@ -1,0 +1,146 @@
+{
+  "implementationTarget": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+  "base": "41315b033deb0b1953484359b686c0b228997367",
+  "source": [
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 10480,
+      "sha256": "3f76cfde9b61ea049da7575c905d91588ea9d8a400c5bcc0336036998c0020d5"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "bytes": 13823,
+      "sha256": "24190fe6eab6f55a10070ba9004f798749dfb5a61dee44ff02cbef2bb3022561"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 39061,
+      "sha256": "5ff272bec0a6120dd10791d168d260f1c0aea4fef45e51782b067ee1f68305f1"
+    },
+    {
+      "path": "packages/client/src/conversations.test.ts",
+      "bytes": 4105,
+      "sha256": "f48fe8f522ceefaf8c10f866231ff98239b6bc5dbac728a1cf4c5f808177c5bd"
+    },
+    {
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "bytes": 560,
+      "sha256": "ebeea716b5e120f25f9e7b62009c24c1ce8cc9132f441732af632cc91272862c"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 13897,
+      "sha256": "ef60f5b6fa8c02bdb928c463bc06763cac242f8c7cd6c350c3e6abb6ba0d1db1"
+    },
+    {
+      "path": "packages/interaction/src/controller.test.ts",
+      "bytes": 11505,
+      "sha256": "87ac3d5aeb1ba495cbe918c7c0a67f885a1425ed8fc9627bc49e427d001a4e71"
+    },
+    {
+      "path": "apps/tui/src/recovery.test.ts",
+      "bytes": 14942,
+      "sha256": "5cf1af83cc6c2ce2200e9d9546df985cce0e9d871c9a7dfa4ea9e5162f2a2643"
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "bytes": 3685,
+      "sha256": "5a08ef365cd397c0a4e29f2e78961d84217e7398d4e439b96c7cfb2cb0907be9"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/tui01b/install.txt",
+      "bytes": 658,
+      "sha256": "ceb3717306039341fc5ed11e4248c4f0961c4fbb28e068093d0ecd171726708a"
+    },
+    {
+      "path": "docs/evidence/tui01b/client-red.txt",
+      "bytes": 5713,
+      "sha256": "20c468eaf37e1a8846ea2040801447bdda46ae522cfd9e84fb5a74c93d09a0e1"
+    },
+    {
+      "path": "docs/evidence/tui01b/client-first-green.txt",
+      "bytes": 336,
+      "sha256": "86c3d2619d3cc66809a655229731b99f77d6d7819a314bd9c62f63ad992762fc"
+    },
+    {
+      "path": "docs/evidence/tui01b/controller-red.txt",
+      "bytes": 3125,
+      "sha256": "a94f54ac7d7686481b6e8a45a52d7b6f6688fd3db350c42fb1155b1bbbe5476a"
+    },
+    {
+      "path": "docs/evidence/tui01b/controller-first-green.txt",
+      "bytes": 326,
+      "sha256": "464b36add50d57179f81116ef4e3a220ac23bd93dbca9d2db0a81a1bafc3f51e"
+    },
+    {
+      "path": "docs/evidence/tui01b/types-first.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01b/ack-matrix-first.txt",
+      "bytes": 4693,
+      "sha256": "97ea74b1ec309f9f2c1c689b9055b36977e758bb6957e9c9e78cd02b58839d30"
+    },
+    {
+      "path": "docs/evidence/tui01b/behavior-first.txt",
+      "bytes": 517,
+      "sha256": "baa83f001d7823eee8d64bd944faa9b1da3d068d07a5342a962e0f0f464df0b9"
+    },
+    {
+      "path": "docs/evidence/tui01b/consumers-final.txt",
+      "bytes": 520,
+      "sha256": "934f7041798f115eb091c595a32c8c3366a69f9caed90be05e1dca7ba03e80bb"
+    },
+    {
+      "path": "docs/evidence/tui01b/types-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01b/checks.json",
+      "bytes": 2638,
+      "sha256": "2d05ac4dd7ac288fc7f79d58563c460e9303f4ec2730f1644b1eacaee2ead7b6"
+    }
+  ],
+  "readonlyInputs": [
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 5897,
+      "sha256": "72e9ceb34213cc5ba95162bc1f1b3eac926d9349c83d4f54b29a8d0bd7bcd3b2"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "bytes": 1640,
+      "sha256": "2ead672628cb411a54ab51345f384a301ff407eb2a30cf604b120b47d68ebdb5"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 22671,
+      "sha256": "808395c53eb621ca0298ab3edb4d3ebf51330cdb189fe2252f6b6a020e942925"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 5594,
+      "sha256": "577676a1357e6da20c613f6ed49301ebb954b0982e8b5db972067a2b7c21e004"
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "bytes": 2593,
+      "sha256": "6f9b181aeeb01572901e2f735dfed9c1b7d859ecc1448cc7baf502d6a2c4a233"
+    }
+  ],
+  "externalInput": {
+    "parentFixtureCommit": "9c9ca357090526d728c4bab78ba78b89a6c234a3",
+    "cherryPick": "0ae3e67f63575afcf09100a41ff0931de534022e"
+  },
+  "scope": "Shared v1 conversation ACK decoder, TUI recovery, direct HTTP fixtures; no Web implementation, PG, provider or personal service operations",
+  "distinctChecks": 70
+}

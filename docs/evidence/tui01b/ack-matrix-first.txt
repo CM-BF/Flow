@@ -1,0 +1,74 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts (45 tests | 3 failed) 36ms
+   ✓ HTTP 200 unconfirmed creation ACK {} is unknown without hidden retry or raw data 17ms
+   ✓ HTTP 200 unconfirmed creation ACK {not-json is unknown without hidden retry or raw data 5ms
+   ✓ HTTP 200 unconfirmed creation ACK null is unknown without hidden retry or raw data 2ms
+   ✓ HTTP request identity is captured from the sent bytes before the caller can mutate its input 2ms
+   ✓ HTTP mismatched accepted turn is unknown and never becomes delivery success 2ms
+   ✓ known receipt identity accepts additive fields without discarding them 0ms
+   ✓ creation title changes cannot confirm the frozen request 0ms
+   ✓ creation harness changes cannot confirm the frozen request 0ms
+   ✓ creation projectId changes cannot confirm the frozen request 0ms
+   ✓ creation profile changes cannot confirm the frozen request 1ms
+   × creation model changes cannot confirm the frozen request 1ms
+   × creation thinking changes cannot confirm the frozen request 0ms
+   × creation tools changes cannot confirm the frozen request 0ms
+   ✓ creation revision changes cannot confirm the frozen request 0ms
+   ✓ creation timestamp changes cannot confirm the frozen request 0ms
+   ✓ creation capabilities changes cannot confirm the frozen request 0ms
+   ✓ creation replayed changes cannot confirm the frozen request 0ms
+   ✓ creation field helper preserves optional profile/project presence and canonical defaults for a later GET 0ms
+   ✓ turn conversation mismatch stays unknown 0ms
+   ✓ turn number mismatch stays unknown 0ms
+   ✓ turn revision mismatch stays unknown 0ms
+   ✓ turn text mismatch stays unknown 0ms
+   ✓ turn task mismatch stays unknown 0ms
+   ✓ turn telemetry mismatch stays unknown 0ms
+   ✓ turn effective mismatch stays unknown 0ms
+   ✓ turn assistant mismatch stays unknown 0ms
+   ✓ the maximum response revision is legal while oversized revisions and request exhaustion are rejected 0ms
+   ✓ ordered frozen context is matched through turn admission and never fetched as body 1ms
+   ✓ context order cannot pass as additive metadata 0ms
+   ✓ context project cannot pass as additive metadata 0ms
+   ✓ context source cannot pass as additive metadata 0ms
+   ✓ context version cannot pass as additive metadata 0ms
+   ✓ context digest cannot pass as additive metadata 0ms
+   ✓ context kind cannot pass as additive metadata 0ms
+   ✓ context start cannot pass as additive metadata 0ms
+   ✓ context end cannot pass as additive metadata 0ms
+   ✓ context byteLength cannot pass as additive metadata 0ms
+   ✓ context freezeVersion cannot pass as additive metadata 0ms
+   ✓ context freezeFlag cannot pass as additive metadata 0ms
+   ✓ context contextDigest cannot pass as additive metadata 0ms
+   ✓ context executionDigest cannot pass as additive metadata 0ms
+   ✓ context templateVersion cannot pass as additive metadata 0ms
+   ✓ context missing cannot pass as additive metadata 0ms
+   ✓ context absent/empty and reference/byte bounds preserve the existing v1 contract 1ms
+   ✓ available reply identities are tied to the accepted task and attempt without claiming execution completion 0ms
+ ✓ apps/tui/src/recovery.test.ts (8 tests) 108ms
+ ✓ packages/client/src/conversations.test.ts (1 test) 33ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > creation model changes cannot confirm the frozen request
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > creation thinking changes cannot confirm the frozen request
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > creation tools changes cannot confirm the frozen request
+AssertionError: expected function to throw an error, but it didn't
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:77:60
+     75|   else if (field === 'capabilities') Reflect.deleteProperty(value, 'ca…
+     76|   else Reflect.deleteProperty(value, 'replayed');
+     77|   expect(() => decodeConversationCreated(value, creation)).toThrow(Unk…
+       |                                                            ^
+     78| });
+     79| test('creation field helper preserves optional profile/project presenc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  3 failed | 51 passed (54)
+   Start at  03:25:29
+   Duration  784ms (transform 141ms, setup 0ms, import 362ms, tests 177ms, environment 0ms)
+

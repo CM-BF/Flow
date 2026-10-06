@@ -1,0 +1,11 @@
+{
+  "command": "pnpm exec vitest run apps/runner/src/main-concurrency.test.ts",
+  "exitCode": 0,
+  "source": "direct process stdout/stderr",
+  "reason": "Correct the explicit direct-consumer path; main.test.ts did not exist and selected no tests in the earlier command",
+  "elapsedSeconds": 1.296,
+  "selectedFiles": 1,
+  "selected": 22,
+  "passed": 22,
+  "failed": 0
+}

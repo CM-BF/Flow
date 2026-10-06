@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-06T09:27:56.515Z",
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+        "id": "D01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "首页和详情的两层关系已通过独立审查，错误来源明确标未知",
+      "next": "由Lead接收并部署明确的父任务和co-lead显示",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "eca59a5edab0820f724a9bd5bc854e22f48d9ea9",
+      "scopes": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/public/styles.css",
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/status.mjs",
+        "apps/execution-dashboard/src/task-links.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "apps/execution-dashboard/test/task-links.test.mjs"
+      ],
+      "errors": []
+    },
+    "taskId": "D08",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/dashboard-task-links",
+    "branchState": "completed",
+    "updatedAt": "2026-10-06T09:27:00.000Z",
+    "updatedRecord": "2026-10-06 09:27:00 UTC",
+    "todos": [
+      {
+        "id": "D08-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[receipt](../../docs/evidence/d08/take-receipt.json)、[quality](../../docs/evidence/d08/quality.md)"
+      },
+      {
+        "id": "D08-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/d08/interface.md)，解析、两层约束与安全下钻已实现"
+      },
+      {
+        "id": "D08-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[direct.log](../../docs/evidence/d08/direct.log)：45 项；浏览器环境适配后继续"
+      },
+      {
+        "id": "D08-04",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "固定target已独审APPROVED；待Lead接收/部署，source登记与部署分开"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 当前Git聚合",
+    "declaredDirty": "实现 eca59a5edab0820f724a9bd5bc854e22f48d9ea9 已提交；后续仅自有交付metadata；最终Git现场确认clean",
+    "checks": {
+      "state": "passed",
+      "target": "eca59a5edab0820f724a9bd5bc854e22f48d9ea9",
+      "record": "PASSED eca59a5edab0820f724a9bd5bc854e22f48d9ea9；45直接/5浏览器组，执行源f772+dirty按hash绑定"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED eca59a5edab0820f724a9bd5bc854e22f48d9ea9",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "eca59a5edab0820f724a9bd5bc854e22f48d9ea9"
+  }
+}

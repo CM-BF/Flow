@@ -1,0 +1,22 @@
+{
+  "basis": "Actual assertions and awaited cleanup in runtime-shutdown.test.ts, reported passing in shutdown-cases-first.txt; not a separate OS process scan or provider run.",
+  "ownedChild": {
+    "countInFinalShutdownSuite": 1,
+    "commandKind": "process.execPath --import tsx --input-type=module -e fixed synthetic runRunner script",
+    "isolation": "dynamic loopback URL, synthetic test token, own mkdtemp directory; minimal PATH-only child environment",
+    "termination": "SIGKILL sent only to returned ChildProcess after real peer received claim and persisted journal was read",
+    "observedClose": {
+      "code": null,
+      "signal": "SIGKILL"
+    },
+    "sameJournalUuidPreservedAndRestartBlocked": true,
+    "pidArchived": false,
+    "limitation": "No numeric PID captured in log; ownership, kill result and close tuple are executable assertions, not reconstructed process metadata."
+  },
+  "cleanup": "Reverse-order finally cleanup kills/awaits only owned child before stopping runtimes, closes all test-server sockets/listener, then awaits recursive removal of own temp directory. Gate release and spy restoration have explicit finally paths. All10 cases passed their hooks.",
+  "globalHooks": "Only test-local AbortSignal.timeout boundary and real-rename return gate; restoration recorded by passing finally paths. No product hook.",
+  "consumerChild": "The original runner.test.ts SIGTERM synthetic child test also passed within its existing33; distinct from the new one SIGKILL case.",
+  "pgCreated": 0,
+  "providerCalls": 0,
+  "installedDependencies": false
+}

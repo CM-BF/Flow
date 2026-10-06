@@ -1,0 +1,13 @@
+
+> @flow/tui@0.1.0 start /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/apps/tui
+> tsx src/main.tsx "--help"
+
+/help — List available commands.
+/conversations [cursor] — List one page of saved conversations.
+/open <id> — Observe a saved conversation.
+/profiles [cursor] — List configured execution profiles; availability remains unprobed.
+/new [--profile <id>] [title] — Create a conversation; does not itself start a model.
+/send <text> — Submit a follow-up; configured execution may call a model.
+/recover — Explicitly replay one unresolved original request, or reload current history.
+/disconnect — Stop observing. Center tasks keep running.
+/quit — Exit without cancelling center work.

@@ -1,0 +1,36 @@
+{
+  "target": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+  "verdict": "APPROVED",
+  "reviewer": "architecture_read",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-06 10:29:27 UTC",
+  "timeCorrection": "Reviewer and root corrected the earlier minute estimate 10:30 to this actual clock value. Target and verdict unchanged.",
+  "readOnly": true,
+  "testsRerun": false,
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "manifestSha256": "26c6fc78ee35e4e2d4f213ef35a3edad8fe03b4b2f8eec239fe24f32e1bb51e6",
+  "bindings": {
+    "source": 2,
+    "raw": 14,
+    "support": 10,
+    "readonly": 11,
+    "allMatchTargetGitAndWorktree": true,
+    "readonlyMatchesBase": true
+  },
+  "checked": [
+    "Full runtime signal delta; normal stop drains only already-sent claim under original timeout/internal fatal",
+    "Late definite null durable clear and same-directory restart; late non-null identity persisted without new adapter/heartbeat/completed",
+    "Timeout/reset/malformed remain same unknown intent with no retry; fatal host authentication priority and active cleanup",
+    "Real rename-return gate; owned child SIGKILL close and exact original journal UUID blocking restart",
+    "10 new +33 runner +19 capacity loopback =62 distinct passing; local strict0;4PG NOT_RUN; initial0tests/root strict2 preserved"
+  ],
+  "limits": [
+    "No complete forced/unknown claim recovery",
+    "No whole-process hard deadline guarantee for arbitrary adapters",
+    "No real PG/provider/mixed capacity workload or SLO claim"
+  ],
+  "rootCrossCheck": "Mika independently verified all37manifest entries targetGit=WT=SHA/bytes and readonly runtime/consumers against current main."
+}

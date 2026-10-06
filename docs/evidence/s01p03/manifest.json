@@ -1,0 +1,249 @@
+{
+  "implementationTarget": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+  "preparationTarget": "ce30ec792982993d790971fdb52f8073f459c250",
+  "base": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop",
+  "branch": "codex/runner-graceful-stop",
+  "owner": "status_read",
+  "model": "gpt-6-astra",
+  "coLead": "mika",
+  "parentTask": "FLOW-001",
+  "task": "S01P03",
+  "createdAt": "2026-10-06T10:28:32.992925+00:00",
+  "claim": {
+    "claimId": "a3e307fc-a7cc-40d3-a28c-4ec3482b985a",
+    "version": 1
+  },
+  "scope": [
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/runtime-shutdown.test.ts",
+    "plans/s01-graceful-stop",
+    "docs/evidence/s01p03"
+  ],
+  "source": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14564,
+      "sha256": "790c706fd1207211334e77fa428d31d54e79dca91b6d66b35d56ab54f6512c8e"
+    },
+    {
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "bytes": 13720,
+      "sha256": "09670094e39e2a3b2da6286c763d161e5b359231d472e655b2d44fe4c1a8c42d"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/s01p03/direct-consumers-exit.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "path": "docs/evidence/s01p03/direct-consumers.txt",
+      "bytes": 7166,
+      "sha256": "eb90ae138603093353f3b6830070c980bd6edb463beec24bb0dfa31978b5954b"
+    },
+    {
+      "path": "docs/evidence/s01p03/green-null-exit.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "path": "docs/evidence/s01p03/green-null.txt",
+      "bytes": 400,
+      "sha256": "ce6796a12424cc4900865ae1ca82dd159f52162f380e68cd077f067add402b96"
+    },
+    {
+      "path": "docs/evidence/s01p03/red-null-exit.json",
+      "bytes": 15,
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3"
+    },
+    {
+      "path": "docs/evidence/s01p03/red-null-ready-exit.json",
+      "bytes": 15,
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3"
+    },
+    {
+      "path": "docs/evidence/s01p03/red-null-ready.txt",
+      "bytes": 1490,
+      "sha256": "8d4b1a768cb0f9e7dd5e34346dd7312dd0b4a9d6b999cc565c4d22229f4db831"
+    },
+    {
+      "path": "docs/evidence/s01p03/red-null.txt",
+      "bytes": 1080,
+      "sha256": "4f8515007066700b1ed15274e5b78bb1f99ab9624a6477856a342b41dce75250"
+    },
+    {
+      "path": "docs/evidence/s01p03/shutdown-cases-first-exit.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "path": "docs/evidence/s01p03/shutdown-cases-first.txt",
+      "bytes": 1657,
+      "sha256": "d399ad6486854a5cd03442c6c13fa36eaf91edd839d081e7583342a1a25ee036"
+    },
+    {
+      "path": "docs/evidence/s01p03/typecheck-first-exit.json",
+      "bytes": 15,
+      "sha256": "ec92b3938ea404813a310dbac11d848ca79d7df93e625f201f4072137d6a2606"
+    },
+    {
+      "path": "docs/evidence/s01p03/typecheck-first.txt",
+      "bytes": 7001,
+      "sha256": "2286225d5cf55f7c9f6f3eadcaa0301c33ad199bdf7a3a6e50a4a1e1dae4afe4"
+    },
+    {
+      "path": "docs/evidence/s01p03/typecheck-local-exit.json",
+      "bytes": 15,
+      "sha256": "3edd82d4e49f89c30270dee752ac018539f4dc6848d7a33b1553404e6f8b58af"
+    },
+    {
+      "path": "docs/evidence/s01p03/typecheck-local.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/s01p03/checks.json",
+      "bytes": 3326,
+      "sha256": "be3c98394382687f3459d3dea9eecf8f664b68ec085643b73bf82dcb362a2c43"
+    },
+    {
+      "path": "docs/evidence/s01p03/claim-receipt.json",
+      "bytes": 647,
+      "sha256": "f390701e659098a5e14b6894a046b728f03fd0f91a328c6fa38e3ab60ce773e4"
+    },
+    {
+      "path": "docs/evidence/s01p03/dependencies.json",
+      "bytes": 745,
+      "sha256": "16ac047e6f268ae9b1eb70e65dcbc83a2a91991374a4b6961f2921af8f18eb29"
+    },
+    {
+      "path": "docs/evidence/s01p03/design-approval.json",
+      "bytes": 868,
+      "sha256": "f253ce5398c9a6e5a22cc01fbbac16d609456218ea9f2769e7690bca77a8c979"
+    },
+    {
+      "path": "docs/evidence/s01p03/interface.md",
+      "bytes": 4782,
+      "sha256": "d1077c0978610c884f0e9b38253d69dde13b58dcfa58d140a2523ad0c6e527c0"
+    },
+    {
+      "path": "docs/evidence/s01p03/preparation.json",
+      "bytes": 539,
+      "sha256": "336a7788858da5a34fc3552edf214e33613e38d95ec829afbde3e55c657d12c8"
+    },
+    {
+      "path": "docs/evidence/s01p03/quality.md",
+      "bytes": 2521,
+      "sha256": "5273746781a7a1c83e44516f81cdb40aa21b94e5c4b7d7292e6bd5fd411cb2ba"
+    },
+    {
+      "path": "docs/evidence/s01p03/resource-check.json",
+      "bytes": 1582,
+      "sha256": "23115dd6f94a6d96d92c1632d8a7435645af9f49eaf43b86c28b6101e972bcb4"
+    },
+    {
+      "path": "docs/evidence/s01p03/skills.json",
+      "bytes": 1952,
+      "sha256": "3661c0ac412688de2ce136a68bd8d2a795c6948f074d39902d233dbc6fccdb5b"
+    },
+    {
+      "path": "docs/evidence/s01p03/tsconfig.json",
+      "bytes": 265,
+      "sha256": "6a16dac2a6cf9da979eda093f52984bca2a9f7e15f4385767350ff93081a7a47"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb"
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "bytes": 26547,
+      "sha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 1915,
+      "sha256": "b6461ea0edebe5ca7fb52ebbc0c62b678aeea891b00cf69b78a1636900c95ba8"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 38126,
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 973,
+      "sha256": "ba5564f67f0fec48a841ffdf840cc80e0327e73c1c8268a3e16919c094be6b11"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278664,
+      "sha256": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d"
+    }
+  ],
+  "verification": {
+    "behaviorRed": {
+      "selected": 1,
+      "failed": 1
+    },
+    "shutdown": {
+      "passed": 10,
+      "ownedSigkillChild": 1
+    },
+    "directConsumers": {
+      "runnerPassed": 33,
+      "capacityLoopbackPassed": 19,
+      "realPgNotRun": 4
+    },
+    "distinctPassingTests": 62,
+    "strictLocalExit": 0,
+    "rootWideStrictExit": 2,
+    "rootWideStrictLimitation": "Preserved missing TUI/interaction dependency and consequent diagnostics; local config inherits all root options without claiming root pass.",
+    "initialEnvironmentFailureTests": 0,
+    "initialGreenOverlapsFinalTen": true,
+    "providerCalls": 0,
+    "actualPgCalls": 0,
+    "mixedWindowRuns": 0
+  },
+  "review": "pending independent fixed-target review; method approval is not implementation approval",
+  "limits": [
+    "Normal stop only drains an already-sent claim to original deadline; existing active attempts are still interrupted and awaited.",
+    "Late non-null identity is retained with no new execution or invented completion; restart remains blocked.",
+    "Timeout/reset/malformed/forced-kill claims remain unknown; complete claim recovery is not implemented.",
+    "No main/server/client/contracts changes, no PG/model/provider/mixed-load run, no added public configuration.",
+    "One owned child close(SIGKILL) and cleanup hooks asserted; no numeric PID or independent OS process scan archived."
+  ],
+  "metadataAfterTarget": "Manifest, own plan/status/review and independent approval/main receipts may follow; source/raw fixed."
+}

@@ -29,6 +29,8 @@ const capabilities: readonly Capability[] = [
   "ui.layout",
   "reference.read",
   "task.activity.read",
+  "task.steering.read",
+  "task.steering.write",
   "task.assistant-stream.read",
   "theme.write",
   "theme.register",

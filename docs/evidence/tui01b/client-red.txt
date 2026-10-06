@@ -1,0 +1,152 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts (5 tests | 4 failed) 41ms
+   × HTTP 200 unconfirmed creation ACK {} is unknown without hidden retry or raw data 21ms
+   × HTTP 200 unconfirmed creation ACK {not-json is unknown without hidden retry or raw data 9ms
+   × HTTP 200 unconfirmed creation ACK null is unknown without hidden retry or raw data 5ms
+   ✓ HTTP request identity is captured from the sent bytes before the caller can mutate its input 2ms
+   × HTTP mismatched accepted turn is unknown and never becomes delivery success 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > HTTP 200 unconfirmed creation ACK {} is unknown without hidden retry or raw data
+AssertionError: promise resolved "{}" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
+- }
++ {}
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:37:67
+     35| test.each(['{}', '{not-json', 'null'])('HTTP 200 unconfirmed creation …
+     36|   const { client, requests } = await http(() => raw);
+     37|   await expect(client.createConversation(creation, 'original-key')).re…
+       |                                                                   ^
+     38|   expect(requests).toEqual([{ key: 'original-key', body: JSON.stringif…
+     39| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > HTTP 200 unconfirmed creation ACK {not-json is unknown without hidden retry or raw data
+AssertionError: expected SyntaxError: Expected property name or '}… to match object { code: 'conversation_ack_unknown' }
+
+- Expected
++ Received
+
+- {
+-   "code": "conversation_ack_unknown",
++ SyntaxError {
++   "message": "Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+  }
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:37:3
+     35| test.each(['{}', '{not-json', 'null'])('HTTP 200 unconfirmed creation …
+     36|   const { client, requests } = await http(() => raw);
+     37|   await expect(client.createConversation(creation, 'original-key')).re…
+       |   ^
+     38|   expect(requests).toEqual([{ key: 'original-key', body: JSON.stringif…
+     39| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > HTTP 200 unconfirmed creation ACK null is unknown without hidden retry or raw data
+AssertionError: promise resolved "null" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+null
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:37:67
+     35| test.each(['{}', '{not-json', 'null'])('HTTP 200 unconfirmed creation …
+     36|   const { client, requests } = await http(() => raw);
+     37|   await expect(client.createConversation(creation, 'original-key')).re…
+       |                                                                   ^
+     38|   expect(requests).toEqual([{ key: 'original-key', body: JSON.stringif…
+     39| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > HTTP mismatched accepted turn is unknown and never becomes delivery success
+AssertionError: promise resolved "{ conversation: { …(7) }, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "conversation": {
++     "createdAt": "2026-10-06T00:00:00Z",
++     "harness": "claude",
++     "id": "73f756d7-9926-4129-a560-c21422c6298c",
++     "requested": {
++       "model": "runner-default",
++       "thinking": "disabled",
++       "tools": "configured-readonly",
++     },
++     "revision": 1,
++     "title": "Original",
++     "updatedAt": "2026-10-06T00:00:00Z",
++   },
++   "replayed": false,
++   "turn": {
++     "assistant": {
++       "reason": "execution-pending",
++       "state": "pending",
++     },
++     "conversationId": "8fe915ff-381e-4a62-b615-6ff384a53b71",
++     "createdAt": "2026-10-06T00:00:00Z",
++     "effective": {
++       "model": null,
++       "source": null,
++       "thinking": "unknown",
++       "tools": null,
++     },
++     "id": "e9b15313-f1f5-449b-84fb-20bb96a171d6",
++     "number": 1,
++     "task": {
++       "createdAt": "2026-10-06T00:00:00Z",
++       "harness": "claude",
++       "id": "651a1944-484f-4888-bcfe-75ad308161ce",
++       "status": "queued",
++       "title": "Original",
++       "updatedAt": "2026-10-06T00:00:00Z",
++       "verificationStatus": "pending",
++     },
++     "telemetry": {
++       "kind": "execution",
++       "taskId": "651a1944-484f-4888-bcfe-75ad308161ce",
++       "title": "Execution",
++     },
++     "user": {
++       "role": "user",
++       "text": "  Original 中文🙂
++ ",
++     },
++   },
+  }
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:51:87
+     49|   value.turn.conversationId = randomUUID();
+     50|   const { client, requests } = await http(() => JSON.stringify(value));
+     51|   await expect(client.submitConversationTurn(value.conversation.id, in…
+       |                                                                                       ^
+     52|   expect(requests).toHaveLength(1);
+     53| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  03:22:23
+   Duration  649ms (transform 281ms, setup 0ms, import 464ms, tests 41ms, environment 0ms)
+
