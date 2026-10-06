@@ -29,10 +29,17 @@ export function inspectOwnedRoots(roots, io = fs) {
     if (stat.isDirectory()) {
       const before = io.lstatSync(file);
       if (!before.isDirectory() || before.isSymbolicLink() || !same(before, identity(stat))) throw Error('Directory changed');
-      const names = io.readdirSync(file);
-      const after = io.lstatSync(file);
-      if (!after.isDirectory() || after.isSymbolicLink() || !same(after, identity(stat))) throw Error('Directory changed');
-      for (const name of names) visit(path.join(file, name), depth + 1);
+      let directory;
+      try {
+        directory = io.opendirSync(file, { bufferSize: 1, recursive: false });
+        const after = io.lstatSync(file);
+        if (!after.isDirectory() || after.isSymbolicLink() || !same(after, identity(stat))) throw Error('Directory changed');
+        for (;;) {
+          if (report.entries >= bounds.entries) throw Error('Inventory entry bound');
+          const entry = directory.readSync(); if (entry === null) break;
+          visit(path.join(file, entry.name), depth + 1);
+        }
+      } finally { directory?.closeSync(); }
       const finished = io.lstatSync(file);
       if (!finished.isDirectory() || finished.isSymbolicLink() || !same(finished, identity(stat))) throw Error('Directory changed');
     }
@@ -73,7 +80,8 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
     serverRequestObserved: false, close: null, closeKind: 'controlled-close', wholeWriterSettlement: 'unknown',
     processCleanupComplete: false, rootCleanupComplete: false, retainedRootsComplete: true, retainedRoots: [],
     roots, descriptors, inventories: [], callerRequests: { turn: 0, auth: 0, login: 0, modelInference: 0 },
-    nativeNetworkAttempts: 'unknown', billingEffects: 'unknown', monitoring: { intervalMs: 250, hardQuota: false, unobservedPeak: 'unknown' },
+    nativeNetworkAttempts: 'unknown', billingEffects: 'unknown', monitoring: { intervalMs: 250, activeChecks: 'top-root-identities-only',
+      fullInventory: 'before-factory-and-after-confirmed-close', hardQuota: false, unobservedPeak: 'unknown' },
     retainedDiagnosticArtifact: null, diagnosticComplete: false, outputAccountingComplete: false,
     withinBudget: false, resultPersisted: false, output };
   let transport, receiveLoop, monitor, deadline, stopping, inventoryFailed = false, originalStderrSaved = false;
@@ -113,10 +121,18 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
     const value = inspectOwnedRoots(roots, io);
     // Fixed sampled maxima plus last observation keep the receipt independent of tick count.
     const previous = result.inventories[0];
-    result.inventories[0] = { ...value, peakLogicalBytes: Math.max(previous?.peakLogicalBytes ?? 0, value.logicalBytes),
-      peakAllocatedBytes: Math.max(previous?.peakAllocatedBytes ?? 0, value.allocatedBytes) };
+    result.inventories[0] = { ...value, maxSampledLogicalBytes: Math.max(previous?.maxSampledLogicalBytes ?? 0, value.logicalBytes),
+      maxSampledAllocatedBytes: Math.max(previous?.maxSampledAllocatedBytes ?? 0, value.allocatedBytes) };
     if (!value.complete || !value.withinLimit) inventoryFailed = true;
     return value.complete && value.withinLimit;
+  }
+  function activeRootsUnchanged() {
+    try {
+      return roots.every(root => {
+        const stat = io.lstatSync(root.path);
+        return stat.isDirectory() && !stat.isSymbolicLink() && same(stat, root.identity);
+      });
+    } catch { return false; }
   }
   function stop(code) {
     if (code) fail(code);
@@ -144,7 +160,7 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
     if (Number.isInteger(result.targetPid) && result.targetPid > 0) result.targetStarted = 'observed-pid';
     deadline = setTimeout(() => stop('WINDOW_DEADLINE'), Math.max(1, bounds.stopMs - now()));
     monitor = setInterval(() => {
-      if (!inspect()) stop('OWN_INVENTORY_UNKNOWN_OR_LIMIT');
+      if (!activeRootsUnchanged()) { inventoryFailed = true; stop('ROOT_IDENTITY_UNKNOWN'); }
       if (transport.snapshot().stderrBytes > bounds.stderrBytes) stop('STDERR_LIMIT');
     }, 250);
     receiveLoop = (async () => {
@@ -160,13 +176,13 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
       }
     })().catch(() => { stop('RECEIVE_UNKNOWN'); });
     await transport.ready; result.ready = true;
-    if (result.failure || !inspect() || now() >= bounds.stopMs - 10000) throw Error('Ready gate');
+    if (result.failure || !activeRootsUnchanged() || now() >= bounds.stopMs - 10000) throw Error('Ready gate');
     result.modelListCalls = 1;
     const page = await transport.request('model/list', { cursor: null, limit: 20, includeHidden: false }, { timeoutMs: 10000 });
     const bytes = Buffer.from(json(page));
     if (bytes.length > bounds.pageBytes || !Array.isArray(page?.data) || page.data.length > 20) throw Error('Page bound');
     const normalized = normalizeModelPage(page);
-    if (result.failure || !inspect()) throw Error('Catalog gate');
+    if (result.failure || !activeRootsUnchanged()) throw Error('Catalog gate');
     // Only validated catalog fields survive. Notification/remote-error bodies and ready strings do not.
     const normalizedBytes = Buffer.from(json(normalized));
     if (normalizedBytes.length > bounds.pageBytes) throw Error('Normalized page bound');
@@ -187,7 +203,7 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
       && !report.observerFailed && report.streamEnded && report.childCloseObserved
       && report.writtenBytes === stderr.length && report.observedBytes === stderr.length);
     // Keep a root-local original before a private archival copy, so copy failure cannot discard the only complete bytes.
-    if (roots[0]?.prepared) {
+    if (result.processCleanupComplete && roots[0]?.prepared && activeRootsUnchanged()) {
       try { writeFile(path.join(roots[0].path, 'control', 'stderr.raw'), stderr, 'stderrDiskBytes'); originalStderrSaved = true; }
       catch { fail('STDERR_ORIGINAL_PERSIST_UNKNOWN'); }
     }
@@ -198,7 +214,8 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
     result.diagnosticComplete = result.retainedDiagnosticArtifact.complete;
     const archivalCopySaved = result.retainedDiagnosticArtifact.closed && result.retainedDiagnosticArtifact.flushed
       && result.retainedDiagnosticArtifact.identityConfirmed && result.retainedDiagnosticArtifact.bytes === stderr.length;
-    const inventoryComplete = inspect();
+    const inventoryComplete = result.processCleanupComplete ? inspect() : false;
+    result.finalInventory = result.processCleanupComplete ? 'observed-after-close' : 'not-observed-active-or-unknown';
     const descriptorsClosed = descriptors.every(record => record.closed) && result.retainedDiagnosticArtifact.closed;
     if (result.processCleanupComplete && descriptorsClosed && !inventoryFailed && inventoryComplete && archivalCopySaved) {
       for (const root of roots) {

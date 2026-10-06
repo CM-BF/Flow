@@ -26,7 +26,7 @@
 
 `raw≤1MiB` 是本片**实际留存材料**上限：prepared≤256KiB、单页材料≤128KiB、通知只计数、stderr captured+根原件+私有副本≤24KiB、receipt/CLI≤32KiB、outer capture+副本≤8KiB、人工 archive≤128KiB，剩余留作有限 overhead；最终逐项实算，prepared/archive互斥，删除不冲减已计写入。R06 不提供累计 stdout wire 字节；frame/queue 仅峰值限制，报告 `stdoutWireBytes=null`，绝不声称整个 wire 输出≤1MiB。
 
-ownTMP 上限8MiB同时检查 logical 和 allocated（blocks×512），覆盖两个本次 roots 的全部内容（含目录/control/profile/state）；每250ms及各阶段/关闭后做有界 nofollow inventory（最多512项、深度8，symlink/未知类型/inode改变即 unknown 停止）。超界立即 close；轮询不是硬磁盘配额、未观察的写删峰值未知。清理前必须 childCloseObserved、streamEnded 且 confirmed-exited、宿主 sink FD closed、根同 inode；任何资源 identity/inventory/close 未知保留精确已知路径，retained 完整性单列，不输出目录内容。自动扫描只触本次两个随机 own roots。nested目录枚举前后及递归完成时复核dev/ino与非symlink；这仍不是面对并发恶意替换者的race-proof文件系统隔离，未观察竞争保持限制。
+ownTMP 上限8MiB同时检查 logical 和 allocated（blocks×512），覆盖两个本次 roots 的全部内容（含目录/control/profile/state）；factory前及确认关闭后才做有界inventory（opendirSync bufferSize=1/非递归、逐项最多512项、深度8；Dir close未知也令inventory不完整）。活动期每250ms只lstat两个固定top roots并核同inode，不进入state/control；活动期及写删峰值unknown，8MiB是前后完整样本上限，不是即时/硬配额。清理前必须 childCloseObserved、streamEnded 且 confirmed-exited、宿主 sink FD closed、根同 inode；任何资源 identity/inventory/close 未知保留精确已知路径，retained 完整性单列，不输出目录内容。自动扫描只触本次两个随机 own roots。完整遍历只在本次受控writer启动前或已确认关闭后；nested目录枚举前后及递归完成时核dev/ino/非symlink，仍不宣称面对未知外部恶意writer的race-proof隔离。close未知时不向目标可写control补写stderr原件，只留独立私有prefix和根身份。
 
 ## 精确实现范围与零目标验证
 
@@ -39,3 +39,5 @@ ownTMP 上限8MiB同时检查 logical 和 allocated（blocks×512），覆盖两
 设计7e9bd5b2已获Mika/root 17:17:20 UTC只读APPROVED，16repo+4external+2archived无差异；实现只纳pendingRequests=1与双root全量计量收紧。此处实现仍未验证/未独审，实际NOT_OPEN。固定窗口字面go-native-catalog-probe-once。caller不发turn/auth/login/推理请求；native自身外网尝试/账单未经观察保持unknown，不由deny配置推0。
 
 源码checkpoint包含薄caller/entry/outer与12项fake用例，检查PENDING；末次result部分写失败返回safe result与该descriptor身份，CLI另判post-persistence字节/时间。fingerprint直接复用原node-rootliteral inert entry的具名函数（它仅静态加载原loader；旧host动态执行分支不会进入），不复制transport或拉入旧canarydriver。
+
+实现审查增量：入口预约open即记录身份、成功部分bytes与flush/close状态；任何失败返回targetCalls=0的有限receipt，不落成generic null。载入失败仍保预约，若factory已调用则target数量/根完整性unknown。现source增量另以5个必要定向检查（原inventory1+新4）验证，原12raw固定不改；实际仍NOT_OPEN。

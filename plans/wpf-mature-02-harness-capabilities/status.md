@@ -15,7 +15,7 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | 本片native probe薄caller/入口/12fake用例已写，检查PENDING/0目标，NOT_OPEN；OpenSSL四fake4/4及准备批准仍仅原packet。Mika17:13:34正式接收CORE sourceea276/packet23016bbb，29distinct分次16+5+8、两strict0；本owner不重跑，provider/UI未验。 |
+| 当前检查 | 本片native probe一次12/12 fake+原生惰性import/sh-n exit0，0实际目标；entry预约P2与活动期walker窄修待增量5检查/独审，NOT_OPEN；OpenSSL四fake4/4及准备批准仍仅原packet。Mika17:13:34正式接收CORE sourceea276/packet23016bbb，29distinct分次16+5+8、两strict0；本owner不重跑，provider/UI未验。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；core首leaf main22d5ca67159b35bb794b2711cf6df0cb905b92e8已接收；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |

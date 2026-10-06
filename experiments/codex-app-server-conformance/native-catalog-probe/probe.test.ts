@@ -2,7 +2,7 @@ import { afterAll, afterEach, describe, expect, it, vi } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { runNativeCatalogProbe, inspectOwnedRoots, bounds } from './probe.mjs';
-import { prepareDelivery } from './execute-reviewed.mjs';
+import { prepareDelivery, reserveEntry, entryFailure } from './execute-reviewed.mjs';
 
 const owned: { path: string; identity: { dev: number; ino: number } | null; removed: boolean }[] = [];
 function fixtureRoot(prefix: string) {
@@ -25,7 +25,8 @@ afterEach(() => {
 afterAll(() => {
   const bytes = Buffer.from(`${JSON.stringify({ fixtures: owned, allRemoved: owned.every(item => item.removed) })}\n`);
   if (bytes.length > 4096) throw Error('Fixture receipt bound');
-  const fd = fs.openSync('docs/evidence/wpf-mature-02/native-catalog-probe/checks/fake-roots.json',
+  const receipt = process.env.FLOW_NATIVE_FAKE_PHASE === 'review-delta' ? 'delta-roots.json' : 'fake-roots.json';
+  const fd = fs.openSync(`docs/evidence/wpf-mature-02/native-catalog-probe/checks/${receipt}`,
     fs.constants.O_WRONLY | fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_NOFOLLOW, 0o600);
   try { fs.writeFileSync(fd, bytes); fs.fsyncSync(fd); } finally { fs.closeSync(fd); }
 });
@@ -157,9 +158,72 @@ describe('native catalog caller without any real child or listener', () => {
     expect(large.complete).toBe(false); expect(large.withinLimit).toBe(false);
     let enumerated = false;
     const changed = inspectOwnedRoots(roots, { ...fs,
-      readdirSync(file: any) { if (String(file) === nested) enumerated = true; return fs.readdirSync(file); },
+      opendirSync(file: any, options: any) {
+        const directory = fs.opendirSync(file, options); if (String(file) === nested) enumerated = true; return directory;
+      },
       lstatSync(file: any) { const value = fs.lstatSync(file); if (String(file) === nested && enumerated) value.ino += 1; return value; },
     } as any);
     expect(changed.complete).toBe(false); expect(changed.withinLimit).toBe(false);
+  });
+  it('review delta preserves entry reservation identity and exact zero targets on partial/flush/close failure', () => {
+    const base = fixtureRoot('/private/tmp/flow-native-probe-entry-');
+    for (const mode of ['partial', 'flush', 'close']) {
+      const file = path.join(base, `${mode}.json`); let written = false;
+      const io = { ...fs,
+        writeSync(fd: number, bytes: any, offset: number, length: number) {
+          if (mode === 'partial') { if (written) throw Error('partial failure'); written = true; return fs.writeSync(fd, bytes, offset, 2); }
+          return fs.writeSync(fd, bytes, offset, length);
+        },
+        fsyncSync(fd: number) { if (mode === 'flush') throw Error('flush failure'); return fs.fsyncSync(fd); },
+        closeSync(fd: number) { fs.closeSync(fd); if (mode === 'close') throw Error('close ACK unknown'); },
+      };
+      const artifact = reserveEntry(file, '{"consumed":true}\n', io as any);
+      const result = entryFailure(artifact, 1000); const delivery = prepareDelivery(result, 100);
+      expect(artifact.owned).toBe(true); expect(artifact.identity).not.toBeNull(); expect(artifact.complete).toBe(false);
+      expect(artifact.bytes).toBe(mode === 'partial' ? 2 : 18);
+      expect(result.targetCalls).toBe(0); expect(result.targetStarted).toBe('not-started'); expect(delivery.passes).toBe(false);
+      expect(JSON.parse(delivery.line).entryReservation).toEqual(artifact);
+    }
+  });
+  it('review delta does not recurse or write original stderr with an active/unknown target', async () => {
+    const fixture = setup({ closeReport: { child: 'unconfirmed' }, stderrReport: { streamEnded: false, incomplete: true } });
+    let active = false, activeOpens = 0; const originalFactory = fixture.input.factory;
+    fixture.input.factory = vi.fn((config: any) => { active = true; return originalFactory(config); });
+    const result = await fixture.run({ ...fs, opendirSync(file: any, options: any) {
+      if (active) { activeOpens++; throw Error('Must not inspect active children'); } return fs.opendirSync(file, options);
+    } } as any);
+    expect(activeOpens).toBe(0); expect(result.finalInventory).toBe('not-observed-active-or-unknown');
+    expect(result.retainedRoots).toHaveLength(2); expect(result.rootCleanupComplete).toBe(false);
+    expect(fs.existsSync(path.join(result.roots[0].path, 'control/stderr.raw'))).toBe(false);
+    expect(result.retainedDiagnosticArtifact.bytes).toBe(Buffer.byteLength('fixture stderr'));
+  });
+  it('review delta traverses only before factory and after confirmed close', async () => {
+    const fixture = setup(); let active = false, started = false, activeOpens = 0, closedOpens = 0; const originalFactory = fixture.input.factory;
+    fixture.input.factory = vi.fn((config: any) => {
+      active = true; started = true; const transport = originalFactory(config);
+      return { ...transport, close: async () => { const report = await transport.close(); active = false; return report; } };
+    });
+    const result = await fixture.run({ ...fs, opendirSync(file: any, options: any) {
+      if (active) activeOpens++; else if (started) closedOpens++; return fs.opendirSync(file, options);
+    } } as any);
+    expect(activeOpens).toBe(0); expect(closedOpens).toBeGreaterThan(0);
+    expect(result.status).toBe('CATALOG_OBSERVED'); expect(result.finalInventory).toBe('observed-after-close');
+  });
+  it('review delta reads entries incrementally and treats directory close failure as incomplete', () => {
+    const base = fixtureRoot('/private/tmp/flow-native-probe-dir-'); const file = path.join(base, 'template'); fs.writeFileSync(file, '');
+    const stat = fs.lstatSync(base), leaf = fs.lstatSync(file); const roots = [{ path: base, identity: { dev: stat.dev, ino: stat.ino } }];
+    let reads = 0, closes = 0;
+    const result = inspectOwnedRoots(roots, { ...fs,
+      lstatSync(value: any) { return String(value) === base ? fs.lstatSync(value) : leaf; },
+      opendirSync(value: any, options: any) {
+        expect(options).toEqual({ bufferSize: 1, recursive: false });
+        return { readSync() { reads++; return { name: `entry-${reads}` }; }, closeSync() { closes++; } };
+      },
+    } as any);
+    expect(result.complete).toBe(false); expect(reads).toBeLessThanOrEqual(512); expect(closes).toBe(1);
+    const unknownClose = inspectOwnedRoots(roots, { ...fs, opendirSync(value: any, options: any) {
+      const dir = fs.opendirSync(value, options); return { readSync: () => dir.readSync(), closeSync() { dir.closeSync(); throw Error('close unknown'); } };
+    } } as any);
+    expect(unknownClose.complete).toBe(false);
   });
 });
