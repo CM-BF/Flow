@@ -10,7 +10,7 @@
 
 ## 最小模块与并发规则
 
-中心维护domain承担版本CAS、幂等、不可变审计与admission gate；claim仅调用gate，heartbeat/report保持原语义。状态accepting→draining→maintenance，后者仅在相同runner行锁下核completed_at IS NULL为0。可信host临界stop/start持相同锁，普通status/旧pending计数不授予停止许可。维护期间失败保持关门/unknown，不用revoke代替drain。
+中心维护domain承担版本CAS、幂等、不可变审计与admission gate；claim仅调用gate，heartbeat/report保持原语义。状态accepting→draining→maintenance，后者仅在相同runner行锁下核completed_at IS NULL为0。事务在设置maintenance后立即提交；不跨stop/start持PG锁，避免新中心迁移/配置发布死锁。持久gate加HTTP禁止maintenance恢复、本机operation.lock覆盖更新；普通status/旧pending计数不授予停止许可。维护期间失败保持关门/unknown，不用revoke代替drain。
 
 本机CLI保持operation.lock，停止只用原有PID/启动时间/命令/PGID核验，不扫描端口杀人。HTTP owner可停止领取或放弃尚未进入maintenance的排空；maintenance恢复仅可信host核新进程后调用同domain显式resume并审计，避免并发HTTP提前放行。无热更新、多宿主协调、通用服务框架或新依赖。
 
