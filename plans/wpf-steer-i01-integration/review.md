@@ -13,3 +13,7 @@ Base：df29fb511df029a0922ace0f4973f3fe3736e502
 独立执行 [60/60 局部和直接依赖测试](../../docs/evidence/wpf-steer-i01/independent-review-tests.log)：8 integration + 33 control + 19 P01，2026-10-06 09:47:23 UTC，4.56s，exit0。独立 CUA 61475 验证普通 draft 与 steer 分离、Hide/reopen 保留并回焦、一次 fixture accepted、下一稿和 close Cancel 保留、disable/enable 保稿且 stale 须 Refresh、深色；warn/error=[]，目视作者双 390 图。
 
 作者 typecheck/build/dev10+prod10 的来源见 [README](../../docs/evidence/wpf-steer-i01/README.md)；reviewer 未重跑两套浏览器。0 provider / 产品DB / 真实 center；未验实际模型遵循、Safari/Firefox/屏读、reload 持久原 key。批准只绑定实现 target，不覆盖之后的新代码、main 集成或完整 MATURE06。元数据后继提交不改批准源。
+
+## 主线接收（与独审分别记录）
+
+2026-10-06 10:00 UTC：Execution Lead 正式 main/origin f181d84b5fb3652d62e2a181acff442d42b3e066 pushed/clean；owner 独立核 target 与 57f8 元数据均祖先、11 源 SHA256 与批准清单一致，见 [回执](../../docs/evidence/wpf-steer-i01/main-receipt.json)。Lead 组合 59 源 / 50 direct / root+Web types 由主线证据归因，owner 未重跑。个人 runtime/预览未变；不是新全产品审查。

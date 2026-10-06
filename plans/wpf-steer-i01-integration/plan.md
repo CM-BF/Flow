@@ -1,6 +1,6 @@
 # WPF-STEIRI01 运行中指令接入
 
-状态：in-progress。所属大 task [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，co-lead Web /root（执行管理 d01_owner）。2026-10-06，唯一 owner w01_owner / 派发 gpt-6-astra ultra，固定基线 df29fb511df029a0922ace0f4973f3fe3736e502。遵循[根模块规则](../../AGENTS.md#modular-design)。
+状态：本片 delivered；完整所属大task仍开放。所属大 task [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，co-lead Web /root（执行管理 d01_owner）。2026-10-06，唯一 owner w01_owner / 派发 gpt-6-astra ultra，固定基线 df29fb511df029a0922ace0f4973f3fe3736e502。遵循[根模块规则](../../AGENTS.md#modular-design)。
 
 ## 已批准范围与接口
 

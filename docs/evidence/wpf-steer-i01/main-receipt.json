@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-06T10:00:25.764637+00:00",
+  "acceptedMain": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7",
+  "acceptedMetadata": "57f8aa94ac2c9fad148619594e1cab9237bd3773",
+  "ancestorsVerified": true,
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "acceptedMainSha256": "9de8d08db9a3ab1f8649cbca354929cb60fbfb803d02781b7929ecbc0bfc42d1",
+      "approvedSha256": "9de8d08db9a3ab1f8649cbca354929cb60fbfb803d02781b7929ecbc0bfc42d1",
+      "equal": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "acceptedMainSha256": "38669bba0b3697b48e180ee6119474cbeeda6ce9aa0f2a9bb1fc2148a5efd433",
+      "approvedSha256": "38669bba0b3697b48e180ee6119474cbeeda6ce9aa0f2a9bb1fc2148a5efd433",
+      "equal": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "acceptedMainSha256": "eebfb3472c356f0e9514ec2984f4c12b624722263735b23f7d3b8b2feb9869b4",
+      "approvedSha256": "eebfb3472c356f0e9514ec2984f4c12b624722263735b23f7d3b8b2feb9869b4",
+      "equal": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "acceptedMainSha256": "30546e32c496a85e93503f25c2b3634fdefe25115b38cdc311a965ae3bfd9ef2",
+      "approvedSha256": "30546e32c496a85e93503f25c2b3634fdefe25115b38cdc311a965ae3bfd9ef2",
+      "equal": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "acceptedMainSha256": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9",
+      "approvedSha256": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9",
+      "equal": true
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "acceptedMainSha256": "8b122b79c5ffad718995943430bf6d2a621bbd6471b3536eac57c0a224ce294b",
+      "approvedSha256": "8b122b79c5ffad718995943430bf6d2a621bbd6471b3536eac57c0a224ce294b",
+      "equal": true
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "acceptedMainSha256": "773d721cf913d1f8f7efc5f8aba045c0df2514091280f6184e683dfcfc9704fb",
+      "approvedSha256": "773d721cf913d1f8f7efc5f8aba045c0df2514091280f6184e683dfcfc9704fb",
+      "equal": true
+    },
+    {
+      "path": "apps/web/test/conversation-steering-integration.browser.ts",
+      "acceptedMainSha256": "2cd31abe531daec079e3d7b7fe2688c0b310f7208a7a64dc086f48df4708690f",
+      "approvedSha256": "2cd31abe531daec079e3d7b7fe2688c0b310f7208a7a64dc086f48df4708690f",
+      "equal": true
+    },
+    {
+      "path": "apps/web/test/conversation-steering-integration.fixture.ts",
+      "acceptedMainSha256": "aa406044d781da809d9705ba347d486663a864b34cda4b08e7fa61bbd9b9699c",
+      "approvedSha256": "aa406044d781da809d9705ba347d486663a864b34cda4b08e7fa61bbd9b9699c",
+      "equal": true
+    },
+    {
+      "path": "apps/web/test/conversation-steering-integration.test.ts",
+      "acceptedMainSha256": "4c790b50111483b2e5411d6fade6465458558faf60ac3bd0174a205e6b7ef598",
+      "approvedSha256": "4c790b50111483b2e5411d6fade6465458558faf60ac3bd0174a205e6b7ef598",
+      "equal": true
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "acceptedMainSha256": "62197d2e224d715af7ec045d2b1f2fcbbc2c412353af07769614ad84bfa191f8",
+      "approvedSha256": "62197d2e224d715af7ec045d2b1f2fcbbc2c412353af07769614ad84bfa191f8",
+      "equal": true
+    }
+  ],
+  "source": "Execution Lead formal receipt; fixed main docs/evidence/i02/native-tui-integration.json",
+  "checks": "Owner performed ancestry and 11 source hash checks only. Lead combination checks are attributed to Lead, no product checks rerun.",
+  "runtime": "Personal runtime and 61475 fixture unchanged."
+}

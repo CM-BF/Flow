@@ -36,4 +36,4 @@ d01_owner 独立 [60/60](independent-review-tests.log)（09:47:23 UTC，4.56s）
 
 保留 integration-first.log 中非法测试status `completed` 的失败；direct-tests.log 中漏必填manifest contributions的fixture失败；修复后60通过。browser-first至fourth记录依次为dev自动连接、Mac光标定位、窄屏未关闭已有sidebar造成的测试操作问题；不据此称产品回归。browser-fifth为未固定工作树9段PASS；最终固定10段以上述两JSON为准，未覆盖旧原始记录。
 
-未验证真实中心/provider/DB、Safari/Firefox/屏读、reload/崩溃原key持久恢复、实际模型遵循指令。beforeunload只尽力提醒；用户确认离开会丢本页恢复，但不cancel中心任务。Accepted/Received/Consumption observed不等于模型采纳。main尚未集成，个人runtime未升级。WPF-MATURE-06完整成熟聊天目标仍有后继，不能用本片代称完成。
+未验证真实中心/provider/DB、Safari/Firefox/屏读、reload/崩溃原key持久恢复、实际模型遵循指令。beforeunload只尽力提醒；用户确认离开会丢本页恢复，但不cancel中心任务。Accepted/Received/Consumption observed不等于模型采纳。main f181d84b5fb3652d62e2a181acff442d42b3e066 已正式接收（[owner源核验](main-receipt.json)）；个人runtime未升级。WPF-MATURE-06完整成熟聊天目标仍有后继，不能用本片代称完成。

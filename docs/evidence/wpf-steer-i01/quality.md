@@ -19,3 +19,7 @@
 ## 2026-10-06 09:51 UTC 独审后交付复核
 
 d01_owner 独立 APPROVED 固定 5cfebc639d7acd458d27f4543d00a32a9fd96fc7，60/60 和 CUA 窄旅程来源分别记入 review 与原日志副本。本段仅元数据，未重跑产品；实现保持固定。复核命名/职责、read/write 分权、私有 raw port 无递归、稳定 draft 与有界 binding 的原设计，无新增修复或未关闭 finding。更新检查阶段为 integration，main 接收 TODO 仍在进行；不把独审当 main 或真实 provider 验收。核 status parser / 文档链接 / 源码零差后独立元数据提交，提交后 clean 以 Git 回执为准。
+
+## 2026-10-06 10:00 UTC 主线收口
+
+只做 target/交付metadata 祖先与 11 批准源 hash 核对，全部一致。Lead 组合检查独立归因，不重复产品测试/浏览器。命名/职责/错误处理无源码变化；本段清码仅核文档时态、完成 TODO 与集成/运行区别。main 接收后全部 13 scope 停写，交管理者 fresh CAS release；释放后不追写。保留 61475 和其他预览。
