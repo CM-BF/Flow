@@ -307,3 +307,7 @@ CHAT05 typed活动初interface已固定ae4cc5c630b88616fe75c72eff9fc276a9f84f6c�
 06:09 U11/REQ43新增真实截图证据（root人工目视，管理仅核manifest字段/文件hash）：[真实两轮窄屏图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live/second-reply-dark-narrow.png)与05:59的synthetic preflight分开；manifest观测06:04:30.199828Z，web3d4985/centerRunnerfb906/caller0695bae，budget CLOSED 2/2。图中真实中文两轮可见，底部0 waiting loaded、两处Execution details、配置/legacy/禁用控件及长footer叠加，root估计约占底部三分之一。功能验收仍通过，不升为失败或输入延迟结论。后继沿既定顺序先真实聊天/折叠详情，再单一外层execution disclosure收拢；保留model/access/queue主要项和unsupported/未知回执，技术限定置可达详情；同390×844/键盘验收，unknown不当actual。见[归属与固定证据](../../docs/evidence/web-platform/queue-live-ux-observation.json)，不新建重复任务/模型调用。
 
 CHAT05后继正文边界：超64KiB仅prefix+full原文digest，完整超限正文不提供恢复；截断JSON明确文本fallback，parse失败不当provider失败，不扩blob。当前generic活动detail上限1MiB独立；以未来冻结接口分别验收，不能互相覆盖。
+
+## 跨Lead沟通节奏（本轮GO约定）
+
+对外消息合并，只在四类实质变化发送：接口需要动作、实际阻断、固定candidate已可独立review、主线接收/准确集成输入。纯metadata dirty→clean和同事实确认保留唯一canonical，合并到下一实质回执；长SHA/scope清单放证据文件，不逐条刷外部消息。既已发送的来源登记/approval不反复催集成。真实queue验收只消费固定证据，不重跑求新时间；新部署/输入变化后按必要范围一次验证。此节仅降低沟通重复，不降低状态唯一源、固定review与正式领取要求，也不把未回执的main/部署猜成完成。
