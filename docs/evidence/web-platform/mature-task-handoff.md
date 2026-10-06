@@ -1,6 +1,16 @@
 # 成熟聊天大task来源与登记队列
 
-## ATTACH01：给生产 factory 的窄 fixture 接缝（当前优先）
+## ATTACH01 最新获审完整输入：runtime + factory fixture
+
+**Lead请消费固定1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，最终metadata d32a2a2507dc96508479f8d5dd40714c3167e9e0。** 11:24:56UTC管理已核local=origin/clean、fixed/current/新manifest累计16源全等，原runtime-candidate.json及8701/78证据未改；[只读审计](attach01-fixture-final-audit.json)。
+
+当前唯一完整清单：[/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json)，SHA256 **d499448d91feeee150d1cc33da0843628840b360326b4605ca066b9d055bdae3**。其中两fixture/专测=1f0，另外14源=原8701；该manifest以组合记录连接两次独审，不宣称78在新target重跑。单一canonical仍attachment-resources/plans/wpf-attach01-resources。
+
+Root对1f0两文件独审APPROVED/0blocking：独立2pass、27deselected、9.23s，四自有DB清零；作者六受影响case/严格types分开。最终metadata已原样归档root audit/log，actualparser0/human完整。**本树仍实际走旧factory fallback，正式自动026/mount尚未验证。** 请Lead将此固定输入用于新正式factory专测：普通/child六route全有则不重复注册，partial失败；真实pre026原行先验证，再首次026/fullfactory HTTP原key重放。不要把fallback结果当生产默认接通，不扩大重跑78。
+
+原ef617d78 v2十八scope保留至main合法收口；作者已全源码停写。panels现在恢复CACHE只读Interface/容量与保护/精确scope方案，须对照ATTACHI及其他lead最新writer，root结构审查后fresh COMMITTED才写。WORKSPACEPERF1711限定partial仍待main；这不是缓存优化完成或MATURE05整体阻塞。
+
+## ATTACH01 fixture 接缝授权依据（11:18历史，交付以上方新输入为准）
 
 Root已批准panels仅原十八scope内的 `apps/server/src/attachments/fixture.ts`、`apps/server/src/attachments/context.test.ts` 修复；[11:15:19.231Z fresh账本](attach01-fixture-handoff-ledger.json)确认ef617d78 v2仍active，owner/tree/18literal一致。原8701/1d236、78独审和原raw保持历史固定；新两文件target/manifest与受影响结果由同一owner另行绑定，不把旧批准搬到新target。
 
@@ -30,7 +40,7 @@ GO最新裁决覆盖先前Arc先行：1711 partial已足够；panels下一只读
 
 Lead/root已纠正准确定位：root `noUncheckedIndexedAccess` 将 fixture 构建矩阵的 `[label,target]` 推为 `string | undefined`，127/134两错误；不是env/token，也不是ENG领域失败。[原始输入](release02-root-types-input.log)/[三scope修复方案](release02-tuple-types-proposal.json)。w01在ATTACHI安全点用新web-release-type-fix/base2e71，[03323bce v1 COMMITTED](release02-take-receipt.json)11:07:28.265Z三scope已fresh领取并followup派发，只加readonly typed tuple或narrow；不改版本/旅程，不重跑123/八browser/个人发布。旧RELEASE claim已释放不复用；旧定向tsc通过只代表当时选项，保留证据，根严格检查另列。原拟runner_owner因thread limit未启动；实际唯一独审由Execution Lead完成，见本文件顶部回执。
 
-## Lead当前所需：ATTACH phase1+runtime唯一完整manifest
+## 原8701 runtime完整manifest（历史保留；当前组合输入见顶部）
 
 已实核 2026-10-06 11:02:57UTC：`attachment-resources` local=remote **1d236cbe2299117e3b63887fda3d1c0e140f56b0**，clean；实现 **8701a6cf547248e70aa5758f05da1d7d314ae9c0**。
 

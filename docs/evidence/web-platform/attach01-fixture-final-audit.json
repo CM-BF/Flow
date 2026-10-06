@@ -1,0 +1,142 @@
+{
+  "observedAt": "2026-10-06T11:24:56.705665+00:00",
+  "kind": "management fixed-input audit; no product retest",
+  "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+  "delivery": "d32a2a2507dc96508479f8d5dd40714c3167e9e0",
+  "remote": "d32a2a2507dc96508479f8d5dd40714c3167e9e0",
+  "clean": true,
+  "manifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json",
+  "manifestSha256": "d499448d91feeee150d1cc33da0843628840b360326b4605ca066b9d055bdae3",
+  "cumulativeSourceCount": 16,
+  "sources": [
+    {
+      "path": "apps/server/src/attachments/attachments.test.ts",
+      "sha256": "25f102dccd567251faad7376e240c1d6436ad3a45fe52a62c13be6d5fe7d50f2",
+      "matches8701": true
+    },
+    {
+      "path": "apps/server/src/attachments/context.test.ts",
+      "sha256": "6bfd2830c9ee8b89e5f7ca7d1c12671ee02c3d76eb1e0d7b813fc9fd4ddbfa71",
+      "matches8701": false
+    },
+    {
+      "path": "apps/server/src/attachments/fixture.ts",
+      "sha256": "584cf45b3c12375d20031ac80e63de4e529c7b2351243136f2eab8bfbd28b0d2",
+      "matches8701": false
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+      "matches8701": true
+    },
+    {
+      "path": "apps/server/src/attachments/storage.ts",
+      "sha256": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560",
+      "matches8701": true
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+      "matches8701": true
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "sha256": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603",
+      "matches8701": true
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8",
+      "matches8701": true
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "sha256": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57",
+      "matches8701": true
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+      "matches8701": true
+    },
+    {
+      "path": "packages/contracts/src/attachments.test.ts",
+      "sha256": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127",
+      "matches8701": true
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+      "matches8701": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "matches8701": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+      "matches8701": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+      "matches8701": true
+    },
+    {
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d",
+      "matches8701": true
+    }
+  ],
+  "metadataOnlyAfterTarget": [
+    "docs/evidence/wpf-attach01/README.md",
+    "docs/evidence/wpf-attach01/fixture-compat-approved-parser.json",
+    "docs/evidence/wpf-attach01/fixture-compat-candidate.json",
+    "docs/evidence/wpf-attach01/fixture-compat-claim.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/checks.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/direct.log",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/context-runtime-cleanup.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/context-runtime-factory.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/context-runtime-resource.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/crash-center-cleanup.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/crash-center-factory.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/crash-center-resource.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/resources-cleanup.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/resources-factory.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/resources-resource.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/upgrade-assertions.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/upgrade-cleanup.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/upgrade-factory.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/resources/upgrade-resource.json",
+    "docs/evidence/wpf-attach01/fixture-compat-first/types.log",
+    "docs/evidence/wpf-attach01/fixture-compat-parser.json",
+    "docs/evidence/wpf-attach01/fixture-compat-validation.md",
+    "docs/evidence/wpf-attach01/quality.md",
+    "docs/evidence/wpf-attach01/root-fixture-compat-audit.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/context-runtime-cleanup.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/context-runtime-factory.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/context-runtime-resource.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/crash-center-cleanup.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/crash-center-factory.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/crash-center-resource.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/resources-cleanup.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/resources-factory.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/resources-resource.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/upgrade-assertions.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/upgrade-cleanup.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/upgrade-factory.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat-resources/upgrade-resource.json",
+    "docs/evidence/wpf-attach01/root-fixture-compat.log",
+    "docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json",
+    "plans/wpf-attach01-resources/plan.md",
+    "plans/wpf-attach01-resources/review.md",
+    "plans/wpf-attach01-resources/status.md"
+  ],
+  "originalRuntimeManifestUnchanged": true,
+  "rootAuditRawIdentical": true,
+  "publicFactoryAutomaticMountVerified": false,
+  "reviewAttribution": "root independent 2 passed/27 deselected/9.23s and four clean databases; author six affected cases; original8701 root78 stays separate",
+  "claim": "ef617d78 v2 retained until main closeout"
+}

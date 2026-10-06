@@ -203,6 +203,8 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 
 ## 多lead领取与转交规则（U08）
 
+本轮用户再次强调与其他leads防overlap、take在dashboard标清楚，已对照U08完整原话和U12准确转述，仍归WPF-REQ-37，不新增平行需求。当前执行规则：每次开写先fresh D04按task/owner/worktree/branch与精确literal核冲突，收到COMMITTED receipt才可写；扩scope用当前version原子amend。唯一status继续承担进度事实，领取与release状态由账本聚合展示；owner完成正常push/双端clean并明确全scope停写后，管理fresh CAS release，原receipt进入集中证据。源缺失/陈旧或已释放不是默许抢写；跨lead共享路径必须明确交权。以下早期过渡记录仅解释历史，不覆盖当前规则。
+
 D04由原Execution Lead唯一承接并复用dashboard，我方不写D03/D04或共享registry。过渡期新take和transfer先读dashboard、对应权威status与live Git确认占用，再由原Lead单点登记；缺失/陈旧/冲突不当空闲。记录领取/更新时间用当前实观登记，不能倒填开始。分配账本只存lead/owner/task/scope/claim/handoff，不存第二套TODO/check/review，后者仍owner status唯一。
 
 M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不写App、TaskThread或既有workspace。稳定host提交后通过明确handoff/cherry-pick交M02挂载，需要改host则回原唯一owner或登记转交。不同worktree不意味着允许同一功能逻辑重复实施。dashboard本身是只读视图；主线D04新增PostgreSQL工程协调独立schema/DB与CLI take/list/release/handoff，实现事务task/父子路径冲突核验、version与双方handoff、receipt后开写且不自动过期抢占。既有M02/P01合法实施继续并迁移登记；展示冲突时保留依赖集成关系，不以不同worktree掩盖重复实现。

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:21 UTC / RELEASE02已main收口释放；ATTACH fixture接缝修复、ATTACHI实施 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:25 UTC / ATTACH fixture已独审交付，正式factory组合待验；ATTACHI实施、CACHE只读准备 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -18,7 +18,7 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 附件保存与恢复已通过独立检查；输入预览正在实现，生产中心接通仍待组合验证 |
-| 下一可用交付 | 完善附件升级与中心启动验证，交付附件选择和恢复界面；缓存改进方案随后继续 |
+| 下一可用交付 | 将附件保存和升级能力接入正式中心；继续附件选择与恢复界面，以及关闭视图后的缓存保护方案 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -71,7 +71,7 @@
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
-| ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v2十八scope | 原runtime8701/final1d236已root78独审；ef617 v2内仅fixture/context两文件适配factory升级，旧raw不变，生产固定mount输入待共享owner |
+| ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v2十八scope | runtime8701/root78 + fixture1f0/root2已审；finald32a双端clean，新累计16-source清单位于queue顶部，ef617 v2保留等main；正式factory组合未验 |
 | RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，20a6529a v2 released四scope | 7805/db08已main c450，owner41276 pushclean后停写/release；format2与descriptor绑定，个人发布仍Lead |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
@@ -93,7 +93,7 @@
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
 - CONTEXTI已main并释放；STEIRI01、ACTIVITYREAD和D08已main f181并全部停写释放，source见集中handoff。
 - GO已将MATURE03附件端到端责任交Web/root；root已冻结附件设计；panels十八scope运行域已审，现只修两fixture接缝；w01 ATTACHI已取十一新scope实施。共享receipt四Web路径09:51:27 fresh账本无writer；仅时点观察，未来仍fresh take。
-- 跨lead接口/资源裁决才有界直接协调；GO每完整大task只独立blocker与Done一次。无不可解除的整体阻塞；用户要求take在dashboard明确展示、各lead防overlap保持验收项。
+- 跨lead接口/资源裁决才有界直接协调；GO每完整大task只独立blocker与Done一次。无不可解除的整体阻塞；用户再次要求take在dashboard明确展示、各lead防overlap，已核plan U08/U12与REQ37完整覆盖；fresh COMMITTED后才写、停止后fresh release及其账本展示保持验收项。
 
 ## 当前服务与验收边界
 
