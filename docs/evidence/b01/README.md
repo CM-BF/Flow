@@ -34,7 +34,7 @@
 
 ## 当前边界
 
-产品局部修复已在分支通过功能回归，尚未独立批准或集成；独立review/main集成分别见[status](../../../plans/b01-bounded-reads/status.md)/[review](../../../plans/b01-bounded-reads/review.md)。没有真实模型容量、并发执行压测、跨机网络或UI性能证据。架构无产品变更。
+产品局部修复已在分支通过功能回归，已获mika独立APPROVED，尚未完成修后性能复测或集成；独立review/main集成分别见[status](../../../plans/b01-bounded-reads/status.md)/[review](../../../plans/b01-bounded-reads/review.md)。没有真实模型容量、并发执行压测、跨机网络或UI性能证据。架构无产品变更。
 
 ## 候选对比与功能修复进展
 
@@ -43,3 +43,5 @@
 产品修复限定两个已amend文件，保持现有投影锁与总/每task200条上限。8项真实PG行为回归通过，功能窗口03:42:24.054Z–03:42:29.801Z，5.747秒；[结果](workspace-tests.json)/[命令](workspace-test-command.json)。保留跨task晚提交、201task、并发无重复等6项旧测试，追加同task行锁前缀和450事件跨批次2项。测试现在只创建/销毁唯一临时flow_m02_test库，不再清空共享flow_m02。功能测试期间主机并不空闲，耗时不作性能证据。
 
 [首次失败](workspace-tests-failed.json)为新增测试持锁等待FK插入造成，已按合法事务时间线修复；详见validation-history。此行为也提示workspace原有FK锁等待仍可能影响延迟，当前修复不声称消除写入争用。
+
+独立review：mika已批准实现 `70af7b45814d5ed31d9638649512358e1a0a834b`，另行8/8功能复跑通过（5.98秒），无findings；[review记录](../../../plans/b01-bounded-reads/review.md)与[原始stdout](independent-review-checks.txt)。

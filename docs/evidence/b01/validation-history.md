@@ -11,3 +11,5 @@
 - 2026-10-06T03:41:34.867Z–03:41:52.313Z：8项真实PG功能回归初跑exit1，7通过/1新测试失败。原始[失败报告](workspace-tests-failed.json)/[命令](workspace-test-command-failed.json)留存（原输出名workspace-tests.json已归档）。新测试让第二writer持有task FOR UPDATE并同步等待workspace插入；现有FK key-share须等待该事务，最终10秒SQL timeout，HTTP500被测试误作page读取。修正测试事务时间线：证明第二writer等锁并读到cursor1后释放读锁，观察第一提交，再重新锁定写入/提交cursor2；保留原全部行为断言，不改产品锁语义。旧late-commit/201task/并发投影/450事件前缀均已通过。该轮有共享主机背景负载，不记性能证据。
 
 - 2026-10-06T03:42:24.054Z–03:42:29.801Z：修后同8项真实PG回归exit0，8通过/0失败/0跳过，5.747秒；schema清理仅发生于当前运行新建专用库。类型检查随后通过。性能正式修后复测待Web窗口完成。
+
+- 2026-10-06T03:44:52Z：mika独立Node24/Vitest4.0.18复跑8/8通过，5.98秒，target70af7b4；原始stdout复制SHA-256 `3677d88c1461fb9d48f7742eee7f25d30fc4074a79d74b3bf2a5b89111d5413e`。实现与方法APPROVED，性能after证据尚待执行/复核。
