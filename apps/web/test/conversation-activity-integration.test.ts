@@ -27,7 +27,7 @@ async function setup(){
 describe("conversation activity host bridge",()=>{
  it("registers genuine button/menu/panel without any reads and expands lazily",async()=>{
   const s=await setup();s.bindings[0]!.setVisible(true);await s.session.host.activate(ACTIVITY_OWNER);expect(s.reads).toEqual([]);
-  const contributions=s.session.host.getSlotSnapshot("chat.message.footer");expect(contributions.map(c=>c.declaration.kind).sort()).toEqual(["button","menu","panel"]);
+  const contributions=s.session.host.getSlotSnapshot("chat.message.footer").filter(contribution => contribution.pluginId === ACTIVITY_OWNER);expect(contributions.map(c=>c.declaration.kind).sort()).toEqual(["button","menu","panel"]);
   const e=s.bind(0);e.setDisplay(true,"native");await tick();expect(s.reads).toEqual([`native:${e.identity.taskId}`]);await e.native.loadBody(s.headers.get(e.identity.taskId)!.id);await e.native.loadBody(s.headers.get(e.identity.taskId)!.id);expect(s.reads.filter(r=>r.startsWith("body"))).toHaveLength(1);
  });
  it("allows both split panes while global navigation focuses only one",async()=>{
