@@ -107,7 +107,7 @@ const assignments = [
   ['WPF-I01', 'Web 插件集成', '工作线', 'web-plugin-integration', 'wpf-i01-plugin-integration'],
   ['X01', '插件管理计划', '工作线', 'plugin-management-plan', 'x01-plugin-management'],
   ['R03', '远端Runner租约可靠性', '工作线', 'runner-reliability', 'r03-runner-reliability'],
-  ['B01', '分层读取性能与界限', '技术验证', 'bounded-read-performance', 'b01-bounded-reads'],
+  ['B01', '分层读取性能与界限', '技术验证', 'task-read-projections', 'b01-bounded-reads'],
   ['X02', '插件中心登记与命令', '工作线', 'plugin-registry', 'x02-plugin-registry'],
   ['WPF-PERF02', '活动窗口与阅读稳定', '工作线', 'web-activity-window', 'wpf-perf02-activity-window'],
   ['CHAT02', '真实助手正文事件', '工作线', 'conversation-native-events', 'chat02-native-messages'],
