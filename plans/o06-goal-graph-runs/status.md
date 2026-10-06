@@ -7,7 +7,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-graph-runs |
 | Branch | codex/goal-graph-runs |
 | 工作基线 / HEAD | base eb14991a170b72d7d974428b2e440e1faada2c1e；实现 f6ba02e8898ed1539786de381c41402d342e59a8 |
-| 工作树dirty状态 | 源码已固定；当前仅交付metadata待提交 |
+| 工作树dirty状态 | 已核812334714e1b0432e8bd492c378cf24c73803edf clean；本次仅聚合观察metadata |
 | 工作分支状态 | DELIVERED；待独立review |
 | 检查状态 | PASSED f6ba02e8898ed1539786de381c41402d342e59a8；34/34（29.74s）+tsc |
 | Review | NOT_STARTED |
@@ -34,3 +34,5 @@ claim5553ab55-2c0d-4e00-a3f5-54509e90a847 v1；[回执](../../docs/evidence/o06/
 2026-10-06 05:31 UTC Lead已登记并部署65源；标准时间格式已校正。0模型，native/runner桥接未实现。源码未独审。
 
 2026-10-06 05:34 UTC 作者交付 f6ba02e8898ed1539786de381c41402d342e59a8。新9+必要旧25=34不同检查，失败/修复/最终输出均保留。独立review未开始，main未集成，claim v1保留。0模型；真正native工具/query/NL/服务接线尚未完成。架构影响与target已报Lead待同步。
+
+2026-10-06 05:34 UTC 实际只读4320 /api/snapshot：source live指向本canonical，git8123347 clean，implementation f6ba02e范围unchanged，checks passed，stage review，3/4，issues=[]，main本片未集成；不将该聚合观察当独立工程review。
