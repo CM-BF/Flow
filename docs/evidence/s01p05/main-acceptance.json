@@ -1,0 +1,53 @@
+{
+  "observedAt": "2026-10-06 13:26:07 UTC",
+  "main": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+  "ownSources": [
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02",
+      "sourceCommit": "6336cd00b05843fb33093cf7c3157a4de9ea1815"
+    },
+    {
+      "path": "apps/server/src/event-state.test.ts",
+      "bytes": 23695,
+      "sha256": "1b9737a37932fdf8837e26e953caeb9c6f6d790436700fa2a76731d77b0f50c9",
+      "sourceCommit": "6336cd00b05843fb33093cf7c3157a4de9ea1815"
+    },
+    {
+      "path": "docs/evidence/s01p05/vitest.config.ts",
+      "bytes": 380,
+      "sha256": "a07b065884613ea9f926f1e55771d8bf4f5799ee6c6d519749eee975874e3e01",
+      "sourceCommit": "6336cd00b05843fb33093cf7c3157a4de9ea1815"
+    },
+    {
+      "path": "docs/evidence/s01p05/tsconfig.json",
+      "bytes": 940,
+      "sha256": "908d6571d2bdda410727c050af36315c772ef6f4b460a567fead9f8241981510",
+      "sourceCommit": "6336cd00b05843fb33093cf7c3157a4de9ea1815"
+    }
+  ],
+  "allSourceGitMainGitMainWTOwnWTMatched": true,
+  "integrationEvidence": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/event-capacity-integration.json",
+  "leadChecks": {
+    "pgPassed": 4,
+    "pgUnselected": 5,
+    "tasks": 4,
+    "databaseAbsent": true,
+    "rootTypesExit": 0,
+    "mixedTypesExit": 0
+  },
+  "ownerNewTests": 0,
+  "newCapacity": 0,
+  "releaseIntent": {
+    "requestId": "6b4eb388-dd62-4fb0-86c7-eee4cf7c0f20",
+    "actor": {
+      "lead": "mika",
+      "worker": "status_read"
+    },
+    "claimId": "4eb31983-3bd8-415e-9898-143e28c727ef",
+    "version": 2,
+    "stoppedWriting": true
+  },
+  "releaseState": "NOT_SENT; after this metadata commit/push, receipt outside project; no write after release"
+}

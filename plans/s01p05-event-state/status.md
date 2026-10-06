@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:12:42 UTC / fixed main 3609d8dabd3713e37d877af4f96d2daa2bd96e57；已受控合入 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:26:07 UTC / aae1eb1054d75e78273e7c91ed048aeac80195da |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,17 +10,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence |
 | Branch | codex/event-state-persistence |
 | 工作基线 / HEAD | 3609d8dabd3713e37d877af4f96d2daa2bd96e57；integration HEAD f0ebd514a2d10ad04a88782eaa99a86865fcfc90 |
-| 工作树dirty状态 | 源码/raw已固定6336cd00；metadata封存提交后clean |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 源码/raw冻结；本次main收口metadata提交后clean，随后全部范围停写 |
+| 工作分支状态 | completed |
 | 检查状态 | PASSED：新9distinct专库行为/局部strict0；red1预期失败+8未选，A/B NOT_OPEN |
-| 已集成main状态 / HEAD | 本片未集成；已审输入main3609d8dabd3713e37d877af4f96d2daa2bd96e57 |
+| 已集成main状态 / HEAD | 本片已集成 main/origin aae1eb1054d75e78273e7c91ed048aeac80195da；own source逐字核符，接收方检查见main-acceptance |
 | 实现目标 | 6336cd00b05843fb33093cf7c3157a4de9ea1815 |
 | 实现范围 | events.ts、event-state.test.ts；docs/evidence/s01p05, plans/s01p05-event-state |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 6336已独审APPROVED，真实9/9/strict0，正式ready交Lead；仅等价+写次数结论 |
-| 下一可用交付 | Lead受控集成6336并给main receipt；未来A/B仍需新固定组合/门禁 |
+| 当前产出 | 事件状态每批一次任务更新已进入主线，保持原事务语义 |
+| 下一可用交付 | 本片段已交付；未启动的A/B须fresh领取与独立窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED：chatui01_owner/Astra，2026-10-06 13:02:16 UTC，6336cd00，0P1/P2；Mika接收 |
@@ -31,7 +31,7 @@
 | S01P05-02 | completed | status_read | [v2 receipt](../../docs/evidence/s01p05/claim-amend-receipt.json)、[F01 handoff](../../docs/evidence/s01p05/f01-handoff-receipt.json) |
 | S01P05-03 | completed | status_read | [quality](../../docs/evidence/s01p05/quality-final.json)、最小SQL合并 |
 | S01P05-04 | completed | status_read | [checks](../../docs/evidence/s01p05/checks.json)：9/9、strict0、两专库absent |
-| S01P05-05 | in-progress | Mika / Lead | [正式review](../../docs/evidence/s01p05/independent-review.json) APPROVED / [ready](../../docs/evidence/s01p05/integration-ready.md)，main待接收 |
+| S01P05-05 | completed | Mika / Lead | [正式review](../../docs/evidence/s01p05/independent-review.json) APPROVED / main aae1eb1054d75e78273e7c91ed048aeac80195da |
 
 ## 历史过程（以下旧观察不覆盖当前表）
 
@@ -50,3 +50,5 @@ Dashboard当前事实：Lead已确认S01P05登记并部署154source registry；�
 2026-10-06 12:58:54 UTC：固定实现target 6336cd00b05843fb33093cf7c3157a4de9ea1815，manifest e8cffc36fb438aae40a6aabc6dbcd9515c1bdda47f1c15f77e1db1cb7499d2fb（4source/config+21readonly+16raw+12support=53）；6历史red绑定7b259462。fresh账本writer4eb31983 v2 ACTIVE四scope同身份。源码/raw冻结交独审；main未集成，0重测/容量。
 
 2026-10-06 13:12:42 UTC：正式只读APPROVED已记录，固定target6336/source/raw/manifest不变；stage改合法integration。Lead登记/部署154source事实按回传记录，不冒充owner实测页面。writer4eb v2保留，main未收到receipt；metadata收口0工程重测/PG/负载。
+
+2026-10-06 13:26:07 UTC：独立核本片4个source/config=固定源Git=mainGit=mainWT=ownerWT；[main接收](../../docs/evidence/s01p05/main-acceptance.json)。接收方4项PG/4tasks与root/mixed types0是集成检查，owner0重测/新容量。旧64911共享锁耗时UNKNOWN不回填，原完整计划未验收项保持开放。确认全部原scope停止写入；release请求 `6b4eb388-dd62-4fb0-86c7-eee4cf7c0f20` 尚未发送，提交/push后执行，实际回执仅协调账本及项目外保存，释放后不回写。架构范围未扩；clean-code metadata一致性/固定source核验完成。

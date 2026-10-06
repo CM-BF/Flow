@@ -12,3 +12,7 @@ Base `3609d8dabd3713e37d877af4f96d2daa2bd96e57`；权威WT `/Users/citrine/Proje
 审者请只读核源码/固定diff、完整事务回滚/unknown/null/重放updated_at/column触发器/直接finalize消费者、manifest及原raw；无需重跑测试。特别独立检查SQL列和参数位置，以及fixture不是只有SQL字符串断言。错误修复交owner，空review不代表批准。A/B NOT_OPEN，无延迟/吞吐/SLO结论。
 
 独立verdict：APPROVED，chatui01_owner/gpt-6-astra，2026-10-06 13:02:16 UTC，0P1/P2；Mika接收。审者核53 current、21base、6red，完整生产diff/双caller/9项/trigger/rollback/unknown/replay以及两专库cleanup；0重测。仅非阻断metadata stage token已修为integration。主线仍待Lead接收。
+
+## 2026-10-06 13:26:07 UTC main接收
+
+固定 main `aae1eb1054d75e78273e7c91ed048aeac80195da`，本owner核4源与原APPROVED目标逐字一致；来源 [main-acceptance](../../docs/evidence/s01p05/main-acceptance.json)。无新review target或新容量检查，旧限定保持。全部scope停写后交回，release实际回执项目外。
