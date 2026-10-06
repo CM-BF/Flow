@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:01 UTC / main77132408 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:56 UTC / main77132408 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -164,4 +164,6 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 
 实际换载回执：2026-10-06T18:43:03.221Z，main888c clean，172来源/SVC05R01 live/current。原阻塞字段格式unknown已留实采且交原owner修正，不改渲染器猜测。见[实采](../../docs/evidence/d05/retained-web-live-receipt.json)。
 
-2026-10-06 19:01 UTC：WPF-DPERF05唯一status/claim已核，新增第173个registry来源；owner仍implementation/NOT_RUN，不把登记当修复通过。只registry/parser/链接检查，无产品测试/个人服务操作；部署后另记实际聚合。
+2026-10-06 18:56 UTC：WPF-DPERF05唯一status/claim已核，新增第173个registry来源；owner仍implementation/NOT_RUN，不把登记当修复通过。只registry/parser/链接检查，无产品测试/个人服务操作；部署后另记实际聚合。
+
+本条修正上一提交手填19:01为实际18:56管理观察，精确登记时间以timestamp-source-registration.json原始at为准，无运行重采。
