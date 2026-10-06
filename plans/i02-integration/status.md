@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T23:20:08.440691+00:00 / fixed main93a92c91 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:38 UTC / fixed main0da869f7 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main93a92c91；仅接管理摘要、X01实际181来源回执及TUI01G源码供给，个人产品运行版本保持 |
+| 工作基线 / HEAD | main0da869f7；仅接同版本环境恢复事实及182来源实际回执，无新产品源码 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | 远程候选已独审；两文档fixed source逐字同、38项管理/缓存/登记固定输入核hash，未新增产品测试/安装/PG/provider。 |
-| 已集成main状态 / HEAD | 本批受控接收OPS-CI01已审文档、三缓存实际回执与181来源登记；远程尚未启用/运行。个人af51/v18与Web d629/v3不变。 |
+| 已集成main状态 / HEAD | 本批受控接收OPS恢复事实与TUI01G的182来源记录；个人发布锚af51/v18、d629/v3，center当前退出待恢复，未部署新产品。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 已审远程验证模板已在主线，用户启用选择待答复；X01已切换唯一实施来源，终端逐消息设置已有独立源码树。 |
-| 下一可用交付 | 本片段已交付；用户确认启用后才运行远程最小验证。本地运行仍按实际余量准入。 |
-| 当前阻塞 | ACTIVE: 本地余量仍不足PG/浏览器；远程仅文档候选，等待最终启用动作。 |
+| 当前产出 | 远程验证模板与终端设置来源已登记；原数据库已恢复，个人后台按原版本准备恢复。 |
+| 下一可用交付 | 本片段已交付；个人恢复独立于源码集成，已审但未验证的终端设置仍保留在分支。 |
+| 当前阻塞 | ACTIVE: 个人后台恢复准备中，本地余量仍不足验证；远程仅文档候选，等待用户原启用选择。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -273,3 +273,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 见[固定输入回执](../../docs/evidence/i02/ops-ci01-intake.json)。CI范围仅两个docs文件和自身plan/evidence；没有`.github/workflows`文件、授权变化或远程运行。三缓存结果获独立审查，固定180文件而非真实npm依赖；原失败与unknown观察保留。该小管理批不重复任何产品测试，资源门槛未降低。
 
 2026-10-06 23:21 UTC：管理接收只取两个权威树的四份固定文件，[输入清单](../../docs/evidence/i02/ci-x01-tui-management-closeout.json)核逐字/hash相同。OPS远程启用选择PENDING且只由Goal Owner收集；X01原子领取与181-source实际回执已关闭供给等待；TUI01G仅source-ready，原F04与完整双端验收不变。无产品源码、个人服务、模型或检查预算变更。
+
+2026-10-06 23:38 UTC：本管理批仅同步OPS daemon一次恢复事实和182源实际看板回执；无应用/合同/依赖变更，不重跑产品测试。TUI01G固定215063fb仅SOURCE_APPROVED_PENDING_VALIDATION，12新例与types/直接consumer尚NOT_RUN，未进入main产品。[固定来源接收](../../docs/evidence/i02/daemon-recovery-tui-registration-intake.json)。个人center恢复另由原SVC owner准备af51/v18，当前源码提交不等于运行升级。

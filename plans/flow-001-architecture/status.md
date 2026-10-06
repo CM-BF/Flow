@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T23:09:16.284675+00:00 / maind721cf28 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:35 UTC / main0da869f7 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,13 +12,13 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/ origind721cf28已接远程验证文档候选和181来源登记；个人af51 accepting v18、Web d629 v3保持。完整工具原文已获source-only独审，直接/types/PG仍待验证，未启用。 |
+| 已集成main状态 / HEAD | main/origin0da869f7已接远程验证文档候选与182来源登记。个人发布锚af51/accepting v18、Web d629 v3；23:32底层环境停止导致center退出，原PG已恢复，center恢复准备中。TUI逐消息设置与完整工具原文均仅source-only独审，未产品接收。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人后台与新版网页已更新并恢复接收；原会话、数据和旧页面资源保留。消息设置独立组件与终端诊断修复已进入主线。 |
-| 下一可用交付 | 用户选择启用后先运行最小远程零模型检查；插件enable/binding源码独立推进。本地事务连接、网页恢复、双端接续和完整原文验证按实际资源准入。 |
-| 当前阻塞 | ACTIVE: 本地余量仍低于PG/浏览器线；三缓存收尾末实采1,073,909,760B，不把逻辑回收当资源已足。远程候选未启用/运行；真实双端、完整目标和工程验收继续开放。 |
-| 需用户决定 | NONE |
+| 当前产出 | 原数据库和协作连接已恢复；个人后台意外退出后正按原版本准备恢复。终端逐消息设置源码已审，验证仍待资源。 |
+| 下一可用交付 | 先恢复个人后台可用性；插件与终端源码独立推进。远程最小验证等待用户原选择，本地检查按实际空间准入。 |
+| 当前阻塞 | ACTIVE: 个人后台尚未恢复，原数据与网页保持；本地余量仍低于局部验证线，远程候选未获用户启用选择。真实双端、完整目标和工程验收仍开放。 |
+| 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 本片段交付阶段 | implementation |
@@ -148,3 +148,5 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 2026-10-06 22:22:27 UTC：工具完整原文后继CHAT05P01已建立唯一实施树与12scope领取（首canonical7d0751b2，033专用前进迁移），合同/本地持久分块/reader先并行，公共挂载与真实PG后验。复用旧outbox及事务接收；现2MiB事件包与1MiB普通detail边界不靠简单调大绕过。旧64KiB前缀历史不伪称全文可恢复，完整用户验收仍开放。唯一来源[CHAT05P01](../../../native-activity-body/plans/chat05p01-native-activity-body/status.md)。
 
 2026-10-06 22:32:46 UTC：CHAT05P01首片只限定8MiB/body与16MiB/attempt，不能当runner总体峰值或16并发正式容量。S01后继验收须分单次、同机在途、历史保留三口径，含复制/编码/manifest/未确认历史及恢复扫描；空间不足停止新受理但保既有恢复/心跳，中心已确认且满足保留策略才回收，unknown不得按超时丢弃。本条为已授权后继输入，不扩大当前writer scope/新增quota服务或运行负载。
+
+2026-10-06 23:35 UTC：运行环境再次停止的实际事实与同版本恢复优先级见[唯一OPS状态](../ops-001-status-review/status.md)。原PG容器/卷按固定身份恢复，未重建或新增任务。个人center退出原因仍unknown，旧362/v15恢复许可不复用；原owner在新合法scope准备af51/v18一次恢复。TUI01G固定215063fb仅SOURCE_APPROVED_PENDING_VALIDATION，12新例/直接消费者/types均NOT_RUN；共享ACK/冻结tuple保持，完整TUI双端验收未关闭。
