@@ -1,5 +1,6 @@
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { once } from 'node:events';
+import { spawn } from 'node:child_process';
 import type { AddressInfo } from 'node:net';
 import { expect, it } from 'vitest';
 import { runCli } from './index.js';
@@ -121,5 +122,20 @@ it('reconnects at delivered cursor and drains terminal pages before exiting', as
 it('applies observation timeout to the initial snapshot request too', async () => {
   await withCenter((_request, _response) => {}, async env => {
     expect(await runCli(['watch', 'task-1', '--timeout', '100'], { out() {}, err() {} }, env)).toBe(124);
+  });
+});
+
+
+it('does not swallow SIGINT while an ordinary CLI command waits for HTTP', async () => {
+  let received!: () => void;
+  const pending = new Promise<void>(resolve => { received = resolve; });
+  await withCenter((_request, _response) => { received(); }, async env => {
+    const child = spawn(process.execPath, ['--import', 'tsx', 'apps/cli/src/main.ts', 'show', 'task-1'], { cwd: process.cwd(), env: { ...process.env, ...env }, stdio: 'ignore' });
+    const exited = once(child, 'exit');
+    try {
+      await pending;
+      child.kill('SIGINT');
+      expect(await exited).toEqual([null, 'SIGINT']);
+    } finally { child.kill('SIGKILL'); }
   });
 });
