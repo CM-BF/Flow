@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T11:48:58.000Z",
+  "sourceHead": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+  "sourceDirty": true,
+  "sourceHashes": {
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/public/app.js": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+    "apps/execution-dashboard/test/human-summary.test.mjs": "94f70824bc157338de7daf20063384c299ea021f968bdddd337e8e6ab125d098",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103"
+  },
+  "checks": [
+    "Parent occupies one headline/delivery slot; child remains reachable; technical identities live in details; parent→child Enter and Escape focus work",
+    "Parent plan still uses the existing registered-document endpoint",
+    "Child detail to parent stays in one modal, focuses new title, and returns original child invoker on Escape",
+    "Stale parent stays explicitly unknown; unknown ID and wrong path cannot navigate; HTML/remote declarations stay text and cause zero remote reads",
+    "Independent child blocker/decision stay visible; unknown allocation label retained",
+    "1280×720 and 390×844 light/dark home and narrow detail: no horizontal overflow, reduced-motion, keyboard raw record"
+  ],
+  "screenshots": [
+    "home-desktop-light.png",
+    "home-desktop-dark.png",
+    "home-narrow-light.png",
+    "home-narrow-dark.png",
+    "detail-narrow-dark.png"
+  ],
+  "errors": [],
+  "failure": null,
+  "url": "http://127.0.0.1:49449",
+  "assignmentFixture": "Rendering-only injected claims; no coordination database read or write.",
+  "outcome": "passed",
+  "fixtureRemoved": true,
+  "serverClosed": true,
+  "cleanupErrors": [],
+  "elapsedMs": 8374,
+  "cumulativeMs": 8374,
+  "evidenceBytes": 378265,
+  "finishedAt": "2026-10-06T11:49:06.374Z"
+}

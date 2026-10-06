@@ -1,0 +1,177 @@
+{
+  "observedAt": "2026-10-06T11:52:09.356629+00:00",
+  "reviewer": "/root",
+  "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+  "base": "fd1322f9c0c1d085d5e343e39f6216b20d26c264",
+  "head": "f80cebf49b95fe9ecff508e617f068cacc8a02f1",
+  "branch": "codex/web-workspace-cache",
+  "dirty": "",
+  "sourceCount": 14,
+  "sourceMismatches": [],
+  "readonlyDependencies": 206,
+  "dependencyMismatches": [],
+  "outsideScopes": [],
+  "sourceDiffCheck": 0,
+  "browser": [
+    {
+      "file": "2026-10-06T11-44-20.944Z-browser.json",
+      "elapsedMs": 8243,
+      "passedChecks": [],
+      "failure": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 2\nReceived: 0",
+      "sourceDifferences": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ],
+      "cleanup": [
+        {
+          "name": "browser",
+          "state": "fulfilled"
+        },
+        {
+          "name": "fixture",
+          "state": "fulfilled"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "file": "2026-10-06T11-44-44.424Z-browser.json",
+      "elapsedMs": 13217,
+      "passedChecks": [
+        "closed-clean views release immediately, repeated reopen rereads history with no close cancellation",
+        "late reply and history reads cannot populate a closed view; reopen explicitly rereads",
+        "closed draft and selected knowledge retain identity and do not prefetch body",
+        "unknown Send and Queue survive close with their original key/body and independent next draft"
+      ],
+      "failure": "Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'New chat', exact: true }) resolved to 2 elements:\n    1) <button class=\"flow-new-chat\">…</button> aka getByRole('complementary', { name: 'Chats' }).getByRole('button', { name: 'New chat' })\n    2) <button title=\"New chat\" class=\"flow-icon \" aria-label=\"New chat\">…</button> aka getByRole('button', { name: 'New chat', description: 'New chat' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'New chat', exact: true })\u001b[22m\n",
+      "sourceDifferences": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ],
+      "cleanup": [
+        {
+          "name": "browser",
+          "state": "fulfilled"
+        },
+        {
+          "name": "fixture",
+          "state": "fulfilled"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "file": "2026-10-06T11-45-18.619Z-browser.json",
+      "elapsedMs": 13765,
+      "passedChecks": [
+        "32 resident protected views reject new allocation without changing route; existing protected view reopens"
+      ],
+      "failure": "Error: expect(locator).toBeVisible() failed\n\nLocator:  locator('[id=\"panel-conversation:chat-32\"]')\nExpected: visible\nReceived: hidden\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeVisible\" locator('[id=\"panel-conversation:chat-32\"]') with timeout 2500ms\n  - waiting for locator('[id=\"panel-conversation:chat-32\"]')\n    9 × locator resolved to <div hidden=\"\" role=\"tabpanel\" class=\"flow-tab-body\" id=\"panel-conversation:chat-32\" aria-labelledby=\"tab-conversation:chat-32\">…</div>\n      - unexpected value \"hidden\"\n",
+      "sourceDifferences": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ],
+      "cleanup": [
+        {
+          "name": "browser",
+          "state": "fulfilled"
+        },
+        {
+          "name": "fixture",
+          "state": "fulfilled"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "file": "2026-10-06T11-45-51.845Z-browser.json",
+      "elapsedMs": 8937,
+      "passedChecks": [],
+      "failure": "TimeoutError: locator.click: Timeout 2500ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Retained chats', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"flow-link self-start px-3 text-xs\">Retained chats</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    5 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+      "sourceDifferences": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ],
+      "cleanup": [
+        {
+          "name": "browser",
+          "state": "fulfilled"
+        },
+        {
+          "name": "fixture",
+          "state": "fulfilled"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "file": "2026-10-06T11-46-47.041Z-browser.json",
+      "elapsedMs": 6769,
+      "passedChecks": [
+        "two visible panes remain isolated; retained dialog keyboard and narrow themes stay usable"
+      ],
+      "failure": null,
+      "sourceDifferences": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ],
+      "cleanup": [
+        {
+          "name": "browser",
+          "state": "fulfilled"
+        },
+        {
+          "name": "fixture",
+          "state": "fulfilled"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "file": "2026-10-06T11-47-31.676Z-browser.json",
+      "elapsedMs": 9034,
+      "passedChecks": [],
+      "failure": "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByRole('dialog', { name: 'Retained chats', exact: true })\nExpected substring: \"0 / 32\"\nReceived string:    \"Retained chats1 / 32 conversation views in this connection. Close an empty chat to free a place. Drafts and receipts are kept until you resolve them.Release closed aliasClosed, retained · No local materialClose retained chatsClose\"\n\nCall log:\n  - Expect \"toContainText\" getByRole('dialog', { name: 'Retained chats', exact: true }) with timeout 2500ms\n  - waiting for getByRole('dialog', { name: 'Retained chats', exact: true })\n    7 × locator resolved to <div role=\"dialog\" tabindex=\"-1\" id=\"radix-_r_3_\" data-state=\"open\" aria-labelledby=\"radix-_r_4_\" aria-describedby=\"radix-_r_5_\" class=\"fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2…>…</div>\n      - unexpected value \"Retained chats1 / 32 conversation views in this connection. Close an empty chat to free a place. Drafts and receipts are kept until you resolve them.Release closed aliasClosed, retained · No local materialClose retained chatsClose\"\n  - Target page, context or browser has been closed\n",
+      "sourceDifferences": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts"
+      ],
+      "cleanup": [
+        {
+          "name": "browser",
+          "state": "fulfilled"
+        },
+        {
+          "name": "fixture",
+          "state": "fulfilled"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "file": "2026-10-06T11-48-05.759Z-browser.json",
+      "elapsedMs": 8724,
+      "passedChecks": [
+        "late accepted creation releases a closed clean alias, but preserves a newly typed draft"
+      ],
+      "failure": null,
+      "sourceDifferences": [],
+      "cleanup": [
+        {
+          "name": "browser",
+          "state": "fulfilled"
+        },
+        {
+          "name": "fixture",
+          "state": "fulfilled"
+        }
+      ],
+      "pageErrors": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+ ❯ apps/web/test/conversation-stream-projection.test.ts (0 test)
+ ❯ apps/web/test/conversation-stream.test.ts (0 test)
+ ❯ apps/web/test/conversation-stream-integration.test.ts (0 test)
+ ❯ apps/web/test/conversation-activity-integration.test.ts (0 test)
+ ❯ apps/web/test/native-activity.test.ts (9 tests | 2 failed) 30ms
+     ✓ does no reads until active, caches body, and resumes without an automatic GET 6ms
+     × refreshes only current page at its original cursor and leaves other pages stale 6ms
+     ✓ coalesces task updates and never drains nextCursor automatically 3ms
+     ✓ rejects foreign headers, repeated cursors and wrong body identity without caching 3ms
+     ✓ validates UTF-8 prefix size and metadata, permits truncated invalid JSON as text 2ms
+     ✓ ignores late body after hide, settles loading, rejects unloaded IDs 3ms
+     × rejects overlapping pages and changed immutable header order atomically 2ms
+     ✓ rejects body source and truncation inconsistencies and can retry after an HTTP failure 2ms
+     ✓ a subscriber hiding synchronously during loading prevents the request from starting 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-activity-integration.test.ts [ apps/web/test/conversation-activity-integration.test.ts ]
+ FAIL  apps/web/test/conversation-stream-integration.test.ts [ apps/web/test/conversation-stream-integration.test.ts ]
+ FAIL  apps/web/test/conversation-stream-projection.test.ts [ apps/web/test/conversation-stream-projection.test.ts ]
+ FAIL  apps/web/test/conversation-stream.test.ts [ apps/web/test/conversation-stream.test.ts ]
+Error: Transform failed with 1 error:
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity/apps/web/src/conversation-stream/messages.ts:23:0: ERROR: Unexpected end of file
+  Plugin: vite:esbuild
+  File: /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity/apps/web/src/conversation-stream/messages.ts:23:0
+  
+  Unexpected end of file
+  21 |      return segment.truncated ? original : {...original,content:[{type:'text' as const,text:segment.text}]};
+  22 |    })];
+  23 |  
+     |  ^
+  
+ ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:1752:15
+ ❯ node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:1019:50
+ ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:886:9
+ ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:941:12
+ ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:864:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/native-activity.test.ts > native activity displayed-window projection > refreshes only current page at its original cursor and leaves other pages stale
+AssertionError: expected 'input-ready' to be 'unknown' // Object.is equality
+
+Expected: "unknown"
+Received: "input-ready"
+
+ ❯ apps/web/test/native-activity.test.ts:25:162
+     23|     s.p.setActive(true); await tick(); expect(s.reads).toHaveLength(1)…
+     24|     s.pages[1]!.activities[0]!.status = "unknown"; s.p.updateTask({ ..…
+     25|     expect(s.reads).toEqual([null,id(1),id(1)]); expect(s.p.getSnapsho…
+       |                                                                                                                                                                  ^
+     26|     await s.p.showPage(0); expect(s.reads.at(-1)).toBe(null); s.p.disp…
+     27|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  apps/web/test/native-activity.test.ts > native activity displayed-window projection > rejects overlapping pages and changed immutable header order atomically
+AssertionError: expected 'identity is not defined' to contain 'overlap'
+
+Expected: "overlap"
+Received: "identity is not defined"
+
+ ❯ apps/web/test/native-activity.test.ts:45:193
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+
+ Test Files  5 failed (5)
+      Tests  2 failed | 7 passed (9)
+   Start at  03:56:04
+   Duration  1.95s (transform 318ms, setup 0ms, import 59ms, tests 30ms, environment 0ms)
+

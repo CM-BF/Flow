@@ -1,0 +1,84 @@
+{
+  "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+  "approved": true,
+  "reviewReceipt": "docs/evidence/wpf-mature-04/history-independent-review.json",
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-04/history-pg-manifest.json",
+    "sha256": "621ef3badf473aa029c2cfb8125070e88ed26280040355ee90a2a935826f9e44"
+  },
+  "sources": [
+    {
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.test.ts",
+      "bytes": 3356,
+      "sha256": "157e7c40c29f36688455775e7a4da63e8df5077f6ff71d2315cf3ee1f2924348"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.test.ts",
+      "bytes": 25516,
+      "sha256": "d4c9d024f2e92f1e2af3b0414adb12bbf44ce0c876d671ff33439de6f067b7a0"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 10963,
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.test.ts",
+      "bytes": 3159,
+      "sha256": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.test.ts",
+      "bytes": 4754,
+      "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    }
+  ],
+  "rawAlreadyAtTarget": true,
+  "migration": {
+    "number": 27,
+    "path": "packages/storage/migrations/027-context-observation-history.sql",
+    "entry": "apps/server/src/context-transparency/migration.ts: migrateContextObservationHistory(pool)",
+    "dependsOn026": false
+  },
+  "sharedWiring": "docs/evidence/wpf-mature-04/center-store-request.md",
+  "currentOwnerRouting": "docs/evidence/wpf-mature-04/handoff-current.md",
+  "approvedPriorTargets": [
+    "879c989a594a8f4f266b9a78a885e311c52eca0d",
+    "3ab95d288a91214d03dec719dc6b44024206118a"
+  ],
+  "claim": {
+    "id": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 5,
+    "state": "active",
+    "writing": "source/raw frozen; claim retained during integration/fixes"
+  },
+  "limitations": [
+    "No global event/server/client or production auth mounting",
+    "No SDK/provider/producer/current/remaining claim"
+  ]
+}

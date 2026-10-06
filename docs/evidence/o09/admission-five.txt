@@ -1,0 +1,30 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution
+
+ ❯ apps/server/src/goal-native-executions/admission.test.ts (5 tests | 1 failed) 3323ms
+   ✓ durably admits one owner-selected readonly execution and recovers its receipt after an unread response and center restart 188ms
+   ✓ rejects runner credentials, forged controls and non-readonly or invalid profile pins without consuming admission 131ms
+   ✓ keeps current input, dependency and predecessor gates while serializing concurrent owner admissions 93ms
+   ✓ claims only on the selected profile and preserves a committed receipt after the runner is revoked  785ms
+   × keeps native execution and delivery owner-only while the old node grant still executes and accepts a fixture child 1026ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-native-executions/admission.test.ts > keeps native execution and delivery owner-only while the old node grant still executes and accepts a fixture child
+TypeError: (0 , __vite_ssr_import_7__.createFixtureAdapter) is not a function
+ ❯ apps/server/src/goal-native-executions/admission.test.ts:114:111
+    112|   const child = (await f.http('/api/runners', { name: 'Fixture child',…
+    113|   const directory = await mkdtemp(join(tmpdir(), 'flow-o09-fixture-'))…
+    114|   const running = runRunner({ baseUrl: f.baseUrl, token: child.token, …
+       |                                                                                                               ^
+    115|   try {
+    116|     await expect.poll(async () => (await f.http(`/api/tasks/${executio…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  00:54:22
+   Duration  4.29s (transform 528ms, setup 0ms, import 875ms, tests 3.32s, environment 0ms)
+

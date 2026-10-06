@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { harnessSchema, type HarnessName } from './harnesses.js';
+import { executionProfileReferenceSchema } from './execution-profiles.js';
 import { protocolTaskSchema } from './protocol-task.js';
+import { engineeringIntentSchema } from './engineering.js';
 export { harnessSchema, type HarnessName } from './harnesses.js';
 
 export const PROTOCOL_VERSION = 1;
@@ -9,7 +11,11 @@ export const MAX_PAGE_SIZE = 100;
 export const MAX_DETAIL_BYTES = 1_048_576;
 export const MAX_BATCH_BYTES = 2_097_152;
 export const idSchema = z.string().min(1).max(128);
-export const referenceSchema = z.strictObject({ id: idSchema, title: z.string().min(1).max(180) });
+export const referenceSchema = z.strictObject({
+  id: idSchema, title: z.string().min(1).max(180),
+  activity: z.strictObject({ kind: z.literal('native-activity'), activityId: idSchema }).optional(),
+  stream: z.strictObject({ kind: z.literal('assistant-stream'), streamId: idSchema, revision: z.number().int().positive() }).optional(),
+});
 export const verificationRuleSchema = z.discriminatedUnion('kind', [
   z.strictObject({ kind: z.literal('nonempty') }),
   z.strictObject({ kind: z.literal('contains'), expected: z.string().min(1).max(500) }),
@@ -27,7 +33,16 @@ export const taskSubmissionSchema = z.strictObject({
   }).optional(),
   verification: verificationRuleSchema.optional(),
   resumeSessionId: idSchema.optional(),
+  executionProfile: executionProfileReferenceSchema.optional(),
+  engineering: engineeringIntentSchema.optional(),
 }).superRefine((task, context) => {
+  if (task.engineering && (task.harness !== 'fixture' || task.resumeSessionId || task.fixture || task.executionProfile || task.verification || task.protocol)) {
+    context.addIssue({ code: 'custom', message: 'Engineering intent requires its dedicated fixture runner and cannot reuse text verification or native execution options.' });
+  }
+  if (task.executionProfile && !['claude', 'codex'].includes(task.harness)) context.addIssue({ code: 'custom', message: 'Execution profiles require a recognized native harness.' });
+  if (task.harness === 'codex' && (!task.executionProfile || task.resumeSessionId || task.fixture)) {
+    context.addIssue({ code: 'custom', message: 'Codex tasks require an explicit profile and do not support resume or fixture options.' });
+  }
   if (task.harness === 'a2a') {
     if (!task.protocol || task.resumeSessionId || task.fixture) context.addIssue({ code: 'custom', message: 'A2A tasks require an endpoint reference and cannot reuse native sessions or fixture options.' });
   } else if (task.protocol) context.addIssue({ code: 'custom', message: 'Protocol endpoint configuration is only valid for A2A tasks.' });

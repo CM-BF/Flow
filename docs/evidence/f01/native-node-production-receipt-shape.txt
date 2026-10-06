@@ -1,0 +1,44 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/goal-native-production.test.ts
+NATIVE_GOAL_PRODUCTION_DATABASE_FACTS {"database":"flow_native_mount_36d9d222189f4a70af9dd30795f7e8ea","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ❯ apps/server/src/goal-native-production.test.ts (2 tests | 1 failed) 1164ms
+   ✓ mounts owner native admission behind existing authentication without enabling active steering 56ms
+   × connects the public client to the real factory and runs one pinned text child with the existing verifier 60ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-native-production.test.ts > connects the public client to the real factory and runs one pinned text child with the existing verifier
+AssertionError: expected { …(7) } to match object { harness: 'claude', …(1) }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "executionProfile": {
+-     "configDigest": "f18781818070049efd1210954fde4febe7a8d6c698360db0e6b6cfb10f2a745c",
+-     "id": "d27eec45-aed0-4eba-89e2-182f80897d57",
+-     "runnerId": "a029c835-89ec-4752-bc8c-28c0209e421a",
+-   },
+    "harness": "claude",
+  }
+
+ ❯ apps/server/src/goal-native-production.test.ts:83:26
+     81|     const input = { nodeId: node.changedNodeId, expectedInputVersion: …
+     82|     const key = randomUUID(); const receipt = await client.executeGoal…
+     83|     expect(receipt.task).toMatchObject({ harness: 'claude', executionP…
+       |                          ^
+     84|     expect((await client.executeGoalNative(goal.id, input, key)).repla…
+     85|     running = runRunner({ baseUrl, token: runner.token, workingDirecto…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  01:05:50
+   Duration  2.00s (transform 357ms, setup 0ms, import 755ms, tests 1.16s, environment 0ms)
+

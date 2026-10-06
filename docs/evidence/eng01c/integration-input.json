@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-06T11:23:48.825373+00:00",
+  "target": "1fd70c28ac60878e132c9f28a00e381ec6fcc533",
+  "source": [
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "sha256": "0cf6f5408b18c6fef0c47fbd2d683ac9a6349b694a1630207588db970611be4b",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "sha256": "d449d350dd2d91611184861df68ce70c4f3b7c9d1543a7d19c61ff26c246547c",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "sha256": "911c45b252e3598d4dfd2d4a4bb7eca2b521eb7152de0670f7a6b57904ef533d",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "sha256": "797543c0c78569faa92c969054cf68d0e2a16f83a34a9156656c8b423f652054",
+      "matches": true
+    }
+  ],
+  "protectedInputs": 22,
+  "protectedInputsUnchanged": true,
+  "validation": "Author50/noEmit and independent read-only approved. Current integration products equal fixed target/dependencies; no duplicate tests or provider.",
+  "nativeComplete": false
+}

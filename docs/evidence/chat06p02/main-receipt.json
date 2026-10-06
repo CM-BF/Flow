@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-10-06T08:11:07.169695+00:00",
+  "mainAccepted": "fc113945ff73d1a43092d0a70b51e901aa4be1e2",
+  "acceptedMetadata": "546226cf9c8c0134868b7a246ccfae508838be1b",
+  "implementationTarget": "b0090edd594d19e1a441ce54683af65f7e5dc26e",
+  "ancestor": true,
+  "scopeZeroDiff": true,
+  "scope": [
+    "apps/server/src/assistant-stream/store.ts",
+    "apps/server/src/assistant-stream/prefix-hash.test.ts",
+    "docs/evidence/chat06p02",
+    "plans/chat06-prefix-hash"
+  ],
+  "receiptSource": "Mika relayed Execution Lead MAIN_RECEIPT; owner independently checked ancestry/full scope diff",
+  "integrationChecks": "Execution Lead combined types exit0; P01 matrix not rerun",
+  "dashboard": "Lead reports registry92; snapshot receipt pending, no owner new request",
+  "ownerNewTests": 0,
+  "releaseState": "pending atomic release only after this metadata commit and stopping all writes"
+}

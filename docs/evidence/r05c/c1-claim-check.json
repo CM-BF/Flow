@@ -1,0 +1,35 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-06T09:51:22.631Z",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/execution-profiles.test.ts",
+      "apps/runner/src/execution-profiles.ts",
+      "apps/runner/src/native-harness.test.ts",
+      "apps/runner/src/native-harness/codex",
+      "apps/runner/src/native-harness/descriptor.ts",
+      "apps/runner/src/native-harness/settlement.ts",
+      "apps/runner/src/runner.test.ts",
+      "apps/runner/src/runtime.ts",
+      "docs/evidence/r05c",
+      "packages/contracts/src/native-harness.ts",
+      "plans/r05c-codex-native-adapter"
+    ],
+    "state": "active",
+    "branch": "codex/codex-native-adapter",
+    "origin": "new",
+    "taskId": "R05C",
+    "worker": "native_center_owner",
+    "claimId": "949f12bf-f2c9-4408-99d4-25aceea3f276",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter",
+    "createdAt": "2026-10-06T09:30:06.678Z",
+    "updatedAt": "2026-10-06T09:30:06.678Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "source": "Read-only PostgreSQL coordination CLI list; filtered to this owner"
+}

@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web
+
+ ✓ test/plugin-host.test.ts (19 tests) 11ms
+ ✓ test/conversation-steering.test.ts (33 tests) 1622ms
+     ✓ bounded local receipt capacity rejects new handoff until resolved entries explicitly cleared  419ms
+ ✓ test/conversation-steering-integration.test.ts (7 tests) 1109ms
+     ✓ bounded visited bindings never silently evict unknown receipts; explicit close releases only that view  521ms
+
+ Test Files  3 passed (3)
+      Tests  59 passed (59)
+   Start at  02:37:13
+   Duration  2.49s (transform 549ms, setup 0ms, import 1.57s, tests 2.74s, environment 0ms)
+

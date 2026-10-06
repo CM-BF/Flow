@@ -1,0 +1,83 @@
+{
+  "vitest": {
+    "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "cacheDir": "/tmp/flow-wpf04-producer-vite-cache",
+    "resolve": {
+      "alias": {
+        "@flow/contracts": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/contracts/src/index.ts",
+        "@flow/client": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/client/src/index.ts",
+        "@flow/protocols": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/protocols/src/index.ts",
+        "@anthropic-ai/claude-agent-sdk": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+        "zod": "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod/index.js",
+        "@modelcontextprotocol/sdk": "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@modelcontextprotocol/sdk/dist/esm",
+        "@a2a-js/sdk": "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@a2a-js/sdk/dist/esm"
+      }
+    },
+    "test": {
+      "include": [
+        "apps/runner/src/claude-context-observation.test.ts",
+        "apps/runner/src/context-observations/claude-summary-read.test.ts",
+        "apps/runner/src/claude.test.ts",
+        "apps/runner/src/assistant-stream/stream.test.ts",
+        "apps/runner/src/runner.test.ts"
+      ],
+      "fileParallelism": false,
+      "testTimeout": 10000,
+      "hookTimeout": 10000
+    }
+  },
+  "typescript": {
+    "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/tsconfig.json",
+    "compilerOptions": {
+      "typeRoots": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+      ],
+      "paths": {
+        "zod": [
+          "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod/index.d.ts"
+        ],
+        "vitest": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.d.ts"
+        ],
+        "@anthropic-ai/claude-agent-sdk": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts"
+        ],
+        "@flow/contracts": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/contracts/src/index.ts"
+        ],
+        "@flow/client": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/client/src/index.ts"
+        ],
+        "@flow/protocols": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/protocols/src/index.ts"
+        ],
+        "@modelcontextprotocol/sdk/*": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@modelcontextprotocol/sdk/dist/esm/*"
+        ],
+        "@a2a-js/sdk": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@a2a-js/sdk/dist/index.d.ts"
+        ],
+        "@a2a-js/sdk/*": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@a2a-js/sdk/dist/*"
+        ]
+      },
+      "incremental": false,
+      "noEmit": true
+    },
+    "include": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/claude.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/context-observations/claude-summary-read.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/claude-context-observation.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/context-observations/claude-summary-read.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/claude.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/assistant-stream/stream.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/runner.test.ts"
+    ],
+    "exclude": []
+  },
+  "subprocessResolution": {
+    "preload": "producer-validation-resolver.mjs",
+    "temporaryPath": "/tmp/flow-wpf04-producer-resolver.mjs",
+    "method": "Node24 synchronous resolve hook; all @flow sources from owner tree; only missing bare third-party imports resolve through installed runner dependencies; no package edits/install/symlink/product hook"
+  }
+}

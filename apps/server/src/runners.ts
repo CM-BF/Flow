@@ -1,10 +1,13 @@
+import { goalExecutionInputForTask } from './goal-context/index.js';
+import { executionInputForTask } from './conversation-context/store.js';
+import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomBytes, randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { AttemptView, ClaimResponse, Ownership, RegisterRunner, RunnerRegistration, HeartbeatResponse, DecisionAnswer } from '@flow/contracts';
 import { HttpError, sha256, transaction } from './database.js';
 import { loadTask } from './tasks.js';
 
-export interface RunnerRecord { id: string; harnesses: string[]; capacity: number; revoked: boolean }
+export interface RunnerRecord { id: string; harnesses: string[]; capacity: number; revoked: boolean; maintenance_state?: 'accepting' | 'draining' | 'maintenance' }
 export interface AttemptRecord {
   id: string; task_id: string; runner_id: string; owner_version: number; lease_expires_at: Date;
   last_heartbeat_at: Date | null; last_event_at: Date | null;
@@ -20,8 +23,14 @@ export async function lockRunner(client: PoolClient, id: string): Promise<Runner
   if (!runner || runner.revoked) throw new HttpError(401, 'runner_revoked', 'Runner credential is unavailable.');
   return runner;
 }
+/** Existing-attempt reads share this fence; these paths must not upgrade the runner lock or insert attempts. */
+async function lockRunnerForAttempt(client: PoolClient, id: string): Promise<void> {
+  const result = await client.query<Pick<RunnerRecord, 'id' | 'revoked'>>('SELECT id,revoked FROM flow.runners WHERE id=$1 FOR SHARE', [id]);
+  const runner = result.rows[0];
+  if (!runner || runner.revoked) throw new HttpError(401, 'runner_revoked', 'Runner credential is unavailable.');
+}
 export async function ownedAttempt(client: PoolClient, runnerId: string, ownership: Ownership) {
-  await lockRunner(client, runnerId);
+  await lockRunnerForAttempt(client, runnerId);
   const result = await client.query<AttemptRecord>('SELECT * FROM flow.attempts WHERE id=$1', [ownership.attemptId]);
   const found = result.rows[0];
   if (!found || found.runner_id !== runnerId) throw new HttpError(403, 'attempt_forbidden', 'This attempt belongs to another runner.');
@@ -39,23 +48,50 @@ export async function registerRunner(pool: Pool, input: RegisterRunner): Promise
 export async function claim(pool: Pool, runnerId: string, leaseMs: number): Promise<ClaimResponse> {
   return transaction(pool, async client => {
     const runner = await lockRunner(client, runnerId);
+    if (runner.maintenance_state && runner.maintenance_state !== 'accepting') return { assignment: null, remainingLeaseMs: 0 };
     const busy = await client.query<{ count: number }>("SELECT count(*)::integer AS count FROM flow.attempts WHERE runner_id=$1 AND completed_at IS NULL", [runnerId]);
-    if (busy.rows[0]!.count >= runner.capacity) return { assignment: null };
+    if (busy.rows[0]!.count >= runner.capacity) return { assignment: null, remainingLeaseMs: 0 };
     const result = await client.query<{ id: string }>(`
-      SELECT t.id FROM flow.tasks t LEFT JOIN flow.sessions s ON s.id=t.submission->>'resumeSessionId' AND s.harness=t.submission->>'harness'
+      SELECT t.id FROM flow.tasks t LEFT JOIN flow.execution_profiles rp ON rp.runner_id=$2 LEFT JOIN flow.sessions s ON s.id=t.submission->>'resumeSessionId' AND s.harness=t.submission->>'harness'
       WHERE t.status='queued' AND t.dispatch_ready AND t.submission->>'harness'=ANY($1)
+      AND (t.submission->'executionProfile' IS NULL OR t.submission->'executionProfile'->>'runnerId'=$2)
+      AND ((t.submission->'engineering' IS NULL AND COALESCE(rp.configuration->>'purpose','')<>'engineering-fixture') OR
+        (t.submission->'engineering'->>'targetRunnerId'=$2 AND rp.configuration->>'protocol'='flow.engineering-profile.v1'
+          AND rp.configuration->>'purpose'='engineering-fixture' AND rp.configuration->>'harness'='fixture'
+          AND t.submission->'engineering'->'profile'->>'id'=rp.id
+          AND t.submission->'engineering'->'profile'->>'runnerId'=$2
+          AND t.submission->'engineering'->'profile'->>'configDigest'=rp.config_digest
+          AND t.submission->'engineering'->>'projectId'=rp.configuration->'project'->>'id'
+          AND t.submission->'engineering'->>'baseCommit'=rp.configuration->'project'->>'baseCommit'
+          AND t.submission->'engineering'->'checker'=rp.configuration->'checker'))
+      AND (COALESCE(rp.configuration->>'access','none')<>'goal-tools' OR
+        (t.submission->'executionProfile'->>'runnerId'=$2 AND EXISTS
+          (SELECT 1 FROM flow.goal_tool_runs g WHERE g.task_id=t.id AND g.mode='claude' AND g.revoked_at IS NULL)))
+      AND (COALESCE(rp.configuration->>'access','none')<>'goal-graph-tools' OR
+        (t.submission->'executionProfile'->>'runnerId'=$2 AND EXISTS
+          (SELECT 1 FROM flow.goal_graph_runs g WHERE g.task_id=t.id AND g.mode='claude' AND g.revoked_at IS NULL)))
       AND (t.submission->>'resumeSessionId' IS NULL OR (s.runner_id=$2 AND s.active_task_id IS NULL))
       ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId]);
-    if (!result.rows[0]) return { assignment: null };
+    if (!result.rows[0]) return { assignment: null, remainingLeaseMs: 0 };
     const task = await loadTask(client, result.rows[0].id);
+    if (task.submission.engineering && (task.submission.harness !== 'fixture' || task.submission.engineering.targetRunnerId !== runnerId)) {
+      throw new HttpError(409, 'engineering_runner_mismatch', 'The engineering intent does not belong to this fixture runner.');
+    }
+    const goalRun = (await client.query<{ id: string; version: 1; mode: string }>('SELECT id,version,mode FROM flow.goal_tool_runs WHERE task_id=$1', [task.id])).rows[0];
+    const graphRun = (await client.query<{ id: string; version: 1; mode: string }>('SELECT id,version,mode FROM flow.goal_graph_runs WHERE task_id=$1', [task.id])).rows[0];
+    if (goalRun && graphRun) throw new HttpError(409, 'planner_authority_conflict', 'A planner task cannot have two tool authorities.');
+    await assertTaskExecutionProfile(client, task.submission, graphRun?.mode === 'claude' ? 'goal-graph-tools' : goalRun?.mode === 'claude' ? 'goal-tools' : 'ordinary');
     if (task.submission.resumeSessionId) {
       const session = await client.query('UPDATE flow.sessions SET active_task_id=$3 WHERE id=$1 AND harness=$2 AND runner_id=$4 AND active_task_id IS NULL RETURNING id', [task.submission.resumeSessionId, task.submission.harness, task.id, runnerId]);
-      if (!session.rowCount) return { assignment: null };
+      if (!session.rowCount) return { assignment: null, remainingLeaseMs: 0 };
     }
     const id = randomUUID();
     const inserted = await client.query<AttemptRecord>("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,$4,clock_timestamp()+$5 * interval '1 millisecond') RETURNING *", [id, task.id, runnerId, task.owner_version + 1, leaseMs]);
     await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=owner_version+1,updated_at=clock_timestamp() WHERE id=$1", [task.id, id]);
-    return { assignment: { attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id } } };
+    const executionInput = await executionInputForTask(client, task.id, task.submission.prompt);
+    const goalInput = await goalExecutionInputForTask(client, task.id, task.submission.prompt);
+    const privatePrompt = goalInput?.prompt ?? executionInput?.prompt;
+    return { assignment: { ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id, ...(privatePrompt !== undefined ? { prompt: privatePrompt } : {}) }, ...(goalRun?.mode === 'claude' ? { goalToolRun: { id: goalRun.id, version: goalRun.version } } : {}), ...(graphRun?.mode === 'claude' ? { goalGraphRun: { id: graphRun.id, version: graphRun.version } } : {}) }, remainingLeaseMs: leaseMs };
   });
 }
 export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownership, leaseMs: number): Promise<HeartbeatResponse> {

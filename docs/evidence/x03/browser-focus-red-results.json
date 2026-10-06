@@ -1,0 +1,23 @@
+{
+  "startedAt": "2026-10-06T04:13:16.537Z",
+  "completedAt": "2026-10-06T04:13:24.877Z",
+  "exitCode": 1,
+  "checks": [
+    "public client registers config/grants/versions; same revision survives real center restart",
+    "closed view sends zero registry requests",
+    "opened view reads scoped real registry"
+  ],
+  "failure": "expect(locator).toBeFocused() failed\n\nLocator: getByRole('button', { name: 'Next registry page', exact: true })\nExpected: focused\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeFocused\" getByRole('button', { name: 'Next registry page', exact: true }) with timeout 5000ms\n  - waiting for getByRole('button', { name: 'Next registry page', exact: true })\n",
+  "pageErrors": [],
+  "cleanup": [
+    {
+      "database": "flow_x03_40801_0_1661cc6b",
+      "remaining": 0
+    },
+    {
+      "database": "flow_x03_40801_1_9c1c84eb",
+      "remaining": 0
+    }
+  ],
+  "boundary": "Isolated module fixture, real PG/HTTP/host. Production App mounting is separate acceptance."
+}

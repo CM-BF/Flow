@@ -1,0 +1,317 @@
+apps/server/src/assistant-stream-compatibility/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/assistant-stream/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/assistant-stream/index.ts(18,109): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/assistant-stream/index.ts(22,135): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/assistant-stream/index.ts(26,91): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/assistant/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/assistant/index.ts(19,125): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/assistant/index.ts(24,70): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/commands.ts(2,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/conversation-context/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/conversation-context/index.ts(19,128): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversation-queue/controls.ts(2,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(3,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(29,78): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(30,86): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(30,95): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(31,79): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(31,88): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(32,71): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(34,59): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/conversation-queue/index.ts(34,72): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/conversation-queue/index.ts(36,95): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversation-queue/index.ts(37,103): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversation-queue/promotion.ts(3,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/conversations/admission.ts(4,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/conversations/commands.ts(6,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(4,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(26,41): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(26,50): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(27,79): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(27,88): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(28,33): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(30,35): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/conversations/index.ts(30,48): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/conversations/index.ts(32,72): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(32,81): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(38,71): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversations/index.ts(40,63): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/conversations/index.ts(40,76): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/conversations/index.ts(42,131): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/conversations/replies.ts(31,75): error TS2345: Argument of type 'string | null' is not assignable to parameter of type 'string'.
+  Type 'null' is not assignable to type 'string'.
+apps/server/src/conversations/replies.ts(32,59): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/server/src/conversations/replies.ts(32,100): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/server/src/conversations/state.ts(13,82): error TS2353: Object literal may only specify known properties, and 'title' does not exist in type 'ConversationSummary'.
+apps/server/src/execution-profiles/index.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/execution-profiles/index.ts(18,45): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/execution-profiles/index.ts(23,91): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-context/freshness.ts(6,79): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+apps/server/src/goal-context/freshness.ts(13,40): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+apps/server/src/goal-context/index.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/goal-context/index.ts(19,136): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/graph.ts(18,52): error TS7006: Parameter 'reference' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/index.ts(23,122): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/index.ts(23,131): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/index.ts(25,73): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/index.ts(27,68): error TS18046: 'page' is of type 'unknown'.
+apps/server/src/goal-graph-proposals/index.ts(27,80): error TS18046: 'page' is of type 'unknown'.
+apps/server/src/goal-graph-proposals/index.ts(29,72): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/index.ts(30,79): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/store.ts(46,107): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+apps/server/src/goal-graph-proposals/store.ts(46,112): error TS7006: Parameter 'node' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(3,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(4,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(27,76): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(27,85): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(28,67): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(29,75): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(29,135): error TS2571: Object is of type 'unknown'.
+apps/server/src/goal-graph-runs/index.ts(30,73): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(31,122): error TS18046: 'page' is of type 'unknown'.
+apps/server/src/goal-graph-runs/index.ts(31,134): error TS18046: 'page' is of type 'unknown'.
+apps/server/src/goal-graph-runs/index.ts(33,44): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(34,43): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(35,47): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/index.ts(36,69): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/runner.ts(51,41): error TS7006: Parameter 'node' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/runner.ts(53,96): error TS7006: Parameter 'allowed' implicitly has an 'any' type.
+apps/server/src/goal-graph-runs/store.ts(3,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(4,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(28,44): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(29,47): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(31,59): error TS18046: 'input' is of type 'unknown'.
+apps/server/src/goal-tool-runs/index.ts(33,44): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(34,46): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(35,75): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(35,84): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(36,66): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(37,74): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(37,134): error TS2571: Object is of type 'unknown'.
+apps/server/src/goal-tool-runs/index.ts(38,72): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/index.ts(40,60): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goal-tool-runs/index.ts(40,73): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goal-tool-runs/runner.ts(2,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/store.ts(4,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/goal-tool-runs/store.ts(30,70): error TS2339: Property 'originalGoal' does not exist on type 'GoalView'.
+apps/server/src/goal-tool-runs/store.ts(30,108): error TS2339: Property 'constraints' does not exist on type 'GoalView'.
+apps/server/src/goal-tool-runs/store.ts(30,144): error TS2339: Property 'acceptance' does not exist on type 'GoalView'.
+apps/server/src/goals/commands.ts(6,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/goals/commands.ts(56,46): error TS2339: Property 'projectId' does not exist on type 'GoalView'.
+apps/server/src/goals/commands.ts(65,54): error TS2339: Property 'projectId' does not exist on type 'GoalView'.
+apps/server/src/goals/commands.ts(70,68): error TS2339: Property 'originalGoal' does not exist on type 'GoalView'.
+apps/server/src/goals/commands.ts(70,106): error TS2339: Property 'constraints' does not exist on type 'GoalView'.
+apps/server/src/goals/commands.ts(70,142): error TS2339: Property 'acceptance' does not exist on type 'GoalView'.
+apps/server/src/goals/index.ts(3,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(4,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(25,33): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(25,42): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(29,57): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(33,67): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(35,88): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(38,43): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+apps/server/src/goals/index.ts(39,21): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goals/index.ts(39,55): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+apps/server/src/goals/index.ts(44,68): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/goals/index.ts(46,43): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+apps/server/src/goals/index.ts(47,186): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goals/index.ts(47,200): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goals/index.ts(47,221): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goals/index.ts(48,46): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+apps/server/src/goals/index.ts(48,67): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goals/index.ts(51,113): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goals/index.ts(51,131): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/goals/state.ts(38,42): error TS2353: Object literal may only specify known properties, and 'projectId' does not exist in type 'GoalView'.
+apps/server/src/goals/state.ts(85,109): error TS2339: Property 'projectId' does not exist on type 'GoalView'.
+apps/server/src/goals/state.ts(110,97): error TS2339: Property 'projectId' does not exist on type 'GoalView'.
+apps/server/src/index.ts(17,21): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/index.ts(18,18): error TS7016: Could not find a declaration file for module '@fastify/cors'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js' implicitly has an 'any' type.
+apps/server/src/index.ts(38,16): error TS2665: Invalid module name in augmentation. Module 'fastify' resolves to an untyped module at '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js', which cannot be augmented.
+apps/server/src/index.ts(108,24): error TS7006: Parameter 'error' implicitly has an 'any' type.
+apps/server/src/index.ts(108,31): error TS7006: Parameter '_request' implicitly has an 'any' type.
+apps/server/src/index.ts(108,41): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/index.ts(114,35): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(150,34): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(155,33): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(156,67): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(157,37): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(162,34): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(167,33): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(167,42): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/index.ts(173,57): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(174,113): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(175,59): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(176,67): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(181,65): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/index.ts(182,79): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(28,92): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(28,101): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(29,84): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(31,73): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/knowledge/index.ts(31,86): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/knowledge/index.ts(33,93): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(34,110): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(34,119): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(35,133): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(36,83): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(38,75): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/knowledge/index.ts(38,84): error TS18046: 'query' is of type 'unknown'.
+apps/server/src/knowledge/index.ts(40,85): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/knowledge/index.ts(40,161): error TS2571: Object is of type 'unknown'.
+apps/server/src/m2-workspace.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/m2-workspace.ts(24,99): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/native-activity/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/native-activity/index.ts(17,110): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/native-activity/index.ts(22,62): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(20,159): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(20,168): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(25,67): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(26,131): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(26,140): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(31,130): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugin-package-fetches/routes.ts(41,130): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/commands.ts(34,58): error TS7006: Parameter 'field' implicitly has an 'any' type.
+apps/server/src/plugins/commands.ts(37,26): error TS2339: Property 'kind' does not exist on type '{}'.
+apps/server/src/plugins/commands.ts(38,16): error TS2339: Property 'kind' does not exist on type '{}'.
+apps/server/src/plugins/commands.ts(38,108): error TS2339: Property 'min' does not exist on type '{}'.
+apps/server/src/plugins/commands.ts(38,130): error TS2339: Property 'max' does not exist on type '{}'.
+apps/server/src/plugins/commands.ts(39,16): error TS2339: Property 'kind' does not exist on type '{}'.
+apps/server/src/plugins/commands.ts(39,69): error TS2339: Property 'values' does not exist on type '{}'.
+apps/server/src/plugins/commands.ts(42,40): error TS7006: Parameter 'field' implicitly has an 'any' type.
+apps/server/src/plugins/commands.ts(61,36): error TS7006: Parameter 'capability' implicitly has an 'any' type.
+apps/server/src/plugins/commands.ts(61,67): error TS2339: Property 'capabilities' does not exist on type 'PluginVersion'.
+apps/server/src/plugins/index.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(27,76): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(27,85): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(32,110): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(37,102): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(43,95): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(45,92): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(49,94): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/index.ts(53,104): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/plugins/storage.ts(29,65): error TS7006: Parameter 'field' implicitly has an 'any' type.
+apps/server/src/projects/graph.ts(52,54): error TS7006: Parameter 'reference' implicitly has an 'any' type.
+apps/server/src/projects/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/projects/index.ts(21,103): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/projects/index.ts(26,36): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/projects/index.ts(26,45): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/projects/index.ts(31,70): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/projects/index.ts(36,96): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(21,66): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(22,44): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(23,42): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(24,41): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(25,49): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(26,46): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/protocol-dispatch/index.ts(27,44): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/reconciliation-http.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/reconciliation-http.ts(3,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/reconciliation-http.ts(10,105): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/reconciliation-http.ts(12,86): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/reconciliation-http.ts(17,81): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/reconciliation-http.ts(22,79): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/reconciliation.ts(3,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/runner-maintenance/index.ts(2,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/runner-maintenance/index.ts(19,71): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/runner-maintenance/index.ts(20,112): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/runner-maintenance/index.ts(22,84): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/scheduler.ts(1,24): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/scheduler.ts(6,20): error TS7006: Parameter 'error' implicitly has an 'any' type.
+apps/server/src/scheduler.ts(10,107): error TS7006: Parameter 'jobs' implicitly has an 'any' type.
+apps/server/src/shutdown/index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/shutdown/index.ts(10,32): error TS7006: Parameter '_request' implicitly has an 'any' type.
+apps/server/src/shutdown/index.ts(10,42): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/shutdown/index.ts(10,49): error TS7006: Parameter 'payload' implicitly has an 'any' type.
+apps/server/src/streams.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/streams.ts(12,104): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/streams.ts(12,113): error TS7006: Parameter 'reply' implicitly has an 'any' type.
+apps/server/src/task-index.ts(1,38): error TS7016: Could not find a declaration file for module 'fastify'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js' implicitly has an 'any' type.
+apps/server/src/task-index.ts(10,146): error TS7006: Parameter 'request' implicitly has an 'any' type.
+apps/server/src/tasks.ts(5,29): error TS7016: Could not find a declaration file for module 'pg-boss'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js' implicitly has an 'any' type.
+apps/server/src/tasks.ts(45,76): error TS7006: Parameter 'text' implicitly has an 'any' type.
+apps/server/src/tasks.ts(45,82): error TS7006: Parameter 'values' implicitly has an 'any' type.
+apps/server/src/usage.ts(12,74): error TS2345: Argument of type 'Sample' is not assignable to parameter of type '{ source: string; scope: string; model?: string | undefined; }'.
+  Type 'Sample' is missing the following properties from type '{ source: string; scope: string; model?: string | undefined; }': source, scope
+apps/server/src/usage.ts(26,95): error TS2739: Type 'Sample' is missing the following properties from type '{ inputTokens: number | null; outputTokens: number | null; costUsd: number | null; }': inputTokens, outputTokens, costUsd
+apps/server/src/usage.ts(26,106): error TS18048: 'previous' is possibly 'undefined'.
+packages/contracts/src/active-steering.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/active-steering.ts(8,61): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/active-steering.ts(19,13): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(23,54): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(23,167): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(28,17): error TS7006: Parameter 'patch' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(28,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/assistant.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/assistant.ts(16,52): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/conversation-context.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/conversation-context.ts(5,135): error TS7006: Parameter 'refs' implicitly has an 'any' type.
+packages/contracts/src/conversation-context.ts(6,25): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+packages/contracts/src/conversation-queue.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/conversation-queue.ts(12,69): error TS7006: Parameter 'text' implicitly has an 'any' type.
+packages/contracts/src/conversations.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/conversations.ts(25,46): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(19,17): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(19,26): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/goal-context.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/goal-context.ts(5,121): error TS7006: Parameter 'refs' implicitly has an 'any' type.
+packages/contracts/src/goal-context.ts(6,25): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(21,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(21,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(22,35): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(23,31): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(23,36): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-runs.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-runs.ts(10,77): error TS7006: Parameter 'nodes' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-runs.ts(10,104): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-tool-runs.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/goal-tool-runs.ts(10,60): error TS7006: Parameter 'values' implicitly has an 'any' type.
+packages/contracts/src/goal-tool-runs.ts(11,55): error TS7006: Parameter 'values' implicitly has an 'any' type.
+packages/contracts/src/goals.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/goals.ts(6,54): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/goals.ts(8,56): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/harnesses.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/harnesses.ts(14,40): error TS2532: Object is possibly 'undefined'.
+packages/contracts/src/knowledge.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/knowledge.ts(12,88): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/knowledge.ts(13,55): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/knowledge.ts(19,116): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/knowledge.ts(20,222): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/native-activity.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/native-activity.ts(9,30): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/native-activity.ts(29,17): error TS7006: Parameter 'event' implicitly has an 'any' type.
+packages/contracts/src/native-activity.ts(29,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/package-artifacts.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/plugin-package-fetches.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(9,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(11,62): error TS7006: Parameter 'items' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(15,13): error TS7006: Parameter 'field' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(17,13): error TS7006: Parameter 'field' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(22,13): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(22,90): error TS7006: Parameter 'identifier' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(29,60): error TS7006: Parameter 'fields' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(29,89): error TS7006: Parameter 'field' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(34,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/projects.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/protocol-dispatch.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/protocol-task.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/reconciliation.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/runner-maintenance.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(4,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(12,85): error TS7006: Parameter 'names' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(36,57): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(57,118): error TS7006: Parameter 'batch' implicitly has an 'any' type.
+packages/contracts/src/tasks.ts(1,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.
+packages/contracts/src/tasks.ts(36,17): error TS7006: Parameter 'task' implicitly has an 'any' type.
+packages/contracts/src/tasks.ts(36,23): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/workspace.ts(2,19): error TS7016: Could not find a declaration file for module 'zod'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js' implicitly has an 'any' type.

@@ -1,0 +1,11 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ✓ apps/server/src/goal-delivery/session.test.ts (4 tests | 3 skipped) 1919ms
+   ✓ shares one goal across two clients, keeps material reads explicit and rejects stale input/project writes without retry  613ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 3 skipped (4)
+   Start at  05:05:23
+   Duration  4.73s (transform 1.58s, setup 0ms, import 2.65s, tests 1.92s, environment 0ms)
+

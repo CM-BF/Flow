@@ -1,0 +1,170 @@
+{
+  "observedAt": "2026-10-06T07:33:18.703988+00:00",
+  "operation": "fixed source/read-only preparation; no repeated DB sample",
+  "target": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "approvedProduct": "253b8ad38fd869297e7d9948a26c1d310fef5c6c",
+  "mainClean": true,
+  "productPaths": [
+    "apps/server",
+    "apps/runner",
+    "apps/web",
+    "packages",
+    "tools",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "productDiff": [],
+  "maintenanceApprovedTarget": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+  "maintenancePaths": [
+    "tools/personal-preview",
+    "apps/server/src/runner-maintenance",
+    "packages/contracts/src/runner-maintenance.ts",
+    "packages/storage/migrations/016-runner-maintenance.sql"
+  ],
+  "maintenanceDiff": [],
+  "allPostProductChanges": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "docs/evidence/chat07/main-receipt.json",
+    "docs/evidence/d05/registry-84-receipt.json",
+    "docs/evidence/d05/registry-86-validation.json",
+    "docs/evidence/d05/registry-87-validation.json",
+    "docs/evidence/i02/2026-10-06-integration.md",
+    "docs/evidence/o08/main-receipt.json",
+    "docs/evidence/o08/quality.md",
+    "docs/evidence/wpf-activity-i01/README.md",
+    "docs/evidence/wpf-activity-i01/main-acceptance.json",
+    "docs/evidence/wpf-activity-i01/quality.md",
+    "plans/README.md",
+    "plans/chat07-active-steering/status.md",
+    "plans/d05-architecture-view/status.md",
+    "plans/flow-001-architecture/full-plan-matrix.md",
+    "plans/i02-integration/status.md",
+    "plans/o08-native-graph-acceptance/plan.md",
+    "plans/o08-native-graph-acceptance/review.md",
+    "plans/o08-native-graph-acceptance/status.md",
+    "plans/wpf-activity-i01-integration/plan.md",
+    "plans/wpf-activity-i01-integration/review.md",
+    "plans/wpf-activity-i01-integration/status.md"
+  ],
+  "sources": [
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 2036,
+      "sha256": "e6c171c86e42be33ea5a31da838c63164eaf300bc5483fe6b444c1a12a730008",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 17908,
+      "sha256": "119130fb3aad68141c215e628bab31fee954de1bf7d5fd44e177fcee2510bd44",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1708,
+      "sha256": "9958c783bfcc3c52e7ebaf6b8115a80141e7bc07a1025499b41fd9961c3db1d1",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8113,
+      "sha256": "edc5a1f67fe6cbbbff1e7e2d85e5a9b01e886be0de08594a52ea89897e06e899",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/index.ts",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "packages/contracts/src/runner-maintenance.ts",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12233,
+      "sha256": "b65dc11d3296e060d11243580e1e36217f6502ed260842b370a967777ea1cc43",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 1813,
+      "sha256": "37b10746c14807ec99196ce2e408a5f99525744890264442166b37a4e41f49d4",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 1607,
+      "sha256": "54254eb2d4ffb4c64a9e135fbecddc48789263ebd7de778a9c4be8791e90b442",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 17189,
+      "sha256": "6959ec02de0df33b9d1fdd13537072861f7a7e8d6627338cbe14db4060c575b6",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 6848,
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1327,
+      "sha256": "f86e755a32cb6c3c5e81512ca2c0d06844438c67a905d97a4c90ce8d28444344",
+      "fixedEqualsMain": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 265530,
+      "sha256": "cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c",
+      "fixedEqualsMain": true
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/svc02/refresh-253b-readonly-initial.json",
+      "bytes": 5168,
+      "sha256": "458fe5d4ffa1dc54f25fdb895a667bed1fedfe059556bb61c0944daefd5ce1d3"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-253b-readonly-facts.json",
+      "bytes": 6996,
+      "sha256": "9b3761d24358cddbd14aaf6e4627c3c1cf2262f8894608b345f4e41f7de98f81"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-253b-claim.json",
+      "bytes": 620,
+      "sha256": "1f152cd7ce99dfe8315c76f688757aac9db9475145811f389e178580ae40b0f9"
+    }
+  ],
+  "productionOperations": 0,
+  "newQueries": 0,
+  "engineeringTestsRerun": false,
+  "newWindow": "NOT_GRANTED",
+  "resume": "NOT_GRANTED",
+  "privateBaseline": "/tmp/flow-svc02-private-baseline-253b-final.json (0600, local only, no credentials copied into evidence)"
+}

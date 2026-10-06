@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-06T08:21:43.712733+00:00",
+  "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66",
+  "delivery": "6caccb90abb5437ed6726563acf46e745b5f161f",
+  "sourceComparisons": [
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "bytes": 2593,
+      "sha256": "6f9b181aeeb01572901e2f735dfed9c1b7d859ecc1448cc7baf502d6a2c4a233",
+      "exact": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 4269,
+      "sha256": "f4a5ffce6d10bec2f963eef32c07dd873f2e4e5db9d028fd99e6d8468da0167b",
+      "exact": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 11421,
+      "sha256": "c66025cf60441ac84e29c9061c510ce6bf177d73b91e4a75a2c99ddb5daa0491",
+      "exact": true
+    },
+    {
+      "path": "apps/web/test/conversation-context-receipts.test.ts",
+      "bytes": 5563,
+      "sha256": "8e6d281bbfa365e89c0f67e631fc5c046b9685c1690babdcddea8fd0ced23637",
+      "exact": true
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "bytes": 9992,
+      "sha256": "2108d88687b3282f73a78219eed54abfbcacdaa776cf52b10c9a2e20997f266d",
+      "exact": true
+    },
+    {
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "bytes": 23144,
+      "sha256": "2991807a0b5e839c41359174979b1f3af74ad9f465fa94febf3ae7ec728725b6",
+      "exact": true
+    }
+  ],
+  "mainHeld": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "stage": "candidate waiting for personal-service fixed-source window",
+  "authorAndIndependentChecks": "Existing author142 and independent124+18, no repeats; combination Web types recorded separately.",
+  "providerQueries": 0,
+  "webTypecheck": {
+    "exit": 0,
+    "path": "docs/evidence/i02/context-receipts-web-types.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

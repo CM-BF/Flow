@@ -1,0 +1,360 @@
+{
+  "task": "ENG01F",
+  "base": "52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f",
+  "sourceTarget": "1b3c9023020985f15486368301ccfece993a3ff3",
+  "createdAt": "2026-10-06T12:02:23.198317+00:00",
+  "entries": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-capture.test.ts",
+      "bytes": 9048,
+      "sha256": "14b67f5952e03037d108d0ef48d012fa3a24bb9c1db483ac9284b2866131a44b"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "bytes": 2845,
+      "sha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "bytes": 4094,
+      "sha256": "0b4c9853c2b2377d84b37cc39cd706ac2ceda2a82cbeaaaebdecce54f3f57860"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "bytes": 3858,
+      "sha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4227,
+      "sha256": "d449d350dd2d91611184861df68ce70c4f3b7c9d1543a7d19c61ff26c246547c",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "bytes": 7992,
+      "sha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "bytes": 4507,
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "bytes": 1711,
+      "sha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/checker.ts",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/identity.ts",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "bytes": 15852,
+      "sha256": "911c45b252e3598d4dfd2d4a4bb7eca2b521eb7152de0670f7a6b57904ef533d",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch-integration.test.ts",
+      "bytes": 11961,
+      "sha256": "d9bf6572a1e64998fc9473204e686d46bf54c130ae7f4e348ea1ccac3ad70647",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.test.ts",
+      "bytes": 3563,
+      "sha256": "4f465b36b4f104b23cb50ca2fd8e180a9fb24bf2d4738681dd024a26e8506e79",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.ts",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/resources.ts",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "bytes": 8715,
+      "sha256": "df2e75ab590b1843defb10ba79c5d0b5d07866b38277c315c0c39cea09e7b9d1",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "bytes": 13029,
+      "sha256": "797543c0c78569faa92c969054cf68d0e2a16f83a34a9156656c8b423f652054",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "bytes": 7947,
+      "sha256": "0cf6f5408b18c6fef0c47fbd2d683ac9a6349b694a1630207588db970611be4b",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.ts",
+      "bytes": 1514,
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 2028,
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 4041,
+      "sha256": "31c5b334c93f2ca3d1f16d0d1fb8b1233b53fd5254d9975dbf73d23e90159ec9",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 5176,
+      "sha256": "63aa5aa11744497b4c90e8927cbf90aed383f5a9a945b15358fdaeec8ff0f9ad",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/README.md",
+      "bytes": 3468,
+      "sha256": "fd311be5850f64fe21b5c4ca8c6f47bec0e1550e83521261588c5e9fdbe2e327"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/claim.json",
+      "bytes": 854,
+      "sha256": "8dcd298291ed2d99f64b0fd868024bf076a0e8b9d7e55db6281bee6038c21281"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/install.json",
+      "bytes": 327,
+      "sha256": "688a2f54c14be917476d284e9533a32068833b16f8af75061ea26c1643c19a07"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/install.stdout",
+      "bytes": 658,
+      "sha256": "8cd6191bed38346ca210578f558597d7d0d84c1e5d321e0ac6dba9cdaad803e1"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/interface.md",
+      "bytes": 2442,
+      "sha256": "c827de42c211f48c8b8e4749bed87ce7e50e13938840ad7cb9d9062de2c85463"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/local.json",
+      "bytes": 1080,
+      "sha256": "33e5a36cf9096e6988b4b8bbb6885ee85743fa3ce4a332288d394e7ac88e618d"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/local.stdout",
+      "bytes": 1162,
+      "sha256": "a44d51b03cda00cc2f9238a65b6329f12415405ba55d51b55e64e92efd1120f1"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/quality.json",
+      "bytes": 2054,
+      "sha256": "4c220083bf72da52c5cfef983b376a68d9857c62ba0e604c43c30b3ad4a3e217"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/types.json",
+      "bytes": 171,
+      "sha256": "8ab5a368295a87fe780ea79a130dd77c44ca5cee15d153b8f82916aff857db57"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01f/types.stdout",
+      "bytes": 118,
+      "sha256": "d4118c645d89405ee5ef5e4210d85d1386993ffd16b37bccfb244827fcacc401"
+    }
+  ],
+  "validation": {
+    "selected": 20,
+    "passed": 20,
+    "failed": 0,
+    "rootTypecheckExitCode": 0,
+    "oldTestsRerun": 0,
+    "providerCalls": 0
+  },
+  "scopeLimit": "Independent pure evidence after host full snapshots; writerSettlement not-attested; no native/center/old-v1 completion claim."
+}

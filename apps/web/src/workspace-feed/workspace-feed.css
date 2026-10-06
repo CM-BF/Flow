@@ -47,3 +47,12 @@
   .wf-feed-footer { padding: 6px 14px; flex-wrap: wrap; }
 }
 @media (prefers-reduced-motion: reduce) { .wf-overview *, .wf-overview *::before, .wf-overview *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+.wf-feed[hidden], .wf-window-navigation[hidden] { display: none; }
+.wf-records > .wf-window-spacer { padding: 0; border: 0; pointer-events: none; }
+.wf-window-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 4px 24px; color: var(--muted-foreground); font-size: 11px; }
+.wf-window-navigation span { margin-right: auto; }
+.wf-window-navigation button { padding: 4px 2px; color: var(--foreground); }
+.wf-window-navigation button:disabled { opacity: .45; }
+.wf-window-navigation button:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+@media (max-width: 600px) { .wf-window-navigation { padding-inline: 14px; } }

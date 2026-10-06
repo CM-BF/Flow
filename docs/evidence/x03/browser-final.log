@@ -1,0 +1,179 @@
+{
+  "sourceCommit": "895c8999d22fb3d911de2d46969e37b40051fdea",
+  "startedAt": "2026-10-06T04:16:17.584Z",
+  "completedAt": "2026-10-06T04:16:24.201Z",
+  "exitCode": 0,
+  "checks": [
+    "public client registers config/grants/versions; same revision survives real center restart",
+    "closed view sends zero registry requests",
+    "opened view reads scoped real registry",
+    "bounded 10-row scoped list, nextCursor replacement, detail only on expansion, config/grants match durable revision",
+    "versions 10+2 and audit 10+4 use public paginated reads only after user expansion",
+    "real trusted host activate/disable/fail observed independently; no registry/client/token in PluginContext",
+    "project scope forwarded, personal/project data separated, empty scope described",
+    "401/503/offline read errors visible, explicit retry recovers without auto loop; refresh and next-page controls retain focus",
+    "close aborts reads; same-ID different-center data isolated; ignored-abort late result rejected; closed center switch zero reads",
+    "open view session change aborts old detail and rejects old-center late result with the same plugin ID",
+    "legal 48-character key and 128-character semver wrap at 390px without clipping, overlap or page overflow",
+    "390px light/dark no horizontal overflow, keyboard expansion and visible focus"
+  ],
+  "pageErrors": [],
+  "closeErrors": [],
+  "cleanup": [
+    {
+      "database": "flow_x03_42660_0_3c2e6533",
+      "closingConnections": [],
+      "remaining": 0
+    },
+    {
+      "database": "flow_x03_42660_1_56f4093a",
+      "closingConnections": [],
+      "remaining": 0
+    }
+  ],
+  "boundaryMeasurements": {
+    "keyLength": 48,
+    "versionLength": 128,
+    "keyBounds": {
+      "right": 143.84375,
+      "valueLeft": 153.84375,
+      "textRights": [
+        138.796875,
+        139.28125,
+        95.234375
+      ]
+    },
+    "versionBounds": {
+      "right": 366,
+      "textRights": [
+        60.6875,
+        360.40625,
+        360.40625,
+        207.140625
+      ]
+    }
+  },
+  "reads": [
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?after=d3ad7c3d-e68d-4a2a-b21f-2a5d69c24630&limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/versions?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/versions?after=eddcea91-f3c5-4419-9580-5f66c56b1cdd&limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/operations?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/operations?after=4b02e657-00e4-4eb2-b15b-ccf654787709&limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?projectId=b4c7e349-8e6c-45a0-af7d-301fa895c4e3&limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?projectId=6ac62b5a-eb5c-4081-8406-fab8c750830d&limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+    },
+    {
+      "center": 1,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 1,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+    },
+    {
+      "center": 1,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+    },
+    {
+      "center": 1,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+    },
+    {
+      "center": 0,
+      "method": "GET",
+      "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/versions?limit=10"
+    }
+  ],
+  "boundary": "Isolated module fixture, real PG/HTTP/host. Production App mounting is separate acceptance."
+}

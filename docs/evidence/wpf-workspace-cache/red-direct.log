@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache
+
+ ❯ apps/web/test/workspace-retention.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/workspace-retention.test.ts [ apps/web/test/workspace-retention.test.ts ]
+Error: Cannot find module '../src/workspace-retention' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/test/workspace-retention.test.ts'
+ ❯ apps/web/test/workspace-retention.test.ts:2:1
+      1| import { describe, expect, it } from "vitest";
+      2| import { canOpenConversation, retentionReasons } from "../src/workspac…
+       | ^
+      3| import { cacheRead, touchRead, bodyBytes } from "../src/conversations/…
+      4| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  04:36:01
+   Duration  387ms (transform 100ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

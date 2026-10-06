@@ -1,0 +1,1307 @@
+{
+  "startedAt": "2026-10-06T03:04:13.898Z",
+  "finishedAt": "2026-10-06T03:04:15.390Z",
+  "node": "v24.20.0",
+  "packages": {
+    "harness-claude-code": {
+      "name": "@ai-sdk/harness-claude-code",
+      "version": "1.0.143",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/vercel/ai",
+        "directory": "packages/harness-claude-code"
+      }
+    },
+    "harness": {
+      "name": "@ai-sdk/harness",
+      "version": "1.0.139",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/vercel/ai",
+        "directory": "packages/harness"
+      }
+    }
+  },
+  "modelCalls": 0,
+  "realRefreshCalls": 0,
+  "realKeychainCalls": 0,
+  "syntheticOnly": true,
+  "result": "passed",
+  "observations": [
+    {
+      "scenario": "priority",
+      "elapsedMs": 107.304833,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "priority",
+          "observation": {
+            "cases": [
+              {
+                "kind": "fresh-file",
+                "selected": "synthetic-access-00",
+                "failure": null,
+                "refreshes": 0,
+                "keychainReads": 0,
+                "keychainWrites": 0,
+                "fileAccessToken": "synthetic-access-00",
+                "keychainAccessToken": "synthetic-access-99",
+                "forbiddenCalls": []
+              },
+              {
+                "kind": "expired-file",
+                "selected": "synthetic-access-01",
+                "failure": null,
+                "refreshes": 1,
+                "keychainReads": 0,
+                "keychainWrites": 0,
+                "fileAccessToken": "synthetic-access-01",
+                "keychainAccessToken": "synthetic-access-99",
+                "forbiddenCalls": []
+              },
+              {
+                "kind": "file-refresh-denied",
+                "selected": null,
+                "failure": "OAuth access token refresh failed with status 400.",
+                "refreshes": 1,
+                "keychainReads": 0,
+                "keychainWrites": 0,
+                "fileAccessToken": "synthetic-access-00",
+                "keychainAccessToken": "synthetic-access-99",
+                "forbiddenCalls": []
+              },
+              {
+                "kind": "invalid-file",
+                "selected": "synthetic-access-99",
+                "failure": null,
+                "refreshes": 0,
+                "keychainReads": 1,
+                "keychainWrites": 0,
+                "fileAccessToken": null,
+                "keychainAccessToken": "synthetic-access-99",
+                "forbiddenCalls": []
+              },
+              {
+                "kind": "keychain-refresh",
+                "selected": "synthetic-access-01",
+                "failure": null,
+                "refreshes": 1,
+                "keychainReads": 1,
+                "keychainWrites": 1,
+                "fileAccessToken": null,
+                "keychainAccessToken": "synthetic-access-01",
+                "forbiddenCalls": []
+              },
+              {
+                "kind": "custom-missing",
+                "selected": null,
+                "failure": null,
+                "refreshes": 0,
+                "keychainReads": 0,
+                "keychainWrites": 0,
+                "fileAccessToken": "synthetic-access-00",
+                "keychainAccessToken": "synthetic-access-99",
+                "forbiddenCalls": []
+              }
+            ],
+            "explicitEnvironmentSkipsSubscription": true,
+            "forbiddenCalls": []
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "threshold",
+      "elapsedMs": 67.79345900000001,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "threshold",
+          "observation": {
+            "fixedNow": 1800000000000,
+            "cases": [
+              {
+                "offsetMs": 300001,
+                "expiring": false
+              },
+              {
+                "offsetMs": 300000,
+                "expiring": true
+              },
+              {
+                "offsetMs": 299999,
+                "expiring": true
+              },
+              {
+                "offsetMs": -1,
+                "expiring": true
+              }
+            ],
+            "forbiddenCalls": []
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "rotate-once-2",
+      "elapsedMs": 85.38200000000003,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "rotate-once-2",
+          "observation": {
+            "mode": "rotate-once",
+            "callers": 2,
+            "samePid": 79922,
+            "requests": [
+              {
+                "index": 1,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 2,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              }
+            ],
+            "results": [
+              {
+                "caller": 1,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 2,
+                "status": "fulfilled",
+                "returnedToken": "synthetic-access-01"
+              }
+            ],
+            "saved": {
+              "accessToken": "synthetic-access-01",
+              "refreshToken": "synthetic-refresh-01"
+            },
+            "fileMode": "600",
+            "remainingFiles": [
+              ".credentials.json"
+            ],
+            "trace": {
+              "files": [
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79922.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79922.tmp"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79922.tmp",
+                  "destination": ".claude/.credentials.json"
+                }
+              ],
+              "keychainReads": 0,
+              "keychainWrites": 0,
+              "forbiddenCalls": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "rotate-once-16",
+      "elapsedMs": 85.13704100000001,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "rotate-once-16",
+          "observation": {
+            "mode": "rotate-once",
+            "callers": 16,
+            "samePid": 79924,
+            "requests": [
+              {
+                "index": 1,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 2,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 3,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 4,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 5,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 6,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 7,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 8,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 9,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 10,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 11,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 12,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 13,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 14,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 15,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 16,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              }
+            ],
+            "results": [
+              {
+                "caller": 1,
+                "status": "fulfilled",
+                "returnedToken": "synthetic-access-01"
+              },
+              {
+                "caller": 2,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 3,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 4,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 5,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 6,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 7,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 8,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 9,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 10,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 11,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 12,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 13,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 14,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 15,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              },
+              {
+                "caller": 16,
+                "status": "rejected",
+                "code": null,
+                "message": "OAuth access token refresh failed with status 400."
+              }
+            ],
+            "saved": {
+              "accessToken": "synthetic-access-01",
+              "refreshToken": "synthetic-refresh-01"
+            },
+            "fileMode": "600",
+            "remainingFiles": [
+              ".credentials.json"
+            ],
+            "trace": {
+              "files": [
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79924.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79924.tmp"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79924.tmp",
+                  "destination": ".claude/.credentials.json"
+                }
+              ],
+              "keychainReads": 0,
+              "keychainWrites": 0,
+              "forbiddenCalls": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "shared-temp-2",
+      "elapsedMs": 86.45412500000003,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "shared-temp-2",
+          "observation": {
+            "mode": "shared-temp",
+            "callers": 2,
+            "samePid": 79925,
+            "requests": [
+              {
+                "index": 1,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 2,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              }
+            ],
+            "results": [
+              {
+                "caller": 1,
+                "status": "fulfilled",
+                "returnedToken": "synthetic-access-01"
+              },
+              {
+                "caller": 2,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-3U305c/.claude/.credentials.json.79925.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-3U305c/.claude/.credentials.json'"
+              }
+            ],
+            "saved": {
+              "accessToken": "synthetic-access-01",
+              "refreshToken": "synthetic-refresh-01"
+            },
+            "fileMode": "600",
+            "remainingFiles": [
+              ".credentials.json"
+            ],
+            "trace": {
+              "files": [
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79925.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79925.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79925.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79925.tmp"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79925.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79925.tmp",
+                  "destination": ".claude/.credentials.json"
+                }
+              ],
+              "keychainReads": 0,
+              "keychainWrites": 0,
+              "forbiddenCalls": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "shared-temp-16",
+      "elapsedMs": 90.15933299999995,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "shared-temp-16",
+          "observation": {
+            "mode": "shared-temp",
+            "callers": 16,
+            "samePid": 79926,
+            "requests": [
+              {
+                "index": 1,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 2,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 3,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 4,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 5,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 6,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 7,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 8,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 9,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 10,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 11,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 12,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 13,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 14,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 15,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              },
+              {
+                "index": 16,
+                "refreshToken": "synthetic-refresh-00",
+                "method": "POST",
+                "hasSignal": false
+              }
+            ],
+            "results": [
+              {
+                "caller": 1,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 2,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 3,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 4,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 5,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 6,
+                "status": "fulfilled",
+                "returnedToken": "synthetic-access-05"
+              },
+              {
+                "caller": 7,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 8,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 9,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 10,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 11,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 12,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 13,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 14,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 15,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              },
+              {
+                "caller": 16,
+                "status": "rejected",
+                "code": "ENOENT",
+                "message": "ENOENT: no such file or directory, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json.79926.tmp' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-e01-synthetic-C58qjW/.claude/.credentials.json'"
+              }
+            ],
+            "saved": {
+              "accessToken": "synthetic-access-16",
+              "refreshToken": "synthetic-refresh-16"
+            },
+            "fileMode": "600",
+            "remainingFiles": [
+              ".credentials.json"
+            ],
+            "trace": {
+              "files": [
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "mkdir",
+                  "path": ".claude"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "writeFile",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "chmod",
+                  "path": ".claude/.credentials.json.79926.tmp"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                },
+                {
+                  "operation": "rename",
+                  "path": ".claude/.credentials.json.79926.tmp",
+                  "destination": ".claude/.credentials.json"
+                }
+              ],
+              "keychainReads": 0,
+              "keychainWrites": 0,
+              "forbiddenCalls": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "unbounded-refresh",
+      "elapsedMs": 704.328167,
+      "code": null,
+      "signal": "SIGTERM",
+      "timedOut": true,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "unbounded-refresh",
+          "observation": {
+            "mode": "unbounded-refresh",
+            "called": true,
+            "upstreamFetchReceivedSignal": false,
+            "callerAborted": true,
+            "helperSettledAfter150ms": false,
+            "trace": {
+              "files": [
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                }
+              ],
+              "keychainReads": 0,
+              "keychainWrites": 0,
+              "forbiddenCalls": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "injected-timeout",
+      "elapsedMs": 137.7975409999999,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "injected-timeout",
+          "observation": {
+            "mode": "injected-timeout",
+            "outcome": "TimeoutError",
+            "elapsedMs": 62.203917,
+            "called": true,
+            "upstreamFetchReceivedSignal": false,
+            "trace": {
+              "files": [
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                }
+              ],
+              "keychainReads": 0,
+              "keychainWrites": 0,
+              "forbiddenCalls": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "injected-cancel",
+      "elapsedMs": 111.7846669999999,
+      "code": 0,
+      "signal": null,
+      "timedOut": false,
+      "stderr": "",
+      "messages": [
+        {
+          "scenario": "injected-cancel",
+          "observation": {
+            "mode": "injected-cancel",
+            "outcome": "AbortError",
+            "elapsedMs": 32.74850000000001,
+            "called": true,
+            "upstreamFetchReceivedSignal": false,
+            "trace": {
+              "files": [
+                {
+                  "operation": "readFile",
+                  "path": ".claude/.credentials.json"
+                }
+              ],
+              "keychainReads": 0,
+              "keychainWrites": 0,
+              "forbiddenCalls": []
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

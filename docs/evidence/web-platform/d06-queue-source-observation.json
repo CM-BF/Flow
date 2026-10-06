@@ -1,0 +1,499 @@
+{
+  "generatedAt": "2026-10-06T05:31:45.221Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "44713719f7e2f76d0f36dba979d779a96e1a80ca",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T05:31:45.692Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "taskCount": 65,
+  "tasks": [
+    {
+      "id": "WPF-QUEUE01",
+      "title": "聊天待发送消息",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+      "branch": "codex/web-conversation-queue",
+      "planDir": "plans/wpf-queue01-ui",
+      "evidenceDir": "docs/evidence/wpf-queue01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T05:28:00.237Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/plans/wpf-queue01-ui/status.md",
+        "syncedAt": "2026-10-06T05:31:45.221Z",
+        "stale": false,
+        "ageHours": 0.19589472222222223
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-conversation-queue",
+        "head": "c80d1769442b7b610397efe04f49da0bb1eeda6e",
+        "dirty": true,
+        "changedFiles": 13,
+        "observedAt": "2026-10-06T05:31:45.692Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "已接收排队接口，正在把排队和暂停继续接入聊天",
+          "next": "运行时可排队消息、查看等待列表并显式暂停或继续",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/conversations/queue/ConversationQueue.tsx",
+            "apps/web/src/conversations/queue/commands.ts",
+            "apps/web/src/conversations/queue/projection.ts",
+            "apps/web/src/conversations/queue/queue-elements.tsx",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "apps/web/test/conversation-queue.fixture.ts",
+            "apps/web/test/conversation-queue.browser.ts"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "WPF-QUEUE01",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/web-conversation-queue",
+        "branchState": "IN_PROGRESS",
+        "updatedAt": "2026-10-06T05:20:00.000Z",
+        "updatedRecord": "2026-10-06 05:20 UTC / 固定main14c61b4062f8040ba6c7239860929366e5bd3fc1",
+        "todos": [
+          {
+            "id": "WPF-QUEUE01-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "固定输入、正式领取、[技能](../../docs/evidence/wpf-queue01/quality.md)"
+          },
+          {
+            "id": "WPF-QUEUE01-02",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "命令/投影实现准备"
+          },
+          {
+            "id": "WPF-QUEUE01-03",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "页面fixture待实施"
+          },
+          {
+            "id": "WPF-QUEUE01-04",
+            "state": "pending",
+            "owner": "workspace_panels_owner",
+            "evidence": "固定实现/独立审查/聚合待办"
+          },
+          {
+            "id": "WPF-QUEUE01-F01",
+            "state": "pending",
+            "owner": "待Lead另领owner",
+            "evidence": "跨reload/换连接原key恢复尚未实现；稳定无凭据namespace与journal后继，不凭同文GET猜受理"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "14c61b4062f8040ba6c7239860929366e5bd3fc1 / metadata HEAD由Git聚合",
+        "declaredDirty": "已核clean输入；仅本任务文档初始化，实际dirty由Git聚合",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "NOT_INTEGRATED；main14c61只有公共queue能力，无本Web控制",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": null
+      },
+      "implementationProof": {
+        "target": null,
+        "head": "c80d1769442b7b610397efe04f49da0bb1eeda6e",
+        "scopes": [
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/queue/queue-elements.tsx",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/conversation-queue.fixture.ts",
+          "apps/web/test/conversation-queue.browser.ts"
+        ],
+        "observedAt": "2026-10-06T05:31:45.709Z",
+        "state": "unknown",
+        "reason": "实现目标需完整 SHA"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-queue01-ui/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-queue01-ui/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-queue01-ui/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-queue01/take-receipt.json",
+          "title": "take receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-queue01/quality.md",
+          "title": "技能",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 5
+      },
+      "main": {
+        "record": "NOT_INTEGRATED；main14c61只有公共queue能力，无本Web控制",
+        "recordedHead": null,
+        "target": null,
+        "mainHead": "44713719f7e2f76d0f36dba979d779a96e1a80ca",
+        "scopes": [
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/queue/queue-elements.tsx",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/conversation-queue.fixture.ts",
+          "apps/web/test/conversation-queue.browser.ts"
+        ],
+        "observedAt": "2026-10-06T05:31:45.692Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/conversations/queue/ConversationQueue.tsx",
+            "apps/web/src/conversations/queue/commands.ts",
+            "apps/web/src/conversations/queue/projection.ts",
+            "apps/web/src/conversations/queue/queue-elements.tsx",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.browser.ts",
+            "apps/web/test/conversation-queue.fixture.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "docs/evidence/wpf-queue01",
+            "plans/wpf-queue01-ui"
+          ],
+          "state": "active",
+          "branch": "codex/web-conversation-queue",
+          "origin": "new",
+          "taskId": "WPF-QUEUE01",
+          "worker": "workspace_panels_owner",
+          "claimId": "b4ea85d0-ad87-4903-9a59-73281ad17752",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+          "createdAt": "2026-10-06T05:19:31.947Z",
+          "updatedAt": "2026-10-06T05:19:31.947Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "D06",
+      "title": "架构固定快照更新",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current",
+      "branch": "codex/dashboard-architecture-current",
+      "planDir": "plans/d06-architecture-refresh",
+      "evidenceDir": "docs/evidence/d06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T05:31:27.121Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current/plans/d06-architecture-refresh/status.md",
+        "syncedAt": "2026-10-06T05:31:45.221Z",
+        "stale": false,
+        "ageHours": 0.01256138888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/dashboard-architecture-current",
+        "head": "11617bec69a8da2aaa35248c3f9eab390b117668",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T05:31:45.692Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "review",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 3,
+          "output": "架构图已补齐新会话、配置、队列与图提案，图对应版本清晰可见",
+          "next": "独立审查后的架构页更新",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "37561609fc776c5a87dc45a11c07bd0595089e12",
+          "scopes": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/public/architecture.js",
+            "apps/execution-dashboard/test/architecture.test.mjs"
+          ],
+          "errors": []
+        },
+        "taskId": "D06",
+        "owner": "w01_owner / 派发 gpt-6-astra ultra",
+        "branch": "codex/dashboard-architecture-current",
+        "branchState": "implemented",
+        "updatedAt": "2026-10-06T05:31:00.000Z",
+        "updatedRecord": "2026-10-06 05:31 UTC",
+        "todos": [
+          {
+            "id": "D06-01",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "固定新树 clean、正式 receipt/live v1、原历史归档与技能读取"
+          },
+          {
+            "id": "D06-02",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "固定eb源码已核，3756160三实现文件与统一标题基线"
+          },
+          {
+            "id": "D06-03",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "7 Node/五图Chrome、双主题390与clean-code，current证据"
+          },
+          {
+            "id": "D06-04",
+            "state": "in-progress",
+            "owner": "w01_owner",
+            "evidence": "候选3756160交root独审，未集成本轮"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "eb14991a170b72d7d974428b2e440e1faada2c1e / 37561609fc776c5a87dc45a11c07bd0595089e12（实现；后续 metadata）",
+        "declaredDirty": "实现已冻结，仅本任务 metadata；现场 Git 由聚合器核验",
+        "checks": {
+          "state": "passed",
+          "target": "37561609fc776c5a87dc45a11c07bd0595089e12",
+          "record": "PASSED 37561609fc776c5a87dc45a11c07bd0595089e12；7局部Node、五视图Chrome/双主题390"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "旧 ef42277 轮已集成；本轮刷新未集成",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": "37561609fc776c5a87dc45a11c07bd0595089e12"
+      },
+      "implementationProof": {
+        "target": "37561609fc776c5a87dc45a11c07bd0595089e12",
+        "head": "11617bec69a8da2aaa35248c3f9eab390b117668",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/public/architecture.js",
+          "apps/execution-dashboard/test/architecture.test.mjs"
+        ],
+        "observedAt": "2026-10-06T05:31:45.729Z",
+        "state": "unknown",
+        "implementationChanges": [],
+        "outsideChanges": [
+          "docs/evidence/d06/current/browser-check.mjs"
+        ],
+        "metadataChanges": [
+          "docs/evidence/d06/current/README.md",
+          "docs/evidence/d06/current/browser-checks.json",
+          "docs/evidence/d06/current/browser-output.txt",
+          "docs/evidence/d06/current/data-dark-narrow.png",
+          "docs/evidence/d06/current/data-dark.png",
+          "docs/evidence/d06/current/data-light-narrow.png",
+          "docs/evidence/d06/current/fixed-source-audit.json",
+          "docs/evidence/d06/current/historical-8f-plan.md",
+          "docs/evidence/d06/current/historical-8f-plan.txt",
+          "docs/evidence/d06/current/historical-8f-review.md",
+          "docs/evidence/d06/current/historical-8f-review.txt",
+          "docs/evidence/d06/current/historical-8f-status.md",
+          "docs/evidence/d06/current/historical-8f-status.txt",
+          "docs/evidence/d06/current/historical-index.md",
+          "docs/evidence/d06/current/initial-missing-dependency.txt",
+          "docs/evidence/d06/current/initial-source-location.txt",
+          "docs/evidence/d06/current/install.txt",
+          "docs/evidence/d06/current/modules-light.png",
+          "docs/evidence/d06/current/node-tests.txt",
+          "docs/evidence/d06/current/quality.md",
+          "docs/evidence/d06/current/states-dark.png",
+          "docs/evidence/d06/current/states-light.png",
+          "plans/d06-architecture-refresh/plan.md",
+          "plans/d06-architecture-refresh/review.md",
+          "plans/d06-architecture-refresh/status.md"
+        ],
+        "reason": "范围外存在非 metadata 变化，需 owner 核对实现范围"
+      },
+      "documents": [
+        {
+          "path": "plans/d06-architecture-refresh/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d06-architecture-refresh/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d06-architecture-refresh/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/d06/current/take-receipt.json",
+          "title": "take receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/current/historical-8f-plan.txt",
+          "title": "plan",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/current/historical-8f-status.txt",
+          "title": "status",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/current/historical-8f-review.txt",
+          "title": "review",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/current/quality.md",
+          "title": "本轮质量",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/current/README.md",
+          "title": "本轮验证与固定源码",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 4
+      },
+      "main": {
+        "record": "旧 ef42277 轮已集成；本轮刷新未集成",
+        "recordedHead": null,
+        "target": "37561609fc776c5a87dc45a11c07bd0595089e12",
+        "mainHead": "44713719f7e2f76d0f36dba979d779a96e1a80ca",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/public/architecture.js",
+          "apps/execution-dashboard/test/architecture.test.mjs"
+        ],
+        "observedAt": "2026-10-06T05:31:45.692Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "无法以祖先关系证明，且 owner 实现范围存在变化或未知"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/public/architecture.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06",
+            "plans/d06-architecture-refresh"
+          ],
+          "state": "active",
+          "branch": "codex/dashboard-architecture-current",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "w01_owner",
+          "claimId": "e5b2fb56-8e3a-40b7-bfa4-192f34187c0b",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current",
+          "createdAt": "2026-10-06T05:26:04.403Z",
+          "updatedAt": "2026-10-06T05:26:04.403Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    }
+  ],
+  "capture": {
+    "url": "http://127.0.0.1:4320/api/snapshot",
+    "operator": "d01_owner",
+    "method": "one read after Lead SOURCE_MOVED; tasks preserved as raw excerpt"
+  }
+}

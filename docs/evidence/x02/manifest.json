@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-06T03:46:10.811Z",
+  "target": "3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee",
+  "base": "edee6b1c5d74c2ee46ec98bab2844579db6a00c4",
+  "sourceHashes": {
+    "apps/server/src/plugins/commands.ts": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5",
+    "apps/server/src/plugins/index.ts": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c",
+    "apps/server/src/plugins/plugins.test.ts": "2e6c36cdd7db85846f9af14ec41c5b7e450fc2a185138185358c3554e09f54fe",
+    "apps/server/src/plugins/queries.ts": "06f365f6381bd6885965a5ff31ae94a78cfced81bd7de8e37b614cdc8f20486a",
+    "apps/server/src/plugins/storage.ts": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd",
+    "packages/contracts/src/plugins.ts": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747",
+    "packages/storage/migrations/008-plugins.sql": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452"
+  },
+  "evidenceHashes": {
+    "boundaries-green.txt": "114c8c70aaf4ad99ec035ce099a249d5c9e5bbf76b555d67b061870c35b59972",
+    "boundaries-first.txt": "e3e08d14e6b1ae3469a986c94f5be37b514483f09ead7acd91edba0184434b79",
+    "implementation-typecheck.txt": "946a1fddf0621084b66605416a7c107c407c7dc625b3cc06295809670edd3545",
+    "review-bootstrap-checks.txt": "25d4eed8863b2a8f6e288ff254393695a33e7f5f610bbd2d823202d5366014ad"
+  },
+  "checks": {
+    "selected": 17,
+    "passed": 17,
+    "elapsedSeconds": 1.26,
+    "typecheck": "passed",
+    "remainingOwnDatabases": [],
+    "modelCalls": 0,
+    "cloudCalls": 0,
+    "typecheckTarget": "d3b000416565ecb0f6bd11eb5b9be455008f7423",
+    "reviewFix": "test bootstrap hasRoute guard; registry implementation unchanged"
+  },
+  "limits": [
+    "registry declaration only, runtime unavailable",
+    "production center/client/CLI integration owned by Execution Lead",
+    "no performance claims"
+  ],
+  "previousTarget": "d3b000416565ecb0f6bd11eb5b9be455008f7423",
+  "review": {
+    "status": "APPROVED",
+    "reviewer": "Root / Goal Owner",
+    "target": "3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee",
+    "reviewerReranTests": false,
+    "findingsRemaining": 0,
+    "resolvedFinding": "fixture duplicate registration after production mounting; hasRoute guard in 3d0cfc8"
+  }
+}

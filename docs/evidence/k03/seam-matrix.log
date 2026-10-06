@@ -1,0 +1,29 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ❯ apps/server/src/goal-context/context.test.ts (4 tests | 1 failed) 964ms
+   ✓ freezes owner-defined references atomically and serves exact detail across restart and immutable ACK replay 148ms
+   × projects frozen execution privately and recompiles recovery without creating a goal execution 49ms
+   ✓ fails closed for mismatched raw prompts, corrupt records and declared bindings while preserving immutable rows 60ms
+   ✓ rolls back task and input allocation on private budget failure and rejects detail outside its owner tuple 56ms
+ ✓ apps/server/src/goal-context/input.test.ts (1 test) 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-context/context.test.ts > projects frozen execution privately and recompiles recovery without creating a goal execution
+Error: The frozen goal input is missing or invalid.
+ ❯ invalid apps/server/src/goal-context/store.ts:10:23
+
+ ❯ readExecutionInput apps/server/src/goal-context/store.ts:68:84
+ ❯ goalExecutionInputForTask apps/server/src/goal-context/store.ts:78:15
+ ❯ transaction apps/server/src/database.ts:18:20
+ ❯ apps/server/src/goal-context/context.test.ts:45:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 4 passed (5)
+   Start at  23:13:28
+   Duration  1.49s (transform 210ms, setup 0ms, import 373ms, tests 966ms, environment 0ms)
+

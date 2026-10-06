@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+ ✓ apps/web/test/native-activity.test.ts (9 tests) 29ms
+ ✓ apps/web/test/conversation-activity-integration.test.ts (7 tests) 91ms
+ ✓ apps/web/test/conversation-stream-integration.test.ts (11 tests) 3314ms
+     ✓ bounds view and connection turn caches while keeping canonical conversation history  1072ms
+     ✓ reconciles the actual official runtime repository without phantom branches or retained evicted bodies  770ms
+ ✓ apps/web/test/conversation-stream-projection.test.ts (22 tests) 371ms
+ ✓ apps/web/test/conversation-stream.test.ts (32 tests) 284ms
+
+ Test Files  5 passed (5)
+      Tests  81 passed (81)
+   Start at  03:56:15
+   Duration  6.31s (transform 527ms, setup 0ms, import 1.79s, tests 4.09s, environment 0ms)
+

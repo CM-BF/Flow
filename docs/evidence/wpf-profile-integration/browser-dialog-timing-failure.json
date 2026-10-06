@@ -1,0 +1,37 @@
+{
+  "startedAt": "2026-10-06T05:08:38.962Z",
+  "endedAt": "2026-10-06T05:08:59.703Z",
+  "sourceCommit": "9fefee445567ee8d6e1f7b5a2a11d2378c79c23c",
+  "production": false,
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "8adfd52b92014880efc92681eaa85f1f068459ac82617bc2725c9b4446f010d1",
+    "apps/web/src/conversations/ConversationThread.tsx": "5b9f7ffe91bc9d861c96ac3854a57c4986bc5748b0102ec273555edb2a479593",
+    "apps/web/src/conversations/projection.ts": "b7a87cc601409eadffe18cf534fcc5b6d4b658f2b2027734dcb959b769e0de50",
+    "apps/web/src/conversations/outbox.ts": "5b6fe282046fc2e164b1eef3e23edca8a78d5eff76a805bfa30db2175524c981",
+    "apps/web/test/conversation-projection.test.ts": "9613dc4c0d6c9a98015c45d9588273a2f9a1050506a76bc37cc35ccb683471d9",
+    "apps/web/test/conversation-outbox.test.ts": "ce20b1bf34206620517e51b70a46d5318b6fafc3f1251e91353196f96639c95d",
+    "apps/web/test/execution-profile-integration.fixture.ts": "939e2c9a88a2a25caa47169d2cae32a0c0a31a34699a31b216d4a2f59f8fd792",
+    "apps/web/test/execution-profile-integration.browser.ts": "273ba048ff4bfcc3ca4fb0c84fd4add76b4b17b065cd331bea7aba3029af8c80"
+  },
+  "checks": [
+    "actual Thread opens a per-connection directory; unsupported profiles stay visible and disabled beside valid choices",
+    "first Enter freezes the exact runner pin and requested settings; accepted route keeps focus and an independent next draft",
+    "unknown CREATE retries identical keys and pin while its new draft survives; no turn is sent before receipt identity is confirmed",
+    "a mismatched CREATE pin remains unknown without submitting a turn; correct replay recovers the original configuration",
+    "known CREATE plus lost turn ACK retries only that turn; a later rejected turn never unlocks the existing profile"
+  ],
+  "pageErrors": [],
+  "failure": "Error: expect(locator).toHaveValue(expected) failed\n\nLocator: locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('textbox', { name: 'Message input', exact: true })\nExpected: \"Stale selection draft\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toHaveValue\" locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('textbox', { name: 'Message input', exact: true }) with timeout 5000ms\n  - waiting for locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('textbox', { name: 'Message input', exact: true })\n",
+  "directoryReads": [
+    [
+      "/api/execution-profiles?limit=20",
+      "/api/execution-profiles?after=10000000-0000-4000-8000-000000000004&limit=20",
+      "/api/execution-profiles?limit=20",
+      "/api/execution-profiles?limit=20",
+      "/api/execution-profiles?after=10000000-0000-4000-8000-000000000004&limit=20",
+      "/api/execution-profiles?limit=20"
+    ],
+    []
+  ],
+  "scope": "Real Flow App via public HTTP fixture only; no model/DB/real center"
+}

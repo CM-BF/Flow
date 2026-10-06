@@ -1,0 +1,20 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/server/src/goal-tool-runs/authorization.test.ts (9 tests) 7608ms
+   ✓ enforces current runner/attempt/grant scope and preserves the whole-goal read policy  1109ms
+   ✓ counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts  522ms
+   ✓ revokes authority durably and rechecks authorization before returning cached commands  586ms
+   ✓ rejects expired, completed and revoked-runner ownership without reviving cached authority  1570ms
+   ✓ serializes an in-flight cached command against revoke without granting a post-revocation replay  532ms
+   ✓ serializes an in-flight cached command against cancel without granting a post-revocation replay  508ms
+   ✓ rolls back failed application without consuming authority and protects immutable scope and audit history  990ms
+   ✓ applies execution in the same grant transaction and gives no delegated authority to its fixture child  976ms
+ ✓ packages/client/src/queue-production.test.ts (2 tests) 3234ms
+   ✓ waits for an in-flight scan before disposing its pool and does not overlap interval scans  2234ms
+
+ Test Files  2 passed (2)
+      Tests  11 passed (11)
+   Start at  21:49:47
+   Duration  11.51s (transform 219ms, setup 0ms, import 506ms, tests 10.84s, environment 0ms)
+

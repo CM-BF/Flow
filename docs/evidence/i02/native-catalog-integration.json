@@ -1,0 +1,82 @@
+{
+  "observedAt": "2026-10-06T10:43:12.950516+00:00",
+  "previousMain": "c5bab40ffd9a334403c0db743f798d10815961f0",
+  "candidate": "3543a2922e9e6eb720789261d5d757197f1d05a7",
+  "scope": "Only native catalog c9 + owned fixture cleanup a761; historical R06 diagnostic product deltas are not included",
+  "sourceComparisons": [
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "target": "c9c6e891003af2fc52ca77b0c4527d6d85e20e22",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "target": "c9c6e891003af2fc52ca77b0c4527d6d85e20e22",
+      "bytes": 7301,
+      "sha256": "4ce75b9b03cb138aa9dc39f3577965e73731d0a4f233f34fdbb540b142b5d49d",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "target": "c9c6e891003af2fc52ca77b0c4527d6d85e20e22",
+      "bytes": 10790,
+      "sha256": "c920d5945291df6ec8994ac26db552b8879025f3d76a0fe8c6182991b916f848",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "target": "c9c6e891003af2fc52ca77b0c4527d6d85e20e22",
+      "bytes": 2512,
+      "sha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/native-catalog.test.ts",
+      "target": "a761941fce5b2b6dd12d8c974c6d2c7e51894628",
+      "bytes": 13777,
+      "sha256": "6783d35e586d38e7811e4a4197867f58fd024b8db2d76b12f622c2b6f219d478",
+      "matches": true
+    }
+  ],
+  "manifestChecks": [
+    {
+      "manifest": "docs/evidence/wpf-mature-02/native-catalog/manifest.json",
+      "fixedTarget": "c9c6e891003af2fc52ca77b0c4527d6d85e20e22",
+      "files": 42,
+      "fixedMatches": true
+    },
+    {
+      "manifest": "docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/manifest.json",
+      "fixedTarget": "a761941fce5b2b6dd12d8c974c6d2c7e51894628",
+      "files": 14,
+      "fixedMatches": true
+    }
+  ],
+  "preservedMain": [
+    "apps/server/src/index.ts",
+    "packages/contracts/src/index.ts",
+    "packages/client/src/index.ts",
+    "apps/runner/src/runtime.ts"
+  ],
+  "checks": {
+    "target": "3543a2922e9e6eb720789261d5d757197f1d05a7",
+    "startedAt": "2026-10-06T10:42:10.058255+00:00",
+    "finishedAt": "2026-10-06T10:42:17.166710+00:00",
+    "elapsedSeconds": 7.108129082946107,
+    "exitCode": 0,
+    "command": [
+      "pnpm",
+      "typecheck"
+    ]
+  },
+  "reusedEvidence": "33 distinct original checks + one real-PG CREATE ACK cleanup regression, independently approved status_read/Mika; no behavior test rerun",
+  "inputDifference": "Readonly client/index differs from catalog base only by independently approved TUI ACK changes; profile transport methods unchanged",
+  "conflicts": "Publication-only docs absent on main restored from fixed author version; no production conflict",
+  "limits": [
+    "Configured directory only, not actual model access/effective tools or Codex chat support",
+    "No personal runtime update or provider call",
+    "Store stopped and claim amended v4; next ENG01B authority still needs atomic take"
+  ]
+}

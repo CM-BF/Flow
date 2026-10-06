@@ -1,0 +1,129 @@
+[
+  {
+    "label": "中文两字",
+    "queryUtf8Bytes": 6,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 30,
+    "httpUtf8Bytes": 649,
+    "elapsedMs": 3.6926249999999072
+  },
+  {
+    "label": "中文连续句",
+    "queryUtf8Bytes": 18,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 30,
+    "httpUtf8Bytes": 649,
+    "elapsedMs": 3.628834000000097
+  },
+  {
+    "label": "camelCase",
+    "queryUtf8Bytes": 9,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 35,
+    "httpUtf8Bytes": 654,
+    "elapsedMs": 3.80987499999992
+  },
+  {
+    "label": "path",
+    "queryUtf8Bytes": 12,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 30,
+    "httpUtf8Bytes": 653,
+    "elapsedMs": 3.564624999999978
+  },
+  {
+    "label": "underscore",
+    "queryUtf8Bytes": 13,
+    "ftsOnlySourceCount": 1,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 16,
+    "httpUtf8Bytes": 644,
+    "elapsedMs": 3.7662920000000213
+  },
+  {
+    "label": "version",
+    "queryUtf8Bytes": 5,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 20,
+    "httpUtf8Bytes": 639,
+    "elapsedMs": 3.7164580000001024
+  },
+  {
+    "label": "literal-meta",
+    "queryUtf8Bytes": 8,
+    "ftsOnlySourceCount": 1,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 29,
+    "httpUtf8Bytes": 658,
+    "elapsedMs": 3.5252919999998085
+  },
+  {
+    "label": "query-syntax",
+    "queryUtf8Bytes": 13,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 24,
+    "httpUtf8Bytes": 643,
+    "elapsedMs": 3.2586670000000595
+  },
+  {
+    "label": "emoji",
+    "queryUtf8Bytes": 4,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 15,
+    "httpUtf8Bytes": 634,
+    "elapsedMs": 3.3183749999998327
+  },
+  {
+    "label": "256-byte-cross-chunk",
+    "queryUtf8Bytes": 256,
+    "ftsOnlySourceCount": 0,
+    "combinedSourceCount": 1,
+    "matchKind": "literal",
+    "excerptUtf8Bytes": 388,
+    "httpUtf8Bytes": 1017,
+    "elapsedMs": 3.0223329999998896
+  },
+  {
+    "label": "fts-multiple-words",
+    "queryUtf8Bytes": 10,
+    "ftsOnlySourceCount": 1,
+    "combinedSourceCount": 1,
+    "matchKind": "fts",
+    "excerptUtf8Bytes": 14,
+    "httpUtf8Bytes": 639,
+    "elapsedMs": 3.2887499999999363
+  },
+  {
+    "label": "fts-case-fold",
+    "queryUtf8Bytes": 5,
+    "ftsOnlySourceCount": 1,
+    "combinedSourceCount": 1,
+    "matchKind": "fts",
+    "excerptUtf8Bytes": 5,
+    "httpUtf8Bytes": 627,
+    "elapsedMs": 3.3541250000000673
+  },
+  {
+    "label": "control-json-budget",
+    "hits": 13,
+    "httpUtf8Bytes": 47664,
+    "hasMore": true,
+    "elapsedMs": 4.253708000000188
+  }
+]

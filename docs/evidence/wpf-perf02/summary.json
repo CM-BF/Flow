@@ -1,0 +1,486 @@
+{
+  "implementationTarget": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+  "base": "cc33403cd9b357fcd85484b7bc6952dc1220d689",
+  "scope": "One run per synthetic scale; actual ordinary-production Web. Timing is captured before complete-history DOM traversal. Shared host, no model calls.",
+  "cases": [
+    {
+      "tasks": 1,
+      "status": "passed",
+      "rawFile": "window-1.json",
+      "rawSha256": "730b5d80a86205bc58a21b827d8cf79696d525c32416b8967b71b09445d92f54",
+      "scriptHead": "e07c34c5f98657b390e8fdc44bb2d85f9360a56d",
+      "environmentFile": "window-environment.json",
+      "initialDOM": 200,
+      "finalDOM": 200,
+      "finalMountedRows": 10,
+      "loadedRecords": 10040,
+      "integrity": {
+        "records": 10040,
+        "windows": 1004,
+        "maxMounted": 16,
+        "expectedSHA256": "c57d80e4eb1476cb43027cd5c57ed50af06ee7f2689d2c5facd3648da9f4d8d6",
+        "actualSHA256": "c57d80e4eb1476cb43027cd5c57ed50af06ee7f2689d2c5facd3648da9f4d8d6"
+      },
+      "initialJSHeapMiB": 17.794082641601562,
+      "finalJSHeapMiB": 21.173412322998047,
+      "longTaskSupported": true,
+      "longTasks": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "max": null,
+        "p95": null
+      },
+      "longTaskPhases": {},
+      "trustedKeyToRafMs": {
+        "count": 96,
+        "min": 0.8999999761581421,
+        "median": 1.7000000476837158,
+        "max": 16.699999928474426,
+        "p95": null
+      },
+      "trustedWheelToObservedOffsetRafMs": {
+        "count": 32,
+        "min": 24.799999952316284,
+        "median": 31.899999976158142,
+        "max": 34.60000002384186,
+        "p95": null
+      },
+      "thresholdFilteredEventInputDelayMs": {
+        "count": 63,
+        "min": 0,
+        "median": 0.10000002384185791,
+        "max": 0.5,
+        "p95": null
+      },
+      "thresholdFilteredEventDurationMs": {
+        "count": 63,
+        "min": 16,
+        "median": 16,
+        "max": 24,
+        "p95": null
+      },
+      "fullRunApiRequestsIncludingTraversal": 287,
+      "fullRunWorkspaceRequestsIncludingTraversal": 281,
+      "finalRevealAutomationMs": 69.45075000000361,
+      "attentionRefreshAutomationMs": 55.50554199999897,
+      "pageErrors": [],
+      "detailRequests": 1,
+      "cancelRequests": 0,
+      "baseline": {
+        "tasks": 1,
+        "status": "passed",
+        "rawFile": "baseline-1.json",
+        "rawSha256": "5517f1a74cde9b27dd0f179e957031afead7823a54f6520ca996b598eb98c0d7",
+        "environmentFile": "baseline-environment.json",
+        "scriptSHA": "c40f1a02252198f4a4b1a80474743d72b1fa1dca",
+        "initialDOM": 404,
+        "finalDOM": 70404,
+        "finalRecords": 10040,
+        "initialJSHeapMiB": 19.57762908935547,
+        "finalJSHeapMiB": 67.9091796875,
+        "longTasks": {
+          "count": 8,
+          "min": 52,
+          "median": 108.0,
+          "max": 705,
+          "p95": null
+        },
+        "longTaskPhases": {
+          "delivery-5000": [
+            307
+          ],
+          "delivery-10000": [
+            705
+          ],
+          "settled-10000": [
+            59,
+            52
+          ],
+          "attention": [
+            157,
+            57,
+            58,
+            186
+          ]
+        },
+        "trustedKeyToRafMs": {
+          "count": 96,
+          "min": 1.399999976158142,
+          "median": 11.249999940395355,
+          "max": 70.39999997615814,
+          "p95": null
+        },
+        "trustedWheelToObservedOffsetRafMs": {
+          "count": 32,
+          "min": 22.40000009536743,
+          "median": 33.25,
+          "max": 75.79999995231628,
+          "p95": null
+        },
+        "thresholdFilteredEventInputDelayMs": {
+          "count": 189,
+          "min": 0,
+          "median": 0.10000002384185791,
+          "max": 40.200000047683716,
+          "p95": null
+        },
+        "thresholdFilteredEventDurationMs": {
+          "count": 189,
+          "min": 16,
+          "median": 24,
+          "max": 72,
+          "p95": null
+        },
+        "apiRequests": 265,
+        "workspaceRequests": 259,
+        "attentionRefreshAutomationMs": 5166.036458000002,
+        "pageErrors": []
+      }
+    },
+    {
+      "tasks": 16,
+      "status": "passed",
+      "rawFile": "window-16.json",
+      "rawSha256": "36e7b228cbb0f51f87065dfe585745c1e7b30e79a2dad8f23647f81205bd16d8",
+      "scriptHead": "e07c34c5f98657b390e8fdc44bb2d85f9360a56d",
+      "environmentFile": "window-environment.json",
+      "initialDOM": 802,
+      "finalDOM": 802,
+      "finalMountedRows": 10,
+      "loadedRecords": 10040,
+      "integrity": {
+        "records": 10040,
+        "windows": 1004,
+        "maxMounted": 16,
+        "expectedSHA256": "31527d6beb853d168f7d46d0b5b4e5329c7ec35f07f419f9dd3bd1f96b6b07cb",
+        "actualSHA256": "31527d6beb853d168f7d46d0b5b4e5329c7ec35f07f419f9dd3bd1f96b6b07cb"
+      },
+      "initialJSHeapMiB": 18.564640045166016,
+      "finalJSHeapMiB": 52.07347869873047,
+      "longTaskSupported": true,
+      "longTasks": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "max": null,
+        "p95": null
+      },
+      "longTaskPhases": {},
+      "trustedKeyToRafMs": {
+        "count": 96,
+        "min": 2.700000047683716,
+        "median": 4.800000071525574,
+        "max": 16.300000071525574,
+        "p95": null
+      },
+      "trustedWheelToObservedOffsetRafMs": {
+        "count": 32,
+        "min": 30.5,
+        "median": 32.39999997615814,
+        "max": 35.0,
+        "p95": null
+      },
+      "thresholdFilteredEventInputDelayMs": {
+        "count": 83,
+        "min": 0,
+        "median": 0.10000002384185791,
+        "max": 0.40000009536743164,
+        "p95": null
+      },
+      "thresholdFilteredEventDurationMs": {
+        "count": 83,
+        "min": 16,
+        "median": 16,
+        "max": 16,
+        "p95": null
+      },
+      "fullRunApiRequestsIncludingTraversal": 302,
+      "fullRunWorkspaceRequestsIncludingTraversal": 281,
+      "finalRevealAutomationMs": 59.81320800000685,
+      "attentionRefreshAutomationMs": 64.61270900000818,
+      "pageErrors": [],
+      "detailRequests": 1,
+      "cancelRequests": 0,
+      "baseline": {
+        "tasks": 16,
+        "status": "passed",
+        "rawFile": "baseline-16.json",
+        "rawSha256": "61024540f4d6d6c287ed1e77f0bf13866bf126ec33f12facc70018c774f5cc0b",
+        "environmentFile": "baseline-environment.json",
+        "scriptSHA": "c40f1a02252198f4a4b1a80474743d72b1fa1dca",
+        "initialDOM": 1006,
+        "finalDOM": 71006,
+        "finalRecords": 10040,
+        "initialJSHeapMiB": 21.372562408447266,
+        "finalJSHeapMiB": 57.31985092163086,
+        "longTasks": {
+          "count": 7,
+          "min": 50,
+          "median": 90,
+          "max": 719,
+          "p95": null
+        },
+        "longTaskPhases": {
+          "delivery-5000": [
+            313
+          ],
+          "delivery-10000": [
+            50,
+            719
+          ],
+          "settled-10000": [
+            63,
+            54
+          ],
+          "attention": [
+            90,
+            183
+          ]
+        },
+        "trustedKeyToRafMs": {
+          "count": 96,
+          "min": 3.6999999284744263,
+          "median": 12.749999940395355,
+          "max": 58.799999952316284,
+          "p95": null
+        },
+        "trustedWheelToObservedOffsetRafMs": {
+          "count": 32,
+          "min": 25.100000023841858,
+          "median": 33.10000002384186,
+          "max": 82.20000004768372,
+          "p95": null
+        },
+        "thresholdFilteredEventInputDelayMs": {
+          "count": 200,
+          "min": 0,
+          "median": 0.10000002384185791,
+          "max": 26.600000023841858,
+          "p95": null
+        },
+        "thresholdFilteredEventDurationMs": {
+          "count": 200,
+          "min": 16,
+          "median": 24.0,
+          "max": 64,
+          "p95": null
+        },
+        "apiRequests": 280,
+        "workspaceRequests": 259,
+        "attentionRefreshAutomationMs": 5374.1550419999985,
+        "pageErrors": []
+      }
+    },
+    {
+      "tasks": 128,
+      "status": "passed",
+      "rawFile": "window-128.json",
+      "rawSha256": "ad8a8477e25aed999e863b745f44db15cd264775a3691f4fd9c2d4dbd8596056",
+      "scriptHead": "e07c34c5f98657b390e8fdc44bb2d85f9360a56d",
+      "environmentFile": "window-environment.json",
+      "initialDOM": 813,
+      "finalDOM": 1077,
+      "finalMountedRows": 10,
+      "loadedRecords": 10040,
+      "integrity": {
+        "records": 10040,
+        "windows": 1004,
+        "maxMounted": 16,
+        "expectedSHA256": "17327227fbd2db32d5a397a29b1b027233dd04fe20c03c6279e1b49304e0e204",
+        "actualSHA256": "17327227fbd2db32d5a397a29b1b027233dd04fe20c03c6279e1b49304e0e204"
+      },
+      "initialJSHeapMiB": 24.294696807861328,
+      "finalJSHeapMiB": 31.446075439453125,
+      "longTaskSupported": true,
+      "longTasks": {
+        "count": 0,
+        "min": null,
+        "median": null,
+        "max": null,
+        "p95": null
+      },
+      "longTaskPhases": {},
+      "trustedKeyToRafMs": {
+        "count": 96,
+        "min": 2.8000000715255737,
+        "median": 4.050000011920929,
+        "max": 16.799999952316284,
+        "p95": null
+      },
+      "trustedWheelToObservedOffsetRafMs": {
+        "count": 32,
+        "min": 26.399999976158142,
+        "median": 31.800000071525574,
+        "max": 35.0,
+        "p95": null
+      },
+      "thresholdFilteredEventInputDelayMs": {
+        "count": 79,
+        "min": 0,
+        "median": 0.10000002384185791,
+        "max": 1.5,
+        "p95": null
+      },
+      "thresholdFilteredEventDurationMs": {
+        "count": 79,
+        "min": 16,
+        "median": 16,
+        "max": 16,
+        "p95": null
+      },
+      "fullRunApiRequestsIncludingTraversal": 304,
+      "fullRunWorkspaceRequestsIncludingTraversal": 280,
+      "finalRevealAutomationMs": 56.672875000018394,
+      "attentionRefreshAutomationMs": 76.66845900000772,
+      "pageErrors": [],
+      "detailRequests": 1,
+      "cancelRequests": 0,
+      "baseline": {
+        "tasks": 128,
+        "status": "passed",
+        "rawFile": "retry128-128.json",
+        "rawSha256": "ff6bb28d90b173066de77ba932418ff42330b58b9937223eef28fd0739f645da",
+        "environmentFile": "retry128-environment.json",
+        "scriptSHA": "3d47cdd4eae959119f154a0d06964cf65006f8c9",
+        "initialDOM": 1017,
+        "finalDOM": 71281,
+        "finalRecords": 10040,
+        "initialJSHeapMiB": 26.014324188232422,
+        "finalJSHeapMiB": 65.07807922363281,
+        "longTasks": {
+          "count": 17,
+          "min": 52,
+          "median": 66,
+          "max": 712,
+          "p95": null
+        },
+        "longTaskPhases": {
+          "delivery-5000": [
+            318
+          ],
+          "delivery-10000": [
+            61,
+            62,
+            61,
+            77,
+            64,
+            61,
+            66,
+            70,
+            71,
+            71,
+            712
+          ],
+          "settled-10000": [
+            59,
+            55
+          ],
+          "attention": [
+            115,
+            52,
+            194
+          ]
+        },
+        "trustedKeyToRafMs": {
+          "count": 96,
+          "min": 3.9000000953674316,
+          "median": 11.650000035762787,
+          "max": 85.80000007152557,
+          "p95": null
+        },
+        "trustedWheelToObservedOffsetRafMs": {
+          "count": 32,
+          "min": 25.899999976158142,
+          "median": 33.60000002384186,
+          "max": 70.69999992847443,
+          "p95": null
+        },
+        "thresholdFilteredEventInputDelayMs": {
+          "count": 201,
+          "min": 0,
+          "median": 0.10000002384185791,
+          "max": 50.60000002384186,
+          "p95": null
+        },
+        "thresholdFilteredEventDurationMs": {
+          "count": 201,
+          "min": 16,
+          "median": 24,
+          "max": 88,
+          "p95": null
+        },
+        "apiRequests": 283,
+        "workspaceRequests": 259,
+        "attentionRefreshAutomationMs": 5383.483083000006,
+        "pageErrors": []
+      }
+    }
+  ],
+  "environment": {
+    "at": "2026-10-06T03:40:27.646Z",
+    "node": "v24.20.0",
+    "browser": "154.0.8037.98",
+    "cpu": "Apple M3 Max",
+    "logicalCPUs": 16,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "loadAverage": "{ 7.07 8.00 8.39 }",
+    "network": "Local HTTP/1.1 uncompressed static assets and synthetic in-memory fixture; no CPU/network throttle",
+    "reducedMotion": "reduce"
+  },
+  "assets": [
+    {
+      "name": "assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "gzipBytes": 336,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "name": "assistant-ui-zkRmV749.js",
+      "bytes": 562059,
+      "gzipBytes": 167814,
+      "sha256": "dca73087a1f834362a21c3968fc562ec98f43f094bb48824cc1a0631e445104e"
+    },
+    {
+      "name": "index-BhDSJRhe.css",
+      "bytes": 86543,
+      "gzipBytes": 15546,
+      "sha256": "eaa80add361bea8680a609572b0dd544586b19799399b42282e59240b4068f58"
+    },
+    {
+      "name": "index-C-RDfXsW.js",
+      "bytes": 546889,
+      "gzipBytes": 162094,
+      "sha256": "63a0adb3e13ad8feb276e876ae88970aff14abe58f1f374816332b2257e8e4d8"
+    },
+    {
+      "name": "rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "gzipBytes": 450,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    }
+  ],
+  "unchangedVendorAssets": [
+    {
+      "name": "assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "gzipBytes": 336,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "name": "assistant-ui-zkRmV749.js",
+      "bytes": 562059,
+      "gzipBytes": 167814,
+      "sha256": "dca73087a1f834362a21c3968fc562ec98f43f094bb48824cc1a0631e445104e"
+    },
+    {
+      "name": "rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "gzipBytes": 450,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    }
+  ]
+}

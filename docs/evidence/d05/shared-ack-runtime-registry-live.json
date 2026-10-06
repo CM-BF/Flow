@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-10-06T10:22:38.966Z",
+  "sourceFile": "/tmp/flow-shared-ack-126-live.json",
+  "sourceCount": 126,
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T10:22:40.439Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "coordinationState": "available",
+  "unregistered": [
+    "S01P03"
+  ],
+  "tasks": [
+    {
+      "id": "TUI01B",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/shared-conversation-ack",
+      "branch": "codex/shared-conversation-ack",
+      "head": "14d0e53cce4a27cd33b274834b941b2417e9cd62",
+      "dirty": true,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    },
+    {
+      "id": "R05D",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch",
+      "branch": "codex/codex-native-launch",
+      "head": "54d5c67c40185a1fc7d66230375ddbe22cd0d894",
+      "dirty": false,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    },
+    {
+      "id": "SVC04",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release",
+      "branch": "codex/web-artifact-release",
+      "head": "3c0a945995611e7e009d9ffbd2275e5ab4a0cf47",
+      "dirty": false,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    },
+    {
+      "id": "D06",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "branch": "codex/dashboard-architecture-runtime",
+      "head": "ad58d3412b5435bb77b704b55ef8f6d499ea820d",
+      "dirty": false,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    }
+  ],
+  "architecture": {
+    "bytes": 38931,
+    "sha256": "08c610090eabc3428a8e8584c4dc4d7e79a0062eecd4f3e7488f4b9d8821faf1",
+    "fixedSource": "f181d84b5fb3652d62e2a181acff442d42b3e066"
+  },
+  "scope": "retained actual126 snapshot; no new product/browser/provider/restart"
+}

@@ -1,0 +1,27 @@
+{
+  "profileTarget": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+  "profileComparedFiles": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/test/conversation-projection.test.ts",
+    "apps/web/test/conversation-outbox.test.ts",
+    "apps/web/test/execution-profile-integration.fixture.ts",
+    "apps/web/test/execution-profile-integration.browser.ts"
+  ],
+  "profileSourceDiff": [],
+  "ctx02Target": "8abe014f61df5ed7e1548e30d53538e7c4580c4c",
+  "ctx02Scope": "experiments/context-pi-hook",
+  "ctx02SourceDiff": [],
+  "candidate": "7aeba63a1ae773544b3655d31a9079b4cf910293",
+  "profileUxTarget": "55b244b22a147f3360b12281bac152666749364b",
+  "profileUxFiles": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/test/execution-profiles.browser.ts",
+    "apps/web/test/execution-profiles.fixture.tsx"
+  ],
+  "profileUxDiff": [],
+  "finalCandidate": "33988d7b8c215f342ee9b23720a9c47fd46c82aa"
+}

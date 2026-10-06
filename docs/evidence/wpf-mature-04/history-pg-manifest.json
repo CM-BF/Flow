@@ -1,0 +1,179 @@
+{
+  "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+  "recordedAt": "2026-10-06T11:08:57.479785+00:00",
+  "branch": "codex/context-transparency",
+  "scope": "historical wire/DTO/store/local route + official 027 migration; excludes global owner auth, event/client mounting, SDK producer and current context",
+  "source": [
+    {
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.test.ts",
+      "bytes": 3356,
+      "sha256": "157e7c40c29f36688455775e7a4da63e8df5077f6ff71d2315cf3ee1f2924348"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.test.ts",
+      "bytes": 25516,
+      "sha256": "d4c9d024f2e92f1e2af3b0414adb12bbf44ce0c876d671ff33439de6f067b7a0"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 10963,
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.test.ts",
+      "bytes": 3159,
+      "sha256": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.test.ts",
+      "bytes": 4754,
+      "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-first.txt",
+      "bytes": 1032,
+      "sha256": "140f149dfc8d62c681b9ee7c8f66ec0c4e65d574d37efd4a1ccb874dd7ea318a"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-final.txt",
+      "bytes": 1034,
+      "sha256": "bb5ef2e6381931e49112c1249d96fc20fd485e50958840617b8ba36e52c841db"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-typecheck-first.txt",
+      "bytes": 327,
+      "sha256": "d8317cbbf257554c1f5fb0a5b20e7edaba6da1b61824750495e11603edb166db"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-typecheck-augmentation.txt",
+      "bytes": 1468,
+      "sha256": "98d76d1c210c922dd0e8ce70f23829ee964ab1326ccaca2a9951b5d6a5aac2db"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-validation-config.json",
+      "bytes": 10515,
+      "sha256": "8273cf7b9797f95336aba38a3b40c0029147ce0e771a0c04bf81622059638cea"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-effective-tsconfig.json",
+      "bytes": 9907,
+      "sha256": "8ab61c2a14834275a7cf0c42286b5188fdfa985967f44284eb76496b7c7b910a"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-cleanup.json",
+      "bytes": 585,
+      "sha256": "f6cd13716b88f5242fdafef233d8dc9c69849334a8808eb25529f90d00048b77"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/wpf-mature-04/history-pg-checks.json",
+      "bytes": 4838,
+      "sha256": "568019d04c28411fd98eae37df60b41a0b9c4970976984a602a937328a6d4708"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-ddl-amend-receipt.json",
+      "bytes": 1488,
+      "sha256": "17e6da6aa279974ed5b91603d64351fa184498b12d6e378d408e61cf2679ecd5"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/center-store-request.md",
+      "bytes": 12098,
+      "sha256": "0219c4fd0ba643a696f174d2daa440f9aad894e7d526558e055c07c282cd8d33"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/quality.md",
+      "bytes": 7742,
+      "sha256": "9a118d29d3e3e84ddce9b2f86f7c2985050f73bfceeee114e35db0a6564669f4"
+    }
+  ],
+  "frozenApprovedSources": [
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.test.ts",
+      "bytes": 3252,
+      "sha256": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "bytes": 5685,
+      "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.test.ts",
+      "bytes": 10582,
+      "sha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "bytes": 4315,
+      "sha256": "d90528270ae6bd2b24313d34dba274007e5a6963a824314dd8ff33817b6fc691"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "bytes": 12578,
+      "sha256": "de4b895b52fa77f55dc66df4ee401ab9063b706b8a1e5856c190cda31ce0a48b"
+    }
+  ],
+  "checks": {
+    "selected": 50,
+    "passed": 50,
+    "realPg": 9,
+    "strictExit": 0,
+    "old41Overlap": true,
+    "prior49Overlap": true
+  },
+  "mainObservation": {
+    "observedAt": "2026-10-06T11:08:57.479785+00:00",
+    "mainHead": "2e71fabc218df28f6ccb78a927432ae1101c17c5",
+    "dirty": false,
+    "targets": {
+      "879c989a594a8f4f266b9a78a885e311c52eca0d": {
+        "ancestor": false
+      },
+      "3ab95d288a91214d03dec719dc6b44024206118a": {
+        "ancestor": false
+      },
+      "9ac549dddd12b6bb186bf34116c4c72fe9889cfc": {
+        "ancestor": false
+      }
+    }
+  },
+  "metadataRule": "This manifest is committed after target. Every listed source/raw/support byte already exists at target; later status/review updates are metadata only."
+}

@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+stdout | apps/server/src/steering-production.test.ts
+STEERING_PRODUCTION_DATABASE_FACTS {"database":"flow_steering_mount_6c6214bea21348948afae88b8d17b444","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ✓ apps/server/src/steering-production.test.ts (2 tests) 1637ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  01:33:31
+   Duration  2.73s (transform 458ms, setup 0ms, import 1.01s, tests 1.64s, environment 0ms)
+

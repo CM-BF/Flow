@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-06 09:47:54 UTC",
+  "sourceCommit": "c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7",
+  "baseCommit": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "mainObserved": "253035e11ab18ba33095c018949f856442021d49",
+  "mainEntryStillMatchesBase": true,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "b6461ea0edebe5ca7fb52ebbc0c62b678aeea891b00cf69b78a1636900c95ba8"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.test.ts",
+      "sha256": "157b85699274472e083b801ccf273ed7acde4512b04bcf4712b642b2ae798e97"
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "sha256": "196b18ea53527862ad6a7865c89ea18d821143b237f5e21eee529731695b2d6e"
+    }
+  ],
+  "environment": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "tests": {
+    "filesSelected": 2,
+    "filesPassed": 2,
+    "selected": 64,
+    "passed": 64,
+    "failed": 0,
+    "skipped": 0,
+    "parser": 42,
+    "main": 22,
+    "exitCode": 0
+  },
+  "strictNoEmitExit": 0,
+  "priorRuns": [
+    {
+      "log": "main-red.txt",
+      "selected": 20,
+      "failed": 17,
+      "passed": 3,
+      "exitCode": 1,
+      "meaning": "Existing main lacks limit and early rejection; real behavioral red with mocked dependencies."
+    },
+    {
+      "log": "first-green.txt",
+      "selected": 62,
+      "passed": 62,
+      "exitCode": 0
+    },
+    {
+      "log": "first-typecheck.txt",
+      "exitCode": 254,
+      "meaning": "Compiler did not start: worktree pnpm could not find tsc."
+    },
+    {
+      "log": "typecheck-first-run.txt",
+      "exitCode": 2,
+      "meaning": "Inherited source compilation lacked temporary @modelcontextprotocol/client resolution; fixed to installed declarations, no source workaround."
+    }
+  ],
+  "providerCalls": 0,
+  "actualRunnerLoad": 0,
+  "postgresStarted": 0,
+  "personalServiceChanges": 0,
+  "installations": 0,
+  "verificationScope": "Pure parser plus actual top-level main module with dependencies mocked; root strict/noUncheckedIndexedAccess/ES2023 noEmit for 4 roots and imports, not full-root glob or real concurrency."
+}

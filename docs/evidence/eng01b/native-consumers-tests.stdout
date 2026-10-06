@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile
+
+ ✓ apps/server/src/execution-profiles/execution-profiles.test.ts (7 tests) 3516ms
+   ✓ pins a selected conversation to the configured runner and preserves that choice in the claimed task  572ms
+   ✓ executes the selected configuration, separates reported settings, and resumes only on the original runner  1438ms
+ ✓ apps/server/src/execution-profiles/steering-admission.test.ts (7 tests) 2293ms
+ ✓ apps/server/src/execution-profiles/native-catalog.test.ts (10 tests) 1801ms
+   ✓ cleans its exact owned database when CREATE commits but acknowledgement is lost  506ms
+
+ Test Files  3 passed (3)
+      Tests  24 passed (24)
+   Start at  03:52:25
+   Duration  9.12s (transform 431ms, setup 0ms, import 1.28s, tests 7.61s, environment 0ms)
+

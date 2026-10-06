@@ -1,0 +1,120 @@
+{
+  "observedAt": "2026-10-06T10:25:47.007032+00:00",
+  "taskId": "WPF-MATURE-04",
+  "owner": "architecture_read / gpt-6-astra",
+  "lead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+  "branch": "codex/context-transparency",
+  "observedOwnerHead": "cd817aff4bde937f48c59af00753871b928a6413",
+  "observedOwnerClean": true,
+  "claimId": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+  "claimVersion": 3,
+  "mainBaseline": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "integrationState": "not-integrated; exact six source files absent",
+  "slices": [
+    {
+      "target": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "reviewer": "Mika / gpt-6-astra",
+      "reviewedAt": "2026-10-06 09:14:39 UTC",
+      "verdict": "APPROVED",
+      "sources": [
+        {
+          "path": "packages/contracts/src/context-transparency.ts",
+          "bytes": 7580,
+          "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+          "presentAtMainBaseline": false
+        },
+        {
+          "path": "packages/contracts/src/context-transparency.test.ts",
+          "bytes": 3252,
+          "sha256": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6",
+          "presentAtMainBaseline": false
+        },
+        {
+          "path": "apps/server/src/context-transparency/projection.ts",
+          "bytes": 5685,
+          "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850",
+          "presentAtMainBaseline": false
+        },
+        {
+          "path": "apps/server/src/context-transparency/projection.test.ts",
+          "bytes": 10582,
+          "sha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9",
+          "presentAtMainBaseline": false
+        }
+      ],
+      "targetAncestorOfMain": false
+    },
+    {
+      "target": "3ab95d288a91214d03dec719dc6b44024206118a",
+      "reviewer": "status_read / gpt-6-astra",
+      "reviewedAt": "2026-10-06 09:28 UTC",
+      "verdict": "APPROVED",
+      "sources": [
+        {
+          "path": "apps/runner/src/context-observations/claude-summary.ts",
+          "bytes": 4315,
+          "sha256": "d90528270ae6bd2b24313d34dba274007e5a6963a824314dd8ff33817b6fc691",
+          "presentAtMainBaseline": false
+        },
+        {
+          "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+          "bytes": 12578,
+          "sha256": "de4b895b52fa77f55dc66df4ee401ab9063b706b8a1e5856c190cda31ce0a48b",
+          "presentAtMainBaseline": false
+        }
+      ],
+      "targetAncestorOfMain": false
+    }
+  ],
+  "checks": {
+    "firstSlice": "30/30 (7 schema + 23 projection), strict noEmit0",
+    "adapterFixed": "49/49 (26 adapter + 23 direct projection), strict noEmit0",
+    "repeatedNow": false,
+    "providerCalls": 0
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/wpf-mature-04/implementation-check.json",
+      "bytes": 1417,
+      "sha256": "480bd882edfde6cb19207740487cab91034d5e1f78ac85203d6db4a7d899ec06"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/final-tests.txt",
+      "bytes": 405,
+      "sha256": "5f55b89fbf7442727d16749e1a385affb1add284d9bd3b834fc879971d032892"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/final-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/sdk-p2-check.json",
+      "bytes": 1305,
+      "sha256": "9d91002ac34a15a5f4b69584d0ed050f0aa2911a69f29878340fd1780c3499b9"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/sdk-p2-tests.txt",
+      "bytes": 416,
+      "sha256": "b853340e6f36c1859baa996cdb9f528efae8e33f133e4fe34d28f7271920218b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/sdk-p2-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "leadRequest": {
+    "migrationNumber": 27,
+    "migrationOwner": "architecture_read; d3a9be2b v5 COMMITTED 2026-10-06T11:03:13.290Z",
+    "sharedHooks": {
+      "runner.ts/events.ts": "ENG01A",
+      "client/src/index.ts": "TUI01B",
+      "server/src/index.ts/contracts/src/index.ts": "F01"
+    },
+    "migrationPath": "packages/storage/migrations/027-context-observation-history.sql",
+    "migrationEntry": "apps/server/src/context-transparency/migration.ts: migrateContextObservationHistory(pool)"
+  },
+  "nextSlice": "Historical store/DTO/routes plus official migration 027 validated locally with real PostgreSQL; current/remaining remain unknown. Final target/independent review recorded in history-pg-manifest.json and owner status."
+}

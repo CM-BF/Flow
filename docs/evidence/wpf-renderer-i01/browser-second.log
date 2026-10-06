@@ -1,0 +1,25 @@
+PASS actual App renders shortened reply with zero initial detail reads, Enter reveals once and caches
+PASS native hidden removes its own renderer and resumes expanded cached reply and draft without another request
+PASS both split panes are readable while focus remains independent
+PASS disable remains disabled across hide/resume and keeps the host-authorized fallback
+PASS overview hides registrations without discarding the cached content, and closing a pane does not cancel execution
+PASS same-revision assistant content and history pagination still reach the official Thread
+Error: expect(locator).toBeEnabled() failed
+
+Locator:  locator('[id="panel-conversation:chat-2"]').getByRole('button', { name: 'Send message', exact: true })
+Expected: enabled
+Received: disabled
+Timeout:  5000ms
+
+Call log:
+  - Expect "toBeEnabled" locator('[id="panel-conversation:chat-2"]').getByRole('button', { name: 'Send message', exact: true }) with timeout 5000ms
+  - waiting for locator('[id="panel-conversation:chat-2"]').getByRole('button', { name: 'Send message', exact: true })
+    14 × locator resolved to <button disabled type="button" data-state="closed" aria-label="Send message" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 aui-button-icon p-1 active:scale-90 aui-composer-send size-7 rounded-full">…</button>
+       - unexpected value "disabled"
+
+    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toBeEnabled (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/test/data-renderer-integration.browser.ts:96:141)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/test/data-renderer-integration.browser.ts:48:67)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/test/data-renderer-integration.browser.ts:90:3)

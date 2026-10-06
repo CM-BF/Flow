@@ -1,0 +1,56 @@
+{
+  "label": "w2-declared-four",
+  "scenario": "declared-four",
+  "windowId": "S01-W2-LEASE-0734",
+  "databaseName": "flow_s01_23662_31656ef84d074624b657fa4bf79023b4",
+  "tasks": 12,
+  "attempts": 12,
+  "requireGate": true,
+  "startedAt": "2026-10-06T07:36:13.395Z",
+  "maxWindowMs": 30000,
+  "usedTasks": 32,
+  "usedAttempts": 26,
+  "usedMs": 13135.276166,
+  "priorRuns": [
+    {
+      "label": "smoke-first",
+      "budgetChargedTasks": 4,
+      "budgetChargedAttempts": 4,
+      "observedTasks": 4,
+      "observedAttempts": 4,
+      "countBasis": "audited-historical-smoke",
+      "elapsedMs": 4333.692333,
+      "failed": true
+    },
+    {
+      "label": "smoke-repair",
+      "budgetChargedTasks": 4,
+      "budgetChargedAttempts": 4,
+      "observedTasks": 4,
+      "observedAttempts": 4,
+      "countBasis": "audited-historical-smoke",
+      "elapsedMs": 2820.801583,
+      "failed": false
+    },
+    {
+      "label": "w1-four-processes",
+      "budgetChargedTasks": 16,
+      "budgetChargedAttempts": 16,
+      "observedTasks": 16,
+      "observedAttempts": 16,
+      "countBasis": "verified-result",
+      "elapsedMs": 3648.039875,
+      "failed": false
+    },
+    {
+      "label": "w1-protocol-gate",
+      "budgetChargedTasks": 8,
+      "budgetChargedAttempts": 2,
+      "observedTasks": 8,
+      "observedAttempts": 2,
+      "countBasis": "verified-result",
+      "elapsedMs": 2332.7423750000003,
+      "failed": false
+    }
+  ]
+}

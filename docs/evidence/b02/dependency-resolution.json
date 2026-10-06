@@ -1,0 +1,34 @@
+{
+  "node": "v24.20.0",
+  "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-read-cost",
+  "packageManager": "pnpm@9.15.4",
+  "resolution": {
+    "pg": {
+      "file": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "real": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js"
+    },
+    "tsx": {
+      "file": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "real": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+    },
+    "typescript": {
+      "file": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+      "real": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js"
+    },
+    "@flow/contracts": {
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-read-cost/packages/contracts/src/index.ts",
+      "real": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-read-cost/packages/contracts/src/index.ts"
+    },
+    "pg-boss": {
+      "file": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "real": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js"
+    },
+    "fastify": {
+      "file": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "real": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js"
+    }
+  },
+  "migrations": {
+    "mechanism": "relative import.meta.url file paths under this worktree packages/storage/migrations; no @flow/storage package import"
+  }
+}

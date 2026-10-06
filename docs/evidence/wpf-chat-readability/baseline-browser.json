@@ -1,0 +1,105 @@
+{
+  "observedAt": "2026-10-06T08:25:15.906Z",
+  "sourceCommit": "fce5e07daab8adccb0ac824e55ee3a25659d88cb",
+  "sourceFiles": {
+    "apps/web/src/conversations/ConversationThread.tsx": "bf64cb702ad35e564c3ccef3a8dffd21369ef7222d432b5f30f03f31b3998be4",
+    "apps/web/src/conversations/conversations.css": "24a6c0282bf89c48d64dedd8e404a587cfa6fedbe9153cce06853956e8eba21c",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "c3718b0e567b043a00f31d402be204688a3db5c38a4421fecf5ae7aebf9393c6",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "1f26e32d5668281cddf34db03dc7db6c186c523376df13cd0bb78cacebbde54e",
+    "apps/web/src/execution-profiles/execution-profiles.css": "3b5e70620b93145a2e31df47357f78ceaf0f5620641ab508ae81d4bd906693a7",
+    "apps/web/test/conversation-readability.browser.ts": "2da040fb3371a30ae628782eb364ff35ee45102f293f7eeccdd81e8aa4a77413",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "fixture": "Public HTTP fixture; no model/DB. Not real-center acceptance.",
+  "checks": [
+    "same completed conversation, loaded empty queue, light theme rects at 1280x720 and 390x844"
+  ],
+  "measurements": [
+    {
+      "width": 1280,
+      "height": 720,
+      "viewport": {
+        "top": 80,
+        "bottom": 720,
+        "height": 640,
+        "width": 996
+      },
+      "footer": {
+        "top": 424.28125,
+        "bottom": 720,
+        "height": 295.71875,
+        "width": 588
+      },
+      "profile": {
+        "top": 424.28125,
+        "bottom": 480.4375,
+        "height": 56.15625,
+        "width": 560
+      },
+      "queue": {
+        "top": 323,
+        "bottom": 370.5,
+        "height": 47.5,
+        "width": 588
+      },
+      "input": {
+        "top": 534.8125,
+        "bottom": 569.8125,
+        "height": 35,
+        "width": 570
+      },
+      "protocolFooter": {
+        "top": 624.3125,
+        "bottom": 699,
+        "height": 74.6875,
+        "width": 588
+      },
+      "bodyAboveComposer": 344.28125,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "viewport": {
+        "top": 80,
+        "bottom": 844,
+        "height": 764,
+        "width": 342
+      },
+      "footer": {
+        "top": 504.765625,
+        "bottom": 844,
+        "height": 339.234375,
+        "width": 314
+      },
+      "profile": {
+        "top": 504.765625,
+        "bottom": 594.515625,
+        "height": 89.75,
+        "width": 314
+      },
+      "queue": {
+        "top": 348,
+        "bottom": 395.5,
+        "height": 47.5,
+        "width": 314
+      },
+      "input": {
+        "top": 648.890625,
+        "bottom": 683.890625,
+        "height": 35,
+        "width": 296
+      },
+      "protocolFooter": {
+        "top": 738.390625,
+        "bottom": 830,
+        "height": 91.609375,
+        "width": 314
+      },
+      "bodyAboveComposer": 424.765625,
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "failure": null
+}

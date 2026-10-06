@@ -1,0 +1,51 @@
+{
+  "target": "ab1bcb14531995ccb3916492eaf328cdae2213b3",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 43005,
+      "sha256": "2be3b8b7a9c7b1674fc028b919efce4ae4736350c1c523ec624f6be58849a0b4"
+    },
+    {
+      "path": "packages/client/src/attachments.test.ts",
+      "bytes": 3620,
+      "sha256": "73af8dc0d953ad48171f850574a223b18b93ec353b443b34bf3393672733ba5a"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/attachment-client-green.json",
+      "bytes": 235,
+      "sha256": "4258ec9f082efd63f0a95228595e61fdba011c47f69967953e57069b86d85ced"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-client-green.stdout",
+      "bytes": 315,
+      "sha256": "777e553c776d05f0d5947bfa63078d242e6942c6544b321fd6d9a2fbedb00554"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-client-red.json",
+      "bytes": 235,
+      "sha256": "bcd67402826e4d6afc8ec922b91d359f69c519c20f498d1447ef7fe4dbfd4c68"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-client-red.stdout",
+      "bytes": 1265,
+      "sha256": "9ffb7391210ecf73cc873b4655551120cd95149baab96716730f25798b245a4c"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-client-types.json",
+      "bytes": 168,
+      "sha256": "f8332965c871d7cdffb0b0d16fd00120791bd54f7104833e881e2b5af59c8da6"
+    },
+    {
+      "path": "docs/evidence/f01/attachment-client-types.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    }
+  ],
+  "domainInput": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "scope": "six thin HTTP methods only; existing request auth/signal/error; receipt404 remains uncertainty; no auto retry",
+  "checks": "1/1 HTTP test, root types0, no PG/provider",
+  "review": "NOT_STARTED"
+}

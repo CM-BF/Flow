@@ -1,0 +1,233 @@
+{
+  "observedAt": "2026-10-06T04:51:44.170Z",
+  "endpoint": "http://127.0.0.1:4320/api/snapshot",
+  "task": {
+    "id": "CTX01",
+    "title": "上下文内核合成验证",
+    "role": "技术验证",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe",
+    "branch": "codex/context-kernel-probe",
+    "planDir": "plans/ctx01-context-kernel",
+    "evidenceDir": "docs/evidence/ctx01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T04:51:44.159Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe/plans/ctx01-context-kernel/status.md",
+      "syncedAt": "2026-10-06T04:51:44.170Z",
+      "stale": false,
+      "ageHours": 0.008380555555555556
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/context-kernel-probe",
+      "head": "5317fe4fb80019a20f5d4190ec89f1338ad940e0",
+      "dirty": true,
+      "changedFiles": 4,
+      "observedAt": "2026-10-06T04:51:44.587Z"
+    },
+    "status": {
+      "human": {
+        "phase": "M2",
+        "priority": 2,
+        "output": "有界core实验与保存证据已通过独立方法审查",
+        "next": "Lead接收已审实验；Pi真实宿主hook兼容是后继独立片段",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "f58fdf36b073e2a98a683c8f40442dbb64ee7eec",
+        "scopes": [
+          "experiments/context-kernel"
+        ],
+        "errors": []
+      },
+      "taskId": "CTX01",
+      "owner": "runner_owner / gpt-6-astra",
+      "branch": "codex/context-kernel-probe",
+      "branchState": "completed",
+      "updatedAt": "2026-10-06T04:51:14.000Z",
+      "updatedRecord": "2026-10-06 04:51:14 UTC",
+      "todos": [
+        {
+          "id": "CTX01-01",
+          "state": "completed",
+          "owner": "runner_owner",
+          "evidence": "claim v1/provenance/原始npm metadata"
+        },
+        {
+          "id": "CTX01-02",
+          "state": "completed",
+          "owner": "runner_owner",
+          "evidence": "3/3公开行为；真实OS进程restart/PID/digest验证"
+        },
+        {
+          "id": "CTX01-03",
+          "state": "completed",
+          "owner": "runner_owner",
+          "evidence": "原始measurements.json60样本，8,265,090原文bytes"
+        },
+        {
+          "id": "CTX01-04",
+          "state": "completed",
+          "owner": "runner_owner记录Goal Owner结论",
+          "evidence": "APPROVED f58fdf36；只读源码/hash/逐样本离线复算，无负载重跑"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133；固定实现f58fdf36b073e2a98a683c8f40442dbb64ee7eec",
+      "declaredDirty": "已审源码零差异；本次仅review/status交付metadata",
+      "checks": {
+        "state": "passed",
+        "target": "f58fdf36b073e2a98a683c8f40442dbb64ee7eec",
+        "record": "PASSED f58fdf36b073e2a98a683c8f40442dbb64ee7eec：公开行为3/3；60批次/各20，7.878s，0失败；无模型"
+      },
+      "reviewRecord": "APPROVED f58fdf36b073e2a98a683c8f40442dbb64ee7eec；Goal Owner独立只读核验，无重跑",
+      "mainRecord": "未集成；基线75a33不代表本实验存在",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED",
+      "target": "f58fdf36b073e2a98a683c8f40442dbb64ee7eec",
+      "proof": {
+        "target": "f58fdf36b073e2a98a683c8f40442dbb64ee7eec",
+        "head": "5317fe4fb80019a20f5d4190ec89f1338ad940e0",
+        "scopes": [
+          "experiments/context-kernel"
+        ],
+        "observedAt": "2026-10-06T04:51:44.909Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/ctx01/README.md",
+          "docs/evidence/ctx01/harness-limits.md",
+          "plans/ctx01-context-kernel/review.md",
+          "plans/ctx01-context-kernel/status.md",
+          "plans/ctx01-context-kernel/plan.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "f58fdf36b073e2a98a683c8f40442dbb64ee7eec",
+      "head": "5317fe4fb80019a20f5d4190ec89f1338ad940e0",
+      "scopes": [
+        "experiments/context-kernel"
+      ],
+      "observedAt": "2026-10-06T04:51:44.626Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/ctx01/README.md",
+        "docs/evidence/ctx01/harness-limits.md",
+        "plans/ctx01-context-kernel/review.md",
+        "plans/ctx01-context-kernel/status.md",
+        "plans/ctx01-context-kernel/plan.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/ctx01-context-kernel/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/ctx01-context-kernel/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/ctx01-context-kernel/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/ctx01/README.md",
+        "title": "证据",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/ctx01/harness-limits.md",
+        "title": "harness-limits",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/ctx01/measurements.json",
+        "title": "原始60样本",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/ctx01/provenance.json",
+        "title": "来源hash/许可",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/ctx01/host-tests.txt",
+        "title": "3/3行为",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 4,
+      "total": 4
+    },
+    "main": {
+      "record": "未集成；基线75a33不代表本实验存在",
+      "recordedHead": null,
+      "target": "f58fdf36b073e2a98a683c8f40442dbb64ee7eec",
+      "mainHead": "fa79b7b5a2ba618f93f99f5f5a1992e84e393814",
+      "scopes": [
+        "experiments/context-kernel"
+      ],
+      "observedAt": "2026-10-06T04:51:44.587Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/evidence/ctx01",
+          "experiments/context-kernel",
+          "plans/ctx01-context-kernel"
+        ],
+        "state": "active",
+        "branch": "codex/context-kernel-probe",
+        "origin": "new",
+        "taskId": "CTX01",
+        "worker": "runner_owner",
+        "claimId": "da082f7c-4d65-406f-9934-30389a191571",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe",
+        "createdAt": "2026-10-06T04:40:05.920Z",
+        "updatedAt": "2026-10-06T04:40:05.920Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  },
+  "note": "只保存CTX01来源快照；metadata提交前采样，dirty仅本次文档。此回执不是第二进度事实源。"
+}

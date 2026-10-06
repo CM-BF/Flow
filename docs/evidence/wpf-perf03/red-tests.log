@@ -1,0 +1,104 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse
+
+ ❯ apps/web/test/conversation-messages.test.ts (8 tests | 4 failed) 162ms
+     × reuses message objects after a real unchanged projection refresh while keeping a fresh ordered array 10ms
+     × updates same-revision pending replies and corrected final text without replacing another turn 1ms
+     ✓ does not key reuse by text or revision when a truncated reply's source changes 1ms
+     × preserves loaded message identities when a middle history gap is filled 1ms
+     ✓ isolates same-ID turns from another connection and exposes only accepted message content 1ms
+     ✓ preserves dates and excludes pending/unavailable telemetry, without mutating inputs 0ms
+     × allows actual core tail auto-status updates and preserves a draft through refreshes 147ms
+     ✓ keeps changed task facts and replacement adapter callbacks effective 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-messages.test.ts > immutable conversation message projection > reuses message objects after a real unchanged projection refresh while keeping a fresh ordered array
+AssertionError: expected { Object (id, role, ...) } to be { Object (id, role, ...) } // Object.is equality
+
+If it should pass with deep equality, replace "toBe" with "toStrictEqual"
+
+Expected: { Object (id, role, ...) }
+Received: serializes to the same string
+
+
+Compared values have no visual difference.
+
+ ❯ apps/web/test/conversation-messages.test.ts:20:85
+     18|       expect(nextTurns).not.toBe(turns); expect(nextTurns[0]).toBe(tur…
+     19|       const after = conversationMessages(nextTurns);
+     20|       expect(after).not.toBe(before); after.forEach((message, i) => ex…
+       |                                                                                     ^
+     21|       expect(fixture.requests.details).toBe(0);
+     22|     } finally { fixture.projection.dispose(); }
+ ❯ apps/web/test/conversation-messages.test.ts:20:45
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  apps/web/test/conversation-messages.test.ts > immutable conversation message projection > updates same-revision pending replies and corrected final text without replacing another turn
+AssertionError: expected { Object (id, role, ...) } to be { Object (id, role, ...) } // Object.is equality
+
+If it should pass with deep equality, replace "toBe" with "toStrictEqual"
+
+Expected: { Object (id, role, ...) }
+Received: serializes to the same string
+
+
+Compared values have no visual difference.
+
+ ❯ apps/web/test/conversation-messages.test.ts:32:55
+     30|       const final = conversationMessages(fixture.projection.getSnapsho…
+     31|       expect(fixture.projection.getSnapshot().snapshot?.conversation.r…
+     32|       expect(final).toHaveLength(4); expect(final[0]).toBe(before[0]);…
+       |                                                       ^
+     33|       expect(final[3]?.content).toContainEqual({ type: "text", text: "…
+     34|       fixture.replace([first, makeTurn(2, "Corrected at same revision"…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  apps/web/test/conversation-messages.test.ts > immutable conversation message projection > preserves loaded message identities when a middle history gap is filled
+AssertionError: expected { Object (id, role, ...) } to be { Object (id, role, ...) } // Object.is equality
+
+If it should pass with deep equality, replace "toBe" with "toStrictEqual"
+
+Expected: { Object (id, role, ...) }
+Received: serializes to the same string
+
+
+Compared values have no visual difference.
+
+ ❯ apps/web/test/conversation-messages.test.ts:68:80
+     66|       await fixture.projection.loadMore(); const loaded = fixture.proj…
+     67|       expect(loaded.map(turn => turn.number)).toEqual(turns.map(turn =…
+     68|       for (const message of after) if (before.has(message.id)) expect(…
+       |                                                                                ^
+     69|       expect(after.map(message => message.id)).toEqual(turns.flatMap(t…
+     70|     } finally { fixture.projection.dispose(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  apps/web/test/conversation-messages.test.ts > immutable conversation message projection > allows actual core tail auto-status updates and preserves a draft through refreshes
+AssertionError: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ apps/web/test/conversation-messages.test.ts:99:74
+     97|     expect(core.takeCalls()).toBe(2); const before = core.thread.messa…
+     98|     core.thread.composer.setText("Draft stays separate");
+     99|     core.update(conversationMessages([input])); expect(core.takeCalls(…
+       |                                                                          ^
+    100|     expect(core.thread.messages[0]).toBe(before[0]); expect(core.threa…
+    101|     core.update(conversationMessages([input]), { isRunning: true }); e…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 4 passed (8)
+   Start at  00:27:01
+   Duration  881ms (transform 319ms, setup 0ms, import 588ms, tests 162ms, environment 0ms)
+

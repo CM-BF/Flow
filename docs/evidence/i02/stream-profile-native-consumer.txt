@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+stdout | apps/server/src/goal-native-production.test.ts
+NATIVE_GOAL_PRODUCTION_DATABASE_FACTS {"database":"flow_native_mount_db7ae5eb80bd4ab7a64ed750e636a163","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ✓ apps/server/src/goal-native-production.test.ts (2 tests) 1398ms
+   ✓ connects the public client to the real factory and runs one pinned text child with the existing verifier  590ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  01:18:04
+   Duration  2.33s (transform 380ms, setup 0ms, import 852ms, tests 1.40s, environment 0ms)
+

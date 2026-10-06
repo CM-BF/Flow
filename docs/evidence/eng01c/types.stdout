@@ -1,0 +1,10 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-writer-settlement
+> tsc --noEmit
+
+apps/runner/src/engineering/writer.test.ts(16,167): error TS2322: Type 'Mock<() => Promise<{ checker: { id: string; version: string; baselineBeforeDigest: string; baselineAfterDigest: string; commandDigest: string; expectedChecks: string[]; checks: { id: string; passed: boolean; }[]; }; command: { ...; }; }>>' is not assignable to type '(directory: string, signal: AbortSignal) => Promise<Pick<{ protocol: "flow.engineering.receipt.v1"; intent: { protocol: "flow.engineering.v1"; targetRunnerId: string; projectId: string; baseCommit: string; checker: { ...; }; profile?: { ...; } | undefined; }; ... 4 more ...; result: "unknown" | ... 1 more ... | "fai...'.
+  Type 'Promise<{ checker: { id: string; version: string; baselineBeforeDigest: string; baselineAfterDigest: string; commandDigest: string; expectedChecks: string[]; checks: { id: string; passed: boolean; }[]; }; command: { ...; }; }>' is not assignable to type 'Promise<Pick<{ protocol: "flow.engineering.receipt.v1"; intent: { protocol: "flow.engineering.v1"; targetRunnerId: string; projectId: string; baseCommit: string; checker: { id: string; version: "1"; baselineDigest: string; }; profile?: { ...; } | undefined; }; ... 4 more ...; result: "unknown" | ... 1 more ... | "fa...'.
+    Type '{ checker: { id: string; version: string; baselineBeforeDigest: string; baselineAfterDigest: string; commandDigest: string; expectedChecks: string[]; checks: { id: string; passed: boolean; }[]; }; command: { ...; }; }' is not assignable to type 'Pick<{ protocol: "flow.engineering.receipt.v1"; intent: { protocol: "flow.engineering.v1"; targetRunnerId: string; projectId: string; baseCommit: string; checker: { id: string; version: "1"; baselineDigest: string; }; profile?: { ...; } | undefined; }; ... 4 more ...; result: "unknown" | ... 1 more ... | "failed"; }...'.
+      The types of 'checker.version' are incompatible between these types.
+        Type 'string' is not assignable to type '"1"'.
+ ELIFECYCLE  Command failed with exit code 2.

@@ -1,0 +1,395 @@
+{
+  "task": "ENG01E",
+  "base": "2c6df4754f4fea75fbb2e1e750cad89524b1f5fa",
+  "sourceTarget": "30dd8242cccaca3123a23ee3667a601120e8ee17",
+  "createdAt": "2026-10-06T11:48:49.124990+00:00",
+  "entries": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "bytes": 7992,
+      "sha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "bytes": 4507,
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "bytes": 1711,
+      "sha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967"
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4227,
+      "sha256": "d449d350dd2d91611184861df68ce70c4f3b7c9d1543a7d19c61ff26c246547c",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/checker.ts",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/identity.ts",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "bytes": 15852,
+      "sha256": "911c45b252e3598d4dfd2d4a4bb7eca2b521eb7152de0670f7a6b57904ef533d",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch-integration.test.ts",
+      "bytes": 11961,
+      "sha256": "d9bf6572a1e64998fc9473204e686d46bf54c130ae7f4e348ea1ccac3ad70647",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.test.ts",
+      "bytes": 3563,
+      "sha256": "4f465b36b4f104b23cb50ca2fd8e180a9fb24bf2d4738681dd024a26e8506e79",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/launch.ts",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/resources.ts",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "bytes": 8715,
+      "sha256": "df2e75ab590b1843defb10ba79c5d0b5d07866b38277c315c0c39cea09e7b9d1",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "bytes": 13029,
+      "sha256": "797543c0c78569faa92c969054cf68d0e2a16f83a34a9156656c8b423f652054",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "bytes": 7947,
+      "sha256": "0cf6f5408b18c6fef0c47fbd2d683ac9a6349b694a1630207588db970611be4b",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/engineering/writer.ts",
+      "bytes": 1514,
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7027,
+      "sha256": "a440f51cee0776fd6c9b79ae139798baa8a8994c8e62c1463256c885b0c2a117",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 2028,
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 5176,
+      "sha256": "63aa5aa11744497b4c90e8927cbf90aed383f5a9a945b15358fdaeec8ff0f9ad",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 4041,
+      "sha256": "31c5b334c93f2ca3d1f16d0d1fb8b1233b53fd5254d9975dbf73d23e90159ec9",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278771,
+      "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "protected",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "unchangedFromBase": true
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/README.md",
+      "bytes": 3482,
+      "sha256": "d98b6e7dd62b422a12f6a01bf2964e75e85ca8ec98d92f38ef87f65e6d2dc175"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/bounds-red.json",
+      "bytes": 334,
+      "sha256": "bcd0b6710c85df05e559847ef2aeef1b4a2084012319816ff6f97a159cb973d1"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/bounds-red.stdout",
+      "bytes": 4618,
+      "sha256": "5958b8f63f69c4e7b3f2f0605a7570d900646a2fc50bdacd5ac3bbcf20913ce8"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/checker-final.json",
+      "bytes": 1016,
+      "sha256": "c5c879383335774a0c2a7fc923c1aa223e802cee3a38244e765caf3c33ef0a3f"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/checker-final.stdout",
+      "bytes": 337,
+      "sha256": "9db2a130bc70e6c4a85694c8aefcb737fe280bf16e5aa43b616edac7da4ad00c"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/claim.json",
+      "bytes": 860,
+      "sha256": "34ed35a8d3191068933c272c2f15e7c3f061e0d11939d84c4d586763ce673e9c"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/green.json",
+      "bytes": 1077,
+      "sha256": "c8ec2d6e0a7fb6bb7a4337a58329a5345a55d6291c63933b71422281293e4af2"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/green.stdout",
+      "bytes": 412,
+      "sha256": "9cf016c06bf57903502b65d9efa8412ce7b4d6bae558a6c6f48582620d29ce22"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/install.json",
+      "bytes": 345,
+      "sha256": "4a0beba39f7ba4df669deed38184badc817e1c2a032474965075b7ac32d65b22"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/install.stdout",
+      "bytes": 718,
+      "sha256": "9a5425f8e50410a08056382d70d2a3f90eddb750399da349afd680d23d24a5b9"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/interface.md",
+      "bytes": 2547,
+      "sha256": "5370855f20a9c19a304ffadd9d735de173038c3a37b6a4b262231cfb87b29279"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/quality.json",
+      "bytes": 2190,
+      "sha256": "5005c430d7b4b607e74b260c1506c4a5c1087b03da96879ed581dc77c135f15a"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/red.json",
+      "bytes": 1201,
+      "sha256": "29b8de364c779a40102737cf1d7acdf63107044aa04e160a1e5f0fb96438f153"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/red.stdout",
+      "bytes": 20825,
+      "sha256": "db3021eb67a215fce70af872afad095100f6ba1d5604eb79a8b7d4f74adcd90b"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/types-final.json",
+      "bytes": 171,
+      "sha256": "e43aea2d6ebd41199f7bbbc34660448cef1b8f7ab52f4c00e1169488d5dc1ac8"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/types-final.stdout",
+      "bytes": 114,
+      "sha256": "e1f91dff04b4ae994c021e595cc40505f97849f97995fa57ac5041a895176a92"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/types.json",
+      "bytes": 171,
+      "sha256": "c271f7cc2035597d89116f8caf066cc8a899489f061d2f18664dececa2fec2ce"
+    },
+    {
+      "role": "evidence",
+      "path": "docs/evidence/eng01e/types.stdout",
+      "bytes": 336,
+      "sha256": "d6c3d9664951e3a25446eb1de09777b9302dd67fdd916762138c5efa90a5d622"
+    }
+  ],
+  "counts": {
+    "source": 4,
+    "protected": 33,
+    "evidence": 18
+  },
+  "checks": {
+    "distinctPassed": 68,
+    "greenRound": 67,
+    "finalChecker": 34,
+    "overlap": 33,
+    "initialRedFailed": 33,
+    "initialRedPassed": 34,
+    "boundsRedSelectedFailed": 1,
+    "boundsRedUnselected": 33,
+    "initialTypesExit": 2,
+    "finalTypesExit": 0
+  },
+  "providerCalls": 0,
+  "limits": [
+    "pure restricted calculator recipe only",
+    "supplied host snapshot binding does not attest filesystem completeness or writer stopped",
+    "no old v1 fixture/checker/profile/runtime modifications",
+    "no PG/native/provider/real file writer acceptance"
+  ]
+}

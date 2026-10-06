@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/native-profile-catalog.test.ts (1 test | 1 failed) 11ms
+   × reads the explicit native catalog on every page and rejects fallback or contradictory capability responses 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/native-profile-catalog.test.ts > reads the explicit native catalog on every page and rejects fallback or contradictory capability responses
+TypeError: client.nativeExecutionProfiles is not a function
+ ❯ packages/client/src/native-profile-catalog.test.ts:40:25
+     38|   const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server…
+     39|   try {
+     40|     expect(await client.nativeExecutionProfiles({ limit: 1 })).toEqual…
+       |                         ^
+     41|     expect(await client.nativeExecutionProfiles({ after: id, limit: 1 …
+     42|     await expect(client.nativeExecutionProfiles({ after: 'legacy' })).…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  03:44:38
+   Duration  627ms (transform 299ms, setup 0ms, import 469ms, tests 11ms, environment 0ms)
+

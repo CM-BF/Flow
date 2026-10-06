@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-10-06T06:15:17.333Z",
+  "reviewTarget": "216333f257f2be147d40b44e56e727167ea116b2",
+  "productImplementation": "57d28e9104e9041dbd04a66295294308da94a23d",
+  "priorManifestSha256": "d831b92a54b5db9db6bdddf6fd9cc3e91f286b66e75b206f4fe1a84f5dd7075c",
+  "unchangedPriorSourceCount": 11,
+  "newSource": {
+    "path": "apps/server/src/native-activity/migration.test.ts",
+    "sha256": "68533ad2b4d9e0f81fb17512322e57e5168d6991258f68f250f288223d4c4186",
+    "bytes": 3229
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/chat05/upgrade-review-fix.txt",
+      "sha256": "a9b9587f5f7d02407c3d5ee6a45468371bede5c374cc31b6c160916d53e364d1",
+      "bytes": 434
+    },
+    {
+      "path": "docs/evidence/chat05/upgrade-typecheck.txt",
+      "sha256": "293edcce3e9e389a9dd65f5ee46c17438f61ce8b339cbca7c294986bd7074fe5",
+      "bytes": 103
+    }
+  ],
+  "checks": {
+    "selectedNewTests": 1,
+    "passedNewTests": 1,
+    "typecheckExit": 0,
+    "prior85NotRerun": true,
+    "realModelQueries": 0
+  },
+  "finding": "P2: previous task was created after beforeAll migration20; previous evidence proves reapplication only.",
+  "correction": "Independent database, actual legacy migrations1/2, persisted task/attempt/detail, explicit no20/table absent, first20 preservation and empty activity, second20 idempotency, owned DB cleanup."
+}

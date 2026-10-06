@@ -1,0 +1,7 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+> tsc --noEmit
+
+packages/client/src/goal-tool-runs.test.ts(32,46): error TS2322: Type '{ kind: "define-input"; nodeId: string; expectedInputVersion: number; input: { prompt: string; constraints: string; acceptance: { kind: "text"; contains: string[]; }; harness: "fixture"; }; }' is not assignable to type '{ kind: "define-input"; nodeId: string; expectedInputVersion: number; input: { goal: string; constraints: string; acceptance: string; verification: { kind: "nonempty"; } | { kind: "contains"; expected: string; }; }; reason: string; } | { ...; } | { ...; }'.
+  Property 'reason' is missing in type '{ kind: "define-input"; nodeId: string; expectedInputVersion: number; input: { prompt: string; constraints: string; acceptance: { kind: "text"; contains: string[]; }; harness: "fixture"; }; }' but required in type '{ kind: "define-input"; nodeId: string; expectedInputVersion: number; input: { goal: string; constraints: string; acceptance: string; verification: { kind: "nonempty"; } | { kind: "contains"; expected: string; }; }; reason: string; }'.
+ ELIFECYCLE  Command failed with exit code 2.

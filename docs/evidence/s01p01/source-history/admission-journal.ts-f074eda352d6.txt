@@ -1,0 +1,86 @@
+import { randomUUID } from 'node:crypto';
+import { open, rename } from 'node:fs/promises';
+import { join } from 'node:path';
+import { z } from 'zod';
+import { EventStorageError } from './outbox.js';
+
+const id = z.string().min(1).max(128);
+const assignmentSchema = z.strictObject({ attemptId: id, taskId: id, runnerId: id, ownerVersion: z.number().int().positive() });
+const snapshotSchema = z.strictObject({ version: z.literal(1), inFlight: z.string().uuid().nullable(), assignments: z.array(assignmentSchema).max(16) })
+  .refine(value => new Set(value.assignments.map(item => item.attemptId)).size === value.assignments.length);
+export type AdmissionAssignment = z.infer<typeof assignmentSchema>;
+type Snapshot = z.infer<typeof snapshotSchema>;
+const MAX_BYTES = 65536;
+
+export class AdmissionStorageError extends EventStorageError {
+  constructor(cause: unknown) {
+    super();
+    this.message = 'Runner admission storage is unavailable or corrupt; new claims are blocked.';
+    this.cause = cause;
+  }
+}
+
+/** One runtime owns this journal. It contains identifiers, never credentials or execution input. */
+export class AdmissionJournal {
+  private tail: Promise<void> = Promise.resolve();
+  private constructor(private directory: string, private snapshot: Snapshot) {}
+
+  static async open(directory: string): Promise<AdmissionJournal> {
+    let snapshot: Snapshot = { version: 1, inFlight: null, assignments: [] };
+    try {
+      const file = await open(join(directory, 'admission.json'), 'r');
+      try {
+        const bytes = Buffer.alloc(MAX_BYTES + 1);
+        const { bytesRead } = await file.read(bytes, 0, bytes.length, 0);
+        if (bytesRead > MAX_BYTES) throw new Error('Admission journal exceeds its byte limit.');
+        snapshot = snapshotSchema.parse(JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes.subarray(0, bytesRead))));
+      } finally { await file.close(); }
+    } catch (error) {
+      if (!(error instanceof Error && 'code' in error && error.code === 'ENOENT')) throw new AdmissionStorageError(error);
+    }
+    return new AdmissionJournal(directory, snapshot);
+  }
+
+  unresolved(active: ReadonlySet<string>): boolean {
+    return this.snapshot.inFlight !== null || this.snapshot.assignments.some(item => !active.has(item.attemptId));
+  }
+
+  begin(): Promise<void> {
+    return this.change(snapshot => {
+      if (snapshot.inFlight !== null) throw new Error('Unresolved claim prevents another admission.');
+      if (snapshot.assignments.length >= 16) throw new Error('Sixteen retained assignments prevent another admission.');
+      return { ...snapshot, inFlight: randomUUID() };
+    });
+  }
+
+  /** Only a definite response can replace the intent. Assignment and intent change in one durable rename. */
+  accept(assignment: AdmissionAssignment | null): Promise<void> {
+    return this.change(snapshot => {
+      if (!snapshot.inFlight) throw new Error('No claim intent exists.');
+      const assignments = assignment ? [...snapshot.assignments, assignmentSchema.parse(assignment)] : snapshot.assignments;
+      return snapshotSchema.parse({ ...snapshot, inFlight: null, assignments });
+    });
+  }
+
+  /** Call only after a validated completion-event ACK; a final proposal receipt is insufficient. */
+  complete(ownership: { attemptId: string; ownerVersion: number }): Promise<void> {
+    return this.change(snapshot => ({ ...snapshot, assignments: snapshot.assignments.filter(item =>
+      item.attemptId !== ownership.attemptId || item.ownerVersion !== ownership.ownerVersion) }));
+  }
+
+  private change(update: (snapshot: Snapshot) => Snapshot): Promise<void> {
+    const next = this.tail.then(async () => {
+      const snapshot = update(this.snapshot);
+      try {
+        const file = await open(join(this.directory, 'admission.json.tmp'), 'w', 0o600);
+        try { await file.writeFile(JSON.stringify(snapshot)); await file.sync(); } finally { await file.close(); }
+        await rename(join(this.directory, 'admission.json.tmp'), join(this.directory, 'admission.json'));
+        const directory = await open(this.directory, 'r');
+        try { await directory.sync(); } finally { await directory.close(); }
+        this.snapshot = snapshot;
+      } catch (error) { throw new AdmissionStorageError(error); }
+    });
+    this.tail = next.catch(() => undefined);
+    return next;
+  }
+}

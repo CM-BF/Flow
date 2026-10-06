@@ -1,0 +1,6 @@
+{
+  "observedAt": "2026-10-06T04:37:42Z",
+  "query": "SELECT datname FROM pg_database WHERE datname LIKE flow_o03_%",
+  "remainingO03Databases": [],
+  "scope": "read-only inventory after completed author suite; own dynamic database already dropped"
+}

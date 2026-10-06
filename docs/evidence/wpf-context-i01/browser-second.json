@@ -1,0 +1,166 @@
+{
+  "at": "2026-10-06T08:54:49.726Z",
+  "sourceCommit": "ea1b0995f5ef404903c7e445f6f6244bf4930624",
+  "hashes": {
+    "apps/web/src/App.tsx": "dd95cc085103fea31c11430530bb40ee0a92980262dc66822c8f8928d00ebbdf",
+    "apps/web/src/conversation-context/projects.ts": "04b47c9b45cd1365b35b858ae93010d83fef2bd6edf1fa1768be560a13f93fa0",
+    "apps/web/src/conversations/ConversationThread.tsx": "ddffc70fa724febe96802e997e4b7a3e2b7a1e6d7b7fef803d69162358761037",
+    "apps/web/src/conversations/outbox.ts": "2c2e726dc0ade601b62cc0fbf2a0a617929f8e514878230804f84d12bdef1461",
+    "apps/web/src/conversations/projection.ts": "9de6665e6c635f7b5da0a47444fb2b3d91c70e22fce5c0b728e2dcd0596b89b0",
+    "apps/web/src/conversations/queue/projection.ts": "dc1cb6bab00c24a506e79cf0d57a388867b2995195116a7fe7b749b49784c23c",
+    "apps/web/src/plugin-integration/knowledge.tsx": "a69bb52a7b2775b7d9805d91f54001b25a225374d6fa543d777659be08a7f68a",
+    "apps/web/src/plugin-integration/react.tsx": "fe7d2951dc342d3c63b3a32eddc274aad41c8480733b7fbcc818bb7392763093",
+    "apps/web/src/plugin-integration/session.ts": "c15fc54641856c4b90f5e941afc5af3a49cac36ec0c293c687d565d1e74374fa",
+    "apps/web/src/plugins/types.ts": "9b2effc324ea05afb923d581313266dcf12071233d1029516b68899e204bbea2",
+    "apps/web/src/plugins/validation.ts": "47aa014d47408187c75ab432336536c296764947f811251818dd6f02eb081abc",
+    "apps/web/test/conversation-context-integration.browser.ts": "3779ec781d01408d5abede65f344d3e8180071d753d6352204653767675cfd22",
+    "apps/web/test/conversation-context-integration.fixture.ts": "11693e5df7949e81575266ee2d4eec95cbeff50e78bf803b9f64bd96c6b0fd04",
+    "apps/web/test/conversation-context-integration.test.ts": "03245cda1671a3bed9bb7dbbd4a76aa0e9e9195318ec36e8197c1f2d0a2a1f5e",
+    "apps/web/test/conversation-outbox.test.ts": "6aff3efa4ab241bf8f51b352b22ce04301318f2aeb4583a121638887931be33d",
+    "apps/web/test/conversation-projection.test.ts": "202d6863801ac699b2b085a67078dad78477c07474ad92817a7d1feb3f9f205b",
+    "apps/web/test/conversation-queue.test.ts": "2991807a0b5e839c41359174979b1f3af74ad9f465fa94febf3ae7ec728725b6",
+    "apps/web/test/plugin-host.test.ts": "26f73c5dc218026965831094a3c555c1e775859c4f99619c9a67ca50c0b36e43"
+  },
+  "production": false,
+  "checks": [
+    "explicit bounded project pages, no default and empty project plaintext",
+    "prepare-only lost CREATE uses original key and freezes project/profile with zero turns",
+    "search whole citations, zero eager body, explicit lazy body/cache, close and keyboard preserve draft"
+  ],
+  "errors": [],
+  "failure": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('1 knowledge references selected for your next message', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('1 knowledge references selected for your next message', { exact: true }) with timeout 5000ms\n  - waiting for getByText('1 knowledge references selected for your next message', { exact: true })\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeVisible (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web/test/conversation-context-integration.browser.ts:40:512)\n    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web/test/conversation-context-integration.browser.ts:16:56)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web/test/conversation-context-integration.browser.ts:37:2)",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "e19e0c37-068f-4d95-8514-056ff4a3ea60:create",
+      "body": "{\"title\":\"Keep my knowledge draft\",\"harness\":\"claude\",\"projectId\":\"project-01\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "e19e0c37-068f-4d95-8514-056ff4a3ea60:create",
+      "body": "{\"title\":\"Keep my knowledge draft\",\"harness\":\"claude\",\"projectId\":\"project-01\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/6b390de0-671c-4f95-b1be-61ae02c69e7c/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/6b390de0-671c-4f95-b1be-61ae02c69e7c/turns",
+      "key": "3d8fc1d8-6ea7-41a5-ba50-e9392811297b:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send old text with knowledge\",\"mode\":\"follow-up\",\"knowledge\":[{\"projectId\":\"project-01\",\"sourceId\":\"10000000-0000-4000-8000-000000000001\",\"version\":1,\"contentDigest\":\"530d7e8906bbe5159da57f6cda24372da7a2e7ed318f496c9022532ce049b08c\",\"locator\":{\"kind\":\"utf8-bytes\",\"start\":0,\"end\":60}}]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/6b390de0-671c-4f95-b1be-61ae02c69e7c/turns",
+      "key": "3d8fc1d8-6ea7-41a5-ba50-e9392811297b:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send old text with knowledge\",\"mode\":\"follow-up\",\"knowledge\":[{\"projectId\":\"project-01\",\"sourceId\":\"10000000-0000-4000-8000-000000000001\",\"version\":1,\"contentDigest\":\"530d7e8906bbe5159da57f6cda24372da7a2e7ed318f496c9022532ce049b08c\",\"locator\":{\"kind\":\"utf8-bytes\",\"start\":0,\"end\":60}}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/6b390de0-671c-4f95-b1be-61ae02c69e7c-task-1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/6b390de0-671c-4f95-b1be-61ae02c69e7c-task-1/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=174"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/6b390de0-671c-4f95-b1be-61ae02c69e7c/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/6b390de0-671c-4f95-b1be-61ae02c69e7c",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/6b390de0-671c-4f95-b1be-61ae02c69e7c/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=175"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/6b390de0-671c-4f95-b1be-61ae02c69e7c",
+      "key": "",
+      "body": ""
+    }
+  ],
+  "reads": [
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "search",
+      "project": "project-01"
+    },
+    {
+      "center": 0,
+      "kind": "resolve",
+      "project": "project-01"
+    }
+  ]
+}

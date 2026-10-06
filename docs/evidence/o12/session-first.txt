@@ -1,0 +1,56 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ❯ apps/server/src/goal-delivery/session.test.ts (4 tests | 2 failed) 2212ms
+   ✓ shares one goal across two clients, keeps material reads explicit and rejects stale input/project writes without retry 118ms
+   ✓ recovers a committed lost ACK with the original frozen key/body after controller and center restart 126ms
+   × keeps failed local persistence and malformed committed receipts unresolved without issuing a replacement 37ms
+   × observes decision and fixed artifact separately, while disconnect leaves the execution running and cancel only requests stopping 975ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-delivery/session.test.ts > keeps failed local persistence and malformed committed receipts unresolved without issuing a replacement
+Error: Storage ACK missing
+ ❯ Object.save apps/server/src/goal-delivery/session.test.ts:63:145
+     61| it('keeps failed local persistence and malformed committed receipts un…
+     62|   const s = await f.setup(), client = f.client(); let stored: GoalInte…
+     63|   const store: GoalIntentStore = { async load() { return stored; }, as…
+       |                                                                                                                                                 ^
+     64|   const control = session(s.goalId, port(client, { async commandGoal(.…
+     65|   try {
+ ❯ packages/interaction/src/goal/index.ts:114:29
+ ❯ Object.command packages/interaction/src/goal/index.ts:117:5
+ ❯ apps/server/src/goal-delivery/session.test.ts:66:55
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/goal-delivery/session.test.ts > observes decision and fixed artifact separately, while disconnect leaves the execution running and cancel only requests stopping
+ZodError: [
+  {
+    "expected": "string",
+    "code": "invalid_type",
+    "path": [
+      "taskId"
+    ],
+    "message": "Invalid input: expected string, received undefined"
+  }
+]
+ ❯ readBody packages/interaction/src/goal/reads.ts:52:117
+     50|   const binding = goalArtifactBindingSchema.parse(reference.binding);
+     51|   const raw = await client.detail(binding.detailId, signal);
+     52|   const detail = z.object({ id: idSchema, taskId: idSchema, kind: z.st…
+       |                                                                                                                     ^
+     53|   const bytes = new TextEncoder().encode(detail.content);
+     54|   if (bytes.byteLength > 1_048_576 || detail.id !== binding.detailId |…
+ ❯ ObservationReads.run packages/interaction/src/observation/reads.ts:15:59
+ ❯ Object.read packages/interaction/src/goal/index.ts:77:20
+ ❯ apps/server/src/goal-delivery/session.test.ts:103:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  04:59:46
+   Duration  3.38s (transform 489ms, setup 0ms, import 1.08s, tests 2.21s, environment 0ms)
+

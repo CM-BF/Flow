@@ -1,0 +1,146 @@
+{
+  "analysisAt": "2026-10-06T08:36:39.062726+00:00",
+  "approvalId": "o10-native-20261006-0834-b1a88",
+  "budgetState": "SEALED; no retries or additional query",
+  "driverExitCode": 0,
+  "automaticOutcome": "mechanical-evidence-collected",
+  "nativeQueryCalls": 1,
+  "queryAdapterCalls": 1,
+  "queryClosed": true,
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "nativeSessionId": "aadced33-cac6-4ad5-aeff-7cca38309252",
+    "sourceMessageId": "b3ab7ed2-5da8-4a09-bbdf-13bca88d7c4a",
+    "numTurns": 2,
+    "sdkEstimatedCostUsd": 0.0148666,
+    "modelUsage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 1399,
+        "outputTokens": 24,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0015190000000000002,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-sonnet-5-5": {
+        "inputTokens": 4,
+        "outputTokens": 248,
+        "cacheReadInputTokens": 2298,
+        "cacheCreationInputTokens": 2600,
+        "webSearchRequests": 0,
+        "costUSD": 0.013347600000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    }
+  },
+  "effectiveDeclarations": {
+    "model": "claude-sonnet-5-5",
+    "permissionMode": "dontAsk",
+    "tools": [
+      "Read"
+    ],
+    "plugins": [
+      {
+        "name": "cc-plugin-agents-md",
+        "version": null
+      },
+      {
+        "name": "cc-plugin-telemetry",
+        "version": null
+      },
+      {
+        "name": "cc-plugin-plugin-authoring",
+        "version": null
+      }
+    ],
+    "skills": [
+      "design",
+      "doctor",
+      "plugin-authoring"
+    ],
+    "mcpServers": [],
+    "runtimeVersion": "2.1.290",
+    "nativeSessionId": "aadced33-cac6-4ad5-aeff-7cca38309252",
+    "observationKind": "sdk-init-declaration"
+  },
+  "hostToolDecisions": [
+    {
+      "toolName": "Read",
+      "source": null,
+      "server": null,
+      "toolUseId": "toolu_01Mun19yA5cRdXddgYGnWy7D",
+      "decision": "allowed",
+      "execution": "not-observed"
+    }
+  ],
+  "readObservations": [
+    {
+      "id": "toolu_01Mun19yA5cRdXddgYGnWy7D",
+      "toolName": "Read",
+      "state": "reported-success",
+      "contentDigest": "2068d159df93d63b77fc60f3b2832c144790db91b2309a5e08fb1db2080a06c9",
+      "containsSyntheticMaterial": true
+    }
+  ],
+  "permissionDenials": {
+    "state": "reported",
+    "total": 0,
+    "entries": [],
+    "parametersOmitted": true,
+    "truncated": false
+  },
+  "final": {
+    "content": "纸鸢 0.1 版新增草稿预览功能。目前该版本仍处于内部测试阶段，尚未正式发布。",
+    "unicodeCodePoints": 39,
+    "utf8Bytes": 107,
+    "sha256": "36cfe71c8aa2a396b0847f296d20d5b745e27b8ee48be07dced93412d2a26e31",
+    "digestMatches": true,
+    "taskId": "d73caa7b-fff3-4987-aec9-66cf2381398c",
+    "attemptId": "3c9175ac-4630-459c-ac1f-3424bb636bcd",
+    "nativeSessionId": "aadced33-cac6-4ad5-aeff-7cca38309252",
+    "sourceMessageId": "b3ab7ed2-5da8-4a09-bbdf-13bca88d7c4a"
+  },
+  "mechanicalVerification": "passed",
+  "semanticAcceptance": {
+    "state": "not-evaluated",
+    "acceptedDelivery": false,
+    "required": "Goal Owner reads the actual final against the fixed material; no regex semantic oracle."
+  },
+  "goalAccepted": null,
+  "resources": {
+    "processGroup": {
+      "pgid": 41628,
+      "state": "stopped"
+    },
+    "cleanup": {
+      "runnerStopped": true,
+      "centerClosed": true,
+      "databaseRemoved": true,
+      "privateTemporaryDirectoryRemoved": true
+    },
+    "remainingDatabases": [],
+    "privateDirectoryAbsentAtAnalysis": true,
+    "checkpointSaved": {
+      "saved": true,
+      "file": "checkpoint.json"
+    }
+  },
+  "limits": [
+    "One SDK query can use auxiliary models; SDK list cost is not the subscription bill or an account hard limit.",
+    "Managed init declarations do not prove plugin or organization hook isolation.",
+    "Read reported-success is saved separately from host allow; raw tool body/arguments/thinking not retained.",
+    "Goal Owner semantic decision pending; no automatic accept-delivery, no engineering writes, no personal service or UI action."
+  ]
+}

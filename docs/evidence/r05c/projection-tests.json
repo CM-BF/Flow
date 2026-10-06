@@ -1,0 +1,14 @@
+{
+  "command": "Node24 --test temporary fixed-source consumer with only its final.mjs import redirected to the production projection.mjs",
+  "sourceCommit": "0d0524c3439363d1fe60aad63f62817ba51fa2a5",
+  "sourcePath": "experiments/codex-app-server-conformance/final.test.mjs",
+  "sourceSha256": "d689150a48ce95534fa0c035051acb62c142b76cf1b9345d19b339f6ec75906c",
+  "transformedSha256": "4e1dfb8ee131bbc3f4d5820aaa483c369e9004cafecafc0bcd18c76a0df67eac",
+  "onlyChange": "one module import; assertions unchanged",
+  "temporaryDirectoryRemoved": true,
+  "exitCode": 0,
+  "selectedTests": 15,
+  "output": "projection-tests.stdout",
+  "source": "process stdout/stderr captured directly",
+  "experimentalScopeWritten": false
+}

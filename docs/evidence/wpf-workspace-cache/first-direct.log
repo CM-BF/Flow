@@ -1,0 +1,231 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache
+
+ ❯ apps/web/test/conversation-projection.test.ts (86 tests | 6 failed) 172ms
+     ✓ uses the shared decoder for a non-HTTP port's invalid revision success 7ms
+     ✓ uses the shared decoder for a non-HTTP port's invalid task timestamp success 1ms
+     ✓ uses the shared decoder for a non-HTTP port's invalid effective source success 0ms
+     ✓ prepares zero-turn conversation using one CREATE receipt, then sends without recreating 1ms
+     ✓ requires a supported fixed project and checks full ordered knowledge in Send ACK 4ms
+     ✓ retains project undefined and rejects changed GET identity without replacing known facts 0ms
+     ✓ retains project project-a and rejects changed GET identity without replacing known facts 1ms
+     ✓ rejects snapshot/page project mismatch project-a / project-b 0ms
+     ✓ rejects snapshot/page project mismatch project-a / undefined 0ms
+     ✓ rejects snapshot/page project mismatch undefined / project-a 0ms
+     ✓ accepts matching project undefined CREATE and first turn receipts 1ms
+     ✓ accepts matching project project-a CREATE and first turn receipts 0ms
+     × keeps known project identity when a later history page or turn receipt omits it 3ms
+     ✓ keeps mismatched project CREATE project-a / undefined unknown and retries the original identity 1ms
+     ✓ keeps mismatched project CREATE project-a / project-b unknown and retries the original identity 0ms
+     ✓ keeps mismatched project CREATE undefined / project-a unknown and retries the original identity 0ms
+     ✓ accepts optional knowledgeContext=undefined without fetching context or reply details 0ms
+     ✓ accepts optional knowledgeContext=false without fetching context or reply details 0ms
+     ✓ accepts optional knowledgeContext=true without fetching context or reply details 0ms
+     ✓ rejects malformed knowledgeContext=null instead of inferring support 0ms
+     ✓ rejects malformed knowledgeContext=true instead of inferring support 0ms
+     ✓ rejects malformed knowledgeContext=1 instead of inferring support 0ms
+     ✓ retains context metadata in snapshots and history while only actual user/assistant text becomes messages 0ms
+     ✓ uses explicit queue intent while preserving active execution and the visible observer lifecycle 1ms
+     ✓ does not activate queue methods for a false capability even when the public client supports them 0ms
+     ✓ reads queue=false while keeping active-turn sending unavailable in this Web version 0ms
+     ✓ reads queue=true while keeping active-turn sending unavailable in this Web version 0ms
+     ✓ accepts queue=false CREATE receipts and submits only explicit follow-up turns 0ms
+     ✓ accepts queue=true CREATE receipts and submits only explicit follow-up turns 0ms
+     ✓ rejects non-boolean queue capability undefined instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability null instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability true instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability 1 instead of treating it as supported 0ms
+     ✓ does not widen other unsupported capabilities while accepting a boolean queue flag 0ms
+     ✓ keeps a missing pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a id pin mismatch in a CREATE receipt unknown and does not submit a turn 1ms
+     ✓ keeps a runnerId pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a configDigest pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ rejects an unexpected CREATE pin for an explicit legacy conversation 0ms
+     ✓ keeps the acknowledged creation locked after a rejected first turn and never creates with the later selection 0ms
+     ✓ checks pinned creation on later GET pages and turn receipts without overwriting accepted configuration 0ms
+     ✓ retains legacy unpinned configuration on an existing conversation 0ms
+     × refreshes a same-revision asynchronous reply and reads its exact version only on demand 1ms
+     ✓ keeps a failed initial snapshot unknown and blocks send until it is loaded 0ms
+     ✓ does not recreate an acknowledged conversation when the first turn response is lost 0ms
+     ✓ treats 409 as a definite rejection and refreshes without changing the key/revision or automatically resending 0ms
+     ✓ pauses observations without aborting an already sent command or its late receipt 0ms
+     ✓ does not let an older in-flight snapshot overwrite a newly accepted turn/revision 0ms
+     ✓ does not downgrade a final reply when an older admission ACK arrives last 0ms
+     ✓ confirms queue=false retried saved receipts without regressing a final reply already read from the center 0ms
+     ✓ confirms queue=true retried saved receipts without regressing a final reply already read from the center 0ms
+     ✓ surfaces a request timeout instead of treating it as a visibility cancellation 1ms
+     × deduplicates overlapping turn pages and preserves typed user/assistant entries 2ms
+     × exposes a loadable middle gap after another tab admits several turns while this view is hidden 3ms
+     × rejects mismatched lazy detail versions and lets explicit retry succeed 0ms
+     ✓ keeps a previously unknown result unknown after a retry authentication failure 0ms
+     ✓ does not accept malformed or mismatched success receipts as proof of admission 0ms
+     × validates typed source digests and namespaces identical detail IDs by source identity 1ms
+     ✓ does not move a disposed connection's delayed receipt or detail into a same-ID new connection 0ms
+     ✓ reads live=undefined with queue=false without enabling a stream consumer 13ms
+     ✓ reads live=false with queue=false without enabling a stream consumer 1ms
+     ✓ reads live=true with queue=false without enabling a stream consumer 0ms
+     ✓ accepts CREATE live=undefined with queue=false, then submits one ordinary turn 1ms
+     ✓ accepts CREATE live=false with queue=false, then submits one ordinary turn 1ms
+     ✓ accepts CREATE live=true with queue=false, then submits one ordinary turn 1ms
+     ✓ reads live=undefined with queue=true without enabling a stream consumer 0ms
+     ✓ reads live=false with queue=true without enabling a stream consumer 0ms
+     ✓ reads live=true with queue=true without enabling a stream consumer 0ms
+     ✓ accepts CREATE live=undefined with queue=true, then submits one ordinary turn 0ms
+     ✓ accepts CREATE live=false with queue=true, then submits one ordinary turn 0ms
+     ✓ accepts CREATE live=true with queue=true, then submits one ordinary turn 0ms
+     ✓ rejects malformed GET live=null without replacing known facts 0ms
+     ✓ rejects malformed GET live="true" without replacing known facts 1ms
+     ✓ rejects malformed GET live=1 without replacing known facts 1ms
+     ✓ rejects malformed GET live={} without replacing known facts 0ms
+     ✓ keeps malformed CREATE live=null unknown and retries the frozen receipt 1ms
+     ✓ keeps malformed CREATE live="true" unknown and retries the frozen receipt 1ms
+     ✓ keeps malformed CREATE live=1 unknown and retries the frozen receipt 1ms
+     ✓ keeps malformed CREATE live={} unknown and retries the frozen receipt 1ms
+     ✓ does not let true bypass GET conversation, turn or task identities 1ms
+     ✓ does not let true bypass a mismatched project CREATE identity 1ms
+     ✓ does not let true bypass a mismatched profile CREATE identity 1ms
+     ✓ releases only read bodies while preserving a rejected message receipt 1ms
+     ✓ bounds reply/error records and explicitly reloads an evicted body 1ms
+     ✓ does not let an old hidden read rejection or finally replace a new read 105ms
+     ✓ ignores hidden history success and finally while a new generation is loading 1ms
+ ❯ apps/web/test/conversation-queue.test.ts (28 tests | 1 failed) 161ms
+     ✓ queues knowledge only with current fixed project capability, while unknown retry retains original refs 10ms
+     ✓ serializes the frozen citations through the real client unchanged across unknown ACK replay 12ms
+     ✓ deep-freezes queued knowledge and retries the same key after loss while the next draft changes 1ms
+     ✓ keeps missing knowledge acknowledgement unknown until an exact original-key replay 1ms
+     ✓ keeps reversed knowledge acknowledgement unknown until an exact original-key replay 3ms
+     ✓ keeps tuple knowledge acknowledgement unknown until an exact original-key replay 0ms
+     ✓ keeps extra knowledge acknowledgement unknown until an exact original-key replay 0ms
+     ✓ keeps malformed knowledge acknowledgement unknown until an exact original-key replay 0ms
+     ✓ rejects invalid reference input before HTTP and keeps definite budget rejection payload intact 1ms
+     ✓ rejects unrequested nonempty context while plain and explicit-empty requests keep their wire shape 0ms
+     ✓ preserves optional context metadata in waiting items and accepts metadata-bearing receipts without context reads 0ms
+     ✓ rejects 16000 UTF-8 byte overflow before allocating a receipt or HTTP command 0ms
+     ✓ freezes each payload/key; unknown followed by unauthorized stays unknown and original enqueue retries unchanged 0ms
+     ✓ rejects malformed success receipts as unknown without applying their alleged queue facts 0ms
+     ✓ does not treat immutable old admission replay as current waiting membership 0ms
+     ✓ accepts changing currentTurn/blocked at the same revision and rejects lower-revision reads 0ms
+     ✓ keeps pages ordered without guessing total and replaces removed items on a refreshed loaded window 0ms
+     ✓ serializes refresh, pauses hidden reads, and ignores an old generation after a forced read 7ms
+     ✓ capability false performs no queue or detail reads and does not offer enqueue 1ms
+     × loads detail only on demand, caches its text, and rejects a different conversation identity 3ms
+     ✓ unknown pause replay is historical; fresh GET selects current task and cancel is a separate key/result 1ms
+     ✓ a newer task between confirmation and cancellation stops the stale cancellation 0ms
+     ✓ continue freezes task identity from a fresh GET and 409 only refreshes without a fresh-key resend 0ms
+     ✓ same-page offline/visible changes preserve unknown payload/key and never cancel the task 0ms
+     ✓ a hidden page receives an already-sent command receipt without starting background queue reads 0ms
+     ✓ timeout becomes visible unknown while dispose ignores a late response 11ms
+     ✓ bounds all detail records and preserves every command receipt when clearing reads 1ms
+     ✓ ignores a late detail error and keeps the new generation flight 105ms
+ ✓ apps/web/test/workspace-retention.test.ts (7 tests) 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > keeps known project identity when a later history page or turn receipt omits it
+AssertionError: the given combination of arguments (null and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ apps/web/test/conversation-projection.test.ts:118:44
+    116|     client.conversationTurns.mockResolvedValueOnce({ conversation: unb…
+    117|     await projection.loadMore();
+    118|     expect(projection.getSnapshot().error).toContain("frozen creation …
+       |                                            ^
+    119|     expect(projection.getSnapshot().turns).toHaveLength(1); expect(pro…
+    120|     client.submitConversationTurn.mockResolvedValueOnce({ conversation…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > refreshes a same-revision asynchronous reply and reads its exact version only on demand
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ apps/web/test/conversation-projection.test.ts:270:115
+    268|     set(snapshot(reply(turn()))); await projection.refresh();
+    269|     expect(projection.getSnapshot().turns[0]!.assistant).toMatchObject…
+    270|     await projection.loadReply("turn-1"); await projection.loadReply("…
+       |                                                                                                                   ^
+    271|     const first = replyDetailKey("chat", projection.getSnapshot().turn…
+    272|     set(snapshot(reply(turn(), "Updated", "v2"))); await projection.re…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > deduplicates overlapping turn pages and preserves typed user/assistant entries
+AssertionError: expected 1 to be null
+
+- Expected: 
+null
+
++ Received: 
+1
+
+ ❯ apps/web/test/conversation-projection.test.ts:351:49
+    349|     await projection.refresh(); client.conversationTurns.mockResolvedV…
+    350|     await projection.loadMore(); expect(projection.getSnapshot().turns…
+    351|     expect(projection.getSnapshot().nextCursor).toBeNull();
+       |                                                 ^
+    352|   });
+    353|   it("exposes a loadable middle gap after another tab admits several t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > exposes a loadable middle gap after another tab admits several turns while this view is hidden
+AssertionError: expected last "vi.fn()" call to have been called with [ 'chat', …(2) ]
+
+- Expected
++ Received
+
+@@ -1,9 +1,9 @@
+  [
+    "chat",
+    {
+-     "after": 1,
++     "after": 0,
+      "limit": 20,
+    },
+    AbortSignal {
+      Symbol(kEvents): undefined,
+      Symbol(events.maxEventTargetListeners): 0,
+
+ ❯ apps/web/test/conversation-projection.test.ts:361:38
+    359|     client.conversationTurns.mockResolvedValueOnce({ conversation: sna…
+    360|     await projection.loadMore();
+    361|     expect(client.conversationTurns).toHaveBeenLastCalledWith("chat", …
+       |                                      ^
+    362|     expect(projection.getSnapshot().turns.map(turn => turn.number)).to…
+    363|     expect(projection.getSnapshot().nextCursor).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects mismatched lazy detail versions and lets explicit retry succeed
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ apps/web/test/conversation-projection.test.ts:369:58
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > validates typed source digests and namespaces identical detail IDs by source identity
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ apps/web/test/conversation-projection.test.ts:394:140
+    392|     const { projection, client } = setup(snapshot(input)); await proje…
+    393|     client.conversationDetail.mockResolvedValueOnce({ id: "detail", ti…
+    394|     await projection.loadReply(input.id); const key = replyDetailKey("…
+       |                                                                                                                                            ^
+    395|     client.conversationDetail.mockResolvedValueOnce({ id: "detail", ti…
+    396|     expect(projection.getSnapshot().details[key]?.data?.content).toBe(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  apps/web/test/conversation-queue.test.ts > queue commands and current projection > loads detail only on demand, caches its text, and rejects a different conversation identity
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ apps/web/test/conversation-queue.test.ts:179:107
+    177|   it("loads detail only on demand, caches its text, and rejects a diff…
+    178|     const { api, queue } = setup(); await queue.refresh(); expect(api.…
+    179|     await queue.loadDetail("item-1"); await queue.loadDetail("item-1")…
+       |                                                                                                           ^
+    180|     api.conversationQueueItem.mockResolvedValueOnce({ ...page({ conver…
+    181|     await queue.loadDetail("item-2"); expect(queue.getSnapshot().detai…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  7 failed | 114 passed (121)
+   Start at  04:38:34
+   Duration  1.23s (transform 314ms, setup 0ms, import 600ms, tests 335ms, environment 0ms)
+

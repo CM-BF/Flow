@@ -1,0 +1,91 @@
+{
+  "recordedAt": "2026-10-06T10:36:04.816805+00:00",
+  "base": "108d4276298b52911426bba166724298ee3cafdf",
+  "source": [
+    {
+      "path": "apps/server/src/context-transparency/routes.test.ts",
+      "bytes": 3356,
+      "sha256": "157e7c40c29f36688455775e7a4da63e8df5077f6ff71d2315cf3ee1f2924348"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.test.ts",
+      "bytes": 9197,
+      "sha256": "42c07a561749363abb815cf1ea7e96de264c4c1c920c96440ff7a49c531c91a3"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 10963,
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.test.ts",
+      "bytes": 3159,
+      "sha256": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.test.ts",
+      "bytes": 4754,
+      "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    }
+  ],
+  "tests": {
+    "distinct": 41,
+    "passed": 41,
+    "perFile": {
+      "event": 18,
+      "history": 6,
+      "store": 11,
+      "routes": 6
+    },
+    "log": "history-local-final.txt",
+    "priorRunsOverlap": true,
+    "pg": 0,
+    "realOwnerAuth": false,
+    "http": "Fastify.inject with fixture auth hook; real route/store read transaction consumer, not global createServer auth"
+  },
+  "strict": {
+    "exitCode": 0,
+    "log": "history-typecheck-final.txt",
+    "rootOptionsInherited": true,
+    "selectedSourceRoots": 8
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/wpf-mature-04/history-local-final.txt",
+      "bytes": 559,
+      "sha256": "413402a1586c187d30dc5ede8f56ab81c4602fc11c7eecaf935770e5bf22aedd"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/history-validation-config.json",
+      "bytes": 10222,
+      "sha256": "394b0969bf9fe9a12fc9d4d317611d34a327ec77bee6039ef1f02f114a1c5131"
+    }
+  ],
+  "limits": [
+    "Store transaction tests use deterministic query responses; no PostgreSQL constraints/rollback/DDL verification yet.",
+    "Unique migration number/owner not assigned; no temporary duplicate schema created.",
+    "Events union, global route/auth/client mount and runner producer not changed.",
+    "Historical current/remaining always unknown; no SDK/provider calls."
+  ],
+  "oldSixSourcesUnchanged": true
+}

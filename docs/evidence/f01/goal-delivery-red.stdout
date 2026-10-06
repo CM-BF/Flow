@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/goal-delivery.test.ts (2 tests | 2 failed) 1200ms
+   × transports all bounded goal views with repeated identities, exact version, errors and cancellation 5ms
+   × reads the actual owner-mounted goal plan and explicit input through FlowClient across restart 1195ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/goal-delivery.test.ts > transports all bounded goal views with repeated identities, exact version, errors and cancellation
+TypeError: client.goalDelivery is not a function
+ ❯ packages/client/src/goal-delivery.test.ts:31:51
+     29|     { view: 'input', nodeId: 'node/A', version: 7 }, { view: 'goal' },…
+     30|   try {
+     31|     for (const view of views) expect(await client.goalDelivery('goal /…
+       |                                                   ^
+     32|     expect(requests.map(r => r.query)).toEqual(views);
+     33|     expect(requests.every(r => r.goal === '/api/goals/goal%20%2F%3F/de…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/client/src/goal-delivery.test.ts > reads the actual owner-mounted goal plan and explicit input through FlowClient across restart
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ packages/client/src/goal-delivery.test.ts:55:78
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  04:46:07
+   Duration  2.23s (transform 441ms, setup 0ms, import 946ms, tests 1.20s, environment 0ms)
+

@@ -71,7 +71,7 @@ async function execute(assignment: ClaimedTask, client: FlowClient, root: string
       const permit = await client.protocolBegin(command, lease.requestSignal());
       state = permit.state;
       if (!permit.maySend) throw new Error('Dispatch permission was already consumed.');
-      const response = await peer.send(SendMessageRequest.fromJSON({ message: { messageId: state.intent.commandId, role: 'ROLE_USER', parts: [{ text: assignment.task.prompt }] }, configuration: { returnImmediately: true } }), { signal: lease.signal });
+      const response = await peer.send(SendMessageRequest.fromJSON({ message: { messageId: state.intent.commandId, role: 'ROLE_USER', parts: [{ text: assignment.task.prompt }] }, configuration: { returnImmediately: true, historyLength: 0 } }), { signal: lease.signal });
       if (!('id' in response) || !response.id) throw new Error('The remote agent did not return a durable Task.');
       state = await client.protocolBind({ ...command, remoteTaskId: response.id }, lease.requestSignal());
     }
@@ -100,7 +100,7 @@ async function observe(peer: A2APeer, state: ProtocolState, command: ProtocolCom
         catch { lease.signal.throwIfAborted(); /* GetTask reconciles cancellation; never retry CancelTask. */ }
       }
     }
-    const snapshot: Task = await peer.snapshot(state.intent.remoteTaskId!, { signal: lease.signal });
+    const snapshot: Task = await peer.snapshot({ id: state.intent.remoteTaskId!, historyLength: 0 }, { signal: lease.signal });
     if (snapshot.id !== state.intent.remoteTaskId) throw new Error('The peer returned a different task.');
     await importArtifacts(snapshot, state, directory, outbox, assignment.task.verification);
     const status = snapshot.status?.state;

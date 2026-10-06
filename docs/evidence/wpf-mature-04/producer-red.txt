@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency
+
+ ❯ apps/runner/src/claude-context-observation.test.ts (1 test | 1 failed) 8ms
+   × publishes one bounded history observation after normal EOF on the same successful Query 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/claude-context-observation.test.ts > publishes one bounded history observation after normal EOF on the same successful Query
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ apps/runner/src/claude-context-observation.test.ts:50:27
+     48|   })(), { close, getContextUsage });
+     49|   await createClaudeAdapter({ materialFiles: [], model: 'requested-ali…
+     50|   expect(getContextUsage).toHaveBeenCalledTimes(1);
+       |                           ^
+     51|   const observations = test.events.filter(event => event.type === 'con…
+     52|   expect(observations).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  05:03:33
+   Duration  420ms (transform 174ms, setup 0ms, import 324ms, tests 8ms, environment 0ms)
+

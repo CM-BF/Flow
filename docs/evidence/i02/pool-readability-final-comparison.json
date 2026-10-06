@@ -1,0 +1,146 @@
+{
+  "observedAt": "2026-10-06T08:43:58.494085+00:00",
+  "sources": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "fixedTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+      "bytes": 13786,
+      "sha256": "cb91b42d9bc672b767f8539c2e5989e558c896a95acf128cca3b7b4519dac740",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "fixedTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+      "bytes": 26547,
+      "sha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "fixedTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "fixedTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+      "bytes": 5733,
+      "sha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559",
+      "fixedMatch": true
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "fixedTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+      "bytes": 3006,
+      "sha256": "28c5038636a5390eb26334e6f09125957e7d7bc78bd6048d0663d71a22c7b1c4",
+      "fixedMatch": true
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "fixedTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+      "bytes": 2752,
+      "sha256": "8db216ac2bf6ec48c3fae74de376f254154b685e59474fb06eb1a89f63428d34",
+      "fixedMatch": true
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "fixedTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+      "bytes": 2352,
+      "sha256": "02fe94c8d2818e9ceebc8d447d23dbc39fcbfd7222da572ea4b38703da3afabf",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "fixedTarget": "527176c2b13880e6009be9605f08ae560315624d",
+      "bytes": 14574,
+      "sha256": "c25c512abc122a6a257262c6bf91ff6506b7c1021e092eefc9dc61388a733da1",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/src/conversations/conversations.css",
+      "fixedTarget": "527176c2b13880e6009be9605f08ae560315624d",
+      "bytes": 3554,
+      "sha256": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "fixedTarget": "527176c2b13880e6009be9605f08ae560315624d",
+      "bytes": 8767,
+      "sha256": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "fixedTarget": "527176c2b13880e6009be9605f08ae560315624d",
+      "bytes": 8619,
+      "sha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "fixedTarget": "527176c2b13880e6009be9605f08ae560315624d",
+      "bytes": 2885,
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/test/conversation-readability.browser.ts",
+      "fixedTarget": "527176c2b13880e6009be9605f08ae560315624d",
+      "bytes": 15642,
+      "sha256": "41fa7656a43cd197ad3affbca0419c21a89d7c702ddf4318617b5adb4f51b52e",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/test/conversation-readability.fixture.ts",
+      "fixedTarget": "527176c2b13880e6009be9605f08ae560315624d",
+      "bytes": 683,
+      "sha256": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333",
+      "fixedMatch": true
+    }
+  ],
+  "rootTypecheckExit": 0,
+  "previousRootTypecheckExit": 2,
+  "initialEvidencePreserved": "attempt-pool-integration.json",
+  "defaultConsumer": "2/2 earlier production checks retained; no repeat after test-only ES2023 change",
+  "limits": "No provider calls, no personal backend restart, no CLI pool opt-in.",
+  "preservedMainRunnerProtection": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "fixedTarget": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+      "sha256": "bc0b368a9089b97396fe1bc8d7b8eef2c5635daed3beea9f4f5c305f2de73b87",
+      "bytes": 3258,
+      "match": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "fixedTarget": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+      "sha256": "e60bec7b8ff4297721edfc0b1052cfee5b58f82bcd0847bc28984431bb943140",
+      "bytes": 4504,
+      "match": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "fixedTarget": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+      "sha256": "d6804fed8f09304e5e9ddd6fc87e335fa080a46994717b0d11af9e5d1e97dc5d",
+      "bytes": 1646,
+      "match": true
+    }
+  ],
+  "webTypecheckExit": 0,
+  "raw": [
+    {
+      "path": "docs/evidence/i02/attempt-pool-typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exitCode": 0
+    },
+    {
+      "path": "docs/evidence/i02/readability-combination-typecheck.txt",
+      "bytes": 138,
+      "sha256": "867109a0443c0f5e4ee097f1840dd96e0fa65e4a5fbf43f5beca8cd9a6fbb74a",
+      "exitCode": 0
+    }
+  ]
+}

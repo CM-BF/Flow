@@ -1,0 +1,29 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering
+
+ ❯ apps/server/src/active-steering/steering.test.ts (1 test | 1 failed) 972ms
+   × persists a bounded command while returning only lightweight metadata 78ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/active-steering/steering.test.ts > persists a bounded command while returning only lightweight metadata
+AssertionError: {"error":{"code":"steering_unimplemented","message":"The durable domain is not implemented yet."}}: expected 501 to be 202 // Object.is equality
+
+- Expected
++ Received
+
+- 202
++ 501
+
+ ❯ request apps/server/src/active-steering/steering.test.ts:22:85
+
+ ❯ apps/server/src/active-steering/steering.test.ts:37:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  00:01:07
+   Duration  1.57s (transform 261ms, setup 0ms, import 509ms, tests 972ms, environment 0ms)
+

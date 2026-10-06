@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations
+
+ ✓ packages/interaction/src/controller.test.ts (7 tests) 8ms
+ ❯ apps/tui/src/terminal.test.ts (3 tests | 1 failed) 1120ms
+   ✓ private intent survives reopen, blocks a second owner and is cleared atomically 29ms
+   ✓ headless commands use the shared handler and quit without executing provider work 2ms
+   × actual Ink and controlled TextInput render without a local assistant runtime 1089ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/terminal.test.ts > actual Ink and controlled TextInput render without a local assistant runtime
+AssertionError: expected '' to be '中文🙂' // Object.is equality
+
+- Expected
++ Received
+
+- 中文🙂
+
+ ❯ apps/tui/src/terminal.test.ts:40:81
+     38|   const terminal = render(React.createElement(TerminalScreen, { contro…
+     39|   await expect.poll(() => terminal.lastFrame()).toContain('Flow');
+     40|   terminal.stdin.write('中文🙂'); await expect.poll(() => value.snapshot…
+       |                                                                                 ^
+     41|   terminal.stdin.write('\u007f'); await expect.poll(() => value.snapsh…
+     42|   terminal.stdin.write('\u0003'); await expect.poll(() => value.snapsh…
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ apps/tui/src/terminal.test.ts:40:33
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 9 passed (10)
+   Start at  02:26:44
+   Duration  2.40s (transform 258ms, setup 0ms, import 1.07s, tests 1.13s, environment 0ms)
+

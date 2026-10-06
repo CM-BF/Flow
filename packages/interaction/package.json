@@ -1,0 +1,17 @@
+{
+  "name": "@flow/interaction",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./stream": "./src/stream/index.ts",
+    "./activity": "./src/activity/index.ts",
+    "./goal": "./src/goal/index.ts"
+  },
+  "dependencies": {
+    "@flow/client": "workspace:*",
+    "@flow/contracts": "workspace:*",
+    "zod": "4.6.5"
+  }
+}

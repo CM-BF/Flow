@@ -1,0 +1,212 @@
+{
+  "source": "Manager single deployed77 snapshot; owner did not fetch API",
+  "sourceRawPath": "/tmp/flow-wpf-deployed77-snapshot.json",
+  "sourceSha256": "68b34bf76dcd26c729fcd939fd8f22ecfd74627df58d5f00eda5988e2f93f033",
+  "generatedAt": "2026-10-06T06:36:34.965Z",
+  "task": {
+    "id": "WPF-RENDERERI01",
+    "title": "聊天可插拔详情接入",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+    "branch": "codex/web-data-renderer-integration",
+    "planDir": "plans/wpf-renderer-i01-integration",
+    "evidenceDir": "docs/evidence/wpf-renderer-i01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T06:33:05.657Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/plans/wpf-renderer-i01-integration/status.md",
+      "syncedAt": "2026-10-06T06:36:34.965Z",
+      "stale": false,
+      "ageHours": 0.0597125
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/web-data-renderer-integration",
+      "head": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+      "dirty": true,
+      "changedFiles": 21,
+      "observedAt": "2026-10-06T06:36:35.856Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "聊天中已可按需展开完整回复，正在核验切换与发送边界",
+        "next": "完成隐藏恢复、连接切换与排队发送的检查",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": null,
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/data-renderers.ts",
+          "apps/web/test/data-renderer-integration.test.ts",
+          "apps/web/test/data-renderer-integration.browser.ts"
+        ],
+        "errors": [
+          "实现目标需完整 SHA"
+        ]
+      },
+      "taskId": "WPF-RENDERERI01",
+      "owner": "w01_owner；派发 gpt-6-astra / ultra，运行时无额外独立型号证明",
+      "branch": "codex/web-data-renderer-integration",
+      "branchState": "in-progress",
+      "updatedAt": "2026-10-06T06:33:00.000Z",
+      "updatedRecord": "2026-10-06 06:33 UTC",
+      "todos": [
+        {
+          "id": "RENDERERI01-01",
+          "state": "in-progress",
+          "owner": "w01_owner",
+          "evidence": "显式可见性与窄身份绑定实施"
+        },
+        {
+          "id": "RENDERERI01-02",
+          "state": "pending",
+          "owner": "w01_owner",
+          "evidence": "实际App HTTPfixture与直接消费者验证"
+        },
+        {
+          "id": "RENDERERI01-03",
+          "state": "pending",
+          "owner": "w01_owner",
+          "evidence": "固定目标后独立审查，Lead集成"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "115b0dbdfa02db5483f9e9699852682ce699633c；当前HEAD ad6c32049241e779b897ea78afd87355967323fe，未提交接线候选",
+      "declaredDirty": "当前七实现/测试与自有证据有未提交修改；共享及根lock无改动",
+      "checks": {
+        "state": "not_run",
+        "target": null,
+        "record": "NOT_RUN；未固定实现：首次typecheck和31模块/直接依赖tests通过，browser进行中，不能把未提交结果当固定交付"
+      },
+      "reviewRecord": "NOT_STARTED",
+      "mainRecord": "本接线未集成；115b仅包含已审独立模块",
+      "next": "实际App预览 http://127.0.0.1:57108 （HTTPfixture/0模型），31局部检查与首批六浏览器场景通过。root预审的same-visible换binding问题已独立consumer红测确认，正在修复与复跑。固定测试后提交review目标。唯一来源为本树，交管理登记；尚未声称dashboard已上线。\n架构影响：既有受信data模块进入App provider，每连接一个registry/P01 host；每pane独立display lease。后继架构图更新由Lead协调固定目标，活动footer不属本片。\n[计划](plan.md) · [review](review.md) · [质量](../../docs/evidence/wpf-renderer-i01/quality.md)",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "not_started",
+      "record": "NOT_STARTED**",
+      "target": null
+    },
+    "implementationProof": {
+      "target": null,
+      "head": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/test/data-renderer-integration.test.ts",
+        "apps/web/test/data-renderer-integration.browser.ts"
+      ],
+      "observedAt": "2026-10-06T06:36:35.893Z",
+      "state": "unknown",
+      "reason": "实现目标需完整 SHA"
+    },
+    "documents": [
+      {
+        "path": "plans/wpf-renderer-i01-integration/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-renderer-i01-integration/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-renderer-i01-integration/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/wpf-renderer-i01/take-receipt.json",
+        "title": "原领取",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-renderer-i01/quality.md",
+        "title": "质量",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 0,
+      "total": 3
+    },
+    "main": {
+      "record": "本接线未集成；115b仅包含已审独立模块",
+      "recordedHead": null,
+      "target": null,
+      "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/test/data-renderer-integration.test.ts",
+        "apps/web/test/data-renderer-integration.browser.ts"
+      ],
+      "observedAt": "2026-10-06T06:36:35.856Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "unknown",
+      "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+    },
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/plugin-integration/data-renderers.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/data-renderer-integration.browser.ts",
+          "apps/web/test/data-renderer-integration.test.ts",
+          "docs/evidence/wpf-renderer-i01",
+          "plans/wpf-renderer-i01-integration"
+        ],
+        "state": "active",
+        "branch": "codex/web-data-renderer-integration",
+        "origin": "new",
+        "taskId": "WPF-RENDERERI01",
+        "worker": "w01_owner",
+        "claimId": "ff62150f-30ec-4ee5-9ea5-19e589125cfc",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+        "createdAt": "2026-10-06T06:25:30.088Z",
+        "updatedAt": "2026-10-06T06:25:30.088Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

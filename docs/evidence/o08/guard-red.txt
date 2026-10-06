@@ -1,0 +1,28 @@
+✔ missing, expired, changed-source and expanded-budget permission records fail closed (1.359666ms)
+✖ one approval cannot be reused by moving the permit to another directory (19.422375ms)
+✔ query call count and capability scope reject a second call or foreign tools (0.481875ms)
+✔ effective extensions, unknown native cost and over-budget/turn results cannot pass (0.158875ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 716.780333
+
+✖ failing tests:
+
+test at experiments/native-graph-acceptance/guard.test.mjs:16:1
+✖ one approval cannot be reused by moving the permit to another directory (19.422375ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance/experiments/native-graph-acceptance/guard.test.mjs:22:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { code: 'EEXIST' },
+    operator: 'rejects',
+    diff: 'simple'
+  }

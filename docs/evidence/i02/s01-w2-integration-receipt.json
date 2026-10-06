@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-06T07:46:48.354158+00:00",
+  "target": "5504b16cd46c7e77cc86eefea04e0348e01eb69c",
+  "implementation": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+  "independentResult": "0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf",
+  "checkedOwnSourcesAndEvidence": [
+    "docs/evidence/s01/w2-declared-four/result.json",
+    "docs/evidence/s01/w2-window-authorization.json",
+    "docs/evidence/s01/w2-execution-receipt.json",
+    "docs/evidence/s01/w2-execution.log",
+    "docs/evidence/s01/w2-window-coordination.json",
+    "experiments/runner-capacity/child.ts",
+    "experiments/runner-capacity/processes.ts",
+    "experiments/runner-capacity/smoke.ts",
+    "experiments/runner-capacity/scenario.ts",
+    "experiments/runner-capacity/formal.ts",
+    "experiments/runner-capacity/declared-four.ts",
+    "experiments/runner-capacity/scenarios.ts",
+    "experiments/runner-capacity/statistics.ts",
+    "experiments/runner-capacity/evidence.ts",
+    "experiments/runner-capacity/http.ts",
+    "experiments/runner-capacity/contract.json",
+    "experiments/runner-capacity/tsconfig.json"
+  ],
+  "newLoadRuns": 0,
+  "limits": [
+    "12 fixture tasks/attempts; one process advertised capacity4 but observed attempt/adapter/tool peak1.",
+    "Cumulative actual44tasks/38attempts; no provider/100-agent capacity/SLO inference.",
+    "Production unchanged; historical benchmark product base115b stays recorded."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "recorded-response replay",
+  "sourceMain": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
+  "modelCalls": 0,
+  "liveRunRepeated": false,
+  "inputFiles": [
+    {
+      "name": "turn-1.json",
+      "sha256": "5e11b4e790bc39d809136a2cbebdd112e0776acfc07b010aca98630cd2031a52"
+    },
+    {
+      "name": "turn-2.json",
+      "sha256": "b132fc04c697c3b04cb16daf88c1872b09d65d60b153c33eb57ca155a8c61ada"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Saved first final plus second pending rendered before transition",
+      "passed": true,
+      "at": "2026-10-06T04:23:37.250Z"
+    },
+    {
+      "name": "Focused visible second assistant content equals saved exact nonce after poll",
+      "passed": true,
+      "at": "2026-10-06T04:23:39.607Z"
+    },
+    {
+      "name": "Narrow dark visible nonce; zero POST or model query; no page errors",
+      "passed": true,
+      "at": "2026-10-06T04:23:39.838Z"
+    }
+  ],
+  "finalPublishedAt": "2026-10-06T04:23:37.250Z",
+  "visibleAssistantTexts": [
+    "已记住",
+    "19529bbbb212c4a218e75902ededb3cc"
+  ],
+  "status": "PASSED_REPLAY_ONLY",
+  "closedAt": "2026-10-06T04:23:39.967Z",
+  "pageErrors": []
+}

@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/goal-native-production.test.ts
+NATIVE_GOAL_PRODUCTION_DATABASE_FACTS {"database":"flow_native_mount_4132e46f40454054b7e30869eeff490c","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ❯ apps/server/src/goal-native-production.test.ts (2 tests | 1 failed) 1167ms
+   ✓ mounts owner native admission behind existing authentication without enabling active steering 45ms
+   × connects the public client to the real factory and runs one pinned text child with the existing verifier 60ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-native-production.test.ts > connects the public client to the real factory and runs one pinned text child with the existing verifier
+AssertionError: expected undefined to deeply equal { …(3) }
+
+- Expected: 
+{
+  "configDigest": "e26517579ad0304b49281c3c1a1de7f0b055e129c15c6636a18a52268dafda81",
+  "id": "63c35c06-4490-4a99-8607-0dd2e0e5b03a",
+  "runnerId": "dd6872b8-a5da-4f2e-aa83-294af7cbeb8d",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/server/src/goal-native-production.test.ts:84:80
+     82|     const key = randomUUID(); const receipt = await client.executeGoal…
+     83|     expect(receipt.task).toMatchObject({ harness: 'claude' }); expect(…
+     84|     expect((await request(`/api/tasks/${receipt.task!.id}`)).execution…
+       |                                                                                ^
+     85|     expect((await client.executeGoalNative(goal.id, input, key)).repla…
+     86|     running = runRunner({ baseUrl, token: runner.token, workingDirecto…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  01:06:03
+   Duration  1.95s (transform 389ms, setup 0ms, import 706ms, tests 1.17s, environment 0ms)
+

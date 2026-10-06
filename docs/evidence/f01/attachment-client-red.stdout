@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/attachments.test.ts (1 test | 1 failed) 6ms
+   × transports bounded attachment identities and recovery queries without mutation retries 5ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  04:12:50
+   Duration  312ms (transform 116ms, setup 0ms, import 223ms, tests 6ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/attachments.test.ts > transports bounded attachment identities and recovery queries without mutation retries
+TypeError: client.attachmentCapabilities is not a function
+ ❯ packages/client/src/attachments.test.ts:26:25
+     24|     const input = { recoveryScopeId: randomUUID(), name: '原文.txt', med…
+     25|       byteLength: Buffer.byteLength(text), contentDigest: createHash('…
+     26|     expect(await client.attachmentCapabilities('project/1')).toEqual(r…
+       |                         ^
+     27|     expect(await client.uploadAttachment('project/1', input, 'stable-k…
+     28|     await client.attachments('project/1', { after: 'resource/2', limit…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

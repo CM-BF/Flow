@@ -1,0 +1,60 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web
+
+ ✓ test/attachment-recovery.test.ts (4 tests) 11ms
+ ❯ test/attachment-controller.test.ts (10 tests | 3 failed) 81ms
+     ✓ has stable immutable snapshots, no mount reads, no-op readiness, and unsubscribe/dispose cleanup 3ms
+     × preserves BOM/CRLF/Unicode bytes and immutable submission intent before asynchronous preparation 9ms
+     ✓ rejects unsupported bytes and storage failure before any upload side effect 1ms
+     × restores unknown original key after reconstruction and never auto-selects lookup receipts 2ms
+     ✓ refuses cross-namespace recovery before lookup and unsupported capability before POST 2ms
+     ✓ validates complete attachments again, combined budgets, expiry and explicit conversation capability 3ms
+     ✓ loads only explicit previews, verifies full digest/identity and caches within four bodies 4ms
+     ✓ settles two ignored-abort preview timeouts, releases slots and ignores late results on retry 2ms
+     ✓ offline aborts outstanding upload locally, keeps original recovery and requires explicit retry 52ms
+     × official adapter has no content injection and complete removal reconciles through public composer state 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/attachment-controller.test.ts > bound attachment input > preserves BOM/CRLF/Unicode bytes and immutable submission intent before asynchronous preparation
+AssertionError: expected 'unknown' to be 'ready' // Object.is equality
+
+Expected: "ready"
+Received: "unknown"
+
+ ❯ test/attachment-controller.test.ts:38:63
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  test/attachment-controller.test.ts > bound attachment input > restores unknown original key after reconstruction and never auto-selects lookup receipts
+AssertionError: expected 'unknown' to be 'ready' // Object.is equality
+
+Expected: "ready"
+Received: "unknown"
+
+ ❯ test/attachment-controller.test.ts:57:113
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  test/attachment-controller.test.ts > bound attachment input > official adapter has no content injection and complete removal reconciles through public composer state
+AssertionError: expected 'incomplete' to be 'requires-action' // Object.is equality
+
+Expected: "requires-action"
+Received: "incomplete"
+
+ ❯ test/attachment-controller.test.ts:100:225
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  3 failed | 11 passed (14)
+   Start at  04:10:43
+   Duration  783ms (transform 569ms, setup 0ms, import 1.07s, tests 93ms, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/attachment-controller.test.ts test/attachment-recovery.test.ts

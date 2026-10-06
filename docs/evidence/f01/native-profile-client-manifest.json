@@ -1,0 +1,52 @@
+{
+  "target": "095bdb849a4ba688be7c2b55d90021b9d15e4b53",
+  "observedAt": "2026-10-06T09:33:39.180288+00:00",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b",
+      "bytes": 38126
+    },
+    {
+      "path": "packages/client/src/native-profile-publication.test.ts",
+      "sha256": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a",
+      "bytes": 3443
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/native-profile-client-red.txt",
+      "sha256": "699a4f3fcac58b26f6c8f886f27c3fab2baab2f4073c11a4ea9cbbaeba00eebc",
+      "bytes": 1246
+    },
+    {
+      "path": "docs/evidence/f01/native-profile-client-green.txt",
+      "sha256": "31f0f2ac89b29f8cb37315baaced7440acbc9bc0b69157564a349ed2e8c5d599",
+      "bytes": 397
+    },
+    {
+      "path": "docs/evidence/f01/native-profile-client-typecheck.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "input": {
+    "nativeContractTarget": "4944d1e795326ad9d437c8d6a4ea88f52db619d9",
+    "file": "packages/contracts/src/execution-profiles.ts",
+    "sha256": "6587cee21f105353943da96d57982768984bfbd54ad83ca94dd4a6ad9843ab19"
+  },
+  "checks": {
+    "redExit": 1,
+    "greenExit": 0,
+    "selected": 3,
+    "files": 2,
+    "newTests": 1,
+    "legacyConsumerTests": 2,
+    "typecheckExit": 0
+  },
+  "limits": [
+    "thin publication transport only",
+    "No catalog expansion, execution authorization or provider claims",
+    "No new direct dependency; legacy Claude method/type remains"
+  ]
+}

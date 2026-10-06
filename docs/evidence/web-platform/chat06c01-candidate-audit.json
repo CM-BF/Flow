@@ -1,0 +1,187 @@
+{
+  "observedAt": "2026-10-06T06:53:35.091Z",
+  "head": "ce0b85b3df6a15037fc00be31932bf2d905f1079",
+  "dirty": "",
+  "claimObservedAt": "2026-10-06T06:53:34.759Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/test/conversation-projection.test.ts",
+      "docs/evidence/wpf-chat06-compatibility",
+      "plans/wpf-chat06-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-stream-compatibility",
+    "origin": "new",
+    "taskId": "WPF-CHAT06C01",
+    "worker": "workspace_panels_owner",
+    "claimId": "ca26e49b-b750-43a7-8bf7-ce1b987f50c9",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility",
+    "createdAt": "2026-10-06T06:45:09.159Z",
+    "updatedAt": "2026-10-06T06:45:09.159Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "declaredInputException": "Only contracts/conversations.ts exact86fc applied3363",
+  "changedCount": 17,
+  "outside": [],
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "聊天已能读取中心新增的流式能力标记，原有回执和排队保持",
+    "next": "交付兼容读取更新，保留原有回复与排队行为",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "WPF-CHAT06C01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[输入](../../docs/evidence/wpf-chat06-compatibility/input-provenance.json)、[技能](../../docs/evidence/wpf-chat06-compatibility/quality.md)"
+    },
+    {
+      "id": "WPF-CHAT06C01-02",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "已兼容missing/false/true并拒畸形，不启用stream"
+    },
+    {
+      "id": "WPF-CHAT06C01-03",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "104局部检查/Webtypecheck通过，原red14fail记录保留"
+    },
+    {
+      "id": "WPF-CHAT06C01-04",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "固定8c56211739ae0c20816c67caad13cee510130514交root只读独审；唯一source登记待部署事实"
+    }
+  ],
+  "checks": {
+    "state": "passed",
+    "target": "8c56211739ae0c20816c67caad13cee510130514",
+    "record": "PASSED 8c56211739ae0c20816c67caad13cee510130514；104局部checks+Webtypecheck，wire模拟；[验证](../../docs/evidence/wpf-chat06-compatibility/validation.md)"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "8c56211739ae0c20816c67caad13cee510130514"
+  },
+  "proof": {
+    "target": "8c56211739ae0c20816c67caad13cee510130514",
+    "head": "ce0b85b3df6a15037fc00be31932bf2d905f1079",
+    "scopes": [
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/test/conversation-projection.test.ts"
+    ],
+    "observedAt": "2026-10-06T06:53:34.857Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-chat06-compatibility/README.md",
+      "docs/evidence/wpf-chat06-compatibility/checks.json",
+      "docs/evidence/wpf-chat06-compatibility/green-direct.log",
+      "docs/evidence/wpf-chat06-compatibility/install.log",
+      "docs/evidence/wpf-chat06-compatibility/quality.md",
+      "docs/evidence/wpf-chat06-compatibility/red-direct.log",
+      "docs/evidence/wpf-chat06-compatibility/source-binding.json",
+      "docs/evidence/wpf-chat06-compatibility/typecheck.log",
+      "docs/evidence/wpf-chat06-compatibility/validation.md",
+      "plans/wpf-chat06-compatibility/plan.md",
+      "plans/wpf-chat06-compatibility/review.md",
+      "plans/wpf-chat06-compatibility/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "hashes": [
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "reportedAfterChecks": "2de9e456aea4b37d253a08a383f76c8a0df12bf2247d49c9cc492587ab8ecd62",
+      "actualTarget": "2de9e456aea4b37d253a08a383f76c8a0df12bf2247d49c9cc492587ab8ecd62",
+      "actualCurrent": "2de9e456aea4b37d253a08a383f76c8a0df12bf2247d49c9cc492587ab8ecd62"
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "reportedAfterChecks": "c8f3d3c39f5c6515b5f86075b60d09a6e813834a7443eb0e7710f126d5d3748f",
+      "actualTarget": "c8f3d3c39f5c6515b5f86075b60d09a6e813834a7443eb0e7710f126d5d3748f",
+      "actualCurrent": "c8f3d3c39f5c6515b5f86075b60d09a6e813834a7443eb0e7710f126d5d3748f"
+    }
+  ],
+  "authorChecksRaw": {
+    "recordedAt": "2026-10-06T06:50:26Z",
+    "sourceHeadObservedAfterChecks": "b76d52967d1ff730fab851a7cb87e39ade3f7c29",
+    "sourceDirtyObservedAfterChecks": [
+      " M apps/web/src/conversations/projection.ts",
+      " M apps/web/test/conversation-projection.test.ts",
+      "?? docs/evidence/wpf-chat06-compatibility/green-direct.log",
+      "?? docs/evidence/wpf-chat06-compatibility/install.log",
+      "?? docs/evidence/wpf-chat06-compatibility/red-direct.log",
+      "?? docs/evidence/wpf-chat06-compatibility/typecheck.log"
+    ],
+    "sourceHashes": {
+      "apps/web/src/conversations/projection.ts": "2de9e456aea4b37d253a08a383f76c8a0df12bf2247d49c9cc492587ab8ecd62",
+      "apps/web/test/conversation-projection.test.ts": "c8f3d3c39f5c6515b5f86075b60d09a6e813834a7443eb0e7710f126d5d3748f"
+    },
+    "red": {
+      "file": "red-direct.log",
+      "total": 77,
+      "passed": 63,
+      "failed": 14,
+      "durationMs": 315
+    },
+    "green": {
+      "file": "green-direct.log",
+      "startLocal": "2026-10-05T23:48:47-07:00",
+      "selected": [
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-queue.test.ts"
+      ],
+      "counts": {
+        "projection": 77,
+        "outbox": 11,
+        "queue": 16
+      },
+      "total": 104,
+      "passed": 104,
+      "durationMs": 931
+    },
+    "typecheck": {
+      "file": "typecheck.log",
+      "passed": true,
+      "command": "pnpm --filter @flow/web typecheck"
+    },
+    "runtime": {
+      "node": "24.20.0",
+      "pnpm": "9.15.4",
+      "vitest": "4.0.18"
+    },
+    "limitations": "Wire inputs use mocked fetch Response with real FlowClient; no actual HTTP server, browser, DB, model, opt-in or streaming-consumer verification. Hashes captured after checks before implementation commit; source unchanged since green run."
+  },
+  "reportedSourceHead": "b76d52967d1ff730fab851a7cb87e39ade3f7c29",
+  "sourceWasDirty": true,
+  "markdownFiles": 6,
+  "localLinks": 28,
+  "broken": [],
+  "notIndependentProductApproval": true
+}

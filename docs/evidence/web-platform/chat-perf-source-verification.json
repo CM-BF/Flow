@@ -1,0 +1,503 @@
+{
+  "generatedAt": "2026-10-06T03:46:41.801Z",
+  "sourceCount": 39,
+  "endpoint": "http://127.0.0.1:4320/api/snapshot",
+  "assignmentsState": "available",
+  "unregisteredAssignments": [],
+  "sourceChecks": [
+    {
+      "task": "WPF-PERF02",
+      "uniqueSource": true,
+      "sourceLive": true,
+      "worktreeMatches": true,
+      "branchMatches": true,
+      "planDirMatches": true,
+      "singleMatchingClaim": true
+    },
+    {
+      "task": "WPF-CHAT01",
+      "uniqueSource": true,
+      "sourceLive": true,
+      "worktreeMatches": true,
+      "branchMatches": true,
+      "planDirMatches": true,
+      "singleMatchingClaim": true
+    }
+  ],
+  "tasks": [
+    {
+      "id": "WPF-PERF02",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window",
+      "branch": "codex/web-activity-window",
+      "planDir": "plans/wpf-perf02-activity-window",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T03:42:05.034Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/status.md",
+        "syncedAt": "2026-10-06T03:46:41.801Z",
+        "stale": false,
+        "ageHours": 0.07827805555555556
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-activity-window",
+        "head": "e07c34c5f98657b390e8fdc44bb2d85f9360a56d",
+        "dirty": true,
+        "changedFiles": 21,
+        "observedAt": "2026-10-06T03:46:42.083Z"
+      },
+      "human": {
+        "phase": "M2",
+        "priority": 3,
+        "output": "有界窗口与8组功能通过；03:40:14协调测量窗口启动，smoke通过，完整矩阵进行中（代码冻结）",
+        "next": "完成正在运行的1/16/128生产矩阵、原始一致性分析与独立review",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "statusErrors": [
+        "缺少工作分支状态"
+      ],
+      "implementation": {
+        "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+        "scopes": [
+          "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+          "apps/web/src/workspace-feed/ActivityWindow.tsx",
+          "apps/web/src/workspace-feed/workspace-feed.css",
+          "apps/web/test/workspace-window.test.ts",
+          "apps/web/test/workspace-window.browser.ts",
+          "apps/web/test/performance-probe.ts"
+        ],
+        "errors": []
+      },
+      "checks": {
+        "state": "passed",
+        "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+        "record": "PASSED：13局部/直接projection tests、Web typecheck、8生产浏览器行为组；target a87f64f48a3b7e8d03429ab0673c210076a2df0d。正式smoke已通过；1/16/128矩阵运行中"
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED",
+        "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d"
+      },
+      "issues": [
+        "缺少工作分支状态"
+      ],
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/workspace-feed/ActivityWindow.tsx",
+            "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+            "apps/web/src/workspace-feed/workspace-feed.css",
+            "apps/web/test/performance-probe.ts",
+            "apps/web/test/workspace-window.browser.ts",
+            "apps/web/test/workspace-window.test.ts",
+            "docs/evidence/wpf-perf02",
+            "plans/wpf-perf02-activity-window"
+          ],
+          "state": "active",
+          "branch": "codex/web-activity-window",
+          "origin": "new",
+          "taskId": "WPF-PERF02",
+          "worker": "w01_owner",
+          "claimId": "d36cd583-7c96-44c3-b92c-1cd0f208cc4e",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window",
+          "createdAt": "2026-10-06T03:30:35.629Z",
+          "updatedAt": "2026-10-06T03:30:35.629Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "WPF-CHAT01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+      "branch": "codex/web-conversations",
+      "planDir": "plans/wpf-chat01-conversations",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T03:42:48.080Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md",
+        "syncedAt": "2026-10-06T03:46:41.801Z",
+        "stale": false,
+        "ageHours": 0.07827805555555556
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-conversations",
+        "head": "0d4e050057b9204ea761541d7847b9932331a519",
+        "dirty": true,
+        "changedFiles": 4,
+        "observedAt": "2026-10-06T03:46:42.083Z"
+      },
+      "human": {
+        "phase": "M2",
+        "priority": 1,
+        "output": "唯一source与正式claim建立；冻结contract/public client已受控消费；outbox冻结payload/key与独立新draft模块已过8项行为检查，正在接会话projection",
+        "next": "最小持续对话独立HTTP fixture预览；后续真实中心/模型按主线安排验收",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "statusErrors": [],
+      "implementation": {
+        "target": null,
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationList.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/conversations.css",
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation.browser.ts",
+          "apps/web/test/conversation.fixture.ts"
+        ],
+        "errors": [
+          "实现目标需完整 SHA"
+        ]
+      },
+      "checks": {
+        "state": "unknown",
+        "target": null,
+        "record": "PARTIAL；outbox8/8与直接公共client1/1 PASS，app typecheck PASS；产品browser/真实中心/模型尚未执行"
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": null
+      },
+      "issues": [],
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+            "apps/web/src/conversations/ConversationList.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/conversations.css",
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation.browser.ts",
+            "apps/web/test/conversation.fixture.ts",
+            "docs/evidence/wpf-chat01",
+            "plans/wpf-chat01-conversations"
+          ],
+          "state": "active",
+          "branch": "codex/web-conversations",
+          "origin": "new",
+          "taskId": "WPF-CHAT01",
+          "worker": "workspace_panels_owner",
+          "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+          "createdAt": "2026-10-06T03:35:00.744Z",
+          "updatedAt": "2026-10-06T03:35:00.744Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    }
+  ],
+  "literalOverlapAudit": {
+    "method": "Compare every pair of active writer claims for equal repo-relative literal paths or slash-delimited parent/child prefix. Claim count is not agent count; zero literal overlaps does not prove no duplicated logical feature.",
+    "claimCount": 19,
+    "conflicts": [],
+    "claims": [
+      {
+        "taskId": "B01",
+        "claimId": "827ff1f2-bb11-45c3-824c-4ce63ab39a55",
+        "version": 2,
+        "scope": [
+          "apps/server/src/m2-workspace.test.ts",
+          "apps/server/src/m2-workspace.ts",
+          "docs/evidence/b01",
+          "experiments/bounded-reads",
+          "plans/b01-bounded-reads"
+        ]
+      },
+      {
+        "taskId": "CHAT01",
+        "claimId": "1359dfbb-d48a-4d16-b215-2cd192a0bee0",
+        "version": 1,
+        "scope": [
+          "apps/server/src/conversations",
+          "docs/architecture/chat01-conversations.md",
+          "docs/evidence/chat01",
+          "packages/contracts/src/conversations.ts",
+          "packages/storage/migrations/007-conversations.sql",
+          "plans/chat01-conversations"
+        ]
+      },
+      {
+        "taskId": "CHAT02",
+        "claimId": "46de5718-3c7f-4d33-aeb1-e258b7f0b1a9",
+        "version": 1,
+        "scope": [
+          "apps/runner/src/claude.test.ts",
+          "apps/runner/src/claude.ts",
+          "apps/server/src/assistant",
+          "apps/server/src/events.ts",
+          "docs/architecture/chat02-assistant.md",
+          "docs/evidence/chat02",
+          "packages/contracts/src/assistant.ts",
+          "packages/contracts/src/runner.ts",
+          "packages/storage/migrations/009-assistant-messages.sql",
+          "plans/chat02-native-messages"
+        ]
+      },
+      {
+        "taskId": "D05",
+        "claimId": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+        "version": 1,
+        "scope": [
+          "AGENTS.md",
+          "apps/execution-dashboard",
+          "docs/evidence/d05",
+          "plans/AGENTS.md",
+          "plans/README.md",
+          "plans/d05-architecture-view"
+        ]
+      },
+      {
+        "taskId": "E01",
+        "claimId": "4c525d50-50a4-4bf4-83be-4f978b601b1d",
+        "version": 1,
+        "scope": [
+          "docs/evidence/e01",
+          "experiments/harness-probes",
+          "plans/e01-harness-probes"
+        ]
+      },
+      {
+        "taskId": "F01",
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 4,
+        "scope": [
+          "apps/cli",
+          "apps/runner/package.json",
+          "apps/runner/src/main.ts",
+          "apps/runner/src/outbox.test.ts",
+          "apps/runner/src/outbox.ts",
+          "apps/server/src/index.ts",
+          "apps/server/src/usage.ts",
+          "docs/evidence/f01",
+          "packages/client",
+          "packages/contracts/src/harnesses.test.ts",
+          "packages/contracts/src/harnesses.ts",
+          "packages/contracts/src/index.ts",
+          "packages/contracts/src/tasks.ts",
+          "plans/f01-shared-domains",
+          "pnpm-lock.yaml"
+        ]
+      },
+      {
+        "taskId": "FLOW-001",
+        "claimId": "3cb8bc46-0bfb-4635-aaf3-069d822e1e58",
+        "version": 2,
+        "scope": [
+          "docs/quality",
+          "plans/flow-001-architecture",
+          "plans/flow-002-provider-harness",
+          "plans/flow-003-m1-execution",
+          "plans/ops-001-status-review"
+        ]
+      },
+      {
+        "taskId": "I02",
+        "claimId": "7e9fb042-eefa-4e40-ba26-2b65dc893681",
+        "version": 1,
+        "scope": [
+          "docs/evidence/i02",
+          "plans/i02-integration"
+        ]
+      },
+      {
+        "taskId": "R03",
+        "claimId": "6b6b025f-0338-42a6-9ff5-1122ccb83986",
+        "version": 2,
+        "scope": [
+          "apps/runner/src/attempt-control.ts",
+          "apps/runner/src/lease.test.ts",
+          "apps/runner/src/runner.test.ts",
+          "apps/runner/src/runtime.ts",
+          "apps/server/src/runners.ts",
+          "docs/architecture/r03-runtime.md",
+          "docs/evidence/r03",
+          "plans/r03-runner-reliability"
+        ]
+      },
+      {
+        "taskId": "W01",
+        "claimId": "3a3b963b-aa40-4c50-8324-4445ed8889df",
+        "version": 2,
+        "scope": [
+          "plans/w01-web"
+        ]
+      },
+      {
+        "taskId": "WPF-001",
+        "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+        "version": 2,
+        "scope": [
+          "docs/evidence/web-platform",
+          "plans/web-platform"
+        ]
+      },
+      {
+        "taskId": "WPF-CHAT01",
+        "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+        "version": 1,
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationList.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/conversations.css",
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation.browser.ts",
+          "apps/web/test/conversation.fixture.ts",
+          "docs/evidence/wpf-chat01",
+          "plans/wpf-chat01-conversations"
+        ]
+      },
+      {
+        "taskId": "WPF-I01",
+        "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+        "version": 2,
+        "scope": [
+          "apps/web/src/TaskThread.tsx",
+          "apps/web/src/components/workspace/WorkspacePanels.tsx",
+          "apps/web/src/plugin-integration/integration.css",
+          "apps/web/src/plugin-integration/slot-fixture.tsx",
+          "apps/web/src/plugin-integration/task-actions.ts",
+          "apps/web/src/themes.ts",
+          "apps/web/test/plugin-integration.browser.ts",
+          "apps/web/test/plugin-integration.config.ts",
+          "apps/web/test/plugin-integration.test.ts",
+          "docs/evidence/wpf-i01",
+          "plans/wpf-i01-plugin-integration"
+        ]
+      },
+      {
+        "taskId": "WPF-M02",
+        "claimId": "dea92c6b-3450-404c-a32c-3fd007485ac6",
+        "version": 3,
+        "scope": [
+          "apps/web/src/projection.ts",
+          "apps/web/src/workspace-feed/Attention.tsx",
+          "apps/web/src/workspace-feed/TaskIndex.tsx",
+          "apps/web/src/workspace-feed/projection.ts",
+          "apps/web/src/workspace-feed/task-index.ts",
+          "apps/web/test/fixture-server.ts",
+          "apps/web/test/workspace-browser.ts",
+          "apps/web/test/workspace-fixture.ts",
+          "apps/web/test/workspace-observers-browser.ts",
+          "apps/web/test/workspace-preview.ts",
+          "apps/web/test/workspace-projection.test.ts",
+          "apps/web/test/workspace-real-center.ts",
+          "docs/evidence/wpf-m02",
+          "plans/wpf-m02-web-workspace"
+        ]
+      },
+      {
+        "taskId": "WPF-P01",
+        "claimId": "0686525b-d323-49b5-affa-cefc66cb13be",
+        "version": 1,
+        "scope": [
+          "apps/web/src/plugins",
+          "apps/web/test/plugin-host.browser.ts",
+          "apps/web/test/plugin-host.config.ts",
+          "apps/web/test/plugin-host.test.ts",
+          "docs/evidence/wpf-p01",
+          "plans/wpf-p01-plugin-host"
+        ]
+      },
+      {
+        "taskId": "WPF-PERF01",
+        "claimId": "4553f315-7fb4-4fe6-babb-0f4a8e5057c6",
+        "version": 2,
+        "scope": [
+          "apps/web/test/performance-fixture.ts",
+          "docs/evidence/wpf-perf01",
+          "plans/wpf-perf01-web-performance"
+        ]
+      },
+      {
+        "taskId": "WPF-PERF02",
+        "claimId": "d36cd583-7c96-44c3-b92c-1cd0f208cc4e",
+        "version": 1,
+        "scope": [
+          "apps/web/src/workspace-feed/ActivityWindow.tsx",
+          "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+          "apps/web/src/workspace-feed/workspace-feed.css",
+          "apps/web/test/performance-probe.ts",
+          "apps/web/test/workspace-window.browser.ts",
+          "apps/web/test/workspace-window.test.ts",
+          "docs/evidence/wpf-perf02",
+          "plans/wpf-perf02-activity-window"
+        ]
+      },
+      {
+        "taskId": "X01",
+        "claimId": "04c5de3f-2e76-49d1-9a92-6f0069d69a88",
+        "version": 1,
+        "scope": [
+          "docs/evidence/x01",
+          "plans/x01-plugin-management"
+        ]
+      },
+      {
+        "taskId": "X02",
+        "claimId": "5998ddaf-a4c4-4bce-88a4-d90faedb9351",
+        "version": 1,
+        "scope": [
+          "apps/server/src/plugins",
+          "docs/evidence/x02",
+          "packages/contracts/src/plugins.ts",
+          "packages/storage/migrations/008-plugins.sql",
+          "plans/x02-plugin-registry"
+        ]
+      }
+    ]
+  }
+}

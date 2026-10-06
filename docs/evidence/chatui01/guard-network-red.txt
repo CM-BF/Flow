@@ -1,0 +1,110 @@
+✖ actual POST lost-response cannot unlock a turn or a second create (5413.695958ms)
+✖ actual POST http-503 cannot unlock a turn or a second create (194.884333ms)
+✖ actual POST bad-json cannot unlock a turn or a second create (266.674ms)
+✖ actual POST wrong-profile cannot unlock a turn or a second create (278.51025ms)
+✖ actual successful create binds turn identity and persists receipt before the page receives it (265.034125ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 0
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6763.788458
+
+✖ failing tests:
+
+test at experiments/stream-ui-acceptance/guard-network.test.mjs:43:3
+✖ actual POST lost-response cannot unlock a turn or a second create (5413.695958ms)
+  AssertionError [ERR_ASSERTION]: Only the original create may reach the server.
+  
+  3 !== 1
+  
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:48:14
+      at async withServer (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:39:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:44:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at experiments/stream-ui-acceptance/guard-network.test.mjs:43:3
+✖ actual POST http-503 cannot unlock a turn or a second create (194.884333ms)
+  AssertionError [ERR_ASSERTION]: Only the original create may reach the server.
+  
+  2 !== 1
+  
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:48:14
+      at async withServer (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:39:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:44:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at experiments/stream-ui-acceptance/guard-network.test.mjs:43:3
+✖ actual POST bad-json cannot unlock a turn or a second create (266.674ms)
+  AssertionError [ERR_ASSERTION]: Only the original create may reach the server.
+  
+  2 !== 1
+  
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:48:14
+      at async withServer (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:39:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:44:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at experiments/stream-ui-acceptance/guard-network.test.mjs:43:3
+✖ actual POST wrong-profile cannot unlock a turn or a second create (278.51025ms)
+  AssertionError [ERR_ASSERTION]: Only the original create may reach the server.
+  
+  2 !== 1
+  
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:48:14
+      at async withServer (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:39:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:44:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at experiments/stream-ui-acceptance/guard-network.test.mjs:54:1
+✖ actual successful create binds turn identity and persists receipt before the page receives it (265.034125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:57:12
+      at async withServer (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:39:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance/experiments/stream-ui-acceptance/guard-network.test.mjs:55:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

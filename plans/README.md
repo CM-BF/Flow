@@ -1,5 +1,7 @@
 # Flow 计划索引
 
+当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 09:53 UTC固定main253035已审含新视觉外壳、知识聊天接线、Codex有界通信与中心来源规则；原生Codex执行仍在R05C实施。TUI首片进行，ENG-001工程交付排其后、COST-001再后。个人center/runner仍b1c2、accepting v12，Web固定静态产物，不能把main更新称用户运行已更新。下文旧日期批次仅历史观察。
+
 本目录记录 Flow 的设计方向、技术验证和后续实施安排。使用和维护规则见 [AGENTS.md](AGENTS.md)。
 
 ## 当前计划
@@ -83,3 +85,63 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 [D04 多 Lead 领取](d04-coordination/plan.md) 已完成并部署；[status](d04-coordination/status.md) / [review](d04-coordination/review.md)。G01 首图命令、P02 Task-based A2A 持久出站、F01共享 client/CLI/生产入口和WPF-M02统一Web已分别审查，在I02接收集成。O01目标命令和E01零模型上游probe滚动推进；自然语言完整交付/插件生命周期/容量仍未完成。
 
 新增唯一source O01：`Flow-worktrees/goal-orchestration/plans/o01-goal-orchestration/`；WPF-PERF01：`Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/`。二者已收到committed claim；各Lead可对无冲突ready scope自助take，进度仍只维护owner status。registry共30来源，数量为本次登记事实而非每份plan均已完成。
+
+[D05架构视图](d05-architecture-view/plan.md) 已独立审查、集成并部署4320；五视图依据固定main3773db5，独立status/review与领取记录。产品预览49922明确为已审M02 HTTP fixture，不称main生产服务。
+
+[X01完整插件管理计划](x01-plugin-management/plan.md) 已按c21731c独立文档审查通过；[status](x01-plugin-management/status.md) / [review](x01-plugin-management/review.md)。产品生命周期、npm宿主与隔离仍待实施，Web trusted host不等于完整插件管理。
+
+R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前registry新增唯一来源；尚未集成的正文以登记owner树为准。普通自然对话与目标编排分别验收，fixture回复不代表模型对话。
+
+2026-10-06 04:43 UTC：新增独立来源 [CTX01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe/plans/ctx01-context-kernel/plan.md)（实验owner树 context-kernel-probe，main未收正文时看dashboard只读源）与 [WPF-PROFILE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/plans/wpf-profile01-execution-profiles/plan.md)（web-execution-profiles）；领取已确认，登记不代表完成。
+
+2026-10-06 05:17 UTC：新增唯一来源 K01（项目知识原文与检索）、WPF-PROFILEUX01（聊天配置摘要优化）、SVC02（真实预览安全更新）；各自已领取且三件套存在。权威目录分别为 `Flow-worktrees/knowledge-source-store/plans/k01-knowledge-sources`、`web-execution-profile-summary/plans/wpf-profileux-execution-summary`、`preview-refresh/plans/svc02-preview-refresh`；当前均实施中。登记不代表当前常驻中心已更新。
+
+2026-10-06 05:29 UTC：O06 唯一来源为 `Flow-worktrees/goal-graph-runs/plans/o06-goal-graph-runs`；WPF-QUEUE01 为 `web-conversation-queue/plans/wpf-queue01-ui`。D06 沿原 task/plan/evidence 迁移权威工作树至 `dashboard-architecture-current`，旧 `dashboard-architecture-refresh` 只读保留历史；当前基线固定 `eb14991a`，本轮未批准/未集成。registry 总计65来源，数量不是完成率。
+
+2026-10-06 05:45 UTC：K02 聊天固定知识引用与 O07 原生目标拆分工具已各自领取独立范围，唯一工作源已登记。K02权威工作树 `conversation-context`、计划 `plans/k02-conversation-context`；O07权威工作树 `native-graph-tools`、计划 `plans/o07-native-graph-tools`。两领域未实现批准，不将接口/stub当功能。SVC02真实预览已升级fb906cb/v3接受，后续main前进不等于再次部署。
+
+- WPF-CHAT06S01：聊天逐段正文读取；唯一source `web-conversation-stream/plans/wpf-chat06-stream`，已登记领取/实施，App挂载后继。
+
+- CHAT08：原生对话中的补充指令；唯一source `native-active-steering/plans/chat08-native-active-steering`，仍0provider实施。
+- CHAT06P01：流式正文存储成本测量；唯一source `assistant-stream-cost-probe/plans/chat06-stream-cost`，方法准备，真实测量待协调窗口。
+
+- WPF-PERF03：聊天消息复用；唯一source `web-message-reuse/plans/wpf-perf03-message-reuse`，不变消息转换优化实施，不声称浏览器延迟收益。
+
+- WPF-CONTEXT01：聊天知识引用选择；唯一 source `web-knowledge-selection/plans/wpf-context01-knowledge-selection`。独立选择模块已领取，实际 Send/Queue 接线仍后继；登记不代表功能完成。
+
+- WPF-CHAT06I01：聊天逐段正文接入；唯一 source `web-conversation-stream-integration/plans/wpf-chat06-stream-integration`，已领取独立产品接线范围，未交付。
+- O09：原生执行单个目标节点；唯一 source `native-goal-node-execution/plans/o09-native-node-execution`，先验证只读执行与固定输入，真实模型验收尚未授权。
+
+## 2026-10-06 成熟产品与执行工具新来源
+
+- WPF-MATURE-01：成熟双主题视觉；唯一权威来源 [wpf-mature-01-visual](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)。登记不代表实现完成。
+- WPF-MATURE-02：Claude与Codex执行选项；唯一权威来源 [wpf-mature-02-harness-capabilities](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。登记不代表实现完成。
+- WPF-MATURE-03：附件与文件输入；唯一权威来源 [wpf-mature-03-attachments](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)。登记不代表实现完成。
+- WPF-MATURE-04：上下文用量与压缩透明；唯一权威来源 [wpf-mature-04-context-transparency](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/plan.md)。登记不代表实现完成。
+- WPF-MATURE-05：单标签双面板工作区；唯一权威来源 [wpf-mature-05-workspace](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)。登记不代表实现完成。
+- WPF-MATURE-06：完整聊天可靠性；唯一权威来源 [wpf-mature-06-chat](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)。登记不代表实现完成。
+- R06：Codex本机通信与退出；唯一权威来源 [r06-codex-native-transport](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-transport/plans/r06-codex-native-transport/plan.md)。登记不代表实现完成。
+- WPF-CONTEXTI01：知识引用接入聊天；唯一权威来源 [wpf-context-i01-integration](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/plan.md)。登记不代表实现完成。
+- WPF-STEER01：运行中补充指令控件；唯一权威来源 [wpf-steering-control](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/plan.md)。登记不代表实现完成。
+- WPF-VISUAL01：圆角与双主题界面；唯一权威来源 [wpf-visual01-shell](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/plan.md)。登记不代表实现完成。
+
+## 2026-10-06 终端与执行成本新目标
+
+- TUI-001：[可日用终端客户端](tui01-terminal-client/plan.md)。独立大task，唯一权威 `tui-client/plans/tui01-terminal-client`；终端与共享typed交互层并行于Web，首片实施中，完整目标尚未交付。
+- TUI01A：TUI-001下的[终端会话与可靠发送首片](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/plans/tui01a-conversations/plan.md)，唯一权威 `tui-conversations`；交互与headless共用controller，当前实施，未作完整日用验收。
+- COST-001：[可解释的执行成本与预算](cost01-execution-cost/plan.md)。独立大task承接REQ-09，唯一权威 `execution-cost/plans/cost01-execution-cost`；排在执行工具/成熟交互/终端首片之后，当前只计划，不新增模型或负载。
+- R05B：FLOW-002下的Codex中心身份与来源校验；唯一权威 [r05b-native-center-policy](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy/plans/r05b-native-center-policy/plan.md)。025与生产入口在分支验证，不宣称main已支持Codex。
+
+- ENG-001：[真实工程任务交付](eng01-engineering-delivery/plan.md)，唯一生产大task，承接REQ-06；E01只保留研究输入，当前只计划。
+- R05C：FLOW-002下的[Codex普通执行adapter](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter/plans/r05c-codex-native-adapter/plan.md)，先固定unknown结算，再复用R06/025纵向接线；0provider准备。
+
+- SVC04：FLOW-001下的[网页独立发布与回退](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/plans/svc04-web-release/plan.md)，唯一权威 `web-artifact-release`；先专用fixture证明后台持续、旧资源与失败保旧，个人服务不在本轮切换。
+
+新增唯一来源：S01P02并发入口（runner-concurrency-entry）、D08两层任务关系（dashboard-task-links）、WPF-ACTIVITYREAD01活动阅读（web-activity-readability）、WPF-STEIRI01补充指令接线（web-steering-integration）。各独审范围与main接收分别以唯一status为准；本批不切换个人服务。
+
+## 2026-10-06 11:32:44 UTC 连续目标与原生工程接缝
+
+| 子task | 唯一父任务 | 权威计划 | 状态 |
+| --- | --- | --- | --- |
+| O11 | FLOW-001（O01/M02追溯） | [目标交付读口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model/plans/o11-goal-delivery-read-model/plan.md) | implementation；稳定材料与实时执行分离 |
+| ENG01D | ENG-001 | [真实身份与原生turn接缝](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams/plans/eng01d-native-writer-seams/plan.md) | implementation；不扩旧权限 |

@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue
+
+ ✓ apps/server/src/conversation-queue/queue.test.ts (32 tests) 3627ms
+   ✓ bounds UTF-8 previews and pending count, pages only waiting items, and confines item reads to their conversation  590ms
+   ✓ serializes concurrent pause, real completion and promotion without admitting any turn after the winning pause ACK  330ms
+
+ Test Files  1 passed (1)
+      Tests  32 passed (32)
+   Start at  21:37:51
+   Duration  3.98s (transform 164ms, setup 0ms, import 284ms, tests 3.63s, environment 0ms)
+

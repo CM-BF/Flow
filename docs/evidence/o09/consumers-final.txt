@@ -1,0 +1,23 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution
+
+ ✓ apps/server/src/goals/goals.test.ts (9 tests) 15221ms
+   ✓ runs the diamond through independent fixture processes and invalidates only changed actual dependencies  5130ms
+   ✓ preserves failed evidence, rejects failed verification, and requires explicit predecessor for retry  2166ms
+   ✓ serializes concurrent authorization, keeps one task and refuses unsettled execution after center restart  4651ms
+   ✓ returns faithful existing provenance for no-op input and delivery commands after another node changes  1004ms
+ ✓ apps/server/src/goal-tool-runs/authorization.test.ts (9 tests) 8251ms
+   ✓ enforces current runner/attempt/grant scope and preserves the whole-goal read policy  1119ms
+   ✓ counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts  631ms
+   ✓ revokes authority durably and rechecks authorization before returning cached commands  640ms
+   ✓ rejects expired, completed and revoked-runner ownership without reviving cached authority  1723ms
+   ✓ serializes an in-flight cached command against revoke without granting a post-revocation replay  566ms
+   ✓ serializes an in-flight cached command against cancel without granting a post-revocation replay  520ms
+   ✓ rolls back failed application without consuming authority and protects immutable scope and audit history  923ms
+   ✓ applies execution in the same grant transaction and gives no delegated authority to its fixture child  982ms
+
+ Test Files  2 passed (2)
+      Tests  18 passed (18)
+   Start at  00:58:00
+   Duration  24.75s (transform 538ms, setup 0ms, import 1.11s, tests 23.47s, environment 0ms)
+

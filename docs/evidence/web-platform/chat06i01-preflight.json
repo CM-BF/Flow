@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-10-06T07:48:33.477662+00:00",
+  "ledgerObservedAt": "2026-10-06T07:48:17.038Z",
+  "git": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration",
+    "branch": "codex/web-conversation-stream-integration",
+    "head": "6426b44cd32d10216141af13ecfa83b8879025fb",
+    "dirty": ""
+  },
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversation-stream/host.ts",
+    "apps/web/test/conversation-stream-integration.test.ts",
+    "apps/web/test/conversation-stream-integration.fixture.ts",
+    "apps/web/test/conversation-stream-integration.browser.ts",
+    "plans/wpf-chat06-stream-integration",
+    "docs/evidence/wpf-chat06-stream-integration",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/test/plugin-host.test.ts"
+  ],
+  "conflicts": [],
+  "authorization": "Root approved13scope with full accepted MAIN_RECEIPT6426; no overlap with still-frozen S01/PERF03. Product module files/shared/officialThread read-only.",
+  "method": "Independent Git clean/head/branch and fresh D04 read before atomic take; no product tests/API/model/service actions."
+}

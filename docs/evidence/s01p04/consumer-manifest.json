@@ -1,0 +1,235 @@
+{
+  "fixTarget": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+  "productionTarget": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+  "base": "7f72deef98535bc0a74d0527762d5c9c90cfb10b",
+  "recordedAt": "2026-10-06T11:28:44.620100+00:00",
+  "counts": {
+    "source": 2,
+    "raw": 12,
+    "support": 5,
+    "readonly": 15
+  },
+  "entries": [
+    {
+      "kind": "source",
+      "path": "apps/server/src/active-steering/steering.test.ts",
+      "bytes": 24237,
+      "sha256": "ecc7e4ac6bfec4797ef4ab8c8e907dd38ff4d3f4edf4e8b19c3e7f54ebdc3e9d"
+    },
+    {
+      "kind": "source",
+      "path": "docs/evidence/s01p04/tsconfig-consumer.json",
+      "bytes": 229,
+      "sha256": "097ff1af2cdcbefadb939d2b7192ec1acfecff881f8cb307e10eae80d49401be"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-green.stdout",
+      "bytes": 969,
+      "sha256": "16cef53f6be4f52929185c16cf5a0626e2f16cd0f11066bb74832490f0ff8b6f"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-green.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-green-receipt.json",
+      "bytes": 669,
+      "sha256": "09b610eddf6a363afc81b8556f26da498ef6bac4b5503015ed7dd0b91e145218"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-receipt.json",
+      "bytes": 429,
+      "sha256": "48c5535ce78a5c6054443c83a90f78de7177ce53a6281af24f879ff79f0272f7"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-initial.stdout",
+      "bytes": 309,
+      "sha256": "e8e2fa9072dda4d107b4fef696158de4ac92fe63f83a811a7f02c05f31ec6df6"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-initial.stderr",
+      "bytes": 748,
+      "sha256": "dd7a86d0a4dac711291c1cb8c3687a3d6f46820838b07780f580111661b702a1"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-initial-receipt.json",
+      "bytes": 667,
+      "sha256": "9887a843fcffe3b3fc9b32ac6472ccc641f6f8f06b79b199224db35247ebc4a2"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-initial.stdout",
+      "bytes": 6575,
+      "sha256": "64321fafaff0f686f441497cff9b86300867ed2fb3cc226b58b7a31c5f05a461"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-initial.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-initial-receipt.json",
+      "bytes": 430,
+      "sha256": "62df32c3305ea2e23c80041fe51375d0eebae41bbfb895d02f6088794faa5216"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/consumer-amend-receipt.json",
+      "bytes": 701,
+      "sha256": "65858dc7914b549aab213104ab89732ede293d181ece65bf66fe41fcdd0b4575"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/consumer-checks.json",
+      "bytes": 1433,
+      "sha256": "12ff8c0bd7ffd7fe6157debe1d3435a8cf20f2aefada3eae30152f98823207eb"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/consumer-dependencies.json",
+      "bytes": 931,
+      "sha256": "fd9f5de2a79a7ed8f43b5121c8ad7eb54e44e59e2cc79543e69f292f373b49ee"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/consumer-freeze.json",
+      "bytes": 8730,
+      "sha256": "db924d6a3653ed8fb29ea709bd50c873faee96ffadd7d77ed0b184f311c746cc"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/consumer-quality.md",
+      "bytes": 2288,
+      "sha256": "d85d006bd1b9bb1ae078eb1aa669ddfbcc4946787a0309a650c0dd90737560d0"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/runner-read-fence.test.ts",
+      "bytes": 19489,
+      "sha256": "4bf5cf79cf3894b9b2069cef46461211fb1e026871659e8722614f6ca9f42b0e"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 6995,
+      "sha256": "8e105358e2ba9eb2946cf7a7bc2668a3c293f6731d884918bcce9266d41fe920"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/active-steering/storage.ts",
+      "bytes": 4217,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/active-steering/admission-policy.ts",
+      "bytes": 1756,
+      "sha256": "508dbe8530c00a43f8e8ef66fd1a0279245df1f46cf71184178f59de2dc9f6bf"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 11116,
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6497,
+      "sha256": "c83f04c42ec26e69147baf929a18b53f49faf560602df4322cefccd67c40c7fc"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/index.ts",
+      "bytes": 12971,
+      "sha256": "6d4a31ce7d3157b5626296fb7c9e836781f22fbf7e53e5413a4d6ec30dda3eb5"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/client/src/index.ts",
+      "bytes": 40801,
+      "sha256": "9a11d6c51e0b170166efb41126a65e8d3688a46b79c2087b0e1ff6e24a744ae9"
+    },
+    {
+      "kind": "readonly",
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "kind": "readonly",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278771,
+      "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056"
+    },
+    {
+      "kind": "readonly",
+      "path": "docs/evidence/s01p04/implementation-manifest.json",
+      "bytes": 10521,
+      "sha256": "8c45b39d15df97fa75c9e209b8d493e26c9c4735643f417aeb5ea492fc2f17b4"
+    }
+  ],
+  "checks": {
+    "selected": 1,
+    "passed": 1,
+    "unselected": 15,
+    "strictExit": 0,
+    "initialSelected": 0,
+    "initialTestExit": 1,
+    "initialStrictExit": 2,
+    "historicalTenRerun": false,
+    "cumulativeDistinct": 11
+  },
+  "limits": [
+    "Test-only consumer repair; production and 48 original bindings unchanged",
+    "No provider/SDK Query/capacity window",
+    "Local strict import closure, not whole-root strict",
+    "Independent re-review required"
+  ]
+}

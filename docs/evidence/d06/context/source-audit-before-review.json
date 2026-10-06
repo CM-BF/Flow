@@ -1,0 +1,502 @@
+{
+  "observedAt": "2026-10-06T06:33:03.561Z",
+  "baseline": {
+    "commit": "115b0dbdfa02db5483f9e9699852682ce699633c",
+    "date": "2026-10-06",
+    "verifiedAt": "2026-10-06T06:31:00Z",
+    "repository": "https://github.com/CM-BF/Flow"
+  },
+  "sourceFiles": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "sha256": "827bf523bbe02aad146d8aac20e8153854f56a73045b4e98e9912519d61f09ac",
+      "lines": 306
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "e845cb6008ce63d831219263f4b0269e15e728449b3166a87dc5c00b234ee52e",
+      "lines": 89
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "lines": 98
+    },
+    {
+      "path": "apps/runner/package.json",
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063",
+      "lines": 19
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c",
+      "lines": 22
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "54254eb2d4ffb4c64a9e135fbecddc48789263ebd7de778a9c4be8791e90b442",
+      "lines": 36
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "lines": 121
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85",
+      "lines": 123
+    },
+    {
+      "path": "apps/server/package.json",
+      "sha256": "2845ef2d760995fa471163249f5fba113082299f3e0c27ff920960c3f7fc32f9",
+      "lines": 23
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "9443faf1dff64220e651b02acba13c7fe5069e5c8be10b05aa9fe70e121cd2c5",
+      "lines": 81
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7",
+      "lines": 33
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "sha256": "53375cfac10d497a2dedf4c0001d5473525ef8b4b2f16dff39021498b3b26bae",
+      "lines": 106
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "e74f5706f8c405f368a9a4c92315ada1a0e0003e10e38189db9e3b5ac6c08da4",
+      "lines": 43
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "lines": 102
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97",
+      "lines": 86
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "sha256": "edaaa2736a714d7c8260df2003b8d36774ef81c70d583885b3d3bff6e1d7bfd6",
+      "lines": 33
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a",
+      "lines": 105
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "sha256": "ca58caa4fa17b5a30188afadd502b6df1f478db3a2e95182ad0d6cacad3026c2",
+      "lines": 86
+    },
+    {
+      "path": "apps/server/src/goals/index.ts",
+      "sha256": "0e33bcbc20f54e91214859d9d2eca096a40bef748ba500938a6015bc488f5842",
+      "lines": 54
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822",
+      "lines": 172
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42",
+      "lines": 47
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21",
+      "lines": 106
+    },
+    {
+      "path": "apps/server/src/m2-workspace.ts",
+      "sha256": "aa1413497c57c76a13c1f9f4509349dcd23b547c2a3d848f9f4b1cb7d5c99f8a",
+      "lines": 101
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "sha256": "6335931d2999c3a6581452e0a8e831a969518dd2adcab972b91870cdd0d9ed61",
+      "lines": 45
+    },
+    {
+      "path": "apps/server/src/plugins/index.ts",
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c",
+      "lines": 56
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sha256": "0a7685acc70a95291b542e97f66390552e55e352a01b6d136b924d2066e746e8",
+      "lines": 155
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d",
+      "lines": 110
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a",
+      "lines": 17
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "459e0636a1823f15581c1c54c6bab22bc1faaa539ab451b190d082be0117ab40",
+      "lines": 83
+    },
+    {
+      "path": "apps/server/src/timeline.ts",
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5",
+      "lines": 11
+    },
+    {
+      "path": "apps/web/README.md",
+      "sha256": "a10fe9d1ee4f73a7dea00110b370bd6b08df8aa111cd7c4c8af6383aa5d66bc8",
+      "lines": 59
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f86e755a32cb6c3c5e81512ca2c0d06844438c67a905d97a4c90ce8d28444344",
+      "lines": 46
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "8adfd52b92014880efc92681eaa85f1f068459ac82617bc2725c9b4446f010d1",
+      "lines": 984
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "2b19593e057c55be623d9de5e25727ee0121d7c99a7d863fecfbc1230b04454d",
+      "lines": 108
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "sha256": "c3718b0e567b043a00f31d402be204688a3db5c38a4421fecf5ae7aebf9393c6",
+      "lines": 79
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "sha256": "cdd1f19e355a9023e677cff7a9c1a1e28ee0ced49c7818002ebb60fffcc31e53",
+      "lines": 93
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "577676a1357e6da20c613f6ed49301ebb954b0982e8b5db972067a2b7c21e004",
+      "lines": 92
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "d7a6e7536f62d6eb9ed982f9bc242c959a62db31b8ae0e5d76fc48fc2ed8e549",
+      "lines": 152
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "37500b3663e6e545f43f294aeb75e7935101f0ba2c66bd5707364137cab7f5fc",
+      "lines": 389
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "7945a60c85f2a32c950aee2c25c0eeb60fa813dd346ac8d524385a5b217ffc69",
+      "lines": 21
+    },
+    {
+      "path": "packages/protocols/package.json",
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "lines": 17
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85",
+      "lines": 6
+    },
+    {
+      "path": "packages/storage/migrations/004-projects.sql",
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07",
+      "lines": 46
+    },
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "sha256": "9d53aef50c97b5609e281875f8a46e005b6d8b676ac40dc085b61b996387724c",
+      "lines": 465
+    },
+    {
+      "path": "plans/flow-002-provider-harness/plan.md",
+      "sha256": "b5954a6e3bb940d1d870a434a13d4ff4d3dd26bdebf35da8fc73b79a09afcd32",
+      "lines": 173
+    },
+    {
+      "path": "plans/templates/status.md",
+      "sha256": "285b484f43d1cc55f802356fafcdb891443f9bdcadb7f4b0b10f0f0c37632bfb",
+      "lines": 52
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "sha256": "88115b5d4781f92449aeea1cf20c872955d57c1ae1a0dbada16a1950fafd688e",
+      "lines": 124
+    }
+  ],
+  "evidence": [
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 126,
+      "text": "  registerKnowledgeRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 123,
+      "text": "  registerConversationContextRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 128,
+      "text": "  registerGoalGraphRunRoutes(app, pool, boss);"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 102,
+      "text": "      afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === \"pending\" && <p className=\"flow-conversation-notice\" role=\"status\">Reply pending. You can keep writing below.</p>}{last?.assistant.state === \"unavailable\" && <p className=\"flow-conversation-notice\" role=\"status\">Reply unavailable · {last.assistant.reason.replaceAll(\"-\", \" \")}</p>}{state.turns.length > 0 && <details className=\"flow-conversation-execution\"><summary>Execution details · {state.turns.length} {state.turns.length === 1 ? \"turn\" : \"turns\"}</summary>{state.turns.map(turn => <TurnStatus key={turn.id} turn={turn} requested={state.snapshot?.conversation.requested} onInspect={onInspect} onOpenTask={onOpenTask} />)}</details>}{state.outbox && <section className=\"flow-conversation-receipt\" aria-label=\"Message receipt\"><strong>{state.outbox.state === \"sending\" ? \"Sending message…\" : state.outbox.state === \"unknown\" ? \"Receipt unknown\" : \"Message rejected\"}</strong><pre>{state.outbox.request.text}</pre><p>{state.outbox.error ?? \"Waiting for durable acceptance.\"}</p>{state.outbox.state === \"unknown\" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className=\"flow-link\" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>Retry same message</button></>}{state.outbox.state === \"rejected\" && <button className=\"flow-link\" onClick={() => projection.outbox.dismiss(state.outbox!.id)}>Dismiss rejected receipt</button>}</section>}</>}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 95,
+      "text": "      composerSubmit={intent === \"queue\" ? () => { if (!projection.sendDisabledReason(\"queue\")) runtime.thread.composer.send({ startRun: false }); } : undefined}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 104,
+      "text": "      footer={<div className=\"flow-conversation-footer\">{fixtureMode && <p className=\"flow-conversation-fixture\">HTTP fixture · simulated · no model</p>}{sendError && <p role=\"alert\">{sendError}</p>}<p role=\"status\">{reason ?? (state.snapshot ? \"Continue this conversation.\" : \"Your message starts a new conversation.\")}</p><span>Replies appear when complete. Steering and per-turn controls are unavailable. Queue next uses durable center acceptance; unresolved receipts are local to this page.</span></div>}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 98,
+      "text": "        if ((event.ctrlKey || event.metaKey) && event.shiftKey) { event.preventDefault(); setSendError(\"Steering is not supported. Choose Queue next to save a message without interrupting execution.\"); return; }"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "line": 37,
+      "text": "        <QueueSectionTrigger><QueueSectionLabel label={page ? `${page.items.length} waiting loaded${page.nextCursor ? \"; more available\" : \"\"}` : \"Queue\"} /><span>{state.loading ? \"Refreshing…\" : state.stale ? \"Needs refresh\" : page?.paused ? \"Paused\" : \"Center queue\"}</span></QueueSectionTrigger>"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "line": 50,
+      "text": "          {cancelTarget && <div className=\"my-2 rounded border p-2\" role=\"group\" aria-label=\"Confirm current execution cancellation\"><p>Request cancellation of {cancelTarget}? Pausing and cancellation have separate receipts. Work already performed is not undone.</p><div className=\"mt-2 flex flex-wrap gap-2\"><Button type=\"button\" variant=\"destructive\" size=\"sm\" onClick={event => void preserveFocus(event.currentTarget, async () => { await projection.cancelCurrentTask(cancelTarget); setCancelTarget(null); })}>Confirm execution cancellation</Button><Button type=\"button\" variant=\"outline\" size=\"sm\" onClick={event => void preserveFocus(event.currentTarget, async () => { setCancelTarget(null); })}>Keep execution</Button></div></div>}"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 28,
+      "text": "      FROM flow.knowledge_sources s JOIN flow.knowledge_versions v ON v.source_id=s.id AND v.version=s.current_version"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 29,
+      "text": "      JOIN flow.knowledge_chunks c ON c.source_id=s.id AND c.version=s.current_version WHERE s.project_id=$1"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 31,
+      "text": "      SELECT *,strpos(content,$2)>0 AS literal,ts_rank(search_vector,plainto_tsquery('simple',$2)) AS rank"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 16,
+      "text": "    citation: { projectId: row.project_id, sourceId: row.id, version: row.current_version, contentDigest: row.content_digest, locator: { kind: 'utf8-bytes', start: row.start_byte, end: row.end_byte } },"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 31,
+      "text": "  const row = (await client.query<VersionRow>('INSERT INTO flow.knowledge_versions(source_id,version,content,content_digest) VALUES($1,$2,$3,$4) RETURNING source_id,version,content_digest,byte_length,created_at', [sourceId, version, text, sha256(text)])).rows[0]!;"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 33,
+      "text": "  await client.query(`INSERT INTO flow.knowledge_chunks(source_id,version,ordinal,start_byte,end_byte,content)"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 55,
+      "text": "      if (source.current_version !== input.expectedVersion) throw new HttpError(409, 'knowledge_version_conflict', 'Read the current source version before publishing.');"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 37,
+      "text": "  const sources: FrozenSource[] = (await resolveCitationsInTransaction(client, projectId, citations)).map(({ citation, text, isCurrent, currentVersion }) => ({ citation, text, byteLength: Buffer.byteLength(text), currentVersionAtFreeze: currentVersion, isCurrentAtFreeze: isCurrent }));"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 30,
+      "text": "  await client.query('INSERT INTO flow.conversation_execution_inputs(id,context_id,user_text,template_version,execution_prompt,execution_input_digest) VALUES($1,$2,$3,1,$4,$5)', [id, contextId, userText, prompt, inputDigest(userText, prompt)]);"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 73,
+      "text": "  if (input.conversation_id !== conversationId) throw invalid();"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 93,
+      "text": "    const row = (await client.query<ContextRow>('SELECT id AS context_id,conversation_id,project_id,context_digest,sources,raw_bytes,created_at FROM flow.conversation_contexts WHERE id=$1 AND conversation_id=$2', [contextId, conversationId])).rows[0];"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 77,
+      "text": "export async function executionInputForTask(client: PoolClient, taskId: string, rawPrompt: string): Promise<{ prompt: string; context: ConversationContextExecutionReference } | null> {"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "line": 25,
+      "text": "  const context = await contextReference(client, row.conversation_input_id);"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "line": 27,
+      "text": "    ...(context ? { context } : {}), user: { role: 'user', text: row.user_text }, task: summary(task), ...await assistantProjection(client, task), telemetry: { kind: 'execution', taskId: task.id, title: 'Execution details' } };"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "line": 48,
+      "text": "    ...(value.projectId === undefined ? {} : { projectId: value.projectId }),"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "line": 70,
+      "text": "    || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== \"boolean\")"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 8,
+      "text": "import { withRunnerAuthority } from '../goal-run-authority/runner-project-fence.js';"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 62,
+      "text": "      if (run.scope.maxApplications === 0) throw new HttpError(403, 'goal_graph_scope', 'This grant permits proposals only.');"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 6,
+      "text": "import { commandInTransaction } from '../tasks.js';"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 70,
+      "text": "      if (context.project.revision !== run.scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The base graph changed; no silent rebase is allowed.');"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 11,
+      "text": "  const invoke = ownedCalls(input);"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 3,
+      "text": "import { ownedCalls, assertNativeGrant, type HostAuthority } from '../goal-tool-bridge/authority.js';"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 19,
+      "text": "    commandGraph: (command, key) => invoke(signal => client.goalGraphCommand({ ...call, command }, key, signal)),"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "line": 219,
+      "text": "  if (options.goalTools && options.goalGraphTools) throw new Error('Node and graph tools need separate configured profiles.');"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "line": 220,
+      "text": "  if ((options.goalTools || options.goalGraphTools) && (options.materialFiles.length || options.allowRead !== false || options.requireReadApproval)) throw new Error('Goal tools require an empty material scope and explicitly disabled material reads.');"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 1,
+      "text": "import { bindGraphToolCapability } from './goal-graph-tools/bind.js';"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 39,
+      "text": "      if (assignment && !options.signal.aborted) await execute(assignment, client, adapters, options, stateDirectory, { requestedAt, remainingLeaseMs });"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 15,
+      "text": "export async function fetchPackageArtifact(options: PackageArtifactOptions, input: unknown,"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 8,
+      "text": "import { stageStream, publishArtifact } from './storage.js';"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 33,
+      "text": "    const receipt = packageArtifactSchema.parse({ ...request, artifactId: randomUUID(), format: 'npm-tarball',"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 21,
+      "text": "  const verifier = ssri.create({ algorithms: ['sha512'] });"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 29,
+      "text": "    file = await open(join(directory, 'package.tgz'), 'wx', 0o600);"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 58,
+      "text": "  await rename(staged.directory, join(root, 'artifacts', receipt.artifactId));"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 40,
+      "text": "export function createDataRendererRegistry(declarations: readonly DataDeclaration[], host: Lifecycle) {"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 81,
+      "text": "      if (disposed || !entry || entry.signal.aborted || host.list().find(item => item.id === declaration.ownerId)?.state !== \"active\")"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 73,
+      "text": "      if (!declaration) return { kind: \"unknown\", reason: \"No trusted renderer for this data type\" };"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "line": 45,
+      "text": "  liveAssistantText: false;"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "line": 44,
+      "text": "  steer: false;"
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "line": 15,
+      "text": "用户能在产品 Web 的插件管理页和 CLI 中，对同一中心持久化的插件执行安装、配置、授予权限、启用、停用、升级、回滚、移除，并了解当前版本、实际能力、作用范围、运行中引用、错误与审计。客户端只调用公共中心 commands，不各自保存另一份权威安装/授权状态。Web 的管理页不能成为业务的唯一入口。"
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "line": 65,
+      "text": "可信 npm 服务端扩展是明确 operator 授予的信任级别，在固定宿主接口运行；第三方未知 npm 不加载到中心进程或可信浏览器 realm，必须走隔离进程/容器、窄消息协议与文件/网络/时间/内存限制。JS context、隐藏 token 参数或 same-realm React ErrorBoundary 不是安全隔离。包预检也不执行未知 install hook。第三方 renderer 使用独立隔离文档/消息桥且逐次校验来源与 schema，不能读取宿主 DOM/连接凭据；无法建立隔离时保持不可启用，显示原因。"
+    }
+  ],
+  "absent": [
+    "apps/server/src/conversation-activity/index.ts",
+    "apps/server/src/native-assistant-stream/index.ts"
+  ],
+  "absentMigrations": [
+    "020-*",
+    "022-*"
+  ],
+  "limits": "Fixed source inspection only; no product model/database/service verification. Independent renderer and package modules are not App installation."
+}

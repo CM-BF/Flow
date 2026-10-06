@@ -1,0 +1,274 @@
+{
+  "generatedAt": "2026-10-06T04:53:18.107Z",
+  "task": {
+    "id": "WPF-PROFILE01",
+    "title": "对话执行选项",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles",
+    "branch": "codex/web-execution-profiles",
+    "planDir": "plans/wpf-profile01-execution-profiles",
+    "evidenceDir": "docs/evidence/wpf-profile01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T04:53:11.160Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/plans/wpf-profile01-execution-profiles/status.md",
+      "syncedAt": "2026-10-06T04:53:18.107Z",
+      "stale": false,
+      "ageHours": 0.005029722222222222
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/web-execution-profiles",
+      "head": "a2130834639491c38e88e9303b15f23012ead376",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T04:53:18.506Z"
+    },
+    "status": {
+      "human": {
+        "phase": "M2",
+        "priority": 1,
+        "output": "固定4f混合目录与chat allowlist已获独立APPROVED，可交App接入片",
+        "next": "App owner另领消费；本模块实现停止写入，claim保留review修复权",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "4f1985769564eafad9218570411d5ce1114b4ec0",
+        "scopes": [
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/src/execution-profiles/catalog.ts",
+          "apps/web/src/execution-profiles/execution-profiles.css",
+          "apps/web/src/execution-profiles/selection.ts",
+          "apps/web/test/execution-profiles.browser.ts",
+          "apps/web/test/execution-profiles.fixture.tsx",
+          "apps/web/test/execution-profiles.test.ts"
+        ],
+        "errors": []
+      },
+      "taskId": "WPF-PROFILE01",
+      "owner": "w01_owner / gpt-6-astra ultra（派发指定）",
+      "branch": "codex/web-execution-profiles",
+      "branchState": "implemented",
+      "updatedAt": "2026-10-06T04:53:00.000Z",
+      "updatedRecord": "2026-10-06 04:53 UTC；固定输入，不追 moving main",
+      "todos": [
+        {
+          "id": "WPF-PROFILE01-01",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "16局部tests：混合目录/分页/错误/连接隔离；固定4f"
+        },
+        {
+          "id": "WPF-PROFILE01-02",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "完整pin/深冻/显式chat allowlist/旧default；固定4f"
+        },
+        {
+          "id": "WPF-PROFILE01-03",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "5组混合目录HTTP浏览器，禁选/双主题390/键盘/锁；截图已目视"
+        },
+        {
+          "id": "WPF-PROFILE01-04",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "root4f独立APPROVED，16tests/源码/混合目录CUA；App另片"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "基线 4e0289f29ffa48c6c49003837d4520f57c22b6b0；实现 4f1985769564eafad9218570411d5ce1114b4ec0，随后仅metadata",
+      "declaredDirty": "实现已提交；本次仅计划/证据收尾，提交后核clean",
+      "checks": {
+        "state": "passed",
+        "target": "4f1985769564eafad9218570411d5ce1114b4ec0",
+        "record": "PASSED：4f1985769564eafad9218570411d5ce1114b4ec0；16局部tests、Web typecheck、5组混合目录HTTP browser；隔离production bundle仅历史b2"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED 4f1985769564eafad9218570411d5ce1114b4ec0；独立模块限定",
+      "mainRecord": "未集成新模块；4e 仅为公共接口输入",
+      "next": "局部验证已完成；固定a28已获root独立APPROVED，随后另由App owner按新claim接入。实际 App 接入由 workspace_panels_owner 后续独立领取；0模型，根manifest/lock不得改变。Dashboard：2026-10-06 04:44:34.265Z 实采4320，source HEAD bc3e5f15f72a8fca89a24da4f42d828173a3b05a clean（此为新增test前历史采样）；human.complete=true/issues=[]，checks绑定b2，review NOT_STARTED，implementationProof unchanged，main not-contained，claim17093 v1 matchesSource。原样本任务摘录见 [dashboard-snapshot](../../docs/evidence/wpf-profile01/dashboard-snapshot.json)。",
+      "risks": "局部验证已完成；固定a28已获root独立APPROVED，随后另由App owner按新claim接入。实际 App 接入由 workspace_panels_owner 后续独立领取；0模型，根manifest/lock不得改变。Dashboard：2026-10-06 04:44:34.265Z 实采4320，source HEAD bc3e5f15f72a8fca89a24da4f42d828173a3b05a clean（此为新增test前历史采样）；human.complete=true/issues=[]，checks绑定b2，review NOT_STARTED，implementationProof unchanged，main not-contained，claim17093 v1 matchesSource。原样本任务摘录见 [dashboard-snapshot](../../docs/evidence/wpf-profile01/dashboard-snapshot.json)。",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED**",
+      "target": "4f1985769564eafad9218570411d5ce1114b4ec0",
+      "proof": {
+        "target": "4f1985769564eafad9218570411d5ce1114b4ec0",
+        "head": "a2130834639491c38e88e9303b15f23012ead376",
+        "scopes": [
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/src/execution-profiles/catalog.ts",
+          "apps/web/src/execution-profiles/execution-profiles.css",
+          "apps/web/src/execution-profiles/selection.ts",
+          "apps/web/test/execution-profiles.browser.ts",
+          "apps/web/test/execution-profiles.fixture.tsx",
+          "apps/web/test/execution-profiles.test.ts"
+        ],
+        "observedAt": "2026-10-06T04:53:19.107Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-profile01/README.md",
+          "docs/evidence/wpf-profile01/browser-results.json",
+          "docs/evidence/wpf-profile01/interface.md",
+          "docs/evidence/wpf-profile01/profiles-dark-390.png",
+          "docs/evidence/wpf-profile01/profiles-light.png",
+          "docs/evidence/wpf-profile01/quality.md",
+          "plans/wpf-profile01-execution-profiles/plan.md",
+          "plans/wpf-profile01-execution-profiles/review.md",
+          "plans/wpf-profile01-execution-profiles/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "4f1985769564eafad9218570411d5ce1114b4ec0",
+      "head": "a2130834639491c38e88e9303b15f23012ead376",
+      "scopes": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/test/execution-profiles.browser.ts",
+        "apps/web/test/execution-profiles.fixture.tsx",
+        "apps/web/test/execution-profiles.test.ts"
+      ],
+      "observedAt": "2026-10-06T04:53:18.580Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/wpf-profile01/README.md",
+        "docs/evidence/wpf-profile01/browser-results.json",
+        "docs/evidence/wpf-profile01/interface.md",
+        "docs/evidence/wpf-profile01/profiles-dark-390.png",
+        "docs/evidence/wpf-profile01/profiles-light.png",
+        "docs/evidence/wpf-profile01/quality.md",
+        "plans/wpf-profile01-execution-profiles/plan.md",
+        "plans/wpf-profile01-execution-profiles/review.md",
+        "plans/wpf-profile01-execution-profiles/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/wpf-profile01-execution-profiles/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-profile01-execution-profiles/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-profile01-execution-profiles/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/wpf-profile01/take-receipt.json",
+        "title": "D04 receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile01/quality.md",
+        "title": "quality",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile01/interface.md",
+        "title": "interface",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile01/dashboard-snapshot.json",
+        "title": "dashboard-snapshot",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile01/README.md",
+        "title": "验证报告",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile01/browser-results.json",
+        "title": "浏览器原始结果",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 4,
+      "total": 4
+    },
+    "main": {
+      "record": "未集成新模块；4e 仅为公共接口输入",
+      "recordedHead": null,
+      "target": "4f1985769564eafad9218570411d5ce1114b4ec0",
+      "mainHead": "c56fc9a786f33bed7d6e487fb278bd2750b30283",
+      "scopes": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/test/execution-profiles.browser.ts",
+        "apps/web/test/execution-profiles.fixture.tsx",
+        "apps/web/test/execution-profiles.test.ts"
+      ],
+      "observedAt": "2026-10-06T04:53:18.507Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/src/execution-profiles/catalog.ts",
+          "apps/web/src/execution-profiles/execution-profiles.css",
+          "apps/web/src/execution-profiles/selection.ts",
+          "apps/web/test/execution-profiles.browser.ts",
+          "apps/web/test/execution-profiles.fixture.tsx",
+          "apps/web/test/execution-profiles.test.ts",
+          "docs/evidence/wpf-profile01",
+          "plans/wpf-profile01-execution-profiles"
+        ],
+        "state": "active",
+        "branch": "codex/web-execution-profiles",
+        "origin": "new",
+        "taskId": "WPF-PROFILE01",
+        "worker": "w01_owner",
+        "claimId": "17093c4c-a8fa-4e43-bc72-6bd54cab0795",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles",
+        "createdAt": "2026-10-06T04:36:37.979Z",
+        "updatedAt": "2026-10-06T04:36:37.979Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

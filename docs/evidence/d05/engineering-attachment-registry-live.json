@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-10-06T10:13:49.228Z",
+  "sourceFile": "/tmp/flow-engineering-attachment-125-live.json",
+  "sourceCount": 125,
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "c9c0842406e77082f2ba4bd6e98c5279da7cd2dd",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T10:13:50.714Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "coordinationState": "available",
+  "unregistered": [],
+  "tasks": [
+    {
+      "id": "ENG01A",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline",
+      "branch": "codex/engineering-workspace-pipeline",
+      "head": "5a1d58f58e8357ccacbb4a78d2209b26533ba3da",
+      "dirty": true,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-ATTACH01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+      "branch": "codex/attachment-resources",
+      "head": "b87f8a515c7c8bbe5b76a8202db4f7666924b10d",
+      "dirty": true,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    },
+    {
+      "id": "R05D",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch",
+      "branch": "codex/codex-native-launch",
+      "head": "d636d149d4666b27f2158d9277d0772407121699",
+      "dirty": false,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    },
+    {
+      "id": "F01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+      "branch": "codex/m2-shared-foundation",
+      "head": "912c673001dddb47dace8997e9626991b0320204",
+      "dirty": false,
+      "current": true,
+      "humanComplete": true,
+      "issues": []
+    }
+  ],
+  "scope": "historical actual125 snapshot; no new query/browser/test/restart"
+}

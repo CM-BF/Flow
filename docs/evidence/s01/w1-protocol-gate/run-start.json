@@ -1,0 +1,29 @@
+{
+  "label": "w1-protocol-gate",
+  "scenario": "protocol-gate",
+  "windowId": "S01-W1-20261006T070330Z",
+  "databaseName": "flow_s01_gate_38459_10591b47c5b54e51bb39bf4322b838eb",
+  "tasks": 8,
+  "attempts": 8,
+  "startedAt": "2026-10-06T07:03:36.101Z",
+  "maxWindowMs": 30000,
+  "usedTasks": 8,
+  "usedAttempts": 8,
+  "usedMs": 7154.493915999999,
+  "priorRuns": [
+    {
+      "label": "smoke-first",
+      "tasks": 4,
+      "attempts": 4,
+      "elapsedMs": 4333.692333,
+      "failed": true
+    },
+    {
+      "label": "smoke-repair",
+      "tasks": 4,
+      "attempts": 4,
+      "elapsedMs": 2820.801583,
+      "failed": false
+    }
+  ]
+}

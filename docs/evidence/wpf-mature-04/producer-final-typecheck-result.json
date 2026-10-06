@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+    "--project",
+    "/tmp/flow-wpf04-producer-tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 1.7737340927124023,
+  "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/tsconfig.json",
+  "strictRootOptionsUnchanged": true,
+  "noEmit": true,
+  "includes": "4 changed sources and 3 direct test consumers; imports recursively use owner @flow sources"
+}

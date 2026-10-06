@@ -1,0 +1,44 @@
+import { chromium } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-delivery-stage/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs';
+import { createDashboardServer } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-delivery-stage/apps/execution-dashboard/src/server.mjs';
+import { defaultRegistry } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-delivery-stage/apps/execution-dashboard/src/registry.mjs';
+import { humanOverview } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-delivery-stage/apps/execution-dashboard/src/human.mjs';
+import { writeFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const evidence='/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-delivery-stage/docs/evidence/d07/';
+const server=createDashboardServer(defaultRegistry());
+await new Promise(r=>server.listen(0,'127.0.0.1',r));
+const url=`http://127.0.0.1:${server.address().port}`;
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const results={startedAt:new Date().toISOString(),source:'candidate real dashboard assets; live owner sources, then labelled synthetic stage fixture',browser:browser.version(),errors:[]};
+try {
+ const page=await browser.newPage({viewport:{width:980,height:800}});
+ page.on('pageerror',e=>results.errors.push(e.message));
+ const response=page.waitForResponse(r=>r.url().endsWith('/api/snapshot'));
+ await page.goto(url);
+ const live=await (await response).json();
+ await page.locator('#sync-state').filter({hasText:'已同步'}).waitFor();
+ results.live={sourceCount:live.tasks.length,generatedAt:live.generatedAt,deliveryIds:live.overview.deliveryIds,chat02Todos:live.tasks.find(t=>t.id==='CHAT02').status.todos};
+ assert(!live.overview.deliveryIds.includes('CHAT02'));
+ assert((await page.locator('#next-deliveries').innerText()).includes('CHAT02')===false);
+ await page.screenshot({path:evidence+'live-desktop.png',fullPage:false});
+ const fixture=structuredClone(live);
+ fixture.tasks=fixture.tasks.filter(t=>['O04','B03','CHAT02'].includes(t.id));
+ for(const t of fixture.tasks){
+  t.current=true;t.status.human.complete=true;t.status.human.blocker={state:'none',text:''};
+  t.status.human.delivery={source:'explicit',state:t.id==='O04'?'review':t.id==='B03'?'integration':'delivered'};
+  t.status.human.output='阶段筛选示例';t.status.human.next=t.id==='O04'?'待审查后开放受限目标工具':t.id==='B03'?'待集成长对话预览': '已交付；未来计划保持开放';
+ }
+ fixture.overview=humanOverview(fixture.tasks);
+ await page.route('**/api/snapshot',r=>r.fulfill({json:fixture}));
+ await page.setViewportSize({width:390,height:844});
+ await page.reload();
+ await page.locator('#sync-state').filter({hasText:'已同步'}).waitFor();
+ const next=await page.locator('#next-deliveries').innerText();
+ assert(next.includes('待审查后开放受限目标工具'));assert(next.includes('待集成长对话预览'));assert(!next.includes('已交付；未来'));
+ results.fixture={deliveryIds:fixture.overview.deliveryIds,historyIds:fixture.overview.historyIds,next,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)};
+ assert(!results.fixture.overflow);assert.deepEqual(results.errors,[]);
+ await page.locator('#next-deliveries').scrollIntoViewIfNeeded();
+ await page.screenshot({path:evidence+'fixture-narrow.png'});
+ results.result='PASSED';
+} catch(error){results.result='FAILED';results.failure=error.stack;process.exitCode=1;}
+finally{await browser.close();await new Promise(r=>server.close(r));results.endedAt=new Date().toISOString();await writeFile(evidence+'browser.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results));}

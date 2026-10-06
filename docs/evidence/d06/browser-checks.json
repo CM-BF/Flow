@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T04:17:22.066Z",
+  "base": "http://127.0.0.1:55247/",
+  "browser": "154.0.8037.98",
+  "passed": true,
+  "observations": [
+    {
+      "view": "runtime",
+      "nodes": 9,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/8f1481df880cf5077e1ddb9a8f302fe700a7ece8/apps/runner/src/protocol-dispatch/index.ts"
+    },
+    {
+      "view": "modules",
+      "nodes": 14,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/8f1481df880cf5077e1ddb9a8f302fe700a7ece8/plans/flow-001-architecture/full-plan-matrix.md"
+    },
+    {
+      "view": "data",
+      "nodes": 11,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/8f1481df880cf5077e1ddb9a8f302fe700a7ece8/apps/execution-dashboard/src/coordination/ledger.mjs"
+    },
+    {
+      "view": "states",
+      "nodes": 12,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/8f1481df880cf5077e1ddb9a8f302fe700a7ece8/apps/server/src/evidence.ts"
+    },
+    {
+      "view": "dependencies",
+      "nodes": 7,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/8f1481df880cf5077e1ddb9a8f302fe700a7ece8/plans/flow-002-provider-harness/plan.md"
+    }
+  ],
+  "pageErrors": [],
+  "narrowWidth": 390,
+  "reducedMotion": "reduce",
+  "scope": "dynamic local architecture preview; no model or database mutation"
+}

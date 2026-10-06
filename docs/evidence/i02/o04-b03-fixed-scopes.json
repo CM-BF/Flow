@@ -1,0 +1,31 @@
+[
+  {
+    "approvedTarget": "a169a2e139e5db5e7bc2fd6f55699014a41e9926",
+    "scope": [
+      "apps/runner/src/claude.ts",
+      "apps/runner/src/configuration.ts",
+      "apps/runner/src/execution-profiles.ts",
+      "apps/runner/src/goal-tool-bridge",
+      "apps/runner/src/runtime.ts",
+      "apps/server/src/execution-profiles/store.ts",
+      "apps/server/src/goal-tool-runs",
+      "apps/server/src/runners.ts",
+      "apps/server/src/tasks.ts",
+      "packages/contracts/src/execution-profiles.ts",
+      "packages/contracts/src/goal-tool-runs.ts",
+      "packages/contracts/src/runner.ts",
+      "packages/storage/migrations/013-goal-native-mode.sql"
+    ],
+    "implementationDiff": []
+  },
+  {
+    "approvedTarget": "9b2156d1b3481643bc5abd01241831e8c7f4dbdf",
+    "scope": [
+      "apps/server/src/assistant/index.ts",
+      "apps/server/src/assistant/store.ts",
+      "apps/server/src/assistant/preview.test.ts",
+      "apps/server/src/conversations/replies.ts"
+    ],
+    "implementationDiff": []
+  }
+]

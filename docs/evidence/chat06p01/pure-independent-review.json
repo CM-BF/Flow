@@ -1,0 +1,19 @@
+{
+  "reviewer": "mika",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-06T07:24:15Z",
+  "status": "APPROVED",
+  "target": "37709097b879a7afff32b25da971f559d740058a",
+  "observedHead": "2241a8bbfd909954757b66c04102d124ddb3e438",
+  "clean": true,
+  "manifestSha256": "7a612e16d7694f51696e9b9f6ee3828bab9567c7657b2d43a5e1ba8d8996abe0",
+  "scope": "method + pure workload/check only; observer/PG entry/window/results excluded",
+  "findings": [],
+  "checksRead": {
+    "sourceFiles": 6,
+    "rawEvidence": 12,
+    "distinctUnitTests": 3,
+    "noEmitExitCode": 0
+  },
+  "reviewActivity": "Read-only code/hash/literal-byte analysis; no test/service/PG execution or writes by reviewer"
+}

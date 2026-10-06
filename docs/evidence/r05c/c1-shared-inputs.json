@@ -1,0 +1,17 @@
+{
+  "sourceCommit": "095bdb849a4ba688be7c2b55d90021b9d15e4b53",
+  "appliedCommit": "fa39510aca91e032af7925cd79e81d27873da03c",
+  "authorization": "Execution Lead controlled input; independently reviewed by Mika/status_read",
+  "paths": [
+    "packages/client/src/index.ts",
+    "packages/client/src/native-profile-publication.test.ts"
+  ],
+  "mainReceipt": "253035e11ab18ba33095c018949f856442021d49",
+  "mainContains": [
+    "C0 27022407f175597d1d9c897f23f59261f24ab49b",
+    "projection 6313c885c5c5524faedba9b8c49e4d3e164028d5",
+    "native profile client 095bdb849a4ba688be7c2b55d90021b9d15e4b53"
+  ],
+  "mainReceiptSource": "Execution Lead message; C1 remains unreviewed and unintegrated",
+  "branchChoice": "Controlled cherry-pick of exact 095 input; no main chase or client edits"
+}

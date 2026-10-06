@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-10-06T06:45:03.930Z",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T06:45:03.741Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md",
+    "syncedAt": "2026-10-06T06:45:03.930Z",
+    "stale": false,
+    "ageHours": 0.017758333333333334
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/runner-capacity-probe",
+    "head": "03370d719d87532ab37e2564780f67c04ccfd7b8",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T06:45:04.580Z"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+    "proof": {
+      "target": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+      "head": "03370d719d87532ab37e2564780f67c04ccfd7b8",
+      "scopes": [
+        "experiments/runner-capacity"
+      ],
+      "observedAt": "2026-10-06T06:45:04.601Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/s01/approval-dashboard-receipt.json",
+        "docs/evidence/s01/independent-review.json",
+        "docs/evidence/s01/quality.md",
+        "docs/evidence/s01/smoke-manifest.json",
+        "plans/s01-runner-capacity/review.md",
+        "plans/s01-runner-capacity/status.md"
+      ],
+      "reason": "\u58f0\u660e\u8303\u56f4\u672a\u53d8\uff1b\u5176\u4f59\u53d8\u5316\u4ec5\u4e3a\u5df2\u8bc6\u522b\u7684\u6587\u6863\u6216\u8bc1\u636e metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+    "head": "03370d719d87532ab37e2564780f67c04ccfd7b8",
+    "scopes": [
+      "experiments/runner-capacity"
+    ],
+    "observedAt": "2026-10-06T06:45:04.601Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/s01/approval-dashboard-receipt.json",
+      "docs/evidence/s01/independent-review.json",
+      "docs/evidence/s01/quality.md",
+      "docs/evidence/s01/smoke-manifest.json",
+      "plans/s01-runner-capacity/review.md",
+      "plans/s01-runner-capacity/status.md"
+    ],
+    "reason": "\u58f0\u660e\u8303\u56f4\u672a\u53d8\uff1b\u5176\u4f59\u53d8\u5316\u4ec5\u4e3a\u5df2\u8bc6\u522b\u7684\u6587\u6863\u6216\u8bc1\u636e metadata"
+  },
+  "delivery": {
+    "state": "delivered",
+    "source": "explicit"
+  },
+  "issues": []
+}

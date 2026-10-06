@@ -1,0 +1,120 @@
+{
+  "createdAt": "2026-10-06T08:37:26.470119+00:00",
+  "implementationTarget": "48b73544c0e9e66a7061ddb54e003a03b9234bde",
+  "previousApprovedTarget": "d655a3315bf8d967f4c822969e1a0b72952dc493",
+  "previousManifest": {
+    "path": "docs/evidence/s01p01/manifest-final.json",
+    "sha256": "5f2fd6cb98b47f56207a212fc9091ebd2338782a450a4bbfab0fabcd7cc6dba1"
+  },
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "cb91b42d9bc672b767f8539c2e5989e558c896a95acf128cca3b7b4519dac740"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "28c5038636a5390eb26334e6f09125957e7d7bc78bd6048d0663d71a22c7b1c4"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "02fe94c8d2818e9ceebc8d447d23dbc39fcbfd7222da572ea4b38703da3afabf"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "8db216ac2bf6ec48c3fae74de376f254154b685e59474fb06eb1a89f63428d34"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/s01p01/integration-es2023-failure.log",
+      "sha256": "369168ab7fbc0d6df9c747670550f0e9a57fbaa7b1cdb4ed744fe94b8b219e2f"
+    },
+    {
+      "path": "docs/evidence/s01p01/es2023-claim-observation.json",
+      "sha256": "db07fe783f4fd04019dac9f48472f636d00c0d4726d5abc9537ea81629b2217d"
+    },
+    {
+      "path": "docs/evidence/s01p01/types-es2023-red.log",
+      "sha256": "369168ab7fbc0d6df9c747670550f0e9a57fbaa7b1cdb4ed744fe94b8b219e2f"
+    },
+    {
+      "path": "docs/evidence/s01p01/types-es2023-red-result.json",
+      "sha256": "c0fe52e9ce84892b1f75065239c70140d0942020b9ba368af817312f997b6a0a"
+    },
+    {
+      "path": "docs/evidence/s01p01/types-es2023-green.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p01/types-es2023-green-result.json",
+      "sha256": "aaf2329193558444047de88565ce1b8a26efeef94bf208f40cf9e7d0ed2a378e"
+    },
+    {
+      "path": "docs/evidence/s01p01/capacity-deferred.log",
+      "sha256": "5711137ec5ebd5d2a4342b621919625924ef2e6788ef46df9d9635590a00082e"
+    },
+    {
+      "path": "docs/evidence/s01p01/capacity-deferred-result.json",
+      "sha256": "f31d96cbccc1018a01cbbdccd28a017db14b5d67b7c18a3ec1821d1f2e2f04f6"
+    },
+    {
+      "path": "docs/evidence/s01p01/es2023-compiler-coverage.json",
+      "sha256": "1a6a2f1d8e7532ed1eb4e3bef75d770000d06257ecfdbb692b0d2f0d4c4e2c1b"
+    }
+  ],
+  "delta": {
+    "changed": [
+      "apps/runner/src/runtime-capacity.test.ts",
+      "docs/evidence/s01p01/types.tsconfig.json"
+    ],
+    "otherImplementationUnchanged": [
+      "apps/runner/src/runtime.ts",
+      "apps/runner/src/admission-journal.ts",
+      "apps/runner/src/admission-journal.test.ts",
+      "docs/evidence/s01p01/check.mjs",
+      "docs/evidence/s01p01/vitest.config.mjs"
+    ],
+    "testBodiesMatchPreviousAfterOnlyDeferredSubstitution": true,
+    "rootConfigSha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+    "integrationRootConfigSha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+  },
+  "checks": {
+    "red": {
+      "label": "types-es2023-red",
+      "exitCode": 2,
+      "diagnostics": 8
+    },
+    "greenTypes": {
+      "label": "types-es2023-green",
+      "exitCode": 0,
+      "scope": "Four owned runner entries and 137 loaded worktree sources under unchanged strict root ES2023 options; not full root include glob."
+    },
+    "behavior": {
+      "label": "capacity-deferred",
+      "exitCode": 0,
+      "selected": 5,
+      "passed": 5,
+      "unselected": 18,
+      "pgTestsSelected": 0
+    },
+    "previousDistinctBehaviorCount": 46,
+    "newDistinctBehaviorTests": 0
+  },
+  "limitations": [
+    "I02 original failure log copied without modification; exit2 was reported by Execution Lead, original completion time not independently available.",
+    "Current worktree root compiler config is byte-identical to I02 root config. Only dependency resolution overrides/typeRoots and forced noEmit remain; no lib/strictness change.",
+    "No full-root noEmit claim: Lead retains final integration root check. No PG/provider/model/browser run; historical 46 checks not rerun."
+  ]
+}

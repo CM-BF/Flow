@@ -1,0 +1,127 @@
+{
+  "ownerHeadBeforeMetadata": "37f1385b78e79179f15162e1c90a4706d30aa1ab",
+  "proposedIntegratedMain": "2f4a5789ee13937914fa2c25161c8d5ed1071550",
+  "mergeBase": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "start": [
+    "apps/runner/src/claude.ts",
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/runner.test.ts",
+    "apps/runner/src/assistant-stream/stream.test.ts",
+    "apps/runner/src/context-observations/claude-summary-values.ts",
+    "packages/contracts/src/context-observation-event.ts",
+    "apps/runner/src/native-harness/settlement.ts"
+  ],
+  "staticReachableTsCount": 78,
+  "changedStaticInputs": [
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "state": "changed-on-main",
+      "bytes": 2028,
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "state": "new-on-main",
+      "bytes": 5176,
+      "sha256": "63aa5aa11744497b4c90e8927cbf90aed383f5a9a945b15358fdaeec8ff0f9ad"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "state": "changed-on-main",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "state": "new-on-main",
+      "bytes": 11246,
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "state": "changed-on-main",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "state": "new-on-main",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "state": "changed-on-main",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "state": "changed-on-main",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "state": "changed-on-main",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "state": "new-on-main",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "state": "new-on-main",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "state": "changed-on-main",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "state": "new-on-main",
+      "bytes": 3894,
+      "sha256": "ef737292af0d1f22eb6f5d412feb94f098b8a648ec198f5b1d6d2f35c55df81f"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "state": "changed-on-main",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "state": "changed-on-main",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "state": "changed-on-main",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be"
+    }
+  ],
+  "method": "Read-only static relative imports/re-exports plus @flow/contracts/client/storage aliases; this list is not an independent cherry-pick permission or dynamic-runtime closure proof",
+  "additionalServerEntry": "apps/server/src/events.ts depends on existing context store and newly integrated engineering completion guard; full approved main is proposed to preserve that exact combination",
+  "mergePreview": {
+    "mode": "legacy read-only git merge-tree three-tree",
+    "exit": 0,
+    "conflictHeaders": [],
+    "conflictMarkers": 0,
+    "writesToIndexOrWorktree": false,
+    "limitation": "Preview only; fresh final merge must stop on any conflict; binary output only scanned for marker/header counts"
+  },
+  "installation": "Owner worktree has no node_modules; use existing pinned main dependency paths for temporary validation config, but every @flow alias resolves to owner sources after sync. No installation or source-tree symlink proposed.",
+  "sourceWrites": 0,
+  "testsRun": 0,
+  "mainMerged": false
+}

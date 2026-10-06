@@ -1,0 +1,38 @@
+{
+  "version": "0.154.0",
+  "source": "existing local stable app-server generate-ts archive; no daemon/auth RPC",
+  "upstreamLicense": "Apache-2.0 (installed package metadata)",
+  "files": [
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/ts/InitializeParams.ts",
+      "bytes": 378,
+      "sha256": "bfc13b4fc9e37f629ee67b42d6e7f342ba38668ff528e738a911de5ebcfd545f"
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/ts/InitializeCapabilities.ts",
+      "bytes": 1002,
+      "sha256": "4abc3c8bf9f039c61a0ee0f92c21854e350ce9ef4ef6b770178040e47744cd7b"
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/ts/InitializeResponse.ts",
+      "bytes": 622,
+      "sha256": "4feabcb66d4bf01869d2780beaec1838d41b30213cdf57de175298aed01f5379"
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/ts/ClientInfo.ts",
+      "bytes": 236,
+      "sha256": "c3f38c70ffff810867af87a536d915dadea9e4b547343611c4e14731bcb7c648"
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/ts/ClientNotification.ts",
+      "bytes": 215,
+      "sha256": "96692c191ff9ac32c2688b46a0a04f23d15646937adc352f2adcc8211c6d17a0"
+    },
+    {
+      "path": "/tmp/flow-e02-schema.6svf7w/ts/RequestId.ts",
+      "bytes": 194,
+      "sha256": "beeb38dfd0b050b171141bd66d51663786a50a81cbe904ba9b006289a101fd39"
+    }
+  ],
+  "observation": "declarations only; no runtime conformance"
+}

@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "paths": { "@flow/contracts": ["../../packages/contracts/src/index.ts"], "@flow/client": ["../../packages/client/src/index.ts"] }
+  },
+  "include": ["./*.ts"],
+  "exclude": ["node_modules"]
+}

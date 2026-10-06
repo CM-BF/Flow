@@ -1,0 +1,31 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-06T09:08:06.701Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversation-steering/steering.css",
+      "apps/web/test/conversation-steering.browser.ts",
+      "apps/web/test/conversation-steering.fixture.ts",
+      "apps/web/test/conversation-steering.test.ts",
+      "docs/evidence/wpf-steering-control",
+      "plans/wpf-steering-control"
+    ],
+    "state": "active",
+    "branch": "codex/web-steering-control",
+    "origin": "new",
+    "taskId": "WPF-STEER01",
+    "worker": "workspace_panels_owner",
+    "claimId": "2bae5026-8490-4880-8f43-74bd1b9bb863",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+    "createdAt": "2026-10-06T08:45:01.297Z",
+    "updatedAt": "2026-10-06T08:45:01.297Z",
+    "observedAt": null,
+    "needsVerification": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "operation": "read-only snapshot; no migration/POST/stop/provider query",
+  "statusObservedAt": "2026-10-06T05:28:34.910Z",
+  "startedAt": "2026-10-06T04:36:01.589Z",
+  "sourceAtStart": {
+    "head": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+    "dirty": false
+  },
+  "sourceMeaning": "Recorded startup source, not a fresh attestation of every loaded module",
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 49219,
+      "pgid": 49219,
+      "startedAt": "Mon Oct  5 21:35:58 2026"
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 53414,
+      "pgid": 53414,
+      "startedAt": "Mon Oct  5 21:36:00 2026"
+    },
+    "web": {
+      "identity": "running",
+      "pid": 54573,
+      "pgid": 54573,
+      "startedAt": "Mon Oct  5 21:36:01 2026"
+    }
+  },
+  "center": {
+    "url": "http://127.0.0.1:61227",
+    "reachable": true
+  },
+  "webUrl": "http://127.0.0.1:61228",
+  "provider": "not-probed",
+  "databaseOwnership": "owned",
+  "database": {
+    "observedAt": "2026-10-06T05:28:35.053Z",
+    "markerMatches": true,
+    "runnerIdentityMatches": true,
+    "managedRunnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "unfinishedAttemptCount": 0,
+    "unfinishedByRunnerAndStatus": [],
+    "registeredRunners": [
+      {
+        "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "unfinishedAttempts": 0,
+        "lastHeartbeatAt": null,
+        "lastEventAt": null,
+        "managedHere": true,
+        "otherDeploymentState": "owned-process-record-checked"
+      }
+    ],
+    "otherNonrevokedRunnerCount": 0,
+    "taskCounts": [],
+    "maintenanceMigrationInstalled": false
+  },
+  "limitations": [
+    "Snapshot is not a lock or deployment authorization.",
+    "No idle heartbeat protocol proves that another runner process is offline.",
+    "Only the installation-recorded processes were checked; no broad process scan or stop."
+  ]
+}

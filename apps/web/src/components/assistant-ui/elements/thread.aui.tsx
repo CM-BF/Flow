@@ -69,6 +69,7 @@ import {
   type FC,
   type PropsWithChildren,
   type ReactNode,
+  type KeyboardEventHandler,
 } from "react";
 
 export type ThreadGroupPart = MessagePrimitive.GroupedParts.GroupPart;
@@ -83,6 +84,9 @@ export type ThreadGroupPart = MessagePrimitive.GroupedParts.GroupPart;
  * tool group; without it they render like any other tool call.
  */
 export type ThreadComponents = {
+  MessageActions?: ComponentType | undefined;
+  MessageFooter?: ComponentType | undefined;
+  ComposerActions?: ComponentType | undefined;
   AssistantMessage?: ComponentType | undefined;
   Welcome?: ComponentType | undefined;
   ToolFallback?: ToolCallMessagePartComponent | undefined;
@@ -129,7 +133,13 @@ export type ThreadProps = {
   components?: ThreadComponents | undefined;
   autoFocus?: boolean | undefined;
   beforeMessages?: ReactNode;
+  afterMessages?: ReactNode;
+  composerPlaceholder?: string;
+  sendLabel?: string;
   composerHeader?: ReactNode;
+  composerInputOnKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>;
+  /** Explicit host delivery intent; keeps the official composer draft/send lifecycle. */
+  composerSubmit?: () => void;
   footer?: ReactNode;
 };
 
@@ -176,31 +186,40 @@ export const Thread: FC<ThreadProps> = ({
   components = EMPTY_COMPONENTS,
   autoFocus = true,
   beforeMessages,
+  afterMessages,
+  composerPlaceholder = "Describe a task…",
+  sendLabel = "Create task",
   composerHeader,
+  composerInputOnKeyDown,
+  composerSubmit,
   footer,
 }) => {
   const isEmpty = useAuiState(isNewChatView);
 
   return (
-    <ThreadComponentsContext.Provider value={components}>
+    <ComposerLabelsContext.Provider value={{ placeholder: composerPlaceholder, sendLabel, onKeyDown: composerInputOnKeyDown, submit: composerSubmit }}><ThreadComponentsContext.Provider value={components}>
       <ThreadRoot
         isEmpty={isEmpty}
         autoFocus={autoFocus}
         beforeMessages={beforeMessages}
+        afterMessages={afterMessages}
         composerHeader={composerHeader}
         footer={footer}
       />
-    </ThreadComponentsContext.Provider>
+    </ThreadComponentsContext.Provider></ComposerLabelsContext.Provider>
   );
 };
+
+const ComposerLabelsContext = createContext<{ placeholder: string; sendLabel: string; onKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>; submit?: () => void }>({ placeholder: "Describe a task…", sendLabel: "Create task" });
 
 const ThreadRoot: FC<{
   isEmpty: boolean;
   autoFocus: boolean;
   beforeMessages?: ReactNode;
+  afterMessages?: ReactNode;
   composerHeader?: ReactNode;
   footer?: ReactNode;
-}> = ({ isEmpty, autoFocus, beforeMessages, composerHeader, footer }) => {
+}> = ({ isEmpty, autoFocus, beforeMessages, afterMessages, composerHeader, footer }) => {
   const { Welcome = ThreadWelcome } = useContext(ThreadComponentsContext);
 
   return (
@@ -242,6 +261,7 @@ const ThreadRoot: FC<{
             </ThreadPrimitive.Messages>
           </div>
 
+          {afterMessages}
           <ThreadPrimitive.ViewportFooter
             className={cn(
               "aui-thread-viewport-footer bg-background flex flex-col gap-4 overflow-visible pb-4 md:pb-6",
@@ -360,6 +380,7 @@ const SpokenMessage: FC = () => {
 };
 
 const SpokenActionBar: FC = () => {
+  const { MessageActions } = useContext(ThreadComponentsContext);
   return (
     <ActionBarPrimitive.Root
       hideWhenRunning
@@ -376,6 +397,7 @@ const SpokenActionBar: FC = () => {
           </AuiIf>
         </TooltipIconButton>
       </ActionBarPrimitive.Copy>
+    {MessageActions && <MessageActions />}
     </ActionBarPrimitive.Root>
   );
 };
@@ -439,8 +461,9 @@ const ThreadSuggestionItem: FC = () => {
 };
 
 const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
+  const { placeholder, onKeyDown, submit } = useContext(ComposerLabelsContext);
   return (
-    <ComposerPrimitive.Root className="aui-composer-root relative flex w-full flex-col">
+    <ComposerPrimitive.Root className="aui-composer-root relative flex w-full flex-col" onSubmit={submit ? event => { event.preventDefault(); submit(); } : undefined}>
       <ComposerPrimitive.AttachmentDropzone asChild>
         <div
           data-slot="aui_composer-shell"
@@ -448,14 +471,14 @@ const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
         >
           <ComposerAttachments />
           <ComposerPrimitive.Input
-            placeholder="Describe a task…"
+            onKeyDown={onKeyDown}
+            placeholder={placeholder}
             cancelOnEscape={false}
             className="aui-composer-input caret-primary placeholder:text-muted-foreground/60 max-h-48 min-h-10 w-full resize-none bg-transparent px-2.5 py-1 text-base leading-6 outline-none"
             rows={1}
             autoFocus={autoFocus}
             enterKeyHint="send"
             aria-label="Message input"
-            data-extension-slot="chat.composer.actions"
           />
           <ComposerAction />
         </div>
@@ -465,8 +488,12 @@ const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
 };
 
 const ComposerAction: FC = () => {
+  const { sendLabel, submit } = useContext(ComposerLabelsContext);
+  const canSend = useAuiState(s => s.composer.canSend);
+  const { ComposerActions } = useContext(ThreadComponentsContext);
   return (
     <div className="aui-composer-action-wrapper relative flex items-center justify-end">
+      {ComposerActions && <ComposerActions />}
       <AuiIf condition={(s) => s.thread.capabilities.attachments}>
         <ComposerAddAttachment />
       </AuiIf>
@@ -510,19 +537,19 @@ const ComposerAction: FC = () => {
               s.composer.submission === undefined)
           }
         >
-          <ComposerPrimitive.Send asChild>
+          {submit ? <TooltipIconButton tooltip={sendLabel} side="bottom" type="submit" disabled={!canSend} variant="default" size="icon" className="aui-composer-send size-7 rounded-full" aria-label={sendLabel}><ArrowUpIcon className="aui-composer-send-icon size-4" /></TooltipIconButton> : <ComposerPrimitive.Send asChild>
             <TooltipIconButton
-              tooltip="Create task"
+              tooltip={sendLabel}
               side="bottom"
               type="button"
               variant="default"
               size="icon"
               className="aui-composer-send size-7 rounded-full"
-              aria-label="Create task"
+              aria-label={sendLabel}
             >
               <ArrowUpIcon className="aui-composer-send-icon size-4" />
             </TooltipIconButton>
-          </ComposerPrimitive.Send>
+          </ComposerPrimitive.Send>}
         </AuiIf>
         <AuiIf
           condition={(s) =>
@@ -562,6 +589,7 @@ const AssistantMessage: FC = () => {
     ToolGroup,
     ReasoningGroup,
     TaskGroup: TaskGroupComponent,
+    MessageFooter,
   } = useContext(ThreadComponentsContext);
   const groupBy = TaskGroupComponent ? taskAwareGroupBy : messageGroupBy;
 
@@ -662,11 +690,13 @@ const AssistantMessage: FC = () => {
         <BranchPicker />
         <AssistantActionBar />
       </div>
+      {MessageFooter && <MessageFooter />}
     </MessagePrimitive.Root>
   );
 };
 
 const AssistantActionBar: FC = () => {
+  const { MessageActions } = useContext(ThreadComponentsContext);
   return (
     <ActionBarPrimitive.Root
       hideWhenRunning
@@ -731,6 +761,7 @@ const AssistantActionBar: FC = () => {
           </ActionBarPrimitive.ExportMarkdown>
         </ActionBarMorePrimitive.Content>
       </ActionBarMorePrimitive.Root>
+    {MessageActions && <MessageActions />}
     </ActionBarPrimitive.Root>
   );
 };
@@ -748,6 +779,7 @@ const UserImagePart: ImageMessagePartComponent = (part) => (
 );
 
 const UserMessage: FC = () => {
+  const { MessageFooter } = useContext(ThreadComponentsContext);
   return (
     <MessagePrimitive.Root
       data-slot="aui_user-message-root"
@@ -767,6 +799,7 @@ const UserMessage: FC = () => {
         </div>
       </div>
 
+      {MessageFooter && <div style={{ gridColumn: "1 / -1" }} className="min-w-0 w-full"><MessageFooter /></div>}
       <BranchPicker
         data-slot="aui_user-branch-picker"
         className="col-span-full col-start-1 -me-1 justify-end"
@@ -776,6 +809,7 @@ const UserMessage: FC = () => {
 };
 
 const UserActionBar: FC = () => {
+  const { MessageActions } = useContext(ThreadComponentsContext);
   return (
     <ActionBarPrimitive.Root
       hideWhenRunning
@@ -789,6 +823,7 @@ const UserActionBar: FC = () => {
           </TooltipIconButton>
         </ActionBarPrimitive.Edit>
       </AuiIf>
+    {MessageActions && <MessageActions />}
     </ActionBarPrimitive.Root>
   );
 };

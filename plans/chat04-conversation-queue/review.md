@@ -1,0 +1,29 @@
+# CHAT04 独立审查
+
+状态：APPROVED
+Review target commit：fac202e32cc4c223e2e6abc64c67d11d39e439b0
+
+Reviewer：Root / Mika，gpt-6-astra ultra；独立只读审查时间：2026-10-06 04:41:23 UTC。
+Base：dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；审查时 clean metadata HEAD aef5c6fcd3d811673e8eeb8cd67f225ba0941b8e。范围为[status](status.md)定义的15个源码/fixture/consumer harness文件。
+
+当前修复已复审：Root于2026-10-06 04:54:46 UTC APPROVED fac202e32cc4c223e2e6abc64c67d11d39e439b0，核clean01c8d2e11409794e52f52572eac9f04b30dd66c6。两处局部options是唯一实现/测试delta，32原断言保留；15source/21日志hash匹配，manifest SHA256 f673ebd66f46e8e1b19c4ef1bf8858cdac3508315385731f9383f26ed2b40e96。32/32、noEmit exit0、自有库remaining[]已核，无blocking finding，未重跑。旧factory不消费flag，默认生产scan/集成false行为由Lead另验；该边界保留。以下原ae9模块APPROVED通过14文件字节不变继承到此目标。
+
+## 原模块审查执行与证据
+
+逐文件检查共同admission、conversation→task锁序、runner非锁事实检查、task/wake/turn/item同事务、FIFO/一次提升、公平扫描、有限pending/SQL前缀/UTF8 preview、pause成功竞争与重启、双CAS、旧receipt与新GET、空queue、显式resume和pin/session门禁。15文件与target及工作树字节一致；19原始日志hash全部匹配。checks.json SHA256：d6d51fa6eeafb8a324db157b36aff828c7e91a4b01358088b5270a3a2441d4da。
+
+复核54个不同用例（32queue +22原consumer）、noEmit实际起止/exit0；原consumer source hash吻合、生成副本已删除、两个自有临时库remaining[]。未独立重复运行工程测试。运行证据来源2f40ac2到最终target仅contracts/conversations.ts类型和注释变化，其余14文件逐字节不变，保留原运行证据合理。
+
+## Findings 与修复
+
+| ID | Severity / Blocking | 发现与修复 | 复审 |
+| --- | --- | --- | --- |
+| CHAT04-R01 | 兼容性 / blocking | queue literal true不兼容旧center false；owner在ae9d7203改boolean并注释，server仍返回true，noEmit重查exit0 | Root已核，resolved |
+
+本scope无未解决blocking或nonblocking finding。
+
+## 结论与限制
+
+APPROVED严格覆盖上述15文件模块/fixture。生产client/exports、migrate/routes/scan生命周期与Web true/false能力解析必须由各owner另验并成套集成；main尚未接收该target。审查不代替实际Web入口或Flow整体目标完成。claim保留review/集成期，owner不越scope修改生产接线。
+
+复审结论：APPROVED fac202e；owner于2026-10-06 04:55:48 UTC记录。仅测试seam变更，无新产品Interface/FSM/存储变更。

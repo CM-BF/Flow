@@ -1,0 +1,127 @@
+diff --git a/packages/client/src/assistant-stream.test.ts b/packages/client/src/assistant-stream.test.ts
+new file mode 100644
+index 0000000..38fb394
+--- /dev/null
++++ b/packages/client/src/assistant-stream.test.ts
+@@ -0,0 +1,38 @@
++import { createServer } from 'node:http';
++import { once } from 'node:events';
++import type { AddressInfo } from 'node:net';
++import { expect, it } from 'vitest';
++import { conversationCreationSchema } from '@flow/contracts';
++import { FlowClient } from './index.js';
++
++it('opts in only snapshot reads and keeps stable creation receipts, task bindings, patch cursors and errors', async () => {
++  const requests: { url: string; protocol: string | undefined; key: string | undefined; body: unknown }[] = [];
++  const responseBody = { taskId: 'task/1', attemptId: 'attempt/1', patches: [], nextCursor: 9, hasMore: false };
++  const server = createServer(async (request, response) => {
++    expect(request.headers.authorization).toBe('Bearer stream-owner');
++    const chunks: Buffer[] = []; for await (const part of request) chunks.push(Buffer.from(part));
++    requests.push({ url: request.url!, protocol: request.headers['x-flow-assistant-stream'] as string | undefined,
++      key: request.headers['idempotency-key'] as string | undefined, body: chunks.length ? JSON.parse(Buffer.concat(chunks).toString()) : undefined });
++    const denied = request.url!.includes('denied');
++    response.writeHead(denied ? 403 : 200, { 'content-type': 'application/json' });
++    response.end(JSON.stringify(denied ? { error: { code: 'wrong_role', message: 'Owner only.' } } : responseBody));
++  }).listen(0, '127.0.0.1');
++  await once(server, 'listening');
++  const options = { baseUrl: `http://127.0.0.1:${(server.address() as AddressInfo).port}`, token: 'stream-owner' };
++  const old = new FlowClient(options); const client = new FlowClient({ ...options, assistantStreamProtocol: 'patch-v1' });
++  const input = conversationCreationSchema.parse({ title: 'Exact original title 古😀' });
++  try {
++    await old.conversation('chat/1'); await client.conversation('chat/1');
++    await client.createConversation(input, 'stable-create');
++    expect(await client.assistantStream('task/1', { after: 'block/0', limit: 2 })).toEqual(responseBody);
++    expect(await client.assistantStreamPatches('task/1', { attemptId: 'attempt/1', after: 9, limit: 8 })).toEqual(responseBody);
++    expect(await client.assistantStreamBlock('task/1', 'block/1')).toEqual(responseBody);
++    await expect(client.assistantStreamBlock('denied', 'block/1')).rejects.toMatchObject({ status: 403, code: 'wrong_role' });
++    await expect(client.assistantStreamPatches('task/1', { attemptId: 'attempt/1' }, AbortSignal.abort())).rejects.toThrow();
++    expect(requests.map(r => r.url)).toEqual(['/api/conversations/chat%2F1', '/api/conversations/chat%2F1', '/api/conversations',
++      '/api/tasks/task%2F1/assistant-stream?after=block%2F0&limit=2', '/api/tasks/task%2F1/assistant-stream/patches?attemptId=attempt%2F1&after=9&limit=8',
++      '/api/tasks/task%2F1/assistant-stream/block%2F1', '/api/tasks/denied/assistant-stream/block%2F1']);
++    expect(requests.map(r => r.protocol)).toEqual([undefined, 'patch-v1', undefined, undefined, undefined, undefined, undefined]);
++    expect(requests[2]).toMatchObject({ key: 'stable-create', body: input });
++  } finally { await new Promise<void>(resolve => server.close(() => resolve())); }
++});
+diff --git a/packages/client/src/index.ts b/packages/client/src/index.ts
+index 2eff88f..ae940e7 100644
+--- a/packages/client/src/index.ts
++++ b/packages/client/src/index.ts
+@@ -1,4 +1,5 @@
+ import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
++import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
+ import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
+ import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
+ import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
+@@ -26,15 +27,36 @@ export class FlowApiError extends Error {
+   }
+ }
+ 
+-export interface ClientOptions { baseUrl: string; token: string }
++export interface ClientOptions {
++  baseUrl: string;
++  token: string;
++  /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
++  assistantStreamProtocol?: 'patch-v1';
++}
+ 
+ export class FlowClient {
+   private readonly baseUrl: string;
+   private readonly token: string;
++  private readonly assistantStreamProtocol: 'patch-v1' | undefined;
+ 
+   constructor(options: ClientOptions) {
+     this.baseUrl = options.baseUrl.replace(/\/$/, '');
+     this.token = options.token;
++    this.assistantStreamProtocol = options.assistantStreamProtocol;
++  }
++
++  assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {
++    const query = new URLSearchParams();
++    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
++    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal });
++  }
++  assistantStreamPatches(taskId: string, options: { attemptId: string; after?: number; limit?: number }, signal?: AbortSignal): Promise<AssistantStreamPatchPage> {
++    const query = new URLSearchParams({ attemptId: options.attemptId });
++    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
++    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal });
++  }
++  assistantStreamBlock(taskId: string, blockId: string, signal?: AbortSignal): Promise<AssistantStreamBlock> {
++    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal });
+   }
+ 
+   fetchPluginPackage(pluginId: string, versionId: string, input: PackageFetchRequest, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
+@@ -276,7 +298,9 @@ export class FlowClient {
+     return this.request(`/api/conversations${query.size ? `?${query}` : ''}`, { signal });
+   }
+   conversation(id: string, signal?: AbortSignal): Promise<ConversationSnapshot> {
+-    return this.request(`/api/conversations/${encodeURIComponent(id)}`, { signal });
++    return this.request(`/api/conversations/${encodeURIComponent(id)}`, {
++      signal, ...(this.assistantStreamProtocol === 'patch-v1' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v1' } } : {}),
++    });
+   }
+   conversationTurns(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationTurnPage> {
+     const query = new URLSearchParams();
+diff --git a/packages/contracts/src/conversations.ts b/packages/contracts/src/conversations.ts
+index a8e881e..7bdfc47 100644
+--- a/packages/contracts/src/conversations.ts
++++ b/packages/contracts/src/conversations.ts
+@@ -42,7 +42,8 @@ export interface ConversationCapabilities {
+   /** Capability varies by center version; older centers may not expose durable queues. */
+   queue: boolean;
+   steer: false;
+-  /** Missing/false means unsupported. Enable only with the matching live text consumer. */
++  /** Missing/false means unsupported. GET advertises patch-v1 readability only after explicit
++   * client negotiation; creation ACK stays false. This does not promise provider deltas. */
+   liveAssistantText?: boolean;
+   perTurnModel: false;
+   perTurnThinking: false;
+diff --git a/packages/contracts/src/index.ts b/packages/contracts/src/index.ts
+index 0d23093..824e3c9 100644
+--- a/packages/contracts/src/index.ts
++++ b/packages/contracts/src/index.ts
+@@ -21,3 +21,5 @@ export * from './goal-graph-runs.js';
+ export * from './native-activity.js';
+ export * from './plugin-package-fetches.js';
+ export * from './goal-context.js';
++
++export * from "./assistant-stream.js";

@@ -1,0 +1,54 @@
+import { chromium } from '@playwright/test';
+import { writeFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const base = process.argv[2];
+if (!/^http:\/\/127\.0\.0\.1:\d+\/$/.test(base ?? '')) throw new Error('Pass own loopback preview origin.');
+const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const errors = [];
+const observations = [];
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } });
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(`${base}#architecture`);
+  await page.locator('#architecture-canvas [data-node]').first().waitFor();
+  assert.match(await page.locator('#architecture-baseline').textContent(), /8f1481df880cf5077e1ddb9a8f302fe700a7ece8/);
+  for (const id of ['runtime', 'modules', 'data', 'states', 'dependencies']) {
+    await page.locator('#architecture-view').selectOption(id);
+    const nodes = page.locator('#architecture-canvas [data-node]');
+    const count = await nodes.count();
+    assert.ok(count > 5);
+    const overflow = await nodes.evaluateAll(items => items.flatMap(item => [...item.querySelectorAll('text')].filter(text => text.getBBox().x + text.getBBox().width > 222).map(text => text.textContent)));
+    assert.deepEqual(overflow, [], `${id} node labels must fit their boxes`);
+    await nodes.last().focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await nodes.last().getAttribute('aria-pressed'), 'true');
+    await page.locator('#architecture-node-content summary').click();
+    const source = await page.locator('#architecture-node-content a').getAttribute('href');
+    assert.ok(source.includes('/blob/8f1481df880cf5077e1ddb9a8f302fe700a7ece8/'));
+    observations.push({ view: id, nodes: count, keyboardSelect: true, source });
+  }
+  await page.locator('#architecture-view').selectOption('modules');
+  await page.locator('#architecture-fit').click();
+  await page.screenshot({ path: 'docs/evidence/d06/modules-light.png', fullPage: true });
+  await page.locator('#architecture-view').selectOption('states');
+  await page.locator('#architecture-fit').click();
+  await page.screenshot({ path: 'docs/evidence/d06/states-light.png', fullPage: true });
+  await page.locator('#theme').selectOption('dark');
+  await page.screenshot({ path: 'docs/evidence/d06/states-dark.png', fullPage: true });
+  await page.locator('#architecture-view').selectOption('data');
+  await page.locator('#architecture-fit').click();
+  await page.locator('[data-node="assistant"]').click();
+  assert.match(await page.locator('#architecture-node-content').innerText(), /PG details/);
+  await page.screenshot({ path: 'docs/evidence/d06/data-dark.png', fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.locator('#architecture-fit').click();
+  await page.screenshot({ path: 'docs/evidence/d06/data-dark-narrow.png', fullPage: true });
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  await page.locator('#theme').selectOption('light');
+  await page.screenshot({ path: 'docs/evidence/d06/data-light-narrow.png', fullPage: true });
+  await page.locator('#architecture-zoom-in').click();
+  await page.locator('#architecture-zoom-out').click();
+  assert.deepEqual(errors, []);
+  await writeFile('docs/evidence/d06/browser-checks.json', JSON.stringify({ at: new Date().toISOString(), base, browser: await browser.version(), passed: true, observations, pageErrors: errors, narrowWidth: 390, reducedMotion: 'reduce', scope: 'dynamic local architecture preview; no model or database mutation' }, null, 2) + '\n');
+} finally { await browser.close(); }

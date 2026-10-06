@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-06T12:16:20.132155+00:00",
+  "sourceMain": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "scopes": [
+    {
+      "worktree": "engineering-delivery",
+      "head": "32e9ae8cc07f4b1b54bde98590f5938c02e5d41a",
+      "paths": [
+        "plans/eng01-engineering-delivery"
+      ],
+      "files": 3
+    },
+    {
+      "worktree": "tui-client",
+      "head": "c5e8be97b8326f29338c5bdbfa5761b29c30dd40",
+      "paths": [
+        "plans/tui01-terminal-client",
+        "docs/evidence/tui01/goal-session-next-design.md"
+      ],
+      "files": 4
+    },
+    {
+      "worktree": "plan-status-review",
+      "head": "9a21eaad7ef64857d67a5d125f4f20697d6f395e",
+      "paths": [
+        "plans/flow-001-architecture/status.md",
+        "plans/flow-001-architecture/full-plan-matrix.md"
+      ],
+      "files": 2
+    },
+    {
+      "worktree": "m2-shared-foundation",
+      "head": "db318ed60a1bb30e2128302d0ed3adf93c7b5346",
+      "paths": [
+        "plans/f01-shared-domains",
+        "docs/evidence/f01/goal-session-export-review.json"
+      ],
+      "files": 4
+    },
+    {
+      "worktree": "engineering-calculator-receipt",
+      "head": "82c91b1646f20cf567a48883f7d78f38cde51c78",
+      "paths": [
+        "plans/eng01f-calculator-receipt",
+        "docs/evidence/eng01f"
+      ],
+      "files": 17
+    },
+    {
+      "worktree": "goal-session-controller",
+      "head": "5b394c6e9f27ec9db3531e9d61e50bcf5ed7a8ab",
+      "paths": [
+        "plans/o12-goal-session",
+        "docs/evidence/o12"
+      ],
+      "files": 49
+    }
+  ],
+  "checks": "docs-only owner snapshots; no product/test modifications or provider call"
+}

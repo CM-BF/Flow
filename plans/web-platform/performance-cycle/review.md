@@ -1,15 +1,9 @@
-# WPF-PERF01 审查
+# WPF-PERF01 review 已移交
 
-**NOT_STARTED**（未来实施review）；父管理文档target `c075bb5c00ac2f27d54dd264982be30261a9dc51` 已获root独立文档审阅APPROVED，范围仅需求/边界/计划一致性，不覆盖未来实现。
+2026-10-06：w01_owner / gpt-6-astra ultra 已在独立 web-performance / codex/web-performance 建立唯一权威三件套。此目录仅迁移入口，不再维护第二份进度；稳定TODO IDs WPF-PERF01-01～03由新owner继承。
 
-- Target：首版管理文档候选待提交；实际完整SHA由提交后handoff提供，review者先核验。
-- Base：`d444608ab6c796c731e44e51a892868bf39bec2a`；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management`，branch `codex/web-platform-management`。
-- Scope：[plan.md](plan.md)、[status.md](status.md)及本文件；仅计划方向/需求追溯/owner边界，非未来实现approval。
-- Criteria：父REQ对应、唯一owner、明确依赖/验收/未实施、无重复系统或越权写入、相对链接与TODO一致。
-- 已执行：作者文档自查待记录；独立review未执行。未执行：所有未来产品行为/性能检查。
-- Findings/severity/blocking：未评估，不等于无问题。
-- 作者回应/修复commit/复审：等待独立结论，结论须绑定完整target。
+- [唯一权威 review.md](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/review.md)
+- 父需求与协调见[WPF-001](../plan.md)，研究出处/边界见[research](../../../docs/evidence/web-platform/research.md)，正式receipt与scope见[集成清单](../../../docs/evidence/web-platform/integration-checklist.md)。
+- 固定输入已审M02 c526c1c889437ee39155d669921577995195c74e，首文档c7bf1a81e5d21a602636f388ff565bae1844d83e。claim4553f315-7fb4-4fe6-babb-0f4a8e5057c6 v1 committed03:07:10.630Z，当前版本续工仍核PG；仅benchmark/evidence，无生产写界。
 
-```text
-请只读审查此计划及父WPF-001。先核验实际worktree/branch/base/head/dirty及允许范围，对用户原话、稳定REQ、owner、阶段与验收逐项比对。确认没有把排队写成完成、没有覆盖其他owner、没有把UI扩展当完整X01生命周期。记录实际target SHA、检查、severity/blocking与限制；修改交唯一owner执行。未经审查保持NOT_STARTED，未来实现不得继承本次文档结论。
-```
+历史准备见管理a22d0ef79492a3b86e86058575cc88c4b77a435f及更早提交。当前测量以真实App和公共projection隔离探针分报告，M02预I01基线不冒称I01最终性能；具体结果/候选/检查/review/main只读新owner status，不注册此nested源。

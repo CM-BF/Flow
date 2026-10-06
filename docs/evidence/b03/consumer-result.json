@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "experiments/bounded-preview/consumer.generated.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner",
+    "--config",
+    "experiments/bounded-preview/vitest.consumer.config.ts"
+  ],
+  "testBodiesSha256": "7e0869cbec9b3770fb7a963125cb131bf9e71fe0890f1aa77c93441eaaabb525",
+  "sourcePath": "apps/server/src/conversations/conversations.test.ts",
+  "sourceSha256": "43546004f5eafb7b275206fd1bd1cb83744b4c9aa1006913b49e71f776dbaaa4",
+  "generatedSha256": "51d23078b3f25d573c4f4dd5c77d1054d22a42ccbedcfe2f910e0fc4435f89d3",
+  "startedAt": "2026-10-06T05:01:08.453Z",
+  "endedAt": "2026-10-06T05:01:25.684Z",
+  "exitCode": 0,
+  "changes": "Only relative imports and unique test resource setup/cleanup. All original test cases/assertions retained. No production index edits."
+}

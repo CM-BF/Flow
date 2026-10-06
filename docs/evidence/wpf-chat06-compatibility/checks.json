@@ -1,0 +1,51 @@
+{
+  "recordedAt": "2026-10-06T06:50:26Z",
+  "sourceHeadObservedAfterChecks": "b76d52967d1ff730fab851a7cb87e39ade3f7c29",
+  "sourceDirtyObservedAfterChecks": [
+    " M apps/web/src/conversations/projection.ts",
+    " M apps/web/test/conversation-projection.test.ts",
+    "?? docs/evidence/wpf-chat06-compatibility/green-direct.log",
+    "?? docs/evidence/wpf-chat06-compatibility/install.log",
+    "?? docs/evidence/wpf-chat06-compatibility/red-direct.log",
+    "?? docs/evidence/wpf-chat06-compatibility/typecheck.log"
+  ],
+  "sourceHashes": {
+    "apps/web/src/conversations/projection.ts": "2de9e456aea4b37d253a08a383f76c8a0df12bf2247d49c9cc492587ab8ecd62",
+    "apps/web/test/conversation-projection.test.ts": "c8f3d3c39f5c6515b5f86075b60d09a6e813834a7443eb0e7710f126d5d3748f"
+  },
+  "red": {
+    "file": "red-direct.log",
+    "total": 77,
+    "passed": 63,
+    "failed": 14,
+    "durationMs": 315
+  },
+  "green": {
+    "file": "green-direct.log",
+    "startLocal": "2026-10-05T23:48:47-07:00",
+    "selected": [
+      "apps/web/test/conversation-projection.test.ts",
+      "apps/web/test/conversation-outbox.test.ts",
+      "apps/web/test/conversation-queue.test.ts"
+    ],
+    "counts": {
+      "projection": 77,
+      "outbox": 11,
+      "queue": 16
+    },
+    "total": 104,
+    "passed": 104,
+    "durationMs": 931
+  },
+  "typecheck": {
+    "file": "typecheck.log",
+    "passed": true,
+    "command": "pnpm --filter @flow/web typecheck"
+  },
+  "runtime": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "limitations": "Wire inputs use mocked fetch Response with real FlowClient; no actual HTTP server, browser, DB, model, opt-in or streaming-consumer verification. Hashes captured after checks before implementation commit; source unchanged since green run."
+}

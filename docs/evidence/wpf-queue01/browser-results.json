@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-10-06T05:38:18.696Z",
+  "endedAt": "2026-10-06T05:38:23.659Z",
+  "sourceCommit": "c80d1769442b7b610397efe04f49da0bb1eeda6e",
+  "sourceFiles": {
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx": "0aab6261b27cbbb818a9be0150353aae902fa05101997a4ef7ef112ce86cca0e",
+    "apps/web/src/conversations/ConversationThread.tsx": "2b19593e057c55be623d9de5e25727ee0121d7c99a7d863fecfbc1230b04454d",
+    "apps/web/src/conversations/projection.ts": "99a3f4592d7fe8923061b01f2336c3dc38482d1b3e7929b1f23962551e750858",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "c3718b0e567b043a00f31d402be204688a3db5c38a4421fecf5ae7aebf9393c6",
+    "apps/web/src/conversations/queue/commands.ts": "ca58ae059571de9b757767784365006b2130cd82935997fe7e2ea774c52a35da",
+    "apps/web/src/conversations/queue/projection.ts": "6221c0d51c448bec53d4dc5dd48152eda483104630e1a6d1e37b24e3141912f9",
+    "apps/web/src/conversations/queue/queue-elements.tsx": "31df655f4836511653fc991d5ece7fdb33ec21a2e6ccce586d80440718d875fa",
+    "apps/web/test/conversation-projection.test.ts": "ed27391bffce8074f23abf5a90b2316354690eaa6b4846190c05f4dc66aba852",
+    "apps/web/test/conversation-queue.test.ts": "80d639d9b86b6a43389f1a082a18f0aa8b23667a49756cface2d9c0a01fe8b35",
+    "apps/web/test/conversation-queue.fixture.ts": "dbc40701633abbb7a493d8be1c12dc6d33f113e89cb80cc9b6cd354c2006e908",
+    "apps/web/test/conversation-queue.browser.ts": "913b279b22d4d61659fe1f334e5dec97a6fd9e257a5290e227126031bdc7375d"
+  },
+  "production": false,
+  "checks": [
+    "legacy false makes no queue reads and leaves queue delivery disabled",
+    "running official Thread accepts explicit queue intent by Enter and button without turning it into steering",
+    "Shift Enter, composition and unsupported steer do not send; oversized UTF-8 draft stays intact before any HTTP allocation",
+    "unknown admission keeps its original identity through offline reconnect and a separate editable draft",
+    "pause replay is historical; fresh current execution is confirmed and cancelled with a separate receipt",
+    "same-revision terminal state enables explicit Continue; only server promotion adds a turn",
+    "cancelling an item already promoted reports that outcome without cancelling its execution",
+    "waiting pagination is explicit, message content is lazy and cached, and failed refresh preserves marked stale facts",
+    "reload restores durable waiting and paused facts, without claiming page-local receipt recovery",
+    "connection replacement isolates same-id queue details and ignores the previous connection's late response",
+    "compact queue actions and official composer fit both themes at 390px with reduced motion and keyboard operation"
+  ],
+  "pageErrors": [],
+  "failure": null,
+  "scope": "Actual Flow App via private HTTP fixtures; no model, real center or DB; receipt recovery across reload explicitly not implemented"
+}

@@ -1,0 +1,15 @@
+Preparing actual old Web b1c2e39837c2208e6fc2c59a80e16797f26448b5
+Preparing actual new Web 8d8ab520a9d43c7b9dafb22911416ee799ebf665
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/tools/personal-preview/web-artifact.mjs:13
+function fail(code) { const error = new Error(code); error.code = code; throw error; }
+                                    ^
+
+Error: WEB_RELEASE_NAMESPACE_INVALID
+    at fail (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/tools/personal-preview/web-artifact.mjs:13:37)
+    at prepareWebArtifact (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/tools/personal-preview/web-artifact.mjs:76:69)
+    at startReleaseFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/apps/web/test/web-release-compatibility.fixture.ts:126:40)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/apps/web/test/web-release-compatibility.browser.ts:8:17) {
+  code: 'WEB_RELEASE_NAMESPACE_INVALID'
+}
+
+Node.js v24.20.0

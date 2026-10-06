@@ -1,6 +1,7 @@
 import { compareImplementation, integrationProof } from './proof.mjs';
 import { assignmentSnapshot } from './coordination/ledger.mjs';
 import { humanOverview } from './human.mjs';
+import { resolveTaskLinks } from './task-links.mjs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { realpath } from 'node:fs/promises';
@@ -57,7 +58,11 @@ async function aggregateTask(task, registry, observations, now) {
   if (stale) issues.push(ageHours < 0 ? 'status 更新时间在未来，需核对时钟。' : `status 未同步或超过 ${registry.staleAfterHours} 小时，当前进度待核实。`);
   const implementationProof = status.implementation && liveGit.available ? await compareImplementation(task.worktree, status.implementation.target, liveGit.head, status.implementation) : { state: 'unknown', reason: '来源不可核验' };
   if (review.state === 'approved') {
-    const proof = status.implementation && liveGit.available ? await compareImplementation(task.worktree, review.target, liveGit.head, status.implementation) : { state: 'unknown', reason: '实现范围未知' };
+    const proof = status.implementation && liveGit.available
+      ? review.target && review.target === status.implementation.target
+        ? implementationProof
+        : await compareImplementation(task.worktree, review.target, liveGit.head, status.implementation)
+      : { state: 'unknown', reason: '实现范围未知' };
     let state = 'unknown';
     if (proof.state === 'unchanged' && implementationProof.state === 'unchanged') state = 'approved';
     else if (proof.state === 'changed' || implementationProof.state === 'changed') state = 'outdated';
@@ -76,6 +81,8 @@ export async function aggregate(registry, now = Date.now()) {
   ]);
   await Promise.all(tasks.map(async task => { task.main = await integrationProof(task, registry.mainWorktree, main); }));
   for (const task of tasks) task.assignments = assignments.state === 'available' ? assignments.claims.filter(claim => claim.taskId === task.id && claim.state !== 'released').map(claim => ({ ...claim, matchesSource: claim.worktree === task.worktree && claim.branch === task.branch })) : null;
+  const links = resolveTaskLinks(tasks);
+  for (const task of tasks) task.links = links.get(task.id);
   const registered = new Set(tasks.map(task => task.id));
   const unregisteredAssignments = assignments.claims.filter(claim => claim.state !== 'released' && !registered.has(claim.taskId));
   const milestoneSource = tasks.find(task => task.id === 'FLOW-003');

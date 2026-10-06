@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-06T11:22:23.796961+00:00",
+  "base": "648e331c58043cf7ee307300521ab1c628cb2ee1",
+  "kind": "registry and canonical metadata only",
+  "inputs": [
+    {
+      "source": "6d38331687eabc86860501c661e2dcdef3fa2b63",
+      "scopes": [
+        "apps/execution-dashboard/src/registry.mjs",
+        "plans/d05-architecture-view",
+        "docs/evidence/d05"
+      ]
+    },
+    {
+      "source": "58165c51312f7b9e90277d2dd9602769567141c6",
+      "scopes": [
+        "plans/tui01c-stream-activity",
+        "docs/evidence/tui01c"
+      ]
+    },
+    {
+      "source": "b0ae9ad41eb4c56195f06f31bc2487288e968d27",
+      "scopes": [
+        "plans/eng01b-engineering-profile",
+        "docs/evidence/eng01b"
+      ]
+    },
+    {
+      "source": "0e021c33d0d5a051dda2ce4dae30e4a33482e40e",
+      "scopes": [
+        "plans/eng01-engineering-delivery",
+        "docs/evidence/eng01"
+      ]
+    },
+    {
+      "source": "fed5bcdaf84c9d985ce64759c7e1dd82de8da65a",
+      "scopes": [
+        "plans/wpf-release02-tuple-types",
+        "docs/evidence/wpf-release02"
+      ]
+    }
+  ],
+  "checks": "137 unique sources, real three documents and evidence directory, parser/human/parent/co-lead present; no product retest",
+  "personalRuntime": "unchanged; backend b1c2e398, Web 8d8ab520/caa1 release v2"
+}

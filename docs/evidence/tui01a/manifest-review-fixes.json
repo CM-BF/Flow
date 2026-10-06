@@ -1,0 +1,79 @@
+{
+  "implementationTarget": "29b546537862c562569ce9df74919f2239d94df8",
+  "deltaBase": "334448c4b78a1138cc4e9a9dd5dee56e33f2fb35",
+  "originalImplementation": "9e5588d4d6b24234bb829c23269e6e72caca44af",
+  "source": [
+    {
+      "path": "apps/tui/src/lifecycle.ts",
+      "bytes": 394,
+      "sha256": "423b170a5bea8dc4fcb5c405a6d1b7559f16e45c3d2ce7a439728ff50c186107"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 2989,
+      "sha256": "9bb9781d4d435ead2b117177b97f0ab46b12af131100ca9c968bd73a109620f9"
+    },
+    {
+      "path": "apps/tui/src/recovery.test.ts",
+      "bytes": 7533,
+      "sha256": "0a7de5a239f174d9092d9cc7eba2eeab7a5e9ca947f8001fa2b607d0032cf5e3"
+    },
+    {
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "bytes": 2542,
+      "sha256": "ea61e032a3e6a5f1981bee694198e871f73a44cded01539f9c9c7f998a809a40"
+    },
+    {
+      "path": "packages/interaction/src/controller.test.ts",
+      "bytes": 9728,
+      "sha256": "fa80f27b62c03565c8d77d90290c53ba5166b508a0eabf7309a85996edaf0501"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 13437,
+      "sha256": "6ba964a2a7d94e42956be538f529a6ea8b1f0d6efd12b7b1ccd63e9e1fe7bca9"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/tui01a/review-recovery-consumers-red.txt",
+      "bytes": 3893,
+      "sha256": "efa0796057b38cfcb88ccec99362c07ddc029803a3a6b9476eba9387247c196c"
+    },
+    {
+      "path": "docs/evidence/tui01a/review-recovery-final.txt",
+      "bytes": 372,
+      "sha256": "7180c77b80eb76973af4181f9e13f3b59fa23f758bec1c8fcf0b7219f04bb60c"
+    },
+    {
+      "path": "docs/evidence/tui01a/review-recovery-red.txt",
+      "bytes": 3907,
+      "sha256": "c230eef73be906087d573701db0b3bd1360767b795f6a828889311517b506490"
+    },
+    {
+      "path": "docs/evidence/tui01a/review-recovery-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01a/review-recovery-types-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "originalReview": {
+    "path": "docs/evidence/tui01a/independent-review-initial.md",
+    "bytes": 2726,
+    "sha256": "2783e0bd2d931e8dd01d59cc56469c67164c449057686babfc7652d6a82daff1"
+  },
+  "checks": {
+    "passed": 19,
+    "overlapsOriginal": 11,
+    "addedDistinct": 8,
+    "combinedDistinct": 25,
+    "typecheckExitCode": 0,
+    "providerQueries": 0,
+    "pgOrPtyRerun": false
+  },
+  "reviewStatus": "PENDING_DELTA_REVIEW"
+}

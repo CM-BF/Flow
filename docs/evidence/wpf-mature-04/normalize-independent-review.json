@@ -1,0 +1,72 @@
+{
+  "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+  "verdict": "APPROVED",
+  "reviewer": {
+    "name": "status_read",
+    "model": "gpt-6-astra"
+  },
+  "reviewedAt": "2026-10-06 11:24:10 UTC",
+  "receivedBy": "Mika",
+  "recordedAt": "2026-10-06 11:25:14 UTC",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "method": "Independent read-only review; no tests/PG/provider rerun",
+  "reviewedHead": "5293d55cdd6bc18a2437a62737847b01f99b06e5",
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-04/normalize-manifest.json",
+    "sha256": "fe21b9217fb8fa2eaee2a88e1b2fde07c57bf218303b642c485d396a6e7f7d9f",
+    "bindings": 24,
+    "targetGitEqualsWorktreeAndHashes": true
+  },
+  "checks": {
+    "selectedDistinct": 58,
+    "passed": 58,
+    "breakdown": {
+      "helper": 8,
+      "mapper": 27,
+      "projection": 23
+    },
+    "strictNoEmitExit": 0,
+    "initialFixtureTypecheckExit2Preserved": true
+  },
+  "verified": [
+    "Host validation precedes response validation",
+    "Null resolvedModel still validates all allowlisted response readings",
+    "Known resolved model must match without using requested alias",
+    "At most 32 categories, four stable kinds, safe per-kind sums",
+    "Existing mapper IDs/order/unknown reasons/provenance/attempt-only constraints retained",
+    "Original 26 mapper assertions byte-identical with only one additional case",
+    "No SDK runtime imports, IO, fake refs, emit or global wiring",
+    "9ac domain 10 sources, 8 raw, 4 support and fixed history manifest/receipt unchanged"
+  ],
+  "scope": [
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.test.ts",
+      "bytes": 6270,
+      "sha256": "b7492fc438723f2ca6543250c0da3fedaa12856af7d2af835030e869235ce216"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "bytes": 2905,
+      "sha256": "4637f84caeb8bef5e002fe2c2e98b306813e0462d24a670d441e44fc6da21ae5"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "bytes": 13246,
+      "sha256": "fa71594307d87e7c8e53d204dcd7448391993cbac2e33a80161466552a58d040"
+    }
+  ],
+  "excluded": [
+    "actual producer/runtime",
+    "SDK/provider execution",
+    "current/remaining/consumed cut",
+    "Web or global mounting"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "implementation": "7403b56b98070848c189c2d36663cb89846977be",
+  "preparedSourceDigest": "af062a6b456cc964cf6d39f3719a9fb672b94d3b449fbeca32fcb0117b38bbbb",
+  "base": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+  "budget": "SEALED",
+  "approvalId": "flow-o08-native-20261006-071420",
+  "authorizationKind": "GO one-shot allocation under existing user local-login and low-cost prototype authorization, not a new direct user approval",
+  "sources": [
+    {
+      "path": "experiments/native-graph-acceptance/README.md",
+      "bytes": 7668,
+      "sha256": "609a73ff142b8c18ad6fe32849b37a8438f8dc989e609e0dbb4dace2069824d7"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/config.mjs",
+      "bytes": 4372,
+      "sha256": "1d6fd1ed97164b3f72de507c4aea66cba1645d30d87a736ecafae871ab36e039"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/driver.mjs",
+      "bytes": 15469,
+      "sha256": "7a0bed2497649c10ada08f6c21f594707f9e1a0ba4f2454adeb93bb9e6666fb7"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/driver.test.mjs",
+      "bytes": 1314,
+      "sha256": "3d200a790156ad93d2c2918a2b7871cdd3abb1c78b402d2910ded15bb903917a"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/guard.mjs",
+      "bytes": 7880,
+      "sha256": "0eacf129f8a44d95e83052f5b949cf4c5a42c82f9ebfffa1b38259b3a99308de"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/guard.test.mjs",
+      "bytes": 3959,
+      "sha256": "8a39d7093b0c2216b8e4f7a05c15c5ba8261bedd4a5d40a5f928d1e1a78f1b77"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/managed.test.mjs",
+      "bytes": 5455,
+      "sha256": "0e7e8c855c5e985a8d17d287c1a0178acfcea94a956fe4360a9e6aa5aa4bb71a"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/peer.mjs",
+      "bytes": 2877,
+      "sha256": "839ae672fa23258d255a9d59f25ce015050330173e0ee8c2b0d2e0a55ef5aea3"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/process-fixture.mjs",
+      "bytes": 804,
+      "sha256": "8cf5a749cf4cc6b81ae7c4f4f915bc2632255a6c0f8e4f828006e12ef4a98e35"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/process.test.mjs",
+      "bytes": 3410,
+      "sha256": "6c691b7c6979309ad646721204d268e7e8bcb97a6605e4fd0e1071ba8fbc689d"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/worker.mjs",
+      "bytes": 3536,
+      "sha256": "002588847264fc338f505bdcf908dd0eddb606ff6fbb376a3cd6d8c6c7fe35e0"
+    }
+  ],
+  "productDependencies": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 16372,
+      "sha256": "aa1dab64465c5cd7a4d422985cd5a24b10bbc4df13d7bb07fc64b1f19a769f12"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 6848,
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4052,
+      "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "bytes": 3283,
+      "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "bytes": 2307,
+      "sha256": "df1b2c75c4042bee4ea01179f51af452465ec8b01707a3cdf41946a1b6338298"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/o08/native-permit-20261006-071420.json",
+      "bytes": 755,
+      "sha256": "a88b36061e9312afc003cf4e6378f06905a8e571ae868dcd76ff0b53eefe98f7"
+    },
+    {
+      "path": "docs/evidence/o08/attempts/o08-attempt-flow-o08-native-20261006-071420.json",
+      "bytes": 241,
+      "sha256": "9aeca06eaf0abfd65c8c33805e48d5a9d1512e735c81e0dc0a4c1095256d8f77"
+    },
+    {
+      "path": "docs/evidence/o08/attempts/o08-attempt-flow-o08-native-20261006-071420.json.query-started",
+      "bytes": 190,
+      "sha256": "02b186741966a9803e72c0c0da15d8904cadbfd60f3e27cce244c8d8014f1062"
+    },
+    {
+      "path": "docs/evidence/o08/native-20261006-071420.txt",
+      "bytes": 185,
+      "sha256": "de8656d00f262adf652cf197996849d381e631773002fcf2f4d2e2d6b41e9b05"
+    },
+    {
+      "path": "docs/evidence/o08/native-20261006-071420.json",
+      "bytes": 32735,
+      "sha256": "af00249d20bf2715460e33f4596fd0faf7a9cb9b8b31a05fb975f1aa1098ee5a"
+    },
+    {
+      "path": "docs/evidence/o08/native-analysis.json",
+      "bytes": 2707,
+      "sha256": "343cbc0ad6855ed987677245038d5f306aae7ec52d4ac536800c67449b87c06b"
+    }
+  ],
+  "startedAt": "2026-10-06T07:15:28.322Z",
+  "finishedAt": "2026-10-06T07:15:45.216Z",
+  "nativeQueryCalls": 1,
+  "queryAdapterCalls": 1,
+  "sdkTurns": 4,
+  "sdkEstimatedCostUsd": 0.031880200000000004,
+  "programOutcome": "failed-or-unknown",
+  "programExitCode": 1,
+  "semanticAcceptance": "PENDING independent review",
+  "cleanup": {
+    "runnerStopped": true,
+    "centerClosed": true,
+    "databaseRemoved": true,
+    "privateTemporaryDirectoryRemoved": true
+  },
+  "processGroup": {
+    "pgid": 95453,
+    "state": "stopped"
+  },
+  "sourceUnchanged": true,
+  "noRetries": true
+}

@@ -1,0 +1,743 @@
+{
+  "revision": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
+  "sdk": "0.3.290",
+  "manifest": {
+    "materialFiles": [],
+    "allowRead": false,
+    "requireReadApproval": false,
+    "model": "claude-sonnet-5-5",
+    "maxTurns": 2,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 60000
+  },
+  "startedAt": "2026-10-06T04:20:44.541Z",
+  "database": "flow_chat_live_910ac310610c4674",
+  "privateDir": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-chat-live-PoSWXN",
+  "nonce": "19529bbbb212c4a218e75902ededb3cc",
+  "checks": [
+    {
+      "name": "configured profile equals isolated requested manifest",
+      "passed": true,
+      "at": "2026-10-06T04:20:46.184Z"
+    },
+    {
+      "name": "turn 1: succeeded and independently verified",
+      "passed": true,
+      "at": "2026-10-06T04:20:53.575Z"
+    },
+    {
+      "name": "turn 1: typed body belongs to current attempt",
+      "passed": true,
+      "at": "2026-10-06T04:20:53.575Z"
+    },
+    {
+      "name": "turn 1: no tools reported or permission refusals",
+      "passed": true,
+      "at": "2026-10-06T04:20:53.575Z"
+    },
+    {
+      "name": "turn 1: SDK usage and cost known",
+      "passed": true,
+      "at": "2026-10-06T04:20:53.575Z"
+    },
+    {
+      "name": "turn 1: conservative cost threshold",
+      "passed": true,
+      "at": "2026-10-06T04:20:53.575Z"
+    },
+    {
+      "name": "first actual assistant body acknowledges memory",
+      "passed": true,
+      "at": "2026-10-06T04:20:53.575Z"
+    },
+    {
+      "name": "no automatic browser detail requests before explicit inspection",
+      "passed": true,
+      "at": "2026-10-06T04:20:55.450Z"
+    },
+    {
+      "name": "first dedicated browser fully exited",
+      "passed": true,
+      "at": "2026-10-06T04:20:55.589Z"
+    },
+    {
+      "name": "second turn remains in original durable conversation",
+      "passed": true,
+      "at": "2026-10-06T04:20:56.767Z"
+    },
+    {
+      "name": "turn 2: succeeded and independently verified",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.620Z"
+    },
+    {
+      "name": "turn 2: typed body belongs to current attempt",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.620Z"
+    },
+    {
+      "name": "turn 2: no tools reported or permission refusals",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.620Z"
+    },
+    {
+      "name": "turn 2: SDK usage and cost known",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.620Z"
+    },
+    {
+      "name": "turn 2: conservative cost threshold",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.620Z"
+    },
+    {
+      "name": "real native resume recalls nonce without repeating it in second input",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.622Z"
+    },
+    {
+      "name": "distinct tasks and attempts preserve native session",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.622Z"
+    },
+    {
+      "name": "conservative sum of SDK session samples within approved total",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.622Z"
+    },
+    {
+      "name": "exactly two admitted browser sends",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.708Z"
+    },
+    {
+      "name": "exactly two durable ordered turns without duplicate replies",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.722Z"
+    },
+    {
+      "name": "no browser page errors",
+      "passed": true,
+      "at": "2026-10-06T04:21:01.722Z"
+    }
+  ],
+  "turns": [
+    {
+      "turn": {
+        "id": "6a2d8baf-1cb5-4570-840f-7c1ca8f04a39",
+        "conversationId": "c61e9d0a-6c3e-42bb-bd6b-ce80f0aff948",
+        "number": 1,
+        "createdAt": "2026-10-06T04:20:47.291Z",
+        "user": {
+          "role": "user",
+          "text": "请在本次对话记住标记 19529bbbb212c4a218e75902ededb3cc，现在只回复“已记住”，不要复述标记。"
+        },
+        "task": {
+          "id": "4d92c78c-7f05-4941-80c0-01d0019bea43",
+          "title": "请在本次对话记住标记 19529bbbb212c4a218e75902ededb3cc，现在只回复“已记住”，不要复述标记。",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T04:20:47.287Z",
+          "updatedAt": "2026-10-06T04:20:53.550Z"
+        },
+        "assistant": {
+          "state": "available",
+          "role": "assistant",
+          "messageId": "0e9958a506ff1fdd3dc369e0ebc89420accdab466cd8730fef4b324e6914538d",
+          "text": "已记住",
+          "truncated": false,
+          "contentRef": {
+            "kind": "detail",
+            "id": "aad09452-4ffc-4b15-bf6c-172c651d7b54",
+            "title": "Assistant reply",
+            "taskId": "4d92c78c-7f05-4941-80c0-01d0019bea43",
+            "attemptId": "f90a59b9-a3f4-4858-9bce-1e61a02ed213"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "source": "claude.sdk.result",
+            "messageId": "0e9958a506ff1fdd3dc369e0ebc89420accdab466cd8730fef4b324e6914538d",
+            "taskId": "4d92c78c-7f05-4941-80c0-01d0019bea43",
+            "attemptId": "f90a59b9-a3f4-4858-9bce-1e61a02ed213",
+            "nativeSessionId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab",
+            "eventId": "a64c530c-6902-43d2-acbf-1dd3be1edae9",
+            "sourceMessageId": "8963231b-219e-4b7e-8330-15b83a132c83",
+            "contentDigest": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde",
+            "detailId": "aad09452-4ffc-4b15-bf6c-172c651d7b54"
+          }
+        },
+        "effective": {
+          "model": "claude-sonnet-5-5",
+          "tools": [],
+          "thinking": "unknown",
+          "permissionMode": "dontAsk",
+          "runnerRequested": {
+            "model": "claude-sonnet-5-5",
+            "thinking": "disabled",
+            "permissionMode": "dontAsk"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "messageId": "0e9958a506ff1fdd3dc369e0ebc89420accdab466cd8730fef4b324e6914538d",
+            "taskId": "4d92c78c-7f05-4941-80c0-01d0019bea43",
+            "attemptId": "f90a59b9-a3f4-4858-9bce-1e61a02ed213",
+            "detailId": "aad09452-4ffc-4b15-bf6c-172c651d7b54"
+          }
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "4d92c78c-7f05-4941-80c0-01d0019bea43",
+          "title": "Execution details"
+        }
+      },
+      "task": {
+        "id": "4d92c78c-7f05-4941-80c0-01d0019bea43",
+        "title": "请在本次对话记住标记 19529bbbb212c4a218e75902ededb3cc，现在只回复“已记住”，不要复述标记。",
+        "harness": "claude",
+        "status": "succeeded",
+        "verificationStatus": "passed",
+        "createdAt": "2026-10-06T04:20:47.287Z",
+        "updatedAt": "2026-10-06T04:20:53.550Z",
+        "prompt": "请在本次对话记住标记 19529bbbb212c4a218e75902ededb3cc，现在只回复“已记住”，不要复述标记。",
+        "entries": [
+          {
+            "id": "6b40158e-0edb-465f-9a27-3138167a90bf",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T04:20:51.475Z",
+            "reference": {
+              "id": "336af274-8ade-4dd0-82bb-71482589200a",
+              "title": "Native session"
+            }
+          },
+          {
+            "id": "415659c9-47bb-423c-bb9b-e825b2a29b84",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T04:20:53.481Z",
+            "reference": {
+              "id": "ce715608-3223-41fa-a1a8-1358e28da18c",
+              "title": "Usage: claude.modelUsage"
+            }
+          },
+          {
+            "id": "8b1e1b69-e734-427c-bf46-8e07b3da8e36",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T04:20:53.498Z",
+            "reference": {
+              "id": "773c770b-1cb2-4dfd-a758-2cb343bd53e1",
+              "title": "Usage: claude.modelUsage"
+            }
+          },
+          {
+            "id": "b7b0d651-821a-43f6-bd1d-edcda0ebf014",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T04:20:53.517Z",
+            "reference": {
+              "id": "260a4c69-04f5-46fb-b780-4c18ae978846",
+              "title": "Claude result"
+            }
+          },
+          {
+            "id": "b68c9c8c-f891-45fe-aa0f-95206e3e3ad4",
+            "kind": "reference",
+            "cursor": 5,
+            "createdAt": "2026-10-06T04:20:53.526Z",
+            "reference": {
+              "id": "69eb9215-cf4c-4ef4-809d-a3d12bbe2029",
+              "title": "Verification passed"
+            }
+          },
+          {
+            "id": "26820878-0968-4f81-8be4-ac434ebea416",
+            "kind": "reference",
+            "cursor": 6,
+            "createdAt": "2026-10-06T04:20:53.541Z",
+            "reference": {
+              "id": "aad09452-4ffc-4b15-bf6c-172c651d7b54",
+              "title": "Assistant reply"
+            }
+          }
+        ],
+        "watermark": 6,
+        "hasMore": false,
+        "pendingDecision": null,
+        "attempt": {
+          "id": "f90a59b9-a3f4-4858-9bce-1e61a02ed213",
+          "runnerId": "2968214f-8bd1-4c07-a25c-8d1989e6d130",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-06T04:21:03.533Z",
+          "nativeSessionId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab"
+        },
+        "usage": {
+          "costUsd": 0.004281,
+          "costKind": "sdk_estimate",
+          "incomplete": false,
+          "inputTokens": 941,
+          "outputTokens": 17
+        }
+      },
+      "usage": [
+        {
+          "id": "eef3e390-bb50-4477-b58c-1ba4827f4616",
+          "sequence": 2,
+          "type": "usage",
+          "source": "claude.modelUsage",
+          "scope": "session",
+          "scopeId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab",
+          "sampleId": "863f2589fb336b4435afb78378ba7f3bd8a8224ba2b42d7bcea726d24c7b046e",
+          "cumulative": true,
+          "baseline": {
+            "kind": "new-session"
+          },
+          "accounting": "authoritative",
+          "costKind": "sdk_estimate",
+          "model": "claude-haiku-4-5-20251001",
+          "inputTokens": 939,
+          "outputTokens": 12,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0,
+          "costUsd": 0.0009989999999999999
+        },
+        {
+          "id": "d8db883f-442c-4970-ab43-7b9be44ad0ac",
+          "sequence": 3,
+          "type": "usage",
+          "source": "claude.modelUsage",
+          "scope": "session",
+          "scopeId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab",
+          "sampleId": "8e428bc1291b40e0474d948fc196c4967d5661e9afaa71c37567da274bffa656",
+          "cumulative": true,
+          "baseline": {
+            "kind": "new-session"
+          },
+          "accounting": "authoritative",
+          "costKind": "sdk_estimate",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 2,
+          "outputTokens": 5,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 807,
+          "costUsd": 0.0032819999999999998
+        }
+      ],
+      "cost": 0.004281,
+      "details": [
+        {
+          "id": "336af274-8ade-4dd0-82bb-71482589200a",
+          "title": "Native session",
+          "kind": "session",
+          "content": "{\"id\":\"96fd4e60-c119-4285-80d0-cbd098a89dc9\",\"sequence\":1,\"type\":\"session\",\"nativeSessionId\":\"f3e33626-864f-4ad1-8d32-cb4ca13951ab\",\"adapterVersion\":\"claude-sdk-0.3.290-v2\",\"resources\":[\"sdk:0.3.290\",\"runtime:2.1.290\",\"model:claude-sonnet-5-5\",\"plugin:cc-plugin-agents-md\",\"plugin:cc-plugin-telemetry\",\"plugin:cc-plugin-plugin-authoring\",\"skill:design\",\"skill:doctor\",\"skill:plugin-authoring\"]}",
+          "mediaType": "application/json"
+        },
+        {
+          "id": "ce715608-3223-41fa-a1a8-1358e28da18c",
+          "title": "Usage: claude.modelUsage",
+          "kind": "usage",
+          "content": "{\"id\":\"eef3e390-bb50-4477-b58c-1ba4827f4616\",\"sequence\":2,\"type\":\"usage\",\"source\":\"claude.modelUsage\",\"scope\":\"session\",\"scopeId\":\"f3e33626-864f-4ad1-8d32-cb4ca13951ab\",\"sampleId\":\"863f2589fb336b4435afb78378ba7f3bd8a8224ba2b42d7bcea726d24c7b046e\",\"cumulative\":true,\"baseline\":{\"kind\":\"new-session\"},\"accounting\":\"authoritative\",\"costKind\":\"sdk_estimate\",\"model\":\"claude-haiku-4-5-20251001\",\"inputTokens\":939,\"outputTokens\":12,\"cacheReadTokens\":0,\"cacheWriteTokens\":0,\"costUsd\":0.0009989999999999999}",
+          "mediaType": "application/json"
+        },
+        {
+          "id": "773c770b-1cb2-4dfd-a758-2cb343bd53e1",
+          "title": "Usage: claude.modelUsage",
+          "kind": "usage",
+          "content": "{\"id\":\"d8db883f-442c-4970-ab43-7b9be44ad0ac\",\"sequence\":3,\"type\":\"usage\",\"source\":\"claude.modelUsage\",\"scope\":\"session\",\"scopeId\":\"f3e33626-864f-4ad1-8d32-cb4ca13951ab\",\"sampleId\":\"8e428bc1291b40e0474d948fc196c4967d5661e9afaa71c37567da274bffa656\",\"cumulative\":true,\"baseline\":{\"kind\":\"new-session\"},\"accounting\":\"authoritative\",\"costKind\":\"sdk_estimate\",\"model\":\"claude-sonnet-5-5\",\"inputTokens\":2,\"outputTokens\":5,\"cacheReadTokens\":0,\"cacheWriteTokens\":807,\"costUsd\":0.0032819999999999998}",
+          "mediaType": "application/json"
+        },
+        {
+          "id": "260a4c69-04f5-46fb-b780-4c18ae978846",
+          "title": "Claude result",
+          "kind": "artifact",
+          "content": "已记住",
+          "mediaType": "text/plain",
+          "artifactVersion": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+        },
+        {
+          "id": "69eb9215-cf4c-4ef4-809d-a3d12bbe2029",
+          "title": "Verification passed",
+          "kind": "verification",
+          "content": "{\"id\":\"e51fee05-82be-4050-8042-e7b0cb3d5d9f\",\"sequence\":5,\"type\":\"verification\",\"artifactId\":\"944557b5-670d-4f7e-801a-2640837165a6\",\"artifactVersion\":\"0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde\",\"verifierId\":\"flow.text\",\"verifierVersion\":\"1\",\"inputDigest\":\"c9eee56e1b19753599cfc5a34d722b7c408adb08c4bce246d14364adae6cde4b\",\"result\":\"passed\",\"evidence\":\"Saved artifact is nonempty.\"}",
+          "mediaType": "application/json",
+          "artifactVersion": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+        },
+        {
+          "id": "aad09452-4ffc-4b15-bf6c-172c651d7b54",
+          "title": "Assistant reply",
+          "kind": "detail",
+          "content": "已记住",
+          "mediaType": "text/plain"
+        }
+      ],
+      "normalizedSdkUsage": true
+    },
+    {
+      "turn": {
+        "id": "3d819327-9e91-48b7-978f-23213580d5c0",
+        "conversationId": "c61e9d0a-6c3e-42bb-bd6b-ce80f0aff948",
+        "number": 2,
+        "createdAt": "2026-10-06T04:20:56.777Z",
+        "user": {
+          "role": "user",
+          "text": "刚才要求你记住的标记是什么？只回复该标记。"
+        },
+        "task": {
+          "id": "a8acdec1-e24c-4e18-b05c-d6351a20b784",
+          "title": "请在本次对话记住标记 19529bbbb212c4a218e75902ededb3cc，现在只回复“已记住”，不要复述标记。",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T04:20:56.775Z",
+          "updatedAt": "2026-10-06T04:21:01.381Z"
+        },
+        "assistant": {
+          "state": "available",
+          "role": "assistant",
+          "messageId": "084728588094891e914aff9b0d7868f7e168e538fa5373df6951df43458653e9",
+          "text": "19529bbbb212c4a218e75902ededb3cc",
+          "truncated": false,
+          "contentRef": {
+            "kind": "detail",
+            "id": "bee87c14-b512-4efe-b107-f1f20494cb0f",
+            "title": "Assistant reply",
+            "taskId": "a8acdec1-e24c-4e18-b05c-d6351a20b784",
+            "attemptId": "a0de47e5-9575-4c68-8932-2d088bb63498"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "source": "claude.sdk.result",
+            "messageId": "084728588094891e914aff9b0d7868f7e168e538fa5373df6951df43458653e9",
+            "taskId": "a8acdec1-e24c-4e18-b05c-d6351a20b784",
+            "attemptId": "a0de47e5-9575-4c68-8932-2d088bb63498",
+            "nativeSessionId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab",
+            "eventId": "519123f3-3fb8-460c-8f24-326b3bbcf386",
+            "sourceMessageId": "30fb6217-e1e9-4ae1-b8ca-288bbf0ad95e",
+            "contentDigest": "41ffa3a09d80485c879c0f3518b674a0edaea63b15da4aff983db047cf47db0d",
+            "detailId": "bee87c14-b512-4efe-b107-f1f20494cb0f"
+          }
+        },
+        "effective": {
+          "model": "claude-sonnet-5-5",
+          "tools": [],
+          "thinking": "unknown",
+          "permissionMode": "dontAsk",
+          "runnerRequested": {
+            "model": "claude-sonnet-5-5",
+            "thinking": "disabled",
+            "permissionMode": "dontAsk"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "messageId": "084728588094891e914aff9b0d7868f7e168e538fa5373df6951df43458653e9",
+            "taskId": "a8acdec1-e24c-4e18-b05c-d6351a20b784",
+            "attemptId": "a0de47e5-9575-4c68-8932-2d088bb63498",
+            "detailId": "bee87c14-b512-4efe-b107-f1f20494cb0f"
+          }
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "a8acdec1-e24c-4e18-b05c-d6351a20b784",
+          "title": "Execution details"
+        }
+      },
+      "task": {
+        "id": "a8acdec1-e24c-4e18-b05c-d6351a20b784",
+        "title": "请在本次对话记住标记 19529bbbb212c4a218e75902ededb3cc，现在只回复“已记住”，不要复述标记。",
+        "harness": "claude",
+        "status": "succeeded",
+        "verificationStatus": "passed",
+        "createdAt": "2026-10-06T04:20:56.775Z",
+        "updatedAt": "2026-10-06T04:21:01.381Z",
+        "prompt": "刚才要求你记住的标记是什么？只回复该标记。",
+        "entries": [
+          {
+            "id": "eabe00fa-daa4-483a-9251-cfc53ee128af",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T04:20:58.686Z",
+            "reference": {
+              "id": "2906ad2e-ed5c-4530-acd9-d3c17e786fb3",
+              "title": "Native session"
+            }
+          },
+          {
+            "id": "e4950648-0cb3-43c2-98b2-a4321fc36995",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T04:21:01.185Z",
+            "reference": {
+              "id": "f844c35f-cfd2-4876-b4f5-96e96add2a2a",
+              "title": "Usage: claude.modelUsage"
+            }
+          },
+          {
+            "id": "b7fd0b44-db92-4fbb-8f29-679c878f25a4",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T04:21:01.218Z",
+            "reference": {
+              "id": "d4fc4fdb-4414-4b03-ada8-fe3b6ea33f58",
+              "title": "Usage: claude.modelUsage"
+            }
+          },
+          {
+            "id": "4daa82b6-4574-4798-99cb-555ccfd25359",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T04:21:01.275Z",
+            "reference": {
+              "id": "19faa434-0109-49c2-a349-0475af160dfc",
+              "title": "Claude result"
+            }
+          },
+          {
+            "id": "c25b95ec-05a1-4ae3-bb38-671e8d4ebf6b",
+            "kind": "reference",
+            "cursor": 5,
+            "createdAt": "2026-10-06T04:21:01.304Z",
+            "reference": {
+              "id": "e7ab8dc8-7c82-430c-97f9-50c1dc49dbd0",
+              "title": "Verification passed"
+            }
+          },
+          {
+            "id": "fe31da8c-873b-47a6-ab2a-e9510906923b",
+            "kind": "reference",
+            "cursor": 6,
+            "createdAt": "2026-10-06T04:21:01.347Z",
+            "reference": {
+              "id": "bee87c14-b512-4efe-b107-f1f20494cb0f",
+              "title": "Assistant reply"
+            }
+          }
+        ],
+        "watermark": 6,
+        "hasMore": false,
+        "pendingDecision": null,
+        "attempt": {
+          "id": "a0de47e5-9575-4c68-8932-2d088bb63498",
+          "runnerId": "2968214f-8bd1-4c07-a25c-8d1989e6d130",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-06T04:21:11.323Z",
+          "nativeSessionId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab"
+        },
+        "usage": {
+          "costUsd": null,
+          "costKind": "unknown",
+          "incomplete": true,
+          "inputTokens": null,
+          "outputTokens": null
+        }
+      },
+      "usage": [
+        {
+          "id": "5b544720-2512-4e07-aee6-e19f2117e95e",
+          "sequence": 2,
+          "type": "usage",
+          "source": "claude.modelUsage",
+          "scope": "session",
+          "scopeId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab",
+          "sampleId": "0aa4bc6cd795f6f565ddc97ee7417b08904c8cf1eeb1a94cfa31a4a04e4ac8bc",
+          "cumulative": true,
+          "baseline": {
+            "kind": "unknown"
+          },
+          "accounting": "authoritative",
+          "costKind": "sdk_estimate",
+          "model": "claude-haiku-4-5-20251001",
+          "inputTokens": 939,
+          "outputTokens": 12,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0,
+          "costUsd": 0.0009989999999999999
+        },
+        {
+          "id": "3825b8ea-7b8e-4964-ab9d-978e1145127c",
+          "sequence": 3,
+          "type": "usage",
+          "source": "claude.modelUsage",
+          "scope": "session",
+          "scopeId": "f3e33626-864f-4ad1-8d32-cb4ca13951ab",
+          "sampleId": "a427f6817ad58f0822a9c934d646e39d985420788807d7d1a68247f8932a21d7",
+          "cumulative": true,
+          "baseline": {
+            "kind": "unknown"
+          },
+          "accounting": "authoritative",
+          "costKind": "sdk_estimate",
+          "model": "claude-sonnet-5-5",
+          "inputTokens": 4,
+          "outputTokens": 27,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 1971,
+          "costUsd": 0.008162
+        }
+      ],
+      "cost": 0.009161,
+      "details": [
+        {
+          "id": "2906ad2e-ed5c-4530-acd9-d3c17e786fb3",
+          "title": "Native session",
+          "kind": "session",
+          "content": "{\"id\":\"429a96ce-c10f-4c80-b05f-e34be82fb31c\",\"sequence\":1,\"type\":\"session\",\"nativeSessionId\":\"f3e33626-864f-4ad1-8d32-cb4ca13951ab\",\"adapterVersion\":\"claude-sdk-0.3.290-v2\",\"resources\":[\"sdk:0.3.290\",\"runtime:2.1.290\",\"model:claude-sonnet-5-5\",\"plugin:cc-plugin-agents-md\",\"plugin:cc-plugin-telemetry\",\"plugin:cc-plugin-plugin-authoring\",\"skill:design\",\"skill:doctor\",\"skill:plugin-authoring\"]}",
+          "mediaType": "application/json"
+        },
+        {
+          "id": "f844c35f-cfd2-4876-b4f5-96e96add2a2a",
+          "title": "Usage: claude.modelUsage",
+          "kind": "usage",
+          "content": "{\"id\":\"5b544720-2512-4e07-aee6-e19f2117e95e\",\"sequence\":2,\"type\":\"usage\",\"source\":\"claude.modelUsage\",\"scope\":\"session\",\"scopeId\":\"f3e33626-864f-4ad1-8d32-cb4ca13951ab\",\"sampleId\":\"0aa4bc6cd795f6f565ddc97ee7417b08904c8cf1eeb1a94cfa31a4a04e4ac8bc\",\"cumulative\":true,\"baseline\":{\"kind\":\"unknown\"},\"accounting\":\"authoritative\",\"costKind\":\"sdk_estimate\",\"model\":\"claude-haiku-4-5-20251001\",\"inputTokens\":939,\"outputTokens\":12,\"cacheReadTokens\":0,\"cacheWriteTokens\":0,\"costUsd\":0.0009989999999999999}",
+          "mediaType": "application/json"
+        },
+        {
+          "id": "d4fc4fdb-4414-4b03-ada8-fe3b6ea33f58",
+          "title": "Usage: claude.modelUsage",
+          "kind": "usage",
+          "content": "{\"id\":\"3825b8ea-7b8e-4964-ab9d-978e1145127c\",\"sequence\":3,\"type\":\"usage\",\"source\":\"claude.modelUsage\",\"scope\":\"session\",\"scopeId\":\"f3e33626-864f-4ad1-8d32-cb4ca13951ab\",\"sampleId\":\"a427f6817ad58f0822a9c934d646e39d985420788807d7d1a68247f8932a21d7\",\"cumulative\":true,\"baseline\":{\"kind\":\"unknown\"},\"accounting\":\"authoritative\",\"costKind\":\"sdk_estimate\",\"model\":\"claude-sonnet-5-5\",\"inputTokens\":4,\"outputTokens\":27,\"cacheReadTokens\":0,\"cacheWriteTokens\":1971,\"costUsd\":0.008162}",
+          "mediaType": "application/json"
+        },
+        {
+          "id": "19faa434-0109-49c2-a349-0475af160dfc",
+          "title": "Claude result",
+          "kind": "artifact",
+          "content": "19529bbbb212c4a218e75902ededb3cc",
+          "mediaType": "text/plain",
+          "artifactVersion": "41ffa3a09d80485c879c0f3518b674a0edaea63b15da4aff983db047cf47db0d"
+        },
+        {
+          "id": "e7ab8dc8-7c82-430c-97f9-50c1dc49dbd0",
+          "title": "Verification passed",
+          "kind": "verification",
+          "content": "{\"id\":\"70c895da-88c6-405c-9107-f3e2d2bd4866\",\"sequence\":5,\"type\":\"verification\",\"artifactId\":\"340e8f02-32e3-41df-8fec-2aaf3dd1924d\",\"artifactVersion\":\"41ffa3a09d80485c879c0f3518b674a0edaea63b15da4aff983db047cf47db0d\",\"verifierId\":\"flow.text\",\"verifierVersion\":\"1\",\"inputDigest\":\"5d49cae12bb5176b79dc12d2d910fc156345229048705fd7e26efd078991d024\",\"result\":\"passed\",\"evidence\":\"Saved artifact is nonempty.\"}",
+          "mediaType": "application/json",
+          "artifactVersion": "41ffa3a09d80485c879c0f3518b674a0edaea63b15da4aff983db047cf47db0d"
+        },
+        {
+          "id": "bee87c14-b512-4efe-b107-f1f20494cb0f",
+          "title": "Assistant reply",
+          "kind": "detail",
+          "content": "19529bbbb212c4a218e75902ededb3cc",
+          "mediaType": "text/plain"
+        }
+      ],
+      "normalizedSdkUsage": true
+    }
+  ],
+  "browsers": [
+    {
+      "pid": 67583,
+      "openedAt": "2026-10-06T04:20:46.706Z",
+      "exitCode": 0,
+      "signal": null,
+      "closedAt": "2026-10-06T04:20:55.589Z"
+    },
+    {
+      "pid": 70702,
+      "openedAt": "2026-10-06T04:20:56.034Z",
+      "exitCode": 0,
+      "signal": null,
+      "closedAt": "2026-10-06T04:21:01.847Z"
+    }
+  ],
+  "submittedTurns": 2,
+  "modelCalls": 2,
+  "queryCountEvidence": "Bounded admitted turns and distinct attempts; production adapter invokes query once per attempt.",
+  "status": "PASSED",
+  "configuredProfile": {
+    "reference": {
+      "id": "54c7bd0d-26ca-4af1-9736-eca78c310470",
+      "runnerId": "2968214f-8bd1-4c07-a25c-8d1989e6d130",
+      "configDigest": "2c9da6dc3a493615487dd3a39377180c1f7f92558caeb7365a59ef2203c03475"
+    },
+    "configuration": {
+      "model": "claude-sonnet-5-5",
+      "access": "none",
+      "limits": {
+        "maxTurns": 2,
+        "timeoutMs": 60000,
+        "maxBudgetUsd": 0.2
+      },
+      "harness": "claude",
+      "thinking": "disabled",
+      "adapterVersion": "claude-sdk-0.3.290-v2",
+      "permissionMode": "dontAsk",
+      "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "requireReadApproval": false
+    },
+    "source": "runner-configured",
+    "availability": "not-probed",
+    "model": {
+      "value": "claude-sonnet-5-5",
+      "resolvedModel": null,
+      "displayName": "claude-sonnet-5-5",
+      "description": "Configured runner request; provider availability has not been probed.",
+      "providerCapabilities": "unknown"
+    },
+    "controls": {
+      "model": "select-configured-profile",
+      "thinking": "fixed-disabled",
+      "effort": "unsupported",
+      "access": "configured-policy",
+      "queue": false,
+      "steer": false
+    },
+    "createdAt": "2026-10-06T04:20:46.069Z"
+  },
+  "resources": {
+    "centerUrl": "http://127.0.0.1:56401",
+    "webUrl": "http://127.0.0.1:56402",
+    "runnerId": "2968214f-8bd1-4c07-a25c-8d1989e6d130",
+    "processIds": [
+      {
+        "name": "center",
+        "pid": 66439
+      },
+      {
+        "name": "runner",
+        "pid": 67580
+      },
+      {
+        "name": "web",
+        "pid": 67581
+      }
+    ]
+  },
+  "conversationId": "c61e9d0a-6c3e-42bb-bd6b-ce80f0aff948",
+  "costSemantics": "SDK modelUsage normalized samples; resumed baseline unknown. Sum is a conservative bound, not incremental provider billing.",
+  "browserDetailRequests": [],
+  "lazyDetailBoundary": "Short real replies do not expose Read full reply; observed zero automatic detail fetches. Explicit long-reply expansion remains the separately approved Web fixture test, not claimed here.",
+  "processCleanup": [
+    {
+      "name": "web",
+      "pid": 67581,
+      "startedAt": "2026-10-06T04:20:46.185Z",
+      "exitCode": 143,
+      "signal": null,
+      "forced": false
+    },
+    {
+      "name": "runner",
+      "pid": 67580,
+      "startedAt": "2026-10-06T04:20:45.802Z",
+      "exitCode": 0,
+      "signal": null,
+      "forced": false
+    },
+    {
+      "name": "center",
+      "pid": 66439,
+      "startedAt": "2026-10-06T04:20:44.632Z",
+      "exitCode": 0,
+      "signal": null,
+      "forced": false
+    }
+  ],
+  "databaseRemoved": true,
+  "privateDirectoryRemoved": true,
+  "budgetCallsConsumedConservatively": 2,
+  "actualQueryCountIfFailed": 2,
+  "endedAt": "2026-10-06T04:21:01.977Z",
+  "activeElapsedMs": 14767
+}

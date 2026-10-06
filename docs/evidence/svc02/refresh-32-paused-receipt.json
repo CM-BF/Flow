@@ -1,0 +1,153 @@
+{
+  "observedAt": "2026-10-06T08:27:32.779Z",
+  "outcome": "ready-paused; explained expected maintenance difference; not resumed",
+  "operationId": "4ee51717-972d-4396-8410-72e7a7158063",
+  "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+  "target": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "authorizations": {
+    "source": "GO via Execution Lead EXECUTE_AND_RESUME_GO SVC02-32, 08:25:36 through08:40 UTC",
+    "conditions": "fresh no new/unknown work; fixed same identity/source; preservation and healthy facts saved before one fresh/resume",
+    "state": "waiting on explicit treatment of the known maintenance timestamp comparison difference"
+  },
+  "businessData": {
+    "unchangedTables": [
+      "artifacts",
+      "assistant_messages",
+      "assistant_stream_blocks",
+      "assistant_stream_markers",
+      "assistant_stream_patches",
+      "assistant_stream_settlements",
+      "attempts",
+      "commands",
+      "conversation_contexts",
+      "conversation_execution_inputs",
+      "conversation_queue",
+      "conversation_turns",
+      "conversations",
+      "decisions",
+      "details",
+      "execution_profiles",
+      "goal_acceptances",
+      "goal_contexts",
+      "goal_execution_inputs",
+      "goal_executions",
+      "goal_explanations",
+      "goal_graph_applications",
+      "goal_graph_calls",
+      "goal_graph_proposals",
+      "goal_graph_runs",
+      "goal_inputs",
+      "goal_nodes",
+      "goal_tool_calls",
+      "goal_tool_runs",
+      "goals",
+      "knowledge_chunks",
+      "knowledge_sources",
+      "knowledge_versions",
+      "native_activities",
+      "plugin_installations",
+      "plugin_operations",
+      "plugin_package_fetch_attempts",
+      "plugin_package_fetch_audit",
+      "plugin_package_fetches",
+      "plugin_revisions",
+      "plugin_versions",
+      "project_revisions",
+      "project_task_bindings",
+      "projects",
+      "protocol_intents",
+      "reconciliation_audit",
+      "reconciliation_retries",
+      "runner_events",
+      "sessions",
+      "tasks",
+      "timeline",
+      "usage_samples",
+      "workspace_feed",
+      "workspaces"
+    ],
+    "oldMigrationRecordsExact": true,
+    "oldAuditRowsRemain": {
+      "oldCount": 6,
+      "newCount": 8,
+      "oldColumnsSame": true,
+      "allOldRowsStillPresent": true,
+      "excluded": []
+    },
+    "ninePrimaryRecordSetsEqual": true,
+    "oldColumnsSameEveryOldTable": true
+  },
+  "expectedMutableRunner": {
+    "initialHashMismatchPreserved": true,
+    "excludedBefore": [
+      "maintenance_state",
+      "maintenance_version",
+      "maintenance_operation_id"
+    ],
+    "notExcludedBefore": "maintenance_updated_at",
+    "fixedStoreSha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926",
+    "sourceLines": "apps/server/src/runner-maintenance/store.ts:51-52",
+    "exactUpdate": "UPDATE flow.runners SET maintenance_state=$2,maintenance_version=maintenance_version+1, maintenance_operation_id=$3,maintenance_updated_at=clock_timestamp() WHERE id=$1",
+    "before": [
+      {
+        "runner_id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 6,
+        "maintenance_operation_id": null,
+        "unfinished_attempts": 0,
+        "last_heartbeat_at": "2026-10-06T06:02:27.158Z"
+      }
+    ],
+    "after": [
+      {
+        "runner_id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 8,
+        "maintenance_operation_id": "4ee51717-972d-4396-8410-72e7a7158063",
+        "unfinished_attempts": 0,
+        "last_heartbeat_at": "2026-10-06T06:02:27.158Z"
+      }
+    ],
+    "identityAndCredentialMatch": true,
+    "profileExact": true,
+    "limit": "No raw pre-refresh runner row was retained. Cannot independently claim all other runner columns are byte-identical from a digest containing the changed timestamp; separately saved identity, harness, capacity, revoked, attempts and profile facts match, and fixed domain changes only these four maintenance columns."
+  },
+  "sourceAtStart": {
+    "head": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+    "dirty": false
+  },
+  "processes": {
+    "center": {
+      "pid": 33877,
+      "pgid": 33877,
+      "identity": "running"
+    },
+    "runner": {
+      "pid": 34058,
+      "pgid": 34058,
+      "identity": "running"
+    },
+    "web": {
+      "pid": 34097,
+      "pgid": 34097,
+      "identity": "running"
+    }
+  },
+  "serviceMutations": [
+    "one bootstrap",
+    "one refresh"
+  ],
+  "providerQueries": 0,
+  "tabsReloaded": 0,
+  "rollbackAttempted": false
+}

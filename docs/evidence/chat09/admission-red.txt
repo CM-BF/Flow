@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission
+
+ ❯ apps/server/src/execution-profiles/steering-admission.test.ts (1 test | 1 failed) 1283ms
+   × refuses a currently owned string-mode profile before recording any command or idempotency receipt 91ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/execution-profiles/steering-admission.test.ts > refuses a currently owned string-mode profile before recording any command or idempotency receipt
+AssertionError: expected 202 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 202
+
+ ❯ apps/server/src/execution-profiles/steering-admission.test.ts:58:27
+     56|   const a = await attempt(false);
+     57|   const rejected = await request(`/api/tasks/${a.taskId}/steering`, { …
+     58|   expect(rejected.status).toBe(409); expect(rejected.body.error.code).…
+       |                           ^
+     59|   expect((await request(`/api/tasks/${a.taskId}/steering`)).body.comma…
+     60|   expect((await pool.query('SELECT count(*)::int n FROM flow.commands …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  01:03:56
+   Duration  2.03s (transform 331ms, setup 0ms, import 672ms, tests 1.28s, environment 0ms)
+

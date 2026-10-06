@@ -1,0 +1,85 @@
+{
+  "observedAt": "2026-10-06 11:02:23 UTC",
+  "sourceTarget": "d26dde66d01cd667aab54fcb0e348654f1537fd5",
+  "sharedImports": [
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "import": "@flow/contracts"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "import": "./patches.js"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "import": "./presentation.js"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "import": "@flow/contracts"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "import": "@flow/contracts"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "import": "./patches.js"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "import": "./projection.js"
+    },
+    {
+      "path": "packages/interaction/src/stream/index.ts",
+      "import": "./patches.js"
+    },
+    {
+      "path": "packages/interaction/src/stream/index.ts",
+      "import": "./projection.js"
+    },
+    {
+      "path": "packages/interaction/src/stream/index.ts",
+      "import": "./presentation.js"
+    },
+    {
+      "path": "packages/interaction/src/activity/index.ts",
+      "import": "@flow/contracts"
+    }
+  ],
+  "nodeBuiltinsInShared": false,
+  "bundleNodeBuiltinMarkers": false,
+  "bundles": [
+    {
+      "file": "workspace-oDHCYJKl.js",
+      "bytes": 1906,
+      "sha256": "00c706488f25390df04b4c15b65e631b64e3fda1ca77fc40d8b710059c20e073"
+    },
+    {
+      "file": "theme-BDp7H2uU.js",
+      "bytes": 806,
+      "sha256": "97765f940e15033c00faaab316fee873a554f014539e421707875da4f8673455"
+    },
+    {
+      "file": "assistant-ui-BVdJ2k4l.js",
+      "bytes": 663353,
+      "sha256": "78c4eb717dc36922dc0e0c34abda36402a5f04e33f422825975180f74edc91a7"
+    },
+    {
+      "file": "PluginManagement-Bu9S-Ri4.js",
+      "bytes": 9854,
+      "sha256": "342150aa8892c7e729e434914a06a215b5772f008888aa033b982839b691ab50"
+    },
+    {
+      "file": "index-D5duGJa9.js",
+      "bytes": 726545,
+      "sha256": "163e10dd821331f99f26d13b58156d92e1751031d1416a93ce2c0dd6c231ce14"
+    },
+    {
+      "file": "rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    }
+  ],
+  "limit": "Static import/bundle marker check plus actual Vite production build; not a browser runtime/security sandbox assertion."
+}

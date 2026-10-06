@@ -1,0 +1,549 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility
+
+ ❯ apps/web/test/conversation-projection.test.ts (53 tests | 12 failed) 31ms
+     × retains project undefined and rejects changed GET identity without replacing known facts 6ms
+     × retains project project-a and rejects changed GET identity without replacing known facts 1ms
+     × rejects snapshot/page project mismatch project-a / project-b 2ms
+     × rejects snapshot/page project mismatch project-a / undefined 1ms
+     × rejects snapshot/page project mismatch undefined / project-a 0ms
+     ✓ accepts matching project undefined CREATE and first turn receipts 4ms
+     × accepts matching project project-a CREATE and first turn receipts 1ms
+     × keeps mismatched project CREATE project-a / undefined unknown and retries the original identity 1ms
+     × keeps mismatched project CREATE project-a / project-b unknown and retries the original identity 1ms
+     × keeps mismatched project CREATE undefined / project-a unknown and retries the original identity 1ms
+     ✓ accepts optional knowledgeContext=undefined without fetching context or reply details 0ms
+     ✓ accepts optional knowledgeContext=false without fetching context or reply details 0ms
+     ✓ accepts optional knowledgeContext=true without fetching context or reply details 0ms
+     × rejects malformed knowledgeContext=null instead of inferring support 0ms
+     × rejects malformed knowledgeContext=true instead of inferring support 0ms
+     × rejects malformed knowledgeContext=1 instead of inferring support 0ms
+     ✓ retains context metadata in snapshots and history while only actual user/assistant text becomes messages 0ms
+     ✓ uses explicit queue intent while preserving active execution and the visible observer lifecycle 1ms
+     ✓ does not activate queue methods for a false capability even when the public client supports them 0ms
+     ✓ reads queue=false while keeping active-turn sending unavailable in this Web version 1ms
+     ✓ reads queue=true while keeping active-turn sending unavailable in this Web version 0ms
+     ✓ accepts queue=false CREATE receipts and submits only explicit follow-up turns 0ms
+     ✓ accepts queue=true CREATE receipts and submits only explicit follow-up turns 0ms
+     ✓ rejects non-boolean queue capability undefined instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability null instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability true instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability 1 instead of treating it as supported 0ms
+     ✓ does not widen other unsupported capabilities while accepting a boolean queue flag 0ms
+     ✓ keeps a missing pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a id pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a runnerId pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a configDigest pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ rejects an unexpected CREATE pin for an explicit legacy conversation 0ms
+     ✓ keeps the acknowledged creation locked after a rejected first turn and never creates with the later selection 0ms
+     ✓ checks pinned creation on later GET pages and turn receipts without overwriting accepted configuration 0ms
+     ✓ retains legacy unpinned configuration on an existing conversation 0ms
+     ✓ refreshes a same-revision asynchronous reply and reads its exact version only on demand 0ms
+     ✓ keeps a failed initial snapshot unknown and blocks send until it is loaded 0ms
+     ✓ does not recreate an acknowledged conversation when the first turn response is lost 0ms
+     ✓ treats 409 as a definite rejection and refreshes without changing the key/revision or automatically resending 0ms
+     ✓ pauses observations without aborting an already sent command or its late receipt 0ms
+     ✓ does not let an older in-flight snapshot overwrite a newly accepted turn/revision 0ms
+     ✓ does not downgrade a final reply when an older admission ACK arrives last 0ms
+     ✓ confirms queue=false retried saved receipts without regressing a final reply already read from the center 0ms
+     ✓ confirms queue=true retried saved receipts without regressing a final reply already read from the center 0ms
+     ✓ surfaces a request timeout instead of treating it as a visibility cancellation 0ms
+     ✓ deduplicates overlapping turn pages and preserves typed user/assistant entries 0ms
+     ✓ exposes a loadable middle gap after another tab admits several turns while this view is hidden 0ms
+     ✓ rejects mismatched lazy detail versions and lets explicit retry succeed 0ms
+     ✓ keeps a previously unknown result unknown after a retry authentication failure 0ms
+     ✓ does not accept malformed or mismatched success receipts as proof of admission 0ms
+     ✓ validates typed source digests and namespaces identical detail IDs by source identity 1ms
+     ✓ does not move a disposed connection's delayed receipt or detail into a same-ID new connection 0ms
+ ✓ apps/web/test/conversation-queue.test.ts (16 tests) 25ms
+ ❯ apps/web/test/execution-profiles.test.ts (21 tests | 5 failed) 28ms
+   ✓ uses the actual HTTP client for explicit bounded pages, preserving same models on different runners 19ms
+   ✓ retains pages on failed refresh and 401, then explicitly recovers without changing a chosen value 1ms
+   ✓ keeps a failed later-page cursor retryable and deduplicates concurrent loads 0ms
+   ✓ refresh supersedes an uncooperative in-flight page; dispose clears and fences the connection 0ms
+   ✓ a disposed catalog ignores a late HTTP success without changing a new connection 0ms
+   ✓ rejects malformed or nonadvancing pages atomically 0ms
+   ✓ rejects malformed or nonadvancing pages atomically 0ms
+   ✓ rejects malformed or nonadvancing pages atomically 0ms
+   ✓ freezes a detached full creation including nested pin, exact access and requested alias 1ms
+   ✓ keeps legacy input unpinned and rejects invalid titles or unsupported profile configuration 1ms
+   ✓ matches complete receipt pin and rejects wrong/missing/additional pin or missing requested fields 1ms
+   × matches optional project identity undefined without requiring a UUID 2ms
+   × matches optional project identity project-a without requiring a UUID 0ms
+   × rejects malformed project identity null in a receipt 0ms
+   × rejects malformed project identity  in a receipt 0ms
+   × rejects malformed project identity ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp in a receipt 0ms
+   ✓ refresh cancels later-page loading and a refresh failure requires head retry, not stale append 0ms
+   ✓ a fresh catalog never sends until explicitly refreshed, and removes subscriptions 0ms
+   ✓ retains mixed directory purposes and pagination while only explicit chat access can become creation 1ms
+   ✓ rejects known invalid goal-tools policy without exposing a partial page 0ms
+   ✓ rejects known invalid goal-tools policy without exposing a partial page 0ms
+ ✓ apps/web/test/conversation-outbox.test.ts (11 tests) 6ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > retains project undefined and rejects changed GET identity without replacing known facts
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > retains project project-a and rejects changed GET identity without replacing known facts
+AssertionError: the given combination of arguments (null and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ apps/web/test/conversation-projection.test.ts:58:46
+     56|     for (const changed of projectId === undefined ? ["project-a"] : [u…
+     57|       set({ ...initial, conversation: { ...initial.conversation, proje…
+     58|       expect(projection.getSnapshot().error).toContain("frozen creatio…
+       |                                              ^
+     59|       expect(projection.getSnapshot().snapshot?.conversation).toEqual(…
+     60|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects snapshot/page project mismatch project-a / project-b
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects snapshot/page project mismatch project-a / undefined
+AssertionError: expected { …(4) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "capabilities": {
+    "followUp": true,
+    "liveAssistantText": false,
+    "perTurnModel": false,
+    "perTurnThinking": false,
+    "perTurnTools": false,
+    "queue": false,
+    "steer": false,
+  },
+  "conversation": {
+    "createdAt": "2026-10-06T03:40:00Z",
+    "harness": "claude",
+    "id": "chat",
+    "projectId": "project-a",
+    "requested": {
+      "model": "runner-default",
+      "thinking": "disabled",
+      "tools": "configured-readonly",
+    },
+    "revision": 0,
+    "title": "Chat",
+    "updatedAt": "2026-10-06T03:40:00Z",
+  },
+  "lastTurn": null,
+  "nativeSession": null,
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:66:75
+     64|     const { projection, client } = setup(initial);
+     65|     client.conversationTurns.mockResolvedValueOnce({ conversation: { .…
+     66|     await projection.refresh(); expect(projection.getSnapshot().snapsh…
+       |                                                                           ^
+     67|   });
+     68|   it.each([undefined, "project-a"])("accepts matching project %s CREAT…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects snapshot/page project mismatch undefined / project-a
+AssertionError: expected { …(4) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "capabilities": {
+    "followUp": true,
+    "liveAssistantText": false,
+    "perTurnModel": false,
+    "perTurnThinking": false,
+    "perTurnTools": false,
+    "queue": false,
+    "steer": false,
+  },
+  "conversation": {
+    "createdAt": "2026-10-06T03:40:00Z",
+    "harness": "claude",
+    "id": "chat",
+    "projectId": undefined,
+    "requested": {
+      "model": "runner-default",
+      "thinking": "disabled",
+      "tools": "configured-readonly",
+    },
+    "revision": 0,
+    "title": "Chat",
+    "updatedAt": "2026-10-06T03:40:00Z",
+  },
+  "lastTurn": null,
+  "nativeSession": null,
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:66:75
+     64|     const { projection, client } = setup(initial);
+     65|     client.conversationTurns.mockResolvedValueOnce({ conversation: { .…
+     66|     await projection.refresh(); expect(projection.getSnapshot().snapsh…
+       |                                                                           ^
+     67|   });
+     68|   it.each([undefined, "project-a"])("accepts matching project %s CREAT…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > accepts matching project project-a CREATE and first turn receipts
+AssertionError: expected { …(9) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "conversationId": null,
+  "creation": {
+    "executionProfile": {
+      "configDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "id": "10000000-0000-4000-8000-000000000001",
+      "runnerId": "10000000-0000-4000-8000-000000000002",
+    },
+    "harness": "claude",
+    "projectId": "project-a",
+    "requested": {
+      "model": "configured-model",
+      "thinking": "disabled",
+      "tools": "none",
+    },
+    "title": "hi",
+  },
+  "creationKey": "4b11ca84-3fda-4873-b93e-1eac02c9e381:create",
+  "error": "Conversation receipt does not match the frozen creation configuration",
+  "everUnknown": true,
+  "id": "4b11ca84-3fda-4873-b93e-1eac02c9e381",
+  "request": {
+    "expectedRevision": 0,
+    "mode": "follow-up",
+    "text": "hi",
+  },
+  "state": "unknown",
+  "turnKey": "4b11ca84-3fda-4873-b93e-1eac02c9e381:turn",
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:71:45
+     69|     const creation: ConversationCreation = { ...configuredCreation, ..…
+     70|     const { projection, client } = setup(snapshot(), null); await proj…
+     71|     expect(projection.getSnapshot().outbox).toBeNull(); expect(project…
+       |                                             ^
+     72|     expect(client.submitConversationTurn).toHaveBeenCalledTimes(1);
+     73|     expect(client.submitConversationTurn.mock.calls[0]![1]).not.toHave…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > keeps mismatched project CREATE project-a / undefined unknown and retries the original identity
+AssertionError: expected { …(9) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "conversationId": null,
+  "creation": {
+    "executionProfile": {
+      "configDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "id": "10000000-0000-4000-8000-000000000001",
+      "runnerId": "10000000-0000-4000-8000-000000000002",
+    },
+    "harness": "claude",
+    "projectId": "project-a",
+    "requested": {
+      "model": "configured-model",
+      "thinking": "disabled",
+      "tools": "none",
+    },
+    "title": "hi",
+  },
+  "creationKey": "791344da-0816-413a-9da2-0172958d04e7:create",
+  "error": "Conversation receipt does not match the frozen creation configuration",
+  "everUnknown": true,
+  "id": "791344da-0816-413a-9da2-0172958d04e7",
+  "request": {
+    "expectedRevision": 0,
+    "mode": "follow-up",
+    "text": "hi",
+  },
+  "state": "unknown",
+  "turnKey": "791344da-0816-413a-9da2-0172958d04e7:turn",
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:84:45
+     82|     await projection.retry();
+     83|     expect(client.createConversation.mock.calls[1]!.slice(0,2)).toEqua…
+     84|     expect(projection.getSnapshot().outbox).toBeNull(); expect(client.…
+       |                                             ^
+     85|   });
+     86|   it.each([undefined, false, true])("accepts optional knowledgeContext…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > keeps mismatched project CREATE project-a / project-b unknown and retries the original identity
+AssertionError: expected { …(9) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "conversationId": null,
+  "creation": {
+    "executionProfile": {
+      "configDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "id": "10000000-0000-4000-8000-000000000001",
+      "runnerId": "10000000-0000-4000-8000-000000000002",
+    },
+    "harness": "claude",
+    "projectId": "project-a",
+    "requested": {
+      "model": "configured-model",
+      "thinking": "disabled",
+      "tools": "none",
+    },
+    "title": "hi",
+  },
+  "creationKey": "d638278c-f4eb-48d8-b8ea-9452e69ac411:create",
+  "error": "Conversation receipt does not match the frozen creation configuration",
+  "everUnknown": true,
+  "id": "d638278c-f4eb-48d8-b8ea-9452e69ac411",
+  "request": {
+    "expectedRevision": 0,
+    "mode": "follow-up",
+    "text": "hi",
+  },
+  "state": "unknown",
+  "turnKey": "d638278c-f4eb-48d8-b8ea-9452e69ac411:turn",
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:84:45
+     82|     await projection.retry();
+     83|     expect(client.createConversation.mock.calls[1]!.slice(0,2)).toEqua…
+     84|     expect(projection.getSnapshot().outbox).toBeNull(); expect(client.…
+       |                                             ^
+     85|   });
+     86|   it.each([undefined, false, true])("accepts optional knowledgeContext…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > keeps mismatched project CREATE undefined / project-a unknown and retries the original identity
+AssertionError: expected { …(9) } to match object { state: 'unknown', …(2) }
+(9 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "conversationId": null,
++   "conversationId": "chat",
+    "creation": {
+      "executionProfile": {
+        "configDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "id": "10000000-0000-4000-8000-000000000001",
+        "runnerId": "10000000-0000-4000-8000-000000000002",
+
+ ❯ apps/web/test/conversation-projection.test.ts:80:45
+     78|     client.createConversation.mockResolvedValueOnce({ conversation: { …
+     79|     await projection.send("hi", creation);
+     80|     expect(projection.getSnapshot().outbox).toMatchObject({ state: "un…
+       |                                             ^
+     81|     expect(client.submitConversationTurn).not.toHaveBeenCalled(); expe…
+     82|     await projection.retry();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects malformed knowledgeContext=null instead of inferring support
+AssertionError: expected { …(4) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "capabilities": {
+    "followUp": true,
+    "knowledgeContext": null,
+    "liveAssistantText": false,
+    "perTurnModel": false,
+    "perTurnThinking": false,
+    "perTurnTools": false,
+    "queue": false,
+    "steer": false,
+  },
+  "conversation": {
+    "createdAt": "2026-10-06T03:40:00Z",
+    "harness": "claude",
+    "id": "chat",
+    "requested": {
+      "model": "runner-default",
+      "thinking": "disabled",
+      "tools": "configured-readonly",
+    },
+    "revision": 0,
+    "title": "Chat",
+    "updatedAt": "2026-10-06T03:40:00Z",
+  },
+  "lastTurn": null,
+  "nativeSession": null,
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:96:47
+     94|     const initial = { ...snapshot(), capabilities: { ...capabilities, …
+     95|     const { projection } = setup(initial); await projection.refresh();
+     96|     expect(projection.getSnapshot().snapshot).toBeNull(); expect(proje…
+       |                                               ^
+     97|   });
+     98|   it("retains context metadata in snapshots and history while only act…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects malformed knowledgeContext=true instead of inferring support
+AssertionError: expected { …(4) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "capabilities": {
+    "followUp": true,
+    "knowledgeContext": "true",
+    "liveAssistantText": false,
+    "perTurnModel": false,
+    "perTurnThinking": false,
+    "perTurnTools": false,
+    "queue": false,
+    "steer": false,
+  },
+  "conversation": {
+    "createdAt": "2026-10-06T03:40:00Z",
+    "harness": "claude",
+    "id": "chat",
+    "requested": {
+      "model": "runner-default",
+      "thinking": "disabled",
+      "tools": "configured-readonly",
+    },
+    "revision": 0,
+    "title": "Chat",
+    "updatedAt": "2026-10-06T03:40:00Z",
+  },
+  "lastTurn": null,
+  "nativeSession": null,
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:96:47
+     94|     const initial = { ...snapshot(), capabilities: { ...capabilities, …
+     95|     const { projection } = setup(initial); await projection.refresh();
+     96|     expect(projection.getSnapshot().snapshot).toBeNull(); expect(proje…
+       |                                               ^
+     97|   });
+     98|   it("retains context metadata in snapshots and history while only act…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects malformed knowledgeContext=1 instead of inferring support
+AssertionError: expected { …(4) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "capabilities": {
+    "followUp": true,
+    "knowledgeContext": 1,
+    "liveAssistantText": false,
+    "perTurnModel": false,
+    "perTurnThinking": false,
+    "perTurnTools": false,
+    "queue": false,
+    "steer": false,
+  },
+  "conversation": {
+    "createdAt": "2026-10-06T03:40:00Z",
+    "harness": "claude",
+    "id": "chat",
+    "requested": {
+      "model": "runner-default",
+      "thinking": "disabled",
+      "tools": "configured-readonly",
+    },
+    "revision": 0,
+    "title": "Chat",
+    "updatedAt": "2026-10-06T03:40:00Z",
+  },
+  "lastTurn": null,
+  "nativeSession": null,
+}
+
+ ❯ apps/web/test/conversation-projection.test.ts:96:47
+     94|     const initial = { ...snapshot(), capabilities: { ...capabilities, …
+     95|     const { projection } = setup(initial); await projection.refresh();
+     96|     expect(projection.getSnapshot().snapshot).toBeNull(); expect(proje…
+       |                                               ^
+     97|   });
+     98|   it("retains context metadata in snapshots and history while only act…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/17]⎯
+
+ FAIL  apps/web/test/execution-profiles.test.ts > matches optional project identity undefined without requiring a UUID
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ apps/web/test/execution-profiles.test.ts:127:96
+    125|   if (projectId === undefined) expect(() => assertCreationReceiptMatch…
+    126|   for (const different of projectId === undefined ? ["project-a"] : [u…
+    127|     expect(() => assertCreationReceiptMatches(creation, { ...summary, …
+       |                                                                                                ^
+    128| });
+    129| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/17]⎯
+
+ FAIL  apps/web/test/execution-profiles.test.ts > matches optional project identity project-a without requiring a UUID
+AssertionError: expected [Function] to not throw an error but 'Error: Conversation receipt does not …' was thrown
+
+- Expected: 
+undefined
+
++ Received: 
+"Error: Conversation receipt does not match the frozen creation configuration"
+
+ ❯ apps/web/test/execution-profiles.test.ts:124:69
+    122|   const creation: ConversationCreation = { ...freezeConversationCreati…
+    123|   const summary: ConversationSummary = { ...creation, id: id(99), revi…
+    124|   expect(() => assertCreationReceiptMatches(creation, summary)).not.to…
+       |                                                                     ^
+    125|   if (projectId === undefined) expect(() => assertCreationReceiptMatch…
+    126|   for (const different of projectId === undefined ? ["project-a"] : [u…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/17]⎯
+
+ FAIL  apps/web/test/execution-profiles.test.ts > rejects malformed project identity null in a receipt
+ FAIL  apps/web/test/execution-profiles.test.ts > rejects malformed project identity  in a receipt
+ FAIL  apps/web/test/execution-profiles.test.ts > rejects malformed project identity ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp in a receipt
+AssertionError: expected [Function] to throw an error
+ ❯ apps/web/test/execution-profiles.test.ts:133:65
+    131|   const creation = freezeConversationCreation("Project chat", legacyDe…
+    132|   const summary = { ...creation, projectId, id: id(99), revision: 0, c…
+    133|   expect(() => assertCreationReceiptMatches(creation, summary)).toThro…
+       |                                                                 ^
+    134| });
+    135| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/17]⎯
+
+
+ Test Files  2 failed | 2 passed (4)
+      Tests  17 failed | 84 passed (101)
+   Start at  22:55:37
+   Duration  730ms (transform 129ms, setup 0ms, import 337ms, tests 90ms, environment 0ms)
+

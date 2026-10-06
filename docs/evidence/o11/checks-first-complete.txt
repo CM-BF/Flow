@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model
+
+ ❯ apps/server/src/goal-delivery/delivery.test.ts (6 tests | 1 failed) 7909ms
+   ✓ keeps input and plan page identity stable through unrelated live activity without repeating materials  711ms
+   × rejects related plan changes while retaining exact historical inputs and rejecting obsolete writes 399ms
+   ✓ tracks exact dependency delivery replacement and preserves state across a center restart  2036ms
+   ✓ marks referenced knowledge as stale without changing immutable input identity or copying source text 144ms
+   ✓ reports expired execution as uncertain and never infers a verified or accepted delivery  2971ms
+   ✓ bounds owner reads and rejects malformed, duplicate, cross-goal references and wrong credentials 149ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-delivery/delivery.test.ts > rejects related plan changes while retaining exact historical inputs and rejecting obsolete writes
+AssertionError: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ apps/server/src/goal-delivery/delivery.test.ts:143:239
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  04:34:05
+   Duration  8.92s (transform 378ms, setup 0ms, import 925ms, tests 7.91s, environment 0ms)
+

@@ -1,0 +1,436 @@
+{
+  "recordedAt": "2026-10-06 11:45:43 UTC",
+  "unit": "UTF-8 JSON.stringify(decoded PG task rows); HTTP response body UTF-8 bytes separately accounted. Not PG wire/heap/TOAST/disk bytes.",
+  "legalPublicPrompt": {
+    "utf16CodeUnits": 15999,
+    "utf8Bytes": 37331,
+    "entry": "POST /api/tasks",
+    "status": 202
+  },
+  "syntheticSqlPressure": {
+    "utf16CodeUnits": 65536,
+    "utf8Bytes": 131072,
+    "bypassesPublic16000CharacterLimit": true
+  },
+  "runs": [
+    {
+      "name": "red-event",
+      "receipt": "red-event-receipt.json",
+      "rawSha256": "b5e4f658de6d98423bbfa923cb526fa0f14d98ad6a26cfb2491f826c8a735858",
+      "fixture": {
+        "kind": "b01-task-projection-fixture",
+        "database": "flow_b01_projection_53e2e53e82474288bed7d9eb8af847e3",
+        "postgresVersion": "160013",
+        "tasks": 1,
+        "elapsedMs": 1412.9180000000001,
+        "decodedAndHttpBytes": 76048,
+        "connectionsClosed": true,
+        "databaseAbsent": true,
+        "samples": [
+          {
+            "name": "public-prompt:old-full-task-row",
+            "queryCalls": 3,
+            "selectCalls": 1,
+            "taskRows": 1,
+            "taskRowJsonBytes": 37899,
+            "taskFields": [
+              "conversation_input_id",
+              "created_at",
+              "current_attempt_id",
+              "cursor",
+              "dispatch_ready",
+              "goal_input_id",
+              "id",
+              "latest_artifact_id",
+              "latest_artifact_version",
+              "owner_version",
+              "pending_decision",
+              "status",
+              "submission",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "public-prompt:event-page",
+            "queryCalls": 4,
+            "selectCalls": 2,
+            "taskRows": 1,
+            "taskRowJsonBytes": 37899,
+            "taskFields": [
+              "conversation_input_id",
+              "created_at",
+              "current_attempt_id",
+              "cursor",
+              "dispatch_ready",
+              "goal_input_id",
+              "id",
+              "latest_artifact_id",
+              "latest_artifact_version",
+              "owner_version",
+              "pending_decision",
+              "status",
+              "submission",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          }
+        ],
+        "reportBytes": 1010
+      }
+    },
+    {
+      "name": "red-list",
+      "receipt": "red-list-receipt.json",
+      "rawSha256": "117ebd4e78fd20e5fa84865e899eec00b361e8207785686d6474ecffb0b06c3d",
+      "fixture": {
+        "kind": "b01-task-projection-fixture",
+        "database": "flow_b01_projection_1544ef6a757045bc9d7294cfd23e0950",
+        "postgresVersion": "160013",
+        "tasks": 1,
+        "elapsedMs": 1360.7345409999998,
+        "decodedAndHttpBytes": 76415,
+        "connectionsClosed": true,
+        "databaseAbsent": true,
+        "samples": [
+          {
+            "name": "public-prompt:old-full-task-row",
+            "queryCalls": 3,
+            "selectCalls": 1,
+            "taskRows": 1,
+            "taskRowJsonBytes": 37899,
+            "taskFields": [
+              "conversation_input_id",
+              "created_at",
+              "current_attempt_id",
+              "cursor",
+              "dispatch_ready",
+              "goal_input_id",
+              "id",
+              "latest_artifact_id",
+              "latest_artifact_version",
+              "owner_version",
+              "pending_decision",
+              "status",
+              "submission",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "public-prompt:event-page",
+            "queryCalls": 4,
+            "selectCalls": 2,
+            "taskRows": 1,
+            "taskRowJsonBytes": 367,
+            "taskFields": [
+              "created_at",
+              "cursor",
+              "harness",
+              "id",
+              "pending_decision",
+              "status",
+              "title",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "public-prompt:task-list",
+            "queryCalls": 1,
+            "selectCalls": 1,
+            "taskRows": 1,
+            "taskRowJsonBytes": 37899,
+            "taskFields": [
+              "conversation_input_id",
+              "created_at",
+              "current_attempt_id",
+              "cursor",
+              "dispatch_ready",
+              "goal_input_id",
+              "id",
+              "latest_artifact_id",
+              "latest_artifact_version",
+              "owner_version",
+              "pending_decision",
+              "status",
+              "submission",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          }
+        ],
+        "reportBytes": 1243
+      }
+    },
+    {
+      "name": "final",
+      "receipt": "final-receipt.json",
+      "rawSha256": "41122498d8e0732363b80d2bd68bccc7ef97d445977d3409e86f20fba45dd8a7",
+      "fixture": {
+        "kind": "b01-task-projection-fixture",
+        "database": "flow_b01_projection_c26750f9bd10494281603f6f89a301e9",
+        "postgresVersion": "160013",
+        "tasks": 5,
+        "elapsedMs": 1499.933959,
+        "decodedAndHttpBytes": 383182,
+        "connectionsClosed": true,
+        "databaseAbsent": true,
+        "samples": [
+          {
+            "name": "public-prompt:old-full-task-row",
+            "queryCalls": 3,
+            "selectCalls": 1,
+            "taskRows": 1,
+            "taskRowJsonBytes": 37899,
+            "taskFields": [
+              "conversation_input_id",
+              "created_at",
+              "current_attempt_id",
+              "cursor",
+              "dispatch_ready",
+              "goal_input_id",
+              "id",
+              "latest_artifact_id",
+              "latest_artifact_version",
+              "owner_version",
+              "pending_decision",
+              "status",
+              "submission",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "public-prompt:event-page",
+            "queryCalls": 4,
+            "selectCalls": 2,
+            "taskRows": 1,
+            "taskRowJsonBytes": 367,
+            "taskFields": [
+              "created_at",
+              "cursor",
+              "harness",
+              "id",
+              "pending_decision",
+              "status",
+              "title",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "public-prompt:task-list",
+            "queryCalls": 1,
+            "selectCalls": 1,
+            "taskRows": 1,
+            "taskRowJsonBytes": 229,
+            "taskFields": [
+              "created_at",
+              "harness",
+              "id",
+              "status",
+              "title",
+              "updated_at",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "reset:event-page",
+            "queryCalls": 3,
+            "selectCalls": 1,
+            "taskRows": 1,
+            "taskRowJsonBytes": 367,
+            "taskFields": [
+              "created_at",
+              "cursor",
+              "harness",
+              "id",
+              "pending_decision",
+              "status",
+              "title",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "sql-stress:old-full-task-row",
+            "queryCalls": 3,
+            "selectCalls": 1,
+            "taskRows": 1,
+            "taskRowJsonBytes": 131615,
+            "taskFields": [
+              "conversation_input_id",
+              "created_at",
+              "current_attempt_id",
+              "cursor",
+              "dispatch_ready",
+              "goal_input_id",
+              "id",
+              "latest_artifact_id",
+              "latest_artifact_version",
+              "owner_version",
+              "pending_decision",
+              "status",
+              "submission",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "sql-stress:event-page",
+            "queryCalls": 4,
+            "selectCalls": 2,
+            "taskRows": 1,
+            "taskRowJsonBytes": 342,
+            "taskFields": [
+              "created_at",
+              "cursor",
+              "harness",
+              "id",
+              "pending_decision",
+              "status",
+              "title",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "mixed-five-tasks:old-full-list-rows",
+            "queryCalls": 1,
+            "selectCalls": 1,
+            "taskRows": 5,
+            "taskRowJsonBytes": 171236,
+            "taskFields": [
+              "conversation_input_id",
+              "created_at",
+              "current_attempt_id",
+              "cursor",
+              "dispatch_ready",
+              "goal_input_id",
+              "id",
+              "latest_artifact_id",
+              "latest_artifact_version",
+              "owner_version",
+              "pending_decision",
+              "status",
+              "submission",
+              "updated_at",
+              "usage",
+              "verification_status"
+            ]
+          },
+          {
+            "name": "mixed-five-tasks:task-list",
+            "queryCalls": 1,
+            "selectCalls": 1,
+            "taskRows": 5,
+            "taskRowJsonBytes": 1020,
+            "taskFields": [
+              "created_at",
+              "harness",
+              "id",
+              "status",
+              "title",
+              "updated_at",
+              "verification_status"
+            ]
+          }
+        ],
+        "httpCalls": [
+          {
+            "method": "POST",
+            "route": "/api/tasks",
+            "status": 202,
+            "responseBytes": 250
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks/:id",
+            "status": 200,
+            "responseBytes": 38043
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks/:id/events?after=3",
+            "status": 200,
+            "responseBytes": 459
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks?limit=4",
+            "status": 200,
+            "responseBytes": 832
+          },
+          {
+            "method": "POST",
+            "route": "/api/runners",
+            "status": 200,
+            "responseBytes": 105
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks",
+            "status": 401,
+            "responseBytes": 70
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks",
+            "status": 403,
+            "responseBytes": 76
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks/:id/events",
+            "status": 401,
+            "responseBytes": 70
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks/:id/events",
+            "status": 403,
+            "responseBytes": 76
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks/:id/events",
+            "status": 404,
+            "responseBytes": 58
+          },
+          {
+            "method": "GET",
+            "route": "/api/tasks?before=invalid",
+            "status": 400,
+            "responseBytes": 68
+          }
+        ],
+        "reportBytes": 3356
+      }
+    }
+  ],
+  "cumulativeTasks": 7,
+  "cumulativeFixtureElapsedMs": 4273.586499999999,
+  "cumulativeDecodedAndHttpBytes": 535645,
+  "allDatabasesAbsent": true,
+  "passedDistinctTests": 8,
+  "zeroModelProviderSdkCalls": true,
+  "loadOrder": "one sequential fixture; legal sample before SQL pressure; no latency comparison/SLO",
+  "limits": {
+    "tasks": 32,
+    "promptBytes": 1048576,
+    "decodedPlusEvidenceBytes": 33554432,
+    "measurementMs": 60000,
+    "perFixtureWorkStopMs": 45000
+  }
+}

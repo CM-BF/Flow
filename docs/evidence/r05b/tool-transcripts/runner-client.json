@@ -1,0 +1,29 @@
+{
+  "kind": "tool-transcript-transcription",
+  "provenance": "Transcribed visible tool output, not a process log. The initial command also listed matching test paths; that unrelated listing is omitted and marked as an excerpt. The final tool output is retained.",
+  "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/runner/src/claude.test.ts apps/runner/src/execution-profiles.test.ts apps/runner/src/native-harness.test.ts apps/runner/src/configuration.test.ts packages/client/src/execution-profiles.test.ts",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy",
+  "sessionId": 54547,
+  "chunks": [
+    {
+      "tool": "exec_command",
+      "chunkId": "c97622",
+      "exitCode": null,
+      "excerpt": true,
+      "output": " RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy\n"
+    },
+    {
+      "tool": "write_stdin",
+      "chunkId": "8a90ac",
+      "exitCode": 0,
+      "output": " ✓ apps/runner/src/claude.test.ts (31 tests) 508ms\n ✓ apps/runner/src/execution-profiles.test.ts (10 tests) 1722ms\n   ✓ publishes from the real startup entry before polling (accepted: true, steering: false)  574ms\n   ✓ publishes from the real startup entry before polling (accepted: false, steering: false)  361ms\n   ✓ publishes from the real startup entry before polling (accepted: true, steering: true)  416ms\n   ✓ publishes from the real startup entry before polling (accepted: false, steering: true)  363ms\n ✓ packages/client/src/execution-profiles.test.ts (2 tests) 37ms\n ✓ apps/runner/src/native-harness.test.ts (8 tests) 13ms\n ✓ apps/runner/src/configuration.test.ts (15 tests) 17ms\n\n Test Files  5 passed (5)\n      Tests  66 passed (66)\n   Start at  02:16:06\n   Duration  3.47s (transform 198ms, setup 0ms, import 780ms, tests 2.30s, environment 0ms)\n"
+    }
+  ],
+  "result": {
+    "exitCode": 0,
+    "selectedFiles": 5,
+    "selectedTests": 66,
+    "passedTests": 66,
+    "unselectedTests": 0
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-10-06T06:48:20.014Z",
+  "acceptedMain": "86a36eaeffbf09f0a3772c3d1509c17dc0a76f92",
+  "head": "07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a",
+  "origin": "07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a",
+  "branch": "main",
+  "dirty": false,
+  "acceptedAncestorOfObserved": true,
+  "acceptedToObservedPaths": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "docs/evidence/d05/registry-77-receipt.json",
+    "docs/evidence/d05/registry-80-checks.json"
+  ],
+  "checks": [
+    {
+      "id": "WPF-RENDERERI01",
+      "target": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+      "metadata": "2a420ffe6a27860156057368a18e94e73957e395",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/test/data-renderer-integration.test.ts",
+        "apps/web/test/data-renderer-integration.browser.ts"
+      ],
+      "acceptedAncestor": true,
+      "acceptedScopeDifference": [],
+      "currentScopeDifference": []
+    },
+    {
+      "id": "D06",
+      "target": "ff5ca7c880910841e8180df7632753c81aea2492",
+      "metadata": "e7e37c3cf9441459e03b9463e36d568ffc0bb5ca",
+      "scope": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06/context/source-audit.mjs",
+        "docs/evidence/d06/context/browser-check.mjs",
+        "docs/evidence/d06/context/preview.mjs"
+      ],
+      "acceptedAncestor": true,
+      "acceptedScopeDifference": [],
+      "currentScopeDifference": []
+    }
+  ],
+  "leadEvidence": "docs/evidence/i02/k03-renderer-source-comparison.json",
+  "validation": "Read-only Git only; no engineering tests/API/model/runtime operation"
+}

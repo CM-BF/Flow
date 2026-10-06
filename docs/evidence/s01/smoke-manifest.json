@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-10-06 06:43 UTC",
+  "implementationCommit": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+  "productBase": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "sourceFiles": [
+    {
+      "path": "experiments/runner-capacity/child.ts",
+      "sha256": "0a683b87655885c91e9a0357259dbc2157a275d3265a81e9f522942f25e6bbd5"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "experiments/runner-capacity/smoke.ts",
+      "sha256": "56c1d4f59ebe05a44325f7181e2b129fa9d4dbb3331b4d5337f769624cd39051"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/contract.json",
+      "sha256": "e2006aee389e06dab0a2ae0c9daea24e4e6b8963788e30e8d68823bf6694dbeb"
+    },
+    {
+      "path": "experiments/runner-capacity/tsconfig.json",
+      "sha256": "a4b14000b1b940448f7f7682370795997d1645d159a70de9fc31c170834fe85f"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "sha256": "8116119e7249575111951ba8abc21b1933f3c45d86455d32e8febf27f1404db3"
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    }
+  ],
+  "runs": [
+    {
+      "path": "docs/evidence/s01/smoke-first/result.json",
+      "outcome": "FAILED",
+      "tasks": 4,
+      "head": "bfe49a4b711a9bfa2d49e40cf829d0a9b95b5d22",
+      "sha256": "b364ee15b5767bb066d59147ce9cf7064a288ea854dda703b5a62f395f69c8a4"
+    },
+    {
+      "path": "docs/evidence/s01/smoke-repair/result.json",
+      "outcome": "PASSED",
+      "tasks": 4,
+      "head": "53c8713cb8e6a3c9b7d869c896656dad4e7a086d",
+      "sha256": "ad186c42e7bcb2eb07a147a52df7ff3f59847569c1496730637ad81ece6f7cbc"
+    }
+  ],
+  "typecheck": {
+    "command": "/opt/homebrew/opt/node@24/bin/node node_modules/typescript/bin/tsc -p experiments/runner-capacity/tsconfig.json --noEmit",
+    "exitCode": 0,
+    "log": "docs/evidence/s01/smoke-typecheck-fourth.txt",
+    "completedAtObservedFromLogMtime": "2026-10-06T06:41:32.920074+00:00"
+  },
+  "totalSmokeTasksUsed": 8,
+  "totalExperimentTasksMax": 64,
+  "modelCalls": 0,
+  "limitations": [
+    "Functional smoke only; no formal capacity or latency SLO.",
+    "Production source fixed at115b; newer main functionality not automatically covered.",
+    "Overclaim/fault/browser phases and 128-conversation formal scenario remain unimplemented/unrun.",
+    "Initial attempt time derived from first immutable claim lease; conservative quantization bounds, not a persisted attempt-created timestamp."
+  ],
+  "executionCommit": "53c8713cb8e6a3c9b7d869c896656dad4e7a086d",
+  "review": {
+    "reviewer": "/root/b01_bounded_reads (gpt-6-astra), independent read-only",
+    "target": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+    "decision": "APPROVED",
+    "reviewedAt": "2026-10-06T06:43:50Z",
+    "unresolvedBlockingFindings": [],
+    "scope": "Contract method and four-task functional smoke only; formal/gate/fault/browser excluded"
+  }
+}

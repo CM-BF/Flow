@@ -1,0 +1,15 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/execution-profiles/native-catalog.test.ts > preserves no-header and steering legacy readers and never negotiates unknown or combined headers
+SyntaxError: Unexpected end of JSON input
+ ❯ IncomingMessage.<anonymous> apps/server/src/execution-profiles/native-catalog.test.ts:97:53
+     95|       'X-Flow-Execution-Profile', 'native-v1', 'X-Flow-Execution-Profi…
+     96|       let text = ''; response.setEncoding('utf8'); response.on('data',…
+     97|       response.on('end', () => { try { resolve(JSON.parse(text)); } ca…
+       |                                                     ^
+     98|     });
+     99|     req.on('error', reject); req.on('timeout', () => req.destroy(new E…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-06 10:41:48 UTC",
+  "target": "902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+  "base": "41315b033deb0b1953484359b686c0b228997367",
+  "execution": {
+    "head": "902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+    "dirty": "only own evidence untracked at final direct execution",
+    "node": "v24.20.0",
+    "command": "node --test apps/execution-dashboard/test/proof-tree-batch.test.mjs apps/execution-dashboard/test/proof-snapshot.test.mjs apps/execution-dashboard/test/human-proof.test.mjs",
+    "passed": 27,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 12968.360208,
+    "log": "final-direct.log",
+    "logSha256": "fc0b258e7a2ddf4bf2d06e437794600afc2516bff3bf28531ccb429363bb47d6"
+  },
+  "sources": {
+    "apps/execution-dashboard/src/proof.mjs": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+    "apps/execution-dashboard/test/proof-tree-batch.test.mjs": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f",
+    "docs/evidence/wpf-dashboard-proof-batching/measure.mjs": "2dc49d5d5e5615314cad135153a43e65f5d590d5e2b5c9e87922fddc2eacb8c3"
+  },
+  "experiment": {
+    "baseline": "baseline.json",
+    "after": "after.json",
+    "combinedMs": 34897.211375,
+    "traceBytes": 16081552,
+    "remainingProcesses": 0,
+    "cleaned": true,
+    "serviceOrDatabaseAccess": false
+  }
+}

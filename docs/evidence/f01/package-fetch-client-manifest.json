@@ -1,0 +1,48 @@
+{
+  "target": "07b1b11060c069db76f9f958f92c1c53af9fca46",
+  "contractInput": "1405551c39755ca689f5660690848164faa706a2",
+  "observedAt": "2026-10-06 06:30 UTC",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 32306,
+      "sha256": "57fa6b84af4f4a967ae999f1bfd0493e1d374c36e5d80809a9d938a3eed8b394"
+    },
+    {
+      "path": "packages/client/src/package-fetches.test.ts",
+      "bytes": 3540,
+      "sha256": "bf05f703001517c36da0d19eb4b1ef79e56cff02c231f70ee3381cbe034d6ef1"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 815,
+      "sha256": "0ae52730bd1b81c9ea2c288d026f95144ceb6eae0c8e0a4c974123b30fd24e1d"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/package-fetch-client-red.txt",
+      "bytes": 1240,
+      "sha256": "c167cd2da5239fbed51bde48eeec822d6c787e775d3d121c361bc26a7b2c46c8"
+    },
+    {
+      "path": "docs/evidence/f01/package-fetch-client-green.txt",
+      "bytes": 317,
+      "sha256": "22c1471f7f40b1b1e68d5da724fa25e330736eb66a9b6a6a87e02c6bb03659c5"
+    },
+    {
+      "path": "docs/evidence/f01/package-fetch-client-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "selected": 1,
+    "passed": 1,
+    "typecheckExit": 0,
+    "modelQueries": 0
+  },
+  "limits": [
+    "Thin HTTP transport only; X05 domain/PG/worker not yet approved or mounted"
+  ]
+}

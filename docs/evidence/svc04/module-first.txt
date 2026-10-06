@@ -1,0 +1,16 @@
+✔ serves fixed bytes with no HMR, preserves same-origin authorization and streams SSE before completion (1117.895667ms)
+✔ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (1031.255333ms)
+✔ rejects a dirty or mismatched source before building and cleans a failed stage without changing the old artifact (1038.188458ms)
+✔ concurrent identical builds converge without overwriting and reject extra files or symbolic links (515.407125ms)
+✔ a source change during the build is rejected and leaves no published artifact (489.328417ms)
+✔ release CAS retains precise old namespaces, rollback changes only current, and full retention refuses publication (146.926916ms)
+✔ legacy collisions, namespace reuse, unsafe paths and corrupt metadata fail before replacing the old release (123.832416ms)
+✔ changed file bytes, backend mismatch, invalid compatibility and metadata limits are rejected (31.388625ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3122.835666

@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ❯ packages/interaction/src/goal/lifecycle.test.ts (6 tests | 1 failed) 14ms
+   × bounds real reads to two active and four queued; disconnect prevents queued dispatch and late body commits 7ms
+   ✓ does not send after disconnect interrupts persistence and recovers only through a new explicit call 3ms
+   ✓ retains ambiguous receipts through auth/CAS rejection and retries the identical intent only on explicit recovery 1ms
+   ✓ keeps an acknowledged remote command recoverable when clearing local storage fails and isolates listener errors 0ms
+   ✓ rejects the wrong stored namespace and oversized intent before any mutation 2ms
+   ✓ rejects malformed or cross-goal reads without replacing the previously expanded immutable body 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/goal/lifecycle.test.ts > bounds real reads to two active and four queued; disconnect prevents queued dispatch and late body commits
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ packages/interaction/src/goal/lifecycle.test.ts:25:70
+     23|   await expect(c.read({ kind: 'explanation', version: 7 })).rejects.to…
+     24|   c.disconnect(); let disposed = false; const disposal = c.dispose().t…
+     25|   await Promise.resolve(); await Promise.resolve(); expect(disposed).t…
+       |                                                                      ^
+     26|   deferredReads[0]!.done.resolve(body(1)); deferredReads[1]!.done.reso…
+     27|   const results = await settled; await disposal;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  05:01:11
+   Duration  332ms (transform 133ms, setup 0ms, import 234ms, tests 14ms, environment 0ms)
+

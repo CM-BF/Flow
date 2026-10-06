@@ -1,0 +1,88 @@
+{
+  "firstObservation": {
+    "generatedAt": "2026-10-06T09:59:56.011Z",
+    "main": {
+      "available": true,
+      "branch": "main",
+      "head": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T09:59:57.562Z",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+    },
+    "sourceCount": 122,
+    "assignments": {
+      "state": "unknown",
+      "observedAt": "2026-10-06T09:59:56.011Z",
+      "claims": [],
+      "message": "领取状态未知：协调数据库未配置或暂不可用。禁止据此新 take。"
+    },
+    "correction": "Initial dashboard-only restart omitted existing coordination environment; no project/provider service was changed. Restarted the verified owned dashboard process with the existing environment."
+  },
+  "finalObservation": {
+    "generatedAt": "2026-10-06T10:00:58.896Z",
+    "main": {
+      "available": true,
+      "branch": "main",
+      "head": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T10:01:00.487Z",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+    },
+    "sourceCount": 122,
+    "assignmentsState": "available",
+    "unregistered": [
+      "R05D"
+    ],
+    "tasks": [
+      {
+        "id": "S01P02",
+        "current": true,
+        "issues": [],
+        "parseErrors": []
+      },
+      {
+        "id": "D08",
+        "current": true,
+        "issues": [],
+        "parseErrors": []
+      },
+      {
+        "id": "WPF-ACTIVITYREAD01",
+        "current": true,
+        "issues": [],
+        "parseErrors": []
+      },
+      {
+        "id": "WPF-STEIRI01",
+        "current": true,
+        "issues": [],
+        "parseErrors": []
+      },
+      {
+        "id": "R05C",
+        "current": true,
+        "issues": [],
+        "parseErrors": []
+      },
+      {
+        "id": "TUI01A",
+        "current": true,
+        "issues": [],
+        "parseErrors": []
+      }
+    ]
+  },
+  "browser": {
+    "method": "CUA independent temporary IAB tab",
+    "observed": [
+      "122 plans visible",
+      "D08 parent D01 button and co-lead visible",
+      "SVC04 malformed legacy parent declaration shown unknown without inference"
+    ],
+    "closed": true,
+    "userTabsTouched": false
+  },
+  "personalServiceChanged": false
+}

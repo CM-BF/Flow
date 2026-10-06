@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-06T08:38:07.145421+00:00",
+  "sourceCommitAtExecution": "c71b70bf92c26cd80e11c281e4f05f504bd0119e",
+  "sourceWasDirty": true,
+  "sourceFiles": {
+    "apps/web/src/conversations/ConversationThread.tsx": "c25c512abc122a6a257262c6bf91ff6506b7c1021e092eefc9dc61388a733da1",
+    "apps/web/src/conversations/conversations.css": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+    "apps/web/src/execution-profiles/execution-profiles.css": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+    "apps/web/test/conversation-readability.browser.ts": "41fa7656a43cd197ad3affbca0419c21a89d7c702ddf4318617b5adb4f51b52e",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "checks": {
+    "webTypecheck": "r1-typecheck.log exit0",
+    "build": "r1-build.log exit0; two chunks above500kB",
+    "development": "8 checks; errors=[]; failure=null",
+    "production": "8 checks; errors=[]; failure=null"
+  },
+  "executionReports": [
+    "development-browser.json",
+    "production-browser.json"
+  ],
+  "restrictions": "HTTP fixture only; no model/DB/realcenter/performance claim. No runtime/command changes.",
+  "implementationTarget": "527176c2b13880e6009be9605f08ae560315624d",
+  "binding": "Post-execution hashes equal the fixed target. Both reports retain c71b70b+dirty execution identity; no commit-time rewriting."
+}

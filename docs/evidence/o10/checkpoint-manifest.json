@@ -1,0 +1,216 @@
+{
+  "target": "b1a88ce90d2366f0fda6e4411471a4ddc5894e5e",
+  "originalTarget": "3c770b52bb4e2e8b3c8b217b9d7900dda688263d",
+  "sourceDigest": "c7fa26cdf75f63eb62723a13f3a6ea29b9f82b1453a1ed51b56b8c2743b8d0c6",
+  "changedSource": [
+    {
+      "path": "experiments/native-child-acceptance/driver.mjs",
+      "bytes": 14299,
+      "sha256": "9a8fe174724569b010c8b01dded55cc21fceb03469bcb39527d5ca46441f1f19"
+    },
+    {
+      "path": "experiments/native-child-acceptance/checkpoint.test.mjs",
+      "bytes": 4159,
+      "sha256": "1e51630d9105ee5cfb9c50168afdf7e62f83958aa04d9a4566f4d7a11320cfab"
+    },
+    {
+      "path": "experiments/native-child-acceptance/README.md",
+      "bytes": 5971,
+      "sha256": "eb55329a4281a5bbb7ac4261640eccfb021c5bc3786ae09cec175002d4be9d0b"
+    }
+  ],
+  "allSource": [
+    {
+      "path": "experiments/native-child-acceptance/README.md",
+      "bytes": 5971,
+      "sha256": "eb55329a4281a5bbb7ac4261640eccfb021c5bc3786ae09cec175002d4be9d0b"
+    },
+    {
+      "path": "experiments/native-child-acceptance/checkpoint.test.mjs",
+      "bytes": 4159,
+      "sha256": "1e51630d9105ee5cfb9c50168afdf7e62f83958aa04d9a4566f4d7a11320cfab"
+    },
+    {
+      "path": "experiments/native-child-acceptance/config.mjs",
+      "bytes": 3664,
+      "sha256": "2cc4570905284fdc3c5f875cfa944a4619a26c7f0832929f9351e5693a7624ea"
+    },
+    {
+      "path": "experiments/native-child-acceptance/driver.mjs",
+      "bytes": 14299,
+      "sha256": "9a8fe174724569b010c8b01dded55cc21fceb03469bcb39527d5ca46441f1f19"
+    },
+    {
+      "path": "experiments/native-child-acceptance/driver.test.mjs",
+      "bytes": 787,
+      "sha256": "cdd6351e5349ac5428caff521fc43a8eb20fa5f69c4dfadaf046a1f3b6da008a"
+    },
+    {
+      "path": "experiments/native-child-acceptance/facts.mjs",
+      "bytes": 2723,
+      "sha256": "17cb94aa582caa03cf142c253d2d5a54df99402cf6001222d7e53160d16aa517"
+    },
+    {
+      "path": "experiments/native-child-acceptance/guard.mjs",
+      "bytes": 7070,
+      "sha256": "067bdfcbe78fe1ee1385fe25fe1ab094f4f2d82e51344e72fa1717d7eda205d2"
+    },
+    {
+      "path": "experiments/native-child-acceptance/guard.test.mjs",
+      "bytes": 5392,
+      "sha256": "37185b4c895a18ca7e2c459bc10bf06b9673f27de53fbb9e00bd7634392ee326"
+    },
+    {
+      "path": "experiments/native-child-acceptance/journey.test.mjs",
+      "bytes": 1807,
+      "sha256": "5b1cd8a93c125859f80779bcca1ebb8d29ca35dcacfdd9b0d4bad7bebab7aef2"
+    },
+    {
+      "path": "experiments/native-child-acceptance/worker.mjs",
+      "bytes": 5396,
+      "sha256": "11c9d1595cb2fe104837495ed08be4dce646082a8260d9f9cea20acc9a0874f7"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/o10/checkpoint-final.txt",
+      "bytes": 347,
+      "sha256": "d5239099a9b97f489736b4b5d8576bde43e5cf64dd4d034eb47565703ce63103"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-final/checkpoint-success/checkpoint.json",
+      "bytes": 21687,
+      "sha256": "64b7dce8aa7ae2df829d04482ca823968ea7f189d1b5219abf028e1a082d6058"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-final/checkpoint-success/result.json",
+      "bytes": 21866,
+      "sha256": "6d25ba0a9cef5effe4a9fadf39ded601e9ad331f2f2f9c87d8c736477414e9ec"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-final/checkpoint-write-failure/result.json",
+      "bytes": 21883,
+      "sha256": "7d90714e4ef04611df60c7d7e2435896055987be3811940e42a9aca7c39aa072"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-final/checkpoint-write-failure/test-operator-cleanup.json",
+      "bytes": 187,
+      "sha256": "09df877cbc61214d46bc7753c7c1f8bcac774f3fc5d95936039fbcd034403136"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-prepared.json",
+      "bytes": 5783,
+      "sha256": "7bf2c65a3f7178215697ccf291ea1025bc7bcc181ef1201c8c8f454fdc922136"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-red.txt",
+      "bytes": 1100,
+      "sha256": "a7cc11ba2084188fcb67174719636b4929145a176ba065e7c85700c6da68c73c"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-red/checkpoint-write-failure/result.json",
+      "bytes": 21604,
+      "sha256": "f2f3b288c3191bca9ce0ab0d1a21ef2c7e6df3fb28c5286122e6cfc8abf6833a"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-red/checkpoint-write-failure/test-operator-cleanup.json",
+      "bytes": 187,
+      "sha256": "ed295248773ec3036842dec3899938a59b4fdb5072786f6a6c97b4ec0a12e8aa"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-resource-facts.json",
+      "bytes": 1547,
+      "sha256": "8100bcbb2007b8bfebb936ca086bfe1f5fb143b41043fda7380abe5da20b914f"
+    },
+    {
+      "path": "docs/evidence/o10/checkpoint-syntax.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "experiments/native-graph-acceptance/driver.mjs",
+      "bytes": 15469,
+      "sha256": "7a0bed2497649c10ada08f6c21f594707f9e1a0ba4f2454adeb93bb9e6666fb7"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/guard.mjs",
+      "bytes": 7880,
+      "sha256": "0eacf129f8a44d95e83052f5b949cf4c5a42c82f9ebfffa1b38259b3a99308de"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/config.mjs",
+      "bytes": 4372,
+      "sha256": "1d6fd1ed97164b3f72de507c4aea66cba1645d30d87a736ecafae871ab36e039"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/peer.mjs",
+      "bytes": 2877,
+      "sha256": "839ae672fa23258d255a9d59f25ce015050330173e0ee8c2b0d2e0a55ef5aea3"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 8200,
+      "sha256": "38448a6d89890315047d3e82f192481eb78fc159c98ab44547d70925a6d65042"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4052,
+      "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12741,
+      "sha256": "5fa81b90376f441b84f20578b79845aec20fc6a3a5cdcbc9e369a1ee64599401"
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/index.ts",
+      "bytes": 1083,
+      "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8"
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/store.ts",
+      "bytes": 1466,
+      "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 13874,
+      "sha256": "19d90e2279d350e133ebea9099e8a0c1b5b601c674e9567758a16b32b2adf316"
+    },
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 37212,
+      "sha256": "721462314456d68fca547e5e4b6c8f4da98540116564f6266644bf33208a053c"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 265530,
+      "sha256": "cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c"
+    }
+  ],
+  "originalManifest": {
+    "path": "docs/evidence/o10/manifest.json",
+    "bytes": 7586,
+    "sha256": "0101beb540b75fe2d20b88ec979ee5251a764316ea79a73909ee287c3c2528da"
+  },
+  "checks": "2/2 P2-focused; original 11 not rerun; 2 changed JS syntax exit0; zero native",
+  "providerQueries": 0,
+  "review": "PENDING Root delta review"
+}

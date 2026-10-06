@@ -1,0 +1,64 @@
+{
+  "startedAt": "2026-10-06T11:19:18.572799+00:00",
+  "sourceCommit": "1d236cbe2299117e3b63887fda3d1c0e140f56b0",
+  "sourceDirty": " M apps/server/src/attachments/context.test.ts\n M apps/server/src/attachments/fixture.ts\n M plans/wpf-attach01-resources/plan.md\n M plans/wpf-attach01-resources/review.md\n M plans/wpf-attach01-resources/status.md\n",
+  "sourceHashes": {
+    "apps/server/src/attachments/fixture.ts": "584cf45b3c12375d20031ac80e63de4e529c7b2351243136f2eab8bfbd28b0d2",
+    "apps/server/src/attachments/context.test.ts": "6bfd2830c9ee8b89e5f7ca7d1c12671ee02c3d76eb1e0d7b813fc9fd4ddbfa71"
+  },
+  "checks": [
+    {
+      "name": "direct",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "apps/server/src/attachments/attachments.test.ts",
+        "apps/server/src/attachments/context.test.ts",
+        "-t",
+        "before 026|capability is project-bound|lost upload ACK and restart|owner authentication is reevaluated|committed upload survives|lost Send ACK"
+      ],
+      "startedAt": "2026-10-06T11:19:18.624869+00:00",
+      "endedAt": "2026-10-06T11:19:33.716234+00:00",
+      "exitCode": 0
+    },
+    {
+      "name": "types",
+      "command": [
+        "pnpm",
+        "exec",
+        "tsc",
+        "--noEmit",
+        "--strict",
+        "--noUncheckedIndexedAccess",
+        "--target",
+        "ES2023",
+        "--module",
+        "ESNext",
+        "--moduleResolution",
+        "Bundler",
+        "--lib",
+        "ES2023,DOM,DOM.Iterable",
+        "--esModuleInterop",
+        "--resolveJsonModule",
+        "--skipLibCheck",
+        "--jsx",
+        "react-jsx",
+        "--types",
+        "node",
+        "apps/server/src/attachments/fixture.ts",
+        "apps/server/src/attachments/context.test.ts"
+      ],
+      "startedAt": "2026-10-06T11:19:33.716287+00:00",
+      "endedAt": "2026-10-06T11:19:36.307621+00:00",
+      "exitCode": 0
+    }
+  ],
+  "endedAt": "2026-10-06T11:19:36.307698+00:00",
+  "afterHashes": {
+    "apps/server/src/attachments/fixture.ts": "584cf45b3c12375d20031ac80e63de4e529c7b2351243136f2eab8bfbd28b0d2",
+    "apps/server/src/attachments/context.test.ts": "6bfd2830c9ee8b89e5f7ca7d1c12671ee02c3d76eb1e0d7b813fc9fd4ddbfa71"
+  },
+  "sourceUnchangedDuringChecks": true
+}

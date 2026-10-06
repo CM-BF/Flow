@@ -1,0 +1,6 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream
+> tsc --noEmit
+
+apps/runner/src/assistant-stream/stream.test.ts(95,62): error TS2367: This comparison appears to be unintentional because the types '`${string}-${string}-${string}-${string}-${string}` | undefined' and '"tool-wire"' have no overlap.
+ ELIFECYCLE  Command failed with exit code 2.

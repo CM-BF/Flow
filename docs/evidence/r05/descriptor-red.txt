@@ -1,0 +1,47 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host
+
+ ❯ apps/runner/src/native-harness.test.ts (1 test | 1 failed) 8ms
+   × describes the default fixture without a native profile or control ports 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/native-harness.test.ts > describes the default fixture without a native profile or control ports
+AssertionError: expected { adapters: [ { …(3) } ], …(2) } to match object { harnesses: [ { …(1) } ], …(2) }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "activeSteering": false,
+-   "harnesses": [
+-     {
+-       "descriptor": {
+-         "adapterVersion": "1",
+-         "harness": "fixture",
+-         "ports": {},
+-         "protocol": "flow.native-harness.v1",
+-         "publicProfile": null,
+-       },
+-     },
+-   ],
+    "profile": null,
+  }
+
+ ❯ apps/runner/src/native-harness.test.ts:6:18
+      4| it('describes the default fixture without a native profile or control …
+      5|   const loaded = await loadRunnerConfiguration();
+      6|   expect(loaded).toMatchObject({
+       |                  ^
+      7|     harnesses: [{ descriptor: {
+      8|       protocol: 'flow.native-harness.v1', harness: 'fixture', adapterV…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  01:50:05
+   Duration  855ms (transform 448ms, setup 0ms, import 705ms, tests 8ms, environment 0ms)
+

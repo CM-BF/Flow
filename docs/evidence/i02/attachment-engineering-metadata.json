@@ -1,0 +1,65 @@
+{
+  "observedAt": "2026-10-06T10:13:06.927Z",
+  "previousMain": "c34033234e0f313e89b0982eb233f268b5f2172e",
+  "candidate": "85beee5eeee1f19980a75ea78c47bb46ee136b3b",
+  "count": 125,
+  "checks": [
+    {
+      "id": "ENG01A",
+      "errors": [],
+      "humanComplete": true,
+      "branch": "codex/engineering-workspace-pipeline"
+    },
+    {
+      "id": "WPF-ATTACH01",
+      "errors": [],
+      "humanComplete": true,
+      "branch": "codex/attachment-resources"
+    },
+    {
+      "id": "R05D",
+      "errors": [],
+      "humanComplete": true,
+      "branch": "codex/codex-native-launch"
+    },
+    {
+      "id": "F01",
+      "errors": [],
+      "humanComplete": true,
+      "branch": "codex/m2-shared-foundation"
+    }
+  ],
+  "changedPaths": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "docs/evidence/d05/engineering-attachment-registry-validation.json",
+    "docs/evidence/d05/native-launch-registry-live.json",
+    "docs/evidence/eng01a/README.md",
+    "docs/evidence/eng01a/claim.json",
+    "docs/evidence/eng01a/interface.md",
+    "docs/evidence/f01/attachment-handoff.json",
+    "docs/evidence/f01/attachment-scope-amend-receipt.json",
+    "docs/evidence/s01p02/README.md",
+    "docs/evidence/s01p02/main-accepted.json",
+    "docs/evidence/s01p02/main-partial-handback-receipt.json",
+    "docs/evidence/s01p02/main-partial-handback.md",
+    "docs/evidence/s01p02/metadata-only-receipt.json",
+    "docs/evidence/wpf-attach01/claim-observation.json",
+    "docs/evidence/wpf-attach01/interface.md",
+    "docs/evidence/wpf-attach01/quality.md",
+    "docs/evidence/wpf-attach01/take-receipt.json",
+    "plans/d05-architecture-view/status.md",
+    "plans/eng01a-workspace-pipeline/plan.md",
+    "plans/eng01a-workspace-pipeline/review.md",
+    "plans/eng01a-workspace-pipeline/status.md",
+    "plans/f01-shared-domains/plan.md",
+    "plans/f01-shared-domains/status.md",
+    "plans/s01-concurrency-entry/plan.md",
+    "plans/s01-concurrency-entry/status.md",
+    "plans/wpf-attach01-resources/plan.md",
+    "plans/wpf-attach01-resources/review.md",
+    "plans/wpf-attach01-resources/status.md"
+  ],
+  "productTests": "not rerun; documentation and registry only",
+  "providerQueries": 0,
+  "personalRuntimeUnchanged": "b1c2e398 accepting v12"
+}

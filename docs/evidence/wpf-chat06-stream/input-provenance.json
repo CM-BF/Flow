@@ -1,0 +1,24 @@
+{
+  "base": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "preflight": "New clean branch initially ba908a2d84a05b336d74fbaccd7a36d3d254c501; ancestry and no own commits verified, authorized ff-only to fa9. No reset/rebuild or extra shared input.",
+  "domain": "5ff8880b3518992121216998c169dd01ab44cee0",
+  "client": "88a869efd782afd5f64f5d7adad0a9167da121c1",
+  "sources": [
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "9ca50da77efcb8e147afb324166634aa22413d2f45721acb5022c6ddd46cedea"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sha256": "72e9ceb34213cc5ba95162bc1f1b3eac926d9349c83d4f54b29a8d0bd7bcd3b2"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "1903349782abae72f704a49a850d8fc63a7310db53c8b6a89ba4d0338ae1021d"
+    }
+  ]
+}

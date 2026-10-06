@@ -1,0 +1,145 @@
+{
+  "recordedAt": "2026-10-06T11:07:34.218990+00:00",
+  "base": "bdea351aed4cbcb9e3749919d08be2e92e0a6c18",
+  "source": [
+    {
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.test.ts",
+      "bytes": 3356,
+      "sha256": "157e7c40c29f36688455775e7a4da63e8df5077f6ff71d2315cf3ee1f2924348"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.test.ts",
+      "bytes": 25516,
+      "sha256": "d4c9d024f2e92f1e2af3b0414adb12bbf44ce0c876d671ff33439de6f067b7a0"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 10963,
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.test.ts",
+      "bytes": 3159,
+      "sha256": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.test.ts",
+      "bytes": 4754,
+      "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    }
+  ],
+  "tests": {
+    "exitCode": 0,
+    "selected": 50,
+    "passed": 50,
+    "distinct": 50,
+    "perFile": {
+      "wire": 18,
+      "historyDTO": 6,
+      "store": 20,
+      "routes": 6
+    },
+    "storeComposition": {
+      "existingDeterministic": 11,
+      "realPostgreSQL": 9
+    },
+    "prior49Overlap": true,
+    "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH FLOW_WPF04_PG=1 pnpm exec vitest run --config /tmp/flow-04-history-vitest.mjs apps/server/src/context-transparency/store.test.ts apps/server/src/context-transparency/routes.test.ts packages/contracts/src/context-observation-event.test.ts packages/contracts/src/context-observation-history.test.ts",
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+    "log": "history-pg-final.txt"
+  },
+  "strict": {
+    "exitCode": 0,
+    "log": "history-pg-typecheck-final.txt",
+    "rootOptionsInherited": true,
+    "selectedRoots": 10,
+    "additionalUnchangedRoot": "apps/server/src/index.ts supplies actual Fastify request declaration; transitive installed declaration paths explicitly resolved",
+    "firstFailure": "history-pg-typecheck-first.txt: missing real Fastify augmentation in isolated graph",
+    "secondFailure": "history-pg-typecheck-augmentation.txt: existing npm-package-arg/pacote/ssri declaration resolution; corrected paths to installed @types, no shims/no relaxed options"
+  },
+  "runtime": {
+    "node": "v24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "postgres": {
+    "facts": {
+      "database": "flow_wpf04_8db34d87fd4f4406b7685647e4eeb923",
+      "startedAt": "2026-10-06T11:06:20.882Z",
+      "created": true,
+      "dropped": true,
+      "prerequisites": [
+        {
+          "version": 1
+        },
+        {
+          "version": 2
+        },
+        {
+          "version": 4
+        },
+        {
+          "version": 6
+        },
+        {
+          "version": 7
+        },
+        {
+          "version": 10
+        },
+        {
+          "version": 11
+        },
+        {
+          "version": 15
+        },
+        {
+          "version": 18
+        },
+        {
+          "version": 21
+        }
+      ],
+      "connectionsBeforeDrop": 0,
+      "remaining": [],
+      "endedAt": "2026-10-06T11:06:23.138Z"
+    },
+    "ddl": "packages/storage/migrations/027-context-observation-history.sql",
+    "no026": true,
+    "noServerOrScheduler": true,
+    "maxPool": 2,
+    "adminMaxPool": 1
+  },
+  "limits": [
+    "Local owner-auth fixture HTTP only; global owner auth and production mount remain Lead integration checks.",
+    "No runner event union/applyEvent producer or client/global server mount changed.",
+    "No SDK/provider/Codex/auth/network probe; context current and remaining remain unknown.",
+    "Pool close/reopen proves durable readback, not process-kill or crash recovery."
+  ],
+  "oldSixSourcesUnchanged": true
+}

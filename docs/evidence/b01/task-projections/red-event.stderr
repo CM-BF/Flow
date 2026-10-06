@@ -1,0 +1,15 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/task-read-projection.test.ts > event reads keep public output while omitting a legal long prompt from decoded PG rows
+AssertionError: expected [ 'conversation_input_id', …(15) ] to not include 'submission'
+ ❯ apps/server/src/task-read-projection.test.ts:23:46
+     21|   expect(current.value).toMatchObject({ entries: [], nextCursor: 0, wa…
+     22|   expect(baseline.measurement.taskFields).toContain('submission');
+     23|   expect(current.measurement.taskFields).not.toContain('submission');
+       |                                              ^
+     24|   expect(current.measurement.taskRowJsonBytes).toBeLessThan(baseline.m…
+     25|   expect(current.measurement.selectCalls).toBe(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ✓ apps/runner/src/engineering/integration.test.ts (5 tests | 2 skipped) 6471ms
+   ✓ executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback  2192ms
+   ✓ retains an injected uncertain write and project lease across host restart without replaying writes  475ms
+   ✓ replays a lost artifact acknowledgement without fabricating the verification or reexecuting engineering  815ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed | 2 skipped (5)
+   Start at  03:37:41
+   Duration  9.17s (transform 1.54s, setup 0ms, import 2.57s, tests 6.47s, environment 0ms)
+

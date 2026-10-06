@@ -1,0 +1,81 @@
+{
+  "startedAt": "2026-10-06T11:29:48.324Z",
+  "factoryObservations": [
+    {
+      "observedAt": "2026-10-06T11:29:49.743Z",
+      "factoryMigration": true,
+      "factoryRoutes": [
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/capabilities",
+          "present": true
+        },
+        {
+          "method": "POST",
+          "url": "/api/projects/:projectId/attachments",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/upload-receipt",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/:resourceId",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/:resourceId/versions/:version/content",
+          "present": true
+        }
+      ],
+      "fallbackMigration": false,
+      "fallbackRoutes": false
+    },
+    {
+      "observedAt": "2026-10-06T11:29:50.271Z",
+      "factoryMigration": true,
+      "factoryRoutes": [
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/capabilities",
+          "present": true
+        },
+        {
+          "method": "POST",
+          "url": "/api/projects/:projectId/attachments",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/upload-receipt",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/:resourceId",
+          "present": true
+        },
+        {
+          "method": "GET",
+          "url": "/api/projects/:projectId/attachments/:resourceId/versions/:version/content",
+          "present": true
+        }
+      ],
+      "fallbackMigration": false,
+      "fallbackRoutes": false
+    }
+  ]
+}

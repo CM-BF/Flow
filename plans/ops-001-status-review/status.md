@@ -2,16 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:42 UTC / 2026-10-06 01:42 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:01:19 UTC / main9d6bd45abdf5149bc44f1e9dc534454e7403f7d7（本次发布前） |
 | Plan | [plan.md](plan.md) |
+| 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
+| co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
-| 工作树dirty状态 | 本次规则/汇总metadata待提交 |
-| 工作分支状态 | 依下方TODO；M1系统旅程、最终独立review及main集成已完成 |
-| 已集成main状态 / HEAD | `14fea3d9b3f831aa35b8c80bf5c465a7039ad609`；2026-10-06 01:46 UTC确认本机与origin/main已集成M1；此SHA是观察值，后续metadata不让既有实现失效 |
-| Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
+| 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
+| 工作分支状态 | delivered；原历史TODO与独立review边界保留 |
+| 已集成main状态 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；严格两层任务与消息预算已main；模块化/复用/性能新规则固定1d36a7a已独审，本批发布。 |
+| Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
+
+| 阶段 | M2 |
+| 本片段交付阶段 | delivered |
+| 优先级 | 5 |
+| 当前产出 | 全项目明确模块职责、复用与扩展方式、性能界限；计划和审查使用同一规则。 |
+| 下一可用交付 | 本片段已交付；后续按真实协作问题维护规则。 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -30,7 +40,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。
+- 当前用户授权配额为本队4/Web4/Mika4，总上限12；不是实际运行数。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -48,3 +58,29 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 | OPS-001-05 | completed | Execution Lead | 完整矩阵22项、规则/索引、C02/P01/M02登记；10/10 dashboard Node检查、实际17源均live且新3源0issues；本工作段相对链接检查通过，运行中4320刷新另行核验 |
 
 本次clean-code复核：runtime差异仅registry新增3项，未更改解析器/状态猜测/业务UI；metadata不追逐main精确HEAD，不修改历史实验JSON/hash。功能和UX问题仍登记D03未实现。文档中原候选技术/旧变更记录保留历史范围，当前状态明确完整目标持续。此交付不代表22项要求完成。
+
+## 2026-10-06 03:38 UTC 三队协作规则
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| OPS-001-06 | completed | Execution Lead | 三队4/4/2预算、单向主Lead外投/Root即时回桥接、两外部Lead双向；实际CHAT客户端patch与R03证据直接消息已执行。只文档内容核验，无产品测试 |
+
+### 2026-10-06 04:30 UTC
+
+OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留canonical status/evidence。全矩阵更新核实main4e0289f与实际4320的47源，不重跑产品测试；保留原始验收和未完成项。
+
+2026-10-06 07:18 UTC：仅补当前人读摘要；OPS-001-01～07既有完成证据与模板独立核对范围保留，不重新宣布整项目通过。三队当前4/4/2，旧单队cap错误仍是历史观察。无产品测试。
+
+2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
+
+2026-10-06 08:37:23 UTC：OPS-001-08已记录用户最新交付要求；已核独立分支commit/push与受审小片即时集成、Lead/worker职责和全局slot协调约束。规则/文档核验，无产品测试或模型调用。
+
+2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
+
+| OPS-001-09 | completed | Execution Lead | 根AGENTS与plans/AGENTS已在main648c1cc的a7db989交付；OPS当前规则在本权威树；一次同步外部两Lead，后续不逐条回传普通进度。仅文档检查。 |
+
+2026-10-06 08:53 UTC：最终规则严格两层与每大task#独立blockers+Done(1)，覆盖先前宽泛消息例外；实际根AGENTS/plans规则已写入并由本批发布，OPS历史即时桥接条款已替换。worker向本组lead必要交接不受限制。当前规则修订作为一个大task，只在全部文件/发布与看板记录核验后一次Done。
+
+| OPS-001-10 | completed | Execution Lead | 根规则1d36a7a4532bbd2f29300c220d5451f755bd756c与plan/review门槛完整覆盖；runner_owner独立只读APPROVED；[质量记录](../../docs/quality/modular-design-rules-2026-10-06.md)，仅文档检查。 |
+
+2026-10-06 09:00:57 UTC：用户模块化/DRY/扩展/性能规则完整落实到根AGENTS唯一权威及plans门槛，独立文档审查无finding；与本批受控main发布绑定，实际发布SHA由Git集成事实核验。WPF-MATURE-01～06统一引用根锚点，不复制规则正文。

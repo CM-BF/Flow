@@ -1,0 +1,13 @@
+{
+  "extends": "../../../apps/web/tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "noEmit": true
+  },
+  "include": [
+    "../../../apps/web/src/plugin-management",
+    "../../../apps/web/test/plugin-management"
+  ]
+}

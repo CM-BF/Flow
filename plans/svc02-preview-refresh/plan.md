@@ -1,0 +1,55 @@
+# SVC02 常驻预览安全更新
+
+编号SVC02；原工具实现状态completed；本次更新操作completed；创建2026-10-06 05:13:45 UTC。当前操作唯一owner assignment_review / gpt-6-astra；原实现作者runner_owner。base6b4b89f397b35d7e769846df457e76bb29f4a265。
+
+## 已批准目标
+
+先停止接新任务，让当前任务/心跳/事件继续；所有未完成attempt（含uncertain）消失后才允许核验并更新自有进程。数据、凭据、native工作目录、端口与浏览器地址保留。更新后明确恢复接收，不自动运行queued任务。停止派发不是取消已有外部副作用。
+
+旧75a33中心不认识维护API。明确受信本机入口核私有配置、专库marker、runner token hash、进程身份及operation.lock，仅执行016迁移与同维护domain事务；不创建第二中心或scheduler、不暴露HTTP凭据、不探测模型。migration默认accepting；attempt INSERT guard使用已有runner行锁，维护时让旧claim事务整体回滚。迁移短锁/SQL限时，失败回滚且不继续停止。
+
+## 最小模块与并发规则
+
+中心维护domain承担版本CAS、幂等、不可变审计与admission gate；claim仅调用gate，heartbeat/report保持原语义。状态accepting→draining→maintenance，后者仅在相同runner行锁下核completed_at IS NULL为0。事务在设置maintenance后立即提交；不跨stop/start持PG锁，避免新中心迁移/配置发布死锁。持久gate加HTTP禁止maintenance恢复、本机operation.lock覆盖更新；普通status/旧pending计数不授予停止许可。维护期间失败保持关门/unknown，不用revoke代替drain。
+
+本机CLI保持operation.lock，停止只用原有PID/启动时间/命令/PGID核验，不扫描端口杀人。HTTP owner可停止领取或放弃尚未进入maintenance的排空；maintenance恢复仅可信host核新进程后调用同domain显式resume并审计，避免并发HTTP提前放行。无热更新、多宿主协调、通用服务框架或新依赖。
+
+## TODO
+
+- [x] SVC02-01：固定公开小合同与016/domain，真实旧claim SQL并发及完整回滚证据。
+- [x] SVC02-02：受信本机bootstrap/drain/refresh/resume入口与私有持有校验。
+- [x] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
+- [x] SVC02-04：独立review、main接收与原fb906真实部署窗口。
+- [x] SVC02-05：本次新领取、只读fresh facts与新窗口方案；精确b54产品等价253b。
+- [x] SVC02-06：GO窗口SVC02-b54-0736中drain→hold→refresh b54完成，fresh验证与保留证据已采，仍maintenance。
+- [x] SVC02-07：GO RESUME_GO SVC02-b54-resume-0745后一次显式resume完成，v6 accepting，窗口CLOSED。
+
+- [x] SVC02-08：新32c固定方案/fresh只读事实/claim和同源核验。
+- [x] SVC02-09：新GO窗口实际drain→hold→refresh32c，固定保留核验/原false解释接受。
+- [x] SVC02-10：GO明确放行合法用户queued后一次resume v9，窗口CLOSED。
+
+共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。初始实现仅在临时专库/自有进程验证；随后按下述独立批准窗口完成真实部署。本窗口已结束，未来61227/61228操作须新领取并给出已审main/实际状态/回退语义，另获Root窗口确认。
+
+## 技能与验收
+
+本地find-skills先发现，实际读用codebase-design/clean-code/brainstorming/tdd：小domain接口集中并发不变量，真实PG/HTTP与host CLI seam先红后绿；不安装无关技能。Root已批准设计，无需重复普通设计审批。每段与交付前clean-code检查记录own evidence。
+
+测试仅本模块+直接消费者，flow_svc02专库/动态端口；不运行全产品/共享DB套。覆盖身份/旧version/同key异input/重启审计、drain与旧claim交错、已占用session回滚、heartbeat/outbox继续、uncertain阻止hold、显式resume、错误PID/TERM超时/启动失败关门。0模型/0云。
+
+2026-10-06 05:36 UTC：已审实现9aa790552cb8847d6feb8c8f90c870407a54e572进入main fb906cb42391971a8b315dbd813f7633927d7265；SVC02-04仅剩单独窗口和真实部署记录。05:36:59Z原子amend至v2交回 apps/server/src/runners.ts，后续该文件由Lead协调新owner；本owner保留其余scope，不触碰现有服务。
+
+2026-10-06 05:39 UTC：Root批准窗口中，唯一执行owner runner_owner已完成实际bootstrap→refresh并核原DB/配置/native目录/端口保留。更新source固定fb906cb，暂不resume；SVC02-04仅保留明确恢复接收的后续操作，不把进程就绪称模型可用。
+
+2026-10-06 05:40 UTC：Root单独批准恢复后完成一次resume，v3 accepting；全库0任务/未完attempt，3自有进程就绪，0模型。SVC02本片段已交付，原始失败/实验范围与单runner边界保留。真实消息/排队或多runner能力不纳本验收。
+
+2026-10-06 06:53:51 UTC：已核实现进入main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a，剩余owner实现范围零diff；运行安装仍fb906cb accepting，Lead交接确认后续2个任务已验收成功。本次不探测服务、不刷新、不新增模型；历史0任务仅当时部署证据。任务已完成，停止写入并于metadata提交后释放剩余claim，后续部署按新窗口/新take管理。
+
+2026-10-06 07:27 UTC：复用原任务和已审工具，新owner受控ff原树至253b8ad38fd869297e7d9948a26c1d310fef5c6c。原实现completed不变，新增三条操作TODO；当前只读准备，不用旧窗口授权，不实施child任务或模型试验。
+
+2026-10-06 07:33 UTC：准备交付，固定b54、工具对9aa零diff，0服务操作/0query。现态与限制见[新方案](../../docs/evidence/svc02/refresh-b54-proposal.md)。SVC02-06/07仍pending，原四项已交付不改成未实现。
+
+2026-10-06 07:37 UTC：新窗口SVC02-b54-0736已由GO批准且QUIET_RELEASE条件满足；执行前实际main runtime依赖缺失，按原方案排空前停止。新安装由Lead单写协调，本owner不绕过固定依赖。
+
+2026-10-06 07:45 UTC：本次固定b54刷新已完成，数据保留证据与原始差异见[结果](../../docs/evidence/svc02/refresh-b54-result.md)；SVC02-07继续待新GO显式resume。仅21份操作证据/23份固定源码核验，未重跑工程套件/调用provider。
+
+2026-10-06 07:46 UTC：本次GO显式恢复已完成，原记录/队列保留，0主动任务模型。部署窗口关闭；不因后继main metadata自动重新部署或重复采样。

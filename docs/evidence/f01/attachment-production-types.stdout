@@ -1,0 +1,7 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+> tsc --noEmit
+
+packages/client/src/attachment-production.test.ts(86,17): error TS2339: Property 'attachments' does not exist on type 'ConversationContextDetail'.
+  Property 'attachments' does not exist on type 'ConversationContextV1Detail'.
+ ELIFECYCLE  Command failed with exit code 2.

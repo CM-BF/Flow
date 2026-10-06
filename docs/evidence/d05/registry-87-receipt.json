@@ -1,0 +1,104 @@
+{
+  "observedAt": "2026-10-06T07:27:53.628Z",
+  "snapshotAt": "2026-10-06T07:27:49.121Z",
+  "count": 87,
+  "selected": [
+    {
+      "id": "WPF-PERF03",
+      "issues": [],
+      "status": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "正在减少未变化聊天消息的重复转换",
+        "next": "保留动态回复更新的消息复用实现与验证结果",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:24:14.652Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/plans/wpf-perf03-message-reuse/status.md",
+        "syncedAt": "2026-10-06T07:27:49.121Z",
+        "stale": false,
+        "ageHours": 0.04697805555555556
+      }
+    },
+    {
+      "id": "CHAT08",
+      "issues": [],
+      "status": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在接通执行中的修改指令与原生消费确认",
+        "next": "同次执行内接收新指令，并在确认完成后保存最终答复",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:22:49.807Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering/plans/chat08-native-active-steering/status.md",
+        "syncedAt": "2026-10-06T07:27:49.121Z",
+        "stale": false,
+        "ageHours": 0.10920027777777777
+      }
+    },
+    {
+      "id": "CHAT06P01",
+      "issues": [],
+      "status": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "相同正文与三种分片的生成器已独审通过，正在准备请求与SQL观察器",
+        "next": "完成服务端观察器与隔离运行入口，再申请极小测量窗口",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:26:42.096Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe/plans/chat06-stream-cost/status.md",
+        "syncedAt": "2026-10-06T07:27:49.121Z",
+        "stale": false,
+        "ageHours": 0.013644722222222223
+      }
+    }
+  ],
+  "assignmentsState": "available"
+}

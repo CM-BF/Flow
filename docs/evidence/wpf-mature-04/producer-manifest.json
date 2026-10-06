@@ -1,0 +1,357 @@
+{
+  "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+  "base": "844fa14bfbf32f5392e48e104b5440a9cb5b9b13",
+  "integratedMain": "2f4a5789ee13937914fa2c25161c8d5ed1071550",
+  "fixedAt": "2026-10-06 12:13:24 UTC",
+  "branch": "codex/context-transparency",
+  "claimVersion": 8,
+  "sources": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 22057,
+      "sha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.ts",
+      "bytes": 2478,
+      "sha256": "e41dc5fba3e0017d86a6d2e1c6f8e362164059356de3c5fbacf572a3b17d95d1"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.test.ts",
+      "bytes": 6632,
+      "sha256": "db87803f9350a978eb5845b95c7424b0ed4c63e666eeb1c077b83956c0577ff4"
+    },
+    {
+      "path": "apps/runner/src/claude-context-observation.test.ts",
+      "bytes": 20724,
+      "sha256": "e35da1190aebd05969179982fbf95ae99485d66d4c350c745b50a63fb7368e51"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-red.txt",
+      "bytes": 1219,
+      "sha256": "d358ad19e65e31d7356e1306472f1112997140ee6a4b01175c452eea40766864"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-initial-zero-tests.txt",
+      "bytes": 440,
+      "sha256": "8ef9e3e772bbccd9261e96c5125073cf769e8efeb7e50f8314048a11ef5238d4"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-final-tests.stdout.txt",
+      "bytes": 787,
+      "sha256": "2c6e25392150bca4837670fd775f8e02aba3fbc41919334f1bd38db65d9a900e"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-final-tests.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-final-tests-result.json",
+      "bytes": 930,
+      "sha256": "a9ed6f9f7e42b6ab2af947c453147afaed15f92f4256d95b2223ad37ec477a1b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-final-typecheck.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-final-typecheck.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-final-typecheck-result.json",
+      "bytes": 561,
+      "sha256": "34268f0973fdb351d51f53110fffa37abbfd48346fc1a26f9483989ce19eedc3"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-first-consumers.stdout.txt",
+      "bytes": 3695,
+      "sha256": "ce53158b5b7f8f5b24c5f132cb5747d5dd7a7debfe912ab8eaa5d2ed8f3a9b8f"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-first-consumers.stderr.txt",
+      "bytes": 701,
+      "sha256": "7951c15a6ab70fb08bbfda4297d7792f7f980dd987faffbdccaf091ce91741d3"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-first-consumers-result.json",
+      "bytes": 768,
+      "sha256": "eb7eb44d7f39f34aa28af98c395395253faf44a0d1bb2ac1a87bea973fb5ccad"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-fixture-recheck.stdout.txt",
+      "bytes": 335,
+      "sha256": "a71f075662d7aec8546918e67fbf9d7d8eddc19c0875bbcc4c33770946431cc9"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-fixture-recheck.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-fixture-recheck-result.json",
+      "bytes": 403,
+      "sha256": "b1a230666b2235ac6f5c13cd65ed6155f06c8b63a8a0f365f3ffcad9360d60c9"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-development-checks.json",
+      "bytes": 2147,
+      "sha256": "085163b5522a4d6c9079fb8e2654cbe2fcfea8bc62c8417c37451057656a07e2"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-environment.json",
+      "bytes": 746,
+      "sha256": "8c8fd85b6023b0833bbf95ea56a28b72e3a9e823691f059b5af6e66938193610"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-implementation.md",
+      "bytes": 5601,
+      "sha256": "db0f585a00ce26c47c66c0acbc2b3102f526cd6dd05af37a56e0887ba62a5486"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-integration-receipt.json",
+      "bytes": 1804,
+      "sha256": "0af6f270ba669b931b14a66d7703b3412310f30b625edbb3b5e6a8ed0a99ea44"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-legacy-freeze.json",
+      "bytes": 4974,
+      "sha256": "a358cd4b2869337d37806d4cecce2d5f1325ded25b46650f74b7325f8f2124d3"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-validation-config.json",
+      "bytes": 4755,
+      "sha256": "3e9ca66489660f6c4c11743811820a576f9da8c8d48beb431a99a621ee932400"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-validation-resolver.mjs",
+      "bytes": 853,
+      "sha256": "e8cf8645d49e46ba027b7132744b85fbd9f9a07c0fb372422f947258d35bcb30"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-writer-observation.json",
+      "bytes": 935,
+      "sha256": "d66b6cd55018bb020be9991cb3ee3945ec821b9477d2c604ede7396845d6904a"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/producer-amend-receipt.json",
+      "bytes": 978,
+      "sha256": "6fdcaf57c2006a2eedd9881148877a9cf2644ae48d0fe27581e8664e75baf908"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "apps/runner/src/active-steering/state.ts",
+      "bytes": 2511,
+      "sha256": "6b03718a65845f191744918ea4910fac7301da83667d0e95867a47dac5d92e08"
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5"
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/stream.test.ts",
+      "bytes": 9946,
+      "sha256": "366435364809e97ce68fd4a03ee27fc1b8bc8eba0dc972532b19a5fcb16e12c5"
+    },
+    {
+      "path": "apps/runner/src/claude.test.ts",
+      "bytes": 28030,
+      "sha256": "15ff8ce5bda76108a849f24d49858a96ee92fa15b4da1227afc24a14425bb113"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.test.ts",
+      "bytes": 6270,
+      "sha256": "b7492fc438723f2ca6543250c0da3fedaa12856af7d2af835030e869235ce216"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "bytes": 13246,
+      "sha256": "fa71594307d87e7c8e53d204dcd7448391993cbac2e33a80161466552a58d040"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "bytes": 2905,
+      "sha256": "4637f84caeb8bef5e002fe2c2e98b306813e0462d24a670d441e44fc6da21ae5"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099"
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135"
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.test.ts",
+      "bytes": 10582,
+      "sha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9"
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "bytes": 5685,
+      "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.test.ts",
+      "bytes": 3356,
+      "sha256": "157e7c40c29f36688455775e7a4da63e8df5077f6ff71d2315cf3ee1f2924348"
+    },
+    {
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.test.ts",
+      "bytes": 25516,
+      "sha256": "d4c9d024f2e92f1e2af3b0414adb12bbf44ce0c876d671ff33439de6f067b7a0"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 10963,
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853"
+    },
+    {
+      "path": "apps/server/src/sessions.ts",
+      "bytes": 1593,
+      "sha256": "901eefd23c4a1e33e2639149c7335e64bd63ecb0aaed3fb61e69e920ce9d847a"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.test.ts",
+      "bytes": 3159,
+      "sha256": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.test.ts",
+      "bytes": 4754,
+      "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.test.ts",
+      "bytes": 3252,
+      "sha256": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+    },
+    {
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    }
+  ],
+  "sdkTypeInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+    "version": "0.3.290",
+    "bytes": 530284,
+    "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541",
+    "lines": {
+      "summaryMethod": "3027-3038",
+      "close": "3235-3243",
+      "summaryResponse": "3949 onward",
+      "transportExit": "9800-9810"
+    }
+  },
+  "checks": {
+    "finalSelected": 121,
+    "finalPassed": 121,
+    "finalSkipped": 0,
+    "distinct": 121,
+    "newHelper": 19,
+    "newAdapter": 27,
+    "existingClaude": 31,
+    "existingStream": 11,
+    "existingRuntime": 33,
+    "strictLocalNoEmitExit": 0,
+    "firstFullRun": {
+      "passed": 120,
+      "failed": 1,
+      "cause": "old first fixture 3s timeout; precise cause unknown"
+    },
+    "narrowRecheck": {
+      "passed": 1,
+      "unselected": 32
+    },
+    "oldAssertionsRemoved": 0,
+    "providerCalls": 0,
+    "pgChecks": 0
+  },
+  "mainObservation": {
+    "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "dirty": false,
+    "producerTargetIsAncestor": false,
+    "producerClaudeSourceEqual": false,
+    "mergedLatestMain": false
+  },
+  "review": "NOT_STARTED",
+  "limitations": [
+    "history only; current/remaining/compression/consumed cut unknown",
+    "fake Query does not establish real SDK post-result control availability",
+    "1000ms awaited control budget and local close are not native child exit confirmation",
+    "strict covers changed modules and direct imports, not entire repository",
+    "first legacy fixture timeout retained; subsequent passing runs do not establish its exact cause"
+  ]
+}

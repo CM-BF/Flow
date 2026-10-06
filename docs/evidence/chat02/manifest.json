@@ -1,0 +1,49 @@
+{
+  "source": "2e1098504500a472f50a4f77e57c8220a48b28aa",
+  "at": "2026-10-06T03:43:00Z",
+  "sourceHashes": {
+    "packages/contracts/src/assistant.ts": "81689c6eb2559b301f9e82767148e799bfd142776708ea0ddb9c50e93dcf894f",
+    "packages/contracts/src/runner.ts": "a3bfcbc31f37bdfbb29ff21483f92485756eadc2307ae6c581ed1ba8a740a074",
+    "apps/runner/src/claude.ts": "e9db661d414f196885550dcd1bed65152f9dc487bb77b1fcb4e920aa62830379",
+    "apps/runner/src/claude.test.ts": "8f6c4b3eb27577b556ab7bb4ceec7ee223dbc07d5227eb8277ad2ed4be3eca46",
+    "apps/server/src/events.ts": "07b26efed2a18149ab390d973ec26af1fe09669bf23d0ee36c782275a7136f97",
+    "apps/server/src/assistant/index.ts": "deb386eaf766164ee5981ed12a642dd0e579c6b06a80fcf980e00134399cfa8a",
+    "apps/server/src/assistant/store.ts": "b9216162b1cecb1badf38101f3b11a791a56c6d6c220325207d2b8469a2caddd",
+    "apps/server/src/assistant/assistant.test.ts": "0dcaeb4a8063225b4750a168d3102d6697ac6d4c386c82138d5fc3a47d384a3b",
+    "packages/storage/migrations/009-assistant-messages.sql": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17"
+  },
+  "stdoutHashes": {
+    "adapter-red.txt": "0c6607d72f661fded2597bac0a4d1794abd26f88ff4de1475c26d756a30f3565",
+    "center-red.txt": "93dace5355281abd685c7b46594266af6dd2997797dbbd721580269edd3e7cfb",
+    "result-conflict-red.txt": "ca2c8b9868a37fa3bc3f67cba5532be8ed2238f9707d681763169417469f9424",
+    "checks.txt": "5c6659f31f1fe870464ceb68a988e24b8bcd0f8d1199086a27d26bb585e5cb4e",
+    "typecheck.txt": "6ea48f6d66601d4693c33a232533b3e03793f060539638a30aae6f59118d19c3"
+  },
+  "sdk": {
+    "package": "@anthropic-ai/claude-agent-sdk",
+    "version": "0.3.290",
+    "dtsSha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541",
+    "officialSources": [
+      "https://code.claude.com/docs/en/agent-sdk/streaming-output",
+      "https://code.claude.com/docs/en/agent-sdk/agent-loop"
+    ]
+  },
+  "checks": {
+    "adapter": 25,
+    "assistantHttpPg": 10,
+    "runner": 25,
+    "client": 4,
+    "contracts": 2,
+    "passed": 66,
+    "seconds": 9.09,
+    "typecheck": "passed",
+    "modelCalls": 0,
+    "cloudCalls": 0
+  },
+  "limits": [
+    "Synthetic SDK iterator only; no paid model query",
+    "Fresh runRunner instances and real center restart, not OS process crash/power-loss proof",
+    "Initial module check registers missing routes/migration through the provided seam; production mount check pending",
+    "CHAT01 integration, browser, stream delta and true model semantics not tested"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/runner.test.ts",
+    "-t",
+    "lets an already running slot settle while unknown native execution blocks replacement work"
+  ],
+  "startedAt": "2026-10-06T11:33:41.843426+00:00",
+  "finishedAt": "2026-10-06T11:33:44.595648+00:00",
+  "exitCode": 0
+}

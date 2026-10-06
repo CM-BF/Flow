@@ -1,0 +1,112 @@
+ExpectError: expect(locator).toBeVisible() failed
+
+Locator: locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' }) with timeout 5000ms
+  - waiting for locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' })
+
+    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toBeVisible (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at open (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:15:188)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:20:3)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:16:56)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:19:2) {
+  matcherResult: {
+    message: 'expect(locator).toBeVisible() failed\n' +
+      '\n' +
+      `Locator: locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' })\n` +
+      'Expected: visible\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toBeVisible" locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' }) with timeout 5000ms\n` +
+      `  - waiting for locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' })\n`,
+    pass: false,
+    actual: undefined,
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      `  - Expect "toBeVisible" locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' }) with timeout 5000ms`,
+      `  - waiting for locator('[id="pane-conversation:chat-2"]').getByRole('textbox', { name: 'Message input' })`
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- link "Skip to main content":\n' +
+      '  - /url: "#main"\n' +
+      '- navigation "Workspace tools":\n' +
+      '  - text: F\n' +
+      '  - button "Work overview"\n' +
+      '  - button "Chats"\n' +
+      '  - button "Files"\n' +
+      '  - button "Terminal"\n' +
+      '  - button "Use dark theme"\n' +
+      '  - button "Extension actions"\n' +
+      '  - button "Extensions and appearance"\n' +
+      '  - button "Change connection"\n' +
+      '- complementary "Chats":\n' +
+      '  - text: Personal\n' +
+      '  - button "Hide chat list"\n' +
+      '  - button "New chat"\n' +
+      '  - textbox "Find chats":\n' +
+      '    - /placeholder: Find a chat\n' +
+      '  - text: Chats\n' +
+      '  - button "Refresh conversations"\n' +
+      '  - navigation "Conversations":\n' +
+      '    - button "Conversation 1"\n' +
+      '    - button "Conversation 2"\n' +
+      '    - button "Conversation 3"\n' +
+      '    - button "Conversation 4"\n' +
+      '    - button "Conversation 5"\n' +
+      '    - button "Conversation 6"\n' +
+      '    - button "Conversation 7"\n' +
+      '    - button "Conversation 8"\n' +
+      '  - paragraph: HTTP fixture · simulated\n' +
+      '- main:\n' +
+      '  - text: Flow Fixture preview\n' +
+      '  - button "New chat"\n' +
+      '  - button "Split chat"\n' +
+      '  - button "Toggle workspace panel"\n' +
+      '  - tablist "Chat group main":\n' +
+      '    - tab "New chat"\n' +
+      '    - button "Close New chat"\n' +
+      '    - tab "Conversation 2" [selected]\n' +
+      '    - button "Close Conversation 2"\n' +
+      '  - tabpanel "Conversation 2":\n' +
+      '    - region "Conversation 2":\n' +
+      '      - paragraph: hi\n' +
+      '      - group: Activity · running\n' +
+      '      - button "Open task controls"\n' +
+      '      - button "More actions"\n' +
+      '      - paragraph: A reply in progress●\n' +
+      '      - paragraph: Draft · generating · not the final reply\n' +
+      '      - region "Conversation queue":\n' +
+      '        - button "0 waiting loaded Center queue"\n' +
+      '      - status: Reply pending. You can keep writing below.\n' +
+      '      - group: Execution details · 1 turn\n' +
+      '      - region "Locked execution profile":\n' +
+      '        - strong: "Requested: runner-default"\n' +
+      '        - text: Conversation profile locked\n' +
+      '        - paragraph: Read-only access · Thinking off · Unpinned legacy default\n' +
+      '        - group: Execution details Requested only · actual settings unknown\n' +
+      '      - button "Thinking" [disabled]\n' +
+      '      - button "Tools" [disabled]\n' +
+      '      - group "Message delivery":\n' +
+      '        - radio "Send now" [checked]\n' +
+      '        - text: Send now\n' +
+      '        - radio "Queue next"\n' +
+      '        - text: Queue next\n' +
+      '      - button "Steer" [disabled]\n' +
+      '      - textbox "Message input":\n' +
+      '        - /placeholder: Message Flow…\n' +
+      '      - button "Insert note"\n' +
+      '      - button "Send message" [disabled]\n' +
+      '      - paragraph: HTTP fixture · simulated · no model\n' +
+      '      - status: This turn is active. Choose Queue next to save the next message at the center.\n' +
+      '      - text: Reply drafts update as the center records them. Steering and per-turn controls are unavailable. Queue next uses durable center acceptance; unresolved receipts are local to this page.'
+  }
+}

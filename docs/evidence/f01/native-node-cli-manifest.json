@@ -1,0 +1,61 @@
+{
+  "target": "0d48fddd37f55854437946ea04da6c845f5b6119",
+  "observedAt": "2026-10-06T08:13:03.750654+00:00",
+  "sources": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 20951,
+      "sha256": "4a2cb7b2343158a1ecf5cd5b2add35e9e1e19c0f366c09fa649a949b853229f7"
+    },
+    {
+      "path": "apps/cli/src/goal-native.test.ts",
+      "bytes": 3606,
+      "sha256": "8dfb88a4a46e3f17561ca1dcc7e8466862074b78e7fd01d3727d778422d13011"
+    },
+    {
+      "path": "apps/cli/README.md",
+      "bytes": 4307,
+      "sha256": "7648d5c1b928246e5a77083e65f2f409e96fedf97e3c8d193def631c032abf82"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/native-node-cli-green.txt",
+      "bytes": 308,
+      "sha256": "dd06de3190f87c3e6b547c8d70ac367552585791cf02bb1d9317394b2789893d"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-cli-invalid-test-id.txt",
+      "bytes": 1215,
+      "sha256": "2b1b52432038b41708af0e0aae53ab072979b808ea8320c65c9ae421a5928651"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-cli-red.txt",
+      "bytes": 1212,
+      "sha256": "a3e6846fc0c78d4ad8974c3d137bf19a86fd5b195a94d0dfba6d0ee07a42e957"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-cli-typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-cli-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "httpAndHelp": {
+      "passed": 1,
+      "durationMs": 47,
+      "exit": 0
+    },
+    "finalTypecheck": {
+      "exit": 0
+    },
+    "providerCalls": 0
+  },
+  "limits": "Strict bounded owner CLI only; no PG/domain rerun; receipt is admission, not execution or semantic acceptance",
+  "history": "Initial unknown command red; post-implementation test used invalid UUID profile IDs and correctly failed schema; fixed synthetic UUID only. Both retained."
+}

@@ -1,4 +1,7 @@
-import { loadRunnerAdapters } from './configuration.js';
+import { loadEngineeringRunner } from './engineering/launch.js';
+import { loadRunnerConfiguration } from './configuration.js';
+import { parseRunnerConcurrency } from './concurrency-configuration.js';
+import { guardExecutionProfile, publishExecutionProfile } from './execution-profiles.js';
 import { runRunner } from './runtime.js';
 import { loadProtocolEndpoints, runProtocolRunner } from './protocol-dispatch/index.js';
 
@@ -8,6 +11,9 @@ process.on('SIGINT', stop);
 process.on('SIGTERM', stop);
 
 try {
+  const endpointsFile = process.env.FLOW_A2A_ENDPOINTS_FILE;
+  const engineeringFile = process.env.FLOW_ENGINEERING_SETUP_FILE;
+  const maxConcurrentAttempts = parseRunnerConcurrency(process.env.FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS, endpointsFile ? 'a2a' : 'native');
   const common = {
     baseUrl: process.env.FLOW_URL ?? 'http://127.0.0.1:4310',
     token: process.env.FLOW_RUNNER_TOKEN ?? '',
@@ -15,10 +21,19 @@ try {
     signal: shutdown.signal,
     onNotice: (notice: unknown) => process.stderr.write(`${JSON.stringify(notice)}\n`),
   };
-  if (process.env.FLOW_A2A_ENDPOINTS_FILE) {
-    await runProtocolRunner({ ...common, endpoints: await loadProtocolEndpoints(process.env.FLOW_A2A_ENDPOINTS_FILE) });
+  if (engineeringFile !== undefined) {
+    if (endpointsFile !== undefined || process.env.FLOW_CLAUDE_MATERIALS_FILE !== undefined || maxConcurrentAttempts !== 1) throw new Error('Engineering setup requires its dedicated single-project host.');
+    const adapter = await loadEngineeringRunner({ ...common, manifestFile: engineeringFile });
+    await runRunner({ ...common, adapters: [adapter], maxConcurrentAttempts: 1 });
+  } else if (endpointsFile) {
+    await runProtocolRunner({ ...common, endpoints: await loadProtocolEndpoints(endpointsFile) });
   } else {
-    await runRunner({ ...common, adapters: await loadRunnerAdapters(process.env.FLOW_CLAUDE_MATERIALS_FILE) });
+    const loaded = await loadRunnerConfiguration(process.env.FLOW_CLAUDE_MATERIALS_FILE);
+    const profile = loaded.profile;
+    const reference = profile ? await publishExecutionProfile({ ...common, configuration: profile }) : null;
+    const adapters = loaded.harnesses.map(({ adapter, descriptor }) => descriptor.publicProfile && reference
+      ? guardExecutionProfile(adapter, reference, descriptor.publicProfile) : adapter);
+    await runRunner({ ...common, adapters, activeSteering: loaded.activeSteering, maxConcurrentAttempts });
   }
 } catch {
   process.stderr.write('Runner stopped: check its configuration, center authentication and local event storage.\n');

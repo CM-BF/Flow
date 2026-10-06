@@ -1,0 +1,246 @@
+{
+  "completedAt": "2026-10-06T08:36:20.735Z",
+  "typescript": "5.9.3",
+  "exitCode": 0,
+  "method": "TypeScript parseJsonConfigFileContent compares all root compiler options except dependency resolution paths/typeRoots and forced noEmit; createProgram lists actually loaded worktree sources. This is strict root-option coverage of four runner entry files and transitive imports, not the full root include glob.",
+  "root": {
+    "path": "tsconfig.json",
+    "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+    "compilerOptions": {
+      "target": 10,
+      "module": 99,
+      "moduleResolution": 100,
+      "lib": [
+        "lib.es2023.d.ts",
+        "lib.dom.d.ts",
+        "lib.dom.iterable.d.ts"
+      ],
+      "strict": true,
+      "noUncheckedIndexedAccess": true,
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "jsx": 4,
+      "types": [
+        "node"
+      ]
+    }
+  },
+  "local": {
+    "path": "docs/evidence/s01p01/types.tsconfig.json",
+    "sha256": "02fe94c8d2818e9ceebc8d447d23dbc39fcbfd7222da572ea4b38703da3afabf",
+    "entryFiles": [
+      "apps/runner/src/runtime.ts",
+      "apps/runner/src/admission-journal.ts",
+      "apps/runner/src/admission-journal.test.ts",
+      "apps/runner/src/runtime-capacity.test.ts"
+    ],
+    "compilerOptions": {
+      "target": 10,
+      "module": 99,
+      "moduleResolution": 100,
+      "lib": [
+        "lib.es2023.d.ts",
+        "lib.dom.d.ts",
+        "lib.dom.iterable.d.ts"
+      ],
+      "strict": true,
+      "noUncheckedIndexedAccess": true,
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "jsx": 4,
+      "types": [
+        "node"
+      ],
+      "noEmit": true,
+      "typeRoots": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+      ],
+      "paths": {
+        "@flow/contracts": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/packages/contracts/src/index.ts"
+        ],
+        "@flow/client": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/packages/client/src/index.ts"
+        ],
+        "@flow/protocols": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/packages/protocols/src/index.ts"
+        ],
+        "pg": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/pg"
+        ],
+        "pg-boss": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/pg-boss"
+        ],
+        "fastify": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/fastify"
+        ],
+        "@fastify/cors": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@fastify/cors"
+        ],
+        "zod": [
+          "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod"
+        ],
+        "npm-package-arg": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/server/node_modules/@types/npm-package-arg/index.d.ts"
+        ],
+        "pacote": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/server/node_modules/@types/pacote/index.d.ts"
+        ],
+        "ssri": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/apps/server/node_modules/@types/ssri/index.d.ts"
+        ],
+        "vitest": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest"
+        ],
+        "@anthropic-ai/claude-agent-sdk": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts"
+        ],
+        "@modelcontextprotocol/sdk/*": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@modelcontextprotocol/sdk/dist/esm/*"
+        ]
+      },
+      "pathsBasePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/docs/evidence/s01p01"
+    }
+  },
+  "trackedSources": [
+    "apps/runner/src/active-steering/proposal.ts",
+    "apps/runner/src/admission-journal.test.ts",
+    "apps/runner/src/admission-journal.ts",
+    "apps/runner/src/attempt-control.ts",
+    "apps/runner/src/fixture.ts",
+    "apps/runner/src/goal-graph-tools/bind.ts",
+    "apps/runner/src/goal-tool-bridge/authority.ts",
+    "apps/runner/src/goal-tool-bridge/index.ts",
+    "apps/runner/src/goal-tools/index.ts",
+    "apps/runner/src/outbox.ts",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/verifier.ts",
+    "apps/server/src/active-steering/commands.ts",
+    "apps/server/src/active-steering/finalization.ts",
+    "apps/server/src/active-steering/index.ts",
+    "apps/server/src/active-steering/queries.ts",
+    "apps/server/src/active-steering/results.ts",
+    "apps/server/src/active-steering/storage.ts",
+    "apps/server/src/assistant-stream-compatibility/index.ts",
+    "apps/server/src/assistant-stream/index.ts",
+    "apps/server/src/assistant-stream/queries.ts",
+    "apps/server/src/assistant-stream/settlement.ts",
+    "apps/server/src/assistant-stream/store.ts",
+    "apps/server/src/assistant/index.ts",
+    "apps/server/src/assistant/store.ts",
+    "apps/server/src/commands.ts",
+    "apps/server/src/conversation-context/index.ts",
+    "apps/server/src/conversation-context/store.ts",
+    "apps/server/src/conversation-queue/commands.ts",
+    "apps/server/src/conversation-queue/controls.ts",
+    "apps/server/src/conversation-queue/gate.ts",
+    "apps/server/src/conversation-queue/index.ts",
+    "apps/server/src/conversation-queue/promotion.ts",
+    "apps/server/src/conversation-queue/queries.ts",
+    "apps/server/src/conversation-queue/store.ts",
+    "apps/server/src/conversations/admission.ts",
+    "apps/server/src/conversations/commands.ts",
+    "apps/server/src/conversations/index.ts",
+    "apps/server/src/conversations/queries.ts",
+    "apps/server/src/conversations/replies.ts",
+    "apps/server/src/conversations/state.ts",
+    "apps/server/src/database.ts",
+    "apps/server/src/events.ts",
+    "apps/server/src/evidence.ts",
+    "apps/server/src/execution-profiles/index.ts",
+    "apps/server/src/execution-profiles/store.ts",
+    "apps/server/src/goal-context/freshness.ts",
+    "apps/server/src/goal-context/index.ts",
+    "apps/server/src/goal-context/input.ts",
+    "apps/server/src/goal-context/store.ts",
+    "apps/server/src/goal-graph-proposals/graph.ts",
+    "apps/server/src/goal-graph-proposals/index.ts",
+    "apps/server/src/goal-graph-proposals/store.ts",
+    "apps/server/src/goal-graph-runs/index.ts",
+    "apps/server/src/goal-graph-runs/runner.ts",
+    "apps/server/src/goal-graph-runs/store.ts",
+    "apps/server/src/goal-run-authority/runner-project-fence.ts",
+    "apps/server/src/goal-tool-runs/authorize.ts",
+    "apps/server/src/goal-tool-runs/index.ts",
+    "apps/server/src/goal-tool-runs/runner.ts",
+    "apps/server/src/goal-tool-runs/store.ts",
+    "apps/server/src/goals/commands.ts",
+    "apps/server/src/goals/index.ts",
+    "apps/server/src/goals/state.ts",
+    "apps/server/src/index.ts",
+    "apps/server/src/knowledge/index.ts",
+    "apps/server/src/knowledge/search.ts",
+    "apps/server/src/knowledge/storage.ts",
+    "apps/server/src/knowledge/text.ts",
+    "apps/server/src/m2-workspace.ts",
+    "apps/server/src/native-activity/index.ts",
+    "apps/server/src/native-activity/store.ts",
+    "apps/server/src/package-artifacts/errors.ts",
+    "apps/server/src/package-artifacts/index.ts",
+    "apps/server/src/package-artifacts/input.ts",
+    "apps/server/src/package-artifacts/source.ts",
+    "apps/server/src/package-artifacts/storage.ts",
+    "apps/server/src/plugin-package-fetches/commands.ts",
+    "apps/server/src/plugin-package-fetches/host.ts",
+    "apps/server/src/plugin-package-fetches/index.ts",
+    "apps/server/src/plugin-package-fetches/routes.ts",
+    "apps/server/src/plugin-package-fetches/store.ts",
+    "apps/server/src/plugin-package-fetches/worker.ts",
+    "apps/server/src/plugins/commands.ts",
+    "apps/server/src/plugins/index.ts",
+    "apps/server/src/plugins/queries.ts",
+    "apps/server/src/plugins/storage.ts",
+    "apps/server/src/projects/commands.ts",
+    "apps/server/src/projects/graph.ts",
+    "apps/server/src/projects/index.ts",
+    "apps/server/src/projects/storage.ts",
+    "apps/server/src/protocol-dispatch/index.ts",
+    "apps/server/src/protocol-dispatch/store.ts",
+    "apps/server/src/queries.ts",
+    "apps/server/src/reconciliation-http.ts",
+    "apps/server/src/reconciliation.ts",
+    "apps/server/src/runner-maintenance/index.ts",
+    "apps/server/src/runner-maintenance/store.ts",
+    "apps/server/src/runners.ts",
+    "apps/server/src/scheduler.ts",
+    "apps/server/src/sessions.ts",
+    "apps/server/src/shutdown/index.ts",
+    "apps/server/src/streams.ts",
+    "apps/server/src/task-index.ts",
+    "apps/server/src/tasks.ts",
+    "apps/server/src/timeline.ts",
+    "apps/server/src/usage.ts",
+    "packages/client/src/index.ts",
+    "packages/contracts/src/active-steering.ts",
+    "packages/contracts/src/assistant-stream.ts",
+    "packages/contracts/src/assistant.ts",
+    "packages/contracts/src/conversation-context.ts",
+    "packages/contracts/src/conversation-queue.ts",
+    "packages/contracts/src/conversations.ts",
+    "packages/contracts/src/execution-profiles.ts",
+    "packages/contracts/src/fixtures.ts",
+    "packages/contracts/src/goal-context.ts",
+    "packages/contracts/src/goal-graph-proposals.ts",
+    "packages/contracts/src/goal-graph-runs.ts",
+    "packages/contracts/src/goal-tool-runs.ts",
+    "packages/contracts/src/goals.ts",
+    "packages/contracts/src/harnesses.ts",
+    "packages/contracts/src/index.ts",
+    "packages/contracts/src/knowledge.ts",
+    "packages/contracts/src/native-activity.ts",
+    "packages/contracts/src/package-artifacts.ts",
+    "packages/contracts/src/plugin-package-fetches.ts",
+    "packages/contracts/src/plugins.ts",
+    "packages/contracts/src/projects.ts",
+    "packages/contracts/src/protocol-dispatch.ts",
+    "packages/contracts/src/protocol-task.ts",
+    "packages/contracts/src/reconciliation.ts",
+    "packages/contracts/src/runner-maintenance.ts",
+    "packages/contracts/src/runner.ts",
+    "packages/contracts/src/tasks.ts",
+    "packages/contracts/src/workspace.ts"
+  ]
+}

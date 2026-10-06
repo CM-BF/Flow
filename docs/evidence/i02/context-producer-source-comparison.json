@@ -1,0 +1,299 @@
+{
+  "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+  "base": "844fa14bfbf32f5392e48e104b5440a9cb5b9b13",
+  "mismatches": [],
+  "readonlyDifferences": [],
+  "records": [
+    {
+      "kind": "sources",
+      "path": "apps/runner/src/claude.ts",
+      "matches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/runner/src/context-observations/claude-summary-read.ts",
+      "matches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/runner/src/context-observations/claude-summary-read.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/runner/src/claude-context-observation.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-red.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-initial-zero-tests.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-final-tests.stdout.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-final-tests.stderr.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-final-tests-result.json",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-final-typecheck.stdout.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-final-typecheck.stderr.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-final-typecheck-result.json",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-first-consumers.stdout.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-first-consumers.stderr.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-first-consumers-result.json",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-fixture-recheck.stdout.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-fixture-recheck.stderr.txt",
+      "matches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/wpf-mature-04/producer-fixture-recheck-result.json",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-development-checks.json",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-environment.json",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-implementation.md",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-integration-receipt.json",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-legacy-freeze.json",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-validation-config.json",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-validation-resolver.mjs",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-writer-observation.json",
+      "matches": true
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/wpf-mature-04/producer-amend-receipt.json",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/active-steering/state.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/assistant-stream/stream.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/claude.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/context-observations/claude-summary-values.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/outbox.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/runner.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/runtime.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/context-transparency/projection.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/context-transparency/routes.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/context-transparency/store.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/events.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/sessions.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/context-observation-event.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/context-observation-history.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/context-transparency.test.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/context-transparency.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/runner.ts",
+      "matches": true
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "matches": true
+    }
+  ],
+  "existingModifiedSourceMatchesBase": true
+}

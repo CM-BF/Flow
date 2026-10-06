@@ -1,0 +1,206 @@
+{
+  "at": "2026-10-06T07:48:38.806Z",
+  "count": 88,
+  "selected": [
+    {
+      "id": "WPF-CONTEXT01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:44:56.389Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection/plans/wpf-context01-knowledge-selection/status.md",
+        "syncedAt": "2026-10-06T07:48:38.806Z",
+        "stale": false,
+        "ageHours": 0.06077944444444444
+      },
+      "state": "in-progress",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已确定知识选择的范围与读取限制，开始制作选择组件",
+        "next": "可搜索、选择并按需查看知识正文的独立组件",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "WPF-PERF03",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:37:56.317Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/plans/wpf-perf03-message-reuse/status.md",
+        "syncedAt": "2026-10-06T07:48:38.806Z",
+        "stale": false,
+        "ageHours": 0.19411277777777777
+      },
+      "state": "implemented / approved",
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "聊天消息复用已通过审查，动态回复与草稿保持正常",
+        "next": "将已验证的消息复用改进接入主线",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "WPF-CHAT06S01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:27:25.261Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream/plans/wpf-chat06-stream/status.md",
+        "syncedAt": "2026-10-06T07:48:38.806Z",
+        "stale": false,
+        "ageHours": 0.36077944444444443
+      },
+      "state": "COMPLETED",
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "增量正文模块已通过独立审查，等待集成",
+        "next": "集成增量正文模块，随后接入聊天",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "S01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:48:36.092Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md",
+        "syncedAt": "2026-10-06T07:48:38.806Z",
+        "stale": false,
+        "ageHours": 0.010779444444444444
+      },
+      "state": "in-progress",
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 4,
+        "output": "W2测量已独审并集成main；最小slot提案需补未知claim回执边界",
+        "next": "完成CHAT06结果独审，再补既有slot方案的保守恢复行为",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "SVC02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:46:41.464Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh/plans/svc02-preview-refresh/status.md",
+        "syncedAt": "2026-10-06T07:48:38.806Z",
+        "stale": false,
+        "ageHours": 0.04411277777777778
+      },
+      "state": "completed；原实现与本次b54更新/显式恢复均完成",
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "b54已更新并经GO显式恢复接收，v6；三服务就绪，原任务/队列保留",
+        "next": "本次部署窗口已关闭；后继任务由Lead另行派工",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    }
+  ],
+  "unregistered": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/conversation-stream-integration.browser.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "docs/evidence/wpf-chat06-stream-integration",
+        "plans/wpf-chat06-stream-integration"
+      ],
+      "state": "active",
+      "branch": "codex/web-conversation-stream-integration",
+      "origin": "new",
+      "taskId": "WPF-CHAT06I01",
+      "worker": "workspace_panels_owner",
+      "claimId": "a7293487-e9ef-46ef-9f9f-4b119bf0740f",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration",
+      "createdAt": "2026-10-06T07:48:33.676Z",
+      "updatedAt": "2026-10-06T07:48:33.676Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "ledger": "available"
+}

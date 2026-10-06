@@ -1,0 +1,36 @@
+{
+  "target": "59219dbf693964555c075685cf961aa1f9509cf0",
+  "baseTarget": "c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27",
+  "sources": {
+    "apps/cli/src/json-input.ts": {
+      "bytes": 1194,
+      "sha256": "74dbdad09a3d5287fd11ea59be11d6da800c3b676b266bcdfc689e646804eff7"
+    },
+    "apps/cli/src/json-input.test.ts": {
+      "bytes": 3832,
+      "sha256": "e5601c9ca0e2b146f584bdd3a8a942da56c172d75460d325d0636ea6becc32a7"
+    }
+  },
+  "outputs": {
+    "docs/evidence/f01/json-input-fifo-before.json": {
+      "bytes": 354,
+      "sha256": "a6e77a0fb3870ccdfb1cf8f2384369565c8393c8437828e7092165875bafa5e4"
+    },
+    "docs/evidence/f01/json-input-review-test-harness-red.txt": {
+      "bytes": 2663,
+      "sha256": "effe2679732220fe425bc3be6ea49c44bb652ec1a31aee56d2f9e3ea46443598"
+    },
+    "docs/evidence/f01/json-input-review-final.txt": {
+      "bytes": 306,
+      "sha256": "c9a23a4d285c1bc1a56fae72ccb1df87386037bb7654fa4d75fa554783cb46bc"
+    },
+    "docs/evidence/f01/json-input-review-typecheck.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/f01/json-input-review-typecheck-final.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

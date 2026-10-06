@@ -1,0 +1,16 @@
+{
+  "verdict": "APPROVED",
+  "target": "c96a6bb867bfa83b8ce26f79236ff13b14b63e65",
+  "reviewer": "Mika / gpt-6-astra",
+  "at": "2026-10-06 11:48:15 UTC",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "scope": "3 production files, full 145-line test and 129-line fixture; source/raw/readonly/historical bindings",
+  "manifestSha256": "ae65ca8837505e329169b79888ef91161ba33ca09395130715a1b41fd44f52c3",
+  "verifiedBindings": 78,
+  "checks": "8/8 actual PG/HTTP; local strict0; 7 cumulative tasks, 4273.5865ms fixture,535645B decoded+HTTP;3 DB closed/absent",
+  "reviewerReranTests": false,
+  "limits": "No wire/TOAST/latency/SLO conclusion. Third reader not included."
+}

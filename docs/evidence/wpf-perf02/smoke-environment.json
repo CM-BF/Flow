@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-06T03:40:15.864Z",
+  "base": "cc33403cd9b357fcd85484b7bc6952dc1220d689",
+  "scriptHead": "e07c34c5f98657b390e8fdc44bb2d85f9360a56d",
+  "scriptDirty": "?? docs/evidence/wpf-perf02/fixture-checks.json\n?? docs/evidence/wpf-perf02/measurement-window.json",
+  "mode": "Vite production; no fixture build flag, actual connection form",
+  "platform": "darwin",
+  "osRelease": "25.6.0",
+  "arch": "arm64",
+  "cpu": "Apple M3 Max",
+  "logicalCPUs": 16,
+  "totalMemoryBytes": 68719476736,
+  "freeMemoryBeforeBytes": 1798995968,
+  "loadAverage": "{ 6.20 7.88 8.36 }",
+  "node": "v24.20.0",
+  "browser": "154.0.8037.98",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "headless": true,
+  "network": "Local HTTP/1.1 uncompressed static assets and synthetic in-memory fixture; no CPU/network throttle",
+  "reducedMotion": "reduce",
+  "textLength": 256,
+  "taskCounts": [
+    1
+  ],
+  "milestones": [
+    100,
+    240
+  ],
+  "assets": [
+    {
+      "name": "assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "gzipBytes": 336,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "name": "assistant-ui-zkRmV749.js",
+      "bytes": 562059,
+      "gzipBytes": 167814,
+      "sha256": "dca73087a1f834362a21c3968fc562ec98f43f094bb48824cc1a0631e445104e"
+    },
+    {
+      "name": "index-BhDSJRhe.css",
+      "bytes": 86543,
+      "gzipBytes": 15546,
+      "sha256": "eaa80add361bea8680a609572b0dd544586b19799399b42282e59240b4068f58"
+    },
+    {
+      "name": "index-C-RDfXsW.js",
+      "bytes": 546889,
+      "gzipBytes": 162094,
+      "sha256": "63a0adb3e13ad8feb276e876ae88970aff14abe58f1f374816332b2257e8e4d8"
+    },
+    {
+      "name": "rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "gzipBytes": 450,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    }
+  ],
+  "html": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n    <meta name=\"theme-color\" content=\"#385bc7\" />\n    <title>Flow · Your workspace</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-C-RDfXsW.js\"></script>\n    <link rel=\"modulepreload\" crossorigin href=\"/assets/rolldown-runtime-qXqUbbKo.js\">\n    <link rel=\"modulepreload\" crossorigin href=\"/assets/assistant-ui-zkRmV749.js\">\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/assistant-ui-CcdakA0V.css\">\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BhDSJRhe.css\">\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>\n",
+  "versions": {
+    "web": {
+      "name": "@flow/web",
+      "version": "0.1.0",
+      "private": true,
+      "type": "module",
+      "scripts": {
+        "dev": "vite --host 127.0.0.1 --port 5174",
+        "build": "vite build",
+        "typecheck": "tsc --noEmit -p tsconfig.json",
+        "test": "vitest run test/projection.test.ts",
+        "test:browser": "playwright test --config playwright.config.ts",
+        "fixture": "tsx test/fixture-server.ts"
+      },
+      "dependencies": {
+        "@flow/client": "workspace:*",
+        "@flow/contracts": "workspace:*",
+        "@assistant-ui/react": "0.15.23",
+        "react": "19.3.0",
+        "react-dom": "19.3.0",
+        "lucide-react": "1.52.0",
+        "@assistant-ui/react-markdown": "0.14.18",
+        "@radix-ui/react-avatar": "1.2.7",
+        "@radix-ui/react-collapsible": "1.1.21",
+        "@radix-ui/react-dialog": "1.2.0",
+        "@radix-ui/react-slot": "1.4.0",
+        "@radix-ui/react-tooltip": "1.3.0",
+        "ansi-to-react": "6.2.6",
+        "class-variance-authority": "0.7.1",
+        "clsx": "2.1.1",
+        "radix-ui": "1.7.0",
+        "remark-gfm": "4.0.1",
+        "tailwind-merge": "3.7.0",
+        "tw-animate-css": "1.4.0",
+        "tw-shimmer": "0.4.13",
+        "zustand": "5.0.15"
+      },
+      "devDependencies": {
+        "@types/react": "19.3.0",
+        "@types/react-dom": "19.3.0",
+        "vite": "8.3.2",
+        "@vitejs/plugin-react": "6.1.2",
+        "@tailwindcss/vite": "4.3.3",
+        "tailwindcss": "4.3.3"
+      }
+    },
+    "root": {
+      "name": "flow",
+      "private": true,
+      "type": "module",
+      "packageManager": "pnpm@9.15.4",
+      "engines": {
+        "node": ">=24.20.0 <25"
+      },
+      "scripts": {
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit",
+        "check": "pnpm typecheck && pnpm test",
+        "server": "tsx apps/server/src/main.ts",
+        "runner": "tsx apps/runner/src/main.ts",
+        "cli": "tsx apps/cli/src/main.ts",
+        "web": "pnpm --filter @flow/web dev",
+        "test:scheduler": "tsx scripts/scheduler-probe.ts"
+      },
+      "devDependencies": {
+        "@types/node": "24.19.1",
+        "@types/pg": "8.23.1",
+        "@playwright/test": "1.63.0",
+        "typescript": "5.9.3",
+        "tsx": "4.23.15",
+        "vitest": "4.0.18",
+        "pg": "8.23.1",
+        "pg-boss": "12.37.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "generatedAt": "2026-10-06T05:25:10.384Z",
+  "task": {
+    "id": "K01",
+    "title": "项目知识原文与检索",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+    "branch": "codex/knowledge-source-store",
+    "planDir": "plans/k01-knowledge-sources",
+    "evidenceDir": "docs/evidence/k01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T05:25:05.636Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/plans/k01-knowledge-sources/status.md",
+      "syncedAt": "2026-10-06T05:25:10.384Z",
+      "stale": false,
+      "ageHours": 0.0014955555555555555
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/knowledge-source-store",
+      "head": "c95d6c962210d7517515b7ce2e87bfdd6d9f1afc",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T05:25:10.876Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "版本文本和原文引用可跨重启保留，搜索摘要与容量边界已验证",
+        "next": "本片段已验收，等待主线接收",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+        "scopes": [
+          "apps/server/src/knowledge",
+          "packages/contracts/src/knowledge.ts",
+          "packages/storage/migrations/015-knowledge-sources.sql",
+          "docs/evidence/k01/check.mjs"
+        ],
+        "errors": []
+      },
+      "taskId": "K01",
+      "owner": "b01_bounded_reads / gpt-6-astra ultra；lead mika",
+      "branch": "codex/knowledge-source-store",
+      "branchState": "completed（领域片段已验收，待main）",
+      "updatedAt": "2026-10-06T05:25:05.000Z",
+      "updatedRecord": "2026-10-06 05:25:05 UTC",
+      "todos": [
+        {
+          "id": "K01-01",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "[Interface](../../docs/evidence/k01/interface.md)"
+        },
+        {
+          "id": "K01-02",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "matrix-first 28绿 + capacity-fixed 1绿；首红/清理已保留"
+        },
+        {
+          "id": "K01-03",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "12词法样本/实际JSON预算；boundary-extra 2绿"
+        },
+        {
+          "id": "K01-04",
+          "state": "completed",
+          "owner": "b01_bounded_reads / Mika",
+          "evidence": "Mika 05:24:35 UTC APPROVED；31 distinct/noEmit/8库remaining[]"
+        },
+        {
+          "id": "K01-05",
+          "state": "pending",
+          "owner": "b01_bounded_reads / Lead",
+          "evidence": "未集成"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "declaredDirty": "实现已固定；仅交付metadata待提交",
+      "checks": {
+        "state": "passed",
+        "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+        "record": "PASSED ea0c4cba1792dbb498487fb5b6ae47393340b77e；31不同用例组合/noEmit；Mika独立技术review APPROVED"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "mainRecord": "未集成；base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED",
+      "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "proof": {
+        "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+        "head": "c95d6c962210d7517515b7ce2e87bfdd6d9f1afc",
+        "scopes": [
+          "apps/server/src/knowledge",
+          "packages/contracts/src/knowledge.ts",
+          "packages/storage/migrations/015-knowledge-sources.sql",
+          "docs/evidence/k01/check.mjs"
+        ],
+        "observedAt": "2026-10-06T05:25:10.895Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/k01/README.md",
+          "docs/evidence/k01/environment.json",
+          "docs/evidence/k01/manifest.json",
+          "docs/evidence/k01/quality.md",
+          "plans/k01-knowledge-sources/plan.md",
+          "plans/k01-knowledge-sources/review.md",
+          "plans/k01-knowledge-sources/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "head": "c95d6c962210d7517515b7ce2e87bfdd6d9f1afc",
+      "scopes": [
+        "apps/server/src/knowledge",
+        "packages/contracts/src/knowledge.ts",
+        "packages/storage/migrations/015-knowledge-sources.sql",
+        "docs/evidence/k01/check.mjs"
+      ],
+      "observedAt": "2026-10-06T05:25:10.895Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/k01/README.md",
+        "docs/evidence/k01/environment.json",
+        "docs/evidence/k01/manifest.json",
+        "docs/evidence/k01/quality.md",
+        "plans/k01-knowledge-sources/plan.md",
+        "plans/k01-knowledge-sources/review.md",
+        "plans/k01-knowledge-sources/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/k01-knowledge-sources/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/k01-knowledge-sources/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/k01-knowledge-sources/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/k01/interface.md",
+        "title": "Interface",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k01/claim-receipt.json",
+        "title": "receipt",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 4,
+      "total": 5
+    },
+    "main": {
+      "record": "未集成；base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f",
+      "recordedHead": "1f59f8261d191ba65edb27ce53fe7ef32c20fc5f",
+      "target": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+      "mainHead": "eb14991a170b72d7d974428b2e440e1faada2c1e",
+      "scopes": [
+        "apps/server/src/knowledge",
+        "packages/contracts/src/knowledge.ts",
+        "packages/storage/migrations/015-knowledge-sources.sql",
+        "docs/evidence/k01/check.mjs"
+      ],
+      "observedAt": "2026-10-06T05:25:10.876Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/server/src/knowledge",
+          "docs/evidence/k01",
+          "packages/contracts/src/knowledge.ts",
+          "packages/storage/migrations/015-knowledge-sources.sql",
+          "plans/k01-knowledge-sources"
+        ],
+        "state": "active",
+        "branch": "codex/knowledge-source-store",
+        "origin": "new",
+        "taskId": "K01",
+        "worker": "b01_bounded_reads",
+        "claimId": "76b6ae1a-f414-49bb-a93d-d80cead6bd61",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+        "createdAt": "2026-10-06T05:10:36.101Z",
+        "updatedAt": "2026-10-06T05:10:36.101Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

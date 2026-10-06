@@ -1,0 +1,172 @@
+{
+  "generatedAt": "2026-10-06T12:19:38.055Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T12:19:41.012Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "sourceCount": 146,
+  "sourceSnapshot": "/tmp/flow-proof-146-live.json",
+  "service": "4320 owned dashboard only; personal 61227/61228 and user tabs unchanged",
+  "records": [
+    {
+      "id": "SVC05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:17:40.586Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/plans/svc05-current-release/status.md",
+        "syncedAt": "2026-10-06T12:19:38.055Z",
+        "stale": false,
+        "ageHours": 0.06057083333333333
+      },
+      "head": "79e632c5775a8da7118a2b3927fe6156033fbb91",
+      "dirty": true,
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已建立独立发布准备范围，个人服务保持原状",
+        "next": "新后端与保留网页的真实兼容证据和可审更新步骤",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parent": {
+        "kind": "unknown",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "unknown",
+          "record": "[FLOW-001](../flow-001-architecture/plan.md)，REQ19",
+          "reason": "层级或父任务声明冲突/不完整"
+        }
+      },
+      "errors": [],
+      "issues": [],
+      "current": true
+    },
+    {
+      "id": "ENG01G",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:13:41.286Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer/plans/eng01g-native-writer/status.md",
+        "syncedAt": "2026-10-06T12:19:38.055Z",
+        "stale": false,
+        "ageHours": 0.09918194444444445
+      },
+      "head": "d1be1e8153dd03239522595b3fbb79e90690d8aa",
+      "dirty": true,
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已确定工程写入与现有原生消息处理共用的接口",
+        "next": "可审查的受限文件写入组合与未知结果保护",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parent": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+          "reason": "",
+          "targetId": "ENG-001",
+          "title": "真实工程任务交付"
+        }
+      },
+      "errors": [],
+      "issues": [],
+      "current": true
+    },
+    {
+      "id": "B01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:04:47.541Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/plans/b01-bounded-reads/status.md",
+        "syncedAt": "2026-10-06T12:19:38.055Z",
+        "stale": false,
+        "ageHours": 0.25890416666666666
+      },
+      "head": "429a2dbd3be92093f10aec938b8edc470e15680d",
+      "dirty": false,
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "三个轻读入口已独审并集成main，原响应与分页行为保持",
+        "next": "本次metadata提交后停止全部scope写入并原子release；后继由Lead另派",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "parent": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)",
+          "reason": "",
+          "targetId": "FLOW-001",
+          "title": "产品与技术架构"
+        }
+      },
+      "errors": [],
+      "issues": [],
+      "current": true
+    }
+  ],
+  "unregisteredTaskIds": [
+    "WPF-ATTACHI02",
+    "WPF-DPERF03"
+  ]
+}

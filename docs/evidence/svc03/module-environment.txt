@@ -1,0 +1,14 @@
+✔ actual child environments isolate management and role credentials using synthetic markers (285.413625ms)
+✔ build environment strips all inherited application, provider and public VITE values (1.00525ms)
+✔ serves fixed bytes with no HMR, preserves same-origin authorization and streams SSE before completion (768.059041ms)
+✔ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (655.494666ms)
+✔ rejects a dirty or mismatched source before building and cleans a failed stage without changing the old artifact (774.395208ms)
+✔ concurrent identical builds converge without overwriting and reject extra files or symbolic links (323.545292ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1815.4435

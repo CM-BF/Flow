@@ -1,3 +1,5 @@
+import { textDigest, verifyText } from './verifier.js';
+import type { SteeringFinalizationInput } from '../../../packages/contracts/src/active-steering.js';
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -7,6 +9,7 @@ import { spawn } from 'node:child_process';
 import { afterEach, expect, it } from 'vitest';
 import { eventBatchSchema, type ClaimedTask, type EventBatch, type RunnerEvent, type RunnerEventData, type TaskSubmission } from '@flow/contracts';
 import { createClaudeAdapter, runRunner, type RunnerOptions, type RunnerNotice } from './index.js';
+import { NativeExecutionError } from './native-harness/settlement.js';
 
 const cleanup: (() => Promise<unknown>)[] = [];
 afterEach(async () => { for (const stop of cleanup.splice(0).reverse()) await stop(); });
@@ -16,10 +19,14 @@ async function center(task: Partial<TaskSubmission> = {}) {
   const batches: EventBatch[] = [];
   const shutdown = new AbortController();
   let claimed = false;
+  let claims = 0;
+  const queuedAssignments: ClaimedTask[] = [];
+  let claimLeaseMs = 10_000;
   let action: 'continue' | 'cancel' | 'stop' = 'continue';
   let answer: 'approve' | 'reject' | null = null;
   let reportHook: ((batch: EventBatch, response: ServerResponse) => boolean) | undefined;
   let beforeReport: typeof reportHook;
+  let steeringHook: ((path: string, body: any, response: ServerResponse) => boolean) | undefined;
   let heartbeatHook: ((response: ServerResponse) => boolean) | undefined;
   const assignment: ClaimedTask = {
     attempt: { id: 'attempt-1', runnerId: 'runner-1', ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 10_000).toISOString() },
@@ -34,12 +41,14 @@ async function center(task: Partial<TaskSubmission> = {}) {
       response.writeHead(401).end(JSON.stringify({ error: { code: 'unauthorized', message: 'Unknown runner.' } })); return;
     }
     if (request.url === '/api/runner/claim') {
-      response.end(JSON.stringify({ assignment: claimed ? null : assignment })); claimed = true; return;
+      claims++;
+      const next = claimed ? queuedAssignments.shift() ?? null : assignment;
+      response.end(JSON.stringify({ assignment: next, remainingLeaseMs: next ? claimLeaseMs : 0 })); claimed = true; return;
     }
     if (request.url === '/api/runner/heartbeat') {
       if (heartbeatHook?.(response)) return;
       const decision = events.findLast(event => event.type === 'decision');
-      response.end(JSON.stringify({ action, leaseExpiresAt: new Date(Date.now() + 10_000).toISOString(), decision: answer && decision?.type === 'decision' ? { decisionId: decision.decisionId, answer } : null })); return;
+      response.end(JSON.stringify({ action, remainingLeaseMs: action === 'stop' ? 0 : 10_000, leaseExpiresAt: new Date(Date.now() + 10_000).toISOString(), decision: answer && decision?.type === 'decision' ? { decisionId: decision.decisionId, answer } : null })); return;
     }
     if (request.url === '/api/runner/events') {
       const batch = eventBatchSchema.parse(body);
@@ -54,6 +63,7 @@ async function center(task: Partial<TaskSubmission> = {}) {
       if (reportHook?.(batch, response)) return;
       response.end(JSON.stringify({ accepted, lastSequence: events.length })); return;
     }
+    if (request.url?.startsWith('/api/runner/steering/') && steeringHook?.(request.url, body, response)) return;
     response.writeHead(404).end('{}');
   });
   await new Promise<void>(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -65,12 +75,16 @@ async function center(task: Partial<TaskSubmission> = {}) {
   const options: RunnerOptions = { baseUrl: `http://127.0.0.1:${address.port}`, token: 'test-runner-token', workingDirectory, signal: shutdown.signal, pollIntervalMs: 10, heartbeatIntervalMs: 25, requestTimeoutMs: 100 };
   return {
     events, batches, assignment, options, shutdown,
+    get claims() { return claims; },
+    queueAssignment(next: ClaimedTask) { queuedAssignments.push(next); },
     start() { const running = runRunner(options); void running.catch(() => undefined); cleanup.push(async () => { shutdown.abort(); await running; }); return running; },
+    setClaimLease(milliseconds: number) { claimLeaseMs = milliseconds; },
     setAction(next: typeof action) { action = next; },
     setAnswer(next: typeof answer) { answer = next; },
     onReport(hook: typeof reportHook) { reportHook = hook; },
     beforeReport(hook: typeof reportHook) { beforeReport = hook; },
     onHeartbeat(hook: typeof heartbeatHook) { heartbeatHook = hook; },
+    onSteering(hook: typeof steeringHook) { steeringHook = hook; },
   };
 }
 
@@ -160,6 +174,94 @@ it('reports fixture execution failure once without manufacturing an artifact', a
   expect(api.events.some(event => event.type === 'artifact')).toBe(false);
 });
 
+it.each([
+  ['ordinary', new Error('Ordinary adapter failure')],
+  ['settled native', new NativeExecutionError('settled')],
+  ['untrusted shape', Object.assign(new Error('Remote payload'), { settlement: 'unknown' })],
+] as const)('keeps %s failures on the normal terminal path', async (_label, error) => {
+  const api = await center();
+  api.options.adapters = [{ name: 'fixture', version: '1', async run() { throw error; } }];
+  api.start();
+  await eventually(() => api.events.some(event => event.type === 'completed'));
+  expect(api.events).toEqual([expect.objectContaining({ type: 'completed', outcome: 'failed' })]);
+  await eventually(async () => (await admission(api)).assignments.length === 0);
+});
+
+async function admission(api: Awaited<ReturnType<typeof center>>) {
+  return JSON.parse(await readFile(join(api.options.workingDirectory, textDigest(api.options.baseUrl), 'admission.json'), 'utf8'));
+}
+
+it('retains unknown native execution after local cleanup and across host restart', async () => {
+  const api = await center();
+  const notices: RunnerNotice[] = [];
+  let executions = 0, locallyClosed = false;
+  api.options.onNotice = notice => notices.push(notice);
+  api.options.adapters = [{ name: 'fixture', version: '1', async run(context) {
+    executions++;
+    await context.emit({ type: 'message', text: 'External request dispatched.' });
+    locallyClosed = true; // Local resource release does not establish a native terminal result.
+    throw new NativeExecutionError('unknown');
+  } }];
+  const first = api.start();
+  await eventually(() => notices.some(notice => notice.type === 'admission-blocked'));
+  expect(locallyClosed).toBe(true);
+  expect(api.events.map(event => event.type)).toEqual(['message']);
+  expect((await admission(api)).assignments).toEqual([{ attemptId: 'attempt-1', taskId: 'task-1', runnerId: 'runner-1', ownerVersion: 1 }]);
+  expect(api.claims).toBe(1);
+  api.shutdown.abort(); await first;
+  const restart = new AbortController(), restartedNotices: RunnerNotice[] = [];
+  const resumed = runRunner({ ...api.options, signal: restart.signal, onNotice: notice => restartedNotices.push(notice) });
+  cleanup.push(async () => { restart.abort(); await resumed; });
+  await eventually(() => restartedNotices.some(notice => notice.type === 'admission-blocked'));
+  expect(executions).toBe(1); expect(api.claims).toBe(1);
+  expect(api.events.some(event => event.type === 'completed')).toBe(false);
+});
+
+it('keeps native settlement unknown when cancellation arrived before local cleanup', async () => {
+  const api = await center(), notices: RunnerNotice[] = [];
+  let entered = false;
+  api.options.onNotice = notice => notices.push(notice);
+  api.options.adapters = [{ name: 'fixture', version: '1', async run(context) {
+    entered = true;
+    await new Promise<void>(resolve => context.signal.addEventListener('abort', () => resolve(), { once: true }));
+    throw new NativeExecutionError('unknown');
+  } }];
+  api.start(); await eventually(() => entered); api.setAction('cancel');
+  await eventually(() => notices.some(notice => notice.type === 'admission-blocked'));
+  expect(api.events).toEqual([]);
+  expect((await admission(api)).assignments).toHaveLength(1);
+  expect(api.claims).toBe(1);
+});
+
+it('lets an already running slot settle while unknown native execution blocks replacement work', async () => {
+  const api = await center({ prompt: '1' }), notices: RunnerNotice[] = [];
+  for (const id of ['2', '3']) api.queueAssignment({
+    ...api.assignment, attempt: { ...api.assignment.attempt, id: `attempt-${id}` },
+    task: { ...api.assignment.task, id: `task-${id}`, prompt: id },
+  });
+  let entered = 0, survivorAborted = false;
+  let release!: () => void;
+  const held = new Promise<void>(resolve => { release = resolve; });
+  api.options.maxConcurrentAttempts = 2;
+  api.options.onNotice = notice => notices.push(notice);
+  api.options.adapters = [{ name: 'fixture', version: '1', async run(context) {
+    entered++;
+    await eventually(() => entered === 2);
+    if (context.task.prompt === '1') throw new NativeExecutionError('unknown');
+    await Promise.race([held, new Promise<void>(resolve => context.signal.addEventListener('abort', () => resolve(), { once: true }))]);
+    survivorAborted = context.signal.aborted;
+  } }];
+  api.start();
+  await eventually(() => notices.some(notice => notice.type === 'recovery-waiting'));
+  expect(api.events).toEqual([]); expect(api.claims).toBe(2);
+  release();
+  await eventually(() => notices.some(notice => notice.type === 'admission-blocked'));
+  expect(survivorAborted).toBe(false); expect(entered).toBe(2); expect(api.claims).toBe(2);
+  expect(api.batches.filter(batch => batch.events.some(event => event.type === 'completed')).map(batch => batch.attemptId)).toEqual(['attempt-2']);
+  expect(api.events).toEqual([expect.objectContaining({ type: 'completed', outcome: 'succeeded' })]);
+  expect((await admission(api)).assignments.map((entry: { attemptId: string }) => entry.attemptId)).toEqual(['attempt-1']);
+});
+
 it('uploads large evidence separately from bounded timeline text', async () => {
   const api = await center({ fixture: { scenario: 'large', delayMs: 0, detailBytes: 524_288 } });
   api.start();
@@ -175,7 +277,7 @@ it('expires the local lease while a heartbeat request is still hanging', async (
   const notices: RunnerNotice[] = [];
   api.options.onNotice = notice => notices.push(notice);
   api.options.requestTimeoutMs = 15_000;
-  api.assignment.attempt.leaseExpiresAt = new Date(Date.now() + 100).toISOString();
+  api.setClaimLease(100);
   api.onHeartbeat(() => true);
   const running = api.start();
   await eventually(() => notices.some(notice => notice.type === 'ownership-lost'));
@@ -393,4 +495,52 @@ it('executes an injected Claude adapter through the same runner ownership and HT
   expect(api.events).toContainEqual(expect.objectContaining({ type: 'artifact', content: 'native-seam-result' }));
   expect(api.events).toContainEqual(expect.objectContaining({ type: 'verification', result: 'passed' }));
   expect(api.events.filter(event => event.type === 'completed')).toEqual([expect.objectContaining({ outcome: 'succeeded' })]);
+});
+function conditionalEvents(): RunnerEventData[] {
+  const content = 'Runtime conditional final', artifactId = 'artifact-conditional';
+  return [{ type: 'artifact', artifactId, title: 'Final', version: textDigest(content), content, mediaType: 'text/plain' }, verifyText(artifactId, content),
+    { type: 'assistant-final', nativeSessionId: 'session-conditional', source: 'claude.sdk.result', sourceMessageId: 'result-conditional', messageId: textDigest(JSON.stringify(['session-conditional', 'result-conditional'])), content,
+      settings: { requested: { model: 'synthetic', thinking: 'disabled', permissionMode: 'dontAsk' }, effective: { model: null, thinking: 'unknown', permissionMode: null, tools: null } } }];
+}
+it('continues heartbeats while the final event sequence is frozen and completes only after confirmation', async () => {
+  const api = await center({ harness: 'claude' }); let duringProposal = false, heartbeats = 0;
+  api.options.activeSteering = true; api.options.requestTimeoutMs = 1000;
+  api.options.adapters = [{ name: 'claude', version: 'synthetic', async run(context) {
+    await context.emit({ type: 'session', nativeSessionId: 'session-conditional', adapterVersion: 'synthetic' });
+    await context.steering!.finalize({ expectedRevision: 0, nativeSessionId: 'session-conditional', resultId: 'result-conditional', events: conditionalEvents() });
+  } }];
+  api.onHeartbeat(() => { if (duringProposal) heartbeats++; return false; });
+  api.onSteering((path, input: SteeringFinalizationInput, response) => {
+    if (path !== '/api/runner/steering/finalize') return false;
+    duringProposal = true;
+    setTimeout(() => { api.events.push(...input.events); duringProposal = false; response.end(JSON.stringify({ state: 'committed', proposalId: input.proposalId, lastSequence: 4, replayed: false })); }, 150);
+    return true;
+  });
+  api.start(); await eventually(() => api.events.some(event => event.type === 'completed'));
+  expect(heartbeats).toBeGreaterThanOrEqual(2); expect(api.events.at(-1)).toMatchObject({ type: 'completed', sequence: 5, outcome: 'succeeded' });
+});
+it('retains an uncertain final across runner restart without replaying the native query or inventing completion', async () => {
+  const api = await center({ harness: 'claude' }); let directory = '', nativeRuns = 0, proposal: SteeringFinalizationInput | undefined, confirmed = false;
+  api.options.activeSteering = true;
+  api.options.adapters = [{ name: 'claude', version: 'synthetic', async run(context) {
+    nativeRuns++; directory = context.workingDirectory;
+    await context.emit({ type: 'session', nativeSessionId: 'session-conditional', adapterVersion: 'synthetic' });
+    await context.steering!.finalize({ expectedRevision: 0, nativeSessionId: 'session-conditional', resultId: 'result-conditional', events: conditionalEvents() });
+  } }];
+  api.onSteering((path, input, response) => {
+    if (path.endsWith('/finalize')) { proposal = input; response.destroy(); return true; }
+    if (path.endsWith('/status')) { response.end(JSON.stringify(confirmed ? { state: 'committed', proposalId: input.proposalId, lastSequence: 4, replayed: true } : { state: 'absent', proposalId: input.proposalId })); return true; }
+    return false;
+  });
+  api.options.onNotice = notice => { if (notice.type === 'ownership-lost') api.shutdown.abort(); };
+  await api.start();
+  expect(JSON.parse(await readFile(join(directory, 'pending-final-proposal.json'), 'utf8'))).toEqual(proposal);
+  expect(api.events.some(event => event.type === 'completed')).toBe(false);
+  confirmed = true;
+  const stop = new AbortController(), notices: RunnerNotice[] = [];
+  const resumed = runRunner({ ...api.options, signal: stop.signal, onNotice: notice => notices.push(notice) });
+  cleanup.push(async () => { stop.abort(); await resumed; });
+  await eventually(async () => (await readdir(directory)).includes('confirmed-final-proposal.json'));
+  expect(nativeRuns).toBe(1); expect(api.events.some(event => event.type === 'completed')).toBe(false);
+  expect(notices).toContainEqual({ type: 'events-retained', attemptId: 'attempt-1' });
 });

@@ -1,0 +1,49 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-admission-readiness
+
+ ❯ apps/server/src/active-steering/admission.test.ts (15 tests | 1 failed) 4930ms
+   ✓ returns current readiness over real owner HTTP without creating control, command, audit or receipt 141ms
+   ✓ authenticates the owner and rejects unknown or cross-task attempt identities 155ms
+   ✓ reports no attempt and explicit historical attempts without changing old attemptAvailable semantics 89ms
+   ✓ reports stale-owner and POST rechecks current authority 78ms
+   ✓ reports decision-pending and POST rechecks current authority 91ms
+   ✓ reports not-running and POST rechecks current authority 77ms
+   ✓ reports lease-expired and POST rechecks current authority 83ms
+   ✓ reports runner-revoked and POST rechecks current authority 60ms
+   ✓ reports session-unavailable and POST rechecks current authority 46ms
+   ✓ rejects absent, legacy, unknown and unavailable profile pins while preserving old state availability 238ms
+   ✓ distinguishes pending and unknown, allows same-key replay, and becomes ready after explicit rejection 154ms
+   ✓ treats readiness as a snapshot: a command winning later causes a stale POST to reject 104ms
+   ✓ does not block a seal lock and a later committed seal rejects a previously ready command 108ms
+   × reports a canonical final and the command quota without exposing input or reply text 63ms
+   ✓ keeps default-off safe before 024 exists and enabled-but-uninstalled explicitly unavailable  1492ms
+ ✓ apps/server/src/active-steering-configuration.test.ts (2 tests) 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/active-steering/admission.test.ts > reports a canonical final and the command quota without exposing input or reply text
+AssertionError: {"error":{"code":"invalid_events","message":"Invalid event batch."}}: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ request apps/server/src/active-steering/admission.test.ts:28:87
+     26|     headers: { authorization: `Bearer ${token}`, 'content-type': 'appl…
+     27|     body: body === undefined ? undefined : JSON.stringify(body), signa…
+     28|   const value = await response.json(); expect(response.status, JSON.st…
+       |                                                                                       ^
+     29|   if (path.includes('/steering/admission') && response.ok) expect(resp…
+     30|   return value;
+ ❯ apps/server/src/active-steering/admission.test.ts:132:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 16 passed (17)
+   Start at  01:24:58
+   Duration  6.29s (transform 689ms, setup 0ms, import 1.15s, tests 4.93s, environment 0ms)
+

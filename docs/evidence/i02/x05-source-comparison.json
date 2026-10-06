@@ -1,0 +1,146 @@
+{
+  "observedAt": "2026-10-06T06:58:43.343022+00:00",
+  "head": "509c7245e953c8a464566ebf762b1a662b05fc25",
+  "sources": {
+    "3691d1b3dffa5eb33546ff3b84f45fa88401a9d5": {
+      "paths": [
+        "apps/server/src/index.ts",
+        "apps/server/src/main.ts",
+        "apps/server/src/package-fetch-configuration.ts",
+        "apps/server/src/package-fetch-configuration.test.ts",
+        "apps/cli/src/index.ts",
+        "packages/client/src/package-fetch-production.test.ts"
+      ],
+      "diff": []
+    },
+    "447807c321e81d9dd6b8a963a73ba4fc8396e308": {
+      "paths": [
+        "apps/server/src/package-fetch",
+        "packages/contracts/src/package-fetch.ts",
+        "packages/storage/migrations/023-package-fetches.sql"
+      ],
+      "diff": []
+    }
+  },
+  "personalRuntime": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "modelQueries": 0,
+  "domainPathCorrection": {
+    "at": "2026-10-06T07:04:55.260742+00:00",
+    "reason": "Initial domain comparison used three nonexistent shortened paths; empty git diff was not a valid domain check. Corrected by asserting all 14 manifest source files exist and comparing full bytes to fixed target plus approved hashes. Initial record retained above; this new check supersedes only the invalid domain path group.",
+    "target": "9ebb3bdd781b3667f0c164405e9a17387ce89d76",
+    "sources": [
+      {
+        "path": "packages/contracts/src/plugin-package-fetches.ts",
+        "exists": true,
+        "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+        "approvedHash": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+        "exists": true,
+        "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9",
+        "approvedHash": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/package-artifacts/input.ts",
+        "exists": true,
+        "sha256": "aa25eb1f1c68d04f207fc35fa755c034f959c654629f0b7a27ea1c1bcdb731d9",
+        "approvedHash": "aa25eb1f1c68d04f207fc35fa755c034f959c654629f0b7a27ea1c1bcdb731d9",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/package-artifacts/index.ts",
+        "exists": true,
+        "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c",
+        "approvedHash": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/commands.ts",
+        "exists": true,
+        "sha256": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74",
+        "approvedHash": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/fetches.test.ts",
+        "exists": true,
+        "sha256": "b0bfebd4e7c34384e0319bd32f534e37b4ceb0e4ccc78aaacf62f46aff2c4012",
+        "approvedHash": "b0bfebd4e7c34384e0319bd32f534e37b4ceb0e4ccc78aaacf62f46aff2c4012",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/host.ts",
+        "exists": true,
+        "sha256": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760",
+        "approvedHash": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/index.ts",
+        "exists": true,
+        "sha256": "cf1cf055e7ae70173ae34b40ff32a41193827403dec5446cbffaefa46c362a00",
+        "approvedHash": "cf1cf055e7ae70173ae34b40ff32a41193827403dec5446cbffaefa46c362a00",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/process-fixture.ts",
+        "exists": true,
+        "sha256": "21d3f27bef98ad79bbec2187f04b468eed1868f10cc476ccfcbcf6471bb6a9ad",
+        "approvedHash": "21d3f27bef98ad79bbec2187f04b468eed1868f10cc476ccfcbcf6471bb6a9ad",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/publication.test.ts",
+        "exists": true,
+        "sha256": "3f712c53e2480a3e6072d20580de677343c444f066db760aaf9d7470777f8f12",
+        "approvedHash": "3f712c53e2480a3e6072d20580de677343c444f066db760aaf9d7470777f8f12",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/routes.ts",
+        "exists": true,
+        "sha256": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b",
+        "approvedHash": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/store.ts",
+        "exists": true,
+        "sha256": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3",
+        "approvedHash": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/worker.ts",
+        "exists": true,
+        "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648",
+        "approvedHash": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648",
+        "fixedEqual": true,
+        "manifestEqual": true
+      },
+      {
+        "path": "apps/server/src/plugin-package-fetches/workflow.test.ts",
+        "exists": true,
+        "sha256": "1f655b087a460218978bc504f0f11f2742f9de793feef0a222d5f2b408559f57",
+        "approvedHash": "1f655b087a460218978bc504f0f11f2742f9de793feef0a222d5f2b408559f57",
+        "fixedEqual": true,
+        "manifestEqual": true
+      }
+    ]
+  }
+}

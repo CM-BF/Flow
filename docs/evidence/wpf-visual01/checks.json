@@ -1,0 +1,45 @@
+{
+  "implementationTarget": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+  "at": "2026-10-06T09:28:23.911717+00:00",
+  "sourceObservation": "Final dev/prod recorded1e299+dirty, all7hash binda8b; earlierbe50 andf92runs retained separately.",
+  "sourceFiles": {
+    "apps/web/src/assistant-ui.css": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+    "apps/web/src/plugins/builtins.ts": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+    "apps/web/src/plugins/host.ts": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "apps/web/src/styles.css": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4",
+    "apps/web/src/themes.ts": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+    "apps/web/test/visual-shell.browser.ts": "ce0141c0fde1432679630242b3c28761ccfa1619b4e7c6929aa36cd60badc505",
+    "apps/web/test/visual-shell.fixture.ts": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0"
+  },
+  "checks": [
+    {
+      "name": "existing direct PluginHost consumer",
+      "passed": 17,
+      "log": "plugin-host-direct.log",
+      "source": "be50 fixed product; host files unchanged in narrow fix, not rerun"
+    },
+    {
+      "name": "Web tsc",
+      "result": "PASS",
+      "log": "split-typecheck.log"
+    },
+    {
+      "name": "production build",
+      "result": "PASS",
+      "log": "split-build.log",
+      "limitations": "existing >500kB chunk warning"
+    },
+    {
+      "name": "actual App dev",
+      "passed": 8,
+      "report": "development-browser.json",
+      "log": "lower-focus-development.log"
+    },
+    {
+      "name": "actual App production",
+      "passed": 8,
+      "report": "production-browser.json",
+      "log": "lower-focus-production.log"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-06T04:19:24Z",
+  "implementationTarget": "d8198b13a15a0e27ef1686afa8495916a6aa8abc",
+  "base": "8f1481df880cf5077e1ddb9a8f302fe700a7ece8",
+  "sharedDependencyCommit": "dac8c3910eee1828e7081a3d33e19a89a056f4d4",
+  "node": "v24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "checks": {
+    "moduleTests": 6,
+    "directConsumerTests": 2,
+    "passed": 8,
+    "typecheck": "PASSED",
+    "queryCalls": 0,
+    "models": 0
+  },
+  "sources": {
+    "apps/runner/src/goal-tools-mcp/bounded-read.test.ts": "6105ff9b8da71421b8e055af636376cbc82bc88c6aee2947949c90a1c70990ce",
+    "apps/runner/src/goal-tools-mcp/bridge.test.ts": "863dbfda6257d4e92ce373313293a093922dcccdc0bb6af7e782aa6945658952",
+    "apps/runner/src/goal-tools-mcp/center.test.ts": "c4c0321583aff488d1070978e30cc97805198fb339b899483581f7d4e834573c",
+    "apps/runner/src/goal-tools-mcp/index.ts": "ea7e09187645327f83ece4963a6ca3e7cfd56001c371ea65826e797285cf2af8",
+    "apps/runner/src/goal-tools-mcp/read.ts": "fe3deb991e871c34871114b1774d6aec3d6bf97d344fd39be2cd7250322c1471",
+    "apps/runner/src/goal-tools-mcp/result.ts": "8d3e748884a5d4992f9d97df8e9ad1cc5ceb90e42c7b63c2254bf5d0428501ed",
+    "apps/runner/src/goal-tools-mcp/test-peer.ts": "60b7e459b6cb840836f7f66b19de4d97bc8eeb61d5626feb660cf2c5c045c26c"
+  },
+  "outputs": {
+    "docs/evidence/o02/center-progress.txt": "b85acacaaf0ca9b625e383c1d98cce7bc47b39d964736646d661c597aa422ab1",
+    "docs/evidence/o02/checks-final.txt": "3020b5e3239b7eb4922fcd41004e88c37a4a7fcca47aac8f41cc5a0e3af36a8f",
+    "docs/evidence/o02/green-first.txt": "2f7553942ffe45acd0c9db1d5f3a93de18b3aaee3a3172e6f5d88c4dff8d7da3",
+    "docs/evidence/o02/green-read.txt": "6a739730b1990aea04709cd54128611180f5b1eaf225c87b0c80723a3e49b304",
+    "docs/evidence/o02/red-bridge.txt": "33d7755e77787ac214e55e8867c44db346a0f737af2d7c986d669e9b25778311",
+    "docs/evidence/o02/red-read.txt": "f902c7e5c2a896a81ad0669b690370dfbca91bcbdef5530c7d2f8b88930b407a",
+    "docs/evidence/o02/typecheck-final.txt": "b9baf3169243d3df461c6c1ecada6b6b50acbab1d40b4ae5131dd58e79d81f1b",
+    "docs/evidence/o02/typecheck-progress.txt": "b9baf3169243d3df461c6c1ecada6b6b50acbab1d40b4ae5131dd58e79d81f1b",
+    "docs/evidence/o02/wire-progress.txt": "364067b3b15e6ff8e791261aa58aeed40acf0fc283e908b83b2b45dfef3179c8",
+    "docs/evidence/o02/wire.json": "22b1a8b59743f7ecbe2c4037366c864041bc08ab36f3756d48f1d9e0211594dc"
+  },
+  "independentReview": "NOT_STARTED"
+}

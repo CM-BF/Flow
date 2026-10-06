@@ -1,0 +1,55 @@
+{
+  "target": "da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2",
+  "recordedAt": "2026-10-06T07:01:32.428773+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12233,
+      "sha256": "b65dc11d3296e060d11243580e1e36217f6502ed260842b370a967777ea1cc43"
+    },
+    {
+      "path": "packages/client/src/assistant-stream-production.test.ts",
+      "bytes": 7993,
+      "sha256": "fa6c7a9e1be9ba9413315829f0661311e8d7d5a7441c72bebcef41aa260ad6c1"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/assistant-stream-production-red.txt",
+      "bytes": 2282,
+      "sha256": "0b9dc3afb53b8a2c4c9908bae09cbacd3444cf3c29e169c01cffecde32d5a7c4"
+    },
+    {
+      "path": "docs/evidence/f01/assistant-stream-production-red-facts.json",
+      "bytes": 325,
+      "sha256": "c3cc19362fc994cd550c36f94163bf813e2d8969e3d34352c370a362dfc40193"
+    },
+    {
+      "path": "docs/evidence/f01/assistant-stream-production-green.txt",
+      "bytes": 470,
+      "sha256": "1d7ca9207d91082c6d87558210218024ab47c0ee47691ead83b2c4dfb06aa492"
+    },
+    {
+      "path": "docs/evidence/f01/assistant-stream-production-green-facts.json",
+      "bytes": 790,
+      "sha256": "7dbe52de70fdc09d902132b9aa83fc13380fbef89835efac8f5b053eb8d8dc09"
+    },
+    {
+      "path": "docs/evidence/f01/assistant-stream-production-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "red": 2,
+    "green": 2,
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "dependencies": {
+    "domain": "5ff8880b3518992121216998c169dd01ab44cee0",
+    "compatibility": "77f0b152a2be32806b17cc7f8a57d33afc2043b3",
+    "thinClient": "88a869efd782afd5f64f5d7adad0a9167da121c1"
+  },
+  "pending": "C02 test-only startup fixture update and Web C03 reader compatibility before main"
+}

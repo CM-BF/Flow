@@ -1,0 +1,29 @@
+{
+  "implementationTarget": "d0f4f5d8abc8995b22a43879880e090bfb898024",
+  "priorApprovedChat01Target": "2d3bb61b35318f999c9f0f336bb3f443418bb5dc",
+  "chat02InputTarget": "2e1098504500a472f50a4f77e57c8220a48b28aa",
+  "observedAt": "2026-10-06T03:48:45.503321+00:00",
+  "checks": {
+    "pgHttp": {
+      "passed": 22,
+      "failed": 0,
+      "durationSeconds": 16.51,
+      "logSha256": "7e98249cba0bd07cbcc707bc8cd05f77c2e7d6c4df53da7ed22155f6f1f17901"
+    },
+    "typecheck": "passed",
+    "diffCheck": "passed",
+    "flowChat01Remaining": 0,
+    "realModelCalls": 0,
+    "cloudCalls": 0
+  },
+  "sources": {
+    "apps/server/src/conversations/commands.ts": "3f0afba7835f3962c60b3de9daaa97218198416171ed625c6f0762f5c007e051",
+    "apps/server/src/conversations/conversations.test.ts": "43546004f5eafb7b275206fd1bd1cb83744b4c9aa1006913b49e71f776dbaaa4",
+    "apps/server/src/conversations/index.ts": "892f126a3d97108ad7126f53d8c48aaf7b923cf72eefec889ef346814e8084f1",
+    "apps/server/src/conversations/queries.ts": "a37640dc52ad4116230af8908688404c4b0b2ed0a1e44d2b549ed401db3dd715",
+    "apps/server/src/conversations/replies.ts": "9ab014a39aefa7e2081a07f54c3b4125c8f26746bc5c9bd5bf9e24a78e6aaea5",
+    "apps/server/src/conversations/state.ts": "8cd5d9cf956e06030593b26dc754f92b5366a158e5d14fdc744c0489fb2328d9",
+    "packages/contracts/src/conversations.ts": "f4b240880d097873e8b0113907d4849b667ea4e792d93813d6d8dbdd9a3d4191",
+    "packages/storage/migrations/007-conversations.sql": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81"
+  }
+}

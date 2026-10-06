@@ -1,0 +1,188 @@
+{
+  "at": "2026-10-06T10:37:56.353Z",
+  "backend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "oldWeb": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "newWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "sources": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "sha256": "e1c7577401846bfd7ae7b2b1c20d614cae0199f58d394578d8b84fb9dc2401df"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "sha256": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc"
+    }
+  ],
+  "results": [
+    {
+      "label": "old",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "conversationId": "480e9c33-cb36-4c71-a3dc-ff6bbde30926",
+      "taskId": "5fe7b632-347b-4678-8c85-472c61f641e2",
+      "firstKey": "e22af596-334f-4457-833c-72e68c4ea570:turn",
+      "bodySha256": "80b9fee88bcb7561a7145fbcbc6962f992dac5f51cdb22d116c5e8480589c41b",
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "url": "http://127.0.0.1:53110/favicon.ico"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+          "url": "http://127.0.0.1:53110/api/conversations/480e9c33-cb36-4c71-a3dc-ff6bbde30926/turns"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "url": "http://127.0.0.1:53110/api/conversations/480e9c33-cb36-4c71-a3dc-ff6bbde30926"
+        }
+      ],
+      "loadedAssets": [
+        {
+          "path": "assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "assets/index-5W26Yecv.css",
+          "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+        },
+        {
+          "path": "assets/index-DuzR10it.js",
+          "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+        },
+        {
+          "path": "assets/assistant-ui-BW1JBgq4.js",
+          "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+        },
+        {
+          "path": "assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "assets/index-5W26Yecv.css",
+          "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+        },
+        {
+          "path": "assets/index-DuzR10it.js",
+          "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+        },
+        {
+          "path": "assets/assistant-ui-BW1JBgq4.js",
+          "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+        }
+      ],
+      "legacyMode": "Real App reload; observation proxy omitted only X-Flow-Assistant-Stream",
+      "profileNegotiation": "Actual App default directory plus supplemental same-origin authenticated opt-in GET",
+      "providerQueries": 0
+    },
+    {
+      "label": "new",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06",
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "conversationId": "979d00b3-4f78-46f8-9493-cecddb5f33b2",
+      "taskId": "b38e9080-7af4-45dc-8036-2e80b4cb3371",
+      "firstKey": "9805b056-fb64-4deb-9d56-7f23b9ec2a91:turn",
+      "bodySha256": "5f4a4cb038f57f8cc0faaffef2e91fdb259613a65b0cc58459d7be44cb557247",
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "url": "http://127.0.0.1:53112/favicon.ico"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 502 (Bad Gateway)",
+          "url": "http://127.0.0.1:53112/api/conversations/979d00b3-4f78-46f8-9493-cecddb5f33b2/turns"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "url": "http://127.0.0.1:53112/api/conversations/979d00b3-4f78-46f8-9493-cecddb5f33b2"
+        }
+      ],
+      "loadedAssets": [
+        {
+          "path": "__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+        },
+        {
+          "path": "__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+        },
+        {
+          "path": "__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+          "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+        },
+        {
+          "path": "__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+          "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+        },
+        {
+          "path": "__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+          "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+        }
+      ],
+      "legacyMode": "Real App reload; observation proxy omitted only X-Flow-Assistant-Stream",
+      "profileNegotiation": "Actual App default directory plus supplemental same-origin authenticated opt-in GET",
+      "providerQueries": 0
+    }
+  ],
+  "failure": null,
+  "passed": true
+}

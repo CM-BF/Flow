@@ -1,0 +1,98 @@
+{
+  "observedAt": "2026-10-06T11:21:18.058Z",
+  "parsed": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+        "id": "WPF-MATURE-03",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已保留真实旧库升级与原收据检查，测试入口可避免重复注册附件路由",
+      "next": "独立审查测试适配，再与正式中心自动安装入口组合验证",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "scopes": [
+        "apps/server/src/attachments/fixture.ts",
+        "apps/server/src/attachments/context.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-ATTACH01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/attachment-resources",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T11:21:06.000Z",
+    "updatedRecord": "2026-10-06 11:21:06 UTC",
+    "todos": [
+      {
+        "id": "WPF-ATTACH01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-attach01/interface.md)、[take](../../docs/evidence/wpf-attach01/take-receipt.json)"
+      },
+      {
+        "id": "WPF-ATTACH01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "运行域实现与作者验证已固定；[原回执](../../docs/evidence/wpf-attach01/runtime-amend-receipt.json)"
+      },
+      {
+        "id": "WPF-ATTACH01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "29项隔离PGHTTP含实际runner/fake adapter；[运行验证](../../docs/evidence/wpf-attach01/runtime-validation.md)，无provider"
+      },
+      {
+        "id": "WPF-ATTACH01-04",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "phase1及运行域独审均通过；main接收仍pending"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "f181d84b5fb3652d62e2a181acff442d42b3e066 / 当前Git聚合",
+    "declaredDirty": "两测试源已固定1f0c196；仅自身metadata收口，最终Git为准",
+    "checks": {
+      "state": "passed",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "record": "PASSED 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9；仅6受影响PG/HTTP case、严格types、4DB清零；正式自动factory分支未验，旧8701/78另保留"
+    },
+    "reviewRecord": "[review.md](review.md)，当前fixture增量NOT_STARTED；8701 runtime及phase1历史APPROVED另保留",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  }
+}

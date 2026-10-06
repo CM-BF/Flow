@@ -1,15 +1,44 @@
 import type { Pool, PoolClient } from 'pg';
 import type { EventAcknowledgement, EventBatch, RunnerEvent } from '@flow/contracts';
+import { recordReceiptInTransaction } from './active-steering/commands.js';
+import { assertControlledFinal, closePendingSteering, recordSteeringResult } from './active-steering/results.js';
 import { canonical, HttpError, sha256, transaction } from './database.js';
 import { ownedAttempt, type AttemptRecord } from './runners.js';
 import type { TaskRecord } from './tasks.js';
 import { saveArtifact, saveDetail, verifyArtifact } from './evidence.js';
+import { assertEngineeringCompletion } from './engineering/verification.js';
+import { record as recordContextObservation } from './context-transparency/store.js';
 import { recordUsage } from './usage.js';
 import { recordSession } from './sessions.js';
 import { appendTimeline } from './timeline.js';
+import { saveAssistantFinal } from './assistant/store.js';
+import { saveAssistantStreamMarker, settleAssistantStream } from './assistant-stream/settlement.js';
+import { saveAssistantStream } from './assistant-stream/store.js';
+import { saveNativeActivity, type NativeActivityEvent } from './native-activity/store.js';
 
-async function applyEvent(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: RunnerEvent): Promise<void> {
-  if (event.type === 'message') await appendTimeline(client, task, { kind: 'text', text: event.text });
+export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: RunnerEvent | NativeActivityEvent): Promise<void> {
+  if (event.type === 'steering-result') await recordSteeringResult(client, task, attempt, event.result);
+  else if (event.type === 'steering-receipt') {
+    if (event.receipt.attemptId !== attempt.id || event.receipt.ownerVersion !== attempt.owner_version) throw new HttpError(409, 'steering_identity', 'Receipt does not belong to the reporting attempt.');
+    await recordReceiptInTransaction(client, attempt.runner_id, event.receipt);
+  }
+  else if (event.type === 'context-observation') await recordContextObservation(client, task, attempt, event);
+  else if (event.type === 'message') await appendTimeline(client, task, { kind: 'text', text: event.text });
+  else if (event.type === 'assistant-stream-marker') await saveAssistantStreamMarker(client, task, attempt, event);
+  else if (event.type === 'assistant-stream') {
+    const reference = await saveAssistantStream(client, task, attempt, event);
+    if (reference) await appendTimeline(client, task, { kind: 'reference', reference });
+  }
+  else if (event.type === 'native-activity') {
+    const reference = await saveNativeActivity(client, task, attempt, event);
+    if (reference) await appendTimeline(client, task, { kind: 'reference', reference });
+  }
+  else if (event.type === 'assistant-final') {
+    await assertControlledFinal(client, attempt, event);
+    const reference = await saveAssistantFinal(client, task, attempt, event);
+    await settleAssistantStream(client, task, attempt, event.messageId);
+    await appendTimeline(client, task, { kind: 'reference', reference });
+  }
   else if (event.type === 'session') {
     await recordSession(client, task, attempt, event);
     const reference = await saveDetail(client, task.id, attempt.id, { title: 'Native session', kind: 'session', content: JSON.stringify(event), mediaType: 'application/json' });
@@ -35,6 +64,8 @@ async function applyEvent(client: PoolClient, task: TaskRecord, attempt: Attempt
     task.status = 'waiting';
   }
   else if (event.type === 'completed') {
+    if (task.submission.engineering && event.outcome === 'succeeded') await assertEngineeringCompletion(client, task, attempt);
+    await closePendingSteering(client, task, attempt);
     if (event.error) {
       const reference = await saveDetail(client, task.id, attempt.id, { title: 'Execution error', kind: 'detail', content: event.error, mediaType: 'text/plain' });
       await appendTimeline(client, task, { kind: 'reference', reference });
@@ -70,11 +101,15 @@ export async function reportEvents(pool: Pool, runnerId: string, batch: EventBat
       accepted += 1;
     }
     if (accepted) {
+      await persistEventState(client, task, attempt);
+    }
+    return { accepted, lastSequence: attempt.last_sequence };
+  });
+}
+
+export async function persistEventState(client: PoolClient, task: TaskRecord, attempt: AttemptRecord): Promise<void> {
       await client.query('UPDATE flow.attempts SET last_sequence=$2,last_event_at=clock_timestamp() WHERE id=$1', [attempt.id, attempt.last_sequence]);
       await client.query('UPDATE flow.tasks SET status=$2,cursor=$3,pending_decision=$4,updated_at=clock_timestamp() WHERE id=$1', [task.id, task.status, task.cursor, task.pending_decision]);
       await client.query('UPDATE flow.tasks SET verification_status=$2,latest_artifact_id=$3,latest_artifact_version=$4 WHERE id=$1', [task.id, task.verification_status, task.latest_artifact_id, task.latest_artifact_version]);
       await client.query('UPDATE flow.tasks SET usage=$2 WHERE id=$1', [task.id, task.usage]);
-    }
-    return { accepted, lastSequence: attempt.last_sequence };
-  });
 }

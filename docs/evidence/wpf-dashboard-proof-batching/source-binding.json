@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-10-06 10:41:48 UTC",
+  "implementationTarget": "902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+  "base": "41315b033deb0b1953484359b686c0b228997367",
+  "sources": {
+    "apps/execution-dashboard/src/proof.mjs": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+    "apps/execution-dashboard/test/proof-tree-batch.test.mjs": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f",
+    "docs/evidence/wpf-dashboard-proof-batching/measure.mjs": "2dc49d5d5e5615314cad135153a43e65f5d590d5e2b5c9e87922fddc2eacb8c3"
+  },
+  "experimentBinding": {
+    "baselineProof": "ba454106f6d99a864f7344fb6a2bce632fc8833d1e68a8fea4a71db88729fa18",
+    "afterProof": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+    "aggregate": "81a20492f80e58cdbc28a36c49ef514aae0c656782020c413ce8e11f4c29494c",
+    "baselineSyntheticTarget": "5f4529721d854dc490f98e9546ec64121d705216",
+    "afterSyntheticTarget": "e0ef529332efc4ec97e5a135bd44fbeab0e3205c",
+    "sameSyntheticStructure": true,
+    "sameSyntheticCommit": false,
+    "baselineExecutionHead": "f78680fc946cd4d9ad922b2f33e47d292eef1aff + own evidence dirty; production proof unchanged",
+    "afterExecutionHead": "f78680fc946cd4d9ad922b2f33e47d292eef1aff + dirty proof/test/evidence; proof bytes equal fixed target",
+    "note": "Observed hashes are primary. No retrospective claim that experiments ran at implementation target."
+  }
+}

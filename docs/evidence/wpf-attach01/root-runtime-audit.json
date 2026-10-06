@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-06T10:49:12.019Z",
+  "target": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "metadataHead": "6d0a3077fb2f9dc338a413c020fa5dfe1a3e1b98",
+  "sourceCount": 16,
+  "unchangedDependencyCount": 19,
+  "phase1ImplementationsUnchanged": [
+    "packages/contracts/src/attachments.ts",
+    "packages/contracts/src/conversation-context.ts"
+  ],
+  "sourceDiffCheck": "",
+  "cleanup": [
+    {
+      "startedAt": "2026-10-06T10:48:18.074Z",
+      "endedAt": "2026-10-06T10:48:25.884Z",
+      "databaseName": "flow_attach_98376_616d8f67",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "startedAt": "2026-10-06T10:48:26.525Z",
+      "endedAt": "2026-10-06T10:48:29.518Z",
+      "databaseName": "flow_attach_17618_13bb8f52",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "startedAt": "2026-10-06T10:48:20.672Z",
+      "endedAt": "2026-10-06T10:48:25.769Z",
+      "databaseName": "flow_attach_98376_cbd1c36a",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    }
+  ],
+  "claimReceipt": {
+    "requestId": "wpf-attach01-runtime18-amend-20261006",
+    "action": "amend",
+    "committedAt": "2026-10-06T10:28:42.374Z",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/server/src/attachments/attachments.test.ts",
+        "apps/server/src/attachments/context.test.ts",
+        "apps/server/src/attachments/fixture.ts",
+        "apps/server/src/attachments/index.ts",
+        "apps/server/src/attachments/storage.ts",
+        "apps/server/src/conversation-context/store.ts",
+        "apps/server/src/conversation-queue/commands.ts",
+        "apps/server/src/conversations/commands.ts",
+        "apps/server/src/conversations/queries.ts",
+        "apps/server/src/conversations/state.ts",
+        "docs/evidence/wpf-attach01",
+        "packages/contracts/src/attachments.test.ts",
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/storage/migrations/026-attachment-resources.sql",
+        "plans/wpf-attach01-resources"
+      ],
+      "state": "active",
+      "branch": "codex/attachment-resources",
+      "origin": "new",
+      "taskId": "WPF-ATTACH01",
+      "worker": "workspace_panels_owner",
+      "claimId": "ef617d78-eb39-484e-898e-5f057fca50d4",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+      "createdAt": "2026-10-06T10:06:48.197Z",
+      "updatedAt": "2026-10-06T10:28:42.374Z",
+      "observedAt": null
+    }
+  }
+}

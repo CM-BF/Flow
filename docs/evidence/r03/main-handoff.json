@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-06T04:40:17Z",
+  "main": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+  "featureHeadBeforeMetadata": "54f533180da555619e8073224c80aa538838142f",
+  "id": "R03",
+  "target": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+  "ancestor": true,
+  "scopeChanges": [
+    "M\tapps/server/src/runners.ts",
+    "M\tpackages/contracts/src/runner.ts"
+  ],
+  "recentScopeHistory": [
+    "a28ca19 feat: pin configured execution profiles through conversation admission and runner startup",
+    "fb78d01 Define durable typed assistant final contract",
+    "9c59740 Stop runner on local storage failure and verify conservative lease boundaries",
+    "3487ffe Anchor runner leases to request-start monotonic time",
+    "b8155e9 feat: provide fenced protocol client and explicit harness usage policies",
+    "97ab1e5 feat(server): reconcile uncertain attempts with audited safe retry",
+    "c08506b Merge commit 'e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2' into codex/m1-integration",
+    "e4f12ef feat(runner): add bounded read-only native Claude adapter and explicit startup manifest"
+  ],
+  "remainingScopeSourceEqual": true,
+  "explanation": "差异仅已交回的server/runners.ts与contracts/runner.ts，分别已有CHAT03/CHAT02后继；剩余4个runner源码文件一致。"
+}

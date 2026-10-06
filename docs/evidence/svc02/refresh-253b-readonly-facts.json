@@ -1,0 +1,277 @@
+{
+  "observedAt": "2026-10-06T07:28:44.912Z",
+  "operation": "read-only preparation; no maintenance writes, POST, migration, stop, start, reload or provider query",
+  "target": "253b8ad38fd869297e7d9948a26c1d310fef5c6c",
+  "private": {
+    "directoryMode": "700",
+    "files": {
+      "config.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 672
+      },
+      "claude.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 145
+      },
+      "state.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 1221
+      },
+      "maintenance.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 312
+      }
+    },
+    "nativeConfigurationMatches": true,
+    "nativeDirectory": {
+      "mode": "700",
+      "device": 16777234,
+      "inode": 117819908
+    },
+    "operationLockPresent": false
+  },
+  "status": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "observedAt": "2026-10-06T07:28:45.065Z",
+    "startedAt": "2026-10-06T05:38:49.700Z",
+    "sourceAtStart": {
+      "head": "fb906cb42391971a8b315dbd813f7633927d7265",
+      "dirty": false
+    },
+    "configured": "claude-sonnet-5-5",
+    "provider": "not-probed",
+    "processes": {
+      "center": "running",
+      "runner": "running",
+      "web": "running"
+    },
+    "center": {
+      "url": "http://127.0.0.1:61227",
+      "reachable": true
+    },
+    "webUrl": "http://127.0.0.1:61228",
+    "database": "owned",
+    "work": {
+      "total": 2,
+      "pending": 0,
+      "lastTaskSucceededAt": "2026-10-06T06:02:27.180Z",
+      "lastHeartbeatAt": "2026-10-06T06:02:27.158Z"
+    },
+    "lastError": null,
+    "profile": {
+      "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+      "source": "runner-configured",
+      "model": "claude-sonnet-5-5"
+    },
+    "lastProcessExits": {},
+    "limits": {
+      "maxTurns": 2,
+      "maxBudgetUsd": 0.2,
+      "timeoutMs": 60000,
+      "scope": "per-query-not-project-total"
+    }
+  },
+  "sourceNow": {
+    "head": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+    "dirty": false,
+    "repositoryMatchesMain": true
+  },
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 77104,
+      "pgid": 77104,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Mon Oct  5 22:38:48 2026",
+      "members": [
+        {
+          "pid": 77104,
+          "ppid": 1,
+          "pgid": 77104,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 77136,
+          "ppid": 77104,
+          "pgid": 77104,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "center-main"
+        },
+        {
+          "pid": 77156,
+          "ppid": 77136,
+          "pgid": 77104,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "other-member"
+        }
+      ]
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 77264,
+      "pgid": 77264,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Mon Oct  5 22:38:49 2026",
+      "members": [
+        {
+          "pid": 77264,
+          "ppid": 1,
+          "pgid": 77264,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 77297,
+          "ppid": 77264,
+          "pgid": 77264,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "runner-main"
+        },
+        {
+          "pid": 77336,
+          "ppid": 77297,
+          "pgid": 77264,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "other-member"
+        }
+      ]
+    },
+    "web": {
+      "identity": "running",
+      "pid": 77304,
+      "pgid": 77304,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Mon Oct  5 22:38:49 2026",
+      "members": [
+        {
+          "pid": 77304,
+          "ppid": 1,
+          "pgid": 77304,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 77337,
+          "ppid": 77304,
+          "pgid": 77304,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow/apps/web",
+          "role": "vite"
+        }
+      ]
+    }
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "localRunnerEntrypoints": [
+    {
+      "pid": 77297,
+      "ppid": 77264,
+      "pgid": 77264,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownedGroup": true
+    }
+  ],
+  "database": {
+    "snapshotAt": "2026-10-06T07:28:45.738Z",
+    "markerMatches": true,
+    "runnerIdentityMatches": true,
+    "managedRunnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "taskCounts": [
+      {
+        "status": "succeeded",
+        "count": 2
+      }
+    ],
+    "unfinishedAttempts": [],
+    "unfinishedAttemptCount": 0,
+    "registeredRunners": [
+      {
+        "runner_id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "maintenance_state": "accepting",
+        "maintenance_version": 3,
+        "maintenance_operation_id": null,
+        "unfinished_attempts": 0,
+        "last_heartbeat_at": "2026-10-06T06:02:27.158Z"
+      }
+    ],
+    "migrations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "retainedCounts": {
+      "tasks": 2,
+      "attempts": 2,
+      "sessions": 1,
+      "artifacts": 2,
+      "details": 12,
+      "conversations": 1,
+      "conversation_turns": 2,
+      "conversation_queue": 1
+    },
+    "conversationQueue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ],
+    "connections": [
+      {
+        "application_name": "",
+        "state": "idle",
+        "count": 3
+      },
+      {
+        "application_name": "pgboss:8f389b17",
+        "state": "idle",
+        "count": 1
+      }
+    ]
+  },
+  "localMaintenance": {
+    "phase": "resumed",
+    "target": "fb906cb42391971a8b315dbd813f7633927d7265",
+    "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+  },
+  "limitations": [
+    "One instant snapshot is not a lock, drain, hold, or permission to stop.",
+    "Process inventory identifies recognized entrypoints; it cannot exclude another host or custom same-credential deployment.",
+    "All other active/unknown deployments require operator coordination before any center stop.",
+    "SDK/provider availability and real model calls were not probed.",
+    "SourceAtStart records startup; Vite files may follow checkout changes without a controlled bundle refresh."
+  ],
+  "outcome": "observed"
+}

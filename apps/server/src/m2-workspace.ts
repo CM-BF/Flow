@@ -1,3 +1,4 @@
+import { legacyTimelineEntries } from './assistant-stream-compatibility/index.js';
 import type { FastifyInstance } from 'fastify';
 import type { Pool, PoolClient } from 'pg';
 import { WORKSPACE_ID, type TimelineEntry, type WorkspaceEntry, type WorkspacePage, type WorkspaceQuery, type WorkspaceTask } from '@flow/contracts';
@@ -42,12 +43,20 @@ async function projectCommittedEvents(pool: Pool): Promise<boolean> {
         'kind','text','text','Task accepted.')
       FROM flow.tasks t LEFT JOIN flow.workspace_feed f ON f.task_id=t.id AND f.task_cursor=0
       WHERE f.ordinal IS NULL ORDER BY t.created_at,t.id LIMIT $1`, [batchSize]);
+    // Writers commit each task's cursors in order under its row lock, and this
+    // projection inserts ordered prefixes. A per-task cursor therefore cannot
+    // skip a late commit from another task; no global source watermark is used.
     const updates = await client.query(`INSERT INTO flow.workspace_feed(task_id,task_cursor,task_title,entry)
       SELECT tl.task_id,tl.cursor,t.submission->>'title',tl.entry
-      FROM flow.timeline tl JOIN flow.tasks t ON t.id=tl.task_id
-      JOIN flow.workspace_feed acceptance ON acceptance.task_id=tl.task_id AND acceptance.task_cursor=0
-      LEFT JOIN flow.workspace_feed f ON f.task_id=tl.task_id AND f.task_cursor=tl.cursor
-      WHERE f.ordinal IS NULL ORDER BY t.created_at,t.id,tl.cursor LIMIT $1`, [batchSize]);
+      FROM flow.tasks t
+      JOIN LATERAL (
+        SELECT task_cursor FROM flow.workspace_feed WHERE task_id=t.id ORDER BY task_cursor DESC LIMIT 1
+      ) projected ON true
+      JOIN LATERAL (
+        SELECT task_id,cursor,entry FROM flow.timeline
+        WHERE task_id=t.id AND cursor>projected.task_cursor ORDER BY cursor LIMIT $1
+      ) tl ON true
+      ORDER BY t.created_at,t.id,tl.cursor LIMIT $1`, [batchSize]);
     return accepted.rowCount === batchSize || updates.rowCount === batchSize;
   });
 }
@@ -64,13 +73,13 @@ export async function workspacePage(pool: Pool, query: WorkspaceQuery): Promise<
       WHERE ordinal ${forward ? '>' : '<'} $1 ORDER BY ordinal ${forward ? 'ASC' : 'DESC'} LIMIT $2`,
     [forward ? query.after : query.before ?? watermark + 1, query.limit ?? 40])).rows;
     if (!forward) rows.reverse();
-    const entries: WorkspaceEntry[] = rows.map(row => ({ id: `workspace-${row.ordinal}`, cursor: Number(row.ordinal), task: { id: row.task_id, title: row.task_title }, entry: row.entry }));
-    const nextCursor = entries.at(-1)?.cursor ?? query.after ?? watermark;
-    const previousCursor = entries[0]?.cursor ?? query.before ?? 0;
+    const rawEntries: WorkspaceEntry[] = rows.map(row => ({ id: `workspace-${row.ordinal}`, cursor: Number(row.ordinal), task: { id: row.task_id, title: row.task_title }, entry: row.entry }));
+    const nextCursor = rawEntries.at(-1)?.cursor ?? query.after ?? watermark;
+    const previousCursor = rawEntries[0]?.cursor ?? query.before ?? 0;
     const hasEarlier = previousCursor > 0 && Boolean((await client.query('SELECT 1 FROM flow.workspace_feed WHERE ordinal<$1 LIMIT 1', [previousCursor])).rowCount);
     const tasks = await readWorkspaceTasks(client, false);
     const attention = await readWorkspaceTasks(client, true);
-    return { workspaceId: WORKSPACE_ID, entries, nextCursor, previousCursor, watermark,
+    return { workspaceId: WORKSPACE_ID, entries: legacyTimelineEntries(rawEntries, item => item.entry), nextCursor, previousCursor, watermark,
       hasMore: nextCursor < watermark, hasEarlier, projectionPending,
       tasks: tasks.slice(0, 100), tasksTruncated: tasks.length > 100,
       attention: attention.slice(0, 100), attentionTruncated: attention.length > 100 };

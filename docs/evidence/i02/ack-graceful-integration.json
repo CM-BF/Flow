@@ -1,0 +1,139 @@
+{
+  "observedAt": "2026-10-06T10:36:28.563046+00:00",
+  "previousMain": "0b0d5fe7af9c0f40861ec6d2847f7383bcd76739",
+  "candidate": "0a4ca1b22ff05743ef9fd44026d7db2607e77199",
+  "sourceComparisons": [
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 10480,
+      "sha256": "3f76cfde9b61ea049da7575c905d91588ea9d8a400c5bcc0336036998c0020d5",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "bytes": 13823,
+      "sha256": "24190fe6eab6f55a10070ba9004f798749dfb5a61dee44ff02cbef2bb3022561",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/client/src/index.ts",
+      "bytes": 39061,
+      "sha256": "5ff272bec0a6120dd10791d168d260f1c0aea4fef45e51782b067ee1f68305f1",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/client/src/conversations.test.ts",
+      "bytes": 4105,
+      "sha256": "f48fe8f522ceefaf8c10f866231ff98239b6bc5dbac728a1cf4c5f808177c5bd",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "bytes": 560,
+      "sha256": "ebeea716b5e120f25f9e7b62009c24c1ce8cc9132f441732af632cc91272862c",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 13897,
+      "sha256": "ef60f5b6fa8c02bdb928c463bc06763cac242f8c7cd6c350c3e6abb6ba0d1db1",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/interaction/src/controller.test.ts",
+      "bytes": 11505,
+      "sha256": "87ac3d5aeb1ba495cbe918c7c0a67f885a1425ed8fc9627bc49e427d001a4e71",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "apps/tui/src/recovery.test.ts",
+      "bytes": 14942,
+      "sha256": "5cf1af83cc6c2ce2200e9d9546df985cce0e9d871c9a7dfa4ea9e5162f2a2643",
+      "matches": true
+    },
+    {
+      "task": "TUI01B",
+      "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "bytes": 3685,
+      "sha256": "5a08ef365cd397c0a4e29f2e78961d84217e7398d4e439b96c7cfb2cb0907be9",
+      "matches": true
+    },
+    {
+      "task": "S01P03",
+      "target": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14564,
+      "sha256": "790c706fd1207211334e77fa428d31d54e79dca91b6d66b35d56ab54f6512c8e",
+      "matches": true
+    },
+    {
+      "task": "S01P03",
+      "target": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "bytes": 13720,
+      "sha256": "09670094e39e2a3b2da6286c763d161e5b359231d472e655b2d44fe4c1a8c42d",
+      "matches": true
+    }
+  ],
+  "protectedMain": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "unchanged": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "unchanged": true
+    }
+  ],
+  "checks": {
+    "target": "0a4ca1b22ff05743ef9fd44026d7db2607e77199",
+    "startedAt": "2026-10-06T10:35:48.387925+00:00",
+    "finishedAt": "2026-10-06T10:35:58.336930+00:00",
+    "elapsedSeconds": 9.948888374958187,
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "exitCode": 0
+  },
+  "clientCompatibility": "S01 readonly client index differs only in reviewed TUI create/submit acknowledgement decoding and their helper/export. claim/report/heartbeat/request behavior unchanged; original 62 and 70 distinct evidence reused, not rerun.",
+  "review": "TUI implementation independently approved by Execution Lead; tiny F01 assistant-stream fixture independently reviewed by runner_owner. S01 implementation independently approved by architecture_read/Mika.",
+  "limits": [
+    "TUI shared decoder v1 only; Web policy consumer handoff pending",
+    "S01 normal stop drains already-sent claim; unknown admission remains journaled; no auto recovery receipt",
+    "No new provider call, personal runtime or tab operation"
+  ]
+}

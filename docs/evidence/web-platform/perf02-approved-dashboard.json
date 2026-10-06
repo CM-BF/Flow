@@ -1,0 +1,263 @@
+{
+  "generatedAt": "2026-10-06T03:49:13.564Z",
+  "sourceCount": 39,
+  "task": {
+    "id": "WPF-PERF02",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window",
+    "branch": "codex/web-activity-window",
+    "planDir": "plans/wpf-perf02-activity-window",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T03:48:57.880Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/status.md",
+      "syncedAt": "2026-10-06T03:49:13.564Z",
+      "stale": false,
+      "ageHours": 0.020434444444444446
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/web-activity-window",
+      "head": "172d10d63179a4861cc0fbf986dec10bd0a45f10",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T03:49:13.825Z"
+    },
+    "status": {
+      "human": {
+        "phase": "M2",
+        "priority": 3,
+        "output": "三规模正式生产矩阵完成，全部历史hash一致；末DOM200/802/1077；报告与独立review通过，交Lead局部集成，main仍pending",
+        "next": "MainLead接收固定target后局部集成验证；本owner停止主动写入，claim保留修复/交接",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+        "scopes": [
+          "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+          "apps/web/src/workspace-feed/ActivityWindow.tsx",
+          "apps/web/src/workspace-feed/workspace-feed.css",
+          "apps/web/test/workspace-window.test.ts",
+          "apps/web/test/workspace-window.browser.ts",
+          "apps/web/test/performance-probe.ts"
+        ],
+        "errors": []
+      },
+      "taskId": "WPF-PERF02",
+      "owner": "w01_owner / 已派发 gpt-6-astra ultra（运行系统身份 GPT-6）",
+      "branch": "codex/web-activity-window",
+      "branchState": "completed；实现/作者验证/独立review完成，交Lead局部集成",
+      "updatedAt": "2026-10-06T03:48:00.000Z",
+      "updatedRecord": "2026-10-06 03:48 UTC",
+      "todos": [
+        {
+          "id": "WPF-PERF02-01",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "[回执](../../docs/evidence/wpf-perf02/take-receipt.json)，原claims已先移scope"
+        },
+        {
+          "id": "WPF-PERF02-02",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "branch实现 a87f64f48a3b7e8d03429ab0673c210076a2df0d；已独立APPROVED"
+        },
+        {
+          "id": "WPF-PERF02-03",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "[结果](../../docs/evidence/wpf-perf02/results.md)，8browser/13tests/smoke/三矩阵通过"
+        },
+        {
+          "id": "WPF-PERF02-04",
+          "state": "completed",
+          "owner": "w01_owner / root",
+          "evidence": "固定target a87f64f48a3b7e8d03429ab0673c210076a2df0d 独立APPROVED；交Lead，main集成pending"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "最近已核d891195688d849e7623cd2805b3f64cfd07b959d clean；本次仅metadata补字段，最终HEAD由Git/dashboard读取",
+      "declaredDirty": "",
+      "checks": {
+        "state": "passed",
+        "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+        "record": "PASSED：13局部/直接projection tests、Web typecheck、8生产浏览器行为组；target a87f64f48a3b7e8d03429ab0673c210076a2df0d。正式smoke与1/16/128矩阵通过；每场完整10040记录hash一致/maxMounted16"
+      },
+      "reviewRecord": "APPROVED target a87f64f48a3b7e8d03429ab0673c210076a2df0d；[review.md](review.md)；metadata不自动覆盖实现",
+      "mainRecord": "",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED",
+      "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+      "proof": {
+        "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+        "head": "172d10d63179a4861cc0fbf986dec10bd0a45f10",
+        "scopes": [
+          "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+          "apps/web/src/workspace-feed/ActivityWindow.tsx",
+          "apps/web/src/workspace-feed/workspace-feed.css",
+          "apps/web/test/workspace-window.test.ts",
+          "apps/web/test/workspace-window.browser.ts",
+          "apps/web/test/performance-probe.ts"
+        ],
+        "observedAt": "2026-10-06T03:49:14.231Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-perf02/README.md",
+          "docs/evidence/wpf-perf02/development-failures.md",
+          "docs/evidence/wpf-perf02/fixture-checks.json",
+          "docs/evidence/wpf-perf02/measurement-window.json",
+          "docs/evidence/wpf-perf02/projection-retention.json",
+          "docs/evidence/wpf-perf02/quality.md",
+          "docs/evidence/wpf-perf02/results.md",
+          "docs/evidence/wpf-perf02/smoke-1-dark.png",
+          "docs/evidence/wpf-perf02/smoke-1-light.png",
+          "docs/evidence/wpf-perf02/smoke-1.json",
+          "docs/evidence/wpf-perf02/smoke-environment.json",
+          "docs/evidence/wpf-perf02/smoke-run.json",
+          "docs/evidence/wpf-perf02/summary.json",
+          "docs/evidence/wpf-perf02/window-1-dark.png",
+          "docs/evidence/wpf-perf02/window-1-light.png",
+          "docs/evidence/wpf-perf02/window-1.json",
+          "docs/evidence/wpf-perf02/window-128-dark.png",
+          "docs/evidence/wpf-perf02/window-128-light.png",
+          "docs/evidence/wpf-perf02/window-128.json",
+          "docs/evidence/wpf-perf02/window-16-dark.png",
+          "docs/evidence/wpf-perf02/window-16-light.png",
+          "docs/evidence/wpf-perf02/window-16.json",
+          "docs/evidence/wpf-perf02/window-browser.json",
+          "docs/evidence/wpf-perf02/window-current.png",
+          "docs/evidence/wpf-perf02/window-dark-desktop.png",
+          "docs/evidence/wpf-perf02/window-dark-narrow.png",
+          "docs/evidence/wpf-perf02/window-environment.json",
+          "docs/evidence/wpf-perf02/window-integrity.json",
+          "docs/evidence/wpf-perf02/window-light-narrow.png",
+          "docs/evidence/wpf-perf02/window-run.json",
+          "plans/wpf-perf02-activity-window/plan.md",
+          "plans/wpf-perf02-activity-window/review.md",
+          "plans/wpf-perf02-activity-window/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+      "head": "172d10d63179a4861cc0fbf986dec10bd0a45f10",
+      "scopes": [
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/workspace-feed.css",
+        "apps/web/test/workspace-window.test.ts",
+        "apps/web/test/workspace-window.browser.ts",
+        "apps/web/test/performance-probe.ts"
+      ],
+      "observedAt": "2026-10-06T03:49:13.840Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/wpf-perf02/README.md",
+        "docs/evidence/wpf-perf02/development-failures.md",
+        "docs/evidence/wpf-perf02/fixture-checks.json",
+        "docs/evidence/wpf-perf02/measurement-window.json",
+        "docs/evidence/wpf-perf02/projection-retention.json",
+        "docs/evidence/wpf-perf02/quality.md",
+        "docs/evidence/wpf-perf02/results.md",
+        "docs/evidence/wpf-perf02/smoke-1-dark.png",
+        "docs/evidence/wpf-perf02/smoke-1-light.png",
+        "docs/evidence/wpf-perf02/smoke-1.json",
+        "docs/evidence/wpf-perf02/smoke-environment.json",
+        "docs/evidence/wpf-perf02/smoke-run.json",
+        "docs/evidence/wpf-perf02/summary.json",
+        "docs/evidence/wpf-perf02/window-1-dark.png",
+        "docs/evidence/wpf-perf02/window-1-light.png",
+        "docs/evidence/wpf-perf02/window-1.json",
+        "docs/evidence/wpf-perf02/window-128-dark.png",
+        "docs/evidence/wpf-perf02/window-128-light.png",
+        "docs/evidence/wpf-perf02/window-128.json",
+        "docs/evidence/wpf-perf02/window-16-dark.png",
+        "docs/evidence/wpf-perf02/window-16-light.png",
+        "docs/evidence/wpf-perf02/window-16.json",
+        "docs/evidence/wpf-perf02/window-browser.json",
+        "docs/evidence/wpf-perf02/window-current.png",
+        "docs/evidence/wpf-perf02/window-dark-desktop.png",
+        "docs/evidence/wpf-perf02/window-dark-narrow.png",
+        "docs/evidence/wpf-perf02/window-environment.json",
+        "docs/evidence/wpf-perf02/window-integrity.json",
+        "docs/evidence/wpf-perf02/window-light-narrow.png",
+        "docs/evidence/wpf-perf02/window-run.json",
+        "plans/wpf-perf02-activity-window/plan.md",
+        "plans/wpf-perf02-activity-window/review.md",
+        "plans/wpf-perf02-activity-window/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "main": {
+      "record": "未记录 main 集成事实。",
+      "recordedHead": null,
+      "target": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+      "mainHead": "ac4e34de2331dce276440df8969883c1883060ef",
+      "scopes": [
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/workspace-feed.css",
+        "apps/web/test/workspace-window.test.ts",
+        "apps/web/test/workspace-window.browser.ts",
+        "apps/web/test/performance-probe.ts"
+      ],
+      "observedAt": "2026-10-06T03:49:13.825Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/workspace-feed/ActivityWindow.tsx",
+          "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+          "apps/web/src/workspace-feed/workspace-feed.css",
+          "apps/web/test/performance-probe.ts",
+          "apps/web/test/workspace-window.browser.ts",
+          "apps/web/test/workspace-window.test.ts",
+          "docs/evidence/wpf-perf02",
+          "plans/wpf-perf02-activity-window"
+        ],
+        "state": "active",
+        "branch": "codex/web-activity-window",
+        "origin": "new",
+        "taskId": "WPF-PERF02",
+        "worker": "w01_owner",
+        "claimId": "d36cd583-7c96-44c3-b92c-1cd0f208cc4e",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window",
+        "createdAt": "2026-10-06T03:30:35.629Z",
+        "updatedAt": "2026-10-06T03:30:35.629Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ],
+    "issues": []
+  }
+}

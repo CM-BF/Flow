@@ -1,0 +1,7 @@
+apps/server/src/goal-delivery/delivery.test.ts(71,7): error TS7034: Variable 'assignment' implicitly has type 'any' in some locations where its type cannot be determined.
+apps/server/src/goal-delivery/delivery.test.ts(80,66): error TS7005: Variable 'assignment' implicitly has an 'any' type.
+apps/server/src/goal-delivery/delivery.test.ts(80,103): error TS7005: Variable 'assignment' implicitly has an 'any' type.
+apps/server/src/goal-delivery/delivery.test.ts(199,307): error TS2345: Argument of type '{ view: string; limit: number; after?: undefined; nodeId?: undefined; version?: undefined; nodeIds?: undefined; } | { view: string; after: string; limit?: undefined; nodeId?: undefined; version?: undefined; nodeIds?: undefined; } | { ...; } | { ...; }' is not assignable to parameter of type 'Record<string, string | number | string[]>'.
+  Type '{ view: string; limit: number; after?: undefined; nodeId?: undefined; version?: undefined; nodeIds?: undefined; }' is not assignable to type 'Record<string, string | number | string[]>'.
+    Property 'after' is incompatible with index signature.
+      Type 'undefined' is not assignable to type 'string | number | string[]'.

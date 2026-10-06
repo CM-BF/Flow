@@ -6,12 +6,18 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { randomUUID, createHash } from 'node:crypto';
 import { Pool } from 'pg';
-import { afterEach, beforeEach, expect, test } from 'vitest';
+import { afterAll, afterEach, beforeAll, beforeEach, expect, test } from 'vitest';
 import { FlowClient } from '@flow/client';
+import { Message } from '@a2a-js/sdk';
 import { createServer } from '../../../server/src/index.js';
 import { officialPeer } from './official-peer.js';
 
-const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_p02';
+const databaseName = `flow_p03_test_${process.pid}_${randomUUID().replaceAll('-', '')}`;
+const databaseConnection = new URL('postgresql://flow:flow-local-only@127.0.0.1:55432/postgres');
+const adminPool = new Pool({ connectionString: databaseConnection.href });
+databaseConnection.pathname = `/${databaseName}`;
+const databaseUrl = databaseConnection.href;
+let databaseCreated = false;
 const ownerToken = 'p02-process-owner';
 let server: Awaited<ReturnType<typeof createServer>>;
 let pool: Pool; let directory: string; let baseUrl: string; let client: FlowClient;
@@ -55,6 +61,21 @@ async function submit(endpointRef = 'peer') {
   const task = await client.submit({ title: 'Remote checked work', prompt: 'Produce a remote artifact.', harness: 'a2a', protocol: { endpointRef } }, randomUUID());
   return { token: runner.token, id: task.task.id };
 }
+beforeAll(async () => {
+  await adminPool.query(`CREATE DATABASE "${databaseName}"`);
+  databaseCreated = true;
+  console.info('P03_DATABASE_CREATED', databaseName, new Date().toISOString());
+});
+afterAll(async () => {
+  try {
+    if (databaseCreated) {
+      await adminPool.query(`DROP DATABASE "${databaseName}" WITH (FORCE)`);
+      const remaining = await adminPool.query('SELECT datname FROM pg_database WHERE datname = $1', [databaseName]);
+      expect(remaining.rowCount).toBe(0);
+      console.info('P03_DATABASE_CLEANUP', databaseName, 'remaining=0', new Date().toISOString());
+    }
+  } finally { await adminPool.end(); }
+});
 beforeEach(async () => {
   holdResponse = undefined; held = undefined; release = undefined;
   rejectHeartbeats = false; heartbeatRejections = 0; heartbeatRequests = 0;
@@ -66,6 +87,7 @@ beforeEach(async () => {
 afterEach(async () => { release?.(); peer?.release(); await Promise.all(children.splice(0).map(stop)); await server?.close(); await pool?.end(); await peer?.close(); await rm(directory, { recursive: true, force: true }); });
 
 test('bound remote Task survives runner and center restart, then imports one version and independently verifies it', async () => {
+  peer.setHistory(Array.from({ length: 1024 }, (_, index) => Message.fromJSON({ messageId: `history-${index}`, role: 'ROLE_AGENT', parts: [{ text: '历史内容🙂'.repeat(128) }] })));
   const { token, id } = await submit();
   const child = await launch(token);
   await expect.poll(async () => (await client.protocolState(id))?.intent.phase).toBe('bound');
@@ -84,6 +106,15 @@ test('bound remote Task survives runner and center restart, then imports one ver
   expect(details.find(item => item.kind === 'artifact')?.content).toBe('An independently checked remote artifact.');
   expect(details.some(item => item.kind === 'verification' && JSON.parse(item.content).result === 'passed')).toBe(true);
   expect(result.usage.inputTokens).toBeNull(); expect(result.usage.costUsd).toBeNull();
+  expect((await client.protocolState(id))?.artifacts[0]?.version).toBe(createHash('sha256').update('An independently checked remote artifact.').digest('hex'));
+  expect(peer.exchanges.some(exchange => exchange.method === 'SendMessage')).toBe(true);
+  expect(peer.exchanges.some(exchange => exchange.method === 'GetTask')).toBe(true);
+  for (const exchange of peer.exchanges) {
+    expect(exchange.historyLengthPresent).toBe(true);
+    expect(exchange.historyLength).toBe(0);
+    expect(exchange.historyCount).toBe(0);
+  }
+  console.info('P03_RUNNER_HISTORY_WIRE', JSON.stringify({ historyCount: 1024, exchanges: peer.exchanges }));
 });
 
 

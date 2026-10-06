@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ✓ apps/server/src/goal-context/generated-authorization.test.ts (9 tests) 7849ms
+   ✓ enforces current runner/attempt/grant scope and preserves the whole-goal read policy  1119ms
+   ✓ counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts  507ms
+   ✓ revokes authority durably and rechecks authorization before returning cached commands  674ms
+   ✓ rejects expired, completed and revoked-runner ownership without reviving cached authority  1704ms
+   ✓ serializes an in-flight cached command against revoke without granting a post-revocation replay  540ms
+   ✓ serializes an in-flight cached command against cancel without granting a post-revocation replay  533ms
+   ✓ rolls back failed application without consuming authority and protects immutable scope and audit history  944ms
+   ✓ applies execution in the same grant transaction and gives no delegated authority to its fixture child  965ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  23:27:03
+   Duration  8.33s (transform 244ms, setup 0ms, import 405ms, tests 7.85s, environment 0ms)
+

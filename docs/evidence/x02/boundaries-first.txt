@@ -1,0 +1,47 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-registry
+
+ ❯ apps/server/src/plugins/plugins.test.ts (15 tests | 1 failed) 1173ms
+   ✓ registers a fixed declaration without granting capabilities or claiming the package was installed 43ms
+   ✓ versions configuration and explicit grants with CAS and original-result idempotency 45ms
+   ✓ retains immutable declarations and history while selecting a version clears configuration and grants 73ms
+   ✓ keeps the same registration receipt and immutable operation after the center restarts 76ms
+   ✓ rejects undeclared configuration, credentials and grants without exposing input or advancing revision 34ms
+   ✓ rejects non-exact npm semver latest 2ms
+   ✓ rejects non-exact npm semver ^1.0.0 2ms
+   ✓ rejects non-exact npm semver 1.0 1ms
+   ✓ rejects non-exact npm semver 01.2.3 2ms
+   × rejects non-exact npm semver 1.0.0-01 10ms
+   ✓ rejects non-exact npm semver file:../package 2ms
+   ✓ preserves owner authorization and scope in list cursors, project registrations and operation lookups 48ms
+   ✓ rejects schema ambiguity and bounds request bytes before accepting registry data 13ms
+   ✓ returns complete paginated version history within both item and UTF8 byte limits 85ms
+   ✓ protects accepted version, revision and operation history from SQL mutation 39ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/plugins/plugins.test.ts > rejects non-exact npm semver 1.0.0-01
+AssertionError: expected 201 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 201
+
+ ❯ apps/server/src/plugins/plugins.test.ts:146:25
+    144| it.each(['latest', '^1.0.0', '1.0', '01.2.3', '1.0.0-01', 'file:../pac…
+    145|   const result = await request('/api/plugins', { ...registration, vers…
+    146|   expect(result.status).toBe(400);
+       |                         ^
+    147| });
+    148| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 passed (15)
+   Start at  20:41:59
+   Duration  1.51s (transform 128ms, setup 0ms, import 256ms, tests 1.17s, environment 0ms)
+

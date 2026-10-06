@@ -1,0 +1,290 @@
+{
+  "at": "2026-10-06T09:40:58.766Z",
+  "sourceCommit": "bd580056d00a1d1f0d71c4d14002d3767e28ff23",
+  "sourceDirty": "M apps/web/src/conversation-activity/native/NativeActivity.tsx\n M apps/web/src/conversation-activity/native/tool.tsx\n M apps/web/test/conversation-activity-integration.browser.ts\n M apps/web/test/conversation-activity-integration.test.ts\n M docs/evidence/wpf-activity-readability/interface.md\n M docs/evidence/wpf-activity-readability/quality.md\n M plans/wpf-activity-readability/plan.md\n M plans/wpf-activity-readability/status.md\n?? docs/evidence/wpf-activity-readability/amend-receipt.json\n?? docs/evidence/wpf-activity-readability/build.log\n?? docs/evidence/wpf-activity-readability/development-browser.json\n?? docs/evidence/wpf-activity-readability/development-browser.log\n?? docs/evidence/wpf-activity-readability/development-dark-390.png\n?? docs/evidence/wpf-activity-readability/development-failure.png\n?? docs/evidence/wpf-activity-readability/development-light-390.png\n?? docs/evidence/wpf-activity-readability/development-light.png\n?? docs/evidence/wpf-activity-readability/development-recovery-dark.png\n?? docs/evidence/wpf-activity-readability/direct.log\n?? docs/evidence/wpf-activity-readability/first-browser.log\n?? docs/evidence/wpf-activity-readability/first-direct.log\n?? docs/evidence/wpf-activity-readability/initial-green-development-browser.json\n?? docs/evidence/wpf-activity-readability/initial-green-development-browser.log\n?? docs/evidence/wpf-activity-readability/install.log\n?? docs/evidence/wpf-activity-readability/owner-live-v2.json\n?? docs/evidence/wpf-activity-readability/pre-cors-development-browser.json\n?? docs/evidence/wpf-activity-readability/pre-cors-development-browser.log\n?? docs/evidence/wpf-activity-readability/pre-cors-development-failure.png\n?? docs/evidence/wpf-activity-readability/pre-wait-development-browser.json\n?? docs/evidence/wpf-activity-readability/pre-wait-development-browser.log\n?? docs/evidence/wpf-activity-readability/pre-wait-development-failure.png\n?? docs/evidence/wpf-activity-readability/typecheck.log",
+  "sourceFiles": {
+    "apps/web/src/conversation-activity/native/NativeActivity.tsx": "3438c4dbd5c6cb6ab1c710db0a57126d7cc6644145b5a1957af1256ab0e9ca26",
+    "apps/web/src/conversation-activity/native/tool.tsx": "6a5c79cb90e76398576d75fb2dc185d57a68caba643cf6cd1e644207dce0c89d",
+    "apps/web/test/conversation-activity-integration.browser.ts": "f20e0f6b3c1ec78757a3522977188d76a271dc1f92b45fdf9fcadd0e2fc48f92",
+    "apps/web/test/conversation-activity-integration.test.ts": "f368c026291ff14441b301d34d02d71719afc8251fa4983ced209868abdfc5ab"
+  },
+  "dependencyFiles": {
+    "apps/web/src/conversation-activity/native/projection.ts": "55eafaa0aa50a2531667b105801635042ae4391490b36a131c4d5de175af7830",
+    "apps/web/src/conversation-activity/projection.ts": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+    "apps/web/src/plugin-integration/activity.tsx": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2",
+    "apps/web/src/plugin-integration/react.tsx": "fe7d2951dc342d3c63b3a32eddc274aad41c8480733b7fbcc818bb7392763093",
+    "apps/web/src/plugin-integration/session.ts": "c15fc54641856c4b90f5e941afc5af3a49cac36ec0c293c687d565d1e74374fa",
+    "apps/web/src/conversations/ConversationThread.tsx": "0bb775447faaa83a3b685bf6928fdf19da9bd153370662d7b8d7ffcee0e9866c",
+    "apps/web/src/App.tsx": "dd95cc085103fea31c11430530bb40ee0a92980262dc66822c8f8928d00ebbdf",
+    "apps/web/test/conversation-queue.fixture.ts": "dbc40701633abbb7a493d8be1c12dc6d33f113e89cb80cc9b6cd354c2006e908",
+    "apps/web/test/conversation.fixture.ts": "c5639b75d81d884ca122b53533f0b6dec6a816b37d3f12f22ed93e55099fe3a6"
+  },
+  "captures": [
+    {
+      "name": "light",
+      "at": "2026-10-06T09:40:53.217Z",
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "theme": "light",
+        "regions": [
+          {
+            "x": 506.5,
+            "y": 207,
+            "width": 551,
+            "height": 1056.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "dark-390",
+      "at": "2026-10-06T09:40:53.417Z",
+      "geometry": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "dark",
+        "regions": [
+          {
+            "x": 80.5,
+            "y": 207,
+            "width": 277,
+            "height": 1091.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "light-390",
+      "at": "2026-10-06T09:40:53.534Z",
+      "geometry": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "document": {
+          "width": 390,
+          "height": 844
+        },
+        "theme": "light",
+        "regions": [
+          {
+            "x": 80.5,
+            "y": 207,
+            "width": 277,
+            "height": 1091.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "recovery-dark",
+      "at": "2026-10-06T09:40:57.782Z",
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "theme": "dark",
+        "regions": [
+          {
+            "x": 506.5,
+            "y": 207,
+            "width": 551,
+            "height": 444
+          }
+        ]
+      }
+    }
+  ],
+  "production": false,
+  "url": "http://127.0.0.1:60577",
+  "checks": [
+    "pending/running user anchor is visible, initial and folded native/events/body reads are zero",
+    "Enter expands current native page only, actual Tool and Reasoning lazy bodies cache",
+    "TaskSummary update refreshes displayed metadata without body requests or automatic history drain",
+    "native hidden resume retains disclosure and draft with zero extra activity reads",
+    "split panes use local message context; generic source reads only on explicit selection",
+    "footer menu and button are real plugin actions; disable removes activity without cancelling",
+    "light/dark narrow keyboard geometry keeps footer in full message row",
+    "redacted thinking reads no body and truncated JSON displays an honest prefix",
+    "footer button opens the bound task; queue Enter/button retain delivery intent and draft",
+    "old center delayed body cannot populate new same-ID conversation",
+    "offline same-turn disconnect stops all activity reads, aborts in-flight body and resumes safely",
+    "concise single-page activity keeps outcome, stale, errors and recovery outside technical details",
+    "direct dev StrictMode and React.Activity cleanup/resume retain draft and loaded body without new reads"
+  ],
+  "errors": [],
+  "reads": [
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "ae12b0796d3b2f7367d11c7db7d4beae607592631427de840a556ae13bc90eb1"
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "475104f3b9a3ac7bfa3b3851adf98ddc3e35d7e36c4501b6215576e430b868dd"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": "35272889724106f470faf5fe5da3a00171e14b60a12e748559df846faf52a9a0"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-1-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "events"
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "72c996eb43bdc993a46af94749c7caa4d3653d92163e08a6601898ced8a267d1"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-1-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "a97318b531ad0592243ff53a22254810fab12d2d924e08b3d2ea8e7d37eb3dd6"
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-1-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "body",
+      "id": "2d4d09699dcec7c7a40841b6caaeaf84ba2341e003017f819ebbcce7f7e371eb"
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "body",
+      "id": "cdcbcd491548fbc53c81369d03aa1fefbbea307f0bb2ee762c19c785c2ee3688"
+    },
+    {
+      "center": 1,
+      "kind": "body",
+      "id": "cdcbcd491548fbc53c81369d03aa1fefbbea307f0bb2ee762c19c785c2ee3688"
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-3-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-3-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-3-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-3-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "native",
+      "taskId": "chat-3-task-1",
+      "after": null
+    },
+    {
+      "center": 1,
+      "kind": "body",
+      "id": "aa817af88293db363375a9089149ac72928ce3f09ba8a0881ef6b45e9cf13438"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-3-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "92f50db0c30bd181f0f40203dce8a23bfea0427a903283f1b277de66becabea3"
+    }
+  ],
+  "attemptedActivityRequests": [
+    "http://127.0.0.1:60577/api/tasks/chat-2-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60577/api/native-activities/ae12b0796d3b2f7367d11c7db7d4beae607592631427de840a556ae13bc90eb1",
+    "http://127.0.0.1:60577/api/native-activities/475104f3b9a3ac7bfa3b3851adf98ddc3e35d7e36c4501b6215576e430b868dd",
+    "http://127.0.0.1:60577/api/tasks/chat-2-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60577/api/tasks/chat-2-task-1/native-activities?after=35272889724106f470faf5fe5da3a00171e14b60a12e748559df846faf52a9a0&limit=20",
+    "http://127.0.0.1:60577/api/tasks/chat-1-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60577/api/tasks/chat-1-task-1/events?after=0",
+    "http://127.0.0.1:60577/api/native-activities/72c996eb43bdc993a46af94749c7caa4d3653d92163e08a6601898ced8a267d1",
+    "http://127.0.0.1:60577/api/tasks/chat-1-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60577/api/native-activities/a97318b531ad0592243ff53a22254810fab12d2d924e08b3d2ea8e7d37eb3dd6",
+    "http://127.0.0.1:60575/api/tasks/chat-1-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/native-activities/2d4d09699dcec7c7a40841b6caaeaf84ba2341e003017f819ebbcce7f7e371eb",
+    "http://127.0.0.1:60575/api/tasks/chat-2-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/native-activities/cdcbcd491548fbc53c81369d03aa1fefbbea307f0bb2ee762c19c785c2ee3688",
+    "http://127.0.0.1:60575/api/native-activities/cdcbcd491548fbc53c81369d03aa1fefbbea307f0bb2ee762c19c785c2ee3688",
+    "http://127.0.0.1:60575/api/tasks/chat-3-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/tasks/chat-3-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/tasks/chat-3-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/tasks/chat-3-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/tasks/chat-3-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/tasks/chat-3-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60575/api/native-activities/aa817af88293db363375a9089149ac72928ce3f09ba8a0881ef6b45e9cf13438",
+    "http://127.0.0.1:60575/api/native-activities/aa817af88293db363375a9089149ac72928ce3f09ba8a0881ef6b45e9cf13438",
+    "http://127.0.0.1:60718/api/tasks/chat-3-task-1/native-activities?limit=20",
+    "http://127.0.0.1:60718/api/native-activities/92f50db0c30bd181f0f40203dce8a23bfea0427a903283f1b277de66becabea3"
+  ]
+}

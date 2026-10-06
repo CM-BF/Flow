@@ -1,0 +1,63 @@
+✔ reads only authoritative owners and reflects independent status changes over HTTP (433.108125ms)
+✔ empty review never means approval; historical checks remain unknown without explicit field (319.827041ms)
+✔ missing status uses frozen baseline and marks unknown without affecting another task (320.170208ms)
+✔ malformed, duplicate, stale and future status cannot silently become current (464.265ms)
+✔ branch changes conflict and registry explicitly switches to a new owner worktree (300.357167ms)
+✔ documents reject traversal, encoded traversal, absolute paths and arbitrary task files (455.797208ms)
+✔ referenced symlinks cannot escape task scope inside or outside registered worktree (440.031375ms)
+✔ untrusted text stays text with read-only HTTP and restrictive browser headers (385.894666ms)
+✔ invalid registry, duplicate owners and oversized files are rejected (420.91275ms)
+✔ structured summaries never mine historical risks or no-decision prose (443.166917ms)
+✔ active work is bounded and priority ordered; completed history is separate (347.741208ms)
+✔ metadata-only changes retain exact implementation approval, including dirty docs (760.913ms)
+✔ tracked changes, additions, deletions and untracked implementation invalidate approval (1139.834375ms)
+✔ new code outside a narrow scope is unknown, not metadata approval (595.089375ms)
+✔ missing/unsafe/nonexistent scopes and absent target never turn green (971.162042ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-JUIcc4/T01
+ * branch            72a92d268aaf0ececbade8012f78f6755eda037a -> FETCH_HEAD
+✔ main ancestry survives unrelated main metadata commits without owner status rewrites (673.481375ms)
+✔ scope-tree integration requires existing target and no omitted new implementation (599.600166ms)
+✖ 28 distinct registry sources include D03, I02 and bounded Web platform source (0.761459ms)
+✔ executable files under docs are not silently treated as metadata (365.410708ms)
+✔ top three never hide other active work, while historical missing summaries stay in history (7.537125ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-aXAeVw/T01
+ * branch            93a491ccdc9fefc5ad1cd7616271a19f414e541a -> FETCH_HEAD
+✔ historical main ancestry cannot approve later implementation changes, deletions or dirty paths (2121.073375ms)
+✔ global phase comes only from the explicit short phase source (463.0745ms)
+✔ one matching task target starts one comparison; a second snapshot performs fresh reads (880.31225ms)
+ℹ {"phase":"same-target","gitStarts":24,"targetComparisons":1}
+✔ different review target is still independently compared and can invalidate approval (731.780375ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (1443.14025ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (1157.352625ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 25
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8569.81025
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/human-proof.test.mjs:115:1
+✖ 28 distinct registry sources include D03, I02 and bounded Web platform source (0.761459ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  54 !== 28
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/apps/execution-dashboard/test/human-proof.test.mjs:116:46)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 54,
+    expected: 28,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

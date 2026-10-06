@@ -1,0 +1,237 @@
+{
+  "generatedAt": "2026-10-06T03:32:38.372Z",
+  "task": {
+    "id": "R03",
+    "title": "远端Runner租约可靠性",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-reliability",
+    "branch": "codex/runner-reliability",
+    "planDir": "plans/r03-runner-reliability",
+    "evidenceDir": "docs/evidence/r03",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T03:32:25.946Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-reliability/plans/r03-runner-reliability/status.md",
+      "syncedAt": "2026-10-06T03:32:38.372Z",
+      "stale": false,
+      "ageHours": 0.01065888888888889
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/runner-reliability",
+      "head": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+      "dirty": true,
+      "changedFiles": 9,
+      "observedAt": "2026-10-06T03:32:38.616Z"
+    },
+    "status": {
+      "human": {
+        "phase": "M2",
+        "priority": 2,
+        "output": "租期可靠性片段54项检查通过，证据已固定，正在独立审查",
+        "next": "独立审查租期与失败清理片段，通过后交主线接收",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+        "scopes": [
+          "packages/contracts/src/runner.ts",
+          "apps/server/src/runners.ts",
+          "apps/runner/src/attempt-control.ts",
+          "apps/runner/src/runtime.ts",
+          "apps/runner/src/runner.test.ts",
+          "apps/runner/src/lease.test.ts"
+        ],
+        "errors": []
+      },
+      "taskId": "R03",
+      "owner": "assignment_review / gpt-6-astra",
+      "branch": "codex/runner-reliability",
+      "branchState": "in-progress",
+      "updatedAt": "2026-10-06T03:32:00.000Z",
+      "updatedRecord": "2026-10-06 03:32 UTC；启动基线已核验，本次未复核 main",
+      "todos": [
+        {
+          "id": "R03-01",
+          "state": "completed",
+          "owner": "assignment_review",
+          "evidence": "Lead认可；ClaimResponse顶层remainingLeaseMs，无assignment=0"
+        },
+        {
+          "id": "R03-02",
+          "state": "completed",
+          "owner": "assignment_review",
+          "evidence": "±5分钟、claim/heartbeat耗时、晚回包、busy event loop、非法duration"
+        },
+        {
+          "id": "R03-03",
+          "state": "completed",
+          "owner": "assignment_review",
+          "evidence": "目录/事件存储失败退出、实际SIGTERM、专库PG lease/fence、直接消费者"
+        },
+        {
+          "id": "R03-04",
+          "state": "in-progress",
+          "owner": "assignment_review",
+          "evidence": "[原始证据与复跑说明](../../docs/evidence/r03/report.md)；Mika独立review已派发"
+        },
+        {
+          "id": "R03-05",
+          "state": "pending",
+          "owner": "assignment_review",
+          "evidence": "BR-01/S01未纳入本段"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "3773db5d014a6d38d09553acd0a5fe8df900b7c4 / 9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a（固定实现）",
+      "declaredDirty": "源码已冻结；本记录提交前仅证据/状态 metadata，交付前核验 clean",
+      "checks": {
+        "state": "passed",
+        "target": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+        "record": "PASSED：target 9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a；lease23+runner25+client4+contracts2=54/54（4.36s），typecheck；含flow_r03真实中心字段/fence，0模型"
+      },
+      "reviewRecord": "IN_REVIEW：Mika只读审查固定 target 9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a，尚无独立结论；[review.md](review.md)",
+      "mainRecord": "本片段未集成；基线main3773不包含本修复",
+      "next": "固定实现与原始证据已交独立审查，review修复仍由本owner处理；claim保留至主线接收。技能方法和交付前检查见 [quality](../../docs/evidence/r03/quality.md)。完整runner后继范围保持open，预算0模型。\n本文件为唯一手填事实源。2026-10-06 03:32 UTC 已实际读取4320聚合，R03 live、3/5 TODO、claim v1 active/matchesSource、issues=[]；本次补齐固定target与检查SHA后再核验，见 [聚合回执](../../docs/evidence/r03/dashboard-receipt.json)。",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "unknown",
+      "record": "IN_REVIEW。尚无独立批准结论。",
+      "target": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a"
+    },
+    "implementationProof": {
+      "target": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+      "head": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+      "scopes": [
+        "packages/contracts/src/runner.ts",
+        "apps/server/src/runners.ts",
+        "apps/runner/src/attempt-control.ts",
+        "apps/runner/src/runtime.ts",
+        "apps/runner/src/runner.test.ts",
+        "apps/runner/src/lease.test.ts"
+      ],
+      "observedAt": "2026-10-06T03:32:38.636Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/r03/quality.md",
+        "plans/r03-runner-reliability/review.md",
+        "plans/r03-runner-reliability/status.md",
+        "docs/evidence/r03/checks.txt",
+        "docs/evidence/r03/lease-red.txt",
+        "docs/evidence/r03/manifest.json",
+        "docs/evidence/r03/report.md",
+        "docs/evidence/r03/storage-red.txt",
+        "docs/evidence/r03/typecheck.txt"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/r03-runner-reliability/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/r03-runner-reliability/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/r03-runner-reliability/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/r03/report.md",
+        "title": "原始证据与复跑说明",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/r03/quality.md",
+        "title": "quality",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/r03/dashboard-receipt.json",
+        "title": "聚合回执",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/r03/manifest.json",
+        "title": "manifest",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 3,
+      "total": 5
+    },
+    "main": {
+      "record": "本片段未集成；基线main3773不包含本修复",
+      "recordedHead": null,
+      "target": "9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a",
+      "mainHead": "edee6b1c5d74c2ee46ec98bab2844579db6a00c4",
+      "scopes": [
+        "packages/contracts/src/runner.ts",
+        "apps/server/src/runners.ts",
+        "apps/runner/src/attempt-control.ts",
+        "apps/runner/src/runtime.ts",
+        "apps/runner/src/runner.test.ts",
+        "apps/runner/src/lease.test.ts"
+      ],
+      "observedAt": "2026-10-06T03:32:38.616Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/runner/src/attempt-control.ts",
+          "apps/runner/src/lease.test.ts",
+          "apps/runner/src/runner.test.ts",
+          "apps/runner/src/runtime.ts",
+          "apps/server/src/runners.ts",
+          "docs/architecture/r03-runtime.md",
+          "docs/evidence/r03",
+          "packages/contracts/src/runner.ts",
+          "plans/r03-runner-reliability"
+        ],
+        "state": "active",
+        "branch": "codex/runner-reliability",
+        "origin": "new",
+        "taskId": "R03",
+        "worker": "assignment_review",
+        "claimId": "6b6b025f-0338-42a6-9ff5-1122ccb83986",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-reliability",
+        "createdAt": "2026-10-06T03:22:49.043Z",
+        "updatedAt": "2026-10-06T03:22:49.043Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

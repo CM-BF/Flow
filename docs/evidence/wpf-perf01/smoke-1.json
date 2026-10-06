@@ -1,0 +1,1192 @@
+{
+  "taskCount": 1,
+  "liveEntries": 240,
+  "initialVisibleEntries": 40,
+  "url": "http://127.0.0.1:55889",
+  "checks": [
+    "Detail requests 0 before expansion, 1 on first expansion, 1 after cached reopen",
+    "1 retained chat(s): one visible stream; overview zero; no cancel"
+  ],
+  "status": "passed",
+  "connectionFormReadyAutomationMs": 72.56445799999983,
+  "workspaceReadyAutomationMs": 65.89654199999995,
+  "navigation": [
+    {
+      "name": "http://127.0.0.1:55889/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 48.5,
+      "navigationId": 2390,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "http/1.1",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.2999999523162842,
+      "domainLookupStart": 0.2999999523162842,
+      "domainLookupEnd": 0.2999999523162842,
+      "connectStart": 0.2999999523162842,
+      "secureConnectionStart": 0,
+      "connectEnd": 0.2999999523162842,
+      "requestStart": 0.7999999523162842,
+      "responseStart": 1.600000023841858,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 1.600000023841858,
+      "responseEnd": 1.6999999284744263,
+      "transferSize": 1005,
+      "encodedBodySize": 705,
+      "decodedBodySize": 705,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 12.600000023841858,
+      "domContentLoadedEventStart": 48.299999952316284,
+      "domContentLoadedEventEnd": 48.299999952316284,
+      "domComplete": 48.5,
+      "loadEventStart": 48.5,
+      "loadEventEnd": 48.5,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    }
+  ],
+  "attentionRefreshAutomationMs": 83.74125000000004,
+  "timing": {
+    "phase": "attention",
+    "phases": [
+      {
+        "name": "delivery-100",
+        "at": 641.3999999761581
+      },
+      {
+        "name": "settled-100",
+        "at": 1353.5
+      },
+      {
+        "name": "delivery-240",
+        "at": 2026.5
+      },
+      {
+        "name": "settled-240",
+        "at": 2753.399999976158
+      },
+      {
+        "name": "attention",
+        "at": 3426.6999999284744
+      }
+    ],
+    "longTasks": [],
+    "events": [
+      {
+        "name": "beforeinput",
+        "startTime": 116.60000002384186,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0.09999990463256836,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 117.10000002384186,
+        "duration": 16,
+        "inputDelay": 0.09999990463256836,
+        "processing": 0.9000000953674316,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 707,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 0.09999990463256836,
+        "interactionId": 1649
+      },
+      {
+        "name": "keypress",
+        "startTime": 707,
+        "duration": 16,
+        "inputDelay": 0.2999999523162842,
+        "processing": 1.100000023841858,
+        "interactionId": 1649
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 707.3999999761581,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 707.5,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0.8999999761581421,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 1023.1000000238419,
+        "duration": 16,
+        "inputDelay": 0.09999990463256836,
+        "processing": 1.4000000953674316,
+        "interactionId": 1726
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 1023.5,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 1390.1000000238419,
+        "duration": 16,
+        "inputDelay": 0.09999990463256836,
+        "processing": 0,
+        "interactionId": 1747
+      },
+      {
+        "name": "keypress",
+        "startTime": 1390.1000000238419,
+        "duration": 16,
+        "inputDelay": 0.09999990463256836,
+        "processing": 1.100000023841858,
+        "interactionId": 1747
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 1390.2999999523163,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 1390.3999999761581,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 0.7999999523162842,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 1589.6000000238419,
+        "duration": 16,
+        "inputDelay": 0.09999990463256836,
+        "processing": 1.100000023841858,
+        "interactionId": 1796
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 1589.7999999523163,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 1590.1000000238419,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0.6999999284744263,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 2106.5,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 0.09999990463256836,
+        "interactionId": 1852
+      },
+      {
+        "name": "keypress",
+        "startTime": 2106.5,
+        "duration": 16,
+        "inputDelay": 0.19999992847442627,
+        "processing": 1.3000000715255737,
+        "interactionId": 1852
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 2106.6999999284744,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 2106.7999999523163,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 1.100000023841858,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 2940.399999976158,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 1.6999999284744263,
+        "interactionId": 1985
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 2940.600000023842,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 2940.899999976158,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 1.2999999523162842,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 3056.2999999523163,
+        "duration": 16,
+        "inputDelay": 0.20000004768371582,
+        "processing": 1.399999976158142,
+        "interactionId": 2013
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 3056.5,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 3056.7999999523163,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 1.100000023841858,
+        "interactionId": 0
+      }
+    ],
+    "keys": [
+      {
+        "at": 707,
+        "handlerAt": 707.1999999284744,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 718.3999999761581
+      },
+      {
+        "at": 735.1000000238419,
+        "handlerAt": 735.2999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 737
+      },
+      {
+        "at": 764.3999999761581,
+        "handlerAt": 764.6999999284744,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 766.1999999284744
+      },
+      {
+        "at": 793.2999999523163,
+        "handlerAt": 793.5,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 801.2999999523163
+      },
+      {
+        "at": 821.6999999284744,
+        "handlerAt": 821.8999999761581,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 823.6000000238419
+      },
+      {
+        "at": 850.6999999284744,
+        "handlerAt": 850.8999999761581,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 852.2999999523163
+      },
+      {
+        "at": 879.6999999284744,
+        "handlerAt": 879.8999999761581,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 881.3999999761581
+      },
+      {
+        "at": 908.6000000238419,
+        "handlerAt": 908.8999999761581,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 918.6999999284744
+      },
+      {
+        "at": 937,
+        "handlerAt": 937.1999999284744,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 938.6000000238419
+      },
+      {
+        "at": 965.6000000238419,
+        "handlerAt": 965.8999999761581,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 967.1999999284744
+      },
+      {
+        "at": 994.1999999284744,
+        "handlerAt": 994.3999999761581,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 995.7999999523163
+      },
+      {
+        "at": 1023.1000000238419,
+        "handlerAt": 1023.3999999761581,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1034.6999999284744
+      },
+      {
+        "at": 1390.1000000238419,
+        "handlerAt": 1390.1999999284744,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1401.5
+      },
+      {
+        "at": 1418,
+        "handlerAt": 1418.1999999284744,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1419.6999999284744
+      },
+      {
+        "at": 1446,
+        "handlerAt": 1446.1000000238419,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1447.6000000238419
+      },
+      {
+        "at": 1474.6999999284744,
+        "handlerAt": 1474.7999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1476.2999999523163
+      },
+      {
+        "at": 1503.5,
+        "handlerAt": 1503.7999999523163,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1505.1999999284744
+      },
+      {
+        "at": 1532.2999999523163,
+        "handlerAt": 1532.3999999761581,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1533.7999999523163
+      },
+      {
+        "at": 1560.7999999523163,
+        "handlerAt": 1561,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1562.3999999761581
+      },
+      {
+        "at": 1589.6000000238419,
+        "handlerAt": 1589.6999999284744,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1602
+      },
+      {
+        "at": 1617.6999999284744,
+        "handlerAt": 1617.8999999761581,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1619.1000000238419
+      },
+      {
+        "at": 1646.1999999284744,
+        "handlerAt": 1646.3999999761581,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1647.8999999761581
+      },
+      {
+        "at": 1675.1000000238419,
+        "handlerAt": 1675.2999999523163,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1685.2999999523163
+      },
+      {
+        "at": 1703.1000000238419,
+        "handlerAt": 1703.2999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1705.1000000238419
+      },
+      {
+        "at": 2106.5,
+        "handlerAt": 2106.6999999284744,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2117.899999976158
+      },
+      {
+        "at": 2134.100000023842,
+        "handlerAt": 2134.1999999284744,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2136.100000023842
+      },
+      {
+        "at": 2163.6999999284744,
+        "handlerAt": 2164.100000023842,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2165.6999999284744
+      },
+      {
+        "at": 2193.399999976158,
+        "handlerAt": 2193.5,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2195.2999999523163
+      },
+      {
+        "at": 2221.7999999523163,
+        "handlerAt": 2221.899999976158,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2223.6999999284744
+      },
+      {
+        "at": 2250.7999999523163,
+        "handlerAt": 2251,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2252.899999976158
+      },
+      {
+        "at": 2280.1999999284744,
+        "handlerAt": 2280.399999976158,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2282.1999999284744
+      },
+      {
+        "at": 2309.399999976158,
+        "handlerAt": 2309.5,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2318.6999999284744
+      },
+      {
+        "at": 2337.7999999523163,
+        "handlerAt": 2338,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2339.6999999284744
+      },
+      {
+        "at": 2366.100000023842,
+        "handlerAt": 2366.1999999284744,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2368.2999999523163
+      },
+      {
+        "at": 2395.5,
+        "handlerAt": 2395.6999999284744,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2397.5
+      },
+      {
+        "at": 2424.600000023842,
+        "handlerAt": 2424.6999999284744,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2435.399999976158
+      },
+      {
+        "at": 2794.5,
+        "handlerAt": 2794.6999999284744,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2802
+      },
+      {
+        "at": 2823.1999999284744,
+        "handlerAt": 2823.2999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2825.1999999284744
+      },
+      {
+        "at": 2852.2999999523163,
+        "handlerAt": 2852.5,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2854.399999976158
+      },
+      {
+        "at": 2881.6999999284744,
+        "handlerAt": 2881.7999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2883.7999999523163
+      },
+      {
+        "at": 2910.899999976158,
+        "handlerAt": 2911,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2913
+      },
+      {
+        "at": 2940.399999976158,
+        "handlerAt": 2940.5,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 2952
+      },
+      {
+        "at": 2969.1999999284744,
+        "handlerAt": 2969.2999999523163,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 2971.1999999284744
+      },
+      {
+        "at": 2998.2999999523163,
+        "handlerAt": 2998.5,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 3000.2999999523163
+      },
+      {
+        "at": 3026.7999999523163,
+        "handlerAt": 3026.7999999523163,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 3028.7999999523163
+      },
+      {
+        "at": 3056.2999999523163,
+        "handlerAt": 3056.5,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 3068.6999999284744
+      },
+      {
+        "at": 3084.6999999284744,
+        "handlerAt": 3084.7999999523163,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 3086.6999999284744
+      },
+      {
+        "at": 3114,
+        "handlerAt": 3114.2999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 3116.1999999284744
+      }
+    ],
+    "wheels": [
+      {
+        "at": 1087.2999999523163,
+        "handlerAt": 1118.6000000238419,
+        "trusted": true,
+        "from": 19549,
+        "to": 19189,
+        "scrollAt": 1119.8999999761581,
+        "rafAt": 1119.8999999761581
+      },
+      {
+        "at": 1136.5,
+        "handlerAt": 1168.5,
+        "trusted": true,
+        "from": 19189,
+        "to": 19369,
+        "scrollAt": 1168.8999999761581,
+        "rafAt": 1168.8999999761581
+      },
+      {
+        "at": 1185.5,
+        "handlerAt": 1218.5,
+        "trusted": true,
+        "from": 19369,
+        "to": 19009,
+        "scrollAt": 1218.8999999761581,
+        "rafAt": 1218.8999999761581
+      },
+      {
+        "at": 1236.3999999761581,
+        "handlerAt": 1268.1000000238419,
+        "trusted": true,
+        "from": 19009,
+        "to": 19189,
+        "scrollAt": 1268.3999999761581,
+        "rafAt": 1268.3999999761581
+      },
+      {
+        "at": 1787.1000000238419,
+        "handlerAt": 1818.5,
+        "trusted": true,
+        "from": 19549,
+        "to": 19189,
+        "scrollAt": 1819.7999999523163,
+        "rafAt": 1819.7999999523163
+      },
+      {
+        "at": 1835.6999999284744,
+        "handlerAt": 1868,
+        "trusted": true,
+        "from": 19189,
+        "to": 19369,
+        "scrollAt": 1868.2999999523163,
+        "rafAt": 1868.2999999523163
+      },
+      {
+        "at": 1886.2999999523163,
+        "handlerAt": 1918.3999999761581,
+        "trusted": true,
+        "from": 19369,
+        "to": 19009,
+        "scrollAt": 1918.7999999523163,
+        "rafAt": 1918.7999999523163
+      },
+      {
+        "at": 1935.6999999284744,
+        "handlerAt": 1968.5,
+        "trusted": true,
+        "from": 19009,
+        "to": 19189,
+        "scrollAt": 1968.7999999523163,
+        "rafAt": 1968.7999999523163
+      },
+      {
+        "at": 2490.2999999523163,
+        "handlerAt": 2518.5,
+        "trusted": true,
+        "from": 39763,
+        "to": 39403,
+        "scrollAt": 2520.1999999284744,
+        "rafAt": 2520.1999999284744
+      },
+      {
+        "at": 2536.399999976158,
+        "handlerAt": 2568.5,
+        "trusted": true,
+        "from": 39403,
+        "to": 39583,
+        "scrollAt": 2568.899999976158,
+        "rafAt": 2568.899999976158
+      },
+      {
+        "at": 2586.5,
+        "handlerAt": 2618.2999999523163,
+        "trusted": true,
+        "from": 39583,
+        "to": 39223,
+        "scrollAt": 2618.7999999523163,
+        "rafAt": 2618.7999999523163
+      },
+      {
+        "at": 2636.399999976158,
+        "handlerAt": 2668.399999976158,
+        "trusted": true,
+        "from": 39223,
+        "to": 39403,
+        "scrollAt": 2668.899999976158,
+        "rafAt": 2668.899999976158
+      },
+      {
+        "at": 3189.7999999523163,
+        "handlerAt": 3218.5,
+        "trusted": true,
+        "from": 39763,
+        "to": 39403,
+        "scrollAt": 3220,
+        "rafAt": 3220
+      },
+      {
+        "at": 3236.1999999284744,
+        "handlerAt": 3268.100000023842,
+        "trusted": true,
+        "from": 39403,
+        "to": 39583,
+        "scrollAt": 3268.5,
+        "rafAt": 3268.5
+      },
+      {
+        "at": 3285.100000023842,
+        "handlerAt": 3318.399999976158,
+        "trusted": true,
+        "from": 39583,
+        "to": 39223,
+        "scrollAt": 3318.899999976158,
+        "rafAt": 3318.899999976158
+      },
+      {
+        "at": 3336.1999999284744,
+        "handlerAt": 3368.399999976158,
+        "trusted": true,
+        "from": 39223,
+        "to": 39403,
+        "scrollAt": 3368.7999999523163,
+        "rafAt": 3368.7999999523163
+      }
+    ],
+    "supported": [
+      "element",
+      "event",
+      "first-input",
+      "interaction-contentful-paint",
+      "largest-contentful-paint",
+      "layout-shift",
+      "long-animation-frame",
+      "longtask",
+      "mark",
+      "measure",
+      "navigation",
+      "paint",
+      "resource",
+      "soft-navigation",
+      "visibility-state"
+    ],
+    "nextWheelFrom": 39223
+  },
+  "at": "2026-10-06T03:14:45.991Z",
+  "stages": [
+    {
+      "targetLiveEntries": 100,
+      "startCursor": 41,
+      "targetCursor": 141,
+      "deliveryAndInteractionWallMs": 709.8486250000001,
+      "revealAutomationMs": 65.95912500000031,
+      "totalDOMRecords": 140
+    },
+    {
+      "targetLiveEntries": 240,
+      "startCursor": 141,
+      "targetCursor": 281,
+      "deliveryAndInteractionWallMs": 721.8190830000003,
+      "revealAutomationMs": 66.25504099999944,
+      "totalDOMRecords": 280
+    }
+  ],
+  "checkpoints": [
+    {
+      "name": "initial",
+      "at": 640.2999999523163,
+      "domElements": 404,
+      "renderedRecords": 40,
+      "scrollTop": 5110,
+      "scrollHeight": 5828,
+      "following": "Following latest activity",
+      "memoryAPI": {
+        "userAgentSpecific": false,
+        "legacyMemory": true,
+        "crossOriginIsolated": false
+      },
+      "renderCount": null,
+      "renderCountReason": "Ordinary production build has no React profiling instrumentation",
+      "cdp": {
+        "Documents": 4,
+        "Nodes": 1885,
+        "LayoutCount": 54,
+        "RecalcStyleCount": 101,
+        "LayoutDuration": 0.021124,
+        "RecalcStyleDuration": 0.010735,
+        "ScriptDuration": 0.125585,
+        "TaskDuration": 0.279211,
+        "JSHeapUsedSize": 20547148,
+        "JSHeapTotalSize": 30212096
+      },
+      "heapCaveat": "No forced GC; JS heap sample, not retained-object count or a leak proof"
+    },
+    {
+      "name": "before-reveal-100",
+      "at": 1286.3999999761581,
+      "domElements": 1105,
+      "renderedRecords": 140,
+      "scrollTop": 19189,
+      "scrollHeight": 20267,
+      "following": "Reading earlier activityShow latest activity",
+      "memoryAPI": {
+        "userAgentSpecific": false,
+        "legacyMemory": true,
+        "crossOriginIsolated": false
+      },
+      "renderCount": null,
+      "renderCountReason": "Ordinary production build has no React profiling instrumentation",
+      "cdp": {
+        "Documents": 4,
+        "Nodes": 3200,
+        "LayoutCount": 88,
+        "RecalcStyleCount": 132,
+        "LayoutDuration": 0.025557,
+        "RecalcStyleDuration": 0.012858,
+        "ScriptDuration": 0.143766,
+        "TaskDuration": 0.343397,
+        "JSHeapUsedSize": 20459428,
+        "JSHeapTotalSize": 31850496
+      },
+      "heapCaveat": "No forced GC; JS heap sample, not retained-object count or a leak proof"
+    },
+    {
+      "name": "revealed-100",
+      "at": 1352.2999999523163,
+      "domElements": 1104,
+      "renderedRecords": 140,
+      "scrollTop": 19549,
+      "scrollHeight": 20267,
+      "following": "Following latest activity",
+      "memoryAPI": {
+        "userAgentSpecific": false,
+        "legacyMemory": true,
+        "crossOriginIsolated": false
+      },
+      "renderCount": null,
+      "renderCountReason": "Ordinary production build has no React profiling instrumentation",
+      "cdp": {
+        "Documents": 4,
+        "Nodes": 3201,
+        "LayoutCount": 89,
+        "RecalcStyleCount": 137,
+        "LayoutDuration": 0.025634,
+        "RecalcStyleDuration": 0.013158,
+        "ScriptDuration": 0.145083,
+        "TaskDuration": 0.355177,
+        "JSHeapUsedSize": 16818212,
+        "JSHeapTotalSize": 32636928
+      },
+      "heapCaveat": "No forced GC; JS heap sample, not retained-object count or a leak proof"
+    },
+    {
+      "name": "before-reveal-240",
+      "at": 2686.100000023842,
+      "domElements": 2085,
+      "renderedRecords": 280,
+      "scrollTop": 39403,
+      "scrollHeight": 40481,
+      "following": "Reading earlier activityShow latest activity",
+      "memoryAPI": {
+        "userAgentSpecific": false,
+        "legacyMemory": true,
+        "crossOriginIsolated": false
+      },
+      "renderCount": null,
+      "renderCountReason": "Ordinary production build has no React profiling instrumentation",
+      "cdp": {
+        "Documents": 1,
+        "Nodes": 4218,
+        "LayoutCount": 156,
+        "RecalcStyleCount": 195,
+        "LayoutDuration": 0.033032,
+        "RecalcStyleDuration": 0.016594,
+        "ScriptDuration": 0.182255,
+        "TaskDuration": 0.487871,
+        "JSHeapUsedSize": 15630436,
+        "JSHeapTotalSize": 32636928
+      },
+      "heapCaveat": "No forced GC; JS heap sample, not retained-object count or a leak proof"
+    },
+    {
+      "name": "revealed-240",
+      "at": 2752.5,
+      "domElements": 2084,
+      "renderedRecords": 280,
+      "scrollTop": 39763,
+      "scrollHeight": 40481,
+      "following": "Following latest activity",
+      "memoryAPI": {
+        "userAgentSpecific": false,
+        "legacyMemory": true,
+        "crossOriginIsolated": false
+      },
+      "renderCount": null,
+      "renderCountReason": "Ordinary production build has no React profiling instrumentation",
+      "cdp": {
+        "Documents": 1,
+        "Nodes": 4219,
+        "LayoutCount": 157,
+        "RecalcStyleCount": 200,
+        "LayoutDuration": 0.033114,
+        "RecalcStyleDuration": 0.016729,
+        "ScriptDuration": 0.183837,
+        "TaskDuration": 0.505792,
+        "JSHeapUsedSize": 18474076,
+        "JSHeapTotalSize": 32636928
+      },
+      "heapCaveat": "No forced GC; JS heap sample, not retained-object count or a leak proof"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/",
+      "type": "document"
+    },
+    {
+      "path": "/assets/index-Qq2fU1v6.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-zkRmV749.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-CcdakA0V.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/assets/index-C3CTlol8.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-001",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-001/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/details/perf-001-artifact",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/task-index",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    }
+  ],
+  "workspaceResponses": [
+    {
+      "at": 2419.3555,
+      "after": null,
+      "before": null,
+      "count": 40,
+      "nextCursor": 41,
+      "watermark": 41
+    },
+    {
+      "at": 2927.1745,
+      "after": 41,
+      "before": null,
+      "count": 40,
+      "nextCursor": 81,
+      "watermark": 141
+    },
+    {
+      "at": 2942.98275,
+      "after": 81,
+      "before": null,
+      "count": 40,
+      "nextCursor": 121,
+      "watermark": 141
+    },
+    {
+      "at": 2946.945583,
+      "after": 121,
+      "before": null,
+      "count": 20,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 4327.190417,
+      "after": 141,
+      "before": null,
+      "count": 40,
+      "nextCursor": 181,
+      "watermark": 241
+    },
+    {
+      "at": 4343.115417,
+      "after": 181,
+      "before": null,
+      "count": 40,
+      "nextCursor": 221,
+      "watermark": 281
+    },
+    {
+      "at": 4347.589875,
+      "after": 221,
+      "before": null,
+      "count": 40,
+      "nextCursor": 261,
+      "watermark": 281
+    },
+    {
+      "at": 4603.49825,
+      "after": 261,
+      "before": null,
+      "count": 20,
+      "nextCursor": 281,
+      "watermark": 281
+    },
+    {
+      "at": 5726.621167,
+      "after": 281,
+      "before": null,
+      "count": 0,
+      "nextCursor": 281,
+      "watermark": 281
+    }
+  ],
+  "pageErrors": [],
+  "apiRequests": [
+    {
+      "method": "GET",
+      "path": "/api/workspace"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-001"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-001/stream?after=41"
+    },
+    {
+      "method": "GET",
+      "path": "/api/details/perf-001-artifact"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/task-index?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=41"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=81"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=121"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=181"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=221"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=261"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=281"
+    }
+  ],
+  "memoryLimit": "measureUserAgentSpecificMemory support recorded, not called without isolation; no forced GC; separate projection counts are not this App heap",
+  "p95": null,
+  "p95Reason": "One scenario run per scale; threshold-filtered Event Timing is not an unbiased latency distribution",
+  "renderCount": null
+}

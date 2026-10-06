@@ -1,0 +1,53 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/goal-context/input.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/goal-context/input.test.ts",
+      "sha256": "5f4b9bc76ebfceb8b82f8bb66c8f3d180f195ccbe913a5f1a34ddd565b80b27e"
+    },
+    {
+      "path": "apps/server/src/goal-context/input.ts",
+      "sha256": "87ae4f0435e247f19804f9525fb9cf42eb4572cc799673d8bbd6ba689e5522b9"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/runner.ts",
+      "sha256": "a8274a7ce968a25b23cb1a8d0254c393a56e53fb314ea6d796abf07ccaa6a6b1"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "sha256": "11e070e26b3c77489017716e759417a45d85ad54cb5cae75568feaaf9750d439"
+    },
+    {
+      "path": "apps/server/src/goals/state.ts",
+      "sha256": "bfcdf9b5c02863b1e3f30507c057a39ed2800d2c78e757c6444370b5c93e467c"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sha256": "0a7685acc70a95291b542e97f66390552e55e352a01b6d136b924d2066e746e8"
+    },
+    {
+      "path": "docs/evidence/k03/check.mjs",
+      "sha256": "f4fa0b175ed38aaee818991c98a96d3deefda61291819f2d283817121f164a2b"
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    }
+  ],
+  "startedAt": "2026-10-06T06:08:25.936Z",
+  "endedAt": "2026-10-06T06:08:26.373Z",
+  "exitCode": 1,
+  "signal": null
+}

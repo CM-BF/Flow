@@ -1,0 +1,67 @@
+{
+  "observedAt": "2026-10-06T12:13:21.278428+00:00",
+  "main": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "originMain": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "target": "60e495b5ea55e1cee12ae2a9deccb03afc7102f4",
+  "targetAncestor": false,
+  "sources": [
+    {
+      "path": "apps/server/src/goal-delivery/explanations.ts",
+      "sha256": "5a36a2bae4f8bd2c7f96dd87783bafd5b81c352d614207b83ac15fd8c5eb7bfe",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/history.test.ts",
+      "sha256": "42913db638e0fe3d4d3e38a524539c64fc432caa73c7e56ab824a28261261e9c",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "sha256": "df68185b3229b606084fc775a0cda8716e421ca5b4214a902fcbf2b7dbeb9a1d",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/session.test.ts",
+      "sha256": "1cc7bd37d061953fa37b48825db8014a32162f09de9ed6aa1dd19c5af11558f6",
+      "equal": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/test-support.ts",
+      "sha256": "380922ba25ba29b245ca0fa03156a3879c61223d4d703ecb6d68f907b85b851b",
+      "equal": true
+    },
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f",
+      "equal": true
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "sha256": "87788e3280d279ea7a7656f36c06bcbe8f20cda0ed68e3097f60bf4c8b44a79c",
+      "equal": true
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "sha256": "91766e60c23c589151fa75549bf87af840de651b26f55db8212e1fd7627e4135",
+      "equal": true
+    },
+    {
+      "path": "packages/interaction/src/goal/lifecycle.test.ts",
+      "sha256": "6fae106bfc5afa0c7cc91bddbfc4e3907ac7c729bd8a159f787231a0b72ac866",
+      "equal": true
+    },
+    {
+      "path": "packages/interaction/src/goal/reads.ts",
+      "sha256": "9f507ff364a9a74e269f18865638051b2f1f2528201b1af7cb10c6d0cb931795",
+      "equal": true
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "sha256": "a20c40916905737af533a1c6878d31eb9f53517d39147ef0d1d592d65d671529",
+      "equal": true
+    }
+  ],
+  "identityNote": "The fixed implementation target is not a Git ancestor of main; all 11 exact source blobs match. The first metadata check assumed ancestor equality and stopped before writing; actual ancestry is retained here, not rewritten as true.",
+  "integrationChecks": "Lead reports root/Web types0; public package import0; actual factory history+two-client2/2 selected,4 not selected; two random DB remaining[]. Author did not rerun.",
+  "sharedExport": "adb91e3d10f6c38a8b5eb26db3eb5f5aa425df39"
+}

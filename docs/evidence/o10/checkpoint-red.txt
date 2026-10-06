@@ -1,0 +1,30 @@
+✖ checkpoint write failure stops owned processes but preserves the private database and worker evidence (1771.862417ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2699.94525
+
+✖ failing tests:
+
+test at experiments/native-child-acceptance/checkpoint.test.mjs:10:1
+✖ checkpoint write failure stops owned processes but preserves the private database and worker evidence (1771.862417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'rehearsal-passed'
+  - 'failed-or-unknown'
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/native-child-acceptance/experiments/native-child-acceptance/checkpoint.test.mjs:16:12)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'rehearsal-passed',
+    expected: 'failed-or-unknown',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

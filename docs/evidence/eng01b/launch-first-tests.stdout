@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile
+
+ ✓ apps/server/src/runner-maintenance/maintenance.test.ts (9 tests) 3425ms
+   ✓ rolls back a contended bootstrap migration within its short lock bound before enabling any gate  1390ms
+ ✓ apps/runner/src/main-concurrency.test.ts (27 tests) 31ms
+ ✓ apps/runner/src/engineering/launch.test.ts (5 tests) 4ms
+
+ Test Files  3 passed (3)
+      Tests  41 passed (41)
+   Start at  03:53:46
+   Duration  4.62s (transform 400ms, setup 0ms, import 917ms, tests 3.46s, environment 0ms)
+

@@ -1,0 +1,85 @@
+{
+  "observedAt": "2026-10-06T09:58:56.844754+00:00",
+  "previousMain": "187d97648dd2d4edf45641720f8ba771ea9f25fa",
+  "candidate": "b570cde8010b1aec28b6a9c0dd46baa62fc14dfb",
+  "inputs": {
+    "R05C": "c1f5ad92cd0cff84fc402a3ebe72f39b305416b4",
+    "S01P02": "4585a12561d2bfae307a5c952560eb6fdad194e5",
+    "D08": "ce038f0b064d1348d4aa77f1e91f223d7bc5ea31",
+    "WPF-ACTIVITYREAD01": "4f86c6251a73c33db5882e49a4aa031c52114e83",
+    "WPF-STEIRI01": "57f8aa94ac2c9fad148619594e1cab9237bd3773",
+    "TUI01A": "2d2975e1e37416effbccf83215a8a564a47c21e4",
+    "D05": "2dd3033"
+  },
+  "reviews": "Each fixed feature independently approved in its canonical review; integration preserves approved blobs, not a new whole-product review.",
+  "sourceComparison": {
+    "count": 59,
+    "mismatches": []
+  },
+  "validation": {
+    "rootTypecheckExitCode": 0,
+    "webTypecheckExitCode": 0,
+    "directTests": {
+      "exitCode": 0,
+      "files": 4,
+      "passed": 50,
+      "durationSeconds": 6.51,
+      "scopes": [
+        "execution profiles 13",
+        "main concurrency 22",
+        "Web steering integration 8",
+        "Web activity integration 7"
+      ]
+    },
+    "dependencyInstall": {
+      "exitCode": 0,
+      "offline": true,
+      "frozenLockfile": true,
+      "ignoreScripts": true,
+      "added": 41,
+      "reused": 41,
+      "downloaded": 0
+    }
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/i02/native-tui-install.txt",
+      "bytes": 326,
+      "sha256": "56ca45f448032d0236522f58f9d583c33e9821762b312b5b7fd56a9b8005c1ea"
+    },
+    {
+      "path": "docs/evidence/i02/native-tui-root-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/native-tui-web-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/native-tui-direct-tests.txt",
+      "bytes": 1058,
+      "sha256": "a225d988470b2ab0d210139b33850b5d3da2829a00a93c2a30e6b109b4750e7d"
+    },
+    {
+      "path": "docs/evidence/i02/native-tui-source-comparison.json",
+      "bytes": 16865,
+      "sha256": "ba49e762b125dec1267be30e2dbc4dfa1a02e84105201bc15f9dc7a686dc0aff"
+    }
+  ],
+  "registry": {
+    "sourceCount": 122,
+    "localValidation": "docs/evidence/d05/direct-ready-registry-validation.json",
+    "actualDeploymentPending": true
+  },
+  "providerCalls": 0,
+  "personalRuntime": "unchanged b1c2e39837c2208e6fc2c59a80e16797f26448b5; accepting v12; static artifact unchanged",
+  "limits": [
+    "Codex adapter validated through controlled transport and PG, not a real app-server/provider launch or production startup configuration.",
+    "TUI first slice covers interactive session/send/recovery and preserved center authority; remaining slash capabilities remain parent TODOs.",
+    "No repeated domain, PTY, independent browser or provider suites.",
+    "Concurrency entry does not prove provider capacity.",
+    "User personal preview is not updated by this main integration."
+  ]
+}

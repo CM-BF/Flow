@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue
+
+ ❯ apps/server/src/conversation-queue/consumer.test.ts (0 test)
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  21:28:27
+   Duration  334ms (transform 86ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/conversation-queue/consumer.test.ts [ apps/server/src/conversation-queue/consumer.test.ts ]
+Error: Cannot find package '@anthropic-ai/claude-agent-sdk' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue/apps/runner/src/claude.ts'
+ ❯ apps/runner/src/claude.ts:4:1
+      2| import { mkdir, mkdtemp, readFile, realpath, stat, writeFile } from 'n…
+      3| import { join, resolve } from 'node:path';
+      4| import { query as nativeQuery, type SDKMessage, type SDKResultMessage,…
+       | ^
+      5| import { MAX_DETAIL_BYTES, type HarnessAdapter, type HarnessContext } …
+      6| import { assistantFinalDataSchema, type AssistantSettings } from '../.…
+ ❯ apps/server/src/conversation-queue/consumer.test.ts:6:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

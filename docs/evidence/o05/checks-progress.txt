@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-graph-proposals
+
+ ✓ apps/server/src/projects/projects.test.ts (10 tests) 5559ms
+   ✓ enforces node and edge bounds before advancing the graph revision  3865ms
+ ✓ apps/server/src/goal-graph-proposals/proposals.test.ts (6 tests) 1932ms
+   ✓ binds existing references and original goal identity and keeps old runner grants away from new nodes  588ms
+
+ Test Files  2 passed (2)
+      Tests  16 passed (16)
+   Start at  22:13:17
+   Duration  8.25s (transform 224ms, setup 0ms, import 597ms, tests 7.49s, environment 0ms)
+

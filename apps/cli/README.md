@@ -21,3 +21,17 @@ Use a stable `--key` to retry a submission/decision/cancellation whose response 
 Exit codes: 0 command accepted or verified success; 2 usage/configuration; 3 conflict; 4 HTTP/transport failure; watch terminal 10 execution failed, 11 cancelled, 12 execution succeeded but verification not passed, 13 uncertain; 124 observation timeout; 130 observation interrupted. Command acceptance is not task completion.
 
 `runner register --name NAME [--harness fixture|claude] [--capacity 1]` emits a one-time runner credential; store it securely for the runner. `runner revoke RUNNER_ID` revokes that credential. The owner credential cannot call runner-only routes.
+
+## Versioned knowledge
+
+`knowledge create --project PROJECT_ID --input source.json --key create-once` accepts `{"expectedVersion":0,"title":"Release notes","text":"original text"}`. `knowledge publish SOURCE_ID --project PROJECT_ID --input version.json --key publish-once` accepts `{"expectedVersion":1,"text":"revised text"}`. These commands store manual source text, not embeddings or model output.
+
+Use `knowledge list|show|version|search|resolve` (see `--help`). `resolve` reads a file containing `{"citation":...}` copied from a search hit. It returns the fixed source version and exact UTF-8 range even after a newer version is published; `isCurrent` and `currentVersion` identify that distinction. Search is bounded lexical matching, not semantic search.
+
+Input is read with a byte bound before parsing. Knowledge text is at most 262144 UTF-8 bytes; its JSON envelope allows up to 1576960 bytes for worst-case escaping and metadata. The schema still enforces raw-text limits. Existing project/goal/reconciliation JSON limits remain 128 KiB, plugin input 32 KiB. Invalid UTF-8, JSON and over-limit input exit 2; files must be regular files. No input is trimmed or normalized.
+
+## Explicit native goal child
+
+`goal execute-native <goal-id> --input JSON-file --key stable-key` is an owner-only request to execute one existing fixed node input with an already registered `configured-readonly` Claude profile. Its bounded JSON file contains `nodeId`, `expectedInputVersion`, exact `dependencies`, `previousExecutionId`, `reason`, and `executionProfile` (`id`, `runnerId`, `configDigest`). Copy the current version and pin; do not invent a prompt or add fixture/tool permissions. Input is limited to 128 KiB and validated before sending.
+
+The required stable key recovers the same receipt after a lost response; a conflict exits 3 without retry. Receipt/queued means admission only. Mechanical verification and explicit owner acceptance remain separate; this command does not certify meaning or enable engineering writes. Existing `goal change` fixture execution is unchanged. No model is called by CLI help or input validation.

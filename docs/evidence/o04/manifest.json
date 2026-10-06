@@ -1,0 +1,324 @@
+{
+  "recordedAt": "2026-10-06T04:57:56Z",
+  "implementationTarget": "1420dfa2f44117f49ec022665bcddc11739e36ae",
+  "base": "80e3c50e7a368c562a7730567503d8c82772b77a",
+  "receivedInputs": {
+    "completeMerge": "dc9a9f1682aaf24a44e2630284aac03cb93685ed",
+    "productionMountOriginal": "b87a4bb1d6e6459eb97a689d6c32ab9f65d91d18",
+    "productionMountLocal": "b90ad97f4890a85be2b88d73df6e9878b9a215d4"
+  },
+  "versions": {
+    "node": "v24.20.0",
+    "claudeSdk": "0.3.290",
+    "mcpSdk": "1.32.1",
+    "vitest": "4.0.18"
+  },
+  "checks": {
+    "combined": {
+      "passed": 77,
+      "total": 77,
+      "seconds": 18.96
+    },
+    "runtimeConsumer": {
+      "passed": 25,
+      "total": 25,
+      "seconds": 2.03
+    },
+    "typecheck": "PASSED",
+    "modelCalls": 0,
+    "nativeSdkQueryCalls": 0
+  },
+  "sources": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 15329,
+      "sha256": "b30aac75b853052f36466a0e38636861637388ee4ef508584fe6a8c212253240"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 2877,
+      "sha256": "b57eeabaef1588fc619cb88330a761ac56f3518af8979e1fe1fdb55a5b23397a"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 3766,
+      "sha256": "8e8f8f9913e5fccafec88e6dbc94c5c748b8d22e40637471370a2f1954f0629d"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/configuration.test.ts",
+      "bytes": 1675,
+      "sha256": "b947b9f3d3acea0c7e09357799cd0552a18d62dca6b072c375318b3c847c3fb5"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/index.ts",
+      "bytes": 2540,
+      "sha256": "c2ef2583bcf59e0b7de5deacea5ba58b09c4f0cc1fc173dab7619eb7dccb86bb"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/integration.test.ts",
+      "bytes": 12135,
+      "sha256": "163275aba22a88ee00ffc688dfcdeed4c009ee27f44fca602179299f4e73bc6e"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "bytes": 2155,
+      "sha256": "c21074b22c239fd89d507d9b2fb2bcccfe2f1c2d4ceb6a59d631eeb14a54970b"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/sdk.test.ts",
+      "bytes": 5532,
+      "sha256": "fa0269b0ee0f171da5acfe94e7a4dd230c481de6172efde1f509a8111332d7e4"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/test-peer.ts",
+      "bytes": 1014,
+      "sha256": "dce0a2954ad4a1af7aa1466ece57a34eeedddcf36548442bccbbbcb6733c4e13"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 6487,
+      "sha256": "f9af1e4dcafa26387f9a9182584238dfd6897d22cf262e09aa86e9f30f115cff"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 5324,
+      "sha256": "6a76cebff97c5c32573ad429a09da0e9d3e99e700b9209dad1ab818b171fe006"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/authorization.test.ts",
+      "bytes": 17135,
+      "sha256": "d908d4567f3fbb576f2c1fbcfb26281198e6c88f99e95fc3441f7cb4145ae4a8"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/authorize.ts",
+      "bytes": 2490,
+      "sha256": "59afcc9d836e0e29c3d5daf622fe9a3be2263bfaca1fa6b848372db56c632bbb"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/index.ts",
+      "bytes": 3343,
+      "sha256": "5a2949ef6a74ffba06c4e713282f0355ee4639bd552b5eaba7503a175e56024a"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/native.test.ts",
+      "bytes": 4910,
+      "sha256": "91b69292c2c73dcef076914873be1e04830c7b815b6e5c49aff6ff92dcc8ea24"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/runner.ts",
+      "bytes": 3063,
+      "sha256": "a8274a7ce968a25b23cb1a8d0254c393a56e53fb314ea6d796abf07ccaa6a6b1"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/store.ts",
+      "bytes": 4586,
+      "sha256": "a5af4e9797f09ec250d287ed3a871d26a62379aa16573b9ce857694b97b1b5b6"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 8898,
+      "sha256": "cb2320fb207a51a6b8ed4eec58b78ccd6a8b7f4713c26d3e492c4b14dbc9ed8a"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6354,
+      "sha256": "c5fcf1edca0c2be2ebaa60fc361728a050b7d40f39c97163f5b461f171763477"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 2741,
+      "sha256": "6de9343f0611603e840917fa94d3a24953b01b149dc3aa7cd913413ddd269e34"
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 5037,
+      "sha256": "d9fc304d4fe6621710ed033d1e84f550356e680907ae36080276c751e9761dfc"
+    },
+    {
+      "path": "packages/storage/migrations/013-goal-native-mode.sql",
+      "bytes": 185,
+      "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/o04/checks-bridge.txt",
+      "bytes": 2404,
+      "sha256": "1e69530d406b3379659407297faf1cac19f938ed8dc379ada3b3308b436771b3"
+    },
+    {
+      "path": "docs/evidence/o04/checks-final.txt",
+      "bytes": 2510,
+      "sha256": "3ecdfa4cd51bf8700c30595a9f509a0272ba8ece367d2e82ca46bdc10fc26316"
+    },
+    {
+      "path": "docs/evidence/o04/checks-runtime-consumer.txt",
+      "bytes": 395,
+      "sha256": "b36d15abc5febfb975f2a8ee6915359a20f205f46b0d231eb3ee796638626051"
+    },
+    {
+      "path": "docs/evidence/o04/green-ack-reconciliation.txt",
+      "bytes": 545,
+      "sha256": "5a8e2fb7b57e0714309a5e22856901137ca78b1807e0ee49e09bfc2fa7412310"
+    },
+    {
+      "path": "docs/evidence/o04/green-bridge-http.txt",
+      "bytes": 544,
+      "sha256": "f6361ddb582ad256a8c1845fa4fe6d9d50b7a7cd4eb6ad6640700be5110da932"
+    },
+    {
+      "path": "docs/evidence/o04/green-native-admission-retry.txt",
+      "bytes": 432,
+      "sha256": "03029aa25c2688ab8c7aba42f63920d476c3bf41079458617abe875787453570"
+    },
+    {
+      "path": "docs/evidence/o04/green-native-admission.txt",
+      "bytes": 1563,
+      "sha256": "11bcf538c19ad594455bffda484b63274f1647257250d4c96e3872c46d277d90"
+    },
+    {
+      "path": "docs/evidence/o04/green-sdk-mount.txt",
+      "bytes": 320,
+      "sha256": "efabb1056dbfbab1d75c40a8b8c5f46fcd25102a2cd2fc970f85aa0017561884"
+    },
+    {
+      "path": "docs/evidence/o04/install.txt",
+      "bytes": 595,
+      "sha256": "06f0b67ca4e800392cb6ce47aba088a73907aa34ff6c7619b419bc6df0069a2b"
+    },
+    {
+      "path": "docs/evidence/o04/o03-guard.txt",
+      "bytes": 1219,
+      "sha256": "45739afa95fc7fea45aa60c69b1d5dc853caa278924195f34f311abb08502049"
+    },
+    {
+      "path": "docs/evidence/o04/o03-race-observer.txt",
+      "bytes": 577,
+      "sha256": "fd2440488d127880346ee401fa2761ee26ce16d836fab0f48249cd5d05c4fe89"
+    },
+    {
+      "path": "docs/evidence/o04/progress-bridge-http.txt",
+      "bytes": 2476,
+      "sha256": "0cb041f8eaea896b31d91e2dcda3d111f88c6f33b22bbba6fcc4fb32838ed554"
+    },
+    {
+      "path": "docs/evidence/o04/red-native-admission.txt",
+      "bytes": 1281,
+      "sha256": "f479ac8d10e55fcc2d7bf485e3f4230ec5a48e2f823517b5790b9c9ea515363f"
+    },
+    {
+      "path": "docs/evidence/o04/red-sdk-mount.txt",
+      "bytes": 1462,
+      "sha256": "30ec6f7e51231e0e43f718cf7779f6c633be686ec8af987355094ad5c14e2bda"
+    },
+    {
+      "path": "docs/evidence/o04/typecheck-bridge.txt",
+      "bytes": 109,
+      "sha256": "0e0180e214bd11031cb03c3c30df9cfbd5a07bd9a8b66a330af995eb699aef32"
+    },
+    {
+      "path": "docs/evidence/o04/typecheck-final.txt",
+      "bytes": 109,
+      "sha256": "0e0180e214bd11031cb03c3c30df9cfbd5a07bd9a8b66a330af995eb699aef32"
+    },
+    {
+      "path": "docs/evidence/o04/typecheck-progress.txt",
+      "bytes": 109,
+      "sha256": "0e0180e214bd11031cb03c3c30df9cfbd5a07bd9a8b66a330af995eb699aef32"
+    },
+    {
+      "path": "docs/evidence/o04/wire.json",
+      "bytes": 12410,
+      "sha256": "8199e6ae77d5f7f5b192b2ab115b4f43ea03af1a70820b37cb4df08a6ae925d1"
+    },
+    {
+      "path": "docs/evidence/o04/claim-receipt.json",
+      "bytes": 1145,
+      "sha256": "37690511b210dca158ed2eeb1786bc316217856179647385b144528e648fdcc2"
+    },
+    {
+      "path": "docs/evidence/o04/cleanup.json",
+      "bytes": 267,
+      "sha256": "63b1c9e0edbe5ce365c1d941405e6bde7cfc1606bfd1adf195e85542c2cef133"
+    }
+  ],
+  "limits": [
+    "SDK query function injected; actual in-process SDK MCP instance and official MCP peer",
+    "No native SDK subprocess/model/auth/semantic reasoning checks",
+    "Child execute remains fixture and this trace leaves it queued",
+    "Profile mode and goal grant do not authorize arbitrary engineering tools",
+    "Not integrated into main at delivery; production createServer mounted in author worktree",
+    "No native planner resume or automatic replay of uncertain effects"
+  ],
+  "reviewSupplement": {
+    "recordedAt": "2026-10-06T05:05:09Z",
+    "testTarget": "a169a2e139e5db5e7bc2fd6f55699014a41e9926",
+    "productionImplementationTarget": "1420dfa2f44117f49ec022665bcddc11739e36ae",
+    "reason": "Root requested populated 012 fixture grant/call to 013 migration evidence; no product code finding or change",
+    "checks": {
+      "selectedTests": 1,
+      "passed": 1,
+      "seconds": 2.02,
+      "typecheck": "PASSED",
+      "modelCalls": 0,
+      "original102Rerun": false
+    },
+    "sources": [
+      {
+        "path": "apps/server/src/goal-tool-runs/migration.test.ts",
+        "bytes": 11725,
+        "sha256": "c3ac720131b5669b7fe1a2daec01c867cfb65f76cdfa58a4c58ea9aa3a29784c"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "docs/evidence/o04/checks-migration-upgrade.txt",
+        "bytes": 444,
+        "sha256": "d931afc55cca70874e2eee42c25b9878be90c195c6403f30290853ad17336edb"
+      },
+      {
+        "path": "docs/evidence/o04/typecheck-migration-upgrade.txt",
+        "bytes": 109,
+        "sha256": "0e0180e214bd11031cb03c3c30df9cfbd5a07bd9a8b66a330af995eb699aef32"
+      },
+      {
+        "path": "docs/evidence/o04/migration-upgrade.json",
+        "bytes": 6363,
+        "sha256": "d04ff10e2e4450e6e49e4a0acad1bb24d54c21c841ebad30deeac3d72e10715a"
+      }
+    ],
+    "originalSourceHashesUnchanged": 23,
+    "originalOutputHashesUnchanged": 20
+  },
+  "independentReview": {
+    "recordedAt": "2026-10-06T05:06:54Z",
+    "reviewer": "Goal Owner /root",
+    "status": "APPROVED",
+    "combinedTarget": "a169a2e139e5db5e7bc2fd6f55699014a41e9926",
+    "productionTarget": "1420dfa2f44117f49ec022665bcddc11739e36ae",
+    "testOnlyDelta": "a169a2e139e5db5e7bc2fd6f55699014a41e9926",
+    "evidenceHead": "66bf563c9c80fb77cfab1919e1ca4aa40a9b41a6",
+    "sourceAndOutputHashesVerified": {
+      "originalSources": 23,
+      "originalOutputs": 20,
+      "supplementFiles": 4
+    },
+    "authorDistinctChecks": {
+      "total": 103,
+      "separateRuns": [
+        77,
+        25,
+        1
+      ]
+    },
+    "reviewerReranTests": false,
+    "modelCalls": 0,
+    "findings": [],
+    "mainIntegration": "pending Lead receipt"
+  }
+}

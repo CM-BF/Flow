@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-10-06T07:45:37.810501+00:00",
+  "taskId": "CHAT06P01",
+  "windowId": "CHAT06P01-ONE-MATRIX-20261006",
+  "implementationCommit": "4951ce63945ec6364be050de877715059402095f",
+  "approvedMetadataHead": "93d4b36e0bb896ec271550a3d7bba6bedf5041b8",
+  "authorization": "Goal Owner explicit conditional GO relayed by Mika; single execution only. No further ordinary approval required once GO or Execution Lead explicitly confirms this SVC operation window ended.",
+  "notBefore": "2026-10-06T07:45:37.810501+00:00",
+  "latestStart": "2026-10-06T08:15:00Z",
+  "notAfter": "2026-10-06T08:15:30Z",
+  "tasks": 3,
+  "attempts": 3,
+  "sessions": 3,
+  "patches": 84,
+  "patchCounts": [
+    4,
+    16,
+    64
+  ],
+  "maxDurationMs": 30000,
+  "workMs": 20000,
+  "cleanupReserveMs": 10000,
+  "maxHttpRequests": 256,
+  "maxStoredBytes": 67108864,
+  "centerChildren": 1,
+  "runnerProcesses": 0,
+  "providerCalls": 0,
+  "modelCalls": 0,
+  "cloudCalls": 0,
+  "svcOperationEnded": true,
+  "svcEndReceipt": {
+    "source": "Execution Lead via Mika",
+    "event": "SVC02_OPERATION_CLOSED",
+    "sourceCommit": "b54 (as supplied by Execution Lead)",
+    "resumeAt": "2026-10-06T07:45:23.637Z",
+    "resumeExitCode": 0,
+    "state": "accepting v6",
+    "servicesReadyAt": "2026-10-06T07:45:26Z",
+    "serviceCount": 3,
+    "unfinishedTasks": 0,
+    "activeModelCalls": 0,
+    "queueChanged": false,
+    "receivedAndRecordedAt": "2026-10-06T07:46:54.303270+00:00",
+    "authorizationRestated": "Root condition satisfied; one CHAT06P01 3-task/84-patch/30-second matrix, no whole-team quiet required"
+  },
+  "wholeTeamQuietRequired": false,
+  "serverOptions": {
+    "leaseMs": 300000,
+    "automaticQueueScan": false,
+    "schedulerEnabled": true
+  },
+  "failurePolicy": "Clean owned resources, retain raw failure; no automatic rerun or warmup.",
+  "limits": [
+    "Shared host and background processes remain; measure observer overhead honestly.",
+    "Source/config frozen; implementation preparation approval is not evidence of resource lifecycle or performance."
+  ]
+}

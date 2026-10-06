@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources
+
+ ✓ apps/server/src/attachments/attachments.test.ts (10 tests | 9 skipped) 4369ms
+   ✓ committed upload survives a real fixture center SIGKILL and same-key HTTP replay  2676ms
+ ✓ apps/server/src/attachments/context.test.ts (19 tests | 18 skipped) 3451ms
+   ✓ before 026 plain/knowledge remain v1; migration preserves saved receipts and enables project GET only  2352ms
+
+ Test Files  2 passed (2)
+      Tests  2 passed | 27 skipped (29)
+   Start at  04:20:47
+   Duration  9.23s (transform 435ms, setup 0ms, import 1.25s, tests 7.82s, environment 0ms)
+

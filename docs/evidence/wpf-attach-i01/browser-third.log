@@ -1,0 +1,72 @@
+ExpectError: expect(locator).toBeVisible() failed
+
+Locator: getByRole('button', { name: 'Use recovered recover.txt', exact: true })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByRole('button', { name: 'Use recovered recover.txt', exact: true }) with timeout 5000ms
+  - waiting for getByRole('button', { name: 'Use recovered recover.txt', exact: true })
+
+    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toBeVisible (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at main (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web/test/attachment-input.browser.ts:54:180) {
+  matcherResult: {
+    message: 'expect(locator).toBeVisible() failed\n' +
+      '\n' +
+      "Locator: getByRole('button', { name: 'Use recovered recover.txt', exact: true })\n" +
+      'Expected: visible\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toBeVisible" getByRole('button', { name: 'Use recovered recover.txt', exact: true }) with timeout 5000ms\n` +
+      "  - waiting for getByRole('button', { name: 'Use recovered recover.txt', exact: true })\n",
+    pass: false,
+    actual: undefined,
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      `  - Expect "toBeVisible" getByRole('button', { name: 'Use recovered recover.txt', exact: true }) with timeout 5000ms`,
+      "  - waiting for getByRole('button', { name: 'Use recovered recover.txt', exact: true })"
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- dialog "Attach a project file":\n' +
+      '  - heading "Attach a project file" [level=2]\n' +
+      '  - paragraph: Choose uploaded text or recover an interrupted upload. File content is only read when expanded.\n' +
+      '  - region "Project files":\n' +
+      '    - paragraph: UTF-8 text files · up to 8 KiB each. Knowledge and files share a four-item, 8 KiB limit.\n' +
+      '    - text: Find uploaded files\n' +
+      '    - textbox "Find uploaded files":\n' +
+      '      - /placeholder: Filename\n' +
+      '    - button "Browse files"\n' +
+      '    - status: 0 files on this page. 1 in this draft.\n' +
+      '    - alert: "[ { \\"code\\": \\"unrecognized_keys\\", \\"keys\\": [ \\"replayed\\" ], \\"path\\": [ \\"receipt\\" ], \\"message\\": \\"Unrecognized key: \\\\\\"replayed\\\\\\"\\" } ]"\n' +
+      '    - region "Files in this draft":\n' +
+      '      - heading "In this draft" [level=3]\n' +
+      '      - article:\n' +
+      '        - strong: recover.txt\n' +
+      '        - text: unknown\n' +
+      '        - button "Remove recover.txt"\n' +
+      '        - paragraph: Fixture lost the upload acknowledgement. Original key is kept.\n' +
+      '    - region "Uploaded project files":\n' +
+      '      - heading "Uploaded to this project" [level=3]\n' +
+      '    - group:\n' +
+      '      - text: Upload recovery (1)\n' +
+      '      - paragraph: Recovering never sends a message or adds a file to a new draft. A missing receipt still needs its original key.\n' +
+      '      - article:\n' +
+      '        - strong: recover.txt\n' +
+      '        - text: unknown\n' +
+      '        - group: Recovery identity\n' +
+      '        - button "Check receipt for recover.txt"\n' +
+      '        - text: Reselect original file\n' +
+      '        - button "Reselect original recover.txt"\n' +
+      '    - paragraph: Removing a draft file does not delete a resource used by a message. Runner files and other formats are not supported here.\n' +
+      '  - button "Close"'
+  }
+}
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/attachment-input.browser.ts

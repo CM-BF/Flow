@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "experiments/assistant-stream-cost/run.mjs",
+    "docs/evidence/chat06p01/window-authorization.json"
+  ],
+  "startedAt": "2026-10-06T07:47:01.727200+00:00",
+  "finishedAt": "2026-10-06T07:47:06.274015+00:00",
+  "wallElapsedMs": 4545.654249959625,
+  "exitCode": 0,
+  "environmentBefore": {
+    "loadAverage": [
+      7.453125,
+      9.49169921875,
+      9.205078125
+    ],
+    "logicalCpuCount": 16,
+    "machine": "arm64",
+    "platform": "Darwin"
+  },
+  "loadAverageAfter": [
+    7.17626953125,
+    9.400390625,
+    9.17431640625
+  ],
+  "background": "No whole-team quiet requested; SVC operation closed before start; resident services/background retained",
+  "measurement": "HTTP wall time includes observer overhead; leaseMs300000/automaticQueueScanfalse/scheduler enabled"
+}

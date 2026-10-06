@@ -1,0 +1,90 @@
+{
+  "observedAt": "2026-10-06T07:19:22.326Z",
+  "source": "D04 list read only; not dashboard fetch",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T02:49:44.635Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/conversation-activity-integration.browser.ts",
+        "apps/web/test/conversation-activity-integration.test.ts",
+        "apps/web/test/native-activity.test.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "docs/evidence/wpf-activity-i01",
+        "plans/wpf-activity-i01-integration"
+      ],
+      "state": "active",
+      "branch": "codex/web-conversation-activity-integration",
+      "origin": "new",
+      "taskId": "WPF-ACTIVITYI01",
+      "worker": "w01_owner",
+      "claimId": "122210f6-eaac-4cc7-840d-3bd7db1626d9",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration",
+      "createdAt": "2026-10-06T06:53:53.518Z",
+      "updatedAt": "2026-10-06T06:53:53.518Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversation-stream/patches.ts",
+        "apps/web/src/conversation-stream/projection.ts",
+        "apps/web/test/conversation-stream-projection.test.ts",
+        "apps/web/test/conversation-stream.test.ts",
+        "docs/evidence/wpf-chat06-stream",
+        "plans/wpf-chat06-stream"
+      ],
+      "state": "active",
+      "branch": "codex/web-conversation-stream",
+      "origin": "new",
+      "taskId": "WPF-CHAT06S01",
+      "worker": "workspace_panels_owner",
+      "claimId": "d94ae4bb-0ac1-4a38-b983-e0e1e482b398",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream",
+      "createdAt": "2026-10-06T07:10:10.763Z",
+      "updatedAt": "2026-10-06T07:10:10.763Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "note": "Claims are path ownership, not running agent count. Current parent table links these three active authorities; released historical sources remain read-only."
+}

@@ -1,0 +1,364 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration
+
+ ❯ apps/web/test/conversation-projection.test.ts (34 tests | 17 failed) 22ms
+     × reads queue=false while keeping active-turn sending unavailable in this Web version 7ms
+     × reads queue=true while keeping active-turn sending unavailable in this Web version 1ms
+     ✓ accepts queue=false CREATE receipts and submits only explicit follow-up turns 3ms
+     ✓ accepts queue=true CREATE receipts and submits only explicit follow-up turns 0ms
+     ✓ rejects non-boolean queue capability undefined instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability null instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability true instead of treating it as supported 0ms
+     ✓ rejects non-boolean queue capability 1 instead of treating it as supported 0ms
+     ✓ does not widen other unsupported capabilities while accepting a boolean queue flag 0ms
+     ✓ keeps a missing pin mismatch in a CREATE receipt unknown and does not submit a turn 1ms
+     ✓ keeps a id pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a runnerId pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ keeps a configDigest pin mismatch in a CREATE receipt unknown and does not submit a turn 0ms
+     ✓ rejects an unexpected CREATE pin for an explicit legacy conversation 0ms
+     ✓ keeps the acknowledged creation locked after a rejected first turn and never creates with the later selection 0ms
+     ✓ checks pinned creation on later GET pages and turn receipts without overwriting accepted configuration 1ms
+     × retains legacy unpinned configuration on an existing conversation 1ms
+     × refreshes a same-revision asynchronous reply and reads its exact version only on demand 0ms
+     ✓ keeps a failed initial snapshot unknown and blocks send until it is loaded 0ms
+     ✓ does not recreate an acknowledged conversation when the first turn response is lost 0ms
+     × treats 409 as a definite rejection and refreshes without changing the key/revision or automatically resending 0ms
+     × pauses observations without aborting an already sent command or its late receipt 1ms
+     × does not let an older in-flight snapshot overwrite a newly accepted turn/revision 0ms
+     × does not downgrade a final reply when an older admission ACK arrives last 0ms
+     × confirms queue=false retried saved receipts without regressing a final reply already read from the center 0ms
+     × confirms queue=true retried saved receipts without regressing a final reply already read from the center 0ms
+     ✓ surfaces a request timeout instead of treating it as a visibility cancellation 0ms
+     × deduplicates overlapping turn pages and preserves typed user/assistant entries 0ms
+     × exposes a loadable middle gap after another tab admits several turns while this view is hidden 0ms
+     × rejects mismatched lazy detail versions and lets explicit retry succeed 0ms
+     × keeps a previously unknown result unknown after a retry authentication failure 0ms
+     × does not accept malformed or mismatched success receipts as proof of admission 0ms
+     × validates typed source digests and namespaces identical detail IDs by source identity 1ms
+     × does not move a disposed connection's delayed receipt or detail into a same-ID new connection 0ms
+ ✓ apps/web/test/execution-profiles.test.ts (16 tests) 26ms
+ ✓ apps/web/test/conversation-outbox.test.ts (10 tests) 5ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > reads queue=false while keeping active-turn sending unavailable in this Web version
+AssertionError: expected { snapshot: null, turns: [], …(7) } to match object { loading: false, …(3) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "connection": "live",
+-   "error": null,
++   "connection": "reconnecting",
++   "error": "[
++   {
++     \"code\": \"unrecognized_keys\",
++     \"keys\": [
++       \"id\",
++       \"revision\",
++       \"createdAt\",
++       \"updatedAt\"
++     ],
++     \"path\": [],
++     \"message\": \"Unrecognized keys: \\\"id\\\", \\\"revision\\\", \\\"createdAt\\\", \\\"updatedAt\\\"\"
++   }
++ ]",
+    "loading": false,
+-   "snapshot": {
+-     "capabilities": {
+-       "queue": false,
+-     },
+-   },
++   "snapshot": null,
+  }
+
+ ❯ apps/web/test/conversation-projection.test.ts:49:38
+     47|     const { projection, client } = setup(wireSnapshot(queue, turn()));
+     48|     await projection.refresh();
+     49|     expect(projection.getSnapshot()).toMatchObject({ loading: false, c…
+       |                                      ^
+     50|     expect(projection.getSnapshot().turns[0]?.id).toBe("turn-1");
+     51|     expect(projection.sendDisabledReason()).toContain("not available i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > reads queue=true while keeping active-turn sending unavailable in this Web version
+AssertionError: expected { snapshot: null, turns: [], …(7) } to match object { loading: false, …(3) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "connection": "live",
+-   "error": null,
++   "connection": "reconnecting",
++   "error": "[
++   {
++     \"code\": \"unrecognized_keys\",
++     \"keys\": [
++       \"id\",
++       \"revision\",
++       \"createdAt\",
++       \"updatedAt\"
++     ],
++     \"path\": [],
++     \"message\": \"Unrecognized keys: \\\"id\\\", \\\"revision\\\", \\\"createdAt\\\", \\\"updatedAt\\\"\"
++   }
++ ]",
+    "loading": false,
+-   "snapshot": {
+-     "capabilities": {
+-       "queue": true,
+-     },
+-   },
++   "snapshot": null,
+  }
+
+ ❯ apps/web/test/conversation-projection.test.ts:49:38
+     47|     const { projection, client } = setup(wireSnapshot(queue, turn()));
+     48|     await projection.refresh();
+     49|     expect(projection.getSnapshot()).toMatchObject({ loading: false, c…
+       |                                      ^
+     50|     expect(projection.getSnapshot().turns[0]?.id).toBe("turn-1");
+     51|     expect(projection.sendDisabledReason()).toContain("not available i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > retains legacy unpinned configuration on an existing conversation
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:128:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > refreshes a same-revision asynchronous reply and reads its exact version only on demand
+TypeError: Cannot read properties of undefined (reading 'assistant')
+ ❯ apps/web/test/conversation-projection.test.ts:137:44
+    135|     expect(client.conversationDetail).not.toHaveBeenCalled();
+    136|     set(snapshot(reply(turn()))); await projection.refresh();
+    137|     expect(projection.getSnapshot().turns[0]!.assistant).toMatchObject…
+       |                                            ^
+    138|     await projection.loadReply("turn-1"); await projection.loadReply("…
+    139|     const first = replyDetailKey("chat", projection.getSnapshot().turn…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > treats 409 as a definite rejection and refreshes without changing the key/revision or automatically resending
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:160:46
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > pauses observations without aborting an already sent command or its late receipt
+AssertionError: expected undefined to be false // Object.is equality
+
+- Expected: 
+false
+
++ Received: 
+undefined
+
+ ❯ apps/web/test/conversation-projection.test.ts:169:88
+    167|     const pending = deferred<Awaited<ReturnType<FlowClient["submitConv…
+    168|     const sending = projection.send("hi"); const signal = client.submi…
+    169|     projection.setVisible(false); projection.setOnline(false); expect(…
+       |                                                                                        ^
+    170|     pending.resolve({ conversation: snapshot(turn()).conversation, tur…
+    171|     expect(projection.getSnapshot().outbox).toBeNull(); expect(project…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > does not let an older in-flight snapshot overwrite a newly accepted turn/revision
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:176:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > does not downgrade a final reply when an older admission ACK arrives last
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:183:109
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > confirms queue=false retried saved receipts without regressing a final reply already read from the center
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > confirms queue=true retried saved receipts without regressing a final reply already read from the center
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:192:94
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > deduplicates overlapping turn pages and preserves typed user/assistant entries
+AssertionError: expected [] to deeply equal [ 1, 2 ]
+
+- Expected
++ Received
+
+- [
+-   1,
+-   2,
+- ]
++ []
+
+ ❯ apps/web/test/conversation-projection.test.ts:218:98
+    216|     client.conversationTurns.mockResolvedValueOnce({ conversation: sna…
+    217|     await projection.refresh(); client.conversationTurns.mockResolvedV…
+    218|     await projection.loadMore(); expect(projection.getSnapshot().turns…
+       |                                                                                                  ^
+    219|     expect(projection.getSnapshot().nextCursor).toBeNull();
+    220|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > exposes a loadable middle gap after another tab admits several turns while this view is hidden
+AssertionError: expected [] to deeply equal [ 1, 3 ]
+
+- Expected
++ Received
+
+- [
+-   1,
+-   3,
+- ]
++ []
+
+ ❯ apps/web/test/conversation-projection.test.ts:225:69
+    223|     expect(projection.getSnapshot().nextCursor).toBeNull();
+    224|     set(snapshot(reply(turn(3)))); await projection.refresh(); await p…
+    225|     expect(projection.getSnapshot().turns.map(turn => turn.number)).to…
+       |                                                                     ^
+    226|     expect(projection.getSnapshot().nextCursor).toBe(1);
+    227|     client.conversationTurns.mockResolvedValueOnce({ conversation: sna…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > rejects mismatched lazy detail versions and lets explicit retry succeed
+TypeError: Cannot read properties of undefined (reading 'assistant')
+ ❯ replyDetailKey apps/web/src/conversations/projection.ts:30:12
+     28| const requestSignal = (...signals: AbortSignal[]) => AbortSignal.any([…
+     29| export function replyDetailKey(conversationId: string, turn: Conversat…
+     30|   if (turn.assistant.state !== "available") return null;
+       |            ^
+     31|   const { contentRef, source } = turn.assistant;
+     32|   const identity = source.kind === "assistant-final"
+ ❯ apps/web/test/conversation-projection.test.ts:236:55
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > keeps a previously unknown result unknown after a retry authentication failure
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:241:98
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > does not accept malformed or mismatched success receipts as proof of admission
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:250:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > validates typed source digests and namespaces identical detail IDs by source identity
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ apps/web/test/conversation-projection.test.ts:262:140
+    260|     const { projection, client } = setup(snapshot(input)); await proje…
+    261|     client.conversationDetail.mockResolvedValueOnce({ id: "detail", ti…
+    262|     await projection.loadReply(input.id); const key = replyDetailKey("…
+       |                                                                                                                                            ^
+    263|     client.conversationDetail.mockResolvedValueOnce({ id: "detail", ti…
+    264|     expect(projection.getSnapshot().details[key]?.data?.content).toBe(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/17]⎯
+
+ FAIL  apps/web/test/conversation-projection.test.ts > public conversation projection > does not move a disposed connection's delayed receipt or detail into a same-ID new connection
+TypeError: Cannot read properties of undefined (reading 'assistant')
+ ❯ apps/web/test/conversation-projection.test.ts:272:108
+    270|     const next = setup(snapshot(reply(turn(), "Center B"))); await nex…
+    271|     pending.resolve({ id: "detail", title: "A", kind: "artifact", cont…
+    272|     expect(next.projection.getSnapshot().details).toEqual({}); expect(…
+       |                                                                                                            ^
+    273|   });
+    274| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/17]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Wait for this conversation to load.
+ ❯ ConversationProjection.send apps/web/src/conversations/projection.ts:217:23
+    215|   async send(text: string, creation?: ConversationCreation): Promise<s…
+    216|     const reason = this.sendDisabledReason();
+    217|     if (reason) throw Error(reason);
+       |                       ^
+    218|     const entry = this.outbox.begin({
+    219|       conversationId: this.id, expectedRevision: this.state.snapshot?.…
+ ❯ apps/web/test/conversation-projection.test.ts:168:32
+ ❯ processTicksAndRejections node:internal/process/task_queues:104:5
+ ❯ node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+This error originated in "apps/web/test/conversation-projection.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "validates typed source digests and namespaces identical detail IDs by source identity". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  17 failed | 43 passed (60)
+     Errors  1 error
+   Start at  22:02:56
+   Duration  522ms (transform 97ms, setup 0ms, import 244ms, tests 53ms, environment 0ms)
+

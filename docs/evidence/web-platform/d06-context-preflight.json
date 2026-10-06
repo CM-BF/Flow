@@ -1,0 +1,37 @@
+{
+  "observedAt": "2026-10-06T06:26:57.099Z",
+  "base": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "branch": "codex/dashboard-architecture-context",
+  "dirty": "",
+  "scope": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/test/architecture.test.mjs",
+    "plans/d06-architecture-refresh",
+    "docs/evidence/d06"
+  ],
+  "conflicts": [],
+  "oldClaim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06",
+      "plans/d06-architecture-refresh"
+    ],
+    "state": "released",
+    "branch": "codex/dashboard-architecture-current",
+    "origin": "new",
+    "taskId": "D06",
+    "worker": "w01_owner",
+    "claimId": "e5b2fb56-8e3a-40b7-bfa4-192f34187c0b",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current",
+    "createdAt": "2026-10-06T05:26:04.403Z",
+    "updatedAt": "2026-10-06T05:51:45.661Z",
+    "observedAt": null,
+    "needsVerification": false
+  }
+}

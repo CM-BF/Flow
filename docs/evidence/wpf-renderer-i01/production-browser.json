@@ -1,0 +1,67 @@
+{
+  "startedAt": "2026-10-06T06:34:34.333Z",
+  "finishedAt": "2026-10-06T06:34:44.040Z",
+  "sourceCommit": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "3c358413cb386b78be59e3723973e0d007b5138eb9ac4b7eed4a0d70559b81b1",
+    "apps/web/src/conversations/ConversationThread.tsx": "c2fc59a0ea7874c29f1ae25216bad0b146e2b5f19f0cab756672db7da8dd8d47",
+    "apps/web/src/plugin-integration/session.ts": "89fe431bc8106d9401bb3e33f4d6d653511fe52717a665d23449bb74009ece97",
+    "apps/web/src/plugin-integration/react.tsx": "794897088a4150365d1a65ba532fd706cf70959c09584e14e3403caf57b87dab",
+    "apps/web/src/plugin-integration/data-renderers.ts": "868d7915f6d95eacdb6d7a1e647e5873a1987c84ee84cf7abe46d69e61a4b8e6",
+    "apps/web/test/data-renderer-integration.test.ts": "17a19aca875ae5094c8315b684db7213d657be6e5e3db284289b32e7d151e4fb",
+    "apps/web/test/data-renderer-integration.browser.ts": "ea59eeb8e98e3bee16148d23b8c21b0ef4c8785c0f2444910bd6f1ad6d8eeb3e"
+  },
+  "production": true,
+  "consumerFixtureBuild": "development; final direct-consumer check is separate from the actual App build",
+  "url": "http://127.0.0.1:59607",
+  "checks": [
+    "actual App renders shortened reply with zero initial detail reads, Enter reveals once and caches",
+    "native hidden removes its own renderer and resumes expanded cached reply and draft without another request",
+    "both split panes are readable while focus remains independent",
+    "disable remains disabled across hide/resume and keeps the host-authorized fallback",
+    "overview hides registrations without discarding the cached content, and closing a pane does not cancel execution",
+    "same-revision assistant content and history pagination still reach the official Thread",
+    "stable converter preserves new intent/onNew, running gates and the separate draft",
+    "late HTTP reply from old connection cannot fill a new center with the same conversation IDs",
+    "real App light/dark narrow keyboard and reduced-motion screenshots retain readable full reply",
+    "direct React consumer updates a same-visible new binding without polling and Activity keeps expanded cache"
+  ],
+  "errors": [],
+  "failure": null,
+  "detailRequests": {
+    "first": [
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+        "key": "",
+        "body": ""
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-2/turns/chat-2-turn-2/details/chat-2-task-2-reply",
+        "key": "",
+        "body": ""
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+        "key": "",
+        "body": ""
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+        "key": "",
+        "body": ""
+      }
+    ],
+    "second": [
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+        "key": "",
+        "body": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "task": "O06",
+    "target": "f6ba02e8898ed1539786de381c41402d342e59a8",
+    "paths": [
+      "apps/server/src/goal-graph-proposals/store.ts",
+      "apps/server/src/goal-graph-runs/index.ts",
+      "apps/server/src/goal-graph-runs/migration.test.ts",
+      "apps/server/src/goal-graph-runs/runner.ts",
+      "apps/server/src/goal-graph-runs/runs.test.ts",
+      "apps/server/src/goal-graph-runs/store.ts",
+      "apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "apps/server/src/goal-tool-runs/authorize.ts",
+      "apps/server/src/goal-tool-runs/store.ts",
+      "apps/server/src/projects/commands.ts",
+      "apps/server/src/projects/storage.ts",
+      "packages/contracts/src/goal-graph-proposals.ts",
+      "packages/contracts/src/goal-graph-runs.ts",
+      "packages/contracts/src/projects.ts",
+      "packages/storage/migrations/017-goal-graph-runs.sql"
+    ],
+    "diff": "zero"
+  },
+  {
+    "task": "WPF-QUEUE01",
+    "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+    "paths": [
+      "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/conversations/queue/queue-elements.tsx",
+      "apps/web/test/conversation-projection.test.ts",
+      "apps/web/test/conversation-queue.browser.ts",
+      "apps/web/test/conversation-queue.fixture.ts",
+      "apps/web/test/conversation-queue.test.ts"
+    ],
+    "diff": "zero"
+  },
+  {
+    "task": "D06",
+    "target": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+    "paths": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture.test.mjs"
+    ],
+    "diff": "zero"
+  }
+]

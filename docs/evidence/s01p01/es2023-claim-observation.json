@@ -1,0 +1,32 @@
+{
+  "observedAt": "2026-10-06T08:35:22Z",
+  "head": "fe63a932a1c422f27af69c57da98b77c3382ed0d",
+  "dirtyBefore": false,
+  "claims": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/runner/src/admission-journal.test.ts",
+        "apps/runner/src/admission-journal.ts",
+        "apps/runner/src/runtime-capacity.test.ts",
+        "apps/runner/src/runtime.ts",
+        "docs/evidence/s01p01",
+        "plans/s01-attempt-pool"
+      ],
+      "state": "active",
+      "branch": "codex/runner-attempt-pool",
+      "origin": "new",
+      "taskId": "S01P01",
+      "worker": "s01p01_owner",
+      "claimId": "599454b1-52d2-4f22-8fc2-f68fb7ac6973",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool",
+      "createdAt": "2026-10-06T08:07:56.393Z",
+      "updatedAt": "2026-10-06T08:07:56.393Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ]
+}

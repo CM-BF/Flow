@@ -1,0 +1,159 @@
+{
+  "id": "X03",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T04:18:37.744Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management/plans/x03-plugin-management-view/status.md",
+    "syncedAt": "2026-10-06T04:19:04.563Z",
+    "stale": false,
+    "ageHours": 0.007656388888888889
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/plugin-management",
+    "head": "895c8999d22fb3d911de2d46969e37b40051fdea",
+    "dirty": true,
+    "changedFiles": 28,
+    "observedAt": "2026-10-06T04:19:04.882Z"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "895c8999d22fb3d911de2d46969e37b40051fdea",
+    "proof": {
+      "target": "895c8999d22fb3d911de2d46969e37b40051fdea",
+      "head": "895c8999d22fb3d911de2d46969e37b40051fdea",
+      "scopes": [
+        "apps/web/src/plugin-management",
+        "apps/web/test/plugin-management"
+      ],
+      "observedAt": "2026-10-06T04:19:05.331Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/x03/README.md",
+        "docs/evidence/x03/browser-candidate-results.json",
+        "docs/evidence/x03/browser-candidate.log",
+        "docs/evidence/x03/browser-cleanup-failure.json",
+        "docs/evidence/x03/browser-cleanup-failure.log",
+        "docs/evidence/x03/browser-final.log",
+        "docs/evidence/x03/browser-first-green-results.json",
+        "docs/evidence/x03/browser-first-green.log",
+        "docs/evidence/x03/browser-focus-red-results.json",
+        "docs/evidence/x03/browser-focus-red.log",
+        "docs/evidence/x03/browser-full-first-results.json",
+        "docs/evidence/x03/browser-full-first.log",
+        "docs/evidence/x03/browser-progress.json",
+        "docs/evidence/x03/browser-red-results.json",
+        "docs/evidence/x03/browser-red.log",
+        "docs/evidence/x03/browser-results.json",
+        "docs/evidence/x03/checks.json",
+        "docs/evidence/x03/claim-receipt.json",
+        "docs/evidence/x03/cleanup-recovery.json",
+        "docs/evidence/x03/dependency-resolution.json",
+        "docs/evidence/x03/module-dark-390.png",
+        "docs/evidence/x03/module-light-390.png",
+        "docs/evidence/x03/module-light-desktop.png",
+        "docs/evidence/x03/quality.md",
+        "docs/evidence/x03/typecheck-initial.log",
+        "docs/evidence/x03/typecheck-result.json",
+        "docs/evidence/x03/typecheck.log",
+        "plans/x03-plugin-management-view/plan.md",
+        "plans/x03-plugin-management-view/review.md",
+        "plans/x03-plugin-management-view/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "895c8999d22fb3d911de2d46969e37b40051fdea",
+    "head": "895c8999d22fb3d911de2d46969e37b40051fdea",
+    "scopes": [
+      "apps/web/src/plugin-management",
+      "apps/web/test/plugin-management"
+    ],
+    "observedAt": "2026-10-06T04:19:04.914Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/x03/README.md",
+      "docs/evidence/x03/browser-candidate-results.json",
+      "docs/evidence/x03/browser-candidate.log",
+      "docs/evidence/x03/browser-cleanup-failure.json",
+      "docs/evidence/x03/browser-cleanup-failure.log",
+      "docs/evidence/x03/browser-final.log",
+      "docs/evidence/x03/browser-first-green-results.json",
+      "docs/evidence/x03/browser-first-green.log",
+      "docs/evidence/x03/browser-focus-red-results.json",
+      "docs/evidence/x03/browser-focus-red.log",
+      "docs/evidence/x03/browser-full-first-results.json",
+      "docs/evidence/x03/browser-full-first.log",
+      "docs/evidence/x03/browser-progress.json",
+      "docs/evidence/x03/browser-red-results.json",
+      "docs/evidence/x03/browser-red.log",
+      "docs/evidence/x03/browser-results.json",
+      "docs/evidence/x03/checks.json",
+      "docs/evidence/x03/claim-receipt.json",
+      "docs/evidence/x03/cleanup-recovery.json",
+      "docs/evidence/x03/dependency-resolution.json",
+      "docs/evidence/x03/module-dark-390.png",
+      "docs/evidence/x03/module-light-390.png",
+      "docs/evidence/x03/module-light-desktop.png",
+      "docs/evidence/x03/quality.md",
+      "docs/evidence/x03/typecheck-initial.log",
+      "docs/evidence/x03/typecheck-result.json",
+      "docs/evidence/x03/typecheck.log",
+      "plans/x03-plugin-management-view/plan.md",
+      "plans/x03-plugin-management-view/review.md",
+      "plans/x03-plugin-management-view/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "current": true,
+  "assignments": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/plugin-management",
+        "apps/web/test/plugin-management",
+        "docs/evidence/x03",
+        "plans/x03-plugin-management-view"
+      ],
+      "state": "active",
+      "branch": "codex/plugin-management",
+      "origin": "new",
+      "taskId": "X03",
+      "worker": "b01_bounded_reads",
+      "claimId": "bae9bd94-fc7a-4094-8f5c-288706ffb668",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management",
+      "createdAt": "2026-10-06T04:01:49.804Z",
+      "updatedAt": "2026-10-06T04:01:49.804Z",
+      "observedAt": null,
+      "needsVerification": false,
+      "matchesSource": true
+    }
+  ],
+  "generatedAt": "2026-10-06T04:19:04.563Z",
+  "checks": {
+    "state": "passed",
+    "target": "895c8999d22fb3d911de2d46969e37b40051fdea",
+    "record": "PASSED 895c8999d22fb3d911de2d46969e37b40051fdea；12命名浏览器检查exit0、typecheck exit0，docs/evidence/x03/checks.json"
+  },
+  "updatedAt": "2026-10-06T04:18:37.000Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "6c9b09804e621e1b9e10fef04c022b38f73970a5",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T04:19:04.882Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  }
+}

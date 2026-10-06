@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-10-06T07:51:31.026Z",
+  "base": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "source": "current working tree, exact hashes below",
+  "sourceHashes": {
+    "src/conversation-context/selection.ts": "93f6f3519d7d5b4a2d2cf8e0bef26ad8e930c49e4993a8f0afa220080fd286a4",
+    "src/conversation-context/controller.ts": "0fcc377c41c780b4682cc8cb9aa2e57c5449ee65c5cedd9879f7fc5578073948",
+    "src/conversation-context/ContextPicker.tsx": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee",
+    "src/conversation-context/context-picker.css": "c81b7b60b5434d491b0a8ac3cad283682050ca56c27ba72055154d8df237bedf",
+    "test/conversation-context.test.ts": "c168ff053b5235b07b9264b98bcf924c7ca0c3937445db3d8b8411f895efc714",
+    "test/conversation-context.fixture.tsx": "09b935d98bb545d889068923d55a365c72be238a5e5a11ddae0ca62f1df50761",
+    "test/conversation-context.browser.ts": "9ed0ed62fac6630c641f8f718405905a65b4386a807f1dcef7e957ecb2112021"
+  },
+  "url": "http://127.0.0.1:60076",
+  "checks": [
+    "StrictMode initial 0 HTTP; native Space selects whole citation with zero resolve; hasMore never invents a page cursor/total",
+    "Enter/Space disclosure retains focus; first read 1, cached reopen 0, immutable text and draft preserved",
+    "Native hidden picker stops reads but permits local freeze; resume preserves disclosure/cache without a request",
+    "Explicit same-reference refresh observes newer version without pin replacement; new search retains selected old result and frozen request",
+    "HTTP failure retains prior selection/results; returned markup remains escaped literal text",
+    "390px light/dark native controls, reduced-motion and no horizontal overflow; body excluded from live result announcements",
+    "Capability false refuses nonempty freeze without dropping references or draft; enabling never auto-reads",
+    "In-flight HTTP body interrupted by offline cannot publish; same view explicit retry restores correct content without resume fetch",
+    "Project replacement disposes old requests and starts empty; subsequent public FlowClient requests and frozen refs use bound new project"
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "path": "/connection-1/api/projects/project-a/knowledge/search?q=notes&limit=20",
+      "method": "GET"
+    },
+    {
+      "path": "/connection-1/api/projects/project-a/knowledge/resolve",
+      "method": "POST"
+    },
+    {
+      "path": "/connection-1/api/projects/project-a/knowledge/resolve",
+      "method": "POST"
+    },
+    {
+      "path": "/connection-1/api/projects/project-a/knowledge/search?q=other&limit=20",
+      "method": "GET"
+    },
+    {
+      "path": "/connection-1/api/projects/project-a/knowledge/search?q=notes&limit=20",
+      "method": "GET"
+    },
+    {
+      "path": "/connection-1/api/projects/project-a/knowledge/search?q=notes&limit=20",
+      "method": "GET"
+    },
+    {
+      "path": "/connection-1/api/projects/project-a/knowledge/resolve",
+      "method": "POST"
+    },
+    {
+      "path": "/connection-2/api/projects/project-a/knowledge/search?q=notes&limit=20",
+      "method": "GET"
+    },
+    {
+      "path": "/connection-2/api/projects/project-a/knowledge/resolve",
+      "method": "POST"
+    },
+    {
+      "path": "/connection-2/api/projects/project-a/knowledge/resolve",
+      "method": "POST"
+    },
+    {
+      "path": "/connection-2/api/projects/project-a/knowledge/resolve",
+      "method": "POST"
+    },
+    {
+      "path": "/connection-2/api/projects/project-b/knowledge/search?q=notes&limit=20",
+      "method": "GET"
+    }
+  ],
+  "browser": "154.0.8037.98",
+  "scope": "independent module HTTP fixture, no Send/Queue/real center/model"
+}

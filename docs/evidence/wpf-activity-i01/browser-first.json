@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-06T07:02:45.387Z",
+  "sourceCommit": "4c18839c212bee19fa0d83d28b4e0f5fbab67be9",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "7bf7e58d9a44469588594a02336f4e8fb860df56a707dbf8e7b80d19d38b4226",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+    "apps/web/src/conversation-activity/native/NativeActivity.tsx": "5c7a59f5fddd23c63d12912293caec2d1153f149d6ccfe997709bd0c03eeb69a",
+    "apps/web/src/conversation-activity/native/projection.ts": "359069795b2acda06aa031dc3b6c6ba782d1af305d0906d557ff9fc4e027aadc",
+    "apps/web/src/conversation-activity/native/tool.tsx": "a30d60afd113f471bf594db5162758e5a64d9ef1185bb4ceece46d8a46db61ff",
+    "apps/web/src/conversations/ConversationThread.tsx": "5b25dbe1f12c7b7f4f4b2f18b2b285889720dafc8a3a99922ff3642a0e93208d",
+    "apps/web/src/plugin-integration/activity.tsx": "3334a4ea394d82b1ebe4354879df2c8f0e8f92788280b5c156bca49e846dc483",
+    "apps/web/src/plugin-integration/react.tsx": "6a04d7837f148d3a02872db86d7ba5da7a14a8898eb008411b8e626554c307c8",
+    "apps/web/src/plugin-integration/session.ts": "9d970453d047ce04b6c43798df7ea6dc0963a2d509457c3410df71d8d22afb7a",
+    "apps/web/src/plugins/types.ts": "4f8c093f916ea5a3a2b9608f171bad6c1bd5e1441b1d62eecd0a55708f5faeed",
+    "apps/web/src/plugins/validation.ts": "a489ca5a350f1427265bb929c15516c6094062c848377745737fb4e664efa9ed",
+    "apps/web/test/conversation-activity-integration.browser.ts": "a2e1375ada82f2451d3f3aa89be10f43809b29d209f1ce559be4640644da3081",
+    "apps/web/test/conversation-activity-integration.test.ts": "172a8a5f32d9a5a420a6b7a5c6945cdaa9d9a512c5777f5875233f582f4fc13c",
+    "apps/web/test/native-activity.test.ts": "e274c0fb72a54dd0283c539d9a7f63f616e9f5492ad4b38fc7f36cc497d4d6bc",
+    "apps/web/test/plugin-host.test.ts": "8192ae0a9228d91005d20e3600c8a1fc1ecb8743f2a558e46c13bc1d7d7e6523"
+  },
+  "production": false,
+  "url": "http://127.0.0.1:49334",
+  "checks": [
+    "pending/running user anchor is visible, initial and folded native/events/body reads are zero",
+    "Enter expands current native page only, actual Tool and Reasoning lazy bodies cache",
+    "TaskSummary update refreshes displayed metadata without body requests or automatic history drain",
+    "native hidden resume retains disclosure and draft with zero extra activity reads",
+    "split panes use local message context; generic source reads only on explicit selection",
+    "footer menu and button are real plugin actions; disable removes activity without cancelling"
+  ],
+  "errors": [],
+  "reads": [
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "ae12b0796d3b2f7367d11c7db7d4beae607592631427de840a556ae13bc90eb1"
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "475104f3b9a3ac7bfa3b3851adf98ddc3e35d7e36c4501b6215576e430b868dd"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": "35272889724106f470faf5fe5da3a00171e14b60a12e748559df846faf52a9a0"
+    },
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-1-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "events"
+    }
+  ],
+  "failure": "TimeoutError: locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /Switch to dark/ })\u001b[22m\n"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "X02",
+  "git": {
+    "available": true,
+    "branch": "codex/plugin-registry",
+    "head": "f9d6dd2a34db78d1818876088ebf9de153a1d3b7",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T03:49:08.314Z"
+  },
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T03:48:37.134Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-registry/plans/x02-plugin-registry/status.md",
+    "syncedAt": "2026-10-06T03:49:08.050Z",
+    "stale": false,
+    "ageHours": 0.002236111111111111
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee",
+    "proof": {
+      "target": "3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee",
+      "head": "f9d6dd2a34db78d1818876088ebf9de153a1d3b7",
+      "scopes": [
+        "packages/contracts/src/plugins.ts",
+        "apps/server/src/plugins",
+        "packages/storage/migrations/008-plugins.sql"
+      ],
+      "observedAt": "2026-10-06T03:49:08.551Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/x02/README.md",
+        "docs/evidence/x02/manifest.json",
+        "docs/evidence/x02/quality.md",
+        "plans/x02-plugin-registry/plan.md",
+        "plans/x02-plugin-registry/review.md",
+        "plans/x02-plugin-registry/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee",
+    "head": "f9d6dd2a34db78d1818876088ebf9de153a1d3b7",
+    "scopes": [
+      "packages/contracts/src/plugins.ts",
+      "apps/server/src/plugins",
+      "packages/storage/migrations/008-plugins.sql"
+    ],
+    "observedAt": "2026-10-06T03:49:08.330Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/x02/README.md",
+      "docs/evidence/x02/manifest.json",
+      "docs/evidence/x02/quality.md",
+      "plans/x02-plugin-registry/plan.md",
+      "plans/x02-plugin-registry/review.md",
+      "plans/x02-plugin-registry/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "generatedAt": "2026-10-06T03:49:08.050Z"
+}
