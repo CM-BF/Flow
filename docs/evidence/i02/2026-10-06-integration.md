@@ -122,3 +122,11 @@ SVC02部署a0a2证据已接收：真实中心/runner加载fb906cb，05:40:49 v3�
 真实排队新预算已关闭：固定Web3d、center/runner fb906；2 SDK query、保守归一化modelUsage和$0.012396，严格second-assistant nonce、专属Chrome退出后真实GET running和新浏览器正文均成立。GO实际读完整事实/目视照片并核最终12file manifest；证据 `../f01/queue-live/README.md`。不重复调用，不以此覆盖旧chat-live弱断言历史。
 
 main发布不刷新个人center/runner；其载入版本仍fb906。dashboard73源已在06:13实采登记，架构仍明确eb149固定snapshot；本批无架构变更重测，K02/O07/X04新结构留下一次有界架构更新。
+
+## 2026-10-06 06:30 UTC：原生活动生产读取与展示模块
+
+CHAT05产品57d+首次020旧库证据修复216由Mika独立APPROVED；F01公共接线9ea由GO独立只读批准；Web活动展示61b由Web Lead独立批准。合并后8组CHAT05scope与216零diff、六Web源/专测与61b零diff。公共5源与9ea固定一致；无手工源码冲突，无重复85或22模块测试。root/Web组合types均exit0，原始activity-typecheck.txt与activity-web-typecheck.txt保存。
+
+生产020在scheduler/default scan前、owner hook后routes；F01真实PG/HTTP测试1与薄transport1均通过，独立随机库正常创建删除；cancel后工具unknown、重启保留、轻列表不含输入/输出正文。0provider。展示仍是独立模块，未主App挂载/实时水位；CHAT05保留64KiB前缀与full digest，余文不可追回。CHAT06增量正文和X05持久下载操作已领独立范围，75源注册仅解析/路径校验，不重测架构。
+
+full-plan-matrix已按main115b对齐REQ01/08/10/11/15/19/21/22及滚动队列，仍保留知识选择UI、KB向量、真正native规划、完整npm/工程harness/FS/PTY/100会话未完。实际个人center/runner仍fb906，本批不重启它们。

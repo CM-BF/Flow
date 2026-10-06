@@ -12,7 +12,8 @@
 | 工作分支状态 | completed（独立复审通过；待生产集成） |
 | 检查状态 | PASSED 216333f257f2be147d40b44e56e727167ea116b2：新增旧库首次升级1/1+tsc；原85/85保持57d28e9证据未重跑；diffcheck通过 |
 | 已集成main状态 / HEAD | 未集成；base 为 3d4985fca060155435b159e0467815bf8e88b8b8 |
-| 实现目标 | 216333f257f2be147d40b44e56e727167ea116b2；产品实现仍57d28e9104e9041dbd04a66295294308da94a23d |
+| 实现目标 | 216333f257f2be147d40b44e56e727167ea116b2 |
+| 产品实现 | 57d28e9104e9041dbd04a66295294308da94a23d；复审目标另含首次升级证据修正 |
 | 实现范围 | packages/contracts/src/native-activity.ts,packages/contracts/src/tasks.ts,packages/contracts/src/runner.ts,apps/runner/src/native-activity,apps/runner/src/claude.ts,apps/server/src/native-activity,apps/server/src/events.ts,packages/storage/migrations/020-native-activity.sql |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
