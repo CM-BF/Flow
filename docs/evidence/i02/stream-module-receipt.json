@@ -38,5 +38,11 @@
   "limits": [
     "module only; no App/HTTP/browser/provider claim",
     "existing Web independent 54 checks reused"
-  ]
+  ],
+  "checks": {
+    "webTypecheckExit": 0,
+    "raw": "docs/evidence/i02/stream-module-integration-typecheck.txt",
+    "additionalBehaviorTests": 0,
+    "providerQueries": 0
+  }
 }
