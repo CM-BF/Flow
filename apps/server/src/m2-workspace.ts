@@ -1,3 +1,4 @@
+import { legacyTimelineEntries } from './assistant-stream-compatibility/index.js';
 import type { FastifyInstance } from 'fastify';
 import type { Pool, PoolClient } from 'pg';
 import { WORKSPACE_ID, type TimelineEntry, type WorkspaceEntry, type WorkspacePage, type WorkspaceQuery, type WorkspaceTask } from '@flow/contracts';
@@ -72,13 +73,13 @@ export async function workspacePage(pool: Pool, query: WorkspaceQuery): Promise<
       WHERE ordinal ${forward ? '>' : '<'} $1 ORDER BY ordinal ${forward ? 'ASC' : 'DESC'} LIMIT $2`,
     [forward ? query.after : query.before ?? watermark + 1, query.limit ?? 40])).rows;
     if (!forward) rows.reverse();
-    const entries: WorkspaceEntry[] = rows.map(row => ({ id: `workspace-${row.ordinal}`, cursor: Number(row.ordinal), task: { id: row.task_id, title: row.task_title }, entry: row.entry }));
-    const nextCursor = entries.at(-1)?.cursor ?? query.after ?? watermark;
-    const previousCursor = entries[0]?.cursor ?? query.before ?? 0;
+    const rawEntries: WorkspaceEntry[] = rows.map(row => ({ id: `workspace-${row.ordinal}`, cursor: Number(row.ordinal), task: { id: row.task_id, title: row.task_title }, entry: row.entry }));
+    const nextCursor = rawEntries.at(-1)?.cursor ?? query.after ?? watermark;
+    const previousCursor = rawEntries[0]?.cursor ?? query.before ?? 0;
     const hasEarlier = previousCursor > 0 && Boolean((await client.query('SELECT 1 FROM flow.workspace_feed WHERE ordinal<$1 LIMIT 1', [previousCursor])).rowCount);
     const tasks = await readWorkspaceTasks(client, false);
     const attention = await readWorkspaceTasks(client, true);
-    return { workspaceId: WORKSPACE_ID, entries, nextCursor, previousCursor, watermark,
+    return { workspaceId: WORKSPACE_ID, entries: legacyTimelineEntries(rawEntries, item => item.entry), nextCursor, previousCursor, watermark,
       hasMore: nextCursor < watermark, hasEarlier, projectionPending,
       tasks: tasks.slice(0, 100), tasksTruncated: tasks.length > 100,
       attention: attention.slice(0, 100), attentionTruncated: attention.length > 100 };

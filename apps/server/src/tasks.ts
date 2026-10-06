@@ -1,3 +1,4 @@
+import { legacyTimelineEntries } from './assistant-stream-compatibility/index.js';
 import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
@@ -64,7 +65,7 @@ export async function snapshot(pool: Pool, id: string): Promise<TaskSnapshot> {
     const task = await loadTask(client, id);
     const result = await client.query<{ entry: TimelineEntry }>('SELECT entry FROM flow.timeline WHERE task_id=$1 ORDER BY cursor DESC LIMIT 100', [id]);
     const attempt = task.current_attempt_id ? (await client.query<AttemptRecord>('SELECT * FROM flow.attempts WHERE id=$1', [task.current_attempt_id])).rows[0] : undefined;
-    return { ...summary(task), prompt: task.submission.prompt, entries: result.rows.map(row => row.entry).reverse(), watermark: task.cursor,
+    return { ...summary(task), prompt: task.submission.prompt, entries: legacyTimelineEntries(result.rows.map(row => row.entry).reverse(), entry => entry), watermark: task.cursor,
       hasMore: task.cursor > result.rows.length, pendingDecision: task.pending_decision, attempt: attempt ? attemptView(attempt) : null, usage: task.usage };
   }, true);
 }

@@ -168,3 +168,18 @@ GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resett
 真实production factory/PG/loopback+CLI 3项与配置纯模块2项共5/5、2.80s，typecheck独立exit0。固定随机库before[]/createdtrue/connections[]/remaining[]；下载成功重启幂等且tarball1GET，取消下载/重启/local reconcile仍1GET。验证压缩bytes不等install/load，runtimeStatus仍unavailable。未触个人服务/真实npm/模型。
 
 本段clean-code复核：声明配置深模块只读文件，业务策略复用已有host，worker生命周期收在server入口，CLI不复制状态机；无新依赖。保留X05协作取消与FS清理非硬时限、SIGKILLstaging无GC边界。manifest见package-fetch-production-manifest.json，待独立只读review。
+
+
+## 2026-10-06 06:56 UTC assistant stream client
+
+Fixed 88a869efd782afd5f64f5d7adad0a9167da121c1: three task-bound read methods and explicit patch-v1 opt-in only for conversation GET; creation body/header/idempotency remain stable. Four source files include public exports/optional capability documentation. Real HTTP 1/1 (34ms; suite384ms), independent noEmit exit0; no PG/provider. Errors and AbortSignal unchanged, no hidden retries. First run green, no red invented. Manifest binds fixed sources and two raw logs. Clean-code: preserve thin transport and server cursor/ownership semantics; no presentation settlement duplicated into client.
+
+X05 production3691d1b: Mika independent read-only APPROVED, six source/three raw hashes checked, five distinct checks and noEmit, no P1/P2; GO accepted. No independent rerun. This approval excludes installation/loading and personal service refresh.
+
+
+## 2026-10-06 07:02 UTC assistant stream production
+Fixed da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2: two files only. 022 awaits before worker/scheduler/scan; task-bound routes before owner GET conversation registration option. Actual production factory (no self-mounted routes/migration/scan disable) 2red due missing migration/routes →2green2.40s; independent noEmit exit0. Stable false create/replay, old/unknown false and negotiated GET true with no turn, no-store variants, actual runner report→UTF8 patch/list/body→repeat ACK→restart→next ordinary cursor and auth are covered. Random database before[]/createdtrue/connections[]/remaining[] both runs. No SDK/provider query or personal service action.
+Clean-code: startup/export seams only; no settlement/authorization duplication. Capability means connection readability, never provider delta availability. C02 module startup fixture must adapt to production now mounting022; that test-only maintenance is with original owner. New Web activity reader cursor assumption requires C03 before main. Existing TaskProjection/WorkspaceFeed accept raw scan cursor. Approved thin client88 by Root, C02 compatibility77 by independent assignment_review; production delta independent review pending.
+
+
+07:05 UTC C02 startup fixture integration: original owner test-only5f4fe454 adapts the explicit disabled helper and temporary missing table observation to production now mounting022. Final combined 694c3fdbd6ef4affa66140f13a039156f27023e0, actual8/8 2.88s and noEmit0 after S01 timing window. All header/ACK/cursor checks retained. Root/domain first022 upgrade evidence is separate; temporary table rename is deliberately a readiness-failure input. No other old CHAT06 tests or model calls rerun. Manifest assistant-stream-compatibility-manifest.json.

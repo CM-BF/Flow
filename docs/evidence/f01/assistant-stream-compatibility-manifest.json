@@ -1,0 +1,37 @@
+{
+  "target": "694c3fdbd6ef4affa66140f13a039156f27023e0",
+  "testTarget": "5f4fe454881a792823504db242f4d948e5b7180b",
+  "productionTarget": "da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2",
+  "recordedAt": "2026-10-06T07:05:20.906898+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/compatibility.test.ts",
+      "bytes": 13154,
+      "sha256": "9ddb5422e9e27cded31fc25a51925a25cbb52015f71ef3afd721a0fb0964ebed"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12233,
+      "sha256": "b65dc11d3296e060d11243580e1e36217f6502ed260842b370a967777ea1cc43"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/assistant-stream-compatibility-combined.txt",
+      "bytes": 460,
+      "sha256": "d51c236585772586c863418d22b2af1f166b06d8e0b393f46c5d76d98402f9c7"
+    },
+    {
+      "path": "docs/evidence/f01/assistant-stream-compatibility-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "selected": 8,
+    "passed": 8,
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "fixture": "Independent random DB; normal DROP in finally. Missing table is controlled rename/finally restore, not first migration evidence."
+}

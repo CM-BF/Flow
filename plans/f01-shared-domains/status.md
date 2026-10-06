@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:52:03 UTC / 2026-10-06 06:48 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:03 UTC / 2026-10-06 07:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main acfd409a493315a00f1cc19ac96c5f1b36c19e57；当前K03薄client 77465eb59121bad5ac2785036961f1707911d21b |
+| 工作基线 / HEAD | main ba908a2d84a05b336d74fbaccd7a36d3d254c501；本轮生产流式读取 da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2 |
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支已独审待集成；K03薄client与021生产delta已独审待集成。实际center/runner仍fb906cb |
-| Review | NOT_STARTED X05生产3691d1b；此前021生产44bd与薄client已独审且main86a36接收 |
-| 实现目标 | 3691d1b3dffa5eb33546ff3b84f45fa88401a9d5 |
-| 实现范围 | apps/server/src/index.ts, apps/server/src/main.ts, apps/server/src/package-fetch-configuration.ts, apps/server/src/package-fetch-configuration.test.ts, apps/cli/src/index.ts, packages/client/src/package-fetch-production.test.ts |
+| 检查状态 | PASSED；生产2红→2绿/独立types，原始日志及随机库清理事实保存；未重新跑旧领域 |
+| 已集成main状态 / HEAD | ba908a2d84a05b336d74fbaccd7a36d3d254c501 已推送，K03/021与X05可选下载入口已交付。流式领域/兼容/公共入口已分别独审，等待消费者组合；实际center/runner仍fb906cb。 |
+| Review | APPROVED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2；独立assignment_review只读，兼容消费者发布门另列 |
+| 实现目标 | da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2 |
+| 实现范围 | apps/server/src/index.ts, packages/client/src/assistant-stream-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
-| 下一可用交付 | 为目标子任务读取固定版本的知识引用；接入可核对恢复的包下载 |
-| 当前阻塞 | NONE |
+| 当前产出 | 逐段回复读取入口完成审查；正在确认新旧活动列表都能跨过暂不显示的记录。 |
+| 下一可用交付 | 交付正文流式读取和兼容活动分页，供聊天页面接入。 |
+| 当前阻塞 | ACTIVE；等待原有模块测试适配和网页活动列表分页兼容交付，owner已明确并行。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -92,3 +92,5 @@
 2026-10-06 06:46 UTC：Root已独立批准021生产44bd；知识引用固定版本、来源更新后的新鲜度与恢复任务读取已具备可集成证据。4不同局部检查分轮通过，未重跑。新增流式协议协商属下片，旧页面兼容未验前不会随本批启用。
 
 2026-10-06 06:52 UTC：知识固定引用片段已main86a36。可恢复包下载已接生产factory/可信配置与CLI，5项局部通过、领域零diff，待独立review；个人服务保持fb906，未启用包下载。流式兼容C02另独立工作线，发布门槛仍有效。
+
+| F01-20 | in-progress | Lead | 流式三读取方法与显式协议协商；1/1 HTTP+tsc，待独审/生产挂载 |
