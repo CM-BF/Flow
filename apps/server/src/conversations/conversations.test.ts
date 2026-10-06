@@ -9,6 +9,7 @@ import { PgBoss } from 'pg-boss';
 import { afterAll, beforeAll, expect, it } from 'vitest';
 import type { ClaimedTask, RunnerEventData } from '@flow/contracts';
 import { createServer } from '../index.js';
+import { migrateAssistantMessages, registerAssistantRoutes } from '../assistant/index.js';
 import { migrateConversations, registerConversationRoutes } from './index.js';
 
 type QueryMessage = ReturnType<ClaudeQuery> extends AsyncIterable<infer Message> ? Message : never;
@@ -32,6 +33,9 @@ async function request(path: string, body?: unknown, options: { key?: string; to
 }
 async function startServer() {
   server = await createServer({ databaseUrl, ownerToken, leaseMs: 3000 });
+  if (!server.hasRoute({ method: 'GET', url: '/api/assistant-messages/:id' })) {
+    await migrateAssistantMessages(pool); registerAssistantRoutes(server, pool);
+  }
   if (!server.hasRoute({ method: 'POST', url: '/api/conversations' })) {
     await migrateConversations(pool);
     boss = new PgBoss({ connectionString: databaseUrl }); await boss.start();
@@ -255,8 +259,8 @@ it('maps the actual Claude adapter final-result path through the runner using on
   try {
     await expect.poll(async () => (await request(`/api/tasks/${turn.task.id}`)).body.status).toBe('succeeded');
     let snapshot = (await request(`/api/conversations/${conversation.id}`)).body;
-    expect(snapshot.lastTurn.assistant).toMatchObject({ state: 'available', text: 'Injected final 1', source: { kind: 'adapter-final-artifact' } });
-    expect(snapshot.lastTurn.effective.model).toBe('injected-model');
+    expect(snapshot.lastTurn.assistant).toMatchObject({ state: 'available', text: 'Injected final 1', source: { kind: 'assistant-final', source: 'claude.sdk.result' } });
+    expect(snapshot.lastTurn.effective).toMatchObject({ model: 'injected-model', thinking: 'unknown', tools: [], permissionMode: null, runnerRequested: { model: 'sonnet', thinking: 'disabled' }, source: { kind: 'assistant-final' } });
     const followup = await request(`/api/conversations/${conversation.id}/turns`, { expectedRevision: 1, text: 'a normal follow-up' });
     expect(followup.status).toBe(202);
     await expect.poll(async () => (await request(`/api/tasks/${followup.body.turn.task.id}`)).body.status).toBe('succeeded');
@@ -299,4 +303,156 @@ it('leaves the effective model unknown when the session did not record one', asy
   const turn = (await request(`/api/conversations/${conversation.id}`)).body.lastTurn;
   expect(turn.assistant.state).toBe('available');
   expect(turn.effective).toMatchObject({ model: null, thinking: 'disabled', tools: 'configured-readonly', source: { kind: 'recorded-adapter-session' } });
+});
+
+
+function typedFinal(sessionId: string, content = 'Typed assistant text'): RunnerEventData {
+  const sourceMessageId = randomUUID();
+  return { type: 'assistant-final', messageId: digest(JSON.stringify([sessionId, sourceMessageId])), nativeSessionId: sessionId,
+    source: 'claude.sdk.result', sourceMessageId, content,
+    settings: { requested: { model: 'requested-runner-model', permissionMode: 'dontAsk', thinking: 'disabled' },
+      effective: { model: 'reported-effective-model', permissionMode: 'default', tools: ['Read', 'ActualToolName'], thinking: 'unknown' } } };
+}
+function typedEvents(sessionId: string, content = 'Typed assistant text'): RunnerEventData[] {
+  const events = finalEvents(sessionId, 'Artifact evidence, not the assistant source');
+  events[0] = { type: 'session', nativeSessionId: sessionId, adapterVersion: 'claude-sdk-0.3.290-v2', resources: ['model:do-not-infer-from-legacy-resource'] };
+  events.splice(events.length - 1, 0, typedFinal(sessionId, content));
+  return events;
+}
+it('prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking', async () => {
+  const { conversation, turn } = await newTurn();
+  const runner = await newRunner();
+  const assignment = await claim(runner.token);
+  const sessionId = randomUUID();
+  const events = typedEvents(sessionId);
+  expect((await report(runner.token, assignment, events)).status).toBe(200);
+  const snapshot = (await request(`/api/conversations/${conversation.id}`)).body;
+  expect(snapshot.conversation.revision).toBe(1);
+  expect(snapshot.conversation.requested.model).toBe('runner-default');
+  expect(snapshot.lastTurn.task.updatedAt).toEqual(expect.any(String));
+  expect(snapshot.lastTurn.assistant).toMatchObject({ state: 'available', text: 'Typed assistant text', source: { kind: 'assistant-final', source: 'claude.sdk.result', taskId: turn.task.id, attemptId: assignment.attempt.id, nativeSessionId: sessionId, contentDigest: digest('Typed assistant text') } });
+  expect(snapshot.lastTurn.effective).toMatchObject({ model: 'reported-effective-model', permissionMode: 'default', thinking: 'unknown', tools: ['Read', 'ActualToolName'], runnerRequested: { model: 'requested-runner-model', thinking: 'disabled' }, source: { kind: 'assistant-final' } });
+  const ref = snapshot.lastTurn.assistant.contentRef;
+  expect(ref.kind).toBe('detail');
+  expect((await request(`/api/conversations/${conversation.id}/turns/${turn.id}/details/${ref.id}`)).body.content).toBe('Typed assistant text');
+});
+
+it('never falls back to a v1 artifact when a v2 attempt lacks its typed final', async () => {
+  const { conversation } = await newTurn();
+  const runner = await newRunner();
+  const assignment = await claim(runner.token);
+  const events = typedEvents(randomUUID()).filter(event => event.type !== 'assistant-final');
+  expect((await report(runner.token, assignment, events)).status).toBe(200);
+  const turn = (await request(`/api/conversations/${conversation.id}`)).body.lastTurn;
+  expect(turn.assistant).toEqual({ state: 'unavailable', reason: 'missing-result' });
+  expect(turn.effective).toEqual({ model: null, thinking: 'unknown', tools: 'unknown', source: null });
+});
+
+it('keeps a typed final pending until task success and deduplicates it through restart and replay', async () => {
+  const { conversation, turn } = await newTurn();
+  const runner = await newRunner();
+  const assignment = await claim(runner.token);
+  const events = typedEvents(randomUUID());
+  const batch = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion,
+    events: events.map((event, index) => ({ ...event, sequence: index + 1, id: randomUUID() })) };
+  expect((await request('/api/runner/events', { ...batch, events: batch.events.slice(0, -1) }, { token: runner.token })).status).toBe(200);
+  const pending = (await request(`/api/conversations/${conversation.id}`)).body;
+  expect(pending.lastTurn.assistant).toEqual({ state: 'pending', reason: 'execution-pending' });
+  expect((await request('/api/runner/events', { ...batch, events: batch.events.slice(-1) }, { token: runner.token })).status).toBe(200);
+  const completed = (await request(`/api/conversations/${conversation.id}`)).body;
+  expect(completed.conversation.revision).toBe(pending.conversation.revision);
+  expect(completed.lastTurn.task.status).toBe('succeeded');
+  expect(completed.lastTurn.assistant.source.contentDigest).toBe(digest('Typed assistant text'));
+  await stopServer(); await startServer();
+  expect((await request('/api/runner/events', batch, { token: runner.token })).body).toEqual({ accepted: 0, lastSequence: batch.events.length });
+  expect((await request(`/api/conversations/${conversation.id}`)).body).toEqual(completed);
+  expect((await request(`/api/tasks/${turn.task.id}/assistant-messages`)).body.messages).toHaveLength(1);
+  const changed = { ...batch.events[batch.events.length - 2], content: 'changed' };
+  expect((await request('/api/runner/events', { ...batch, events: [changed] }, { token: runner.token })).status).toBe(409);
+});
+
+it('rejects foreign task/session/fence reports and confines each typed lazy reference to its bound turn', async () => {
+  const a = await newTurn();
+  const runnerA = await newRunner();
+  const assignmentA = await claim(runnerA.token);
+  const b = await newTurn();
+  const runnerB = await newRunner();
+  const assignmentB = await claim(runnerB.token);
+  const sessionA = randomUUID();
+  const eventsA = typedEvents(sessionA, 'Only conversation A');
+  expect((await report(runnerB.token, assignmentA, eventsA)).status).toBe(403);
+  expect((await report(runnerA.token, { ...assignmentA, attempt: { ...assignmentA.attempt, ownerVersion: assignmentA.attempt.ownerVersion + 1 } }, eventsA)).status).toBe(409);
+  const wrongSession = eventsA.map(event => event.type === 'assistant-final' ? typedFinal(randomUUID(), 'wrong session') : event);
+  expect((await report(runnerA.token, assignmentA, wrongSession)).status).toBe(409);
+  expect((await request(`/api/tasks/${a.turn.task.id}/assistant-messages`)).body.messages).toEqual([]);
+  expect((await report(runnerA.token, assignmentA, eventsA)).status).toBe(200);
+  expect((await report(runnerB.token, assignmentB, typedEvents(randomUUID(), 'Only conversation B'))).status).toBe(200);
+  const snapshotA = (await request(`/api/conversations/${a.conversation.id}`)).body;
+  const snapshotB = (await request(`/api/conversations/${b.conversation.id}`)).body;
+  expect(snapshotA.lastTurn.assistant.text).toBe('Only conversation A');
+  expect(snapshotB.lastTurn.assistant.text).toBe('Only conversation B');
+  expect((await request(`/api/conversations/${b.conversation.id}/turns/${b.turn.id}/details/${snapshotA.lastTurn.assistant.contentRef.id}`)).status).toBe(404);
+});
+
+it('does not reuse an old typed final after the current attempt binding changes', async () => {
+  const { conversation, turn } = await newTurn();
+  const runner = await newRunner();
+  const assignment = await claim(runner.token);
+  const sessionId = randomUUID();
+  expect((await report(runner.token, assignment, typedEvents(sessionId))).status).toBe(200);
+  const replacement = randomUUID();
+  // Imported-history fence fixture, as in the legacy-attempt test; no production revive command is added.
+  await pool.query(`INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,native_session_id,lease_expires_at,completed_at)
+    VALUES($1,$2,$3,$4,$5,clock_timestamp(),clock_timestamp())`, [replacement, turn.task.id, runner.runnerId, assignment.attempt.ownerVersion + 1, sessionId]);
+  await pool.query('UPDATE flow.tasks SET current_attempt_id=$2,owner_version=owner_version+1 WHERE id=$1', [turn.task.id, replacement]);
+  const sessionDetail = { id: randomUUID(), sequence: 1, type: 'session', nativeSessionId: sessionId, adapterVersion: 'claude-sdk-0.3.290-v2' };
+  await pool.query(`INSERT INTO flow.details(id,task_id,attempt_id,title,kind,content,media_type) VALUES($1,$2,$3,'Imported session','session',$4,'application/json')`, [randomUUID(), turn.task.id, replacement, JSON.stringify(sessionDetail)]);
+  expect((await request(`/api/conversations/${conversation.id}`)).body.lastTurn.assistant).toEqual({ state: 'unavailable', reason: 'missing-result' });
+});
+
+it('does not expose a reply when the actual adapter receives a non-success SDK result', async () => {
+  const { conversation, turn } = await newTurn();
+  const runner = await newRunner();
+  const workingDirectory = await mkdtemp(join(tmpdir(), 'flow-chat01-failure-'));
+  const controller = new AbortController();
+  const query: ClaudeQuery = () => Object.assign((async function* () {
+    yield { type: 'result', subtype: 'error_during_execution', is_error: true, uuid: randomUUID(), session_id: randomUUID(), errors: ['Synthetic failure'], result: 'must not become a reply', modelUsage: {}, permission_denials: [] } as unknown as QueryMessage;
+  })(), { close() {} });
+  const running = runRunner({ baseUrl, token: runner.token, workingDirectory, signal: controller.signal, pollIntervalMs: 25, heartbeatIntervalMs: 100,
+    adapters: [createClaudeAdapter({ materialFiles: [], query, timeoutMs: 2000 })] });
+  try {
+    await expect.poll(async () => (await request(`/api/tasks/${turn.task.id}`)).body.status).toBe('failed');
+    expect((await request(`/api/conversations/${conversation.id}`)).body.lastTurn.assistant).toEqual({ state: 'unavailable', reason: 'execution-not-succeeded' });
+    expect((await request(`/api/tasks/${turn.task.id}/assistant-messages`)).body.messages).toEqual([]);
+  } finally { controller.abort(); await running; await rm(workingDirectory, { recursive: true, force: true }); }
+});
+
+it('keeps a corrupted typed body unavailable without falling back to its intact artifact', async () => {
+  const { conversation } = await newTurn();
+  const runner = await newRunner();
+  const assignment = await claim(runner.token);
+  expect((await report(runner.token, assignment, typedEvents(randomUUID()))).status).toBe(200);
+  const before = (await request(`/api/conversations/${conversation.id}`)).body.lastTurn.assistant;
+  await pool.query('UPDATE flow.details SET content=$2 WHERE id=$1', [before.contentRef.id, 'Corrupted imported detail']);
+  const after = await request(`/api/conversations/${conversation.id}`);
+  expect(after.status).toBe(200);
+  expect(after.body.lastTurn.assistant).toEqual({ state: 'unavailable', reason: 'invalid-result' });
+});
+
+
+it('preserves null effective facts and exposes long typed content through its exact detail', async () => {
+  const { conversation, turn } = await newTurn();
+  const runner = await newRunner();
+  const assignment = await claim(runner.token);
+  const content = 'x' + '中文🙂'.repeat(1800);
+  const events = typedEvents(randomUUID(), content).map(event => event.type === 'assistant-final'
+    ? { ...event, settings: { ...event.settings, effective: { model: null, permissionMode: null, tools: null, thinking: 'unknown' as const } } } : event);
+  expect((await report(runner.token, assignment, events)).status).toBe(200);
+  const view = (await request(`/api/conversations/${conversation.id}`)).body.lastTurn;
+  expect(view.effective).toMatchObject({ model: null, permissionMode: null, tools: null, thinking: 'unknown', runnerRequested: { model: 'requested-runner-model' } });
+  expect(view.assistant.truncated).toBe(true);
+  expect(view.assistant.text.length).toBeLessThanOrEqual(4000);
+  expect(/[\uD800-\uDBFF]$/.test(view.assistant.text)).toBe(false);
+  expect(view.assistant.source.contentDigest).toBe(digest(content));
+  expect((await request(`/api/conversations/${conversation.id}/turns/${turn.id}/details/${view.assistant.contentRef.id}`)).body.content).toBe(content);
 });

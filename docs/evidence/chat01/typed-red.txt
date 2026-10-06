@@ -1,0 +1,77 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center
+
+ ❯ apps/server/src/conversations/conversations.test.ts (16 tests | 2 failed | 14 skipped) 1661ms
+   ↓ persists a conversation and ordinary user turn atomically without goal orchestration
+   ↓ projects only the exact final result and follows up on the same native session and runner
+   ↓ pages immutable turns and returns long assistant content only through an owned lazy detail
+   ↓ enforces owner identity, idempotency and one atomic winner for concurrent revision proposals
+   ↓ rejects unsupported queue, steer and requested controls without admitting a task
+   ↓ rejects follow-up while queued, running, waiting, cancelling or uncertain without duplicating work
+   ↓ keeps unknown-adapter unavailable instead of guessing from telemetry or a title
+   ↓ keeps missing-session unavailable instead of guessing from telemetry or a title
+   ↓ keeps missing-result unavailable instead of guessing from telemetry or a title
+   ↓ keeps ambiguous-result unavailable instead of guessing from telemetry or a title
+   ↓ keeps invalid-result unavailable instead of guessing from telemetry or a title
+   ↓ maps the actual Claude adapter final-result path through the runner using only an injected SDK
+   ↓ never promotes retained artifacts belonging to a superseded attempt
+   ↓ leaves the effective model unknown when the session did not record one
+   × prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking 574ms
+   × never falls back to a v1 artifact when a v2 attempt lacks its typed final 434ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/conversations/conversations.test.ts > prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking
+AssertionError: expected { state: 'unavailable', …(1) } to match object { state: 'available', …(2) }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "source": {
+-     "attemptId": "36d3ffb5-77d6-4f8b-9c68-7213ae749ce7",
+-     "contentDigest": "cc863c273bdcd3895e65b4c85480df71a5ee47d358c5b2a8d4212e80ac5212e2",
+-     "kind": "assistant-final",
+-     "nativeSessionId": "c781ae4f-54a2-4ee6-b730-55a20326f8e8",
+-     "source": "claude.sdk.result",
+-     "taskId": "47000fbf-cb34-4be7-8341-e0567ca5707a",
+-   },
+-   "state": "available",
+-   "text": "Typed assistant text",
++   "state": "unavailable",
+  }
+
+ ❯ apps/server/src/conversations/conversations.test.ts:333:39
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/conversations/conversations.test.ts > never falls back to a v1 artifact when a v2 attempt lacks its typed final
+AssertionError: expected { state: 'unavailable', …(1) } to deeply equal { state: 'unavailable', …(1) }
+
+- Expected
++ Received
+
+  {
+-   "reason": "missing-result",
++   "reason": "unknown-adapter",
+    "state": "unavailable",
+  }
+
+ ❯ apps/server/src/conversations/conversations.test.ts:347:26
+    345|   expect((await report(runner.token, assignment, events)).status).toBe…
+    346|   const turn = (await request(`/api/conversations/${conversation.id}`)…
+    347|   expect(turn.assistant).toEqual({ state: 'unavailable', reason: 'miss…
+       |                          ^
+    348|   expect(turn.effective).toEqual({ model: null, thinking: 'unknown', t…
+    349| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 14 skipped (16)
+   Start at  20:43:59
+   Duration  2.25s (transform 210ms, setup 0ms, import 470ms, tests 1.66s, environment 0ms)
+

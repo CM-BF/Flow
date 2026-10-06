@@ -5,3 +5,8 @@
 只读审查本任务plan/status、公共conversations合同、server/conversations模块、migration007、实际PG/HTTP证据。核对唯一worktree/branch/head/dirty，验收durable admission/CAS/幂等/顺序/重启、same-runner session affinity、未知副作用不继续、回复来自已绑定当前attempt的精确adapter唯一最终artifact、不以telemetry/标题造assistant。配置requested不静默忽略，unknown有效配置不猜；queue/steer拒绝；typed refs只能读所属turn/task。模型全为seam注入，不能升级成真实自然语言证据。提出severity/定位/复现与阻塞性，修复交owner，不写产品或本树。
 
 作者验证与限制见[证据](../../docs/evidence/chat01/README.md)；首片段无blocking；后继typed融合target须另行独立复审。
+
+
+Typed消费delta独立review：NOT_STARTED，最终target待本次实现commit固定。已审首片段2d3bb61不自动批准本delta。范围仅conversations.ts、server/conversations消费及自身证据；输入CHAT02固定2e10985的独立审查由Execution Lead负责，不能以本任务记录冒充该模块批准。
+
+复审重点：旧v1仍有明确兼容来源；v2typed优先且缺失/内容损坏/旧attempt不回退artifact；真实绑定task/attempt/nativeSession与完整settings；effective thinking unknown/null不被用户或runner requested覆盖；task未success/verification未passed无正文；重报和重启稳定message identity；revision仅CAS、异步正文有task.updatedAt/contentDigest；22条PG/HTTP均0模型，生产/Web/真实模型未验。

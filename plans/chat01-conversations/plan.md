@@ -1,6 +1,6 @@
 # CHAT01 持久对话中心首片段
 
-状态：in-progress（首中心片段APPROVED；typed final消费delta）；创建2026-10-06。Owner runner_owner / gpt-6-astra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center`，branch `codex/conversation-center`，base6bb380b900f17bfbf808a95e7d9c0313c4991922。
+状态：completed（typed消费delta交付，待独立复审）；创建2026-10-06。Owner runner_owner / gpt-6-astra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center`，branch `codex/conversation-center`，base6bb380b900f17bfbf808a95e7d9c0313c4991922。
 
 目标：普通聊天直接进入持久conversation/有序turn→独立durable task，不等待O01 goal编排。conversation ID与native session ID分开；复用acceptTask事务和已有runner session affinity/互斥/fencing。首片段仅已完成上一轮之后的follow-up，忙/uncertain409；queue/steer明确unsupported，不能偷换为内存队列/取消。
 
@@ -19,4 +19,6 @@
 
 唯一status见[status](status.md)，独立review默认[NOT_STARTED](review.md)。写scope严格按claim；[架构](../../docs/architecture/chat01-conversations.md)与[证据](../../docs/evidence/chat01/README.md)。
 
-- [ ] **CHAT01-05** 完整合入已固定CHAT02依赖并消费typed助手最终消息；v2缺失不回退v1、实际effective不被旧推断覆盖，局部0模型PG/HTTP绑定/重报/重启验收，独立固定delta target。
+- [x] **CHAT01-05** 完整合入已固定CHAT02依赖并消费typed助手最终消息；v2缺失不回退v1、实际effective不被旧推断覆盖，局部0模型PG/HTTP绑定/重报/重启验收，独立固定delta target。
+
+本轮typed消费优先readAssistantFinal，绑定task/currentAttempt/nativeSession，v2缺失或损坏不回退artifact。会话用户requested、runnerRequested与实际effective分开；actual thinking unknown保持原样，init报告的tools不等同工具授权范围。页查询仍有N+1读取与完整正文hash成本，后继按实际负载做批量查询/轻引用优化，本段不扩broker/容量目标。
