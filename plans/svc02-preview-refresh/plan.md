@@ -43,3 +43,5 @@
 2026-10-06 07:27 UTC：复用原任务和已审工具，新owner受控ff原树至253b8ad38fd869297e7d9948a26c1d310fef5c6c。原实现completed不变，新增三条操作TODO；当前只读准备，不用旧窗口授权，不实施child任务或模型试验。
 
 2026-10-06 07:33 UTC：准备交付，固定b54、工具对9aa零diff，0服务操作/0query。现态与限制见[新方案](../../docs/evidence/svc02/refresh-b54-proposal.md)。SVC02-06/07仍pending，原四项已交付不改成未实现。
+
+2026-10-06 07:37 UTC：新窗口SVC02-b54-0736已由GO批准且QUIET_RELEASE条件满足；执行前实际main runtime依赖缺失，按原方案排空前停止。新安装由Lead单写协调，本owner不绕过固定依赖。
