@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-06T12:21:23.372238+00:00",
-  "main": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "recordedAt": "2026-10-06T12:22:57.124445+00:00",
+  "main": "7cbda706632c85fc5da12a371b282419c933ab9a",
   "sourceSampleAt": "2026-10-06T12:15:08.415Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [
@@ -14,9 +14,10 @@
     {
       "taskId": "WPF-MATURE-04",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md",
-      "classification": "approved-fixed-source-applied-publishing",
+      "classification": "already-main-awaiting-owner-close",
       "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
-      "evidence": "context-producer-integration.json"
+      "evidence": "context-producer-integration.json",
+      "main": "7cbda706632c85fc5da12a371b282419c933ab9a"
     }
   ],
   "mainButNotUserSurface": [
@@ -37,8 +38,8 @@
     },
     {
       "taskId": "WPF-MATURE-04",
-      "next": "New native summary producer still independent review; history read UI consumer independent",
-      "note": "027 public history already main; current/cut not implied"
+      "next": "Historical observation producer main; Web consumer and real SDK control evidence remain independent",
+      "note": "027 history and four-source producer main; current/cut not implied; personal runtime unchanged"
     }
   ],
   "releaseQueue": [

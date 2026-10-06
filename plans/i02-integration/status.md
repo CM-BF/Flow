@@ -13,12 +13,12 @@
 | 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | 上下文生产接线58绑定/31依赖一致、root types0；复用121不同独审，首次超时保留；0provider |
-| 已集成main状态 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 已推送、当前源码与固定target一致。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 已集成main状态 / HEAD | 7cbda706632c85fc5da12a371b282419c933ab9a 已推送、当前源码与固定target一致。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 目标会话、工程快照与附件模块已进主线；已审上下文历史观察正在接收。 |
+| 当前产出 | 目标会话、工程快照、附件模块与上下文历史观察已进入主线。 |
 | 下一可用交付 | 本批已交付；个人预览发布与终端后继在独立任务推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -143,3 +143,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T12:11:20.571694+00:00：接收O12 60e495与公共 ./goal 导出adb91；仅tasks.ts直接依赖已随B01变更，实际生产factory选2过2/4未选、随机两库清理；包入口和root/Web types0。其余21不同领域证据复用。R06仅077已审五源，不接诊断driver；工作区1711原8过1失败partial原样归档，不称全绿。见[目标入口](../../docs/evidence/i02/goal-session-integration.json)、[限定诊断与观测](../../docs/evidence/i02/native-sink-workspace-comparison.json)。
 
 2026-10-06 12:21:23 UTC：按eccb固定4源接收普通Claude历史观察；58绑定与31直接输入无差，现claude基准完全一致，root类型检查0，无重复121/PG/provider。原首fixture超时和fake Query限制保留。[接收证据](../../docs/evidence/i02/context-producer-integration.json)。部署仍个人b1c，不把main当runtime。
+
+2026-10-06 12:22:57 UTC：本批固定四源已随 main7cbda706 推送，owner主线回执已给Mika，后续收口仍由其唯一status。147源已真实换载，新发布准备仍按固定362隔离组合，不追moving main、不改变个人运行版本。
