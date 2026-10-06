@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:08 UTC / 9c6fa9b100f04916f43b04280f05f497b28eeb0f（固定观察快照） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:21:00 UTC / 32c371d389a913f8dd71c3bd8b98dd0697411256（固定观察快照） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | main9c6fa9b；本权威管理树575e498历史基线，当前只汇总metadata |
+| 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 9c6fa9b100f04916f43b04280f05f497b28eeb0f；工具活动App、正文增量模块、知识引用后台、包下载与CHAT08默认关闭接线均已审main。个人center/runner固定b54de1dbb08e3ccc7d33a27295a318f2799e76ae、维护v6 accepting；07:57:46看板实际90来源。main与运行版本分别记录。 |
+| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256；逐段正文App、CHAT09配置目录兼容、O09原生单节点API/CLI及P02存储传输优化均已审main。个人center/runner仍b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6；08:19:48看板95来源。运行服务升级另等窗口。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 聊天工具活动已接入，真实排队与后台继续已验证；个人入口已安全更新并保留历史。 |
-| 下一可用交付 | 把逐段正文接入聊天，接通只读原生子任务，并校验执行中补充指令所需的配置能力。 |
+| 当前产出 | 逐段正文聊天界面和原生子任务命令行已完成；知识引用选择模块已可供接线。 |
+| 下一可用交付 | 将已审界面更新到个人服务，并验证真实正文逐步显示；并行完善知识发送和执行中补充指令。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -80,3 +80,7 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 ## 2026-10-06 08:08 UTC 当前滚动事实
 
 固定main9c6fa9b已含CHAT08持久多turn/final事务收口，默认steer关闭；CHAT09配置与实际执行门禁实施中。正文流App接线WPF-CHAT06I01实施，工具活动App已main。O08一次原生受限图规划3node2dep获GO限定验收，1/1预算封存，未执行child；O09只读单child领域7ddd与薄client1bd已独审、生产接线2项绿待窄审，0新增provider。CHAT06P01有界存储成本测量已main，P02将完整prefix hash移PG的最小片实施；PG仍全聚合，尚无整体加速结论。S01声明capacity4单进程实际峰值1已审，后继有界并发池准备，不把128空会话或fixture作为100真实agents。个人服务实际b54/v6与main分离，用户页未被我们代登录/发新消息。
+
+## 2026-10-06 08:21:00 UTC 当前滚动事实
+
+主线32c371d与origin一致clean。WPF-CHAT06I01假分支R1已修复并独审，CHAT09和O09CLI各独审，I02仅运行2个readonly直接消费者+组合类型检查；34固定源码一致。个人服务仍b54/v6，更新仅准备，未启steering/新增query。O10单child原生验收仍0query准备；S01P01有界并发池与CHAT10受理状态各独立实施，CONTEXT02收据链不占App。
