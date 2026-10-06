@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['S01P07', '领取回执与崩溃恢复', '工作线', 'runner-claim-recovery', 's01p07-runner-claim-recovery'],
   ['SVC07', '事务连接失效与安全释放', '工作线', 'server-transaction-disconnect', 'svc07-transaction-recovery'],
   ['WPF-DPERF05', '看板更新时间兼容', '工程协作', 'dashboard-status-timestamps', 'wpf-dperf05-status-timestamps'],
   ['SVC05R01', '保留网页与新后台兼容', '技术验证', 'personal-retained-web-compatibility', 'svc05-retained-web-compatibility'],
