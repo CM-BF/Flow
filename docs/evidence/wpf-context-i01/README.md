@@ -1,6 +1,6 @@
 # 聊天知识接线验证
 
-固定实现 `d0e05c26df6f331e0b1f15e7b738e4fe53208125`，基线 `d7e1e64e7792f4d1ad4933db042f10f266ad0cca`。本片将显式项目、零消息会话准备、知识选择和冻结引用接入真实 App 的 Send / Queue；不是本地文件上传或完整附件功能。独立 review 尚未开始，main 未集成。
+固定实现 `d0e05c26df6f331e0b1f15e7b738e4fe53208125`，基线 `d7e1e64e7792f4d1ad4933db042f10f266ad0cca`。本片将显式项目、零消息会话准备、知识选择和冻结引用接入真实 App 的 Send / Queue；不是本地文件上传或完整附件功能。独立 review 已通过（仅固定十八 apps 文件），main 未集成。
 
 ## 可查看版本与重现
 
@@ -47,3 +47,7 @@ pnpm --filter @flow/web exec tsx test/conversation-context-integration.fixture.t
 `browser-first/second/third` 原始 JSON/log 保留：自动登录假设、标点 locator 与实际主题按钮名不匹配；修正测试后继续验证。`direct-first.log` 保留测试 manifest namespace 不匹配，`typecheck-first.log` 保留测试 fixture request.body 可选类型错误。未降低门禁或清洗原日志。`browser-fourth.log` / `browser-expanded.log` 为中间 7 / 10 段检查，最终结果以固定提交的 dev12/prod12 为准。源码 diffcheck0；原始日志 ANSI / 空白原样保存，不宣称整个证据 diff 无空白警告。
 
 未验证真实中心、模型、产品 DB、Safari/Firefox/屏读；本地 receipt/草稿/引用不保证 reload 后恢复。没有新增 provider SDK/凭据耦合。build 大 chunk 警告仍在，没有性能收益声明。独立审查和 main 集成与作者测试分开记录。[技能与 clean-code](quality.md) · [计划](../../../plans/wpf-context-i01-integration/plan.md) · [状态](../../../plans/wpf-context-i01-integration/status.md) · [审查](../../../plans/wpf-context-i01-integration/review.md)
+
+## 独立审查与交付
+
+/root 已于 2026-10-06 09:09:37 UTC 后完成固定目标审查，无 blocking finding；另独立执行 144/144 直接消费者检查及生产 App 抽验。其具体操作 / 来源边界在 [review.md](../../../plans/wpf-context-i01-integration/review.md)。作者两套浏览器报告没有被改写为独立重跑。提交后的 metadata 分支已推送供 Lead 接收，生产十八文件保持固定目标，main 尚待集成。
