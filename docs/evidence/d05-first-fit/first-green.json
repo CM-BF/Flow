@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-06T08:44:04.101Z",
+  "sourceCommit": "3f797d7f1ddc4084d21b70f7fe3e22d1a11ed727",
+  "sourceDirty": [
+    "M apps/execution-dashboard/public/architecture.js",
+    "?? apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+    "?? docs/evidence/d05-first-fit/behavior-red.json",
+    "?? docs/evidence/d05-first-fit/behavior-red.log",
+    "?? docs/evidence/d05-first-fit/first-green.log",
+    "?? docs/evidence/d05-first-fit/first-red.log"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/architecture.js": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+    "apps/execution-dashboard/test/architecture-viewport.browser.mjs": "d99eaef0665d82d83ee7d2dd705cb474dd4bed610d3db02f5e6258ad9da9994f"
+  },
+  "checks": [
+    "direct #architecture first positive-width layout fits at1280x720"
+  ],
+  "observations": [
+    {
+      "scenario": "first desktop",
+      "available": 793,
+      "width": 793,
+      "viewWidth": 1120,
+      "zoom": "71%",
+      "pageOverflow": false,
+      "scrollWidth": 813,
+      "clientWidth": 813
+    }
+  ],
+  "pageErrors": [],
+  "requests": [
+    "/api/snapshot",
+    "/api/snapshot"
+  ],
+  "screenshots": [
+    "desktop-light.png",
+    "desktop-dark.png"
+  ],
+  "passed": false,
+  "browser": "154.0.8037.98",
+  "failure": "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: > 2\nReceived:   2\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeGreaterThan (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/apps/execution-dashboard/test/architecture-viewport.browser.mjs:100:40"
+}
