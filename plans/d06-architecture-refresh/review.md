@@ -24,4 +24,4 @@ Base commit: f181d84b5fb3652d62e2a181acff442d42b3e066
 
 独立CUA49510核runtime并发/unknown、Codex键盘Enter/固定source下钻、深色、states passed Space+正文规则；console warn/error=[]，tab41关闭；目视作者390双主题，42%局部滚动边界准确。没有重跑作者完整五图browser，也未测领域/DB/provider/真实4320/个人部署。系统默认Node23另跑只旁证，不替代固定Node24证据。
 
-作者仅转录结果，无产品改动或无因重测。主线NOT_INTEGRATED，claim保留回修权。
+作者仅转录结果，无产品改动或无因重测。审查时主线NOT_INTEGRATED；其后main接收见status/main-receipt，批准target不变。
