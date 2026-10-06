@@ -1,0 +1,29 @@
+{
+  "database": "flow_o14_ee4fd72c30264bca8276efe98a6ca04d",
+  "marker": "738e4823-9ee4-4a1f-964f-c68e708e1065",
+  "providerCalls": 0,
+  "reserveBeforeBytes": 1200431104,
+  "plannedMaxNewBytes": 100663296,
+  "errors": [
+    {
+      "name": "Error",
+      "code": "idempotency_conflict",
+      "message": "This key was used for different content."
+    },
+    {
+      "name": "Error",
+      "code": "progression_active",
+      "message": "Revoke the existing authorization before replacing it."
+    },
+    {
+      "name": "Error",
+      "code": "invalid_goal_delivery_query",
+      "message": "Choose a bounded goal delivery view and exact references."
+    }
+  ],
+  "connections": [],
+  "remaining": [],
+  "runtimeCount": 2,
+  "runtimeStopped": true,
+  "directoryRemoved": true
+}

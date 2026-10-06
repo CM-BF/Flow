@@ -145,3 +145,17 @@ test('artifact verification failure during refresh retains the old processes and
     } finally { await writeFile(manifest, original); }
   });
 });
+
+test('an unverified backend descriptor fails before drain and preserves all old owned processes', async () => {
+  await fixture(async (directory, config) => {
+    const before = JSON.parse(await readFile(join(directory, 'state.json'), 'utf8'));
+    await assert.rejects(execute(process.execPath, [cli, 'maintenance', 'bootstrap', '--directory', directory, '--backend-artifact', 'a'.repeat(64)], { timeout: 100_000 }));
+    const after = JSON.parse(await readFile(join(directory, 'state.json'), 'utf8'));
+    assert.deepEqual(after.processes, before.processes);
+    for (const record of Object.values(before.processes)) assert.equal(await inspectOwnedProcess(record), 'running');
+    await assert.rejects(readFile(join(directory, 'maintenance.json')), { code: 'ENOENT' });
+    const pool = new Pool({ connectionString: config.databaseUrl });
+    try { assert.equal((await pool.query('SELECT maintenance_state FROM flow.runners WHERE id=$1', [config.runner.runnerId])).rows[0].maintenance_state, 'accepting'); }
+    finally { await pool.end(); }
+  });
+});

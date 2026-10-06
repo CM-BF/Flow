@@ -158,3 +158,8 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - ENG01I：[受信原生宿主编排](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/plans/eng01i-native-engineering-host/plan.md)，ENG-001下已固定准备合同，当前planning且原claim释放；资格事实齐备再fresh take，不表示产品实施。
 
 SVC06已由assignment_review接收原唯一树与九scope实施固定后台产物；原条目“仅plan/evidence”是历史观察。个人backend仍362/v15 accepting，Web8d8/v2，不随本次源码与看板登记切换。
+
+### 新增来源（2026-10-06 14:50:27 UTC）
+
+- WPF-RECOVERY01：[聊天恢复唯一计划](../../web-conversation-recovery/plans/wpf-conversation-recovery/plan.md)，归 WPF-MATURE-06。
+- WPF-RELEASE03：[当前后台网页兼容验证](../../web-current-preview-compatibility/plans/wpf-release03-current-preview/plan.md)，归 WPF-MATURE-01。

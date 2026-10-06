@@ -1,0 +1,466 @@
+{
+  "observedAt": "2026-10-06T14:46:06.090562+00:00",
+  "integrationInput": "56d90e8c36d48e6c23a796283f3b89d0d08e7294",
+  "delivery": "185e377437cbe474d208f65657871010f4fbd9be",
+  "target": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d",
+  "review": "docs/evidence/svc06/independent-review.json",
+  "reviewScope": "Bounded guards and legacy-compatible integration; full fixed build and artifact-launched host remain NOT_PROVEN.",
+  "fixedBindings": [
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/README.md",
+      "bytes": 16522,
+      "sha256": "009e619160875285fa53b0052a4fad0ce80c7c17fcd401987e51a8d8e6c985f9",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 4174,
+      "sha256": "17e2a0ea136753c5342a7f624fda86e657a23fdc56b9d6c56cbde4a9cc332ebf",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/build-probe.mjs",
+      "bytes": 1111,
+      "sha256": "34de6b2d49c4dbc21b9035a3c9a0499648322989c83e4441f4234beb17cad03d",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4853,
+      "sha256": "aac76a3003e14218b6084256d977158bf38a4794f5b58712f4b37fcf07d105ab",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 994,
+      "sha256": "331d79f85335f53b8f8d48bcd30bfcbf3e2d95e75c9cd2a165d0b2d0f0ac689e",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/integrity.test.mjs",
+      "bytes": 2700,
+      "sha256": "f874b0fa3535810c6bb3e69906d870829119f044bf78491dfe54da9a493bec0f",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 4881,
+      "sha256": "75471c37d143131da7e1eb9f170c98341a2d39385005b6307c915183cbd1c929",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 9335,
+      "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 11357,
+      "sha256": "b4a339cdfdd606883ff71dd5b68f3370bc3e280402e36a3a9958dce082f1d905",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 28803,
+      "sha256": "c0f5313b4bf6431329ca5ed921545efc9714579f8e8b67b6a50959448ff299d0",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/server/src/main.ts",
+      "bytes": 2007,
+      "sha256": "d29980feece7e8094f3d317fd6761edc132f6e7827d458e748e9e0ec77a92180",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "commit": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/accept-receipt.json",
+      "bytes": 593,
+      "sha256": "dca51f66eae0bbcbcf6f0845a539726e7726c8b8d90279fe3b24c869eb8d8a07"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/amend-receipt.json",
+      "bytes": 875,
+      "sha256": "820d336ba0c6465ca833db8d3681215118f170ac7c0eb1cdda1ba2d941ce32ef"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/artifact-denials-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/artifact-denials.txt",
+      "bytes": 410,
+      "sha256": "42dec5427cb2a5d4111309bc2a21cb81d6a98dd36db41d6bf324ed1051e67d36"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/artifact-first-green-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/artifact-first-green.txt",
+      "bytes": 204,
+      "sha256": "693af6469be7bea54c3cce5fb98a7cf2fdc44d71d608d4d096ff0a378b8de4ad"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/artifact-red-exit.json",
+      "bytes": 73,
+      "sha256": "4201149778586e1372e5b36b9ad0abbbbc467ab02215d6af9b75abcfcff2bf45"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/artifact-red.txt",
+      "bytes": 1661,
+      "sha256": "dc90577070704b8dc43b5dc77e425c019a0e72e8c698d430f57efa56165a0544"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/build-clone-exit.json",
+      "bytes": 10,
+      "sha256": "fb20e1b6868a185adca3015e702f1388b427aafacd76e04749a1826ccc75107c"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/build-clone.txt",
+      "bytes": 683,
+      "sha256": "f20f88b43255c50962468ce5d748665044630e7f5f454ca3fd97bd19f09ba086"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/build-first-exit.json",
+      "bytes": 10,
+      "sha256": "fb20e1b6868a185adca3015e702f1388b427aafacd76e04749a1826ccc75107c"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/build-first-stage.json",
+      "bytes": 315,
+      "sha256": "e984119decf5ef4a857911606886bd95903e04e2fd7149e52b4b63b87e84003b"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/build-first.txt",
+      "bytes": 621,
+      "sha256": "a1cbbdddc81ff3e1112ad730ee19010821ae588ab7cc75b4bfb558a5485e6080"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/claim.json",
+      "bytes": 592,
+      "sha256": "bf7a602cc570624c95c3914d74af2104d55032099f3a27683d2302b3d6774bd1"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/cleanup-candidates.json",
+      "bytes": 809,
+      "sha256": "9b9b5d9daec054169954e1214631ec525eb2dc6d5307ce3990289f3ce9294208"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/clone-check-exit.json",
+      "bytes": 10,
+      "sha256": "fb20e1b6868a185adca3015e702f1388b427aafacd76e04749a1826ccc75107c"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/clone-check.txt",
+      "bytes": 1331,
+      "sha256": "d3d807041e0fdef0606a9105bca8584a5f2ceb998ef4dfa8d9317bc447b4ecbd"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/clone-final-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/clone-final.txt",
+      "bytes": 305,
+      "sha256": "8f659b4ea31ea33cf738f420758aa215d065cbc815031ebad97422698dc20097"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/dependency-measurement.json",
+      "bytes": 494,
+      "sha256": "555517ef23fdb82c34416b39d2e781106cc198956e11238d286fb52bee169781"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/integrity-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/integrity-final-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/integrity-final.txt",
+      "bytes": 328,
+      "sha256": "f76073f34335efd7b1180fd41e92c3ebd9bc09d0891052526e344c04702ca46a"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/integrity.txt",
+      "bytes": 326,
+      "sha256": "168ae64bdd4adde9154faa936d5b0dd75b6684f1494eca61e5622a14799aefe2"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/legacy-preview-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/legacy-preview.txt",
+      "bytes": 236,
+      "sha256": "8876b59fed8ad25b5456fb8d65ac52d2d2d72762f0d43b574f1dc08c942c32e3"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/node-identity.json",
+      "bytes": 4111,
+      "sha256": "c156c5d2c20562dabafab58154f109dd981e58f0f4835713933fed83f00ebaa6"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/offline-denial-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/offline-denial.txt",
+      "bytes": 228,
+      "sha256": "5841a8711707681f32da77b961932b0bc17ba3caa5c0789db7dd0db9ac070a49"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/old-install-cleanup.json",
+      "bytes": 975,
+      "sha256": "cdd87ea213ad2f13019e23d9a742a0eb57ecdda3fcc2d5d798cac3c270ec7e90"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/pending-host-journey.mjs.txt",
+      "bytes": 7738,
+      "sha256": "23622d19b52dc9d59fc6280d0d9f0e71de535685f772726760b2332dc26fbc7d"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/preflight-host-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/preflight-host.txt",
+      "bytes": 226,
+      "sha256": "eb1f235a1ff965647cf1ced56ff7189872b3176c94fc405f50a6bf4feff8fc05"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/seed-closure-observation.json",
+      "bytes": 6351917,
+      "sha256": "7c4ff1857c8caec888107874756919d15e6c251e25b6b59349518316beb122c9"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/seed-closure-plan.json",
+      "bytes": 1519,
+      "sha256": "39a39d7351418b582239a6d4acae1d4ae9d777406835e4b1b0058cd4b8b97079"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/source-observation.json",
+      "bytes": 643,
+      "sha256": "020b1121ebd0bf52e0d12498383282ff30101bab35454bb36a23241b5177b1d6"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/space-plan.json",
+      "bytes": 383,
+      "sha256": "3a2d1ff6f634eb741926cebb31306beaa8ab0c371dd39cfa6d1b32a6b2ebd41a"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/syntax-final.json",
+      "bytes": 1785,
+      "sha256": "89db31625c444102ae711db20fc35388fe652acafbb0b9c63e3ecc133499cd49"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/worktree-install-exit.json",
+      "bytes": 10,
+      "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/worktree-install.txt",
+      "bytes": 658,
+      "sha256": "c7ea04a12205d05fa97012449bb2ae7b593c16b45437c52ca9a293a691fdb6db"
+    }
+  ],
+  "currentSourceAndRawUnchanged": true,
+  "directInputChanges": [
+    {
+      "path": "pnpm-lock.yaml",
+      "reviewedBytes": 278830,
+      "reviewedSha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "integratedBytes": 279163,
+      "integratedSha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "reviewedBytes": 2007,
+      "reviewedSha256": "d29980feece7e8094f3d317fd6761edc132f6e7827d458e748e9e0ec77a92180",
+      "integratedBytes": 2708,
+      "integratedSha256": "1f1573c9abf9d5d3d7f7138e8985fa7bbe481c8a8707ff47e4f7debb511c67ae"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "reviewedBytes": 13507,
+      "reviewedSha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "integratedBytes": 13267,
+      "integratedSha256": "ba1e251c59cfb091c8867ce899fa9aad3f89156683cc66ee75a2387371982a00"
+    }
+  ],
+  "directInputAssessment": {
+    "pnpm-lock.yaml": "Approved X01 adds two workspace links and one existing tar dependency importer; no external package resolution changed. No full build is claimed.",
+    "apps/server/src/main.ts": "Approved optional browser-session host config; personal-preview environment does not enable it. Native and existing host arguments preserved.",
+    "apps/server/src/index.ts": "Approved 028/browser auth and usage readout; default Bearer behavior retained with existing production checks. No changes to SVC process or artifact Interface."
+  },
+  "additionalTests": 0,
+  "providerCalls": 0,
+  "personalServicesChanged": false,
+  "availableBytesObserved": 1174237184,
+  "reasonNoRerun": "14 sources and 40 raw outputs exact; 9 direct inputs exact. Three already-reviewed main changes explicitly assessed; no merge source conflict. Original legacy checks remain historical, not claimed rerun or full-artifact success."
+}

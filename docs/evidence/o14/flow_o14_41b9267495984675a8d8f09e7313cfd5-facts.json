@@ -1,0 +1,109 @@
+{
+  "database": "flow_o14_41b9267495984675a8d8f09e7313cfd5",
+  "marker": "cc18b930-c5b3-4a2e-9840-a5919b0f2acd",
+  "providerCalls": 0,
+  "reserveBeforeBytes": 1197039616,
+  "plannedMaxNewBytes": 100663296,
+  "errors": [
+    {
+      "name": "Error",
+      "code": "idempotency_conflict",
+      "message": "This key was used for different content."
+    },
+    {
+      "name": "Error",
+      "code": "progression_active",
+      "message": "Revoke the existing authorization before replacing it."
+    },
+    {
+      "name": "Error",
+      "code": "dependency_version",
+      "message": "Execution requires the exact current verified dependencies."
+    },
+    {
+      "name": "Error",
+      "code": "goal_progression_not_found",
+      "message": "Progression does not belong to this goal."
+    },
+    {
+      "name": "Error",
+      "code": "wrong_role",
+      "message": "An owner credential is required."
+    },
+    {
+      "name": "Error",
+      "code": "dependency_version",
+      "message": "External dependencies require exact current owner-accepted artifacts."
+    },
+    {
+      "name": "Error",
+      "code": "dependency_version",
+      "message": "External dependencies require exact current owner-accepted artifacts."
+    }
+  ],
+  "journey": {
+    "calls": 2,
+    "nodes": [
+      {
+        "nodeId": "55112322-e297-448b-a529-dc1035d7e35c",
+        "inputVersion": 1,
+        "executionId": "b854ca45-d9f7-4783-97cc-86203023c5a3",
+        "artifact": {
+          "nodeId": "55112322-e297-448b-a529-dc1035d7e35c",
+          "executionId": "b854ca45-d9f7-4783-97cc-86203023c5a3",
+          "taskId": "e4c2bc16-90f8-4efc-bb91-b968d85fa573",
+          "artifactId": "0207effd-f2da-404f-a4f5-b6e54b3fc04b",
+          "artifactVersion": "4e4e9017f76a991000198839d03bd46ed5fc05700538eee5633e982cc6905d5e",
+          "detailId": "49d2f1a4-fc48-45f2-992b-966c41700f4c"
+        },
+        "task": {
+          "id": "e4c2bc16-90f8-4efc-bb91-b968d85fa573",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      },
+      {
+        "nodeId": "732108bf-b441-48a5-b897-4c7f0d231275",
+        "inputVersion": 1,
+        "executionId": "d92d11b3-c1cd-4d39-9d59-acb49c5609bd",
+        "artifact": {
+          "nodeId": "732108bf-b441-48a5-b897-4c7f0d231275",
+          "executionId": "d92d11b3-c1cd-4d39-9d59-acb49c5609bd",
+          "taskId": "dec9f0c2-da1c-4eb6-b392-9abed17b955e",
+          "artifactId": "19fb8999-f843-4018-93ce-61c3d9c50925",
+          "artifactVersion": "ead8877c18dec49bdf22a6e3d561430eed5cf5d09d2118302a24a3478a2b8108",
+          "detailId": "37e2402d-2839-4d2c-8ee5-3014801fedc1"
+        },
+        "task": {
+          "id": "dec9f0c2-da1c-4eb6-b392-9abed17b955e",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      }
+    ],
+    "lostAckSameKey": true,
+    "concurrentSweepAdmissions": [
+      1,
+      0,
+      0
+    ],
+    "originalClientDisconnected": true,
+    "independentAcceptance": {
+      "nodeId": "732108bf-b441-48a5-b897-4c7f0d231275",
+      "executionId": "d92d11b3-c1cd-4d39-9d59-acb49c5609bd",
+      "taskId": "dec9f0c2-da1c-4eb6-b392-9abed17b955e",
+      "artifactId": "19fb8999-f843-4018-93ce-61c3d9c50925",
+      "artifactVersion": "ead8877c18dec49bdf22a6e3d561430eed5cf5d09d2118302a24a3478a2b8108",
+      "detailId": "37e2402d-2839-4d2c-8ee5-3014801fedc1"
+    }
+  },
+  "databaseBytesBeforeDrop": "12844055",
+  "freeBeforeDropBytes": 1168195584,
+  "connections": [],
+  "remaining": [],
+  "runtimeCount": 4,
+  "runtimeStopped": true,
+  "directoryRemoved": true
+}

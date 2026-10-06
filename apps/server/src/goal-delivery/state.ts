@@ -21,7 +21,7 @@ export async function readState(client: PoolClient, plan: PlanMetadata, nodeIds:
     const accepted = stored?.accepted_binding ?? null;
     const deliveryCurrent = validity.current(nodeId) !== null;
     const current = execution ? validity.isCurrent(execution) : false;
-    const reason: GoalDeliveryNodeState['reason'] = !definition ? 'input-undefined' : !knowledgeReady ? 'knowledge-stale' : !dependenciesReady ? 'dependencies-unavailable'
+    const reason: GoalDeliveryNodeState['reason'] = !definition ? 'input-undefined' : !knowledgeReady ? 'knowledge-stale' : !dependenciesReady && !current ? 'dependencies-unavailable'
       : execution?.task.status === 'uncertain' ? 'execution-uncertain' : execution && !current ? 'execution-stale' : deliveryCurrent ? 'accepted-current' : accepted ? 'accepted-stale' : 'not-accepted';
     return { nodeId, inputRef: inputReference(plan, nodeId), knowledgeCurrent: knowledgeReady, dependenciesReady,
       execution: execution ? executionView(plan, execution, current) : null, accepted, deliveryCurrent, reason };

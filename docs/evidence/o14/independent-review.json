@@ -1,0 +1,95 @@
+{
+  "task": "O14",
+  "result": "APPROVED",
+  "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+  "delivery": "ac9d2cc940324f3d9c0adfa87240092223b49bcd",
+  "reviewer": "assignment_review",
+  "model": "gpt-6-astra",
+  "author": "native_center_owner",
+  "reviewedAt": "2026-10-06T14:51:21.523409+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression",
+  "branch": "codex/goal-persistent-progression",
+  "manifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/docs/evidence/o14/fixed-manifest.json",
+  "manifestSha256": "9fbad031ce1c94b7f5630a749a703b1735321eaee32ff56fac55d621f47a66a1",
+  "bindings": "/tmp/flow-o14-review-bindings.json",
+  "findings": [],
+  "blockingFindings": 0,
+  "scope": {
+    "sourceFiles": 14,
+    "protectedInputs": 44,
+    "evidenceFiles": 57,
+    "validationFiles": 1,
+    "fixedCurrentHashMismatches": [],
+    "protectedBaseDifferences": 0,
+    "sourceDeltaOutsideDeclaredProducts": []
+  },
+  "reviewMethod": {
+    "readOnly": true,
+    "sourceRead": "Complete new production modules, contract, migration, new test/fixture, all changed direct-consumer product/test deltas and relevant existing transaction/auth/profile/admission/validity paths.",
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "skillsApplication": "Reuse local discovery; inspect one state authority, interface/lifecycle bounds, transaction ownership, dependency direction and evidence scope. No install.",
+    "testsRunByReviewer": 0,
+    "databaseQueriesByReviewer": 0,
+    "providerCalls": 0,
+    "projectFilesWritten": 0
+  },
+  "confirmedInvariants": [
+    "Owner-only finite v1 authority fixes graph/node/input/predecessor/profile and exact external accepted bindings; <=20 nodes, <=64KiB, <=24h, hard admission count. Old node/tool grants gain no permission.",
+    "Candidate rotation commits before project locking. Advancement and revoke use project then progression; selected task rows are locked in deterministic ID order. Profile lookup adds no reverse project-to-runner lock; claim-time authority remains responsible for post-admission runner revocation.",
+    "Existing executeGoalNode/acceptTask/PgBoss wake and unique progression execution link commit in one transaction. Failed link insert rolls back admission. Repeated/concurrent sweep follows committed link rather than resubmitting.",
+    "Unknown, failed, cancel-requested, verification failure, input/knowledge/graph drift, exhausted admission and expiry halt new work. Revoke stops admission only, without claiming current task stopped. Genuine pending decision remains task-owned.",
+    "Within-progression qualification requires same stored grant link, current actual input/knowledge/dependencies, latest execution and current-attempt artifact, succeeded task and passed verifier. External dependencies still require actual owner acceptance. No caller qualified flag.",
+    "Legacy manual dependencies and explicit acceptance remain distinct. The shared resolver preserves admitted provenance without writing acceptance and invalidates downstream currentness on relevant producer changes. Old artifact detail remains readable.",
+    "Memoization lives only in one read resolver, keyed by execution object. The bounded DAG probe and fresh-read invalidation evidence do not claim global latency or throughput improvement.",
+    "Read routes use real existing owner authentication; new module owns no timer. Migration/source/export/factory automatic scan integration is explicitly outside this approval."
+  ],
+  "authorEvidence": {
+    "distinctVitestGreenAcrossRounds": 15,
+    "newModuleChecks": 13,
+    "unchangedLegacyBehaviorChecks": 2,
+    "standalonePureWorkCountChecks": 1,
+    "lastPgSelection": {
+      "passed": 1,
+      "unselected": 12,
+      "stdout": "docs/evidence/o14/pg-memo-journey.stdout",
+      "processExit": 0
+    },
+    "rootTypes": {
+      "stdout": "docs/evidence/o14/types-final.stdout",
+      "exitFile": "docs/evidence/o14/types-final.exit",
+      "processExit": 0
+    },
+    "workCount": {
+      "nodes": 20,
+      "edges": 37,
+      "beforeStatusReads": 17709,
+      "afterStatusReads": 37,
+      "interpretation": "Local repeated operational-status access count; not a system performance benchmark."
+    },
+    "resources": {
+      "newDomainDatabases": 8,
+      "legacyDatabases": 2,
+      "allRecordedRemainingEmpty": true,
+      "newDomainConnectionsEmpty": true,
+      "largestRecordedDatabaseBytes": 13016087,
+      "databaseSizeNotRecordedForEarlyRounds": true,
+      "legacyRunnerIndividualExitCodesNotRecorded": true
+    },
+    "historicalFailuresPreserved": true,
+    "finalIntentionalLostAckHttpDrainWarningPreserved": true
+  },
+  "approvalBoundary": [
+    "Module, explicit bounded sweep, real HTTP/PostgreSQL and real adapter/runtime with injected SDK transport; no real provider or natural-language planning claim.",
+    "Production factory migration/mount, automatic lifecycle scanning and shutdown/maintenance integration require the separate F01 change and direct-consumer validation. The current module fixture mounts its own routes explicitly.",
+    "Application-instance restart and persisted transaction outcomes were demonstrated; no OS hard-kill/power-loss claim.",
+    "Same-authorization mechanical qualification and separate owner acceptance are supported; bounded SDK limits are configured requests, not measured billing or semantic goal acceptance.",
+    "Existing snapshot material bounds/internal full-state reads remain; the new provenance projection is explicitly bounded at400 manifests and8000 links and does not read artifact bodies."
+  ],
+  "metadataNote": "Canonical owner may update stale TODO evidence cells in status while recording this review; implementation approval target must remain the fixed source SHA.",
+  "endHead": "ac9d2cc940324f3d9c0adfa87240092223b49bcd",
+  "endWorkingStatus": ""
+}

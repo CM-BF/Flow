@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression
+
+ ❯ apps/server/src/goal-progression/progression.test.ts (10 tests | 10 skipped) 1501ms
+   ↓ bounds finite authorization, rejects duplicate nodes, excess budget, unknown policy and malformed expiry
+   ↓ continues two fixed inputs through injected SDK, restart and lost authorization ACK without semantic acceptance
+   ↓ halts failed verification without admitting its dependent and preserves the artifact
+   ↓ keeps unknown attempts and their links through restart without admitting a new execution
+   ↓ stops for a genuine decision and revocation never cancels that running task
+   ↓ checks readonly profile revocation before any task is admitted
+   ↓ freezes graph and actual input versions and requires explicit replacement permission
+   ↓ exhausts finite admission budget without silently extending the authorized work
+   ↓ rolls back task/wake/link atomically and reuses the authorization after a transaction failure
+   ↓ preserves immutable authority and exact goal identity, while snapshots stay body-free
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-progression/progression.test.ts [ apps/server/src/goal-progression/progression.test.ts ]
+error: syntax error at or near "authorization"
+ ❯ ../continuous-goal-journey/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js:694:17
+ ❯ apps/server/src/goal-progression/index.ts:14:5
+     12|     await client.query("SELECT pg_advisory_xact_lock(hashtextextended(…
+     13|     if ((await client.query('SELECT 1 FROM flow.migrations WHERE versi…
+     14|     await client.query(await readFile(new URL('../../../../packages/st…
+       |     ^
+     15|     await client.query('INSERT INTO flow.migrations(version) VALUES(30…
+     16|   });
+ ❯ transaction apps/server/src/database.ts:18:20
+ ❯ migrateGoalProgressions apps/server/src/goal-progression/index.ts:11:3
+ ❯ start apps/server/src/goal-progression/fixture.ts:29:5
+ ❯ progressionFixture apps/server/src/goal-progression/fixture.ts:54:81
+ ❯ apps/server/src/goal-progression/progression.test.ts:10:29
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 skipped (10)
+   Start at  07:34:01
+   Duration  2.93s (transform 601ms, setup 0ms, import 1.34s, tests 1.50s, environment 0ms)
+
