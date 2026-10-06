@@ -1,6 +1,6 @@
 # SVC05H01 — 固定后台附件历史兼容候选
 
-状态：in-progress；创建 / 最近更新：2026-10-06 15:34 UTC。所属大 task：[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)，REQ19 / SVC05 发布后继；co-lead：Execution Lead。
+状态：completed；创建：2026-10-06 15:34 UTC；最近更新：2026-10-06 21:32 UTC。所属大 task：[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)，REQ19 / SVC05 发布后继；co-lead：Execution Lead。
 
 ## 目标与边界
 
@@ -15,7 +15,7 @@
 - [x] SVC05H01-03：有资源/执行许可后验证新 tuple；独立 review 后确定可兼容结论。
 - [x] SVC05H01-04：固定同一d629产物的受控搬运源码，完成tiny纯文件检查与独审。
 - [x] SVC05H01-06：原版本中心缺失时，独立审查并经固定窗口单次center-only恢复；保留其余角色/数据。
-- [ ] SVC05H01-05：准确retained报告/源/依赖/身份具备后，经显式窗口执行受管后台和Web发布；保留原会话。
+- [x] SVC05H01-05：准确retained报告/源/依赖/身份具备后，经显式窗口执行受管后台和Web发布；保留原会话。
 
 15:34历史准备边界仅源码与metadata；下列追加授权与执行单独记录，不回写历史。禁止未授权安装/产品typecheck/PG/build/Chrome/provider及个人服务操作。RELEASE03 已花 3874ms，余 176126ms 仅为既有累计账本事实，不能以新树重新获得 180s。后继执行由 Lead/Web owner 协调，当前 free 未满足历史启动余量。
 
@@ -42,3 +42,5 @@
 2026-10-06 20:16 UTC：05推进到可审执行输入：复用原SVC05观察方法和既有host，仅适配目标af51及维护变化。新源码未运行，需独审后由Lead固定原checkout并分配一次窗口；不新增普通GO确认门槛。
 
 2026-10-06 21:27 UTC：05已在唯一授权2125窗口执行成功，个人后台af51/accepting18与Web d629/v3，24步骤/25保留gate成立；旧80B未知intent严格退役，原ACK未知保持，历史原件在个人私有备份。当前仅结果独审/记录接收尚待完成，原失败不回写，不重跑产品或模型。
+
+2026-10-06 21:32 UTC：05实际发布由Execution Lead唯一独立结果审查通过，target1994182e、100绑定/24命令/25检查核验。本SVC05H片段完成；当前运行af51/v18+d629/v3，不宣称当前main全产品能力或新增UI/provider验证。

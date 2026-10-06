@@ -125,3 +125,9 @@ Execution Lead独立APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA，target6e7109c
 ## 2026-10-06 21:27 UTC 实际操作结果待独立核验
 
 固定6e7109+原0a8已审输入在2125唯一窗口完成24步骤，全部exit0；最终25保护检查true，旧journal有明确退役私有原件/意图/结果，原claim结果仍unknown。后台af51/v18及Web d629/v3实际ready，原两retained和64表保护摘要保留；原raw/三次失败保持。作者只归档结果，不授予自身APPROVED。交Execution Lead只读核本次manifest/原facts/checkpoint/退役与维护/发布身份，不重跑服务或旧检查。
+
+## 2026-10-06 21:32 UTC 实际发布结果独立APPROVED
+
+Reviewer：Execution Lead / gpt-6-astra；target `1994182e4f1d7ff0cb5b08d005defe199d5cbf8c`，observed clean `cf239ba6694b09c80726efffdf794ad27bc020d5`。原件来自I02 `e07d1e64`，镜像[唯一结果review](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，SHA256 `233543b5b1df69a0735a42ca9cdac81998f4cdeaea087c0fc7470f9ef6d768ae`。100 fixed/current绑定无差，24命令exit0、25最终检查全true；hold/旧runner停止→精确退役checkpoint→af51 refresh/resume18→独立Web CAS d629/v3顺序与64表保护摘要/27迁移/4历史/3retained核验成立。无P1/P2，reviewer0测试/0个人probe/0provider。
+
+批准限已保存实际操作忠实性。原claim outcome unknown、ordinaryNativeChecks false、原失败不回写；保留证明是预先声明保护列摘要，不是所有raw字段相等。原0a8实现与6e比较窄修批准分别保留，不扩大到新的恢复API、个人新probe或当前main全功能。
