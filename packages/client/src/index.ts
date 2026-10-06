@@ -15,7 +15,7 @@ import type { ReconciliationObservation, ReconciliationResolution, Reconciliatio
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
-import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage } from '@flow/contracts';
+import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage, GoalContextDetail } from '@flow/contracts';
 
 import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
 
@@ -151,6 +151,9 @@ export class FlowClient {
   }
   readGoalInput(id: string, nodeId: string, version?: number, signal?: AbortSignal): Promise<GoalDefinition> {
     return this.request(`/api/goals/${encodeURIComponent(id)}/inputs/${encodeURIComponent(nodeId)}${version === undefined ? '' : `?version=${version}`}`, { signal });
+  }
+  goalContext(id: string, nodeId: string, version: number, signal?: AbortSignal): Promise<GoalContextDetail> {
+    return this.request(`/api/goals/${encodeURIComponent(id)}/nodes/${encodeURIComponent(nodeId)}/inputs/${version}/context`, { signal });
   }
   goalExecutions(id: string, options: { nodeId: string; after?: string; limit?: number }, signal?: AbortSignal): Promise<GoalExecutionPage> {
     const query = new URLSearchParams({ nodeId: options.nodeId });
