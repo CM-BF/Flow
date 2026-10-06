@@ -144,3 +144,8 @@ Review status: APPROVED
 只覆盖packages/client/src/index.ts与steering-finalization.test.ts；固定领域合同998e2fd是早期输入，不表示领域批准。manifest见docs/evidence/f01/steering-finalization-client-manifest.json。
 
 Root于2026-10-06 07:34 UTC独立只读APPROVED3d81141324041c2c67680edbb686996cefaf8b4b（观测clean f4ca028）。完整2-file diff及73行真实HTTP测试、2source/3raw/2固定998 DTO hash逐项一致；exact body/Bearer/AbortSignal/409/disconnect/committed/not-committed/absent覆盖，无暗重试/生命周期决策，无P1/P2。原1红→1绿39ms+tsc证据支持薄传输，reviewer无重跑/0模型。absent不允许换candidate，unknown继续传播；不批准moving CHAT08领域/生产挂载。
+
+
+## O09 thin client pending independent review
+Review target commit: 1bd4855f1582107e3b1b17ba9ba77cb43801e74d
+状态：NOT_STARTED。只3file薄接线，native-node-client-manifest.json固定原始红绿/tsc与合同输入。领域/生产不在本批准范围。

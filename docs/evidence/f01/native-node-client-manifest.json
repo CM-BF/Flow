@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-06T07:59:19.786701+00:00",
+  "target": "1bd4855f1582107e3b1b17ba9ba77cb43801e74d",
+  "contractTarget": "d5d32ec173fd2139d8a732235440c0995a4019f7",
+  "source": [
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 973,
+      "sha256": "ba5564f67f0fec48a841ffdf840cc80e0327e73c1c8268a3e16919c094be6b11",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 37212,
+      "sha256": "721462314456d68fca547e5e4b6c8f4da98540116564f6266644bf33208a053c",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "packages/client/src/goal-native-executions.test.ts",
+      "bytes": 2784,
+      "sha256": "f8a1c85abcc2e80caceacd778d6bff92a640d38cd8c5fc9881fa557bf487290c",
+      "fixedBlobMatchesWorking": true
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/native-node-client-red.txt",
+      "bytes": 1260,
+      "sha256": "f1097f5c24b089191cdb7ef39dd4c28b2611f04ab2351941f6495c4922ce3f75"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-client-green.txt",
+      "bytes": 324,
+      "sha256": "beede7cf83c1c6823f1a3ce28269976c9e949a02cf291c325d9c2106393027cf"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-client-typecheck.txt",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    }
+  ],
+  "contract": {
+    "path": "packages/contracts/src/goal-native-executions.ts",
+    "bytes": 931,
+    "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d",
+    "fixedBlobMatchesWorking": true
+  },
+  "checks": {
+    "httpPassed": 1,
+    "httpSelected": 1,
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "scope": "Thin HTTP transport and public export only; owner domain/production mount await independent review."
+}

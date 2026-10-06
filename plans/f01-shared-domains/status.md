@@ -102,3 +102,5 @@
 2026-10-06 07:18 UTC：steering薄client1b16d23获assignment_review独立只读APPROVED，3source/3raw固定hashbytes一致，无P1/P2/未重跑；仅薄传输，仍无024生产mount或实际模型消费。
 
 2026-10-06 07:57 UTC：024迁移在任何worker/scheduler启动前完成，所有控制路由沿现owner/runner鉴权。默认不受理owner指令，生产CLI无启用参数，对话cap仍false。真实factory新2项与既有纵向定向1项分别绿，旧12项未选；manifest见steering-production-manifest.json。领域20source相对d4e逐hash相同。实际SDK/config/profile/UI开通仍后继，未操作常驻服务。
+
+| F01-22 | in-progress | Lead | O09固定d5合同的薄client 1bd4855f1582107e3b1b17ba9ba77cb43801e74d；HTTP1/1+tsc，独立review待定，不提前挂领域 |
