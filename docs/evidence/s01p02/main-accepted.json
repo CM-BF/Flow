@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-06 09:59:56 UTC",
+  "mainHead": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "mainClean": true,
+  "sourceTarget": "c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7",
+  "acceptedMetadata": "4585a12561d2bfae307a5c952560eb6fdad194e5",
+  "acceptedMetadataIsAncestor": true,
+  "ownerHeadBeforeMetadata": "55eb62adf63b597c61aa545bb81c070d05da2b10",
+  "ownerCleanBeforeMetadata": true,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "b6461ea0edebe5ca7fb52ebbc0c62b678aeea891b00cf69b78a1636900c95ba8",
+      "mainSha256": "b6461ea0edebe5ca7fb52ebbc0c62b678aeea891b00cf69b78a1636900c95ba8",
+      "matchesApproved": true
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3",
+      "mainSha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3",
+      "matchesApproved": true
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.test.ts",
+      "sha256": "157b85699274472e083b801ccf273ed7acde4512b04bcf4712b642b2ae798e97",
+      "mainSha256": "157b85699274472e083b801ccf273ed7acde4512b04bcf4712b642b2ae798e97",
+      "matchesApproved": true
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "sha256": "196b18ea53527862ad6a7865c89ea18d821143b237f5e21eee529731695b2d6e",
+      "mainSha256": "196b18ea53527862ad6a7865c89ea18d821143b237f5e21eee529731695b2d6e",
+      "matchesApproved": true
+    }
+  ],
+  "leadIntegrationEvidence": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/native-tui-integration.json",
+  "leadValidationReported": {
+    "rootTypecheckExitCode": 0,
+    "webTypecheckExitCode": 0,
+    "directTestsPassed": 50,
+    "mainConcurrencyTests": 22
+  },
+  "ownerReranTests": false,
+  "claim": {
+    "claimId": "d2c55153-7116-403d-a7db-44b10e943241",
+    "version": 2,
+    "state": "active",
+    "mainEntryWritePermission": false,
+    "partialHandbackReceipt": "main-partial-handback-receipt.json"
+  },
+  "limitations": [
+    "Main integration only; personal service deployment unchanged",
+    "No actual provider concurrency or new workload validation",
+    "The 64 original mocked-entry/parser checks remain scoped evidence"
+  ]
+}
