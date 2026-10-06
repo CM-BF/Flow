@@ -203,3 +203,14 @@ test('heartbeat loss stops remote observation and an expired attempt cannot be r
   expect((await client.show(id)).attempt!.id).toBe(attemptId);
   expect(peer.counts.sends).toBe(1); expect(peer.counts.gets).toBe(readsAfterLeaseLoss);
 });
+
+test('a lost center dispatch ACK times out even while heartbeats remain healthy, without remote replay', async () => {
+  const { token, id } = await submit();
+  const blocked = holdNextResponse(request => request.url === '/api/runner/protocol/begin');
+  const child = await launch(token);
+  await blocked;
+  await expect.poll(async () => (await client.show(id)).status, { timeout: 2500 }).toBe('uncertain');
+  expect(child.exitCode).toBeNull(); expect(child.signalCode).toBeNull();
+  expect(peer.counts.sends).toBe(0);
+  expect((await client.protocolState(id))?.intent.reason).toBe('send-result-unknown');
+});

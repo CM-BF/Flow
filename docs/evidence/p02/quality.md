@@ -22,3 +22,7 @@ typecheck通过；首HTTP/PG 3/3通过（3.27s，专用flow_p02），覆盖中�
 单项typecheck暴露测试引用未声明fastify依赖、cancel少commandID、receipt索引可空；以最小ObservedRequest测试类型/显式UUID/空值检查修复，未新增依赖。尚未执行产品main入口（Lead挂载后再验），MCP持久elicitation/Tasks扩展/通用全程预算仍未完成；不将P02最小A2A闭环当P01全部完成。
 
 02:51 UTC：最终联合11/11（13.45s）+typecheck通过，源码target572d6a095421074b2affe961cb78d82fd9e504ee，原始JSON与逐文件hash固定于manifest；证据整理未修改被测源码。main尚未挂载P02。
+
+## 02:53 UTC 确认等待上限修复
+
+交付前clean-code检查发现中心命令/事件使用lease.signal时，某个HTTP ACK若一直悬挂而heartbeat正常，可被持续续租掩盖。新增真实中心onSend挂起begin ACK、保持runner存活与heartbeat正常的公开HTTP测试；先红（2.5s仍running），再统一使用ProtocolLease.requestSignal组合ownership中止与独立request timeout。远端SDK已有独立受限transport；没有叠加盲重试。新测试通过，remote send仍0，任务明确uncertain。联合12/12（15.60s）+typecheck通过；11项历史证据与原hash保留，新增证据另存。

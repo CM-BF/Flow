@@ -55,27 +55,27 @@ async function execute(assignment: ClaimedTask, client: FlowClient, root: string
     const endpoint = options.endpoints[assignment.task.protocol?.endpointRef ?? ''];
     if (!endpoint) throw new ProtocolConfigurationError('The configured remote endpoint is unavailable.');
     const prepareInput = { ...ownership, endpointDigest: textDigest(new URL(endpoint.url).href) };
-    state = await client.protocolPrepare(prepareInput, lease.signal);
+    state = await client.protocolPrepare(prepareInput, lease.requestSignal());
     command = { ...ownership, commandId: state.intent.commandId };
     outbox = new EventOutbox(directory, ownership, async batch => {
-      try { await reportBatch(client, batch, lease.signal); }
+      try { await reportBatch(client, batch, lease.requestSignal()); }
       catch (error) { lease.interrupt(); throw error; }
     }, state.lastSequence);
     const peer = await connectA2A(endpoint);
     if (state.intent.phase === 'prepared') {
       await lease.check();
       if (lease.cancelRequested) {
-        state = await client.protocolPrepare(prepareInput, lease.signal);
+        state = await client.protocolPrepare(prepareInput, lease.requestSignal());
         if (state.intent.phase !== 'prepared') throw new Error('A cancellation raced with remote dispatch.');
         await outbox.emit({ type: 'completed', outcome: 'cancelled' }); return;
       }
       sendingMayHaveStarted = true;
-      const permit = await client.protocolBegin(command, lease.signal);
+      const permit = await client.protocolBegin(command, lease.requestSignal());
       state = permit.state;
       if (!permit.maySend) throw new Error('Dispatch permission was already consumed.');
       const response = await peer.send(SendMessageRequest.fromJSON({ message: { messageId: state.intent.commandId, role: 'ROLE_USER', parts: [{ text: assignment.task.prompt }] }, configuration: { returnImmediately: true } }), { signal: lease.signal });
       if (!('id' in response) || !response.id) throw new Error('The remote agent did not return a durable Task.');
-      state = await client.protocolBind({ ...command, remoteTaskId: response.id }, lease.signal);
+      state = await client.protocolBind({ ...command, remoteTaskId: response.id }, lease.requestSignal());
     }
     if (state.intent.phase !== 'bound' || !state.intent.remoteTaskId) throw new Error('Remote outcome is unresolved.');
     await observe(peer, state, command, client, lease, outbox, assignment, directory, options);
@@ -84,7 +84,7 @@ async function execute(assignment: ClaimedTask, client: FlowClient, root: string
     if (!lease.signal.aborted && command && state) {
       if (state.intent.phase === 'prepared' && !sendingMayHaveStarted) await outbox?.emit({ type: 'completed', outcome: 'failed', error: 'Remote dispatch could not be prepared.' });
       else {
-        await client.protocolUncertain({ ...command, reason: state.intent.remoteTaskId ? 'remote-read-failed' : 'send-result-unknown' }, lease.signal);
+        await client.protocolUncertain({ ...command, reason: state.intent.remoteTaskId ? 'remote-read-failed' : 'send-result-unknown' }, lease.requestSignal());
         options.onNotice?.({ type: 'protocol-uncertain', attemptId: ownership.attemptId });
       }
     }
@@ -95,7 +95,7 @@ async function observe(peer: A2APeer, state: ProtocolState, command: ProtocolCom
   while (!lease.signal.aborted) {
     await lease.check();
     if (lease.cancelRequested && !state.intent.cancelStarted) {
-      const permission = await client.protocolStartCancel(command, lease.signal);
+      const permission = await client.protocolStartCancel(command, lease.requestSignal());
       state = permission.state;
       if (permission.maySend) {
         try { await peer.cancel(state.intent.remoteTaskId!, { signal: lease.signal }); }

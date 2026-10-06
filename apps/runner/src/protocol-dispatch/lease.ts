@@ -22,6 +22,7 @@ export class ProtocolLease {
     await this.inFlight;
     this.signal.throwIfAborted();
   }
+  requestSignal(): AbortSignal { return AbortSignal.any([this.signal, AbortSignal.timeout(this.timeoutMs)]); }
   interrupt() { this.abort.abort(new Error('Protocol ownership unavailable.')); }
   close() { this.closed = true; clearInterval(this.interval); clearTimeout(this.expiry); this.abort.abort(); }
   private async heartbeat() {
