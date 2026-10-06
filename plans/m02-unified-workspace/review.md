@@ -1,6 +1,6 @@
 # M02 独立审查记录
 
-**状态：NOT_STARTED — 模板待review，不构成approval。**
+**状态：APPROVED（仅backend/contracts/client/CLI首段）— 产品Web及完整M02尚未验收。**
 
 ## Target 与 scope
 
@@ -43,3 +43,11 @@
 ## 作者回应与复审
 
 Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
+
+## 2026-10-06 02:20 UTC 首段独立工程审查
+
+Reviewer：assignment_review / gpt-6-astra，目标e888862570cba3c59789053e68df7d5720650c36，基线e845eb069c594989117fadf380335650efef27a2。范围仅backend/contracts/client/CLI首段，不把此结论套用未来UI/动态计划。只读核对owner auth、RR分页/count、timestamptz(3)游标精度、独立投影提交锁/晚提交无回退，以及CLI公共client边界。无blocking finding。
+
+独立执行client3+CLI14=17/17；P01官方SDK桥接对真实flow_p01的4项（包含新增ListTasks排序、分页前精确count、>=等时间戳、filter绑定和wire省略）；typecheck通过。未复跑作者flow_m02 5项PG，未做UI测试。非阻塞限制：task index跨请求会受活动任务更新重新排序，不是跨页冻结快照；workspace durable feed游标是另一接口，不混为同一承诺。
+
+Owner接受该限制并在接口说明保留；main集成由I02记录。以上是首段实际review，模板未填写部分仍不代表完整M02通过。

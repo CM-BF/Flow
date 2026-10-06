@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-reconciliation
+
+ ✓ apps/server/src/reconciliation.test.ts (12 tests | 8 skipped) 9018ms
+   ✓ preserves v1 evidence during migration and leaves historical heartbeat/event clocks unknown  2078ms
+   ✓ resolves confirmed stopped work atomically, retains history and rejects every late original owner report  2338ms
+   ✓ does not blindly repeat a successful external write whose completion acknowledgement was lost  2380ms
+   ✓ serializes conflicting resolutions and can release a revoked runner without trusting its credentials  1950ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed | 8 skipped (12)
+   Start at  19:14:42
+   Duration  9.36s (transform 91ms, setup 0ms, import 253ms, tests 9.02s, environment 0ms)

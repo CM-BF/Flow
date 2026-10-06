@@ -7,18 +7,20 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-workspace` |
 | Branch | `codex/m2-workspace` |
-| 工作基线 / HEAD | `e845eb069c594989117fadf380335650efef27a2` / 启动时同基线 |
+| 工作基线 / HEAD | `e845eb069c594989117fadf380335650efef27a2` / 已审实现e888862570cba3c59789053e68df7d5720650c36，metadata HEAD由Git显示 |
 | 工作树dirty状态 | 公共工作入口/CLI首段待提交，实际HEAD另由Git记录 |
 | 工作分支状态 | in-progress；公共查询/CLI可交接口，产品Web整改由外部分队推进 |
 | 检查状态 | PASSED 公共 contracts/client 8/8；全库 typecheck 通过；中心行为由 C02 验证，未称系统恢复已完成 |
 | 已集成main状态 / HEAD | M02 尚未集成；main 观察值 `e845eb069c594989117fadf380335650efef27a2`，已有 M1 |
+| 实现目标 | e888862570cba3c59789053e68df7d5720650c36 |
+| 实现范围 | apps/server/src/m2-workspace.ts, apps/server/src/m2-workspace.test.ts, apps/server/src/task-index.ts, packages/contracts/src/workspace.ts, packages/client/src/index.ts, apps/cli/src/ |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 已能统一读取跨任务工作记录和待决策，正在接入产品界面 |
 | 下一可用交付 | 同一入口处理不同任务决策并查看证据 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，backend/CLI首段APPROVED e888862570cba3c59789053e68df7d5720650c36；完整产品M02未完成 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |

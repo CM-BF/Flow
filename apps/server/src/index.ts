@@ -13,6 +13,7 @@ import { detail, eventPage, integerQuery } from './queries.js';
 import { registerStreams } from './streams.js';
 import { migrateWorkspace, registerWorkspaceRoutes } from './m2-workspace.js';
 import { registerTaskIndexRoutes } from './task-index.js';
+import { registerReconciliation } from './reconciliation-http.js';
 
 declare module 'fastify' { interface FastifyRequest { runnerId: string | null } }
 
@@ -63,6 +64,7 @@ export async function createServer(options: ServerOptions) {
   app.get('/api/health', async () => ({ ok: true }));
   registerWorkspaceRoutes(app, pool);
   registerTaskIndexRoutes(app, pool);
+  registerReconciliation(app, pool, boss);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);
