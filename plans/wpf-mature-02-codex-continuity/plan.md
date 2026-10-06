@@ -22,7 +22,7 @@
 - [ ] C02-04：生产 R05D trusted loader/CODEX_HOME 接线与受控实际两轮；真实 auth/model/成本验收另有明确窗口。
 - [ ] C02-05：完整 conversations typed/目录/Web/TUI 接线，与 REQ15 共享 owner 协调，交付父计划完整连续性目标。
 
-C02-01～03 是首片；C02-04/05 尚未领取所需新增共享范围，不能用首片通过勾选。现有 20 literal 见 [claim](../../docs/evidence/mature02c02/claim-receipt.json)。
+C02-01～03 是首片；C02-04/05 尚未领取所需新增共享范围，不能用首片通过勾选。现有 21 literal 见 [claim](../../docs/evidence/mature02c02/claim-amend-receipt.json)。
 
 ## 验证与资源
 
@@ -31,3 +31,5 @@ C02-01～03 是首片；C02-04/05 尚未领取所需新增共享范围，不能�
 未知结果保持原 key/session/任务事实；保存会话的宿主目录在两轮之间不删除，退出进程不冒称该目录已销毁。后继真实窗口需固定版本、模型/认证来源、时间、输出/费用边界和同身份清理方案，当前没有真实运行额度。
 
 架构影响：新增私有 storage→factory 边及 exchange 请求选择；R06/中心 session 锁权威不变。实现后由本 owner 在 status 登记图更新 target，Execution Lead 受控同步。方法遵循 [根模块规则](../../AGENTS.md#modular-design)。
+
+C02-04 后继验收补充（GO输入，未实施）：evidence现终身通知计数含丢弃delta，257拒绝是源码风险，非线上故障证明。未来同一最终正文32/512分片经真实合成transport验证buffer/队列/累计字节、时间与CPU边界；保留stream正文/可公开thinking，exact optOut仅明确final-only消费者，不能靠关流代替修复。未知事件/身份/终态严格保持；新scope与资源窗口待协调，当前0实验。

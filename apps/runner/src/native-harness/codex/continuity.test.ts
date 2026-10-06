@@ -1,14 +1,14 @@
-import { lstatSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { lstatSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterAll, expect, it } from 'vitest';
 import type { HarnessContext, RunnerEventData } from '@flow/contracts';
 import { nativeExecutionProfileConfigurationJson, type CodexExecutionProfileConfiguration } from '../../../../../packages/contracts/src/execution-profiles.js';
-import { CodexTransportError, type CloseReport, type CodexTransport, type Inbound, type Json } from '../../codex/types.js';
 import { guardExecutionProfile } from '../../execution-profiles.js';
 import { createNativeFileRecipe } from '../../engineering/native-policy.js';
 import { textDigest } from '../../verifier.js';
 import { configureCodexHarness, createCodexSessionStorage } from './index.js';
+import { persistentTransportFixture, type ContinuityFixtureMode } from './continuity-fixture.js';
 
 const profile: CodexExecutionProfileConfiguration = { harness: 'codex', adapterVersion: 'codex-app-server-0.154.0-v1', model: 'fixture-model',
   reasoningEffort: null, serviceTier: null, serviceTierForTurn: 'default', access: 'none', approvalPolicy: 'never', sandboxMode: 'read-only',
@@ -23,56 +23,11 @@ afterAll(() => {
   });
   if (process.env.FLOW_C02_CONTINUITY_REPORT) writeFileSync(process.env.FLOW_C02_CONTINUITY_REPORT, JSON.stringify(receipt), { flag: 'wx', mode: 0o600 });
 });
-type Mode = 'success' | 'wrong-resume' | 'lost-resume' | 'unknown-close' | 'approval';
-function setup(mode: Mode = 'success') {
+function setup(mode: ContinuityFixtureMode = 'success') {
   const root = mkdtempSync(join(tmpdir(), 'flow-c02-continuity-')); const { dev, ino } = lstatSync(root); roots.push({ path: root, dev, ino });
-  const events: RunnerEventData[] = [], calls: { instance: number; method: string; params: Json }[] = [];
-  const instances: { codeHome: string; closed: boolean; reads: number }[] = [];
-  const storage = createCodexSessionStorage({ codeHome: root, runnerId, configDigest: pin.configDigest, createTransport(options) {
-    // A second, independent transport must consume the saved fixture, after its predecessor closed.
-    expect(instances.every(instance => instance.closed)).toBe(true);
-    const state = { codeHome: options.codeHome, closed: false, reads: 0 }; instances.push(state); const instance = instances.length;
-    const queue: Inbound[] = []; let waiter: ((message: Inbound | null) => void) | undefined;
-    let closeResolve!: (report: CloseReport) => void;
-    const closed = new Promise<CloseReport>(resolve => { closeResolve = resolve; });
-    const report: CloseReport = { reason: 'CLOSED', child: mode === 'unknown-close' ? 'unconfirmed' : 'confirmed-exited', exitCode: 0, signal: null, remoteEffects: 'unknown' };
-    function publish(message: Inbound) { if (waiter) { const deliver = waiter; waiter = undefined; deliver(message); } else queue.push(message); }
-    const transport: CodexTransport = {
-      ready: Promise.resolve({ userAgent: 'in-memory-fixture', platformFamily: 'fixture', platformOs: 'fixture' }), closed,
-      async request(method, params): Promise<Json> {
-        calls.push({ instance, method, params });
-        if (method === 'thread/start') {
-          expect(params).toMatchObject({ ephemeral: false, sandbox: 'read-only', approvalPolicy: 'never' });
-          writeFileSync(join(options.codeHome, 'session.json'), JSON.stringify({ threadId: 'persistent-thread', remembered: 'remembered 中文🙂' }), { flag: 'wx', mode: 0o600 });
-        } else if (method === 'thread/resume') {
-          const saved = JSON.parse(readFileSync(join(options.codeHome, 'session.json'), 'utf8')); state.reads++;
-          expect(params).toEqual({ threadId: saved.threadId, model: 'fixture-model', serviceTier: null, cwd: root, approvalPolicy: 'never', sandbox: 'read-only', excludeTurns: true });
-          if (mode === 'lost-resume') throw new CodexTransportError('TIMEOUT', 'unknown');
-        } else if (method === 'turn/start') {
-          expect(params).toMatchObject({ threadId: 'persistent-thread', sandboxPolicy: { type: 'readOnly', networkAccess: false } });
-          const saved = JSON.parse(readFileSync(join(options.codeHome, 'session.json'), 'utf8')); state.reads++;
-          const final = { type: 'agentMessage', id: `final-${instance}`, text: saved.remembered as string, phase: 'final_answer', delivery: null, questions: null };
-          const turn = { id: `turn-${instance}`, status: 'completed', itemsView: 'full', items: [final], error: null };
-          if (mode === 'approval') publish({ kind: 'server-request', id: 1, method: 'item/fileChange/requestApproval', params: {} });
-          publish({ kind: 'notification', method: 'item/completed', params: { threadId: 'persistent-thread', turnId: turn.id, completedAtMs: 1, item: final } });
-          publish({ kind: 'notification', method: 'turn/completed', params: { threadId: 'persistent-thread', turn } });
-          return { turn: { ...turn, status: 'inProgress', items: [] } };
-        } else throw new Error('Unexpected fixture request');
-        return { thread: { id: mode === 'wrong-resume' && method === 'thread/resume' ? 'different-thread' : 'persistent-thread' }, model: 'fixture-model',
-          modelProvider: 'fixture', serviceTier: null, reasoningEffort: null, approvalPolicy: 'never', sandbox: { type: 'readOnly', networkAccess: false } };
-      },
-      receive() {
-        if (queue.length) return Promise.resolve(queue.shift()!);
-        if (state.closed) return Promise.resolve(null);
-        if (waiter) throw new Error('Only one fixture consumer is permitted');
-        return new Promise(resolve => { waiter = resolve; });
-      },
-      async respond(_id, reply) { expect(reply).toEqual({ result: { decision: 'decline' } }); },
-      async close() { state.closed = true; if (waiter) { waiter(null); waiter = undefined; } closeResolve(report); return report; },
-      snapshot() { throw new Error('Snapshot is not a continuity authority'); },
-    };
-    return transport;
-  } });
+  const events: RunnerEventData[] = [];
+  const { createTransport, calls, instances } = persistentTransportFixture({ codeHome: root, mode });
+  const storage = createCodexSessionStorage({ codeHome: root, runnerId, configDigest: pin.configDigest, createTransport });
   const configured = configureCodexHarness({ publicProfile: profile, sessionStorage: storage });
   const adapter = guardExecutionProfile(configured.adapter, pin, profile);
   function context(resumeSessionId?: string): HarnessContext {
