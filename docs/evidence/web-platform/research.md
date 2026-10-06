@@ -339,3 +339,5 @@ CHAT04中心queue（Mika/root转交方向，尚无TS实现）：enqueue(conversa
 ## 04:22 assistant-ui queue-only适配限制（root只读）
 
 固定core0.3.22的`src/runtime/queue/external-thread-queue-adapter.ts` queue Interface同时要求enqueue/steer/move/edit/remove，callbacks是void，queue item仅id/prompt/parts，没有中心ACK/blocked/status。`external-store-thread-runtime-core.ts` 704–714只要有queue adapter，普通tail append都走adapter而不再onNew；message.steer未指定且isRunning=true默认走steer，305按adapter存在宣布queue能力。不可机械接createMessageQueue或noop不支持的steer/move/edit冒充成功。CHAT04 queue-only应使用明确排队入口/呈现或严格拒绝路径，按冻结合同再选；按钮/Enter/快捷键同语义，pending/unknown receipt单列，中心仍权威提升顺序/取消阻塞/revision/幂等，库items不是PG事实。root仅本地固定库只读，0模型/执行/改动；当前unsupported按钮不改。
+
+U11执行配置消费候选已收到w01固定dd1只读报告，完整[研究](execution-profiles-research.md)。核心为整份runner不可变profile选择、create即pin、false控件不造组合、requested/profile声明/runnerRequested/effective四层分开；unknown ACK固定reference与key，不以新选择重试。后继先X03 App挂载，配置选择尚未take/实现，无模型。
