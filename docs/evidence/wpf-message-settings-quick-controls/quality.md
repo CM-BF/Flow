@@ -17,3 +17,9 @@
 状态表按Lead实际parser约定修正owner字段与4列TODO；现179source observed2026-10-06 22:12:19来自Lead转述，未主动采dashboard。
 
 经现有实际 parseStatus 仅解析本任务 status：errors=[]、5 TODO、owner 明确；原结果 actual-status-parser.json。没有运行任何产品类型/测试/HTTP/browser。
+
+## R3 验收源码补齐 2026-10-06 22:25:49 UTC
+
+本人 live 核 claim 839e466f v1 原六范围；管理22:20:47 fresh原件已归档 pagination-repair-claim.json。复用本地 clean-code/webapp-testing 方法，最小只改 fixture/browser：真实受控 Apply 建立后页配置草稿；刷新/分页走原 HTTP 目录，不 mock catalog/capture，不减既有断言。命名明确 later profile，HTTP 请求序列与 exact profile 身份单独校验，无 first/nth、无笛卡尔积、无新 production authority。四源 fixed/current 同、13保护源与base同、source diffcheck0；无产品 import/检查/HTTP/Chrome/free。
+
+元数据更新脚本首次 source-delta 断言错误地包含历史 metadata，已停止该 Python 更新；后续命令只归档了5份原件并正常提交258c。本次改为限定 apps/web 后更新当前 manifest/status/review；原归档未覆盖，未误报运行通过。types/direct/browser 均 NOT_RUN；root已允许准备精确可执行 packet，仍无gate。
