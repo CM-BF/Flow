@@ -1,10 +1,10 @@
 import { spawn, execFile, type ChildProcess } from 'node:child_process';
 import { once } from 'node:events';
 import { promisify } from 'node:util';
-import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, writeFile, rm, chmod } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, createHash } from 'node:crypto';
 import { Pool } from 'pg';
 import { afterEach, beforeEach, expect, test } from 'vitest';
 import { FlowClient } from '@flow/client';
@@ -20,7 +20,7 @@ const children: ChildProcess[] = [];
 type ObservedRequest = { url: string; body: unknown };
 let holdResponse: ((request: ObservedRequest) => boolean) | undefined;
 let held: (() => void) | undefined; let release: (() => void) | undefined;
-let rejectHeartbeats = false; let heartbeatRejections = 0;
+let rejectHeartbeats = false; let heartbeatRejections = 0; let heartbeatRequests = 0;
 function holdNextResponse(predicate: (request: ObservedRequest) => boolean) {
   holdResponse = predicate;
   return new Promise<void>(resolve => { held = resolve; });
@@ -28,6 +28,7 @@ function holdNextResponse(predicate: (request: ObservedRequest) => boolean) {
 async function startCenter(port = 0, leaseMs = 15_000) {
   server = await createServer({ databaseUrl, ownerToken, leaseMs });
   server.addHook('preHandler', async (request, reply) => {
+    if (request.url === '/api/runner/heartbeat') heartbeatRequests++;
     if (rejectHeartbeats && request.url === '/api/runner/heartbeat') {
       heartbeatRejections++; return reply.code(503).send({ error: 'lease-test-unavailable' });
     }
@@ -49,14 +50,14 @@ async function launch(token: string, entry = 'apps/runner/src/protocol-dispatch/
     env: { ...process.env, FLOW_URL: baseUrl, FLOW_RUNNER_TOKEN: token, FLOW_RUNNER_WORKDIR: join(directory, 'runner'), FLOW_A2A_ENDPOINTS_FILE: join(directory, 'endpoints.json') } });
   children.push(child); return child;
 }
-async function submit() {
+async function submit(endpointRef = 'peer') {
   const runner = await client.registerRunner({ name: 'P02 independent process', harnesses: ['a2a'], capacity: 1 });
-  const task = await client.submit({ title: 'Remote checked work', prompt: 'Produce a remote artifact.', harness: 'a2a', protocol: { endpointRef: 'peer' } }, randomUUID());
+  const task = await client.submit({ title: 'Remote checked work', prompt: 'Produce a remote artifact.', harness: 'a2a', protocol: { endpointRef } }, randomUUID());
   return { token: runner.token, id: task.task.id };
 }
 beforeEach(async () => {
   holdResponse = undefined; held = undefined; release = undefined;
-  rejectHeartbeats = false; heartbeatRejections = 0;
+  rejectHeartbeats = false; heartbeatRejections = 0; heartbeatRequests = 0;
   pool = new Pool({ connectionString: databaseUrl }); await pool.query('DROP SCHEMA IF EXISTS flow CASCADE; DROP SCHEMA IF EXISTS pgboss CASCADE');
   directory = await mkdtemp(join(tmpdir(), 'flow-p02-runtime-')); peer = await officialPeer();
   await writeFile(join(directory, 'endpoints.json'), JSON.stringify({ peer: { url: peer.url, allowLoopbackHttp: true, timeoutMs: 4000 } }), { mode: 0o600 });
@@ -253,4 +254,35 @@ test('production server, runner and CLI entry points dispatch and inspect one ve
   expect((await runnerExit)[0]).toBe(0);
   const centerExit = once(centerProcess, 'exit'); centerProcess.kill('SIGTERM');
   expect((await centerExit)[0]).toBe(0);
+});
+
+
+test('an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send', async () => {
+  const { token, id } = await submit();
+  const claimant = new FlowClient({ baseUrl, token });
+  await expect.poll(async () => (await claimant.claim()).assignment).toBeTruthy();
+  const blocked = holdNextResponse(request => request.url === '/api/runner/protocol/recover');
+  const child = await launch(token, 'apps/runner/src/main.ts');
+  await blocked;
+  expect((await client.show(id)).attempt).toBeTruthy();
+  const stateRoot = join(directory, 'runner', createHash('sha256').update(baseUrl).digest('hex'));
+  await chmod(stateRoot, 0o500);
+  try {
+    release?.();
+    await expect.poll(() => child.exitCode, { timeout: 2500 }).toBe(1);
+    expect(heartbeatRequests).toBe(0);
+    expect(peer.counts.sends).toBe(0);
+    expect(await client.protocolState(id)).toBeNull();
+  } finally { await stop(child); await chmod(stateRoot, 0o700); }
+});
+
+test.each(['missing-ref', 'constructor', 'toString', 'bad-url'])('invalid local endpoint %s exits without dispatch or continuing heartbeats', async name => {
+  const reference = name === 'bad-url' ? 'peer' : name;
+  if (name === 'bad-url') await writeFile(join(directory, 'endpoints.json'), JSON.stringify({ peer: { url: 'not-a-url' } }));
+  const { token, id } = await submit(reference);
+  const child = await launch(token, 'apps/runner/src/main.ts');
+  await expect.poll(() => child.exitCode, { timeout: 2500 }).toBe(1);
+  expect(heartbeatRequests).toBe(0);
+  expect(peer.counts.sends).toBe(0);
+  expect(await client.protocolState(id)).toBeNull();
 });

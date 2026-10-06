@@ -32,3 +32,11 @@ typecheck通过；首HTTP/PG 3/3通过（3.27s，专用flow_p02），覆盖中�
 Lead共享9db3ce生产挂载已pick为05a1308。删除测试内所有手工migrate/register备用逻辑，createServer必须自身挂载成功。增加真实server/main、runner/main、CLI/main三个进程入口旅程：从空flow_p02 schema启动中心（独立动态端口），CLI注册a2a、提交endpointRef、查询binding与完成快照，runner导入产物并独立验证，最后runner/center均SIGTERM正常exit0。联合13/13（17.85s）+typecheck通过。
 
 此段clean-code核对测试资源归属、创建/退出、文件配置凭据边界、生产入口与原功能兼容：只在FLOW_A2A_ENDPOINTS_FILE显式配置时选择协议runtime；独立a2a runner注册，不替换fixture/Claude语义。测试不安装新依赖、不用固定业务端口；官方peer的确定性内存TaskStore边界保持明示。已完成自身实现范围，独立review仍NOT_STARTED，P01剩余完整互操作能力不自动勾销。
+
+## 03:00 UTC 初始化P2复现与修复
+
+Goal Owner对e2955d4源码指出两项P2，Lead要求修正，原target尚未批准。独立实际复现：chmod0500使attempt父目录不可写时，真实runner/main在2.5s内不退出；constructor/toString继承名称、坏URL也不退出。第一轮目录夹具误阻塞空claim响应，调整为公开claim先取得assignment、再阻塞recover确认后施加真实权限故障，随后正确复现目录失败，不把最初夹具错误当产品证据。missing-ref原本已fatal但先发了一次heartbeat，本次加强为初始化失败零heartbeat。
+
+修复：URL策略复用@flow/protocols.remoteUrl，endpoint字典null-prototype且按Object.hasOwn解析；明确ProtocolConfigurationError。mkdir以EventStorageError失败，在成功完成本地目录和端点校验之后才构造ProtocolLease，故失败路径不存在活跃timer。真实main五项故障回归全部通过：exit1、0heartbeat、0remote send、中心无protocol intent；目录权限及子进程均清理。15项受影响runtime检查（含真实生产main旅程）全部通过20.64s，typecheck通过。未重复不受影响的中心3项，其13项生产基线原始JSON/hash完整保留。
+
+clean-code复核：不添加权限平台/新重试循环，不吞配置或存储故障为connection-lost；把副作用启动放在可失败的本地初始化之后，复用同一fatal错误分类。独立复审仍待实际结果，不自称APPROVED。
