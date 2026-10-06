@@ -1,0 +1,23 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ✓ apps/server/src/goal-context/context.test.ts (10 tests) 1445ms
+ ✓ apps/server/src/goal-context/behavior.test.ts (4 tests) 5562ms
+   ✓ propagates knowledge staleness through actual dependencies while preserving independent deliveries and old history  2433ms
+   ✓ restricts runner reference changes and execution inside the first command branch while replaying prior accepted receipts  1339ms
+   ✓ keeps old no-reference request receipts stable and treats empty references as a semantic no-op  889ms
+   ✓ rejects cross-project, duplicate, bad-boundary and oversized selections without orphan inputs or receipts  900ms
+ ✓ apps/server/src/goal-context/recovery.test.ts (2 tests) 5059ms
+   ✓ preserves frozen knowledge through explicit revised-work recovery without restoring goal delivery  2418ms
+   ✓ preserves frozen knowledge through explicit no-side-effects recovery without restoring goal delivery  2641ms
+ ✓ apps/server/src/goal-context/claim.test.ts (3 tests) 8186ms
+   ✓ returns the complete frozen private prompt from the real authenticated claim while public projections stay raw  1688ms
+   ✓ rolls back attempt and ownership writes when the declared goal input is corrupt  1602ms
+   ✓ executes the frozen prompt through the existing runner and fixture adapter without adding a runner field  4895ms
+ ✓ apps/server/src/goal-context/input.test.ts (1 test) 4ms
+
+ Test Files  5 passed (5)
+      Tests  20 passed (20)
+   Start at  23:29:01
+   Duration  22.20s (transform 578ms, setup 0ms, import 1.41s, tests 20.26s, environment 0ms)
+

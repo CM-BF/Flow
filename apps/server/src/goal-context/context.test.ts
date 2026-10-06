@@ -151,3 +151,11 @@ it('freezes an explicitly selected old version without substituting the current 
   const blocked = await f.http(`/api/goals/${s.goalId}/commands`, execution(s.nodeId)); expect(blocked.body.error.code).toBe('goal_knowledge_obsolete');
   expect((await f.pool.query('SELECT count(*) FROM flow.goal_executions WHERE goal_id=$1', [s.goalId])).rows[0].count).toBe('0');
 });
+it('rejects simultaneous conversation and goal bindings at the database boundary', async () => {
+  const s = await defined(); const task = await bound(s);
+  const conversation = await f.http('/api/conversations', { title: 'Other immutable context', projectId: s.projectId }); expect(conversation.status).toBe(201);
+  const turn = await f.http(`/api/conversations/${conversation.body.conversation.id}/turns`, { expectedRevision: 0, text: 'Separate raw user text', knowledge: [s.citation] }); expect(turn.status).toBe(202);
+  const conversationInput = turn.body.turn.context.executionInputId;
+  await expect(f.pool.query('UPDATE flow.tasks SET conversation_input_id=$2 WHERE id=$1', [task.id, conversationInput])).rejects.toMatchObject({ code: '23514', constraint: 'task_single_context' });
+  expect((await f.pool.query('SELECT conversation_input_id FROM flow.tasks WHERE id=$1',[task.id])).rows[0].conversation_input_id).toBeNull();
+});
