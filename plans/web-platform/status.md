@@ -12,7 +12,7 @@
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CHAT首独立63743 fixture已可交互，正在收固定候选；PERF02获审且主线已实际集成 |
+| 当前产出 | CHAT已固定84242ca，模块/组合/UI/scope三线独立审查中；PERF02获审且主线已实际集成 |
 | 下一可用交付 | CHAT固定候选的模块/组合/UI及scope文档独立审查；主线随后真实模型验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -40,7 +40,7 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 
 | 当前工作 | 已核事实与下一步 |
 | --- | --- |
-| [WPF-CHAT01](conversation-core/plan.md) | 新tree web-conversations / claim08259c1d v1精确16scope；共享受控输入a3b9及canonical c72e02就绪，blockerNONE，唯一owner实施持续conversation projection/outbox/官方Thread。首HTTP fixture http://127.0.0.1:63743/ / session14932，作者两轮同conversation正文/0pageerror；仍moving、整体targetUNKNOWN，root与GoalOwner用户视角验收中，未给UI approval |
+| [WPF-CHAT01](conversation-core/plan.md) | 新tree web-conversations / claim08259c1d v1精确16scope；共享受控输入a3b9及canonical c72e02就绪，blockerNONE，唯一owner实施持续conversation projection/outbox/官方Thread。首HTTP fixture http://127.0.0.1:63743/ / session14932，已固定84242ca1d214f9a9ff369b07c13657918862f226、baseb584含早期outbox；作者33direct/dev11/prod11，末接缝改动后仅局部prod1/typecheck/build，未称final全11重跑。w01模块/root组合/管理scope分别只读审，整体未批准 |
 | [WPF-PERF02](performance-optimization/plan.md) | web-activity-window / claimd36cd583 v1精确8scope；候选a87f64f48a3b7e8d03429ab0673c210076a2df0d，最终metadata172d10d63179a4861cc0fbf986dec10bd0a45f10 clean、实现diff0。作者13局部tests/typecheck/8productionbrowser与三规模通过；root独立限定APPROVED，03:49已交Lead集成。owner停止八scope主动写入；04:01:56 main8f1481d已实际ancestor/current/scopeEqual，后续组合由集成方验证 |
 | Dashboard来源 | 03:46:41.801Z管理者实采39源，两新任务各唯一live source与claim v1/worker/branch匹配，unregistered=[]；当时CHAT issues=[]，PERF02缺分支字段；最终03:49:13.564Z一次再核字段已补、checks/review均绑a87且proof unchanged、issues=[]。完整证据见下 |
 | 多Lead边界 | Mika独占B01后台投影/feed字节/历史性能及下一X02中心registry；本队不写后端。PERF02只改受领窗口接缝，CHAT只改会话与App受领文件，无字面scope重叠 |
@@ -77,3 +77,5 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 03:54首CHAT预览由root及管理者近同时桥接一次给GoalOwner（重复通知事实保留，后续统一root UI回程，不再重复）；是新独立fixture，不是将用户49922替换为新版本。ACK形状/身份与先前unknown状态保留正在原scope修正，具体结论等固定候选。
 
 04:02 PERF02 main收口：[04:01:56.630Z实采](../../docs/evidence/web-platform/perf02-main-dashboard.json)显示main8f1481df880cf5077e1ddb9a8f302fe700a7ece8、targeta87、methodancestor/current/historicalIntegrated/scopeEqual真、dirtyScopePaths=[]、issues=[]。owner旧mainRecord未同步不否认Git实证；下次唤醒w01作canonical纯metadata。主Lead另报4320在04:01:07已42源、CHAT03/R04/P03 live/unregistered空，此为Lead来源，不再次轮询。
+
+固定CHAT范围审计：[逐commit/共享hash/claim证据](../../docs/evidence/web-platform/chat-candidate-scope-audit.json)。自有实现均在16scope，三个Lead共享输入单列且hash匹配；保护路径零diff。全diffcheck仅原始transport.patch上下文空格exit2，保留raw；排除原始patch后的source/docs check0，不写无条件全绿。PERF02 canonical集成metadata已由唯一owner提交b61707d20ee9803e7397f21961549deb65ceef1d clean，只改3文档、无产品重测。
