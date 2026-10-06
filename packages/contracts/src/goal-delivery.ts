@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { idSchema, type TaskStatus, type VerificationStatus } from './tasks.js';
 import { MAX_PROJECT_NODES } from './projects.js';
-import type { GoalArtifactBinding, GoalDefinition, GoalView } from './goals.js';
+import type { GoalArtifactBinding, GoalDefinition, GoalView, GoalExplanation } from './goals.js';
 
 export const GOAL_DELIVERY_MAX_NODES = MAX_PROJECT_NODES;
 export const GOAL_DELIVERY_PAGE_SIZE = 50;
@@ -13,6 +13,8 @@ export const goalDeliveryQuerySchema = z.discriminatedUnion('view', [
   z.strictObject({ view: z.literal('state'), nodeIds }),
   z.strictObject({ view: z.literal('input'), nodeId: idSchema, version }),
   z.strictObject({ view: z.literal('goal') }),
+  z.strictObject({ view: z.literal('explanations'), after: z.string().min(1).max(1024).optional(), limit: z.coerce.number().int().min(1).max(GOAL_DELIVERY_PAGE_SIZE).default(20) }),
+  z.strictObject({ view: z.literal('explanation'), version }),
   z.strictObject({ view: z.literal('decision'), nodeId: idSchema, taskId: idSchema, decisionId: idSchema }),
 ]);
 /** GET query: state serializes nodeIds as repeated nodeIds parameters. */
@@ -21,6 +23,8 @@ export type GoalDeliveryQuery =
   | { view: 'state'; nodeIds: string[] }
   | { view: 'input'; nodeId: string; version: number }
   | { view: 'goal' }
+  | { view: 'explanations'; after?: string; limit?: number }
+  | { view: 'explanation'; version: number }
   | { view: 'decision'; nodeId: string; taskId: string; decisionId: string };
 export interface GoalInputReference { goalId: string; nodeId: string; version: number }
 export interface GoalPlanNode {
@@ -59,4 +63,16 @@ export interface GoalDeliveryGoal { view: 'goal'; goal: GoalView }
 export interface GoalDeliveryDecision {
   view: 'decision'; reference: GoalDecisionReference; prompt: string; pending: boolean; answer: 'approve' | 'reject' | null;
 }
-export type GoalDeliveryRead = GoalDeliveryPlan | GoalDeliveryState | GoalDeliveryInput | GoalDeliveryGoal | GoalDeliveryDecision;
+export interface GoalExplanationReference { goalId: string; version: number }
+export interface GoalExplanationItem {
+  reference: GoalExplanationReference; kind: GoalExplanation['kind']; createdAt: string; source: GoalExplanation['source'];
+}
+export interface GoalDeliveryExplanations {
+  view: 'explanations'; goalId: string;
+  /** Immutable history upper bound, not proof that these facts are currently valid. */
+  throughVersion: number; items: GoalExplanationItem[]; nextCursor: string | null;
+}
+export interface GoalDeliveryExplanation {
+  view: 'explanation'; reference: GoalExplanationReference; explanation: GoalExplanation; historical: true;
+}
+export type GoalDeliveryRead = GoalDeliveryExplanations | GoalDeliveryExplanation | GoalDeliveryPlan | GoalDeliveryState | GoalDeliveryInput | GoalDeliveryGoal | GoalDeliveryDecision;
