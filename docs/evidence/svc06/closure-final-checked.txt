@@ -1,0 +1,15 @@
+✔ selects only required index/content identities with executable paths and shared-content deduplication (1.296167ms)
+✔ missing or inconsistent selected cache data rejects before any copy or installation (0.470375ms)
+✔ selects only backend production workspace dependencies and explicit root tsx without mutating source (2.480917ms)
+✔ retains distinct resolved peer contexts and only omits incompatible optional packages (0.925958ms)
+✔ rejects mismatched manifests, tools, unresolved edges and out-of-tree workspace links (0.57175ms)
+✔ handles a dependency cycle without looping and rejects oversized input before graph traversal (4.884209ms)
+✔ prepares deterministic staging bytes and detects any installer mutation before source restoration (1.792208ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 61.952417

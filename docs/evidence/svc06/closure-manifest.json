@@ -1,0 +1,248 @@
+{
+  "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+  "base": "91402e174022b7568aa21ce2ddfcb69932e111bd",
+  "at": "2026-10-06T15:16:02.035085+00:00",
+  "sources": [
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 9549,
+      "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "bytes": 7646,
+      "sha256": "e40fd401bb7e307dde9ba957a8c56c1c4b21d9f135d8e33ecec0705f4dadcc8f"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.test.mjs",
+      "bytes": 2790,
+      "sha256": "cf863600d4e1e5a70c876854ddef07471838452b24fe6d386d2cde6d87385f1c"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-observe.mjs",
+      "bytes": 2518,
+      "sha256": "d0123fb73c5aae9a71ca8a7fcc9a10e0acbc28a479954a2b348149c283762a47"
+    }
+  ],
+  "directInputs": [
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 423,
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063"
+    },
+    {
+      "path": "packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4853,
+      "sha256": "aac76a3003e14218b6084256d977158bf38a4794f5b58712f4b37fcf07d105ab"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 994,
+      "sha256": "331d79f85335f53b8f8d48bcd30bfcbf3e2d95e75c9cd2a165d0b2d0f0ac689e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/svc06/closure-cache-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-cache-red.txt",
+      "bytes": 1679,
+      "sha256": "7e55846fa0930bb40f0473a3f83ffcb6741405cd6af4b7a2b290276bb504e434"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-claim.json",
+      "bytes": 1009,
+      "sha256": "50d28877373cbc4c55df7c02735af34a5a31465f35cc4c060354430f759a5b95"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-final-checked.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-final-checked.txt",
+      "bytes": 883,
+      "sha256": "df748afe2aebb9b28405dc1c65c851b3f7bb1747996922abd3c10118f82ae00f"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-final.txt",
+      "bytes": 877,
+      "sha256": "37064566f3069e021575d627eff8dcd185d474afd544cf327e3511ab35b6be24"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-first-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-first-green.txt",
+      "bytes": 232,
+      "sha256": "4a8248fb8a8b20c611658b6da71669e4243a37f3eb6fa9ddb4f5c04e831d2247"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-fixed-lock-final.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-fixed-lock-final.json",
+      "bytes": 9610,
+      "sha256": "cc119874c143a00f2e26d8194ea22390b8c38e33a945340a31f6b755752d8f62"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-fixed-lock-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-fixed-lock.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-fixed-lock.json",
+      "bytes": 9610,
+      "sha256": "dcfd8e20e30d530789a803511c4ab6c7086e401fa326533ae705be81505a3fd6"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-fixed-lock.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-red.txt",
+      "bytes": 1707,
+      "sha256": "922ed87f229070d711c970bb2c5c011daf577e34f3636473cc6c24d58090aaa8"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-resources.json",
+      "bytes": 706,
+      "sha256": "10dd6217ae0b5b2153ac54126beecbf057c9f0c26af8e0ae378c9b40f868b546"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-syntax.json",
+      "bytes": 940,
+      "sha256": "b23f1c4dacc86ba1cea1f699e27e486d8623ce8e23faab2553b6acf2dce26983"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-view-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-view-green.txt",
+      "bytes": 661,
+      "sha256": "8a2755c4203bc7ea642d7f9df84ad473dc2b2b0471ff1cc9ba8df25adb54dc6f"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-view-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-view-red.txt",
+      "bytes": 2096,
+      "sha256": "d729cf7b6d41a4207e845e55d08fda0108df6c58e403986fd102b015ca56c3e2"
+    }
+  ],
+  "inputDelta": "all 12 bytes identical to base; original lock 0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+  "checks": {
+    "distinctNodeTests": 7,
+    "finalPassed": 7,
+    "syntaxFiles": 6,
+    "fixedLockSelection": {
+      "snapshots": 256,
+      "totalSnapshots": 683,
+      "workspaces": 5,
+      "plusRootTsx": true,
+      "testOnlyParser": "system Ruby 2.6.10 / Psych 3.1.0; not production parser"
+    },
+    "productionParserConfigured": false,
+    "builderWired": false,
+    "installs": 0,
+    "fullBuilds": 0,
+    "pg": 0,
+    "provider": 0
+  },
+  "redLimits": [
+    "Initial selector/cache red are missing-module failures, 0 test behavior passed.",
+    "View red selected5, 4pass/1fail due missing view module.",
+    "Later guard cases did not each receive a separate red run; final7 are not additional to prior repeated greens."
+  ],
+  "limits": [
+    "Pure planning only; no source/config writes by Interface.",
+    "No actual cache content hash/existence or physical saving proof.",
+    "No pnpm filtered installation acceptance or full artifact/host execution.",
+    "Unchanged 2.5 GiB and 1 GiB reserve gates.",
+    "Old 6d276 approval remains separate; new source review NOT_STARTED."
+  ],
+  "review": "NOT_STARTED"
+}
