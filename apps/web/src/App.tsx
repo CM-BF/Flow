@@ -1,4 +1,5 @@
 import {
+  Activity,
   useEffect,
   useCallback,
   useLayoutEffect,
@@ -31,7 +32,6 @@ import {
   X,
 } from "lucide-react";
 import {
-  WorkspacePanels,
   type WorkspaceTabId,
 } from "./components/workspace/WorkspacePanels";
 import { TaskProjection } from "./projection";
@@ -47,7 +47,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./components/ui/dialog";
-import { applyTheme, initialTheme } from "./themes";
+import { applyTheme, initialTheme, themes, type Theme } from "./themes";
+import { AppPluginSession, type AppActions } from "./plugin-integration/session";
+import { PluginProvider, AppSlot, PluginRail, PluginSettings, PluginWorkspace } from "./plugin-integration/react";
 import {
   closeChat,
   mergeChats,
@@ -167,6 +169,7 @@ function ChatListItem({
   );
   const latest = snapshot ?? task;
   return (
+    <div className={`flow-chat-row ${selected ? "selected" : ""}`}>
     <button
       title={latest.title}
       className={selected ? "selected" : ""}
@@ -178,6 +181,8 @@ function ChatListItem({
       />
       <span>{latest.title}</span>
     </button>
+    <AppSlot slot="sidebar.item.actions" context={{ kind: "task", taskId: task.id }} />
+    </div>
   );
 }
 interface View {
@@ -220,9 +225,10 @@ function ChatPane({
       {task && (
         <div
           className="flow-task-bar"
-          data-extension-slot="chat.message.actions"
+          data-extension-slot="chat.task.actions"
         >
           <Status status={task.status} />
+          <AppSlot slot="chat.task.actions" context={{ kind: "task", taskId: task.id }} />
           <span className={`verification-${task.verificationStatus}`}>
             {task.verificationStatus === "passed"
               ? "Verified"
@@ -324,8 +330,8 @@ function Workspace({
 }: {
   client: FlowClient;
   onDisconnect: () => void;
-  theme: string;
-  onTheme: () => void;
+  theme: Theme;
+  onTheme: (theme: Theme) => void;
 }) {
   const [catalog] = useState(() => new TaskProjection(client));
   const list = useSyncExternalStore(catalog.subscribe, catalog.getSnapshot);
@@ -336,6 +342,7 @@ function Workspace({
   const [sidebar, setSidebar] = useState(() => window.innerWidth > 800);
   const [query, setQuery] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
+  const [panelVisited, setPanelVisited] = useState(false);
   const panelContainer = useRef<HTMLDivElement>(null);
   const [panelFocusRequest, setPanelFocusRequest] = useState<PanelFocusRequest | null>(null);
   const [panelTabs, setPanelTabs] = useState<Record<string, WorkspaceTabId>>(
@@ -440,9 +447,14 @@ function Workspace({
   }, [selectedId, overview]);
   const panel = panelTabs[selectedId ?? ""] ?? "files";
   const setPanel = (tab: WorkspaceTabId, id = selectedId) => {
+    setPanelVisited(true);
     if (id) setPanelTabs((previous) => ({ ...previous, [id]: tab }));
-    if (id && tab.startsWith("detail:")) setPanelFocusRequest(previous => ({ serial: (previous?.serial ?? 0) + 1, taskId: id, tab }));
+    if (id) setPanelFocusRequest(previous => ({ serial: (previous?.serial ?? 0) + 1, taskId: id, tab }));
     setPanelOpen(true);
+  };
+  const closePanel = () => {
+    setPanelOpen(false);
+    requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('.flow-workspace-bar button[aria-label="Toggle workspace panel"]')?.focus());
   };
   const close = (id: string) => {
     const next = closeChat(groups, id);
@@ -479,8 +491,40 @@ function Workspace({
       })),
     );
   };
+  const actions: AppActions = {
+    knowsTask: id => views.has(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
+    task: id => views.get(id)?.projection.getSnapshot().task ?? null,
+    hasDraft: id => id.startsWith("draft-") && views.has(id),
+    openTask: select,
+    openWorkspace: (id, tab) => { select(id); setPanel(tab, id); },
+    closeWorkspace: closePanel,
+    loadReference: async (id, referenceId) => {
+      const projection = views.get(id)?.projection;
+      if (!projection) throw Error("Open this task before loading its reference.");
+      await projection.loadDetail(referenceId);
+      const result = projection.getSnapshot().details[referenceId];
+      if (result?.error) throw Error(result.error);
+    },
+    setTheme: onTheme,
+    copy: text => navigator.clipboard.writeText(text),
+  };
+  const [session, setSession] = useState<AppPluginSession | null>(null);
+  const actionsRef = useRef(actions);
+  actionsRef.current = actions;
+  useLayoutEffect(() => {
+    const created = new AppPluginSession(actionsRef.current, theme);
+    setSession(created);
+    return () => { void created.dispose(); };
+  }, [client]);
+  useLayoutEffect(() => {
+    session?.updateActions(actions);
+    session?.publishNavigation({ activeTaskId: selectedId && !selectedId.startsWith("draft-") ? selectedId : null, workspaceTab: panel, workspaceOpen: panelOpen },
+      selectedId ? selectedId.startsWith("draft-") ? { kind: "composer", viewId: selectedId, isDraft: true } : { kind: "task", taskId: selectedId } : { kind: "global" });
+    session?.publishTheme(theme);
+  });
+  if (!session) return <p role="status">Opening workspace…</p>;
   return (
-    <div className="flow-shell">
+    <PluginProvider session={session}><div className="flow-shell">
       <nav
         data-extension-slot="activityBar.primary"
         className="flow-rail"
@@ -528,12 +572,14 @@ function Workspace({
           className="flow-rail-bottom"
         >
           <IconButton
-            label={theme === "dark" ? "Use light theme" : "Use dark theme"}
-            onClick={onTheme}
+            label={theme.scheme === "dark" ? "Use light theme" : "Use dark theme"}
+            onClick={() => onTheme(themes.find(item => item.id === (theme.scheme === "dark" ? "light" : "dark"))!)}
           >
-            {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
+            {theme.scheme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
           </IconButton>
-          <IconButton label="Change connection" onClick={onDisconnect}>
+          <PluginRail />
+          <PluginSettings />
+          <IconButton label="Change connection" onClick={() => { void session.dispose(); onDisconnect(); }}>
             <Settings2 size={18} />
           </IconButton>
         </div>
@@ -545,6 +591,7 @@ function Workspace({
             className="flow-sidebar-heading"
           >
             <span>Personal</span>
+            <AppSlot slot="sidebar.header" />
             <IconButton
               label="Hide chat list"
               onClick={() => setSidebar(false)}
@@ -586,7 +633,6 @@ function Workspace({
           )}
           <nav
             className="flow-chat-list"
-            data-extension-slot="sidebar.item.actions"
           >
             {list.tasks
               .filter((task) =>
@@ -610,6 +656,7 @@ function Workspace({
               Load more chats
             </button>
           )}
+          <AppSlot slot="sidebar.footer" />
           {fixtureMode && (
             <p
               className="flow-fixture-label"
@@ -627,6 +674,7 @@ function Workspace({
           hidden={overview}
         >
           <span>Flow</span>
+          <AppSlot slot="chat.header" context={selectedId ? selectedId.startsWith("draft-") ? { kind: "composer", viewId: selectedId, isDraft: true } : { kind: "task", taskId: selectedId } : { kind: "global" }} />
           {fixtureMode && (
             <span className="flow-fixture-inline">Fixture preview</span>
           )}
@@ -662,7 +710,7 @@ function Workspace({
             <IconButton
               label="Toggle workspace panel"
               active={panelOpen}
-              onClick={() => setPanelOpen(!panelOpen)}
+              onClick={() => { setPanelVisited(true); setPanelOpen(!panelOpen); }}
             >
               <PanelRight size={16} />
             </IconButton>
@@ -774,35 +822,32 @@ function Workspace({
             )}
           </div>
           <div className="flow-panel-mount" hidden={!panelOpen} ref={panelContainer}>
-            {selected ? (
-              <WorkspacePanelMount
+            {selected && (panelOpen || panelVisited) ? (
+              <Activity mode={panelOpen ? "visible" : "hidden"}><WorkspacePanelMount
                 view={selected}
                 activeTab={panel}
-                onActiveTabChange={(tab) => setPanel(tab)}
-                onClose={() => setPanelOpen(false)}
+                onClose={closePanel}
                 focusRequest={panelFocusRequest}
                 container={panelContainer}
-              />
+              /></Activity>
             ) : (
               <p>Select a task to inspect its files and output.</p>
             )}
           </div>
         </div>
       </main>
-    </div>
+    </div></PluginProvider>
   );
 }
 function WorkspacePanelMount({
   view,
   activeTab,
-  onActiveTabChange,
   onClose,
   focusRequest,
   container,
 }: {
   view: View;
   activeTab: WorkspaceTabId;
-  onActiveTabChange: (id: WorkspaceTabId) => void;
   onClose: () => void;
   focusRequest: PanelFocusRequest | null;
   container: RefObject<HTMLDivElement | null>;
@@ -811,25 +856,7 @@ function WorkspacePanelMount({
     view.projection.subscribe,
     view.projection.getSnapshot,
   );
-  const focusedRequest = useRef<number | null>(null);
-  useLayoutEffect(() => {
-    if (!focusRequest || focusRequest.serial === focusedRequest.current || focusRequest.taskId !== state.task?.id || activeTab !== focusRequest.tab) return;
-    const tab = container.current?.querySelector<HTMLButtonElement>('[role="tab"][aria-selected="true"]');
-    if (!tab?.getAttribute("aria-controls")?.endsWith(encodeURIComponent(activeTab))) return;
-    tab.focus();
-    focusedRequest.current = focusRequest.serial;
-  }, [focusRequest, state.task, activeTab, container]);
-  return (
-    <WorkspacePanels
-      task={state.task}
-      details={state.details}
-      connection={state.connection}
-      onLoadDetail={(id) => view.projection.loadDetail(id)}
-      activeTab={activeTab}
-      onActiveTabChange={onActiveTabChange}
-      onClose={onClose}
-    />
-  );
+  return <PluginWorkspace state={state} activeTab={activeTab} focusRequest={focusRequest} container={container} onClose={onClose} />;
 }
 function Connection({
   onConnect,
@@ -878,7 +905,8 @@ function Connection({
   );
 }
 export default function App() {
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme, setTheme] = useState(() => themes.find(item => item.id === initialTheme())!);
+  const [connectionScope, setConnectionScope] = useState(() => crypto.randomUUID());
   const [client, setClient] = useState<FlowClient | null>(() =>
     fixtureMode
       ? new FlowClient({ baseUrl: "", token: "flow-fixture-only" })
@@ -899,16 +927,18 @@ export default function App() {
       </a>
       {client ? (
         <Workspace
+          key={connectionScope}
           client={client}
           onDisconnect={() => setClient(null)}
           theme={theme}
-          onTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onTheme={setTheme}
         />
       ) : (
         <Connection
-          onConnect={(baseUrl, token) =>
-            setClient(new FlowClient({ baseUrl, token }))
-          }
+          onConnect={(baseUrl, token) => {
+            setConnectionScope(crypto.randomUUID());
+            setClient(new FlowClient({ baseUrl, token }));
+          }}
         />
       )}
     </TooltipProvider>

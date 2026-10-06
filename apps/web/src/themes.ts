@@ -10,8 +10,8 @@ export const themes: Theme[] = [
   { id: "dark", label: "Dark", scheme: "dark", tokens: {} },
 ];
 let overrides: string[] = [];
-export function applyTheme(id: string) {
-  const theme = themes.find((item) => item.id === id) ?? themes[0]!;
+export function applyTheme(value: string | Theme) {
+  const theme = typeof value === "string" ? themes.find((item) => item.id === value) ?? themes[0]! : value;
   document.documentElement.dataset.theme = theme.id;
   document.documentElement.classList.toggle("dark", theme.scheme === "dark");
   document.documentElement.style.colorScheme = theme.scheme;

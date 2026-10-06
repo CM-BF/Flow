@@ -1,0 +1,35 @@
+{
+  "source": "main docs/evidence/d04/migration-receipts.json",
+  "receipt": {
+    "requestId": "d04-migration-20261006-WPF-P01",
+    "action": "take",
+    "committedAt": "2026-10-06T02:48:43.178Z",
+    "claim": {
+      "claimId": "0686525b-d323-49b5-affa-cefc66cb13be",
+      "version": 1,
+      "taskId": "WPF-P01",
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host",
+      "branch": "codex/web-plugin-host",
+      "scope": [
+        "apps/web/src/plugins",
+        "apps/web/test/plugin-host.browser.ts",
+        "apps/web/test/plugin-host.config.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "docs/evidence/wpf-p01",
+        "plans/wpf-p01-plugin-host"
+      ],
+      "role": "writer",
+      "state": "active",
+      "next": null,
+      "origin": "migration",
+      "observedAt": "2026-10-06T02:41:00.000Z",
+      "updatedAt": "2026-10-06T02:48:43.178Z",
+      "createdAt": "2026-10-06T02:48:43.178Z"
+    }
+  },
+  "currentVerifiedAt": "2026-10-06T02:59:24.179Z",
+  "currentState": "active",
+  "currentVersion": 1
+}
