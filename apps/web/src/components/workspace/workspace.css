@@ -1,0 +1,48 @@
+.flow-workspace {
+  --workspace-surface: var(--background, #fff);
+  --workspace-muted: var(--muted, #f4f4f4);
+  --workspace-ink: var(--foreground, #252525);
+  --workspace-secondary: var(--muted-foreground, #6a6a6a);
+  --workspace-line: var(--border, #e7e7e7);
+  display: flex; flex-direction: column; height: 100%; min-height: 0; min-width: 0;
+  color: var(--workspace-ink); background: var(--workspace-surface); font-size: 13px;
+}
+.flow-workspace-tabs-row { display: flex; align-items: center; border-bottom: 1px solid var(--workspace-line); flex-shrink: 0; min-width: 0; }
+.flow-workspace-tabs { display: flex; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: thin; }
+.flow-workspace-tab-item { display: flex; align-items: center; min-width: 90px; max-width: 220px; border-right: 1px solid var(--workspace-line); color: var(--workspace-secondary); }
+.flow-workspace-tab-item[data-active="true"] { background: var(--workspace-muted); color: var(--workspace-ink); box-shadow: inset 0 -2px currentColor; }
+.flow-workspace-tab-item > [role="tab"] { display: flex; flex: 1; gap: 7px; min-width: 0; align-items: center; padding: 0 11px; height: 36px; text-align: left; }
+.flow-workspace-tab-item > [role="tab"] > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.flow-workspace button { font: inherit; cursor: pointer; }
+.flow-workspace-tab-item button, .flow-workspace-close { border: 0; border-radius: 0; color: inherit; background: transparent; }
+.flow-workspace-tab-close, .flow-workspace-close { display: grid; place-items: center; flex-shrink: 0; width: 30px; height: 32px; }
+.flow-workspace button:hover { background-color: var(--workspace-muted); }
+.flow-workspace :focus-visible { outline: 2px solid var(--ring, #717171); outline-offset: -2px; border-radius: 3px; }
+.flow-workspace-panel { min-height: 0; flex: 1; overflow: auto; }
+.flow-workspace-caption { margin: 0; padding: 13px 12px 8px; color: var(--workspace-secondary); font-size: 12px; }
+.flow-workspace-empty { margin: 0; padding: 20px 16px; color: var(--workspace-secondary); line-height: 1.6; }
+.flow-workspace-footnote { color: var(--workspace-secondary); font-size: 11px; line-height: 1.5; padding: 10px 12px; margin: 0; }
+.flow-workspace-tree { border: 0; border-radius: 0; background: transparent; font-family: inherit; font-size: 13px; }
+.flow-workspace-tree [role="treeitem"] { scroll-margin-block: 8px; }
+.flow-workspace-tree [role="treeitem"] > div:first-child, .flow-workspace-tree [role="treeitem"][aria-expanded] { min-height: 28px; }
+.flow-workspace-tree svg { color: var(--workspace-secondary); }
+.flow-workspace-output { display: flex; flex-direction: column; height: 100%; min-height: 250px; }
+.flow-workspace-terminal { border: 0; border-radius: 0; flex: 1; min-height: 0; }
+.flow-workspace-terminal > div:last-child { flex: 1; min-height: 0; max-height: none; font-size: 12px; }
+.flow-workspace-terminal pre { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.flow-workspace-follow { margin: 8px 12px; padding: 6px 10px; border: 1px solid var(--workspace-line); border-radius: 6px; background: var(--workspace-surface); color: var(--workspace-ink); align-self: flex-start; }
+.flow-workspace-copy-feedback { min-height: 0; margin: 0; padding: 0 12px 8px; font-size: 11px; color: var(--workspace-secondary); }
+.flow-workspace-copy-feedback:empty { display: none; }
+.flow-workspace-detail { padding: 16px; }
+.flow-workspace-detail h3 { font: inherit; font-weight: 600; margin: 0; overflow-wrap: anywhere; }
+.flow-workspace-detail header p { margin: 5px 0 16px; font-size: 11px; color: var(--workspace-secondary); }
+.flow-workspace-detail header p span { display: inline-block; margin-left: 8px; }
+.flow-workspace-detail-content { margin: 0; font: 12px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+.flow-workspace-artifact-meta { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 0 16px; font-size: 11px; }
+.flow-workspace-artifact-meta dt { color: var(--workspace-secondary); }
+.flow-workspace-artifact-meta dd { margin: 3px 0 0; }
+.flow-workspace-artifact-meta [data-verification="passed"] { color: var(--success, #218346); }
+.flow-workspace-artifact-meta [data-verification="failed"] { color: var(--destructive, #c33838); }
+@media (prefers-reduced-motion: reduce) {
+  .flow-workspace *, .flow-workspace *::before, .flow-workspace *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
