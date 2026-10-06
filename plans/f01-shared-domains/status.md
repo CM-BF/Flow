@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:54:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:22 UTC / maine785a29 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[范围](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main9c6fa9b100f04916f43b04280f05f497b28eeb0f；O09共享生产目标 c587436c12324b5c121957643d51173cfc66009e |
-| 工作树dirty状态 | 产品已固定；本次证据与状态提交 |
+| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / mount候选5365acb8b9bde4889f83715aa650bc6aed155c9b |
+| 工作树dirty状态 | 受控025接线已提交，范围交接与候选事实收口 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；可信启动1 selected/2未选，typecheck0；领域8源对a329精确一致；0provider |
-| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca已接CHAT10领域/薄client/可信启动；个人center/runner仍32c/v9，未开启steering。 |
-| Review | APPROVED：assignment_review独立只读2d699可信启动；25a22由Mika、a329由Lead独立审。 |
-| 实现目标 | 2d69959a50954912c388eddb18d3b6a9574bf680 |
-| 实现范围 | apps/server/src/main.ts, apps/server/src/steering-production.test.ts |
+| 检查状态 | NOT_RUN：025两行mount已交R05B做实际组合检查；旧CHAT10批准保持其固定范围，0provider |
+| 已集成main状态 / HEAD | 旧CHAT10共享段已main；当前025候选未main。个人服务source b1c、accepting v12，未开启steering。 |
+| Review | 当前025接线 NOT_STARTED；历史2d699/25a22批准保留，不继承新入口。 |
+| 实现目标 | 5365acb8b9bde4889f83715aa650bc6aed155c9b |
+| 实现范围 | apps/server/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 中心可通过明确启动配置决定是否接收运行中的补充指令，默认关闭。 |
-| 下一可用交付 | 本片段已交付；后继接口按可替换执行工具和聊天知识选择的实际需要接入。 |
+| 当前产出 | 既有补充指令接口已交付；Codex中心的升级入口正在配套验证。 |
+| 下一可用交付 | 与严格来源校验一起接通Codex普通任务，并提供终端首片依赖。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -119,4 +119,8 @@
 
 2026-10-06 08:20:30 UTC：main/origin32c371d已接CLI0d48、配置client899与CHAT09 cd859；本片批准绑定保持原target，不继承为provider或个人服务已开启。I02固定34source精确相同、O09 readonly组合2/2与root/Webtypes0。
 
-| F01-25 | in-progress | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，Mika独立APPROVED；不包含生产启动/模型 |
+| F01-25 | completed | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，Mika独立APPROVED；不包含生产启动/模型 |
+
+| F01-26 | in-progress | Lead | 025 await接线候选5365acb；领域/R05B组合检查与独审尚待 |
+
+2026-10-06 09:08：F01 v20正式移出harnesses.ts及专测，R05B唯一owner接回；[receipt](../../docs/evidence/f01/r05b-scope-amend.json)。本树未复制其领域源码，受控mount只供组合验证。
