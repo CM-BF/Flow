@@ -1,24 +1,24 @@
 {
-  "at": "2026-10-06 18:58:16 UTC",
-  "implementation": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
+  "at": "2026-10-06 19:02:32 UTC",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
   "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
   "branch": "codex/dashboard-status-timestamps",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
   "sourceFiles": [
     {
       "path": "apps/execution-dashboard/src/status.mjs",
-      "target": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
-      "bytes": 6411,
-      "sha256": "ebaa4728caab27fa62471e042720117e881781022a01b79df9487d1ac4208c94",
-      "currentSha256": "ebaa4728caab27fa62471e042720117e881781022a01b79df9487d1ac4208c94",
+      "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+      "bytes": 6660,
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "currentSha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
       "currentEqualsFixed": true
     },
     {
       "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
-      "target": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
-      "bytes": 5328,
-      "sha256": "d32393ad07a993144161107461dfd7feb4837558c690731ab8fae08550670676",
-      "currentSha256": "d32393ad07a993144161107461dfd7feb4837558c690731ab8fae08550670676",
+      "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+      "bytes": 6353,
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "currentSha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
       "currentEqualsFixed": true
     }
   ],
@@ -82,7 +82,7 @@
   "scopeOutside": [],
   "checks": {
     "state": "NOT_RUN",
-    "staticCases": 56,
+    "staticCases": 62,
     "sourceDiffCheck": 0
   },
   "pureEntrypoint": [
@@ -92,5 +92,7 @@
   ],
   "runtimeAuthorization": "NONE: future reviewed runner and fresh gate required",
   "actualAggregateConsumer": "NOT_RUN; separate integration check, no copied age formula",
-  "deployment": "NOT_OBSERVED; source is not service acceptance"
+  "deployment": "NOT_OBSERVED; source is not service acceptance",
+  "previousCandidate": "candidate-676b.json",
+  "repair": "R1 source-only; primary vs main-sync boundary and explanatory task IDs"
 }

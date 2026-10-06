@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:02:04 UTC |
+| 最近更新 | 2026-10-06 19:02:32 UTC |
 | 单一 status owner | workspace_panels_owner / gpt-6-astra Ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -16,10 +16,10 @@
 | worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps |
 | branch | codex/dashboard-status-timestamps |
 | 工作基线 | ec5da343880879154e2392f52eaa915d5b08aa77 |
-| HEAD | 676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1（固定实现；随后仅自身 metadata 收口） |
+| HEAD | c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2（固定修复；随后仅 metadata） |
 | 工作树 dirty 状态 | 固定实现后两源码已冻结；当前只本片 metadata 收口，最终 clean 由 Git 交接回执核 |
 | 工作分支状态 | in-progress / awaiting-source-review |
-| 实现目标 | 676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1 |
+| 实现目标 | c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2 |
 | 实现范围 | apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 检查状态 | NOT_RUN — 尚无产品运行准入 |
 | review | CHANGES_REQUESTED — 676b source P2 已修待新固定复审；无运行 |
@@ -39,7 +39,7 @@
 
 ## 下一步 / handoff
 
-固定实现 676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1 与 [candidate](../../docs/evidence/wpf-dperf05/candidate.json) 已备；源冻结，独审和获单独运行 gate 后的纯检查仍待执行。
+固定修复 c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2 与 [candidate](../../docs/evidence/wpf-dperf05/candidate.json) 已备；源冻结，独审和获单独运行 gate 后的纯检查仍待执行。
 
 ## 风险 / 未验证
 

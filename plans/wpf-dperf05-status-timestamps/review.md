@@ -2,7 +2,7 @@
 
 状态：CHANGES_REQUESTED
 
-Review target commit：676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1
+Review target commit：c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2
 Base：ec5da343880879154e2392f52eaa915d5b08aa77
 Scope：apps/execution-dashboard/src/status.mjs、apps/execution-dashboard/test/status-timestamps.test.mjs。
 
@@ -19,3 +19,5 @@ NOT_RUN；无 findings 表示尚未审查，不表示通过。真实 aggregate/�
 ## 2026-10-06 19:02:04 UTC — R1 / P2
 
 root 对676b源码独审，经管理正式派修：缺失/斜杠主更新时间被后来 main 同步救活；任务 ID 说明前缀误判日期。作者现仅两源最小修复及6新增待运行 case；原56没有执行。旧候选见 candidate-676b.json，派修/权属见 repair-request.json 与 repair-claim-observation.json。正式 root 原文待收到后原样补存，不自行宣称通过。
+
+当前修复 target c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2；62静态 case，全部 NOT_RUN。CHANGES_REQUESTED 保留旧审事实，新目标待独立复审，未自动批准。

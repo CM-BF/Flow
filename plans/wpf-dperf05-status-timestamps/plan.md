@@ -8,7 +8,7 @@
 
 ## Interface 与决定
 
-私有函数输入 status 表格字段字符串，输出规范 UTC ISO 字符串或 null；接受分钟/秒 UTC、Z、分数秒与 +00:00。分数显式截到毫秒，日期/时钟严格核验；24:00 仅零分秒及零 fraction 时为次日午夜。首个日期候选不合法即失败，不能跳到第二个时间。原有 backticks/说明文字容器保留。
+私有函数输入 status 表格字段字符串，输出规范 UTC ISO 字符串或 null；接受分钟/秒 UTC、Z、分数秒与 +00:00。分数显式截到毫秒，日期/时钟严格核验；24:00 仅零分秒及零 fraction 时为次日午夜。先将明示 main 同步/main sync 后段排除，再取主段独立 year-prefix；首候选不合法即失败，不能跳到第二个时间；任务 ID 说明前缀不能被当作日期。原有 backticks/说明文字容器保留。
 
 不引入日期框架或新公共接口。错误仍由 parseStatus 的既有 errors 承载。复用 find-skills、codebase-design、clean-code；记录见 [skills](../../docs/evidence/wpf-dperf05/skills.json)。本片无架构数据/生命周期变化。
 
