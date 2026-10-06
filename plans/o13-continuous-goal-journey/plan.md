@@ -9,7 +9,7 @@
 - [x] **O13-01** 原子领取、固定 DTO/Interface 与唯一三件套。
 - [x] **O13-02** 自然语言 intake 恢复接缝、原 GoalSession 新命令和规划轻读。
 - [x] **O13-03** 0query 公开 HTTP/独立 PG 与注入 SDK 连续旅程、未知/重启/直接兼容检查。
-- [ ] **O13-04** 固定证据与 clean-code，独立审查、主线接收及领取释放。
+- [x] **O13-04** 固定证据与 clean-code，独立审查、主线接收及领取释放。
 - [ ] **O13-05** 后继真实规划与 child 独立预算、真实 UI 连续验收；不在本片 0query 交付范围。
 
 范围固定 13 literal，见证据 claim.json。F01 提供薄 client/export，不改共享入口与锁文件。只验证本 Module 和直接消费者，动态端口、随机专库、有限日志、自有资源清理。无新 migration/依赖/模型调用。架构图接收登记由 Execution Lead 维护。

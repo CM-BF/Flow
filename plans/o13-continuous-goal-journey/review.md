@@ -11,3 +11,5 @@ Review target commit: ddf9f9404561515b61a85d89aa203d609dbfff8e
 批准范围：可恢复需求入口、原GoalSession单Intent v1扩展显式规划/只读执行、goal归属且正文惰性的规划轻列表；固定key/body恢复、task身份、微秒游标和有限读界限。机械校验和独立owner语义接受保持分离。首DTO interface-only历史不当作产品批准。
 
 限制：合成MCP图及注入SDK并非实际模型规划；每个child仍须显式冻结实际输入并授权执行，不是中心自主推进；真实Web/TUI、个人部署和新模型预算均未验证。早期immutable fixture失败的具名cleanup JSON被覆盖，原process/afterAll结果保留，不能补造该轮具名清理证明。当前main已改变保护输入server/index.ts（Connection），由Execution Lead进行实际组合验证及主线接收，原24不重跑。
+
+Main接收：5dbabadc7dda02da558f48505677eddbc9c83fb5，11域源对ddf9及2共享client对98e固定target逐hash相同；组合生产注入旅程1选中/1未选、root/Web types0，自有随机库清理。原作者未重复24检查，见 [main receipt](../../docs/evidence/o13/main-receipt.json)。后继范围不扩大本批准。
