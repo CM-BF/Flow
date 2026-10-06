@@ -1,17 +1,14 @@
 # S01P07 独立审查
 
-**NOT_STARTED。尚无产品实现或运行检查批准。**
+**SOURCE_REVIEW APPROVED / VALIDATION_PENDING。整体产品验收与 PG 窗口尚未开放。**
 
-- Review target commit：待固定。
+- Review target commit：83a0799293057f7472f0329c61e566708b2a2381（8 产品源限定）。
 - Base：22a0806bc2465e11096949618113833f31766b19。
-- 权威 WT/branch/owner 见 [status](status.md)；scope 以 COMMITTED receipt 为准。
-- 验收：空回应不持久写；同 key 唯一分配；只读 missing 不清未知；runner 身份绑定；v1 保守兼容；当前 lease 与 pre-adapter ownership；正常 stop 排空及 fatal 原错误保留；原任务/profile/goal/session/cancel/maintenance 规则不变。
-- 检查：NOT_RUN。无 PG、provider、容量或 native 调用。
-
-## 可复制审查任务
-
-只读核对本计划、接口、scope、固定 Git target 与实际 WT/dirty。检查原 v1 与新 v2 共用分配 SQL，nonnull compact receipt 与 attempt 同事务，日志 accept(expectedKey) 的持久原子性，跨 runner/key/legacy journal 及过期回执的保守处理；逐项核对直接消费者和真实检查原件。不得重跑未授权检查或写 owner 树。提供绑定 target 的具体 P1/P2、行号、触发顺序，或范围限定的结论。
+- chatui01_owner / gpt-6-astra，2026-10-06 20:48:19 UTC，0 P1/P2；只读，无测试或 PG。见[原回执](../../docs/evidence/s01p07/source-review-83a.json)。
+- 核对 v1/v2 同 allocation/transaction/runner→task→attempt 锁序；compact receipt 原子性；unknown key 保留；journal assignment+nextkey 先于 adapter 与首次 heartbeat；正常 stop 迟到分配、expired、v1 unknown、restart 保守规则；严格 codec。
+- 85 不同 non-PG 行为分批通过，focused strict 修后 0；三类历史失败保留。另3个纯 fake 检查只验证外层进程 EPERM/单次信号规则，不是 PG 业务检查。
+- 中心真实事务/专库 8 组仍 NOT_RUN，PG fixture/监督准备待固定组合审，main NOT_INTEGRATED。不得把源审范围外推为完整产品通过。
 
 ## Findings / 回应
 
-未开始独立 review；无 findings 不代表无缺陷。修复与复审另绑定提交。
+进行中预核的当前 lease 整数兼容、旧 peer UUID 和私有资源所有权/primary 错误保留已修正并分别记源与检查。真实 PG 结果尚无，整体 review 仍待其证据；修复与复审按固定提交，不覆盖原 raw。

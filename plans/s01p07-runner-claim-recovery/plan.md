@@ -16,7 +16,7 @@
 
 ## TODO
 
-- [ ] **S01P07-01** 冻结协议、自身份、事务回执和日志职责；直接消费者范围齐备。
+- [x] **S01P07-01** 冻结协议、自身份、事务回执和日志职责；直接消费者范围齐备。
 - [ ] **S01P07-02** 中心复用原分配内核，非空回执与 attempt 同事务；完成 client/route 受权接线。
 - [ ] **S01P07-03** runner 默认 v2：持久机会、同 key 恢复、原 fatal/drain 与 pre-adapter heartbeat 保持。
 - [ ] **S01P07-04** 通过必要 contract/client/journal/runtime 与隔离 PG 事务检查，绑定真实选择数及清理证据。
@@ -24,4 +24,4 @@
 
 ## 验收与限制
 
-准备阶段只写源码与计划，所有 tests/types/PG/provider 均未运行且当前窗口关闭。后续检查先固定源码和精确依赖闭包，由 lead 安排。验证分层见接口页；旧 v1 unknown 与已持久 assignment 重启不运行 adapter，不能将本片描述为任意崩溃窗口的自动恢复。历史 S01 的空轮 API 计数不等物理 I/O；本片尚无优化实测。
+当前已完成85不同非PG行为检查与局部strict，原失败与定向修后证据保留；真实PG/provider均未运行，PG窗口关闭。专库准备与精确依赖闭包固定后由lead安排。验证分层见接口页；旧 v1 unknown 与已持久 assignment 重启不运行 adapter，不能将本片描述为任意崩溃窗口的自动恢复。历史 S01 的空轮 API 计数不等物理 I/O；本片尚无优化实测。

@@ -79,6 +79,8 @@ def main():
     window = os.environ.get("FLOW_S01P07_PG_WINDOW", "")
     if os.environ.get("FLOW_S01P07_PG_OPEN") != "1" or not re.fullmatch(r"[A-Za-z0-9-]{1,80}", window):
         raise SystemExit("NOT_OPEN")
+    if not os.environ.get("FLOW_S01P07_ADMIN_URL"):
+        raise SystemExit("AUTHORIZED_ADMIN_CONFIGURATION_MISSING")
     target = EVIDENCE / "checks" / window
     suffixes = [".json", ".stdout", ".stderr", ".fixture.json", ".reservation.json", ".child.json"]
     suffixes += [".fixture.json" + part for part in [".reservation.json", ".root.json", ".create-request.json", ".database.json"]]
@@ -263,12 +265,15 @@ def main():
     final_size = None
     try: final_size = sample(); peak = max(peak, final_size)
     except (OSError, RuntimeError): faults.append("FINAL_INVENTORY_UNKNOWN")
+    if peak > TEMP_LIMIT and "TEMP_LIMIT" not in faults: faults.append("TEMP_LIMIT")
     fixture = None
     try:
         fixture = read_owned_json(fixture_path, 32768)
         if not isinstance(fixture, dict) or not isinstance(fixture.get("cleanup"), dict) or not isinstance(fixture.get("errors"), list):
             raise ValueError("Invalid fixture receipt")
-    except (OSError, ValueError, RuntimeError): faults.append("FIXTURE_RECEIPT_UNKNOWN")
+    except (OSError, ValueError, RuntimeError):
+        fixture = None
+        faults.append("FIXTURE_RECEIPT_UNKNOWN")
     complete = bool(fixture and fixture.get("window") == window and fixture.get("sourceHead") == head
         and not fixture.get("errors", ["UNKNOWN"]) and all(fixture.get("cleanup", {}).get(key) is True
         for key in ["startupSettled", "appClosed", "poolClosed", "adminClosed", "databaseAbsent", "rootAbsent"]))
