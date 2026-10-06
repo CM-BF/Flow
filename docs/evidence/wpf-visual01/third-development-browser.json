@@ -1,0 +1,371 @@
+{
+  "sourceCommit": "f92fd143f73f7a517004a154d3f6f2f2c7794180",
+  "sourceDirty": " M apps/web/src/assistant-ui.css\n M apps/web/src/plugins/builtins.ts\n M apps/web/src/plugins/host.ts\n M apps/web/src/styles.css\n M apps/web/src/themes.ts\n M docs/evidence/wpf-visual01/quality.md\n M plans/wpf-visual01-shell/plan.md\n M plans/wpf-visual01-shell/status.md\n?? apps/web/test/visual-shell.browser.ts\n?? apps/web/test/visual-shell.fixture.ts\n?? docs/evidence/wpf-visual01/amend-receipt.json\n?? docs/evidence/wpf-visual01/browser-first.log\n?? docs/evidence/wpf-visual01/browser-second.log\n?? docs/evidence/wpf-visual01/browser-third.log\n?? docs/evidence/wpf-visual01/development-browser.json\n?? docs/evidence/wpf-visual01/development-dark-1280.png\n?? docs/evidence/wpf-visual01/development-dark-opaque-1280.png\n?? docs/evidence/wpf-visual01/development-empty-light-1280.png\n?? docs/evidence/wpf-visual01/development-failure.png\n?? docs/evidence/wpf-visual01/development-light-1280.png\n?? docs/evidence/wpf-visual01/development-light-opaque-1280.png\n?? docs/evidence/wpf-visual01/development-long-light-1280.png\n?? docs/evidence/wpf-visual01/development-long-light-390.png\n?? docs/evidence/wpf-visual01/first-typecheck.log\n?? docs/evidence/wpf-visual01/install.log\n?? docs/evidence/wpf-visual01/plugin-host-direct.log\n?? docs/evidence/wpf-visual01/theme-typecheck.log\n",
+  "sourceFiles": {
+    "apps/web/src/assistant-ui.css": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+    "apps/web/src/plugins/builtins.ts": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+    "apps/web/src/plugins/host.ts": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "apps/web/src/styles.css": "4cd5e1354dfde6b5ec437b24c68d3953884871d5396b3336f9834f2acedf11ca",
+    "apps/web/src/themes.ts": "29137ce428bc7e4eefadbe9fe27da1d7fdde0a95c2500c3506971e40ef6b72e4",
+    "apps/web/test/visual-shell.browser.ts": "1f137ac8d2dab35dac69d0238613bd62b3afd6b01d87d5a1740e26dfb0bd5398",
+    "apps/web/test/visual-shell.fixture.ts": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0"
+  },
+  "at": "2026-10-06T09:12:38.103Z",
+  "production": false,
+  "baseline": false,
+  "checks": [
+    "actual empty App and long Markdown keep readable pane/code/table bounds at desktop and 390",
+    "four Appearance choices use scheme, opaque removes blur, persisted choice survives real reload"
+  ],
+  "errors": [],
+  "failure": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.flow-plugin-popover').getByRole('button', { name: 'More actions', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-haspopup=\"menu\" aria-expanded=\"false\" aria-controls=\"_r_i_\">More actions</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    19 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <aside aria-label=\"Chats\" class=\"flow-sidebar\">…</aside> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "measurements": [
+    {
+      "name": "empty-light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 616,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        }
+      }
+    },
+    {
+      "name": "long-light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "long-light-390",
+      "width": 390,
+      "height": 844,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 334,
+          "height": 798,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 304,
+          "height": 1953.59375,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "dark-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 1220,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "light-opaque-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 1220,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "dark-opaque-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.106303 0.114043 0.121781 / 0.892)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 1220,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(0, 0, 0, 0.333) 0px 1px 2px 0px, rgba(0, 0, 0, 0.133) 0px 4px 16px 0px",
+          "background": "rgb(34, 36, 38)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    },
+    {
+      "name": "light-1280",
+      "width": 1280,
+      "height": 720,
+      "pageOverflow": false,
+      "data": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 1220,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      }
+    }
+  ],
+  "scope": "Actual Flow App with contract HTTP synthetic materials; no model, DB or personal service"
+}

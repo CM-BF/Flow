@@ -1,0 +1,50 @@
+{
+  "implementationTarget": "be50d36f4bb7fcebc70887881cdca0237ff0d55f",
+  "base": "9d6bd45abdf5149bc44f1e9dc534454e7403f7d7",
+  "scope": [
+    "apps/web/src/assistant-ui.css",
+    "apps/web/src/plugins/builtins.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/styles.css",
+    "apps/web/src/themes.ts",
+    "apps/web/test/visual-shell.browser.ts",
+    "apps/web/test/visual-shell.fixture.ts",
+    "docs/evidence/wpf-visual01",
+    "plans/wpf-visual01-shell"
+  ],
+  "sources": [
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab"
+    },
+    {
+      "path": "apps/web/src/plugins/builtins.ts",
+      "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72"
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "sha256": "d9cdd47978ea0dabf20b9cf3e582e2c4d5aee5a557a3947b0fa214f7c995b751"
+    },
+    {
+      "path": "apps/web/src/themes.ts",
+      "sha256": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f"
+    },
+    {
+      "path": "apps/web/test/visual-shell.browser.ts",
+      "sha256": "bde14458fbfb34a847334bb3d26d95525337aafc4d7e7a13ec2439c0c561dad1"
+    },
+    {
+      "path": "apps/web/test/visual-shell.fixture.ts",
+      "sha256": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0"
+    }
+  ],
+  "devReport": "development-browser.json",
+  "prodReport": "production-browser.json",
+  "reportsRecordedHead": "f92fd143f73f7a517004a154d3f6f2f2c7794180 + dirty (raw preserved)",
+  "matchingAllSeven": true,
+  "protected": "App/ConversationThread/plugin-integration/plugins types+validation/contracts/lock/manifest unchanged against base"
+}

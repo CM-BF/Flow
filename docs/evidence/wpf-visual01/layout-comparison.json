@@ -1,0 +1,304 @@
+{
+  "method": "Same actual App/fixture; baseline temporarily overlays only the two fixed 9d6 CSS sources, see baseline-method.json. Layout measurements are not performance or accessibility certification.",
+  "measurements": [
+    {
+      "scene": "empty-light-1280",
+      "viewport": [
+        1280,
+        720
+      ],
+      "before": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(0.985 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 996,
+          "height": 676,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 588,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        }
+      },
+      "after": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 616,
+          "height": 84.5,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        }
+      },
+      "pageOverflowBefore": false,
+      "pageOverflowAfter": false
+    },
+    {
+      "scene": "long-light-1280",
+      "viewport": [
+        1280,
+        720
+      ],
+      "before": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(0.985 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 996,
+          "height": 676,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 588,
+          "height": 1281.625,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "22.75px"
+        }
+      },
+      "after": {
+        "shell": {
+          "width": 1280,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "sidebar": {
+          "width": 236,
+          "height": 720,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.92549 0.933333 0.929412 / 0.91)",
+          "filter": "blur(14px)",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 984,
+          "height": 672,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 616,
+          "height": 1285.8125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      },
+      "pageOverflowBefore": false,
+      "pageOverflowAfter": false
+    },
+    {
+      "scene": "long-light-390",
+      "viewport": [
+        390,
+        844
+      ],
+      "before": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 342,
+          "height": 800,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 314,
+          "height": 1943.125,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "22.75px"
+        }
+      },
+      "after": {
+        "shell": {
+          "width": 390,
+          "height": 844,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "color(srgb 0.921755 0.928676 0.926628)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "pane": {
+          "width": 334,
+          "height": 798,
+          "radius": "14px",
+          "shadow": "rgba(16, 24, 32, 0.03) 0px 1px 2px 0px, rgba(16, 24, 32, 0.02) 0px 4px 16px 0px",
+          "background": "oklch(1 0 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "composer": {
+          "width": 0,
+          "height": 0,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "21px"
+        },
+        "text": {
+          "width": 304,
+          "height": 1921.140625,
+          "radius": "0px",
+          "shadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "filter": "none",
+          "font": "14px",
+          "lineHeight": "23.8px"
+        }
+      },
+      "pageOverflowBefore": false,
+      "pageOverflowAfter": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+PASS actual empty App and long Markdown keep readable pane/code/table bounds at desktop and 390
+PASS four Appearance choices use scheme, opaque removes blur, persisted choice survives real reload
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'Ocean theme', exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:91:78)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:59:67)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:89:5) {
+  log: [
+    "  - waiting for getByRole('menuitem', { name: 'Ocean theme', exact: true })"
+  ],
+  name: 'TimeoutError'
+}

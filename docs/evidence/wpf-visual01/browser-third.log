@@ -1,0 +1,60 @@
+PASS actual empty App and long Markdown keep readable pane/code/table bounds at desktop and 390
+PASS four Appearance choices use scheme, opaque removes blur, persisted choice survives real reload
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.flow-plugin-popover').getByRole('button', { name: 'More actions', exact: true })[22m
+[2m    - locator resolved to <button type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="_r_i_">More actions</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    19 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:91:109)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:59:67)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:89:5) {
+  log: [
+    "  - waiting for locator('.flow-plugin-popover').getByRole('button', { name: 'More actions', exact: true })",
+    '    - locator resolved to <button type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="_r_i_">More actions</button>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is visible, enabled and stable',
+    '      - scrolling into view if needed',
+    '      - done scrolling',
+    '      - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    19 × waiting for element to be visible, enabled and stable',
+    '       - element is visible, enabled and stable',
+    '       - scrolling into view if needed',
+    '       - done scrolling',
+    '       - <aside aria-label="Chats" class="flow-sidebar">…</aside> intercepts pointer events',
+    '     - retrying click action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
