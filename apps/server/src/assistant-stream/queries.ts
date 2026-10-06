@@ -1,8 +1,9 @@
 import type { Pool, PoolClient } from 'pg';
 import type { AssistantStreamBlock, AssistantStreamPage, AssistantStreamPatch, AssistantStreamPatchPage, AssistantStreamReference, AssistantStreamData, AssistantStreamSettlement } from '../../../../packages/contracts/src/assistant-stream.js';
 import { canonical, HttpError, sha256, transaction } from '../database.js';
-import { loadTask } from '../tasks.js';
+import type { TaskStatus } from '../../../../packages/contracts/src/tasks.js';
 import { readPrefix, type BlockRow } from './store.js';
+interface TaskHead {current_attempt_id:string|null;status:TaskStatus;updated_at:Date}
 interface State {status:string;updated_at:Date;final_id:string|null;completed_at:Date|null}
 async function state(client:PoolClient,taskId:string,attemptId:string):Promise<State> {
   const row=(await client.query<State>(`SELECT t.status,t.updated_at,a.completed_at,m.id AS final_id FROM flow.tasks t
@@ -18,7 +19,8 @@ function reference(row:BlockRow,current:State):AssistantStreamReference {
 }
 /** Projection seam for a caller with a durable task binding. No body is fetched. */
 export async function readAssistantStream(client:PoolClient,taskId:string,limit:number,after?:string):Promise<AssistantStreamPage> {
-  const task=await loadTask(client,taskId);
+  const task=(await client.query<TaskHead>('SELECT current_attempt_id,status,updated_at FROM flow.tasks WHERE id=$1',[taskId])).rows[0];
+  if(!task) throw new HttpError(404,'not_found','Task not found.');
   const base={taskId,attemptId:task.current_attempt_id,taskStatus:task.status,taskUpdatedAt:task.updated_at.toISOString()};
   if(!task.current_attempt_id) return {...base,blocks:[],nextCursor:null,finalMessageId:null,settlement:null};
   const current=await state(client,taskId,task.current_attempt_id);

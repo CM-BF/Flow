@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:50:19 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:55:17 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -17,10 +17,10 @@
 | 实现目标 | c96a6bb867bfa83b8ce26f79236ff13b14b63e65 |
 | 实现范围 | apps/server/src/tasks.ts, apps/server/src/queries.ts, apps/server/src/task-read-projection.ts, apps/server/src/task-read-projection.test.ts, experiments/bounded-reads/task-projections/fixture.ts, docs/evidence/b01/task-projections/tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 事件轮询和任务列表不再向应用读取无用prompt，兼容性验证通过 |
-| 下一可用交付 | 首片独立交付主线；assistant stream三列读取另片实现 |
+| 当前产出 | 前两个轻读入口已批准；assistant stream也已实现三列读取并通过等价验证 |
+| 下一可用交付 | 首片可独立接收主线；第三reader等价证据等待独审 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED Mika 2026-10-06 11:48:15 UTC，target c96a6bb8，0P1/P2 |
@@ -34,12 +34,14 @@
 | B01-05 | completed | status_read | [claim](../../docs/evidence/b01/task-projections/claim-receipt.json)、[Interface](../../docs/evidence/b01/task-projections/interface.md) |
 | B01-06 | completed | status_read | [8/8与字节证据](../../docs/evidence/b01/task-projections/README.md)，7tasks累计/三库清理，局部strict0 |
 | B01-07 | in-progress | mika / Lead | 独审APPROVED；[固定集成输入](../../docs/evidence/b01/task-projections/integration-ready.md)，待Lead main接收 |
-| B01-08 | in-progress | status_read | 三列head已设计/领取，尚未实现或PG |
-| B01-09 | pending | mika / Lead | 新片固定target后独审 |
+| B01-08 | completed | status_read | 5/5真实PG/HTTP、strict0；新片3tasks/两库已清理，待固定独审 |
+| B01-09 | in-progress | mika / Lead | 新片source/raw固定准备独审，不套首片批准 |
 
 writer190bd45e-ffc6-4248-aca9-0ebd282c26b0 v2 AMEND COMMITTED 2026-10-06 11:50:43.493 UTC，新增仅assistant-stream/queries.ts及task-head.test.ts，共九scope；[新片Interface](../../docs/evidence/b01/task-projections/head/interface.md)。等待Lead按[迁移请求](../../docs/evidence/b01/task-projections/authority-request.md)登记新权威来源，尚未确认聚合；本status唯一手填事实，不改registry。P04源码/raw冻结与claim保留完全独立。
 
 架构影响：只新增固定summary投影/映射Module供两个既有reader复用，生产事务/存储/鉴权/锁和全局调度不改；新目录结构在固定target后请求Lead登记，实际3生产源/1新测试/1私有fixture；目录架构基线待Lead按固定target登记。
+
+第三reader独立证据见[head/README](../../docs/evidence/b01/task-projections/head/README.md)；首片8项没有重跑，本片5项不借旧批准。当前实现目标字段仍首片c96供Lead单独集成，新片target固定后另行标明。
 
 ## 历史owner交付快照（以下不是新片当前状态）
 

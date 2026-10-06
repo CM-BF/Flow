@@ -29,5 +29,5 @@
 - [x] **B01-06** eventPage与list共享轻投影，保留snapshot/写锁/auth/cursor；真实专库等价、解码字节/查询数与局部strict取证。
 - [ ] **B01-07** 固定target/source/raw独立review、修复复审和Lead受控main接收；第三reader仅证据后决策，不默认领取。
 
-- [ ] **B01-08** assistant stream只读head三列，独立真实PG/HTTP等价与有界字节检查；首片source/raw冻结。
+- [x] **B01-08** assistant stream只读head三列，独立真实PG/HTTP等价与有界字节检查；首片source/raw冻结。
 - [ ] **B01-09** 第三reader固定新target独审与Lead接收，不套首片批准。
