@@ -7,7 +7,7 @@
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-001：产品与技术架构](../flow-001-architecture/plan.md) |
 | 关联验证 | [FLOW-002：Provider 与 Harness](../flow-002-provider-harness/plan.md) |
-| 当前阶段 | F00已提交542f70b/3995ec1；C01/R01已在独立worktrees实施，L01并行推进，W01保留给用户外部task（awaiting-dispatch） |
+| 当前阶段 | F00/C01/R01/L01/R02/W01/D01已接收；真实Web闭环与93/93通过，I01最终独立review及main集成进行中 |
 | 规划基线 | `main` / `5df746a`，只有计划和实验归档，没有应用骨架 |
 
 ## 1. 已确认方向与首个交付目标
@@ -24,7 +24,7 @@
 
 | 负责人 | 主要职责 | 独占修改范围（拟建） |
 | --- | --- | --- |
-| Goal Owner：主 agent | 与用户沟通、维护总体目标、目标取舍与优先级协调、核对交付是否满足用户目标、对外汇报 | 无项目写入范围；不写代码或计划文件，不运行工程测试，不执行合并 |
+| Goal Owner：主 agent | 与用户沟通、总体目标与优先级、掌控关键路径/资源/技能驱动结构质量、主动定位解阻、核对目标达成并汇报 | 无项目写入范围；不写代码或计划文件，不运行工程测试，不执行合并 |
 | Execution Lead：Astra Ultra | 最小架构、F00 公共契约与工程骨架、薄 client/CLI、技术派工、工程检查、审查与集成合并 | 根配置与 CI、`packages/contracts/`、`packages/client/`、`apps/cli/`、跨模块工程验收、计划及索引 |
 | Agent A：中心 feature owner | API、PostgreSQL、命令事务、调度接入、事件/验证记录、验收状态与展示投影 | `apps/server/`、`packages/storage/`、`packages/scheduler/` |
 | Agent B：runner feature owner | runner、harness 接入、已有身份引用、取消/权限/恢复、usage 映射与指定 verifier 的执行 | `apps/runner/`、`packages/harness-*/`、`packages/provider-*/`、`packages/verifiers/` |
@@ -108,7 +108,7 @@ F00 完成条件：新 checkout 能按说明启动开发依赖，公共 schema/f
 | --- | --- | --- |
 | F00 基线 | 固定公共契约、骨架、调度与 runner 失联语义 | 按需安排中心/runner/Web owner 分批只读审查；不提前实现各 feature |
 | 第一批 | 基于 F00 开始 L01，处理契约反馈 | C01 中心 + R01 runner，先建立确定性执行闭环 |
-| 第二批 | 继续 L01，审查已交付提交并准备集成 | W01由用户外部task启动（当前reserved-external）；内部空闲位安排其他ready工作；另一位继续尚未完成的 C01/R01，或在依赖与预算具备后启动 R02 |
+| 第二批 | 继续 L01，审查已交付提交并准备集成 | W01由用户外部task完成（交付b04df958已接收）；内部空闲位安排其他ready工作；另一位继续尚未完成的 C01/R01，或在依赖与预算具备后启动 R02 |
 | I01 集成 | 合并、运行跨模块检查、整理工程证据 | 按需安排对应 owner 修复或只读复核；总数仍不超过两个 |
 
 若运行时容量允许，C01、R01、W01应同时启动；当前第5个agent实测被拒绝，因此临时滚动。实际启动顺序可根据依赖调整，Execution Lead 在任务单记录；feature 的目录与 owner 边界不随排队顺序改变。
@@ -161,16 +161,16 @@ Feature owners 向 Execution Lead 回报工程进展、阻塞和证据；Executi
 
 M1 的共同完成条件：
 
-- [ ] **M1-A01** Web / CLI / 中心 / runner 可分别启动，中心连接两个测试 runners，任务由一个有效 attempt 执行。
+- [x] **M1-A01** Web / CLI / 中心 / runner 可分别启动，中心连接两个测试 runners，任务由一个有效 attempt 执行。
 - [x] **M1-A02** 模拟受理响应丢失后以相同幂等键重试，只有一项任务；内容冲突能明确返回。
-- [ ] **M1-A03** Web 提交后关闭整个浏览器，后台继续；CLI 可以观察同一任务并回答一项决策；Web 重连恢复一致状态。
+- [x] **M1-A03** Web 提交后关闭整个浏览器，后台继续；CLI 可以观察同一任务并回答一项决策；Web 重连恢复一致状态。
 - [x] **M1-A04** 退出 CLI watch 不取消任务；显式 cancel、完成竞争和重复事件均有确定结果。
-- [ ] **M1-A05** 时间线和普通 SSE 不含折叠详情 payload；展开才按需读取；超长正文/详情都有界。
+- [x] **M1-A05** 时间线和普通 SSE 不含折叠详情 payload；展开才按需读取；超长正文/详情都有界。
 - [x] **M1-A06** 产物有固定版本和确定性验证，执行完成与验收通过分别记录。
 - [x] **M1-A07** 中心重启后受理记录可恢复处理；runner 失联标记待核对，不盲目重跑可能已完成的外部写入。
-- [ ] **M1-A08** 真实 harness 使用随机未知 fixture，提示不泄露答案；恢复题禁用工具，设置无历史对照，分别报告通过和失败。
-- [ ] **M1-A09** usage 不因重报或恢复重复累计，缺失分类不记作零，估算与实际供应商统计分开。
-- [ ] **M1-A10** 各自记录功能、故障、UI 和性能测试范围；不把模拟通过写成真实模型、跨机恢复或 100+ 容量通过。
+- [x] **M1-A08** 真实 harness 使用随机未知 fixture，提示不泄露答案；恢复题禁用工具，设置无历史对照，分别报告通过和失败。
+- [x] **M1-A09** usage 不因重报或恢复重复累计，缺失分类不记作零，估算与实际供应商统计分开。
+- [x] **M1-A10** 各自记录功能、故障、UI 和性能测试范围；不把模拟通过写成真实模型、跨机恢复或 100+ 容量通过。
 
 真实调用数量、超时和预算在 R02 派工单中固定；常规开发、重连和大 payload 测试使用确定性 adapter。已有登录不意味着可以无限循环调用模型。性能先测有界查询和缓存交互；FLOW-001 中的毫秒级预算在记录环境与样本量后验收。
 
@@ -203,10 +203,13 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 - [x] **C01** 中心闭环；独立计划见 [C01](../c01-control-plane/plan.md)。
 - [x] **R01** 确定性 runner；独立计划见 [R01](../r01-runner/plan.md)。
 - [x] **L01** 正式 CLI；独立计划见 [L01](../l01-cli/plan.md)。
-- [ ] **W01** Web 与双主题；独立计划见 [W01](../w01-web/plan.md)。
-- [ ] **D01** 工程执行 dashboard；独立计划见 [D01](../d01-execution-dashboard/plan.md)。
-- [ ] **R02** 真实 harness 接入与有界验证。
+- [x] **W01** Web 与双主题；独立计划见 [W01](../w01-web/plan.md)。
+- [x] **D01** 工程执行 dashboard；独立计划见 [D01](../d01-execution-dashboard/plan.md)。
+- [x] **R02** 真实 harness 接入与有界验证。
 - [ ] **I01** 合并版本的端到端、故障与UI验收；[独立计划](../i01-integration/plan.md)。
+- [x] **LAB01** 两个有界性能toy与方法复核；[plan](../lab01-performance/plan.md)。
+- [x] **D02** Dashboard权威来源补齐；[plan](../d02-progress-sync/plan.md)。
+- [ ] **LAB02** 独立观察者诊断与报告；权威owner worktree为observer-probes，不作为M1门槛。
 
 - 2026-10-05：用户要求所有ready独立任务尽量并行，期望上限10；当前第5worker仍被运行时拒绝。每plan迁移独立status/review，当前feature owners维护各自状态，branch完成与main集成分别记录。
 
@@ -215,13 +218,19 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 ## 外部task派工方法
 
 1. Execution Lead先确认ready任务的输入、冻结完整base SHA、独立分支/worktree和独占写入范围，登记owner占用。
-2. Goal Owner把可复制任务说明交给用户，由用户自行新开task；本轮不调用create_thread。未收到执行回报前状态保持reserved-external/awaiting-dispatch，内部不重复派发。
+2. Goal Owner把可复制任务说明交给用户，由用户自行新开task；本轮不调用create_thread。预留时记录reserved-external/awaiting-dispatch，内部不重复派发；每次汇报前核对外部完成快照及owner实际status/head/dirty，不能因未主动回传持续推断未开工。
 3. 外部owner先核验仓库、branch/base/head和dirty状态，读AGENTS及plan/status/review，完成技能发现并实际读用相关skill；只在自己worktree写入并维护自己的status。
 4. 公共contracts/client/根lock/migrations等变更向Execution Lead提出具体需求；不自行修改他人owner范围。基线变化由Execution Lead发送具体SHA与影响说明，外部owner合并后跑受影响检查，不悄悄追逐main。
 5. 交付回传branch/head SHA、工作树、检查/证据路径、未验证/阻塞、status和review目标。外部task不自行merge main；Execution Lead统一只读review、集成验证与合并。
 
-当前保留：W01（Web与完整浅深主题），依赖F00已ready，owner待用户派发；其余内部继续C01/R01/L01。其他可独立安排的是针对固定commit的只读review；E01 wrapper认证调查仅限隔离只读分析、不修改共享登录或生产实现；协议映射设计需先明确版本与输入契约，不把未ready的协议实现冒充可并行任务。
+当前已接收外部W01与D01（各自已独立review并提交），不再预留等待。其他可独立安排的是针对固定commit的只读review；E01 wrapper认证调查仅限隔离只读分析、不修改共享登录或生产实现；协议映射设计需先明确版本与输入契约，不把未ready的协议实现冒充可并行任务。
 
-W01 与 D01 均 reserved-external/awaiting-dispatch；用户将自行新开一个执行分队 task（协调者 + 两 feature owners，最多 3 个活跃 agents）。两个 feature 独立 worktree，不共享可写 UI 包、lock 或 contracts。具体输入、任务登记与交付格式见 [外部交接](../../docs/handoffs/external-web-dashboard.md)。当前内部 4 槽运行限制仍据实记录；不将预留写成已运行。
+W01与D01由用户外部分队完成：W01 b04df958（批准实现866c20e），D01 6783562（批准实现9c236c5）。两个 feature 独立 worktree，不共享可写 UI 包、lock 或 contracts。具体输入、任务登记与交付格式见 [外部交接](../../docs/handoffs/external-web-dashboard.md)。当前内部 4 槽运行限制仍据实记录；不将预留写成已运行。
 
-当前确定性核心已在I01集成验证并独立审查，main仍未合入。R02进行真实adapter有界验证；用户另授权LAB01可丢弃性能toy，独立performance-probes worktree，0模型/0云。LAB结果不替代产品性能或真实agent容量证据。
+当前真实Web/PG/整浏览器退出/CLI决策/新浏览器一致产物与验证已通过；R02+I01真实原生预算5/5已使用。LAB01两个0模型/0云toy已方法review通过；D02补齐14条来源；LAB02独立观察者诊断不构成M1门槛。main在I01最终独立review后更新，实验不替代产品性能或真实agent容量证据。
+
+## M1范围与后续结构质量
+
+M1是持久执行基础，当前Web为薄任务观察/决策页，不能当最终“一个地方线性交流、跨任务解释与决策”已实现。M2优先统一跨任务入口，任务页作为下钻；固定多任务验收记录切换次数、重复问题、人介入时间。
+
+独立架构健康review（6434fba，无阻断M1项）与后续P2见[工程质量台账](../../docs/quality/architecture-health-2026-10-06.md)。harness/usage来源集中在接Pi前；runner当前有效并发1，在S01前再实现有界并发；observer读量先诊断，不凭推算优化。dashboard metadata/review与main观察SHA管理噪声留受控后续项，不为凑全绿反复刷新所有owner文件。

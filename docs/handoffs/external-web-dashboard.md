@@ -1,6 +1,6 @@
 # W01 + D01 外部执行分队交接
 
-状态：两任务均 `reserved-external / awaiting-dispatch`，用户自行创建外部 task；本文件不表示已启动。协调者 + 两个 feature owners 最多 3 个活跃 agents，所有写入至少 Sol。不得在内部重复派发，也不自行 merge main。
+状态：两任务已由用户外部分队完成并接收。W01交付b04df958，D01交付6783562；原始冻结基线eacee76保持可用，以下保留派工边界记录。协调者 + 两个 feature owners 最多 3 个活跃 agents，所有写入至少 Sol。不得在内部重复派发，也不自行 merge main。
 
 ## 冻结基线与工作目录
 
@@ -57,3 +57,5 @@ W01 必读且已按用户要求安装：
 ## 冻结后的新增状态源（不改变外部实现基线）
 
 W01/D01继续使用冻结 `eacee76fa7f1b6cc46b06b57ae68458637be4a26`；以下只是dashboard只读任务登记补充，owner开始时核验实际路径/branch/head：I01→`m1-integration` / `codex/m1-integration` / `plans/i01-integration/status.md`；R02→`m1-native-harness` / `codex/m1-native-harness` / `plans/r02-native-harness/status.md`；LAB01→`performance-probes` / `codex/performance-probes` / `plans/lab01-performance/status.md`。根前缀仍为上表相同Flow-worktrees。研究/汇总仍由plan-status-review worktree的Execution Lead维护；其他worktrees的副本不覆盖各task owner状态。
+
+交付后新增登记：D02→`dashboard-progress-sync` / `codex/dashboard-progress-sync` / `plans/d02-progress-sync/status.md`；LAB02→`observer-probes` / `codex/observer-probes` / `plans/lab02-observer-probes/status.md`。D02实现只追加来源，用户4320预览需由Lead核对归属后重启到新代码；临时smoke不表示旧预览已更新。

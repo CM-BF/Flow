@@ -87,3 +87,7 @@
 - 每任务只指定一个 owner 和一个权威 worktree。聚合器按派工登记选择该 worktree 的对应 status，不能把其他 worktree 的陈旧副本覆盖它；记录来源、branch/head、dirty 和同步时间。缺失、冲突或过期显示未知/待同步，不猜测完成。
 - 完成工作必须同步 dashboard 事实源；dashboard 尚未实现时更新 status 并注明“等待聚合器展示”。实现后确认该任务记录可被聚合并记录检查结果。跨任务汇总、owner 切换及 main 集成状态由 Execution Lead 协调；owner 只改自己的任务状态。
 - dashboard 是当前 Flow 工程进度视图，不是产品任务 Web。分支完成、已验证、待 review、已集成 main 分开；空 review 模板绝不显示通过，不计算无依据百分比或 ETA。
+
+## 管理事实核验
+
+派工/汇报前读取唯一owner status并核验实际head/dirty；外部任务完成快照可作为输入，不因未主动回传继续推断未开工。完成成果及时进入集成队列。Goal Owner掌控关键路径、资源、质量方向与解阻，Execution Lead提供技术检查并执行集成。问题单须明确owner/worktree/输入/交付验证/解除条件。status模板表格字段与TODO ID标题是当前dashboard支持格式；不能因解析失败填造完成。
