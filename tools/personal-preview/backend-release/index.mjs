@@ -29,12 +29,16 @@ export async function prepareBackendArtifact({ repository, target, directory, of
   const store = await ensureStore(directory);
   return withStoreLock(store, async () => {
     const names = await readdir(store);
+    if (names.some(name => name !== 'prepare.lock' && !/^stage-[a-f0-9-]+(?:\.json)?$/.test(name) && !/^[a-f0-9]{64}$/.test(name))) fail('BACKEND_STORE_UNCONFIRMED');
     if (names.filter(name => /^stage-.*\.json$/.test(name)).length >= 32) fail('BACKEND_BUILD_RECORD_BUDGET');
     if (names.some(name => name.startsWith('stage-') && !name.endsWith('.json'))) fail('BACKEND_PREVIOUS_STAGE_UNCONFIRMED');
     const retained = names.filter(name => /^[a-f0-9]{64}$/.test(name)); let bytes = 0, reusable = null;
     if (retained.length > LIMITS.artifacts) fail('BACKEND_RETENTION_FULL');
     for (const id of retained) {
-      const manifest = JSON.parse(await readFile(join(store, id, 'manifest.json'), 'utf8'));
+      await privateDirectory(join(store, id));
+      const path = join(store, id, 'manifest.json'), info = await lstat(path);
+      if (!info.isFile() || info.isSymbolicLink() || info.size > 32 * 1024 ** 2) fail('BACKEND_MANIFEST_INVALID');
+      const manifest = JSON.parse(await readFile(path, 'utf8'));
       const artifact = { policy: BACKEND_POLICY, artifactId: id, manifestDigest: id, sourceHead: manifest.sourceHead };
       const verified = await verifyBackendArtifact({ directory, artifact }); bytes += verified.manifest.inventory.bytes;
       if (manifest.sourceHead === target) reusable = artifact;
