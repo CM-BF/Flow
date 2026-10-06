@@ -1,0 +1,17 @@
+node:internal/fs/promises:1345
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOENT: no such file or directory, open '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/apps/web/src/plugin-integration/activity.ts'
+    at async open (node:internal/fs/promises:1345:25)
+    at async readFile (node:internal/fs/promises:1996:14)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/apps/web/test/conversation-activity-integration.browser.ts:16:125)
+    at async Promise.all (index 2)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/apps/web/test/conversation-activity-integration.browser.ts:16:44) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/apps/web/src/plugin-integration/activity.ts'
+}
+
+Node.js v24.20.0

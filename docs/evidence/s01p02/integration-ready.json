@@ -1,0 +1,90 @@
+{
+  "kind": "integration-ready-review-receipt",
+  "recordedAt": "2026-10-06 09:52:15 UTC",
+  "taskId": "S01P02",
+  "target": "c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7",
+  "base": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "metadataHeadBeforeRecording": "e03e737a0e4d0319220754b3f2e63eb58d5ddd05",
+  "branch": "codex/runner-concurrency-entry",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+  "review": {
+    "verdict": "APPROVED",
+    "reviewer": "Mika / gpt-6-astra",
+    "reviewedAt": "2026-10-06 09:50:43 UTC",
+    "p1": 0,
+    "p2": 0,
+    "testsRerunByReviewer": false
+  },
+  "claimVerification": {
+    "observedAt": "2026-10-06T09:52:05.293Z",
+    "claimId": "d2c55153-7116-403d-a7db-44b10e943241",
+    "version": 1,
+    "state": "active",
+    "scope": [
+      "apps/runner/src/concurrency-configuration.test.ts",
+      "apps/runner/src/concurrency-configuration.ts",
+      "apps/runner/src/main-concurrency.test.ts",
+      "apps/runner/src/main.ts",
+      "docs/evidence/s01p02",
+      "plans/s01-concurrency-entry"
+    ]
+  },
+  "source": [
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "b6461ea0edebe5ca7fb52ebbc0c62b678aeea891b00cf69b78a1636900c95ba8"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.test.ts",
+      "sha256": "157b85699274472e083b801ccf273ed7acde4512b04bcf4712b642b2ae798e97"
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "sha256": "196b18ea53527862ad6a7865c89ea18d821143b237f5e21eee529731695b2d6e"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/s01p02/source-manifest.json",
+      "bytes": 2293,
+      "sha256": "f183c9689e7985399b2d65295209d32f09417e5d029abd50efcb0b6cd83192ee"
+    },
+    {
+      "path": "docs/evidence/s01p02/final-tests.txt",
+      "bytes": 392,
+      "sha256": "d2ee74e24510a0a46f190f04adde144f2a1f63fee2dddca73b9a81c794d3c02f"
+    },
+    {
+      "path": "docs/evidence/s01p02/final-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p02/validation-config.json",
+      "bytes": 2772,
+      "sha256": "dfb1633d3b73f0dcffa4598eeadde91c6eea13379537d633ca8ca98bd5be81ba"
+    },
+    {
+      "path": "docs/evidence/s01p02/main-red.txt",
+      "bytes": 9498,
+      "sha256": "f6fc218a4f862e0f602ce817b43448085d9dd4c1a5425034e04f9ce0d39bd0bf"
+    }
+  ],
+  "mainObservation": {
+    "head": "187d97648dd2d4edf45641720f8ba771ea9f25fa",
+    "clean": true,
+    "targetAncestor": false,
+    "mainEntryMatchesBase": true,
+    "parserExists": false
+  },
+  "limitations": [
+    "64 mocked-main/parser checks; not actual runner concurrency or capacity",
+    "No PG/provider/auth/personal service or deployment validation",
+    "Metadata recording does not rerun source tests"
+  ],
+  "progressAuthority": "plans/s01-concurrency-entry/status.md"
+}

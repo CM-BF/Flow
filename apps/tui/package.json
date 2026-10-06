@@ -1,0 +1,21 @@
+{
+  "name": "@flow/tui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/main.tsx"
+  },
+  "dependencies": {
+    "@flow/interaction": "workspace:*",
+    "@flow/client": "workspace:*",
+    "@flow/contracts": "workspace:*",
+    "ink": "8.0.0",
+    "react": "19.3.0",
+    "@assistant-ui/react-ink": "0.0.46"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "ink-testing-library": "4.0.0"
+  }
+}

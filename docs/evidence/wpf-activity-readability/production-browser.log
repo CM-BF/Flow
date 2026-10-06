@@ -1,0 +1,12 @@
+PASS pending/running user anchor is visible, initial and folded native/events/body reads are zero
+PASS Enter expands current native page only, actual Tool and Reasoning lazy bodies cache
+PASS TaskSummary update refreshes displayed metadata without body requests or automatic history drain
+PASS native hidden resume retains disclosure and draft with zero extra activity reads
+PASS split panes use local message context; generic source reads only on explicit selection
+PASS footer menu and button are real plugin actions; disable removes activity without cancelling
+PASS light/dark narrow keyboard geometry keeps footer in full message row
+PASS redacted thinking reads no body and truncated JSON displays an honest prefix
+PASS footer button opens the bound task; queue Enter/button retain delivery intent and draft
+PASS old center delayed body cannot populate new same-ID conversation
+PASS offline same-turn disconnect stops all activity reads, aborts in-flight body and resumes safely
+PASS concise single-page activity keeps outcome, stale, errors and recovery outside technical details

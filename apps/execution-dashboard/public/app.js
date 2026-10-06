@@ -27,6 +27,32 @@ let snapshot;
 let selectedTask;
 let documentRequest;
 
+function taskLinks(task) {
+  const section = element('div', undefined, 'task-links');
+  const links = task.links;
+  const parent = element('p');
+  if (links?.kind === 'big' && links.parent.state === 'none') parent.textContent = '大task · 无所属父任务';
+  else {
+    parent.append(element('span', '所属大task：'));
+    const registered = links?.parent.targetId && snapshot.tasks.find(item => item.id === links.parent.targetId);
+    if (registered) {
+      if (links.parent.state !== 'known') parent.append(element('span', '关系未知；登记资料：'));
+      parent.append(taskButton(registered, `查看所属大task ${registered.id}`));
+    }
+    else parent.append(element('span', '未知'));
+    if (links?.parent.state !== 'known') parent.append(element('span', ` · ${links?.parent.reason || '未声明'}`, 'muted'));
+  }
+  section.append(parent, element('p', `co-lead：${links?.coLead.state === 'known' ? links.coLead.value : `未知 · ${links?.coLead.reason || '未声明'}`}`));
+  if (links?.parent.record || links?.coLead.record) {
+    const raw = element('details', undefined, 'task-link-records');
+    raw.append(element('summary', '关联声明原文'));
+    if (links.parent.record) raw.append(element('p', links.parent.record));
+    if (links.coLead.record) raw.append(element('p', links.coLead.record));
+    section.append(raw);
+  }
+  return section;
+}
+
 function compactTask(task, subtitle) {
   const row = element('article', undefined, 'task-row');
   const text = element('div', undefined, 'task-copy');
@@ -38,7 +64,7 @@ function compactTask(task, subtitle) {
   if (task.assignments === null) allocation.textContent = '领取状态未知';
   else if (!task.assignments?.length) allocation.textContent = '尚无领取登记；接手前须核对';
   else allocation.textContent = task.assignments.map(claim => `${claim.role === 'review' ? '只读审查' : claim.role === 'integration' ? '受控集成' : claim.state === 'handoff_pending' ? '交接待接收' : '已领取'} · ${claim.lead} / ${claim.worker}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}${claim.matchesSource ? '' : ' · 进度来源待对齐'}`).join('；');
-  text.append(allocation);
+  text.append(taskLinks(task), allocation);
   row.append(text, taskButton(task));
   return row;
 }
@@ -109,9 +135,11 @@ function humanSignal(value) { return value?.state === 'none' ? '无' : value?.st
 function addFact(list, label, value) { list.append(element('dt', label), element('dd', plain(value || '未知'))); }
 function openTask(id) {
   const task = snapshot?.tasks.find(task => task.id === id); if (!task) return;
+  const navigatingInsideDialog = $('#task-dialog').open;
   selectedTask = task; documentRequest?.abort();
   $('#detail-id').textContent = task.id; $('#detail-title').textContent = task.title;
   const content = $('#detail-content'); content.replaceChildren();
+  content.append(element('h3', '任务关联'), taskLinks(task));
   for (const issue of task.issues) content.append(element('p', issue, 'notice warning'));
   const facts = element('dl', undefined, 'detail-facts');
   for (const [label, value] of [
@@ -139,6 +167,7 @@ function openTask(id) {
   $('#document-view').hidden = true;
   if (!$('#task-dialog').open) $('#task-dialog').showModal();
   $('#task-dialog').scrollTop = 0;
+  if (navigatingInsideDialog) { $('#detail-title').tabIndex = -1; $('#detail-title').focus(); }
 }
 
 async function openDocument(task, doc) {

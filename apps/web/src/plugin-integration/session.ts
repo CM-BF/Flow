@@ -1,3 +1,4 @@
+import { SteeringWorkspace, createSteeringPlugin, type SteeringIdentity, type SteeringPorts } from "./steering";
 import { ConversationKnowledge, createKnowledgePlugin, KNOWLEDGE_OWNER, KNOWLEDGE_PANEL, type KnowledgeReaders, type KnowledgeIdentity } from "./knowledge";
 import type { ConversationProjection } from "../conversations/projection";
 import type { FrozenCitation } from "../conversation-context/selection";
@@ -37,6 +38,7 @@ export interface AppActions {
   activity?: ActivityReaders;
   knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
+  steering?: SteeringPorts;
   ownsMessage?(taskId: string, messageId: string, role: "user" | "assistant"): boolean;
   openTask(id: string): void;
   openWorkspace(id: string, tab: WorkspaceTabId): void;
@@ -55,6 +57,7 @@ export class AppPluginSession {
   readonly theme: ReturnType<typeof createStore<ThemeSnapshot>>;
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
   readonly host: PluginHost;
+  readonly steering: SteeringWorkspace;
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
   private readonly knowledgeBindings = new Map<string, ConversationKnowledge>();
@@ -107,6 +110,8 @@ export class AppPluginSession {
       },
     };
     this.host = new PluginHost(port);
+    this.steering = new SteeringWorkspace(this);
+    this.host.register(createSteeringPlugin(this.steering));
     this.dataRenderers = createDataRendererRegistry([flowReplyDeclaration], this.host);
     this.host.register(createReplyRendererPlugin(this.dataRenderers));
     for (const plugin of createBuiltinPlugins({ workspace: this.workspace })) this.host.register(plugin);
@@ -121,7 +126,7 @@ export class AppPluginSession {
     }));
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) this.actions = actions; }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.steering.sync(); } }
   publishNavigation(next: NavigationSnapshot, context: ResourceContext) {
     if (this.closed) return;
     this.context = context;
@@ -141,7 +146,15 @@ export class AppPluginSession {
     if (old.themeId !== theme.id || old.scheme !== theme.scheme)
       this.theme.set({ themeId: theme.id, scheme: theme.scheme, availableThemes: [...themes, ...(themes.some(item => item.id === theme.id) ? [] : [theme])] });
   }
-  private authorizeResource(_capability: Capability, context: ResourceContext) { return !this.closed && this.validContext(context); }
+  private authorizeResource(capability: Capability, context: ResourceContext) {
+    if (this.closed || !this.validContext(context)) return false;
+    if (capability === "task.steering.read" || capability === "task.steering.write") return this.steering.authorize(context, capability === "task.steering.read" ? "read" : "write");
+    return true;
+  }
+  steeringAllowed(identity: SteeringIdentity, mode: "read" | "write") { return !this.closed && identity.connectionScope === this.id && this.actions.steering?.allowed(identity, mode) === true; }
+  steeringAdmission(identity: SteeringIdentity, options: { attemptId?: string }, signal: AbortSignal) { if (!this.steeringAllowed(identity, "read")) throw Error("Steering read denied."); return this.actions.steering!.admission(identity, options, signal); }
+  steeringState(identity: SteeringIdentity, options: { attemptId: string; after: number; limit: number }, signal: AbortSignal) { if (!this.steeringAllowed(identity, "read")) throw Error("Steering read denied."); return this.actions.steering!.state(identity, options, signal); }
+  steeringAccept(identity: SteeringIdentity, input: Parameters<SteeringPorts["accept"]>[1], key: string, signal: AbortSignal) { if (!this.steeringAllowed(identity, "write")) throw Error("Steering write denied."); return this.actions.steering!.accept(identity, input, key, signal); }
   knowledgeBinding(viewKey: string, projection: ConversationProjection) {
     let binding = this.knowledgeBindings.get(viewKey);
     if (!binding) { binding = new ConversationKnowledge(viewKey, projection, this); this.knowledgeBindings.set(viewKey, binding); }
@@ -239,6 +252,7 @@ export class AppPluginSession {
     if (this.closed) return;
     this.closed = true;
     this.lifetime.abort();
+    this.steering.dispose();
     this.knowledgeBindings.forEach(binding => binding.dispose()); this.knowledgeBindings.clear();
     this.dataRenderers.dispose();
     // Clear the old connection's custom palette synchronously, before a new connection can render.

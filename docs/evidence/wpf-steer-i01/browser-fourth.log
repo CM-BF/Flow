@@ -1,0 +1,40 @@
+PASS real P01 entry is explicit and current-task bound; registration reads zero
+PASS same mounted draft survives Hide, native hidden, split/merge and independent B task
+PASS Enter sends a separate original-key command; unknown retry and late new draft remain independent
+PASS accepted-unresolved close protection; explicit observation resolves without claiming model compliance
+PASS plugin disable/enable retains local draft and never auto-resubmits or reads on restoration
+PASS offline invalidates in-flight ACK without clearing original receipt or new draft
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('[id="panel-conversation:chat-2"]').getByRole('button', { name: 'Guide running task', exact: true })[22m
+[2m    - locator resolved to <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs">Guide running task</button>[22m
+[2m  - attempting click action[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="flow-section-label">…</div> from <aside aria-label="Chats" class="flow-sidebar">…</aside> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × waiting for element to be visible, enabled and stable[22m
+[2m      - element is visible, enabled and stable[22m
+[2m      - scrolling into view if needed[22m
+[2m      - done scrolling[22m
+[2m      - <div class="flow-section-label">…</div> from <aside aria-label="Chats" class="flow-sidebar">…</aside> subtree intercepts pointer events[22m
+[2m    - retrying click action[22m
+[2m      - waiting 100ms[22m
+[2m    19 × waiting for element to be visible, enabled and stable[22m
+[2m       - element is visible, enabled and stable[22m
+[2m       - scrolling into view if needed[22m
+[2m       - done scrolling[22m
+[2m       - <div class="flow-section-label">…</div> from <aside aria-label="Chats" class="flow-sidebar">…</aside> subtree intercepts pointer events[22m
+[2m     - retrying click action[22m
+[2m       - waiting 500ms[22m
+
+    at open (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web/test/conversation-steering-integration.browser.ts:16:107)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web/test/conversation-steering-integration.browser.ts:46:506)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web/test/conversation-steering-integration.browser.ts:21:56)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web/test/conversation-steering-integration.browser.ts:45:2)
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/conversation-steering-integration.browser.ts

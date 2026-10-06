@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-10-06T09:51:58.837Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "187d97648dd2d4edf45641720f8ba771ea9f25fa",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T09:52:00.250Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "sourceCount": 118,
+  "task": {
+    "id": "SVC04",
+    "current": true,
+    "issues": [],
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T09:43:03.037Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/plans/svc04-web-release/status.md",
+      "syncedAt": "2026-10-06T09:51:58.837Z",
+      "stale": false,
+      "ageHours": 0.17328805555555554
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已确定独立更新网页并保留旧页面资源的最小方案。",
+    "next": "网页发布或回退时后台任务持续运行。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "parseErrors": [],
+  "personalServiceChanged": false
+}

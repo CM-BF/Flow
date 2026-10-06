@@ -1,0 +1,54 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web
+
+ ❯ test/plugin-host.test.ts (19 tests | 1 failed) 15ms
+     ✓ allows the declared composer context panel only in a composer and rechecks knowledge authority 2ms
+     ✓ validates JSON declarations atomically without running a loader 1ms
+     ✓ shares activation for concurrent distinct command requests and binds local B context 1ms
+     ✓ rolls back partial activation and actually reloads on retry 0ms
+     ✓ invalidates pending load on disable without reviving or running activation 0ms
+     ✓ disposes late activation return once while preserving the new generation 0ms
+     ✓ continues cleanup after one failure and rejects captured contexts 0ms
+     ✓ rechecks dynamic authorization after asynchronous activation 1ms
+     ✓ catches async handler and bridge failures without unhandled rejection 1ms
+     ✓ keeps list/slot snapshots stable across navigation and makes narrow copies immutable 0ms
+     ✓ rejects wrong task/reference/composer invocation and mismatched semantic slots 0ms
+     ✓ falls back from a disabled custom theme without retaining it through App snapshots 0ms
+     ✓ whole-host disposal invalidates pending commands, views and old connection context 0ms
+   ✓ isolates synchronous and asynchronous subscription failures while continuing fan-out 1ms
+   ✓ atomically rejects unknown and prototype slots and activation events 1ms
+   ✓ checks view resource and current grants synchronously without loading 0ms
+   ✓ accepts the typed message footer and rejects non-message invocations 0ms
+     ✓ accepts the explicit stream read capability but active state does not bypass resource permission 0ms
+   × steering read declaration cannot grant write execution, and host policy still gates declared write 4ms
+ ✓ test/conversation-steering.test.ts (33 tests) 1623ms
+     ✓ bounded local receipt capacity rejects new handoff until resolved entries explicitly cleared  421ms
+ ✓ test/conversation-steering-integration.test.ts (7 tests) 1104ms
+     ✓ bounded visited bindings never silently evict unknown receipts; explicit close releases only that view  517ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/plugin-host.test.ts > steering read declaration cannot grant write execution, and host policy still gates declared write
+Error: Manifest declarations must be arrays
+ ❯ assert src/plugins/validation.ts:82:25
+     80|   typeof value === "string" && value.trim().length > 0;
+     81| export function assert(condition: unknown, message: string): asserts c…
+     82|   if (!condition) throw new Error(message);
+       |                         ^
+     83| }
+     84| export function immutable<T>(value: T): T {
+ ❯ validateManifest src/plugins/validation.ts:204:3
+ ❯ PluginHost.register src/plugins/host.ts:90:22
+ ❯ test/plugin-host.test.ts:646:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 58 passed (59)
+   Start at  02:36:32
+   Duration  2.59s (transform 822ms, setup 0ms, import 1.75s, tests 2.74s, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/conversation-steering-integration.test.ts test/conversation-steering.test.ts test/plugin-host.test.ts

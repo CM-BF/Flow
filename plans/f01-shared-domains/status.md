@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:54:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:43 UTC / main4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[范围](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main9c6fa9b100f04916f43b04280f05f497b28eeb0f；O09共享生产目标 c587436c12324b5c121957643d51173cfc66009e |
-| 工作树dirty状态 | 产品已固定；本次证据与状态提交 |
+| 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / client095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
+| 工作树dirty状态 | 本次仅共享检查证据和metadata待固定 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；可信启动1 selected/2未选，typecheck0；领域8源对a329精确一致；0provider |
-| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca已接CHAT10领域/薄client/可信启动；个人center/runner仍32c/v9，未开启steering。 |
-| Review | APPROVED：assignment_review独立只读2d699可信启动；25a22由Mika、a329由Lead独立审。 |
-| 实现目标 | 2d69959a50954912c388eddb18d3b6a9574bf680 |
-| 实现范围 | apps/server/src/main.ts, apps/server/src/steering-production.test.ts |
+| 检查状态 | PASSED：新native publication HTTP1 + 旧profile2，共3/3；根noEmit exit0，原红保留；0provider |
+| 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client已独审进入main253035e11ab18ba33095c018949f856442021d49。个人服务仍b1c/v12，无运行变更。 |
+| Review | 当前client由status_read独立APPROVED095，经Mika接收；025独审5365已main。 |
+| 实现目标 | 095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/native-profile-publication.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 中心可通过明确启动配置决定是否接收运行中的补充指令，默认关闭。 |
-| 下一可用交付 | 本片段已交付；后继接口按可替换执行工具和聊天知识选择的实际需要接入。 |
+| 当前产出 | Codex中心规则已接入，通用执行配置发布接口已审可供执行器使用。 |
+| 下一可用交付 | 本片段已交付；原生执行器在独立任务继续接通。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -119,4 +119,18 @@
 
 2026-10-06 08:20:30 UTC：main/origin32c371d已接CLI0d48、配置client899与CHAT09 cd859；本片批准绑定保持原target，不继承为provider或个人服务已开启。I02固定34source精确相同、O09 readonly组合2/2与root/Webtypes0。
 
-| F01-25 | in-progress | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，Mika独立APPROVED；不包含生产启动/模型 |
+| F01-25 | completed | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，Mika独立APPROVED；不包含生产启动/模型 |
+
+| F01-26 | completed | Lead | 025 await接线5365acb已由Mika独审并与R05B进入main3418 |
+
+2026-10-06 09:08：F01 v20正式移出harnesses.ts及专测，R05B唯一owner接回；[receipt](../../docs/evidence/f01/r05b-scope-amend.json)。本树未复制其领域源码，受控mount只供组合验证。
+
+| F01-27 | completed | Lead | native profile publication固定095bdb8，3/3 HTTP+类型，status_read独审/Mika接收APPROVED；[manifest](../../docs/evidence/f01/native-profile-client-manifest.json) |
+
+2026-10-06 09:33 UTC：F01-26的025两行挂载已由Mika独立只读APPROVED5365、与R05B组合main3418；原始回执见r05b-mount-review.md。TUI临时锁文件写权已归还F01 v22，原TUI package/lock尚未当作已实现终端交付。
+
+2026-10-06 09:38:11 UTC独审回执已归档：[native profile client](../../docs/evidence/f01/native-profile-client-review.md)。2源码3raw与固定target匹配，独审未重跑测试；批准仅薄传输，不是原生执行授权。
+
+2026-10-06 09:44 UTC：client095固定两源与main253035e11ab18ba33095c018949f856442021d49逐字一致并已push；独立Codex adapter据此接线，未启个人provider。见[main回执](../../docs/evidence/f01/native-profile-main-receipt.json)。
+
+| F01-28 | pending | Lead / Web / TUI owner | [TUI001-09唯一后继](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/docs/evidence/tui01/shared-ack-design.md)；首片修复先审，实际共享抽取待scope交接，尚无新产品实现 |

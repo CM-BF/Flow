@@ -1,4 +1,5 @@
 import { parseHuman } from './human.mjs';
+import { parseTaskLinks } from './task-links.mjs';
 import { parseImplementation } from './proof.mjs';
 const normaliseKey = value => value.replace(/\s+/g, '').toLowerCase();
 const plain = value => value.replace(/`/g, '').trim();
@@ -9,6 +10,7 @@ function cells(line) {
 
 export function parseStatus(markdown, taskId) {
   const fields = {};
+  const fieldRows = [];
   const errors = [];
   const todos = [];
   const sections = {};
@@ -23,6 +25,7 @@ export function parseStatus(markdown, taskId) {
       if (/TODO\s*ID/i.test(row[0])) { todoTable = true; continue; }
       if (todoTable && row.length >= 4) todos.push({ id: plain(row[0]), state: plain(row[1]), owner: plain(row[2]), evidence: row.slice(3).join(' | ') });
       else if (!section && row.length >= 2 && !['字段', 'Field'].includes(row[0])) {
+        fieldRows.push([row[0], row.slice(1).join(' | ')]);
         const key = normaliseKey(row[0]);
         if (Object.hasOwn(fields, key)) errors.push(`重复字段：${row[0]}`);
         fields[key] = row.slice(1).join(' | ');
@@ -47,6 +50,7 @@ export function parseStatus(markdown, taskId) {
   if (!todos.length) errors.push('缺少 TODO 状态表');
   if (todos.some(todo => !/^[A-Z][A-Z0-9-]*\d[A-Z0-9-]*$/.test(todo.id))) errors.push('TODO ID 格式未知');
   return {
+    taskLinks: parseTaskLinks(taskId, fieldRows),
     human: parseHuman(field), implementation: parseImplementation(plain(field(/^实现目标$/)), field(/^实现范围$/)),
     taskId, owner: plain(owner), branch: plain(branch), branchState: plain(branchState),
     updatedAt, updatedRecord: plain(updatedRecord), todos, errors,

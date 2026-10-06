@@ -1,0 +1,92 @@
+{
+  "at": "2026-10-06T09:44:13.513Z",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "运行中补充指令已接到聊天，独立草稿和未知回执恢复已验证",
+      "next": "独立审查后接入主线聊天界面",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/conversation-steering-integration.browser.ts",
+        "apps/web/test/conversation-steering-integration.fixture.ts",
+        "apps/web/test/conversation-steering-integration.test.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-STEIRI01",
+    "owner": "w01_owner / gpt-6-astra ultra（派发指定）",
+    "branch": "codex/web-steering-integration",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T09:44:00.000Z",
+    "updatedRecord": "2026-10-06 09:44:00 UTC",
+    "todos": [
+      {
+        "id": "WPF-STEIRI01-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[领取核验](../../docs/evidence/wpf-steer-i01/claim-observation.json)"
+      },
+      {
+        "id": "WPF-STEIRI01-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "已批准十三范围接线"
+      },
+      {
+        "id": "WPF-STEIRI01-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[固定60+双模式10组](../../docs/evidence/wpf-steer-i01/source-manifest.json)"
+      },
+      {
+        "id": "WPF-STEIRI01-04",
+        "state": "in-progress",
+        "owner": "w01_owner",
+        "evidence": "固定独审 / main 接收待实施"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "df29fb511df029a0922ace0f4973f3fe3736e502；canonical 82d2c98e407684b945467e1ce6b992dba6b4603c",
+    "declaredDirty": "实现已提交；此记录写入时仅本片计划/证据 dirty，最终Git提交回执记录clean",
+    "checks": {
+      "state": "passed",
+      "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7",
+      "record": "PASSED 5cfebc639d7acd458d27f4543d00a32a9fd96fc7；60局部/直接依赖、typecheck/build、dev/prod实际App各10组；[证据](../../docs/evidence/wpf-steer-i01/README.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；仅依赖已在固定基线",
+    "next": "",
+    "risks": "实现固定5cfebc639d7acd458d27f4543d00a32a9fd96fc7，独立Review NOT_STARTED；生产fixture61475保留。当前下一步由root固定独审后交Lead集成，主线/个人runtime未变。真实center/provider/DB、reload持久恢复、Safari/Firefox/屏读未验；完整MATURE06仍开放。",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7"
+  }
+}
