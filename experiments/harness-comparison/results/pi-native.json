@@ -1,0 +1,118 @@
+{
+  "mode": "native",
+  "versions": {
+    "pi": "0.85.1",
+    "harness": "1.0.139",
+    "harnessPi": "1.0.141"
+  },
+  "model": {
+    "provider": "openai-codex",
+    "model": "gpt-5.6-luna",
+    "oauth": true,
+    "subscription": true
+  },
+  "prompt": "Read fixture.txt and reply with exactly FLOW_OK:17. Do not read any other file or use other tools.",
+  "thinking": "off",
+  "turns": [
+    {
+      "stage": "initial",
+      "elapsedMs": 4145,
+      "text": "FLOW_OK:17",
+      "stopReason": "stop",
+      "events": {
+        "agent_start": 1,
+        "turn_start": 2,
+        "message_start": 4,
+        "message_end": 4,
+        "message_update:thinking_start": 1,
+        "message_update:thinking_end": 1,
+        "message_update:toolcall_start": 1,
+        "message_update:toolcall_delta": 6,
+        "message_update:toolcall_end": 1,
+        "tool_execution_start": 1,
+        "tool_execution_end": 1,
+        "turn_end": 2,
+        "message_update:text_start": 1,
+        "message_update:text_delta": 4,
+        "message_update:text_end": 1,
+        "agent_end": 1,
+        "agent_settled": 1
+      },
+      "toolCalls": 1,
+      "usagePerAssistantMessage": [
+        {
+          "input": 618,
+          "output": 32,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "reasoning": 12,
+          "totalTokens": 650,
+          "cost": {
+            "input": 0.00012360000000000002,
+            "output": 3.84e-05,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0.00016200000000000003
+          }
+        },
+        {
+          "input": 667,
+          "output": 8,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "reasoning": 0,
+          "totalTokens": 675,
+          "cost": {
+            "input": 0.00013340000000000002,
+            "output": 9.6e-06,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0.000143
+          }
+        }
+      ],
+      "toolResultCount": 1
+    },
+    {
+      "stage": "resume",
+      "elapsedMs": 1933,
+      "text": "FLOW_RESUME:17",
+      "stopReason": "stop",
+      "events": {
+        "agent_start": 1,
+        "turn_start": 1,
+        "message_start": 2,
+        "message_end": 2,
+        "message_update:text_start": 1,
+        "message_update:text_delta": 5,
+        "message_update:text_end": 1,
+        "turn_end": 1,
+        "agent_end": 1,
+        "agent_settled": 1
+      },
+      "toolCalls": 0,
+      "usagePerAssistantMessage": [
+        {
+          "input": 544,
+          "output": 9,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "reasoning": 0,
+          "totalTokens": 553,
+          "cost": {
+            "input": 0.00010880000000000002,
+            "output": 1.08e-05,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0.00011960000000000002
+          }
+        }
+      ],
+      "toolResultCount": 0
+    }
+  ],
+  "notes": [],
+  "setupMs": 11,
+  "resumeMechanism": "dispose + SessionManager.open persisted journal + createAgentSession",
+  "totalMs": 6091
+}

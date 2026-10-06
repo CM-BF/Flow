@@ -1,0 +1,55 @@
+{
+  "mode": "native",
+  "versions": {
+    "pi": "0.85.1",
+    "harness": "1.0.139",
+    "harnessPi": "1.0.141"
+  },
+  "model": {
+    "provider": "openai-codex",
+    "model": "gpt-5.3-codex-spark",
+    "oauth": true,
+    "subscription": true
+  },
+  "prompt": "Read fixture.txt and reply with exactly FLOW_OK:17. Do not read any other file or use other tools.",
+  "thinking": "off",
+  "turns": [
+    {
+      "stage": "initial",
+      "elapsedMs": 1010,
+      "text": "",
+      "stopReason": "error",
+      "error": "Codex error: The 'gpt-5.3-codex-spark' model is not supported when using Codex with a ChatGPT account.",
+      "events": {
+        "agent_start": 1,
+        "turn_start": 1,
+        "message_start": 2,
+        "message_end": 2,
+        "turn_end": 1,
+        "agent_end": 1,
+        "agent_settled": 1
+      },
+      "toolCalls": 0,
+      "usagePerAssistantMessage": [
+        {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "totalTokens": 0,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0
+          }
+        }
+      ],
+      "toolResultCount": 0
+    }
+  ],
+  "notes": [],
+  "setupMs": 13,
+  "totalMs": 1024
+}

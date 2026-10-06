@@ -1,0 +1,260 @@
+{
+  "sdkVersion": "0.3.290",
+  "packageRuntimeVersion": "2.1.290",
+  "nodeVersion": "v23.11.0",
+  "fixtureDir": "/private/tmp/flow-claude-native.jr7N8j",
+  "startedAt": "2026-10-05T23:40:34.536Z",
+  "runs": [
+    {
+      "label": "native-first",
+      "requestedModel": "sonnet",
+      "prompt": "Read fixture.txt and reply with exactly FLOW_OK:17. Do not read any other file or use other tools.",
+      "startedAt": "2026-10-05T23:40:34.537Z",
+      "events": [
+        {
+          "type": "system",
+          "subtype": "init",
+          "elapsedMs": 689
+        },
+        {
+          "type": "rate_limit_event",
+          "elapsedMs": 1181
+        },
+        {
+          "type": "assistant",
+          "elapsedMs": 1915
+        },
+        {
+          "type": "user",
+          "elapsedMs": 1931
+        },
+        {
+          "type": "assistant",
+          "elapsedMs": 2592
+        },
+        {
+          "type": "result",
+          "subtype": "success",
+          "elapsedMs": 2755
+        }
+      ],
+      "toolNames": [
+        "Read"
+      ],
+      "assistantText": [
+        "FLOW_OK:17"
+      ],
+      "sessionId": "ac4df9cb-4a74-4c75-8e98-fac0de203831",
+      "actualModel": "claude-sonnet-5-5",
+      "runtimeVersion": "2.1.290",
+      "tools": [
+        "Read"
+      ],
+      "pluginCount": 3,
+      "pluginNames": [
+        "cc-plugin-agents-md",
+        "cc-plugin-telemetry",
+        "cc-plugin-plugin-authoring"
+      ],
+      "mcpServerCount": 0,
+      "skillCount": 17,
+      "apiKeySource": "none",
+      "messageModel": "claude-sonnet-5-5",
+      "result": {
+        "subtype": "success",
+        "isError": false,
+        "text": "FLOW_OK:17",
+        "numTurns": 2,
+        "durationMs": 2079,
+        "durationApiMs": 2549,
+        "totalCostUsd": 0.0031211999999999998,
+        "usage": {
+          "input_tokens": 4,
+          "cache_creation_input_tokens": 159,
+          "cache_read_input_tokens": 3196,
+          "output_tokens": 86,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 159,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 11,
+              "cache_read_input_tokens": 1598,
+              "cache_creation_input_tokens": 159,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 159
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 918,
+            "outputTokens": 12,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000978,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-haiku-4-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          },
+          "claude-sonnet-5-5": {
+            "inputTokens": 4,
+            "outputTokens": 86,
+            "cacheReadInputTokens": 3196,
+            "cacheCreationInputTokens": 159,
+            "webSearchRequests": 0,
+            "costUSD": 0.0021431999999999996,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 0,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permissionDenialCount": 0
+      },
+      "passed": true,
+      "wallMs": 3449
+    },
+    {
+      "label": "native-resume",
+      "requestedModel": "sonnet",
+      "prompt": "Reply with exactly FLOW_RESUME:17 using the value from the previous turn.",
+      "startedAt": "2026-10-05T23:40:37.987Z",
+      "events": [
+        {
+          "type": "system",
+          "subtype": "init",
+          "elapsedMs": 651
+        },
+        {
+          "type": "assistant",
+          "elapsedMs": 1618
+        },
+        {
+          "type": "rate_limit_event",
+          "elapsedMs": 1626
+        },
+        {
+          "type": "result",
+          "subtype": "success",
+          "elapsedMs": 1631
+        }
+      ],
+      "toolNames": [],
+      "assistantText": [
+        "FLOW_RESUME:17"
+      ],
+      "sessionId": "ac4df9cb-4a74-4c75-8e98-fac0de203831",
+      "actualModel": "claude-sonnet-5-5",
+      "runtimeVersion": "2.1.290",
+      "tools": [],
+      "pluginCount": 3,
+      "pluginNames": [
+        "cc-plugin-agents-md",
+        "cc-plugin-telemetry",
+        "cc-plugin-plugin-authoring"
+      ],
+      "mcpServerCount": 0,
+      "skillCount": 17,
+      "apiKeySource": "none",
+      "messageModel": "claude-sonnet-5-5",
+      "result": {
+        "subtype": "success",
+        "isError": false,
+        "text": "FLOW_RESUME:17",
+        "numTurns": 1,
+        "durationMs": 993,
+        "durationApiMs": 3517,
+        "totalCostUsd": 0.0066912,
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 859,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 13,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 859,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 13,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 859,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 859
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        },
+        "modelUsage": {
+          "claude-haiku-4-5-20251001": {
+            "inputTokens": 918,
+            "outputTokens": 12,
+            "thinkingTokens": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0,
+            "webSearchRequests": 0,
+            "costUSD": 0.000978,
+            "contextWindow": 200000,
+            "maxOutputTokens": 32000
+          },
+          "claude-sonnet-5-5": {
+            "inputTokens": 6,
+            "outputTokens": 99,
+            "thinkingTokens": 0,
+            "cacheReadInputTokens": 3196,
+            "cacheCreationInputTokens": 1018,
+            "webSearchRequests": 0,
+            "costUSD": 0.0057132,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "permissionDenialCount": 0
+      },
+      "passed": true,
+      "wallMs": 2264
+    }
+  ],
+  "wallMs": 5714,
+  "finishedAt": "2026-10-05T23:40:40.251Z"
+}

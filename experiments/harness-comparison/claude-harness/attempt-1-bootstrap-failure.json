@@ -1,0 +1,40 @@
+{
+  "status": "setup-failed",
+  "versions": {
+    "harness": "1.0.139",
+    "adapter": "1.0.143",
+    "bridgeSdk": "0.3.281",
+    "bridgeCli": "2.1.281",
+    "pnpm": "10.15.1"
+  },
+  "image": "flow-claude-eval-pnpm:10.15.1",
+  "modelRequested": "sonnet",
+  "modelLimitMs": 90000,
+  "turns": [],
+  "warnings": 0,
+  "timingsMs": {
+    "containerCreate": 194
+  },
+  "credentials": {
+    "resolution": "official adapter native subscription",
+    "copiedToFileByScript": false,
+    "homeMount": false
+  },
+  "runtimeIsolation": {
+    "homeUnchanged": true,
+    "claudeConfigDir": "/tmp/flow-claude-config",
+    "skills": [],
+    "activeTools": [
+      "read"
+    ],
+    "thinking": "disabled",
+    "maxTurns": 3
+  },
+  "port": 61927,
+  "sandboxId": "1nMRw69CFY2mgJml",
+  "error": {
+    "name": "Error",
+    "message": "Bootstrap command failed for harness 'claude-code' (exit 1): ./node_modules/.bin/claude --version\nError: claude native binary not installed.\n\nEither postinstall did not run (--ignore-scripts, some pnpm configs)\nor the platform-native optional dependency was not downloaded\n(--omit=optional).\n\nRun the postinstall manually (adjust path for local vs global install):\n  node node_modules/@anthropic-ai/claude-code/install.cjs\n\nOr reinstall without --ignore-scripts / --omit=optional.\n"
+  },
+  "containerDestroyed": true
+}

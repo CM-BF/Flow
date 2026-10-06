@@ -1,0 +1,97 @@
+{
+  "mode": "harness",
+  "versions": {
+    "pi": "0.85.1",
+    "harness": "1.0.139",
+    "harnessPi": "1.0.141"
+  },
+  "model": {
+    "provider": "openai-codex",
+    "model": "gpt-5.6-luna",
+    "oauth": true,
+    "subscription": true
+  },
+  "prompt": "Read fixture.txt and reply with exactly FLOW_OK:17. Do not read any other file or use other tools.",
+  "thinking": "off",
+  "turns": [
+    {
+      "stage": "initial",
+      "elapsedMs": 2836,
+      "text": "FLOW_OK:17",
+      "finishReason": "stop",
+      "events": {
+        "start": 1,
+        "start-step": 2,
+        "tool-input-start": 1,
+        "tool-input-delta": 7,
+        "tool-input-end": 1,
+        "tool-call": 1,
+        "tool-result": 1,
+        "finish-step": 2,
+        "text-start": 1,
+        "text-delta": 4,
+        "text-end": 1,
+        "finish": 1
+      },
+      "tools": [
+        {
+          "toolName": "read",
+          "input": {
+            "file_path": "fixture.txt"
+          }
+        }
+      ],
+      "usage": {
+        "inputTokens": 1139,
+        "inputTokenDetails": {
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0
+        },
+        "outputTokens": 40,
+        "outputTokenDetails": {},
+        "totalTokens": 1179
+      }
+    },
+    {
+      "stage": "resume",
+      "elapsedMs": 1565,
+      "text": "FLOW_RESUME:17",
+      "finishReason": "stop",
+      "events": {
+        "start": 1,
+        "start-step": 1,
+        "text-start": 1,
+        "text-delta": 5,
+        "text-end": 1,
+        "finish-step": 1,
+        "finish": 1
+      },
+      "tools": [],
+      "usage": {
+        "inputTokens": 1767,
+        "inputTokenDetails": {
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0
+        },
+        "outputTokens": 49,
+        "outputTokenDetails": {},
+        "totalTokens": 1816
+      }
+    }
+  ],
+  "notes": [
+    "Process-local resource-loader reload shim prevents all filesystem resource discovery; no package files changed. Native SDK uses explicit empty ResourceLoader."
+  ],
+  "setupMs": 49,
+  "resumeMechanism": "stop + createSession(resumeFrom), reattachInProcess=false, same in-memory sandbox retained",
+  "totalMs": 4468,
+  "usageInterpretation": {
+    "scope": "Adapter emits session.getSessionStats() cumulative totals at finish; resumed usage includes preceding turn",
+    "resumeDelta": {
+      "inputTokens": 628,
+      "outputTokens": 9,
+      "totalTokens": 637
+    },
+    "reasoningTokenDetail": "adapter sets reasoning undefined"
+  }
+}

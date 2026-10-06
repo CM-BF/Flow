@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-10-05T23:46:34.150000+00:00",
+  "scope": "Independent temporary evaluation artifacts only; no Flow changes.",
+  "packages": [
+    {
+      "name": "@ai-sdk/harness",
+      "version": "1.0.139",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/vercel/ai",
+        "directory": "packages/harness"
+      },
+      "source": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/package.json"
+    },
+    {
+      "name": "@ai-sdk/harness-claude-code",
+      "version": "1.0.143",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/vercel/ai",
+        "directory": "packages/harness-claude-code"
+      },
+      "source": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/package.json"
+    },
+    {
+      "name": "@anthropic-ai/claude-agent-sdk",
+      "version": "0.3.290",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/anthropics/claude-agent-sdk-typescript.git"
+      },
+      "source": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@anthropic-ai/claude-agent-sdk/package.json"
+    },
+    {
+      "name": "ai-sdk-sandbox-docker",
+      "version": "0.1.2",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BrianHung/ai-sdk-harness.git",
+        "directory": "packages/sandbox-docker"
+      },
+      "license": "Apache-2.0",
+      "source": "npm pack ai-sdk-sandbox-docker@0.1.2 --ignore-scripts"
+    }
+  ],
+  "sourceObservations": {
+    "dockerAdapterRepositoryHttp": 404,
+    "officialNativeResolverOrder": [
+      "credential JSON file",
+      "macOS Keychain fallback"
+    ],
+    "authFailureRootCause": "not established; no credential content manually inspected"
+  },
+  "upstreamDocs": [
+    "https://pnpm.io/settings/build#allowbuilds"
+  ],
+  "filesSha256": {
+    "Dockerfile": "c4ceeed758f19841d9f2352c392b6964cf23c8549147007048b899ff2412b60b",
+    "run-harness.mjs": "a1fc5e0a94079215ff776b06afcd55b074f7cebe1dfe1d32492eed1a332688e6",
+    "package.json": "f0bf8133b672291d97e23987c72d4006977bcd53517393d61b24bc5a016c7750",
+    "package-lock.json": "5f4e518efb92b4a64a92144e6becf5dd18cdb1340b320589d9a7df99176a2268",
+    "ai-sdk-sandbox-docker-0.1.2.tgz": "32c34ee0efce508e52a4b900aeca284df0cff72f8b3731bfc8e68d3dc5a3a168",
+    "harness-result.json": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+    "attempt-1-bootstrap-failure.json": "6f21566b805ee24a6adc53153ea6d6708d027f62bc48eae62ee388407ff10773",
+    "attempt-2-native-refresh-400.json": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+    "preflight-result.json": "1ff46aaec39517024f7b2582b2bcc8aa0b6cef054e55e724ccb34713a88844b0",
+    "README.md": "b947ad02f23f29943b12a6297fdbed608fed742fc0a002ff7f9ef7a0cf11dda5"
+  },
+  "cleanup": {
+    "temporaryContainersAndBridgeRemoved": true,
+    "temporaryDerivedImagesRemoved": true,
+    "originalBaseImageUnchanged": true
+  },
+  "executionCount": {
+    "dockerBootstrapAttempts": 2,
+    "officialNativeSubscriptionRefreshAttempts": 1,
+    "modelCalls": 0,
+    "manualLoginOrRefresh": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "status": "preflight_incomplete",
+  "model_calls": 0,
+  "credential_reads": 0,
+  "credentials_copied": false,
+  "docker_context": "orbstack",
+  "docker_endpoint": "unix:///Users/citrine/.orbstack/run/docker.sock",
+  "sandbox_package": {
+    "name": "ai-sdk-sandbox-docker",
+    "version": "0.1.2",
+    "repository": "https://github.com/BrianHung/ai-sdk-harness",
+    "repository_http_observed": 404,
+    "license": "Apache-2.0",
+    "integrity": "sha512-q11RbBG4WIjx3eDjHggbX7sz1K+h9uPkBwpP4wgzQelPNjp9W2eg5o1+AHvWYD2xqd17oBmbkgIvoxaAHyJ8Mw=="
+  },
+  "installed_harness": "1.0.139",
+  "installed_claude_adapter": "1.0.143",
+  "adapter_bridge_dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "0.3.281",
+    "@anthropic-ai/claude-code": "2.1.281"
+  },
+  "native_comparison_sdk": "0.3.290",
+  "image_preflight": {
+    "image": "claude-code-sandbox:latest",
+    "image_repo_digests": [],
+    "user": "developer",
+    "working_directory": "/workspace",
+    "node": "v22.22.1",
+    "pnpm": "not found",
+    "exit_code": 127,
+    "wall_seconds": 0.244053583,
+    "container_removed": true
+  },
+  "blockers": [
+    "Available local Claude sandbox image lacks pnpm required by adapter bootstrap. No prepared official local Docker sample identified within timebox.",
+    "Community Docker adapter repository is inaccessible (404), and current API requires explicit port/portEndpoint plus template.prepare wiring. These are setup gaps, not demonstrated adapter model failures."
+  ],
+  "source_findings": [
+    "Community Docker adapter supports stop/destroy, but no getPortEndpoint; official Claude adapter supports explicit port + portEndpoint as a basic sandbox escape hatch.",
+    "Community adapter network-policy method is a no-op. Credentials would be forwarded into the container environment, without a credential broker; no credentials were forwarded in this preflight.",
+    "Official Claude bridge bootstraps its own pinned runtime; it does not use the host installed Claude SDK version."
+  ],
+  "not_run": [
+    "HarnessAgent creation",
+    "native subscription resolution",
+    "model generate",
+    "same-session resume"
+  ],
+  "task_prompt": "Read fixture.txt and reply with exactly FLOW_OK:17. Do not read any other file or use other tools.",
+  "resume_prompt": "Reply with exactly FLOW_RESUME:17 using the value from the previous turn.",
+  "next_step": "Prepare a disposable pinned Node+pnpm Docker image and explicitly wire local port endpoint/template before attempting the bounded model benchmark. Measure sandbox preparation separately; align native SDK versions or report version confound.",
+  "interpretation": "Environment preparation was not completed within the exploration timebox. This does not establish that the local Docker route is infeasible, nor that the harness adapter failed a model task."
+}

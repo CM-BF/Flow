@@ -1,0 +1,114 @@
+{
+  "archivedAt": "2026-10-05T23:48:12.702225+00:00",
+  "sourceDirectory": "/tmp/flow-claude-harness-eval.G24Awo",
+  "scope": "Evidence archive only; no model calls, dependency installations, credential copies, or authentication retries during archiving.",
+  "finalStatus": "Local Docker and bridge bootstrap succeeded; official native subscription refresh failed with HTTP 400 during createSession; 0 model calls.",
+  "sourceSnapshots": [
+    {
+      "originalName": "Dockerfile",
+      "archivedName": "Dockerfile",
+      "sourceSha256": "c4ceeed758f19841d9f2352c392b6964cf23c8549147007048b899ff2412b60b",
+      "archivedSha256": "c4ceeed758f19841d9f2352c392b6964cf23c8549147007048b899ff2412b60b",
+      "originalRecordedSha256": "c4ceeed758f19841d9f2352c392b6964cf23c8549147007048b899ff2412b60b",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "run-harness.mjs",
+      "archivedName": "run-harness.mjs",
+      "sourceSha256": "a1fc5e0a94079215ff776b06afcd55b074f7cebe1dfe1d32492eed1a332688e6",
+      "archivedSha256": "a1fc5e0a94079215ff776b06afcd55b074f7cebe1dfe1d32492eed1a332688e6",
+      "originalRecordedSha256": "a1fc5e0a94079215ff776b06afcd55b074f7cebe1dfe1d32492eed1a332688e6",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "package.json",
+      "archivedName": "package.json",
+      "sourceSha256": "f0bf8133b672291d97e23987c72d4006977bcd53517393d61b24bc5a016c7750",
+      "archivedSha256": "f0bf8133b672291d97e23987c72d4006977bcd53517393d61b24bc5a016c7750",
+      "originalRecordedSha256": "f0bf8133b672291d97e23987c72d4006977bcd53517393d61b24bc5a016c7750",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "package-lock.json",
+      "archivedName": "package-lock.json",
+      "sourceSha256": "5f4e518efb92b4a64a92144e6becf5dd18cdb1340b320589d9a7df99176a2268",
+      "archivedSha256": "5f4e518efb92b4a64a92144e6becf5dd18cdb1340b320589d9a7df99176a2268",
+      "originalRecordedSha256": "5f4e518efb92b4a64a92144e6becf5dd18cdb1340b320589d9a7df99176a2268",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "harness-result.json",
+      "archivedName": "harness-result.json",
+      "sourceSha256": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+      "archivedSha256": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+      "originalRecordedSha256": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "attempt-1-bootstrap-failure.json",
+      "archivedName": "attempt-1-bootstrap-failure.json",
+      "sourceSha256": "6f21566b805ee24a6adc53153ea6d6708d027f62bc48eae62ee388407ff10773",
+      "archivedSha256": "6f21566b805ee24a6adc53153ea6d6708d027f62bc48eae62ee388407ff10773",
+      "originalRecordedSha256": "6f21566b805ee24a6adc53153ea6d6708d027f62bc48eae62ee388407ff10773",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "attempt-2-native-refresh-400.json",
+      "archivedName": "attempt-2-native-refresh-400.json",
+      "sourceSha256": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+      "archivedSha256": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+      "originalRecordedSha256": "df0fc158afdb250bea01e3e8ab129df2213b2d776984c2f62bcc5204d97f16c8",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "preflight-result.json",
+      "archivedName": "preflight-result.json",
+      "sourceSha256": "1ff46aaec39517024f7b2582b2bcc8aa0b6cef054e55e724ccb34713a88844b0",
+      "archivedSha256": "1ff46aaec39517024f7b2582b2bcc8aa0b6cef054e55e724ccb34713a88844b0",
+      "originalRecordedSha256": "1ff46aaec39517024f7b2582b2bcc8aa0b6cef054e55e724ccb34713a88844b0",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "README.md",
+      "archivedName": "README.source.md",
+      "sourceSha256": "b947ad02f23f29943b12a6297fdbed608fed742fc0a002ff7f9ef7a0cf11dda5",
+      "archivedSha256": "b947ad02f23f29943b12a6297fdbed608fed742fc0a002ff7f9ef7a0cf11dda5",
+      "originalRecordedSha256": "b947ad02f23f29943b12a6297fdbed608fed742fc0a002ff7f9ef7a0cf11dda5",
+      "copiedByteForByte": true
+    },
+    {
+      "originalName": "provenance.json",
+      "archivedName": "provenance.source.json",
+      "sourceSha256": "9a1d84dc87e857da4f710f91ca461c27c324b1d7cbfac84bd5c3bde4e63b8535",
+      "archivedSha256": "9a1d84dc87e857da4f710f91ca461c27c324b1d7cbfac84bd5c3bde4e63b8535",
+      "originalRecordedSha256": null,
+      "copiedByteForByte": true
+    }
+  ],
+  "archiveReadmeSha256": "cf87be20f34f270c106672e2916cdbb69e0028b3d86683a6a1af307039710011",
+  "excludedArtifacts": [
+    {
+      "name": "node_modules",
+      "reason": "Dependencies and links are not archived."
+    },
+    {
+      "name": "package/",
+      "reason": "Expanded third-party source package is not archived."
+    },
+    {
+      "name": "ai-sdk-sandbox-docker-0.1.2.tgz",
+      "reason": "Only provenance and checksums retained.",
+      "npmPackage": "ai-sdk-sandbox-docker@0.1.2",
+      "npmIntegrity": "sha512-q11RbBG4WIjx3eDjHggbX7sz1K+h9uPkBwpP4wgzQelPNjp9W2eg5o1+AHvWYD2xqd17oBmbkgIvoxaAHyJ8Mw==",
+      "sha256": "32c34ee0efce508e52a4b900aeca284df0cff72f8b3731bfc8e68d3dc5a3a168"
+    }
+  ],
+  "reproductionLimitations": [
+    "Source script contains original absolute temporary imports and references an unarchived extracted npm package.",
+    "Source package+lock only contain get-port, not the full harness dependency set.",
+    "Model-stage stream/result handling was never reached or validated.",
+    "Dockerfile uses a mutable local :latest base with no recorded registry RepoDigest; image ID alone does not make a clean-environment rebuild possible.",
+    "Native SDK and bridge SDK versions differ; authentication failure cause remains unestablished."
+  ],
+  "archiveChecksumFile": "SHA256SUMS (all other files in this directory; excludes itself)"
+}
