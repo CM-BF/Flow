@@ -6,6 +6,35 @@ const input = { conversationId: "chat-a", expectedRevision: 2, text: "  hi\n" };
 const setup = () => { let id = 0; return new ConversationOutbox(() => `command-${++id}`); };
 
 describe("conversation admission outbox", () => {
+  it("freezes knowledge independently of the next draft and reuses it after a lost receipt", () => {
+    const ref = { projectId: "project-a", sourceId: "10000000-0000-4000-8000-000000000001", version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes" as const, start: 0, end: 4 } };
+    const knowledge = [ref], draft = { ...input, knowledge };
+    const box = setup(), first = box.begin(draft);
+    draft.text = "next unsent"; ref.locator.end = 6; knowledge.splice(0);
+    expect(first.request.knowledge?.[0]?.locator.end).toBe(4);
+    expect(Object.isFrozen(first.request.knowledge)).toBe(true); expect(Object.isFrozen(first.request.knowledge?.[0]?.locator)).toBe(true);
+    box.fail(first.id, "lost", false); const retry = box.retry(first.id)!;
+    expect(retry.request).toBe(first.request); expect(retry.turnKey).toBe(first.turnKey);
+    box.fail(first.id, "budget rejection on retry", true); expect(box.getSnapshot()?.state).toBe("unknown");
+    box.accept(first.id); expect(draft.text).toBe("next unsent"); expect(draft.knowledge).toEqual([]);
+  });
+  it("requires a matching frozen creation project for new turns with knowledge before allocating a key", () => {
+    const ref = { projectId: "project-a", sourceId: "10000000-0000-4000-8000-000000000001", version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes" as const, start: 0, end: 4 } };
+    let keys = 0; const box = new ConversationOutbox(() => String(++keys));
+    for (const settings of [creation, { ...creation, projectId: "project-b" }])
+      expect(() => box.begin({ ...input, conversationId: null, creation: settings, knowledge: [ref] })).toThrow("project");
+    expect(keys).toBe(0); expect(box.getSnapshot()).toBeNull();
+    const first = box.begin({ ...input, conversationId: null, creation: { ...creation, projectId: "project-a" }, knowledge: [ref] });
+    box.fail(first.id, "CREATE lost", false); expect(box.retry(first.id)?.creationKey).toBe(first.creationKey);
+    box.bindConversation(first.id, "created"); box.fail(first.id, "turn lost", false);
+    expect(box.retry(first.id)?.request).toBe(first.request);
+  });
+  it("keeps explicit empty knowledge distinct from an omitted field", () => {
+    const box = setup(), entry = box.begin({ ...input, knowledge: [] });
+    expect(entry.request.knowledge).toEqual([]); expect(Object.isFrozen(entry.request.knowledge)).toBe(true);
+    box.accept(entry.id); expect(box.begin(input).request).not.toHaveProperty("knowledge");
+  });
+
   it("detaches and freezes project identity through unknown CREATE and turn retries without adding knowledge", () => {
     const source = { ...creation, projectId: "project-a" };
     const outbox = setup(); const first = outbox.begin({ ...input, conversationId: null, expectedRevision: 0, creation: source });
