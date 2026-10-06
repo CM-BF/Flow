@@ -6,20 +6,25 @@ import { startAttachmentPreview, root, evidence } from "./attachment-integration
 
 const label = process.argv[2] ?? "production-first";
 const plainOnly = process.argv[3] === "plain";
+const longNamesOnly = process.argv[3] === "longnames";
 if (!/^[a-z0-9-]+$/.test(label)) throw Error("Use a simple report label.");
 const previous = await readdir(evidence);
-let usedMs = 0;
+const priorDurations = new Map<string, number>();
 for (const file of previous.filter(name => name.endsWith("-budget.json"))) {
   const record = JSON.parse(await readFile(evidence + file, "utf8"));
   if (!record.endedAt) throw Error("An earlier run has no settled cleanup/budget record; reconcile it before another run.");
-  usedMs += record.wallMs;
+  priorDurations.set(file.replace("-budget.json", ""), record.wallMs);
 }
-for (const file of previous.filter(name => name.endsWith("-browser.json") && !previous.includes(name.replace("-browser.json", "-budget.json")))) usedMs += JSON.parse(await readFile(evidence + file, "utf8")).wallMs ?? 0;
+for (const file of previous.filter(name => name.endsWith("-browser.json"))) {
+  const key = file.replace("-browser.json", "");
+  priorDurations.set(key, Math.max(priorDurations.get(key) ?? 0, JSON.parse(await readFile(evidence + file, "utf8")).wallMs ?? 0));
+}
+const usedMs = [...priorDurations.values()].reduce((total, duration) => total + duration, 0);
 const available = 600_000 - usedMs;
 if (available < 60_000) throw Error("Insufficient cumulative budget; obtain a new bounded decision.");
 const began = Date.now(), checks: string[] = [], errors: string[] = [];
 let fixture: Awaited<ReturnType<typeof startAttachmentPreview>> | undefined, browser: Browser | undefined, failure: string | null = null;
-const budget = Math.min(220_000, available - 20_000);
+const budget = Math.min(longNamesOnly ? 25_000 : 220_000, available - 20_000);
 const lifetime = new AbortController();
 await writeFile(evidence + label + "-budget.json", JSON.stringify({ startedAt: new Date(began).toISOString(), priorMs: usedMs, workBudgetMs: budget, cleanupReserveMs: 20_000 }));
 const timeout = setTimeout(() => { lifetime.abort(Error("Work deadline; cleanup reserved")); void browser?.close(); }, budget);
@@ -38,7 +43,8 @@ const work = async () => {
   const dialog = () => page.getByRole("dialog", { name: "Project text files", exact: true });
   const posts = (pattern: RegExp) => fixture!.wire.filter(row => row.method === "POST" && pattern.test(row.path));
   const upload = async (file: { name: string; mimeType: string; buffer: Buffer }) => {
-    const chooser = page.waitForEvent("filechooser"); await page.getByRole("button", { name: "Add Attachment", exact: true }).filter({ visible: true }).first().click(); await (await chooser).setFiles(file);
+    const [chooser] = await Promise.all([page.waitForEvent("filechooser"), page.getByRole("button", { name: "Add Attachment", exact: true }).filter({ visible: true }).first().click()]);
+    await chooser.setFiles(file);
   };
   const contentReads = () => fixture!.wire.filter(row => /\/content\?/.test(row.path)).length;
   const check = async (name: string, operation: () => Promise<void>) => { lifetime.signal.throwIfAborted(); await operation(); checks.push(name); console.log("PASS", name); };
@@ -46,6 +52,47 @@ const work = async () => {
     await page.goto(fixture.url); await page.getByLabel("Owner token", { exact: true }).fill(fixture.token); await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
     if (!await input().count()) await page.getByRole("button", { name: "New chat", exact: true }).first().click();
     await expect(input()).toBeVisible();
+    if (longNamesOnly) {
+      const names = ["a".repeat(251) + ".txt", "文🙂".repeat(30) + "b".repeat(161) + ".txt"] as const;
+      const nav = await navigation(); await nav.getByRole("button", { name: "Other project chat", exact: true }).click();
+      await expect(page.getByRole("region", { name: "Locked execution profile", exact: true }).filter({ visible: true })).toBeVisible();
+      await input().fill("Keep long-name draft");
+      await files().click(); await expect(dialog()).toBeVisible(); await page.keyboard.press("Escape");
+      await expect(page.getByRole("button", { name: "Add Attachment", exact: true }).filter({ visible: true }).first()).toBeEnabled();
+      for (const name of names) await upload({ name, mimeType: "text/plain", buffer: Buffer.from("Long name content") });
+      await expect.poll(() => posts(/\/projects\/[^/]+\/attachments$/).filter(row => row.status === 201).length).toBe(2);
+      if (await page.getByRole("complementary", { name: "Chats", exact: true }).isVisible()) await page.getByRole("button", { name: "Chats", exact: true }).click();
+      await page.setViewportSize({ width: 390, height: 844 });
+      const observations = [];
+      for (const theme of ["light", "dark"]) {
+        if (theme === "dark") await page.getByRole("button", { name: "Use dark theme", exact: true }).click();
+        await files().click(); await dialog().getByRole("button", { name: "Browse files", exact: true }).click();
+        await expect(dialog().getByRole("button", { name: "Use " + names[0], exact: true })).toBeVisible();
+        const recovery = dialog().getByText(/Upload recovery \(/); if (!await recovery.evaluate(element => element.parentElement?.hasAttribute("open"))) await recovery.click();
+        const receipt = dialog().getByRole("button", { name: "Check receipt for " + names[1], exact: true });
+        await receipt.focus(); await page.keyboard.press("Enter");
+        await expect(dialog().getByRole("button", { name: "Use recovered " + names[1], exact: true })).toBeEnabled();
+        const geometry = await dialog().evaluate(element => ({ clientWidth: element.clientWidth, scrollWidth: element.scrollWidth,
+          buttons: [...element.querySelectorAll("button")].filter(button => /^(Use |Remove |Check receipt for |Forget local record for )/.test(button.getAttribute("aria-label") ?? button.textContent ?? "")).map(button => ({
+            text: button.textContent, accessibleName: button.getAttribute("aria-label") ?? button.textContent, clientWidth: button.clientWidth, scrollWidth: button.scrollWidth,
+            width: button.getBoundingClientRect().width, right: button.getBoundingClientRect().right, left: button.getBoundingClientRect().left,
+            whiteSpace: getComputedStyle(button).whiteSpace, overflowWrap: getComputedStyle(button).overflowWrap,
+          })) }));
+        observations.push({ theme, geometry });
+        await page.screenshot({ path: evidence + label + "-" + theme + "-390.png" });
+        await page.keyboard.press("Escape"); await expect(files()).toBeFocused(); await expect(input()).toHaveValue("Keep long-name draft");
+      }
+      await writeFile(evidence + label + "-geometry.json", JSON.stringify({ names: names.map(name => ({ name, utf16Length: name.length, utf8Bytes: Buffer.byteLength(name) })), observations }, null, 2));
+      checks.push("255-code-unit legal ASCII and Chinese/emoji names; actual upload, metadata, recovery Enter and Escape restore in both themes");
+      expect(errors).toEqual([]);
+      for (const { geometry } of observations) {
+        expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.clientWidth);
+        expect(geometry.buttons.length).toBeGreaterThanOrEqual(10);
+        for (const button of geometry.buttons) { expect(button.scrollWidth).toBeLessThanOrEqual(button.clientWidth); expect(button.right).toBeLessThanOrEqual(390); expect(button.left).toBeGreaterThanOrEqual(0); }
+      }
+      checks.push("long-name Dialog and all material action buttons stay within 390px without horizontal overflow");
+      return;
+    }
     if (!plainOnly) {
     await check("explicit project preparation preserves the text and performs zero turns", async () => {
       await input().fill("Attachment production conversation"); await page.getByRole("button", { name: "Knowledge", exact: true }).filter({ visible: true }).click();
@@ -187,10 +234,11 @@ finally {
   try { await browser?.close(); } catch (error) { failure ??= String(error); }
   try { await fixture?.close(); } catch (error) { failure ??= String(error); }
   await writeFile(evidence + label + "-budget.json", JSON.stringify({ startedAt: new Date(began).toISOString(), endedAt: new Date().toISOString(), wallMs: Date.now() - began, priorMs: usedMs, cumulativeMs: usedMs + Date.now() - began }));
-  const paths = JSON.parse(await readFile(evidence + "phase2-claim-receipt.json", "utf8")).claim.scopes ?? JSON.parse(await readFile(evidence + "phase2-claim-receipt.json", "utf8")).claim.scope;
+  const claim = JSON.parse(await readFile(evidence + (previous.includes("longnames-claim-receipt.json") ? "longnames-claim-receipt.json" : "phase2-claim-receipt.json"), "utf8")).claim;
+  const paths: string[] = claim.scopes ?? claim.scope;
   const hashes: Record<string, string> = {};
   for (const path of paths.filter((path: string) => path.startsWith("apps/"))) hashes[path] = createHash("sha256").update(await readFile(root + path)).digest("hex");
-  await writeFile(evidence + label + "-browser.json", JSON.stringify({ startedAt: new Date(began).toISOString(), endedAt: new Date().toISOString(), wallMs: Date.now() - began, priorBudgetMs: usedMs, cumulativeBudgetMs: usedMs + Date.now() - began, checks, errors, failure, mode: plainOnly ? "plain-only" : "full",
+  await writeFile(evidence + label + "-browser.json", JSON.stringify({ startedAt: new Date(began).toISOString(), endedAt: new Date().toISOString(), wallMs: Date.now() - began, priorBudgetMs: usedMs, cumulativeBudgetMs: usedMs + Date.now() - began, checks, errors, failure, mode: longNamesOnly ? "long-names-only" : plainOnly ? "plain-only" : "full",
     sourceCommit: execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim(), workingSourceHashes: hashes, wire: fixture?.wire ?? [], providerQueries: 0 }, null, 2));
   const total = async (directory: string): Promise<number> => (await Promise.all((await readdir(directory, { withFileTypes: true })).map(async file => file.isDirectory() ? total(directory + "/" + file.name) : (await stat(directory + "/" + file.name)).size))).reduce((a,b) => a+b, 0);
   if (await total(evidence) > 16 * 1024 * 1024) failure ??= "Evidence budget exceeded";
