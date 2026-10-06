@@ -20,6 +20,6 @@
 - [x] D06-05：原权威树/分支/旧释放与fixedaeb检查；四scope fresh领取。
 - [x] D06-06：核固定源码并更新职责、运行/数据/状态与外部依赖边界，保持默认图可读。
 - [x] D06-07：小范围数据/来源/viewport验证，原失败与部署边界准确。
-- [ ] D06-08：固定独审、正常push、Lead窗口resume后受控main接收与合法收口。
+- [x] D06-08：固定独审、正常push、Lead窗口resume后受控main接收与合法收口。
 
-本批固定目标6570及[验证](../../docs/evidence/d06/snapshot-aeb/validation.md)已齐，D06-08的独立review已APPROVED，仍等待main/释放。用户重申“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”沿U08/REQ37，四literal实际claim6cad30a2 v1与唯一status/D04 receipt关联，不另手填领取或父进度。SVC05窗口已由Lead正式关闭，服务owner回执与固定source分开，管理没有服务查询。
+本批固定目标6570及[验证](../../docs/evidence/d06/snapshot-aeb/validation.md)已齐，D06-08独审APPROVED，正式main cde6646五source逐字一致，原四scope已6cad v2释放。13:13仅fresh eccd968a v1独占本plan.md纠正遗漏的checkbox/当前说明，产品与原证据未变；该窄metadata正常pushclean后立即释放，实际领取/释放由D04与管理唯一队列记录。用户重申“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”沿U08/REQ37，四literal实际claim6cad30a2 v1与唯一status/D04 receipt关联，不另手填领取或父进度。SVC05窗口已由Lead正式关闭，服务owner回执与固定source分开，管理没有服务查询。
