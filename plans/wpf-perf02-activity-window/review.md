@@ -31,3 +31,7 @@ No P0–P3 actionable findings；blocking 0。**APPROVED**，只覆盖固定targ
 后续review任务：若target后实现变化，先核新SHA/branch/dirty/当前claim，重审具体diff和影响面，不复用本结论。主线集成另由Lead记录。
 
 [Plan](plan.md) · [Status](status.md) · [质量记录](../../docs/evidence/wpf-perf02/quality.md)
+
+## 2026-10-06 04:03 UTC 主线集成事实补记
+
+原独立APPROVED仍仅绑定实现 `a87f64f48a3b7e8d03429ab0673c210076a2df0d`；原交付metadata `172d10d63179a4861cc0fbf986dec10bd0a45f10` 不变。root于04:01:30核 `origin/main=8f1481df880cf5077e1ddb9a8f302fe700a7ece8`；本owner于04:03再次只读核同引用、`git merge-base --is-ancestor a87... 8f148...` exit0。管理者04:01:56.630Z GET4320核main method=ancestor、current/historicalIntegrated/scopeEqual=true、dirtyScopePaths=[]、issues=[]；主Lead明确main/origin已push且clean。该事实关闭集成pending，不把本次文档提交当成新实现review，也不扩大真实中心/I01/CHAT组合或性能验证范围。仅文档检查，不重复产品测试。
