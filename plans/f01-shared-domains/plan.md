@@ -54,3 +54,5 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 - [x] **F01-26** Codex中心025生产接线，保持旧迁移/默认消费者，独立review后与R05B成套集成。
 
 - [x] **F01-27** 通用native profile发布薄传输，保持旧Claude消费者类型与目录语义；独立HTTP/类型审查后供R05C消费。
+
+- [ ] **F01-28** 配合TUI-001的共享ACK后继，将创建/提交会话的结构与冻结身份校验收敛到窄client Interface；唯一设计/验收归[TUI001-09](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/docs/evidence/tui01/shared-ack-design.md)，不展开全API框架，不阻TUI01A局部修复。
