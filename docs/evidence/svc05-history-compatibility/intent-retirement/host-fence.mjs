@@ -53,8 +53,7 @@ export async function exactHistory(request) {
 
 export async function withHostFence(request, use) {
   if (request.root !== personal || request.runnerId !== 'd22f4df2-8242-49f4-a1b4-77f8f08611ef'
-    || !/^[a-f0-9]{64}$/.test(request.stateSha256) || !/^[a-f0-9]{64}$/.test(request.configSha256)
-    || !/^[a-f0-9]{64}$/.test(request.deploymentEvidenceSha256)) fail('FIXED_INSTALLATION');
+    || !/^[a-f0-9]{64}$/.test(request.stateSha256) || !/^[a-f0-9]{64}$/.test(request.configSha256)) fail('FIXED_INSTALLATION');
   await fixedSource();
   const preview = await tool('preview.mjs'), processTools = await tool('process.mjs');
   const config = await preview.loadPreviewConfiguration(personal);
@@ -83,6 +82,10 @@ export async function withHostFence(request, use) {
         const ps = (await execute('ps', ['-axo', 'pid=,command='], { timeout: 1500, maxBuffer: 1048576 })).stdout;
         if (ps.split('\n').some(line => /apps\/runner\/src\/main\.ts|--role=runner|--role runner/.test(line))) fail('OTHER_RUNNER_PROCESS');
         await exactHistory(request);
+        const marker = (await client.query('SELECT installation_id,directory FROM public.flow_preview_owner')).rows;
+        const registered = (await client.query('SELECT id,revoked FROM flow.runners ORDER BY id LIMIT 2')).rows;
+        if (marker.length !== 1 || marker[0].installation_id !== config.installationId || marker[0].directory !== personal
+          || registered.length !== 1 || registered[0].id !== request.runnerId || registered[0].revoked) fail('DEPLOYMENT_IDENTITY');
         const counts = (await client.query(`SELECT
           (SELECT count(*)::int FROM flow.attempts WHERE completed_at IS NULL) unfinished,
           (SELECT count(*)::int FROM flow.tasks WHERE status='uncertain') uncertain,
@@ -92,7 +95,11 @@ export async function withHostFence(request, use) {
           operationId: runner.maintenance_operation_id, version: runner.maintenance_version,
           runnerStopped: true, soleWriterConfirmed: true, inventoryComplete: true,
           globalUnfinished: counts.unfinished, globalUncertain: counts.uncertain, pendingTasks: counts.pending, pendingQueue: counts.queue,
-          pendingOutbox: 0, pendingFinal: 0, pendingUnknown: 0 };
+          pendingOutbox: 0, pendingFinal: 0, pendingUnknown: 0,
+          deployment: { installationId: config.installationId, databaseName: config.databaseName, markerMatched: true,
+            registeredRunnerIds: registered.map(row => row.id), configSha256: request.configSha256, stateSha256: request.stateSha256,
+            ownedRunnerRecordSha256: sha(JSON.stringify(state.processes.runner)), knownRunnerEntrypoints: 0,
+            scope: 'Recorded local installation and fixed runner entrypoints, not a proof against hidden hostile deployments.' } };
       };
       const result = await use(confirm); await client.query('COMMIT'); return result;
     } catch (error) { if (client) await client.query('ROLLBACK').catch(() => undefined); throw error; }

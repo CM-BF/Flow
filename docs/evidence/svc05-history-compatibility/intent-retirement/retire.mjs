@@ -66,11 +66,13 @@ function fixedNewBytes(original) {
 /** ports.withFence keeps the existing host operation lock and same runner row lock until use returns. */
 export async function retireIntent(request, ports) {
   let phase = 'guard', paths, original, replacement, renamed = false;
-  const result = () => ({ phase, originalSha256: request.originalSha256, newSha256: replacement ? sha(replacement) : null, renamed });
+  const confirmations = [];
+  const result = () => ({ phase, originalSha256: request.originalSha256, newSha256: replacement ? sha(replacement) : null, renamed,
+    confirmationSha256: confirmations.map(fact => sha(encoded(fact))) });
   try {
     paths = locations(request);
     return await ports.withFence(request, async confirm => {
-      assertConfirmation(request, await confirm()); await checkDirectories(request, paths);
+      const initial = await confirm(); assertConfirmation(request, initial); confirmations.push(initial); await checkDirectories(request, paths);
       original = await readRegular(paths.journal);
       if (!sameIdentity(original.stat, request.journalIdentity) || sha(original.bytes) !== request.originalSha256) fail('ORIGINAL_CHANGED');
       replacement = fixedNewBytes(original.bytes);
@@ -81,14 +83,15 @@ export async function retireIntent(request, ports) {
       phase = 'intent'; await ports.boundary?.(phase);
       await persist(join(paths.archive, 'intent.json'), encoded({ kind: 'legacy-local-intent-retirement', retirementId: request.retirementId,
         runnerId: request.runnerId, operationId: request.operationId, holdVersion: request.holdVersion, source,
-        namespace: request.namespace, originalSha256: request.originalSha256, newSha256: sha(replacement), originalIdentity: identity(original.stat),
+        namespace: request.namespace, originalSha256: request.originalSha256, newSha256: sha(replacement), originalIdentity: identity(original.stat), initialConfirmation: initial,
         meaning: 'Operator retirement under a durable hold; original claim outcome remains unknown. No claim replay or fabricated ACK.' }));
       phase = 'stage'; await ports.boundary?.(phase);
       await persist(join(paths.archive, 'replacement.bin'), replacement);
       // Rename candidate is in the journal directory; its exact bytes are also retained in the archive.
       const stage = join(paths.namespace, 'admission-retirement-' + request.retirementId + '.tmp');
       phase = 'recheck'; await ports.boundary?.(phase);
-      assertConfirmation(request, await confirm()); await checkDirectories(request, paths);
+      const final = await confirm(); assertConfirmation(request, final); confirmations.push(final); await checkDirectories(request, paths);
+      await persist(join(paths.archive, 'pre-rename-confirmation.json'), encoded(final));
       const current = await readRegular(paths.journal);
       if (!sameFile(original.stat, current.stat) || sha(current.bytes) !== request.originalSha256) fail('ORIGINAL_CHANGED');
       await persist(stage, replacement);
