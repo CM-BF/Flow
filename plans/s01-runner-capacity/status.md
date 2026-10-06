@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:26 UTC；W1 main30b，W2生产基线115b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:33 UTC；W1 main30b，W2生产基线115b |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
@@ -19,7 +19,7 @@
 | 优先级 | 4 |
 | 当前产出 | 单进程声明容量4的对照入口已通过独立审查，正在协调测量窗口 |
 | 下一可用交付 | 在独立短窗口测量声明容量与实际并发，并交结果审查 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 测量等待有效期足够的静默窗口，入口已独审通过 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，W2准备固定2ab已APPROVED；未取得运行窗口；W1准备/结果已批准且已集成 |
 
@@ -73,3 +73,5 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:26 UTC W2独审完成：独立worker限定APPROVED2ab，无P1/P2，源码/25hash与旧raw边界核验。Mika向GO申请≤30秒阶段，CHAT06P01尚准备时不拖S01；常驻服务刷新与测量由GO错开。当前0新负载/模型，原64/64/180秒/64MiB及实际32/26未变。
 
 2026-10-06 07:27 UTC dashboard实读：S01 a22329e clean、approved/unchanged/current、live且stale=false、issues=[]；人类摘要为准备已独审、协调实际测量窗口。见[W2聚合回执](../../docs/evidence/s01/w2-approved-dashboard.json)。
+
+2026-10-06 07:33 UTC 窗口阻塞：两次固定起点预约因最终GO未及时到达而不启动，后续07:32:30租约到期也未收到最终GO；0新tasks/attempts/PG，见w2-window-coordination.json。解除条件为明确GO且剩余静默期足够完整30秒，责任Mika协调GO；不用缩短清理或补跑绕行。独立工作为CHAT06P01源码/纯验证，worker已恢复必要检查；S01源码固定2ab不变。
