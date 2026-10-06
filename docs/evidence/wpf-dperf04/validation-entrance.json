@@ -1,0 +1,33 @@
+{
+  "Node": {
+    "command": "/opt/homebrew/opt/node@24/bin/node --test apps/execution-dashboard/test/summary-detail.test.mjs",
+    "budgetMs": 30000,
+    "cleanupReserveMs": 5000,
+    "temporaryBytes": 8388608,
+    "rawBytes": 2097152,
+    "repositories": 2,
+    "tasks": 2,
+    "dependencies": "Node built-ins only; actual ledger import never called; all observers explicit synthetic",
+    "current": "NOT_RUN"
+  },
+  "browser": {
+    "commands": [
+      "DPERF04_BROWSER_GATE=<fresh gate> /opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "DPERF04_BROWSER_GATE=<separate fresh gate, same cumulative budget> /opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/test/task-links.browser.mjs"
+    ],
+    "combinedBudgetMs": 60000,
+    "cleanupReserveMs": 15000,
+    "retainedBytes": 8388608,
+    "gateFields": [
+      "allowRun",
+      "expiresAt",
+      "run",
+      "chromeExecutable",
+      "sourceHead",
+      "sourceHashes"
+    ],
+    "ownNativeChrome": true,
+    "fixture": "Same two temporary repositories and explicit unknown ledger; no real registry/PG",
+    "current": "NOT_RUN; no browser dependencies provisioned or assumed"
+  }
+}
