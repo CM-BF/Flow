@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:45 UTC / main13f92d05 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:55 UTC / main2d179353 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,12 +13,12 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main/origin 13f92d05一致且clean，175源20:21实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main/origin 2d179353一致且clean，175源20:21实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 两份保留网页与候选后台的兼容证据已独审通过，三项后端实施源码准备完成。 |
+| 当前产出 | 终端与网页接续验证准备已通过审查；个人更新的旧记录恢复方案正在补齐受控操作。 |
 | 下一可用交付 | 本批已交付；个人固定版本更新准备与终端、网页接续driver并行继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -247,3 +247,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 20:35 UTC：F04准备四源对d147逐字接收，原默认fixture前像与主线无差，复用准备限定独审/已有纯检查，不重新运行。真实PG/Chrome/PTY联合仍NOT_RUN。个人2030窗口仅step01只读181ms因namespace定位停止，服务/发布0动作，root恢复main，原失败由SVC05H封存；本批OPS状态同步其窗口归还和S01P07补供事实。
 
 2026-10-06 20:45 UTC：F04固定四源d147及准备证据已main352246b8，实际双端旅程仍NOT_RUN。个人2040源窗已关闭并恢复clean main13f92d05；正确namespace的admission未满足严格idle，唯一step01只读172ms退出，0材料/维护/重启/发布，无pending launch。原因只读定位中，未将false判为可清理记录；[源窗口](../../docs/evidence/i02/af51-d629-source-window-2040.json)。共享重窗口交已审ready SVC07短PG，之后Web与F04各自fresh串行。
+
+2026-10-06 20:55 UTC：F04新增capture/import准备32 bindings独立APPROVED，原4源未变，2纯/实际入口加载证据保留且无重复运行。受控接收31个own记录与SVC07供给回执；[绑定](../../docs/evidence/i02/tui-capture-source-supply-integration.json)。真实双端旅程等待Web当前窗口清理，个人legacy intent具体退役语义已获GO授权但实现/独审尚在进行，未进行个人操作。

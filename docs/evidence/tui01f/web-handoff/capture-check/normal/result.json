@@ -1,0 +1,55 @@
+{
+  "outcome": "processes-complete",
+  "sourceDigest": "42947a918e2902ca003ddc076e1750b00da3c6f117cecc20f77422675a29c0a4",
+  "observedBytes": 6,
+  "retainedBytes": 6,
+  "outputLimit": 65536,
+  "overflow": false,
+  "pipeState": {
+    "code": 0,
+    "signal": null
+  },
+  "supervision": {
+    "driverPid": 42865,
+    "outcome": "processes-complete",
+    "phase": "work",
+    "samples": 2,
+    "ownedGroups": [
+      {
+        "pgid": 42865,
+        "state": "stopped"
+      }
+    ],
+    "reason": null,
+    "last": {
+      "stageBytes": 0,
+      "outerBytes": 257,
+      "capturedBytes": 6,
+      "totalBytes": 263
+    },
+    "exitCode": 0,
+    "signalCode": null,
+    "elapsedMs": 55
+  },
+  "metrics": {
+    "groups": [],
+    "metrics": {
+      "stageBytes": 0,
+      "outerBytes": 623,
+      "capturedBytes": 0,
+      "totalBytes": 623
+    }
+  },
+  "raw": [
+    {
+      "bytes": 2,
+      "sha256": "2689367b205c16ce32ed4200942b8b8b1e262dfc70d9bc9fbc77c49699a4f1df"
+    },
+    {
+      "bytes": 4,
+      "sha256": "a4c3ed04a95a3da14a9d235c83d868bed7c0f45cf7f3faa751ee8f50598d2211"
+    }
+  ],
+  "PG": 0,
+  "provider": 0
+}

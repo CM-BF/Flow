@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-06T20:52:40.404791+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "result": "APPROVED_PREPARATION_DELTA",
+  "target": "076aa5444a73ecb3eaea42176c0577ed07feb7f6",
+  "delivery": "3072e6054057f3c8ed5a1579d6d99adceb075407",
+  "manifestSha256": "aea35026b1463a3d4deded5f6d6ec83a64f410eb425637e8157d17e81ee39852",
+  "bindingVerification": {
+    "at": "2026-10-06T20:50:03.687563+00:00",
+    "target": "076aa5444a73ecb3eaea42176c0577ed07feb7f6",
+    "manifestSha256": "aea35026b1463a3d4deded5f6d6ec83a64f410eb425637e8157d17e81ee39852",
+    "verified": [
+      "docs/evidence/tui01f/web-handoff/capture-check-run.json",
+      "docs/evidence/tui01f/web-handoff/capture-check-stderr.txt",
+      "docs/evidence/tui01f/web-handoff/capture-check-stdout.txt",
+      "docs/evidence/tui01f/web-handoff/capture-check/normal/child.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/normal/reservation.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/normal/result.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/normal/stderr.txt",
+      "docs/evidence/tui01f/web-handoff/capture-check/normal/stdout.txt",
+      "docs/evidence/tui01f/web-handoff/capture-check/normal/supervision.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/overflow/STOP.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/overflow/child.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/overflow/reservation.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/overflow/result.json",
+      "docs/evidence/tui01f/web-handoff/capture-check/overflow/stderr.txt",
+      "docs/evidence/tui01f/web-handoff/capture-check/overflow/stdout.txt",
+      "docs/evidence/tui01f/web-handoff/capture-check/overflow/supervision.json",
+      "docs/evidence/tui01f/web-handoff/capture-checked-source.txt",
+      "docs/evidence/tui01f/web-handoff/capture-inputs.json",
+      "docs/evidence/tui01f/web-handoff/capture-readiness.md",
+      "docs/evidence/tui01f/web-handoff/capture.mjs",
+      "docs/evidence/tui01f/web-handoff/import-only-run.json",
+      "docs/evidence/tui01f/web-handoff/import-only-stderr.txt",
+      "docs/evidence/tui01f/web-handoff/import-only-stdout.txt",
+      "docs/evidence/tui01f/web-handoff/import-only.mjs",
+      "docs/evidence/tui01f/web-handoff/import-readonly-preflight.json",
+      "docs/evidence/tui01f/web-handoff/small-check-runtime.py",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/identity.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/config.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs"
+    ]
+  },
+  "sourceDigest": "b1559d552e0c2eaa875e5c852eb13c0a15db1d69f15cbf6ee8bb9859c47254e5",
+  "captureDigest": "5063d601b7c40d1a83cfb35bf0a85d09ea069f3ada1de2d5705e558707f9e275",
+  "review": [
+    "Read full capture/import adapter and reused fixed O16 supervisor dependencies; no duplicated process-stop loop.",
+    "Original four journey sources unchanged; original 782 bindings remain the preparation authority.",
+    "Combined output overflow is latched, stops the owned driver group and cannot pass through truncation. Stage, outer capture and retained memory share an explicit aggregate bound.",
+    "Independent total deadline remains active during parent persistence; child checkpoint owns DB/PTY/Chrome resource facts. Unknown is retained, not inferred clean from parent exit.",
+    "Exact checked capture source retained; the only post-check delta clarifies capture-owned resource report labels."
+  ],
+  "authorEvidence": {
+    "importOnly": {
+      "exit": 0,
+      "ms": 1463,
+      "factoryCalls": 0,
+      "resourceAttempts": []
+    },
+    "captureChecks": {
+      "selected": 2,
+      "passed": 2,
+      "ms": 340,
+      "normalBytes": 6,
+      "overflowObservedBytes": 98304,
+      "overflowRetainedBytes": 65536,
+      "ownedGroupsObservedStopped": true
+    }
+  },
+  "findings": [],
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "limitations": [
+    "Only preparation approved; full PG/Chrome/PTY journey remains NOT_RUN.",
+    "Actual entry must be capture.mjs --run with both fixed digests; no direct journey bypass.",
+    "Fresh shared window, exclusive permit and resource gates remain mandatory; no automatic repeat.",
+    "Normal and overflow raw results retain historical PG/provider label scope; overflow unknown signal is preserved alongside later owned-group-stop observation."
+  ]
+}

@@ -1,8 +1,16 @@
 # 当前 TUI01F-04 实现
 
+状态：APPROVED_PREPARATION_DELTA。capture/import独立增量已核，无P1/P2；实际旅程NOT_RUN。
+
+Review target commit: 076aa5444a73ecb3eaea42176c0577ed07feb7f6
+
+[原始增量回执](../../docs/evidence/tui01f/web-handoff/independent-capture-review.json)，32固定绑定/2纯直接消费者与import原证据，reviewer0重跑。原四源准备批准仍绑定下列d147，不扩大为实际App/PG/PTY结果。
+
 状态：APPROVED_PREPARATION_ONLY。Execution Lead独立核四源与782绑定/4纯检查分轮和两focused types原始证据，无P1/P2，reviewer0重跑。实际HTTP/PG/Chrome/PTY仍NOT_RUN，不继承03实际验收结论。
 
 Review target commit: d147a636f9cb54a8c87a89a89963d13e937cee9c
+
+准备main接收：[352246b8](../../docs/evidence/tui01f/web-handoff/preparation-main-receipt.json)，四源逐字一致；实际旅程NOT_RUN。
 
 Scope：fixture.ts及experiments/tui-web-control-handoff三源；[manifest/原始检查](../../docs/evidence/tui01f/web-handoff/README.md)。741固定只读输入；原03产品/原始回执保持。作者4不同纯检查分轮3+1、focused types两次0，PG/Chrome/PTY/provider均未执行。请核真实公开接口/任务身份/409草稿/一次cancel/退出不cancel，固定artifact与backend/TUI三方版本，durable checkpoint/marker/PGID/独立150s监督及unknown保留。独审只读固定源/原证据；完整实际旅程须另行窗口。
 

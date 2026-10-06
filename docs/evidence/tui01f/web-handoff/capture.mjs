@@ -1,0 +1,111 @@
+import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { createHash, randomUUID } from 'node:crypto';
+import { mkdir, readFile, writeFile, lstat, statfs } from 'node:fs/promises';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+const HERE = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(HERE, '../../../..');
+const O16 = '/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance';
+const R01 = '/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/experiments/personal-current-release';
+const RAW = 65536, STAGE = 4 * 1024 ** 2, RESERVE = 1024 ** 3;
+const load = (root, file) => import(pathToFileURL(join(root, file)).href);
+const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+
+async function inputs() {
+  const rows = JSON.parse(await readFile(join(HERE, 'capture-inputs.json'), 'utf8')).bindings;
+  for (const row of rows) {
+    const stat = await lstat(row.path), bytes = await readFile(row.path);
+    assert(stat.isFile() && !stat.isSymbolicLink() && bytes.length === row.bytes && hash(bytes) === row.sha256);
+  }
+  const source = hash(await readFile(fileURLToPath(import.meta.url)));
+  return hash(JSON.stringify({ source, inputs: rows.map(({ path, sha256 }) => ({ path, sha256 })) }));
+}
+
+/** Only adaptation/capture: the fixed O16 supervisor owns every stop/reap loop. */
+async function capture({ argv, directory, digest, stageDirectory, short = false }) {
+  await mkdir(directory, { mode: 0o700 }); // Exclusive invocation directory, never replace an earlier attempt.
+  const { writeRecord } = await load(O16, 'records.mjs');
+  const { startTotalDeadline } = await load(O16, 'operator-watchdog.mjs');
+  const { supervise } = await load(O16, 'operator.mjs');
+  const { diskBytes } = await load(R01, 'fixture.mjs');
+  const bounds = short ? { workMs: 2500, cleanupMs: 2000 } : { workMs: 90000, cleanupMs: 60000 };
+  await writeRecord(join(directory, 'reservation.json'), { digest, outcome: 'unknown-retain', bounds, outputLimit: RAW }, { exclusive: true });
+  const watchdog = await startTotalDeadline({ directory, run: 'capture-' + randomUUID(), sourceDigest: digest,
+    totalMs: short ? 8000 : 150000, finalCheckpointMs: short ? 500 : 1000 });
+  const child = spawn(process.execPath, argv, { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'],
+    env: { ...process.env, TSX_DISABLE_CACHE: '1' } });
+  const buffers = [[], []]; let observed = 0, retained = 0, overflow = false;
+  const closed = new Promise(resolve => { child.once('close', (code, signal) => resolve({ code, signal })); });
+  child.once('error', () => { overflow = true; });
+  for (const [index, stream] of [child.stdout, child.stderr].entries()) stream.on('data', chunk => {
+    observed += chunk.length; const piece = chunk.subarray(0, Math.max(0, RAW - retained));
+    if (piece.length) { buffers[index].push(Buffer.from(piece)); retained += piece.length; }
+    if (observed > RAW) overflow = true; // Supervisor sees this latch and stops the owned group, not just truncates.
+  });
+  assert(Number.isSafeInteger(child.pid)); await watchdog.register([child.pid]);
+  await writeRecord(join(directory, 'child.json'), { pid: child.pid, pgid: child.pid, state: 'unknown' }, { exclusive: true });
+  const measure = async () => {
+    const free = await statfs(ROOT), outer = await diskBytes(directory);
+    const stage = stageDirectory ? await stageDirectory() : null;
+    let stageBytes = 0;
+    if (stage) try { stageBytes = (await diskBytes(stage)).bytes; }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
+    const total = stageBytes + outer.bytes + retained;
+    assert(free.bavail * free.bsize >= RESERVE && total <= STAGE + RAW);
+    return { groups: [], metrics: { stageBytes, outerBytes: outer.bytes, capturedBytes: retained, totalBytes: total } };
+  };
+  const supervision = await supervise({ child, bounds, sample: measure, outputFailure: () => overflow,
+    markStop: reason => writeRecord(join(directory, 'STOP.json'), { reason, outcome: 'unknown-retain' }, { exclusive: true }),
+    persist: report => writeRecord(join(directory, 'supervision.json'), report, { exclusive: true }) });
+  let pipeTimer;
+  const pipeState = await Promise.race([closed, new Promise(resolve => { pipeTimer = setTimeout(() => resolve({ unknown: true }), 750); })]);
+  clearTimeout(pipeTimer);
+  for (const [index, name] of ['stdout.txt', 'stderr.txt'].entries()) await writeFile(join(directory, name), Buffer.concat(buffers[index]), { flag: 'wx', mode: 0o600 });
+  // Captured buffers are now on disk; do not count them twice in the final aggregate.
+  const captured = retained; retained = 0;
+  const metrics = await measure();
+  const report = { outcome: supervision.outcome === 'processes-complete' && !overflow && !pipeState.unknown ? 'processes-complete' : 'unknown-retain',
+    sourceDigest: digest, observedBytes: observed, retainedBytes: captured, outputLimit: RAW, overflow, pipeState, supervision, metrics,
+    raw: buffers.map(parts => ({ bytes: Buffer.concat(parts).length, sha256: hash(Buffer.concat(parts)) })), captureOwnDatabaseCalls: 0, nativeProviderCalls: 0, childResourceAuthority: 'journey checkpoint' };
+  await writeRecord(join(directory, 'result.json'), report, { exclusive: true });
+  await measure(); await watchdog.complete(); // Does not disarm its independent parent deadline.
+  return report;
+}
+
+async function selfTest() {
+  const digest = await inputs(); const free = await statfs(ROOT); assert(free.bavail * free.bsize >= RESERVE + 8 * 1024 ** 2);
+  const directory = join(HERE, 'capture-check'); await mkdir(directory, { mode: 0o700 });
+  const normal = await capture({ argv: ['-e', 'process.stdout.write("ok"); process.stderr.write("done")'], directory: join(directory, 'normal'), digest, short: true });
+  assert.equal(normal.outcome, 'processes-complete'); assert.equal(normal.retainedBytes, 6); assert.equal(normal.supervision.exitCode, 0);
+  const overflow = await capture({ argv: ['-e', 'process.stdout.write("x".repeat(98304)); setInterval(()=>{},1000)'], directory: join(directory, 'overflow'), digest, short: true });
+  assert.equal(overflow.outcome, 'unknown-retain'); assert.equal(overflow.overflow, true); assert.equal(overflow.retainedBytes, RAW);
+  assert.equal(overflow.supervision.reason, 'raw-output-bound-or-write-failed');
+  for (const report of [normal, overflow]) assert(report.supervision.ownedGroups.every(row => row.state === 'stopped'));
+  process.stdout.write(JSON.stringify({ selected: 2, passed: 2, normal: normal.outcome, overflow: overflow.outcome,
+    overflowPrimaryReason: overflow.supervision.reason, observedBytes: overflow.observedBytes, retainedBytes: overflow.retainedBytes,
+    ownedGroupsStopped: true, PG: 0, Chrome: 0, PTY: 0, provider: 0 }) + '\n');
+}
+
+async function run(permitPath) {
+  const digest = await inputs(); const { readRecord } = await load(O16, 'records.mjs');
+  const permit = await readRecord(permitPath, 4096);
+  assert.equal(permit.captureDigest, digest); assert.match(permit.windowId, /^[a-z0-9-]{4,100}$/);
+  assert(Date.now() < Date.parse(permit.startBefore) && permit.providerCalls === 0);
+  const space = await statfs(ROOT); assert(space.bavail * space.bsize >= RESERVE + 128 * 1024 ** 2);
+  const parent = join(HERE, 'captures'); await mkdir(parent, { mode: 0o700, recursive: true });
+  const stageDirectory = async () => {
+    try { const window = await readRecord(join(HERE, 'windows', permit.windowId + '.json')); assert.equal(window.identity.digest, permit.sourceDigest);
+      assert.match(window.run, /^handoff-[a-f0-9-]{36}$/); return join(HERE, 'runs', window.run); }
+    catch (error) { if (error.code === 'ENOENT') return null; throw error; }
+  };
+  const report = await capture({ argv: ['--import', 'tsx', 'experiments/tui-web-control-handoff/journey.ts', '--run', permitPath],
+    directory: join(parent, permit.windowId), digest, stageDirectory });
+  process.stdout.write(JSON.stringify({ outcome: report.outcome, directory: join(parent, permit.windowId) }) + '\n');
+  if (report.outcome !== 'processes-complete') process.exitCode = 1;
+}
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  if (process.argv[2] === '--self-test' && process.argv.length === 3) await selfTest();
+  else if (process.argv[2] === '--run' && process.argv.length === 4) await run(resolve(process.argv[3]));
+  else throw Error('Explicit capture --self-test or --run permit required');
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:26:45 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:53:04 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -14,16 +14,16 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 4 distinct纯检查分轮3/3+1/1；两次focused types0；04 PG/Chrome/PTY NOT_RUN；原03历史结果保留 |
-| 已集成main状态 / HEAD | 8d84d529a0756116bd0fc8bad969d61a6c26248e；七源逐字接收；03交付，04仍open |
+| 已集成main状态 / HEAD | 352246b850e960e1969711e303765a024ff9fc29；04四源准备已精确接收，完整旅程NOT_RUN；03历史main8d84保持 |
 | 实现目标 | d147a636f9cb54a8c87a89a89963d13e937cee9c |
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/preview.ts, experiments/tui-web-control-handoff/terminal.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 双界面验收准备已通过独立审查，真实网页与终端的组合行为仍待独立运行。 |
+| 当前产出 | 双界面脚本与有界运行入口均已独立获审，实际加载成功，等待独占运行窗口。 |
 | 下一可用交付 | 在共享运行窗口完成一次真实网页与终端接续验收，并保存完整停止和清理证据。 |
-| 当前阻塞 | 等待独占验证窗口；个人服务更新优先，当前未获运行许可。 |
+| 当前阻塞 | 等待独占验证窗口；当前未获运行许可。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED_PREPARATION_ONLY d147a636f9cb54a8c87a89a89963d13e937cee9c；04实际旅程NOT_RUN |
+| Review | [review.md](review.md)，d147准备APPROVED；076aa544 capture/import增量APPROVED；完整04实际旅程NOT_RUN |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
 | 架构影响 | 仅测试fixture新增显式factory/recipe与受管观察端口，组合固定真实Web/PTY；生产controller/权限/调度不变，固定架构输入由Execution Lead按实际验收接收。 |
 
@@ -71,3 +71,9 @@
 2026-10-06 20:24:06 UTC：04完整四源target `d147a636f9cb54a8c87a89a89963d13e937cee9c` 已固定/push；[manifest](../../docs/evidence/tui01f/web-handoff/manifest.json)核782绑定、741只读source inputs，mismatches=[]。4不同纯检查分轮通过/两focused types0；实际PG/Chrome/PTY未运行，当前review，不把源码准备冒实际App验收。阶段/安全原因归因修复与原partial staging事实保留；同claim继续停源写待唯一独审。
 
 2026-10-06 20:26:45 UTC：Execution Lead独立APPROVED_PREPARATION_ONLY，四源d147/782绑定/4纯检查分轮与两focused types原证据已核，无P1/P2/reviewer0重跑。[唯一回执](../../docs/evidence/tui01f/web-handoff/independent-preparation-review.json) SHA 42c0908d1645309b3542c55d4afb776813c2603f81282a878d70dd6905414c5b。未创建permit，未启动HTTP/PG/Chrome/PTY/provider；源码保持冻结，90+60/150s候选等待独占运行窗口。
+
+2026-10-06 20:42:37 UTC：04准备四源d147与main `352246b850e960e1969711e303765a024ff9fc29` / 后续观察 `13f92d058f6f75ef86b53a19c1be134029d4f59e` 逐字相同，[main回执](../../docs/evidence/tui01f/web-handoff/preparation-main-receipt.json)。仅准备接收，实际HTTP/PG/Chrome/PTY仍NOT_RUN；无新检查、未发permit，原claim/源码冻结。
+
+2026-10-06 20:48:50 UTC：仅加载实际factory/helper入口exit0，0调用/连接；最小外层capture复用已审supervise，正常/64KiB溢出两直接checks 2/2且groups stopped。新adapter等待窄审，[准备事实](../../docs/evidence/tui01f/web-handoff/capture-readiness.md)，原四源及782绑定不变、原4纯未重跑，完整运行仍NOT_RUN。
+
+2026-10-06 20:53:04 UTC：capture/import增量076aa544获Execution Lead唯一APPROVED_PREPARATION_DELTA，32绑定/原2纯与import证据已核、reviewer0运行；[唯一回执](../../docs/evidence/tui01f/web-handoff/independent-capture-review.json) SHA f1e85724743eae5cd8b964a942bfff8c023f792df4865b3263dd5202501ef803。actual必须由capture.mjs --run及两fixed digests进入，未生成permit、不启动PG/Chrome/PTY。
