@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **READY：申请交接45秒单native目录运行时段，实际未开放。** [新最小接口](native-remote-status/interface.md)仅校验固定版本remote-control通知四字段并复用原probe/entry；旧默认行为保持，policy与45s/单目标预算不变。六组直接fake已6/6、sh0，源码e7ff与c3349fff组合已[独审批准](native-remote-status/packet-review.json)。等待当前Web holder明确归还/Lead交接，再fresh v6、固定输入、资源与13输出准入；单native/至多1list20/45s/1MiB/own8MiB样本，0新增权限/turn/auth/推理/PG/Chrome。前次失败封存见下一条，不回写旧payload或恢复旧窗口。
+- **本次已取得Codex目录，单次窗口已消费并归还。** [固定结果待独审](native-remote-status/result-ready.md)：1native完成初始化，1次model/list得到6models且未分页；固定remote-control通知校验后继续。已受控关闭/完整stdio/两own根清理，私有原件KEEP；[实际结束与holder归还](native-remote-status/execution-tool.json)。无待launch、无重试；账号、实际模型/推理/tier、网络/账单与全部writer仍unknown。后续纯归档不占Lead个人发布时段。
 
 - **原生目录观察已执行并归还运行时段，目录仍未取得。** [本次固定结果](native-catalog-observation/run-report.md)：ready=true/1次model-list；收到已知但不允许继续的 `remoteControl/status/changed`，按原规则停止。1目标已受控关闭、完整stdio和本次两root清理确认，私有原件KEEP；[双审忠实失败收据](native-catalog-observation/result-review.json)。既有授权消费后不重试/扩表；此前[准入错误及更正](native-catalog-observation/preflight-correction.json)不回写。
 
@@ -12,14 +12,11 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - [本片接口与边界](native-catalog-observation/interface.md)保持链接只计自身、不follow、control父身份和原两项通知允许表；7组源码检查不重跑。旧system-config失败根与私有原件继续KEEP，不回填旧FAIL。当前actual已结束，REQ15/SVC07真实PG验收仍须另排。
 
-- **系统配置窗口已消费：初始化成功，但目录与完整计量未完成。** [固定失败结果](native-system-config/run-report.md)：1native ready=true/1次model-list，未知通知触发受控关闭；完整stdio、两个own根因清单不完整KEEP，私有诊断KEEP。无目录/模型资格，完整预算UNKNOWN，不重试；[结果已双审限定接收](native-system-config/result-review.json)，保留整体失败/未知。
+- 历史system-config失败根仍KEEP：[原失败结果](native-system-config/run-report.md)/[双审收据](native-system-config/result-review.json)。本次成功不回填旧FAIL或重新遍历旧根。
 
 - **S01空领取测量已双审收口。** [唯一result-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/result-ready.md)，固定e61ba2c3；原owner维护唯一status，dashboard一次timeout仍PENDING_SYNC。本次实际已结束且0PG/Chrome，与R01串行窗口无冲突；不重复供给、测量或轮询。
 
-- **原生目录单项许可窗口已消费，仍在握手前退出。** [本次固定失败结果](native-catalog-pagesize-compat/run-report.md)：1native exit1、ready=false/model-list 0；process/root/stdio收束，156B私有诊断KEEP，明确os error1，具体操作/原因unknown。[结果忠实性已双审接收](native-catalog-pagesize-compat/result-review.json)，功能仍失败；无重试或模型资格。
-
-
-- **numeric pagesize单许可出现正差异，窗口已消费。** [固定结果](native-pagesize-compat/run-report.md)：A三API −1/EPERM；B只增加hw.pagesize_compat后三API全16384/errno0，1compile+2helper正常关闭、自有根清理。仅本C组合改善，不自动native重试或声称根因/修复；[忠实性已接收](native-pagesize-compat/result-review.json)。
+- 历史[pagesize native失败](native-catalog-pagesize-compat/run-report.md)与[C compat正差异](native-pagesize-compat/run-report.md)均已消费/封存；156B及344B私有原件KEEP。本次结果不重写旧原因或恢复授权。
 - **CHAT06P03已main接收并交回写权（Mika核验）。** [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash/plans/chat06-runner-prefix-hash/status.md)：owner567d62042f273f6a8b23ff6da334e698bed94ff7 clean/pushed；main0b8cd6f4六源与refs一致，真实noEmit0已关闭类型P2，v2于18:22:14.915 RELEASED；[实际外部release](/tmp/flow-chat06p03-main-release-receipt.json)。无需重复集成或重测。
 
 - **Claude逐消息设置CORE/C01/F01已main接收。** main8d84唯一[组合接收回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/message-settings-integration.json)；CORE [owner main acceptance](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-main-acceptance.json)固定3e768151，claim v4已释放，不让原owner回写。Web/TUI完整用户验收与真实provider仍开放。

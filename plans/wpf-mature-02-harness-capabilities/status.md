@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T20:22:21.553702+00:00 / main8d84由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T20:39:45.563843+00:00 / main8d84由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,22 +11,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；上片seal553fa972；本次remote-status source e7ff1a8382f622929aab64aeebc0f0f0546778e8，旧源按历史Git保留 |
-| 工作树dirty状态 | 仅c3349fff组合批准/READY路由与当前归档metadata；源码/input/manifest及旧原件不变。 |
+| 工作树dirty状态 | 仅本次actual安全结果/归档/父状态；e7ff source、输入、旧raw保持固定。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | e7ff六组6/6、sh0、0spawn/listener/actual、四fixture已清；c3349fff组合独审通过，旧检查不重跑。 |
+| 当前检查 | 6/6+sh0不重跑；唯一实际1native/1list取得6models、CLI0，完整stdio及两root清理确认，结果待忠实性独审。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude CORE/C01/F01中心、adapter与公共client已main；跨端完整用户验收仍开放。本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude中心与公共客户端已接入主线；Codex初始化可达，正在补齐固定通知兼容以继续获取模型目录。 |
-| 下一可用交付 | 已审目录兼容候选可进入45秒单目标验证；等待现Web运行时段归还和交接，再核领取、资源、固定输入与新输出。 |
-| 当前阻塞 | ACTIVE: RUN_WINDOW_HANDOFF：候选已审，等待现运行时段归还；目录尚未取得，真实模型资格未知。 |
+| 当前产出 | Claude中心与公共客户端已在主线；Codex受控初始化后首次取得6个模型的目录，尚未验证账号或实际模型调用。 |
+| 下一可用交付 | 封存本次目录和资源收束证据供独立审查；本窗口已归还，0后续待启动。 |
+| 当前阻塞 | ACTIVE: PRODUCT_QUALIFICATION_PENDING：目录已读到，真实账号/模型、全部writer与完整跨端验收仍未完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | e7ff source/checks与c3349fff组合获Mika限定APPROVED/0P1P2；READY且actual NOT_OPEN。旧失败553fa seal保持。 |
+| Review | e7ff/c3349fff准备APPROVED；本次execution f56db3c0结果CATALOG_OBSERVED，待忠实性独审；原失败553fa seal不改。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 实验entry与probe各保一个实现，新固定namespace薄注入通知validator；旧默认保持，R06/生产接口/许可不变。旧源以Git绑定，待Lead必要时同步实验架构视图。 |
 
@@ -58,46 +58,12 @@ CHAT06P03已main接收并release，唯一status与receipt由canonical链接；�
 
 方法沿本地find-skills/brainstorming/codebase-design/用户固定clean-code sickn33@bdacd76，详[质量记录](../../docs/evidence/wpf-mature-02/node-rootliteral/quality.md)。不重复安装/测试；本status唯一手填进度，当前摘要不复制别task状态。04 producer eccb本owner只读独审已收口，权威后继由04维护。
 
-## 当前Node结果
+## 历史诊断与当前事实
 
-[固定结果](../../docs/evidence/wpf-mature-02/node-rootliteral/run-report.md)及[result-limits](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)：失败槽正常stdout上界未确认，机器accounting=true不能替代整体UNKNOWN。旧e7 raw/manifest不追改；窗口已消费，无剩余授权。58 distinct准备检查与实际失败分开。
+历史过程完整保留Git f56db3c0及[review索引](review.md)，不以当时NOT_OPEN描述当前窗口。[Node旧结果限定](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)仍为整体计量UNKNOWN；各旧native FAIL、C比较和私有KEEP证据均保留，成功目录观察不回填这些报告。各sealed accounting只适用其固定提交，不随本status压缩追改。
 
-## 新cause结果阶段
+Flow Node宿主、Node synthetic canary、固定Codex native是三种角色；本次只证明后者受控读取目录。Claude逐消息设置独立产品线由CORE/C01/F01已接入main8d84，完整Web/TUI/真实provider验收仍开放；不让已释放owner再写。四profile生产路径已由本claim v6交回，scope仅父docs/实验/plan，原claim/amend证据见canonical。
 
-[Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)沿TODO-03；窗口已消费，结果已独审限定接收。原f6两P2的纯反例与修复保留：新8项通过，受影响旧消费者6项/预算3项通过，累计33distinct非同轮；native import0spawn/0listener。外部27依赖+Node=28；当前v2与旧f6 manifest/raw分开解释，旧Node5b归档不回填；1目标完整观察不等启动或隔离成功。
+资源、共享owner与S01P07/SVC07/REQ15当前可行动入口仅在[canonical](../../docs/evidence/wpf-mature-02/interface.md)维护路由；各子任务唯一status归原owner，本父不复制其TODO。性能输入仍沿[research-inputs](../../docs/evidence/wpf-mature-02/research-inputs.md)回原计划，静态推算不是当前容量或SLO。
 
-资源仅核本树12个明确路径均不存在、回收0B；不扫他树/个人文件，不启动大构建。双流观察计完整received chunk，capture cap不作总量证明；30s末次自动写入门禁之外，实际exit需外部完成回执。clean-code沿固定bdacd76检查命名、单一owner/错误传播/有限分类与资源清理，无扩大权限。
-
-## 运行库元数据新准备
-
-[最小Interface/策略差异](../../docs/evidence/wpf-mature-02/node-runtime-metadata/interface.md)沿TODO-03；GO允许准备，go-node-runtime-metadata-once CONSUMED。61固定种子派生177精确metadata/test literal，44解析成功/17独立系统文件不存在，不推断缓存或实际需要。0目标/编译/监听；旧cause9605及Node失败结果不回写。策略设计已审；当前两Module接线与直接pure验证完成，固定组合待审。X01 a578只读独审已交原owner收口，接收入口只在canonical路由。
-
-## 下一用户能力（GO优先级调整）
-
-本次诊断收束后沿TODO-04/05/09，独立WT推进Claude逐消息model/thinking或effort/fast，requested/observed/unsupported分开；运行中及已入队输入冻结，旧会话可读可续，Web/TUI共享中心合同。首段固定SDK0.3.290声明、注入SDK与真实中心验证，0付费/新安装；Mika安排两层子任务与≥Sol owner，Lead协调共享R05/字段及低磁盘provision。本诊断WT不并行改Claude产品，完整Codex及后续验收不减。
-
-## 三种运行角色
-
-Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收；现bootstrap-inspection的Codex依赖不含Homebrew Node/OpenSSL。本Node错误不证明真实Codex失败，也不是所有harness永久前置。Codex自身启动/权限/模型/停止验收保留；Claude逐消息设置独立用户线不等待此探针。
-
-## Claude当前优先交接
-
-[next-slice-handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)是当前精确请求，父级职责和四路径移交见[handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)。本轮读child固定abbd8a9525fde44ecdfdbda99ab960d2a5df52c0；首leaf main22d5见[正式receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)。新片要真正消费已审契约，不再只交孤立helper；F01共享薄接线、source-only closure和唯一migration号由Lead协调，031已O15。
-
-15:43:03.052 UTC原claim原子amend至v6，四profile路径已停止写入且归还，core已于15:44:19.351 UTC原子amend至v2接收四profile与context store，保留main templateVersion2→unknown修复与SVC旧362候选边界。共享consumer必须适配新blocked值，精确路径和header仅在canonical路由；F01与migration未领取。没有GO待决定项；完整Codex与Claude验收不降低。
-
-本次沿本地find-skills/固定clean-code复核当前/历史状态、唯一owner与无重复合同；仅metadata一致性核验，0产品改动/工程测试/PG/install/build。此前15:20–15:32的provision/首leaf审查过程保留Git fa6cfd22，不继续列为当前等待项。
-
-15:50:43管理更新：core contracts checkpoint29bbf52589611a936068fa44991c67991b67f4c2已固定但未验证，不能沿用首leaf批准；032已由Lead正式分配，source-only闭包仅补reconciliation.ts供retry插入前校验。共享consumer交接已形成，实际写权和检查由现owner协调；本父0工程检查/PG/安装，不开诊断。
-
-16:07:03资源管理：本父fresh v6 ACTIVE、2f29 clean；只读核三个已交付released树，另转述X01 active条件候选，见[resource-candidates](../../docs/evidence/wpf-mature-02/resource-candidates.md)。Lead唯一Git operator决定KEEP/可逆收起，02与CORE KEEP；0回收/稀疏/运行检查。032正式assignment main e807已读，号/领取不替代DDL执行；完整02仍in-progress。
-
-16:09:16只读研究输入：GO轮询/续租成本线索已[固定归档并路由原S01/REQ15、CHAT08](../../docs/evidence/wpf-mature-02/research-inputs.md)，静态推算非容量事实，0测试/PG/provider/压测。CORE仍优先，未创建新任务或改外部状态。
-
-16:14:52只读观察core92f768e3517a64235629858f50cdc3926d099b2d，三个validation config未跟踪；canonical已置顶227/155精确闭包准入和保留全部scope/dirty要求。Mika核binding事实与source review分开，当前0工程检查/PG/native、NOT_OPEN；完整TODO不变。
-
-17:16安全点：沿TODO-03固定[native最小设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)，0目标/检查，当前与已封存Node候选分开。R06/loader/policy只读；fresh v6三scope，已应用本地find-skills/openai-docs/brainstorming/clean-code。CORE正式批准及CHAT06P03已领取只作canonical路由，子状态由原owner维护。
-
-17:57新pagesize段：GO/Mika已批准仅准备一个C观测器与A/B policy，新增hw.pagesize是两臂唯一权限差；两臂共同exact helper规则显式列出。固定上游/SDK声明与当前clang/ld指纹只读核，0编译/helper。新片预算独立，旧native7a72 sealed-accounting按历史Git保留，功能仍失败。
-
-19:44:10管理核验：本父claim v6 ACTIVE三scope、75e266分支clean；仅路由GO授权SVC07准备请求，S01P07/REQ15仍保留。沿已读find-skills/clean-code复核单一owner、当前/历史边界与重复叙述；0检查/服务/PG/native，center恢复优先，实际NOT_OPEN。
+本轮沿固定本地find-skills/openai-docs/brainstorming与clean-code bdacd76检查窄接口、单一生命周期owner、旧默认、错误传播与计量；只新6组fake/sh加本次获授实际目标，未重跑历史全集。共享entry/probe历史源以61e28 Git冻结，当前改动e7ff已独审；raw/input/manifest不可回写。当前原始结果与外部clock见native-remote-status证据，结果审查未完成前不宣称完整MATURE02交付。
