@@ -4,7 +4,7 @@ import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
 import { FinalizationUnknown, FinalProposalJournal } from './active-steering/proposal.js';
 import { mkdir, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { setTimeout as sleep } from 'node:timers/promises';
+import { AttemptWakeup } from './attempt-wakeup.js';
 import { FlowApiError, FlowClient } from '@flow/client';
 import type { ClaimedTask, DecisionAnswer, HarnessAdapter, HarnessContext, RunnerEventData } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
@@ -44,6 +44,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   await prepareDirectory(stateDirectory);
   const journal = await AdmissionJournal.open(stateDirectory);
   const active = new Map<string, Promise<void>>();
+  const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
   function failed(error: unknown) {
     if (error instanceof EventStorageError || isHostAuthenticationError(error)) stop(error);
@@ -52,12 +53,6 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
       disconnected = true;
     }
   }
-  async function wait() {
-    const pause = new AbortController();
-    try {
-      await Promise.race([sleep(options.pollIntervalMs ?? 500, undefined, { signal: AbortSignal.any([options.signal, pause.signal]) }).catch(() => undefined), ...active.values()]);
-    } finally { pause.abort(); }
-  }
   function start(assignment: ClaimedTask, initialLease: LeaseGrant) {
     const attemptId = assignment.attempt.id;
     const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop)
@@ -65,6 +60,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
     active.set(attemptId, completion);
+    wakeup.track(completion);
   }
   try {
     while (!options.signal.aborted) {
@@ -72,16 +68,16 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         if (recoveryPending) {
           if (active.size) {
             if (!waitingNotice) options.onNotice?.({ type: 'recovery-waiting' });
-            waitingNotice = true; await wait(); continue;
+            waitingNotice = true; await wakeup.wait(); continue;
           }
           await recover(stateDirectory, client, options, journal);
           recoveryPending = false; waitingNotice = false;
         }
         if (journal.unresolved(new Set(active.keys()))) {
           if (!blockedNotice) options.onNotice?.({ type: 'admission-blocked' });
-          blockedNotice = true; await wait(); continue;
+          blockedNotice = true; await wakeup.wait(); continue;
         }
-        if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wait(); continue; }
+        if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wakeup.wait(); continue; }
         await journal.begin();
         // No request was sent if shutdown/recovery arrived while the intent was persisted.
         if (options.signal.aborted || recoveryPending) { await journal.accept(null); continue; }
@@ -96,13 +92,14 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         });
         disconnected = false;
         if (assignment && !options.signal.aborted) start(assignment, { requestedAt, remainingLeaseMs });
-        else await wait();
+        else await wakeup.wait();
       } catch (error) {
         failed(error); recoveryPending = true;
-        if (!options.signal.aborted) await wait();
+        if (!options.signal.aborted) await wakeup.wait();
       }
     }
   } finally {
+    wakeup.close();
     shutdown.abort();
     await Promise.allSettled(active.values());
     await Promise.allSettled(requests);

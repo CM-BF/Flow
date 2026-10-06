@@ -1,0 +1,420 @@
+{
+  "implementationCommit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+  "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "counts": {
+    "source": 5,
+    "readonly": 19,
+    "raw": 21,
+    "support": 9
+  },
+  "bindings": [
+    {
+      "kind": "source",
+      "path": "apps/runner/src/runtime.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/attempt-wakeup.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1325,
+      "sha256": "49714e1d8d6f0e2a02f333842d0b88a818d91a632ce49443487aa0e349106792"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/attempt-wakeup.test.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 4844,
+      "sha256": "48156c4c1a4f450cd71d7310545aeb8ccf9451cb2c4f1d0baf98eb1cbea7218d"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 27962,
+      "sha256": "49bea6a00c209cd20d2aa85b21ff8371d23590e4dcf052454a92447bb82b096e"
+    },
+    {
+      "kind": "source",
+      "path": "docs/evidence/s01p06/tsconfig.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 370,
+      "sha256": "711082bcb9f924fdb2909eac69408ff0980cf4f0b3f3382d5316376bebc1a635"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/runner.test.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 13720,
+      "sha256": "09670094e39e2a3b2da6286c763d161e5b359231d472e655b2d44fe4c1a8c42d",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/admission-journal.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/attempt-control.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/outbox.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/fixture.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/verifier.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/active-steering/proposal.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 3388,
+      "sha256": "45a8502e8d07c861210976de19ec90c6361f26d1a63994007a4fcaf10199da02",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/goal-tool-bridge/index.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 2175,
+      "sha256": "77f540e0d82bc3519daac4f2faaf36f0ee97e3a9fc8c14d86cc37cbb402e5c6a",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/client/src/index.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 45195,
+      "sha256": "8f1c48b8a938c65450417064204153bfaa3d2d669354ffd0dc6aaf020c68d6dc",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/runner.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/index.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1268,
+      "sha256": "214f8b9c9f1c7c72aedac28a6b147c57079beca4a50f9829d4677153b0ed5a86",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/package.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 423,
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "package.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "tsconfig.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "vitest.config.ts",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "readonly",
+      "path": "pnpm-lock.yaml",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "baseCommit": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/baseline-refill-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 637,
+      "sha256": "c4f7319e7fb3b8b4f803244947a7055163c00e199a5dcd6f775579e847811a7a"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/baseline-refill.stderr.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/baseline-refill.stdout.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 3240,
+      "sha256": "76f23667a7cb68976a063fad72e1f06161880e7d8b1793430468aff8bc8b37b4"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/consumers-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 529,
+      "sha256": "036f63d8e037fef27e83aef894f7eb33102edfb505be65da74c848c71f3a80b4"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/consumers.stderr.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/consumers.stdout.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 9762,
+      "sha256": "28ff88a9b467e669d1e2d145f28d3bdd1d2edaa719db116a1b5c2d07251ccb10"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/focused-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 505,
+      "sha256": "02d1d7c8e849a3794126a1acb806d2864bfae96448e520453aa045560da8c4c5"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/focused.stderr.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/focused.stdout.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 4298,
+      "sha256": "bb0899d7ef8862fe5dbc598c3a0d7a887cad46cbb2fa38ecbdf90e427528dd87"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/red-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 375,
+      "sha256": "a0e006dfb687489f810de926b229d2e4c1a62d1c84844cd443170c25e605438a"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/red.stderr.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 725,
+      "sha256": "2bc84183660dac2024b72877b54648eb1094dc01168658a8c89aead97f9a8ef2"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/red.stdout.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 441,
+      "sha256": "4211ec6c1f7046661144ddd92526f493eb13ed0295a78a8173c679e6a04cdec2"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/refill-final-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 361,
+      "sha256": "d1a294fd7818ca304fa004c2555b38dbd8af0ee9c58a3d9eaef94b796d86c14e"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/refill-final.stderr.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/refill-final.stdout.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 3240,
+      "sha256": "f5b5df0deb020261417e7610ea9134a55794666be3c808a2c1515f15d023e25b"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/strict-final-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 288,
+      "sha256": "a5e75cc92391be98ac7220994242e10a010ea70f76cec7c3f6cd1512ba9b0f2a"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/strict-final.stderr.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/strict-final.stdout.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/strict-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 369,
+      "sha256": "77a90f1a3e9c27287fee2fa2ca797e63d7648528aed1b42265c59e567c656243"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/strict.stderr.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p06/strict.stdout.txt",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1272,
+      "sha256": "d446be04983bf8880ecfe31a8b4485e89e8a0b96fcb34001a984d058905120fc"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/README.md",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 979,
+      "sha256": "53ccf50dab2b8ac77425e555475b8e4bc26d00ffe1fa32191c1d5a382f87d3e7"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/interface.md",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1882,
+      "sha256": "5dad6064d0328f69f0fa771c3950b920a9788fed8125191fe3c4dea7a4489f7f"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/checks.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1785,
+      "sha256": "d05fb08d51b75e0046bbeee4b12ad59fe8af631ee12ceefdfddbcb8efa23c683"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/quality.md",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 1372,
+      "sha256": "de1f4c5a1cac1a644f606a1cfc92685d56f45b4f0cc2b9a62d78c83cc75673bd"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/skills.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 912,
+      "sha256": "c179973f2ca4011d105bc4a5d2126488a1a381dd825b09e1135c13fde30bcacd"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/resource.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 605,
+      "sha256": "3235c9da6959d7b58d7971634df843eaf83fbd8b148d09cccabe769d7409cd52"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/dependency-reuse.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 6400,
+      "sha256": "133a081f5fae6e74d24f0eb35264b8aacdf85825bb79491f6a66e45866cfb15b"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/claim-request.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 539,
+      "sha256": "f58db3646d73b8a0d99bfa4dc2682ce693443af7616c29206a6cc8fee485b9b5"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p06/claim-receipt.json",
+      "commit": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+      "bytes": 721,
+      "sha256": "ecf380483efdc3dda12fc83043411cf206b416c145f69d18f2be115e849be3ff"
+    }
+  ],
+  "historicalBindings": [
+    {
+      "kind": "old-expression-red",
+      "path": "apps/runner/src/attempt-wakeup.test.ts",
+      "commit": "808bb0e3edc8b68a7c6918a1f063c52449266827",
+      "bytes": 812,
+      "sha256": "93ac54ec3a2ad6f2d057ba5834c06a93f52c6fe97419e2bcbfb148b7439c1599"
+    }
+  ],
+  "checks": "checks.json",
+  "limitations": "72distinct final coverage, 71 unchanged prior consumer cases + final refill rerun. Module counter != heap/hour capacity. 4 PG NOT_SELECTED. Local strict only. 0 provider."
+}

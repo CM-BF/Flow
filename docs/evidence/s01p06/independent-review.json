@@ -1,0 +1,27 @@
+{
+  "verdict": "APPROVED",
+  "target": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc",
+  "reviewer": "architecture_read",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-06 13:31:41 UTC",
+  "acceptedBy": "mika / gpt-6-astra",
+  "acceptedAt": "2026-10-06 13:32:00 UTC",
+  "p1": 0,
+  "p2": 0,
+  "observedHead": "e4c7f8165d3e50d0e911c0ccbeb890a62cfe29c8",
+  "dirty": false,
+  "claimId": "f1fa2bdb-a669-4c6f-8ff7-d5efa694c21f",
+  "claimVersion": 1,
+  "claimState": "ACTIVE",
+  "manifestSha256": "ac2fd596460fbb0199d466f1de4cbc6d753152b9bb4cdc7ade5dd2b0d78e1b23",
+  "verifiedBindings": 54,
+  "historicalBindings": 1,
+  "findings": [],
+  "evidenceScope": "72 distinct: 71 unchanged cases plus corrected refill case targeted recheck; initial full batch72 preceded test-only identity correction. Local strict0; initial strict2 and old-expression red preserved;4PG NOT_SELECTED. Existing capacity assertions byte-identical after removing new refill block.",
+  "reviewerExecutedTests": 0,
+  "limitations": [
+    "finite subscriptions/timer/listener and compatibility evidence, not hour-long RSS or native capacity",
+    "not main integration",
+    "no PG/provider/SDK/capacity checks added"
+  ]
+}

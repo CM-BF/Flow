@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/attempt-wakeup.test.ts",
+    "--reporter=verbose"
+  ],
+  "startedAt": "2026-10-06T13:23:34.422846+00:00",
+  "endedAt": "2026-10-06T13:23:34.881668+00:00",
+  "exitCode": 1,
+  "scope": "old wait subscription-bearing expression; not full runtime"
+}
