@@ -1,0 +1,80 @@
+{
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已确定轻质外壳与不透明回退方案，正在接通主题入口",
+    "next": "可实际操作的双主题圆角面板与显式不透明主题",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/styles.css",
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/themes.ts",
+      "apps/web/test/visual-shell.fixture.ts",
+      "apps/web/test/visual-shell.browser.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "taskId": "WPF-VISUAL01",
+  "owner": "d01_owner / gpt-6-astra ultra",
+  "branch": "codex/web-visual-shell",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T09:04:00.000Z",
+  "updatedRecord": "2026-10-06 09:04 UTC",
+  "todos": [
+    {
+      "id": "WPF-VISUAL01-01",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[plan](plan.md)、[quality](../../docs/evidence/wpf-visual01/quality.md)"
+    },
+    {
+      "id": "WPF-VISUAL01-02",
+      "state": "in-progress",
+      "owner": "d01_owner",
+      "evidence": "七scope内产品未改；builtin主题入口窄amend协调中，不影响其他owner"
+    },
+    {
+      "id": "WPF-VISUAL01-03",
+      "state": "pending",
+      "owner": "d01_owner",
+      "evidence": "真实App HTTPfixture矩阵待实现"
+    },
+    {
+      "id": "WPF-VISUAL01-04",
+      "state": "pending",
+      "owner": "root / d01_owner / ExecutionLead",
+      "evidence": "未固定实现、未独审/接收"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 当前HEAD由Git聚合",
+  "declaredDirty": "首canonical；产品未改，提交后由Git聚合",
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "mainRecord": "NOT_INTEGRATED",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}
