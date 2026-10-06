@@ -24,4 +24,4 @@ Read许可和执行证据分开：allow-without-read场景有成功正文与flow
 
 复跑/后续执行前置见[实验README](../../../experiments/native-child-acceptance/README.md)。独立审查与新GO单次预算分别要求；准备批准不等实际执行授权，当前没有permit。
 
-固定[manifest](manifest.json)：9个实验源/说明文件、18份原始输出、15项固定依赖；prepared sourceDigest `3f7a3323606956ba194536d55c7957037babcd7247e89ff2ab250acc286f7a87`。sourceDigest绑定5个实验实现与15项依赖，测试/说明不改变运行许可绑定；固定target包含全部测试。
+固定[manifest](manifest.json)：9个实验源/说明文件、16份原始输出、15项固定依赖；prepared sourceDigest `3f7a3323606956ba194536d55c7957037babcd7247e89ff2ab250acc286f7a87`。sourceDigest绑定5个实验实现与15项依赖，测试/说明不改变运行许可绑定；固定target包含全部测试。
