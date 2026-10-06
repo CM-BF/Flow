@@ -1,0 +1,46 @@
+{
+  "taskId": "CHAT06P03",
+  "status": "APPROVED",
+  "reviewer": "Mika / root",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-06T17:33:51Z",
+  "recordedAt": "2026-10-06 17:35:16 UTC",
+  "implementation": "4c6676caf545aea1939a9b676b419cf702eed19c",
+  "packet": "d0a5a82cbd245363ac28f6d4ba154b5c6702718f",
+  "manifest": "docs/evidence/chat06p03/manifest.json",
+  "manifestSha256": "6658db0b68066cbc065d2093a4500d4b6e824d72a0d3649c9c732d457b25f832",
+  "P1": 0,
+  "P2": 0,
+  "scope": [
+    "apps/runner/src/assistant-stream/accumulator.ts",
+    "apps/runner/src/assistant-stream/accumulator-incremental.test.ts"
+  ],
+  "verification": {
+    "gitBindings": 42,
+    "externalPackageMetadata": 5,
+    "errors": [],
+    "baselineEqualsBase": "bd14f984e3927df139815597c4c3171af84ec4b7",
+    "redExpectedFailed": 1,
+    "redNotSelected": 4,
+    "greenDistinctPassed": 5,
+    "strictExitCode": 0,
+    "elapsedMs": 2040.1931670494378,
+    "syntheticBytes": 616486,
+    "syntheticFrames": 148,
+    "ownedTemporaryRootAbsent": true
+  },
+  "approvalLimit": "Incremental block prefix hashing and UTF8 offset with unchanged full public patches/digests. No CPU/throughput/real SDK/provider or production 1MiB-boundary claim. status_read auxiliary review is not a second formal approval.",
+  "claim": {
+    "claimId": "e8c06a73-522d-43a8-bbfa-7ba97aed154c",
+    "version": 1,
+    "state": "active",
+    "observedAt": "2026-10-06T17:33:51.276022Z",
+    "sourceWritesStopped": true
+  },
+  "mainIntegration": "NOT_INTEGRATED",
+  "reviewerExecution": {
+    "tests": 0,
+    "provider": 0,
+    "PG": 0
+  }
+}

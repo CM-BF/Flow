@@ -1,0 +1,233 @@
+{
+  "prior": {
+    "bytes": 269892,
+    "frames": 42
+  },
+  "total": {
+    "bytes": 616486,
+    "frames": 148
+  },
+  "thisRun": {
+    "bytes": 346594,
+    "frames": 106
+  },
+  "measurements": [
+    {
+      "kind": "actual-input-bytes",
+      "baseline": {
+        "hashInputBytes": 495379,
+        "byteLengthInputBytes": 589824
+      },
+      "candidate": {
+        "hashInputBytes": 200467,
+        "byteLengthInputBytes": 360448
+      },
+      "priorPrefixBytes": 294912,
+      "newTextBytes": 65536,
+      "outputDigest": "4a225e653e8c94507b9aed89843db83c9846433bf6efa133c2ddf285c1eb28e7",
+      "patches": [
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-4",
+          "blockIndex": 0,
+          "revision": 1,
+          "fromBytes": 0,
+          "prefixDigest": "18f8d2eb4a387bbc1e37ec099a7326805739bc9c99ecf0f14b808a5bcb65bf49",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-6",
+          "blockIndex": 0,
+          "revision": 2,
+          "fromBytes": 8192,
+          "prefixDigest": "1536c422c31cc98834759d7085cda394a3510a03d78188248986a6b1a7207d03",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-8",
+          "blockIndex": 0,
+          "revision": 3,
+          "fromBytes": 16384,
+          "prefixDigest": "9ab50e8c4b1deb044f03c271562e113d4b260729051134258096ae972467f931",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-10",
+          "blockIndex": 0,
+          "revision": 4,
+          "fromBytes": 24576,
+          "prefixDigest": "427965f49a857174e308658227325dbd23ff4eccbe399d5ad4817dda3ec79f87",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-12",
+          "blockIndex": 0,
+          "revision": 5,
+          "fromBytes": 32768,
+          "prefixDigest": "672f5349216f25c12860319716042fc0d86695debb77e7b144d26f7ca4bc7286",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-14",
+          "blockIndex": 0,
+          "revision": 6,
+          "fromBytes": 40960,
+          "prefixDigest": "d4585f00edc111a1c3f25ab78e7a606b848f93118ba5231993d18bd365ee0d07",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-16",
+          "blockIndex": 0,
+          "revision": 7,
+          "fromBytes": 49152,
+          "prefixDigest": "df832c2f1763519fb078f325037c8837a90dbcefdbcde25937b4833df93d9497",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-18",
+          "blockIndex": 0,
+          "revision": 8,
+          "fromBytes": 57344,
+          "prefixDigest": "1f8745f0d2d1387ec1af2211a3cf417b2e9e885e853472649c1d979d0e9370e3",
+          "phase": "streaming",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 8192
+        },
+        {
+          "type": "assistant-stream",
+          "streamId": "1f982f2c724e5859ec0b2b3e5607652fe007e371aabc5f590701396d538c43a0",
+          "nativeSessionId": "synthetic-session",
+          "nativeMessageId": "message",
+          "parentToolUseId": null,
+          "source": "claude.sdk.stream",
+          "sourceMessageId": "synthetic-20",
+          "blockIndex": 0,
+          "revision": 9,
+          "fromBytes": 65536,
+          "prefixDigest": "1f8745f0d2d1387ec1af2211a3cf417b2e9e885e853472649c1d979d0e9370e3",
+          "phase": "block-complete",
+          "reason": null,
+          "truncated": false,
+          "textBytes": 0
+        }
+      ]
+    },
+    {
+      "kind": "equivalence",
+      "suppliedFramesPerImplementation": 17,
+      "ending": "eof",
+      "outputItems": 29,
+      "outputDigest": "c07a840958f872ec1c4897d112a7f9451b58dc0ca98607aeaa8858877bb57b08",
+      "failure": null
+    },
+    {
+      "kind": "equivalence",
+      "suppliedFramesPerImplementation": 4,
+      "ending": "eof",
+      "outputItems": 6,
+      "outputDigest": "c45e56d8cb3ea4256f4a39cbfd2de04deafa4b78b3df3ad1baf31ff71dc5f21c",
+      "failure": null
+    },
+    {
+      "kind": "equivalence",
+      "suppliedFramesPerImplementation": 3,
+      "ending": "eof",
+      "outputItems": 7,
+      "outputDigest": "f37163b2fa553064bbec4a6772e80979a8e49ad0f36ba46438712dacd508a4b5",
+      "failure": null
+    },
+    {
+      "kind": "equivalence",
+      "suppliedFramesPerImplementation": 2,
+      "ending": "abort",
+      "outputItems": 2,
+      "outputDigest": "67199e6ccafabce941e61e7b1f5f9e9429936ade271e385de5bc242a14338632",
+      "failure": "synthetic-abort"
+    },
+    {
+      "kind": "equivalence",
+      "suppliedFramesPerImplementation": 2,
+      "ending": "error",
+      "outputItems": 5,
+      "outputDigest": "734ff7a245c7ead8667c85a6027db21206e0f8324a561468849d8afb87937da6",
+      "failure": "synthetic-source-error"
+    },
+    {
+      "kind": "equivalence",
+      "suppliedFramesPerImplementation": 4,
+      "ending": "eof",
+      "outputItems": 8,
+      "outputDigest": "badee4bccb87c3497231ddb5abc07636e7d382963279aaebced2a2bc135f9cd1",
+      "failure": null
+    }
+  ]
+}

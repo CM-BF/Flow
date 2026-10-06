@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-06 17:31:56 UTC",
+  "runtimeClock": {
+    "startedAt": "2026-10-06T17:30:46.343318+00:00",
+    "finishedAt": "2026-10-06T17:30:48.383059+00:00",
+    "afterReceiptMs": 2040.1931670494378
+  },
+  "toolExecution": {
+    "sessionId": 95426,
+    "exitCode": 0,
+    "note": "Tool completed naturally; poll returned final output. No second check run."
+  },
+  "raw": [
+    {
+      "path": "once-reservation.json",
+      "bytes": 201,
+      "sha256": "8281165225ca64c6ed45a30c1c30c585ea1c9790ca50beabcc3c283f87d98d0a"
+    },
+    {
+      "path": "open-preflight.json",
+      "bytes": 535,
+      "sha256": "a2e1fd199441c9ea2b495c0a21e0369695cd4ee723eedf6a3f1642e079b198cd"
+    },
+    {
+      "path": "red.stdout",
+      "bytes": 2657,
+      "sha256": "d088e6c1d549520948ad3745970153ed4e69c44059b2e7a10291d35e9b1e9b62"
+    },
+    {
+      "path": "red.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "red-measurements.json",
+      "bytes": 6486,
+      "sha256": "c660f87ab7f1668ebbb54c4277ffd8264d79ef959fec39acc014a0cc3ae6860e"
+    },
+    {
+      "path": "green.stdout",
+      "bytes": 2316,
+      "sha256": "126926853c4404d5bfe5a08729c80887a2bfe653c24bf667651d8389447038fe"
+    },
+    {
+      "path": "green.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "green-measurements.json",
+      "bytes": 8003,
+      "sha256": "d069cc762c3ab421171ef78003d056b1855face0fef4fe5cd35a1000dbc53f12"
+    },
+    {
+      "path": "strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "check-receipt.json",
+      "bytes": 2777,
+      "sha256": "ff4c0457a81de5179c6267d19c2b16b6594a6a78c780f25293dc0bffd3ad2e2a"
+    },
+    {
+      "path": "check-cli.stdout",
+      "bytes": 398,
+      "sha256": "2584973ea93458ab970ca6e412d0f3d199cff7faa3c91ddabdfd4828ea19a34d"
+    }
+  ],
+  "knownRawBytes": 23373,
+  "rawLimitBytes": 2097152,
+  "ownedTemporaryRootAbsentAtArchive": true,
+  "syntheticTotal": {
+    "bytes": 616486,
+    "frames": 148
+  },
+  "red": {
+    "selected": 1,
+    "failedAsExpected": 1,
+    "notSelected": 4
+  },
+  "green": {
+    "selected": 5,
+    "passed": 5,
+    "distinct": 5
+  },
+  "strictExitCode": 0,
+  "oldStreamSuite": "NOT_SELECTED",
+  "providerCalls": 0,
+  "PG": 0,
+  "automaticRetry": false
+}

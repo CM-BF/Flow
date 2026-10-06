@@ -1,8 +1,8 @@
 {
-  "at": "2026-10-06T18:05:36.119565+00:00",
+  "at": "2026-10-06T18:17:53.528506+00:00",
   "baseline": "0e4c7b0f69937f5b7a0c6dee3029ccc27f904364",
   "implementation": "4c6676caf545aea1939a9b676b419cf702eed19c",
-  "metadata": "1b285cdf037891dc547a00c6384e6b95f9f24181",
+  "metadata": "6840b76232e735a0116422433614aead44cb672b",
   "review": "docs/evidence/chat06p03/independent-review.json",
   "reviewAccepted": "Mika unique independent APPROVED; no second full review",
   "gitBindings": 42,
@@ -55,11 +55,31 @@
     "productionUpperLimit": "NOT_SELECTED; reduced-limit fixture only"
   },
   "integrationChecks": {
-    "rootTypesExit": 2,
-    "raw": "cli-prefix-root-types.txt",
-    "result": "CHANGES_REQUESTED integration-only evidence-baseline resolution",
-    "productFinding": false,
-    "action": "All uncommitted hash source/owned records removed from this batch; authoritative fixed inputs retained in owner tree/Git. CLI continues independently."
+    "rootTypesExit": 0,
+    "raw": "chat06p03-fixed-root-types.txt",
+    "receipt": "chat06p03-fixed-root-types.json",
+    "result": "APPROVED integration-only P2 closed",
+    "action": "2 original approved product sources and type-fixed owned evidence integrated; root/runner dependency/config unchanged"
   },
-  "limitation": "Incremental hashing evidence does not prove CPU/throughput or real-provider benefit."
+  "limitation": "Incremental hashing evidence does not prove CPU/throughput or real-provider benefit.",
+  "history": [
+    {
+      "integrationChecks": {
+        "rootTypesExit": 2,
+        "raw": "cli-prefix-root-types.txt",
+        "result": "CHANGES_REQUESTED integration-only evidence-baseline resolution",
+        "productFinding": false,
+        "action": "All uncommitted hash source/owned records removed from this batch; authoritative fixed inputs retained in owner tree/Git. CLI continues independently."
+      },
+      "meaning": "original root red retained; candidate removed from CLI-only publication"
+    }
+  ],
+  "typeFixTarget": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+  "typeFixBindings": 20,
+  "typeFixIndependentReview": {
+    "reviewer": "astra_ultra_execution_lead",
+    "status": "APPROVED",
+    "scope": "2 type-only baseline references plus exact original archives; emitted JS proof read; no production behavior delta",
+    "newTests": "one actual root noEmit only; no old 5-case rerun"
+  }
 }

@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:09 UTC / main0e4c7b0f |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:18 UTC / main8bd02cc3 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main0132ac25；CLI已发布，本批仅170来源登记和作者收口记录 |
+| 工作基线 / HEAD | main8bd02cc3；流式增量校验优化与归档类型适配已组合通过 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | completed |
-| 检查状态 | CLI固定ccfa独审APPROVED，原HTTP1/1/types0复用；root CLI组合types0。hashP03组合类型红保留并退回owner，未进入本批产品 |
-| 已集成main状态 / HEAD | main0132ac25含完整输入确认、后台推进及CLI；本批仅metadata/登记。个人runtime362/v15与Web8d8/v2不变 |
+| 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
+| 已集成main状态 / HEAD | main8bd02cc3含确认CLI/170来源；本批流式哈希候选待发布。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 完整计划输入确认可通过命令行操作；中心推进与已保存回执继续复用同一公开接口。 |
-| 下一可用交付 | Web消息设置已登记实施；流式校验归档类型修复和保留页面兼容准备并行。 |
+| 当前产出 | 流式正文校验减少重复处理，保持既有正文与回放结果；完整计划确认已可通过命令行操作。 |
+| 下一可用交付 | Web消息设置实施与连续目标验收准备并行；个人发布继续补齐保留页面兼容和服务身份事实。 |
 | 当前阻塞 | ACTIVE: 固定后端大型构建仍缺空间；个人更新等待保留网页组合证据。 |
 | 需用户决定 | NONE |
 
@@ -216,6 +216,6 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 
 2026-10-06 18:04 UTC：O15 e0领域由 assignment 唯一独审，F01 7f生产接线由 Lead 窄审，17个新增/变更源码精确受控接收。组合root noEmit exit0（9.342s）；不重跑已审13领域或1生产PG。原ACK已收后重开与真实lostACK范围分开，0provider，不自动语义接受。见 [固定输入](../../docs/evidence/i02/o15-confirmation-integration.json)。
 
-2026-10-06 18:09 UTC / main0e4c7b0f：CLI三源ccfa原HTTP1/types绿、Lead独审通过；CHAT06P03两源+42Git/5dependency固定核对后，实际组合类型检查暴露baseline docs路径无法解析SDK，原红保留，暂退下2产品源及未发布本次副本，不覆盖Mika原5项批准。CLI独立检查后先发布，hash修复只由原owner处理，不拖无关交付。
+2026-10-06 18:18 UTC / main8bd02cc3：CLI三源ccfa原HTTP1/types绿、Lead独审通过；CHAT06P03两源+42Git/5dependency固定核对后，实际组合类型检查暴露baseline docs路径无法解析SDK，原红保留，暂退下2产品源及未发布本次副本，不覆盖Mika原5项批准。CLI独立检查后先发布，hash修复只由原owner处理，不拖无关交付。
 
 2026-10-06T18:12:31.382936+00:00：登记消息设置唯一source为第170项；F01 CLI三源精确已main，作者v52全部释放。只同步fixed metadata，不重复工程测试。
