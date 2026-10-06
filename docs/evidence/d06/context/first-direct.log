@@ -1,0 +1,137 @@
+✔ curated architecture cites existing files at its fixed source commit and valid graph nodes (2002.596291ms)
+✔ architecture static assets stay within existing read-only loopback server policy (34.13625ms)
+✔ fixed snapshot separates integrated Web and center capabilities from later UI work (94.907708ms)
+✔ integrated queue and graph proposal descriptions preserve explicit admission and application (64.556833ms)
+✔ transport optimization and shutdown do not imply parallel execution or safe cancellation (36.981916ms)
+✔ state graph covers every active completed outcome and uncertain route without reviving the old task (0.182375ms)
+✔ current PG content and assistant provenance never become an implemented blob edge (12.518541ms)
+✖ knowledge and context are exact PG references, not automatically selected Web material (25.346292ms)
+✔ graph run authority and native graph tools retain separate purposes and bounded commands (64.7155ms)
+✔ package artifacts and message renderers are modules without product activation (137.542583ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2584.195209
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/architecture.test.mjs:119:1
+✖ knowledge and context are exact PG references, not automatically selected Web material (25.346292ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /row.conversation_id !== conversationId/. Input:
+  
+  "import { randomUUID } from 'node:crypto';\n" +
+    "import type { Pool, PoolClient } from 'pg';\n" +
+    "import type { KnowledgeCitation } from '../../../../packages/contracts/src/knowledge.js';\n" +
+    "import { CONVERSATION_CONTEXT_LIMITS as limits, conversationContextSelectionSchema, type ConversationContextReference, type ConversationContextSource, type ConversationContextExecutionReference, type ConversationContextDetail } from '../../../../packages/contracts/src/conversation-context.js';\n" +
+    "import { canonical, HttpError, sha256, transaction } from '../database.js';\n" +
+    "import { resolveCitationsInTransaction } from '../knowledge/storage.js';\n" +
+    '\n' +
+    'type FrozenSource = ConversationContextSource & { text: string };\n' +
+    'interface ContextRow { context_id: string; conversation_id: string; project_id: string; context_digest: string; sources: FrozenSource[]; raw_bytes: number; created_at: Date }\n' +
+    'interface InputRow extends ContextRow { input_id: string; user_text: string; template_version: number; execution_prompt: string; execution_input_digest: string }\n' +
+    "const invalid = () => new HttpError(409, 'conversation_context_invalid', 'The frozen conversation input is missing or invalid.');\n" +
+    'const contextDigest = (sources: FrozenSource[]) => sha256(canonical(sources.map(({ citation, text }) => ({ citation, text }))));\n' +
+    'const inputDigest = (userText: string, executionPrompt: string) => sha256(canonical({ userText, templateVersion: 1, executionPrompt }));\n' +
+    'function compile(userText: string, sources: FrozenSource[]): string {\n' +
+    '  const executionPrompt = `User message:\\n${userText}\\n\\nSelected source excerpts (reference material):\\n${canonical(sources)}`;\n' +
+    "  if (executionPrompt.length > limits.executionCodeUnits || Buffer.byteLength(executionPrompt) > limits.executionBytes) throw new HttpError(400, 'conversation_context_budget', 'The complete execution input exceeds the conversation prompt budget.');\n" +
+    '  return executionPrompt;\n' +
+    '}\n' +
+    'function validateContext(row: ContextRow): void {\n' +
+    '  if (!Array.isArray(row.sources) || !row.sources.length || !conversationContextSelectionSchema.safeParse(row.sources.map(source => source?.citation)).success) throw invalid();\n' +
+    '  let bytes = 0;\n' +
+    '  for (const source of row.sources) {\n' +
+    "    if (typeof source.text !== 'string' || source.citation.projectId !== row.project_id || source.byteLength !== Buffer.byteLength(source.text) || source.byteLength !== source.citation.locator.end-source.citation.locator.start || !Number.isInteger(source.currentVersionAtFreeze) || source.currentVersionAtFreeze < 1 || source.currentVersionAtFreeze > 16 || source.isCurrentAtFreeze !== (source.citation.version === source.currentVersionAtFreeze)) throw invalid();\n" +
+    '    bytes += source.byteLength;\n' +
+    '  }\n' +
+    '  if (bytes !== row.raw_bytes || bytes > limits.rawBytes || contextDigest(row.sources) !== row.context_digest) throw invalid();\n' +
+    '}\n' +
+    'async function insertInput(client: PoolClient, contextId: string, userText: string, sources: FrozenSource[]): Promise<string> {\n' +
+    '  const id = randomUUID(); const prompt = compile(userText, sources);\n' +
+    "  await client.query('INSERT INTO flow.conversation_execution_inputs(id,context_id,user_text,template_version,execution_prompt,execution_input_digest) VALUES($1,$2,$3,1,$4,$5)', [id, contextId, userText, prompt, inputDigest(userText, prompt)]);\n" +
+    '  return id;\n' +
+    '}\n' +
+    'export async function freezeContext(client: PoolClient, conversationId: string, projectId: string | null | undefined, userText: string, citations: KnowledgeCitation[] = []): Promise<string | null> {\n' +
+    '  if (!citations.length) return null;\n' +
+    "  if (!projectId) throw new HttpError(409, 'conversation_project_required', 'Knowledge references require a conversation with a fixed project.');\n" +
+    "  if (!conversationContextSelectionSchema.safeParse(citations).success) throw new HttpError(400, 'invalid_conversation_context', 'Select at most four different exact citations.');\n" +
+    '  const sources: FrozenSource[] = (await resolveCitationsInTransaction(client, projectId, citations)).map(({ citation, text, isCurrent, currentVersion }) => ({ citation, text, byteLength: Buffer.byteLength(text), currentVersionAtFreeze: currentVersion, isCurrentAtFreeze: isCurrent }));\n' +
+    '  const rawBytes = sources.reduce((sum, source) => sum + source.byteLength, 0);\n' +
+    "  if (rawBytes > limits.rawBytes) throw new HttpError(400, 'conversation_context_budget', 'Selected source text exceeds 8192 UTF-8 bytes.');\n" +
+    '  compile(userText, sources); // Reject before persisting any context; caller still owns atomic rollback.\n' +
+    '  const id = randomUUID();\n' +
+    "  await client.query('INSERT INTO flow.conversation_contexts(id,conversation_id,project_id,context_digest,sources,raw_bytes) VALUES($1,$2,$3,$4,$5,$6)', [id, conversationId, projectId, contextDigest(sources), JSON.stringify(sources), rawBytes]);\n" +
+    '  return insertInput(client, id, userText, sources);\n' +
+    '}\n' +
+    '/** Public metadata uses an allowlist; frozen text and execution_prompt never leave this projection. */\n' +
+    'export async function contextReferences(client: PoolClient, inputIds: string[]): Promise<Map<string, ConversationContextReference>> {\n' +
+    '  const ids = [...new Set(inputIds)];\n' +
+    "  if (ids.length > 50) throw new HttpError(400, 'conversation_context_batch_limit', 'At most 50 context references can be read together.');\n" +
+    '  if (!ids.length) return new Map();\n' +
+    '  const rows = (await client.query<{ input_id: string; id: string; context_digest: string; execution_input_digest: string; template_version: 1; sources: ConversationContextSource[] }>(`SELECT i.id AS input_id,c.id,c.context_digest,i.execution_input_digest,i.template_version,\n' +
+    "    (SELECT jsonb_agg(jsonb_build_object('citation',item->'citation','byteLength',item->'byteLength','currentVersionAtFreeze',item->'currentVersionAtFreeze','isCurrentAtFreeze',item->'isCurrentAtFreeze') ORDER BY ordinal) FROM jsonb_array_elements(c.sources) WITH ORDINALITY AS s(item,ordinal)) AS sources\n" +
+    '    FROM flow.conversation_execution_inputs i JOIN flow.conversation_contexts c ON c.id=i.context_id WHERE i.id=ANY($1::text[])`, [ids])).rows;\n' +
+    '  if (rows.length !== ids.length) throw invalid();\n' +
+    '  return new Map(rows.map(row => [row.input_id, { id: row.id, contextDigest: row.context_digest, executionInputId: row.input_id, executionInputDigest: row.execution_input_digest, templateVersion: row.template_version, sources: row.sources }]));\n' +
+    '}\n' +
+    'export async function contextReference(client: PoolClient, inputId: string | null | undefined): Promise<ConversationContextReference | undefined> {\n' +
+    '  return inputId ? (await contextReferences(client, [inputId])).get(inputId) : undefined;\n' +
+    '}\n' +
+    'async function readInput(client: PoolClient, inputId: string, rawPrompt: string): Promise<InputRow> {\n' +
+    '  const row = (await client.query<InputRow>(`SELECT i.id AS input_id,i.user_text,i.template_version,i.execution_prompt,i.execution_input_digest,\n' +
+    '    c.id AS context_id,c.conversation_id,c.project_id,c.context_digest,c.sources,c.raw_bytes,c.created_at\n' +
+    '    FROM flow.conversation_execution_inputs i JOIN flow.conversation_contexts c ON c.id=i.context_id WHERE i.id=$1`, [inputId])).rows[0];\n' +
+    '  if (!row || row.user_text !== rawPrompt || row.template_version !== 1) throw invalid();\n' +
+    '  validateContext(row);\n' +
+    '  if (compile(row.user_text, row.sources) !== row.execution_prompt || inputDigest(row.user_text, row.execution_prompt) !== row.execution_input_digest) throw invalid();\n' +
+    '  return row;\n' +
+    '}\n' +
+    'export async function bindExecutionInput(client: PoolClient, taskId: string, inputId: string | null | undefined, conversationId: string): Promise<void> {\n' +
+    '  if (!inputId) return;\n' +
+    `  const task = (await client.query<{ prompt: string; conversation_input_id: string | null }>("SELECT submission->>'prompt' AS prompt,conversation_input_id FROM flow.tasks WHERE id=$1", [taskId])).rows[0];\n` +
+    '  if (!task || task.conversation_input_id) throw invalid();\n' +
+    '  const input = await readInput(client, inputId, task.prompt);\n' +
+    '  if (input.conversation_id !== conversationId) throw invalid();\n' +
+    "  await client.query('UPDATE flow.tasks SET conversation_input_id=$2 WHERE id=$1', [taskId, inputId]);\n" +
+    '}\n' +
+    '/** Called only inside the authorized runner→task transaction. No reverse project/conversation locks. */\n' +
+    'export async function executionInputForTask(client: PoolClient, taskId: string, rawPrompt: string): Promise<{ prompt: string; context: ConversationContextExecutionReference } | null> {\n' +
+    "  const task = (await client.query<{ conversation_input_id: string | null }>('SELECT conversation_input_id FROM flow.tasks WHERE id=$1', [taskId])).rows[0];\n" +
+    '  if (!task) throw invalid();\n' +
+    '  if (!task.conversation_input_id) return null;\n' +
+    '  const row = await readInput(client, task.conversation_input_id, rawPrompt);\n' +
+    '  return { prompt: row.execution_prompt, context: { id: row.context_id, contextDigest: row.context_digest, executionInputId: row.input_id, executionInputDigest: row.execution_input_digest } };\n' +
+    '}\n' +
+    'export async function copyRecoveryInput(client: PoolClient, sourceTaskId: string, newTaskId: string, originalPrompt: string, recoveryPrompt: string): Promise<void> {\n' +
+    '  const source = await executionInputForTask(client, sourceTaskId, originalPrompt);\n' +
+    '  if (!source) return;\n' +
+    '  const input = await readInput(client, source.context.executionInputId, originalPrompt);\n' +
+    '  const inputId = await insertInput(client, input.context_id, recoveryPrompt, input.sources);\n' +
+    '  await bindExecutionInput(client, newTaskId, inputId, input.conversation_id);\n' +
+    '}\n' +
+    'export async function contextDetail(pool: Pool, conversationId: string, contextId: string): Promise<ConversationContextDetail> {\n' +
+    '  return transaction(pool, async client => {\n' +
+    "    const row = (await client.query<ContextRow>('SELECT id AS context_id,conversation_id,project_id,context_digest,sources,raw_bytes,created_at FROM flow.conversation_contexts WHERE id=$1 AND conversation_id=$2', [contextId, conversationId])).rows[0];\n" +
+    "    if (!row) throw new HttpError(404, 'conversation_context_not_found', 'This context does not belong to the selected conversation.');\n" +
+    '    validateContext(row);\n' +
+    "    const heads = (await client.query<{ id: string; current_version: number }>('SELECT id,current_version FROM flow.knowled"... 847 more characters
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context/apps/execution-dashboard/test/architecture.test.mjs:126:65)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'import { randomUUID } from \'node:crypto\';\nimport type { Pool, PoolClient } from \'pg\';\nimport type { KnowledgeCitation } from \'../../../../packages/contracts/src/knowledge.js\';\nimport { CONVERSATION_CONTEXT_LIMITS as limits, conversationContextSelectionSchema, type ConversationContextReference, type ConversationContextSource, type ConversationContextExecutionReference, type ConversationContextDetail } from \'../../../../packages/contracts/src/conversation-context.js\';\nimport { canonical, HttpError, sha256, transaction } from \'../database.js\';\nimport { resolveCitationsInTransaction } from \'../knowledge/storage.js\';\n\ntype FrozenSource = ConversationContextSource & { text: string };\ninterface ContextRow { context_id: string; conversation_id: string; project_id: string; context_digest: string; sources: FrozenSource[]; raw_bytes: number; created_at: Date }\ninterface InputRow extends ContextRow { input_id: string; user_text: string; template_version: number; execution_prompt: string; execution_input_digest: string }\nconst invalid = () => new HttpError(409, \'conversation_context_invalid\', \'The frozen conversation input is missing or invalid.\');\nconst contextDigest = (sources: FrozenSource[]) => sha256(canonical(sources.map(({ citation, text }) => ({ citation, text }))));\nconst inputDigest = (userText: string, executionPrompt: string) => sha256(canonical({ userText, templateVersion: 1, executionPrompt }));\nfunction compile(userText: string, sources: FrozenSource[]): string {\n  const executionPrompt = `User message:\\n${userText}\\n\\nSelected source excerpts (reference material):\\n${canonical(sources)}`;\n  if (executionPrompt.length > limits.executionCodeUnits || Buffer.byteLength(executionPrompt) > limits.executionBytes) throw new HttpError(400, \'conversation_context_budget\', \'The complete execution input exceeds the conversation prompt budget.\');\n  return executionPrompt;\n}\nfunction validateContext(row: ContextRow): void {\n  if (!Array.isArray(row.sources) || !row.sources.length || !conversationContextSelectionSchema.safeParse(row.sources.map(source => source?.citation)).success) throw invalid();\n  let bytes = 0;\n  for (const source of row.sources) {\n    if (typeof source.text !== \'string\' || source.citation.projectId !== row.project_id || source.byteLength !== Buffer.byteLength(source.text) || source.byteLength !== source.citation.locator.end-source.citation.locator.start || !Number.isInteger(source.currentVersionAtFreeze) || source.currentVersionAtFreeze < 1 || source.currentVersionAtFreeze > 16 || source.isCurrentAtFreeze !== (source.citation.version === source.currentVersionAtFreeze)) throw invalid();\n    bytes += source.byteLength;\n  }\n  if (bytes !== row.raw_bytes || bytes > limits.rawBytes || contextDigest(row.sources) !== row.context_digest) throw invalid();\n}\nasync function insertInput(client: PoolClient, contextId: string, userText: string, sources: FrozenSource[]): Promise<string> {\n  const id = randomUUID(); const prompt = compile(userText, sources);\n  await client.query(\'INSERT INTO flow.conversation_execution_inputs(id,context_id,user_text,template_version,execution_prompt,execution_input_digest) VALUES($1,$2,$3,1,$4,$5)\', [id, contextId, userText, prompt, inputDigest(userText, prompt)]);\n  return id;\n}\nexport async function freezeContext(client: PoolClient, conversationId: string, projectId: string | null | undefined, userText: string, citations: KnowledgeCitation[] = []): Promise<string | null> {\n  if (!citations.length) return null;\n  if (!projectId) throw new HttpError(409, \'conversation_project_required\', \'Knowledge references require a conversation with a fixed project.\');\n  if (!conversationContextSelectionSchema.safeParse(citations).success) throw new HttpError(400, \'invalid_conversation_context\', \'Select at most four different exact citations.\');\n  const sources: FrozenSource[] = (await resolveCitationsInTransaction(client, projectId, citations)).map(({ citation, text, isCurrent, currentVersion }) => ({ citation, text, byteLength: Buffer.byteLength(text), currentVersionAtFreeze: currentVersion, isCurrentAtFreeze: isCurrent }));\n  const rawBytes = sources.reduce((sum, source) => sum + source.byteLength, 0);\n  if (rawBytes > limits.rawBytes) throw new HttpError(400, \'conversation_context_budget\', \'Selected source text exceeds 8192 UTF-8 bytes.\');\n  compile(userText, sources); // Reject before persisting any context; caller still owns atomic rollback.\n  const id = randomUUID();\n  await client.query(\'INSERT INTO flow.conversation_contexts(id,conversation_id,project_id,context_digest,sources,raw_bytes) VALUES($1,$2,$3,$4,$5,$6)\', [id, conversationId, projectId, contextDigest(sources), JSON.stringify(sources), rawBytes]);\n  return insertInput(client, id, userText, sources);\n}\n/** Public metadata uses an allowlist; frozen text and execution_prompt never leave this projection. */\nexport async function contextReferences(client: PoolClient, inputIds: string[]): Promise<Map<string, ConversationContextReference>> {\n  const ids = [...new Set(inputIds)];\n  if (ids.length > 50) throw new HttpError(400, \'conversation_context_batch_limit\', \'At most 50 context references can be read together.\');\n  if (!ids.length) return new Map();\n  const rows = (await client.query<{ input_id: string; id: string; context_digest: string; execution_input_digest: string; template_version: 1; sources: ConversationContextSource[] }>(`SELECT i.id AS input_id,c.id,c.context_digest,i.execution_input_digest,i.template_version,\n    (SELECT jsonb_agg(jsonb_build_object(\'citation\',item->\'citation\',\'byteLength\',item->\'byteLength\',\'currentVersionAtFreeze\',item->\'currentVersionAtFreeze\',\'isCurrentAtFreeze\',item->\'isCurrentAtFreeze\') ORDER BY ordinal) FROM jsonb_array_elements(c.sources) WITH ORDINALITY AS s(item,ordinal)) AS sources\n    FROM flow.conversation_execution_inputs i JOIN flow.conversation_contexts c ON c.id=i.context_id WHERE i.id=ANY($1::text[])`, [ids])).rows;\n  if (rows.length !== ids.length) throw invalid();\n  return new Map(rows.map(row => [row.input_id, { id: row.id, contextDigest: row.context_digest, executionInputId: row.input_id, executionInputDigest: row.execution_input_digest, templateVersion: row.template_version, sources: row.sources }]));\n}\nexport async function contextReference(client: PoolClient, inputId: string | null | undefined): Promise<ConversationContextReference | undefined> {\n  return inputId ? (await contextReferences(client, [inputId])).get(inputId) : undefined;\n}\nasync function readInput(client: PoolClient, inputId: string, rawPrompt: string): Promise<InputRow> {\n  const row = (await client.query<InputRow>(`SELECT i.id AS input_id,i.user_text,i.template_version,i.execution_prompt,i.execution_input_digest,\n    c.id AS context_id,c.conversation_id,c.project_id,c.context_digest,c.sources,c.raw_bytes,c.created_at\n    FROM flow.conversation_execution_inputs i JOIN flow.conversation_contexts c ON c.id=i.context_id WHERE i.id=$1`, [inputId])).rows[0];\n  if (!row || row.user_text !== rawPrompt || row.template_version !== 1) throw invalid();\n  validateContext(row);\n  if (compile(row.user_text, row.sources) !== row.execution_prompt || inputDigest(row.user_text, row.execution_prompt) !== row.execution_input_digest) throw invalid();\n  return row;\n}\nexport async function bindExecutionInput(client: PoolClient, taskId: string, inputId: string | null | undefined, conversationId: string): Promise<void> {\n  if (!inputId) return;\n  const task = (await client.query<{ prompt: string; conversation_input_id: string | null }>("SELECT submission->>\'prompt\' AS prompt,conversation_input_id FROM flow.tasks WHERE id=$1", [taskId])).rows[0];\n  if (!task || task.conversation_input_id) throw invalid();\n  const input = await readInput(client, inputId, task.prompt);\n  if (input.conversation_id !== conversationId) throw invalid();\n  await client.query(\'UPDATE flow.tasks SET conversation_input_id=$2 WHERE id=$1\', [taskId, inputId]);\n}\n/** Called only inside the authorized runner→task transaction. No reverse project/conversation locks. */\nexport async function executionInputForTask(client: PoolClient, taskId: string, rawPrompt: string): Promise<{ prompt: string; context: ConversationContextExecutionReference } | null> {\n  const task = (await client.query<{ conversation_input_id: string | null }>(\'SELECT conversation_input_id FROM flow.tasks WHERE id=$1\', [taskId])).rows[0];\n  if (!task) throw invalid();\n  if (!task.conversation_input_id) return null;\n  const row = await readInput(client, task.conversation_input_id, rawPrompt);\n  return { prompt: row.execution_prompt, context: { id: row.context_id, contextDigest: row.context_digest, executionInputId: row.input_id, executionInputDigest: row.execution_input_digest } };\n}\nexport async function copyRecoveryInput(client: PoolClient, sourceTaskId: string, newTaskId: string, originalPrompt: string, recoveryPrompt: string): Promise<void> {\n  const source = await executionInputForTask(client, sourceTaskId, originalPrompt);\n  if (!source) return;\n  const input = await readInput(client, source.context.executionInputId, originalPrompt);\n  const inputId = await insertInput(client, input.context_id, recoveryPrompt, input.sources);\n  await bindExecutionInput(client, newTaskId, inputId, input.conversation_id);\n}\nexport async function contextDetail(pool: Pool, conversationId: string, contextId: string): Promise<ConversationContextDetail> {\n  return transaction(pool, async client => {\n    const row = (await client.query<ContextRow>(\'SELECT id AS context_id,conversation_id,project_id,context_digest,sources,raw_bytes,created_at FROM flow.conversation_contexts WHERE id=$1 AND conversation_id=$2\', [contextId, conversationId])).rows[0];\n    if (!row) throw new HttpError(404, \'conversation_context_not_found\', \'This context does not belong to the selected conversation.\');\n    validateContext(row);\n    const heads = (await client.query<{ id: string; current_version: number }>(\'SELECT id,current_version FROM flow.knowled'... 847 more characters,
+    expected: /row.conversation_id !== conversationId/,
+    operator: 'match',
+    diff: 'simple'
+  }

@@ -1,6 +1,6 @@
 # D06 固定基线架构刷新
 
-状态：in-progress。更新：2026-10-06 06:27 UTC。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
+状态：in-progress。更新：2026-10-06T06:34:16Z。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 
 目标：沿既有五视图，将架构源码事实刷新到固定 main `115b0dbdfa02db5483f9e9699852682ce699633c`，清楚区分代码已集成、仅独立模块、后继计划与真实服务。本轮没有产品运行改动。
 
@@ -15,8 +15,8 @@
 ## TODO
 
 - [x] D06-01：新树、正式claim、技能、旧canonical原样归档与唯一source迁移交接。
-- [ ] D06-02：固定115b源码核验，更新五视图数据与精确来源。
-- [ ] D06-03：局部Node/source检查与动态预览，双主题390px、键盘与减少动画，记录clean-code。
+- [x] D06-02：固定115b源码核验，更新五视图数据与精确来源。
+- [x] D06-03：局部Node/source检查与动态预览，双主题390px、键盘与减少动画，记录clean-code。
 - [ ] D06-04：固定实现独立review、唯一聚合与Lead集成交接；main/部署分别记录。
 
 ## 验证与历史
@@ -26,3 +26,5 @@
 [旧eb轮索引](../../docs/evidence/d06/context/history.md)保留原三件套txt及历史source路径语义；其5ec目标曾批准并已含本base，不代表本轮批准。原D06-01..04稳定ID沿用。source登记由manager/Lead单点迁移。
 
 [status](status.md) · [review](review.md) · [本轮证据](../../docs/evidence/d06/context/README.md)
+
+固定实现 `ebad46356efec7bd86f8aadd9d765bb6b6b190af` 已交root独审；作者10局部检查与五图browser通过，sourcehash精确绑定，[验证](../../docs/evidence/d06/context/validation.md)。D06-04仍待独立review/最终聚合与main，未提前勾选。

@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-06T06:33:07.051Z",
+  "base": "http://127.0.0.1:58394/",
+  "sourceCommit": "b3ec1c4bf7dbdc927d393a26bc94d82265ee4730",
+  "sourceDirty": [
+    "M apps/execution-dashboard/public/architecture-data.js",
+    " M apps/execution-dashboard/test/architecture.test.mjs",
+    " M docs/evidence/d06/context/quality.md",
+    " M plans/d06-architecture-refresh/status.md",
+    "?? docs/evidence/d06/context/browser-check.mjs",
+    "?? docs/evidence/d06/context/browser-checks.json",
+    "?? docs/evidence/d06/context/browser.log",
+    "?? docs/evidence/d06/context/data-dark-narrow.png",
+    "?? docs/evidence/d06/context/data-dark.png",
+    "?? docs/evidence/d06/context/data-light-narrow.png",
+    "?? docs/evidence/d06/context/direct.log",
+    "?? docs/evidence/d06/context/first-direct.log",
+    "?? docs/evidence/d06/context/modules-light.png",
+    "?? docs/evidence/d06/context/preview.mjs",
+    "?? docs/evidence/d06/context/source-audit.json",
+    "?? docs/evidence/d06/context/source-audit.mjs",
+    "?? docs/evidence/d06/context/states-dark.png",
+    "?? docs/evidence/d06/context/states-light.png"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/architecture-data.js": "d8348cdb4f8e32d537a87acf865a0a15a4707d588986d47f7a965787402b2126",
+    "apps/execution-dashboard/test/architecture.test.mjs": "ac8956eeb612edcd9ca037d304505d8cb02b5588774fa309c6aba193b297cdbe",
+    "docs/evidence/d06/context/browser-check.mjs": "a7723ef896a8bdeeedce0e7fa323a1bf1221967b3fd8678cd1d0f420735cdcbf",
+    "docs/evidence/d06/context/preview.mjs": "c139f0fd91b3150e2f08a76b677c03c953bf8bd209a1da0303a37e16c2c13742",
+    "docs/evidence/d06/context/source-audit.mjs": "82d07fd109ee13671a82f14e1e0bf4e5cae9992886c14b4c33e7b5c5ea100e15"
+  },
+  "requests": [
+    "/api/snapshot"
+  ],
+  "browser": "154.0.8037.98",
+  "passed": true,
+  "observations": [
+    {
+      "view": "runtime",
+      "nodes": 9,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/115b0dbdfa02db5483f9e9699852682ce699633c/apps/runner/src/protocol-dispatch/index.ts"
+    },
+    {
+      "view": "modules",
+      "nodes": 23,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/115b0dbdfa02db5483f9e9699852682ce699633c/plans/x01-plugin-management/plan.md"
+    },
+    {
+      "view": "data",
+      "nodes": 13,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/115b0dbdfa02db5483f9e9699852682ce699633c/apps/execution-dashboard/src/coordination/ledger.mjs"
+    },
+    {
+      "view": "states",
+      "nodes": 12,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/115b0dbdfa02db5483f9e9699852682ce699633c/apps/server/src/evidence.ts"
+    },
+    {
+      "view": "dependencies",
+      "nodes": 7,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/115b0dbdfa02db5483f9e9699852682ce699633c/plans/flow-002-provider-harness/plan.md"
+    }
+  ],
+  "pageErrors": [],
+  "narrowWidth": 390,
+  "reducedMotion": "reduce",
+  "scope": "dynamic local architecture preview; no model or database mutation"
+}
