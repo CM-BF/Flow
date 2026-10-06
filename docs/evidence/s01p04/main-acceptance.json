@@ -1,0 +1,237 @@
+{
+  "observedAt": "2026-10-06 11:59:37 UTC",
+  "acceptedMain": "2f4a5789ee13937914fa2c25161c8d5ed1071550",
+  "freshMainHead": "2f4a5789ee13937914fa2c25161c8d5ed1071550",
+  "freshMainDirty": false,
+  "leadReceipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/runner-read-fence-source-comparison.json",
+  "leadReceiptSha256": "b1b02c6afdea49a62b9f1598ea505b430fbe8d048046e169025afea6c37cd407",
+  "sourceRawBindingsVerified": 31,
+  "verified": [
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "source",
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "source",
+      "path": "apps/server/src/runner-read-fence.test.ts",
+      "bytes": 19489,
+      "sha256": "4bf5cf79cf3894b9b2069cef46461211fb1e026871659e8722614f6ca9f42b0e"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "source",
+      "path": "docs/evidence/s01p04/tsconfig.json",
+      "bytes": 237,
+      "sha256": "0c8b27a98fee1477e735ebcd5d2e3a89a81ff04a28ed44af565cbc4b925835cf"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/green.stdout.txt",
+      "bytes": 538,
+      "sha256": "7a9ef8ba83517ad587a2f979b7f234c9d474cf5a2b9ac0764efb74cdfe56a14d"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/green.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/green-receipt.json",
+      "bytes": 846,
+      "sha256": "c96de71ec5f7c7287994074c7ced69bc17a34390b2732f083a442b1402e5f0c5"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/strict-green.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/strict-green-receipt.json",
+      "bytes": 444,
+      "sha256": "66c66ab120e4dd22d0a255bd21eb03878f072c9dce5ef31a0bf88269bfe6a685"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/eng-consumer.stdout.txt",
+      "bytes": 348,
+      "sha256": "b7400c4abb238774182ad92f36087d5e85be6f6400117c96b4aa4fcd64886994"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/eng-consumer.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/eng-consumer-receipt.json",
+      "bytes": 815,
+      "sha256": "4acbf1368c2f55c01bc051bbb6a5ee3e9787451d215ce271e5dcf7c9ca65f4ec"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/eng-consumer-cleanup.json",
+      "bytes": 122,
+      "sha256": "233d49cb5577a684a28cec0ce10ccbdaf46a119b8094e520d1a3dc2ab2d34694"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/red.stdout.txt",
+      "bytes": 1350,
+      "sha256": "4cad3e6bfa566967d87f60fe76bb5d9263c89147db913584dcbc8204c86f6a04"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/red.stderr.txt",
+      "bytes": 785,
+      "sha256": "5939f16969d7a19c3ea71da6f9fca2a776030a3e0314802027633e8321ba3c4a"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/red-receipt.json",
+      "bytes": 562,
+      "sha256": "4b3fa513e6956e6a906dfa0a3bca96d577bb7c55d05c0a546e442bc0ad9b2694"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/strict-initial.txt",
+      "bytes": 622,
+      "sha256": "b8973f68d22854e55add685bd3ef54e01664d9e09a7a48b344f37b8241000d5e"
+    },
+    {
+      "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/strict-preparation.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "source",
+      "path": "apps/server/src/active-steering/steering.test.ts",
+      "bytes": 24237,
+      "sha256": "ecc7e4ac6bfec4797ef4ab8c8e907dd38ff4d3f4edf4e8b19c3e7f54ebdc3e9d"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "source",
+      "path": "docs/evidence/s01p04/tsconfig-consumer.json",
+      "bytes": 229,
+      "sha256": "097ff1af2cdcbefadb939d2b7192ec1acfecff881f8cb307e10eae80d49401be"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-green.stdout",
+      "bytes": 969,
+      "sha256": "16cef53f6be4f52929185c16cf5a0626e2f16cd0f11066bb74832490f0ff8b6f"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-green.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-green-receipt.json",
+      "bytes": 669,
+      "sha256": "09b610eddf6a363afc81b8556f26da498ef6bac4b5503015ed7dd0b91e145218"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-receipt.json",
+      "bytes": 429,
+      "sha256": "48c5535ce78a5c6054443c83a90f78de7177ce53a6281af24f879ff79f0272f7"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-initial.stdout",
+      "bytes": 309,
+      "sha256": "e8e2fa9072dda4d107b4fef696158de4ac92fe63f83a811a7f02c05f31ec6df6"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-initial.stderr",
+      "bytes": 748,
+      "sha256": "dd7a86d0a4dac711291c1cb8c3687a3d6f46820838b07780f580111661b702a1"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-initial-receipt.json",
+      "bytes": 667,
+      "sha256": "9887a843fcffe3b3fc9b32ac6472ccc641f6f8f06b79b199224db35247ebc4a2"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-initial.stdout",
+      "bytes": 6575,
+      "sha256": "64321fafaff0f686f441497cff9b86300867ed2fb3cc226b58b7a31c5f05a461"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-initial.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "target": "94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88",
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/consumer-strict-initial-receipt.json",
+      "bytes": 430,
+      "sha256": "62df32c3305ea2e23c80041fe51375d0eebae41bbfb895d02f6088794faa5216"
+    }
+  ],
+  "productPaths": [
+    "apps/server/src/runners.ts",
+    "apps/server/src/runner-read-fence.test.ts",
+    "apps/server/src/active-steering/steering.test.ts"
+  ],
+  "leadRootTypecheckExit": 0,
+  "ownerRanNewTests": false,
+  "releaseRequestId": "890c1730-10b5-4b05-808b-094d3b096f7b",
+  "releaseActualOutcome": "not yet requested; actual receipt must be external after final metadata commit"
+}

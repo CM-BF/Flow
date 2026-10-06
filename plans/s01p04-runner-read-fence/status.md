@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:30:12 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:59:37 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence |
 | Branch | codex/runner-read-fence |
-| 工作基线 / HEAD | base c450；受控输入648→d7e9136f；收尾前实际HEAD 225f4f4bc5c86073f3b5b06ac3418f546a26a5bd clean |
+| 工作基线 / HEAD | base c450→648受控继承；生产e184+consumer94b；收口前实际HEAD67e9be4c472bd2391db573680660144b80e986b1 clean |
 | 工作树dirty状态 | 生产e184和消费者fix 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88已固定；仅manifest/status/review metadata跟随 |
 | 工作分支状态 | delivered |
 | 检查状态 | 原10 distinct冻结；消费者定向1通过/15未选，局部strict0，累计11不同通过；专库absent |
-| 已集成main状态 / HEAD | 输入648已受控合入；最新main 53ce2ec2c95b489aa7a2a2eaa49849821af00c16 clean，e184/94b尚未集成 |
-| 实现目标 | e1847ce1c66646eb40b7eb4111a31468d4681e1f |
-| 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts, apps/server/src/runners.ts, apps/server/src/active-steering/steering.test.ts |
+| 已集成main状态 / HEAD | 已集成main/origin 2f4a5789ee13937914fa2c25161c8d5ed1071550；owner核31 source/raw及3产品/测试文件逐字一致 |
+| 实现目标 | 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88 |
+| 实现范围 | apps/server/src/runners.ts, apps/server/src/runner-read-fence.test.ts, apps/server/src/active-steering/steering.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 不同attempt可共享授权读取锁，撤销、维护和领取保护已通过隔离检查 |
-| 下一可用交付 | APPROVED组合等待Lead受控集成main |
+| 下一可用交付 | 本片段已交付；提交本次metadata后停止全部写入并释放claim |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED；chatui01_owner / gpt-6-astra，2026-10-06 11:29:47 UTC，fix 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88，原P2已关闭，0P1/P2 |
@@ -31,7 +31,7 @@
 | S01P04-02 | completed | status_read | 9项准备、局部strict 0；授权唯一目标red 1失败/8未选及专库absent，见 [red analysis](../../docs/evidence/s01p04/red-analysis.json) |
 | S01P04-03 | completed | status_read | v2合法追加、main648受控继承、私有共享锁修复；见 implementation-checks.json |
 | S01P04-04 | completed | status_read / chatui01_owner | 11 distinct及局部strict0；固定94b复审APPROVED，原e184 P2关闭 |
-| S01P04-05 | pending | Lead / status_read | 未集成 |
+| S01P04-05 | completed | Lead / status_read | [main接收核验](../../docs/evidence/s01p04/main-acceptance.json)，31 source/raw逐字一致，复用原11，不重测 |
 
 2026-10-06T10:55:28.409Z take COMMITTED：claim cb7db4a9-cb89-4589-b2f3-d30b75549ab9 v1，精确三scope，见[receipt](../../docs/evidence/s01p04/claim-receipt.json)。原ENG01B claim172ae2c2 v2由native_center_owner持有runners.ts，不覆盖、不抢占。
 
@@ -58,3 +58,9 @@
 消费者修复固定 `94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88`，见[34项manifest](../../docs/evidence/s01p04/consumer-manifest.json)。实际2026-10-06 11:27:17.829→11:27:22.387 UTC，1通过/15未选；精确task SQL与holder/blocker正证据、final commit后409、sealed且commands空均通过，专库零连接/absent。局部strict0；初始import0tests/exit1及strict2完整保留。原e184生产和48绑定逐字冻结，未重跑原9PG/ENG。writer cb7 v3保留修复期，尚未main。Lead报告137-source实际dashboard采样已有S01P04卡；该事实由Lead提供，本worker未另造聚合JSON或重查服务。
 
 2026-10-06 11:30:12 UTC正式接收原reviewer对 `94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88` 的APPROVED（2026-10-06 11:29:47 UTC），原e184唯一P2关闭，0剩余P1/P2。34修复绑定和48历史绑定在review时全部逐字核验；当前只追加Interface页首集成metadata，其旧Git绑定保持可重现，source/raw不变。原9PG+ENG1+consumer1共11不同通过，未重测。fresh本树225f4f4bc5c86073f3b5b06ac3418f546a26a5bd clean / cb7 v3 ACTIVE；main53ce2ec2c95b489aa7a2a2eaa49849821af00c16 clean且实现未集成。已交[固定集成输入](../../docs/evidence/s01p04/interface.md)，writer保留至明确移交/释放，不领取runtime、不运行capacity。
+
+## 2026-10-06 11:59:37 UTC main闭环与停写
+
+Lead已接生产e184与必需consumer94b到main/origin 2f4a5789ee13937914fa2c25161c8d5ed1071550，canonical receipt docs/evidence/i02/runner-read-fence-source-comparison.json。owner fresh只读逐项核31source/raw（含3产品/测试源）=固定Git=WT=main Git，root typecheck0由Lead提供；原11检查复用，无新PG/工程测试。当前主线观察2f4a5789ee13937914fa2c25161c8d5ed1071550 dirty=False。原“未main/待接收”文字是历史时点，不再代表当前状态。
+
+本次仅main-acceptance/status/review/plan metadata；提交push后明确停止本task全部scope写入，随后按fresh claim cb7 v3执行release，请求身份890c1730-10b5-4b05-808b-094d3b096f7b。不预写成功：实际COMMITTED回执将仅存项目外 /tmp/flow-p04-final-release-receipt-20261006.json 并回Lead，release后不回写项目。runners.ts/两测试与metadata范围一并释放，让main后继fresh领取；不复用本claim继续开发。

@@ -27,3 +27,7 @@ APPROVED：消费者test-only修复已固定，task锁精确holder/blocker、pen
 原reviewer只读复核精确task SQL、实际holder∈pg_blocking_pids、final同事务commit后409/sealed/no commands、pending finally收束及专库0连接/absent。34项current与原48项binding逐项Git=WT/hash/bytes；fresh225f4f4b clean/cb7 v3 ACTIVE。实际1通过/15未选、strict0，初次0test/strict失败保留；原10未重跑，累计11不是单次11。review过程0测试/PG/child/provider，Mika已接收，可交Lead受控集成。
 
 收尾metadata仅status/review与Interface页首；Interface旧固定Git支持文档仍可复现，当前新增集成说明已明确声明。没有新source/raw变更或验证，main集成仍待Lead，writer占用保留。
+
+## 2026-10-06 11:59:37 UTC Main接收闭环
+
+已审组合进入main/origin 2f4a5789ee13937914fa2c25161c8d5ed1071550。owner只读核Lead canonical receipt与31 source/raw bytes/SHA全同、3产品/测试源逐字匹配；Lead root strict0，原11 distinct复用，owner0重测。见[main核验](../../docs/evidence/s01p04/main-acceptance.json)。固定APPROVED target仍94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88，生产e1847ce1c66646eb40b7eb4111a31468d4681e1f；历史待集成文字保留，仅本节更新当前事实。提交后停止写入并按v3 release，实际回执项目外保存。

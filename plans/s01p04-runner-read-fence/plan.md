@@ -12,6 +12,6 @@
 - [x] **S01P04-02** 准备专用随机PG库交错测试；原实现真实red，不执行旧固定共享库fixture。
 - [x] **S01P04-03** 原owner ready后合法amend取得runners.ts，保留其固定源，最小共享fence red→green。
 - [ ] **S01P04-04** 完成同/不同attempt、revoke/drain/hold/claim与强锁嵌套代表检查、必要直接消费者及strict；固定证据和独审。
-- [ ] **S01P04-05** 修复复审与受控main集成，确认权威status/架构影响同步；剩余完整未知claim恢复不混为本片完成。
+- [x] **S01P04-05** 修复复审与受控main集成，确认权威status/架构影响同步；剩余完整未知claim恢复不混为本片完成。
 
 技能find-skills本地优先，选brainstorming bounded、codebase-design、clean-code、tdd；路径/hash与实际方法见[skills](../../docs/evidence/s01p04/skills.json)。Mika已同意文件内私有helper，避免为两条SQL制造模块或向caller开放任意锁模式。0新增混合窗口，0provider/nativeSDK；实际验证数只能按原始输出记录。
