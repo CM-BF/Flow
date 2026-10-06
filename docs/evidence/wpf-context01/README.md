@@ -21,6 +21,8 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --filter @flow/web exec tsx test/c
 - 作者目视[浅色](knowledge-light.png)、[深色390](knowledge-dark-390.png)、[浅色390](knowledge-light-390.png)，真实键盘Space/Enter/焦点、reduced-motion与无横向溢出断言通过。
 - 七源码固定diffcheck通过。完整base→metadata diffcheck另有5个原始日志末尾空行提示（module-first.log:10、module-tests.log:10、typecheck-first.log:4、typecheck-fixture.log:4、typecheck.log:4），原日志保留不清洗。未全库测试/未实际App生产build；本模块尚不在App入口，fixture由Vite真实编译且Web整体类型检查通过。未测屏读、Safari/Firefox、实际产品中心/模型。
 
-本片没有发送/排队/ACK集成，薄context reader/会话组件保持只读。中心最终执行输入预算仍可能拒绝；未来消费者必须保留原稿/refs，深冻结原request并核ACK context.sources完整tuple和顺序。不能从这里的本地freeze测试声称真实Send/Queue已经携带知识。P01宿主/授权、Dialog与App接线另领取，不造第二registry。main尚未接入本片，独立review在同目录plan中单独记录。
+本片没有发送/排队/ACK集成，薄context reader/会话组件保持只读。中心最终执行输入预算仍可能拒绝；未来消费者必须保留原稿/refs，深冻结原request并核ACK context.sources完整tuple和顺序。不能从这里的本地freeze测试声称真实Send/Queue已经携带知识。P01宿主/授权、Dialog与App接线另领取，不造第二registry。main尚未接入本片，root独立review于07:56:55Z APPROVED固定736ef，R1关闭；详见[review](../../../plans/wpf-context01-knowledge-selection/review.md)。
 
 R1独立审查发现显式signal覆盖client默认timeout，已在736ef修正本地15秒deadline（adapter忽略abort仍结算），原目标REQUEST_CHANGES。18模块fake-time受影响验证与typecheck通过，未真等15秒；新[来源hash](r1-source-manifest.json)/[日志](r1-tests-first.log)/[类型](r1-typecheck.log)。原9browser/screenshots/原manifest保留34cd，不重绑新hash。736源码diffcheck0；新增原始r1日志同样保留末尾空行。
+
+独立review检查来源：root独立18tests（07:55:49Z，15ms/225ms），七hash与e216clean/source diff核对，CUA60172搜索/选择/Enter、隐藏freeze/恢复草稿与Dark转义、console warn/error=[]。root未重跑原9完整browser/作者tsc或真实App。源码保持固定736，后续仅metadata，main仍待接收。
