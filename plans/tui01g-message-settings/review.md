@@ -1,6 +1,6 @@
 # TUI01G 独立审查
 
-状态：PENDING；SOURCE_APPROVED_PENDING_VALIDATION，源码独审无 P1/P2，行为验证仍未运行。
+状态：NOT_STARTED（最终产品审查）；源码结论 SOURCE_APPROVED_PENDING_VALIDATION，源码独审无 P1/P2，行为验证仍未运行。
 
 Review target commit: 215063fb4667fc394a07417d608b075fa1188d92
 
