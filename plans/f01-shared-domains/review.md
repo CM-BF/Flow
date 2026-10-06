@@ -1,10 +1,12 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（CHAT08默认关闭的生产挂载）**
+**当前增量状态：APPROVED（CHAT09执行配置格式协商）**
 
-Review target commit：fe5bc2d9b8dab231996b1b156bc086d858846117
+Review target commit：89931e0d9cfd00b5f51f5b266b7aaa38bba2718b
 
-Scope：apps/server/src/index.ts, apps/server/src/steering-production.test.ts。manifest：docs/evidence/f01/steering-production-manifest.json。独立reviewer：Root。领域d4e已由Execution Lead独审，薄client3d811由Root独审，本delta不继承批准。
+Scope：packages/client/src/index.ts, packages/client/src/execution-profiles.test.ts。manifest：docs/evidence/f01/steering-profile-client-manifest.json。独立reviewer：Root；完整2文件delta、2源码/3输出hash与字节核验，2/2真实HTTP122ms、typecheck0，无P1/P2、未重跑。仅显式目录格式协商，不是steering启用或执行授权。
+
+历史CHAT08生产挂载APPROVED target fe5bc2d9b8dab231996b1b156bc086d858846117，范围 apps/server/src/index.ts, apps/server/src/steering-production.test.ts，详见 steering-production-manifest.json；该原批准及后文历史保留。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
