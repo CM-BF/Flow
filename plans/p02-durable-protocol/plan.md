@@ -6,8 +6,8 @@
 
 ## TODO
 
-- [ ] P02-01 固定domain/公开HTTP/runtime接口与状态不变量，接入共享基础
-- [ ] P02-02 PostgreSQL持久intent与fence、一次发送许可、binding/uncertain/同runner有效租约恢复
+- [x] P02-01 固定domain/公开HTTP/runtime接口与状态不变量，接入共享基础
+- [x] P02-02 PostgreSQL持久intent与fence、一次发送许可、binding/uncertain/同runner有效租约恢复
 - [ ] P02-03 独立protocol runner、单调租约deadline、远端取消与重启GET、artifact lowerstore/独立verifier
 - [ ] P02-04 官方peer+真实PG+独立runner进程验证成功/重启/ACK窗口/过期ownership/实际取消/产物验证
 - [ ] P02-05 clean-code、原始证据、固定target提交与独立review交付
