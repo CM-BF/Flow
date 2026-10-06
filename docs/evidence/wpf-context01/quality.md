@@ -15,3 +15,5 @@ UI方法参考root已读https://raw.githubusercontent.com/vercel-labs/web-interf
 2026-10-06 07:54:19 UTC R1 clean-code：独立root发现显式signal使client缺省timeout不生效，属真实恢复缺口。用一个私有readWithDeadline集中拥有timer/abort清理/Promise结算；两个read入口复用，不改client/shared、不新增轮询或手工计时状态。fake-time实际18PASS覆盖忽略abort/2slot释放/旧成功与旧reject不覆写/计时器归零，tsc0。原9browser/截图保留旧34cd，R1 source-manifest区分新旧；无扩大测试或虚称UI延迟收益。正式R1未独立复审前保持CHANGES_REQUESTED。
 
 2026-10-06 07:57:12 UTC 审查收口clean-code：root07:56:55固定736独立APPROVED/R1 CLOSED，独立18与CUA范围准确转录，原34cd UI报告不混作736完整重跑。本人实核e216 clean，仅review/status/README/质量metadata更新，未修改七源码、未重跑产品检查。TODO03保留main待接收，TODO04真实Send/Queue仍NOT_IMPLEMENTED。claim保留修复权，交manager统一REVIEW_READY后停写待准确main回执。
+
+2026-10-06 08:10:49 UTC main收口：只读核fc113包含736/d6且七源逐字相同，own d6 clean与live bfe v1 active匹配。仅元数据记录主线接收，未跑产品检查；提交后九scope全停写交manager释放。实际Send/Queue仍后继，旧preview保留。
