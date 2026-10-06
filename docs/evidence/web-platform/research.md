@@ -663,3 +663,9 @@ PERF03独立五scope已正式受领，保留conversationMessages现接口，仅�
 K02中心预算边界（同root固定源研究）：4refs/8192 locator bytes预校验不保证中心受理，编译userText与冻结metadata后仍受16000 UTF16 / 49152 UTF8总输入预算；拒绝时保留草稿与引用，明确错误，不静默截断或丢ref重发。contentDigest属于整个source版本，resolve只给chunk，不得拿chunk摘要与整版本摘要比较；核citation完整tuple与text byte length，整版本摘要以中心权威为准。contexts详情不是search preview，正文仍仅显式GET。
 
 07:43补充root官方研究来源：[React useSyncExternalStore](https://react.dev/reference/react/useSyncExternalStore)明确无变化getSnapshot返回值须Object.is相同且snapshot不可变，subscribe函数身份变化会重订阅。仅采用既有语义，不随官网版本升级项目；stream host/context controller的no-op更新、订阅清理与旧异步隔离应验证。ContextPicker保持紧凑可插拔组件，原生label/键盘，aria-live仅简短数量/错误；外层Dialog若需要复用现有焦点管理，不为本模块造CMS。root已读[Web界面指南](https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md)与[W3C Dialog规范](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)，本管理未重新联网或新增依赖。
+
+### RS13 初始依赖图与静态host验证边界补核（root固定c450/da041，只读未bench）
+
+`vite.config.ts` 将 @assistant-ui、@radix-ui、assistant-stream归同assistant-ui组；App静态导入Radix Dialog/Tooltip及ConversationThread/TaskThread，fixtureMode也由TaskThread导出。只lazy ConversationThread不必然延后依赖，应核实际产物HTML/preload/图，考虑稳定Connection壳到Workspace/两Thread边界。lazy失败沿现错误边界可重试，不reload丢草稿/unknown；onNew实时closure和known-task消费者需回归。当前无App/vite写权或产物收益声明。
+
+static-web每次snapshot→releaseAsset执行lstat/realpath/readFile/sha，现4并发/32等待/5s且finishWork等待HTTP结束；编码不能绕原bytes身份、做无界cache或同步CPU。相同source/toolchain/releaseId可重用artifact，而namespace冲突仅检查当前retained集合，长max-age需先定义相同URL永不换bytes及清理/重装边界。优先评估资产ETag+no-cache条件重验，HTML/身份/API/错误保持各自语义，不默认全站immutable。压缩若进入精确新scope：Vary Accept-Encoding；gzip/identity强ETag按representation分开；Content-Length是编码后大小；HEAD/304无body；q=0/wildcard/identity完整处理；缓存仅已核digest+encoding且预算/失效明确。验解压hash、warm304、oldnamespace、rollback、缺失/tamper失败关闭与首屏/首次chat权衡。来源root已读MDN Caching/Content-Encoding及[RFC9110 8.8.3.3](https://www.rfc-editor.org/rfc/rfc9110.html#section-8.8.3.3) /12.5.3。本管理只记录来源，无实际host实验、不动个人服务。

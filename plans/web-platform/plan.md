@@ -105,9 +105,9 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 
 | 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
 | --- | --- | --- |
-| WPF-ATTACH01 → MATURE03 | workspace_panels_owner / attachment-resources / codex/attachment-resources | ef617d78 v2十八scope；phase1 6bc/339已独审小输入，runtime实际PG/HTTP实施中；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)。F01/client/rootmount不领 |
-| WPF-RELEASE01 → MATURE01 | w01_owner / web-release-compatibility / codex/web-release-compatibility | 20a6529a v1四scope，两新test+记录；新Web8d8/旧Web与backend b1c固定真实构建，最终format2报告必须匹配同releaseId/descriptor；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md) |
-| WPF-DPERF02 → D01 | d01_owner / dashboard-proof-batching / codex/dashboard-proof-batching | 1cb4 v1四scope，902c实现/167e交付已push且root独审批准；待main保留修复权；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
+| WPF-ATTACH01 → MATURE03 | workspace_panels_owner / attachment-resources / codex/attachment-resources | ef617d78 v2十八scope；phase1 6bc/339已独审小输入，runtime8701/final1d236已root78独审并push，待main及公共桥接；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)。F01/client/rootmount不领 |
+| WPF-RELEASE01 → MATURE01 | w01_owner / web-release-compatibility / codex/web-release-compatibility | 20a6529a v2 released；main c450、owner41276 normalpush/clean后四scope全停写；新Web8d8/旧Web与backend b1c固定真实构建，最终format2报告必须匹配同releaseId/descriptor；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md) |
+| WPF-DPERF02 → D01 | d01_owner / dashboard-proof-batching / codex/dashboard-proof-batching | 1cb4 v2已释放；902c/aa715已main da041，close8e9现local=remote/clean；push两次失败与先release偏差另归档；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3，仅两管理目录+四Web大task目录；追溯/集中依赖，不构成第三执行层 |
 
 D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVITYREAD/STEIRI已mainf181并原scope全部released；VISUAL已main4391、35e5 v3 released。旧树只读，后继不沿旧权写入。
@@ -124,12 +124,12 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 
 | 优先级 / 状态 | 当前计划 | 下一动作与真实边界 |
 | --- | --- | --- |
-| P1实施 | ATTACH01资源 + RELEASE01兼容 | 两worker各自独立tree/claim；附件runtime固定后独审；RELEASE真实App产物供Lead受控发布，0provider且不动个人入口 |
-| 已审待main | DPERF02 | 902c/167e已正常push；临时16/64/128样本34.897s，完整语义与27独立回归；main/4320收益未知 |
+| P1已审交接 | ATTACH01资源 + ACK01 | 8701/1d236与2fa8/4e4e均独审通过、pushclean待main；公共client/decoder/mount由唯一共享owner桥接，ATTACHI从固定输入开始 |
+| 已main / 收口 | DPERF02、RELEASE01 | da041已接902c，1cb4 v2已释放，close8e9推送偏差归档；c450已接7805，RELEASE owner41276 normalpush/clean后20a v2 released；个人发布另由SVC04 |
 | 已main / 已释放 | CONTEXTI、STEIRI、ACTIVITYREAD、D08、VISUAL、D06/runtime | 各canonical与release见[集中队列](../../docs/evidence/web-platform/mature-task-handoff.md)；片段通过不等六大task完成 |
-| 下一有界消费 | TUI01B共享ACK Web调用点 | main0cee7556已审公共输入；已于10:45:38新树fresh七scope，3wrapper/2test/记录；不碰App，不复制附件v2 decoder |
+| 独立有界基线 | WORKSPACEPERF01 | c815 v1四scope/basec450，真实App HTTPfixture累计8/16/32，90s含cleanup/≤8MiB；仅观测，不修改App/投影，不冒JS堆或总体性能 |
 | 等合同/客户端实际输入 | ATTACHI01附件Web | official Thread既有附件控件接持久上传/引用/恢复，先固定public输入；不得预占宽23scope挡共享ACK窗口 |
-| 等正式部署验收 | 六计划+父关联/take | D08已main；root仅OS新进程观察尚非fixedreceipt，收到正式来源后一次真实页面核验，不能提前Done |
+| 专项已验 | 六计划+父关联/take | root10:44–10:45实际页面六parent/co-lead/子片领取与父导航通过；不是六feature功能Done |
 
 当前三队4/4/4上限12，本树root+现三成员=4。普通进展只status→dashboard；GO只完整大task独立blocker与Done(1)，不重复私信/转发。历史真实两query2/2只引用，不新增模型预算。
 
@@ -172,7 +172,7 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 - [x] **WPF-001-30** D05FIT01四scope首次适配：0ac7已审并main9d6，0e52826收口且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)。
 - [x] **WPF-001-31** WPF-STEER01沿REQ44独立控制模块：b2已审并入77c主线，01842收口后2bae v2释放，实际App另后继；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。
 - [x] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
-- [ ] **WPF-001-33** WPF-DPERF02批量Git树证明与快照内重复工作：附件P1/已审发布及D06安全点之后，以独立临时Git/少量自有WT对16/64/128source做Trace2，先量process启动/峰值再墙时，总≤60秒含清理、证据≤32MiB；不压真实repo/4320。测后选快照内复用或已批准batch-tree，保2MiB/5s、完整record/缺失/unknown和每snapshot fresh dirty/claim，无TTL缓存假绿。无收益也保结果，合成128不当runner容量；沿FLOW-001原工程结果追溯，不新大task。详见[有界方案与结果](../../docs/evidence/web-platform/dperf02-proposal.json)；1cb4 v1已take、固定902c/167e已独审批准并push，待main；该TODO不因分支通过提前完成。
+- [x] **WPF-001-33** WPF-DPERF02批量Git树证明与快照内重复工作：附件P1/已审发布及D06安全点之后，以独立临时Git/少量自有WT对16/64/128source做Trace2，先量process启动/峰值再墙时，总≤60秒含清理、证据≤32MiB；不压真实repo/4320。测后选快照内复用或已批准batch-tree，保2MiB/5s、完整record/缺失/unknown和每snapshot fresh dirty/claim，无TTL缓存假绿。无收益也保结果，合成128不当runner容量；沿FLOW-001原工程结果追溯，不新大task。详见[有界方案与结果](../../docs/evidence/web-platform/dperf02-proposal.json)；固定902c/aa715已独审并main da041三源一致；close8e9现remote一致/clean、1cb4 v2释放；推送失败/先release偏差见集中归档。此有界片完成，不延伸为生产稳定性能结论。
 
 - [ ] **WPF-001-35** RS13既有首屏性能后继：固定RELEASE最终10:39:13.012/new artifact caa1e938的唯一loaded资源1,491,399B（旧1,426,477B，+64,922B），旧10条实为5个唯一asset；不把记录数/解码字节当网络压缩、TTI或收益。查实际index/modulepreload依赖图并按需延后chat chunk，联合测首屏资源/parse/可输入与首次开chat等待；同ExecutionLead/SVC唯一owner确认不可变URL与回滚保留，分别定义HTML/哈希asset/身份/API cache/encoding，保manifest完整，不全站cache或承诺立即撤销。已有artifact独立0模型冷暖/版本切换有界验证，个人服务不动；待关键路径安全后精确scope/fresh claim，不新大task。详见[RS13固定证据](../../docs/evidence/web-platform/research.md)。
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 10:47:46 UTC |
+| 最近更新 | 2026-10-06 10:56 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-05](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | 在现有workspace-state上设计组合tab/pane模型并领取最小实际App片 |
+| 下一可用交付 | WORKSPACEPERF01四scope已fresh领取，先测真实App关闭重开基线；组合pane完整实现仍开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -42,3 +42,5 @@ CONTEXTI已main并释放，STEIRI01已main并释放，布局与插件入口后�
 root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见[真实页面专项](../../docs/evidence/web-platform/mature-dashboard-ui-acceptance.json)；此项通过不代表本大task完整功能验收完成。
 
 实际插件入口覆盖见[root固定main80ba只读研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，沿REQ22–23/WPF-001-05；未browser复现或实施，不扩大STEIRI写权。
+
+WORKSPACEPERF01：panels，base c450，c815bc00 v1四scope，[receipt](../../docs/evidence/web-platform/workspaceperf01-take-receipt.json)。90s含清理/8MiB，仅HTTPfixture真实App累计8/16/32会话观察，生产无改；原TODO05仍pending，首canonical待实际提交。

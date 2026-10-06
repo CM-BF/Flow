@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:47:46 UTC / root六计划实际UI已核；DPERF已审待main；RELEASE已审，ACK fresh受领 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:56 UTC / DPERF与RELEASE已main；ATTACH runtime/ACK已审待接；WORKSPACEPERF fresh受领 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 附件资源与真实Web发布兼容并行实施；有界Git树读取优化已通过独审待主线，六计划实际页面验收仍开放 |
-| 下一可用交付 | 接收已审实际Web发布兼容输入；共享ACK消费与附件资源并行，随后衔接附件输入 |
+| 当前产出 | 附件runtime与ACK均已审，DPERF/RELEASE已main；六计划父关联专项已实际通过，完整功能仍开放 |
+| 下一可用交付 | Lead接收ATTACH runtime/ACK及统一公共桥接；panels做有界workspace基线，w01准备ATTACHI新模块 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -61,7 +61,7 @@
 | WPF-001-30 | completed | d01_owner | D05FIT01 0ac7已main9d6，两源码相同；最终0e52826 pushed/clean，四scope停写且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
 | WPF-001-31 | completed | workspace_panels_owner | STEER01 b2模块已main77c，01842收口后2bae v2释放；App与跨reload恢复属MATURE06后继。 |
 | WPF-001-32 | completed | w01_owner | CONTEXTI 已正式main df29；fe2b收口/55fe v2释放，唯一source见当前表。 |
-| WPF-001-33 | in-progress | d01_owner | 902c实现/167e交付已push、root27独审APPROVED；34.897s/16.08MB Trace2仅临时样本，main未接收；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
+| WPF-001-33 | completed | d01_owner | 902c/aa715已main da041，收口8e9现remote一致/clean，1cb4 v2 released；push两次失败与先release偏差有原始记录；34.897s/16.08MB仅临时样本；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
 | WPF-001-34 | completed | d01_owner | root10:44–10:45实际129来源页面核六parent/co-lead、三子片领取/父导航；[证据](../../docs/evidence/web-platform/mature-dashboard-ui-acceptance.json)。仅计划落盘/显示专项，不是六feature完成。 |
 
 | WPF-001-35 | pending | d01_owner | RS13固定产物去重/初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
@@ -71,8 +71,8 @@
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
-| ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v2十八scope | phase1 6bc/339小DTO已审；runtime PG/HTTP实施，索引/client/rootmount归共享owner |
-| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，20a6529a v1四scope | 7805/db08已root独审批准并push，真实固定Web8d8/backend b1c；format2报告与descriptor精确绑定，个人发布仍Lead |
+| ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v2十八scope | runtime8701/final1d236已root78独审、pushclean；公共client/decoder/rootmount由唯一共享owner桥接，main pending |
+| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，20a6529a v2 released四scope | 7805/db08已main c450，owner41276 pushclean后停写/release；format2与descriptor绑定，个人发布仍Lead |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |
@@ -80,8 +80,8 @@
 | D08 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，原panels，49510580 v2 released | 已main f181；605957 push/clean后9scope停写释放；root实际六计划父关联/take页面核已完成 |
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
-| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v1七scope | w01 fresh受领3wrapper/2tests/记录，首canonical ff04f355已实核落盘/parser0；不等附件runtime |
-| DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v1四scope | 已审902c/167e正常push待main；0真实repo/4320压力，不宣称稳定生产时延提升 |
+| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v1七scope | 2fa8/4e4e已独审150、pushclean；五源码冻结，待main；v2公共扩展仍待准确输入 |
+| DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |
 
 ## 当前依赖与登记队列
 

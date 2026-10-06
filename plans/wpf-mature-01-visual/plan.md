@@ -26,7 +26,7 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 - [ ] **WPF-MATURE-01-02** 交付真实App shell与常用控件：导航、输入、选中pane、弹层、气泡实际接通扩展tokens，移除阻断根token的局部硬值；真实外部主题材质/禁用清理及已安装、禁用、缺失插件三种reload验收，不以builtin切换或静态mock代替。
 - [ ] **WPF-MATURE-01-03** 覆盖内容与异常场景：实际空态、长正文、代码/表格、streaming、tool/thinking展开、错误截图；不遮行动错误或unknown。
 - [ ] **WPF-MATURE-01-04** 完成可访问性与降级：390px与桌面、键盘焦点/IME、reduced-motion、不支持/禁用backdrop-filter时不透明可读fallback。
-- [ ] **WPF-MATURE-01-05** 固定交付及独审对照：实际App前后图与交互证据，源码绑定固定target，局部审查后受控main集成；RS13后继按唯一asset去重，验证连接页初始依赖图是否真正延后chat/assistant-ui chunk，联合资源字节、parse、可输入与首次开chat等待；静态host先明确同URL不可变/回滚，区分HTML与哈希asset/身份/API，再验冷暖cache/encoding与版本切换，不能全站cache或把解码字节当TTI。
+- [ ] **WPF-MATURE-01-05** 固定交付及独审对照：实际App前后图与交互证据，源码绑定固定target，局部审查后受控main集成；RS13后继按唯一asset去重，验证连接页初始依赖图是否真正延后chat/assistant-ui chunk，联合资源字节、parse、可输入与首次开chat等待；静态host先明确同URL不可变/回滚，区分HTML与哈希asset/身份/API，再验冷暖cache/encoding与版本切换，不能全站cache或把解码字节当TTI；实际静态Radix/两Thread/fixtureMode与公共chunk依赖图须核，lazy失败保草稿可重试；先评估ETag+no-cache，编码按representation与Vary/HEAD/304/有界cache及raw-manifest身份验收，细节见[RS13](../../docs/evidence/web-platform/research.md)。
 
 ## 验证与交付规则
 

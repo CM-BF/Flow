@@ -1,0 +1,37 @@
+{
+  "taskId": "WPF-ATTACHI01",
+  "state": "proposal; no worktree/take/product write",
+  "parent": "WPF-MATURE-03",
+  "owner": "w01_owner",
+  "scope": [
+    "apps/web/src/attachments/controller.ts",
+    "apps/web/src/attachments/recovery.ts",
+    "apps/web/src/attachments/adapter.ts",
+    "apps/web/src/attachments/AttachmentPicker.tsx",
+    "apps/web/src/attachments/attachments.css",
+    "apps/web/test/attachment-controller.test.ts",
+    "apps/web/test/attachment-recovery.test.ts",
+    "apps/web/test/attachment-input.fixture.tsx",
+    "apps/web/test/attachment-input.browser.ts",
+    "plans/wpf-attach-i01-input-preview",
+    "docs/evidence/wpf-attach-i01"
+  ],
+  "runtimeInput": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "runtimeFinal": "1d236cbe2299117e3b63887fda3d1c0e140f56b0",
+  "readOnlyMain": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8",
+  "inputGap": "contracts public exports and six fixed client methods absent in current main. No local fetch protocol or duplicate v2 decoder. Exact controlled DTO-only kickoff decision pending root; actual HTTP client test waits fixed public implementation.",
+  "interface": "immutable connection/view/project binding; host visible/online/canRead/canUpload; narrow signal ports; official Thread paperclip/drag/@file; capture revalidates complete attachments as adapter.send may be bypassed",
+  "budget": {
+    "upload": 1,
+    "list": 1,
+    "preview": 2,
+    "deadlineMs": 15000,
+    "metadata": 20,
+    "bodyCacheBytes": 32768,
+    "journalEntries": 16,
+    "journalBytes": 65536
+  },
+  "recovery": "persist metadata before POST, no token/File/text; full unknown journal refuses new upload; explicit authorized same scope/project lookup; 404 remains unknown; reselect exact bytes/name/type and original key/body; found never auto-attaches",
+  "deliverable": "isolated official Thread+AssistantRuntimeProvider fixture; ready immutable ref/order capture and metadata-only complete, pending/expired/unsupported block and retain draft; not actual App Send/Queue attachment integration",
+  "tests": "UTF8 BOM CRLF/8192/joint4&8192; complete bypass capture guard; generations and late ACK; lazy preview/cache/readiness/dispose; journal reinstantiate/reload/refetch original-key/crossnamespace; button/drag/@file/390themes/keyboard; zero provider"
+}
