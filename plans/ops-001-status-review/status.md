@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T16:39:04.569492+00:00 / main74bc72f0 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T16:45:42.321628+00:00 / main74bc72f0 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -18,9 +18,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 新一批八个已交付目录完成可逆收起，源码、依赖与各任务原始证据保持。 |
-| 下一可用交付 | 核对较新已释放候选，留足连续网页验证余量后安排运行。 |
-| 当前阻塞 | ACTIVE: 可用空间仍低于本次连续验证准备线；大型构建继续关闭。 |
+| 当前产出 | 本批十二个已交付目录完成可逆收起，源码、依赖与各任务原始证据保持。 |
+| 下一可用交付 | 网页组按现场余量顺序验证现有候选；公共客户端与终端小片并行推进。 |
+| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证余量已达到准备线，实际运行继续逐次核对。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -152,3 +152,5 @@ RELEASE03 A3附件场景通过、mixed资源中断、B未启动；累计7,983/18
 2026-10-06 16:23 UTC source-only闭包：TUI01F恢复173个固定输入/704532B，231个保留文件hash不变；CORE恢复155个固定输入/673771B。CORE操作后HEAD检查因owner并行提交metadata失败，未重试写入；随后只读核155固定hash、310个原HEAD可见文件和3份prepared配置一致，产品diff为0，未追溯补造未预先持久的4份untracked运行hash。两次均0安装/导入/测试/PG/provider，[CORE事实](../../docs/quality/sparse-worktree-2026-10-06/claude-vertical-source-materialized.json)、[TUI事实](../../docs/quality/sparse-worktree-2026-10-06/tui01f-followup-source-materialized.json)。小源码恢复不套PG运行gate；原1GiB收尾余量及运行增量门槛保持。下一批最多12棵已交付树按同一保护规则核对，准备到1GiB+160MiB或数量上限后再协调WebA→B。
 
 2026-10-06T16:39:04.569492+00:00：新授权批次8/12已操作，其余候选按同样fresh条件核验。当前free 1158901760B，目标1GiB+160MiB；不因只过A线开跑。五个有效占用/活跃预览保持原样。原始intake用可逆gzip保留逐字校验与原SHA，降低新增证据物化成本，不删除tmp原件或其他原始证据。见[本批实际汇总](../../docs/quality/sparse-worktree-2026-10-06/next12b/summary.json)。
+
+2026-10-06T16:45:42.321628+00:00：next12b累计12/12到限停止；16:44:51实际可用1,243,852,800B达到本次1GiB+160MiB准备线，网页组获原固定tuple/累计预算下A→B顺序机会，必须现场再核原门槛。所有12树clean、全部保留文件hash/同main blob/7保护树与配置不变，依赖及自有原始证据未动。过程中共享卷先降后升，差值只作观察，不能归因本操作。最终封存free 1238319104B；O14/O15/TUI/CORE PG不并跑，纯类型/HTTP小检查保各自预算，SVC06大型构建仍2.5GiB门槛。无本队新PG/产品测试/provider或个人服务变更；[完整批次](../../docs/quality/sparse-worktree-2026-10-06/next12b/summary.json)。
