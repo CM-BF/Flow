@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:30:27 UTC；固定base main1c496835，当前0新窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:34:48 UTC；fixed main1c496835；唯一128窗口已关闭 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | main 1c4968354dabce1e6748f3301a2e6eecd33e77d4；受控integration 07c8a0b；实现 6de928d8092ba8c22ac2222ac7c16af3660be48a；metadata HEAD见Git现场 |
-| 工作树dirty状态 | 源码/raw冻结；本次仅审批metadata，提交后clean |
+| 工作树dirty状态 | source冻结；仅本次run raw/离线分析与owner metadata封存 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：最终41 distinct纯checks（旧直接24+新17）/局部strict exit0；真实128窗口NOT_OPEN |
+| 检查状态 | PASSED：准备41distinct/strict0；实际128tasks/attempts/sessions，2304events/ACK，8空journal，CLI0/外层14.64s；结果待独审 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | 6de928d8092ba8c22ac2222ac7c16af3660be48a |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 128准备source6de928d经Mika于2026-10-06 12:29:56 UTC独审APPROVED，0P1/P2 |
-| 下一可用交付 | 提交clean execution HEAD与fresh claim/absent事实，由Mika点名开启唯一窗口 |
+| 当前产出 | 唯一128 fixture窗口已PASS/清理完成，FOR SHARE查询耗时分类遗漏明确UNKNOWN；结果待固定独审 |
+| 下一可用交付 | 固定原始run/result target与manifest，Mika只读独立结果审查；不再运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED：6de928d8092ba8c22ac2222ac7c16af3660be48a，Mika/gpt-6-astra，2026-10-06 12:29:56 UTC，0P1/P2；仅准备 |
+| Review | 准备APPROVED 6de928d；128实际结果NOT_STARTED待固定target独审；无新增调用授权 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -171,3 +171,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 新window仍NOT_OPEN；预算180秒含最终CLI/256MiB/128task与attempt硬上限不变。实际运行时外层time独立记录spawn/import到exit，超180即FAIL；不把driver内部elapsed冒充完整外层时长。源码/raw冻结等待Mika独审，不追main、不重测；dashboard只更新此唯一status，等待既有聚合。未完成原ACK/browser/真实provider/完整unknown恢复验收。
 
 2026-10-06 12:30:27 UTC：Mika正式独审APPROVED source6de928d/packetffee77ca，105绑定/6runtime/172历史及41distinct/strict0证据核符，0P1/P2，无review重测。两个预读样本证明问题已在固定源码和反例关闭。fresh claim v3 ACTIVE且新output absent；当前仅审批metadata，不代表执行OPEN。源码/raw不动，待明确executionHEAD门禁。
+
+2026-10-06 12:34:48 UTC：唯一128窗口已于12:31:13.682022Z→12:31:28.419308Z结束，CLI0/real14.64s/完整88,323,950B；全库128task/attempt/session、2304逐项ACK事件、128成功、8空journal、两个自有child自然0/DB absent/新root删除，无本次retained。实际6秒覆盖、30保守DB样本、1536窗内messageACK和独立外层时长已离线核；见[报告](../../docs/evidence/s01/mixed-128-run/report.md)。FOR SHARE实际SQL与classifier精确列不匹配，row elapsed为UNKNOWN，0分类不作无锁；不改原driver、不补测。旧raw/journal不动，结果正在固定，只做封存/独审，无第二window。
