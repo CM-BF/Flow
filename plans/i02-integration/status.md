@@ -249,3 +249,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 20:45 UTC：F04固定四源d147及准备证据已main352246b8，实际双端旅程仍NOT_RUN。个人2040源窗已关闭并恢复clean main13f92d05；正确namespace的admission未满足严格idle，唯一step01只读172ms退出，0材料/维护/重启/发布，无pending launch。原因只读定位中，未将false判为可清理记录；[源窗口](../../docs/evidence/i02/af51-d629-source-window-2040.json)。共享重窗口交已审ready SVC07短PG，之后Web与F04各自fresh串行。
 
 2026-10-06 20:55 UTC：F04新增capture/import准备32 bindings独立APPROVED，原4源未变，2纯/实际入口加载证据保留且无重复运行。受控接收31个own记录与SVC07供给回执；[绑定](../../docs/evidence/i02/tui-capture-source-supply-integration.json)。真实双端旅程等待Web当前窗口清理，个人legacy intent具体退役语义已获GO授权但实现/独审尚在进行，未进行个人操作。
+
+2026-10-06T21:14:02.758575+00:00：F04终端观察修复c612已限定独审APPROVED；27新/780不变/29历史绑定无差，原PTY1、局部2及types原证据有效，reviewer零重跑。完整旅程仍保留原失败，后继须新固定permit与原磁盘/共享窗口门槛。[review](../../docs/evidence/i02/tui01f04-terminal-repair-review.json)。
