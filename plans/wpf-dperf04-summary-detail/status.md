@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 19:53:57 UTC |
+| 最近更新时间 | 2026-10-06 21:08:38 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 摘要与详情的直接检查通过，浏览器清理与停止流程已通过限定源码复审 |
-| 下一可用交付 | 权限边界与运行窗口确认后，验收页面阅读和异步响应 |
-| 当前阻塞 | ACTIVE: 等待浏览器权限边界确认和独立运行窗口 |
+| 当前产出 | 摘要与详情的直接检查通过；浏览器停止记录的补充修复已准备待复审 |
+| 下一可用交付 | 补充修复复审及运行窗口就绪后，验收页面阅读和异步响应 |
+| 当前阻塞 | ACTIVE: 等待停止记录补修复审、执行字节重绑与独立浏览器窗口 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：45f8生命周期源码与准备稿已获root限定批准，TAIL/SOFT-STOP为SOURCE_ADDRESSED；browser/全片未验，abd2 Node8/3950ms与4fac历史保留 |
+| Review | [review.md](review.md)，UNKNOWN：45f8项目源码原限定批准保留；late-stop P2仅父准备稿已修待复审，GO边界已接受但新父hash待重绑；browser/全片未验，abd2 Node8/3950ms不变 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -104,3 +104,9 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 [root正式原件](../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-45f8-source-review.json)绑定45f8/实际metadata3a51，结论APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN，0blocking；TAIL/SOFT-STOP仅SOURCE_ADDRESSED。本人核[管理fresh原9范围观察](../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/approval-metadata-scope-observation.json)后只做metadata归档。
 
 完整feature仍UNKNOWN，browser0/60000ms（含15000ms清理），原abd2 Node8/3950ms不迁移；main/部署未完成。nativeChromeBoundaryApproval仍null，19:46机会NOT_RUN已归还，没有新gate/运行窗口。本段不改七源码、候选或binding，不运行parser/产品检查或采空间；提交前metadata dirty，提交后normalpush及双端clean另核。全部原9范围在本次seal后停写，claim保留待后续明确派工。
+
+## 2026-10-06 21:08:38 UTC late-stop 准备补修安全点
+
+本人核管理fresh原9 claim/唯一owner以及12ac7db8 clean，见[窄观察](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/scope-observation.json)。root新[addendum](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-addendum.json)仅重新打开父监督终态写期间soft-stop的P2，45f8七项目源码/worker/断言未改。仅own/tmp parent新增handler立即FAILED、persist/actualexit显式not stopping/noerrors、最多两次FAILED补写及终态stdout；outerfinally仍恢复handlers。[最小差异](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/late-stop.diff)与[完整旧候选](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/before-late-stop/preserved-files.json)保留，当前仅SOURCE_ADDRESSED_PENDING_REVIEW。
+
+[GO真实边界接受](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/previous-exact-native-boundary-acceptance.json)已在20:01记录，过去null是当时历史；本次父hash变化待root依既有授权精确重绑，不需再问GO。准备态PREPARED/no gate，browser仍0/60000含15000cleanup，Node3950不变。无产品检查/import/语法/信号试验/Chrome/PG/HTTP/free。本次仅自身metadata归档，提交前dirty与提交后双端clean分开回执；待审后保持停写。

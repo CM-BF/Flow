@@ -49,3 +49,7 @@ wrapper只接精确parent端点、停止spawn/killChrome；fixture与check bodie
 ## 2026-10-06 19:53:57 UTC 独审metadata安全点
 
 复用已读本地find-skills/clean-code方法，仅消除当前摘要、review、入口和manifest中“delta复审尚待”的过时现状；原历史结论与原字节报告均保留。root45f8来源/范围/0blocking与SOURCE_ADDRESSED归因明确，全片UNKNOWN、browserNOT_RUN、native边界null不变；历史abd2 Node8/3950ms不迁移。原件SHA逐字核对，未改源码、candidate、binding、gate或原raw，未跑parser/产品检查/空间采样。seal后正常commit/push并核双端clean，原9scope停写且claim保留。
+
+## 2026-10-06 21:08:38 UTC late-stop clean-code 安全段
+
+沿已读本地find-skills/clean-code/webapp-testing方法，保一个既有清理owner和单一停止真值。handler立即失效，persist与exit共享明确not stopping/no errors/cleanup规则；复用既审Settings有界终态补写方法，不加重试框架、信号探针或运行。结果写失败仍失败，终态stdout区别真实退出判断与较早文件，SIGKILL/掉电不保证。原候选完整逐字归档，七45f8项目源码/worker不变。GO边界事实校准为已接受，新执行字节仍待独审重绑；no gate/0运行/free。仅文本/diff/hash/链接检查，原Node和raw未改。

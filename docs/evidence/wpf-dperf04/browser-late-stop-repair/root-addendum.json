@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-06T21:04:53.229528+00:00",
+  "verdict": "SOURCE_PREPARATION_REOPENED_FOR_LATE_STOP",
+  "finding": "DPERF04-LATE-STOP-FINAL-WRITE",
+  "priority": "P2",
+  "candidate": "/private/tmp/dperf-b2",
+  "supervisorSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+  "sourceReviewSupersededOnlyForThisGap": "/tmp/root-dperf04-45f8-lifecycle-source-review.json",
+  "implementation": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "facts": [
+    "request_stop89-93 sets stopping and appends errors but does not set report state FAILED.",
+    "persist_results286 computes PASS before save(result)287 and save(budget)288-289.",
+    "Final persist_results300 is followed only by handler restoration301-302 and return based solely on cached report state303."
+  ],
+  "failurePath": "A cooperative SIGINT/TERM delivered during the final result/budget writes after PASS was computed records stop/error in memory but can leave cached report state PASS. After handler restoration, return303 can exit0; earlier result JSON may also remain PASS. No work checkpoint follows. This is source-proven reachable control flow, not a runtime signal test.",
+  "repairRequirements": [
+    "Preserve original49859 parent and all original manifests/bindings before minimal own/tmp preparation change.",
+    "Signal handler must immediately invalidate report state; both persisted PASS predicate and actual exit predicate require not stopping and no errors/cleanup.",
+    "Retain handlers throughout terminal persistence; bounded final re-seal if stop arrives during earlier final writes, plus terminal stdout/error/stop accounting so actual outcome cannot rely on stale JSON.",
+    "Keep normal single cleanup owner and original process groups/sandbox/native boundary/worker/assertions/budgets; do not introduce signal test, runtime or broad runner framework.",
+    "Only original WPF-DPERF04 b554v1/9 writer W01 after manager fresh claim; project implementation stays seven-source45f8. Root reviews new parent bytes, and exact boundary binding reused under existing GO authorization without asking again."
+  ],
+  "validation": "Read-only source review, no resource sampling, subprocess/import, browser or signal injection. Browser still0/60000 incl15000 cleanup; historical Node3950 unchanged.",
+  "cleanCode": "Keep external interruption distinct from successful cleanup; actual exit must use terminal truth, not a pre-write cached PASS.",
+  "projectWrites": false,
+  "runtime": "NOT_RUN"
+}

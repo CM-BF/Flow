@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-06T19:48:10.007621+00:00",
+  "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+  "head": "3a51a78ebd7f90e36fa2c0c1f5e9d83c2ec4e51c",
+  "implementation": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "sources": {
+    "apps/execution-dashboard/src/read-model.mjs": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+    "apps/execution-dashboard/src/aggregate.mjs": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+    "apps/execution-dashboard/src/server.mjs": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+    "apps/execution-dashboard/public/app.js": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+  },
+  "readOnlyCount": 32,
+  "nativeChromeBoundaryApproval": null,
+  "noGate": true,
+  "previousRuntimeMs": 0,
+  "totalMs": 60000,
+  "cleanupMs": 15000,
+  "nodeEvidence": "Historical abd2 8PASS/3950ms only; not rerun",
+  "files": [
+    {
+      "path": "/private/tmp/dperf-b2/binding.json",
+      "bytes": 15052,
+      "sha256": "ce84127219097e032aed35edf5836e5e8a43a2874205d4d1198ae177bb46a58e"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/report.md",
+      "bytes": 4118,
+      "sha256": "b55e124864db8c96ff3b77cbdd5a5e780060b62140cfddf03078a2748903e157"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/source-audit.json",
+      "bytes": 3856,
+      "sha256": "57171a8227be6d9362cb47464731a176d33fa051e9b2dc92813b88d4eebdd20e"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/supervisor.py",
+      "bytes": 22052,
+      "sha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/supervisor.py.diff",
+      "bytes": 29797,
+      "sha256": "c5f906dfad7bcba6d159abc25de11d675b21ba074f81638f1149b592686e1073"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/wrapper.diff",
+      "bytes": 11336,
+      "sha256": "7db306af1a0d2999dc7a6e702d1f462d0f4cde44ab70e263e4c66f22764696e8"
+    }
+  ]
+}
