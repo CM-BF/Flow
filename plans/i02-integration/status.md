@@ -9,17 +9,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
-| 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
-| 工作分支状态 | in-progress |
-| 检查状态 | SVC05 22固定source+28raw hash/bytes全同，实际closed/preservation/checkpoint通过；151唯一来源/状态解析通过。本批metadata，0新增产品测试/模型。 |
-| 已集成main状态 / HEAD | 前main aeb已接工程writer/目标会话与发布准备；本批接实际部署封存及owner收口。个人backend362/v15 accepting，Web8d8/caa1/v2，运行版本不随本批main推进。 |
+| 工作基线 / HEAD | 前main3609；本批ENG01H/F01/TUI01D固定已审输入，source比较见工程终端接收记录 |
+| 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
+| 工作分支状态 | completed |
+| 检查状态 | 28源码对独审目标逐字一致，实际组合root noEmit0；复用原领域61/HTTP2/TUI21，不重跑PG/PTY/provider |
+| 已集成main状态 / HEAD | 已审工程合同与终端控制本批待fast-forward；个人backend362/v15 accepting、Web8d8/caa1/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 终端可在同一目标入口看计划、历史和控制；原生工程用途与回执合同已完成独立审查并组合。 |
-| 下一可用交付 | 发布已审终端和工程合同小批；继续真实工程宿主与固定后台发布。 |
+| 下一可用交付 | 本批已交付；固定后台release与真实工程宿主继续独立推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
