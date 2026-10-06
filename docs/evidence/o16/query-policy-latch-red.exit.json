@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-name-pattern=unknown declarations",
+    "experiments/continuous-goal-acceptance/query-policy.test.mjs"
+  ],
+  "exitCode": 1,
+  "seconds": 0.09929354104679078,
+  "freeBeforeBytes": 1613914112,
+  "stdoutSha256": "3d6945849038c449311db6911ff947be74a4a6a742ccc2f1152c469f997731c0",
+  "boundary": "One changed security case selected, two not selected; 0SDK/PG/provider"
+}

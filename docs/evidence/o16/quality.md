@@ -5,3 +5,5 @@
 本段应用：有限两phase而非通用registry；原center/runtime权威不复制；资源/证据与模型语义分离。sourceIdentity不能复用旧BASE guard，故新小permit必须固定当前实际输入；O12两个产品缺口明确留后继。首Interface仅合同/metadata检查，尚无产品测试。
 
 2026-10-06 18:21:19 UTC：有限permit Module安全点复核：精确phase keys、source/confirmation绑定、8192B regular/nonblocking/nofollow入口、不可变validated对象、fsync文件及目录、每task单槽与fresh expiry。修正worker重启需要只读openReservedPhase以及每次entry重核expiry；5不同检查通过。尚未实现public journey/native观察，不把单module当完整交付。
+
+2026-10-06 18:31:15 UTC：query观测局部复核发现冲突final被caller捕获后可再次finish取得旧成功；定向red证明后加持久失败标记，局部1/1通过，未重复前7/另2。frame/Read/modelUsage/denials明确界限，原SDK loop未复制；host allow与实际匹配Read结果、机械与语义结论分开。native worker/公开PG组合仍待实现。

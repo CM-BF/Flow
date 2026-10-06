@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "experiments/continuous-goal-acceptance/query-policy.test.mjs"
+  ],
+  "exitCode": 1,
+  "seconds": 0.20801279100123793,
+  "freeBeforeBytes": 1620815872,
+  "stdoutSha256": "93790051d78e2ceb3366a3853c13576af8cc490f6ee31af23bf526e82799450a",
+  "boundary": "Missing module red; 0SDK/PG/provider; earlier7 not rerun"
+}
