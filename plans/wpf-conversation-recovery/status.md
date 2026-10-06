@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:55 UTC |
+| 最近更新 | 2026-10-06 16:23 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,16 +10,16 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段材料完整性源码固定1b8a335ecf26ece7539ad19e634508ac12ca3729；父supervisor保7244，fixture仅增第二材料；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 五源保持1b8固定；本次只归档独立复核与owner metadata，提交前后核Git clean |
+| 工作树dirty状态 | 全19源保持1b8固定；本次只归档单次27 direct结果与owner metadata，提交前后核Git clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 完整文件选择与原顺序修正已获独立源码复核；实际恢复和发送行为等待受控验证 |
+| 当前产出 | 草稿、未决身份和有序材料的定向恢复检查已通过；真实浏览器刷新与重新连接旅程仍待验证 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
-| 当前阻塞 | ACTIVE: 浏览器与完整构建等待可用磁盘和中心会话语义核验；本段只修材料提交与同步源码，第二direct仍未运行 |
+| 当前阻塞 | ACTIVE: 真实浏览器与完整构建仍等待运行资源和中心会话语义核验；本段定向检查已完成 |
 | 需用户决定 | NONE |
-| 检查状态 | 历史4ba 20/20受控direct PASS；当前27 direct、types、browser全部NOT_RUN。1b8 M1/M2仅源码addressed；types累计52.814/60s未新增 |
+| 检查状态 | 当前1b8受控direct 27/27 PASS；执行HEAD0eef，2.034s，cleanup fulfilled；累计direct4.574/30s。当前types/browser NOT_RUN，types累计52.814/60s未新增；不代表完整feature已验 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -32,7 +32,7 @@
 | WPF-RECOVERY01-01 | in-progress | workspace_panels_owner | [live领取](../../docs/evidence/wpf-conversation-recovery/live-claim.json)，输入/容量研究已读，ConnectionSession/Journal第一段源码与types检查已落 |
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt后检查点屏障已接源码；行为待测 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
-| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | 4ba 20/20通过；后续R4及材料完整性/顺序扩为27case均未运行 |
+| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前27 direct](../../docs/evidence/wpf-conversation-recovery/direct-second.json)通过，源绑定1b8；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
 | WPF-RECOVERY01-05 | blocked | workspace_panels_owner | 资源与中心语义验收门槛未满足 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
@@ -42,7 +42,7 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-已在App接cookie观察器/P01入口，当前源码冻结，等待管理对固定27 direct入口给出新的实际运行门槛；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
+已在App接cookie观察器/P01入口，当前源码冻结；单次27 direct已完成，下一步等待真实浏览器旅程和当前类型检查的明确门槛，不自行续跑；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
 
 ## Dashboard同步
 
@@ -101,3 +101,13 @@ Root固定[02d报告](../../docs/evidence/wpf-conversation-recovery/02d-material
 Root于2026-10-06T15:52:25.524058Z对固定 `1b8a335ecf26ece7539ad19e634508ac12ca3729` 确认M1/M2 SOURCE_ADDRESSED；[root原报告](../../docs/evidence/wpf-conversation-recovery/1b8-material-root-review.json)与[W01原报告](../../docs/evidence/wpf-conversation-recovery/1b8-material-peer-review/report.md)原样归档。无新增局部blocking，但不代表完整feature批准或行为通过。当前27 direct/types/browser仍NOT_RUN，完整target UNKNOWN/review NOT_STARTED。
 
 本人15:54:29.253Z通过既有协调CLI [fresh窄账本](../../docs/evidence/wpf-conversation-recovery/1b8-material-review-claim.json)核6ff v4 active/原21/本人WT与branch/overlap=[]；不是产品PG实验。全部19源码hash仍等固定manifest，本次0产品改动、0types/tests/PG/Chrome/import/资源采样。仅metadata normal push后核local=origin/clean；未生成运行gate、未释放claim。
+
+## 2026-10-06 16:23 UTC — 单次27 direct完成（非完整feature验收）
+
+管理[单次准入原回执](../../docs/evidence/wpf-conversation-recovery/direct-second-admission.json)于16:21:36.564Z核6ff v4/原21/唯一writer/无overlap，execution HEAD `0eef4cda8813afe336df8dc88256da28e206c0d4` clean，19源逐项等固定 `1b8a335ecf26ece7539ad19e634508ac12ca3729`。实际16:21:52.720658Z启动，16:21:54.776950Z结束；[原日志](../../docs/evidence/wpf-conversation-recovery/direct-second.log)为27/27 PASS，Vitest4.0.18测试245ms/总1.55s，supervisor含清理2.034s。
+
+清理fulfilled/errors=[]，实际0.001s、事先预留5s；只本进程组和本tmp cache。500ms样本tmp最大2,766,490B（不是硬峰值上界），清理前瞬时23,910B，日志330B；两值口径不同。累计direct4.574/30s，余25.426s仅预算算术、无自动续跑许可。[manifest](../../docs/evidence/wpf-conversation-recovery/direct-second-manifest.json)保原始gate/config/sandbox/runner与19hash。没有PG、真实HTTP、Chrome、types、install/build或provider；受控IDB/mock fetch不代替真实cookie/CSRF/SSE/刷新/磁盘耐久。
+
+本次只改own metadata，19源不变；完整feature targetUNKNOWN/reviewNOT_STARTED、真实browser及当前types仍NOT_RUN，原历史失败和20case报告不改。源码继续冻结，正常push后核local=origin/clean。
+
+Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据接受](../../docs/evidence/wpf-conversation-recovery/direct-second-root-review.json)；没有独立重跑或完整feature批准。

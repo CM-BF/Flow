@@ -6,7 +6,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-检查：NOT_RUN。Blocking findings：未评估。独立结论：未审查。当前不表示通过。
+当前作者局部检查：固定1b8的27 direct PASS；真实browser/当前types NOT_RUN。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -31,3 +31,9 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 - 本局部无新增blocking。两reviewer均0运行；当前27 direct、types、实际browser NOT_RUN，不把controlled port源码断言当React/HTTP已通过。
 
 完整feature结论仍NOT_STARTED、targetUNKNOWN；原4ba20/20、2498与7244限定源码记录各保原范围。作者本次仅归档与metadata更新，五固定源不改。
+
+## 2026-10-06 16:23 UTC — 作者27 direct证据已到，完整审查未开始
+
+[原始日志](../../docs/evidence/wpf-conversation-recovery/direct-second.log)27/27 PASS，来源execution HEAD0eef/固定implementation1b8/19hash，supervisor2.034s、清理fulfilled。此为作者受控IDB事件端口与public-client mock fetch运行，尚非root独立复跑或真实浏览器验证。M1/M2先前源码addressed结论保留；新增定向行为证据不扩大为完整feature APPROVED。当前types/browser NOT_RUN、targetUNKNOWN、reviewNOT_STARTED；所有旧原始证据保持。
+
+Root于2026-10-06T16:23:29.859009Z独立核原始六文件/归档逐字、19固定blob和gate/run、配置与清理，并读新增材料实际case，结论 [DIRECT27_EVIDENCE_ACCEPTED_SCOPED](../../docs/evidence/wpf-conversation-recovery/direct-second-root-review.json)。该结论接受本次受控证据，未独立重跑、不推真实IDB/挂载Thread/HTTP/cookie/browser，完整feature review仍NOT_STARTED。

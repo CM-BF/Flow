@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 15:55 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 16:23 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -42,3 +42,7 @@
 Send/Queue均先从现绑定检查本稿完整Input选择与composer同序、同ID交接，零chip不等于无选择；未验证、部分同步或不同顺序须在原receipt/HTTP前保稿报错。先B后A的目录验证只更新ready事实，同步不得跳过未ready前项；不改Input或receipt排序。held/inTransit旧交接与已consume材料不混入下一稿；显式remove才缩小本稿选择。必要验证包括受控binding的两个intent、分批metadata/延迟add、原refs有序handoff、显式remove和held/consumed/inTransit隔离，以及未来实际App双文件首POST。此段均源码准备，未增加运行预算。
 
 本段独立来源复核：固定1b8的M1/M2仅源码addressed，见[review](review.md)所归档原报告；不勾选TODO、不将历史20case扩大到当前27case。完整target UNKNOWN / feature review NOT_STARTED；当前direct、types、browser均未运行。五源码继续冻结，后续检查须另有fresh门槛。
+
+### 2026-10-06 16:23 UTC — 当前定向检查事实
+
+固定1b8的27个受控IDB/mock-fetch直接用例已单次通过，execution HEAD0eef，runner2.034s、清理fulfilled，累计4.574/30s。[原始结果](../../docs/evidence/wpf-conversation-recovery/direct-second.json)。完整实现仍需真实App/cookie/CSRF/SSE/刷新旅程及固定独审；TODO不因局部检查全数关闭。当前types/browser未运行，剩余预算不自动授权新运行。

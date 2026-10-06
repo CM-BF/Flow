@@ -73,3 +73,11 @@ P1源码修复：所有submit在官方send/同步localreceipt前检查Input完�
 复用已读本地find-skills、codebase-design、clean-code方法，无安装或联网。实际复核记录职责/接口/错误路径：唯一私有binding派生本稿完整有序材料，Thread仅在原提交接缝调用；稳定准备watcher与reactive同步分开；不把held/inTransit旧材料改为第二registry。Root和W01只读结论均确认M1/M2源码addressed、局部无新增blocking，原始报告逐字复制并hash核。没有新增源码发现或修复，未把源码推论升级为行为事实。
 
 本人fresh正常协调账本于15:54:29.253Z核v4/21scope/本人/无overlap。19源码hash维持1b8 manifest，metadata仅own两目录；原raw不改。当前27case/types/browser全部NOT_RUN，历史4ba20/20不覆盖当前；types52.814s、direct2.540s累计均未增加。只做文本/链接/范围和git diff格式核验，不import actual parser、不运行产品或采样资源。未解除center/IDB/App验证与完整feature review门槛。
+
+## 2026-10-06 16:23 UTC — 单次27 direct / metadata clean-code安全点
+
+本段按find-skills本地优先复用已读clean-code，重新读本地说明并在direct-second-manifest记录实际SHA，无安装或联网。实际复核职责与错误边界：测试范围明确为受控IDB与mock fetch；cleanup错误会阻止PASS；完整feature、作者检查和先前独立源码结论分别记录，不用局部绿回填未知的browser/types。19源逐项核当前/fixed/run一致，原类型失败、20case和资源未准入历史未改。
+
+27/27 PASS，单次runner2.034s、累计4.574s，cleanup0.001s/errors=[]。500ms样本tmp最高2,766,490B、结束清理前瞬时23,910B、raw日志330B如实分开，不称物理峰值上界或内存性能收益。无源修改和新增结构/命名/复杂度问题；当前真正浏览器材料接管、持久刷新、cookie与SSE仍未验，未关闭完整review。仅metadata文本/链接/范围/git格式校验后normalpush，不再运行产品检查。
+
+原始日志直接归档，staged diffcheck仅报告 direct-second.log:10 尾部空行（exit2），保持raw不修剪；四份可写Markdown格式检查0。Root限定证据复核原报告原样归档，sha256 00834002e5f12d2ada15bbb1eccd286ad86af8e40730f090d8695400a35537a1。它不扩大检查或feature审批范围。
