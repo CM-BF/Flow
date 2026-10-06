@@ -221,3 +221,5 @@ Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 
 2026-10-06 18:56 UTC：共享PG/Chrome窗口交已审MessageSettings浏览器一次60s（含15s清理），原资源门槛、0PG/provider且不重复37项。R01 source25b已固定而manifest刚交，O16正在补外层监督；两项准备不占运行窗口。明确区分准备队列与已审可运行队列，空闲时先给已ready项；Web完整cleanup或NOT_RUN归还后，R01独审同源完成即下一位。DPERF05 edd4/9a876v1已核并登记173候选，本批发布；工具完整原文后继沿CHAT05-06排ready，未领产品scope。
 
 文档时间校正：上一管理提交手填的18:57/19:03为误标，实际时钟18:56:41已核，本次改为18:56；Git提交时间与原始运行回执仍为权威，未改任何运行事实。
+
+2026-10-06 18:59 UTC：Web MessageSettings 18:58:58明确归还；一次浏览器5176ms、Chrome在CDP准备前退出，0行为检查，cleanup组/fixture/tmp已确认，无重试。R01 25b/9b79准备独审4源+552绑定通过，已转唯一一次af51＋两保留App隔离窗口（90s工作/20s清理，原fresh/live资源界、0provider/个人操作）；由assignment_review先fresh后执行，未知止步不换参数。O16仅监督源码修复，不并行PG。准备队列与实际运行holder分开。
