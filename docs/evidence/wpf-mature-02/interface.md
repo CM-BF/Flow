@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
+- **下一目录观察只准备计量与安全通知收据修正。** [最小后继接口](native-catalog-observation/interface.md)：链接仅lstat自身、不follow；固定control写父身份；公开method识别不扩大原两项允许表。旧5e6cf失败双审73a194封存，根与私有原件KEEP；新源码待独审/7组反例未运行，actual NOT_OPEN且等待S01安全点。
+
 - **系统配置窗口已消费：初始化成功，但目录与完整计量未完成。** [固定失败结果](native-system-config/run-report.md)：1native ready=true/1次model-list，未知通知触发受控关闭；完整stdio、两个own根因清单不完整KEEP，私有诊断KEEP。无目录/模型资格，完整预算UNKNOWN，不重试；[结果已双审限定接收](native-system-config/result-review.json)，保留整体失败/未知。
 
 - **S01只读镜像已供给，准备包进入审查。** [唯一preparation-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/preparation-ready.md)，owner报告fixed38066603c6b9058fb9d7ef51c3a57956d80c8310 clean/pushed，61项284628B已逐hash；无需重复物化，实际测量仍NOT_OPEN，唯一status由原owner维护。
