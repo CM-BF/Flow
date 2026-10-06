@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:35:00 UTC / 2026-10-06 05:35:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:43:00 UTC / 2026-10-06 05:43:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 873738d9eb998c10bc71721d9b325fcc76ecd7b5 / 59219dbf693964555c075685cf961aa1f9509cf0（当前知识CLI/生产挂载target） |
-| 工作树dirty状态 | 实现已提交；仅本次证据与status收尾 |
+| 工作基线 / HEAD | fb906cb42391971a8b315dbd813f7633927d7265 / 79e06efdda45f04e713838086de2400f75949710 |
+| 工作树dirty状态 | 实现已固定；仅本次证据与status收尾 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；当前11/11直接消费者+typecheck；review修复2/2模块+typecheck，旧FIFO超时及测试harness失败保留 |
-| 已集成main状态 / HEAD | main eb14991a170b72d7d974428b2e440e1faada2c1e 已含O05领域/薄client/生产208a；K01/SVC02领域及薄client已审，当前生产挂载已独审，待main；常驻未部署 |
-| Review | Mika独立APPROVED c03主体+59219修复，P2已关闭；K01 b5和SVC02 caea均Mika独审APPROVED，见review.md |
-| 实现目标 | 59219dbf693964555c075685cf961aa1f9509cf0 |
-| 实现范围 | apps/server/src/index.ts, apps/cli/src/index.ts, apps/cli/src/json-input.ts, apps/cli/src/knowledge.test.ts, apps/cli/src/json-input.test.ts, apps/cli/README.md |
+| 检查状态 | PASSED；当前薄client HTTP1/1与typecheck，原失败保留；不代表PG/原生模型 |
+| 已集成main状态 / HEAD | main fb906cb42391971a8b315dbd813f7633927d7265 已含K01/SVC02领域、薄client、CLI与015/016；SVC02独立部署证据确认常驻同SHA/v3接受。O06共享增量尚未main |
+| Review | O06薄client待独审；K01/SVC02生产c03+592已Mika批准并main，历史见review.md |
+| 实现目标 | 79e06efdda45f04e713838086de2400f75949710 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/goal-graph-runs.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 目标拆分提案已可保存和应用；正在接入知识原文引用与安全维护接口 |
-| 下一可用交付 | 保存和检索项目知识原文；安全更新真实预览 |
+| 当前产出 | 知识原文保存检索与真实预览安全升级已可用；正在接入受限目标拆分 |
+| 下一可用交付 | 让获授权的执行者读取固定计划版本并提交有限拆分提案 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -58,5 +58,8 @@
 
 2026-10-06 05:22 UTC：O05生产208a获Mika独审APPROVED，已审待主线；SVC02薄clientcaea11bbd5589d33e1cad8d73a328587323ad873独立1/1/noEmit待审，不包含领域或现服务升级。
 
-| F01-12 | in-progress | Lead | SVC02四薄client caea已独审；维护领域/host与生产挂载未审未集成 |
-| F01-13 | in-progress | Lead | K01七薄client b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69，HTTP1/1/noEmit待独审；领域与015挂载后继 |
+| F01-12 | completed | Lead | SVC02领域/四client/015016生产已独审并main fb906；真实部署见SVC02 |
+| F01-13 | completed | Lead | K01领域、七client、CLI与015生产已独审并main fb906 |
+
+| F01-14 | in-progress | Lead | O06八薄client通过HTTP1/1/typecheck，待独审及017生产挂载 |
+| F01-15 | pending | Lead | 新真实Web排队两query仅提案，待固定Web/运行前置与GO具体许可；旧预算封存 |
