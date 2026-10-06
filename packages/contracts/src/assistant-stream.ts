@@ -52,3 +52,19 @@ export interface AssistantStreamPage {
    * The final body is fetched through the existing assistant-message owner route. */
   finalMessageId: string | null;
 }
+/** Main reply UI consumes patches automatically; it must not poll growing full blocks. */
+export interface AssistantStreamPatch extends AssistantStreamData {
+  taskId: string;
+  attemptId: string;
+  eventId: string;
+  sequence: number;
+  createdAt: string;
+}
+export interface AssistantStreamPatchPage {
+  taskId: string;
+  attemptId: string;
+  patches: AssistantStreamPatch[];
+  /** Last included runner sequence, or the supplied cursor when empty. */
+  nextCursor: number;
+  hasMore: boolean;
+}
