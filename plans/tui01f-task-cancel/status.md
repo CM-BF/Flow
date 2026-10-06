@@ -91,3 +91,5 @@
 2026-10-06 21:16:17 UTC：Lead main receipt 421b2e89f10225bd37d1928ef2b627c6a375b76a已接收c612及固定记录（31路径输入一致，无新运行）；本owner再次只读逐字核两实验源码与固定c612/main/current全同。仅观察修复接收，F04完整验收继续open，claim保留后继；不重跑PG/Chrome/PTY，不降低gate。
 
 2026-10-06 22:42:03 UTC：fresh核原claim v4 active/本owner/本树后，仅将当前阻塞改为可解析ACTIVE字段并更新本次metadata时间；main核验时间、原失败/限定批准与全部产品/运行证据保持。未执行产品测试或新旅程。
+
+2026-10-06 23:21:49 UTC：六个已冻结共享产品路径正式停写，原 claim v5 原子移出交 TUI01G 新 claim；F04 实验/fixture/own records 七 scope 保持。原 F04 source/检查/失败与当前门槛不变，无重跑。见[精确 handback receipt](../../docs/evidence/tui01f/message-settings-scope-handback.json)。
