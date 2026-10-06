@@ -24,7 +24,7 @@ const fault = code => { if (faults.size < 24) faults.add(code); };
 const excessCaptureBytes = () => Math.max(0, captureBytes - IDLE_LIMITS.captureBytes);
 function manualArchiveBytes() {
   archiveAccountingKnown = false;
-  const ledger = JSON.parse(readFileSync(join(evidence, 'archive-ledger.json'), 'utf8'));
+  const ledger = JSON.parse(readFileSync(join(evidence, 'archive-ledger-v3.json'), 'utf8'));
   if (!Array.isArray(ledger.paths) || ledger.paths.length > 24) throw Error('ARCHIVE_LEDGER');
   let bytes = 0;
   for (const path of ledger.paths) {
@@ -67,7 +67,7 @@ try {
     || !/^[a-f0-9]{40}$/.test(process.env.FLOW_S01_IDLE_EXECUTION_HEAD ?? '')
     || process.versions.node !== '24.20.0' || realpathSync(process.execPath) !== '/opt/homebrew/Cellar/node@24/24.20.0/bin/node'
     || process.env.NODE_DISABLE_COMPILE_CACHE !== '1' || process.env.NODE_COMPILE_CACHE) throw Error('ENTRY_NOT_OPEN');
-  const inputs = verifyIdleInputs(worktree, join(evidence, 'fixed-input-v2.json'), process.env.FLOW_S01_IDLE_INPUT_SHA256);
+  const inputs = verifyIdleInputs(worktree, join(evidence, 'fixed-input-v3.json'), process.env.FLOW_S01_IDLE_INPUT_SHA256);
   inputBytes = inputs.inputBytes; inputManifestSha256 = inputs.manifestSha256;
   if (inputs.manifestSha256 !== process.env.FLOW_S01_IDLE_INPUT_SHA256) throw Error('INPUT_IDENTITY');
   manualArchiveBytes();
@@ -157,7 +157,7 @@ try {
   }
   const computedBudget = idleBudget(inputBytes + excessCaptureBytes(), peakOwnBytes, Number.isSafeInteger(journalWriteBytes) ? Math.max(journalWriteBytes, 4096) : 4096, now(), started);
   const accountingComplete = inputManifestSha256 !== undefined && archiveAccountingKnown && (!root || finalRootSample !== null)
-    && (!child || closeObserved && groupGone && stdioEnded && internal !== undefined);
+    && (!child || closeObserved && groupGone && stdioEnded && caseReceiptConfirmed);
   const budget = { ...computedBudget, known: computedBudget.known && accountingComplete, withinTotal: computedBudget.withinTotal && accountingComplete };
   if (!budget.withinTotal) fault('FINAL_BUDGET');
   const result = { phase: 'PRE_FINAL_PERSISTENCE_SNAPSHOT', window: 's01-idle-claim-cost-once', preparationSource: process.env.FLOW_S01_IDLE_EXECUTION_HEAD ?? null,

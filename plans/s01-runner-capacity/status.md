@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:58:22 UTC / idle 固定main8d84只读输入；历史集成aae |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:03:37 UTC / idle 固定main8d84只读输入；历史集成aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | idle固定main8d84；当前修复source a41e5126a6e5df12b140afe2db7a274fac6ced43（metadata另随）；旧0de832/380666保留。未合入新main |
+| 工作基线 / HEAD | idle固定main8d84；当前最小receipt accounting修复待固定（前包a41e5126/d215保留）；旧0de832/380666保留。未合入新main |
 | 工作树dirty状态 | 本次 idle 观察器/新证据/owner metadata 实施中；历史 A/B/128 source 与 raw 未修改 |
 | 工作分支状态 | in-progress |
 | 检查状态 | idle NOT_RUN，fake/actual/strict 均未运行；历史 A/B 64 distinct 分次最终覆盖与 local strict0 不覆盖新准备 |
 | 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
-| 实现目标 | idle三P2修复 a41e5126固定待复审；0checks。原完整组合0de832为CHANGES_REQUESTED |
+| 实现目标 | idle前两P2已静态关闭；第三P2的receipt accounting最后门禁已修待固定复审；0checks |
 | 实现范围 | claim508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE，mixed、两个A/B evidence、idle-claim-cost evidence、原plan共5 literal；无产品写权 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 空闲runner计量准备已固定，已修复收尾保留、启动期限和截断尾流计量问题；尚未运行 |
+| 当前产出 | 计量完整性改为要求已校验并保存的case receipt；身份/input/journal未知时known与withinTotal均false；尚未运行 |
 | 下一可用交付 | 独立复核新固定包；获得明确小检查窗口后验证9个fake及类型，实际探针另开窗口 |
-| 当前阻塞 | 实现修复已交审；独立复审/验证PENDING，fake/actual NOT_OPEN。A/B仍NOT_OPEN |
+| 当前阻塞 | 最小修复待固定交审；独立复审/验证PENDING，fake/actual NOT_OPEN。A/B仍NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | 原0de832三P2 CHANGES_REQUESTED；a41e5126修复候选待独立关闭；observer early731仅SOURCE_REVIEW无P1/P2/VALIDATION_PENDING；历史A/B批准不覆盖idle |
+| Review | 原0de832三P2 CHANGES_REQUESTED；a41e前两P2静态关闭，第三最后门禁修复待独审；observer early731仅SOURCE_REVIEW无P1/P2/VALIDATION_PENDING；历史A/B批准不覆盖idle |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -220,3 +220,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 18:56:32 UTC：固定0de832完整组合静态审3P2已接受，owner窄修最终inventory/identity gate、预约后10s fresh spawn gate和超截断实际尾流补账/unknown。原fixed-input及原prep包不覆写，新v2独立绑定；literal root tsconfig614B计入输入，统一light floor1107296256B。总2MiB/15s未改，reserve256KiB明确自动128+人工128，单清单含完整plan/status/review及checks/收口；仍0checks、修复待独立复核、NOT_OPEN。
 
 2026-10-06 18:58:22 UTC：修复source a41e5126已push；79固定input逐Git=WT/hash核符、406380B；7delta bindings及3旧包原字节已核。当前[增量交审入口](../../docs/evidence/s01/idle-claim-cost/review-fixes-ready.md)，独立复核未完成、0checks。旧实验计数不变，以各历史原包为准；不将静态哈希检查写成工程测试。
+
+2026-10-06 19:03:37 UTC：fresh claim508f v2 ACTIVE/5scope。依architecture_read增量finding，仅将最终accountingComplete依赖caseReceiptConfirmed（必须身份、input、journal与持久副本确认，且EMPTY），不再以JSON可解析代表可信计量。前两P2与超额尾流收费算法静态核已通过；剩余门禁待固定复审。v3 input/ledger独立保存，原380666与d215包字节不改，15秒/2MiB/256KiB预留不变。clean-code检查命名/单一收据权威/错误保守边界，无新抽象；0fake/strict/actual，run仍未创建。
