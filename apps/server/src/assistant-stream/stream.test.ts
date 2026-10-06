@@ -66,7 +66,9 @@ it('makes durable root text readable before final through task-bound owner patch
   expect(changes.patches).toHaveLength(1);expect(changes.patches[0].text).toBe('你好🙂');expect(changes.nextCursor).toBe(2);
   expect(await request(`/api/tasks/${a.taskId}/assistant-stream/${patch.streamId}`)).toMatchObject({content:'你好🙂',attemptId:a.ownership.attemptId});
   const timeline=await request(`/api/tasks/${a.taskId}/events`);
-  expect(timeline.entries.at(-1).reference.stream).toEqual({kind:'assistant-stream',streamId:patch.streamId,revision:1});
+  expect(JSON.stringify(timeline.entries)).not.toContain(patch.streamId);
+  const persisted=(await pool.query('SELECT entry FROM flow.timeline WHERE task_id=$1 ORDER BY cursor DESC LIMIT 1',[a.taskId])).rows[0];
+  expect(persisted.entry.reference.stream).toEqual({kind:'assistant-stream',streamId:patch.streamId,revision:1});
 });
 
 it('rejects cross-task block/attempt reads and keeps stream endpoints owner-only',async()=>{
