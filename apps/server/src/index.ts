@@ -12,6 +12,7 @@ import { migrateGoalGraphProposals, registerGoalGraphProposalRoutes } from './go
 import { migrateExecutionProfiles, registerExecutionProfileRoutes } from './execution-profiles/index.js';
 import { migrateConversationQueue, registerConversationQueueRoutes, scanConversationQueue } from './conversation-queue/index.js';
 import { migrateConversationContext, registerConversationContextRoutes } from './conversation-context/index.js';
+import { migrateAttachments, registerAttachmentRoutes } from './attachments/index.js';
 import { migrateGoalToolRuns, registerGoalToolRunRoutes } from './goal-tool-runs/index.js';
 import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
@@ -81,6 +82,7 @@ export async function createServer(options: ServerOptions) {
     await migratePackageFetches(pool);
     await migrateActiveSteering(pool);
     await migrateNativeHarnessSources(pool);
+    await migrateAttachments(pool);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {
@@ -155,6 +157,7 @@ export async function createServer(options: ServerOptions) {
   registerEngineeringRoutes(app, pool);
   registerConversationQueueRoutes(app, pool, boss);
   registerConversationContextRoutes(app, pool);
+  registerAttachmentRoutes(app, pool);
   registerGoalToolRunRoutes(app, pool, boss);
   registerGoalGraphProposalRoutes(app, pool);
   registerKnowledgeRoutes(app, pool);
