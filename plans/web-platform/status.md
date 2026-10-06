@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:20 UTC / 主线14c61已接聊天选项与紧凑摘要；服务聚合最近实际采样05:13，待切换通知再核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:23 UTC / 主线14c61已接聊天选项与紧凑摘要；root服务实际05:21:58.690Z已63源确认三片delivered |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -151,3 +151,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:19 管理停点：PROFILEUX固定60d8审计24变更paths全在六scope、5md27links/3TODO一致、target后源码零差；fixed源码diffcheck0，完整metadata仅原样typecheck.log:4末空行例外，未清洗raw。root05:14:39产品审查来源已准确转录，管理不重复browser/typecheck。MainLead与root确认14c61已push/clean、8App/4摘要paths与批准目标一致；管理者只读主仓同HEAD clean。两唯一owner按自己的claim收delivered、全scope停写再release。DPERF与PROFILEUX原receipt已保存，旧scope不追写。PROFILEI01 release/newqueue树仍在处理，未提前授予queue写权。
 
 05:20 QUEUE01正式派发：[PROFILEI01 release](../../docs/evidence/web-platform/profilei01-release-receipt.json)后新14c61树clean预检，freshledger05:19:16.111Z唯一相交为旧CHAT officialThread；owner已明确停写，CAS [CHATv5](../../docs/evidence/web-platform/chat-queue01-amend-receipt.json)于05:19:27.452Z移出该一文件，保留八范围；[新take](../../docs/evidence/web-platform/queue01-take-receipt.json)于05:19:31.947Z成功后followup唯一worker实施。没有APP/旧outbox/shared写权，没有新agent；首canonical就绪后一次登记，take可见不当source已聚合。
+
+05:21:58.690Z root一次真实4320采样63tasks、main14c61 clean：PROFILEUX ef869、PROFILEI01 07cff、DPERF08bd均live/current/clean/issues空/reviewapproved/proofunchanged/maincurrent及scopeEqual真/deliverydelivered。[归属明确摘录](../../docs/evidence/web-platform/profile-delivery-root-observation.json)不是管理者伪造raw；未再抓API。QUEUE01仍一次桥Lead登记待结果。

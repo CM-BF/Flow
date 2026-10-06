@@ -421,3 +421,7 @@ PROFILEUX组合边界：root已审PROFILEI01测试使用region `Locked execution
 领取纠正：worker清单原据约05:17的CLI历史采样，不是当前权。05:18:50 PROFILEI01 7f1v2已released，05:19:27 CHAT082v5移出officialThread，05:19:31 QUEUE01 b4ea85d0v1已领ConversationThread/projection/officialThread等13scope；未来renderer接线必须再核fresh ledger并与QUEUE01唯一writer正式转交。P01/I01其余旧claim仅保留历史观察，不作为将来写权。
 
 05:22 GoalOwner变更下一只读优先级：renderer proposal收口仅候选，未take/写实现。已followup同w01 owner只读现有D05/D06权威图源、latest发布main与freshclaims，准备最小刷新scope（页面上部明确固定快照SHA/核验时间），由root一次桥Lead协调原路径转交后才新feature。不建平行架构事实源、不整页重构；main已含为代码事实，K01/O05未main只planned，runtime验收单列。当前QUEUE01唯一worker优先正常实施。
+
+架构只读proposal固定14c61（研究启动时main/origin clean）：候选只写原architecture-data.js/architecture.js/architecture.test.mjs与原D06plan/evidence，renderer用现有heading p显示同一个baseline的短SHA链接、真实源码verifiedAt及非实时拓扑提示，不写index/CSS/registry。worker05:21账本历史D06v2released、D05v3active但不占五项，正式新take仍必需。14c已含R04停机、P03传输、CHAT/profile/queue领域与只读plugin管理；queue Web操作未完成，FSM/PG/blob和外部SDK边界继续精确保留。研究结束时main已前进eb14991a170b72d7d974428b2e440e1faada2c1e，不把O05倒灌固定14c；正式刷新若选择eb，须明示base并重新核新增域。O04是native goal runs，goal-graph-proposals属于O05，编号与功能不得混写。此段0写产品/0测试/0服务。
+
+来源纠正归因：root曾用动态cwd读取index.ts，将新goal-graph-proposals误归固定14c/O04；w01以git show固定14c证实目录不存在且迁移仅至013，root独立核当前HEAD已eb14991 clean后撤回原claim。此错误不作为图源、不改已审旧D06，后继严格git show固定SHA。原D06唯一source迁移/newbase请求已由root一次桥Lead（拟dashboard-architecture-current/codex/dashboard-architecture-current），未确认前不take；这是证据质量/clean-code安全停点的真实发现与纠正。

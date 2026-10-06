@@ -1,0 +1,49 @@
+{
+  "kind": "root-reported-observation",
+  "source": "root independent read-only GET http://127.0.0.1:4320/api/snapshot; manager did not repeat request",
+  "generatedAt": "2026-10-06T05:21:58.690Z",
+  "taskCount": 63,
+  "main": {
+    "head": "14c61b4062f8040ba6c7239860929366e5bd3fc1",
+    "dirty": false
+  },
+  "observedTasks": [
+    {
+      "taskId": "WPF-PROFILEUX01",
+      "head": "ef8698344f90412891e35fed05c21743d97cb708",
+      "current": true,
+      "dirty": false,
+      "issues": [],
+      "review": "approved",
+      "implementationProof": "unchanged",
+      "mainCurrent": true,
+      "scopeEqual": true,
+      "delivery": "delivered"
+    },
+    {
+      "taskId": "WPF-PROFILEI01",
+      "head": "07cffeba1a818f5697c23efc37a7e5c2b813c035",
+      "current": true,
+      "dirty": false,
+      "issues": [],
+      "review": "approved",
+      "implementationProof": "unchanged",
+      "mainCurrent": true,
+      "scopeEqual": true,
+      "delivery": "delivered"
+    },
+    {
+      "taskId": "WPF-DPERF01",
+      "head": "08bd0a71494f54809f4c4a2fa5b9718285103ea3",
+      "current": true,
+      "dirty": false,
+      "issues": [],
+      "review": "approved",
+      "implementationProof": "unchanged",
+      "mainCurrent": true,
+      "scopeEqual": true,
+      "delivery": "delivered"
+    }
+  ],
+  "limitations": "This is a faithful excerpt attributed to root, not a raw API response. QUEUE01 registration requested, not confirmed by this observation."
+}

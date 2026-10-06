@@ -34,10 +34,12 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 
 - [ ] **WPF-D01-06** 后继取得标题/renderer正式scope后，把架构短SHA与固定快照提示放标题旁。GoalOwner目视D06无阻塞但当前“当前代码”标题易与底部折叠说明不一致；不扩本轮四scope、不阻D06集成。
 
-- [x] **WPF-D01-07** 已移交WPF-DPERF01独立领取与验证：5cd获审，临时样本Git启动29→24且跨snapshot/异target语义保留；不是线上提速承诺，main集成另计。
+- [x] **WPF-D01-07** 已移交WPF-DPERF01独立领取与验证：5cd获审，临时样本Git启动29→24且跨snapshot/异target语义保留；不是线上提速承诺，main6b4已含并bb7efv2释放。
 
-## 有证据的后继性能候选（未领取）
+## 性能候选的历史依据（现已由DPERF独立完成）
 
-root两次只读/api/snapshot工具elapsed约2.67/2.73秒、51源，属于端到端观察而非benchmark。源码aggregate.mjs对同task先compareImplementation(target)，review approved且target相同时再跑相同proof；proof.mjs每次spawn多条git。server已合并in-flight HTTP，无持续cache；可见页面20秒刷新。候选先做单次snapshot内部同key（worktree、target、HEAD、literal scopes）的Promise复用实验，不跨snapshot缓存dirty或claim、不降事实新鲜度。不同target必须分开；如果再考虑Git并发上限，先测进程/延时，不凭感觉限流。实验/实现须明确原owner停写与独立D07 scope/receipt，不因本协作计划获得写权，不阻PROFILE/queue当前交付。
+root两次只读/api/snapshot工具elapsed约2.67/2.73秒、51源，属于端到端观察而非benchmark。源码aggregate.mjs对同task先compareImplementation(target)，review approved且target相同时再跑相同proof；proof.mjs每次spawn多条git。server已合并in-flight HTTP，无持续cache；可见页面20秒刷新。候选先做单次snapshot内部同key（worktree、target、HEAD、literal scopes）的Promise复用实验，不跨snapshot缓存dirty或claim、不降事实新鲜度。不同target必须分开；如果再考虑Git并发上限，先测进程/延时，不凭感觉限流。实验/实现须明确原owner停写与独立DPERF scope/receipt，不因本协作计划获得写权，不阻PROFILE/queue当前交付。
 
 05:00 协作编号更新：WPF-D01-07的proof性能候选正式移交WPF-DPERF01，不能称主线D07（后者human筛选由其owner负责）。新bb7ef22fv1四scope已take，canonical初始化，实际实现/检查由独立owner记录；本协作项只跟踪，不写dashboard或另建第二进度源。
+
+05:23 WPF-D01-06优先范围已由GoalOwner扩为同一次固定源码基线刷新与标题快照提示；只读proposal已回root，由其一次桥Lead定正式base/原源迁移。候选五literal无现active冲突仍须新take，不建平行architecture-data或重复权威图。旧D06继续保留历史8f审查与释放链，新片review必须绑定新固定base/target，运行实证单列。

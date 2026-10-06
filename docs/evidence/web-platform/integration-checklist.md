@@ -21,7 +21,7 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-QUEUE00 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
 | WPF-PROFILEI01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration | codex/web-profile-integration | plans/wpf-profile-integration | docs/evidence/wpf-profile-integration |
 | WPF-DPERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance | codex/dashboard-proof-performance | plans/wpf-dashboard-proof-performance | docs/evidence/wpf-dperf01 |
-| WPF-PROFILEUX01（待登记） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary | codex/web-execution-profile-summary | plans/wpf-profileux-execution-summary | docs/evidence/wpf-profileux |
+| WPF-PROFILEUX01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary | codex/web-execution-profile-summary | plans/wpf-profileux-execution-summary | docs/evidence/wpf-profileux |
 | WPF-QUEUE01（待登记） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue | codex/web-conversation-queue | plans/wpf-queue01-ui | docs/evidence/wpf-queue01 |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
@@ -308,3 +308,5 @@ MainLead正式接收主线14c61b4062f8040ba6c7239860929366e5bd3fc1已push/clean�
 QUEUE01受领：PROFILEI01最后07cffeba1a818f5697c23efc37a7e5c2b813c035 clean、main14c61祖先/8paths一致，全10scope停写后[release v2](profilei01-release-receipt.json)。管理亲核新web-conversation-queue/codex/web-conversation-queue/14c61 clean；05:19:16.111Z ledger只显示旧CHAT官方Thread与13scope相交。依据owner停写确认，[CHATv4→v5](chat-queue01-amend-receipt.json)只移出该文件；[QUEUE01 take](queue01-take-receipt.json) b4ea85d0-ad87-4903-9a59-73281ad17752 v1/05:19:31.947Z committed后followup开工，原13scope不扩App/oldoutbox/profile/shared/根依赖。首canonical到达再登记，进度单源仍owner status。
 
 05:22 QUEUE01首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e已核4Markdown/5本地链接/4TODO一致，status人类能力摘要、implementation、UNKNOWN、NOT_STARTED及receipt身份齐。核时仅自有install.log和AI Elements上游来源证据dirty，未冒称clean当前实现；完整source字段已一次给root桥MainLead，未获部署通知前不重复读4320。
+
+root05:21:58.690Z实际63源确认PROFILEI01/PROFILEUX/DPERF三个最终canonical与main同实现、review和delivery完整，见[来源注明摘录](profile-delivery-root-observation.json)；管理未重复抓API。QUEUE01一次登记请求与尚未确认服务卡片分开。
