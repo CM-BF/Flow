@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T13:30:13.752347+00:00 / mainaae1eb10 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:36:51 UTC / main2f16e30a |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -13,16 +13,16 @@
 | 工作基线 / HEAD | 已审领域582f + client5be；生产固定9406ca5f2aa5a88dbc028d64e09f48f438bd627e |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 3不同新生产旅程分轮通过；旧queue3通过、root types0；原失败保留，0provider |
+| 检查状态 | PASSED d6d5089c680f862e34a8e4d25f8f65d03057e70e；新red1后3/3 HTTP/SSE、types0；生产3分轮与旧queue3历史有效 |
 | 已集成main状态 / HEAD | ENG01H + native工程薄client已main280289；X01依赖待与leaf独立批准后接收 |
-| Review | APPROVED：native_center_owner固定9406生产接线；领域582f已审、薄client5be由Mika独审中 |
-| 实现目标 | 9406ca5f2aa5a88dbc028d64e09f48f438bd627e |
-| 实现范围 | apps/server/src/index.ts, apps/server/src/main.ts, packages/client/src/browser-session-production.test.ts |
+| Review | CHANGES_REQUESTED：Mika薄client5be P2已修d6d5089c待增量复审；生产9406独立APPROVED保留 |
+| 实现目标 | d6d5089c680f862e34a8e4d25f8f65d03057e70e |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/browser-session.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 连接会话已接入真实中心启动入口，重新连接可保留身份，退出连接不取消后台任务。 |
-| 下一可用交付 | 完成生产接线独审并交给网页恢复功能使用；个人入口保持当前版本。 |
+| 当前产出 | 登录会话已接入真实中心；客户端鉴权边界的小修正已验证，正在完成复审。 |
+| 下一可用交付 | 合入登录恢复公开接口，供网页自动恢复同一连接。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -177,6 +177,8 @@
 
 2026-10-06 12:52 UTC：F01 v33已交回events.ts给S01P05；[原子回执](../../docs/evidence/f01/s01p05-events-handback.json)。server/runner manifest与lock仍本owner短单写窗口处理X01正式workspace依赖，不阻其他源码领取。
 
-| F01-36 | in-progress | Lead | [插件安装模块依赖](../../docs/evidence/f01/plugin-runtime-dependency-manifest.json)；只3共享路径和正式workspace输入，待独审 |
+| F01-36 | completed | Lead | [插件安装模块依赖](../../docs/evidence/f01/plugin-runtime-dependency-manifest.json)；只3共享路径和正式workspace输入，待独审 |
 
 | F01-37 | in-progress | Lead | 固定领域DTO31824d8；claim v34新增client直接检查；不操作个人服务。 |
+
+2026-10-06 13:36:51 UTC：X01 leaf与F01依赖已main2f16e30a，F01-36完成。029-plugin-material-installs.sql正式预留X01架构owner，028会话不冲突；共享mount/export仍本owner。

@@ -7,3 +7,5 @@ Methods: `browserSession(signal?)`, `connectBrowserSession(ownerToken,signal?)`,
 Domain DTO is fixed31824d8. Web owns UI/session lifecycle and reads CSRF after refresh; center owns expiry/revocation/origin/role. CLI continues old Bearer. New-provider/domain policy is not inferred by transport. Ordinary reads and SSE use the same authentication constructor.
 
 Validation:3 new real HTTP/SSE cases plus51 existing client/ACK cases passed; root noEmit exit0. Credentials option is observed at real Node fetch, not claimed as browser Cookie/CORS validation. No PG/provider/personal service used.
+
+2026-10-06 13:36:51 UTC: P2 revision d6d5089c680f862e34a8e4d25f8f65d03057e70e explicitly uses credentials:omit for Bearer HTTP/SSE; cookie and explicit login remain include. Fixed5be historical checks did not prove browser default cookies were absent; reviewer found this configuration gap. Original red remains, only1 selected newred then3 localgreen andtypes0; no repeated PG/domain acceptance.
