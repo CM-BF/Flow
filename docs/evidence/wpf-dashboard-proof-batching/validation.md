@@ -27,3 +27,5 @@ ls-tree在此五scope样本减少80%，总Git starts约减半。墙时只有一�
 源码diffcheck为0；全metadata diffcheck仅raw历史first-green.log:45/47、overlap-diagnostic.log:16/18、red.log:16/18的断言缩进空白。原日志保持，不泛称全evidence零空白。未运行全库、真实页面/部署时延、provider、DB或容量压力。
 
 独立review：root 2026-10-06 10:41:14 UTC APPROVED；独立27/27、0skip，14.568745417秒，[原log](root-independent.log)。该局部回归与60秒限额的aggregate性能实验不是同一计量，未增加实验样本。
+
+10:45:38.888Z实际聚合[原观察](dashboard-review-before.json)将六trace.jsonl判为未声明非metadata，导致review unknown；并非固定源变化。合法owner仅将六归档名追加.log，保持原字节/SHA与原运行记录，[逐文件映射](trace-archive-map.json)。固定measure脚本仍写原JSONL名称，不倒改运行输入、不放宽proof metadata规则、不重跑实验或产品检查。

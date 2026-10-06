@@ -4,7 +4,7 @@
 
 - [接口与限制](interface.md)、[验证/失败/样本比较](validation.md)、[quality](quality.md)、[skills](skills.json)
 - [固定源绑定](source-binding.json)、[checks](checks.json)、[最终27direct](final-direct.log)
-- [baseline](baseline.json)、[after](after.json)、[测量脚本](measure.mjs)；原始baseline-16/64/128与after-16/64/128.trace.jsonl同目录
+- [baseline](baseline.json)、[after](after.json)、[测量脚本](measure.mjs)；原始baseline-16/64/128与after-16/64/128.trace.jsonl.log同目录（原字节不变，[归档映射](trace-archive-map.json)）
 - [root独立27原log](root-independent.log)
 - [claim原件](take-receipt.json)、[领取账本](take-ledger.json)
 
