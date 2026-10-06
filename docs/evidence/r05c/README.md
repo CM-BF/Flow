@@ -15,3 +15,9 @@ Stack：Node24.20.0 / pnpm9.15.4 / Vitest4.0.18 / TypeScript；local find-skills
 最终test改为只依赖公开context.task.prompt后，单选并发检查1通过/32未选，见c0-concurrency-selected.stdout/json，不重复计入92。全workspace noEmit退出码见c0-typecheck.json与原stdout；不是全库行为测试。
 
 Clean-code复核：2026-10-06 09:33:55 UTC，3源码文件。新class只传固定结算证据，不透传原生正文；无新调度器、存储状态或错误文本猜测。保留普通异常、取消、ownership lost、outbox与并发状态所有权，6条新增行为覆盖journal/重启/取消顺序/并发而非构造器。C1映射/deny/JSONL-to-PG尚未实现，不由本组通过推断。
+
+## C1 固定投影入口提升
+
+Mika回执许可只读提升固定0d0524c3439363d1fe60aad63f62817ba51fa2a5的final.mjs至apps/runner/src/native-harness/codex/projection.mjs，原算法逐字相同，SHA256见projection-source.json。公开入口createOrdinaryFinalProjection({threadId,turnId}).accept(notification)及声明projection.d.mts。没有写实验scope；待独审后Mika把实验改为薄import，避免长期双实现。
+
+独立临时消费者用同一固定来源的15项final测试，仅把一次module import指向生产入口，其余断言字节保持；Node24实际15/15，原始输出/来源哈希见projection-tests.stdout/json，临时目录正常清理。此组证明算法提升，不证明C1宿主/deny/原生执行。原AssertionError可能携带原生内容，生产adapter必须归一且不保留cause；入口注释/Interface明确该约束。
