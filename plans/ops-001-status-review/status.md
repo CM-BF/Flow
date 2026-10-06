@@ -148,3 +148,5 @@ RELEASE03 A3附件场景通过、mixed资源中断、B未启动；累计7,983/18
 本批12/12全部完成即停止；最终可用1,143,238,656B，B启动线1,207,959,552B仍差64,720,896B，且没有额外共享波动空间。A3部分结果与累计7,983ms保持，不再仅过A最低线启动。逐树操作可用量差值合计116,363,264B仅观察，不作独占回收归因。
 
 最后5树远端feature分支不存在如实留证；按原授权逐候选核本树固定Git与实际远端main8ac4322d同blob，不增设整feature必须远端存在的门槛。自有/不同blob、所有生产源码/tests/rules/plans/依赖及真实消费闭包均KEEP。12树clean/保留hash、7保护树与共享配置不变；没有删除branch/object或用户数据，0产品测试/模型/个人服务操作。最终[唯一回执](../../docs/quality/sparse-worktree-2026-10-06/next12-summary.json)保存旧KEEP报告与修正依据。
+
+2026-10-06 16:23 UTC source-only闭包：TUI01F恢复173个固定输入/704532B，231个保留文件hash不变；CORE恢复155个固定输入/673771B。CORE操作后HEAD检查因owner并行提交metadata失败，未重试写入；随后只读核155固定hash、310个原HEAD可见文件和3份prepared配置一致，产品diff为0，未追溯补造未预先持久的4份untracked运行hash。两次均0安装/导入/测试/PG/provider，[CORE事实](../../docs/quality/sparse-worktree-2026-10-06/claude-vertical-source-materialized.json)、[TUI事实](../../docs/quality/sparse-worktree-2026-10-06/tui01f-followup-source-materialized.json)。小源码恢复不套PG运行gate；原1GiB收尾余量及运行增量门槛保持。下一批最多12棵已交付树按同一保护规则核对，准备到1GiB+160MiB或数量上限后再协调WebA→B。
