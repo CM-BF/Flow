@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:26 UTC；发布采样P2修复与本地检查已固定，个人运行未开始 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:31 UTC；唯一窗口在现场准入停止，个人服务未变更 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 后台更新和新网页切换的兼容证据已齐；逐步检查已补齐原子文件采样与空闲受理保护，本地检查通过，正在等待增量独审与固定源码窗口。 |
-| 下一可用交付 | 按已授权方向先更新后台、核对保留数据并恢复接收，再单独切换网页；当前未操作个人服务。 |
+| 当前产出 | 兼容证据与执行准备已审；现场准入发现观察脚本使用的受理文件层级与真实runner不一致，已在任何发布变更前停止并保留失败。 |
+| 下一可用交付 | 修正精确受理路径并做局部合成路径检查，独审后再安排新的唯一发布窗口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；033dd固定方案获Lead方向批准；56306d两脚本已完整审读；a6441a426ea98ee90e8baac44b75fd1d0d61cbeb的admission采样P2修复待独审，8个不同本地检查，0个人运行 |
+| Review | [review.md](review.md)；033dd固定方案获Lead方向批准；56306d两脚本已完整审读；a6441a426ea98ee90e8baac44b75fd1d0d61cbeb的admission采样P2独立APPROVED，8个不同本地检查，0个人运行 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
 | 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web恢复已执行，d629搬运及af51新发布未启用。 |
 
@@ -83,3 +83,7 @@
 - 固定执行准备source：a6441a426ea98ee90e8baac44b75fd1d0d61cbeb；完整绑定见[admission-fix-manifest](../../docs/evidence/svc05-history-compatibility/release-operation/admission-fix-manifest.json)。原56306d与syntax-only输出保留。
 - 8不同本地文件/纯比较检查：初8/8后收紧临时目录拒绝再8/8，累计596ms；不是16不同、不是个人操作验收。checkpoint先于自有tiny目录清理，group absent，0PG/provider/个人服务。
 - 发布未开始；历史数据库/身份事实只作保护锚，未来窗口须全新现场准入，不使用旧零任务替代。
+
+### 20:30窗口实际停止
+
+唯一01-before退出1/181ms，RUNNER_ADMISSION_MISSING；原raw其实保存了baseUrl摘要一级目录下的admission文件hash，不能从hash猜idle。观察器误匹配根路径，停在任何材料导入/维护/服务变更前。02–20均未执行，0主动模型/用户tab。Lead已关闭窗口并负责恢复开发checkout；不换参数重试。见[原始失败与分析](../../docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2030/analysis.json)。

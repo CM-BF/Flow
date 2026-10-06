@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T20:31:46.876463+00:00",
+  "window": "CLOSED by Lead message after STOP; original checkout restoration belongs to Lead.",
+  "outcome": "STOP_BEFORE_MATERIALS",
+  "step": "01-before",
+  "exitCode": 1,
+  "operatorStopped": true,
+  "elapsedMs": 181,
+  "rawCode": "RUNNER_ADMISSION_MISSING",
+  "originalResultUnchanged": true,
+  "remainingSteps": "02-20 NOT_EXECUTED",
+  "sideEffects": {
+    "reportImports": 0,
+    "artifactTransfer": 0,
+    "drain": 0,
+    "serviceReplacement": 0,
+    "resume": 0,
+    "pointerPublish": 0,
+    "operatorQueries": 0,
+    "userTabActions": 0
+  },
+  "diagnosis": {
+    "source": "fixed af51 apps/runner/src/runtime.ts:43-45 and environment.mjs runner baseUrl",
+    "actualJournal": {
+      "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+      "bytes": 80,
+      "sha256": "67cdfdcdbbf1d646cbfa12552b58299ec68b7ddaa70e8453ae7786ab830f590c"
+    },
+    "samplerExpected": "admission.json at runner root (incorrect)",
+    "depthDifference": "actual journal is inside one normalized-baseURL SHA256 namespace directory",
+    "derivedNamespace": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1",
+    "nestedAdmissionBodyReadByAnalysis": false,
+    "idleStatus": "UNKNOWN; original snapshot only stored bytes/hash for this nested path",
+    "smallestProposal": "Pass exactly the namespace derived from trusted fixed host baseUrl into the sampler, match its admission/.tmp only, keep every whole-root history byte/hash and all missing/pending/identity failure gates. Add namespaced tiny-file positive/negative checks before a separately authorized attempt.",
+    "sourceModified": false
+  },
+  "cleanup": "Read-only observer PID ended; no new service/process group/temp resource created by operation; evidence retained."
+}
