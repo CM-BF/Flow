@@ -15,4 +15,4 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [ ] **F01-06** CHAT public合同/client/中心挂载与typed final接缝，先接口独立批准，三端真实旅程另验。
 
-- [ ] **F01-07** X02 registry生产挂载、公用client/CLI，验证持久登记与实际不可用状态；安装/加载仍留X01后继。
+- [x] **F01-07** X02 registry生产挂载、公用client/CLI，验证持久登记与实际不可用状态；安装/加载仍留X01后继。

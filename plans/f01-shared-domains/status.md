@@ -12,7 +12,7 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 095497dc1719d10df8309fdf17d95539fc891e06：插件CLI真实PG1+client4共5/5、typecheck；CHAT生产10/10由CHAT02保存 |
 | 已集成main状态 / HEAD | main ac4e34de2331dce276440df8969883c1883060ef已含历史F01/O01消费者/CHAT薄client841；CHAT中心/typed与X02接线仍仅本分支 |
-| Review | NOT_STARTED 095497插件公共接线/37ab CHAT生产挂载；2b754/84117历史已批准，领域模块各自独审 |
+| Review | APPROVED 095497插件接线/Mika；37ab CHAT生产挂载/Goal Owner；领域CHAT01/02/X02各自独审 |
 | 实现目标 | 095497dc1719d10df8309fdf17d95539fc891e06 |
 | 实现范围 | packages/client/src/index.ts, apps/cli/src/index.ts, apps/cli/src/plugins.test.ts, apps/server/src/index.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
@@ -32,7 +32,7 @@
 | F01-05 | completed | Lead | O01公共client/CLI真实PG最终1/1+初次6/6、typecheck；Goal Owner2b754批准且main4e817已接收 |
 | F01-06 | in-progress | Lead | CHAT client841已审，生产37ab挂载；CHAT01 typed d0f和CHAT02 2e已独审，真实两轮条件批准但0调用 |
 
-| F01-07 | in-progress | Lead | X02已审3d0c领域输入；公共接线095497，真实PG CLI1+client4/typecheck，待独审 |
+| F01-07 | completed | Lead | X02已审3d0c领域输入；公共接线095497，真实PG CLI1+client4/typecheck，Mika独审APPROVED |
 
 未调用模型或云；具体检查/已审target后续在本owner更新，main事实独立。dashboard已登记唯一来源；此前共享已集成，O01增量已审/集成；CHAT接线进行中。
 
