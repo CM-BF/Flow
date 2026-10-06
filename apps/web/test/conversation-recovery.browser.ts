@@ -209,6 +209,8 @@ async function records(page: Page): Promise<{ id: string; kind: string; phase?: 
 async function worker(init: Init) {
   const { chromium, expect } = await import("@playwright/test");
   const { startRecoveryFixture } = await import("./conversation-recovery.fixture");
+  const { decodeConversationTurnAccepted } = await import("@flow/client");
+  const { conversationTurnSchema } = await import("@flow/contracts");
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
   const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
   let errorBytes = 0;
@@ -381,7 +383,8 @@ async function worker(init: Init) {
       const verifyBodyLoss = observeTurnBodyLoss(page, await input().inputValue()); fixture!.dropNext("turn"); await input().press("Enter");
       await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
       expect(turnRows()).toHaveLength(1); const first = turnRows()[0]!; await verifyBodyLoss(first);
-      expect(JSON.parse(first.body).attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
+      const requested = conversationTurnSchema.parse(JSON.parse(first.body));
+      expect(requested.attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
       await input().fill("Next draft stays independent"); await expect.poll(async () => (await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
       const posts = postRows().length; await page.reload(); await expect(input()).toBeVisible(); expect(postRows()).toHaveLength(posts); expect(turnRows()).toHaveLength(1);
       const dialog = await openRecovery(); const command = dialog.locator("li").filter({ hasText: "outbox receipt" }); await expect(command).toHaveCount(1);
@@ -389,8 +392,13 @@ async function worker(init: Init) {
       const retry = turnRows()[1]!; expect({ key: retry.key, body: retry.body }).toEqual({ key: first.key, body: first.body });
       await expect.poll(async () => (await records(page)).find(record => record.kind === "command")?.phase).toBe("accepted");
       expect(turnRows()).toHaveLength(2); requireThat(first.responseBody && retry.responseBody, "Both real ACK identities required");
-      const originalAck = JSON.parse(first.responseBody), retryAck = JSON.parse(retry.responseBody);
-      expect(retryAck.replayed).toBe(true); expect({ id: retryAck.turn.id, taskId: retryAck.turn.taskId }).toEqual({ id: originalAck.turn.id, taskId: originalAck.turn.taskId });
+      const originalAck = decodeConversationTurnAccepted(JSON.parse(first.responseBody), fixture!.conversationId, requested);
+      const retryAck = decodeConversationTurnAccepted(JSON.parse(retry.responseBody), fixture!.conversationId, requested);
+      for (const ack of [originalAck, retryAck]) {
+        expect(ack.turn.id.length).toBeGreaterThan(0); expect(ack.turn.task.id.length).toBeGreaterThan(0);
+      }
+      expect(retryAck.replayed).toBe(true);
+      expect({ id: retryAck.turn.id, taskId: retryAck.turn.task.id }).toEqual({ id: originalAck.turn.id, taskId: originalAck.turn.task.id });
       expect(retry.responseSha256).toBe(digest(retry.responseBody)); expect(retry.fault).toBeUndefined();
       await page.keyboard.press("Escape"); expect((await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
       expect(fixture!.wire.some(row => /\/stream/.test(row.path) && row.cookie && !row.bearer && row.status === 200)).toBe(true); coverage.cookieSseHandshake = "PASSED";

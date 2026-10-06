@@ -127,3 +127,7 @@ Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据�
 ## 2026-10-06T17:35:32.287102+00:00 — body-loss / PG清理固定源码安全点
 
 固定 `7686139952becf530bcf57966425bd9d7b88b697`；[19源manifest](../../docs/evidence/wpf-conversation-recovery/bodyloss-checkpoint.json)核仅两harness变化、其余17源=ec91/1b8。[接口与边界](../../docs/evidence/wpf-conversation-recovery/bodyloss-source.md)：真实ACK full-length/strict-prefix/Connection-close，同Request headers→requestfailed和exact1/2原身份；两个ownedDB零连接观察各≤1s/≤8次并受parent同一hardAt，有限pid/state+safe code，无FORCE。全部NOT_RUN，旧27PASS/原raw保持，不借RELEASE运行证明。CREATE/Queue/Steer实际journey仍PENDING，完整target UNKNOWN/review NOT_STARTED。0types/runtime/PG/Chrome/free；source冻结待独审，metadata正常push后核双端clean。
+
+## 2026-10-06 17:41 UTC — 768 唯一P2源码修复启动
+
+本人核[管理fresh窄观察](../../docs/evidence/wpf-conversation-recovery/768-task-identity-claim.json)：6ff v4原21/唯一owner/overlap[]，a3c clean。[Root原审查](../../docs/evidence/wpf-conversation-recovery/768-root-source-review.json)与[peer](../../docs/evidence/wpf-conversation-recovery/768-peer-review/report.md)一致确认turn.taskId不存在，两个undefined可能错误相等。仅改browser为公共decoder和实际公开conversationTurnSchema（本树无conversationTurnAdmissionSchema同名出口）核原请求与两个真实ACK、非空turn.id/task.id；worker内导入保parent built-ins-only。新P2未运行；0types/import/test/HTTP/PG/Chrome/free，预算不变。

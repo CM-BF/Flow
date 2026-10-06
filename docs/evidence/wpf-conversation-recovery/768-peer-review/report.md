@@ -1,0 +1,31 @@
+# Recovery 768 two-harness independent source review
+
+Target `7686139952becf530bcf57966425bd9d7b88b697`, metadata `a3c81dd9a4fb4a5027b48181416fd7be70833263`; reviewer w01_owner, 2026-10-06 17:38:18 UTC. No additional blocking issue found beyond root's already identified P2. This does **not** approve the whole target while that P2 remains. Execution remains **NOT_RUN**: no imports, types, tests, HTTP/PG/Chrome, free-space sample, install/build or Recovery project write. All reads used fixed Git objects; only installed dependency package/source files were read by exact paths. Sources and hashes are in `audit.json`.
+
+## Known P2 independently confirmed, not re-filed
+
+`conversation-recovery.browser.ts:391–394` compares `retryAck.turn.taskId` with `originalAck.turn.taskId`. Public `packages/contracts/src/conversations.ts:121–131` defines `turn.task: TaskSummary`, not a top-level `turn.taskId`. Both missing values can compare equal even if nested task IDs differ. Actual `turn.id`, replayed flag and key/body are still asserted, so this is specifically a missing task identity guarantee. Require the genuine nested IDs to be nonempty and equal along with the original turn ID. Root already raised this; retain it in one consolidated correction, no new task.
+
+## ACK body-loss evidence and error ownership
+
+Fixture22–39 bounds a complete upstream command ACK to128KiB, validates framing/UTF8/JSON and actual accepted identity, and captures exact real body/hash. Fixture231–250 limits buffering to successful command create/turn/queue ACKs; session/token bodies are not retained, ordinary/SSE responses still stream at252–257. Non-injected success forwards the real body, rather than manufacturing a valid acknowledgement.
+
+Fixture43–72 sends real status/type/full byte Content-Length, only the first real byte, Connection:close, then FIN after the write callback. Separate local header/prefix/end/close fields and1s close watchdog do not claim remote delivery. Abort/socket/response errors reject the owned operation; callbacks/timer/listeners end on close. Fixture245–250 retains ACK failure even if outer response-close already settled; close278–285 joins outstanding ACK writes and checks captured errors. A failure cannot become a passed fixture merely because the socket disappeared.
+
+Browser236–280 observes before the Send, selects exact path/text then one exact Playwright Request, and compares path/key/body hash/status to Wire. It requires request→response-headers→requestfailed with no requestfinished, exact framing and original-prefix digest, local close completion without error, and a bounded2s wait limited by the worker deadline/abort. It does not call response.finished(). Handler removal occurs both in the verifier finally and worker446.
+
+Browser377–396 preserves actual unknown UI, exactly1 request before explicit Retry including the reload, exactly2 afterward, same key/body and ordered attachment refs, real replayed acknowledgement and independent new draft. The known nested task-ID gap above prevents claiming the complete identity assertion. Current failed-request code accepts only the stated failure categories after same-Request/header proof; it does not convert a transport failure into a passed UI without these checks. Actual Chrome event ordering and the native FIN behavior are still unrun.
+
+## Owned DB cleanup, installed dependency facts and budget boundary
+
+Resolved pg8.23.1 / pg-pool3.14.0 exact package/source hashes match the author's read-only manifest. pg-pool index133–143/172–188 removes idle clients from `_clients` before asynchronous `client.end`; `end`488–498 therefore need not mean remote backend absence. The new observation addresses this actual version mechanism, without claiming a reproduced TUI/Recovery failure.
+
+Fixture117–143 queries only the generated database, serially; each phase has at most8 attempts, a1s deadline capped by parent cleanupDeadline, query timeout≤250ms and delay≤50ms. It records total plus at most16 PID/state pairs, rejects malformed counts, retains SQLSTATE or safe OBSERVATION_FAILED, and fails on error/nonzero/deadline. It never infers zero from a caught error. Before-marker and after-marker calls152/161 are distinct; after-marker clears the former connections value first. Marker equality158, confirmed CREATE + marker flags153, ordinary DROP163 and post-DROP existence164 remain required; no FORCE or unrelated termination is introduced.
+
+Parent passes its existing monotonic hardAt atbrowser176, sharing the same process/performance clock as observeZero. It does not grant extra cleanup time. Native pg per-query timeout is honored in client702–736; Pool.query449–478 releases the errored client and `_release`392–397 removes it, so this code does not abandon a Promise.race and start overlapping observer calls. A caution: the<=250ms timer begins after pool acquisition; if the admin connection has disappeared, acquisition may still take the configured1500ms. Therefore the stated1s is an observation-policy deadline, not a hard settlement guarantee. The post-await deadline check132 prevents accepting late zero, and the existing parent hard-stop preserves incomplete ownership records. No additional blocking failure path identified from this boundary; actual cleanup and PG/WAL behavior remain to be measured only after admission.
+
+## Scope and unchanged coverage
+
+All19 manifest source hashes equal fixed768 and metadataa3c;17 production/direct-test sources equal ec91. Material draft312–368, cross-tab369–376 and page-only auth loss398–425 are unchanged by this delta. New transport instrumentation does not make those scenes executed. Coverage221–225 explicitly keeps CREATE two-stage, Queue/Steer, profile/knowledge/steering draft, second center and SSE content pending. Historical1b8 direct27 remains historical, not new browser evidence. The scenario label at377 says re-auth, but that case performs reload/cookie re-observation, not an auth-expiry/reconnect; that separate operation is covered by the still-unrun pageOnlyAuthLoss case. Reports should preserve this distinction.
+
+Method: reused installed find-skills, clean-code and webapp-testing; focused one owned fault seam, exact request identity, failure preservation, authority/marker checks and deadline ownership. No generic framework or new runtime request.
