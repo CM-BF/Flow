@@ -19,7 +19,10 @@ export function requestFromReceipts(template, baseline, held, authorization) {
 }
 
 export async function observeLegacyIntent(request) {
-  return observeHost(async (root, baseUrl) => {
+  return observeHost((root, baseUrl) => sampleLegacyIntent(request, root, baseUrl));
+}
+/** Same private file sampler as the real observation; it needs no future maintenance identity. */
+export async function sampleLegacyIntent(request, root, baseUrl) {
     if (root !== join(request.root, 'runner') || baseUrl !== request.baseUrl) throw Error('EXACT_NATIVE_ROOT');
     const bound = await boundIntent(request); await exactHistory(request);
     const st = await lstat(root);
@@ -28,7 +31,6 @@ export async function observeLegacyIntent(request) {
     return { dev: st.dev, ino: st.ino, uid: st.uid, files, totalBytes: files.reduce((n, file) => n + file.bytes, 0),
       admission: { idle: false, legacyUnresolved: true, originalSha256: sha(bound.original.bytes), newSha256: sha(bound.replacement), newBytes: bound.replacement.length },
       observations: 'Exact fixed schema/hash/identity and complete four-file history; not ordinary idle.', nonAtomic: true };
-  });
 }
 
 export function compareLegacyRelease(before, after, phase, proposal, request, retirement) {

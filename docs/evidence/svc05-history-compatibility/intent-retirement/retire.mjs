@@ -34,14 +34,18 @@ async function persist(path, bytes) {
 }
 const encoded = value => Buffer.from(JSON.stringify(value) + '\n');
 
-function locations(request) {
-  if (request.source !== source || !uuid.test(request.retirementId) || !uuid.test(request.operationId)
-    || !uuid.test(request.runnerId) || !Number.isSafeInteger(request.holdVersion) || request.holdVersion < 1
+function journalLocations(request) {
+  if (request.source !== source || !uuid.test(request.retirementId)
+    || !uuid.test(request.runnerId)
     || request.baseUrl !== 'http://127.0.0.1:61227' || !/^[a-f0-9]{64}$/.test(request.originalSha256)) fail('REQUEST');
   const namespace = sha(request.baseUrl.replace(/\/$/, ''));
   if (request.namespace !== namespace) fail('NAMESPACE');
   return { namespace: join(request.root, 'runner', namespace), journal: join(request.root, 'runner', namespace, 'admission.json'),
     archive: join(request.root, 'admission-retirement-' + request.retirementId) };
+}
+function mutationLocations(request) {
+  if (!uuid.test(request.operationId) || !Number.isSafeInteger(request.holdVersion) || request.holdVersion < 1) fail('MAINTENANCE_REQUEST');
+  return journalLocations(request);
 }
 async function checkDirectories(request, paths) {
   for (const [path, expected] of [[request.root, request.rootIdentity], [join(request.root, 'runner'), request.runnerIdentity], [paths.namespace, request.namespaceIdentity]]) {
@@ -63,7 +67,7 @@ function fixedNewBytes(original) {
   return Buffer.from(JSON.stringify({ ...value, inFlight: null }));
 }
 export async function boundIntent(request) {
-  const paths = locations(request); await checkDirectories(request, paths);
+  const paths = journalLocations(request); await checkDirectories(request, paths);
   const original = await readRegular(paths.journal);
   if (!sameIdentity(original.stat, request.journalIdentity) || sha(original.bytes) !== request.originalSha256) fail('ORIGINAL_CHANGED');
   return { paths, original, replacement: fixedNewBytes(original.bytes) };
@@ -76,7 +80,7 @@ export async function retireIntent(request, ports) {
   const result = () => ({ phase, originalSha256: request.originalSha256, newSha256: replacement ? sha(replacement) : null, renamed,
     confirmationSha256: confirmations.map(fact => sha(encoded(fact))) });
   try {
-    paths = locations(request);
+    paths = mutationLocations(request);
     return await ports.withFence(request, async confirm => {
       const initial = await confirm(); assertConfirmation(request, initial); confirmations.push(initial); await checkDirectories(request, paths);
       ({ original, replacement } = await boundIntent(request));
@@ -119,7 +123,7 @@ export async function retireIntent(request, ports) {
 /** Read-only diagnosis after unknown; byte equality is not an ACK or permission to retry. */
 export async function inspectRetirement(request) {
   try {
-    const paths = locations(request); await checkDirectories(request, paths);
+    const paths = mutationLocations(request); await checkDirectories(request, paths);
     const original = await readRegular(join(paths.archive, 'original.bin'));
     if (sha(original.bytes) !== request.originalSha256) fail('BACKUP_CHANGED');
     const replacement = fixedNewBytes(original.bytes), current = await readRegular(paths.journal);
