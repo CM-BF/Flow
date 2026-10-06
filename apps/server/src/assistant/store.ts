@@ -12,7 +12,7 @@ interface MessageRow {
   native_session_id: string; source: 'claude.sdk.result'; source_message_id: string; content_digest: string;
   detail_id: string; settings: AssistantSettings; created_at: Date;
 }
-const columns = 'id,ordinal,task_id,attempt_id,event_id,sequence,native_session_id,source,source_message_id,content_digest,detail_id,settings,created_at';
+const columns = 'id,ordinal,task_id,attempt_id,event_id,sequence,native_session_id,source,source_message_id,content_digest,detail_id,created_at';
 export async function saveAssistantFinal(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, event: FinalEvent) {
   if (task.submission.harness !== 'claude' || attempt.native_session_id !== event.nativeSessionId) throw new HttpError(409, 'assistant_session_mismatch', 'Assistant final must match the recorded native session of this Claude attempt.');
   const session = await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2 AND runner_id=$3 AND active_task_id=$4', [event.nativeSessionId, 'claude', attempt.runner_id, task.id]);
@@ -28,21 +28,21 @@ export async function saveAssistantFinal(client: PoolClient, task: TaskRecord, a
 function reference(row: MessageRow): AssistantMessageReference {
   return { id: row.id, taskId: row.task_id, attemptId: row.attempt_id, eventId: row.event_id, sequence: row.sequence,
     nativeSessionId: row.native_session_id, source: row.source, sourceMessageId: row.source_message_id, contentDigest: row.content_digest,
-    detail: { id: row.detail_id, title: 'Assistant reply' }, settings: row.settings, createdAt: row.created_at.toISOString() };
+    detail: { id: row.detail_id, title: 'Assistant reply' }, createdAt: row.created_at.toISOString() };
 }
 async function withContent(client: PoolClient, row: MessageRow): Promise<AssistantMessage> {
   const detail = (await client.query<{ content: string }>('SELECT content FROM flow.details WHERE id=$1 AND task_id=$2 AND attempt_id=$3', [row.detail_id, row.task_id, row.attempt_id])).rows[0];
   if (!detail || sha256(detail.content) !== row.content_digest) throw new HttpError(409, 'assistant_content_mismatch', 'The stored assistant content no longer matches its source digest.');
-  return { ...reference(row), content: detail.content };
+  return { ...reference(row), content: detail.content, settings: row.settings };
 }
 /** Caller supplies its persisted task+attempt binding; task success/verification remain separate facts. */
 export async function readAssistantFinal(client: PoolClient, taskId: string, attemptId: string): Promise<AssistantMessage | null> {
-  const row = (await client.query<MessageRow>(`SELECT ${columns} FROM flow.assistant_messages WHERE task_id=$1 AND attempt_id=$2`, [taskId, attemptId])).rows[0];
+  const row = (await client.query<MessageRow>(`SELECT ${columns},settings FROM flow.assistant_messages WHERE task_id=$1 AND attempt_id=$2`, [taskId, attemptId])).rows[0];
   return row ? withContent(client, row) : null;
 }
 export async function assistantMessage(pool: Pool, messageId: string): Promise<AssistantMessage> {
   return transaction(pool, async client => {
-    const row = (await client.query<MessageRow>(`SELECT ${columns} FROM flow.assistant_messages WHERE id=$1`, [messageId])).rows[0];
+    const row = (await client.query<MessageRow>(`SELECT ${columns},settings FROM flow.assistant_messages WHERE id=$1`, [messageId])).rows[0];
     if (!row) throw new HttpError(404, 'assistant_not_found', 'Assistant message not found.');
     return withContent(client, row);
   }, true);

@@ -30,8 +30,7 @@ export interface AssistantMessageReference {
   sourceMessageId: string;
   contentDigest: string;
   detail: Reference;
-  settings: AssistantSettings;
   createdAt: string;
 }
-export interface AssistantMessage extends AssistantMessageReference { content: string }
+export interface AssistantMessage extends AssistantMessageReference { content: string; settings: AssistantSettings }
 export interface AssistantMessagePage { messages: AssistantMessageReference[]; nextCursor: string | null }
