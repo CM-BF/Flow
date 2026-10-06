@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-10-06T01:26:10.395Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T01:26:10.442Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "task": {
+    "id": "W01",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web",
+    "branch": "codex/m1-web",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T01:26:10.383Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web/plans/w01-web/status.md",
+      "syncedAt": "2026-10-06T01:26:10.395Z",
+      "stale": false,
+      "ageHours": 0.019554166666666668
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/m1-web",
+      "head": "866c20e8462f295736f685541e2ecb9ba8639101",
+      "dirty": true,
+      "changedFiles": 4,
+      "observedAt": "2026-10-06T01:26:10.451Z"
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED — 仅针对下述实现提交和约定的 Web/HTTP fixture 范围。**",
+      "target": "866c20e8462f295736f685541e2ecb9ba8639101"
+    },
+    "issues": [],
+    "progress": {
+      "completed": 4,
+      "total": 4
+    },
+    "checks": {
+      "state": "passed",
+      "target": "866c20e8462f295736f685541e2ecb9ba8639101",
+      "record": "PASSED；实现 866c20e8462f295736f685541e2ecb9ba8639101：全仓typecheck、13 tests、build、5 browser tests；HTTP fixture范围"
+    }
+  },
+  "note": "Read-only pre-metadata-commit snapshot; final Git HEAD/dirty are sampled live by D01."
+}
