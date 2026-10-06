@@ -22,7 +22,7 @@
 - [x] SVC02-04：独立review、main接收与原fb906真实部署窗口。
 - [x] SVC02-05：本次新领取、只读fresh facts与新窗口方案；精确b54产品等价253b。
 - [x] SVC02-06：GO窗口SVC02-b54-0736中drain→hold→refresh b54完成，fresh验证与保留证据已采，仍maintenance。
-- [ ] SVC02-07：上述验证后另获GO显式resume，记录数据保留/恢复事实。
+- [x] SVC02-07：GO RESUME_GO SVC02-b54-resume-0745后一次显式resume完成，v6 accepting，窗口CLOSED。
 
 共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。初始实现仅在临时专库/自有进程验证；随后按下述独立批准窗口完成真实部署。本窗口已结束，未来61227/61228操作须新领取并给出已审main/实际状态/回退语义，另获Root窗口确认。
 
@@ -47,3 +47,5 @@
 2026-10-06 07:37 UTC：新窗口SVC02-b54-0736已由GO批准且QUIET_RELEASE条件满足；执行前实际main runtime依赖缺失，按原方案排空前停止。新安装由Lead单写协调，本owner不绕过固定依赖。
 
 2026-10-06 07:45 UTC：本次固定b54刷新已完成，数据保留证据与原始差异见[结果](../../docs/evidence/svc02/refresh-b54-result.md)；SVC02-07继续待新GO显式resume。仅21份操作证据/23份固定源码核验，未重跑工程套件/调用provider。
+
+2026-10-06 07:46 UTC：本次GO显式恢复已完成，原记录/队列保留，0主动任务模型。部署窗口关闭；不因后继main metadata自动重新部署或重复采样。

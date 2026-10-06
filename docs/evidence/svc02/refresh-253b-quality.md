@@ -9,3 +9,5 @@
 2026-10-06 07:37 UTC：实际main预检发现npm-package-arg/pacote/ssri缺失即停止；错误类型与CSS条件导出分开，不误报CSS包未安装。无DB新采样/服务动作/模型，失败原始JSON保存。
 
 2026-10-06 07:44 UTC：操作收尾 clean-code 复核只涉及证据与状态，不改工具。保留依赖红、原完整行摘要差异与历史未授权快照；单列精确新增 nullable 列与原先排除 queue_checked_at，不以列交集掩盖旧值。原始 facts 不重写，派生身份清单/说明与 manifest 分文件；严格区分安装就绪、维护暂停、provider 未探测和等待 resume。无额外 PG 采样/产品测试。
+
+2026-10-06 07:46 UTC：恢复收尾复核严格沿固定scope：一前置/一次resume/一后置；current operation清NULL与不可变审计operation区分。首checker false保存，并解释使用同一原始sample纠正，不重跑/不伪造成功。status已转delivered，停止任何进一步服务动作，main冻结由Lead解除。
