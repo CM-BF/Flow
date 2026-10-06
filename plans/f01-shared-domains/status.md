@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:07:46 UTC / O15 main0e4c |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:11:27 UTC / CLI main0132ac |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
-| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v50 active；仅CLI index/专测/README与自身records共5literal，已审生产5路径停写交回 |
+| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v51；CLI三源已停写并amend交回，仅自身records完成本次收口；commit/push后停写并正式release，最终状态以账本回执为准 |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | CLI前置bb7bdd5e；三源固定 ccfa04b22d6027c6e7606b22708bcb485e01ae05；settings/O15生产已main |
 | 工作树dirty状态 | CLI三源固定；仅证据/status收口，提交后clean |
-| 工作分支状态 | in-progress |
+| 工作分支状态 | completed |
 | 检查状态 | 新CLI真实HTTP1/1（含help/错误/边界）、focusedtypes0；0PG/provider，原领域/生产检查不重跑 |
-| 已集成main状态 / HEAD | settings已main8d84；O15生产4源已main 0e4c7b0f69937f5b7a0c6dee3029ccc27f904364；CLI新三源尚未main |
+| 已集成main状态 / HEAD | CLI三源已main 0132ac255002eb61272401bfd97b3dbb65302644，与ccfa及working逐字一致；settings/O15生产此前已main |
 | Review | APPROVED ccfa04b22d6027c6e7606b22708bcb485e01ae05；Execution Lead唯一窄审，无P1/P2；原生产7f59已main |
 | 实现目标 | ccfa04b22d6027c6e7606b22708bcb485e01ae05 |
 | 实现范围 | apps/cli/src/index.ts, apps/cli/src/goal-plan-confirmation.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 命令行确认入口已通过独立审查，可复用同一严格输入与稳定请求键。 |
-| 下一可用交付 | 接收命令行薄入口到主线；本轮其他领域和生产接线均已交付。 |
+| 当前产出 | 命令行确认入口已交付，可用固定输入和稳定请求键确认计划并恢复回执。 |
+| 下一可用交付 | 本片段已交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -248,4 +248,6 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 
 2026-10-06 17:57:49 UTC：F01-O15-PRODUCTION-1756窗口已正常归还；1/1实际生产入口通过，未补跑13领域/旧settings。源码停写，Lead唯一最终窄审。
 
-| F01-45 | in-progress | native_center_owner | [三源独审APPROVED](../../docs/evidence/f01/goal-plan-confirmation-cli-independent-review.json)，targetccfa，待main receipt |
+| F01-45 | completed | native_center_owner | [三源独审APPROVED](../../docs/evidence/f01/goal-plan-confirmation-cli-independent-review.json)；[main逐hash回执](../../docs/evidence/f01/goal-plan-confirmation-cli-main-receipt.json)，本段delivered |
+
+2026-10-06 18:11:27 UTC：CLI三源main0132ac逐字一致，组合root noEmit0由Lead完成，原HTTP不重跑；[源码范围归还](../../docs/evidence/f01/goal-plan-confirmation-cli-product-scope-closeout.json)。本owner全部产品停写，记录提交推送后释放管理范围。架构仅既有公开确认方法的CLI consumer，无新状态机/权限/依赖；真实连续模型旅程为原FLOW-001独立后继，当前未授权新query。

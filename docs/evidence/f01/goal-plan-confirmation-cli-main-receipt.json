@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06 18:11:27 UTC",
+  "source": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+  "main": "0132ac255002eb61272401bfd97b3dbb65302644",
+  "entries": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 26573,
+      "sha256": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449",
+      "sourceMainWorkingEqual": true
+    },
+    {
+      "path": "apps/cli/src/goal-plan-confirmation.test.ts",
+      "bytes": 3908,
+      "sha256": "df168d192fa4bdb3fd1271ed2f8838571906fb5e95e98abbf07a615a2f2cbd22",
+      "sourceMainWorkingEqual": true
+    },
+    {
+      "path": "apps/cli/README.md",
+      "bytes": 9395,
+      "sha256": "51394b9498562eb51185cbdeb45448d55ea33319537dd15690cd0e2c4bf363a3",
+      "sourceMainWorkingEqual": true
+    }
+  ],
+  "mismatches": [],
+  "leadReceipt": "main/origin clean pushed; root noEmit0 8.942s; HTTP/PG not rerun",
+  "integrationEvidence": "docs/evidence/i02/o15-cli-root-types.json",
+  "scope": "F01-45 CLI thin entry only; no live model or semantic acceptance claim",
+  "sourceScopesReturned": "v51 amend receipt; own records stop after this closeout commit/push and final release",
+  "testsRunForMetadata": 0
+}
