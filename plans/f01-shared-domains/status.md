@@ -15,14 +15,14 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 98e5b2012ffb57b357adcfa7ce68b25608ed631c；真实HTTP新1+旧1/types0，0PG/provider |
 | 已集成main状态 / HEAD | 浏览器会话领域/client/生产接线13固定源已main84005a26并推送；个人runtime362/v15不变 |
-| Review | NOT_STARTED — O13单方法client待独立只读；Connection三项原批准/主线事实保留 |
+| Review | APPROVED 98e5b2012ffb57b357adcfa7ce68b25608ed631c；Mika13:46:39独立只读无P1/P2，限定transport |
 | 实现目标 | 98e5b2012ffb57b357adcfa7ce68b25608ed631c |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/goal-graph-runs.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 登录恢复接口已发布；连续目标入口的规划列表接口已完成局部验证。 |
-| 下一可用交付 | 审定规划列表接口，与连续目标旅程的领域实现配套接收。 |
+| 当前产出 | 登录恢复接口已发布；连续目标入口的规划列表接口已通过独立审查。 |
+| 下一可用交付 | 与连续目标旅程的领域实现配套接收规划列表接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -183,4 +183,4 @@
 
 2026-10-06 13:36:51 UTC：X01 leaf与F01依赖已main2f16e30a，F01-36完成。029-plugin-material-installs.sql正式预留X01架构owner，028会话不冲突；共享mount/export仍本owner。
 
-| F01-38 | in-progress | Lead | [薄client固定manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)，新1/旧1真实HTTP与types0；独审待接收。 |
+| F01-38 | in-progress | Lead | [薄client固定manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)，新1/旧1真实HTTP与types0；Mika独审APPROVED；待O13领域齐套。 |

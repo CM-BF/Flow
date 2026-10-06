@@ -289,3 +289,7 @@ APPROVED — status_read/gpt-6-astra 2026-10-06 13:38:04 UTC独立只读，Mika1
 Review target commit: 98e5b2012ffb57b357adcfa7ce68b25608ed631c
 
 NOT_STARTED — 2source/3raw/固定O13 DTO，限定单方法传输，不重审旧graph授权或未完成领域。见[manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)。
+
+Review target commit: 98e5b2012ffb57b357adcfa7ce68b25608ed631c
+
+APPROVED — Mika/gpt-6-astra 2026-10-06 13:46:39 UTC独立只读2source/3raw/固定DTO六项同源，无P1/P2；新1+旧1 HTTP与types0原证据有效，无重跑/PG/provider。只transport，领域仍待固定。[正式回执](../../docs/evidence/f01/goal-run-list-client-independent-review.md)。
