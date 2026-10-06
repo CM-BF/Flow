@@ -1,0 +1,51 @@
+{
+  "target": "79e06efdda45f04e713838086de2400f75949710",
+  "scope": [
+    "packages/client/src/index.ts",
+    "packages/client/src/goal-graph-runs.test.ts",
+    "packages/contracts/src/index.ts"
+  ],
+  "checks": "HTTP 1/1 and typecheck exit0; initial expectedVersion test typing error preserved; no PG/model",
+  "files": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 29405,
+      "sha256": "dae15e886a75b24cf05f7910e3c0ed29a39b5b257b340b6a69240a78050f0656"
+    },
+    {
+      "path": "packages/client/src/goal-graph-runs.test.ts",
+      "bytes": 4122,
+      "sha256": "ecebb77db0adead2575445691f4b4ca86fa687e46343087c793a94b6bead8216"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 689,
+      "sha256": "d77a7e86d14af1ea5845e0c723562534b8ba300428d737369a38944a4a7d747e"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-client-red.txt",
+      "bytes": 868,
+      "sha256": "e71337df314c1842063ada64b2da26a7d77036ee152510bb03716bab08ef0867"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-client-green.txt",
+      "bytes": 317,
+      "sha256": "bcda668af3116de679b74c566e5bb5890473614be44ba372a7848e3ec938be53"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-client-typecheck.txt",
+      "bytes": 202,
+      "sha256": "b42574eafd10091f950f44e65b6adeeebe8544b341211bd9b65957eaa691ba9b"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-client-final.txt",
+      "bytes": 317,
+      "sha256": "c3c6b4b5c9114a633a8d406a11b98420c97dc1343082e8dc9bda8ac2c83a34a3"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-client-typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

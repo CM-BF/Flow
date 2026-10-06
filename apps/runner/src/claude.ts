@@ -1,4 +1,4 @@
-import { createGoalToolMount } from './goal-tool-bridge/policy.js';
+import { createGoalToolMount, createGraphToolMount } from './goal-tool-bridge/policy.js';
 import { randomUUID } from 'node:crypto';
 import { mkdir, mkdtemp, readFile, realpath, stat, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
@@ -11,6 +11,7 @@ export type ClaudeQuery = (input: Parameters<typeof nativeQuery>[0]) => AsyncIte
 export interface ClaudeAdapterOptions {
   materialFiles: readonly string[];
   goalTools?: boolean;
+  goalGraphTools?: boolean;
   allowRead?: boolean;
   requireReadApproval?: boolean;
   model?: string;
@@ -29,6 +30,7 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
     async run(context) {
       context.signal.throwIfAborted();
       if (Boolean(options.goalTools) !== Boolean(context.goalTools)) throw new Error('The configured goal tool mode does not match this task capability.');
+      if (Boolean(options.goalGraphTools) !== Boolean(context.goalGraphTools)) throw new Error('The configured graph tool mode does not match this task capability.');
       await context.assertOwnership();
       const materials = await snapshotMaterials(context, options.allowRead === false ? [] : options.materialFiles);
       const controller = new AbortController();
@@ -40,7 +42,7 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
       let goalMount: ReturnType<typeof createGoalToolMount> | undefined;
       try {
         controller.signal.throwIfAborted();
-        goalMount = options.goalTools ? createGoalToolMount(context, controller) : undefined;
+        goalMount = options.goalTools ? createGoalToolMount(context, controller) : options.goalGraphTools ? createGraphToolMount(context, context.goalGraphTools!, controller) : undefined;
         const hook = goalMount?.hook ?? toolGate(context, materials, controller, options.requireReadApproval ?? false);
         stream = (options.query ?? nativeQuery)({
           prompt: [context.task.prompt, ...materials.map(file => `Authorized material: ${file}`)].join('\n'),
@@ -214,7 +216,8 @@ function resources(event: SDKSystemMessage) {
   ].slice(0, 100).map(value => value.slice(0, 200));
 }
 function validateLimits(options: ClaudeAdapterOptions) {
-  if (options.goalTools && (options.materialFiles.length || options.allowRead !== false || options.requireReadApproval)) throw new Error('Goal tools require an empty material scope and explicitly disabled material reads.');
+  if (options.goalTools && options.goalGraphTools) throw new Error('Node and graph tools need separate configured profiles.');
+  if ((options.goalTools || options.goalGraphTools) && (options.materialFiles.length || options.allowRead !== false || options.requireReadApproval)) throw new Error('Goal tools require an empty material scope and explicitly disabled material reads.');
   const maxTurns = options.maxTurns ?? 4;
   const maxBudgetUsd = options.maxBudgetUsd ?? 1;
   const timeoutMs = options.timeoutMs ?? 90_000;

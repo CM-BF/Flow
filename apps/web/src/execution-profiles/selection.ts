@@ -77,11 +77,12 @@ export function freezeConversationCreation(title: string, selection: ProfileSele
   }));
 }
 
-/** Receipt pin presence matters as much as its fields, including for legacy unpinned input. */
+/** Optional project and profile identities must match, including their presence. */
 export function assertCreationReceiptMatches(expected: ConversationCreation, received: ConversationSummary): void {
   const input = conversationCreationSchema.parse(expected);
   const actual = conversationCreationSchema.parse({
     title: received.title, harness: received.harness, requested: received.requested,
+    ...(received.projectId === undefined ? {} : { projectId: received.projectId }),
     ...(received.executionProfile === undefined ? {} : { executionProfile: received.executionProfile }),
   });
   if (received.harness !== input.harness || received.title !== input.title ||

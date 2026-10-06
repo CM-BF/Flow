@@ -1,7 +1,7 @@
 import { createServer } from "node:http";
 import { afterEach, describe, expect, it } from "vitest";
 import { FlowApiError, FlowClient } from "@flow/client";
-import type { ConversationSummary, ExecutionProfile, ExecutionProfilePage } from "@flow/contracts";
+import type { ConversationCreation, ConversationSummary, ExecutionProfile, ExecutionProfilePage } from "@flow/contracts";
 import { createExecutionProfileCatalog } from "../src/execution-profiles/catalog";
 import { assertCreationReceiptMatches, configuredSelection, freezeConversationCreation, legacyDefaultSelection } from "../src/execution-profiles/selection";
 
@@ -116,6 +116,21 @@ it("matches complete receipt pin and rejects wrong/missing/additional pin or mis
   const legacy = freezeConversationCreation("Pinned", legacyDefaultSelection());
   expect(() => assertCreationReceiptMatches(legacy, { ...summary, requested: legacy.requested })).toThrow();
   expect(() => assertCreationReceiptMatches(legacy, { ...summary, executionProfile: undefined, requested: {} } as never)).toThrow();
+});
+
+it.each([undefined, "project-a"])("matches optional project identity %s without requiring a UUID", projectId => {
+  const creation: ConversationCreation = { ...freezeConversationCreation("Project chat", legacyDefaultSelection()), ...(projectId === undefined ? {} : { projectId }) };
+  const summary: ConversationSummary = { ...creation, id: id(99), revision: 0, createdAt: "now", updatedAt: "now" };
+  expect(() => assertCreationReceiptMatches(creation, summary)).not.toThrow();
+  if (projectId === undefined) expect(() => assertCreationReceiptMatches(creation, { ...summary, projectId: undefined })).not.toThrow();
+  for (const different of projectId === undefined ? ["project-a"] : [undefined, "project-b"])
+    expect(() => assertCreationReceiptMatches(creation, { ...summary, projectId: different })).toThrow(/does not match/);
+});
+
+it.each([null, "", "p".repeat(129)])("rejects malformed project identity %s in a receipt", projectId => {
+  const creation = freezeConversationCreation("Project chat", legacyDefaultSelection());
+  const summary = { ...creation, projectId, id: id(99), revision: 0, createdAt: "now", updatedAt: "now" } as unknown as ConversationSummary;
+  expect(() => assertCreationReceiptMatches(creation, summary)).toThrow();
 });
 
 

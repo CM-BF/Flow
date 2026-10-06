@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-06T05:32:42.921Z",
+  "endedAt": "2026-10-06T05:32:49.536Z",
+  "sourceCommit": "c80d1769442b7b610397efe04f49da0bb1eeda6e",
+  "sourceFiles": {
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx": "eb97834eb04d308192731697a0397a5bbf2fc42a259cc7c290f0a30de4e18043",
+    "apps/web/src/conversations/ConversationThread.tsx": "472bdd261d1d607764ba18e6a5bdca2501353e30d490a0bb71a26e7f24dc981a",
+    "apps/web/src/conversations/projection.ts": "99a3f4592d7fe8923061b01f2336c3dc38482d1b3e7929b1f23962551e750858",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "31fca7318c582cebad80677f1864fc66a3da946c9d95f8d56fe3561d814be0e3",
+    "apps/web/src/conversations/queue/commands.ts": "ca58ae059571de9b757767784365006b2130cd82935997fe7e2ea774c52a35da",
+    "apps/web/src/conversations/queue/projection.ts": "9078d4c47a25d664c240416995974544bb78a2f95051cf855ba4d5dc78477137",
+    "apps/web/src/conversations/queue/queue-elements.tsx": "31df655f4836511653fc991d5ece7fdb33ec21a2e6ccce586d80440718d875fa",
+    "apps/web/test/conversation-projection.test.ts": "9613dc4c0d6c9a98015c45d9588273a2f9a1050506a76bc37cc35ccb683471d9",
+    "apps/web/test/conversation-queue.test.ts": "8e445a6c6624b701cedf4daf914a2d188c6c2d5a7c1a9407abd1921dd5151ae1",
+    "apps/web/test/conversation-queue.fixture.ts": "693c1fcdfaa90ae83a526397b01db93e543122f96fa00066c9f2454cd418ce76",
+    "apps/web/test/conversation-queue.browser.ts": "36077639c3c0c1b99cec3edc71af446575d7677334a6df70b1bb42e9bb0dc19a"
+  },
+  "production": false,
+  "checks": [
+    "legacy false makes no queue reads and leaves queue delivery disabled"
+  ],
+  "pageErrors": [],
+  "failure": "Error: expect(locator).toBeEnabled() failed\n\nLocator:  locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('button', { name: 'Add to queue', exact: true })\nExpected: enabled\nReceived: disabled\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeEnabled\" locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('button', { name: 'Add to queue', exact: true }) with timeout 5000ms\n  - waiting for locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').getByRole('button', { name: 'Add to queue', exact: true })\n    14 × locator resolved to <button disabled type=\"button\" data-state=\"closed\" aria-label=\"Add to queue\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 aui-button-icon p-1 active:scale-90 aui-composer-send size-7 rounded-full\">…</button>\n       - unexpected value \"disabled\"\n",
+  "scope": "Actual Flow App via private HTTP fixtures; no model, real center or DB; receipt recovery across reload explicitly not implemented"
+}

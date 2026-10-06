@@ -1,0 +1,220 @@
+{
+  "modelCalls": 0,
+  "database": "flow_o07_upgrade_f92845047a8746e8a8a1e7ad63b064b7",
+  "before": {
+    "versions": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T05:46:59.275Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T05:46:59.297Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T05:46:59.307Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T05:46:59.363Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T05:46:59.385Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T05:46:59.463Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T05:46:59.507Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T05:46:59.587Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T05:46:59.635Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T05:46:59.654Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T05:46:59.690Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T05:46:59.729Z"
+      },
+      {
+        "version": 13,
+        "applied_at": "2026-10-06T05:46:59.732Z"
+      },
+      {
+        "version": 14,
+        "applied_at": "2026-10-06T05:46:59.763Z"
+      },
+      {
+        "version": 15,
+        "applied_at": "2026-10-06T05:46:59.805Z"
+      },
+      {
+        "version": 16,
+        "applied_at": "2026-10-06T05:46:59.825Z"
+      },
+      {
+        "version": 17,
+        "applied_at": "2026-10-06T05:46:59.854Z"
+      }
+    ],
+    "constraint": "CHECK ((mode = 'fixture'::text))",
+    "records": {
+      "grant": {
+        "id": "c1760c49-54dd-4f4d-9213-c5ae86bba9a3",
+        "goal_id": "e53c4190-b58c-48b1-8676-f01f01e5be25",
+        "task_id": "bc49bf37-b7f0-4f48-bd69-a893ff3ee301",
+        "version": 1,
+        "scope": {
+          "projectId": "18c435cd-991e-448c-badc-bb208506e046",
+          "goalDigest": "8bdd71e400d2b299516800bd86d90a5076845ef46773b9aee277b77c05c61ce6",
+          "maxNewEdges": 2,
+          "maxNewNodes": 3,
+          "baseRevision": 1,
+          "maxProposals": 1,
+          "maxApplications": 1,
+          "allowedExistingNodes": []
+        },
+        "mode": "fixture",
+        "used_commands": 1,
+        "created_at": "2026-10-06T05:47:00.123Z",
+        "revoked_at": null,
+        "revocation_reason": null
+      },
+      "calls": [
+        {
+          "run_id": "c1760c49-54dd-4f4d-9213-c5ae86bba9a3",
+          "sequence": 1,
+          "runner_id": "3fab9780-5354-4f62-a1b1-6d984d8d66d6",
+          "attempt_id": "542073fa-4c8c-4462-9ceb-3b0f5f8d95d6",
+          "owner_version": 1,
+          "command_key": "saved",
+          "digest": "1a62737429e2be814bf41371a15899f6132a3c9122f1f54e2d0b0a0ef1471a3d",
+          "kind": "propose",
+          "proposal_id": "feca0f74-fe1d-4c7c-8b6d-266ada153e45",
+          "proposal_digest": "7f553c72647425f7c2d1816a2a25f232b09a4a22200f7e0b82e16e600a0c9eea",
+          "applied_revision": null,
+          "created_at": "2026-10-06T05:47:00.663Z"
+        }
+      ]
+    }
+  },
+  "after": {
+    "versions": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T05:46:59.275Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T05:46:59.297Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T05:46:59.307Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T05:46:59.363Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T05:46:59.385Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T05:46:59.463Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T05:46:59.507Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T05:46:59.587Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T05:46:59.635Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T05:46:59.654Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T05:46:59.690Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T05:46:59.729Z"
+      },
+      {
+        "version": 13,
+        "applied_at": "2026-10-06T05:46:59.732Z"
+      },
+      {
+        "version": 14,
+        "applied_at": "2026-10-06T05:46:59.763Z"
+      },
+      {
+        "version": 15,
+        "applied_at": "2026-10-06T05:46:59.805Z"
+      },
+      {
+        "version": 16,
+        "applied_at": "2026-10-06T05:46:59.825Z"
+      },
+      {
+        "version": 17,
+        "applied_at": "2026-10-06T05:46:59.854Z"
+      },
+      {
+        "version": 19,
+        "applied_at": "2026-10-06T05:47:00.681Z"
+      }
+    ],
+    "replayed": true,
+    "quotaStatus": 409,
+    "native": {
+      "id": "7b995cc3-dba2-402e-be57-a81b97d9aacd",
+      "version": 1,
+      "goalId": "e53c4190-b58c-48b1-8676-f01f01e5be25",
+      "projectId": "18c435cd-991e-448c-badc-bb208506e046",
+      "goalDigest": "8bdd71e400d2b299516800bd86d90a5076845ef46773b9aee277b77c05c61ce6",
+      "taskId": "b4b18f3f-e325-4cd7-baec-00ab7e5983bb",
+      "scope": {
+        "maxNewEdges": 2,
+        "maxNewNodes": 3,
+        "baseRevision": 1,
+        "maxProposals": 1,
+        "maxApplications": 1,
+        "allowedExistingNodes": []
+      },
+      "mode": "claude",
+      "usedCommands": 0,
+      "usedProposals": 0,
+      "usedApplications": 0,
+      "createdAt": "2026-10-06T05:47:00.990Z",
+      "revokedAt": null,
+      "revocationReason": null
+    },
+    "repeatedMigrationUnchanged": true
+  },
+  "passed": true,
+  "databaseRemoved": true
+}

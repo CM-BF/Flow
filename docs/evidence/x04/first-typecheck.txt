@@ -1,0 +1,8 @@
+apps/server/src/package-artifacts/source.ts(55,32): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(spec: string, opts: PacoteOptions & FetchOptions & FetchRetryOptions & AuthOptions & ({ before: Date; } | { ...; })): Promise<...>', gave the following error.
+    Type 'Map<string, unknown>' is not assignable to type 'Map<string, Packument>'.
+      Type 'unknown' is not assignable to type 'Packument'.
+  Overload 2 of 2, '(spec: string, opts?: Options | undefined): Promise<AbbreviatedManifest & ManifestResult>', gave the following error.
+    Type 'Map<string, unknown>' is not assignable to type 'Map<string, Packument>'.
+      Type 'unknown' is not assignable to type 'Packument'.
+apps/server/src/package-artifacts/source.ts(71,69): error TS2322: Type '(requested: URL) => HttpAgent' is not assignable to type 'Agent'.

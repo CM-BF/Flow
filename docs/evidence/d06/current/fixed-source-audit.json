@@ -1,0 +1,464 @@
+{
+  "commit": "eb14991a170b72d7d974428b2e440e1faada2c1e",
+  "method": "git show fixed commit:path; source readings only, no product execution",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "matches": [
+        {
+          "line": 3,
+          "text": "import { migrateConversationQueue, registerConversationQueueRoutes, scanConversationQueue } from './conversation-queue/index.js';"
+        },
+        {
+          "line": 36,
+          "text": "  registerShutdown(app, options.shutdownGraceMs);"
+        },
+        {
+          "line": 41,
+          "text": "  const pool = new Pool({ connectionString: options.databaseUrl, max: 8, connectionTimeoutMillis: 5000, statement_timeout: 10_000 });"
+        },
+        {
+          "line": 55,
+          "text": "    await migrateGoalGraphProposals(pool);"
+        },
+        {
+          "line": 70,
+          "text": "    return pendingQueueScan ??= scanConversationQueue(pool, boss).then(result => {"
+        },
+        {
+          "line": 113,
+          "text": "  registerExecutionProfileRoutes(app, pool);"
+        },
+        {
+          "line": 114,
+          "text": "  registerConversationQueueRoutes(app, pool, boss);"
+        },
+        {
+          "line": 115,
+          "text": "  registerGoalToolRunRoutes(app, pool, boss);"
+        },
+        {
+          "line": 116,
+          "text": "  registerGoalGraphProposalRoutes(app, pool);"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "matches": [
+        {
+          "line": 40,
+          "text": "import { ConversationThread } from \"./conversations/ConversationThread\";"
+        },
+        {
+          "line": 42,
+          "text": "import { createExecutionProfileCatalog, type ExecutionProfileCatalog } from \"./execution-profiles/catalog\";"
+        },
+        {
+          "line": 234,
+          "text": "  if (view.conversation) return <section className=\"flow-chat-pane\" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? \"New conversation\"}><div className=\"flow-thread\"><ConversationThread viewId={viewId} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;"
+        },
+        {
+          "line": 365,
+          "text": "  const [profiles] = useState(() => createExecutionProfileCatalog({ executionProfiles: (options, signal) => client.executionProfiles(options, signal) }));"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "matches": [
+        {
+          "line": 9,
+          "text": "import { ExecutionProfilePicker } from \"../execution-profiles/ExecutionProfilePicker\";"
+        },
+        {
+          "line": 89,
+          "text": "      composerHeader={<>{!lockedProfile && !viewId.startsWith(\"draft-\") ? <p role=\"status\">Loading conversation configuration…</p> : <ExecutionProfilePicker catalog={profileCatalog} selection={profileSelection} onSelect={onProfileSelection} onRefresh={() => { void profiles.refresh(); }} onLoadMore={() => { void profiles.loadMore(); }} locked={lockedProfile} />}<div className=\"flow-conversation-controls\" aria-label=\"Conversation capabilities\"><button disabled title=\"Per-turn thinking controls are unavailable\">Thinking</button><button disabled title=\"Per-turn tool controls are unavailable\">Tools</button><button disabled title=\"Queue controls are not available in this Web version\">Queue</button><button disabled title=\"Steering is not available in this Web version\">Steer</button></div></>}"
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "matches": [
+        {
+          "line": 62,
+          "text": "    void import(\"../plugin-management/PluginManagement\").then("
+        }
+      ]
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "matches": [
+        {
+          "line": 3,
+          "text": "  executionProfileConfigurationSchema,"
+        },
+        {
+          "line": 4,
+          "text": "  executionProfileReferenceSchema,"
+        },
+        {
+          "line": 11,
+          "text": "export type ChatAccess = \"none\" | \"configured-readonly\";"
+        },
+        {
+          "line": 25,
+          "text": "  return access === \"none\" || access === \"configured-readonly\";"
+        },
+        {
+          "line": 27,
+          "text": "function freeze<T>(value: T): Immutable<T> {"
+        },
+        {
+          "line": 29,
+          "text": "    for (const child of Object.values(value)) freeze(child);"
+        },
+        {
+          "line": 30,
+          "text": "    Object.freeze(value);"
+        },
+        {
+          "line": 35,
+          "text": "  return Object.freeze({ kind: \"legacy-default\" });"
+        },
+        {
+          "line": 42,
+          "text": "  profile.reference = executionProfileReferenceSchema.parse(profile.reference);"
+        },
+        {
+          "line": 46,
+          "text": "  const configuration = executionProfileConfigurationSchema.parse({ ...profile.configuration, access: \"none\" });"
+        },
+        {
+          "line": 59,
+          "text": "  return freeze(profile);"
+        },
+        {
+          "line": 67,
+          "text": "  return freeze({ kind: \"configured\" as const, profile: { ...profile, configuration: { ...profile.configuration, access } } });"
+        },
+        {
+          "line": 71,
+          "text": "export function freezeConversationCreation(title: string, selection: ProfileSelection): Immutable<ConversationCreation> {"
+        },
+        {
+          "line": 73,
+          "text": "  return freeze(conversationCreationSchema.parse({"
+        },
+        {
+          "line": 75,
+          "text": "    ...(profile ? { executionProfile: profile.reference } : {}),"
+        },
+        {
+          "line": 76,
+          "text": "    requested: { model: profile?.configuration.model ?? \"runner-default\", thinking: \"disabled\", tools: profile?.configuration.access ?? \"configured-readonly\" },"
+        },
+        {
+          "line": 85,
+          "text": "    ...(received.executionProfile === undefined ? {} : { executionProfile: received.executionProfile }),"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "matches": [
+        {
+          "line": 17,
+          "text": "  let resumeSessionId: string | undefined;"
+        },
+        {
+          "line": 20,
+          "text": "    if (automatic && ['failed', 'cancelled', 'uncertain'].includes(task.status)) {"
+        },
+        {
+          "line": 33,
+          "text": "    resumeSessionId = session.identity.nativeSessionId;"
+        },
+        {
+          "line": 36,
+          "text": "    ...(conversation.execution_profile ? { executionProfile: conversation.execution_profile } : {}), ...(resumeSessionId ? { resumeSessionId } : {}) };"
+        },
+        {
+          "line": 43,
+          "text": "  const row = (await client.query<TurnRow>('INSERT INTO flow.conversation_turns(id,conversation_id,number,task_id,user_text) VALUES($1,$2,$3,$4,$5) RETURNING *', [randomUUID(), conversation.id, conversation.revision + 1, task.id, input.prompt])).rows[0]!;"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "matches": [
+        {
+          "line": 10,
+          "text": "    const rows = (await client.query<QueueRow>(\"SELECT id,conversation_id,sequence,state,left(user_text,512) AS user_text,octet_length(user_text)>512 AS text_truncated,turn_id,task_id,turn_number,created_at,updated_at FROM flow.conversation_queue WHERE conversation_id=$1 AND state='waiting' AND sequence>$2 ORDER BY sequence LIMIT $3\", [conversationId, after, limit + 1])).rows;"
+        },
+        {
+          "line": 12,
+          "text": "    return { conversationId, queueRevision: conversation.queue_revision, items, nextCursor: rows.length > limit ? items.at(-1)!.sequence : null, blocked: await queueBlock(client, conversation), paused: conversation.queue_paused, currentTurn: await currentTurn(client, conversationId) };"
+        },
+        {
+          "line": 19,
+          "text": "    return { conversationId, queueRevision: conversation.queue_revision, item: { ...itemView(row), text: row.user_text }, blocked: await queueBlock(client, conversation), paused: conversation.queue_paused, currentTurn: await currentTurn(client, conversationId) };"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "matches": [
+        {
+          "line": 4,
+          "text": "import { prepareTurnAdmission } from '../conversations/admission.js';"
+        },
+        {
+          "line": 12,
+          "text": "    const conversation = await loadConversation(client, conversationId, true);"
+        },
+        {
+          "line": 26,
+          "text": "    const conversation = await loadConversation(client, conversationId, true);"
+        },
+        {
+          "line": 29,
+          "text": "    if ((turn?.taskId ?? null) !== input.expectedTaskId) throw new HttpError(409, 'conversation_queue_task_conflict', 'The latest task changed. Refresh before continuing.');"
+        },
+        {
+          "line": 31,
+          "text": "    const admission = await prepareTurnAdmission(client, conversation, first?.user_text ?? '', 'explicit-queue');"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "matches": [
+        {
+          "line": 7,
+          "text": "import { applyProjectCommand } from '../projects/commands.js';"
+        },
+        {
+          "line": 39,
+          "text": "      if (context.project.revision !== input.expectedProjectRevision) throw new HttpError(409, 'stale_project_revision', 'Refresh the project before proposing a graph.');"
+        },
+        {
+          "line": 75,
+          "text": "    if (input.expectedProjectRevision !== proposal.base_revision || input.proposalDigest !== proposal.proposal_digest) throw new HttpError(409, 'proposal_mismatch', 'Apply must name the saved proposal digest and base revision.');"
+        },
+        {
+          "line": 80,
+          "text": "      if (context.project.revision !== proposal.base_revision) throw new HttpError(409, 'stale_project_revision', 'The project changed; save a new proposal instead of rebasing silently.');"
+        },
+        {
+          "line": 84,
+          "text": "        const result = await applyProjectCommand(client, context.project.id, { expectedRevision: revision, reason: `Apply goal graph proposal ${id}`, change });"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/index.ts",
+      "matches": [
+        {
+          "line": 13,
+          "text": "    await client.query(await readFile(new URL('../../../../packages/storage/migrations/014-goal-graph-proposals.sql', import.meta.url), 'utf8'));"
+        }
+      ]
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/index.ts",
+      "matches": [
+        {
+          "line": 6,
+          "text": "/** Only the host sees this client; the model receives schemas and bounded tool results. */"
+        },
+        {
+          "line": 8,
+          "text": "  client: FlowClient; assignment: ClaimedTask; signal: AbortSignal; assertOwnership(): Promise<void>;"
+        },
+        {
+          "line": 10,
+          "text": "  const { client, assignment, signal, assertOwnership } = input;"
+        },
+        {
+          "line": 11,
+          "text": "  const reference = assignment.goalToolRun;"
+        },
+        {
+          "line": 15,
+          "text": "  await assertOwnership();"
+        },
+        {
+          "line": 17,
+          "text": "  await assertOwnership();"
+        },
+        {
+          "line": 21,
+          "text": "  async function authorized<T>(goalId: string, operation: () => Promise<T>): Promise<T> {"
+        },
+        {
+          "line": 23,
+          "text": "    signal.throwIfAborted(); await assertOwnership();"
+        },
+        {
+          "line": 25,
+          "text": "    signal.throwIfAborted(); await assertOwnership();"
+        },
+        {
+          "line": 29,
+          "text": "    readGoal: goalId => authorized(goalId, () => client.goalToolSnapshot(call, requestSignal())),"
+        },
+        {
+          "line": 32,
+          "text": "      return authorized(goalId, () => client.goalToolInput({ ...call, nodeId, version: version! }, requestSignal()));"
+        },
+        {
+          "line": 34,
+          "text": "    commandGoal: (goalId, command, key) => authorized(goalId, () => client.goalToolCommand({ ...call, command }, key, requestSignal())),"
+        }
+      ]
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "matches": [
+        {
+          "line": 38,
+          "text": "      if (assignment && !options.signal.aborted) await execute(assignment, client, adapters, options, stateDirectory, { requestedAt, remainingLeaseMs });"
+        }
+      ]
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "matches": [
+        {
+          "line": 74,
+          "text": "      const response = await peer.send(SendMessageRequest.fromJSON({ message: { messageId: state.intent.commandId, role: 'ROLE_USER', parts: [{ text: assignment.task.prompt }] }, configuration: { returnImmediately: true, historyLength: 0 } }), { signal: lease.signal });"
+        },
+        {
+          "line": 85,
+          "text": "        await client.protocolUncertain({ ...command, reason: state.intent.remoteTaskId ? 'remote-read-failed' : 'send-result-unknown' }, lease.requestSignal());"
+        },
+        {
+          "line": 103,
+          "text": "    const snapshot: Task = await peer.snapshot({ id: state.intent.remoteTaskId!, historyLength: 0 }, { signal: lease.signal });"
+        },
+        {
+          "line": 112,
+          "text": "    if (![TaskState.TASK_STATE_SUBMITTED, TaskState.TASK_STATE_WORKING].includes(status ?? TaskState.TASK_STATE_UNSPECIFIED)) throw new Error('Remote state requires unsupported interaction or reconciliation.');"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/shutdown/index.ts",
+      "matches": [
+        {
+          "line": 3,
+          "text": "/** Bound HTTP draining only; closing a connection does not cancel a database transaction. */"
+        },
+        {
+          "line": 21,
+          "text": "      process.stderr.write('Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\\n');"
+        },
+        {
+          "line": 22,
+          "text": "      app.server.closeAllConnections();"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "matches": [
+        {
+          "line": 17,
+          "text": "  if (task.submission.harness !== 'claude' || attempt.native_session_id !== event.nativeSessionId) throw new HttpError(409, 'assistant_session_mismatch', 'Assistant final must match the recorded native session of this Claude attempt.');"
+        },
+        {
+          "line": 19,
+          "text": "  if (!session.rowCount) throw new HttpError(409, 'assistant_session_mismatch', 'Assistant session is not assigned to this task and runner.');"
+        },
+        {
+          "line": 23,
+          "text": "  const reference = await saveDetail(client, task.id, attempt.id, { title: 'Assistant reply', kind: 'detail', content: event.content, mediaType: 'text/plain' });"
+        },
+        {
+          "line": 35,
+          "text": "  if (!detail || sha256(detail.content) !== row.content_digest) throw new HttpError(409, 'assistant_content_mismatch', 'The stored assistant content no longer matches its source digest.');"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "matches": [
+        {
+          "line": 28,
+          "text": "  else if (event.type === 'detail' || event.type === 'artifact' || event.type === 'verification') {"
+        },
+        {
+          "line": 30,
+          "text": "      : event.type === 'verification' ? await verifyArtifact(client, task, attempt.id, event)"
+        },
+        {
+          "line": 35,
+          "text": "    if (task.status !== 'running' || task.pending_decision) throw new HttpError(409, 'decision_conflict', 'The task cannot request another decision now.');"
+        },
+        {
+          "line": 39,
+          "text": "    task.pending_decision = { id: event.decisionId, prompt: event.prompt };"
+        },
+        {
+          "line": 42,
+          "text": "  else if (event.type === 'completed') {"
+        },
+        {
+          "line": 48,
+          "text": "    task.pending_decision = null;"
+        },
+        {
+          "line": 79,
+          "text": "      await client.query('UPDATE flow.tasks SET status=$2,cursor=$3,pending_decision=$4,updated_at=clock_timestamp() WHERE id=$1', [task.id, task.status, task.cursor, task.pending_decision]);"
+        },
+        {
+          "line": 80,
+          "text": "      await client.query('UPDATE flow.tasks SET verification_status=$2,latest_artifact_id=$3,latest_artifact_version=$4 WHERE id=$1', [task.id, task.verification_status, task.latest_artifact_id, task.latest_artifact_version]);"
+        }
+      ]
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "matches": [
+        {
+          "line": 65,
+          "text": "  if (task.status !== 'uncertain' || attempt.completed_at) throw new HttpError(409, 'reconciliation_conflict', 'Only an unresolved uncertain attempt can be reconciled.');"
+        },
+        {
+          "line": 137,
+          "text": "  if (safety.strategy === 'no-side-effects' && resolution.request.sideEffects !== 'none-confirmed') {"
+        },
+        {
+          "line": 148,
+          "text": "  const { resumeSessionId: _resumeSessionId, ...original } = task.submission;"
+        }
+      ]
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "matches": [
+        {
+          "line": 9,
+          "text": "  ['K01', '项目知识原文与检索', '工作线', 'knowledge-source-store', 'k01-knowledge-sources'],"
+        },
+        {
+          "line": 11,
+          "text": "  ['SVC02', '真实预览安全更新', '工作线', 'preview-refresh', 'svc02-preview-refresh'],"
+        },
+        {
+          "line": 46,
+          "text": "  ['R04', '中心有界停机', '工作线', 'center-shutdown', 'r04-center-shutdown'],"
+        },
+        {
+          "line": 47,
+          "text": "  ['P03', '外部协议传输优化', '工作线', 'protocol-payload', 'p03-protocol-payload'],"
+        },
+        {
+          "line": 57,
+          "text": "  ['O05', '目标拆分提案与应用', '工作线', 'goal-graph-proposals', 'o05-goal-graph-proposals'],"
+        }
+      ]
+    }
+  ]
+}

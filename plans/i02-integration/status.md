@@ -2,21 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:18 UTC / 2026-10-06 05:18 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:23 UTC / 2026-10-06 06:23 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / fa9d8b9a9a88b1da0e2c1c07c8749a09bb17c0eb（本记录前完整候选） |
+| 工作基线 / HEAD | 823fea9bd8bc868243398d58725b4076528a7ffc / 当前候选由Git聚合 |
 | 工作树dirty状态 | 仅本次交付记录；实现已提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；第三批root+Web typecheck，CHAT生产直接消费者3/3与插件CLI/client5/5；各领域独审证据保留，0模型 |
-| 已集成main状态 / HEAD | 最近main/origin698ffcd94ae073b23bcc67f6665fb19f707a93e4已含队列后台/兼容reader/执行配置模块；本批仅接B02已审实验、登记与metadata，待fast-forward |
+| 检查状态 | PASSED；本批root/Web组合typecheck与固定源码比对；复用各领域/接线局部独审，C02隔离P2已修，未重复全库 |
+| 已集成main状态 / HEAD | main/origin 823fea9已含O06/QUEUE01/D06与73源登记；K02/O07/X04和Web兼容/renderer模块本批已审待fast-forward，运行center/runner仍fb906 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 聊天界面已接执行选项与紧凑配置摘要；安全更新真实预览正在实施 |
-| 下一可用交付 | 待发送消息操作与安全更新预览；目标拆分提案接入中心 |
+| 当前产出 | 真实聊天排队、关闭浏览器后继续执行与重开回复已验证；知识引用和目标工具已审待发布 |
+| 下一可用交付 | 发布版本化知识引用与目标工具接线，继续正文流式显示和插件下载 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -35,7 +36,7 @@
 
 ## 限制与handoff
 
-所有实验0新增模型。C02只保证受审计operator停止/安全依据与旧ownership fence，不证明外部进程客观停止或任意harness服从修订指令。M02中心协议测试不替代真实用户多任务体验。任务索引跨页是活动列表，不是冻结快照；事件同步另用durable feed。必要测试只覆盖本模块与直接影响，metadata不跑全库。
+本批集成0新增模型；两个独立聊天验收预算各2/2已封存。C02只保证受审计operator停止/安全依据与旧ownership fence，不证明外部进程客观停止或任意harness服从修订指令。M02中心协议测试不替代真实用户多任务体验。任务索引跨页是活动列表，不是冻结快照；事件同步另用durable feed。必要测试只覆盖本模块与直接影响，metadata不跑全库。
 
 ## Dashboard同步
 
@@ -68,3 +69,9 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 05:18 UTC：已审聊天配置App+紧凑摘要/CTX02证据及63源登记在本分支组合检查通过，见本次集成记录。main观察6b4b89f；下一动作受控fast-forward，服务61227/61228不重启。
 
 2026-10-06 05:23 UTC：O05 owner提案领域和共享挂载均已独审，受控合并目标scope零diff；下一步发布64源并把main receipt交原owner领取受限graph授权后继。常驻服务仍保持旧center/runner，安全更新另由SVC02负责。
+
+2026-10-06 05:50 UTC：本批固定scope及组合检查见集成记录；部署版本fb906和main候选分开，0新增模型。
+
+| I02-T09 | in-progress | Lead | K02a6/O07c224/Web763+747/X04fa2及共享549+d640分别独审；原始局部checks与组合typecheck/源码比对见本次集成清单，待main发布 |
+
+2026-10-06 06:23 UTC：本批仅应用已审输入，K02两runner路径由已审O07覆盖且全scope同O07固定source。新真实queue验收已GO接收，2/2 query/$0.012396保守SDK和封存；严格第二assistant正文和browser退出后真实running成立。旧CHAT第二轮UI未证明仍为历史，不改写。个人中心/runner载入fb906，后继main不表示运行环境同步。
