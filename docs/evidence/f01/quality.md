@@ -240,3 +240,5 @@ CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source
 ## 工程配置薄client 3a12ed7ebd8e69325309bd004043f06dabbf7ff4
 
 复用两个固定DTO和既有HTTP传输；POST保原body与runner鉴权，owner目录严格解码，purpose非法/409/abort不重试。新HTTP1与旧3通过，types0；独立native_center_owner只读审查已通过，未覆盖其自己领域或后续挂载。后续挂载只组合现registerEngineeringRoutes，无新权限状态机；必须待真实factory+PG和独审。
+
+2026-10-06T11:49:24.529827+00:00：O11公共接线按既有codebase-design/clean-code方法复核：领域负责稳定计划与新鲜状态，client只保留参数/错误/取消，生产仅owner mount，无第二状态。2直接用例→定向1/1后类型0；显式测试默认字段修复不改领域。原红/首typecheck失败保留，随机DB正常清理；0provider。
