@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:53:04 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:58:11 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,18 +10,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
 | 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5；04开始前7c5a739258106a2cf9387ebf3a5e54268c122136 / source d147a636f9cb54a8c87a89a89963d13e937cee9c |
-| 工作树dirty状态 | 四源码冻结；本次仅独审归档/状态，提交后clean |
+| 工作树dirty状态 | 四源/capture保持冻结；本次仅实际raw/状态，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 4 distinct纯检查分轮3/3+1/1；两次focused types0；04 PG/Chrome/PTY NOT_RUN；原03历史结果保留 |
+| 检查状态 | Actual F04 1 selected/0 passed/exit1；最早终端请求未捕获，cleanup独立保留；原4纯+2capture/两focused types仅准备历史 |
 | 已集成main状态 / HEAD | 352246b850e960e1969711e303765a024ff9fc29；04四源准备已精确接收，完整旅程NOT_RUN；03历史main8d84保持 |
 | 实现目标 | d147a636f9cb54a8c87a89a89963d13e937cee9c |
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/preview.ts, experiments/tui-web-control-handoff/terminal.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 双界面脚本与有界运行入口均已独立获审，实际加载成功，等待独占运行窗口。 |
-| 下一可用交付 | 在共享运行窗口完成一次真实网页与终端接续验收，并保存完整停止和清理证据。 |
-| 当前阻塞 | 等待独占验证窗口；当前未获运行许可。 |
+| 当前产出 | 网页已连接到合成会话，但终端发送尚未到达中心，完整接续验收未通过。 |
+| 下一可用交付 | 定位终端请求未产生的原因，并在授权窗口处理本次保留资源后决定定向修复。 |
+| 当前阻塞 | 真实双界面验证未通过；数据库与临时目录已保留，等待有界核查。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，d147准备APPROVED；076aa544 capture/import增量APPROVED；完整04实际旅程NOT_RUN |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
@@ -77,3 +77,5 @@
 2026-10-06 20:48:50 UTC：仅加载实际factory/helper入口exit0，0调用/连接；最小外层capture复用已审supervise，正常/64KiB溢出两直接checks 2/2且groups stopped。新adapter等待窄审，[准备事实](../../docs/evidence/tui01f/web-handoff/capture-readiness.md)，原四源及782绑定不变、原4纯未重跑，完整运行仍NOT_RUN。
 
 2026-10-06 20:53:04 UTC：capture/import增量076aa544获Execution Lead唯一APPROVED_PREPARATION_DELTA，32绑定/原2纯与import证据已核、reviewer0运行；[唯一回执](../../docs/evidence/tui01f/web-handoff/independent-capture-review.json) SHA f1e85724743eae5cd8b964a942bfff8c023f792df4865b3263dd5202501ef803。actual必须由capture.mjs --run及两fixed digests进入，未生成permit、不启动PG/Chrome/PTY。
+
+2026-10-06 20:58:11 UTC：唯一窗口flow-tui01f04-20261006-2056实际1选中/0通过/exit1，26,512ms；[完整结果](../../docs/evidence/tui01f/web-handoff/one-shot-result.md)。首错终端请求未捕获，0task/provider。自有进程组/center/runner已停，marker/零连接/checkpoint已核；DB/tmp按失败策略KEEP，未DROP/rm/复跑。窗口已即时归还。

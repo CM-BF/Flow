@@ -1,0 +1,741 @@
+{
+  "identity": {
+    "digest": "b1559d552e0c2eaa875e5c852eb13c0a15db1d69f15cbf6ee8bb9859c47254e5",
+    "files": [
+      {
+        "path": "apps/tui/src/task-controls/fixture.ts",
+        "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/journey.ts",
+        "sha256": "e54159c4d669dab5426d358695f9c2f925c0e472bf9fb5bc5d5543a81e0a43a8"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/preview.ts",
+        "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611"
+      },
+      {
+        "path": "experiments/tui-web-control-handoff/terminal.py",
+        "sha256": "7fdc85cadeb71ad2d9d88e2a463aad6651aeaaf6ecc27f41ce7cd2102e691081"
+      }
+    ],
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+    },
+    "inputCount": 741
+  },
+  "workPassed": false,
+  "workFailure": {
+    "stage": "terminal-request-capture",
+    "name": "Error",
+    "code": null,
+    "message": "Original TUI request was not captured"
+  },
+  "cleanupFailures": [],
+  "failures": [
+    "handoff-work-failed"
+  ],
+  "dom": [],
+  "writes": [],
+  "reads": [
+    {
+      "role": "web",
+      "path": "/api/tasks?limit=40",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations?limit=50",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/execution-profiles?limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/turns?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=0",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=0",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=0",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=0",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/workspace?after=0",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223/queue?after=0&limit=20",
+      "status": 200,
+      "completed": true
+    },
+    {
+      "role": "web",
+      "path": "/api/conversations/6070b0e1-2b95-49c0-8ca2-f429cd5f2223",
+      "status": 200,
+      "completed": true
+    }
+  ],
+  "bridgeErrors": [],
+  "terminal": {
+    "bytes": 0,
+    "events": [],
+    "failure": null,
+    "incompleteLineBytes": 0
+  },
+  "chrome": {
+    "pid": 19956,
+    "port": 57470,
+    "diagnosticBytes": 368,
+    "diagnosticsWithinBound": true
+  },
+  "samples": [
+    {
+      "freeBytes": 1213042688,
+      "rawBytes": 2321,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:17.204Z"
+    },
+    {
+      "freeBytes": 1207791616,
+      "rawBytes": 2321,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:17.505Z"
+    },
+    {
+      "freeBytes": 1203634176,
+      "rawBytes": 2321,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:17.806Z"
+    },
+    {
+      "freeBytes": 1199771648,
+      "rawBytes": 2321,
+      "privateBytes": 0,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:18.108Z"
+    },
+    {
+      "freeBytes": 1198882816,
+      "rawBytes": 2321,
+      "privateBytes": 126,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:18.409Z"
+    },
+    {
+      "freeBytes": 1198690304,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:18.713Z"
+    },
+    {
+      "freeBytes": 1198473216,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:19.013Z"
+    },
+    {
+      "freeBytes": 1198272512,
+      "rawBytes": 2321,
+      "privateBytes": 126,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:19.312Z"
+    },
+    {
+      "freeBytes": 1197387776,
+      "rawBytes": 2321,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:19.613Z"
+    },
+    {
+      "freeBytes": 1214005248,
+      "rawBytes": 2321,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:19.919Z"
+    },
+    {
+      "freeBytes": 1213886464,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:20.214Z"
+    },
+    {
+      "freeBytes": 1213796352,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:20.519Z"
+    },
+    {
+      "freeBytes": 1213681664,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:20.816Z"
+    },
+    {
+      "freeBytes": 1213591552,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:21.116Z"
+    },
+    {
+      "freeBytes": 1213353984,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:21.419Z"
+    },
+    {
+      "freeBytes": 1213235200,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:21.722Z"
+    },
+    {
+      "freeBytes": 1213067264,
+      "rawBytes": 2321,
+      "privateBytes": 80,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:22.021Z"
+    },
+    {
+      "freeBytes": 1212604416,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:22.323Z"
+    },
+    {
+      "freeBytes": 1212502016,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 0,
+      "at": "2026-10-06T20:56:22.624Z"
+    },
+    {
+      "freeBytes": 1208197120,
+      "rawBytes": 2321,
+      "privateBytes": 126,
+      "chromeBytes": 4194446,
+      "at": "2026-10-06T20:56:22.925Z"
+    },
+    {
+      "freeBytes": 1205985280,
+      "rawBytes": 2321,
+      "privateBytes": 80,
+      "chromeBytes": 6276795,
+      "at": "2026-10-06T20:56:23.439Z"
+    },
+    {
+      "freeBytes": 1206128640,
+      "rawBytes": 2321,
+      "privateBytes": -432303,
+      "chromeBytes": 7282484,
+      "at": "2026-10-06T20:56:23.801Z"
+    },
+    {
+      "freeBytes": 1205202944,
+      "rawBytes": 2321,
+      "privateBytes": 80,
+      "chromeBytes": 7372067,
+      "at": "2026-10-06T20:56:24.032Z"
+    },
+    {
+      "freeBytes": 1204891648,
+      "rawBytes": 2321,
+      "privateBytes": 126,
+      "chromeBytes": 7372067,
+      "at": "2026-10-06T20:56:24.333Z"
+    },
+    {
+      "freeBytes": 1204338688,
+      "rawBytes": 2321,
+      "privateBytes": 126,
+      "chromeBytes": 12734047,
+      "at": "2026-10-06T20:56:24.634Z"
+    },
+    {
+      "freeBytes": 1203937280,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 12734047,
+      "at": "2026-10-06T20:56:24.936Z"
+    },
+    {
+      "freeBytes": 1203798016,
+      "rawBytes": 2321,
+      "privateBytes": 46,
+      "chromeBytes": 12734047,
+      "at": "2026-10-06T20:56:25.237Z"
+    },
+    {
+      "freeBytes": 1203560448,
+      "rawBytes": 2321,
+      "privateBytes": -20866,
+      "chromeBytes": 8630367,
+      "at": "2026-10-06T20:56:25.564Z"
+    },
+    {
+      "freeBytes": 1203040256,
+      "rawBytes": 2321,
+      "privateBytes": 126,
+      "chromeBytes": 8856436,
+      "at": "2026-10-06T20:56:25.856Z"
+    },
+    {
+      "freeBytes": 1202470912,
+      "rawBytes": 2321,
+      "privateBytes": 126,
+      "chromeBytes": 8871355,
+      "at": "2026-10-06T20:56:26.147Z"
+    },
+    {
+      "freeBytes": 1202335744,
+      "rawBytes": 2321,
+      "privateBytes": 80,
+      "chromeBytes": 8871355,
+      "at": "2026-10-06T20:56:26.474Z"
+    },
+    {
+      "freeBytes": 1202180096,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8871601,
+      "at": "2026-10-06T20:56:26.752Z"
+    },
+    {
+      "freeBytes": 1202024448,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8871847,
+      "at": "2026-10-06T20:56:27.049Z"
+    },
+    {
+      "freeBytes": 1201844224,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8871847,
+      "at": "2026-10-06T20:56:27.346Z"
+    },
+    {
+      "freeBytes": 1201704960,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8871847,
+      "at": "2026-10-06T20:56:27.646Z"
+    },
+    {
+      "freeBytes": 1201553408,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8871847,
+      "at": "2026-10-06T20:56:27.947Z"
+    },
+    {
+      "freeBytes": 1201430528,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8871847,
+      "at": "2026-10-06T20:56:28.253Z"
+    },
+    {
+      "freeBytes": 1201311744,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 8871847,
+      "at": "2026-10-06T20:56:28.551Z"
+    },
+    {
+      "freeBytes": 1201143808,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:28.850Z"
+    },
+    {
+      "freeBytes": 1200766976,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:29.151Z"
+    },
+    {
+      "freeBytes": 1200525312,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:29.450Z"
+    },
+    {
+      "freeBytes": 1200390144,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:29.752Z"
+    },
+    {
+      "freeBytes": 1200259072,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:30.053Z"
+    },
+    {
+      "freeBytes": 1200119808,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:30.351Z"
+    },
+    {
+      "freeBytes": 1200001024,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:30.655Z"
+    },
+    {
+      "freeBytes": 1199841280,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:30.957Z"
+    },
+    {
+      "freeBytes": 1199591424,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:31.257Z"
+    },
+    {
+      "freeBytes": 1199480832,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:31.558Z"
+    },
+    {
+      "freeBytes": 1199329280,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:31.875Z"
+    },
+    {
+      "freeBytes": 1199181824,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:32.165Z"
+    },
+    {
+      "freeBytes": 1199046656,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:32.460Z"
+    },
+    {
+      "freeBytes": 1198907392,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:32.769Z"
+    },
+    {
+      "freeBytes": 1198747648,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8876350,
+      "at": "2026-10-06T20:56:33.056Z"
+    },
+    {
+      "freeBytes": 1198600192,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8914062,
+      "at": "2026-10-06T20:56:33.365Z"
+    },
+    {
+      "freeBytes": 1198469120,
+      "rawBytes": 2321,
+      "privateBytes": 139,
+      "chromeBytes": 8914062,
+      "at": "2026-10-06T20:56:33.669Z"
+    },
+    {
+      "freeBytes": 1198219264,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8914121,
+      "at": "2026-10-06T20:56:33.971Z"
+    },
+    {
+      "freeBytes": 1198075904,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8914121,
+      "at": "2026-10-06T20:56:34.261Z"
+    },
+    {
+      "freeBytes": 1197879296,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 8914121,
+      "at": "2026-10-06T20:56:34.573Z"
+    },
+    {
+      "freeBytes": 1197748224,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 8914121,
+      "at": "2026-10-06T20:56:35.040Z"
+    },
+    {
+      "freeBytes": 1197207552,
+      "rawBytes": 2321,
+      "privateBytes": -2227,
+      "chromeBytes": 8918825,
+      "at": "2026-10-06T20:56:35.301Z"
+    },
+    {
+      "freeBytes": 1196097536,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 9395350,
+      "at": "2026-10-06T20:56:35.486Z"
+    },
+    {
+      "freeBytes": 1192873984,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 10620670,
+      "at": "2026-10-06T20:56:35.774Z"
+    },
+    {
+      "freeBytes": 1188888576,
+      "rawBytes": 2321,
+      "privateBytes": -4943646,
+      "chromeBytes": 19034732,
+      "at": "2026-10-06T20:56:36.313Z"
+    },
+    {
+      "freeBytes": 1182801920,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 19247912,
+      "at": "2026-10-06T20:56:36.405Z"
+    },
+    {
+      "freeBytes": 1176936448,
+      "rawBytes": 2321,
+      "privateBytes": 139,
+      "chromeBytes": 19649003,
+      "at": "2026-10-06T20:56:36.677Z"
+    },
+    {
+      "freeBytes": 1169707008,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 19649003,
+      "at": "2026-10-06T20:56:36.976Z"
+    },
+    {
+      "freeBytes": 1164918784,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 19649003,
+      "at": "2026-10-06T20:56:37.281Z"
+    },
+    {
+      "freeBytes": 1158492160,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 19649003,
+      "at": "2026-10-06T20:56:37.578Z"
+    },
+    {
+      "freeBytes": 1153781760,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 19649003,
+      "at": "2026-10-06T20:56:37.881Z"
+    },
+    {
+      "freeBytes": 1150734336,
+      "rawBytes": 2321,
+      "privateBytes": -532387,
+      "chromeBytes": 20421781,
+      "at": "2026-10-06T20:56:38.187Z"
+    },
+    {
+      "freeBytes": 1127768064,
+      "rawBytes": 2321,
+      "privateBytes": -884677,
+      "chromeBytes": 44063615,
+      "at": "2026-10-06T20:56:38.482Z"
+    },
+    {
+      "freeBytes": 1146273792,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 57224302,
+      "at": "2026-10-06T20:56:38.787Z"
+    },
+    {
+      "freeBytes": 1146097664,
+      "rawBytes": 2321,
+      "privateBytes": 93,
+      "chromeBytes": 57224321,
+      "at": "2026-10-06T20:56:39.107Z"
+    },
+    {
+      "freeBytes": 1145720832,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 57224321,
+      "at": "2026-10-06T20:56:39.394Z"
+    },
+    {
+      "freeBytes": 1145585664,
+      "rawBytes": 2321,
+      "privateBytes": 59,
+      "chromeBytes": 57224321,
+      "at": "2026-10-06T20:56:39.724Z"
+    }
+  ]
+}

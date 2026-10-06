@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+false !== true
+
+    at runJourney (/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts:241:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts:299:70) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.20.0

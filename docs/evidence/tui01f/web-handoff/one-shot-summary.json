@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-06T20:58:11.776970+00:00",
+  "window": "flow-tui01f04-20261006-2056",
+  "run": "handoff-3ec2369c-0ea7-4dcb-ac19-ce30d7494a7a",
+  "selected": 1,
+  "passed": 0,
+  "exitCode": 1,
+  "elapsedMs": 26512,
+  "primaryFailure": {
+    "stage": "terminal-request-capture",
+    "name": "Error",
+    "code": null,
+    "message": "Original TUI request was not captured"
+  },
+  "cleanupFailures": [
+    {
+      "stage": "fixture-close",
+      "name": "Error",
+      "code": null,
+      "message": "TUI01F evidence/cleanup incomplete; inspect explicit evidence before cleanup of flow_tui01f_bb02a6d703a3 or private tmp"
+    }
+  ],
+  "supervisorPrimaryReason": "driver-nonzero",
+  "supervisorSignalObservation": "unknown",
+  "freshOwnedGroupObservations": [
+    {
+      "pgid": 18112,
+      "freshReadOnlyState": "absent"
+    },
+    {
+      "pgid": 19956,
+      "freshReadOnlyState": "absent"
+    },
+    {
+      "pgid": 24633,
+      "freshReadOnlyState": "absent"
+    }
+  ],
+  "resources": {
+    "database": "flow_tui01f_bb02a6d703a3",
+    "directory": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-CviAys",
+    "directoryIdentity": {
+      "dev": 16777234,
+      "ino": 123194387,
+      "directory": true,
+      "symbolicLink": false
+    },
+    "ownerPid": 18112
+  },
+  "marker": "3b98f9e6-4f13-48bb-aaee-8723d9141dd9",
+  "cleanup": {
+    "database": "flow_tui01f_bb02a6d703a3",
+    "directory": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-CviAys",
+    "irreversibleCleanup": false,
+    "groups": [
+      {
+        "pgid": 19956,
+        "stopped": true,
+        "signals": [
+          "SIGTERM"
+        ]
+      },
+      {
+        "pgid": 24633,
+        "stopped": true,
+        "signals": [
+          "SIGTERM"
+        ]
+      }
+    ],
+    "allTasks": {
+      "totalSize": 0,
+      "tasks": [],
+      "nextCursor": null
+    },
+    "tasks": [],
+    "runnerStopped": true,
+    "proxyStopped": true,
+    "centerStopped": true,
+    "databaseOwnership": {
+      "markerMatches": true
+    },
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 4.8365000000012515,
+          "rows": []
+        }
+      ]
+    },
+    "finalHandoffResourceBounds": {
+      "freeBytes": 1148391424,
+      "rawBytes": 20053,
+      "privateBytes": 59,
+      "chromeBytes": 57226469,
+      "at": "2026-10-06T20:56:41.876Z"
+    },
+    "checkpointConfirmed": true,
+    "databaseRemoved": false,
+    "temporaryRemoved": false,
+    "directoryObservation": null,
+    "failures": [],
+    "adminClosed": true
+  },
+  "taskCount": 0,
+  "freeBytesNow": 1146425344,
+  "resourceDisposition": "KEEP database and tmp; no new query or removal after run",
+  "providerCalls": 0,
+  "windowReturnedToLead": true,
+  "retry": false
+}
