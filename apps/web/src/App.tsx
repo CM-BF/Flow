@@ -276,6 +276,7 @@ function Workspace({
       if (id) void projection.select(id);
       else projection.clearSelection();
     };
+    if (!navigator.onLine) projection.setOnline(false);
     followRoute();
     const offline = () => projection.setOnline(false);
     const online = () => projection.setOnline(true);

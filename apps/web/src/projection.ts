@@ -47,6 +47,8 @@ export class TaskProjection {
   private readonly detailRequests = new Map<string, Promise<void>>();
   private observer?: AbortController;
   private generation = 0;
+  private online = true;
+  private selectedId: string | null = null;
   private historyCursor = 0;
   private historyEnd = 0;
   private deliveredCursor = 0;
@@ -97,20 +99,23 @@ export class TaskProjection {
 
   async select(id: string) {
     this.disconnect();
+    this.selectedId = id;
     const generation = this.generation;
     this.update({
       task: null,
       details: {},
       olderAvailable: false,
-      connection: "connecting",
+      connection: this.online ? "connecting" : "disconnected",
       error: null,
     });
     try {
       const snapshot = await this.client.show(id);
       if (generation !== this.generation) return;
       this.applySnapshot(snapshot);
-      this.observer = new AbortController();
-      void this.observe(id, generation, this.observer.signal);
+      if (this.online) {
+        this.observer = new AbortController();
+        void this.observe(id, generation, this.observer.signal);
+      }
     } catch (error) {
       if (generation === this.generation)
         this.update({ connection: "disconnected", error: message(error) });
@@ -118,12 +123,18 @@ export class TaskProjection {
   }
 
   setOnline(online: boolean) {
+    this.online = online;
     if (!online) {
-      this.disconnect();
+      // Offline pauses observation without invalidating the selected task or its reads.
+      this.observer?.abort();
+      this.update({ connection: "disconnected" });
       return;
     }
     const id = this.state.task?.id;
-    if (!id) return;
+    if (!id) {
+      if (this.selectedId) void this.select(this.selectedId);
+      return;
+    }
     this.observer?.abort();
     this.observer = new AbortController();
     this.update({ connection: "reconnecting" });
@@ -131,6 +142,7 @@ export class TaskProjection {
   }
 
   clearSelection() {
+    this.selectedId = null;
     this.disconnect();
     this.update({ task: null, details: {}, olderAvailable: false });
   }
@@ -146,7 +158,11 @@ export class TaskProjection {
     this.deliveredCursor = task.entries.at(-1)?.cursor ?? 0;
     this.historyCursor = 0;
     this.historyEnd = task.entries[0]?.cursor ?? 0;
-    this.update({ task, olderAvailable: task.hasMore, connection: "live" });
+    this.update({
+      task,
+      olderAvailable: task.hasMore,
+      connection: this.online ? "live" : "disconnected",
+    });
     this.updateSummary(task);
   }
 

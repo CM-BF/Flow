@@ -25,6 +25,8 @@ export function createFixture() {
   }[] = [];
   let loseNextSubmit = false;
   let detailDelayMs = 0;
+  let snapshotDelayMs = 0;
+  let loseNextSnapshot = false;
   const schedule = (action: () => void, ms: number) => {
     const timer = setTimeout(() => {
       timers.delete(timer);
@@ -341,12 +343,20 @@ export function createFixture() {
       const task = tasks.get(decodeURIComponent(match[1]!));
       if (!task) return error("not_found", 404, "Task missing.");
       const action = match[2];
-      if (!action)
-        return json({
-          ...task,
-          entries: task.entries.slice(-100),
-          hasMore: task.entries.length > 100,
-        });
+      if (!action) {
+        if (loseNextSnapshot) {
+          loseNextSnapshot = false;
+          return res.destroy();
+        }
+        const send = () =>
+          json({
+            ...task,
+            entries: task.entries.slice(-100),
+            hasMore: task.entries.length > 100,
+          });
+        if (snapshotDelayMs) return schedule(send, snapshotDelayMs);
+        return send();
+      }
       if (action === "events")
         return json(page(task, Number(url.searchParams.get("after") ?? 0)));
       if (action === "stream") {
@@ -418,6 +428,12 @@ export function createFixture() {
     requests,
     loseSubmitResponse() {
       loseNextSubmit = true;
+    },
+    delaySnapshots(ms: number) {
+      snapshotDelayMs = ms;
+    },
+    loseSnapshotResponse() {
+      loseNextSnapshot = true;
     },
     delayDetails(ms: number) {
       detailDelayMs = ms;

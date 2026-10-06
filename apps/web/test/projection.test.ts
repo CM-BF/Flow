@@ -188,4 +188,36 @@ describe("center-driven projection over the public HTTP client", () => {
       fixture.requests.find((req) => req.path.endsWith("/decision"))?.body,
     ).toContain("approve");
   });
+  it("settles an in-flight detail when going offline and resumes without a permanent loading state", async () => {
+    fixture.delayDetails(100);
+    await projection.select("demo-large");
+    const loading = projection.loadDetail("demo-large-artifact");
+    projection.setOnline(false);
+    await loading;
+    expect(projection.getSnapshot().connection).toBe("disconnected");
+    expect(
+      projection.getSnapshot().details["demo-large-artifact"]?.loading,
+    ).not.toBe(true);
+    expect(
+      projection.getSnapshot().details["demo-large-artifact"]?.data,
+    ).toBeDefined();
+    projection.setOnline(true);
+    await until(() => projection.getSnapshot().connection === "live");
+  });
+  it("keeps an in-flight task selection while offline and resumes after a failed snapshot", async () => {
+    fixture.delaySnapshots(80);
+    const selecting = projection.select("demo-large");
+    projection.setOnline(false);
+    await selecting;
+    expect(projection.getSnapshot().task?.id).toBe("demo-large");
+    expect(projection.getSnapshot().connection).toBe("disconnected");
+    projection.setOnline(true);
+    await until(() => projection.getSnapshot().connection === "live");
+    fixture.loseSnapshotResponse();
+    await projection.select("demo-completed");
+    expect(projection.getSnapshot().task).toBeNull();
+    projection.setOnline(false);
+    projection.setOnline(true);
+    await until(() => projection.getSnapshot().task?.id === "demo-completed");
+  });
 });
