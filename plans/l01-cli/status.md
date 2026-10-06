@@ -44,3 +44,7 @@ Owner在合并此文档基线后立即核验实际branch/head并接管本status�
 2026-10-06 01:14 UTC review修复：原target647d57b无blocking，普通命令中断P2已修复；新增真实process回归，16/16 + typecheck通过。main未集成；下一步复审新commit。
 
 2026-10-06 01:21 UTC：assignment_review 独立复审通过，target `1baf123e43a9be762342eb51bfe254fa7a6e60f9`；所有L01 TODO完成。实现已合入integration并通过真实中心/runner/CLI检查，main仍0763d46未集成。Dashboard唯一事实源已同步本记录，待D01实际聚合。
+
+## 2026-10-06 02:19 UTC M1交付状态修正
+
+L01全部TODO已完成，原实现/metadata分支b2d55948f53ee34efaa83776402de55d57c4c684已实际验证是main的祖先；M1系统旅程对CLI观察/跨客户端决定/取消已有独立通过证据。当前main观察值d444608ab6c796c731e44e51a892868bf39bec2a，不要求随之后metadata精确HEAD变化重写。后续workspace/reconciliation CLI是M02的新实现，不延伸L01旧approval。仅本plan/status改动，未重复应用测试。

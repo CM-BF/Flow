@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | L01 |
-| 状态 | `in-progress` |
+| 状态 | `completed` |
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-003](../flow-003-m1-execution/plan.md) |
 | Owner / model | Execution Lead / gpt-6-astra（至少Sol） |
