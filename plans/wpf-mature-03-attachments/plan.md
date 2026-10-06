@@ -10,7 +10,7 @@
 | 用户来源 | [成熟度原话与六项分工](../../docs/evidence/web-platform/mature-task-handoff.md)；原WPF REQ仅追溯，不形成第三层 |
 | 收益 | 用户可通过按钮、拖放和@file把明确版本的材料附到当前草稿，并真实用于Send或Queue执行。 |
 | 边界 | 本计划定义完整用户结果；具体实现须独立worktree、fresh精确scope take和固定独审，计划目录领取不授产品写权 |
-| 依赖 | CONTEXTI01已main df29并收口释放；GO已裁定Web/root端到端负责附件；panels合同已审6bc2918并获runtime18literal；w01输入只读且优先RELEASE01，公共合同/decoder固定后再精确取Web范围；Lead只协调占用中的共享出口/迁移编号/main。 |
+| 依赖 | CONTEXTI01已main df29并收口释放；GO已裁定Web/root端到端负责附件；panels合同已审6bc2918并获runtime18literal；w01已取ATTACHI十一新模块范围，以固定已审DTO/typed ports并行；公共HTTP/App等准确桥接输入后接；Lead只协调占用中的共享出口/迁移编号/main。 |
 
 ## 已有能力与gap
 
@@ -43,7 +43,7 @@ root只读实际react0.15.23/core0.3.22：external-store-adapter.ts已有adapter
 
 ### 附件端到端责任已确定（GO正式裁决，经root转达）
 
-Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资源worker与独立Web输入/预览worker并行。当前panels已在attachment-resources/f181独立树完成phase1固定合同独审，ef617d78 v2共18literal已原子扩权运行域；w01继续只读Web adapter/recovery方案，未领Web写权。root统一固定轻引用、ready、授权读取与保留合同，然后各自独立worktree/fresh literal claim。ExecutionLead仅协调已占共享index/合同出口、迁移编号与main，不再把“等待Lead后端owner”作为阻塞。02 adapter消费同一协议，04复用metadata，不造第二上传协议。此前[有界owner观察](../../docs/evidence/web-platform/mature03-owner-observation.json)仅保留其历史时点，已由本裁决解除。
+Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资源worker与独立Web输入/预览worker并行。当前panels已在attachment-resources/f181独立树完成phase1固定合同独审，ef617d78 v2共18literal已原子扩权运行域；w01已取ATTACHI十一新模块写权，实际HTTP/App仍单独后继。root统一固定轻引用、ready、授权读取与保留合同，然后各自独立worktree/fresh literal claim。ExecutionLead仅协调已占共享index/合同出口、迁移编号与main，不再把“等待Lead后端owner”作为阻塞。02 adapter消费同一协议，04复用metadata，不造第二上传协议。此前[有界owner观察](../../docs/evidence/web-platform/mature03-owner-observation.json)仅保留其历史时点，已由本裁决解除。
 
 首个支持类型可做有界切片；完整验收仍是按钮/drag/@file→ready固定版本与顺序→Send/Queue→远端runner实际读取同材料并留输入证据。pending/expired/provider unsupported必须阻止并保草稿；不能丢附件只发文字。删除草稿不回收in-use，失败/取消有界清理；断线/重启/撤权/unknown保留身份与原键。复用project/context/storage授权、版本与预算，metadata首屏、正文按需。区分upload、knowledge和授权runner file，不用blob URL、绝对path或base64 timeline假接。先做真实PG/HTTP fixture，0provider；完整模型验收仍须单独明确预算。
 
@@ -70,3 +70,7 @@ attachments[]/template2固定shape交F01唯一公共receipt decoder扩展，保�
 installed core0.3.22的Composer.send先快照text/attachments/options，随后可能异步_prepareSubmission；ExternalStore.append最终读取当前_store.onNew。固定c450 ConversationThread在onNew时读取当前intent/profile/knowledge.capture。因此新增异步附件准备后，点击Send到onNew之间切换delivery/knowledge/project可能混入新状态；这是源码风险，尚未browser复现。ATTACHI capture/freeze/consume须绑定同一次submission、view/project和generation，只有真实新receipt接管后消费；后继生产接线必须捕获点击时意图和材料，不能Send变Queue或把新draft refs混入旧submission。本片在原迟到/complete绕过fixture中用可控延迟验证，不扩App/Thread scope。
 
 来源root读取本地assistant-ui skill→llms.txt→[官方custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)，以现react0.15.23/core0.3.22行为为准，不升级SDK。clean-code复核单一状态owner与异步生命周期；不是已确认当前纯文本产品bug。
+
+### 正式factory接通前的升级验收
+
+03-05/06包含真实pre026数据库保留原v1行/原receipt，首次026后完整factory通过HTTP原key重放且namespace重启稳定；不能由createServer提前升级后仍宣称验证旧库。普通/child fixture以全部route存在消费production、部分存在失败、全无仅兼容旧factory，分支来源写入新固定报告。旧8701/78实证保留；本轮两fixture文件与六受影响场景由原合法owner处理，生产mount专测由共享owner处理，不新增公开测试开关。[具体固定输入与交接](../../docs/evidence/web-platform/attach01-fixture-handoff.json)。

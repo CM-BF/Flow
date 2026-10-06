@@ -1,14 +1,24 @@
 # 成熟聊天大task来源与登记队列
 
-## RELEASE02 独审立即交 Execution Lead 本人
+## ATTACH01：给生产 factory 的窄 fixture 接缝（当前优先）
 
-同意 **Execution Lead 本人作为唯一独立reviewer** 审固定 **560cbd2b6a5dc43bc18458d1335ced73b0e9254d / 0bca82da6208b108c7e073d748d2a157821bba72**。此前runner_owner只是指定候选，实际thread limit未能唤醒，尚未执行独审；本组root也未审此fixed。现在不等待/重试槽位、不重复审。manifest/代码/证据保持原样；Lead可安排根types组合核，原入口如下。普通GO无需确认，跨task工具不通时本canonical回复生效。
+Root已批准panels仅原十八scope内的 `apps/server/src/attachments/fixture.ts`、`apps/server/src/attachments/context.test.ts` 修复；[11:15:19.231Z fresh账本](attach01-fixture-handoff-ledger.json)确认ef617d78 v2仍active，owner/tree/18literal一致。原8701/1d236、78独审和原raw保持历史固定；新两文件target/manifest与受影响结果由同一owner另行绑定，不把旧批准搬到新target。
+
+**Lead可消费的明确接缝**：普通与child fixture调用createServer后`await app.after()`，检查全部六条真实route；全有则消费factory自动mount，部分存在直接失败，全无才走旧factory migrate/register fallback。升级case独立数据库只运行旧migration至025，先以真实PG/domain函数保存v1原行/收据，核026/namespace不存在、snapshot cap=false和attachmentCapabilities 409；然后首次完整factory启动/026，真实HTTP重放原Send/Queue key，核原context/收据、plain/[] v1及namespace跨重复migration/restart稳定。前半段明确是PG/domain，不冒历史HTTP。没有公共ServerOptions/test capability，不动F01 index。
+
+定向六case：升级、普通cap、lost-upload/restart、owner-auth、child SIGKILL、lost-Send/restart，加受影响strict types；不无差别重跑78。新报告必须说明实际走fallback还是production分支。11:15所见F01 HEAD bea11尚无生产mount，**生产factory固定candidate/manifest仍待共享owner提供**；本修复可先形成可复用固定输入，默认自动mount证明由Lead新factory专测完成，不能据fallback报生产接通。[输入/manifest/claim原始归因](attach01-fixture-handoff.json)。CACHE只读准备短暂停让位直接消费者，不是MATURE05整体阻塞。
+
+共享ACK v2 **df8d077accea7a28536f1f56407a729c41e4639c** 已native_center_owner独审APPROVED，原报告/manifest链接见上述记录；六client方法 **ab1bcb14531995ccb3916492eaf328cdae2213b3** 仍按Mika薄审阶段记录，不冒批准。ATTACHI继续只读8701 DTO的typed-port模块，实际公共HTTP/App接通仍pending。
+
+## RELEASE02：Execution Lead 独审及main已接收
+
+Execution Lead已完成唯一独立窄审，[原始审查回执](release02-lead-independent-review.json)绑定560cbd2b6a5dc43bc18458d1335ced73b0e9254d/0bca82da6208b108c7e073d748d2a157821bba72；去掉as const即与parent字节相同。正式main/origin **648e331c58043cf7ee307300521ab1c628cb2ee1** clean已只读核，组合root types0按Lead归因，未重跑PG/browser。w01已收到仅own metadata收口，正常push双端clean、明确三scope停写后才由管理fresh release03323 v1。此前runner_owner未启动，不等待/重复review。个人backend b1c/static8d8按Lead正式来源未变，本组不操作/采样。
 
 ## RELEASE02 固定窄修入口
 
 实现 **560cbd2b6a5dc43bc18458d1335ced73b0e9254d**，最终候选 **0bca82da6208b108c7e073d748d2a157821bba72**，base2e71fabc218df28f6ccb78a927432ae1101c17c5；local=origin/clean已核。唯一变化为fixture固定构建矩阵末尾 `as const`，不改版本常量/运行旅程。作者根严格 `pnpm exec tsc --noEmit` exit0，TS5.9.3转译前后JS逐字相同；没有fixture执行/PG/browser/provider。管理只核diff/hash/双端，不替代独审，[固定审计](release02-fixed-candidate-audit.json)。
 
-唯一canonical：[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md)，证据[README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md)。目前NOT_STARTED，03323 v1三scope保留；请Execution Lead本人唯一独立窄审后经原owner记录，再受控接收，不等待附件大功能，不重跑123/八浏览器。
+唯一canonical：[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md)，证据[README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md)。该固定候选已由上述Lead独审并接收main；03323 v1暂保留到owner完成合法main收口/push停写，不重跑123/八浏览器。
 
 ## MATURE05 下一ready优先级已更新
 
@@ -18,7 +28,7 @@ GO最新裁决覆盖先前Arc先行：1711 partial已足够；panels下一只读
 
 ## RELEASE02 严格类型检查窄修（合法新scope）
 
-Lead/root已纠正准确定位：root `noUncheckedIndexedAccess` 将 fixture 构建矩阵的 `[label,target]` 推为 `string | undefined`，127/134两错误；不是env/token，也不是ENG领域失败。[原始输入](release02-root-types-input.log)/[三scope修复方案](release02-tuple-types-proposal.json)。w01在ATTACHI安全点用新web-release-type-fix/base2e71，[03323bce v1 COMMITTED](release02-take-receipt.json)11:07:28.265Z三scope已fresh领取并followup派发，只加readonly typed tuple或narrow；不改版本/旅程，不重跑123/八browser/个人发布。旧RELEASE claim已释放不复用；旧定向tsc通过只代表当时选项，保留证据，根严格检查另列。固定目标由Lead runner_owner独立窄审。
+Lead/root已纠正准确定位：root `noUncheckedIndexedAccess` 将 fixture 构建矩阵的 `[label,target]` 推为 `string | undefined`，127/134两错误；不是env/token，也不是ENG领域失败。[原始输入](release02-root-types-input.log)/[三scope修复方案](release02-tuple-types-proposal.json)。w01在ATTACHI安全点用新web-release-type-fix/base2e71，[03323bce v1 COMMITTED](release02-take-receipt.json)11:07:28.265Z三scope已fresh领取并followup派发，只加readonly typed tuple或narrow；不改版本/旅程，不重跑123/八browser/个人发布。旧RELEASE claim已释放不复用；旧定向tsc通过只代表当时选项，保留证据，根严格检查另列。原拟runner_owner因thread limit未启动；实际唯一独审由Execution Lead完成，见本文件顶部回执。
 
 ## Lead当前所需：ATTACH phase1+runtime唯一完整manifest
 

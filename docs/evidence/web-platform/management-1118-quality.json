@@ -1,0 +1,130 @@
+{
+  "at": "2026-10-06 11:20 UTC",
+  "scope": "management documents only",
+  "skills": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+  ],
+  "application": "Local existing skills reused; exact-owner and fixed-source boundaries; single actionable fixture handoff; preserve historical source/test attribution. No installation.",
+  "checks": [
+    {
+      "task": "WPF-001",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "附件保存与恢复已通过独立检查；输入预览正在实现，生产中心接通仍待组合验证",
+        "next": "完善附件升级与中心启动验证，交付附件选择和恢复界面；缓存改进方案随后继续",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": 35
+    },
+    {
+      "task": "WPF-MATURE-03",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已可选择知识引用并发送；文本附件保存与恢复已独审，附件选择与预览界面正在实现，生产聊天附件仍未接通",
+        "next": "完善附件升级与正式中心启动的验证；继续上传选择、预览和未知上传恢复界面",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": 6
+    }
+  ],
+  "addedLinks": [
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "attach01-fixture-handoff-ledger.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "attach01-fixture-handoff.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "release02-lead-independent-review.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/review.md",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/docs/evidence/wpf-release02/README.md",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "release02-root-types-input.log",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "release02-tuple-types-proposal.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "release02-take-receipt.json",
+      "exists": true
+    },
+    {
+      "file": "plans/web-platform/status.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-mature-03-attachments/status.md",
+      "target": "../../docs/evidence/web-platform/attach01-fixture-handoff.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-mature-03-attachments/plan.md",
+      "target": "../../docs/evidence/web-platform/mature03-owner-observation.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-mature-03-attachments/plan.md",
+      "target": "../../docs/evidence/web-platform/attach01-fixture-handoff.json",
+      "exists": true
+    }
+  ],
+  "productTests": "not run; no product files changed",
+  "changes": [
+    "ATTACH original v2 legal two-file factory fixture follow-up",
+    "shared ACK vs six-method review boundaries",
+    "RELEASE02 Lead main receipt and owner parser correction before release",
+    "current summaries corrected without new TODO or authority"
+  ]
+}

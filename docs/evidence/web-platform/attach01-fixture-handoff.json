@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-06T11:18:00Z",
+  "kind": "fixed-input and legal-scope observation, not product verification",
+  "ledgerObservedAt": "2026-10-06T11:15:19.231Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/attachments/attachments.test.ts",
+      "apps/server/src/attachments/context.test.ts",
+      "apps/server/src/attachments/fixture.ts",
+      "apps/server/src/attachments/index.ts",
+      "apps/server/src/attachments/storage.ts",
+      "apps/server/src/conversation-context/store.ts",
+      "apps/server/src/conversation-queue/commands.ts",
+      "apps/server/src/conversations/commands.ts",
+      "apps/server/src/conversations/queries.ts",
+      "apps/server/src/conversations/state.ts",
+      "docs/evidence/wpf-attach01",
+      "packages/contracts/src/attachments.test.ts",
+      "packages/contracts/src/attachments.ts",
+      "packages/contracts/src/conversation-context.ts",
+      "packages/contracts/src/conversation-queue.ts",
+      "packages/contracts/src/conversations.ts",
+      "packages/storage/migrations/026-attachment-resources.sql",
+      "plans/wpf-attach01-resources"
+    ],
+    "state": "active",
+    "branch": "codex/attachment-resources",
+    "origin": "new",
+    "taskId": "WPF-ATTACH01",
+    "worker": "workspace_panels_owner",
+    "claimId": "ef617d78-eb39-484e-898e-5f057fca50d4",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+    "createdAt": "2026-10-06T10:06:48.197Z",
+    "updatedAt": "2026-10-06T10:28:42.374Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "factory": {
+    "candidate": null,
+    "manifest": null,
+    "observedSharedHead": "bea11ea75494174184db02b2f994aa2e45ba413d",
+    "status": "no attachment production mount in observed factory; follow-up supports old-factory fallback but must not claim production branch verified"
+  },
+  "approvedRepairScope": [
+    "apps/server/src/attachments/fixture.ts",
+    "apps/server/src/attachments/context.test.ts"
+  ],
+  "preservedInput": {
+    "implementation": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+    "delivery": "1d236cbe2299117e3b63887fda3d1c0e140f56b0",
+    "manifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-candidate.json",
+    "independentTests": 78
+  },
+  "sharedInputs": [
+    {
+      "target": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "review": "APPROVED by native_center_owner 2026-10-06 11:11:45 UTC",
+      "manifest": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-ack-manifest.json",
+        "bytes": 2017,
+        "sha256": "66e0de2155c8de4a663f1b14185c6a71cbc0612c247398da942c763b60a07f37"
+      },
+      "reviewFile": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-ack-independent-review.md",
+        "bytes": 2467,
+        "sha256": "7599cb78e799a17de979ddc154539a2d394a3302664cdfe616849f16fcd05d12"
+      }
+    },
+    {
+      "target": "ab1bcb14531995ccb3916492eaf328cdae2213b3",
+      "review": "Mika review pending per root; manifest NOT_STARTED not overridden by inference",
+      "manifest": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-client-manifest.json",
+        "bytes": 1788,
+        "sha256": "1c9d30eee359ea951b9e88baa38b8cb26b213ebd63d0de2b4965bf3856bd633d"
+      }
+    }
+  ],
+  "validation": "six affected scenarios + strict types by owner, no repeat of 78; actual factory branch named in new report; factory default mount check owned by Lead",
+  "productActionsByManager": []
+}

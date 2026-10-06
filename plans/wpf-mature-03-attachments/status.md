@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:03 UTC |
+| 最近更新 | 2026-10-06 11:18 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | CONTEXTI知识App已main；ATTACH runtime8701已独审78并冻结待共享接收，ATTACHI11新scope从已审DTO开始官方Thread隔离模块；生产App附件仍未接 |
-| 下一可用交付 | Lead唯一owner桥接public client/ACK-v2/mount；w01实施ATTACHI typed ports/controller/recovery/Picker，真实HTTP与生产App后继 |
+| 当前产出 | 已可选择知识引用并发送；文本附件保存与恢复已独审，附件选择与预览界面正在实现，生产聊天附件仍未接通 |
+| 下一可用交付 | 完善附件升级与正式中心启动的验证；继续上传选择、预览和未知上传恢复界面 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -36,7 +36,7 @@
 
 ## 依赖与领取
 
-CONTEXTI01已main并释放；ATTACH01 runtime8701/final1d236已root独审78、16源/19依赖，ef617 v2冻结待main。ATTACHI01由w01在web-attachment-input-preview/codex同名、base8701取94b84c59 v1十一新scope，首canonical d6e6eba clean/parser0已实际提交；只读DTO+typed ports/官方Threadfixture，publicclient/HTTP/App仍pending。Lead协调共享出口/decoder/mount/main，资源后端仍本组已交付。
+CONTEXTI01已main并释放；ATTACH01 runtime8701/final1d236已root独审78、16源/19依赖，ef617 v2保留；现只修fixture/context两个直接消费者，旧8701/78记录不变，新报告分清fallback与生产factory分支。ATTACHI01由w01在web-attachment-input-preview/codex同名、base8701取94b84c59 v1十一新scope，首canonical d6e6eba clean/parser0已实际提交；只读DTO+typed ports/官方Threadfixture，publicclient/HTTP/App仍pending。Lead协调共享出口/decoder/mount/main，资源后端仍本组已交付。
 
 当前子任务来源：[ATTACH01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)；[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 
@@ -47,3 +47,5 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 [两份只读候选与共享依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)已收：原后端15/Web23是整体候选；phase1固定合同已审；runtime现18literal精准领取；F01共享出口/contract ownership、精确迁移编号与Web receipt调用点窗口须统一。现官方Thread已有能力门控附件按钮/dropzone/list，gap是持久引用和实际发送接线，不是控件缺失；本地固定SDK保持不升级。
 
 附件v2由唯一shared decoder配套；Webrecovery替代重复receipt matcher，查找/恢复/retention与11scope首片已root授权并fresh take；不依赖不存在公共方法。[具体回复置于集中队列顶部](../../docs/evidence/web-platform/mature-task-handoff.md)。
+
+生产factory升级直接消费者接缝已root批准并由panels在原claim实施；pre026真实PG原行/首次026/HTTP重放与六项定向验收、固定共享输入边界见[集中接缝记录](../../docs/evidence/web-platform/attach01-fixture-handoff.json)。共享ACK df8d已独审，六方法ab1b仍薄审/生产mount固定输入待到，不借fixture fallback声称实际生产接通。
