@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **下一原生诊断仅准备指定系统配置接缝。** [最小system-config接口](native-system-config/interface.md)：GO/root已确认上一156B为读取公开system requirements文件时EPERM；原180924/f0b6结果不追改。固定0.154仅NotFound忽略，候选只增加六文件exact读/metadata及四目录metadata，fresh缺失gate遇真实配置/未知即停；未忽略管理规则，无真实窗口OPEN。
+- **下一原生诊断仅准备指定系统配置接缝。** [最小system-config接口](native-system-config/interface.md)：GO/root已确认上一156B为读取公开system requirements文件时EPERM；原180924/f0b6结果不追改。固定0.154仅NotFound忽略，候选只增加六文件exact读/metadata及四目录metadata，fresh缺失gate遇真实配置/未知即停；源码独审与6组内存检查完成，[固定准备包](native-system-config/review-ready.md)待组合审查，actual NOT_OPEN。
 
 - **S01只读镜像已供给，准备包进入审查。** [唯一preparation-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/preparation-ready.md)，owner报告fixed38066603c6b9058fb9d7ef51c3a57956d80c8310 clean/pushed，61项284628B已逐hash；无需重复物化，实际测量仍NOT_OPEN，唯一status由原owner维护。
 
