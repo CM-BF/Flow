@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../apps/server/src/assistant/final-preview-batch.test.ts",
+    "../../../apps/server/src/conversations/turn-page-batch.test.ts"
+  ],
+  "exclude": [
+    "../../../node_modules"
+  ]
+}
