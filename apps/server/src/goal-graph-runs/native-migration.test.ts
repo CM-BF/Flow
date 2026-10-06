@@ -21,7 +21,7 @@ import { migrateGoalToolRuns } from '../goal-tool-runs/index.js';
 import { migrateGoalGraphProposals } from '../goal-graph-proposals/index.js';
 import { migrateKnowledge } from '../knowledge/index.js';
 import { migrateRunnerMaintenance } from '../runner-maintenance/index.js';
-import { claim, registerRunner } from '../runners.js';
+import { registerRunner } from '../runners.js';
 import { startScheduler } from '../scheduler.js';
 import { migrateGoalGraphRuns, registerGoalGraphRunRoutes } from './index.js';
 import { admit } from './store.js';
@@ -68,9 +68,14 @@ it('preserves populated 017 graph authority with 018 claim input schema and audi
   const scope = { baseRevision: 1, allowedExistingNodes: [], maxProposals: 1, maxApplications: 1, maxNewNodes: 3, maxNewEdges: 2 };
   const admitted = await admit(pool, boss, goal.id, { scope, prompt: 'Fixture authority', execution: { harness: 'fixture' } }, 'admit');
   const runner = await registerRunner(pool, { name: '017 fixture', harnesses: ['fixture'], capacity: 1 });
-  let assignment: Awaited<ReturnType<typeof claim>>['assignment'];
-  await expect.poll(async () => { assignment = (await claim(pool, runner.runnerId, 60_000)).assignment; return assignment; }, { timeout: 5000, interval: 20 }).not.toBeNull();
-  const call = { attemptId: assignment!.attempt.id, ownerVersion: assignment!.attempt.ownerVersion, grant: { id: admitted.run.id, version: 1 as const }, command: { kind: 'propose' as const, proposal: { expectedProjectRevision: 1, reason: 'Before upgrade', additions: [{ key: 'A', title: 'Retain', dependencies: [] }] } } };
+  // Persist the old-schema attempt explicitly; current claim requires 021.
+  // Keep the actual authorization, proposal and upgrade assertions unchanged.
+  const attemptId = randomUUID();
+  await transaction(pool, async client => {
+    await client.query("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,1,clock_timestamp()+interval '60 seconds')", [attemptId, admitted.task.id, runner.runnerId]);
+    await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=1 WHERE id=$1", [admitted.task.id, attemptId]);
+  });
+  const call = { attemptId, ownerVersion: 1, grant: { id: admitted.run.id, version: 1 as const }, command: { kind: 'propose' as const, proposal: { expectedProjectRevision: 1, reason: 'Before upgrade', additions: [{ key: 'A', title: 'Retain', dependencies: [] }] } } };
   const proposed = await runnerCommand(pool, runner.runnerId, call, 'saved');
   const before = await records(admitted.run.id); expect(before.grant.used_commands).toBe(1); expect(before.calls).toHaveLength(1);
   await migrateGoalGraphRuns(pool);
