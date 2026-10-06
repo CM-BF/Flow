@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { createHash, randomUUID } from "node:crypto";
 import { execFile } from "node:child_process";
-import { mkdtemp, mkdir, readFile, writeFile, realpath, rm } from "node:fs/promises";
+import { mkdtemp, mkdir, writeFile, realpath } from "node:fs/promises";
 import { createServer, request as httpRequest, type Server } from "node:http";
 import { tmpdir } from "node:os";
 import { createRequire } from "node:module";
@@ -54,6 +54,7 @@ export async function until<T>(read: () => Promise<T>, predicate: (value: T) => 
 async function startObservationProxy(centerPort: number) {
   const records: Wire[] = []; let loseTurn = false, legacy = false;
   const server = createServer((request, response) => {
+    if (records.length >= 2000) { response.statusCode = 503; response.end("Fixture request budget exceeded"); return; }
     const chunks: Buffer[] = []; let bytes = 0;
     request.on("data", chunk => { bytes += chunk.length; if (bytes <= 64 * 1024) chunks.push(chunk); else request.destroy(); });
     request.on("end", () => {
@@ -75,7 +76,9 @@ async function startObservationProxy(centerPort: number) {
             try { record.response = JSON.parse(Buffer.concat(capture).toString("utf8")); } catch { /* Preserve status without inventing JSON. */ }
           }
           record.dropped = shouldDrop && incoming.statusCode! >= 200 && incoming.statusCode! < 300;
-          records.push(record); if (records.length > 2000) { server.closeAllConnections(); throw Error("Fixture request budget exceeded"); }
+          // Exhaustion is an HTTP failure handled by the browser harness, never an uncaught event callback.
+          if (records.length >= 2000) { response.destroy(); return; }
+          records.push(record);
           if (record.dropped) response.destroy(); else if (shouldDrop) { response.writeHead(incoming.statusCode!, incoming.headers); response.end(Buffer.concat(capture)); } else response.end();
         });
       });
