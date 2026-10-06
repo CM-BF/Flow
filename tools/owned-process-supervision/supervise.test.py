@@ -198,6 +198,12 @@ print(child.pid,flush=True)
         self.assertEqual(result.first_failure['code'], 'SPAWN_FAILED')
         self.assertNotIn('secret', str(result.first_failure))
 
+    def test_new_session_zero_term_grace_is_rejected_before_spawn(self):
+        with patch.object(MODULE.subprocess, 'Popen') as spawn:
+            with self.assertRaisesRegex(ValueError, 'positive TERM grace'):
+                supervise(launch('pass', Ownership.NEW_CHILD_SESSION), policy(term=0))
+            spawn.assert_not_called()
+
     def test_invalid_policy_or_external_pid_not_accepted(self):
         for invalid in (Policy(float('inf'),0,.1,64), Policy(.1,0,.1,1048577), Policy(.1,0,0,64)):
             with self.assertRaises(ValueError): supervise(launch('pass'), invalid)

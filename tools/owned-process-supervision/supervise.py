@@ -111,6 +111,8 @@ def _validate(launch, policy):
                            (policy.kill_grace_seconds, 10)):
         if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or not 0 <= value <= maximum:
             raise ValueError('Finite time budget required')
+    if launch.ownership is Ownership.NEW_CHILD_SESSION and policy.term_grace_seconds <= 0:
+        raise ValueError('New child session requires positive TERM grace')
     if policy.work_seconds <= 0 or policy.kill_grace_seconds <= 0:
         raise ValueError('Work and reap budgets must be positive')
     if type(policy.output_bytes) is not int or not 0 <= policy.output_bytes <= 1048576:
