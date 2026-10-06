@@ -46,3 +46,6 @@ Root只读APPROVED `26ddd8de9fde0d67e6e42bd81a583facc993a31a`：native SDK env�
 
 ## CHAT04薄client / O03薄client
 Mika独立只读APPROVED `83f7da6c6e366e3520c8373c7d21408dad5fb145`，3文件66行，2/2保存HTTP与tsc，未重跑；限定queue6方法。runner_owner / gpt-6-astra ultra独立只读APPROVED `dc9a9f1682aaf24a44e2630284aac03cb93685ed`，3文件71行，1/1保存HTTP与tsc，未重跑；限定O03八方法。两审批都不含生产mount/scan，后者等待独审，不能继承批准。
+
+## CHAT04/O03 production mount
+Mika独立只读APPROVED固定`b87a4bb1d6e6459eb97a689d6c32ab9f65d91d18`两文件，核11/11保存PG与noEmit，未重跑；默认串行scan/关闭等待与011/012初始化，原失败/owner修复均保留。当前生产index对target零diff。后补`dc506b9419cae76b679d0166e99f6a96ef62ac7c`仅测试，新增factory false到默认startup的真实flag消费1/1（2未选），无生产更改。CHAT04领域及Web reader的各自批准不扩展完整queue UI。
