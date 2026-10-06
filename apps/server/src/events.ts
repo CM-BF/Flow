@@ -1,3 +1,4 @@
+import { saveNativeActivityBody, assertNativeActivityBodiesFinalizable } from './native-activity-body/store.js';
 import type { Pool, PoolClient } from 'pg';
 import type { EventAcknowledgement, EventBatch, RunnerEvent } from '@flow/contracts';
 import { recordReceiptInTransaction } from './active-steering/commands.js';
@@ -29,11 +30,13 @@ export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: 
     const reference = await saveAssistantStream(client, task, attempt, event);
     if (reference) await appendTimeline(client, task, { kind: 'reference', reference });
   }
+  else if (event.type === 'native-activity-body') await saveNativeActivityBody(client, task, attempt, event);
   else if (event.type === 'native-activity') {
     const reference = await saveNativeActivity(client, task, attempt, event);
     if (reference) await appendTimeline(client, task, { kind: 'reference', reference });
   }
   else if (event.type === 'assistant-final') {
+    await assertNativeActivityBodiesFinalizable(client, attempt.id);
     await assertControlledFinal(client, attempt, event);
     const reference = await saveAssistantFinal(client, task, attempt, event);
     await settleAssistantStream(client, task, attempt, event.messageId);
@@ -64,6 +67,7 @@ export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: 
     task.status = 'waiting';
   }
   else if (event.type === 'completed') {
+    if (event.outcome === 'succeeded') await assertNativeActivityBodiesFinalizable(client, attempt.id);
     if (task.submission.engineering && event.outcome === 'succeeded') await assertEngineeringCompletion(client, task, attempt);
     await closePendingSteering(client, task, attempt);
     if (event.error) {

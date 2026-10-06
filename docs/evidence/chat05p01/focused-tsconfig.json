@@ -1,0 +1,15 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false
+  },
+  "include": [
+    "../../../apps/runner/src/native-activity-body/**/*.ts",
+    "../../../apps/runner/src/native-activity/mapper.test.ts",
+    "../../../apps/runner/src/outbox.ts",
+    "../../../apps/server/src/native-activity-body/**/*.ts",
+    "../../../apps/runner/src/claude.ts",
+    "../../../packages/contracts/src/native-activity-body.ts"
+  ]
+}

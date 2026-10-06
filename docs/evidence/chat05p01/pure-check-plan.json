@@ -1,0 +1,14 @@
+{
+  "kind": "CHAT05P01-local-checks",
+  "selection": ["apps/runner/src/native-activity-body/body.test.ts", "apps/runner/src/native-activity/mapper.test.ts", "apps/runner/src/outbox.test.ts", "apps/server/src/native-activity-body/codec.test.ts"],
+  "expectedSelected": 22,
+  "expectedNew": 13,
+  "retainedDirectConsumers": 9,
+  "workMs": 60000,
+  "diskIncrementBytes": 16777216,
+  "rawBytes": 1048576,
+  "freshFreeBytes": 1090519040,
+  "method": "Serial files and per-case private temporary cleanup. Largest durable body 2097275 B; no write of all attempt quota. One >8MiB rejection is memory only. Vitest cache and own TMPDIR counted. Output and disk are observation stop thresholds, not reserved filesystem space.",
+  "failure": "Stop own new process group on budget breach; preserve logs and fixture remnants as unknown if group stop or cleanup cannot be confirmed. No PG/HTTP server/provider/browser/install.",
+  "productSource": "Fixed before execution; no production runtime mount."
+}

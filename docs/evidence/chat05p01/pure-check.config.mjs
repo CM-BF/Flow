@@ -1,0 +1,2 @@
+import { defineConfig } from 'vitest/config';
+export default defineConfig({cacheDir:process.env.FLOW_TEST_CACHE_DIR,test:{include:['apps/runner/src/native-activity-body/body.test.ts','apps/runner/src/native-activity/mapper.test.ts','apps/runner/src/outbox.test.ts','apps/server/src/native-activity-body/codec.test.ts'],testTimeout:10000,hookTimeout:10000,fileParallelism:false,maxWorkers:1}});
