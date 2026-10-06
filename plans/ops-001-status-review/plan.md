@@ -27,9 +27,10 @@
 
 - [x] **OPS-001-06** 三队并发预算与直接技术路由（2026-10-06）：用户最新覆盖（2026-10-06 08:45 UTC）：每个Lead任务最多1+3；本队4、Web4、Mika4，授权总上限12。任何队增人先协调，不反复探测或通过新用户task绕过实际cap。
 
-以下为OPS-001-06历史路由记录，当前仅用于OPS-001-09允许的重要接口/范围/资源裁决、紧急用户影响或真实阻塞，普通回执不适用。Execution Lead可主动直发Web用户task `01a10ec2-ff1a-76d0-a277-446baf89b19d` 与Mika用户task `01a10f3f-4ef0-7ca2-8e66-f1947fa4b295`，带任务ID、固定SHA、实际边界、所需动作。外部两Lead之间可双向直投。Execution Lead本身是subagent，没有可直投的独立用户task；外部回本task注明“收件人ExecutionLead”，需跨Lead裁决且无法直达时Goal Owner可桥接，不额外增加技术审批；普通进度不桥接。不创建新task来绕过此限制。仅需要GO裁决的scope冲突、资源与用户决策直接联系Goal Owner，普通里程碑不抄送；owner status/evidence仍唯一事实源，消息不是第二进度账本。发现直接回唯一writer（跨队经该Lead），consumer合同直接发消费方，降低无必要中转。
+以下为OPS-001-06历史路由记录，当前仅用于OPS-001-09允许的重要接口/范围/资源裁决、紧急用户影响或真实阻塞，普通回执不适用。历史路由只保留技术可达性：Execution Lead可直投两外部co-lead；其本身没有独立用户task，工具不支持的回程不能假装存在。普通进度不再经GO桥接。内部worker→本组lead必要交接正常，co-lead间依赖协调不抄送GO。所有跨层GO消息均按OPS-001-09最终预算；本段不另开例外。
 
-- [x] **OPS-001-07** 2026-10-06短交接约定：普通handoff只发taskId、事件、固定实现SHA和clean metadata HEAD、canonical证据路径、下一动作、claimId/version。完整hash/测试明细留唯一owner证据；失败或scope冲突可补必要上下文。两外部Lead已确认，该历史即时桥接已由OPS-001-09取代，仅重要决策例外不增加审批；消息不成为第二进度源。
+- [x] **OPS-001-07** 历史短交接格式保留给worker→本组lead及co-lead间必要执行协作：taskId、事件、固定实现SHA/clean HEAD、canonical证据、下一动作、claimId/version。完整hash和测试细节放唯一证据。普通消息不逐层转GO，OPS-001-09覆盖原即时桥接。
+
 
 2026-10-06 07:18 UTC维护：本片当前摘要与实际main对齐，历史实验/TODO证据保留；详见唯一status。无新产品或模型验证。
 
@@ -39,6 +40,6 @@
 
 2026-10-06 08:45 UTC：授权配额4/4/4不代表12个实际运行agent。Mika新增/复用completed worker遇工具threadlimit时停止重试，不开新用户任务绕过；现有工作照常，实际active仅按工具观察记录。assignment_review在O10收口后由GO复用为只读runner宿主抽象审查；CHATUI01仍由Mika唯一worker执行。
 
-- [x] **OPS-001-09** 用户协作方式纠正（2026-10-06 08:49 UTC）：GO负责总规划、查缺、研究、发现问题、督促与全局优化；co-lead自主细化计划/技术优化并管理workers，workers实施。唯一status→dashboard为默认通道，GO主动查看；普通进展/完成/审查/merge/metadata/claim不逐条私信或多路转发，不确认套确认。仅跨Lead重要接口/范围/资源裁决、紧急用户影响或dashboard不能解的真实阻塞才一次短消息加canonical；收到无需ACK，结果回写看板。普通授权技术步骤无需GO再批准，已有独审不重复。已一次同步外部两Lead。
+- [x] **OPS-001-09** 用户最终两层规则：GO只规划大task的用户结果/优先级/边界/依赖/验收并负责全局优化；co-lead自主规划管理sub-tasks和workers、局部独审/提交推送/受控集成。每sub-task的status填写唯一所属大task及co-lead，dashboard关联，无第三任务层或改名绕预算。
 
-内部worker向其Lead交付固定target、证据与必要技术问题仍正常进行；OPS-001-09只减少跨Lead/GO的普通进度私信，不取消worker→Lead审查与集成输入。
+co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须大task受阻且需要GO介入，同一blocker只一次，无变化不重复；大task满足完整验收才一次Done。片段完成/ready/review/merge/登记/claim/metadata/普通接口确认均只更新status/dashboard，可自行解决的内部问题不是blocker。本规则覆盖此前“重要决策/关键里程碑”泛化例外。worker↔本组lead执行通信正常，co-lead间处理具体依赖不逐条抄送GO。已一次同步两外部lead；本次规则修订按一个大task收口，不把子片当多个Done。

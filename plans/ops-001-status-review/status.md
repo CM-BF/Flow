@@ -4,6 +4,8 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | Plan | [plan.md](plan.md) |
+| 所属大task | OPS-001：两层协作规则修订（本次用户明确大task；[验收](plan.md)） |
+| co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
@@ -76,3 +78,5 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
 
 | OPS-001-09 | completed | Execution Lead | 根AGENTS与plans/AGENTS已在main648c1cc的a7db989交付；OPS当前规则在本权威树；一次同步外部两Lead，后续不逐条回传普通进度。仅文档检查。 |
+
+2026-10-06 08:53 UTC：最终规则严格两层与每大task#独立blockers+Done(1)，覆盖先前宽泛消息例外；实际根AGENTS/plans规则已写入并由本批发布，OPS历史即时桥接条款已替换。worker向本组lead必要交接不受限制。当前规则修订作为一个大task，只在全部文件/发布与看板记录核验后一次Done。

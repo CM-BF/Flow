@@ -4,6 +4,8 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | Plan | [plan.md](plan.md) |
+| 所属大task | FLOW-002（[大task定义](plan.md)） |
+| co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
