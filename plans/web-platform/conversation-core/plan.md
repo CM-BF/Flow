@@ -13,10 +13,10 @@
 | 阶段 | 所需权威接口/行为 | 可检查结果 |
 | --- | --- | --- |
 | A 能力与会话最小核 | 中心capability catalog提供实际provider/model、effort取值、access模式及授权范围、context/files/语音/queue/steer支持；会话ID/turn/run身份、持久消息、发送ACK/幂等、分页/恢复语义由中心冻结 | 未支持项明确disabled/说明，不硬编码假模型；hi自然回复与同conversation追问；ACK丢失不重复产生turn，重连恢复真实记录 |
-| B 发送与正文 | 官方完整Thread保留，真正多turn通过支持的runtime/公共client适配；自然用户/assistant正文优先，生成中/失败/取消/未知结果明确 | 发送、消息气泡、输入草稿/错误保留、keyboard/窄屏/双主题/reduced-motion；既有任务不是每次新task就伪称同会话 |
+| B 发送与正文 | 官方完整Thread保留，真正多turn通过支持的runtime/公共client适配；自然用户/assistant正文优先，生成中/失败/取消/未知结果明确 | 发送、消息气泡、输入草稿/错误保留、keyboard/窄屏/双主题/reduced-motion；允许内部每turn复用durable task/native resume，前提中心持久conversation稳定ID、有序turn与context lineage；禁止无此权威关系的任务拼接冒充会话 |
 | C 工具与可展示thinking | 初始列表/快照/SSE只含id/title/状态/允许摘要引用，不嵌大量内容；展开用鉴权detail按resource+version读取。thinking只渲染provider明确提供且允许展示的内容或摘要 | 初始0detail、首次展开1、重复缓存；初始响应/SSE字节与payload结构实证；无thinking来源时不编造，不把隐藏内部推理冒充可展示输出 |
 | D Queue | 中心持久队列，明确排队序号/同会话顺序、受理/执行/取消/重连、并发与幂等；权限和在途结果由权威态决定 | 运行中排队、顺序执行、撤销尚未执行项、重连/中心恢复保留；取消队列项与取消当前run区别清楚 |
-| E Steering | 运行中目标conversation/run身份、steer受理ACK及实际应用位置/拒绝理由；runner明确是否支持下一安全点生效 | 运行中steer被确认后展示实际生效/未支持，不偷偷另建task；旧run/旧revision拒绝，HTTP超时仍待核对而非声称生效 |
+| E Steering | 运行中目标conversation/run身份、steer受理ACK及实际应用位置/拒绝理由；runner明确是否支持下一安全点生效 | 运行中steer被确认后展示实际生效/未支持，必须定位active turn/attempt并记录ACK/实际生效；unsupported明确改为queue且由用户知晓，不静默替换；旧run/旧revision拒绝，HTTP超时仍待核对而非声称生效 |
 | F Context / files / access | 中心授权context/resource版本与文件能力，权限模式影响真实执行gate；不传任意宿主路径、不将浏览器toggle当授权 | 选择context/files后同turn绑定固定来源；越权/不存在/过期/未支持可见；文件只读/上传/写权限各有实际契约，不与产物引用树混淆 |
 | G 语音 | 录音设备许可/开始停止与转写服务分开；明确现有能力，未支持不偷接付费服务 | 录音失败/转写失败可回文字并保留已有输入，清理设备流；真正转写需单独实际能力/授权来源，无服务时明确未支持 |
 
@@ -41,3 +41,16 @@ Web后续独立worktree/branch与平级canonical计划，开工前读dashboard+l
 ## 检查门槛
 
 每段先模块+直接依赖；公共契约变更覆盖相关链路，纯计划只查链接/ID/事实。持续跟踪client abort不等于取消服务端任务、跨连接同ID隔离、过期decision/steer不自动改身份重发、关闭视图不取消。未经独立审查review保持NOT_STARTED，运行前后实际证据区分fixture、真实PG/protocol runner和真实模型。
+
+03:28主线精确化：durable task是允许的内部每turn执行载体，native resume也可复用；关键是中心持久conversation稳定ID、有序turn/context lineage，不能把无此关系的任务拼接当追问。真正steering必须指向active turn/attempt并有ACK与生效语义，unsupported可明确排队，不能静默替代。
+
+已完成只读接口调查见[固定源码证据](../../../docs/evidence/web-platform/chat-interface-research.md)：现session有原子占用，不重造；缺公开conversation/turn/context lineage、capability与queue/steer。调查与官方ExternalStore/Dictation语义合并，不建立第二计划。
+
+发送专项必须覆盖core0.3.22默认运行中steer与快捷键：显式区分Queue/Steer。ACK丢失按同commandId/key核对、确定未发送才恢复、旧请求与用户新draft并行不覆盖。普通onNew Error与MessageNotSentError语义不同，见同一[接口研究](../../../docs/evidence/web-platform/chat-interface-research.md)。
+
+
+## 首批固定合同与正式受领（03:35 UTC）
+
+共享source `4c2408e4db3595879f6471cb5fffccadec975b3d` 的 packages/contracts/src/conversations.ts 与 docs/architecture/chat01-conversations.md 已由root/管理者/新owner实际只读。稳定conversation+递增revision、有序turn→durable task；首批requested仅runner-default/thinking disabled/configured-readonly，effective来自实际session证据，不能把requested当实际。queue/steer/liveAssistantText/perTurnModel/Thinking/Tools均false，保持明确unsupported，后继阶段不勾完。仅adapter-final artifact匹配身份/version/来源后可成为assistant正文，timeline text仍telemetry。
+
+默认首页为持续聊天和可编辑composer，Work overview仅rail入口。新Web owner workspace_panels_owner，tree web-conversations / branch codex/web-conversations，base I01 b584。03:35:00.744Z新claim08259c1d-3711-4f5f-bf21-ad355ffa4cf3 v1已受领16literal scope；I01先v2移出4现文件且plugin-integration父scope展开，原owner停写。固定公共exports/client入口仍由MainLead提供，不建私有fetch/client或重复DTO；canonical平级计划初始化后本目录转stub。真对话不是fixture，亦不因首合同固定就宣称真实API/模型已验证。

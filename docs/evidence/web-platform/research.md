@@ -248,3 +248,17 @@ PERF01正式benchmark review：root APPROVED target3d47cdd4eae959119f154a0d06964
 立即执行优先变更：PERF02保留准备93889c3，尚未创建树、amend/take或生产写入；w01_owner已确认暂停。PERF01最终metadata36d80219e4565783e371fd3cd6c29adc4d1398cc clean，原claim4553v1仍4scope；此前probe停写声明保留历史，不授予另一owner。原M02停写意向也未改v2范围。I01当前收尾照常，新增workspace.tabs合法button/menu挂载反馈由其owner局部修复，尚无固定candidate。49922保持原tab/服务，不暗换。新对话先只读接口调查与主线共享owner协同，独立scope/receipt后再实现。
 
 U11落盘固定计划提交c6592aaa9f4bc617fb6ade9e56de661447ee1cdd，28Markdown/113本地links/TODO一致0错误、diffcheck0。03:26:35.296Z实际4320已读WPF001 HEADc6592 clean、priority1、真实持续对话当前产出/下一接口交付、human.complete=true/missing/issues空；documents包含conversation-core/plan.md真实下钻入口，事实摘要见[新优先级dashboard证据](chat-priority-dashboard.json)。这只证明计划展示，不是聊天能力已实现。
+
+03:29精确化与调度：主线允许内部每turn durable task/native resume，前提中心持久conversation、有序turn/context lineage；不能把禁止假拼接误写为禁止复用task。固定源码调查及官方ExternalStore/queue/Dictation/SpeechRecognition研究已合并[CHAT接口证据](chat-interface-research.md)，更正早期未看到原子session占用的推断。随后原Goal Owner经root明确：U11已持久化且中心合同未ready时，八scope PERF02可并行；I01收尾owner后续优先CHAT消费。此前暂缓真实发生且无事务，新明确恢复后才准备树/现场versions/CAS，不能假装从未暂停。
+
+
+## RS25 I01闭环与真实领取恢复（03:32 UTC）
+
+I01 root整体APPROVED target92a786abb9f7ef16e15482ac00b98ff860ecc47f/base1002，最终metadata b5844442699733558a152c12392ea78f26c393a4 clean。root独立24模块、55049实页Thread→Terminal/reference焦点、Notes保留和Settings Close/Escape回焦点；管理者13实现文件全在liveclaimv1，shared/manifest/lock/P01plugins diff0，metadata实现diff0，7Markdown34links/TODO一致0错。作者9browser/3真实PG/生产检查执行先后与未重跑限制诚实记录；不是live模型。owner明确停止I01全部实现，claimv1仍保留，CHAT合同ready后才精确移交。
+
+原Goal Owner经root明确U11已固定且中心合同未ready时允许PERF02并行。03:30:21.949Z现场CLI核M02v2/PERF01v1，独立核新web-activity-window/codex/web-activity-window HEADcc334 clean；遍历workspace-feed正好六现存文件，保留四文件无遗漏。先M02 amend v3 committed03:30:25.663Z移出Overview/css并取消父scope，再PERF01 amend v2 committed03:30:29.445Z移probe，最后PERF02 take d36cd583-7c96-44c3-b92c-1cd0f208cc4e v1 committed03:30:35.629Z取得8scope。原样receipts：[M02](m02-activity-amend-receipt.json)、[PERF01](perf01-probe-amend-receipt.json)、[PERF02](perf02-take-receipt.json)。恢复是新的明确调度，不抹掉此前暂停；无旧回执复用、无双writer、无新agent。owner被followup_task正式唤醒而非仅给completed agent发消息。
+
+root03:31:52.249Z实际4320为34源，I01/PERF01已正确approved，PERF02仍unregisteredAssignment，已要求canonical初始化后交Lead登记，不谎报完整聚合。原Goal Owner另协调Mika task01a10f3f-4ef0-7ca2-8e66-f1947fa4b295队2活跃，主线4+本队最多4+Mika2总10；本队无新增agent。Mika唯一worker负责B01后台snapshot/events/workspace-feed字节/长历史性能，其下轮X02中心插件合同/PGregistry由主Lead协调，本队只Web，CHAT合同ready不被性能装饰拖延。
+
+
+03:35 CHAT正式移交：独立核新web-conversations/codex/web-conversations baseb584 clean；03:34:48.886Z live I01v1，实际plugin-integration五文件遍历核齐。先CAS I01v2 committed03:34:54.170Z，移App/官方Thread/session/react、旧父scope改另外3literal文件，再take CHAT08259c1d-3711-4f5f-bf21-ad355ffa4cf3 v1 committed03:35:00.744Z/16scope。原样[amend](i01-chat-amend-receipt.json)/[take](chat01-take-receipt.json)。owner被正式唤醒，先canonical、固定4c首合同/独立outbox，public client入口待MainLead；不造私有HTTP客户端。默认首页真实对话/Work overview rail、conversation作为路由主键、turn.task只用于执行资源。主线明确可复用内部durable task，不可没有持久lineage拼接；queue/steer暂false，后继完整需求保持开放。

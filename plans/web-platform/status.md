@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:25 UTC / 本地main及origin/main实核3773db5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:32 UTC / 本地main及origin/main实核3773db5 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `93889c39b3e7ce92fc892c5ff2680cb50a624d01`（本次提交前实核；旧review仍绑定c075bb5） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `3fa713ec8a58d65232719e1ddb7fed5978b802ae`（本次提交前实核；旧review仍绑定c075bb5） |
 | 工作树dirty状态 | 仅本管理范围的计划/来源验证/预览交接文档pending，不自指未来提交 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 45条需求追溯；真实持续对话计划优先，PERF测量已审/PERF02暂缓，I01收尾 |
-| 下一可用交付 | 真实会话能力/持久queue-steer共享接口与唯一owner安排；I01固定候选 |
+| 当前产出 | 真实对话接口缺口已明确；I01整体获审；PERF02八范围已正式受领并行 |
+| 下一可用交付 | CHAT最小共享合同与独立Web接入；PERF02 canonical状态卡与窗口候选 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -25,26 +25,26 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-001-01 | completed | d01_owner | U00～U11及WPF-REQ-01～45已落[plan](plan.md) |
-| WPF-001-02 | completed | d01_owner | 7个子计划齐三件套；P01/M02/I01/PERF转独立唯一owner，仅dashboard协作准备留管理树 |
+| WPF-001-02 | completed | d01_owner | 7个子计划齐三件套；P01/M02/I01/PERF已转独立唯一owner，dashboard协作与PERF02/CHAT01准备仍在管理树 |
 | WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01完整6ce整体APPROVED、PH-R1～4关闭；最终metadata2910ebc clean，I01开始实际主App消费；完整X01父范围仍开放；I01实际App挂载另计划 |
-| WPF-001-06 | in-progress | d01_owner | PERF01 benchmark3d47 APPROVED、最终metadata36d802 clean；PERF02仅准备且因真实对话优先暂缓，无amend/take或生产优化 |
+| WPF-001-06 | in-progress | d01_owner | PERF01 benchmark3d47 APPROVED、最终metadata cc334 clean；主线明确合同未ready可并行，PERF02新d36v1取得八scope，未完成优化验收 |
 | WPF-001-07 | completed | d01_owner | M02 d47 / metadata c526 clean，owner20局部/9总览/6观察/4真实PG组及root限定独立APPROVED；03:17 ancestor核main3773已含d47，非以approval推定 |
 | WPF-001-08 | completed | d01_owner | D04部署且root实际领取详情验证；M02v2移出三文件→I01v1 committed receipt已读/存证，正确应用用户领取展示与唯一写者规则 |
-| WPF-001-09 | in-progress | d01_owner | U11/REQ41～45及WPF-CHAT01分阶段三件套已落；只读接口调查先行，真实实现待主线接缝与独立claim |
+| WPF-001-09 | in-progress | d01_owner | U11/REQ41～45已落，首合同4c240固定；Web新08259c1d v1正式受领16scope，public client入口待主线，canonical初始化中 |
 
 ## 当前管理工作
 
-root持续只读研究与独立验收；管理者仅写此管理树。workspace_panels_owner已结束M02/P01交叉审查，正式实施I01主App挂载；w01_owner已完成PERF测量，先做真实持续对话接口只读调查。两者独立树/claim/路径，无重复writer。本队4个agent；sources/claims数不代表活跃agent数。
+root持续只读研究与独立验收；管理者仅写此管理树。workspace_panels_owner已完成I01并停止其实现写入，先只读CHAT消费接缝；w01_owner已完成CHAT接口调查并经新claim正式受领PERF02。两者独立树/claim/路径，无重复writer。本队4个agent；sources/claims数不代表活跃agent数。
 
 ## 当前集成队列（只读交接记录，状态权威仍各owner）
 
 - W01实现cb4a392历史APPROVED，最新metadata d2631f03b4bdc9bc0d543f09c11c8961a1fdf557 clean；SSE后发现由M02修复且聚合blocker none，旧实现冻结。panels46a1dbd已审并接入。
 - WPF-M02：实现d47c602f3bab1fe97a9be70fd37780c2918bcfbc整体APPROVED；最终metadata c526c1c889437ee39155d669921577995195c74e clean，parser规范已修、dashboard checks/review及scope proof正确。预览http://127.0.0.1:49922为HTTP fixture。03:17独立ancestor核已由Lead集入main3773；保留预览的branch仍是已审c526。
 - WPF-P01：整体实现6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 APPROVED，PH-R1～4 CLOSED；最终metadata2910ebc8e11fbcb00d1c2773face229c84fe47cd clean，03:06 root采样proof unchanged/human完整。http://127.0.0.1:5190/src/plugins/fixture/index.html是隔离fixture。
-- [WPF-I01](plugin-integration/plan.md)：claim b6666c29-ebc5-47b2-b754-55b62687fd00 v1 active，新平级source已registered。基线c526，正式完整输入2910ebc合入，owner报告merge1002且bridge正在实施；精确mergeSHA/dirty以新status/liveGit为准，不以输入批准当I01通过。
-- [WPF-PERF01](performance-cycle/plan.md)：新tree web-performance/codex/web-performance从c526初始化并独立核clean，claim4553f315-7fb4-4fe6-babb-0f4a8e5057c6 v1于03:07:10.630Z committed；仅4项measurement/evidence范围，canonical首文档c7bf1a8已独立核，03:12 root已实证source/claim匹配；脚本候选c40f1a02252198f4a4b1a80474743d72b1fa1dca已交root方法审阅，完整矩阵仍由唯一owner运行；管理nested改stub。
+- [WPF-I01](plugin-integration/plan.md)：实现92a786abb9f7ef16e15482ac00b98ff860ecc47f / base1002整体APPROVED，最终metadata b5844442699733558a152c12392ea78f26c393a4 clean，root03:31 dashboard批准/检查/proof unchanged/issues空。owner已停全部实现，claim b666v1仍保留到CHAT明确转交，未把停写当release。
+- [WPF-PERF01](performance-cycle/plan.md)：新tree web-performance/codex/web-performance从c526初始化并独立核clean，claim4553f315-7fb4-4fe6-babb-0f4a8e5057c6 v1于03:07:10.630Z committed；仅4项measurement/evidence范围，canonical首文档c7bf1a8已独立核，03:12 root已实证source/claim匹配；最终实现3d47cdd4eae959119f154a0d06964cf65006f8c9与报告adc259获root benchmark APPROVED，metadata36d80219e4565783e371fd3cd6c29adc4d1398cc clean；最终metadata后纯暂停说明为cc33403cd9b357fcd85484b7bc6952dc1220d689；03:30原claim改v2移probe给PERF02；管理nested为stub。
 
 ## 阻塞与未验证
 
@@ -52,7 +52,7 @@ SSE修复d47已获root整体独立APPROVED：20tests/typecheck、8chat/Approve/d
 
 ## 下一步与handoff
 
-已收M02c526与P01最终2910ebc，I01在已领v1范围收尾；原P01/PERF owner先只读调查真实会话接口，PERF02停止后续派发。新tree仅完整已审输入初始化，主App桥接模块隐藏连接生命周期，保留官方Thread和SSE观察预算。性能后续以固定负载证据选瓶颈，不假设新增框架会改善。
+已收M02c526与P01最终2910ebc，I01已独立APPROVED并停止实现，后续候选owner优先CHAT；真实会话固定4c240首合同已读且Web新08259c1d v1正式受领，public client入口待交；PERF02八个无交集scope并行，不占App。新tree仅完整已审输入初始化，主App桥接模块隐藏连接生命周期，保留官方Thread和SSE观察预算。性能后续以固定负载证据选瓶颈，不假设新增框架会改善。
 
 ## Dashboard同步
 
@@ -68,6 +68,10 @@ U09/REQ38～39已逐字落plan：原Goal Owner已打开并保留已审M02 49922�
 
 U10 / REQ40已落父plan：主线独立X01维护全产品插件管理计划，已只读关联[X01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)，文档target888308d、产品未实现；本地Settings启停只是可信Web host能力，不代表中心持久生命周期、CLI或第三方隔离完成。
 
-下一准备轮WPF-PERF02已建[plan/status/review](performance-optimization/plan.md)，只管理准备。03:25优先级切换已暂缓；没有新tree、amend/take或生产修改；原M02/probe停写确认不等于范围转交。
+下一准备轮WPF-PERF02已建[plan/status/review](performance-optimization/plan.md)，只管理准备。03:25曾按优先切换暂缓且当时无事务；随后MainLead明确允许合同未ready并行，03:30正式M02 v3/PERF01 v2→PERF02 d36v1移交，历史时序保留research。
 
-当前最高优先：[真实持续对话WPF-CHAT01](conversation-core/plan.md)。共享中心/runner由原Lead分配唯一owner；本队先研究现有接口再独立领取Web消费，不抢I01 App。49922依旧固定fixture且保留用户tab，不能用其固定英文记录宣称自然模型回应。
+当前最高优先：[真实持续对话WPF-CHAT01](conversation-core/plan.md)。共享中心/runner由原Lead分配唯一owner；固定接口研究和首合同4c240已读，I01 owner已通过新claim08259c1d v1独立受领Web，public client方法待共享owner固定，不被PERF02压后。49922依旧固定fixture且保留用户tab，不能用其固定英文记录宣称自然模型回应。
+
+03:31:52.249Z root实际4320为34源，I01 b584与PERF01 cc334均clean且approved/proof unchanged；PERF02 d36v1仅出现在unregisteredAssignments，canonical待owner初始化交Lead登记。不能将take可见等同task状态卡已聚合。最新队伍安排：主线4、本队最多4、Mika2，总10；不新增agent，claims数不是并发数。Mika独占B01后台投影/feed字节与长历史性能，后续X02中心插件合同/PGregistry由主线协调，本队不写后端。
+
+03:35正式CHAT领取：I01v2先移App/官方Thread与plugin-integration/session+react，旧父scope展开保留另外3文件；新08259c1d v1/16scope于03:35:00.744Z committed，web-conversations/codex/web-conversations baseb584 clean。receipts与新owner派发已存；只是take，尚未冒称新增状态卡已聚合。首合同能力false明确展示，真实对话默认首页、任务/工具telemetry下钻，公共client由主线单写不私造。

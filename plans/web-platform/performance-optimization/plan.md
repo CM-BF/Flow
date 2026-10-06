@@ -1,6 +1,6 @@
 # WPF-PERF02 Activity 列表有界渲染准备
 
-2026-10-06；03:25优先级变更：真实持续对话优先，本准备暂缓，尚无新tree/amend/take/生产写入。本文件是管理准备计划。唯一准备owner d01_owner / gpt-6-astra ultra，未来实施拟w01_owner，尚未领取新writer范围。父[WPF-001](../plan.md)，依赖[PERF01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/plan.md)。正式派发时移交独立tree/branch与平级canonical三件套，本目录转stub。
+2026-10-06；03:25曾暂缓且无事务，03:30主线允许CHAT合同未ready时并行后已正式d36v1受领。本文件是管理准备计划。唯一准备owner d01_owner / gpt-6-astra ultra，未来实施拟w01_owner，已受领新writer范围，canonical初始化待回传。父[WPF-001](../plan.md)，依赖[PERF01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/plan.md)。正式派发时移交独立tree/branch与平级canonical三件套，本目录转stub。
 
 ## 问题与证据边界
 
@@ -14,7 +14,7 @@ PERF固定M02输入c526，1/16/128任务各10000新增均呈现10040条、约7�
 
 验证文件已冻结：`apps/web/test/workspace-window.test.ts`仅必要窗口公共算法行为；`apps/web/test/workspace-window.browser.ts`完整性/交互；正式转交现有 `apps/web/test/performance-probe.ts`复用同一测量引擎，不复制第二份。PERF01原owner需先停写probe并amend移出，其旧raw证据不得覆盖；PERF02结果写新evidence目录。`performance-fixture.ts`只读复用，不用test父目录通配授权。canonical计划和证据后续拟 `plans/wpf-perf02-activity-window/`、`docs/evidence/wpf-perf02/`。
 
-当前M02仍持workspace-feed父scope。正式步骤：原owner确认停写；逐文件核全部现存文件，将M02 parent范围展开为保留的Attention.tsx、projection.ts、task-index.ts、TaskIndex.tsx；按currentversion amend移出三拟文件/新文件位置，另PERF01移出probe；新独立tree/branch初始化固定已审输入；committed take receipt后才写。未列明新文件不自动属于任何writer。必须等PERF01正式review和主线协调，I01仍持App等范围不受侵入。
+实际03:30已按下列步骤完成：原owner确认停写；逐文件核全部现存文件，将M02 parent范围展开为保留的Attention.tsx、projection.ts、task-index.ts、TaskIndex.tsx；按currentversion amend移出三拟文件/新文件位置，另PERF01移出probe；新独立tree/branch初始化固定已审输入；committed take receipt后才写。未列明新文件不自动属于任何writer。PERF01正式review和主线明确允许均已满足；I01/App等范围未侵入。
 
 ## 可验证验收
 

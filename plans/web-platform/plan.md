@@ -28,7 +28,7 @@
 | U08 多lead领取协调（原话） | “和你在一起工作的还有其他agent leads，一定要管理好执行dashboard，你们才不会overlap工作。take 工作最好也在dashboard上标清楚” | 主线D04维护唯一PG领取账本，多Lead按真实actor原子领取/显式转交；进度仍各status唯一，不凭旧源或缺失源当空闲 |
 | U09 产品预览与架构tab（原Goal Owner逐字转交，经root传达） | “把产品Web UI打开留着可随时看，且工程dashboard增架构tab” | 原Goal Owner最终选择已审M02的49922并已打开保留用户tab，明确HTTP fixture；原owner保留服务，55049仅I01开发验证，不另起重复服务。工程dashboard架构tab由主线已承接，我方不改其代码 |
 | U10 插件管理入计划（原Goal Owner逐字转交，经root传达） | “plugin管理写进计划里” | 主线维护独立X01全产品插件管理canonical计划；我方链接追溯并继续P01/I01前置，不重复建立X01或扩大已领生产范围 |
-| U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不用新task伪装追问/steering |
+| U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不能用缺少持久conversation/turn/context lineage的任务拼接伪装追问，steering必须active turn/attempt确认生效 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -141,10 +141,10 @@ type WorkspacePanelsProps = {
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
 | 已集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；main3773已含实现，owner转I01 |
 | 已审输入 | WPF-P01插件host | 整体6ce APPROVED、PH-R1～4关闭，最终2910ebc交I01；不覆盖主App |
-| 当前实施 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 两输入已审，D04v1受领，独立新tree bridge/slots实施 |
+| 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584 clean；owner停止实现，保留claim至正式CHAT移交 |
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadata36d802 clean；未做生产优化 |
-| 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 主线先明确共享接口/唯一owner，Web独立claim后实现；原P01/PERF owner先只读调查，不抢I01 App |
-| 暂缓准备 | WPF-PERF02 | 仅准备计划；未建新树、未amend/take、未实施，真实对话优先 |
+| 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 固定4c240首合同已读；Web08259c1d v1受领，主线public client入口待交；先canonical/独立outbox，不造私有API |
+| 合同等待期间并行 | WPF-PERF02 | 原Lead明确恢复，03:30新d36v1八scope/独立tree受领；不碰App/后端，CHAT合同ready立即优先 |
 
 ## TODO
 
@@ -199,3 +199,7 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 下一准备轮：[WPF-PERF02有界Activity](performance-optimization/plan.md)，依据PERF三规模实际数据；仅管理计划，待明确停写、逐文件amend/take、稳定输入与独立owner转交。不扩PERF四scope，不改I01 App。
 
 - 2026-10-06 03:25 UTC：U11准确摘要及REQ41～45已完整持久化；真实持续对话优先。PERF02只有准备93889c3，无新tree/amend/take/生产写入；原probe停写意向保留但claim仍v1。I01继续现有交付收尾，49922原fixture不暗换。
+
+- 2026-10-06 03:32 UTC：原Goal Owner明确U11已固定/合同未ready时允许八scope PERF02并行；实际03:30两次CAS amend后新take d36v1，旧M02 v3/PERF01 v2。I01独立APPROVED92a，b584 clean且实现停写，候选CHAT前端待合同/正式交接。新增Mika队2活跃，主线4+本队最多4总10；其B01后台snapshot/events/feed字节/长历史性能和下一X02插件中心工作不由本队重复。
+
+- 2026-10-06 03:35 UTC：CHAT首合同4c240已固定、后台未全部ready；真实对话作为默认首页/可编辑composer，Work overview仅rail。I01 v2移App/官方Thread/两个消息身份桥接文件→CHAT新08259c1d v1/16literal范围已正式受领，canonical初始化中。首capqueue/steer/liveAssistantText/per-turn controls=false，后继REQ41～45不因此关闭；正文只adapter-final来源、requested/effective分开。

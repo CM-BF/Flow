@@ -8,8 +8,8 @@
 | Worktree / Branch | web-platform-management / codex/web-platform-management；仅准备文档 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | PERF实测支持下一轮有界Activity候选；仅准备计划；因真实持续对话优先暂缓，没有amend/take/新tree |
-| 下一可用交付 | 真实对话核心交付后再重新核基线/claim，当前不派发 |
+| 当前产出 | PERF实测支持下一轮有界Activity候选；已正式受领d36v1八scope，独立web-activity-window树；canonical初始化中 |
+| 下一可用交付 | owner平级canonical三件套与首窗口实现 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -20,8 +20,8 @@
 
 | TODO ID | 状态 | Owner | 证据/依赖 |
 | --- | --- | --- | --- |
-| WPF-PERF02-01 | in-progress | d01_owner | 原M02/probe停写确认已收，PERF已审；03:25优先级切换暂缓，原scope/version保留，未amend/take |
-| WPF-PERF02-02 | pending | 待受领owner | 无新writer claim，无生产改动 |
+| WPF-PERF02-01 | in-progress | d01_owner | 03:30 M02v3/PERF01v2移出后d36v1 take committed；新tree cc334 clean、owner已唤醒正式派发，待canonical转交 |
+| WPF-PERF02-02 | pending | 待受领owner | 新writer仅8scope；实现尚无固定候选 |
 | WPF-PERF02-03 | pending | 待受领owner | 未实施，不能继承PERF01数据作为优化通过 |
 | WPF-PERF02-04 | pending | 独立reviewer/Lead | 无target，不宣称approval/main |
 
