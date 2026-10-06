@@ -1,0 +1,28 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ experiments/codex-app-server-conformance/node-loader-cause/probe.test.ts (18 tests | 1 failed) 191ms
+   ✓ default cap preserves the legacy 65536 copied-byte consumer 2ms
+   ✓ counts full overflow and termination chunks separately from capped copies 0ms
+   ✓ observer budget failure still counts later received bytes and returns failure 0ms
+   ✓ forced deadline never claims EOF or child/group close and unrefs only its child 1ms
+   ✓ rejects invalid capture cap 0 before spawning 0ms
+   ✓ rejects invalid capture cap 65537 before spawning 0ms
+   ✓ rejects invalid capture cap 1.1 before spawning 0ms
+   ✓ emits only the exact fixed role and text errno 1ms
+   ✓ does not return unknown or partial dependency /Users/secret/key 0ms
+   ✓ does not return unknown or partial dependency @rpath/libnode.137.dylib.extra 0ms
+   ✓ does not return unknown or partial dependency /private/tmp/libnode.137.dylib 0ms
+   ✓ missing/conflicting errno and incomplete/nonUTF8 output remain unknown 0ms
+   ✓ budget records overflow instead of rolling bytes back 0ms
+   ✓ single fixed target classifies before cleanup and accounts stdout even on SIGABRT 84ms
+   ✓ unknown close retains only own roots and does not classify partial output 35ms
+   × preparation lstat failure preserves the root created before its identity was known 8ms
+   ✓ partial private write failure retains accurate disk count and unknown cleanup 12ms
+   ✓ unexpected file prevents cleanup and invalidates the output inventory 46ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  06:17:38
+   Duration  303ms (transform 31ms, setup 0ms, import 42ms, tests 191ms, environment 0ms)
+

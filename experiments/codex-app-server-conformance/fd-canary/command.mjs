@@ -3,14 +3,16 @@ import { spawn } from 'node:child_process';
 import { createStderrCapture } from '../../../apps/runner/src/codex/stderr-capture.ts';
 
 export function runOwnedCommand(options, budget, dependencies = {}) {
+  const captureMaxBytes = options.captureMaxBytes ?? 65536;
+  if (!Number.isSafeInteger(captureMaxBytes) || captureMaxBytes < 1 || captureMaxBytes > 65536) throw Error('Invalid capture bound');
   const start = dependencies.spawn ?? spawn;
   const signal = dependencies.signal ?? ((pid, value) => process.kill(pid, value));
   return new Promise(resolve => {
     let child; let settled = false; let stopped = false; let closeObserved = false;
-    let code = null; let terminationSignal = null; let reason = 'completed';
+    let code = null; let terminationSignal = null; let reason = 'completed'; let observationFailed = false;
     const timers = []; const buffers = { stdout: [], stderr: [] };
     const captures = Object.fromEntries(['stdout', 'stderr'].map(name => [name, createStderrCapture({
-      maxBytes: 65536, write(bytes) { budget.consume(bytes.length); buffers[name].push(bytes); },
+      maxBytes: captureMaxBytes, write(bytes) { budget.consume(bytes.length); buffers[name].push(bytes); },
     })]));
     const groupGone = () => {
       if (!child?.pid) return true;
@@ -32,7 +34,7 @@ export function runOwnedCommand(options, budget, dependencies = {}) {
       const streams = Object.fromEntries(['stdout', 'stderr'].map(name => [name, captures[name].report(closeObserved)]));
       const pipes = options.stdio === 'pipe';
       resolve({ safe: { pid: child?.pid ?? null, reason, closeObserved, groupGone: groupGone(), code, signal: terminationSignal,
-        streams: pipes ? streams : null }, stdout: Buffer.concat(buffers.stdout), stderr: Buffer.concat(buffers.stderr) });
+        streams: pipes ? streams : null, ...(budget.observe ? { observationFailed } : {}) }, stdout: Buffer.concat(buffers.stdout), stderr: Buffer.concat(buffers.stderr) });
     };
     const stop = why => {
       if (stopped || settled) return;
@@ -48,6 +50,9 @@ export function runOwnedCommand(options, budget, dependencies = {}) {
     for (const name of ['stdout', 'stderr']) if (child[name]) {
       child[name].on('data', chunk => {
         if (settled) return;
+        // Observe the entire received chunk, including overflow and chunks during termination.
+        // Legacy consumers still account copied bytes through consume; observation is opt-in.
+        try { budget.observe?.(chunk.byteLength); } catch { observationFailed = true; stop('output-bound'); }
         captures[name].push(chunk);
         const status = captures[name].report(false);
         if (status.truncated || status.observerFailed) stop('output-bound');

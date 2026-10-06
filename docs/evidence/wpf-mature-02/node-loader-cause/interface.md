@@ -16,11 +16,11 @@ Owner chatui01_owner / co-lead mika，WPF-MATURE-02-03；`go-node-loader-cause-o
 
 stderr先写自有0600/wx文件，实际部分写入计副本；仅完整EOF+child close+capture无截断/observer错误+身份匹配后，在内存提取 `errorClass` 有限枚举（library-not-loaded / permission-denied / missing-file / other / UNKNOWN）、明确文本数值errno（无则null/unknown）、最多4个**完全命中固定公开依赖字符串清单**的role。`@rpath/libnode.137.dylib` 等归档公开install-name可单列精确值；任何未知路径、UUID、任意行/栈/环境不出收据，不按basename或substring猜role。原始stdout同样仅私有存放，公开只有bytes/hash/complete。有限匹配只证明观测文字，不代表根因/必要权限。
 
-raw经fsync/close→身份检查→有界分类/hash→finally精确删除；删除前失败或child/group/descriptor未知则保留精确owned identity与unknown，禁止猜删除/杀他人进程。关键预算约束：helper原consume只见截断后复制字节，8192上限不是累计输出证明。新增可选observe在每个原始chunk截断前记完整长度，含首次越限及TERM等待期继续收到的chunk；副本按成功写入分别计。双流EOF、child/group close、观察计量任一不全或发生截断/overflow，预算结论FAIL/UNKNOWN，不宣称256KiB完整确认；保留36KiB overflow/收据余量，停止不重试。两流累计实际观测/复制分别计量；额外输出、截断、超界、未关闭或计量未知立即停止，不能将短输出或CLI0当Node隔离/资格通过。
+raw经fsync/close→身份检查→有界分类/hash→finally精确删除；删除前失败或child/group/descriptor未知则保留精确owned identity与unknown，禁止猜删除/杀他人进程。关键预算约束：helper原consume只见截断后复制字节，8192上限不是累计输出证明。新增可选observe在每个原始chunk截断前记完整长度，含首次越限及TERM等待期继续收到的chunk；副本按成功写入分别计。双流EOF、child/group close、观察计量任一不全或发生截断/overflow，预算结论FAIL/UNKNOWN，不宣称256KiB完整确认；保留12KiB overflow/收据余量，停止不重试。两流累计实际观测/复制分别计量；额外输出、截断、超界、未关闭或计量未知立即停止，不能将短输出或CLI0当Node隔离/资格通过。
 
 ## 额度、验收与下一步
 
-唯一许可候选：0compile、≤1target、30s入口fingerprint到自动证据/cleanup/result/CLI，外层固定time+UTC覆盖host加载/退出；人工review/Git时间外，实际bytes仍计总256KiB。拟预留prepared≤96KiB、两流capture+disk≤32KiB（各流8192B，复制双计）、owned配置副本≤8KiB、机器收据/CLI≤16KiB、人工归档≤64KiB、outer捕获+副本≤4KiB，共≤220KiB，余36KiB；固定包时按实际清单核，不把未知输出算零。任一上限不满足则不启动。
+唯一许可候选：0compile、≤1target、30s入口fingerprint到自动证据/cleanup/result/CLI，外层固定time+UTC覆盖host加载/退出；人工review/Git时间外，实际bytes仍计总256KiB。拟预留prepared≤76KiB、两流capture+disk≤32KiB（各流8192B，复制双计）、owned配置副本≤8KiB、机器收据/CLI≤16KiB、人工归档≤108KiB、outer捕获+副本≤4KiB，共≤244KiB，余12KiB；准备实量显示64KiB原归档预留不足，故只重新分配同256KiB总额；固定包时按实际清单核，不把未知输出算零。任一上限不满足则不启动。
 
 源码获准后仅做0child/0listener纯检查：精确role匹配/拒绝用户及未知路径、errno缺失/矛盾、截断/多字节、部分写失败、finally清理/身份不符、共享command默认cap不变与低cap停止、wx单次预约、原生惰性import。固定组合+输入/外部hash+精确输出不存在+fresh claim/clean HEAD交另一位≥Sol独审，再由Mika开启唯一窗口。现在不写执行逻辑、不测新目标、不申请扩大grant；ENG native权限/≥Sol模型/全部writer停止仍未证明。
 

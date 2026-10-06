@@ -1,0 +1,19 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-loader-cause/probe.test.ts > preparation lstat failure preserves the root created before its identity was known
+Error: synthetic
+ ❯ Object.lstatSync experiments/codex-app-server-conformance/node-loader-cause/probe.test.ts:85:54
+     83| });
+     84| it('preparation lstat failure preserves the root created before its id…
+     85|   const t = setup(); t.io.lstatSync = (() => { throw Error('synthetic'…
+       |                                                      ^
+     86|   const command = vi.fn(); const r = await runCause({ ...t, repository…
+     87|   expect(command).not.toHaveBeenCalled(); expect(r.retainedRoots).toEq…
+ ❯ persist experiments/codex-app-server-conformance/node-loader-cause/host.mjs:44:24
+ ❯ receipt experiments/codex-app-server-conformance/node-loader-cause/host.mjs:50:36
+ ❯ runCause experiments/codex-app-server-conformance/node-loader-cause/host.mjs:56:3
+ ❯ experiments/codex-app-server-conformance/node-loader-cause/probe.test.ts:86:44
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

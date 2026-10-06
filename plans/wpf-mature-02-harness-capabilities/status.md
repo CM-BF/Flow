@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 5b1d3003c540667da0389c1febb1554ee4204e5f（旧结果已封存；新cause文档HEAD由Git核） |
-| 工作树dirty状态 | 旧源码/raw冻结；新cause最小capture/解析实现中；旧profile/raw冻结，0新target。 |
+| 工作树dirty状态 | 旧源码/raw冻结；新cause源码与25distinct纯检查固定准备；旧profile/raw冻结，0新target。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
@@ -21,7 +21,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 失败结果已独审接收；现有加载库清单不足以定位原因，正在准备一次受限观察方案。 |
-| 下一可用交付 | 交付双流实际字节计量与受限错误字段提取，纯检查后交独审；未开放运行。 |
+| 下一可用交付 | 固定包交独立审查：双流完整计量、受限错误字段与资源关闭；窗口未开放。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：Mika13:08:21 UTC已限定APPROVED；FAIL/整体输出UNKNOWN，未重跑。 |
@@ -63,3 +63,5 @@
 资源13:12:21 UTC：Data1813516KiB；只核本树12个明确安装/cache/build路径，均不存在，回收0B。保留raw/unknown资源与所有他树/个人数据；大构建需free≥2.5GiB且共享预留≥1GiB，当前无大构建。
 
 Mika已核5c36设计/8输入并允许实施准备；新增observe完整chunk计量，不能将capture cap当输出总量。保留default65536旧行为，定向纯检查；运行NOT_OPEN。
+
+新cause检查25distinct分次（22新+3旧command）通过，首轮故障注入范围失败已保留；native-source真实惰性import0spawn/0listener。准备包预算同256KiB内分配，实际input/manifest待固定；无实际目标调用。
