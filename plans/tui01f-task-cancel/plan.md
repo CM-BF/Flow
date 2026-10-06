@@ -1,6 +1,6 @@
 # TUI01F — 聊天任务显式取消与接续
 
-状态：in-progress；创建 / 最近更新：2026-10-06 15:47 UTC。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
+状态：in-progress；创建：2026-10-06 15:47 UTC；最近更新：2026-10-06 15:55 UTC。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
 
 ## 小交付与 Interface
 
@@ -10,7 +10,7 @@
 
 ## TODO
 
-- [ ] TUI01F-01：固定源码 Interface、取消意图与终端入口，保留旧规则。
+- [x] TUI01F-01：固定源码 Interface、取消意图与终端入口，保留旧规则。
 - [ ] TUI01F-02：新增公开 controller 定向行为用例，明确实际执行状态。
 - [ ] TUI01F-03：资源/依赖具备后，真实 HTTP 与专用 PG 丢 ACK/恢复旅程及实际 PTY 验证。
 - [ ] TUI01F-04：实际 App ↔ TUI 同会话交替，CAS 拒绝保草稿与观察接续；独立 review/main 收口。
@@ -20,3 +20,5 @@
 ## 验收边界
 
 取消 API 仅 task ID+key、空请求体；没有 task-attempt CAS。原 send/queue 命令验证第二客户端引起的 revision 409：原文草稿保留、只观察、不自动换 revision 重发。JSONL 是 shared controller 消费者，非 PTY；PTY 输出与 raw-mode/resize 是终端证据，非实际浏览器。App 需固定真实构建产物/源+同后台 tuple，不能用壳页或 API 请求替代可见交互。机械 fixture 不证明所有 native/A2A cancellation，也不计 provider 验收。
+
+源码准备已固定 `044ab84db42606fb1757903258078e3dfbab9545`，8 个公开边界用例仅源码未执行；NOT_RUN。不以源审推进 03/04 完成。

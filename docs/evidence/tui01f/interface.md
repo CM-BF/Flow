@@ -7,3 +7,9 @@
 只新增 task-control 意图/派发校验，宿主保留单 mutation/epoch/store 和草稿。取消不清草稿；退出只断开观察。没有隐式 queue pause、取消队列项、工具权限、provider 或任务正文读取。
 
 当前 source-only；后续实际资源验收请复用 design-input.json 的 1 个受控 fixture 生命周期及真实 PTY/App 区别。用例准备不声称 red/green。
+
+## 固定源码 044ab84db42606fb1757903258078e3dfbab9545
+
+当前显示定义：conversation 为 observation 指定 turn（无 observation 时为最后一轮）；queue 为页面 currentTurn；help/list/profile 不得发新取消。Ink 始终在对应标题显示 taskId，正文/活动面板不会隐去目标身份。新入口失败前不写 journal；恢复绕过重新挑选，使用已保存 taskId。
+
+回执允许固定中心真正返回的五种状态：cancel_requested/cancelled/succeeded/failed/uncertain；queued/running/waiting 或错误 id/缺 id 视为 unknown，保留原 intent。无 attempt CAS、无隐式 pause、无自动重试。类型和行为尚未运行验证。
