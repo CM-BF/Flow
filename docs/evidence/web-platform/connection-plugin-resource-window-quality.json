@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-06T14:51:43.082043+00:00",
+  "kind": "Management batch: new fixedsource plugin backlog and actual cross-lead resource scheduling",
+  "claim": "632a7149 v3 management only",
+  "skillMethod": "Reuse local find-skills/codebase-design/clean-code: marker vs actualhost boundary, soleauthority and no secret exposure, currentwindow separate from source readiness",
+  "sourceArchive": {
+    "source": "/tmp/root-connection-plugin-surface-f13.json",
+    "archive": "connection-plugin-surface-f13.json",
+    "bytes": 2388,
+    "sha256": "c5a96849f520cb651736a96998cbe4ccf8eccbf726c1b4b17b85db7905343631",
+    "fixedTwoSourceHashMatches": true
+  },
+  "scopeDecision": "No newfeature/claim/publicslot/host;Recovery original21 unchanged",
+  "productOperations": 0,
+  "checks": {
+    "statusParser": [
+      {
+        "path": "plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "path": "plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "path": "plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      }
+    ],
+    "addedMarkdownLinks": 6,
+    "missingLinks": 0,
+    "rawHashMatch": true,
+    "changedPaths": [
+      "docs/evidence/web-platform/conversation-plugin-coverage-research.md",
+      "docs/evidence/web-platform/mature-task-handoff.md",
+      "docs/evidence/web-platform/recovery01-dispatch-audit.json",
+      "docs/evidence/web-platform/release03-validation-dispatch.json",
+      "plans/web-platform/plan.md",
+      "docs/evidence/web-platform/connection-plugin-resource-window-quality.json",
+      "docs/evidence/web-platform/connection-plugin-surface-f13.json",
+      "docs/evidence/web-platform/resource-window-current.json"
+    ],
+    "outsideManagementScope": 0,
+    "productTests": 0
+  }
+}

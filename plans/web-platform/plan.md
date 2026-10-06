@@ -74,8 +74,8 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-19 | U04/U05 全部用户话进plan、持续维护plan/status/review/dashboard | 管理者、各owner | 每条REQ有来源/owner/验收，新增plan必有三件套；原话与转述清楚区分 |
 | WPF-REQ-20 | U04 持续新增计划和功能 | root研究、管理者排队 | 每轮交付后按实际缺口选择下一ready计划；不把单批次或“完美”宣称完成 |
 | WPF-REQ-21 | U04 持续优化性能 | WPF-PERF01 | 固定fixture/机器/build测基线及增量；证据支持改进，保持功能不退化 |
-| WPF-REQ-22 | U04 所有组件可插拔、完整plugin系统 | 原Lead X01 + WPF-P01 Web子项 | 全栈生命周期、版本/配置/权限/隔离/CLI等价；UI统一扩展接口，内置功能也使用；真实conversation/sidebar与组合pane覆盖仍待验，见[固定研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md) |
-| WPF-REQ-23 | U04 适当位置随时加按钮等扩展 | WPF-P01 | stable slot IDs+commandId，sample插件不改核心即可加button/tab/menu；真实ConversationList与组合pane菜单须用conversation/view身份验证，不能以旧task slot数量替代；不是每个DOM节点套Slot |
+| WPF-REQ-22 | U04 所有组件可插拔、完整plugin系统 | 原Lead X01 + WPF-P01 Web子项 | 全栈生命周期、版本/配置/权限/隔离/CLI等价；UI统一扩展接口，内置功能也使用；真实conversation/sidebar、组合pane及preconnect/reauth连接页覆盖仍待验，见[固定研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md) |
+| WPF-REQ-23 | U04 适当位置随时加按钮等扩展 | WPF-P01 | stable slot IDs+commandId，sample插件不改核心即可加button/tab/menu；真实ConversationList与组合pane菜单须用conversation/view身份验证，不能以旧task slot数量或data-extension-slot标记替代；preconnect/reauth真实贡献与禁用卸载、未认证能力边界须验，不暴露token/CSRF/client；不是每个DOM节点套Slot |
 | WPF-REQ-24 | U00 独立worktree/branch，先核验不重建/重置/覆盖 | 管理者、各owner | 记录base/head/dirty与允许范围；冲突交唯一owner，管理者不并发写W01 |
 | WPF-REQ-25 | U00 find-skills本地优先、固定来源，无重复安装 | 各owner | 每stack读本地skill并记录路径/hash/应用；assistant-ui/AI Elements/clean-code固定源 |
 | WPF-REQ-26 | U00 每段/约30min安全停点/交付clean-code | 各owner | 实际命名、职责、接口、错误、重复、复杂度、行为检查发现/修复记录 |
@@ -142,7 +142,7 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 - [x] **WPF-001-02** 明确owner/独占范围/接口/依赖，建立无编号冲突的后续plan/status/review。
 - [x] **WPF-001-03** 接收官方Thread与panels独立提交，完成W01集成、回归与独立review闭环。
 - [x] **WPF-001-04** 向主线D03交付管理来源登记清单并只读验证；02:38:47.600Z新版22源中3个WPF源完整无issues（仅登记验证，不表示实现完成）。
-- [ ] **WPF-001-05** 已审P01/I01前置继续与X01/X02衔接完整插件管理，保留中心生命周期/权限/隔离/CLI与后续Web消费验收；REQ22–23的实际conversation sidebar与组合pane扩展入口关联MATURE05-02/03，见[静态覆盖检查](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，待现writer交权后独立领取。
+- [ ] **WPF-001-05** 已审P01/I01前置继续与X01/X02衔接完整插件管理，保留中心生命周期/权限/隔离/CLI与后续Web消费验收；REQ22–23的实际conversation sidebar与组合pane扩展入口关联MATURE05-02/03，preconnect/reauth连接页真实贡献另沿同一插件覆盖后继，见[静态覆盖检查](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，待现writer交权后独立领取。
 - [x] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮：3d47基线/a87窗口获审、a87已实际集入main8f1481d；未来证据另开有限工作包，不宣称无限优化完成。
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。

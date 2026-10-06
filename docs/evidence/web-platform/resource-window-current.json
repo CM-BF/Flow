@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-06T14:51:43.082043+00:00",
+  "source": "Root relay of new Lead inbound; no direct outbound, no personal/4320 sample",
+  "state": "X01_FIRST_AWAITING_ACTUAL_WINDOW_RECEIPTS",
+  "release03": {
+    "claim": "bfb209ae v3 original4",
+    "state": "Light source only;17links read-only/stopped;0PG/Chrome;180s compatibility not started",
+    "source": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "futureBudget": "<=180s total including20s cleanup,1PG+1Chrome,8MiB evidence",
+    "startConditions": [
+      "X01 actual close receipt",
+      "Fixed scripts reviewed",
+      "Fresh actual peak/approximately1GiB remaining space admission"
+    ],
+    "startTime": null
+  },
+  "recoveryDirect": {
+    "state": "Preparation only; explicitly told owner not to start during pending X01 PG window",
+    "existingBudget": "One fixed test/onefork,30s total incl>=5s cleanup each,own/tmp8MiB/log2MiB,start>=1GiB+32MiB/stop<=1GiB+16MiB",
+    "startConditions": [
+      "Fixedcheckpoint/fullconfig/sandbox/hash",
+      "X01 actual close receipt",
+      "Fresh claim/space/sharedwindow admission"
+    ]
+  },
+  "leadWindow": {
+    "O14": "Lead says owned PG all closed",
+    "X01": "Lead may proceed under its own authorized<=30s/1randomDB/<=32MiB budget; no observed start/finish receipt yet",
+    "Lead": "Own small HTTP/config checks, no authority transferred to thisgroup"
+  },
+  "registry": "Lead says now registering Recovery and RELEASE03; no completed registration/deployment receipt yet",
+  "limits": [
+    "SOURCE_READY is not run",
+    "No invented ETA",
+    "No assumption X01 has finished",
+    "No groupPG/Chrome/build or resource polling"
+  ]
+}

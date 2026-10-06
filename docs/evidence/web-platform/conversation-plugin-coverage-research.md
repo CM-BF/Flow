@@ -59,3 +59,10 @@ Panels现有Arc只读Interface已收敛，[候选18literal/唯一layout/稳定�
 ### 恢复界面扩展覆盖后继（fixed82d78，只读）
 
 [root固定源码审计](recovery01-plugin-surface-coverage-82d78.json)确认恢复入口已是P01 sidebar.footer command/button，但RecoverySurface内部refresh/restore/retry/remove仍固定按钮，无header/record-actions扩展接缝。沿REQ22–23与原06-04覆盖后继，由plugin co-lead定义最小record id/domain/phase+当前binding context；不暴露raw journal/client/全部namespace，保原命令授权与失效代次。此为partial实现的覆盖记录，不是当前21scope新finding/验收gate或全plugin完成；0运行，不扩写权。
+
+
+## 未认证/重新认证连接页覆盖（固定f13源码研究）
+
+[root原始双源审计](connection-plugin-surface-f13.json)固定f13de5c13e3983b94e16ae857ddc7b01cbba7a26，管理git show核两hash一致。Connection只有data-extension-slot=settings.sections标记；实际AppPluginSession/Provider位于Workspace内，外部Connection不受其包裹，AppSlot无SessionContext返回null。因此不能用已登录settings或Recovery入口证明此页面可贡献按钮。此为REQ22/23、WPF-001-05原覆盖后继，非当前Recovery21的新阻塞或完整review结论。
+
+后继由原plugin co-lead协调唯一host生命周期和最小私有授权Interface：真实preconnect/reauth页面通过既有P01模型显示一次审定贡献，无须每加button修改Connection；明确未认证前可用能力，贡献context不得暴露owner token/CSRF/cookie/raw client。禁用/卸载移除DOM并撤回callback，连接换代不能复活旧中心动作；保错误/unsupported/offline、键盘及双主题行为。未指定新公开slot、第二hostauthority或第三层task；未实现、0UI/browser/plugin执行，不扩Recovery写权。

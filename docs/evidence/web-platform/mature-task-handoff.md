@@ -12,6 +12,8 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
+**唯一当前运行窗口（Lead最新协调）**：[窗口事实与准入](resource-window-current.json)。本组RELEASE03仅 **bfb209ae v3四scope轻源码、17links已全停写、0PG/Chrome，未进入180s兼容运行**；source362/artifactd629。X01可按其原合法≤30s/1自有随机DB/≤32MiB先行，本组后续PG必须等其实际关闭回执再fresh准入；尚无X01开始/结束回执，不推测完成。Recovery direct同样先保准备，不与该PG窗口叠加，已通知panels。RELEASE仍需固定脚本审查、实际峰值与约1GiB余量；原≤180s/1PG+1Chrome/8MiB不是开始许可，没有承诺开始时刻。Lead称O14自有PG全关，并正登记Recovery/RELEASE03；仅登记进行中，未取得完成或4320展示回执。
+
 **DPERF04源码已由Lead准备，尚未领取/实施（低于Recovery/可用预览）**：[原结构批准九literal](dperf04-summary-detail-proposal.json)与[Lead唯一Gitowner原provision回执](dperf04-source-provision.json)。`dashboard-summary-detail / codex/dashboard-summary-detail` fixedc837，561files/du5484KiB；[管理14:37独立核](release03-dperf04-provision-management-audit.json)branch/HEAD/clean一致。worktree-local sparse、sharedconfig未由本组改；w01先RELEASE03，不提前占DPERFwriter。后续仍fresh九literal COMMITTED后才实施，Node30s/browser未来60s及摘要/现场proof/实时PGclaim分离约束不变；无新4320采样。
 
 **RELEASE03正式format2已准备、两cache已释放；兼容/发布未完成（14:28）**：[原owner结果](release03-formal-prepare/prepare-handoff.json) / [管理原字节与10文件审计](release03-formal-prepare-management-audit.json) / [root独立只读完整性核验](release03-root-artifact-integrity-d629.json)。root14:30:08核10files/manifest/全部列明证据hash、工具原字节和源码绑定通过；未重复prepare或验证362兼容。固定84005工具一次sandbox prepare **1.919s exit0**，source **5069586a9f17332de526e101eca3a4250cbc8d91**（获审源码provenance9eec）、treef01fca67、Node24.20.0/Vite8.3.2；**format2 / releaseId388371a4972c469b8ace623454594132 / artifact+manifestDigest d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88**，10files **1,588,311B**。精确私有目录在原handoff，SVC必须消费同descriptor；不重造manifest、不重build。
@@ -33,7 +35,7 @@ Lead两树最终可用1,192,497,152B仅来源观察，**只准轻源码，不准
 
 **临时目录归属仍未知，保持不清理**：[本管理历史查证](t3-inspect-ownership-lookup.json)未找到 `flow-t3-inspect.fFfqh2` 的原owner/clone/install记录；本组现有T3证据仅固定公共source研究，不能据此接管或删目录。另三候选未接管，0删除/0回收/0归因。
 
-**Recovery f13为源码安全点，部分复核已发现新问题，正式review仍NOT_STARTED**：[合批入口](recovery01-f13-review/intake.json)。管理14:35核HEAD=origin f13de5c13e3983b94e16ae857ddc7b01cbba7a26 clean、50变更/17apps源均在原21scope；parser0/人类完整/6TODO。App/P01完整draft已接；**固定f13当时**types5.616s/exit0、累计28.711/60s。root随后只读owner `fixture-types.json`：当前f13后dirty fixture/source的检查5.834s/exit0，**最新累计34.545/60s，余25.455s**，单次15s/日志累计512KiB不变；不能把后续types绑定成f13行为结果。13direct仅测试源码，IDB/HTTP/browser未运行。 后续root仅条件批准固定checkpoint单文件direct/约20case/1fork，累计30s含每次5s清理、logs2MiB/tmp8MiB；fresh≥1GiB+32MiB、停止≤1GiB+16MiB，sandbox own tmp/evidence。本组无并行PG/Chrome/build，已通知panels自行fresh准入；当前未收实跑结果，mockIDB不冒浏览器。
+**Recovery f13为源码安全点，部分复核已发现新问题，正式review仍NOT_STARTED**：[合批入口](recovery01-f13-review/intake.json)。管理14:35核HEAD=origin f13de5c13e3983b94e16ae857ddc7b01cbba7a26 clean、50变更/17apps源均在原21scope；parser0/人类完整/6TODO。App/P01完整draft已接；**固定f13当时**types5.616s/exit0、累计28.711/60s。root随后只读owner `fixture-types.json`：当前f13后dirty fixture/source的检查5.834s/exit0，**最新累计34.545/60s，余25.455s**，单次15s/日志累计512KiB不变；不能把后续types绑定成f13行为结果。13direct仅测试源码，IDB/HTTP/browser未运行。 后续root仅条件批准固定checkpoint单文件direct/约20case/1fork，累计30s含每次5s清理、logs2MiB/tmp8MiB；fresh≥1GiB+32MiB、停止≤1GiB+16MiB，sandbox own tmp/evidence。此前本组无并行PG/Chrome/build；最新X01跨队窗口已改为先保准备，唯一区段见本队列顶部，待实际关闭后fresh准入；当前未收实跑结果，mockIDB不冒浏览器。
 
 [root固定11源预审](recovery01-f13-review/root-review.json)确认原1/4/5源码修正未验、2/3部分，新增两P1：首次prepare授权捕获太晚可在reauth后续发；auth-loss切中心/主体卸载可丢未落盘保护稿。另迟到prepare/CAS与默认browser-session unsupported上线边界须明确。[W01固定18源预审](recovery01-f13-review/w01-report.md)新增同key内存unknown/durableaccepted终态对账P2、知识恢复命中旧body cache仍unverified的P3；原长名/显式新resolve修正源码已见。另[root固定open/retry预审](recovery01-f13-review/root-open-retry.json)指出被拒open Promise缓存阻显式重试与blocked迟到success泄漏DB的P2；仅源码控制流证据，0IDB/browser复现。原报告都已交panels，修复沿原21范围；没有新运行、没有正式APPROVED。SOURCE_READY dcaf仍只请求过一次，登记/页面展示继续等待实际回执。
 
@@ -505,3 +507,6 @@ Root跨片约束及panels八点修订已合入[唯一接口候选](connection-re
 只呈history估算与observedAt/receivedAt；current/remaining未知、latestnull不画0、capacityunknown不画百分比、not-observed不称没有压缩。仍属原04-05候选，Mika材料组合缺陷待合法owner固定修复；无真实UI/调用实验，无新take，不抢06-04优先级。
 
 固定公开输入补记（root只读归因，2026-10-06 13:4x）：X01有限self-owned静态material/trusted runner loader已经main2f16；receipt不等installed/enabled/loaded/callable，029仅预留center material操作。Web同realm builtin PluginHost是另一个authority，不据此声称外部Web插件可安装或完整plugin完成；本组无X01写入/领取/实验。
+
+
+连接页preconnect/reauth插件真实覆盖新增固定f13双源证据，已并入原REQ22/23/WPF-001-05及[覆盖后继](conversation-plugin-coverage-research.md)；标记不冒实际贡献入口，不扩大Recovery21或阻当前源码，0运行。

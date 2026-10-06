@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-06T14:49:56.531241+00:00",
+  "target": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "kind": "PLUGIN_COMPLETENESS_BACKLOG_SOURCE_EVIDENCE",
+  "requirement": "Existing REQ22/23 and WPF-001-05; no third execution layer, no new implementation claim",
+  "surface": "Unauthenticated/reauthentication Connection screen",
+  "finding": "App Connection1115\u20131166 has a data-extension-slot=settings.sections attribute but no AppSlot/ExtensionSlot. Actual AppPluginSession is constructed within Workspace776 and its Provider804\u20131093 does not wrap Connection1210. AppSlot itself returns null without SessionContext. Therefore this attribute is a marker, not a callable plugin contribution seam. The newly added check-session/sign-out controls share this unextended shell.",
+  "whyRelevant": "The user requires all components/buttons/navigation to be designed for extension. Existing authenticated settings slot coverage and Recovery sidebar entry do not establish pre-connection shell coverage.",
+  "futureAcceptance": [
+    "Register one reviewed contribution through the existing P01 model and show it on the real pre-connection/reauth screen without editing Connection to add each button",
+    "Define explicitly which trusted capabilities exist before verified center identity; never pass owner token/CSRF/cookie/raw client through contribution context",
+    "Disabled/unloaded contributions revoke DOM/callbacks, and connection-generation changes cannot revive an old center action",
+    "Preserve current connection failure/unsupported/offline and keyboard/theme behavior; do not present markup slot attributes as actual plugin support"
+  ],
+  "scopeBoundary": "Research/backlog only. No change to current Recovery21, no new auth protocol/public slot or second plugin authority specified. Existing plugin co-lead must settle host lifetime/interface before any later exact claim. Does not add a new blocking gate to unfinished Recovery source checkpoint.",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "d2f81cc012b95d92ce4e6299141cd77aacd8c3a6268bc2bb064d4f78cfb586a1"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    }
+  ],
+  "checks": "Fixed source reading only; no UI/browser/plugin execution, no website/service access."
+}
