@@ -1,6 +1,6 @@
 # S01P07 最小接口与验证范围
 
-设计输入：固定 main `22a0806bc2465e11096949618113833f31766b19`，Mika 已选 v2 领取机会方案。当前仅准备，0 checks / PG / provider；没有执行窗口。
+设计输入：固定 main `22a0806bc2465e11096949618113833f31766b19`，Mika 已选 v2 领取机会方案。当前源码准备，0 checks / PG / provider；局部 non-PG 检查已授权，真实 PG 仍待独立窗口。
 
 ## 职责
 
@@ -36,6 +36,6 @@
 - public runRunner + 私有 loopback：500ms 等待/及时补槽；COMMIT 丢 ACK 同 key 查询回原 attempt；stop late null/late assignment、超时/malformed、wrong_role/401 fatal、未知 native/outbox 不改。
 - 独占 PG：同 key 并发至多一 attempt/session；rollback 无孤儿 receipt；empty 0 commands；历史 receipt 在 capacity/drain 前读、过期不续租/revoke 拒绝；v1 与 profile/goal/session 过滤直接消费者。
 
-已由 v2 COMMITTED amend 追加、待 Lead 供应三旧 test literal：`apps/runner/src/runtime-shutdown.test.ts`、`apps/runner/src/runtime-capacity.test.ts`、`apps/runner/src/runner.test.ts`。固定基线 peer 都只识别旧 claim route；必须改真实 fixture，保留保护断言，不引入产品 fallback。当前18scope已含这三项，但尚未物化，因此尚未写。
+已由 v2 COMMITTED amend 追加并由 Lead 供应三旧 test literal：`apps/runner/src/runtime-shutdown.test.ts`、`apps/runner/src/runtime-capacity.test.ts`、`apps/runner/src/runner.test.ts`。固定基线 peer 都只识别旧 claim route；必须改真实 fixture，保留保护断言，不引入产品 fallback。当前18scope已含三项，现已适配公开 v2 peer；unknown 保护以无新key/无重复attempt或adapter为准，不禁止合法同key恢复请求。
 
 协议默认切换是外部边界改变；测试与独立 review 后由 Lead 更新架构/registry 并受控 main 接收。没有容量/性能 SLO 结论，不复测旧 sealed S01。

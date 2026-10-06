@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, rm, writeFile, mkdir } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile, mkdir, stat } from 'node:fs/promises';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
@@ -11,6 +11,54 @@ const directories: string[] = [];
 afterEach(async () => { for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
 async function directory() { const path = await mkdtemp(join(tmpdir(), 'flow-admission-')); directories.push(path); return path; }
 const assignment = { attemptId: 'attempt-1', taskId: 'task-1', runnerId: 'runner-1', ownerVersion: 1 };
+
+it('persists one runner-bound opportunity and reuses it across empty polls and restart without replacement', async () => {
+  const path = await directory(); const journal = await AdmissionJournal.open(path);
+  expect(await journal.bindRunner('runner-1')).toBe(true);
+  const request = journal.opportunity!;
+  const before = await stat(join(path, 'admission.json'), { bigint: true });
+  for (let i = 0; i < 12; i++) { expect(await journal.bindRunner('runner-1')).toBe(true); expect(journal.opportunity).toEqual(request); }
+  const after = await stat(join(path, 'admission.json'), { bigint: true });
+  expect({ ino: after.ino, mtime: after.mtimeNs }).toEqual({ ino: before.ino, mtime: before.mtimeNs });
+  expect((await AdmissionJournal.open(path)).opportunity).toEqual(request);
+  expect(journal.unresolved(new Set())).toBe(false);
+});
+
+it('durably accepts only the exact opportunity then retains the assignment across restart', async () => {
+  const path = await directory(); const journal = await AdmissionJournal.open(path);
+  await journal.bindRunner('runner-1'); const request = journal.opportunity!;
+  await expect(journal.acceptOpportunity({ ...request, requestId: 'f4ad6f60-bc9e-4688-a078-52b6d9beaa27' }, assignment)).rejects.toBeInstanceOf(AdmissionStorageError);
+  expect(journal.opportunity).toEqual(request);
+  await journal.acceptOpportunity(request, assignment);
+  expect(journal.opportunity!.requestId).not.toBe(request.requestId);
+  await expect(journal.acceptOpportunity(request, assignment)).rejects.toBeInstanceOf(AdmissionStorageError);
+  const restarted = await AdmissionJournal.open(path);
+  expect(restarted.unresolved(new Set())).toBe(true);
+  expect(restarted.unresolved(new Set(['attempt-1']))).toBe(false);
+  await restarted.complete({ attemptId: 'attempt-1', ownerVersion: 2 });
+  expect(restarted.unresolved(new Set())).toBe(true);
+  await restarted.complete(assignment);
+  expect(restarted.unresolved(new Set())).toBe(false);
+});
+
+it('cannot reinterpret a legacy in-flight request or assignment as a recoverable v2 opportunity', async () => {
+  const path = await directory(); const journal = await AdmissionJournal.open(path); await journal.begin();
+  const before = await readFile(join(path, 'admission.json'), 'utf8');
+  expect(await journal.bindRunner('runner-1')).toBe(false);
+  expect(journal.opportunity).toBeNull(); expect(await readFile(join(path, 'admission.json'), 'utf8')).toBe(before);
+  await journal.accept(assignment);
+  expect(await journal.bindRunner('runner-1')).toBe(false);
+  expect(journal.opportunity).toBeNull(); expect(journal.unresolved(new Set())).toBe(true);
+});
+
+it('rejects credential identity changes and keeps the old opportunity when its durable handoff fails', async () => {
+  const path = await directory(); const journal = await AdmissionJournal.open(path); await journal.bindRunner('runner-1');
+  const request = journal.opportunity!;
+  await expect(journal.bindRunner('runner-2')).rejects.toBeInstanceOf(AdmissionStorageError);
+  await mkdir(join(path, 'admission.json.tmp'));
+  await expect(journal.acceptOpportunity(request, assignment)).rejects.toBeInstanceOf(AdmissionStorageError);
+  expect((await AdmissionJournal.open(path)).opportunity).toEqual(request);
+});
 
 it('persists an unknown claim across restart without credentials or task text', async () => {
   const path = await directory();

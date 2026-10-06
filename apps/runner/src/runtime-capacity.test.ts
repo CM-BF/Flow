@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { afterEach, expect, it } from 'vitest';
-import type { ClaimedTask, EventBatch, HarnessAdapter, HarnessContext, RunnerEventData } from '@flow/contracts';
+import { RUNNER_CLAIM_PROTOCOL, type ClaimedTask, type EventBatch, type HarnessAdapter, type HarnessContext, type RunnerEventData } from '@flow/contracts';
 import { FlowClient } from '@flow/client';
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
@@ -34,6 +34,8 @@ async function peer(total = 8, capacity = 16) {
   const running = new Set<string>(), outcomes = new Map<string, string>();
   const executions: Promise<void>[] = [], shutdowns: AbortController[] = [];
   let claims = 0, assigned = 0, peak = 0;
+  const opportunityIds: string[] = [];
+  let unavailableLookup = false;
   let claimHook: ((index: number, response: ServerResponse) => boolean) | undefined;
   let heartbeatHook: ((attemptId: string, response: ServerResponse) => boolean) | undefined;
   let assignmentHook: ((value: ClaimedTask) => ClaimedTask) | undefined;
@@ -42,7 +44,13 @@ async function peer(total = 8, capacity = 16) {
   const server = createHttpServer(async (request, response) => {
     const parts: Buffer[] = []; for await (const part of request) parts.push(part as Buffer);
     const body = JSON.parse(Buffer.concat(parts).toString() || '{}'); response.setHeader('content-type', 'application/json');
-    if (request.url === '/api/runner/claim') {
+    if (request.url === '/api/runner/identity') { response.end(JSON.stringify({ protocol: RUNNER_CLAIM_PROTOCOL, runnerId: 'runner-test' })); return; }
+    if (request.url === '/api/runner/claim-opportunity/status') {
+      opportunityIds.push(body.requestId);
+      if (unavailableLookup) response.destroy(); else response.end(JSON.stringify({ ...body, state: 'missing' })); return;
+    }
+    if (request.url === '/api/runner/claim-opportunity') {
+      opportunityIds.push(body.requestId);
       claims++; if (claimHook?.(claims, response)) return;
       let assignment: ClaimedTask | null = null;
       if (assigned < total && running.size < capacity) {
@@ -51,7 +59,8 @@ async function peer(total = 8, capacity = 16) {
           task: { id: `task-${assigned}`, title: 'Deterministic no-model attempt', prompt: String(assigned), harness: 'fixture' } };
       }
       if (assignment && assignmentHook) assignment = assignmentHook(assignment);
-      response.end(JSON.stringify({ assignment, remainingLeaseMs: assignment ? 10000 : 0 })); return;
+      response.end(JSON.stringify(assignment ? { ...body, state: 'assigned', assignment, remainingLeaseMs: 10000,
+        identity: { taskId: assignment.task.id, attemptId: assignment.attempt.id, runnerId: assignment.attempt.runnerId, ownerVersion: assignment.attempt.ownerVersion } } : { ...body, state: 'empty' })); return;
     }
     if (request.url === '/api/runner/heartbeat') {
       if (heartbeatHook?.(body.attemptId, response)) return;
@@ -71,7 +80,8 @@ async function peer(total = 8, capacity = 16) {
   const baseUrl = `http://127.0.0.1:${address.port}`;
   cleanup.push(async () => { for (const shutdown of shutdowns) shutdown.abort(); await Promise.allSettled(executions); server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve())); await rm(workingDirectory, { recursive: true, force: true }); });
   return {
-    batches, notices, outcomes, workingDirectory, baseUrl, running,
+    batches, notices, outcomes, workingDirectory, baseUrl, running, opportunityIds,
+    blockLookup() { unavailableLookup = true; },
     get claims() { return claims; }, get assigned() { return assigned; }, get peak() { return peak; },
     assignment(hook: typeof assignmentHook) { assignmentHook = hook; }, route(hook: typeof routeHook) { routeHook = hook; },
     claim(hook: typeof claimHook) { claimHook = hook; }, heartbeat(hook: typeof heartbeatHook) { heartbeatHook = hook; }, report(hook: typeof reportHook) { reportHook = hook; },
@@ -157,14 +167,14 @@ it('stops every slot on event storage failure even if the adapter catches the re
   await expect(running.promise).rejects.toBeInstanceOf(EventStorageError); expect(settled).toBe(2);
 });
 
-it('persists an unknown claim, lets a known slot finish, and refuses another claim after restart', async () => {
+it('retains an unknown opportunity while status is unavailable, lets a known slot finish, and creates no replacement key after restart', async () => {
   const api = await peer(); const release = deferred(); let entered = 0;
-  api.claim((index, response) => { if (index === 2) { response.destroy(); return true; } return false; });
+  api.claim((index, response) => { if (index === 2) { api.blockLookup(); response.destroy(); return true; } return false; });
   const first = api.start(adapter(async context => { entered++; await Promise.race([release.promise, held(context)]); }), { maxConcurrentAttempts: 4 });
   await eventually(() => api.claims === 2); release.resolve(); await eventually(() => api.outcomes.size === 1);
   await sleep(50); expect(api.claims).toBe(2); first.shutdown.abort(); await first.promise;
   const restarted = api.start(adapter(async () => { entered++; })); await sleep(80);
-  expect(api.claims).toBe(2); expect(entered).toBe(1); restarted.shutdown.abort(); await restarted.promise;
+  expect(api.claims).toBe(2); expect(entered).toBe(1); expect(new Set(api.opportunityIds).size).toBe(2); restarted.shutdown.abort(); await restarted.promise;
 });
 
 it('does not send a claim when its durable intent cannot be saved', async () => {
