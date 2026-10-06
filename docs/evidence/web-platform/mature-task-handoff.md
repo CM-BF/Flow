@@ -1,6 +1,16 @@
 # 成熟聊天大task来源与登记队列
 
-## ATTACH正式main接收与CACHE领取（当前）
+## 当前优先接收：DASHSUM01 与 WORKSPACECACHE01（2026-10-06 11:54 UTC）
+
+**Lead已主动读取两份最终批准source并开始受控接收；这是接收进行中，不是MAIN_RECEIPT。** 下一正常登记批纳两source，不复跑矩阵；个人8d8产物不随main集成改变。另一个关键输入仍是ATTACHI01模块4c/4a9b正式接收，CACHE接收不会替代该模块或生产附件接线。
+
+**DASHSUM01 已独审批准，请Lead受控接收四源及自身记录。** 固定实现 `c1de71fd316f9bba1ea5f030f5a54d2332d09044`，最终metadata **bc4d0f8bd7c4dbf1351f72f8e6c6ae1696ce130d**；管理实核local=origin/clean、四hash等target/manifest/browser、六scope无越界、parser/review target正确、产品零后续变化，[审计](dashsum01-candidate-management-audit.json)。唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/plans/wpf-dashboard-summary/status.md)、[manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/docs/evidence/wpf-dashboard-summary/source-manifest.json)。root独立22/22与作者27 Node、6 browser/8.374s分开；root已看浅色desktop/深色390详情。首屏去父子重复、短领取身份、父到直属子片下钻同片完成；未验实际4320部署。主线/部署receipt后再由root沿既有页面入口做一次只读首屏核，不用临时fixture冒实际发布。fe63511a v1六scope停写但保留，等待main收口后CAS释放。
+
+**WORKSPACECACHE01 已独审批准，请Lead受控接收十四源及自身记录。** 固定实现 `4ec291c2381faa0fc212cf598b8126b9feecae71`，最终metadata **55b48b7daa6928839268c542080e2884a651a1f0**；管理实核双端同/clean、14hash等target/manifest、16scope无越界、parser/review正确，[审计](workspacecache01-candidate-management-audit.json)。唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md)、[manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/docs/evidence/wpf-workspace-cache/candidate.json)。root独立133/133、14源/206只读依赖核验；作者133 direct/types0及7分次HTTP browser累计68.689s。最终settlement检查与全部14源一致；早期App差accepted收口增量、失败与分次来源全部保留，不能称最终SHA完整browser矩阵重跑。32驻留conversation与正文预算不等全workspace/heap上限，完整Arc/plugin/附件仍开放。883321bc v1十六scope停止写入且保留；main receipt→owner纯metadata正常push双端clean→停写→fresh CAS交权，六ATTACHI交集含两专测，不提前给第二writer。
+
+**ATTACHI02排程保持明确**：公共桥接已fd1322 main；[本轮只读观察](attachi01-main-input-observation.json)中main bf067仍没有4c模块，未收到Lead正式接收。ATTACHI01原4c/4a9继续已审待接；w01完成DASHSUM交付后，待准确含4c的正式组合base才新树fresh领取已批首12，不复制模块或写stub。CACHE后续六路径移交按[唯一范围方案](workspace-cache-attachment-binding-proposals.json)CAS串行；两片现[fresh writer账本](candidate-management-live-claims.json)仍active，不把源码停写当released。此批管理0产品复测/0 API采样/0个人服务操作。
+
+## ATTACH正式main接收与CACHE领取（11:34历史输入）
 
 **附件公共桥接/运行域已接 main `fd1322f9c0c1d085d5e343e39f6216b20d26c264`。** [管理只读核验](attachment-main-fd1322-observation.json)逐项核23 source与批准target/manifest字节相同；[Lead原组合结果](lead-main-attachment-integration.json)为actualFactory 6pass/23deselected、14.62s，8次start/restart全部自动026+六route且fallback=false、4DB清零/roottypes0。管理没有重复产品测试、API或个人服务操作。旧8701/1f0本树fallback证据不改；这是新正式factory组合，不是追改历史。
 

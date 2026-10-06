@@ -1,0 +1,153 @@
+{
+  "observedAt": "2026-10-06T11:53:45.540080+00:00",
+  "task": "WPF-WORKSPACECACHE01",
+  "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+  "base": "fd1322f9c0c1d085d5e343e39f6216b20d26c264",
+  "final": "55b48b7daa6928839268c542080e2884a651a1f0",
+  "branch": "codex/web-workspace-cache",
+  "remote": "55b48b7daa6928839268c542080e2884a651a1f0",
+  "clean": true,
+  "sourceCount": 14,
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "482e5a9b09d54954dd957f6c711e0603b8e3cf23d5cf1d89cb0cf242420454a9",
+    "apps/web/src/conversations/projection.ts": "ee90796b38c2bf0c265dffe59d7102dd6d91d5ea8d9e4100f0c6906dcf7185c3",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+    "apps/web/src/conversations/queue/projection.ts": "bcae3f00aa985c52d57763e9e00483a5c01f6b2d4310109e32f752e566d2d7e5",
+    "apps/web/src/conversations/read-cache.ts": "18aa9bea835ef742605c639f4e07db1b3ae58e223e1fe982034e921ab2e80a7d",
+    "apps/web/src/data-renderers/flow-reply-detail.tsx": "a7b10258ec07a3c61a1ff170ea74be95cb872e5b919826c3f9b13ddbf2754fbd",
+    "apps/web/src/plugin-integration/session.ts": "10b8466da9dfadab8b202922ce59de9a0ce71e7a98777876e9547923ecbe176f",
+    "apps/web/src/workspace-retention.ts": "c6df07b4d238fe449459d25d1596ad43eabadb596c92087ca45034c80ffe41c7",
+    "apps/web/test/conversation-projection.test.ts": "173f161082c29cf8cb1c8a995e8f2ccedd4475b8c0fae96a0ee3268b7c5ff957",
+    "apps/web/test/conversation-queue.test.ts": "667a35e9a765968f8abc0a4e86610f93b86696c2e86b7eed0e5d23a616f9d5bb",
+    "apps/web/test/plugin-integration.test.ts": "a79d701195b93254026a42432c866eeffe4072cf3ec6d9dcdb3ab37dd8ace5f9",
+    "apps/web/test/workspace-retention.browser.ts": "394396d2df48c9fa05df6859c7bae871b69690f3dce9a2be567000383672d8a1",
+    "apps/web/test/workspace-retention.fixture.ts": "d46715af2f97e2441c66ceeee1726bde88438e26211d6de1ad533e273d5a8f1c",
+    "apps/web/test/workspace-retention.test.ts": "400f819269938c7bbd6ad43749f57d4364cec983cc92557d2e4d9b68022f5e84"
+  },
+  "scopeCount": 16,
+  "outside": [],
+  "implementationDiffAfterTarget": [],
+  "parser": {
+    "errors": [],
+    "humanComplete": true,
+    "todos": 4,
+    "implementation": {
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/read-cache.ts",
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/workspace-retention.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts",
+        "apps/web/test/workspace-retention.fixture.ts",
+        "apps/web/test/workspace-retention.test.ts"
+      ],
+      "errors": []
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED**",
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71"
+    }
+  },
+  "missingLinks": [],
+  "sourceDiffCheck": 0,
+  "managerProductTests": 0,
+  "claimRetained": true,
+  "main": "NOT_RECEIVED",
+  "independentReview": "root only; no approval inferred by manager",
+  "authorChecks": {
+    "invocation": "checks-invocation.json",
+    "direct": "direct-final.log",
+    "passed": 133,
+    "types": "types-final.log",
+    "typesExit": 0
+  },
+  "browserCumulativeMs": 68689,
+  "browserSourceLimits": [
+    {
+      "file": "2026-10-06T11-44-20.944Z-browser.json",
+      "checks": [],
+      "failure": true,
+      "differentSources": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ]
+    },
+    {
+      "file": "2026-10-06T11-44-44.424Z-browser.json",
+      "checks": [
+        "closed-clean views release immediately, repeated reopen rereads history with no close cancellation",
+        "late reply and history reads cannot populate a closed view; reopen explicitly rereads",
+        "closed draft and selected knowledge retain identity and do not prefetch body",
+        "unknown Send and Queue survive close with their original key/body and independent next draft"
+      ],
+      "failure": true,
+      "differentSources": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ]
+    },
+    {
+      "file": "2026-10-06T11-45-18.619Z-browser.json",
+      "checks": [
+        "32 resident protected views reject new allocation without changing route; existing protected view reopens"
+      ],
+      "failure": true,
+      "differentSources": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ]
+    },
+    {
+      "file": "2026-10-06T11-45-51.845Z-browser.json",
+      "checks": [],
+      "failure": true,
+      "differentSources": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ]
+    },
+    {
+      "file": "2026-10-06T11-46-47.041Z-browser.json",
+      "checks": [
+        "two visible panes remain isolated; retained dialog keyboard and narrow themes stay usable"
+      ],
+      "failure": false,
+      "differentSources": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/workspace-retention.browser.ts"
+      ]
+    },
+    {
+      "file": "2026-10-06T11-47-31.676Z-browser.json",
+      "checks": [],
+      "failure": true,
+      "differentSources": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts"
+      ]
+    },
+    {
+      "file": "2026-10-06T11-48-05.759Z-browser.json",
+      "checks": [
+        "late accepted creation releases a closed clean alias, but preserves a newly typed draft"
+      ],
+      "failure": false,
+      "differentSources": []
+    }
+  ],
+  "browserLimit": "Only final settlement run matches all final14sources; earlier runs partial bindings and failures preserved. No blanket final App browser pass."
+}

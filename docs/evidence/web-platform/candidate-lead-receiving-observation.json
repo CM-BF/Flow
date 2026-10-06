@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-06T11:55:18.959524+00:00",
+  "source": "Execution Lead inbound via root; no manager API or product check",
+  "state": "RECEIVING_NOT_MAIN_RECEIPT",
+  "tasks": {
+    "WPF-DASHSUM01": {
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "final": "bc4d0f8bd7c4dbf1351f72f8e6c6ae1696ce130d"
+    },
+    "WPF-WORKSPACECACHE01": {
+      "target": "4ec291c2381faa0fc212cf598b8126b9feecae71",
+      "final": "55b48b7daa6928839268c542080e2884a651a1f0"
+    }
+  },
+  "next": "Lead controlled source intake and next normal registry batch; await formal main receipt before owner closeout and release",
+  "personalArtifact": "8d8 unchanged by integration",
+  "otherDependency": "ATTACHI01 4c4d/4a9b still awaits formal module main receipt"
+}

@@ -36,3 +36,7 @@ WorkspaceFeedProjection在arrived=[]/following=true时仍merge旧entries/buffere
 ### 最小回收片的额外保护接缝（root固定main2e71，只读）
 
 知识bindings Map会订阅projection/host，目前仅session.dispose全量释放，因此views.delete不能冒称所有JS引用已释放。后继小Interface需现session的窄release seam并保selected/project状态，不造第二authority。projection读cache新generation在catch/finally也须guard，避免旧flight清新loading或写错误；queue详情读生命周期必须明确本片涵盖或作为开放后继。未dismiss的rejected/queue receipt仍有材料身份，不能仅按“非unknown”静默回收；现steering显式离开确认不可绕过。root仅源码观察/设计约束，无新产品实验。
+
+### Retained chats操作的现有P01接缝（root固定4ec291只读审查，后继）
+
+缓存片在App提供Retained chats按钮，限定批准不代表原插件完整目标完成。root已核现有chat.header/sidebar/workspace.actions等SlotId，chat.header实际挂AppSlot；global/task/composer现有ResourceContext与ui.layout足以承载表现层命令。Retained chats工作区入口后继复用现有P01 slot的builtin command/button贡献；App私有callback仍唯一控制dialog/views，不新slot/通用总线或公开views；验证disabled/unload/连接旧callback及键盘focus。当前缓存片限定批准不等插件完整覆盖，不立即领取App。 此为原REQ22–23/WPF-001-05、MATURE05-03后继，未实施/未browser验收，不抢ATTACHI共享App窗口。

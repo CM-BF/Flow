@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-06T11:55:19.281413+00:00",
+  "scope": "management candidate intake and lifecycle follow-up only",
+  "sourceAudits": [
+    "dashsum01-candidate-management-audit.json",
+    "workspacecache01-candidate-management-audit.json"
+  ],
+  "changedPaths": [
+    "docs/evidence/web-platform/conversation-plugin-coverage-research.md",
+    "docs/evidence/web-platform/dashboard-summary-proposal.json",
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-05-workspace/plan.md",
+    "plans/wpf-mature-05-workspace/status.md",
+    "docs/evidence/web-platform/attachi01-main-input-observation.json",
+    "docs/evidence/web-platform/candidate-lead-receiving-observation.json",
+    "docs/evidence/web-platform/candidate-management-live-claims.json",
+    "docs/evidence/web-platform/dashsum01-candidate-management-audit.json",
+    "docs/evidence/web-platform/workspacecache01-candidate-management-audit.json"
+  ],
+  "outsideClaim": [],
+  "changedMarkdownLinksChecked": 163,
+  "missingLinks": [],
+  "stableTodoCounts": {
+    "WPF-001": 36,
+    "WPF-MATURE-05": 5
+  },
+  "cleanCode": {
+    "method": "Reused local find-skills/codebase-design/clean-code; keep authority, evidence provenance and pending dependencies separate; no second progress source or speculative completion",
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+    "findings": "Corrected stale CACHE planning text in own parent status; captured Retained action existing-slot follow-up without expanding product scope",
+    "remaining": "Module main receipt and CACHE six-scope handoff pending; actual deployed dashboard summary not rechecked"
+  },
+  "productTests": 0,
+  "dashboardApiSamples": 0,
+  "personalServiceActions": 0
+}

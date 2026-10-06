@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-10-06T11:53:46.217765+00:00",
+  "task": "WPF-DASHSUM01",
+  "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+  "base": "2c6df4754f4fea75fbb2e1e750cad89524b1f5fa",
+  "final": "bc4d0f8bd7c4dbf1351f72f8e6c6ae1696ce130d",
+  "branch": "codex/dashboard-human-summary",
+  "remote": "bc4d0f8bd7c4dbf1351f72f8e6c6ae1696ce130d",
+  "clean": true,
+  "sourceCount": 4,
+  "sourceHashes": {
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/public/app.js": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+    "apps/execution-dashboard/test/human-summary.test.mjs": "94f70824bc157338de7daf20063384c299ea021f968bdddd337e8e6ab125d098",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103"
+  },
+  "scopeCount": 6,
+  "outside": [],
+  "implementationDiffAfterTarget": [],
+  "parser": {
+    "errors": [],
+    "humanComplete": true,
+    "todos": 3,
+    "implementation": {
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+      "scopes": [
+        "apps/execution-dashboard/src/human.mjs",
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/test/human-summary.test.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs"
+      ],
+      "errors": []
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED**",
+      "target": "c1de71fd316f9bba1ea5f030f5a54d2332d09044"
+    }
+  },
+  "missingLinks": [],
+  "sourceDiffCheck": 0,
+  "managerProductTests": 0,
+  "claimRetained": true,
+  "main": "NOT_RECEIVED",
+  "independentReview": "root only; no approval inferred by manager",
+  "browser": {
+    "sourceHead": "c1de71fd316f9bba1ea5f030f5a54d2332d09044",
+    "sourceDirty": true,
+    "outcome": "passed",
+    "elapsedMs": 8374,
+    "cumulativeMs": 8374,
+    "fixtureRemoved": true,
+    "serverClosed": true,
+    "cleanupErrors": [],
+    "errors": [],
+    "checkCount": 6
+  }
+}
