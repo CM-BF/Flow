@@ -2,36 +2,36 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:51:15 UTC / main仍待Lead集成receipt |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:55:48 UTC / main仍待Lead集成receipt |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue |
 | Branch | codex/conversation-queue |
 | 工作基线 / HEAD | base dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；实现HEAD fac202e32cc4c223e2e6abc64c67d11d39e439b0；metadata由Git聚合 |
 | 工作树dirty状态 | 实现已提交；仅交付metadata待提交 |
-| 工作分支状态 | in-progress（测试seam已固定待复审） |
+| 工作分支状态 | completed（模块与测试seam均已APPROVED） |
 | 检查状态 | PASSED fac202e32cc4c223e2e6abc64c67d11d39e439b0；32 queue/noEmit重新通过，原22consumer证据保留 |
 | 已集成main状态 / HEAD | 未集成此target；启动main/origin dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8 clean；不将模块fixture当生产接线 |
 | 实现目标 | fac202e32cc4c223e2e6abc64c67d11d39e439b0 |
 | 实现范围 | apps/server/src/conversation-queue, apps/server/src/conversations/commands.ts, apps/server/src/conversations/admission.ts, apps/server/src/conversations/state.ts, packages/contracts/src/conversations.ts, packages/contracts/src/conversation-queue.ts, packages/storage/migrations/011-conversation-queue.sql, docs/evidence/chat04/run-consumer.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 测试seam两处已固定，32项/noEmit通过，待复审 |
-| 下一可用交付 | 固定新target复审；默认生产scan由Lead另验 |
+| 当前产出 | 持久队列与测试seam已APPROVED，32项/noEmit新证据固定 |
+| 下一可用交付 | Lead接收测试seam；生产默认scan另验，后续B03待take |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，IN_PROGRESS target fac202e32cc4c223e2e6abc64c67d11d39e439b0；原ae9批准保留 |
+| Review | [review.md](review.md)，APPROVED target fac202e32cc4c223e2e6abc64c67d11d39e439b0 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | CHAT04-01 | completed | b01_bounded_reads | v2 Interface已交Lead/Web，唯一register(app,pool,boss) |
 | CHAT04-02 | completed | b01_bounded_reads | 持久FIFO/pause、双CAS与原子resume，无marker |
 | CHAT04-03 | completed | b01_bounded_reads | [checks.json](../../docs/evidence/chat04/checks.json)：32+22/noEmit；两库清理 |
-| CHAT04-04 | in-progress | b01_bounded_reads / Mika | Root 04:41:23 UTC APPROVED；生产与main事实单独核 |
+| CHAT04-04 | completed | b01_bounded_reads / Mika | Root 04:41:23 UTC APPROVED；生产与main事实单独核 |
 
 ## 当前事实与已解除依赖
 
-claim 3be53dee-08c2-4c88-85ee-a29781842223 v1 active，[首次receipt](../../docs/evidence/chat04/claim-receipt.json)。原9scope内实现，review/修复期保留。X03已顺序完成main接收并于2026-10-06 04:28:05 UTC释放claim v2；本worker仅写CHAT04。
+claim 3be53dee-08c2-4c88-85ee-a29781842223 v1 active，[首次receipt](../../docs/evidence/chat04/claim-receipt.json)。原9scope内实现，review/修复期保留。X03已顺序完成main接收并于2026-10-06 04:28:05 UTC释放claim v2；本worker已完成顺序收尾，交付后停止本WT写入。
 
 Goal Owner已明确停止后续意图：UI先pause ACK再既有cancel；同conversation锁保证commit后不再提升，已提升引用如实返回。Lead确认011未部署常驻库，迁移等待已解除。本实现已含queue_paused，新增runner事实检查为非锁SELECT，避免task→runner反序。显式resume同事务提升首waiting/解除暂停，空queue同门禁可恢复composer，不预授权未来auto；自动仍succeeded-only。
 
@@ -57,4 +57,6 @@ R01：Root指出公共capabilities.queue literal true拒绝旧center的false；�
 
 集成修复：2026-10-06 04:51:48 UTC复核claim3be53dee v1 active、WT clean96a3df2后，仅queue.test.ts两个createServer使用局部options automaticQueueScan:false。旧factory此字段尚未接入；本分支只能验证原32项断言仍成立，Lead新默认true生产生命周期与实际false seam需其集成点另验。无HTTP/env开关、无as any；不改shared index。22 consumer产品路径不变，不重复。
 
-2026-10-06 04:51:48 UTC：修复target fac202e32cc4c223e2e6abc64c67d11d39e439b0，queue32/32，Vitest4.0.18实际04:51:15.358→04:51:20.633 UTC exit0；noEmit04:51:20.634→04:51:21.800 exit0；临时库flow_chat04_24353_8b1d17f9 remaining[]。其他14实现文件与ae9逐字节不变。当前metadata待提交后交Root复审。
+2026-10-06 04:51:48 UTC：修复target fac202e32cc4c223e2e6abc64c67d11d39e439b0，queue32/32，Vitest4.0.18实际04:51:15.358→04:51:20.633 UTC exit0；noEmit04:51:20.634→04:51:21.800 exit0；临时库flow_chat04_24353_8b1d17f9 remaining[]。其他14实现文件与ae9逐字节不变。Root已于04:54:46 UTC完成复审APPROVED。
+
+2026-10-06 04:54:46 UTC Root复审APPROVED fac202e：15源/21日志hash、32/noEmit/cleanup匹配，无blocking finding。默认自动scan/集成false option由Lead负责，不以旧factory忽略flag的本分支结果代替。当前仅收尾review metadata；提交clean后明确停止CHAT04写入，claim3be53dee v1保留集成期。B02已clean dace800 approved并停写，B03仅完成只读设计核查，未新claim/改产品。
