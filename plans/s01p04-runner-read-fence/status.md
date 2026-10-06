@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:20:12 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:29:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence |
 | Branch | codex/runner-read-fence |
 | 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；preparation target cd13e01e871adaaf7dee1cc6676f7a52145e316f（非生产实现） |
-| 工作树dirty状态 | 两源/raw已固定e1847ce1；仅manifest/status/review metadata跟随 |
+| 工作树dirty状态 | 生产e184和消费者fix 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88已固定；仅manifest/status/review metadata跟随 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新PG9/9 + ENG定向1/1（12未选）=10 distinct；局部strict0；两个专库清理完成 |
+| 检查状态 | 原10 distinct冻结；消费者定向1通过/15未选，局部strict0，累计11不同通过；专库absent |
 | 已集成main状态 / HEAD | main648e331c58043cf7ee307300521ab1c628cb2ee1已作输入合入d7e9136f；P04本身尚未main |
 | 实现目标 | e1847ce1c66646eb40b7eb4111a31468d4681e1f |
-| 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts, apps/server/src/runners.ts |
+| 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts, apps/server/src/runners.ts, apps/server/src/active-steering/steering.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
 | 当前产出 | 不同attempt可共享授权读取锁，撤销、维护和领取保护已通过隔离检查 |
-| 下一可用交付 | 固定提交进入独立审查，再交主线集成 |
+| 下一可用交付 | 消费者P2已修复，固定target交原reviewer复审 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | REVIEW_REQUIRED；固定target e1847ce1c66646eb40b7eb4111a31468d4681e1f，尚无实现独审批准 |
+| Review | REVIEW_REQUIRED；P2历史CHANGES_REQUESTED保留，fix 94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88待原reviewer复审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -52,3 +52,7 @@
 本轮真实green：2026-10-06 11:18:15.119Z→11:18:17.983Z，9/9；PG160013，连接closed/专库absent。ENG直接consumer仅1/1通过、12未选，另一专库removed；strict0。原red未重跑，0provider/0新容量窗口。见[checks](../../docs/evidence/s01p04/implementation-checks.json)及[本段质量](../../docs/evidence/s01p04/implementation-quality.md)。
 
 实现固定 `e1847ce1c66646eb40b7eb4111a31468d4681e1f`；48项[implementation manifest](../../docs/evidence/s01p04/implementation-manifest.json)=3 source/config +14 raw +14 support +17 readonly，targetGit=WT=hash/bytes，17 readonly逐字=648。新9PG+ENG1=10 distinct通过、12未选、strict0；独审待完成，writer cb7 v2保留。待Lead登记S01P04权威source/架构基线，尚未确认dashboard聚合。
+
+2026-10-06 11:25:39.842 UTC cb7 writer amend v3 COMMITTED，仅追加 `apps/server/src/active-steering/steering.test.ts`。独审指出seal与accept都能取得runner SHARE，真正等待点是同task FOR UPDATE；保留真实交错与阻塞断言，改精确holder/blocker绑定并仅定向检查该消费者。生产e184两源及原9PG/ENG/strict证据冻结，无新容量窗口。
+
+消费者修复固定 `94b3cfae4be4c7c99b6dc2a224c7e37f63c91d88`，见[34项manifest](../../docs/evidence/s01p04/consumer-manifest.json)。实际2026-10-06 11:27:17.829→11:27:22.387 UTC，1通过/15未选；精确task SQL与holder/blocker正证据、final commit后409、sealed且commands空均通过，专库零连接/absent。局部strict0；初始import0tests/exit1及strict2完整保留。原e184生产和48绑定逐字冻结，未重跑原9PG/ENG。writer cb7 v3保留修复期，尚未main。Lead报告137-source实际dashboard采样已有S01P04卡；该事实由Lead提供，本worker未另造聚合JSON或重查服务。
