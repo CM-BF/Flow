@@ -49,7 +49,11 @@ export const runnerEventSchema = z.discriminatedUnion('type', [
   assistantStreamDataSchema.safeExtend(envelope),
   assistantStreamMarkerSchema.extend(envelope),
   nativeActivityDataSchema.safeExtend(envelope),
-  z.discriminatedUnion('action', nativeActivityBodyEventSchema.options.map(schema => schema.extend(envelope))),
+  z.discriminatedUnion('action', [
+    nativeActivityBodyEventSchema.options[0].extend(envelope),
+    nativeActivityBodyEventSchema.options[1].extend(envelope),
+    nativeActivityBodyEventSchema.options[2].extend(envelope),
+  ]),
   contextObservationEventSchema,
   z.strictObject({ ...envelope, type: z.literal('message'), text: z.string().min(1).max(4000) }),
   z.strictObject({ ...envelope, type: z.literal('detail'), title, content, mediaType: z.string().max(120) }),

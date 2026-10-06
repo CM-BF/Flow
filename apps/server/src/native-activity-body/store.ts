@@ -33,7 +33,8 @@ export async function saveNativeActivityBody(client: PoolClient, task: TaskRecor
     const observation = (await client.query<{header:{kind:string;phase:string};content:string;detail_digest:string}>(`SELECT a.header,d.content,a.detail_digest FROM flow.native_activities a
       JOIN flow.details d ON d.id=a.detail_id AND d.task_id=a.task_id AND d.attempt_id=a.attempt_id
       WHERE a.id=$1 AND a.task_id=$2 AND a.attempt_id=$3 AND a.native_session_id=$4`,[event.activityId,task.id,attempt.id,event.nativeSessionId])).rows[0];
-    if (!observation || observation.header.kind !== 'tool' || !['input-ready','running','succeeded','failed'].includes(observation.header.phase)
+    if (!observation) return fail('Material requires its original immutable tool observation.');
+    if (observation.header.kind !== 'tool' || !['input-ready','running','succeeded','failed'].includes(observation.header.phase)
         || sha256(observation.content) !== observation.detail_digest) fail('Material requires its original immutable tool observation.');
     const prefix = nativeActivityBodySchema.parse(JSON.parse(observation.content));
     if (prefix.originalBytes !== event.bytes || prefix.sha256 !== event.sha256 || prefix.mediaType !== event.mediaType) fail('Material differs from its original prefix identity.');

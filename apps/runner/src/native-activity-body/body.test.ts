@@ -97,3 +97,19 @@ it('keeps empty material explicit and still rejects an oversized legacy single b
   expect(batches[0]!.events.map(e=>e.type==='native-activity-body'?e.action:e.type)).toEqual(['native-activity','open','seal']);
   expect(eventBatchSchema.safeParse({...ownership,events:Array.from({length:3},(_,i)=>({id:randomUUID(),sequence:i+1,type:'detail',title:'large',content:'x'.repeat(1_000_000),mediaType:'text/plain'}))}).success).toBe(false);
 });
+it('makes a steering final proposal wait for the body seal without allocating intervening sequences',async()=>{
+  const {path}=await setup(),entered=deferred(),release=deferred();let lastSequence=0;
+  const outbox=new EventOutbox(path,ownership,async batch=>{
+    lastSequence=batch.events.at(-1)!.sequence;
+    if(batch.events.some(event=>event.type==='native-activity-body'&&event.action==='seal')) {entered.resolve();await release.promise;}
+  });
+  const transfer=outbox.publishActivityBody(input());await entered.promise;let calls=0;
+  const text='Final',version=bodyDigest(Buffer.from(text)),artifactId=randomUUID();
+  const final=outbox.finalize({expectedRevision:0,nativeSessionId:'session',resultId:'result',events:[
+    {type:'artifact',artifactId,title:'Final',content:text,version,mediaType:'text/plain'},
+    {type:'verification',artifactId,artifactVersion:version,verifierId:'flow.text',verifierVersion:'1',inputDigest:version,result:'passed',evidence:'Synthetic verified text'},
+    {type:'assistant-final',messageId:bodyDigest(Buffer.from('final')),nativeSessionId:'session',sourceMessageId:'result',source:'claude.sdk.result',content:text,
+      settings:{requested:{model:'test',thinking:'disabled',permissionMode:'dontAsk'},effective:{model:null,thinking:'unknown',permissionMode:null,tools:null}}},
+  ]},{async submit(proposal){calls++;expect(proposal.afterSequence).toBe(lastSequence);expect(proposal.events[0]!.sequence).toBe(lastSequence+1);return{state:'committed',proposalId:proposal.proposalId,lastSequence:lastSequence+3,replayed:false};},async status(){throw new Error('Unexpected status');}});
+  expect(calls).toBe(0);release.resolve();await transfer;expect((await final).state).toBe('committed');expect(calls).toBe(1);
+});

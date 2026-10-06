@@ -2,14 +2,14 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-06 22:24:13 UTC |
+| 更新时间 | 2026-10-06 22:31:21 UTC |
 | Owner / model | assignment_review / gpt-6-astra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | 已确定工具长正文的完整保存和分页读取接口，开始实现 |
+| 当前产出 | 已实现完整工具材料保存、分块重报和分页读口；大材料纯检查已分轮通过，中心数据库验证待排 |
 | 下一可用交付 | 可恢复的有界正文传输与授权读取模块 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -22,20 +22,20 @@
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
 | claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
-| 检查状态 | NOT_RUN；未import/install/test/PG/provider |
+| 检查状态 | 局部22项分轮通过；focused types原红修复中；PG/provider/生产挂载NOT_RUN |
 | 独立review | NOT_STARTED |
 | main集成 | 未集成 |
-| Dashboard | Lead已接收首canonical，registry180登记中 |
+| Dashboard | registry180已实际live；TODO表头已纠正待下次聚合 |
 | 架构影响 | 新增工具正文spool与immutable chunk读口；复用原事件事务，架构基线由Lead集成时更新 |
 
 ## TODO
 
-| ID | 状态 | Owner | 证据 |
+| TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | CHAT05P01-01 | completed | assignment_review | 首合同7d075与claim已固定 |
-| CHAT05P01-02 | in-progress | assignment_review | 完整材料spool与chunk计划准备中，NOT_RUN |
-| CHAT05P01-03 | pending | assignment_review | ingestion/033/reader待实现 |
-| CHAT05P01-04 | pending | assignment_review | 局部检查未运行 |
+| CHAT05P01-02 | in-progress | assignment_review | 完整spool/固定重报已实现，22不同纯检查分轮通过 |
+| CHAT05P01-03 | in-progress | assignment_review | ingestion/033/reader源已固定；PG NOT_RUN |
+| CHAT05P01-04 | in-progress | assignment_review | pure-run-01/02；types-run-01原红保留 |
 | CHAT05P01-05 | pending | assignment_review | 独审及共享集成未完成 |
 | CHAT05P01-06 | pending | assignment_review | UI/provider完整验收后继 |
 
