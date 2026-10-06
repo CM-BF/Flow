@@ -1,4 +1,5 @@
 import type { Pool } from 'pg';
+import { legacyTimelineEntries } from './assistant-stream-compatibility/index.js';
 import type { Detail, EventPage, TimelineEntry } from '@flow/contracts';
 import { HttpError, transaction } from './database.js';
 import { loadTask, summary } from './tasks.js';
@@ -15,8 +16,9 @@ export async function eventPage(pool: Pool, id: string, after: number, limit = 1
     const task = await loadTask(client, id);
     const reset = after > task.cursor;
     const rows = reset ? [] : (await client.query<{ entry: TimelineEntry }>('SELECT entry FROM flow.timeline WHERE task_id=$1 AND cursor>$2 ORDER BY cursor LIMIT $3', [id, after, limit])).rows;
-    const entries = rows.map(row => row.entry);
-    const nextCursor = reset ? 0 : entries.at(-1)?.cursor ?? after;
+    const rawEntries = rows.map(row => row.entry);
+    const nextCursor = reset ? 0 : rawEntries.at(-1)?.cursor ?? after;
+    const entries = legacyTimelineEntries(rawEntries, entry => entry);
     return { entries, nextCursor, watermark: task.cursor, hasMore: !reset && nextCursor < task.cursor, task: summary(task), pendingDecision: task.pending_decision, usage: task.usage, ...(reset ? { reset: true } : {}) };
   }, true);
 }

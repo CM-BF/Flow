@@ -1,3 +1,4 @@
+import { negotiatedAssistantStream, type ConversationReadOptions } from '../assistant-stream-compatibility/index.js';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -21,14 +22,19 @@ function parse<T>(schema: { safeParse(value: unknown): { success: true; data: T 
   if (!result.success) throw new HttpError(400, 'invalid_conversation_request', 'Invalid conversation request.');
   return result.data;
 }
-export function registerConversationRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss): void {
+export function registerConversationRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss, options: ConversationReadOptions = {}): void {
   app.post('/api/conversations', async (request, reply) => reply.code(201).send(await createConversation(pool, parse(conversationCreationSchema, request.body), String(request.headers['idempotency-key'] ?? ''))));
   app.post<{ Params: { id: string } }>('/api/conversations/:id/turns', async (request, reply) => reply.code(202).send(await admitTurn(pool, boss, parse(idSchema, request.params.id), parse(conversationTurnSchema, request.body), String(request.headers['idempotency-key'] ?? ''))));
   app.get('/api/conversations', request => {
     const query = parse(conversationListQuerySchema, request.query);
     return conversationList(pool, query.after, query.limit);
   });
-  app.get<{ Params: { id: string } }>('/api/conversations/:id', request => conversationSnapshot(pool, parse(idSchema, request.params.id)));
+  app.get<{ Params: { id: string } }>('/api/conversations/:id', async (request, reply) => {
+    reply.header('Cache-Control', 'no-store');
+    const snapshot = await conversationSnapshot(pool, parse(idSchema, request.params.id));
+    const liveAssistantText = await negotiatedAssistantStream(app, pool, request.raw.rawHeaders, options);
+    return { ...snapshot, capabilities: { ...snapshot.capabilities, liveAssistantText } };
+  });
   app.get<{ Params: { id: string } }>('/api/conversations/:id/turns', request => {
     const query = parse(conversationTurnQuerySchema, request.query);
     return turnPage(pool, parse(idSchema, request.params.id), query.after, query.limit);
