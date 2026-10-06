@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
-| 工作树dirty状态 | pagesize单次运行后证据/父状态封存；source/input/prepared及旧native原件冻结；提交后clean。 |
+| 工作树dirty状态 | 新compat只增固定输入/入口与证据，原pagesize封存000f17cf；提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -22,7 +22,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Claude逐消息设置中心与公共客户端已接入主线；页大小对照已完成，新增许可未改善读取，原Codex握手失败仍未解决。 |
-| 下一可用交付 | 页大小结果已审封存；合法consumer继续Web/TUI完整冻结设置验收。 |
+| 下一可用交付 | 准备数字页大小兼容名称的有界对照；合法consumer继续Web/TUI完整冻结设置验收。 |
 | 当前阻塞 | ACTIVE: 真实Codex握手失败，尚无目录或实际模型资格；Claude完整跨端产品验收仍待完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
@@ -48,7 +48,7 @@
 
 [canonical](../../docs/evidence/wpf-mature-02/interface.md)唯一路由共享owner。本claim v6仅docs/实验/plan三scope，四profile路径已停写并[原子交回](../../docs/evidence/wpf-mature-02/claude-core-profile-handback-receipt.json)，R06/store此前已交回。Lead报告2026-10-06 15:38:16 UTC实际4320快照164来源、CORE live/issues=[]，后续9bdb仅registry；本owner未重采。子进度由其唯一status维护，完整02仍in-progress。
 
-CHAT06P03已获原owner独审并等待Lead接收，唯一status与receipt由canonical链接；本父不维护该子task第二状态。CORE/C01组合接入与Web/TUI仍优先，旧native窗口CONSUMED；pagesize已消费并封存；后继未OPEN。
+CHAT06P03已main接收并release，唯一status与receipt由canonical链接；本父不维护该子task第二状态。CORE/C01组合接入与Web/TUI仍优先，旧native窗口CONSUMED；pagesize已消费并封存；compat准备中，实际未OPEN。
 
 ## 固定证据与边界
 
