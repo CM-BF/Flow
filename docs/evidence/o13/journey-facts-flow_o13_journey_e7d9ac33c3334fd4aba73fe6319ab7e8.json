@@ -1,0 +1,143 @@
+{
+  "database": "flow_o13_journey_e7d9ac33c3334fd4aba73fe6319ab7e8",
+  "providerCalls": 0,
+  "boundary": "Real public HTTP/PG, runtime/outbox and SDK adapter; two injected query transports. Synthetic graph content is not actual model planning.",
+  "before": [],
+  "goalId": "c84449c4-0602-4b8c-9aa8-8f2ec6dd76fb",
+  "graphRunId": "ceeb7da9-6ea4-442b-86e2-ea5abad826a6",
+  "plannerTaskId": "7e495784-3412-4c4e-a25a-2ce0273af75e",
+  "childTaskId": "8d176a0d-4cb8-4708-af03-f5bd3901e719",
+  "binding": {
+    "nodeId": "9cfad0e3-ac6b-4b36-81d6-f6c9a089b117",
+    "executionId": "42e973ba-73fb-48a5-ba95-a42c19a9ae8f",
+    "taskId": "8d176a0d-4cb8-4708-af03-f5bd3901e719",
+    "artifactId": "6d69525a-1e9e-4749-b459-1aeca66c4f0a",
+    "artifactVersion": "9409b34842f42c310d471cfa3473aa0ca29697b07d1c3fc81efb4fec4dcd4658",
+    "detailId": "b5d9681b-e91e-4901-a35a-1679f940005a"
+  },
+  "graphCalls": 1,
+  "childCalls": 1,
+  "graphCloses": 1,
+  "childCloses": 1,
+  "nativeProviderQueries": 0,
+  "mechanicalAndBusinessAcceptanceSeparate": true,
+  "connections": [],
+  "remaining": [],
+  "directoryRemoved": true,
+  "requests": [
+    {
+      "path": "/api/goals",
+      "key": "d12b5886-ec0c-41c8-9a89-de04cf6fef6a",
+      "body": {
+        "projectId": "3517f084-84bf-4cdc-b1ad-657aa5aa200c",
+        "originalGoal": "请为这个合成预览写一段准确的发布说明，然后交给我确认。",
+        "constraints": "Only readonly text; no engineering changes.",
+        "acceptance": "Owner checks the exact release fact and accepts or leaves unaccepted."
+      }
+    },
+    {
+      "path": "/api/goals",
+      "key": "d12b5886-ec0c-41c8-9a89-de04cf6fef6a",
+      "body": {
+        "projectId": "3517f084-84bf-4cdc-b1ad-657aa5aa200c",
+        "originalGoal": "请为这个合成预览写一段准确的发布说明，然后交给我确认。",
+        "constraints": "Only readonly text; no engineering changes.",
+        "acceptance": "Owner checks the exact release fact and accepts or leaves unaccepted."
+      }
+    },
+    {
+      "path": "/api/goals/c84449c4-0602-4b8c-9aa8-8f2ec6dd76fb/graph-runs",
+      "key": "1ae913ff-b9f9-4ea2-92a4-ed70f11444bc",
+      "body": {
+        "scope": {
+          "baseRevision": 1,
+          "allowedExistingNodes": [],
+          "maxProposals": 1,
+          "maxApplications": 1,
+          "maxNewNodes": 3,
+          "maxNewEdges": 2
+        },
+        "prompt": "Read the original goal, propose and apply at most three nodes; do not execute children.",
+        "execution": {
+          "harness": "claude",
+          "executionProfile": {
+            "id": "8fda7af0-a87a-4266-83d1-ed2465d513f0",
+            "runnerId": "97d640f6-c693-477e-8b93-05ab097e558e",
+            "configDigest": "2415823865c2a81ced591bc2c7ff9c903286ab43fb63070022d0436cefde20b2"
+          }
+        }
+      }
+    },
+    {
+      "path": "/api/goals/c84449c4-0602-4b8c-9aa8-8f2ec6dd76fb/graph-runs",
+      "key": "1ae913ff-b9f9-4ea2-92a4-ed70f11444bc",
+      "body": {
+        "scope": {
+          "baseRevision": 1,
+          "allowedExistingNodes": [],
+          "maxProposals": 1,
+          "maxApplications": 1,
+          "maxNewNodes": 3,
+          "maxNewEdges": 2
+        },
+        "prompt": "Read the original goal, propose and apply at most three nodes; do not execute children.",
+        "execution": {
+          "harness": "claude",
+          "executionProfile": {
+            "id": "8fda7af0-a87a-4266-83d1-ed2465d513f0",
+            "runnerId": "97d640f6-c693-477e-8b93-05ab097e558e",
+            "configDigest": "2415823865c2a81ced591bc2c7ff9c903286ab43fb63070022d0436cefde20b2"
+          }
+        }
+      }
+    },
+    {
+      "path": "/api/goals/c84449c4-0602-4b8c-9aa8-8f2ec6dd76fb/native-executions",
+      "key": "91cb79f6-33b6-4218-8528-0654707e3d22",
+      "body": {
+        "nodeId": "9cfad0e3-ac6b-4b36-81d6-f6c9a089b117",
+        "expectedInputVersion": 1,
+        "dependencies": [],
+        "previousExecutionId": null,
+        "reason": "Owner selects the separately pinned readonly text profile.",
+        "executionProfile": {
+          "id": "8fda7af0-a87a-4266-83d1-ed2465d513f0",
+          "runnerId": "97d640f6-c693-477e-8b93-05ab097e558e",
+          "configDigest": "2415823865c2a81ced591bc2c7ff9c903286ab43fb63070022d0436cefde20b2"
+        }
+      }
+    },
+    {
+      "path": "/api/goals/c84449c4-0602-4b8c-9aa8-8f2ec6dd76fb/native-executions",
+      "key": "0e867b3b-1865-41b7-9026-b6db46bcf26d",
+      "body": {
+        "nodeId": "9cfad0e3-ac6b-4b36-81d6-f6c9a089b117",
+        "expectedInputVersion": 1,
+        "dependencies": [],
+        "previousExecutionId": null,
+        "reason": "Owner selects the separately pinned readonly text profile.",
+        "executionProfile": {
+          "id": "520874c4-2d10-4b6f-af7a-6359f9d589f1",
+          "runnerId": "fa895364-deb8-4a4a-8b4b-c2748de2c6c5",
+          "configDigest": "53e1e811ecb10a5e1a6790ba6241afe0b06544310b71bcb216ddcb349135df2d"
+        }
+      }
+    },
+    {
+      "path": "/api/goals/c84449c4-0602-4b8c-9aa8-8f2ec6dd76fb/native-executions",
+      "key": "0e867b3b-1865-41b7-9026-b6db46bcf26d",
+      "body": {
+        "nodeId": "9cfad0e3-ac6b-4b36-81d6-f6c9a089b117",
+        "expectedInputVersion": 1,
+        "dependencies": [],
+        "previousExecutionId": null,
+        "reason": "Owner selects the separately pinned readonly text profile.",
+        "executionProfile": {
+          "id": "520874c4-2d10-4b6f-af7a-6359f9d589f1",
+          "runnerId": "fa895364-deb8-4a4a-8b4b-c2748de2c6c5",
+          "configDigest": "53e1e811ecb10a5e1a6790ba6241afe0b06544310b71bcb216ddcb349135df2d"
+        }
+      }
+    }
+  ]
+}

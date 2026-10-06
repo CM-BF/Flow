@@ -7,8 +7,8 @@
 复用 O07/O09/O11/O12 的中心权限、调度、runner/query/outbox 和现有 Intent 状态机。[Interface](../../docs/evidence/o13/interface.md) 定义新增入口与轻读合同。遵守[模块化规则](../../AGENTS.md#modular-design)。不从图标题自动生成 child 输入，不把机械校验通过当业务接受；真实模型新预算另定，O08/O10 封存不动。
 
 - [x] **O13-01** 原子领取、固定 DTO/Interface 与唯一三件套。
-- [ ] **O13-02** 自然语言 intake 恢复接缝、原 GoalSession 新命令和规划轻读。
-- [ ] **O13-03** 0query 公开 HTTP/独立 PG 与注入 SDK 连续旅程、未知/重启/直接兼容检查。
+- [x] **O13-02** 自然语言 intake 恢复接缝、原 GoalSession 新命令和规划轻读。
+- [x] **O13-03** 0query 公开 HTTP/独立 PG 与注入 SDK 连续旅程、未知/重启/直接兼容检查。
 - [ ] **O13-04** 固定证据与 clean-code，独立审查、主线接收及领取释放。
 - [ ] **O13-05** 后继真实规划与 child 独立预算、真实 UI 连续验收；不在本片 0query 交付范围。
 
