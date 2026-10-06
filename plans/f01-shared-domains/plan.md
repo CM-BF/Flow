@@ -1,6 +1,6 @@
 # F01 公共领域接入
 
-状态：in-progress。Owner：Execution Lead / gpt-6-astra ultra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation`，branch `codex/m2-shared-foundation`，base `873738d9eb998c10bc71721d9b325fcc76ecd7b5`。
+状态：in-progress。当前Owner：native_center_owner / gpt-6-astra；历史作者与co-lead：Execution Lead。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation`，branch `codex/m2-shared-foundation`，base `873738d9eb998c10bc71721d9b325fcc76ecd7b5`。
 
 为独立G01/P02 owner解除共享入口依赖；领域合同由owner写，公共export/client/CLI/注册/usage政策由Lead统一。沿用find-skills本地优先，实际应用codebase-design/clean-code/tdd，保持小接口和真实消费者验证；不修改Web owner目录。
 
@@ -81,4 +81,10 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [x] **F01-40** 提供只读 `usage <task-id>` CLI，复用共享用量读口并保留来源/未知覆盖，不另算账或提交任务。
 
-- [ ] **F01-41** 按已审X01中心合同接五薄client/public export及后续默认factory/CLI；只传稳定key/请求/receipt，不把accepted等同installed，不自造executionSettled。
+- [x] **F01-41** 按已审X01中心合同接五薄client/public export及后续默认factory/CLI；只传稳定key/请求/receipt，不把accepted等同installed，不自造executionSettled。
+
+- [ ] **F01-42** O14 三方法/public export 与030生产扫描生命周期接线，复用现有queue scan单生命周期；实际客户端断开/重启后持久推进，owner接受保持独立。
+
+## 2026-10-06 16:59:10 UTC 共享生产交接与本次界限
+
+F01当前owner改为native_center_owner，co-lead仍ExecutionLead。沿F01-42先做既有O14生产验证，现成73a源码不重写；032后继仅在领域APPROVED后接最薄迁移/factory与一个真实client consumer，不新增任务或transport/FSM。新test路径先amend。59literal claim只表示协调占用，不构成重写授权。验证窗口/磁盘准入由Lead串行安排，0provider。

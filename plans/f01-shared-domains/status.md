@@ -2,27 +2,27 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T14:59:45.048714+00:00 / mainaf9768c7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:09:20 UTC / 当前source固定，待main接收 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
-| 单一status owner / model | Execution Lead / gpt-6-astra ultra |
+| 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main56d90已审领域；当前生产/CLI 5e121041cf628817b27cbb64f00317d5d62ad1e2 |
-| 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
-| 工作分支状态 | completed |
-| 检查状态 | PASSED 5e121041cf628817b27cbb64f00317d5d62ad1e2；配置4（旧consumer2）+CLI HTTP1+生产PG/HTTP1分轮绿，root strict0，0provider |
-| 已集成main状态 / HEAD | COST领域、薄client、生产读口与CLI0550已进入main59ef2134；个人runtime362/v15未更新 |
-| Review | APPROVED 5e121041cf628817b27cbb64f00317d5d62ad1e2；assignment_review；薄client67fd由Mika批准 |
-| 实现目标 | 5e121041cf628817b27cbb64f00317d5d62ad1e2 |
-| 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/plugin-installations.test.ts, apps/server/src/index.ts, apps/server/src/main.ts, apps/server/src/package-fetch-configuration.ts, apps/server/src/plugin-installation-configuration.test.ts, apps/server/src/plugin-installation-configuration.ts, apps/server/src/private-json-configuration.ts, packages/client/src/plugin-installations-production.test.ts |
+| 工作基线 / HEAD | 受控移交 HEAD c67d6973d5b9f516fcb3000538939d1046b39367；O14生产候选73aabff4fac96c0439817bdc72358c1385371e8d保持 |
+| 工作树dirty状态 | 产品73a五源码零差；本次仅验证证据和metadata，提交后clean |
+| 工作分支状态 | in-progress |
+| 检查状态 | PASSED 73aabff4fac96c0439817bdc72358c1385371e8d；本轮真实PG2/2，旧CLI1/root types0保留且未重跑；[证据](../../docs/evidence/f01/goal-progression-production-README.md) |
+| 已集成main状态 / HEAD | X01静态安装已审进入7810cbf1；O14领域与薄client已mainfb9，当前生产候选73aab未集成。个人runtime362/v15未更新。 |
+| Review | APPROVED 73aabff4fac96c0439817bdc72358c1385371e8d；assignment_review唯一独审，原样回执见review.md；后继032未批准 |
+| 实现目标 | 73aabff4fac96c0439817bdc72358c1385371e8d |
+| 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/goal-progression.test.ts, apps/server/src/index.ts, packages/client/src/goal-progression-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 静态插件安装已通过真实中心与终端验证；重启后原请求能恢复同一回执。 |
-| 下一可用交付 | 完成独立审查并发布默认关闭的安装入口；目标持续推进继续接现有后台扫描。 |
+| 当前产出 | 自动推进的生产接线已通过独立审查，依赖继续、重启恢复与正常关闭有真实证据。 |
+| 下一可用交付 | 接入主线；消息设置生产入口另待领域批准后组合。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -197,13 +197,23 @@
 
 2026-10-06T14:35:06.228081+00:00：CLI固定0550已main59ef2134，I02五源比较零差；本次仅metadata，不重新执行HTTP/PG/types。
 
-| F01-41 | in-progress | Lead | X01五方法client/export；固定67fd4592、真实HTTP1/1、types0，待独审；默认mount/CLI另验 |
+| F01-41 | completed | Lead | 已审67fd/5e121在main7810，原分轮HTTP/PG与types证据保留；installed不等于enabled。 |
 
 2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
 
-| F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）待独审；生产挂载/自动scan尚未修改，待插件共享index审结 |
+| F01-42 | in-progress | native_center_owner | 生产73a真实PG2/2与正常专库/目录清理已完成；旧CLI1/types0保留，待独审/main。 |
 
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
+
+2026-10-06T15:16:52.996330+00:00：O14生产候选已固定，见[候选绑定](../../docs/evidence/f01/goal-progression-production-candidate.json)与[Interface](../../docs/evidence/f01/goal-progression-interface.md)。两次作者测试DTO类型失败原文保留；没有运行PG或模型来补齐结果。X01已main收口，不再等待重复审查。
+
+独立源前检修复：生命周期用例自备profile/自动扫描模式，可单独选择；root types0。锁时点不证明关闭期间首次admission，重启key重放不冒lost ACK。原前检见[记录](../../docs/evidence/f01/goal-progression-production-source-precheck.json)，PG仍NOT_RUN。
+
+薄client独审已按Mika唯一canonical原文转录[批准记录](../../docs/evidence/f01/goal-progression-client-independent-review.md)，无重复复审。产品接线73aab独立源前检P2静态关闭，仍未执行PG，不借薄transport批准。
+
+## 2026-10-06 15:31 数据库准入未运行
+
+Web A-only 实际结束并正常清理后，fresh free1,098,022,912B低于1GiB+32MiB。未启动测试/数据库，窗口立即交回；不降原门槛、不重跑绿项。[真实准入记录](../../docs/evidence/f01/goal-progression-production-admission-not-run.json)。薄client已审进入mainfb9，3源同target逐字相同：[main回执](../../docs/evidence/f01/goal-progression-client-main-receipt.json)。个人服务保持362/v15。
 
 2026-10-06 16:01 UTC：消息设置032已分配并由Mika唯一writer原子领取v3；[固定账本观察](../../docs/evidence/f01/claude-message-settings-migration-assignment.json)。031仍为O15，030既有；本次只关闭DDL归属依赖，不表示生产挂载/PG已验，也不修改个人数据库。
 
@@ -212,3 +222,17 @@
 2026-10-06T16:30:00.517966+00:00：三份runtime使用文档已main 74bc72f0d32daebc8f89a75528f3d72002b3a29e，固定hash逐字相同；唯一共享claim v42已移出README、runnerREADME与recovery-boundaries三literal，明确停止这些路径写入。[范围交回](../../docs/evidence/f01/runtime-documentation-scope-release.json)。O14生产PG未运行边界不变。
 
 2026-10-06T16:40:25.953182+00:00：F01 v43已正式停止并移出六个public client/ACK/export literal和apps/cli目录；独立MATURE02C01 worker随后take11精确路径，接逐消息设置consumer，不等O14 PG。旧73a的CLI两源/一专测通过固定blob保留为受控输入，不扩大其批准。后续本owner只接032实际factory/PG与原O14生产检查，不能恢复已交权入口写入；[原子移交](../../docs/evidence/f01/message-settings-consumer-scope-handoff.json)。
+
+## 2026-10-06 16:59:10 UTC F01共享生产收尾交接
+
+原owner ExecutionLead全树停止写后handoff v44；本owner fresh核账本并accept v45，committedAt 2026-10-06T16:58:29.499Z。唯一claim 8470e7d2-662a-4dbe-9b0e-12ef82aac90e active，59 literal原scope保留。[handoff](../../docs/evidence/f01/native-owner-handoff-receipt.json) / [accept](../../docs/evidence/f01/native-owner-accept-receipt.json)。
+
+本次实施授权严格限于已有O14生产index/test的source+动态资源预检与一次排定PG窗口；之后仅在CORE正式独审通过后接032 migration与最薄真实FlowClient生产直接consumer。尚未领取新test路径，未改客户端/CLI或5个CORE非owned合同，不以59scope扩大实现。C01另一树保持固定563/独审通过/待集成。CORE资格、SDK和生产消息设置未验边界独立。
+
+O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/provider/browser/个人服务操作。现只写合法计划/证据。032新增挂载与新测试需独立固定delta并独审，任何scope新增先amend。
+
+2026-10-06 17:00:42 UTC 静态预检完成：[固定记录](../../docs/evidence/f01/goal-progression-handoff-preflight.json)核208源/28外部SQL（含动态tuple数组）/19包声明，missing=[]，工作区依赖均指本树，73a五源逐字保持。无测试/import/安装/产品PG。当前仅等待独占窗口；固定8 MiB的C01检查限制不冒充本片数据库额度，O14继续按其1 GiB+32 MiB源门槛与Lead窗口。
+
+2026-10-06 17:03:29 UTC：O14一次独占验证完成并归还窗口。73a五源未改，实际PG2/2、随机库12,958,743B、连接零/remaining=[]、runtime正常等待退出及目录清除，0provider。固定[原始交付](../../docs/evidence/f01/goal-progression-production-README.md)保留全部原未运行/红证据；此前资源等待为历史事实。当前等待独审/main，CORE032仍独立未批准，不提前挂载。
+
+2026-10-06 17:09:20 UTC：O14唯一独审APPROVED原样归档，source73a不变，等待main精确接收。F01 fresh无冲突后已原子amend v46（17:08:13.061Z），新增唯一 packages/client/src/claude-message-settings-production.test.ts，60literal；[回执](../../docs/evidence/f01/claude-message-settings-production-scope-amend.json)。032当前只准备设计/闭包，不应用未审CORE或启动PG；O14源继续冻结，C01目录不动。

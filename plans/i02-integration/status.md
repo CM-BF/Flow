@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T16:47:12.803017+00:00 / input main74bc72f0 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:11 UTC / input main0c242483 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main74bc72f0；本批归档资源与共享入口移交，登记第167个来源，无产品源码差异 |
+| 工作基线 / HEAD | main0c242483；本批接收已审目标推进生产/CLI五源与资源清理记录 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
-| 检查状态 | 终端9产品源对获审a1f82f逐字相同；作者35+1与focused类型检查有效，集成无重跑/PG/provider |
-| 已集成main状态 / HEAD | main74bc72f0已含终端取消限定片与166来源；本批167来源发布后核实际看板。个人runtime362/v15与Web8d8/v2不变 |
+| 检查状态 | 目标推进五源与独审73a逐字相同，运行只读闭包无差；本轮2/2生产PG及旧CLI1/types0分轮有效，集成无重跑 |
+| 已集成main状态 / HEAD | 本批目标推进生产入口待发布即验固定源；167来源不变。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 十二个目录的可逆整理已完成；逐消息设置公共入口由独立owner实施，网页组接续兼容验证。 |
-| 下一可用交付 | 顺序完成网页兼容与终端真实中心旅程，接收逐消息设置共享客户端。 |
+| 当前产出 | 中心已能持续推进明确授权的固定节点输入；生产接线通过验证与独立审查，正在发布。 |
+| 下一可用交付 | 接收逐消息设置核心与共享入口，完成新网页兼容验证；终端真实中心旅程继续。 |
 | 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
 | 需用户决定 | NONE |
 
@@ -195,3 +195,9 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T16:29:35.867569+00:00：运行并发/恢复/TUI入口三文档按独立只读建议和固定源码事实修正，三文件hash与9878一致；收录166来源已采回执及CORE/TUI source-only闭包事实。无产品/工程检查/PG/provider或个人服务操作；[本批绑定](../../docs/evidence/i02/runtime-source-metadata-receipt.json)。磁盘资源新批按既有授权处理，WebA→B尚未重开。
 
 2026-10-06T16:47:12.803017+00:00：受控接收F01共享入口正式交回、D05第167个MATURE02C01唯一来源和OPS12树封存。仅registry单行与文档/证据，不改变产品；固定输入见[本批回执](../../docs/evidence/i02/2026-10-06-mature02c01-resource-batch.json)。CORE与O14尚未批准生产挂载，MATURE02C01受控输入不提前main；原模型预算不变。
+
+## 2026-10-06 17:11 UTC O14生产与CLI接收
+
+固定73a五文件由assignment_review唯一独立APPROVED，owner最终0be616d3；[逐文件比较](../../docs/evidence/i02/o14-production-main-comparison.json)确认实际集成blob与受审source相同、234静态/SQL等全部非证据运行输入相对当前main无差，未混入待审CORE或C01。原2/2生产PG与旧CLI1/types0分别运行，真实默认scan/队列重开、版本输入、单scan与关闭等待/普通DROP证据有效；没有重复工程测试。既有领域/薄client已main，本批补030生产await、权限route、现有生命周期调度与公开CLI。
+
+完整自然语言规划与模型批量输入仍属O15后继；本片只推进owner明确授权、输入完整的固定版本节点，机械验证不替代独立接受。个人服务与Web指针不因main接收改变。资源精确两cache清理达到准备线，CORE8/8已清理归还，WebB获得下一条件窗口；当前source/operator结果各自在唯一status维护。

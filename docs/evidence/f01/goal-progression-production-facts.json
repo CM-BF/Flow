@@ -1,0 +1,27 @@
+{
+  "database": "flow_f01_progress_c6a1778c11bc4b6a915fa5667a7b9a28",
+  "startedAt": "2026-10-06T17:01:42.270Z",
+  "providerCalls": 0,
+  "availableBeforeBytes": 1191079936,
+  "before": [],
+  "journey": {
+    "defaultReadyQueue": true,
+    "defaultReadyProgression": true,
+    "intervalSecondNode": true,
+    "actualInjectedQueries": 2,
+    "providerCalls": 0,
+    "admissions": 2,
+    "accepted": false,
+    "recoveredKey": true
+  },
+  "lifecycle": {
+    "maxBlockedScans": 1,
+    "waitedForInFlightBeforePoolClose": true,
+    "admissionTiming": "Not asserted: project lock may block initial admission or later evaluation."
+  },
+  "databaseBytes": 12958743,
+  "connections": [],
+  "remaining": [],
+  "directoryRemoved": true,
+  "endedAt": "2026-10-06T17:01:50.302Z"
+}

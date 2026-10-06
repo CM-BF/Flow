@@ -1,0 +1,26 @@
+{
+  "kind": "read-only-fix-precheck-not-product-approval",
+  "target": "73aabff4fac96c0439817bdc72358c1385371e8d",
+  "at": "2026-10-06T15:21:16.543052+00:00",
+  "reviewer": "native_center_owner",
+  "finding": "P2 test independence CLOSED by static delta review",
+  "reason": "Lifecycle case now explicitly restarts automatic scanning and publishes its own runner/profile/material; first case pin is local. Timing and ACK limits are accurate. Adapter construction is not execution.",
+  "bindings": [
+    {
+      "path": "packages/client/src/goal-progression-production.test.ts",
+      "bytes": 12925,
+      "sha256": "75a2b76adaca87b74a9fa80c221113a21ed64d1c864d143f5c95c067bfdf3809",
+      "matchesFixed": true
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-interface.md",
+      "bytes": 1783,
+      "sha256": "083e076258dabf78df48f3c19f2e696222f48a1502b58fe754987837a7417fc8",
+      "matchesFixed": true
+    }
+  ],
+  "testsRun": 0,
+  "pgRun": false,
+  "providerCalls": 0,
+  "limits": "Production PG evidence remains NOT_RUN. Only the identified fix delta and wording were checked; not formal product approval."
+}

@@ -1,0 +1,66 @@
+{
+  "startedAt": "2026-10-06T17:01:40.445838+00:00",
+  "sourceTarget": "73aabff4fac96c0439817bdc72358c1385371e8d",
+  "validationTree": "c2706f63095268f72aba240f9a0b7ee0cf462ca3",
+  "sourceHashes": {
+    "apps/server/src/index.ts": "1f64303d80b30a342912c350281ca96d38ba68509201649393ca94c90b3f84fc",
+    "packages/client/src/goal-progression-production.test.ts": "75a2b76adaca87b74a9fa80c221113a21ed64d1c864d143f5c95c067bfdf3809"
+  },
+  "freeBytesBefore": 1194385408,
+  "gateBytes": 1107296256,
+  "providerCalls": 0,
+  "runCount": 1,
+  "testPath": "packages/client/src/goal-progression-production.test.ts",
+  "deadlineSeconds": 120,
+  "cleanupObservationSeconds": 30,
+  "cacheBytesBefore": 7046,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/client/src/goal-progression-production.test.ts",
+    "--maxWorkers=1",
+    "--no-cache"
+  ],
+  "ownedPid": 92822,
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 9.885311708087102,
+  "stdout": "goal-progression-production-20261006T170140Z.stdout.txt",
+  "stdoutBytes": 568,
+  "stdoutSha256": "e999d648b669df33f41794d0fb47175d5b069e536a21aa1c60724effbfae768d",
+  "cacheBytesAfter": 7046,
+  "factsExists": true,
+  "endedAt": "2026-10-06T17:01:50.349517+00:00",
+  "cacheGrowthBytes": 0,
+  "cacheBoundRespected": true,
+  "factsSha256": "30727649f65a8a6143761910981b35780e53bf391669725b262525b6c1e9a2ef",
+  "facts": {
+    "database": "flow_f01_progress_c6a1778c11bc4b6a915fa5667a7b9a28",
+    "startedAt": "2026-10-06T17:01:42.270Z",
+    "providerCalls": 0,
+    "availableBeforeBytes": 1191079936,
+    "before": [],
+    "journey": {
+      "defaultReadyQueue": true,
+      "defaultReadyProgression": true,
+      "intervalSecondNode": true,
+      "actualInjectedQueries": 2,
+      "providerCalls": 0,
+      "admissions": 2,
+      "accepted": false,
+      "recoveredKey": true
+    },
+    "lifecycle": {
+      "maxBlockedScans": 1,
+      "waitedForInFlightBeforePoolClose": true,
+      "admissionTiming": "Not asserted: project lock may block initial admission or later evaluation."
+    },
+    "databaseBytes": 12958743,
+    "connections": [],
+    "remaining": [],
+    "directoryRemoved": true,
+    "endedAt": "2026-10-06T17:01:50.302Z"
+  },
+  "state": "FINISHED_AWAIT_FACT_REVIEW"
+}
