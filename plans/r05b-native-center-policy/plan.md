@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | R05B / in-progress |
+| 计划编号 / 状态 | R05B / completed |
 | 创建 / 更新 | 2026-10-06 |
 | 所属大task | [FLOW-002](../flow-002-provider-harness/plan.md) |
 | co-lead | Execution Lead |
@@ -17,7 +17,7 @@
 - [x] **R05B-01** 确认职责、固定原生 schema、独立 worktree 与精确原子领取。
 - [x] **R05B-02** 新增严格 Codex 配置/final、识别来源、task admission 与默认旧目录过滤。
 - [x] **R05B-03** 前进 migration 025 与真实 PostgreSQL 旧行升级、身份隔离、重复事件和直接消费者验证。
-- [ ] **R05B-04** 固定实现提交与证据，独立 review 后受控集成 main。
+- [x] **R05B-04** 固定实现提交与证据，独立 review 后受控集成 main。
 
 ## 范围与验收
 

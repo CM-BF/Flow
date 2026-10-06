@@ -20,3 +20,5 @@
 - 覆盖有限source policy、身份namespace/旧rows保持、单session版本证据、immutable pin/settings、SQL分页旧客户端过滤、错误/unknown语义与轻投影。
 - Findings：无未解P1/P2；先前证据来源缺口已由metadata提交f36fcda934b459906e66107e613b921daf1e6496补齐。
 - 限制：不证明真实Codex执行、工具隔离或Codex会话支持；领域approval不是main集成事实。owner保留claim等待main receipt。
+
+Main集成：3418fe682944145494463dca9e09f89c8b9c2295；owner核20源码hash全同，[回执](../../docs/evidence/r05b/main-receipt.json)。领域review target仍保持固定实现SHA，不以metadata替换。

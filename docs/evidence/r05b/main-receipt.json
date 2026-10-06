@@ -1,0 +1,27 @@
+{
+  "taskId": "R05B",
+  "implementationTarget": "4944d1e795326ad9d437c8d6a4ea88f52db619d9",
+  "mainCommit": "3418fe682944145494463dca9e09f89c8b9c2295",
+  "observedAt": "2026-10-06T09:29:37.359195+00:00",
+  "sourceFilesCompared": 20,
+  "allSourceHashesMatch": true,
+  "domainReview": {
+    "reviewer": "Execution Lead",
+    "result": "APPROVED",
+    "files": 19
+  },
+  "mountReview": {
+    "reviewer": "Mika",
+    "sourceCommit": "5365acb8b9bde4889f83715aa650bc6aed155c9b",
+    "evidence": "docs/evidence/i02/r05b-mount-independent-review.md"
+  },
+  "integrationEvidence": "docs/evidence/i02/r05b-integration.json",
+  "integrationNoEmit": {
+    "exitCode": 0,
+    "provenance": "Execution Lead main integration receipt; not rerun by domain owner"
+  },
+  "providerCalls": 0,
+  "appServerStarts": 0,
+  "authRequests": 0,
+  "claimRelease": "Owner stops writing after this receipt commit/push; exact release receipt kept by coordination ledger."
+}
