@@ -1,0 +1,83 @@
+{
+  "fixedCommit": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+  "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "observedAt": "2026-10-06T15:25:10.183471+00:00",
+  "sources": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "f84280696572d4c7ad4e075f35b152f3f3283ad9cf398a33588a6b76d8d9d1e7",
+      "bytes": 33753,
+      "lines": 377
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "e69d8170427f19b7c183aae6e78fd21de0d11677dfdfeb1f1247667fb06edab8",
+      "bytes": 13496,
+      "lines": 167
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "sha256": "31f580820d0c161e016ce13856d47a91638800548f9f4445b1ad17de194e3858",
+      "bytes": 7475,
+      "lines": 69
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "3be8d4ddc82c78bc514e35b3dbe09038f421426d147c73d7444411fb4c5a641e",
+      "bytes": 23230,
+      "lines": 298
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "bytes": 69114,
+      "lines": 1260
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "a77d6f72eb4f6adb2a4fbc78e5c402bf21700673fa52163cdee9aea473414c08",
+      "bytes": 19969,
+      "lines": 281
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "c726beabcc01bef7f67cacb427e8a966bd2673c212f56094ff83ccfd18586ac4",
+      "bytes": 24273,
+      "lines": 219
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "bytes": 24536,
+      "lines": 288
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725,
+      "lines": 293
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "bytes": 28678,
+      "lines": 434
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "bytes": 32735,
+      "lines": 887
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "bytes": 21485,
+      "lines": 277
+    }
+  ],
+  "sourceCount": 12,
+  "execution": "NOT_RUN",
+  "excluded": "Parent resource/process/DB supervisor is reviewed independently by root. No product imports, tests, browser, PG, service, build, project writes, new claim.",
+  "skills": "Existing local find-skills/codebase-design/clean-code versions reused; hashes in /tmp/w01-connection-plugin-2498/sources.json. No installation."
+}

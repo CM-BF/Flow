@@ -47,3 +47,11 @@ RB1：父进程先持有worker/Chrome detached PGID再等待启动；独立硬ti
 RB4：源码备好真实Files目录选择、metadata-only原ref恢复后显式revalidate、材料turn丢ACK同key/body；IDB写入强制abort后无reload认证失效/重连保page-only草稿，非假私有controller替身。全量profile/knowledge/steer稿、CREATE/queue/steer真实重开及第二中心仍PENDING，不称完整能力通过。所有新脚本未import/typecheck/运行；原4ba20绿与2498新增2case未运行保持不变。
 
 本段仅2专测源和own记录，17其他源对2498零差；diffcheck0是静态格式核验，不等编译/行为通过。剩type7.186s与direct27.460s未使用。磁盘不足，不重新测空间、不新占运行窗口。
+
+## 2026-10-06 15:34 UTC — 7244 worker P2 source-only修复
+
+先核管理15:26:53.773Z的6ff v4/原21/唯一writer/0冲突，再归档W01固定报告。沿clean-code区分真实绑定生命周期与状态投影：原bindComposer watcher只在binding/runtime变化时解绑，不因每次Input publish重绑；小syncComposerDraft由原私有binding持有身份/held/readiness校验，Thread仅在materialState变化时触发。每次add后重新核lease与原immutable item，排除已remove/consume、旧preparing/failed capture、当前composer/inTransit ID；plugin停用/hidden产生的旧lease不能恢复续添。当前capability未确认时不追加。没有第二材料registry/网络调用/共享修改。
+
+实读已安装core0.3.22 BaseComposerRuntimeCore:692–730：complete metadata的add在首await前同步追加/notify，Promise只是后续结算；该只读事实与hash记录chip-sync-checkpoint。新增2个controlled-composer binding用例验证重复同步/显式移除、迟到Promise结算/可见性撤权/插件停用与held下一稿隔离，当前合计24case全部新目标NOT_RUN，不冒React或实际官方runtime已测。原4ba20/20保持历史范围。
+
+未来browser不再仅看Files行就标materialDraft：unverified时composer零chip，Browse确认后原runtime恰一chip并实际tooltip文件名；不重新Use/reselect/remount。首turn POST attachments原ref、后续同key/body断言保留。SSE标cookieSseHandshake，event delivery/reconnect明确pending；390实际Enter打开/Escape回焦点，不称完整Tab导航。全段0types/import/tests/HTTP/PG/Chrome/空间采样，仅diffcheck0。types余7.186s/direct余27.460s不变，RELEASE唯一运行窗口不占用。

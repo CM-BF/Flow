@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:17 UTC |
+| 最近更新 | 2026-10-06 15:34 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段harness源码固定724424237962ed8563db08f5ea8597ee6e7eb11d；16生产+直接test仍2498；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 两harness已固定；当前仅本任务metadata收口，完成提交后核Git clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段材料同步源码固定02d5a49aa2f17261d7dfcc9590f433c84b10defe；父supervisor/fixture仍7244；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | 本段4源已固定；仅owner metadata收口，最终以Git clean核验 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已接完整草稿与恢复入口；基础事务检查已通过，补齐浏览器验证的清理和材料恢复用例，真实浏览器尚待运行 |
+| 当前产出 | 已补恢复材料验证后进入消息输入框的同步与可见附件检查，等待受控验证 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
 | 当前阻塞 | ACTIVE: 浏览器与完整构建等待可用磁盘和中心会话语义核验；本段仅修未来浏览器验证脚本，第二direct仍未运行 |
 | 需用户决定 | NONE |
-| 检查状态 | 4ba基线20/20受控direct PASS；R4及终态binding新case待测。最新Web noEmit0，累计52.814/60s，浏览器NOT_RUN |
+| 检查状态 | 4ba基线20/20受控direct PASS；当前24case待测。最新types绿为2498前后阶段，不覆盖本段；累计52.814/60s，浏览器NOT_RUN |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -77,3 +77,13 @@ Root只读[2498预检](../../docs/evidence/wpf-conversation-recovery/2498-browse
 RB1–3已源码修正：父监督持有两进程组和DB lease，硬截止/清理未确认阻止重跑；未知CREATE不凭随机名删除，非空remaining必报错；cache独立scratch/native配置加载、递归计量与live监测写入未来入口。RB4新增实际UI文件引用+丢ACK原body以及无reload的IDB写入abort/auth-loss旅程，但全部NOT_RUN。[覆盖矩阵与运行门禁](../../docs/evidence/wpf-conversation-recovery/browser-harness.md)。本段0types/测试/产品import/HTTP/PG/Chrome，types余7.186s、direct余27.460s；17其他源码及22case对2498零改。待新fixed后，旧2498 direct预检manifest须重绑，不可直接运行。
 
 固定harness提交：`724424237962ed8563db08f5ea8597ee6e7eb11d`；完整feature implementation target仍UNKNOWN，等待必要实际行为和终审。本段只静态diffcheck0，未运行新类型/22case/浏览器；源清单见[harness checkpoint](../../docs/evidence/wpf-conversation-recovery/harness-source-checkpoint.json)。
+
+## 15:28 UTC — 7244 worker预检修复启动
+
+[W01固定报告](../../docs/evidence/wpf-conversation-recovery/7244-worker-report.md)由root复核：恢复附件验证为ready后，Input变化未触发稳定runtime的composer同步；原materialDraft局部断言只看Files行。先修原Thread同步生命周期并核实际composer chip，保首POST精确ref，禁止重新Use或remount掩盖。SSE断言只标cookie握手、键盘只标实际覆盖。管理15:26:53.773Z fresh v4/21scope/无冲突回执已本人核字段归档。本段0types/import/tests/HTTP/PG/Chrome/空间采样，RELEASE为唯一运行owner；剩type7.186s/direct27.460s不变。
+
+## 15:34 UTC — 材料同步源码安全点
+
+7244 peer P2已按源码修正，未运行：稳定准备watcher与ready同步分离，原binding按身份/held/租期排除旧材料；新增2个controlled-composer case（当前24待测），browser改核实际chip/name、保首POST原ref，SSE仅握手、Enter/Escape实际范围。[源码manifest](../../docs/evidence/wpf-conversation-recovery/chip-sync-checkpoint.json)。本段2生产+2专测变化，其余15源对7244相同。整体targetUNKNOWN/reviewNOT_STARTED；原raw/7244保留，types与direct余量不变，暂无运行门槛。
+
+本段固定source checkpoint：`02d5a49aa2f17261d7dfcc9590f433c84b10defe`，非feature交付target；24case与当前types/browser未运行。等待局部源码审，源停写。

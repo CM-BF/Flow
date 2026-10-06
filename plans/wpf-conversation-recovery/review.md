@@ -11,3 +11,9 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 ## 阶段源码预检（不是最终feature审查）
 
 2498 binding源码由root限定认可，新增22case尚待资源。未来browser harness另有[RB1–RB4](../../docs/evidence/wpf-conversation-recovery/2498-browser-preflight-review.json)运行前finding：RB1–3已在本段源码修正、待独立核；RB4最高风险材料/无reload场景已备，实际运行覆盖仍为零，其余覆盖差距显式保留。当前总review仍NOT_STARTED，不把4ba20/20或类型通过扩大为App/PG/浏览器通过。
+
+7244 peer worker预检：[固定报告](../../docs/evidence/wpf-conversation-recovery/7244-worker-report.md)。P2：ready Input与实际composer恢复同步/断言缺口，源码修复中、未验；SSE握手和键盘焦点范围需准确限定。不是实际运行失败或整体APPROVED。
+
+15:34 source-only修正：Thread独立状态触发+原附件binding sync方法，准备watcher生命周期不变；按lease/identity/held/current/inTransit防重复或旧材料追加。现2个新直接case与browser实际chip断言未运行。SSE覆盖限握手，Enter/Escape范围准确。待新固定源审查，未把P2标行为CLOSED。
+
+材料同步局部待审固定source：`02d5a49aa2f17261d7dfcc9590f433c84b10defe`（2生产+2专测，对7244）。本次只有diffcheck0，未运行类型/行为；完整feature审查仍NOT_STARTED。

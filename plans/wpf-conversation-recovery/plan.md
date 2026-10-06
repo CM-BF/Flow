@@ -32,3 +32,7 @@
 ### 未来浏览器入口的运行前门禁（RB1–RB4）
 
 父进程在启动前拥有worker和Chrome进程组，独立监督累计90s并保留至少15s清理；数据库CREATE尝试/确认/marker持久记录，只有精确marker且零连接可删，unknown与非空remaining均阻止通过/重跑。唯一scratch目录与递归evidence/日志预算、实时free监测须先于业务import/CREATE。材料稿及无reload认证失效纳入显式coverage矩阵；未实际运行保持NOT_RUN，不能沿text-only旅程宣称完整恢复。
+
+### 7244 用例窄修
+
+现范围内修恢复附件重新验证后同步到真实composer；binding订阅生命周期保持稳定，held submission不得被状态重渲染清理。浏览器在材料用例完成前核实际chip，再保原首POST attachment ref断言。不重新Use/重新选取或remount。SSE只核握手的当前断言准确标注；键盘用真实打开/关闭焦点断言。本段仅源码，0运行许可。
