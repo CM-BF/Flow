@@ -1,0 +1,30 @@
+✔ curated architecture cites existing files at its fixed source commit and valid graph nodes (660.796166ms)
+✖ architecture static assets stay within existing read-only loopback server policy (27.958958ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 778.069833
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/architecture.test.mjs:21:1
+✖ architecture static assets stay within existing read-only loopback server policy (27.958958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  200 !== 403
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/apps/execution-dashboard/test/architecture.test.mjs:29:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 403,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,41 @@
+.dashboard-nav{display:flex;align-items:center;gap:8px;padding:12px max(24px,calc((100vw - 1280px)/2));border-bottom:1px solid var(--line);flex-wrap:wrap}
+.dashboard-nav>a{text-decoration:none;border-radius:6px;padding:6px 12px;font-weight:550}
+.dashboard-nav>a[aria-current=page]{background:var(--ink);color:var(--surface)}
+.dashboard-nav .product-link{margin-left:auto;font-size:12px;font-weight:400;color:var(--muted)}
+.architecture-heading{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin-bottom:18px}
+.architecture-heading p{max-width:65ch;margin-top:6px;color:var(--muted)}
+.architecture-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0}
+.architecture-tools label{font-weight:550}
+.architecture-tools output{min-width:44px;text-align:center;color:var(--muted)}
+.architecture-layout{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:20px;align-items:start}
+.architecture-viewport{max-width:100%;min-width:0;overflow:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px;max-height:75vh}
+.architecture-viewport:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.architecture-viewport svg{display:block;max-width:none;overflow:visible}
+.architecture-boundary{fill:var(--bg);stroke:var(--line);stroke-width:1.2}
+.boundary-title{fill:var(--muted);font-size:15px;font-weight:550}
+.architecture-node rect{fill:var(--surface);stroke:var(--focus);stroke-width:1.5}
+.architecture-node{cursor:pointer;outline:none}
+.architecture-node:hover rect,.architecture-node[aria-pressed=true] rect,.architecture-node:focus-visible rect{fill:var(--good-bg);stroke-width:3}
+.architecture-node.external rect{stroke:var(--muted);stroke-dasharray:7 3}
+.architecture-node.planned rect{stroke:var(--warning);stroke-dasharray:3 4}
+.architecture-node.vendored rect{stroke:var(--warning);stroke-width:2}
+.node-title{fill:var(--ink);font-size:18px;font-weight:600}
+.node-subtitle{fill:var(--muted);font-size:13px}
+.architecture-edge path{fill:none;stroke:var(--muted);stroke-width:1.5}
+.architecture-edge.dependency path{stroke-dasharray:5 5}
+.arrow-head{fill:var(--muted)}
+.architecture-edge rect{fill:var(--surface)}
+.architecture-edge text{fill:var(--muted);font-size:14px}
+.architecture-detail{min-width:0;border-left:2px solid var(--line);padding-left:18px}
+.architecture-detail h2{font-size:18px}.architecture-detail h3{font-size:13px;margin-top:18px;margin-bottom:6px}
+.architecture-detail p{margin-top:8px;overflow-wrap:anywhere}.architecture-detail details{margin-top:18px}
+.architecture-detail a{display:block;overflow-wrap:anywhere;font-size:12px;margin-top:8px}
+.architecture-kind{font-size:12px;color:var(--good)}.architecture-kind.external{color:var(--muted)}.architecture-kind.planned,.architecture-kind.vendored{color:var(--warning)}
+.architecture-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:14px 0}
+.architecture-legend span::before{content:'';display:inline-block;width:20px;border-top:2px solid var(--focus);vertical-align:middle;margin-right:7px}
+.architecture-legend .external::before{border-color:var(--muted);border-top-style:dashed}.architecture-legend .planned::before{border-color:var(--warning);border-top-style:dotted}.architecture-legend .dependency::before{border-color:var(--muted);border-top-style:dashed}
+#architecture-baseline{margin-top:24px;font-size:12px;color:var(--muted)}#architecture-baseline a{overflow-wrap:anywhere}#architecture-baseline p{margin-top:7px}
+[hidden]{display:none!important}
+@media(max-width:1100px){.architecture-layout{grid-template-columns:minmax(0,1fr)}.architecture-detail{border-left:0;border-top:1px solid var(--line);padding:16px 0 0}.architecture-heading{display:block}.dashboard-nav{padding:10px 16px}.dashboard-nav .product-link{margin-left:0}.architecture-tools{gap:6px}.architecture-viewport{max-height:60vh}}
+
+.architecture-rules{padding:12px 16px 12px 32px;border-left:2px solid var(--focus);font-size:13px;background:var(--good-bg)}.architecture-rules li+li{margin-top:4px}
