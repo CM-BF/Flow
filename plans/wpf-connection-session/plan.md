@@ -7,6 +7,6 @@
 - [x] **WPF-CONNECTION01-01** 原子claim、技能、首DTO/Interface及计划。
 - [x] **WPF-CONNECTION01-02** migration/store/统一auth及生命周期路由/SSE窄authorize。
 - [x] **WPF-CONNECTION01-03** 真HTTP/隔离PG的恢复、轮换/到期、Origin/CSRF、多中心与SSE撤销、旧Bearer直接消费者。
-- [ ] **WPF-CONNECTION01-04** 固定原始证据/独立review/main受控挂载。
+- [x] **WPF-CONNECTION01-04** 固定原始证据/独立review/main受控挂载。
 
 详细输入输出与限制见[Interface](../../docs/evidence/wpf-connection-session/interface.md)。Web真实浏览器与Recovery后继分开，0provider/不触个人61227/61228。固定source与当前分支验证不代表生产已挂载。
