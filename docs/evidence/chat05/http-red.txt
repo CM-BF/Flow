@@ -1,0 +1,109 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity
+
+ ❯ apps/server/src/native-activity/activity.test.ts (6 tests | 6 failed) 1035ms
+   × persists typed light references and lazily reads bounded content through owner HTTP 68ms
+   × keeps input, progress and SDK result distinct and forbids a second terminal result 23ms
+   × deduplicates original transport and repeated native frames, rejects changed payload, and survives restart 23ms
+   × rejects cross-session/parent/tool/attempt facts atomically without partial timeline records 23ms
+   × reports unfinished tool state as unknown after cancellation and rejects late reports 22ms
+   × paginates within a task and rejects a cursor from another task 26ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/native-activity/activity.test.ts > persists typed light references and lazily reads bounded content through owner HTTP
+AssertionError: {"error":{"code":"invalid_events","message":"Invalid event batch."}}: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ request apps/server/src/native-activity/activity.test.ts:25:81
+
+ ❯ apps/server/src/native-activity/activity.test.ts:48:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  apps/server/src/native-activity/activity.test.ts > keeps input, progress and SDK result distinct and forbids a second terminal result
+AssertionError: {"error":{"code":"invalid_events","message":"Invalid event batch."}}: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ request apps/server/src/native-activity/activity.test.ts:25:81
+
+ ❯ apps/server/src/native-activity/activity.test.ts:60:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  apps/server/src/native-activity/activity.test.ts > deduplicates original transport and repeated native frames, rejects changed payload, and survives restart
+AssertionError: {"error":{"code":"invalid_events","message":"Invalid event batch."}}: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ request apps/server/src/native-activity/activity.test.ts:25:81
+
+ ❯ apps/server/src/native-activity/activity.test.ts:66:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  apps/server/src/native-activity/activity.test.ts > rejects cross-session/parent/tool/attempt facts atomically without partial timeline records
+AssertionError: {"error":{"code":"invalid_events","message":"Invalid event batch."}}: expected 400 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 400
+
+ ❯ request apps/server/src/native-activity/activity.test.ts:25:81
+
+ ❯ apps/server/src/native-activity/activity.test.ts:74:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  apps/server/src/native-activity/activity.test.ts > reports unfinished tool state as unknown after cancellation and rejects late reports
+AssertionError: {"error":{"code":"invalid_events","message":"Invalid event batch."}}: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ request apps/server/src/native-activity/activity.test.ts:25:81
+
+ ❯ apps/server/src/native-activity/activity.test.ts:85:27
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  apps/server/src/native-activity/activity.test.ts > paginates within a task and rejects a cursor from another task
+AssertionError: {"error":{"code":"invalid_events","message":"Invalid event batch."}}: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ request apps/server/src/native-activity/activity.test.ts:25:81
+
+ ❯ apps/server/src/native-activity/activity.test.ts:93:101
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed (6)
+   Start at  22:59:32
+   Duration  1.49s (transform 213ms, setup 0ms, import 388ms, tests 1.04s, environment 0ms)
+

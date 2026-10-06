@@ -145,3 +145,6 @@ X04 shared dependency9cde241 independent reviewer runner_owner APPROVED (read-on
 ## C02 fixture isolation correction / 2026-10-06 06:15 UTC
 
 GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resetting schemas and conditionallyDROP FORCE. I ran it directly and did not capture pre-run ownership, so cannot substantiate own-only DB for that historical run; no retrospective facts are invented. P2 fixed under F01 claimv13 exact reconciliation.test.ts: per-run random DB, existence refusal, create-success ownership flag before any reset, normalDROP after server/pools close, optional explicit resource output. Actual fresh run12/12 andtsc passed; original test bodies/assertions unchanged, CHAT22/new7 not rerun. Facts showbefore=[],created=true,connectionsBeforeDrop=[],remaining=[] for flow_c02_a51ef0c8620c48129e1fdfaa6b0bfab4 at06:14:47→06:15:17. New evidence is independent of historical34green.
+
+### 2026-10-06 06:26 UTC CHAT05公共接线
+固定9ea33ef61da2304123d08ea87558023d63b38468，2红（缺route/client）→2绿2.22s+tsc。独立随机库真实CREATE确认/普通DROP与remaining[]见activity-production-facts.json；没有手动module挂载/migration。轻metadata与显式详情、鉴权/AbortSignal/重启/cancel unknown验证，modelQueries0。clean-code：仅薄方法与3行生产挂载，复用原report/存储/错误；无新loop/重复领域逻辑。独立review待接，manifest绑定5源码/5输出。
