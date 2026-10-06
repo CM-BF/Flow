@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-06T17:44:04.126Z",
+  "request": {
+    "requestId": "d01-profilec02-e75d47c1-d5c4-4cbf-a9cb-816308ef1385",
+    "actor": {
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner"
+    },
+    "taskId": "WPF-PROFILEC02",
+    "role": "writer",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility",
+    "branch": "codex/web-profile-readonly-compatibility",
+    "scope": [
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/test/execution-profiles.test.ts",
+      "plans/wpf-profile-readonly-compatibility",
+      "docs/evidence/wpf-profile-readonly-compatibility"
+    ],
+    "origin": "new"
+  },
+  "head": "4015c667f1e2b833755b2fda6ed205fb951ec576",
+  "dirty": "",
+  "overlap": [],
+  "provisionReceiptSha256": "b0e9d82def1b29411eebedf5ee1f7a7ce5eb1683f743ae5a2a8c883eab1c89b4",
+  "ruleFiles": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/AGENTS.md",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/plans/AGENTS.md",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/docs/evidence/d04/README.md"
+  ],
+  "sourcePermission": "Only exact4 after COMMITTED; no ignored dependencies scope; no new install or worktree operation"
+}
