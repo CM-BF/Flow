@@ -1,10 +1,10 @@
 import { randomUUID } from 'node:crypto';
-import { setTimeout as sleep } from 'node:timers/promises';
 import { Pool } from 'pg';
-import { afterAll, beforeAll, expect, it } from 'vitest';
+import { afterAll, beforeAll, expect, it, vi } from 'vitest';
 import { createClaudeAdapter, type ClaudeQuery } from '../../../runner/src/claude.js';
 import { runRunner } from '../../../runner/src/runtime.js';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { access, mkdtemp, readFile, rm } from 'node:fs/promises';
+import { sha256 } from '../database.js';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 type SDKMessage = ReturnType<ClaudeQuery> extends AsyncIterable<infer Message> ? Message : never;
@@ -148,4 +148,41 @@ it.each(['success','cancel'] as const)('connects injected SDK to real runtime/ou
     if(mode==='success')expect(await request(`/api/assistant-messages/${finals.messages[0].id}`)).toMatchObject({content:'FINAL_REPLY'});
     expect(calls).toBe(1);expect(closed).toBe(true);
   }finally{stop.abort();await running;await rm(directory,{recursive:true,force:true});}
+});
+
+it.each(['before-save','after-save'] as const)('recovers an activity outbox after lost acknowledgement %s and center restart',async window=>{
+  const directory=await mkdtemp(join(tmpdir(),'flow-chat05-replay-'));
+  const firstStop=new AbortController();const secondStop=new AbortController();let firstRun:Promise<void>|undefined;let secondRun:Promise<void>|undefined;
+  const runner=await request('/api/runners',{name:'SDK lost ACK',harnesses:['claude'],capacity:1});
+  const accepted=await request('/api/tasks',{title:'Lost ACK',prompt:'Synthetic only',harness:'claude'},undefined,202);
+  const sessionId=randomUUID();let calls=0;let saved:any;const originalFetch=globalThis.fetch;
+  const query:ClaudeQuery=()=>{calls++;return Object.assign((async function*(){
+    yield {type:'system',subtype:'init',session_id:sessionId,uuid:randomUUID(),model:'synthetic',tools:[],permissionMode:'dontAsk',mcp_servers:[],plugins:[],skills:[],slash_commands:[],agents:[],apiKeySource:'none',betas:[]} as unknown as SDKMessage;
+    yield {type:'assistant',uuid:randomUUID(),session_id:sessionId,parent_tool_use_id:null,message:{id:randomUUID(),content:[{type:'text',text:'DURABLE_ACTIVITY'}]}} as SDKMessage;
+  })(),{close(){}});};
+  const adapter=createClaudeAdapter({materialFiles:[],allowRead:false,query});
+  const transport=vi.spyOn(globalThis,'fetch').mockImplementation(async(url,init)=>{
+    if(!saved&&String(url).endsWith('/api/runner/events')&&typeof init?.body==='string'){
+      const batch=JSON.parse(init.body);
+      if(batch.events.some((event:any)=>event.type==='native-activity')){
+        saved=batch;
+        if(window==='after-save'){const response=await originalFetch(url,init);expect(response.status).toBe(200);await response.text();}
+        throw new Error('Synthetic lost acknowledgement');
+      }
+    }
+    return originalFetch(url,init);
+  });
+  try{
+    firstRun=runRunner({baseUrl:base,token:runner.token,workingDirectory:directory,signal:firstStop.signal,adapters:[adapter],pollIntervalMs:10,onNotice(notice){if(notice.type==='ownership-lost')firstStop.abort();}});
+    await expect.poll(()=>Boolean(saved),{timeout:4000,interval:20}).toBe(true);await firstRun;transport.mockRestore();
+    const pending=join(directory,sha256(base),sha256(saved.attemptId),'pending-events.json');expect(JSON.parse(await readFile(pending,'utf8'))).toEqual(saved);
+    expect((await request(`/api/tasks/${accepted.task.id}/native-activities`)).activities).toHaveLength(window==='after-save'?1:0);
+    const port=Number(new URL(base).port);await stop();await start(port);
+    secondRun=runRunner({baseUrl:base,token:runner.token,workingDirectory:directory,signal:secondStop.signal,adapters:[adapter],pollIntervalMs:10});
+    await expect.poll(async()=>{try{await access(pending);return false;}catch{return true;}},{timeout:2000,interval:20}).toBe(true);
+    secondStop.abort();await secondRun;
+    const list=await request(`/api/tasks/${accepted.task.id}/native-activities`);expect(list.activities).toHaveLength(1);expect(calls).toBe(1);
+    expect(list.activities[0]).toMatchObject({eventId:saved.events[0].id,sequence:saved.events[0].sequence,attemptId:saved.attemptId});
+    expect(await request(`/api/native-activities/${list.activities[0].id}`)).toMatchObject({body:{content:'DURABLE_ACTIVITY'}});
+  }finally{firstStop.abort();secondStop.abort();transport.mockRestore();await Promise.allSettled([firstRun,secondRun]);await rm(directory,{recursive:true,force:true});}
 });

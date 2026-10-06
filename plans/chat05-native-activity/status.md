@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:01:35 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:03:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity |
@@ -27,7 +27,7 @@
 | --- | --- | --- | --- |
 | CHAT05-01 | completed | runner_owner | ae4cc5c；接口已交消费方 |
 | CHAT05-02 | completed | runner_owner | mapper 红→绿 5/5，内容/工具/隔离/边界 |
-| CHAT05-03 | in-progress | runner_owner | 模块已实现，10 条 HTTP/完整链路用例待共享事件接线后检查 |
+| CHAT05-03 | in-progress | runner_owner | 模块已实现，12 条 HTTP/完整链路用例待共享事件接线后检查 |
 | CHAT05-04 | pending | runner_owner | O07 接缝按顺序交接；独立模块先行 |
 | CHAT05-05 | pending | runner_owner / Lead | 未审查 |
 
