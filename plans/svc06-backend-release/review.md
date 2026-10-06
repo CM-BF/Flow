@@ -11,3 +11,7 @@
 独审回执：[independent-review.json](../../docs/evidence/svc06/independent-review.json)、[review-binding.json](../../docs/evidence/svc06/review-binding.json)。完整 14 变更项与直接 seams 已读；14 source + 12 inputs + 40 raw 固定/working hash 一致，12 inputs 与 base 无差，0 finding，reviewer 未重跑 tests/build/provider。8 不同作者历史行为观察不是最终一次 8/8；第二次 pnpm 精确失败未留 stdout、历史空 cache 先于新空间门槛等限制均保留。
 
 非阻断 metadata 注：README clone 行现补 artifact-denials 引用，未更改任何原始输出或检查数。完整构建、artifact host/延迟 import/refresh/resume 正例、掉电与个人部署均未获本结论批准；≥2.5 GiB 门槛和其他 TODO 保持。
+
+## 已审片段主线接收（2026-10-06 14:54 UTC）
+
+作者仅记录 [main receipt](../../docs/evidence/svc06/main-receipt.json)：6d276/185e均为接收main cbd3dd95及观察main d679444c的祖先，14源码逐文件一致。9个直接输入无差；3个已审main变化由Lead在 `docs/evidence/i02/svc06-bounded-integration.json` 分别解释，不冒全部输入未变。本次没有新工程检查或独立产品批准，原review target与full artifact NOT_PROVEN限制保持。
