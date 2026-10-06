@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | W01 |
-| 状态 | `in-progress` |
+| 状态 | `completed` |
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-06 |
 | 父计划 | [FLOW-003](../flow-003-m1-execution/plan.md) |
 | Owner / model | W01 owner / 派发 gpt-6-astra / ultra |
@@ -18,7 +18,7 @@
 - [x] **W01-02** 中心驱动任务/决策/结果/按需证据与重连
 - [x] **W01-03** 可扩展主题注册/tokens，浅色深色完整主要状态
 - [x] **W01-05** 官方Thread元素/composer、Arc式紧凑chat侧栏、Codex式竖栏、chat tab split/merge、右侧AI Elements Terminal/FileTree及tabs
-- [ ] **W01-04** 键盘/窄屏/长记录/减少动画、双主题UI证据及review
+- [x] **W01-04** 键盘/窄屏/长记录/减少动画、双主题UI证据及review
 
 ## 验证和交付
 
@@ -38,4 +38,4 @@
 
 用户追加明确范围：新任务通过官方Composer提交，已受理任务因公共契约无追加消息/编辑/重试接口隐藏composer，不伪造能力。split/merge仅调整视图，同任务保持独立历史、观察与命令，关闭视图不取消中心任务。右侧panel由独立worktree owner实施后明确cherry-pick；数据限公共task文本/引用，不能暗示PTY/任意文件系统。先保留具名plugin slots/command边界，完整plugin系统由后续独立计划管理。
 
-2026-10-06新整改实现target `cb4a39211e264538704ba9d474eeb08fc4b2759c`：W01-01/02/03/05按新证据完成实现与owner验证，W01-04保留独立review未完成。旧交付已集成main；本次新整改尚未集成。
+2026-10-06新整改实现target `cb4a39211e264538704ba9d474eeb08fc4b2759c`：W01-01/02/03/05按新证据完成实现与owner验证，W01-04经root独立review APPROVED完成，结论绑定cb4a392；metadata不自动沿用实现review。旧交付已集成main；本次新整改尚未集成。
