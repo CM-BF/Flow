@@ -1,0 +1,54 @@
+{
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review / gpt-6-astra",
+  "observedAt": "2026-10-06T14:11:42.249752+00:00",
+  "target": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+  "observedMetadata": "2a323cd5b94877447b343448021545c1fd39e7f5",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout",
+  "result": "APPROVED",
+  "findings": [],
+  "bindingFile": "/tmp/flow-cost01a-review-bindings.json",
+  "manifestSha256": "995d69ef28ccf2a76281094f0e86f7e4033e472f3284bae72601b46f26b155a1",
+  "fixedWorkingBindings": 49,
+  "groups": {
+    "sources": 5,
+    "inputs": 14,
+    "raw": 26,
+    "derived": 2,
+    "claims": 2
+  },
+  "readScope": [
+    "All five source/test files and complete original usage.ts delta",
+    "Existing usage schema, task/session/event producer flow and Claude emitted usage",
+    "Fixed sdk.d.ts hash and referenced declaration ranges",
+    "All original red/green/matrix/final/producer output, exit receipt, four named random DB cleanup facts",
+    "Source-facts and bounded-prefix output measurements"
+  ],
+  "evidence": {
+    "differentChecks": 14,
+    "moduleFinal": 9,
+    "directProducerSelected": 5,
+    "directProducerUnselected": 26,
+    "typecheckExit": 0,
+    "randomDatabaseCleanupReceipts": 4,
+    "reviewerTests": 0,
+    "reviewerPG": 0,
+    "reviewerProvider": 0
+  },
+  "notes": [
+    "The input/output/cost ingestion formulas and persisted columns are unchanged; added cache contributions use the same pure strict-baseline function in the real write/read consumers.",
+    "Read path selects only numeric/source metadata and legacy usage, limits1000+1 samples/32 emitted groups, and batch-queries strict predecessor across task boundaries in a repeatable-read transaction.",
+    "Unknown/new-session/resume mismatch/missing/decreased/unsafe values remain unknown; informational sources do not contribute authoritative totals.",
+    "producerVersion stays null and coverage unverified. Fixed0.3.290 reference is documentation context, not historical per-sample attribution.",
+    "Source output truncation and sample-prefix incompleteness are explicit; knownSubtotal is not claimed full cost and SQL scanned work is not claimed constant.",
+    "SDK estimate and provider-declared classification are not independent billing verification."
+  ],
+  "limits": [
+    "Only new readout domain and behavior-preserving pure contribution extraction approved.",
+    "Factory/client/UI are outside this target and not production mounted here.",
+    "No real provider probe, Codex authoritative usage, whole-session helper accounting, phase attribution or global budget proof.",
+    "Historical raw red failures preserved; no reviewer reruns under resource reserve."
+  ],
+  "metadataNote": "Nonblocking: status 检查状态 PASSED line currently lacks full40char target, so dashboard parseChecks reports unknown despite separately bound implementation target. Add the approved target when transcribing review; no product test needed.",
+  "methods": "Applied installed find-skills discovery and codebase-design/clean-code review methods; no installs or author-tree writes."
+}

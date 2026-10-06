@@ -1,0 +1,65 @@
+{
+  "result": "APPROVED",
+  "target": "7150d6ee9e1e36b69994da1977aa980139f3458f",
+  "delivery": "e4775cdecfd0a361a07cc7f6965288a381e85135",
+  "reviewer": "assignment_review / gpt-6-astra; independent of F01 production author",
+  "reviewedAt": "2026-10-06T14:26:01.290317+00:00",
+  "scope": "Only factory import/default route mount and packages/client/src/usage-readout-production.test.ts; prior COST domain is hash-checked input, not author self-review. Previously approved fb0e992 thin client reused.",
+  "findings": [],
+  "manifest": {
+    "path": "docs/evidence/f01/usage-readout-production-manifest.json",
+    "bytes": 2871,
+    "sha256": "0489910ff99a0fccc98b481f54820ff3575cd040a4c77375af5e940ad7bbdac7"
+  },
+  "bindingsFile": "/tmp/flow-usage-production-review-bindings.json",
+  "checked": [
+    "Complete 2-file delta read: route mounted once without option after existing authentication preHandler and existing migrations/scheduler initialization; host owns unchanged pool lifecycle.",
+    "Existing browser-session authenticate distinguishes /api/runner/ routes: usage-readout is owner-only; absent bearer 401 and runner 403. No alternate test registrar or fallback factory mount.",
+    "Public consumer creates one random private PG database and dynamic loopback server, publishes synthetic fenced session/usage through FlowClient, repeats same event batch, reads via actual public endpoint, closes/restarts production factory and compares persisted result.",
+    "Legacy totals match task snapshot; cache fields are distinct, producerVersion remains null/unverified, providerActualUsd remains null. Private prompt absent; no-store checked; unknown task404.",
+    "Synthetic response JSON is 1913 UTF-8 bytes; this is a one-sample fixture size, not a general latency/size bound or new producer observation.",
+    "Raw facts bind task/attempt and show before=[], connections=[], remaining=[] after normal close and owned database DROP. No forced PG teardown or personal service operation.",
+    "All 2 source, 3 raw and 5 approved domain input bytes/SHA match fixed and current; 5 domain inputs additionally match approved27d4 exactly."
+  ],
+  "authorEvidence": {
+    "production": {
+      "passed": 1,
+      "selected": 1,
+      "durationMs": 2215,
+      "totalMs": 3230,
+      "exit": 0,
+      "toolChunk": "bb881f"
+    },
+    "typecheck": {
+      "declaredExit": 0,
+      "toolChunk": "0f7ad8",
+      "stdoutBytes": 0,
+      "basis": "author manifest records tool exit; empty stdout hash verified, not independently reconstructed or rerun"
+    },
+    "providerCalls": 0,
+    "databaseCount": 1,
+    "legacyMatrixRerun": 0
+  },
+  "reviewerExecution": {
+    "tests": 0,
+    "pg": 0,
+    "provider": 0,
+    "install": 0,
+    "projectWrites": 0
+  },
+  "skills": {
+    "method": "find-skills local-first; existing relevant local skills sufficient, no network search or installation",
+    "read": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Review existing Module/Interface seam rather than duplicate usage policy; naming, owner-auth ordering, lifecycle/resource cleanup and public behavior evidence inspected."
+  },
+  "limits": [
+    "Approval only covers F01 production mounting/direct consumer. Not a new independent review of COST01A accounting semantics.",
+    "No Web/TUI rendering, real provider accounting/coverage, subscription billing or budget enforcement evidence.",
+    "Reviewer read existing evidence and source; did not rerun domain14 or new production test.",
+    "Typecheck exit0 is author tool result recorded in manifest, with zero-byte stdout retained."
+  ]
+}

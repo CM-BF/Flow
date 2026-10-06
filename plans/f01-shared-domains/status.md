@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:07:02 UTC / main5dbabadc |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:23:15 UTC / mainec50957f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main84005a26与固定O13接口b4f28b；薄client 98e5b2012ffb57b357adcfa7ce68b25608ed631c |
+| 工作基线 / HEAD | 已审COST领域27d4/薄clientfb0；生产接线7150d6ee9e1e36b69994da1977aa980139f3458f |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | completed |
-| 检查状态 | PASSED 98e5b2012ffb57b357adcfa7ce68b25608ed631c；真实HTTP新1+旧1/types0，0PG/provider |
+| 检查状态 | PASSED 7150d6ee9e1e36b69994da1977aa980139f3458f；实际公共HTTP/PG1/1、types0，0provider，原领域不重跑 |
 | 已集成main状态 / HEAD | 98e规划列表与O13领域已main5dbabadc7dda02da558f48505677eddbc9c83fb5并推送；个人runtime362/v15不变 |
-| Review | APPROVED 98e5b2012ffb57b357adcfa7ce68b25608ed631c；Mika13:46:39独立只读无P1/P2，限定transport |
-| 实现目标 | 98e5b2012ffb57b357adcfa7ce68b25608ed631c |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/goal-graph-runs.test.ts |
+| Review | APPROVED 7150d6ee9e1e36b69994da1977aa980139f3458f；assignment_review限定production，domain/client各自已审 |
+| 实现目标 | 7150d6ee9e1e36b69994da1977aa980139f3458f |
+| 实现范围 | apps/server/src/index.ts, packages/client/src/usage-readout-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 登录恢复和目标规划列表接口均已进入主线，可由公开客户端共同读取。 |
-| 下一可用交付 | 当前片段已交付；后继接入有来源说明的用量读口。 |
+| 当前产出 | 用量说明已接通公开中心，并验证缓存分项、授权与重启后仍可读取。 |
+| 下一可用交付 | 将已审公共用量说明发布到主线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -186,3 +186,7 @@
 | F01-38 | completed | Lead | [薄client固定manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)，新1/旧1真实HTTP与types0；Mika独审APPROVED；待O13领域齐套。 |
 
 2026-10-06 14:07:02 UTC：O13/client主线接收见[receipt](../../docs/evidence/f01/goal-run-list-main-receipt.json)。usage.ts已停止写入并在F01 v36原子移交COST01A v2，共享入口仍由本owner管理；未重测原HTTP/领域。
+
+| F01-39 | in-progress | Lead | [用量thin manifest](../../docs/evidence/f01/usage-readout-client-manifest.json)，独审与领域/挂载待接收 |
+
+2026-10-06 14:23 UTC：真实生产factory唯一新1/1通过（非原领域14项重跑），默认owner hook保护读口；原样重放/重启和旧summary保持、无正文、401/403/404/no-store实际核验。随机库before[]/created=true/connections[]/remaining[]，0模型。空间门槛1GiB+96MiB前检通过；新库完成后仍保收尾余量，SVC06门槛未解除。见[生产manifest](../../docs/evidence/f01/usage-readout-production-manifest.json)。

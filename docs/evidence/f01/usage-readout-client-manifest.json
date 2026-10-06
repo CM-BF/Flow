@@ -1,0 +1,65 @@
+{
+  "target": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+  "observedAt": "2026-10-06 14:11:54 UTC",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 48519,
+      "sha256": "7f8fbbb5fbc4e9a1eedcf26644b0d45a20650c00c61eb6cd00c33cba4b701163"
+    },
+    {
+      "path": "packages/client/src/usage-readout.test.ts",
+      "bytes": 3028,
+      "sha256": "7e107c9fe7400a3bda112df070c6aca0bba9d59ab4562a63dfd15c859dc256a0"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1342,
+      "sha256": "814f69e47f57ccfa8dafb1460d32137a9e00b309367824ec2ee053fc946e0323"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/usage-readout-client-red.txt",
+      "bytes": 1190,
+      "sha256": "6c65e979b577b596ef321b4ee315fe43ca7a6c1c7c01ceb6bbb66ece3ce38af2"
+    },
+    {
+      "path": "docs/evidence/f01/usage-readout-client-green.txt",
+      "bytes": 317,
+      "sha256": "90034e5dba8c98daf09ca724a681a4796ebf5ffb21054c43c8f36189997482d9"
+    },
+    {
+      "path": "docs/evidence/f01/usage-readout-client-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "controlledContract": {
+    "target": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+    "path": "packages/contracts/src/usage-readout.ts",
+    "bytes": 2212,
+    "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5"
+  },
+  "checks": {
+    "red": {
+      "exit": 1,
+      "selected": 1,
+      "reason": "missing taskUsage method"
+    },
+    "green": {
+      "exit": 0,
+      "passed": 1,
+      "durationMs": 24,
+      "toolChunk": "c8c3e1"
+    },
+    "types": {
+      "exit": 0,
+      "toolChunk": "b743a1"
+    },
+    "providerQueries": 0,
+    "pgRuns": 0
+  },
+  "scope": "thin GET/export only; domain/mount independently pending",
+  "review": "NOT_STARTED"
+}

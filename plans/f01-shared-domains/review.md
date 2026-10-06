@@ -293,3 +293,26 @@ NOT_STARTED — 2source/3raw/固定O13 DTO，限定单方法传输，不重审�
 Review target commit: 98e5b2012ffb57b357adcfa7ce68b25608ed631c
 
 APPROVED — Mika/gpt-6-astra 2026-10-06 13:46:39 UTC独立只读2source/3raw/固定DTO六项同源，无P1/P2；新1+旧1 HTTP与types0原证据有效，无重跑/PG/provider。只transport，领域仍待固定。[正式回执](../../docs/evidence/f01/goal-run-list-client-independent-review.md)。
+
+## COST01A thin readout
+
+状态：NOT_STARTED
+
+Review target commit `fb0e992e8b308a987bcea273e29e883b9cf13caf`。仅client/export与一项真实HTTP直接测试；无PG/provider。独立review需核透明数量/null、覆盖、编码/auth/abort/错误无重试与固定合同27d4。
+
+
+Review target commit: fb0e992e8b308a987bcea273e29e883b9cf13caf
+
+APPROVED — assignment_review / gpt-6-astra 2026-10-06T14:13:36.619200Z 独立只读，3source/3raw/DTO七项固定同源，编码/auth/null/覆盖/错误不重试/取消符合薄transport。0 reviewer tests/PG/provider；原类型exit取manifest与tool出处，不以空输出独证通过。领域与production mount另验。见[正式回执](../../docs/evidence/f01/usage-readout-client-independent-review.json)。
+
+
+## COST public factory
+
+Review target commit: 7150d6ee9e1e36b69994da1977aa980139f3458f
+
+NOT_STARTED — 两file生产挂载与直接消费者，已审领域27d4五源零diff/薄clientfb0独审；1/1实际PG+HTTP、types0、单库正常清理，0provider。
+
+
+Review target commit: 7150d6ee9e1e36b69994da1977aa980139f3458f
+
+APPROVED — assignment_review / gpt-6-astra 2026-10-06 14:26 UTC，2source/3raw/5已审domain输入十项固定/working同源，完整factory/auth及真实HTTP/PG消费者核实，无P1/P2。原1/1、1913B、replay/restart/legacy/auth/no-store与专库正常清理成立；0 reviewer tests/PG/provider，不扩UI/计费/预算。见[独审回执](../../docs/evidence/f01/usage-readout-production-independent-review.json)。

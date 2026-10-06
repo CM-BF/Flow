@@ -5,7 +5,8 @@ import type { AttemptRecord } from './runners.js';
 import type { TaskRecord } from './tasks.js';
 
 type UsageEvent = Extract<RunnerEvent, { type: 'usage' }>;
-type Sample = Omit<UsageEvent, 'id' | 'sequence'>;
+export type UsageSample = Omit<UsageEvent, 'id' | 'sequence'>;
+type Sample = UsageSample;
 interface StoredSample { digest: string; sample: Sample; sample_id: string }
 function isAuthoritative(task: TaskRecord, sample: Sample): boolean {
   if (sample.accounting !== 'authoritative') return false;
@@ -19,12 +20,17 @@ function difference(current: number | null, baseline: number | null): number | n
 }
 async function contributions(client: PoolClient, task: TaskRecord, stream: string, sample: Sample) {
   const previous = (await client.query<StoredSample>('SELECT sample,sample_id FROM flow.usage_samples WHERE stream=$1 AND authoritative ORDER BY ordinal DESC LIMIT 1', [stream])).rows[0];
+  return projectUsageContribution(sample, previous ?? null, Boolean(task.submission.resumeSessionId));
+}
+/** Both ingestion and historical reads supply the strict previous authoritative stream sample. */
+export function projectUsageContribution(sample: Sample, previous: Pick<StoredSample, 'sample' | 'sample_id'> | null, resumed: boolean) {
   if (previous && previous.sample.cumulative !== sample.cumulative) throw new HttpError(409, 'usage_overlap', 'Delta and cumulative samples cannot share an authoritative stream.');
-  if (!sample.cumulative) return { input: sample.inputTokens, output: sample.outputTokens, cost: sample.costUsd };
-  let baseline: { inputTokens: number | null; outputTokens: number | null; costUsd: number | null } = { inputTokens: null, outputTokens: null, costUsd: null };
-  if (sample.baseline?.kind === 'new-session' && !previous && !task.submission.resumeSessionId) baseline = { inputTokens: 0, outputTokens: 0, costUsd: 0 };
+  if (!sample.cumulative) return { input: sample.inputTokens, output: sample.outputTokens, cost: sample.costUsd, cacheRead: sample.cacheReadTokens ?? null, cacheWrite: sample.cacheWriteTokens ?? null };
+  let baseline: Pick<Sample, 'inputTokens' | 'outputTokens' | 'costUsd' | 'cacheReadTokens' | 'cacheWriteTokens'> = { inputTokens: null, outputTokens: null, costUsd: null };
+  if (sample.baseline?.kind === 'new-session' && !previous && !resumed) baseline = { inputTokens: 0, outputTokens: 0, costUsd: 0, cacheReadTokens: 0, cacheWriteTokens: 0 };
   if (sample.baseline?.kind === 'sample' && previous?.sample_id === sample.baseline.sampleId) baseline = previous.sample;
-  return { input: difference(sample.inputTokens, baseline.inputTokens), output: difference(sample.outputTokens, baseline.outputTokens), cost: difference(sample.costUsd, baseline.costUsd) };
+  return { input: difference(sample.inputTokens, baseline.inputTokens), output: difference(sample.outputTokens, baseline.outputTokens), cost: difference(sample.costUsd, baseline.costUsd),
+    cacheRead: difference(sample.cacheReadTokens ?? null, baseline.cacheReadTokens ?? null), cacheWrite: difference(sample.cacheWriteTokens ?? null, baseline.cacheWriteTokens ?? null) };
 }
 async function totals(client: PoolClient, taskId: string): Promise<UsageTotals> {
   const result = await client.query<{ count: number; input: string | null; output: string | null; cost: number | null; kinds: string[] }>(`
