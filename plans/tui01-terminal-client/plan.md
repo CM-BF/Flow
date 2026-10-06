@@ -36,6 +36,7 @@
 - [ ] **TUI001-05** context/files：复用固定citation与附件生命周期合同，发送/排队冻结身份，未就绪拒绝；不直接附本机路径给远端runner。
 - [ ] **TUI001-06** queue/steer/cancel/decision：精确version/pin/attempt，durable ACK与实际生效区分，unknown恢复不自动复投。
 - [ ] **TUI001-07** runner/plugin管理：复用中心已发布功能，列出/详情/明确owner操作，下载不等于启用；不造终端私有插件权限层。
+- [ ] **TUI001-09** 共享发送回执：TUI01A局部修复先交付，后继将创建/提交两种ACK的结构与冻结请求身份核验收敛到client小Interface，Web/TUI复用；unknown保留原key/body，旧回执不覆盖当前执行状态。唯一设计见[共享ACK后继](../../docs/evidence/tui01/shared-ack-design.md)。
 - [ ] **TUI001-08** 日常终端完整验收：窄终端/CJK/emoji/粘贴/多行/resize/focus、丢ACK/重启、过载与资源回收，文档/独审/部署入口；真实provider只在具体新预算许可后运行。
 
 ## 验收矩阵
