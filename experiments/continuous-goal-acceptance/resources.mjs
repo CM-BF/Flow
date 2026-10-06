@@ -119,6 +119,7 @@ export async function settleDecision(center, report, persist, destroy) {
   catch (error) { report.evidenceSettlement = 'unknown-checkpoint-failed'; throw error; }
   finally {
     try { report.resources = await center.finish({ destroy: destroy && durable, workersStopped: true }); }
+    catch (error) { report.cleanupFailure = { state: 'unconfirmed', name: error.name, code: error.code ?? null }; throw error; }
     finally { await persist(report); }
   }
 }

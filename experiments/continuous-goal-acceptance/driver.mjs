@@ -14,6 +14,7 @@ import { readPermitFile, validatePermit, reservePhase } from './permit.mjs';
 import { privateCenter, settleDecision } from './resources.mjs';
 import { runPhase, experimentStop } from './phase-host.mjs';
 import { confirmationDraft, validateConfirmation, expectedChildren } from './proposal.mjs';
+import { acceptObservedArtifact } from './decision.mjs';
 
 const RUNS = fileURLToPath(new URL('../../docs/evidence/o16/runs/', import.meta.url));
 const signal = () => AbortSignal.timeout(5000);
@@ -174,12 +175,14 @@ export async function decide(run, decision) {
     await center.start(false); controller = session(center, state); await controller.initialize();
     const before = await controller.observe(state.expected.nodes.map(n => n.nodeId));
     assert(before.nodes.every(n => !n.accepted));
+    Object.assign(report, { decision, before, acceptanceCommands: [] });
     for (const artifact of state.artifacts) await controller.read({ kind: 'artifact', binding: artifact.binding });
     await writeRecord(join(directory, 'independent-decision-intent.json'), decision, { exclusive: true });
     if (decision.decision === 'accept') for (const artifact of state.artifacts) {
-      const outcome = await controller.command({ kind: 'goal', input: { kind: 'accept-delivery', nodeId: artifact.binding.nodeId,
-        executionId: artifact.executionId, expectedCurrentExecutionId: artifact.executionId, reason: decision.reason } });
-      assert.equal(outcome.state, 'acknowledged');
+      await acceptObservedArtifact({ controller, artifact, observed: before.nodes.find(node => node.nodeId === artifact.binding.nodeId),
+        reason: decision.reason, checkpoint: async value => {
+          report.acceptanceCommands.push(value); await writeRecord(join(directory, 'decision.json'), report);
+        } });
     }
     const current = await controller.observe(state.expected.nodes.map(n => n.nodeId)), history = await controller.history({ limit: 20 });
     assert(current.nodes.every(n => decision.decision === 'accept' ? n.deliveryCurrent && n.accepted : !n.accepted));
@@ -187,6 +190,8 @@ export async function decide(run, decision) {
       current, history, rejectionReasonPersistence: decision.decision === 'reject' ? 'experiment-record-only-no-product-rejection-command' : null,
       mode: state.mode, nativeStageConclusion: state.mode === 'native' ? 'bounded-observed-journey-only' : 'not-run' });
     state.stage = 'reviewed'; await saveState(center, state); destroy = true;
+  } catch (error) {
+    report.decisionFailure = { state: 'unconfirmed', name: error.name, code: error.code ?? null }; throw error;
   } finally {
     try { await controller?.dispose(); }
     finally { await settleDecision(center, report, value => writeRecord(join(directory, 'decision.json'), value), destroy); }
