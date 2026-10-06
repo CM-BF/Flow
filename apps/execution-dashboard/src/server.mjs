@@ -7,6 +7,7 @@ import { loadRegistry } from './registry.mjs';
 import { readDocument } from './documents.mjs';
 
 const publicFiles = new Map([['/', ['index.html', 'text/html; charset=utf-8']], ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/styles.css', ['styles.css', 'text/css; charset=utf-8']]]);
+for (const [name, type] of [['architecture.js', 'text/javascript'], ['architecture-data.js', 'text/javascript'], ['architecture.css', 'text/css']]) publicFiles.set(`/${name}`, [name, `${type}; charset=utf-8`]);
 const imageTypes = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' };
 const headers = {
   'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',

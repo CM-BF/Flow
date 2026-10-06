@@ -112,3 +112,7 @@
 - 使用与恢复边界见 [D04说明](../docs/evidence/d04/README.md)。
 
 跨 task 部分范围移交允许：旧 owner 明确停写该范围 → 当前 version 的 amend 移除 → 新 owner take 成功后开工；期间新领取若冲突则重新协调，旧 owner 不恢复已交回写权。扩大原 claim 仍用原子 amend，整 claim handoff 保持 pending 占用。
+
+## 架构视图维护
+
+交付若改变模块Interface、运行/FSM、数据库连接或外部依赖边界，owner须在status列明架构影响，并同步工程dashboard的固定基线架构数据，或明确登记待更新target/owner；普通功能没有结构变化不强制改图。架构图描述已核源码基线，分支开发/planned与已集成分开；不自动把目录/依赖发现当运行事实，不新增任意文件读取端点。
