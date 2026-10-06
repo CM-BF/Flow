@@ -15,18 +15,18 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | native源码51c获审，17 distinct fake分轮；真实02106窗口1目标SIGABRT/ready前失败/model-list0，45s与有限留存计量成立、资源已清理，私有诊断artifact独立保留；结果忠实性待审，无重试。 |
+| 当前检查 | native源码51c获审，17 distinct fake分轮；真实02106窗口1目标SIGABRT/ready前失败/model-list0，45s与有限留存计量成立、资源已清理，私有诊断artifact独立保留；结果忠实性17:50:22.663已接收，功能仍失败，无重试。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；core首leaf main22d5ca67159b35bb794b2711cf6df0cb905b92e8已接收；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Claude中心与客户端正在合法组合接入；真实Codex探针已取得握手前失败证据，自有进程和临时目录已收束。 |
-| 下一可用交付 | 完成Codex失败证据独审与私有留物收口，同时由合法owner继续共享挂载及Web/TUI冻结设置。 |
+| 下一可用交付 | 保留已审Codex失败材料，准备独立页大小对照方案；合法owner继续共享挂载及Web/TUI冻结设置。 |
 | 当前阻塞 | ACTIVE: 真实Codex握手失败，尚无目录或实际模型资格；Claude完整跨端产品验收仍待完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | native51c源码17:39:30与02106准备包17:43:53获Mika批准；真实结果待独审，仅观察失败，不是目录/隔离PASS。CORE/C01源批准维持，完整产品未验收。 |
+| Review | native51c源码17:39:30与02106准备包17:43:53获Mika批准；真实结果fcd9e59e已获Mika结果忠实性ACCEPTED，仅观察失败，不是目录/隔离PASS。CORE/C01源批准维持，完整产品未验收。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
 

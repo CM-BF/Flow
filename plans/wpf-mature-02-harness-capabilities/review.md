@@ -1,3 +1,5 @@
+2026-10-06 17:50:22.663 UTC：Mika/root gpt-6-astra RESULT_FIDELITY_ACCEPTED `fcd9e59e539c1ed75152154eeae64f8114b8a939`，0P1/P2；[正式收据](../../docs/evidence/wpf-mature-02/native-catalog-probe/result-review.json)。功能仍pre-ready FAIL，私有344B KEEP，原窗口无剩余授权。
+
 2026-10-06 17:44:57 UTC：唯一native窗口已消费，SIGABRT/握手前失败，结果忠实性PENDING；[安全结果](../../docs/evidence/wpf-mature-02/native-catalog-probe/run-report.md)。源码/准备批准不代表实际PASS。
 
 2026-10-06 17:39:30 UTC：Mika/root gpt-6-astra SOURCE_REVIEW_APPROVED native probe `51c11fca6e91069c69790c787025a214a3e114bf`，0P1/P2；[收据](../../docs/evidence/wpf-mature-02/native-catalog-probe/source-review.json)。原12+增量6（5新）=17 distinct；固定输入packet待审，实际NOT_OPEN。
