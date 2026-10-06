@@ -1,0 +1,154 @@
+{
+  "at": "2026-10-06T22:23:09.009490+00:00",
+  "observedHead": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+  "branch": "codex/web-message-settings-quick-controls",
+  "localEqualsRemoteObserved": true,
+  "cleanObservedBeforeDispatch": true,
+  "sourceTarget": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "sourceChecks": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "bytes": 25804,
+      "fixedTargetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "bytes": 20068,
+      "fixedTargetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "sha256": "844d10633bdc173f46d1f1bad1d4c1b76a673639747131f6d5541265453b34c5",
+      "bytes": 8993,
+      "fixedTargetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "4fb957f17eaad48a26a1ab81ce1119e793c1d958da9ebadea29c853a392551b2",
+      "bytes": 18843,
+      "fixedTargetEqualsMetadata": true
+    }
+  ],
+  "protected": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "unchangedFromBase": true,
+      "fixedTargetEqualsBaseAndMetadata": true
+    }
+  ],
+  "changedPaths": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.browser.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "apps/web/test/message-settings.test.ts",
+    "docs/evidence/wpf-message-settings-quick-controls/README.md",
+    "docs/evidence/wpf-message-settings-quick-controls/actual-status-parser.json",
+    "docs/evidence/wpf-message-settings-quick-controls/early-root-source-review.json",
+    "docs/evidence/wpf-message-settings-quick-controls/interface.md",
+    "docs/evidence/wpf-message-settings-quick-controls/live-claim.json",
+    "docs/evidence/wpf-message-settings-quick-controls/metadata-link-check.json",
+    "docs/evidence/wpf-message-settings-quick-controls/provision.json",
+    "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+    "docs/evidence/wpf-message-settings-quick-controls/source-manifest.json",
+    "docs/evidence/wpf-message-settings-quick-controls/take-receipt.json",
+    "docs/evidence/wpf-message-settings-quick-controls/validation-input-proposal.json",
+    "docs/evidence/wpf-message-settings-quick-controls/validation-proposal.md",
+    "plans/wpf-message-settings-quick-controls/plan.md",
+    "plans/wpf-message-settings-quick-controls/review.md",
+    "plans/wpf-message-settings-quick-controls/status.md"
+  ],
+  "scopeOutside": [],
+  "method": "Immutable Git blobs; no moving author implementation read after dispatch. No product import/runtime.",
+  "validationInputProposal": {
+    "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/validation-input-proposal.json",
+    "fixedCommit": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+    "sha256": "1f30c4d8cd4a23ca2599d2d4ef211ad04d8b85d9ef35df96f77536ab532ff59d",
+    "bytes": 60327,
+    "keys": [
+      "state",
+      "target",
+      "node",
+      "externalAndRuntimeInputs",
+      "ownInputs",
+      "missing",
+      "noDependencyWrites"
+    ],
+    "managerRuntimeClosureReverified": false
+  }
+}

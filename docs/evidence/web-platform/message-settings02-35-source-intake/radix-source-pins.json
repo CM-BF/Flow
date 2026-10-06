@@ -1,0 +1,40 @@
+{
+  "method": "Exact b5 externalPins, then directly declared sibling dependency resolution; no package scan/import/execution. Dialog pins matched; transitive pins are newly observed source evidence.",
+  "sources": {
+    "b5Binding": {
+      "path": "/private/tmp/msgset-b5/binding.json",
+      "sha256": "dbd44eb3de82d2c5e6d6ac9886a90a118db67ed1d88dee089ac90b09d345adde",
+      "bytes": 34260
+    },
+    "dialog": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+      "sha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7",
+      "bytes": 14132
+    },
+    "dialogPackage": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/package.json",
+      "sha256": "9f7cc1487d93a25d543e96beb00204a59d1b11d3e36b4161ae1c8c10c1e47bde",
+      "bytes": 2226
+    },
+    "focusScope": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-focus-scope@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@1_qbvbagedjtybtmrxo7daqki2aq/node_modules/@radix-ui/react-focus-scope/dist/index.mjs",
+      "sha256": "be4160427815e0f67f85fc46d941700de32863416ea62127f6012a51550ce410",
+      "bytes": 10990
+    },
+    "focusScopePackage": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-focus-scope@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@1_qbvbagedjtybtmrxo7daqki2aq/node_modules/@radix-ui/react-focus-scope/package.json",
+      "sha256": "a4ba92e304ab61f4b4003d45c5b619df94b202622a933716b82463705015d3e2",
+      "bytes": 1777
+    },
+    "primitive": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+primitive@1.1.7/node_modules/@radix-ui/primitive/dist/index.mjs",
+      "sha256": "76c2ee4c9e784f66766f1fa37ec6419387edaea9f4ec2f581472571a4f50c303",
+      "bytes": 1997
+    },
+    "earlyComponent": {
+      "path": "/private/tmp/message-settings02-component-early.tsx",
+      "sha256": "7eb525827e18723d1bdcc7d544145906e95cd0d189a71627d92d51ef53da2e3b",
+      "bytes": 24764
+    }
+  }
+}

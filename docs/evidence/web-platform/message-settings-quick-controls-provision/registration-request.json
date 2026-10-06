@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-06T22:06:10.296655+00:00",
-  "state": "LEAD_REGISTRY179_CANDIDATE_REGISTERED_NO_PAGE_OBSERVATION",
+  "at": "2026-10-06T22:23:09.009490+00:00",
+  "state": "LEAD_REPORTED_ACTUAL179_LOADED_LIVE_CURRENT",
   "taskId": "WPF-MESSAGESETTINGS02",
   "owner": "w01_owner",
   "coLead": "Web /root (manager d01_owner)",
@@ -22,10 +22,10 @@
     "plans/wpf-message-settings-quick-controls"
   ],
   "stage": "M2 / implementation",
-  "stateAuthority": "Owner status only; D04 atomic claim only. This request is not proof of registry/main/4320 publication.",
+  "stateAuthority": "Owner status only; D04 atomic claim only. Loaded observation is attributed to Lead at its exact time, not a product/runtime approval.",
   "operator": "Original Execution Lead only; no outgoing thread tool used",
   "trioVerifiedFromFixedGit": "plan.md/status.md/review.md committed and pushed at b8034817412d3131e3fb65fa82763df9deab2f6f; status fixed blob read by manager; no wait for product implementation target.",
-  "leadIntake": "Lead incoming: b803 source registered in new179 registry candidate. No actual deployed registry/page observation received. Owner metadata names require normal safe-point correction; source implementation continues.",
+  "leadIntake": "Original Lead actual 22:12:19 snapshot:179 sources, MESSAGESETTINGS02 live/current and owner field fixed; no Web page sample.",
   "parserFeedback": {
     "source": "Lead incoming via root",
     "humanComplete": true,
@@ -34,6 +34,23 @@
       "Owner -> 单一status owner / model",
       "TODO header ID -> TODO ID"
     ],
-    "ownerAlreadyNotifiedByRoot": true
-  }
+    "ownerAlreadyNotifiedByRoot": true,
+    "historical": true,
+    "supersededBy": "parserClosure (actual owner result at fixed e1cf)"
+  },
+  "previousRegistrationState": "LEAD_REGISTRY179_CANDIDATE_REGISTERED_NO_PAGE_OBSERVATION",
+  "loadedObservation": "../message-settings02-35-source-intake/lead-179-loaded-incoming.json",
+  "parserClosure": {
+    "state": "OWNER_ACTUAL_ERRORS_EMPTY_FIVE_TODOS",
+    "source": "../message-settings02-35-source-intake/owner-actual-status-parser.json",
+    "metadata": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+    "fourColumns": [
+      "TODO ID",
+      "状态",
+      "Owner",
+      "证据"
+    ],
+    "noManagerRerun": true
+  },
+  "sourceIntake": "../message-settings02-35-source-intake/intake.json"
 }

@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-06T22:23:09.009490+00:00",
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "owner": "w01_owner",
+  "target": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+  "metadata": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+  "statusAuthority": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+  "claim": {
+    "id": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "state": "COMMITTED_ACTIVE",
+    "scopeCount": 6,
+    "overlaps": []
+  },
+  "sourceReview": "REQUEST_CHANGES_SCOPED_ACCEPTANCE_COVERAGE",
+  "rootReview": "root-source-review.json",
+  "peerReview": "peer-fixed-report.md",
+  "earlyFindings": {
+    "rootR1": "CLOSED_SOURCE_ONLY",
+    "rootR2": "CLOSED_SOURCE_ONLY",
+    "peerFocus": "CLOSED_SOURCE_ONLY",
+    "historicalRootReport": "../message-settings-quick-controls-acceptance/root-early-source-review.json"
+  },
+  "remainingFinding": {
+    "id": "MSGQUICK-R3",
+    "category": "Explicit acceptance coverage gap; no proven product defect",
+    "action": "Original W01 followup dispatched after 22:20:47 fresh claim: one same-HTTP fixture/browser later-selected-profile journey, preserve C/A/B while unavailable, block defined Apply until available, exact authorized tuples and one explicit Apply. Same six scopes, no run."
+  },
+  "registration": {
+    "source": "Original Lead actual snapshot, forwarded by root; no manager page resample",
+    "observedAt": "2026-10-06T22:12:19Z",
+    "sources": 179,
+    "state": "ACTUALLY_LOADED_LIVE_CURRENT",
+    "original": "lead-179-loaded-incoming.json"
+  },
+  "ownerParser": {
+    "original": "owner-actual-status-parser.json",
+    "reportedErrors": [],
+    "reportedTodoCount": 5,
+    "fourColumnOwnerTableFixed": true,
+    "managerDidNotRerunParser": true
+  },
+  "validation": {
+    "types": "NOT_RUN",
+    "direct": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "proposal": "owner-validation-proposal.md",
+    "staticExpandedDirectCount": 26,
+    "countIsRuntimeEvidence": false,
+    "TSXCSS": "Requires reviewed exact Vitest/Vite config with real JS aliases; test.css:false for direct only. No bare tsx bypass or .d.ts runtime substitution.",
+    "exactRunnerConfigBinding": "NOT_PREPARED",
+    "budgetProposalOnly": true,
+    "gate": null,
+    "old37And4Inherited": false
+  },
+  "integration": "NOT_REQUESTED; claim retained; later source delta review plus necessary new validation required",
+  "runtimeOperations": {
+    "productRuns": 0,
+    "freeSamples": 0,
+    "PGChrome": 0,
+    "newGate": false
+  },
+  "separateQueues": [
+    "Recovery next8ed prepared, no gate",
+    "DPERF04 final929b prepared, no gate",
+    "Mika SVC07 next request and C02 after fresh handoff; no Web reservation"
+  ],
+  "nextPreparation": {
+    "authorizedBy": "Root followup after fixed R3 successor; source/config preparation only",
+    "scope": "Own tmp plus existing six-scope own evidence",
+    "required": "Executable exact types→direct configs, supervisor, source/dependency/Node binding; actual TSX JS aliases and direct CSS policy. No another prose-only proposal.",
+    "limitsProposal": {
+      "totalMs": 30000,
+      "cleanupMs": 5000,
+      "tmpBytes": 8388608,
+      "rawBytes": 2097152
+    },
+    "runAllowed": false,
+    "gate": null,
+    "windowReserved": false
+  }
+}

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:06 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 22:23 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -18,8 +18,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线。 |
-| 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情的页面验证；快速消息设置已在独立树开始实现，真实消息接线另按交权接续。 |
-| 当前阻塞 | ACTIVE: 草稿与看板真实复验仍待资源和共享窗口；本组无重运行或预约，Mika SVC07 下一请求尚未消费。两个旧模拟预览已退役并完成生命周期记录，ACTIVITY 缓存仍有其他消费者必须保留，仅 CHAT 待 Lead 精确核查。快速设置源码可独立推进，真实发送/排队/恢复设置全旅程仍开放。 |
+| 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情的页面验证；快速消息设置已固定并完成源码独审，正补后续分页中的已选配置验收，真实消息接线另按交权接续。 |
+| 当前阻塞 | ACTIVE: 草稿与看板真实复验仍待资源和共享窗口；本组无重运行或预约，Mika SVC07 下一请求尚未消费。两个旧模拟预览已退役并完成生命周期记录，ACTIVITY 缓存仍有其他消费者必须保留，仅 CHAT 待 Lead 精确核查。快速设置尚需一项分页验收覆盖与新的实际验证，真实发送/排队/恢复设置全旅程仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -68,7 +68,7 @@
 
 | WPF-001-36 | completed | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后原28→23初为算术预期，实施后仅该临时样本已实测23，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，已main a8aef五源同；7cc5双端clean全停写后db0b v3 released；不泛化CPU/SLO。 |
 
-已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取并启动，真实host接线仍需后继交权。
+已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，唯一分页验收缺口由原owner补齐，真实host接线仍需后继交权。
 
 ## 当前唯一来源、写权与下一步
 
