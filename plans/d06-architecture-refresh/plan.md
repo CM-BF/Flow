@@ -1,6 +1,6 @@
 # D06 固定基线架构刷新
 
-状态：in-progress。更新：2026-10-06T06:39:59Z。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
+状态：completed（分支交付；main待集成）。更新：2026-10-06T06:40:59Z。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 
 目标：沿既有五视图，将架构源码事实刷新到固定 main `115b0dbdfa02db5483f9e9699852682ce699633c`，清楚区分代码已集成、仅独立模块、后继计划与真实服务。本轮没有产品运行改动。
 
@@ -17,11 +17,11 @@
 - [x] D06-01：新树、正式claim、技能、旧canonical原样归档与唯一source迁移交接。
 - [x] D06-02：固定115b源码核验，更新五视图数据与精确来源。
 - [x] D06-03：局部Node/source检查与动态预览，双主题390px、键盘与减少动画，记录clean-code。
-- [ ] D06-04：固定实现独立review、唯一聚合与Lead集成交接；main/部署分别记录。
+- [x] D06-04：固定实现独立review、唯一聚合与Lead集成交接；main/部署分别记录。
 
 ## 验证与历史
 
-仅现有图检查和新事实直接校验；无模型/产品DB/全库/真实服务重启。架构影响为固定策展数据，没有新增运行Interface。当前review NOT_STARTED，不继承历史approval。
+仅现有图检查和新事实直接校验；无模型/产品DB/全库/真实服务重启。架构影响为固定策展数据，没有新增运行Interface。当前root独立review APPROVED ff5ca7c880910841e8180df7632753c81aea2492，不继承历史approval。
 
 [旧eb轮索引](../../docs/evidence/d06/context/history.md)保留原三件套txt及历史source路径语义；其5ec目标曾批准并已含本base，不代表本轮批准。原D06-01..04稳定ID沿用。source登记由manager/Lead单点迁移。
 

@@ -11,8 +11,12 @@
 
 [first-direct.log](first-direct.log)原样保留：9/10，新增source断言误写 `row.conversation_id`，固定源码实际 `input.conversation_id`；按实际成员名修正，仍验证conversation身份拒绝。后续10/10。初个browser全通过，最后一条非运行事实文字更正后重新执行最终browser并绑定5hash；没有清洗raw日志或删除断言。
 
-作者截图实际目视可读；独立review尚待root，不冒称独立运行。无模型/真实中心/产品DB测试，不改已部署服务或4320。主线固定源码与个人fb906服务不混作一套运行证据。
+作者截图实际目视可读；独立review已由root06:40:07批准，下面区分其独立检查与作者原报告。无模型/真实中心/产品DB测试，不改已部署服务或4320。主线固定源码与个人fb906服务不混作一套运行证据。
 
 ## 本轮独立审查修复
 
-root对旧ebad提出P2证据路径问题，当前ff5仅修检查依据。实际CHAT05目录为native-activity（已用后继acfd固定Git路径确认名称），在本图115b仍不存在；CHAT06目录未固定，不再从猜测名称缺失推断。图/data和browser/preview无diff，所以未重复browser；10Node/source复跑通过，源绑定逐项标明复用与重跑。尚待root复审，不能当作APPROVED。
+root对旧ebad提出P2证据路径问题，当前ff5仅修检查依据。实际CHAT05目录为native-activity（已用后继acfd固定Git路径确认名称），在本图115b仍不存在；CHAT06目录未固定，不再从猜测名称缺失推断。图/data和browser/preview无diff，所以未重复browser；10Node/source复跑通过，源绑定逐项标明复用与重跑。该修复已由root06:40:07独立复审APPROVED，原历史不改写。
+
+## 独立复审
+
+root / gpt-6-astra ultra，2026-10-06T06:40:07Z，APPROVED ff5ca7c880910841e8180df7632753c81aea2492。独立10 Node PASS（1500.90375ms）、47 source SHA/49 exact lines核对；固定五执行paths diffcheck0。独立CUA模块23节点、K02 Enter/renderer Space、fixed115b source href、data context深色详情，errors=[]，仅临时tab28已关闭。作者完整browser/双主题390/reduced-motion没有被root全套重跑；root实际目视modules-light/data-dark-390。详细归因见[review](../../../../plans/d06-architecture-refresh/review.md)。
