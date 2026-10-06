@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['CHATUI01', '真实逐段正文界面验收', '技术验证', 'stream-ui-acceptance', 'chatui01-stream-acceptance'],
+  ['D05FIT01', '架构图首次打开适配', '工作线', 'dashboard-architecture-first-fit', 'd05-first-fit'],
   ['SVC03', '固定版本的真实网页预览', '工作线', 'static-preview', 'svc03-static-preview'],
   ['WPF-CHATREAD01', '聊天正文阅读空间', '工作线', 'web-conversation-readability', 'wpf-chat-readability'],
   ['CHAT10', '补充指令受理状态', '工作线', 'steering-admission-readiness', 'chat10-steering-readiness'],
@@ -115,7 +117,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };

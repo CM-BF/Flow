@@ -1,0 +1,100 @@
+{
+  "at": "2026-10-06T08:46:15.301Z",
+  "count": 100,
+  "selected": [
+    {
+      "id": "CHATUI01",
+      "title": "真实逐段正文界面验收",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance",
+      "branch": "codex/stream-ui-acceptance",
+      "planDir": "plans/chatui01-stream-acceptance",
+      "evidenceDir": "docs/evidence/chatui01",
+      "parseErrors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "正在准备可重复观察聊天正文逐段增长的独立验收旅程。",
+        "next": "无需模型调用即可验证真实页面的流式正文、最终回复和未发送草稿。",
+        "blocker": {
+          "state": "unknown",
+          "text": ""
+        },
+        "decision": {
+          "state": "unknown",
+          "text": ""
+        },
+        "missing": [
+          "当前阻塞",
+          "需用户决定"
+        ],
+        "complete": false
+      }
+    },
+    {
+      "id": "D05FIT01",
+      "title": "架构图首次打开适配",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit",
+      "branch": "codex/dashboard-architecture-first-fit",
+      "planDir": "plans/d05-first-fit",
+      "evidenceDir": "docs/evidence/d05fit01",
+      "parseErrors": [],
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "架构图首次自动适配已验证，手动缩放与五视图选择保持",
+        "next": "独审后交付首次适配与手动缩放保持",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "SVC03",
+      "title": "固定版本的真实网页预览",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview",
+      "branch": "codex/static-preview",
+      "planDir": "plans/svc03-static-preview",
+      "evidenceDir": "docs/evidence/svc03",
+      "parseErrors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "固定页面产物与同源事件流已在隔离样例中验证",
+        "next": "页面不再跟随开发中的源码自动变化",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ],
+  "previousSVC03Parse": "registry-98-validation.json"
+}
