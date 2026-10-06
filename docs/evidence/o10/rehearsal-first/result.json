@@ -1,0 +1,602 @@
+{
+  "mode": "rehearsal",
+  "scenario": "success",
+  "base": "fc113945ff73d1a43092d0a70b51e901aa4be1e2",
+  "source": {
+    "base": "fc113945ff73d1a43092d0a70b51e901aa4be1e2",
+    "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-child-acceptance/",
+    "files": [
+      {
+        "path": "experiments/native-child-acceptance/config.mjs",
+        "bytes": 3664,
+        "sha256": "2cc4570905284fdc3c5f875cfa944a4619a26c7f0832929f9351e5693a7624ea"
+      },
+      {
+        "path": "experiments/native-child-acceptance/guard.mjs",
+        "bytes": 7070,
+        "sha256": "067bdfcbe78fe1ee1385fe25fe1ab094f4f2d82e51344e72fa1717d7eda205d2"
+      },
+      {
+        "path": "experiments/native-child-acceptance/worker.mjs",
+        "bytes": 5396,
+        "sha256": "11c9d1595cb2fe104837495ed08be4dce646082a8260d9f9cea20acc9a0874f7"
+      },
+      {
+        "path": "experiments/native-child-acceptance/driver.mjs",
+        "bytes": 13294,
+        "sha256": "0d250e078134b033139a468e21e6870030e2ae8c7f6fffc00cbe530070624fa6"
+      },
+      {
+        "path": "experiments/native-child-acceptance/facts.mjs",
+        "bytes": 2723,
+        "sha256": "17cb94aa582caa03cf142c253d2d5a54df99402cf6001222d7e53160d16aa517"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/driver.mjs",
+        "bytes": 15469,
+        "sha256": "7a0bed2497649c10ada08f6c21f594707f9e1a0ba4f2454adeb93bb9e6666fb7"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/guard.mjs",
+        "bytes": 7880,
+        "sha256": "0eacf129f8a44d95e83052f5b949cf4c5a42c82f9ebfffa1b38259b3a99308de"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/config.mjs",
+        "bytes": 4372,
+        "sha256": "1d6fd1ed97164b3f72de507c4aea66cba1645d30d87a736ecafae871ab36e039"
+      },
+      {
+        "path": "experiments/native-graph-acceptance/peer.mjs",
+        "bytes": 2877,
+        "sha256": "839ae672fa23258d255a9d59f25ce015050330173e0ee8c2b0d2e0a55ef5aea3"
+      },
+      {
+        "path": "apps/runner/src/claude.ts",
+        "bytes": 19269,
+        "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439"
+      },
+      {
+        "path": "apps/runner/src/runtime.ts",
+        "bytes": 8200,
+        "sha256": "38448a6d89890315047d3e82f192481eb78fc159c98ab44547d70925a6d65042"
+      },
+      {
+        "path": "apps/runner/src/execution-profiles.ts",
+        "bytes": 4052,
+        "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d"
+      },
+      {
+        "path": "apps/runner/src/outbox.ts",
+        "bytes": 5640,
+        "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+      },
+      {
+        "path": "apps/server/src/index.ts",
+        "bytes": 12741,
+        "sha256": "5fa81b90376f441b84f20578b79845aec20fc6a3a5cdcbc9e369a1ee64599401"
+      },
+      {
+        "path": "apps/server/src/goal-native-executions/index.ts",
+        "bytes": 1083,
+        "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8"
+      },
+      {
+        "path": "apps/server/src/goal-native-executions/store.ts",
+        "bytes": 1466,
+        "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5"
+      },
+      {
+        "path": "apps/server/src/goals/commands.ts",
+        "bytes": 13874,
+        "sha256": "19d90e2279d350e133ebea9099e8a0c1b5b601c674e9567758a16b32b2adf316"
+      },
+      {
+        "path": "packages/contracts/src/goal-native-executions.ts",
+        "bytes": 931,
+        "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+      },
+      {
+        "path": "packages/client/src/index.ts",
+        "bytes": 37212,
+        "sha256": "721462314456d68fca547e5e4b6c8f4da98540116564f6266644bf33208a053c"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "bytes": 265530,
+        "sha256": "cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c"
+      }
+    ],
+    "digest": "3f7a3323606956ba194536d55c7957037babcd7247e89ff2ab250acc286f7a87"
+  },
+  "versions": {
+    "node": "v24.20.0",
+    "claudeSdk": "0.3.290"
+  },
+  "nativeQueryCalls": 0,
+  "startedAt": "2026-10-06T08:17:03.912Z",
+  "approvalId": null,
+  "attemptMarker": null,
+  "phase": "collect-and-check-facts",
+  "outcome": "rehearsal-passed",
+  "cleanup": {
+    "runnerStopped": true,
+    "centerClosed": true,
+    "databaseRemoved": true,
+    "privateTemporaryDirectoryRemoved": true
+  },
+  "semanticAcceptance": {
+    "state": "not-evaluated",
+    "acceptedDelivery": false,
+    "required": "Goal Owner reads the actual final against the fixed material; no regex semantic oracle."
+  },
+  "workerForcedKill": false,
+  "profile": {
+    "reference": {
+      "id": "d05a19b4-23cb-4df9-a0e9-811e7cea7dcc",
+      "runnerId": "6f7995e3-f9f0-41ae-9f03-c0fe9377ef18",
+      "configDigest": "57b88f158e296eb4d33f20b4f164bce7f941607796667d39e6db7d70fe5bf5a9"
+    },
+    "configuration": {
+      "model": "synthetic-no-query",
+      "access": "configured-readonly",
+      "limits": {
+        "maxTurns": 3,
+        "timeoutMs": 60000,
+        "maxBudgetUsd": 0.1
+      },
+      "harness": "claude",
+      "thinking": "disabled",
+      "adapterVersion": "claude-sdk-0.3.290-v2",
+      "permissionMode": "dontAsk",
+      "materialScopeDigest": "0e9b9a067a60f9d22ad30845568feecfd15e0b6cc5714ebc3b592643f14eb118",
+      "requireReadApproval": false
+    },
+    "source": "runner-configured",
+    "availability": "not-probed",
+    "model": {
+      "value": "synthetic-no-query",
+      "resolvedModel": null,
+      "displayName": "synthetic-no-query",
+      "description": "Configured runner request; provider availability has not been probed.",
+      "providerCapabilities": "unknown"
+    },
+    "controls": {
+      "model": "select-configured-profile",
+      "thinking": "fixed-disabled",
+      "effort": "unsupported",
+      "access": "configured-policy",
+      "queue": false,
+      "steer": false
+    },
+    "createdAt": "2026-10-06T08:17:04.938Z"
+  },
+  "material": {
+    "bytes": 114,
+    "sha256": "8de2b80dd83557aa67de70ea5d3509211c8b40f84fba405c1f006f9fd4c36ab0"
+  },
+  "admissionKey": "bcb1f2b5-2c09-4c14-ada0-daa0e7b6e567",
+  "admission": {
+    "goalId": "30ea2145-0cd5-4515-9afe-e6da976042dc",
+    "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+    "inputVersion": 1,
+    "executionId": "6ca863e0-b9fa-4d52-a55e-d952f885890b",
+    "task": {
+      "id": "609861ca-6059-4be4-b4ff-0c1f4af4b13d",
+      "title": "纸鸢发布说明草稿",
+      "harness": "claude",
+      "status": "queued",
+      "verificationStatus": "pending",
+      "createdAt": "2026-10-06T08:17:04.946Z",
+      "updatedAt": "2026-10-06T08:17:04.946Z"
+    },
+    "explanation": {
+      "version": 3,
+      "kind": "execute",
+      "text": "Execution was authorized with input version 1 and 0 fixed dependencies. Owner selects this registered readonly profile for exactly one synthetic text child",
+      "source": {
+        "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+        "inputVersion": 1,
+        "executionId": "6ca863e0-b9fa-4d52-a55e-d952f885890b",
+        "projectRevision": 2
+      },
+      "createdAt": "2026-10-06T08:17:04.950Z"
+    },
+    "changed": true,
+    "executionProfile": {
+      "id": "d05a19b4-23cb-4df9-a0e9-811e7cea7dcc",
+      "runnerId": "6f7995e3-f9f0-41ae-9f03-c0fe9377ef18",
+      "configDigest": "57b88f158e296eb4d33f20b4f164bce7f941607796667d39e6db7d70fe5bf5a9"
+    },
+    "replayed": false
+  },
+  "ids": {
+    "database": "flow_o10_36e002033fed4ebf84b45ca979cc7da9",
+    "projectId": "2bfcc1f1-52c0-4575-96de-e7558b3f95b1",
+    "goalId": "30ea2145-0cd5-4515-9afe-e6da976042dc",
+    "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+    "executionId": "6ca863e0-b9fa-4d52-a55e-d952f885890b",
+    "taskId": "609861ca-6059-4be4-b4ff-0c1f4af4b13d",
+    "runnerId": "6f7995e3-f9f0-41ae-9f03-c0fe9377ef18"
+  },
+  "runnerPid": 8005,
+  "workerProcessGroup": {
+    "pgid": 8005,
+    "state": "stopped"
+  },
+  "worker": {
+    "mode": "rehearsal",
+    "scenario": "success",
+    "pid": 8005,
+    "nativeQueryCalls": 0,
+    "queryAdapterCalls": 1,
+    "queryClosed": true,
+    "notices": [],
+    "readObservations": [
+      {
+        "id": "d6e7124f-b19b-48d0-b2ee-3dbe1c6f1c32",
+        "toolName": "Read",
+        "state": "reported-success",
+        "contentDigest": "8de2b80dd83557aa67de70ea5d3509211c8b40f84fba405c1f006f9fd4c36ab0",
+        "containsSyntheticMaterial": true
+      }
+    ],
+    "configuredTimeoutMs": 60000,
+    "requested": {
+      "model": "synthetic-no-query",
+      "maxTurns": 3,
+      "maxBudgetUsd": 0.1,
+      "permissionMode": "dontAsk",
+      "tools": [
+        "Read"
+      ],
+      "allowedTools": [
+        "Read"
+      ],
+      "thinking": {
+        "type": "disabled"
+      },
+      "mcpServers": [],
+      "settingSources": [],
+      "plugins": [],
+      "skills": []
+    },
+    "hostToolDecisions": [
+      {
+        "toolName": "Read",
+        "source": null,
+        "server": null,
+        "toolUseId": "d6e7124f-b19b-48d0-b2ee-3dbe1c6f1c32",
+        "decision": "allowed",
+        "execution": "not-observed"
+      }
+    ],
+    "effective": {
+      "model": "synthetic-effective",
+      "permissionMode": "dontAsk",
+      "tools": [
+        "Read"
+      ],
+      "plugins": [
+        {
+          "name": "cc-plugin-agents-md",
+          "version": "synthetic"
+        },
+        {
+          "name": "cc-plugin-telemetry",
+          "version": "synthetic"
+        },
+        {
+          "name": "cc-plugin-plugin-authoring",
+          "version": "synthetic"
+        }
+      ],
+      "skills": [
+        "design",
+        "doctor",
+        "plugin-authoring"
+      ],
+      "mcpServers": [],
+      "runtimeVersion": "synthetic-no-provider",
+      "nativeSessionId": "6d62375d-96a7-46ce-bfaa-e18f724ec24d",
+      "observationKind": "sdk-init-declaration"
+    },
+    "permissionDenials": {
+      "state": "reported",
+      "total": 0,
+      "entries": [],
+      "parametersOmitted": true,
+      "truncated": false
+    },
+    "result": {
+      "subtype": "success",
+      "isError": false,
+      "nativeSessionId": "6d62375d-96a7-46ce-bfaa-e18f724ec24d",
+      "sourceMessageId": "c7cb071f-8a61-4ae2-81fd-8112d2f0221a",
+      "numTurns": 2,
+      "sdkEstimatedCostUsd": 0,
+      "modelUsage": {}
+    }
+  },
+  "task": {
+    "id": "609861ca-6059-4be4-b4ff-0c1f4af4b13d",
+    "title": "纸鸢发布说明草稿",
+    "harness": "claude",
+    "status": "succeeded",
+    "verificationStatus": "passed",
+    "createdAt": "2026-10-06T08:17:04.946Z",
+    "updatedAt": "2026-10-06T08:17:05.531Z",
+    "prompt": "{\"goal\":{\"originalGoal\":\"读取唯一授权材料，为纸鸢 0.1 写一段不超过 120 个汉字的中文发布说明草稿。\",\"constraints\":\"仅采用授权材料中的事实；明确仍为内部测试且尚未正式发布；不得补充日期、链接、性能承诺或其他功能；只返回正文，不写文件、不调用其他工具。\",\"acceptance\":\"人工核对项目、版本、草稿预览及未正式发布四项事实；文字简洁，无材料之外的承诺。\"},\"input\":{\"goal\":\"读取唯一授权材料，为纸鸢 0.1 写一段不超过 120 个汉字的中文发布说明草稿。\",\"acceptance\":\"人工核对项目、版本、草稿预览及未正式发布四项事实；文字简洁，无材料之外的承诺。\",\"constraints\":\"仅采用授权材料中的事实；明确仍为内部测试且尚未正式发布；不得补充日期、链接、性能承诺或其他功能；只返回正文，不写文件、不调用其他工具。\",\"verification\":{\"kind\":\"contains\",\"expected\":\"纸鸢\"}},\"dependencies\":[]}",
+    "entries": [
+      {
+        "id": "c3caf1ea-7567-4ff9-8185-de629a14d962",
+        "kind": "reference",
+        "cursor": 1,
+        "createdAt": "2026-10-06T08:17:05.407Z",
+        "reference": {
+          "id": "6cfd7a00-1288-4af0-993d-7bbfd5327647",
+          "title": "Native session"
+        }
+      },
+      {
+        "id": "1712d5c2-6237-437a-b702-98294dc57207",
+        "kind": "reference",
+        "cursor": 2,
+        "createdAt": "2026-10-06T08:17:05.450Z",
+        "reference": {
+          "id": "686e5c37-19f4-463b-a165-0ac29fcadec6",
+          "title": "Tool: Read",
+          "activity": {
+            "kind": "native-activity",
+            "activityId": "3723811ad7eb1ef17ca3a74d40888ef48c2f27899686795a5efe95126023215e"
+          }
+        }
+      },
+      {
+        "id": "07510da1-6bdb-464d-a5a5-dd0c1e180529",
+        "kind": "reference",
+        "cursor": 3,
+        "createdAt": "2026-10-06T08:17:05.460Z",
+        "reference": {
+          "id": "2a4d9afb-b73f-4fc5-9fd2-a75eb4c6eab7",
+          "title": "Tool: d6e7124f-b19b-48d0-b2ee-3dbe1c6f1c32",
+          "activity": {
+            "kind": "native-activity",
+            "activityId": "1ca6280e0d725215d5114525e1f8b77a2077b38a52714e1f9ecf88babc009cfb"
+          }
+        }
+      },
+      {
+        "id": "a5aa6629-618c-4f9a-ad2c-da284f0f017f",
+        "kind": "reference",
+        "cursor": 4,
+        "createdAt": "2026-10-06T08:17:05.472Z",
+        "reference": {
+          "id": "4b8d552d-b817-4411-86d8-052194eb4d22",
+          "title": "Usage: claude.modelUsage"
+        }
+      },
+      {
+        "id": "b1709553-218b-4ed6-907d-1f9f3d4c4f38",
+        "kind": "reference",
+        "cursor": 5,
+        "createdAt": "2026-10-06T08:17:05.488Z",
+        "reference": {
+          "id": "af532669-496f-4482-adb4-8401e370c69b",
+          "title": "Claude result"
+        }
+      },
+      {
+        "id": "76b5631f-0ef2-43db-bf9a-d253adb71d2d",
+        "kind": "reference",
+        "cursor": 6,
+        "createdAt": "2026-10-06T08:17:05.497Z",
+        "reference": {
+          "id": "d20c8d06-a351-4c4e-a632-50dda239867a",
+          "title": "Verification passed"
+        }
+      },
+      {
+        "id": "114c95e2-a70d-4468-abd3-fe3dc88803ba",
+        "kind": "reference",
+        "cursor": 7,
+        "createdAt": "2026-10-06T08:17:05.514Z",
+        "reference": {
+          "id": "1e8f06c5-805e-4c27-b69c-de5be9a6f137",
+          "title": "Assistant reply"
+        }
+      }
+    ],
+    "watermark": 7,
+    "hasMore": false,
+    "pendingDecision": null,
+    "attempt": {
+      "id": "f6b2486f-b3d1-4883-9342-a896b581e644",
+      "runnerId": "6f7995e3-f9f0-41ae-9f03-c0fe9377ef18",
+      "ownerVersion": 1,
+      "leaseExpiresAt": "2026-10-06T08:17:25.510Z",
+      "nativeSessionId": "6d62375d-96a7-46ce-bfaa-e18f724ec24d"
+    },
+    "usage": {
+      "costUsd": null,
+      "costKind": "unknown",
+      "incomplete": true,
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  "goal": {
+    "goal": {
+      "id": "30ea2145-0cd5-4515-9afe-e6da976042dc",
+      "projectId": "2bfcc1f1-52c0-4575-96de-e7558b3f95b1",
+      "acceptance": "人工核对项目、版本、草稿预览及未正式发布四项事实；文字简洁，无材料之外的承诺。",
+      "constraints": "仅采用授权材料中的事实；明确仍为内部测试且尚未正式发布；不得补充日期、链接、性能承诺或其他功能；只返回正文，不写文件、不调用其他工具。",
+      "originalGoal": "读取唯一授权材料，为纸鸢 0.1 写一段不超过 120 个汉字的中文发布说明草稿。",
+      "createdAt": "2026-10-06T08:17:04.911Z"
+    },
+    "projectRevision": 2,
+    "explanations": [
+      {
+        "version": 1,
+        "kind": "created",
+        "text": "Original goal, constraints and acceptance were saved.",
+        "source": {
+          "projectRevision": 2
+        },
+        "createdAt": "2026-10-06T08:17:04.914Z"
+      },
+      {
+        "version": 2,
+        "kind": "define-input",
+        "text": "Actual input version 1 was saved. Owner fixes exact synthetic facts and rule",
+        "source": {
+          "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+          "inputVersion": 1,
+          "projectRevision": 2
+        },
+        "createdAt": "2026-10-06T08:17:04.925Z"
+      },
+      {
+        "version": 3,
+        "kind": "execute",
+        "text": "Execution was authorized with input version 1 and 0 fixed dependencies. Owner selects this registered readonly profile for exactly one synthetic text child",
+        "source": {
+          "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+          "executionId": "6ca863e0-b9fa-4d52-a55e-d952f885890b",
+          "inputVersion": 1,
+          "projectRevision": 2
+        },
+        "createdAt": "2026-10-06T08:17:04.950Z"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+        "title": "纸鸢发布说明草稿",
+        "dependsOn": [],
+        "definition": {
+          "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+          "version": 1,
+          "projectRevision": 2,
+          "createdAt": "2026-10-06T08:17:04.924Z"
+        },
+        "execution": {
+          "id": "6ca863e0-b9fa-4d52-a55e-d952f885890b",
+          "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+          "task": {
+            "id": "609861ca-6059-4be4-b4ff-0c1f4af4b13d",
+            "title": "纸鸢发布说明草稿",
+            "harness": "claude",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "createdAt": "2026-10-06T08:17:04.946Z",
+            "updatedAt": "2026-10-06T08:17:05.531Z"
+          },
+          "inputVersion": 1,
+          "projectRevision": 2,
+          "createdAt": "2026-10-06T08:17:04.949Z",
+          "inputCurrent": true
+        },
+        "accepted": null,
+        "deliveryCurrent": false,
+        "dependenciesReady": true,
+        "reason": "No current delivery has been accepted."
+      }
+    ]
+  },
+  "history": {
+    "executions": [
+      {
+        "id": "6ca863e0-b9fa-4d52-a55e-d952f885890b",
+        "nodeId": "8321c600-6cc2-497a-a64b-bb538a5e5ed2",
+        "task": {
+          "id": "609861ca-6059-4be4-b4ff-0c1f4af4b13d",
+          "title": "纸鸢发布说明草稿",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T08:17:04.946Z",
+          "updatedAt": "2026-10-06T08:17:05.531Z"
+        },
+        "inputVersion": 1,
+        "input": {
+          "goal": "读取唯一授权材料，为纸鸢 0.1 写一段不超过 120 个汉字的中文发布说明草稿。",
+          "acceptance": "人工核对项目、版本、草稿预览及未正式发布四项事实；文字简洁，无材料之外的承诺。",
+          "constraints": "仅采用授权材料中的事实；明确仍为内部测试且尚未正式发布；不得补充日期、链接、性能承诺或其他功能；只返回正文，不写文件、不调用其他工具。",
+          "verification": {
+            "kind": "contains",
+            "expected": "纸鸢"
+          }
+        },
+        "dependencies": [],
+        "projectRevision": 2,
+        "createdAt": "2026-10-06T08:17:04.949Z",
+        "inputCurrent": true
+      }
+    ],
+    "nextCursor": null
+  },
+  "totalTasks": 1,
+  "final": {
+    "id": "ec6e62a43eaca52652fcc07e753d30d270f3f28c33341f09a891d00c96879c8e",
+    "taskId": "609861ca-6059-4be4-b4ff-0c1f4af4b13d",
+    "attemptId": "f6b2486f-b3d1-4883-9342-a896b581e644",
+    "eventId": "a5f0ce09-1948-4b51-bf84-9d4eb3bf7660",
+    "sequence": 8,
+    "nativeSessionId": "6d62375d-96a7-46ce-bfaa-e18f724ec24d",
+    "source": "claude.sdk.result",
+    "sourceMessageId": "c7cb071f-8a61-4ae2-81fd-8112d2f0221a",
+    "contentDigest": "3ccabf262359336f235dc0f98480dd93983f0368aecaa6dd72b364b32bda0d61",
+    "detail": {
+      "id": "1e8f06c5-805e-4c27-b69c-de5be9a6f137",
+      "title": "Assistant reply"
+    },
+    "createdAt": "2026-10-06T08:17:05.518Z",
+    "content": "纸鸢 0.1 新增草稿预览，目前处于内部测试阶段，尚未正式发布。",
+    "settings": {
+      "effective": {
+        "model": "synthetic-effective",
+        "tools": [
+          "Read"
+        ],
+        "thinking": "unknown",
+        "permissionMode": "dontAsk"
+      },
+      "requested": {
+        "model": "synthetic-no-query",
+        "thinking": "disabled",
+        "permissionMode": "dontAsk"
+      }
+    }
+  },
+  "finalCount": 1,
+  "details": [
+    {
+      "id": "af532669-496f-4482-adb4-8401e370c69b",
+      "title": "Claude result",
+      "kind": "artifact",
+      "content": "纸鸢 0.1 新增草稿预览，目前处于内部测试阶段，尚未正式发布。",
+      "mediaType": "text/plain",
+      "artifactVersion": "3ccabf262359336f235dc0f98480dd93983f0368aecaa6dd72b364b32bda0d61"
+    },
+    {
+      "id": "d20c8d06-a351-4c4e-a632-50dda239867a",
+      "title": "Verification passed",
+      "kind": "verification",
+      "content": "{\"id\":\"496ff5b2-cf91-4493-8c82-dff2af1b06ee\",\"sequence\":7,\"type\":\"verification\",\"artifactId\":\"cb3f2ac5-0fb8-4105-b2cb-b5ffa771cc0e\",\"artifactVersion\":\"3ccabf262359336f235dc0f98480dd93983f0368aecaa6dd72b364b32bda0d61\",\"verifierId\":\"flow.text\",\"verifierVersion\":\"1\",\"inputDigest\":\"22ab508b8d91439a7c3d31fa48fc03b3302020efcf89f4749c7e5baa0681f8bc\",\"result\":\"passed\",\"evidence\":\"Saved artifact contains the required text.\"}",
+      "mediaType": "application/json",
+      "artifactVersion": "3ccabf262359336f235dc0f98480dd93983f0368aecaa6dd72b364b32bda0d61"
+    }
+  ],
+  "mechanical": {
+    "verifier": "flow.text",
+    "rule": {
+      "kind": "contains",
+      "expected": "纸鸢"
+    },
+    "status": "passed",
+    "finalDigest": "3ccabf262359336f235dc0f98480dd93983f0368aecaa6dd72b364b32bda0d61"
+  },
+  "remainingDatabases": [],
+  "finishedAt": "2026-10-06T08:17:05.723Z"
+}

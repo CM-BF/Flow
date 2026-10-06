@@ -1,0 +1,223 @@
+{
+  "target": "3c770b52bb4e2e8b3c8b217b9d7900dda688263d",
+  "base": "fc113945ff73d1a43092d0a70b51e901aa4be1e2",
+  "observedAt": "2026-10-06T08:20:00Z",
+  "source": [
+    {
+      "path": "experiments/native-child-acceptance/README.md",
+      "bytes": 4822,
+      "sha256": "f319ea7efea3e159b69268058c5f401611043d7b99c12bfeaa811f960d0f3acf"
+    },
+    {
+      "path": "experiments/native-child-acceptance/config.mjs",
+      "bytes": 3664,
+      "sha256": "2cc4570905284fdc3c5f875cfa944a4619a26c7f0832929f9351e5693a7624ea"
+    },
+    {
+      "path": "experiments/native-child-acceptance/driver.mjs",
+      "bytes": 13294,
+      "sha256": "0d250e078134b033139a468e21e6870030e2ae8c7f6fffc00cbe530070624fa6"
+    },
+    {
+      "path": "experiments/native-child-acceptance/driver.test.mjs",
+      "bytes": 787,
+      "sha256": "cdd6351e5349ac5428caff521fc43a8eb20fa5f69c4dfadaf046a1f3b6da008a"
+    },
+    {
+      "path": "experiments/native-child-acceptance/facts.mjs",
+      "bytes": 2723,
+      "sha256": "17cb94aa582caa03cf142c253d2d5a54df99402cf6001222d7e53160d16aa517"
+    },
+    {
+      "path": "experiments/native-child-acceptance/guard.mjs",
+      "bytes": 7070,
+      "sha256": "067bdfcbe78fe1ee1385fe25fe1ab094f4f2d82e51344e72fa1717d7eda205d2"
+    },
+    {
+      "path": "experiments/native-child-acceptance/guard.test.mjs",
+      "bytes": 5392,
+      "sha256": "37185b4c895a18ca7e2c459bc10bf06b9673f27de53fbb9e00bd7634392ee326"
+    },
+    {
+      "path": "experiments/native-child-acceptance/journey.test.mjs",
+      "bytes": 1807,
+      "sha256": "5b1cd8a93c125859f80779bcca1ebb8d29ca35dcacfdd9b0d4bad7bebab7aef2"
+    },
+    {
+      "path": "experiments/native-child-acceptance/worker.mjs",
+      "bytes": 5396,
+      "sha256": "11c9d1595cb2fe104837495ed08be4dce646082a8260d9f9cea20acc9a0874f7"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/o10/driver-first-green.txt",
+      "bytes": 212,
+      "sha256": "49038fe6a3a36bfdca6e315eb255c335fe9a8fc8e11c4e219664817d81ea7e04"
+    },
+    {
+      "path": "docs/evidence/o10/driver-red.txt",
+      "bytes": 2139,
+      "sha256": "9edd8d679948112558a6013fdcabe132932a14e59b2109a6bf161a08f8504c10"
+    },
+    {
+      "path": "docs/evidence/o10/guard-first-green.txt",
+      "bytes": 222,
+      "sha256": "9824426507db386069752a71c9ccc140648b71aae8bbcd7f84ad252080b004ca"
+    },
+    {
+      "path": "docs/evidence/o10/guard-red.txt",
+      "bytes": 1655,
+      "sha256": "f5b32ca93cd636b87fd3a359d359a529543d3776e9b583a9cdf418a89c0d9933"
+    },
+    {
+      "path": "docs/evidence/o10/guards-final.txt",
+      "bytes": 723,
+      "sha256": "95db5515402da889933a04a0b15022507f5a2d9d5874eba4bf35115c2e251352"
+    },
+    {
+      "path": "docs/evidence/o10/install.txt",
+      "bytes": 657,
+      "sha256": "597ca1519267a25de1a2ddff494a3178da804ce343ae48a5a2cd3fa93e912124"
+    },
+    {
+      "path": "docs/evidence/o10/prepared.json",
+      "bytes": 5783,
+      "sha256": "fe68c9cff86a00b4a4f427eecb7d6e5b2ff0f65c7d4588bc4dc79e2f742cf6ba"
+    },
+    {
+      "path": "docs/evidence/o10/rehearsal-first/result.json",
+      "bytes": 21601,
+      "sha256": "22e46e5406082f14f4680b8413d74c5b33f8d2ce96531a3c2e79be48b182b957"
+    },
+    {
+      "path": "docs/evidence/o10/rehearsal-first.txt",
+      "bytes": 187,
+      "sha256": "ece0c8fc2cb251afece025fb13d019807d5195cdf19f2d12242e410881fad675"
+    },
+    {
+      "path": "docs/evidence/o10/rejection-journeys/allow-without-read/result.json",
+      "bytes": 20226,
+      "sha256": "adaa73a335e43269f49d515287a486f5cc863acb98cb6e5094b6f1777fe3e7fa"
+    },
+    {
+      "path": "docs/evidence/o10/rejection-journeys/denied-tool/result.json",
+      "bytes": 20945,
+      "sha256": "5b00f0b2213f3cd7a3e313cc84d0a61a26133935485137ba307bccf0de33b321"
+    },
+    {
+      "path": "docs/evidence/o10/rejection-journeys/error-result/result.json",
+      "bytes": 18740,
+      "sha256": "39557561ebd0074838767918b68ba94809ad2b8256558ad2ffa50d1b5c90a718"
+    },
+    {
+      "path": "docs/evidence/o10/rejection-journeys/init-difference/result.json",
+      "bytes": 16207,
+      "sha256": "11f13375855c0500c647126701689eb0ea4985e26dc4eb7d9bc11b00b1996989"
+    },
+    {
+      "path": "docs/evidence/o10/rejection-journeys.txt",
+      "bytes": 487,
+      "sha256": "966d2d1cafbf0b0b95f4cea55887b31700683133a84a2f9c1036ff3e8bea5ece"
+    },
+    {
+      "path": "docs/evidence/o10/requested-gate-red.txt",
+      "bytes": 1300,
+      "sha256": "99ff8aabb961efca076893ddf2eef27906af06bf0414a3e7e5e2a46423b9c4af"
+    },
+    {
+      "path": "docs/evidence/o10/syntax.txt",
+      "bytes": 453,
+      "sha256": "b4eb29fbb948d2b0b65b8d46166f7393ce0b3e368df2074eec814297858284f4"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "experiments/native-graph-acceptance/driver.mjs",
+      "bytes": 15469,
+      "sha256": "7a0bed2497649c10ada08f6c21f594707f9e1a0ba4f2454adeb93bb9e6666fb7"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/guard.mjs",
+      "bytes": 7880,
+      "sha256": "0eacf129f8a44d95e83052f5b949cf4c5a42c82f9ebfffa1b38259b3a99308de"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/config.mjs",
+      "bytes": 4372,
+      "sha256": "1d6fd1ed97164b3f72de507c4aea66cba1645d30d87a736ecafae871ab36e039"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/peer.mjs",
+      "bytes": 2877,
+      "sha256": "839ae672fa23258d255a9d59f25ce015050330173e0ee8c2b0d2e0a55ef5aea3"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 8200,
+      "sha256": "38448a6d89890315047d3e82f192481eb78fc159c98ab44547d70925a6d65042"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4052,
+      "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12741,
+      "sha256": "5fa81b90376f441b84f20578b79845aec20fc6a3a5cdcbc9e369a1ee64599401"
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/index.ts",
+      "bytes": 1083,
+      "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8"
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/store.ts",
+      "bytes": 1466,
+      "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 13874,
+      "sha256": "19d90e2279d350e133ebea9099e8a0c1b5b601c674e9567758a16b32b2adf316"
+    },
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 37212,
+      "sha256": "721462314456d68fca547e5e4b6c8f4da98540116564f6266644bf33208a053c"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 265530,
+      "sha256": "cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c"
+    }
+  ],
+  "sourceDigest": "3f7a3323606956ba194536d55c7957037babcd7247e89ff2ab250acc286f7a87",
+  "distinctChecks": {
+    "guards": 6,
+    "successJourney": 1,
+    "rejectionJourneys": 4,
+    "total": 11,
+    "batches": 3
+  },
+  "syntaxModules": 8,
+  "providerQueries": 0,
+  "nativePermitCreated": false,
+  "independentReview": "NOT_STARTED"
+}
