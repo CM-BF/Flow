@@ -6,7 +6,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - [X01中心静态安装DTO固定输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-installation-seam-request.md)：cb20a75dddc0bddc724b88d66437444b397391f9 的 packages/contracts/src/plugin-installations.ts 可供F01薄client准备；领域后继沿原owner。
 
-- [F01 transport审查已结束，待Lead修复credentials](client-transport-review.md)：13:18:17 CHANGES_REQUESTED，唯一Bearer互斥P2。
+- [F01 transport修复已APPROVED](client-transport-review.md)：d6d5089c，原Bearer互斥P2关闭，Mika13:38:16接收。
 
 - [S01P06已审正式集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds/docs/evidence/s01p06/integration-ready.md)；固定cdd3cb1c，唯一owner/status沿该树。
 - [X01中心安装小合同/共享scope与唯一DDL请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-installation-seam-request.md)：84529441权威输入，已审leaf可独立接收。
