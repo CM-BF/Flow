@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-06T12:23:46.582Z",
+  "sourceCount": 148,
+  "task": {
+    "id": "WPF-DPERF03",
+    "title": "看板读取并发与快照复用",
+    "role": "工程协作",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot",
+    "branch": "codex/dashboard-git-snapshot",
+    "planDir": "plans/wpf-dperf03",
+    "evidenceDir": "docs/evidence/wpf-dperf03"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "看板单次读取已限流，重复主线观察减少且保留未知状态",
+    "next": "集成已审看板读取改进",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": "Registry uniqueness/paths/parser only; implementation review separately by Web root"
+}
