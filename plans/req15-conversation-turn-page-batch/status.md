@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:33:15 UTC；main未集成，本次真实PG fixture/封套准备，0执行 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:35:34 UTC；main未集成，真实PG准备包已固定，0执行 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；本次准备前HEAD d9e31e7baf4180c7a94cb0575947f0e03bcd291a |
-| 工作树dirty状态 | 原HEAD d9e31e7b；dirty仅自身PG fixture/封套/供给回执和计划元数据，已审8产品/测试及设计packet不变 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；本次PG准备源码HEAD 5ddddd6a7991243b5c42e223b11df879f0fa9498 |
+| 工作树dirty状态 | 准备源码5ddddd6a已核clean；本次仅交付metadata，已审8产品/测试及设计packet不变 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | d209eb7275777d50f214fd73f66d6b3c1520c459 |
@@ -22,8 +22,9 @@
 | 优先级 | 2 |
 | 当前产出 | 批量读取局部验收已通过，真实分页与并发快照验收包已准备待审 |
 | 下一可用交付 | 完成真实数据库验收包独立静态审查，资源恢复后安排局部检查 |
-| 当前阻塞 | ACTIVE: 后继运行等待可用资源与共享数据库恢复；当前静态审可继续 |
+| 当前阻塞 | ACTIVE: 后继运行等待可用空间和共享窗口；当前静态审可继续 |
 | 需用户决定 | NONE |
+| 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source review PENDING |
 | Review | [review.md](review.md)，APPROVED d209eb7275777d50f214fd73f66d6b3c1520c459（局部source+fake+strict）；后继PG准备另审 |
 | Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；10 literal见[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
 | 架构影响 | conversation读取内部新增批量Interface，外部契约/事务所有者不变；实现固定后由Lead核架构基线是否需同步，当前未作main事实 |
@@ -66,3 +67,5 @@
 2026-10-06 23:22:24 UTC：两SQL由唯一供给方23:19:09交回，owner核007/025及原002/009 bytes/hash并逐字归档[回执](../../docs/evidence/req15-turn-page-batch/pg-provision-receipt.json)，SHA32fa2093f32b2f50fe3b09b0e086ceeaeaf8471620f6dddfb6e7b1e853000862。SQL等待解除，当前在原scope编写两case PG fixture/封套；产品8路径冻结。供给末free1070768128B为operator观察，仍无运行许可；0import/types/tests/PG/HTTP。driver静态设计获root STATIC_MEASUREMENT_DESIGN_ACCEPTED/0 P1/P2，严格限专属subject、UTF8/text、串行await及仅移自身listener；不是真实测量通过。SVC旧入口SHA982c不变，OPS14后继延至其真实HTTP结果封存后单独协调，不改历史raw。
 
 2026-10-06 23:33:15 UTC准备安全点：静态source闭包74个TS文件均在本树，无missing；新增seed/observer/两case和薄封套职责分开，固定旧supervisor纯函数，不迁移OPS14、不改产品8路径。观察器在Pool.query seed结束后安装以避开callback-form；cleanup先等原Promise，再关池、核OID/marker/owner/零连接、普通DROP，secondary不替主错误。clean-code复核命名/单一职责/小Interface/错误与资源生命周期，保留行为断言而非实现镜像；新types/collect/实际PG仍NOT_RUN。Lead报告OrbStack socket与55432无监听、沿原身份恢复，owner没有重复ledger/PG探针；既有v1claim保留，固定后停止本段写入，后继须fresh核验恢复事实。主线与HTTP未集成/未验证，不用本packet替代。
+
+2026-10-06 23:35:34 UTC固定交付：PG准备target `5ddddd6a7991243b5c42e223b11df879f0fa9498` clean，manifest `df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e`（95文件429768B，74个静态import源）；9依赖realpath/package hash、8 driver source hash与旧supervisor SHA静态核一致，6项实际输出absent。原8产品/测试与d209无diff，0新imports/types/collect/tests/PG。root于23:35:31.024Z在Lead恢复既有OrbStack/PG后fresh核ledger available、09b83400 v1 ACTIVE及10scope/owner/WT/branch不变；owner未重复探针。free1055133696B为Lead观察，仍不足检查；Lead仍持个人恢复窗口。本段交回source独审，保持安全停写，不新take/amend、不抢SVC07优先窗口。

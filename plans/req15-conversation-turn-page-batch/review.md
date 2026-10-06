@@ -46,8 +46,10 @@ root/Mika + architecture_read，2026-10-06（reviewer消息回传，未提供独
 
 ## 真实PG准备包源码审查请求
 
-2026-10-06 23:33:15 UTC：两SQL供给回执已核并归档，driver静态接缝另获Mika STATIC_MEASUREMENT_DESIGN_ACCEPTED/0 P1/P2（非执行批准）。本次[固定准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)新增两case、seed/observer小支持模块和一次性封套；固定提交由owner交回完整HEAD，结论 **REVIEW_PENDING**。
+2026-10-06 23:33:15 UTC：两SQL供给回执已核并归档，driver静态接缝另获Mika STATIC_MEASUREMENT_DESIGN_ACCEPTED/0 P1/P2（非执行批准）。本次[固定准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)新增两case、seed/observer小支持模块和一次性封套；固定target `5ddddd6a7991243b5c42e223b11df879f0fa9498`，manifest `df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e`（95文件429768B），结论 **REVIEW_PENDING**。
 
 请按[输入manifest](../../docs/evidence/req15-turn-page-batch/pg-prepared-manifest.json)分别审查：（1）公开turnPage/readAssistantFinalPreviews断言与真实SQL/schema/UTF8观察接缝，尤其第51项、每task LIMIT2、paired绑定、RR writer COMMIT ACK；（2）专库CREATE/OID/marker/zero-connections普通DROP、原Promise结算、首失败保留、输出wx、固定supervisor/30s预算与UNKNOWN边界。只读，不运行导入/types/PG。新types/collect/PG全部NOT_RUN；旧26/26与strict-v2不重复，六产品和两fake文件不变。
 
 共享协调PG已由Lead报告不可用；当前合法claim保留，本段固定后停写。后继新工作须待Lead恢复并重新核claim，禁止将读取失败当空闲或重复take/amend。
+
+23:35:31.024Z恢复补充：root fresh ledger已available且原v1claim/10scope不变；没有新的领取。资源与窗口仍不足，types/collect/PG保持NOT_RUN，静态source review不受该运行等待影响。
