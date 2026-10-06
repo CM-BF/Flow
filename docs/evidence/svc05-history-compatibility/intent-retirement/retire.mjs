@@ -53,7 +53,7 @@ function assertConfirmation(request, fact) {
   if (!fact || fact.source !== source || fact.sourceClean !== true || fact.runnerId !== request.runnerId
     || fact.operationId !== request.operationId || fact.version !== request.holdVersion || fact.state !== 'maintenance'
     || fact.runnerStopped !== true || fact.soleWriterConfirmed !== true || fact.inventoryComplete !== true
-    || fact.globalUnfinished !== 0 || fact.globalUncertain !== 0 || fact.pendingTasks !== 0
+    || fact.globalUnfinished !== 0 || fact.globalUncertain !== 0 || fact.pendingTasks !== 0 || fact.pendingQueue !== 0
     || fact.pendingOutbox !== 0 || fact.pendingFinal !== 0 || fact.pendingUnknown !== 0) fail('FENCE_UNCONFIRMED');
 }
 function fixedNewBytes(original) {

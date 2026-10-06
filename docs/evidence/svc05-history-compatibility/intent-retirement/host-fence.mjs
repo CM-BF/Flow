@@ -20,7 +20,7 @@ async function fixedSource() {
 
 // This one operation allows only the four previously hashed result files, plus the one journal.
 // Any new pending/uncertain/final proposal, temp or unfamiliar file refuses resolution.
-async function exactHistory(request) {
+export async function exactHistory(request) {
   if (!Array.isArray(request.history) || request.history.length !== 4) fail('HISTORY_INPUT');
   const allowed = new Map(request.history.map(item => [item.path, item]));
   if (allowed.size !== 4 || request.history.some(item => !new RegExp('^' + request.namespace + '/[a-f0-9]{64}/claude-result-[a-f0-9-]{36}\\.txt$').test(item.path)
@@ -86,11 +86,12 @@ export async function withHostFence(request, use) {
         const counts = (await client.query(`SELECT
           (SELECT count(*)::int FROM flow.attempts WHERE completed_at IS NULL) unfinished,
           (SELECT count(*)::int FROM flow.tasks WHERE status='uncertain') uncertain,
-          (SELECT count(*)::int FROM flow.tasks WHERE status NOT IN ('succeeded','failed','cancelled')) pending`)).rows[0];
+          (SELECT count(*)::int FROM flow.tasks WHERE status NOT IN ('succeeded','failed','cancelled')) pending,
+          (SELECT count(*)::int FROM flow.conversation_queue WHERE state='waiting') queue`)).rows[0];
         return { source, sourceClean: true, runnerId: runner.id, state: runner.maintenance_state,
           operationId: runner.maintenance_operation_id, version: runner.maintenance_version,
           runnerStopped: true, soleWriterConfirmed: true, inventoryComplete: true,
-          globalUnfinished: counts.unfinished, globalUncertain: counts.uncertain, pendingTasks: counts.pending,
+          globalUnfinished: counts.unfinished, globalUncertain: counts.uncertain, pendingTasks: counts.pending, pendingQueue: counts.queue,
           pendingOutbox: 0, pendingFinal: 0, pendingUnknown: 0 };
       };
       const result = await use(confirm); await client.query('COMMIT'); return result;

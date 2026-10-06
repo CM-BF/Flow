@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { randomUUID } from 'node:crypto';
 import { retireIntent, inspectRetirement, identity, sha, source } from './retire.mjs';
+import { exactHistory } from './host-fence.mjs';
 
 let peakBytes = 0;
 async function fixture(run) {
@@ -19,7 +20,7 @@ async function fixture(run) {
     runnerIdentity: identity(await lstat(join(root, 'runner'))), namespaceIdentity: identity(await lstat(directory)), journalIdentity: identity(await lstat(journal)) };
   const fact = { source, sourceClean: true, runnerId: request.runnerId, operationId: request.operationId, version: 17, state: 'maintenance',
     runnerStopped: true, soleWriterConfirmed: true, inventoryComplete: true, globalUnfinished: 0, globalUncertain: 0,
-    pendingTasks: 0, pendingOutbox: 0, pendingFinal: 0, pendingUnknown: 0 };
+    pendingTasks: 0, pendingQueue: 0, pendingOutbox: 0, pendingFinal: 0, pendingUnknown: 0 };
   const ports = { withFence: async (_request, use) => use(async () => fact) };
   const archive = join(root, 'admission-retirement-' + request.retirementId);
   try { await run({ request, fact, ports, journal, original, archive, directory }); }
@@ -90,4 +91,27 @@ test('duplicate operation never rewrites a failed pre-rename attempt', () => fix
   delete f.ports.boundary;
   const second = await retireIntent(f.request, f.ports); assert.equal(second.code, 'EEXIST'); assert.equal(second.outcome, 'unknown');
   assert.deepEqual(await readFile(f.journal), f.original);
+}));
+test('pending queue refuses retirement while empty queue allows the same guarded transition', () => fixture(async f => {
+  f.fact.pendingQueue = 1;
+  assert.equal((await retireIntent(f.request, f.ports)).outcome, 'not-retired'); assert.deepEqual(await readFile(f.journal), f.original);
+  f.fact.pendingQueue = 0; assert.equal((await retireIntent(f.request, f.ports)).outcome, 'retired');
+}));
+test('actual bounded inventory rejects history changes and all pending/unknown files', () => fixture(async f => {
+  await rm(join(f.directory, 'historical-result.txt'));
+  f.request.history = [];
+  for (let i = 0; i < 4; i++) {
+    const path = f.request.namespace + '/' + sha(String(i)) + '/claude-result-' + randomUUID() + '.txt';
+    const local = join(f.request.root, 'runner', path); await mkdir(join(f.directory, sha(String(i))), { mode: 0o700 });
+    const bytes = Buffer.from('immutable synthetic result ' + i); await writeFile(local, bytes, { mode: 0o600 });
+    f.request.history.push({ path, bytes: bytes.length, sha256: sha(bytes) });
+  }
+  await exactHistory(f.request);
+  const changed = join(f.request.root, 'runner', f.request.history[0].path), original = await readFile(changed);
+  await writeFile(changed, 'changed'); await assert.rejects(exactHistory(f.request), { code: 'HISTORY_CHANGED' }); await writeFile(changed, original);
+  for (const name of ['pending-events.json', 'pending-final-proposal.json', 'uncertain-events.json', 'unfamiliar.tmp']) {
+    const extra = join(f.directory, sha('0'), name); await writeFile(extra, '{}', { mode: 0o600 });
+    await assert.rejects(exactHistory(f.request), { code: 'PENDING_OR_UNKNOWN_FILE' }); await rm(extra);
+  }
+  await exactHistory(f.request);
 }));
