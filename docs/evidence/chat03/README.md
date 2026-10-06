@@ -30,3 +30,5 @@ runner guard公开测试覆盖旧digest/另runner/另profile、配置漂移、�
 限制：配置是runner声明而非远程可信测量；摘要只绑定授权路径和策略，不证明内容版本；实际provider availability、真实模型执行、外部U11 UI、生产profile挂载/部署均未由本target验证。main并未因本分支测试而获得能力。catalog无热更新；改变配置需新identity，resume不能迁移。历史conversations投影N+1/全文digest开销仍是既有后继，不在本片段扩性能结论。独立review仍NOT_STARTED。
 
 文本运行日志只规范了末尾多余空行，使git diffcheck通过；测试正文、时间与结果未改写。JSON领取回执未重写。最终复核确认flow_chat03、flow_chat01、flow_r03均已不存在，无本轮残留服务。
+
+固定实现 target：a28ca199905b2d0aac95a0d440c8bc525380cdc3；合同祖先60b6736、公共client祖先94f50a。后续只补target/review/status metadata，不重新描述为一次新的运行。44条组合与6条补充中有4条重叠，共覆盖46条不同局部行为；不把原始中断组合统计进“全套通过”。
