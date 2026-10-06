@@ -1,6 +1,6 @@
 # O09 Owner 授权单节点原生文本执行
 
-编号 O09；状态 in-progress；创建2026-10-06 07:50 UTC，更新2026-10-06 08:09 UTC。父产品目标 U11/O01；本片为工程切片，不宣称完整自主执行。唯一owner assignment_review / gpt-6-astra；worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution，branch codex/native-goal-node-execution；base84fdecebbb4939e43710fb17e48884cc49d1d030。
+编号 O09；状态 completed；创建2026-10-06 07:50 UTC，更新2026-10-06 08:10 UTC。父产品目标 U11/O01；本片为工程切片，不宣称完整自主执行。唯一owner assignment_review / gpt-6-astra；worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution，branch codex/native-goal-node-execution；base84fdecebbb4939e43710fb17e48884cc49d1d030。
 
 GO方向及Lead精确6scope已批准。owner显式选择已登记 configured-readonly Claude profile执行单个文本child。独立owner DTO/route，不扩旧GoalCommand.execute/GoalToolPort或planner grant；旧fixture行为保留。普通Read仅限profile既有授权本地材料，不能工程写文件/terminal；现有K03知识owner选择、版本/摘要核对、冻结私有prompt复用。profile none或goal工具模式不悄悄降级/转换。
 
@@ -11,7 +11,7 @@ GO方向及Lead精确6scope已批准。owner显式选择已登记 configured-rea
 - [x] O09-01：fresh领取、固定独立owner合同/接口和技能记录。
 - [x] O09-02：公开owner受理同TX/幂等/版本/readonly profile与旧grant隔离真实PG闭环。
 - [x] O09-03：真实HTTP/PG+现Claude query注入跑frozen输入→typed final/产物/verifier；旧fixture必要回归。
-- [ ] O09-04：原始失败/最终证据、clean-code、固定target，独立review和main接收。
+- [x] O09-04：原始失败/最终证据、clean-code、固定target，独立review和main接收。
 
 ## 验证与范围
 
@@ -22,3 +22,5 @@ GO方向及Lead精确6scope已批准。owner显式选择已登记 configured-rea
 ## 原生验收后继候选
 
 [单 child native 验收候选](../../docs/evidence/o09/native-acceptance-candidate.md)只记录固定合成文本、专属 readonly profile、一次受理及机械/语义分层、隔离资源和独立新预算建议；当前0query，没有生成permit或新增driver。领域7ddd763已审且产品源码停写，生产接线/main接收由Lead推进。该候选不能移用O08已封存预算，不扩大本片实现TODO；选定后另派验收器范围并固定证据，执行仍需GO明确单次预算。
+
+2026-10-06 08:10 UTC：本工程片段已审并进入main fc113945ff73d1a43092d0a70b51e901aa4be1e2，原领域范围逐字相同；main接收事实见status。后继真实native候选仍未授权执行，不以本片完成关闭父产品后继。
