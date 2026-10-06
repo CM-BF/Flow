@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 19:47:04 UTC |
+| 最近更新时间 | 2026-10-06 19:53:57 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 摘要与详情的直接检查通过，浏览器验证的清理和停止流程已补修 |
-| 下一可用交付 | 完成浏览器准备复审，再验收页面阅读和异步响应 |
+| 当前产出 | 摘要与详情的直接检查通过，浏览器清理与停止流程已通过限定源码复审 |
+| 下一可用交付 | 权限边界与运行窗口确认后，验收页面阅读和异步响应 |
 | 当前阻塞 | ACTIVE: 等待浏览器权限边界确认和独立运行窗口 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：b17/root+manager与populated限定审已完成；新TAIL/SOFT-STOP准备修复待复审，browser/全片未验，Node8与4fac历史保留 |
+| Review | [review.md](review.md)，UNKNOWN：45f8生命周期源码与准备稿已获root限定批准，TAIL/SOFT-STOP为SOURCE_ADDRESSED；browser/全片未验，abd2 Node8/3950ms与4fac历史保留 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -97,4 +97,10 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 
 固定实现 `45f8a185ad0d43543a3c9eca7a29da97ebb31ba9` 只改共享browser wrapper/import生命周期；6其余源、summaryFixture/summaryChecks/main与整个task-links字节不变。新/tmp父监督器资源扫描非ENOENT错误上抛，双组reap后删除前与结果/预算写后补采样，记录实际末尾monotonic观察；SIGTERM/INT走同清理且记失败，finally恢复handler，不声称SIGKILL可保证。native Chrome独立组保持原生sandbox，Node仍custom sandbox；Chrome失去外层OS写/egress约束必须单独Lead接受，目前null/无gate，Settings批准不能代替。
 
-当前source-only修复待固定独立复审；0新Node/import/parser/Chrome/PG/HTTP/free/安装。Node仍abd2原8PASS/3950ms，browser仍0/60000ms含15000cleanup，fullfeatureUNKNOWN/mainNOT_INTEGRATED。normalpush/双端clean由提交后回执核验，不把提交前metadata dirty冒称提交后事实。
+该19:47历史安全点source-only修复当时待固定独立复审；0新Node/import/parser/Chrome/PG/HTTP/free/安装。Node仍abd2原8PASS/3950ms，browser仍0/60000ms含15000cleanup，fullfeatureUNKNOWN/mainNOT_INTEGRATED。normalpush/双端clean由提交后回执核验，不把提交前metadata dirty冒称提交后事实。
+
+## 2026-10-06 19:53:57 UTC 限定源码复审归档
+
+[root正式原件](../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-45f8-source-review.json)绑定45f8/实际metadata3a51，结论APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN，0blocking；TAIL/SOFT-STOP仅SOURCE_ADDRESSED。本人核[管理fresh原9范围观察](../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/approval-metadata-scope-observation.json)后只做metadata归档。
+
+完整feature仍UNKNOWN，browser0/60000ms（含15000ms清理），原abd2 Node8/3950ms不迁移；main/部署未完成。nativeChromeBoundaryApproval仍null，19:46机会NOT_RUN已归还，没有新gate/运行窗口。本段不改七源码、候选或binding，不运行parser/产品检查或采空间；提交前metadata dirty，提交后normalpush及双端clean另核。全部原9范围在本次seal后停写，claim保留待后续明确派工。

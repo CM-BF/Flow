@@ -1,0 +1,263 @@
+{
+  "at": "2026-10-06T19:50:25.820812+00:00",
+  "verdict": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN",
+  "target": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "metadataHead": "3a51a78ebd7f90e36fa2c0c1f5e9d83c2ec4e51c",
+  "branch": "codex/dashboard-summary-detail",
+  "dirty": false,
+  "candidate": "/private/tmp/dperf-b2",
+  "manifestSha256": "4c9cfcc21cf3736343d8c6265b0e1fb7cafc7ee273d9332ebf2bd199a772391f",
+  "supervisorSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+  "wrapperSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+  "bindingSha256": "ce84127219097e032aed35edf5836e5e8a43a2874205d4d1198ae177bb46a58e",
+  "blockingFindings": [],
+  "findingsClosed": [
+    {
+      "id": "DPERF-TAIL",
+      "status": "SOURCE_ADDRESSED",
+      "reason": "Separate non-deadline observation after both groups reaped before deletion, post-result/budget observations and monotonic observed timing; non-ENOENT tree scan failures propagate, safe cleanup still attempted."
+    },
+    {
+      "id": "DPERF-SOFT-STOP",
+      "status": "SOURCE_ADDRESSED",
+      "reason": "SIGTERM/SIGINT set stop flag and explicit failure; same finally signals/reaps both owned groups; outer finally restores handlers even on persistence failure."
+    }
+  ],
+  "reviewed": [
+    "Read complete wrapper delta and Settings-b4 comparison, including separateChrome launch, parent-bound CDP endpoint, unchanged fixture/check bodies and single entry binding. Worker has no Chrome spawn/signals; context/CDP/server/fixture cleanup remains explicit.",
+    "Native Chrome owned profile/temp/cache/Crashpad environment, default native sandbox and HOME preservation; actual code/signal/stream EOF/drop counters recorded. Unknown group liveness retains scratch.",
+    "Node uses exact existing sandbox scratch/output writes and localhost network; readiness records distinguish port discovery/CDP connect. Parent binds original source/entry/claim/budget and independently pinned actual boundary decision.",
+    "Actual afterResultBudgetWritesElapsedMs is a monotonic observation after earlier writes; final serialization follows, so this is not exact last-byte time or a physical hard deadline/quota.",
+    "New candidate only addresses lifecycle/readiness. Native Chrome outer custom file-write/egress confinement is removed, explicitly disclosed, and requires actual Lead acceptance; root source approval does not supply it."
+  ],
+  "validation": {
+    "pythonAST": "PASS ast.parse only; no supervisor execution",
+    "candidatePins": [
+      {
+        "path": "/private/tmp/dperf-b2/binding.json",
+        "bytes": 15052,
+        "sha256": "ce84127219097e032aed35edf5836e5e8a43a2874205d4d1198ae177bb46a58e",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/dperf-b2/report.md",
+        "bytes": 4118,
+        "sha256": "b55e124864db8c96ff3b77cbdd5a5e780060b62140cfddf03078a2748903e157",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/dperf-b2/source-audit.json",
+        "bytes": 3856,
+        "sha256": "57171a8227be6d9362cb47464731a176d33fa051e9b2dc92813b88d4eebdd20e",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/dperf-b2/supervisor.py",
+        "bytes": 22052,
+        "sha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/dperf-b2/supervisor.py.diff",
+        "bytes": 29797,
+        "sha256": "c5f906dfad7bcba6d159abc25de11d675b21ba074f81638f1149b592686e1073",
+        "matches": true
+      },
+      {
+        "path": "/private/tmp/dperf-b2/wrapper.diff",
+        "bytes": 11336,
+        "sha256": "7db306af1a0d2999dc7a6e702d1f462d0f4cde44ab70e263e4c66f22764696e8",
+        "matches": true
+      }
+    ],
+    "sourcePins": [
+      {
+        "path": "apps/execution-dashboard/src/read-model.mjs",
+        "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+        "matches": true,
+        "equalsB17": true
+      },
+      {
+        "path": "apps/execution-dashboard/src/aggregate.mjs",
+        "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+        "matches": true,
+        "equalsB17": true
+      },
+      {
+        "path": "apps/execution-dashboard/src/server.mjs",
+        "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+        "matches": true,
+        "equalsB17": true
+      },
+      {
+        "path": "apps/execution-dashboard/public/app.js",
+        "sha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+        "matches": true,
+        "equalsB17": true
+      },
+      {
+        "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5",
+        "matches": true,
+        "equalsB17": true
+      },
+      {
+        "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "sha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+        "matches": true,
+        "equalsB17": false
+      },
+      {
+        "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+        "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+        "matches": true,
+        "equalsB17": true
+      }
+    ],
+    "readOnlyPins": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/human.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/task-links.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/status.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/registry.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/proof.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/git-snapshot.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/documents.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/coordination/ledger.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/fixture.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/index.html",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/styles.css",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture-data.js",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/package.json",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-lock.yaml",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-workspace.yaml",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.js",
+        "matches": true
+      },
+      {
+        "path": "/opt/homebrew/opt/node@24/bin/node",
+        "matches": true
+      },
+      {
+        "path": "/opt/homebrew/Cellar/node@24/24.20.0/INSTALL_RECEIPT.json",
+        "matches": true
+      },
+      {
+        "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+        "matches": true
+      },
+      {
+        "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "matches": true
+      },
+      {
+        "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.js",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+        "matches": true
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+        "matches": true
+      }
+    ],
+    "summaryFixtureUnchanged": true,
+    "summaryChecksAndMainUnchanged": true,
+    "entireTaskLinksUnchanged": true,
+    "oldParentPreserved": true,
+    "runtime": "NOT_RUN",
+    "spaceOrServicesSampling": false,
+    "projectWrites": false
+  },
+  "admission": "Current Web ready-first19:46 opportunity already returnedNOT_RUN, no shared holder. Real exact-candidate Lead boundary acceptance, new explicit shared window, fresh originalb554v1/9 claim/source/head/dependency/space/previousbudget required. Metadata-only hash rebind must preserve source tuple. This review does not authorize state/gate without remaining conditions.",
+  "limits": [
+    "Browser0/60000ms with15000cleanup; no child or native154 run",
+    "Historical abd2 Node8 PASS/3950ms preserved; not rerun or reassigned to45f8",
+    "Fullfeature browser focus/selection/races/themes/task-links/main/deployment remain incomplete",
+    "No personalservices/tab/provider operation; no automatic successor task-links run"
+  ],
+  "cleanCode": "One parent budget and two explicit process-group owners; worker only fixture and CDP connection, no duplicate writer or generic broker; reported lifecycle defects addressed without business assertion edits."
+}

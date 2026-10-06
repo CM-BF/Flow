@@ -43,7 +43,7 @@
     ],
     "ownNativeChrome": true,
     "fixture": "Same two temporary repositories and explicit unknown ledger; no real registry/PG",
-    "current": "NOT_RUN 0/60000ms; TAIL/SOFT-STOP and native sibling preparation requires independent delta review, separate Lead boundary decision and fresh gate",
+    "current": "NOT_RUN 0/60000ms; root45f8 scoped source/preparation review complete; native Chrome boundary acceptance remains null; 19:46 opportunity returned NOT_RUN; new explicit shared window and fresh admission required",
     "temporaryBytes": 67108864,
     "temporaryLimitMeaning": "Both logical and allocated scratch observations; polling guard, not hard quota",
     "retainedLimitMeaning": "8MiB cumulative evidence distinct from 64MiB temporary profile/scratch",
@@ -52,10 +52,15 @@
       "path": "/private/tmp/dperf-b2/supervisor.py",
       "sha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
       "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
-      "previousSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43"
+      "previousSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+      "stateMeaning": "Original candidate state preserved; independent source approval is recorded separately and is not promotion/admission"
     },
     "nativeChromeBoundaryApproval": null,
-    "boundaryDifference": "Chrome no longer has custom outer OS file-write/egress policy; native sandbox kept; explicit independent acceptance required"
+    "boundaryDifference": "Chrome no longer has custom outer OS file-write/egress policy; native sandbox kept; explicit independent acceptance required",
+    "independentSourceReview": {
+      "path": "browser-lifecycle-repair/root-45f8-source-review.json",
+      "verdict": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN"
+    }
   },
   "implementationTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9"
 }

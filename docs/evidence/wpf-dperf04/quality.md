@@ -45,3 +45,7 @@
 本人核管理fresh原9与本树branch/HEAD/clean，沿本地find-skills优先已有clean-code/codebase-design/webapp-testing，未安装。复用Settings sibling准备的单父资源所有权；DPERF独立记录authority而不继承其许可。parent观察函数与工作deadline分离，非ENOENT扫描失败传播；普通信号在cleanup期间也记失败，handler用外层finally恢复；未知group不删scratch，SIGKILL不保证。Chrome日志/code/signal与Node结果分开，新增真实末尾time观察且说明最后序列化随后发生。
 
 wrapper只接精确parent端点、停止spawn/killChrome；fixture与check bodies/全task-links字节恒等，6其他源和15保护路径零差。初次静态差异断言误含旧metadata，已改成apps/源范围；不是产品或运行失败。diffcheck0、源码/hash/本地链接静态核，0新Node/parser/import/browser/PG/free。原独审链补归档；addendum的source回应尚待复审，browser/fullfeature不报绿。
+
+## 2026-10-06 19:53:57 UTC 独审metadata安全点
+
+复用已读本地find-skills/clean-code方法，仅消除当前摘要、review、入口和manifest中“delta复审尚待”的过时现状；原历史结论与原字节报告均保留。root45f8来源/范围/0blocking与SOURCE_ADDRESSED归因明确，全片UNKNOWN、browserNOT_RUN、native边界null不变；历史abd2 Node8/3950ms不迁移。原件SHA逐字核对，未改源码、candidate、binding、gate或原raw，未跑parser/产品检查/空间采样。seal后正常commit/push并核双端clean，原9scope停写且claim保留。
