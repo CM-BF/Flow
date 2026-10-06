@@ -49,7 +49,8 @@ export class ConversationOutbox {
     this.publish({
       id, conversationId: input.conversationId,
       creationKey: `${id}:create`, turnKey: `${id}:turn`,
-      creation: creation ? Object.freeze({ ...creation, requested: Object.freeze({ ...creation.requested }) }) : null,
+      creation: creation ? Object.freeze({ ...creation, requested: Object.freeze({ ...creation.requested }),
+        ...(creation.executionProfile ? { executionProfile: Object.freeze({ ...creation.executionProfile }) } : {}) }) : null,
       request, state: "sending", error: null, everUnknown: false,
     });
     return this.entry!;

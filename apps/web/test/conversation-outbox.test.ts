@@ -6,6 +6,20 @@ const input = { conversationId: "chat-a", expectedRevision: 2, text: "  hi\n" };
 const setup = () => { let id = 0; return new ConversationOutbox(() => `command-${++id}`); };
 
 describe("conversation admission outbox", () => {
+  it("deep-freezes the cloned execution profile pin through unknown CREATE and turn retries", () => {
+    const pin = { id: "10000000-0000-4000-8000-000000000001", runnerId: "10000000-0000-4000-8000-000000000002", configDigest: "a".repeat(64) };
+    const source = { ...creation, executionProfile: pin };
+    const outbox = setup(); const first = outbox.begin({ ...input, conversationId: null, expectedRevision: 0, creation: source });
+    pin.configDigest = "b".repeat(64); source.requested = { ...source.requested, model: "new selection" };
+    expect(first.creation?.executionProfile?.configDigest).toBe("a".repeat(64));
+    expect(Object.isFrozen(first.creation?.executionProfile)).toBe(true);
+    expect(Reflect.set(first.creation!.executionProfile!, "runnerId", pin.id)).toBe(false);
+    outbox.fail(first.id, "Unknown CREATE", false);
+    const retry = outbox.retry(first.id)!;
+    expect(retry.creation).toBe(first.creation); expect(retry.creationKey).toBe(first.creationKey);
+    outbox.bindConversation(first.id, "created"); outbox.fail(first.id, "Unknown turn", false);
+    expect(outbox.retry(first.id)).toMatchObject({ conversationId: "created", turnKey: first.turnKey, creation: first.creation });
+  });
   it("freezes sent payload and retries an unknown receipt with the same identity while a new draft remains independent", () => {
     const outbox = setup(); const draft = { ...input };
     const first = outbox.begin(draft);
