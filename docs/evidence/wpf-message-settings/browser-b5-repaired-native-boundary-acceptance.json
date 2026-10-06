@@ -1,0 +1,51 @@
+{
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "recordedAt": "2026-10-06T20:34:01.543920+00:00",
+  "recordedBy": "Web co-lead /root, pursuant to explicit GO decision",
+  "authority": {
+    "sourceThreadId": "01a10e15-b908-7a72-b8c0-222a26bf93ff",
+    "receivedVia": "codex_delegation inbound to this Web coordination task",
+    "decision": "GO explicitly accepted this native Chrome sibling boundary after readingB3 and R01 native-launch evidence; delegated co-lead exact runner/worker binding after SCAN-ERROR/source review; DPERF04 same launch boundary accepted with its own reviewed candidate, budget and window.",
+    "furtherGOOrUserConfirmationRequired": false
+  },
+  "conditions": [
+    "Chrome keeps its own native sandbox and this attempt owned short profile/cache/tmp/crash paths, explicit environment and owned processgroup.",
+    "Node fixture keeps the reviewed custom write/localhost-network sandbox.",
+    "Chrome no longer has the prior custom outer OS write/egress restriction; this is explicitly not equivalent confinement.",
+    "No personal profile, existingtabs, credentials or provider operations are authorized.",
+    "Fresh exact originalclaim/source/head/dependency/resource checks and separately available sharedwindow remain required. This record itself is not a gate or window.",
+    "Old failures, cumulative time and existing retained/scratch/free/cleanup limits are preserved; no blind retry loop."
+  ],
+  "runtime": "NOT_RUN by this acceptance",
+  "currentWindow": "Lead short personal attempt returned with no publish. Web holds no runtime; next <=45s native window handed back to Mika awaiting its own fresh gate/consumption and closure. This exact boundary acceptance grants no sharedwindow/gate.",
+  "task": "WPF-MESSAGESETTINGS01",
+  "candidate": "/private/tmp/msgset-b5",
+  "runnerSha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "sourceReview": {
+    "path": "/tmp/root-message-settings-b5-soft-stop-repaired-review.json",
+    "sha256": "3f0ba79c6c67d0db27253f207aae1f04e87677a7d8f30c4309e1acb1f7ede8d4",
+    "scope": "Repaired parent fixed preparation; no runtime"
+  },
+  "budget": {
+    "totalMs": 60000,
+    "spentMs": 20609,
+    "remainingMs": 39391,
+    "workMs": 24391,
+    "cleanupReserveMs": 15000,
+    "previousRetainedBytes": 741839
+  },
+  "limits": {
+    "scratchObservedMaxBytes": 67108864,
+    "retainedMaxBytes": 8388608,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688
+  },
+  "scope": "Only this exact reviewed runner and worker boundary; any materially different boundary or launch must remain explicit. Metadata-only sourcehead rebinding does not change these executable hashes.",
+  "supersedesExecutableBinding": {
+    "path": "/tmp/root-settings-b5-native-chrome-boundary-acceptance.json",
+    "sha256": "94f54941ef0795c1c3ff229387a1ccf6ac6129fe0ed2d19cd0c6fb3369e360ac",
+    "reason": "New exact parent runner after soft-stop fix; same previously GO-accepted native boundary"
+  }
+}

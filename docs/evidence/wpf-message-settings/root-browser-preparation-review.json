@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-06T18:48:17.567897+00:00",
+  "state": "APPROVED_BROWSER_PREPARATION_SOURCE_SCOPED_NOT_RUN",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "head": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+  "claim": {
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "scopeCount": 8,
+    "worker": "w01_owner"
+  },
+  "reviewedFiles": [
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/supervisor.py",
+      "bytes": 12268,
+      "sha256": "9f9adde0cc124a2bd27fe5b4c743472b471b9323b88a774c0b08aa67068283ff"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/binding.json",
+      "bytes": 33421,
+      "sha256": "cc734073452a59f56b641cc89ce9434d338df8a0940b90625d438a2f0d658d3c"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/manifest.json",
+      "bytes": 2299,
+      "sha256": "e1d0992a8d3a14d22d6d0703cb7affc8d532deca86f5bfd06b76ebd9a24b7c78"
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/worker.mjs",
+      "bytes": 8548,
+      "sha256": "a05181db3f9954a2a8b6e8bab2c9c3988dcb1869eb3b4918bbb974617846fda4"
+    },
+    {
+      "path": "/tmp/message-settings-browser-worker-peer-review/report.md",
+      "bytes": 7228,
+      "sha256": "b478e892af4c9bd2e45fba22bb772f0a2c9b9a58314136f75761e4a12c305405"
+    },
+    {
+      "path": "/tmp/message-settings-browser-worker-peer-review/audit.json",
+      "bytes": 7255,
+      "sha256": "ecd8eedf7c6fd0a89bdbe543bbcb1a02b862f7ffbd3e4e3dc3e6d80afc14ac00"
+    }
+  ],
+  "verification": {
+    "manifestFiles": 9,
+    "sources": 6,
+    "readOnlyDependencies": 116,
+    "preparedFiles": 4,
+    "externalPins": 37,
+    "failures": [],
+    "supervisorSyntax": "Python AST only; no execution",
+    "gitHead": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+    "gitDirty": ""
+  },
+  "resolvedFinding": "InitialP2 final scratch/free sample omitted is fixed: observe_resources runs after ownedgroup absence and before scratch deletion; observation failure is retained while cleanup still proceeds. Post-result/budget write observation, final retained-cap/deadline checks and result persistence preserve failure classification. No product source changed.",
+  "accepted": [
+    "Single new process group/owned Chrome PID/profile and exact loopback CDP; no existing tabs or user profile",
+    "Actual fixed browser exports and four original scenario groups, no copied replacement assertions",
+    "Gate binds head/sources/binding/runner/claim and cumulative60s incl15cleanup; preparation state still rejects runtime",
+    "Scratch64MiB and retained8MiB observation, bounded stdout/Chrome logs, final resource observation and explicit cleanup result",
+    "Source sandbox writes only own scratch/output; no installs/project cache writes; loopback network only; PG/provider environment removed",
+    "Independent worker/import review approved scoped, report/audit pinned above; fixedcurrent16 alias specifiers have no regexp metacharacters requiring the generic escaping branch"
+  ],
+  "limitations": [
+    "No runtime/import/HTTP/Chrome/PG/browser or free-space sampling; actual screenshots/latency/module-resolution/native sandbox remain NOT_RUN",
+    "Component/synthetic public-client catalog scope only; local A/B captures do not establish App send/queue/recovery integration",
+    "All transitively evaluated external bytes/Chrome framework are not exhaustively pinned; packageentry/metadata boundary only",
+    "Observed sampling is not a hard quota; unknown/missing/cleanup-failed result must remain failure",
+    "Do not generalize current alias-table acceptance to arbitrary future specifiers without reviewing escaping semantics"
+  ],
+  "next": "No gate or browser window granted. Manager may archive/freeze candidate; rebind only exact reviewedmetadata if sourceunchanged and obtain freshclaim/nooverlap plus originalLead sharedwindow afterR01. Existing37/direct/type and failedparentcount receipts are separate and must not be rerun/relabelled.",
+  "methods": "Local find-skills, webapp-testing, clean-code methods; root reviewed ownership/error/report paths and actual file hashes only. Root wrote only /tmp review."
+}

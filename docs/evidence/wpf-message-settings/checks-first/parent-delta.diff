@@ -1,0 +1,154 @@
+--- reviewed-dperf04-node-second/run.py
++++ message-settings/run.py
+@@ -1,4 +1,4 @@
+-"""Single-use DPERF04 Node check. Never runnable without separately pinned gate."""
++"""Single-use MessageSettings sequential noEmit/direct check. Never runnable without separately pinned gate."""
+ import datetime
+ import hashlib
+ import json
+@@ -76,11 +76,11 @@
+     if len(sys.argv) != 3 or sys.argv[1] != '--gate':
+         raise ValueError('An explicit external --gate path is required')
+     binding = read_json(BINDING)
+-    if binding['state'] != 'SOURCE_BOUND_NOT_RUN':
++    if binding['state'] != 'REVIEWED_SOURCE_BOUND_NOT_RUN':
+         raise ValueError('SOURCE_BINDING_PENDING')
+     gate = read_json(sys.argv[2])
+-    assert gate.get('allowRun') is True and gate.get('mode') == 'node-direct'
+-    assert gate['taskId'] == 'WPF-DPERF04' and gate['singleUse'] is True
++    assert gate.get('allowRun') is True and gate.get('mode') == 'types-and-direct'
++    assert gate['taskId'] == 'WPF-MESSAGESETTINGS01' and gate['singleUse'] is True
+     assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z', '+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+     assert gate['bindingSha256'] == digest(BINDING)
+     assert gate['runnerSha256'] == digest(__file__)
+@@ -88,7 +88,7 @@
+     assert gate['sourceHead'] == binding['head']
+     assert gate['implementation'] == binding['implementation']
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+-    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 1632
++    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 0
+     assert binding['limits']['totalSeconds'] == (30000 - binding['previousRuntimeMs']) / 1000
+     assert binding['limits']['cleanupReserveSeconds'] == 5
+     assert gate['limits'] == binding['limits']
+@@ -109,19 +109,24 @@
+     assert git('rev-parse', 'HEAD') == binding['head']
+     assert git('branch', '--show-current') == binding['branch']
+     assert git('status', '--porcelain') == ''
+-    assert len(binding['sources']) == 7
++    assert len(binding['sources']) == 6
+     for filename, expected in {**binding['sources'], **binding['readOnlyDependencies']}.items():
+         assert digest(root / filename) == expected, filename
+     node = binding['node']
+     assert str(Path(node['path']).resolve()) == node['realpath']
+     assert digest(node['realpath']) == node['sha256']
++    for item in binding['externalPins']:
++        assert str(Path(item['path']).resolve()) == item['realpath'], item['path']
++        assert digest(item['realpath']) == item['sha256'], item['path']
++    for filename, expected in binding['preparedFiles'].items():
++        assert digest(BASE / filename) == expected, filename
+     assert type(binding['expectedTestCount']) is int and binding['expectedTestCount'] > 0
+ 
+ 
+ def child_environment():
+     # Preserve HOME/home/CODEX_HOME. Redirect only this command's scratch/cache.
+     env = {key: value for key, value in os.environ.items()
+-           if not key.startswith(('FLOW_', 'PG', 'POSTGRES_', 'DPERF04_'))
++           if not key.startswith(('FLOW_', 'PG', 'POSTGRES_', 'MESSAGESETTINGS_'))
+            and key not in ('DATABASE_URL', 'NODE_OPTIONS', 'HTTP_PROXY', 'HTTPS_PROXY',
+                            'ALL_PROXY', 'http_proxy', 'https_proxy', 'all_proxy')}
+     for name in ('TMPDIR', 'TMP', 'TEMP', 'XDG_CACHE_HOME', 'NODE_COMPILE_CACHE'):
+@@ -179,13 +184,13 @@
+               'sourceHead': binding['head'], 'sourceHashes': binding['sources'],
+               'bindingSha256': digest(BINDING), 'runnerSha256': digest(__file__),
+               'sandboxSha256': digest(PROFILE), 'limits': limits,
+-              'kind': 'one Node test file; one owned loopback HTTP server; two tiny Git repositories; synthetic ledger; no PG/browser/external network',
++              'kind': 'one strict noEmit then two direct files/one fork; own loopback HTTP fixtures; no PG/browser/external network',
+               'samples': samples, 'previousRuntimeMs': binding['previousRuntimeMs']}
+     # Atomic consumption prevents retries even when a later admission/source check fails.
+     with (BASE / 'consumed-gate.json').open('x') as target:
+         target.write(json.dumps(gate, indent=2) + '\n')
+     static_raw_bytes = sum(f.stat().st_size for f in BASE.glob('*.json'))
+-    log_limit = limits['rawBytes'] - static_raw_bytes - limits['finalReportReserveBytes']
++    log_limit = limits['rawBytes'] - static_raw_bytes - limits['finalReportReserveBytes'] - limits['structuredReportBytes']
+     try:
+         assert log_limit > 0
+         verify_sources(binding, work_deadline)
+@@ -238,6 +243,37 @@
+         report['error'] = type(error).__name__ + ': ' + str(error)
+     finally:
+         selector.close()
++        # Inspect all evidence before removing own scratch; failures still reach cleanup/report.
++        captured = {}
++        capture_errors = []
++        try:
++            last_free = available_bytes(binding['worktree'])
++            last_size = logical_bytes(BASE)
++            samples.append({'seconds': round(time.monotonic() - started, 3), 'freeBytes': last_free, 'tmpBytes': last_size, 'terminal': True})
++            if last_free <= limits['stopFreeBytes']:
++                reason = reason or 'RESOURCE_STOP'
++            if last_size > limits['tmpBytes']:
++                reason = reason or 'TMP_LIMIT_STOP'
++            for filename in ('step-results.json', 'vitest-results.json'):
++                source = SCRATCH / filename
++                if not source.is_file() or source.is_symlink():
++                    capture_errors.append(filename + ': missing or symlink')
++                    continue
++                if source.stat().st_size > limits['structuredReportBytes']:
++                    capture_errors.append(filename + ': too large')
++                    continue
++                value = source.read_bytes()
++                parsed = json.loads(value)
++                (BASE / filename).write_bytes(value)
++                captured[filename] = parsed
++            if sum((BASE / name).stat().st_size for name in captured) > limits['structuredReportBytes']:
++                capture_errors.append('Combined structured reports too large')
++        except Exception as error:
++            capture_errors.append(type(error).__name__ + ': ' + str(error))
++        report['captureErrors'] = capture_errors
++        report['steps'] = captured.get('step-results.json')
++        direct = captured.get('vitest-results.json', {})
++        report['direct'] = {key: direct.get(key) for key in ('success', 'numTotalTests', 'numPassedTests', 'numFailedTests', 'numPendingTests', 'numTodoTests')}
+         cleanup_started = time.monotonic()
+         cleanup_errors = reap_owned(process, total_deadline)
+         if process and process.stdout:
+@@ -245,7 +281,7 @@
+         report['cleanup'] = {'state': 'fulfilled' if not cleanup_errors else 'failed',
+                              'errors': cleanup_errors, 'seconds': round(time.monotonic() - cleanup_started, 3),
+                              'groupAbsent': not group_alive(process), 'scratchAbsent': not SCRATCH.exists(),
+-                             'serverClosureBasis': 'Fixed server and Git children remain within the terminated/reaped owned process group; no external service used'}
++                             'serverClosureBasis': 'Both sequential commands and their fork/own HTTP fixture remain in the inherited worker group; no external service used'}
+         report['exitCode'] = process.returncode if process else None
+         report['logBytes'] = log_bytes
+         report['droppedObservedLogBytes'] = dropped_bytes
+@@ -253,20 +289,19 @@
+         report['cumulativeMs'] = binding['previousRuntimeMs'] + report['elapsedMs']
+         report['remainingMs'] = max(0, 30000 - report['cumulativeMs'])
+         report['finishedAt'] = utc_now()
+-        text = LOG.read_text(errors='replace') if LOG.exists() else ''
+-        passed = re.search(r'^# pass (\d+)\s*$', text, re.MULTILINE)
+-        failed = re.search(r'^# fail (\d+)\s*$', text, re.MULTILINE)
+-        report['tap'] = {'passed': int(passed[1]) if passed else None,
+-                         'failed': int(failed[1]) if failed else None,
+-                         'expectedTests': binding['expectedTestCount']}
+-        okay = (not reason and report['exitCode'] == 0 and not cleanup_errors
+-                and report['elapsedMs'] <= round(limits['totalSeconds'] * 1000)
+-                and report['cumulativeMs'] <= 30000 and report['tap']['passed'] == binding['expectedTestCount']
+-                and report['tap']['failed'] == 0 and dropped_bytes == 0)
++        expected_steps = report.get('steps') or []
++        steps_passed = (len(expected_steps) == 2 and [s.get('name') for s in expected_steps] == ['strict-noEmit', 'direct']
++                        and all(s.get('exitCode') == 0 and not s.get('signal') and not s.get('error') for s in expected_steps))
++        direct_passed = (direct.get('success') is True and direct.get('numTotalTests') == binding['expectedTestCount']
++                         and direct.get('numPassedTests') == binding['expectedTestCount'] and direct.get('numFailedTests') == 0
++                         and direct.get('numPendingTests') == 0 and direct.get('numTodoTests', 0) == 0)
++        okay = (not reason and report['exitCode'] == 0 and not cleanup_errors and not capture_errors
++                and report['elapsedMs'] <= round(limits['totalSeconds'] * 1000) and report['cumulativeMs'] <= 30000
++                and steps_passed and direct_passed and dropped_bytes == 0)
+         report['state'] = 'PASS' if okay else reason or 'FAIL'
+-        report['sourceMeaning'] = 'A successful bounded fixture does not establish production4320 latency, realPG assignments or browser behavior.'
++        report['sourceMeaning'] = 'Focused noEmit/direct cover these frozen leaf/legacy modules only, not rendered picker, App/Recovery mounting or provider behavior.'
+         encoded = (json.dumps(report, indent=2) + '\n').encode()
+-        if len(encoded) > limits['finalReportReserveBytes'] or static_raw_bytes + log_bytes + len(encoded) > limits['rawBytes']:
++        if len(encoded) > limits['finalReportReserveBytes'] or static_raw_bytes + log_bytes + len(encoded) + sum((BASE / name).stat().st_size for name in captured) > limits['rawBytes']:
+             report = {'state': 'REPORT_LIMIT_FAILURE', 'cleanup': report['cleanup'],
+                       'elapsedMs': report['elapsedMs'], 'logBytes': log_bytes,
+                       'fullReportBytes': len(encoded), 'sourceHead': binding['head'],

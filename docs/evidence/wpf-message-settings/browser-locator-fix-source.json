@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-06 20:11:18 UTC",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "baseSource": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "finding": "MSGSET-B4-LOCATOR/P2",
+  "changedPath": "apps/web/test/message-settings.browser.ts",
+  "reverseDeltaByteEqualsPrior": true,
+  "otherFiveUnchanged": [
+    "apps/web/src/execution-profiles/catalog.ts",
+    "apps/web/src/execution-profiles/selection.ts",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.test.ts",
+    "apps/web/test/message-settings.fixture.tsx"
+  ],
+  "newBrowserSha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c",
+  "old19RawHashesUnchanged": true,
+  "nearbySelectorAudit": "Only group locator in this file is now exact-named. Other dialogs/panes/buttons/radios retain existing semantic scopes; prior Runner hidden-details .first() unchanged and not introduced as a workaround. No further demonstrated same ambiguity in this narrow static check.",
+  "runtime": "NOT_RUN",
+  "spentMs": 20609,
+  "remainingMs": 39391,
+  "candidateBindingChanged": false,
+  "review": "PENDING_SCOPED_SOURCE_REVIEW",
+  "fullFeature": "UNKNOWN"
+}

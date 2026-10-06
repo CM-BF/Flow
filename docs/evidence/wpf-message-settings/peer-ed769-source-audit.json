@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-06T18:21:09.083489+00:00",
+  "verdict": "APPROVED_SOURCE_SCOPED",
+  "implementation": "ed769f929a7efe01a279ddd85c2e1e88b46839e6",
+  "metadata": "8bdcde32f1d1d23ec3525170eaefdac4cf844a05",
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "observedHead": "8bdcde32f1d1d23ec3525170eaefdac4cf844a05",
+  "branch": "codex/web-message-settings",
+  "dirty": "",
+  "scopedSources": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "bytes": 5649,
+      "fixedEqualsCurrent": true,
+      "equalsOwnerManifest": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "bytes": 9174,
+      "fixedEqualsCurrent": true,
+      "equalsOwnerManifest": true
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+      "bytes": 12100,
+      "fixedEqualsCurrent": true,
+      "equalsOwnerManifest": true
+    }
+  ],
+  "readonlyReferences": [
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962",
+      "bytes": 12150,
+      "fixedEqualsCurrent": true,
+      "readonlyEqualsBase": true
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "bytes": 4857,
+      "fixedEqualsCurrent": true,
+      "readonlyEqualsBase": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "6355ed6f114a7b01833a03488ed4b0c59fb9ebd91f88acedffcd4051834bbee5",
+      "bytes": 52725,
+      "fixedEqualsCurrent": true,
+      "readonlyEqualsBase": true
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "sha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d",
+      "bytes": 14848,
+      "fixedEqualsCurrent": true,
+      "readonlyEqualsBase": true
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "findings": [],
+  "runtime": "NOT_RUN: no Node/test/import/HTTP/PG/Chrome/space sample; Git/Python file/hash inspection only"
+}

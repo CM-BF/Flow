@@ -1,0 +1,137 @@
+{
+  "recordedAt": "2026-10-06 18:35:05 UTC",
+  "kind": "AUTHOR_RAW_FACTS_NOT_A_RERUN",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "sourceHead": "85abae9dd5ec95a52422fcca357007c124b60a49",
+  "rawSupervisorState": "FAIL",
+  "strictNoEmit": {
+    "name": "strict-noEmit",
+    "exitCode": 0,
+    "signal": null,
+    "elapsedMs": 1728
+  },
+  "direct": {
+    "success": true,
+    "numTotalTests": 37,
+    "numPassedTests": 37,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "files": [
+    {
+      "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/execution-profiles.test.ts",
+      "state": "passed",
+      "assertions": 21
+    },
+    {
+      "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.test.ts",
+      "state": "passed",
+      "assertions": 16
+    }
+  ],
+  "parentMismatch": {
+    "expectedTestCount": 20,
+    "actualTestCount": 37,
+    "sourcePredicate": "run.py:315-316 compares total and passed to the exact binding expectedTestCount;20 !=37. Original result unchanged."
+  },
+  "elapsedMs": 2762,
+  "cumulativeMs": 2762,
+  "remainingMs": 27238,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Both sequential commands and their fork/own HTTP fixture remain in the inherited worker group; no external service used"
+  },
+  "raw": [
+    {
+      "name": "admission.json",
+      "bytes": 1694,
+      "sha256": "20c79ad6f683a5c584a35e07af3a7738d4b71bf2dddd906c1a4e5aa35b8c5bd2"
+    },
+    {
+      "name": "binding.json",
+      "bytes": 35556,
+      "sha256": "cb474beea225ca25335d666c93e36e453cc52127323f755d5f619e66f159a59d"
+    },
+    {
+      "name": "consumed-gate.json",
+      "bytes": 1108,
+      "sha256": "9cf3dffad55ca5bdafa940042d59627d9bca5ca47b30f24bbca87d1cf4b4a107"
+    },
+    {
+      "name": "gate.json",
+      "bytes": 1108,
+      "sha256": "9cf3dffad55ca5bdafa940042d59627d9bca5ca47b30f24bbca87d1cf4b4a107"
+    },
+    {
+      "name": "node.log",
+      "bytes": 95,
+      "sha256": "0fb38e6ed6f8cab242bd7d07d92b9a9db325315209029feb7d7c0f3b5f4b45c7"
+    },
+    {
+      "name": "preparation.json",
+      "bytes": 2328,
+      "sha256": "e46bb23992f9792ba59365dd86024c243d0b86c707f8071e1ba715b42966e354"
+    },
+    {
+      "name": "result.json",
+      "bytes": 4237,
+      "sha256": "7aa2b25490784f39abf4c2137a5875a458f998e1b0e6b00734ae0fb95d5d61e5"
+    },
+    {
+      "name": "run.py",
+      "bytes": 17522,
+      "sha256": "adb3580e17e66894f1b4c06608b7a92f66c02b5630660afc1a407ba80d56db70"
+    },
+    {
+      "name": "sandbox.sb",
+      "bytes": 315,
+      "sha256": "a77a7ee558cd86737b88a857878d551a745352788b5ae3df7c1823c480629eab"
+    },
+    {
+      "name": "step-results.json",
+      "bytes": 193,
+      "sha256": "e7e1f37d0ae42d229fb9498100104b3074406bea21ff27fd5d0dee717f6aba5d"
+    },
+    {
+      "name": "steps.mjs",
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    {
+      "name": "tsconfig.json",
+      "bytes": 5871,
+      "sha256": "dd7509cc4ea94a5415f8675edcc4b4020e9b840cfaba32687227036442d9bd84"
+    },
+    {
+      "name": "vitest-results.json",
+      "bytes": 11408,
+      "sha256": "9897464aa2e0e425a46ef56ce36a3f1c60fa2906d112ae4e48a2c9d3056c0152"
+    },
+    {
+      "name": "vitest.config.mjs",
+      "bytes": 1140,
+      "sha256": "aad68c2b6fcae9f093b51ecddbb40337e9fe15981009d5bfac1c7027ffbf0a5c"
+    },
+    {
+      "name": "guard-fix.diff",
+      "bytes": 5469,
+      "sha256": "7f6ff9375125fc0624ff7c3afe199b0069a245b5ca59ed345f8fa638253e614f"
+    },
+    {
+      "name": "parent-delta.diff",
+      "bytes": 10632,
+      "sha256": "a246f5f9c1d52437693ae5a8b59f88557295e1e3f3f400f4c52efac19b729018"
+    }
+  ],
+  "notRun": [
+    "browser",
+    "App/Send/Queue/Recovery",
+    "PG/provider"
+  ],
+  "spaceObservation": "Only the admitted supervisor sampled shared free space; no independent resampling; variation is not attributed to this task."
+}

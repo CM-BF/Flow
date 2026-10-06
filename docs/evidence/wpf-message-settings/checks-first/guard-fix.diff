@@ -1,0 +1,101 @@
+--- candidate-before-rootreview/run.py
++++ candidate-after-guards/run.py
+@@ -137,8 +137,9 @@
+     return env
+ 
+ 
+-def reap_owned(process, total_deadline):
++def reap_owned(process, total_deadline, limits, worktree):
+     errors = []
++    terminal = {}
+     try:
+         signal_group(process, signal.SIGTERM)
+         until = min(total_deadline - 2.5, time.monotonic() + 1.5)
+@@ -157,6 +158,15 @@
+             errors.append('Owned process group remains')
+     except Exception as error:
+         errors.append('process cleanup: ' + str(error))
++    # Child group has been reaped; inspect its final writes before removing scratch.
++    try:
++        terminal = {'freeBytes': available_bytes(worktree), 'tmpBytes': logical_bytes(BASE), 'afterReapBeforeRemove': True}
++        if terminal['freeBytes'] <= limits['stopFreeBytes']:
++            errors.append('Final resource stop threshold reached')
++        if terminal['tmpBytes'] > limits['tmpBytes']:
++            errors.append('Final temporary byte limit exceeded')
++    except Exception as error:
++        errors.append('final monitoring: ' + str(error))
+     try:
+         if SCRATCH.exists():
+             shutil.rmtree(SCRATCH)
+@@ -166,7 +176,7 @@
+         errors.append('scratch cleanup: ' + str(error))
+     if time.monotonic() > total_deadline:
+         errors.append('Total deadline exceeded during cleanup')
+-    return errors
++    return errors, terminal
+ 
+ 
+ def run(binding, gate):
+@@ -189,7 +199,7 @@
+     # Atomic consumption prevents retries even when a later admission/source check fails.
+     with (BASE / 'consumed-gate.json').open('x') as target:
+         target.write(json.dumps(gate, indent=2) + '\n')
+-    static_raw_bytes = sum(f.stat().st_size for f in BASE.glob('*.json'))
++    static_raw_bytes = logical_bytes(BASE)
+     log_limit = limits['rawBytes'] - static_raw_bytes - limits['finalReportReserveBytes'] - limits['structuredReportBytes']
+     try:
+         assert log_limit > 0
+@@ -254,6 +264,7 @@
+                 reason = reason or 'RESOURCE_STOP'
+             if last_size > limits['tmpBytes']:
+                 reason = reason or 'TMP_LIMIT_STOP'
++            pending_bytes = {}
+             for filename in ('step-results.json', 'vitest-results.json'):
+                 source = SCRATCH / filename
+                 if not source.is_file() or source.is_symlink():
+@@ -264,10 +275,17 @@
+                     continue
+                 value = source.read_bytes()
+                 parsed = json.loads(value)
++                if filename == 'step-results.json':
++                    if not isinstance(parsed, list) or any(not isinstance(item, dict) for item in parsed):
++                        raise ValueError('step-results must be an array of objects')
++                elif not isinstance(parsed, dict):
++                    raise ValueError('vitest-results must be an object')
++                pending_bytes[filename] = value
++                captured[filename] = parsed
++            if sum(len(value) for value in pending_bytes.values()) > limits['structuredReportBytes']:
++                raise ValueError('Combined structured reports too large')
++            for filename, value in pending_bytes.items():
+                 (BASE / filename).write_bytes(value)
+-                captured[filename] = parsed
+-            if sum((BASE / name).stat().st_size for name in captured) > limits['structuredReportBytes']:
+-                capture_errors.append('Combined structured reports too large')
+         except Exception as error:
+             capture_errors.append(type(error).__name__ + ': ' + str(error))
+         report['captureErrors'] = capture_errors
+@@ -275,7 +293,9 @@
+         direct = captured.get('vitest-results.json', {})
+         report['direct'] = {key: direct.get(key) for key in ('success', 'numTotalTests', 'numPassedTests', 'numFailedTests', 'numPendingTests', 'numTodoTests')}
+         cleanup_started = time.monotonic()
+-        cleanup_errors = reap_owned(process, total_deadline)
++        cleanup_errors, terminal_sample = reap_owned(process, total_deadline, limits, binding['worktree'])
++        if terminal_sample:
++            samples.append({'seconds': round(time.monotonic() - started, 3), **terminal_sample})
+         if process and process.stdout:
+             process.stdout.close()
+         report['cleanup'] = {'state': 'fulfilled' if not cleanup_errors else 'failed',
+@@ -301,7 +321,12 @@
+         report['state'] = 'PASS' if okay else reason or 'FAIL'
+         report['sourceMeaning'] = 'Focused noEmit/direct cover these frozen leaf/legacy modules only, not rendered picker, App/Recovery mounting or provider behavior.'
+         encoded = (json.dumps(report, indent=2) + '\n').encode()
+-        if len(encoded) > limits['finalReportReserveBytes'] or static_raw_bytes + log_bytes + len(encoded) + sum((BASE / name).stat().st_size for name in captured) > limits['rawBytes']:
++        try:
++            retained_bytes = logical_bytes(BASE)
++        except Exception as error:
++            retained_bytes = limits['rawBytes'] + 1
++            report['retainedBudgetError'] = str(error)
++        if len(encoded) > limits['finalReportReserveBytes'] or retained_bytes + len(encoded) > limits['rawBytes']:
+             report = {'state': 'REPORT_LIMIT_FAILURE', 'cleanup': report['cleanup'],
+                       'elapsedMs': report['elapsedMs'], 'logBytes': log_bytes,
+                       'fullReportBytes': len(encoded), 'sourceHead': binding['head'],

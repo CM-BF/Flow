@@ -1,0 +1,212 @@
+{
+  "at": "2026-10-06T20:48:11.224265+00:00",
+  "verdict": "APPROVED_SCOPED_CONTROLLED_PICKER_BROWSER_EVIDENCE",
+  "run": "settings-b5-20261006-204433-4029cd",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "actualRuntimeHead": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+  "runnerSha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "blockingFindings": [],
+  "checks": [
+    "Explicit public-client read; controlled whole tuples, keyboard/Escape, independent panes and detached A/B/current snapshots; no command endpoint",
+    "Pagination does not authorize another profile; failed refresh and revoked capability keep the original choice without fallback",
+    "Existing details callback closes before host focus handoff; real controlled picker light/dark390,180-character requested model, reduced-motion and keyboard",
+    "Empty pages preserve selected intent; old locked creation remains unchanged; a new fixture connection owns fresh catalogs and drafts"
+  ],
+  "validation": {
+    "exactSixSourcePinsMatchRuntimeAndCurrent": true,
+    "newGateEqualsConsumedAndMatchesBindingRunner": true,
+    "cancelledPriorGateNotReused": true,
+    "oldB4All26FilesPreserved": true,
+    "parentState": "PASS",
+    "actualExit": {
+      "command": "python3 /private/tmp/msgset-b5/supervisor.py --gate /private/tmp/msgset-b5/gate.json",
+      "actualExitCode": 0,
+      "source": "exec_command session20029 final exit_code0",
+      "observedAt": "2026-10-06T20:45:17.916036+00:00",
+      "stdout": "parent.stdout.log",
+      "stderr": "parent.stderr.log"
+    },
+    "workerExit": 0,
+    "chromeExit": {
+      "code": 0,
+      "signal": null,
+      "observedAt": "2026-10-06T20:45:08.787816+00:00",
+      "beforeCdpPort": false
+    },
+    "chromeClose": {
+      "code": 0,
+      "signal": null,
+      "observedAt": "2026-10-06T20:45:08.788142+00:00",
+      "beforeCdpPort": false,
+      "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+    },
+    "pageErrors": [],
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "processGroups": {
+      "worker": 20627,
+      "chrome": 16283
+    },
+    "allCapturedPipesEOFNoDrop": true,
+    "softStop": null,
+    "runtimeStartedByRoot": false,
+    "rootResourceServiceSampling": false,
+    "projectWritesByRoot": false
+  },
+  "budget": {
+    "previousSpentMs": 20609,
+    "recordedParentMs": 8267,
+    "recordedCumulativeMs": 28876,
+    "remainingMs": 31124,
+    "scope": "Single controlled browser run; recorded integer timing and successful final parent deadline checks, not a throughput benchmark or a new permission."
+  },
+  "resourceEvidence": {
+    "sampleCount": 362,
+    "minObservedFreeBytes": 1231806464,
+    "maxObservedScratchLogicalBytes": 19697883,
+    "maxObservedScratchAllocatedBytes": 14610432,
+    "finalRetainedBytesIncludingPriorCarry": 1504685,
+    "finalSample": {
+      "phase": "after-result-and-budget-write",
+      "seconds": 8.267,
+      "freeBytes": 1246752768,
+      "scratchLogical": 0,
+      "scratchAllocated": 0,
+      "retainedBytes": 1504685
+    },
+    "meaning": "Observations read from original parent result; no new sampling, no hard OS quota or exclusive allocation claim."
+  },
+  "screenshots": [
+    {
+      "path": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/message-settings-light-390.png",
+      "sha256": "0547240e858f54a09f4b05278bf30952604bf3597fe411271f49ea132b74ad85",
+      "bytes": 59149,
+      "dimensions": [
+        390,
+        844
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "path": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/message-settings-dark-390.png",
+      "sha256": "7f7c68ba588cb709db60e3d276860105e7869bb5465587a2e76cf6d47aec4cbd",
+      "bytes": 60370,
+      "dimensions": [
+        390,
+        844
+      ],
+      "visuallyInspected": true
+    }
+  ],
+  "visualAssessment": "Both390x844 themes are legible and preserve dialog bounds; the180-character stress model wraps. The repeated long model occupies considerable vertical space. Existing MATURE02 quick-selection/large-catalog work remains required; this image is not evidence that mature compact selection or the full production UI is finished.",
+  "requests": [
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?after=10000000-0000-4000-8000-000000000001&limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20"
+  ],
+  "limitations": [
+    "Public-client catalog against syntheticHTTP; no actual center/PG/provider calls.",
+    "DetachedA/B/current snapshots in thisfixture do not prove real App send/outbox/queue/Recovery integration.",
+    "This four-scenario evidence does not establish fulllarge-catalog quickmodel/effort/speed selection or full application/plugin maturity.",
+    "Old initialization failures and b4 strict-locator failure stay preserved; no types/direct37 rerun occurred.",
+    "Main integration, actual personal preview and fullMATURE02 acceptance remain separate."
+  ],
+  "cleanCode": "Review closed the first strictlocator finding and verified old evidence stayed immutable. Narrow parent lifecycle repair is bound to the actual run; no behavior assertion was weakened.",
+  "files": [
+    {
+      "path": "/private/tmp/msgset-b5/result.json",
+      "bytes": 66574,
+      "sha256": "68f93add2b85cba8bb30cfce529523784b0ca158a70d918fe8517fa1716e381c"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/browser-budget.json",
+      "bytes": 199,
+      "sha256": "22d804e93bf99b1a08b82d3b474a82a11b9bc3738a56343abebcd79ac1cba039"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/binding.json",
+      "bytes": 34260,
+      "sha256": "dbd44eb3de82d2c5e6d6ac9886a90a118db67ed1d88dee089ac90b09d345adde"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/gate.json",
+      "bytes": 1869,
+      "sha256": "644f756d808b79c2b6e4e3966e8dfc8e36056fe066f749c107033e1addcdc8cd"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/consumed-gate.json",
+      "bytes": 1770,
+      "sha256": "2f3bd3a180bf87107a988d7b30eb3a3b195ec384661f1b8c017e1d7d1d528680"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/gate.cancelled-before-dispatch.json",
+      "bytes": 1869,
+      "sha256": "04bb507bc87f131e32b69324818ee599fe9ea57ee4fee231e8c78f84defc3b3c"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/worker.log",
+      "bytes": 620,
+      "sha256": "dea13ea8f033b6603bcdf352e6cdf8c7c0740d57763002605a52edcd28e5bb7a"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/parent.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/parent-exit.json",
+      "bytes": 303,
+      "sha256": "9e3a996b0efe1c61cc3d9039fc685710a638cc825d1b3188af106e7bec92f3d8"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/supervisor.py",
+      "bytes": 21992,
+      "sha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/chrome.log",
+      "bytes": 6357,
+      "sha256": "124cb494b43a445f788f1d2bfe068f8de995b4cf1474911ad0fb39d08e3c0fab"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/message-settings-dark-390.png",
+      "bytes": 60370,
+      "sha256": "7f7c68ba588cb709db60e3d276860105e7869bb5465587a2e76cf6d47aec4cbd"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/browser-results.json",
+      "bytes": 2519,
+      "sha256": "4419750330522c2977c04037242a91ad91367a9c5f443afd19eb88a638d71239"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/owned-chrome.json",
+      "bytes": 2260,
+      "sha256": "09016b10bad2ed7b97720b8044d6285e4ca070058ac7a349b92257d7d8bb380f"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/message-settings-light-390.png",
+      "bytes": 59149,
+      "sha256": "0547240e858f54a09f4b05278bf30952604bf3597fe411271f49ea132b74ad85"
+    }
+  ]
+}

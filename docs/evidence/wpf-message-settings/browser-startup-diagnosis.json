@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-06T19:02:56.741430+00:00",
+  "state": "READ_ONLY_DIAGNOSIS_NO_NEW_RUN",
+  "fixedArchiveCommit": "478943c0ca5645a06feae46268ccd2e174789c7c",
+  "runtimeSourceHead": "f80052b26f5f3c6057a6a056fa6875f984fd700b",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "chromeVersionFromPinnedBinding": "154.0.8037.98",
+  "reconstructedLauncherArgv": [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--remote-debugging-port=0",
+    "--user-data-dir=/private/tmp/message-settings-browser-candidate/scratch/chrome-BJP3HY",
+    "--disk-cache-dir=/private/tmp/message-settings-browser-candidate/scratch/chrome-BJP3HY/disk-cache",
+    "about:blank"
+  ],
+  "argvEvidence": "Deterministic reconstruction from fixed worker69-71 and owned profile; argv was not independently persisted/read from live process. Chrome internal subprocess args NOT_CAPTURED.",
+  "knownParentOverrides": {
+    "TMPDIR": "/private/tmp/message-settings-browser-candidate/scratch",
+    "TMP": "/private/tmp/message-settings-browser-candidate/scratch",
+    "TEMP": "/private/tmp/message-settings-browser-candidate/scratch",
+    "XDG_CACHE_HOME": "/private/tmp/message-settings-browser-candidate/scratch",
+    "NODE_COMPILE_CACHE": "/private/tmp/message-settings-browser-candidate/scratch",
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "TSX_DISABLE_CACHE": "1",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "GIT_CONFIG_SYSTEM": "/dev/null",
+    "GIT_OPTIONAL_LOCKS": "0",
+    "MESSAGE_SETTINGS_BROWSER_GATE": "/private/tmp/message-settings-browser-candidate/child-gate.json",
+    "TSX_TSCONFIG_PATH": "/private/tmp/message-settings-browser-candidate/runtime-tsconfig.json"
+  },
+  "inheritedEnvironment": "NOT_CAPTURED; no environment read. MAC_CHROMIUM_TMPDIR is not explicitly set/cleared by supervisor; presence/value cannot be inferred. HOME left unchanged but value not read.",
+  "chromeExitCode": "NOT_CAPTURED",
+  "chromeExitSignal": "NOT_CAPTURED",
+  "workerExitCode": 1,
+  "workerPgid": 87564,
+  "chromePid": 87566,
+  "chromeExited": true,
+  "fixtureClosed": true,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "chromeLog": {
+    "bytes": 853,
+    "composition": "Combined stdout/stderr in event order, capped64KiB; no stream-close completeness or dropped-byte counter persisted. Full retained file read, not asserted complete OS stderr."
+  },
+  "immutableRawFilesVerified": [
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/admission.json",
+      "bytes": 1868,
+      "sha256": "5a3654525b7fb334489bf0cb3f9d4ebb86b1b109af57d0ec98c4cdd7fd2ecd54"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/binding.json",
+      "bytes": 33726,
+      "sha256": "353e0f7b03c767299fdaa6ef8e8c8ef6f217c678635544ece6d816d8d7854868"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/browser-budget.json",
+      "bytes": 220,
+      "sha256": "1b9c19465742cb36c2a993260b1e457580d216c543dc7d624d19c82ae6fe2af7"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/child-gate.json",
+      "bytes": 1813,
+      "sha256": "b21cccb8e7e0c382546bd2ebb432ad3c4c454e3d01e100fe42e6f50394234884"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/consumed-gate.json",
+      "bytes": 1398,
+      "sha256": "f325b44536a528cec486b165cf5b38b2d2469a6dffeb7ce8f01767e92595d6ad"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/gate.json",
+      "bytes": 1483,
+      "sha256": "f6b1c18d6258fdf98456e1b191f35559168aec1a687d29cc67c21f6e9545f99c"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/result.json",
+      "bytes": 33345,
+      "sha256": "01652e6439fefb5bd49486176fb8d7ac162f2ec5cdb865d9272dae5f2e72f513"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/sandbox.sb",
+      "bytes": 415,
+      "sha256": "757b652709a59b980001c68e93f7388cfdf81c634b95e8588103a07a34da140a"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/supervisor.py",
+      "bytes": 12268,
+      "sha256": "9f9adde0cc124a2bd27fe5b4c743472b471b9323b88a774c0b08aa67068283ff"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/worker.log",
+      "bytes": 2649,
+      "sha256": "8666e78ad79f09a41c2cfa005f9031e35bd9d59b8bae61a8d41db4f33c408698"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/worker.mjs",
+      "bytes": 8548,
+      "sha256": "a05181db3f9954a2a8b6e8bab2c9c3988dcb1869eb3b4918bbb974617846fda4"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/raw/settings-20261006-185753-21f4e5/browser-results.json",
+      "bytes": 1499,
+      "sha256": "0c4a3cff32de8b35e064195c89e179b6368a3b8c899624f44a30ce05a9bdd28e"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/raw/settings-20261006-185753-21f4e5/chrome.log",
+      "bytes": 853,
+      "sha256": "1b519b9bf720c9a83867cba07b8820e789aa07915f9bedfef5ed11659ea61616"
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-first/raw/settings-20261006-185753-21f4e5/owned-chrome.json",
+      "bytes": 154,
+      "sha256": "8300dd9c8a843d055d8007595a9c46937c4b7bf979668dca6db257e4e3d63b43"
+    }
+  ],
+  "newExecution": false,
+  "projectWrites": false,
+  "personalFilesRead": false
+}

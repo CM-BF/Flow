@@ -1,0 +1,8 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/msgset-b4/scratch") (subpath "/private/tmp/msgset-b4/raw/settings-b4-20261006-200629-5a13ef") (literal "/dev/null"))
+(deny network*)
+(allow network-bind (local ip "localhost:*"))
+(allow network-inbound (local ip "localhost:*"))
+(allow network-outbound (remote ip "localhost:*"))

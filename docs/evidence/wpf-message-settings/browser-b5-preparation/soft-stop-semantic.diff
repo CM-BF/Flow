@@ -1,0 +1,42 @@
+--- before-soft-stop/supervisor.py (indent normalized)
++++ supervisor.py (indent normalized)
+@@ -89,7 +89,10 @@
+ def request_stop(sig, frame):
+ nonlocal stopping
+ stopping = True
+-if 'stopSignal' not in report: report['stopSignal'] = signal.Signals(sig).name
++if 'stopSignal' not in report:
++report['stopSignal'] = signal.Signals(sig).name
++errors.append('Cooperative stop: '+report['stopSignal'])
++report['state'] = 'FAILED'
+ previous_handlers = {sig:signal.signal(sig,request_stop) for sig in (signal.SIGTERM,signal.SIGINT)}
+ def observe_resources(phase):
+ available = free(root); tmp = sizes(scratch); retained = sizes(BASE)[0]-tmp[0]+binding['previousEvidenceBytes']
+@@ -140,6 +143,7 @@
+ if p is chrome and p is not None and alive(p):
+ chrome_facts['signals'].append({'signal':signal.Signals(sig).name,'at':now(),'target':'owned-chrome-pgid'})
+ stop(p,sig)
++try:
+ try:
+ assert git('rev-parse','HEAD')==binding['head'] and git('branch','--show-current')==binding['branch']
+ assert git('status','--porcelain')==''
+@@ -280,7 +284,7 @@
+ exitCode=process.returncode if process else None,chromeExit=chrome_facts['exit'] if chrome_facts else None,
+ logStreams=streams,retainedBytes=retained,cleanup={'errors':cleanup,'groupAbsent':groups_absent,
+ 'workerGroupAbsent':not alive(process),'chromeGroupAbsent':not alive(chrome),'scratchAbsent':not scratch.exists()},
+-state='PASS' if not errors and not cleanup and process and process.returncode==0 else 'FAILED')
++state='PASS' if not stopping and not errors and not cleanup and process and process.returncode==0 else 'FAILED')
+ save(BASE/'result.json',report)
+ save(budget,{'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,
+ 'run':gate['run'],'supervisorResult':str(BASE/'result.json')})
+@@ -292,7 +296,10 @@
+ if sizes(BASE)[0]-sizes(scratch)[0]+binding['previousEvidenceBytes']>8*MiB: raise RuntimeError('Final retained evidence cap exceeded')
+ if time.monotonic()>hard: raise TimeoutError('Total deadline includes final evidence writes')
+ except BaseException as e: errors.append('Final evidence completion: '+str(e)); persist_results()
++finally:
+ for sig,handler in previous_handlers.items(): signal.signal(sig,handler)
+-return 0 if report['state']=='PASS' else 1
++# Seal a stop delivered during final writes only after our handlers are restored.
++if stopping: persist_results()
++return 0 if not stopping and report['state']=='PASS' else 1
+  if __name__=='__main__': sys.exit(main())

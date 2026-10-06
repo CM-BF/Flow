@@ -1,0 +1,213 @@
+{
+  "at": "2026-10-06 20:47:23 UTC",
+  "run": "settings-b5-20261006-204433-4029cd",
+  "state": "PASS_OWNER_OBSERVED_PENDING_INDEPENDENT_EVIDENCE_REVIEW",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "actualSourceHead": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+  },
+  "runnerSha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "actualParentExitCode": 0,
+  "parentExitSource": "exec_command session20029 final exit_code0; raw parent-exit.json records this observation",
+  "parentElapsedMs": 8267,
+  "workerObservedElapsedMs": 8152,
+  "previousRuntimeMs": 20609,
+  "cumulativeMs": 28876,
+  "remainingArithmeticMs": 31124,
+  "remainingIsNotPermission": true,
+  "parentRetainedObservedBytes": 1504685,
+  "archiveFileCount": 23,
+  "archiveBytes": 293479,
+  "archiveSizeMeaning": "Selected immutable runtime/source/admission records, not equal to parent total retained observation. Parent-exit record was written after parent completed and is identified separately.",
+  "checks": [
+    "Explicit public-client read; controlled whole tuples, keyboard/Escape, independent panes and detached A/B/current snapshots; no command endpoint",
+    "Pagination does not authorize another profile; failed refresh and revoked capability keep the original choice without fallback",
+    "Existing details callback closes before host focus handoff; real controlled picker light/dark390,180-character requested model, reduced-motion and keyboard",
+    "Empty pages preserve selected intent; old locked creation remains unchanged; a new fixture connection owns fresh catalogs and drafts"
+  ],
+  "pageErrors": [],
+  "screenshots": [
+    "browser-fourth/raw/settings-b5-20261006-204433-4029cd/message-settings-light-390.png",
+    "browser-fourth/raw/settings-b5-20261006-204433-4029cd/message-settings-dark-390.png"
+  ],
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "workerPgid": 20627,
+  "chromePgid": 16283,
+  "chromeExit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-06T20:45:08.787816+00:00",
+    "beforeCdpPort": false
+  },
+  "chromeClose": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-06T20:45:08.788142+00:00",
+    "beforeCdpPort": false,
+    "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+  },
+  "sampleSummary": {
+    "count": 362,
+    "minFreeBytes": 1231806464,
+    "maxScratchLogicalBytes": 19697883,
+    "maxScratchAllocatedBytes": 14610432,
+    "meaning": "Only parent runtime observations; not a physical hardquota, no new sampling or attribution of disk deltas."
+  },
+  "ownerVisualRead": "Viewed both exact saved390 screenshots: full180-character requested model wraps within dialog, visible actions/labels in light/dark. Static read of saved images only, no additional browser run.",
+  "window": "Immediately returned to manager for F04 after actual cleanup; no further runtime",
+  "limitation": "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration.",
+  "oldFailures": "First/b2/b4 failures and raw retained; types/direct37 historicPASS and parent expected20FAIL unchanged; no rerun",
+  "files": [
+    {
+      "original": "/private/tmp/msgset-b5/binding.json",
+      "archive": "browser-fourth/binding.json",
+      "bytes": 34260,
+      "sha256": "dbd44eb3de82d2c5e6d6ac9886a90a118db67ed1d88dee089ac90b09d345adde"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/manifest.json",
+      "archive": "browser-fourth/manifest.json",
+      "bytes": 8928,
+      "sha256": "1f30f3913d74af8bf56e8605cefc88267da55b51d53aac09e3a5dafd631f54dd"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/browser-budget.json",
+      "archive": "browser-fourth/browser-budget.json",
+      "bytes": 199,
+      "sha256": "22d804e93bf99b1a08b82d3b474a82a11b9bc3738a56343abebcd79ac1cba039"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/child-gate.json",
+      "archive": "browser-fourth/child-gate.json",
+      "bytes": 2306,
+      "sha256": "32742a933fab12eb6cddf8e2afe8dafc34d46126732ff376ac93ee219bf31037"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/consumed-gate.json",
+      "archive": "browser-fourth/consumed-gate.json",
+      "bytes": 1770,
+      "sha256": "2f3bd3a180bf87107a988d7b30eb3a3b195ec384661f1b8c017e1d7d1d528680"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/gate.json",
+      "archive": "browser-fourth/gate.json",
+      "bytes": 1869,
+      "sha256": "644f756d808b79c2b6e4e3966e8dfc8e36056fe066f749c107033e1addcdc8cd"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/source-audit.json",
+      "archive": "browser-fourth/source-audit.json",
+      "bytes": 8474,
+      "sha256": "d3a5089b6edff3b45c9e4a64341fd57c973005423a4a17d92e56888f61cfd291"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/supervisor.py",
+      "archive": "browser-fourth/supervisor.py",
+      "bytes": 21992,
+      "sha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/worker.mjs",
+      "archive": "browser-fourth/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/runtime-tsconfig.json",
+      "archive": "browser-fourth/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/aliases.json",
+      "archive": "browser-fourth/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/sandbox.sb",
+      "archive": "browser-fourth/sandbox.sb",
+      "bytes": 368,
+      "sha256": "101b10d481d72e43a532915e2b076b1f5be394f2a0cb458c8107eb664dac808b"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/worker.log",
+      "archive": "browser-fourth/worker.log",
+      "bytes": 620,
+      "sha256": "dea13ea8f033b6603bcdf352e6cdf8c7c0740d57763002605a52edcd28e5bb7a"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/result.json",
+      "archive": "browser-fourth/result.json",
+      "bytes": 66574,
+      "sha256": "68f93add2b85cba8bb30cfce529523784b0ca158a70d918fe8517fa1716e381c"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/parent.stdout.log",
+      "archive": "browser-fourth/parent.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/parent.stderr.log",
+      "archive": "browser-fourth/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/parent-exit.json",
+      "archive": "browser-fourth/parent-exit.json",
+      "bytes": 303,
+      "sha256": "9e3a996b0efe1c61cc3d9039fc685710a638cc825d1b3188af106e7bec92f3d8"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/browser-results.json",
+      "archive": "browser-fourth/raw/settings-b5-20261006-204433-4029cd/browser-results.json",
+      "bytes": 2519,
+      "sha256": "4419750330522c2977c04037242a91ad91367a9c5f443afd19eb88a638d71239"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/chrome.log",
+      "archive": "browser-fourth/raw/settings-b5-20261006-204433-4029cd/chrome.log",
+      "bytes": 6357,
+      "sha256": "124cb494b43a445f788f1d2bfe068f8de995b4cf1474911ad0fb39d08e3c0fab"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/message-settings-dark-390.png",
+      "archive": "browser-fourth/raw/settings-b5-20261006-204433-4029cd/message-settings-dark-390.png",
+      "bytes": 60370,
+      "sha256": "7f7c68ba588cb709db60e3d276860105e7869bb5465587a2e76cf6d47aec4cbd"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/message-settings-light-390.png",
+      "archive": "browser-fourth/raw/settings-b5-20261006-204433-4029cd/message-settings-light-390.png",
+      "bytes": 59149,
+      "sha256": "0547240e858f54a09f4b05278bf30952604bf3597fe411271f49ea132b74ad85"
+    },
+    {
+      "original": "/private/tmp/msgset-b5/raw/settings-b5-20261006-204433-4029cd/owned-chrome.json",
+      "archive": "browser-fourth/raw/settings-b5-20261006-204433-4029cd/owned-chrome.json",
+      "bytes": 2260,
+      "sha256": "09016b10bad2ed7b97720b8044d6285e4ca070058ac7a349b92257d7d8bb380f"
+    },
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/message-settings-b5-prepared/repaired-native-chrome-boundary-acceptance.json",
+      "archive": "browser-fourth/native-chrome-boundary-acceptance.json",
+      "bytes": 3142,
+      "sha256": "13855287aad7a2b27a9611d370222c9b46fee81c70976fedfc761a3c420e65cb"
+    }
+  ]
+}
