@@ -12,11 +12,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
 | 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支待独审。实际center/runner仍fb906cb |
-| Review | 07b1b11060c069db76f9f958f92c1c53af9fca46 薄client待独审；020 9ea已Root批准并main |
+| Review | Root独立APPROVED07b1b11060c069db76f9f958f92c1c53af9fca46 薄client；020 9ea已Root批准并main |
 | 实现目标 | 07b1b11060c069db76f9f958f92c1c53af9fca46 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/package-fetches.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
 | 下一可用交付 | 让包下载操作可以持久受理、查询和核对恢复 |
@@ -82,3 +82,5 @@
 | F01-18 | in-progress | Lead | X05固定合同1405551的5个薄client方法，1/1HTTP+tsc，target07b1b11060c069db76f9f958f92c1c53af9fca46待独审；PG/worker未就绪不挂生产 |
 
 2026-10-06 06:30 UTC：X05只消费固定领域合同，未知状态/409/abort原样传递，不暗重试。契约1405551来源保留，无本片领域或模型能力推断。
+
+2026-10-06 06:31 UTC：X05五方法薄client获Root限定独立批准，无领域能力承诺；下一生产/CLI片等待X05领域固定独审，0新增模型。

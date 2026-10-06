@@ -1,6 +1,6 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（X05薄client）**
+**当前增量状态：APPROVED（Root独立只读，X05薄client）**
 
 Review target commit：07b1b11060c069db76f9f958f92c1c53af9fca46
 
@@ -108,3 +108,6 @@ Review target commit：9ea33ef61da2304123d08ea87558023d63b38468
 
 ## 2026-10-06 06:28 UTC 020公共接线独立批准
 Root独立只读APPROVED9ea33ef61da2304123d08ea87558023d63b38468（观测cleana95cb78）。5source/5raw固定及working hash/bytes均匹配；实际生产factory在服务/调度前020、owner hook后routes；真实PG report去重→轻列表不含私文→显式UTF8详情→401/403→取消工具unknown→重启保留；2红到2绿2.22s与tsc及随机库普通DROP核验。未重跑，无finding；不覆盖provider/全部原文/实际Appmount。全局activity详情返回taskId/attemptId，消费者必须核绑定。
+
+## 2026-10-06 06:31 UTC X05薄client独立批准
+Root独立只读APPROVED07b1b11060c069db76f9f958f92c1c53af9fca46（观测cleanad0b5ef）。3source/3raw固定/working hash与bytes匹配，1405551合同零diff；五方法key/body/CAS/编码IDs及cursor、不把202 receipt当当前状态、409/AbortSignal不重试。1红到1绿190ms/tsc原证据已核，未重跑。仅transport，X05领域/PG/worker/下载能力仍未批准。
