@@ -355,3 +355,5 @@ OPS-CI01唯一source为`ops-remote-validation/plans/ops-ci01-remote-validation`�
 远程验证固定候选cdd96bc7已独审并在main93a92c91保持原字节；OPS-CI01原owner已release，启用决定由Goal Owner唯一收集，目前PENDING。三缓存结果已独审封存，不新增同类清理。X01的exact新树供给由Mika完成，claim6ddedc73 v8在plugin-enable-binding实际生效，034唯一DDL与17scope包含其内；[分配](../../docs/quality/x01-enable-binding-allocation.json)和[供给只读核验](../../docs/quality/x01-enable-binding-provision-review.json)保留固定输入。该实现不依赖CI用户启用；PG/产品验证未据源码准备推断通过。
 
 4320实际聚合23:14:39.075Z为181来源，X01已指唯一新树、OPS-CI01当前与需用户决定均可读，issues=[]；原始有界回执在D05唯一来源。只做管理事实与链接核对，0新增产品测试、安装、PG、浏览器或provider。历史余量只作记录，不作新运行准入。
+
+2026-10-06 23:19 UTC：一次fresh轻验证准入观察1,074,302,976B仍低于CHAT05 types 1GiB+8MiB，未启动检查。按已授权小源码规则供给TUI01G fixed93a唯一新树，207文件/3,246,155逻辑B逐Git blob匹配，76份共享/其它树配置及main index保持；0依赖复制/安装/测试，真实HTTP/PG动态闭包未作为已供给。见[供给回执](../../docs/quality/tui01g-source-provision.json)。native_center_owner将在原TUI01F共享源正式停写移交后领取，TUI完整双端验收仍开放；不将小源码操作当放宽运行门槛。
