@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:59:56 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 clean，4585为祖先且4源码hash与批准target相等 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:02:11 UTC / 09:59:56 UTC核mainf181d84b5fb3652d62e2a181acff442d42b3e066 clean，4585为祖先且4源码hash与批准target相等 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 小task |
 | 所属大task | [FLOW-001](../flow-001-architecture/plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry |
 | Branch | codex/runner-concurrency-entry |
 | 工作基线 / HEAD | 4391bbf9f1785212d098ef6aa1c01a0320a003d3 / 实现c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7，后继仅metadata |
-| 工作树dirty状态 | 更新前HEAD 55eb62adf63b597c61aa545bb81c070d05da2b10 clean；本轮仅main接收metadata，4源码与已审target完全一致并冻结 |
+| 工作树dirty状态 | 更新前HEAD 9773ff7c1f0db11dd8d1f2aca32a51b63fbf09c2 clean；本轮仅源码交回metadata，4源码与已审target完全一致并冻结 |
 | 工作分支状态 | completed |
 | 本片段交付阶段 | delivered |
 | 检查状态 | PASSED c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7；2文件64/64、root严格局部noEmit0；[证据](../../docs/evidence/s01p02/README.md)，非真实并发 |
@@ -25,7 +25,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED；Mika / gpt-6-astra，2026-10-06 09:50:43 UTC，无P1/P2 |
-| Claim | d2c55153-7116-403d-a7db-44b10e943241 v2 ACTIVE，09:56:07.746Z COMMITTED；仅移除main.ts写权，保留5scope；[部分交回receipt](../../docs/evidence/s01p02/main-partial-handback-receipt.json) |
+| Claim | d2c55153-7116-403d-a7db-44b10e943241 v3 ACTIVE，10:02:11.391Z COMMITTED；4源码全部停写，仅保留plan/evidence两目录；[receipt](../../docs/evidence/s01p02/metadata-only-receipt.json) |
 | 架构影响 | 仅纯参数解析+既有main→runRunner接线，不改scheduler/DB/运行状态机；待target由Lead登记入口关联 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -43,3 +43,5 @@ status为唯一手填进度，canonical登记/聚合由mika协调，当前未采
 2026-10-06 09:56:14 UTC：[main.ts部分交回](../../docs/evidence/s01p02/main-partial-handback.md)已完成原子amend，原owner不恢复该路径写权；新R05D须独立take成功及Lead给定包含已审改动的base才开写。源码停写，0重测；批准target与唯一integration-ready receipt不变，仍待main集成。
 
 2026-10-06 09:59:56 UTC：owner只读核main/origin接收事实，4585为main祖先，4源码SHA逐项与c77/manifest相等；[main receipt](../../docs/evidence/s01p02/main-accepted.json)。Lead集成证据报告root/web noEmit0及50直接检查（含22 main）；本人0重测。main.ts部分交回v2不变，写权仍停止；本片段三项TODO完成，未把main接收推作部署或真实并发。
+
+2026-10-06 10:02:11 UTC：已先明确停止剩余3源码写入，再由v2原子amend为[v3 metadata-only](../../docs/evidence/s01p02/metadata-only-receipt.json)，无release/take空窗。连同此前main.ts，4源码均已交回且本owner不恢复写权；只维护两metadata目录。0源码变更、0重测，main接收与批准事实不变。

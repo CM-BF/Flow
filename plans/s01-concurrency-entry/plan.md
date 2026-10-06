@@ -8,7 +8,7 @@
 - [x] **S01P02-02** main明确传native maxConcurrentAttempts；A2A仅省略/显式1，非1先于端点文件读取及任何网络/profile发布拒绝；native非法也先拒绝。保持adapter初始化、signals与脱敏错误。
 - [x] **S01P02-03** Node24/pnpm9.15.4/Vitest4.0.18下显式parser+main公开启动路径mock行为、root严格局部noEmit；固定source manifest/commit，独立review与main集成分别记录。
 
-原实现scope为main.ts、新concurrency-configuration.ts/.test.ts、main-concurrency.test.ts、本plan/evidence，见[原子receipt](../../docs/evidence/s01p02/claim-receipt.json)。main.ts已按[v2部分交回](../../docs/evidence/s01p02/main-partial-handback-receipt.json)停止本owner写权，剩余scope不变。不写runtime/configuration/execution-profiles。接口无状态/IO、1..16有界；main已有资源owner和错误清理不变，统一遵循[modular-design](../../AGENTS.md#modular-design)。
+原实现scope为main.ts、新concurrency-configuration.ts/.test.ts、main-concurrency.test.ts、本plan/evidence，见[原子receipt](../../docs/evidence/s01p02/claim-receipt.json)。main.ts先按[v2部分交回](../../docs/evidence/s01p02/main-partial-handback-receipt.json)停止本owner写权，其余3源码后按[v3交回](../../docs/evidence/s01p02/metadata-only-receipt.json)停写；当前仅保留plan/evidence两个metadata scope。不写runtime/configuration/execution-profiles。接口无状态/IO、1..16有界；main已有资源owner和错误清理不变，统一遵循[modular-design](../../AGENTS.md#modular-design)。
 
 验收只证明入口参数与早拒绝；中心注册capacity独立，未部署、真实并发/混合负载/PG/provider未验，运行窗口另独审。唯一进度见[status](status.md)，独审见[review](review.md)。
 
