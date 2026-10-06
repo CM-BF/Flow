@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 22:21:49 UTC |
+| 最近更新 | 2026-10-06 22:33:32 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次只读核对HEAD f880d9742e9e8ee076531e9f27c27a7e7d72bf4a |
-| 工作树dirty状态 | 本次更新前HEAD f880d974 clean；本次仅status与接口交接metadata，产品/PG输入冻结 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次只读核对HEAD 4e171a7b2a2ad15179608f4d9c5ccad765488f9a |
+| 工作树dirty状态 | 本次更新前HEAD 4e171a7b clean；本次仅status与接口交接metadata，产品/PG输入冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 85 distinct non-PG分批通过；focused strict5 exit0（含最终PG fixture静态类型）；外层3纯fake另列。原CLI/UUID/types失败原样保留；新8组PG NOT_OPEN / NOT_RUN，原4组capacity PG单列NOT_RUN；本次0测试 |
@@ -42,3 +42,5 @@
 唯一事实源为本 status；Lead 已登记本 WT/branch/plan 路径，尚未核实际聚合。原 S01 实验 claim/结果独立保留，不沿用其 approval 或 main 事实。已接收33源186913B并逐hash核符；24 ignored dependency links已核固定版本，4 @flow仅本WT；0install。原固定基线输入与本 owner 修改分开记录。
 
 CHAT05P01 的[只读接口对照与交接边界](../../docs/evidence/s01p07/chat05p01-interface-handoff.md)已可用；当前没有 writer 移交、release 或 amend。发布入口仍由 runtime 与既有 AttemptControl/EventOutbox 持有，新增协议能力须显式协商。S01P07 v2/18 literal 占用与固定 PG 输入保持不变；此管理观察不表示产品接线或 main 集成完成。
+
+同一接口记录已补“后继聚合资源验收 / 未实现未测”：聚合预算、历史恢复扫描及清理门禁为后继输入，不扩大本片实现或原计划验收。Lead 22:31:37 UTC 的低空间类型 NOT_RUN / NO_HOLDER 仅作历史来源事实，本轮0采样、0检查、0新负载。
