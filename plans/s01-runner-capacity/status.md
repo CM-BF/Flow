@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:05 UTC；生产基线115b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:11 UTC；生产基线115b；main观察fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；正式入口target 9da9de1b6778afec5219e55f39b53b365c8cf900，metadata后继单列 |
-| 工作树dirty状态 | 仅W1结果与状态待提交，源码9da未变 |
+| 工作树dirty状态 | 交付前观察9811f5967184efb9f444ad01c34313fa4c9e743f clean；本次仅结果review/status metadata，源码9da未变 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 9da9de1b6778afec5219e55f39b53b365c8cf900：6纯统计/预算unit测试，noEmit0；仅运行准备验证，尚无gate/formal数据库任务 |
-| 已集成main状态 / HEAD | 未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c |
+| 检查状态 | PASSED 9da9de1b6778afec5219e55f39b53b365c8cf900：6纯统计/预算unit测试，noEmit0；W1 gate8tasks/2attempts与formal16tasks/16attempts通过，固定结果9e独审APPROVED |
+| 已集成main状态 / HEAD | 未集成；07:11 UTC观察main/origin fa9a8288341d4f2bd8160e03fe9173dafa2de1a6，S01仍待Lead接收 |
 | 实现目标 | 9da9de1b6778afec5219e55f39b53b365c8cf900 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 首个四进程测量已完成并清理，正在独立核对事件与计量结论 |
-| 下一可用交付 | 交付首个窗口的独立结果审查，再决定是否运行有用的对照或故障片段 |
+| 当前产出 | 首个四进程测量和独立结果审查已完成，固定事实等待主线接收 |
+| 下一可用交付 | 主线接收首个窗口证据；后继优先核实单进程声明容量与实际并发 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，9da准备代码已APPROVED；W1结果待独立review，不宣称容量验收 |
+| Review | [review.md](review.md)，9da准备代码与9e固定W1结果均限定APPROVED；不宣称模型容量或SLO |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,14 +29,14 @@
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
-| S01-05 | in-progress | 独立reviewer | 准备代码APPROVED9da；W1固定结果9e10e09独审中，main尚未接收 |
+| S01-05 | in-progress | 独立reviewer | 准备代码APPROVED9da；W1固定结果9e10e09独审APPROVED，main尚未接收 |
 | S01-06 | pending | 后继owner | 真实provider与更大并发未包含 |
 
 ## 权限、优先级与事实边界
 
-claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执](../../docs/evidence/s01/claim-receipt.json)。只写3个新目录，无共享生产写权。K03关键验证与独审优先，本人负责S01，不新增agent。正式窗口未领取；不因无窗口将独立源码准备误记阻塞。
+claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执](../../docs/evidence/s01/claim-receipt.json)。只写3个新目录，无共享生产写权。K03关键验证与独审优先，本人负责S01，不新增agent。W1许可已执行并结束；未领取新的运行窗口。
 
-仅实验合同，没有能力通过、SLO、模型容量或真实provider成本结论。128背景会话对象与 native session、实际在途 attempts 各自计数。生产源码可能串行是源码观察，须由实验给出有效容量，不自动派生优化收益。
+W1证明本机四个独立fixture runner可同时执行该固定负载，没有SLO、模型容量或真实provider成本结论。128背景会话对象与 native session、实际在途 attempts 各自计数。生产源码可能串行是源码观察，须由实验给出有效容量，不自动派生优化收益。
 
 ## Dashboard 同步
 
@@ -61,3 +61,5 @@ claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执
 2026-10-06 07:01 UTC：运行准备独审APPROVED。待协调具体窗口；Mika为解阻责任人，向GO回固定target、60秒总窗、独有DB/PID正常清理。无窗口时可做只读结果报告模板/后继方法核查，不能启动负载。历史smoke8已用，计划本窗再24 tasks，累计最多32/64；0模型。
 
 2026-10-06T07:05:09.162788+00:00 W1实质交付：gate8tasks/2attempts，formal16tasks/16attempts；结果failure=null、完整清理，实测attempt峰值4但结果待独审。累计32tasks/26attempts，余32task原分配未动；0模型。原2份smoke失败/修复证据原样保留；本窗raw已写，生产未变。
+
+2026-10-06 07:11 UTC W1独立结果审查APPROVED target9e10e09，无P1/P2，报告补充poll50/默认500ms、读端小样本和总时长非吞吐窗口。冻结manifest/raw未改，独审回执独立保存。本片段已审待main接收，完整S01仍开放；可选12task declared4优先建议待GO决定，0新增运行。架构影响：仅实验消费者与证据，无产品接口/DB/生命周期变更。

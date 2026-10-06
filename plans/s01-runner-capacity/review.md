@@ -22,8 +22,22 @@ c32d4d1 formal与6c5568a gate初审的两个P2：末次terminal后读取混入lo
 - Goal Owner批准从可选declared-capacity4对照扣4，使该组16→12，允许一次额外4任务修复复核，总64不变。[分配记录](../../docs/evidence/s01/budget-reallocation.json)。
 - 执行53c8713、review target65d7a57的smoke-repair于2026-10-06T06:42:10.555→06:42:13.377通过。独立worker于06:43:50Z APPROVED该功能片段：4任务/24事件/4工具，3进程exit0、DB及outbox清空，12source前后同hash；原失败不改写。见[smoke证据](../../docs/evidence/s01/smoke-manifest.json)及[历史独审](../../docs/evidence/s01/independent-review.json)。smoke8额度已用尽，入口已封闭。
 
-所有上述批准均不表示main已集成或个人服务已刷新；纯unit检查、协议claim容量、真实fixture执行、实际provider能力分开陈述。正式窗口尚未运行，没有容量或SLO结论。
+所有上述批准均不表示main已集成或个人服务已刷新；纯unit检查、协议claim容量、真实fixture执行、实际provider能力分开陈述。上述准备审查当时尚未运行正式窗口；后续W1结果审查见下节，仍无模型容量或SLO结论。
 
 ## 可复制复审步骤
 
 先核权威worktree/branch/head/dirty和原子claim，按find-skills本地优先方法复用clean-code/codebase-design。读取固定target9da的实验目录、window-readiness-manifest、status及原始logs；对照115b实际公开HTTP/schema与runtime，不依赖README想象字段。核先gate后formal、精确预算及同scenario不可重跑、初次lease时间来源、三个event游标空间、IPC时钟边界和finally自有资源回收。review只读，具体修复交唯一owner；不启动服务/负载，未取得协调窗口不得运行正式入口。新增源码或窗口结果需要新的限定审查，不沿用本准备批准。
+
+## W1 独立结果审查
+
+状态：APPROVED（限定W1结果）
+
+结果target `9e10e0949f3f9977e21cf8aab63e56f5f9231157`；实现target9da、执行HEAD be923afab6d95ea21f493c63818dddbea380af7d；生产base115b。独立reviewer `/root/b01_bounded_reads` / gpt-6-astra 于2026-10-06T07:07:22Z只读复核，无P1/P2。owner后继9811仅TODO metadata；当前更新不修改源码或raw。
+
+核验两raw及manifest哈希、gate10/formal16源码前后与固定commit一致；重算96唯一sender events及ACK、16终ACK先于runner closed、16工具摘要/初始claim及每runner4attempt；保守attempt并发下/上界4/4，IPC adapter/tool观察峰值4。复核nearest-rank、小样本/active分组、PG与center采样、窗口/预算/6进程exit0/两DB及outbox清理。没有新增测试、数据库、服务或负载。
+
+DB/public行集清理后未留存，只认可固定程序完整断言通过，不能把重构数据当实测。poll50ms相对生产默认500ms、读端3–4样本且active2–4、正式3.648秒包含会话创建/启动/清理，均已明确；不得外推100执行agents、provider容量或SLO。
+
+[结果报告](../../docs/evidence/s01/w1-results.md)、[冻结manifest](../../docs/evidence/s01/w1-result-manifest.json)、[独审回执](../../docs/evidence/s01/w1-independent-review.json)。原manifest的pending字段保持原始冻结状态，以独审回执更新结论。
+
+可复制复审：固定9e结果commit，校验manifest SHA及两raw，核对before/after源码与执行be923/已审9da；按sender id/sequence/types/ACK逐项重算、以claim租期保守区间统计峰值、核每端点n与分组及清理/预算；只读，不重新运行负载。W1验收无需补对照；可选后继优先declared4/12task，待Goal Owner决定及窗口，ACK故障/浏览器仍开放。main接收另记。

@@ -9,3 +9,5 @@
 2026-10-06 06:51 UTC 正式入口段：复用已审资源/事件算法，场景参数与统计独立成module，smoke入口按已用满预算封闭。独立只读核验确认PG connectionString覆盖application_name风险，observer改独立URL；center/scheduler合并观察并声明无法拆分。公开events/workspace独立cursor追赶，实际details端点/api/details/:id已对源码核对，避免凭接口想象。3个统计Vitest用例通过/noEmit0；0新task/模型/query。正式与gate运行未执行。
 
 2026-10-06 06:58 UTC 运行准备review修复：P2末次terminal读混入load已break，保留4端点n=0并细分观测active/queue；P2 gate存储漏计已使用共用evidence文件大小/预算入口，计最终JSON。P3 PG版本已加SHOW只读。共用evidence模块同时减少重复目录统计并保留失败/partial-before-result门禁，无自动重跑；6纯unit tests/noEmit0。正式资源从未启动，原8个smoke计数/2份raw hash不变。
+
+2026-10-06 07:11 UTC W1交付安全停点：沿用固定clean-code来源，核计量命名、职责和事实接口，区分全阶段elapsed/观测执行区间、协议容量/adapter并发、冻结证据/后继review。独审无P1/P2，源码零变；报告补足50ms与生产500ms参数差异、读端n/active定义和raw未留DB行集限制。纯metadata不重复工程测试；检查链接、JSON、原始SHA与dashboard。后继ACK领取无emit的预算计数问题仍明确开放，须在该后继实现前修复。
