@@ -26,3 +26,5 @@
 ## 来源P3窄修与最终审查
 
 最终target `ef42277ff55d1cbb76ea707836481a9788619033`。Root指出R04/P03实际登记源在固定registry而非full-plan-matrix；ef只改nextbackend.source，完整X01父范围仍见固定full-plan-matrix REQ11–13。重新5Node通过及[局部href报告](source-review-check.json)，不重跑无变化全浏览器或六图。Root独立CUA确认准确href并APPROVED；w01独立d5语义/5tests与root审图结果如[review](../../../plans/d06-architecture-refresh/review.md)，检查来源不混写。
+
+04:28实际集成：origin/main=4e0289f29ffa48c6c49003837d4520f57c22b6b0，git merge-base --is-ancestor ef42277 origin/main exit0，两声明实现文件diff0；[4320 snapshot与静态图核验](dashboard-observation.json)47源、D06唯一live/claim匹配/checks+review ef/proof unchanged/issues[]，main current/scopeEqual。GET4320 architecture-data.js包含固定8f与修正registry链接。没有重启服务或用approval推定部署。原前文未部署是提交时历史，本次明确新增实际证据。

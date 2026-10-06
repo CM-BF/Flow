@@ -1,6 +1,6 @@
 # D06 固定基线架构刷新
 
-状态：in-progress。创建/更新：2026-10-06 04:13 UTC。唯一 owner：d01_owner / gpt-6-astra ultra。
+状态：completed。创建/更新：2026-10-06 04:13 UTC。唯一 owner：d01_owner / gpt-6-astra ultra。
 
 目标：将工程 dashboard 架构 tab 从旧3773基线更新为已集成固定 `8f1481df880cf5077e1ddb9a8f302fe700a7ece8` 的真实模块、数据与运行关系。用户要求工程 dashboard 增架构tab；本轮由GoalOwner经root明确授权刷新，既有五视图UI保持，架构事实不追随moving main。
 
@@ -20,10 +20,16 @@
 - [x] D06-01：核tree/base/claim与技能，建立唯一三件套；来源固定SHA可核验。
 - [x] D06-02：刷新五图数据，所有source在固定8f存在；已集成与planned分开，关键FSM边不漏。
 - [x] D06-03：运行本模块节点/source/关系与只读HTTP测试，动态端口检查五图/双主题/窄屏，记录真实证据和clean-code。
-- [ ] D06-04：提交固定候选、root独立review/修复闭环，真实dashboard聚合，交Lead集成；不自行merge main。
+- [x] D06-04：提交固定候选、root独立review/修复闭环，真实dashboard聚合，交Lead集成；不自行merge main。
 
 ## 风险、验证与移交
 
 固定图不代表最新所有分支或吞吐容量。主线继续变更时，显示旧基线是诚实边界，未来另登记更新。重用现Node24内置HTTP，无新增依赖。行为测试直接使用公开策展模块与server；源码固定gitshow核验，不用同份文字自我证明。图完整性/可读性采用动态独立预览；不改用户49922/55049/63743或工程4320。
 
 [status](status.md) · [review](review.md) · [质量与来源](../../docs/evidence/d06/quality.md)
+
+## 独立验收后的非阻塞后继
+
+GoalOwner目视modules-light/data-dark无blocking，维持ef批准；另观察标题“当前代码”与底部折叠的固定8f说明可能被误读。后续取得renderer/标题区域正式写权时，在标题旁显示短SHA及“固定快照”，不让已更新的R04/P03被看成当前仍未交付。本轮不扩改architecture.js/css/index.html，不阻集成，不为纯后继记录重跑六图。由父REQ39协作队列登记，不以该建议撤销固定8f事实有效性。
+
+04:28:28.679Z实际4320已47源，D06唯一live source、claim匹配、checks/review ef、proof unchanged、issues空；main4e0289f已ancestor且两实现文件scopeEqual，实际architecture-data.js含固定8f与修正registry source。完成本轮并交主线，后继标题提示仍排队。
