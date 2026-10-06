@@ -569,3 +569,45 @@ it("atomically rejects unknown and prototype slots and activation events", () =>
     expect(host.list()).toHaveLength(1);
   }
 });
+
+it("checks view resource and current grants synchronously without loading", async () => {
+  const { host, deny } = setup();
+  let loads = 0;
+  const plugin = definition(
+    (context) => {
+      implement(context);
+      context.contribute("test.plugin.panel", () => null);
+    },
+    {
+      contributions: [
+        {
+          kind: "panel",
+          id: "test.plugin.panel",
+          slot: "workspace.tabs",
+          title: "Panel",
+          capability: "ui.navigate",
+        },
+      ],
+      activationEvents: ["view:workspace.tabs"],
+    },
+  );
+  host.register({
+    ...plugin,
+    load: async (signal) => {
+      loads++;
+      return plugin.load(signal);
+    },
+  });
+  const resource = { kind: "workspace", taskId: "B", tabId: "files" } as const;
+  expect(host.checkView("test.plugin.panel", resource).ok).toBe(false);
+  expect(loads).toBe(0);
+  await host.show("test.plugin.panel", resource);
+  expect(host.checkView("test.plugin.panel", resource).ok).toBe(true);
+  expect(
+    host.checkView("test.plugin.panel", { kind: "task", taskId: "B" }).ok,
+  ).toBe(false);
+  deny();
+  expect(host.checkView("test.plugin.panel", resource).ok).toBe(false);
+  await host.dispose();
+  expect(host.checkView("test.plugin.panel", resource).ok).toBe(false);
+});

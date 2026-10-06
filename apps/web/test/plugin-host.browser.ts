@@ -219,3 +219,163 @@ test("sample panel bridge failure is visible locally and retry clears it", async
   await expect(page.getByTestId("theme")).toHaveText("sample.notes.ocean");
   await expect(page.getByRole("article").getByRole("alert")).toHaveCount(0);
 });
+
+test("workspace keeps A-B-A and Notes roundtrip layouts without leaking task details", async ({
+  page,
+}) => {
+  await page.goto("?strict");
+  const stats = () =>
+    page.evaluate(() =>
+      (
+        window as unknown as {
+          pluginFixtureStats: () => {
+            workspace: number;
+            referenceLoads: number;
+          };
+        }
+      ).pluginFixtureStats(),
+    );
+  await expect(
+    page.getByRole("treeitem", { name: "A report.txt" }),
+  ).toBeVisible();
+  expect((await stats()).referenceLoads).toBe(0);
+  await expect(page.getByTestId("plugin-states")).toContainText(
+    "sample.notes: registered",
+  );
+  await page.getByRole("treeitem", { name: "A report.txt" }).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByText("Verified report for task A.")).toBeVisible();
+  await page.getByRole("button", { name: "Open from plugin" }).nth(1).click();
+  await expect(page.getByTestId("active-task")).toHaveText("B");
+  await expect(page.getByText("Verified report for task A.")).toHaveCount(0);
+  await expect(
+    page.getByRole("tab", { name: "A report.txt", exact: true }),
+  ).toHaveCount(0);
+  await page.getByRole("button", { name: "Open from plugin" }).nth(0).click();
+  await expect(
+    page.getByRole("tab", { name: "A report.txt", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("tab", { name: "A report.txt", exact: true }).click();
+  await expect(page.getByText("Verified report for task A.")).toBeVisible();
+  const loads = (await stats()).referenceLoads;
+  for (let index = 0; index < 3; index++) {
+    await page.getByRole("tab", { name: "Notes", exact: true }).click();
+    await expect(
+      page.getByRole("heading", { name: "Notes extension" }),
+    ).toBeVisible();
+    await expect.poll(async () => (await stats()).workspace).toBe(0);
+    expect((await stats()).referenceLoads).toBe(loads);
+    await page
+      .getByRole("tab", { name: "Task workspace", exact: true })
+      .click();
+    await expect(
+      page.getByRole("tab", { name: "A report.txt", exact: true }),
+    ).toBeVisible();
+    await expect(page.getByText("Verified report for task A.")).toBeVisible();
+    await expect.poll(async () => (await stats()).workspace).toBe(1);
+  }
+  await page
+    .getByRole("button", { name: "Disable Notes", exact: true })
+    .click();
+  await expect(
+    page.getByRole("tab", { name: "Notes", exact: true }),
+  ).toHaveCount(0);
+  expect((await stats()).workspace).toBe(1);
+});
+
+test("workspace tree expansion and terminal follow survive task and panel roundtrips", async ({
+  page,
+}) => {
+  await page.goto("?strict&long-output");
+  const group = page.getByRole("treeitem", {
+    name: "Unopened references",
+    exact: true,
+  });
+  await group.focus();
+  await page.keyboard.press("ArrowLeft");
+  await expect(group).toHaveAttribute("aria-expanded", "false");
+  await page.getByRole("button", { name: "Open from plugin" }).nth(1).click();
+  await expect(group).toHaveAttribute("aria-expanded", "true");
+  await page.getByRole("button", { name: "Open from plugin" }).nth(0).click();
+  await expect(group).toHaveAttribute("aria-expanded", "false");
+  await page.getByRole("tab", { name: "Terminal", exact: true }).click();
+  const output = page.getByLabel("Read-only task output");
+  await expect
+    .poll(() =>
+      output.evaluate((node) => node.scrollHeight > node.clientHeight),
+    )
+    .toBe(true);
+  await output.evaluate((node) => {
+    node.scrollTop = 0;
+    node.dispatchEvent(new Event("scroll"));
+  });
+  await expect(
+    page.getByRole("button", { name: "Follow latest output", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("tab", { name: "Notes", exact: true }).click();
+  await page.getByRole("tab", { name: "Task workspace", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Follow latest output", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Open from plugin" }).nth(1).click();
+  await page.getByRole("button", { name: "Open from plugin" }).nth(0).click();
+  await page.getByRole("tab", { name: "Terminal", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Follow latest output", exact: true }),
+  ).toBeVisible();
+  await expect(output).toContainText("Task A output");
+  await expect(output).not.toContainText("Task B output");
+});
+test("keep-mounted views hide denied data and disable releases private subscriptions", async ({
+  page,
+}) => {
+  await page.goto("?strict");
+  await expect(
+    page.getByRole("treeitem", { name: "A report.txt" }),
+  ).toBeVisible();
+  const subscriptions = () =>
+    page.evaluate(
+      () =>
+        (
+          window as unknown as {
+            pluginFixtureStats: () => { workspace: number };
+          }
+        ).pluginFixtureStats().workspace,
+    );
+  await page.getByLabel("Deny capabilities").check();
+  await expect(
+    page.getByRole("treeitem", { name: "A report.txt" }),
+  ).toBeHidden();
+  await expect.poll(subscriptions).toBe(0);
+  await page.getByLabel("Deny capabilities").uncheck();
+  await expect(
+    page.getByRole("treeitem", { name: "A report.txt" }),
+  ).toBeVisible();
+  await expect.poll(subscriptions).toBe(1);
+  await page.getByRole("treeitem", { name: "A report.txt" }).focus();
+  await page.keyboard.press("Enter");
+  await expect(
+    page.getByRole("tab", { name: "A report.txt", exact: true }),
+  ).toBeVisible();
+  // Remove the App's explicit detail selection while retaining the panel's opened-tab cache.
+  await page.getByRole("tab", { name: "Files", exact: true }).click();
+  await expect(
+    page.getByRole("tab", { name: "A report.txt", exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Disable workspace plugin", exact: true })
+    .click();
+  await expect(
+    page.getByRole("tab", { name: "Task workspace", exact: true }),
+  ).toHaveCount(0);
+  await expect.poll(subscriptions).toBe(0);
+  await page
+    .getByRole("button", { name: "Enable workspace plugin", exact: true })
+    .click();
+  await page.getByRole("tab", { name: "Task workspace", exact: true }).click();
+  await expect.poll(subscriptions).toBe(1);
+  // Explicit disable ends the plugin instance, so its former layout is intentionally released.
+  await expect(
+    page.getByRole("tab", { name: "A report.txt", exact: true }),
+  ).toHaveCount(0);
+});

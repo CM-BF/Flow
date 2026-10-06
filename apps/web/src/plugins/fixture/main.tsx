@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { StrictMode, useEffect, useState, useSyncExternalStore } from "react";
 import type { TaskSnapshot } from "@flow/contracts";
 import { PluginHost } from "../host";
 import { createBuiltinPlugins } from "../builtins";
@@ -20,6 +20,9 @@ function store<T>(initial: T) {
   const listeners = new Set<() => void>();
   return {
     getSnapshot: () => value,
+    get subscribers() {
+      return listeners.size;
+    },
     subscribe: (listener: () => void) => {
       listeners.add(listener);
       return () => {
@@ -32,6 +35,9 @@ function store<T>(initial: T) {
     },
   };
 }
+const fixtureOptions = new URLSearchParams(location.search);
+if (fixtureOptions.has("long-output"))
+  document.documentElement.dataset.fixtureLong = "true";
 function task(id: string): TaskSnapshot {
   const now = "2026-10-06T02:45:00Z";
   return {
@@ -60,7 +66,7 @@ function task(id: string): TaskSnapshot {
         cursor: 1,
         createdAt: now,
         kind: "text",
-        text: `Task ${id} output\nChecks completed.\n\u001b[32mVerified\u001b[0m`,
+        text: `Task ${id} output\nChecks completed.\n\u001b[32mVerified\u001b[0m${fixtureOptions.has("long-output") ? "\n" + Array.from({ length: 80 }, (_, i) => `Line ${i + 1}`).join("\n") : ""}`,
       },
       {
         id: `${id}-ref`,
@@ -191,6 +197,16 @@ const port: HostPort = {
       await navigator.clipboard.writeText((args as { text: string }).text);
   },
 };
+Object.assign(window, {
+  pluginFixtureStats: () => ({
+    workspace: workspace.subscribers,
+    navigation: navigation.subscribers,
+    theme: theme.subscribers,
+    referenceLoads: log
+      .getSnapshot()
+      .filter((line) => line.startsWith("flow.reference.load")).length,
+  }),
+});
 const host = new PluginHost(port);
 for (const plugin of createBuiltinPlugins({ workspace })) host.register(plugin);
 host.register(
@@ -250,6 +266,22 @@ function App() {
           }}
         >
           Enable Notes
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            void host.deactivate("flow.workspace");
+          }}
+        >
+          Disable workspace plugin
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            void host.activate("flow.workspace");
+          }}
+        >
+          Enable workspace plugin
         </button>
         <label>
           <input
@@ -352,4 +384,12 @@ function App() {
     </main>
   );
 }
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  fixtureOptions.has("strict") ? (
+    <StrictMode>
+      <App />
+    </StrictMode>
+  ) : (
+    <App />
+  ),
+);

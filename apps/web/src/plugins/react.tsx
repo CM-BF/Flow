@@ -1,5 +1,6 @@
 import {
   Component,
+  Activity,
   useEffect,
   useId,
   useRef,
@@ -229,39 +230,55 @@ export function PluginView({
   }, [host, key]);
   const retry = () => setAttempt((value) => value + 1);
   if (!contribution) return fallback ?? null;
-  if (result.key !== key || (!result.ready && !result.error))
-    return (
-      <div className={className} role="status">
-        Loading extension…
-      </div>
-    );
-  if (result.error)
-    return (
-      <div className={className} role="alert">
-        {result.error}{" "}
-        <button type="button" onClick={retry}>
-          Retry extension
-        </button>
-      </div>
-    );
-  // Registry subscription removes disabled contributions without touching surrounding chat state.
+  // Keep the renderer instance across resource changes; hide it until that resource is authorized.
+  // Activity preserves local layout while pausing effects in a hidden panel.
   void registry;
   const Renderer = host.getRenderer(contributionId);
-  if (!Renderer)
-    return fallback ?? <div role="status">Extension unavailable</div>;
+  const permission = Renderer
+    ? host.checkView(contributionId, context)
+    : undefined;
+  const loading = result.key !== key || (!result.ready && !result.error);
+  const error = result.key === key ? result.error : undefined;
+  const denied = permission && !permission.ok ? permission.error : undefined;
+  const visible = !loading && !error && !denied && Boolean(Renderer);
   return (
-    <RenderBoundary
-      key={key}
-      onError={(error) => host.reportRenderError(contribution.pluginId, error)}
-      onRetry={retry}
-    >
-      <div className={className}>
-        <Renderer
-          context={validateContext(context)}
-          execute={host.bind(contributionId, context)}
-        />
-      </div>
-    </RenderBoundary>
+    <>
+      {loading && (
+        <div className={className} role="status">
+          Loading extension…
+        </div>
+      )}
+      {!loading && (error || denied) && (
+        <div className={className} role="alert">
+          {error ?? denied}{" "}
+          <button type="button" onClick={retry}>
+            Retry extension
+          </button>
+        </div>
+      )}
+      {Renderer && !denied && (
+        <Activity mode={visible ? "visible" : "hidden"}>
+          <RenderBoundary
+            key={`${contributionId}:${attempt}`}
+            onError={(error) =>
+              host.reportRenderError(contribution.pluginId, error)
+            }
+            onRetry={retry}
+          >
+            <div className={className}>
+              <Renderer
+                context={validateContext(context)}
+                execute={host.bind(contributionId, context)}
+              />
+            </div>
+          </RenderBoundary>
+        </Activity>
+      )}
+      {!Renderer &&
+        !loading &&
+        !error &&
+        (fallback ?? <div role="status">Extension unavailable</div>)}
+    </>
   );
 }
 
@@ -286,6 +303,24 @@ export function PluginTabs({
   const active = items.some((item) => item.declaration.id === selected)
     ? selected
     : items[0]?.declaration.id;
+  const [visited, setVisited] = useState<ReadonlySet<string>>(
+    () => new Set(active ? [active] : []),
+  );
+  const itemIds = items.map((item) => item.declaration.id).join("|");
+  useEffect(() => {
+    setVisited((previous) => {
+      const next = new Set(
+        [...previous].filter((id) =>
+          items.some((item) => item.declaration.id === id),
+        ),
+      );
+      if (active) next.add(active);
+      return next.size === previous.size &&
+        [...next].every((id) => previous.has(id))
+        ? previous
+        : next;
+    });
+  }, [active, itemIds]);
   const tabs = useRef<HTMLDivElement>(null);
   const focusedId = useRef<string | undefined>(undefined);
   useEffect(() => {
@@ -355,15 +390,26 @@ export function PluginTabs({
           </button>
         )}
       </div>
-      {active && (
-        <div
-          role="tabpanel"
-          id={`panel-${active}`}
-          aria-labelledby={`tab-${active}`}
-        >
-          <PluginView host={host} contributionId={active} context={context} />
-        </div>
-      )}
+      {items
+        .filter((item) => visited.has(item.declaration.id))
+        .map((item) => (
+          <Activity
+            key={item.declaration.id}
+            mode={active === item.declaration.id ? "visible" : "hidden"}
+          >
+            <div
+              role="tabpanel"
+              id={`panel-${item.declaration.id}`}
+              aria-labelledby={`tab-${item.declaration.id}`}
+            >
+              <PluginView
+                host={host}
+                contributionId={item.declaration.id}
+                context={context}
+              />
+            </div>
+          </Activity>
+        ))}
     </section>
   );
 }

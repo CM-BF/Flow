@@ -528,6 +528,22 @@ export class PluginHost {
     }
     return undefined;
   }
+  checkView(
+    contributionId: string,
+    context: ResourceContext,
+  ): OperationResult<void> {
+    try {
+      const item = this.findContribution(contributionId);
+      assert(item && item.declaration.kind === "panel", "Panel is unavailable");
+      validateSlot(item.declaration.slot, context);
+      const entry = this.entries.get(item.pluginId)!;
+      assert(entry.state === "active", "Plugin is not active");
+      this.authorize(entry, item.declaration.capability, context);
+      return success;
+    } catch (error) {
+      return { ok: false, error: errorText(error) };
+    }
+  }
   async show(
     contributionId: string,
     context: ResourceContext,

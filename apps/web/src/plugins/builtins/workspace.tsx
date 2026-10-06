@@ -82,13 +82,9 @@ export function createWorkspaceModule(
           workspace.getSnapshot,
         );
         const [error, setError] = useState<string>();
-        if (
-          resource.kind !== "workspace" ||
-          (display.task?.id ?? null) !== resource.taskId
-        )
-          return (
-            <p role="status">Select a matching task to view its workspace.</p>
-          );
+        const matches =
+          resource.kind === "workspace" &&
+          (display.task?.id ?? null) === resource.taskId;
         const run = async (id: string, args?: unknown) => {
           setError(undefined);
           const result = await execute(id, args);
@@ -97,21 +93,28 @@ export function createWorkspaceModule(
         return (
           <>
             {error && <p role="alert">{error}</p>}
-            <WorkspacePanels
-              task={display.task}
-              details={display.details}
-              connection={display.connection}
-              activeTab={resource.tabId}
-              onActiveTabChange={(tab) => {
-                void run("flow.workspace.tab", { tab });
-              }}
-              onLoadDetail={(referenceId) =>
-                run("flow.workspace.detail", { referenceId })
-              }
-              onClose={() => {
-                void run("flow.workspace.close");
-              }}
-            />
+            {!matches && (
+              <p role="status">Select a matching task to view its workspace.</p>
+            )}
+            <div hidden={!matches}>
+              <WorkspacePanels
+                task={matches ? display.task : null}
+                details={matches ? display.details : {}}
+                connection={display.connection}
+                activeTab={
+                  resource.kind === "workspace" ? resource.tabId : "files"
+                }
+                onActiveTabChange={(tab) => {
+                  void run("flow.workspace.tab", { tab });
+                }}
+                onLoadDetail={(referenceId) =>
+                  run("flow.workspace.detail", { referenceId })
+                }
+                onClose={() => {
+                  void run("flow.workspace.close");
+                }}
+              />
+            </div>
           </>
         );
       }

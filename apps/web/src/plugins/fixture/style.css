@@ -114,3 +114,11 @@
     scroll-behavior: auto !important;
   }
 }
+
+[data-fixture-long="true"]
+  .flow-workspace-terminal
+  [aria-label="Read-only task output"] {
+  height: 160px;
+  max-height: 160px;
+  overflow: auto;
+}
