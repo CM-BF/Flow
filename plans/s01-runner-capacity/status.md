@@ -9,21 +9,21 @@
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | A/B固定生产A=a3e670b906c1b65d586b7730ca19da83109f1dcc、B=aae1eb1054d75e78273e7c91ed048aeac80195da；本树起点7279cb54，新source尚未固定 |
+| 工作基线 / HEAD | A/B固定生产A=a3e670b906c1b65d586b7730ca19da83109f1dcc、B=aae1eb1054d75e78273e7c91ed048aeac80195da；本树起点7279cb54，新sourceda93263a1f47039abcfe7d20670cc2040c457136 |
 | 工作树dirty状态 | 新A/B preparation在新claim四范围内实施；历史raw冻结 |
 | 工作分支状态 | in-progress |
-| 检查状态 | IN_PROGRESS：新A/B 61distinct pure/fake最终覆盖、局部strict0；目标待固定/独审，0actual |
+| 检查状态 | IN_PROGRESS：新A/B 61distinct pure/fake最终覆盖、局部strict0；target da93263a1f47039abcfe7d20670cc2040c457136，待独审，0actual |
 | 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
-| 实现目标 | 新A/B待固定；旧c259不覆盖新编排 |
+| 实现目标 | 新A/B da93263a1f47039abcfe7d20670cc2040c457136；旧c259不覆盖新编排 |
 | 实现范围 | 新claim仅mixed目录、mixed-ab-preparation、mixed-ab-run、原plan目录；无产品写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
 | 当前产出 | A/B固定输入与总预算Interface；当前实际窗口NOT_OPEN |
 | 下一可用交付 | 共用mixed的A/B薄编排、pure/fake checks、固定target独审 |
 | 当前阻塞 | 实现NONE；实际执行RESOURCE_PENDING/NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | PENDING：新A/B尚未固定独审；历史c259与64911 APPROVED仅其固定范围 |
+| Review | PENDING：新A/B固定da93263a1f47039abcfe7d20670cc2040c457136待独审；历史c259与64911 APPROVED仅其固定范围 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -199,3 +199,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 原writer已release；新claim `508f9c85-a27c-4382-bfe9-caca43be4b0e` v1于13:42:24.119Z COMMITTED，fresh HEAD7279cb54 clean、四scope无冲突。[Interface](../../docs/evidence/s01/mixed-ab-preparation/interface.md)固定A3e/Baae与300s/512MiB统一账本；原已main26源/observer与64911结果仍是历史已交付。本阶段只pure/fake准备，0新真实运行，NOT_OPEN；当前Review不沿用旧结果批准。唯一status继续供既有S01 registry读取，未新查live聚合。
 
 2026-10-06 13:58:44 UTC：A/B薄编排准备完成；[checks](../../docs/evidence/s01/mixed-ab-preparation/checks.json)保留red/全部失败，61distinct=19new+42direct，最终覆盖来自59首次选择与13定向修复，非单批61/61。Root预读15s及绝对side期限已修，尚待fixedtarget独审。0actual/固定输入未导出，磁盘RESOURCE_PENDING不作实现阻塞；旧raw/source历史仍按fixedGit。
+
+2026-10-06 14:01:45 UTC：固定target `da93263a1f47039abcfe7d20670cc2040c457136`，manifest `a06e0d3cd2d839b47b033df929f39ecb3e9a7b654bcbbab132bbd62959f732a7`；[review-ready](../../docs/evidence/s01/mixed-ab-preparation/review-ready.md)。新四scope claim508f9c85 v1 ACTIVE/修复期保留。旧source只有已声明接线/fixture drift，旧raw tree保持；新actual output absent，当前磁盘门槛不满足。0PG/负载，不申请OPEN。

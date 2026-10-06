@@ -131,3 +131,9 @@ Review target commit: `339147cb015fdd40ed1cedbc66aca26e736b3ee7`。状态APPROVE
 ## 2026-10-06 13:26:07 UTC main接收
 
 固定 main `aae1eb1054d75e78273e7c91ed048aeac80195da`，本owner核26源与原APPROVED目标逐字一致；来源 [main-acceptance](../../docs/evidence/s01/main-acceptance.json)。无新review target或新容量检查，旧限定保持。全部scope停写后交回，release实际回执项目外。
+
+## A/B preparation（2026-10-06 14:01:45 UTC）
+
+Review target commit: `da93263a1f47039abcfe7d20670cc2040c457136`
+
+状态PENDING；本片独审尚未发生。范围[review-ready](../../docs/evidence/s01/mixed-ab-preparation/review-ready.md)，manifest `a06e0d3cd2d839b47b033df929f39ecb3e9a7b654bcbbab132bbd62959f732a7`。不沿用c259/64911历史APPROVED。61distinct/strict0是pure/fake准备，实际A/B NOT_OPEN。
