@@ -67,3 +67,9 @@ ENG01B固定a750及已审shared client/mount现已main2e71，123不同局部证�
 复用 engineering/adapter.ts 的 execute 接缝、现workspace/checker/receipt/runtime；下一片收敛显式工程profile/purpose与一个可替换native writer。写入必须可确定已停止后检查同一内容集；执行模型不能改验收基线或监督器。现tasks/profile fixture-only限制需有受控版本化扩展，旧readonly profile保持。权限许可不等OS隔离，先核现harness/可用sandbox能力和本场景边界，不借抽象造新循环或通用沙箱项目；Mika仍是Codex实际诊断唯一owner。
 
 真实下一用户结果是>=Sol来源在同一受管合成repo修复缺陷，host检查，固定diff/证据，再由独立actor沿goals/commands的固定产物版本接受/拒绝。机械收据passed不是业务接受；模型自报不构成检查。若首合格来源有阻碍，0模型合同/adapter与FLOW/O01/M02统一读口可并行，只有固定可审候选/新预算后才运行provider，旧额度不复用。
+
+## ENG01C 与真实 native 前的两个边界（2026-10-06 11:22）
+
+[ENG01C](../../../engineering-writer-settlement/plans/eng01c-writer-settlement/plan.md)当前只提取内部 writer 的 stopped/unknown 生命周期，复用原 workspace/checker，旧固定 fixture 的 JSON、hash 和行为保持。独立执行身份必须来自宿主真实 assignment：现 HarnessContext 没有 taskId/attemptId，后继需明确 readonly 身份 Interface 及 contracts/runtime 直接消费者 scope；本片不得从目录推断或生成替代身份。
+
+现 checker 在断言进程 import 被测源码并读取同进程 stdout JSON，resources 仅观察直接子进程 close；固定受信 fixture 的既有证据成立，但不能扩成不受信 native 代码的检查真实性或全体写入已停。native 前须选择并验证最小方案：执行前明确可审的源码限制，或隔离被测执行并由宿主独占断言、报告与完整停止判定。定向验收覆盖伪造 JSON/提前退出和残留写入；基线 hash、事后 diff 不能单独代替来源与停止证明。按独立子scope渐进处理，不把通用 OS 沙箱工程当所有工作的前置。
