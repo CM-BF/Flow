@@ -30,3 +30,5 @@
 Execution Lead可主动直发Web用户task `01a10ec2-ff1a-76d0-a277-446baf89b19d` 与Mika用户task `01a10f3f-4ef0-7ca2-8e66-f1947fa4b295`，带任务ID、固定SHA、实际边界、所需动作。外部两Lead之间可双向直投。Execution Lead本身是subagent，没有可直投的独立用户task；外部回本task注明“收件人ExecutionLead”，Goal Owner立即桥接，不额外增加技术审批。不创建新task来绕过此限制。关键里程碑、scope冲突、全局容量与用户决策抄Goal Owner；owner status/evidence仍唯一事实源，消息不是第二进度账本。发现直接回唯一writer（跨队经该Lead），consumer合同直接发消费方，降低无必要中转。
 
 - [x] **OPS-001-07** 2026-10-06短交接约定：普通handoff只发taskId、事件、固定实现SHA和clean metadata HEAD、canonical证据路径、下一动作、claimId/version。完整hash/测试明细留唯一owner证据；失败或scope冲突可补必要上下文。两外部Lead已确认，Goal Owner即时桥接不增加审批；消息不成为第二进度源。
+
+2026-10-06 07:18 UTC维护：本片当前摘要与实际main对齐，历史实验/TODO证据保留；详见唯一status。无新产品或模型验证。
