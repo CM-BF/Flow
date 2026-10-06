@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-06T03:59:12.744Z",
+  "source": "Built production Web; isolated HTTP fixture via public FlowClient; no center/SDK/model calls",
+  "checks": [
+    "official Thread opens as the homepage and two natural replies stay in one conversation",
+    "late admission preserves a separately edited draft; unsupported Enter and steer keys send nothing while running",
+    "lost receipt retries the exact original turn while keeping the next draft editable",
+    "local oversized message is never sent and is restored; 409 is shown without automatic resend",
+    "typed shortened reply loads only on demand and reopens from its verified cache",
+    "eight retained conversations respect visible-pane observers; split and merge remain functional",
+    "first failed snapshot is unknown; reconnect and retry restore the actual conversation",
+    "message action uses the actual turn task and execution controls preserve explicit cancellation",
+    "hidden draft admission never steals focus or reopens a closed chat",
+    "changing centers clears active and hidden same-ID drafts and reply caches",
+    "light and dark 390px keyboard layout remains bounded with reduced motion"
+  ],
+  "pageErrors": []
+}

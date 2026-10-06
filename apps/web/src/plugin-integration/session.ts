@@ -25,6 +25,7 @@ export interface AppActions {
   knowsTask(id: string): boolean;
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
+  ownsMessage?(taskId: string, messageId: string, role: "user" | "assistant"): boolean;
   openTask(id: string): void;
   openWorkspace(id: string, tab: WorkspaceTabId): void;
   closeWorkspace(): void;
@@ -127,6 +128,7 @@ export class AppPluginSession {
     if (context.kind === "workspace" && context.taskId === null) return true;
     if (!context.taskId || !this.actions.knowsTask(context.taskId)) return false;
     if (context.kind === "message") {
+      if (this.actions.ownsMessage?.(context.taskId, context.messageId, context.role)) return true;
       const task = this.actions.task(context.taskId);
       return context.role === "user" ? context.messageId === `prompt-${task?.id}` : Boolean(task?.entries.some(entry => entry.id === context.messageId));
     }
