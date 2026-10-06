@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:18:54 UTC |
+| 最近更新时间 | 2026-10-06 13:20:51 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -77,3 +77,5 @@
 2026-10-06 13:16:46 UTC：固定修复target `bf33781450d2a5036e026ace03c1682e4d7f0f17`，源码/raw停止写入供复审；[增量manifest](../../docs/evidence/x01/leaf-meta-manifest.json)绑定8source/8readonly/34raw/9support以及7tar来源，共59repo。原2d20/53证据和1P2独审结论保留，新65不同/strict0与66own根清理不叠加计数。没有新依赖/PG/provider/真实runner负载，完整X01未完成；当前v2继续修复期。
 
 2026-10-06 13:18:54 UTC：接收Mika于13:17:47 UTC对bf337814的APPROVED，原唯一P2已关闭。只更新[正式集成输入](../../docs/evidence/x01/leaf-integration-ready.md)/review/quality，原manifest/raw/support不改，不重复65或strict；v2保留至main正式回执。后继中心合同/唯一DDL仅metadata设计，未领产品scope；028已被其他任务领取。
+
+2026-10-06 13:20:51 UTC：仅metadata形成[中心安装/读回下一片请求](../../docs/evidence/x01/center-installation-seam-request.md)，固定main a3e670b的15输入；复用X02 revision/command与X05成功精确attempt、leaf唯一prepare/read，不新scheduler或中心包执行。7新source literal和唯一DDL待Lead分配，028已被WPF-CONNECTION01占用，未amend/写产品/测试。完整disable旧pin、版本/ref/三端/隔离要求保持；leaf仍integration。
