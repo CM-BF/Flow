@@ -1,0 +1,383 @@
+{
+  "at": "2026-10-06T14:39:12.836Z",
+  "outcome": "passed",
+  "goalId": "61a86516-977a-42cc-bbf6-d364ffbee966",
+  "runnerPids": [
+    77751,
+    77776
+  ],
+  "testPid": 74393,
+  "acceptedA": {
+    "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+    "executionId": "a81372c9-7353-4879-829e-d00e5c4f2e5f",
+    "taskId": "552dc7cc-b870-4179-a4e6-d6bb2f0de120",
+    "artifactId": "7ba5978f-d275-4448-8d5a-85b68b105f92",
+    "artifactVersion": "065432d5d1943fbf39f2e87142193f04e9d91fc9bf6f1fcc3c14f50240bb7e5f",
+    "detailId": "5e21e032-896e-4a07-8348-7c1efef193b2"
+  },
+  "replacementA": {
+    "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+    "executionId": "c219c809-8efe-4b91-844d-6dc067503530",
+    "taskId": "9c8b8d4b-fa8e-41e2-9d7a-52f6f36b011b",
+    "artifactId": "d18a49ab-4745-452b-8968-207d4e9ae9a7",
+    "artifactVersion": "a397a376e4210c6a627488221c159dc0c40e264be4d653ec022b86a54dad46ff",
+    "detailId": "ca0abb21-e7c0-4a75-8228-d167f1b3c644"
+  },
+  "firstB": "fabee9b0-7d4d-4745-90ef-c67a12f1441a",
+  "secondB": "f44761f5-f67a-4725-b15a-4d318166045b",
+  "actualSecondBPrompt": {
+    "goal": {
+      "originalGoal": "Deliver a verified diamond",
+      "constraints": "No models or external writes",
+      "acceptance": "Every accepted result uses current inputs"
+    },
+    "input": {
+      "goal": "B actual goal version two",
+      "acceptance": "A revised B acceptance",
+      "constraints": "A revised B constraint",
+      "verification": {
+        "kind": "contains",
+        "expected": "version two"
+      }
+    },
+    "dependencies": [
+      {
+        "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+        "taskId": "552dc7cc-b870-4179-a4e6-d6bb2f0de120",
+        "detailId": "5e21e032-896e-4a07-8348-7c1efef193b2",
+        "artifactId": "7ba5978f-d275-4448-8d5a-85b68b105f92",
+        "executionId": "a81372c9-7353-4879-829e-d00e5c4f2e5f",
+        "artifactVersion": "065432d5d1943fbf39f2e87142193f04e9d91fc9bf6f1fcc3c14f50240bb7e5f",
+        "content": "Flow fixture result\n{\"goal\":{\"originalGoal\":\"Deliver a verified diamond\",\"constraints\":\"No models or external writes\",\"acceptance\":\"Every accepted result uses current inputs\"},\"input\":{\"goal\":\"A actual version one\",\"acceptance\":\"Nonempty fixture artifact\",\"constraints\":\"Deterministic execution only\",\"verification\":{\"kind\":\"nonempty\"}},\"dependencies\":[]}\n"
+      }
+    ]
+  },
+  "oldAStillReadable": {
+    "id": "5e21e032-896e-4a07-8348-7c1efef193b2",
+    "title": "Fixture result",
+    "kind": "artifact",
+    "content": "Flow fixture result\n{\"goal\":{\"originalGoal\":\"Deliver a verified diamond\",\"constraints\":\"No models or external writes\",\"acceptance\":\"Every accepted result uses current inputs\"},\"input\":{\"goal\":\"A actual version one\",\"acceptance\":\"Nonempty fixture artifact\",\"constraints\":\"Deterministic execution only\",\"verification\":{\"kind\":\"nonempty\"}},\"dependencies\":[]}\n",
+    "mediaType": "text/plain",
+    "artifactVersion": "065432d5d1943fbf39f2e87142193f04e9d91fc9bf6f1fcc3c14f50240bb7e5f"
+  },
+  "finalProjection": {
+    "goal": {
+      "id": "61a86516-977a-42cc-bbf6-d364ffbee966",
+      "projectId": "b261496a-1cc4-4226-81a3-13ff1d542026",
+      "acceptance": "Every accepted result uses current inputs",
+      "constraints": "No models or external writes",
+      "originalGoal": "Deliver a verified diamond",
+      "createdAt": "2026-10-06T14:39:08.469Z"
+    },
+    "projectRevision": 7,
+    "explanations": [
+      {
+        "version": 1,
+        "kind": "created",
+        "text": "Original goal, constraints and acceptance were saved.",
+        "source": {
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:08.472Z"
+      },
+      {
+        "version": 2,
+        "kind": "define-input",
+        "text": "Actual input version 1 was saved. Explicit actual input edit",
+        "source": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:08.481Z"
+      },
+      {
+        "version": 3,
+        "kind": "define-input",
+        "text": "Actual input version 1 was saved. Explicit actual input edit",
+        "source": {
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:08.491Z"
+      },
+      {
+        "version": 4,
+        "kind": "define-input",
+        "text": "Actual input version 1 was saved. Explicit actual input edit",
+        "source": {
+          "nodeId": "af607608-ba9b-424b-9b28-22d8d9e5c6ff",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:08.501Z"
+      },
+      {
+        "version": 5,
+        "kind": "execute",
+        "text": "Execution was authorized with input version 1 and 0 fixed dependencies. Explicit deterministic authorization",
+        "source": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "executionId": "a81372c9-7353-4879-829e-d00e5c4f2e5f",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:08.534Z"
+      },
+      {
+        "version": 6,
+        "kind": "accept-delivery",
+        "text": "A verified delivery was accepted for actual input version 1. Accept designated verifier evidence",
+        "source": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "executionId": "a81372c9-7353-4879-829e-d00e5c4f2e5f",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:09.221Z"
+      },
+      {
+        "version": 7,
+        "kind": "execute",
+        "text": "Execution was authorized with input version 1 and 1 fixed dependencies. Explicit deterministic authorization",
+        "source": {
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "executionId": "fabee9b0-7d4d-4745-90ef-c67a12f1441a",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:09.234Z"
+      },
+      {
+        "version": 8,
+        "kind": "execute",
+        "text": "Execution was authorized with input version 1 and 1 fixed dependencies. Explicit deterministic authorization",
+        "source": {
+          "nodeId": "af607608-ba9b-424b-9b28-22d8d9e5c6ff",
+          "executionId": "1135e0a3-aabe-43b9-8c5d-c60dad379cc6",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:09.254Z"
+      },
+      {
+        "version": 9,
+        "kind": "accept-delivery",
+        "text": "A verified delivery was accepted for actual input version 1. Accept designated verifier evidence",
+        "source": {
+          "nodeId": "af607608-ba9b-424b-9b28-22d8d9e5c6ff",
+          "executionId": "1135e0a3-aabe-43b9-8c5d-c60dad379cc6",
+          "inputVersion": 1,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:09.890Z"
+      },
+      {
+        "version": 10,
+        "kind": "define-input",
+        "text": "Actual input version 2 was saved. All actual B fields changed",
+        "source": {
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "inputVersion": 2,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:09.900Z"
+      },
+      {
+        "version": 11,
+        "kind": "execute",
+        "text": "Execution was authorized with input version 2 and 1 fixed dependencies. Explicit deterministic authorization",
+        "source": {
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "executionId": "f44761f5-f67a-4725-b15a-4d318166045b",
+          "inputVersion": 2,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:11.789Z"
+      },
+      {
+        "version": 12,
+        "kind": "accept-delivery",
+        "text": "A verified delivery was accepted for actual input version 2. Accept designated verifier evidence",
+        "source": {
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "executionId": "f44761f5-f67a-4725-b15a-4d318166045b",
+          "inputVersion": 2,
+          "projectRevision": 6
+        },
+        "createdAt": "2026-10-06T14:39:12.134Z"
+      },
+      {
+        "version": 13,
+        "kind": "define-input",
+        "text": "Actual input version 2 was saved. Explicit actual input edit",
+        "source": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "inputVersion": 2,
+          "projectRevision": 7
+        },
+        "createdAt": "2026-10-06T14:39:12.157Z"
+      },
+      {
+        "version": 14,
+        "kind": "execute",
+        "text": "Execution was authorized with input version 2 and 0 fixed dependencies. Explicit deterministic authorization",
+        "source": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "executionId": "c219c809-8efe-4b91-844d-6dc067503530",
+          "inputVersion": 2,
+          "projectRevision": 7
+        },
+        "createdAt": "2026-10-06T14:39:12.167Z"
+      },
+      {
+        "version": 15,
+        "kind": "accept-delivery",
+        "text": "A verified delivery was accepted for actual input version 2. Accept designated verifier evidence",
+        "source": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "executionId": "c219c809-8efe-4b91-844d-6dc067503530",
+          "inputVersion": 2,
+          "projectRevision": 7
+        },
+        "createdAt": "2026-10-06T14:39:12.788Z"
+      }
+    ],
+    "nodes": [
+      {
+        "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+        "title": "A",
+        "dependsOn": [],
+        "definition": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "version": 2,
+          "projectRevision": 7,
+          "createdAt": "2026-10-06T14:39:12.156Z"
+        },
+        "execution": {
+          "id": "c219c809-8efe-4b91-844d-6dc067503530",
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "task": {
+            "id": "9c8b8d4b-fa8e-41e2-9d7a-52f6f36b011b",
+            "title": "A",
+            "harness": "fixture",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "createdAt": "2026-10-06T14:39:12.165Z",
+            "updatedAt": "2026-10-06T14:39:12.729Z"
+          },
+          "inputVersion": 2,
+          "projectRevision": 7,
+          "createdAt": "2026-10-06T14:39:12.167Z",
+          "inputCurrent": true
+        },
+        "accepted": {
+          "nodeId": "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba",
+          "taskId": "9c8b8d4b-fa8e-41e2-9d7a-52f6f36b011b",
+          "detailId": "ca0abb21-e7c0-4a75-8228-d167f1b3c644",
+          "artifactId": "d18a49ab-4745-452b-8968-207d4e9ae9a7",
+          "executionId": "c219c809-8efe-4b91-844d-6dc067503530",
+          "artifactVersion": "a397a376e4210c6a627488221c159dc0c40e264be4d653ec022b86a54dad46ff"
+        },
+        "deliveryCurrent": true,
+        "dependenciesReady": true,
+        "reason": "The accepted delivery matches current inputs and dependencies."
+      },
+      {
+        "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+        "title": "B",
+        "dependsOn": [
+          "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba"
+        ],
+        "definition": {
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "version": 2,
+          "projectRevision": 6,
+          "createdAt": "2026-10-06T14:39:09.899Z"
+        },
+        "execution": {
+          "id": "f44761f5-f67a-4725-b15a-4d318166045b",
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "task": {
+            "id": "7c8af813-edc6-42c1-972b-ca84c83e3095",
+            "title": "B",
+            "harness": "fixture",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "createdAt": "2026-10-06T14:39:11.787Z",
+            "updatedAt": "2026-10-06T14:39:12.079Z"
+          },
+          "inputVersion": 2,
+          "projectRevision": 6,
+          "createdAt": "2026-10-06T14:39:11.788Z",
+          "inputCurrent": false
+        },
+        "accepted": {
+          "nodeId": "d5a71659-b2ea-446e-9b04-6d13790fac94",
+          "taskId": "7c8af813-edc6-42c1-972b-ca84c83e3095",
+          "detailId": "10329196-7dde-4854-bbc0-4423967fda88",
+          "artifactId": "245fc85a-d5d8-4d3e-a523-bb9142647d2b",
+          "executionId": "f44761f5-f67a-4725-b15a-4d318166045b",
+          "artifactVersion": "c95757a2b1500196b9979572765eca57bdb623ac2ae2738cb8a4be0c64fdf5d4"
+        },
+        "deliveryCurrent": false,
+        "dependenciesReady": true,
+        "reason": "The previous delivery needs rechecking against current inputs."
+      },
+      {
+        "nodeId": "af607608-ba9b-424b-9b28-22d8d9e5c6ff",
+        "title": "C",
+        "dependsOn": [
+          "c2dcecd4-8e29-4569-a8a6-447e75e8c2ba"
+        ],
+        "definition": {
+          "nodeId": "af607608-ba9b-424b-9b28-22d8d9e5c6ff",
+          "version": 1,
+          "projectRevision": 6,
+          "createdAt": "2026-10-06T14:39:08.500Z"
+        },
+        "execution": {
+          "id": "1135e0a3-aabe-43b9-8c5d-c60dad379cc6",
+          "nodeId": "af607608-ba9b-424b-9b28-22d8d9e5c6ff",
+          "task": {
+            "id": "8ed0bd2b-70aa-409b-a2f6-2fab31444c7e",
+            "title": "C",
+            "harness": "fixture",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "createdAt": "2026-10-06T14:39:09.251Z",
+            "updatedAt": "2026-10-06T14:39:09.844Z"
+          },
+          "inputVersion": 1,
+          "projectRevision": 6,
+          "createdAt": "2026-10-06T14:39:09.253Z",
+          "inputCurrent": false
+        },
+        "accepted": {
+          "nodeId": "af607608-ba9b-424b-9b28-22d8d9e5c6ff",
+          "taskId": "8ed0bd2b-70aa-409b-a2f6-2fab31444c7e",
+          "detailId": "0d58c29a-465e-4d51-9731-08b8d735fe3a",
+          "artifactId": "7cc581db-0c94-4dfa-9abd-d166ee880d5a",
+          "executionId": "1135e0a3-aabe-43b9-8c5d-c60dad379cc6",
+          "artifactVersion": "2086e2df21839f6934ff27576e25a88a2544fab89c7488c9deee3f80faa1bf1b"
+        },
+        "deliveryCurrent": false,
+        "dependenciesReady": true,
+        "reason": "The previous delivery needs rechecking against current inputs."
+      },
+      {
+        "nodeId": "bdc184db-c287-4e3e-b263-44c2509db9e0",
+        "title": "Unrelated D",
+        "dependsOn": [],
+        "definition": null,
+        "execution": null,
+        "accepted": null,
+        "deliveryCurrent": false,
+        "dependenciesReady": true,
+        "reason": "Actual input has not been defined."
+      }
+    ]
+  },
+  "modelCalls": 0
+}

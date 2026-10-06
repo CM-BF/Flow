@@ -1,5 +1,5 @@
 import { randomUUID, createHash } from 'node:crypto';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, statfs } from 'node:fs/promises';
 import { join } from 'node:path';
 import { Pool } from 'pg';
 import type { ClaimedTask } from '../../../../packages/contracts/src/runner.js';
@@ -7,7 +7,7 @@ import { afterAll, beforeAll, expect, it } from 'vitest';
 import { createServer } from '../index.js';
 import { registerGoalDeliveryRoutes } from './index.js';
 
-const name = `flow_o11_${randomUUID().replaceAll('-', '')}`;
+const name = `flow_o11_${randomUUID().replaceAll('-', '')}`, databaseMarker = randomUUID();
 const url = `postgresql://flow:flow-local-only@127.0.0.1:55432/${name}`;
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
 const token = 'o11-private-test-owner';
@@ -26,14 +26,21 @@ async function start() {
   address = await app.listen({ host: '127.0.0.1', port: 0 });
 }
 beforeAll(async () => {
-  await admin.query(`CREATE DATABASE ${name}`); created = true;
+  const space = await statfs('.');
+  if (space.bavail * space.bsize < 1024 ** 3 + 96 * 1024 ** 2) throw new Error('Insufficient test resource reserve; no DB created.');
+  expect((await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [name])).rows).toEqual([]);
+  await admin.query(`CREATE DATABASE ${name}`); created = true; await admin.query(`COMMENT ON DATABASE "${name}" IS '${databaseMarker}'`);
   pool = new Pool({ connectionString: url, max: 2, statement_timeout: 5000 });
   await start();
 });
 afterAll(async () => {
   try { await app?.close(); } finally {
     await pool?.end();
-    if (created) await admin.query(`DROP DATABASE ${name}`);
+    if (created) {
+      expect((await admin.query("SELECT shobj_description(oid,'pg_database') AS marker FROM pg_database WHERE datname=$1", [name])).rows[0].marker).toBe(databaseMarker);
+      expect((await admin.query('SELECT pid FROM pg_stat_activity WHERE datname=$1', [name])).rows).toEqual([]);
+      await admin.query(`DROP DATABASE ${name}`);
+    }
     const remaining = (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [name])).rows;
     await admin.end(); await save('cleanup', { database: name, remaining, serverClosed: true, at: new Date().toISOString() });
   }

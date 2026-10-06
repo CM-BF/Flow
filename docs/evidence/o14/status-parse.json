@@ -1,0 +1,73 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "两个依赖任务已在隔离中心通过；关闭和重启后按原授权继续，未知执行不重投。",
+    "next": "本片已提交独立审查；通过后接入中心现有后台扫描。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "implementation": {
+    "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+    "scopes": [
+      "apps/server/src/goal-delivery/delivery.test.ts",
+      "apps/server/src/goal-delivery/metadata.ts",
+      "apps/server/src/goal-delivery/state.ts",
+      "apps/server/src/goal-progression/advance.ts",
+      "apps/server/src/goal-progression/fixture.ts",
+      "apps/server/src/goal-progression/index.ts",
+      "apps/server/src/goal-progression/progression.test.ts",
+      "apps/server/src/goal-progression/provenance.ts",
+      "apps/server/src/goal-progression/store.ts",
+      "apps/server/src/goals/commands.ts",
+      "apps/server/src/goals/goals.test.ts",
+      "apps/server/src/goals/state.ts",
+      "packages/contracts/src/goal-progression.ts",
+      "packages/storage/migrations/030-goal-progression.sql"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+    "record": "PASSED b8081a8fba7468337f668670a67206005bc0a73f：13领域不同+2旧直接消费者分轮通过；纯有效性工作界限1检查通过；原red和未选保留；最终root noEmit0；[原始证据](../../docs/evidence/o14/README.md)"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "b8081a8fba7468337f668670a67206005bc0a73f"
+  }
+}

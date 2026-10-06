@@ -1,0 +1,480 @@
+{
+  "method": "Only individual existing package symlinks; no install/copy, all @flow workspace dependencies point to this worktree. Existing frozen donor dependencies unchanged.",
+  "links": [
+    {
+      "path": "node_modules/@types/node",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "requested": "24.19.1",
+      "workspace": false
+    },
+    {
+      "path": "node_modules/@types/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "requested": "8.23.1",
+      "workspace": false
+    },
+    {
+      "path": "node_modules/@playwright/test",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "requested": "1.63.0",
+      "workspace": false
+    },
+    {
+      "path": "node_modules/typescript",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "requested": "5.9.3",
+      "workspace": false
+    },
+    {
+      "path": "node_modules/tsx",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "requested": "4.23.15",
+      "workspace": false
+    },
+    {
+      "path": "node_modules/vitest",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "requested": "4.0.18",
+      "workspace": false
+    },
+    {
+      "path": "node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "requested": "8.23.1",
+      "workspace": false
+    },
+    {
+      "path": "node_modules/pg-boss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "requested": "12.37.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/execution-dashboard/node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "requested": "8.23.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/tui/node_modules/@flow/interaction",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/interaction",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/tui/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/client",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/tui/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/tui/node_modules/ink",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/ink@8.0.0_@types+react@19.3.0_react@19.3.0/node_modules/ink",
+      "requested": "8.0.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/tui/node_modules/react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/react@19.3.0/node_modules/react",
+      "requested": "19.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/tui/node_modules/@assistant-ui/react-ink",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@assistant-ui+react-ink@0.0.46_@opentelemetry+api@1.9.1_@types+react@19.3.0_ink@8.0.0_@types+_sglbrv6qzkjet2fvulnoqqrz5y/node_modules/@assistant-ui/react-ink",
+      "requested": "0.0.46",
+      "workspace": false
+    },
+    {
+      "path": "apps/tui/node_modules/@types/react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react",
+      "requested": "19.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/tui/node_modules/ink-testing-library",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/ink-testing-library@4.0.0_@types+react@19.3.0/node_modules/ink-testing-library",
+      "requested": "4.0.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/client",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/web/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/web/node_modules/@assistant-ui/react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react",
+      "requested": "0.15.23",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/react@19.3.0/node_modules/react",
+      "requested": "19.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/react-dom",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom",
+      "requested": "19.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/lucide-react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react",
+      "requested": "1.52.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@assistant-ui/react-markdown",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown",
+      "requested": "0.14.18",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@radix-ui/react-avatar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar",
+      "requested": "1.2.7",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@radix-ui/react-collapsible",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible",
+      "requested": "1.1.21",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@radix-ui/react-dialog",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog",
+      "requested": "1.2.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@radix-ui/react-slot",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot",
+      "requested": "1.4.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@radix-ui/react-tooltip",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip",
+      "requested": "1.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/ansi-to-react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react",
+      "requested": "6.2.6",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/class-variance-authority",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority",
+      "requested": "0.7.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/clsx",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx",
+      "requested": "2.1.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/radix-ui",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui",
+      "requested": "1.7.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/remark-gfm",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/remark-gfm@4.0.1/node_modules/remark-gfm",
+      "requested": "4.0.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/tailwind-merge",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge",
+      "requested": "3.7.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/tw-animate-css",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css",
+      "requested": "1.4.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/tw-shimmer",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/tw-shimmer@0.4.13_tailwindcss@4.3.3/node_modules/tw-shimmer",
+      "requested": "0.4.13",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/zustand",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/zustand@5.0.15_@types+react@19.3.0_react@19.3.0/node_modules/zustand",
+      "requested": "5.0.15",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@flow/interaction",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/interaction",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/web/node_modules/@types/react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react",
+      "requested": "19.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@types/react-dom",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom",
+      "requested": "19.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/vite",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "requested": "8.3.2",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@vitejs/plugin-react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react",
+      "requested": "6.1.2",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/@tailwindcss/vite",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite",
+      "requested": "4.3.3",
+      "workspace": false
+    },
+    {
+      "path": "apps/web/node_modules/tailwindcss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss",
+      "requested": "4.3.3",
+      "workspace": false
+    },
+    {
+      "path": "apps/runner/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/runner/node_modules/@flow/plugin-runtime",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/plugin-runtime",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/runner/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/client",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/runner/node_modules/@anthropic-ai/claude-agent-sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "requested": "0.3.290",
+      "workspace": false
+    },
+    {
+      "path": "apps/runner/node_modules/@flow/protocols",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/protocols",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/runner/node_modules/@a2a-js/sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "requested": "1.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/runner/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "requested": "4.6.5",
+      "workspace": false
+    },
+    {
+      "path": "apps/runner/node_modules/@modelcontextprotocol/sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@4.6.5/node_modules/@modelcontextprotocol/sdk",
+      "requested": "1.32.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/@fastify/cors",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "requested": "11.3.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/server/node_modules/@flow/plugin-runtime",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/plugin-runtime",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/server/node_modules/fastify",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "requested": "5.12.5",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "requested": "13.0.2",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "requested": "21.5.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "requested": "8.23.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/pg-boss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "requested": "12.37.0",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "requested": "13.0.1",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "requested": "4.6.5",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/@types/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+      "requested": "6.1.4",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/@types/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+      "requested": "11.1.8",
+      "workspace": false
+    },
+    {
+      "path": "apps/server/node_modules/@types/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+      "requested": "7.1.5",
+      "workspace": false
+    },
+    {
+      "path": "apps/cli/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "apps/cli/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/client",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "packages/contracts/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "requested": "4.6.5",
+      "workspace": false
+    },
+    {
+      "path": "packages/client/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "packages/protocols/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/client",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "packages/protocols/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "packages/protocols/node_modules/@a2a-js/sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "requested": "1.3.0",
+      "workspace": false
+    },
+    {
+      "path": "packages/protocols/node_modules/@modelcontextprotocol/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client",
+      "requested": "2.3.1",
+      "workspace": false
+    },
+    {
+      "path": "packages/protocols/node_modules/@modelcontextprotocol/server",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/@modelcontextprotocol+server@2.3.1/node_modules/@modelcontextprotocol/server",
+      "requested": "2.3.1",
+      "workspace": false
+    },
+    {
+      "path": "packages/interaction/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/client",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "packages/interaction/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-persistent-progression/packages/contracts",
+      "requested": "workspace:*",
+      "workspace": true
+    },
+    {
+      "path": "packages/interaction/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "requested": "4.6.5",
+      "workspace": false
+    },
+    {
+      "path": "packages/plugin-runtime/node_modules/tar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "requested": "7.5.22",
+      "workspace": false
+    }
+  ],
+  "missing": []
+}

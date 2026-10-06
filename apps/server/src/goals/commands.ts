@@ -64,12 +64,13 @@ type ExecutionInput = Omit<Extract<GoalCommand, { kind: 'execute' }>, 'fixture'>
 type ExecutionTarget = { harness: 'fixture'; fixture: Extract<GoalCommand, { kind: 'execute' }>['fixture'] }
   | { harness: 'claude'; executionProfile: ExecutionProfileReference };
 /** Caller owns authorization/transaction; both owner-native and fixture commands share exact input binding. */
-export async function executeGoalNode(client: PoolClient, boss: PgBoss, state: GoalState, input: ExecutionInput, target: ExecutionTarget): Promise<Result> {
+export async function executeGoalNode(client: PoolClient, boss: PgBoss, state: GoalState, input: ExecutionInput, target: ExecutionTarget, progressionId?: string): Promise<Result> {
   requireNode(state, input.nodeId);
   const definition = state.inputs.get(input.nodeId);
   if (!definition || definition.version !== input.expectedInputVersion) throw new HttpError(409, 'input_version', 'Execution requires the current actual input version.');
   if (!knowledgeCurrent(definition.input, state.goal.projectId, state.knowledgeHeads)) throw new HttpError(409, 'goal_knowledge_obsolete', 'Selected knowledge has changed; redefine the input with current references.');
-  const dependencies = currentDeliveries(state).dependencies(input.nodeId);
+  const validity = currentDeliveries(state);
+  const dependencies = progressionId ? validity.progressionDependencies(progressionId, input.nodeId) : validity.dependencies(input.nodeId);
   if (dependencies === null || !equalBindings(dependencies, input.dependencies)) throw new HttpError(409, 'dependency_version', 'Execution requires the exact current verified dependencies.');
   await requirePreviousStopped(client, state, input);
   const context = await dependencyContent(client, dependencies);
