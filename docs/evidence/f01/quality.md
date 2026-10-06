@@ -51,3 +51,7 @@ clean-code检查：错误不回显私密配置，CLI不把登记当安装，领�
 main8f1481现场核实已含X02/CHAT共享接线，原095/37ab独立approval仍各自限定；本新增target不继承。
 
 2026-10-06 04:12 UTC：Mika上述94f独审APPROVED，受审三文件/source合同对固定94f零diff，不覆盖随后O02依赖。O02需要的直接依赖声明dac8c391只增加runner zod4.6.5及dev MCP SDK1.32.1 importer；均为现有lock已固定版本，offline lock-only无新下载/版本漂移，依赖功能由O02真实MCP零模型用例验证。R04已停写index且claim1714v2移出，F01 claim8470v7原子接回；接收已审R04完整3770以保持其停机hook。
+
+## CHAT03生产挂载 2026-10-06 04:17 UTC
+
+固定300f0035b4c754cd09a4e38680378d8fb81924cc：server/index三行，010在scheduler前await，runner/owner角色hook之后路由，保留R04。生产createServer直接消费者只选3/7（目录重启/选择选路/两轮配置生效分层），3/3通过3.12s，4未选；typecheck通过，原始profile-production-consumer.txt/profile-production-typecheck.txt。0模型，测试SDK注入不冒充provider验收。Root只读独立APPROVED，无finding/未重跑，source固定与working一致；consumer hash 0ef54c31a9cec4991e12fbf392d102153f9aed14f9f925f14014e81c1b143338 / tsc1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a。领域a28由Mika独审，范围分开。
