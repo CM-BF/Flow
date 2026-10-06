@@ -72,7 +72,7 @@ export function nativeOptions({ allowRoot, denyRoot, native, sink }) {
 
 /** R06 is injected and remains the sole process/stdio owner. No factory call occurs on import. */
 export async function runNativeCatalogProbe({ factory, native, policyBytes, evidenceDirectory, preparedBytes, initialReceiptBytes = 0 },
-  { io = fs, now = () => performance.now(), rootBase = '/private/tmp' } = {}) {
+  { io = fs, now = () => performance.now(), rootBase = '/private/tmp', observeNotification = recordNotification } = {}) {
   const roots = [], descriptors = [], chunks = [];
   const output = { preparedBytes, policyDiskBytes: 0, stderrCapturedBytes: 0, stderrDiskBytes: 0,
     catalogDiskBytes: 0, receiptBytes: initialReceiptBytes, stdoutWireBytes: null };
@@ -172,7 +172,7 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
       for (;;) {
         const message = await transport.receive(); if (message === null) return;
         if (message.kind === 'server-request') { result.serverRequestObserved = true; stop('SERVER_REQUEST'); return; }
-        if (!recordNotification(result, message)) {
+        if (!observeNotification(result, message)) {
           stop('NOTIFICATION_UNKNOWN_OR_LIMIT'); return;
         }
       }

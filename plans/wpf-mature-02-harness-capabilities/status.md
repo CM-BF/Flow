@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T20:04:22.831559+00:00 / main8d84由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T20:14:13.948813+00:00 / main8d84由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,25 +10,25 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
-| 工作树dirty状态 | 仅本次授权实际结果/安全收据与父事实封存；source/checks/input及原准入错误/纠正不变。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；上片seal553fa972；本次remote-status源待固定，旧源按历史Git保留 |
+| 工作树dirty状态 | 仅native-remote-status新片、原probe/entry明确复用接缝及父metadata；旧raw/manifest/错误准入原件不变。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | 既有7/7+sh0不重跑；本次唯一1native/readytrue/1list因已知未允许通知停止，CLI1；两根清理、有限计量确认，结果已双审。 |
+| 当前检查 | 新六组直接fake与sh语法尚未运行；旧7/7及actual忠实失败双审保留，不重复检查。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude CORE/C01/F01中心、adapter与公共client已main；跨端完整用户验收仍开放。本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude中心与公共客户端已接入主线；Codex能完成初始化，但本次目录请求因固定通知规则停止，未取得目录。 |
-| 下一可用交付 | 本结果封存后准备GO另授的最小通知兼容增量；使用新namespace，独审前0实际目标，不复用旧窗口。 |
-| 当前阻塞 | ACTIVE: CATALOG_NOT_OBSERVED：已知但不在允许继续名单的通知触发停止；目录资格与完整跨端验收未完成。 |
+| 当前产出 | Claude中心与公共客户端已接入主线；Codex初始化可达，正在补齐固定通知兼容以继续获取模型目录。 |
+| 下一可用交付 | 固定最小通知校验与复用入口，完成直接fake和独审；实际仅在新窗口holder/资源准入后执行。 |
+| 当前阻塞 | ACTIVE: CATALOG_NOT_OBSERVED：前次目录请求按固定通知规则停止，新兼容源码待直接检查与独审。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | 5ae27670结果获status_read20:02:29及Mika20:03:30忠实性APPROVED/0P1P2；仅准确失败归档，不是目录通过，窗口CONSUMED/CLOSED且holder已归还。 |
+| Review | 前次5ae27670已双审忠实失败并由553fa972封存；新remote-status源码/组合未审，actual NOT_OPEN。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
-| 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
+| 架构影响 | 实验entry与probe各保一个实现，新固定namespace薄注入通知validator；旧默认保持，R06/生产接口/许可不变。旧源以Git绑定，待Lead必要时同步实验架构视图。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
