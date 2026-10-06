@@ -24,6 +24,7 @@ import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain,
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
 import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage, GoalContextDetail, GoalNativeExecution, GoalNativeExecutionResult } from '@flow/contracts';
+import type { GoalDeliveryQuery, GoalDeliveryRead } from '@flow/contracts';
 
 import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
 
@@ -215,6 +216,14 @@ export class FlowClient {
   }
   readGoal(id: string, signal?: AbortSignal): Promise<GoalSnapshot> {
     return this.request(`/api/goals/${encodeURIComponent(id)}`, { signal });
+  }
+  goalDelivery(id: string, input: GoalDeliveryQuery, signal?: AbortSignal): Promise<GoalDeliveryRead> {
+    const query = new URLSearchParams();
+    for (const [name, value] of Object.entries(input)) {
+      if (value === undefined) continue;
+      for (const item of Array.isArray(value) ? value : [value]) query.append(name, String(item));
+    }
+    return this.request(`/api/goals/${encodeURIComponent(id)}/delivery?${query}`, { signal });
   }
   commandGoal(id: string, input: GoalCommand, key: string, signal?: AbortSignal): Promise<GoalCommandResult> {
     return this.request(`/api/goals/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
