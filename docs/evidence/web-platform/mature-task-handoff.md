@@ -10,6 +10,14 @@ Root对1f0两文件独审APPROVED/0blocking：独立2pass、27deselected、9.23s
 
 原ef617d78 v2十八scope保留至main合法收口；作者已全源码停写。panels现在恢复CACHE只读Interface/容量与保护/精确scope方案，须对照ATTACHI及其他lead最新writer，root结构审查后fresh COMMITTED才写。WORKSPACEPERF1711限定partial仍待main；这不是缓存优化完成或MATURE05整体阻塞。
 
+## ATTACHI01 独立模块已审，可受控接收
+
+实现 **4c4de124b24a85b9e2a13e097b29c80b1e84d11a**，最终 **4a9b167888cd9dab3490886d039fc50e7fb39083**；11:26管理核local=origin/clean、9source current/fixed一致，target之后仅own records/evidence；[窄审计](attachi01-final-audit.json)。唯一source `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md`；[manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/docs/evidence/wpf-attach-i01/source-manifest.json) SHA256 `f1f1440276bfa7211b8a716f0f483948a81fc9ef16c00a7344888c802eaa44c5`，同树README为接收入口。
+
+Root APPROVED/0blocking：全文九文件、独立17/17两test文件807ms、9源四方hash和截图；作者十组官方Thread browser/types未由root重跑。批准仅DTO+typed内存ports的controller/recovery/adapter/Picker；真实公共HTTP/生产App/SendQueue、已选草稿reload和跨tab原子性仍pending，不能报MATURE03完成。94b84c59 v1十一scope保留等main收口，不提前释放。
+
+w01下一只读最小生产绑定，等待准确六client/sharedv2/factory输入；与panels CACHE逐literal核App/session/Thread/projection窗口，不双方预占。新增宿主验收：storage拒绝/损坏导致createAttachmentInput初始journal读取throw时保raw/unknown身份，呈现可行动附件错误但纯文本Thread继续；不自动清损坏记录、不令整个Session失败。cap null/旧namespace缓存须由明确binding生命周期重建/失效，不能只凭URL复用授权。这些属03-05/05-05后继验收，未追记为已批准模块实测。
+
 ## ATTACH01 fixture 接缝授权依据（11:18历史，交付以上方新输入为准）
 
 Root已批准panels仅原十八scope内的 `apps/server/src/attachments/fixture.ts`、`apps/server/src/attachments/context.test.ts` 修复；[11:15:19.231Z fresh账本](attach01-fixture-handoff-ledger.json)确认ef617d78 v2仍active，owner/tree/18literal一致。原8701/1d236、78独审和原raw保持历史固定；新两文件target/manifest与受影响结果由同一owner另行绑定，不把旧批准搬到新target。

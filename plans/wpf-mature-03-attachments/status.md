@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:25 UTC |
+| 最近更新 | 2026-10-06 11:27 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 已可选择知识引用并发送；文本附件保存与恢复已独审，附件选择与预览界面正在实现，生产聊天附件仍未接通 |
-| 下一可用交付 | 完善附件升级与正式中心启动的验证；继续上传选择、预览和未知上传恢复界面 |
+| 当前产出 | 已可选择知识引用并发送；文本附件保存、预览与恢复模块已独审，生产聊天附件接线仍待完成 |
+| 下一可用交付 | 组合验证正式中心入口，并将已审附件选择与恢复模块接入实际聊天 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -31,12 +31,12 @@
 | WPF-MATURE-03-02 | in-progress | Web co-lead | 区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用。 |
 | WPF-MATURE-03-03 | in-progress | Web co-lead | 三个入口可发现；键盘替代drag；搜索有界且可取消，预览正文按需，删除只影响当前草稿。 |
 | WPF-MATURE-03-04 | pending | Web co-lead | 同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步prepare须绑定点击意图/材料与submission代际，仅真实receipt接管后consume；材料真实进入model context。 |
-| WPF-MATURE-03-05 | pending | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；旧center缺cap阻附件，plain省略attachments字段；旧页读v2只显示正文。类型/大小/授权失败可行动，兼容矩阵待实际fixture。 |
+| WPF-MATURE-03-05 | pending | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；旧center缺cap阻附件，plain省略attachments字段；旧页读v2只显示正文。类型/大小/授权失败可行动，兼容矩阵待实际fixture；journal异常隔离保raw/unknown和纯文本，cap/namespace按绑定失效，生产宿主未验。 |
 | WPF-MATURE-03-06 | pending | Web co-lead | 真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。 |
 
 ## 依赖与领取
 
-CONTEXTI01已main并释放；ATTACH01 runtime8701/final1d236已root独审78、16源/19依赖，ef617 v2保留；fixture1f0两文件已root独审2case，finald32a正常pushclean，新累计16源清单已交Lead；旧8701/78不变，正式factory自动挂载仍未验。ATTACHI01由w01在web-attachment-input-preview/codex同名、base8701取94b84c59 v1十一新scope，首canonical d6e6eba clean/parser0已实际提交；只读DTO+typed ports/官方Threadfixture，publicclient/HTTP/App仍pending。Lead协调共享出口/decoder/mount/main，资源后端仍本组已交付。
+CONTEXTI01已main并释放；ATTACH01 runtime8701/final1d236已root独审78、16源/19依赖，ef617 v2保留；fixture1f0两文件已root独审2case，finald32a正常pushclean，新累计16源清单已交Lead；旧8701/78不变，正式factory自动挂载仍未验。ATTACHI01由w01在web-attachment-input-preview/codex同名、base8701取94b84c59 v1十一新scope，固定4c4d/final4a9已root独审17并正常pushclean，9源不变；仅DTO+typed ports/官方Threadfixture，publicclient/HTTP/App仍pending。Lead协调共享出口/decoder/mount/main，资源后端仍本组已交付。
 
 当前子任务来源：[ATTACH01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)；[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 

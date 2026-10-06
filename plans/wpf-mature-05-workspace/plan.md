@@ -51,3 +51,5 @@ WORKSPACEPERF01固定partial基线已足够，不再补齐所有截图/分位数
 不同时大改feed/layout，不预占宽App范围；与ATTACHI后继App接线按精确有序窗口交权。Arc组合目标01/02/03完整保留为随后产品片：A与B同顶层tab、swap/merge/比例、独立焦点/滚动/草稿，任意有界pane数组、首验2/3+开放；复用唯一P01真实conversation/view身份。当前仅只读proposal，未take新生产范围，不能沿基线四scope修改产品。
 
 Arc后继键盘参考（root本轮只读来源）：[W3C tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)支持有明显加载延迟时手动激活；[window splitter](https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/)给出可聚焦separator、名称/controls/value/min/max和方向键，但该页面说明模式仍待工作组完成review，不写成完整认证。03/04须用真实比例、窄屏和关闭后焦点验收，不只添加role；此研究不改变当前cache优先级、不新增scope/测试。
+
+CACHE与附件宿主的共享接缝：session.ts可能同时承担知识binding回收与ATTACHI实际挂接，两个owner先以最新main/账本定单writer窗口，再fresh精确take；不预领App/session宽范围。附件journal损坏隔离与cap/namespace失效属03-05并与05-05保护矩阵衔接，不作为4c4d模块既有实测，也不把缓存回收升级为第二状态authority。
