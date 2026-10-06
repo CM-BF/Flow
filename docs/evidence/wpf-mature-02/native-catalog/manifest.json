@@ -1,0 +1,254 @@
+{
+  "purpose": "versioned configured native catalog: five production paths and local checks",
+  "baseMain": "41315b033deb0b1953484359b686c0b228997367",
+  "mergeCommit": "944780d803ed36deb010d0760f7dd46f75cc3a6f",
+  "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+  "claimVersion": 3,
+  "recordedAt": "2026-10-06 10:30:39 UTC",
+  "sources": [
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "bytes": 7301,
+      "sha256": "4ce75b9b03cb138aa9dc39f3577965e73731d0a4f233f34fdbb540b142b5d49d"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 10790,
+      "sha256": "c920d5945291df6ec8994ac26db552b8879025f3d76a0fe8c6182991b916f848"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 2512,
+      "sha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/native-catalog.test.ts",
+      "bytes": 11879,
+      "sha256": "0c18cdb57fc772430c2b8cb478ea5c0fa45dcaa1320600a78003316d000afdcd"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog/vitest.config.mjs",
+      "bytes": 1392,
+      "sha256": "b105e86b49bdf8af3a096ce5d69ecfe73eddbfd66a3f5c046dc56ecd79d575dd"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-catalog/tsconfig.json",
+      "bytes": 1830,
+      "sha256": "6c3749ec56290bfd77cd49be042c108357b97de608d922189f173111362446d1"
+    }
+  ],
+  "unchangedInputs": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12863,
+      "sha256": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 973,
+      "sha256": "ba5564f67f0fec48a841ffdf840cc80e0327e73c1c8268a3e16919c094be6b11"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 38126,
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/execution-profiles.test.ts",
+      "bytes": 16452,
+      "sha256": "c2d45d9aac20223374dae16dcd1fc3f43226b1a4d1672884ab8807b00dbda158"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/steering-admission.test.ts",
+      "bytes": 14093,
+      "sha256": "e3a1d03701c6684e457d03922ac61d0b3cdceaeab8ceea86ba2c779154230c8b"
+    },
+    {
+      "path": "packages/client/src/execution-profiles.test.ts",
+      "bytes": 5679,
+      "sha256": "3d3a28aa0cadae83e108a288fe99464be5f69372dc1a614a7a1e2d92bbab8a26"
+    },
+    {
+      "path": "packages/client/src/native-profile-publication.test.ts",
+      "bytes": 3443,
+      "sha256": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 5897,
+      "sha256": "72e9ceb34213cc5ba95162bc1f1b3eac926d9349c83d4f54b29a8d0bd7bcd3b2"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3786,
+      "sha256": "82a0b1293cb3a464945f106a8e3a4bf16a9541542659174e12cd5102ffefa34d"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 3967,
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 2808,
+      "sha256": "5f0a2476593b82d8014bc80ca44a7906d1259d19000e8546dc948712ee1ee581"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/amend-receipt.json",
+      "bytes": 1104,
+      "sha256": "1ee530cf880801fea737b03c57ae7883312d1e41a3e0124c48d66bdc1c4ed724"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/consumers-result.json",
+      "bytes": 99,
+      "sha256": "2ddbb78adbc9656f9a8e3ff81b0a55c4a43773dc403f60c86a3573862520b15b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/consumers.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/consumers.stdout",
+      "bytes": 1057,
+      "sha256": "bbd99f1fe01e76308bd76ceac7f79bb84c77b806229ec007141333a680ded2a5"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/domain-result.json",
+      "bytes": 100,
+      "sha256": "3d42ade35c06ef478afbed6c578130d2f564c9af090552674288c46873d512bd"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/domain.stderr",
+      "bytes": 750,
+      "sha256": "21cc76a729e899f23337d9f9028df55d602275e01732f852c6d03a285d6a638d"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/domain.stdout",
+      "bytes": 414,
+      "sha256": "6415c7a6511c3afe908fec38f867174deff19bfaae5d43b99b3bf80ca6d3e580"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/duplicate-header-result.json",
+      "bytes": 101,
+      "sha256": "b34515dac44f961734e706a8055b1c21cf49707a20f043d14eac16aff8ca67d9"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/duplicate-header.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/duplicate-header.stdout",
+      "bytes": 366,
+      "sha256": "5fbbe13c542e068beaf3775b3a745358a128b467e51b28f7a72cf27ac3802733"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/initial-result.json",
+      "bytes": 100,
+      "sha256": "f152b9024a90a7bb5cf47b993a9bc29eac6e0382c49170bb2f81996eb1c00699"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/initial.stderr",
+      "bytes": 948,
+      "sha256": "e8e02d7b260e6aeb744e15de5cb2d8f58734a365e51ff7373beb77c5561c285f"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/initial.stdout",
+      "bytes": 389,
+      "sha256": "30492e6fe4e13bdaf05d79280b5733463eba3b77b9b6e7e9334ef4381c48220f"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/integration-release.json",
+      "bytes": 557,
+      "sha256": "faaaa7ca933aad220b1d63d0440d8bf9329ff4d04a4a91a2b0a1790c3d27b3c2"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/integration-take.json",
+      "bytes": 552,
+      "sha256": "69cfad3dea4a2da87726b3ffcfe7c7526150170d4da9c4dd35055121d826466f"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/native-http-result.json",
+      "bytes": 83,
+      "sha256": "d1f3ca44538a5d92716d3b238686318ac3a826201e94ca9dafc4b84522bca14d"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/native-http.stderr",
+      "bytes": 859,
+      "sha256": "17b0249643906172ceb2d01b3fe0aba6f1144ea6ba21f6ceb87a54669565eb00"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/native-http.stdout",
+      "bytes": 1224,
+      "sha256": "659844124ac5d468dd6916038896400b2428d411ee876e665325783aeb24def4"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/typecheck-final-result.json",
+      "bytes": 99,
+      "sha256": "8b0a9989fdf7113f61239cb87406e9fc4cd3c168e4b89f11fe2b10ea38757c99"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/typecheck-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/typecheck-final.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/typecheck-result.json",
+      "bytes": 99,
+      "sha256": "0e337c3af17a8c486916f55cbe19ee7747dfdba281a5523714e0d3924513cbd5"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/typecheck.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/native-catalog/typecheck.stdout",
+      "bytes": 41305,
+      "sha256": "99a033dbb9e00fa3cbeea8b67a9264afa91ac8cf056c8714b4f7e4b43962cc58"
+    }
+  ],
+  "validation": {
+    "contracts": {
+      "selected": 7,
+      "passed": 7,
+      "raw": "domain.stdout",
+      "note": "PG suite import failed separately; contract result valid"
+    },
+    "nativeHttp": {
+      "distinct": 9,
+      "firstPassed": 8,
+      "firstFailed": 1,
+      "deltaSelected": 1,
+      "deltaPassed": 1,
+      "deltaSkipped": 8,
+      "note": "Raw duplicate-header fixture lacked Host; fixed test request only. Earlier eight unchanged cases retained, not counted twice."
+    },
+    "directConsumers": {
+      "selected": 17,
+      "passed": 17,
+      "raw": "consumers.stdout"
+    },
+    "strict": {
+      "exitCode": 0,
+      "receipt": "typecheck-final-result.json"
+    },
+    "distinctPassingBehaviorChecks": 33,
+    "realCodexProviderCalls": 0,
+    "diagnosticChildCalls": 0
+  },
+  "historicalChecks": "initial zero-test Vitest alias failure, server import alias failure, duplicate Host fixture failure, and initial @types paths failure retained; not successes"
+}
