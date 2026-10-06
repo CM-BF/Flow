@@ -17,7 +17,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 六项成熟聊天目标已登记；知识App已main；轻质视觉与两层看板关联已审等待集成，补充指令App正式实施 |
+| 当前产出 | 六项成熟聊天目标已登记；知识App已main；轻质视觉与两层看板关联已审等待集成，补充指令App与活动自然状态小片并行实施 |
 | 下一可用交付 | Lead接收已审VISUAL/D08并部署；推进补充指令App实际接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -72,7 +72,8 @@
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，d01_owner，35e5 v2九scope | a8b/f708已审push；390两pane边界/实际下方composer焦点闭环，待main受控接收 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [新App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，w01_owner，bc0ded75 v1十三scope | df29独立树正式实施，首82d2与登记输入已交集中队列 |
-| D08 → D01 | [关联source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，panels，49510580 v1九scope | eca59/416160已审push；待main/4320部署，不称关联UI已可见 |
+| ACTIVITYREAD01 → MATURE06 | panels / web-activity-readability，6f427ac5 v1五scope；[原始take](../../docs/evidence/web-platform/activityread01-take-receipt.json) | 3418独立树已授权，首canonical待落盘；不写STEIRI/原projection |
+| D08 → D01 | [关联source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，panels，49510580 v1九scope | eca59/ce038已审push；待main/4320部署，不称关联UI已可见 |
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线13scope只proposal，等CONTEXTI交权 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
 | DPERF02 | [有界提案](../../docs/evidence/web-platform/dperf02-proposal.json) | 未建树/未take，排队，不算active writer |
