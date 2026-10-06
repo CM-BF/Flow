@@ -12,6 +12,10 @@ A=原37023逐字前缀+两臂共同exact CANARY_EXECUTABLE exec/read/map fixture
 
 两个目标精确为 `sandbox-exec -D ALLOW_ROOT=<own-allow> -D DENY_ROOT=<deny-own> -D CANARY_EXECUTABLE=<same-own-binary> -f <owncontrol/{baseline,pagesize}.sb> <binary> <own-allow/state/{a,b}/report.json> <nonce32>`；环境固定PATH=/usr/bin:/bin、HOME/ TMPDIR各自own、LANG=C/LC_ALL=C/TZ=UTC。单global origin；compile≤12s，两helper各≤4s且最迟global22s不再启动，TERM250ms/KILL750ms及全部清理/fsync/CLI在30s内。own root创建即登记、unknown保留；只在全部expected writer closed后bounded inventory/同inode删除。
 
-计量上限2MiB：prepared≤256KiB、compiler/两目标实际observed streams与磁盘副本分开、binary≤256KiB、所有own输出+目录metadata逐项计量；32KiB receipt/CLI、8KiB outer、128KiB archive并留至少24KiB结果尾部。8KiB report逐对象严格nonce/PID/字段；父regular描述符不冒充子观察。收据明确已观测输出/可见编译产物范围，未观测临时写删峰值unknown；任何不完整不判预算通过。实际前fresh精确HEAD/claim/disk/输入/预约不存在，再由Mika命名单次OPEN。当前0compile/0helper、无检查执行；先源码/固定组合局部独审。
+计量上限2MiB：prepared≤256KiB、compiler/两目标实际observed streams与磁盘副本分开、binary≤256KiB、所有own输出+目录metadata逐项计量；32KiB receipt/CLI、8KiB outer、128KiB archive并留至少24KiB结果尾部。2048B以下单report逐对象严格nonce/PID/字段；父regular描述符不冒充子观察。收据明确已观测输出/可见编译产物范围，未观测临时写删峰值unknown；任何不完整不判预算通过。实际前fresh精确HEAD/claim/disk/输入/预约不存在，再由Mika命名单次OPEN。当前0compile/0helper、无检查执行；先源码/固定组合局部独审。
 
 方法：现有本地find-skills、clean-code（固定sickn33 bdacd76方法基线）与brainstorming bounded路径，GO/Mika已批准此窄设计准备；不安装技能。模块仅一个C观测器、薄顺序caller/固定入口，复用进程owner与编译词法；成功测量不等于native修复或账号/模型资格。
+
+Caller实现采用一个host（固定A/B顺序、owned文件收据/逐项inventory、严格report）和一个惰性entry，唯一process owner仍runOwnedCommand，编译词法沿compilerInventory。runtime必须包含command静态依赖stderr-capture.ts。宿主显式NODE_DISABLE_COMPILE_CACHE=1；目标及compiler六项env不继承NODE_*。入口提前核固定输入和其自身输出缺席，outer先预约的8路径由最终OPEN外部fresh核，不能把wx当全量preflight。全程以outer启动前UTC至工具真实exit确认≤30s，内部performance从Node启动计，末次落盘与CLI回调独立门禁。
+
+固定C/A/B checkpoint fde671c974baf7fa2cdca5e9333e8f1eb0afcba7已获architecture_read SOURCE_REVIEW无P1/P2、Mika接收；只批准三源，不覆盖新caller/执行。新8个fake用例只注入command函数、不触实际spawn/clang/helper，含负观测、诊断errno、非法报告、一次compile/A/B参数、unknown停B、copy失败保原件、最终receipt失败、同clock门禁；当前未运行。拟一次Vitest4 configLoader native/1worker +Node24 inert import+sh -n，合计30s/raw16KiB/cache32MiB，起跑需Mika精确小窗及fresh资源/claim。
