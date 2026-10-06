@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:50:00 UTC / O14 main bd14f984e3927df139815597c4c3171af84ec4b7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:53:52 UTC / O14 main bd14f984e3927df139815597c4c3171af84ec4b7 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,20 +11,20 @@
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v48 active；7literal：[O15追加回执](../../docs/evidence/f01/goal-plan-confirmation-scope-amend.json)，client/contracts index已由C01 v2合法交回 |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 受控移交 HEAD c67d6973d5b9f516fcb3000538939d1046b39367；O14生产候选73aabff4fac96c0439817bdc72358c1385371e8d保持 |
-| 工作树dirty状态 | O15已审领域受控固定输入；新共享接线准备中，032两源批准保留 |
+| 工作基线 / HEAD | O15受控input 1c0018d2；本共享source 7f59daa552aa0618776468ec54b6ed4c5a6990cb；原settings组合与O14保持 |
+| 工作树dirty状态 | 四新源固定；本次仅source preflight/status证据，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 032原PG1/1与focusedtypes0已审；O15领域6PG+SDK6/schema1独审通过；本轮共享接线尚未验证 |
+| 检查状态 | 新shared focusedtypes0；214源/30SQL/19packages实际入口无缺件；新PG NOT_RUN。旧032/O15已审检查不重跑 |
 | 已集成main状态 / HEAD | O14五源已main bd14f984e3927df139815597c4c3171af84ec4b7；032/C01本组合尚未main，个人服务不变 |
-| Review | 032 0ee独审APPROVED保持；O15共享接线新delta待固定独审 |
-| 实现目标 | 0ee2494ed4298169c56ac3a6950fa1910ed62a7a |
-| 实现范围 | apps/server/src/index.ts, packages/client/src/claude-message-settings-production.test.ts |
+| Review | 新O15共享接线待独立源前检/真实PG；032 0ee独审APPROVED保持，见review.md |
+| 实现目标 | 7f59daa552aa0618776468ec54b6ed4c5a6990cb |
+| 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/goal-plan-confirmation-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 消息设置生产入口已审；正在接入一次确认完整计划输入的生产入口。 |
 | 下一可用交付 | 用户确认后由中心现有扫描周期推进依赖任务，退出客户端仍保留原授权。 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 等待串行数据库窗口；已固定来源和入口，当前不启动PG。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -243,3 +243,5 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。
 
 | F01-44 | in-progress | native_center_owner | [O15生产Interface](../../docs/evidence/f01/goal-plan-confirmation-production-interface.md)；已审域受控输入，实际生产专测待固定/窗口 |
+
+2026-10-06 17:53:52 UTC：F01-44固定四源7f59daa552aa0618776468ec54b6ed4c5a6990cb，复用既有scan不新增timer；[真实入口预检](../../docs/evidence/f01/goal-plan-confirmation-production-preflight.json)与[下一窗口请求](../../docs/evidence/f01/goal-plan-confirmation-production-request.json)。新PG未跑，旧13领域/032不重复。

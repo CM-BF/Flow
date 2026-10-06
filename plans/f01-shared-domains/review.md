@@ -1,3 +1,11 @@
+# F01 current review
+
+状态：NOT_STARTED
+
+Review target commit：7f59daa552aa0618776468ec54b6ed4c5a6990cb
+
+本当前段仅O15公共client/export/生产031挂载与一条factory专测，等待独立源前检和实际PG。原032 0ee独审APPROVED及O14 main结论保留下文，不能继承为本新target批准。
+
 # F01 当前032消息设置生产审查
 
 状态：APPROVED；Reviewer：astra_ultra_execution_lead / gpt-6-astra，独立于作者native_center_owner
