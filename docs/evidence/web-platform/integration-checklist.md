@@ -19,8 +19,8 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
 | WPF-PROFILE01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
 | WPF-QUEUE00 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
-| WPF-PROFILEI01（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration | codex/web-profile-integration | plans/wpf-profile-integration | docs/evidence/wpf-profile-integration |
-| WPF-DPERF01（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance | codex/dashboard-proof-performance | plans/wpf-dashboard-proof-performance | docs/evidence/wpf-dperf01 |
+| WPF-PROFILEI01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration | codex/web-profile-integration | plans/wpf-profile-integration | docs/evidence/wpf-profile-integration |
+| WPF-DPERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance | codex/dashboard-proof-performance | plans/wpf-dashboard-proof-performance | docs/evidence/wpf-dperf01 |
 | WPF-PROFILEUX01（待登记） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary | codex/web-execution-profile-summary | plans/wpf-profileux-execution-summary | docs/evidence/wpf-profileux |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
@@ -289,3 +289,19 @@ PROFILEI01首canonical9fefee445567ee8d6e1f7b5a2a11d2378c79c23c已管理只读核
 新PROFILEUX01仅有限已观察UI改善：旧PROFILE已release，05:09:55.683Z freshledger六scope空闲、新698树branch/head/clean独立核；[take](profileux01-take-receipt.json) d113be51-5ccd-48a6-95a9-2f9f8f5b3756 v1于05:10:12.187Z committed。实际App接线与模块摘要写权完全分开，保持公开接口及创建校验不变，owner先canonical再实现，独审后由Lead受控组合。
 
 05:12 PROFILEUX首canonical dd6d8b6e65ccddd275ac44a12753f05ce112837d已实核，唯一source planDir plans/wpf-profileux-execution-summary、evidenceDir docs/evidence/wpf-profileux（不可默认误设wpf-profileux01），M2/priority3/implementation/UNKNOWN/NOT_STARTED，claimd113v1。核时两个自有UI文件已dirty，准确登记为实施中。完整字段已一次root桥Lead，尚未服务聚合确认。PROFILEI01固定2e4c获root05:11:08批准，作者metadata仍收口；scope/docs完成后交Lead，模块UI后继不自动纳入其审批。
+
+## 05:13 实际服务聚合与完整App交付
+
+PROFILEI01 finalc1dc77c116f235ae3023e20da55223b305a07fa1/codex/web-profile-integration clean；实现2e4c5fe7d795e397ab1b1e492605562a847c5fb0/base698。管理36paths在10scope、8实现与保护路径零差、fixeddiffcheck0、6md37links4TODO通过；完整metadata仅保留原始log空白，validation明确实际范围。作者60direct/typecheck/build/dev9/prod9；root独立44direct/两报告8blobhash/有限CUA/390图，未重跑18browser。0模型/DB/真实provider，public模块4f未包含后继UX；README保留51832/session68857恢复和5图。完整ready已给root统一Leadhandoff。
+
+作者05:12:10.423Z原样60源采样是HEAD2e4且metadata dirty：review/checks2e4、proof unchanged、claim7f1v1matchesSource、human.delivery=integration明确；不把后续c1dcclean替换原样本。root随后05:13:09.350Z独立60源/main6b4b89f397b35d7e769846df457e76bb29f4a265核两卡均live/current/issues空、各target/proof/claim正确，PROFILEI01 c1dc与DPERF4d均clean；前者mainfalse、后者maintrue。服务已切是此实际证据，不靠registry源码推断。PROFILEUX仍unregistered领取可见，等Lead下批；管理无重复API读。DPERF作者依root采样可省重复取样，安全点Git核main→仅metadata delivered→停写release。
+
+DPERF最后owner metadata08bd0a71494f54809f4c4a2fa5b9718285103ea3 clean，亲核main/origin6b4b89f397b35d7e769846df457e76bb29f4a265、5cd祖先、两实现相同；引用root05:13:09.350Z实际采样，不重复API。全部4scope停写后[05:14:24.445Z release v2](dperf01-release-receipt.json) committed，旧canonical此后不追写，未来修复另take。
+
+## 05:19 摘要交付与主线接收
+
+PROFILEUX最终交付60d8bc72b9bd346726693abcf8807cf90d18336a clean、实现55b244b22a147f3360b12281bac152666749364b/root05:14:39APPROVED。管理只读24paths均在六scope，5Markdown/27本地链接/3TODO一致，四实现对target零差，源码diffcheck0；全metadata仅原始typecheck.log:4 EOF空白例外，保留raw。作者typecheck+9browser通过，root独立CUA/源审与作者几何来源分开；没有重跑App组合或产品套件。
+
+MainLead正式接收主线14c61b4062f8040ba6c7239860929366e5bd3fc1已push/clean，8App/4摘要scope相同，Web组合typecheck通过；root及管理者实际Git核同HEAD clean。PROFILEUX owner亲核main祖先及四path相同，最后metadataef8698344f90412891e35fed05c21743d97cb708 clean，全六scope停写后[release](profileux01-release-receipt.json) d113be51 v2/05:18:15.732Z。待Lead部署通知后一次聚合验证；旧05:13 UX未注册仍是该时刻事实，不改写样本。
+
+QUEUE01受领：PROFILEI01最后07cffeba1a818f5697c23efc37a7e5c2b813c035 clean、main14c61祖先/8paths一致，全10scope停写后[release v2](profilei01-release-receipt.json)。管理亲核新web-conversation-queue/codex/web-conversation-queue/14c61 clean；05:19:16.111Z ledger只显示旧CHAT官方Thread与13scope相交。依据owner停写确认，[CHATv4→v5](chat-queue01-amend-receipt.json)只移出该文件；[QUEUE01 take](queue01-take-receipt.json) b4ea85d0-ad87-4903-9a59-73281ad17752 v1/05:19:31.947Z committed后followup开工，原13scope不扩App/oldoutbox/profile/shared/根依赖。首canonical到达再登记，进度单源仍owner status。

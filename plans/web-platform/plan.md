@@ -167,9 +167,10 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；84acdc整体限定APPROVED/final4b7e0f，独立scope/docs通过，交Lead集成仍另计。
 - [x] **WPF-001-11** WPF-PROFILE01：独立选择模块4f198576限定APPROVED/finale730，混合目录/显式聊天allowlist/冻结creation与pin校验完成；真实App接线另受领，U11完整目标继续开放。
 - [x] **WPF-001-12** WPF-QUEUE00：最小boolean reader已5acc限定APPROVED/final498，false旧行为保持且不伪启完整队列；source字段已交root一次桥接ready与注册，Lead成套集成另计。
-- [ ] **WPF-001-13** WPF-PROFILEI01：将整份执行配置选择接入聊天，验证创建即锁、完整pin、原key未知回执、新草稿与连接隔离；仅正式受领10scope，模块存在不等用户旅程完成。
+- [x] **WPF-001-13** WPF-PROFILEI01：2e4c限定APPROVED/finalc1dc，创建即锁/完整pin/未知回执/新草稿连接隔离已验证；管理scope/docs与实际看板目标一致，交Lead集成另计。
 - [x] **WPF-001-14** WPF-DPERF01：5cd限定APPROVED/final4d7425，临时样本同target比较2→1、Git启动29→24，4新检查通过；关联旧registry计数失败明确保留，main接收另计。
-- [ ] **WPF-001-15** WPF-PROFILEUX01：压缩已锁配置常驻摘要，将完整身份放原生details；保留requested/actual未知、pending锁定、legacy无pin与同model多runner辨识，不改公开Interface/校验/创建语义。
+- [x] **WPF-001-15** WPF-PROFILEUX01：紧凑摘要与原生details，固定55b/rootAPPROVED；60d8交付及本地链接/TODO通过，main14c61已接收，ef869记录后全六scoperelease。保持原公开Interface/权限/冻结语义。
+- [ ] **WPF-001-16** WPF-QUEUE01：已按固定14c61独立树与13scope正式受领，交付中心权威排队/暂停/继续/独立取消与真实键盘发送一致性；保持REQ44的回执、持久性、分页和跨连接验收，独审/集成另计。
 
 ## 验收、风险与持续方式
 
@@ -273,3 +274,7 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 05:06 MainLead新增status可选字段“本片段交付阶段”，枚举planning/implementation/review/integration/delivered。该字段仍由唯一status owner手填：作者实现完成待独审为review、独审通过待main为integration、main接收为delivered；它描述当前片段，不要求把后继开放TODO全勾，也不替代checks/review/main证据。已通知两活跃owner安全点维护。D07 claim84f80ac0v1只负责human.mjs/其新test/资料，与我方DPERF aggregate四scope无重叠。
 
 05:10 root CUA22在真实App HTTPfixture51832看到locked配置块约250px、UUID/digest常显挤压对话；这是实际观察触发的有限UX改善，不新增全栈插件/模型功能。新WPF-PROFILEUX01从698已核clean，旧PROFILE17093v2released、六scope无冲突，[05:10:12.187Z正式take](../../docs/evidence/web-platform/profileux01-take-receipt.json) d113be51v1，w01仅模块TSX/CSS/两fixturetests/自有plan-evidence。原生details默认折叠、摘要仍解释requested不等实际生效，Interface/catalog/selection/权限/CREATE冻结零变；不碰PROFILEI01八实现路径，独立动态服务与0模型验证。
+
+05:19 已审PROFILEI01与PROFILEUX在main14c61受控合入，摘要/草稿组合typecheck由Lead完成，未推断真实SVC已升级。后继QUEUE01正式从固定14c61独立树受领，旧PROFILEI01停写release与旧CHAT官方Thread逐路径CAS先于take；先前13scope研究和原REQ44验收保留，不另造队列权威协议。
+
+05:20 QUEUE01移交已执行：PROFILEI01全十scope release v2，旧CHAT officialThread明确停写后v4→v5 CAS，仅移出一文件，freshledger无其他相交；新b4ea85d0v1/13scope成功take后才派实现。独立canonical plans/wpf-queue01-ui由唯一owner建立，父目录不复制其TODO/check/review。

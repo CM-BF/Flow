@@ -405,3 +405,17 @@ PROFILEI01作者已完成60项局部检查（34projection/10outbox/16模块）�
 K01引用研究依赖来自Mika经root预告：GoalOwner已批准其独立take，未触Web/Thread/host。拟KnowledgeCitation={projectId,sourceId,version,contentDigest,locator:{kind:'utf8-bytes',start,end}}，不可变版本正文、UTF8半开有界范围，resolve显式isCurrent/currentVersion；首片owner-only项目内文本/词法，不扩runner/MCP授权，暂不发中心消息renderer DTO。等待正式contracts commit与Lead统一export/client；当前仅接口预告，不写成类型已存在，不造私有Web协议。可作为后继可信renderer引用场景，已有flow-reply-detail迁移也仍是候选。
 
 PROFILEUX组合边界：root已审PROFILEI01测试使用region `Locked execution profile`及`Creation receipt pending`/`Conversation profile locked`/`Unpinned legacy default`；已交UX唯一owner保留产品含义/稳定入口，details闭合不另建pin状态。后续组合只验证受影响摘要/草稿/焦点旅程，不机械重跑原18组。
+
+05:19 管理clean-code复核：本段只审PROFILEUX职责/接口保持、文档当前与历史时态、owner scope与release；24paths无越界，raw日志保留且fixed检查不冒称全metadata绿。按本地find-skills方法复用已安装find-skills/clean-code（路径/来源基线同既有quality），无新安装、无产品测试。已正式followup同worker有界只读renderer proposal：固定main接口、实际assistant-ui注册生命周期、单个flow-reply-detail例子与模块/将来App接线分离，Flow namespace确定性冲突拒绝；不取新claim/写产品、不扩X01/K01。
+
+## 05:20 固定14c61可信data-renderer一页候选（w01只读收口）
+
+来源为worker固定main/origin `14c61b4062f8040ba6c7239860929366e5bd3fc1` 的git-show及实际安装react0.15.23/core0.3.22；0项目写、0测试、0模型、未建树/take。`conversations/messages.ts:6–11`只为truncated reply生成`flow-reply-detail`/`{turnId}`；`ConversationThread.tsx:14–26,84–92`直接注册并每chat独立provider；`projection.ts:29–35,274–298`已有完整身份cache、显式load、digest核验与dispose。P01只声明button/menu/panel/theme，host已有ID冲突/原子activation/cleanup；不将现有slot数冒充renderer协议。
+
+最窄建议是新独立registry/provider Bridge/现有flow-reply-detail builtin模块：可信声明ownerId/name/version/parse先整批校验，保留`flow.*`、`flow-*`、`flow-reply-detail`，不靠注册顺序择胜；同名冲突确定性拒绝与诊断。旧无显式version的唯一保留名字按legacy v1处理，strict `{turnId}`再由App窄port核conversation/message/turn归属。未知版/schema不给load句柄，parse/render异常和disable由App-owned有界逃逸fallback保留正文与显式Read full reply，权限与projection缓存不变。注册/主题/enable/disable/切pane均0detail，用户点击才1、flight去重与cache复用；不扩中心DTO、不触模型tool、不给aui/client/token或宣称同realm隔离。
+
+官方[AssistantRuntimeProvider](https://www.assistant-ui.com/docs/api-reference/context-providers/assistant-runtime-provider)说明provider职责；精确行为以安装源码为准：core `src/react/model-context/makeAssistantDataUI.ts:24–32`生成注册组件、`useAssistantDataUI.ts:19–24`Effect注册/cleanup；`client/DataRenderers.ts:21–45`同name追加数组且cleanup删除所有同render引用；`primitives/message/MessageParts.ts:363–383`取`[0]`或fallback；`AssistantRuntimeProvider.tsx:28–60`与`RuntimeAdapter.ts:47–53`涉及本地scope/parent继承。故每provider一个稳定且独有注册函数；共享仅immutable声明/host状态，pane本地port和aui注册隔离，单pane清理不能撤另pane。将来显式aui继承须重核，不能依上游先到优先隐式解冲突。
+
+候选模块八literal范围：`apps/web/src/data-renderers/{registry.ts,react.tsx,flow-reply-detail.tsx}`、三个专用test/fixture文件与独立plan/evidence（具体路径须未来正式冻结）；App接线另片预计ConversationThread/session/react，messages只有将来显式version才需。最小验收为冲突顺序反转/namespace、未知version/schema、throw/loadfail/disable、split独立provider/StrictMode/close/换中心、detail0→1→cache、wrongturn拒绝/draft保持/键盘双主题390。此时没有实现/行为通过结论，不另造全栈计划。
+
+领取纠正：worker清单原据约05:17的CLI历史采样，不是当前权。05:18:50 PROFILEI01 7f1v2已released，05:19:27 CHAT082v5移出officialThread，05:19:31 QUEUE01 b4ea85d0v1已领ConversationThread/projection/officialThread等13scope；未来renderer接线必须再核fresh ledger并与QUEUE01唯一writer正式转交。P01/I01其余旧claim仅保留历史观察，不作为将来写权。
