@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T20:10:26.615Z",
+  "count": 174,
+  "uniqueIds": 174,
+  "task": {
+    "id": "SVC07",
+    "title": "事务连接失效与安全释放",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect",
+    "branch": "codex/server-transaction-disconnect",
+    "planDir": "plans/svc07-transaction-recovery",
+    "evidenceDir": "docs/evidence/svc07"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "事务连接失效的保护修复已通过定向验证，正在独立审查",
+    "next": "完成独立审查和直接消费者验证后，将修复纳入主线",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "parsedUpdatedAt": "2026-10-06T20:09:48.000Z",
+  "onlyRegistryAndOwnMetadata": true
+}
