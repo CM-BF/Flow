@@ -4,7 +4,7 @@
 
 只将fixture中两个固定构建输入的数组声明为readonly tuple，修根strict/noUncheckedIndexedAccess下解构可能undefined。运行值/旧新版本/releaseId/PG/旅程不变；不加env guard、不改SVC或产品。
 
-- [ ] RELEASE02-01 窄类型修复，根tsc noEmit与静态运行矩阵等值核对。
+- [x] RELEASE02-01 窄类型修复，根tsc noEmit与静态运行矩阵等值核对。
 - [ ] RELEASE02-02 固定source独立review与主线接收。
 
 旧RELEASE01定向tsc未启strict/noUncheckedIndexedAccess，通过记录保留其原范围；新根类型检查补上该边界，不归咎其他工程片。只类型静态检查，0浏览器/PG/provider/个人发布。
