@@ -56,6 +56,20 @@
       "attribution": "unknown, shared host concurrent work",
       "decision": "full SVC06 remains blocked; small work continues; preserve ~1GiB shared completion reserve; both co-leads notified once",
       "cleanupActions": 0
+    },
+    {
+      "observedAt": "2026-10-06 14:08:56 UTC",
+      "availableKiB": 892260,
+      "source": "actual df -k Data volume",
+      "attribution": "unknown shared host",
+      "decision": "below1GiB reserve; no new install/fullbuild/PG-load/AB, light source/review/metadata/integration continue; SVC06full remains2.5GiB gate",
+      "cleanupActions": 0,
+      "retainedCandidates": [
+        "/tmp/flow-harness-eval.iq7BzZ has source provenance references",
+        "/tmp/flow-t3-inspect.fFfqh2 original owner unknown",
+        "web-context-integration active installation unchanged"
+      ],
+      "timeCorrection": "Earlier A2A label14:13 was management typo, not measurement timestamp; authoritative observation is this recorded time and GO14:07:34 fact."
     }
   ]
 }
