@@ -21,7 +21,7 @@
 | 优先级 | 2 |
 | 当前产出 | 新观察已准确找到runner受理记录，但不能证明空闲；已在材料导入和服务变更前停止，保留两次原始失败。 |
 | 下一可用交付 | 先由Lead核定未决受理的恢复边界；不清空记录、不重试或继续发布。 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: runner受理记录尚不能证明空闲，安全准入未通过；先核定恢复边界，不能继续发布。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；5fe98f97cb7506f65555ab72205ebaea8464af84 独立APPROVED_EXECUTABLE_PREPARATION，79绑定/3新检查；原a644批准与8旧检查保持，2次独立窗口只读准入失败、0发布变更 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
