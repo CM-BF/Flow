@@ -19,6 +19,6 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --filter @flow/web exec tsx test/c
 - 9组浏览器PASS，Chrome版本/HTTP请求/时点/[原始报告](browser-results.json)；同树真实FlowClient HTTP接口，StrictMode注册，初始0HTTP、选中0resolve、首次展开1/cache0、native hidden→freeze→resume0读、旧版本保留、markup转义、unsupported保留选择、offline晚响应与project隔离。
 - 最后微小整理限定嵌套details事件及disposed freeze，16tests/typecheck/9browser已重新通过。首次[日志](browser-first.log)与[最终日志](browser-final.log)保留；browser-results为最终运行，截图同次生成。报告在实现commit前生成，七source hashes与固定target/current全相同，见manifest。
 - 作者目视[浅色](knowledge-light.png)、[深色390](knowledge-dark-390.png)、[浅色390](knowledge-light-390.png)，真实键盘Space/Enter/焦点、reduced-motion与无横向溢出断言通过。
-- 七源码固定diffcheck通过。未全库测试/未实际App生产build；本模块尚不在App入口，fixture由Vite真实编译且Web整体类型检查通过。未测屏读、Safari/Firefox、实际产品中心/模型。
+- 七源码固定diffcheck通过。完整base→metadata diffcheck另有5个原始日志末尾空行提示（module-first.log:10、module-tests.log:10、typecheck-first.log:4、typecheck-fixture.log:4、typecheck.log:4），原日志保留不清洗。未全库测试/未实际App生产build；本模块尚不在App入口，fixture由Vite真实编译且Web整体类型检查通过。未测屏读、Safari/Firefox、实际产品中心/模型。
 
 本片没有发送/排队/ACK集成，薄context reader/会话组件保持只读。中心最终执行输入预算仍可能拒绝；未来消费者必须保留原稿/refs，深冻结原request并核ACK context.sources完整tuple和顺序。不能从这里的本地freeze测试声称真实Send/Queue已经携带知识。P01宿主/授权、Dialog与App接线另领取，不造第二registry。main尚未接入本片，独立review在同目录plan中单独记录。

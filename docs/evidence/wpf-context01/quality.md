@@ -9,3 +9,5 @@ UI方法参考root已读https://raw.githubusercontent.com/vercel-labs/web-interf
 2026-10-06 07:51 UTC 首段clean-code：selection纯引用身份/预算；controller独占bounded请求/cache，UI原生控件不持有网络；16实际模块tests与typecheck通过（未提交实现），HTTPfixture测试进行。发现freeze不能套全部readiness，否则关闭picker无法供后继Send；已分离读取门禁和本地冻结身份/授权/cap门禁并有hidden/offline用例。发现嵌套details toggle可能误触父读取，限定event target；dispose明确拒绝freeze。getSnapshot稳定/不可变、no-op readiness不publish、取消后late不写均已测。现真实FlowClient采用本树workspace client/contracts，frozen-lockfile ignore-scripts安装3.3s且根lock/manifest无改。无模型/产品DB。
 
 2026-10-06 07:51:56 UTC 交候选clean-code：七源码固定34cd2b8。16tests/tsc/9HTTP浏览器最终复验通过、作者目视浅深390图；native details仅自身toggle触读、已处置controller拒freeze、关闭面板可freeze三行为修正已覆盖。body观察标签不宣称永久最新，whole-source digest不冒充chunk验证；不把hasMore当页游标。无新依赖/隐藏poll/URL知识存储/自动正文预取，无未解决实现finding（独立审查尚未开始）。生产只有4文件，测试以窄ports和真实HTTP client分别验证，未复制Send/Queue实现。
+
+候选metadata审计：实际parseStatus human.complete=true/errors=[]/implementation.errors=[]/checks绑定34cd；6md29本地链接无断。保护App/conversations/plugins/packages/rootmanifest/rootlock零diff。七源码diffcheck0；完整diffcheck五处原始日志末尾空行如README所列，保留原样，不冒称完整metadata零提示。
