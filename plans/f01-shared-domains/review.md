@@ -59,3 +59,10 @@ Mika独立只读APPROVED e28d547ed3b446a252595bd1960953382ffa4dd8，现场clean8
 
 Review target commit：208a928969c8e343ea09ecc06db80a6808bbbd74
 范围仅上述三文件；Mika O05领域1f211与薄client e28各自已审。见[o05-production-manifest](../../docs/evidence/f01/o05-production-manifest.json)，8不同检查最终通过、原失败保存；不证明NL/原生query。当前增量NOT_STARTED。
+
+## O05生产挂载独立批准
+Mika只读APPROVED固定208a928969c8e343ea09ecc06db80a6808bbbd74（clean53fcd1e），3源码/6输出与manifest e5ecb7a75be51a9d5794009aa03373c4333f712bc402f9137c384310a4545af1一致，无finding未重跑。证据是首7绿+client红后定向1绿、类型修正后typecheck和client绿，不称一次整套8/8。仅014挂载/迁移历史保持/真实client消费，不包含NL。
+
+## SVC02薄client待审
+Review target commit：caea11bbd5589d33e1cad8d73a328587323ad873
+三文件4方法，1/1 HTTP+noEmit，见maintenance-client-manifest.json；当前NOT_STARTED，不包含维护领域/host安全刷新。

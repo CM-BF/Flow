@@ -91,3 +91,6 @@ Mika发现定时扫描与手动领域测试竞争；已交原owner以显式facto
 ## O05生产挂载 2026-10-06 05:19 UTC
 
 固定208a928969c8e343ea09ecc06db80a6808bbbd74，三文件：014 await在scheduler前、owner鉴权后路由；真实公开client→PG生产入口；旧012/013迁移测试改为旧1..13行及applied_at完整不变、版本唯一，允许合法后继迁移。取得F01 claim v11追加旧迁移test后修改。先实证硬编码13红例，保留red。组合6领域+1迁移通过，新client初次仅JSON对象key顺序断言失败（保存7/8）；排序比较后1/1。类型检查发现缺显式workspaceId，补与server默认相同personal后finaltypecheck及同1client重新通过。8个不同用例最终均有绿证据，不称一次整套8/8。无模型、无103旧套重跑。独立manifest绑定当前源与所有失败/成功输出。clean-code同stack本地方法复用：保持薄接线，领域未手改，错误与auth沿原逻辑；迁移消费者不再耦合未来总数。
+
+## SVC02薄client 05:22 UTC
+固定caea11bbd5589d33e1cad8d73a328587323ad873，4方法仅读维护快照/历史、发送drain/resume，精确保留CAS/operationId/key/原文与AbortSignal；不把计数或重放回执当停机许可，不包含host hold接口。真实HTTP1/1与noEmit通过，缺方法初红保留；无PG/进程/模型调用。沿既有传输Interface与错误机制，未扩第二调度器。

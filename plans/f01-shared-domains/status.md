@@ -55,3 +55,5 @@
 | F01-11 | in-progress | Lead | O05固定589a合同，四薄方法e28d真实HTTP1/1/typecheck；domain/生产挂载未验 |
 
 2026-10-06 05:19 UTC：O05薄client e28获Mika独审APPROVED；生产挂载208a928969c8e343ea09ecc06db80a6808bbbd74待独审，8个不同局部用例分别绿及typecheck通过。原13迁移总数/新测试JSON key顺序/显式workspace字段失败均保留。未main、未模型。
+
+2026-10-06 05:22 UTC：O05生产208a获Mika独审APPROVED，已审待主线；SVC02薄clientcaea11bbd5589d33e1cad8d73a328587323ad873独立1/1/noEmit待审，不包含领域或现服务升级。
