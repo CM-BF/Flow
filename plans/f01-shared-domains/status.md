@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:20:56 UTC / main70cc4e85 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:34:00 UTC / main3c8a3ad4 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,7 +14,7 @@
 | 工作树dirty状态 | 产品候选已固定；本次原始证据和metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CLI HTTP1红→1绿33ms，根types最终0；production PG NOT_RUN，资源门槛未达。 |
-| 已集成main状态 / HEAD | X01静态安装client67fd/生产5e121已审进入7810cbf1；O14领域已main，当前生产候选未集成。个人runtime362/v15未更新。 |
+| 已集成main状态 / HEAD | X01静态安装已审进入7810cbf1；O14领域与薄client已mainfb9，当前生产候选73aab未集成。个人runtime362/v15未更新。 |
 | Review | NOT_STARTED 当前O14生产候选；薄deef由status_read独审APPROVED，Mika接收。X015e121/67fd原独审已接收main。 |
 | 实现目标 | 73aabff4fac96c0439817bdc72358c1385371e8d |
 | 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/goal-progression.test.ts, apps/server/src/index.ts, packages/client/src/goal-progression-production.test.ts |
@@ -210,3 +210,7 @@
 独立源前检修复：生命周期用例自备profile/自动扫描模式，可单独选择；root types0。锁时点不证明关闭期间首次admission，重启key重放不冒lost ACK。原前检见[记录](../../docs/evidence/f01/goal-progression-production-source-precheck.json)，PG仍NOT_RUN。
 
 薄client独审已按Mika唯一canonical原文转录[批准记录](../../docs/evidence/f01/goal-progression-client-independent-review.md)，无重复复审。产品接线73aab独立源前检P2静态关闭，仍未执行PG，不借薄transport批准。
+
+## 2026-10-06 15:31 数据库准入未运行
+
+Web A-only 实际结束并正常清理后，fresh free1,098,022,912B低于1GiB+32MiB。未启动测试/数据库，窗口立即交回；不降原门槛、不重跑绿项。[真实准入记录](../../docs/evidence/f01/goal-progression-production-admission-not-run.json)。薄client已审进入mainfb9，3源同target逐字相同：[main回执](../../docs/evidence/f01/goal-progression-client-main-receipt.json)。个人服务保持362/v15。
