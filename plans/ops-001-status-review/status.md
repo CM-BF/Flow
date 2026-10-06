@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:46 UTC / main22a0806b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:01 UTC / main6223c749 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | 原 Docker daemon/PG 身份已恢复；重新开放两树核查在余量达线时停止，实际稀疏操作0/2 |
+| 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main22a0806b，已审候选caf1将受控发布；个人source362/v15已恢复中心，runner/Web与数据保持 |
+| 已集成main状态 / HEAD | main6223c749；恢复证据/已审准备工具与看板修复已发布。个人source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 原数据库、领取登记和个人中心均已恢复；现有网页、runner、配置和任务保持。 |
-| 下一可用交付 | 已审小片受控发布；共享窗口先交已就绪的网页恢复检查，清理归还后再接后续验证。 |
-| 当前阻塞 | ACTIVE: 页面兼容与完整目标旅程尚待实际验证；磁盘准入逐次核验，大构建原门槛保持。现无个人中心恢复阻塞。 |
+| 当前产出 | 原中心与网页保持可用；两份旧网页通过候选后台兼容检查，三项后端实施已获得所需源码。 |
+| 下一可用交付 | 准备固定兼容版本的个人更新；共享验证按已审就绪顺序交接，后台实现并行继续。 |
+| 当前阻塞 | ACTIVE: 完整目标旅程及后续发布仍有各自验收；磁盘逐次准入，大构建原门槛保持。源码准备不再阻塞三项后端实现。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -251,3 +251,7 @@ SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator�
 原operator一次恢复center：19:45:46至19:45:48，外层/operator exit0、2135ms、spawn1、新owned PID/PGID74763，原61227健康。独立只读比对before/after：64业务表摘要、原四成功任务、零未完/uncertain、迁移1..27、维护accepting15、身份/配置/原runner-Web/retained/pointer均保持；没有新任务/provider或其它角色signal。锁已absent；19:46:35唯一Git owner将原checkout恢复clean main22a，运行source仍362，SVC06不可变产物后继未完成。实际canonical见SVC05H center-recovery，I02 source-window-closed记录独立比较。
 
 已将下一共享重检查交Web一项已审ready短项（Recovery准备就绪优先，否则Settings），沿原预算/fresh门槛，actual cleanup或NOT_RUN即归还；R01/O16/Mika不并跑。后继普通准入由co-leads直接协调，无逐命令GO gate。
+
+2026-10-06 20:01 UTC：R01第三次固定旅程15,794ms含清理、两份实际App→af51兼容通过；先保存checkpoint，专库/自有进程组/端口正常清理，原两次失败保留。Lead只读核53固定绑定与原始wire，未重跑PG/Chrome/provider；个人报告尚未导入、服务未更新。窗口已归还并按ready顺序交Mika既有授权诊断，后继不得预占空闲窗口。
+
+三项[最小源码供给](../../docs/quality/source-provision-2026-10-06/mika-three-result.json)已完成：SVC07 18文件364,267B，S01P07 245文件1,353,828B，REQ15 90文件693,063B，均fixed22a/clean/hash相符。19:58账本无写范围冲突，接收owner仍须fresh原子take；不复制依赖、不import/安装/测试/PG。只修改三新树的per-worktree sparse设置，main与shared Git config未变；列表覆盖已知直接闭包和人工核动态SQL，不宣称未来新测试任意闭包完备。共享卷前后差仅观察、不当独占物理增量。
