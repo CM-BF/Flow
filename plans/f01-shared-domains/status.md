@@ -210,3 +210,5 @@
 2026-10-06T16:25:08.373523+00:00：v41短单写范围修正根/runner使用文档及恢复边界；输入main65659028，只更新并发模式/独立注册capacity/历史probe授权与现reconcile公开命令，补TUI入口。17项只读源码/文档绑定见[runtime-documentation-source-review.json](../../docs/evidence/f01/runtime-documentation-source-review.json)，无产品行为/工程测试/模型调用。原O14 PG仍NOT_RUN，不因文档交付提前批准。
 
 2026-10-06T16:30:00.517966+00:00：三份runtime使用文档已main 74bc72f0d32daebc8f89a75528f3d72002b3a29e，固定hash逐字相同；唯一共享claim v42已移出README、runnerREADME与recovery-boundaries三literal，明确停止这些路径写入。[范围交回](../../docs/evidence/f01/runtime-documentation-scope-release.json)。O14生产PG未运行边界不变。
+
+2026-10-06T16:40:25.953182+00:00：F01 v43已正式停止并移出六个public client/ACK/export literal和apps/cli目录；独立MATURE02C01 worker随后take11精确路径，接逐消息设置consumer，不等O14 PG。旧73a的CLI两源/一专测通过固定blob保留为受控输入，不扩大其批准。后续本owner只接032实际factory/PG与原O14生产检查，不能恢复已交权入口写入；[原子移交](../../docs/evidence/f01/message-settings-consumer-scope-handoff.json)。
