@@ -1,6 +1,6 @@
 # S01 本机零模型执行合同
 
-这是待实现、可逐步执行的实验合同；当前没有可运行probe或容量结果。只消费固定main `115b0dbdfa02db5483f9e9699852682ce699633c` 的真实 `createServer`、HTTP、`runRunner`、`EventOutbox`。所有新增代码局限本目录；不得把实验内改过的调度逻辑称产品。参数以 [contract.json](contract.json) 为准。
+这是可逐步执行的实验合同；已有四任务功能smoke入口，尚未运行，没有容量结果。只消费固定main `115b0dbdfa02db5483f9e9699852682ce699633c` 的真实 `createServer`、HTTP、`runRunner`、`EventOutbox`。所有新增代码局限本目录；不得把实验内改过的调度逻辑称产品。参数以 [contract.json](contract.json) 为准。
 
 ## 先回答的问题与最小场景
 
@@ -19,7 +19,7 @@
 5. **丢ACK功能**：最多2任务，一次请求在到达中心前断开，一次中心提交后丢响应；受控loopback代理记录边界。保持原outbox文件/身份，停止并重启相同runner工作目录重放；逐eventId/sequence/payload比对最终DB和HTTP页。若lease失效只允许uncertain/retained事实，不能凭空恢复执行或另开attempt掩盖缺失。功能样本与正式延迟分开。
 6. **关闭浏览器功能**：最多2任务。独有浏览器先实际看到running状态/流，保存任务/attempt/cursor；真正关闭该浏览器进程，runner和center为独立进程。确认关闭后有新提交事件与完成产物，再用新浏览器/owner读回。仅关SSE不能标为浏览器关闭；没有浏览器步骤时本项未验证。
 
-合计上限64任务/64attempt：48正式（若全跑）+4smoke+8超领+2ACK+2浏览器。每窗30秒，整个一次实验最多180秒；不自动扩容/重试测量。正式run输出使用wx独占新目录，失败/部分输出永久保留；不覆盖旧结果。最长窗口含失败与清理单独记。0模型/0云，证据+临时数据预算64MiB，单响应体最多1MiB；超界即停止新增工作并正常清理。
+合计上限64任务/64attempt：48正式（若全跑）+4smoke+8超领+2ACK+2浏览器。每窗30秒，整个一次实验最多180秒（包含清理，停止新工作时必须保留清理预算）；不自动扩容/重试测量。正式run输出使用wx独占新目录，失败/部分输出永久保留；不覆盖旧结果。最长窗口含失败与清理单独记。0模型/0云，证据+临时数据预算64MiB，单响应体最多1MiB；超界即停止新增工作并正常清理。
 
 ## 必须分开报告的计数
 
@@ -39,7 +39,7 @@
 
 - **队列等待**：PG同一时钟task.created_at→attempt.created_at；单列admission HTTP耗时、dispatch-ready首次观察和claim请求RTT。因dispatch-ready无持久时间戳，轮询观察只能给区间，不宣称精确调度时刻。
 - **事件**：runtime emit开始→ACK收到（包含outbox落盘），以及HTTP提交→响应体完整读取；原始每次时长、字节和event身份一起保存。重放/故障样本不混入正常分位数；成功、失败、重报分别计数。
-- **轻读取**：有执行负载时每100ms轮换读取固定任务snapshot、events增量页、workspace增量页、conversations首屏，逐端点单列实际n/成功错误/UTF-8字节/首次请求与steady样本。详情不预取；只在核对产物时按引用读取。
+- **轻读取**：有执行负载时每100ms以单个await循环轮换读取（single-flight，不累积定时器请求）固定任务snapshot、events增量页、workspace增量页、conversations首屏，逐端点单列实际n/成功错误/UTF-8字节/首次请求与steady样本。详情不预取；只在核对产物时按引用读取。
 - **统计**：保留全部原始样本，nearest-rank p50/p95/p99及n。16个排队样本的p99即该批最大值，只是经验值；不称产品SLO、稳态尾延迟或统计显著性。故障/超时不能删去。记录Node24/pnpm9.15.4/Vitest4.0.18、PG版本、硬件、loadavg、实际进程RSS/CPU、配置与源hash。
 - **通过条件**：每runner未完成attempt不超过声明capacity；每task同时至多一有效attempt；首轮证实实际重叠达到4或明确记录限制；server事件集/顺序/内容摘要与outbox发送记录一致，无丢失或额外重放；固定产物digest与verification一致；浏览器关闭后执行继续；全部独有资源已关闭。任一未验证项单列，不用其他通过项抵消。
 - **观察开销**：一条专用只读PG连接、最多一个轻读循环、一个浏览器/stream；观察开销和查询数单列。pool等待若没有直接计时只能标未测，不能从PG连接数推算。
@@ -50,4 +50,4 @@
 
 finally顺序：停止新增任务和读循环→关闭本人浏览器/代理连接→Abort/SIGTERM本人runner并限时等待→必要时仅对本人仍活PID SIGKILL并标记异常→关闭本人center/scheduler→关闭观察pool→确认专库连接为0再DROP→删除本人临时文件。无权停止他人服务或强制驱逐共享DB连接。每一步记录成功/失败及PID/端口/库不存在的最终独立观察；无法证明清理不能写全部完成。
 
-正式运行必须绑定实施commit与固定基线及当时实际source hash。代码尚未实现，所以现在没有复跑命令；S01-03交付时补明确入口和执行参数，不能复制一个尚不存在的命令作为证据。
+正式运行必须绑定实施commit与固定基线及当时实际source hash。功能入口为 `experiments/runner-capacity/smoke.ts`，需要本机专用PostgreSQL的 `FLOW_S01_ADMIN_URL`（不输出值）。从本worktree以Node24运行：`node --import tsx experiments/runner-capacity/smoke.ts <全新证据标签>`，并设置 `TSX_TSCONFIG_PATH=experiments/runner-capacity/tsconfig.json`。目录拒绝覆盖；4任务/2个runner，30秒含清理，工作预算20秒。正式场景和故障/浏览器入口尚未实现。runner HTTP计量包装会完整读取响应后重新构造Response，此观察开销属于实验配置，不能将延迟当无观察器的生产值。

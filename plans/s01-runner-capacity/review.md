@@ -1,6 +1,6 @@
 # S01 独立审查
 
-状态 **NOT_STARTED**；本文件不表示通过。
+状态 **METHOD_ACCEPTED / IMPLEMENTATION_PENDING**。方法核对已完成；执行实现与结果仍未批准。
 
 范围：首先只审实验合同与来源研究；实现入口与正式结果尚未产生。基线 `115b0dbdfa02db5483f9e9699852682ce699633c`；target `a553f3f71db29243b698f4bb953408f28a1529b9`，范围 `experiments/runner-capacity,docs/evidence/s01/research.md`。不沿用其他任务approval。唯一owner Mika，review者只读，将修复要求交回owner。
 
@@ -10,4 +10,8 @@
 
 ## 检查与结论
 
-未执行独立审查。产品源码和正式计时均未运行；作者只读研究不替代方法review。Findings尚未评估；owner回应与修复commit在收到具体结果后记录。
+Execution Lead 与 Goal Owner 已独立读取合同 target `a553f3f71db29243b698f4bb953408f28a1529b9`（metadata `215398a289747175c5ae46231ca8d23bae2c5301`），接受方法并允许最多4任务功能smoke。反馈要求：100ms轻读循环single-flight；180秒总预算包含清理并预留时间；正式只先做4进程×16任务，仍须协调具体窗口。不是实现/容量结果approval。
+
+独立worker `/root/b01_bounded_reads` 对215398a基线未提交草稿做只读review，未运行负载或改文件。首次smoke前提出：最终DB完成不能代替ACK/outbox清空；IPC发送失败不能跳过子进程回收；启动和关闭须共享截止时间；响应体应边读边限界。非阻断建议：清理失效race计时器、逐task核工具摘要、运行前后source hash一致。
+
+Mika回应（2026-10-06 06:38 UTC）：补终态ACK等待、待发文件为空、runner退出IPC flush；IPC失败仍走kill/reap，清理runner并行且为center/DB留预算；readiness/HTTP使用共同work deadline，响应流1MiB上限；工具按task唯一性和摘要检查，开跑前后源码hash比对。修复后TypeScript noEmit0。首次功能smoke尚未运行，正式review须绑定后继实现commit与真实结果。
