@@ -1,0 +1,120 @@
+{
+  "observedAt": "2026-10-06T16:21:29.466348+00:00",
+  "main": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+  "endpoint": "http://127.0.0.1:4320/api/snapshot",
+  "generatedAt": "2026-10-06T16:21:18.978Z",
+  "sources": 166,
+  "elapsedMs": 6352,
+  "wireBytes": 2087344,
+  "rawSha256": "5e1bda4a86f6a4d15d4e66f20365b0ca531661e3f4a0754362e1d51ddab310d0",
+  "task": {
+    "id": "WPF-DPERF04",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T16:12:35.615Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md",
+      "syncedAt": "2026-10-06T16:21:18.978Z",
+      "stale": false,
+      "ageHours": 0.14554944444444445
+    },
+    "issues": [],
+    "current": true,
+    "status": {
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+          "id": "D01",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在让首页先展示任务摘要，再按需核验详情",
+        "next": "首屏摘要与领取详情可独立读取",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": null,
+        "scopes": [
+          "apps/execution-dashboard/src/read-model.mjs",
+          "apps/execution-dashboard/src/aggregate.mjs",
+          "apps/execution-dashboard/src/server.mjs",
+          "apps/execution-dashboard/public/app.js",
+          "apps/execution-dashboard/test/summary-detail.test.mjs",
+          "apps/execution-dashboard/test/summary-detail.browser.mjs",
+          "apps/execution-dashboard/test/task-links.browser.mjs"
+        ],
+        "errors": [
+          "实现目标需完整 SHA"
+        ]
+      },
+      "taskId": "WPF-DPERF04",
+      "owner": "w01_owner / gpt-6-astra / ultra",
+      "branch": "codex/dashboard-summary-detail",
+      "branchState": "in-progress",
+      "updatedAt": "2026-10-06T16:12:35.000Z",
+      "updatedRecord": "2026-10-06 16:12:35 UTC",
+      "todos": [
+        {
+          "id": "DPERF04-01",
+          "state": "in-progress",
+          "owner": "w01_owner",
+          "evidence": "[interface](../../docs/evidence/wpf-dperf04/interface.md)"
+        },
+        {
+          "id": "DPERF04-02",
+          "state": "pending",
+          "owner": "w01_owner",
+          "evidence": "运行后置fresh资源准入，当前NOT_RUN"
+        },
+        {
+          "id": "DPERF04-03",
+          "state": "pending",
+          "owner": "w01_owner",
+          "evidence": "review/main/实际部署未完成"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "c837b5dccaea429b0112d1c7e0c752c41334204a / c837b5dccaea429b0112d1c7e0c752c41334204a",
+      "declaredDirty": "启动时clean；本记录为首canonical提交前，提交后另核",
+      "checks": {
+        "state": "not_run",
+        "target": null,
+        "record": "NOT_RUN"
+      },
+      "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+      "mainRecord": "NOT_INTEGRATED",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    }
+  },
+  "scope": "Single actual snapshot after replacing only owned4320 process; no product tabs/services/tests/provider touched"
+}
