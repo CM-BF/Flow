@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-10-06T05:11:11.125Z",
+  "taskId": "B03",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T05:11:00.385Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-conversation-preview/plans/b03-bounded-preview/status.md",
+    "syncedAt": "2026-10-06T05:11:11.125Z",
+    "stale": false,
+    "ageHours": 0.0030902777777777777
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/bounded-conversation-preview",
+    "head": "4f9afcdd3bd0dceabcecb804ff3e0e6409a292b3",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T05:11:11.590Z"
+  },
+  "current": true,
+  "issues": [],
+  "human": {
+    "delivery": {
+      "state": "delivered",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "聊天预览只传前缀，保持完整正文摘要核对",
+    "next": "本片段已交付",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "review": "approved",
+  "checks": {
+    "state": "passed",
+    "target": "9b2156d1b3481643bc5abd01241831e8c7f4dbdf",
+    "record": "PASSED 9b2156d1b3481643bc5abd01241831e8c7f4dbdf；43不同用例/noEmit、126 after HTTP exit0"
+  },
+  "implementationProof": {
+    "target": "9b2156d1b3481643bc5abd01241831e8c7f4dbdf",
+    "head": "4f9afcdd3bd0dceabcecb804ff3e0e6409a292b3",
+    "scopes": [
+      "apps/server/src/assistant/store.ts",
+      "apps/server/src/assistant/index.ts",
+      "apps/server/src/assistant/preview.test.ts",
+      "apps/server/src/conversations/replies.ts",
+      "experiments/bounded-preview"
+    ],
+    "observedAt": "2026-10-06T05:11:11.660Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/b03/README.md",
+      "docs/evidence/b03/after-cleanup.json",
+      "docs/evidence/b03/after-command.json",
+      "docs/evidence/b03/after-resource.json",
+      "docs/evidence/b03/after.json",
+      "docs/evidence/b03/after.log",
+      "docs/evidence/b03/dashboard-receipt.json",
+      "docs/evidence/b03/main-receipt.json",
+      "docs/evidence/b03/manifest.json",
+      "docs/evidence/b03/quality.md",
+      "plans/b03-bounded-preview/plan.md",
+      "plans/b03-bounded-preview/review.md",
+      "plans/b03-bounded-preview/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "main": {
+    "record": "INTEGRATED da8d73a984118e0a5c406bd04dbfbc5d5c9c148f；target祖先且完整9文件实现scope零diff",
+    "recordedHead": "da8d73a984118e0a5c406bd04dbfbc5d5c9c148f",
+    "target": "9b2156d1b3481643bc5abd01241831e8c7f4dbdf",
+    "mainHead": "6b4b89f397b35d7e769846df457e76bb29f4a265",
+    "scopes": [
+      "apps/server/src/assistant/store.ts",
+      "apps/server/src/assistant/index.ts",
+      "apps/server/src/assistant/preview.test.ts",
+      "apps/server/src/conversations/replies.ts",
+      "experiments/bounded-preview"
+    ],
+    "observedAt": "2026-10-06T05:11:11.590Z",
+    "current": true,
+    "historicalIntegrated": true,
+    "method": "ancestor",
+    "scopeEqual": true,
+    "dirtyScopePaths": [],
+    "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+  },
+  "assignments": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/server/src/assistant/index.ts",
+        "apps/server/src/assistant/preview.test.ts",
+        "apps/server/src/assistant/store.ts",
+        "apps/server/src/conversations/replies.ts",
+        "docs/evidence/b03",
+        "experiments/bounded-preview",
+        "plans/b03-bounded-preview"
+      ],
+      "state": "active",
+      "branch": "codex/bounded-conversation-preview",
+      "origin": "new",
+      "taskId": "B03",
+      "worker": "b01_bounded_reads",
+      "claimId": "681ae135-02b1-403e-8a32-685b8ce603b3",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-conversation-preview",
+      "createdAt": "2026-10-06T04:55:52.051Z",
+      "updatedAt": "2026-10-06T04:55:52.051Z",
+      "observedAt": null,
+      "needsVerification": false,
+      "matchesSource": true
+    }
+  ]
+}
