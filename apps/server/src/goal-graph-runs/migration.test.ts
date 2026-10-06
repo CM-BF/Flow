@@ -68,7 +68,8 @@ it('upgrades populated 014 grants, audit and owner graph history forward to 017 
   const receipt = await applyProposal(pool, proposal.id, { expectedProjectRevision: 2, proposalDigest: proposal.proposalDigest }, 'apply'); expect(receipt.receipt.actor).toEqual({ kind: 'owner' });
   const before = await records(grant.run.id, projectId, proposal.id); expect(before.calls).toHaveLength(1);
   await migrateGoalGraphRuns(pool); const after = (await pool.query('SELECT * FROM flow.migrations ORDER BY version')).rows;
-  expect(after.filter(row => row.version <= 14)).toEqual(versions); expect(after.map(row => row.version)).toEqual([...versions.map(row => row.version), 17]);
+  expect(after.filter(row => row.version <= 14)).toEqual(versions); expect(after.filter(row => row.version <= 17).map(row => row.version)).toEqual([...versions.map(row => row.version), 17]);
+  expect(after.filter(row => row.version > 17).map(row => row.version)).toEqual([19]);
   expect(await records(grant.run.id, projectId, proposal.id)).toEqual(before);
   await migrateGoalGraphRuns(pool); expect((await pool.query('SELECT * FROM flow.migrations ORDER BY version')).rows).toEqual(after);
   expect(await records(grant.run.id, projectId, proposal.id)).toEqual(before);

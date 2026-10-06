@@ -11,9 +11,11 @@ import { runnerCommand, runnerDetail, runnerGrant, runnerRead } from './runner.j
 export async function migrateGoalGraphRuns(pool: Pool) {
   await transaction(pool, async client => {
     await client.query("SELECT pg_advisory_xact_lock(hashtextextended('flow-migrations',0))");
-    if ((await client.query('SELECT 1 FROM flow.migrations WHERE version=17')).rowCount) return;
-    await client.query(await readFile(new URL('../../../../packages/storage/migrations/017-goal-graph-runs.sql', import.meta.url), 'utf8'));
-    await client.query('INSERT INTO flow.migrations(version) VALUES(17)');
+    for (const [version, file] of [[17, '017-goal-graph-runs.sql'], [19, '019-goal-graph-native-mode.sql']] as const) {
+      if ((await client.query('SELECT 1 FROM flow.migrations WHERE version=$1', [version])).rowCount) continue;
+      await client.query(await readFile(new URL(`../../../../packages/storage/migrations/${file}`, import.meta.url), 'utf8'));
+      await client.query('INSERT INTO flow.migrations(version) VALUES($1)', [version]);
+    }
   });
 }
 function parse<T>(schema: { safeParse(value: unknown): { success: true; data: T } | { success: false } }, value: unknown): T {
