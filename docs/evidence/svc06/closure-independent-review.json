@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-06T15:19:40.829477+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+  "observedHead": "7b66c1d09d7f438b91e89b816374f2549edbfc9f",
+  "verdict": "APPROVED",
+  "blockingFindings": [],
+  "sourceCount": 6,
+  "directInputCount": 12,
+  "rawCount": 23,
+  "manifestSha256": "520687129d35b3dc9c883d216b5063ae8a378df1d807197efad5c2e4a4ba388d",
+  "method": "Independent read-only full six-source/interface/test review and exact fixed/current source plus input/raw byte/hash verification. No tests rerun.",
+  "accepted": "Pure bounded backend production dependency planning, deterministic staging view and selected cache identity planning; seven distinct source tests and fixed-lock selection 256/683 observed snapshots.",
+  "limitations": [
+    "Not a working filtered install or release artifact. Production YAML parser and builder wiring remain open.",
+    "Test-only Psych conversion is not a production dependency. pnpm acceptance and post-install representation remain unverified.",
+    "Cache logical bytes do not prove physical savings, entry resolution or peak disk usage. Existing 2.5 GiB preparation and 1 GiB reserve gates remain."
+  ],
+  "providerCalls": 0,
+  "testsRunByReviewer": 0
+}
