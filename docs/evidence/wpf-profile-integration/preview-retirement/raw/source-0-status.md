@@ -1,10 +1,8 @@
 # WPF-PROFILEI01 状态
 
-**当前预览：已退役。** 原 `http://127.0.0.1:51832/` 于 2026-10-06 22:48:03.338875 UTC 仅向即时核实的原 Node PID `8693` 发送 SIGTERM；原 session `68857` 实际退出 `143`，随后精确 PID、原 PGID 和本服务三端口均无残留。`143` 不证明异步 close handler 每条语句均已完成。 [回执](../../docs/evidence/wpf-profile-integration/preview-retirement/retirement-receipt.json)，[限定审查](../../docs/evidence/wpf-profile-integration/preview-retirement/root-retirement-review.json)。旧默认保留说明只属历史，不是新的启动承诺。
-
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:52:05 UTC / 历史 main 核验 2026-10-06 05:18 UTC / main14c61b4062f8040ba6c7239860929366e5bd3fc1 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:18 UTC / main14c61b4062f8040ba6c7239860929366e5bd3fc1 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 阶段 | M2 |
@@ -24,7 +22,7 @@
 | 实现目标 | 2e4c5fe7d795e397ab1b1e492605562a847c5fb0 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/projection.ts, apps/web/src/conversations/outbox.ts, apps/web/test/conversation-outbox.test.ts, apps/web/test/conversation-projection.test.ts, apps/web/test/execution-profile-integration.fixture.ts, apps/web/test/execution-profile-integration.browser.ts |
 | Review | [review.md](review.md)，APPROVED；root/Astra Ultra，05:11:08 UTC |
-| D04 claim（原产品历史） | 7f1daa29-78e0-463e-ab88-99e295e9e648 / v1 / active；04:59:25.825Z；[receipt](../../docs/evidence/wpf-profile-integration/take-receipt.json) |
+| D04 claim | 7f1daa29-78e0-463e-ab88-99e295e9e648 / v1 / active；04:59:25.825Z；[receipt](../../docs/evidence/wpf-profile-integration/take-receipt.json) |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -36,11 +34,3 @@
 本status为唯一源，2026-10-06 05:12:10.423Z对4320单次实采60源：本任务live、issues=[]、human complete、delivery=integration、checks passed/review approved目标2e4、实现proof unchanged、claim v1 active matchesSource。原采样记录当时metadata dirty，不冒称已clean；本提交闭环后Git清理状态由聚合器生成。旧CHAT v4已移出三路径、QUEUE00已release，不在旧树写实现。架构影响：App私有catalog→每draft selection→immutable creation/outbox/receipt核验；公共协议/执行器不变。固定2e4接缝变更交MainLead/D06登记，架构数据待该owner更新，不擅改其树。
 
 预览服务owner workspace_panels_owner，http://127.0.0.1:51832/，session68857；[启动恢复](../../docs/evidence/wpf-profile-integration/README.md)。HTTP fixture模拟，0新增模型/DB/真实中心授权联调；跨刷新草稿持久化未实现。已有SVC仍旧构建不暗换，全部旧预览保留。目录与能力声明不代表在线，锁定大块展示已登记独立PROFILEUX01后继，本片不声称紧凑化完成。main已接收本实现，见[Git观察](../../docs/evidence/wpf-profile-integration/main-integration.json)。05:18 live核claim v1 active后完成本次纯metadata；本提交后全部10scope停写并执行授权release，后续状态以D04账本/原始receipt为准，不在release后追写本源。原始51832服务保留，不假称已更新至main的PROFILEUX组合。
-
-## 本次生命周期元数据收口（2026-10-06 22:52:05 UTC）
-
-本次新 metadata claim `d9f7ff54-4406-4097-b8b8-a889cba8d9c2` v1，仅覆盖原status、own README和preview-retirement目录；原产品released写权未恢复。本人live观察 `2026-10-06T22:50:37.846481+00:00` 与owner/branch/三scope一致。[新take原件](../../docs/evidence/wpf-profile-integration/preview-retirement/metadata-take-receipt.json)。本次正常commit/push后这三scope全部停写，manager另行fresh CAS release，释放后不追写。
-
-固定原HEAD `07cffeba1a818f5697c23efc37a7e5c2b813c035` 下的源码、原启动命令与可取得session增量log已归档；不是完整启动日志重建。原功能TODO、已审实现目标、原检查和主线事实不扩大。本次无产品/parser/HTTP/PG/Chrome/模型检查，无free采样、缓存/依赖删除或服务重启；其他明确保留服务未操作。root只对三精确preview退役证据作限定接受，不是产品新approval。生命周期事实交管理更新canonical，未另采dashboard。
-
-上述原交付段内“保留预览”等措辞均为此前时点的历史规则；当前本服务已退役。未来重放必须经批准并重新核依赖/资源，不能借已NOT_RUNTIME_READY的web-workspace-cache依赖。

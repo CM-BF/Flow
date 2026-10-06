@@ -1,13 +1,5 @@
 # 聊天执行配置接线
 
-**当前预览：已退役。** 原 `http://127.0.0.1:51832/` 于 2026-10-06 22:48:03.338875 UTC 仅向即时核实的原 Node PID `8693` 发送 SIGTERM；原 session `68857` 实际退出 `143`，随后精确 PID、原 PGID 和本服务三端口均无残留。`143` 不证明异步 close handler 每条语句均已完成。
-
-[实际退役回执](preview-retirement/retirement-receipt.json) · [root 限定证据审查](preview-retirement/root-retirement-review.json) · [本树原始身份/退出记录](preview-retirement/raw/preflight.json)。本次只更新生命周期元数据；未重启、删除依赖/cache 或重跑产品检查。恢复需另获授权并核依赖/资源，以下旧启动命令不代表当前已验证可运行。
-
-## 历史交付与原预览说明
-
-以下原默认保留、URL、启动方式、检查和功能范围完整保留为历史；当前运行事实以上述退役记录为准。
-
 固定实现：`2e4c5fe7d795e397ab1b1e492605562a847c5fb0`；base `698ffcd94ae073b23bcc67f6665fb19f707a93e4`。本片把已审PROFILE模块接到实际App；整份配置选择→首CREATE冻结→既有会话锁定。不是任意model/effort/access编辑器，也不代表runner/provider在线。实际effective仍来自执行器证据。
 
 唯一计划：[plan](../../../plans/wpf-profile-integration/plan.md)、[status](../../../plans/wpf-profile-integration/status.md)、[review](../../../plans/wpf-profile-integration/review.md)。[claim receipt](take-receipt.json) 7f1daa29-78e0-463e-ab88-99e295e9e648 v1 active，review修复期保留。旧CHAT移出文件见[amend](chat-amend-receipt.json)。
