@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T14:05:33.650596+00:00 / input main d4a2e0a7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:29 UTC / input mainec50957f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main8dd6fe79；本批11个终端/共享交互固定源逐hash相同 |
+| 工作基线 / HEAD | mainec50957f；COST已审领域/薄client/生产接线十个源逐hash一致 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
-| 检查状态 | 当前连续目标生产旅程1选中/1未选通过，root/Web类型0；原O13/S01P06局部证据复用 |
-| 已集成main状态 / HEAD | 前批TUI01E已main d4a2e0a7；本批连续目标入口与运行器等待改进已审组合待发布，个人runtime362/v15和Web8d8/v2不变 |
+| 检查状态 | 生产公共读口1/1 PG/HTTP、strict0已有原证据，集成十源零diff；无新provider/重复领域测量 |
+| 已集成main状态 / HEAD | O13/S01P06已main5db，TUI收口与首资源回执已mainec509；本批COST十源已审接收；个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 目标可在同一公开入口关联计划、只读子任务与固定产物；终端队列控制已进入主线。 |
-| 下一可用交付 | 已授权目标节点的持续推进与有来源说明的用量读口。 |
+| 当前产出 | 同一任务的输入、缓存、输出和估价已接通共用读口，并保留来源与未知覆盖。 |
+| 下一可用交付 | 已授权目标节点持续推进，以及各端直接查看用量说明。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -165,3 +165,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 13:56:12 UTC：TUI01E 22f独审与e061权威metadata受控接收，11固定源逐字一致；当前中心队列单例1选中/3未选、随机库清理和root/Web类型均通过。[组合事实](../../docs/evidence/i02/tui-queue-integration.json)。原41+3不同检查与PTY证据复用，没有重复模型或整个终端矩阵。
 
 2026-10-06T14:05:33.650596+00:00：[连续目标与有界等待组合](../../docs/evidence/i02/o13-s01p06-integration.json)保留13个O13/共享client源及5个S01P06源与固定审查一致；仅运行实际当前factory/runtime旅程1项与类型检查。未把显式owner逐步调用称中心自动推进。
+
+2026-10-06 14:29 UTC：COST01A 27d4、thin fb0、生产7150分别独审APPROVED；受控组合十源固定hash相同，[集成绑定](../../docs/evidence/i02/cost01a-source-comparison.json)。实际公共工厂1/1/类型0已有有效直接证据，未重复原领域14项。OPS三树稀疏事实和D04更正保留、O14仅source登记；不含其未审实现。个人服务与旧Web发布指针不变。

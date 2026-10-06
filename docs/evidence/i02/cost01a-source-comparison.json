@@ -1,0 +1,92 @@
+{
+  "observedAt": "2026-10-06T14:28:31.599609+00:00",
+  "inputMain": "ec50957fc7bd39e47cb6c44de852fe99373e05e7",
+  "bindings": [
+    {
+      "target": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+      "path": "apps/server/src/usage-readout/index.ts",
+      "bytes": 2391,
+      "sha256": "d4ae1559864c8aa75e5932190e736868092f4cfc2b647326fee52cde247a3336",
+      "same": true
+    },
+    {
+      "target": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+      "path": "apps/server/src/usage-readout/projection.ts",
+      "bytes": 5218,
+      "sha256": "88033a13dfa1bc8c0cc188c795a089aa315d28d9b65f64ffb2d653b2220171dd",
+      "same": true
+    },
+    {
+      "target": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+      "path": "apps/server/src/usage-readout/readout.test.ts",
+      "bytes": 16245,
+      "sha256": "550e3a8fef898a023c50b1d3e7de1c9932a5a346c81d138cc93e46a31d821acb",
+      "same": true
+    },
+    {
+      "target": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+      "path": "apps/server/src/usage.ts",
+      "bytes": 5768,
+      "sha256": "1382e0e3d399a41be8c0d7e0d197809f02ea7d9b71b3f24140116ccd35648cb7",
+      "same": true
+    },
+    {
+      "target": "27d4f5431bff06d44a42588896fc0b435d0f556d",
+      "path": "packages/contracts/src/usage-readout.ts",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+      "same": true
+    },
+    {
+      "target": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+      "path": "packages/client/src/index.ts",
+      "bytes": 48519,
+      "sha256": "7f8fbbb5fbc4e9a1eedcf26644b0d45a20650c00c61eb6cd00c33cba4b701163",
+      "same": true
+    },
+    {
+      "target": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+      "path": "packages/client/src/usage-readout.test.ts",
+      "bytes": 3028,
+      "sha256": "7e107c9fe7400a3bda112df070c6aca0bba9d59ab4562a63dfd15c859dc256a0",
+      "same": true
+    },
+    {
+      "target": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1342,
+      "sha256": "814f69e47f57ccfa8dafb1460d32137a9e00b309367824ec2ee053fc946e0323",
+      "same": true
+    },
+    {
+      "target": "7150d6ee9e1e36b69994da1977aa980139f3458f",
+      "path": "apps/server/src/index.ts",
+      "bytes": 13267,
+      "sha256": "ba1e251c59cfb091c8867ce899fa9aad3f89156683cc66ee75a2387371982a00",
+      "same": true
+    },
+    {
+      "target": "7150d6ee9e1e36b69994da1977aa980139f3458f",
+      "path": "packages/client/src/usage-readout-production.test.ts",
+      "bytes": 5787,
+      "sha256": "33455862741206c25d12e80f78562c65a1953a24997012006a6d4d1ecf772a1d",
+      "same": true
+    }
+  ],
+  "reviews": [
+    "native_center_owner COST domain27d4",
+    "assignment_review thin clientfb0",
+    "assignment_review production7150"
+  ],
+  "validation": "F01 final includes inputMain ancestry; actual public factory1/1/strict0; ten product files identical here; no redundant suite/model",
+  "runtimeUnchanged": {
+    "backendRunner": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "maintenanceVersion": 15,
+    "web": "8d8ab520a9d43c7b9dafb22911416ee799ebf665"
+  },
+  "limits": [
+    "not full cost attribution/budget",
+    "not subscription billing",
+    "no Web/TUI readout rendering or provider cost experiment"
+  ]
+}
