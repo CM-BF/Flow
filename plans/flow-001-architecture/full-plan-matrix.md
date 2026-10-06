@@ -1,11 +1,11 @@
 # 完整计划验收矩阵与滚动批次
 
-核验时间：2026-10-06 03:17 UTC。基线 main/origin/main `3773db5d014a6d38d09553acd0a5fe8df900b7c4`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
+核验时间：2026-10-06 03:38 UTC。基线 main/origin/main `4e817611b669579f6194d27a09031ae30cefa2a6`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
 
 | ID / 原始要求 | 任务/依赖 | 验收与所需证据 | 当前事实与缺口 |
 | --- | --- | --- | --- |
-| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | M02 backend/CLI和WPF-M02 d47已集成；10任务真PG/HTTP4组、8chat双split及窄屏证据已审；确定性交互成立，跨任务语义解释质量/人工时间对照仍open |
-| REQ-02 §7/8 Project/Workspace、动态计划 | G01，接M02/C02 | 项目授权边界，版本化新增/拆分/依赖更改，禁止循环，取消传播与失效决策/旧结果拒绝；故障后保留因果记录 | G016394项目revision/节点version/依赖无环/CAS与历史持久化、CLI已集成；自动gating/修订失效/取消传播仍open，O01首段实施 |
+| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | M02 backend/CLI和WPF-M02 d47已集成；10任务真PG/HTTP4组、8chat双split及窄屏证据已审；确定性交互成立，跨任务语义解释质量/人工时间对照仍open；用户U11实际自然对话由CHAT01/02+外部Web接入，hi/追问不能以task状态卡冒充，普通会话不等待O01编排 |
+| REQ-02 §7/8 Project/Workspace、动态计划 | G01，接M02/C02 | 项目授权边界，版本化新增/拆分/依赖更改，禁止循环，取消传播与失效决策/旧结果拒绝；故障后保留因果记录 | G016394项目revision/节点version/依赖无环/CAS与历史持久化、CLI已集成；O01 a4首段及F01公共goal命令已集成，真实PG diamond证明输入/依赖版本失效；自然语言规划/自动调度/取消传播完整范围仍open |
 | REQ-03 §7/12 未知副作用和恢复 | C02已集成 | 失联保留占用；实际结果核对、人工停止确认/副作用证据、不可变审计、显式新task retry；旧attempt不能复活；PG重启后审计仍在 | C02已独立审查并集成：停止/副作用审计、安全重跑依据、新task provenance、旧fence拒绝；operator断言不等于外部客观停止 |
 | REQ-04 §5.3/12 A2A双向互操作 | P01 SDK已集成；P02首出站已集成 | 固定实际SDK/规范/对端，发现/auth/直接响应/长任务/补充输入/产物/取消；至少一侧官方SDK；重复、ACK丢失、重连/降级/大inline | 官方SDK1.3互操作和P02 f942 task-based持久意图/binding/重启Get/取消/产物验证已集成；失ID不重发。真实外部agent语义/所有输入与预算路径仍未完整 |
 | REQ-05 §5.3/12 MCP client | P01 | 固定规范、角色/transport/capability；tools/resources/prompts/elicitation权限进入业务决策；draft Tasks显式实验；runner持会话，Web关闭后继续 | 官方SDK tools/resources/prompts/elicitation互操作已审；与中心持久input-required决策/runner会话整合未完成。ACP/AGUI/MCP server依实际需要 |
@@ -14,10 +14,10 @@
 | REQ-08 §9 Context原文/版本引用 | X01/context，接G01 | 目标/约束/验收/预算+固定版本引用和增量；原文可追回，来源更新使摘要/下游证据失效；按需tool schema，大结果工具侧筛选 | 现id/title只减UI传输，不等于LLM上下文减少；未完成 |
 | REQ-09 §9 成本与预算账本 | E01/context，接usage registry | raw source/scope/session baseline、缓存读写unknown保留；规划/交接/解释/检索/压缩/重试/验证分类；按验收通过交付的总成本/成功率对照 | M1有累计usage去重与unknown；全分类/预算/公平成本对照未完成 |
 | REQ-10 §9 KB hybrid检索 | K01，接项目权限/context | 来源导入/版本/权限/位置，FTS+vector，中文/代码标识符/精确事实/权限过滤各自质量集与引用准确性 | 未实现；不以向量能查到一次算完成 |
-| REQ-11 §10 npm插件生命周期 | X01 | 版本/配置/能力/作用域，install/enable/disable/upgrade/remove；可信服务端与隔离第三方边界；真实工具/renderer/verifier示例 | 当前内建adapter seam存在；npm生命周期/隔离示例未完成 |
-| REQ-12 §10 插件可替换/通用UI | X01+M02 | 客户端只触发公共命令，CLI等价；未知类型id/title+通用详情；唯一compression owner；明确状态迁移/恢复能力 | trusted Web host6ce3独立已审，WPF-I01主App挂载中；不替代完整npm生命周期/隔离/CLI；不建设无需求插件市场 |
+| REQ-11 §10 npm插件生命周期 | X01 | 版本/配置/能力/作用域，install/enable/disable/upgrade/remove；可信服务端与隔离第三方边界；真实工具/renderer/verifier示例 | X01完整计划c217已文档批准并集成（plans/x01-plugin-management）；X02独立中心registry/008准备中；npm生命周期/隔离示例未完成 |
+| REQ-12 §10 插件可替换/通用UI | X01+M02 | 客户端只触发公共命令，CLI等价；未知类型id/title+通用详情；唯一compression owner；明确状态迁移/恢复能力 | trusted Web host6ce3独立已审，WPF-I01 92a主App挂载已审并集成；不替代完整npm生命周期/隔离/CLI；不建设无需求插件市场 |
 | REQ-13 §10 上下文插件兼容 | X01+E01 | 确认实际billion-context候选/固定版本，压缩→暂停/恢复/分叉、原文引用、附属存储与跨worker边界 | 项目身份待证据确认，未实测；名称不代表原生十亿窗口 |
-| REQ-14 §8/12 多runner路由与所有权 | S01前的R03 | 独立runner能力/身份/预算路由，远端凭据归属，互斥session、失联/迟到、停机；真实一任务等决策另一任务可完成 | M1验证两runner争一task及uncertain，不等于完整能力路由；runner有效并发1 |
+| REQ-14 §8/12 多runner路由与所有权 | S01前的R03 | 独立runner能力/身份/预算路由，远端凭据归属，互斥session、失联/迟到、停机；真实一任务等决策另一任务可完成 | M1验证两runner争一task及uncertain，不等于完整能力路由；R03 9c597保守租期/失败清理已审并集成，±5分钟/晚回包/中心字段已验证；runner有效并发1 |
 | REQ-15 §8.1/8.2 分层读取 | B01，接M02 | 同时按条数/块数/字节有界；超长正文/引用分页；详情范围/批量读取；权限校验；原文不静默摘要 | M1详情整项读取、events只有条数；未完整 |
 | REQ-16 §8.2 缓存/快照与事件 | B01/M02 | workspace+权限+内容版本缓存，切换不清空全部，快照/订阅race与旧cursor无漏/去重；源事务乱序提交真实PG验证 | M02已验证晚提交水位与201task跨batch受理因果，Web保留隐藏view恢复cursor且限制活跃SSE；分层版本缓存/字节预算仍open，不以source bigserial为提交水位 |
 | REQ-17 §8.3 交互性能 | B01+S01 | 缓存交互p95<=50ms、查询<=100ms、持久受理<=200ms作为待测初步目标；p95/p99样本量、字节、网络、数据规模/缓存并发分开报告 | LAB01/02是有界toy/诊断，不能替代产品SLO；未完成 |
@@ -35,9 +35,9 @@
 
 ## 当前滚动调度
 
-实际cap4：Goal Owner + Execution Lead + E01 runner_owner + O01 assignment_review；用户期望10，外部既有Web分队另有4人，总并行8，不重复探测或绕过限制。Lead负责O01共享exports/client/CLI/集成，领域owner可在有效claim内写独立contract。G01/P02/F01/WPF-M02已审并进入main3773db5；D04已部署且各Lead自助take，不再人工代领所有无冲突任务。
+本任务cap4（Root + Lead + CHAT01 runner_owner + CHAT02 assignment_review），外部Web最多4，Mika最多2，合计10。任务claim实际原子领取、唯一status、worktree隔离；三队回程限制见OPS-001-06，不把subagent说成可直投用户task。
 
-E01 auth/Paseo两个0模型小片段已独立方法批准；下一步两条同工程真实harness实验须先把合法auth/模型门槛、版本/输入、工具权限、调用/总预算/时限/固定产物验收提案交Goal Owner审定。O01先真实PG命令/版本/diamond失效闭环，再按可用合法harness进入语义执行；不能把fixture标成自然语言已完成。外部WPF-I01接已审trusted Web host，WPF-PERF01仅合成浏览器性能。后续X01/K01/B01与R03/S01依可独立ready接口滚动。
+已进入main4e817：C02/M02/G01/P01/P02/F01、O01受限命令首段、R03租期修复、WPF-M02及trusted Web host/I01、D04/D05。当前关键路径是普通真实对话：CHAT01持久conversation/turn与严格正文归属、CHAT02 fenced assistant-final，外部Web消费统一client并保持用户气泡/遥测分型；真实2轮0工具验收预算另提交Goal Owner，不复用R02 5/5。Mika X02 registry与B01真实分层读取实验并行；外部PERF02只在接口等待空档推进，不延迟chat。X01通用生命周期/隔离、KB、工程harness公平对照、R03后继FS/PTY和S01仍open。
 
 **持续执行**：完成→核查实际证据/验收→集成→下一ready项。阻塞→记录原因/owner/解除条件/绕行与其他独立工作。暂时无ready实现→有界研究或低成本实验，用证据改计划，不增加无意义复杂度，不降低原验收。所有feature仍各自独立worktree/status/review；此矩阵不替代owner状态。
 
@@ -61,3 +61,7 @@ E01 auth/Paseo两个0模型小片段已独立方法批准；下一步两条同�
 - [长任务harness研究](https://www.anthropic.com/engineering/harness-design-long-running-apps)支持按实际任务需要委派，不预置每步planner/reviewer硬流程；原生单agent/按需委派/固定委派同验收比较总token、时间、重试。此为实验输入，不是Flow收益。
 - [Anthropic多agent研究](https://www.anthropic.com/engineering/multi-agent-research-system)产物直接持久化、协调者轻引用可作设计依据；全文转发vs有界信封按验收总input/output/cache/检索/summary/重试/验证与成功率比较。15倍数字仅其多agent对普通chat，不是A2A通信成本/Flow预测。
 - [SDK prompt规则](https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts)：固定0.3.290实际有preset.excludeDynamicSections/maxBudgetUsd/systemPromptSnapshot。公平比较对齐prompt preset/settingSources/tools/model；SDK minimal不等CLI。snapshot resume默认沿用至compaction，新约束须显式版本化受理/消息。usage主loop与modelUsage整query、resume继承/clear重置须记录；maxBudgetUsd仅本query不能当项目总硬预算。新实验先总体调用/花费/时限上限，不复用封存R02额度。
+
+## 2026-10-06 03:38 UTC 用户真实对话缺口
+
+产品Web49922是明确HTTP fixture，发送hi的固定执行文案不是模型回复；工程dashboard4320与它用途不同。原REQ-01/22及外部唯一web-platform U11逐项追溯model/effort/access/context/files/voice/send/bubbles/queue/steering/tool与可展示thinking，未支持项显式禁用/说明而非伪造生效。CHAT01稳定conversation可按turn绑定独立task/native resume；conversation.revision是命令CAS，不是异步正文缓存水位。CHAT02只typed final首段、不混入hidden reasoning；live streaming/queue/steer仍后继。真正两轮聊天与O01自然语言goal规划是不同验收，都保持未验证。
