@@ -1,5 +1,11 @@
 # F01 共享接线审查
 
+**当前增量状态：NOT_STARTED**
+Review target commit：095497dc1719d10df8309fdf17d95539fc891e06
+Scope：X02公共挂载/export/client/CLI；CHAT生产入口37ab367另列同批检查。等待独立只读review，历史批准不覆盖本目标。
+
+## 历史已审接线
+
 **状态：APPROVED**
 Review target commit：36aeaff12000d77ebd025859f999c69612fce653
 Reviewer：Goal Owner，只读，2026-10-06 03:02:23 UTC。
