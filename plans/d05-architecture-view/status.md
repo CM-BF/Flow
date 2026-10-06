@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:37:00 UTC / main22d5ca67 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:38:26 UTC / main9bdb6cb0 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已登记逐消息设置契约和现用后台修复两条独立工作，等待本批看板发布。 |
+| 当前产出 | 逐消息设置契约和现用后台修复两条独立工作已在看板实际可见。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -129,3 +129,5 @@
 ## 2026-10-06 15:37 注册维护
 
 WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人读字段，registry增至164；只核唯一ID/路径与两份真实status解析，0产品测试/PG/provider。当前4320仍上一批162源，本批部署后另记实际观察；不把注册当交付完成。[登记回执](../../docs/evidence/d05/claude-settings-history-compatibility-registration.json)。固定架构图不改。
+
+15:38:16 UTC单次真实snapshot（15:38:26响应完成）164来源；新两项与RELEASE03均live/issues=[]，独立source路径准确，原产品页面未刷新。[实采](../../docs/evidence/d05/claude-settings-history-compatibility-live.json)。仅更新4320自有dashboard进程，个人61227/61228/runner未动。
