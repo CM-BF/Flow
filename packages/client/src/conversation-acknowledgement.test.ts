@@ -156,3 +156,23 @@ test('nested turn knowledge is frozen from the actual HTTP body, not the caller 
   input.text = 'Changed later'; refs[0]!.locator.end = 7; refs.length = 0;
   expect(await sending).toEqual(value); expect(requests).toEqual([{ key: 'context-key', body: original }]);
 });
+
+test('attachment v2 ACK uses the same frozen public matcher and lost confirmation keeps the original HTTP identity', async () => {
+  const value = accepted(); value.conversation.projectId = 'project-a';
+  const refs = [1, 2].map(n => ({ kind: 'upload' as const, projectId: 'project-a', resourceId: `20000000-0000-4000-8000-${String(n).padStart(12, '0')}`, version: 1 as const, contentDigest: String(n).repeat(64) }));
+  value.turn.context = { id: 'context-a', contextDigest: 'b'.repeat(64), executionInputId: 'input-a', executionInputDigest: 'c'.repeat(64), templateVersion: 2,
+    order: 'knowledge-then-attachments', sources: [], attachments: refs.map(reference => ({ reference, name: 'exact.txt', mediaType: 'text/plain', byteLength: 3 })) };
+  const input = { ...turnInput(value), attachments: structuredClone(refs) }; const sent = JSON.stringify(input);
+  let valid = false;
+  const { client, requests } = await http(() => JSON.stringify(valid ? { ...value, replayed: true } : { ...value, turn: { ...value.turn, context: undefined } }));
+  await expect(client.submitConversationTurn(value.conversation.id, input, 'attachment-stable-key')).rejects.toMatchObject({ code: 'conversation_ack_unknown' });
+  valid = true;
+  expect((await client.submitConversationTurn(value.conversation.id, input, 'attachment-stable-key')).replayed).toBe(true);
+  expect(requests).toEqual([{ key: 'attachment-stable-key', body: sent }, { key: 'attachment-stable-key', body: sent }]);
+  expect(() => assertConversationContextMatches([], value.turn.context, { projectId: 'project-a', attachments: refs })).not.toThrow();
+  const swapped = { ...value.turn.context, attachments: [...value.turn.context.attachments].reverse() };
+  expect(() => assertConversationContextMatches([], swapped, { projectId: 'project-a', attachments: refs })).toThrow(UnknownConversationAcknowledgementError);
+  expect(() => assertConversationContextMatches([], value.turn.context, { projectId: 'other', attachments: refs })).toThrow(UnknownConversationAcknowledgementError);
+  expect(() => assertConversationContextMatches([], { ...value.turn.context, executionInputDigest: 'bad' }, { projectId: 'project-a', attachments: refs })).toThrow(UnknownConversationAcknowledgementError);
+  expect(() => assertConversationContextMatches([], value.turn.context, { projectId: 'project-a', attachments: [] })).toThrow(UnknownConversationAcknowledgementError);
+});

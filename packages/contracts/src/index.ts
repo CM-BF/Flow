@@ -26,3 +26,5 @@ export * from "./assistant-stream.js";
 export * from './active-steering.js';
 export * from './goal-native-executions.js';
 export * from './engineering-profile.js';
+
+export * from './attachments.js';
