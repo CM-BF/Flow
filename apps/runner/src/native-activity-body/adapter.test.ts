@@ -12,9 +12,10 @@ function deferred(){let resolve!:()=>void;const promise=new Promise<void>(done=>
 it.each([false,true])('uses only the optional host body port when enabled=%s, and waits before final delivery',async enabled=>{
   const directory=await mkdtemp(join(tmpdir(),'flow-chat05p01-adapter-'));directories.push(directory);
   const events:RunnerEventData[]=[],materials:number[]=[];const entered=deferred(),release=deferred();let closed=false,calls=0;
+  // Inject only public SDK fields consumed by this adapter; no provider is constructed.
   const query:ClaudeQuery=()=>{calls++;return Object.assign((async function*(){
-    yield {type:'assistant',uuid:'input',session_id:'session',parent_tool_use_id:null,message:{id:'input-message',content:[{type:'tool_use',id:'tool',name:'Read',input:{text:'x'.repeat(90_000)}}]}} as SDKMessage;
-    yield {type:'user',uuid:'output',session_id:'session',parent_tool_use_id:null,message:{content:[{type:'tool_result',tool_use_id:'tool',content:'y'.repeat(70_000)}]}} as SDKMessage;
+    yield {type:'assistant',uuid:'input',session_id:'session',parent_tool_use_id:null,message:{id:'input-message',content:[{type:'tool_use',id:'tool',name:'Read',input:{text:'x'.repeat(90_000)}}]}} as unknown as SDKMessage;
+    yield {type:'user',uuid:'output',session_id:'session',parent_tool_use_id:null,message:{content:[{type:'tool_result',tool_use_id:'tool',content:'y'.repeat(70_000)}]}} as unknown as SDKMessage;
     yield {type:'result',subtype:'success',is_error:false,uuid:'result',session_id:'session',result:'Synthetic final',modelUsage:{},total_cost_usd:0,permission_denials:[],num_turns:2,duration_ms:1} as unknown as SDKMessage;
   })(),{close(){closed=true;}});};
   const context:HarnessContext={task:{title:'Synthetic body adapter',prompt:'No provider',harness:'claude'},workingDirectory:directory,signal:new AbortController().signal,

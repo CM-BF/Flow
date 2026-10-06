@@ -82,7 +82,7 @@ export async function bodyFixture() {
   } catch(error) {facts.startError=error instanceof Error?error.name:'unknown';try{await close();}catch{}throw error;}
   return {pool,directory,facts,close,loseReply(){dropReply=true;},async restart(){await app!.close();await start();},
     owner:()=>new FlowClient({baseUrl:base,token}),runner:(credential:string)=>new FlowClient({baseUrl:base,token:credential}),
-    async http<T>(path:string,credential=token,status=200):Promise<{value:T;bytes:number}> {
+    async http<T>(path:string,credential:string=token,status=200):Promise<{value:T;bytes:number}> {
       assert(++requests<=160&&performance.now()-started<90_000,'Fixture work bound.');
       const response=await fetch(base+path,{headers:{authorization:`Bearer ${credential}`},signal:AbortSignal.timeout(5000)});
       const reader=response.body!.getReader(),chunks:Uint8Array[]=[];let bytes=0;
