@@ -14,7 +14,7 @@
 
 - [x] **RENDERER01-01** 实现确定性声明验证及 P01 生命周期注册表。
 - [x] **RENDERER01-02** 实现 provider 本地桥与绑定的回复详情 adapter。
-- [ ] **RENDERER01-03** 局部行为测试、官方 Thread 双 provider fixture、浅深主题/390/键盘、固定独立 review。
+- [x] **RENDERER01-03** 局部行为测试、官方 Thread 双 provider fixture、浅深主题/390/键盘、固定独立 review。
 - [ ] **RENDERER01-04** 下游 App 接线由独立 owner 领取并验证；本模块不能代记完成。
 
 验收：冲突反序等价；未知名/版本/schema 和 renderer throw 可读 fallback；StrictMode/双 provider/单 pane 关闭/连接切换/disable 清理；详情 0→1→缓存、身份错配与迟到不串、新草稿不受影响。0 真实模型/产品 DB。每段和交付执行 clean-code，错误不得靠隐藏或删断言通过。

@@ -1,6 +1,6 @@
 # WPF-RENDERER01 · 模块交付候选
 
-实现 `747cbe616408dc3e44ab3587216c5753e6de3994`，base `fb906cb42391971a8b315dbd813f7633927d7265`；后续 metadata 不改变固定实现 target。独立 review 尚未执行。
+实现 `747cbe616408dc3e44ab3587216c5753e6de3994`，base `fb906cb42391971a8b315dbd813f7633927d7265`；后续 metadata 不改变固定实现 target。root 已于2026-10-06T05:58:49Z独立限定APPROVED，具体实际检查与限制见review。
 
 新增受信 data type→React 注册模块，P01 是唯一生命周期权威。官方 Thread 双 provider 已通过模拟 HTTP 验证，真实 FlowClient 与 ConversationProjection 管理回复身份/digest/缓存。它尚未接入产品 App，也不完成 X01 npm、授权管理或第三方隔离。
 
