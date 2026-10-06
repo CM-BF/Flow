@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:21 UTC；W1 main30b，W2生产基线115b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:26 UTC；W1 main30b，W2生产基线115b |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
@@ -15,13 +15,13 @@
 | 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 单进程声明容量4的12任务对照入口与预算修复已完成，正在独立审查 |
-| 下一可用交付 | 完成源码独审后，在协调的短窗口测量声明容量与实际并发 |
+| 当前产出 | 单进程声明容量4的对照入口已通过独立审查，正在协调测量窗口 |
+| 下一可用交付 | 在独立短窗口测量声明容量与实际并发，并交结果审查 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，W2准备固定2ab待独审；W1准备/结果已批准且已集成 |
+| Review | [review.md](review.md)，W2准备固定2ab已APPROVED；未取得运行窗口；W1准备/结果已批准且已集成 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
-| S01-05 | in-progress | 独立reviewer | W1固定结果9e独审APPROVED/main30b已接收；W2新源码2ab待独审 |
+| S01-05 | in-progress | 独立reviewer | W1固定结果9e独审APPROVED/main30b已接收；W2新源码2ab准备APPROVED，实际结果未运行 |
 | S01-06 | pending | 后继owner | 真实provider与更大并发未包含 |
 
 ## 权限、优先级与事实边界
@@ -69,3 +69,5 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:16 UTC W2准备启动：Goal Owner明确批准仅准备declared4/12，继续同WT/claim/base115b；root唯一writer，worker转独立CHAT06P01。按声明capacity校验且保留实际peak；修复claim未emit/未知结果的保守预算扣额。W1已限定验收并交Lead接收2784473，新源码不沿用旧批准。0新增smoke/负载/模型，纯unit与noEmit检查允许；固定源码独审后申请≤30秒窗口。S01-04继续in-progress。
 
 2026-10-06 07:19 UTC 实质进展：W1获MAIN_ACCEPTED30b，owner核2784473祖先且三scope对main零diff，见w1-main-receipt.json。W2固定场景解析/真实注册容量与per-runner峰值、未知attempt保守预算已实现；新6预算用例先复现5失败，再与统计/参数共11tests通过，noEmit0（最终源码11pass/noEmit0）。未创建任何新PG或负载。新源码待固定与独审；W1 main事实不覆盖W2。
+
+2026-10-06 07:26 UTC W2独审完成：独立worker限定APPROVED2ab，无P1/P2，源码/25hash与旧raw边界核验。Mika向GO申请≤30秒阶段，CHAT06P01尚准备时不拖S01；常驻服务刷新与测量由GO错开。当前0新负载/模型，原64/64/180秒/64MiB及实际32/26未变。

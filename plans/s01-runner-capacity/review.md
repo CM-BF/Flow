@@ -1,9 +1,9 @@
 # S01 独立审查
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：2ab7967f2eb808fecd1205f7552a119eee8e0b36
 
-当前：W2声明capacity4/12任务与保守预算修复已固定2ab，11纯unit/noEmit0，未获独立源码批准。以下为历史已批准W1准备与结果。
+当前：W2声明capacity4/12任务与保守预算修复已固定2ab，11纯unit/noEmit0，独立准备审查APPROVED；运行窗口尚未领取。以下为历史已批准W1准备与结果。
 
 历史准备target：9da9de1b6778afec5219e55f39b53b365c8cf900
 
@@ -51,3 +51,5 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 范围experiments/runner-capacity，固定target见页首；生产base115b，唯一权威worktree/claim沿用S01。入口与限制见[W2方法](../../docs/evidence/s01/w2-readiness.md)，源码/检查摘要见[W2 manifest](../../docs/evidence/s01/w2-readiness-manifest.json)。只审准备代码，不运行负载或认为已有窗口。
 
 可复制步骤：核head/dirty与manifest哈希；对2784473审delta，核固定12/1/capacity4/128参数、DB真实注册capacity、per-runner上下峰值不预设串行且不超过声明容量；72runner/60timeline/72workspace及12工具/终ACK/清理契约随tasks推导。核领取未emit与unknown ACK按reservation保守扣额、observed/budgetCharged分开、两个历史smoke固定SHA兼容、missing result failclosed及同scenario禁重跑。读11纯unit/noEmit证据及5red原记录，原W1 raw/manifest不改；0新PG/task/服务。检查≤30秒含10秒清理/原64与180秒及64MiB预算，window仍待GO协调。severity与修复绑定新commit，不能沿用W1批准。
+
+2026-10-06T07:26:06Z W2独立准备审查APPROVED：worker只读核25source/3raw与target/current一致、11unit/noEmit0、5 red保留、原raw/产品不变；固定参数/DB容量/peak不预设串行与保守预算门禁成立，无P1/P2。未运行测试/服务/PG。见[W2独审回执](../../docs/evidence/s01/w2-independent-review.json)。本结论仅准备，窗口与结果需另行记录。
