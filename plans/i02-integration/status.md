@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:21:23 UTC / main f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:29:51 UTC / main 557397e9f756bfd9500107d7c1d1ce0ae65f7906 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -12,13 +12,13 @@
 | 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
 | 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 上下文生产接线58绑定/31依赖一致、root types0；复用121不同独审，首次超时保留；0provider |
-| 已集成main状态 / HEAD | 7cbda706632c85fc5da12a371b282419c933ab9a 已推送、当前源码与固定target一致。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 检查状态 | ENG01G 56源码/直接输入完全一致、root types0；DPERF03五源与独审相同、登记直接1项通过及148源实采；0provider。 |
+| 已集成main状态 / HEAD | 557397e9f756bfd9500107d7c1d1ce0ae65f7906 已推送，已审工程writer、上下文观察与看板读取改进均main。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 目标会话、工程快照、附件模块与上下文历史观察已进入主线。 |
+| 当前产出 | 工程写入接缝与看板读取改进已进入主线；发布兼容准备正在独立审查。 |
 | 下一可用交付 | 本批已交付；个人预览发布与终端后继在独立任务推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -145,3 +145,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 12:21:23 UTC：按eccb固定4源接收普通Claude历史观察；58绑定与31直接输入无差，现claude基准完全一致，root类型检查0，无重复121/PG/provider。原首fixture超时和fake Query限制保留。[接收证据](../../docs/evidence/i02/context-producer-integration.json)。部署仍个人b1c，不把main当runtime。
 
 2026-10-06 12:22:57 UTC：本批固定四源已随 main7cbda706 推送，owner主线回执已给Mika，后续收口仍由其唯一status。147源已真实换载，新发布准备仍按固定362隔离组合，不追moving main、不改变个人运行版本。
+
+2026-10-06 12:29:51 UTC：ENG01G八源/48直接输入在实际组合点逐字匹配，root types0；105不同作者检查复用，不重跑。DPERF03五源码已main且实际148源读取可用，仅登记直接消费者1项新验。原raw末尾空行保留，不改写检查输出。SVC05固定准备已交独立review，TUI01D在另一槽推进；个人服务和全部模型预算保持。

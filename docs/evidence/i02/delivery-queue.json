@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T12:22:57.124445+00:00",
-  "main": "7cbda706632c85fc5da12a371b282419c933ab9a",
-  "sourceSampleAt": "2026-10-06T12:15:08.415Z",
+  "recordedAt": "2026-10-06 12:29:51 UTC",
+  "main": "557397e9f756bfd9500107d7c1d1ce0ae65f7906",
+  "sourceSampleAt": "2026-10-06T12:24:33.364Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [
     {
@@ -18,12 +18,26 @@
       "target": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
       "evidence": "context-producer-integration.json",
       "main": "7cbda706632c85fc5da12a371b282419c933ab9a"
+    },
+    {
+      "taskId": "WPF-DPERF03",
+      "classification": "already-main-awaiting-owner-close",
+      "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+      "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+      "evidence": "dperf03-integration.json"
+    },
+    {
+      "taskId": "ENG01G",
+      "classification": "already-main-awaiting-owner-close",
+      "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+      "main": "557397e9f756bfd9500107d7c1d1ce0ae65f7906",
+      "evidence": "engineering-native-writer-integration.json"
     }
   ],
   "mainButNotUserSurface": [
     {
       "taskId": "O12",
-      "next": "TUI-001 existing shared-goal/control successor; Web consumes independently",
+      "next": "TUI01D explicit goal/control mode assigned to assignment_review, independent of Web",
       "note": "Package/controller and historical reads main; no NL or UI acceptance claimed"
     },
     {
@@ -32,9 +46,9 @@
       "note": "Module main; no actual production App attachment journey yet"
     },
     {
-      "taskId": "ENG01F",
-      "next": "ENG01G native writer composition and explicit future real model acceptance",
-      "note": "Complete snapshot receipt main; writer settlement not-attested"
+      "taskId": "ENG01G",
+      "next": "Native authority/profile production admission and separately budgeted actual model acceptance",
+      "note": "One real shared exchange pump and injected authority; actual model/enforcement/revocation not demonstrated"
     },
     {
       "taskId": "WPF-MATURE-04",
@@ -45,11 +59,12 @@
   "releaseQueue": [
     {
       "taskId": "SVC05",
-      "phase": "isolated compatibility preparation",
+      "phase": "fixed-isolated-preparation-in-independent-review",
       "fixedBackendCandidate": "362af3bac77541e5a60979326bcf4d4b8c947915",
       "actualBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
       "actualWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
-      "note": "All retained artifact compatibility must be explicit. No personal-service action/query permitted in preparation."
+      "note": "All retained artifact compatibility must be explicit. No personal-service action/query permitted in preparation.",
+      "target": "dc8e25f141a1f52964056df823b988a5fe24cbea"
     }
   ],
   "mainBeforeBatch": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa"

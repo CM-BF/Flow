@@ -45,6 +45,14 @@
     "sha256": "c9d0cfed3e8548a483477bca39afe144a53c8c49f6e381bb72be7e8a21498815"
   },
   "rationale": "Existing three modified implementation paths match author base exactly. Only registry differs among13 readonly inputs, by new canonical registrations. Fixed five sources unchanged; selected registry direct consumer and one subsequent actual dashboard read cover changed integration input. Do not rerun37 or opt-in experiment.",
-  "liveDeployment": "pending normal 4320 replacement",
+  "liveDeployment": {
+    "generatedAt": "2026-10-06T12:24:33.364Z",
+    "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+    "taskCount": 148,
+    "unregistered": [],
+    "receipt": "../d05/snapshot-sharing-148-live.json",
+    "operator": "astra_ultra_execution_lead",
+    "personalServiceActions": 0
+  },
   "limits": "No new CPU/SLO/provider claim; per-snapshot concurrency and freshness only."
 }
