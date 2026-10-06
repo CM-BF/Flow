@@ -27,3 +27,7 @@ Reviewer：status_read，2026-10-06 21:36:02UTC；Mika另核六源diff/SQL约束
 本结论仅为source/SQL静态审，不证明运行正确性或main能力。首红26selected/17failed/9passed原件保持；新实现green/strict为NOT_RUN_RESOURCE，0新运行。真实PG后继须覆盖suffix坏但prefix相同的完整digest、每task LIMIT2混合、错误attempt/owner/session及并发RR快照。mixed50部分expected复用新turnView，只提供公开投影的一致性约束，不能代替SQL执行证据。
 
 作者接受，无源码修复请求。本次仅metadata归档，claim保留；空间恢复后按Lead新准入补green/strict，实际PG另行窗口。
+
+## 验证与fixture修复复审请求
+
+Target `d209eb7275777d50f214fd73f66d6b3c1520c459`，产品6源相对3cd不变；仅turn-page-batch.test.ts一行显式row guard修复TS18048。green26/26在修前test/固定产品上执行；strict首错保留，修后focused strict-v2 exit0，26绿组未重跑。不自动扩大上次source approval：结果忠实性/fixture修复复审PENDING。请核[检查记录](../../docs/evidence/req15-turn-page-batch/checks.md)、[来源manifest](../../docs/evidence/req15-turn-page-batch/validation-source-manifest.json)、[原始输出manifest](../../docs/evidence/req15-turn-page-batch/validation-output-manifest.json)。真实PG/HTTP/main仍NOT_RUN。
