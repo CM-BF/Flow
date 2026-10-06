@@ -15,7 +15,7 @@
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | WORKSPACEPERF01四scope已fresh领取，先测真实App关闭重开基线；组合pane完整实现仍开放 |
+| 下一可用交付 | WORKSPACEPERF01固定partial基线独审后，panels转真实A与B组合tab方案/精准App窗口；不再以研究替代ready产品，完整实现仍开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |

@@ -44,3 +44,5 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 既有01/02 TODO已有[18literal只读提案](../../docs/evidence/web-platform/theme-extension-proposal.json)，不构成take或新产品事实。附件P1优先；后继需固定base、全范围fresh查重、独立树，不能沿VISUAL旧释放范围写入。
 
 真实Web发布兼容由独立[WPF-RELEASE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)实施，首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764，20a6529a v1四scope；真实新旧App构建/专用PG及fixture runner，0provider/个人发布操作，7805固定已root10:46:30 APPROVED，final db08e7b已正常push/clean，待Lead按同descriptor受控接收；仅真实旧/新App与固定b1c中心fixture兼容，个人发布仍Lead。
+
+RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查发现fixture构建矩阵的noUncheckedIndexedAccess两错，RELEASE02独立base2e71/03323bce v1三scope由w01窄修，runner_owner独立审。不是env/ENG失败，旧定向检查与原browser报告保其真实范围；不重跑旅程或个人发布。[当前接收队列](../../docs/evidence/web-platform/mature-task-handoff.md)。

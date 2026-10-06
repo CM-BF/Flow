@@ -1,5 +1,9 @@
 # 成熟聊天大task来源与登记队列
 
+## RELEASE02 严格类型检查窄修（合法新scope）
+
+Lead/root已纠正准确定位：root `noUncheckedIndexedAccess` 将 fixture 构建矩阵的 `[label,target]` 推为 `string | undefined`，127/134两错误；不是env/token，也不是ENG领域失败。[原始输入](release02-root-types-input.log)/[三scope修复方案](release02-tuple-types-proposal.json)。w01在ATTACHI安全点用新web-release-type-fix/base2e71，[03323bce v1 COMMITTED](release02-take-receipt.json)11:07:28.265Z三scope已fresh领取并followup派发，只加readonly typed tuple或narrow；不改版本/旅程，不重跑123/八browser/个人发布。旧RELEASE claim已释放不复用；旧定向tsc通过只代表当时选项，保留证据，根严格检查另列。固定目标由Lead runner_owner独立窄审。
+
 ## Lead当前所需：ATTACH phase1+runtime唯一完整manifest
 
 已实核 2026-10-06 11:02:57UTC：`attachment-resources` local=remote **1d236cbe2299117e3b63887fda3d1c0e140f56b0**，clean；实现 **8701a6cf547248e70aa5758f05da1d7d314ae9c0**。

@@ -1,0 +1,21 @@
+{
+  "taskId": "WPF-RELEASE02",
+  "parent": "WPF-MATURE-01",
+  "owner": "w01_owner",
+  "base": "2e71fabc218df28f6ccb78a927432ae1101c17c5",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix",
+  "branch": "codex/web-release-type-fix",
+  "scope": [
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "plans/wpf-release02-tuple-types",
+    "docs/evidence/wpf-release02"
+  ],
+  "state": "COMMITTED 03323bce v1 2026-10-06T11:07:28.265Z; owner followup dispatched after exact base/branch/clean preflight",
+  "diagnosis": "for ([label,target] of [[old,BACKEND],[new,NEW_WEB]]) inferred array element string|undefined under root noUncheckedIndexedAccess;127 git target and134 artifact label. Not env/token or ENG domain.",
+  "fix": "readonly typed tuple or evidenced narrow only; constants/journey unchanged",
+  "validation": "root tsc --noEmit + necessary targeted static synthetic tuple validation; no123/browsers/PG/personal publish",
+  "independentReviewer": "ExecutionLead runner_owner",
+  "historicalBoundary": "old directed tsc passed under narrower options; preserve success and exact tested scope, no retrospective rewrite; record actual old command/options where available",
+  "inputRaw": "release02-root-types-input.log",
+  "receipt": "release02-take-receipt.json"
+}
