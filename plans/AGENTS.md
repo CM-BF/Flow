@@ -124,3 +124,10 @@ status 的“当前产出/下一可用交付/当前阻塞/需用户决定”描�
 status可选枚举 `本片段交付阶段`：planning（未来计划）、implementation（实施）、review（待审/修复）、integration（已审待集成）、delivered（本片段已交付）。它与完整plan的开放TODO独立，禁止为了首页筛选勾选后继。显式非法值为未知；旧记录只按标准branchState token兼容，completed仅作者完成的legacy历史，不推断review/main事实。当前下一交付只展示implementation/review/integration，真实当前阻塞优先。新增任务及活跃owner在安全更新点采用字段，不要求全历史机械补写。
 
 当前协作以根AGENTS“两层任务、职责与消息预算”为准：GO仅定义大task，co-lead自主规划执行sub-tasks。每个sub-task表格必须填写唯一`所属大task`稳定ID/链接及`co-lead`，由唯一status进入dashboard；缺失如实未知。co-lead→GO每个大task仅#独立blockers + Done(1)，同一blocker无变化不重报，内部可解问题不报。片段ready/review/merge/登记/claim/普通接口确认仅更新看板，不私信。完整验收后才一次Done，禁止改名绕预算；worker↔本组lead必要执行通信保留。
+
+
+## 模块与性能的计划 / review 门槛
+
+所有计划（包括 WPF-MATURE-01～06）统一引用[根规则：模块化、可复用接口与性能](../AGENTS.md#modular-design)，不复制权威条款。设计与 review 按风险附简表或图：Module 的唯一职责、Interface 的输入输出/状态所有权/生命周期/错误取消、依赖方向、扩展一个实现需改的位置、已有复用或渐进重构的选择，以及有界数据/背压/资源释放与受影响场景的证据。已有明确扩展需求可以驱动小接口，但不得用宽泛框架或多层特判替代真实消费者验证。
+
+review 对照上述设计及实际 diff 检查：是否泄漏外部包或 provider 细节、重复状态规则/授权逻辑、让职责跨层、以无限缓存/队列掩盖性能成本，或在没有需求时过度泛化。合法领域分支不因存在 if/switch 被机械判错；风险和检查范围要具体，纯文档不运行无关工程测试。此门槛沿用现有独立 review / claim / 固定提交规则，不增加重复用户审批。
