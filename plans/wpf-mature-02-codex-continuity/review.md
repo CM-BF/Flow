@@ -17,3 +17,5 @@ architecture_read固定3f432/de51只读关闭封套原三P2。Mika随后发现�
 2026-10-06 21:58:02 UTC：status_read/root已接受e1e91177依赖kind增量0P1/P2；root全核41263763输入后指出stop_group会以第二次absent覆盖首次unknown。当前只修为首次非present即返回并保留观测，signal OSError立即unknown；4项纯注入反例通过，0Popen/真实signal/PG，见stop-group-check-result.json。增量尚待固定独审，PG_PREPARATION_NOT_APPROVED / NOT_OPEN。reporter文字已与实际JSON命令统一。
 
 最终UNKNOWN窄修源码：60e9a755886ab525e5eeb71c19261a310208a456；检查源SHA3e51596b5863d9be16776e06720a8b44f00241612ff7c13c992fe55317dab2ef，4/4纯反例。新manifest绑定该target，旧8项review证据保持原bindingTarget。等待root复审/共享窗口，无实际PG。
+
+2026-10-06 21:59 UTC：Mika/root + status_read 最终 PG_PREPARATION_APPROVED / ACTUAL_NOT_OPEN，0P1/P2，source60e9a755886ab525e5eeb71c19261a310208a456 / packetfd5bc893cbb3c577e6cb1a6d3c902c149b9025a5。302 items/1627992B/30SQL、10review-only、2external、20links全绑定；manifest735005071270169255a913636622a3102e5d9041b578d7aa1df6ee578142e62d。group unknown沿PROCESS_OR_STDIO_UNKNOWN→receipt未确认→KEEP原根，最后P2关闭；4纯注入通过，不重跑既有types/8。该批准仅准备，不是6项真实PG已通过；native/provider0、NOT_INTEGRATED。SVC07 HTTP在先，后续仅Lead/Web明确交接与fresh门禁可开一次窗口，不自动轮询。
