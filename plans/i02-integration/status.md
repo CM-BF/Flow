@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:47 UTC / main22a0806b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:49 UTC / mainaca6e892 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main22a0806b；本批接收保留页面/连续目标已审准备工具与运行边界，产品运行版本保持 |
+| 工作基线 / HEAD | mainaca6e892；本批已发布已审准备工具/看板parser/中心恢复证据，个人产品运行版本保持 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main22a0806b已登记173来源；本批已审候选待发布。个人中心已同版本恢复，source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main/origin aca6e892一致且clean，173源19:49实际聚合；个人中心已同版本恢复，source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 个人中心已同版本恢复，数据与身份保留；看板时间解析与兼容工具的已审小片正在发布。 |
-| 下一可用交付 | 发布已审小片并继续页面兼容和完整目标验收。 |
+| 当前产出 | 个人中心已恢复；看板时间解析修复、兼容工具局部修复及恢复证据已进入主线。 |
+| 下一可用交付 | 本片段已交付；页面兼容与完整目标旅程在各自权威任务继续验收。 |
 | 当前阻塞 | NONE；个人中心恢复窗口已关闭，未完成的实际页面兼容/完整目标旅程在各权威任务继续。 |
 | 需用户决定 | NONE |
 
@@ -233,3 +233,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 19:33 UTC：DPERF05已审两源逐字接入候选，实际aggregate直接消费者1/1（330.54ms/外层506ms）通过并清理，无重复62项。R01有界采样与双异常保留九纯例已独审/通过，原两个PG/Chrome红保留、真实兼容未证；O16纯CAS增量源审通过、一次局部执行待收口，旧PG红与KEEP原样。个人同版本中心恢复优先，main22a保持；未将准备工具当真实产品验收。
 
 2026-10-06 19:47 UTC：[中心恢复独立证据审查](../../docs/evidence/i02/center-recovery-operation-review.json)核20固定绑定及原前后事实，64业务表和8组检查相等；仅原版本一个center启动，source窗口已关闭并恢复main22a。与已审caf1候选组成[本批发布](../../docs/evidence/i02/center-recovery-publication.json)。0新provider/个人探针，运行仍362/v15；R01/O16尚未通过实际完整旅程。
+
+2026-10-06 19:49 UTC：[正式main与实际173源回执](../../docs/evidence/i02/recovery-preparation-main-receipt.json)。main/origin aca6e892一致；仅重启自身4320载入已审parser，原产品服务/用户tabs不动。中心同版本恢复已收口，后继真实旅程没有被准备工具或看板通过冒替。
