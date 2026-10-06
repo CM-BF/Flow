@@ -1,0 +1,52 @@
+{
+  "typescript": {
+    "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/tsconfig.json",
+    "compilerOptions": {
+      "noEmit": true,
+      "typeRoots": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+      ],
+      "paths": {
+        "@flow/contracts": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/packages/contracts/src/index.ts"
+        ],
+        "@flow/client": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/packages/client/src/index.ts"
+        ],
+        "@flow/protocols": [
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/packages/protocols/src/index.ts"
+        ],
+        "zod": [
+          "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod"
+        ],
+        "vitest": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest"
+        ],
+        "@anthropic-ai/claude-agent-sdk": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts"
+        ],
+        "@modelcontextprotocol/sdk/*": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@modelcontextprotocol/sdk/dist/esm/*"
+        ],
+        "@a2a-js/sdk": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@a2a-js/sdk/dist/index.d.ts"
+        ],
+        "@a2a-js/sdk/*": [
+          "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@a2a-js/sdk/dist/*"
+        ],
+        "@modelcontextprotocol/client": [
+          "/Users/citrine/Projects/AgentHarness/Flow/packages/protocols/node_modules/@modelcontextprotocol/client/dist/index.d.mts"
+        ]
+      },
+      "incremental": false
+    },
+    "include": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/main.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/main-concurrency.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/concurrency-configuration.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/apps/runner/src/concurrency-configuration.test.ts"
+    ],
+    "exclude": []
+  },
+  "vitestConfig": "export default {\n  \"root\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry\",\n  \"cacheDir\": \"/tmp/s01p02-vite-cache\",\n  \"test\": {\n    \"include\": [\n      \"apps/runner/src/concurrency-configuration.test.ts\",\n      \"apps/runner/src/main-concurrency.test.ts\"\n    ],\n    \"fileParallelism\": false\n  }\n};\n"
+}
