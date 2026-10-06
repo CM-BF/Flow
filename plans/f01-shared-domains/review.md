@@ -328,3 +328,19 @@ NOT_STARTED — 3file/2raw，只读command + help +真实HTTP边界；原domain/
 Review target commit: 0550b3e7318133fb0d023fd8cc4372d8b7663e78
 
 APPROVED — assignment_review / gpt-6-astra，2026-10-06T14:31:26Z独立只读三源/两raw及既有client输入同源，无P1/P2。原1/1真实HTTP20ms/types0有效，reviewer无测试/PG/provider；仅CLI透明读取、help和错误/取消传播，不代表UI、归因或预算完成。见[独审回执](../../docs/evidence/f01/usage-readout-cli-independent-review.json)。
+
+## X01 static installation thin client
+
+Review target commit: 67fd45924e51c3356ca07e199335f35038f34968
+
+NOT_STARTED — 三file/六raw/已main的固定DTO；五方法/原key/body/两cursor/ACK未知/abort/403409传递，只审transport，不重跑领域PG。
+
+Review target commit: 67fd45924e51c3356ca07e199335f35038f34968
+
+APPROVED — status_read / gpt-6-astra，Mika接收，无P1/P2；[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。0 reviewer tests。
+
+## X01 production/configuration/CLI
+
+Review target commit: 5e121041cf628817b27cbb64f00317d5d62ad1e2
+
+NOT_STARTED — 10源/6不同局部用例分轮、root types与自有随机库正常清理；只接线，不重审领域。

@@ -1,4 +1,5 @@
 import { packageFetchRequestSchema, packageFetchCommandSchema, PACKAGE_FETCH_LIMITS } from '@flow/contracts';
+import { pluginInstallRequestSchema, pluginInstallCommandSchema, PLUGIN_INSTALL_LIMITS } from '@flow/contracts';
 import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeResolveSchema, KNOWLEDGE_LIMITS, pluginRegistrationSchema, pluginCommandSchema, MAX_PLUGIN_REQUEST_BYTES } from '@flow/contracts';
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
@@ -140,6 +141,18 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
   const page = { ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) };
   let result: unknown;
   switch (action) {
+    case 'installs': result = await client.pluginMaterialInstalls(required(positionals[2], 'plugin ID'), page, signal); break;
+    case 'install-show': result = await client.pluginMaterialInstall(required(positionals[2], 'material installation ID'), signal); break;
+    case 'install-history': result = await client.pluginMaterialInstallHistory(required(positionals[2], 'material installation ID'), page, signal); break;
+    case 'install':
+    case 'install-change': {
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), PLUGIN_INSTALL_LIMITS.bodyBytes);
+      const key = required(values.key, '--key (stable command identifier)');
+      result = action === 'install'
+        ? await client.installPluginVersion(required(positionals[2], 'plugin ID'), required(positionals[3], 'version ID'), pluginInstallRequestSchema.parse(input), key, signal)
+        : await client.commandPluginMaterialInstall(required(positionals[2], 'material installation ID'), pluginInstallCommandSchema.parse(input), key, signal);
+      break;
+    }
     case 'fetches': result = await client.pluginPackageFetches(required(positionals[2], 'plugin ID'), page, signal); break;
     case 'fetch-show': result = await client.packageFetch(required(positionals[2], 'fetch operation ID'), signal); break;
     case 'fetch-history': result = await client.packageFetchHistory(required(positionals[2], 'fetch operation ID'), page, signal); break;
@@ -166,7 +179,7 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
         : await client.commandPlugin(required(positionals[2], 'plugin ID'), pluginCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change. Fetch only verifies compressed bytes; it does not install or load a package.');
+    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change|install|installs|install-show|install-history|install-change. Static installation does not load or enable a plugin.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -277,7 +290,8 @@ function submission(values: Flags, words: string[]): TaskSubmission {
   });
 }
 
-const HELP = `Package fetch: plugin fetch PLUGIN VERSION --input FILE --key KEY; plugin fetches PLUGIN; plugin fetch-show OP; plugin fetch-history OP; plugin fetch-change OP --input FILE --key KEY.
+const HELP = `Static material: plugin install PLUGIN VERSION --input FILE --key KEY; plugin installs PLUGIN; plugin install-show OP; plugin install-history OP; plugin install-change OP --input FILE --key KEY.
+Package fetch: plugin fetch PLUGIN VERSION --input FILE --key KEY; plugin fetches PLUGIN; plugin fetch-show OP; plugin fetch-history OP; plugin fetch-change OP --input FILE --key KEY.
 Flow — durable work, from your terminal
 
 Commands:

@@ -1,3 +1,4 @@
+import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
 import type { TaskUsageReadout } from '@flow/contracts';
 import { BROWSER_SESSION_CSRF_HEADER, browserSessionReadySchema, browserSessionReadSchema, type BrowserSessionReady, type BrowserSessionRead } from '@flow/contracts';
 import { nativeEngineeringProfilePageSchema, nativeEngineeringProfilePublishedSchema, type NativeEngineeringProfileConfiguration, type NativeEngineeringProfilePage, type NativeEngineeringProfilePublished } from '@flow/contracts';
@@ -387,6 +388,27 @@ export class FlowClient {
   }
   publishNativeExecutionProfile(input: { configuration: NativeExecutionProfileConfiguration }, signal?: AbortSignal): Promise<NativeExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+
+  /** Returns acceptance only; read the operation separately for its current material state. */
+  installPluginVersion(pluginId: string, versionId: string, input: PluginInstallRequest, key: string, signal?: AbortSignal): Promise<PluginInstallAccepted> {
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/versions/${encodeURIComponent(versionId)}/install`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  pluginMaterialInstall(id: string, signal?: AbortSignal): Promise<PluginMaterialInstall> {
+    return this.request(`/api/plugin-installs/${encodeURIComponent(id)}`, { signal });
+  }
+  pluginMaterialInstalls(pluginId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginInstallList> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/material-installs${query.size ? `?${query}` : ''}`, { signal });
+  }
+  pluginMaterialInstallHistory(id: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginInstallHistory> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugin-installs/${encodeURIComponent(id)}/history${query.size ? `?${query}` : ''}`, { signal });
+  }
+  commandPluginMaterialInstall(id: string, input: PluginInstallCommand, key: string, signal?: AbortSignal): Promise<PluginInstallAccepted> {
+    return this.request(`/api/plugin-installs/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   registerPlugin(input: PluginRegistration, key: string, signal?: AbortSignal): Promise<PluginMutationResult> {
