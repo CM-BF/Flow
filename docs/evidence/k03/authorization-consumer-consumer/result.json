@@ -1,0 +1,26 @@
+{
+  "originalPath": "apps/server/src/goal-tool-runs/authorization.test.ts",
+  "originalSha256": "d908d4567f3fbb576f2c1fbcfb26281198e6c88f99e95fc3441f7cb4145ae4a8",
+  "originalBodiesSha256": "7d002a1024949a3d67e408e42142574f33a86347301dddf9e27e264f1bdd85c5",
+  "generatedBodiesSha256": "7d002a1024949a3d67e408e42142574f33a86347301dddf9e27e264f1bdd85c5",
+  "generatedSha256": "64e2ea0043ba9c05c6cc90edaecd7bcb5d5086bdca5a3080c19cd998058c9554",
+  "generatedPath": "apps/server/src/goal-context/generated-authorization.test.ts",
+  "startedAt": "2026-10-06T06:27:02.990Z",
+  "explicitChanges": [
+    "Own isolated database/resource cleanup header",
+    "Manual migration 021 before HTTP listen; production mount not claimed",
+    "Relative imports rebased; original test bodies unchanged"
+  ],
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/goal-context/generated-authorization.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "endedAt": "2026-10-06T06:27:11.523Z",
+  "exitCode": 0,
+  "signal": null
+}

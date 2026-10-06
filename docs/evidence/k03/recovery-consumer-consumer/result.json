@@ -1,0 +1,28 @@
+{
+  "originalPath": "apps/server/src/reconciliation.test.ts",
+  "originalSha256": "fc713446b0dd3f9949473ebf93cc9868adfe42f99e90c3c73d7f4d0611c78730",
+  "originalBodiesSha256": "073fde888828e23f9ce4355ab2bc68865ef0dc899f27e529f9d58a95370af864",
+  "generatedBodiesSha256": "073fde888828e23f9ce4355ab2bc68865ef0dc899f27e529f9d58a95370af864",
+  "generatedSha256": "7a7a749aaeb94cf87adabd4c8499bc654debc266efdabcd80a771c840419fd58",
+  "generatedPath": "apps/server/src/goal-context/generated-recovery.test.ts",
+  "startedAt": "2026-10-06T06:27:26.316Z",
+  "explicitChanges": [
+    "Own isolated database/resource cleanup header",
+    "Manual migration 021 before HTTP listen; production mount not claimed",
+    "Relative imports rebased; original test bodies unchanged"
+  ],
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/goal-context/generated-recovery.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner",
+    "-t",
+    "requires explicit retry|does not blindly repeat|allows original work only"
+  ],
+  "endedAt": "2026-10-06T06:27:36.205Z",
+  "exitCode": 0,
+  "signal": null
+}
