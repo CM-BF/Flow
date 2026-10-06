@@ -1,0 +1,184 @@
+{
+  "taskId": "R05B",
+  "parent": "FLOW-002",
+  "owner": "native_center_owner",
+  "coLead": "Execution Lead",
+  "base": "3d31ba89bc3696e64d15f12f9d8c703e4d7bd914",
+  "implementationTarget": "4944d1e795326ad9d437c8d6a4ea88f52db619d9",
+  "generatedAt": "2026-10-06T09:20:59.194Z",
+  "branch": "codex/native-center-policy",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy",
+  "claim": {
+    "id": "b205dd73-4edb-4d76-a13b-0fc8a7532b1b",
+    "version": 2
+  },
+  "inputCommits": [
+    {
+      "source": "5365acb8b9bde4889f83715aa650bc6aed155c9b",
+      "applied": "f01a2d6a840dd372bf4a98b39946b8af7727866f",
+      "scope": [
+        "apps/server/src/index.ts"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "apps/server/src/assistant/native-harness.test.ts",
+      "sha256": "cc03f0e4b6cde2f539083d1d37799c88dd521649e6cf7585ba90bf370574a613",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "82a0b1293cb3a464945f106a8e3a4bf16a9541542659174e12cd5102ffefa34d",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/conversations/conversations.test.ts",
+      "sha256": "f10b0330f2ccc71dd53193fd488d3a4612cdbebc1dbb99f025fa1009b230c9ac",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "sha256": "b654cf998bc4364ff4985e0133024be7eb5ae1999845345baa08d2de4fbf1f49",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "sha256": "7eff3d457e78b89fcb1bb6afd90ddb25b8c818d4a6061cf3beacee00797fdf06",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0",
+      "ownerInput": "F01 5365acb8b9bde4889f83715aa650bc6aed155c9b"
+    },
+    {
+      "path": "apps/server/src/native-harness-migration.ts",
+      "sha256": "171050c81a8677c145319adc51e8c542e2be26373a15262fa0d689ae600c5b98",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/native-harness-policy.test.ts",
+      "sha256": "5bc58fae3e27ed1a604393f7397cc6cbedfc5ca7387392d11f931c5b7f6b0fcb",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "apps/server/src/native-harness-policy.ts",
+      "sha256": "b05a8eaee51ae8c0fba0dbe2183cec0289c0a3393c26dfc0576e54fa10b66cb2",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/assistant.test.ts",
+      "sha256": "babb342aa8c616f0477c7297fb7e6f5831aee022ce19f78d4addc2a5bea374df",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "sha256": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "sha256": "63e3cfb96521dab7c90c5b43c0a325d2d97832e7ef09943ae654edbb536629ea",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "sha256": "6587cee21f105353943da96d57982768984bfbd54ad83ca94dd4a6ad9843ab19",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.test.ts",
+      "sha256": "a092be1f5b3c8ce0dd3fe02954d2409710d2c504b5084eee51db6734ed24c89a",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sha256": "cb9251b9e3ffeb6d6204d200b01b8046e50dad483993f4ea6df7baf6baeae59f",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "sha256": "ee93a1d4bd7ca48542b18f005c8e0bd6e019fdca996567795dceda6cd358e05d",
+      "ownerInput": "R05B"
+    },
+    {
+      "path": "packages/storage/migrations/025-native-harness-sources.sql",
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8",
+      "ownerInput": "R05B"
+    }
+  ],
+  "validation": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18",
+    "postgres": "16.13",
+    "distinctFiles": 16,
+    "distinctTests": 157,
+    "groups": [
+      {
+        "name": "contracts/source policy",
+        "files": 5,
+        "selected": 13,
+        "passed": 13
+      },
+      {
+        "name": "real PG native final and migration",
+        "files": 1,
+        "selected": 11,
+        "passed": 11
+      },
+      {
+        "name": "runner/client consumers",
+        "files": 5,
+        "selected": 66,
+        "passed": 66
+      },
+      {
+        "name": "center consumers",
+        "files": 4,
+        "selected": 46,
+        "passed": 46
+      },
+      {
+        "name": "bounded preview consumer",
+        "files": 1,
+        "selected": 21,
+        "passed": 21
+      }
+    ],
+    "supplement": {
+      "name": "corrupt native persisted settings",
+      "selected": 1,
+      "passed": 1,
+      "unselected": 10,
+      "alreadyIncludedInDistinctCount": true
+    },
+    "typecheckExit": 0,
+    "diffCheckExit": 0
+  },
+  "limits": {
+    "providerCalls": 0,
+    "appServerStarts": 0,
+    "authRequests": 0,
+    "codexProductionExecution": "not implemented",
+    "codexConversations": "not implemented",
+    "mainIntegration": "not integrated",
+    "independentReview": "not started"
+  }
+}
