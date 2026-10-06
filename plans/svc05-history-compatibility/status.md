@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:57 UTC；同版本恢复独审及main已接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:38 UTC；中心同版本恢复准备 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,16 +12,16 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 两源码已冻结；仅本次自身 metadata 收口后提交 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
 | 已集成main状态 / HEAD | 操作796d的21绑定内容已main 888cfd3b1c414b32298661f1fdf5f33bddbe956c；非祖先同内容；实际仍362+caa1/v2，新发布未执行 |
 | 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原版本网页已恢复，后台、会话、任务与页面版本保持；新后台和新版页面发布仍待后继兼容验证。 |
-| 下一可用交付 | 继续两个保留页面与新后台的兼容验证，报告齐备后准备受管发布。 |
-| 当前阻塞 | ACTIVE: 新后台发布仍缺两个保留页面的对应报告；原网页恢复窗口已关闭。 |
+| 当前产出 | 网页和执行器仍在运行；中心退出后，已准备仅恢复原版本中心的受控步骤，原数据与身份已只读核对。 |
+| 下一可用交付 | 独立审查后在固定版本窗口恢复中心；新后台与保留页面兼容仍由后继验证。 |
+| 当前阻塞 | ACTIVE: 中心当前无监听；受控恢复步骤待独立审查和固定版本操作窗口。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，源码/RELEASE03限定批准保留；同版本恢复796d由Execution Lead独立APPROVED，0重跑 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
@@ -33,7 +33,8 @@
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
-| SVC05H01-05 | pending | Execution Lead窗口 / owner | 个人发布未授权，retained报告与身份仍前置 |
+| SVC05H01-05 | pending | Execution Lead窗口 / owner | 新版本发布仍待retained报告；同版本恢复不替代 |
+| SVC05H01-06 | in-progress | assignment_review | [中心恢复准备](../../docs/evidence/svc05-history-compatibility/center-recovery/README.md)，尚未执行 |
 
 ## Dashboard
 
@@ -62,3 +63,5 @@
 2026-10-06 18:37 UTC：同版本恢复窗口关闭，一次bootstrap exit0/922ms，旧Web group已退出、新23534/23631 owned/ready；原false preflight保留且仅修正观察器空白解析，未重复bootstrap。checkpoint已先保存，config/profile/pointer/后台runner与已观察DB元数据保持；Lead已恢复main ec5。见[操作事实与边界](../../docs/evidence/svc05-history-compatibility/web-recovery/README.md)；本轮0operator provider/用户tab操作，无后续个人探针。05新后台/页面发布仍open。
 
 2026-10-06 18:57 UTC：唯一操作独审与main内容接收已归档；原raw/manifest/两产品blob不改。R01兼容准备位于独立权威树，未做个人新探针。
+
+2026-10-06 19:38 UTC：新增已授权同版本中心恢复准备，原v15/64表只读基线已持久；仅own plan/evidence，产品源码未动。原网页恢复与R01两次失败保持；新operator未获执行窗口、未启动服务。

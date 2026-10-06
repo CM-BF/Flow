@@ -57,3 +57,7 @@ Execution Lead独立APPROVED target `d8b4c961b9d36915f07ff4109299fac642566519`�
 Execution Lead 独立 APPROVED 固定 `796d6d7df6bb500fdabc43b4b46290a1bc6c0149`；21 fixed/source/raw hash核对、前后保护事实独立比较，reviewer0重跑。原始 false preflight、空白解析纠正、唯一 bootstrap ready、旧 group消失均保留；旧Web收到TERM后的exit1不改作clean0。原[独审回执](../../docs/evidence/svc05-history-compatibility/web-recovery/operation-independent-review.json)限定同版本仅Web恢复忠实性，不证明根因，不授权新发布。
 
 main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；原target并非该main祖先，不虚称merge关系。[main receipt](../../docs/evidence/svc05-history-compatibility/web-recovery/operation-main-receipt.json)。未重新探测个人HTTP/服务/数据库。R01已另树领取，不扩大本claim。
+
+## 同版本中心恢复准备（待独立审查）
+
+2026-10-06 19:38 UTC：center-recovery/operator.mjs + facts.mjs仅own evidence实现；固定362工具复用，原产品不改。准备/readonly64表基线已落，操作NOT_RUN。待native_center_owner唯一独审；原网页恢复/发布候选批准不自动扩大到此次恢复。

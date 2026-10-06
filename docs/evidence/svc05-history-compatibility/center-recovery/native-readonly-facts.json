@@ -1,0 +1,325 @@
+{
+  "observedAt": "2026-10-06T19:32:06.642Z",
+  "scope": "personal center recovery read-only preparation",
+  "sourceReference": "22a0806bc2465e11096949618113833f31766b19",
+  "personalMutations": 0,
+  "serviceStarts": 0,
+  "serviceStops": 0,
+  "httpRequests": 0,
+  "sqlQueries": 0,
+  "providerQueries": 0,
+  "files": {
+    "config.json": {
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee",
+      "dev": 16777234,
+      "ino": 117819925,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    },
+    "claude.json": {
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af",
+      "dev": 16777234,
+      "ino": 117819909,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    },
+    "state.json": {
+      "bytes": 1564,
+      "sha256": "2b4a355a594e4d5edd385d561cec4f138c32a14d936f23c49821ab1991179c7e",
+      "dev": 16777234,
+      "ino": 123128295,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    },
+    "maintenance.json": {
+      "bytes": 314,
+      "sha256": "8eb28f209d36250b5701edc3836f315eaa86aa83237a37d5344ffb69d478abd1",
+      "dev": 16777234,
+      "ino": 122441906,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    },
+    "center-exit.json": {
+      "bytes": 104,
+      "sha256": "53102db287f177fd216d7253b22a6afa68e341b2192b152634cb6aace8c38cb2",
+      "dev": 16777234,
+      "ino": 123146763,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    },
+    "runner-exit.json": {
+      "bytes": 104,
+      "sha256": "5dd0f51c8720e28abb3291d98d7a16be75812492607d7d17b0d07766ef343019",
+      "dev": 16777234,
+      "ino": 122439247,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    },
+    "web-exit.json": {
+      "bytes": 104,
+      "sha256": "30609968b51225215c7188911f77b395fa4e6c80e703479beb7b0dfd6a8a5d89",
+      "dev": 16777234,
+      "ino": 123128292,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    },
+    "web-release.json": {
+      "bytes": 976,
+      "sha256": "58d45a8e1369b9719054b0d010de33a786a910b5b84528cebac81f0b8649f037",
+      "dev": 16777234,
+      "ino": 121127872,
+      "mode": "600",
+      "ownedByCurrentUid": true
+    }
+  },
+  "processes": {
+    "center": {
+      "pid": 64904,
+      "group": 64904,
+      "recordedStartedAt": "Tue Oct  6 05:40:26 2026",
+      "ownedIdentity": "stopped",
+      "lastExit": {
+        "at": "2026-10-06T19:18:53.336Z",
+        "code": 1,
+        "signal": null,
+        "matchesCurrentRecordedNonce": true
+      },
+      "ownsExpectedListener": false
+    },
+    "runner": {
+      "pid": 65168,
+      "group": 65168,
+      "recordedStartedAt": "Tue Oct  6 05:40:28 2026",
+      "ownedIdentity": "running",
+      "lastExit": {
+        "at": "2026-10-06T12:40:26.830Z",
+        "code": 0,
+        "signal": null,
+        "matchesCurrentRecordedNonce": false
+      }
+    },
+    "web": {
+      "pid": 23534,
+      "group": 23534,
+      "recordedStartedAt": "Tue Oct  6 11:35:45 2026",
+      "ownedIdentity": "running",
+      "lastExit": {
+        "at": "2026-10-06T18:35:45.487Z",
+        "code": 1,
+        "signal": null,
+        "matchesCurrentRecordedNonce": false
+      },
+      "ownsExpectedListener": true
+    }
+  },
+  "limits": [
+    "Snapshot observations only; live process identity does not establish task success or absence of pending work.",
+    "No runner journal, task text, credentials, process argument strings or nonce values disclosed.",
+    "No DB marker was freshly queried; previous marker facts cannot justify a current service mutation.",
+    "No service, config, source checkout, admission state or task was changed.",
+    "Current CLI start/maintenance are not a no-impact center-only repair path."
+  ],
+  "privateDirectory": {
+    "path": "/Users/citrine/.flow-personal",
+    "realpath": "/Users/citrine/.flow-personal",
+    "dev": 16777234,
+    "ino": 117819905,
+    "mode": "700",
+    "ownedByCurrentUid": true,
+    "symlink": false
+  },
+  "safeConfiguration": {
+    "format": 1,
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "directory": "/Users/citrine/.flow-personal",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "databaseName": "flow_preview_07d6dc6776c8dda8641512aa",
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "centerPort": 61227,
+    "webPort": 61228,
+    "databaseCreated": true,
+    "backendArtifactConfigured": false
+  },
+  "sourceAtStart": {
+    "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "dirty": false
+  },
+  "currentRepository": {
+    "head": "22a0806bc2465e11096949618113833f31766b19",
+    "main": "22a0806bc2465e11096949618113833f31766b19",
+    "clean": true
+  },
+  "maintenance": {
+    "phase": "resumed",
+    "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "resumeVersion": 14,
+    "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+    "stateLastError": null
+  },
+  "web": {
+    "releaseVersion": 2,
+    "currentArtifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "backendHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "retainedArtifacts": 2,
+    "recordedWebSourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "recordedWebArtifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+  },
+  "actualGroupMembers": [
+    {
+      "pid": 23534,
+      "ppid": 1,
+      "pgid": 23534,
+      "startedAt": "Tue Oct  6 11:35:45 2026",
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "role": "web"
+    },
+    {
+      "pid": 23631,
+      "ppid": 23534,
+      "pgid": 23534,
+      "startedAt": "Tue Oct  6 11:35:45 2026",
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "role": "web"
+    },
+    {
+      "pid": 65168,
+      "ppid": 1,
+      "pgid": 65168,
+      "startedAt": "Tue Oct  6 05:40:28 2026",
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "role": "runner"
+    },
+    {
+      "pid": 65210,
+      "ppid": 65168,
+      "pgid": 65168,
+      "startedAt": "Tue Oct  6 05:40:28 2026",
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "role": "runner"
+    },
+    {
+      "pid": 65262,
+      "ppid": 65210,
+      "pgid": 65168,
+      "startedAt": "Tue Oct  6 05:40:28 2026",
+      "executable": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "role": "runner"
+    }
+  ],
+  "rootNames": [
+    "center-exit.json",
+    "claude.json",
+    "config.json",
+    "maintenance.json",
+    "runner",
+    "runner-exit.json",
+    "state.json",
+    "web-artifacts",
+    "web-compatibility",
+    "web-exit.json",
+    "web-release.json"
+  ],
+  "logAvailability": {
+    "rootLogFiles": [],
+    "mechanism": "runService and spawnOwnedProcess discard child stdout/stderr; exit files contain code/signal/time/nonce only",
+    "minimumBoundExit": {
+      "at": "2026-10-06T19:18:53.336Z",
+      "code": 1,
+      "signal": null,
+      "matchesCurrentRecordedNonce": true
+    },
+    "cause": "UNKNOWN: exit code 1 has no retained error stack; timing near PostgreSQL outage is not causal proof"
+  },
+  "historicalEvidence": {
+    "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/facts-after.json",
+    "sha256": "fd19d1f954af80e44222968c16cbc2fda9ec6ac8c857c5fd1561fe23b34a523a",
+    "observedAt": "2026-10-06T18:36:20.373Z",
+    "freshDatabaseMarkerVerified": false,
+    "note": "Previous ownership and runner accepting facts are historical only. This task made no SQL or HTTP requests."
+  },
+  "sourceBindings": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "ref": "22a0806bc2465e11096949618113833f31766b19",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd",
+      "legacyBytes": 26793,
+      "legacySha256": "95a18d8dac7a71db1841cb432b151fcf045ce59446e9a341ea5e6c263f2240e7",
+      "sameAtLegacy": false
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "ref": "22a0806bc2465e11096949618113833f31766b19",
+      "bytes": 9335,
+      "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb",
+      "legacyBytes": 8241,
+      "legacySha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e",
+      "sameAtLegacy": false
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "ref": "22a0806bc2465e11096949618113833f31766b19",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3",
+      "legacyBytes": 3493,
+      "legacySha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3",
+      "sameAtLegacy": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "ref": "22a0806bc2465e11096949618113833f31766b19",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "legacyBytes": 1983,
+      "legacySha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "sameAtLegacy": true
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "ref": "22a0806bc2465e11096949618113833f31766b19",
+      "bytes": 4881,
+      "sha256": "75471c37d143131da7e1eb9f170c98341a2d39385005b6307c915183cbd1c929",
+      "legacyBytes": 3782,
+      "legacySha256": "9e5de1042d649f58d322c296673728117cd09de2aa98d4d260a53937bc11fe69",
+      "sameAtLegacy": false
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "ref": "22a0806bc2465e11096949618113833f31766b19",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "legacyBytes": null,
+      "legacySha256": null,
+      "sameAtLegacy": false
+    }
+  ],
+  "recoverySeams": {
+    "publicSameVersionCenterOnly": "NONE in reviewed 362 and fixed current preview/maintenance interfaces.",
+    "start": {
+      "entry": "tools/personal-preview/cli.mjs start --directory /Users/citrine/.flow-personal",
+      "executed": false,
+      "blockedNow": "startPreview requires either all three recorded processes running or all stopped. Current center stopped and runner/web running causes STOP_OR_VERIFY_EXISTING_PROCESSES.",
+      "additionalBoundary": "Legacy backendRuntime uses config.repository current checkout, not state.source.head. A blind current start would select current source, not the retained 362 source."
+    },
+    "maintenance": {
+      "executed": false,
+      "bootstrap": "Requires all three roles running before starting drain; current missing center fails EXISTING_PROCESSES_UNCONFIRMED.",
+      "refresh": "Requires matching current DB maintenance operation and maintenance hold; stops/restarts all three roles, not center-only.",
+      "resume": "Requires all three roles running and exact source target; does not launch a missing center."
+    },
+    "existingPrivateComposition": {
+      "entry": "loadPreviewConfiguration + withPreviewLock + assertPreviewMarker + spawnOwnedProcess/onSpawn(savePreviewJson) + internal-service center + inspectOwnedProcess/ownsListener",
+      "readyPublicInterface": false,
+      "canBeUsedAsNarrowOperatorCandidate": true,
+      "notes": [
+        "All components already exist; a center-only operator composition would be a new controlled operation, not an already exposed recovery command.",
+        "Exact source 362 must be made available by the authorized Git/operator owner; this worker must not checkout or launch it.",
+        "Need fresh owned DB marker, runner token/identity and pending/uncertain work observations without disclosing values; no task cancellation or automatic replay.",
+        "Must confirm old center PID/group absent, port free, config/state unchanged, live runner/web identities retained; persist new center record before private child admission and confirm listener/health.",
+        "On unknown start retain evidence/state and do not retry or stop unrelated roles."
+      ]
+    }
+  }
+}
