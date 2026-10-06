@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:01:19 UTC / main9d6bd45abdf5149bc44f1e9dc534454e7403f7d7（本次发布前） |
 | Plan | [plan.md](plan.md) |
-| 所属大task | OPS-001：两层协作规则修订（本次用户明确大task；[验收](plan.md)） |
+| 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -12,13 +12,13 @@
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
 | 工作分支状态 | delivered；原历史TODO与独立review边界保留 |
-| 已集成main状态 / HEAD | 30b97cbf3665c4ef7a314a6a8b59394ae68781af；三件套、原子领取、独立审查和三队短交接约定已在使用。 |
-| Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
+| 已集成main状态 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；严格两层任务与消息预算已main；模块化/复用/性能新规则固定1d36a7a已独审，本批发布。 |
+| Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 5 |
-| 当前产出 | 每项工作已有唯一进度来源，领取、交接与独立审查可从看板追溯。 |
+| 当前产出 | 全项目明确模块职责、复用与扩展方式、性能界限；计划和审查使用同一规则。 |
 | 下一可用交付 | 本片段已交付；后续按真实协作问题维护规则。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
