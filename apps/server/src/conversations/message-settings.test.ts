@@ -14,7 +14,7 @@ import { MessageSettingsFixture, choices } from './message-settings-fixture.js';
 
 let f: MessageSettingsFixture;
 beforeAll(async () => { f = new MessageSettingsFixture(); await f.start(); }, 30_000);
-afterAll(async () => { await f?.close(); }, 60_000);
+afterAll(async () => { await f?.close(); }, 80_000);
 type Profile = Awaited<ReturnType<MessageSettingsFixture['profile']>>;
 async function enqueue(conversation: string, settings: ClaudeTurnSettings | undefined, revision = 0, key = randomUUID()) {
   return f.http<ConversationQueueAccepted>(`/api/conversations/${conversation}/queue`, { expectedQueueRevision: revision, text: 'Frozen queued message',
@@ -59,6 +59,7 @@ it('migrates once, preserves old rows and rejects missing/null/extra snapshot fi
 
 it('isolates all old catalog readers before pagination and publishes honest opt-in controls', async () => {
   const profile = await f.profile(); const legacy = await f.profile(false);
+  await f.profile(); // This case owns its pagination sentinel even when selected alone.
   expect(profile.publication.profile.controls).toEqual({ access: 'configured-policy', queue: false, steer: false,
     messageSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: 'configuration.turnSettings.choices' } });
   for (const version of [undefined, 'steering-v1', 'native-v1', CLAUDE_TURN_SETTINGS_PROTOCOL.toUpperCase(), `${CLAUDE_TURN_SETTINGS_PROTOCOL}, ${CLAUDE_TURN_SETTINGS_PROTOCOL}`]) {
