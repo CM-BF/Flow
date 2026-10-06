@@ -1,0 +1,13 @@
+{
+  "command": [
+    "node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/main-concurrency.test.ts",
+    "apps/runner/src/engineering/launch.test.ts",
+    "apps/server/src/runner-maintenance/maintenance.test.ts"
+  ],
+  "exitCode": 0,
+  "source": "actual process redirected stdout",
+  "completedAt": "2026-10-06T10:53:50.908725+00:00"
+}

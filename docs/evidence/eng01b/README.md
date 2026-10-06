@@ -9,3 +9,5 @@ fresh账本10:40:40.455 available且ENG01B ID未占，取9 literal后写。ENG01
 中心段：store/publication在v2合法范围，以有限codec复用一个固定表的发布/引用身份检查；旧Native目录SQL及视图不改，工程目录独立。profile首次测试因server无@flow/client依赖导致该文件0测试，另2直接消费者15项绿；修正相对import后12项中11绿，最后wrong-purpose用例原误选fixture触发schema400，改用Claude以确实测试domain409后1selected/11未选绿。失败原始输出和types错误均保留；不将0测试算通过。旧profile/steering/catalog24项绿，roottypes0。上述15工程检查自有随机DB均按afterAll正常关闭并断言删除；本轮未启用它们旧FLOW_ENG01A_EVIDENCE导出，不补造逐DB日志；新目录两轮resources原JSON各自保存。
 
 clean-code安全点：2026-10-06中心实现段复核命名/单职责/错误和重复；publication隐藏表/immutable/runner identity，工程Module拥有purpose/project/checker关联，旧Native消费者仍用自身codec，移除不必要类型断言。不引入第二claim状态机，不把runner自报配置当OS权限证明。
+
+入口候选：27 main（旧22+工程5）+5 launch组合+9既有maintenance直接消费者，共41绿。此阶段共享client尚未合入，main真实独立进程测试只是准备未运行，不能将模拟组合当生产入口已可用。共享client/export 3a12ed7e已本owner独立只读小审，限定该3文件和原4 HTTP检查；回执shared-client-independent-review.json。
