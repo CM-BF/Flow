@@ -1,3 +1,4 @@
+import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-steering/index.js';
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
 import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
 import { migrateNativeActivities, registerNativeActivityRoutes } from './native-activity/index.js';
@@ -37,7 +38,12 @@ import { migrateGoals, registerGoalRoutes } from './goals/index.js';
 
 declare module 'fastify' { interface FastifyRequest { runnerId: string | null } }
 
-export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number; automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost }
+export interface ServerOptions {
+  databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number;
+  automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost;
+  /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
+  activeSteering?: boolean;
+}
 export async function createServer(options: ServerOptions) {
   if (!options.ownerToken) throw new Error('ownerToken is required.');
   const app = Fastify({ bodyLimit: MAX_BATCH_BYTES, logger: false });
@@ -70,6 +76,7 @@ export async function createServer(options: ServerOptions) {
     await migrateGoalContext(pool);
     await migrateAssistantStreams(pool);
     await migratePackageFetches(pool);
+    await migrateActiveSteering(pool);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {
@@ -131,6 +138,7 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
+  registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
   registerAssistantStreamRoutes(app, pool);
   registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });
   registerPluginRoutes(app, pool);
