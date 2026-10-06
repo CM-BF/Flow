@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06T22:42:01.813895+00:00",
+  "source": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "freshFreeBytes": 1080119296,
+  "required": 1082130432,
+  "scope": "focused-tsconfig only, not root noEmit",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/chat05p01/focused-tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "pg": 0,
+  "provider": 0
+}

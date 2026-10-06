@@ -1,6 +1,6 @@
 # CHAT05P01 证据
 
-固定base fc3246b307f5436ccecb97f38ccaba10c7a72a5a，独立native-activity-body树。当前只有合同/设计和合法领取，不代表生产可用。
+固定base fc3246b307f5436ccecb97f38ccaba10c7a72a5a，独立native-activity-body树。当前源码和纯模块检查已分片固定；生产开通与真实PG读写仍未验。
 
 - [Interface](interface.md)
 - [设计输入](design-input.json)
@@ -14,3 +14,9 @@
 精确原临时目录只stat：见`pure-resources-observation.json`。两轮所有body fixture目录已正常移除；411B/134B独立Vitest生成cache仍保留，原raw2209B/609B保留。无安装/PG/provider/个人服务操作。
 
 PG源码候选为`apps/server/src/native-activity-body/{fixture,body.test}.ts`，仅3case：实际ownerHTTP大材料与丢ACK重启重放、冲突/成功final前置/取消与篡改、legacy及033幂等。一随机markedDB、动态loopback port、实际createServer+显式本模块033/routes、原EventOutbox，0runtime/provider；不冒生产默认mount。至少1GiB+96MiB准入，90s工作/后续外层监督待窗口固定；原码仍NOT_RUN，不能据此称通过。checkpoint为追加并fsync，正常DROP前marker与3s有限零连接验证，tmp删除前dev/ino验证；未知保留。运行依赖/类型闭包尚待完整核查，不自动安装或因窗口空闲启动。
+
+本轮受影响接缝：`c86dff85` 相对 `2dd72c8d` 将 ordinary persist 失败纳入同一 outbox failure；新增 storage failure、final barrier、quota/page integrity 4项及原outbox直接4项，另2项实际Claude adapter注入消费 optional port。选择与限额见`direct-check-plan.json`，这10项仍NOT_RUN，不由先前22项代替。
+
+`types-run-03` focused tsc 实际exit2/2433ms：新增partial SDK夹具声明与默认UUID推断；`40af6d90`窄修。`types-run-04` fresh1,080,119,296B低于1,082,130,432B，NOT_RUN、没有compiler。原失败输出不改。
+
+`pg-static-resource-closure.json`只读核209本地源、31个实际URL资源（含033、012/013、017/019动态数组）、3个workspace公开导出manifest，missing=[]；最初observer误假设plugin-runtime index，按真实package export纠正。第三方manifest/link见两轮dependency proposals/receipts；此存在性核不等运行导入或PG通过。
