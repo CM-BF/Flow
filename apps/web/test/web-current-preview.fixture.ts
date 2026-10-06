@@ -1,16 +1,20 @@
 import assert from "node:assert/strict";
 import { createHash, randomUUID } from "node:crypto";
 import { execFile } from "node:child_process";
-import { readFile } from "node:fs/promises";
+import { readFile, realpath } from "node:fs/promises";
 import { createServer as createHttpServer, request as requestHttp, type Server } from "node:http";
-import { extname, join } from "node:path";
+import { extname, isAbsolute, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 import { FlowClient } from "../../../packages/client/src/index.js";
 import { conversationCreationSchema, conversationTurnSchema, type ClaimedTask, type RunnerEventData } from "../../../packages/contracts/src/index.js";
 import { CLAUDE_CONTEXT_SOURCE } from "../../../packages/contracts/src/context-observation-event.js";
 
-export const BACKEND = "362af3bac77541e5a60979326bcf4d4b8c947915";
+export const BASE_BACKEND = "362af3bac77541e5a60979326bcf4d4b8c947915";
+const HISTORY_FIX = "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd";
+const HISTORY_PATH = "apps/server/src/context-transparency/store.ts";
+const HISTORY_SHA256 = "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245";
+export type BackendInput = { path: string; head: string; tree: string };
 export const repository = fileURLToPath(new URL("../../../", import.meta.url));
 export const evidence = join(repository, "docs/evidence/wpf-release03");
 export const ARTIFACT_ROOT = "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts";
@@ -33,16 +37,36 @@ export async function until<T>(read: () => Promise<T>, ready: (value: T) => bool
   throw Error("Fixture condition timed out");
 }
 
-/** The execution tree must retain the fixed backend/client/contracts/tool bytes. Test-only commits are allowed. */
-export async function sourceIdentity() {
+/** Only the admitted clean immutable tree is executable; the harness never patches backend source. */
+export async function verifyBackend(input: BackendInput) {
+  assert.ok(isAbsolute(input.path)); assert.equal(await realpath(input.path), input.path, "Backend path must be its registered realpath");
+  assert.match(input.head, /^[a-f0-9]{40}$/); assert.match(input.tree, /^[a-f0-9]{40}$/);
+  const inspect = async (...args: string[]) => (await execute("git", ["-C", input.path, ...args], { maxBuffer: 1024 * 1024, timeout: 2000 })).stdout.trim();
+  assert.equal(await realpath(await inspect("rev-parse", "--show-toplevel")), input.path);
+  assert.equal(await inspect("rev-parse", "HEAD"), input.head, "Backend HEAD changed");
+  assert.equal(await inspect("rev-parse", "HEAD^{tree}"), input.tree, "Backend tree changed");
+  assert.equal(await inspect("status", "--porcelain"), "", "Backend source is dirty");
+  assert.equal(await inspect("diff", "--name-only", BASE_BACKEND, input.head), HISTORY_PATH, "Backend must contain only the approved history correction");
+  assert.equal(await inspect("diff", HISTORY_FIX, input.head, "--", HISTORY_PATH), "", "History correction differs from approved source");
+  const store = join(input.path, HISTORY_PATH);
+  assert.equal(await realpath(store), store); assert.equal(sha(await readFile(store)), HISTORY_SHA256);
+  const factoryPath = join(input.path, "apps/server/src/index.ts");
+  assert.equal(await realpath(factoryPath), factoryPath, "Factory path must remain inside the admitted tree");
+  return { ...input, base: BASE_BACKEND, approvedHistorySource: HISTORY_FIX, historySha256: HISTORY_SHA256, factoryPath };
+}
+
+/** Local client/contracts/tools stay at 362; only the separately admitted factory receives the fixed correction. */
+export async function sourceIdentity(backend: BackendInput) {
   const protectedPaths = ["apps/server", "packages/client", "packages/contracts", "tools/personal-preview", "pnpm-lock.yaml"];
-  assert.equal(await git("diff", BACKEND, "--", ...protectedPaths), "", "Fixed input changed");
+  assert.equal(await git("diff", BASE_BACKEND, "--", ...protectedPaths), "", "Local fixed input changed");
+  const backendInput = await verifyBackend(backend);
   const paths = ["apps/server/src/index.ts", "apps/server/src/context-transparency/store.ts", "packages/client/src/index.ts",
     "packages/client/src/conversation-acknowledgement.ts", "packages/contracts/src/conversation-context.ts",
     "tools/personal-preview/web-artifact.mjs", "tools/personal-preview/web-release.mjs", "tools/personal-preview/environment.mjs",
     "apps/web/test/web-current-preview.fixture.ts", "apps/web/test/web-current-preview.browser.ts"];
-  return { head: await git("rev-parse", "HEAD"), backend: BACKEND, sourceTree: await git("rev-parse", `${BACKEND}^{tree}`),
-    dirty: await git("status", "--porcelain"), files: await Promise.all(paths.map(async path => ({ path, sha256: sha(await readFile(join(repository, path))) }))) };
+  return { head: await git("rev-parse", "HEAD"), backend: backend.head, sourceTree: backend.tree, backendInput,
+    harnessBase: BASE_BACKEND, dirty: await git("status", "--porcelain"),
+    files: await Promise.all(paths.map(async path => ({ path, sha256: sha(await readFile(join(repository, path))) }))) };
 }
 
 export type Wire = {
@@ -137,9 +161,11 @@ async function previewHost(centerPort: number, signal: AbortSignal) {
   } catch (error) { await closeHttp(server); throw error; }
 }
 
-export async function startCurrentPreview(databaseUrl: string, token: string, signal: AbortSignal) {
+export async function startCurrentPreview(databaseUrl: string, token: string, signal: AbortSignal, backend: BackendInput) {
   signal.throwIfAborted();
-  const { createServer } = await import("../../server/src/index.js");
+  const identity = await verifyBackend(backend);
+  signal.throwIfAborted();
+  const { createServer }: typeof import("../../server/src/index.js") = await import(pathToFileURL(identity.factoryPath).href);
   signal.throwIfAborted();
   const app = await createServer({ databaseUrl, ownerToken: token, leaseMs: 300_000 });
   let preview: Awaited<ReturnType<typeof previewHost>> | undefined;
@@ -150,7 +176,7 @@ export async function startCurrentPreview(databaseUrl: string, token: string, si
     preview = await previewHost(address.port, signal);
     signal.throwIfAborted();
     const owner = new FlowClient({ baseUrl: preview.url, token });
-    return { ...preview, owner, token, async close() {
+    return { ...preview, owner, token, backend: identity, async close() {
       const errors: string[] = [];
       try { await preview?.close(); } catch (error) { errors.push(failure(error)); }
       try { await app.close(); } catch (error) { errors.push(failure(error)); }
@@ -188,7 +214,7 @@ export async function createMaterials(fixture: CurrentPreview, title: string, si
 /** Each case is independent. Failure remains a release blocker even if later App checks pass. */
 export async function checkHistory(fixture: CurrentPreview, mixed: boolean, signal: AbortSignal) {
   const start = fixture.wire.length; const label = mixed ? "mixed" : "attachment-only";
-  const facts: Record<string, unknown> = { label, backend: BACKEND, providerQueries: 0 };
+  const facts: Record<string, unknown> = { label, backend: fixture.backend.head, backendTree: fixture.backend.tree, factoryPath: fixture.backend.factoryPath, providerQueries: 0 };
   try {
     const runner = await syntheticRunner(fixture, label, signal);
     const materials = await createMaterials(fixture, label, signal);

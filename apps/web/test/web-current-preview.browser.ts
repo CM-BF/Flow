@@ -3,16 +3,15 @@ import { randomUUID, createHash } from "node:crypto";
 import { spawn, type ChildProcess } from "node:child_process";
 import { writeFileSync } from "node:fs";
 import { mkdir, readFile, writeFile, readdir, lstat, statfs, rm, realpath } from "node:fs/promises";
-import { join } from "node:path";
+import { isAbsolute, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Browser, Page } from "@playwright/test";
 import type { ConversationTurnAccepted, ConversationQueueAccepted } from "../../../packages/contracts/src/index.js";
-import type { CurrentPreview, Wire } from "./web-current-preview.fixture.js";
+import type { BackendInput, CurrentPreview, Wire } from "./web-current-preview.fixture.js";
 
 // Built-ins only until a one-run admission is validated and the attempt is durably recorded.
 const root = fileURLToPath(new URL("../../../", import.meta.url));
 const evidence = join(root, "docs/evidence/wpf-release03");
-const BACKEND = "362af3bac77541e5a60979326bcf4d4b8c947915";
 const ARTIFACT = "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88";
 const MAX_TOTAL_MS = 180_000, CLEANUP_MS = 20_000, EVIDENCE_BYTES = 8 * 1024 * 1024;
 const digest = (bytes: string | Buffer) => createHash("sha256").update(bytes).digest("hex");
@@ -31,8 +30,8 @@ async function bytesUnder(path: string): Promise<number> {
 }
 async function freeBytes() { const value = await statfs(root); return value.bavail * value.bsize; }
 type Mode = "history" | "all";
-type Gate = { allowRun: true; mode: Mode; backend: string; artifactId: string; run: string; expiresAt: string; totalMs: number; minimumFreeBytes: number };
-type Init = { kind: "start"; mode: Mode; directory: string; databaseUrl: string; token: string; workDeadline: number };
+type Gate = { allowRun: true; mode: Mode; backend: BackendInput; artifactId: string; run: string; expiresAt: string; totalMs: number; minimumFreeBytes: number };
+type Init = { kind: "start"; mode: Mode; backend: BackendInput; directory: string; databaseUrl: string; token: string; workDeadline: number };
 type Observations = Record<string, Record<string, boolean>>;
 type WorkerResult = { passed: boolean; historyPassed: boolean; history: unknown[];
   app: { passed: boolean; state?: "NOT_RUN"; observations?: Observations; error?: string }; errors: string[]; cleanupErrors: string[] };
@@ -42,7 +41,9 @@ async function supervisor() {
   const gatePath = process.env.FLOW_RELEASE03_GATE;
   assert.ok(gatePath, "An explicit future run admission is required; source preparation is not permission to execute");
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
-  assert.equal(gate.allowRun, true); assert.equal(gate.backend, BACKEND); assert.equal(gate.artifactId, ARTIFACT);
+  assert.equal(gate.allowRun, true); assert.equal(gate.artifactId, ARTIFACT);
+  assert.ok(gate.backend && typeof gate.backend.path === "string" && isAbsolute(gate.backend.path), "Explicit admitted backend path required");
+  assert.match(gate.backend.head, /^[a-f0-9]{40}$/); assert.match(gate.backend.tree, /^[a-f0-9]{40}$/);
   assert.ok(gate.mode === "history" || gate.mode === "all", "Explicit A-only or full matrix admission required");
   assert.match(gate.run, /^[a-z0-9-]{1,48}$/); assert.ok(Date.parse(gate.expiresAt) > Date.now());
   assert.ok(gate.totalMs > CLEANUP_MS && gate.totalMs <= MAX_TOTAL_MS);
@@ -128,11 +129,11 @@ async function supervisor() {
     await checkpoint();
     const fixture = await import("./web-current-preview.fixture.js");
     await checkpoint();
-    await json(join(directory, "sources.json"), await fixture.sourceIdentity());
+    await json(join(directory, "sources.json"), await fixture.sourceIdentity(gate.backend));
     await checkpoint();
     ({ Pool } = await import("pg"));
     await checkpoint();
-    await json(join(directory, "database-owner.json"), { databaseName, marker, backend: BACKEND });
+    await json(join(directory, "database-owner.json"), { databaseName, marker, backend: gate.backend.head });
     await checkpoint();
     databaseCreateAttempted = true;
     await query(adminUrl, async pool => { await pool.query(`CREATE DATABASE "${databaseName}"`); databaseCreated = true; });
@@ -176,7 +177,7 @@ async function supervisor() {
       }
     });
     assertWorking();
-    worker.send({ kind: "start", mode: gate.mode, directory, databaseUrl: database.href, token: `release03-${randomUUID()}`, workDeadline } satisfies Init);
+    worker.send({ kind: "start", mode: gate.mode, backend: gate.backend, directory, databaseUrl: database.href, token: `release03-${randomUUID()}`, workDeadline } satisfies Init);
     while (worker.exitCode === null && worker.signalCode === null && !workStopped && Date.now() < workDeadline) await sleep(50);
     if (!result) errors.push("Worker did not return a complete result");
   } catch (error) { errors.push(errorText(error)); }
@@ -230,22 +231,22 @@ async function supervisor() {
     const checks: Record<string, string> = {};
     for (const [check, observations] of Object.entries(result.app.observations)) {
       assert.ok(Object.values(observations).every(value => value === true));
-      const raw = JSON.stringify({ format: 1, check, backendHead: BACKEND, artifactId: ARTIFACT, observations });
+      const raw = JSON.stringify({ format: 1, check, backendHead: gate.backend.head, artifactId: ARTIFACT, observations });
       checks[check] = digest(raw); await writeFile(join(reportDirectory, `${check}.json`), raw, { mode: 0o600 });
     }
-    await writeFile(join(reportDirectory, "report.json"), JSON.stringify({ format: 1, policy: "flow-web-api-v1", backendHead: BACKEND, artifact: fixture.artifact, checks }), { mode: 0o600 });
+    await writeFile(join(reportDirectory, "report.json"), JSON.stringify({ format: 1, policy: "flow-web-api-v1", backendHead: gate.backend.head, artifact: fixture.artifact, checks }), { mode: 0o600 });
     const store = join(directory, "verified-reports"); await mkdir(store, { mode: 0o700 });
     const { importWebCompatibility, verifyWebCompatibility } = await fixture.loadTool("web-release.mjs");
     compatibilityId = await importWebCompatibility({ directory: await realpath(store), reportDirectory });
-    await verifyWebCompatibility({ directory: store, artifact: fixture.artifact, backendHead: BACKEND, compatibilityId });
-    await json(join(directory, "compatibility-id.json"), { compatibilityId, backend: BACKEND, artifact: fixture.artifact });
+    await verifyWebCompatibility({ directory: store, artifact: fixture.artifact, backendHead: gate.backend.head, compatibilityId });
+    await json(join(directory, "compatibility-id.json"), { compatibilityId, backend: gate.backend.head, artifact: fixture.artifact });
   } else if (!result?.historyPassed || result.errors.length || result.cleanupErrors.length || errors.length || cleanupErrors.length || gate.mode === "all") process.exitCode = 1;
   } catch (error) { errors.push(`Compatibility import: ${errorText(error)}`); process.exitCode = 1; }
   // Report import/verification is part of the same measured attempt, not an uncounted epilogue.
   await json(join(directory, "outcome.json"), { passed: !!compatibilityId && !errors.length && !cleanupErrors.length,
     historyPassed: !!result?.historyPassed && !errors.length && !cleanupErrors.length,
     mode: gate.mode, phaseB: result?.app.state === "NOT_RUN" ? "NOT_RUN" : result?.app.passed ? "PASSED" : "FAILED",
-    compatibilityId, errors, cleanupErrors, backend: BACKEND, artifactId: ARTIFACT });
+    compatibilityId, errors, cleanupErrors, backend: gate.backend.head, artifactId: ARTIFACT });
   Object.assign(budget, { complete: true, elapsedMs: Date.now() - started });
   await json(join(directory, "budget.json"), budget); clearTimeout(hardStop);
 }
@@ -391,7 +392,7 @@ async function worker() {
   const result: WorkerResult = { passed: false, historyPassed: false, history: [], app: { passed: false, state: "NOT_RUN" }, errors: [], cleanupErrors: [] };
   try {
     const api = await import("./web-current-preview.fixture.js");
-    fixture = await api.startCurrentPreview(init.databaseUrl, init.token, controller.signal);
+    fixture = await api.startCurrentPreview(init.databaseUrl, init.token, controller.signal, init.backend);
     for (const mixed of [false, true]) {
       controller.signal.throwIfAborted(); result.history.push(await api.checkHistory(fixture, mixed, controller.signal));
       await json(join(init.directory, "history.json"), result.history); await json(join(init.directory, "wire.json"), fixture.wire);
