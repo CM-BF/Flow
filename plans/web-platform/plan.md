@@ -220,3 +220,5 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 - 2026-10-06 04:20 UTC：CHAT7cb最终331已限定APPROVED并dashboard验证，root一次交主线；PERF02集成后04:12正式release v2，无finding不长期占scope。REQ39后继D06按D05v2移出→新f619v1受领固定8f四scope，唯一canonical见[计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/plan.md)。主线4320继续其owner部署，不新造分配事实源。
 
 U11后继queue与steer仍分别开放：Mika准备CHAT04中心持久queue，具体TS合同与scope由ExecutionLead固定；enqueue与队列取消独立queueRevision、原key ACK恢复、仅succeeded自动提升，失败/取消/uncertain或未知session冻结，不通过停止当前任务偷偷启动下一项。恢复/继续与steering首段不启用。SDK有streamInput/interrupt不等当前adapter已支持。Web等中心独审后独立消费，不提前启用disabled控件。此为跨lead已授权方向，非已有实现或新增用户原话。
+
+CHAT04 Web接缝研究补充：assistant-ui实装queue adapter会接管普通tail发送，运行中默认steer，且Interface同时暴露move/edit/remove；不能以dummy回调伪造未支持能力。未来queue-only显式入口或严格adapter需合同冻结后独立验收，durable ACK/unknown与库草稿/队列items分离。此为工程研究约束，不是新实现或主计划完成。

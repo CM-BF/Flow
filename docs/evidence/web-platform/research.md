@@ -334,3 +334,8 @@ Root只读固定X03 c2发现useRead重试清data可能卸载Refresh/Next；Mika�
 w01固定CHAT7cb/metadata331与assistant-ui react0.15.23/core0.3.22只读composer插入候选：既有flow.composer.insertText和sample调用存在，session故意unsupported。最小私有registerComposer(viewId,appendText)，仅当前可见/可编辑同连接pane绑定，同步getState().text→setText追加；不暴露runtime/client/token/draft getter，不发送/取消/steer。running/isSendDisabled不等不可编辑，16k溢出整次拒绝保留draft。隐藏HTML不卸effect，必须显式eligibility。WeakMap仅保护首次authorize后已开始调用的异步跨代，不能保证尚未调用的旧UI回调在reopen后第一次执行也被拒；更强语义须UI签发代际另议。不把研究当现功能或安全漏洞。原key待确认A与新draft B+C分离，ACK不能覆写；A/Bsplit、disable/center换同ID、StrictMode与IME/undo/caret均需未来真实验收。拟四生产App/bridge两文件/ConversationThread与两专用tests，未领取，排X03实际挂载之后，不增加新agent。
 
 CHAT04中心queue（Mika/root转交方向，尚无TS实现）：enqueue(conversationId,expectedQueueRevision,text,key)，paged queue，cancel(itemId,expectedQueueRevision,key)。queueRevision独立conversation.revision，稳定itemID/顺序/state、promoted关联真正task/turn，原key恢复unknown；普通followup不能越等待项。只succeeded自动提升，failed/cancelled/uncertain、失效pin/无knownsession冻结并说明；停当前轮不悄启下一项。首段只取消等待项，恢复/继续未启用；steering另项，需受理/送达/生效分别证明。官方SDK能力不等已接adapter；所有既有Webunsupported控件保持。
+
+
+## 04:22 assistant-ui queue-only适配限制（root只读）
+
+固定core0.3.22的`src/runtime/queue/external-thread-queue-adapter.ts` queue Interface同时要求enqueue/steer/move/edit/remove，callbacks是void，queue item仅id/prompt/parts，没有中心ACK/blocked/status。`external-store-thread-runtime-core.ts` 704–714只要有queue adapter，普通tail append都走adapter而不再onNew；message.steer未指定且isRunning=true默认走steer，305按adapter存在宣布queue能力。不可机械接createMessageQueue或noop不支持的steer/move/edit冒充成功。CHAT04 queue-only应使用明确排队入口/呈现或严格拒绝路径，按冻结合同再选；按钮/Enter/快捷键同语义，pending/unknown receipt单列，中心仍权威提升顺序/取消阻塞/revision/幂等，库items不是PG事实。root仅本地固定库只读，0模型/执行/改动；当前unsupported按钮不改。

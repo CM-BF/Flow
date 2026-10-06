@@ -13,7 +13,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | CHAT实现7cb与最终metadata3319122已限定APPROVED且dashboard闭环；PERF02已集成，领取视图已实证 |
-| 下一可用交付 | D06独立review与主线图集成；X03已审模块待固定main/新scope接线 |
+| 下一可用交付 | D06独立APPROVED后的来源聚合与主线图集成；X03已审模块待固定main/新scope接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -95,6 +95,6 @@ D06准备：原D05 claim3a6240d0-f861-41fd-b245-3546b2e2dbf3已04:09:05.366Z ame
 
 ## 04:20 管理安全停点
 
-D06 claim f6196ecc-b1e4-4ae2-9bd5-a2c36a6570bc v1（04:13:12.526Z）已先核原D05v2释放。独立tree/branch dashboard-architecture-refresh，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/status.md)，首canonical35e97863cfa0b184d39b4db2a3c54364b14d92bd已由root报Lead登记。实现d5a87b8、来源P3修正ef42277ff55d1cbb76ea707836481a9788619033正在root复审；作者5局部tests+五视图Chrome/六双主题窄屏图，原w01独立固定d5源码5/5通过；不能提前称整体APPROVED。独立55247图预览不替换4320。
+D06 claim f6196ecc-b1e4-4ae2-9bd5-a2c36a6570bc v1（04:13:12.526Z）已先核原D05v2释放。独立tree/branch dashboard-architecture-refresh，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/status.md)，首canonical35e97863cfa0b184d39b4db2a3c54364b14d92bd已由root报Lead登记。实现d5a87b8、来源P3修正ef42277ff55d1cbb76ea707836481a9788619033已root整体限定APPROVED；作者5局部tests+五视图Chrome/六双主题窄屏图，原w01独立固定d5源码5/5通过；最终metadata b4c2ab1ffab02956cb0b36a18d963e7e74bdb9a8 clean，04:20实采D06尚未注册，不宣称已聚合/集成。独立55247图预览不替换4320。
 
 X03 Mika固定895c8999d22fb3d911de2d46969e37b40051fdea模块已获其root独审APPROVED，12checks与分页键盘焦点红→修通过；最终metadata/main等待。实际App挂载尚未受领，scope候选与composer/CHAT04研究进入research，不先动现App。queue/steer分别open，既有disabled保持。
