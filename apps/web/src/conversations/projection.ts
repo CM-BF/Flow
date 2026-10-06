@@ -57,7 +57,8 @@ function assertTurn(value: ConversationTurn, conversationId: string) {
 }
 function assertCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
   const value = snapshot.capabilities;
-  if (!value || value.followUp !== true || [value.queue, value.steer, value.liveAssistantText, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
+  if (!value || value.followUp !== true || typeof value.queue !== "boolean"
+    || [value.steer, value.liveAssistantText, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
     throw Error("This connection's conversation capabilities are not supported by this Web version.");
 }
 
@@ -194,7 +195,7 @@ export class ConversationProjection {
     if (this.state.loading || (this.id && !this.state.snapshot)) return "Wait for this conversation to load.";
     if (this.state.outbox && this.state.outbox.state !== "rejected") return "The previous message receipt is unresolved. Check or retry it first.";
     const task = this.state.snapshot?.lastTurn?.task;
-    if (task && !TERMINAL_STATUSES.includes(task.status)) return `This turn is ${task.status.replaceAll("_", " ")}. You can keep writing; queue and steering are not supported by this connection.`;
+    if (task && !TERMINAL_STATUSES.includes(task.status)) return `This turn is ${task.status.replaceAll("_", " ")}. You can keep writing; queue and steering are not available in this Web version.`;
     return null;
   }
 
