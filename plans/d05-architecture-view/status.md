@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:21:14 UTC / main70cc4e85 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:37:00 UTC / main22d5ca67 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已登记完整输入确认的独立实现，聊天恢复和网页兼容两来源已实际可见。 |
+| 当前产出 | 已登记逐消息设置契约和现用后台修复两条独立工作，等待本批看板发布。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -125,3 +125,7 @@
 2026-10-06T15:15:31.548316+00:00：O15首canonical已存在，唯一source登记至162，parser无错误、人读完整；[登记核验](../../docs/evidence/d05/o15-registry-validation.json)。RECOVERY01/RELEASE03已在161实采可见，DPERF04尚无canonical故未冒记。O15产品仍实施，PG未运行，登记不代表交付；本批不改固定架构/产品/个人入口。
 
 2026-10-06 15:21:14 UTC：实际4320返回162来源，O15/RECOVERY01/RELEASE03全部live、parser0、人读完整、issues=[]。见[实际回执](../../docs/evidence/d05/o15-registry-live.json)。只替换自有看板进程，固定架构与个人服务/页面不变；未运行产品测试。
+
+## 2026-10-06 15:37 注册维护
+
+WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人读字段，registry增至164；只核唯一ID/路径与两份真实status解析，0产品测试/PG/provider。当前4320仍上一批162源，本批部署后另记实际观察；不把注册当交付完成。[登记回执](../../docs/evidence/d05/claude-settings-history-compatibility-registration.json)。固定架构图不改。
