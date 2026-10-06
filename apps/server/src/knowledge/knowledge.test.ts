@@ -61,11 +61,13 @@ test('dropped ACK body replays original receipt after a newer version and same d
 
 test('two publishing clients CAS once without lost version and publication ACK replay stays immutable', async () => {
   const p = await f.project(); const a = await create(p, 'version one'); const path = `${sourcePath(p)}/${a.source.id}/versions`;
-  const key = randomUUID(); const [one, two] = await Promise.all([f.http(path, { expectedVersion: 1, text: 'version two' }, { key }), f.http(path, { expectedVersion: 1, text: 'competing' })]);
-  expect([one.status, two.status].sort()).toEqual([201, 409]);
-  const winner = one.status === 201 ? one : two; expect(winner.body.version.version).toBe(2);
+  const contenders = [{ key: randomUUID(), input: { expectedVersion: 1, text: 'version two' } }, { key: randomUUID(), input: { expectedVersion: 1, text: 'competing' } }];
+  const responses = await Promise.all(contenders.map(({ key, input }) => f.http(path, input, { key })));
+  expect(responses.map(response => response.status).sort()).toEqual([201, 409]);
+  const winnerIndex = responses.findIndex(response => response.status === 201); const winner = responses[winnerIndex]!; const command = contenders[winnerIndex]!;
+  expect(winner.body.version.version).toBe(2);
   expect((await f.http(path, { expectedVersion: 2, text: 'version three' })).status).toBe(201);
-  if (one.status === 201) expect((await f.http(path, { expectedVersion: 1, text: 'version two' }, { key })).body).toEqual({ ...one.body, replayed: true });
+  expect((await f.http(path, command.input, { key: command.key })).body).toEqual({ ...winner.body, replayed: true });
   const sameKey = randomUUID(); const input = { expectedVersion: 3, text: 'version four' };
   const twins = await Promise.all([f.http(path, input, { key: sameKey }), f.http(path, input, { key: sameKey })]);
   expect(twins.map(r => r.status)).toEqual([201, 201]); expect(twins.map(r => r.body.replayed).sort()).toEqual([false, true]);
