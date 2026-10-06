@@ -124,7 +124,7 @@
     "Actual390 both themes, focus/keyboard and unsupported/offline/actionable errors"
   ],
   "currentExecutionBoundary": {
-    "recoveryHarness": "724424237962ed8563db08f5ea8597ee6e7eb11d RB1–RB3 source delta approved; actual-App worker review pending; no browser or second22direct run",
+    "recoveryHarness": "Root724 RB1–RB3 source addressed; worker P2 official-composer handoff finding assigned to original Recovery writer, no newdirect/browser",
     "window": "Lead retains PG/Chrome window",
     "newClaims": 0,
     "productWrites": 0,
@@ -204,5 +204,74 @@
     "pending": "RB4 worker actual-App assertions independent review; 22direct and browser NOT_RUN; formal feature NOT_STARTED",
     "runtime": 0,
     "window": "No new run or resource reservation"
+  },
+  "secondOpinion": {
+    "at": "2026-10-06T15:32:46.173765+00:00",
+    "archives": [
+      {
+        "source": "/tmp/recovery-connection-p01-2498-second-opinion/report.md",
+        "archive": "connection-plugin-2498-second-opinion/report.md",
+        "bytes": 11899,
+        "sha256": "bd633eb00c7c99b40689c620322d039ec416c8cbea5bc4b52fb8f8b9a9d7dd85"
+      },
+      {
+        "source": "/tmp/recovery-connection-p01-2498-second-opinion/source-manifest.json",
+        "archive": "connection-plugin-2498-second-opinion/source-manifest.json",
+        "bytes": 4698,
+        "sha256": "3962df183ae36d5cb42a7c722cd152c2fb7648f65d3d7b0d9ed02312856277f4"
+      }
+    ],
+    "fixedChecks": [
+      {
+        "path": "apps/web/src/App.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/session.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/react.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugins/host.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugins/react.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugins/builtins.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugins/builtins/theme.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugins/types.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/connection/session.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugins/validation.ts",
+        "fixedHashMatches": true
+      }
+    ],
+    "rootDecision": "Accepted as same REQ22/23/WPF-001-05 candidate clarifications, no implementation approval/new claim",
+    "corrections": [
+      "Host execute authorizes before handler; after handler it checks activation current, not auth authorize again. Original W01 raw remains unchanged.",
+      "Existing exact registration disposer is guarded/idempotent; no demonstrated ordinary sequence deletes a newer entry. Old cleanup calling deactivate(id) can instead target current newer entry.",
+      "App lifetime owns sole host and theme store/fallback; authenticated lease alone may publish navigation/context.",
+      "User disable, authentication revocation and final disposal must remain distinct; no parallel enabled registry or automatic reenable.",
+      "Old global callback captures original exact lease/form/session/generation/namespace and must never requestSubmit a newer form or borrow new authority."
+    ],
+    "scope": "Original six product/two test candidate only, exact execution scope and fixture undecided; no new public slot/host authority/Recovery21 amendment",
+    "execution": "Source-only report,0runtime/claims/product writes"
   }
 }

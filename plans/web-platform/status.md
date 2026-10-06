@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:23 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:32 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | Recovery2498浏览器预检四项归原验收并由唯一owner修源；DPERF04接口收敛；RELEASE A-only已审未运行，窗口仍归Lead |
-| 下一可用交付 | 新资源与窗口事实到位后，执行剩余恢复定向检查及固定362附件历史A-only，不重新准备产物 |
-| 当前阻塞 | ACTIVE: Recovery2498新增行为与真实浏览器仍待验证；Lead15:15实际available1,086,668,800B仍低于1,107,296,256B，RELEASE未运行，后台362历史缺口保留；轻源码可继续 |
+| 当前产出 | RELEASE03 fixed362实际HTTP两项history失败，3.874秒/清理完成/窗口归还；Recovery724源码审查与P2接管修复继续，22direct/browser未跑 |
+| 下一可用交付 | Lead提供immutable362+已审三行修复新HEAD/tree后，按剩余176.126秒及fresh条件先A再B；DPERF04候选不抢发布优先级 |
+| 当前阻塞 | ACTIVE: backend362两项真实history不兼容阻止发布，待原backend owner固定修复组合及复验；Recovery新增行为/真实IDB与浏览器仍待验证；轻源码正常，个人版本未切 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

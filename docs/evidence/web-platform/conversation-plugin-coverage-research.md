@@ -75,3 +75,5 @@ Panels现有Arc只读Interface已收敛，[候选18literal/唯一layout/稳定�
 preauth仅审定打包builtin与本地主题，不提前加载全部Workspace业务。Connect贡献无参请求宿主私有form submit，Enter同入口；token/CSRF/cookie/client/journal不进入公开context/args/config。postauth必须经实际session/namespace/generation及retained guard才建立业务lease，撤权先于异步动作；重认证页面保留旧Workspace稿件/材料/capture/unknown但不保网络权限。停用/卸载撤贡献与旧callback，旧lease清理不能dispose唯一host或新session项；同global context不代表同授权代次。同realm builtin不冒X01第三方隔离。
 
 待决范围为六产品路径加两新专测，完整精确fixture/plan/evidence与公开API能否支持尚需原plugin co-lead协调；见原报告，不能据此take。App/session当前仍Recovery独占，当前21不扩大。真实preauth/reauth按钮与Appearance panel、禁用卸载、凭据隔离、保稿/跨身份旧callback、390双主题与键盘均待验；仅标记DOM或新增slot计数不算完成。无新增第三层task、claim、产品执行或资源采样。
+
+2026-10-06 15:32 原REQ22/23、WPF-001-05补充[唯一host第二意见](connection-plugin-2498-second-opinion/report.md)：主题归app lifetime；只有有效业务lease发布navigation；精确registration disposer与按ID停用分开；用户disable/auth revoke/final dispose不同。纠正旧提案措辞：handler后仅activation-current，不再次auth authorize；旧global callback必须绑定原lease/form，不能借新权限requestSubmit。普通exact disposer未证误删新entry，不能机械报bug。均为未实施后继验收，不扩大Recovery21。

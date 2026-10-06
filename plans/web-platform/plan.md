@@ -105,15 +105,12 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 
 | 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
 | --- | --- | --- |
-| WPF-ATTACH01 → MATURE03 | workspace_panels_owner / attachment-resources / codex/attachment-resources | ef617d78 v2十八scope；phase1 6bc/339已独审小输入，runtime8701/final1d236已root78独审并push，待main及公共桥接；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)。F01/client/rootmount不领 |
-| WPF-RELEASE01 → MATURE01 | w01_owner / web-release-compatibility / codex/web-release-compatibility | 20a6529a v2 released；main c450、owner41276 normalpush/clean后四scope全停写；新Web8d8/旧Web与backend b1c固定真实构建，最终format2报告必须匹配同releaseId/descriptor；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md) |
-| WPF-DPERF02 → D01 | d01_owner / dashboard-proof-batching / codex/dashboard-proof-batching | 1cb4 v2已释放；902c/aa715已main da041，close8e9现local=remote/clean；push两次失败与先release偏差另归档；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
-| WPF-ATTACHI01 → MATURE03 | w01_owner / web-attachment-input-preview / codex/web-attachment-input-preview | 94b84c59 v1十一新scope；已审DTO8701+typed ports，真实HTTP/App接线pending |
-| WPF-RELEASE02 → MATURE01 | w01_owner / web-release-type-fix / codex/web-release-type-fix | 03323bce v1三scope；fixed560c/final0bca已push，等runner_owner窄审；ATTACHI安全点串行修复 |
-| WPF-WORKSPACEPERF01 → MATURE05 | workspace_panels_owner / web-workspace-lifecycle-baseline / codex同名 | c815 v2已释放四scope；fixed1711 partial基线已main362af3，owner12e4双端clean全停写后释放；CACHE另片已main017adc |
-| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3，仅两管理目录+四Web大task目录；追溯/集中依赖，不构成第三执行层 |
+| RECOVERY01 → MATURE06 | workspace_panels_owner / web-conversation-recovery / codex/web-conversation-recovery | 6ff988b2 v4原21；724 worker P2官方composer接管修源，root supervisor仅源码闭合；22direct/browser未运行 |
+| RELEASE03 → MATURE01 | w01_owner / web-current-preview-compatibility / codex/web-current-preview-compatibility | bfb209ae v3原4；432b actual362两history红已封存676f/clean，原预算余176.126秒；等Lead固定三行修复tuple，源码与运行/发布分开 |
+| DPERF04 → D01 | 拟w01_owner / dashboard-summary-detail / codex/dashboard-summary-detail | c837已由Lead准备；九literal已批但未take/实施，优先级低于可用预览路径 |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3六管理目录；唯一status/集中交接，不构成第三执行层 |
 
-D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVITYREAD/STEIRI已mainf181并原scope全部released；VISUAL已main4391、35e5 v3 released。旧树只读，后继不沿旧权写入。
+已交付ATTACH/ATTACHI/ACK/CACHE/D06/DASHSUM/DPERF03等固定main及released回执见[集中历史入口](../../docs/evidence/web-platform/mature-task-handoff.md)，不沿旧claim写；旧当前分配以Git历史保存，不当新take。
 
 ## 已确认决定与工程方案
 
@@ -127,12 +124,10 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 
 | 优先级 / 状态 | 当前计划 | 下一动作与真实边界 |
 | --- | --- | --- |
-| P1已审交接 | ATTACH01资源 + ACK01 | 8701/1d236与2fa8/4e4e均独审通过、pushclean待main；公共client/decoder/mount由唯一共享owner桥接，ATTACHI从固定输入开始 |
-| 已main / 收口 | DPERF02、RELEASE01 | da041已接902c，1cb4 v2已释放，close8e9推送偏差归档；c450已接7805，RELEASE owner41276 normalpush/clean后20a v2 released；个人发布另由SVC04 |
-| 已main / 已释放 | CONTEXTI、STEIRI、ACTIVITYREAD、D08、VISUAL、D06/runtime | 各canonical与release见[集中队列](../../docs/evidence/web-platform/mature-task-handoff.md)；片段通过不等六大task完成 |
-| 独立有界基线 | WORKSPACEPERF01 | c815 v1四scope/basec450，真实App HTTPfixture累计8/16/32，90s含cleanup/≤8MiB；仅观测，不修改App/投影，不冒JS堆或总体性能 |
-| P1独立模块实施 | ATTACHI01附件Web | 已审8701 DTO基线、94b84c59 v1十一全新scope，typed ports/官方Threadfixture；公共六client/真实HTTP/生产App接线后继，不预占旧23范围 |
-| 专项已验 | 六计划+父关联/take | root10:44–10:45实际页面六parent/co-lead/子片领取与父导航通过；不是六feature功能Done |
+| P1源码实施 | RECOVERY01 / MATURE06-04 | 原21唯一writer修复完整材料恢复；正式review NOT_STARTED，新direct/browser未跑，窗口需fresh条件 |
+| P1负兼容已封存 | RELEASE03 / MATURE01 | 原362实际两红/清理完成；Lead准备immutable362+三行修复，先新A后B/全兼容后受管发布，个人当前不变 |
+| 候选/未take | DPERF04 / D01 | 独立c837 source已准备，九scope方案已批；W01先发布安全点，不能把sourceReady当COMMITTED |
+| 只读后继 | REQ22/23插件与MATURE05 Arc | 唯一host/P01接缝与稳定view布局研究，不抢Recovery范围、不增任务层级 |
 
 当前三队4/4/4上限12，本树root+现三成员=4。普通进展只status→dashboard；GO只完整大task独立blocker与Done(1)，不重复私信/转发。历史真实两query2/2只引用，不新增模型预算。
 
@@ -381,3 +376,7 @@ DPERF04原九范围Interface消歧（固定c837，未领取）：[固定报告](
 
 
 原DPERF04领取可见性验收补充（U08/U12/REQ37，固定c837）：[三源P2研究](../../docs/evidence/web-platform/dperf04-claim-disclosure-c837-root.json)确认未登记active claim的卡片缺少claimId/version/精确scope/next/陈旧仍占用的可达详情，而aggregate已有完整事实。未来在原app.js范围复用已登记claim renderer，为所有未登记active/handoff记录提供有界键盘disclosure；保原时间/角色/来源匹配、长值textContent转义、unknown与旧观察分离。不造假task或第二status，不改PG原子写入口；页面不授take权、stale不释放。并入原synthetic assignment验收/同30秒Node和后置60秒browser预算，未实跑/未take，不表示实际overlap。
+
+2026-10-06 15:32 发布安全点：固定362实际A两项history失败，完整raw/清理与余176.126秒见[唯一接收入口](../../docs/evidence/web-platform/release03-a-actual-intake.json)。Lead已接收，后继只等待原backend owner的immutable362+已审三行修复新HEAD/tree；先新A再B/全兼容后原受管发布，不重跑未变362或改旧期望，不覆盖原WT。DPERF04保持未take，当前个人版本不变。
+
+2026-10-06 15:32 原REQ22/23、WPF-001-05补充[唯一host第二意见](../../docs/evidence/web-platform/connection-plugin-2498-second-opinion/report.md)：主题归app lifetime；只有有效业务lease发布navigation；精确registration disposer与按ID停用分开；用户disable/auth revoke/final dispose不同。纠正旧提案措辞：handler后仅activation-current，不再次auth authorize；旧global callback必须绑定原lease/form，不能借新权限requestSubmit。普通exact disposer未证误删新entry，不能机械报bug。均为未实施后继验收，不扩大Recovery21。

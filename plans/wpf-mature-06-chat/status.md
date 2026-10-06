@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:08 UTC |
+| 最近更新 | 2026-10-06 15:32 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 4ba受控direct20/20、2.540秒清理完成；2498保存版本和同key终态修正已审，22case行为尚未跑 |
-| 下一可用交付 | 在新资源和窗口准入后验证2498两项修正，再推进真实刷新与显式原key恢复 |
+| 当前产出 | 4ba受控direct20/20保原证据；724 supervisor RB1–3源码闭合，worker新增恢复附件到官方composer接管P2由原owner修源，未运行 |
+| 下一可用交付 | 固定原范围P2修复后，以新manifest与fresh窗口核第二22direct/真实App完整材料恢复；源码审查不代行为通过 |
 | 当前阻塞 | ACTIVE: 2498定向行为与真实IDB/HTTP/browser待资源及中心三语义门槛；轻源码可继续，当前无测试窗口 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |

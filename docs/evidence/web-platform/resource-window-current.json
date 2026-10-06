@@ -1,55 +1,32 @@
 {
-  "recordedAt": "2026-10-06T15:16:59.612857+00:00",
-  "source": "Root relay of new Lead inbound; no direct outbound, no personal/4320 sample",
-  "state": "WINDOW_RETURNED_TO_LEAD_A_NOT_RUN_RESOURCE",
+  "recordedAt": "2026-10-06T15:32:05.785246+00:00",
+  "state": "RETURNED_TO_LEAD_AFTER_A_HISTORY_FAILURE_AND_CLEANUP",
+  "source": "release03-a-actual-intake.json",
   "release03": {
-    "claim": "bfb209ae v3 original4",
-    "state": "NOT_RUN_RESOURCE_ADMISSION_FAILED",
-    "source": "362af3bac77541e5a60979326bcf4d4b8c947915",
-    "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
-    "futureBudget": "<=180s total including20s cleanup,1PG+1Chrome,8MiB evidence",
-    "startConditions": [
-      "Lead actual cleanup completed and shared PG/Chrome window returned to this group",
-      "Fresh original four-scope claim, fixed source target and seventeen read-only dependency identities",
-      "Fresh available bytes >=1107296256; monitor stop <=1090519040",
-      "One history-only60s including20s cleanup; no parallel group test"
-    ],
-    "startTime": null,
+    "claim": "bfb209ae v3 original4, only owner metadata/sources under original authority",
+    "state": "A_HISTORY_FAILED_B_NOT_RUN",
     "candidate": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
-    "metadata": "e212c2de2289a3d3bc3bc173b75050fb4d214270",
-    "order": "No activegroupPGwindow;returnedtoLead",
-    "aOnly": "First exact362 attachment-only andmixed HTTP reportEvents/contextHistory, preserve bothraw andcleanup;anyred =>B/ChromeNOT_RUN,noallgreenSVCimport; A green withBunadmitted remainssealed, noautocontinue",
-    "review": "Root432bsourceguardAPPROVED0blocking;notruntimeapproval",
-    "admission": {
-      "archive": "release03-a-admission-not-run.json",
-      "freeBytes": 1058885632,
-      "minimumFreeBytes": 1107296256,
-      "gateCreated": false,
-      "claim": "bfb v3 original4,nooverlap",
-      "fixedSourceMatches": 2,
-      "readOnlyDependencyMatches": 17,
-      "previousRuntimeMs": 0
-    },
-    "historyAdmission": {
-      "minimumFreeBytes": 1107296256,
-      "stopAtOrBelowFreeBytes": 1090519040,
-      "meaning": "1GiB+32MiB start / 1GiB+16MiB stop",
-      "singleRunMs": 60000,
-      "cleanupReserveMs": 20000,
-      "cumulativeBudgetMs": 180000,
-      "usedRuntimeMs": 0,
-      "retainedEvidenceMaxBytes": 8388608,
-      "basis": {
-        "previousLeadFactoryDatabaseBytes": 12360727,
-        "Chrome": 0,
-        "build": 0,
-        "TSXCache": "disabled"
-      },
-      "limits": "Prior single DB size plus bounded retained evidence is admission rationale, not PG/WAL/OS peak proof or hard quota. Source-only 432b reviews pass; noEmit 1.839676s belongs to prior 997d. No actual A history outcome exists."
-    }
+    "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "run": "history-20261006-152729-727a99",
+    "startedAt": "2026-10-06T15:27:55.348Z",
+    "cleanupFinishedAt": "2026-10-06T15:27:59.219Z",
+    "usedRuntimeMs": 3874,
+    "remainingRuntimeMs": 176126,
+    "totalRuntimeMs": 180000,
+    "retainedEvidenceBytes": 80470,
+    "retainedEvidenceLimitBytes": 8388608,
+    "compatibilityId": null,
+    "cleanup": "databaseRemoved=true/errors=[]; own worker381 exit0/signalnull; supervisor completed",
+    "next": "Await Lead immutable362+three-line history repair HEAD/tree; no unchanged362 retry. New A before B under remaining budget, approved source and fresh separate window/resource gate.",
+    "historyStartBytes": 1107296256,
+    "historyStopBytes": 1090519040,
+    "resourceLimitMeaning": "Admission margin and sampled stop, not PG/WAL/OS peak guarantee or hard quota",
+    "freshAdmission": "release03-a-second-admission.json",
+    "actualRawReview": "release03-a-actual-362-review-root.json"
   },
   "recoveryDirect": {
-    "state": "First4ba20/20completed;second249894prepared/source-deltaapproved,NOT_RUN;spacebelowitsstarttoo",
+    "state": "First4ba20/20 completed; second22direct/browser NOT_RUN. Source-only P2 repair continues; new run requires fresh authorized window and rebound manifest.",
     "existingBudget": "One fixed test/onefork,30s total incl>=5s cleanup each,own/tmp8MiB/log2MiB,start>=1GiB+32MiB/stop<=1GiB+16MiB",
     "startConditions": [
       "New material shared-window/resource notice",
@@ -85,61 +62,36 @@
     "sourceOnlyHarnessCheckpoint": {
       "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
       "metadata": "d1a388876864c2f03b95f47dd405a9e4c281682d",
-      "state": "Root RB1–RB3 source delta approved; actual-App worker review pending, runtime NOT_RUN",
+      "state": "Root RB1–RB3 source addressed; worker P2 composer handoff source finding assigned to original writer, runtime NOT_RUN",
       "businessAndDirectTestBase": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
       "preflightRebindRequired": true,
       "record": "arc-recovery-source-intake.json",
       "review": "recovery01-724-supervisor-review-root.json"
     }
   },
-  "leadWindow": {
-    "source": "f01-plugin-window-cleanup-1457.json",
-    "startedAt": "2026-10-06T14:57:16.264Z",
-    "endedAt": "2026-10-06T14:57:18.336Z",
-    "actual": "factory1/1 perLead, singleownedDB12360727B,connections=[]/remaining=[],rootRemoved=true,0provider",
-    "reservation": "Historical temporary reservation ended when this group returned the total window after failed A admission. No current group reservation.",
-    "limits": "Old1,122,291,712B is not freshadmission or reservedcapacity"
-  },
-  "registry": "main d679444c4bed52bbd53d38f4944f914b30fbbd92 fixedregistry matches bothcanonical;Lead actual4320 14:51:18 has161sources/live/parser0/humancomplete;manager noUI/API",
-  "limits": [
-    "Thisenvironmentadmission failureisnotbackendhistoryproductred",
-    "No A outcomes/historywire/cleanup run exists becauseprocessneverstarted",
-    "No SVCgreenreport,B/ChromeNOT_RUN",
-    "Free-spacewholehostreadingnotattributedtoanyteam",
-    "No immediatefreshpoll/newdependencies/PG/build/cleanup"
-  ],
   "groupWindowOwnership": {
-    "state": "RETURNED_TO_LEAD",
-    "at": "2026-10-06T15:08:27.448892+00:00",
-    "reason": "FreshA-onlyfreebelowthreshold;no gate,noPG/Chrome/no runtime;notidleholding",
-    "next": "A orRecoverytargeted require new materialwindow/resourcefactsandfreshadmission,notbusy polling"
+    "state": "NO_ACTIVE_GROUP_TEST_WINDOW",
+    "source": "Lead15:31:45 F01 O14 NOT_RUN and immediately returned window after own admission failure",
+    "reservedByThisGroup": false,
+    "next": "New backend tuple not fixed and last Lead free below start; no fresh group A/direct gate, no poll or reserved idle window"
   },
-  "leadPreparationNotice": {
-    "source": "New Lead inbound via root; not independently sampled",
-    "action": "Four released engineering worktrees processed; raw receipt received",
-    "completionReceived": true,
-    "windowReturnedToThisGroup": false,
-    "personalUnchanged": true,
-    "next": "Both actual Lead observations remain below start. Wait for a new material resource/window event, no local polling or retry."
-  },
-  "latestLeadResourceResult": {
-    "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/sparse-worktree-2026-10-06/engineering-four-summary.json",
-    "archive": "resource-engineering-four-lead-summary.json",
-    "sha256": "f711567f80dd7d77ea50f5457241e75ae74791cc0c2fb47dd8e03d42906245f4",
-    "bytes": 2554,
-    "leadInbound": {
-      "at": "2026-10-06T15:14:27Z",
-      "availableBytes": 1087401984,
-      "meaning": "Final operation freeAfter, as relayed by root"
-    },
-    "rawSummaryObservation": {
-      "at": "2026-10-06T15:15:18.606951+00:00",
-      "availableBytes": 1086668800
-    },
-    "requiredStartBytes": 1107296256,
-    "bothBelowStart": true,
-    "sourceBoundary": "Read Lead canonical file, not a local free-space resample; all-volume differences cannot be attributed exclusively to this operation or any team. Logical dematerialized bytes are not available space.",
-    "action": "Four authorized released own trees only, retained hashes unchanged. No broader cleanup by this group. Lead O14/O15 PG NOT_RUN per inbound.",
-    "window": "Still Lead; no retry/poll/lowered gate; Recovery source-only harness and W01 bounded read-only preauth plugin proposal remain source work, not runtime admission."
+  "registry": "Lead latest inbound reports mainfb9fe5e7/dashboard162; prior fixed d679 registry verified by manager. No new4320GET/reload.",
+  "historicalResourceEvidence": [
+    "release03-a-admission-not-run.json",
+    "resource-engineering-four-lead-summary.json",
+    "release03-a-second-admission.json"
+  ],
+  "limits": [
+    "Actual fixed362 HTTP history failures, not admission/import or cleanup failures",
+    "B/Chrome NOT_RUN, no SVC green receipt, no deployment",
+    "Shared-space sampled minimum and final are independent saved observations, not new sample or exclusive allocation attribution",
+    "No automatic retry, polling, new dependency writes or product test window"
+  ],
+  "latestLeadObservation": {
+    "at": "2026-10-06T15:31:45Z",
+    "freeBytes": 1098022912,
+    "thresholdBytes": 1107296256,
+    "state": "F01 O14 NOT_RUN,0PG/0test,window returned;newbackendtuple pending",
+    "basis": "Lead actual observation via root, not manager resampling or new A admission"
   }
 }

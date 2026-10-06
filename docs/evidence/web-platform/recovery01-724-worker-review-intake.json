@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-06T15:32:46.173765+00:00",
+  "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+  "archives": [
+    {
+      "source": "/tmp/w01-recovery-7244-worker-review/report.md",
+      "archive": "recovery01-724-worker-review/report.md",
+      "bytes": 8820,
+      "sha256": "6d2c38e88025f3f94b3159499362db57a82890280153e80890859c327bdb77ee"
+    },
+    {
+      "source": "/tmp/w01-recovery-7244-worker-review/sources.json",
+      "archive": "recovery01-724-worker-review/sources.json",
+      "bytes": 2973,
+      "sha256": "26e5866926f8895e3805d3b74767d411d2f17d14a9b582af571e593de04cd8bf"
+    }
+  ],
+  "fixedChecks": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "fixedHashMatches": true
+    }
+  ],
+  "scope": "Worker actual-App assertions only; supervisor separately root-reviewed",
+  "finding": {
+    "severity": "P2",
+    "state": "SOURCE_COUNTEREXAMPLE_NOT_RUNTIME_REPRODUCED",
+    "description": "Files Input ready alone does not prove official composer handoff. Restore unverified to Browse ready may not rerun Thread effect whose dependencies are only binding/runtime.",
+    "required": "Writer fixes within original21; local materialDraft must assert official composer exact attachment before PASS; preserve later actual sameKeyTurn ordered attachment wire assertions, no workaround remount or drop refs",
+    "owner": "workspace_panels_owner",
+    "claimEvidence": "recovery01-claim-1526-source-only.json"
+  },
+  "limits": [
+    "ActualSSE asserted only HTTP200 cookie handshake, not event delivery/reconnect",
+    "Page-only auth-loss selectors source reviewed, no runtime",
+    "Formal feature review remains NOT_STARTED;22direct/browser NOT_RUN;no new window or scope"
+  ],
+  "mapping": "Existing MATURE06-04 and RECOVERY01 original TODO/review, no third-level task"
+}

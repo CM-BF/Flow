@@ -1,0 +1,236 @@
+{
+  "recordedAt": "2026-10-06T15:28:59.038708+00:00",
+  "reviewer": "root independent retained-evidence review",
+  "run": "history-20261006-152729-727a99",
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/history-20261006-152729-727a99",
+  "harnessTarget": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "runtimeSource": {
+    "head": "e212c2de2289a3d3bc3bc173b75050fb4d214270",
+    "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "sourceTree": "6012e2548c4495a87aa1363cd2acd901674afb47",
+    "dirty": "?? docs/evidence/wpf-release03/runs/",
+    "files": [
+      {
+        "path": "apps/server/src/index.ts",
+        "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+      },
+      {
+        "path": "apps/server/src/context-transparency/store.ts",
+        "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7"
+      },
+      {
+        "path": "packages/client/src/index.ts",
+        "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+      },
+      {
+        "path": "packages/client/src/conversation-acknowledgement.ts",
+        "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+      },
+      {
+        "path": "packages/contracts/src/conversation-context.ts",
+        "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+      },
+      {
+        "path": "tools/personal-preview/web-artifact.mjs",
+        "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+      },
+      {
+        "path": "tools/personal-preview/web-release.mjs",
+        "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+      },
+      {
+        "path": "tools/personal-preview/environment.mjs",
+        "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+      },
+      {
+        "path": "apps/web/test/web-current-preview.fixture.ts",
+        "sha256": "e56b952b92854bbb9a208ee7a87e763bf3d2b29e05f6e0b58614d5f968d3e18f"
+      },
+      {
+        "path": "apps/web/test/web-current-preview.browser.ts",
+        "sha256": "ef6ae3609533d4188ef02897fe0c0399c7f2248cca05846219ea5ecc1afd6fee"
+      }
+    ]
+  },
+  "result": "A_HISTORY_FAILED_B_NOT_RUN",
+  "outcome": {
+    "passed": false,
+    "historyPassed": false,
+    "mode": "history",
+    "phaseB": "NOT_RUN",
+    "compatibilityId": null,
+    "errors": [],
+    "cleanupErrors": [],
+    "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "observations": [
+    {
+      "label": "attachment-only",
+      "passed": false,
+      "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "frozenAttachmentCount": 1,
+      "frozenKnowledgeCount": 0,
+      "report": null,
+      "reportError": "The center could not complete this request.",
+      "latestIsNull": true,
+      "returnedMaterials": null,
+      "relevantHttp": [
+        {
+          "method": "POST",
+          "path": "/api/runner/events",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/runner/events",
+          "status": 500
+        },
+        {
+          "method": "GET",
+          "path": "/api/tasks/0f2b525e-b5ea-4bbb-874b-c8fbd592f38b/context/history",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "label": "mixed",
+      "passed": false,
+      "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "frozenAttachmentCount": 1,
+      "frozenKnowledgeCount": 1,
+      "report": {
+        "accepted": 1,
+        "lastSequence": 2
+      },
+      "reportError": null,
+      "latestIsNull": false,
+      "returnedMaterials": {
+        "state": "known",
+        "sources": [
+          {
+            "citation": {
+              "projectId": "1843be84-8305-41e3-a097-47f26b1d24df",
+              "sourceId": "13f15c34-b8ee-441b-8772-d62b1d876c5b",
+              "version": 1,
+              "contentDigest": "2d55d57e85e8e5caae16cdb30f84dc8649b035f42c8bec279fdecbaa69eae25d",
+              "locator": {
+                "kind": "utf8-bytes",
+                "start": 0,
+                "end": 28
+              }
+            },
+            "byteLength": 28,
+            "tokens": null
+          }
+        ]
+      },
+      "relevantHttp": [
+        {
+          "method": "POST",
+          "path": "/api/runner/events",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/runner/events",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/tasks/b4181bbf-b425-435c-b9a6-304d06855529/context/history",
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "complete": true,
+    "startedAt": "2026-10-06T15:27:55.348Z",
+    "elapsedMs": 3874,
+    "previousMs": 0,
+    "permittedMs": 60000
+  },
+  "cleanupReceipt": {
+    "databaseName": "flow_release03_76a0b643c070475ea1b8",
+    "databaseCreateAttempted": true,
+    "databaseCreated": true,
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "errors": [],
+    "processIds": [
+      {
+        "pid": 381,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "finishedAt": "2026-10-06T15:27:59.219Z"
+  },
+  "rawManifest": [
+    {
+      "name": "budget.json",
+      "bytes": 130,
+      "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9"
+    },
+    {
+      "name": "cleanup.json",
+      "bytes": 333,
+      "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a"
+    },
+    {
+      "name": "database-owner.json",
+      "bytes": 169,
+      "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae"
+    },
+    {
+      "name": "history.json",
+      "bytes": 10667,
+      "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef"
+    },
+    {
+      "name": "outcome.json",
+      "bytes": 299,
+      "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60"
+    },
+    {
+      "name": "process.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sources.json",
+      "bytes": 1779,
+      "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1"
+    },
+    {
+      "name": "supervisor.json",
+      "bytes": 12802,
+      "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8"
+    },
+    {
+      "name": "wire.json",
+      "bytes": 42857,
+      "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82"
+    },
+    {
+      "name": "worker.json",
+      "bytes": 11434,
+      "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0"
+    }
+  ],
+  "retainedBytes": 80470,
+  "resourceObservations": {
+    "minimumSampledFree": 1103908864,
+    "freeAtEnd": 1102282752,
+    "basis": "shared filesystem sampled values, no allocation attribution or new sample by root"
+  },
+  "limits": [
+    "Real isolated fixture HTTP/PG against frozen362 implementation; synthetic native observation data, zero provider/model queries. Not personal deployed endpoint or actual browser.",
+    "Root reviewed saved source/wire/history/budget/cleanup receipts, did not rerun test, probe processes/PG or sample resources.",
+    "Both observation kinds independently failed, not a generic import/admission/cleanup failure; cleanup receipt errors empty, own DB removed, worker exit0, budget complete.",
+    "No successful compatibilityId, no phaseB/Chrome/publication; unchanged362 must not be rerun or report green.",
+    "Original authorized backend operator/Lead should apply already-reviewed history correction under its own write authority, verify fixed source and focused runtime, and record new actual backend target before any bounded new compatibility attempt.",
+    "Existing cumulative RELEASE budget now3874/180000ms (remaining176126); no budget reset implied. Source/browser resource gates and separate window still apply."
+  ]
+}
