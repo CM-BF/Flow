@@ -66,8 +66,10 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 
 ## S01 mixed 准备独立review（2026-10-06 10:03 UTC）
 
-状态 IN_REVIEW，固定target `634926238f749fb1547a5973b521bc6dc5498574`，[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)绑定source/raw/readonly；原W1/W2 APPROVED不覆盖本片。base main4391，经scope=[] integration合入7511f559，writer status_read/gpt-6-astra，三目录scope。reviewer architecture_read只读核资源/预算/并发证据，Mika复核。范围新增mixed driver/合同、准备证据与父plan/status；没有产品改动或实际负载。
+状态 APPROVED，固定target `634926238f749fb1547a5973b521bc6dc5498574`，[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)绑定source/raw/readonly；原W1/W2 APPROVED不覆盖本片。base main4391，经scope=[] integration合入7511f559，writer status_read/gpt-6-astra，三目录scope。reviewer architecture_read只读核资源/预算/并发证据，Mika复核。范围新增mixed driver/合同、准备证据与父plan/status；没有产品改动或实际负载。
 
 复制检查：先核codex/runner-capacity-probe真实HEAD/dirty，再核mixed-preparation/manifest.json所列target/source/raw。按1×16/4×4同child、32tasks不补跑、6秒+1500ms settlement、45+15秒与48+16MiB，以及DB权属/lease+adapter区间/ACK/心跳门禁审查。Pool装饰必须透传；PG行查询时间含执行往返，Lock采样遗漏不作零。cleanup未确认closed禁止DROP，creation unknown按唯一dbName核查，原证据冻结。默认不跑测试、DB、HTTP、runner或provider；回具体severity/行/触发，结论绑定target。
 
 作者预审修复：cleanup共用58秒尾部不足→分阶段截止/并行children；CREATE提交丢ACK→发送前creationRequested+最后自有DB核查。14纯tests、strict0；实际接线/清理/容量未知。独立结论待回填，空段不作approval。
+
+2026-10-06 10:05:50 UTC，architecture_read / gpt-6-astra独立只读APPROVED上述634 target，0 P1/P2；19source/16raw/16readonly、6runtime、78legacy全匹配。见[独审回执](../../docs/evidence/s01/mixed-preparation/independent-review.json)。Mika另独核hash与原始14/14/strict0。只批准准备实现，实际容量/取消/清理尚无实测；固定A→B顺序、共享进程/暖机/背景与IPC相位混杂，不作纯锁因果或SLO结论。未补跑。

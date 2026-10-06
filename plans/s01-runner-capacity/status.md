@@ -17,13 +17,13 @@
 | 实现目标 | mixed准备 target 634926238f749fb1547a5973b521bc6dc5498574；旧W2 target 2ab7967f2eb808fecd1205f7552a119eee8e0b36保持历史绑定 |
 | 实现范围 | experiments/runner-capacity/mixed；新准备证据及本任务plan/status，无产品修改 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 十六路实际执行的混合负载入口已完成，正在独立审查；尚无新容量实测结果 |
-| 下一可用交付 | 审查通过后在授权窗口取证，区分实际在途、取消收束和数据库等待 |
-| 当前阻塞 | 实际负载须入口固定并独审后由 co-lead 安排运行窗口；当前不运行 |
+| 当前产出 | 十六路混合负载入口已通过独立审查，等待受控测量；尚无新容量实测结果 |
+| 下一可用交付 | 在co-lead安排的唯一窗口取证，区分实际在途、取消收束和数据库等待 |
+| 当前阻塞 | 准备实现已审；实际运行等待co-lead明确窗口条件，当前不运行 |
 | 需用户决定 | NONE |
-| Review | mixed准备待固定源码独审；[review.md](review.md)中W1/W2 APPROVED仅覆盖其历史target |
+| Review | mixed准备634已独审APPROVED；[review.md](review.md)及独审回执仅批准准备实现，实际窗口未运行 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -127,3 +127,5 @@ status_read / gpt-6-astra 接收 S01 唯一 owner，co-lead mika，所属 FLOW-0
 2026-10-06 10:03 UTC固定前：预审所提cleanup阶段预算与CREATE丢ACK已修，新增3个截止行为用例及1个自有流清理用例，现14个不同纯测试/strict noEmit0，旧8/10日志保留不累加。phase截止与UNKNOWN/retained语义见混合合同及quality；没有新负载，真实接线仍未验。10:02:58 fresh账本available确认本owner claim v3 ACTIVE/三scope不变。
 
 2026-10-06 10:04 UTC：mixed准备实现固定 `634926238f749fb1547a5973b521bc6dc5498574`，5文件14纯tests/strict noEmit0绑定当前source；[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)固定source/raw/readonly字节，当前待architecture_read及Mika独审。未执行真实窗口，状态来源等待现有dashboard聚合；不重复工程验证。
+
+2026-10-06T10:06:36.107948+00:00：mixed准备634获architecture_read独立APPROVED，无P1/P2；Mika独核51项hash/bytes及14/14/strict0一致。只记录metadata，不重测，writer claim v3保留。实际0新增负载/task/attempt/provider，未消费新窗口；下一步必须Mika给唯一windowId及精确execution HEAD。源634冻结，后续metadata不改变其source/raw绑定。
