@@ -110,3 +110,11 @@ find-skills沿同一固定Node/PG/CLI stack复用本地codebase-design、clean-c
 Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarray保留64KiB backing，累计分配可超过输入预算。固定59219dbf693964555c075685cf961aa1f9509cf0：O_NONBLOCK打开后确认regular file，finally关闭；单maxBytes+1 buffer循环读取/严格UTF8解码，无chunks backing累积。旧c03在独占临时FIFO真实750ms超时，Python只结束该测试child，见json-input-fifo-before.json。
 
 新增两个纯模块检查通过：真实FIFO无writer及时拒绝+descriptor关闭；真实文件被限为3B短读（跨中文/emoji字节）正确解码，同一buffer大小严格budget+1；stat观测后内容变长时越界拒绝/关闭。首测试harness误对原生ESM export直接spy失败且GC关闭两descriptor，原日志保留；改用Vitest局部module mock并afterEach清理handles后2/2通过，最终typecheck通过。没有重跑K01/SVC领域。组合批准仍待Mika复审，c03原manifest保持历史内容；新manifest仅本2文件delta。
+
+## O06公共client / 2026-10-06 05:43 UTC
+固定79e06efdda45f04e713838086de2400f75949710，8个薄方法复用单request，owner/runner凭据分别由调用实例提供，不fallback、不暗重试。精确保留scope/baseRevision/expectedVersion、grant/fence、proposal digest、实际actor与replayed回执，after=0和AbortSignal。HTTP1/1（34ms；suite157ms）与noEmit通过；缺方法red及测试将expectedVersion误写version的首类型失败保留。领域未改、0PG/模型。沿已读find-skills/codebase-design/clean-code，接口保持只传输，不重复权威状态。manifest绑定3源5输出。K01/SVC02接线已获Mika独审并main fb906cb；真实预览已在独立SVC02窗口升级同SHA/v3接受，非本HTTP测试证明。
+
+## O06生产挂载 / 2026-10-06 05:46 UTC
+固定bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，017 await位于scheduler前，8route注册在原owner/runner鉴权后；缺路由实证red保留。公共client新PG用例明确hasRoute存在，不用test helper补挂；受理/角色拒绝/native409/restart同key/审计/撤销通过，O06原8用例直接使用已挂生产入口合计9/9（11.95s）与noEmit通过，专库正常清理。未重跑其他25旧领域，无模型/预览进程变化。clean-code复核仅3行生产接线和真实consumer，保持领域/原生能力边界。
+
+2026-10-06 05:47 UTC：Mika审薄client发现test-only P2，ownership错含taskId而宽松HTTPstub未拒绝。固定a9cd4b04da1b249871398461fadd071ee180520b删除额外字段，四runner路径各用实际strict schema验证请求，非法400；所有旧字段/actor/replay/abort断言保留。仅该HTTP1/1（40ms）+noEmit重跑通过，生产/领域零改动，原证据不覆写。生产bf03已获Mika独审APPROVED，薄client待本delta复审。

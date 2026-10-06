@@ -106,3 +106,7 @@ O05领域1f211/最终7414及F01薄client e28、生产挂载208a各自获Mika独�
 K01领域ea0c/Mika、SVC02领域与host9aa/GoalOwner、F01薄client b5及caea/Mika、生产CLI+015/016 c03/592复审均已固定通过。接收原始失败与修复，JSON FIFO/P2已关闭。scope对固定approved提交无实现差异，见knowledge-maintenance-fixed-scopes.json；无新产品变动，不重复领域全套。直接消费者11/11+纯读取2/2+typecheck，较早CLI组合17通过/1退出码失败修复记录分开保留，不合称一次30绿。
 
 本次只是main集成。61227/61228当前中心runner仍75a33；SVC独有事实05:28显示task0/attempt0、唯一注册受管runner，升级窗口需要重新核对。保留所有DB/凭据/端口/tab，不因main前进宣称用户服务已更新。O06/QUEUE01仍各自分支，真实排队2query只是新提案，未调用。
+
+## 05:50 UTC — 受限目标拆分、队列界面与架构快照
+O06 f6ba/807c由runner_owner独立APPROVED；薄client79e06+a9cd test修复、生产bf03由Mika独审APPROVED。9/9生产PG与1/1严格HTTP/noEmit，原缺route/错误测试字段证据保留；未重跑旧34领域。QUEUE01 309ec/final496、D06 5ec6/final61d已Web独审，组合Webtypecheck及架构7/7通过；固定批准源码与组合HEAD零diff见queue-graph-architecture-fixed-scopes.json，无手工冲突。clean-code合并前核验保持领域边界/证据，不机械拆层。
+SVC02部署a0a2证据已接收：真实中心/runner加载fb906cb，05:40:49 v3接受，唯一runner、0task/未完attempt、0模型，身份/DB/端口保留。后续main变化只可能更新Vite页面，不能称center已加载017。本批67→68注册K02/O07/独立renderer；三任务尚未产品批准。新queue真实两query仅提案/零模型driver准备，旧预算封存。

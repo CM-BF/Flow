@@ -2,21 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:18 UTC / 2026-10-06 05:18 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:50 UTC / 2026-10-06 05:50 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / fa9d8b9a9a88b1da0e2c1c07c8749a09bb17c0eb（本记录前完整候选） |
+| 工作基线 / HEAD | fb906cb42391971a8b315dbd813f7633927d7265 / 当前候选由Git聚合 |
 | 工作树dirty状态 | 仅本次交付记录；实现已提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；第三批root+Web typecheck，CHAT生产直接消费者3/3与插件CLI/client5/5；各领域独审证据保留，0模型 |
-| 已集成main状态 / HEAD | 最近main/origin698ffcd94ae073b23bcc67f6665fb19f707a93e4已含队列后台/兼容reader/执行配置模块；本批仅接B02已审实验、登记与metadata，待fast-forward |
+| 检查状态 | PASSED；本批Web组合typecheck、架构7/7及各共享局部独审；原始失败和能力限制保留 |
+| 已集成main状态 / HEAD | main/origin fb906cb已含K01/SVC02且真实部署同SHA；本批O06/QUEUE01/D06已审待fast-forward |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 聊天界面已接执行选项与紧凑配置摘要；安全更新真实预览正在实施 |
-| 下一可用交付 | 待发送消息操作与安全更新预览；目标拆分提案接入中心 |
+| 当前产出 | 真实预览已安全升级；聊天排队操作与更清楚的架构图已通过审查 |
+| 下一可用交付 | 发布聊天排队界面并验证真实同会话回复 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -68,3 +69,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 05:18 UTC：已审聊天配置App+紧凑摘要/CTX02证据及63源登记在本分支组合检查通过，见本次集成记录。main观察6b4b89f；下一动作受控fast-forward，服务61227/61228不重启。
 
 2026-10-06 05:23 UTC：O05 owner提案领域和共享挂载均已独审，受控合并目标scope零diff；下一步发布64源并把main receipt交原owner领取受限graph授权后继。常驻服务仍保持旧center/runner，安全更新另由SVC02负责。
+
+2026-10-06 05:50 UTC：本批固定scope及组合检查见集成记录；部署版本fb906和main候选分开，0新增模型。
