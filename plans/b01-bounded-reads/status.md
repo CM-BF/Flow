@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:01:12 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:03:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra（lead mika） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance |
 | Branch | codex/bounded-read-performance |
 | 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / 70af7b45814d5ed31d9638649512358e1a0a834b（实现target；metadata HEAD由Git聚合） |
 | 工作树dirty状态 | 本次开始b563826 clean；仅修正status UTC格式与保存聚合回执 |
-| 工作分支状态 | completed（branch，代码与after证据已批准；待main接收） |
+| 工作分支状态 | completed（已审实现与证据已接收main） |
 | 检查状态 | PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后23项检查/8.887秒通过 |
-| 已集成main状态 / HEAD | 未集成 B01；03:49:08 main ac4e34de2331dce276440df8969883c1883060ef clean |
+| 已集成main状态 / HEAD | 已集成B01；main8f1481df880cf5077e1ddb9a8f302fe700a7ece8，已核b563826祖先/两产品文件相同 |
 | 实现目标 | 70af7b45814d5ed31d9638649512358e1a0a834b |
 | 实现范围 | apps/server/src/m2-workspace.ts, apps/server/src/m2-workspace.test.ts, experiments/bounded-reads |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 已修复workspace历史扫描，8项PG回归通过 |
-| 下一可用交付 | 代码与after证据均已批准，等待Execution Lead接收main |
+| 当前产出 | B01已接收main，源码/证据已审，owner停止写入 |
+| 下一可用交付 | main已接收；本次metadata提交后停止写入并release claimv2 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 实现target70af7b4及after证据SHA256437262b7 |
@@ -27,7 +27,7 @@
 | B01-01 | completed | b01_bounded_reads | [首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选8组等价、已交具体修复 |
 | B01-04 | completed | b01_bounded_reads | 实现70af7b4已审；8/8功能，after23检查/8.887秒通过 |
 | B01-02 | completed | mika / b01_bounded_reads | [APPROVED target70af7b4](review.md)，独立8/8；after样本/hash/清理已独立复核 |
-| B01-03 | pending | Execution Lead | 未集成 |
+| B01-03 | completed | Execution Lead | main8f1481df880cf5077e1ddb9a8f302fe700a7ece8已含b563826；两产品文件与已审70af7b4零diff |
 
 ## 检查、风险与下一步
 
@@ -82,3 +82,9 @@ mika独立核7个sourceFiles hash与source748df2d/实现70af7b4/工作树一致�
 本次metadata-only；将标准更新时间写为parser支持的无毫秒UTC格式，P03检查前缀/TODO状态按标准值填写（B01原检查/TODO已标准）。源码/原始测试与性能证据未改，不重跑已通过行为测试。main只读核实8f1481df880cf5077e1ddb9a8f302fe700a7ece8；本feature集成事实仍待Execution Lead接收。
 
 04:01:12.915Z live再次确认：issues=[]、current=true、review approved、checks passed、implementation unchanged，更新时间已可解析；见docs/evidence/b01/dashboard-format-receipt.json。
+
+## 2026-10-06 04:03:11 UTC main接收与停止写入
+
+Execution Lead已接收main8f1481df880cf5077e1ddb9a8f302fe700a7ece8。owner独立只读核b563826是该main祖先；apps/server/src/m2-workspace.ts与test.ts对已审70af7b4零diff。B01-03完成；不将此前分支检查冒充新增main测试。历史待接收文字仅记录当时状态。
+
+本次仅更新owner接收metadata，提交后明确停止B01全部scope写入。已核claim827ff1f2-bb11-45c3-824c-4ce63ab39a55仍active version2；随后原子release，实际release事实以ledger回执为准并交Mika/Execution Lead保存，不在release后回写本范围。无后续修复或运行计划。
