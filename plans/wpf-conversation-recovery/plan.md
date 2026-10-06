@@ -46,3 +46,7 @@ Send/Queue均先从现绑定检查本稿完整Input选择与composer同序、同
 ### 2026-10-06 16:23 UTC — 当前定向检查事实
 
 固定1b8的27个受控IDB/mock-fetch直接用例已单次通过，execution HEAD0eef，runner2.034s、清理fulfilled，累计4.574/30s。[原始结果](../../docs/evidence/wpf-conversation-recovery/direct-second.json)。完整实现仍需真实App/cookie/CSRF/SSE/刷新旅程及固定独审；TODO不因局部检查全数关闭。当前types/browser未运行，剩余预算不自动授权新运行。
+
+### 2026-10-06 17:09 UTC 验证入口修正
+
+RECOVERY01-05真实浏览器入口先修原fixture代理传输：public Host/Origin/Sec-Fetch-Site按浏览器请求送达私有center；多个Set-Cookie分别转发，SSE保持流式取消/清理。只改既有fixture及own记录，当前source-only；历史1b8 direct27不覆盖该修正，browser与三项中心语义仍未验。

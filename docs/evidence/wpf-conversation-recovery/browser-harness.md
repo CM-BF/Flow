@@ -1,6 +1,6 @@
 # Recovery browser harness — prepared, NOT_RUN
 
-The browser/fixture source is a future entry, not execution permission. No PG, browser, HTTP, Vite import, new types or dependency writes were run for RB1–RB4. Overall feature review remains NOT_STARTED. The existing 20/20 controlled-IDB baseline belongs only to 4ba; the subsequent source now contains 27 cases (including material completeness/order); that target has not run.
+The browser/fixture source is a future entry, not execution permission. No PG, browser, HTTP, Vite import, new types or dependency writes were run for RB1–RB4. Overall feature review remains NOT_STARTED. The existing 20/20 controlled-IDB baseline belongs only to 4ba; the subsequent fixed1b8 controlled-IDB/mock-composer/mock-fetch target passed27 cases (see direct-second evidence). That does not execute this browser entry or validate the later native HTTP fixture delta.
 
 ## Ownership and budget Interface
 
@@ -33,3 +33,9 @@ No matrix item is marked passed from this preparation. A successful bounded subs
 The binding now owns a small `syncComposerDraft` operation. React triggers it on Input publish but keeps the existing preparation watcher bound only to its real lifetime. Synchronization checks current capability/readiness/lease, immutable item membership, held submission, current composer IDs and in-transit IDs after each completed add. The pinned core appends complete metadata synchronously; no file/network preparation is started. Two controlled-composer direct cases are prepared for verified restoration/deduplication/removal and paused add settlement/revocation/held-next-draft isolation; NOT_RUN. The browser case checks real official composer DOM and filename after Browse, retaining the exact first-request attachment-reference assertion. Original 7244 evidence is unchanged.
 
 02d follow-up: the single-file chip journey is retained historically; current candidate prepares A,B verification in reverse arrival order, with the original ordered pair checked on the first actual turn POST and unknown retry body. This is NOT_RUN and does not extend the 90s/15s-cleanup budget.
+
+## Native HTTP proxy correction — source only
+
+The fixture now uses node:http.request to its owned center socket while forwarding the browser public Host and the existing allowlist of raw caller headers, including duplicates. It does not manufacture Origin or Forwarded headers. Request bytes are forwarded unchanged with an explicit body length. Response Set-Cookie arrays remain separate; ordinary and SSE responses pipe with backpressure. Browser close, lifecycle abort and transport errors destroy the owned upstream request/response; late errors remain handled. Deliberate lost ACK drains the committed response and then destroys the browser response.
+
+This replaces the Node fetch Host-normalization seam; it does not change center authentication, permissions or cookie protocol. The new fixed source and all19 hashes are in native-proxy-checkpoint.json. No HTTP/type/browser execution was performed. Future admission must bind the new actual metadata HEAD/hashes and still satisfy90s including15s cleanup, resource prerequisites, and the unresolved central semantics. Historical1b8 direct27 evidence is unchanged.

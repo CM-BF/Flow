@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 16:23 UTC |
+| 最近更新 | 2026-10-06 17:14 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段材料完整性源码固定1b8a335ecf26ece7539ad19e634508ac12ca3729；父supervisor保7244，fixture仅增第二材料；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 全19源保持1b8固定；本次只归档单次27 direct结果与owner metadata，提交前后核Git clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前fixture source checkpoint ec91d1113898e70f380f9bb503f3b5ceff9467b2；18其他源保持1b8；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | fixture源码已固定、仅own metadata收口；正常push后核local=origin/clean；18其他源保持1b8 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 草稿、未决身份和有序材料的定向恢复检查已通过；真实浏览器刷新与重新连接旅程仍待验证 |
+| 当前产出 | 原材料direct27已通过；真实浏览器fixture已改原生HTTP保公共Host，窄修尚未运行 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
 | 当前阻塞 | ACTIVE: 真实浏览器与完整构建仍等待运行资源和中心会话语义核验；本段定向检查已完成 |
 | 需用户决定 | NONE |
-| 检查状态 | 当前1b8受控direct 27/27 PASS；执行HEAD0eef，2.034s，cleanup fulfilled；累计direct4.574/30s。当前types/browser NOT_RUN，types累计52.814/60s未新增；不代表完整feature已验 |
+| 检查状态 | 历史1b8受控direct27/27 PASS（execution0eef，2.034s）；累计direct4.574/30s。新fixture delta仅静态diffcheck0，types/direct/browser NOT_RUN；types累计52.814/60s未新增 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -42,7 +42,7 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-已在App接cookie观察器/P01入口，当前源码冻结；单次27 direct已完成，下一步等待真实浏览器旅程和当前类型检查的明确门槛，不自行续跑；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
+已在App接cookie观察器/P01入口，当前fixture修复源码冻结待窄审；1b8单次27 direct已完成，下一步真实浏览器旅程须新HEAD/19hash门槛与中心语义证据，不自行续跑；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
 
 ## Dashboard同步
 
@@ -111,3 +111,11 @@ Root于2026-10-06T15:52:25.524058Z对固定 `1b8a335ecf26ece7539ad19e634508ac12c
 本次只改own metadata，19源不变；完整feature targetUNKNOWN/reviewNOT_STARTED、真实browser及当前types仍NOT_RUN，原历史失败和20case报告不改。源码继续冻结，正常push后核local=origin/clean。
 
 Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据接受](../../docs/evidence/wpf-conversation-recovery/direct-second-root-review.json)；没有独立重跑或完整feature批准。
+
+## 2026-10-06 17:09 UTC — fixture代理source-only修复启动
+
+管理[17:09:07.111Z窄观察](../../docs/evidence/wpf-conversation-recovery/native-proxy-claim.json)已本人核原21/v4/本owner/WT/branch/无overlap。Root认可[固定1b8 readiness报告](../../docs/evidence/wpf-conversation-recovery/native-proxy-readiness.md)指出Node fetch传输不能保持公共Host，与fixture的public cookieOrigin及独立center端口不符；这是源码/已固定Node行为推断，不是本次浏览器实测。仅原fixture改native HTTP传输，保caller headers、SSE/abort、逐条Set-Cookie和错误清理；中心协议不改。0runtime/import/types/PG/Chrome/free，原1b8 direct27结果与所有raw保持。
+
+## 2026-10-06T17:14:15.495150+00:00 — native HTTP fixture固定源码安全点
+
+固定 `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，只有原fixture传输修改，[19源manifest](../../docs/evidence/wpf-conversation-recovery/native-proxy-checkpoint.json)逐项核current=fixed、其余18源=1b8。原生HTTP连接owned center端口但保浏览器Host/raw caller headers，不合并Set-Cookie、不合成Origin；请求体原字节/Content-Length，响应直接pipe保SSE backpressure，浏览器close/父abort/错误销毁owned upstream，故意丢ACK先drain后断响应。全部为源码实现，NOT_RUN。旧27direct/raw不变、完整feature target UNKNOWN/review NOT_STARTED；本次0类型/运行/空间采样，剩预算未消费。

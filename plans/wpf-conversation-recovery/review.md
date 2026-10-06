@@ -37,3 +37,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 [原始日志](../../docs/evidence/wpf-conversation-recovery/direct-second.log)27/27 PASS，来源execution HEAD0eef/固定implementation1b8/19hash，supervisor2.034s、清理fulfilled。此为作者受控IDB事件端口与public-client mock fetch运行，尚非root独立复跑或真实浏览器验证。M1/M2先前源码addressed结论保留；新增定向行为证据不扩大为完整feature APPROVED。当前types/browser NOT_RUN、targetUNKNOWN、reviewNOT_STARTED；所有旧原始证据保持。
 
 Root于2026-10-06T16:23:29.859009Z独立核原始六文件/归档逐字、19固定blob和gate/run、配置与清理，并读新增材料实际case，结论 [DIRECT27_EVIDENCE_ACCEPTED_SCOPED](../../docs/evidence/wpf-conversation-recovery/direct-second-root-review.json)。该结论接受本次受控证据，未独立重跑、不推真实IDB/挂载Thread/HTTP/cookie/browser，完整feature review仍NOT_STARTED。
+
+## 2026-10-06T17:14:15.495150+00:00 — fixture native HTTP源码修正待窄审
+
+Source checkpoint `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，相对1b8只有原fixture。Root认可旧代理Host不保留的readiness推断，未给本修正运行或APPROVED。当前[manifest](../../docs/evidence/wpf-conversation-recovery/native-proxy-checkpoint.json)明确19源码、18不变及待验清单；多Set-Cookie、SSE/abort/错误路径尚无实证。本片当前types/direct/browser均NOT_RUN，历史1b8 direct27接受范围保留；三项中心语义和完整feature审查仍开放。

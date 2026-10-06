@@ -81,3 +81,9 @@ P1源码修复：所有submit在官方send/同步localreceipt前检查Input完�
 27/27 PASS，单次runner2.034s、累计4.574s，cleanup0.001s/errors=[]。500ms样本tmp最高2,766,490B、结束清理前瞬时23,910B、raw日志330B如实分开，不称物理峰值上界或内存性能收益。无源修改和新增结构/命名/复杂度问题；当前真正浏览器材料接管、持久刷新、cookie与SSE仍未验，未关闭完整review。仅metadata文本/链接/范围/git格式校验后normalpush，不再运行产品检查。
 
 原始日志直接归档，staged diffcheck仅报告 direct-second.log:10 尾部空行（exit2），保持raw不修剪；四份可写Markdown格式检查0。Root限定证据复核原报告原样归档，sha256 00834002e5f12d2ada15bbb1eccd286ad86af8e40730f090d8695400a35537a1。它不扩大检查或feature审批范围。
+
+## 2026-10-06T17:14:15.495150+00:00 — native HTTP fixture / clean-code安全点
+
+已核管理17:09:07.111Z原21/v4/owner/WT/branch/overlap[]。find-skills本地优先，复用clean-code/codebase-design/webapp-testing，实际文件hash见native-proxy-checkpoint；无安装。最小改动仅fixture原代理：nativeHTTP保公共Host和raw重复caller字段由中心校验，不另建公开HTTP层或复制认证；原字节body和Content-Length保持，多个Set-Cookie用数组。单个request Promise拥有upstream生命周期，finish幂等，普通body与SSE共用pipe/backpressure，browser close及父abort销毁上游；迟到错误handler保留到对象回收避免未处理error，响应完成/close listeners显式移除。已静态检查迟到response在settled后销毁、同步end异常和截断aborted错误路径。无新增运行时事实。
+
+命名/职责/错误处理/重复复核：没有新增模块/权限/状态机，原DB lease/父supervisor/受理与故意丢ACK语义不改。static diffcheck0；所有19源码current=fixed、18=1b8。当前types/direct/browser NOT_RUN，旧1b8 direct27和首失败raw保持；三项中心语义、真实IDB/HTTP/cookie/SSE仍未验。仅源码、Git和小metadata操作；0产品import/测试/PG/Chrome/free。完整feature NOT_STARTED。
