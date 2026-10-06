@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 23:36:16 UTC |
+| 最近更新时间 | 2026-10-06 23:43:16 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,20 +11,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；接收metadata065938bf；首源码9abf0993；文本/lease37cf1c28已静态复审；本次固定可信host发布修复，未main |
-| 工作树 dirty 状态 | 供给overlay已在065938bf固定；当前仅v8所领源码/测试/metadata变更，随本checkpoint提交 |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；源码ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc已静态复审；本次仅固定轻量验证准备，未main |
+| 工作树 dirty 状态 | 启动ade4 clean；本次只改原两metadata内的审查/配置/输入与依赖请求，源码冻结，随本packet提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 当前enable/binding；资源低于门槛，0测试/types/import/build/install/PG/browser/provider；历史通过不移用 |
-| Review | CHANGES_REQUESTED 当前领域源码；37cf文本/lease两P2已源码复审关闭，可信host发布第3P2已修待审；所有真实检查仍NOT_RUN；历史批准不移用 |
+| Review | APPROVED 仅ade4源码静审/3项P2源码关闭；checks NOT_RUN，最终运行与生产集成审查未开始；[收据](../../docs/evidence/x01/enable-binding-static-review.json) |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | 领域合同/034/命令与读回/窄host已写；三项静态P2修复及合同、PGHTTP、真实包与Web直接消费者源码已补，可信host增量待审，全部检查待运行 |
+| 实现目标 | 领域合同/034/持久binding/窄host及直接消费者源码已静态审查；当前准备最小合同与真实包验证，后续中心事务/实际runner验收未完成 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 静态安装与双阶段权限已交付；启用、冻结工具任务和实时授权源码已形成，可信宿主发布门禁已补，等待验证 |
-| 下一可用交付 | 可信宿主发布修复交静态审查；随后交直接消费者与真实专库验证，生产runner调用仍待共享资格与恢复接线 |
-| 当前阻塞 | ACTIVE: 工程检查因资源门槛尚未开放；源码实施可继续。生产挂载仍待共享claim能力/恢复guard接线 |
+| 下一可用交付 | 先供给最小本树依赖并验证合同与真实自有包执行；中心事务与浏览器使用独立后续窗口，生产runner调用仍待共享资格与恢复接线 |
+| 当前阻塞 | ACTIVE: 本树依赖尚未供给，检查外壳与资源窗口未开放；已交[精确请求](../../docs/evidence/x01/enable-binding-dependency-view-request.json)。生产挂载仍待共享claim能力/恢复guard接线 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -129,3 +129,5 @@
 2026-10-06 23:29:27 UTC：Mika完成9abf静态审查，CHANGES_REQUESTED/两项P2：不可持久化文本与锁等待跨lease后仍可授权。文本修复a81保留并补reason拒绝；phase在command缓存/首次插入所有可能阻塞操作后再次clock_timestamp检查，过期整事务回滚。新增3个未运行PGcase：registration等待、首次command等待及缓存replay等待；专属application_name+实际pid/pg_locks未grant屏障证明请求已越过初始live，按原lease与DB时钟再放锁，核409和无新增授权/command。最终检查不称直到COMMIT的绝对墙钟原子。当前计划PG共9case、合同6组/runner11case与旧直接consumer，全部NOT_RUN。源码仍v8范围，0生产挂载/模型/PG/工程check；待固定静态复审与依赖/运行窗口。
 
 2026-10-06 23:36:16 UTC：37cf文本与lease静态复审分别通过，原两P2源码关闭但检查仍NOT_RUN；可信host发布第3P2已在routes/store加入本地同步policy，缺省拒绝、冻结认证tuple、INSERT前严格true授权。新增1个PGHTTP反例源码核无policy/未授权runner/错误store不留行、正确tuple随后可发布；目前中心计划10case而非通过数。23:31附近协调ECONNREFUSED期间保持37cf clean停写；Lead恢复原服务后本owner23:35:45.596Z核v8 ACTIVE/17scope未变才续写。共享factory/config/旧host未改，资源仍不足checks，0types/tests/import/PG/provider。当前source增量待固定独审，完整X01未完成。
+
+2026-10-06 23:43:16 UTC：ade4可信host静态复审23:38:28通过，原三P2全部源码关闭；[范围收据](../../docs/evidence/x01/enable-binding-static-review.json)与review首状态/target已对齐当前ade4，历史9ab结论保留。fresh23:39:19.839核v8 ACTIVE后只整理[分段验证](../../docs/evidence/x01/enable-binding-validation-plan.md)/50TS输入/7精确依赖链接请求：0依赖复制、0供给/安装/import/工程运行，17静态case包括11真实tar子进程而非pure。PG/浏览器后续独立资源封套，两个审计label不触发历史整旅程。Lead23:41:52.953实际4320显示182任务、X01正确新WT/live/current/nonstale/issues[]，当时ade4/dirty4为本准备段，如实记录而非新采样。源码/034/旧host/sharedruntime冻结；本片未main、完整X01未完成。

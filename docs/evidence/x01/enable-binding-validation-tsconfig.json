@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../packages/contracts/src/plugin-runtime.ts",
+    "../../../packages/contracts/src/plugin-runtime.test.ts",
+    "../../../apps/runner/src/plugins/execution.ts",
+    "../../../apps/runner/src/plugins/execution.test.ts"
+  ],
+  "exclude": ["../../../node_modules"]
+}

@@ -1,10 +1,12 @@
 # X01 当前 enable / frozen binding 实施
 
-状态：CHANGES_REQUESTED
+状态：APPROVED（仅ade4源码静审，checks NOT_RUN）
 
-Review target commit：首源码9abf099326a78d4777fed1bdf9d986b3597ad5a3；37cf1c28d8dd1e45fe1bb3cadda1c6658aac5f56文本/lease源码复审已关闭两P2；当前可信host发布第3P2修复待固定复审，最终验证target未产生。
+Review target commit: ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc
 
-唯一owner已转入plugin-enable-binding树，claim6ddedc73 v8 ACTIVE；正式034已分配。已形成领域enable/disable、immutable binding/phase gate和窄host源码，尚无新工程检查或实现批准。前包动态SQL遗漏已由067显式补012/013/017/019；545文件全部供给。browser旧X03输出已改X01排他namespace，未运行；测试/typecheck/PG均NOT_RUN。先固定小合同/DDL交独审，旧host/center/leaf批准仅对应下文原target，不套用新生产链。
+唯一owner已转入plugin-enable-binding树，claim6ddedc73 v8 ACTIVE；正式034已分配。当前15源码/测试/DDL的领域enable/disable、immutable binding/phase gate、窄host及直接consumer静态审查完成，三项P2仅源码关闭；[静态收据](../../docs/evidence/x01/enable-binding-static-review.json)。db_transaction_owner于23:38:28确认ade4可信host修复，Mika接收。没有运行验证或生产接入批准，新[验证准备](../../docs/evidence/x01/enable-binding-validation-plan.md)尚未获执行窗口。前包动态SQL遗漏已由067补012/013/017/019；545文件全部供给。browser旧X03输出已改X01排他namespace，未运行；所有tests/typecheck/PG均NOT_RUN。旧批准只对应下文历史target，不套用新生产链。
+
+以下9abf发现/早期增量状态是历史记录，不覆盖上述当前ade4静态结论。
 
 2026-10-06 23:27:49 UTC：Mika对9abf静态审发现1P2（新输入/包输出接受NUL或孤surrogate，会导致PG text/jsonb不能持久化）。当前在已领合同/execution修复，不变更旧host或共享lib；合同反例与真实package输出反例源码已加，静态闭环及实际验证仍待，不将此记录为APPROVED。
 
