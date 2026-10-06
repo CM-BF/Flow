@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:21 UTC；描述符比较窄修与3纯例已固定待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:23 UTC；描述符窄修获独审，新记录已准备待START |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,18 +12,18 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 固定源码停写；本次仅own metadata提交，clean以实际Git回执为准 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736（新增3纯例3/3；原18不同未重跑）；实际发布NOT_RUN |
 | 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
 | 实现目标 | 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 |
 | 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs, docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已修正同值产物因字段顺序被误拒的问题；未知字段和实际值变化仍会停止发布。 |
-| 下一可用交付 | 增量独审后以全新现场准入继续原受控发布，不复用失败窗口。 |
+| 当前产出 | 保留产物比较已修正并通过独立核验；新的操作记录已准备，个人更新仍未开始。 |
+| 下一可用交付 | 收到准确源窗口START后，以新现场准入完成原定受控发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；原0a8独审保持，descriptor窄修待Lead增量独审；原21:18失败不改 |
+| Review | [review.md](review.md)；Lead APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，146fixed/145current无差；原0a8批准及211659失败保持 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
 | 架构影响 | 仅证据范围的单次operator：确认Adapter复用host锁/同runner行锁，私有原件与audit先于精确字节替换；普通idle与产品API不变。准备未集成/未个人运行，待Execution Lead登记固定target。 |
 

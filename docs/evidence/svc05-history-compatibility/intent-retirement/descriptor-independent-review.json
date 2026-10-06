@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T21:22:38.645962+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "decision": "APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA",
+  "target": "6e7109c47b41ae6d45fdcc9a8ef365375dcd2736",
+  "cleanDelivery": "20f42c2c7ad1132d2497214e2b35b2f7b5b86f11",
+  "baseApproval": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+  "manifest": {
+    "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-manifest.json",
+    "sha256": "d4048e0b49fe7edd18725d68c5484efe899af97e858f6706eb4bfcb159dff6eb",
+    "fixed": 146,
+    "presentCurrent": 145,
+    "mismatches": []
+  },
+  "findingClosed": "211659 saved descriptor has the same exact three string fields in different insertion order; old JSON.stringify rejected only retained. New comparison ignores key insertion order but requires exact keys/values and retains artifact list order and membership. Original hash/bytes/compatibilityId and all other preservation predicates unchanged.",
+  "scope": [
+    "docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+    "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs"
+  ],
+  "originalChecks": {
+    "red": 3,
+    "green": 3,
+    "totalMs": 116,
+    "old18Rerun": 0
+  },
+  "reviewerRerun": 0,
+  "findings": [],
+  "limits": [
+    "Original 211659 step02 remains failed, steps03+ never executed; this is not a new personal probe",
+    "Prior executable approval remains in scope; next operation requires a new exclusive reservation and same fixed af51 source window with fresh gates",
+    "No PG/provider, service, retirement or release result demonstrated by the local checks"
+  ]
+}

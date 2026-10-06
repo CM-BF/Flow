@@ -117,3 +117,7 @@ Execution Lead APPROVED_EXECUTABLE_PREPARATION target0a8dd95bae123b3c749d859a42c
 ## 2026-10-06 21:21 UTC descriptor窄修待增量独审
 
 source6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，全局JSON等价不变；只严格三字段artifact对象及有序artifact数组复用专用比较。3纯例red→green，真实保存01反例通过；原18不重跑、真实个人窗口未重开。原失败raw/manifest保持，作者不自批。
+
+## 2026-10-06 21:23 UTC 描述符增量独审通过
+
+Execution Lead独立APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA，target6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 / clean20f42c，146fixed/145current无差，原3新raw只读核、旧18未重审重跑。原件[descriptor-independent-review](../../docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-independent-review.json)。原211659 manifest14项原字节再次核一致，原failed不变；新exclusive记录已准备，个人retirement request仍未生成，等START。
