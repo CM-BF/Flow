@@ -44,3 +44,10 @@ bootstrap先核现0700/0600私有配置、DB marker/runner token hash、自有PI
 依赖Node24.20/pnpm9.15.4，冻结安装无锁变更。仅显式本域Vitest路径，以及Node `--import tsx --test tools/personal-preview/{maintenance,preview,environment,process}.test.mjs`；host refresh检查clean源码，输出先写独立tmp，完成再归档，不在测试途中制造dirty。metadata无新行为不重跑。
 
 2026-10-06 05:23:40 UTC clean-code交付复核：domain集中状态/CAS/审计，routes只解析和授权角色；host只负责私有持有与进程协调，沿用原启动实现、无第二scheduler/credentials路径。锁只围绕DB事实，错误失败关闭；缩进修正不改变已测行为。测试超时资源误用已修，不延长timeout、跳断言或删除失败。剩余：shared接线/独立review/真实窗口另由Lead处理；HTTP maintenance恢复特意不开放。本段本地find-skills/codebase-design/clean-code/brainstorming/tdd已实际读用，无新技能安装。
+
+
+## 独立批准及单runner范围
+
+Root独立只读APPROVED固定9aa790552cb8847d6feb8c8f90c870407a54e572，现场clean129cc7751900809e321080d770c8a55710954ab1；核17source/12raw、manifest `6f46cd26a2435353d3e77e9f71fdd6f7ca418ed8d7736f50bfe814deb605805b`，完整代码/测试/输出，无blocking，0重跑。见[正式review](../../../plans/svc02-preview-refresh/review.md)。
+
+批准仅单个受管runner的本机预览更新，不是整个center的多runner排空。真实部署窗口前必须确认全DB没有其他runner未完成attempt、没有其他活动runner部署；存在或未知时不能只凭本runner0就停止center，应保持暂停并升级协调。查询快照不是锁，idle runner无心跳时只能标unknown，不能推断其部署离线。产品实现不扩范围，原始manifest与source/raw保持不变；真实窗口由Root另确认。
