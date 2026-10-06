@@ -1,3 +1,5 @@
+import { normalizeGoalInput } from '../goal-context/input.js';
+import { freezeGoalContext } from '../goal-context/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -44,11 +46,13 @@ async function explain(client: PoolClient, state: GoalState, kind: GoalExplanati
 async function defineInput(client: PoolClient, state: GoalState, input: Extract<GoalCommand, { kind: 'define-input' }>): Promise<Result> {
   const current = state.inputs.get(input.nodeId);
   if ((current?.version ?? 0) !== input.expectedInputVersion) throw new HttpError(409, 'input_version', 'Refresh the actual input version before editing.');
-  if (current && canonical(current.input) === canonical(input.input)) return {
+  const actualInput = normalizeGoalInput(input.input);
+  if (current && canonical(normalizeGoalInput(current.input)) === canonical(actualInput)) return {
     goalId: state.goal.id, nodeId: input.nodeId, inputVersion: current.version, changed: false, explanation: await inputExplanation(client, state.goal.id, input.nodeId, current.version),
   };
   const version = input.expectedInputVersion + 1;
-  await client.query('INSERT INTO flow.goal_inputs(goal_id,node_id,version,input,project_revision) VALUES($1,$2,$3,$4,$5)', [state.goal.id, input.nodeId, version, JSON.stringify(input.input), state.project.project.revision]);
+  await client.query('INSERT INTO flow.goal_inputs(goal_id,node_id,version,input,project_revision) VALUES($1,$2,$3,$4,$5)', [state.goal.id, input.nodeId, version, JSON.stringify(actualInput), state.project.project.revision]);
+  await freezeGoalContext(client, state.goal.projectId, state.goal.id, input.nodeId, version, actualInput);
   await client.query(`INSERT INTO flow.goal_nodes(goal_id,node_id,input_version) VALUES($1,$2,$3)
     ON CONFLICT(goal_id,node_id) DO UPDATE SET input_version=EXCLUDED.input_version`, [state.goal.id, input.nodeId, version]);
   const explanation = await explain(client, state, input.kind, `Actual input version ${version} was saved. ${input.reason}`, { nodeId: input.nodeId, inputVersion: version });

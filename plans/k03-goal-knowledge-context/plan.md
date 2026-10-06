@@ -18,3 +18,5 @@ source head一次有界metadata读取；版本变化即stale（即便digest相�
 runner define-input仅保留现owner有序refs，增删换序拒绝；knowledge-bearing execute首片owner-only。校核在commandInTransaction新命令分支内，旧ACK重放不被当前refs变动误拒；原无refs行为保留。runner input读取不返回冻结正文，不把旧节点grant扩成knowledge grant。
 
 当前8scope允许合同、纯helper和新module/tests；goals/commands.ts、021、runners.ts/runner.ts、reconciliation.ts未授权前不写。共享hook未接明确未交付，不能fixture注入替代生产。新detail走goal-context register，无需改goals/index则交还。所有新测试唯一DB/动态端口正常关闭DROP、0模型/云；旧consumer安全副本保留bodies/hash，不能触flow_o01/flow_c02。
+
+直接消费者还包括O03/O06 migration tests：无knowledge输入不得无条件join021表或增加source查询，不吞缺表错误；生产入口必须在请求前迁移021。新metadata仅对实际有refs的input/execution有界读取。保留旧阶段migration测试原断言，在实际组合点明确是否升级迁移fixture。
