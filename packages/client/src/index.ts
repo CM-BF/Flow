@@ -1,3 +1,4 @@
+import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
 import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
@@ -74,6 +75,34 @@ export class FlowClient {
     const query = new URLSearchParams({ nodeId: options.nodeId });
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
+  }
+
+  registerPlugin(input: PluginRegistration, key: string, signal?: AbortSignal): Promise<PluginMutationResult> {
+    return this.request('/api/plugins', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  commandPlugin(id: string, input: PluginCommand, key: string, signal?: AbortSignal): Promise<PluginMutationResult> {
+    return this.request(`/api/plugins/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  plugins(options: { projectId?: string; after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginList> {
+    const query = new URLSearchParams();
+    for (const name of ['projectId', 'after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugins${query.size ? `?${query}` : ''}`, { signal });
+  }
+  plugin(id: string, revision?: number, signal?: AbortSignal): Promise<PluginSnapshot> {
+    return this.request(`/api/plugins/${encodeURIComponent(id)}${revision === undefined ? '' : `?revision=${revision}`}`, { signal });
+  }
+  pluginVersions(id: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginVersions> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugins/${encodeURIComponent(id)}/versions${query.size ? `?${query}` : ''}`, { signal });
+  }
+  pluginOperations(id: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PluginOperations> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugins/${encodeURIComponent(id)}/operations${query.size ? `?${query}` : ''}`, { signal });
+  }
+  pluginOperation(id: string, operationId: string, signal?: AbortSignal): Promise<PluginOperation> {
+    return this.request(`/api/plugins/${encodeURIComponent(id)}/operations/${encodeURIComponent(operationId)}`, { signal });
   }
 
   createConversation(input: ConversationCreation, key: string, signal?: AbortSignal): Promise<ConversationCreated> {

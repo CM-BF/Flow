@@ -1,3 +1,4 @@
+import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
 import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
 import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
@@ -40,6 +41,7 @@ export async function createServer(options: ServerOptions) {
     await migrateProtocolDispatch(pool);
     await migrateGoals(pool);
     await migrateConversations(pool);
+    await migratePlugins(pool);
     await migrateAssistantMessages(pool);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
@@ -83,6 +85,7 @@ export async function createServer(options: ServerOptions) {
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
   registerConversationRoutes(app, pool, boss);
+  registerPluginRoutes(app, pool);
   registerAssistantRoutes(app, pool);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
