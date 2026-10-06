@@ -1,6 +1,13 @@
 # WPF-PROFILE01 独立审查
 
-**APPROVED — 仅独立模块片。** 无未关闭 blocking finding。
+**状态：NOT_STARTED**
+
+Review target commit：4f1985769564eafad9218570411d5ce1114b4ec0
+Base：4e0289f29ffa48c6c49003837d4520f57c22b6b0。
+
+后继作者：16局部tests、Web typecheck、5组混合目录HTTP浏览器已过；root新target审查待回。
+
+以下为历史a28/4e APPROVED记录，仅旧合同独立模块片；新target不继承。
 
 ## 固定目标
 

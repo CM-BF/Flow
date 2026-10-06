@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | WPF-PROFILE01 |
-| 状态 | completed |
+| 状态 | in-progress |
 | 创建 / 更新 | 2026-10-06 04:49 UTC |
 | Owner / model | w01_owner / gpt-6-astra ultra（派发指定；运行上下文为 GPT-6） |
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles / codex/web-execution-profiles |
@@ -18,7 +18,7 @@
 - [x] **WPF-PROFILE01-01** 目录分页、刷新/错误/中止与连接隔离的不可变投影。
 - [x] **WPF-PROFILE01-02** 整份配置选择、深冻结 creation、完整 pin 回执核对、旧无 pin 兼容。
 - [x] **WPF-PROFILE01-03** 受控选择器与 HTTP fixture；浅深主题、390px、键盘、错误恢复和未知回执锁定。
-- [x] **WPF-PROFILE01-04** 独立审查、修复、固定模块交接；主 App 集成另领。
+- [ ] **WPF-PROFILE01-04** 独立审查、修复、固定模块交接；主 App 集成另领。
 
 ## 设计与验证
 
@@ -29,3 +29,7 @@
 测试通过公开模块接口与真实 FlowClient HTTP fixture；不调用模型/数据库。只运行本模块与类型检查、隔离浏览器。未验证真实中心/runner/provider、App 接线、Safari/Firefox/屏读。方法及实际发现见 [quality](../../docs/evidence/wpf-profile01/quality.md)，接口见 [interface](../../docs/evidence/wpf-profile01/interface.md)。
 
 本模块交付已获独立APPROVED target a28c78cc3a1ac8557f7fd95afa074c4971128246；completed仅指本计划模块范围，App接入与真实中心另片，见review边界。
+
+## 02683后继差异
+
+2026-10-06 04:50 UTC Lead固定02683be019ae75591b21c1ada64e01669678f068扩展goal-tools。恢复01/02/03/04已有稳定TODO的后继适配，保留历史a28完成证据：DirectoryProfile仅目录声明；Selection必须显式none/configured-readonly allowlist。混合页保留goal-tools/unknown禁选项和cursor，已知goal-tools无read approval/空material约束继续验证。新target独立复审后才称后继完成。
