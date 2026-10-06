@@ -1,0 +1,200 @@
+{
+  "at": "2026-10-06T20:24:02.675285+00:00",
+  "verdict": "DIRECT50_EVIDENCE_ACCEPTED_SCOPED",
+  "reviewer": "root independent retained evidence/source binding review, no rerun",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "runtimeHead": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "run": "recovery50-20261006-202206-1188c7",
+  "actualResults": {
+    "tests": 50,
+    "passed": 50,
+    "failed": 0,
+    "pending": 0,
+    "todo": 0,
+    "newRestoreCases": 12,
+    "actualExitCode": 0,
+    "parentResultElapsedMs": 3099,
+    "parentResultCumulativeMs": 9967,
+    "terminalPostWriteElapsedMs": 3100.050624925643,
+    "terminalPostWriteCumulativeMs": 9968.050624925643,
+    "remainingArithmeticMs": 20031.949375074357,
+    "conservativeIntegerCarryMs": 9969,
+    "captureWallMs": 3159.4271659851074,
+    "timeMeaning": "Retain all actual timing fields; terminalpostWrite includes result writing and governs new accounting. Do not reuse earlier9967ms from result as the later settlement. CaptureWall is observation harness wall time, separately attributed.",
+    "pgid": 98483,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+    },
+    "terminalPostWrite": {
+      "tmpBytes": 201465,
+      "rawBytes": 201465,
+      "resultBytes": 5730,
+      "freeBytes": 1304555520,
+      "softStopSignal": null,
+      "elapsedMs": 3100.050624925643,
+      "cumulativeMs": 9968.050624925643,
+      "withinLimits": true
+    },
+    "pageBrowserHttpPg": "NOT_RUN",
+    "provider": 0
+  },
+  "verified": {
+    "exactSourceHashes": 19,
+    "gateBindingRunnerSandboxMatch": true,
+    "sourceCasesPassed": 12,
+    "actualExitAndStdoutAndResultAgree": true,
+    "originalFailedBrowserFilesPreserved": 10,
+    "filesPinned": 14,
+    "rootTestsRepeated": false,
+    "rootFreeOrPersonalServiceSampling": false,
+    "rootProjectWrites": false
+  },
+  "caseEvidence": [
+    {
+      "name": "App restore owner seam with deferred real projection refresh keeps and checkpoints text edited after Restore started, with zero POST",
+      "status": "passed",
+      "durationMs": 60.6981659999999
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh keeps and checkpoints intent only edited after Restore started, with zero POST",
+      "status": "passed",
+      "durationMs": 53.78829100000007
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh keeps and checkpoints profile only edited after Restore started, with zero POST",
+      "status": "passed",
+      "durationMs": 52.14591699999983
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh keeps and checkpoints knowledge edited after Restore started, with zero POST",
+      "status": "passed",
+      "durationMs": 52.26037500000007
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh keeps and checkpoints attachment edited after Restore started, with zero POST",
+      "status": "passed",
+      "durationMs": 52.61095799999998
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh keeps and checkpoints steering edited after Restore started, with zero POST",
+      "status": "passed",
+      "durationMs": 52.25304199999982
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh keeps a new-chat project edit made while the original record is being read",
+      "status": "passed",
+      "durationMs": 1.1672909999999774
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh detects edit then revert by the lease even when the final full value equals the initial draft",
+      "status": "passed",
+      "durationMs": 53.47870899999998
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh applies an unchanged full draft once despite benign initialization notifications",
+      "status": "passed",
+      "durationMs": 53.26983400000017
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh rejects a second same-view Restore and a new send handoff while the first read is pending",
+      "status": "passed",
+      "durationMs": 54.33620900000005
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh retains changes across public namespace=null and checkpoints on same-namespace reauthentication",
+      "status": "passed",
+      "durationMs": 51.57691699999987
+    },
+    {
+      "name": "App restore owner seam with deferred real projection refresh preflights the actual steering owner before applying any restored editor field",
+      "status": "passed",
+      "durationMs": 51.77470900000003
+    }
+  ],
+  "meaning": "Actual controlledIDB/mockfetch evidence for the App-used restore seam, complete-draft edit conflict/ABA/CAS and real projection/lease/steering preflight. This accepts the author isolated run; root did not rerun. Original38 remains original evidence and the new50 genuinely executed at2b01.",
+  "limitations": [
+    "No mounted Workspace/Thread/editor, full App material preparation callback or native browser IndexedDB.",
+    "Realbrowser first failed attempt and incomplete full recovery journey are unchanged, not green.",
+    "Full feature review remains NOT_STARTED/target UNKNOWN; no main integration or personal deployment claimed.",
+    "Resource samples are logical/observational; no exclusive physical allocation or final-byte deadline guarantee.",
+    "Next runtime requires new exact preparation/admission and remaining budget; current run consumed its gate and already returned its window."
+  ],
+  "files": [
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/result.json",
+      "bytes": 5730,
+      "sha256": "4d32e4908bfc0d4fff0d46f46169ea27b0f1f207febf5b4a2ae13415b4cfa3d2"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/vitest-results.json",
+      "bytes": 21764,
+      "sha256": "8717e0e18b40c88cc35c70e6f2a2a6428c3c4213899dd6d2328c6c4b220127cf"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/step-results.json",
+      "bytes": 95,
+      "sha256": "1c3ad8e5780e0472b872a4f962ae946df1f2acdbc6ac1ae204615c74d50d03bc"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/node.log",
+      "bytes": 89,
+      "sha256": "93b9bb00c6a8b303c36cad74b58eed97e6f78ce954e26646482857acb10680c9"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/binding.json",
+      "bytes": 20207,
+      "sha256": "d8d9695334341730d2bccbc09757c9f509e184ee3c59e83bdd73249569fd05f0"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/gate.json",
+      "bytes": 1163,
+      "sha256": "17f2db54371ba781656d085883172123bbe7e13e7e74cc226d004497259482e2"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/consumed-gate.json",
+      "bytes": 1163,
+      "sha256": "17f2db54371ba781656d085883172123bbe7e13e7e74cc226d004497259482e2"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/run.py",
+      "bytes": 21925,
+      "sha256": "6141801352f7274abb3b01fa6081aed2d86c7d8e416fa802a3fdd863460862e7"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/sandbox.sb",
+      "bytes": 155,
+      "sha256": "d0b18e9347463ee8e30bedd661b6bec2c54778a9e3c3662d0872d56b8f540046"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/steps.mjs",
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/vitest.config.mjs",
+      "bytes": 413,
+      "sha256": "3585695f44ae16797f0788803fdc60241e31b1ed9390eb39838325b95f5a4a8d"
+    },
+    {
+      "path": "/private/tmp/recovery50-parent-stdout.jsonl",
+      "bytes": 573,
+      "sha256": "436d5dcf20b18e61b6d9c2ace0b41619996916e42628f9ae5fbddb46700ccf85"
+    },
+    {
+      "path": "/private/tmp/recovery50-parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/recovery50-parent-exit.json",
+      "bytes": 330,
+      "sha256": "43ac80525559ae8360b059d06dfa2808864d78564767579aecd4ef33aa7f249b"
+    }
+  ],
+  "cleanCode": "Local find-skills/clean-code/webapp-testing reused to compare claim/target/entry/strict50 result, explicit post-write settlement, error/cleanup authority and actual test scope. No additional blocking issue in this evidence."
+}

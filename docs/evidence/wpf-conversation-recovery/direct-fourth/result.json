@@ -1,0 +1,161 @@
+{
+  "startedAt": "2026-10-06T20:22:40.629484+00:00",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "sourceHead": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+    "apps/web/src/attachments/controller.ts": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+    "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "apps/web/src/conversation-context/controller.ts": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+    "apps/web/src/conversation-steering/control.ts": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+    "apps/web/src/conversations/ConversationThread.tsx": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+    "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+    "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+    "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+    "apps/web/src/plugin-integration/attachments.tsx": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+    "apps/web/src/plugin-integration/knowledge.tsx": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+    "apps/web/src/plugin-integration/session.ts": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+    "apps/web/src/plugin-integration/steering.tsx": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+    "apps/web/src/recovery/binding.tsx": "e0e9772f77fe8ccacb0b2c71be8874a66c6f500faea5de01a6869b29ccbaa5a1",
+    "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+    "apps/web/test/conversation-recovery.browser.ts": "c2db801ce43eda904dad064a18515e29343e2486da55536a50aee9bfb24dba44",
+    "apps/web/test/conversation-recovery.fixture.ts": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+    "apps/web/test/conversation-recovery.test.ts": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157"
+  },
+  "bindingSha256": "d8d9695334341730d2bccbc09757c9f509e184ee3c59e83bdd73249569fd05f0",
+  "runnerSha256": "6141801352f7274abb3b01fa6081aed2d86c7d8e416fa802a3fdd863460862e7",
+  "sandboxSha256": "d0b18e9347463ee8e30bedd661b6bec2c54778a9e3c3662d0872d56b8f540046",
+  "limits": {
+    "totalSeconds": 23.132,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "kind": "one controlled IDB/mock-fetch direct file/one fork; no HTTP/PG/browser/network",
+  "samples": [
+    {
+      "seconds": 0.152,
+      "freeBytes": 1303785472,
+      "tmpBytes": 173787
+    },
+    {
+      "seconds": 0.405,
+      "freeBytes": 1303724032,
+      "tmpBytes": 173787
+    },
+    {
+      "seconds": 0.655,
+      "freeBytes": 1303310336,
+      "tmpBytes": 541839
+    },
+    {
+      "seconds": 0.907,
+      "freeBytes": 1303158784,
+      "tmpBytes": 1273942
+    },
+    {
+      "seconds": 1.159,
+      "freeBytes": 1302372352,
+      "tmpBytes": 2018259
+    },
+    {
+      "seconds": 1.413,
+      "freeBytes": 1302355968,
+      "tmpBytes": 2018259
+    },
+    {
+      "seconds": 1.664,
+      "freeBytes": 1302327296,
+      "tmpBytes": 2018259
+    },
+    {
+      "seconds": 1.917,
+      "freeBytes": 1301209088,
+      "tmpBytes": 3006320
+    },
+    {
+      "seconds": 2.17,
+      "freeBytes": 1301581824,
+      "tmpBytes": 3097666
+    },
+    {
+      "seconds": 2.423,
+      "freeBytes": 1301463040,
+      "tmpBytes": 3097666
+    },
+    {
+      "seconds": 2.677,
+      "freeBytes": 1301385216,
+      "tmpBytes": 3097666
+    },
+    {
+      "seconds": 2.93,
+      "freeBytes": 1301385216,
+      "tmpBytes": 3097666
+    },
+    {
+      "seconds": 3.098,
+      "freeBytes": 1304567808,
+      "tmpBytes": 195735,
+      "terminal": true
+    },
+    {
+      "seconds": 3.099,
+      "freeBytes": 1304535040,
+      "tmpBytes": 217594,
+      "afterReapBeforeRemove": true,
+      "groupAbsent": true
+    }
+  ],
+  "previousRuntimeMs": 6868,
+  "initialFreeBytes": 1303785472,
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/recovery50-once-en2_sud5/sandbox.sb",
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/private/tmp/recovery50-once-en2_sud5/steps.mjs"
+  ],
+  "pgid": 98483,
+  "captureErrors": [],
+  "steps": [
+    {
+      "name": "direct",
+      "exitCode": 0,
+      "signal": null,
+      "elapsedMs": 2904
+    }
+  ],
+  "direct": {
+    "success": true,
+    "numTotalTests": 50,
+    "numPassedTests": 50,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+  },
+  "softStopSignal": null,
+  "exitCode": 0,
+  "logBytes": 89,
+  "droppedObservedLogBytes": 0,
+  "elapsedMs": 3099,
+  "cumulativeMs": 9967,
+  "remainingMs": 20033,
+  "finishedAt": "2026-10-06T20:22:43.728831+00:00",
+  "state": "PASS",
+  "sourceMeaning": "Controlled IDB/mock-fetch test covers the frozen50 cases only; not actual browser IDB/schema or App authentication journey."
+}

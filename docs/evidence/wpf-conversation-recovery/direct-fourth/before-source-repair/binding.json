@@ -1,0 +1,238 @@
+{
+  "state": "CANDIDATE_NOT_RUN",
+  "task": "WPF-RECOVERY01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "head": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "claim": {
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "scopeCount": 21,
+    "worker": "workspace_panels_owner"
+  },
+  "sources": {
+    "apps/web/src/App.tsx": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+    "apps/web/src/attachments/controller.ts": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+    "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "apps/web/src/conversation-context/controller.ts": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+    "apps/web/src/conversation-steering/control.ts": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+    "apps/web/src/conversations/ConversationThread.tsx": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+    "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+    "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+    "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+    "apps/web/src/plugin-integration/attachments.tsx": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+    "apps/web/src/plugin-integration/knowledge.tsx": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+    "apps/web/src/plugin-integration/session.ts": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+    "apps/web/src/plugin-integration/steering.tsx": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+    "apps/web/src/recovery/binding.tsx": "e0e9772f77fe8ccacb0b2c71be8874a66c6f500faea5de01a6869b29ccbaa5a1",
+    "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+    "apps/web/test/conversation-recovery.browser.ts": "c2db801ce43eda904dad064a18515e29343e2486da55536a50aee9bfb24dba44",
+    "apps/web/test/conversation-recovery.fixture.ts": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+    "apps/web/test/conversation-recovery.test.ts": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157"
+  },
+  "readOnlyDependencies": {
+    "tsconfig.json": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+    "pnpm-lock.yaml": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+    "apps/web/package.json": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+    "packages/client/package.json": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+    "packages/contracts/package.json": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+    "apps/web/src/plugins/host.ts": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "apps/web/src/plugins/types.ts": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+    "apps/web/src/plugins/react.tsx": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+    "apps/web/src/plugin-integration/react.tsx": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+    "packages/client/src/active-steering.test.ts": "5b89b0dec336c682fe829ae0e8c04206f4978a6dcd094ae7e137400bd170332a",
+    "packages/client/src/assistant-stream-production.test.ts": "fa6c7a9e1be9ba9413315829f0661311e8d7d5a7441c72bebcef41aa260ad6c1",
+    "packages/client/src/assistant-stream.test.ts": "5a08ef365cd397c0a4e29f2e78961d84217e7398d4e439b96c7cfb2cb0907be9",
+    "packages/client/src/attachment-production.test.ts": "f6a3d2d86bb2195c05195f5dc6d1114bdc5253231741d88254ee1b0883f7acb1",
+    "packages/client/src/attachments.test.ts": "73af8dc0d953ad48171f850574a223b18b93ec353b443b34bf3393672733ba5a",
+    "packages/client/src/browser-session-production.test.ts": "96525e675f91e660a0c307bc5e6709fae50f574aa6dd8da6cfc9d93e7e583803",
+    "packages/client/src/browser-session.test.ts": "db0950e3ebfbc8d7fea7201b2625728b6ed7ed4e02efc3679c6d5e2974f920f1",
+    "packages/client/src/client.test.ts": "543b720b4b7bd35cb22048547abd1c03e7bbf8c6b2294d7be2f59db511984ea6",
+    "packages/client/src/context-history-production.test.ts": "35b1066de695bbc58b140825fcb1de7448ebca0b8a09068065210507a57fe0e3",
+    "packages/client/src/context-history.test.ts": "462b04fe59edc00aa190107fbef2ccce5d0c564ecd6337e31f17a6f3acf4507d",
+    "packages/client/src/context-production.test.ts": "69bdb99458ad6e4575dd9be4a307deaf9a2a2334a0c705753a65b177f32e8ca7",
+    "packages/client/src/conversation-acknowledgement.test.ts": "137239308138f0e20e28e8d97aa588aac9f73a48849f45bd409ecc855b26dbdf",
+    "packages/client/src/conversation-acknowledgement.ts": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8",
+    "packages/client/src/conversation-context.test.ts": "288ad89df9266a41a85aeea400486dd9394db5613bbdc9d579941ee51d882f61",
+    "packages/client/src/conversation-queue.test.ts": "5d06945106c8d720f579b1e1ff4ccbac4d2d0cf64b2676e30438fb46f68806bd",
+    "packages/client/src/conversations.test.ts": "f48fe8f522ceefaf8c10f866231ff98239b6bc5dbac728a1cf4c5f808177c5bd",
+    "packages/client/src/engineering-profiles.test.ts": "4b9111b1b97f1971e691efcceeb6962bdf83e0d99466d622d30d5a7303f11b4b",
+    "packages/client/src/execution-profiles.test.ts": "3d3a28aa0cadae83e108a288fe99464be5f69372dc1a614a7a1e2d92bbab8a26",
+    "packages/client/src/goal-context-production.test.ts": "8b46e61ccb67935783fc0616a5f57dec6398efa818eaa67e79d4b02ff9ab937d",
+    "packages/client/src/goal-context.test.ts": "76b2522db475e73891bb0697bf34e05861eb1be0a217a3cdd4c402215dc6fa4e",
+    "packages/client/src/goal-delivery.test.ts": "f58515fb8dddb8caa3fd39dcdb95078099e577673d8ca4a3fa53eeee37ae34af",
+    "packages/client/src/goal-graph-proposals.test.ts": "b3f2a9470f45ab5ea7a9e0f11890781501c8ffcc3ed0ba7a138963061a5ac730",
+    "packages/client/src/goal-graph-runs.test.ts": "aa64a4e9bbf9d6b545b621ca38c3f0fee228f23cd25cca31a4b9f9720bc154a9",
+    "packages/client/src/goal-native-executions.test.ts": "f8a1c85abcc2e80caceacd778d6bff92a640d38cd8c5fc9881fa557bf487290c",
+    "packages/client/src/goal-session-transport.test.ts": "dc228afde63ef9e2b9d62bfc884f6f53fda2ac3bef8fd546b8a80a6fdd189150",
+    "packages/client/src/goal-tool-runs.test.ts": "98b3a217a496028ef7c37ce7170cf8d5e7a92be021cb7621445c7b9c43c4f036",
+    "packages/client/src/graph-proposal-production.test.ts": "f4fc3a332c239205edece851c13342b603679b0a4831ff760681d5ed50bb07ff",
+    "packages/client/src/graph-run-production.test.ts": "b2fc9aa0850fb5ed6eff4adb4d9a66bedfdd8d10356d29ff43bab455f59aefeb",
+    "packages/client/src/index.ts": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483",
+    "packages/client/src/knowledge.test.ts": "603ca9978236827b259dd7e0d0cfa8ae63025e979944d1daadec5d8545098c0c",
+    "packages/client/src/native-activity-production.test.ts": "9e3e272c212911ffa9e5f1083ee09747536d5e6b425cc58883ef9e921f63de19",
+    "packages/client/src/native-activity.test.ts": "1b77b6099dde3f880ef2fd8ad0563a09ceff23add9c122f914e36358a5225cee",
+    "packages/client/src/native-profile-catalog.test.ts": "0abc50c6603312330f7194a81e8e36977bb8c1b886fecb10f3ea5b118fa29929",
+    "packages/client/src/native-profile-publication.test.ts": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a",
+    "packages/client/src/package-fetch-production.test.ts": "5231e5dbab811353c86a21591f887dc7a596adf196f4fbf271ce3dadde742d95",
+    "packages/client/src/package-fetches.test.ts": "bf05f703001517c36da0d19eb4b1ef79e56cff02c231f70ee3381cbe034d6ef1",
+    "packages/client/src/queue-production.test.ts": "918d14bbfd9e09d2252b1f66bf05e36a04b46b58bdb3cde3bab27994acc6ea12",
+    "packages/client/src/runner-maintenance.test.ts": "6db27e6f74471b2f95fd7d14243e20382bde7c298b0b7baf7fccc2568c9cae5a",
+    "packages/client/src/steering-admission.test.ts": "06e38b69943ba773369acc4afdee8e9a25f6b0584f74c7c7c75375142430e8e0",
+    "packages/client/src/steering-finalization.test.ts": "2e83cd0210c49d1631ba70a61d4187ac9c4fbbb5f4f34b68ae46dca91951d780",
+    "packages/contracts/src/active-steering.ts": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311",
+    "packages/contracts/src/assistant-stream.ts": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382",
+    "packages/contracts/src/assistant.test.ts": "babb342aa8c616f0477c7297fb7e6f5831aee022ce19f78d4addc2a5bea374df",
+    "packages/contracts/src/assistant.ts": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3",
+    "packages/contracts/src/attachments.test.ts": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127",
+    "packages/contracts/src/attachments.ts": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+    "packages/contracts/src/browser-session.ts": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+    "packages/contracts/src/context-observation-event.test.ts": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5",
+    "packages/contracts/src/context-observation-event.ts": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+    "packages/contracts/src/context-observation-history.test.ts": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b",
+    "packages/contracts/src/context-observation-history.ts": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+    "packages/contracts/src/context-transparency.test.ts": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6",
+    "packages/contracts/src/context-transparency.ts": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+    "packages/contracts/src/contracts.test.ts": "c687506e8a7f0d5bdea1cf3f322a42d0e3e9d046ae5a341b26f56ee61299769b",
+    "packages/contracts/src/conversation-context.ts": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+    "packages/contracts/src/conversation-queue.ts": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+    "packages/contracts/src/conversations.ts": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+    "packages/contracts/src/engineering-native.ts": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5",
+    "packages/contracts/src/engineering-profile.ts": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+    "packages/contracts/src/engineering.ts": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+    "packages/contracts/src/execution-profiles.test.ts": "4ce75b9b03cb138aa9dc39f3577965e73731d0a4f233f34fdbb540b142b5d49d",
+    "packages/contracts/src/execution-profiles.ts": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204",
+    "packages/contracts/src/fixtures.ts": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3",
+    "packages/contracts/src/goal-context.ts": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b",
+    "packages/contracts/src/goal-delivery.ts": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f",
+    "packages/contracts/src/goal-graph-proposals.ts": "b6da9b983a2a69d7c444e90212f6079f37f59e9a3d654af773e6b0685b88b15c",
+    "packages/contracts/src/goal-graph-runs.ts": "d1bff3839b05af2ca348b95cc70f96017bdb746d6729b6456e2fcbf9ca7008b4",
+    "packages/contracts/src/goal-native-executions.ts": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d",
+    "packages/contracts/src/goal-tool-runs.ts": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db",
+    "packages/contracts/src/goals.ts": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930",
+    "packages/contracts/src/harnesses.test.ts": "a092be1f5b3c8ce0dd3fe02954d2409710d2c504b5084eee51db6734ed24c89a",
+    "packages/contracts/src/harnesses.ts": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1",
+    "packages/contracts/src/index.ts": "b8c49088bc8feacf60b3d5b4813fd628e0b14338bf81ade017871ff83abf8a47",
+    "packages/contracts/src/knowledge.ts": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+    "packages/contracts/src/native-activity.ts": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a",
+    "packages/contracts/src/native-harness.ts": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+    "packages/contracts/src/package-artifacts.ts": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056",
+    "packages/contracts/src/plugin-package-fetches.ts": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+    "packages/contracts/src/plugins.ts": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747",
+    "packages/contracts/src/projects.ts": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0",
+    "packages/contracts/src/protocol-dispatch.ts": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea",
+    "packages/contracts/src/protocol-task.ts": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20",
+    "packages/contracts/src/reconciliation.test.ts": "c889a9afdd380058175bdc54099a1f03668dccefa6ac10668f15bbecc2489245",
+    "packages/contracts/src/reconciliation.ts": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5",
+    "packages/contracts/src/runner-maintenance.ts": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e",
+    "packages/contracts/src/runner.ts": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465",
+    "packages/contracts/src/tasks.ts": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884",
+    "packages/contracts/src/workspace.ts": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+  },
+  "externalPins": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/react/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react@19.3.0/node_modules/react/package.json",
+      "sha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/client/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/package.json",
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/contracts/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/package.json",
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/interaction/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/interaction/package.json",
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    }
+  ],
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "preparedFiles": {
+    "steps.mjs": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82",
+    "vitest.config.mjs": "3585695f44ae16797f0788803fdc60241e31b1ed9390eb39838325b95f5a4a8d"
+  },
+  "previousRuntimeMs": 6868,
+  "expectedTestCount": 50,
+  "limits": {
+    "totalSeconds": 23.132,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "commandArgs": [
+    "/private/tmp/recovery50-once-en2_sud5/steps.mjs"
+  ],
+  "steps": [
+    {
+      "name": "direct",
+      "args": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/private/tmp/recovery50-once-en2_sud5/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--no-cache",
+        "--reporter=json",
+        "--outputFile",
+        "/private/tmp/recovery50-once-en2_sud5/scratch/vitest-results.json"
+      ]
+    }
+  ],
+  "review": {
+    "verdict": "PENDING_SUPERVISOR_REVIEW_NOT_RUN",
+    "sourceReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/2b01-restore-edit-root-approval.json",
+      "sha256": "513c561b33ac9c8d2e057b05a4f5c17b2e7570711d7ce295f17fc31ac5c23a49",
+      "scope": "2b01 product source only, not this supervisor or execution"
+    },
+    "previousSupervisor": {
+      "path": "/private/tmp/recovery38-once-lsab03fv/run.py",
+      "sha256": "22b8eb121b1fe81877a70884a53777a31c1d2c5c46ca61ae8cc4d593b7db810d",
+      "reviewPath": "/tmp/root-recovery38-supervisor-review.json",
+      "scope": "Historical38; no inherited approval or gate"
+    }
+  }
+}

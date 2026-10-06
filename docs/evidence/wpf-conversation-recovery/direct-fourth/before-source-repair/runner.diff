@@ -1,0 +1,162 @@
+--- /private/tmp/recovery38-once-lsab03fv/run.py
++++ /private/tmp/recovery50-once-en2_sud5/run.py
+@@ -1,4 +1,4 @@
+-"""Single-use Recovery38 controlled direct check. Never runnable without separately pinned gate."""
++"""Single-use Recovery50 controlled direct check. Never runnable without separately pinned gate."""
+ import datetime
+ import hashlib
+ import json
+@@ -88,7 +88,7 @@
+     assert gate['sourceHead'] == binding['head']
+     assert gate['implementation'] == binding['implementation']
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+-    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 4574
++    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 6868
+     assert binding['limits']['totalSeconds'] == (30000 - binding['previousRuntimeMs']) / 1000
+     assert binding['limits']['cleanupReserveSeconds'] == 5
+     assert gate['limits'] == binding['limits']
+@@ -120,7 +120,7 @@
+         assert digest(item['realpath']) == item['sha256'], item['path']
+     for filename, expected in binding['preparedFiles'].items():
+         assert digest(BASE / filename) == expected, filename
+-    assert type(binding['expectedTestCount']) is int and binding['expectedTestCount'] > 0
++    assert type(binding['expectedTestCount']) is int and binding['expectedTestCount'] == 50
+ 
+ 
+ def child_environment():
+@@ -141,6 +141,7 @@
+ def reap_owned(process, total_deadline, limits, worktree):
+     errors = []
+     terminal = {}
++    group_absent = False
+     try:
+         signal_group(process, signal.SIGTERM)
+         until = min(total_deadline - 2.5, time.monotonic() + 1.5)
+@@ -155,29 +156,33 @@
+         until = min(total_deadline - 1, time.monotonic() + 0.5)
+         while group_alive(process) and time.monotonic() < until:
+             time.sleep(0.025)
+-        if group_alive(process):
++        group_absent = not group_alive(process)
++        if not group_absent:
+             errors.append('Owned process group remains')
+     except Exception as error:
+         errors.append('process cleanup: ' + str(error))
+-    # Child group has been reaped; inspect its final writes before removing scratch.
+-    try:
+-        terminal = {'freeBytes': available_bytes(worktree), 'tmpBytes': logical_bytes(BASE), 'afterReapBeforeRemove': True}
+-        if terminal['freeBytes'] <= limits['stopFreeBytes']:
+-            errors.append('Final resource stop threshold reached')
+-        if terminal['tmpBytes'] > limits['tmpBytes']:
+-            errors.append('Final temporary byte limit exceeded')
+-    except Exception as error:
+-        errors.append('final monitoring: ' + str(error))
+-    try:
+-        if SCRATCH.exists():
+-            shutil.rmtree(SCRATCH)
+-        if SCRATCH.exists():
+-            errors.append('Owned scratch remains')
+-    except Exception as error:
+-        errors.append('scratch cleanup: ' + str(error))
++    # Only proven group absence permits a stable tail sample and scratch deletion.
++    if group_absent:
++        try:
++            terminal = {'freeBytes': available_bytes(worktree), 'tmpBytes': logical_bytes(BASE), 'afterReapBeforeRemove': True, 'groupAbsent': True}
++            if terminal['freeBytes'] <= limits['stopFreeBytes']:
++                errors.append('Final resource stop threshold reached')
++            if terminal['tmpBytes'] > limits['tmpBytes']:
++                errors.append('Final temporary byte limit exceeded')
++        except Exception as error:
++            errors.append('final monitoring: ' + str(error))
++        try:
++            if SCRATCH.exists():
++                shutil.rmtree(SCRATCH)
++            if SCRATCH.exists():
++                errors.append('Owned scratch remains')
++        except Exception as error:
++            errors.append('scratch cleanup: ' + str(error))
++    else:
++        errors.append('Owned group remains or is unknown; scratch retained')
+     if time.monotonic() > total_deadline:
+         errors.append('Total deadline exceeded during cleanup')
+-    return errors, terminal
++    return errors, terminal, group_absent
+ 
+ 
+ def run(binding, gate):
+@@ -294,14 +299,17 @@
+         direct = captured.get('vitest-results.json', {})
+         report['direct'] = {key: direct.get(key) for key in ('success', 'numTotalTests', 'numPassedTests', 'numFailedTests', 'numPendingTests', 'numTodoTests')}
+         cleanup_started = time.monotonic()
+-        cleanup_errors, terminal_sample = reap_owned(process, total_deadline, limits, binding['worktree'])
++        cleanup_errors, terminal_sample, group_absent = reap_owned(process, total_deadline, limits, binding['worktree'])
+         if terminal_sample:
+             samples.append({'seconds': round(time.monotonic() - started, 3), **terminal_sample})
+         if process and process.stdout:
+-            process.stdout.close()
++            try:
++                process.stdout.close()
++            except Exception as error:
++                cleanup_errors.append('stdout close: ' + str(error))
+         report['cleanup'] = {'state': 'fulfilled' if not cleanup_errors else 'failed',
+                              'errors': cleanup_errors, 'seconds': round(time.monotonic() - cleanup_started, 3),
+-                             'groupAbsent': not group_alive(process), 'scratchAbsent': not SCRATCH.exists(),
++                             'groupAbsent': group_absent, 'scratchAbsent': not SCRATCH.exists(),
+                              'serverClosureBasis': 'Single direct command and fork remain in the inherited worker group; no external service used'}
+         report['exitCode'] = process.returncode if process else None
+         report['logBytes'] = log_bytes
+@@ -320,7 +328,7 @@
+                 and report['elapsedMs'] <= round(limits['totalSeconds'] * 1000) and report['cumulativeMs'] <= 30000
+                 and steps_passed and direct_passed and dropped_bytes == 0)
+         report['state'] = 'PASS' if okay else reason or 'FAIL'
+-        report['sourceMeaning'] = 'Controlled IDB/mock-fetch test covers the frozen38 cases only; not actual browser IDB/schema or App authentication journey.'
++        report['sourceMeaning'] = 'Controlled IDB/mock-fetch test covers the frozen50 cases only; not actual browser IDB/schema or App authentication journey.'
+         encoded = (json.dumps(report, indent=2) + '\n').encode()
+         try:
+             retained_bytes = logical_bytes(BASE)
+@@ -334,8 +342,43 @@
+                       'previousRuntimeMs': report['previousRuntimeMs'],
+                       'cumulativeMs': report['cumulativeMs'], 'remainingMs': report['remainingMs']}
+             encoded = (json.dumps(report, indent=2) + '\n').encode()
+-        RESULT.write_bytes(encoded)
+-    print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup']}))
++        post_write = None
++        def check_written_result():
++            value = {'tmpBytes': logical_bytes(BASE), 'rawBytes': logical_bytes(BASE),
++                     'resultBytes': RESULT.stat().st_size, 'freeBytes': available_bytes(binding['worktree'])}
++            value['elapsedMs'] = (time.monotonic() - started) * 1000
++            value['cumulativeMs'] = binding['previousRuntimeMs'] + value['elapsedMs']
++            value['withinLimits'] = (value['tmpBytes'] <= limits['tmpBytes']
++                                     and value['rawBytes'] <= limits['rawBytes']
++                                     and value['resultBytes'] <= limits['finalReportReserveBytes']
++                                     and value['freeBytes'] > limits['stopFreeBytes']
++                                     and value['elapsedMs'] <= limits['totalSeconds'] * 1000
++                                     and value['cumulativeMs'] <= 30000)
++            return value
++        try:
++            RESULT.write_bytes(encoded)
++            try:
++                post_write = check_written_result()
++            except Exception as error:
++                report['postWriteError'] = type(error).__name__ + ': ' + str(error)
++            if post_write is None or not post_write['withinLimits']:
++                report['state'] = 'FAIL'
++                report['postWriteFailure'] = post_write
++                # At most one failure rewrite, never a reporting or test retry loop.
++                failure = (json.dumps(report, indent=2) + '\n').encode()
++                if len(failure) > limits['finalReportReserveBytes']:
++                    failure = (json.dumps({'state': 'FAIL', 'cleanup': report['cleanup'],
++                        'postWriteError': report.get('postWriteError'), 'postWriteFailure': post_write}) + '\n').encode()
++                RESULT.write_bytes(failure)
++                try:
++                    post_write = check_written_result()
++                except Exception as error:
++                    post_write = {'withinLimits': False, 'error': type(error).__name__ + ': ' + str(error)}
++        except BaseException as error:
++            report['state'] = 'REPORT_WRITE_FAILURE'
++            report['reportWriteError'] = type(error).__name__ + ': ' + str(error)
++    print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup'],
++                      'postWrite': post_write, 'reportWriteError': report.get('reportWriteError')}))
+     return 0 if report['state'] == 'PASS' else 1
+ 
+ 

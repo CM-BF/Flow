@@ -92,3 +92,7 @@ RECOVERY01-03/04修复target `2b01eb6ff345175f7073c4e57125f5eecfd52cac`，见[�
 ### 2026-10-06 20:11:48 UTC — 同一恢复编辑修复源码验收
 
 RECOVERY01-03/04的2b01修复已获root和peer限定源码通过，见[review](review.md)；50项受控检查待新单次准入，原TODO不因源码批准勾完。完整App材料prepare、mounted Thread和真实IDB/cookie旅程继续开放；本段仅metadata归档与tmp候选准备，不改变容量、事务、原identity或运行预算。
+
+### 2026-10-06 20:23:14 UTC — 原恢复编辑定向回归实证
+
+RECOVERY01-04本轮2b01共50受控case已单次通过，见[验证边界](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)。完整App/真实IDB材料恢复未验；-05首browser失败和-06完整独审/main不关闭。direct晚终态保守累计9969ms/余20031ms，后继需新准入。

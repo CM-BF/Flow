@@ -1,0 +1,145 @@
+--- /private/tmp/recovery50-once-en2_sud5/before-source-repair/run.py
++++ /private/tmp/recovery50-once-en2_sud5/run.py
+@@ -1,5 +1,6 @@
+ """Single-use Recovery50 controlled direct check. Never runnable without separately pinned gate."""
+ import datetime
++import errno
+ import hashlib
+ import json
+ import os
+@@ -36,7 +37,10 @@
+ def logical_bytes(root):
+     """Count own files without traversing symlink targets."""
+     total = 0
+-    for directory, children, files in os.walk(root, followlinks=False):
++    def reject_walk_error(error):
++        if error.errno != errno.ENOENT:
++            raise error
++    for directory, children, files in os.walk(root, followlinks=False, onerror=reject_walk_error):
+         children[:] = [name for name in children if not (Path(directory) / name).is_symlink()]
+         for name in files:
+             try:
+@@ -185,7 +189,7 @@
+     return errors, terminal, group_absent
+ 
+ 
+-def run(binding, gate):
++def run(binding, gate, soft_stop):
+     limits = binding['limits']
+     started = time.monotonic()
+     work_deadline = started + limits['totalSeconds'] - limits['cleanupReserveSeconds']
+@@ -205,13 +209,16 @@
+     # Atomic consumption prevents retries even when a later admission/source check fails.
+     with (BASE / 'consumed-gate.json').open('x') as target:
+         target.write(json.dumps(gate, indent=2) + '\n')
+-    static_raw_bytes = logical_bytes(BASE)
+-    log_limit = limits['rawBytes'] - static_raw_bytes - limits['finalReportReserveBytes'] - limits['structuredReportBytes']
++    log_limit = 0
+     try:
++        static_raw_bytes = logical_bytes(BASE)
++        log_limit = limits['rawBytes'] - static_raw_bytes - limits['finalReportReserveBytes'] - limits['structuredReportBytes']
+         assert log_limit > 0
+         verify_sources(binding, work_deadline)
+         report['initialFreeBytes'] = available_bytes(binding['worktree'])
+-        if report['initialFreeBytes'] < limits['startFreeBytes']:
++        if soft_stop['signal'] is not None:
++            reason = 'SOFT_STOP'
++        elif report['initialFreeBytes'] < limits['startFreeBytes']:
+             reason = 'NOT_RUN_RESOURCE'
+         elif time.monotonic() >= work_deadline:
+             reason = 'NOT_RUN_SETUP_DEADLINE'
+@@ -227,6 +234,9 @@
+                 selector.register(process.stdout, selectors.EVENT_READ)
+                 next_sample = 0
+                 while True:
++                    if soft_stop['signal'] is not None:
++                        reason = 'SOFT_STOP'
++                        break
+                     current = time.monotonic()
+                     if current >= next_sample:
+                         free = available_bytes(binding['worktree'])
+@@ -311,6 +321,9 @@
+                              'errors': cleanup_errors, 'seconds': round(time.monotonic() - cleanup_started, 3),
+                              'groupAbsent': group_absent, 'scratchAbsent': not SCRATCH.exists(),
+                              'serverClosureBasis': 'Single direct command and fork remain in the inherited worker group; no external service used'}
++        report['softStopSignal'] = soft_stop['signal']
++        if soft_stop['signal'] is not None:
++            reason = 'SOFT_STOP'
+         report['exitCode'] = process.returncode if process else None
+         report['logBytes'] = log_bytes
+         report['droppedObservedLogBytes'] = dropped_bytes
+@@ -345,7 +358,8 @@
+         post_write = None
+         def check_written_result():
+             value = {'tmpBytes': logical_bytes(BASE), 'rawBytes': logical_bytes(BASE),
+-                     'resultBytes': RESULT.stat().st_size, 'freeBytes': available_bytes(binding['worktree'])}
++                     'resultBytes': RESULT.stat().st_size, 'freeBytes': available_bytes(binding['worktree']),
++                     'softStopSignal': soft_stop['signal']}
+             value['elapsedMs'] = (time.monotonic() - started) * 1000
+             value['cumulativeMs'] = binding['previousRuntimeMs'] + value['elapsedMs']
+             value['withinLimits'] = (value['tmpBytes'] <= limits['tmpBytes']
+@@ -353,7 +367,8 @@
+                                      and value['resultBytes'] <= limits['finalReportReserveBytes']
+                                      and value['freeBytes'] > limits['stopFreeBytes']
+                                      and value['elapsedMs'] <= limits['totalSeconds'] * 1000
+-                                     and value['cumulativeMs'] <= 30000)
++                                     and value['cumulativeMs'] <= 30000
++                                     and value['softStopSignal'] is None)
+             return value
+         try:
+             RESULT.write_bytes(encoded)
+@@ -361,7 +376,8 @@
+                 post_write = check_written_result()
+             except Exception as error:
+                 report['postWriteError'] = type(error).__name__ + ': ' + str(error)
+-            if post_write is None or not post_write['withinLimits']:
++            if post_write is None or not post_write['withinLimits'] or soft_stop['signal'] is not None:
++                report['softStopSignal'] = soft_stop['signal']
+                 report['state'] = 'FAIL'
+                 report['postWriteFailure'] = post_write
+                 # At most one failure rewrite, never a reporting or test retry loop.
+@@ -377,15 +393,37 @@
+         except BaseException as error:
+             report['state'] = 'REPORT_WRITE_FAILURE'
+             report['reportWriteError'] = type(error).__name__ + ': ' + str(error)
++    # The terminal stdout also records a signal arriving after the bounded report write.
++    if soft_stop['signal'] is not None:
++        report['state'] = 'FAIL'
+     print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup'],
+-                      'postWrite': post_write, 'reportWriteError': report.get('reportWriteError')}))
+-    return 0 if report['state'] == 'PASS' else 1
++                      'postWrite': post_write, 'softStopSignal': soft_stop['signal'],
++                      'reportWriteError': report.get('reportWriteError')}))
++    return 0 if report['state'] == 'PASS' and soft_stop['signal'] is None else 1
+ 
+ 
+ if __name__ == '__main__':
++    soft_stop = {'signal': None}
++    previous_handlers = {}
++    def record_soft_stop(signum, _frame):
++        # Record only: repeated signals must not interrupt the normal cleanup finally.
++        if soft_stop['signal'] is None:
++            soft_stop['signal'] = signum
++    exit_code = 2
+     try:
+-        actual_binding, actual_gate = require_gate()
+-    except Exception as error:
+-        print(json.dumps({'state': 'NOT_RUN_PREFLIGHT', 'reason': str(error)}))
+-        sys.exit(2)
+-    sys.exit(run(actual_binding, actual_gate))
++        for signum in (signal.SIGTERM, signal.SIGINT):
++            previous_handlers[signum] = signal.getsignal(signum)
++            signal.signal(signum, record_soft_stop)
++        try:
++            actual_binding, actual_gate = require_gate()
++        except Exception as error:
++            print(json.dumps({'state': 'NOT_RUN_PREFLIGHT', 'reason': str(error)}))
++        else:
++            exit_code = run(actual_binding, actual_gate, soft_stop)
++    finally:
++        # Cleanup/reporting has finished before default signal behavior is restored.
++        if soft_stop['signal'] is not None:
++            exit_code = 1
++        for signum, handler in previous_handlers.items():
++            signal.signal(signum, handler)
++    sys.exit(exit_code)

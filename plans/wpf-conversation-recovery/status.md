@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 20:11:48 UTC |
+| 最近更新 | 2026-10-06 20:23:14 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前P1限定source2b01eb6ff345175f7073c4e57125f5eecfd52cac；旧38受控执行仍bf14/7cc；metadata HEAD以Git为准 |
-| 工作树dirty状态 | a990 clean输入；19源固定2b01不改；本次仅审批metadata正常push后核local=origin/clean |
+| 工作树dirty状态 | 994ce clean执行输入；19源固定2b01不改；本次仅第四轮原始证据/metadata，正常push后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 恢复等待期间的新稿保护已获限定源码审查通过；新增冲突回归和实际恢复旅程待验证 |
-| 下一可用交付 | 准备定向回归的固定检查入口；取得新准入后验证当前恢复编辑行为 |
-| 当前阻塞 | ACTIVE: 新50项回归尚未运行；首浏览器失败未复验，完整中心恢复验收保持开放 |
+| 当前产出 | 恢复等待期间的新稿保护已获限定源码通过，并通过定向受控回归；实际浏览器恢复仍待复验 |
+| 下一可用交付 | 本轮受控证据已获独立接受；取得新准入后验证完整实际恢复旅程 |
+| 当前阻塞 | ACTIVE: 首浏览器失败未复验，真实IDB与完整中心恢复验收保持开放 |
 | 需用户决定 | NONE |
-| 检查状态 | FAILED: 首真实browser草稿旅程失败保留；当前7cc受控38/38 PASS，0skip/todo，direct累计6.868/30s、清理通过；types未新增52.814/60s，不代表真实IDB/App通过 |
+| 检查状态 | FAILED: 首真实browser草稿旅程失败保留；当前2b01受控50/50 PASS、0pending/todo/fail，direct按终态保守累计9969/30000ms、清理通过；types未新增，不代表真实IDB/App通过 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T20:09:08.353Z管理fresh/唯一owner/nooverlap原件已核；本段仅metadata与独立tmp候选准备，不含运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；manager20:21:32.662Z观察与本人运行前安全CLI核active/身份/21scope；仅本次single-use gate已消费，无后继运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -32,7 +32,7 @@
 | WPF-RECOVERY01-01 | in-progress | workspace_panels_owner | [live领取](../../docs/evidence/wpf-conversation-recovery/live-claim.json)，输入/容量研究已读，ConnectionSession/Journal第一段源码与types检查已落 |
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
-| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [历史38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)源绑定7cc通过；当前2b01静态展开50未运行，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
+| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前50 direct](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)源绑定2b01单次通过；旧38原范围不变，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
 | WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；38受控case通过；[父监督及Crashpad源码修复](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-checkpoint.json)已获限定源审/NOT_RUN，真实旅程未重跑 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
@@ -42,7 +42,7 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-7cc默认生命周期与只读observer源码已获root限定批准，当前38受控case单次通过；[第三轮原证据](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)独立归档。首真实browser失败与后续未运行项保留，下一实际旅程必须新准入，不自行续跑。完整feature目标仍UNKNOWN、review NOT_STARTED、main未接，唯一status由本owner维护。
+2b01恢复编辑保护已获root/peer限定源码批准，当前50受控case单次通过；[第四轮原证据](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)已获root独立接受。历史38与首真实browser失败各保原证据；下一实际旅程必须新准入，不自行续跑。完整feature目标仍UNKNOWN、review NOT_STARTED、main未接，唯一status由本owner维护。
 
 ## Dashboard同步
 
@@ -201,3 +201,11 @@ Root澄清同slot不要求留两份：冲突不套用/删除旧稿，正常新�
 固定source `2b01eb6ff345175f7073c4e57125f5eecfd52cac`；root [原报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-root-approval.json)与W01 [peer报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-peer/report.md)均0blocking、仅源码批准。RECOVERY-RESTORE-EDIT源码addressed；50静态case仍NOT_RUN，旧38只绑定7cc。App使用的共用restore helper与真实session/projection/steering属于受控回归接缝，未挂载Workspace/Thread，也未运行完整App材料prepare。
 
 首browser失败14846.267375ms/10raw不改，余75153.732625ms含15000ms清理；direct累计6868ms/余23132ms，types余7186ms，无新消费或准入。完整feature NOT_STARTED/targetUNKNOWN/main未接。正常metadata seal后仅在全新own/tmp准备单文件50候选，绑定最终HEAD/2b01十九hash、previous6868/work18132/cleanup5000；默认拒跑，等待独立监督器审查和管理freshgate。
+
+## 2026-10-06 20:23:14 UTC — 第四轮50 direct / 真实验收仍开放
+
+[原始证据](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)绑定994ce/2b01及新gate：50/50 PASS、0pending/todo/fail、terminalPASS/actualexit0；cleanup全确认、无重试。早result3099ms与晚postWrite3100.050624925643ms分列，保守按3101ms计本轮，direct累计9969/30000ms、余20031ms；不是新准入。旧38/首browser10raw保原hash，types/browser没有新增。
+
+只验证受控IDB/mockfetch和App共用helper，不推mounted Workspace/Thread、完整App材料prepare或nativeIDB通过。独立运行证据已获root限定接受；完整feature NOT_STARTED/targetUNKNOWN/main未接。
+
+Root原件[DIRECT50_EVIDENCE_ACCEPTED_SCOPED](../../docs/evidence/wpf-conversation-recovery/direct-fourth-root-review.json)逐字归档；独立核19源/14原件/实际50与新12项、旧browser10raw保真、清理与晚终态，不是root复跑或完整feature审批。

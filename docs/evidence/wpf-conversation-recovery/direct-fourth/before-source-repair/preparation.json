@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-06T20:14:24.216914+00:00",
+  "state": "CANDIDATE_NOT_RUN",
+  "root": "/private/tmp/recovery50-once-en2_sud5",
+  "head": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "sources": 19,
+  "readOnlyDependencies": 98,
+  "externalPins": 9,
+  "previousRuntimeMs": 6868,
+  "remainingMs": 23132,
+  "workMs": 18132,
+  "cleanupReserveMs": 5000,
+  "testCount": {
+    "ordinary": 40,
+    "tables": [
+      {
+        "line": 128,
+        "rows": 6
+      },
+      {
+        "line": 287,
+        "rows": 2
+      },
+      {
+        "line": 340,
+        "rows": 2
+      }
+    ],
+    "expanded": 50,
+    "staticOnly": true
+  },
+  "files": {
+    "run.py": {
+      "bytes": 20129,
+      "sha256": "d26e024e101c37cd743dc8f28c8fd1224eb720bf01bc19b63e490bd7527e625e"
+    },
+    "binding.json": {
+      "bytes": 19896,
+      "sha256": "5416a23b3eb4efed84b1b650713c8cbfff1fbd440a28905e62d4eb527a82e72b"
+    },
+    "steps.mjs": {
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    "vitest.config.mjs": {
+      "bytes": 413,
+      "sha256": "3585695f44ae16797f0788803fdc60241e31b1ed9390eb39838325b95f5a4a8d"
+    },
+    "sandbox.sb": {
+      "bytes": 155,
+      "sha256": "d0b18e9347463ee8e30bedd661b6bec2c54778a9e3c3662d0872d56b8f540046"
+    },
+    "runner.diff": {
+      "bytes": 9314,
+      "sha256": "de681ca16240ab0ad759c29bf5cdb32f4bc017022955ff089715108d82b932d5"
+    },
+    "binding.diff": {
+      "bytes": 6626,
+      "sha256": "d21dc0712045a6c3183b75f39a17f9f70bc2b2b9323f03c8f77e69ac034c042a"
+    }
+  },
+  "runtime": false,
+  "freeSpaceSampling": false,
+  "gate": false,
+  "checks": "Python ast.parse only, static Git/hash/path reading. No Node/product imports/types/tests/profile probes.",
+  "futureCommand": [
+    "python3",
+    "/private/tmp/recovery50-once-en2_sud5/run.py",
+    "--gate",
+    "<future-exact-reviewed-gate>"
+  ],
+  "pending": [
+    "Independent review of new runner delta and final binding; manager must change binding state only after review and pin resulting bytes in fresh single-use gate.",
+    "Fresh original21 claim/current clean source and one actual window/resource admission.",
+    "Runtime must independently confirm exactly50,0skip/todo/fail; current count is static.",
+    "Actual stdout postWrite must be captured separately without overwriting result."
+  ],
+  "limits": [
+    "Observer and controlledIDB/mockfetch are not mountedWorkspace/Thread or fullApp materials preparation/nativeIDB.",
+    "Polling/logical byte caps are not physical hard quotas.",
+    "Sandbox denies all network and project/dependency writes; fixture top-level has builtins/type-only PG import, server/Vite/PG entry functions remain uncalled.",
+    "Cleanup is inherited process-group ownership; descendants deliberately leaving that group are outside this method.",
+    "Old reports were captured before reaping on forced-stop paths; forced stops cannot PASS and final group/quota accounting is separately checked."
+  ]
+}

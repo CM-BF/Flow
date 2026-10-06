@@ -151,3 +151,11 @@ Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59b
 复用已读本地find-skills/clean-code/codebase-design方法，未安装。核两独立报告原字节、固定19源、唯一status与证据归因。P1的私有租约/现owner同步prepare职责获得限定源码认可，无新增blocking；不把受控helper当挂载App或完整材料回调，也不把旧38改绑2b01。源码不改，无新增types/runtime。
 
 下一检查复用单文件父监督，精确剩余预算6868已用/23132可提议，至少5000清理；候选必须新tmp、默认无gate拒跑、保持旧目录和raw。监督器适配中的清理/末尾计量若需收窄将单列diff交root，不自签运行。
+
+## 2026-10-06 20:23:14 UTC — direct50 clean-code与原始证据安全点
+
+复用既有find-skills/clean-code/codebase-design方法，只核source/计量/清理/结果责任边界，不改19源码。候选复用原38父监督；root发现的扫描异常静默吞掉与默认SIGTERM脱离cleanup两P2在自有tmp窄修：非ENOENT传播、信号只记账并正常finally、晚signal终态失败，不新建框架。其独审与本轮运行按不同证据归档。
+
+本轮exact50/0skip等运行事实由原JSON和terminalstdout/exit共同确定；更早result不覆盖晚到终态，时间分列且未来预算保守向上取整。全部原raw复制后逐hash相同，旧失败不改绿；App共用helper的受控输入与mountedApp、真实材料callback明确分开。没有进一步类型/服务/browser或无关测试，剩余预算非许可。完整feature仍NOT_STARTED。
+
+Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60ca2e6a128a6cfffc7598e8fe064413cbaee；19源/14实际原件/新12passed/旧10raw保真与终态清理被核，无新增blocking，未复跑。

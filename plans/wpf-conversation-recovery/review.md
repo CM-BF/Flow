@@ -6,7 +6,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者局部检查：固定7cc的38 direct PASS，root只读接受受控证据；首667真实browser子集FAILED（cookieRead PASS、textIntentDraft FAILED）保留，默认激活/observer源码已修但真实旅程未复验；当前types未新增。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
+当前作者局部检查：固定2b01的50 direct PASS，root已独立接受受控证据；历史7cc的38已获root只读接受；首667真实browser子集FAILED（cookieRead PASS、textIntentDraft FAILED）保留，默认激活/observer源码已修但真实旅程未复验；当前types未新增。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -103,3 +103,11 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 Root实际review时间2026-10-06T20:06:10.368661+00:00，固定target `2b01eb6ff345175f7073c4e57125f5eecfd52cac`、metadata a990；[原报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-root-approval.json) **APPROVED_SCOPED_RESTORE_EDIT_SOURCE_NOT_RUN / 0 blocking**。W01 [原报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-peer/report.md)及[audit](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-peer/audit.json)独立同结论。原P1输入和作者修复待审历史不改，当前源码addressed。
 
 50项未运行；新回归使用App共用helper和真实session/RecoveryWorkspace/projection/steering，但editor受控，未挂载Workspace/Thread、未执行整个App材料prepare回调。数组顺序受完整signature保护是源码结论，尚无双ref重排的实际运行证明。Root/peer均未复跑types或行为。旧38/原browser失败继续各原范围，完整feature NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-06 20:23:14 UTC — 作者50受控结果及独立证据接受
+
+[第四轮原始记录](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)固定994ce/2b01单次50/50 PASS、0pending/todo/fail，terminalPASS/exit0、清理通过。父监督源审APPROVED另见[原报告](../../docs/evidence/wpf-conversation-recovery/direct-fourth/supervisor-root-review.json)；该源码批准与本次独立行为证据接受分开。原父监督两P2修复/旧候选保留于direct-fourth，旧38不重写。
+
+本次作者受控结果不是root复跑。新增回归未挂载Workspace/Thread，未调用全部App材料prepare；完整feature NOT_STARTED/targetUNKNOWN，首browser失败及真实验收开放项保持。
+
+Root于2026-10-06T20:24:02.675285+00:00给[DIRECT50_EVIDENCE_ACCEPTED_SCOPED](../../docs/evidence/wpf-conversation-recovery/direct-fourth-root-review.json)：实际50/50及新增12项、完整清理、19源和原件绑定已核，无新增blocking。只接受作者受控运行，不复跑、不关闭完整feature/真实浏览器边界。
