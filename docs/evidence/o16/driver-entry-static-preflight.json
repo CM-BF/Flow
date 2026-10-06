@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-06T18:47:51.241683+00:00",
-  "head": "a498d1d3023b7b78163125a9ed11fa1787bd2990",
+  "at": "2026-10-06T18:49:18.081715+00:00",
+  "head": "2daf37ee8b56d52620e68750e169097cdc015037",
   "source": "8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974",
   "entry": [
     "experiments/continuous-goal-acceptance/driver.mjs",
@@ -861,8 +861,8 @@
     },
     {
       "path": "experiments/continuous-goal-acceptance/identity.mjs",
-      "bytes": 2843,
-      "sha256": "880825f81ac0d94240427960aa553094ea0f09a3ed34dd778ab48839a0b54bbb"
+      "bytes": 3131,
+      "sha256": "800a5e38bf412e77f4dede5463b57768a8cdfdbfd0e640bcebfd99f05090d34b"
     },
     {
       "path": "experiments/continuous-goal-acceptance/permit.mjs",
@@ -2184,21 +2184,21 @@
     {
       "path": "experiments/continuous-goal-acceptance/identity.mjs",
       "line": 23,
-      "text": "const bytes = await readFile(new URL('file://' + target + '/package.json'));"
+      "text": "const bytes = await readFile(target + '/package.json');"
     },
     {
       "path": "experiments/continuous-goal-acceptance/identity.mjs",
-      "line": 30,
+      "line": 35,
       "text": "const bytes = await readFile(new URL('../../' + row.path, import.meta.url));"
     },
     {
       "path": "experiments/continuous-goal-acceptance/identity.mjs",
-      "line": 33,
+      "line": 38,
       "text": "for (const name of (await readdir(new URL('./', import.meta.url))).filter(n => n.endsWith('.mjs')).sort()) {"
     },
     {
       "path": "experiments/continuous-goal-acceptance/identity.mjs",
-      "line": 34,
+      "line": 39,
       "text": "const bytes = await readFile(new URL(name, import.meta.url)); files.push({ path: `experiments/continuous-goal-acceptance/${name}`, bytes: bytes.length, sha256: digest(bytes) });"
     },
     {
