@@ -9,3 +9,5 @@
 发现与修正：为避免state重复依赖历史，将 execution.dependencies 降为dependencyCount；最大节点数复用现有公共常量。初始未声明 zod import 已移除；测试对真实队列就绪有限等待，不改变系统调度。未为了整齐拆成泛用仓储层。7新+25直接消费者/tsc均通过，原失败保留。既有consumer默认写其证据路径的副作用已迁入本任务证据并精确恢复本次非scope变化；未修改旧测试或删除断言。根依赖/锁/共享入口/其他产品文件对base零diff。
 
 已知限制：state内部需全图至多200节点有效性元数据；最多400条执行的历史dependency bindings仍有成本，不宣称输出小就DB快。200节点用例无材料/历史，不覆盖最大依赖负载。请求取消不新增SQL abort。新读口尚未生产挂载，需Lead接公共client/export/factory和独立review；不存在可自报通过的review。当前无作者发现的未解决行为缺陷。
+
+2026-10-06 11:43 UTC metadata 工作段：独立审批由 Execution Lead 回传，转录 review/status，不修改9源码或原始manifest/输出。复核固定target/边界/两层归属与 TODO 对应；O11-04 仍待main，claim保留。无新工程测试/provider。

@@ -1,6 +1,6 @@
 # O11 目标交付轻读模型
 
-创建/最近更新：2026-10-06。状态：in-progress（实现已交，待独审/集成）。Owner assignment_review / gpt-6-astra。所属大 task [FLOW-001](../flow-001-architecture/plan.md)，co-lead Execution Lead；O01-05/M02 为追溯，不新造大 task。基线 53ce2ec2c95b489aa7a2a2eaa49849821af00c16。
+创建/最近更新：2026-10-06。状态：in-progress（实现已独立批准，待集成）。Owner assignment_review / gpt-6-astra。所属大 task [FLOW-001](../flow-001-architecture/plan.md)，co-lead Execution Lead；O01-05/M02 为追溯，不新造大 task。基线 53ce2ec2c95b489aa7a2a2eaa49849821af00c16。
 
 遵循 [模块设计规则](../../AGENTS.md#modular-design)。复用持久 goal/project/input/execution/task/artifact 与现有有效性算法；只新增有界 owner 读口。计划身份排除实时活动，历史输入可定址，写入仍由原命令事务校验；不造缓存/调度器/历史快照平台、不改 Web/SDK/MCP 授权。
 
