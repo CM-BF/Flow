@@ -147,3 +147,10 @@ Reviewer：Execution Lead / gpt-6-astra；target `1994182e4f1d7ff0cb5b08d005defe
 ## 2026-10-06 23:44:39 UTC：准备批准与一次执行事实
 
 Execution Lead 已独立 APPROVED 实现d8349bdec815b53f29ddae54d6b5b1ce49d78bd5，57绑定及三脚本/共享OPS14 consumer、历史至fresh摘要全核。[原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/preparation-independent-review.json)。一次新许可svc05h-center-af51-20261006-2343启动center，wrapper exit0/2095ms，原raw与8保留checks已保存；operator PID已收尾，未向服务发信号。实际结果独审尚待完成，源/历史不改、0后继probe。[实际分析](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-analysis.json)。
+
+
+## 2026-10-06 23:47:00 UTC：实际恢复结果独立 APPROVED
+
+唯一 reviewer Execution Lead 已核原始before/after/result等8份文件，14项检查全true，64表raw摘要无变化；结论 APPROVED_RECORDED_CENTER_RECOVERY，绑定实际target a498b0153ef9512ba6c79fefd9483f20b68b64ca（实现d834不变）。[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。
+
+23:46:17 Lead将root恢复clean main/origin b178d17a6e711d4f4c28ee0e33f001171ed42652，[窗口CLOSED原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/source-window-closed.json)。本owner只归档，不追加个人probe/服务动作。旧Python入口失败和旧恢复/发布raw不变。限制：中心原退出原因未知，摘要不是语义真实性证明，运行中的服务不是冻结依赖产物；新恢复记录尚未main。claim保留待接收，全源码停止写入。

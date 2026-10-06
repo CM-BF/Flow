@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-06T23:44:14.264298+00:00",
+  "reviewer": "Execution Lead independent read-only",
+  "run": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/run-svc05h-center-af51-20261006-2343",
+  "outcome": "APPROVED_RECORDED_CENTER_RECOVERY",
+  "checks": {
+    "declaredReady": true,
+    "oneSpawn": true,
+    "allEightDeclared": true,
+    "source": true,
+    "runtime": true,
+    "identity": true,
+    "privateFiles": true,
+    "stateExceptCenter": true,
+    "runnerWeb": true,
+    "retained": true,
+    "databaseProtected": true,
+    "newCenter": true,
+    "maintenance": true,
+    "noNewWork": true
+  },
+  "databaseTables": 64,
+  "rawChangedTables": [],
+  "newCenter": {
+    "pid": 78240,
+    "group": 78240
+  },
+  "limits": "No new probe/test/provider. MD5 table summaries detect changes; no claim of semantic authenticity. Cause of original exit remains unknown. Detached current services are not frozen dependency artifacts.",
+  "files": [
+    {
+      "path": "after.json",
+      "bytes": 28132,
+      "sha256": "afffe2290c5f300542edff0508872b91fe88dc82234df7cce7dd82be4e345dcb"
+    },
+    {
+      "path": "before.json",
+      "bytes": 28131,
+      "sha256": "4772625247b8175054ad4df357e272aec013f7b13ad969cc9f492ecdf4e24d23"
+    },
+    {
+      "path": "preservation-checkpoint.json",
+      "bytes": 452,
+      "sha256": "bd2bf37beb8907b60103fd5482dcf53c270cab2c94c3f74ce35839e0d0c9e125"
+    },
+    {
+      "path": "reservation.json",
+      "bytes": 1032,
+      "sha256": "4bc16c011146100565d35dd93099a6db507ae545747b64bced7c8bc17c09c05c"
+    },
+    {
+      "path": "result.json",
+      "bytes": 491,
+      "sha256": "950eaf5d140cc70bcab29efbd9317e8fe5aa41528e9ddf9986b65c4a4dba398c"
+    },
+    {
+      "path": "spawn-checkpoint.json",
+      "bytes": 262,
+      "sha256": "e230fbf233d12300ff719899beb4b9e3fc91de9b712af583bb79edfa92bb92a9"
+    },
+    {
+      "path": "spawn-intent.json",
+      "bytes": 115,
+      "sha256": "b7db8d31ca7f923baec5e667efcbc44305827bc4973e0d2f8dfc09f5b3a6dda0"
+    },
+    {
+      "path": "tool-exit.json",
+      "bytes": 243,
+      "sha256": "696ba546933284fde7c43be80a9934b73f32b930357900183e25fab7dcf2cd43"
+    }
+  ]
+}

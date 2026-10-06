@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 23:44:39 UTC |
+| 最近更新时间 | 2026-10-06 23:47:00 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility |
 | Branch | codex/personal-history-compatibility |
 | 工作基线 / HEAD | 3a263677db28e92f28622917eef70edb0f260f85 / 新恢复 d8349bdec815b53f29ddae54d6b5b1ce49d78bd5；运行目标af51，metadata以本文件提交为准 |
-| 工作树dirty状态 | 恢复源码固定停写；仅实际结果/metadata收口，clean以交付回执为准 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 工作树dirty状态 | 全源码停写；本次仅独审/窗口关闭metadata，clean以最终交付回执为准 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED d8349bdec815b53f29ddae54d6b5b1ce49d78bd5 单次center ready/2095ms/8保留检查；无产品测试。 |
-| 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json) |
+| 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)；本次新af51恢复记录尚未main，[收口回执](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/closeout-receipt.json) |
 | 实现目标 | d8349bdec815b53f29ddae54d6b5b1ce49d78bd5 |
 | 实现范围 | docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/operator.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/supervise.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 个人中心已按原版本恢复，原 runner、网页、配置和用户数据保持；实际结果已封存待独审。 |
-| 下一可用交付 | 完成这次中心恢复的独立结果核对与接收。 |
+| 当前产出 | 个人中心已恢复并通过独立核验；原 runner、网页、配置和用户数据保持，运行窗口已关闭。 |
+| 下一可用交付 | 接收本次恢复记录进入主线；没有后续个人服务操作。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 准备d8349bde；实际恢复结果待独立核对，原发布批准保留。 |
+| Review | APPROVED 实际恢复a498b0153ef9512ba6c79fefd9483f20b68b64ca；14项独立核对全true，准备d834批准及历史原件保留。 |
 | Claim | 新 22000abe-192a-489a-bdee-6cbc3cd2ea4a v1，仅 center-recovery-af51 证据与本计划；旧 cd2d v3 已released，OPS14旧wrapper仍其唯一writer。 |
 | 架构影响 | 既有host维护与独立Web CAS完成实际发布；限定旧intent退役有私有原件/审计，普通idle/API不变。运行af51与Web5069586/d629独立于moving main。 |
 
@@ -35,7 +35,7 @@
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
 | SVC05H01-05 | completed | assignment_review / Execution Lead独审 | 实际af51/v18+d629/v3；[唯一结果APPROVED](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，24命令/25检查/64表保护/27迁移/三retained；原失败与unknown保留 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
-| SVC05H01-07 | in-progress | assignment_review | [同版本中心恢复准备](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/README.md)，原恢复许可不重用。 |
+| SVC05H01-07 | completed | assignment_review | [实际恢复独立批准](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)，一次center ready、64表原摘要相同；窗口CLOSED，记录待main接收。 |
 
 ## Dashboard
 
