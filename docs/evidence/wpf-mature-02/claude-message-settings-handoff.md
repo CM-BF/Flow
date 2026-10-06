@@ -6,7 +6,7 @@
 
 唯一下一片合同与精确source-only闭包：[core next-slice-handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)，本次实读固定`abbd8a9525fde44ecdfdbda99ab960d2a5df52c0`。owner status_read/gpt-6-astra、co-lead mika，继续独立WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core` / `codex/claude-message-settings-core`；不新开第三层任务。
 
-请Lead提供只读源码闭包并协调现F01 v40的export/ACK matcher/版本化reader/migration挂载薄接线，分配唯一queue snapshot迁移号；031已O15，不猜编号。core先沿现Claude v2 optional turnSettings接中心冻结与既有adapter，后继Web/TUI consumer独立scope由Lead安排。旧profile canonical/digest与旧会话语义保留；draft只在客户端，完整设置用既有body幂等digest/CAS，不另建中心settingsRevision。
+请Lead提供只读源码闭包并协调现F01 v40的export/ACK matcher/版本化reader/migration挂载薄接线，032已由Lead正式分配core；只读闭包另需补reconciliation.ts以覆盖retry插入前设置校验。core先沿现Claude v2 optional turnSettings接中心冻结与既有adapter，后继Web/TUI consumer独立scope由Lead安排。旧profile canonical/digest与旧会话语义保留；draft只在客户端，完整设置用既有body幂等digest/CAS，不另建中心settingsRevision。
 
 ## 已交付与范围移交
 
@@ -21,13 +21,13 @@
 
 父claim只保留docs/evidence/wpf-mature-02、experiments/codex-app-server-conformance、plans/wpf-mature-02-harness-capabilities；core现已原子amend至c652bc61 v2（15:44:19.351 UTC），[接收receipt](/tmp/flow-core-next-scope-amend-receipt.json)包括四路径与context store；原owner不恢复已交回写权。store.ts此前已交回，不在本次四路径中。
 
-context store已包含在core v2精确scope；保留main已有templateVersion2→unknown三行修复，不改变SVC旧362已审候选。context requestedModel直接消费者仍须在最终纵向验收完成。source-only闭包、F01共享接线与迁移编号仍待Lead。
+context store已包含在core v2精确scope；保留main已有templateVersion2→unknown三行修复，不改变SVC旧362已审候选。context requestedModel直接消费者仍须在最终纵向验收完成。source-only闭包补齐与F01共享接线仍待Lead；032已正式分配，待core对应fresh amend。
 
 新blocked值`message-settings-unsupported`的直接consumer `packages/interaction/src/queue-control/index.ts`和`apps/web/src/conversations/queue/projection.ts`及其直接tests交共享consumer/Web d01协调，core不越权；现codec会拒整页，不能遗漏该验收。新reader精确header值`flow.claude-turn-settings.v1`。
 
 ## 两层职责与验收边界
 
-父TODO-10产品core负责可信组合、中心冻结快照及已有Claude query传递；父TODO-11共享consumer负责同合同client/interaction/Web/TUI下一草稿控件、intent与历史snapshot。子任务状态分别由唯一owner维护。
+父TODO-10产品core负责可信组合、中心冻结快照及已有Claude query传递；父TODO-11共享consumer负责同合同client/interaction/Web/TUI下一草稿控件、intent与历史snapshot，具体[现owner交接与恢复验收](claude-message-settings-consumer-handoff.md)。子任务状态分别由唯一owner维护。
 
 用户能力保持：运行A、持久队列B、后来草稿C互不改写；requested/observed/unsupported分开，旧会话可读可续。fixed SDK0.3.290声明不等账号可用，manual thinking首片unsupported，not-requested effort不承诺resume复位。后继真实中心与注入SDK验证不能由首leaf批准替代；资源与实际运行门禁仍有效，0付费/新安装。
 

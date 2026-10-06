@@ -1,6 +1,6 @@
 # WPF-MATURE-02 Claude与Codex能力贯通
 
-状态：in-progress。创建：2026-10-06 09:01:08 UTC；更新：2026-10-06 15:43:16 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
+状态：in-progress。创建：2026-10-06 09:01:08 UTC；更新：2026-10-06 15:50:43 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
 
 ## 完整目标
 
@@ -29,7 +29,7 @@ Claude与Codex可被发现、选择和运行；model/thinking/fast/access从中�
 
 - [ ] WPF-MATURE-02-09：同harness空闲会话支持下一条设置变更；CAS/unknown ACK/恢复可追溯，历史/当前/入队配置冻结，跨harness路径明确，新选择使04测量失效。
 - [ ] WPF-MATURE-02-10：Claude产品core：兼容共享契约、中心CAS/幂等冻结message settings、既有Claude query传递；status_read/mika独立core首leaf已main，下一片按其精确接线请求完成现profile/中心/adapter，固定SDK注入与真实中心验收。
-- [ ] WPF-MATURE-02-11：共享consumer：同中心版本化DTO贯通client/interaction/Web/TUI下一草稿设置与历史snapshot；独立WT/owner/精确scope由Lead协调，未知ACK保原intent。
+- [ ] WPF-MATURE-02-11：共享consumer：同中心版本化DTO贯通client/interaction/Web/TUI下一草稿设置与历史snapshot；独立WT/owner/精确scope由Lead协调，未知ACK保原intent；现owner/草稿冻结/恢复与直接验收见[consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)。
 
 ## 依赖与交接
 

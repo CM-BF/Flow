@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:43:16 UTC / 2026-10-06 15:43:16 UTC（只读核首leaf main22d5接收收据；无merge/retest） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:50:43 UTC / 2026-10-06 15:43:16 UTC（只读核首leaf main22d5接收收据；无merge/retest） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / fa6cfd228d9fad9c0ef8d1c0238a8cc895fb5670（本轮父metadata基线；ca6a实验源码checkpoint不变） |
-| 工作树dirty状态 | 本轮仅父plan/status/canonical/交接文档与四路径停写及amend回执；0产品源码改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 27598f5e0235eea83b956aa263290be7b7c8a700（本轮父metadata基线；ca6a实验源码checkpoint不变） |
+| 工作树dirty状态 | 本轮仅父plan/status/canonical及后继consumer交接文档；0产品源码改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -23,7 +23,7 @@
 | 优先级 | 2 |
 | 当前产出 | Claude逐消息设置的共用契约已进入主线；正在推进中心和执行器接线，界面尚未开放逐消息选择。 |
 | 下一可用交付 | 让每条消息的设置在提交、排队与Claude执行中保持一致，再由Web/TUI共享消费。 |
-| 当前阻塞 | ACTIVE: 下一片需补齐独立树源码、协调共享界面接线并分配迁移编号；涉及真实中心的验证仍需资源门禁。其余独立源码准备可继续。 |
+| 当前阻塞 | ACTIVE: 下一片需完成独立树源码补齐及现有界面owner的共享接线协调；涉及真实中心的验证仍需资源门禁。其余独立源码准备可继续。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6仅SOURCE_REVIEW/PENDING_VALIDATION、NOT_OPEN。 |
@@ -42,7 +42,7 @@
 | WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
 | WPF-MATURE-02-10 | in-progress | status_read / mika | 首leaf已main；下一片profile/中心/adapter以[child handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)为唯一合同与范围来源，完整core未完成 |
-| WPF-MATURE-02-11 | pending | Lead待分配 | 同合同client/interaction/Web/TUI consumer；待core固定接口与独立WT/精确scope，不在诊断树实现 |
+| WPF-MATURE-02-11 | pending | Lead协调现owner | [consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)已明确F01/Web/TUI现owner、冻结/恢复及直接验收；未领取前端源，未实施验证 |
 
 ## 接口与dashboard
 
@@ -85,3 +85,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 15:43:03.052 UTC原claim原子amend至v6，四profile路径已停止写入且归还，core已于15:44:19.351 UTC原子amend至v2接收四profile与context store，保留main templateVersion2→unknown修复与SVC旧362候选边界。共享consumer必须适配新blocked值，精确路径和header仅在canonical路由；F01与migration未领取。没有GO待决定项；完整Codex与Claude验收不降低。
 
 本次沿本地find-skills/固定clean-code复核当前/历史状态、唯一owner与无重复合同；仅metadata一致性核验，0产品改动/工程测试/PG/install/build。此前15:20–15:32的provision/首leaf审查过程保留Git fa6cfd22，不继续列为当前等待项。
+
+15:50:43管理更新：core contracts checkpoint29bbf52589611a936068fa44991c67991b67f4c2已固定但未验证，不能沿用首leaf批准；032已由Lead正式分配，source-only闭包仅补reconciliation.ts供retry插入前校验。共享consumer交接已形成，实际写权和检查由现owner协调；本父0工程检查/PG/安装，不开诊断。
