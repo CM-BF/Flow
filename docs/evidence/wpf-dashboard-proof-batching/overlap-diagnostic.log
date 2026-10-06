@@ -1,0 +1,28 @@
+✖ overlapping directories and duplicate declarations preserve full NUL records including unusual descendant names (242.498125ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 289.070417
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/proof-tree-batch.test.mjs:57:1
+✖ overlapping directories and duplicate declarations preserve full NUL records including unusual descendant names (242.498125ms)
+  AssertionError [ERR_ASSERTION]: {"record":"6b379bacb876645e44a96277c8eea73b5c3e7e78","recordedHead":"6b379bacb876645e44a96277c8eea73b5c3e7e78","target":"6b379bacb876645e44a96277c8eea73b5c3e7e78","mainHead":"6b379bacb876645e44a96277c8eea73b5c3e7e78","scopes":["src","src/run","src/link","src/gitlink"],"observedAt":"2026-10-06T10:35:13.823Z","current":false,"historicalIntegrated":true,"method":"ancestor-changed","scopeEqual":true,"dirtyScopePaths":["src/gitlink"],"reason":"历史已合入；当前声明范围已有变化或未提交内容，需核验后继实现，不判断新实现失效"}
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/apps/execution-dashboard/test/proof-tree-batch.test.mjs:68:10)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
