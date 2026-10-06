@@ -195,8 +195,8 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
         cwd: directory, environment: environment(arm), stdio: stdio.map(item => item.fd), timeoutMs: 4000 });
       for (const item of stdio) { try { io.closeSync(item.fd); item.closed = true; } catch { descriptorsClosed = false; } item.closeAttempted = true; }
       if (!writersClosed || !descriptorsClosed) fail();
-      inventory(); // No target is alive while its directories or regular stdio are read.
       diagnosticCopyComplete = false;
+      inventory(); // No target is alive while its directories or regular stdio are read.
       for (const [name, item] of [['stdout', stdio[1]], ['stderr', stdio[2]]]) {
         const stat = io.lstatSync(item.file);
         if (!same(stat, item.identity) || !stat.isFile() || !Number.isSafeInteger(stat.size) || stat.size < 0) fail();
