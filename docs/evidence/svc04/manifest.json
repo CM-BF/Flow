@@ -2,8 +2,8 @@
   "format": 1,
   "task": "SVC04",
   "base": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
-  "target": "544c32f2f2fd4377a93ce299465d0824c87818b3",
-  "observedAt": "2026-10-06 10:13:26 UTC",
+  "target": "a2386f0575a961e5bf52fb9a8b152d587d94dc73",
+  "observedAt": "2026-10-06 10:16:43 UTC",
   "sources": [
     {
       "path": "tools/personal-preview/README.md",
@@ -27,8 +27,8 @@
     },
     {
       "path": "tools/personal-preview/static-web.mjs",
-      "bytes": 5965,
-      "sha256": "80c94a08d0d29465474da1d646f1f2491668dd38348e128eaf2d6c42b469dba1"
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
     },
     {
       "path": "tools/personal-preview/web-artifact.mjs",
@@ -47,8 +47,8 @@
     },
     {
       "path": "tools/personal-preview/web-release.test.mjs",
-      "bytes": 11889,
-      "sha256": "14937b8cd82e20828ecf3980c141fa638540b0b805df7152f726b4a0f4e9b47f"
+      "bytes": 14192,
+      "sha256": "506c5fc6754bf39a18c968bdaeb1def1a85c20908fd6cf9c446193f2eaf0a977"
     },
     {
       "path": "docs/evidence/svc04/browser-fixture.mjs",
@@ -143,6 +143,26 @@
       "sha256": "54c6d9f45bd45d578aebb23ed188c0eb1dc55fb386f63d42cf45ac3e04bdcd2c"
     },
     {
+      "path": "docs/evidence/svc04/observation-gate-final.txt",
+      "bytes": 344,
+      "sha256": "cf6d3dc7ec6ec0ad3eb0ae5aff6d43d5d02b73c3abb859d18fc9c5b228541718"
+    },
+    {
+      "path": "docs/evidence/svc04/observation-race-final.txt",
+      "bytes": 230,
+      "sha256": "72cacea6f20713ece47fc5c3f28de799923957037238d9423a507183f6861c40"
+    },
+    {
+      "path": "docs/evidence/svc04/observation-race-initial-nondeterministic.txt",
+      "bytes": 232,
+      "sha256": "65043137cdff7fd55900f94430ab4e8d396b04449cf34e5fbbc8ee1fab1b1656"
+    },
+    {
+      "path": "docs/evidence/svc04/observation-race-red.txt",
+      "bytes": 1442,
+      "sha256": "bf05e71b63ace6f43baad8edd97bf451245d32e64799e3e70b72d17e00f800e5"
+    },
+    {
       "path": "docs/evidence/svc04/static-syntax-final.txt",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -206,7 +226,7 @@
     }
   ],
   "checks": {
-    "distinctNodeCases": 14,
+    "distinctNodeCases": 15,
     "moduleFinal": 11,
     "hostFinal": 1,
     "directConsumersFinal": {
@@ -220,7 +240,11 @@
     "browserObservedStages": 5,
     "browserJavaScriptRequests": 58,
     "browserFailedJavaScriptRequestsAfterFix": 0,
-    "providerQueries": 0
+    "providerQueries": 0,
+    "observationGateFinal": {
+      "passed": 2,
+      "newDistinct": 1
+    }
   },
   "notes": [
     "Host backend source 40f1e13af9244ba378391cf681ffa697b433ac44; apps/server and apps/runner equal target.",
@@ -228,6 +252,9 @@
     "Browser fixture stdin.pause added after actual browser run to exit the harness after cleanup; actual runs required EOF and exited 0. Product source unchanged by that fixture-only line.",
     "Initial browser 503 and initial fixture identity rejection are preserved; neither is represented as success.",
     "Compatibility reports are trusted fixed-shape attestations for the exact synthetic Web/backend combinations, not production compatibility proof.",
-    "No personal-service operations or provider calls."
+    "No personal-service operations or provider calls.",
+    "Lead preview feedback addressed in a2386f0: release pointer reads now enter the same serial observation chain, and HTTP bounded admission covers read/verification until work finishes plus response ends.",
+    "Final incremental checks are 2/2: 1 new deterministic reversed-read case and 1 existing HTTP/SSE case; original Chrome/PG checks were not repeated.",
+    "observation-race-initial-nondeterministic.txt is an initial passing attempt that did not deterministically exercise the race; observation-race-red.txt is the actual controlled failure."
   ]
 }
